@@ -1,69 +1,69 @@
 ---
 ms.assetid: A77DA371-C0FE-4FAE-9E77-ADC3C9314EDF
-title: Create your first app
-description: It's easier than you think to create a Universal Windows Platform (UWP) app for Windows 10.
+title: 初めてのアプリ作成
+description: Windows 10 用ユニバーサル Windows プラットフォーム (UWP) アプリの作成は、思っているよりも簡単です。
 ---
-# Create your first app
+# 初めてのアプリ作成
 
-It's easier than you think to create a Universal Windows Platform (UWP) app for Windows 10. You don't need to learn a new language to start—you can create it with what you already know:
+Windows 10 用ユニバーサル Windows プラットフォーム (UWP) アプリの作成は、思っているよりも簡単です。 作り始めるにあたって、新しい言語を学習する必要はありません。既に知っている次の言語で作成できます。
 
--   C# or Visual Basic with XAML
--   C++ with XAML
--   JavaScript with HTML/CSS
+-   C#、または Visual Basic と XAML
+-   C++ と XAML
+-   JavaScript と HTML/CSS
 
-These tutorials help you create your first UWP app in the language of your choice. Here, you'll learn how to:
+このチュートリアルは、好みの言語で初めての UWP アプリを作るために役立ちます。 ここでは、次の方法について説明します。
 
--   Create a UWP app project in Microsoft Visual Studio.
--   Add UI elements and code to the project.
--   Build and debug your app on the local machine and on a phone emulator.
+-   Microsoft Visual Studio で UWP アプリのプロジェクトを作成する
+-   プロジェクトに UI 要素とコードを追加する
+-   ローカル マシンと電話エミュレーターでアプリをビルドしてデバッグする
 
-To get started, choose the language you prefer.
+最初に、好みの言語を選びます。
 
-## C#/Visual Basic and XAML tutorials
+## C#/Visual Basic と XAML のチュートリアル
 
-Use your .NET, WPF, or Silverlight skills to build apps using XAML with C# or Visual Basic.
+.NET、WPF、または Silverlight のスキルを活用し、XAML と C# または Visual Basic を使ったアプリを作ります。
 
-[Create a "Hello, world" app using XAML with C# or VB](create-a-hello-world-app-xaml-universal.md)
+[XAML と C# または VB で "Hello, world" アプリを作る](create-a-hello-world-app-xaml-universal.md)
 
-We assume you're already comfortable with XAML and either C# or Visual Basic. If you want to learn the basics, or just refresh your memory, try these courses from the [Microsoft Virtual Academy](http://www.microsoftvirtualacademy.com/).
+このトピックは、XAML と C# または Visual Basic に習熟していることを前提としています。 基本を学習したり、知識を再確認したりする場合は、[Microsoft Virtual Academy](http://www.microsoftvirtualacademy.com/) の次のコースをお試しください。
 
--   [C# Fundamentals for Absolute Beginners](http://www.microsoftvirtualacademy.com/training-courses/c-fundamentals-for-absolute-beginners)
--   [VB Fundamentals for Absolute Beginners](http://www.microsoftvirtualacademy.com/training-courses/vb-fundamentals-for-absolute-beginners)
--   [XAML Deep Dive for Windows & Windows Phone Apps Jump Start](http://www.microsoftvirtualacademy.com/training-courses/xaml-deep-dive-for-windows-windows-phone-apps-jump-start)
+-   [C# Fundamentals for Absolute Beginners (文字どおりの初心者のための C# の基本)](http://www.microsoftvirtualacademy.com/training-courses/c-fundamentals-for-absolute-beginners)
+-   [VB Fundamentals for Absolute Beginners (文字どおりの初心者のための VB の基本)](http://www.microsoftvirtualacademy.com/training-courses/vb-fundamentals-for-absolute-beginners)
+-   [XAML Deep Dive for Windows & Windows Phone Apps Jump Start (Windows および Windows Phone アプリ開発ジャンプ スタートのための XAML の詳細)](http://www.microsoftvirtualacademy.com/training-courses/xaml-deep-dive-for-windows-windows-phone-apps-jump-start)
 
-## Visual C++ component extensions (C++/CX) and XAML tutorials
+## Visual C++ コンポーネント拡張機能 (C++/CX) と XAML のチュートリアル
 
-Take advantage of your C++ programming expertise to build apps using Visual C++ component extensions (C++/CX) with XAML .
+C++ プログラミングの専門知識を活用し、Visual C++ コンポーネント拡張機能 (C++/CX) と XAML を使ってアプリを作ります。
 
-[Create a "Hello, world" app using XAML with C++/CX](create-a-basic-windows-10-app-in-cpp.md)
+[XAML と C++/CX で "Hello, world" アプリを作る](create-a-basic-windows-10-app-in-cpp.md)
 
-We assume you're already comfortable with XAML and C++. If you want to learn the basics, or just refresh your memory, try these courses from the [Microsoft Virtual Academy](http://go.microsoft.com/fwlink/p/?LinkID=389916).
+このトピックは、XAML と C++ に習熟していることを前提としています。 基本を学習したり、知識を再確認したりする場合は、[Microsoft Virtual Academy](http://go.microsoft.com/fwlink/p/?LinkID=389916) の次のコースをお試しください。
 
--   [C++: A General Purpose Language and Library Jump Start](http://www.microsoftvirtualacademy.com/training-courses/c-a-general-purpose-language-and-library-jump-start)
--   [XAML Deep Dive for Windows & Windows Phone Apps Jump Start](http://www.microsoftvirtualacademy.com/training-courses/xaml-deep-dive-for-windows-windows-phone-apps-jump-start)
+-   [C++: A General Purpose Language and Library Jump Start (C++: 汎用言語およびライブラリ ジャンプ スタート)](http://www.microsoftvirtualacademy.com/training-courses/c-a-general-purpose-language-and-library-jump-start)
+-   [XAML Deep Dive for Windows & Windows Phone Apps Jump Start (Windows および Windows Phone アプリ開発ジャンプ スタートのための XAML の詳細)](http://www.microsoftvirtualacademy.com/training-courses/xaml-deep-dive-for-windows-windows-phone-apps-jump-start)
 
-## JavaScript and HTML tutorials
+## JavaScript と HTML のチュートリアル
 
-Take advantage of your web skills to build apps using HTML5, Cascading Style Sheets, Level 3 (CSS3), and JavaScript.
+Web のスキルを活用し、HTML5、カスケード スタイル シート レベル 3 (CSS3)、JavaScript を使ったアプリを作ります。
 
-[Create a "Hello, world" app using HTML and JavaScript](create-a-hello-world-app-js-universal.md)
+[HTML と JavaScript を使った "Hello, world" アプリの作成](create-a-hello-world-app-js-universal.md)
 
-We assume you're already comfortable with HTML5, CSS3, and JavaScript. If you want to learn the basics, or just refresh your memory, try these courses from the [Microsoft Virtual Academy](http://go.microsoft.com/fwlink/p/?LinkID=389916).
+このトピックは、HTML5、CSS3、JavaScript に習熟していることを前提としています。 基本を学習したり、知識を再確認したりする場合は、[Microsoft Virtual Academy](http://go.microsoft.com/fwlink/p/?LinkID=389916) の次のコースをお試しください。
 
--   [JavaScript Fundamentals for Absolute Beginners](http://www.microsoftvirtualacademy.com/training-courses/javascript-fundamentals-for-absolute-beginners)
--   [HTML5 & CSS3 Fundamentals for Absolute Beginners](http://www.microsoftvirtualacademy.com/training-courses/html5-css3-fundamentals-development-for-absolute-beginners)
+-   [JavaScript Fundamentals for Absolute Beginners (文字どおりの初心者のための JavaScript の基本)](http://www.microsoftvirtualacademy.com/training-courses/javascript-fundamentals-for-absolute-beginners)
+-   [HTML5 & CSS3 Fundamentals for Absolute Beginners (文字どおりの初心者のための HTML5 と CSS3 の基本)](http://www.microsoftvirtualacademy.com/training-courses/html5-css3-fundamentals-development-for-absolute-beginners)
 
-## Other resources
+## その他のリソース
 
-If you want to develop games using C++ and Microsoft DirectX, see [Developing games on Windows 10](https://dev.windows.com/games).
+C++ と Microsoft DirectX を使ってゲームを開発する場合は、「[Windows 10 でのゲームの開発](https://dev.windows.com/games)」をご覧ください。
 
-Already have experience with iOS or Android? The [Porting apps to Windows 10](https://msdn.microsoft.com/library/windows/apps/Mt238321) section has resources to help you get started.
+iOS または Android の使用経験がある場合は、 「[Windows 10 にアプリを移植する](https://msdn.microsoft.com/library/windows/apps/Mt238321)」セクションのリソースが作業開始に役立ちます。
 
-# Related topics
+# 関連トピック
 
-* [What's a Universal Windows app?](whats-a-uwp.md)
-* [Get set up](get-set-up.md)
-* [Sign up](sign-up.md)
+* [ユニバーサル Windows アプリとは?](whats-a-uwp.md)
+* [準備](get-set-up.md)
+* [サインアップ](sign-up.md)
  
 
 

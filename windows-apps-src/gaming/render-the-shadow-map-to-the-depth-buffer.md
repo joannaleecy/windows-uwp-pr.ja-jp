@@ -1,37 +1,37 @@
 ---
-title: Render the shadow map to the depth buffer
-description: Render from the point of view of the light to create a two-dimensional depth map representing the shadow volume.
+title: 深度バッファーへのシャドウ マップのレンダリング
+description: ライトの視点からレンダリングして、シャドウ ボリュームを表す 2 次元の深度マップを作成します。
 ms.assetid: 7f3d0208-c379-8871-cc48-027047c6c2d0
 ---
 
-# Render the shadow map to the depth buffer
+# 深度バッファーへのシャドウ マップのレンダリング
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-Render from the point of view of the light to create a two-dimensional depth map representing the shadow volume. The depth map masks the space that will be rendered in shadow. Part 2 of [Walkthrough: Implement shadow volumes using depth buffers in Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md).
+ライトの視点からレンダリングして、シャドウ ボリュームを表す 2 次元の深度マップを作成します。 深度マップでは、シャドウ内にレンダリングされる空間をマークします。 「[チュートリアル: Direct3D 11 の深度バッファーを使ったシャドウ ボリュームの実装](implementing-depth-buffers-for-shadow-mapping.md)」のパート 2 です。
 
-## Clear the depth buffer
+## 深度バッファーの消去
 
 
-Always clear the depth buffer before rendering to it.
+深度バッファーにレンダリングする前に、必ず深度バッファーを消去します。
 
 ```cpp
 context->ClearRenderTargetView(m_deviceResources->GetBackBufferRenderTargetView(), DirectX::Colors::CornflowerBlue);
 context->ClearDepthStencilView(m_shadowDepthView.Get(), D3D11_CLEAR_DEPTH | D3D11_CLEAR_STENCIL, 1.0f, 0);
 ```
 
-## Render the shadow map to the depth buffer
+## 深度バッファーへのシャドウ マップのレンダリング
 
 
-For the shadow rendering pass, specify a depth buffer but do not specify a render target.
+シャドウのレンダリング パスでは、深度バッファーを指定しますが、レンダー ターゲットは指定しません。
 
-Specify the light viewport, a vertex shader, and set the light space constant buffers. Use front face culling for this pass to optimize the depth values placed in the shadow buffer.
+ライト ビューポート、頂点シェーダーを指定し、ライト空間の定数バッファーを設定します。 このパスに前面のカリングを使って、シャドウ バッファーに配置された深度値を最適化します。
 
-Note that on most devices, you can specify nullptr for the pixel shader (or skip specifying a pixel shader entirely). But some drivers may throw an exception when you call draw on the Direct3D device with a null pixel shader set. To avoid this exception, you can set a minimal pixel shader for the shadow rendering pass. The output of this shader is thrown away; it can call [**discard**](https://msdn.microsoft.com/library/windows/desktop/bb943995) on every pixel.
+ほとんどのデバイスでは、ピクセル シェーダーに対して nullptr を指定できます (または、ピクセル シェーダーの指定を完全にスキップできます)。 ただし、ドライバーによっては、Direct3D デバイスで null のピクセル シェーダーを設定して描画を呼び出すと、例外がスローされる場合があります。 この例外を避けるには、シャドウのレンダリング パスに対して最小限のピクセル シェーダーを設定します。 このシェーダーの出力は破棄されるため、各ピクセルで [**discard**](https://msdn.microsoft.com/library/windows/desktop/bb943995) を呼び出すことができます。
 
-Render the objects that can cast shadows, but don't bother rendering geometry that can't cast a shadow (like a floor in a room, or objects removed from the shadow pass for optimization reasons).
+シャドウが生じる可能性があるオブジェクトをレンダリングしますが、シャドウが生じる可能性がないジオメトリ (部屋の床や、最適化のためにシャドウ パスから削除したオブジェクトなど) のレンダリングについては気にする必要はありません。
 
 ```cpp
 void ShadowSceneRenderer::RenderShadowMap()
@@ -117,12 +117,12 @@ void ShadowSceneRenderer::RenderShadowMap()
 }
 ```
 
-**Optimize the view frustum:**  Make sure your implementation computes a tight view frustum so that you get the most precision out of your depth buffer. See [Common Techniques to Improve Shadow Depth Maps](https://msdn.microsoft.com/library/windows/desktop/ee416324) for more tips on shadow technique.
+**視錐台の最適化:** 深度バッファーの精度を最大限に高めるために、実装では視錐台を厳密に計算してください。 シャドウの方法に関するヒントについては、「[シャドウ深度マップを向上させるための一般的な方法](https://msdn.microsoft.com/library/windows/desktop/ee416324)」をご覧ください。
 
-## Vertex shader for shadow pass
+## シャドウ パスの頂点シェーダー
 
 
-Use a simplified version of your vertex shader to render just the vertex position in light space. Don't include any lighting normals, secondary transformations, and so on.
+簡略化したバージョンの頂点シェーダーを使って、ライト空間内の頂点の位置だけをレンダリングします。 照明法線や二次変換などを含めないでください。
 
 ```cpp
 PixelShaderInput main(VertexShaderInput input)
@@ -140,7 +140,7 @@ PixelShaderInput main(VertexShaderInput input)
 }
 ```
 
-In the next part of this walkthrough, learn how to add shadows by [rendering with depth testing](render-the-scene-with-depth-testing.md).
+このチュートリアルの次のパートでは、[深度のテストを使ったレンダリング](render-the-scene-with-depth-testing.md)によってシャドウを追加する方法について説明します。
 
  
 

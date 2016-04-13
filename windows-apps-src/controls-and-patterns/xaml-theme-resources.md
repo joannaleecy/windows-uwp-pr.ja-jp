@@ -1,68 +1,69 @@
 ---
-Description: Theme resources in XAML are a set of resources that apply different values depending on which system theme is active.
+Description: XAML のテーマ リソースは、アクティブなシステム テーマに応じて異なる値を適用するリソースのセットです。
 MS-HAID: 'dev\_ctrl\_layout\_txt.xaml\_theme\_resources'
 MSHAttr: 'PreferredLib:/library/windows/apps'
 Search.Product: eADQiWindows 10XVcnh
-title: XAML theme resources
+title: XAML テーマ リソース
 ms.assetid: 41B87DBF-E7A2-44E9-BEBA-AF6EEBABB81B
-label: XAML theme resources
+label: XAML テーマ リソース
 template: detail.hbs
 ---
 
-# XAML theme resources
+# XAML テーマ リソース
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-Theme resources in XAML are a set of resources that apply different values depending on which system theme is active. There are 3 themes that the XAML framework supports: "Light", "Dark", and "HighContrast".
+XAML のテーマ リソースは、アクティブなシステム テーマに応じて異なる値を適用するリソースのセットです。 XAML フレームワークがサポートするテーマは "Light"、"Dark"、"HighContrast" の 3 つです。
 
-**Prerequisites**
+**前提条件**
 
-This topic assumes that you have read [ResourceDictionary and XAML resource references](resourcedictionary-and-xaml-resource-references.md).
+このトピックでは、既に「[ResourceDictionary と XAML リソースの参照](resourcedictionary-and-xaml-resource-references.md)」を読んでいることを前提としています。
 
-## How theme resources differ from static resources
+## 静的なリソースとのテーマ リソースの違い
 
-There are two XAML markup extensions that can reference a XAML resource from an existing XAML resource dictionary: [{StaticResource} markup extension](../xaml-platform/staticresource-markup-extension.md) and [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md).
+既存の XAML リソース ディクショナリから XAML リソースを参照できる XAML マークアップ拡張には、[{StaticResource} マークアップ拡張](../xaml-platform/staticresource-markup-extension.md)と [{ThemeResource} マークアップ拡張](../xaml-platform/themeresource-markup-extension.md)の 2 つがあります。
 
-Evaluation of a [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md) occurs when the app loads and subsequently each time the theme changes at runtime. This is typically the result of the user changing their device settings or from a programmatic change within the app that alters its current theme.
+[{ThemeResource} マークアップ拡張](../xaml-platform/themeresource-markup-extension.md)はアプリの読み込み時に評価され、その後、実行時にテーマが変更されたときにもそのつど評価されます。 これは通常、ユーザーがデバイスの設定を変更した場合、またはアプリ内でプログラムによってアプリの現在のテーマが変更された場合に発生します。
 
-In contrast, a [{StaticResource} markup extension](../xaml-platform/staticresource-markup-extension.md) is evaluated only when the XAML is first loaded by the app. It does not update. It’s similar to a find and replace in your XAML with the actual runtime value at app launch.
+これに対して [{StaticResource} マークアップ拡張](../xaml-platform/staticresource-markup-extension.md)は、XAML が最初にアプリに読み込まれるときにのみ評価されます。 これが更新されることはありません。 これは、アプリの起動時に XAML を検索し、実際のランタイム値に置き換えるようなものです。
 
-## Theme resources and where they fit in the resource dictionary structure
+## テーマ リソースとリソース ディクショナリ構造での適切な場所
 
 
-Each theme resource is part of the XAML file themeresources.xaml. For design purposes, themeresources.xaml is available in the \\(Program Files)\\Windows Kits\\10\\DesignTime\\CommonConfiguration\\Neutral\\UAP\\&lt;SDK version&gt;\\Generic folder from a Windows Software Development Kit (SDK) installation. The resource dictionaries in themeresources.xaml are also reproduced in generic.xaml in the same directory.
+各テーマ リソースは、XAML ファイル themeresources.xaml の一部です。 設計の目的には、Windows ソフトウェア開発キット (Windows SDK) のインストール先の \\(Program Files)\\Windows Kits\\10\\DesignTime\\CommonConfiguration\\Neutral\\UAP\\&lt;SDK version&gt;\\Generic フォルダーにある themeresources.xaml を使用できます。 themeresources.xaml 内のリソース ディクショナリは、同じディレクトリの generic.xaml にも複製されています。
 
-> **Note**&nbsp;&nbsp;The Windows Runtime doesn't use these physical files for runtime lookup. That's why they are specifically in a DesignTime folder, and they aren't copied into apps by default. Instead, these resource dictionaries exist in memory as part of the Windows Runtime itself, and your app's XAML resource references to theme resources (or system resources) resolve there at runtime.
+> **注**&nbsp;&nbsp;これらの物理ファイルは Windows ランタイムでランタイム検索に使われません。 そのため、明示的に DesignTime フォルダー内にあり、既定ではアプリにコピーされません。 代わりに、これらのリソース ディクショナリは Windows ランタイム自体の一部としてメモリ内に存在し、テーマ リソース (またはシステム リソース) へのアプリの XAML リソース参照は実行時にメモリ内で解決されます。
 
- ## Guidelines for using theme resources
+ ## テーマ リソースの使用のガイドライン
 
-Follow these guidelines when you define and consume your own custom theme resources.
+独自のカスタム テーマ リソースを定義して使うときは、次のガイドラインに従ってください。
 
-DO:
+推奨:
 
--   Specify theme dictionaries for both "Light" and "Dark" in addition to your "HighContrast" dictionary. Although you can create a [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) with "Default" as the key, it’s preferred to be explicit and instead use "Light", "Dark", and "HighContrast".
--   Use the [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md) in: Styles, Setters, Control templates, Property setters, and Animations.
+-   "HighContrast" ディクショナリに加えて、"Light" と "Dark" の両方のテーマ ディクショナリを指定します。 "Default" をキーとする [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) を作成することもできますが、明示的に "Light"、"Dark"、"HighContrast" を使うことをお勧めします。
+-   スタイル、セッター、コントロール テンプレート、プロパティ セッター、アニメーションでは、[{ThemeResource} マークアップ拡張](../xaml-platform/themeresource-markup-extension.md)を使います。
 
-DO NOT:
+非推奨:
 
--   Use the [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md) in your resource definitions inside your [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807). Use [{StaticResource} markup extension](../xaml-platform/staticresource-markup-extension.md) instead.
+-   [
+            **ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807) 内のリソース定義では、[{ThemeResource} マークアップ拡張](../xaml-platform/themeresource-markup-extension.md)を使わないでください。 代わりに、[{StaticResource} マークアップ拡張](../xaml-platform/staticresource-markup-extension.md)を使います。
 
-    EXCEPTION: it is alright to use the [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md) to reference resources that are agnostic to the app theme in your [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807). Examples of these resources are accent color resources like `SystemAccentColor`, or system color resources, which are typically prefixed with "SystemColor" like `SystemColorButtonFaceColor`.
+    例外: [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807) 内のアプリ テーマに依存しないリソースを参照するために [{ThemeResource} マークアップ拡張](../xaml-platform/themeresource-markup-extension.md)を使うことは問題ありません。 このようなリソースの例として、`SystemAccentColor` などのアクセント カラー リソースや、通常は "SystemColor" というプレフィックスの付いた `SystemColorButtonFaceColor` などのシステム カラー リソースがあります。
 
-**Caution**  If you don’t follow these guidelines, you might see unexpected behavior related to themes in your app. For more info, see the [Troubleshooting theme resources](#troubleshooting_theme_resources) section.
+**注意**  これらのガイドラインに従わないと、テーマに関連する予期しない動作がアプリで発生することがあります。 詳しくは、「[テーマ リソースのトラブルシューティング](#troubleshooting_theme_resources)」セクションをご覧ください。
  
 
-## The XAML color ramp and theme-dependent brushes
+## XAML 色見本とテーマ依存のブラシ
 
-The combined set of colors for "Light", "Dark", and "HighContrast" themes make up the *Windows color ramp* in XAML. Whether you want to modify the system themes, or apply a system theme to your own XAML elements, it’s important to understand how the color resources are structured.
+XAML における *Windows 色見本*は、"Light"、"Dark"、"HighContrast" の各テーマの色のセットを組み合わせることで構成されます。 システム テーマを変更する場合でも、システム テーマを独自の XAML 要素に適用する場合でも、カラー リソースがどのように構成されるかを理解することが重要です。
 
-### Light and Dark theme colors
+### Light テーマと Dark テーマの色
 
-The XAML framework provides a set of named [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) resources with values that are tailored for the "Light" and "Dark" themes. The keys you use to reference these follow the naming format: `System[Simple Light/Dark Name]Color`.
+XAML フレームワークには、"Light" と "Dark" のテーマに合わせてカスタマイズされた名前付きの [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) リソースのセットが用意されています。 これらを参照するために使うキーは、`System[Simple Light/Dark Name]Color` という名前付け形式に従います。
 
-This table lists the key, simple name, and string representation of the color (using the \#aarrggbb format) for the "Light" and "Dark" resources provided by the XAML framework. The key is used to reference the resource in an app. The "Simple light/dark name" is used as part of the brush naming convention that we explain later.
+次の表は、XAML フレームワークで提供される "Light" と "Dark" のリソースについて、それぞれのキー、簡易名、色の文字列表現 (\#aarrggbb 形式) の一覧を示しています。 キーは、アプリでリソースを参照するときに使われます。 "Light/Dark 簡易名" は、後で説明するブラシの名前付け規則の一部として使われます。
 
-| Key                             | Simple light/dark name | Light      | Dark       |
+| キー                             | Light/Dark 簡易名 | Light      | Dark       |
 |---------------------------------|------------------------|------------|------------|
 | SystemAltHighColor              | AltHigh                | \#FFFFFFFF | \#FF000000 |
 | SystemAltLowColor               | AltLow                 | \#33FFFFFF | \#33000000 |
@@ -90,79 +91,79 @@ This table lists the key, simple name, and string representation of the color (u
 | SystemListMediumColor           | ListMedium             | \#33000000 | \#33FFFFFF |
 
 
-### Windows system high-contrast colors
+### Windows システムのハイ コントラストの色
 
-In addition to the set of resources provided by the XAML framework, there's a set of color values derived from the Windows system palette. These colors are not specific to the Windows Runtime or Universal Windows Platform (UWP) apps. However, many of the XAML [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) resources consume these colors when the system is operating (and the app is running) using the "HighContrast" theme. The XAML framework provides these system-wide colors as keyed resources. The keys follow the naming format: `SystemColor[name]Color`.
+XAML フレームワークによって提供されるリソースのセットのほかに、Windows のシステム パレットから派生するカラー値のセットがあります。 これらの色は、Windows ランタイムやユニバーサル Windows プラットフォーム (UWP) アプリに固有のものではありません。 しかし、"HighContrast" テーマでシステムが動作しているとき (およびアプリが実行されているとき) には、XAML [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) リソースの多くでこれらの色が使われます。 XAML フレームワークには、このようなシステム全体の色がキーを持つリソースとして用意されています。 これらのキーは、`SystemColor[name]Color` という名前付け形式に従います。
 
-This table lists the system-wide colors that XAML provides as resource objects derived from the Windows system palette. The "Ease of Access name" column shows how color is labeled in the Windows settings UI. The "Simple HighContrast name" column is a one word description of how the color is applied across the XAML common controls. It's used as part of the brush naming convention that we explain later. The "Initial default" column shows the values you'd get if the system is not running in high contrast at all.
+次の表は、Windows システム パレットから派生したリソース オブジェクトとして XAML に用意されているシステム全体の色を示します。 "簡単操作での名前" 列は、その色が Windows の設定の UI でどのように表現されるかを示しています。 "HighContrast 簡易名" 列は、その色が XAML コモン コントロールにどのように適用されるかをひとことで表す単語になっています。 これは、後で説明するブラシの名前付け規則の一部として使われます。 "初期既定値" 列は、システムがハイ コントラストで動作していない場合に使われる値を示します。
 
-| Key                           | Ease of Access name            | Simple HighContrast name | Initial default |
+| キー                           | 簡単操作での名前            | HighContrast 簡易名 | 初期既定値 |
 |-------------------------------|--------------------------------|--------------------------|-----------------|
-| SystemColorButtonFaceColor    | **Button Text** (background)   | Background               | \#FFF0F0F0      |
-| SystemColorButtonTextColor    | **Button Text** (foreground)   | Foreground               | \#FF000000      |
-| SystemColorGrayTextColor      | **Disabled Text**              | Disabled                 | \#FF6D6D6D      |
-| SystemColorHighlightColor     | **Selected Text** (background) | Highlight                | \#FF3399FF      |
-| SystemColorHighlightTextColor | **Selected Text** (foreground) | HighlightAlt             | \#FFFFFFFF      |
-| SystemColorHotlightColor      | **Hyperlinks**                 | Hyperlink                | \#FF0066CC      |
-| SystemColorWindowColor        | **Background**                 | PageBackground           | \#FFFFFFFF      |
-| SystemColorWindowTextColor    | **Text**                       | PageText                 | \#FF000000      |
+| SystemColorButtonFaceColor    | **ボタン テキスト** (背景)   | Background               | \#FFF0F0F0      |
+| SystemColorButtonTextColor    | **ボタン テキスト** (前景)   | Foreground               | \#FF000000      |
+| SystemColorGrayTextColor      | **淡色表示のテキスト**              | Disabled                 | \#FF6D6D6D      |
+| SystemColorHighlightColor     | **選択されたテキスト** (背景) | Highlight                | \#FF3399FF      |
+| SystemColorHighlightTextColor | **選択されたテキスト** (前景) | HighlightAlt             | \#FFFFFFFF      |
+| SystemColorHotlightColor      | **ハイパーリンク**                 | Hyperlink                | \#FF0066CC      |
+| SystemColorWindowColor        | **背景**                 | PageBackground           | \#FFFFFFFF      |
+| SystemColorWindowTextColor    | **テキスト**                       | PageText                 | \#FF000000      |
 
 
-Windows provides different high-contrast themes, and enables the user to set the specific colors to for their high-contrast settings through the Ease of Access Center, as shown here. Therefore, it's not possible to provide a definitive list of high-contrast color values.
+Windows には複数のハイ コントラスト テーマが用意されているほか、次のように、コンピューターの簡単操作を通じて、独自のハイ コントラスト設定で使う特定の色をユーザーが設定することもできます。 このため、ハイ コントラストのカラー値の確定的な一覧を提供することはできません。
 
-![The Windows high contrast settings UI](images/high-contrast-settings.png)
+![Windows のハイ コントラストの設定 UI](images/high-contrast-settings.png)
 
-For more info about supporting high-contrast themes, see [High-contrast themes](https://msdn.microsoft.com/library/windows/apps/mt244346).
+ハイ コントラスト テーマのサポートについて詳しくは、「[ハイ コントラスト テーマ](https://msdn.microsoft.com/library/windows/apps/mt244346)」をご覧ください。
 
-### System accent color
+### システムのアクセント カラー
 
-In addition to the system high-contrast theme colors, the system accent color is provided as a special color resource using the key `SystemAccentColor`. At runtime, this resource gets the color that the user has specified as the accent color in the Windows personalization settings.
+システムのハイ コントラスト テーマの色に加えて、システムのアクセント カラーも、`SystemAccentColor` というキーを使う特別なカラー リソースとして用意されています。 このリソースは、ユーザーが Windows の個人設定でアクセント カラーとして指定した色を実行時に取得します。
 
-> **Note**&nbsp;&nbsp;It’s possible to override the system color resources for high-contrast color and accent color by creating resources with the same names, but it’s a best practice to respect the user’s color choices, especially for high-contrast settings.
+> **注**&nbsp;&nbsp;ハイ コントラスト カラーとアクセント カラーのシステム カラー リソースは、同じ名前を持つリソースを作成してオーバーライドすることもできますが、特にハイ コントラスト設定についてはユーザーによる色の選択を尊重することをお勧めします。
 
-### Theme-dependent brushes
+### テーマ依存のブラシ
 
-The color resources shown in the preceding sections are used to set the [**Color**](https://msdn.microsoft.com/library/windows/apps/br242963) property of [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) resources in the system theme resource dictionaries. You use the brush resources to apply the color to XAML elements. The keys for the brush resources follow the naming format: `SystemControl[Simple HighContrast name][Simple light/dark name]Brush`. For example, `SystemControlBackroundAltHighBrush`.
+システム テーマ リソース ディクショナリの [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) リソースの [**Color**](https://msdn.microsoft.com/library/windows/apps/br242963) プロパティは、前のセクションに示したカラー リソースを使って設定されます。 XAML 要素に色を適用するには、ブラシ リソースが使われます。 ブラシ リソースのキーは、`SystemControl[Simple HighContrast name][Simple light/dark name]Brush` という名前付け形式に従います。 たとえば、`SystemControlBackroundAltHighBrush` と記述します。
 
-Let’s look at how the color value for this brush is determined at run-time. In the "Light" and "Dark" resource dictionaries, this brush is defined like this:
+このブラシの色の値が実行時にどのように決定されるかを見てみましょう。 "Light" と "Dark" の各リソース ディクショナリでは、このブラシは次のように定義されています。
 
 `<SolidColorBrush x:Key="SystemControlBackgroundAltHighBrush" Color="{StaticResource SystemAltHighColor}"/>`
 
-In the "HighContrast" resource dictionary, this brush is defined like this:
+"HighContrast" リソース ディクショナリでは、このブラシは次のように定義されています。
 
 `<SolidColorBrush x:Key="SystemControlBackgroundAltHighBrush" Color="{ThemeResource SystemColorButtonFaceColor}"/>`
 
-When this brush is applied to a XAML element, its color is determined at run-time by the current theme, as shown in this table.
+このブラシが XAML 要素に適用されるとき、その色は、次の表に示すように現在のテーマによって実行時に決定されます。
 
-| Theme        | Color simple name | Color resource             | Runtime value                                              |
+| テーマ        | 色の簡易名 | カラー リソース             | ランタイム値                                              |
 |--------------|-------------------|----------------------------|------------------------------------------------------------|
 | Light        | AltHigh           | SystemAltHighColor         | \#FFFFFFFF                                                 |
 | Dark         | AltHigh           | SystemAltHighColor         | \#FF000000                                                 |
-| HighContrast | Background        | SystemColorButtonFaceColor | The color specified in settings for the button background. |
+| HighContrast | Background        | SystemColorButtonFaceColor | 設定でボタンの背景として指定された色。 |
 
-You can use the `SystemControl[Simple HighContrast name][Simple light/dark name]Brush` naming scheme to determine which brush to apply to your own XAML elements. 
+独自の XAML 要素に適用するブラシを決めるには、`SystemControl[Simple HighContrast name][Simple light/dark name]Brush` という名前付けスキームを使います。 
 
 <!--
 For many examples of how the brushes are used in the XAML control templates, see the [Default control styles and templates](default-control-styles-and-templates.md).
 -->
 
-> **Note**&nbsp;&nbsp;Not every combination of \[*Simple HighContrast name*\]\[*Simple light/dark name*\] is provided as a brush resource.
+> **注**& nbsp; & nbsp;すべての組み合わせ \[*HighContrast 簡易名*\]\[*Light/Dark 簡易名*\] ブラシ リソースとして提供されます。
 
-## The XAML type ramp
+## XAML の書体見本
 
-The themeresources.xaml file defines several resources that define a [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) that you can apply to text containers in your UI, specifically for either [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) or [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565). These are not the default implicit styles. They are provided to make it easier for you to create XAML UI definitions that match the *Windows type ramp* documented in [Guidelines for fonts](https://msdn.microsoft.com/library/windows/apps/hh700394).
+themeresources.xaml ファイルには、UI 上のテキスト コンテナー (具体的には [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) または [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565)) に適用できる [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) を定義するリソースがいくつか定義されています。 これらは、既定の暗黙的なスタイルとは異なります。 これらのスタイルを使うと、「[フォントのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh700394)」で説明されている *Windows の書体見本*に一致する XAML UI 定義を簡単に作成できるようになります。
 
-These styles are for text attributes that you want applied to the whole text container. If you want styles applied just to sections of the text, set attributes on the text elements within the container, such as on a [**Run**](https://msdn.microsoft.com/library/windows/apps/br209959) in [**TextBlock.Inlines**](https://msdn.microsoft.com/library/windows/apps/br209668) or on a [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/br244503) in [**RichTextBlock.Blocks**](https://msdn.microsoft.com/library/windows/apps/br244347).
+これらのスタイルは、テキスト コンテナー全体に適用されるテキスト属性を設定するものです。 テキストの一部にのみスタイルを適用する場合は、コンテナー内のテキスト要素に属性を設定します。たとえば、[**TextBlock.Inlines**](https://msdn.microsoft.com/library/windows/apps/br209668) の [**Run**](https://msdn.microsoft.com/library/windows/apps/br209959) や [**RichTextBlock.Blocks**](https://msdn.microsoft.com/library/windows/apps/br244347) の [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/br244503) を使うことができます。
 
-The styles look like this when applied to a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652):
+スタイルを [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) に適用すると、次のようになります。
 
-![text block styles](images/text-block-type-ramp.png)
+![テキスト ブロック スタイル](images/text-block-type-ramp.png)
 
 ### BaseTextBlockStyle
 
 **TargetType**: [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)
 
-Supplies the common properties for all the other [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) container styles.
+他のすべての [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) コンテナー スタイルに対する一般的なプロパティを提供します。
 
 ```XAML
 <!-- Usage -->
@@ -272,7 +273,7 @@ Supplies the common properties for all the other [**TextBlock**](https://msdn.mi
 
 **TargetType**: [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565)
 
-Supplies the common properties for all the other [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565) container styles.
+他のすべての [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565) コンテナー スタイルに対する一般的なプロパティを提供します。
 
 ```XAML
 <!-- Usage -->
@@ -307,71 +308,73 @@ Supplies the common properties for all the other [**RichTextBlock**](https://msd
 </Style>
 ```
 
-> **Note**&nbsp;&nbsp;  The [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565) styles don't have all the text ramp styles that [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) does, mainly because the block-based document object model for **RichTextBlock** makes it easier to set attributes on the individual text elements. Also, setting [**TextBlock.Text**](https://msdn.microsoft.com/library/windows/apps/br209676) using the XAML content property introduces a situation where there is no text element to style and thus you'd have to style the container. That isn't an issue for **RichTextBlock** because its text content always has to be in specific text elements like [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/br244503), which is where you might apply XAML styles for page header, page subheader and similar text ramp definitions.
+> **注**&nbsp;&nbsp;  [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565) スタイルには、[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) に含まれているテキスト見本スタイルのすべては含まれていません。これは主に、**RichTextBlock** のブロック ベースのドキュメント オブジェクト モデルでは、個々のテキスト要素への属性の設定がより簡単になっているためです。 また、XAML コンテンツ プロパティを使って [**TextBlock.Text**](https://msdn.microsoft.com/library/windows/apps/br209676) を設定する方式では、スタイルを設定できるテキスト要素が存在しない状況になるため、コンテナーにスタイルを設定する必要があります。 これに対して **RichTextBlock** では、テキスト コンテンツは常に [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/br244503) などの固有のテキスト要素になり、そこにページ ヘッダーやページ サブヘッダー、類似のテキスト見本定義の XAML スタイルを適用できるため、この問題はありません。
 
-## Miscellaneous Named styles
+## その他の名前付きスタイル
 
-There's an additional set of keyed [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) definitions you can apply to style a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) differently than its default implicit style.
+[
+            **Button**](https://msdn.microsoft.com/library/windows/apps/br209265) には、キーを持つ [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) 定義の追加のセットを適用することもできます。これにより、既定の暗黙的なスタイルとは異なるスタイルを設定できます。
 
 ### TextBlockButtonStyle
 
 **TargetType**: [**ButtonBase**](https://msdn.microsoft.com/library/windows/apps/br227736)
 
-Apply this style to a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) when you need to show text that a user can click to take action. The text is styled using the current accent color to distinguish it as interactive and has focus rectangles that work well for text. Unlike the implicit style of a [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739), the **TextBlockButtonStyle** does not underline the text.
+ユーザーがクリックしてアクションを実行できるテキストを表示する必要がある場合は、このスタイルを [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) に適用します。 このテキストには、対話型であることがわかるように現在のアクセント カラーを使ったスタイルが設定され、テキストに適したフォーカス四角形が表示されます。 [
+            **HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) の暗黙的なスタイルとは異なり、**TextBlockButtonStyle** のテキストには下線は付きません。
 
-The template also styles the presented text to use **SystemControlHyperlinkBaseMediumBrush** (for "PointerOver" state), **SystemControlHighlightBaseMediumLowBrush** (for "Pressed" state) and **SystemControlDisabledBaseLowBrush** (for "Disabled" state).
+このテンプレートは、表示テキストにもスタイルを設定して、**SystemControlHyperlinkBaseMediumBrush** ("PointerOver" 状態の場合)、**SystemControlHighlightBaseMediumLowBrush** ("Pressed" 状態の場合)、**SystemControlDisabledBaseLowBrush** ("Disabled" 状態の場合) が使われるようにします。
 
-Here's a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) with the **TextBlockButtonStyle** resource applied to it.
+**TextBlockButtonStyle** リソースを適用した [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) の例を以下に示します。
 
 ```XAML
 <Button Content="Clickable text" Style="{ThemeResource TextBlockButtonStyle}" 
         Click="Button_Click"/>
 ```
 
-It looks like this:
+次のようになります。
 
-![A button styled to look like text](images/styles-textblock-button-style.png)
+![テキストのような外観にスタイル設定されたボタン](images/styles-textblock-button-style.png)
 
 ### NavigationBackButtonNormalStyle
 
 **TargetType**: [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)
 
-This [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) provides a complete template for a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) that can be the navigation back button for a navigation app. It includes theme resource references that make this button use the Segoe MDL2 Assets symbol font, so you should use a [**Symbol**](https://msdn.microsoft.com/library/windows/apps/dn252842) value as the content rather than text. The default dimensions are 40 x 40 pixels. To tailor the styling you can either explicitly set the [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718), [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751), [**FontSize**](https://msdn.microsoft.com/library/windows/apps/br209406), and other properties on your **Button** or create a derived style using [**BasedOn**](https://msdn.microsoft.com/library/windows/apps/br208852).
+この [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) は、ナビゲーション アプリの "戻る" ボタンとして使うことができる [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 用の完全なテンプレートを提供します。 スタイルに含まれているいくつかのテーマ リソース参照により、このボタンでは Segoe MDL2 Assets 記号フォントが使われるようになります。このため、コンテンツでは、テキストではなく [**Symbol**](https://msdn.microsoft.com/library/windows/apps/dn252842) 値を使う必要があります。 既定の寸法は 40 x 40 ピクセルです。 スタイルを調整するには、**Button** の [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718)、[**Width**](https://msdn.microsoft.com/library/windows/apps/br208751)、[**FontSize**](https://msdn.microsoft.com/library/windows/apps/br209406)、その他のプロパティを明示的に設定するか、[**BasedOn**](https://msdn.microsoft.com/library/windows/apps/br208852) を使って派生スタイルを作成します。
 
-Here's a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) with the **NavigationBackButtonNormalStyle** resource applied to it.
+**NavigationBackButtonNormalStyle** リソースを適用した [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) の例を以下に示します。
 
 ```XAML
 <Button Content="&amp;#xE830;" Style="{ThemeResource NavigationBackButtonNormalStyle}" 
         Click="Button_Click"/>
 ```
 
-It looks like this:
+次のようになります。
 
-![A button styled as a back button](images/styles-back-button-normal.png)
+!["戻る" ボタンとしてスタイル設定されたボタン](images/styles-back-button-normal.png)
 
 ### NavigationBackButtonSmallStyle
 
 **TargetType**: [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)
 
-This [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) provides a complete template for a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) that can be the navigation back button for a navigation app. It's similar to **NavigationBackButtonNormalStyle**, but its dimensions are 30 by 30 pixels.
+この [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) は、ナビゲーション アプリの "戻る" ボタンとして使うことができる [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 用の完全なテンプレートを提供します。 **NavigationBackButtonNormalStyle** と同様ですが、寸法は 30 x 30 ピクセルになります。
 
-Here's a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) with the **NavigationBackButtonSmallStyle** resource applied to it.
+**NavigationBackButtonSmallStyle** リソースを適用した [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) の例を以下に示します。
 
 ```XAML
 <Button Content="&amp;#xE830;" Style="{ThemeResource NavigationBackButtonSmallStyle}" 
         Click="Button_Click"/>
 ```
 
-## Troubleshooting theme resources
+## テーマ リソースのトラブルシューティング
 
 
-If you don’t follow the [guidelines for using theme resources](#guidelines_for_using_theme_resources), you might see unexpected behavior related to themes in your app.
+[テーマ リソースの使用に関するガイドライン](#guidelines_for_using_theme_resources)に従わないと、テーマに関連する予期しない動作がアプリで発生することがあります。
 
-For example, when you open a light-themed flyout, parts of your dark-themed app also change as if they were in the light theme. Or if you navigate to a light-themed page and then navigate back, the original dark-themed page (or parts of it) now looks as though it is in the light theme.
+たとえば、淡色テーマのポップアップを開いたときに、濃色テーマのアプリの部分まで淡色テーマのように変更される場合があります。 または、淡色テーマのページに移動してから戻ってくると、元の濃色テーマのページ (またはその部分) が淡色テーマのように表示される場合もあります。
 
-Typically, these types of issues occur when you provide a "Default" theme and a "HighContrast" theme to support high-contrast scenarios, and then use both "Light" and "Dark" themes in different parts of your app.
+このような問題は、通常、"Default" テーマと "HighContrast" テーマを用意してハイ コントラスト シナリオをサポートした状態で、"Light" と "Dark" の両方のテーマをアプリ内の別々の部分で使っている場合に発生します。
 
-For example, consider this theme dictionary definition:
+たとえば、次のテーマ ディクショナリの定義について考えてみます。
 
 ```XAML
 <!-- DO NOT USE. THIS XAML DEMONSTRATES AN ERROR. -->
@@ -387,11 +390,11 @@ For example, consider this theme dictionary definition:
 </ResourceDictionary>
 ```
 
-Intuitively, this looks correct. You want to change the color pointed to by `myBrush` when in high-contrast, but when not in high-contrast, you rely on the [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md) to make sure that `myBrush` points to the right color for your theme. If your app never has [**FrameworkElement.RequestedTheme**](https://msdn.microsoft.com/library/windows/apps/dn298515) set on elements within its visual tree, this will typically work as expected. However, you run into problems in your app as soon as you start to re-theme different parts of your visual tree.
+直感的には、これは正しく見えます。 ハイ コントラストのときは `myBrush` が指す色を変更しますが、ハイ コントラストでない場合は、[{ThemeResource} マークアップ拡張](../xaml-platform/themeresource-markup-extension.md)を利用することで `myBrush` がテーマに適した色を指すようにしています。 これは通常、アプリのビジュアル ツリー内に [**FrameworkElement.RequestedTheme**](https://msdn.microsoft.com/library/windows/apps/dn298515) が設定された要素がなければ期待どおりに動作します。 しかし、ビジュアル ツリーの各部分にテーマを再設定し始めたとたんに、アプリで問題が発生することになります。
 
-The problem occurs because brushes are shared resources, unlike most other XAML types. If you have 2 elements in XAML sub-trees with different themes that reference the same brush resource, then as the framework walks each sub-tree to update its [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md) expressions, changes to the shared brush resource are reflected in the other sub-tree, which is not your intended result.
+問題が発生する原因は、他のほとんどの XAML 型とは異なり、ブラシが共有リソースであるためです。 XAML サブツリーに 2 つの要素があり、同じブラシ リソースを参照する別々のテーマが設定されている場合、フレームワークが各サブツリーを走査してそれぞれの [{ThemeResource} マークアップ拡張](../xaml-platform/themeresource-markup-extension.md)表現を更新していくと、それにつれて共有ブラシ リソースに対する変更が他のサブツリーに反映されます。これは意図した結果とは異なります。
 
-To fix this, replace the "Default" dictionary with separate theme dictionaries for both "Light" and "Dark" themes in addition to "HighContrast":
+これを修正するには、"Default" ディクショナリを置き換えて、"HighContrast" に加えて "Light" テーマと "Dark" テーマのディクショナリも個別に指定します。
 
 ```XAML
 <!-- DO NOT USE. THIS XAML DEMONSTRATES AN ERROR. -->
@@ -410,13 +413,13 @@ To fix this, replace the "Default" dictionary with separate theme dictionaries f
 </ResourceDictionary>
 ```
 
-However, problems still occur if any of these resources are referenced in inherited properties like [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414). Your custom control template might specify the foreground color of an element using the [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md), but when the framework propagates the inherited value to child elements, it provides a direct reference to the resource that was resolved by the {ThemeResource} markup extension expression. This causes problems when the framework processes theme changes as it walks your control's visual tree. It re-evaluates the {ThemeResource} markup extension expression to get a new brush resource but doesn’t yet propagate this reference down to the children of your control; this happens later, such as during the next measure pass.
+ただし、これらのリソースのいずれかが [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414) などの継承されたプロパティで参照されていると、引き続き問題が発生します。 カスタム コントロール テンプレートでは、[{ThemeResource} マークアップ拡張](../xaml-platform/themeresource-markup-extension.md)を使って要素の前景色を指定している場合がありますが、継承された値がフレームワークによって子要素に伝達されるときは、{ThemeResource} マークアップ拡張表現で解決されたリソースへの直接参照が提供されます。 フレームワークがコントロールのビジュアル ツリーを走査する過程でテーマの変更が処理されると、問題が発生します。 フレームワークは {ThemeResource} マークアップ拡張表現を再評価して新しいブラシ リソースを取得しますが、この参照はまだコントロールの子に伝達されません。子への伝達は、次回の測定パスの間など、後で行われます。
 
-As a result, after walking the control visual tree in response to a theme change, the framework walks the children and updates any [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md) expressions set on them, or on objects set on their properties. This is where the problem occurs; the framework walks the brush resource and because it specifies its color using a {ThemeResource} markup extension, it's re-evaluated.
+結果として、テーマの変更に応答してコントロールのビジュアル ツリーを走査した後、フレームワークは子を走査し、それぞれに設定されている [{ThemeResource} マークアップ拡張](../xaml-platform/themeresource-markup-extension.md)表現、または子のプロパティに設定されているオブジェクト上の表現をすべて更新します。 ここで問題が発生します。フレームワークがブラシ リソースを走査すると、その色は {ThemeResource} マークアップ拡張を使って指定されているため、ブラシ リソースが再評価されます。
 
-At this point, the framework appears to have polluted your theme dictionary because it now has a resource from one dictionary that has its color set from another dictionary.
+この時点で、あるディクショナリのリソースに別のディクショナリから設定された色が適用され、フレームワークがテーマ ディクショナリを汚染した形になります。
 
-To fix this problem, use the [{StaticResource} markup extension](../xaml-platform/staticresource-markup-extension.md) instead of [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md). With the guidelines applied, the theme dictionaries look like this:
+この問題を解決するには、[{ThemeResource} マークアップ拡張](../xaml-platform/staticresource-markup-extension.md)の代わりに [{StaticResource} マークアップ拡張](../xaml-platform/themeresource-markup-extension.md)を使います。 ガイドラインを適用したテーマ ディクショナリは次のようになります。
 
 ```XAML
 <ResourceDictionary>
@@ -434,10 +437,10 @@ To fix this problem, use the [{StaticResource} markup extension](../xaml-platfor
 </ResourceDictionary>
 ```
 
-Notice that the [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md) is still used in the "HighContrast" dictionary instead of [{StaticResource} markup extension](../xaml-platform/staticresource-markup-extension.md). This situation falls under the exception given earlier in the guidelines. Most of the brush values that are used for the "HighContrast" theme are using color choices that are globally controlled by the system, but exposed to XAML as a specially-named resource (those prefixed with ‘SystemColor’ in the name). The system enables the user to set the specific colors that should be used for their high contrast settings through the Ease of Access Center. Those color choices are applied to the specially-named resources. The XAML framework uses the same theme changed event to also update these brushes when it detects they’ve changed at the system level. This is why the {ThemeResource} markup extension is used here.
+"HighContrast" ディクショナリでは、[{StaticResource} マークアップ拡張](../xaml-platform/staticresource-markup-extension.md)ではなく [{ThemeResource} マークアップ拡張](../xaml-platform/themeresource-markup-extension.md)が引き続き使われていることに注意してください。 この状況は、ガイドラインで既に説明した例外に当てはまります。 "HighContrast" テーマに使われるブラシの値のほとんどは、システムによって全体的に制御される色から選択されますが、これらは特別な名前付きのリソース (名前に 'SystemColor' というプレフィックスが付いているもの) として XAML に公開されています。 ハイ コントラスト設定で使う特定の色は、コンピューターの簡単操作を通じてユーザーが設定できるようになっています。 これらの色の選択は、特別な名前付きのリソースに適用されます。 XAML フレームワークでは、システム レベルでの変更の検出時にこれらのブラシを更新する場合にも、同じテーマ変更イベントを使用します。 ここで {ThemeResource} マークアップ拡張が使われているのはこのためです。
 
-> **Note**&nbsp;&nbsp;  
-This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **注**& nbsp; & nbsp;  
+この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
 
 <!--HONumber=Mar16_HO1-->

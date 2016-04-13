@@ -1,22 +1,22 @@
 ---
-title: Reserved file and URI scheme names
-description: You can use URI associations to automatically launch your app when another app launches a specific URI scheme.
+title: 予約済みのファイルと URI スキーム名
+description: URI の関連付けを使用すると、別のアプリで特定の URI スキームを起動したときに自分のアプリを自動的に起動できます。
 ms.assetid: 7428C4A2-1380-4EBB-9C2A-7DF7B5C468AE
 ---
-# Reserved file and URI scheme names
+# 予約済みのファイルと URI スキーム名
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-You can use URI associations to automatically launch your app when another app launches a specific URI scheme. But there are some URI associations that you can’t use, associations that are reserved. If your app registers for a reserved association, that registration will be ignored. This topic lists the reserved file and URI scheme names that are not available to your app.
+URI の関連付けを使用すると、別のアプリで特定の URI スキームを起動したときに自分のアプリを自動的に起動できます。 ただし、使用できない URI の関連付けとして、予約済みの関連付けがいくつかあります。 アプリが予約済みの関連付けを登録する場合、その登録は無視されます。 ここでは、アプリで利用できない予約済みのファイルと予約済みの URI スキーム名の一覧を示します。
 
-## Reserved file types
+## 予約済みのファイルの種類
 
 
-There are two types of reserved file types: file types reserved for built-in apps and file types reserved for the operating system. When a file type reserved for a built-in app is launched, only the built-in app will launch. Any attempt to register your app with that file type is ignored. Similarly, any attempt to register your app with a file type reserved for the operating system also will be ignored.
+予約済みのファイルの種類には、組み込みアプリ用に予約されているファイルの種類と、オペレーティング システム用に予約されているファイルの種類です。 組み込みアプリ用に予約されたファイルの種類を起動された場合、組み込みアプリだけが起動します。 そのファイルの種類にアプリを登録しようとすると無視されます。 同様に、オペレーティング システム用に予約されたファイルの種類にアプリを登録しようとした場合も無視されます。
 
-File types reserved for built-in apps
+組み込みアプリ用に予約済みのファイルの種類
 
 | .aac  | .icon    | .pem  | .wdp   |
 |-------|----------|-------|--------|
@@ -33,12 +33,12 @@ File types reserved for built-in apps
 | .ico  | .p7b     | .wav  |        |
  
 
-## File types reserved for the operating system
+## オペレーティング システム用に予約済みのファイルの種類
 
 
-The following file types are reserved for the operating system
+オペレーティング システム用に次のファイルの種類が予約されています。
 
-| .accountpicture-ms | its      | .ops           | .url      |
+| .accountpicture-ms | .its      | .ops           | .url      |
 |--------------------|----------|----------------|-----------|
 | .ade               | .jar     | .pcd           | .vb       |
 | .adp               | .js      | .pif           | .vbe      |
@@ -77,18 +77,18 @@ The following file types are reserved for the operating system
 | .isp               | .ocx     | .ttf           |           |
  
 
-## Reserved URI scheme names
+## 予約済みの URI スキーム名
 
 
 | application.manifest                        | internetshortcut                      | ms-settings:network-mobilehotspot | shbfile                 |
 |---------------------------------------------|---------------------------------------|-----------------------------------|-------------------------|
-| application.reference                       | javascript                            | ms-settings:network-proxy         | shcmdfile               |
+| application.reference                       | JavaScript                            | ms-settings:network-proxy         | shcmdfile               |
 | batfile                                     | jscript                               | ms-settings:network-wifi          | shsfile                 |
-| bing                                        | jsefile                               | ms-settings:nfctransactions       | smb                     |
+| bing.                                        | jsefile                               | ms-settings:nfctransactions       | smb                     |
 | blob                                        | ldap                                  | ms-settings:notifications         | stickynotes             |
 | callto                                      | lnkfile                               | ms-settings:personalization       | sysfile                 |
 | cerfile                                     | mailto                                | ms-settings:privacy-calendar      | tel                     |
-| chm.filecmdfilecomfile                      | maps                                  | ms-settings:privacy-contacts      | telnet                  |
+| chm.filecmdfilecomfile                      | マップ                                  | ms-settings:privacy-contacts      | telnet                  |
 | cplfile                                     | microsoft.powershellscript.1          | ms-settings:privacy-customdevices | tn3270                  |
 | dllfile                                     | ms-accountpictureprovider             | ms-settings:privacy-feedback      | ttffile                 |
 | drvfile                                     | ms-appdata                            | ms-settings:privacy-location      | unknown                 |
@@ -104,7 +104,7 @@ The following file types are reserved for the operating system
 | explorer.closesession                       | ms-settings:batterysaver-usagedetails | ms-settings:windowsupdate         | wmp11.assocprotocol.mms |
 | explorer.erasedisc                          | ms-settings:bluetooth                 | ms-settings:workplace             | wsffile                 |
 | explorer.zipselection                       | ms-settings:connecteddevices          | ms-windows-store                  | wsfile                  |
-| file                                        | ms-settings:cortanasearch             | ms-word                           | wshfile                 |
+| ファイル                                        | ms-settings:cortanasearch             | ms-word                           | wshfile                 |
 | fonfile                                     | ms-settings:datasense                 | ocxfile                           | xbls                    |
 | hlpfile                                     | ms-settings:dateandtime               | office                            | zune                    |
 | htafile                                     | ms-settings:display                   | onenote                           |                         |

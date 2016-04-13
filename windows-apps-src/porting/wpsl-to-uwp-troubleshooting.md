@@ -1,58 +1,59 @@
 ---
-description: We highly recommend reading to the end of this porting guide, but we also understand that you're eager to forge ahead and get to the stage where your project builds and runs.
-title: Troubleshooting porting Windows Phone Silverlight to UWP
+description: この移植ガイドを最後まで読み進むことを強くお勧めしますが、まず先に進み、プロジェクトの構築と実行の段階に到達することを非常に望まれていることも理解できます。
+title: Windows Phone Silverlight から UWP への移植に関するトラブルシューティング
 ms.assetid: d9a9a2a7-9401-4990-a992-4b13887f2661
 ---
 
-#  Troubleshooting porting Windows Phone Silverlight to UWP
+#  Windows Phone Silverlight から UWP への移植に関するトラブルシューティング
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-The previous topic was [Porting the project](wpsl-to-uwp-porting-to-a-uwp-project.md).
+前のトピックは、「[プロジェクトへの移植](wpsl-to-uwp-porting-to-a-uwp-project.md)」でした。
 
-We highly recommend reading to the end of this porting guide, but we also understand that you're eager to forge ahead and get to the stage where your project builds and runs. To that end, you can make temporary progress by commenting or stubbing out any non-essential code, and then returning to pay off that debt later. The table of troubleshooting symptoms and remedies in this topic may be helpful to you at this stage, although it's not a substitute for reading the next few topics. You can always refer back to the table as you progress through the later topics.
+この移植ガイドを最後まで読み進むことを強くお勧めしますが、まず先に進み、プロジェクトの構築と実行の段階に到達することを非常に望まれていることも理解できます。 このために、重要でないコードに対してコメント アウトやスタブの挿入を行って一時的に先に進み、後でその部分に戻って対応することもできます。 このトピックには、トラブルシューティングの現象とその対処法を示す表が記載されており、以降のいくつかのトピックに示されている情報に代わるものではありませんが、この段階での作業に役立ちます。 以降のトピックを読み進む中で、いつでもこの表に戻って参考にすることができます。
 
-## Tracking down issues
+## 問題の検出
 
-XAML parse exceptions can be difficult to diagnose, particularly if there are no meaningful error messages within the exception. Make sure that the debugger is configured to catch first-chance exceptions (to try and catch the parsing exception early on). You may be able to inspect the exception variable in the debugger to determine whether the HRESULT or message has any useful information. Also, check Visual Studio's output window for error messages output by the XAML parser.
+XAML 解析例外は診断が難しい場合があります。特に、わかりやすいエラー メッセージが例外に含まれていない場合は、診断が難しくなります。 デバッガーが初回例外をキャッチするように構成されていることを確してください (早い段階で解析例外のキャッチを試行するため)。 デバッガーで例外変数を調べて、HRESULT やメッセージ内に役立つ情報が含まれているかどうかを確認できます。 また、XAML パーサーを使って、Visual Studio の出力ウィンドウを調べ、エラー メッセージの出力を確認することもできます。
 
-If your app terminates and all you know is that an unhandled exception was thrown during XAML markup parsing, then that could be the result of a reference to a missing resource (that is, a resource whose key exists for Windows Phone Silverlight apps but not for Windows 10 apps, such as some system **TextBlock** Style keys). Or, it could be an exception thrown inside a **UserControl**, a custom control, or a custom layout panel.
+アプリが終了したとき、確認できたことが、ハンドルされていない例外が XAML マークアップの解析中にスローされたことのみである場合は、存在しないリソース (システム **TextBlock** スタイル キーなどのキーが Windows 10 アプリには存在せず、Windows Phone Silverlight アプリに存在するリソース) への参照が原因であると考えられます。 または、**UserControl**、カスタム コントロール、カスタム レイアウト パネルの内部で例外がスローされたことも考えられます。
 
-A last resort is a binary split. Remove about half of the markup from a Page and re-run the app. You will then know whether the error is somewhere inside the half you removed (which you should now restore in any case) or in the half you did *not* remove. Repeat the process by splitting the half that contains the error, and so on, until you've zeroed in on the issue.
+最終手段として、バイナリ分割を使うことができます。 ページからマークアップのおよそ半分を削除し、アプリを再実行します。 これによって、エラーが削除した半分で発生しているか (いずれの場合でも、削除した部分はここで元に戻す必要があります)、または削除*しなかった*半分で発生しているかがわかります。 問題が特定されるまで、エラーを含む半分をさらに分割するプロセスを繰り返します。
 
 ## TargetPlatformVersion
 
-This section explains what to do if, on opening a Windows 10 project in Visual Studio, you see the message "Visual Studio update required. One or more projects require a platform SDK &lt;version&gt; that is either not installed or is included as part of a future update to Visual Studio."
+このセクションでは、Visual Studio で Windows 10 プロジェクトを開いたとき、"Visual Studio 更新プログラムが必要。 1 つ以上のプロジェクトでは、インストールされていないか、Visual Studio に対する今後の更新の一部として含まれるプラットフォーム SDK &lt;バージョン&gt; が必要です。" というメッセージが表示された場合に行う作業について説明します。
 
--   First, determine the version number of the SDK for Windows 10 that you have installed. Navigate to **C:\\Program Files (x86)\\Windows Kits\\10\\Include\\&lt;versionfoldername&gt;** and make a note of *&lt;versionfoldername&gt;*, which will be in quad notation, "Major.Minor.Build.Revision".
--   Open your project file for edit and find the `TargetPlatformVersion` and `TargetPlatformMinVersion` elements. Edit them to look like this, replacing *&lt;versionfoldername&gt;* with the quad notation version number you found on disk:
+-   まず、インストールされている SDK for Windows 10 のバージョン番号を確認します。 **C:\\Program Files (x86)\\Windows Kits\\10\\Include\\&lt;versionfoldername&gt;** に移動し、*&lt;versionfoldername&gt;* をメモしてください。これは、4 つの部分 "Major.Minor.Build.Revision" から成るバージョン文字列です。
+-   編集用のプロジェクト ファイルを開き、`TargetPlatformVersion` 要素と `TargetPlatformMinVersion` 要素を探します。 これらの要素を次のように編集します。*&lt;versionfoldername&gt;* は、ディスク上で見つけた 4 つの部分から成るバージョン番号に置き換えてください。
 
 ```xaml
    <TargetPlatformVersion><versionfoldername></TargetPlatformVersion>
    <TargetPlatformMinVersion><versionfoldername></TargetPlatformMinVersion>
 ```
 
-## Troubleshooting symptoms and remedies
+## 各現象のトラブルシューティングと対処法
 
-The remedy information in the table is intended to give you enough info to unblock yourself. You'll find further details about each of these issues as you read through later topics.
+この表の対処法に関する情報では、自身で問題を解消するために十分な情報を提供することが意図されています。 以降のトピックを読み進むことで、こうした各問題についてさらに詳細な情報が提供されます。
 
-| Symptom | Remedy |
+| 現象 | 対処法 |
 |---------|--------|
-| The XAML parser or compiler gives the error "_The name "&lt;typename&gt;" does not exist in the namespace […]._" | If &lt;typename&gt; is a custom type then, in your namespace prefix declarations in XAML markup, change "clr-namespace" to "using", and remove any assembly tokens. For platform types, this means that the type doesn't apply to the Universal Windows Platform (UWP), so find the equivalent and update your markup. Examples you might encounter right away are `phone:PhoneApplicationPage` and `shell:SystemTray.IsVisible`. | 
-| The XAML parser or compiler gives the error "_The member "&lt;membername&gt;" is not recognized or is not accessible._" or "_The property "&lt;propertyname&gt;" was not found in type [...]._". | These errors will begin to show up after you've ported some type names, such as the root **Page**. The member or property doesn't apply to the UWP, so find the equivalent and update your markup. Examples you might encounter right away are `SupportedOrientations` and `Orientation`. |
-| The XAML parser or compiler gives the error "_The attachable property [...] was not found [...]._" or "_Unknown attachable member [...]._". | This is likely to be caused by the type rather than the attached property; in which case, you will already have an error for the type and this error will go away once you fix that. Examples you might encounter right away are `phone:PhoneApplicationPage.Resources` and `phone:PhoneApplicationPage.DataContext`. | 
-|The XAML parser or compiler, or a runtime exception, gives the error "_The resource "&lt;resourcekey&gt;" could not be resolved._". | The resource key doesn't apply to Universal Windows Platform (UWP) apps. Find the correct equivalent resource and update your markup. Examples you might encounter right away are system **TextBlock** Style keys such as `PhoneTextNormalStyle`. |
-| The C# compiler gives the error "_The type or namespace name '&lt;name&gt;' could not be found [...]_" or "_The type or namespace name '&lt;name&gt;' does not exist in the namespace [...]_" or "_The type or namespace name '&lt;name&gt;' does not exist in the current context_". | This is likely to mean that the compiler doesn't yet know the correct UWP namespace for a type. Use Visual Studio's **Resolve** command to fix that. <br/>If the API is not in the set of APIs known as the universal device family (in other words, the API is implemented in an extension SDK), then use the [Extension SDKs](wpsl-to-uwp-porting-to-a-uwp-project.md#extension-sdks).<br/>There may be other cases where port is less straightforward. Examples you might encounter right away are `DesignerProperties` and `BitmapImage`. | 
-|When run on the device, the app terminates, or when launched from Visual Studio, you see the error “Unable to activate Windows Store app […]. The activation request failed with error ‘Windows was unable to communicate with the target application. This usually indicates that the target application’s process aborted. […]”. | The problem could be the imperative code running in your own Pages or in bound properties (or other types) during initialization. Or, it could be happening while parsing the XAML file about to be displayed when the app terminated (if launching from Visual Studio, that will be the startup page). Look for invalid resource keys, and/or try some of the guidance in the [Tracking down issues](#tracking-down-issues) section in this topic.|
-| _XamlCompiler error WMC0055: Cannot assign text value '&lt;your stream geometry&gt;' into property 'Clip' of type 'RectangleGeometry'_ | In the UWP, the type of the [Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) and XAML C++ UWP app. |
-| _XamlCompiler error WMC0001: Unknown type 'RadialGradientBrush' in XML namespace [...]_ | The UWP doesn't have the **RadialGradientBrush** type. Remove the **RadialGradientBrush** from markup and use some other type of [Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) and XAML C++ UWP app. |
-| _XamlCompiler error WMC0011: Unknown member 'OpacityMask' on element '&lt;UIElement type&gt;'_ | The UWP [Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) and XAML C++ UWP app. |
-| _A first chance exception of type 'System.Runtime.InteropServices.COMException' occurred in SYSTEM.NI.DLL. Additional information: The application called an interface that was marshalled for a different thread. (Exception from HRESULT: 0x8001010E (RPC_E_WRONG_THREAD))._ | The work you're doing needs to be done on the UI thread. Call the [**CoreWindow.GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589)). |
-| An animation is running, but it's having no effect on its target property. | Either make the animation independent, or set `EnableDependentAnimation="True"` on it. See [Animation](wpsl-to-uwp-porting-xaml-and-ui.md#animation). |
-| On opening a Windows 10 project in Visual Studio, you see the message "Visual Studio update required. One or more projects require a platform SDK &lt;version&gt; that is either not installed or is included as part of a future update to Visual Studio." | See the [TargetPlatformVersion](#targetplatformversion) section in this topic. |
-| A System.InvalidCastException is thrown when InitializeComponent is called in a xaml.cs file. | This can happen when you have more than one xaml file (at least one of which is MRT-qualified) sharing the same xaml.cs file and elements have x:Name attributes that are inconsistent between the two xaml files. Try adding the same name to the same elements in both xaml files, or omit names altogether. | 
+| XAML パーサーまたはコンパイラで、エラー "_名前 '&lt;型名&gt;' が名前空間 […] に存在しません_" が発生します。 | XAML マークアップの名前空間プレフィックス宣言で &lt;型名&gt; がカスタム型である場合は、"clr-namespace" を "using" に変更し、すべてのアセンブリ トークンを削除します。 プラットフォームの種類では、この型はユニバーサル Windows プラットフォーム (UWP) に適用されないことを示すので、相当する要素を見つけ、マークアップを更新します。 直ちに発生する例としては、`phone:PhoneApplicationPage`、`shell:SystemTray.IsVisible` などが挙げられます。 | 
+| XAML パーサーまたはコンパイラで、エラー "_メンバー '&lt;メンバー名&gt;' が認識されないか、アクセスできません_" または "_プロパティ '&lt;プロパティ名&gt;' が型 [...] で見つかりませんでした_" が発生します。 | これらのエラーは、ルート **Page** など、一部の型名を移植した後に発生し始めます。 メンバーまたはプロパティでは、この型は UWP に適用されないので、相当する要素を見つけ、マークアップを更新します。 直ちに発生する例としては、`SupportedOrientations`、`Orientation` などが挙げられます。 |
+| XAML パーサーまたはコンパイラで、エラー "_接続可能なプロパティ [...] が見つかりませんでした [...]_" または "_接続可能なメンバー [...] が不明です_" が発生します。 | これは、添付プロパティではなく、型によって発生します。この場合には、既に該当する型に対してエラーが発生しており、そのエラーを修正すれば、このエラーも解消されます。 直ちに発生する例としては、`phone:PhoneApplicationPage.Resources`、`phone:PhoneApplicationPage.DataContext` などが挙げられます。 | 
+|XAML のパーサーやコンパイラ、またはランタイム例外で、"_リソース '&lt;リソースキー&gt;' を解決できませんでした_" というエラーが発生します。 | リソース キーは、ユニバーサル Windows プラットフォーム (UWP) アプリに適用されません。 同等の正しいリソースを探し、マークアップを更新します。 直ちに発生する例としては、`PhoneTextNormalStyle` などのシステム **TextBlock** スタイル キーが挙げられます。 |
+| C# コンパイラで、エラー "_型または名前空間の名前 '&lt;名前&gt;' が見つかりませんでした [...]_"、"型または名前空間の名前 '_&lt;名前&gt;' が名前空間 [...] に存在しません_"、または "_型または名前空間の名前 '&lt;名前&gt;' が現在のコンテキスト内に存在しません_" が発生します。 | これはおそらく、コンパイラで型に対する適切な UWP の名前空間がまだ認識されていないことを示します。 問題解決のために Visual Studio の **[解決]** コマンドを使うことができます。 <br/>API がユニバーサル デバイス ファミリと呼ばれる API のセットに含まれていない場合 (つまり、API が拡張 SDK で実装されている場合)、[拡張 SDK](wpsl-to-uwp-porting-to-a-uwp-project.md#extension-sdks) を使います。<br/>移植がそれほど簡単ではない場合もあります。 直ちに発生する例としては、`DesignerProperties`、`BitmapImage` などが挙げられます。 | 
+|アプリが終了するデバイス上で実行している場合、または Visual Studio からの起動時に、エラー "Windows ストア アプリ […] をアクティブ化できません。 アクティブ化要求がエラー "Windows がターゲット アプリケーションと通信できませんでした" により失敗します。 これは通常、ターゲット アプリケーションのプロセスが中止したことを示します。 […]” が表示されます。 | この問題は、初期化時に独自のページ、またはバインド プロパティ (またはその他の型) で実行する命令型コードにあることが考えられます。 また、アプリの終了時に表示される XAML ファイルの解析でエラーが発生した可能性があります (Visual Studio から起動した場合は、これは起動ページになります)。 無効なリソース キーを検索するか、このトピックの「[問題の検出](#tracking-down-issues)」セクションのガイダンスを実行します。|
+| _XamlCompiler エラー WMC0055: テキスト値 '&lt;ストリーム ジオメトリ&gt;' を 'RectangleGeometry' 型の 'Clip' プロパティに割り当てることができません'_ | UWP では、[Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) と XAML C++ UWP アプリの型を使います。 |
+| _XamlCompiler エラー WMC0001: XML 名前空間 [...] で 'RadialGradientBrush' 型が不明です_ | UWP には、**RadialGradientBrush** 型がありません。 マークアップから **RadialGradientBrush** を削除し、[Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) と XAML C++ UWP アプリのその他の型を使います。 |
+| _XamlCompiler エラー WMC0011: 要素 '&lt;UIElement 型&gt;' のメンバー 'OpacityMask' が不明です_ | UWP の  [Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) と XAML C++ UWP アプリを使います。 |
+| _'System.Runtime.InteropServices.COMException' 型の最初の例外は、SYSTEM.NI.DLL で発生する可能性があります。 アプリケーションは、異なるスレッドに対してマーシャリングされたインターフェイスを呼び出しました (HRESULT からの例外: 0x8001010E (RPC_E_WRONG_THREAD))。_ | ここで実行する作業は、UI スレッド上で行う必要があります。 [
+            **CoreWindow.GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589)) を呼び出します。 |
+| アニメーションは実行中ですが、ターゲット プロパティに対しては無効です。 | アニメーションを独立して実行するか、またはアニメーションに対して `EnableDependentAnimation="True"` を設定します。 「[アニメーション](wpsl-to-uwp-porting-xaml-and-ui.md#animation)」をご覧ください。 |
+| Visual Studio で Windows 10 プロジェクトを開いたとき、"Visual Studio 更新プログラムが必要。 1 つ以上のプロジェクトでは、インストールされていないか、Visual Studio に対する今後の更新の一部として含まれるプラットフォーム SDK &lt;バージョン&gt; が必要です。" というメッセージが表示された場合に行う作業について説明します。 | このトピックの「[TargetPlatformVersion](#targetplatformversion)」セクションをご覧ください。 |
+| InitializeComponent が xaml.cs ファイルで呼び出されると、System.InvalidCastException がスローされます。 | これは、同じ xaml.cs ファイルを共有している xaml ファイルが複数あり (少なくとも 1 つは MRT 修飾されたファイル)、要素が持つ x:Name 属性が 2 つの xaml ファイル間で整合性がとれていない場合に発生することがあります。 両方の xaml ファイルで同じ要素に同じ名前を追加してみるか、どちらの名前も省略してください。 | 
 
-The next topic is [Porting XAML and UI](wpsl-to-uwp-porting-xaml-and-ui.md).
+次のトピックは、「[XAML と UI の移植](wpsl-to-uwp-porting-xaml-and-ui.md)」です。
 
 
 

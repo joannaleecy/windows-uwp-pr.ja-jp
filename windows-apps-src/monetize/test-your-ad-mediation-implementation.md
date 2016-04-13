@@ -1,48 +1,48 @@
 ---
 ms.assetid: 54ECD653-7FC2-4A95-AC5A-972C4FB5A54B
-description: Before you submit your app, we recommend testing your ad mediation implementation.
-title: Test your ad mediation implementation
+description: アプリを提出する前に、広告の仲介の実装をテストすることをお勧めします。
+title: 広告の仲介の実装のテスト
 ---
 
-# Test your ad mediation implementation
+# 広告の仲介の実装のテスト
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-Before you submit your app, we recommend testing your ad mediation implementation.
+アプリを提出する前に、広告の仲介の実装をテストすることをお勧めします。
 
-## Testing with test ad network configuration values
+## テスト用の広告ネットワーク構成値を使ったテスト
 
 
-If you run your app without entering ad network configuration by launching **Connected Services** for your project in Visual Studio, ad mediation will automatically use test configuration values when you run your app on your development computer (for Universal Windows Platform (UWP) and Windows 8.1 XAML apps) or on the emulator or device (for Windows Phone apps). This enables you to quickly test your app and make sure it's coded correctly before you've entered your ad network required parameters.
+開発用のコンピューター上 (ユニバーサル Windows プラットフォーム (UWP) および Windows 8.1 XAML アプリ) またはエミュレーターやデバイス上 (Windows Phone アプリ) でアプリを実行するときに、Visual Studio でプロジェクトの **[接続済みサービス]** を起動して広告ネットワークの構成を入力することなくアプリを実行した場合、広告の仲介では自動的にテスト用の構成値が使われます。 これにより、広告ネットワークの必須パラメーターを入力する前に、アプリを簡単にテストしてアプリが正しく記述されていることを確認できます。
 
-The ad networks will rotate in sequential order, with one network displayed after another for equal amounts of time. Be sure to wait long enough to run through a few cycles so you can view all ad networks and reduce the chance of any temporary connectivity issues which may occur.
+広告ネットワークは順番に切り替えられ、次々と同じ時間だけ表示されます。 すべての広告ネットワークを表示できるように、また一時的な接続の問題が発生する可能性を小さくできるように、十分な時間をかけて数回のサイクルが実行されるのを待ちます。
 
-Test ads will be displayed for ad networks which support them. Note that the test ads can sometimes look like errors. Be sure to review your events to determine if errors have occurred.
+対応している広告ネットワークのテスト広告が表示されます。 テスト広告はエラーのように見える場合があるので注意してください。 イベントを確認して、エラーが発生したかどうかを確かめてください。
 
-**Note**  When testing a Windows Phone Silverlight app, Google AdMob will always return an **Invalid Request** error since it does not use test metadata. To verify your Google AdMob implementation, you must enter the required parameters, as described in the next section.
+**注**  Windows Phone Silverlight アプリをテストする際、Google AdMob はテスト メタデータを使用しないため、常に **[無効な要求]** エラーを返します。 Google AdMob の実装を確認するには、次のセクションで説明する必須のパラメーターを入力する必要があります。
 
  
 
-If you used the event handling code shown in [Add and use the ad mediator control](add-and-use-the-ad-mediator-control.md), any errors will be shown in the console output.
+「[広告のメディエーター コントロールの追加と使用](add-and-use-the-ad-mediator-control.md)」に示したイベント処理コードを使った場合、エラーはコンソール出力に表示されます。
 
-## Testing with your ad network configuration values
+## 広告ネットワーク構成値を使ったテスト
 
 
-After testing your app with test configuration data, you’ll want to test your app with the ad network configuration values that you intend to use for the version of your app that you publish to the Windows Store.
+テスト用の構成データを使ってアプリをテストした後に、Windows ストアに公開するアプリが使用する広告ネットワーク構成値を使ってアプリをテストします。
 
-First, open the **Add Connected Service** window (Visual Studio 2015) or **Services Manager** window (Visual Studio 2013) and configure each ad network as described in [Add and use the ad mediator control](add-and-use-the-ad-mediator-control.md). Enter the required parameters for each ad network.
+最初に **[接続済みサービスの追加]** ウィンドウ (Visual Studio 2015) または **[サービス マネージャー]** ウィンドウ (Visual Studio 2013) を開いて、「[広告のメディエーター コントロールの追加と使用](add-and-use-the-ad-mediator-control.md)」に記載されているように各広告ネットワークを構成します。 各広告ネットワークの必須のパラメーターを入力します。
 
-Now you’re ready to test your app. Make sure to run the app long enough to verify that each ad network can properly display an ad. Check for any exceptions and fix coding errors before you submit your app.
+これで、アプリをテストできるようになりました。 十分な時間アプリを実行して、各広告ネットワークで広告を正しく表示できることを確認してください。 例外の有無を確認し、アプリを提出する前にコーディング エラーを修正します。
 
-When you submit your app package to the Windows Dev Center dashboard, the configuration values you enter in Visual Studio are automatically populated in the **Monetize with ads** dashboard page. You can modify these values to configure ad network behavior for your app in the Windows Store. For more information, see [Submit your app and configure ad mediation](submit-your-app-and-configure-ad-mediation.md).
+アプリ パッケージを Windows デベロッパー センター ダッシュボードに提出すると、Visual Studio で入力した構成値が自動的に **[広告で収入を増やす]** ダッシュボード ページに入力されます。 これらの値を変更して、Windows ストアのアプリの広告ネットワークの動作を構成できます。 詳しくは、「[アプリの提出と広告の仲介の構成](submit-your-app-and-configure-ad-mediation.md)」をご覧ください。
 
-## Related topics
+## 関連トピック
 
-* [Select and manage your ad networks](select-and-manage-your-ad-networks.md)
-* [Add and use the ad mediation control](add-and-use-the-ad-mediator-control.md)
-* [Submit your app and configure ad mediation](submit-your-app-and-configure-ad-mediation.md)
-* [Troubleshoot ad mediation](troubleshoot-ad-mediation.md)
+* [広告ネットワークの選択と管理](select-and-manage-your-ad-networks.md)
+* [広告の仲介コントロールの追加と使用](add-and-use-the-ad-mediator-control.md)
+* [アプリの提出と広告の仲介の構成](submit-your-app-and-configure-ad-mediation.md)
+* [広告の仲介のトラブルシューティング](troubleshoot-ad-mediation.md)
  
 
  

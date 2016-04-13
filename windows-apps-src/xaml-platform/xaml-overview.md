@@ -1,44 +1,44 @@
 ---
-description: We introduce the XAML language and XAML concepts to the Windows Runtime app developer audience, and describe the different ways to declare objects and set attributes in XAML as it is used for creating a Windows Runtime app.
-title: XAML overview
+description: ここでは、Windows ランタイム アプリの開発者を対象に、XAML 言語と XAML の概念を紹介し、Windows ランタイム アプリを作成する際に XAML でオブジェクトを宣言したり属性を設定したりするためのさまざまな方法について説明します。
+title: XAML の概要
 ms.assetid: 48041B37-F1A8-44A4-BB8E-1D4DE30E7823
 ---
 
-# XAML overview
+# XAML の概要
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-We introduce the XAML language and XAML concepts to the Windows Runtime app developer audience, and describe the different ways to declare objects and set attributes in XAML as it is used for creating a Windows Runtime app.
+ここでは、Windows ランタイム アプリの開発者を対象に、XAML 言語と XAML の概念を紹介し、Windows ランタイム アプリを作成する際に XAML でオブジェクトを宣言したり属性を設定したりするためのさまざまな方法について説明します。
 
-## What is XAML?
+## XAML とは
 
-Extensible Application Markup Language (XAML) is a declarative language. Specifically, XAML can initialize objects and set properties of objects, using a language structure that shows hierarchical relationships between multiple objects, and using a backing type convention that supports extension of types. You can create visible UI elements in the declarative XAML markup. You can then associate a separate code-behind file for each XAML file that can respond to events and manipulate the objects that you originally declare in XAML.
+XAML (Extensible Application Markup Language) は宣言型言語の一種です。 具体的には、XAML では、複数のオブジェクトの間の階層的な関係を示す言語構造と、型の拡張をサポートするバッキング型変換を使って、オブジェクトの初期化とオブジェクトのプロパティの設定を行うことができます。 表示される UI 要素を宣言型 XAML マークアップで作成できます。 さらに、各 XAML ファイルに別のコード ビハインド ファイルを関連付けて、イベントに応答することも、XAML で宣言したオブジェクトを操作することもできます。
 
-The XAML language supports interchange of sources between different tools and roles in the development process, such as exchanging XAML sources between design tools and an IDE, or between primary developers and localization developers. By using XAML as the interchange format, designer roles and developer roles can be kept separate or brought together, and designers and developers can iterate during the production of an app.
+XAML 言語では、開発プロセスにおけるさまざまなツールや役割の間でソースを交換できます。たとえば、デザイン ツールと IDE の間や、メインの開発者とローカライズを担当する開発者の間で XAML ソースを交換できます。 交換形式として XAML を使うことで、デザイナーと開発者の役割を分離または結合して、それぞれがアプリの制作中に反復的な作業を行うことができます。
 
-When you see them as part of your Windows Runtime app projects, XAML files are XML files with the .xaml file name extension.
+Windows ランタイム アプリ プロジェクトの一部としてみた場合、XAML ファイルは .xaml というファイル名拡張子を持つ XML ファイルです。
 
-## Basic XAML syntax
+## 基本的な XAML 構文
 
-XAML has a basic syntax that builds on XML. By definition, valid XAML must also be valid XML. But XAML also has syntax concepts that are assigned a different and more complete meaning, while still being valid in XML per the XML 1.0 specification. For example, XAML supports *property element syntax*, where property values can be set within elements rather than as string values in attributes or as content. To regular XML, a XAML property element is an element with a dot in its name, so it's valid to plain XML but doesn't have the same meaning.
+XAML には、XML に基づく基本的な構文があります。 定義上、有効な XAML は、有効な XML でもある必要があります。 しかし、XAML には、XML 1.0 仕様に基づいて有効な XML でありつつも、別のより完全な意味が割り当てられた構文概念もあります。 たとえば、属性の文字列値またはコンテンツとしてではなく要素内でプロパティ値を設定できる*プロパティ要素構文*がサポートされています。 標準 XML と比較すると、XAML プロパティ要素は、名前にドットを含む要素であるため、プレーン XML でも有効ではありますが、同じ意味にはなりません。
 
-## XAML and Microsoft Visual Studio
+## XAML と Microsoft Visual Studio
 
-Microsoft Visual Studio helps you to produce valid XAML syntax, both in the XAML text editor and in the more graphically oriented XAML design surface. So when you write XAML for your app using Visual Studio, don't worry too much about the syntax with each keystroke. The IDE encourages valid XAML syntax by providing autocompletion hints, showing suggestions in Microsoft IntelliSense lists and dropdowns, showing UI element libraries in the toolbox, or other techniques. If this is your first experience with XAML, it might still be useful to know the syntax rules and particularly the terminology that is sometimes used to describe the restrictions or choices when we describe XAML syntax in reference or other topics. We cover these fine points of XAML syntax in a separate topic, [XAML syntax guide](xaml-syntax-guide.md).
+Microsoft Visual Studio では、XAML テキスト エディターでも、もっとグラフィカル指向の XAML デザイン サーフェイスでも、有効な XAML 構文の生成を支援する機能を使うことができます。 そのため、Visual Studio を使ってアプリの XAML を作成するときは、キー入力のたびに構文を気にかける必要はありません。 IDE は有効な XAML 構文を記述できるように支援してくれます。たとえば、オート コンプリートによるヒント、Microsoft IntelliSense でのドロップダウン リストによる候補の表示、ツールボックスでの UI 要素ライブラリの表示などの機能があります。 それでも、XAML を初めて使う場合は、XAML 構文の規則と、リファレンスなどのトピックでの XAML 構文の解説で制限や選択肢の説明に使われることがある用語を確認しておくと役に立ちます。 XAML 構文の細かな点について詳しくは、「[XAML 構文のガイド](xaml-syntax-guide.md)」をご覧ください。
 
-## XAML namespaces
+## XAML 名前空間
 
-In general programming, a namespace is an organizing concept that determines how identifiers for programming entities are interpreted. By using namespaces, a programming framework can separate user-declared identifiers from framework-declared identifiers, disambiguate identifiers through namespace qualifications, enforce rules for scoping names, and so on. XAML has its own XAML namespace concept that serves this purpose for the XAML language. Here's how XAML applies and extends the XML language namespace concepts:
+一般的なプログラミングでは、名前空間とは、プログラミング エンティティの識別子がどのように解釈されるかを決定する、整理のための概念です。 名前空間を使うことで、プログラミング フレームワークは、ユーザーが宣言した識別子とフレームワークで宣言された識別子を区別し、名前空間の修飾により識別子を明確化し、名前スコープの規則を強制的に適用したりすることができます。 XAML には、XAML 言語でこの目的を果たすための独自の XAML 名前空間の概念があります。 XAML では、XML 言語の名前空間の概念が次のように応用および拡張されています。
 
--   XAML uses the reserved XML attribute **xmlns** for namespace declarations. The value of the attribute is typically a Uniform Resource Identifier (URI), which is a convention inherited from XML.
--   XAML uses prefixes in declarations to declare non-default namespaces, and prefix usages in elements and attributes reference that namespace.
--   XAML has a concept of a default namespace, which is the namespace used when no prefix exists in a usage or declaration. The default namespace can be defined differently for each XAML programming framework.
--   Namespace definitions inherit in a XAML file or construct, from parent element to child element. For example if you define a namespace in the root element of a XAML file, all elements within that file inherit that namespace definition. If an element further into the page redefines the namespace, that element's descendants inherit the new definition.
--   Attributes of an element inherit the element's namespaces. It's fairly uncommon to see prefixes on XAML attributes.
+-   XAML は、名前空間の宣言のために予約された XML 属性 **xmlns** を使います。 この属性の値は、通常は、Uniform Resource Identifier (URI) です。これは XML から継承した慣例です。
+-   XAML では、宣言でプレフィックスを使って既定以外の名前空間を宣言し、要素や属性内でプレフィックスを使うことでその名前空間を参照します。
+-   XAML には、使用時または宣言時にプレフィックスが付いていないときに使う名前空間である既定の名前空間という概念があります。 既定の名前空間は、XAML プログラミング フレームワークそれぞれに異なる名前空間を定義することができます。
+-   名前空間の定義は、XAML ファイルまたはコンストラクト内で親要素から子要素に継承されます。 たとえば XAML ファイルのルート要素の名前空間を定義する場合、そのファイル内のすべての要素はその名前空間の定義を継承します。 ページへの要素がさらに名前空間を定義し直した場合、その要素の子孫は新しい定義を継承します。
+-   要素の属性は、要素の名前空間を継承します。 XAML 属性でプレフィックスが使用されることはかなりまれです。
 
-A XAML file almost always declares a default XAML namespace in its root element. The default XAML namespace defines which elements you can declare without qualifying them by a prefix. For typical Windows Runtime app projects, this default namespace contains all the built-in XAML vocabulary for the Windows Runtime that's used for UI definitions: the default controls, text elements, XAML graphics and animations, databinding and styling support types, and so on. Most of the XAML you'll write for Windows Runtime apps will thus be able to avoid using XAML namespaces and prefixes when referring to common UI elements.
+ほとんどの場合、XAML ファイルでは、既定の XAML 名前空間をルート要素で宣言します。 既定の XAML 名前空間は、プレフィックスで修飾することなく宣言できる要素を定義します。 一般的な Windows ランタイム アプリ プロジェクトの場合、この既定の名前空間には、UI 定義で使われる Windows ランタイムの組み込み XAML ボキャブラリがすべて含まれます。これは既定のコントロール、テキスト要素、XAML グラフィックス、アニメーション、データバインド、スタイル サポートの種類などを含みます。 こうして、Windows ランタイム アプリ用に作成する XAML の大半は、一般的な UI 要素を参照するときに XAML の名前空間とプレフィックスを使うことを避けられます。
 
-Here's a snippet showing a template-created [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) root of the initial page for an app (showing the opening tag only, and simplified). It declares the default namespace and also the **x** namespace (which we'll explain next).
+次のスニペットは、テンプレートを使って作成された、アプリの開始ページの [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) ルートです (開始タグのみを表し、以降は省略しています)。 これは既定の名前空間を宣言し、**x** 名前空間 (次に説明) も宣言しています。
 
 ```xaml
 <Page
@@ -48,65 +48,67 @@ Here's a snippet showing a template-created [**Page**](https://msdn.microsoft.co
 >
 ```
 
-## The XAML-language XAML namespace
+## XAML 言語の XAML 名前空間
 
-One particular XAML namespace that is declared in nearly every Windows Runtime XAML file is the XAML-language namespace. This namespace includes elements and concepts that are defined by the XAML language, by its language specification. By convention, the XAML-language XAML namespace is mapped to the prefix "x". The default project and file templates for Windows Runtime app projects always define both the default XAML namespace (no prefix, just `xmlns=`) and the XAML-language XAML namespace (prefix "x") as part of the root element.
+ほぼすべての Windows ランタイム XAML ファイルで宣言される特定の XAML 名前空間が、XAML 言語の名前空間です。 この名前空間は、言語仕様に従って XAML 言語で定義される要素と概念を含みます。 慣例として、XAML 言語の XAML 名前空間はプレフィックス "x" にマップされます。 Windows ランタイム アプリ プロジェクトの既定のプロジェクト テンプレートとファイル テンプレートでは、既定の XAML 名前空間 (プレフィックスなし、`xmlns=` のみ) と XAML 言語の XAML 名前空間 (プレフィックス "x") の両方がルート要素の一部として必ず定義されます。
 
-The "x" prefix/XAML-language XAML namespace contains several programming constructs that you use often in your XAML. Here are the most common ones:
+"x" プレフィックス/XAML 言語の XAML 名前空間には、XAML でよく使われるプログラミング構成要素がいくつか存在します。 代表的なコントロールをいくつか次に示します。
 
-| Term | Description |
+| 用語 | 説明 |
 |------|-------------|
-| [x:Key](x-key-attribute.md) | Sets a unique user-defined key for each resource in a XAML [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794). The key's token string is the argument for the **StaticResource** markup extension, and you use this key later to retrieve the XAML resource from another XAML usage elsewhere in your app's XAML. |
-| [x:Class](x-class-attribute.md) | Specifies the code namespace and code class name for the class that provides code-behind for a XAML page. This names the class that is created or joined by the build actions when you build your app. These build actions support the XAML markup compiler and combine your markup and code-behind when the app is compiled. You must have such a class to support code-behind for a XAML page. [**Window.Content**](https://msdn.microsoft.com/library/windows/apps/br209051) in the default Windows Runtime activation model. |
-| [x:Name](x-name-attribute.md) | Specifies a run-time object name for the instance that exists in run-time code after an object element defined in XAML is processed. You can think of setting **x:Name** in XAML as being like declaring a named variable in code. As you'll learn later, that's exactly what happens when your XAML is loaded as a component of a Windows Runtime app. <br/><div class="alert">**Note**  [**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735) is a similar property in the framework but not all elements support it. So you use **x:Name** for element identification, whenever **FrameworkElement.Name** is not supported on that element type. |
-| [x:Uid](x-uid-directive.md) | Identifies elements that should use localized resources for some of their property values. For more info on how to use **x:Uid**, see [Quickstart: Translating UI resources](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329). |
-| [XAML intrinsic data types](xaml-intrinsic-data-types.md) | These types can specify values for simple value-types when that's required for an attribute or resource. These intrinsic types correspond to the simple value types that are typically defined as part of each programming language's intrinsic definitions. For example, you might need an object representing a **true** Boolean value to use in an [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320) storyboarded visual state. For that value in XAML, you'd use the **x:Boolean** intrinsic type as the object element, like this: <code>&lt;x:Boolean&gt;True&lt;/x:Boolean&gt;</code> | 
+| [x:Key](x-key-attribute.md) | XAML [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 内の各リソースにユーザー定義の一意のキーを設定します。 このキー トークンの文字列は、**StaticResource** マークアップ拡張の引数であり、後でこのキーを使って、アプリの XAML のどこかで使われた別の XAML の XAML リソースを取得することができます。 |
+| [x:Class](x-class-attribute.md) | XAML ページのコード ビハインドを提供するクラスのコード名前空間とコード クラス名を指定します。 これによって、アプリのビルド時にビルド アクションによって作成または結合されたクラスの名前が付けられます。 これらのビルド アクションは、XAML マークアップ コンパイラをサポートし、アプリがコンパイルされるときにマークアップとコード ビハインドを組み合わせます。 XAML ページのコード ビハインドをサポートするには、このようなクラスが必要です。 既定の Windows ランタイムのライセンス認証モデルの [**Window.Content**](https://msdn.microsoft.com/library/windows/apps/br209051)。 |
+| [x:Name](x-name-attribute.md) | XAML で定義されたオブジェクト要素が処理された後のランタイム コードに存在するインスタンスのランタイム オブジェクト名を指定します。 XAML で **x:Name** を設定することは、コードで名前付き変数を宣言するようなものと考えることができます。 後でわかるように、これは、まさに Windows ランタイム アプリのコンポーネントとして XAML を読み込むときに起こることです。 <br/><div class="alert">**注**  [**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735)は、フレームワークの同様のプロパティと同じですが、すべての要素でサポートされているわけではありません。 そのため、その要素型で **FrameworkElement.Name** がサポートされていない場合はいつでも、要素 ID に **x:Name** を使用できます。 |
+| [x:Uid](x-uid-directive.md) | 一部のプロパティ値にローカライズされたリソースを使う必要がある要素を識別します。 **x:Uid** の使い方について詳しくは、「[クイック スタート: UI リソースの翻訳](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)」をご覧ください。 |
+| [XAML 固有のデータ型](xaml-intrinsic-data-types.md) | これらの型は、属性やリソースで必要なときに、単純な値型の値を指定できます。 この本質的な型は、各プログラミング言語に固有の定義の一部として一般的に定義される単純な値型に対応しています。 たとえば、[**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320) のストーリーボードに設定された表示状態で使うブール値に対応する **true** を表すオブジェクトが必要になることがあります。 XAML でのその値の場合、**x:Boolean** 固有の型を次のようにオブジェクト要素として使います。 <code>&lt;x:Boolean&gt;True&lt;/x:Boolean&gt;</code> | 
 
-Other programming constructs in the XAML-language XAML namespace exist but are not as common.
+XAML 言語の XAML 名前空間には、その他のプログラミング構成要素もありますが、あまり一般的ではありません。
 
-## Mapping custom types to XAML namespaces
+## XAML 名前空間へのカスタム型のマッピング
 
-One of the most powerful aspects of XAML as a language is that it's easy to extend the XAML vocabulary for your Windows Runtime apps. You can define your own custom types in your app's programming language and then reference your custom types in XAML markup. Support for extension through custom types is fundamentally built-in to how the XAML language works. Frameworks or app developers are responsible for creating the backing objects that XAML references. Neither frameworks nor the app developer are bound by specifications of what the objects in their vocabularies represent or do beyond the basic XAML syntax rules (there are some expectations of what the XAML-language XAML namespace types should do, but the Windows Runtime provides all the necessary support).
+XAML の言語として最も強力な機能の 1 つが、Windows ランタイム アプリの XAML ボキャブラリを簡単に拡張できることです。 アプリのプログラミング言語で独自のカスタム型を定義でき、XAML マークアップでそのカスタム型を参照できます。 カスタム型による機能拡張のサポートは、基本的に XAML 言語のしくみに組み込まれています。 フレームワークやアプリの開発者は、XAML が参照するバッキング オブジェクトを作成する責任を負います。 フレームワークもアプリ開発者も、ボキャブラリ内のオブジェクトが何を表現し、基本的な XAML 構文規則を超えて何を行うかについて仕様にバインドされることはありません (XAML 言語の XAML 名前空間の型がなすべきことについて期待されることはありますが、Windows ランタイムはすべての必要なサポートを提供しています)。
 
-If you use XAML for types that come from libraries other than the Windows Runtime core libraries and metadata, you must declare and map a XAML namespace with a prefix. Use that prefix in element usages to reference the types that were defined in your library. You declare prefix mappings as **xmlns** attributes, typically in a root element along with the other XAML namespace definitions.
+Windows ランタイム コア ライブラリ以外のライブラリとメタデータに含まれる型のために XAML を使う場合は、プレフィックスを使って XAML 名前空間を宣言およびマップする必要があります。 ライブラリで定義された型を参照するには、要素を使うときにそのプレフィックスを使います。 プレフィックス マッピングは、通常はルート要素で、その他の XAML 名前空間定義と一緒に、**xmlns** 属性として宣言します。
 
-To make your own namespace definition that references custom types, you first specify the keyword **xmlns:**, then the prefix you want. The value of that attribute must contain the keyword **using:** as the first part of the value. The remainder of the value is a string token that references the specific code-backing namespace that contains your custom types, by name.
+カスタム型を参照する独自の名前空間定義を行うには、キーワード **xmlns:** に続けて目的のプレフィックスを指定します。 この属性の値には、先頭部分にキーワード **using:** を含める必要があります。 値の残り部分は、カスタム型を含む特定のコード バッキング名前空間を名前で参照する文字列トークンです。
 
-The prefix defines the markup token that is used to refer to that XAML namespace in the remainder of the markup in that XAML file. A colon character (:) goes between the prefix and the entity to be referenced within the XAML namespace.
+プレフィックスは、その XAML ファイル内の残りのマークアップでその XAML 名前空間を参照するために使われるマークアップ トークンを定義します。 プレフィックスと、XAML 名前空間内で参照されるエンティティの間は、コロン (:) で区切ります。
 
-For example, the attribute syntax to map a prefix `myTypes` to the namespace `myCompany.myTypes` is: `    xmlns:myTypes="using:myCompany.myTypes"`, and a representative element usage is: `<myTypes:CustomButton/>`
+たとえば、プレフィックス `myTypes` を名前空間 `myCompany.myTypes` にマップする属性構文は `    xmlns:myTypes="using:myCompany.myTypes"` で、代表的な要素の使用方法は `<myTypes:CustomButton/>` のようになります。
 
-For more info on mapping XAML namespaces for custom types, including special considerations for Visual C++ component extensions (C++/CX), see [XAML namespaces and namespace mapping](xaml-namespaces-and-namespace-mapping.md).
+Visual C++ コンポーネント拡張機能 (C++/CX) に関する特別な考慮事項も含めて、カスタム型の XAML 名前空間マッピングについて詳しくは、「[XAML 名前空間と名前空間マッピング](xaml-namespaces-and-namespace-mapping.md)」を参照してください。
 
-## Other XAML namespaces
+## その他の XAML 名前空間
 
-You often see XAML files that define the prefixes "d" (for designer namespace) and "mc" (for markup compatibility). Generally these are for infrastructure support, or to enable scenarios in a design-time tool. For more info, see the ["Other XAML namespaces" section of the XAML namespaces topic](xaml-namespaces-and-namespace-mapping.md#other-XAML-namespaces).
+プレフィックス "d" (デザイナー名前空間を示す) や、プレフィックス "mc" (マークアップ互換性を示す) を定義している XAML ファイルもよく使われます。 一般に、これらはインフラストラクチャ サポートのために使うか、設計時のツールでシナリオを実現するために使います。 詳しくは、[「XAML 名前空間」トピックの「その他の XAML 名前空間」セクション](xaml-namespaces-and-namespace-mapping.md#other-XAML-namespaces)をご覧ください。
 
-## Markup extensions
+## マークアップ拡張
 
-Markup extensions are a XAML language concept that is often used in the Windows Runtime XAML implementation. Markup extensions often represent some kind of "shortcut" that enables a XAML file to access a value or behavior that isn't simply declaring elements based on backing types. Some markup extensions can set properties with plain strings or with additionally nested elements, with the goal of streamlining the syntax or the factoring between different XAML files.
+マークアップ拡張は、XAML 言語の概念であり、Windows ランタイム XAML 実装でよく使われています。 マークアップ拡張は、しばしば、単純にバッキング型に基づいて要素を宣言するのとは違って、値または挙動に XAML ファイルでアクセスできる、ある種の "ショートカット" を表します。 マークアップ拡張によっては、構文の合理化、または、異なる XAML ファイル間での整理を目標として、プレーン文字列や入れ子になった追加要素を使ってプロパティを設定できます。
 
-In XAML attribute syntax, curly braces "{" and "}" indicate a XAML markup extension usage. This usage directs the XAML processing to escape from the general treatment of treating attribute values as either a literal string or a directly string-convertible value. Instead, a XAML parser calls code that provides behavior for that particular markup extension, and that code provides an alternate object or behavior result that the XAML parser needs. Markup extensions can have arguments, which follow the markup extension name and are also contained within the curly braces. Typically, an evaluated markup extension provides an object return value. During parsing, that return value is inserted into the position in the object tree where the markup extension usage was in the source XAML.
+XAML 属性構文では、中かっこ ("{" と "}") によって XAML マークアップ拡張を使っていることを示します。 これにより、XAML プロセッサの通常の処理 (リテラル文字列か、直接文字列に変換できる値のいずれかとして属性値を扱う処理) がエスケープされます。 代わりに、XAML パーサーが特定のマークアップ拡張の動作を実現するコードを呼び出し、そのコードが XAML パーサーの必要とする代替オブジェクトまたは動作結果を用意します。 マークアップ拡張は引数を取ることができ、引数はマークアップ拡張名に従い、中かっこ内に含めることもできます。 通常、評価されたマークアップ拡張には、オブジェクトの戻り値が用意されています。 解析時に、ソース XAML でマークアップ拡張が使われていたオブジェクト ツリーの位置にその戻り値が挿入されます。
 
-Windows Runtime XAML supports these markup extensions that are defined under the default XAML namespace and are understood by the Windows Runtime XAML parser:
+Windows ランタイム XAML は、既定の XAML 名前空間で定義され、Windows ランタイム XAML パーサーが認識できる次のマークアップ拡張をサポートしています。
 
--   [{xBind}](x-bind-markup-extension.md): supports data binding, which defers property evaluation until run-time by executing special-purpose code, which it generates at compile-time. This markup extension supports a wide range of arguments.
--   [{Binding}](binding-markup-extension.md): supports data binding, which defers property evaluation until run-time by executing general-purpose runtime object inspection. This markup extension supports a wide range of arguments.
--   [{StaticResource}](staticresource-markup-extension.md): supports referencing resource values that are defined in a [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794). These resources can be in a different XAML file but must ultimately be findable by the XAML parser at load time. The argument of a `{StaticResource}` usage identifies the key (the name) for a keyed resource in a [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794).
--   [{ThemeResource}](themeresource-markup-extension.md): similar to [{StaticResource}](staticresource-markup-extension.md) but can respond to run-time theme changes. {ThemeResource} appears quite often in the Windows Runtime default XAML templates, because most of these templates are designed for compatibility with the user switching the theme while the app is running.
--   [{TemplateBinding}](templatebinding-markup-extension.md): a special case of [{Binding}](binding-markup-extension.md) that supports control templates in XAML and their eventual usage at run time.
--   [{RelativeSource}](relativesource-markup-extension.md): enables a particular form of template binding where values come from the templated parent.
--   [{CustomResource}](customresource-markup-extension.md): for advanced resource lookup scenarios.
+-   [{xBind}](x-bind-markup-extension.md): コンパイル時に生成される特定用途のコードを実行することで、プロパティの評価が実行時まで遅延されるデータ バインディングをサポートします。 このマークアップ拡張は、さまざまな引数をサポートしています。
+-   [{Binding}](binding-markup-extension.md): 汎用的なランタイム オブジェクト検査を実行することで、プロパティの評価が実行時まで遅延されるデータ バインディングをサポートします。 このマークアップ拡張は、さまざまな引数をサポートしています。
+-   [{StaticResource}](staticresource-markup-extension.md): [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) で定義されているリソース値の参照をサポートします。 これらのリソースは、異なる XAML ファイルに存在していてもかまいませんが、最終的には読み込み時に XAML パーサーによって検出できる必要があります。 `{StaticResource}` の使用時の引数は、[**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 内のキーを持つリソースのキー (名前) を識別します。
+-   [{ThemeResource}](themeresource-markup-extension.md): [{StaticResource}](staticresource-markup-extension.md) と似ていますが、実行時のテーマ変更に応答できます。 {ThemeResource} は、Windows ランタイムの既定の XAML テンプレートによく出現します。これらのテンプレートのほとんどは、アプリの実行中にユーザーがテーマを切り替えた場合に対応できるように設計されているためです。
+-   [{TemplateBinding}](templatebinding-markup-extension.md): [{Binding}](binding-markup-extension.md) の特殊なケースであり、XAML のコントロール テンプレートとその実行時の最終的な使用をサポートします。
+-   [{RelativeSource}](relativesource-markup-extension.md): テンプレート化された親に値が由来する特定の形式のテンプレート バインディングを有効にします。
+-   [{CustomResource}](customresource-markup-extension.md): 高度なリソース検索のシナリオで使います。
 
-Windows Runtime also supports the [{x:Null} markup extension](x-null-markup-extension.md). You use this to set [**Nullable**](T:System.Nullable%601) values to **null** in XAML. For example you might use this in a control template for a [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316), which interprets **null** as an indeterminate check state (triggering the "Indeterminate" visual state).
+Windows ランタイムは、[{x:Null} マークアップ拡張](x-null-markup-extension.md)もサポートしています。 これは、XAML で [**Nullable**](T:System.Nullable%601) 値を **null** に設定するために使われます。 たとえば、[**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) のコントロール テンプレートでこれを使うと、**null** は不確定なチェック状態として解釈されます ("Indeterminate" 表示状態がトリガーされます)。
 
-A markup extension generally return an existing instance from some other part of the object graph for the app, or defers a value to run time. Because you can use a markup extension as an attribute value, and that's the typical usage, you often see markup extensions providing values for reference-type properties that might have otherwise required a property element syntax.
+一般に、マークアップ拡張では、アプリのオブジェクト グラフの他の部分から既存のインスタンスが返されるか、値が実行時まで保留されます。 マークアップ拡張は属性値として使うことができ、それが一般的な使用方法であるため、マークアップ拡張は多くの場合、マークアップ拡張を使用しなければプロパティ要素構文が必要である参照型のプロパティの値を設定するために使用されます。
 
-For example, here's the syntax for referencing a reusable [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) from a [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794): `<Button Style="{StaticResource SearchButtonStyle}"/>`. A [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) is a reference type, not a simple value, so without the `{StaticResource}` usage, you would've needed a `<Button.Style>` property element and a `<Style>` definition within it to set the [**FrameworkElement.Style**](https://msdn.microsoft.com/library/windows/apps/br208743) property.
+たとえば、再利用可能な [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) を [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) から参照するための構文は、`<Button Style="{StaticResource SearchButtonStyle}"/>` です。 [
+            **Style**](https://msdn.microsoft.com/library/windows/apps/br208849) は参照型であり、単純値ではないため、`{StaticResource}` を使わない場合は、[**FrameworkElement.Style**](https://msdn.microsoft.com/library/windows/apps/br208743) プロパティを設定するために、`<Button.Style>` プロパティ要素と、その中の `<Style>` 定義が必要になります。
 
-By using markup extensions, every property that is settable in XAML is potentially settable in attribute syntax. You can use attribute syntax to provide reference values for a property even if it doesn't otherwise support an attribute syntax for direct object instantiation. Or you can enable specific behavior that defers the general requirement that XAML properties be filled by value types or by newly created reference types.
+マークアップ拡張を使うと、XAML で設定可能なすべてのプロパティを属性構文で設定できるようになる可能性があります。 属性構文でオブジェクトを直接インスタンス化できないプロパティでも、属性構文を使って、プロパティの参照値を指定できます。 つまり、XAML のプロパティに値型または新しく作成した参照型を設定するという通常の要件を延期する特殊な動作を有効にすることができます。
 
-To illustrate, the next XAML example sets the value of the [**Style**](https://msdn.microsoft.com/library/windows/apps/br208743) property of a [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) by using attribute syntax. The [**Style**](https://msdn.microsoft.com/library/windows/apps/br208743) property takes an instance of the [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) class, a reference type that by default could not be created using an attribute syntax string. But in this case, the attribute references a particular markup extension, [StaticResource](staticresource-markup-extension.md). When that markup extension is processed, it returns a reference to a **Style** element that was defined earlier as a keyed resource in a resource dictionary.
+次の XAML の例では、属性構文を使って、[**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) の [**Style**](https://msdn.microsoft.com/library/windows/apps/br208743) プロパティの値を設定します。 [
+            **Style**](https://msdn.microsoft.com/library/windows/apps/br208743) プロパティは、[**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) クラスのインスタンスを受け取ります。このインスタンスは、参照型であるため、既定では属性構文の文字列を使って作成することはできません。 しかし、この例では、属性が [StaticResource](staticresource-markup-extension.md) のマークアップ拡張機能を参照しています。 このマークアップ拡張が処理されると、リソース ディクショナリ内のキーを持つリソースとして既に定義されている **Style** 要素への参照が返されます。
 
 ```xaml
 <Canvas.Resources>
@@ -121,15 +123,16 @@ To illustrate, the next XAML example sets the value of the [**Style**](https://m
 </Border>
 ```
 
-You can nest markup extensions. The innermost markup extension is evaluated first.
+マークアップ拡張は、入れ子にすることもできます。 一番内側のマークアップ拡張が最初に評価されます。
 
-Because of markup extensions, you need special syntax for a literal "{" value in an attribute. For more info see [XAML syntax guide](xaml-syntax-guide.md).
+マークアップ拡張のため、属性内のリテラル "{" 値には特別な構文が必要です。 詳しくは、「[XAML 構文のガイド](xaml-syntax-guide.md)」をご覧ください。
 
-## Events
+## イベント
 
-XAML is a declarative language for objects and their properties, but it also includes a syntax for attaching event handlers to objects in the markup. The XAML event syntax can then integrate the XAML-declared events through the Windows Runtime programming model. You specify the name of the event as an attribute name on the object where the event is handled. For the attribute value, you specify the name of an event-handler function that you define in code. The XAML processor uses this name to create a delegate representation in the loaded object tree, and adds the specified handler to an internal handler list. Nearly all Windows Runtime apps are defined by both markup and code-behind sources.
+XAML は、オブジェクトとそのプロパティを記述するための宣言型言語ですが、マークアップ内のオブジェクトにイベント ハンドラーをアタッチするための構文も備えています。 XAML イベント構文では、Windows ランタイム プログラミング モデルを利用して、XAML で宣言されたイベントを統合できます。 イベントの名前は、そのイベントが処理されるオブジェクトの属性名として指定します。 属性値には、コードで定義するイベント ハンドラー関数の名前を指定します。 XAML プロセッサはこの名前を使って、読み込まれたオブジェクト ツリーにデリゲート表現を作成し、指定されたハンドラーを内部ハンドラー リストに追加します。 Windows ランタイム アプリの大半は、マークアップ ソースとコード ビハインド ソースの両方によって定義されます。
 
-Here's a simple example. The [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) class supports an event named [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737). You can write a handler for **Click** that runs code that should be invoked after the user clicks the **Button**. In XAML, you specify **Click** as an attribute on the **Button**. For the attribute value, provide a string that is the method name of your handler.
+次に単純な例を示します。 [
+            **Button**](https://msdn.microsoft.com/library/windows/apps/br209265) クラスは [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) という名前のイベントをサポートします。 ユーザーが **Button** をクリックすると呼び出されるコードを実行する **Click** のハンドラーを作成できます。 XAML では、**Click** を **Button** の属性として指定します。 属性値には、ハンドラーのメソッド名である文字列を指定します。
 
 ```xaml
 <Button Click="showUpdatesButton-Click">Show updates</Button></code></pre></td>
@@ -138,7 +141,7 @@ Here's a simple example. The [**Button**](https://msdn.microsoft.com/library/win
 </table>
 ```
 
-When you compile, the compiler now expects that there will be a method named `showUpdatesButton-Click` defined in the code-behind file, in the namespace declared in the XAML page's [x:Class](x-class-attribute.md) value. Also, that method must satisfy the delegate contract for the [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) event. For example:
+コンパイルの際に、`showUpdatesButton-Click` という名前のメソッドが、コード ビハインド ファイルと、XAML ページの [x:Class](x-class-attribute.md) 値に宣言された名前空間に定義されていることが前提となります。 また、このメソッドは、[**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) イベントのデリゲート コントラクトを満たす必要があります。 例:
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -175,65 +178,67 @@ namespace App1
 }
 ```
 
-Within a project, the XAML is written as a .xaml file, and you use the language you prefer (C#, Visual Basic, C++/CX) to write a code-behind file. When a XAML file is markup-compiled as part of a build action for the project, the location of the XAML code-behind file for each XAML page is identified by specifying a namespace and class as the [x:Class](x-class-attribute.md) attribute of the root element of the XAML page. For more info on how these mechanisms work in XAML and how they relate to the programming and application models, see [Events and routed events overview](events-and-routed-events-overview.md).
+1 つのプロジェクトの中で、XAML を使って .xaml ファイルが作成され、任意の言語 (C#、Visual Basic、C++/CX) を使って分離コード ファイルが作成されます。 名前空間とクラスを XAML ページのルート要素の [x:Class](x-class-attribute.md) 属性として指定すると、プロジェクトのビルド アクションの一環として XAML ファイルがマークアップ コンパイルされるときに、各 XAML ページの XAML コード ビハインド ファイルの場所が特定されます。 これらの機構がどのように XAML で動作し、プログラミングとアプリケーション モデルにどのように関連するかについての詳しい情報は、「[イベントとルーティング イベントの概要](events-and-routed-events-overview.md)」をご覧ください。
 
-**Note**  For C++/CX there are two code-behind files, one is a header (.xaml.h) and the other is implementation (.xaml.cpp). The implementation references the header, and it's technically the header that represents the entry point for the code-behind connection.
+**注**  C++/CX の場合、コード ビハインド ファイルは 2 つあります。1 つはヘッダー (.xaml.h) で、もう 1 つは実装 (.xaml.cpp) です。 実装は、ヘッダーを参照し、コード ビハインド接続用のエントリ ポイントを表す技術的なヘッダーです。
 
-## Resource dictionaries
+## リソース ディクショナリ
 
-Creating a [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) is a common task that is usually accomplished by authoring a resource dictionary as an area of a XAML page or a separate XAML file. Resource dictionaries and how to use them is a larger conceptual area that is outside the scope of this topic. For more info see [ResourceDictionary and XAML resource references](https://msdn.microsoft.com/library/windows/apps/mt187273).
+[
+            **ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) の作成は、通常はリソース ディクショナリを XAML ページの領域または別の XAML ファイルとして記述すれば完了する、一般的なタスクです。 リソース ディクショナリとその使用方法は、概念的に広い範囲にわたるので、このトピックでは扱いません。 詳しくは、「[ResourceDictionary と XAML リソースの参照](https://msdn.microsoft.com/library/windows/apps/mt187273)」をご覧ください。
 
-## XAML and XML
+## XAML と XML
 
-The XAML language is fundamentally based on the XML language. But XAML extends XML significantly. In particular it treats the concept of schema quite differently because of its relationship to the backing type concept, and adds language elements such as attached members and markup extensions. **xml:lang** is valid in XAML, but influences runtime rather than parse behavior, and is typically aliased to a framework-level property. For more info, see [**FrameworkElement.Language**](https://msdn.microsoft.com/library/windows/apps/hh702066). **xml:base** is valid in markup but parsers ignore it. **xml:space** is valid, but is only relevant for scenarios described in the [XAML and whitespace](xaml-and-whitespace.md) topic. The **encoding** attribute is valid in XAML. Only UTF-8 and UTF-16 encodings are supported. UTF-32 encoding is not supported.
+XAML 言語は、基本的に XML 言語に基づいています。 ただし、XAML は XML と比較して大幅に拡張されています。 特にバッキング型の概念に対する関係からスキーマの概念が大きく異なるほか、アタッチされたメンバーやマークアップ拡張などの言語要素が追加されています。 **xml:lang** は XAML で有効ですが、解析動作の際ではなく実行時に作用し、一般的にフレームワーク レベルのプロパティに対するエイリアスが設定されます。 詳しくは、「[**FrameworkElement.Language**](https://msdn.microsoft.com/library/windows/apps/hh702066)」をご覧ください。 **xml:base** はマークアップで有効ですが、パーサーでは無視されます。 **xml:space** は有効ですが、「[XAML と空白](xaml-and-whitespace.md)」で説明されているシナリオ以外では使われません。 **encoding** 属性は XAML で有効です。 サポートされているのは UTF-8 エンコードと UTF-16 エンコードだけです。 UTF-32 エンコードはサポートされていません。
 
-###  Case sensitivity in XAML
+###  XAML での大文字と小文字の区別
 
-XAML is case-sensitive. This is another consequence of XAML being based on XML, which is case-sensitive. The names of XAML elements and attributes are case-sensitive. The value of an attribute is potentially case-sensitive; this depends on how the attribute value is handled for particular properties. For example, if the attribute value declares a member name of an enumeration, the built-in behavior that type-converts a member name string to return the enumeration member value is not case-sensitive. In contrast, the value of the **Name** property, and utility methods for working with objects based on the name that the **Name** property declares, treat the name string as case-sensitive.
+XAML は、大文字と小文字を区別します。 XAML は XML を基にしているため、XML と同じく大文字と小文字が区別されます。 XAML 要素と属性の名前では、大文字と小文字が区別されます。 属性の値は、場合によって大文字と小文字が区別されます。これは、特定のプロパティに対して属性値がどのように処理されるかによって決まります。 たとえば、属性値で列挙型のメンバー名が宣言されている場合、その列挙型メンバーの値を返すためにメンバー名文字列を型変換する組み込みの動作では、大文字と小文字は区別されません。 一方、**Name** プロパティの値と、**Name** プロパティで宣言した名前に基づきオブジェクトを操作するユーティリティ メソッドでは、名前の文字列の大文字と小文字が区別されます。
 
-## XAML namescopes
+## XAML 名前スコープ
 
-The XAML language defines a concept of a XAML namescope. The XAML namescope concept influences how XAML processors should treat the value of **x:Name** or **Name** applied to XAML elements, particularly the scopes in which names should be relied upon to be unique identifiers. XAML namescopes are covered in more detail in a separate topic; see [XAML namescopes](xaml-namescopes.md).
+XAML 言語では、XAML 名前スコープという概念が定義されています。 XAML 名前スコープの概念は、XAML 要素に適用された **x:Name** や **Name** の値が XAML プロセッサによってどのように扱われるか (特に名前を一意の識別子として使うスコープ) に影響します。 XAML 名前スコープについては、別のトピックで詳しく説明します。「[XAML 名前スコープ](xaml-namescopes.md)」をご覧ください。
 
-## The role of XAML in the development process
+## 開発プロセスでの XAML の役割
 
-XAML plays several important roles in the app development process.
+XAML は、アプリ開発プロセスにおいて重要な役割を果たします。
 
--   XAML is the primary format for declaring an app's UI and elements in that UI, if you are programming using C#, Visual Basic or C++/CX. Typically at least one XAML file in your project represents a page metaphor in your app for the initially displayed UI. Additional XAML files might declare additional pages for navigation UI. Other XAML files can declare resources, such as templates or styles.
--   You use the XAML format for declaring styles and templates applied to controls and UI for an app.
--   You might use styles and templates either for templating existing controls, or if you define a control that supplies a default template as part of a control package. When you use it to define styles and templates, the relevant XAML is often declared as a discrete XAML file with a [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) root.
--   XAML is the common format for designer support of creating app UI and exchanging the UI design between different designer apps. Most notably, XAML for the app can be interchanged between different XAML design tools (or design windows within tools).
--   Several other technologies also define the basic UI in XAML. In relationship to Windows Presentation Foundation (WPF) XAML and Microsoft Silverlight XAML, the XAML for Windows Runtime uses the same URI for its shared default XAML namespace. The XAML vocabulary for Windows Runtime overlaps significantly with the XAML-for-UI vocabulary also used by Silverlight and to a slightly lesser extent by WPF. Thus, XAML promotes an efficient migration pathway for UI originally defined for precursor technologies that also used XAML.
--   XAML defines the visual appearance of a UI, and an associated code-behind file defines the logic. You can adjust the UI design without making changes to the logic in code-behind. XAML simplifies the workflow between designers and developers.
--   Because of the richness of the visual designer and design surface support for the XAML language, XAML supports rapid UI prototyping in the early development phases.
+-   XAML は、C#、Visual Basic、または C++/CX を使ったプログラミングでアプリの UI と UI 内の要素を宣言するための基本形式です。 一般的には、プロジェクトの 1 つ以上の XAML ファイルが、アプリの初期表示される UI のページ メタファを表します。 また、別の XAML ファイルで、ナビゲーション用 UI のための追加のページを宣言できます。 それ以外の XAML ファイルでは、リソース (テンプレート、スタイルなど) を宣言できます。
+-   XAML 形式は、アプリのコントロールや UI に適用されるスタイルとテンプレートを宣言するために使われます。
+-   既存のコントロールをテンプレート化する場合や、コントロール パッケージの一部として既定のテンプレートを提供するコントロールを定義する場合などに、スタイルとテンプレートを使います。 スタイルやテンプレートを定義する際には、通常、関連する XAML を、[**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) をルートとする独立した XAML ファイルとして宣言します。
+-   XAML は、アプリの UI を作成し異なるデザイナー アプリ間で UI 設計を交換することを可能にするデザイナー サポートの共通形式です。 たとえば、アプリの XAML を異なる XAML デザイン ツール (またはツール内のデザイン ウィンドウ) の間で交換することができます。
+-   XAML で基本的な UI を定義するテクノロジは他にもあります。 Windows ランタイムの XAML は、Windows Presentation Foundation (WPF) XAML や Microsoft Silverlight XAML と関連があり、共有される既定の XAML 名前空間用に同じ URI を使っています。 また、Windows ランタイムの XAML ボキャブラリの多くは、Silverlight や (Silverlight ほどではありませんが) WPF でも使われている XAML-for-UI ボキャブラリと共通しています。 そのため、XAML を使う先行技術のために定義された UI を効率的に移行することができます。
+-   XAML で UI の外観を定義し、関連付けられたコード ビハインド ファイルでロジックを定義します。 UI 設計は、コード ビハインドのロジックに変更を加えることなく調整できます。 XAML は、デザイナーと開発者との間のワークフローを単純化します。
+-   ビジュアル デザイナーとビジュアル デザイン サーフェイスの高度な機能による XAML 言語のサポートがあるため、XAML では、開発の初期段階での迅速な UI のプロトタイピングが可能になります。
 
-Depending on your own role in the development process, you might not interact with XAML much. The degree to which you do interact with XAML files also depends on which development environment you are using, whether you use interactive design environment features such as toolboxes and property editors, and the scope and purpose of your Windows Runtime app. Nevertheless, it is likely that during development of the app, you will be editing a XAML file at the element level using a text or XML editor. Using this info, you can confidently edit XAML in a text or XML representation and maintain the validity of that XAML file's declarations and purpose when it is consumed by tools, markup compile operations, or the run-time phase of your Windows Runtime app.
+開発プロセスにおける役割によっては、XAML を使う機会がそれほどない場合もあります。 XAML ファイルと対話する度合いは、使っている開発環境、ツールボックスやプロパティ エディターなどの対話型のデザイン環境機能を使っているかどうか、Windows ランタイム アプリの範囲と目的によっても異なります。 それでも、アプリの開発時には、テキスト エディターや XML エディターを使って要素レベルで XAML ファイルの編集を行うこともありえます。 ここに示された情報を理解することで、XAML のテキスト表現や XML 表現を正確に編集できるようになります。さらに、XAML ファイルがツール、マークアップのコンパイル処理、Windows ランタイム アプリのランタイム フェーズによって使われる際に、XAML ファイルの宣言と目的の妥当性を保持することができます。
 
-## Optimize your XAML for load performance
+## 読み込みパフォーマンスを向上させるための XAML の最適化
 
-Here are some tips for defining UI elements in XAML using best practices for performance. Many of these tips relate to using XAML resources, but are listed here in the general XAML overview for convenience. For more info about XAML resources see [ResourceDictionary and XAML resource references](https://msdn.microsoft.com/library/windows/apps/mt187273). For some more tips on performance, including XAML that purposely demonstrates some of the poor performance practices that you should avoid in your XAML, see [Optimize your XAML markup](https://msdn.microsoft.com/library/windows/apps/mt204779).
+パフォーマンスを向上させるためのベスト プラクティスを使って XAML で UI 要素を定義するためのヒントを次に示します。 これらのヒントの多くは XAML リソースの使用に関するものですが、便宜上、一般的な XAML の概要を示すこのトピックにおいても紹介します。 XAML リソースについて詳しくは、「[ResourceDictionary と XAML リソースの参照](https://msdn.microsoft.com/library/windows/apps/mt187273)」をご覧ください。 パフォーマンス向上のヒントについて詳しくは、パフォーマンスに悪影響を及ぼすため避ける必要のある XAML の実例も含めて、「[XAML マークアップの最適化](https://msdn.microsoft.com/library/windows/apps/mt204779)」をご覧ください。
 
--   If you use the same color brush often in your XAML, define a [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) as a resource rather than using a named color as an attribute value each time.
--   If you use the same resource on more than one UI page, consider defining it in [**Application.Resources**](https://msdn.microsoft.com/library/windows/apps/br242338) rather than on each page. Conversely, if only one page uses a resource, don't define it in **Application.Resources** and instead define it only for the page that needs it. This is good both for XAML factoring while designing your app and for performance during XAML parsing.
--   For resources that your app packages, check for unused resources (a resource that has a key, but there's no [StaticResource](staticresource-markup-extension.md) reference in your app that uses it). Remove these from your XAML before you release your app.
--   If you're using separate XAML files that provides design resources ([**MergedDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208801)), consider commenting or removing unused resources from these files. Even if you have a shared XAML starting point that you're using in more than one app or that provides common resources for all your app, it's still your app that packages the XAML resources each time, and potentially has to load them.
--   Don't define UI elements you don't need for composition, and use the default control templates whenever possible (these templates have already been tested and verified for load performance).
--   Use containers such as [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) rather than deliberate overdraws of UI elements. Basically, don't draw the same pixel multiple times. For more info on overdraw and how to test for it, see [**DebugSettings.IsOverdrawHeatMapEnabled**](https://msdn.microsoft.com/library/windows/apps/hh701823).
--   Use the default items templates for [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) or [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705); these have special **Presenter** logic that solves performance issues when building the visual tree for large numbers of list items.
+-   XAML で同じ色のブラシをよく使う場合は、その都度名前付きの色を属性値として使う代わりに、[**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) をリソースとして定義します。
+-   複数の UI ページに同じリソースを使う場合は、各ページではなく [**Application.Resources**](https://msdn.microsoft.com/library/windows/apps/br242338) にそのリソースを定義することをお勧めします。 逆に、1 つのページのみでリソースを使う場合は、リソースを **Application.Resources** に定義する代わりに、必要なページだけに定義します。 これは、アプリ設計時の XAML ファクタリングと、XAML 構文解析時のパフォーマンスの両方に有効です。
+-   アプリでパッケージ化するリソースについては、使われていないリソース (キーを持つ一方でそれを使うアプリ内に [StaticResource](staticresource-markup-extension.md) 参照がないリソース) がないかどうかを調べます。 これらは、アプリをリリースする前に、XAML から削除します。
+-   デザイン リソース ([**MergedDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208801)) を提供する別個の XAML ファイルを使う場合は、その XAML ファイルから使われていないリソースをコメント アウトするか削除することをお勧めします。 複数のアプリで使っている共有 XAML や、すべてのアプリに共通するリソースを提供する共有 XAML がある場合でも、毎回 XAML リソースをパッケージ化するのはアプリであり、そのたびに XAML リソースを読み込む可能性があります。
+-   構成に必要ない UI 要素は定義しないでください。可能な限り、既定のコントロール テンプレートを使ってください (既定のテンプレートは読み込み時のパフォーマンスが既にテストされ確認されています)。
+-   UI 要素の過剰な描画を避け、[**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) などのコンテナーを使うようにします。 基本的に、同じピクセルを複数回描画しないでください。 過剰な描画とそのテスト方法について詳しくは、[**DebugSettings.IsOverdrawHeatMapEnabled**](https://msdn.microsoft.com/library/windows/apps/hh701823) をご覧ください。
+-   [
+            **ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) や [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) には既定の項目テンプレートを使います。これらには、リスト項目が多数あるビジュアル ツリーを作成する際に発生するパフォーマンスの問題を解決する特殊な **Presenter** ロジックが用意されています。
 
-## Debugging XAML
+## XAML のデバッグ
 
-Because XAML is a markup language, some of the typical strategies for debugging within Microsoft Visual Studio are not available. For example, there is no way to set a breakpoint within a XAML file. However, there are other techniques that can help you debug issues with UI definitions or other XAML markup while you're still developing your app.
+XAML はマークアップ言語であるため、Microsoft Visual Studio が備えている一般的なデバッグ方法のいくつかは使うことができません。 たとえば、XAML ファイル内にブレークポイントを設定する方法がありません。 ただし、アプリの開発中に、UI 定義や他の XAML マークアップを使って問題のデバッグをサポートできる方法があります。
 
-When there are problems with a XAML file, the most typical result is that some system or your app will throw a XAML parse exception. Whenever there is a XAML parse exception, the XAML loaded by the XAML parser failed to create a valid object tree. In some cases, such as when the XAML represents the first "page" of your application that is loaded as the root visual, the XAML parse exception is not recoverable.
+XAML ファイルに問題がある場合、一般的な結果として、一部のシステムやアプリによって XAML 解析例外がスローされます。 XAML 解析例外が発生した場合は必ず、XAML パーサーによって読み込まれる XAML では、有効なオブジェクト ツリーの作成に失敗します。 たとえば、XAML によってアプリケーションの最初の "ページ" (ルート ビジュアルとして読み込まれます) が表される場合、XAML 解析例外は回復可能ではありません。
 
-XAML is often edited within an IDE such as Visual Studio and one of its XAML design surfaces. Visual Studio can often provide design-time validation and error checking of a XAML source as you edit it. For example it might display "squiggles" in the XAML text editor as soon as you type a bad attribute value, and you won't even have to wait for a XAML compile pass to see that something's wrong with your UI definition.
+XAML は、Visual Studio などの IDE や XAML デザイン サーフェイスのいずれかで編集されることがあります。 Visual Studio では、編集しているときに XAML ソースに対する設計時検証やエラー チェックを行うことができます。 たとえば、誤った属性値を入力したときに、XAML テキスト エディターで "波線" が表示される場合があります。UI 定義の問題を確認するために、XAML コンパイル パスを待機する必要はありません。
 
-Once the app actually runs, if any XAML parse errors have gone undetected at design time, these are reported by the common language runtime (CLR) as a [**XamlParseException**](https://msdn.microsoft.com/library/windows/apps/hh673774). For more info on what you might be able to do for a run-time **XamlParseException**, see [Exception handling for Windows Runtime apps in C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/dn532194).
+アプリを実際に実行したとき、XAML 解析エラーが設計時に検出されていないと、共通言語ランタイム (CLR) によって、[**XamlParseException**](https://msdn.microsoft.com/library/windows/apps/hh673774) として報告されます。 実行時の **XamlParseException** に関する操作について詳しくは、「[C# または Visual Basic での Windows ランタイム アプリの例外処理](https://msdn.microsoft.com/library/windows/apps/dn532194)」をご覧ください。
 
-**Note**  Apps that use C++/CX for code don't get the specific [**XamlParseException**](https://msdn.microsoft.com/library/windows/apps/hh673774). But the message in the exception clarifies that the source of the error is XAML-related, and includes context info such as line numbers in a XAML file, just like **XamlParseException** does.
+**注**  コードで C++/CX を使うアプリは、具体的な [**XamlParseException**](https://msdn.microsoft.com/library/windows/apps/hh673774) を受け取りません。 ただし、例外のメッセージによって、エラーの原因が XAML 関連であることが明らかになります。このメッセージには、**XamlParseException** と同様に、XAML ファイル内の行番号などのコンテキスト情報も含まれています。
 
-Fore more info on debugging a Windows Runtime app, see [Start a debug session](https://msdn.microsoft.com/library/windows/apps/xaml/hh781607.aspx).
+Windows ランタイム アプリのデバッグについて詳しくは、「[デバッグ セッションの開始](https://msdn.microsoft.com/library/windows/apps/xaml/hh781607.aspx)」をご覧ください。
 
 
 

@@ -6,7 +6,7 @@ title: ネットワークと Web サービス
 
 # ネットワークと Web サービス
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 ユニバーサル Windows プラットフォーム (UWP) 開発者は、次のネットワークと Web サービス テクノロジを利用できます。
 
@@ -20,8 +20,8 @@ title: ネットワークと Web サービス
 | [HttpClient](httpclient.md)                                                             | HTTP 2.0 プロトコルと HTTP 1.1 プロトコルを使って情報を送受信するには、[Windows.Web.Http](https://msdn.microsoft.com/library/windows/apps/dn279692) 名前空間 API を使います。             |
 | [RSS/Atom フィード](web-feeds.md)                                                          | [Windows.Web.Syndication](https://msdn.microsoft.com/library/windows/apps/br243632) 名前空間の機能を利用し、RSS や Atom の標準に従って生成される概要フィードを使って、最新の人気の高い Web コンテンツを取得または作成します。                   |
 | [バックグラウンド転送](background-transfers.md)                                         | ネットワーク経由でファイルを確実にコピーするには、バックグラウンド転送 API を使います。           |
+| [EDP ID を使ったネットワーク接続のタグ付け](tagging_network_connections_with_edp_identity.md) | このトピックでは、エンタープライズ データ保護 (EDP) のシナリオでネットワーク接続を作成する前に、保護されたスレッド コンテキストを作成する方法を説明します。 |
 
-
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=Mar16_HO5-->
 
 

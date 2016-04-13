@@ -1,117 +1,117 @@
 ---
-Description: The Descriptions section of the app submission process is where you provide the text and images that customers will see in your app's Store listing.
-title: Create app descriptions
+Description: アプリの申請プロセスの [説明] セクションでは、アプリのストアの内容に表示されるテキストと画像を指定できます。
+title: アプリの説明の作成
 ms.assetid: 50D67219-B6C6-4EF0-B76A-926A5F24997D
 ---
 
-# Create app descriptions
+# アプリの説明の作成
 
 
-The **Descriptions** section of the [app submission process](app-submissions.md) is where you provide the text and [images](app-screenshots-and-images.md) that customers will see in your app's Store listing.
+[アプリの申請プロセス](app-submissions.md)の **[説明]** セクションでは、アプリのストアの内容に表示されるテキストと[画像](app-screenshots-and-images.md)を指定できます。
 
-Many of the fields in the **Description** are optional, but we suggest providing multiple images and as much info as possible to make your listing stand out. The minimum required for the **Description** step to be considered complete is a text description and at least one [screenshot](app-screenshots-and-images.md).
+**[説明]** のフィールドの多くは省略可能ですが、内容が目立つように複数の画像とできるだけ多くの情報を指定することをお勧めします。 **[説明]** 手順が完成したと見なされるには、説明のテキストと少なくとも 1 つの[スクリーンショット](app-screenshots-and-images.md)が必要です。
 
-By default, we'll use the same description (per language) for all of your targeted operating systems. If you'd like to use a customized description for a specific operating system, you can [create platform-specific descriptions](create-platform-specific-descriptions.md).
+既定では、対象となるすべてのオペレーティング システムに同じ説明 (言語ごと) が使われます。 特定のオペレーティング システム用にカスタマイズされた説明を使う場合、[プラットフォーム固有の説明を作成](create-platform-specific-descriptions.md)できます。
 
-## Description languages
+## 説明の言語
 
-You must complete the **Description** page for at least one language. We recommend providing a description in each language that your packages support, but you have flexibility to remove languages for which you don’t wish to provide a description. You can also provide descriptions in additional languages which aren’t supported by your packages.
+少なくとも 1 つの言語の **[説明]** ページを完成させる必要があります。 説明は、パッケージでサポートしているすべての言語で提供することをお勧めしますが、説明を提供しない言語を削除することもできます。 パッケージでサポートしていない言語の説明を追加することもできます。
 
-> Note  If your submission includes packages already, we’ll show the [languages](supported-languages.md) supported in your packages on the submission overview page (unless you remove any of them).
+> 注: 申請にパッケージが既に含まれている場合は、パッケージでサポートされている[言語](supported-languages.md)が [申請の概要] ページに表示されます (言語を削除していない場合)。
 
-To add or remove languages for your descriptions, click **Manage description languages** from the submission overview page. If you‘ve already uploaded packages, you’ll see their languages listed in the **Languages supported by your packages** section. To remove one or more of these languages, click **Remove**. If you later decide you want to provide a description that you previously removed, click **Add** to restore it.
+説明の言語を追加または削除するには、[申請の概要] ページで **[Manage description languages]** (説明言語の管理) をクリックします。 既にパッケージをアップロードしている場合は、**[Languages supported by your packages]** (パッケージでサポートしている言語) セクションに言語が表示されます。 これらの言語の 1 つまたは複数を削除するには、**[削除]** をクリックします。 前に削除した説明を使う場合は、**[追加]** をクリックして復元します。
 
-In the **Additional description languages** section, you can click **Manage additional languages** to add or remove languages that are not included in your packages. Check the boxes for the languages that you’d like to add, then click **Update**. The languages you’ve selected will be displayed in the **Additional description languages** section. To remove one or more of these languages, click **Remove** (or click **Manage additional languages** and uncheck the box for languages you’d like to remove).
+**[Additional description languages]** (その他の説明言語) セクションで、**[Manage additional languages]** (追加言語の管理) をクリックして、パッケージに含まれていない言語を追加するか、パッケージに含めない言語を削除します。 追加する言語のチェック ボックスをクリックし、**[更新]** をクリックします。 選択した言語が **[Additional description languages]** (その他の説明言語) セクションに表示されます。 1 つまたは複数の言語を削除するには、**[削除]** をクリックします (または、**[Manage additional languages]** (追加言語の管理) をクリックし、削除する言語のチェック ボックスをオフにします)。
 
-When you have finished making your selections, click **Save** to return to the submission overview page.
+選択が終了したら **[保存]** をクリックして、[申請の概要] ページに戻ります。
 
-To edit a description, click its name from the Submission overview. The sections of the **Description** page are described below.
+説明を編集するには、[申請の概要] ページで名前をクリックします。 **[説明]** ページのセクションについて以下に説明します。
 
-## Default description fields
+## 既定の説明フィールド
 
 
-At the top of the **Description** page, we show you the fields associated with your **Default description**. These fields will be shown to all of your customers, unless you [create platform-specific descriptions](create-platform-specific-descriptions.md). If you do so, you'll see these fields repeated under section headings for each targeted OS for which you've created a platform-specific description, underneath your **Default description** (which will be displayed to customers on Windows 10, as well as customers on any OS that your app supports for which you haven't created a custom description). Make sure each field in the **Default description** section is filled out with all the info you want to display to your app's customers (even if you want some of these fields to show the same info across different operating systems).
+**[説明]** ページの上部には、**[既定の説明]** に関連付けられたフィールドが表示されます。 これらのフィールドは、[プラットフォーム固有の説明を作成](create-platform-specific-descriptions.md)しない限り、すべてのユーザーに表示されます。 作成した場合、**[既定の説明]** (Windows 10 のユーザーおよびカスタムの説明を作成していないサポート対象のすべての OS のユーザーに表示されます) の下の、プラットフォーム固有の説明を作成した対象 OS ごとのセクション見出しの下にこれらのフィールドが繰り返して表示されます。 **[既定の説明]** セクションの各フィールドに、アプリのユーザーに表示する情報がすべて入力されていることを確認してください (一部のフィールドに、異なるオペレーティング システム間で同じ情報を表示する場合でも)。
 
-For more info, see [Create platform-specific descriptions](create-platform-specific-descriptions.md).
+詳しくは、「[プラットフォーム固有の説明の作成](create-platform-specific-descriptions.md)」をご覧ください。
 
-### Description
+### 説明
 
-The description field is where you can tell customers what your app does. This field is required, and will accept up to 10,000 characters of plain text.
+説明フィールドでは、アプリの内容をユーザーに伝えることができます。 このフィールドは必須であり、最大 10,000 文字のプレーンテキストを入力できます。
 
-For some tips on making your description stand out, see [Write a great app description](write-a-great-app-description.md).
+説明を目立たせるためのヒントについては、「[人の心をつかむアプリの説明を書く](write-a-great-app-description.md)」をご覧ください。
 
-### Release notes
+### リリース ノート
 
-If this is the first time you're submitting your app, you'll probably want to leave this field blank. For an update to an existing app, this is where you can let customer know what's changed in the latest release. This field has a 1500 character limit.
+初めてアプリを申請する場合、通常このフィールドは空白のままにします。 既存のアプリの更新の場合、ここには最新のリリースでの変更点をユーザーに知らせることができます。 このフィールドには 1500 文字の制限があります。
 
-### Screenshots
+### スクリーンショット
 
-In most cases, you'll see multiple fields to provide screenshots for different types of devices. You are not required to provide separate screenshots for each device type; only one screenshot is required for your submission (though you can provide up to nine per device type). In most cases we suggest providing screenshots on as many device types as your app supports, so that customers will see images that resemble how the app will look on their device.
+ほとんどの場合、さまざまな種類のデバイスのスクリーンショットを指定する複数のフィールドが表示されます。 デバイスの種類ごとに別個のスクリーンショットを指定する必要はありません (ただし、デバイスの種類ごとに最大 9 個のスクリーンショットを指定できます)。 ほとんどの場合、ユーザーが使っているデバイスに表示されるのと同じような画像が表示されるように、アプリがサポートするデバイスの種類の分だけスクリーンショットを指定することをお勧めします。
 
-For more info, see [App screenshots and images](app-screenshots-and-images.md).
+詳しくは、「[アプリのスクリーンショットと画像](app-screenshots-and-images.md)」をご覧ください。
 
-### App tile icon
+### アプリのタイル アイコン
 
-The app tile icon is used when displaying your app's listing to customers on Windows Phone 8.1 and earlier (and is used in your app's listing for customers on Windows 10 if you only have packages targeting Windows Phone 8.1 or earlier). This must be a .png file measuring 300 x 300 pixels.
+アプリのタイル アイコンは、Windows Phone 8.1 以前のユーザーにアプリの内容を表示するときに使われます (また、Windows Phone 8.1 以前を対象とするパッケージしかない場合は、Windows 10 のユーザー向けのアプリの内容に使われます)。 これは、サイズが 300 x 300 ピクセルの .png ファイルにする必要があります。
 
-### App features
+### アプリの機能
 
-These are short summaries of your app's key features. They are displayed to the customer as a bulleted list in your app's listing, along with its description. Keep these brief, with just a few words (and no more than 200 characters) per feature. You may include up to 20 features.
+アプリの主な機能の短い概要です。 アプリの内容に、説明と共に箇条書きの形式で表示されます。 各機能につき短い 1 文 (かつ、200 文字未満) になるようにまとめます。 最大 20 の機能を含めることができます。
 
-**Note**  These will appear bulleted in the listing, so don't add your own bullets.
-
- 
-
-### Recommended hardware
-
-Describe the hardware configurations that your app requires to work properly. This is especially important if your app requires hardware that might not be available on every computer. They are displayed to the customer as a bulleted list in your app's listing. Keep these brief, with just a few words (and no more than 200 characters) per item. You may include up to 11 items.
-
-**Note**  These will appear bulleted in the listing, so don't add your own bullets.
+**注:** これらは箇条書きの項目として表示されるので、独自に中点などを追加しないでください。
 
  
 
-## Shared fields
+### 推奨されるハードウェア
 
+アプリが正しく動作するのに必要なハードウェア構成を説明します。 この情報は、一部のコンピューターでしか使うことができないハードウェアが必要なアプリの場合、特に重要です。 アプリの内容に、箇条書きの形式で表示されます。 各項目につき短い 1 文 (かつ、200 文字未満) になるようにまとめます。 最大 11 の項目を含めることができます。
 
-The fields in the **Shared fields** section can't be customized for a specific platform, unlike the fields shown above. The items described below are all shared fields and will apply to all of your descriptions in a given language, regardless of operating system, even if you [create platform-specific descriptions](create-platform-specific-descriptions.md).
-
-### Keywords
-
-Keywords are single words or short phrases that are not displayed to customers, but can help your app appear in search results related to the keyword. You can include up to 8 keywords with a maximum of 45 characters each.
-
-If you want to add keywords, think about the words that customers might use when searching for apps like yours, especially if they're not part of your app's name. Be sure not to use any keywords that are not actually relevant to your app.
-
-### Copyright and trademark info
-
-If you'd like to provide additional copyright and/or trademark info, enter it here. This field has a 200 character limit.
-
-### Additional license terms
-
-Leave this field blank if you want your app to be licensed to customers under the terms of the **Standard Application License Terms** (which are linked to from the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058)).
-
-If your license terms are different from the **Standard Application License Terms**, enter them here.
-
-If you enter a single URL into this field, it will be displayed to customers as a link that they can click to read your additional license terms. This is useful if your additional license terms are very long, or if you want to include clickable links or formatting in your additional license terms.
-
-You can also up to 10,000 characters of text in this field. If you do that, customers will see these additional license terms displayed as plain text.
-
-### Website
-
-Enter the URL of the web page for your app. This URL must point to a page on your own website, not your app's web listing in the Store.
-
-### Support contact info
-
-Enter the URL of the web page where your customers can go for support on your app, or an email address that customers can contact for support.
-
-**Important**  Microsoft doesn't provide your customers with support for your app.
+**注:** これらは箇条書きの項目として表示されるので、独自に中点などを追加しないでください。
 
  
 
-### Privacy policy
+## 共有フィールド
 
-If you have a privacy policy for your app, enter its URL here. You are responsible for ensuring your app complies with privacy laws and regulations and for providing a privacy policy, if required.
 
-**Important**  Microsoft doesn't provide a default privacy policy for your app. Likewise, your app is not covered by any Microsoft privacy policy. To determine if your app requires a privacy policy, review the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058) and the [Windows Store Policies](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx#pol_10_5_1).
+**[Shared fields]** (共有フィールド) セクションのフィールドは、上に示したフィールドとは異なり、特定のプラットフォーム用にカスタマイズすることができません。 以下で説明する項目はすべて共有フィールドであり、[プラットフォーム固有の説明を作成](create-platform-specific-descriptions.md)した場合でも、オペレーティング システムに関係なく特定の言語のすべての説明に適用されます。
+
+### キーワード
+
+キーワードは、単語または短いフレーズです。これらはユーザーには表示されませんが、キーワードに関連する検索の結果にアプリが表示されるようにするために役立ちます。 それぞれ最大 45 文字の最大 8 個のキーワードを含めることができます。
+
+キーワードを追加する場合、ユーザーがアプリを検索する際にどのような単語を使うかを考えてください (特にアプリ名の一部ではない場合)。 アプリに実際に関連しないキーワードは使わないでください。
+
+### 著作権と商標の情報
+
+その他の著作権や商標の情報を指定する場合は、ここに入力します。 このフィールドには 200 文字の制限があります。
+
+### 追加のライセンス条項
+
+「**標準アプリケーション ライセンス条項**」(「[アプリ開発者契約](https://msdn.microsoft.com/library/windows/apps/hh694058)」からリンクされています) の条項に基づいて、アプリのライセンスをユーザーに付与する場合は、このフィールドを空白にします。
+
+アプリのライセンス条項が「**標準アプリケーション ライセンス条項**」と異なる場合は、ここに入力します。
+
+このフィールドに 1 つの URL を入力すると、ユーザーがクリックして追加のライセンス条項を読むことができるリンクとして表示されます。 これは、追加のライセンス条項が非常に長い場合や、追加のライセンス条項にクリック可能なリンクや書式設定を含める場合に便利です。
+
+このフィールドには、最大 10,000 文字のテキストを入力できます。 この場合、これらの追加のライセンス条項は、ユーザーに対してプレーンテキストとして表示されます。
+
+### Web サイト
+
+アプリの Web ページの URL を入力します。 この URL は、ストアのアプリの内容ページではなく、独自の Web サイトのページを指すものにする必要があります。
+
+### サポートの問い合わせ先情報
+
+アプリのサポートをユーザーに提供する Web ページの URL、またはユーザーがサポートに連絡するためのメール アドレスを入力します。
+
+**重要:** Microsoft がアプリのサポートをユーザーに提供することはありません。
+
+ 
+
+### プライバシー ポリシー
+
+アプリのプライバシー ポリシーがある場合、URL をここに入力します。 開発者には、アプリがプライバシーに関する法令と規制に準拠するようにし、必要に応じてプライバシー ポリシーを提供する責任があります。
+
+**重要:** アプリ用に既定のプライバシー ポリシーは用意されていません。 同様に、アプリは Microsoft のプライバシー ポリシーの対象にはなりません。 アプリにプライバシー ポリシーが必要かどうかを確認するには、「[アプリ開発者契約](https://msdn.microsoft.com/library/windows/apps/hh694058)」と「[Windows ストア ポリシー](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx#pol_10_5_1)」をご覧ください。
 
 
 <!--HONumber=Mar16_HO5-->

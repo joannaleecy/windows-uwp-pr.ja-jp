@@ -1,18 +1,18 @@
 ---
-title: UWP on Xbox One samples
-description: Samples and libraries to help you build great Xbox One and TV experiences.
+title: Xbox One サンプルの UWP
+description: Xbox One とテレビの優れたエクスペリエンスの構築をサポートするサンプルとライブラリです。
 area: Xbox
 ---
 
-# UWP on Xbox One samples
+# Xbox One サンプルの UWP
 
-TVHelpers is a set of JavaScript and XAML/C# samples and libraries to help you build great Xbox One and TV experiences in JavaScript and C#. TVJS is a library that helps you build premium UWP apps for Xbox One. TVJS includes support for automatic controller navigation, rich media playback, search, and more. You can use TVJS with your hosted web app just as easily as with a packaged web UWP app with full access to the Windows Runtime APIs.
+TVHelpers は、JavaScript と XAML/C# のサンプルとライブラリです。JavaScript と C# による、Xbox One とテレビの優れたエクスペリエンスの構築をサポートします。 TVJS は Xbox One のための優れた UWP アプリの構築をサポートします。 TVJS には、自動コントローラー ナビゲーション、リッチ メディアの再生、検索などのサポートが含まれています。 ホストされた Web アプリで TVJS を使うと、パッケージ化された Web UWP アプリを使う場合のように容易に、すべての Windows ランタイム API にアクセスできます。
   
-For more information, see the [TVHelpers](https://github.com/Microsoft/TVHelpers) project and the project [wiki](https://github.com/Microsoft/TVHelpers/wiki).
+詳しくは、「[TVHelpers](https://github.com/Microsoft/TVHelpers) プロジェクトとプロジェクト [wiki](https://github.com/Microsoft/TVHelpers/wiki)」をご覧ください。
 
-## See also
+## 参照
 
-- [UWP on Xbox One](index.md)
+- [Xbox One の UWP](index.md)
 
 
 <!--HONumber=Mar16_HO5-->

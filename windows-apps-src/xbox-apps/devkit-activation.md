@@ -1,77 +1,77 @@
 ---
-title: Xbox One Developer Mode activation
-description: How to activate Developer Mode so you can switch between Retail Mode and Developer Mode.
+title: Xbox One 開発者モードのアクティブ化
+description: 開発者モードをアクティブ化して、リテール モードと開発者モードを切り替えることができるようにする方法を説明します。
 area: Xbox
 ---
 
-# Xbox One Developer Mode activation
+# Xbox One 開発者モードのアクティブ化
 
-* [How Developer Mode works](#how-developer-mode-works)
-* [Activate Developer Mode on your retail Xbox One console](#activate-developer-mode-on-your-retail-xbox-one-console)  
-* [Switch between Retail and Developer Mode](#switch-between-retail-and-developer-mode)
+* [開発者モードの動作](#how-developer-mode-works)
+* [製品版の Xbox One 本体で開発者モードをアクティブにする](#activate-developer-mode-on-your-retail-xbox-one-console)  
+* [リテール モードと開発者モードを切り替える](#switch-between-retail-and-developer-mode)
 
-## How Developer Mode works
-Xbox One has two modes, *Retail* Mode (1) and *Developer* Mode (2). In Retail Mode, the console is in the state that any customer or user of an Xbox One console would use: you can play games and run apps as a user. In Developer Mode, you can develop software for the console, but you cannot play retail games or run retail apps.
-Developer Mode can be enabled on any retail Xbox One console. After Developer Mode is enabled, you can switch back and forth between Retail (2a) and Developer Modes (2b).
+## 開発者モードの動作
+Xbox One には、*リテール* モード (1) と*開発者*モード (2) の 2 つのモードがあります。 リテール モードは、Xbox One 本体のユーザーが本体を使うときのモードです。ユーザーとしてゲームをプレイしたり、アプリを実行したりできます。 開発者モードでは、本体用のソフトウェアを開発することができますが、製品版のゲームをプレイしたり、製品版のアプリを実行したりすることはできません。
+開発者モードは、製品版のすべての Xbox One 本体で有効にできます。 開発者モードを有効にした後は、リテール モード (2a) と開発者モード (2b) を相互に切り替えることができます。
 
-> **Important**&nbsp;&nbsp;When you activate Developer Mode on Xbox One, you are opting into Xbox system updates for a developer preview release that includes experimental and early pre-release software. This means that some popular games and apps will not work as expected, and you may experience occasional crashes and data loss. If you leave the developer preview, your console will factory reset and you will have to reinstall all of your games, apps, and content. 
+> **重要 **&nbsp;&nbsp;Xbox One で開発者モードをアクティブ化すると、開発者プレビュー リリース向けの Xbox システムの更新をオプト インすることになります。これらのプレビュー リリースには、実験的な初期のプレリリース ソフトウェアが含まれています。 このため、一部の人気ゲームやアプリが想定どおりに動作しなかったり、クラッシュやデータの損失が発生したりする可能性があります。 開発者プレビューへの参加を終了する場合は、本体が出荷時の設定にリセットされるため、ゲーム、アプリ、コンテンツをすべて再インストールする必要があります。 
 
-> **Note**&nbsp;&nbsp;You cannot activate Developer Mode on Xbox One if you are part of an existing preview program such as the Xbox One Beta program. You can leave an existing preview program by using the Xbox Preview Dashboard app. 
+> **注**&nbsp;&nbsp;Xbox One Beta プログラムのような既存のプレビュー プログラムに参加している場合は、Xbox One で開発者モードをアクティブ化することはできません。 Xbox プレビュー ダッシュボード アプリを使うと、既存のプレビュー プログラムへの参加を終了できます。 
 
-![Xbox One modes](images/dev-mode-flow.png)
+![Xbox One のモード](images/dev-mode-flow.png)
 
-## Activate Developer Mode on your retail Xbox One console
+## 製品版の Xbox One 本体で開発者モードをアクティブにする
 
-1.  Start your Xbox One console.
+1.  Xbox One 本体を起動します。
 
-2.  Search for and install the Dev Mode Activation app from the Xbox One store.  
+2.  Xbox One ストアから、開発者モードのアクティブ化用アプリを検索してインストールします。  
     ![](images/activation-store-search.png)
 
-3.  Navigate to **My games & apps** > **Apps**.
+3.  **[マイ コレクション]** の **[アプリ]** に移動します。
 
-    ![Dev Mode Activation app](images/activation-step-3.png)
-4. Open the Dev Mode Activation app.    
+    ![開発者モードのアクティブ化用アプリ](images/activation-step-3.png)
+4. 開発者モードのアクティブ化用アプリを開きます。    
     
-    > **Note**&nbsp;&nbsp;Please make sure that you read the disclaimers carefully. As part of activating Xbox for development, you will be getting early pre-release builds. To play games and apps, you will need to switch to Retail Mode. Sideloaded apps will only work in Developer Mode.
+    > **注**&nbsp;&nbsp;免責事項をよくお読みください。 Xbox を開発用にアクティブ化すると、初期のプレリリース ビルドを取得することになります。 ゲームやアプリを実行するには、リテール モードに切り替える必要があります。 サイドローディングしたアプリは、開発者モードでのみ動作します。
 
-5.  Note the code displayed in the Dev Mode Activation app.  
+5.  開発者モードのアクティブ化用アプリに表示されたコードを書き留めます。  
 
-    ![Activation Step 5](images/activation-step-5.png)  
+    ![アクティブ化手順 5](images/activation-step-5.png)  
     
-6.  Go to [developer.microsoft.com/xboxactivate](https://developer.microsoft.com/xboxactivate).
-7.  Sign in to Dev Center with your Dev Center account.  
-8.  Enter the activation code displayed in the Dev Mode Activation app.   
+6.  [developer.microsoft.com/xboxactivate](https://developer.microsoft.com/xboxactivate) にアクセスします。
+7.  デベロッパー センター アカウントを使ってデベロッパー センターにサインインします。  
+8.  開発者モードのアクティブ化用アプリに表示されたアクティブ化コードを入力します。   
    
-     > **Note**&nbsp;&nbsp;You have a limited number of activations associated with your account. After Developer Mode has been activated, Dev Center will indicate you have used one of the activations associated with your account. 
+     > **注**&nbsp;&nbsp;アカウントに関連付けられているアクティブ化の数には制限があります。 開発者モードがアクティブになると、アカウントに関連付けられているアクティブ化の 1 つが使われたことを示す通知がデベロッパー センターに表示されます。 
     
-    ![Activation Step 8](images/activation-step-8.png)    
+    ![アクティブ化手順 8](images/activation-step-8.png)    
     
-9.  Click **Agree and activate**. This will cause the page to reload, and you will see your device populate in the table.  
-10. After you’ve entered your activation code, your console will display a progress screen for the activation process.  
-11. After activation completes, you will have to wait for your console to update to the required preview build. This may take several hours; please be patient.  
+9.  **[Agree and activate]** (同意してアクティブ化) をクリックします。 ページの再読み込みが行われ、デバイスが表に追加されます。  
+10. アクティブ化コードを入力すると、アクティブ化プロセスの進行状況が表示されます。  
+11. アクティブ化が完了したら、必要なプレビュー ビルドに本体が更新されるまで待機する必要があります。 これには数時間かかることがあります。しばらくお待ちください。  
 
-    ![Activation Step 11](images/activation-step-11.png)    
+    ![アクティブ化手順 11](images/activation-step-11.png)    
     
-12. After activation has completed, open the Dev Mode Activation app and click **Switch and restart** to go to Developer Mode. Note that this will take longer than usual.  
+12. アクティブ化の完了後、開発者モードのアクティブ化用アプリを開き、**[Switch and restart]** (切り替えて再起動) をクリックして、開発者モードに移行します。 これは通常の再起動よりも時間がかかります。  
 
-    ![Activation Step 12](images/activation-step-12.png)   
+    ![アクティブ化手順 12](images/activation-step-12.png)   
     
 
     
-## Switch between Retail and Developer Mode
-After Developer Mode has been enabled on your console, use **Dev Home** to switch between Retail Mode and Developer Mode. To learn more about starting and using **Dev Home**, see [Introduction to Xbox One tools](introduction-to-xbox-tools.md).
+## リテール モードと開発者モードを切り替える
+本体で開発者モードを有効にした後、リテール モードと開発者モードを切り替えるには、**Dev Home** を使います。 **Dev Home** の起動と使用について詳しくは、「[Xbox One ツールの概要](introduction-to-xbox-tools.md)」をご覧ください。
 
-* To switch to Retail Mode, use **Dev Home** and click **Leave developer mode**. This will restart your console in Retail Mode.    
+* リテール モードに切り替えるには、**Dev Home** を使って **[Leave developer mode]** (開発者モードの終了) をクリックします。 これにより、本体がリテール モードで再起動します。    
 
-  ![Activation Step 13](images/activation-step-13.png)  
+  ![アクティブ化手順 13](images/activation-step-13.png)  
   
-* To switch to Developer Mode, use the Dev Mode Activation app. Open the app and click **Switch and restart**. This will restart your console in Developer Mode.  
+* 開発者モードに切り替えるには、開発者モードのアクティブ化用アプリを使います。 アプリを開き、**[Switch and restart]** (切り替えて再起動) をクリックします。 これにより、本体が開発者モードで再起動します。  
 
-  ![Activation Step 14](images/activation-step-12.png)  
+  ![アクティブ化手順 14](images/activation-step-12.png)  
 
-## See also
-- [Xbox One Developer Mode deactivation](devkit-deactivation.md)
-- [UWP on Xbox One](index.md)
+## 参照
+- [Xbox One 開発者モードの非アクティブ化](devkit-deactivation.md)
+- [Xbox One の UWP](index.md)
 
 
 <!--HONumber=Mar16_HO5-->

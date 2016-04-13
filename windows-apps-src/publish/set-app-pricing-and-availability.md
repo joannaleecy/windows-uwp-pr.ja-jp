@@ -1,93 +1,93 @@
 ---
-Description: The Pricing and availability page of the app submission process lets you determine how much your app will cost, whether you'll offer a free trial, and how, when, and where it will be available to customers.
-title: Set app pricing and availability
+Description: アプリ申請プロセスの [価格と使用可能状況] のページでは、アプリの料金、無料の試用版を提供するかどうか、およびいつ、どこで、どのようにアプリをユーザーに提供するかを決定できます。
+title: アプリの価格と使用可能状況の設定
 ms.assetid: 37BE7C25-AA74-43CD-8969-CBA3BD481575
 ---
 
-# Set app pricing and availability
+# アプリの価格と使用可能状況の設定
 
 
-The **Pricing and availability** page of the [app submission process](app-submissions.md) lets you determine how much your app will cost, whether you'll offer a free trial, and how, when, and where it will be available to customers. Here, we'll walk through the options on this page and what you should consider when entering this information.
+[アプリ申請プロセス](app-submissions.md)の **[価格と使用可能状況]** のページでは、アプリの料金、無料の試用版を提供するかどうか、およびいつ、どこで、どのようにアプリをユーザーに提供するかを決定できます。 ここでは、このページのオプションと、この情報を入力するときに考慮する必要がある事項を順に説明します。
 
-## Base price
-
-
-The first item on this page lets you select a base price for your app. You can choose to offer it for free, or you can select one of the available price tiers. Specifying a base price is required in order to submit your app.
-
-For more info, see [Define pricing and market selection](define-pricing-and-market-selection.md).
-
-## Free trial
+## 基本価格
 
 
-Many developers choose to allow customers to try out their app for free using the trial functionality provided by the Store. By default, an app will not be available as a free trial, but if you'd like to offer one, select a value from the **Free trial** dropdown.
+このページの最初の項目では、アプリの基準価格を選ぶことができます。 アプリを無料で提供することも、使用可能な価格帯のいずれかを選ぶこともできます。 アプリを申請するには、基本価格を指定することが必要です。
 
-Choose **Trial never expires** to let customers access your app for free indefinitely. You'll want to encourage them to purchase the full version, so make sure to add code to [exclude or limit features in the trial version](https://msdn.microsoft.com/library/windows/apps/mt219685).
+詳細については、「[価格と市場の選択の定義](define-pricing-and-market-selection.md)」を参照してください。
 
-You also have the option to select a time-limited trial of **1 day**, **7 days**, **15 days**, or **30 days**. You can still limit features during the trial period, or you can let customers access the full functionality during that period of time.
-
-> **Note**  Time-limited trials are not shown to customers on Windows Phone 8.1 and earlier.
-
-## Markets and custom prices
+## 無料試用版
 
 
-By default, your app will be listed in all possible markets at its base price. You can change these settings to include or exclude specific markets, and change the app's price in any market in which you offer it, in the **Markets and custom prices** section. For more info, see [Define pricing and market selection](define-pricing-and-market-selection.md).
+多くの開発者は、ストアが提供する試用版の機能を使って、ユーザーが無料でアプリを試用できるようにすることを選択します。 既定では、アプリは無料試用版として利用できません。無料試用版を提供する場合は、**[無料試用版]** ドロップダウンで値を選びます。
 
-## Sale pricing
+ユーザーが期限なしに無料でアプリにアクセスできるようにするには、**[試用に期限はありません]** を選びます。 ユーザーに通常版の購入を促す場合は、[試用版の機能を除外または制限する](https://msdn.microsoft.com/library/windows/apps/mt219685)コードを追加します。
 
+また、**[1 日]**、**[7 日間]**、**[15 日間]**、または **[30 日間]** の期限付きの試用版を選ぶオプションもあります。 試用期間中、機能を制限することも、すべての機能を使えるようにすることもできます。
 
-If you want to offer your app at a reduced price for a limited period of time, you can create and schedule a sale. For more info, see [Put apps and IAPs on sale](put-apps-and-iaps-on-sale.md).
+> **注**  Windows Phone 8.1 以前のユーザーには、期限付きの試用版は表示されません。
 
-## Distribution and visibility
-
-
-The **Distribution and visibility** section allows you to set restrictions on how your app can be discovered and acquired.
-
-The default setting is **Make this app available in the Store**. This means that your app will be listed in the Store for customers to find via the app's direct link and/or by other methods, including searching, browsing, and inclusion in curated lists.
-
-If you want to hide your app in the Store but still make it available to certain people, select one of the following options to limit your app's availability. Note that customers on Windows 8 and Windows 8.1 won't be able to get the app at all if you choose any of these options.
-
--   **Hide this app and prevent acquisition. Customers with a promotional code can still download it on Windows 10 devices**: No customers can find your app in the Store via searching or browsing, but you can [generate promotional codes](generate-promotional-codes.md) to distribute to specific people on Windows 10. They can use the link and code to get your app for free, even though you aren't offering it to any other customers
--   **Hide this app in the Store. Customers with a direct link to the app’s listing can still download it, except on Windows 8 and Windows 8.1**: No customers can find your app in the Store via searching or browsing, but any customer with the direct link to your app's listing can download your app on devices running Windows 10 or Windows Phone 8.1 and earlier.
--   **Hide this app and make it available only to the people you specify below, who can download this app on Windows Phone 8.x devices. A promotional code may be used to download this app on Windows 10 devices**: No customers can find your app in the Store via searching or browsing, and only the Windows Phone 8.x customers whose email addresses (associated with their Microsoft accounts) that you enter in the box (separated by semicolons) can download your app by using the direct link to its listing. You can also [generate promotional codes](generate-promotional-codes.md) to distribute to specific people on Windows 10. This option is often used for [beta testing](beta-testing-and-targeted-distribution.md) on Windows Phone 8.1 and earlier. Note that this option can only be selected if you have never previously published the app with the **Distribution and visibility** option set to **Anyone can find your app in the Store**.
-
-> **Note**  To completely stop offering an app to new customers, click **Make app unavailable** from the App overview page. After you confirm that you want to make the app unavailable, within a few hours it will no longer be visible in the Store, and no new customers will be able to get it via any method. This action will override any of the options you have chosen here: it won't be available to new customers at all. To make it available to new customers again, you can click **Make app available** from the App overview page at any time. For more info, see [Removing an app from the Store](guidance-for-app-package-management.md#removing-an-app-from-the-store).
-
-## Windows 10 device families
-
-This section lets you indicate which types of Windows 10 devices customers can use to acquire your app. (If your package won't run on a certain device type, we won't offer it for download to that type of device.)
-
-> **Important**  To completely prevent a certain Windows 10 device family from getting your app, you need to update the [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903) element in your appx manifest to target only the device family that you want to support (i.e., **Windows.Mobile** or **Windows.Desktop**), rather than leaving it as the **Windows.Universal** value (for the universal device family) that Microsoft Visual Studio includes in the appx manifest by default.
-
-By default, the boxes for **Mobile** and **Desktop** will be checked. We recommend leaving these boxes checked unless you have a specific reason to limit the types of Windows 10 devices which can acquire your app. For example, you may have created Windows Universal packages, but you know that you still need to test some issues with the app on mobile devices. To prevent new customers from downloading the app on Windows 10 mobile devices, you can uncheck the **Mobile** checkbox here. Then if you later decide you're ready to offer it to customers on Windows 10 mobile devices, you can create a new submission with the **Mobile** box checked.
-
-If you have tested your app to ensure that it runs appropriately on Microsoft HoloLens, you can also check the **Holographic** box to offer the app to HoloLens customers. For more about building, testing, and publishing holographic apps, see the [Windows Holographic Development Overview](http://dev.windows.com/holographic/development_overview).
-
-Note that the selections you make in this section will apply to all of your app’s packages, regardless of the OS version they target (Windows 10, Windows 8.x, Windows Phone 8.x, etc.). However, they affect availability only for customers who are using Windows 10 devices (and not Windows 8.x or Windows Phone 8.x devices).
-
-It's also important to be aware that selections you make here apply to new acquisitions only. Anyone who already has your app can continue to use it and will get any updates you submit, even if you remove that device family here. This applies even to customers who acquired your app before upgrading to Windows 10. For example, if you have a published app with Windows Phone 8.1 packages, and you later add a Windows 10 (UWP) package to the same app that targets the universal device family, Windows 10 mobile customers who had your Windows Phone 8.1 package will be offered an update to this Windows 10 (UWP) package, even if you've unchecked the box for **Mobile** (since this is not a new acquisition, but an update). However, if you don't provide any Windows 10 (UWP) package that targets the universal or mobile device family, your Windows 10 mobile customers will remain on the Windows Phone 8.1 package.
-
-For more info about device families, see [Guide to Universal Windows Platform (UWP) apps](https://msdn.microsoft.com/library/windows/apps/dn894631) and [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903).
-
-> **Note**  You'll also see a checkbox where you can indicate whether you want to allow Microsoft to make the app available to future Windows 10 device families. We recommend keeping this box checked so that your app can be available to more potential customers as new device families are introduced.
-
-## Organizational licensing
+## 市場と特別価格
 
 
-By default, your app may be offered to organizations to purchase in volume. You can indicate whether and how your app can be offered in this section.
+既定では、アプリは販売できるすべての市場にこの基本価格で公開されます。 **[市場と特別価格]** セクションでは、これらの設定を変更して特定の市場を追加または除外することも、アプリを提供するいずれかの市場でアプリの価格を変更することもできます。 詳細については、「[価格と市場の選択の定義](define-pricing-and-market-selection.md)」を参照してください。
 
-For more info, see [Organizational licensing options](organizational-licensing.md).
-
-## Publish date
+## セール価格
 
 
-You can indicate when your app (or update) will be published by choosing an option in the **Publish date** section.
+期間限定でアプリを割引価格で提供する場合は、特売を作成し、そのスケジュールを設定できます。 詳しくは、「[アプリと IAP の販売](put-apps-and-iaps-on-sale.md)」をご覧ください。
 
--   Choose **Publish this submission as soon as it passes certification** to make this submission available in the Store as soon as possible.
--   Choose **Publish this submission manually** if you don't want your submission to be published until you indicate that it should be. You can do this from the certification status page by clicking **Publish now**, or by selecting a specific date as described below.
--   Choose **No sooner than \[date\]** to ensure that the submission is not published until a certain date. With this option, your submission will be released as soon as possible on or after the date you specify. The date must be at least 24 hours in the future. Along with the date, you can also specify the time at which the submission should begin to be published.
-    > **Note**  Delays during certification or publishing could cause the actual release date to be later than the date you request. The Windows Store cannot guarantee that your app (or update) will be available on a specific date.
+## Distribution and visibility (配布と表示)
 
-You can also change the release date after submitting your app, as long as it hasn’t entered the **Publish** step yet.
+
+**[配布と表示]** セクションでは、アプリを検出および取得する方法についての制限を設定できます。
+
+既定の設定は、**[このアプリをストアで提供する]** です。 これは、アプリがストアでユーザーに一覧表示され、アプリの直接リンクや他の方法 (検索、閲覧、整理された一覧への追加など) で見つけることができることを意味します。
+
+ストアでアプリを非表示にした状態で、特定のユーザーが取得できるようにする場合は、次のいずれかのオプションを選んで、アプリの使用可能状況を制限します。 これらのオプションのいずれかを選択した場合、Windows 8 と Windows 8.1 のユーザーはアプリを入手できなくなります。
+
+-   **[このアプリを非表示にして取得できないようにします。プロモーション コードを持つユーザーは、Windows 10 デバイスで引き続きダウンロードできます]**: 検索や参照によってストアでアプリを見つけることはできませんが、[プロモーション コードを生成](generate-promotional-codes.md)して、Windows 10 で特定のユーザーに配布できます。 その他のユーザーに提供されていない場合でも、リンクとコードを使ってアプリを無料で入手することができます。
+-   **[このアプリをストア内で非表示にします。アプリ掲載ページへの直接リンクを持っているユーザーに限り、引き続きダウンロードが可能です (ただし、Windows 8 および Windows 8.1 ではダウンロードできません)]**: 検索や参照によってストアでアプリを見つけることはできませんが、アプリの内容への直接リンクを持っているユーザーは Windows 10 または Windows Phone 8.1 以前を実行しているデバイスでアプリをダウンロードすることができます。
+-   **[このアプリを非表示にして、以下に指定したユーザーだけが入手できるようにします。Windows Phone 8.x デバイスでは、そのユーザーがアプリをダウンロードできます。Windows 10 デバイスでこのアプリをダウンロードするには、プロモーション コードを使用できます]**: 検索や参照によってストアでアプリを見つけることはできませんが、(セミコロンで区切って) ボックスに入力した (Microsoft アカウントに関連付けられた) メール アドレスを持つ Windows Phone 8.x ユーザーだけはアプリの内容への直接リンクを使用してアプリをダウンロードすることができます。 [プロモーション コードを生成](generate-promotional-codes.md)して、Windows 10 の特定のユーザーに配布することもできます。 このオプションは、Windows Phone 8.1 以前での[ベータ テスト](beta-testing-and-targeted-distribution.md)によく使われます。 このオプションは、以前 **[配布と表示]** オプションを **[誰でもストア内でお客様のアプリを検索できます]** に設定して発行したことがない場合にのみ選ぶことができます。
+
+> **注**  新しいユーザーへのアプリの提供を完全に停止するには、[アプリの概要] ページで **[アプリの提供を停止する]** をクリックします。 アプリの提供を停止することを確認した後、数時間以内にアプリはストアに表示されなくなり、どのような方法を使っても新しいユーザーが入手することはできなくなります。 この操作は、ここで選んだすべてのオプションより優先されます。新しいユーザーはまったく入手できなくなります。 新しいユーザーが再び入手できるようにする場合は、[アプリの概要] ページで **[アプリを提供する]** をクリックします。 詳しくは、「[アプリをストアから削除する](guidance-for-app-package-management.md#removing-an-app-from-the-store)」をご覧ください。
+
+## Windows 10 デバイス ファミリ
+
+このセクションでは、アプリを入手する際に使用できる Windows 10 デバイスのユーザーの種類を指定できます (特定の種類のデバイスでパッケージを実行できない場合は、その種類のデバイスへのダウンロードは提供しません)。
+
+> **重要**  特定の Windows 10 デバイス ファミリでアプリを完全に入手できないようにするには、appx マニフェストの [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903) 要素を Microsoft Visual Studio の appx マニフェストに既定で含まれる **Windows.Universal** 値 (ユニバーサル デバイス ファミリ用) としてそのままにしておくのではなく、サポートするデバイス ファミリのみ (**Windows.Mobile** または **Windows.Desktop**) を対象とするように更新する必要があります。
+
+既定では、**モバイル**と**デスクトップ**のボックスが確認されます。 アプリを入手できる Windows 10 デバイスの種類を制限する特別な理由がない限り、これらのチェック ボックスはオンのままにすることをお勧めします。 たとえば、Windows ユニバーサル パッケージを作成しても、モバイル デバイスでアプリの問題をテストする必要があります。 新しいユーザーが Windows 10 モバイル デバイスにアプリをダウンロードできないようにするには、ここの **[モバイル]** チェック ボックスをオフにすることができます。 Windows 10 モバイル デバイスのユーザーに提供する準備ができた場合は、**[モバイル]** チェック ボックスをオンにして新しい申請を作成することができます。
+
+Microsoft HoloLens で適切に実行されるようにアプリをテストしている場合、**[Holographic]** ボックスを確認して HoloLens ユーザーにアプリを提供することもできます。 ホログラム アプリケーションのビルド、テスト、および公開について詳しくは、「[Windows ホログラフィック開発の概要](http://dev.windows.com/holographic/development_overview)」をご覧ください。
+
+このセクションで行った選択内容は、ターゲットとする OS のバージョン (Windows 10、Windows 8.x、Windows Phone 8.x など) に関係なく、アプリのすべてのパッケージに適用されます。 ただし、入手できるかどうかは Windows 10 デバイスを使っているユーザーに対してのみ適用されます (Windows 8.x や Windows Phone 8.x デバイスは影響を受けません)。
+
+ここで行った選択は新しい取得のみに適用されることにも注意することが重要です。 ここでデバイス ファミリを削除した場合でも、アプリを既に持っているユーザーは使い続けることができ、提出された更新プログラムを取得します。 これは、Windows 10 にアップグレードする前にアプリを取得したユーザーにも当てはまります。 たとえば、Windows Phone 8.1 パッケージで公開したアプリがあり、ユニバーサル デバイス ファミリを対象とする同じアプリに Windows 10 (UWP) パッケージを後で追加する場合、**[モバイル]** チェック ボックスをオフにしていた場合でも、Windows Phone 8.1 パッケージを持っていた Windows 10 モバイル ユーザーにはこの Windows 10 (UWP) パッケージに対する更新プログラムが提供されます (これは新しい取得ではなく更新プログラムであるため)。 ただし、ユニバーサルまたはモバイル デバイス ファミリを対象とする Windows 10 (UWP) パッケージを一切提供しない場合は、Windows 10 モバイル ユーザーは Windows Phone 8.1 パッケージのままになります。
+
+デバイス ファミリについて詳しくは、「[ユニバーサル Windows プラットフォーム (UWP) アプリのガイド](https://msdn.microsoft.com/library/windows/apps/dn894631)」および「[**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903)」をご覧ください。
+
+> **注**  Microsoft が将来の Windows 10 デバイス ファミリでアプリを利用できるようにするかどうかを指定できるチェック ボックスも提供しています。 新しいデバイス ファミリが導入されるとより多くの潜在的なユーザーがアプリを利用できるようになるため、このチェック ボックスはオンのままにすることをお勧めします。
+
+## 組織のライセンス
+
+
+既定では、アプリは組織がボリューム購入できるように提供されます。 このセクションでは、アプリを提供するかどうかとその方法を指定できます。
+
+詳しくは、「[組織のライセンス オプション](organizational-licensing.md)」をご覧ください。
+
+## 公開日
+
+
+**[公開日]** セクションのオプションを選ぶことで、アプリ (または更新プログラム) が公開される時期を指定できます。
+
+-   できるだけ早くストアでこの申請が利用できるようにするには、**[認定後すぐにこの申請を公開]** を選びます。
+-   適切な時期を指定するまで申請を公開しない場合は、**[手動でこの申請を公開]** を選びます。 アプリケーションを手動で公開するには、認定のステータス ページから **[今すぐ公開]** をクリックするか、後で説明するように特定の日付を選びます。
+-   申請が特定の日付まで公開されないようにするには、**[次の予定日に公開する \[日付\]]** を選びます。 このオプションを選ぶと、申請は指定された日付の当日またはその日以降に、できるだけ早くリリースされます。 日付は 24 時間以上先の日付にする必要があります。 日付と同時に、申請を公開し始める時刻を指定することもできます。
+    > **注**  認定または公開に遅延が生じると、実際のリリース日が、希望する日付よりも後になる場合があります。 Windows ストアではアプリ (更新プログラム) が特定の日にリリースされることを保証できません。
+
+アプリの提出後にリリース日を変更することもできます。ただし **[公開]** ステップに入る前に限ります。
  
 
  

@@ -1,45 +1,45 @@
 ---
-Description: You can encourage your customers to leave feedback by launching Feedback Hub from your app.
-title: Launch Feedback Hub from your app
+Description: アプリからフィードバック Hub を起動してフィードバックを送信することをユーザーにお勧めできます。
+title: アプリからのフィードバック Hub の起動
 ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
 ---
 
-# Launch Feedback Hub from your app
+# アプリからのフィードバック Hub の起動
 
-You can encourage your customers to leave feedback by adding a control (such as a button) to your Universal Windows Platform (UWP) app that launches Feedback Hub. Feedback Hub is a preinstalled app that provides a single place to gather feedback on Windows and installed apps. All customer feedback that is submitted for your app through Feedback Hub is collected and presented to you in the [Feedback report](../publish/feedback-report.md) in the Windows Dev Center dashboard, so you can see the problems, suggestions, and upvotes that your customers have submitted in one report.
+フィードバック Hub を起動するユニバーサル Windows プラットフォーム (UWP) アプリにコントロール (ボタンなど) を追加してフィードバックを送信することをユーザーにお勧めできます。 フィードバック Hub は、Windows およびインストール済みアプリでフィードバックを 1 か所で収集できるようにするプレインストール アプリです。 フィードバック Hub を介してアプリに送信されたすべてのユーザー フィードバックは、Windows デベロッパー センター ダッシュ ボードの[フィードバック レポート](../publish/feedback-report.md)で収集および表示されるため、ユーザーが送信した問題、提案、賛成票を 1 つのレポートで確認できます。
 
-To launch Feedback Hub from your app, use an API that is provided by the [Microsoft Store Engagement and Monetization SDK](http://aka.ms/store-em-sdk). We recommend that you use this API to launch Feedback Hub from a UI element in your app that follows our design guidelines.
+アプリからフィードバック Hub を起動するには、[Microsoft Store Engagement and Monetization SDK](http://aka.ms/store-em-sdk) が提供する API を使用します。 この API を使用して、設計ガイドラインに準拠したアプリの UI 要素からフィードバック Hub を起動することをお勧めします。
 
->**Note** Feedback Hub is available only on devices that are running Windows 10 version 10.0.14271 or later. We recommend that you show a feedback control in your app only if the Feedback Hub is available on the user's device. The code in this topic demonstrates how to do this.
+>**注** フィードバック Hub は、Windows 10 バージョン 10.0.14271 以降を実行しているデバイスのみで利用できます。 フィードバック Hub がユーザーのデバイスで利用できる場合にのみ、アプリにフィードバック コントロールを表示することをお勧めします。 このトピックのコードは、これを実行する方法を示しています。
 
-## How to launch Feedback Hub from your app
+## アプリからフィードバック Hub を起動する方法
 
-To launch Feedback Hub from your app:
+アプリからフィードバック Hub を起動するには、次の手順に従います。
 
-1. Install the [Microsoft Store Engagement and Monetization SDK](http://aka.ms/store-em-sdk). In addition to the API for launching Feedback Hub, this SDK also provides APIs for other features such as running experiments in your apps with A/B testing and displaying ads. For more information about this SDK, see [Monetize your app and engage customers with the Store Engagement and Monetization SDK](monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md).
-2. Open your project in Visual Studio.
-3. In Solution Explorer, right-click the **References** node for your project and click **Add Reference**.
-4. In **Reference Manager**, expand **Universal Windows** and click **Extensions**.
-5. In the list of SDKs, click the check box next to **Microsoft Store Engagement SDK** and click **OK**.
-6. In your project, add the control that you want to show to users to launch Feedback Hub, such as a button. We recommend that you configure the control as follows:
-  * Set the font of the content shown in the control to **Segoe MDL2 Assets**.
-  * Set the text in the control to the hexadecimal Unicode character code E939. This is the character code for the recommended feedback icon in the **Segoe MDL2 Assets** font.
-  * Set the visibility of the control to hidden.
+1. [Microsoft Store Engagement and Monetization SDK](http://aka.ms/store-em-sdk) をインストールします。 フィードバック Hub を起動するための API に加えて、この SDK は、アプリで A/B テストを行ったり、広告を表示したりすることなど、その他の機能のための API を提供します。 この SDK について詳しくは、「[Store Engagement and Monetization SDK によるアプリ収益の獲得と顧客エンゲージメント](monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md)」をご覧ください。
+2. Visual Studio でプロジェクトを開きます。
+3. ソリューション エクスプローラーで、プロジェクトの **[参照設定]** ノードを右クリックし、**[参照の追加]** をクリックします。
+4. **[参照マネージャー]**で、**[ユニバーサル Windows]** を展開し、**[拡張機能]** をクリックします。
+5. SDK の一覧で、**[Microsoft Store Engagement SDK]** の横にあるチェック ボックスをオンにして、**[OK]** をクリックします。
+6. プロジェクトで、フィードバック Hub を起動するために、ユーザーに表示するボタンなどのコントロールを追加します。 コントロールを次のように構成することをお勧めします。
+  * コントロールに表示するコンテンツのフォントを **Segoe MDL2 Assets** に設定します。
+  * コントロールのテキストを 16 進数の Unicode 文字コード E939 に設定します。 これは、**Segoe MDL2 Assets** フォントで推奨されるフィードバック アイコンの文字コードです。
+  * コントロールの可視性を非表示に設定します。
 
-    > **Note**  Feedback Hub is available only on devices that are running Windows 10 version 10.0.14271 or later. We recommend that you hide your feedback control by default and show it in your initialization code only if the Feedback Hub is available on the user's device. The next step demonstrates how to do this.
+    > **注**  フィードバック Hub は、Windows 10 バージョン 10.0.14271 以降を実行しているデバイスのみで利用できます。 フィードバック Hub がユーザーのデバイスで利用できる場合、既定でフィードバック コントロールを非表示にし、初期化コードのみにフィードバック コントロールを表示することをお勧めします。 次の手順は、この処理を実行する方法を示しています。
 
-  The following code demonstrates the XAML definition of a [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx) that is configured as described above.
+  次のコードは、上記のように構成されている[ボタン](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)の XAML 定義を示しています。
   ```
   <Button x:Name="feedbackButton" FontFamily="Segoe MDL2 Assets" Content="&#xE939;" HorizontalAlignment="Left" Margin="138,352,0,0" VerticalAlignment="Top" Visibility="Collapsed"  Click="feedbackButton_Click"/>
   ```
-7. In your initialization code for the app page that hosts your feedback control, use the [IsSupported](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.feedback.issupported.aspx) property of the [Feedback](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.feedback.aspx) class to determine whether the Feedback Hub is available on the user's device. If this property returns **true**, make the control visible. The following code demonstrates how to do this for a [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx).
+7. フィードバック コントロールをホストするアプリのページの初期化コードで、[Feedback](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.feedback.aspx) クラスの [IsSupported](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.feedback.issupported.aspx) プロパティを使用して、フィードバック Hub がユーザーのデバイスで利用できるかどうかを指定します。 このプロパティが **true** を返す場合、コントロールを表示にします。 次のコードは、[ボタン](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)に対してこの処理を実行する方法を示しています。
 ```
 if (Microsoft.Services.Store.Engagement.Feedback.IsSupported)
 {
         this.feedbackButton.Visibility = Visibility.Visible;
 }
 ```
-8. In the event handler that runs when the user clicks the control, call the static [LaunchFeedbackAsync](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.feedback.launchfeedbackasync.aspx) method of the [Feedback](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.feedback.aspx) class to launch the Feedback Hub app. There are two overloads for this method: one without parameters, and another one that accepts a dictionary of key and value pairs that contain metadata that you want to associate with the feedback. The following example demonstrates how to launch Feedback Hub in the [Click](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) event handler for a [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx).
+8. ユーザーがコントロールをクリックすると実行されるイベント ハンドラーで、[Feedback](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.feedback.aspx) クラスの静的な [LaunchFeedbackAsync](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.feedback.launchfeedbackasync.aspx) メソッドを呼び出し、フィードバック Hub アプリを起動します。 このメソッドには 2 つのオーバーロードがあります。1 つは、パラメーターのないオーバーロードで、もう 1 つは、フィードバックを関連付けるメタデータが含まれる、キーと値のペアのディクショナリを受け取るオーバーロードです。 次の例は、[ボタン](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)の [Click](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) イベント ハンドラーでフィードバック Hub を起動する方法を示しています。
 ```
 private async void feedbackButton_Click(object sender, RoutedEventArgs e)
 {
@@ -47,27 +47,27 @@ private async void feedbackButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## Design recommendations for your feedback UI
+## フィードバック UI の設計に関する推奨事項
 
-To launch Feedback Hub, we recommend that you add a UI element in your app (such as a button) that displays the following standard feedback icon from the Segoe MDL2 Assets font and the character code E939.
+フィードバック Hub を起動するために、Segoe MDL2 Assets フォントと文字コード E939 から次の標準のフィードバック アイコンを表示する UI 要素 (ボタンなど) をアプリに追加することをお勧めします。
 
 ![]Feedback icon](images/feedback_icon.png)
 
-We also recommend that you use one or more of the following placement options for linking to Feedback Hub in your app.
-* **Directly in the app bar**. Depending on your implementation, you may wish to use the icon only or add text (as shown below).
+また、アプリでフィードバック Hub にリンクするための次の配置オプションを 1 つ以上使用することをお勧めします。
+* **アプリ バー内で直接**。 実装に応じて、アイコンのみを使用するか、テキストを追加できます (以下に示すように)。
 
   ![]Feedback icon](images/feedback_appbar_placement.png)
 
-* **In your app's settings**. This is a more subtle way to provide access to Feedback Hub. In the example below, the Feedback link appears as one of the links under App.
+* **アプリの設定内**。 これは、フィードバック Hub へのアクセスを提供するより巧妙な方法です。 次の例では、フィードバック リンクがアプリの下にあるリンクとして表示されています。
 
   ![]Feedback icon](images/feedback_settings_placement.png)
 
-* **In an event-driven flyout**. This is useful when you want to query your customers about a specific question before launching into the Windows Feedback Hub. For example, after your app uses a certain feature, you might prompt the customer with a specific question about their satisfaction with that feature. If the customer chooses to respond, your app launches Feedback Hub.
+* **イベント駆動型のポップアップ内**。 これは、Windows フィードバック Hub を起動する前に、特定の質問についてユーザーにたずねる場合に便利です。 たとえば、ユーザーがアプリで特定の機能を使用した後、その機能の満足度に関する特定の質問を表示します。 ユーザーが質問に応答した場合、アプリでフィードバック Hub が起動します。
 
 
-## Related topics
+## 関連トピック
 
-* [Feedback report](../publish/feedback-report.md)
+* [フィードバック レポート](../publish/feedback-report.md)
 
 
 <!--HONumber=Mar16_HO5-->

@@ -1,39 +1,39 @@
 ---
-Description: Adaptive tile templates are a new feature in Windows 10, allowing you to design your own tile notification content using a simple and flexible markup language that adapts to different screen densities.
-title: Create adaptive tiles
+Description: アダプティブ タイル テンプレートは Windows 10 の新機能であり、シンプルで柔軟なマークアップ言語を使って、さまざまな画面密度に合わせて変化する独自のタイル通知コンテンツをデザインできるようになります。
+title: アダプティブ タイルの作成
 ms.assetid: 1246B58E-D6E3-48C7-AD7F-475D113600F9
-label: Create adaptive tiles
+label: アダプティブ タイルの作成
 template: detail.hbs
 ---
 
-# Create adaptive tiles
+# アダプティブ タイルの作成
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-Adaptive tile templates are a new feature in Windows 10, allowing you to design your own tile notification content using a simple and flexible markup language that adapts to different screen densities. This article tells you how to create adaptive live tiles for your Universal Windows Platform (UWP) app. For the complete list of adaptive elements and attributes, see the [Adaptive tiles schema](tiles-and-notifications-adaptive-tiles-schema.md).
+アダプティブ タイル テンプレートは Windows 10 の新機能であり、シンプルで柔軟なマークアップ言語を使って、さまざまな画面密度に合わせて変化する独自のタイル通知コンテンツをデザインできるようになります。 この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリのアダプティブ ライブ タイルを作成する方法について説明します。 アダプティブ タイルのすべての要素と属性の一覧については、「[アダプティブ タイルのスキーマ](tiles-and-notifications-adaptive-tiles-schema.md)」をご覧ください
 
-(If you'd like, you can still use the preset templates from the [Windows 8 tile template catalog](https://msdn.microsoft.com/library/windows/apps/hh761491) when designing notifications for Windows 10.)
+(必要に応じて、Windows 10 の通知をデザインするときは、[Windows 8 タイル テンプレート カタログ](https://msdn.microsoft.com/library/windows/apps/hh761491)のプリセット テンプレートを引き続き使えます)。
 
-## <span id="Getting_started"></span><span id="getting_started"></span><span id="GETTING_STARTED"></span>Getting started
-
-
-**Install NotificationsExtensions.** If you'd like to use C# instead of XML to generate notifications, install the NuGet package named [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki). The C# samples provided in this article use NotificationsExtensions.
-
-**Install Notifications Visualizer.** This free UWP app helps you design adaptive live tiles by providing an instant visual preview of your tile as you edit it, similar to Visual Studio's XAML editor/design view. You can read [this blog post](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/09/22/introducing-notifications-visualizer-for-windows-10.aspx) for more information, and you can download Notifications Visualizer [here](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1).
-
-## <span id="Usage_guidance"></span><span id="usage_guidance"></span><span id="USAGE_GUIDANCE"></span>Usage guidance
+## <span id="Getting_started"></span><span id="getting_started"></span><span id="GETTING_STARTED"></span>はじめに
 
 
-Adaptive templates are designed to work across different form factors and notification types. Elements such as group and subgroup link together content and don't imply a particular visual behavior on their own. The final appearance of a notification should be based on the specific device on which it will appear, whether it's phone, tablet, or desktop, or another device.
+**NotificationsExtensions をインストールします。** 通知の生成に XML ではなく C# を使う場合は、[NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) という名前の NuGet パッケージをインストールします。 この記事で示している C# のサンプルでは、NotificationsExtensions を使っています。
 
-Hints are optional attributes that can be added to elements in order to achieve a specific visual behavior. Hints can be device-specific or notification-specific.
+**Notifications Visualizer をインストールします。** この無料の UWP アプリは、Visual Studio の XAML エディター/デザイン ビューと同様、タイルの編集時に視覚的なプレビューが即座に表示されるため、アダプティブ ライブ タイルのデザインに便利です。 詳しくは、[このブログ記事](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/09/22/introducing-notifications-visualizer-for-windows-10.aspx)をご覧ください。Notifications Visualizer は[こちら](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)からダウンロードできます。
 
-## <span id="A_basic_example"></span><span id="a_basic_example"></span><span id="A_BASIC_EXAMPLE"></span>A basic example
+## <span id="Usage_guidance"></span><span id="usage_guidance"></span><span id="USAGE_GUIDANCE"></span>使い方のガイダンス
 
 
-This example demonstrates what the adaptive tile templates can produce.
+アダプティブ テンプレートはさまざまな種類のフォーム ファクターと通知で動作するようにデザインされています。 グループやサブグループのような要素はコンテンツと共にリンクされますが、それらのグループ自体には特に視覚的な動作はありません。 通知の最終的な外観は、表示先のデバイスがスマートフォン、タブレット、デスクトップ、その他のデバイスのいずれであっても、特定のデバイスに基づきます。
+
+hint は、特定の視覚的な動作を実現するために要素に追加できる省略可能な属性です。 デバイス固有または通知固有の hint を追加できます。
+
+## <span id="A_basic_example"></span><span id="a_basic_example"></span><span id="A_BASIC_EXAMPLE"></span>基本的な例
+
+
+次の例では、アダプティブ タイル テンプレートで何を作成できるかを示しています。
 
 ```XML
 <tile>
@@ -96,21 +96,21 @@ TileContent content = new TileContent()
 };
 ```
 
-**Result:**
+**結果:**
 
-![quick sample tile](images/adaptive-tiles-quicksample.png)
+![クイック サンプル タイル](images/adaptive-tiles-quicksample.png)
 
-## <span id="Tile_sizes"></span><span id="tile_sizes"></span><span id="TILE_SIZES"></span>Tile sizes
+## <span id="Tile_sizes"></span><span id="tile_sizes"></span><span id="TILE_SIZES"></span>タイルのサイズ
 
 
-Content for each tile size is individually specified in separate [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) elements within the XML payload. Choose the target size by setting the template attribute to one of the following values:
+各タイル サイズのコンテンツは XML ペイロード内でそれぞれ個別の [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 要素で指定します。 template 属性を次のいずれかの値に設定することで、目的のサイズを選びます。
 
 -   TileSmall
 -   TileMedium
 -   TileWide
--   TileLarge (only for desktop)
+-   TileLarge (デスクトップの場合のみ)
 
-For a single tile notification XML payload, provide &lt;binding&gt; elements for each tile size that you'd like to support, as shown in this example:
+次の例では、1 つのタイル通知 XML ペイロード内で、サポートする各タイル サイズを &lt;binding&gt; 要素で指定しています。
 
 ```XML
 <tile>
@@ -188,16 +188,16 @@ TileContent content = new TileContent()
 };
 ```
 
-**Result:**
+**結果:**
 
-![adaptive tile sizes: small, medium, wide, and large](images/adaptive-tiles-sizes.png)
+![アダプティブ タイル サイズ: 小、中、ワイド、大](images/adaptive-tiles-sizes.png)
 
-## <span id="Branding"></span><span id="branding"></span><span id="BRANDING"></span>Branding
+## <span id="Branding"></span><span id="branding"></span><span id="BRANDING"></span>ブランド設定
 
 
-You can control the branding on the bottom of a live tile (the display name and corner logo) by using the branding attribute on the notification payload. You can choose to display "none," only the "name," only the "logo," or both with "nameAndLogo."
+通知ペイロード内で branding 属性を使って、ライブ タイルの下部でブランディング (表示名とコーナー ロゴ) を制御できます。 表示なし ("none")、名前のみ表示 ("name")、ロゴのみ表示 ("logo")、名前とロゴの両方を表示 (nameAndLogo") のいずれかを選べます。
 
-**Note**  Windows Phone doesn't support the corner logo, so "logo" and "nameAndLogo" default to "name" on phone.
+**注**  Windows Phone では、コーナー ロゴはサポートされていないため、"logo" と "nameAndLogo" は "name" に既定で設定されます。
 
  
 
@@ -221,15 +221,15 @@ new TileVisual()
 }
 ```
 
-**Result:**
+**結果:**
 
-![adaptive tiles, name and logo](images/adaptive-tiles-namelogo.png)
+![アダプティブ タイル、表示名、ロゴ](images/adaptive-tiles-namelogo.png)
 
-Branding can be applied for specific tile sizes one of two ways:
+ブランディングは次の 2 つのいずれかの方法で特定のタイル サイズに合わせて適用できます。
 
-1. By applying the attribute on the [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) element
-2. By applying the attribute on the [&lt;visual&gt;](tiles-and-notifications-adaptive-tiles-schema.md) element, which affects the entire notification payload
-If you don't specify branding for a binding, it will use the branding that's provided on the visual element.
+1. その属性を [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 要素で適用する。
+2. その属性を [&lt;visual&gt;](tiles-and-notifications-adaptive-tiles-schema.md) で適用する。通知ペイロード全体に影響を与えます。
+binding 要素でブランディングを指定しない場合は、visual 要素で指定したブランディングが使われます。
 
 ```XML
 <tile>
@@ -270,20 +270,20 @@ TileContent content = new TileContent()
 };
 ```
 
-**Default branding result:**
+**既定のブランディングの結果:**
 
-![default branding on tiles](images/adaptive-tiles-defaultbranding.png)
+![タイル上の既定のブランディング](images/adaptive-tiles-defaultbranding.png)
 
-If you don't specify the branding in your notification payload, the base tile's properties will determine the branding. If the base tile shows the display name, then the branding will default to "name." Otherwise, the branding will default to "none" if the display name isn't shown.
+通知ペイロード内でブランディングを指定しない場合は、ベース タイルのプロパティによってブランディングが決まります。 ベース タイルに表示名が表示される場合、ブランディングは既定で "name" に設定されます。 表示名が表示されない場合、ブランディングは既定で "none" に設定されます。
 
-**Note**   This is a change from Windows 8.x, in which the default branding was "logo."
+**注**   これは、既定のブランディングが "logo" であった Windows 8.x からの変更点です。
 
  
 
-## <span id="Display_name"></span><span id="display_name"></span><span id="DISPLAY_NAME"></span>Display name
+## <span id="Display_name"></span><span id="display_name"></span><span id="DISPLAY_NAME"></span>表示名
 
 
-You can override the display name of a notification by entering the text string of your choice with the **displayName** attribute. As with branding, you can specify this on the [&lt;visual&gt;](tiles-and-notifications-adaptive-tiles-schema.md) element, which affects the entire notification payload, or on the [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) element, which only affects individual tiles.
+**displayName** 属性に任意のテキスト文字列を入力することで、通知の表示名を上書きすることができます。 ブランディングと同様、通知ペイロード全体に影響を与える [&lt;visual&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 要素で、または個々のタイルにのみ影響を与える [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 要素で、表示名を指定できます。
 
 ```XML
 <tile>
@@ -325,14 +325,14 @@ TileContent content = new TileContent()
 };
 ```
 
-**Result:**
+**結果:**
 
-![adaptive tiles display name](images/adaptive-tiles-displayname.png)
+![アダプティブ タイルの表示名](images/adaptive-tiles-displayname.png)
 
-## <span id="Text"></span><span id="text"></span><span id="TEXT"></span>Text
+## <span id="Text"></span><span id="text"></span><span id="TEXT"></span>テキスト
 
 
-The [&lt;text&gt;](tiles-and-notifications-adaptive-tiles-schema.md) element is used to display text. You can use hints to modify how text appears.
+[&lt;text&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 要素を使って、テキストを表示します。 hint を使うと、テキストの表示方法を変更できます。
 
 ```XML
 <text>This is a line of text</text></code></pre></td>
@@ -359,14 +359,14 @@ new TileText()
 };
 ```
 
-**Result:**
+**結果:**
 
-![adaptive tile text](images/adaptive-tiles-text.png)
+![アダプティブ タイルのテキスト](images/adaptive-tiles-text.png)
 
-## <span id="Text_wrapping"></span><span id="text_wrapping"></span><span id="TEXT_WRAPPING"></span>Text wrapping
+## <span id="Text_wrapping"></span><span id="text_wrapping"></span><span id="TEXT_WRAPPING"></span>テキストの折り返し
 
 
-By default, text doesn't wrap and will continue off the edge of the tile. Use the **hint-wrap** attribute to set text wrapping on a text element. You can also control the minimum and maximum number of lines by using **hint-minLines** and **hint-maxLines**, both of which accept positive integers.
+既定では、テキストは折り返されず、タイルの端からはみ出します。 **hint-wrap** 属性を使って、text 要素のテキストの折り返しを設定します。 また、**hint-minLines** と **hint-maxLines** (正の整数のみを受け取り) を使って、行の最小数と最大数を制御することもできます。
 
 ```XML
 <text hint-wrap="true">This is a line of wrapping text</text></code></pre></td>
@@ -394,14 +394,14 @@ new TileText()
 };
 ```
 
-**Result:**
+**結果:**
 
-![adaptive tile with text wrapping](images/adaptive-tiles-textwrapping.png)
+![テキストが折り返されるアダプティブ タイル](images/adaptive-tiles-textwrapping.png)
 
-## <span id="Text_styles"></span><span id="text_styles"></span><span id="TEXT_STYLES"></span>Text styles
+## <span id="Text_styles"></span><span id="text_styles"></span><span id="TEXT_STYLES"></span>テキスト スタイル
 
 
-Styles control the font size, color, and weight of text elements. There are a number of available styles, including a "subtle" variation of each style that sets the opacity to 60%, which usually makes the text color a shade of light gray.
+スタイルを使って、text 要素のフォントのサイズ、色、太さを制御します。 多数のスタイルを使えます。たとえば、各スタイルの "Subtle" バリエーションを使って、テキストの不透明度を 60% に設定して、テキストの色を淡い灰色で暗くすることができます。
 
 ```XML
 <text hint-style="base">Header content</text>
@@ -422,20 +422,20 @@ new TileText()
 }
 ```
 
-**Result:**
+**結果:**
 
-![adaptive tiles text styles](images/adaptive-tiles-textstyles.png)
+![アダプティブ タイルのテキスト スタイル](images/adaptive-tiles-textstyles.png)
 
-**Note**  The style defaults to caption if hint-style isn't specified.
+**注**  hint-style を指定しない場合、スタイルは既定で caption に設定されます。
 
  
 
-**Basic text styles**
+**基本的なテキスト スタイル**
 
 |                                |                           |             |
 |--------------------------------|---------------------------|-------------|
-| &lt;text hint-style="\*" /&gt; | Font height               | Font weight |
-| caption                        | 12 effective pixels (epx) | Regular     |
+| &lt;text hint-style="\*" /&gt; | フォントの高さ               | フォントの太さ |
+| caption                        | 12 epx (有効ピクセル) | Regular     |
 | body                           | 15 epx                    | Regular     |
 | base                           | 15 epx                    | Semibold    |
 | subtitle                       | 20 epx                    | Regular     |
@@ -445,9 +445,9 @@ new TileText()
 
  
 
-**Numeral text style variations**
+**テキスト スタイルの Numeral バリエーション**
 
-These variations reduce the line height so that content above and below come much closer to the text.
+次のバリエーションでは、テキストに上下のコンテンツが近づくように、行の高さを減らすことができます。
 
 |                  |
 |------------------|
@@ -457,9 +457,9 @@ These variations reduce the line height so that content above and below come muc
 
  
 
-**Subtle text style variations**
+**テキスト スタイルの Subtle バリエーション**
 
-Each style has a subtle variation that gives the text a 60% opacity, which usually makes the text color a shade of light gray.
+各スタイルの "Subtle" バリエーションでは、テキストの不透明度を 60% に設定して、テキストの色を淡い灰色で暗くすることができます。
 
 |                        |
 |------------------------|
@@ -476,10 +476,10 @@ Each style has a subtle variation that gives the text a 60% opacity, which usual
 
  
 
-## <span id="Text_alignment"></span><span id="text_alignment"></span><span id="TEXT_ALIGNMENT"></span>Text alignment
+## <span id="Text_alignment"></span><span id="text_alignment"></span><span id="TEXT_ALIGNMENT"></span>テキストの配置
 
 
-Text can be horizontally aligned left, center, or right. In left-to-right languages like English, text defaults to left-aligned. In right-to-left languages like Arabic, text defaults to right-aligned. You can manually set alignment with the **hint-align** attribute on elements.
+テキストは、横方向の配置 (左揃え、中央揃え、または右揃え) を設定できます。 英語のように左から右へと表記される言語では、テキストは既定で左揃えになります。 アラビア語のように右から左へと表記される言語では、テキストは既定で右揃えになります。 テキストの配置は要素の **hint-align** 属性で手動で設定できます。
 
 ```XML
 <text hint-align="center">Hello</text></code></pre></td>
@@ -507,18 +507,18 @@ new TileText()
 };
 ```
 
-**Result:**
+**結果:**
 
-![adaptive tiles text alignment](images/adaptive-tiles-textalignment.png)
+![アダプティブ タイルのテキストの配置](images/adaptive-tiles-textalignment.png)
 
-## <span id="Groups_and_subgroups"></span><span id="groups_and_subgroups"></span><span id="GROUPS_AND_SUBGROUPS"></span>Groups and subgroups
+## <span id="Groups_and_subgroups"></span><span id="groups_and_subgroups"></span><span id="GROUPS_AND_SUBGROUPS"></span>グループとサブグループ
 
 
-Groups allow you to semantically declare that the content inside the group is related and must be displayed in its entirety for the content to make sense. For example, you might have two text elements, a header, and a subheader, and it would not make sense for only the header to be shown. By grouping those elements inside a subgroup, the elements will either all be displayed (if they can fit) or not be displayed at all (because they can't fit).
+グループを使って、グループ内のコンテンツが互いに関連していて意味をなすまとまりで表示される必要があることを宣言できます。 たとえば、2 つの text 要素、1 つのヘッダー、1 つのサブヘッダーがあるとすると、ヘッダーのみが表示されても意味をなしません。 要素をサブグループにまとめることで、それらの要素はすべて表示されるか (画面に収まる場合)、まったく表示されません (画面に収まらない場合)。
 
-To provide the best experience across devices and screens, provide multiple groups. Having multiple groups allows your tile to adapt to larger screens.
+デバイスや画面間でのエクスペリエンスを最大限に高めるには、複数のグループを用意します。 複数のグループを使うと、タイルをより大きい画面に合わせて調整できます。
 
-**Note**  The only valid child of a group is a subgroup.
+**注**  グループの有効な子はサブグループのみです。
 
  
 
@@ -609,16 +609,16 @@ private static TileGroup CreateGroup(string from, string subject, string body)
 }
 ```
 
-**Result:**
+**結果:**
 
-![adaptive tiles groups and subgroups](images/adaptive-tiles-groups-subgroups.png)
+![アダプティブ タイルのグループとサブグループ](images/adaptive-tiles-groups-subgroups.png)
 
-## <span id="Subgroups__columns_"></span><span id="subgroups__columns_"></span><span id="SUBGROUPS__COLUMNS_"></span>Subgroups (columns)
+## <span id="Subgroups__columns_"></span><span id="subgroups__columns_"></span><span id="SUBGROUPS__COLUMNS_"></span>サブグループ (列)
 
 
-Subgroups also allow you to divide data into semantic sections within a group. For live tiles, this visually translates to columns.
+サブグループを使って、グループのデータを意味をなすまとまりに分けることもできます。 ライブ タイルの場合、このまとまりは視覚的には列になります。
 
-The **hint-weight** attribute lets you to control the widths of columns. The value of **hint-weight** is expressed as a weighted proportion of available space, which is identical to **GridUnitType.Star** behavior. For equal-width columns, assign each weight to 1.
+**hint-weight** 属性を使うと、列の幅を制御できます。 **hint-weight** の値は、空いているスペースに適用される重みとして表され、**GridUnitType.Star** と同じ動作になります。 各列の幅を同じにする場合は、各列に 1 の重みを割り当てます。
 
 <table>
 <colgroup>
@@ -628,7 +628,7 @@ The **hint-weight** attribute lets you to control the widths of columns. The val
 <tbody>
 <tr class="odd">
 <td align="left">hint-weight</td>
-<td align="left">Percentage of width</td>
+<td align="left">幅の割合</td>
 </tr>
 <tr class="even">
 <td align="left">1</td>
@@ -647,7 +647,7 @@ The **hint-weight** attribute lets you to control the widths of columns. The val
 <td align="left">25%</td>
 </tr>
 <tr class="even">
-<td align="left">Total weight: 4</td>
+<td align="left">重み合計: 4</td>
 <td align="left"></td>
 </tr>
 </tbody>
@@ -655,9 +655,9 @@ The **hint-weight** attribute lets you to control the widths of columns. The val
 
  
 
-![subgroups, even columns](images/adaptive-tiles-subgroups01.png)
+![サブグループ、等列幅](images/adaptive-tiles-subgroups01.png)
 
-To make one column twice as large as another column, assign the smaller column a weight of 1 and the larger column a weight of 2.
+ある列の幅を別の列の幅の 2 倍にするには、狭い方の列に 1 の重みを割り当て、広い方の列に 2 の重みを割り当てます。
 
 <table>
 <colgroup>
@@ -667,7 +667,7 @@ To make one column twice as large as another column, assign the smaller column a
 <tbody>
 <tr class="odd">
 <td align="left">hint-weight</td>
-<td align="left">Percentage of width</td>
+<td align="left">幅の割合</td>
 </tr>
 <tr class="even">
 <td align="left">1</td>
@@ -678,7 +678,7 @@ To make one column twice as large as another column, assign the smaller column a
 <td align="left">66.7%</td>
 </tr>
 <tr class="even">
-<td align="left">Total weight: 3</td>
+<td align="left">重み合計: 3</td>
 <td align="left"></td>
 </tr>
 </tbody>
@@ -686,9 +686,9 @@ To make one column twice as large as another column, assign the smaller column a
 
  
 
-![subgroups, one column twice the size of the other](images/adaptive-tiles-subgroups02.png)
+![サブグループ、ある列幅が別の列幅の 2 倍](images/adaptive-tiles-subgroups02.png)
 
-If you want your first column to take up 20% of the total width and your second column to take up 80% of the total width, assign the first weight to 20 and the second weight to 80. If your total weights equal 100, they'll act as percentages.
+最初の列が全体の幅の 80% を占め、2 番目の列が全体の幅の 20% を占めるようにする場合は、最初の列に 20 の重みを割り当て、2 番目の列に 80 の重みを割り当てます。 重み合計が 100 に等しい場合、重みの値はパーセンテージとして扱われます。
 
 <table>
 <colgroup>
@@ -698,7 +698,7 @@ If you want your first column to take up 20% of the total width and your second 
 <tbody>
 <tr class="odd">
 <td align="left">hint-weight</td>
-<td align="left">Percentage of width</td>
+<td align="left">幅の割合</td>
 </tr>
 <tr class="even">
 <td align="left">20</td>
@@ -709,7 +709,7 @@ If you want your first column to take up 20% of the total width and your second 
 <td align="left">80%</td>
 </tr>
 <tr class="even">
-<td align="left">Total weight: 100</td>
+<td align="left">重み合計: 100</td>
 <td align="left"></td>
 </tr>
 </tbody>
@@ -717,15 +717,15 @@ If you want your first column to take up 20% of the total width and your second 
 
  
 
-![subgroups, with weights totalling 100](images/adaptive-tiles-subgroups03.png)
+![サブグループ、重み合計が 100](images/adaptive-tiles-subgroups03.png)
 
-**Note**  An 8-pixel margin is automatically added between the columns.
+**注**  8 ピクセルの余白が列の間に自動的に追加されます。
 
  
 
-When you have more than two subgroups, you should specify the **hint-weight**, which only accepts positive integers. If you don't specify hint-weight for the first subgroup, it will be assigned a weight of 50. The next subgroup that doesn't have a specified hint-weight will be assigned a weight equal to 100 minus the sum of the preceding weights, or to 1 if the result is zero. The remaining subgroups that don't have specified hint-weights will be assigned a weight of 1.
+サブグループが 3 つ以上あるときは、正の整数のみを受け取る **hint-weight** を指定する必要があります。 1 番目のサブグループの hint-weight を指定しない場合、そのサブグループには 50 の重みが割り当てられます。 hint-weight を指定していない次のサブグループには、100 から前の重みの合計を引いた値に等しい重みが割り当てられます。または、引いた結果がゼロであれば、1 が割り当てられます。 hint-weight を指定していない残りのサブグループには、1 の重みが割り当てられます。
 
-Here's sample code for a weather tile that shows how you can achieve a tile with five columns of equal width:
+ここで示しているのは、天気タイルのサンプル コードで、等幅の 5 つの列で構成されたタイルになります。
 
 ```XML
 ...
@@ -834,20 +834,20 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 }
 ```
 
-**Result:**
+**結果:**
 
-![example of a weather tile](images/adaptive-tiles-weathertile.png)
+![天気タイルの例](images/adaptive-tiles-weathertile.png)
 
-## <span id="Images"></span><span id="images"></span><span id="IMAGES"></span>Images
+## <span id="Images"></span><span id="images"></span><span id="IMAGES"></span>イメージ
 
 
-The &lt;image&gt; element is used to display images on the tile notification. Images can be placed inline within the tile content (default), as a background image behind your content, or as a peek image that animates in from the top of the notification.
+&lt;image&gt; 要素を使って、タイル通知に画像を表示します。 画像はタイル コンテンツ (既定) 内に、背景画像としてか、タイルでアニメーション化されるプレビュー画像として、インラインで配置できます。
 
-**Note**   There are [restrictions on the file size and dimensions of images](https://msdn.microsoft.com/library/windows/apps/hh781198).
+**注**   [ファイル サイズや画像の大きさに対して制限](https://msdn.microsoft.com/library/windows/apps/hh781198)があります。
 
  
 
-With no extra behaviors specified, images will uniformly shrink or expand to fill the available width. The sample below shows a tile using two columns and inline images. The inline images stretch to fill the width of the column.
+特に動作が指定されていないと、画像は一様に拡大縮小されて、空いている幅が埋められます。 次のサンプルでは、2 列とインライン画像を使うタイルを示しています。 インライン画像は拡大されて、空いている列幅が埋められます。
 
 ```XML
 ...
@@ -930,15 +930,15 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 }
 ```
 
-**Result:**
+**結果:**
 
-![image example](images/adaptive-tiles-images01.png)
+![画像の例](images/adaptive-tiles-images01.png)
 
-Images placed in the &lt;binding&gt; root, or in the first group, will also stretch to fit the available height.
+&lt;binding&gt; のルート、つまり最初のグループに配置された画像も、空いている高さに合わせて拡大されます。
 
-### <span id="Image_alignment"></span><span id="image_alignment"></span><span id="IMAGE_ALIGNMENT"></span>Image alignment
+### <span id="Image_alignment"></span><span id="image_alignment"></span><span id="IMAGE_ALIGNMENT"></span>画像の配置
 
-Images can be set to align left, center, or right using the **hint-align** attribute. This will also cause images to display at their native resolution instead of stretching to fill width.
+画像は、**hint-align** 属性を使って、左揃え、中央揃え、または右揃えに設定できます。 また、これにより画像は、幅を埋めるように拡大されずに、ネイティブの解像度で表示されます。
 
 ```XML
 ...
@@ -967,13 +967,13 @@ TileLarge = new TileBinding()
 ...
 ```
 
-**Result:**
+**結果:**
 
-![image alignment example (left, center, right)](images/adaptive-tiles-imagealignment.png)
+![画像の配置の例 (左、中央、右)](images/adaptive-tiles-imagealignment.png)
 
-### <span id="Image_margins"></span><span id="image_margins"></span><span id="IMAGE_MARGINS"></span>Image margins
+### <span id="Image_margins"></span><span id="image_margins"></span><span id="IMAGE_MARGINS"></span>画像の余白
 
-By default, inline images have an 8-pixel margin between any content above or below the image. This margin can be removed by using the **hint-removeMargin** attribute on the image. However, images always retain the 8-pixel margin from the edge of the tile, and subgroups (columns) always retain the 8-pixel padding between columns.
+既定では、インライン画像の上または下には、コンテンツとの間に 8 ピクセルの余白が追加されます。 この余白は、画像の **hint-removeMargin** 属性を使って削除できます。 ただし、画像では常にタイルの端から 8 ピクセルの余白が保持され、サブグループ (列) では常に列の間に 8 ピクセルのパディングが保持されます。
 
 ```XML
 ...
@@ -1059,11 +1059,11 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 }
 ```
 
-![hint remove margin example](images/adaptive-tiles-removemargin.png)
+![画像の余白削除の例](images/adaptive-tiles-removemargin.png)
 
-### <span id="Image_cropping"></span><span id="image_cropping"></span><span id="IMAGE_CROPPING"></span>Image cropping
+### <span id="Image_cropping"></span><span id="image_cropping"></span><span id="IMAGE_CROPPING"></span>画像のトリミング
 
-Images can be cropped into a circle using the **hint-crop** attribute, which currently only supports the values "none" (default) or "circle."
+**hint-crop** 属性を使って、画像を円形にトリミングできます。現時点では、"none" (既定) または "circle" のみがサポートされています。
 
 ```XML
 ...
@@ -1135,13 +1135,13 @@ TileLarge = new TileBinding()
 ...
 ```
 
-**Result:**
+**結果:**
 
-![image cropping example](images/adaptive-tiles-imagecropping.png)
+![画像のトリミングの例](images/adaptive-tiles-imagecropping.png)
 
-### <span id="Background_image"></span><span id="background_image"></span><span id="BACKGROUND_IMAGE"></span>Background image
+### <span id="Background_image"></span><span id="background_image"></span><span id="BACKGROUND_IMAGE"></span>背景画像
 
-To set a background image, place an image element in the root of the &lt;binding&gt; and set the placement attribute to "background."
+背景画像を設定するには、&lt;binding&gt; のルートに image 要素を追加し、placement 属性を "background" に設定します。
 
 ```XML
 ...
@@ -1224,11 +1224,11 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 }
 ```
 
-**Result:**
+**結果:**
 
-![background image example](images/adaptive-tiles-backgroundimage.png)
+![背景画像の例](images/adaptive-tiles-backgroundimage.png)
 
-Additionally, you can set a black overlay on your background image using **hint-overlay**, which accepts integers from 0-100, with 0 being no overlay and 100 being full black overlay. The default value is 20.
+さらに、**hint-overlay** を使って、背景画像上に黒のオーバーレイを設定できます。この属性は 0 ～ 100 の整数を受け取ります。0 はオーバーレイなし、100 は完全な黒のオーバーレイを表します。 既定値は 20 です。
 
 ```XML
 ...
@@ -1259,13 +1259,13 @@ TileWide = new TileBinding()
 ...
 ```
 
-**hint-overlay Result:**
+**結果:**
 
-![example of an image hint overlay](images/adaptive-tiles-image-hintoverlay.png)
+![画像のオーバーレイの例](images/adaptive-tiles-image-hintoverlay.png)
 
-### <span id="Peek_image"></span><span id="peek_image"></span><span id="PEEK_IMAGE"></span>Peek image
+### <span id="Peek_image"></span><span id="peek_image"></span><span id="PEEK_IMAGE"></span>プレビュー画像
 
-You can specify an image that "peeks" in from the top of the tile. The peek image uses an animation to slide down/up from the top of the tile, peeking into view, and then later sliding back out to reveal the main content on the tile. To set a peek image, place an image element in the root of the &lt;binding&gt;, and set the placement attribute to "peek."
+タイルでアニメーション化されるプレビュー画像を指定できます。 プレビュー画像はタイルでアニメーション化されます。コンテンツが下にスライドしてプレビューが現れ、上にスライドしてプレビューが隠れます。 プレビュー画像を設定するには、&lt;binding&gt; のルートに image 要素を追加し、placement 属性を "peek" に設定します。
 
 ```XML
 ...
@@ -1311,44 +1311,44 @@ TileWide = new TileBinding()
 ...
 ```
 
-![examples of peeking images](images/adaptive-tiles-imagepeeking.png)
+![プレビュー画像の例](images/adaptive-tiles-imagepeeking.png)
 
-**Circle crop for peek and background images**
+**プレビュー画像と背景画像の円トリミング**
 
-Use the following attribute on peek and background images to do a circle crop:
+円トリミングを行うには、プレビュー画像と背景画像で次の属性を使用します。
 
 hint-crop="circle"
 
-The result will look like this:
+結果は次のようになります。
 
-![circle crop for peek and background image](images/circlecrop-image.png)
+![プレビュー画像と背景画像の円トリミング](images/circlecrop-image.png)
 
-**Use both peek and background image**
+**プレビュー画像と背景画像の両方を使用**
 
-To use both a peek and a background image on a tile notification, specify both a peek image and a background image in your notification payload.
+タイル通知でプレビュー画像と背景画像の両方を使用するには、通知ペイロードでプレビュー画像と背景画像の両方を指定します。
 
-The result will look like this:
+結果は次のようになります。
 
-![peek and background image used together](images/peekandbackground.png)
+![一緒に使用されているプレビュー画像と背景画像](images/peekandbackground.png)
 
-**Use hint-overlay on a peek image**
+**プレビュー画像での hint-overlay の使用**
 
-You can use **hint-overlay** on a peek image to add opacity and make the tile's display name more legible. If you specify **hint-overlay** on the &lt;binding&gt; element, the overlay will be applied to both the background and the peek image.
+プレビュー画像で **hint-overlay** を使用して、不透明度を上げてタイルの表示名を読みやすくすることができます。 &lt;binding&gt; 要素で **hint-overlay** を指定すると、背景画像とプレビュー画像の両方にオーバーレイが適用されます。
 
-You can also apply **hint-overlay** to an &lt;image&gt; element that has placement="peek" or placement="background" to have discrete opacity levels for each of those images. If you don't specify an overlay, the background image opacity defaults to 20% and the peek image opacity defaults to 0%.
+各画像が個別の不透明度を持つようにするために placement="peek" または placement="background" と指定されている &lt;image&gt; 要素に対して **hint-overlay** を適用することもできます。 オーバーレイを指定しない場合、背景画像の不透明度は既定値 20%、プレビュー画像の不透明度は既定値 0% になります。
 
-This example shows a background image at 20% opacity (left) and at 0% opacity (right):
+この例は、20% の不透明度 (左) と 0% の不透明度 (右) の背景画像を示しています。
 
-![hint-overlay on a peek image](images/hintoverlay.png)
+![プレビュー画像での hint-overlay](images/hintoverlay.png)
 
-## <span id="Vertical_alignment__text_stacking_"></span><span id="vertical_alignment__text_stacking_"></span><span id="VERTICAL_ALIGNMENT__TEXT_STACKING_"></span>Vertical alignment (text stacking)
+## <span id="Vertical_alignment__text_stacking_"></span><span id="vertical_alignment__text_stacking_"></span><span id="VERTICAL_ALIGNMENT__TEXT_STACKING_"></span>縦方向の配置 (テキストの積み重ね)
 
 
-You can control the vertical alignment of content on your tile by using the **hint-textStacking** attribute on both the [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) element and [&lt;subgroup&gt;](tiles-and-notifications-adaptive-tiles-schema.md) element. By default, everything is vertically aligned to the top, but you can also align content to the bottom or center.
+[&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 要素と [&lt;subgroup&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 要素のいずれでも **hint-textStacking** 属性を使って、タイルのコンテンツの縦方向の配置を制御できます。 既定では、コンテンツは上揃えになりますが、下揃えまたは中央揃えに設定することもできます。
 
-### <span id="Text_stacking_on_binding_element"></span><span id="text_stacking_on_binding_element"></span><span id="TEXT_STACKING_ON_BINDING_ELEMENT"></span>Text stacking on binding element
+### <span id="Text_stacking_on_binding_element"></span><span id="text_stacking_on_binding_element"></span><span id="TEXT_STACKING_ON_BINDING_ELEMENT"></span>binding 要素でのテキストの積み重ね
 
-When applied at the [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) level, text stacking sets the vertical alignment of the notification content as a whole, aligning in the available vertical space above the branding/badge area.
+テキストの積み重ねを [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) レベルで適用すると、ブランディング/バッジ領域の上にある縦方向のスペースに収まるように、通知コンテンツ全体の縦方向の配置が設定されます。
 
 ```XML
 ...
@@ -1392,11 +1392,11 @@ TileMedium = new TileBinding()
 ...
 ```
 
-![text stacking on binding element](images/adaptive-tiles-textstack-bindingelement.png)
+![binding 要素でのテキストの積み重ね](images/adaptive-tiles-textstack-bindingelement.png)
 
-### <span id="Text_stacking_on_subgroup_element"></span><span id="text_stacking_on_subgroup_element"></span><span id="TEXT_STACKING_ON_SUBGROUP_ELEMENT"></span>Text stacking on subgroup element
+### <span id="Text_stacking_on_subgroup_element"></span><span id="text_stacking_on_subgroup_element"></span><span id="TEXT_STACKING_ON_SUBGROUP_ELEMENT"></span>subgroup 要素でのテキストの積み重ね
 
-When applied at the [&lt;subgroup&gt;](tiles-and-notifications-adaptive-tiles-schema.md) level, text stacking sets the vertical alignment of the subgroup (column) content, aligning in the available vertical space within the entire group.
+テキストの積み重ねを [&lt;subgroup&gt;](tiles-and-notifications-adaptive-tiles-schema.md) レベルで適用すると、そのグループ内の縦方向のスペースに収まるように、サブグループ (列) コンテンツの縦方向の配置が設定されます。
 
 ```XML
 ...
@@ -1473,12 +1473,12 @@ TileWide = new TileBinding()
 ...
 ```
 
-## <span id="related_topics"></span>Related topics
+## <span id="related_topics"></span>関連トピック
 
 
-* [Adaptive tiles schema](tiles-and-notifications-adaptive-tiles-schema.md)
-* [NotificationsExtensions on GitHub](https://github.com/WindowsNotifications/NotificationsExtensions/wiki)
-* [Special tile templates catalog](tiles-and-notifications-special-tile-templates-catalog.md)
+* [アダプティブ タイルのスキーマ](tiles-and-notifications-adaptive-tiles-schema.md)
+* [GitHub の NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki)
+* [特別なタイル テンプレート カタログ](tiles-and-notifications-special-tile-templates-catalog.md)
  
 
  

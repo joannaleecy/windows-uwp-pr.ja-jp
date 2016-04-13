@@ -1,82 +1,82 @@
 ---
 ms.assetid: E1943DCE-833F-48AE-8402-CD48765B24FC
-title: Optimize suspend/resume
-description: Create Universal Windows Platform (UWP) apps that streamline their use of the process lifetime system to resume efficiently after suspension or termination.
+title: 中断/再開の最適化
+description: プロセス継続時間システムの使用を合理化することで、中断または終了の後効率的に再開されるユニバーサル Windows プラットフォーム (UWP) アプリを作成します。
 ---
-# Optimize suspend/resume
+# 中断/再開の最適化
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-Create Universal Windows Platform (UWP) apps that streamline their use of the process lifetime system to resume efficiently after suspension or termination.
+プロセス継続時間システムの使用を合理化することで、中断または終了の後効率的に再開されるユニバーサル Windows プラットフォーム (UWP) アプリを作成します。
 
-## Launch
+## 起動
 
-When reactivating an app following suspend/terminate, check to see if a long time has elapsed. If so, consider returning to the main landing page of the app instead of showing the user stale data. This will also result in faster startup.
+中断/終了の後、アプリを再アクティブ化するときは、長い時間が経過したかどうかを確認します。 長時間経過している場合は、ユーザーの古いデータを表示する代わりに、アプリのメイン ランディング ページに戻ることを検討してください。 これにより、起動時間も短縮されます。
 
-During activation, always check the PreviousExecutionState of the event args parameter (for example, for launched activations check LaunchActivatedEventArgs.PreviousExecutionState). If the value is ClosedByUser or NotRunning, don’t waste time restoring previously saved state. In this case, the right thing is to provide a fresh experience – and it will result in faster startup.
+アクティブ化では、常に、イベント引数のパラメーターの PreviousExecutionState を確認します (たとえば、起動済みのアクティブ化では、LaunchActivatedEventArgs.PreviousExecutionState を確認します)。 この値が ClosedByUser または NotRunning の場合は、以前に保存された状態を復元することで時間をむだにしないでください。 この場合、適切な処理は新しいエクスペリエンスを提供することであり、結果として起動時間も短縮されます。
 
-Instead of eagerly restoring previously saved state, consider keep track of that state, and only restoring it on demand. For example, consider a situation where your app was previously suspended, saved state for 3 pages, and was then terminated. Upon relaunch, if you decide to return the user to the 3rd page, do not eagerly restore the state for the first 2 pages. Instead, hold on to this state and only use it once you know you need it.
+以前に保存した状態を頻繁に復元する代わりに、その状態を追跡して、要求された場合にのみ復元することを検討します。 たとえば、以前にアプリが一時停止され、3 つのページの状態を保存した後、終了された場合を考えてみます。 再起動時に、ユーザーに対して 3 番目のページを表示する場合は、最初の 2 つのページの状態を頻繁に復元しないでください。 代わりに、この状態を保持し、必要であることがわかった場合にのみ使用します。
 
-## While running
+## 実行中
 
-As a best practice, don’t wait for the suspend event and then persist a large amount of state. Instead, your application should incrementally persist smaller amounts of state as it runs. This is especially important for large apps that are at risk of running out of time during suspend if they try to save everything at once.
+ベストプラクティスとして、中断イベントを待機し、大量の状態を保持することはしないでください。 代わりに、アプリケーションの実行中に少しずつ状態を保持するようにします。 これは、中断時にすべてを一度に保存しようとすると時間が不足する可能性がある、大規模なアプリで特に重要です。
 
-However, you need to find a good balance between incremental saving and performance of your app while running. A good tradeoff is to incrementally keep track of the data that has changed (and therefore needs to be saved) – and use the suspend event to actually save that data (which is faster than saving all data or examining the entire state of app to decide what to save).
+ただし、段階的な保存と実行中のアプリのパフォーマンスの最適なバランスを見つける必要があります。 適切な妥協点は、変更された (つまり保存する必要がある) データを段階的に追跡し、中断イベントを使って実際にそのデータを保存することです (すべてのデータを保存したり、アプリ全体の状態を調べて保存する対象を決定したりするよりも高速です)。
 
-Don’t use the window Activated or VisibilityChanged events to decide when to save state. When the user switches away from your app, the window is deactivated, but the system waits a short amount of time (about 10 seconds) before suspending the app. This is to give a more responsive experience in case the user switches back to your app rapidly. Wait for the suspend event before running suspend logic.
+ウィンドウの Activated イベントや VisibilityChanged イベントを使って、状態を保存するタイミングを決定しないでください。 ユーザーがアプリを切り替えたときに、ウィンドウは非アクティブ化されますが、システムはアプリを中断するまでしばらくの間 (約 10 秒間) 待機します。 これにより、ユーザーがすぐに元のアプリに切り替えた場合に、応答性の高いエクスペリエンスを提供します。 中断ロジックを実行する前に、中断イベントを待機します。
 
-## Suspend
+## 中断
 
-During suspend, reduce the footprint of your app. If your app uses less memory while suspended, the overall system will be more responsive and fewer suspended apps (including yours) will be terminated. However, balance this with the need for snappy resumes: don’t reduce footprint so much that resume slows down considerably while your app reloads lots of data into memory.
+中断時に、アプリのメモリ使用量を削減します。 中断中のアプリのメモリ使用量が少なくなると、システム全体の応答性が高くなり、(お客様のアプリを含む) 中断されたアプリが終了されることが少なくなります。 ただし、メモリ使用量と迅速な再開の必要性のバランスを考慮する必要があります。メモリ使用量を削減しすぎると、メモリに大量のデータを再び読み込むことが必要になり、再開が大幅に遅くなります。
 
-For managed apps, the system will run a garbage collection pass after the app’s suspend handlers complete. Make sure to take advantage of this by releasing references to objects that will help reduce the app’s footprint while suspended.
+マネージ アプリの場合、アプリの中断ハンドラーが完了した後、システムはガベージ コレクション パスを実行します。 これを利用して、中断中のアプリのメモリ使用量の削減に役立つオブジェクトへの参照を解放します。
 
-Ideally, your app will finish with suspend logic in less than 1 second. The faster you can suspend, the better – that will result in a snappier user experience for other apps and parts of the system. If you must, your suspend logic can take up to 5 seconds on desktop devices or 10 seconds on mobile devices. If those times are exceeded, your app will be abruptly terminated. You don’t want this to happen – because if it does, when the user switches back to your app, a new process will be launched and the experience will feel much slower compared to resuming a suspended app.
+アプリで 1 秒未満で中断ロジックを完了することをお勧めします。 中断は迅速に完了できるほどよく、他のアプリやシステムの部分の迅速なユーザー エクスペリエンスにつながります。 必要な場合は、デスクトップ デバイスで最大 5 秒間、モバイル デバイスでは 10 秒間、中断ロジックの処理に時間をかけることができます。 これらの時間を超過した場合、アプリは突然終了します。 これは望ましい結果ではありません。この場合、ユーザーがアプリに戻るときに、新しいプロセスが開始され、中断中のアプリを再開するときよりも、エクスペリエンスは非常に遅く感じられるためです。
 
-## Resume
+## 再開
 
-Most apps don’t need to do anything special when resumed, so typically you won’t handle this event. Some apps use resume to restore connections that were closed during suspend, or to refresh data that may be stale. Instead of doing this kind of work eagerly, design your app to initiate these activities on demand. This will result in a faster experience when the user switches back to a suspended app, and ensures that you’re only doing work the user really needs.
+ほとんどのアプリでは、再開時に特別な処理を行う必要がないため、通常、このイベントは処理しません。 一部のアプリでは、再開を利用して、中断時に終了された接続を復元したり、古くなっている可能性があるデータを更新したりします。 このような作業を頻繁に行う代わりに、必要に応じてこれらのアクティビティを開始するようアプリを設計します。 これにより、ユーザーが中断中のアプリに戻ったときのエクスペリエンスが迅速になり、ユーザーが実際に必要としている作業のみを行っていることが保証されます。
 
-## Avoid unnecessary termination
+## 不必要な終了の回避
 
-The UWP process lifetime system can suspend or terminate an app for a variety of reasons. This process is designed to quickly return an app to the state it was in before it was suspended or terminated. When done well, the user won’t be aware that the app ever stopped running. Here are a few tricks that your UWP app can use to help the system streamline transitions in an app’s lifetime.
+UWP のプロセス継続時間システムは、さまざまな理由でアプリを中断または終了することがあります。 このプロセスは、アプリを中断または終了する前の状態にすばやく戻すように設計されています。 うまく機能すると、アプリの実行が停止していたことにユーザーは気付きません。 ここでは、UWP アプリで、システムがアプリの有効期間内で切り替えを効率的に行うのに役立つヒントをいくつか紹介します。
 
-An app can be suspended when the user moves it to the background or when the system enters a low power state. When the app is being suspended, it raises the suspending event and has up to 5 seconds to save its data. If the app's suspending event handler doesn't complete within 5 seconds, the system assumes the app has stopped responding and terminates it. A terminated app has to go through the long startup process again instead of being immediately loaded into memory when a user switches to it.
+ユーザーがアプリをバックグラウンドに移動した場合、またはシステムが低電力状態に切り替わった場合にアプリを中断できます。 アプリが中断される際、アプリは suspending イベントを発生して、最長で 5 秒間かけてデータを保存します。 アプリの suspending イベント ハンドラーが 5 秒以内に処理を完了できなかった場合、システムはアプリが応答を停止したと判断してアプリを終了します。 終了したアプリは、ユーザーがそのアプリに切り替えたときに、すぐにメモリに読み込まれることはなく、長い起動プロセスをもう一度実行する必要があります。
 
-### Serialize only when necessary
+### 必要最小限のシリアル化
 
-Many apps serialize all their data on suspension. If you only need to store a small amount of app settings data, however, you should use the [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/BR241622) store instead of serializing the data. Use serialization for larger amounts of data and for non-settings data.
+中断時にすべてのデータをシリアル化するアプリは少なくありません。 しかし、アプリの設定データのうち、保存する必要のあるデータがごくわずかであれば、シリアル化ではなく、[**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/BR241622) ストアを使うことをお勧めします。 シリアル化は、もっと大量のデータや、設定以外のデータに使います。
 
-When you do serialize your data, you should avoid reserializing if it hasn't changed. It takes extra time to serialize and save the data, plus extra time to read and deserialize it when the app is activated again. Instead, we recommend that the app determine if its state has actually changed, and if so, serialize and deserialize only the data that changed. A good way to ensure that this happens is to periodically serialize data in the background after it changes. When you use this technique, everything that needs to be serialized at suspension has already been saved so there is no work to do and an app suspends quickly.
+データをシリアル化する際、変更されていないデータを再シリアル化することは避けてください。 データのシリアル化と保存に時間がかかるばかりか、アプリが再びアクティブ化されたときにもデータの読み取りと逆シリアル化に時間がかかります。 このような処理ではなく、アプリの状態が実際に変更されたかどうかをアプリが判定し、変更された場合にのみ変更データをシリアル化および逆シリアル化する処理をお勧めしています。 この処理を確実に行う良い方法は、データが変更された後にバックグラウンドでこまめにシリアル化することです。 この手法を使うと、中断時にシリアル化する必要があるすべてのデータが既に保存されているため、必要な作業がなく、アプリがすぐに中断されます。
 
-### Serializing data in C# and Visual Basic
+### C# と Visual Basic でのデータのシリアル化
 
-The available choices of serialization technology for .NET apps are the [**System.Xml.Serialization.XmlSerializer**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.xml.serialization.xmlserializer.aspx), [**System.Runtime.Serialization.DataContractSerializer**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.runtime.serialization.datacontractserializer.aspx), and [**System.Runtime.Serialization.Json.DataContractJsonSerializer**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.runtime.serialization.json.datacontractjsonserializer.aspx) classes.
+.NET アプリで使うことができるシリアル化技術には、[**System.Xml.Serialization.XmlSerializer**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.xml.serialization.xmlserializer.aspx) クラス、[**System.Runtime.Serialization.DataContractSerializer**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.runtime.serialization.datacontractserializer.aspx) クラス、[**System.Runtime.Serialization.Json.DataContractJsonSerializer**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.runtime.serialization.json.datacontractjsonserializer.aspx) クラスがあります。
 
-From a performance perspective, we recommend using the [**XmlSerializer**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.xml.serialization.xmlserializer.aspx) class. The **XmlSerializer** has the lowest serialization and deserialization times, and maintains a low memory footprint. The **XmlSerializer** has few dependencies on the .NET framework; this means that compared with the other serialization technologies, fewer modules need to be loaded into your app to use the **XmlSerializer**.
+パフォーマンスの観点から、[**XmlSerializer**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.xml.serialization.xmlserializer.aspx) クラスを使うことをお勧めします。 **XmlSerializer** は、シリアル化と逆シリアル化の処理時間が最も短く、メモリ使用量も低く抑えられます。 **XmlSerializer** と .NET Framework の間には依存関係が少ないため、他のシリアル化技術と比較して、**XmlSerializer** を使うためにアプリに読み込む必要があるモジュールが少なくて済みます。
 
-[**DataContractSerializer**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.runtime.serialization.datacontractserializer.aspx) makes it easier to serialize custom classes, although it has a larger performance impact than **XmlSerializer**. If you need better performance, consider switching. In general, you should not load more than one serializer, and you should prefer **XmlSerializer** unless you need the features of another serializer.
+**XmlSerializer** と比べて、[**DataContractSerializer**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.runtime.serialization.datacontractserializer.aspx) は、カスタム クラスを比較的容易にシリアル化できる反面、パフォーマンスへの影響は大きくなります。 より高いパフォーマンスが必要な場合は、切り替えを検討してください。 通常、複数のシリアライザーを読み込むことは避け、できれば **XmlSerializer** を使うようにしてください (他のシリアライザーの機能を必要とする場合を除く)。
 
-### Reduce memory footprint
+### メモリ使用量の削減
 
-The system tries to keep as many suspended apps in memory as possible so that users can quickly and reliably switch between them. When an app is suspended and stays in the system's memory, it can quickly be brought to the foreground for the user to interact with, without having to display a splash screen or perform a lengthy load operation. If there aren't enough resources to keep an app in memory, the app is terminated. This makes memory management important for two reasons:
+システムは、ユーザーがアプリをすばやく簡単に切り替えられるよう、中断されたアプリを可能な限り多く保持しようとします。 中断され、システムのメモリ内に保持されているアプリは、スプラッシュ画面の表示や長時間の読み込み操作なしでユーザーのフォアグラウンドにすぐに戻ることができます。 十分なリソースがなくアプリをメモリに保持できない場合は、アプリが終了されます。 そのため、次の 2 つの理由でメモリ管理が重要になります。
 
--   Freeing as much memory as possible at suspension minimizes the chances that your app is terminated because of lack of resources while it’s suspended.
--   Reducing the overall amount of memory your app uses reduces the chances that other apps are terminated while they are suspended.
+-   中断時にできるだけ多くのメモリを解放すると、中断しているときにアプリがリソース不足によって終了する可能性が最小限に抑えられます。
+-   アプリが使うメモリの総量を減らすと、中断している他のアプリが終了する可能性が低くなります。
 
-### Release resources
+### リソースの解放
 
-Certain objects, such as files and devices, occupy a large amount of memory. We recommend that during suspension, an app release handles to these objects and recreate them when needed. This is also a good time to purge any caches that won’t be valid when the app is resumed. An additional step the XAML framework runs on your behalf for C# and Visual Basic apps is garbage collection if it is necessary. This ensures any objects no longer referenced in app code are released.
+ファイルやデバイスなどの特定のオブジェクトは、大量のメモリを占有します。 中断中は、アプリがこれらのオブジェクトへのハンドルを解放し、必要なときにハンドルを再作成することをお勧めします。 また、これは、アプリが再開したときに使われないキャッシュを削除する良い機会でもあります。 XAML フレームワークでは、必要に応じて、C# と Visual Basic を使ったアプリに対してガベージ コレクションを追加手順として実行します。 これによって、アプリ コードで参照されなくなったすべてのオブジェクトが解放されます。
 
-## Resume quickly
+## 迅速な再開
 
-A suspended app can be resumed when the user moves it to the foreground or when the system comes out of a low power state. When an app is resumed from the suspended state, it continues from where it was when it was suspended. No app data is lost because it was stored in memory, even if the app was suspended for a long period of time.
+中断中のアプリは、ユーザーがフォアグラウンドにアプリを移動した場合、またはシステムが低電力状態から復帰した場合に再開することができます。 アプリを中断状態から再開すると、アプリは中断された時点から再開されます。 アプリが長時間中断されていた場合でも、アプリのデータはメモリに格納されているため失われることはありません。
 
-Most apps don't need to handle the [**Resuming**](https://msdn.microsoft.com/library/windows/apps/BR205859) event. When your app is resumed, variables and objects have the exact same state they had when the app was suspended. Handle the **Resuming** event only if you need to update data or objects that might have changed between the time your app was suspended and when it was resumed such as: content (for example, update feed data), network connections that may have gone stale, or if you need to reacquire access to a device (for example, a webcam).
+ほとんどのアプリでは、[**Resuming**](https://msdn.microsoft.com/library/windows/apps/BR205859) イベントを処理する必要はありません。 アプリ再開時の変数とオブジェクトは、アプリが中断された時とまったく同じ状態です。 アプリの中断と再開の間でデータまたはオブジェクトが変更されている可能性があり、それらの更新が必要な場合にのみ **Resuming** イベントを処理してください。この状況としては、コンテンツ (更新フィード データなど) やネットワーク接続が無効になった場合や、デバイス (Web カメラなど) へのアクセスを再取得する必要がある場合が考えられます。
 
-## Related topics
+## 関連トピック
 
-* [Guidelines for app suspend and resume](https://msdn.microsoft.com/library/windows/apps/Hh465088)
+* [アプリの中断と再開のガイドライン](https://msdn.microsoft.com/library/windows/apps/Hh465088)
  
 
  

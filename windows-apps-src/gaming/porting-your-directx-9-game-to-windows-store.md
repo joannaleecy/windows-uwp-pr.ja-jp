@@ -1,29 +1,29 @@
 ---
-title: Port from DirectX 9 to Universal Windows Platform (UWP)
-description: This section includes articles, overviews, and walkthroughs for porting DirectX 9 games to Universal Windows Platform (UWP).
+title: DirectX 9 からユニバーサル Windows プラットフォーム (UWP) への移植
+description: このセクションでは、ユニバーサル Windows プラットフォーム (UWP) に DirectX 9 ゲームを移植する方法を説明した記事、概要、チュートリアルを紹介します。
 ms.assetid: 536c0b99-cdf3-1527-1ee2-4187f50a2cf0
 ---
 
-# Port from DirectX 9 to Universal Windows Platform (UWP)
+# DirectX 9 からユニバーサル Windows プラットフォーム (UWP) への移植
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-This section includes articles, overviews, and walkthroughs for porting DirectX 9 games to Universal Windows Platform (UWP).
+このセクションでは、ユニバーサル Windows プラットフォーム (UWP) に DirectX 9 ゲームを移植する方法を説明した記事、概要、チュートリアルを紹介します。
 
-##  Port your DirectX 9 game to UWP
-
-
--   Reach the UWP audiences and monetize your game.
--   Target a wide array of devices, all of which support at least the Direct3D 9.1 set of graphics features.
--   Learn valuable new Windows game development skills - including Direct3D 11, the unified shader models, Windows APIs, XAudio2, touch input, C++/CX and more.
-
-## Where do I start?
+##  UWP への DirectX 9 ゲームの移植
 
 
--   Visit [Moving from DirectX 9 to DirectX 11 and UWP](porting-considerations.md) to learn what you should plan for in your game porting project, catch up on Direct3D 11 concepts, and understand how the features you're familiar with map to DirectX 11 UWP apps.
--   Follow the [Port a simple Direct3D 9 app to DirectX 11 and UWP](walkthrough--simple-port-from-direct3d-9-to-11-1.md) walkthrough article for a direct comparison of Direct3D 9 and Direct3D 11 graphics frameworks. This walkthrough also has code for setting up an app window and viewport.
--   See the [DirectX 11 porting FAQ](directx-porting-faq.md) for answers to common questions about porting from DirectX 9.
+-   UWP のユーザーにゲームを販売し、収益を得る。
+-   さまざまなデバイスをターゲットにし、そのすべてで少なくとも Direct3D 9.1 のグラフィックス機能セットをサポートする。
+-   Direct3D 11、統合シェーダー モデル、Windows API、XAudio2、タッチ入力、C++/CX など、重要な新しい Windows ゲーム開発スキルを学ぶ。
+
+## はじめに
+
+
+-   ゲームの移植プロジェクトで計画する必要がある事項、Direct3D 11 の概念の確認、使い慣れた機能と DirectX 11 UWP アプリの対応の理解については、「[DirectX 9 から DirectX 11 とユニバーサル Windows プラットフォーム (UWP) への移行](porting-considerations.md)」をご覧ください。
+-   Direct3D 9 と Direct3D 11 のグラフィックス フレームワークを直接比較するには、「[チュートリアル: DirectX 11 とユニバーサル Windows プラットフォーム (UWP) への簡単な Direct3D 9 アプリの移植](walkthrough--simple-port-from-direct3d-9-to-11-1.md)」に従ってください。 また、このチュートリアルには、アプリ ウィンドウとビューポートを設定するコードが含まれています。
+-   DirectX 9 からの移植に関する一般的な質問への回答については、「[DirectX 11 の移植に関する FAQ](directx-porting-faq.md)」をご覧ください。
 
  
 

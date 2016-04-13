@@ -1,29 +1,29 @@
 ---
-title: Convert the rendering framework
-description: Shows how to convert a simple rendering framework from Direct3D 9 to Direct3D 11, including how to port geometry buffers, how to compile and load HLSL shader programs, and how to implement the rendering chain in Direct3D 11.
+title: レンダリング フレームワークの変換
+description: ジオメトリ バッファーを移植する方法、HLSL シェーダー プログラムをコンパイルして読み込む方法、Direct3D 11 のレンダリング チェーンを実装する方法など、Direct3D 9 の簡単なレンダリング フレームワークを Direct3D 11 に変換する方法について説明します。
 ms.assetid: f6ca1147-9bb8-719a-9a2c-b7ee3e34bd18
 ---
 
-# Convert the rendering framework
+# レンダリング フレームワークの変換
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-**Summary**
+**要約**
 
--   [Part 1: Initialize Direct3D 11](simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md)
--   Part 2: Convert the rendering framework
--   [Part 3: Port the game loop](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)
-
-
-Shows how to convert a simple rendering framework from Direct3D 9 to Direct3D 11, including how to port geometry buffers, how to compile and load HLSL shader programs, and how to implement the rendering chain in Direct3D 11. Part 2 of the [Port a simple Direct3D 9 app to DirectX 11 and Universal Windows Platform (UWP)](walkthrough--simple-port-from-direct3d-9-to-11-1.md) walkthrough.
-
-## Convert effects to HLSL shaders
+-   [パート 1: Direct3D 11 の初期化](simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md)
+-   パート 2: レンダリング フレームワークの変換
+-   [パート 3: ゲーム ループの移植](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)
 
 
-The following example is a simple D3DX technique, written for the legacy Effects API, for hardware vertex transformation and pass-through color data.
+ジオメトリ バッファーを移植する方法、HLSL シェーダー プログラムをコンパイルして読み込む方法、Direct3D 11 のレンダリング チェーンを実装する方法など、Direct3D 9 の簡単なレンダリング フレームワークを Direct3D 11 に変換する方法について説明します。 「[チュートリアル: DirectX 11 とユニバーサル Windows プラットフォーム (UWP) への簡単な Direct3D 9 アプリの移植](walkthrough--simple-port-from-direct3d-9-to-11-1.md)」のパート 2 です。
 
-Direct3D 9 shader code
+## HLSL シェーダーへのエフェクトの変換
+
+
+次の例は、従来のエフェクト API 向けに記述された、ハードウェアの頂点変換とパススルー色データの簡単な D3DX の手法です。
+
+Direct3D 9 シェーダー コード
 
 ```cpp
 // Global variables
@@ -85,24 +85,24 @@ technique RenderSceneSimple
 }
 ```
 
-In Direct3D 11, we can still use our HLSL shaders. We put each shader in its own HLSL file so that Visual Studio compiles them into separate files and later, we'll load them as separate Direct3D resources. We set the target level to [Shader Model 4 Level 9\_1 (/4\_0\_level\_9\_1)](https://msdn.microsoft.com/library/windows/desktop/ff476876) because these shaders are written for DirectX 9.1 GPUs.
+Direct3D 11 では、引き続き HLSL シェーダーを使うことができます。 各シェーダーは、それぞれの HLSL ファイルに配置して、Visual Studio で別々のファイルにコンパイルされるようにします。その後で、個々の Direct3D リソースとして読み込みます。 これらのシェーダーは DirectX 9.1 GPU 向けに記述されているため、ターゲット レベルを[シェーダー モデル 4 レベル 9\_1 (/4\_0\_level\_9\_1)](https://msdn.microsoft.com/library/windows/desktop/ff476876) に設定します。
 
-When we defined the input layout, we made sure it represented the same data structure we use to store per-vertex data in system memory and in GPU memory. Similarly, the output of a vertex shader should match the structure used as input to the pixel shader. The rules are not the same as passing data from one function to another in C++; you can omit unused variables at the end of the structure. But the order can't be rearranged and you can't skip content in the middle of the data structure.
+入力レイアウトを定義する際に、入力レイアウトが表す、頂点ごとのデータを格納するために使うデータ構造体がシステム メモリと GPU メモリで同じことを確認しました。 同じように、頂点シェーダーの出力がピクセル シェーダーへの入力として使われる構造体と一致する必要があります。 規則は C++ の関数間でデータを受け渡す場合と異なり、構造体の末尾の使わない変数は省略できます。 ただし、順序を並べ替えることはできず、データ構造体の真ん中のコンテンツをスキップすることもできません。
 
-> **Note**  
-The rules in Direct3D 9 for binding vertex shaders to pixel shaders were more relaxed than the rules in Direct3D 11. The Direct3D 9 arrangement was flexible, but inefficient.
-
- 
-
-It's possible that your HLSL files uses older syntax for shader semantics - for example, COLOR instead of SV\_TARGET. If so you'll need to enable HLSL compatibility mode (/Gec compiler option) or update the shader [semantics](https://msdn.microsoft.com/library/windows/desktop/bb509647) to the current syntax. The vertex shader in this example has been updated with current syntax.
-
-Here's our hardware transformation vertex shader, this time defined in its own file.
-
-> **Note**  Vertex shaders are required to output the SV\_POSITION system value semantic. This semantic resolves the vertex position data to coordinate values where x is between -1 and 1, y is between -1 and 1, z is divided by the original homogeneous coordinate w value (z/w), and w is 1 divided by the original w value (1/w).
+> **注**  
+頂点シェーダーをピクセル シェーダーにバインドする際の Direct3D 9 の規則は、Direct3D 11 の規則よりも緩やかでした。 Direct3D 9 の配置は、柔軟ですが、効率的ではありませんでした。
 
  
 
-HLSL vertex shader (feature level 9.1)
+HLSL ファイルでは、シェーダー セマンティクスの以前の構文 (たとえば、SV\_TARGET の代わりに COLOR) を使うことができます。 その場合は、HLSL 互換モード (/Gec コンパイラ オプション) を有効にするか、シェーダー [セマンティクス](https://msdn.microsoft.com/library/windows/desktop/bb509647)を現行の構文に更新する必要があります。 この例の頂点シェーダーは現行の構文で更新されています。
+
+ハードウェア変換の頂点シェーダーを次に示します。今回は、個別のファイルに定義しています。
+
+> **注**  頂点シェーダーでは、SV\_POSITION システム値セマンティクスを出力する必要があります。 このセマンティクスは頂点の位置データを座標値に解決します。x は -1 ～ 1 の値に、y は -1 ～ 1 の値になり、z は元の同次座標 w の値で割られ (z/w)、w は 1 を元の w の値で割った値 (1/w) になります。
+
+ 
+
+HLSL 頂点シェーダー (機能レベル 9.1)
 
 ```cpp
 cbuffer ModelViewProjectionConstantBuffer : register(b0)
@@ -143,15 +143,15 @@ VS_OUTPUT main(VS_INPUT input) // main is the default function name
 }
 ```
 
-This is all we need for our pass-through pixel shader. Even though we call it a pass-through, it's actually getting perspective-correct interpolated color data for each pixel. Note that the SV\_TARGET system value semantic is applied to the color value output by our pixel shader as required by the API.
+パススルー ピクセル シェーダーに必要なコードはこれだけです。 パススルーと呼んでいますが、実際には、各ピクセルの透視補正補間された色データを取得します。 API で要求されているとおり、ピクセル シェーダーによって色値の出力に SV\_TARGET システム値セマンティクスが適用されます。
 
-> **Note**  Shader level 9\_x pixel shaders cannot read from the SV\_POSITION system value semantic. Model 4.0 (and higher) pixel shaders can use SV\_POSITION to retrieve the pixel location on the screen, where x is between 0 and the render target width and y is between 0 and the render target height (each offset by 0.5).
+> **注**  シェーダー レベル 9\_x のピクセル シェーダーでは、SV\_POSITION システム値セマンティクスから読み取ることができません。 モデル 4.0 (以上) のピクセル シェーダーでは、SV\_POSITION を使って、画面上のピクセル位置を取得できます。x は 0 からレンダー ターゲットの幅までの値に、y は 0 からレンダー ターゲットの高さまでの値になります (各オフセットは 0.5 単位)。
 
  
 
-Most pixel shaders are much more complex than a pass through; note that higher Direct3D feature levels allow a much greater number of calculations per shader program.
+ほとんどのピクセル シェーダーはパススルーよりはるかに複雑です。上位の Direct3D 機能レベルでは、シェーダー プログラムごとにより多くの計算を実行できます。
 
-HLSL pixel shader (feature level 9.1)
+HLSL ピクセル シェーダー (機能レベル 9.1)
 
 ```cpp
 struct PS_INPUT
@@ -175,12 +175,12 @@ PS_OUTPUT main(PS_INPUT In)
 }
 ```
 
-## Compile and load shaders
+## シェーダーのコンパイルと読み込み
 
 
-Direct3D 9 games often used the Effects library as a convenient way to implement programmable pipelines. Effects could be compiled at run-time using the [**D3DXCreateEffectFromFile function**](https://msdn.microsoft.com/library/windows/desktop/bb172768) method.
+Direct3D 9 ゲームでは、プログラム可能なパイプラインを実装する便利な方法として Effects ライブラリをよく使いました。 エフェクトは [**D3DXCreateEffectFromFile function**](https://msdn.microsoft.com/library/windows/desktop/bb172768) メソッドを使って実行時にコンパイルできます。
 
-Loading an effect in Direct3D 9
+Direct3D 9 でのエフェクトの読み込み
 
 ```cpp
 // Turn off preshader optimization to keep calculations on the GPU
@@ -203,9 +203,9 @@ D3DXCreateEffectFromFile(
     );
 ```
 
-Direct3D 11 works with shader programs as binary resources. Shaders are compiled when the project is built and then treated as resources. So our example will load the shader bytecode into system memory, use the Direct3D device interface to create a Direct3D resource for each shader, and point to the Direct3D shader resources when we set up each frame.
+Direct3D 11 では、バイナリ リソースとしてシェーダー プログラムを使います。 シェーダーは、プロジェクトのビルド時にコンパイルされた後、リソースとして扱われます。 そのため、この例では、シェーダーのバイトコードをシステム メモリに読み込み、Direct3D デバイス インターフェイスを使って各シェーダーの Direct3D リソースを作成し、各フレームを設定するときに Direct3D シェーダー リソースを参照します。
 
-Loading a shader resource in Direct3D 11
+Direct3D 11 でのシェーダー リソースの読み込み
 
 ```cpp
 // BasicReaderWriter is a tested file loader used in SDK samples.
@@ -227,23 +227,24 @@ m_d3dDevice->CreateVertexShader(
     );
 ```
 
-To include the shader bytecode in your compiled app package, just add the HLSL file to the Visual Studio project. Visual Studio will use the [Effect-Compiler Tool](https://msdn.microsoft.com/library/windows/desktop/bb232919) (FXC) to compile HLSL files into compiled shader objects (.CSO files) and include them in the app package.
+コンパイル済みのアプリ パッケージにシェーダーのバイトコードを含めるには、単純に Visual Studio プロジェクトに HLSL ファイルを追加します。 Visual Studio では、[エフェクト コンパイラ ツール](https://msdn.microsoft.com/library/windows/desktop/bb232919) (FXC) を使って、HLSL ファイルをコンパイル済みシェーダー オブジェクト (.CSO ファイル) にコンパイルし、それらをアプリ パッケージに含めます。
 
-> **Note**   Be sure to set the correct target feature level for the HLSL compiler: right-click the HLSL source file in Visual Studio, select Properties, and change the **Shader Model** setting under **HLSL Compiler -&gt; General**. Direct3D checks this property against the hardware capabilities when your app creates the Direct3D shader resource.
-
- 
-
-![hlsl shader properties](images/hlslshaderpropertiesmenu.png)![hlsl shader type](images/hlslshadertypeproperties.png)
-
-This is a good place to create the input layout, which corresponds to the vertex stream declaration in Direct3D 9. The per-vertex data structure needs to match what the vertex shader uses; in Direct3D 11 we have more control over the input layout; we can define the array size and bit length of floating-point vectors and specify semantics for the vertex shader. We create a [**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180) structure and use it to inform Direct3D what the per-vertex data will look like. We waited until after we loaded the vertex shader to define the input layout because the API validates the input layout against the vertex shader resource. If the input layout isn't compatible then Direct3D throws an exception.
-
-Per-vertex data has to be stored in compatible types in system memory. DirectXMath data types can help; for example, DXGI\_FORMAT\_R32G32B32\_FLOAT corresponds to [**XMFLOAT3**](https://msdn.microsoft.com/library/windows/desktop/ee419475).
-
-> **Note**   Constant buffers use a fixed input layout that aligns to four floating-point numbers at a time. [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608) (and its derivatives) are recommended for constant buffer data.
+> **注**   必ず HLSL コンパイラの適切なターゲット機能レベルを設定してください。それには、Visual Studio で HLSL ソース ファイルを右クリックし、[プロパティ] をクリックして、**[HLSL コンパイラ] の [全般]** にある **[シェーダー モデル]** の設定を変更します。 アプリで Direct3D シェーダー リソースを作成するときに、Direct3D ではこのプロパティとハードウェアの機能を照合します。
 
  
 
-Setting the input layout in Direct3D 11
+![HLSL シェーダーのプロパティ](images/hlslshaderpropertiesmenu.png)![HLSL シェーダーの種類](images/hlslshadertypeproperties.png)
+
+ここは、Direct3D 9 の頂点ストリームの宣言に対応する入力レイアウトを作成するのに適した場所です。 頂点ごとのデータ構造体は、頂点シェーダーで使う構造体と一致する必要があります。Direct3D 11 では、入力レイアウトをより細かく制御できます。そのため、浮動小数点ベクトルの配列サイズとビット長を定義し、頂点シェーダーのセマンティクスを指定できます。 [
+            **D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180) 構造体を作成し、それを使って、頂点ごとのデータがどのような構造になっているかを Direct3D に通知します。 API では入力レイアウトを頂点シェーダー リソースに照らして検証するため、頂点シェーダーを読み込んで、入力レイアウトを定義するまで待ちます。 入力レイアウトに互換性がない場合は、Direct3D から例外がスローされます。
+
+頂点ごとのデータは互換性のある型でシステム メモリに格納する必要があります。 DirectXMath データ型は便利です。たとえば、DXGI\_FORMAT\_R32G32B32\_FLOAT は [**XMFLOAT3**](https://msdn.microsoft.com/library/windows/desktop/ee419475) に対応しています。
+
+> **注**   定数バッファーでは、一度に 4 つの浮動小数点数にアラインメントする固定レイアウト入力を使います。 定数バッファー データには [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608) (とその派生) をお勧めします。
+
+ 
+
+Direct3D 11 での入力レイアウトの設定
 
 ```cpp
 // Create input layout:
@@ -257,10 +258,10 @@ const D3D11_INPUT_ELEMENT_DESC vertexDesc[] =
 };
 ```
 
-## Create geometry resources
+## ジオメトリ リソースの作成
 
 
-In Direct3D 9 we stored geometry resources by creating buffers on the Direct3D device, locking the memory, and copying data from CPU memory to GPU memory.
+Direct3D 9 では、ジオメトリ リソースを格納するために、Direct3D デバイスにバッファーを作成し、メモリをロックして、CPU メモリから GPU メモリにデータをコピーしました。
 
 Direct3D 9
 
@@ -288,7 +289,7 @@ memcpy(pVertices, CubeVertices, sizeof(CubeVertices));
 pVertexBuffer->Unlock();
 ```
 
-DirectX 11 follows a simpler process. The API automatically copies the data from system memory to the GPU. We can use COM smart pointers to help make programming easier.
+DirectX 11 では、もっと簡単なプロセスに従います。 データは、API によって自動的にシステム メモリから GPU にコピーされます。 COM のスマート ポインターを使うと、プログラミングをさらに簡単にできます。
 
 DirectX 11
 
@@ -310,12 +311,12 @@ m_d3dDevice->CreateBuffer(
     );
 ```
 
-## Implement the rendering chain
+## レンダリング チェーンの実装
 
 
-Direct3D 9 games often used an effect-based rendering chain. This type of rendering chain sets up the effect object, provides it with the resources it needs, and lets it render each pass.
+Direct3D 9 ゲームでは、エフェクト ベースのレンダリング チェーンをよく使いました。 この種のレンダリング チェーンでは、エフェクト オブジェクトを設定し、それを必要なリソースと一緒に提供して、各パスをレンダリングできるようにします。
 
-Direct3D 9 rendering chain
+Direct3D 9 のレンダリング チェーン
 
 ```cpp
 // Clear the render target and the z-buffer.
@@ -376,11 +377,11 @@ if(SUCCEEDED(m_pd3dDevice->BeginScene()))
 m_pd3dDevice->Present(NULL, NULL, NULL, NULL);
 ```
 
-The DirectX 11 rendering chain will still do the same tasks, but the rendering passes need to be implemented differently. Instead of putting the specifics in FX files and letting the rendering techniques be more-or-less opaque to our C++ code, we'll set up all our rendering in C++.
+DirectX 11 のレンダリング チェーンでは、引き続き同じタスクを実行しますが、レンダリング パスを実装する必要がある点が異なります。 仕様を FX ファイルに配置し、レンダリング手法を C++ コードに対してほぼ不透明にする代わりに、C++ ですべてレンダリングを設定します。
 
-Here's how our rendering chain will look. We need to supply the input layout we created after loading the vertex shader, supply each of the shader objects, and specify the constant buffers for each shader to use. This example doesn't include multiple rendering passes, but if it did we'd do a similar rendering chain for each pass, changing the setup as needed.
+レンダリング チェーンは次のようになります。 頂点シェーダーを読み込んだ後に作成した入力レイアウトを提供し、各シェーダー オブジェクトを渡して、使うシェーダーごとに定数バッファーを指定する必要があります。 この例には複数のレンダリング パスは含まれていませんが、含まれている場合は、各パスに同じようなレンダリング チェーンを実装し、必要に応じて設定を変更します。
 
-Direct3D 11 rendering chain
+Direct3D 11 のレンダリング チェーン
 
 ```cpp
 // Clear the back buffer.
@@ -468,15 +469,15 @@ m_d3dContext->DrawIndexed(
     );
 ```
 
-The swap chain is part of graphics infrastructure, so we use our DXGI swap chain to present the completed frame. DXGI blocks the call until the next vsync; then it returns, and our game loop can continue to the next iteration.
+スワップ チェーンはグラフィックス インフラストラクチャの一部です。そのため、DXGI スワップ チェーンを使って、完成したフレームを表示します。 DXGI では、次の vsync まで呼び出しがブロックされます。その後、制御が返されると、このゲーム ループでは次の反復に進むことができます。
 
-Presenting a frame to the screen using DirectX 11
+DirectX 11 を使った画面へのフレームの表示
 
 ```cpp
 m_swapChain->Present(1, 0);
 ```
 
-The rendering chain we just created will be called from a game loop implemented in the [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) method. This is shown in [Part 3: Viewport and game loop](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md).
+作成したレンダリング チェーンは、[**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) メソッドに実装したゲーム ループから呼び出されます。 これについては、「[パート 3: ゲーム ループの移植](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)」をご覧ください。
 
  
 

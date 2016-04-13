@@ -1,46 +1,46 @@
 ---
-Description: When working with an app in the Windows Dev Center dashboard, you can view details related to the unique identity assigned to it by the Windows Store and get a link to your app's Store listing.
-title: View app identity details
+Description: Windows デベロッパー センター ダッシュボードを使ったアプリの作業では、Windows ストアによってアプリに割り当てられた一意の ID の詳細を表示したり、ストアでのアプリの内容へのリンクを取得したりできます。
+title: アプリ ID の詳細の表示
 ms.assetid: 86F05A79-EFBC-4705-9A71-3A056323AC65
 ---
 
-# View app identity details
+# アプリ ID の詳細の表示
 
 
-When working with an app in the Windows Dev Center dashboard, you can view details related to the unique identity assigned to it by the Windows Store and get a link to your app's Store listing.
+Windows デベロッパー センター ダッシュボードを使ったアプリの作業では、Windows ストアによってアプリに割り当てられた一意の ID の詳細を表示したり、ストアでのアプリの内容へのリンクを取得したりできます。
 
-To find this info, navigate to one of your apps, then expand **App management** in the left navigation menu. Click **App identity** to view these details.
+アプリ ID の情報を探すには、アプリのいずれかに移動し、左側のナビゲーション メニューで **[アプリ管理]** を展開します。 **[アプリ ID]** をクリックすると、アプリ ID の詳細が表示されます。
 
-> **Note**  You need to have a [reserved name](create-your-app-by-reserving-a-name.md) for your app in order to see most of these identity details.
+> **注**  ID の詳細に関するほとんどの情報を表示するには、アプリの[予約名](create-your-app-by-reserving-a-name.md)が必要です。
 
-## Values to include in your appx manifest
-
-
-The following values must be included in your appx manifest. If you are using Microsoft Visual Studio to build your packages, and are signed in with the same Microsoft account that you have associated with your developer account, these details are included automatically. If you're building your package manually, you'll need to add these in.
-
--   **Package/Identity/Name**
--   **Package/Identity/Publisher**
-
-For more info, see [**Identity**](https://msdn.microsoft.com/library/windows/apps/br211441) in the [package manifest schema reference](https://msdn.microsoft.com/library/windows/apps/br211473).
-
-Together, these elements declare the identity of your app, establishing the "package family" to which all of its packages belong. Individual packages will have additional details, such as architecture and version.
-
-## Additional values for package family
+## APPX マニフェストに追加する値
 
 
-The following values are additional values that refer to your app's package family, but are not included in your manifest.
+次の値を APPX マニフェストに追加する必要があります。 パッケージのビルドに Microsoft Visual Studio を使っており、開発者アカウントに関連付けられている同じ Microsoft アカウントでサインインしている場合は、これらの値は自動的に追加されています。 パッケージを手動でビルドしている場合は、これらの値の追加が必要になります。
 
--   **Package Family Name (PFN)**: This value is used with certain Windows APIs.
--   **Package SID**: You'll need this value to send WNS notifications to your app. For more info, see [Windows Push Notification Services (WNS) overview](https://msdn.microsoft.com/library/windows/apps/mt187203).
+-   **パッケージ/ID/名前**
+-   **パッケージ/ID/発行者**
 
-## Link to your app's listing
+詳しくは、[パッケージ マニフェスト スキーマのリファレンス](https://msdn.microsoft.com/library/windows/apps/br211473)の「[**Identity**](https://msdn.microsoft.com/library/windows/apps/br211441)」をご覧ください。
+
+また、アプリ ID を宣言するこれらの値により、パッケージが属している "パッケージ ファミリ" が確定されます。 個々のパッケージには、アーキテクチャやバージョンなど、その他の詳細が含まれています。
+
+## パッケージファミリのその他の値
 
 
-The link to your app's page can be shared to help your customers find the app in the Store. This link is in the format **`https://www.microsoft.com/store/apps/<your app's Product ID>`**.
+次の値は、アプリのパッケージ ファミリを参照するが、マニフェストには含まれていないその他の値です。
 
-> **Note**  Depending on what OS versions you're targeting, you may see more than one link here. All apps will show the URL for Windows 10 using the format noted above, which will work for any OS. You may see additional links for Windows 8.1 and earlier and/or Windows Phone 8.1 and earlier, which will work only on the specified OS versions.
+-   **パッケージ ファミリ名 (PFN)**: この値は特定の Windows API で使われます。
+-   **パッケージ SID**: アプリに WNS の通知を渡すには、この値が必要になります。 詳しくは、「[Windows プッシュ通知サービス (WNS) の概要](https://msdn.microsoft.com/library/windows/apps/mt187203)」をご覧ください。
 
-When a customer clicks this link, it will open the web-based listing page for your app. If your app is available for the customer's Windows device, the Store app will also launch and display your app's listing.
+## アプリの内容へのリンク
+
+
+アプリのページへのリンクを共有することで、ユーザーはストアでアプリを見つけやすくなります。 このリンクは、**`https://www.microsoft.com/store/apps/<your app's Product ID>`** の形式で示されます。
+
+> **注**  対象としている OS のバージョンによって、複数のリンクが表示されることがあります。 すべてのアプリでは、上記の形式で Windows 10 向けの URL が表示されます。この URL は任意の OS で機能します。 Windows 8.1 以前や Windows Phone 8.1 以前向けの追加のリンクが表示されることもあります。それらは指定された OS バージョンでのみ機能します。
+
+ユーザーがこのリンクをクリックすると、アプリの Web ベースの内容ページが開きます。 アプリがユーザーの Windows デバイスで利用できる場合、ストア アプリも起動して、アプリの内容を表示します。
 
  
 

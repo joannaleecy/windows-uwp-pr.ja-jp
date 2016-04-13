@@ -2,12 +2,13 @@
 title: 安全な Windows アプリの開発について
 description: この概要記事は、ユニバーサル Windows プラットフォーム (UWP) アプリをセキュリティで保護されたアプリとして作成する作業を加速するさまざまな Windows 10 プラットフォーム機能を、アプリの設計者と開発者が深く理解するのに役立ちます。
 ms.assetid: 6AFF9D09-77C2-4811-BB1A-BBF4A6FF511E
+author: awkoren
 ---
 
 # 安全な Windows アプリの開発について
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
 この概要記事は、ユニバーサル Windows プラットフォーム (UWP) アプリをセキュリティで保護されたアプリとして作成する作業を加速するさまざまな Windows 10 プラットフォーム機能を、アプリの設計者と開発者が深く理解するのに役立ちます。 ここでは、認証、移動中データ、および保存データの各段階で利用可能な、Windows のセキュリティ機能に使用方法について詳しく説明します。 各章にあるその他のリソースを確認すれば、各トピックについてさらに詳しい情報を得ることができます。
@@ -498,15 +499,6 @@ Windows 10 のユニバーサル Windows プラットフォームには、オペ
 -   [**Windows.Security.ExchangeActiveSyncProvisioning**](https://msdn.microsoft.com/library/windows/apps/hh701506)
 -   [**Windows.Security.EnterpriseData**](https://msdn.microsoft.com/library/windows/apps/dn279153)
 
- 
-
- 
-
-
-
-
-
-
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=Mar16_HO5-->
 
 

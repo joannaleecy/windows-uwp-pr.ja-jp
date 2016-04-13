@@ -1,33 +1,33 @@
 ---
-Description: Set how long a speech recognizer ignores silence or unrecognizable sounds (babble) and continues listening for speech input.
-title: Set speech recognition timeouts
+Description: 音声認識エンジンが無音または認識できないサウンド (雑音) を無視し、音声入力を待機する時間の長さを設定します。
+title: 音声認識のタイムアウトの設定
 ms.assetid: 58F446AC-4A56-454D-8125-62A2C4DBFCC8
-label: Speech recognition timeouts
+label: 音声認識のタイムアウト
 template: detail.hbs
 ---
 
-# Set speech recognition timeouts
-Set how long a speech recognizer ignores silence or unrecognizable sounds (babble) and continues listening for speech input.
+# 音声認識のタイムアウトの設定
+音声認識エンジンが無音または認識できないサウンド (雑音) を無視し、音声入力を待機する時間の長さを設定します。
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-**Important APIs**
+**重要な API**
 
 -   [**Timeouts**](https://msdn.microsoft.com/library/windows/apps/dn653253)
 -   [**SpeechRecognizerTimeouts**](https://msdn.microsoft.com/library/windows/apps/dn653230)
 
 
-## <span id="Set_a_timeout"></span><span id="set_a_timeout"></span><span id="SET_A_TIMEOUT"></span>Set a timeout
+## <span id="Set_a_timeout"></span><span id="set_a_timeout"></span><span id="SET_A_TIMEOUT"></span>タイムアウトの設定
 
 
-Here, we specify various [**Timeouts**](https://msdn.microsoft.com/library/windows/apps/dn653253) values:
+ここでは、さまざまな [**Timeouts**](https://msdn.microsoft.com/library/windows/apps/dn653253) 値を指定します。
 
--   InitialSilenceTimeout - The length of time that a SpeechRecognizer detects silence (before any recognition results have been generated) and assumes speech input is not forthcoming.
--   BabbleTimeout - The length of time that a SpeechRecognizer continues to listen to unrecognizable sounds (babble) before it assumes speech input has ended and finalizes the recognition operation.
--   EndSilenceTimeout - The length of time that a SpeechRecognizer detects silence (after recognition results have been generated) and assumes speech input has ended.
+-   InitialSilenceTimeout: SpeechRecognizer が (認識結果が生成されるまでの) 無音を検出し、音声入力が続かないと見なす時間の長さ。
+-   BabbleTimeout: SpeechRecognizer が、認識できないサウンド (雑音) のリッスンを継続し、音声入力が終了したと見なし、認識処理を終了するまでの時間の長さ。
+-   EndSilenceTimeout: SpeechRecognizer が (認識結果が生成された後の) 無音を検出し、音声入力が終了したと見なす時間の長さ。
 
-**Note**  Timeouts can be set on a per-recognizer basis.
+**注**  タイムアウトは認識エンジンごとに設定できます。
 
  
 
@@ -38,12 +38,12 @@ recognizer.Timeouts.BabbleTimeout = TimeSpan.FromSeconds(4.0);
 recognizer.Timeouts.EndSilenceTimeout = TimeSpan.FromSeconds(1.2);
 ```
 
-## <span id="related_topics"></span>Related articles
+## <span id="related_topics"></span>関連記事
 
 
-* [Speech interactions](speech-interactions.md)
-**Samples**
-* [Speech recognition and speech synthesis sample](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [音声操作](speech-interactions.md)
+**サンプル**
+* [音声認識と音声合成のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  

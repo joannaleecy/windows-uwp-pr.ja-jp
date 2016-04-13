@@ -2,13 +2,13 @@
 Description: 電話、タブレット、PC など、Windows 10 ベースのデバイスで実行できるユニバーサル Windows アプリを作成する際に必要となる情報について説明します。
 title: Windows 10 アプリに関するハウツー ガイド - Windows アプリの開発
 ms.assetid: 2A39F3D8-85AD-4315-A69B-2B79242780E3
-redirect_url: https://msdn.microsoft.com/windows/uwp/index
+redirect_url: https://developer.microsoft.com/en-us/windows/develop
 ---
 
 
 # Windows 10 アプリに関するハウツー ガイド
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください\]
 
 電話、タブレット、PC など、Windows 10 ベースのデバイスで実行できるユニバーサル Windows アプリを作成する際に必要となる情報について説明します。 このセクションには、目的のタスクの種類別にまとめられた手順とコード例を掲載します。
 
@@ -28,7 +28,7 @@ redirect_url: https://msdn.microsoft.com/windows/uwp/index
 | [デバッグ、テスト、パフォーマンス](debug-test-perf/index.md) | テストとデバッグのサイクルについて説明します。また、Microsoft Visual Studio に付属の関連ツールや個別にダウンロードできる関連ツールの使用方法についても説明します。 ユニバーサル Windows アプリで意図したエクスペリエンスが確実に実現されるようにし、Windows ストアに公開できるようにします。 |
 | [デバイス、センサーの使用](devices-sensors\index.md) | さまざまなデバイス (プリンター、カメラ、センサーなど) をユニバーサル Windows アプリに統合して、接続されたデバイスの堅牢かつ柔軟なエクスペリエンスをユーザーに提供します。 | 
 | [エンタープライズ](enterprise/index.md) | Windows 10 ユニバーサル Windows プラットフォーム (UWP) アプリの主要なエンタープライズ機能について説明します。 |
-| [ファイル、フォルダー、およびライブラリ](files/index.md) | ファイル内のテキストやその他のデータ形式を読み取り/書き込みする方法、およびファイルやフォルダーの管理方法について説明します。 また、アプリの設定の読み取りと書き込み、ファイルやフォルダーのピッカー、ビデオ ライブラリやミュージック ライブラリなどの特別なサンド ボックス化された場所についても説明します。 |
+| [ファイル、フォルダー、およびライブラリ](files/index.md) | ファイル内のテキストやその他のデータ形式を読み取り/書き込みする方法、およびファイルやフォルダーの管理方法について説明します。 また、アプリの設定の読み取りと書き込み、ファイルやフォルダーのピッカー、ビデオ ライブラリやミュージック ライブラリなどのセキュリティで保護された特別な場所についても説明します。 |
 | [ゲームと DirectX](https://msdn.microsoft.com/en-us/library/windows/apps/mt228375.aspx) | 新しいユニバーサル Windows プラットフォーム (UWP) でゲームを作成する基本的な方法について説明します。 |
 | [グラフィックスとアニメーション](graphics/index.md) | ユーザー エクスペリエンスに対して視覚的な興味を持たせ、ユーザーの関心を集めるような UI グラフィックやアニメーションを使って、ユニバーサル Windows アプリを強化します。 |
 | [起動、再開、バックグラウンド タスク](launch-resume/index.md) | バックグラウンド タスクを作成し、システムで生成されたイベントに登録して、ユニバーサル Windows アプリが一時停止したり、実行されていない場合でも機能を提供します。 |
@@ -43,6 +43,6 @@ redirect_url: https://msdn.microsoft.com/windows/uwp/index
 | [XAML プラットフォーム](xaml-platform/index.md) | XAML プログラミング言語の基本的な概念を説明します。 または、XAML に既に慣れている場合は、XAML で Visual Studio を使って Windows ランタイム機能を実装し、優れたユニバーサル Windows アプリを作成する方法に関する説明に進んでもかまいません。 |
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=Mar16_HO5-->
 
 

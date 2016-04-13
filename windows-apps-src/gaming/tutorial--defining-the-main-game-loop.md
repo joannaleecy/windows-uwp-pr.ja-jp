@@ -1,43 +1,43 @@
 ---
-title: Define the main game object
-description: Now, we look at the details of the game sample's main object and how the rules it implements translate into interactions with the game world.
+title: メイン ゲーム オブジェクトの定義
+description: ここでは、ゲーム サンプルのメイン オブジェクトの詳細と、実装するルールをゲーム ワールドとの対話式操作に変換する方法について説明します。
 ms.assetid: 6afeef84-39d0-cb78-aa2e-2e42aef936c9
 ---
 
-# Define the main game object
+# メイン ゲーム オブジェクトの定義
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-At this point, we've laid out the basic framework of the sample game, and we implemented a state machine that handles the high-level user and system behaviors. But we haven't examined the part that makes the game sample an actual game: the rules and mechanics, and how they're implemented! Now, we look at the details of the game sample's main object and how the rules it implements translate into interactions with the game world.
+この時点までに、サンプル ゲームの基本的なフレームワークを紹介し、高度なユーザーの操作とシステムの動作を処理するステート マシンを実装しました。 しかし、ルール、機構、実装方法など、ゲーム サンプルを実際のゲームにする要素についてはまだ検証していません。 ここでは、ゲーム サンプルのメイン オブジェクトの詳細と、実装するルールをゲーム ワールドとの対話式操作に変換する方法について説明します。
 
-## Objective
-
-
--   To apply the basic development techniques when implementing the rules and mechanics of a simple Universal Windows Platform (UWP) game using DirectX.
-
-## Considering the game's flow
+## 目標
 
 
-The majority of the game's basic structure is defined in these files:
+-   DirectX を使ったシンプルなユニバーサル Windows プラットフォーム (UWP) ゲームのルールやしくみを実装する際に、基本的な開発手法を適用する。
+
+## ゲーム フローの検討
+
+
+ゲームの基本構造の大部分が次のファイルで定義されます。
 
 -   **App.cpp**
 -   **Simple3DGame.cpp**
 
-In [Defining the game's UWP app framework](tutorial--building-the-games-metro-style-app-framework.md), we reviewed the game framework defined in **App.cpp**.
+「[ゲームのユニバーサル Windows プラットフォーム (UWP) アプリ フレームワークの定義](tutorial--building-the-games-metro-style-app-framework.md)」では、**App.cpp** で定義されたゲームのフレームワークを確認しました。
 
-**Simple3DGame.cpp** provides the code for a class, **Simple3DGame**, which specifies the implementation of the game play itself. Earlier, we considered the treatment of the sample game as a UWP app. Now, we look at the code that makes it a game.
+**Simple3DGame.cpp** には、ゲーム プレイ自体の実装を指定するクラス、**Simple3DGame** のコードが記載されています。 サンプル ゲームを UWP アプリとして扱う処理については前述しました。 ここでは、ゲームを構成するコードを詳しく見てみましょう。
 
-The complete code for **Simple3DGame.h/.cpp** is provided in [Complete sample code for this section](#code_sample).
+**Simple3DGame.h/.cpp** の完全なコードは、[このセクションのサンプル コード一式](#code_sample)に示します。
 
-Let's take a look at the definition of the **Simple3DGame** class.
+**Simple3DGame** クラスの定義を見てみましょう。
 
-## Defining the core game object
+## コア ゲーム オブジェクトの定義
 
 
-When the app singleton starts, the view provider's **Initialize** method creates an instance of the main game class, the **Simple3DGame** object. This object contains the methods that communicate changes in game state to the state machine defined in the app framework, or from the app to the game object itself. It also contains methods that return info for updating the game's overlay bitmap and heads-up display, and for updating the animations and physics (the dynamics) in the game. The code for obtaining the graphics device resources used by the game is found in GameRenderer.cpp, which we discuss next in [Assembling the rendering framework](tutorial--assembling-the-rendering-pipeline.md).
+アプリ シングルトンが開始すると、ビュー プロバイダーの **Initialize** メソッドにより、メイン ゲーム クラスのインスタンスである **Simple3DGame** オブジェクトが作成されます。 このオブジェクトには、ゲーム状態に生じた変更について、アプリ フレームワークで定義されたステート マシンに伝えたり、アプリからゲーム オブジェクト自体に伝えたりするためのメソッドが含まれています。 また、ゲームのオーバーレイ ビットマップとヘッダアップ ディスプレイの更新やアニメーションやゲーム中の物理学 (力学) の更新に対して情報を返すメソッドも含まれています。 ゲームで使うグラフィックス デバイス リソースを取得するコードは GameRenderer.cpp に含まれています。これについては、次の「[レンダリング フレームワークの作成](tutorial--assembling-the-rendering-pipeline.md)」で説明します。
 
-The code for **Simple3DGame** looks like this:
+**Simple3DGame** のコードは次のようになります。
 
 ```cpp
 ref class GameRenderer;
@@ -79,32 +79,32 @@ private:
 };
 ```
 
-First, let's review the internal methods defined on **Simple3DGame**.
+まず、**Simple3DGame** で定義した内部メソッドについて見てみましょう。
 
--   **Initialize**. Sets the starting values of the global variables and initializes the game objects.
--   **LoadGame**. Initializes a new level and starts loading it.
--   **LoadLevelAsync**. Starts an async task (see the [Parallel Patterns Library](https://msdn.microsoft.com/library/windows/apps/dd492418.aspx) for more details) to initialize the level and then invoke an async task on the renderer to load the device specific level resources. This method runs in a separate thread; as a result, only [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) methods (as opposed to [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) methods) can be called from this thread. Any device context methods are called in the **FinalizeLoadLevel** method.
--   **FinalizeLoadLevel**. Completes any work for level loading that needs to be done on the main thread. This includes any calls to Direct3D 11 device context ([**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)) methods.
--   **StartLevel**. Starts the game play for a new level.
--   **PauseGame**. Pauses the game.
--   **RunGame**. Runs an iteration of the game loop. It's called from **App::Update** one time every iteration of the game loop if the game state is **Active**.
--   **OnSuspending** and **OnResuming**. Suspends and resumes the game's audio, respectively.
+-   **Initialize**。 グローバル変数の開始値を設定し、ゲーム オブジェクトを初期化します。
+-   **LoadGame**。 新しいレベルを初期化し、読み込みを開始します。
+-   **LoadLevelAsync**。 非同期タスク (詳しくは、[並列パターン ライブラリ](https://msdn.microsoft.com/library/windows/apps/dd492418.aspx)をご覧ください) を開始して、レベルを初期化してから、レンダラーでデバイス固有のレベル リソースを読み込む非同期タスクを呼び出します。 このメソッドは独立したスレッドで実行されます。そのため、このスレッドから呼び出すことができるのは [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) メソッドだけです ([**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) メソッドは呼び出されません)。 デバイス コンテキストのメソッドは、**FinalizeLoadLevel** メソッドで呼び出されます。
+-   **FinalizeLoadLevel**。 メイン スレッドで実行する必要があるレベル読み込みの作業を完了します。 これには、Direct3D 11 のデバイス コンテキスト ([**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)) のメソッドの呼び出しが含まれます。
+-   **StartLevel**。 新しいレベルでゲーム プレイを開始します。
+-   **PauseGame**。 ゲームを一時停止します。
+-   **RunGame**。 ゲーム ループの反復を実行します。 ゲームの状態が **App::Update** の場合、ゲーム ループを反復するごとに **Active** から 1 回呼び出されます。
+-   **OnSuspending** および **OnResuming**。 前者はゲームのオーディオを中断し、後者はこれを再開します。
 
-And the private methods:
+さらに、次のプライベート メソッドがあります。
 
--   **LoadSavedState** and **SaveState**. Loads and saves the current state of the game, respectively.
--   **SaveHighScore** and **LoadHighScore**. Saves and loads the high score across games, respectively.
--   **InitializeAmmo**. Resets the state of each sphere object used as ammunition back to its original state for the beginning of each round.
--   **UpdateDynamics**. This is an important method, because it updates all the game objects based on canned animation routines, physics, and control input. This is the heart of the interactivity that defines the game. We talk about it more in the [Updating the game](#update_game) section.
+-   **LoadSavedState** および **SaveState**。 前者はゲームの現在の状態の読み込み、後者はこれを保存します。
+-   **SaveHighScore** および **LoadHighScore**。 前者はゲーム全体のハイ スコアを読み込み、後者はこれを保存します。
+-   **InitializeAmmo**。 弾として使われるそれぞれの球体の状態を各ラウンドの最初に元の状態に戻します。
+-   **UpdateDynamics**。 これは、アニメーションのキャンド ルーチンをはじめ、物理学とコントロール入力に基づいてゲーム オブジェクトをすべて更新するため、重要なメソッドになります。 これが、ゲームを定義するインタラクティビティの中核部分に相当します。 これについては、「[ゲームの更新](#update_game)」のセクションで詳しく説明します。
 
-The other public methods are property getters that return game play and overlay specific information to the app framework for display.
+これ以外のパブリック メソッドとして、表示用のアプリ フレームワークにゲーム プレイとオーバーレイ固有の情報を返すプロパティの getter があります。
 
-## Defining the game state variables
+## ゲーム状態変数の定義
 
 
-One function of the game object is to serve as a container for the data that defines a game session, level, or lifetime, depending on how you define your game at a high level. In this case, the game state data is for the lifetime of the game, initialized one time when a user launches the game.
+ゲーム オブジェクトの役割の 1 つは、上位レベルでゲームをどのように定義するかに応じてゲームのセッション、レベル、または有効期間を定義するデータのコンテナーとして利用することです。 この場合、ゲーム状態データは、ユーザーがゲームを開始した時点で一度初期化されるゲームの有効期限の間、適用されます。
 
-Here's the complete set of definitions for the game object's state variables.
+以下にゲーム オブジェクトの状態変数に対する定義一式を示します。
 
 ```cpp
 private:
@@ -141,19 +141,19 @@ private:
     DirectX::XMFLOAT3                                   m_maxBound;
 ```
 
-At the top of the code example, there are four objects whose instances are updated as the game loop runs.
+コード例の冒頭には、ゲーム ループの実行時にインスタンスが更新される 4 つのオブジェクトがあります。
 
--   The **MoveLookController** object. This object represents the player input. (For more info about the **MoveLookController** object, see [Adding controls](tutorial--adding-controls.md).)
--   The **GameRenderer** object. This object represents the Direct3D 11 renderer derived from the **DirectXBase** class that handles all the device-specific objects and their rendering. (For more info, see [Assembling the rendering pipeline](tutorial--assembling-the-rendering-pipeline.md)).
--   The **Camera** object. This object represents the player's first-person view of the game world. (For more info about the **Camera** object, see [Assembling the rendering pipeline](tutorial--assembling-the-rendering-pipeline.md).)
--   The **Audio** object. This object controls the audio playback for the game. (For more info about the **Audio** object, see [Adding sound](tutorial--adding-sound.md).)
+-   **MoveLookController** オブジェクト。 プレーヤーの入力を表すオブジェクトです (**MoveLookController** オブジェクトについて詳しくは、「[コントロールの追加](tutorial--adding-controls.md)」をご覧ください)。
+-   **GameRenderer** オブジェクト。 Direct3D 11 のレンダラーを表すオブジェクトです。デバイス固有のオブジェクトとそのレンダリングをすべて処理する **DirectXBase** クラスから派生します (詳しくは、「[レンダリング パイプラインのアセンブル](tutorial--assembling-the-rendering-pipeline.md)」をご覧ください)。
+-   **Camera** オブジェクト。 ゲーム ワールドに対するプレーヤーの一人称視点を表すオブジェクトです (**Camera** オブジェクトについて詳しくは、「[レンダリング パイプラインのアセンブル](tutorial--assembling-the-rendering-pipeline.md)」をご覧ください)。
+-   **Audio** オブジェクト。 ゲームのオーディオ再生をコントロールするオブジェクトです (**Audio** オブジェクトについて詳しくは、「[サウンドの追加](tutorial--adding-sound.md)」をご覧ください)。
 
-The rest of the game variables contain the lists of the primitives and their respective in-game amounts, and game play specific data and constraints. Let's see how the sample configures these variables when the game is initialized.
+残りのゲーム変数には、プリミティブとゲーム内で対応するプリミティブの量を示すリストと、ゲーム プレイ固有のデータと制約が含まれます。 ゲームの初期化時にこれらの変数がどのように設定されるかを見てみましょう。
 
-## Initializing and starting the game
+## ゲームの初期化と開始
 
 
-When a player starts the game, the game object must initialize its state, create and add the overlay, set the variables that track the player's performance, and instantiate the objects that it will use to build the levels.
+プレーヤーがゲームを開始すると、ゲーム オブジェクトはその状態を初期化し、オーバーレイの作成と追加を行い、プレーヤーのパフォーマンスを追跡する変数を設定して、レベルの構築時に使うオブジェクトをインスタンス化する必要があります。
 
 ```cpp
 void Simple3DGame::Initialize(
@@ -354,52 +354,52 @@ void Simple3DGame::Initialize(
 }
 ```
 
-The sample game sets up the components of the game object in this order:
+サンプル ゲームでは、次の順序に従ってゲーム オブジェクトのコンポーネントをセットアップします。
 
-1.  A new audio playback object is created.
-2.  Arrays for the game's graphic primitives are created, including arrays for the level primitives, ammo, and obstacles.
-3.  A location for saving game state data is created, named *Game*, and placed in the app data settings storage location specified by [**ApplicationData::Current**](https://msdn.microsoft.com/library/windows/apps/br241619).
-4.  A game timer and the initial in-game overlay bitmap are created.
-5.  A new camera is created with a specific set of view and projection parameters.
-6.  The input device (the controller) is set to the same starting pitch and yaw as the camera, so the player has a 1-to-1 correspondence between the starting control position and the camera position.
-7.  The player object is created and set to active. We use a sphere object to detect the player's proximity to walls and obstacles and to keep the camera from getting put in a position that might break immersion.
-8.  The game world primitive is created.
-9.  The cylinder obstacles are created.
-10. The targets (**Face** objects) are created and numbered.
-11. The ammo spheres are created.
-12. The levels are created.
-13. The high score is loaded.
-14. Any prior saved game state is loaded.
+1.  新規のオーディオ再生オブジェクトを作成します。
+2.  一連のレベル プリミティブ、弾薬、障害物を含む、ゲームのグラフィック プリミティブの配列を作成します。
+3.  ゲーム状態データを保存する場所を作成し、*Game* という名前を付け、[**ApplicationData::Current**](https://msdn.microsoft.com/library/windows/apps/br241619) で指定するアプリ データ設定ストレージの場所に格納します。
+4.  ゲーム タイマーと初期ゲーム内オーバーレイ ビットマップを作成します。
+5.  具体的なビュー パラメーターとプロジェクション パラメーター セットを使って新規のカメラを作成します。
+6.  プレーヤーがコントロール開始位置とカメラ位置の 1 対 1 の対応を確保されるように、入力デバイス (コントローラー) をカメラと同じ位置に上下と左右の開始位置を設定します。
+7.  プレーヤー オブジェクトを作成し、アクティブに設定します。 球体を使って、壁や障害物に近接するプレーヤーを検出したり、没入感を阻害するような位置にカメラが入り込むのを阻止したりします。
+8.  ゲーム ワールド プリミティブを作成します。
+9.  円筒形の障害物を作成します。
+10. 標的 (**Face** オブジェクト) を作成し、番号を付けます。
+11. 弾薬の球体を作成します。
+12. レベルを作成します。
+13. ハイ スコアを読み込みます。
+14. 以前に保存されたゲーム状態を読み込みます。
 
-The game now has instances of all the key components: the world, the player, the obstacles, the targets, and the ammo spheres. It also has instances of the levels, which represent configurations of all of the above components and their behaviors for each specific level. Let's see how the game builds the levels.
+ゲームには既に、ワールド、プレーヤー、障害物、標的、弾薬の球体の主要コンポーネントのインスタンスが存在します。 これらの全コンポーネントの設定と個々の固有レベルに対する動作を表すレベルのインスタンスもあります。 ゲームでどのようにレベルが構築されるのかを見てみます。
 
-## Building and loading the game's levels
-
-
-Most of the heavy lifting for the level construction is done in the **Level.h/.cpp** file, which we won't delve into, because it focuses on a very specific implementation. The important thing is that the code for each level is run as a separate **LevelN** object. If you'd like to extend the game, you can create a **Level** object that took an assigned number as a parameter and randomly placed the obstacles and targets. Or, you can have it load level configuration data from a resource file, or even the Internet!
-
-The complete code for **Level.h/.cpp** is provided in [Complete sample code for this section](#code_sample).
-
-## Defining the game play
+## ゲーム レベルの構築と読み込み
 
 
-At this point, we have all the components we need to assemble the game. The levels have been constructed in memory from the primitives, and are ready for the player to start interacting with them in some fashion.
+レベル構築に伴う作業の大部分は **Level.h/.cpp** ファイルで行われます。これについては、きわめて専門的な実装を伴うため、ここでは詳しい説明は省略します。 重要な点は、各レベルのコードがそれぞれ個別の **LevelN** オブジェクトとして実行されるということです。 ゲームを拡張する場合は、割り当てられている数字をパラメーターとして解釈し、障害物と標的を無作為に配置していた **Level** オブジェクトを作成することができます。 または、リソース ファイルからレベルの設定データを読み込ませることもできます。インターネットからも入手可能です。
 
-Now, the best games react instantly to player input, and provide immediate feedback. This is true for any type of a game, from twitch-action, real-time shoot-em-ups to thoughtful, turn-based strategy games.
+**Level.h/.cpp** の完全なコードは、[このセクションのサンプル コード一式](#code_sample)に示します。
 
-In [Defining the game's UWP framework](tutorial--building-the-games-metro-style-app-framework.md), we looked at the overall state machine that governs the flow of the game. Remember, the sample implements this flow as a loop inside the [**Run**](https://msdn.microsoft.com/library/windows/apps/hh702093) method of the **App** class, which itself is an implementation of a DirectX view provider. The important state transitions must be controlled by the player, and must provide clear feedback. Any delay in this feedback breaks the sense of immersion.
+## ゲーム プレイの定義
 
-Here is a diagram representing the basic flow of the game and its high-level states.
 
-![a diagram showing the main state machine for our game](images/simple3dgame-mainstatemachine.png)
+この時点でゲームのアセンブルに必要なコンポーネントがすべて揃います。 レベルは、既にプリミティブに基づいてメモリ中に構築されており、プレーヤーが何かしらの形式でやり取りを開始する準備ができています。
 
-When the sample game starts play, the game object can be in one of three states:
+優れたゲームでは、プレーヤーからの入力に即座に反応し、瞬時のフィードバックを戻せることが条件となります。 これは、トゥイッチ アクションやリアルタイムのシューティング ゲームをはじめ、ターン制の思考型の戦略ゲームに至るまで、あらゆる種類のゲームに言えることです。
 
--   **Waiting for resources**. This state is activated when the game object is initialized or when the components of a level are being loaded. If this state was triggered by a request to load a prior game, the game stats overlay is displayed; if it was triggered by a request to play a level, the level start overlay is displayed. The completion of resource loading causes the game to pass through the **Resources loaded** state and then transition into the **Waiting for press** state.
--   **Waiting for press**. This state is activated when the game is paused, either by the player or by the system (after, say, loading resources). When the player is ready to exit this state, the player is prompted to load a new game state (LoadGame), start or restart the loaded level (StartLevel), or continue the current level (ContinueGame).
--   **Dynamics**. If a player's press input is completed and the resulting action is to start or continue a level, the game object transitions into the *Dynamics* state. The game is played in this state, and the game world and player objects are updated here based on animation routines and player input. This state is left when the player triggers a pause event, either by pressing P, by taking an action that deactivates the main window, or by completing a level or the game.
+「[ゲームのユニバーサル Windows プラットフォーム (UWP) アプリ フレームワークの定義](tutorial--building-the-games-metro-style-app-framework.md)」では、ゲームのフローを制御する総合的なステート マシンについて説明してあります。 なお、サンプルではこのフローが **App** クラスの [**Run**](https://msdn.microsoft.com/library/windows/apps/hh702093) メソッド内部にあるループとして実装されており、これ自体が DirectX ビュー プロバイダーの実装として存在することに注意してください。 重要な状態の切り替えはプレーヤーがコントロールし、それに対して明確なフィードバックが戻される必要があります。 このフィードバックに遅れが生じると、プレーヤーはゲームに熱中できなくなります。
 
-Now, let's look at specific code in the **App** class (see: [Defining the game's UWP framework](tutorial--building-the-games-metro-style-app-framework.md)) for the **Update** method that implements this state machine.
+以下にゲームの基本フローと上位レベルの状態を表す図を示します。
+
+![ゲームのメイン ステート マシンを示す図](images/simple3dgame-mainstatemachine.png)
+
+サンプル ゲームのプレイが開始すると、ゲーム オブジェクトは次のいずれかの状態に置かれます。
+
+-   **Waiting for resources**。 この状態は、ゲーム オブジェクトが初期化された時点、またはレベルのコンポーネントが読み込まれた時点でアクティブになります。 この状態が、以前のゲームの読み込み要求によってトリガーされた場合は、ゲーム統計のオーバーレイが表示されます。レベルのプレイ要求によってトリガーされた場合は、レベル開始のオーバーレイが表示されます。 リソースの読み込みが完了すると、**Resources loaded** 状態を経て、**Waiting for press** 状態に移行します。
+-   **Waiting for press**. この状態は、プレーヤーまたはシステムによってゲームが一時停止されるとアクティブになります (たとえば、リソースの読み込み後など)。 プレーヤーがこの状態を終了する準備ができている場合、プレーヤーは、新たにゲーム状態を読み込む (LoadGame)、読み込まれたレベルを開始または再開する (StartLevel)、現在のレベルを続行する (ContinueGame) のいずれかを選ぶように要求されます。
+-   **Dynamics**。 プレーヤーによる押下入力が終わり、レベルの開始または続行のアクションが選ばれた場合、ゲーム オブジェクトは *Dynamics* の状態に移ります。 ゲームはこの状態でプレイされ、ゲーム ワールドとプレーヤーの各オブジェクトが、アニメーション ルーチンとプレーヤー入力に従って更新されます。 この状態は、プレーヤーが P を押す、メイン ウィンドウを非アクティブにする、レベルをクリアする、ゲームを終了する、のいずれかの操作によって一時停止イベントがトリガーされると終了します。
+
+ここで、このステート マシンを実装する **Update** メソッドに対する **App** クラス (「[ゲームのユニバーサル Windows プラットフォーム (UWP) アプリ フレームワークの定義](tutorial--building-the-games-metro-style-app-framework.md)」をご覧ください) の具体的なコードを見てみましょう。
 
 ```cpp
 void App::Update()
@@ -544,23 +544,23 @@ void App::Update()
 }
 ```
 
-The first thing this method does is call the [MoveLookController](tutorial--adding-controls.md) instance's own **Update** method, which updates the data from the controller. This data includes the direction the player's view (the camera) is facing and the velocity of the player's movement.
+このメソッドではまず、[MoveLookController](tutorial--adding-controls.md) インスタンスの固有の **Update** メソッドを呼び出し、コントローラーからのデータを更新します。 このデータには、プレーヤー ビュー (カメラ) が向いている方向やプレーヤーの動きの速度などが含まれます。
 
-When the game is in the Dynamics state, that is, when the player is playing, the work is handled in the **RunGame** method, with this call:
+ゲームが Dynamics の状態にある場合、つまりプレーヤーがプレイ中の場合に、この呼び出しによって作業は **RunGame** メソッドの中で処理されます。
 
 `GameState runState = m_game->RunGame();`
 
-**RunGame** handles the set of data that defines the current state of the game play for the current iteration of the game loop. It flows like this:
+**RunGame** はゲーム ループの現在行われている反復に対するゲーム プレイの最新状態を定義する一連のデータを処理します。 次のようなフローになります。
 
-1.  The method updates the timer that counts down the seconds until the level is completed, and tests to see if the level's time has expired. This is one of the rules of the game: when time runs out without all the targets getting shot, the game is over.
-2.  If time has run out, the method sets the **TimeExpired** game state, and returns to the **Update** method in the previous code.
-3.  If time remains, the move-look controller is polled for an update to the camera position; specifically, an update to the angle of the view normal projecting from the camera plane (where the player is looking), and the distance that angle has moved from the previous time the controller was polled.
-4.  The camera is updated based on the new data from the move-look controller.
-5.  The dynamics, or the animations and behaviors of objects in the game world independent of player control, are updated. In the game sample, this is the motion of the ammo spheres that have been fired, the animation of the pillar obstacles and the movement of the targets.
-6.  The method checks to see if the criteria for the successful completion of a level have been met. If so, it finalizes the score for the level and checks to see if this is the last level (of 6). If it's the last level, the method returns the **GameComplete** game state; otherwise, it returns the **LevelComplete** game state.
-7.  If the level isn't complete, the method sets the game state to **Active** and returns.
+1.  メソッドは、レベルが終了するまでの間、残り時間を秒数でカウント ダウンするタイマーを更新し、レベルの時間が過ぎていないかをテストします。 これは、ゲームのルールの 1 つです。標的を全部撃ち落とす前に時間切れになると、ゲーム オーバーになります。
+2.  時間切れになると、メソッドは **TimeExpired** ゲーム状態を設定し、前のコードの **Update** メソッドに戻ります。
+3.  時間が残っている場合は、ムーブ/ルック コントローラーがポーリングを行って、カメラ位置に更新がないかどうかを確認します。具体的には、カメラ平面 (プレーヤーが見ている面) の延長上にあるビュー法線の角度や、前回のコントローラーのポーリング時からの角度の移動距離が更新されていないかどうかを確認します。
+4.  カメラは、ムーブ/ルック コントローラーから送られる新しいデータに従って更新されます。
+5.  ダイナミクス、つまりプレーヤーのコントロールからは独立したゲーム ワールド中のオブジェクトのアニメーションや動作が更新されます。 ゲーム サンプルでは、発射された弾丸の動き、柱の障害物のアニメーション、標的の移動などのことです。
+6.  メソッドが、レベルの正常な完了に関する基準が満たされているかどうかをチェックします。 満たされていれば、レベルのスコアをファイナライズし、これが最後のレベル (全 6 レベル) であるかどうかを判断します。 最後のレベルであれば、**GameComplete** ゲーム状態を返します。そうでない場合は、**LevelComplete** ゲーム状態を返します。
+7.  レベルが完了していない場合は、ゲーム状態を **Active** に設定し、戻ります。
 
-Here's what **RunGame**, found in **Simple3DGame.cpp**, looks like in code.
+**Simple3DGame.cpp** にある **RunGame** は次のようなコードです。
 
 ```cpp
 GameState Simple3DGame::RunGame()
@@ -642,16 +642,16 @@ GameState Simple3DGame::RunGame()
 }}
 ```
 
-Here's the key call: `UpdateDynamics()`. It's what brings the game world to life. Let's review it!
+キー コールは次のとおりです。`UpdateDynamics()`。 ここがゲーム ワールドに命を吹き込む部分です。 その内容を確認してみましょう。
 
-## Updating the game world
+## ゲーム ワールドの更新
 
 
-A fast and fluid game experience is one where the world feels *alive*, where the game itself is in motion independent of player input. Trees wave in the wind, waves crest along shore lines, machinery smokes and shines, and alien monsters stretch and salivate. Imagine what a game would be like if everything was frozen, with the graphics only moving when the player provided input. It'd be weird and not very, well, immersive. Immersion, for the player, comes from the feeling of being an agent in a living, breathing world.
+迅速で流れるようなゲーム エクスペリエンスこそ、ゲーム自体がプレーヤーからの入力から独立した動きを見せる*生き生きとした*世界を再現するための鍵となります。 木々が風になびき、波が海岸に打ち上げ、機械が煙りを上げ、光を発し、異星の怪物が身を伸ばしてはよだれを垂らすなど、動きのある描写が行われます。 ゲームの背景がすべて静止していて、プレーヤーが入力したときにだけ画像が動くとしたら、どのような印象になるのでしょう。 動きが不自然で、あまり魅力的とは言えないでしょう。 プレーヤーは、息をのむような生き生きとした世界にいる感覚を得られてこそ夢中になります。
 
-The game loop should always keep updating the game world and running the animation routines, be they canned or based on physical algorithms or just plain random, except when the game is specifically paused. In the game sample, this principle is called *dynamics*, and it encompasses the rise and fall of the pillar obstacles, and the motion and physical behaviors of the ammo spheres as they are fired. It also encompasses the interaction between objects, including collisions between the player sphere and the world, or between the ammo and the obstacles and targets.
+ゲーム ループでは、一時停止が指定された場合を除き、常にゲーム ワールドを更新し、アニメーション ルーチンを実行していることが求められます。これがキャンド ルーチンであるか、物理アルゴリズムに従ったものであるか、また単に無作為な動きであるかは問いません。 ゲーム サンプルでは、この原理のことを*ダイナミクス*と呼んでいます。これにより、柱の障害物の上下の動き、発砲時に見られる弾薬の球体の動きや物理的動作が統合されます。 また、プレーヤーの球体とワールドの間、または弾薬、障害物、標的の間に生じる衝突を含め、物体どうしの相互作用も統合されます。
 
-The code that implements these dynamics looks like this:
+こうしたダイナミクスを実装するコードは次のとおりです。
 
 ```cpp
 void Simple3DGame::UpdateDynamics()
@@ -824,27 +824,27 @@ void Simple3DGame::UpdateDynamics()
 }
 ```
 
-(This code example has been abbreviated for readability. The full working code is found in the complete code sample at the bottom of this topic.)
+(このコード例は、わかりやすいように省略したものです。 動作する完全なコードは、このトピックの末尾のコード サンプル一式に掲載しています)
 
-This method deals with four sets of computations:
+このメソッドは、次の 4 種類の計算を行います。
 
--   The positions of the fired ammo spheres in the world.
--   The animation of the pillar obstacles.
--   The intersection of the player and the world boundaries.
--   The collisions of the ammo spheres with the obstacles, the targets, other ammo spheres, and the world.
+-   ワールドで発砲された弾薬の球体の位置
+-   柱の障害物のアニメーション
+-   プレーヤーとワールドの境界の交差部分
+-   弾薬の球体と、障害物、標的、他の弾薬球体、ワールドとの衝突
 
-The animation of the obstacles is a loop defined in **Animate.h/.cpp**. The behavior of the ammo and any collisions are defined by simplified physics algorithms, supplied in the previous code and parameterized by a set of global constants for the game world, including gravity and material properties. This is all computed in the game world coordinate space.
+障害物のアニメーションは、**Animate.h/.cpp** で定義されたループとして実行されます。 弾薬と衝突の動作は、簡略化した物理アルゴリズムで定義され、従来のコードから提供されます。また、重力や素材のプロパティも含め、ゲーム ワールドに対する一連のグローバル定数によってパラメーター化されます。 これはすべて、ゲーム ワールドの座標空間で計算されます。
 
-Now that we've updated all the objects in the scene and calculated any collisions, we need to use that info to draw the corresponding visual changes. After Update completes in the current iteration of the game loop, the sample immediately calls **Render** to take the updated object data and generate a new scene to present to the player.
+これでシーン中のオブジェクトがすべて更新され、すべての衝突が計算されたため、この情報を使って対応するビジュアルの変更を描画します。 サンプルでは、ゲーム ループの現在の反復中で更新が完了すると直ちに、**Render** を呼び出して更新されたオブジェクト データを使用して新しいシーンを生成し、プレーヤーに提示します。
 
-Let's look at the render method now.
+ここでレンダリングのメソッドを見てみましょう。
 
-## Rendering the game world's graphics
+## ゲーム ワールド グラフィックスのレンダリング
 
 
-We recommend that the graphics in a game update as often as possible, which, at maximum, is every time the main game loop iterates. As the loop iterates, the game is updated, with or without player input. This allows the animations and behaviors that are calculated to be displayed smoothly. Imagine if we had a simple scene of water that only moved when the player pressed a button. That would make for terribly boring visuals. A good game looks smooth and fluid.
+ゲーム中のグラフィックスはできるだけ頻繁 (最大ではメインのゲーム ループが反復するごと) に更新することをお勧めします。 ループが反復するごとに、プレーヤーからの入力の有無を問わず、ゲームを更新します。 これにより、計算するアニメーションと動作がスムーズに表示されるようになります。 たとえば、プレーヤーがボタンを押したときにのみ、水が流れるという単純なシーンを思い浮かべてください。 ひどくつまらないビジュアルになるでしょう。 優れたゲームは、流れるような自然の動きを伴うものです。
 
-Recall the sample game's loop, as shown here. If the game's main window is visible, and isn't snapped or deactivated, the game continues to update and render the results of that update.
+以下に示すような簡単なゲーム ループを例に取ります。 ゲームのメイン ウィンドウが表示されていて、スナップされたり、非アクティブにされたりしなければ、ゲームはそのまま、その更新結果の更新とレンダリングを続けます。
 
 ```cpp
 void App::Run()
@@ -880,7 +880,7 @@ void App::Run()
 }
 ```
 
-The method we examine now renders a representation of that state immediately after the state is updated in **Run** with a call to **Update**, which we discussed in the previous section.
+ここで検証するメソッドでは、**Update** を呼び出した後、状態が **Run** によって更新された直後の状態を表すレンダリングが行われます。これについては、前のセクションで説明したとおりです。
 
 ```cpp
 void GameRenderer::Render()
@@ -1030,18 +1030,18 @@ void GameRenderer::Render()
 }
 ```
 
-The complete code for this method is in [Assembling the rendering framework](tutorial--assembling-the-rendering-pipeline.md).
+このメソッドの完全なコードは、「[レンダリング フレームワークの作成](tutorial--assembling-the-rendering-pipeline.md)」に示しています。
 
-This method draws the projection of the 3D world, and then draws the Direct2D overlay on top of it. When completed, it presents the final swap chain with the combined buffers for display.
+このメソッドではまず 3D ワールドのプロジェクションが描画され、続いてその上に Direct2D オーバーレイが描画されます。 描画が完了すると、表示用に結合されたバッファーとともに最終的なスワップ チェーンが表示されます。
 
-Be aware that there are two states for the sample game's Direct2D overlay: one where the game displays the game info overlay that contains the bitmap for the pause menu, and one where the game displays the cross hairs along with the rectangles for the touchscreen move-look controller. The score text is drawn in both states.
+サンプル ゲームの Direct2D オーバーレイには 2 つの状態が存在します。1 つは一時停止メニューのビットマップを含むゲーム情報オーバーレイを表示する状態、もう 1 つはタッチスクリーンのムーブ/ルック コントローラーの長方形とクロスヘアを表示する状態です。 両方の状態でスコア テキストが描画されます。
 
-## Next steps
+## 次のステップ
 
 
-By now, you're probably curious about the actual rendering engine: how those calls to the **Render** methods on the updated primitives get turned into pixels on your screen. We cover that in detail in [Assembling the rendering framework](tutorial--assembling-the-rendering-pipeline.md). If you're more interested in how the player controls update the game state, then check out [Adding controls](tutorial--adding-controls.md).
+ここまでの説明で、実際のレンダリング エンジンについて、すなわち更新されたプリミティブで **Render** メソッドを呼び出した場合、これが画面上のピクセルでどのように表現されるのかについて関心を持たれていることでしょう。 これについては、「[レンダリング フレームワークのアセンブル](tutorial--assembling-the-rendering-pipeline.md)」で詳しく説明します。 またプレーヤー コントロールによってゲーム状態がどのように更新されるのかについては、「[コントロールの追加](tutorial--adding-controls.md)」をご覧ください。
 
-## Complete code sample for this section
+## このセクションのコード サンプル一式
 
 
 Simple3DGame.h
@@ -3600,15 +3600,15 @@ XMFLOAT3 AnimateCirclePosition::Evaluate(_In_ float t)
             
 ```
 
-> **Note**  
-This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **注:**  
+この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
  
 
-## Related topics
+## 関連トピック
 
 
-[Create a simple UWP game with DirectX](tutorial--create-your-first-metro-style-directx-game.md)
+[DirectX によるシンプルな UWP ゲームの作成](tutorial--create-your-first-metro-style-directx-game.md)
 
  
 

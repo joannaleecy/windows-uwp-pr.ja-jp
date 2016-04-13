@@ -1,33 +1,33 @@
 ---
-title: Touch controls for games
-description: Learn how to add basic touch controls to your Universal Windows Platform (UWP) C++ game with DirectX.
+title: ゲームのタッチ コントロール
+description: ここでは、DirectX を使って基本的なタッチ コントロールをユニバーサル Windows プラットフォーム (UWP) C++ ゲームに追加する方法について説明します。
 ms.assetid: 9d40e6e4-46a9-97e9-b848-522d61e8e109
 ---
 
-# Touch controls for games
+# ゲームのタッチ コントロール
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-Learn how to add basic touch controls to your Universal Windows Platform (UWP) C++ game with DirectX. We show you how to add touch-based controls to move a fixed-plane camera in a Direct3D environment, where dragging with a finger or stylus shifts the camera perspective.
+ここでは、DirectX を使って基本的なタッチ コントロールをユニバーサル Windows プラットフォーム (UWP) C++ ゲームに追加する方法について説明します。 具体的には、平面に固定されたカメラを動かすタッチ ベースのコントロールを、指またはスタイラスでドラッグするとカメラの視点がシフトする Direct3D 環境に追加する方法を紹介します。
 
-You can incorporate these controls in games where you want the player to drag to scroll or pan over a 3D environment, such as a map or playfield. For example, in a strategy or puzzle game, you can use these controls to let the player view a game environment that is larger than the screen by panning left or right.
+これらのコントロールは、プレイヤーが地図やプレイフィールドなどの 3D 環境でドラッグしてスクロールまたはパンを行うゲームに組み込むことができます。 たとえば、戦略ゲームやパズル ゲームでは、これらのコントロールを使って、プレイヤーが左右にパンすることで画面より大きいゲーム環境を確認できるようにすることが可能です。
 
-> **Note**  Our code also works with mouse-based panning controls. The pointer related events are abstracted by the Windows Runtime APIs, so they can handle either touch- or mouse-based pointer events.
+> **注**  ここで紹介するコードは、マウス ベースのパン コントロールにも利用できます。 ポインター関連のイベントは、Windows ランタイム API で抽象化されるため、タッチまたはマウス ベースのポインター イベントを処理できます。
 
  
 
-## Objectives
+## 目標
 
 
--   Create a simple touch drag control for panning a fixed-plane camera in a DirectX game.
+-   DirectX ゲームで平面に固定されたカメラをパンする簡単なタッチ ドラッグ コントロールを作成する。
 
-## Set up the basic touch event infrastructure
+## 基本的なタッチ イベントのインフラストラクチャのセットアップ
 
 
-First, we define our basic controller type, the **CameraPanController**, in this case. Here, we define a controller as an abstract idea, the set of behaviors the user can perform.
+まず、この例ではコントローラーの基本型として、**CameraPanController** を定義します。 ここでは、コントローラーを抽象的な概念、つまりユーザーが実行できる動作のセットとして定義します。
 
-The **CameraPanController** class is a regularly refreshed collection of information about the camera controller state, and provides a way for our app to obtain that information from its update loop.
+**CameraPanController** クラスは、カメラ コントローラーの状態に関する情報を定期的に更新したコレクションであり、アプリが自身の更新ループからこの情報を取得できるようにします。
 
 ```cpp
 using namespace Windows::UI::Core;
@@ -42,7 +42,7 @@ ref class CameraPanController
 }
 ```
 
-Now, let's create a header that defines the state of the camera controller, and the basic methods and event handlers that implement the camera controller interactions.
+次に、カメラ コントローラーの状態を定義するヘッダーと、カメラ コントローラーの操作を実装する基本的なメソッドとイベント ハンドラーを作ります。
 
 ```cpp
 ref class CameraPanController
@@ -94,47 +94,47 @@ public:
 };  // Class CameraPanController
 ```
 
-The private fields contain the current state of the camera controller. Let's review them.
+プライベート フィールドには、カメラ コントローラーの現在の状態が含まれています。 ここでその内容を確認してみましょう。
 
--   **m\_position** is the position of the camera in the scene space. In this example, the z-coordinate value is fixed at 0. We could use a DirectX::XMFLOAT2 to represent this value, but for the purposes of this sample and future extensibility, we use a DirectX::XMFLOAT3. We pass this value through the **get\_Position** property to the app itself so it can update the viewport accordingly.
--   **m\_panInUse** is a Boolean value that indicates whether a pan operation is active; or, more specifically, whether the player is touching the screen and moving the camera.
--   **m\_panPointerID** is a unique ID for the pointer. We won't use this in the sample, but it's a good practice to associate your controller state class with a specific pointer.
--   **m\_panFirstDown** is the point on the screen where the player first touched the screen or clicked the mouse during the camera pan action. We use this value later to set a dead zone to prevent jitter when the screen is touched, or if the mouse shakes a little.
--   **m\_panPointerPosition** is the point on the screen where the player has currently moved the pointer. We use it to determine what direction the player wanted to move by examining it relative to **m\_panFirstDown**.
--   **m\_panCommand** is the final computed command for the camera controller: up, down, left, or right. Because we are working with a camera fixed to the x-y plane, this could be a DirectX::XMFLOAT2 value instead.
+-   **m\_position** は、シーン空間内のカメラの位置です。 この例では、z 座標値は 0 に固定されています。 DirectX::XMFLOAT2 を使ってこの値を表すこともできますが、このサンプルの目的と今後の拡張性を考慮して、ここでは DirectX::XMFLOAT3 を使います。 この値は、**get\_Position** プロパティを通じてアプリ自体に渡し、それに従ってアプリがビューポートを更新できるようにします。
+-   **m\_panInUse** は、パン操作がアクティブかどうかを示すブール値です。より具体的には、プレイヤーが画面をタッチしてカメラを動かしているかどうかを示します。
+-   **m\_panPointerID** は、ポインターの一意の ID です。 これはこのサンプルでは使いませんが、コントローラーの状態クラスと特定のポインターを関連付けることをお勧めします。
+-   **m\_panFirstDown** は、カメラのパン操作中にプレイヤーが最初に画面をタッチまたはマウスをクリックした画面上の点です。 この値は、画面がタッチされているときや、マウスが少し揺れている場合に、ビューが不安定にならないようデッド ゾーンを設定するために後で使います。
+-   **m\_panPointerPosition** は、プレイヤーがポインターを現在動かしたばかりの画面上の点です。 これは、**m\_panFirstDown** と比較して確認することで、プレイヤーが移動したい方向を判断するために使います。
+-   **m\_panCommand** は、カメラ コントローラーに対して計算された最終的なコマンドであり、up、down、left、または right です。 x-y 平面に固定されたカメラを操作しているため、これは、DirectX::XMFLOAT2 にすることも可能です。
 
-We use these 3 event handlers to update the camera controller state info.
+次の 3 つのイベント ハンドラーを使って、カメラ コントローラーの状態情報を更新します。
 
--   **OnPointerPressed** is an event handler that our app calls when the players presses a finger onto the touch surface and the pointer is moved to the coordinates of the press.
--   **OnPointerMoved** is an event handler that our app calls when the player swipes a finger across the touch surface. It updates with the new coordinates of the drag path.
--   **OnPointerReleased** is an event handler that our app calls when the player removes the pressing finger from the touch surface.
+-   **OnPointerPressed** は、プレイヤーが指でタッチ画面を押し、その押された座標にポインターが動いたときに、アプリが呼び出すイベント ハンドラーです。
+-   **OnPointerMoved** は、プレイヤーが指でタッチ画面をスワイプしたときに、アプリが呼び出すイベント ハンドラーです。 これは、ドラッグ パスの新しい座標で更新されます。
+-   **OnPointerReleased** は、プレイヤーが指をタッチ画面から離したときに、アプリが呼び出すイベント ハンドラーです。
 
-Finally, we use these methods and properties to initialize, access, and update the camera controller state information.
+最後に、次のメソッドとプロパティを使って、カメラ コントローラーの状態情報の初期化、アクセス、更新を行います。
 
--   **Initialize** is an event handler that our app calls to initialize the controls and attach them to the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) object that describes your display window.
--   **SetPosition** is a method that our app calls to set the (x, y, and z) coordinates of your controls in the scene space. Note that our z-coordinate is 0 throughout this tutorial.
--   **get\_Position** is a property that our app accesses to get the current position of the camera in the scene space. You use this property as the way of communicating the current camera position to the app.
--   **get\_FixedLookPoint** is a property that our app accesses to get the current point toward which the controller camera is facing. In this example, it is locked normal to the x-y plane.
--   **Update** is a method that reads the controller state and updates the camera position. You continually call this &lt;something&gt; from the app's main loop to refresh the camera controller data and the camera position in the scene space.
+-   **Initialize**は、アプリがコントロールを初期化して、表示ウィンドウを定義する [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) オブジェクトにそれらのコントロールを適用するときに呼び出すイベント ハンドラーです。
+-   **SetPosition** は、アプリがシーン空間内のコントロールの (x、y、z) 座標を設定するときに呼び出すメソッドです。 z 座標はこのチュートリアル全体で 0 であることに注意してください。
+-   **get\_Position** は、アプリがシーン空間内のカメラの現在の位置を取得するときにアクセスするプロパティです。 このプロパティは、カメラの現在の位置をアプリに伝える手段として使います。
+-   **get\_FixedLookPoint** は、アプリが現在コントローラーのカメラが向いている点を取得するときにアクセスするプロパティです。 この例では、x-y 平面に垂直にロックされています。
+-   **Update** は、コントローラーの状態を読み取り、カメラの位置を更新するメソッドです。 この &lt;something&gt; をアプリのメイン ループから継続的に呼び出して、カメラ コントローラーのデータとシーン空間内のカメラの位置を更新します。
 
-Now, you have here all the components you need to implement touch controls. You can detect when and where the touch or mouse pointer events have occurred, and what the action is. You can set the position and orientation of the camera relative to the scene space, and track the changes. Finally, you can communicate the new camera position to the calling app.
+これで、タッチ コントロールの実装に必要なコンポーネントがすべて揃いました。 タッチ ポインターまたはマウス ポインターのイベントがいつどこで発生し、その操作が何かを検出できます。 また、カメラの位置と向きをシーン空間と相対的に設定し、変化を追跡できます。 さらに、カメラの新しい位置を呼び出し元アプリに伝えることができます。
 
-Now, let's connect these pieces together.
+次は、これらのコンポーネントどうしを接続してみましょう。
 
-## Create the basic touch events
+## 基本的なタッチ イベントの作成
 
 
-The Windows Runtime event dispatcher provides 3 events we want our app to handle:
+Windows ランタイムのイベント ディスパッチャーは、アプリで処理するイベントを 3 つ提供します。
 
 -   [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278)
 -   [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276)
 -   [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279)
 
-These events are implemented on the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) type. We assume that you have a **CoreWindow** object to work with. For more info, see [How to set up your UWP C++ app to display a DirectX view](https://msdn.microsoft.com/library/windows/apps/hh465077).
+これらのイベントは、[**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 型に実装されています。 ここでは、操作する **CoreWindow** オブジェクトが既にあると想定しています。 詳しくは、「[UWP C++ アプリで DirectX ビューを表示するための設定方法](https://msdn.microsoft.com/library/windows/apps/hh465077)」をご覧ください。
 
-As these events fire while our app is running, the handlers update the camera controller state info defined in our private fields.
+これらのイベントは Windows ストア アプリの実行中に起動するため、ハンドラーはプライベート フィールドに定義されているカメラ コントローラーの状態情報を更新します。
 
-First, let's populate the touch pointer event handlers. In the first event handler, **OnPointerPressed**, we get the x-y coordinates of the pointer from the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) that manages our display when the user touches the screen or clicks the mouse.
+まず、タッチ ポインターのイベント ハンドラーを設定します。 最初のイベント ハンドラーである **OnPointerPressed** では、ユーザーが画面をタッチまたはマウスをクリックしたときに表示を管理する [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) からポインターの x-y 座標を取得します。
 
 **OnPointerPressed**
 
@@ -162,11 +162,11 @@ void CameraPanController::OnPointerPressed(
 }
 ```
 
-We use this handler to let the current **CameraPanController** instance know that camera controller should be treated as active by setting **m\_panInUse** to TRUE. That way, when the app calls **Update** , it will use the current position data to update the viewport.
+このハンドラーを使って、現在の **CameraPanController** インスタンスに、**m\_panInUse** を TRUE に設定してカメラ コントローラーをアクティブとして扱う必要があることを伝えます。 この方法により、アプリは **Update** を呼び出すときに、現在の位置データを使ってビューポートを更新します。
 
-Now that we've established the base values for the camera movement when the user touches the screen or click-presses in the display window, we must determine what to do when the user either drags the screen press or moves the mouse with button pressed.
+以上で、ユーザーが画面をタッチまたは表示ウィンドウをクリックしたときのカメラの動きを示す基本の値が設定されたので、次は、ユーザーが画面を押してドラッグまたはボタンを押してマウスを動かしたときに何をするかを決める必要があります。
 
-The **OnPointerMoved** event handler fires whenever the pointer moves, at every tick that the player drags it on the screen. We need to keep the app aware of the current location of the pointer, and this is how we do it.
+**OnPointerMoved** イベント ハンドラーは、ポインターが動くたびに、プレイヤーがポインターを画面上でドラッグするティックごとに起動します。 アプリにポインターの現在の位置を知らせ続ける必要があるため、次のように指定します。
 
 **OnPointerMoved**
 
@@ -182,7 +182,7 @@ void CameraPanController::OnPointerMoved(
 }
 ```
 
-Finally, we need to deactivate the camera pan behavior when the player stops touching the screen. We use **OnPointerReleased**, which is called when [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) is fired, to set **m\_panInUse** to FALSE and turn off the camera pan movement, and set the pointer ID to 0.
+最後に、プレイヤーが画面から手を離したときに、カメラのパン動作を非アクティブにする必要があります。 **m\_panInUse** を FALSE に設定してカメラのパン移動をオフにし、ポインター ID を 0 に設定するには、[**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) の起動時に呼び出される **OnPointerReleased** を使います。
 
 **OnPointerReleased**
 
@@ -199,10 +199,10 @@ void CameraPanController::OnPointerReleased(
 }
 ```
 
-## Initialize the touch controls and the controller state
+## タッチ コントロールとコントローラーの状態の初期化
 
 
-Let's hook the events and initialize all the basic state fields of the camera controller.
+次は、イベントをフックして、カメラ コントローラーの状態の基本的なフィールドをすべて初期化しましょう。
 
 **Initialize**
 
@@ -231,12 +231,12 @@ void CameraPanController::Initialize( _In_ CoreWindow^ window )
 }
 ```
 
-**Initialize** takes a reference to the app's [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) instance as a parameter and registers the event handlers we developed to the appropriate events on that **CoreWindow**.
+**Initialize** は、アプリの [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) インスタンスへの参照をパラメーターとして使い、先ほど作成したイベント ハンドラーをその **CoreWindow** の適切なイベントに登録します。
 
-## Getting and setting the position of the camera controller
+## カメラ コントローラーの位置の取得と設定
 
 
-Let's define some methods to get and set the position of the camera controller in the scene space.
+シーン空間内のカメラ コントローラーの位置の取得と設定を行うメソッドをいくつか定義してみましょう。
 
 ```cpp
 void CameraPanController::SetPosition( _In_ DirectX::XMFLOAT3 pos )
@@ -261,16 +261,16 @@ DirectX::XMFLOAT3 CameraPanController::get_FixedLookPoint()
 }
 ```
 
-**SetPosition** is a public method that we can call from our app if we need to set the camera controller position to a specific point.
+**SetPosition** は、カメラ コントローラーの位置を特定の点に設定する必要がある場合に、アプリから呼び出すことができるパブリック メソッドです。
 
-**get\_Position** is our most important public property: it's the way our app gets the current position of the camera controller in the scene space so it can update the viewport accordingly.
+**get\_Position** は、最も重要なパブリック プロパティです。アプリはこのプロパティを使って、シーン空間内のカメラ コントローラーの現在の位置を取得し、その位置に応じてビューポートを更新できます。
 
-**get\_FixedLookPoint** is a public property that, in this example, obtains a look point that is normal to the x-y plane. You can change this method to use the trigonometric functions, sin and cos, when calculating the x, y, and z coordinate values if you want to create more oblique angles for the fixed camera.
+**get\_FixedLookPoint** は、この例では、x-y 平面に垂直な視点を取得するパブリック プロパティです。 固定カメラに対して斜めの角度を作る場合は、このメソッドを変更して、x、y、z 座標値の計算時に三角関数 sin と cos を使うことができます。
 
-## Updating the camera controller state information
+## カメラ コントローラーの状態情報の更新
 
 
-Now, we perform our calculations that convert the pointer coordinate info tracked in **m\_panPointerPosition** into new coordinate info respective of our 3D scene space. Our app calls this method every time we refresh the main app loop. In it we compute the new position information we want to pass to the app which is used to update the view matrix before projection into the viewport.
+次は、**m\_panPointerPosition** で追跡したポインターの座標情報を、3D シーン空間における新しい座標情報に変換する計算を実行します。 Windows ストア アプリは、アプリのメイン ループが更新されるたびに、このメソッドを呼び出します。 ここで、ビューポートへのプロジェクションの前にビュー マトリックスを更新するためにアプリに渡す新しい位置情報を計算します。
 
 ```cpp
 
@@ -313,12 +313,12 @@ void CameraPanController::Update( CoreWindow ^window )
 }
 ```
 
-Because we don't want touch or mouse jitter to make our camera panning jerky, we set a dead zone around the pointer with a diameter of 32 pixels. We also have a velocity value, which in this case is 1:1 with the pixel traversal of the pointer past the dead zone. You can adjust this behavior to slow down or speed up the rate of movement.
+タッチまたはマウスの揺れでカメラのパンが不適切に動かないように、ポインターの周りに直径 32 ピクセルのデッド ゾーンを設定します。 また、速度値もあります。この例では、デッド ゾーンを超えるポインターのピクセル トラバーサルに対して 1:1 です。 この動作を調整し、移動速度を低下または上昇させることができます。
 
-## Updating the view matrix with the new camera position
+## カメラの新しい位置によるビュー マトリックスの更新
 
 
-We can now obtain a scene space coordinate that our camera is focused on, and which is updated whenever you tell your app to do so (every 60 seconds in the main app loop, for example). This pseudocode suggests the calling behavior you can implement:
+これで、カメラのフォーカスが合っているシーン空間の座標の取得ができます。この座標は、アプリに指定した時間ごとに更新されます (たとえばアプリのメイン ループでは 60 秒ごと)。 次の疑似コードは、実装できる呼び出し動作を示しています。
 
 ```cpp
  myCameraPanController->Update( m_window ); 
@@ -331,10 +331,10 @@ We can now obtain a scene space coordinate that our camera is focused on, and wh
         );  
 ```
 
-Congratulations! You've implemented a simple set of camera panning touch controls in your game.
+これで、 一連の簡単なカメラ パンのタッチ コントロールがゲームに実装されました。
 
-> **Note**  
-This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **注:**  
+この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
  
 

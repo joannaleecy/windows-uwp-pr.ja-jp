@@ -1,51 +1,51 @@
 ---
-title: Compare OpenGL ES 2.0 buffers, uniforms, and vertex attributes to Direct3D
-description: During the process of porting to Direct3D 11 from OpenGL ES 2.0, you must change the syntax and API behavior for passing data between the app and the shader programs.
+title: OpenGL ES 2.0 のバッファー、uniform、頂点 attribute と Direct3D の比較
+description: OpenGL ES 2.0 から Direct3D 11 に移植するプロセスでは、アプリとシェーダー プログラムの間でデータを受け渡すための構文と API の動作を変更する必要があります。
 ms.assetid: 9b215874-6549-80c5-cc70-c97b571c74fe
 ---
 
-# Compare OpenGL ES 2.0 buffers, uniforms, and vertex attributes to Direct3D
+# OpenGL ES 2.0 のバッファー、uniform、頂点 attribute と Direct3D の比較
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-**Important APIs**
+**重要な API**
 
 -   [**ID3D11Device1::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/hh404575)
 -   [**ID3D11Device1::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512)
 -   [**ID3D11DeviceContext1::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454)
 
-During the process of porting to Direct3D 11 from OpenGL ES 2.0, you must change the syntax and API behavior for passing data between the app and the shader programs.
+OpenGL ES 2.0 から Direct3D 11 に移植するプロセスでは、アプリとシェーダー プログラムの間でデータを受け渡すための構文と API の動作を変更する必要があります。
 
-In OpenGL ES 2.0, data is passed to and from shader programs in four ways: as uniforms for constant data, as attributes for vertex data, as buffer objects for other resource data (such as textures). In Direct3D 11, these roughly map to constant buffers, vertex buffers, and subresources. Despite the superficial commonality, they are handled quite different in usage.
+OpenGL ES 2.0 では、4 つの方法で (定数データは uniform として、頂点データは attribute として、テクスチャなどのその他のリソース データはバッファー オブジェクトとして) シェーダー プログラムとの間でデータを受け渡します。 Direct3D 11 では、これらはだいたい定数バッファー、頂点バッファー、サブリソースにマップされます。 表面上は似ていますが、使う際の処理はまったく異なります。
 
-Here's the basic mapping.
+基本的なマッピングを次に示します。
 
 | OpenGL ES 2.0             | Direct3D 11                                                                                                                                                                         |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| uniform                   | constant buffer (**cbuffer**) field.                                                                                                                                                |
-| attribute                 | vertex buffer element field, designated by an input layout and marked with a specific HLSL semantic.                                                                                |
-| buffer object             | buffer; See [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) and [**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) and for a general-use buffer definitions. |
-| frame buffer object (FBO) | render target(s); See [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) with [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635).                                       |
-| back buffer               | swap chain with "back buffer" surface; See [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631) with attached [**IDXGISurface1**](https://msdn.microsoft.com/library/windows/desktop/ff471343).                       |
+| uniform                   | 定数バッファー (**cbuffer**) フィールド。                                                                                                                                                |
+| attribute                 | 入力レイアウトで指定し、特定の HLSL セマンティクスでマークされた頂点バッファー要素フィールド。                                                                                |
+| バッファー オブジェクト             | バッファー (「[**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220)」、「[**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092)」、汎用バッファーの定義に関するページをご覧ください)。 |
+| フレーム バッファー オブジェクト (FBO) | レンダー ターゲット (「[**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635)」と「[**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582)」をご覧ください)。                                       |
+| バック バッファー               | スワップ チェーンと "バック バッファー" サーフェス (「[**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631)」と「[**IDXGISurface1**](https://msdn.microsoft.com/library/windows/desktop/ff471343)」をご覧ください)。                       |
 
  
 
-## Port buffers
+## バッファーの移植
 
 
-In OpenGL ES 2.0, the process for creating and binding any kind of buffer generally follows this pattern
+OpenGL ES 2.0 では、どの種類のバッファーでも、作成してバインドするプロセスは、通常、次のパターンに従います。
 
--   Call glGenBuffers to generate one or more buffers and return the handles to them.
--   Call glBindBuffer to define the layout of a buffer, such as GL\_ELEMENT\_ARRAY\_BUFFER.
--   Call glBufferData to populate the buffer with specific data (such as vertex structures, index data, or color data) in a specific layout.
+-   glGenBuffers を呼び出して、1 つ以上のバッファーを生成し、それらへのハンドルを返す。
+-   glBindBuffer を呼び出して、GL\_ELEMENT\_ARRAY\_BUFFER などのバッファーのレイアウトを定義する。
+-   glBufferData を呼び出して、特定のレイアウトの特定のデータ (頂点の構造体、インデックス データ、色データなど) をバッファーに設定する。
 
-The most common kind of buffer is the vertex buffer, which minimally contains the positions of the vertices in some coordinate system. In typical use, a vertex is represented by a structure that contains the position coordinates, a normal vector to the vertex position, a tangent vector to the vertex position, and texture lookup (uv) coordinates. The buffer contains a contiguous list of these vertices, in some order (like a triangle list, or strip, or fan), and which collectively represent the visible polygons in your scene. (In Direct3D 11 as well as OpenGL ES 2.0 it is inefficient to have multiple vertex buffers per draw call.)
+最も一般的なバッファーは頂点バッファーで、少なくとも何らかの座標系内の頂点の位置を含みます。 一般的な用途では、頂点は、位置座標、頂点の位置に向かう法線ベクトル、頂点の位置に向かう接線ベクトル、テクスチャ検索 (uv) 座標を含む構造体によって表されます。 バッファーには何らかの順序 (三角形リスト、三角形ストリップ、三角形ファンなど) でのそうした頂点の連続する一覧が含まれ、それらがまとまってシーンに表示されるポリゴンを表します (Direct3D 11 でも、OpenGL ES 2.0 でも、描画呼び出しごとに複数の頂点バッファーを作成するのは効率的ではありません)。
 
-Here's an example a vertex buffer and an index buffer created with OpenGL ES 2.0:
+OpenGL ES 2.0 で作成した頂点バッファーとインデックス バッファーの例を次に示します。
 
-OpenGL ES 2.0: Creating and populating a vertex buffer and an index buffer.
+OpenGL ES 2.0: 頂点バッファーとインデックス バッファーの作成と設定
 
 ``` syntax
 glGenBuffers(1, &renderer->vertexBuffer);
@@ -57,19 +57,19 @@ glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, renderer->indexBuffer);
 glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(int) * CUBE_INDICES, renderer->vertexIndices, GL_STATIC_DRAW);
 ```
 
-Other buffers include pixel buffers and maps, like textures. The shader pipeline can render into texture buffers (pixmaps) or render buffer objects and use those buffers in future shader passes. In the simplest case, the call flow is:
+他のバッファーには、ピクセル バッファーとマップ (テクスチャなど) があります。 シェーダー パイプラインでは、テクスチャ バッファー (pixmap) にレンダリングすることや、バッファー オブジェクトをレンダリングすることができます。また、後のシェーダー パスでこれらのバッファーを使うこともできます。 最も単純なケースでは、呼び出しフローは次のようになります。
 
--   Call glGenFramebuffers to generate a frame buffer object.
--   Call glBindFramebuffer to bind the frame buffer object for writing.
--   Call glFramebufferTexture2D to draw into a specified texture map.
+-   glGenFramebuffers を呼び出して、フレーム バッファー オブジェクトを生成する。
+-   glBindFramebuffer を呼び出して、書き込み用にフレーム バッファー オブジェクトをバインドする。
+-   glFramebufferTexture2D を呼び出して、指定されたテクスチャ マップに描画する。
 
-In Direct3D 11, buffer data elements are considered "subresources," and can range from individual vertex data elements to MIP-map textures.
+Direct3D 11 では、バッファー データ要素は "サブリソース" と見なされます。そうした要素には、個々の頂点データ要素や MIP マップ テクスチャなどがあります。
 
--   Populate a [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) structure with the configuration for a buffer data element.
--   Populate a [**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) structure with the size of the individual elements in the buffer as well as the buffer type.
--   Call [**ID3D11Device1::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/hh404575) with these two structures.
+-   バッファー データ要素の構成を [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) 構造体に設定する。
+-   バッファーの個々の要素のサイズとバッファーの種類を [**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) 構造体に設定する。
+-   これら 2 つの構造体を指定して [**ID3D11Device1::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/hh404575) を呼び出す。
 
-Direct3D 11: Creating and populating a vertex buffer and an index buffer.
+Direct3D 11: 頂点バッファーとインデックス バッファーの作成と設定
 
 ``` syntax
 D3D11_SUBRESOURCE_DATA vertexBufferData = {0};
@@ -98,9 +98,9 @@ m_d3dDevice->CreateBuffer(
     
 ```
 
-Writable pixel buffers or maps, such as a frame buffer, can be created as [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635) objects. These can be bound as resources to an [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) or [**ID3D11ShaderResourceView**](https://msdn.microsoft.com/library/windows/desktop/ff476628), which, once drawn into, can be displayed with the associated swap chain or passed to a shader, respectively.
+フレーム バッファーなど、書き込み可能なピクセル バッファーやマップは、[**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635) オブジェクトとして作成できます。 これらはリソースとして [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) または [**ID3D11ShaderResourceView**](https://msdn.microsoft.com/library/windows/desktop/ff476628) にバインドできます。また、一度描画すると、ID3D11RenderTargetView は関連付けられているスワップ チェーンを使って表示でき、ID3D11ShaderResourceView はシェーダーに渡すことができます。
 
-Direct3D 11: Creating a frame buffer object.
+Direct3D 11: フレーム バッファー オブジェクトの作成
 
 ``` syntax
 ComPtr<ID3D11RenderTargetView> m_d3dRenderTargetViewWin;
@@ -114,14 +114,14 @@ m_d3dDevice->CreateRenderTargetView(
   &m_d3dRenderTargetViewWin);
 ```
 
-## Change uniforms and uniform buffer objects to Direct3D constant buffers
+## Direct3D の定数バッファーへの uniform と uniform バッファー オブジェクトの変更
 
 
-In Open GL ES 2.0, uniforms are the mechanism to supply constant data to individual shader programs. This data cannot be altered by the shaders.
+OpenGL ES 2.0 では、uniform は個々のシェーダー プログラムに定数データを渡すためのメカニズムです。 このデータをシェーダーが変更することはできません。
 
-Setting a uniform typically involves providing one of the glUniform\* methods with the upload location in the GPU along with a pointer to the data in app memory. After ithe glUniform\* method executes, the uniform data is in the GPU memory and accessible by the shaders that have declared that uniform. You are expected to ensure that the data is packed in such a way that the shader can interpret it based on the uniform declaration in the shader (by using compatible types).
+uniform を設定する際は、通常、GPU 内のアップロード場所とアプリ メモリ内のデータへのポインターを指定した glUniform\* メソッドの 1 つを渡します。 glUniform\* メソッドを実行すると、uniform データは GPU メモリに配置され、その uniform を宣言したシェーダーからアクセスできるようになります。 シェーダーがシェーダー内の uniform の宣言に基づいて (互換性のある型を使って) 解釈できる方法でデータをパックする必要があります。
 
-OpenGL ES 2.0 Creating a uniform and uploading data to it
+OpenGL ES 2.0: uniform の作成と uniform へのデータのアップロード
 
 ``` syntax
 renderer->mvpLoc = glGetUniformLocation(renderer->programObject, "u_mvpMatrix");
@@ -131,19 +131,19 @@ renderer->mvpLoc = glGetUniformLocation(renderer->programObject, "u_mvpMatrix");
 glUniformMatrix4fv(renderer->mvpLoc, 1, GL_FALSE, (GLfloat*) &renderer->mvpMatrix.m[0][0]);
 ```
 
-In a shader's GLSL, the corresponding uniform declaration looks like this:
+シェーダーの GLSL では、対応する uniform の宣言は次のようになります。
 
-Open GL ES 2.0: GLSL uniform declaration
+Open GL ES 2.0: GLSL での uniform の宣言
 
 ``` syntax
 uniform mat4 u_mvpMatrix;
 ```
 
-Direct3D designates uniform data as "constant buffers," which, like uniforms, contain constant data provided to individual shaders. As with uniform buffers, it is important to pack the constant buffer data in memory identically to the way the shader expects to interpret it. Using DirectXMath types (such as [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608)) instead of platform types (such as **float\*** or **float\[4\]**) guarantees proper data element alignment.
+Direct3D では、uniform データを "定数バッファー" として指定します。定数バッファーには、uniform と同じように、個々のシェーダーに渡す定数データを含めます。 uniform バッファーと同じように、シェーダーが解釈できる方法でメモリ内の定数バッファー データをパックすることが重要です。 プラットフォームの型 (**float\*** や **float\[4\]** など) ではなく、DirectXMath 型 ([**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608) など) を使って、データ要素のアラインメントが適切に行われるようにします。
 
-Constant buffers must have an associated GPU register used to reference that data on the GPU. The data is packed into the register location as indicated by the layout of the buffer.
+定数バッファーには、GPU でそのデータを参照するために使う GPU レジスタを関連付ける必要があります。 データは、バッファーのレイアウトで指定されているレジスタの場所にパックされます。
 
-Direct3D 11: Creating a constant buffer and uploading data to it
+Direct3D 11: 定数バッファーの作成と定数バッファーへのデータのアップロード
 
 ``` syntax
 struct ModelViewProjectionConstantBuffer
@@ -166,9 +166,9 @@ m_d3dDevice->CreateBuffer(
   &m_constantBuffer);
 ```
 
-In a shader's HLSL, the corresponding constant buffer declaration looks like this:
+シェーダーの HLSL では、対応する定数バッファーの宣言は次のようになります。
 
-Direct3D 11: Constant buffer HLSL declaration
+Direct3D 11: HLSL での定数バッファーの宣言
 
 ``` syntax
 cbuffer ModelViewProjectionConstantBuffer : register(b0)
@@ -177,21 +177,21 @@ cbuffer ModelViewProjectionConstantBuffer : register(b0)
 };
 ```
 
-Note that a register must be declared for each constant buffer. Different Direct3D feature levels have different maximum available registers, so do not exceed the maximum number for the lowest feature level you are targeting.
+定数バッファーごとにレジスタを宣言する必要があります。 Direct3D 機能レベルによって、利用できるレジスタの最大数が異なります。そのため、ターゲットとする最も低い機能レベルの最大数を超えないようにしてください。
 
-## Port vertex attributes to a Direct3D input layouts and HLSL semantics
+## Direct3D の入力レイアウトと HLSL セマンティクスへの頂点 attribute の移植
 
 
-Since vertex data can be modified by the shader pipeline, OpenGL ES 2.0 requires that you specify them as "attributes" instead of "uniforms". (This has changed in later versions of OpenGL and GLSL.) Vertex-specific data such the vertex position, normals, tangents, and color values are supplied to the shaders as attribute values. These attribute values correspond to specific offsets for each element in the vertex data; for example, the first attribute could point to the position component of an individual vertex, and the second to the normal, and so on.
+頂点データはシェーダー パイプラインで変更できるため、OpenGL ES 2.0 では、頂点データを "uniform" ではなく "attribute" として指定する必要があります (これは最近のバージョンの OpenGL と GLSL で変更されました)。頂点の位置、法線、接線、色値などの頂点固有のデータは、attribute 値としてシェーダーに渡します。 これらの attribute 値は、頂点データの各要素の特定のオフセットに対応しています。たとえば、1 つ目の attribute は個々の頂点の位置コンポーネントを指し、2 つ目は法線を指します。
 
-The basic process for moving the vertex buffer data from main memory to the GPU looks like this:
+メイン メモリから GPU に頂点バッファー データを移動する基本的なプロセスを次のようになります。
 
--   Upload the vertex data with glBindBuffer.
--   Get the location of the attributes on the GPU with glGetAttribLocation. Call it for each attribute in the vertex data element.
--   Call glVertexAttribPointer to provide set the correct attribute size and offset inside an individual vertex data element. Do this for each attribute.
--   Enable the vertex data layout information with glEnableVertexAttribArray.
+-   glBindBuffer を使って、頂点データをアップロードする。
+-   glGetAttribLocation を使って、GPU 上の attribute の場所を取得する。 頂点データ要素の attribute ごとに glGetAttribLocation を呼び出します。
+-   glVertexAttribPointer を呼び出して、個々の頂点データ要素内の正しい attribute のサイズとオフセットを設定する。 attribute ごとにこれを実行します。
+-   glEnableVertexAttribArray を使って、頂点データのレイアウト情報を有効にする。
 
-OpenGL ES 2.0: Uploading vertex buffer data to the shader attribute
+OpenGL ES 2.0: シェーダーの attribute への頂点バッファー データのアップロード
 
 ``` syntax
 glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, renderer->vertexBuffer);
@@ -207,20 +207,20 @@ glVertexAttribPointer(loc, 4, GL_FLOAT, GL_FALSE,
 glEnableVertexAttribArray(loc);
 ```
 
-Now, in your vertex shader, you declare attributes with the same names you defined in your call to glGetAttribLocation.
+次に、頂点シェーダーで、glGetAttribLocation の呼び出しで定義したのと同じ名前の attribute を宣言します。
 
-OpenGL ES 2.0: Declaring an attribute in GLSL
+OpenGL ES 2.0: GLSL での attribute の宣言
 
 ``` syntax
 attribute vec4 a_position;
 attribute vec4 a_color;                     
 ```
 
-In some ways, the same process holds for Direct3D. Instead of a attributes, vertex data is provided in input buffers, which include vertex buffers and the corresponding index buffers. However, since Direct3D does not have the "attribute" declaration, you must specify an input layout which declares the individual component of the data elements in the vertex buffer and the HLSL semantics that indicate where and how those components are to be interpreted by the vertex shader. HLSL semantics require that you define the usage of each component with a specific string that informs the shader engine as to its purpose. For example, vertex position data is marked as POSITION, normal data is marked as NORMAL, and vertex color data is marked as COLOR. (Other shader stages also require specific semantics, and those semantics have different interpretations based on the shader stage.) For more info on HLSL semantics, read [Port your shader pipeline](change-your-shader-loading-code.md) and [HLSL Semantics](https://msdn.microsoft.com/library/windows/desktop/bb205574).
+ある意味では、同じプロセスが Direct3D にも当てはまります。 attribute ではなく、頂点データを入力バッファーに配置します。入力バッファーには、頂点バッファーと、対応するインデックス バッファーが含まれます。 ただし、Direct3D には "attribute" の宣言がないため、頂点バッファー内のデータ要素の個々のコンポーネントと、それらのコンポーネントを頂点シェーダーが解釈する場所と方法を示す HLSL セマンティクスを宣言する入力レイアウトを指定する必要があります。 HLSL セマンティクスでは、シェーダー エンジンに目的を通知する特定の文字列を使って、各コンポーネントの用途を定義する必要があります。 たとえば、頂点の位置データは POSITION とマークし、法線データは NORMAL とマークし、頂点の色データは COLOR とマークします (また、他のシェーダー ステージでも特定のセマンティクスが必要です。それらのセマンティクスは、シェーダー ステージに応じて解釈が異なります)。HLSL セマンティクスについて詳しくは、「[OpenGL ES 2.0 と Direct3D のシェーダー パイプラインの比較](change-your-shader-loading-code.md)」と「[HLSL セマンティクス](https://msdn.microsoft.com/library/windows/desktop/bb205574)」をご覧ください。
 
-Collectively, the process of setting the vertex and index buffers, and setting the input layout is called the "Input Assembly" (IA) stage of the Direct3D graphics pipeline.
+頂点バッファーとインデックス バッファーを設定し、入力レイアウトを設定するプロセスはまとめて Direct3D グラフィックス パイプラインの "入力アセンブリ" (IA) ステージと呼ばれます。
 
-Direct3D 11: Configuring the input assembly stage
+Direct3D 11: 入力アセンブリ ステージの構成
 
 ``` syntax
 // Set up the IA stage corresponding to the current draw operation.
@@ -242,14 +242,14 @@ m_d3dContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 m_d3dContext->IASetInputLayout(m_inputLayout.Get());
 ```
 
-An input layout is declared and associated with a vertex shader by declaring the format of the vertex data element and the semantic used for each component. The vertex element data layout described in the D3D11\_INPUT\_ELEMENT\_DESC you create must correspond to the layout of the corresponding structure. Here, you create a layout for vertex data that has two components:
+入力レイアウトを宣言し、頂点シェーダーに関連付けるには、頂点データ要素の形式と、各コンポーネントに使うセマンティクスを宣言します。 作成した D3D11\_INPUT\_ELEMENT\_DESC に記述されている頂点要素データのレイアウトは、対応する構造体のレイアウトと対応している必要があります。 ここでは、次の 2 つのコンポーネントを含む頂点データのレイアウトを作成します。
 
--   A vertex position coordinate, represented in main memory as an XMFLOAT3, which is an aligned array of 3 32-bit floating point values for the (x, y, z) coordinates.
--   A vertex color value, represented as an XMFLOAT4, which is an aligned array of 4 32-bit floating point values for the color (RGBA).
+-   メイン メモリ内で XMFLOAT3 として表される頂点の位置座標。これは、(x, y, z) 座標の 3 つの 32 ビット浮動小数点値のアラインメントされた配列です。
+-   XMFLOAT4 として表される頂点の色値。これは、色 (RGBA) の 4 つの 32 ビット浮動小数点値のアラインメントされた配列です。
 
-You assign a semantic for each one, as well as a format type. You then pass the description to [**ID3D11Device1::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512). The input layout is used when we call [**ID3D11DeviceContext1::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) when you set up the input assembly during our render method.
+それぞれのセマンティクスと形式の種類を割り当てます。 次に、記述を [**ID3D11Device1::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512) に渡します。 入力レイアウトは、レンダリング メソッドの実行時に入力アセンブリを設定するために、[**ID3D11DeviceContext1::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) を呼び出すときに使います。
 
-Direct3D 11: Describing an input layout with specific semantics
+Direct3D 11: 特定のセマンティクスを使った入力レイアウトの記述
 
 ``` syntax
 ComPtr<ID3D11InputLayout> m_inputLayout;
@@ -275,9 +275,9 @@ m_d3dDevice->CreateInputLayout(
 m_d3dContext->IASetInputLayout(m_inputLayout.Get());
 ```
 
-Finally, you make sure that the shader can understand the input data by declaring the input. The semantics you assigned in the layout are used to select the correct locations in GPU memory.
+最後に、入力を宣言して、シェーダーが入力データを理解できるようにします。 レイアウト内で割り当てたセマンティクスを使って、GPU メモリ内の正しい場所を選択します。
 
-Direct3D 11: Declaring shader input data with HLSL semantics
+Direct3D 11: HLSL セマンティクスを使ったシェーダーの入力データの宣言
 
 ``` syntax
 struct VertexShaderInput

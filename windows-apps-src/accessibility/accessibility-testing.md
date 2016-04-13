@@ -2,7 +2,7 @@
 Description: ユニバーサル Windows プラットフォーム (UWP) アプリをアクセシビリティ対応にするためのテスト手順です。
 title: アクセシビリティ テスト
 ms.assetid: 272D9C9E-B179-4F5A-8493-926D007A0225
-label: テスト
+label: Testing
 template: detail.hbs
 ---
 
@@ -130,7 +130,7 @@ Windows ソフトウェア開発キット (Windows SDK) には、[**AccScope**](
 
 テスト可能な側面の 1 つとして、表示したくない要素が UI オートメーション要素ビューに表示されるかどうかがあります。 ビューから除外したい要素、または反対に欠落する要素が見つかった場合に、アクセシビリティ ビューで XAML コントロールの表示を調整するために [**AutomationProperties.AccessibilityView XAML**](https://msdn.microsoft.com/library/windows/apps/BR209081_accessibilityview) 添付プロパティを使用できます。 基本的なアクセシビリティ ビューを確認した後、コントロール ビューに公開される対話型の各部分にユーザーがアクセスできるかどうかについて、方向キーによって使用可能なタブ シーケンスまたは空間的なナビゲーションを再確認することもお勧めします。
 
-関連トピック
+<span id="related_topics"></span>関連トピック
 -----------------------------------------------
 
 * [アクセシビリティ](accessibility.md)
@@ -145,6 +145,6 @@ Windows ソフトウェア開発キット (Windows SDK) には、[**AccScope**](
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=Mar16_HO3-->
 
 

@@ -1,21 +1,21 @@
 ---
 ms.assetid: 16AB1111-4BA8-4352-B796-E97AA9243E31
-title: Ready to sign up?
-description: Register now for a developer account so you can get your apps into the Windows Store and participate in other Microsoft programs.
+title: サインアップの準備はできましたか。
+description: 今すぐ開発者アカウントにご登録ください。Windows ストアでアプリを公開し、他の Microsoft プログラムに参加できます。
 ---
-# Ready to sign up?
+# サインアップの準備はできましたか。
 
-Register now for a developer account so you can get your apps into the Windows Store and participate in other Microsoft programs.
+今すぐ開発者アカウントにご登録ください。Windows ストアでアプリを公開し、他の Microsoft プログラムに参加できます。
 
-[Sign up now!](http://go.microsoft.com/fwlink/p/?LinkId=615100)
+[今すぐサインアップ](http://go.microsoft.com/fwlink/p/?LinkId=615100)
 
-## Opening your developer account
+## 開発者アカウントの開設
 
-We offer [individual and company accounts in locations around the world](../publish/account-types-locations-and-fees.md). Check out our [overview of the sign-up process](../publish/opening-a-developer-account.md) to see how it works.
+Microsoft では、[世界各地で個人のアカウントと会社のアカウント](../publish/account-types-locations-and-fees.md)を提供しています。 そのしくみについては、[サインアップ プロセスの概要](../publish/opening-a-developer-account.md)をご確認ください。
 
-## Have a name for your app?
+## アプリの名前は用意している場合
 
-As soon as you open your developer account, you can [create your app by reserving a name](https://msdn.microsoft.com/library/windows/apps/JJ657967).
+開発者アカウントを開設したら、[名前を予約してアプリを作る](https://msdn.microsoft.com/library/windows/apps/JJ657967)ことができます。
 
 
 

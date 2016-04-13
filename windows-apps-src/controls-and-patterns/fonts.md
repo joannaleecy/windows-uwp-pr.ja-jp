@@ -2,21 +2,19 @@
 Description: フォントを選び、フォントのサイズと色を指定するときには、次のガイドラインに従ってください。
 title: フォント
 ms.assetid: 1B8B90AD-CDC4-4997-ACDE-871C1E94A929
-label: フォント
+label: Fonts
 template: detail.hbs
 ---
 
 # フォントのガイドライン
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
 **重要な API**
 
--   [**FontFamily (XAML)**](https://msdn.microsoft.com/library/windows/apps/br209655)
--   [**font-family (HTML)**](https://msdn.microsoft.com/library/windows/apps/hh996845)
--   [**font-size (HTML)**](https://msdn.microsoft.com/library/windows/apps/hh996846)
+-   [**FontFamily プロパティ**](https://msdn.microsoft.com/library/windows/apps/br209655)
 
 フォントのサイズ、太さ、色、トラッキング、間隔を適切に設定すると、外観がきれいに整い、ユニバーサル Windows プラットフォーム (UWP) アプリが使いやすくなります。 フォントを選び、フォントのサイズと色を指定するときには、次のガイドラインに従ってください。
 
@@ -271,7 +269,7 @@ UWP アプリ用にお勧めする書体見本を次に示します。
 
  
 
-## 関連トピック
+## <span id="related_topics"></span>関連トピック
 
 
 **デザイナー向け**
@@ -296,6 +294,6 @@ UWP アプリ用にお勧めする書体見本を次に示します。
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=Mar16_HO4-->
 
 

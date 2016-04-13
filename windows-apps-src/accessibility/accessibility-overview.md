@@ -2,7 +2,7 @@
 Description: この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリのアクセシビリティ シナリオに関連する概念とテクノロジの概要を示します。
 title: アクセシビリティの概要
 ms.assetid: AA053196-F331-4CBE-B032-4E9CBEAC699C
-label: アクセシビリティ
+label: Accessibility
 template: detail.hbs
 ---
 
@@ -192,7 +192,7 @@ End Sub</code></pre></td>
 
 ([**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/Dn252834) または [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/Hh702041) を使って) XAML UI にホストされる Microsoft DirectX コンテンツには、既定ではアクセスできません。 ホストされた DirectX コンテンツの UI オートメーション ピアを作成する方法は、[XAML SwapChainPanel DirectX 相互運用性のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=309155) で確認できます。 この手法を利用すると、ホストされたコンテンツに UI オートメーションを通じてアクセスできるようになります。
 
-関連トピック
+<span id="related_topics"></span>関連トピック
 -----------------------------------------------
 
 * [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/BR209179)
@@ -206,6 +206,6 @@ End Sub</code></pre></td>
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=Mar16_HO3-->
 
 

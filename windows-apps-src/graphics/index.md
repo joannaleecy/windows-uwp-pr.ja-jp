@@ -1,11 +1,11 @@
 ---
 ms.assetid: ad7a739c-fd70-4068-9007-da28028abea3
 title: グラフィックスとアニメーション
-description: 。
+description: このセクションのトピックでは、ストア アプリでのグラフィックスとアニメーションの使用の概要について説明します。
 ---
 # グラフィックスとアニメーション
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 このセクションのトピックでは、ストア アプリでのグラフィックスとアニメーションの使用の概要について説明します。
 

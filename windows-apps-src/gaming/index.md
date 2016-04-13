@@ -1,6 +1,6 @@
 ---
 title: ゲームと DirectX
-description: 。
+description: ユニバーサル Windows プラットフォーム (UWP) は、ゲームを作り、配布し、収益を得るための新たな機会を提供します。 新しいゲームの開始または既存のゲームの移植について説明します。
 ms.assetid: 4073b835-c900-4ff2-9fc5-da52f9432a1f
 ---
 

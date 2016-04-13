@@ -1,60 +1,60 @@
 ---
-Description: Create Universal Windows Platform (UWP) apps with intuitive and distinctive user interaction experiences that are optimized for touchpad but are functionally consistent across input devices.
-title: Touchpad interactions
+Description: タッチパッド向けに最適化される一方で、さまざまな入力デバイスで一貫した機能を提供する、直観的で独特なユーザー操作エクスペリエンスを備えたユニバーサル Windows プラットフォーム (UWP) アプリを作成します。
+title: タッチパッド操作
 ms.assetid: CEDEA30A-FE94-4553-A7FB-6C1FA44F06AB
-label: Touchpad interactions
+label: タッチパッド操作
 template: detail.hbs
 ---
 
-# Touchpad design guidelines
+# タッチパッドの設計ガイドライン
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-Design your app so that users can interact with it through a touchpad. A touchpad combines both indirect multi-touch input with the precision input of a pointing device, such as a mouse. This combination makes the touchpad suited to both a touch-optimized UI and the smaller targets of productivity apps.
+ユーザーがタッチパッドで操作できるようにアプリを設計します。 タッチパッドは、間接的なマルチタッチ入力と、マウスのようなポインティング デバイスの精密入力を組み合わせたものです。 この組み合わせにより、タッチパッドはタッチに最適化された UI にも、生産性アプリのより小さいターゲットにも適しています。
 
  
 
-![touchpad](images/input-patterns/input-touchpad.jpg)
+![タッチパッド](images/input-patterns/input-touchpad.jpg)
 
 
-Touchpad interactions require three things:
+タッチパッド操作には、次の 3 つが必要です。
 
--   A standard touchpad or a Windows Precision Touchpad.
+-   標準のタッチパッド、または Windows 高精度タッチパッド。
 
-    Precision touchpads are optimized for Universal Windows Platform (UWP) devices. They enable the system to handle certain aspects of the touchpad experience natively, such as finger tracking and palm detection, for a more consistent experience across devices.
+    高精度タッチパッドは、ユニバーサル Windows プラットフォーム (UWP) デバイス向けに最適化されています。 高精度タッチパッドを使用すると、システムが指の追跡や手のひら検出などの一部のタッチパッド操作をネイティブに処理でき、さまざまなデバイス全体での一貫した操作を実現しやすくなります。
 
--   The direct contact of one or more fingers on the touchpad.
--   Movement of the touch contacts (or lack thereof, based on a time threshold).
+-   タッチパッドへの 1 本以上の指の直接的な接触。
+-   タッチ接触の動き (または、時間のしきい値に基づく動きの欠落)。
 
-The input data provided by the touchpad sensor can be:
+タッチパッド センサーから提供される入力データは、次のように使うことができます。
 
--   Interpreted as a physical gesture for direct manipulation of one or more UI elements (such as panning, rotating, resizing, or moving). In contrast, interacting with an element through its properties window or other dialog box is considered indirect manipulation.
--   Recognized as an alternative input method, such as mouse or pen.
--   Used to complement or modify aspects of other input methods, such as smudging an ink stroke drawn with a pen.
+-   1 つ以上の UI 要素に直接的な操作 (パン、回転、サイズ変更、移動など) を行う物理的なジェスチャとして解釈する。 プロパティ ウィンドウやその他のダイアログ ボックスを通じた要素との対話的操作は、間接的な操作と見なされます。
+-   マウス、ペンなどの代替の入力方式として見なす。
+-   他の入力方法の外観を補完するために使う (ペンで描画したインク ストロークをこするなど)。
 
-A touchpad combines indirect multi-touch input with the precision input of a pointing device, such as a mouse. This combination makes the touchpad suited to both touch-optimized UI and the typically smaller targets of productivity apps and the desktop environment. Optimize your Windows Store app design for touch input and get touchpad support by default.
+タッチパッドは、間接的なマルチタッチ入力と、マウスのようなポインティング デバイスの精密入力を組み合わせたものです。 この組み合わせにより、タッチパッドはタッチに最適化された UI にも、生産性アプリとデスクトップ環境で使用される一般的に小さなターゲットにも適しています。 Windows ストア アプリの設計はタッチ入力用に最適化し、既定のタッチパッドのサポートを利用します。
 
-Because of the convergence of interaction experiences supported by touchpads, we recommend using the [**PointerEntered**](https://msdn.microsoft.com/library/windows/apps/br208968) event to provide mouse-style UI commands in addition to the built-in support for touch input. For example, use previous and next buttons to let users flip through pages of content as well as pan through the content.
+タッチパッドでサポートされている操作エクスペリエンスは複合的なので、[**PointerEntered**](https://msdn.microsoft.com/library/windows/apps/br208968) イベントを使って、タッチ入力の組み込みサポートの他にマウス スタイル UI コマンドも提供することをお勧めします。 たとえば、コンテンツをパンするだけでなく、"前へ" ボタンと "次へ" ボタンを使ってコンテンツのページをフリップできるようにします。
 
-The gestures and guidelines discussed in this topic can help to ensure that your app supports touchpad input seamlessly and with minimal code.
+このトピックで説明されているジェスチャとガイドラインを利用することで、アプリはタッチパッド入力を最小限のコードでシームレスにサポートできます。
 
-## <span id="The_touchpad_language"></span><span id="the_touchpad_language"></span><span id="THE_TOUCHPAD_LANGUAGE"></span>The touchpad language
+## <span id="The_touchpad_language"></span><span id="the_touchpad_language"></span><span id="THE_TOUCHPAD_LANGUAGE"></span>タッチパッド言語
 
 
-A concise set of touchpad interactions are used consistently throughout the system. Optimize your app for touch and mouse input and this language makes your app feel instantly familiar for your users, increasing their confidence and making your app easier to learn and use.
+システム内では一貫して、タッチパッド操作の簡単なセットが使われます。 アプリをタッチとマウス入力用に最適化すると、ユーザーが慣れている操作感がこの言語によって実現されるので、信頼感が高まり、アプリの習得や使用も簡単になります。
 
-Users can set far more Precision Touchpad gestures and interaction behaviors than they can for a standard touchpad. These two images show the different touchpad settings pages from Settings &gt; Devices &gt; Mouse & touchpad for a standard touchpad and a Precision Touchpad, respectively.
+高精度タッチパッドでは、標準のタッチパッドよりはるかに多くのジェスチャや操作の動作を設定できます。 次の 2 つの画像は、それぞれ標準のタッチパッドと高精度タッチパッドのさまざまなタッチパッド設定ページ ([設定] &gt; [デバイス] &gt; [マウスとタッチパッド]) を示しています。
 
-![standard touchpad settings](images/mouse-touchpad-settings-standard.png)
+![標準のタッチパッドの設定](images/mouse-touchpad-settings-standard.png)
 
-<sup>Standard\\ touchpad\\ settings</sup>
+<sup>標準の\\タッチパッド\\の設定</sup>
 
-![windows precision touchpad settings](images/mouse-touchpad-settings-ptp.png)
+![Windows 高精度タッチパッドの設定](images/mouse-touchpad-settings-ptp.png)
 
-<sup>Windows\\ Precision\\ Touchpad\\ settings</sup>
+<sup>Windows\\ 高精度\\タッチパッド\\の設定</sup>
 
-Here are some examples of touchpad-optimized gestures for performing common tasks.
+以下に、一般的なタスクを実行するためのタッチパッドに最適化されたジェスチャの例を示します。
 
 <table>
 <colgroup>
@@ -63,100 +63,100 @@ Here are some examples of touchpad-optimized gestures for performing common task
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Term</th>
-<th align="left">Description</th>
+<th align="left">用語</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><span id="Three-finger_tap"></span><span id="three-finger_tap"></span><span id="THREE-FINGER_TAP"></span>Three-finger tap</p></td>
-<td align="left"><p>User preference to search with <strong>Cortana</strong> or show <strong>Action Center</strong>.</p></td>
+<td align="left"><p><span id="Three-finger_tap"></span><span id="three-finger_tap"></span><span id="THREE-FINGER_TAP"></span>3 本指でのタップ</p></td>
+<td align="left"><p><strong>Cortana</strong> を使って検索、または<strong>アクション センター</strong>を表示するためのユーザー設定。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Three_finger_slide"></span><span id="three_finger_slide"></span><span id="THREE_FINGER_SLIDE"></span>Three finger slide</p></td>
-<td align="left"><p>User preference to open the virtual desktop Task View, show Desktop, or switch between open apps.</p></td>
+<td align="left"><p><span id="Three_finger_slide"></span><span id="three_finger_slide"></span><span id="THREE_FINGER_SLIDE"></span>3 本指でのスライド</p></td>
+<td align="left"><p>仮想デスクトップのタスク ビュー開く、デスクトップを表示、または開いているアプリを切り替えるためのユーザー設定。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="Single_finger_tap_for_primary_action"></span><span id="single_finger_tap_for_primary_action"></span><span id="SINGLE_FINGER_TAP_FOR_PRIMARY_ACTION"></span>Single finger tap for primary action</p></td>
-<td align="left"><p>Use a single finger to tap an element and invoke its primary action (such as launching an app or executing a command).</p></td>
+<td align="left"><p><span id="Single_finger_tap_for_primary_action"></span><span id="single_finger_tap_for_primary_action"></span><span id="SINGLE_FINGER_TAP_FOR_PRIMARY_ACTION"></span>1 本指でのタップによるプライマリ操作</p></td>
+<td align="left"><p>1 本指を使って要素をタップすると、プライマリ操作 (アプリの起動、コマンドの実行など) が呼び出されます。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Two_finger_tap_to_right-click"></span><span id="two_finger_tap_to_right-click"></span><span id="TWO_FINGER_TAP_TO_RIGHT-CLICK"></span>Two finger tap to right-click</p></td>
-<td align="left"><p>Tap with two fingers simultaneously on an element to select it and display contextual commands.</p></td>
+<td align="left"><p><span id="Two_finger_tap_to_right-click"></span><span id="two_finger_tap_to_right-click"></span><span id="TWO_FINGER_TAP_TO_RIGHT-CLICK"></span>2 本指でのタップによる右クリック</p></td>
+<td align="left"><p>要素を同時に 2 本の指でタップして、その要素を選択し、状況依存のコマンドを表示します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="Two_finger_slide_to_pan"></span><span id="two_finger_slide_to_pan"></span><span id="TWO_FINGER_SLIDE_TO_PAN"></span>Two finger slide to pan</p></td>
-<td align="left"><p>Slide is used primarily for panning interactions but can also be used for moving, drawing, or writing.</p></td>
+<td align="left"><p><span id="Two_finger_slide_to_pan"></span><span id="two_finger_slide_to_pan"></span><span id="TWO_FINGER_SLIDE_TO_PAN"></span>2 本指でのスライドによるパン</p></td>
+<td align="left"><p>スライドは主にパン操作に使われますが、移動、描画、筆記などの操作に使うこともできます。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Pinch_and_stretch_to_zoom"></span><span id="pinch_and_stretch_to_zoom"></span><span id="PINCH_AND_STRETCH_TO_ZOOM"></span>Pinch and stretch to zoom</p></td>
-<td align="left"><p>The pinch and stretch gestures are commonly used for resizing and Semantic Zoom.</p></td>
+<td align="left"><p><span id="Pinch_and_stretch_to_zoom"></span><span id="pinch_and_stretch_to_zoom"></span><span id="PINCH_AND_STRETCH_TO_ZOOM"></span>ピンチとストレッチによるズーム</p></td>
+<td align="left"><p>ピンチ ジェスチャとストレッチ ジェスチャは、通常、サイズ変更とセマンティック ズームに使われます。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="Single_finger_press_and_slide_to_rearrange"></span><span id="single_finger_press_and_slide_to_rearrange"></span><span id="SINGLE_FINGER_PRESS_AND_SLIDE_TO_REARRANGE"></span>Single finger press and slide to rearrange</p></td>
-<td align="left"><p>Drag an element.</p></td>
+<td align="left"><p><span id="Single_finger_press_and_slide_to_rearrange"></span><span id="single_finger_press_and_slide_to_rearrange"></span><span id="SINGLE_FINGER_PRESS_AND_SLIDE_TO_REARRANGE"></span>1 本指でのプレスとスライドによる移動</p></td>
+<td align="left"><p>要素をドラッグします。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Single_finger_press_and_slide_to_select_text"></span><span id="single_finger_press_and_slide_to_select_text"></span><span id="SINGLE_FINGER_PRESS_AND_SLIDE_TO_SELECT_TEXT"></span>Single finger press and slide to select text</p></td>
-<td align="left"><p>Press within selectable text and slide to select it. Double-tap to select a word.</p></td>
+<td align="left"><p><span id="Single_finger_press_and_slide_to_select_text"></span><span id="single_finger_press_and_slide_to_select_text"></span><span id="SINGLE_FINGER_PRESS_AND_SLIDE_TO_SELECT_TEXT"></span>1 本指でのプレスとスライドによるテキストの選択</p></td>
+<td align="left"><p>選択可能なテキスト内を押してスライドし、選択します。 単語を選択するには、ダブルタップします。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="Left_and_right_click_zone"></span><span id="left_and_right_click_zone"></span><span id="LEFT_AND_RIGHT_CLICK_ZONE"></span>Left and right click zone</p></td>
-<td align="left"><p>Emulate the left and right button functionality of a mouse device.</p></td>
+<td align="left"><p><span id="Left_and_right_click_zone"></span><span id="left_and_right_click_zone"></span><span id="LEFT_AND_RIGHT_CLICK_ZONE"></span>左と右のクリック ゾーン</p></td>
+<td align="left"><p>マウス デバイスの左ボタンと右ボタンの機能をエミュレートします。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <span id="Hardware"></span><span id="hardware"></span><span id="HARDWARE"></span>Hardware
+## <span id="Hardware"></span><span id="hardware"></span><span id="HARDWARE"></span>ハードウェア
 
 
-Query the mouse device capabilities ([**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626)) to identify what aspects of your app UI the touchpad hardware can access directly. We recommend providing UI for both touch and mouse input.
+マウス デバイス機能 ([**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626)) を照会して、タッチパッド ハードウェアから直接アクセスできるアプリ UI の要素を識別します。 タッチ入力とマウス入力の両方の UI を用意することをお勧めします。
 
-For more info about querying device capabilities, see [Identify input devices](identify-input-devices.md).
+デバイス機能の照会について詳しくは、「[入力デバイスの識別](identify-input-devices.md)」をご覧ください。
 
-## <span id="Visual_feedback"></span><span id="visual_feedback"></span><span id="VISUAL_FEEDBACK"></span>Visual feedback
-
-
--   When a touchpad cursor is detected (through move or hover events), show mouse-specific UI to indicate functionality exposed by the element. If the touchpad cursor doesn't move for a certain amount of time, or if the user initiates a touch interaction, make the touchpad UI gradually fade away. This keeps the UI clean and uncluttered.
--   Don't use the cursor for hover feedback, the feedback provided by the element is sufficient (see [Cursors](#Cursors) below).
--   Don't display visual feedback if an element doesn't support interaction (such as static text).
--   Don't use focus rectangles with touchpad interactions. Reserve these for keyboard interactions.
--   Display visual feedback concurrently for all elements that represent the same input target.
-
-For more general guidance about visual feedback, see [Guidelines for visual feedback](https://msdn.microsoft.com/library/windows/apps/hh465342).
-
-## <span id="Cursors"></span><span id="cursors"></span><span id="CURSORS"></span>Cursors
+## <span id="Visual_feedback"></span><span id="visual_feedback"></span><span id="VISUAL_FEEDBACK"></span>視覚的なフィードバック
 
 
-A set of standard cursors is available for a touchpad pointer. These are used to indicate the primary action of an element.
+-   移動イベントまたはホバー イベントを通じてタッチパッド カーソルが検出されたら、マウス固有の UI を表示して、要素によって公開されている機能を示します。 タッチパッド カーソルが一定の期間動かされなかった場合や、ユーザーがタッチ操作を始めた場合は、タッチパッド UI を徐々に非表示にします。 これにより、UI の簡潔さが保たれます。
+-   ホバーのフィードバックにカーソルを使わないでください。要素によるフィードバックで十分です (以下の「[カーソル](#Cursors)」をご覧ください)。
+-   静的テキストなど、要素で対話式操作がサポートされていない場合は、視覚的なフィードバックを返さないでください。
+-   タッチパッド操作ではフォーカス用の四角形を使わないでください。 これはキーボード操作専用です。
+-   同じ入力対象を表すすべての要素に対して視覚的なフィードバックを同時に表示します。
 
-Each standard cursor has a corresponding default image associated with it. The user or an app can replace the default image associated with any standard cursor at any time. Windows Store apps specify a cursor image through the [**PointerCursor**](https://msdn.microsoft.com/library/windows/apps/br208273) function.
+視覚的なフィードバックに関する一般的なガイダンスについては、「[視覚的なフィードバックのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465342)」をご覧ください。
 
-If you need to customize the mouse cursor:
-
--   Always use the arrow cursor (![arrow cursor](images/cursor-arrow.png)) for clickable elements. don't use the pointing hand cursor (![pointing hand cursor](images/cursor-pointinghand.png)) for links or other interactive elements. Instead, use hover effects (described earlier).
--   Use the text cursor (![text cursor](images/cursor-text.png)) for selectable text.
--   Use the move cursor (![move cursor](images/cursor-move.png)) when moving is the primary action (such as dragging or cropping). Don't use the move cursor for elements where the primary action is navigation (such as Start tiles).
--   Use the horizontal, vertical and diagonal resize cursors (![vertical resize cursor](images/cursor-vertical.png), ![horizontal resize cursor](images/cursor-horizontal.png), ![diagonal resize cursor (lower left, upper right)](images/cursor-diagonal2.png), ![diagonal resize cursor (upper left, lower right)](images/cursor-diagonal1.png)), when an object is resizable.
--   Use the grasping hand cursors (![grasping hand cursor (open)](images/cursor-pan1.png), ![grasping hand cursor (closed)](images/cursor-pan2.png)) when panning content within a fixed canvas (such as a map).
-
-## <span id="related_topics"></span>Related articles
+## <span id="Cursors"></span><span id="cursors"></span><span id="CURSORS"></span>カーソル
 
 
-* [Handle pointer input](handle-pointer-input.md)
-* [Identify input devices](identify-input-devices.md)
-**Samples**
-* [Basic input sample](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Low latency input sample](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [User interaction mode sample](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Focus visuals sample](http://go.microsoft.com/fwlink/p/?LinkID=619895)
-**Archive Samples**
-* [Input: Device capabilities sample](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Input: XAML user input events sample](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [XAML scrolling, panning, and zooming sample](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Input: Gestures and manipulations with GestureRecognizer](http://go.microsoft.com/fwlink/p/?LinkID=231605)
+タッチパッド ポインターとして利用できる標準のカーソル セットが用意されています。 これらが要素のプライマリ操作を示すために使われます。
+
+標準のカーソルには、それぞれ対応する既定の画像が関連付けられています。 ユーザーまたはアプリは、標準のカーソルに関連付けられている既定の画像をいつでも変更できます。 Windows ストア アプリでは、[**PointerCursor**](https://msdn.microsoft.com/library/windows/apps/br208273) 関数を使ってカーソル画像を指定します。
+
+マウス カーソルをカスタマイズする必要がある場合は、以下のガイドラインに従ってください。
+
+-   クリック可能な要素には常に矢印カーソル (![矢印カーソル](images/cursor-arrow.png)) を使います。 リンクなどのインタラクティブな要素には手の形のポインティング カーソル (![手の形のポインティング カーソル](images/cursor-pointinghand.png)) を使いません。 代わりに、前に説明したホバー効果を使います。
+-   選択可能なテキストにはテキスト カーソル (![テキスト カーソル](images/cursor-text.png)) を使います。
+-   ドラッグやトリミングなど、移動がメインの操作である場合は、移動カーソル (![移動カーソル](images/cursor-move.png)) を使います。 スタート画面のタイルなどでのナビゲーションがメインの操作である場合は、要素に対して移動カーソルを使いません。
+-   サイズ変更ができるオブジェクトに対しては、横、縦、対角線のサイズ変更カーソル (![縦のサイズ変更カーソル](images/cursor-vertical.png)、 ![横のサイズ変更カーソル](images/cursor-horizontal.png)、 ![対角線のサイズ変更カーソル (左下、右上)](images/cursor-diagonal2.png)、 ![対角線のサイズ変更カーソル (左上、右下)](images/cursor-diagonal1.png)) を使います。
+-   地図など、固定キャンバス内のコンテンツのパンを行うときは、手でつかむ形のカーソル (![手でつかむ形のカーソル (開いた状態)](images/cursor-pan1.png)、 ![手でつかむ形のカーソル (つかんだ状態)](images/cursor-pan2.png)) を使います。
+
+## <span id="related_topics"></span>関連記事
+
+
+* [ポインター入力の処理](handle-pointer-input.md)
+* [入力デバイスの識別](identify-input-devices.md)
+**サンプル**
+* [基本的な入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [待機時間が短い入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [ユーザー操作モードのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [フォーカスの視覚効果のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+**サンプルのアーカイブ**
+* [入力: デバイス機能のサンプル](http://go.microsoft.com/fwlink/p/?linkid=231530)
+* [入力: XAML ユーザー入力イベントのサンプル](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [XAML のスクロール、パン、ズームのサンプル](http://go.microsoft.com/fwlink/p/?linkid=251717)
+* [入力: GestureRecognizer によるジェスチャと操作](http://go.microsoft.com/fwlink/p/?LinkID=231605)
  
 
 

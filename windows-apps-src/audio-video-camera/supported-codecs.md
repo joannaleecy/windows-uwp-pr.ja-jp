@@ -1,28 +1,28 @@
 ---
 ms.assetid: 9347AD7C-3A90-4073-BFF4-9E8237398343
-description: This article lists the audio and video codec and format support for UWP apps.
-title: Supported codecs
+description: この記事では、UWP アプリ用のオーディオとビデオのコーデックおよび形式のサポートを示します。
+title: サポートされるコーデック
 ---
 
-# Supported codecs
+# サポートされるコーデック
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-This article lists the audio and video codec and format support for UWP apps.
+この記事では、UWP アプリ用のオーディオとビデオのコーデックおよび形式のサポートを示します。
 
-In the tables below "D" indicates decoder support and "E" indicates encoder support.
+以下の表では、"D" はデコーダーのサポートを示し、"E" はエンコーダーのサポートを示します。
 
-## Audio codec & format support
+## オーディオのコーデックおよび形式のサポート
 
-The following tables show the audio codec and format support for each device family.
+次の表は、各デバイス ファミリのオーディオのコーデックと形式のサポートを示しています。
 
-**Note**  
--   Where AMR-NB support is indicated, this codec is not supported on Server SKUs.
+**注:**  
+-   AMR-NB のサポートが示されている場合、Server SKU ではこのコーデックがサポートされません。
 
  
 
-### Desktop
+### デスクトップ
 
 <table>
 <colgroup>
@@ -42,7 +42,7 @@ The following tables show the audio codec and format support for each device fam
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Codec/Container</th>
+<th align="left">コーデック/コンテナー</th>
 <th align="left">MPEG-4</th>
 <th align="left">MPEG-3</th>
 <th align="left">MPEG-2</th>
@@ -59,7 +59,7 @@ The following tables show the audio codec and format support for each device fam
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">HE-AAC v1 / AAC+</td>
+<td align="left">HE-AAC v1/AAC+</td>
 <td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
@@ -74,7 +74,7 @@ The following tables show the audio codec and format support for each device fam
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">HE-AAC v2 / eAAC+</td>
+<td align="left">HE-AAC v2/eAAC+</td>
 <td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
@@ -119,7 +119,7 @@ The following tables show the audio codec and format support for each device fam
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">EAC3 / EC3</td>
+<td align="left">EAC3/EC3</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left">D</td>
@@ -179,7 +179,7 @@ The following tables show the audio codec and format support for each device fam
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">G.711 (A-Law, µ-law)</td>
+<td align="left">G.711 (A-Law、µ-law)</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -333,7 +333,7 @@ The following tables show the audio codec and format support for each device fam
 
  
 
-### Mobile
+### モバイル
 
 <table>
 <colgroup>
@@ -353,7 +353,7 @@ The following tables show the audio codec and format support for each device fam
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Codec/Container</th>
+<th align="left">コーデック/コンテナー</th>
 <th align="left">MPEG-4</th>
 <th align="left">MPEG-3</th>
 <th align="left">MPEG-2</th>
@@ -370,7 +370,7 @@ The following tables show the audio codec and format support for each device fam
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">HE-AAC v1 / AAC+</td>
+<td align="left">HE-AAC v1/AAC+</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
@@ -385,7 +385,7 @@ The following tables show the audio codec and format support for each device fam
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">HE-AAC v2 / eAAC+</td>
+<td align="left">HE-AAC v2/eAAC+</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
@@ -416,21 +416,21 @@ The following tables show the audio codec and format support for each device fam
 </tr>
 <tr class="even">
 <td align="left">AC3</td>
-<td align="left">D, Only on Lumia Icon, 830, 930, 1520</td>
+<td align="left">D (Lumia Icon、830、930、1520 のみ)</td>
 <td align="left"></td>
-<td align="left">D, Only on Lumia Icon, 830, 930, 1520</td>
+<td align="left">D (Lumia Icon、830、930、1520 のみ)</td>
 <td align="left"></td>
-<td align="left">D, Only on Lumia Icon, 830, 930, 1520</td>
-<td align="left">D, Only on Lumia Icon, 830, 930, 1520</td>
-<td align="left">D, Only on Lumia Icon, 830, 930, 1520</td>
-<td align="left">D, Only on Lumia Icon, 830, 930, 1520</td>
+<td align="left">D (Lumia Icon、830、930、1520 のみ)</td>
+<td align="left">D (Lumia Icon、830、930、1520 のみ)</td>
+<td align="left">D (Lumia Icon、830、930、1520 のみ)</td>
+<td align="left">D (Lumia Icon、830、930、1520 のみ)</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">EAC3 / EC3</td>
+<td align="left">EAC3/EC3</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -490,7 +490,7 @@ The following tables show the audio codec and format support for each device fam
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">G.711 (A-Law, µ-law)</td>
+<td align="left">G.711 (A-Law、µ-law)</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -664,7 +664,7 @@ The following tables show the audio codec and format support for each device fam
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Codec/Container</th>
+<th align="left">コーデック/コンテナー</th>
 <th align="left">MPEG-4</th>
 <th align="left">MPEG-3</th>
 <th align="left">MPEG-2</th>
@@ -681,7 +681,7 @@ The following tables show the audio codec and format support for each device fam
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">HE-AAC v1 / AAC+</td>
+<td align="left">HE-AAC v1/AAC+</td>
 <td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
@@ -696,7 +696,7 @@ The following tables show the audio codec and format support for each device fam
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">HE-AAC v2 / eAAC+</td>
+<td align="left">HE-AAC v2/eAAC+</td>
 <td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
@@ -741,7 +741,7 @@ The following tables show the audio codec and format support for each device fam
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">EAC3 / EC3</td>
+<td align="left">EAC3/EC3</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left">D</td>
@@ -801,7 +801,7 @@ The following tables show the audio codec and format support for each device fam
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">G.711 (A-Law, µ-law)</td>
+<td align="left">G.711 (A-Law、µ-law)</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -975,7 +975,7 @@ The following tables show the audio codec and format support for each device fam
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Codec/Container</th>
+<th align="left">コーデック/コンテナー</th>
 <th align="left">MPEG-4</th>
 <th align="left">MPEG-3</th>
 <th align="left">MPEG-2</th>
@@ -992,7 +992,7 @@ The following tables show the audio codec and format support for each device fam
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">HE-AAC v1 / AAC+</td>
+<td align="left">HE-AAC v1/AAC+</td>
 <td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1007,7 +1007,7 @@ The following tables show the audio codec and format support for each device fam
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">HE-AAC v2 / eAAC+</td>
+<td align="left">HE-AAC v2/eAAC+</td>
 <td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1052,7 +1052,7 @@ The following tables show the audio codec and format support for each device fam
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">EAC3 / EC3</td>
+<td align="left">EAC3/EC3</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1112,7 +1112,7 @@ The following tables show the audio codec and format support for each device fam
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">G.711 (A-Law, µ-law)</td>
+<td align="left">G.711 (A-Law、µ-law)</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1266,7 +1266,7 @@ The following tables show the audio codec and format support for each device fam
 
  
 
-### XBox
+### Xbox
 
 <table>
 <colgroup>
@@ -1286,7 +1286,7 @@ The following tables show the audio codec and format support for each device fam
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Codec/Container</th>
+<th align="left">コーデック/コンテナー</th>
 <th align="left">MPEG-4</th>
 <th align="left">MPEG-3</th>
 <th align="left">MPEG-2</th>
@@ -1303,7 +1303,7 @@ The following tables show the audio codec and format support for each device fam
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">HE-AAC v1 / AAC+</td>
+<td align="left">HE-AAC v1/AAC+</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1318,7 +1318,7 @@ The following tables show the audio codec and format support for each device fam
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">HE-AAC v2 / eAAC+</td>
+<td align="left">HE-AAC v2/eAAC+</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1363,7 +1363,7 @@ The following tables show the audio codec and format support for each device fam
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">EAC3 / EC3</td>
+<td align="left">EAC3/EC3</td>
 <td align="left">D</td>
 <td align="left"></td>
 <td align="left">D</td>
@@ -1423,7 +1423,7 @@ The following tables show the audio codec and format support for each device fam
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">G.711 (A-Law, µ-law)</td>
+<td align="left">G.711 (A-Law、µ-law)</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1577,17 +1577,17 @@ The following tables show the audio codec and format support for each device fam
 
  
 
-## Video codec & format support
+## ビデオのコーデックおよび形式のサポート
 
-The following tables show the video codec and format support for each device family.
+次の表は、各デバイス ファミリのビデオのコーデックと形式のサポートを示しています。
 
-**Note**  
--   Where H.265 support is indicated, it is not necessarily supported by all devices within the device family.
--   Where MPEG-2/MPEG-1 support is indicated, it is only supported with the installation of the optional Microsoft DVD Universal Windows app.
+**注:**  
+-   H.265 のサポートが示されている場合、必ずしもデバイス ファミリ内のすべてのデバイスでサポートされるわけではありません。
+-   MPEG-2/MPEG-1 のサポートが示されている場合、オプションの Microsoft DVD ユニバーサル Windows アプリのインストールでのみサポートされます。
 
  
 
-### Desktop
+### デスクトップ
 
 <table>
 <colgroup>
@@ -1608,7 +1608,7 @@ The following tables show the video codec and format support for each device fam
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Codec/Container</th>
+<th align="left">コーデック/コンテナー</th>
 <th align="left">FOURCC</th>
 <th align="left">fMP4</th>
 <th align="left">MPEG-4</th>
@@ -1786,7 +1786,7 @@ The following tables show the video codec and format support for each device fam
 <td align="left">D</td>
 </tr>
 <tr class="odd">
-<td align="left">Motion JPEG</td>
+<td align="left">モーション JPEG</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left">D</td>
@@ -1806,7 +1806,7 @@ The following tables show the video codec and format support for each device fam
 
  
 
-### Mobile
+### モバイル
 
 <table>
 <colgroup>
@@ -1827,7 +1827,7 @@ The following tables show the video codec and format support for each device fam
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Codec/Container</th>
+<th align="left">コーデック/コンテナー</th>
 <th align="left">FOURCC</th>
 <th align="left">fMP4</th>
 <th align="left">MPEG-4</th>
@@ -2005,7 +2005,7 @@ The following tables show the video codec and format support for each device fam
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">Motion JPEG</td>
+<td align="left">モーション JPEG</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left">D</td>
@@ -2046,7 +2046,7 @@ The following tables show the video codec and format support for each device fam
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Codec/Container</th>
+<th align="left">コーデック/コンテナー</th>
 <th align="left">FOURCC</th>
 <th align="left">fMP4</th>
 <th align="left">MPEG-4</th>
@@ -2224,7 +2224,7 @@ The following tables show the video codec and format support for each device fam
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">Motion JPEG</td>
+<td align="left">モーション JPEG</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left">D</td>
@@ -2265,7 +2265,7 @@ The following tables show the video codec and format support for each device fam
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Codec/Container</th>
+<th align="left">コーデック/コンテナー</th>
 <th align="left">FOURCC</th>
 <th align="left">fMP4</th>
 <th align="left">MPEG-4</th>
@@ -2443,7 +2443,7 @@ The following tables show the video codec and format support for each device fam
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">Motion JPEG</td>
+<td align="left">モーション JPEG</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left">D</td>
@@ -2463,7 +2463,7 @@ The following tables show the video codec and format support for each device fam
 
  
 
-### XBox
+### Xbox
 
 <table>
 <colgroup>
@@ -2484,7 +2484,7 @@ The following tables show the video codec and format support for each device fam
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Codec/Container</th>
+<th align="left">コーデック/コンテナー</th>
 <th align="left">FOURCC</th>
 <th align="left">fMP4</th>
 <th align="left">MPEG-4</th>
@@ -2662,7 +2662,7 @@ The following tables show the video codec and format support for each device fam
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">Motion JPEG</td>
+<td align="left">モーション JPEG</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left">D</td>

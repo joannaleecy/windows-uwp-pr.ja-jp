@@ -1,36 +1,37 @@
 ---
-title: xPhase attribute
-description: Use xPhase with the xBind markup extension to render ListView and GridView items incrementally and improve the panning experience.
+title: xPhase 属性
+description: ListView 項目と GridView 項目を段階的にレンダリングし、パン エクスペリエンスを向上させるには、xPhase を xBind マークアップ拡張と共に使用します。
 ms.assetid: BD17780E-6A34-4A38-8D11-9703107E247E
 ---
 
-# x:Phase attribute
+# x:Phase 属性
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-Use **x:Phase** with the [{x:Bind} markup extension](x-bind-markup-extension.md) to render [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) and [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) items incrementally and improve the panning experience. **x:Phase** provides a declarative way of achieving the same effect as using the [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/dn298914) event to manually control the rendering of list items. Also see [Update ListView and GridView items incrementally](../debug-test-perf/optimize-gridview-and-listview.md#update-items-incrementally).
+[
+            **ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 項目と [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) 項目を段階的にレンダリングし、パン エクスペリエンスを向上させるには、**x:Phase** を [{x:Bind} マークアップ拡張](x-bind-markup-extension.md)と共に使用します。 **x:Phase** では、宣言的な方法により、[**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/dn298914) イベントを使用してリスト項目のレンダリングを手動で制御するのと同じ結果を得ることができます。 「[GridView と ListView の項目を段階的に更新する](../debug-test-perf/optimize-gridview-and-listview.md#update-items-incrementally)」もご覧ください。
 
-## XAML attribute usage
+## XAML 属性の使用方法
 
 
 ``` syntax
 <object x:Phase="PhaseValue".../>
 ```
 
-## XAML values
+## XAML 値
 
 
-| Term | Description |
+| 用語 | 説明 |
 |------|-------------|
-| PhaseValue | A number that indicates the phase in which the element will be processed. The default is 0. | 
+| PhaseValue | 要素が処理されるフェーズを示す数値。 既定値は 0 です。 | 
 
-## Remarks
+## 注釈
 
-If a list is panned fast with touch, or using the mouse wheel, then depending on the complexity of the data template, the list may not be able to render items fast enough to keep up with the speed of scrolling. This is particularly true for a portable device with a power-efficient CPU such as a phone or a tablet.
+タッチ操作でリストをすばやくパンした場合やマウス ホイールを使用した場合、データ テンプレートの複雑さによっては、リスト項目をすばやくレンダリングできず、スクロール速度に追いつかないことがあります。 これは、電話やタブレットなど、電力効率に優れた CPU を搭載したポータブル デバイスに特に当てはまります。
 
-Phasing enables incremental rendering of the data template so that the contents can be prioritized, and the most important elements rendered first. This enables the list to show some content for each item if panning fast, and will render more elements of each template as time permits.
+フェージングにより、データ テンプレートを段階的にレンダリングできるので、コンテンツに優先順位を付け、最も重要な要素を最初にレンダリングできます。 これにより、すばやくパンした場合でも各項目のコンテンツの一部をリストに表示でき、時間が許す限り各テンプレートの要素がより多くレンダリングされます。
 
-## Example
+## 例
 
 ```xaml
 <DataTemplate x:Key="PhasedFileTemplate" x:DataType="model:FileItem">
@@ -54,24 +55,26 @@ Phasing enables incremental rendering of the data template so that the contents 
 </DataTemplate>
 ```
 
-The data template describes 4 phases:
+データ テンプレートには、以下の 4 つのフェーズが記述されます。
 
-1.  Presents the DisplayName text block. All controls without a phase specified will be implicitly considered to be part of phase 0.
-2.  Shows the prettyDate text block.
-3.  Shows the prettyFileSize and prettyImageSize text blocks.
-4.  Shows the image.
+1.  DisplayName テキスト ブロックを表示する。 フェーズが指定されていないコントロールはすべて、フェーズ 0 に含まれるものと暗黙的に見なされます。
+2.  PrettyDate のテキスト ブロックを表示する。
+3.  PrettyFileSize および prettyImageSize テキスト ブロックを表示する。
+4.  画像を表示する。
 
-Phasing is a feature of [{x:Bind}](x-bind-markup-extension.md) that works with controls derived from [**ListViewBase**](https://msdn.microsoft.com/library/windows/apps/br242879) and that incrementally processes the item template for data binding. When rendering list items, **ListViewBase** renders a single phase for all items in the view before moving onto the next phase. The rendering work is performed in time-sliced batches so that as the list is scrolled, the work required can be re-assessed, and not performed for items that are no longer visible.
+フェージングは、[{x:Bind}](x-bind-markup-extension.md) の機能の 1 つであり、[**ListViewBase**](https://msdn.microsoft.com/library/windows/apps/br242879) から派生したコントロールを操作し、データ バインディングの項目テンプレートを段階的に処理します。 リスト項目をレンダリングする場合、**ListViewBase** は、ビューのすべての項目の 1 つのフェーズをレンダリングし、それから次のフェーズに進みます。 レンダリング処理は、リストのスクロール時、必要な処理を再割り当てできるようにタイム スライス バッチで実行されます。表示できなくなった項目に対しては、実行されません。
 
-The **x:Phase** attribute can be specified on any element in a data template that uses [{x:Bind}](x-bind-markup-extension.md). When an element has a phase other than 0, the element will be hidden from view (via **Opacity**, not **Visibility**) until that phase is processed and bindings are updated. When a [**ListViewBase**](https://msdn.microsoft.com/library/windows/apps/br242879)-derived control is scrolled, it will recycle the item templates from items that are no longer on screen to render the newly visible items. UI elements within the template will retain their old values until they are data-bound again. Phasing causes that data-binding step to be delayed, and therefore phasing needs to hide the UI elements in case they are stale.
+**x:Phase** 属性は、[{x:Bind}](x-bind-markup-extension.md) を使用するデータ テンプレートのどの要素に対しても指定できます。 要素のフェーズが 0 以外の場合、その要素は、フェーズが処理され、バインディングが更新されるまで、ビューから隠されます (**Visibility** ではなく、**Opacity** により)。 [
+            **ListViewBase**](https://msdn.microsoft.com/library/windows/apps/br242879) 派生コントロールがスクロールされると、画面に表示されなくなった項目からの項目テンプレートがリサイクルされ、新しい表示可能な項目がレンダリングされます。 テンプレート内の UI 要素は、再びデータ バインドされるまで古い値を保持します。 フェージングにより、そのデータ バインディング ステップは遅延されます。したがって、フェージングでは、UI 要素が古くなった場合は、その UI 要素を隠す必要があります。
 
-Each UI element may have only one phase specified. If so, that will apply to all bindings on the element. If a phase is not specified, phase 0 is assumed.
+各 UI 要素に指定されているフェーズが 1 つだけの場合があります。 その場合、そのフェーズは要素のすべてのバインディングに適用されます。 フェーズが指定されていない場合は、フェーズ 0 と見なされます。
 
-Phase numbers do not need to be contiguous and are the same as the value of [**ContainerContentChangingEventArgs.Phase**](https://msdn.microsoft.com/library/windows/apps/dn298493). The [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/dn298914) event will be raised for each phase before the **x:Phase** bindings are processed.
+フェーズ番号は、連続している必要はなく、[**ContainerContentChangingEventArgs.Phase**](https://msdn.microsoft.com/library/windows/apps/dn298493) の値と同じです。 [
+            **ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/dn298914) イベントは、**x:Phase** バインディングが処理される前に各フェーズで生成されます。
 
-Phasing only affects [{x:Bind}](x-bind-markup-extension.md) bindings, not [{Binding}](binding-markup-extension.md) bindings.
+フェージングは、 [{x:Bind}](x-bind-markup-extension.md) バインディングにのみ影響し、 [{Binding}](binding-markup-extension.md) バインディングには影響しません。
 
-Phasing will only apply when the item template is rendered using a control that is aware of phasing. For Windows 10, that means [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) and [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705). Phasing will not apply to data templates used in other item controls, or for other scenarios such as [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/br209369) or [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) sections—in those cases, all the UI elements will be data bound at once.
+フェージングが適用されるのは、フェージングを認識するコントロールを使用して項目テンプレートがレンダリングされるときのみです。 Windows 10 の場合は、[**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) と [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) です。 フェージングは、他の項目コントロールで使用されるデータ テンプレートには適用されません。また、[**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/br209369) または [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) セクション (この場合、すべての UI 要素が同時にデータ バインドされる) などの他のシナリオでも適用されません。
 
 
 

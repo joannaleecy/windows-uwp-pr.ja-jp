@@ -1,40 +1,40 @@
 ---
 ms.assetid: bf0a8b01-79f1-4944-9d78-9741e235dbe9
-title: Device Portal for Xbox
-description: Learn how to enable the Device Portal for Xbox One.
+title: Xbox 用 Device Portal
+description: Xbox One 向けの Device Portal を有効にする方法について説明します。
 ---
-# Device Portal for Xbox
+# Xbox 用 Device Portal
 
 
-## Set up Device Portal on Xbox
+## Xbox で Device Portal をセットアップする
 
-### Enable Device Portal
+### Device Portal を有効にする
 
-**To enable Device Portal**
+**Device Portal を有効にするには**
 
-1. Select the Dev Home tile on the home screen (see image)  
-![Device Portal DevHome](images/device-portal/xbox-dev-home-tile.png)
-2. Within Dev Home, navigate to the **Remote Management** tool 
-![Device Portal RemoteManagement Tool](images/device-portal/xbox-remote-management-tool.png)
-3. Select **Manage Windows Device Portal** and press **A**
-4. Check the **Enable Windows Device Portal** setting
-5. Enter a Username and Password to use to authenticate access to your devkit from a browser, and save them.
-6. Close the settings page and note the URL listed on the Remote Management tool to connect.
-7. Enter the URL in your browser, and then sign in with the credentials you configured.
-8. You will receive a warning about the Certificate that was provided, similar to that pictured below. You should click on **Continue to this website** to access Windows Device Portal in the preview.
-![Device Portal Certificate Error](images/device-portal/xbox-certificate-error.png)
+1. ホーム画面で [Dev Home] タイルを選択します (画像を参照)。  
+![Device Portal の DevHome](images/device-portal/xbox-dev-home-tile.png)
+2. Dev Home 内で、**[Remote Management]** (リモート管理) ツールに移動します。 
+![Device Portal のリモート管理ツール](images/device-portal/xbox-remote-management-tool.png)
+3. **[Manage Windows Device Portal** (Windows Device Portal の管理]) を選択し、**[A]** を押します。
+4. **[Enable Windows Device Portal]** (Windows Device Portal を有効にする) 設定をオンにします。
+5. ブラウザーから devkit へのアクセスを認証するために使うユーザー名とパスワードを入力し、保存します。
+6. 設定ページを閉じ、[Remote Management] (リモート管理) ツールに表示された URL を記録します。
+7. URL をブラウザーに入力し、構成した資格情報でサインインします。
+8. 提供された証明書に関して、次の図のような警告が表示されます。 プレビューで Windows Device Portal にアクセスするには、**[このサイトの閲覧を続行する]** をクリックする必要があります。
+![Device Portal の証明書エラー](images/device-portal/xbox-certificate-error.png)
 
-## Device Portal pages
+## Device Portal のページ
 
-Device Portal on XBox provides the standard set of pages. For detailed descriptions, see [Windows Device Portal overview](device-portal.md).
+XBox の Device Portal では、標準のページのセットが提供されます。 詳しい説明については、「[Windows Device Portal の概要](device-portal.md)」をご覧ください。
 
-- Apps
-- Processes
-- Performance
-- Event Tracing for Windows (ETW)
-- Performance tracing
-- Devices
-- Networking
+- Apps (アプリ)
+- Processes (プロセス)
+- Performance (パフォーマンス)
+- Event Tracing for Windows (ETW) (Windows イベント トレーシング (ETW))
+- Performance tracing (パフォーマンス トレース)
+- Devices (デバイス)
+- Networking (ネットワーク)
 
 <!--HONumber=Mar16_HO5-->
 

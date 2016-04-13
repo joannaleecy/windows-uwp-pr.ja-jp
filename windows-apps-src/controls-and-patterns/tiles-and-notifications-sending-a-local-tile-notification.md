@@ -1,48 +1,48 @@
 ---
-Description: This article describes how to send a local tile notification to a primary tile and a secondary tile using adaptive tile templates.
-title: Send a local tile notification
+Description: この記事では、アダプティブ タイル テンプレートを使って、ローカル タイル通知をプライマリ タイルやセカンダリ タイルに送信する方法について説明します。
+title: ローカル タイル通知の送信
 ms.assetid: D34B0514-AEC6-4C41-B318-F0985B51AF8A
 label: TBD
 template: detail.hbs
 ---
 
-# Send a local tile notification
+# ローカル タイル通知の送信
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-Primary app tiles in Windows 10 are defined in your app manifest, while secondary tiles are programmatically created and defined by your app code. This article describes how to send a local tile notification to a primary tile and a secondary tile using adaptive tile templates. (A local notification is one that's sent from app code as opposed to one that's pushed or pulled from a web server.)
+Windows 10 では、アプリのプライマリ タイルはアプリ マニフェストで定義されます。これに対して、セカンダリ タイルはプログラムによって作成され、アプリ コードで定義されます。 この記事では、アダプティブ タイル テンプレートを使って、ローカル タイル通知をプライマリ タイルやセカンダリ タイルに送信する方法について説明します (ローカル通知とは、Web サーバーからプッシュまたはプルされる通知ではなく、アプリ コードから送信される通知です)。
 
-![default tile and tile with notification](images/sending-local-tile-01.png)
+![既定のタイルと通知を含んだタイル](images/sending-local-tile-01.png)
 
-**Note**   Learn about [creating adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md) and [adaptive tile template schema](tiles-and-notifications-adaptive-tiles-schema.md).
+**注**   詳しくは「[アダプティブ タイルの作成](tiles-and-notifications-create-adaptive-tiles.md)」と「[アダプティブ タイル テンプレートのスキーマ](tiles-and-notifications-adaptive-tiles-schema.md)」をご覧ください。
 
  
 
-## <span id="Install_the_NuGet_package"></span><span id="install_the_nuget_package"></span><span id="INSTALL_THE_NUGET_PACKAGE"></span>Install the NuGet package
+## <span id="Install_the_NuGet_package"></span><span id="install_the_nuget_package"></span><span id="INSTALL_THE_NUGET_PACKAGE"></span>NuGet パッケージをインストールする
 
 
-We recommend installing the [NotificationsExtensions NuGet package](https://www.nuget.org/packages/NotificationsExtensions.Win10/), which simplifies things by generating tile payloads with objects instead of raw XML.
+[NotificationsExtensions NuGet パッケージ](https://www.nuget.org/packages/NotificationsExtensions.Win10/)をインストールすることをお勧めします。このパッケージを使うと、生の XML ではなくオブジェクトによってタイルのペイロードが生成され、さまざまなことが簡素化されます。
 
-The inline code examples in this article are for C# with the [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) NuGet package installed. (If you'd prefer to create your own XML, you can find code examples without [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) toward the end of the article.)
+この記事のインライン コードの例は、[NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) NuGet パッケージがインストールされている場合の C# に対応しています (独自の XML を作成する場合は、この記事の最後に示されている、[NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) を使わないコード例をご覧ください)。
 
-## <span id="Add_namespace_declarations"></span><span id="add_namespace_declarations"></span><span id="ADD_NAMESPACE_DECLARATIONS"></span>Add namespace declarations
+## <span id="Add_namespace_declarations"></span><span id="add_namespace_declarations"></span><span id="ADD_NAMESPACE_DECLARATIONS"></span>名前空間宣言を追加する
 
 
-To access the tile APIs, include the [**Windows.UI.Notifications**](https://msdn.microsoft.com/library/windows/apps/br208661) namespace. We also recommend including the **NotificationsExtensions.Tiles** namespace so that you can take advantage of our tile helper APIs (you must install the [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) NuGet package to access these APIs).
+タイル API にアクセスするには、[**Windows.UI.Notifications**](https://msdn.microsoft.com/library/windows/apps/br208661) 名前空間を追加します。 **NotificationsExtensions.Tiles** 名前空間も追加することをお勧めします。これにより、タイルのヘルパー API を使うことができます (これらの API にアクセスするには、[NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) NuGet パッケージをインストールする必要があります)。
 
 ```
 using Windows.UI.Notifications;
 using NotificationsExtensions.Tiles; // NotificationsExtensions.Win10
 ```
 
-## <span id="Create_the_notification_content"></span><span id="create_the_notification_content"></span><span id="CREATE_THE_NOTIFICATION_CONTENT"></span>Create the notification content
+## <span id="Create_the_notification_content"></span><span id="create_the_notification_content"></span><span id="CREATE_THE_NOTIFICATION_CONTENT"></span>タイル通知のコンテンツを作成する
 
 
-In Windows 10, tile payloads are defined using adaptive tile templates, which allow you to create custom visual layouts for your notifications. (To learn what's possible with adaptive tiles, see the [Create adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md) and [Adaptive tile templates](tiles-and-notifications-adaptive-tiles-schema.md) articles.)
+Windows 10 では、アダプティブ タイル テンプレートを使ってタイルのペイロードが定義されます。これにより、通知に合わせたカスタムの視覚的なレイアウトを作成できます (アダプティブ タイルを使ってできることについて詳しくは、「[アダプティブ タイルの作成](tiles-and-notifications-create-adaptive-tiles.md)」と「[アダプティブ タイル テンプレート](tiles-and-notifications-adaptive-tiles-schema.md)」の記事をご覧ください)。
 
-This code example creates adaptive tile content for medium and wide tiles.
+次のコード例では、普通サイズのタイルおよびワイド タイル用にアダプティブ タイルのコンテンツを作成します。
 
 ```
 // In a real app, these would be initialized with actual data
@@ -112,28 +112,28 @@ TileContent content = new TileContent()
 };
 ```
 
-The notification content looks like the following when displayed on a medium tile:
+普通サイズのタイルに表示されると、通知のコンテンツは次のようになります。
 
-![notification content on a medium tile](images/sending-local-tile-02.png)
+![普通サイズのタイルでの通知のコンテンツ](images/sending-local-tile-02.png)
 
-## <span id="Create_the_notification"></span><span id="create_the_notification"></span><span id="CREATE_THE_NOTIFICATION"></span>Create the notification
+## <span id="Create_the_notification"></span><span id="create_the_notification"></span><span id="CREATE_THE_NOTIFICATION"></span>通知を作成する
 
 
-Once you have your notification content, you'll need to create a new [**TileNotification**](https://msdn.microsoft.com/library/windows/apps/br208616). The **TileNotification** constructor takes a Windows Runtime [**XmlDocument**](https://msdn.microsoft.com/library/windows/apps/br208620) object, which you can obtain from the **TileContent.GetXml** method if you're using [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki).
+通知のコンテンツを決定したら、新しい [**TileNotification**](https://msdn.microsoft.com/library/windows/apps/br208616) を作成する必要があります。 **TileNotification** コンストラクターは Windows ランタイムの [**XmlDocument**](https://msdn.microsoft.com/library/windows/apps/br208620) オブジェクトを受け取ります。このオブジェクトは、[NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) を使っている場合に、**TileContent.GetXml** メソッドから取得することができます。
 
-This code example creates a notification for a new tile.
+次のコード例では、新しいタイルの通知を作成します。
 
 ```
 // Create the tile notification
 var notification = new TileNotification(content.GetXml());
 ```
 
-## <span id="Set_an_expiration_time_for_the_notification__optional_"></span><span id="set_an_expiration_time_for_the_notification__optional_"></span><span id="SET_AN_EXPIRATION_TIME_FOR_THE_NOTIFICATION__OPTIONAL_"></span>Set an expiration time for the notification (optional)
+## <span id="Set_an_expiration_time_for_the_notification__optional_"></span><span id="set_an_expiration_time_for_the_notification__optional_"></span><span id="SET_AN_EXPIRATION_TIME_FOR_THE_NOTIFICATION__OPTIONAL_"></span>通知の有効期限を設定する (省略可能)
 
 
-By default, local tile and badge notifications don't expire, while push, periodic, and scheduled notifications expire after three days. Because tile content shouldn't persist longer than necessary, it's a best practice to set an expiration time that makes sense for your app, especially on local tile and badge notifications.
+既定では、ローカル タイル通知とローカル バッジ通知には有効期限がなく、プッシュ通知、定期的な通知、スケジュールされた通知の有効期限は 3 日です。 タイルのコンテンツは必要以上に長く保持しないことが推奨されるため、アプリにとって適切な有効期限を設定することをお勧めします (特に、ローカル タイル通知やローカル バッジ通知の場合)。
 
-This code example creates a notification that expires and will be removed from the tile after ten minutes.
+次のコード例では、10 分後に有効期限が切れ、タイルから削除される通知を作成します。
 
 ```
 tileNotification.ExpirationTime = DateTimeOffset.UtcNow.AddMinutes(10);</code></pre></td>
@@ -142,16 +142,16 @@ tileNotification.ExpirationTime = DateTimeOffset.UtcNow.AddMinutes(10);</code></
 </table>
 ```
 
-## <span id="Send_the_notification"></span><span id="send_the_notification"></span><span id="SEND_THE_NOTIFICATION"></span>Send the notification
+## <span id="Send_the_notification"></span><span id="send_the_notification"></span><span id="SEND_THE_NOTIFICATION"></span>通知を送信する
 
 
-Although locally sending a tile notification is simple, sending the notification to a primary or secondary tile is a bit different.
+タイル通知をローカルで送信する方法は簡単ですが、通知をプライマリ タイルに送信する方法とセカンダリ タイルに送信する方法は少し異なります。
 
-**Primary tile**
+**プライマリ タイル**
 
-To send a notification to a primary tile, use the [**TileUpdateManager**](https://msdn.microsoft.com/library/windows/apps/br208622) to create a tile updater for the primary tile, and send the notification by calling "Update". Regardless of whether it's visible, your app's primary tile always exists, so you can send notifications to it even when it's not pinned. If the user pins your primary tile later, the notifications that you sent will appear then.
+通知をプライマリ タイルに送信するには、[**TileUpdateManager**](https://msdn.microsoft.com/library/windows/apps/br208622) を使ってプライマリ タイル用のタイル アップデーターを作成し、"Update" を呼び出して通知を送信します。 表示されるかどうかに関係なく、アプリのプライマリ タイルは常に存在します。そのため、タイルがピン留めされていない場合でも、通知をタイルに送信することができます。 ユーザーが後でプライマリ タイルをピン留めする場合、送信した通知はタイルをピン留めしたときに表示されます。
 
-This code example sends a notification to a primary tile.
+次のコード例では、通知をプライマリ タイルに送信します。
 
 <span codelanguage=""></span>
 ```
@@ -164,11 +164,12 @@ This code example sends a notification to a primary tile.
 TileUpdateManager.CreateTileUpdaterForApplication().Update(notification);
 ```
 
-**Secondary tile**
+**セカンダリ タイル**
 
-To send a notification to a secondary tile, first make sure that the secondary tile exists. If you try to create a tile updater for a secondary tile that doesn't exist (for example, if the user unpinned the secondary tile), an exception will be thrown. You can use [**SecondaryTile.Exists**](https://msdn.microsoft.com/library/windows/apps/br242205)(tileId) to discover if your secondary tile is pinned, and then create a tile updater for the secondary tile and send the notification.
+通知をセカンダリ タイルに送信するには、まず、セカンダリ タイルが存在することを確認します。 存在しないセカンダリ タイル (ユーザーがセカンダリ タイルのピン留めを外した場合など) のタイル アップデーターを作成すると、例外がスローされます。 [
+            **SecondaryTile.Exists**](https://msdn.microsoft.com/library/windows/apps/br242205)(tileId) を使ってセカンダリ タイルがピン留めされていることを確認してから、セカンダリ タイルのタイル アップデーターを作成し、通知を送信することができます。
 
-This code example sends a notification to a secondary tile.
+次のコード例では、通知をセカンダリ タイルに送信します。
 
 ```
 // If the secondary tile is pinned
@@ -182,14 +183,14 @@ if (SecondaryTile.Exists("MySecondaryTile"))
 }
 ```
 
-![default tile and tile with notification](images/sending-local-tile-01.png)
+![既定のタイルと通知を含んだタイル](images/sending-local-tile-01.png)
 
-## <span id="Clear_notifications_on_the_tile__optional_"></span><span id="clear_notifications_on_the_tile__optional_"></span><span id="CLEAR_NOTIFICATIONS_ON_THE_TILE__OPTIONAL_"></span>Clear notifications on the tile (optional)
+## <span id="Clear_notifications_on_the_tile__optional_"></span><span id="clear_notifications_on_the_tile__optional_"></span><span id="CLEAR_NOTIFICATIONS_ON_THE_TILE__OPTIONAL_"></span>タイルの通知を消去する (省略可能)
 
 
-In most cases, you should clear a notification once the user has interacted with that content. For example, when the user launches your app, you might want to clear all the notifications from the tile. If your notifications are time-bound, we recommend that you set an expiration time on the notification instead of explicitly clearing the notification.
+ほとんどの場合、ユーザーが通知コンテンツを操作した後で、通知を消去する必要があります。 たとえば、ユーザーがアプリを起動したとき、場合によっては、タイルからすべての通知を消去する必要があります。 通知に期限がある場合は、通知を明示的に消去するのではなく、通知に有効期限を設定することをお勧めします。
 
-This code example clears the tile notification.
+次のコード例では、タイルの通知を消去します。
 
 ```
 TileUpdateManager.CreateTileUpdaterForApplication().Clear();</code></pre></td>
@@ -198,26 +199,26 @@ TileUpdateManager.CreateTileUpdaterForApplication().Clear();</code></pre></td>
 </table>
 ```
 
-For a tile with the notification queue enabled and notifications in the queue, calling the Clear method empties the queue. You can't, however, clear a notification via your app's server; only the local app code can clear notifications.
+タイルの通知キューが有効になっており、キューに通知がある場合は、Clear メソッドを呼び出すことでキューが空になります。 ただし、アプリのサーバーを使って通知を消去することはできません。ローカルのアプリ コードでのみ通知を消去できます。
 
-Periodic or push notifications can only add new notifications or replace existing notifications. A local call to the Clear method will clear the tile whether or not the notifications themselves came via push, periodic, or local. Scheduled notifications that haven't yet appeared are not cleared by this method.
+定期的な通知やプッシュ通知では、新しい通知の追加や既にある通知の置き換えのみを実行できます。 Clear メソッドをローカルで呼び出すと、通知自体がプッシュ通知、定期的な通知、またはローカル通知によって発生したかどうかに関係なくタイルが消去されます。 まだ表示されていないスケジュールされた通知は、このメソッドでは消去されません。
 
-![tile with notification and tile after being cleared](images/sending-local-tile-03.png)
+![通知を含んだタイルと消去された後のタイル](images/sending-local-tile-03.png)
 
-## <span id="Next_steps"></span><span id="next_steps"></span><span id="NEXT_STEPS"></span>Next steps
+## <span id="Next_steps"></span><span id="next_steps"></span><span id="NEXT_STEPS"></span>次のステップ
 
 
-**Using the notification queue**
+**通知キューの使用**
 
-Now that you have done your first tile update, you can expand the functionality of the tile by enabling a [notification queue](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234).
+最初のタイルの更新を実行したので、[通知キュー](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234)を有効にしてタイルの機能を拡張できます。
 
-**Other notification delivery methods**
+**通知の他の配信方法**
 
-This article shows you how to send the tile update as a notification. To explore other methods of notification delivery, including scheduled, periodic, and push, see [Delivering notifications](tiles-and-notifications-choosing-a-notification-delivery-method.md).
+この記事では、タイルの更新を通知として送信する方法について説明します。 通知を配信する他の方法 (スケジュール、定期的、プッシュ) を調べるには、「[通知の配信](tiles-and-notifications-choosing-a-notification-delivery-method.md)」をご覧ください。
 
-**XmlEncode delivery method**
+**XmlEncode 配信メソッド**
 
-If you're not using [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki), this notification delivery method is another alternative.
+[NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) を使わない場合は、このメソッドを代わりに使って、通信を配信することができます。
 
 <span codelanguage=""></span>
 ```
@@ -238,19 +239,19 @@ public string XmlEncode(string text)
 }
 ```
 
-## <span id="Code_examples_without_NotificationsExtensions"></span><span id="code_examples_without_notificationsextensions"></span><span id="CODE_EXAMPLES_WITHOUT_NOTIFICATIONSEXTENSIONS"></span>Code examples without NotificationsExtensions
+## <span id="Code_examples_without_NotificationsExtensions"></span><span id="code_examples_without_notificationsextensions"></span><span id="CODE_EXAMPLES_WITHOUT_NOTIFICATIONSEXTENSIONS"></span>NotificationsExtensions を使わない場合のコード例
 
 
-If you prefer to work with raw XML instead of the [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) NuGet package, use these alternate code examples to first three examples provided in this article. The rest of the code examples can be used either with [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) or with raw XML.
+[NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) NuGet パッケージではなく、生の XML を使う場合は、この記事で照会した最初の 3 つの例で、以下の代替のコード例を利用することができます。 他のコード例は、[NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) または生の XML のいずれかと共に使うことができます。
 
-Add namespace declarations
+名前空間宣言を追加する
 
 ```
 using Windows.UI.Notifications;
 using Windows.Data.Xml.Dom;
 ```
 
-Create the notification content
+タイル通知のコンテンツを作成する
 
 ```
 // In a real app, these would be initialized with actual data
@@ -283,7 +284,7 @@ string content = $@"
 </tile>";
 ```
 
-Create the notification
+通知を作成する
 
 ```
 // Load the string into an XmlDocument
@@ -294,17 +295,17 @@ doc.LoadXml(content);
 var notification = new TileNotification(doc);
 ```
 
-## <span id="related_topics"></span>Related topics
+## <span id="related_topics"></span>関連トピック
 
 
-* [Create adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md)
-* [Adaptive tile templates: schema and documentation](tiles-and-notifications-adaptive-tiles-schema.md)
-* [NotificationsExtensions.Win10 (NuGet package)](https://www.nuget.org/packages/NotificationsExtensions.Win10/)
-* [NotificationsExtensions on GitHub](https://github.com/WindowsNotifications/NotificationsExtensions/wiki)
-* [Full code sample on GitHub](https://github.com/WindowsNotifications/quickstart-sending-local-tile-win10)
-* [**Windows.UI.Notifications namespace**](https://msdn.microsoft.com/library/windows/apps/br208661)
-* [How to use the notification queue (XAML)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234)
-* [Delivering notifications](tiles-and-notifications-choosing-a-notification-delivery-method.md)
+* [アダプティブ タイルの作成](tiles-and-notifications-create-adaptive-tiles.md)
+* [アダプティブ タイル テンプレート: スキーマとドキュメント](tiles-and-notifications-adaptive-tiles-schema.md)
+* [NotificationsExtensions.Win10 (NuGet パッケージ)](https://www.nuget.org/packages/NotificationsExtensions.Win10/)
+* [GitHub の NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki)
+* [Github での完全なコード サンプル](https://github.com/WindowsNotifications/quickstart-sending-local-tile-win10)
+* [**Windows.UI.Notifications 名前空間**](https://msdn.microsoft.com/library/windows/apps/br208661)
+* [通知キューの使用方法 (XAML)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234)
+* [通知の配信](tiles-and-notifications-choosing-a-notification-delivery-method.md)
  
 
  

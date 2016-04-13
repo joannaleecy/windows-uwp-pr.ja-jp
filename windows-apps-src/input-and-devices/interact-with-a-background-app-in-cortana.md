@@ -2,14 +2,14 @@
 Description: 音声コマンドの実行時に Cortana の音声とキャンバスを通じてバックグラウンド アプリを操作する方法について説明します。
 title: バックグラウンド アプリの操作
 ms.assetid: 6C60F03C-A242-435D-96BB-736892CC1CA6
-label: バックグラウンド アプリの操作
+label: Interact with a background app
 template: detail.hbs
 ---
 
 # Cortana でのバックグラウンド アプリの操作
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
 **重要な API**
@@ -17,9 +17,9 @@ template: detail.hbs
 -   [**Windows.ApplicationModel.VoiceCommands**](https://msdn.microsoft.com/library/windows/apps/dn706594)
 -   [**音声コマンド定義 (VCD) の要素および属性 v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
 
-音声コマンドの実行時に **Cortana** の音声とキャンバスを通じてバックグラウンド アプリを操作する方法について説明します。
+音声コマンドの実行中に、**Cortana** キャンバスでの音声認識とテキストの入力により、バック グラウンド アプリへのユーザー操作が可能になります。
 
-**Cortana** の音声コマンドには、バックグラウンド アプリによって制御される、**Cortana** 内での多彩なユーザー エクスペリエンスとの操作フローを含めることができます。 アプリでは、以下のような機能をサポートするさまざまな種類の画面を指定できます。
+Cortana は、アプリでの完全なターン バイ ターン方式のワークフローをサポートします。 このワークフローはアプリによって定義され、次の機能をサポートできます。 
 
 -   正常完了
 -   ハンドオフ
@@ -28,155 +28,192 @@ template: detail.hbs
 -   不明瞭解消
 -   エラー
 
-**前提条件:  **
+**前提条件:**
 
 このトピックは、「[Cortana の音声コマンドを使ったバックグラウンド アプリの起動](launch-a-background-app-with-voice-commands-in-cortana.md)」に基づいています。 ここでは、引き続き **Adventure Works** という旅行の計画および管理アプリを使って機能について説明します。
 
 ユニバーサル Windows プラットフォーム (UWP) アプリを開発するのが初めての場合は、以下のトピックに目を通して、ここで説明されているテクノロジをよく理解できるようにしてください。
 
 -   [初めてのアプリ作成](https://msdn.microsoft.com/library/windows/apps/bg124288)
--   「[イベントとルーティング イベントの概要](https://msdn.microsoft.com/library/windows/apps/mt185584)」に記載されているイベントの説明
+-   「[イベントとルーティング イベントの概要](https://msdn.microsoft.com/library/windows/apps/mt185584)」でイベントについて学習します。
 
 **ユーザー エクスペリエンス ガイドライン:  **
 
-アプリと **Cortana** を統合する方法については「[Cortana の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn974233)」を、便利で魅力的な音声認識対応アプリの設計に役立つヒントについては「[音声機能の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596121)」をご覧ください。
+アプリと **Cortana** を統合する方法については「[Cortana の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn974233)」を、魅力的な音声認識対応アプリの設計に役立つ便利なヒントについては「[音声機能の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596121)」をご覧ください。
+
+## <span id="Feedback_strings"></span><span id="feedback_strings"></span><span id="FEEDBACK_STRINGS"></span>フィードバック文字列
+
+**Cortana** が表示または会話するフィードバック文字列を構成します。
+
+「[Cortana の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn974233)」では、**Cortana** の文字列の構成に関する推奨事項を提供しています。
+
+## <span id="Feedback_strings"></span><span id="feedback_strings"></span><span id="FEEDBACK_STRINGS"></span>フィードバック文字列
+
+コンテンツ カードは、ユーザーに追加のコンテキストを示し、フィードバック文字列を簡潔に保つのに役立ちます。
+
+**Cortana** では、次のコンテンツ カード テンプレートがサポートされます (完了画面で使うことができるテンプレートは 1 つだけです)。
+
+    -   Title only
+    -   Title with up to three lines of text
+    -   Title with image
+    -   Title with image and up to three lines of text
+
+以下の画像を使うことができます。
+
+    -   68w x 68h
+    -   68w x 92h
+    -   280w x 140h
+
+ユーザーのカードやアプリへのテキスト リンクをクリックして、アプリをフォアグラウンドで起動できるようにすることもできます。
 
 ## <span id="Completion_screen"></span><span id="completion_screen"></span><span id="COMPLETION_SCREEN"></span>完了画面
 
-
 完了画面には、完了した音声コマンド タスクに関する情報が表示されます。
 
-アプリが応答するまでの時間が 500 ミリ秒未満で、ユーザーからの追加の情報が必要ないタスクは、**Cortana** からそれ以上のサポートを受けずに、完了画面を表示して完了することができます。
+アプリの応答に 500 ミリ秒未満しかかからず、ユーザーからの追加情報を必要としないタスクは、それ以上の **Cortana** とのやり取りなしで完了します。 Cortana は、単に完了画面を表示します。
 
-ここでは、**Cortana** に、ラスベガスへの旅行予定に関する取り消しの結果を **Adventure Works** アプリから取得して表示する方法について説明します。
+ここでは、**Adventure Works** アプリを使って、ロンドンへの旅行予定を表示して、音声コマンドを要求する完了画面を表示します。 
 
-![Cortana のバックグラウンド アプリの完了画面](images/cortana-completion-screen.png)
+![Cortana のバックグラウンド アプリの完了画面](images/cortana-completion-screen-upcomingtrip-small.png)
 
-1.  **Cortana に表示して読み上げるフィードバック文字列を選ぶ**
+音声コマンドは AdventureWorksCommands.xml で定義されています。
+```
+<Command Name="whenIsTripToDestination">
+  <Example> When is my trip to Las Vegas?</Example>
+  <ListenFor RequireAppName="BeforeOrAfterPhrase"> when is [my] trip to {destination}</ListenFor>
+  <ListenFor RequireAppName="ExplicitlySpecified"> when is [my] {builtin:AppName} trip to {destination} </ListenFor>
+  <Feedback> Looking for trip to {destination}</Feedback>
+  <VoiceCommandService Target="AdventureWorksVoiceCommandService"/>
+</Command>
+```
 
-    「[Cortana の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn974233)」に記載された、**Cortana** が表示して読み上げる文字列を作成する際の推奨事項に従います。
+AdventureWorksVoiceCommandService.cs には、完了メッセージのメソッドが含まれています。
 
-2.  **実行するアクションに基づいてコンテンツ タイルを選ぶ (省略可能)**
+```csharp
+/// <summary>
+/// Show details for a single trip, if the trip can be found. 
+/// This demonstrates a simple response flow in Cortana.
+/// </summary>
+/// <param name="destination">The destination specified in the voice command.</param>
+private async Task SendCompletionMessageForDestination(string destination)
+{
+    // If this operation is expected to take longer than 0.5 seconds, the task must
+    // supply a progress response to Cortana before starting the operation, and
+    // updates must be provided at least every 5 seconds.
+    string loadingTripToDestination = string.Format(
+               cortanaResourceMap.GetValue("LoadingTripToDestination", cortanaContext).ValueAsString,
+               destination);
+    await ShowProgressScreen(loadingTripToDestination);
+    Model.TripStore store = new Model.TripStore();
+    await store.LoadTrips();
 
-    コンテンツ タイルは、ユーザーに追加のコンテキストを示し、フィードバック文字列を簡潔に保つのに役立ちます。
+    // Query for the specified trip. 
+    // The destination should be in the phrase list. However, there might be  
+    // multiple trips to the destination. We pick the first.
+    IEnumerable<Model.Trip> trips = store.Trips.Where(p => p.Destination == destination);
 
-    **Cortana** では、次のコンテンツ タイル テンプレートがサポートされます (完了画面で使うことができるテンプレートは 1 つだけです)。
-
-    -   タイトルのみ
-    -   最大 3 行のテキストを含むタイトル
-    -   アイコン付きのタイトル
-    -   アイコン付きで最大 3 行のテキストを含むタイトル
-
-    以下のアイコンを使うことができます。
-
-    -   幅 68 x 高さ 68
-    -   幅 68 x 高さ 92
-    -   幅 280 x 高さ 140
-
-    ユーザーのタイルやアプリへのテキスト リンクをタップして、アプリをフォアグラウンドで起動できるようにすることもできます。
-
-3.  **正常完了画面を表示する**
-
-    複数のコンテンツ タイルが表示された正常完了画面の例を次に示します。
-
-```    CSharp
-var userMessage = new VoiceCommandUserMessage();
-    userMessage.DisplayMessage = "Here are your trips.";
-    userMessage.SpokenMessage = 
-      "You have two trips to Vegas coming up.";
-
+    var userMessage = new VoiceCommandUserMessage();
     var destinationsContentTiles = new List<VoiceCommandContentTile>();
+    if (trips.Count() == 0)
+    {
+        string foundNoTripToDestination = string.Format(
+               cortanaResourceMap.GetValue("FoundNoTripToDestination", cortanaContext).ValueAsString,
+               destination);
+        userMessage.DisplayMessage = foundNoTripToDestination;
+        userMessage.SpokenMessage = foundNoTripToDestination;
+    }
+    else
+    {
+        // Set plural or singular title.
+        string message = "";
+        if (trips.Count() > 1)
+        {
+            message = cortanaResourceMap.GetValue("PluralUpcomingTrips", cortanaContext).ValueAsString;
+        }
+        else
+        {
+            message = cortanaResourceMap.GetValue("SingularUpcomingTrip", cortanaContext).ValueAsString;
+        }
+        userMessage.DisplayMessage = message;
+        userMessage.SpokenMessage = message;
 
-    var destinationTile1 = new VoiceCommandContentTile();
-    destinationTile1.ContentTileType = 
-      VoiceCommandContentTileType.TitleWith68x68IconAndText;
-    destinationTile1.AppLaunchArgument = “id_Vegas_001";
-    destinationTile1.Title = "Las Vegas Tech Conference";
-    destinationTile1.TextLine1 = "May 15th 2015";
-    destinationsContentTiles.Add(destinationTile1);
+        // Define a tile for each destination.
+        foreach (Model.Trip trip in trips)
+        {
+            int i = 1;
+            
+            var destinationTile = new VoiceCommandContentTile();
 
-    var destinationTile2 = new VoiceCommandContentTile();
-    destinationTile2.ContentTileType = 
-      VoiceCommandContentTileType.TitleWith68x68IconAndText;
-    destinationTile2.AppLaunchArgument = “id_Vegas_002";
-    destinationTile2.Title = "Fun in Vegas";
-    destinationTile2.TextLine1 = "August 24th 2015";
-    destinationsContentTiles.Add(destinationTile2);
+            destinationTile.ContentTileType = VoiceCommandContentTileType.TitleWith68x68IconAndText;
+            destinationTile.Image = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///AdventureWorks.VoiceCommands/Images/GreyTile.png"));
 
-    var response = 
-      VoiceCommandResponse.CreateResponse(userMessage, destinationsContentTiles);
+            destinationTile.AppLaunchArgument = trip.Destination;
+            destinationTile.Title = trip.Destination;
+            if (trip.StartDate != null)
+            {
+                destinationTile.TextLine1 = trip.StartDate.Value.ToString(dateFormatInfo.LongDatePattern);
+            }
+            else
+            {
+                destinationTile.TextLine1 = trip.Destination + " " + i;
+            }
 
-    response.AppLaunchArgument = “Las Vegas";
-        
+            destinationsContentTiles.Add(destinationTile);
+            i++;
+        }
+    }
+
+    var response = VoiceCommandResponse.CreateResponse(userMessage, destinationsContentTiles);
+
+    if (trips.Count() > 0)
+    {
+        response.AppLaunchArgument = destination;
+    }
+
     await voiceServiceConnection.ReportSuccessAsync(response);
+}
 ```
 
 ## <span id="Hand-off_screen"></span><span id="hand-off_screen"></span><span id="HAND-OFF_SCREEN"></span>ハンドオフ画面
 
+音声コマンドが認識されると、**Cortana** は ReportSuccessAsync を呼び出し、フィードバックを約 500 ミリ秒内に表示する必要があります。 アプリ サービスが 500 ミリ秒以内に音声コマンドにより指定されたアクションを完了できない場合、**Cortana** はアプリが ReportSuccessAsync を呼び出すまでの間、または最大 5 秒間、ハンドオフ画面をユーザーに表示します。
 
-音声コマンドが認識されたら、**Cortana** は約 500 ミリ秒以内にフィードバックを表示する必要があります。 アプリ サービスが 500 ミリ秒以内に音声コマンドにより指定されたアクションを完了できない場合、**Cortana** は最大 5 秒間ハンドオフ画面をユーザーに表示します。
-
-ハンドオフ画面にはアプリ アイコンと名前が表示されます。音声コマンドが正しく理解されたことを示すために、GUI と音声合成 (TTS) の両方のハンドオフ文字列を提供する必要があります。
+アプリ サービスが ReportSuccessAsync を呼び出さないか、または他の VoiceCommandServiceConnection メソッドを呼び出さない場合、エラー メッセージが表示されてアプリ サービス呼び出しがキャンセルされます。
 
 **Adventure Works** アプリのハンドオフ画面の例を次に示します。 この例では、ユーザーは **Cortana** に旅行の予定を照会しました。 ハンドオフ画面には、アプリ サービス名を使ってカスタマイズされたメッセージ、アイコン、VCD ファイルで宣言された**フィードバック**文字列が表示されます。
 
 ![Cortana のバックグラウンド アプリのハンドオフ画面](images/cortana-backgroundapp-progress-result.png)
 
+
 ## <span id="Progress_screen"></span><span id="progress_screen"></span><span id="PROGRESS_SCREEN"></span>進行状況画面
 
 
-アプリ サービスがステップ間で 500 ミリ秒以上時間がかかっている場合、**Cortana** は何が起こっているのかを進行状況画面でユーザーに伝えます。 アプリ アイコンが表示されます。タスクがアクティブに処理されていることを示すため、GUI と TTS の両方の進行状況文字列を提供する必要があります。
+アプリ サービスが ReportSuccessAsync を呼び出すために 500 ミリ秒より多くの時間がかかる場合、**Cortana** は進行状況画面をユーザーに表示します。 アプリ アイコンが表示されます。タスクがアクティブに処理されていることを示すため、GUI と TTS の両方の進行状況文字列を提供する必要があります。
 
 **Cortana** には、最大 5 秒間進行状況画面が表示されます。 5 秒後、**Cortana** はユーザーにエラー メッセージを表示し、アプリ サービスが終了します。 アプリ サービスがアクションを完了するのに 5 秒以上必要とする場合、進行状況画面を表示して **Cortana** の更新を続けます。
 
-**Adventure Works** アプリのハンドオフ画面の例を次に示します。 この例では、ユーザーは **Cortana** を使ってラスベガス旅行を取り消しました。 進行状況画面には、アクションに合わせてカスタマイズされたメッセージ、アイコン、および取り消す旅行についての情報を含むコンテンツ タイルが表示されます。
+**Adventure Works** アプリの進行状況画面の例を次に示します。 この例では、ユーザーはラスベガス旅行をキャンセルしました。 進行状況画面には、アクションに合わせてカスタマイズされたメッセージ、アイコン、および取り消す旅行についての情報を含むコンテンツ タイルが表示されます。
 
 ![Cortana のバックグラウンド アプリの進行状況画面 ](images/cortana-progress-screen.png)
 
-1.  **Cortana に表示して読み上げるフィードバック文字列を選ぶ**
+AdventureWorksVoiceCommandService.cs には、次の進行状況メッセージ メソッドが含まれています。このメソッドは [**ReportProgressAsync**](https://msdn.microsoft.com/library/windows/apps/dn706579) を呼び出して、**Cortana** に進行状況画面を表示します。
 
-    「[Cortana の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn974233)」に記載された、**Cortana** が表示して読み上げる文字列を作成する際の推奨事項に従います。
-
-2.  **実行するアクションに基づいてコンテンツ タイルを選ぶ (省略可能)**
-
-    コンテンツ タイルは、ユーザーに追加のコンテキストを示し、フィードバック文字列を簡潔に保つのに役立ちます。
-
-    **Cortana** では、次のコンテンツ タイル テンプレートがサポートされます (完了画面で使うことができるテンプレートは 1 つだけです)。
-
-    -   タイトルのみ
-    -   最大 3 行のテキストを含むタイトル
-    -   アイコン付きのタイトル
-    -   アイコン付きで最大 3 行のテキストを含むタイトル
-
-    以下のアイコンを使うことができます。
-
-    -   幅 68 x 高さ 68
-    -   幅 68 x 高さ 92
-    -   幅 280 x 高さ 140
-
-    ユーザーのタイルやアプリへのテキスト リンクをタップして、アプリをフォアグラウンドで起動できるようにすることもできます。
-
-3.  **応答を構築する**
-
-    [
-            **ReportProgressAsync**](https://msdn.microsoft.com/library/windows/apps/dn706579) を呼び出して、**Cortana** に進行状況画面を表示します。
-
-4.  **進行状況画面を表示する**
-
-    コンテンツ タイルを含む進行状況画面の例を次に示します。
 
 ```    CSharp
-var userMessage = new VoiceCommandUserMessage();
+/// <summary>
+/// Show a progress screen. These should be posted at least every 5 seconds for a 
+/// long-running operation.
+/// </summary>
+/// <param name="message">The message to display, relating to the task being performed.</param>
+/// <returns></returns>
+private async Task ShowProgressScreen(string message)
+{
+    var userProgressMessage = new VoiceCommandUserMessage();
+    userProgressMessage.DisplayMessage = userProgressMessage.SpokenMessage = message;
 
-    var destinationsContentTiles = new List<VoiceCommandContentTile>();
-
-    destinationsContentTiles.Add(selectedDestination);
-
-    var response = 
-      VoiceCommandResponse.CreateResponse(userMessage, destinationsContentTiles);
-
-    response.AppLaunchArgument = "destination=Las Vegas";
+    VoiceCommandResponse response = VoiceCommandResponse.CreateResponse(userProgressMessage);
     await voiceServiceConnection.ReportProgressAsync(response);
+}
 ```
 
 ## <span id="Confirmation_screen"></span><span id="confirmation_screen"></span><span id="CONFIRMATION_SCREEN"></span>確認画面
@@ -194,79 +231,116 @@ var userMessage = new VoiceCommandUserMessage();
 
 ![Cortana のバックグラウンド アプリの確認画面](images/cortana-confirmation-screen.png)
 
-1.  **Cortana に表示して読み上げるフィードバック文字列を選ぶ**
-
-    「[Cortana の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn974233)」に記載された、**Cortana** が表示して読み上げる文字列を作成する際の推奨事項に従います。
-
-2.  **実行するアクションに基づいてコンテンツ タイルを選ぶ (省略可能)**
-
-    コンテンツ タイルは、ユーザーに追加のコンテキストを示し、フィードバック文字列を簡潔に保つのに役立ちます。
-
-    **Cortana** では、次のコンテンツ タイル テンプレートがサポートされます (完了画面で使うことができるテンプレートは 1 つだけです)。
-
-    -   タイトルのみ
-    -   最大 3 行のテキストを含むタイトル
-    -   アイコン付きのタイトル
-    -   アイコン付きで最大 3 行のテキストを含むタイトル
-
-    以下のアイコンを使うことができます。
-
-    -   幅 68 x 高さ 68
-    -   幅 68 x 高さ 92
-    -   幅 280 x 高さ 140
-
-    ユーザーのタイルやアプリへのテキスト リンクをタップして、アプリをフォアグラウンドで起動できるようにすることもできます。
-
-3.  **応答を構築する**
-
-    [
-            **RequestConfirmationAsync**](https://msdn.microsoft.com/library/windows/apps/dn706582) を呼び出して、**Cortana** に確認画面を表示します。
-
-4.  **確認画面を表示する**
-
-    コンテンツ タイルを含む確認画面の例を次に示します。
+AdventureWorksVoiceCommandService.cs には、次の旅行取り消しメソッドが含まれています。このメソッドは [**RequestConfirmationAsync**](https://msdn.microsoft.com/library/windows/apps/dn706582) を呼び出して、**Cortana** に確認画面を表示します。
 
 ```    CSharp
-var userPrompt = new VoiceCommandUserMessage();
-    userPrompt.DisplayMessage = userPrompt.SpokenMessage = 
-      "Are you sure you want to cancel the trip to Las Vegas?”;
+/// <summary>
+/// Handle the Trip Cancellation task. This task demonstrates how to prompt a user
+/// for confirmation of an operation, show users a progress screen while performing
+/// a long-running task, and show a completion screen.
+/// </summary>
+/// <param name="destination">The name of a destination.</param>
+/// <returns></returns>
+private async Task SendCompletionMessageForCancellation(string destination)
+{
+    // Begin loading data to search for the target store. 
+    // Consider inserting a progress screen here, in order to prevent Cortana from timing out. 
+    string progressScreenString = string.Format(
+        cortanaResourceMap.GetValue("ProgressLookingForTripToDest", cortanaContext).ValueAsString,
+        destination);
+    await ShowProgressScreen(progressScreenString);
 
-    var userReprompt = new VoiceCommandUserMessage();
-    userReprompt.DisplayMessage = 
-      userReprompt.SpokenMessage = "Do you want to cancel this trip to Las Vegas?"; 
+    Model.TripStore store = new Model.TripStore();
+    await store.LoadTrips();
 
-    userPrompt.DisplayMessage = “Cancel this trip?”;
-    userPrompt.SpokenMessage ="Do you wanna cancel this trip to Vegas?”;
-
-    var userReprompt = new VoiceCommandUserMessage();
-    userReprompt.DisplayMessage = “Did you want to cancel this trip?”;
-    userReprompt.SpokenMessage = "Did you wanna cancel this trip?"; 
-
-    var destinationsContentTiles = new List<VoiceCommandContentTile>();
-
-    var destinationTile = new VoiceCommandContentTile();
-    destinationTile.ContentTileType = 
-      VoiceCommandContentTileType.TitleWith68x68IconAndText;
-    destinationTile.Title = "Vegas Tech Conference";
-
-    destinationTile.TextLine1 = "May 15th";
-
-
-    destinationsContentTiles.Add(destinationTile);
-
-    var response = 
-      VoiceCommandResponse.CreateResponseForPrompt(
-        userPrompt, userReprompt, destinationsContentTiles);
-
-    var voiceCommandConfirmation = 
-      await voiceServiceConnection.RequestConfirmationAsync(response);
-
-    if (voiceCommandConfirmation != null)
+    IEnumerable<Model.Trip> trips = store.Trips.Where(p => p.Destination == destination);
+    Model.Trip trip = null;
+    if (trips.Count() > 1)
     {
-       // Use the voiceCommandConfirmation.Confirmed to take action.
-       // Call Cortana to present the next screen in .5 seconds 
-       // and avoid a transition screen.
+        // If there is more than one trip, provide a disambiguation screen.
+        // However, if a significant number of items are returned, you might want to 
+        // just display a link to your app and provide a deeper search experience.
+        string disambiguationDestinationString = string.Format(
+            cortanaResourceMap.GetValue("DisambiguationWhichTripToDest", cortanaContext).ValueAsString,
+            destination);
+        string disambiguationRepeatString = cortanaResourceMap.GetValue("DisambiguationRepeat", cortanaContext).ValueAsString;
+        trip = await DisambiguateTrips(trips, disambiguationDestinationString, disambiguationRepeatString);
     }
+    else
+    {
+        trip = trips.FirstOrDefault();
+    }
+
+    var userPrompt = new VoiceCommandUserMessage();
+    
+    VoiceCommandResponse response;
+    if (trip == null)
+    {
+        var userMessage = new VoiceCommandUserMessage();
+        string noSuchTripToDestination = string.Format(
+            cortanaResourceMap.GetValue("NoSuchTripToDestination", cortanaContext).ValueAsString,
+            destination);
+        userMessage.DisplayMessage = userMessage.SpokenMessage = noSuchTripToDestination;
+
+        response = VoiceCommandResponse.CreateResponse(userMessage);
+        await voiceServiceConnection.ReportSuccessAsync(response);
+    }
+    else
+    {
+        // Prompt the user for confirmation that this is the correct trip to cancel.
+        string cancelTripToDestination = string.Format(
+            cortanaResourceMap.GetValue("CancelTripToDestination", cortanaContext).ValueAsString,
+            destination);
+        userPrompt.DisplayMessage = userPrompt.SpokenMessage = cancelTripToDestination;
+        var userReprompt = new VoiceCommandUserMessage();
+        string confirmCancelTripToDestination = string.Format(
+            cortanaResourceMap.GetValue("ConfirmCancelTripToDestination", cortanaContext).ValueAsString,
+            destination);
+        userReprompt.DisplayMessage = userReprompt.SpokenMessage = confirmCancelTripToDestination;
+        
+        response = VoiceCommandResponse.CreateResponseForPrompt(userPrompt, userReprompt);
+
+        var voiceCommandConfirmation = await voiceServiceConnection.RequestConfirmationAsync(response);
+
+        // If RequestConfirmationAsync returns null, Cortana has likely been dismissed.
+        if (voiceCommandConfirmation != null)
+        {
+            if (voiceCommandConfirmation.Confirmed == true)
+            {
+                string cancellingTripToDestination = string.Format(
+               cortanaResourceMap.GetValue("CancellingTripToDestination", cortanaContext).ValueAsString,
+               destination);
+                await ShowProgressScreen(cancellingTripToDestination);
+
+                // Perform the operation to remove the trip from app data. 
+                // As the background task runs within the app package of the installed app,
+                // we can access local files belonging to the app without issue.
+                await store.DeleteTrip(trip);
+
+                // Provide a completion message to the user.
+                var userMessage = new VoiceCommandUserMessage();
+                string cancelledTripToDestination = string.Format(
+                    cortanaResourceMap.GetValue("CancelledTripToDestination", cortanaContext).ValueAsString,
+                    destination);
+                userMessage.DisplayMessage = userMessage.SpokenMessage = cancelledTripToDestination;
+                response = VoiceCommandResponse.CreateResponse(userMessage);
+                await voiceServiceConnection.ReportSuccessAsync(response);
+            }
+            else
+            {
+                // Confirm no action for the user.
+                var userMessage = new VoiceCommandUserMessage();
+                string keepingTripToDestination = string.Format(
+                    cortanaResourceMap.GetValue("KeepingTripToDestination", cortanaContext).ValueAsString,
+                    destination);
+                userMessage.DisplayMessage = userMessage.SpokenMessage = keepingTripToDestination;
+
+                response = VoiceCommandResponse.CreateResponse(userMessage);
+                await voiceServiceConnection.ReportSuccessAsync(response);
+            }
+        }
+    }
+}
 ```
 
 ## <span id="Disambiguation_screen"></span><span id="disambiguation_screen"></span><span id="DISAMBIGUATION_SCREEN"></span>不明瞭解消画面
@@ -286,97 +360,72 @@ var userPrompt = new VoiceCommandUserMessage();
 
 ![Cortana のバックグラウンド アプリの不明瞭解消画面 ](images/cortana-disambiguation-screen.png)
 
-1.  **Cortana に表示して読み上げるフィードバック文字列を選ぶ**
+AdventureWorksVoiceCommandService.cs には、次の旅行取り消しメソッドが含まれています。このメソッドは [**RequestDisambiguationAsync**](https://msdn.microsoft.com/library/windows/apps/dn706583) を呼び出して、**Cortana** に不明瞭解消画面を表示します。
 
-    「[Cortana の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn974233)」に記載された、**Cortana** が表示して読み上げる文字列を作成する際の推奨事項に従います。
-
-2.  **実行するアクションに基づいてコンテンツ タイルを選ぶ (省略可能)**
-
-    コンテンツ タイルは、ユーザーに追加のコンテキストを示し、フィードバック文字列を簡潔に保つのに役立ちます。
-
-    **Cortana** では、次のコンテンツ タイル テンプレートがサポートされます (完了画面で使うことができるテンプレートは 1 つだけです)。
-
-    -   タイトルのみ
-    -   最大 3 行のテキストを含むタイトル
-    -   アイコン付きのタイトル
-    -   アイコン付きで最大 3 行のテキストを含むタイトル
-
-    以下のアイコンを使うことができます。
-
-    -   幅 68 x 高さ 68
-    -   幅 68 x 高さ 92
-    -   幅 280 x 高さ 140
-
-    ユーザーのタイルやアプリへのテキスト リンクをタップして、アプリをフォアグラウンドで起動できるようにすることもできます。
-
-3.  **応答を構築する**
-
-    [
-            **RequestDisambiguationAsync**](https://msdn.microsoft.com/library/windows/apps/dn706583) を呼び出して、**Cortana** に不明瞭解消画面を表示します。
-
-4.  **不明瞭解消画面を表示する**
-
-    コンテンツ タイルを含む不明瞭解消画面の例を次に示します。
-
-```    CSharp
-// Create a VoiceCommandUserMessage for the initial question.  
+```csharp
+/// <summary>
+/// Provide the user with a way to identify which trip to cancel. 
+/// </summary>
+/// <param name="trips">The set of trips</param>
+/// <param name="disambiguationMessage">The initial disambiguation message</param>
+/// <param name="secondDisambiguationMessage">Repeat prompt retry message</param>
+private async Task<Model.Trip> DisambiguateTrips(IEnumerable<Model.Trip> trips, string disambiguationMessage, string secondDisambiguationMessage)
+{
+    // Create the first prompt message.
     var userPrompt = new VoiceCommandUserMessage();
-    userPrompt.DisplayMessage = "Which one do you want to cancel?";
-    userPrompt.SpokenMessage = 
-      “Which Vegas trip do you wanna cancel? Vegas Tech Conference or Fun in Vegas?”;
+    userPrompt.DisplayMessage =
+        userPrompt.SpokenMessage = disambiguationMessage;
 
-
-    // Create a VoiceCommandUserMessage for the second question,
-    // in case Cortana needs to reprompt. 
+    // Create a re-prompt message if the user responds with an out-of-grammar response.
     var userReprompt = new VoiceCommandUserMessage();
-    userReprompt.DisplayMessage = “Which one did you want to cancel?”;
-    userReprompt.SpokenMessage = "Which one did you wanna to cancel?";
+    userReprompt.DisplayMessage =
+        userReprompt.SpokenMessage = secondDisambiguationMessage;
 
-    // Create the list of content tiles to show the selection items.
-    var destinationsContentTiles = new List<VoiceCommandContentTile>();
+    // Create card for each item. 
+    var destinationContentTiles = new List<VoiceCommandContentTile>();
+    int i = 1;
+    foreach (Model.Trip trip in trips)
+    {
+        var destinationTile = new VoiceCommandContentTile();
 
-    var destinationTile = new VoiceCommandContentTile();
-    destinationTile.ContentTileType = 
-      VoiceCommandContentTileType.TitleWith68x68IconAndText;
-      
-    // The AppContext is optional. 
-    // Replace this value with something specific to your app. 
-    destinationTile.AppContext = "id_Vegas_001";
-    destinationTile.Title = "Vegas Tech Conference";
+        destinationTile.ContentTileType = VoiceCommandContentTileType.TitleWith68x68IconAndText;
+        destinationTile.Image = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///AdventureWorks.VoiceCommands/Images/GreyTile.png"));
+        
+        // The AppContext can be any arbitrary object.
+        destinationTile.AppContext = trip;
+        string dateFormat = "";
+        if (trip.StartDate != null)
+        {
+            dateFormat = trip.StartDate.Value.ToString(dateFormatInfo.LongDatePattern);
+        }
+        else
+        {
+            // The app allows a trip to have no date.
+            // However, the choices must be unique so they can be distinguished.
+            // Here, we add a number to identify them.
+            dateFormat = string.Format("{0}", i);
+        } 
 
-    destinationTile.TextLine1 = "May 15th";
+        destinationTile.Title = trip.Destination + " " + dateFormat;
+        destinationTile.TextLine1 = trip.Description;
 
+        destinationContentTiles.Add(destinationTile);
+        i++;
+    }
 
-    destinationsContentTiles.Add(destinationTile);
+    // Cortana handles re-prompting if no valid response.
+    var response = VoiceCommandResponse.CreateResponseForPrompt(userPrompt, userReprompt, destinationContentTiles);
 
-    var destination2 = new VoiceCommandContentTile();
-    destination2.ContentTileType = 
-      VoiceCommandContentTileType.TitleWith68x68IconAndText;
-    // The AppContext is optional. 
-    // Replace this value with something specific to your app. 
-    destination2.AppContext = "id_LasVegas_002";
-
-    destination2.Title = "Fun in Vegas";
-
-    destination2.TextLine1 = "August 24th";
-
-    destinationsContentTiles.Add(destination2);
-
-    // Create the disambiguation response.
-    var response = 
-      VoiceCommandResponse.CreateResponseForPrompt(
-        userPrompt, userReprompt, destinationsContentTiles);
-
-    // Request that Cortana shows the Disambiguation screen.
-    var voiceCommandDisambiguationResult = 
-      await voiceServiceConnection.RequestDisambiguationAsync(response);
-
+    // If cortana is dismissed in this operation, null is returned.
+    var voiceCommandDisambiguationResult = await
+        voiceServiceConnection.RequestDisambiguationAsync(response);
     if (voiceCommandDisambiguationResult != null)
     {
-       // Use the voiceCommandDisambiguationResult.SelectedItem to take action.
-       // Call Cortana to present the next screen in .5 seconds   
-       // and avoid a transition screen. 
+        return (Model.Trip)voiceCommandDisambiguationResult.SelectedItem.AppContext;
     }
+
+    return null;
+}
 ```
 
 ## <span id="Error_screen"></span><span id="error_screen"></span><span id="ERROR_SCREEN"></span>エラー画面
@@ -388,42 +437,13 @@ var userPrompt = new VoiceCommandUserMessage();
 
 アプリ サービスは、アクションに合わせてカスタマイズされたメッセージ、アイコン、特定のエラー メッセージが表示されるエラー画面を **Cortana** に提供します。
 
-1.  **Cortana に表示して読み上げるフィードバック文字列を選ぶ**
-
-    「[Cortana の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn974233)」に記載された、**Cortana** が表示して読み上げる文字列を作成する際の推奨事項に従います。
-
-2.  **実行するアクションに基づいてコンテンツ タイルを選ぶ (省略可能)**
-
-    コンテンツ タイルは、ユーザーに追加のコンテキストを示し、フィードバック文字列を簡潔に保つのに役立ちます。
-
-    **Cortana** では、次のコンテンツ タイル テンプレートがサポートされます (完了画面で使うことができるテンプレートは 1 つだけです)。
-
-    -   タイトルのみ
-    -   最大 3 行のテキストを含むタイトル
-    -   アイコン付きのタイトル
-    -   アイコン付きで最大 3 行のテキストを含むタイトル
-
-    以下のアイコンを使うことができます。
-
-    -   幅 68 x 高さ 68
-    -   幅 68 x 高さ 92
-    -   幅 280 x 高さ 140
-
-    ユーザーのタイルやアプリへのテキスト リンクをタップして、アプリをフォアグラウンドで起動できるようにすることもできます。
-
-3.  **応答を構築する**
-
-    [
+[
             **ReportFailureAsync**](https://msdn.microsoft.com/library/windows/apps/dn706578) を呼び出して、**Cortana** にエラー画面を表示します。
 
-4.  **エラー画面を表示する**
-
-    次に示すのは、エラー画面の例です。
-
-```    CSharp
+```csharp
 var userMessage = new VoiceCommandUserMessage();
     userMessage.DisplayMessage = userMessage.SpokenMessage = 
-      "Sorry, you don&#39;t have any trips to Las Vegas";
+      "Sorry, you don't have any trips to Las Vegas";
                 
     var response = VoiceCommandResponse.CreateResponse(userMessage);
 
@@ -453,6 +473,6 @@ var userMessage = new VoiceCommandUserMessage();
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=Mar16_HO4-->
 
 

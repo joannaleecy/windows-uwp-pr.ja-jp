@@ -1,14 +1,14 @@
 ---
-Description: Windows 10 and new developer tools provide the tools, features, and experiences powered by the new Universal Windows Platform (UWP).
-title: Overview of what is new for developers in Windows 10
+Description: Windows 10 と新しい開発者ツールを使うと、新しいユニバーサル Windows プラットフォーム (UWP) によって強化されたツール、機能、エクスペリエンスを利用できます。
+title: Windows 10 における開発者向け新機能の概要
 ---
 
-# What's new for developers in Windows 10,
+# Windows 10 の開発者向け新着情報
 
-| Topic |  Description   |
+| トピック |  説明   |
 |-------|----------------|
-| [What's new for developers in Windows 10, RTM: July 2015](windows-10-rtm-july-2015.md) | Windows 10 and new developer tools provide the tools, features, and experiences powered by the new Universal Windows Platform (UWP). After [installing the tools and SDK](https://dev.windows.com/downloads) on Windows 10, you’re ready to either [create a new Universal Windows app](https://msdn.microsoft.com/library/windows/apps/bg124288) or explore how you can use your [existing app code on Windows](https://msdn.microsoft.com/library/windows/apps/mt238321). |
-| [What's new for developers in Windows 10, version 1511: November 2015](windows-10-version-1511-november-2015.md) | Windows 10, version 1511 and updates to developer tools continue to provide the tools, features, and experiences powered by the Universal Windows Platform. [Install the tools and SDK](https://dev.windows.com/downloads) on Windows 10, version 1511 and you’re ready to either [create a new Universal Windows app](https://msdn.microsoft.com/library/windows/apps/bg124288) or explore how you can use your [existing app code on Windows](https://msdn.microsoft.com/library/windows/apps/mt238321). |
+| [Windows 10 の開発者向け新着情報 (RTM: 2015 年 7 月)](windows-10-rtm-july-2015.md) | Windows 10 と新しい開発者ツールを使うと、新しいユニバーサル Windows プラットフォーム (UWP) によって強化されたツール、機能、エクスペリエンスを利用できます。 Windows 10 への[ツールと SDK のインストール](https://dev.windows.com/downloads)が完了したら、[新しいユニバーサル Windows アプリを作成](https://msdn.microsoft.com/library/windows/apps/bg124288)したり、[Windows の既存のアプリ コード](https://msdn.microsoft.com/library/windows/apps/mt238321)がどのように使えるかを試したりすることができます。 |
+| [Windows 10 の開発者向け新着情報 (バージョン 1511: 2015 年 11 月)](windows-10-version-1511-november-2015.md) | Windows 10 バージョン 1511 と開発者ツールの更新プログラムでは、引き続きユニバーサル Windows プラットフォームによって強化されたツール、機能、およびエクスペリエンスを提供しています。 Windows 10 バージョン 1511 用の [ツールと SDK をインストール](https://dev.windows.com/downloads)すると、[新しいユニバーサル Windows アプリを作成](https://msdn.microsoft.com/library/windows/apps/bg124288)したり、[Windows の既存のアプリ コード](https://msdn.microsoft.com/library/windows/apps/mt238321)がどのように使えるかを試したりすることができます。 |
 
 <!--HONumber=Mar16_HO5-->
 

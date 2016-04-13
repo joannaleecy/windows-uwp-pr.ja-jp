@@ -1,163 +1,170 @@
 ---
 ms.assetid: 831123A7-1F40-4B74-AE9F-69AC9883B4AD
-description: This article shows you how video device controls to enable enhanced photo and video capture scenarios including optical image stabilization and smooth zoom.
-title: Capture device controls for photo and video capture
+description: この記事では、光学式手ブレ補正やスムーズ ズームなど、写真とビデオのキャプチャに関する拡張シナリオを可能にするために、ビデオ デバイスを制御する方法について説明します。
+title: 写真とビデオのキャプチャのためのキャプチャ デバイス コントロール
 ---
 
-# Capture device controls for photo and video capture
+# 写真とビデオのキャプチャのためのキャプチャ デバイス コントロール
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-This article shows you how video device controls to enable enhanced photo and video capture scenarios including optical image stabilization and smooth zoom.
+この記事では、光学式手ブレ補正やスムーズ ズームなど、写真とビデオのキャプチャに関する拡張シナリオを可能にするために、ビデオ デバイスを制御する方法について説明します。
 
-The controls discussed in this article are all added to your app using the same pattern. First, you check to see if the control is supported on the current device on which your app is running. If the control is supported, then you set the desired mode for the control. Typically, if a particular control is unsupported on the current device, you should disable or hide the UI element that allows the user to enable the feature.
+この記事で説明するコントロールはすべて、同じパターンを使ってアプリに追加されます。 まず、アプリが実行されている現在のデバイスで、コントロールがサポートされているかどうかを確認します。 コントロールがサポートされている場合は、コントロールに対して必要なモードを設定します。 一般的に、現在のデバイスで特定のコントロールがサポートされていない場合は、ユーザーがその機能を有効にできるような UI 要素を無効または非表示にする必要があります。
 
-The code in this article was adapted from the [Camera Manual Controls SDK sample](http://go.microsoft.com/fwlink/?LinkId=619479). You can download the sample to see the code used in context or to use the sample as a starting point for your own app.
+この記事のコードは、[カメラの手動コントロール SDK のサンプル](http://go.microsoft.com/fwlink/?LinkId=619479)を基にしています。 このサンプルをダウンロードし、該当するコンテキストで使用されているコードを確認することも、サンプルを独自のアプリの開始点として使用することもできます。
 
-**Note** This article builds on concepts and code discussed in [Capture Photos and Video with MediaCapture](capture-photos-and-video-with-mediacapture.md), which describes the steps for implementing basic photo and video capture. It is recommended that you familiarize yourself with the basic media capture pattern in that article before moving on to more advanced capture scenarios. The code in this article assumes that your app already has an instance of MediaCapture that has been properly initialized.
+**注** この記事は、写真やビデオの基本的なキャプチャ機能を実装するための手順を紹介した「[MediaCapture を使った写真とビデオのキャプチャ](capture-photos-and-video-with-mediacapture.md)」で取り上げた概念やコードを基に執筆されています。 そちらの記事で基本的なメディア キャプチャのパターンを把握してから、高度なキャプチャ シナリオに進むことをお勧めします。 この記事で紹介しているコードは、MediaCapture のインスタンスが既に作成され、適切に初期化されていることを前提としています。
 
-All of the device control APIs discussed in this article are members of the [**Windows.Media.Devices**](https://msdn.microsoft.com/library/windows/apps/br206902) namespace.
+この記事で説明するデバイス制御 API はすべて、[**Windows.Media.Devices**](https://msdn.microsoft.com/library/windows/apps/br206902) 名前空間のメンバーです。
 
 [!code-cs[VideoControllersUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoControllersUsing)]
 
-## Exposure
+## 露出
 
-The [**ExposureControl**](https://msdn.microsoft.com/library/windows/apps/dn278910) allows you to set the shutter speed used during photo or video capture.
+[
+            **ExposureControl**](https://msdn.microsoft.com/library/windows/apps/dn278910) によって、写真やビデオのキャプチャ時に使用されるシャッター速度を設定できます。
 
-This example uses a [**Slider**](https://msdn.microsoft.com/library/windows/apps/br209614) control to adjust the current exposure value and a checkbox to toggle automatic exposure adjustment.
+この例では、[**スライダー**](https://msdn.microsoft.com/library/windows/apps/br209614) コントロールを使って現在の露出値を調整し、チェック ボックスを使って自動露出調整のオンとオフを切り替えます。
 
 [!code-xml[ExposureXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetExposureXAML)]
 
-Check to see if the current capture device supports the **ExposureControl** by checking the [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297710) property. If the control is supported, then you can show and enable the UI for this feature. Set the checked state of the checkbox to indicate if automatic exposure adjustment is currently active to the value of the [**Auto**](https://msdn.microsoft.com/library/windows/apps/dn278911) property.
+現在のキャプチャ デバイスで **ExposureControl** がサポートされているかどうかを確認するには、[**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297710) プロパティを確認します。 コントロールがサポートされている場合は、この機能の UI を表示し、有効にすることができます。 自動露出調整が現在アクティブであるかどうかを示すために、チェック ボックスのオンの状態を [**Auto**](https://msdn.microsoft.com/library/windows/apps/dn278911) プロパティの値に設定します。
 
-The exposure value must be within the range supported by the device and must be an increment of the supported step size. Get the supported values for the current device by checking the [**Min**](https://msdn.microsoft.com/library/windows/apps/dn278919), [**Max**](https://msdn.microsoft.com/library/windows/apps/dn278914), and [**Step**](https://msdn.microsoft.com/library/windows/apps/dn278930) properties, which are used to set the corresponding properties of the slider control.
+露出値は、デバイスでサポートされている範囲内である必要があり、サポートされているステップ サイズのインクリメントである必要があります。 現在のデバイスでサポートされている値を取得するには、[**Min**](https://msdn.microsoft.com/library/windows/apps/dn278919)、[**Max**](https://msdn.microsoft.com/library/windows/apps/dn278914)、および [**Step**](https://msdn.microsoft.com/library/windows/apps/dn278930) プロパティを確認します。これらのプロパティは、対応するスライダー コントロールのプロパティを設定するために使用されます。
 
-Set the slider control's value to the current value of the **ExposureControl** after unregistering the [**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/br209737) event handler so that the event is not triggered when the value is set.
+値が設定されたときにイベントがトリガーされないように、[**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/br209737) イベント ハンドラーの登録を解除した後、スライダー コントロールの値を **ExposureControl** の現在値に設定します。
 
 [!code-cs[ExposureControl](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetExposureControl)]
 
-In the **ValueChanged** event handler, get the current value of the control and the set the exposure value by calling [**SetValueAsync**](https://msdn.microsoft.com/library/windows/apps/dn278927).
+**ValueChanged** イベント ハンドラーで、コントロールの現在の値を取得し、[**SetValueAsync**](https://msdn.microsoft.com/library/windows/apps/dn278927) を呼び出して露出値を設定します。
 
 [!code-cs[ExposureSlider](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetExposureSlider)]
 
-In the **CheckedChanged** event handler of the auto exposure checkbox, turn automatic exposure adjustment on or off by calling [**SetAutoAsync**](https://msdn.microsoft.com/library/windows/apps/dn278920) and passing in a boolean value.
+自動露出チェック ボックスの **CheckedChanged** イベント ハンドラーで、[**SetAutoAsync**](https://msdn.microsoft.com/library/windows/apps/dn278920) を呼び出してブール値を渡すことにより、自動露出調整のオンとオフを切り替えます。
 
 [!code-cs[ExposureCheckBox](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetExposureCheckBox)]
 
-**Important** Automatic exposure mode is only supported while the preview stream is running. Check to make sure that the preview stream is running before turning on automatic exposure.
+**重要:** 自動露出モードは、プレビュー ストリームが実行中であるときにのみサポートされます。 自動露出をオンにする前に、プレビュー ストリームが実行されていることを確認します。
 
-## Exposure compensation
+## 露出補正
 
-The [**ExposureCompensationControl**](https://msdn.microsoft.com/library/windows/apps/dn278897) allows you to set the exposure compensation used during photo or video capture.
+[
+            **ExposureCompensationControl**](https://msdn.microsoft.com/library/windows/apps/dn278897) によって、写真やビデオのキャプチャ時に使用される露出補正を設定できます。
 
-This example uses a [**Slider**](https://msdn.microsoft.com/library/windows/apps/br209614) control to adjust the current exposure compensation value.
+この例では、[**スライダー**](https://msdn.microsoft.com/library/windows/apps/br209614) コントロールを使って、現在の露出補正値を調整します。
 
 [!code-xml[EvXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetEvXAML)]
 
-Check to see if the current capture device supports the **ExposureCompensationControl** by checking the [Supported](supported-codecs.md) property. If the control is supported, then you can show and enable the UI for this feature.
+現在のキャプチャ デバイスで **ExposureCompensationControl** がサポートされているかどうかを確認するには、[Supported](supported-codecs.md) プロパティを確認します。 コントロールがサポートされている場合は、この機能の UI を表示し、有効にすることができます。
 
-The exposure compensation value must be within the range supported by the device and must be an increment of the supported step size. Get the supported values for the current device by checking the [**Min**](https://msdn.microsoft.com/library/windows/apps/dn278901), [**Max**](https://msdn.microsoft.com/library/windows/apps/dn278899), and [**Step**](https://msdn.microsoft.com/library/windows/apps/dn278904) properties, which are used to set the corresponding properties of the slider control.
+露出補正値は、デバイスでサポートされている範囲内である必要があり、サポートされているステップ サイズのインクリメントである必要があります。 現在のデバイスでサポートされている値を取得するには、[**Min**](https://msdn.microsoft.com/library/windows/apps/dn278901)、[**Max**](https://msdn.microsoft.com/library/windows/apps/dn278899)、および [**Step**](https://msdn.microsoft.com/library/windows/apps/dn278904) プロパティを確認します。これらのプロパティは、対応するスライダー コントロールのプロパティを設定するために使用されます。
 
-Set slider control's value to the current value of the **ExposureCompensationControl** after unregistering the [**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/br209737) event handler so that the event is not triggered when the value is set.
+値が設定されたときにイベントがトリガーされないように、[**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/br209737) イベント ハンドラーの登録を解除した後、スライダー コントロールの値を **ExposureCompensationControl** の現在値に設定します。
 
 [!code-cs[EvControl](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetEvControl)]
 
-In the **ValueChanged** event handler, get the current value of the control and the set the exposure value by calling [**SetValueAsync**](https://msdn.microsoft.com/library/windows/apps/dn278903).
+**ValueChanged** イベント ハンドラーで、コントロールの現在の値を取得し、[**SetValueAsync**](https://msdn.microsoft.com/library/windows/apps/dn278903) を呼び出して露出値を設定します。
 
 [!code-cs[EvValueChanged](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetEvValueChanged)]
 
-## Flash
+## フラッシュ
 
-The [**FlashControl**](https://msdn.microsoft.com/library/windows/apps/dn297725) allows you to enable or disable the flash or to enable automatic flash, where the system dynamically determines whether to use the flash. This control also allows you to enable automatic red eye reduction on devices that support it. These settings all apply to capturing photos. The [**TorchControl**](https://msdn.microsoft.com/library/windows/apps/dn279077) is a separate control for turning the torch on or off for video capture.
+[
+            **FlashControl**](https://msdn.microsoft.com/library/windows/apps/dn297725) によって、フラッシュを有効または無効にしたり、フラッシュを使うかどうかをシステムが動的に判断する、自動フラッシュを有効にしたりすることができます。 このコントロールによって、サポートされているデバイスで自動赤目軽減を有効にすることもできます。 これらの設定はすべて写真のキャプチャに適用されます。 [
+            **TorchControl**](https://msdn.microsoft.com/library/windows/apps/dn279077) は、ビデオ キャプチャ時のトーチのオンとオフを切り替える別のコントロールです。
 
-This example uses a set of radio buttons to allow the user to switch between on, off, and auto flash settings. A checkbox is also provided to allow toggling of red eye reduction and the video torch.
+この例では、一連のラジオ ボタンを使って、ユーザーがオン、オフ、自動のフラッシュ設定を切り替えることができるようにします。 赤目軽減とビデオ トーチのオンとオフを切り替えるためのチェック ボックスも用意されています。
 
 [!code-xml[FlashXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetFlashXAML)]
 
-Check to see if the current capture device supports the **FlashControl** by checking the [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297837) property. If the control is supported, then you can show and enable the UI for this feature. If the **FlashControl** is supported, automatic red eye reduction may or may not be supported, so check the [**RedEyeReductionSupported**](https://msdn.microsoft.com/library/windows/apps/dn297766) property before enabling the UI. Since the **TorchControl** is separate from the flash control, you must also check its [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn279081) property before using it.
+現在のキャプチャ デバイスで **FlashControl** がサポートされているかどうかを確認するには、[**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297837) プロパティを確認します。 コントロールがサポートされている場合は、この機能の UI を表示し、有効にすることができます。 **FlashControl** がサポートされている場合でも、自動赤目軽減はサポートされている場合とサポートされていない場合があるため、UI を有効にする前に [**RedEyeReductionSupported**](https://msdn.microsoft.com/library/windows/apps/dn297766) プロパティを確認します。 **TorchControl** はフラッシュ コントロールとは別であるため、使用する前にその [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn279081) プロパティも確認する必要があります。
 
-In the [**Checked**](https://msdn.microsoft.com/library/windows/apps/br209796) event handler for each of the flash radio buttons, enable or disable the appropriate corresponding flash setting. Note that to set the flash to always be used, you must set the [**Enabled**](https://msdn.microsoft.com/library/windows/apps/dn297733) property to true and the [**Auto**](https://msdn.microsoft.com/library/windows/apps/dn297728) property to false.
+フラッシュの各ラジオ ボタンの [**Checked**](https://msdn.microsoft.com/library/windows/apps/br209796) イベント ハンドラーで、適切な対応するフラッシュの設定を有効または無効にします。 フラッシュが常に使用されるように設定するには、[**Enabled**](https://msdn.microsoft.com/library/windows/apps/dn297733) プロパティを true に、[**Auto**](https://msdn.microsoft.com/library/windows/apps/dn297728) プロパティを false に設定する必要があります。
 
 [!code-cs[FlashControl](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetFlashControl)]
 
 [!code-cs[FlashRadioButtons](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetFlashRadioButtons)]
 
-In the handler for the red eye reduction checkbox, set the [**RedEyeReduction**](https://msdn.microsoft.com/library/windows/apps/dn297758) property to the appropriate value.
+赤目軽減チェック ボックスのハンドラーで、[**RedEyeReduction**](https://msdn.microsoft.com/library/windows/apps/dn297758) プロパティを適切な値に設定します。
 
 [!code-cs[RedEye](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetRedEye)]
 
-Finally, in the handler for the video torch checkbox, set the [**Enabled**](https://msdn.microsoft.com/library/windows/apps/dn279078) property to the appropriate value.
+最後に、ビデオ トーチ チェック ボックスのハンドラーで、[**Enabled**](https://msdn.microsoft.com/library/windows/apps/dn279078) プロパティを適切な値に設定します。
 
 [!code-cs[Torch](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTorch)]
 
-**Note** On some devices the torch will not emit light, even if [**TorchControl.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn279078) is set to true, unless the device has a preview stream running and is actively capturing video. The recommended order of operations is to turn on the video preview, then turn on the torch by setting **Enabled** to true, and then initiate video capture. On some devices the torch will light up after the preview is started. On other devices, the torch may not light up until video capture is started.
+**注:** 一部のデバイスでは、[**TorchControl.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn279078) が true に設定されている場合でも、デバイスがプレビュー ストリームを実行中で、アクティブにビデオをキャプチャ中ではない限り、トーチは発光しません。 推奨される処理の順序は、ビデオのプレビューを有効にし、**Enabled** を true に設定してトーチを有効にした後、ビデオ キャプチャを開始するという順序です。 一部のデバイスでは、プレビューを開始した後もトーチが点灯しません。 その他のデバイスでは、トーチはビデオのキャプチャを開始するまで点灯しません。
 
-## Focus
+## フォーカス
 
-Three different commonly used methods for adjusting the focus of the camera are supported by the [**FocusControl**](https://msdn.microsoft.com/library/windows/apps/dn297788) object, continuous autofocus, tap to focus, and manual focus. A camera app may support all three of these methods, but for readability, this article discusses each technique separately. This section also discusses how to enable the focus assist light.
+[
+            **FocusControl**](https://msdn.microsoft.com/library/windows/apps/dn297788) オブジェクトでは、カメラのフォーカスを調整するためによく使用される 3 種類の方法である、連続オート フォーカス、タップしてフォーカス、手動フォーカスがサポートされています。 カメラ アプリでこれらの 3 つの方法がすべてをサポートされている可能性がありますが、分かりやすくするために、この記事ではそれぞれの手法を個別に説明します。 このセクションでは、フォーカス アシスト ライトを有効にする方法も説明します。
 
-### Continuous autofocus
+### 連続オート フォーカス
 
-Enabling continuous autofocus instructs the camera to adjust the focus dynamically to try to keep the subject of the photo or video in focus. This example uses a radio button to toggle continuous autofocus on and off.
+連続オート フォーカスを有効にすると、カメラに対して、動的にフォーカスを調整して、写真やビデオの被写体にフォーカスを合わせ続けるように指示されます。 この例では、ラジオ ボタンを使用して連続オート フォーカスのオンとオフを切り替えます。
 
 [!code-xml[CAFXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetCAFXAML)]
 
-Check to see if the current capture device supports the **FocusControl** by checking the [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297785) property. Then, see if continuous autofocus is supported by checking the [**SupportedFocusModes**](https://msdn.microsoft.com/library/windows/apps/dn608079) list to see if it contains the value [**FocusMode.Continuous**](https://msdn.microsoft.com/library/windows/apps/dn608084), and if so, show the continuous autofocus radio button.
+現在のキャプチャ デバイスで **FocusControl** がサポートされているかどうかを確認するには、[**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297785) プロパティを確認します。 次に、連続オート フォーカスがサポートされている場合は、[**SupportedFocusModes**](https://msdn.microsoft.com/library/windows/apps/dn608079) の一覧を確認して値 [**FocusMode.Continuous**](https://msdn.microsoft.com/library/windows/apps/dn608084) が含まれていることを確認します。この値が含まれている場合は、連続オート フォーカスのラジオ ボタンを表示します。
 
 [!code-cs[CAF](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetCAF)]
 
-In the [**Checked**](https://msdn.microsoft.com/library/windows/apps/br209796) event handler for the continuous autofocus radio button, use the [**VideoDeviceController.FocusControl**](https://msdn.microsoft.com/library/windows/apps/dn279091) property to get an instance of the control. Call [**UnlockAsync**](https://msdn.microsoft.com/library/windows/apps/dn608081) to unlock the control in case your app has previously called [**LockAsync**](https://msdn.microsoft.com/library/windows/apps/dn608075) to enable one of the other focus modes.
+連続オート フォーカス ラジオ ボタンの [**Checked**](https://msdn.microsoft.com/library/windows/apps/br209796) イベント ハンドラーで、[**VideoDeviceController.FocusControl**](https://msdn.microsoft.com/library/windows/apps/dn279091) プロパティを使ってコントロールのインスタンスを取得します。 アプリが以前に [**LockAsync**](https://msdn.microsoft.com/library/windows/apps/dn608075) を呼び出して他のフォーカス モードのいずれかを有効にしていた場合は、[**UnlockAsync**](https://msdn.microsoft.com/library/windows/apps/dn608081) を呼び出してコントロールのロックを解除します。
 
-Create a new [**FocusSettings**](https://msdn.microsoft.com/library/windows/apps/dn608085) object and set the [**Mode**](https://msdn.microsoft.com/library/windows/apps/dn608090) property to **Continuous**. Set the [**AutoFocusRange**](https://msdn.microsoft.com/library/windows/apps/dn608086) property to a value appropriate for your app scenario or selected by the user from your UI. Pass your **FocusSettings** object into the [**Configure**](https://msdn.microsoft.com/library/windows/apps/dn608067) method and then call [**FocusAsync**](https://msdn.microsoft.com/library/windows/apps/dn297794) to initiate continuous autofocus.
+新しい [**FocusSettings**](https://msdn.microsoft.com/library/windows/apps/dn608085) オブジェクトを作成し、[**Mode**](https://msdn.microsoft.com/library/windows/apps/dn608090) プロパティを **Continuous** に設定します。 [
+            **AutoFocusRange**](https://msdn.microsoft.com/library/windows/apps/dn608086) プロパティをアプリのシナリオに適した値またはユーザーが UI で選択した値に設定します。 **FocusSettings** オブジェクトを [**Configure**](https://msdn.microsoft.com/library/windows/apps/dn608067) メソッドに渡し、[**FocusAsync**](https://msdn.microsoft.com/library/windows/apps/dn297794) を呼び出して連続オート フォーカスを開始します。
 
 [!code-cs[CafFocusRadioButton](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetCafFocusRadioButton)]
 
-**Important** Autofocus mode is only supported while the preview stream is running. Check to make sure that the preview stream is running before turning on continuous autofocus.
+**重要:** オート フォーカス モードは、プレビュー ストリームが実行中であるときにのみサポートされます。 連続オート フォーカスをオンにする前に、プレビュー ストリームが実行されていることを確認します。
 
-### Tap to focus
+### タップしてフォーカス
 
-The tap-to-focus technique uses the [**FocusControl**](https://msdn.microsoft.com/library/windows/apps/dn297788) and the [**RegionsOfInterestControl**](https://msdn.microsoft.com/library/windows/apps/dn279064) to specify a subregion of the capture frame where the capture device should focus. The region of focus is determined by the user tapping on the screen displaying the preview stream.
+タップしてフォーカスの手法では、[**FocusControl**](https://msdn.microsoft.com/library/windows/apps/dn297788) と [**RegionsOfInterestControl**](https://msdn.microsoft.com/library/windows/apps/dn279064) を使って、キャプチャ デバイスでフォーカスを合わせるキャプチャ フレームのサブ領域を指定します。 フォーカスの領域は、プレビュー ストリームが表示されている画面をユーザーがタップすることによって決定されます。
 
-This example uses a radio button to enable and disable tap-to-focus mode.
+この例では、ラジオ ボタンを使って、タップしてフォーカス モードを有効または無効にします。
 
 [!code-xml[TapFocusXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetTapFocusXAML)]
 
-Check to see if the current capture device supports the **FocusControl** by checking the [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297785) property. The **RegionsOfInterestControl** must be supported, and must support at least one region, in order to use this technique. Check the [**AutoFocusSupported**](https://msdn.microsoft.com/library/windows/apps/dn279066) and [**MaxRegions**](https://msdn.microsoft.com/library/windows/apps/dn279069) properties to determine whether to show or hide the radio button for tap-to-focus.
+現在のキャプチャ デバイスで **FocusControl** がサポートされているかどうかを確認するには、[**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297785) プロパティを確認します。 この手法を使うには、**RegionsOfInterestControl** がサポートされており、少なくとも 1 つの領域をサポートしている必要があります。 [
+            **AutoFocusSupported**](https://msdn.microsoft.com/library/windows/apps/dn279066) および [**MaxRegions**](https://msdn.microsoft.com/library/windows/apps/dn279069) プロパティを確認して、タップしてフォーカスのラジオ ボタンを表示するか、非表示にするかを決定します。
 
 [!code-cs[TapFocus](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTapFocus)]
 
-In the [**Checked**](https://msdn.microsoft.com/library/windows/apps/br209796) event handler for the tap-to-focus radio button, use the [**VideoDeviceController.FocusControl**](https://msdn.microsoft.com/library/windows/apps/dn279091) property to get an instance of the control. Call [**LockAsync**](https://msdn.microsoft.com/library/windows/apps/dn608075) to lock the control in case your app has previously called [**UnlockAsync**](https://msdn.microsoft.com/library/windows/apps/dn608081) to enable continuous autofocus. Then you wait for the user to tap the screen to change the focus.
+タップしてフォーカスのラジオ ボタンの [**Checked**](https://msdn.microsoft.com/library/windows/apps/br209796) イベント ハンドラーで、[**VideoDeviceController.FocusControl**](https://msdn.microsoft.com/library/windows/apps/dn279091) プロパティを使ってコントロールのインスタンスを取得します。 アプリが以前に [**UnlockAsync**](https://msdn.microsoft.com/library/windows/apps/dn608081) を呼び出して連続オート フォーカスを有効にしていた場合は、[**LockAsync**](https://msdn.microsoft.com/library/windows/apps/dn608075) を呼び出してコントロールをロックします。 次に、ユーザーが画面をタップしてフォーカスを変更するまで待機します。
 
 [!code-cs[TapFocusRadioButton](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTapFocusRadioButton)]
 
-This example focuses on a region when the user taps the screen, and then removes the focus from that region when the user taps again, like a toggle. Use a boolean variable to track the current toggled state.
+この例は、ユーザーが画面をタップすると領域にフォーカスを合わせ、ユーザーがもう一度タップすると、トグルのように、その領域からフォーカスを削除します。 現在のトグルの状態を追跡するには、ブール変数を使います。
 
 [!code-cs[IsFocused](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetIsFocused)]
 
-The next step is to listen for the event when the user taps the screen by handling the [**Tapped**](https://msdn.microsoft.com/library/windows/apps/br208985) event of the [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) that is currently displaying the capture preview stream. If the camera isn't currently previewing, or if tap-to-focus mode is disabled, then return from the handler without doing anything.
+次の手順では、ユーザーが画面をタップしたときのイベントをリッスンします。そのためには、現在キャプチャ プレビュー ストリームを表示している [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) の [**Tapped**](https://msdn.microsoft.com/library/windows/apps/br208985) イベントを処理します。 カメラが現在プレビューを表示していない場合や、タップしてフォーカス モードが無効である場合は、何もせずにハンドラーから制御を戻します。
 
-If the tracking variable *\_isFocused* is toggled to false and if the camera isn't currently in the process of focus - determined by the [**FocusState**](https://msdn.microsoft.com/library/windows/apps/dn608074) property of the **FocusControl** - then begin the tap-to-focus process. Get the position of the user's tap from the event args passed into the handler. This example also uses this opportunity to pick the size of the region that will be focused upon. In this case, the size is 1/4 of the smallest dimension of the capture element. Pass the tap position and the region size into the **TapToFocus** helper method that is defined in the next section.
+追跡変数 *\_isFocused* が false になっており、カメラが現在フォーカスを処理していない場合 (**FocusControl** の [**FocusState**](https://msdn.microsoft.com/library/windows/apps/dn608074) プロパティによって特定される)、タップしてフォーカスの処理を開始します。 ハンドラーに渡されるイベント引数から、ユーザーのタップの位置を取得します。 また、この例では、この機会を利用して、フォーカスが設定される領域のサイズを取得します。 この場合、サイズは、キャプチャ要素の最小サイズの 1/4 です。 タップの位置と領域のサイズを、次のセクションで定義される **TapToFocus** ヘルパー メソッドに渡します。
 
-If the *\_isFocused* toggle is set to true, then the user tap should clear the focus from the previous region. This is done in the **TapUnfocus** helper method shown below.
+*\_isFocused* トグルが true に設定されている場合、ユーザーのタップによって、前の領域からフォーカスがクリアされます。 これは、次に示す **TapUnfocus** ヘルパー メソッドで行われます。
 
 [!code-cs[TapFocusPreviewControl](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTapFocusPreviewControl)]
 
-In the **TapToFocus** helper method, first set the *\_isFocused* toggle to true so that the next screen tap will release the focus from the tapped region.
+**TapToFocus** ヘルパー メソッドで、最初に *\_isFocused* トグルを true に設定します。これにより、次に画面をタップしたときに、タップした領域からフォーカスが解除されます。
 
-The next task in this helper method is to determine the rectangle within the preview stream that will be assigned to the focus control. This requires two steps. The first step is to determine the rectangle that the preview stream takes up within the [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) control. This depends on the dimensions of the preview stream and the orientation of the device. The helper method **GetPreviewStreamRectInControl**, shown at the end of this section, performs this task and returns the rectangle containing the preview stream.
+このヘルパー メソッドの次のタスクでは、フォーカス コントロールに割り当てられるプレビュー ストリーム内の四角形を決定します。 これには 2 つのステップが必要です。 最初のステップは、[**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) コントロール内でプレビュー ストリームが占有する四角形を特定することです。 これは、プレビュー ストリームのサイズとデバイスの向きに依存します。 ヘルパー メソッド **GetPreviewStreamRectInControl** (このセクションの最後に示されている) は、このタスクを実行し、プレビュー ストリームが含まれている四角形を返します。
 
-The next task in **TapToFocus** is to convert the tap location and desired focus rectangle size, which were determined within the **CaptureElement.Tapped** event handler, into coordinates within capture stream. The **ConvertUiTapToPreviewRect** helper method, shown later in this section, performs this conversion and returns the rectangle, in capture stream coordinates, where the focus will be requested.
+**TapToFocus** の次のタスクは、**CaptureElement.Tapped** イベント ハンドラーで特定された、タップの位置と目的のフォーカスの四角形のサイズを、キャプチャ ストリーム内の座標に変換することです。 **ConvertUiTapToPreviewRect** ヘルパー メソッド (このセクションで後で説明されている) は、フォーカスが要求されている四角形をキャプチャ ストリームの座標で返します。
 
-Now that the target rectangle has been obtained, create a new [**RegionOfInterest**](https://msdn.microsoft.com/library/windows/apps/dn279058) object, setting the [**Bounds**](https://msdn.microsoft.com/library/windows/apps/dn279062) property to the target rectangle obtained in the previous steps.
+ターゲットの四角形が取得されたら、[**Bounds**](https://msdn.microsoft.com/library/windows/apps/dn279062) プロパティを前の手順で取得されたターゲットの四角形に設定して、新しい [**RegionOfInterest**](https://msdn.microsoft.com/library/windows/apps/dn279058) オブジェクトを作成します。
 
-Get the capture device's [**FocusControl**](https://msdn.microsoft.com/library/windows/apps/dn297788). Create a new [**FocusSettings**](https://msdn.microsoft.com/library/windows/apps/dn608085) object and set the [**Mode**](https://msdn.microsoft.com/library/windows/apps/dn608076) and [**AutoFocusRange**](https://msdn.microsoft.com/library/windows/apps/dn608086) to your desired values, after checking to make sure that they are supported by the **FocusControl**. Call [**Configure**](https://msdn.microsoft.com/library/windows/apps/dn608067) on the **FocusControl** to make your settings active and signal the device to begin focusing on the specified region.
+キャプチャ デバイスの [**FocusControl**](https://msdn.microsoft.com/library/windows/apps/dn297788) を取得します。 新しい [**FocusSettings**](https://msdn.microsoft.com/library/windows/apps/dn608085) オブジェクトを作成し、**FocusControl** でサポートされていることを確認した後、[**Mode**](https://msdn.microsoft.com/library/windows/apps/dn608076) と [**AutoFocusRange**](https://msdn.microsoft.com/library/windows/apps/dn608086) を目的の値に設定します。 最後に、**FocusControl** で [**Configure**](https://msdn.microsoft.com/library/windows/apps/dn608067) を呼び出して、設定をアクティブにし、指定された領域へのフォーカスを開始するようにデバイスに通知します。
 
-Next, get the capture device's [**RegionsOfInterestControl**](https://msdn.microsoft.com/library/windows/apps/dn279064) and call [**SetRegionsAsync**](https://msdn.microsoft.com/library/windows/apps/dn279070) to set the active region. Multiple regions of interest can be set on devices that support it, but this example only sets a single region.
+次に、キャプチャ デバイスの [**RegionsOfInterestControl**](https://msdn.microsoft.com/library/windows/apps/dn279064) を取得し、[**SetRegionsAsync**](https://msdn.microsoft.com/library/windows/apps/dn279070) を呼び出してアクティブな領域を設定します。 サポートされているデバイスでは複数の対象領域を設定できますが、この例では単一の領域のみを設定します。
 
-Finally, call [**FocusAsync**](https://msdn.microsoft.com/library/windows/apps/dn297794) on the **FocusControl** to initiate focusing.
+最後に、**FocusControl** で [**FocusAsync**](https://msdn.microsoft.com/library/windows/apps/dn297794) を呼び出して、フォーカス設定を開始します。
 
-**Important** When implementing tap to focus, the order of operations is important. You should call these APIs in the following order:
+**重要:** タップによるフォーカスを実装する場合、操作の順序が重要になります。 これらの API は、次の順序で呼び出す必要があります。
 
 **1.**[**FocusControl.Configure**](https://msdn.microsoft.com/library/windows/apps/dn608067)
 **2.**[**RegionsOfInterestControl.SetRegionsAsync**](https://msdn.microsoft.com/library/windows/apps/dn279070)
@@ -165,163 +172,169 @@ Finally, call [**FocusAsync**](https://msdn.microsoft.com/library/windows/apps/d
 
 [!code-cs[TapToFocus](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTapToFocus)]
 
-In the **TapUnfocus** helper method, obtain the **RegionsOfInterestControl** and call [**ClearRegionsAsync**](https://msdn.microsoft.com/library/windows/apps/dn279068) to clear the region that was registered with the control within the **TapToFocus** helper method. Then, get the **FocusControl** and call [**FocusAsync**](https://msdn.microsoft.com/library/windows/apps/dn297794) to cause the device to refocus without a region of interest.
+**TapUnfocus** ヘルパー メソッドで、**RegionsOfInterestControl** を取得し、[**ClearRegionsAsync**](https://msdn.microsoft.com/library/windows/apps/dn279068) を呼び出して、**TapToFocus** ヘルパー メソッドでコントロールに登録された領域をクリアします。 次に、**FocusControl** を取得し、[**FocusAsync**](https://msdn.microsoft.com/library/windows/apps/dn297794) を呼び出して、対象領域を指定せずにデバイスで再びフォーカスを設定できるようにします。
 
 [!code-cs[TapUnfocus](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTapUnfocus)]
 
-The **GetPreviewStreamRectInControl** helper method uses the resolution of the preview stream and the orientation of the device to determine the rectangle within the preview element that contains the preview stream, trimming off any letterboxed padding that the control may provide to maintain the stream's aspect ratio. This method uses class member variables defined in the basic media capture example code found in [Capture Photos and Video with MediaCapture](capture-photos-and-video-with-mediacapture.md).
+**GetPreviewStreamRectInControl** ヘルパー メソッドは、プレビュー ストリームの解像度とデバイスの向きを使い、コントロールがストリームの縦横比を維持するために提供する可能性があるレターボックス化されたパディングをトリミングして、プレビュー ストリームを含むプレビュー要素内の四角形を特定します。 このメソッドは、「[MediaCapture を使った写真とビデオのキャプチャ](capture-photos-and-video-with-mediacapture.md)」に示されている基本的なメディア キャプチャのコード例で定義されているクラス メンバー変数を使います。
 
 [!code-cs[GetPreviewStreamRectInControl](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetGetPreviewStreamRectInControl)]
 
-The **ConvertUiTapToPreviewRect** helper method takes as arguments the location of the tap event, the desired size of the focus region, and the rectangle containing the preview stream obtained from the **GetPreviewStreamRectInControl** helper method. This method uses these values and the device's current orientation to calculate the rectangle within the preview stream that contains the desired region. Once again, this method uses class member variables defined in the basic media capture example code found in [Capture Photos and Video with MediaCapture](capture-photos-and-video-with-mediacapture.md).
+**ConvertUiTapToPreviewRect** ヘルパー メソッドは、引数として、タップ イベントの場所、目的のフォーカス領域のサイズ、**GetPreviewStreamRectInControl** ヘルパー メソッドで取得したプレビュー ストリームを含む四角形を受け取ります。 このメソッドは、これらの値とデバイスの現在の向きを使って、目的の地域を含むプレビュー ストリーム内の四角形を計算します。 ここでも、このメソッドは、「[MediaCapture を使った写真とビデオのキャプチャ](capture-photos-and-video-with-mediacapture.md)」に示されている基本的なメディア キャプチャのコード例で定義されているクラス メンバー変数を使います。
 
 [!code-cs[ConvertUiTapToPreviewRect](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetConvertUiTapToPreviewRect)]
 
-### Manual focus
+### 手動フォーカス
 
-The manual focus technique uses a **Slider** control to set the current focus depth of the capture device. A radio button is used to toggle manual focus on and off.
+手動フォーカスの手法では、**スライダー** コントロールを使って、キャプチャ デバイスの現在フォーカスの深度を設定します。 ラジオ ボタンを使って、手動フォーカスのオンとオフを切り替えます。
 
 [!code-xml[ManualFocusXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetManualFocusXAML)]
 
-Check to see if the current capture device supports the **FocusControl** by checking the [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297837) property. If the control is supported, then you can show and enable the UI for this feature.
+現在のキャプチャ デバイスで **FocusControl** がサポートされているかどうかを確認するには、[**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297837) プロパティを確認します。 コントロールがサポートされている場合は、この機能の UI を表示し、有効にすることができます。
 
-The focus value must be within the range supported by the device and must be an increment of the supported step size. Get the supported values for the current device by checking the [**Min**](https://msdn.microsoft.com/library/windows/apps/dn297808), [**Max**](https://msdn.microsoft.com/library/windows/apps/dn297802), and [**Step**](https://msdn.microsoft.com/library/windows/apps/dn297833) properties, which are used to set the corresponding properties of the slider control.
+フォーカス値は、デバイスでサポートされている範囲内である必要があり、サポートされているステップ サイズのインクリメントである必要があります。 現在のデバイスでサポートされている値を取得するには、[**Min**](https://msdn.microsoft.com/library/windows/apps/dn297808)、[**Max**](https://msdn.microsoft.com/library/windows/apps/dn297802)、および [**Step**](https://msdn.microsoft.com/library/windows/apps/dn297833) プロパティを確認します。これらのプロパティは、対応するスライダー コントロールのプロパティを設定するために使用されます。
 
-Set the slider control's value to the current value of the **FocusControl** after unregistering the [**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/br209737) event handler so that the event is not triggered when the value is set.
+値が設定されたときにイベントがトリガーされないように、[**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/br209737) イベント ハンドラーの登録を解除した後、スライダー コントロールの値を **FocusControl** の現在値に設定します。
 
 [!code-cs[Focus](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetFocus)]
 
-In the **Checked** event handler for the manual focus radio button, get the **FocusControl** object and call [**LockAsync**](https://msdn.microsoft.com/library/windows/apps/dn608075) in case your app had previously unlocked the focus with a call to [**UnlockAsync**](https://msdn.microsoft.com/library/windows/apps/dn608081).
+アプリが以前に [**UnlockAsync**](https://msdn.microsoft.com/library/windows/apps/dn608081) を呼び出してフォーカスのロックを解除していた場合は、手動フォーカスのラジオ ボタンの **Checked** イベント ハンドラーで、**FocusControl** オブジェクトを取得し、[**LockAsync**](https://msdn.microsoft.com/library/windows/apps/dn608075) を呼び出します。
 
 [!code-cs[ManualFocusChecked](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetManualFocusChecked)]
 
-In the **ValueChanged** event handler of the manual focus slider, get the current value of the control and the set the focus value by calling [**SetValueAsync**](https://msdn.microsoft.com/library/windows/apps/dn297828).
+手動フォーカス スライダーの **ValueChanged** イベント ハンドラーで、コントロールの現在の値を取得し、[**SetValueAsync**](https://msdn.microsoft.com/library/windows/apps/dn297828) を呼び出してフォーカス値を設定します。
 
 [!code-cs[FocusSlider](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetFocusSlider)]
 
-### Enable the focus light
+### フォーカス ライトの有効化
 
-On devices that support it, you can enable a focus assist light to help the device focus. This example uses a checkbox to enable or disable the focus assist light.
+サポートされているデバイスで、デバイスのフォーカスを支援するフォーカス アシスト ライトを有効にすることができます。 この例では、チェック ボックスを使って、フォーカス アシスト ライトを有効または無効にします。
 
 [!code-xml[FocusLightXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetFocusLightXAML)]
 
-Check to see if the current capture device supports the **FlashControl** by checking the [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297785) property. Also check the [**AssistantLightSupported**](https://msdn.microsoft.com/library/windows/apps/dn608066) to make sure the assist light is also supported. If these are both supported, then you can show and enable the UI for this feature.
+現在のキャプチャ デバイスで **FlashControl** がサポートされているかどうかを確認するには、[**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297785) プロパティを確認します。 また、[**AssistantLightSupported**](https://msdn.microsoft.com/library/windows/apps/dn608066) を確認してアシスト ライトがサポートされていることも確認します。 これらがいずれもサポートされている場合は、この機能の UI を表示し、有効にすることができます。
 
 [!code-cs[FocusLight](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetFocusLight)]
 
-In the **CheckedChanged** event handler, get the capture devices [**FlashControl**](https://msdn.microsoft.com/library/windows/apps/dn297725) object. Set the [**AssistantLightEnabled**](https://msdn.microsoft.com/library/windows/apps/dn608065) property to enable or disable the focus light.
+**CheckedChanged** イベント ハンドラーで、キャプチャ デバイスの [**FlashControl**](https://msdn.microsoft.com/library/windows/apps/dn297725) オブジェクトを取得します。 [
+            **AssistantLightEnabled**](https://msdn.microsoft.com/library/windows/apps/dn608065) プロパティを設定して、フォーカス ライトを有効または無効にします。
 
 [!code-cs[FocusLightCheckBox](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetFocusLightCheckBox)]
 
-## ISO speed
+## ISO 速度
 
-The [**IsoSpeedControl**](https://msdn.microsoft.com/library/windows/apps/dn297850) allows you to set the ISO speed used during photo or video capture.
+[
+            **IsoSpeedControl**](https://msdn.microsoft.com/library/windows/apps/dn297850) によって、写真やビデオのキャプチャ時に使用される ISO 速度を設定できます。
 
-This example uses a [**Slider**](https://msdn.microsoft.com/library/windows/apps/br209614) control to adjust the current exposure compensation value and a checkbox to toggle automatic ISO speed adjustment.
+この例では、[**スライダー**](https://msdn.microsoft.com/library/windows/apps/br209614) コントロールを使って現在の露出補正値を調整し、チェック ボックスを使って自動 ISO 速度調整のオンとオフを切り替えます。
 
 [!code-xml[IsoXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetIsoXAML)]
 
-Check to see if the current capture device supports the **IsoSpeedControl** by checking the [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297869) property. If the control is supported, then you can show and enable the UI for this feature. Set the checked state of the checkbox to indicate if automatic ISO speed adjustment is currently active to the value of the [**Auto**](https://msdn.microsoft.com/library/windows/apps/dn608093) property.
+現在のキャプチャ デバイスで **IsoSpeedControl** がサポートされているかどうかを確認するには、[**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297869) プロパティを確認します。 コントロールがサポートされている場合は、この機能の UI を表示し、有効にすることができます。 自動 ISO 速度調整が現在アクティブであるかどうかを示すために、チェック ボックスのオンの状態を [**Auto**](https://msdn.microsoft.com/library/windows/apps/dn608093) プロパティの値に設定します。
 
-The ISO speed value must be within the range supported by the device and must be an increment of the supported step size. Get the supported values for the current device by checking the [**Min**](https://msdn.microsoft.com/library/windows/apps/dn608095), [**Max**](https://msdn.microsoft.com/library/windows/apps/dn608094), and [**Step**](https://msdn.microsoft.com/library/windows/apps/dn608129) properties, which are used to set the corresponding properties of the slider control.
+ISO 速度値は、デバイスでサポートされている範囲内である必要があり、サポートされているステップ サイズのインクリメントである必要があります。 現在のデバイスでサポートされている値を取得するには、[**Min**](https://msdn.microsoft.com/library/windows/apps/dn608095)、[**Max**](https://msdn.microsoft.com/library/windows/apps/dn608094)、および [**Step**](https://msdn.microsoft.com/library/windows/apps/dn608129) プロパティを確認します。これらのプロパティは、対応するスライダー コントロールのプロパティを設定するために使用されます。
 
-Set the slider control's value to the current value of the **IsoSpeedControl** after unregistering the [**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/br209737) event handler so that the event is not triggered when the value is set.
+値が設定されたときにイベントがトリガーされないように、[**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/br209737) イベント ハンドラーの登録を解除した後、スライダー コントロールの値を **IsoSpeedControl** の現在値に設定します。
 
 [!code-cs[IsoControl](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetIsoControl)]
 
-In the **ValueChanged** event handler, get the current value of the control and the set the ISO speed value by calling [**SetValueAsync**](https://msdn.microsoft.com/library/windows/apps/dn608128).
+**ValueChanged** イベント ハンドラーで、コントロールの現在の値を取得し、[**SetValueAsync**](https://msdn.microsoft.com/library/windows/apps/dn608128) を呼び出して ISO 速度を設定します。
 
 [!code-cs[IsoSlider](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetIsoSlider)]
 
-In the **CheckedChanged** event handler of the auto ISO speed checkbox, turn on automatic ISO speed adjustment by calling [**SetAutoAsync**](https://msdn.microsoft.com/library/windows/apps/dn608127). Turn automatic ISO speed adjustment off by calling [**SetValueAsync**](https://msdn.microsoft.com/library/windows/apps/dn608128) and passing in the current value of the slider control.
+自動 ISO 速度チェック ボックスの **CheckedChanged** イベント ハンドラーで、[**SetAutoAsync**](https://msdn.microsoft.com/library/windows/apps/dn608127) を呼び出すことによって、自動 ISO 速度調整をオンにします。 自動 ISO 速度調整をオフにするには、[**SetValueAsync**](https://msdn.microsoft.com/library/windows/apps/dn608128) を呼び出して、スライダー コントロールの現在の値を渡します。
 
 [!code-cs[IsoCheckBox](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetIsoCheckBox)]
 
-## Optical image stabilization
+## 光学式手ブレ補正
 
-Optical image stabilization (OIS) stabilizes a the captured video stream by mechanically manipulating the hardware capture device, which can provide a superior result than digital stabilization. On devices that don't support OIS, you can use the VideoStabilizationEffect to perform digital stabilization on your captured vide. For more information, see [Effects for video capture](effects-for-video-capture.md).
+光学式手ブレ補正 (OIS) は、ハードウェア キャプチャ デバイスを物理的に操作することで、キャプチャしたビデオ ストリームを補正します。これにより、デジタル補正より優れた結果が生まれます。 OIS がサポートされていないデバイスでは、VideoStabilizationEffect を使用して、キャプチャしたビデオにデジタル手ブレ補正を行うことができます。 詳しくは、「[ビデオ キャプチャの効果](effects-for-video-capture.md)」をご覧ください。
 
-Determine if OIS is supported on the current device by checking the [**OpticalImageStabilizationControl.Supported**](https://msdn.microsoft.com/library/windows/apps/dn926689) property.
+現在のデバイスで OIS がサポートされているかどうかを確認するには、[**OpticalImageStabilizationControl.Supported**](https://msdn.microsoft.com/library/windows/apps/dn926689) プロパティをチェックします。
 
-The OIS control supports three modes: on, off, and automatic, which means that the device dynamically determines if OIS would improve the media capture and, if so, enables OIS. To determine if a particular mode is supported on a device, check to see if the [**OpticalImageStabilizationControl.SupportedModes**](https://msdn.microsoft.com/library/windows/apps/dn926690) collection contains the desired mode.
+OIS コントロールでは、3 つのモード (オン、オフ、自動) がサポートされています。自動モードでは、OIS によってメディア キャプチャが改善されるかどうかをデバイスが動的に判断し、改善される場合は OIS が有効になります。 現在のデバイスで特定のモードがサポートされているかどうかを確認するには、[**OpticalImageStabilizationControl.SupportedModes**](https://msdn.microsoft.com/library/windows/apps/dn926690) コレクションに目的のモードが含まれているかどうかをチェックします。
 
-Enable or disable OIS by setting the [**OpticalImageStabilizationControl.Mode**](https://msdn.microsoft.com/library/windows/apps/dn926691) to the desired mode.
+OIS を有効または無効にするには、[**OpticalImageStabilizationControl.Mode**](https://msdn.microsoft.com/library/windows/apps/dn926691) を目的のモードに設定します。
 
 [!code-cs[SetOpticalImageStabilizationMode](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSetOpticalImageStabilizationMode)]
 
-## White balance
+## ホワイト バランス
 
-The [**WhiteBalanceControl**](https://msdn.microsoft.com/library/windows/apps/dn279104) allows you to set the white balance used during photo or video capture.
+[
+            **WhiteBalanceControl**](https://msdn.microsoft.com/library/windows/apps/dn279104) によって、写真やビデオのキャプチャ時に使用されるホワイト バランスを設定できます。
 
-This example uses a [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348) control to select from built-in color temperature presets and a [**Slider**](https://msdn.microsoft.com/library/windows/apps/br209614) control for manual white balance adjustment.
+この例では、[**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348) コントロールを使って組み込みの色温度のプリセットを選択し、[**スライダー**](https://msdn.microsoft.com/library/windows/apps/br209614) コントロールを使って手動でホワイト バランスを調整します。
 
 [!code-xml[WhiteBalanceXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetWhiteBalanceXAML)]
 
-Check to see if the current capture device supports the **WhiteBalanceControl** by checking the [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn279120) property. If the control is supported, then you can show and enable the UI for this feature. Set the items of the combo box to the values of the [**ColorTemperaturePreset**](https://msdn.microsoft.com/library/windows/apps/dn278894) enumeration. And set the selected item to the current value of the [**Preset**](https://msdn.microsoft.com/library/windows/apps/dn279110) property.
+現在のキャプチャ デバイスで **WhiteBalanceControl** がサポートされているかどうかを確認するには、[**Supported**](https://msdn.microsoft.com/library/windows/apps/dn279120) プロパティを確認します。 コントロールがサポートされている場合は、この機能の UI を表示し、有効にすることができます。 コンボ ボックスの項目を、[**ColorTemperaturePreset**](https://msdn.microsoft.com/library/windows/apps/dn278894) 列挙体の値に設定します。 また、選ばれた項目を、[**Preset**](https://msdn.microsoft.com/library/windows/apps/dn279110) プロパティの現在の値に設定します。
 
-For manual control, the white balance value must be within the range supported by the device and must be an increment of the supported step size. Get the supported values for the current device by checking the [**Min**](https://msdn.microsoft.com/library/windows/apps/dn279109), [**Max**](https://msdn.microsoft.com/library/windows/apps/dn279107), and [**Step**](https://msdn.microsoft.com/library/windows/apps/dn279119) properties, which are used to set the corresponding properties of the slider control. Before enabling manual control, check to make sure that the range between the minimum and maximum supported values is greater than the step size. If it is not, manual control is not supported on the current device.
+手動コントロールの場合、ホワイト バランス値は、デバイスでサポートされている範囲内である必要があり、サポートされているステップ サイズのインクリメントである必要があります。 現在のデバイスでサポートされている値を取得するには、[**Min**](https://msdn.microsoft.com/library/windows/apps/dn279109)、[**Max**](https://msdn.microsoft.com/library/windows/apps/dn279107)、および [**Step**](https://msdn.microsoft.com/library/windows/apps/dn279119) プロパティを確認します。これらのプロパティは、対応するスライダー コントロールのプロパティを設定するために使用されます。 手動コントロールを有効にする前に、サポートされている最小値と最大値の間の範囲がステップ サイズよりも大きいことを確認します。 このようになっていない場合、手動コントロールは、現在のデバイスではサポートされません。
 
-Set the slider control's value to the current value of the **WhiteBalanceControl** after unregistering the [**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/br209737) event handler so that the event is not triggered when the value is set.
+値が設定されたときにイベントがトリガーされないように、[**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/br209737) イベント ハンドラーの登録を解除した後、スライダー コントロールの値を **WhiteBalanceControl** の現在値に設定します。
 
 [!code-cs[WhiteBalance](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetWhiteBalance)]
 
-In the [**SelectionChanged**](https://msdn.microsoft.com/library/windows/apps/br209776) event handler of the color temperature preset combo box, get the currently selected preset and set the value of the control by calling [**SetPresetAsync**](https://msdn.microsoft.com/library/windows/apps/dn279113). If the selected preset value is not **Manual**, then disable the manual white balance slider.
+色温度プリセットのコンボ ボックスの [**SelectionChanged**](https://msdn.microsoft.com/library/windows/apps/br209776) イベント ハンドラーで、現在選択されているプリセットを取得し、[**SetPresetAsync**](https://msdn.microsoft.com/library/windows/apps/dn279113) を呼び出してコントロールの値を設定します。 選択されたプリセット値が **Manual** でない場合は、手動のホワイト バランス スライダーを無効にします。
 
 [!code-cs[WhiteBalanceComboBox](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetWhiteBalanceComboBox)]
 
-In the **ValueChanged** event handler, get the current value of the control and the set the white balance value by calling [**SetValueAsync**](https://msdn.microsoft.com/library/windows/apps/dn278927).
+**ValueChanged** イベント ハンドラーで、コントロールの現在の値を取得し、[**SetValueAsync**](https://msdn.microsoft.com/library/windows/apps/dn278927) を呼び出してホワイト バランス値を設定します。
 
 [!code-cs[WhiteBalanceSlider](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetWhiteBalanceSlider)]
 
-**Important** Adjusting the white balance is only supported while the preview stream is running. Check to make sure that the preview stream is running before setting the white balance value or preset.
+**重要:** ホワイト バランスの調整は、プレビュー ストリームが実行中であるときにのみサポートされます。 ホワイト バランス値またはプリセットを設定する前に、プレビュー ストリームが実行されていることを確認します。
 
-**Important** The **ColorTemperaturePreset.Auto** preset value instructs the system to automatically adjust the white balance level. For some scenarios, such as capturing a photo sequence where the white balance levels should be the same for each frame, you may want to lock the control to the current automatic value. To do this, call [**SetPresetAsync**](https://msdn.microsoft.com/library/windows/apps/dn279113) and specify the **Manual** preset and do not set a value on the control using [**SetValueAsync**](https://msdn.microsoft.com/library/windows/apps/dn279114). This will cause the device to lock the current value. Do not attempt to read the current control value and then pass the returned value into **SetValueAsync** because this value is not guaranteed to be correct.
+**重要:** **ColorTemperaturePreset.Auto** プリセット値は、ホワイト バランス レベルを自動調整するようにシステムに指示します。 ホワイト バランス レベルが各フレームで同じである必要がある写真シーケンスのキャプチャなど、一部のシナリオでは、現在の自動値にコントロールをロックすることもできます。 これを行うには、[**SetPresetAsync**](https://msdn.microsoft.com/library/windows/apps/dn279113) を呼び出して、**Manual** プリセットを指定します。[**SetValueAsync**](https://msdn.microsoft.com/library/windows/apps/dn279114) を使って、コントロールの値を設定しないでください。 これにより、デバイスは現在の値にロックされます。 現在のコントロールの値を読み取って、返された値を **SetValueAsync** に渡すことはしないでください。この値が正しいことは保証されないためです。
 
-## Zoom
+## ズーム
 
-The [**ZoomControl**](https://msdn.microsoft.com/library/windows/apps/dn608149) allows you to set the zoom level used during photo or video capture.
+[
+            **ZoomControl**](https://msdn.microsoft.com/library/windows/apps/dn608149) によって、写真やビデオのキャプチャ時に使用されるズーム レベルを設定できます。
 
-This example uses a [**Slider**](https://msdn.microsoft.com/library/windows/apps/br209614) control to adjust the current zoom level. The following section shows how to adjust zoom based on a pinch gesture on the screen.
+この例では、[**スライダー**](https://msdn.microsoft.com/library/windows/apps/br209614) コントロールを使って、現在のズーム レベルを調整します。 次のセクションでは、画面上のピンチ ジェスチャに基づいてズームを調整する方法を示します。
 
 [!code-xml[ZoomXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetZoomXAML)]
 
-Check to see if the current capture device supports the **ZoomControl** by checking the [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn633819) property. If the control is supported, then you can show and enable the UI for this feature.
+現在のキャプチャ デバイスで **ZoomControl** がサポートされているかどうかを確認するには、[**Supported**](https://msdn.microsoft.com/library/windows/apps/dn633819) プロパティを確認します。 コントロールがサポートされている場合は、この機能の UI を表示し、有効にすることができます。
 
-The zoom level value must be within the range supported by the device and must be an increment of the supported step size. Get the supported values for the current device by checking the [**Min**](https://msdn.microsoft.com/library/windows/apps/dn633817), [**Max**](https://msdn.microsoft.com/library/windows/apps/dn608150), and [**Step**](https://msdn.microsoft.com/library/windows/apps/dn633818) properties, which are used to set the corresponding properties of the slider control.
+ズーム レベル値は、デバイスでサポートされている範囲内である必要があり、サポートされているステップ サイズのインクリメントである必要があります。 現在のデバイスでサポートされている値を取得するには、[**Min**](https://msdn.microsoft.com/library/windows/apps/dn633817)、[**Max**](https://msdn.microsoft.com/library/windows/apps/dn608150)、および [**Step**](https://msdn.microsoft.com/library/windows/apps/dn633818) プロパティを確認します。これらのプロパティは、対応するスライダー コントロールのプロパティを設定するために使用されます。
 
-Set the slider control's value to the current value of the **ZoomControl** after unregistering the [**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/br209737) event handler so that the event is not triggered when the value is set.
+値が設定されたときにイベントがトリガーされないように、[**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/br209737) イベント ハンドラーの登録を解除した後、スライダー コントロールの値を **ZoomControl** の現在値に設定します。
 
 [!code-cs[ZoomControl](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetZoomControl)]
 
-In the **ValueChanged** event handler, create a new instance of the [**ZoomSettings**](https://msdn.microsoft.com/library/windows/apps/dn926722) class, setting the [**Value**](https://msdn.microsoft.com/library/windows/apps/dn926724) property to the current value of the zoom slider control. If the [**SupportedModes**](https://msdn.microsoft.com/library/windows/apps/dn926721) property of the **ZoomControl** contains [**ZoomTransitionMode.Smooth**](https://msdn.microsoft.com/library/windows/apps/dn926726), it means the device supports smooth transitions between zoom levels. Since this modes provides a better user experience, you will typically want to use this value for the [**Mode**](https://msdn.microsoft.com/library/windows/apps/dn926723) property of the **ZoomSettings** object.
+**ValueChanged** イベント ハンドラーで、[**Value**](https://msdn.microsoft.com/library/windows/apps/dn926724) プロパティをズーム スライダー コントロールの現在の値に設定して、[**ZoomSettings**](https://msdn.microsoft.com/library/windows/apps/dn926722) クラスの新しいインスタンスを作成します。 **ZoomControl** の [**SupportedModes**](https://msdn.microsoft.com/library/windows/apps/dn926721) プロパティに [**ZoomTransitionMode.Smooth**](https://msdn.microsoft.com/library/windows/apps/dn926726) が含まれている場合、デバイスがズーム レベルのスムーズな切り替えをサポートしていることを意味します。 このモードではユーザー エクスペリエンスが向上するため、通常、**ZoomSettings** オブジェクトの [**Mode**](https://msdn.microsoft.com/library/windows/apps/dn926723) プロパティにはこの値を使います。
 
-Finally, change the current zoom settings by passing your **ZoomSettings** object into the [**Configure**](https://msdn.microsoft.com/library/windows/apps/dn926719) method of the **ZoomControl** object.
+最後に、**ZoomSettings** オブジェクトを、**ZoomControl** オブジェクトの [**Configure**](https://msdn.microsoft.com/library/windows/apps/dn926719) メソッドに渡すことによって、現在のズーム設定を変更します。
 
 [!code-cs[ZoomSlider](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetZoomSlider)]
 
-### Smooth zoom using pinch gesture
+### ピンチ ジェスチャを使ったスムーズなズーム
 
-As discussed in the previous section, on devices that support it, smooth zoom mode allows the capture device to smoothly transition between digital zoom levels, allowing the user to dynamically adjust the zoom level during the capture operation without discrete and jarring transitions. This section describes how to adjust the zoom level in response to a pinch gesture.
+前のセクションで説明したように、スムーズ ズームがサポートされているキャプチャ デバイスでスムーズ ズーム モードを使用すると、異なるデジタル ズーム レベル間での切り替えがスムーズになります。これによりユーザーは、キャプチャ操作中にズーム レベルを動的に調整することができます。切り替えを個々に行う必要がなく、不快感もありません。 このセクションでは、ピンチ ジェスチャに応答してズーム レベルを調整する方法について説明します。
 
-First, determine if the digital zoom control is supported on the current device by checking the [**ZoomControl.Supported**](https://msdn.microsoft.com/library/windows/apps/dn633819) property. Next, determine if smooth zoom mode is available by checking the [**ZoomControl.SupportedModes**](https://msdn.microsoft.com/library/windows/apps/dn926721) to see if it contains the value [**ZoomTransitionMode.Smooth**](https://msdn.microsoft.com/library/windows/apps/dn926726).
+まず、[**ZoomControl.Supported**](https://msdn.microsoft.com/library/windows/apps/dn633819) プロパティをチェックして、現在のデバイスでデジタル ズーム コントロールがサポートされているかどうかを確認します。 次に、[**ZoomControl.SupportedModes**](https://msdn.microsoft.com/library/windows/apps/dn926721) の値として [**ZoomTransitionMode.Smooth**](https://msdn.microsoft.com/library/windows/apps/dn926726) が含まれているかどうかをチェックすることによって、スムーズ ズーム モードが利用可能かどうかを確認します。
 
 [!code-cs[IsSmoothZoomSupported](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetIsSmoothZoomSupported)]
 
-On a multi-touch enabled device, a typical scenario is to adjust the zoom factor based on a two-finger pinch gesture. Set the [**ManipulationMode**](https://msdn.microsoft.com/library/windows/apps/br208948) property of the [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) control to [**ManipulationModes.Scale**](https://msdn.microsoft.com/library/windows/apps/br227934) to enable the pinch gesture. Then, register for the [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) event which is raised when the pinch gesture changes size.
+マルチタッチ操作対応デバイスでは、2 本指でのピンチ ジェスチャに基づいてズーム倍率を調整するのが一般的です。 ピンチ ジェスチャを有効にするには、[**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) コントロールの [**ManipulationMode**](https://msdn.microsoft.com/library/windows/apps/br208948) プロパティを [**ManipulationModes.Scale**](https://msdn.microsoft.com/library/windows/apps/br227934) に設定します。 次に、ピンチ ジェスチャでサイズ変更されたときに発生する [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) イベントを登録します。
 
 [!code-cs[RegisterPinchGestureHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRegisterPinchGestureHandler)]
 
-In the handler for the **ManipulationDelta** event, update the zoom factor based on the change in the user's pinch gesture. The [**ManipulationDelta.Scale**](https://msdn.microsoft.com/library/windows/apps/br242016) value represents the change in scale of the pinch gesture such that a small increase in the size of the pinch is a number slightly larger than 1.0 and a small decrease in the pinch size is a number slightly smaller than 1.0. In this example, the current value of the zoom control is multiplied by the scale delta.
+**ManipulationDelta** イベント用のハンドラーでは、ユーザーのピンチ ジェスチャの変化に基づいてズーム倍率を更新します。 [
+            **ManipulationDelta.Scale**](https://msdn.microsoft.com/library/windows/apps/br242016) 値は、ピンチ ジェスチャによるズーム倍率の変化を表します。たとえば、ピンチ サイズがわずかに大きくなった場合は 1.0 よりわずかに大きい数値、ピンチ サイズがわずかに小さくなった場合は 1.0 よりわずかに小さい数値になります。 この例では、ズーム コントロールの現在の値にスケール デルタを掛けています。
 
-Before setting the zoom factor, you must make sure that the value is not less than the minimum value supported by the device as indicated by the [**ZoomControl.Min**](https://msdn.microsoft.com/library/windows/apps/dn633817) property. Also, make sure that the value is less than or equal to the [**ZoomControl.Max**](https://msdn.microsoft.com/library/windows/apps/dn608150) value. Finally, you must make sure that the the zoom factor is a multiple of the zoom step size supported by the device as indicated by the [**Step**](https://msdn.microsoft.com/library/windows/apps/dn633818) property. If your zoom factor does not meet these requirements, an exception will be thrown when you attempt to set the zoom level on the capture device.
+ズーム倍率を設定する前に、デバイスでサポートされている ([**ZoomControl.Min**](https://msdn.microsoft.com/library/windows/apps/dn633817) プロパティで示されている) 最小値より小さい値になっていないか確認する必要があります。 また、値が [**ZoomControl.Max**](https://msdn.microsoft.com/library/windows/apps/dn608150) 値以下であることを確認します。 最後に、ズーム倍率が、デバイスでサポートされている ([**Step**](https://msdn.microsoft.com/library/windows/apps/dn633818) プロパティで示されている) ズーム ステップ サイズの倍数になっていることを確認する必要があります。 ズーム倍率がこれらの要件を満たしていない場合は、キャプチャ デバイスでズーム レベルを設定しようとすると、例外がスローされます。
 
-Set the zoom level on the capture device by creating a new [**ZoomSettings**](https://msdn.microsoft.com/library/windows/apps/dn926722) object. Set the [**Mode**](https://msdn.microsoft.com/library/windows/apps/dn926723) property to [**ZoomTransitionMode.Smooth**](https://msdn.microsoft.com/library/windows/apps/dn926726) and then set the [**Value**](https://msdn.microsoft.com/library/windows/apps/dn926724) property to your desired zoom factor. Finally, call [**ZoomControl.Configure**](https://msdn.microsoft.com/library/windows/apps/dn926719) to set the new zoom value on the device. The device will smoothly transition to the new zoom value.
+キャプチャ デバイスでズーム レベルを設定するには、新しい [**ZoomSettings**](https://msdn.microsoft.com/library/windows/apps/dn926722) オブジェクトを作成します。 [
+            **Mode**](https://msdn.microsoft.com/library/windows/apps/dn926723) プロパティを [**ZoomTransitionMode.Smooth**](https://msdn.microsoft.com/library/windows/apps/dn926726) に設定し、[**Value**](https://msdn.microsoft.com/library/windows/apps/dn926724) プロパティを目的のズーム倍率に設定します。 最後に、[**ZoomControl.Configure**](https://msdn.microsoft.com/library/windows/apps/dn926719) を呼び出して、デバイスの新しいズーム値を設定します。 デバイスは新しいズーム値への切り替えをスムーズに行います。
 
 [!code-cs[ManipulationDelta](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetManipulationDelta)]
 
-## Related topics
+## 関連トピック
 
-* [Capture photos and video with MediaCapture](capture-photos-and-video-with-mediacapture.md)
+* [MediaCapture を使った写真とビデオのキャプチャ](capture-photos-and-video-with-mediacapture.md)
 
 <!--HONumber=Mar16_HO2-->
 

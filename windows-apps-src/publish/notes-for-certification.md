@@ -1,37 +1,37 @@
 ---
-Description: As you submit your app, you have the option to use the Notes for certification page to provide additional info to the certification testers. This info can help ensure that your app is tested correctly.
-title: Notes for certification
+Description: アプリの提出時に、[認定の注意書き] ページを使って、認定審査担当者に追加情報を提供することができます。 この情報は、アプリを正しく審査するために使用されます。
+title: 認定を求めるにあたってのコメント
 ms.assetid: 4A740A5F-F39F-4FE2-9391-EE00DB46B25A
 ---
 
-# Notes for certification
+# 認定を求めるにあたってのコメント
 
 
-As you submit your app, you have the option to use the **Notes for certification** page to provide additional info to the certification testers. This info can help ensure that your app is tested correctly.
+アプリの提出時に、**[認定の注意書き]** ページを使って、認定審査担当者に追加情報を提供することができます。 この情報は、アプリを正しく審査するために使用されます。
 
-Make sure to include the following (if applicable for your app):
+アプリに該当する場合は、必ず次の情報を含めてください。
 
--   **User names and passwords for test accounts**
+-   **テスト用アカウントのユーザー名とパスワード**
 
-    If your app requires users to log in to a service, provide the user name and password for a test account. The certification testers will use this account when reviewing your app.
+    アプリで、ユーザーによるサービスへのログインが必要になる場合は、テスト用アカウントのユーザー名とパスワードを提供します。 審査担当者は、アプリのレビュー時にこのアカウントを使います。
 
--   **Steps to access hidden or locked features**
+-   **非表示の機能やロックされている機能へのアクセスに必要な手順**
 
-    If your app has features that might not be obvious to the testers, briefly describe how they can access those features. Apps that appear to be incomplete may fail certification.
+    審査担当者にわかりにくい機能がアプリにある場合、そうした機能へのアクセス方法を簡単に説明します。 不完全に見えるアプリは、認定に合格しない可能性があります。
 
--   **Steps to verify background audio usage**
+-   **バックグラウンド オーディオの使用状況を検証する手順**
 
-    If your app allows audio to run in the background, testers may need instructions on how to access this feature so they can confirm it functions appropriately.
+    アプリがバックグラウンドでオーディオを実行することを許可している場合、これが適切に機能することを確認できるように、審査担当者がこの機能にアクセスする手順を必要とする可能性があります。
 
--   **Info about what's changed in an app update**
+-   **アプリの更新プログラムで変更された内容に関する情報**
 
-    For updates to previously published apps, you may want to let the testers know what has changed, especially if your packages are the same and you're just making changes to your app listing (such as adding more screenshots, changing your app's category, or editing the description).
+    以前に公開済みのアプリに対する更新プログラムの場合、特に、パッケージには変更がなく、アプリの内容ページのみの変更 (スクリーンショットの追加、アプリのカテゴリの変更、説明の編集など) である場合は、審査担当者に変更内容を知らせてください。
 
-When considering what to write, remember:
+コメントを書くときは、次の点を考慮してください。
 
--   **A real person will read these notes.** Testers will appreciate a polite note and clear, helpful instructions.
--   **Be succinct and keep instructions simple.** If you really need to explain more, you can include a link to a page with more info. Keep in mind that customers of your app won't be seeing these notes. If you need to provide complicated instructions for testing your app, consider whether your app might need to be made simpler so that customers know how to use it.
--   **Services and external components must be online and available.** If your app connects to a service for part of its function, make sure that the service will be online and available. Include any information about the service that testers will need. If your app can't connect to a service it needs during testing, it may fail certification.
+-   **コメントを読むのは生身の人間です。** 審査担当者は、ていねいで明確な、参考になる指示を評価します。
+-   **簡潔な表現で、指示をわかりやすく記述してください。** より詳しい説明が必要な場合は、情報のあるページへのリンクを含めておきます。 アプリのユーザーにはコメントが表示されないことを念頭に置いておきましょう。 アプリのテスト用に複雑な指示が必要になる場合は、ユーザーが使うことを考えてアプリをもっと簡潔にする必要性がないか検討します。
+-   **サービスや外部コンポーネントをオンラインで利用できる状態にしておく必要があります。** アプリが機能の一部としてサービスに接続する場合は、そのサービスがオンラインで利用できる状態になっている必要があります。 サービスに関して、審査担当者が必要とするような情報があれば、すべて含めておいてください。 審査時に必要なサービスに接続できない場合、アプリは認定されない可能性があります。
 
  
 

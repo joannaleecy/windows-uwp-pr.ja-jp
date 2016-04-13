@@ -1,26 +1,26 @@
 ---
-title: Port the vertex buffers and data
-description: In this step, you'll define the vertex buffers that will contain your meshes and the index buffers that allow the shaders to traverse the vertices in a specified order.
+title: 頂点バッファーと頂点データの移植
+description: この手順では、シェーダーが指定された順番で頂点を走査できるようにするインデックス バッファーとメッシュを格納する頂点バッファーを定義します。
 ms.assetid: 9a8138a5-0797-8532-6c00-58b907197a25
 ---
 
-# Port the vertex buffers and data
+# 頂点バッファーと頂点データの移植
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-**Important APIs**
+**重要な API**
 
 -   [**ID3DDevice::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501)
 -   [**ID3DDeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456)
 -   [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/bb173588)
 
-In this step, you'll define the vertex buffers that will contain your meshes and the index buffers that allow the shaders to traverse the vertices in a specified order.
+この手順では、シェーダーが指定された順番で頂点を走査できるようにするインデックス バッファーとメッシュを格納する頂点バッファーを定義します。
 
-At this point, let's examine the hardcoded model for the cube mesh we are using. Both representations have the vertices organized as a triangle list (as opposed to a strip or other more efficient triangle layout). All vertices in both representations also have associated indices and color values. Much of the Direct3D code in this topic refers to variables and objects defined in the Direct3D project.
+ここでは、使う立方体のメッシュのハードコードされたモデルを見ていきます。 両方の表現では、頂点が (ストリップなどのより効率的な三角形レイアウトではなく) 三角形リストとしてまとめられています。 また、両方の表現のすべての頂点には、インデックスと色値が関連付けられています。 このトピックのほとんどの Direct3D コードでは、Direct3D プロジェクトで定義された変数とオブジェクトを参照します。
 
-Here's the cube for processing by OpenGL ES 2.0. In the sample implementation, each vertex is 7 float values: 3 position coordinates followed by 4 RGBA color values.
+OpenGL ES 2.0 で処理する場合の立方体を次に示します。 サンプルの実装では、頂点ごとに 7 つの浮動小数点値があります (3 つの位置座標の後に 4 つの RGBA カラー値が続きます)。
 
 ```cpp
 #define CUBE_INDICES 36
@@ -60,7 +60,7 @@ GLuint cubeIndices[] =
 };
 ```
 
-And here's the same cube for processing by Direct3D 11.
+Direct3D 11 で処理する場合の同じ立方体を次に示します。
 
 ```cpp
 VertexPositionColor cubeVerticesAndColors[] = 
@@ -98,17 +98,17 @@ unsigned short cubeIndices[] =
 };
 ```
 
-Reviewing this code, you notice that the cube in the OpenGL ES 2.0 code is represented in a right-hand coordinate system, whereas the cube in the Direct3D-specific code is represented in a left-hand coordinate system. When importing your own mesh data, you must reverse the z-axis coordinates for your model and change the indices for each mesh accordingly to traverse the triangles according to the change in the coordinate system.
+このコードを確認すると、OpenGL ES 2.0 コードの立方体が右手座標系で表されているのに対し、Direct3D 固有のコードの立方体が左手座標系で表されていることがわかります。 自分のメッシュ データをインポートする際は、モデルの z 軸の座標を反転させ、座標系の変更に従って三角形を走査するように各メッシュのインデックスを適切に変更する必要があります。
 
-Assuming that we have successfully moved the cube mesh from the right-handed OpenGL ES 2.0 coordinate system to the left-handed Direct3D one, let's see how to load the cube data for processing in both models.
+立方体のメッシュを OpenGL ES 2.0 の右手座標系から Direct3D の左手座標系に正常に移植できたことを前提に、両方のモデルで処理する立方体データを読み込む方法を見ていきます。
 
-## Instructions
+## 手順
 
-### Step 1: Create an input layout
+### 手順 1: 入力レイアウトの作成
 
-In OpenGL ES 2.0, your vertex data is supplied as attributes that will be supplied to and read by the shader objects. You typically provide a string that contains the attribute name used in the shader's GLSL to the shader program object, and get a memory location back that you can supply to the shader. In this example, a vertex buffer object contains a list of custom Vertex structures, defined and formatted as follows:
+OpenGL ES 2.0 では、頂点データを attribute として渡し、シェーダー オブジェクトがそれを受け取って、読み取ります。 通常、シェーダーの GLSL で使われる attribute 名を含む文字列をシェーダー プログラム オブジェクトに渡し、シェーダーに渡すことができるメモリの場所を取得します。 この例では、次のように定義され、フォーマットされたカスタムの Vertex 構造体の一覧を頂点バッファー オブジェクトに含めます。
 
-OpenGL ES 2.0: Configure the attributes that contain the per-vertex information.
+OpenGL ES 2.0: 頂点ごとの情報を含む attribute の構成
 
 ``` syntax
 typedef struct 
@@ -118,13 +118,13 @@ typedef struct
 } Vertex;
 ```
 
-In OpenGL ES 2.0, input layouts are implicit; you take a general purpose GL\_ELEMENT\_ARRAY\_BUFFER and supply the stride and offset such that the vertex shader can interpret the data after uploading it. You inform the shader before rendering which attributes map to which portions of each block of vertex data with **glVertexAttribPointer**.
+OpenGL ES 2.0 では、入力レイアウトは暗黙的です。汎用の GL\_ELEMENT\_ARRAY\_BUFFER を受け取り、頂点シェーダーがデータをアップロード後に解釈できるようにストライドとオフセットを渡します。 レンダリングする前に、**glVertexAttribPointer** を使って、どの attribute が頂点データの各ブロックのどの部分にマップされるかをシェーダーに通知します。
 
-In Direct3D, you must provide an input layout to describe the structure of the vertex data in the vertex buffer when you create the buffer, instead of before you draw the geometry. To do this, you use an input layout which corresponds to layout of the data for our individual vertices in memory. It is very important to specify this accurately!
+Direct3D では、ジオメトリを描画する前ではなく、バッファーを作成するときに、頂点バッファー内の頂点データの構造体を記述した入力レイアウトを渡す必要があります。 そのためには、メモリ内の個々の頂点データのレイアウトに対応する入力レイアウトを使います。 これを正確に指定することが非常に重要です。
 
-Here, you create an input description as an array of [**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180) structures.
+次に、入力の記述を [**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180) 構造体の配列として作成します。
 
-Direct3D: Define an input layout description.
+Direct3D: 入力レイアウトの記述の定義
 
 ``` syntax
 struct VertexPositionColor
@@ -143,13 +143,13 @@ const D3D11_INPUT_ELEMENT_DESC vertexDesc[] =
 
 ```
 
-This input description defines a vertex as a pair of 2 3-coordinate vectors: one 3D vector to store the position of the vertex in model coordinates, and another 3D vector to store the RGB color value associated with the vertex. In this case, you use 3x32 bit floating point format, elements of which we represent in code as `XMFLOAT3(X.Xf, X.Xf, X.Xf)`. You should use types from the [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/ee415574) library whenever you are handling data that will be used by a shader, as it ensure the proper packing and alignment of that data. (For example, use [**XMFLOAT3**](https://msdn.microsoft.com/library/windows/desktop/ee419475) or [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608) for vector data, and [**XMFLOAT4X4**](https://msdn.microsoft.com/library/windows/desktop/ee419621) for matrices.)
+この入力の記述では、頂点を 2 つの 3 座標ベクトルのペアとして定義します。1 つの 3D ベクトルにはモデル座標内の頂点の位置を格納し、もう 1 つの 3D ベクトルには頂点に関連付けられている RGB 色値を格納します。 この場合は、3x32 ビットの浮動小数点形式を使います。コードではその要素を `XMFLOAT3(X.Xf, X.Xf, X.Xf)` として表します。 シェーダーで使われるデータを処理する場合は、必ず [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/ee415574) ライブラリの型を使って、そのデータのパッキングとアラインメントが適切に行われるようにする必要があります (たとえば、ベクトル データには [**XMFLOAT3**](https://msdn.microsoft.com/library/windows/desktop/ee419475) または [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608) を使い、マトリックスには [**XMFLOAT4X4**](https://msdn.microsoft.com/library/windows/desktop/ee419621) を使います)。
 
-For a list of all the possible format types, refer to [**DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059).
+使うことができるすべての形式の種類の一覧については、「[**DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059)」をご覧ください。
 
-With the per-vertex input layout defined, you create the layout object. In the following code, you write it to **m\_inputLayout**, a variable of type **ComPtr** (which points to an object of type [**ID3D11InputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476575)). **fileData** contains the compiled vertex shader object from the previous step, [Port the shaders](port-the-shader-config.md).
+頂点ごとの入力レイアウトを定義して、レイアウト オブジェクトを作成します。 次のコードでは、それを ([**ID3D11InputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476575) 型のオブジェクトを指す) **ComPtr** 型の変数 **m\_inputLayout** に書き込みます。 **fileData** には、前の手順の「[シェーダー オブジェクトの移植](port-the-shader-config.md)」のコンパイル済み頂点シェーダー オブジェクトが含まれています。
 
-Direct3D: Create the input layout used by the vertex buffer.
+Direct3D: 頂点バッファーで使われる入力レイアウトの作成
 
 ``` syntax
 Microsoft::WRL::ComPtr<ID3D11InputLayout>      m_inputLayout;
@@ -165,13 +165,13 @@ m_d3dDevice->CreateInputLayout(
 );
 ```
 
-We've defined the input layout. Now, let's create a buffer that uses this layout and load it with the cube mesh data.
+ここまでで、入力レイアウトを定義しました。 次は、このレイアウトを使うバッファーを作成し、それを立方体のメッシュ データと一緒に読み込みます。
 
-### Step 2: Create and load the vertex buffer(s)
+### 手順 2: 頂点バッファーの作成と読み込み
 
-In OpenGL ES 2.0, you create a pair of buffers, one for the position data and one for the color data. (You could also create a struct that contains both and a single buffer.) You bind each buffer and write position and color data into them. Later, during your render function, bind the buffers again and provide the shader with the format of the data in the buffer so it can correctly interpret it.
+OpenGL ES 2.0 では、2 つのバッファー (位置データ用と色データ用) を作成します (また、両方を含む構造体と 1 つのバッファーを作成することもできます)。各バッファーをバインドし、位置データと色データをバッファーに書き込みます。 その後、レンダリング関数の実行時に、もう一度バッファーをバインドし、シェーダーが正しく解釈できるようにバッファー内のデータの形式をシェーダーに通知します。
 
-OpenGL ES 2.0: Bind the vertex buffers
+OpenGL ES 2.0: 頂点バッファーのバインド
 
 ``` syntax
 // upload the data for the vertex position buffer
@@ -180,13 +180,14 @@ glBindBuffer(GL_ARRAY_BUFFER, renderer->vertexBuffer);
 glBufferData(GL_ARRAY_BUFFER, sizeof(VERTEX) * CUBE_VERTICES, renderer->vertices, GL_STATIC_DRAW);   
 ```
 
-In Direct3D, shader-accessible buffers are represented as [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) structures. To bind the location of this buffer to shader object, you need to create a CD3D11\_BUFFER\_DESC structure for each buffer with [**ID3DDevice::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501), and then set the buffer of the Direct3D device context by calling a set method specific to the buffer type, such as [**ID3DDeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456).
+Direct3D では、シェーダーがアクセスできるバッファーは [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) 構造体として表されます。 このバッファーの場所をシェーダー オブジェクトにバインドするには、[**ID3DDevice::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) を使って、各バッファーの CD3D11\_BUFFER\_DESC 構造体を作成し、[**ID3DDeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) などのバッファーの種類に固有の設定メソッドを呼び出して、Direct3D デバイス コンテキストのバッファーを設定する必要があります。
 
-When you set the buffer, you must set the stride (the size of the data element for an individual vertex) as well the offset (where the vertex data array actually starts) from the beginning of the buffer.
+バッファーを設定するときに、ストライド (個々の頂点のデータ要素のサイズ) とバッファーの先頭からのオフセット (実際に頂点データの配列が始まる位置) を設定する必要があります。
 
-Notice that we assign the pointer to the **vertexIndices** array to the **pSysMem** field of the [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) structure. If this isn't correct, your mesh will be corrupt or empty!
+[
+            **D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) 構造体の **pSysMem** フィールドに **vertexIndices** 配列へのポインターを割り当てることに注意してください。 これを正しく行わないと、メッシュの形が正しく表示されないか、空になります。
 
-Direct3D: Create and set the vertex buffer
+Direct3D: 頂点バッファーの作成と設定
 
 ``` syntax
 D3D11_SUBRESOURCE_DATA vertexBufferData = {0};
@@ -212,13 +213,13 @@ m_d3dContext->IASetVertexBuffers(
   &offset);
 ```
 
-### Step 3: Create and load the index buffer
+### 手順 3: インデックス バッファーの作成と読み込み
 
-Index buffers are an efficient way to allow the vertex shader to look up individual vertices. Although they are not required, we use them in this sample renderer. As with vertex buffers in OpenGL ES 2.0, an index buffer is created and bound as a general purpose buffer and the vertex indices you created earlier are copied into it.
+インデックス バッファーは、頂点シェーダーが個々の頂点を検索できるようにする効率的な方法です。 これは必須ではありませんが、このサンプルのレンダラーでは使います。 OpenGL ES 2.0 の頂点バッファーと同じように、インデックス バッファーを汎用のバッファーとして作成してバインドし、前に作成した頂点インデックスをインデックス バッファーにコピーします。
 
-When you're ready to draw, you bind both the vertex and the index buffer again, and call **glDrawElements**.
+描画する準備ができたら、もう一度頂点バッファーとインデックス バッファーの両方をバインドし、**glDrawElements** を呼び出します。
 
-OpenGL ES 2.0: Send the index order to the draw call.
+OpenGL ES 2.0: 描画呼び出しへのインデックスの順序の送信
 
 ``` syntax
 GLuint indexBuffer;
@@ -240,9 +241,9 @@ glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, renderer->indexBuffer);
 glDrawElements (GL_TRIANGLES, renderer->numIndices, GL_UNSIGNED_INT, 0);
 ```
 
-With Direct3D, it's a bit very similar process, albeit a bit more didactic. Supply the index buffer as a Direct3D subresource to the [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) you created when you configured Direct3D. You do this by calling [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/bb173588) with the configured subresource for the index array, as follows. (Again, notice that you assign the pointer to the **cubeIndices** array to the **pSysMem** field of the [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) structure.)
+Direct3D の場合、プロセスは非常に似ていますが、多少説明が必要です。 Direct3D を構成したときに作成した [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) にインデックス バッファーを Direct3D サブリソースとして渡します。 これを行うには、次のように、インデックスの配列の構成済みのサブリソースを指定して [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/bb173588) を呼び出します (ここでも、[**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) 構造体の **pSysMem** フィールドに **cubeIndices** 配列へのポインターを割り当てることに注意してください)。
 
-Direct3D: Create the index buffer.
+Direct3D: インデックス バッファーの作成
 
 ``` syntax
 m_indexCount = ARRAYSIZE(cubeIndices);
@@ -266,9 +267,9 @@ m_d3dContext->IASetIndexBuffer(
   0);
 ```
 
-Later, you will draw the triangles with a call to [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) (or [**ID3D11DeviceContext::Draw**](https://msdn.microsoft.com/library/windows/desktop/ff476407) for unindexed vertices), as follows. (For more details, jump ahead to [Draw to the screen](draw-to-the-screen.md).)
+その後、次のように、[**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) (インデックスなしの頂点の場合は [**ID3D11DeviceContext::Draw**](https://msdn.microsoft.com/library/windows/desktop/ff476407)) を呼び出して、三角形を描画します (詳しくは、一足先に「[画面への描画](draw-to-the-screen.md)」をご覧ください)。
 
-Direct3D: Draw the indexed vertices.
+Direct3D: インデックス付きの頂点の描画
 
 ``` syntax
 m_d3dContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
@@ -282,26 +283,26 @@ m_d3dContext->DrawIndexed(
   0);
 ```
 
-## Previous step
+## 前の手順
 
 
-[Port the shader objects](port-the-shader-config.md)
+[シェーダー オブジェクトの移植](port-the-shader-config.md)
 
-## Next step
+## 次の手順
 
-[Port the GLSL](port-the-glsl.md)
+[GLSL の移植](port-the-glsl.md)
 
-## Remarks
+## 注釈
 
-When structuring your Direct3D, separate the code that calls methods on [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) into a method that is called whenever the device resources need to be recreated. (In the Direct3D project template, this code is in the renderer object's **CreateDeviceResource** methods. The code that updates the device context ([**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)), on the other hand, is placed in the **Render** method, since this is where you actually construct the shader stages and bind the data.
+Direct3D を構築する場合は、[**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) のメソッドを呼び出すコードを切り離して、デバイス リソースを再作成する必要があるたびに呼び出されるメソッドに配置します (Direct3D プロジェクト テンプレートでは、このコードはレンダラー オブジェクトの **CreateDeviceResource** メソッドに配置されています)。 また、デバイス コンテキスト ([**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)) を更新するコードは **Render** メソッドに配置されています。そこで実際にシェーダー ステージを作成し、データをバインドするためです。
 
-## Related topics
+## 関連トピック
 
 
-* [How to: port a simple OpenGL ES 2.0 renderer to Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
-* [Port the shader objects](port-the-shader-config.md)
-* [Port the vertex buffers and data](port-the-vertex-buffers-and-data-config.md)
-* [Port the GLSL](port-the-glsl.md)
+* [簡単な OpenGL ES 2.0 レンダラーを Direct3D 11 に移植する方法](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
+* [シェーダー オブジェクトの移植](port-the-shader-config.md)
+* [頂点バッファーと頂点データの移植](port-the-vertex-buffers-and-data-config.md)
+* [GLSL の移植](port-the-glsl.md)
 
  
 

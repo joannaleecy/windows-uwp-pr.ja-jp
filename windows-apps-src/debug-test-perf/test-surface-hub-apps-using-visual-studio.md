@@ -1,18 +1,18 @@
 ---
 ms.assetid: A5320094-DF53-42FC-A6BA-A958F8E9210B
-title: Test Surface Hub apps using Visual Studio
-description: The Visual Studio simulator provides an environment to design, develop, debug, and test UWP apps, including apps built for Surface Hub. 
+title: Visual Studio を使った Surface Hub アプリのテスト
+description: Visual Studio シミュレーターは、UWP アプリの設計、開発、デバッグ、テストを行える環境を提供します。これには Surface Hub 用に作成されたアプリを含みます。 
 ---
 
-# Test Surface Hub apps using Visual Studio
-The Visual Studio simulator provides an environment where you can design, develop, debug, and test Universal Windows Platform (UWP) apps, including apps that you have built for Microsoft Surface Hub. The simulator does not use the same user interface as Surface Hub, but it is useful for testing how your app looks and behaves at the Surface Hub's screen size and resolution.
+# Visual Studio を使った Surface Hub アプリのテスト
+Visual Studio シミュレーターは、ユニバーサル Windows プラットフォーム (UWP) アプリの設計、開発、デバッグ、テストを行える環境を提供します。これには Microsoft Surface Hub 用に作成されたアプリを含みます。 シミュレーターでは、Surface Hub と同じユーザー インターフェイスは使用できませんが、Surface Hub の画面サイズと解像度でのアプリの外観と動作をテストするために有用です。
 
-For more information, see [Run Windows Store apps in the simulator](https://msdn.microsoft.com/en-us/library/hh441475.aspx).
+詳しくは、「[シミュレーターでの Windows ストア アプリの実行](https://msdn.microsoft.com/en-us/library/hh441475.aspx)」をご覧ください。
 
-## Add Surface Hub resolutions to the simulator
-To add Surface Hub resolutions to the simulator:
+## Surface Hub の解像度をシミュレーターに追加する
+Surface Hub の解像度をシミュレーターに追加するには、次の手順を実行します。
 
-1. Create a configuration for the 55" Surface Hub by saving the following XML into a file named **HardwareConfigurations-SurfaceHub55.xml**.  
+1. **HardwareConfigurations SurfaceHub55.xml** という名前のファイルに次の XML を保存して、55" Surface Hub 用の構成を作成します。  
 
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -31,7 +31,7 @@ To add Surface Hub resolutions to the simulator:
     </ArrayOfHardwareConfiguration>
     ```
 
-2. Create a configuration for the 84" Surface Hub by saving the following XML into a file named  **HardwareConfigurations-SurfaceHub84.xml**.
+2. **HardwareConfigurations SurfaceHub84.xml** という名前のファイルに次の XML を保存して、84" Surface Hub 用の構成を作成します。
 
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -50,50 +50,50 @@ To add Surface Hub resolutions to the simulator:
     </ArrayOfHardwareConfiguration>
     ```
 
-3. Copy the two XML files into **C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Simulator\\&lt;version number&gt;\HardwareConfigurations**.
+3. この 2 つの XML ファイルを **C:\Program Files (x86) \Common Files\Microsoft Shared\Windows Simulator\\&lt;バージョン番号&gt;\HardwareConfigurations** にコピーします。
 
-   > **Note**&nbsp;&nbsp;Administrative privileges are required to save files into this folder.
+   > **注**&nbsp;&nbsp;このフォルダーにファイルを保存するには、管理者特権が必要です。
 
-4. Run your app in the Visual Studio simulator. Click the **Change Resolution** button on the palette and select a Surface Hub configuration from the list.
+4. Visual Studio シミュレーターでアプリを実行します。 パレットの **[解像度の変更]** をクリックし、一覧から Surface Hub の構成を選択します。
 
-    ![Visual Studio simulator resolutions](images/vs-simulator-resolutions.png)
+    ![Visual Studio シミュレーターの解像度](images/vs-simulator-resolutions.png)
     
-   > **Tip**&nbsp;&nbsp;[Turn on Tablet mode](http://windows.microsoft.com/en-us/windows-10/getstarted-like-a-tablet) to better simulate the experience on a Surface Hub.
+   > **ヒント**&nbsp;&nbsp;Surface Hub でのエクスペリエンスをより適切にシミュレートするには、[タブレット モードを有効にします](http://windows.microsoft.com/en-us/windows-10/getstarted-like-a-tablet)。
    
-## Deploy apps to a Surface Hub from Visual Studio 
-Manually deploying an app is a simple process.
+## Visual Studio から Surface Hub にアプリを展開する 
+アプリを手動で展開することは単純なプロセスです。
 
-### Enable developer mode
-By default, Surface Hub only installs apps from the Windows Store. To install apps signed by other sources, you must enable developer mode. 
+### 開発者モードを有効にする
+既定では、Surface Hub はアプリを Windows ストアからのみインストールします。 他のソースによって署名されたアプリをインストールするには、開発者モードを有効にする必要があります。 
 
-> **Note**&nbsp;&nbsp;After developer mode has been enabled, you will need to reset the Surface Hub to disable it again. Resetting the device removes all local user files and configurations and then reinstalls Windows.
+> **注**&nbsp;&nbsp;開発者モードを有効にした後、もう一度これを無効にするには、Surface Hub をリセットする必要があります。 デバイスをリセットすると、すべてのローカル ユーザーのファイルと構成が削除され、Windows が再インストールされます。
 
-1. From the Surface Hub's **Start** menu, open the Settings app.
+1. Surface Hub の**スタート** メニューから設定アプリを開きます。
 
-   >  **Note**&nbsp;&nbsp;Administrative privileges are required to access the Settings app.
+   >  **注**&nbsp;&nbsp;設定アプリにアクセスするには、管理者特権が必要です。
    
-2. Navigate to **Update & security > For developers**.
+2. **[更新プログラムとセキュリティ]**、[開発者向け] の順に移動します。
 
-3. Choose **Developer mode** and accept the warning prompt.
+3. **[開発者モード]** を選択し、警告メッセージに同意します。
 
-### Deploy your app from Visual Studio
-For more information, see [Deploying and debugging Universal Windows Platform (UWP) apps](https://msdn.microsoft.com/en-us/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps).
+### Visual Studio からアプリを展開する
+詳しくは、「[ユニバーサル Windows プラットフォーム (UWP) アプリの展開とデバッグ](https://msdn.microsoft.com/en-us/windows/uwp/debug-test-perf/deploying-and-debugging-uwp-apps)」をご覧ください。
 
-   > **Note**&nbsp;&nbsp;This feature requires at least **Visual Studio 2015 Update 1**.
+   > **注**&nbsp;&nbsp;この機能には、少なくとも **Visual Studio 2015 Update 1** が必要です。
 
-1. Navigate to the debug target dropdown next to the **Start Debugging** button and select **Remote Machine**.
+1. **[デバッグの開始]**ボタンの横にあるデバッグ ターゲットのドロップダウンに移動し、**[リモート コンピューター]** を選択します。
 
     <!--lcap: in your screenshot, you have local machine selected-->
 
-   ![Visual Studio debug targets dropdown](images/vs-debug-target.png)
+   ![Visual Studio のデバッグ ターゲットのドロップダウン](images/vs-debug-target.png)
    
-2. Enter the Surface Hub's IP address. Ensure that the **Universal** authentication mode is selected.
+2. Surface Hub ハブの IP アドレスを入力します。 **[ユニバーサル]** 認証モードが選択されていることを確認します。
 
-   > **Tip**&nbsp;&nbsp;After you have enabled developer mode, you can find the Surface Hub's IP address on the welcome screen.
+   > **ヒント**&nbsp;&nbsp;開発者モードを有効にした後、ようこそ画面で、Surface Hub の IP アドレスを確認することができます。
    
-3. Choose **Start Debugging (F5)** to deploy and debug your app on the Surface Hub, or press Ctrl+F5 to just deploy your app.
+3. **[デバッグの開始 (F5)]** を選択して、Surface Hub にアプリを展開してデバッグします。アプリの展開のみを行うには、Ctrl キーを押しながら F5 キーを押します。
 
-   > **Tip**&nbsp;&nbsp;If the Surface Hub is on the welcome screen, dismiss it by choosing any button.
+   > **ヒント**&nbsp;&nbsp;Surface Hub がようこそ画面に表示された場合は、いずれかのボタンを選んで無視します。
 
 
 

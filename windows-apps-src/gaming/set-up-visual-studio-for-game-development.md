@@ -1,83 +1,83 @@
 ---
-title: Visual Studio tools for game programming
-description: An overview of DirectX specific tools available in Visual Studio.
+title: ゲーム プログラミング用の Visual Studio ツール
+description: Visual Studio で利用できる DirectX 固有のツールの概要。
 ms.assetid: 43137bfc-7876-70e0-515c-4722f68bd064
 ---
 
-# Visual Studio tools for game programming
+# ゲーム プログラミング用の Visual Studio ツール
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-**Summary**
+**要約**
 
--   [Create a DirectX game project from a template](user-interface.md)
--   Visual Studio tools for DirectX game programming
-
-
-If you use Visual Studio Ultimate to develop DirectX apps, there are additional tools available for creating, editing, previewing, and exporting image, model, and shader resources. There are also tools that you can use to convert resources at build time and debug DirectX graphics code.
-
-This topic gives an overview of these graphics tools.
-
-## Image Editor
+-   [テンプレートからの DirectX ゲーム プロジェクトの作成](user-interface.md)
+-   DirectX ゲーム プログラミング用の Visual Studio ツールの使用
 
 
-Use the Image Editor to work with the kinds of rich texture and image formats that DirectX uses. The Image Editor supports the following formats.
+Visual Studio Ultimate を使って、DirectX アプリを開発する場合は、画像、モデル、シェーダー リソースを作成、編集、プレビュー、エクスポートするための追加のツールを利用できます。 また、ビルド時のリソースの変換や、DirectX グラフィックス コードのデバッグに使うことができるツールもあります。
+
+このトピックでは、こうしたグラフィックス ツールの概要について説明します。
+
+## イメージ エディター
+
+
+イメージ エディターは、DirectX で使うリッチ テクスチャと画像形式の種類を操作するのに使います。 イメージ エディターでは、次の形式をサポートしています。
 
 -   .png
--   .jpg, .jpeg, .jpe, .jfif
+-   .jpg、.jpeg、.jpe、.jfif
 -   .dds
 -   .gif
 -   .bmp
 -   .dib
--   .tif, .tiff
+-   .tif、.tiff
 -   .tga
 
-Create [build customization files](#custom) to convert these to .dds files at build time.
+ビルド時にこれらを .dds ファイルに変換するには、[ビルド カスタマイズ ファイル](#custom)を作成します。
 
-For more information, see [Working with Textures and Images](https://msdn.microsoft.com/library/windows/apps/hh873119.aspx).
+詳しくは、「[テクスチャおよびイメージの使用](https://msdn.microsoft.com/library/windows/apps/hh873119.aspx)」をご覧ください。
 
-> **Note**  The Image Editor is not intended to be a replacement for a full feature image editing app, but is appropriate for many simple viewing and editing scenarios.
+> **注**  イメージ エディターは、フル機能を備えた画像編集アプリを置き換えるものではありませんが、簡単な表示や編集シナリオの多くに適しています。
 
  
 
-## Model Editor
+## モデル エディター
 
 
-You can use the Model Editor to create basic 3D models from scratch, or to view and modify more-complex 3D models from full-featured 3D modeling tools. The Model Editor supports several 3D model formats that are used in DirectX app development. You can create [build customization files](#custom) to convert these to .cmo files at build time.
+モデル エディターを使うと、基本的な 3D モデルをゼロから作成するや、フル機能を備えた 3D モデリング ツールで作成したもっと複雑な 3D モデルの表示や変更を行うことができます。 モデル エディターでは、DirectX アプリの開発で使われるいくつかの 3D モデル形式をサポートしています。 ビルド時に次のファイルを .cmo ファイルに変換する[ビルド カスタマイズ ファイル](#custom)を作成できます。
 
 -   .fbx
 -   .dae
 -   .obj
 
-Here's a screenshot of a model in the editor with lighting applied.
+エディターで照明を適用したモデルのスクリーンショットを次に示します。
 
-![teapot](images/modeleditor.png)
+![ティーポット](images/modeleditor.png)
 
-For more information, see [Working with 3-D Models](https://msdn.microsoft.com/library/windows/apps/hh873114.aspx).
+詳しくは、「[3-D モデルの操作](https://msdn.microsoft.com/library/windows/apps/hh873114.aspx)」をご覧ください。
 
-> **Note**  The Model Editor is not intended to be a replacement for a full feature model editing app, but is appropriate for many simple viewing and editing scenarios.
+> **注**  モデル エディターは、フル機能を備えたモデル編集アプリを置き換えるものではありませんが、簡単な表示や編集シナリオの多くに適しています。
 
  
 
-## Shader Designer
+## シェーダー デザイナー
 
 
-Use the Shader Designer to create custom visual effects for your game or app even if you don't know HLSL programming.
+HLSL でのプログラミングがわからない場合でも、シェーダー デザイナーを使うと、ゲームやアプリのカスタムの視覚効果を作成できます。
 
-You create a shader visually as a graph. Each node displays a preview of the output up to that operation. Here's an example that applies Lambert lighting with a sphere preview.
+シェーダーはグラフとして視覚的に作成します。 各ノードには、その操作までの出力のプレビューが表示されます。 球体のプレビューでランバート照明を適用した例を次に示します。
 
-![visual shader graph](images/shaderdesigner.png)
+![視覚シェーダー グラフ](images/shaderdesigner.png)
 
-Use the Shader Editor to design, edit, and save shaders in the .dgsl format. It also exports the following formats.
+シェーダー エディターは、シェーダーを設計、編集、.dgsl 形式で保存するのに使います。 また、次の形式をエクスポートします。
 
--   .hlsl (source code)
--   .cso (bytecode)
--   .h (HLSL bytecode array)
+-   .hlsl (ソース コード)
+-   .cso (バイトコード)
+-   .h (HLSL バイトコード配列)
 
-Create [build customization files](#custom) to convert any of these formats to .cso files at build time.
+ビルド時にこれらの形式を .cso ファイルに変換するには、[ビルド カスタマイズ ファイル](#custom)を作成します。
 
-Here is a portion of HLSL code that is exported by the Shader Editor. This is only the code for the Lambert lighting node.
+シェーダー エディターでエクスポートした HLSL コードの一部を次に示します。 これは、ランバート照明ノードのコードだけです。
 
 ```hlsl
 //
@@ -101,39 +101,39 @@ float3 LambertLighting(
 }
 ```
 
-For more information, see [Working with Shaders](https://msdn.microsoft.com/library/windows/apps/hh873117.aspx).
+詳しくは、「[シェーダーの操作](https://msdn.microsoft.com/library/windows/apps/hh873117.aspx)」をご覧ください。
 
-## Build customizations for 3D assets
-
-
-You can add build customizations to your project so that Visual Studio converts resources to usable formats. After that, you can load the assets into your app and use them by creating and filling DirectX resources just like you would in any other DirectX app.
-
-To add a build customization, you right-click on the project in the **Solution Explorer** and select **Build Customizations...**. You can add the following types of build customizations to your project.
-
--   Image Content Pipeline takes image files as input and outputs DirectDraw Surface (.dds) files.
--   Mesh Content Pipeline takes mesh files (such as .fbx) and outputs .cmo mesh files.
--   Shader Content Pipeline takes Visual Shader Graph (.dgsl) from the Visual Studio Shader Editor and outputs a Compiled Shader Output (.cso) file.
-
-For more information, see [Using 3-D Assets in Your Game or App](https://msdn.microsoft.com/library/windows/apps/hh972446.aspx).
-
-## Debugging DirectX graphics
+## 3D アセットのビルドのカスタマイズ
 
 
-Visual Studio provides graphics-specific debugging tools. Use these tools to debug things like:
+プロジェクトにビルドのカスタマイズを追加して、リソースを Visual Studio で利用できる形式に変換できます。 その後で、アプリにアセットを読み込み、他の DirectX アプリと同じように DirectX リソースを作成し、設定して、アセットを使うことができます。
 
--   The graphics pipeline.
--   The event call stack.
--   The object table.
--   The device state.
--   Shader bugs.
--   Uninitialized or incorrect constant buffers and parameters.
--   DirectX version compatibility.
--   Limited Direct2D support.
--   Operating system and SDK requirements.
+ビルド カスタマイズを追加するには、**ソリューション エクスプローラー**でプロジェクトを右クリックし、**[ビルドのカスタマイズ]** をクリックします。 プロジェクトには次の種類のビルドのカスタマイズを追加できます。
 
-For more information, see [Debugging DirectX Graphics](https://msdn.microsoft.com/library/windows/apps/hh315751.aspx).
+-   入力として画像ファイルを受け取り、DirectDraw Surface (.dds) ファイルを出力するイメージ コンテンツ パイプライン。
+-   メッシュ ファイル (.fbx など) を受け取り、.cmo メッシュ ファイルを出力するメッシュ コンテンツ パイプライン。
+-   Visual Studio シェーダー エディターで作成した視覚シェーダー グラフ (.dgsl) を受け取り、コンパイル済みシェーダー出力 (.cso) ファイルを出力するシェーダー コンテンツ パイプライン。
 
-> **Note**  This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
+詳しくは、「[ゲームまたはアプリケーションでの 3-D アセットの使用](https://msdn.microsoft.com/library/windows/apps/hh972446.aspx)」をご覧ください。
+
+## DirectX グラフィックスのデバッグ
+
+
+Visual Studio には、グラフィックス固有のデバッグ ツールが用意されています。 これらのツールを使って、次のような項目をデバッグします。
+
+-   グラフィックス パイプライン。
+-   イベント呼び出し履歴。
+-   オブジェクト テーブル。
+-   デバイスの状態。
+-   シェーダーのバグ。
+-   初期化されていないか、無効な定数バッファーとパラメーター。
+-   DirectX バージョンの互換性。
+-   制限されている Direct2D のサポート。
+-   オペレーティング システムと SDK の要件。
+
+詳しくは、「[DirectX グラフィックスのデバッグ](https://msdn.microsoft.com/library/windows/apps/hh315751.aspx)」をご覧ください。
+
+> **注**  この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
  
 

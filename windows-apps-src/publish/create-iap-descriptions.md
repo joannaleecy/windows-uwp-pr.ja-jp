@@ -1,39 +1,39 @@
 ---
-Description: When submitting an IAP, the info you enter in s step will be displayed to your app's customers.
-title: Create IAP descriptions
+Description: IAP を申請するとき、[説明] の手順で入力した情報がアプリのユーザーに表示されます。
+title: IAP の説明の作成
 ms.assetid: 07178278-A18A-4F73-A660-0047DAAE49B5
 ---
 
-# Create IAP descriptions
+# IAP の説明の作成
 
 
-When submitting an IAP, the info you enter in **Descriptions** step will be displayed to your app's customers. Make sure to consider the description carefully in order to represent your IAP accurately in a way that makes it appealing to customers. You can customize the description for each language in which you offer your app.
+IAP を申請するとき、**[説明]** 手順で入力した情報がアプリのユーザーに表示されます。 ユーザーを最も引きつける方法で IAP を正確に表現するため、説明は慎重に検討してください。 アプリを提供する言語ごとに説明をカスタマイズできます。
 
-## Languages
-
-
-Before you can enter description info, you need to specify one or more [languages](supported-languages.md). We recommend providing descriptions for every language your app supports.
-
-Under the **Descriptions** section of your IAP’s submission, click **Add languages**. Choose one or more languages from the list and then click Save at the bottom of the page.
-
-You’ll then see these languages listed in the **Add languages** section. Click the language name to provide description info for that language.
-
-You can add additional languages later by clicking **Add languages** again.
-
-## Title
+## 言語
 
 
-This is the name your customers will see for this IAP. Enter a name of up to 100 characters.
+説明情報を入力する前に、1 つ以上の[言語](supported-languages.md)を指定する必要があります。 アプリがサポートする各言語で説明を提供することをお勧めします。
 
-## Description
+IAP の申請の **[説明]** セクションで、**[言語の追加]** をクリックします。 一覧から 1 つまたは複数の言語を選び、ページの下部の [保存] をクリックします。
+
+次に、**[言語の追加]** セクションに一覧表示されていたそれらの言語が表示されます。 言語名をクリックし、その言語の説明情報を入力します。
+
+**[言語の追加]** をもう一度クリックして、後で言語を追加できます。
+
+## タイトル
 
 
-If you'd like to display more info than just a title, you can enter up to 200 characters here. This field is optional.
+これは、この IAP に関してユーザーに表示される名前です。 最大 100 文字の名前を入力します。
 
-## Icon
+## 説明
 
 
-You also have the option to provide an image that may be displayed when the user buys the product. This icon must be a .png file that measures exactly 300 x 300 pixels.
+タイトルより多くの情報を表示する場合、ここに最大 200 文字入力することができます。 このフィールドは省略可能です。
+
+## アイコン
+
+
+ユーザーが製品を購入するときに表示される画像を指定するオプションもあります。 このアイコンは、ちょうど 300 x 300 ピクセルの .png ファイルにする必要があります。
 
  
 

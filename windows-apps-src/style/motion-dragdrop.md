@@ -1,61 +1,61 @@
 ---
-Description: Use drag-and-drop animations when users move objects, such as moving an item within a list, or dropping an item on top of another.
-title: Drag animations in UWP apps
+Description: ドラッグ アンド ドロップ アニメーションは、リスト内で項目を移動するときや、特定の項目を別の項目上にドロップするときなど、オブジェクトを移動する際に使います。
+title: UWP アプリでのドラッグ アニメーション
 ms.assetid: 6064755F-6E24-4901-A4FF-263F05F0DFD6
 label: Motion--Drag and drop
 template: detail.hbs
 ---
 
-# Drag animations
+# ドラッグ アニメーション
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-Use drag-and-drop animations when users move objects, such as moving an item within a list, or dropping an item on top of another.
+ドラッグ アンド ドロップ アニメーションは、リスト内で項目を移動するときや、特定の項目を別の項目上にドロップするときなど、オブジェクトを移動する際に使います。
 
-**Important APIs**
+**重要な API**
 
--   [**DragItemThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br243174)
-
-
-## Do's and don'ts
+-   [**DragItemThemeAnimation クラス**](https://msdn.microsoft.com/library/windows/apps/br243174)
 
 
-**Drag start animation**
-
--   Use the drag start animation when the user begins to move an object.
--   Include affected objects in the animation if and only if there are other objects that can be affected by the drag-and-drop operation.
--   Use the drag end animation to complete any animation sequence that began with the drag start animation. This reverses the size change in the dragged object that was caused by the drag start animation.
-
-**Drag end animation**
-
--   Use the drag end animation when the user drops a dragged object.
--   Use the drag end animation in combination with add and delete animations for lists.
--   Include affected objects in the drag end animation if and only if you included those same affected objects in the drag start animation.
--   Don't use the drag end animation if you have not first used the drag start animation. You need to use both animations to return objects to their original sizes after the drag sequence is complete.
-
-**Drag between enter animation**
-
--   Use the drag between enter animation when the user drags the drag source into a drop area where it can be dropped between two other objects.
--   Choose a reasonable drop target area. This area should not be so small that it is difficult for the user to position the drag source for the drop.
--   The recommended direction to move affected objects to show the drop area is directly apart from each other. Whether they move vertically or horizontally depends on the orientation of the affected objects to each other.
--   Don't use the drag between enter animation if the drag source cannot be dropped in an area. The drag between enter animation tells the user that the drag source can be dropped between the affected objects.
-
-**Drag between leave animation**
-
--   Use the drag between leave animation when the user drags an object away from an area where it could have been dropped between two other objects.
--   Don't use the drag between leave animation if you have not first used the drag between enter animation.
+## 推奨と非推奨
 
 
-## Related articles
+**ドラッグの開始アニメーション**
 
-**For developers (XAML)**
-* [Animations overview](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [Animating drag-and-drop sequences](https://msdn.microsoft.com/library/windows/apps/xaml/jj649427)
-* [Quickstart: Animating your UI using library animations](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
-* [**DragItemThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br243174)
-* [**DropTargetItemThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br243186)
-* [**DragOverThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br243180)
+-   ドラッグの開始アニメーションは、ユーザーがオブジェクトを動かし始めるときに使います。
+-   ドラッグ アンド ドロップ操作の影響を受けるオブジェクトが他に存在する場合に限り、それらのオブジェクトをアニメーションに含めるようにします。
+-   ドラッグの開始アニメーションによって始まったアニメーションのシーケンスの終了には、ドラッグの終了アニメーションを使います。 ドラッグの終了アニメーションにより、ドラッグの開始アニメーションで変化したドラッグされたオブジェクトのサイズが元に戻ります。
+
+**ドラッグの終了アニメーション**
+
+-   ドラッグの終了アニメーションは、ドラッグされたオブジェクトをドロップするときに使います。
+-   ドラッグの終了アニメーションは、リストの追加および削除アニメーションと組み合わせて使います。
+-   ドラッグの開始アニメーションに影響を受けるオブジェクトが存在する場合に限り、それらのオブジェクトをドラッグの終了アニメーションに含めるようにします。
+-   ドラッグの終了アニメーションは、ドラッグの開始アニメーションよりも先に使わないでください。 ドラッグ シーケンスの完了後にオブジェクトを元のサイズに戻すためには、両方のアニメーションを使う必要があります。
+
+**項目間でのドラッグの開始アニメーション**
+
+-   項目間でのドラッグの開始アニメーションは、2 つのオブジェクトの間のドロップ可能な場所にドラッグ ソースをドラッグするときに使います。
+-   適度な大きさのドロップ ターゲット領域を選んでください。 この領域が小さすぎると、ドラッグ ソースをドロップする際に重ね合わせるのが難しくなるため、好ましくありません。
+-   ドロップ可能な場所を示すために影響を受けるオブジェクトが移動するときには、互いにまっすぐに引き離すことをお勧めします。 移動方向が上下になるか、左右になるかは、影響を受けるオブジェクトが並ぶ向きによって異なります。
+-   ドラッグ ソースを領域内にドロップできない場合、項目間でのドラッグの開始アニメーションは使わないでください。 項目間へのドラッグの開始アニメーションは、影響を受けるオブジェクトの間にドラッグ ソースをドラッグできることをユーザーに知らせるためのものです。
+
+**項目間でのドラッグの中止アニメーション**
+
+-   項目間でのドラッグの中止アニメーションは、ユーザーがオブジェクトをドラッグして 2 つのオブジェクトの間のドロップ可能な領域から出すときに使います。
+-   項目間でのドラッグの開始アニメーションよりも先に、項目間でのドラッグの中止アニメーションを使わないでください。
+
+
+## 関連記事
+
+**開発者向け (XAML)**
+* [アニメーションの概要](https://msdn.microsoft.com/library/windows/apps/mt187350)
+* [ドラッグ アンド ドロップ シーケンスのアニメーション化](https://msdn.microsoft.com/library/windows/apps/xaml/jj649427)
+* [クイック スタート: ライブラリのアニメーションを使った UI のアニメーション化](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [**DragItemThemeAnimation クラス**](https://msdn.microsoft.com/library/windows/apps/br243174)
+* [**DropTargetItemThemeAnimation クラス**](https://msdn.microsoft.com/library/windows/apps/br243186)
+* [**DragOverThemeAnimation クラス**](https://msdn.microsoft.com/library/windows/apps/br243180)
 
 
  

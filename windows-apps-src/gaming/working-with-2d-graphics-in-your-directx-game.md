@@ -1,59 +1,60 @@
 ---
-title: 2D graphics for DirectX games
-description: We discuss the use of 2D bitmap graphics and effects, and how to use them in your game.
+title: DirectX ゲームの 2D グラフィックス
+description: ここでは 2D ビットマップ グラフィックスおよびエフェクトの用途と、これらを実際のゲームで使用する方法について説明します。
 ms.assetid: ad69e680-d709-83d7-4a4c-7bbfe0766bc7
 ---
 
-# 2D graphics for DirectX games
+# DirectX ゲームの 2D グラフィックス
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-We discuss the use of 2D bitmap graphics and effects, and how to use them in your game.
+ここでは 2D ビットマップ グラフィックスおよびエフェクトの用途と、これらを実際のゲームで使用する方法について説明します。
 
-2D graphics are a subset of 3D graphics that deal with 2D primitives or bitmaps. More generally, they don't use a z-coordinate in the way a 3D game might, since the game play is usually confined to the x-y plane. They sometimes use 3D graphics techniques to create their visual components, and they are generally simpler to develop. If you are new to gaming, a 2D game is a great place to start, and 2D graphics development can be a good place for you to get a handle on DirectX.
+2D グラフィックスは、2D のプリミティブやビットマップを扱う 3D グラフィックスのサブセットです。 平たく言えば、2D グラフィックスでは概して、3D ゲームで使うような Z 座標は使用せず、ゲーム プレイは x-y の平面に制限されます。 2D グラフィックスでは、3D グラフィックスの手法を使用して、ビジュアル コンポーネントを作成する場合があります。2D グラフィックスは通常、3D グラフィックスよりも開発が容易です。 ゲーミングの作業に初めて携わる場合、まず 2D のゲームから始めることをお勧めします。また 2D グラフィックスの開発は、DirectX を理解するうえで効果的な第一歩となります。
 
-You can develop 2D gaming graphics in DirectX using either Direct2D or Direct3D, or some combination. Many of the more useful classes for 2D game development are in Direct3D, such as the [**Sprite**](https://msdn.microsoft.com/library/windows/desktop/bb205601) class. Direct2D is a set of APIs that primarily target user interfaces and apps that require support for drawing primitives (such as circles, lines, and flat polygon shapes). With that in mind, it still provides a powerful and performant set of classes and methods for creating game graphics as well, especially when creating game overlays, interfaces, and heads-up displays (HUDs) -- or for creating a variety of 2D games, from simple to reasonably detailed. The most effective approach when creating 2D games, though, is to use elements from both libraries, and that's the way we will approach 2D graphics development in this topic.
+DirectX で使用する 2D ゲーミングのグラフィックスは、Direct2D または Direct3D、あるいはその組み合わせを使用して開発できます。 [
+            **Sprite**](https://msdn.microsoft.com/library/windows/desktop/bb205601) クラスなど、2D ゲーム開発で使用できる有用なクラスが多く Direct3D にもあります。 Direct2D は、主にプリミティブ (たとえば、円、線、平面上の多角形図形など) の描画時にサポートが必要となるユーザー インターフェイスやアプリを対象とした API のセットです。 以上を前提として、Direct2D により、ゲーム グラフィックスの作成をはじめ、特にゲームのオーバーレイ、インターフェイス、およびヘッドアップ ディスプレイ (HUD) の作成、または多様な 2D ゲーム (シンプルなものから比較的複雑なものまで) の作成にあたって利用できる強力で効率のよいクラスとメソッドのセットが提供されます。 ただし、2D ゲームの作成に向けた最も効果的なアプローチは、両方のライブラリにある要素を利用することです。ここでは、こうしたアプローチによって 2D グラフィックスの開発について説明します。
 
-## Concepts at a glance
-
-
-Before the advent of modern 3D graphics and the hardware that supports it, games were primarily 2D, and many of their graphics techniques involved moving blocks of memory around -- usually arrays of color data that would be translated or transformed to pixels on the screen in a 1:1 fashion.
-
-In DirectX, 2D graphics are part of the 3D pipeline. There is a much greater variety of screen resolutions and graphics hardware available, and your 2D graphics engine must be able to support them without a significant change in fidelity.
-
-Here are a few of the basic concepts you should be familiar with when starting 2D graphics development.
-
--   Pixels and raster coordinates. A pixel is a single point on a raster display, and has its own (x, y) coordinate pair indicating its location on the display. (The term "pixel" is often used interchangeably between the physical pixels that comprise the display and the addressable memory elements used to hold the color and alpha values of the pixels before they are sent to the display.) The raster is treated by APIs as a rectangular grid of pixel elements, which often has a 1:1 correspondence with the physical pixel grid of a display. Raster coordinate systems start from the upper left, with the pixel at (0, 0) in the upper leftmost corner of the grid.
--   Bitmap graphics (sometimes called raster graphics) are graphic elements represented as a rectangular grid of pixel values. Sprites -- computed pixel arrays managed independent of the raster -- are one type of bitmap graphic, commonly used for the active characters or background-independent animated objects in a game. The various frames of animation for a sprite are represented as collections of bitmaps called "sheets" or "batches." Backgrounds are larger bitmap objects that are the same resolution or greater than that of the screen raster, and often serve as the backdrop(s) for a game's playfield.
--   Vector graphics are graphics that use geometric primitives, such as points, lines, circles, and polygons to define 2D objects. They are represented not as arrays of pixels, but as the mathematical equations that define them in a 2D space. They do not necessarily have a 1:1 correspondence with the pixel grid of the display, and must be transformed from the coordinate system that you rendered them in into the raster coordinate system of the display.
--   Translation is when you take a point or vertex and calculate its new location in the same coordinate system.
--   Scaling is when you enlarge or shrink an object by a specified scale factor. With a vector image, you shrink and enlarge its component vertices; with a bitmap, you enlarge the pixel elements or diminish them. With bitmap images, you lose pixel data when the image shrinks, and you enlarge the individual pixels when the image is scaled closer. For the latter, you can use pixel color interpolation operations, like bilinear filtering, to smooth out the harsh color boundaries between the enlarged pixels.
--   Rotation is when you rotate an object about a specified axis or axes. With a vector image, the vertices of the geometry are multiplied against a rotation matrix to obtain the rotated vertex; with a bitmap image, different algorithms can be employed, each with a lesser or greater degree of fidelity in the results. As with scaling and translation, there are APIs specifically for rotation operations.
--   Transformation is when you take one point or vertex in one coordinate system and calculate its corresponding point or vertex in another coordinate system. This includes translation, scaling, and rotation, as well as other coordinate calculation operations.
--   Clipping is when you remove portions of bitmaps or geometry that are not within the viewable area of the display, or are hidden by objects with higher view priority.
--   The frame buffer is an area in memory -- often in the memory of the graphics hardware itself -- that contains the final raster map that you will draw to the screen. The swap chain is a collection of buffers, where you draw in a back buffer and, when the image is ready, you "swap" it to the front and display it.
-
-## Design considerations
+## 概要
 
 
-2D graphics development is a great way to get accustomed to developing with Direct3D, and will allow you to spend more time on other critical aspects of game development: audio, controls, and the game mechanics.
+近年の 3D グラフィックスやこれに対応するハードウェアが登場する前は、2D のゲームが主流でした。ここで使用するグラフィックスの手法の多くがメモリ ブロックをあちこちに動かすものでした。通常は、一連のカラー データを、画面のピクセルに 1:1 の形式で変換、または変形していました。
 
-Always draw to a back buffer. Drawing directly to your frame buffer means that your image will be displayed when the signal for display is received (usually every 1/60th of second), even if your drawing operation hasn't completed!
+DirectX では、2D グラフィックスは 3D パイプラインの一部として提供されます。 現在では、はるかに多様なスクリーン解像度やグラフィックス ハードウェアが利用できるため、2D グラフィックス エンジンでは画質を大きく損なうことなく、こうした機能をサポートできなければなりません。
 
-Design your graphics engine to support a good selection of resolutions, from 1024x600 to 1920x1080 (or higher). Your audience will thank you if you support their LCD monitor's native resolution, especially with 2D graphics.
+以下に、2D グラフィックスを開発するにあたって理解しておくべき基本的な概念をいくつか示します。
 
-Great artwork will be your greatest asset, when it comes to visuals. While your bitmap graphics may lack the punch of 3D photorealistic visuals using the latest shader model features, great high-resolution artwork can often convey as much or more style and personality -- and with far less of a performance penalty.
+-   ピクセル座標とラスター座標 ピクセルとは、ラスター ディスプレイ上の 1 個の点のことです。ピクセルには固有の座標ペア (x, y) が与えられ、これによりディスプレイ上の位置を表します (「ピクセル」という用語は、ディスプレイを構成する物理的な画素を表す場合と、実際にディスプレイに送信する前に、画素の色とアルファ値を格納する際に用いるアドレス可能なメモリ要素を表す場合があります)。ラスターは、API によりピクセル要素を含む長方形グリッドとして扱われます。多くの場合、ディスプレイ上の物理的なピクセル グリッドと 1:1 で対応します。 ラスター座標系は、グリッドの左上端のピクセル (0, 0) から開始します。
+-   ビットマップ グラフィックス (ラスター グラフィックスとも呼ばれます) は、ピクセル値を含む長方形グリッドとして表されます。 スプライト (ラスターからは独立して管理する計算済みのピクセル配列) は、一般にゲーム中のアクティブ キャラクターや背景独立型のアニメーション オブジェクトなどに使用するビットマップ グラフィックの 1 種です。 スプライトのアニメーションに使用する各種フレームは、「シート」または「バッチ」と呼ばれるビットマップのコレクションとして表現されます。 背景は、スクリーン ラスターと同じ、またはそれ以上の解像度を持つ大型のビットマップ オブジェクトです。ゲームのプレイ画面のバックグラウンドとして使用することがあります。
+-   ベクター グラフィックスは、点、線、円、2D オブジェクトを定義する多角形など幾何学的プリミティブを使用した画像です。 ベクター グラフィックスは、ピクセル配列としてではなく、2D 図形中で定義する数学方程式として表します。 必ずしも、ディスプレイのピクセル グリッドとは 1:1 で対応しないため、レンダリングに使用した座標系から、ディスプレイのラスター座標系への変換が必要になります。
+-   移動とは、点や頂点を取って位置を計算し、同じ座標系で別の位置に移すことです。
+-   スケーリングとは、指定した倍率でオブジェクトを拡大または縮小することです。 ベクター イメージの場合は、コンポーネントの頂点を使用して拡大または縮小を行います。ビットマップの場合は、ピクセル要素で拡大または縮小します。 ビットマップ イメージの場合、画像を縮小すると、ピクセル データが失われることがあります。画像を接近的にスケーリングする場合は、個々のピクセルを拡大します。 後者の場合、バイリニア フィルターのようなピクセル色補間操作によって拡大したピクセル間に生じる不自然な色の境界をスムーズにします。
+-   回転は、指定した軸 (複数の軸も可能) を中心にオブジェクトを回転させることです。 ベクター イメージの場合は、回転マトリックスに対してジオメトリの頂点を乗算することにより回転させた頂点を求めます。ビットマップ イメージの場合は、使用するアルゴリズムごとに生成される画質の程度が変動します。 スケーリングと移動の場合と同様、回転操作に特化した API があります。
+-   変換とは、ある座標系にある点や頂点を取って位置を計算し、別の座標系上で対応する点と頂点に置き換えることです。 変換には移動、スケーリング、回転のほか、別の座標計算操作も含まれます。
+-   クリップとは、ディスプレイの表示可能領域にない、または表示優先順位の高いオブジェクトの下に隠れたビットマップまたは形状の一部を除去することです。
+-   フレーム バッファーは、メモリ (またはグラフィックス ハードウェア自体のメモリの場合もあります) 内の領域のことで、スクリーンに描画する最終的なラスター マップが格納されます。 スワップ チェーンとは、一連のバッファーのことで、この中のバック バッファーに描画を行います。画像の準備ができた段階でフロント バッファーと「反転」して表示します。
 
-## Reference
+## 設計時の考慮事項
 
 
--   [Direct2D overview](https://msdn.microsoft.com/library/windows/desktop/dd370987)
--   [Direct2D quickstart](https://msdn.microsoft.com/library/windows/desktop/dd535473)
--   [Direct2D and Direct3D interoperability overview](https://msdn.microsoft.com/library/windows/desktop/dd370966)
+2D グラフィックスの開発は、Direct3D による開発を目指す手始めの作業として効果的です。これにより、オーディオ、コントロール、ゲームのしくみなど、ゲーム開発に伴う重要な側面も時間をかけて習得できるようになります。
 
-> **Note**  
-This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
+描画は必ずバック バッファーに行います。 フレーム バッファーに直接描画すると、描画操作が完了していなくても、ディスプレイ信号を受け取った時点 (通常 1/60 秒) で画像が表示されることになります。
+
+グラフィックス エンジンは、1024 × 600 から 1920 × 1080 (またはそれ以上) の高解像度をサポートするように設計します。 ユーザーからは LCD モニター ネイティブの解像度 (特に 2D グラフィックスの場合) のサポートが求められています。
+
+優れたアートワークは、ビジュアルの世界では貴重なアセットとなります。 ビットマップ グラフィックスでは、最先端のシェーダー モデル機能を駆使した 3D の写真のようにリアルなビジュアルの迫力に欠けるものの、高解像度のアートワークが説得力のあるスタイルや個性を伝えられる場合があります。しかもパフォーマンス上の犠牲が最小限に抑えられます。
+
+## 辞書/リファレンス
+
+
+-   [Direct2D の概要](https://msdn.microsoft.com/library/windows/desktop/dd370987)
+-   [Direct2D クイック スタート](https://msdn.microsoft.com/library/windows/desktop/dd535473)
+-   [Direct2D と Direct3D の相互運用性に関する概要](https://msdn.microsoft.com/library/windows/desktop/dd370966)
+
+> **注**  
+この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブ ドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
  
 

@@ -3,7 +3,7 @@ Description: 広範なユーザー向けにアプリをグローバル化した�
 Search.Refinement.TopicID: 180
 title: グローバリゼーションとローカライズのガイドライン
 ms.assetid: 0342DC3F-DDD1-4DD4-872E-A4EC340CAE79
-label: 推奨と非推奨
+label: Do's and don'ts
 template: detail.hbs
 ---
 
@@ -135,7 +135,7 @@ template: detail.hbs
 </tr>
 <tr class="odd">
 <td align="left"><p>リソースを参照するには、コードとマークアップでリソース識別子を使ってください。</p></td>
-<td align="left"><p>文字列リテラル、または画像の特定のファイル名をマークアップに含めるのではなく、リソースの参照を利用してください。 必ず、リソースごとに一意の識別子を使ってください。 詳細については、「[<strong>修飾子を使用してリソースに名前をつける方法</strong>](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/Hh965324)」をご覧ください。</p>
+<td align="left"><p>文字列リテラル、または画像の特定のファイル名をマークアップに含めるのではなく、リソースの参照を利用してください。 必ず、リソースごとに一意の識別子を使ってください。 詳細については、「[<strong>修飾子を使用してリソースに名前をつける方法</strong>](https://msdn.microsoft.com/library/windows/apps/xaml/Hh965324)」をご覧ください。</p>
 <p>システムが変更されて、異なるセットの修飾子の使用が始まるときに発生するイベントをリッスンします。 正しいリソースが読み込まれるようにドキュメントを再処理します。</p></td>
 </tr>
 <tr class="even">
@@ -187,6 +187,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=Mar16_HO4-->
 
 

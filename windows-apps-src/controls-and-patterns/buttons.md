@@ -1,32 +1,32 @@
 ---
-label: ボタン
+label: Buttons
 template: detail.hbs
 ---
 # ボタン
 ボタンは、特定の操作を直ちに実行する方法をユーザーに与えます。
 
-![ボタンの例](images/controls_button_example.png)
+![ボタンの例](images/controls/button.png)
 
 
 <span class="sidebar_heading" style="font-weight: bold;">重要な API</span>
 
--   [**Button クラス (XAML)**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)
--   [**RepeatButton クラス (XAML)**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx)
+-   [**Button クラス**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)
+-   [**RepeatButton クラス**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx)
 -   [**Click イベント**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx)
-
-## 例
-
-この例では、ダイアログ ボックスで、2 つのボタン ([送信] と [キャンセル]) を使います。 
-
-![ダイアログで使われるボタンの例](images/controls_button_example_dialog.png)
 
 ## 適切なコントロールの選択
 
 ボタンを使うと、ユーザーは直ちに操作を開始できます (フォームの送信など)。
 
 他のページに移動する操作では、ボタンは使わず、リンクを使います。 詳しくは、「[ハイパーリンク](hyperlinks.md)」をご覧ください。
-
+    
 > 例外: ウィザードでのページの移動には、[戻る] と [次へ] というラベルのボタンを使います。 他の種類の前に戻る移動や上位レベルへの移動では、[戻る] ボタンを使います。
+
+## 例
+
+この例では、Microsoft Edge ブラウザーのダイアログで、Close all (すべて閉じる) と Cancel (キャンセル) という 2 つのボタンを使用しています。 
+
+![ダイアログで使われるボタンの例](images/control-examples/buttons-edge.png)
 
 ## ボタンの作成
 
@@ -194,7 +194,7 @@ Surface Hub
 
  
 
-## <span id="Recommendations"></span><span id="recommendations"></span><span id="RECOMMENDATIONS"></span>推奨事項
+## 推奨と非推奨
 
 
 -   "戻る" ナビゲーションを有効にします。
@@ -229,6 +229,6 @@ Surface Hub
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=Mar16_HO4-->
 
 

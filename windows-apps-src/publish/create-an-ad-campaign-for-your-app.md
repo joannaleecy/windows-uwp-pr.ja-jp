@@ -1,61 +1,61 @@
 ---
-Description: You can create an ad campaign using the Dev Center dashboard to help promote your app and grow your app's user base.
-title: Create an ad campaign for your app
+Description: アプリの販促活動を行ったり、アプリのユーザー数を増やすために、デベロッパー センター ダッシュボードを使って広告キャンペーンを作成できます。
+title: アプリ向けの広告キャンペーンの作成
 ms.assetid: 10D94929-92C4-4379-AA5F-6FEF879F2463
 ---
 
-# Create an ad campaign for your app
+# アプリ向けの広告キャンペーンの作成
 
 
-You can create an ad campaign using the Dev Center dashboard to help promote your app and grow your app's user base. By default, we will choose the target audience for your ads based on the settings for your app in the Dev Center dashboard, but you can optionally define your own audience. You can also use a default set of ad templates or upload your own ad designs. For more details about ad campaigns, see [Common questions about ad campaigns](common-questions.md).
+アプリの販促活動を行ったり、アプリのユーザー数を増やすために、デベロッパー センター ダッシュボードを使って広告キャンペーンを作成できます。 既定では、デベロッパー センター ダッシュボードでのアプリの設定に基づいて広告の対象ユーザーが選択されますが、必要に応じて独自のユーザーを定義することができます。 広告テンプレートの既定のセットを使ったり、独自の広告のデザインをアップロードすることもできます。 広告キャンペーンについて詳しくは、「[広告キャンペーンに関してよく寄せられる質問](common-questions.md)」をご覧ください。
 
-> **Note**  You can create ad campaigns only for apps that have passed the final publishing phase of the [app certification process](the-app-certification-process.md).
+> **注:** [アプリの認定プロセス](the-app-certification-process.md)の最終的な公開フェーズに合格したアプリについてのみ、広告キャンペーンを作成できます。
 
-Here's how to create an ad campaign to promote your app.
+アプリを宣伝するために、広告キャンペーンを作成する方法を次に示します。
 
-1.  From the left navigation menu on your app's page in the Dev Center dashboard, click **Monetization** &gt; **Promote your app**.
-2.  Do one of the following:
+1.  デベロッパー センター ダッシュボードのアプリのページで、左のナビゲーション メニューから **[収益化]**、**[アプリの宣伝]** の順にクリックします。
+2.  次のいずれかの操作を行います。
 
-    -   If you have not yet created an ad campaign for this app, the **Promote your app** page displays information about the benefits of ad campaigns. Click **Get started** or **Create an ad campaign**.
-    -   If you have already created an ad campaign for this app, the **Promote your app** page lists your existing ad campaigns. Click **New campaign**.
+    -   このアプリの広告キャンペーンをまだ作成していない場合、**[アプリの宣伝]** ページに広告キャンペーンの利点についての情報が表示されます。 **[はじめに]** または **[広告キャンペーンの作成]** をクリックします。
+    -   このアプリの広告キャンペーンを既に作成している場合、**[アプリの宣伝]** ページに既存の広告キャンペーンが一覧表示されます。 **[新しいキャンペーン]** をクリックします。
 
-3.  On the **New campaign** page, define the overall settings for this campaign in the **Campaign details** section.
-    -   Name your ad campaign in the **Campaign name** field.
-    -   Under **Campaign type**, choose one of these options:
-        -   **Paid ads**: These ads will run in any app that matches your app’s device and category.
-        -   **Free house ads**: These ads will only run in your apps (that match the advertised app’s device). House ads are free of charge. For more information, see [About house ads](about-house-ads.md).
-        -   **Free community ads**: These ads will run in apps published by other developers who also create community ad campaigns. Before you can select this option, you must first check the **Show community ads in my app** box in the **Monetize with ads** page of the dashboard. For more information, see [About community ads](about-community-ads.md).
-    - Under **Campaign start date** and **Campaign end date**, choose the start and end dates for the new campaign.
+3.  **[新しいキャンペーン]** ページの **[キャンペーン詳細]** セクションで、このキャンペーンの全体的な設定を定義します。
+    -   広告キャンペーンの名前を、**[キャンペーン名]** フィールドで設定します。
+    -   **[キャンペーン タイプ]** で、次のいずれかのオプションを選択します。
+        -   **[有料広告]**: これらの広告は、アプリのデバイスとカテゴリに一致するすべてのアプリで表示されます。
+        -   **[Free house ads]** (無料の自社広告): これらの広告は、自分のアプリ (宣伝されているアプリのデバイスと一致するアプリ) でのみ表示されます。 自社広告は無料です。 詳しくは、「[自社広告について](about-house-ads.md)」をご覧ください。
+        -   **[Free community ads]** (無料のコミュニティ広告): これらの広告は、コミュニティ広告キャンペーンも作成している他の開発者によって発行されるアプリで表示されます。 このオプションを選択する前に、ダッシュボードの **[広告による収益獲得]** ページで **[Show community ads in my app]** (アプリにコミュニティ広告を表示する) チェック ボックスをオンにする必要があります。 詳しくは、「[コミュニティ広告について](about-community-ads.md)」をご覧ください。
+    - **[キャンペーンの開始日]** と **[キャンペーンの終了日]** で、新しいキャンペーンの開始日と終了日を選択します。
 
-    > **Note**  If your app is not yet published, you will receive an error message on the **New campaign** page. You must wait for your app to be published before you can create an ad campaign for it.
+    > **注:** アプリがまだ公開されていない場合は、**[新しいキャンペーン]** ページにエラー メッセージが表示されます。 アプリが公開されるまで待機してから、アプリの広告キャンペーンを作成する必要があります。
 
-4.  By default, we will choose the audience for your ads, based on the settings you selected when creating the app in the Dev Center dashboard. If you would rather choose the audience for your ads yourself, select **Switch to manual targeting** to expand the **Audience** section. If you want to go back to default targeting, select **Switch to auto targeting**.
+4.  既定では、デベロッパー センター ダッシュボードでアプリを作成するときに選んだ設定に基づいて、広告の対象として最適と思われる対象者が選ばれます。 広告の対象ユーザーを自分で選ぶ場合は、**[ターゲットを手動で設定する]** を選んで、**[対象ユーザー]** セクションを展開します。 既定のターゲット設定に戻る場合は、**[自動ターゲット設定に切り替える]** を選びます。
 
-    If you select **Switch to manual targeting**, you can edit the following targeting information:
+    **[ターゲットを手動で設定する]** を選択した場合、次のターゲット情報を編集できます。
 
-    -   Choose the countries or regions in which you want these ads to appear. You can choose up to 5. For a list of the supported countries or regions, see [Common questions](common-questions.md).
-    -   Choose the device types on which you want these ads to appear. Only the device types supported by your app are shown.
-    -   Choose the operating system. Only the operating systems supported by your app are shown.
-    -   Select the gender and age range of your desired audience.
+    -   これらの広告を表示する国または地域を選びます。 最大 5 つ選ぶことができます。 サポートされている国や地域の一覧については、[よく寄せられる質問](common-questions.md)をご覧ください。
+    -   これらの広告を表示するデバイスの種類を選びます。 アプリでサポートされているデバイスの種類のみが表示されます。
+    -   オペレーティング システムを選びます。 アプリでサポートされているオペレーティング システムのみが表示されます。
+    -   希望の対象ユーザーの性別と年齢を選びます。
 
-    This section also displays an **Estimated Reach** graph. This graph shows the audience you can reach with your current targeting selections as a percentage of all Windows ad-enabled app users in the selected markets.
+    このセクションには、**[推定リーチ]** グラフも表示されます。 このグラフには、現在選択しているターゲット設定でリーチできる対象ユーザーが、選択した市場におけるすべての Windows 広告対応アプリのユーザーに対する割合として表示されます。
 
-5.  In the **Ad design** section, choose one of these options:
-    -   **Upload my ad**. Choose this option to use your own ad designs. You can upload different files for each of the available ad sizes. The files must meet the following requirements and guidelines:
-        -   Each file must be a .png or .jpg that is less than 2 MB.
-        -   Your ad designs must meet the requirements specified in the [Microsoft Creative Acceptance Policy](http://go.microsoft.com/fwlink?LinkId=532595).
-        -   The content in your ad designs must be relevant to the app you are promoting. Ad designs that are not related to the app will not be distributed to ads in other apps.
-        -   All content in your ad designs should be clearly legible. For example, content should not be blurred, pixelated or stretched.
-    -   **Auto generated ad**. Choose this option to use ads from a list of default templates. You have the following options to customize the content in the ads. As you make selections, the previews of your ads will update automatically.
-        -   Select the **Show my app rating** checkbox if you want to show the app's rating. If your app is free in all the selected markets, you will also have the option to **Show that my app is free**.
-        -   In the **Language** drop-down, select the language of the ads. The text for the Windows Store badge and your custom tag line text (if specified) will show in the language you select.
-        -   To add an extra line of text to your ad, enter the text in the **Custom tag line** field.
-            > **Note**  The text you enter must be localized into the selected language. The custom tag line will be rejected if the text does not align with [Bing Ads policies](http://go.microsoft.com/fwlink?LinkId=398341). Consult this page for guidance on style and disallowed content.
+5.  **[広告のデザイン]** で、次のいずれかのオプションを選びます。
+    -   **広告のアップロード**: 独自の広告のデザインを使うには、このオプションを選択します。 利用可能な広告サイズごとに異なるファイルをアップロードできます。 ファイルは、次の要件とガイドラインを満たしている必要があります。
+        -   各ファイルは 2 MB 未満の .png または .jpg 形式にする必要があります。
+        -   広告のデザインは、[Microsoft の広告掲載基準 (Creative Acceptance Policy)](http://go.microsoft.com/fwlink?LinkId=532595) で指定された要件を満たす必要があります
+        -   広告のデザインのコンテンツは、宣伝するアプリに関連している必要があります。 アプリに関連していない広告デザインは、他のアプリの広告に配信されません。
+        -   広告デザインのすべてのコンテンツは読みやすく明瞭である必要があります。 たとえば、コンテンツがぼやけたり、ピクセル化されたり、引き伸ばされたりしていない必要があります。
+    -   **自動生成された広告**: 既定のテンプレートの一覧にある広告を使うには、このオプションを選択します。 広告でコンテンツをカスタマイズする場合、次のオプションがあります。 選択を行うと、広告のプレビューが自動的に更新されます。
+        -   アプリの評価を表示する場合は、**[アプリの評価を表示]** チェックボックスをオンにします。 選択したすべての市場でアプリが無料の場合、**[私のアプリが無料であることを表示します]** オプションも利用できます。
+        -   **[言語]** ドロップダウンで、広告の言語を選びます。 Windows ストア バッジのテキストとカスタム タグ行のテキスト (指定されている場合) が選択した言語で表示されます。
+        -   広告にテキスト行を追加するには、**[Custom tag line]** (カスタム キャッチ コピー) フィールドにテキストを入力します。
+            > **注:** 入力したテキストは、選択した言語にローカライズする必要があります。 テキストが [Bing 広告ポリシー](http://go.microsoft.com/fwlink?LinkId=398341)に準拠していない場合、カスタム タグ行は拒否されます。 スタイルと、許可されないコンテンツについては、このページをご覧ください。
 
-        -   To choose a background color and an image for your ads, expand **Customize ad design / See all ad sizes**. The available images are the images you have associated with your app in the Store.
+        -   広告の背景色と画像を選ぶには、**[広告デザインのカスタマイズ/すべての広告サイズを表示]** を展開します。 利用可能な画像は、ストアでアプリに関連付けた画像です。
 
-6.  Now choose your ad campaign's financial settings in the **Budget and payment** section.
-   > **Note**  If you are creating a house campaign or community campaign, the **Budget and payment** section will not appear, since these campaigns are free of charge.
+6.  ここで、**[予算と支払い] ** セクションで広告キャンペーンの財務設定を選びます。
+   > **注:** 自社広告キャンペーンを作成する場合、自社広告は無料であるため、**[予算と支払い]** セクションは表示されません。
 
     -   Under **Budget**, use the slider to set the amount of money you want to spend each month to run this ad.
 
@@ -65,14 +65,14 @@ Here's how to create an ad campaign to promote your app.
         > **Important**  The country/region of your payment instrument's billing address must match the country/region associated with your Dev Center account.
     -   If you have received a coupon from a Microsoft representative to pay for an ad campaign, click **Use a coupon**, enter the coupon code, and click **Apply** to apply the coupon to the campaign.
 
-7.  Finally, click **Review** to confirm your ad campaign's settings and, if it's a Paid ad campaign, its budget and payment information. Click **Confirm** and your ads will typically start appearing on Windows or Windows Phone devices within a few hours!
+7.  最後に、**[Review] (レビュー)** をクリックして広告キャンペーンの設定を確認し、有料の広告キャンペーンの場合は、予算と支払い情報を確認します。 **[確認]** をクリックすると、通常は数時間以内に Windows または Windows Phone デバイスに広告の表示が開始されます。
 
-## Related topics
+## 関連トピック
 
-* [Managing your ad campaign](managing-your-ad-campaign.md)
-* [About house ads](about-house-ads.md)
-* [App install ads report](app-install-ads-reports.md)
-* [Common questions about ad campaigns](common-questions.md)
+* [広告キャンペーンの管理](managing-your-ad-campaign.md)
+* [自社広告について](about-house-ads.md)
+* [アプリのインストールの広告レポート](app-install-ads-reports.md)
+* [広告キャンペーンに関してよく寄せられる質問](common-questions.md)
  
 
  

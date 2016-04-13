@@ -7,7 +7,7 @@ title: IAP の入手数の取得
 # IAP の入手数の取得
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 特定の日付範囲などのオプション フィルターを使って、アプリ内製品 (IAP) の集計入手データを取得するには、Windows ストア分析 API でこのメソッドを使います。 このメソッドは、データを JSON 形式で返します。
 
@@ -245,13 +245,13 @@ title: IAP の入手数の取得
 IAP の入手データを取得するためのいくつかの要求の例を次に示します。 *inAppProductId* または *applicationId* の値を、アプリまたは IAP の適切な製品 ID に置き換えてください。
 
 ```
-GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/inappacquisitions?inAppProductId=9NBLGGGZ5QDR&amp;startDate=1/1/2015&amp;endDate=2/1/2015&amp;top=10&amp;skip=0 HTTP/1.1
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/inappacquisitions?inAppProductId=9NBLGGGZ5QDR&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0 HTTP/1.1
 Authorization: Bearer <your access token>
 
-GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/inappacquisitions?applicationId=9NBLGGGZ5QDR&amp;startDate=1/1/2015&amp;endDate=2/1/2015&amp;top=10&amp;skip=0 HTTP/1.1
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/inappacquisitions?applicationId=9NBLGGGZ5QDR&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0 HTTP/1.1
 Authorization: Bearer <your access token>
 
-GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/inappacquisitions?inAppProductId=9NBLGGGZ5QDR&amp;startDate=1/1/2015&amp;top=100&amp;skip=0&amp;endDate=7/3/2015&amp;$filter=market ne &#39;US&#39; and gender ne &#39;Unknown&#39; and gender ne &#39;m&#39; and market ne &#39;NO&#39; and ageGroup ne &#39;>55&#39; HTTP/1.1
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/inappacquisitions?inAppProductId=9NBLGGGZ5QDR&startDate=1/1/2015&endDate=7/3/2015&top=100&skip=0&filter=market ne 'US' and gender ne 'Unknown' and gender ne 'm' and market ne 'NO' and ageGroup ne '>55' HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
@@ -314,7 +314,7 @@ Authorization: Bearer <your access token>
       "acquisitionQuantity": 1
     }
   ],
-  "@nextLink": "inappacquisitions?applicationId=9NBLGGGZ5QDR&amp;inAppProductId=&amp;aggregationLevel=day&amp;startDate=2015/01/01&amp;endDate=2016/02/01&amp;top=1&amp;skip=1",
+  "@nextLink": "inappacquisitions?applicationId=9NBLGGGZ5QDR&inAppProductId=&aggregationLevel=day&startDate=2015/01/01&endDate=2016/02/01&top=1&skip=1",
   "TotalCount": 33677
 }
 ```
@@ -332,6 +332,6 @@ Authorization: Bearer <your access token>
  
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=Mar16_HO2-->
 
 

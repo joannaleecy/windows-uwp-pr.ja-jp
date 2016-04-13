@@ -1,43 +1,44 @@
 ---
-description: WebSockets provide a mechanism for fast, secure two-way communication between a client and a server over the web using HTTP(S).
-title: WebSockets
+description: WebSocket は、クライアントとサーバー間の高速で安全な双方向通信を、HTTP(S) を使った Web 経由で実現するメカニズムを提供します。
+title: WebSocket
 ms.assetid: EAA9CB3E-6A3A-4C13-9636-CCD3DE46E7E2
 ---
 
-# WebSockets
+# WebSocket
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-**Important APIs**
+**重要な API**
 
 -   [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842)
 -   [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923)
 
-WebSockets provide a mechanism for fast, secure two-way communication between a client and a server over the web using HTTP(S).
+WebSocket は、クライアントとサーバー間の高速で安全な双方向通信を、HTTP(S) を使った Web 経由で実現するメカニズムを提供します。
 
-Under the [WebSocket Protocol](http://tools.ietf.org/html/rfc6455), data is transferred immediately over a full-duplex single socket connection, allowing messages to be sent and received from both endpoints in real time. WebSockets are ideal for use in real-time gaming where instant social network notifications and up-to-date displays of information (game statistics ) need to be secure and use fast data transfer. Universal Windows Platform (UWP) developers can use the [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) and [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) classes to connect with servers that support the Websocket protocol.
+[WebSocket プロトコル](http://tools.ietf.org/html/rfc6455)では、データはすぐに、全二重の 1 つのソケット接続によって転送され、両方のエンドポイント間のメッセージの送受信をリアルタイムで実行できます。 WebSocket は、ソーシャル ネットワークでの即時の通知と最新情報 (ゲームの結果) の表示をセキュリティで保護すると同時に高速にデータ転送する必要があるリアルタイム ゲームでの使用に適しています。 ユニバーサル Windows プラットフォーム (UWP) の開発者は、 [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) クラスと [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) クラスを使うことで Websocket プロトコルをサポートするサーバーに接続できます。
 
 | MessageWebSocket                                                         | StreamWebSocket                                                                               |
 |--------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
-| Suitable for typical scenarios where messages are not extremely large.   | Suitable for scenarios in which large files (such as photos or videos) are being transferred. |
-| Enables notification that an entire WebSocket message has been received. | Allows sections of a message to be read with each read operation.                             |
-| Supports both UTF-8 and binary messages.                                 | Supports only binary messages.                                                                |
-| Similar to a UDP or datagram socket.                                     | Similar to a TCP or stream socket.                                                            |
+| メッセージが極端に大きくない標準的なシナリオに適しています。   | 大きなファイル (写真やビデオなど) を転送するシナリオに適しています。 |
+| WebSocket メッセージ全体の受信が完了したときに受け取る通知を有効にできます。 | メッセージを分割し、何回かに分けて読み取ることができます。                             |
+| UTF-8 とバイナリの両方のメッセージがサポートされます。                                 | バイナリ メッセージのみサポートされます。                                                                |
+| UDP またはデータグラム ソケットに似ています。                                     | TCP またはストリーム ソケットに似ています。                                                            |
 
-In most cases you'll want to use a secure WebSocket connection to encrypt data sent and received. This will also increase the chances that your connection will succeed, as many proxies will reject unencrypted WebSocket connections. The WebSocket protocol defines the following two URI schemes.
+ほとんどの場合、セキュリティ保護された WebSocket 接続を使って、送受信されるデータを暗号化できます。 多くのプロキシは、暗号化されていない WebSocket 接続を拒否するため、接続の成功率も高くなります。 WebSocket プロトコルには、次の 2 つの URI スキームが定義されています。
 
--   ws: - use for unencrypted connections.
--   wss: - use for secure connections that should be encrypted.
+-   ws: - 暗号化されていない接続に使われます。
+-   wss: - セキュリティ保護された、暗号化を必要とする接続に使われます。
 
-To encrypt a WebSocket connection, use the wss: URI scheme, for example, `wss://www.contoso.com/mywebservice`.
+WebSocket 接続を暗号化するには、たとえば `wss://www.contoso.com/mywebservice` といった wss: URI スキームを使います。
 
-## Using MessageWebSocket
+## MessageWebSocket を使う
 
-The [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) allows sections of a message to be read with each read operation. A **MessageWebSocket** is typically used in scenarios where messages are not extremely large. Both UTF-8 and binary files are supported.
+[
+            **MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) により、分割されたメッセージを何回かに分けて読み取ることができます。 **MessageWebSocket** は、メッセージがそれほど大きくないシナリオでよく使われます。 UTF-8 とバイナリ ファイルの両方がサポートされています。
 
-The code in this section creates a new [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842), connects to a WebSocket server, and sends data to the server. Once a successful connection is established, the app waits for the [**MessageWebSocket.MessageReceived**](https://msdn.microsoft.com/library/windows/apps/br241358) event to be triggered, indicating that data was received.
+このセクションのコードは、新しい [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) を作り、WebSocket サーバーに接続して、サーバーにデータを送ります。 接続が正常に確立されると、アプリは、データが受け取られたことを示す [**MessageWebSocket.MessageReceived**](https://msdn.microsoft.com/library/windows/apps/br241358) イベントがトリガーされるのを待ちます。
 
-This sample uses the WebSocket.org echo server, a service which simply echoes back to the sender any string sent to it. By using the "wss:" protocol specifier, this sample uses a secure connection to send and receive messages.
+この例では、送信された文字列を単純に送信元にエコー バックするサービス、WebSocket.org エコー サーバーを使っています。 この例では、"wss:" プロトコル指定子を使うことで、メッセージの送受信においてセキュリティ保護された接続を行っています。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cpp
@@ -107,13 +108,14 @@ This sample uses the WebSocket.org echo server, a service which simply echoes ba
 > }
 > ```
 
-Once you have initialized the WebSocket connection, your code must perform the following activities to properly send and receive data.
+WebSocket 接続を初期化した後、コードは、データを適切に送受信するために次のアクティビティを実行する必要があります。
 
-### Implement a callback for the MessageWebSocket.MessageReceived event
+### MessageWebSocket.MessageReceived イベント用のコールバックを実装する
 
-Before establishing a connection and sending data with a WebSocket, your app needs to register an event callback to receive notification when data is received. When the [**MessageWebSocket.MessageReceived**](https://msdn.microsoft.com/library/windows/apps/br241358) event occurs, the registered callback is called and receives data from [**MessageWebSocketMessageReceivedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br226852). This example is written with the assumption that the messages being sent are in UTF-8 format.
+接続を確立して WebSocket でデータを送信する前に、アプリは、データが受信されたときに通知を受け取るためのイベント コールバックを登録する必要があります。 [
+            **MessageWebSocket.MessageReceived**](https://msdn.microsoft.com/library/windows/apps/br241358) イベントが発生すると、登録したコールバックが呼び出され、[**MessageWebSocketMessageReceivedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br226852) からデータを受け取ります。 次の例は、送信されるメッセージが UTF-8 形式であるという前提で記述されています。
 
-The following sample function receives a string from a connected WebSocket server and prints the string to the debugger output window.
+次の例に示す関数は、接続された WebSocket サーバーから文字列を受信し、その文字列をデバッガーの出力ウィンドウに表示します。
 
 > [!div class="tabbedCodeSnippets"]
 >```cpp
@@ -140,9 +142,10 @@ The following sample function receives a string from a connected WebSocket serve
 >}
 >```
 
-###  Implement a callback for the MessageWebSocket.Closed event
+###  MessageWebSocket.Closed イベント用のコールバックを実装する
 
-Before establishing a connection and sending data with a WebSocket, your app needs to register an event callback to receive notification when the WebSocket is closed by the WebSocket server. When the [**MessageWebSocket.Closed**](https://msdn.microsoft.com/library/windows/apps/hh701364) event occurs, the registered callback is called to indicate the connection was closed by the WebSocket server.
+接続を確立して WebSocket でデータを送信する前に、アプリは、WebSocket サーバーによって WebSocket が閉じられたときに通知を受け取るためのイベント コールバックを登録する必要があります。 [
+            **MessageWebSocket.Closed**](https://msdn.microsoft.com/library/windows/apps/hh701364) イベントが発生すると、登録したコールバックが呼び出され、接続が WebSocket サーバーによって閉じられたことが伝えられます。
 
 > [!div class="tabbedCodeSnippets"]
 >```cpp
@@ -167,13 +170,14 @@ Before establishing a connection and sending data with a WebSocket, your app nee
 >}
 >```
 
-###  Send a message on a WebSocket
+###  WebSocket でメッセージを送信する
 
-Once a connection is established, the WebSocket client can send data to the server. The [**DataWriter.StoreAsync**](https://msdn.microsoft.com/library/windows/apps/br208171) method returns a parameter that maps to an unsigned int. This changes how we define the task to send the message compared with the task to make the connection.
+接続が確立されたら、WebSocket クライアントはサーバーにデータを送信できます。 [
+            **DataWriter.StoreAsync**](https://msdn.microsoft.com/library/windows/apps/br208171) メソッドは、符号なし整数にマッピングされるパラメーターを返します。 これにより、メッセージを送信するタスクの定義方法と、接続を行うタスクの定義方法とは異なるものになります。
 
-**Note**   When you create a new DataWriter object using the MessageWebSocket's OutputStream, the DataWriter takes ownership of the OutputStream, and will deallocate the Outputstream when the DataWriter goes out of scope. This causes any subsequent attempts to use the OutputStream to fail with an HRESULT value of 0x80000013. To avoid deallocating the OutputStream, this code calls the DataWriter's DetachStream method, which returns ownership of the stream to the WebSocket object.
+**注**   MessageWebSocket の OutputStream を使って新しい DataWriter オブジェクトを作成すると、OutputStream の所有権が DataWriter に移り、DataWriter がスコープを外れると Outputstream の割り当てが解除されます。 このため、その後 OutputStream を使おうとすると、HRESULT 値 0x80000013 のエラーが発生します。 次のコードでは、OutputStream の割り当てが解除されないようにするため、DataWriter の DetachStream メソッドを呼び出し、ストリームの所有権を WebSocket オブジェクトに返しています。
 
-The following function sends the given string to a connected WebSocket, and prints a verification message in the debugger output window.
+次の例に示す関数は、接続された WebSocket サーバーに文字列を送信し、確認メッセージをデバッガーの出力ウィンドウに表示します。
 
 > [!div class="tabbedCodeSnippets"]
 >```cpp
@@ -219,52 +223,59 @@ The following function sends the given string to a connected WebSocket, and prin
 >}
 >```
 
-## Using advanced controls with WebSockets
+## WebSocket で高度なコントロールを使用する
 
-[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) and [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) follow the same model for using advanced controls. Corresponding with each of the above primary classes are related classes to access advanced controls.
+[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) と [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) では、高度なコントロールの使い方に関して同じモデルが採用されています。 上記の主要なクラスには、それぞれに高度なコントロールにアクセスするための関連クラスがあります。
 
-[**MessageWebSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226843) provides socket control data on a [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) object.
-[**StreamWebSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226924) provides socket control data on a [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) object.
-The basic model to use advanced controls is the same for both types of WebSockets. The following discussion uses a [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) as an example, but the same process can be used with a [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842).
+[**MessageWebSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226843) [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) オブジェクトに関するソケット制御データを提供します。
+[**StreamWebSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226924) [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) オブジェクトに関するソケット制御データを提供します。
+どちらのタイプの WebSocket も、高度なコントロールを行うための基本的なモデルは同じです。 以降の説明では [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) を例として使っていますが、[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) でもプロセスは同じです。
 
-1.  Create the [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) object.
-2.  Use the [**StreamWebSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226934) property to retrieve the [**StreamWebSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226924) instance associated with this [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) object.
-3.  Get or set properties on the [**StreamWebSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226924) instance to get or set specific advanced controls.
+1.  [
+            **StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) オブジェクトを作成します。
+2.  [
+            **StreamWebSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226934) プロパティを使って、この [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) オブジェクトに関連付けられている [**StreamWebSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226924) インスタンスを取得します。
+3.  [
+            **StreamWebSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226924) インスタンスのプロパティを取得または設定することで、特定の高度なコントロールを取得または設定します。
 
-Both [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) and [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) impose requirements on when advanced controls can be set.
+[
+            **StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) と [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) のどちらも、高度なコントロールを設定するときには要件があります。
 
--   For all advanced controls on the [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923), the app must always set the property before issuing a Connect operation. Because of this requirement, it is best practice to set all control properties immediately after creating the **StreamWebSocket** object. Do not try to set a control property after the [**StreamWebSocket.ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/br226933) method has been called.
--   For all of the advanced controls on the [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) except the message type, you must set the property before issuing a Connect operation. It is best practice to set all control properties immediately after creating the **MessageWebSocket** object. Except for the message type, do not attempt to change a control property after [**MessageWebSocket.ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/br226859) has been called.
+-   [
+            **StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) における高度なコントロールでは、アプリは常に、接続操作を発行する前にプロパティを設定しておく必要があります。 この要件を満たすため、コントロール プロパティは、**StreamWebSocket** オブジェクトを作成したらすぐに設定することをお勧めします。 [
+            **StreamWebSocket.ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/br226933) メソッドが呼び出された後は、コントロール プロパティを設定しないでください。
+-   メッセージ型以外の [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) に関する高度なコントロールでは常に、接続操作を発行する前にプロパティを設定しておく必要があります。 **MessageWebSocket** の作成したらすぐにすべてのコントロール プロパティを設定することをお勧めします。 メッセージ型以外については、[**MessageWebSocket.ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/br226859) メソッドが呼び出された後は、コントロール プロパティを変更しないでください。
 
-## WebSocket information classes
+## WebSocket の情報クラス
 
-[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) and [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) each have a corresponding class that provides additional information about a WebSocket instance.
+[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) と [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) には、WebSocket インスタンスについての追加情報を提供するクラスがそれぞれあります。
 
-[**MessageWebSocketInformation**](https://msdn.microsoft.com/library/windows/apps/br226849) provides information about a [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842), and you retrieve an instance of the information class using the [**MessageWebSocket.Information**](https://msdn.microsoft.com/library/windows/apps/br226861) property.
+[**MessageWebSocketInformation**](https://msdn.microsoft.com/library/windows/apps/br226849) は、[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) についての情報を提供します。情報クラスのインスタンスは、[**MessageWebSocket.Information**](https://msdn.microsoft.com/library/windows/apps/br226861) プロパティを使って取得します。
 
-[**StreamWebSocketInformation**](https://msdn.microsoft.com/library/windows/apps/br226929) provides information about a [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923), and you retrieve an instance of the information class using the [**StreamWebSocket.Information**](https://msdn.microsoft.com/library/windows/apps/br226935) property.
+[**StreamWebSocketInformation**](https://msdn.microsoft.com/library/windows/apps/br226929) は、[**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) についての情報を提供します。情報クラスのインスタンスは、[**StreamWebSocket.Information**](https://msdn.microsoft.com/library/windows/apps/br226935) プロパティを使って取得します。
 
-Note that all of the properties on both Information classes are read-only, and that you can retrieve current information at any time during the lifetime of a web socket object.
+どちらの情報クラスについても、すべてのプロパティは読み取り専用であり、また WebSocket オブジェクトの有効期間中はいつでも現在の情報を取得できます。
 
-## Handling network exceptions
+## ネットワーク例外を処理する
 
-An error encountered on a [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) or [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) operation is returned as an **HRESULT** value. The [**WebSocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701529) method is used to convert a network error from a WebSocket operation to a [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh747818) enumeration value. Most of the **WebErrorStatus** enumeration values correspond to an error returned by the native HTTP client operation. Your app can filter on specific **WebErrorStatus** enumeration values to modify app behavior depending on the cause of the exception.
+[
+            **MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) または [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 操作で発生したエラーは **HRESULT** 値として返されます。 ネットワーク エラーを WebSocket 操作から [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh747818) 列挙値に変換するには、[**WebSocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701529) メソッドを使います。 **WebErrorStatus** 列挙値のほとんどは、ネイティブ HTTP クライアント操作から返されるエラーに対応しています。 アプリは特定の **WebErrorStatus** 列挙値に対するフィルター処理を行い、例外の原因に応じてアプリの動作を変更することができます。
 
-For parameter validation errors, an app can also use the **HRESULT** from the exception to learn more detailed information on the error that caused the exception. Possible **HRESULT** values are listed in the *Winerror.h* header file. For most parameter validation errors, the **HRESULT** returned is **E\_INVALIDARG**.
+パラメーター検証エラーの場合は、例外の **HRESULT** を使って、その例外の原因となったエラーの詳細情報を確認することもできます。 使うことができる **HRESULT** 値は、*Winerror.h* ヘッダー ファイルに記載されています。 パラメーター検証エラーではほとんどの場合、返される **HRESULT** は **E\_INVALIDARG** です。
 
-## Setting timeouts on WebSocket operations
+## WebSocket の操作に対してタイムアウトを設定する
 
-The MessageWebSocket and StreamWebSocket classes uses an internal system service to send WebSocket client requests and receive responses from a server. The default timeout value used for a WebSocket connect operation is 60 seconds. If the HTTP server that supports WebSockets is temporarily down or blocked by a network outage and the server doesn't or can't respond to the WebSocket connection request, the internal system service waits the default 60 seconds before it returns an error which causes an exception to be thrown on the WebSocket ConnectAsync method. If the name query for an HTTP server name in the URI returns multiple IP addresses for the name, the internal system service tries up to 5 IP addresses for the site each with a default timeout of 60 seconds before it fails. An app making a WebSocket connection request could wait several minutes trying to connect to multiple IP addresses before an error is returned and an exception is thrown. This behavior could appear to the user as if the app stopped working. The default timeout used for send and receive operations after a WebSocket connection has been established is 30 seconds.
+MessageWebSocket クラスと StreamWebSocket クラスは、内部システム サービスを使って WebSocket クライアントに要求を送信し、サーバーからの応答を受信します。 WebSocket の接続操作で既定されているタイムアウト値は 60 秒です。 WebSocket をサポートする HTTP サーバーが、ネットワーク停止によって一時的にダウンするかブロックされているために WebSocket の接続要求に応答できない場合は、内部システム サービスは 60 秒待った後でエラーを返し、それによって WebSocket の ConnectAsync メソッドに例外がスローされます。 URI 内の HTTP サーバー名に対する名前クエリで複数の IP アドレスが返されると、内部システム サービスは最大で 5 つのサイトの IP アドレスに接続を試みますが、その場合は各アドレスについて既定のタイムアウト時間である 60 秒待ちます。 すなわち、WebSocket 接続要求を行うアプリが複数の IP アドレスに接続を試みる場合は、エラーが返されて例外がスローされまで、数分間の待機が発生する可能性があります。 この動作は、ユーザーからはまるでアプリが停止しているかのように見えることがあります。 WebSocket 接続確立後の送受信操作における既定のタイムアウト値は 30 秒です。
 
-To make your app more responsive and minimize these issues, it can set a shorter timeout on connection requests so that the operation fails due to timeout sooner than from the default settings.
+アプリの応答性を高め、こうした問題を最小化するためには、接続操作のタイムアウトを既定よりも短く設定します。そうすることで、待機時間を短縮することができます。
 
-You set timeouts similarly for both StreamWebSockets and MessageWebSockets. The following example shows how to set a timeout on StreamWebSocket, but the process is similar for a MessageWebSocket.
+タイムアウトは StreamWebSocket と MessageWebSocket の両方で同じように設定します。 次の例は、StreamWebSocket に対するタイムアウトの設定方法を示していますが、MessageWebSocket でもプロセスはほぼ同じです。
 
-1.  Create a task that completes after a specified delay using a timer.
-2.  Create a task for the WebSocket operation with a cancellation\_token\_source to support cancellation.
-3.  If the task with the specified timeout delay completes before the WebSocket connect operation, cancel the task for the WebSocket operation.
+1.  タイマーを使って指定した遅延後に完了するタスクを作成します。
+2.  取り消しに対応する cancellation\_token\_source を含む WebSocket 操作のタスクを作成します。
+3.  タイムアウト遅延が指定されたタスクが、WebSocket 接続操作が完了する前に完了した場合は、WebSocket 操作のタスクを取り消します。
 
-The following example creates one task that completes after a specified delay, and creates a second task that cancels after a specified delay. These classes can be used with StreamWebSocket and MessageWebSocket when trying to establish a connection to set a specific timeout. An example usage would be calling the StreamWebSocket.ConnectAsync method in a task with a cancellation\_token\_source that supports cancellation. If timeout completes first, then the cancellation\_token\_source is used to cancel the task for the WebSocket connect operation.
+次の例では、指定した遅延後に完了する第 1 のタスクと、指定した遅延後に取り消す第 2 のタスクを作成しています。 これらのクラスは、特定のタイムアウトを設定して接続を確立するときに、StreamWebSocket と MessageWebSocket と使うことができます。 たとえば、タスクの取り消しに対応する cancellation\_token\_source を含むタスクで StreamWebSocket.ConnectAsync メソッドを呼び出すときなどに使えます。 タイムアウトが先に完了した場合は、cancellation\_token\_source により WebSocket の接続操作のタスクが取り消されます。
 
 ```cpp
     #include <agents.h>

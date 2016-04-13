@@ -1,40 +1,40 @@
 ---
-title: Set up the game project
-description: The first step in assembling your game is to set up a project in Microsoft Visual Studio in such a way that you minimize the amount of code infrastructure work you need to do.
+title: ゲーム プロジェクトのセットアップ
+description: ゲームを作るための最初の手順は、必要なコード インフラストラクチャ作業の量を最小限に抑えるように Microsoft Visual Studio でプロジェクトを設定することです。
 ms.assetid: 9fde90b3-bf79-bcb3-03b6-d38ab85803f2
 ---
 
-# Set up the game project
+# ゲーム プロジェクトのセットアップ
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-The first step in assembling your game is to set up a project in Microsoft Visual Studio in such a way that you minimize the amount of code infrastructure work you need to do. You can save yourself a lot of time and hassle by using the right template and configuring the project specifically for game development. We step you through the setup and configuration of a simple game project.
+ゲームを作るための最初の手順は、必要なコード インフラストラクチャ作業の量を最小限に抑えるように Microsoft Visual Studio でプロジェクトを設定することです。 適切なテンプレートを使い、ゲーム開発用にプロジェクトを構成することで、時間や手間を大幅に節約できます。 シンプルなゲーム プロジェクトを設定および構成する手順を紹介します。
 
-## Objective
-
-
--   To learn how to set up a Direct3D game project in Visual Studio.
-
-## Setting up the game project
+## 目標
 
 
-You can write a game from scratch, with just a handy text editor, a few samples, and a hat full of raw brainpower. But that probably isn't the most effective use of your time. If you're new to Universal Windows Platform (UWP) development, why not let Visual Studio shoulder some of the burden? Here's what to do to get your project off to a roaring start.
+-   Visual Studio で Direct3D ゲーム プロジェクトを設定する方法について理解する。
 
-## 1. Pick the right template
+## ゲーム プロジェクトの設定
 
 
-A Visual Studio template is a collection of settings and code files that target a specific type of app based on the preferred language and technology. In Microsoft Visual Studio 2015, you'll find a number of templates that can dramatically ease game and graphics app development. If you don't use a template, you must develop much of the basic graphics rendering and display framework yourself, which can be a bit of a chore to a new game developer.
+手頃なテキスト エディター、いくつかのサンプル、十分な初心者の頭脳があれば、一からゲームを作ることもできます。 しかし、これでは時間を有効に使っているとは言えません。 ユニバーサル Windows プラットフォーム (UWP) 開発プラットフォームに詳しくない場合は、Visual Studio を利用することをお勧めします。 次に、プロジェクトを開始するための手順について説明します。
 
-The right template for this tutorial, is the one titled DirectX 11 App (Universal Windows). In Visual Studio 2015, click **File...** &gt; **New Project**, and then:
+## 1. 適切なテンプレートを選ぶ
 
-1.  From **Templates**, select **Visual C++**, **Windows**, **Universal**.
-2.  In the center pane, select **DirectX 11 App (Universal Windows)**.
-3.  Give your game project a name, and click **OK**.
 
-![selecting the direct3d application template](images/simple-dx-game-vs-new-proj.png)
+Visual Studio テンプレートは、優先する言語および技術に基づいて、特定の種類のアプリ向けの設定とコード ファイルを集めたものです。 Microsoft Visual Studio 2015 には多くのテンプレートがあり、これらを使うと、ゲームやグラフィックス アプリを簡単に開発することができます。 テンプレートを使わない場合、基本的なグラフィックス レンダリングや表示フレームワークの大部分を自分で開発しなければならず、これは新人のゲーム開発者にとっては骨の折れる仕事となります。
 
-This template provides you with the basic framework for a UWP app using DirectX with C++. Go on, build and run it with F5! Check out that powder blue screen. Take a moment and review the code that the template provides. Tthe template creates multiple code files containing the basic functionality for a UWP app using DirectX with C++. We talk more about the other code files in [step 3](#3-review-the-included-libraries-and-headers). Right now, let's quickly inspect **App.h**.
+このチュートリアルのための適切なテンプレートは、DirectX 11 アプリ (ユニバーサル Windows) です。 Visual Studio 2015 で、 **[ファイル]** 、 **[新しいプロジェクト]**の順にクリックし、次の手順に従います。
+
+1.  **[テンプレート]**から **[Visual C++]**、 **[Windows]**、 **[ユニバーサル]**の順に選びます。
+2.  中央のウィンドウで、**[DirectX 11 アプリ (ユニバーサル Windows)]** テンプレートを選びます。
+3.  ゲーム プロジェクトに名前を付けて、**[OK]** をクリックします。
+
+![Direct3D アプリケーション テンプレートの選択](images/simple-dx-game-vs-new-proj.png)
+
+このテンプレートは、DirectX と C++ を使った UWP アプリの基本的なフレームワークを提供します。 F5 キーでビルドして実行してみましょう。 パウダー ブルーの画面を確認します。 少し時間をとって、テンプレートによって提供されたコードを見てみます。 このテンプレートは、DirectX と C++ を使った UWP アプリの基本的な機能が含まれているコード ファイルを複数作成します。 他のコード ファイルについては、[手順 3](#3-review-the-included-libraries-and-headers) で詳しく説明します。 ここでは、**App.h** を簡単に見ておきましょう。
 
 ```cpp
     ref class App sealed : public Windows::ApplicationModel::Core::IFrameworkView
@@ -73,9 +73,9 @@ This template provides you with the basic framework for a UWP app using DirectX 
     };
 ```
 
-You create these 5 methods, [**Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495), [**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509), [**Load**](https://msdn.microsoft.com/library/windows/apps/hh700501), [**Run**](https://msdn.microsoft.com/library/windows/apps/hh700505), and [**Uninitialize**](https://msdn.microsoft.com/library/windows/apps/hh700523), when implementing the [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700469) interface that defines a view provider. These methods are run by the app singleton that is created when your game is launched, and load all your app's resources as well as connect the appropriate event handlers.
+ビュー プロバイダーを定義する [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700469) インターフェイスを実装する際に、[**Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495)、[**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509)、[**Load**](https://msdn.microsoft.com/library/windows/apps/hh700501)、[**Run**](https://msdn.microsoft.com/library/windows/apps/hh700505)、[**Uninitialize**](https://msdn.microsoft.com/library/windows/apps/hh700523) の 5 つのメソッドを作成します。 これらのメソッドはゲームの起動時に作成されるアプリ シングルトンによって実行され、適切なイベント ハンドラーに接続されて、アプリのすべてのリソースが読み込まれます。
 
-Your **main** method is in the **App.cpp** source file. It looks like this:
+**main** メソッドは、**App.cpp** ソース ファイルにあります。 次のようになります。
 
 ```cpp
 [Platform::MTAThread]
@@ -87,7 +87,7 @@ int main(Platform::Array<Platform::String^>^)
 }
 ```
 
-Right now, it creates an instance of the Direct3D view provider from the view provider factory (**Direct3DApplicationSource**, defined in **App.h**), and passes it to the app singleton to run ([**CoreApplication::Run**](https://msdn.microsoft.com/library/windows/apps/hh700469)). This means that the starting point for your game lives in the body of the implementation of the [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) method, in this case, **App::Run**. Here's the code:
+ここではビュー プロバイダー ファクトリから Direct3D ビュー プロバイダーのインスタンスが作成され (**App.h** で定義された **Direct3DApplicationSource**)、アプリ シングルトンに渡されて実行されます ([**CoreApplication::Run**](https://msdn.microsoft.com/library/windows/apps/hh700469))。 つまり、ゲームの出発点は、[**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) メソッドの実装の本文にあります (この場合は **App::Run**)。 コードは次のようになります。
 
 ```cpp
 void App::Run()
@@ -113,46 +113,46 @@ void App::Run()
 }
 ```
 
-If the window for your game isn't closed, this dispatches all events, updates the timer, and renders and presents the results of your graphics pipeline. We talk about this in greater detail in [Defining the game's UWP framework](tutorial--building-the-games-metro-style-app-framework.md) and [Assembling the rendering pipeline](tutorial--assembling-the-rendering-pipeline.md). At this point, you should have a sense of the basic code structure of a UWP DirectX game.
+ゲームのウィンドウを閉じなければ、すべてのイベントがディスパッチされ、タイマーが更新され、グラフィックス パイプラインの結果がレンダリングされて表示されます。 これについては、「[ゲームのユニバーサル Windows プラットフォーム (UWP) アプリ フレームワークの定義](tutorial--building-the-games-metro-style-app-framework.md) 」と「[レンダリング フレームワークの作成](tutorial--assembling-the-rendering-pipeline.md)」で詳しく説明します。 これで、UWP DirectX ゲームのコードの基本構造については理解できました。
 
-## 2. Review and update the package.appxmanifest file
-
-
-The code files aren't all there is to the template. The **package.appxmanifest** file contains metadata about your project that are used for packaging and launching your game and for submission to the Windows Store. It also contains important info the player's system uses to provide access to the system resources the game needs to run.
-
-Launch the **Manifest Designer** by double-clicking the **package.appxmanifest** file in **Solution Explorer**. You see this view:
-
-![the package.appx manifest editor.](images/simple-dx-game-vs-app-manifest.png)
-
-For more info about the **package.appxmanifest** file and packaging, see [Manifest Designer](https://msdn.microsoft.com/library/windows/apps/br230259.aspx). For now, take a look at the **Capabilities** tab and look at the options provided.
-
-![the default capabilities of a direct3d app.](images/simple-dx-game-vs-capabilities.png)
-
-If you don't select the capabilities that your game uses, such as access to the **Internet** for global high score board, you won't be able to access the corresponding resources or features. When you create a new game, make sure that you select the capabilities that your game needs to run!
-
-Now, let's look at the rest of the files that come with the **DirectX 11 App (Universal Windows)** template.
-
-## 3. Review the included libraries and headers
+## 2. package.appxmanifest ファイルを確認して更新する
 
 
-There are a few files we haven't looked at yet. These files provide additional tools and support common to Direct3D game development scenarios.
+テンプレートに含まれるのはコード ファイルだけではありません。 **package.appxmanifest** ファイルには、ゲームのパッケージ化と起動や Windows ストアへの提出に使うプロジェクトのメタデータが含まれます。 プレーヤーのシステムがゲームの実行に必要なリソースへのアクセスを提供するための、重要な情報も含まれます。
 
-| Template Source File         | Description                                                                                                                                                                                                            |
+**ソリューション エクスプローラー**で **package.appxmanifest** ファイルをダブルクリックして、**マニフェスト デザイナー**を起動します。 次のビューが表示されます。
+
+![package.appxmanifest エディター。](images/simple-dx-game-vs-app-manifest.png)
+
+**package.appxmanifest** ファイルとパッケージ化について詳しくは、[マニフェスト デザイナー](https://msdn.microsoft.com/library/windows/apps/br230259.aspx)に関するページをご覧ください。 それでは、**[機能]** タブとそのオプションを見てみましょう。
+
+![Direct3D アプリの既定の機能。](images/simple-dx-game-vs-capabilities.png)
+
+グローバルなハイ スコア ボードのための**インターネット**へのアクセスなど、ゲームで使う機能を選択しないと、該当するリソースや機能にアクセスできません。 新しいゲームを作る場合、ゲームの実行に必要な機能を忘れずに選択してください。
+
+次に、**DirectX 11 アプリ (ユニバーサル Windows)** テンプレートの残りのファイルを見てみましょう。
+
+## 3. 含まれているライブラリとヘッダーを確認する
+
+
+まだ確認していないファイルがいくつかあります。 それは、Direct3D ゲーム開発シナリオに共通するその他のツールとサポートを提供するファイルです。
+
+| テンプレート ソース ファイル         | 説明                                                                                                                                                                                                            |
 |------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| StepTimer.h                  | Defines a high-resolution timer useful for gaming or interactive rendering apps.                                                                                                                                       |
-| Sample3DSceneRenderer.h/.cpp | Defines a basic renderer implementation that connects a Direct3D swap chain and graphics adapter to your UWP using DirectX.                                                                                            |
-| DirectXHelper.h              | Implements a single method, **DX::ThrowIfFailed**, that converts the error HRESULT values returned by DirectX APIs into Windows Runtime exceptions. Use this method to put a break point for debugging DirectX errors. |
-| pch.h/.cpp                   | Contains all the Windows system includes for the APIs used by a Direct3D app, including the DirectX 11 APIs.                                                                                                           |
-| SamplePixelShader.hlsl       | Contains the high-level shader language (HLSL) code for a very basic pixel shader.                                                                                                                                     |
-| SampleVertexShader.hlsl      | Contains the high-level shader language (HLSL) code for a very basic vertex shader.                                                                                                                                    |
+| StepTimer.h                  | ゲーム アプリまたは対話型レンダリング アプリで役に立つ、高分解能タイマーを定義します。                                                                                                                                       |
+| Sample3DSceneRenderer.h/.cpp | DirectX を使った UWP に Direct3D スワップ チェーンとグラフィックス アダプターを接続する基本的なレンダラー実装を定義します。                                                                                            |
+| DirectXHelper.h              | DirectX API によって返されたエラー HRESULT 値を Windows ランタイム例外に変換する、単一のメソッド **DX::ThrowIfFailed** を実装します。 このメソッドを使って、DirectX エラーをデバッグするためのブレーク ポイントを配置します。 |
+| pch.h/.cpp                   | DirectX 11 API など、Direct3D アプリで使われる API 用のすべての Windows システム インクルードが含まれます。                                                                                                           |
+| SamplePixelShader.hlsl       | 非常に基本的なピクセル シェーダー用の上位レベル シェーダー言語 (HLSL) コードが含まれます。                                                                                                                                     |
+| SampleVertexShader.hlsl      | 非常に基本的な頂点シェーダー用の上位レベル シェーダー言語 (HLSL) コードが含まれます。                                                                                                                                    |
 
  
 
-### Next steps
+### 次のステップ
 
-At this point, you can create a UWP with DirectX game project and identify the components and files provided by the DirectX 11 App (Universal Windows) template.
+これで、DirectX を使った UWP ゲーム プロジェクトを作成して、DirectX 11 アプリ (ユニバーサル Windows) テンプレートで提供されるコンポーネントとファイルを識別できるようになりました。
 
-In the next tutorial, [Defining the game's UWP framework](tutorial--building-the-games-metro-style-app-framework.md), we work with a completed game and examine how it uses and extends many of the concepts and components that the template provides.
+次のチュートリアル、「 [ゲームのユニバーサル Windows プラットフォーム (UWP) アプリ フレームワークの定義](tutorial--building-the-games-metro-style-app-framework.md)」では、完成したゲームを使って、テンプレートで提供される多くの概念やコンポーネントをどのように利用したり拡張したりするかを確認します。
 
  
 

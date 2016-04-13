@@ -1,43 +1,43 @@
 ---
-Description: List animations let you insert or remove single or multiple items from a collection, such as a photo album or a list of search results.
-title: Add and delete animations in UWP apps
+Description: リスト アニメーションを使うと、写真のアルバムや検索結果の一覧などのコレクションに対して任意の数の項目を挿入または削除できます。
+title: UWP アプリでの追加と削除のアニメーション
 ms.assetid: A85006AE-4992-457a-B514-500B8BEF5DC8
 label: Motion--add and delete animations
 template: detail.hbs
 ---
 
-# Add and delete animations
+# 追加と削除のアニメーション
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-List animations let you insert or remove single or multiple items from a collection, such as a photo album or a list of search results.
+リスト アニメーションを使うと、写真のアルバムや検索結果の一覧などのコレクションに対して任意の数の項目を挿入または削除できます。
 
-**Important APIs**
+**重要な API**
 
--   [**AddDeleteThemeTransition class**](https://msdn.microsoft.com/library/windows/apps/br243048)
-
-
-## Do's and don'ts
+-   [**AddDeleteThemeTransition クラス**](https://msdn.microsoft.com/library/windows/apps/br243048)
 
 
--   Use list animations to add a single new item to an existing set of items. For example, use them when a new email arrives or when a new photo is imported into an existing set.
--   Use list animations to add several items to a set at one time. For example, use them when you import a new set of photos to an existing collection. The addition or deletion of multiple items should happen at the same time, with no delay between the action on the individual objects.
--   Use add and delete list animations as a pair. Whenever you use one of these animations, use the corresponding animation for the opposite action.
--   Use list animations with a list of items to which you can add or delete one element or group of elements at once.
--   Don't use list animations to display or remove a container. These animations are for members of a collection or set that is already being displayed. Use pop-up animations to show or hide a transient container on top of the app surface. Use content transition animations to display or replace a container that is part of the app surface.
--   Don't use list animations on an entire set of items. Use the content transition animations to add or remove an entire collection within your container.
-
-\[This article contains information that is specific to Universal Windows Platform (UWP) apps and Windows 10. For Windows 8.1 guidance, please download the [Windows 8.1 guidelines PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
-
-## Related articles
+## 推奨と非推奨
 
 
-**For developers (XAML)**
-* [Animations overview](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [Animating list additions and deletions](https://msdn.microsoft.com/library/windows/apps/xaml/jj649430)
-* [Quickstart: Animating your UI using library animations](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
-* [**AddDeleteThemeTransition class**](https://msdn.microsoft.com/library/windows/apps/br243048)
+-   リスト アニメーションは、既にある一連の項目に新しい項目を 1 つ追加するときに使います。 たとえば、新しい電子メールを受け取ったときや、既にあるセットに新しい写真をインポートするときに使います。
+-   リスト アニメーションは、一連の項目に対して複数の項目を一度に追加するときに使います。 たとえば、一連の新しい写真を既にあるコレクションにインポートするときに使います。 複数項目の追加と削除は、個々のオブジェクトの処理に間が生じることなく同時に実行されます。
+-   追加と削除のリスト アニメーションは、ペアで使います。 一方のアニメーションを使った場合は、逆の操作として対応するもう一方のアニメーションを使うようにしてください。
+-   リスト アニメーションは、要素または要素のグループを一度に追加または削除できる項目リストに使います。
+-   コンテナーを表示したり非表示にしたりする目的でリスト アニメーションを使うのは避けてください。 リスト アニメーションは、既に表示されているコレクションまたはセットのメンバーに対して使います。 アプリ サーフェス上に一時的なコンテナーを表示したり非表示にしたりするには、ポップアップ アニメーションを使います。 アプリ サーフェスの一部となっているコンテナーを表示したり置き換えたりするには、コンテンツ切り替えアニメーションを使います。
+-   項目のセット全体に対してリスト アニメーションを使うのは避けてください。 コンテナー内のコレクション全体を追加したり削除したりするには、コンテンツ切り替えアニメーションを使います。
+
+\[この記事には、ユニバーサル Windows プラットフォーム (UWP) アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
+
+## 関連記事
+
+
+**開発者向け (XAML)**
+* [アニメーションの概要](https://msdn.microsoft.com/library/windows/apps/mt187350)
+* [リストの追加と削除のアニメーション化](https://msdn.microsoft.com/library/windows/apps/xaml/jj649430)
+* [クイック スタート: ライブラリのアニメーションを使った UI のアニメーション化](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [**AddDeleteThemeTransition クラス**](https://msdn.microsoft.com/library/windows/apps/br243048)
 
  
 

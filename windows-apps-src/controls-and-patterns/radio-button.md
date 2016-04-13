@@ -1,61 +1,61 @@
 ---
-Description: Radio buttons let users select one option from two or more choices.
-title: Guidelines for radio buttons
+Description: ラジオ ボタンでは、ユーザーは 2 つ以上の選択肢から 1 つのオプションを選ぶことができます。
+title: ラジオ ボタンのガイドライン
 ms.assetid: 41E3F928-AA55-42A2-9281-EC3907C4F898
-label: Radio buttons
+label: ラジオ ボタン
 template: detail.hbs
 ---
-# Radio buttons
-Radio buttons let users select one option from two or more choices. Each option is represented by one radio button; a user can select only one radio button in a radio button group.
+# ラジオ ボタン
+ラジオ ボタンでは、ユーザーは 2 つ以上の選択肢から 1 つのオプションを選ぶことができます。 各オプションは、1 つのラジオ ボタンによって表されます。ユーザーは、ラジオ ボタン グループの中から、1 つのラジオ ボタンだけを選ぶことができます。
 
-(If you're curious about the name, radio buttons are named for the channel preset buttons on a radio.)
+ラジオ ボタンという名称は、ラジオのチャンネル プリセットのボタンから付けられました。
 
-![Radio buttons](images/controls/radio-button.png)
+![ラジオ ボタン](images/controls/radio-button.png)
 
-<span class="sidebar_heading" style="font-weight: bold;">Important APIs</span>
+<span class="sidebar_heading" style="font-weight: bold;">重要な API</span>
 
--   [**RadioButton class**](https://msdn.microsoft.com/library/windows/apps/br227544)
--   [**Checked event**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)
--   [**IsChecked property**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx)
+-   [**RadioButton クラス**](https://msdn.microsoft.com/library/windows/apps/br227544)
+-   [**Checked イベント**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)
+-   [**IsChecked プロパティ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx)
 
-## Is this the right control?
+## 適切なコントロールの選択
 
-Use radio buttons to present users with two or more mutually exclusive options, as here.
+ユーザーに 2 つ以上の相互排他的なオプションを提示するには、次のようにラジオ ボタンを使います。
 
-![A group of radio buttons](images/radiobutton_basic.png)
+![ラジオ ボタンのグループ](images/radiobutton_basic.png)
 
-Radio buttons add clarity and weight to very important options in your app. Use radio buttons when the options being presented are important enough to command more screen space and where the clarity of the choice demands very explicit options.
+ラジオ ボタンはわかりやすく、アプリで重要なオプションを目立つように表示します。 ラジオ ボタンは、広い画面領域を使うに値する重要なオプションを表示する場合であって、選択肢が明確なためにわかりやすいオプション表示が必要な場合に使用してます。
 
-Radio buttons emphasize all options equally, and that may draw more attention to the options than necessary. Consider using other controls, unless the options deserve extra attention from the user. For example, if the default option is recommended for most users in most situations, use a [drop-down list](lists.md) instead.
+ラジオ ボタンはすべてのオプションを均等に強調するため、必要以上に注目される可能性があります。 ユーザーの特別な注目を引く必要がない場合は、他のコントロールを使うことを検討してください。 たとえば、ほとんどの状況でほとんどのユーザーに既定のオプションが適切な場合は、代わりに[ドロップダウン リスト](lists.md)を使います。
 
-If there are only two mutually exclusive options, combine them into a single [checkbox](checkbox.md) or [toggle switch](toggles.md). For example, use a checkbox for "I agree" instead of two radio buttons for "I agree" and "I don't agree."
+2 つだけの相互排他的なオプションの場合は、1 つの[チェック ボックス](checkbox.md)または[トグル スイッチ](toggles.md)にまとめます。 たとえば、"I agree" と "I don't agree" という 2 つのラジオ ボタンではなく、"I agree" のチェック ボックスを使います。
 
-![Two ways of presenting a binary choice](images/radiobutton_vs_checkbox.png)
+![二者択一を表す 2 つの方法](images/radiobutton_vs_checkbox.png)
 
-When the user can select multiple options, use a [checkbox](checkbox.md) or [list box](lists.md) control instead.
+ユーザーが複数のオプションを選択できる場合は、代わりに[チェック ボックス](checkbox.md)または[リスト ボックス](lists.md) コントロールを使います。
 
-![Selecting multiple options with check boxes](images/checkbox2.png)
+![チェック ボックスでの複数のオプションの選択](images/checkbox2.png)
 
-Don't use radio buttons when the options are numbers that have fixed steps, like 10, 20, 30. Use a [slider](slider.md) control instead.
+オプションが 10、20、30 のように固定間隔の数値である場合は、ラジオ ボタンを使いません。 代わりに、[スライダー](slider.md) コントロールを使います。
 
-If there are more than 8 options, use a [drop-down list](lists.md), a single-select [list box](lists.md), or a [list box](lists.md) instead.
+オプションが 8 個より多い場合は、[ドロップダウン リスト](lists.md)、単一選択の[リスト ボックス](lists.md)、または[リスト ボックス](lists.md)を使います。
 
-If the available options are based on the app’s current context, or can otherwise vary dynamically, use a single-select [list box](lists.md) instead.
+オプションがアプリの現在のコンテキストに基づいて表示される場合や、その他の方法で動的に変化する場合は、単一選択の [リスト ボックス](lists.md) を使います。
 
-## Example
-Radio buttons in the Microsoft Edge browser settings.
+## 例
+Microsoft Edge ブラウザーでのラジオ ボタンの設定です。
 
-![Radio buttons in the Microsoft Edge browser settings](images/control-examples/radio-buttons-edge.png)
+![Microsoft Edge ブラウザーでのラジオ ボタンの設定](images/control-examples/radio-buttons-edge.png)
 
-## Create a radio button
+## ラジオ ボタンの作成
 
-Radio buttons work in groups. There are 2 ways you can group radio button controls:
-- Put them inside the same parent container.
-- Set the [**GroupName**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.radiobutton.groupname.aspx) property on each radio button to the same value.
+ラジオ ボタンは、グループで動作します。 ラジオ ボタン コントロールをグループ化する 2 つの方法があります。
+- 同じ親コンテナー内に追加します。
+- 各オプション ボタンの [**GroupName**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.radiobutton.groupname.aspx) プロパティを同じ値に設定します。
 
-> **Note**&nbsp;&nbsp;A group of radio buttons behaves like a single control when accessed via the keyboard. Only the selected choice is accessible using the Tab key but users can cycle through the group using arrow keys.
+> **注** &nbsp;&nbsp; キーボード経由でアクセスした場合、ラジオ ボタンのグループは、1 つのコントロールのように動作します。 Tab キーを使うと選んだオプションにのみアクセスできますが、方向キーを使ってグループを切り替えることができます。
 
-In this example, the first group of radio buttons is implicitly grouped by being in the same stack panel. The second group is divided between 2 stack panels, so they're explicitly grouped by GroupName.
+この例では、スタック パネルを同じにすることでラジオ ボタンの最初のグループが暗黙的にグループ化されます。 2 つ目のグループは、2 つのスタック パネルの間で分割されているので、GroupName で明示的にグループ化されます。
 
 ```xaml
 <StackPanel>
@@ -137,46 +137,46 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 }
 ```
 
-The radio button groups look like this.
+ラジオ ボタンのグループは、次のようになります。
 
-![Radio buttons in two groups](images/radio-button-groups.png)
+![ラジオ ボタンの 2 つのグループ](images/radio-button-groups.png)
 
-A radio button has two states: *selected* or *cleared*. When a radio button is selected, its [**IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) property is **true**. When a radio button is cleared, its **IsChecked** property is **false**. A radio button can be cleared by clicking another radio button in the same group, but it cannot be cleared by clicking it again. However, you can clear a radio button programmatically by setting its IsChecked property to **false**.
+ラジオ ボタンには*選択*または*クリア*の 2 つの状態があります。 ラジオ ボタンを選択すると、[**IsChecked**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) プロパティは **true** になります。 ラジオ ボタンがクリアされると、**IsChecked** プロパティは **false** になります。 同じグループ内の別のラジオ ボタンをクリックするとラジオ ボタンをクリアにできますが、ボタンをもう一度クリックしてもクリアにすることはできません。 ただし、プログラムで IsChecked プロパティを **false** に設定してラジオ ボタンをクリアにすることができます。
 
-## Recommendations
+## 推奨事項
 
--   Make sure that the purpose and current state of a set of radio buttons is clear.
--   Always give visual feedback when the user taps a radio button.
--   Give visual feedback as the user interacts with radio buttons. Normal, pressed, checked, and disabled are examples of radio button states. A user taps a radio button to activate the related option. Tapping an activated option doesn’t deactivate it, but tapping another option transfers activation to that option.
--   Reserve visual effects and animations for touch feedback, and for the checked state; in the unchecked state, radio button controls should appear unused or inactive (but not disabled).
--   Limit the radio button’s text content to a single line. You can customize the radio button’s visuals to display a description of the option in smaller font size below the main line of text.
--   If the text content is dynamic, consider how the button will resize and what will happen to visuals around it.
--   Use the default font unless your brand guidelines tell you to use another.
--   Enclose the radio button in a label element so that tapping the label selects the radio button.
--   Place the label text after the radio button control, not before or above it.
--   Consider customizing your radio buttons. By default, a radio button consists of two concentric circles—the inner one filled (and shown when the radio button is checked), the outer one stroked—and some text content. But we encourage you to be creative. Users are comfortable interacting directly with the content of an app. So you may choose to show the actual content on offer, whether that’s presented with graphics or as subtle textual toggle buttons.
--   Don't put more than 8 options in a radio button group. When you need to present more options, use a [drop-down list](lists.md), [list box](lists.md), or a [list view](lists.md) instead.
--   Don't put two radio button groups next to each other. When two radio button groups are right next to each other, it's difficult to determine which buttons belong to which group. Use group labels to separate them.
+-   一連のラジオ ボタンの用途と現在の状態が明確に表示されていることを確認します。
+-   ユーザーがラジオ ボタンをタップしたときには、必ず視覚的なフィードバックを返します。
+-   ユーザーのラジオ ボタンの操作に合わせて、視覚的なフィードバックを返します。 ラジオ ボタンの状態には、たとえば、標準、押された状態、オンの状態、オフの状態があります。 ユーザーは、ラジオ ボタンをタップして関連のオプションをアクティブ化します。 アクティブなオプションをもう一度タップしても非アクティブにはなりませんが、別のオプションをタップすると、そのオプションにアクティブ化の状態が移ります。
+-   タッチに対するフィードバック用とオンの状態用に視覚効果やアニメーションを予約します。オフの状態のラジオ ボタン コントロールは、使われていない、または非アクティブなコントロールとして表示します (無効なコントロールとして表示しないでください)。
+-   ラジオ ボタンのテキスト コンテンツは、1 行に収まるように作成します。 ラジオ ボタンの視覚効果をカスタマイズして、メインのテキスト行の下に小さいフォント サイズでオプションの説明を表示することができます。
+-   テキスト コンテンツが動的な場合、ボタンのサイズがどのように変わり、周囲の視覚効果にどのような影響が生じるかを検討してください。
+-   ブランドのガイドラインで別のフォントが指示されていない限り、既定のフォントを使います。
+-   ラベルをタップするとラジオ ボタンが選択されるように、ラベル要素でラジオ ボタンを囲みます。
+-   ラベル テキストは、ラジオ ボタン コントロールの前や上ではなく、後に配置します。
+-   ラジオ ボタンをカスタマイズすることを検討してください。 既定のラジオ ボタンは、2 つの同心円 (内側の円は塗りつぶされ、オンの場合に表示。外側の円はストロークのみ) とテキスト コンテンツで構成されています。 しかし、工夫しだいで使いやすさが向上します。 アプリのコンテンツを直接操作できれば、ユーザーが理解しやすくなります。 たとえば、グラフィックやさりげないテキストのトグル ボタンを使って、提供する実際のコンテンツを表示することもできます。
+-   ラジオ ボタン グループには、8 個以上のオプションを含めないでください。 それより多くのオプションを提示する必要がある場合は、代わりに [ドロップダウン リスト](lists.md)、[リスト ボックス](lists.md)、[リスト ビュー](lists.md) などを使います。
+-   2 つのラジオ ボタン グループを並べて配置しないようにします。 2 つのラジオ ボタン グループが並んでいると、どのボタンがどのグループに属しているかがわかりにくくなります。 グループを分けるには、グループ ラベルを使います。
 
-## Additional usage guidance
+## その他の使い方のガイダンス
 
-This illustration shows the proper way to position and space radio buttons.
+この図は、適切な位置と間隔で配置したラジオ ボタンを示しています。
 
-![A set of radio buttons](images/radiobutton_layout1.png)
-## Related topics
+![一連のラジオ ボタン](images/radiobutton_layout1.png)
+## 関連トピック
 
-**For designers**
-- [Guidelines for buttons](buttons.md)
-- [Guidelines for toggle switches](toggles.md)
-- [Guidelines for checkboxes](checkbox.md)
-- [Guidelines for drop-down lists](lists.md)
-- [Guidelines for list view and grid view controls](lists.md)
-- [Guidelines for sliders](slider.md)
-- [Guidelines for the select control](lists.md)
+**デザイナー向け**
+- [ボタンのガイドライン](buttons.md)
+- [トグル スイッチのガイドライン](toggles.md)
+- [チェック ボックスのガイドライン](checkbox.md)
+- [ドロップダウン リストのガイドライン](lists.md)
+- [リスト ビュー コントロールとグリッド ビュー コントロールのガイドライン](lists.md)
+- [スライダーのガイドライン](slider.md)
+- [選択コントロールのガイドライン](lists.md)
 
 
-**For developers (XAML)**
-- [**Windows.UI.Xaml.Controls RadioButton class**](https://msdn.microsoft.com/library/windows/apps/br227544)
+**開発者向け (XAML)**
+- [**Windows.UI.Xaml.Controls RadioButton クラス**](https://msdn.microsoft.com/library/windows/apps/br227544)
 
 
 <!--HONumber=Mar16_HO1-->

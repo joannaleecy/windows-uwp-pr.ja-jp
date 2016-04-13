@@ -1,79 +1,79 @@
 ---
-Description: If you had previously set up a pubCenter payout account for your Microsoft Advertising earnings, that account will no longer be used for payments as of April 1st, 2016. Your payments will now be made through your Dev Center payout account.
-title: pubCenter-DevCenter payout account and tax profile consolidation
+Description: Microsoft Advertising による売り上げの pubCenter 受取りアカウントを以前設定していた場合、そのアカウントは 2016 年 4 月 1 日以降支払いに使われなくなります。 支払いは、デベロッパー センター受取りアカウントを通じて行われるようになります。
+title: pubCenter とデベロッパー センターの受取りアカウントと税プロファイルの統合
 ms.assetid: 1EC55E2F-2BC5-4982-A569-A59082A808EC
 ---
 
-# pubCenter-DevCenter payout account and tax profile consolidation
+# pubCenter とデベロッパー センターの受取りアカウントと税プロファイルの統合
 
 
-If you had previously set up a pubCenter payout account for your Microsoft Advertising earnings, that account will no longer be used for payments as of April 1st, 2016. Your payments will now be made through your Dev Center payout account.
+Microsoft Advertising による売り上げの pubCenter 受取りアカウントを以前設定していた場合、そのアカウントは 2016 年 4 月 1 日以降支払いに使われなくなります。 支払いは、デベロッパー センター受取りアカウントを通じて行われるようになります。
 
-To ensure any payments due are submitted on time, please sign in to your Dev Center dashboard before March 31, 2016, and confirm that your [payout account and tax profile](setting-up-your-payout-account-and-tax-forms.md) are set up correctly and are up to date.
+支払いが期日どおりに行われるようにするため、2016 年 3 月 31 日より前にデベロッパー センター ダッシュボードにサインインし、[受取りアカウントと税プロファイル](setting-up-your-payout-account-and-tax-forms.md)が正しく設定されていて、最新の状態であることを確認してください。
 
-> **Important**  If you have never set up your payout account or tax profile in Dev Center, you’ll need to do that before March 31, 2016. For more info, see [Setting up your payout account and tax forms](setting-up-your-payout-account-and-tax-forms.md).
+> **重要:** デベロッパー センターで受取りアカウントや税プロファイルをまだ設定していない場合、2016 年 3 月 31 日より前に行う必要があります。 詳しくは、「[受取りアカウントの設定と税関連の書類](setting-up-your-payout-account-and-tax-forms.md)」をご覧ください。
 
-For more info about payments in Dev Center, see [Payout summary](payout-summary.md). For info about currencies used for payouts in different countries and regions, see [Developer account and app-submission markets](account-types-locations-and-fees.md#account_markets).
+デベロッパー センターでの支払いについて詳しくは、「[支払いの要約](payout-summary.md)」をご覧ください。 複数の国または地域での支払いに使われる通貨については、「[開発者アカウントとアプリ提出の市場](account-types-locations-and-fees.md#account_markets)」をご覧ください。
 
-We also suggest reviewing the FAQ below for more info about specific scenarios.
+特定のシナリオについて詳しくは、以下のよく寄せられる質問も確認することをお勧めします。
 
-## Frequently asked questions
+## よく寄せられる質問
 
 
-### What account will be used for my March 2016 payout?
+### 2016 年 3 月の支払いにはどのアカウントが使われますか。
 
-In March 2016, we will still use the payout account and tax profile that you set up in pubCenter. This will be the last time we use this information. Starting on April 1st, 2016, your Microsoft Advertising earnings will be paid to the PayPal or Bank account that you set up in Dev Center.
+2016 年 3 月は、まだ pubCenter で設定した受取りアカウントと税プロファイルが使われます。 この情報が使われるのはそれが最後になります。 2016 年 4 月 1 日以降、Microsoft Advertising による売り上げはデベロッパー センターで設定した PayPal または銀行口座に支払われます。
 
-### I have my pubCenter and DevCenter accounts registered with the same Microsoft account in the same region/country. How will I receive my money?
+### 同じ地域/国の同じ Microsoft アカウントに pubCenter アカウントとデベロッパー センター アカウントが登録されています。 どのように支払いを受け取ることになりますか。
 
-Your Microsoft Advertising earnings will be paid to your the payout account (PayPal or bank account) that you set up in Dev Center.
+Microsoft Advertising による売り上げは、デベロッパー センターで設定した受取りアカウント (PayPal または銀行口座) に支払われます。
 
-### I have my pubCenter and DevCenter accounts registered with the same Microsoft Account but in different regions/countries. How will I receive my money?
+### 異なる地域/国の同じ Microsoft アカウントに pubCenter アカウントとデベロッパー センター アカウントが登録されています。 どのように支払いを受け取ることになりますか。
 
-Your Microsoft Advertising earnings will be paid to the payout account (PayPal or bank account) that you set up in Dev Center. The payout amount will be converted to the currency of your Dev Center account country or region.
+Microsoft Advertising による売り上げは、デベロッパー センターで設定した受取りアカウント (PayPal または銀行口座) に支払われます。 支払い額は、デベロッパー センター アカウントの国または地域の通貨に変換されます。
 
-### I have manually linked my pubCenter accounts to my DevCenter accounts. Where will I receive my Microsoft Advertising earnings?
+### pubCenter アカウントをデベロッパー センター アカウントに手動でリンクしました。 Microsoft Advertising による売り上げはどこで受け取ることになりますか。
 
-You will receive a single payout for the Microsoft Advertising earnings from all your linked pubCenter accounts in the payout account (PayPal or bank account) that you set up in Dev Center. The payout amount will be converted to the currency of your Dev Center account country or region.
+リンクされたすべての pubCenter アカウントの Microsoft Advertising による売り上げに対する個々の支払いは、デベロッパー センターで設定した受取りアカウント (PayPal または銀行口座) で受け取ることになります。 支払い額は、デベロッパー センター アカウントの国または地域の通貨に変換されます。
 
-### I had multiple pubCenter accounts registered with the same publisher. How will I receive my earnings for all these accounts?
+### 同じ発行元に複数の pubCenter アカウントを登録していました。 どうやってすべてのアカウントの売り上げを受け取ることになりますか。
 
-You will receive a single payout for the Microsoft Advertising earnings from all your linked pubCenter accounts in the payout account (PayPal or bank account) that you set up in Dev Center. The payout amount will be converted to the currency of your Dev Center account country or region.
+リンクされたすべての pubCenter アカウントの Microsoft Advertising による売り上げに対する個々の支払いは、デベロッパー センターで設定した受取りアカウント (PayPal または銀行口座) で受け取ることになります。 支払い額は、デベロッパー センター アカウントの国または地域の通貨に変換されます。
 
-### I had multiple pubCenter accounts registered with different tax profiles in pubCenter. Why do I only see one tax profile in DevCenter?
+### pubCenter の異なる税プロファイルに複数の pubCenter アカウントを登録していました。 デベロッパー センターに税プロファイルが 1 つしか表示されないのはなぜですか。
 
-Your DevCenter account has a single tax profile that will be used for all your payouts. Visit [Setting up your payout account and tax forms](setting-up-your-payout-account-and-tax-forms.md) to learn about setting up and managing your payment and tax information in Dev Center.
+デベロッパー センター アカウントには、すべての支払いに使われる税プロファイルが 1 つ設定されます。 デベロッパー センターで支払いおよび税情報を設定して管理する方法については、「[受取りアカウントの設定と税関連の書類](setting-up-your-payout-account-and-tax-forms.md)」をご覧ください。
 
-### Why was my payout converted to a different currency?
+### 支払いが別の通貨に変換されたのはなぜですか。
 
-Your Microsoft Advertising earnings will be converted and paid to the payout account (PayPal or bank account) that you set up in Dev Center . If your pubCenter account country did not match your Dev Center account country, you will be paid in the currency associated with your Dev Center account country.
+Microsoft Advertising による売り上げは、変換された後、デベロッパー センターで設定した受取りアカウント (PayPal または銀行口座) に支払われます。 pubCenter アカウントの国がデベロッパー センター アカウントの国と一致していなかった場合、デベロッパー センター アカウントの国に関連付けられた通貨で支払われます。
 
-### Why was my payout sent to a different PayPal or bank account?
+### 支払いが異なる PayPal または銀行口座に送金されたのはなぜですか。
 
-This can happen if you had set up different payout accounts (PayPal or bank accounts) in Dev Center and pubCenter. As of April 1st, 2016, all Microsoft Advertising payouts will be made to the payout account that you set up in Dev Center.
+これは、デベロッパー センターと pubCenter で異なる受取りアカウント (PayPal または銀行口座) を設定した場合に発生します。 2016 年 4 月 1 日以降、Microsoft Advertising による売り上げはすべて、デベロッパー センターで設定した受取りアカウントに対して支払われます。
 
-### Why didn’t I receive my Microsoft Advertising payout this month?
+### 今月、Microsoft Advertising の売り上げを受け取っていないのはなぜですか。
 
-This is usually due to one or more of the following reasons:
+これは通常、以下の理由の 1 つ以上のためです。
 
--   Your [payout account and tax profile details](setting-up-your-payout-account-and-tax-forms.md) were not set up correctly in Dev Center.
--   Your pubCenter account has not been [linked to your Dev Center account](pubcenter-dev-center-integration.md).
+-   [受取りアカウントと税プロファイルの詳細](setting-up-your-payout-account-and-tax-forms.md)がデベロッパー センターで正しく設定されていなかった。
+-   pubCenter アカウントが[デベロッパー センター アカウントにリンク](pubcenter-dev-center-integration.md)されていなかった。
 
-### How can I check the payout account and tax profile that will be used for payout in DevCenter?
+### デベロッパー センターでの支払いに使われる受取りアカウントと税プロファイルは、どうすれば確認できますか。
 
-Visit [Setting up your payout account and tax forms](setting-up-your-payout-account-and-tax-forms.md) to learn how to view (and edit if necessary) your payment and tax information in Dev Center.
+デベロッパー センターで支払いおよび税情報を確認 (および必要に応じて編集) する方法については、「[受取りアカウントの設定と税関連の書類](setting-up-your-payout-account-and-tax-forms.md)」をご覧ください。
 
-### I still see my tax profile and payout account information in pubCenter. Will these be used for my payout?
+### pubCenter に税プロファイルと受取りアカウントの情報がまだ表示されます。 これからも支払いに使われますか。
 
-No, your pubCenter payout account and tax profile information will no longer be used for payments starting April 1st, 2016. Visit [Setting up your payout account and tax forms](setting-up-your-payout-account-and-tax-forms.md) to learn how to set up and manage your payment and tax information in Dev Center.
+いいえ、pubCenter の受取りアカウントと税プロファイルの情報は、2016 年 4 月 1 日以降の支払いには使われなくなります。 デベロッパー センターで支払いおよび税情報を設定して管理する方法については、「[受取りアカウントの設定と税関連の書類](setting-up-your-payout-account-and-tax-forms.md)」をご覧ください。
 
-### Can I still manage my tax profile and payout account information in pubCenter?
+### pubCenter で引き続き税プロファイルと受取りアカウントの情報を管理することはできますか。
 
-No, your pubCenter payout account and tax profile information will no longer be used for payments as of April 1st, 2016. Visit [Setting up your payout account and tax forms](setting-up-your-payout-account-and-tax-forms.md) to learn how to set up and manage your payment and tax information in Dev Center.
+いいえ、pubCenter の受取りアカウントと税プロファイルの情報は、2016 年 4 月 1 日以降の支払いには使われなくなります。 デベロッパー センターで支払いおよび税情報を設定して管理する方法については、「[受取りアカウントの設定と税関連の書類](setting-up-your-payout-account-and-tax-forms.md)」をご覧ください。
 
-### If I need help with my payouts, whom do I contact?
+### 支払いに関してサポートが必要な場合の問い合わせ先を教えてください。
 
-For any questions or inquiries, please open a [support ticket](http://go.microsoft.com/fwlink/p/?LinkId=733342).
+ご質問やお問い合わせがある場合は、[サポート チケット](http://go.microsoft.com/fwlink/p/?LinkId=733342)をオープンしてください。
 
  
 

@@ -1,41 +1,41 @@
 ---
 ms.assetid: 79CF3927-25DE-43DD-B41A-87E6768D5C35
-title: Optimize your XAML layout
-description: Layout can be an expensive part of a XAML app&\#8212;both in CPU usage and memory overhead. Here are some simple steps you can take to improve the layout performance of your XAML app.
+title: XAML レイアウトの最適化
+description: レイアウトは、CPU 使用率とメモリ オーバーヘッドの両方で、XAML アプリの負荷の高い部分です。 ここでは、XAML アプリのレイアウトのパフォーマンスを向上させるための簡単な手順を示します。
 ---
-# Optimize your XAML layout
+# XAML レイアウトの最適化
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-**Important APIs**
+**重要な API**
 
 -   [**Panel**](https://msdn.microsoft.com/library/windows/apps/BR227511)
 
-Layout is the process of defining the visual structure for your UI. The primary mechanism for describing layout in XAML is through panels, which are container objects that enable you to position and arrange the UI elements within them. Layout can be an expensive part of a XAML app—both in CPU usage and memory overhead. Here are some simple steps you can take to improve the layout performance of your XAML app.
+レイアウトは、UI の視覚的な構造を定義するプロセスです。 XAML でレイアウトを記述するための主要なメカニズムはパネルです。パネルは、UI 要素を内部に配置して整列できるコンテナー オブジェクトです。 レイアウトは、CPU 使用率とメモリ オーバーヘッドの両方で、XAML アプリの負荷の高い部分です。 ここでは、XAML アプリのレイアウトのパフォーマンスを向上させるための簡単な手順を示します。
 
-## Reduce layout structure
+## レイアウトの構造を減らす
 
-The biggest gain in layout performance comes from simplifying the hierarchical structure of the tree of UI elements. Panels exist in the visual tree, but they are structural elements, not *pixel producing elements* like a [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) or a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371). Simplifying the tree by reducing the number of non-pixel-producing elements typically provides a significant performance increase.
+レイアウトのパフォーマンス向上の効果が最も大きいのは、UI 要素のツリーの階層構造を簡略化することです。 パネルはビジュアル ツリーに存在しますが、これらは構造型の要素であり、[**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) や [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) などの*ピクセル生成要素*ではありません。 通常、非ピクセル生成要素の数を減らすことによりツリーを簡略化すると、パフォーマンスの大幅な向上につながります。
 
-Many UIs are implemented by nesting panels which results in deep, complex trees of panels and elements. It is convenient to nest panels, but in many cases the same UI can be achieved with a more complex single panel. Using a single panel provides better performance.
+多くの UI は、パネルを入れ子にすることによって実装されており、結果として、パネルと要素のツリーが深くて複雑な構造になっています。 パネルを入れ子にすると便利ですが、多くの場合は、同じ UI をより複雑な 1 つのパネルを使って実現することができます。 1 つのパネルを使用すると、パフォーマンスが向上します。
 
-### When to reduce layout structure
+### レイアウトの構造を減らす場合
 
-Reducing layout structure in a trivial way—for example, reducing one nested panel from your top-level page—does not have a noticeable effect.
+単純な方法でレイアウトの構造を減らす (たとえば、トップレベルのページから、入れ子になったパネルを 1 つ減らす) だけでは、大きな効果は得られません。
 
-The largest performance gains come from reducing layout structure that's repeated in the UI, like in a [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) or [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705). These [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) elements use a [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348), which defines a subtree of UI elements that is instantiated many times. When the same subtree is being duplicated many times in your app, any improvements to the performance of that subtree has a multiplicative effect on the overall performance of your app.
+パフォーマンスの向上が最も大きいのは、[**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) や [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) などの UI 内で繰り返されるレイアウト構造を減らすことです。 これらの [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) 要素は [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348) を使用します。これは、何度もをインスタンス化される UI 要素のサブツリーを定義します。 同じサブツリーがアプリ内で何度も複製されている場合、そのサブツリーのパフォーマンスが少しでも向上すれば、アプリの全体的なパフォーマンスへの効果は何倍にもなります。
 
-### Examples
+### 例
 
-Consider the following UI.
+次のような UI を考えてみます。
 
-![Form layout example](images/layout-perf-ex1.png)
+![フォーム レイアウトの例](images/layout-perf-ex1.png)
 
-These examples shows 3 ways of implementing the same UI. Each implementation choice results in nearly identical pixels on the screen, but differs substantially in the implementation details.
+これらの例では、同じ UI を実装するための 3 つの方法を示しています。 どの実装を選択した場合も画面上のピクセル数をほぼ同じ結果になりますが、実装の詳細は大きく異なります。
 
-Option1: Nested [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635) elements
+オプション 1: 入れ子になった [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635) 要素
 
-Although this is the simplest model, it uses 5 panel elements and results in significant overhead.
+これは最も簡単なモデルですが、5 つのパネル要素を使用し、大きなオーバーヘッドが生じます。
 
 ```xml
   <StackPanel>
@@ -61,9 +61,10 @@ Although this is the simplest model, it uses 5 panel elements and results in sig
 </StackPanel>
 ```
 
-Option 2: A single [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)
+オプション 2: 1 つの [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)
 
-The [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) adds some complexity, but uses only a single panel element.
+[
+            **Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) は多少複雑になりますが、1 つのパネル要素のみを使用します。
 
 ```
   <Grid>
@@ -94,9 +95,9 @@ The [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) adds so
 </Grid>
 ```
 
-Option 3: A single [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546):
+オプション 3: 1 つの [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546)
 
-This single panel is also a bit more complex than using nested panels, but may be easier to understand and maintain than a [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704).
+この 1 つのパネルも、入れ子になったパネルを使用する場合よりも少し複雑ですが、[**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) よりも理解しやすく、保守が容易になる可能性があります。
 
 ```xml
 <RelativePanel>
@@ -119,15 +120,16 @@ This single panel is also a bit more complex than using nested panels, but may b
 </RelativePanel>
 ```
 
-As these examples show, there are many ways of achieving the same UI. You should choose by carefully considering all the tradeoffs, including performance, readability, and maintainability.
+これらの例が示すように、同じ UI を実現するにはさまざまな方法があります。 パフォーマンス、読みやすさ、保守容易性を含む、すべてのトレードオフを慎重に検討して選択する必要があります。
 
-## Use single-cell grids for overlapping UI
+## 重なり合った UI としての単一セルのグリッドの使用
 
-A common UI requirement is to have a layout where elements overlap each other. Typically padding, margins, alignments, and transforms are used to position the elements this way. The XAML [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) control is optimized to improve layout performance for elements that overlap.
+一般的な UI 要件として、要素が互いに重なり合ったレイアウトがあります。 通常、この方法で要素を配置するために、パディング、余白、整列、変換が使用されます。 XAML [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) コントロールは、重なり合った要素のレイアウトのパフォーマンスを向上させるために最適化されています。
 
-**Important**  To see the improvement, use a single-cell [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704). Do not define [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/BR242704-rowdefinitions) or [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/BR242704-columndefinitions).
+**重要:** パフォーマンスの向上を確認するために、単一セルのl [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) を使用します。 [
+            **RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/BR242704-rowdefinitions) や [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/BR242704-columndefinitions) は定義しないでください。
 
-### Examples
+### 例
 
 ```xml
 <Grid>
@@ -138,7 +140,7 @@ A common UI requirement is to have a layout where elements overlap each other. T
 </Grid>
 ```
 
-![Text overlaid on a circle](images/layout-perf-ex2.png)
+![円の上にオーバーレイされたテキスト](images/layout-perf-ex2.png)
 
 ```xml
 <Grid Width="200" BorderBrush="Black" BorderThickness="1">
@@ -147,15 +149,15 @@ A common UI requirement is to have a layout where elements overlap each other. T
 </Grid>
 ```
 
-![Two text blocks in a grid](images/layout-perf-ex3.png)
+![グリッド内の 2 つのテキスト ブロック](images/layout-perf-ex3.png)
 
-## Use a panel's built-in border properties
+## パネルの組み込みの境界線プロパティを使う
 
-[**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704), [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635), [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546), and [**ContentPresenter**](https://msdn.microsoft.com/library/windows/apps/BR209378) controls have built-in border properties that let you draw a border around them without adding an additional [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) element to your XAML. The new properties that support the built-in border are: **BorderBrush**, **BorderThickness**, **CornerRadius**, and **Padding**. Each of these is a [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/BR242362), so you can use them with bindings and animations. They’re designed to be a full replacement for a separate **Border** element.
+[**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)、[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635)、[**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546)、[**ContentPresenter**](https://msdn.microsoft.com/library/windows/apps/BR209378) の各コントロールには組み込みの境界線プロパティがあり、XAML に [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) 要素を追加せずに周囲に境界線を描画できます。 組み込みの境界線をサポートする新しいプロパティは、**BorderBrush**、**BorderThickness**、**CornerRadius**、**Padding** です。 これらはそれぞれ [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/BR242362) であり、バインディングやアニメーションで使用することができます。 これらは、個別の **Border** 要素を完全に置き換えるように設計されています。
 
-If your UI has [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) elements around these panels, use the built-in border instead, which saves an extra element in the layout structure of your app. As mentioned previously, this can be a significant savings, especially in the case of repeated UI.
+UI でこれらのパネルの周囲に [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) 要素を使っている場合は、代わりに組み込みの境界線を使うことによって、アプリのレイアウト構造内で余分な要素を削減できます。 既に説明したように、特に繰り返される UI の場合は、大幅に要素を削減できます。
 
-### Examples
+### 例
 
 ```xml
 <RelativePanel BorderBrush="Red" BorderThickness="2" CornerRadius="10" Padding="12">
@@ -164,19 +166,20 @@ If your UI has [**Border**](https://msdn.microsoft.com/library/windows/apps/BR20
 </RelativePanel>
 ```
 
-## Use **SizeChanged** events to respond to layout changes
+## **SizeChanged** イベントを使ってレイアウトの変更に応答する
 
-The [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) class exposes two similar events for responding to layout changes: [**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/BR208706-layoutupdated) and [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/BR208706-sizechanged). You might be using one of these events to receive notification when an element is resized during layout. The semantics of the two events are different, and there are important performance considerations in choosing between them.
+[
+            **FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) クラスは、レイアウト変更に応答するための 2 つの類似したイベント [**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/BR208706-layoutupdated) と [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/BR208706-sizechanged) を公開します。 レイアウト時に、要素のサイズが変更された場合、これらのイベントのいずれかを使用して通知を受信していることがあります。 2 つのイベントのセマンティクスは異なり、どちらを選択するかは、パフォーマンスに関する重要な考慮事項です。
 
-For good performance, [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/BR208706-sizechanged) is almost always the right choice. **SizeChanged** has intuitive semantics. It is raised during layout when the size of the [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) has been updated.
+パフォーマンスを向上させるには、ほとんどの場合 [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/BR208706-sizechanged) が適切な選択肢です。 **SizeChanged** のセマンティクスは直感的です。 このイベントは、レイアウト中に [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) のサイズが更新されたときに発生します。
 
-[**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/BR208706-layoutupdated) is also raised during layout, but it has global semantics—it is raised on every element whenever any element is updated. It is typical to only do local processing in the event handler, in which case the code is run more often than needed. Use **LayoutUpdated** only if you need to know when an element is repositioned without changing size (which is uncommon).
+[**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/BR208706-layoutupdated) もレイアウト時に発生しますが、そのセマンティクスはグローバルです。任意の要素が更新されるたびにすべての要素について発生します。 イベント ハンドラーではローカルな処理のみを行うことが一般的であり、この場合、コードは必要以上に頻繁に実行されます。 **LayoutUpdated** は、サイズを変更せずに要素が再配置されたことを知る必要がある場合 (一般的ではありません) にのみ使用します。
 
-## Choosing between panels
+## パネルの選択
 
-Performance is typically not a consideration when choosing between individual panels. That choice is typically made by considering which panel provides the layout behavior that is closest to the UI you’re implementing. For example, if you’re choosing between [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704), [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635) , and [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546), you should choose the panel that provides the closest mapping to your mental model of the implementation.
+通常、パフォーマンスは、個々のパネルを選択するときの検討事項ではありません。 パネルの選択は、実装しようとする UI に最も近いレイアウトの動作を実現するパネルを検討することによって行われます。 たとえば、[**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)、[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635)、[**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546) のいずれかを選択する場合、実装の概念的モデルに最も近いマッピングを提供するパネルを選択する必要があります。
 
-Every XAML panel is optimized for good performance, and all the panels provide similar performance for similar UI.
+どの XAML パネルもパフォーマンスが高くなるように最適化されており、同様の UI ではどのパネルのパフォーマンスも同様です。
 
 
 

@@ -1,17 +1,17 @@
 ---
-Description: Learn how to use tiles, badges, toasts, and notifications to provide entry points into your app and keep users up-to-date.
-title: Tiles, badges, and notifications
+Description: タイル、バッジ、トースト、通知を使用して、アプリへのエントリ ポイントを提供し、ユーザーに最新情報を提示する方法について説明します。
+title: タイル、バッジ、通知
 ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
-label: Tiles, badges, and notifications
+label: タイル、バッジ、通知
 template: detail.hbs
 ---
 
-# Tiles, badges, and notifications for UWP apps
+# UWP アプリのタイル、バッジ、通知
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-Learn how to use tiles, badges, toasts, and notifications to provide entry points into your app and keep users up-to-date.
+タイル、バッジ、トースト、通知を使用して、アプリへのエントリ ポイントを提供し、ユーザーに最新情報を提示する方法について説明します。
 
 <table>
 <colgroup>
@@ -21,15 +21,15 @@ Learn how to use tiles, badges, toasts, and notifications to provide entry point
 <tbody>
 <tr class="odd">
 <td align="left"><img src="images/tile-and-live-tile.png" alt="Breakdown of tile elements" /></td>
-<td align="left"><p>Every app has a tile. A <em>tile</em> is an app's representation on the Start menu. You can enable different tile sizes (small, medium, wide, and large). You can use a <em>tile notification</em> to update the tile to communicate new information to the user, such as news headlines, or the subject of the most recent unread message. You can use a <em>badge</em>, or <em>notification badge</em> to provide status or summary info in the form of a system-provided glyph or a number from 1-99.</p>
-<p>A <em>toast notification</em> is a notification that your app sends to the user via a pop-up UI element called a <em>toast</em> (or <em>banner</em>). The notification can be seen whether the user is in your app or not.</p>
-<p>A <em>push notification</em> or <em>raw notification</em> is a notification sent to your app either from Windows Push Notification Services (WNS) or from a background task. Your app can respond to these notifications either by notifying the user that something of interest happened (via badge update, tile update, or toast) or it can respond in any way of your choice.</p></td>
+<td align="left"><p>すべてのアプリにはタイルがあります。 <em>タイル</em>とは、[スタート] メニュー上でアプリを表すものです。 さまざまなタイル サイズ (小、普通、大、ワイド) を有効にすることもできます。 <em>タイル通知</em>を使用すると、タイルを更新して、新しい情報 (ニュース ヘッドライン、最新の未読メッセージの件名など) をユーザーに伝えることができます。 <em>バッジ</em> (<em>通知バッジ</em>) を使用すると、システム提供のグリフまたは 1 ～ 99 の数値の形式で、状態情報または要約情報を提供できます。</p>
+<p><em>トースト通知</em>は、<em>トースト</em> (または<em>バナー</em>) と呼ばれるポップアップ UI 要素を介してアプリがユーザーに送信する通知です。 通知は、ユーザーがアプリを使用中かどうかを問わず表示できます。</p>
+<p><em>プッシュ通知</em>または <em>直接通知</em>は、Windows プッシュ通知サービス (WNS) またはバックグラウンド タスクのいずれかからアプリに送信される通知です。 これらの通知には、関心のあるイベントが発生したことをユーザーに通知することで応答するか、お好みの方法で応答することができます。</p></td>
 </tr>
 </tbody>
 </table>
 
  
-## Tiles 
+## タイル 
 <table>
 <colgroup>
 <col width="50%" />
@@ -37,35 +37,35 @@ Learn how to use tiles, badges, toasts, and notifications to provide entry point
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Topic</th>
-<th align="left">Description</th>
+<th align="left">トピック</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>[Create tiles](tiles-and-notifications-creating-tiles.md)</p></td>
-<td align="left"><p>Customize the default tile for your app and provide assets for different screen sizes.</p></td>
+<td align="left"><p>アプリの既定のタイルをカスタマイズし、さまざまな画面サイズのアセットを提供します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Create adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md)</p></td>
-<td align="left"><p>Adaptive tile templates are a new feature in Windows 10, allowing you to design your own tile notification content using a simple and flexible markup language that adapts to different screen densities. This article tells you how to create adaptive live tiles for your Universal Windows Platform (UWP) app.</p></td>
+<td align="left"><p>アダプティブ タイル テンプレートは Windows 10 の新機能であり、シンプルで柔軟なマークアップ言語を使って、さまざまな画面密度に合わせて変化する独自のタイル通知コンテンツをデザインできるようになります。 この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリのアダプティブ ライブ タイルを作成する方法について説明します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[Adaptive tiles schema](tiles-and-notifications-adaptive-tiles-schema.md)</p></td>
-<td align="left"><p>Here are the elements and attributes you use to create adaptive tiles.</p></td>
+<td align="left"><p>アダプティブ タイルの作成に使う要素と属性を次に示します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Special tile templates](tiles-and-notifications-special-tile-templates-catalog.md)</p></td>
-<td align="left"><p>Special tile templates are unique templates that are either animated, or just allow you to do things that aren't possible with adaptive tiles.</p></td>
+<td align="left"><p>特別なタイル テンプレートは、アニメーション化や、アダプティブ タイルでは不可能な機能を実行できる独特なテンプレートです。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[App icon assets](tiles-and-notifications-app-assets.md)</p></td>
-<td align="left"><p>App icon assets, which appear in a variety of forms throughout the Windows 10 operating system, are the calling cards for your Universal Windows Platform (UWP) app. These guidelines detail where app icon assets appear in the system, and provide in-depth design tips on how to create the most polished icons.</p></td>
+<td align="left"><p>Windows 10 オペレーティング システム全体でさまざまな形式で表示される、アプリ アイコン アセットは、ユニバーサル Windows プラットフォーム (UWP) アプリの名刺です。 このガイドラインでは、システム内でアプリ アイコン アセットが表示される場所の詳細について説明し、最も洗練されたアイコンを作成する方法に関して詳細なデザインのヒントを提供します。</p></td>
 </tr>
 </tbody>
 </table>
 
-## Notifications
+## 通知
 
 
 <table>
@@ -75,42 +75,42 @@ Learn how to use tiles, badges, toasts, and notifications to provide entry point
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Topic</th>
-<th align="left">Description</th>
+<th align="left">トピック</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>[Adaptive and interactive toast notifications](tiles-and-notifications-adaptive-interactive-toasts.md)</p></td>
-<td align="left"><p>Adaptive and interactive toast notifications let you create flexible pop-up notifications with more content, optional inline images, and optional user interaction.</p></td>
+<td align="left"><p>アダプティブ トースト通知と対話型トースト通知を使うと、より多くのコンテンツやオプションのインライン画像を含み、オプションのユーザー操作を備えた柔軟性のあるポップアップ通知を作成できます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Notifications Visualizer](tiles-and-notifications-notifications-visualizer.md)</p></td>
-<td align="left"><p>Notifications Visualizer is a new Universal Windows Platform (UWP) app in [the Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1) that helps developers design adaptive live tiles for Windows 10.</p></td>
+<td align="left"><p>Notifications Visualizer は、[the Store](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)の新しいユニバーサル Windows プラットフォーム (UWP) アプリで、Windows 10 のアダプティブ ライブ タイルをデザインする際に役立ちます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[Choose a notification delivery method](tiles-and-notifications-choosing-a-notification-delivery-method.md)</p></td>
-<td align="left"><p>This article covers the four notification options—local, scheduled, periodic, and push—that deliver tile and badge updates and toast notification content.</p></td>
+<td align="left"><p>この記事では、タイルとバッジの更新およびトースト通知のコンテンツを配信するための 4 つの通知オプション (ローカル、スケジュール、定期的、プッシュ) について説明します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Send a local tile notification](tiles-and-notifications-sending-a-local-tile-notification.md)</p></td>
-<td align="left"><p>This article describes how to send a local tile notification to a primary tile and a secondary tile using adaptive tile templates.</p></td>
+<td align="left"><p>この記事では、アダプティブ タイル テンプレートを使って、ローカル タイル通知をプライマリ タイルやセカンダリ タイルに送信する方法について説明します</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[Periodic notification overview](tiles-and-notifications-periodic-notification-overview.md)</p></td>
-<td align="left"><p>Periodic notifications, which are also called polled notifications, update tiles and badges at a fixed interval by downloading content from a cloud service.</p></td>
+<td align="left"><p>定期的な通知 (ポーリング通知とも呼ばれます) では、クラウド サービスから直接コンテンツをダウンロードして、一定の間隔でタイルやバッジを更新します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Windows Push Notification Services (WNS) overview](tiles-and-notifications-windows-push-notification-services--wns--overview.md)</p></td>
-<td align="left"><p>The Windows Push Notification Services (WNS) enables third-party developers to send toast, tile, badge, and raw updates from their own cloud service. This provides a mechanism to deliver new updates to your users in a power-efficient and dependable way.</p></td>
+<td align="left"><p>Windows プッシュ通知サービス (WNS) を利用することで、サード パーティの開発者が独自のクラウド サービスからトースト更新、タイル更新、バッジ更新、直接更新を送ることができます。 これにより、新しい更新を電力効率に優れた信頼できる方法でユーザーに配信するためのメカニズムが提供されます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[Code generated by the push notification wizard](tiles-and-notifications-the-code-generated-by-the-push-notification-wizard.md)</p></td>
-<td align="left"><p>By using a wizard in Visual Studio, you can generate push notifications from a mobile service that was created with Azure Mobile Services. The Visual Studio wizard generates code to help you get started. This topic explains how the wizard modifies your project, what the generated code does, how to use this code, and what you can do next to get the most out of push notifications. See [Windows Push Notification Services (WNS) overview](tiles-and-notifications-windows-push-notification-services--wns--overview.md).</p></td>
+<td align="left"><p>Visual Studio でウィザードを使うことで、Azure のモバイル サービスで作成されたモバイル サービスからプッシュ通知を生成できます。 Visual Studio ウィザードにより、この作業に役立つコードが生成されます。 このトピックでは、ウィザードによるプロジェクトの変更内容、生成されたコードによる実行内容、このコードを使う方法、プッシュ通知を最大限に活用するために次に行うことができる作業について説明します。 「Windows プッシュ通知サービス (WNS) の概要 ([Windows Push Notification Services (WNS) overview](tiles-and-notifications-windows-push-notification-services--wns--overview.md))」をご覧ください。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Raw notification overview](tiles-and-notifications-raw-notification-overview.md)</p></td>
-<td align="left"><p>Raw notifications are short, general purpose push notifications. They are strictly instructional and do not include a UI component. As with other push notifications, the WNS feature delivers raw notifications from your cloud service to your app.</p></td>
+<td align="left"><p>直接通知は、短い汎用のプッシュ通知です。 説明のみを目的としており、UI コンポーネントは含まれません。 他のプッシュ通知と同様に、WNS 機能は、クラウド サービスからアプリに直接通知を配信します。</p></td>
 </tr>
 </tbody>
 </table>

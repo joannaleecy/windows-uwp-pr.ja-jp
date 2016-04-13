@@ -1,42 +1,42 @@
 ---
-Description: 'This topic shows examples of the coding tasks needed to achieve some of the most common stream- and buffer-related enterprise data protection (EDP) scenarios.'
+Description: 'このトピックでは、ストリームとバッファーに関連する最も一般的なエンタープライズ データ保護 (EDP) シナリオのいくつかを実現するために必要なコード作成タスクの例を示します。'
 MS-HAID: 'dev\_files.use\_edp\_to\_protect\_streams\_and\_buffers'
 MSHAttr: 'PreferredLib:/library/windows/apps'
 Search.Product: eADQiWindows 10XVcnh
-title: 'Use enterprise data protection (EDP) to protect streams and buffers'
+title: 'エンタープライズ データ保護 (EDP) を使ったストリームとバッファーの保護'
 ---
 
-# Use enterprise data protection (EDP) to protect streams and buffers
+# エンタープライズ データ保護 (EDP) を使ったストリームとバッファーの保護
 
-__Note__ Enterprise data protection (EDP) policy cannot be applied on Windows 10, Version 1511 (build 10586) or earlier.
+__注__ Windows 10 バージョン 1511 (ビルド 10586) またはそれ以前のバージョンでは、エンタープライズ データ保護 (EDP) ポリシーを適用できません。
 
-This topic shows examples of the coding tasks needed to achieve some of the most common stream- and buffer-related enterprise data protection (EDP) scenarios. For the full developer picture of how EDP relates to files, streams, the clipboard, networking, background tasks, and data protection under lock, see [enterprise data protection (EDP)](../enterprise/edp-hub.md).
+このトピックでは、ストリームとバッファーに関連する最も一般的なエンタープライズ データ保護 (EDP) シナリオのいくつかを実現するために必要なコード作成タスクの例を示します。 EDP が、ファイル、ストリーム、クリップボード、ネットワーク、バックグラウンド タスク、ロックの背後でのデータ保護とどのように関係するかに関する開発者向けの詳しい情報については、「[エンタープライズ データ保護 (EDP)](../enterprise/edp-hub.md)」をご覧ください。
 
-**Note**  The [enterprise data protection (EDP) sample](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409) covers many of the same scenarios demonstrated in this topic.
+**注**  このトピックで説明されているシナリオの多くは、[エンタープライズ データ保護 (EDP) のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)にも含まれています。
 
-## Prerequisites
-
-
--   **Get set up for EDP**
-
-    See [Set up your computer for EDP](../enterprise/edp-hub.md#set-up-your-computer-for-EDP).
-
--   **Commit to building an enterprise-enlightened app**
-
-    An app that autonomously ensures that enterprise data stays under the managing enterprise’s control is known as an enterprise-enlightened app. An enlightened app is more powerful, smart, flexible, and trusted than an unenlightened one. Your app announces to the system that it is enlightened by declaring the restricted **enterpriseDataPolicy** capability. There's more to being enlightened than setting a capability, though. To learn more, see [Enterprise-enlightened apps](../enterprise/edp-hub.md#enterprise-enlightened-apps).
-
--   **Understand async programming for Universal Windows Platform (UWP) apps**
-
-    To learn about how to write asynchronous apps in C\# or Visual Basic, see [Call asynchronous APIs in C\# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). To learn about how to write asynchronous apps in C++, see [Asynchronous programming in C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
-
-## Protect a stream of data to an enterprise identity
+## 前提条件
 
 
-**Note**  Whenever you protect a stream or a buffer, it's highly recommended that you subscribe to the [**ProtectionPolicyManager.PolicyChanged**](https://msdn.microsoft.com/library/windows/apps/mt608411) event so that your app is aware in the event that EDP becomes disabled on the device. When this happens, you should unprotect any streams and buffers. Any stream or buffer that you leave protected becomes eligible to be revoked should the user un-enroll the device from mobile device management (MDM). And, if EDP was disabled when the resource was created, then that revocation is inappropriate. Unprotecting the resources when EDP is disabled prevents that.
+-   **EDP の設定を行う**
+
+    「[EDP のためのコンピューターの設定](../enterprise/edp-hub.md#set-up-your-computer-for-EDP)」をご覧ください。
+
+-   **エンタープライズ対応アプリの作成に取り組む**
+
+    企業データがそれを管理する企業の制御下に置かれている状態が自律的に確保されるアプリをエンタープライズ対応アプリと呼びます。 対応アプリは非対応アプリより強力かつスマートで、柔軟性と信頼性の面でもより優れています。 アプリが対応アプリであることをシステムに知らせるには、制限された **enterpriseDataPolicy** 機能を宣言します。 ただし、アプリを対応アプリにするために必要なことは機能の設定だけではありません。 詳しくは、「[エンタープライズ対応アプリ](../enterprise/edp-hub.md#enterprise-enlightened-apps)」をご覧ください。
+
+-   **ユニバーサル Windows プラットフォーム (UWP) アプリの非同期プログラミングについての理解**
+
+    C\# や Visual Basic での非同期アプリの作成方法については、「[C\# または Visual Basic での非同期 API の呼び出し](https://msdn.microsoft.com/library/windows/apps/mt187337)」をご覧ください。 C++ での非同期アプリの作成方法については、「[C++ での非同期プログラミング](https://msdn.microsoft.com/library/windows/apps/mt187334)」をご覧ください。
+
+## 企業の ID に対するデータ ストリームの保護
+
+
+**注**  ストリームやバッファーを保護する場合は常に、[**ProtectionPolicyManager.PolicyChanged**](https://msdn.microsoft.com/library/windows/apps/mt608411) イベントを受信登録し、EDP がデバイスで無効になった場合に、アプリで検出できるようにしておくことを強くお勧めします。 この場合、すべてのストリームとバッファーの保護を解除する必要があります。 保護されたままにしたストリームやバッファーは、ユーザーがモバイル デバイス管理 (MDM) からデバイスの登録を解除した場合、失効の対象となります。 また、リソースの作成時に EDP が無効であった場合、その失効は適切ではありません。 EDP が無効であるときはリソースの保護を解除することで、これを防止できます。
 
 
 
-In this scenario, your app has access to an unprotected stream that contains enterprise data. In order to ensure that this stream is protected when transferring it within and outside the device, your app protects the data to the enterprise identity that it belongs to. This allows wiping the data, when required, by the enterprise. In order to later determine whether or not to call an "unprotect" method on a stream, the app must maintain state that indicates whether the stream was protected, which is why the function in this code example returns that state. If the identity passed is not managed, or if the app is not allowed for the identity, the stream will not be protected and an ‘Unprotected’ status will be returned from the call to [**DataProtectionManager.ProtectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/dn706021).
+このシナリオでは、アプリは、企業のデータが含まれている保護されていないストリームにアクセスできます。 内部と外部デバイスに転送するときに、このストリームが保護されるようにするには、アプリで、データが属している企業の ID へのデータを保護します。 これにより、必要に応じて、企業はデータを消去できます。 後でストリームに対して "Unprotect" メソッドを呼び出すかどうかを判断するには、アプリでストリームが保護されていたかどうかを示す状態を保持する必要があります。このコード例の関数がこの状態を返しているのは、このような理由からです。 渡された ID が管理されていない場合、またはその ID でアプリが許可されていない場合は、ストリームは保護されず、[**DataProtectionManager.ProtectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/dn706021) の呼び出しから "Unprotected" の状態が返されます。
 
 ```CSharp
 using Windows.Storage.Streams;
@@ -62,7 +62,7 @@ private async System.Threading.Tasks.Task<bool> ProtectAStream
 }
 ```
 
-To show how you might use a method like the one in the code example above, here's a helper method that uses it to convert a string into an unprotected stream, and then protect the stream.
+前のコード例のメソッドと同様のメソッドを使う方法を示すために、ここでは、メソッドを使って文字列を保護されていないストリームに変換し、そのストリームを保護するヘルパー メソッドを示します。
 
 ```CSharp
 using Windows.Storage.Streams;
@@ -85,12 +85,12 @@ private async System.Threading.Tasks.Task<bool> ProtectStringAsStreamAsync
 }
 ```
 
-## Retrieve the status of a stream
+## ストリームの状態の取得
 
 
-In this scenario, your app has previously protected a stream to which you must prevent unauthorized access. In order to retrieve the stream's contents back when needed, your app can check the status of the stream.
+このシナリオでは、アプリが以前にストリームを保護しており、そのストリームへの未承認のアクセスを禁止している必要があります。 必要なときに、ストリームの内容を取得するために、アプリでストリームの状態を確認できます。
 
-Note that the status of a stream is also returned from [**DataProtectionManager.UnprotectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/dn706023). This API will never return a status of ‘Unprotected’, since it requires that the input resource be protected (it is not possible to reliably verify that a resource is unprotected). Be aware if you have code that compares the result with 'Unprotected', then that suggests the presence of a design flaw. It's an indication that your code has lost track of whether the stream is protected.
+ストリームの状態は、[**DataProtectionManager.UnprotectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/dn706023) からも返されることに注意してください。 この API は、入力ソースが保護されていることを必要とするため、"Unprotected" の状態を返すことはありません (リソースが保護されていないことを、信頼性の高い方法で確認することはできません)。 結果を "Unprotected" と比較するコードがある場合、設計上の欠陥が存在することを示している可能性があるため注意してください。 これは、コードでストリームが保護されているかどうかを追跡できなくなったことを意味しています。
 
 ```CSharp
 using Windows.Storage.Streams;
@@ -113,10 +113,10 @@ private async void CheckProtectedStreamStatus(IInputStream protectedStream)
 }
 ```
 
-## Unprotect a stream of data
+## データ ストリームの保護の解除
 
 
-In this scenario, your app wishes to unprotected a stream that it previously protected. This code example takes a protected stream (note that the stream must be protected for this process to work) and unprotects it with a call to [**DataProtectionManager.UnprotectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/dn706023). It then reads a string out of the stream and returns it.
+このシナリオでは、アプリで以前に保護していたストリームの保護を解除しようとしています。 次のコード例は、保護されたストリーム (このプロセスが機能するには、ストリームが保護されている必要があります) を受け取り、[**DataProtectionManager.UnprotectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/dn706023) を呼び出してその保護を解除します。 次に、ストリームからの文字列を読み取って、その文字列を返します。
 
 ```CSharp
 using Windows.Storage.Streams;
@@ -142,7 +142,7 @@ private async System.Threading.Tasks.Task<string> UnprotectStreamIntoStringAsync
 }
 ```
 
-To show how you might use the helper methods given so far, here's an event handler that takes a string from a text box, writes the string into a stream, protects the stream, unprotects the stream (if it was successfully protected), and finally reads the string back from the unprotected stream and displays it in the UI.
+これまでに示したヘルパー メソッドの使い方を示すために、ここではイベント ハンドラーを使って、テキスト ボックスから文字列を受け取る、文字列をストリームに書き込む、ストリームを保護する、ストリームの保護を解除する (ストリームが正常に保護されていた場合)、そして最後に、保護が解除されたストリームから文字列を読み取って UI に表示するという処理を行います。
 
 ```CSharp
 using Windows.Storage.Streams;
@@ -162,12 +162,12 @@ private async void ProtectAndThenUnprotectStream_Click(object sender, RoutedEven
 }
 ```
 
-## Retrieve the status of a static data buffer
+## 静的データ バッファーの状態の取得
 
 
-In this scenario, your app has previously protected a buffer to which you must prevent unauthorized access. In order to retrieve the buffer's contents back when needed, your app can check the status of the buffer.
+このシナリオでは、アプリが以前にバッファーを保護しており、そのバッファーへの未承認のアクセスを禁止している必要があります。 必要なときに、バッファーの内容を取得するために、アプリでバッファーの状態を確認できます。
 
-Note that the status of a buffer is also returned from [**DataProtectionManager.UnprotectAsync**](https://msdn.microsoft.com/library/windows/apps/dn706022). This API will never return a status of ‘Unprotected’, since it requires that the input resource be protected.
+バッファーの状態は、[**DataProtectionManager.UnprotectAsync**](https://msdn.microsoft.com/library/windows/apps/dn706022) からも返されることに注意してください。 この API は、入力ソースが保護されていることを必要とするため、"Unprotected" の状態を返すことはありません。
 
 ```CSharp
 using Windows.Security.EnterpriseData;
@@ -190,10 +190,10 @@ private async void CheckProtectedBufferStatus(IBuffer protectedData)
 }
 ```
 
-## Protect static data retrieved from an enterprise resource
+## エンタープライズ リソースから取得した静的なデータの保護
 
 
-This scenario covers the same ground as the stream code examples, except it works with a buffer of data. Again, you need to maintain state that indicates whether the buffer was protected, as shown. If the identity passed is not managed, or if the app is not allowed for the identity, the buffer will not be protected and an ‘Unprotected’ status will be returned from the call to [**DataProtectionManager.ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/dn706020).
+このシナリオは、データのバッファーを処理する点を除き、ストリームのコード例と基本的に同じです。 ここでも、バッファーが保護されていたかどうかを示す状態を維持する必要があります。 渡された ID が管理されていない場合、またはその ID でアプリが許可されていない場合は、バッファーは保護されず、[**DataProtectionManager.ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/dn706020) の呼び出しから "Unprotected" の状態が返されます。
 
 ```CSharp
 using Windows.Security.Cryptography;
@@ -259,10 +259,10 @@ private async void ProtectAndThenUnprotectBuffer_Click(object sender, RoutedEven
 }
 ```
 
-## Enable UI-policy enforcement based on a stream's or buffer’s protected identity
+## ストリームやバッファーの保護された ID に基づいて UI ポリシーの適用を有効にする
 
 
-When your app is about to display the contents of a protected stream or buffer on its UI, it must enable UI-policy enforcement based on the identity the resource is protected to. You should query the protection information of the resource and enable the system's UI-policy enforcement from the retrieved identity.
+アプリがその UI で保護されたストリームやバッファーの内容を表示しようとした場合、リソースが保護されている ID に基づいて UI ポリシーの適用を有効にする必要があります。 リソースの保護の情報を照会して、取得した ID からシステムの UI ポリシーの適用を有効にする必要があります。
 
 ```CSharp
 using Windows.Security.EnterpriseData;
@@ -288,16 +288,16 @@ private async void EnableUIPolicyFromProtectedBuffer(IBuffer buffer)
 
 ```
 
-**Note**  This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
+**注**  この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
  
 
-## Related topics
+## 関連トピック
 
 
-[enterprise data protection (EDP) sample](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)
+[エンタープライズ データ保護 (EDP) のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)
 
-[**Windows.Security.EnterpriseData namespace**](https://msdn.microsoft.com/library/windows/apps/dn279153)
+[**Windows.Security.EnterpriseData 名前空間**](https://msdn.microsoft.com/library/windows/apps/dn279153)
 
  
 

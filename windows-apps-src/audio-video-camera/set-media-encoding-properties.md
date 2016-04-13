@@ -1,55 +1,57 @@
 ---
 ms.assetid: 09BA9250-A476-4803-910E-52F0A51704B1
-description: This article shows you how to use the IMediaEncodingProperties interface to set the resolution and frame rate of the camera preview stream and captured photos and video.
-title: Set media encoding properties
+description: この記事では、IMediaEncodingProperties インターフェイスを使用して、カメラのプレビュー ストリームとキャプチャした写真/ビデオの解像度およびフレーム レートを設定する方法を説明します。
+title: メディア エンコード プロパティの設定
 ---
 
-# Set media encoding properties
+# メディア エンコード プロパティの設定
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-This article shows you how to use the [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) interface to set the resolution and frame rate of the camera preview stream and captured photos and video. It also shows how to ensure that the aspect ratio of the preview stream matches that of the captured media.
+この記事では、[**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) インターフェイスを使用して、カメラのプレビュー ストリームとキャプチャした写真/ビデオの解像度およびフレーム レートを設定する方法を説明します。 プレビュー ストリームの縦横比をキャプチャしたメディアの縦横比と一致させる方法についても説明します。
 
-Camera profiles offer a more advanced way of discovering and setting the stream properties of the camera, but they are not supported for all devices. For more information, see [Camera profiles](camera-profiles.md).
+カメラ プロファイルは、カメラのストリーム プロパティを検出および設定するための高度な方法ですが、すべてのデバイスではサポートされていません。 詳しくは、「[カメラ プロファイル](camera-profiles.md)」をご覧ください。
 
-The code in this article was adapted from the [CameraResolution sample](http://go.microsoft.com/fwlink/p/?LinkId=624252&clcid=0x409). You can download the sample to see the code used in context or to use the sample as a starting point for your own app.
+この記事のコードは、[CameraResolution サンプル](http://go.microsoft.com/fwlink/p/?LinkId=624252&clcid=0x409)を基にしています。 このサンプルをダウンロードし、該当するコンテキストで使用されているコードを確認することも、サンプルを独自のアプリの開始点として使用することもできます。
 
-**Note**  
-This article builds on concepts and code discussed in [Capture Photos and Video with MediaCapture](capture-photos-and-video-with-mediacapture.md), which describes the steps for implementing basic photo and video capture. It is recommended that you familiarize yourself with the basic media capture pattern in that article before moving on to more advanced capture scenarios. The code in this article assumes that your app already has an instance of MediaCapture that has been properly initialized.
+**注**  
+この記事の内容は、写真やビデオの基本的なキャプチャ機能を実装するための手順を紹介した「[MediaCapture を使った写真とビデオのキャプチャ](capture-photos-and-video-with-mediacapture.md)」で取り上げた概念やコードに基づいています。 そちらの記事で基本的なメディア キャプチャのパターンを把握してから、高度なキャプチャ シナリオに進むことをお勧めします。 この記事で紹介しているコードは、MediaCapture のインスタンスが既に作成され、適切に初期化されていることを前提としています。
 
-## A media encoding properties helper class
+## メディア エンコード プロパティのヘルパー クラス
 
-Creating a simple helper class to wrap the functionality of the [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) interface makes it easier to select a set of encoding properties that meet particular criteria. This helper class is particularly useful due to the following behavior of the encoding properties feature:
+[
+            **IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) インターフェイスの機能をラップする単純なヘルパー クラスを作成すると、特定の条件を満たす一連のエンコード プロパティを容易に選択できます。 特に、エンコード プロパティの機能の次のような動作に対して、このヘルパー クラスが便利です。
 
-**Warning**  
-The [**VideoDeviceController.GetAvailableMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211994) method takes a member of the [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/br226640) enumeration, such as **VideoRecord** or **Photo**, and returns a list of either [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) or [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) objects that convey the stream encoding settings, such as the resolution of the captured photo or video. The results of calling **GetAvailableMediaStreamProperties** may include **ImageEncodingProperties** or **VideoEncodingProperties** regardless of what **MediaStreamType** value is specified. For this reason, you should always check the type of each returned value and cast it to the appropriate type before attempting to access any of the property values.
+**警告**  
+[
+            **VideoDeviceController.GetAvailableMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211994) メソッドは、[**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/br226640) 列挙値のメンバー (**VideoRecord**、**Photo** など) を受け取り、キャプチャした写真またはビデオの解像度などのストリーム エンコード設定を表す、[**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) オブジェクトまたは [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) オブジェクトのリストを返します。 指定された **MediaStreamType** 値に関係なく、**GetAvailableMediaStreamProperties** を呼び出した結果には、**ImageEncodingProperties** または **VideoEncodingProperties** が含まれている可能性があります。 このため、いずれかのプロパティ値にアクセスする前に、常に各戻り値の型を確認し、適切な型にキャストする必要があります。
 
-The helper class defined below handles the type checking and casting for [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) or [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) so that your app code doesn't need to distinguish between the two types. In addition to this, the helper class exposes properties for the aspect ratio of the properties, the frame rate (for video encoding properties only), and a friendly name that makes it easier to display the encoding properties in the app's UI.
+次に示すヘルパー クラスでは、型の確認と [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) または [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) へのキャストを処理しています。これにより、アプリのコードでは、2 つの型を区別する必要がなくなります。 これに加えて、ヘルパー クラスは、プロパティの縦横比、フレーム レート (ビデオ エンコード プロパティの場合のみ)、アプリの UI でエンコード プロパティをわかりやすく表示するためのフレンドリ名を使用できるように、プロパティを公開します。
 
-You must include the [**Windows.Media.MediaProperties**](https://msdn.microsoft.com/library/windows/apps/hh701296) namespace in the source file for the helper class.
+ヘルパー クラスのソース ファイルには、[**Windows.Media.MediaProperties**](https://msdn.microsoft.com/library/windows/apps/hh701296) 名前空間を含める必要があります。
 
 [!code-cs[MediaEncodingPropertiesUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetMediaEncodingPropertiesUsing)]
 
 [!code-cs[StreamPropertiesHelper](./code/BasicMediaCaptureWin10/cs/StreamPropertiesHelper.cs#SnippetStreamPropertiesHelper)]
 
-## Determine if the preview and capture streams are independent
+## プレビュー ストリームとキャプチャ ストリームの独立性の判断
 
-On some devices, the same hardware pin is used for both preview and capture streams. On these devices, setting the encoding properties of one will also set the other. On devices that use different hardware pins for capture and preview, the properties can be set for each stream independently. Use the following code to determine if the preview and capture streams are independent. You should adjust your UI to enable or disable the setting of the streams independently based on the result of this test.
+デバイスによっては、プレビュー ストリームとキャプチャ ストリームに同じハードウェア ピンが使用されることがあります。 このようなデバイスでは、一方のエンコード プロパティを設定すると、他方も設定されます。 キャプチャとプレビューに別々のハードウェア ピンが使用されるデバイスでは、ストリームごとのプロパティを個々に設定できます。 プレビュー ストリームとキャプチャ ストリームが独立しているかどうかを判断するには、次のコードを使用します。 このテストの結果に基づいて UI を調整し、ストリームの設定を個々に有効化または無効化する必要があります。
 
 [!code-cs[CheckIfStreamsAreIdentical](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCheckIfStreamsAreIdentical)]
 
-## Get a list of available stream properties
+## 利用可能なストリーム プロパティのリストの取得
 
-Get a list of the available stream properties for a capture device by getting the [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) for your app's [MediaCapture](capture-photos-and-video-with-mediacapture.md) object and then calling [**GetAvailableMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211994) and passing in one of the [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/br226640) values, **VideoPreview**, **VideoRecord**, or **Photo**. In this example, Linq syntax is used to create a list of **StreamPropertiesHelper** objects, defined previously in this article, for each of the [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) values returned from **GetAvailableMediaStreamProperties**. This example first uses Linq extension methods to order the returned properties based first on resolution and then on frame rate.
+キャプチャ デバイスについて利用可能なストリーム プロパティのリストを取得するには、アプリの [MediaCapture](capture-photos-and-video-with-mediacapture.md) オブジェクトの [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) を取得し、[**GetAvailableMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211994) を呼び出して、いずれか 1 つの [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/br226640) 値 (**VideoPreview**、**VideoRecord**、**Photo**) を渡します。 この例では、**GetAvailableMediaStreamProperties** から返されたそれぞれの [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) 値に対し、この記事で定義した **StreamPropertiesHelper** オブジェクトのリストを Linq 構文で作成しています。 この例では、まず Linq 拡張メソッドを使用して、返されたプロパティを解像度順のフレーム レート順に並べ替えます。
 
-If your app has specific resolution or frame rate requirements, you can select a set of media encoding properties programmatically. A typical camera app will instead expose the list of available properties in the UI and allow the user to select their desired settings. A **ComboBoxItem** is created for each item in the list of **StreamPropertiesHelper** objects in the list. The content is set to the friendly name returned by the helper class and the tag is set to the helper class itself so it can be used later to retrieve the associated encoding properties. Each **ComboBoxItem** is then added to the **ComboBox** passed into the method.
+アプリに、解像度またはフレーム レートに関する特定の要件がある場合は、メディア エンコード プロパティのセットをプログラムで選択できます。 一般的なカメラ アプリでは、目的の設定をユーザーが選択できるように、利用可能なプロパティのリストが UI で公開されます。 **StreamPropertiesHelper** オブジェクトのリストにある各項目に対して、**ComboBoxItem** が作成されます。 コンテンツは、ヘルパー クラスから返されたフレンドリ名に設定されています。タグは、関連付けられているエンコード プロパティを後で取得できるように、ヘルパー クラス自体に設定されています。 次に、メソッドに渡された **ComboBox** に、各 **ComboBoxItem** が追加されます。
 
 [!code-cs[PopulateStreamPropertiesUI](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPopulateStreamPropertiesUI)]
 
-## Set the desired stream properties
+## 目的のストリーム プロパティを設定する
 
-Tell the video device controller to use your desired encoding properties by calling [**SetMediaStreamPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh700895), passing in the **MediaStreamType** value indicating whether the photo, video, or preview properties should be set. This example sets the requested encoding properties when the user selects an item in one of the **ComboBox** objects populated with the **PopulateStreamPropertiesUI** helper method.
+目的のエンコード プロパティを使用するようにビデオ デバイスのコントローラーに指示するには、[**SetMediaStreamPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh700895) を呼び出します。このとき、写真、ビデオ、プレビューのうち、どのプロパティを設定するかを示す **MediaStreamType** 値を渡します。 この例では、**PopulateStreamPropertiesUI** ヘルパー メソッドによって設定されたいずれかの **ComboBox** オブジェクトからユーザーが項目を選択すると、要求されたエンコード プロパティが設定されます。
 
 [!code-cs[PreviewSettingsChanged](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPreviewSettingsChanged)]
 
@@ -57,21 +59,21 @@ Tell the video device controller to use your desired encoding properties by call
 
 [!code-cs[VideoSettingsChanged](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoSettingsChanged)]
 
-## Match the aspect ratio of the preview and capture streams
+## プレビューとキャプチャ ストリームの縦横比を一致させる
 
-A typical camera app will provide UI for the user to select the video or photo capture resolution but will programmatically set the preview resolution. There are a few different strategies for selecting the best preview stream resolution for your app:
+一般的なカメラ アプリでは、ユーザーがビデオや写真のキャプチャ解像度を選択するための UI を提供することも、プログラムによってプレビュー解像度を設定することもあります。 アプリの最適なプレビュー ストリーム解像度を選択するための方法はいくつかあります。
 
--   Select the highest available preview resolution, letting the UI framework perform any necessary scaling of the preview.
+-   UI フレームワークで必要なプレビューのスケーリングを実行できるように、利用可能な最高のプレビュー解像度を選択します。
 
--   Select the preview resolution closest to the capture resolution so that the preview displays the closest representation to the final captured media.
+-   最終的にキャプチャされたメディアに最も近い表現がプレビューに表示されるように、キャプチャ解像度に最も近いプレビュー解像度を選択します。
 
--   Select the preview resolution closest to the size of the [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) so that no more pixels than necessary are going through the preview stream pipeline.
+-   必要以上のピクセルがプレビュー ストリーム パイプラインを通過しないように、[**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) のサイズに最も近いプレビュー解像度を選択します。
 
-**Important**  
-It is possible, on some devices, to set a different aspect ratio for the camera's preview stream and capture stream. Frame cropping caused by this mismatch can result in content being present in the captured media that was not visible in the preview which can result in a negative user experience. It is strongly recommended that you use the same aspect ratio, within a small tolerance window, for the preview and capture streams. It is fine to have entirely different resolutions enabled for capture and preview as long as the aspect ratio match closely.
+**重要**  
+デバイスによっては、カメラのプレビュー ストリームとキャプチャ ストリームで別々の縦横比を設定することも可能です。 この不一致によってフレームのトリミングが生じた場合、プレビューで表示されなかったコンテンツがキャプチャしたメディアに存在するという結果を招く可能性があり、これは否定的なユーザー エクスペリエンスにつながります。 プレビュー ストリームとキャプチャ ストリームには、微小な公差範囲内で同一の縦横比を使用することを強くお勧めします。 縦横比がほぼ一致していれば、キャプチャとプレビューにまったく異なる解像度を有効にしても問題ありません。
 
 
-To ensure that the photo or video capture streams match the aspect ratio of the preview stream, this example calls [**VideoDeviceController.GetMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211995) and passes in the **VideoPreview** enum value to request the current stream properties for the preview stream. Next a small aspect ratio tolerance window is defined so that we can include aspect ratios that are not exactly the same as the preview stream, as long as they are close. Next, a Linq extension method is used to select just the **StreamPropertiesHelper** objects where the aspect ratio is within the defined tolerance range of the preview stream.
+写真やビデオのキャプチャ ストリームをプレビュー ストリームの縦横比に一致させるために、この例では [**VideoDeviceController.GetMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211995) を呼び出し、**VideoPreview** 列挙値を渡して、プレビュー ストリームの現在のストリーム プロパティを要求しています。 次に、プレビュー ストリームとまったく同じでなくても、近似値であれば、その縦横比を許容できるように、縦横比の微小な公差範囲を定義しています。 次に、プレビュー ストリームについて定義済みの公差範囲に縦横比が含まれるような **StreamPropertiesHelper** オブジェクトだけを選択できるように、Linq 拡張メソッドが使用されています。
 
 [!code-cs[MatchPreviewAspectRatio](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetMatchPreviewAspectRatio)]
 

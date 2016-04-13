@@ -1,68 +1,70 @@
 ---
-Description: The media player has customizable XAML transport controls to manage control of audio and video content.
-title: Create custom media transport controls
+Description: メディア プレーヤーには、オーディオおよびビデオ コンテンツのコントロールを管理するためのカスタマイズ可能な XAML トランスポート コントロールがあります。
+title: カスタム メディア トランスポート コントロールを作成する
 ms.assetid: 6643A108-A6EB-42BC-B800-22EABD7B731B
-label: Create custom media transport controls
+label: カスタム メディア トランスポート コントロールを作成する
 template: detail.hbs
 ---
-# Create custom transport controls
+# カスタム トランスポート コントロールを作成する
 
-MediaElement has customizable XAML transport controls to manage control of audio and video content within a Universal Windows Platform (UWP) app. Here, we demonstrate how to customize the MediaTransportControls template. We’ll show you how to work with the overflow menu, add a custom button, modify the slider, and change colors.
+MediaElement には、ユニバーサル Windows プラットフォーム (UWP) アプリ内でオーディオおよびビデオ コンテンツのコントロールを管理するためのカスタマイズ可能な XAML トランスポート コントロールがあります。 ここでは、MediaTransportControls テンプレートをカスタマイズする方法を示します。 オーバーフロー メニューの操作方法、カスタム ボタンの追加方法、スライダーの変更方法、色の変更方法について説明します。
 
-Before starting, you should be familiar with the MediaElement and the MediaTransportControls classes. For more info, see the MediaElement control guide. 
+始める前に、MediaElement クラスと MediaTransportControls クラスについて理解している必要があります。 詳しくは、「MediaElement コントロール ガイド」をご覧ください。 
 
-> **Tip**&nbsp;&nbsp;The examples in this topic are based on the [Media Transport Controls sample](http://go.microsoft.com/fwlink/p/?LinkId=620023). You can download the sample to view and run the completed code.
+> **ヒント**&nbsp;&nbsp;このトピックの例は、[メディア トランスポート コントロールのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620023)を基にしています。 サンプルをダウンロードし、詳細なコードを参照して実行することができます。
 
-<span class="sidebar_heading" style="font-weight: bold;">Important APIs</span>
+<span class="sidebar_heading" style="font-weight: bold;">重要な API</span>
 
 -   [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926)
 -   [**MediaElement.AreTransportControlsEnabled**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediaelement.aretransportcontrolsenabled.aspx)
 -   [**MediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677)
 
-## When should you customize the template?
+## テンプレートをカスタマイズする必要がある状況
 
-**MediaElement** has built-in transport controls that are designed to work well without modification in most video and audio playback apps. They’re provided by the [**MediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.aspx) class and include buttons to play, stop, and navigate media, adjust volume, toggle full screen, cast to a second device, enable captions, switch audio tracks, and adjust the playback rate. MediaTransportControls has properties that let you control whether each button is shown and enabled. You can also set the [**IsCompact**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.iscompact.aspx) property to specify whether the controls are shown in one row or two.
+**MediaElement** には、変更しなくてもほとんどのビデオおよびオーディオ再生アプリで正常に動作するように設計されているトランスポート コントロールが組み込まれています。 これらのコントロールは、[**MediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.aspx) クラスによって提供され、再生、停止、メディアのナビゲーション、音量の調節、全画面表示の切り替え、2 台目のデバイスへのキャスト、字幕の有効化、オーディオ トラックの切り替え、再生速度の調整を行うためのボタンが含まれています。 MediaTransportControls には、各ボタンを表示し、有効にするかどうかを制御できるプロパティがあります。 [
+            **IsCompact**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.iscompact.aspx) プロパティを設定して、コントロールを 1 行に表示するか、2 行に表示するかを指定することもできます。
 
-However, there may be scenarios where you need to further customize the look of the control or change its behavior. Here are some examples:
-- Change the icons, slider behavior, and colors.
-- Move less commonly used command buttons into an overflow menu.
-- Change the order in which commands drop out when the control is resized.
-- Provide a command button that’s not in the default set.
+ただし、コントロールの外観をさらにカスタマイズしたり、動作を変更したりする必要があるシナリオも考えられます。 例をいくつか紹介します。
+- アイコン、スライダーの動作、色を変更する。
+- 使用頻度の低いコマンド ボタンをオーバーフロー メニューに移動する。
+- コントロールのサイズが変更されたときに、コマンドをドロップ アウトする順序を変更する。
+- 既定のセットには含まれていないコマンド ボタンを提供する。
 
-You can customize the appearance of the control by modifying the default template. To modify the control's behavior or add new commands, you can create a custom control that's derived from MediaTransportControls.
+コントロールの外観をカスタマイズするには、既定のテンプレートを変更します。 コントロールの動作を変更したり、新しいコマンドを追加したりするには、MediaTransportControls から派生したカスタム コントロールを作成できます。
 
->**Tip**&nbsp;&nbsp;Customizable control templates are a powerful feature of the XAML platform, but there are also consequences that you should take into consideration. When you customize a template, it becomes a static part of your app and therefore will not receive any platform updates that are made to the template by Microsoft. If template updates are made by Microsoft, you should take the new template and re-modify it in order to get the benefits of the updated template.
+>**ヒント**&nbsp;&nbsp;カスタマイズ可能なコントロール テンプレートは XAML プラットフォームの強力な機能ですが、考慮すべき影響もあります。 テンプレートをカスタマイズすると、アプリの静的な部分となるため、Microsoft によって行われるプラットフォームの更新を受け取らなくなります。 Microsoft によってテンプレートの更新が加えられた場合、更新されたテンプレートを利用するには、新しいテンプレートを取得して再変更する必要があります。
 
-## Template structure
+## テンプレートの構造
 
-The [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.controltemplate.aspx) is part of the default style. The transport control's default style is shown in the [**MediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.aspx) class reference page. You can copy this default style into your project to modify it. The ControlTemplate is divided into sections similar to other XAML control templates.
-- The first section of the template contains the [**Style**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.style.aspx) definitions for the various components of the MediaTransportControls.
-- The second section defines the various visual states that are used by the MediaTransportControls.
-- The third section contains the [**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx) that holds that various MediaTransportControls elements together and defines how the components are laid out.
+[
+            **ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.controltemplate.aspx) は既定のスタイルに含まれます。 トランスポート コントロールの既定のスタイルは、「[**MediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.aspx) クラス」リファレンス ページに示されています。 この既定のスタイルをプロジェクトにコピーして変更できます。 ControlTemplate は、他の XAML コントロール テンプレートと同様のセクションに分かれています。
+- テンプレートの最初のセクションには、MediaTransportControls のさまざまなコンポーネントの [**Style**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.style.aspx) 定義が含まれています。
+- 2 番目のセクションでは、MediaTransportControls が使うさまざまな表示状態が定義されています。
+- 3 番目のセクションには、さまざまな MediaTransportControls 要素をまとめて保持し、コンポーネントのレイアウトを定義する [**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx) が含まれています。
 
-> **Note**&nbsp;&nbsp;For more info about modifying templates, see [Control templates](). You can use a text editor or similar editors in your IDE to open the XAML files in \(*Program Files*)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\\(*SDK version*)\Generic. The default style and template for each control is defined in the **generic.xaml** file. You can find the MediaTransportControls template in generic.xaml by searching for "MediaTransportControls".
+> **注**&nbsp;&nbsp;テンプレートの変更について詳しくは、「[コントロール テンプレート]()」をご覧ください。 テキスト エディターか、IDE の同様のエディターを使って、\(*Program Files*)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\\(*SDK version*)\Generic にある XAML ファイルを開くことができます。 各コントロールの既定のスタイルとテンプレートは、**generic.xaml** ファイルで定義されています。 MediaTransportControls テンプレートは、generic.xaml で "MediaTransportControls" を検索すると見つけることができます。
 
-In the following sections, you learn how to customize several of the main elements of the transport controls: 
-- [**Slider**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx): allows a user to scrub through their media and also displays progress
-- [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.aspx): contains all of the buttons.
-For more info, see the Anatomy section of the MediaTransportControls reference topic. 
+以下のセクションでは、トランスポート コントロールの主な要素のいくつかをカスタマイズする方法について説明します。 
+- [**Slider**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx): ユーザーがメディアをスクラブし、進行状況も表示できるようにします。
+- [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.aspx): すべてのボタンが含まれています。
+詳しくは、MediaTransportControls リファレンス トピックの構造セクションをご覧ください。 
 
-## Customize the transport controls
+## トランスポート コントロールをカスタマイズする
 
-If you want to modify only the appearance of the MediaTransportControls, you can create a copy of the default control style and template, and modify that. However, if you also want to add to or modify the functionality of the control, you need to create a new class that derives from MediaTransportControls.
+MediaTransportControls の外観のみを変更する場合、既定のコントロールのスタイルとテンプレートのコピーを作成し、変更することができます。 ただし、コントロールの機能を追加または変更する場合は、MediaTransportControls から派生した新しいクラスを作成する必要があります。
 
-### Re-template the control
+### コントロールのテンプレートの再適用
 
-**To customize the MediaTransportControls default style and template**
-1. Copy the default style from MediaTransportControls styles and templates into a ResourceDictionary in your project.
-2. Give the Style an x:Key value to identify it, like this. 
+**MediaTransportControls の既定のスタイルとテンプレートをカスタマイズするには**
+1. 「MediaTransportControls スタイルとテンプレート」に示されている既定のスタイルを、プロジェクトの ResourceDictionary にコピーします。
+2. 次のように、Style に、識別するための x:Key 値を指定します。 
 ```xaml
 <Style TargetType="MediaTransportControls" x:Key="myTransportControlsStyle">
     <!-- Style content ... -->
 </Style>
 ```
-3. Add a MediaElement with MediaTransportControls to your UI.
-4. Set the Style property of the MediaTransportControls element to your custom Style resource, as shown here. 
+3. UI に MediaElement を MediaTransportControls と共に追加します。
+4. 次に示すように、MediaTransportControls 要素の Style プロパティを、カスタム Style リソースに設定します。 
 ```xaml
 <MediaElement AreTransportControlsEnabled="True">
     <MediaElement.TransportControls>
@@ -71,31 +73,32 @@ If you want to modify only the appearance of the MediaTransportControls, you can
 </MediaElement>
 ```
 
-For more info about modifying styles and templates, see [Styling controls]() and [Control templates]().
+スタイルとテンプレートの変更について詳しくは、「[コントロールのスタイル]()」と「[コントロール テンプレート]()」をご覧ください。
 
-### Create a derived control
+### 派生コントロールの作成
 
-To add to or modify the functionality of the transport controls, you must create a new class that's derived from MediaTransportControls. A derived class called `CustomMediaTransportControls` is shown in the [Media Transport Controls sample](http://go.microsoft.com/fwlink/p/?LinkId=620023) and the remaining examples on this page.
+トランスポート コントロールの機能を追加または変更するには、MediaTransportControls から派生した新しいクラスを作成する必要があります。 [メディア トランスポート コントロールのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620023)と、このページの他の例では、`CustomMediaTransportControls` という名前の派生クラスが使用されています。
 
-**To create a new class derived from MediaTransportControls**
-1. Add a new class file to your project.
-    - In Visual Studio, select Project > Add Class. The Add New Item dialog opens.
-    - In the Add New Item dialog, enter a name for the class file, then click Add. (In the Media Transport Controls sample, the class is named `CustomMediaTransportControls`.)
-2. Modify the class code to derive from the MediaTransportControls class.
+**MediaTransportControls から派生した新しいクラスを作成するには**
+1. プロジェクトに新しいクラス ファイルを追加します。
+    - Visual Studio で、[プロジェクト] の [クラスの追加] をクリックします。 [新しい項目の追加] ダイアログ ボックスが開きます。
+    - [新しい項目の追加] ダイアログで、クラス ファイルの名前を入力し、[追加] をクリックします。 (メディア トランスポート コントロールのサンプルでは、このクラスに `CustomMediaTransportControls` という名前を付けています。)
+2. このクラスのコードを変更して、MediaTransportControls クラスから派生クラスを作成します。
 ```csharp
 public sealed class CustomMediaTransportControls : MediaTransportControls
 {
 }
 ```
-3. Copy the default style for [**MediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.aspx) into a [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.resourcedictionary.aspx) in your project. This is the style and template you modify.
-(In the Media Transport Controls sample, a new folder called "Themes" is created, and a ResourceDictionary file called generic.xaml is added to it.)
-4. Change the [**TargetType**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.style.targettype.aspx) of the style to the new custom control type. (In the sample, the TargetType is changed to `local:CustomMediaTransportControls`.)
+3. [
+            **MediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.aspx) の既定のスタイルをプロジェクトの [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.resourcedictionary.aspx) にコピーします。 これが変更する対象のスタイルとテンプレートです。
+(メディア トランスポート コントロールのサンプルでは、"Themes" という新しいフォルダーが作成され、generic.xaml という ResourceDictionary ファイルがそのフォルダーに追加されます。)
+4. スタイルの [**TargetType**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.style.targettype.aspx) を、新しいカスタム コントロール型に変更します。 (サンプルでは、TargetType を `local:CustomMediaTransportControls` に変更しています。)
 ```xaml
 xmlns:local="using:CustomMediaTransportControls">
 ...
 <Style TargetType="local:CustomMediaTransportControls">
 ```
-5. Set the [**DefaultStyleKey**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.defaultstylekey.aspx) of your custom class. This tells your custom class to use a Style with a TargetType of `local:CustomMediaTransportControls`.
+5. カスタム クラスの [**DefaultStyleKey**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.defaultstylekey.aspx) を設定します。 これにより、TargetType が `local:CustomMediaTransportControls` である Style を使用するようにカスタム クラスに指示します。
 ```csharp
 public sealed class CustomMediaTransportControls : MediaTransportControls
 {
@@ -105,7 +108,7 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
     }
 }
 ```
-6. Add a [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediaelement.aspx) to your XAML markup and add the custom transport controls to it. One thing to note is that the APIs to hide, show, disable, and enable the default buttons still work with a customized template.
+6. XAML マークアップに [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediaelement.aspx) を追加し、この MediaElement にカスタム トランスポート コントロールを追加します。 注意が必要な 1 つの点は、既定のボタンを非表示、表示、無効、有効にする API は、カスタマイズされたテンプレートでも機能するという点です。
 ```xaml
 <MediaElement Name="MediaElement1" AreTransportControlsEnabled="True" Source="video.mp4">
     <MediaElement.TransportControls>
@@ -121,19 +124,19 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
     </MediaElement.TransportControls>
 </MediaElement>
 ```
-You can now modify the control style and template to update the look of your custom control, and the control code to update its behavior.
+これで、コントロールのスタイルとテンプレートを変更してカスタム コントロールの外観を更新し、コントロールのコードを変更して動作を更新できました。
 
-### Working with the overflow menu
+### オーバーフロー メニューを使う
 
-You can move MediaTransportControls command buttons into an overflow menu, so that less commonly used commands are hidden until the user needs them.
+MediaTransportControls のコマンド ボタンをオーバーフロー メニューに移動し、ユーザーが必要になるまでに使用頻度の低いコマンドを非表示にすることができます。
 
-In the MediaTransportControls template, the command buttons are contained in a [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.aspx) element. The command bar has the concept of primary and secondary commands. The primary commands are the buttons that appear in the control by default and are always visible (unless you disable or hide the button). The secondary commands are shown in an overflow menu that appears when a user clicks the ellipsis (…) button. For more info, see the [App bars and command bars](app-bars.md) article.
+MediaTransportControls テンプレートでは、コマンド ボタンは [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.aspx) 要素に含まれています。 コマンド バーには、プライマリ コマンドとセカンダリ コマンドの概念があります。 プライマリ コマンドは、既定でコントロールに表示されるボタンであり、常に表示されます (ボタンを無効または非表示にした場合を除く)。 セカンダリ コマンドはオーバーフロー メニューに表示されます。オーバーフロー メニューは、ユーザーが省略記号 (...) ボタンをクリックしたときに表示されます。 詳しくは、「[アプリ バーとコマンド バー](app-bars.md)」をご覧ください。
 
-To move an element from the command bar primary commands to the overflow menu, you need to edit the XAML control template. 
+コマンド バーのプライマリ コマンドの要素をオーバーフロー メニューに移動するには、XAML コントロール テンプレートを編集する必要があります。 
 
-**To move a command to the overflow menu:**
-1. In the control template, find the CommandBar element named `MediaControlsCommandBar`.
-2. Add a [**SecondaryCommands**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.secondarycommands.aspx) section to the XAML for the CommandBar. Put it after the closing tag for the [**PrimaryCommands**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.primarycommands.aspx). 
+**オーバーフロー メニューにコマンドを移動するには**
+1. コントロール テンプレートで、`MediaControlsCommandBar` という名前の CommandBar 要素を検索します。
+2. CommandBar の XAML に [**SecondaryCommands**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.secondarycommands.aspx) セクションを追加します。 このセクションは、[**PrimaryCommands**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.primarycommands.aspx) の終了タグの後に配置します。 
 ```xaml
 <CommandBar x:Name="MediaControlsCommandBar" ... >  
   <CommandBar.PrimaryCommands>
@@ -154,10 +157,10 @@ To move an element from the command bar primary commands to the overflow menu, y
   </CommandBar.SecondaryCommands>
 </CommandBar>
 ```
-3. To populate the menu with commands, cut and paste the XAML for the desired [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx) objects from the PrimaryCommands to the SecondaryCommands. In this example, we move the `PlaybackRateButton` to the overflow menu.
+3. このメニューにコマンドを表示するには、目的の [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx) オブジェクトの XAML を PrimaryCommands から切り取って SecondaryCommands に貼り付けます。 この例では、`PlaybackRateButton` をオーバーフロー メニューに移動します。
 
-4. Add a label to the button and remove the styling information, as shown here.
-Because the overflow menu is comprised of text buttons, you must add a text label to the button and also remove the style that sets the height and width of the button. Otherwise, it won't appear correctly in the overflow menu.
+4. 次に示すように、ボタンにラベルを追加し、スタイル情報を削除します。
+オーバーフロー メニューはテキスト ボタンで構成されているため、ボタンにテキスト ラベルを追加し、ボタンの高さと幅を設定するスタイルを削除する必要があります。 そうしないと、ボタンはオーバーフロー メニューに正しく表示されません。
 ```xaml
 <CommandBar.SecondaryCommands>
     <AppBarButton x:Name='PlaybackRateButton'
@@ -166,14 +169,14 @@ Because the overflow menu is comprised of text buttons, you must add a text labe
 </CommandBar.SecondaryCommands>
 ```
 
-> **Important**&nbsp;&nbsp;You must still make the button visible and enable it in order to use it in the overflow menu. In this example, the PlaybackRateButton element isn't visible in the overflow menu unless the IsPlaybackRateButtonVisible property is true. It's not enabled unless the IsPlaybackRateEnabled property is true. Setting these properties is shown in the previous section.
+> **重要**&nbsp;&nbsp;ボタンをオーバーフロー メニューで使用するには、ボタンを表示して有効にする必要があります。 この例では、IsPlaybackRateButtonVisible プロパティが true ではない場合、PlaybackRateButton 要素はオーバーフロー メニューに表示されません。 IsPlaybackRateEnabled プロパティが true ではない場合、この要素は有効ではありません。 これらのプロパティの設定は、前のセクションに示されています。
 
-### Adding a custom button
+### カスタム ボタンの追加
 
-One reason you might want to customize MediaTransportControls is to add a custom command to the control. Whether you add it as a primary command or a secondary command, the procedure for creating the command button and modifying its behavior is the same. In the [Media Transport Controls sample](http://go.microsoft.com/fwlink/p/?LinkId=620023), a "rating" button is added to the primary commands. 
+MediaTransportControls をカスタマイズする理由の 1 つは、コントロールにカスタム コマンドを追加するためです。 コマンドをプライマリ コマンドとセカンダリ コマンドのどちらとして追加するかに関係なく、コマンド ボタンを作成し、その動作を変更する手順は同じです。 [メディア トランスポート コントロールのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620023)では、"評価" ボタンをプライマリ コマンドに追加しています。 
 
-**To add a custom command button**
-1. Create an AppBarButton object and add it to the CommandBar in the control template. 
+**カスタム コマンド ボタンを追加するには**
+1. AppBarButton オブジェクトを作成し、コントロール テンプレートの CommandBar に追加します。 
 ```xaml
 <AppBarButton x:Name="LikeButton" 
               Icon="Like" 
@@ -185,7 +188,8 @@ One reason you might want to customize MediaTransportControls is to add a custom
     
     You can also customize the icon for the button. For more info, see the [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx) reference.
 
-2. In the [**OnApplyTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.onapplytemplate.aspx) override, get the button from the template and register a handler for its [**Click**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) event. This code goes in the `CustomMediaTransportControls` class. 
+2. [
+            **OnApplyTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.onapplytemplate.aspx) のオーバーライドで、テンプレートからボタンを取得し、その [**Click**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) イベントのハンドラーを登録します。 次のコードを `CustomMediaTransportControls` クラスに追加します。 
 ```csharp
 public sealed class CustomMediaTransportControls :  MediaTransportControls
 {
@@ -203,8 +207,8 @@ public sealed class CustomMediaTransportControls :  MediaTransportControls
 }
 ```
 
-3. Add code to the Click event handler to perform the action that occurs when the button is clicked.
-Here's the complete code for the class.
+3. Click イベント ハンドラーに、ボタンがクリックされたときに発生するアクションを実行するコードを追加します。
+このクラスのコード全体を次に示します。
 ```csharp
 public sealed class CustomMediaTransportControls : MediaTransportControls
 {
@@ -235,11 +239,11 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
 }
 ```
 
-### Modifying the slider
+### スライダーを変更する
 
-The "seek" control of the MediaTransportControls is provided by a [**Slider**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx) element. One way you can customize it is to change the granularity of the seek behavior. 
+MediaTransportControls の "seek" コントロールは、[**Slider**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx) 要素により提供されます。 このコントロールをカスタマイズする 1 つの方法として、シーク動作の細かさを変更できます。 
 
-The default seek slider is divided into 100 parts, so the seek behavior is limited to that many sections. You can change the granularity of the seek slider by getting the Slider from the XAML visual tree in your [**MediaOpened**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediaelement.mediaopened.aspx) event handler. This example shows how to use [**VisualTreeHelper**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.visualtreehelper.aspx) to get a reference to the Slider, then change the default step frequency of the slider from 1% to 0.1% (1000 steps) if the media is longer than 120 minutes. The MediaElement is named `MediaElement1`.
+既定のシーク スライダーは 100 の部分に分かれているため、シーク動作はその数のセクションに限定されます。 シーク スライダーの細かさを変更するには、[**MediaOpened**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediaelement.mediaopened.aspx) イベント ハンドラーで XAML ビジュアル ツリーから Slider を取得します。 この例では、[**VisualTreeHelper**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.visualtreehelper.aspx) を使って Slider への参照を取得し、メディアが 120 分より長い場合に、スライダーの既定のステップ間隔を 1% から 0.1% (1000 ステップ) に変更する方法を示しています。 MediaElement には、`MediaElement1` という名前が付けられています。
 
 ```csharp
 private void MediaElement_MediaOpened(object sender, RoutedEventArgs e)
@@ -254,11 +258,11 @@ private void MediaElement_MediaOpened(object sender, RoutedEventArgs e)
 }
 ```
 
-\[This article contains information that is specific to Universal Windows Platform (UWP) apps and Windows 10. For Windows 8.1 guidance, please download the [Windows 8.1 guidelines PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+\[この記事には、ユニバーサル Windows プラットフォーム (UWP) アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
 
-## Related articles
+## 関連記事
 
-- [Media playback](media-playback.md)
+- [メディア再生](media-playback.md)
 
 
 <!--HONumber=Mar16_HO1-->

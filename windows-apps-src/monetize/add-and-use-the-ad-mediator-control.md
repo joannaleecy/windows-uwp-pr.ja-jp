@@ -1,16 +1,16 @@
 ---
 ms.assetid: 3C03FDD8-FA61-4E7B-BDCA-3C29DFEA20E4
-description: Microsoft ユニバーサル広告クライアント SDK をインストールした後、このトピックの手順に従って、アプリで広告メディエーター コントロールを使います。
+description: Microsoft Store Engagement and Monetization SDK をインストールした後、このトピックの手順に従って、アプリで広告メディエーター コントロールを使います。
 title: 広告メディエーター コントロールの追加と使用
 ---
 
 # 広告メディエーター コントロールの追加と使用
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-[Microsoft ユニバーサル広告クライアント SDK をインストール](install-the-microsoft-universal-ad-client-sdk.md) した後、このトピックの手順に従って、アプリで広告メディエーター コントロールを使います。 広告仲介で現在サポートされている広告ネットワークとプロジェクトの種類の一覧については、「[広告ネットワークの選択と管理](select-and-manage-your-ad-networks.md)」をご覧ください。
+[Microsoft Store Engagement and Monetization SDK をインストール](http://aka.ms/store-em-sdk)した後、このトピックの手順に従って、アプリで広告メディエーター コントロールを使います。 広告仲介で現在サポートされている広告ネットワークとプロジェクトの種類の一覧については、「[広告ネットワークの選択と管理](select-and-manage-your-ad-networks.md)」をご覧ください。
 
 ## プロジェクトに広告メディエーター コントロールを追加する
 
@@ -37,9 +37,9 @@ title: 広告メディエーター コントロールの追加と使用
         xmlns:Universal="using:Microsoft.AdMediator.Universal"
 
         // Code that gets added for the ad mediator control
-        <Universal:AdMediatorControl x:Name="AdMediator_3D4884" 
-         Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="250" 
-         Id="AdMediator-Id-D1FDFDA7-EABB-474C-940C-ECA7FBCFF143" Margin="121,175,0,0" 
+        <Universal:AdMediatorControl x:Name="AdMediator_3D4884"
+         Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="250"
+         Id="AdMediator-Id-D1FDFDA7-EABB-474C-940C-ECA7FBCFF143" Margin="121,175,0,0"
          VerticalAlignment="Top" Width="300"/>
     ```
 
@@ -55,7 +55,7 @@ title: 広告メディエーター コントロールの追加と使用
 
 広告ネットワークを構成するには、次のように操作します。
 
-1.  ソリューション エクスプローラーでプロジェクトの名前を右クリックし、**[追加]** をクリックします。次に **[接続済みサービス]** をクリックして **[接続済みサービスの追加]** ウィンドウ (Visual Studio 2015) または **[サービス マネージャー]** ウィンドウ (Visual Studio 2013) を表示します。
+1.  ソリューション エクスプローラーでプロジェクトの名前を右クリックし、**[追加]**、**[接続済みサービス]** の順にクリックして、 **[接続済みサービスの追加]** ウィンドウ (Visual Studio 2015) または **[サービス マネージャー]** ウィンドウ (Visual Studio 2013) を起動します。
 2.  Visual Studio 2015 を使っている場合は、**[広告メディエーター]** をクリックし、**[構成]** をクリックして **[広告メディエーター]** ウィンドウを開きます。 Visual Studio 2013 を使っている場合は、**[サービス マネージャー]** の左側のウィンドウで、**[広告メディエーター]** をクリックします。
 
     AdMediator.config ファイルがプロジェクトに追加されます。 このファイルは、最初の広告ネットワーク構成の設定がプロジェクトでローカルに保存される場所です。
@@ -71,7 +71,7 @@ title: 広告メディエーター コントロールの追加と使用
 
 5.  **[広告メディエーター]** (Visual Studio 2015) または **[サービス マネージャー]** (Visual Studio 2013) ウィンドウで、選択した各広告ネットワークが **[フェッチ: 完了]** と表示されていることを確認します。 **[OK]** をクリックして、プロジェクトへの変更内容を送信します。
 
-**注**   後で Microsoft ユニバーサル広告クライアント SDK の新しいバージョンにアップグレードする場合は、**[接続済みサービス]** を再起動する必要があります。それにより、自動的に取得された広告ネットワークの DLL がすべて正しく更新されます。
+**注**   後で Microsoft Store Engagement and Monetization SDK の新しいバージョンにアップグレードする場合は、**[接続済みサービス]** を再起動する必要があります。それにより、自動的に取得された広告ネットワークの DLL がすべて正しく更新されます。
 
 ### 必要な機能を宣言する
 
@@ -108,16 +108,16 @@ myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.Smaato]["Width"] = 400;
 myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.Smaato]["Height"] = 80;
 ```
 
-アプリのニーズに応じてさまざまなサイズと配置に対応できるように、各コントロールを配置する方法を指定することもできます。 一部の広告ネットワークについては、オプションのパラメーターを使って調整できます。 Microsoft Advertising の広告を左下に配置する例を次に示します。
+アプリのニーズに応じてさまざまなサイズと配置に対応できるように、各コントロールを配置する方法を指定することもできます。 一部の広告ネットワークについては、オプションのパラメーターを使って調整できます。 Microsoft advertising の広告を左下に配置する例を次に示します。
 
 ```CSharp
 myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.MicrosoftAdvertising]["HorizontalAlignment"] = HorizontalAlignment.Left;
 myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.MicrosoftAdvertising]["VerticalAlignment"] = VerticalAlignment.Bottom;
 ```
 
-### Microsoft Advertising 用にサポートされる広告サイズ
+### Microsoft advertising 用にサポートされる広告サイズ
 
-Microsoft Advertising は、次のプラットフォームで実行されるアプリについて、Interactive Advertising Bureau (IAB) が推奨する次の標準サイズの広告のみをサポートします。
+Microsoft advertising は、次のプラットフォームで実行されるアプリについて、Interactive Advertising Bureau (IAB) が推奨する次の標準サイズの広告のみをサポートします。
 
 -   Windows 10 と Windows 8.1:
     -   160 x 600
@@ -131,16 +131,16 @@ Microsoft Advertising は、次のプラットフォームで実行されるア�
     -   480 x 80
     -   640 x 100
 
-指定したい広告メディエーター コントロールのサイズが、Microsoft Advertising がサポートする広告サイズのいずれにも該当しない場合があります (たとえば、異なるサイズの方がアプリの UI により適している場合や、上記以外の広告サイズをサポートする他の広告ネットワークをターゲットにしている場合などに、こうした状況が発生します)。 他のサイズを指定するには、希望する正確なコントロール サイズをデザイナーまたは XAML コードに指定し、Microsoft Advertising のオプション パラメーター **Width** および **Height** に対してコントロールの境界内に収まる、サポート対象の最も近いサイズを割り当てます。 コントロールはデザイナーで指定した正確なサイズで表示されますが、Microsoft Advertising はオプション パラメーター **Width** および **Height** を使って指定したサイズに適合する広告を提供します。
+指定したい広告メディエーター コントロールのサイズが、Microsoft advertising がサポートする広告サイズのいずれにも該当しない場合があります (たとえば、異なるサイズの方がアプリの UI により適している場合や、上記以外の広告サイズをサポートする他の広告ネットワークをターゲットにしている場合などに、こうした状況が発生します)。 他のサイズを指定するには、希望する正確なコントロール サイズをデザイナーまたは XAML コードに指定し、Microsoft advertising のオプション パラメーター **Width** および **Height** に対してコントロールの境界内に収まる、サポート対象の最も近いサイズを割り当てます。 コントロールはデザイナーで指定した正確なサイズで表示されますが、Microsoft advertising はオプション パラメーター **Width** および **Height** を使って指定したサイズに適合する広告を提供します。
 
-たとえば、UWP アプリがあり、広告メディエーター コントロールを 300 x 300 サイズで表示する場合、デザイナーまたは XAML コードでコントロールを 300 x 300 に設定します。 その後、次のコードに示すように、Microsoft Advertising のオプション パラメーター **Width** に 300、**Height** に 250 を割り当てます。
+たとえば、UWP アプリがあり、広告メディエーター コントロールを 300 x 300 サイズで表示する場合、デザイナーまたは XAML コードでコントロールを 300 x 300 に設定します。 その後、次のコードに示すように、Microsoft advertising のオプション パラメーター **Width** に 300、**Height** に 250 を割り当てます。
 
 ```CSharp
 myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.MicrosoftAdvertising]["Width"] = 300;
 myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.MicrosoftAdvertising]["Height"] = 250;
 ```
 
-サイズ設定が Microsoft Advertising と互換性があることを検証するには、[広告の仲介の実装をテスト](test-your-ad-mediation-implementation.md) して、Microsoft Advertising のテスト広告が表示されることを確認します。
+サイズ設定が Microsoft Advertising と互換性があることを検証するには、[広告の仲介の実装をテスト](test-your-ad-mediation-implementation.md)して、Microsoft Advertising のテスト広告が表示されることを確認します。
 
 ## 広告の仲介の一時停止、再開、無効化
 
@@ -155,7 +155,7 @@ myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.MicrosoftAdvertising]["He
 次のコードは、Microsoft Advertising のタイムアウト時間を指定する方法を示しています。 必要に応じてタイムアウト時間とネットワークを変更できます。
 
 ```CSharp
-myAdMediatorControl.AdSdkTimeouts[AdSdkNames.MicrosoftAdvertising] = TimeSpan.FromSeconds(10); 
+myAdMediatorControl.AdSdkTimeouts[AdSdkNames.MicrosoftAdvertising] = TimeSpan.FromSeconds(10);
 ```
 
 **注**  代わりに、デベロッパー センター ダッシュボードの **[広告で収入を増やす]** ページでもタイムアウト値を設定できます。 コードとダッシュボードでタイムアウトを設定している場合は、コードで設定したその値がダッシュボードの値よりも優先されます。
@@ -264,7 +264,7 @@ private void Application_UnhandledException(object sender, ApplicationUnhandledE
            e.Handled = true;
            return;
        }
-              
+
    }
 // APP SPECIFIC HANDLING HERE
 
@@ -288,9 +288,6 @@ if (Debugger.IsAttached)
  
 
 
-
-
-
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=Mar16_HO5-->
 
 

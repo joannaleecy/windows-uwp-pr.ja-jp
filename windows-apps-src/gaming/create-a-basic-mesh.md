@@ -1,41 +1,41 @@
 ---
-title: Create and display a basic mesh
-description: 3-D Universal Windows Platform (UWP) games typically use polygons to represent objects and surfaces in the game.
+title: 基本的なメッシュの作成と表示
+description: 3-D のユニバーサル Windows プラットフォーム (UWP) ゲームでは、通常は多角形を使ってゲーム内のオブジェクトやサーフェスを表現します。
 ms.assetid: bfe0ed5b-63d8-935b-a25b-378b36982b7d
 ---
 
-# Create and display a basic mesh
+# 基本的なメッシュの作成と表示
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-3-D Universal Windows Platform (UWP) games typically use polygons to represent objects and surfaces in the game. The lists of vertices that comprise the structure of these polygonal objects and surfaces are called meshes. Here, we create a basic mesh for a cube object and provide it to the shader pipeline for rendering and display.
+3-D のユニバーサル Windows プラットフォーム (UWP) ゲームでは、通常は多角形を使ってゲーム内のオブジェクトやサーフェスを表現します。 そのような多角形によるオブジェクトやサーフェスの構造を構成する頂点のリストをメッシュと呼びます。 ここでは、立方体オブジェクトの基本的なメッシュを作り、シェーダー パイプラインに渡してレンダリングと表示を行います。
 
-> **Important**   The example code included here uses types (such as DirectX::XMFLOAT3 and DirectX::XMFLOAT4X4) and inline methods declared in DirectXMath.h. If you're cutting and pasting this code, \#include &lt;DirectXMath.h&gt; in your project.
+> **重要:**   ここで使うコード例では、DirectXMath.h で宣言された型 (DirectX::XMFLOAT3 や DirectX::XMFLOAT4X4 など) とインライン メソッドを使います。 このコードを切り取って貼り付ける場合は、プロジェクトに \#include &lt;DirectXMath.h&gt; を含めてください。
 
  
 
-## What you need to know
+## 理解しておく必要があること
 
 
-### Technologies
+### テクノロジ
 
 -   [Direct3D](https://msdn.microsoft.com/library/windows/desktop/hh769064)
 
-### Prerequisites
+### 前提条件
 
--   Basic knowledge of linear algebra and 3-D coordinate systems
--   A Visual Studio 2015 Direct3D template
+-   線形代数と 3-D 座標系の基本的な知識
+-   Visual Studio 2015 Direct3D テンプレート
 
-## Instructions
+## 手順
 
-### Step 1: Construct the mesh for the model
+### 手順 1: モデルのメッシュを構成する
 
-In most games, the mesh for a game object is loaded from a file that contains the specific vertex data. The ordering of these vertices is app-dependent, but they are usually serialized as strips or fans. Vertex data can come from any software source, or it can be created manually. It's up to your game to interpret the data in a way that the vertex shader can effectively process it.
+ほとんどのゲームでは、ゲーム オブジェクトのメッシュは特定の頂点データが含まれるファイルからロードされます。 頂点の順序はアプリに依存していますが、通常は帯状または扇状にシリアル化されます。 頂点データは、ソフトウェア ソースからのものを使うことも、手動で作ることもできます。 頂点シェーダーが効果的に処理できる方法でデータを解釈するかどうかはゲーム次第です。
 
-In our example, we use a simple mesh for a cube. The cube, like any object mesh at this stage in the pipeline, is represented using its own coordinate system. The vertex shader takes its coordinates and, by applying the transformation matrices you provide, returns the final 2-D view projection in a homogeneous coordinate system.
+この例では、立方体用にシンプルなメッシュを使います。 立方体は、パイプラインのこの段階ではあらゆるオブジェクト メッシュと同様に、専用の座標系を使って表されます。 頂点シェーダーはその座標を使い、指定された変換マトリックスを適用して、同一座標系での最終的な 2-D ビュー プロジェクションを返します。
 
-Define the mesh for a cube. (Or load it from a file. It's your call!)
+立方体のメッシュを定義します。 (またはファイルからロードします。 決めるのはあなたです)
 
 ```cpp
 SimpleCubeVertex cubeVertices[] =
@@ -52,17 +52,17 @@ SimpleCubeVertex cubeVertices[] =
 };
 ```
 
-The cube's coordinate system places the center of the cube at the origin, with the y-axis running top to bottom using a left-handed coordinate system. Coordinate values are expressed as 32-bit floating values between -1 and 1.
+立方体の座標系では立方体の中心が原点になり、Y 軸が上下を貫き、左手による座標系を使います。 座標値は、-1 ～ 1 の 32 ビット浮動小数点値で表されます。
 
-In each bracketed pairing, the second DirectX::XMFLOAT3 value group specifies the color associated with the vertex as an RGB value. For example, the first vertex at (-0.5, 0.5, -0.5) has a full green color (the G value is set to 1.0, and the "R" and "B" values are set to 0).
+かっこ対ごとに 2 つ目の DirectX::XMFLOAT3 値グループは、頂点と関連付けられた色 (RGB 値) を指定します。 たとえば、(-0.5, 0.5, -0.5) にある 1 番目の頂点は、完全に緑色 (G 値が 1.0、R 値と B 値は 0 に設定) です。
 
-Therefore, you have 8 vertices, each with a specific color. Each vertex/color pairing is the complete data for a vertex in our example. When you specify our vertex buffer, you must keep this specific layout in mind. We provide this input layout to the vertex shader so it can understand your vertex data.
+最終的に 8 つの頂点があり、それぞれに特定の色が割り当てられています。 頂点/色の各ペアは、この例で使う頂点のフル データになっています。 頂点バッファーを指定する場合は、この具体的なレイアウトを念頭に置いておく必要があります。 この入力レイアウトを頂点シェーダーに渡して、頂点データが頂点シェーダーで理解されるようにします。
 
-### Step 2: Set up the input layout
+### 手順 2: 入力レイアウトを設定する
 
-Now, you have the vertices in memory. But, your graphics device has its own memory, and you use Direct3D to access it. To get your vertex data into the graphics device for processing, you need to clear the way, as it were: you must declare how the vertex data is laid out so that the graphics device can interpret it when it gets it from your game. To do that, you use [**ID3D11InputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476575).
+現在、頂点はメモリ内に取り込まれています。 ただし、グラフィックス デバイスには専用のメモリがあり、このメモリにアクセスするには Direct3D を使います。 頂点データをグラフィックス デバイスに取り込んで処理するには、言ってみればその方法を明らかにしておく必要があります。グラフィックス デバイスがゲームから頂点データを受け取ったときに解釈できるように、頂点データをどのように配置するのかを宣言しておく必要があるのです。 それには、[**ID3D11InputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476575) を使います。
 
-Declare and set the input layout for the vertex buffer.
+頂点バッファー用に入力レイアウトを宣言し、設定します。
 
 ```cpp
 const D3D11_INPUT_ELEMENT_DESC basicVertexLayoutDesc[] =
@@ -81,31 +81,33 @@ m_d3dDevice->CreateInputLayout(
 );
 ```
 
-In this code, you specify a layout for the vertices, specifically, what data each element in the vertex list contains. Here, in **basicVertexLayoutDesc**, you specify two data components:
+このコードでは、頂点のレイアウト、具体的には頂点リスト内の各要素に含まれるデータを指定します。 ここでは、**basicVertexLayoutDesc** で 2 つのデータ コンポーネントを指定します。
 
--   **POSITION**: This is an HLSL semantic for position data provided to a shader. In this code, it's a DirectX::XMFLOAT3, or more specifically, a structure with 3 32-bit floating point values that correspond to a 3D coordinate (x, y, z). You could also use a float4 if you are supplying the homogeneous "w" coordinate, and in that case, you specify DXGI\_FORMAT\_R32G32B32A32\_FLOAT. Whether you use a DirectX::XMFLOAT3 or a float4 is up to the specific needs of your game. Just make sure that the vertex data for your mesh corresponds correctly to the format you use!
+-   **POSITION**: これは、シェーダーに渡される位置データの HLSL セマンティックです。 このコードでは DirectX::XMFLOAT3、正確には 3D 座標 (x, y, z) に対応する 3 つの 32 ビット浮動小数点値を持つ構造です。 統一された "w" 座標を提供する場合は (この例では DXGI\_FORMAT\_R32G32B32A32\_FLOAT を指定する場合は)、float4 を使うこともできます。 DirectX::XMFLOAT3 と float4 のどちらを使うのかは、ゲームの特定の必要性によって異なります。 メッシュの頂点データが、使う形式に正しく対応していることを確認してください。
 
-    Each coordinate value is expressed as a floating point value between -1 and 1, in the object's coordinate space. When the vertex shader completes, the transformed vertex is in the homogeneous (perspective corrected) view projection space.
+    各座標値は、オブジェクトの座標空間内で -1 ～ 1 の浮動小数点値で表されます。 頂点シェーダーが完了すると、変換された頂点は統一された (視点が修正された) ビュー プロジェクション空間内にあります。
 
-    "But the enumeration value indicates RGB, not XYZ!" you smartly note. Good eye! In both the cases of color data and coordinate data, you typically use 3 or 4 component values, so why not use the same format for both? The HLSL semantic, not the format name, indicates how the shader treats the data.
+    「でも、列挙値は、XYZ ではなく RGB を示しています。」 ご指摘のとおりです。 さすがです! 色データと座標データの両方で、通常は 3 つか 4 つの成分値を使います。それならば両方で同じ形式を使わないのはなぜなのでしょうか。 HLSL セマンティックは形式の名前ではなく、シェーダーがデータを扱う方法を表します。
 
--   **COLOR**: This is an HLSL semantic for color data. Like **POSITION**, it consists of 3 32-bit floating point values (DirectX::XMFLOAT3). Each value contains a color component: red (r), blue (b), or green (g), expressed as a floating number between 0 and 1.
+-   **COLOR**: これは、色データの HLSL セマンティックです。 **POSITION** と同様に、3 つの 32 ビット浮動小数点値 (DirectX::XMFLOAT3) で構成されます。 それぞれの値は、0 ～ 1 の浮動小数点値で表される色成分の赤 (r)、青 (b)、または緑 (g) を含みます。
 
-    **COLOR** values are typically returned as a 4-component RGBA value at the end of the shader pipeline. For this example, you will be setting the "A" alpha value to 1.0 (maximum opacity) in the shader pipeline for all pixels.
+    通常、**COLOR** の値は、シェーダー パイプラインの最後に 4 成分の RGBA 値として返されます。 この例では、すべてのピクセルについて、シェーダー パイプラインで "A" アルファ値を 1.0 (最大不透明度) に設定します。
 
-For a complete list of formats, see [**DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059). For a complete list of HLSL semantics, see [Semantics](https://msdn.microsoft.com/library/windows/desktop/bb509647).
+形式の全一覧については、[**DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059) をご覧ください。 HLSL セマンティックの全一覧については、「[セマンティクス](https://msdn.microsoft.com/library/windows/desktop/bb509647)」をご覧ください。
 
-Call [**ID3D11Device::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512) and create the input layout on the Direct3D device. Now, you need to create a buffer that can actually hold the data!
+[
+            **ID3D11Device::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512) を呼び出し、Direct3D デバイスで入力レイアウトを作ります。 次に、データを実際に保持できるバッファーを作る必要があります。
 
-### Step 3: Populate the vertex buffers
+### 手順 3: 頂点バッファーを設定する
 
-Vertex buffers contain the list of vertices for each triangle in the mesh. Every vertex must be unique in this list. In our example, you have 8 vertices for the cube. The vertex shader runs on the graphics device and reads from the vertex buffer, and it interprets the data based on the input layout you specified in the previous step.
+頂点バッファーには、メッシュの各三角形の頂点のリストが含まれます。 各頂点は、このリストで一意である必要があります。 この例では、立方体に 8 個の頂点があります。 頂点シェーダーはグラフィックス デバイス上で実行され、頂点バッファーからデータを読み取ります。データは、前の手順で指定した入力レイアウトに基づいて解釈されます。
 
-In the next example, you provide a description and a subresource for the buffer, which tell Direct3D a number of things about the physical mapping of the vertex data and how to treat it in memory on the graphics device. This is necessary because you use a generic [**ID3D11Buffer**](https://msdn.microsoft.com/library/windows/desktop/ff476351), which could contain anything! The [**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) and [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) structures are supplied to ensure that Direct3D understands the physical memory layout of the buffer, including the size of each vertex element in the buffer as well as the maximum size of the vertex list. You can also control access to the buffer memory here and how it is traversed, but that's a bit beyond the scope of this tutorial.
+次の例では、バッファーの説明とサブリソースを指定します。バッファーは、頂点データの物理マッピングと、グラフィックス デバイスのメモリで扱う方法を Direct3D に知らせます。 何でも格納できる汎用 [**ID3D11Buffer**](https://msdn.microsoft.com/library/windows/desktop/ff476351) を使うため、これは必要です。 [
+            **D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) 構造体と [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) 構造体は、バッファー内の各頂点要素のサイズや頂点リストの最大サイズなど、Direct3D がバッファーの物理メモリ レイアウトを理解できるようにするために提供されます。 ここではバッファー メモリへのアクセスや走査方法も制御できますが、その説明はこのチュートリアルの範囲を少々超えています。
 
-After you configure the buffer, you call [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) to actually create it. Obviously, if you have more than one object, create buffers for each unique model.
+バッファーを構成したら、[**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) を呼び出して、実際にバッファーを作ります。 明らかなことですが、複数のオブジェクトがある場合は、固有のモデルごとにバッファーを作ります。
 
-Declare and create the vertex buffer.
+頂点バッファーを宣言して作ります。
 
 ```cpp
 D3D11_BUFFER_DESC vertexBufferDesc = {0};
@@ -128,26 +130,26 @@ m_d3dDevice->CreateBuffer(
                 &vertexBuffer);
 ```
 
-Vertices loaded. But what's the order of processing these vertices? That's handled when you provide a list of indices to the vertices—the ordering of these indices is the order in which the vertex shader processes them.
+頂点がロードされます。 しかし、これらの頂点を処理する順序はどうなるのでしょうか。 順序はインデックスのリストを頂点に割り当てるときに処理されます。インデックスの順序が頂点シェーダーが頂点を処理する順序になります。
 
-### Step 4: Populate the index buffers
+### 手順 4: インデックス バッファーを設定する
 
-Now, you provide a list of the indices for each of the vertices. These indices correspond to the position of the vertex in the vertex buffer, starting with 0. To help you visualize this, consider that each unique vertex in your mesh has a unique number assigned to it, like an ID. This ID is the integer position of the vertex in the vertex buffer.
+これから各頂点のインデックスのリストを用意します。 インデックスは頂点バッファーで頂点の位置に対応し、0 から始まります。 この様子を視覚化するために、メッシュの各頂点に ID のような固有の番号が割り当てられていると考えます。 この ID は、頂点バッファーで頂点の位置を表す整数です。
 
-![a cube with eight numbered vertices](images/cube-mesh-1.png)
+![8 個の頂点がある立方体](images/cube-mesh-1.png)
 
-In our example cube, you have 8 vertices, which create 6 quads for the sides. You split the quads into triangles, for a total of 12 triangles that use our 8 vertices. At 3 vertices per triangle, you have 36 entries in our index buffer. In our example, this index pattern is known as a triangle list, and you indicate it to Direct3D as a **D3D11\_PRIMITIVE\_TOPOLOGY\_TRIANGLELIST** when you set the primitive topology.
+この立方体の例では、8 個の頂点があります。4 個の頂点で側面を形成し、4 個セットが 6 組あります。 この 4 個セットを三角形に分割すると、8 個の頂点を使った三角形が合計で 12 個できます。 三角形 1 個あたり 3 個の頂点があるので、インデックス バッファーには 36 個のエントリがあります。 この例に示したインデックスのパターンは三角形リストと呼ばれ、三角形リストはプリミティブ トポロジを設定するときに Direct3D に対して **D3D11\_PRIMITIVE\_TOPOLOGY\_TRIANGLELIST** として指定します。
 
-This is probably the most inefficient way to list indices, as there are many redundancies when triangles share points and sides. For example, when a triangle shares a side in a rhombus shape, you list 6 indices for the four vertices, like this:
+これはインデックスをリストする方法としてはおそらく最も非効率的でしょう。三角形が点や辺を共有すると、多くの冗長部分があります。 たとえば、三角形がひし形状に辺を共有している場合は、次のように 4 個の頂点で 6 個のインデックスをリストします。
 
-![order of indices when constructing a rhombus](images/rhombus-surface-1.png)
+![ひし形を構成するときのインデックスの順序](images/rhombus-surface-1.png)
 
--   Triangle 1: \[0, 1, 2\]
--   Triangle 2: \[0, 2, 3\]
+-   三角形 1: \[0, 1, 2\]
+-   三角形 2: \[0, 2, 3\]
 
-In a strip or fan topology, you order the vertices in a way that eliminates many redundant sides during traversal (such as the side from index 0 to index 2 in the image.) For large meshes, this dramatically reduces the number of times the vertex shader is run, and improves performance significantly. However, we'll keep it simple and stick with the triangle list.
+帯や扇のトポロジでは、走査時に多くの冗長な辺 (この図ではインデックス 0 からインデックス 2 への辺) を取り除くようにして頂点の順序を決めます。大きなメッシュになると、これで頂点シェーダーの実行回数が劇的に少なくなり、パフォーマンスが大きく向上します。 ただし、ここではシンプルなまま、三角形リストに沿っておきます。
 
-Declare the indices for the vertex buffer as a simple triangle list topology.
+頂点バッファーのインデックスをシンプルな三角形リスト トポロジとして宣言します。
 
 ```cpp
 unsigned short cubeIndices[] =
@@ -170,29 +172,29 @@ unsigned short cubeIndices[] =
     0, 4, 7 };
 ```
 
-Thirty six index elements in the buffer is very redundant when you only have 8 vertices! If you choose to eliminate some of the redundancies and use a different vertex list type, such as a strip or a fan, you must specify that type when you provide a specific [**D3D11\_PRIMITIVE\_TOPOLOGY**](https://msdn.microsoft.com/library/windows/desktop/ff476189) value to the [**ID3D11DeviceContext::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455) method.
+頂点がわずか 8 個しかないのにバッファーに 36 個のインデックス要素があるというのは、非常に冗長です。 冗長さを若干取り除いて、帯状や扇状など別の頂点リスト タイプを使う場合は、[**ID3D11DeviceContext::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455) メソッドに特定の [**D3D11\_PRIMITIVE\_TOPOLOGY**](https://msdn.microsoft.com/library/windows/desktop/ff476189) 値を渡すときにそのタイプを指定する必要があります。
 
-For more information about different index list techniques, see [Primitive Topologies](https://msdn.microsoft.com/library/windows/desktop/bb205124).
+さまざまなインデックス リストの手法について詳しくは、「[プリミティブ トポロジ](https://msdn.microsoft.com/library/windows/desktop/bb205124)」をご覧ください。
 
-### Step 5: Create a constant buffer for your transformation matrices
+### 手順 5: 変換マトリックス用の定数バッファーを作る
 
-Before you can start processing vertices, you need to provide the transformation matrices that will be applied (multiplied) to each vertex when it runs. For most 3-D games, there are three of them:
+頂点の処理を開始する前に、実行時に各頂点に適用 (乗算) する変換マトリックスを指定する必要があります。 ほとんどの 3-D ゲームには、3 種類の変換マトリックスがあります。
 
--   The 4x4 matrix that transforms from the object (model) coordinate system to the overall world coordinate system.
--   The 4x4 matrix that transforms from the world coordinate system to the camera (view) coordinate system.
--   The 4x4 matrix that transforms from the camera coordinate system to the 2-D view projection coordinate system.
+-   オブジェクト (モデル) 座標系から全体のワールド座標系に変換する 4x4 マトリックス。
+-   ワールド座標系からカメラ (ビュー) 座標系に変換する 4x4 マトリックス。
+-   カメラ座標系から 2-D ビュー プロジェクション座標系に変換する 4x4 マトリックス。
 
-These matrices are passed to the shader in a *constant buffer*. A constant buffer is a region of memory that remains constant throughout the execution of the next pass of the shader pipeline, and which can be directly accessed by the shaders from your HLSL code. You define each constant buffer two times: first in your game's C++ code, and (at least) one time in the C-like HLSL syntax for your shader code. The two declarations must directly correspond in terms of types and data alignment. It's easy to introduce hard to find errors when the shader uses the HLSL declaration to interpret data declared in C++, and the types don't match or the alignment of data is off!
+これらのマトリックスは、*定数バッファー*でシェーダーに渡されます。 定数バッファーは、シェーダー パイプラインの次のパスを実行する間、定数を保持するメモリ領域のことで、HLSL コードからシェーダーを使って直接アクセスできます。 各定数バッファーは 2 回定義します。ゲームの C++ コードで 1 回、そして C ライクな HLSL 構文のシェーダー コードで (少なくとも) 1 回です。 この 2 回の宣言は、タイプとデータの配置に関して直接対応している必要があります。 C++ で宣言されたデータを解釈するためにシェーダーで HLSL 宣言を使うと、発見が困難なエラーが紛れ込みやすくなり、タイプが一致しなかったりデータの配置が揃わなかったりします。
 
-Constant buffers don't get changed by the HLSL. You can change them when your game updates specific data. Often, game devs create 4 classes of constant buffers: one type for updates per frame; one type for updates per model/object; one type for updates per game state refresh; and one type for data that never changes through the lifetime of the game.
+定数バッファーは、HLSL で変更されません。 ゲームで特定のデータを更新するときに、定数バッファーを変更できます。 ゲーム開発者は、定数バッファーを 4 種類作ることがよくあります。フレームごとの更新用、モデルやオブジェクトごとの更新用、ゲーム状態のリフレッシュごとの更新用、そしてゲームの存続中は変更することのないデータ用です。
 
-In this example, we just have one that never changes: the DirectX::XMFLOAT4X4 data for the three matrices.
+この例では、変更することがない定数バッファーのみを用意します。3 つのマトリックスの DirectX::XMFLOAT4X4 データです。
 
-> **Note**   The example code presented here uses column-major matrices. You can use row-major matrices instead by using the **row\_major** keyword in HLSL, and ensuring your source matrix data is also row-major. DirectXMath uses row-major matrices and can be used directly with HLSL matrices defined with the **row\_major** keyword.
+> **注:**   ここに示すコード例では、列優先マトリックスを使います。 HLSL で **row\_major** キーワードを使うと、代わりに行優先マトリックスを使うことができ、ソース マトリックス データも行優先になります。 DirectXMath は行優先マトリックスを使います。**row\_major** キーワードで定義される HLSL マトリックスを使うと、DirectXMath を直接使うことができます。
 
  
 
-Declare and create a constant buffer for the three matrices you use to transform each vertex.
+各頂点を変換するために使う 3 つのマトリックスの定数バッファーを宣言して作ります。
 
 ```cpp
 struct ConstantBuffer
@@ -240,7 +242,7 @@ m_constantBufferData.view = DirectX::XMFLOAT4X4(
              0.00000000f, 0.00000000f,  0.00000000f,  1.00000000f);
 ```
 
-> **Note**  You usually declare the projection matrix when you set up device specific resources, because the results of multiplication with it must match the current 2-D viewport size parameters (which often correspond with the pixel height and width of the display). If those change, you must scale the x- and y-coordinate values accordingly.
+> **注:** 通常は、デバイス固有のリソースを設定するときにプロジェクション マトリックスを宣言します。なぜなら、プロジェクション マトリックスの乗算の結果は、現在の 2-D ビューポート サイズ パラメーターと一致する必要があるからです (これらのパラメーターは、表示のピクセル高と幅に一致することがよくあります)。 これらのパラメーターを変更する場合は、それに合わせて x 座標と y 座標の値をスケーリングする必要があります。
 
  
 
@@ -272,7 +274,7 @@ m_constantBufferData.projection = DirectX::XMFLOAT4X4(
             );
 ```
 
-While you're here, set the vertex and index buffers on the[ID3D11DeviceContext](https://msdn.microsoft.com/library/windows/desktop/ff476149), plus the topology you're using.
+ここで、[ID3D11DeviceContext](https://msdn.microsoft.com/library/windows/desktop/ff476149)で頂点バッファーとインデックス バッファー、そして使っているトポロジを設定します。
 
 ```cpp
 // Set the vertex and index buffers, and specify the way they define geometry.
@@ -293,15 +295,15 @@ m_d3dDeviceContext->IASetIndexBuffer(
  m_d3dDeviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 ```
 
-All right! Input assembly complete. Everything's in place for rendering. Let's get that vertex shader going.
+よくできました。 入力の組み立ては完了です。 レンダリングの準備はすべて整いました。 それでは頂点シェーダーを使ってみましょう。
 
-### Step 6: Process the mesh with the vertex shader
+### 手順 6: 頂点シェーダーでメッシュを処理する
 
-Now that you have a vertex buffer with the vertices that define your mesh, and the index buffer that defines the order in which the vertices are processed, you send them to the vertex shader. The vertex shader code, expressed as compiled high-level shader language, runs one time for each vertex in the vertex buffer, allowing you to perform your per-vertex transforms. The final result is typically a 2-D projection.
+メッシュを定義する頂点を格納する頂点バッファーと、頂点の処理順序を定義するインデックス バッファーができたので、これから頂点シェーダーに頂点を送信します。 頂点シェーダーのコードは、コンパイルされた上位レベル シェーダー言語として表されます。頂点バッファー内の頂点ごとに 1 回実行されるため、頂点ごとに変換を実行できます。 最終的な結果は、通常は 2-D プロジェクションになります。
 
-(Did you load your vertex shader? If not, review [How to load resources in your DirectX game](load-a-game-asset.md).)
+(頂点シェーダーをロードしてありますか? まだの場合は、「[DirectX ゲームでリソースをロードする方法](load-a-game-asset.md)」をご覧ください。)
 
-Here, you create the vertex shader...
+まず頂点シェーダーを作り ...
 
 ``` syntax
 // Set the vertex and pixel shader stage state.
@@ -311,7 +313,7 @@ m_d3dDeviceContext->VSSetShader(
                 0);
 ```
 
-...and set the constant buffers.
+... 次に定数バッファーを設定します。
 
 ``` syntax
 m_d3dDeviceContext->VSSetConstantBuffers(
@@ -320,7 +322,7 @@ m_d3dDeviceContext->VSSetConstantBuffers(
                 m_constantBuffer.GetAddressOf());
 ```
 
-Here's the vertex shader code that handles the transformation from object coordinates to world coordinates and then to the 2-D view projection coordinate system. You also apply some simple per-vertex lighting to make things pretty. This goes in your vertex shader's HLSL file (SimplerVertexShader.hlsl, in this example).
+この頂点シェーダーのコードは、オブジェクト座標からワールド座標への変換、その後で 2-D ビュー プロジェクション座標系への変換を処理します。 見た目をよくするために、シンプルな頂点ごとの照明を適用することもできます。 これは、頂点シェーダーの HLSL ファイル (この例では SimplerVertexShader.hlsl) に記載されています。
 
 ``` syntax
 cbuffer simpleConstantBuffer : register( b0 )
@@ -360,23 +362,23 @@ PixelShaderInput SimpleVertexShader(VertexShaderInput input)
 }
 ```
 
-See that **cbuffer** at the top? That's the HLSL analogue to the same constant buffer we declared in our C++ code previously. And the **VertexShaderInputstruct**? Why, that looks just like your input layout and vertex data declaration! It's important that the constant buffer and vertex data declarations in your C++ code match the declarations in your HLSL code—and that includes signs, types, and data alignment.
+先頭には **cbuffer** があります。 これは、前に C++ コードで宣言した定数バッファーと同じものを HLSL で表現したものです。 **VertexShaderInputstruct** は、 なぜか、作った入力レイアウトや頂点データの宣言とそっくりです。 大切なのは、C++ コードでの定数バッファーと頂点データの宣言が、HLSL コードでの宣言と一致していること、そして符号、タイプ、データの配置が含まれていることです。
 
-**PixelShaderInput** specifies the layout of the data that is returned by the vertex shader's main function. When you finish processing a vertex, you'll return a vertex position in the 2-D projection space and a color used for per-vertex lighting. The graphics card uses data output by the shader to calculate the "fragments" (possible pixels) that must be colored when the pixel shader is run in the next stage of the pipeline.
+**PixelShaderInput** は、頂点シェーダーのメインの関数から返されるデータのレイアウトを指定します。 頂点の処理が完了すると、2-D プロジェクション空間における頂点の位置と、頂点ごとの照明に使われる色を返します。 グラフィックス カードは、シェーダーによるデータ出力を使って "フラグメント" (可能性のあるピクセル) を計算します。フラグメントは、パイプラインの次の段階でピクセル シェーダーが実行されたときに色が付きます。
 
-### Step 7: Passing the mesh through the pixel shader
+### 手順 7: ピクセル シェーダーでメッシュを渡す
 
-Typically, at this stage in the graphics pipeline, you perform per-pixel operations on the visible projected surfaces of your objects. (People like textures.) For the purposes of sample, though, you simply pass it through this stage.
+通常、グラフィックス パイプラインのこの段階では、オブジェクトのプロジェクションされたサーフェスの見えている部分でピクセル単位の操作を実行します (テクスチャが好まれます)。ただし、これはサンプルなので、この段階では素通りするだけにします。
 
-First, let's create an instance of the pixel shader. The pixel shader runs for every pixel in the 2-D projection of your scene, assigning a color to that pixel. In this case, we pass the color for the pixel returned by the vertex shader straight through.
+まず、ピクセル シェーダーのインスタンスを作りましょう。 ピクセル シェーダーは、シーンの 2-D プロジェクションの各ピクセルに対して実行され、そのピクセルに色を割り当てます。 この場合は、頂点シェーダーで返されたピクセルの色を素通りさせます。
 
-Set the pixel shader.
+ピクセル シェーダーを設定します。
 
 ``` syntax
 m_d3dDeviceContext->PSSetShader( pixelShader.Get(), nullptr, 0 );
 ```
 
-Define a passthrough pixel shader in HLSL.
+HLSL でパススルー ピクセル シェーダーを定義します。
 
 ``` syntax
 struct PixelShaderInput
@@ -391,13 +393,13 @@ float4 SimplePixelShader(PixelShaderInput input) : SV_TARGET
 }
 ```
 
-Put this code in an HLSL file separate from the vertex shader HLSL (such as SimplePixelShader.hlsl). This code is run one time for every visible pixel in your viewport (an in-memory representation of the portion of the screen you are drawing to), which, in this case, maps to the entire screen. Now, your graphics pipeline is completely defined!
+このコードを頂点シェーダーの HLSL とは別の HLSL ファイルに配置します (たとえば SimplePixelShader.hlsl)。 このコードは、ビューポート (描画先画面の一部分のメモリ内表現) で見えているピクセルごとに 1 回実行されます。この場合のビューポートは、画面全体にマッピングされます。 これで、グラフィックス パイプラインはすべて定義されました。
 
-### Step 8: Rasterizing and displaying the mesh
+### 手順 8: メッシュのラスタライズと表示
 
-Let's run the pipeline. This is easy: call [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/bb173565).
+パイプラインを実行しましょう。 手順は簡単です。[**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/bb173565) を呼び出します。
 
-Draw that cube!
+立方体を描画します。
 
 ```cpp
 // Draw the cube.
@@ -405,11 +407,11 @@ m_d3dDeviceContext->DrawIndexed( ARRAYSIZE(cubeIndices), 0, 0 );
             
 ```
 
-Inside the graphics card, each vertex is processed in the order specified in your index buffer. After your code has executed the vertex shader and the 2-D fragments are defined, the pixel shader is invoked and the triangles colored.
+グラフィックス カード内で、各頂点がインデックス バッファーでの指定順に処理されます。 コードが実行されると、頂点シェーダーと 2-D フラグメントが定義されます。次に、ピクセル シェーダーが呼び出されて、三角形に色が付きます。
 
-Now, put the cube on the screen.
+次に、立方体を画面に配置します。
 
-Present that frame buffer to the display.
+フレーム バッファーをディスプレイに表示します。
 
 ```cpp
 // Present the rendered image to the window.  Because the maximum frame latency is set to 1,
@@ -419,21 +421,21 @@ Present that frame buffer to the display.
 m_swapChain->Present(1, 0);
 ```
 
-And you're done! For a scene full of models, use multiple vertex and index buffers, and you might even have different shaders for different model types. Remember that each model has its own coordinate system, and you need to transform them to the shared world coordinate system using the matrices you defined in the constant buffer.
+これで、終わりです。 モデルがたくさんあるシーンでは、複数の頂点バッファーとインデックス バッファーを使ってください。モデルのタイプごとにシェーダーがある場合もあります。 各モデルには専用の座標系があり、定数バッファーで定義したマトリックスを使って、座標系を共有されるワールド座標系に変換する必要があることに注意してください。
 
-## Remarks
+## 注釈
 
-This topic covers creating and displaying simple geometry that you create yourself. For more info about loading more complex geometry from a file and converting it to the sample-specific vertex buffer object (.vbo) format, see [How to load resources in your DirectX game](load-a-game-asset.md).
+このトピックでは、シンプルなジオメトリを自分で作り、表示する方法について取り上げました。 より複雑なジオメトリをファイルからロードしてサンプル専用の頂点バッファー オブジェクト (.vbo) 形式に変換する方法について詳しくは、「[DirectX ゲームでリソースをロードする方法](load-a-game-asset.md)」をご覧ください。
 
-> **Note**  
-This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **注:**  
+この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
  
 
-## Related topics
+## 関連トピック
 
 
-* [How to load resources in your DirectX game](load-a-game-asset.md)
+* [DirectX ゲームでリソースをロードする方法](load-a-game-asset.md)
 
  
 

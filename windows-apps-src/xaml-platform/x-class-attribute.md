@@ -1,16 +1,16 @@
 ---
-description: Configures XAML compilation to join partial classes between markup and code-behind. The code partial class is defined in a separate code file, and the markup partial class is created by code generation during XAML compilation.
-title: xClass attribute
+description: マークアップとコード ビハインドの間で部分クラスを結合するための XAML コンパイルを設定します。 コードの部分クラスは、個別のコード ファイルで定義され、マークアップ部分クラスは XAML コンパイル時のコード生成によって作成されます。
+title: xClass 属性
 ms.assetid: 40A7C036-133A-44DF-9D11-0D39232C948F
 ---
 
-# x:Class attribute
+# x:Class 属性
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-Configures XAML compilation to join partial classes between markup and code-behind. The code partial class is defined in a separate code file, and the markup partial class is created by code generation during XAML compilation.
+マークアップとコード ビハインドの間で部分クラスを結合するための XAML コンパイルを設定します。 コードの部分クラスは、個別のコード ファイルで定義され、マークアップ部分クラスは XAML コンパイル時のコード生成によって作成されます。
 
-## XAML attribute usage
+## XAML 属性の使用方法
 
 
 ``` syntax
@@ -19,24 +19,24 @@ Configures XAML compilation to join partial classes between markup and code-behi
 </object>
 ```
 
-## XAML values
+## XAML 値
 
-| Term | Description |
+| 用語 | 説明 |
 |------|-------------|
-| namespace | Optional. Specifies a namespace that contains the partial class identified by _classname_. If _namespace_ is specified, a dot (.) separates _namespace_ and _classname_. If _namespace_ is omitted, _classname_ is assumed to have no namespace. |
-| classname | Required. Specifies the name of the partial class that connects the loaded XAML and your code-behind for that XAML. | 
+| 名前空間 | 省略可能。 _classname_ で識別される部分クラスが含まれている名前空間を指定します。 _名前空間_を指定すると、_名前空間_と_クラス名_がドット (.) で区切られます。 _名前空間_を省略すると、_クラス名_には名前空間がないものと見なされます。 |
+| classname | 必須。 ロードされた XAML とその XAML のコード ビハインドを結び付ける部分クラスの名前を指定します。 | 
 
-## Remarks
+## 注釈
 
-**x:Class** can be declared as an attribute for any element that is the root of a XAML file/object tree and is being compiled by build actions, or for the [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) root in the application definition of a compiled application. Declaring **x:Class** on any element other than a page root or application root, and under any circumstances for a XAML file that is not compiled with the **Page** build action, results in a compile-time error.
+**x:Class** は、XAML ファイル/オブジェクト ツリーのルートであり、ビルド アクションによってコンパイルされる任意の要素か、コンパイルされたアプリケーションのアプリケーション定義中の [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) ルートの属性として宣言できます。 ページ ルートまたはアプリケーション ルート以外の任意の要素に対して **x:Class** を宣言した場合、XAML ファイルが **Page** ビルド動作でコンパイルされていない任意の状況下で、コンパイル時エラーになります。
 
-The class used as **x:Class** cannot be a nested class.
+**x:Class** として使われたクラスは、ネストされたクラスにすることはできません。
 
-The value of the **x:Class** attribute must be a string that specifies the fully qualified name of a class. You can omit namespace information so long as that is how the code-behind is structured also (your class definition starts at the class level). The code-behind file for a page or application definition must be within a code file that is included as part of the project. The code-behind class must be public. The code-behind class must be partial.
+**x:Class** 属性の値は、クラスの完全修飾名を指定する文字列であることが必要です。 コード ビハインドに名前空間情報がない場合に限り、名前空間情報を省略できます (クラス定義はクラス レベルで開始されます) ページまたはアプリケーション定義のコード ビハインド ファイルは、プロジェクトの一部として含まれているコード ファイルの中にあることが必要です。 コード ビハインド クラスはパブリックであることが必要です。 コード ビハインド クラスは部分的であることが必要です。
 
-## CLR language rules
+## CLR 言語規則
 
-Although your code-behind file can be a C++ file, there are certain conventions that still follow the CLR language form, so that there is no difference in the XAML syntax. In particular, the separator between the namespace and classname components of any **x:Class** value is always a dot ("."), even though the separator between namespace and classname in the C++ code file associated with the XAML is "::". If you declare nested namespaces in C++, then the separator between the successive nested namespace strings should also be "." rather than "::" when you specify the *namespace* part of the **x:Class** value.
+コード ビハインド ファイルとしては C++ ファイルが使用可能ですが、XAML 構文に違いが出ないようにするため、CLR の言語形式に従う特定の構文があります。 特に、任意の **x:Class** 値の名前空間とクラス名の間の区切り文字は、XAML に関連付けられた C++ コード ファイルの名前空間とクラス名の間の区切り文字が "::" であっても、常にドット (".") になります。 **x:Class** 値の *namespace* 部分を指定する場合、C++ で入れ子になった名前空間を宣言すると、以降の入れ子になった名前空間の文字列間の区切り文字も "::" ではなく "." である必要があります。
 
 
 

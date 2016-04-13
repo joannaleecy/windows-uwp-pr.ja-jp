@@ -1,66 +1,68 @@
 ---
-description: This article explains how to support the Share contract in a Universal Windows Platform (UWP) app.
-title: Share data
+description: この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリで、共有コントラクトをサポートする方法について説明します。
+title: データの共有
 ms.assetid: 32287F5E-EB86-4B98-97FF-8F6228D06782
 author: awkoren
 ---
 
-# Share data
+# データの共有
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-This article explains how to support the Share contract in a Universal Windows Platform (UWP) app. The Share contract is an easy way to quickly share data, such as text, links, photos, and videos, between apps. For example, a user might want to share a webpage with their friends using a social networking app, or save a link in a notes app to refer to later.
+この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリで、共有コントラクトをサポートする方法について説明します。 共有コントラクトは、テキスト、リンク、写真、ビデオなどのデータをアプリ間ですばやく共有するための簡単な方法です。 たとえば、ユーザーがソーシャル ネットワーキング アプリを使って友人と Web ページを共有する場合や、後で参照するためにリンクをメモ帳アプリで保存する場合があります。
 
-## Set up an event handler
+## イベント ハンドラーのセットアップ
 
-Add a [**DataRequested**][DataRequested] event handler to be called whenever a user invokes share. This can occur either when the user taps a control in your app (such as a button or app bar command) or automatically in a specific scenario (if the user finishes a level and gets a high score, for example).
+ユーザーが共有を呼び出したときに呼び出される [**DataRequested**][DataRequested] イベント ハンドラーを追加します。 このイベントは、ユーザーがアプリ内のコントロール (ボタンやアプリ バー コマンドなど) をタップした場合に発生します。ユーザーがあるレベルをクリアしてハイ スコアを獲得した場合など、特定のシナリオで自動的に発生することもあります。
 
 [!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetPrepareToShare)]
 
-When a [**DataRequested**][DataRequested] event occurs, your app receives a [**DataRequest**][DataRequest] object. This contains a [**DataPackage**][DataPackage] that you can use to provide the content that the user wants to share. You must provide a title and data to share. A description is optional, but recommended.
+[
+            **DataRequested**][DataRequested] イベントが発生すると、アプリは [**DataRequest**][DataRequest] オブジェクトを受け取ります。 このオブジェクトに含まれている [**DataPackage**][DataPackage] を使って、ユーザーが共有するコンテンツを提供することができます。 共有するデータとタイトルを指定する必要があります。 説明は省略することもできますが、指定することをお勧めします。
 
 [!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetCreateRequest)]
 
-## Choose data
+## データの選択
 
-You can share various types of data, including:
+次のようなさまざまな種類のデータを共有することができます。
 
--   Plain text
--   Uniform Resource Identifiers (URIs)
+-   プレーンテキスト
+-   Uniform Resource Identifier (URI)
 -   HTML
--   Formatted text
--   Bitmaps
--   Plain text
--   Files
--   Custom developer-defined data
+-   書式付きテキスト
+-   ビットマップ
+-   プレーンテキスト
+-   ファイル
+-   開発者が定義したカスタム データ
 
-The [**DataPackage**][DataPackage] object can contain one or more of these formats, in any combination. The following example demonstrates sharing text.
+[
+            **DataPackage**][DataPackage] オブジェクトには、これらの 1 つ以上の形式を任意に組み合わせて格納することができます。 次の例は、テキストの共有を示しています。
 
 [!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetSetContent)]
 
-## Set properties
+## プロパティの設定
 
-When you package data for sharing, you can supply a variety of properties that provide additional information about the content being shared. These properties help target apps improve the user experience. For example, a description helps when the user is sharing content with more than one app. Adding a thumbnail when sharing an image or a link to a web page provides a visual reference to the user. For more information, see [**DataPackage.DataPackagePropertySet**][DataPackagePropertySet].
+共有用にデータをパッケージ化するときに、共有されるコンテンツの情報を追加で提供するさまざまなプロパティを指定できます。 これらのプロパティは、ターゲット アプリでのユーザー エクスペリエンスを高めるために役立ちます。 たとえば、ユーザーが複数のアプリでコンテンツを共有している場合に、説明があると便利です。 画像や Web ページへのリンクを共有する場合にサムネイルを追加すると、ユーザーが視覚的に確認できます。 詳しくは、「[**DataPackage.DataPackagePropertySet**][DataPackagePropertySet]」を参照してください。
 
-All properties except the title are optional. The title property is mandatory and must be set.
+タイトルを除くすべてのプロパティは任意です。 タイトルのプロパティは必須です。必ず設定してください。
 
 [!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetSetProperties)]
 
-## Launch the share UI
+## 共有 UI の起動
 
-A UI for sharing is provided by the system. To launch it, call the [**ShowShareUI**][ShowShareUi] method.
+共有用の UI は、システムによって提供されます。 起動するには、[**ShowShareUI**][ShowShareUi] メソッドを呼び出します。
 
 [!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetShowUI)]
 
-## Handle errors
+## エラーの処理
 
-In most cases, sharing content is a straightforward process. However, there's always a chance that something unexpected could happen. For example, the app might require the user to select content for sharing but the user didn't select any. To handle these situations, use the [**FailWithDisplayText**][FailWithDisplayText] method, which will display a message to the user if something goes wrong.
+ほとんどの場合、コンテンツの共有は難しいプロセスではありません。 しかし、どのような場合であっても、予期しない問題が発生することは必ずあります。 たとえば、共有するコンテンツをユーザーが選ぶ必要がある状況で、ユーザーが選んでいない場合などです。 このような状況を処理するには、[**FailWithDisplayText**][FailWithDisplayText] メソッドを使います。このメソッドでは、問題が発生すると、ユーザーにメッセージが表示されます。
 
-## Delay share with delegates
+## デリゲートによる共有の遅延
 
-Sometimes, it might not make sense to prepare the data that the user wants to share right away. For example, if your app supports sending a large image file in several different possible formats, it's inefficient to create all those images before the user makes their selection.
+場合によっては、ユーザーが共有するデータをすぐに準備しても効果的でないことがあります。 たとえば、複数の異なる形式の大きな画像ファイルの送信をサポートしているアプリの場合、ユーザーが選択する前にこれらの画像をすべて作成することは非効率的です。
 
-To solve this problem, a [**DataPackage**][DataPackage] can contain a delegate — a function that is called when the receiving app requests data. We recommend using a delegate any time that the data a user wants to share is resource-intensive.
+この問題を解決するために、[**DataPackage**][DataPackage] にはデリゲートも格納できます。デリゲートとは、受け取る側のアプリでデータを要求するときに呼び出される関数です。 リソースを大量に消費するデータを共有する場合はデリゲートを使うことをお勧めします。
 
 <!-- For some reason, this snippet was inline in the WDCML topic. Suggest moving to VS project with rest of snippets. -->
 ```cs
@@ -87,8 +89,8 @@ async void OnDeferredImageRequestedHandler(DataProviderRequest request)
 }
 ```
 
-## Related topics
-* [Receive data](receive-data.md)
+## 関連トピック
+* [データの受信](receive-data.md)
 
 
 <!-- LINKS -->

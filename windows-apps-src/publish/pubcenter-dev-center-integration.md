@@ -1,175 +1,175 @@
 ---
-Description: Microsoft Advertising on pubCenter has been integrated into Windows Dev Center.
-title: pubCenter-Dev Center integration
+Description: pubCenter の Microsoft Advertising は、Windows デベロッパー センターに統合されました。
+title: PubCenter とデベロッパー センターの統合
 ms.assetid: C1EB51DF-7850-45F4-B565-FF5A690EBD8D
 ---
 
-# pubCenter-Dev Center integration
+# PubCenter とデベロッパー センターの統合
 
 
-**Important**
+**重要**
 
--   As of April 1st, 2016, your Microsoft Advertising earnings will be paid to the payout account you’ve set up in Dev Center. You should now manage any updates or changes to your payout account and tax profile only in Dev Center. Please make sure you make any necessary updates before March 31, 2016. For more info, see [pubCenter-DevCenter payout account and tax profile consolidation](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md).
--   As of December 1st, 2015, [your pubCenter account must be linked to your Dev Center account](#scenario-3-you-have-dev-center-and-pubcenter-accounts-registered-with-different-microsoft-accounts) in order to receive payouts.
--   Your payout history will no longer be updated in pubCenter. To review your payout history going forward, [link your pubCenter account to your Dev Center account](#scenario-3-you-have-dev-center-and-pubcenter-accounts-registered-with-different-microsoft-accounts) and then visit the [Payout summary](payout-summary.md) page in the Dev Center dashboard.
+-   2016 年 4 月 1 日以降、Microsoft Advertising による売り上げはデベロッパー センターで設定した受取りアカウントに支払われます。 受取りアカウントと税プロファイルの更新や変更はすべて、デベロッパー センターでのみ管理できるようになります。 2016 年 3 月 31 日より前に必要な更新を行ったことを確認してください。 詳しくは、「[pubCenter とデベロッパー センターの受取りアカウントと税プロファイルの統合](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md)」をご覧ください。
+-   2015 年 12 月 1 日以降、支払いを受け取るためには、[pubCenter アカウントをデベロッパー センター アカウントにリンクする必要があります](#scenario-3-you-have-dev-center-and-pubcenter-accounts-registered-with-different-microsoft-accounts)。
+-   支払い履歴は pubCenter では更新されなくなります。 今後支払い履歴を確認するには、[pubCenter アカウントをデベロッパー センター アカウントにリンク](#scenario-3-you-have-dev-center-and-pubcenter-accounts-registered-with-different-microsoft-accounts)し、デベロッパー センター ダッシュボードで [[入金状況]](payout-summary.md) ページをご覧ください。
 
-Microsoft Advertising on pubCenter has been integrated into Windows Dev Center.
+pubCenter の Microsoft Advertising は、Windows デベロッパー センターに統合されました。
 
-You might have multiple accounts in pubCenter and Dev Center, and your migration experience will depend on how your pubCenter and Dev Center accounts have been set up. You might fall into one or more of the following scenarios. Please read the details carefully for scenarios that apply to you.
+pubCenter およびデベロッパー センターに複数のアカウントを持っている可能性があり、移行手順は pubCenter とデベロッパー センターのアカウントの設定内容によって異なります。 次のシナリオのうち 1 つ以上に分類されると考えられます。 該当するシナリオの詳細をよくお読みください。
 
-## Scenario \#1: You have a Dev Center account and a pubCenter account with the same Microsoft account, registered in the same country/region
+## シナリオ \#1: 同じ Microsoft アカウントにデベロッパー センター アカウントと pubCenter アカウントが同じ国または地域で登録されている
 
 
-**Example**: You have a Dev Center account registered with \[name\]@outlook.com in the United States. You also have a pubCenter account registered with \[name\]@outlook.com in the United States.
+**例**: 米国の \[name\]@outlook.com に登録されたデベロッパー センター アカウントを持っている。 米国の \[name\]@outlook.com に登録された pubCenter アカウントも持っている。
 
-**Result**: Your pubCenter account has been automatically linked to your Dev Center account. No action is needed from you.
+**結果**: pubCenter アカウントは、デベロッパー センター アカウントに自動的にリンクされています。 操作は必要ありません。
 
--   Reports for all your existing ad units in pubCenter are available in the [Advertising performance report](advertising-performance-report.md) on Dev Center, under the app to which they belong.
--   If you cannot find a particular pubCenter ad unit on your [Advertising performance report](advertising-performance-report.md), we may have been unable to successfully link that ad unit to an app in Dev Center. This can happen if your app is named inconsistently in Dev Center and pubCenter. To see ad units that we were unable to link successfully to your apps in Dev Center, visit the account-level **Advertising performance** report and select the pubCenter app name. To access the account-level **Advertising performance** report, go to your dashboard overview page and click **Advertising performance** in the navigation pane.
--   To manage the payment method and tax details for your existing pubCenter account, you must use pubCenter.
--   The payment method and tax details that are used in Dev Center will be used for your pubCenter payouts as well. Your payment method and tax details can be edited from Dev Center only. This means that:
-    -   If your payment methods in Dev Center and pubCenter were different, you might start receiving your pubCenter payouts in a different bank account.
-    -   If you don't have a payment method or tax details set up in Dev Center or pubCenter, please set them up in Dev Center and the same payment method or tax details will be used for your pubCenter payouts as well. For more information on managing payment methods and tax details in Dev Center, see [Setting up your payout account and tax forms](setting-up-your-payout-account-and-tax-forms.md).
-    -   Your pubCenter payouts will happen with the payment method and tax details set up in pubCenter until your payment method and tax details are set up in Dev Center. If they are already set up in Dev Center, your pubCenter payment method and tax details will be superseded by those set up in Dev Center. For more info, see [pubCenter-DevCenter payout account and tax profile consolidation](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md).
--   Your payout reports are now available in your Dev Center account. For more information on payout reports in Dev Center, see [Payout summary](payout-summary.md).
--   All your app promotion campaigns are now associated with your Dev Center account and you can manage them from Dev Center directly.
+-   pubCenter 内のすべての既存の広告ユニットに関するレポートは、デベロッパー センターの「[広告のパフォーマンスのレポート](advertising-performance-report.md)」でそれらが属するアプリの下で参照できます。
+-   「[広告のパフォーマンスのレポート](advertising-performance-report.md)」で特定の pubCenter 広告ユニットが見つからない場合、その広告ユニットをデベロッパー センターのアプリに正常にリンクできていない可能性があります。 この状況は、デベロッパー センターと pubCenter でアプリの名前が一貫していない場合に発生することがあります。 デベロッパー センターのアプリに正常にリンクできなかった広告ユニットを調べるには、アカウント レベルの **[広告パフォーマンス]** レポートにアクセスし、pubCenter のアプリ名を選択します。 アカウント レベルの **[広告パフォーマンス]** レポートにアクセスするには、ダッシュボードの概要ページに移動し、ナビゲーション ウィンドウの **[広告パフォーマンス]** をクリックします。
+-   既存の pubCenter アカウントの支払方法と税金の詳細を管理するには、pubCenter を使う必要があります。
+-   デベロッパー センターで使用される支払方法と税金の詳細は、pubCenter の支払いにも使用されます。 支払方法と税金の詳細は、デベロッパー センターからのみ編集できます。 これは次のことを意味します。
+    -   デベロッパー センターと pubCenter で支払方法が異なる場合、pubCenter の支払いの受け取りは別の銀行口座で開始することができます。
+    -   デベロッパー センターまたは pubCenter で支払方法や税金の詳細が設定されていない場合、デベロッパー センターで設定してください。同じ支払方法または税金の詳細が pubCenter の支払いにも使用されます。 デベロッパー センターで支払方法と税金の詳細を管理する方法について詳しくは、「[受取りアカウントの設定と税関連の書類](setting-up-your-payout-account-and-tax-forms.md)」をご覧ください。
+    -   支払方法と税金の詳細がデベロッパー センターで設定されるまでは、pubCenter の支払いは pubCenter で支払方法と税金の詳細が設定されたときに発生します。 デベロッパー センターで既に設定されている場合、pubCenter の支払方法と税金の詳細よりデベロッパー センターでの設定が優先されます。 詳しくは、「[pubCenter とデベロッパー センターの受取りアカウントと税プロファイルの統合](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md)」をご覧ください。
+-   支払レポートがデベロッパー センター アカウントで参照できるようになりました。 デベロッパー センターでの支払レポートについて詳しくは、「[支払いの要約](payout-summary.md)」をご覧ください。
+-   すべてのアプリ プロモーション キャンペーンがデベロッパー センターに関連付けられ、デベロッパー センターから直接管理できるようになりました。
 
-> **Note**  You will no longer be able to create ad units or new app promotion campaigns in pubCenter. For information on how to create ad units in Dev Center, see [Monetize with ads](monetize-with-ads.md). For information on how to create app promotion campaigns in Dev Center, see [Create an ad campaign for your app](create-an-ad-campaign-for-your-app.md).
+> **注:** pubCenter で広告ユニットや新しいアプリ プロモーション キャンペーンを作成できなくなります。 デベロッパー センターで広告ユニットを作成する方法については、「[広告による収益獲得](monetize-with-ads.md)」をご覧ください。 デベロッパー センターでアプリ プロモーション キャンペーンを作成する方法については、「[アプリの広告キャンペーンの作成](create-an-ad-campaign-for-your-app.md)」をご覧ください。
 
-## Scenario \#2: You have a Dev Center account and a pubCenter account with the same Microsoft account, but registered in different countries/regions
+## シナリオ \#2: 同じ Microsoft アカウントにデベロッパー センター アカウントと pubCenter アカウントが異なる国または地域で登録されている
 
 
-**Example**: You have a Dev Center account registered with \[name\]@outlook.com in the United States. You also have a pubCenter account registered with \[name\]@outlook.com in India.
+**例**: 米国の \[name\]@outlook.com に登録されたデベロッパー センター アカウントを持っている。 インドの \[name\]@outlook.com に登録された pubCenter アカウントも持っている。
 
-**Result**: Your pubCenter account has been automatically linked to your Dev Center account. No action is needed from you.
+**結果**: pubCenter アカウントは、デベロッパー センター アカウントに自動的にリンクされています。 操作は必要ありません。
 
--   Reports for all your existing ad units in pubCenter are available in the [Advertising performance report](advertising-performance-report.md) on Dev Center, under the app to which they belong.
--   If you cannot find a particular pubCenter ad unit on your [Advertising performance report](advertising-performance-report.md), we may have been unable to successfully link that ad unit to an app in Dev Center. This can happen if your app is named inconsistently in Dev Center and pubCenter. To see ad units that we were unable to link successfully to your apps in Dev Center, visit the account-level **Advertising performance** report and select the pubCenter app name. To access the account-level **Advertising performance** report, go to your dashboard overview page and click **Advertising performance** in the navigation pane.
--   Your pubCenter earnings data will be converted to your Dev Center currency and reported in Dev Center. However, your pubCenter payouts will continue to happen in the currency of your pubCenter account.
--   To manage the payment method and tax details for your existing pubCenter account, you must use pubCenter.
--   For any new ad units that you create in Dev Center, earnings will accrue, be reported, and be paid out in the currency of your Dev Center account, and earnings for these new ad units will use your Dev Center payment method and tax details.
--   You will need to manage the payment method and tax details for earnings from your new ad units in Dev Center. For more information on managing payment methods and tax details in Dev Center, see [Setting up your payout account and tax forms](setting-up-your-payout-account-and-tax-forms.md) and [pubCenter-DevCenter payout account and tax profile consolidation](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md).
--   Your payout reports are now available in your Dev Center account. For more information on payout reports in Dev Center, see [Payout summary](payout-summary.md).
--   All your app promotion campaigns are now associated with your Dev Center account and you can manage them from Dev Center directly.
+-   pubCenter 内のすべての既存の広告ユニットに関するレポートは、デベロッパー センターの「[広告のパフォーマンスのレポート](advertising-performance-report.md)」でそれらが属するアプリの下で参照できます。
+-   「[広告のパフォーマンスのレポート](advertising-performance-report.md)」で特定の pubCenter 広告ユニットが見つからない場合、その広告ユニットをデベロッパー センターのアプリに正常にリンクできていない可能性があります。 この状況は、デベロッパー センターと pubCenter でアプリの名前が一貫していない場合に発生することがあります。 デベロッパー センターのアプリに正常にリンクできなかった広告ユニットを調べるには、アカウント レベルの **[広告パフォーマンス]** レポートにアクセスし、pubCenter のアプリ名を選択します。 アカウント レベルの **[広告パフォーマンス]** レポートにアクセスするには、ダッシュボードの概要ページに移動し、ナビゲーション ウィンドウの **[広告パフォーマンス]** をクリックします。
+-   pubCenter の売り上げデータは、デベロッパー センターの通貨に変換され、デベロッパー センターで報告されます。 ただし、pubCenter の支払いは引き続き pubCenter アカウントの通貨で行われます。
+-   既存の pubCenter アカウントの支払方法と税金の詳細を管理するには、pubCenter を使う必要があります。
+-   デベロッパー センターで新しい広告ユニットを作成した場合、売り上げの発生、報告、支払いはデベロッパー センター アカウントの通貨で行われ、これら新しい広告ユニットの売り上げにはデベロッパー センターの支払いと税金の詳細が使用されます。
+-   売り上げの支払方法と税金の詳細は、デベロッパー センターの新しい広告ユニットから管理する必要があります。 デベロッパー センターでの支払い方法と税金の詳細の管理について詳しくは、「[受取りアカウントの設定と税関連の書類](setting-up-your-payout-account-and-tax-forms.md)」と「[pubCenter とデベロッパー センターの受取りアカウントと税プロファイルの統合](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md)」をご覧ください。
+-   支払レポートがデベロッパー センター アカウントで参照できるようになりました。 デベロッパー センターでの支払レポートについて詳しくは、「[支払いの要約](payout-summary.md)」をご覧ください。
+-   すべてのアプリ プロモーション キャンペーンがデベロッパー センターに関連付けられ、デベロッパー センターから直接管理できるようになりました。
 
-> **Note**  You will no longer be able to create ad units or new app promotion campaigns in pubCenter. For information on how to create ad units in Dev Center, see [Monetize with ads](monetize-with-ads.md). For information on how to create app promotion campaigns in Dev Center, see [Create an ad campaign for your app](create-an-ad-campaign-for-your-app.md).
+> **注:** pubCenter で広告ユニットや新しいアプリ プロモーション キャンペーンを作成できなくなります。 デベロッパー センターで広告ユニットを作成する方法については、「[広告による収益獲得](monetize-with-ads.md)」をご覧ください。 デベロッパー センターでアプリ プロモーション キャンペーンを作成する方法については、「[アプリの広告キャンペーンの作成](create-an-ad-campaign-for-your-app.md)」をご覧ください。
 
-## Scenario \#3: You have Dev Center and pubCenter accounts registered with different Microsoft accounts
+## シナリオ \#3: デベロッパー センターと pubCenter アカウントが別の Microsoft アカウントに登録されている
 
 
-**Example**: You have a Dev Center account registered with \[name\]@outlook.com. You also have a pubCenter account registered with \[other\_name\]@outlook.com.
+**例**: \[name\]@outlook.com に登録されたデベロッパー センター アカウントを持っている。 インドの \[other\_name\]@outlook.com に登録された pubCenter アカウントも持っている。
 
-**Result**: You need to manually link your pubCenter account(s) to your Dev Center account. To do so:
+**結果**: pubCenter アカウントをデベロッパー センター アカウントに手動でリンクする必要があります。 そのためには、次の操作を実行します。
 
-1.  Sign in to the pubCenter account you wish to link.
-2.  On this account's **My information** page, you will find a **pubCenter Account Linking Code**. Keep this code available.
+1.  リンクする pubCenter アカウントにサインインします。
+2.  このアカウントの **[本人情報]** ページには、**[pubCenter アカウントのリンク コード]** が表示されます。 このコードを使用可能にしておいてください。
 
-    > **Note**  A new account linking code is generated every 60 minutes.
+    > **注:** 新しいアカウント リンク コードは、60 分ごとに生成されます。
 
-3.  Sign out of your pubCenter account.
-4.  Sign in to your [Dev Center account](https://dev.windows.com/).
-5.  In the Dev Center dashboard, click **Advertising performance** in the left pane, and then click **Link a pubCenter account**.
-6.  Enter the email address associated with the pubCenter account and the account linking code.
-7.  Click **Link account** and your pubCenter account will be linked to your Dev Center account.
+3.  pubCenter アカウントからサインアウトします。
+4.  [デベロッパー センター アカウント](https://dev.windows.com/)にサインインします。
+5.  デベロッパー センター ダッシュ ボードで、左側のウィンドウの **[広告パフォーマンス]** をクリックし、**[pubCenter アカウントのリンク]** をクリックします。
+6.  pubCenter アカウントに関連付けられているメール アドレスとアカウント リンク コードを入力します。
+7.  **[アカウントのリンク]** をクリックすると、pubCenter アカウントがデベロッパー センター アカウントにリンクされます。
 
-    > **Note**  You can link one or more pubCenter accounts to your Dev Center account. However, each of your pubCenter accounts can be linked to only one Dev Center account.
+    > **注:** 1 つまたは複数の pubCenter アカウントをデベロッパー センター アカウントにリンクできます。 ただし、各 pubCenter アカウントは、1 つのデベロッパー センター アカウントにのみリンクすることができます。
 
-After your pubCenter account is linked to a Dev Center account:
+pubCenter アカウントがデベロッパー センター アカウントにリンクされると、次のようになります。
 
--   Your pubCenter account data will start appearing in the linked Dev Center account within 24 hours.
--   If you cannot find a particular pubCenter ad unit on your [Advertising performance report](advertising-performance-report.md), we may have been unable to successfully link that ad unit to an app in Dev Center. This can happen if your app is named inconsistently in Dev Center and pubCenter. To see ad units that we were unable to link successfully to your apps in Dev Center, visit the account-level **Advertising performance** report and select the pubCenter app name. To access the account-level **Advertising performance** report, go to your dashboard overview page and click **Advertising performance** in the navigation pane.
--   If your pubCenter account was registered in a different country/region than the Dev Center account, your earnings data will be converted to the Dev Center currency in reports.
--   Earnings from your pubCenter account will no longer be paid out using the payment method and tax details set up in pubCenter. If you need to make changes to your payment method or tax details, you will need to do so in Dev Center. See [pubCenter-DevCenter payout account and tax profile consolidation](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md) for more info.
--   To receive payments for earnings accrued on new ad units created in Dev Center, you must set up your payment and tax instruments in Dev Center. See [pubCenter-DevCenter payout account and tax profile consolidation](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md) for more info.
--   Earnings from any new ad units that you create in Dev Center will be paid out using your Dev Center payment method and tax details. For more information on managing payment methods and tax details in Dev Center, see [Setting up your payout account and tax forms](setting-up-your-payout-account-and-tax-forms.md).
--   Your pubCenter payout reports are now available in your Dev Center account. For more information on payout reports in Dev Center, see [Payout summary](payout-summary.md).
--   All of the app promotion campaigns you set up in pubCenter will be automatically paused. Please create new campaigns in Dev Center going forward.
+-   pubCenter アカウントのデータが、24 時間以内にリンクされたデベロッパー センター アカウントに表示され始めます。
+-   「[広告のパフォーマンスのレポート](advertising-performance-report.md)」で特定の pubCenter 広告ユニットが見つからない場合、その広告ユニットをデベロッパー センターのアプリに正常にリンクできていない可能性があります。 この状況は、デベロッパー センターと pubCenter でアプリの名前が一貫していない場合に発生することがあります。 デベロッパー センターのアプリに正常にリンクできなかった広告ユニットを調べるには、アカウント レベルの **[広告パフォーマンス]** レポートにアクセスし、pubCenter のアプリ名を選択します。 アカウント レベルの **[広告パフォーマンス]** レポートにアクセスするには、ダッシュボードの概要ページに移動し、ナビゲーション ウィンドウの **[広告パフォーマンス]** をクリックします。
+-   pubCenter アカウントがデベロッパー センター アカウントとは別の国または地域で登録された場合、売り上げデータはレポートでデベロッパー センターの通貨に変換されます。
+-   pubCenter アカウントからの売り上げは、pubCenter の支払方法と税金の詳細を使って支払われなくなります。 支払方法や税金の詳細を変更する必要がある場合は、デベロッパー センターで行う必要があります。 詳しくは、「[pubCenter とデベロッパー センターの受取りアカウントと税プロファイルの統合](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md)」をご覧ください。
+-   デベロッパー センターで作成された新しい広告ユニットで発生する売り上げの支払いを受け取るには、デベロッパー センターで支払いと課税の方法を設定する必要があります。 詳しくは、「[pubCenter とデベロッパー センターの受取りアカウントと税プロファイルの統合](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md)」をご覧ください。
+-   デベロッパー センターで作成した新しい広告ユニットによる売り上げは、デベロッパー センターの支払方法と税金の詳細を使って支払われます。 デベロッパー センターで支払方法と税金の詳細を管理する方法について詳しくは、「[受取りアカウントの設定と税関連の書類](setting-up-your-payout-account-and-tax-forms.md)」をご覧ください。
+-   pubCenter の支払レポートがデベロッパー センター アカウントで参照できるようになりました。 デベロッパー センターでの支払レポートについて詳しくは、「[支払いの要約](payout-summary.md)」をご覧ください。
+-   pubCenter で設定したアプリ プロモーション キャンペーンはすべて、自動的に一時停止されます。 今後は、デベロッパー センターで新しいキャンペーンを作成してください。
 
-> **Note**  You will no longer be able to create ad units or new app promotion campaigns in pubCenter. For information on how to create ad units in Dev Center, see [Monetize with ads](monetize-with-ads.md). For information on how to create app promotion campaigns in Dev Center, see [Create an ad campaign for your app](create-an-ad-campaign-for-your-app.md).
+> **注:** pubCenter で広告ユニットや新しいアプリ プロモーション キャンペーンを作成できなくなります。 デベロッパー センターで広告ユニットを作成する方法については、「[広告による収益獲得](monetize-with-ads.md)」をご覧ください。 デベロッパー センターでアプリ プロモーション キャンペーンを作成する方法については、「[アプリの広告キャンペーンの作成](create-an-ad-campaign-for-your-app.md)」をご覧ください。
 
-## Additional notes and recommendations
+## その他の注意点と推奨事項
 
 
--   Be sure to link all of your pubCenter accounts (with non-matching Microsoft accounts) to the Dev Center account in which you would like to manage them.
--   Do not sign up for a new account in pubCenter, unless you wish to monetize Xbox apps. All your monetization and app promotion needs can now be managed in your Dev Center account.
--   You will no longer be able to create new ad units in pubCenter. Create new ad units in Dev Center only going forward. If you wish to edit your existing ad units, please contact Support.
--   A new pubCenter account may have been created for you, under the same Microsoft account, to link to your Dev Center account with the same Microsoft account. Use the new accounts drop-down in the top-right corner of pubCenter pages to view and manage information for your different pubCenter accounts.
--   To receive payments for earnings accrued on new ad units created in Dev Center, you must set up your payment and tax instruments in Dev Center. For more info, see [pubCenter-DevCenter payout account and tax profile consolidation](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md).
+-   すべての pubCenter アカウントを (一致していない Microsoft アカウントで)、それらを管理するためのデベロッパー センター アカウントにリンクしてください。
+-   Xbox アプリで収益を得る場合以外は、pubCenter の新しいアカウントにサインアップしないでください。 収益確保とアプリ プロモーションのすべてのニーズは、デベロッパー センター アカウントで管理できるようになりました。
+-   pubCenter では新しい広告ユニットを作成できなくなります。 今後は、デベロッパー センターだけで新しい広告ユニットを作成してください。 既存の広告ユニットを編集する場合は、サポートにお問い合わせください。
+-   同じ Microsoft アカウントでデベロッパー センター アカウントにリンクするために、新しい PubCenter アカウントが同じ Microsoft アカウントの下で作成されている可能性があります。 pubCenter ページの右上隅にある新しいアカウントのドロップダウンを使用して、さまざまな pubCenter アカウントの情報を表示および管理してください。
+-   デベロッパー センターで作成された新しい広告ユニットで発生する売り上げの支払いを受け取るには、デベロッパー センターで支払いと課税の方法を設定する必要があります。 詳しくは、「[pubCenter とデベロッパー センターの受取りアカウントと税プロファイルの統合](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md)」をご覧ください。
 
-## Frequently asked questions
+## よく寄せられる質問
 
 
-### Why didn’t I receive my Microsoft Advertising payout this month?
+### 今月、Microsoft Advertising の売り上げを受け取っていないのはなぜですか。
 
-This is usually due to one or more of the following reasons:
+これは通常、以下の理由の 1 つ以上のためです。
 
--   Your [payout account and tax profile details](setting-up-your-payout-account-and-tax-forms.md) were not set up correctly in Dev Center.
--   Your pubCenter account has not been linked to your Dev Center account.
+-   [受取りアカウントと税プロファイルの詳細](setting-up-your-payout-account-and-tax-forms.md)がデベロッパー センターで正しく設定されていなかった。
+-   pubCenter アカウントがデベロッパー センター アカウントにリンクされていなかった。
 
-For more info, see [pubCenter-DevCenter payout account and tax profile consolidation](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md)
-### I am unable to create new ad units in pubCenter. What's going on?
+詳しくは、「[pubCenter とデベロッパー センターの受取りアカウントと税プロファイルの統合](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md)」をご覧ください。
+### PubCenter で新しい広告ユニットを作成できません。 何が起こったのでしょうか。
 
-Creating new ad units is no longer supported in pubCenter. If you have integrated the Microsoft Ad mediator control in your app, an ad unit will automatically get created on the back end when you upload your app to the Windows Store. Alternately, you could also manually create a new standalone ad unit in Dev Center from your app's **Monetize with ads** page.
+PubCenter では、新しい広告ユニットの作成はサポートされなくなりました。 アプリで Microsoft 広告メディエーター コントロールを統合している場合、広告ユニットはアプリを Windows ストアにアップロードするときにバック エンドで自動的に作成されます。 または、アプリの **[広告で収入を増やす]** ページから、手動で新しいスタンドアロンの広告ユニットを作成することもできます。
 
-### How do I create ad units in Dev Center?
+### デベロッパー センターで広告ユニットを作成するにはどうすればいいですか。
 
-From your app's page in Dev Center, click **Monetization** &gt; **Monetize with ads**. For more information on creating ad units in Dev Center, see [Monetize with ads](monetize-with-ads.md).
+デベロッパー センターのアプリのページから、**[収益化]**、**[広告で収入を増やす]** の順にクリックします。 デベロッパー センターでの広告ユニットの作成方法について詳しくは、「[広告による収益獲得](monetize-with-ads.md)」をご覧ください。
 
-### I installed the latest version of the ad mediator extension and I added the ad mediator control to my app. Do I also need to go to pubCenter and create a new ad unit?
+### 広告メディエーター拡張機能の最新バージョンをインストールし、広告メディエーター コントロールをアプリに追加しました。 PubCenter にアクセスして、新しい広告ユニットも作成する必要がありますか。
 
-If you are using the latest version of the [ad mediator extension](http://go.microsoft.com/fwlink/p/?LinkId=518026), we will automatically create a new ad unit for you when you upload your app to the Windows Store. You no longer need to go to pubCenter and manually create a new ad unit. If ad unit creation failed for some reason, you will receive an email with details of recommended next steps.
+[広告メディエーター拡張機能](http://go.microsoft.com/fwlink/p/?LinkId=518026)の最新バージョンを使用している場合、アプリを Windows ストアにアップロードするときに新しい広告ユニットが自動的に作成されます。 PubCenter にアクセスして、新しい広告ユニットを手動で作成する必要はなくなりました。 何らかの理由で広告ユニットの作成が失敗した場合は、推奨される次の手順の詳細が記載されたメールが送信されます。
 
-### I am still using an older version of the ad mediator control in my app and I need to get a new ad unit ID. How do I create ad units?
+### まだアプリで以前のバージョンの広告メディエーター コントロールを使用していて、新しい広告ユニット ID を取得する必要があります。 広告ユニットを作成するにはどうすればいいですか。
 
-You can create a new ad unit for your app in the Dev Center dashboard. From your app's page in Dev Center, click **Monetization** &gt; **Monetize with ads**. For more information on creating ad units in Dev Center, see [Monetize with ads](monetize-with-ads.md).
+デベロッパー センター ダッシュ ボードで、アプリの新しい広告ユニットを作成することができます。 デベロッパー センターのアプリのページから、**[収益化]**、**[広告で収入を増やす]** の順にクリックします。 デベロッパー センターでの広告ユニットの作成方法について詳しくは、「[広告による収益獲得](monetize-with-ads.md)」をご覧ください。
 
-### My ad units got created automatically because I used the ad mediator control, and I confirmed that ads are being served. I also manually created several other ad units from Dev Center. Do I need to do anything more to get paid for earnings on these ad units?
+### 広告メディエーター コントロールを使用していて、広告が提供されていることを確認したため、広告ユニットが自動的に作成されました。 デベロッパー センターから手動で他のいくつかの広告ユニットも作成しました。 これらの広告ユニットの売り上げの支払いを受けるには、他にも何かする必要がありますか。
 
-Log in to pubCenter with the same Microsoft account that you use for Dev Center, and ensure your Payment and Tax Instruments are set up accurately. You will receive payout on these new ad units during the first week of the month if the accrued earnings crosses the threshold limit.
+デベロッパー センターで使うものと同じ Microsoft アカウントで pubCenter にログインし、支払いと課税の方法が正確に設定されていることを確認します。 これらの新しい広告ユニットで発生した売り上げがしきい値を超えると、毎月の第 1 週中にその支払いを受けます。
 
-### I am unable to create new app promotion campaigns in pubCenter. Some of my app promotion campaigns have also been automatically paused. Is this expected?
+### PubCenter で新しいアプリ プロモーション キャンペーンを作成できません。 また、一部のアプリ プロモーション キャンペーンが自動的に一時停止されています。 これは予測されるものですか。
 
-You will only be able to create app promotion campaigns in Dev Center going forward. Some of your app promotion campaigns in pubCenter may have been paused as part of this integration. Please create new app promotion campaigns in Dev Center going forward.
+今後は、デベロッパー センターでのみアプリ プロモーション キャンペーンを作成できます。 この統合の一部として、PubCenter の一部のアプリ プロモーション キャンペーンが一時停止されている可能性があります。 今後は、デベロッパー センターで新しいアプリ プロモーション キャンペーンを作成してください。
 
-### How do I create app promotion campaigns in Dev Center?
+### デベロッパー センターでアプリ プロモーション キャンペーンを作成するにはどうすればいいですか。
 
-From your app's page in Dev Center, click **Monetization** &gt; **Promote your app**. For more information on creating ad campaigns for your apps in Dev Center, see [Create an ad campaign for your app](create-an-ad-campaign-for-your-app.md).
+デベロッパー センターのアプリのページから、**[収益化]**、**[アプリの宣伝]** の順にクリックします。 デベロッパー センターでアプリの広告キャンペーンを作成する方法について詳しくは、「[アプリの広告キャンペーンの作成](create-an-ad-campaign-for-your-app.md)」をご覧ください。
 
-### Where can I see performance data in Dev Center?
+### デベロッパー センターのパフォーマンス データはどこで参照できますか。
 
-From your app's page in Dev Center, click **Analytics** &gt; **Microsoft Advertising performance**. For more information, see [Advertising performance report](advertising-performance-report.md).
+デベロッパー センターのアプリのページから、**[分析]**、**[マイクロソフト アドバタイジングのパフォーマンス]** の順にクリックします。 詳しくは、「[広告のパフォーマンスのレポート](advertising-performance-report.md)」をご覧ください。
 
-### How do I manage my payment method and tax details in Dev Center?
+### デベロッパー センターで支払い方法と税金の詳細を管理するにはどうすればいいですか。
 
-See [Setting up your payout account and tax forms](setting-up-your-payout-account-and-tax-forms.md).
+「[受取りアカウントの設定と税関連の書類](setting-up-your-payout-account-and-tax-forms.md)」をご覧ください。
 
-### Where can I find payout reports in Dev Center?
+### デベロッパー センターで支払いレポートはどこで確認できますか。
 
-See [Payout summary](payout-summary.md).
+「[支払いの要約](payout-summary.md)」をご覧ください。
 
-### I linked my pubCenter account to my Dev Center account, but I am unable to find ad units under the app I used them in. Where can I find them?
+### PubCenter アカウントをデベロッパー センター アカウントにリンクしましたが、アプリで使用した広告ユニットが見つかりません。 広告ユニットはどこにありますか。
 
-If you cannot find a particular pubCenter ad unit on your [Advertising performance report](advertising-performance-report.md), we may have been unable to successfully link that ad unit to an app in Dev Center. This can happen if you used that ad unit in multiple apps, if you used that ad unit in apps that do not belong to the same Dev Center account, or if the ad unit has not been serving any ads in the last few days. To see ad units that we were unable to link successfully to your apps in Dev Center, visit the account-level **Advertising performance** report and select the pubCenter app name. To access the account-level **Advertising performance** report, go to your dashboard overview page and click **Advertising performance** in the navigation pane.
+「[広告のパフォーマンスのレポート](advertising-performance-report.md)」で特定の pubCenter 広告ユニットが見つからない場合、その広告ユニットをデベロッパー センターのアプリに正常にリンクできていない可能性があります。 この状況は、複数のアプリでその広告ユニットを使用した場合、同じデベロッパー センター アカウントに属していないアプリでその広告ユニットを使用した場合、または過去数日間に広告ユニットが広告を提供しなかった場合に発生します。 デベロッパー センターのアプリに正常にリンクできなかった広告ユニットを調べるには、アカウント レベルの **[広告パフォーマンス]** レポートにアクセスし、pubCenter のアプリ名を選択します。 アカウント レベルの **[広告パフォーマンス]** レポートにアクセスするには、ダッシュボードの概要ページに移動し、ナビゲーション ウィンドウの **[広告パフォーマンス]** をクリックします。
 
-### I used to see my ad units under an app in my Dev Center account, but now I can't find them. What’s going on?
+### デベロッパー センター アカウントでアプリの下で広告ユニットを確認していましたが、現在はそれらを見つけられません。 何が起こったのでしょうか。
 
-This could happen if no ads served in your ad units for a few days. Go to the account-level **Advertising performance** report in Dev Center and look for data for these ad units.
+この状況は、数日間に広告ユニットで広告が提供されなかった場合に発生することがあります。 デベロッパー センターでアカウントレベルの **[広告パフォーマンス]** レポートにアクセスし、それらの広告ユニットのデータを探します。
 
-### How do I find out if my pubCenter account has been linked to my Dev Center account successfully?
+### pubCenter アカウントがデベロッパー センター アカウントに正常にリンクされたかどうかを調べるには、どうすればよいですか。
 
-If you have the same Microsoft account associated with your pubCenter and Dev Center accounts, your accounts will be automatically linked and you would start seeing your pubCenter earnings reports in your Dev Center account. If your pubCenter and Dev Center accounts were associated with different Microsoft accounts, you will start seeing your pubCenter account earnings reports on Dev Center 24 hours after you link your pubCenter account to your Dev Center account.
+pubCenter アカウントとデベロッパー センター アカウントに関連付けられた同じ Microsoft アカウントがある場合、アカウントは自動的にリンクされ、デベロッパー センター アカウントで pubCenter の収益レポートを見ることができるようになります。 pubCenter アカウントとデベロッパー センター アカウントが別々の Microsoft アカウントに関連付けられていた場合、pubCenter アカウントをデベロッパー センター アカウントにリンクした 24 時間後に、デベロッパー センターで pubCenter アカウントの収益レポートを見ることができるようになります。
 
-### When do I need to complete the linking of my pubCenter accounts to my Dev Center account?
+### pubCenter アカウントのデベロッパー センター アカウントへのリンクは、いつ完了する必要がありますか。
 
-We recommend that you ensure all your pubCenter accounts are linked to your Dev Center account at your earliest possible convenience.
+できるだけ早い時期に、すべての PubCenter アカウントをデベロッパー センター アカウントにリンクすることをお勧めします。
 
-### I am now seeing a new accounts drop-down in my pubCenter Dashboard. What is this?
+### pubCenter ダッシュ ボードに、新しいアカウントのドロップダウンが表示されるようになりました。 これは何ですか。
 
-As part of the pubCenter-Dev Center integration, a new pubCenter account may have been created for you on the back end to link to your Dev Center account. In this pubCenter accounts drop-down, you can choose the account for which you would like to review data.
+PubCenter とデベロッパー センターの統合の一環として、デベロッパー センター アカウントにリンクするために、バック エンドで新しい pubCenter アカウントが作成された可能性があります。 この pubCenter アカウントのドロップダウンで、データを確認するアカウントを選択できます。
 
-### I see a slight difference between the data reported in pubCenter and Dev Center. Is this expected?
+### PubCenter とデベロッパー センターで報告されているデータの間にわずかな違いがあります。 これは予測されるものですか。
 
-Yes, there could be a slight difference in the data shown in pubCenter and Dev Center reports. This could be because data in pubCenter is reported in the time zone of the pubCenter account and data in Dev Center is reported in UTC.
+はい、pubCenter とデベロッパー センターのレポートに表示されるデータにはわずかな違いがあることがあります。 これは、PubCenter のデータが pubCenter アカウントのタイム ゾーンで報告され、デベロッパー センターのデータが UTC で報告されるためです。
 
  
 

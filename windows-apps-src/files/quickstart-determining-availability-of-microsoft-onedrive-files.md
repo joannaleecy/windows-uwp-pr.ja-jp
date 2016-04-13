@@ -1,54 +1,56 @@
 ---
 ms.assetid: 3604524F-112A-474F-B0CA-0726DC8DB885
-title: Determining availability of Microsoft OneDrive files
-description: Determine if a Microsoft OneDrive file is available using the StorageFile.IsAvailable property.
+title: Microsoft OneDrive ファイルが利用可能かどうかの確認
+description: StorageFile.IsAvailable プロパティを使って、Microsoft OneDrive ファイルが利用可能かどうかを確認します。
 ---
-# Determining availability of Microsoft OneDrive files
+# Microsoft OneDrive ファイルが利用可能かどうかの確認
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-** Important APIs **
+** 重要な API **
 
--   [**FileIO class**](https://msdn.microsoft.com/library/windows/apps/Hh701440)
--   [**StorageFile class**](https://msdn.microsoft.com/library/windows/apps/BR227171)
--   [**StorageFile.IsAvailable property**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.storagefile.isavailable.aspx)
+-   [**FileIO クラス**](https://msdn.microsoft.com/library/windows/apps/Hh701440)
+-   [**StorageFile クラス**](https://msdn.microsoft.com/library/windows/apps/BR227171)
+-   [**StorageFile.IsAvailable プロパティ**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.storagefile.isavailable.aspx)
 
-Determine if a Microsoft OneDrive file is available using the [**StorageFile.IsAvailable**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.storagefile.isavailable.aspx) property.
+[
+            **StorageFile.IsAvailable**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.storagefile.isavailable.aspx) プロパティを使って、Microsoft OneDrive ファイルが利用可能かどうかを確認します。
 
-## Prerequisites
+## 必要条件
 
--   **Understand async programming for Universal Windows Platform (UWP) apps**
+-   **ユニバーサル Windows プラットフォーム (UWP) アプリの非同期プログラミングについての理解**
 
-    You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/Mt187337). To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](https://msdn.microsoft.com/library/windows/apps/Mt187334).
+    C# や Visual Basic での非同期アプリの作成方法については、「[C# または Visual Basic での非同期 API の呼び出し](https://msdn.microsoft.com/library/windows/apps/Mt187337)」をご覧ください。 C++ での非同期アプリの作成方法については、「[C++ での非同期プログラミング](https://msdn.microsoft.com/library/windows/apps/Mt187334)」をご覧ください。
 
--   **App capabilty declarations**
+-   **アプリ機能の宣言**
 
-    See [File access permissions](file-access-permissions.md).
+    「[ファイル アクセス許可](file-access-permissions.md)」をご覧ください。
 
-## Using the StorageFile.IsAvailable property
+## StorageFile.IsAvailable プロパティの使用
 
-Users are able to mark OneDrive files as either available-offline (default) or online-only. This capability enables users to move large files (such as pictures and videos) to their OneDrive, mark them as online-only, and save disk space (the only thing kept locally is a metadata file).
+ユーザーは、OneDrive ファイルを "オフラインで利用可能" (既定) または "オンラインのみ" とマークできます。 この機能を使うと、大容量のファイル (写真やビデオなど) を自分の OneDrive に移動し、オンラインのみとマークすることで、ディスク領域を節約できます (ローカルに保存されるのはメタデータ ファイルのみです)。
 
-[**StorageFile.IsAvailable**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.storagefile.isavailable.aspx), is used to determine if a file is currently available. The following table shows the value of the **StorageFile.IsAvailable** property in various scenarios.
+[**StorageFile.IsAvailable**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.storagefile.isavailable.aspx) は、ファイルが現在利用可能であるかどうかを判別するために使われます。 次の表に、さまざまなシナリオでの **StorageFile.IsAvailable** プロパティの値を示します。
 
-| Type of file                              | Online | Metered network        | Offline |
+| ファイルの種類                              | オンライン | 従量制課金接続        | オフライン |
 |-------------------------------------------|--------|------------------------|---------|
-| Local file                                | True   | True                   | True    |
-| OneDrive file marked as available-offline | True   | True                   | True    |
-| OneDrive file marked as online-only       | True   | Based on user settings | False   |
-| Network file                              | True   | Based on user settings | False   |
+| ローカル ファイル                                | True   | True                   | True    |
+| オフラインで利用可能とマークされている OneDrive ファイル | True   | True                   | True    |
+| オンラインのみとマークされている OneDrive ファイル       | True   | ユーザー設定に基づく | False   |
+| ネットワーク ファイル                              | True   | ユーザー設定に基づく | False   |
 
  
 
-The following steps illustrate how to determine if a file is currently available.
+次の手順では、ファイルが現在利用できるかどうかを判別する方法を示しています。
 
-1.  Declare a capability appropriate for the library you want to access.
-2.  Include the [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346) namespace. This namespace includes the types for managing files, folders, and application settings. It also includes the needed [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) type.
-3.  Acquire a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) object for the desired file(s). If you are enumerating a library, this step is usually accomplished by calling the [**StorageFolder.CreateFileQuery**](https://msdn.microsoft.com/library/windows/apps/BR227252) method and then calling the resulting [**StorageFileQueryResult**](https://msdn.microsoft.com/library/windows/apps/BR208046) object's [**GetFilesAsync**](https://msdn.microsoft.com/en-us/library/windows/apps/br227276.aspx) method. The **GetFilesAsync** method returns an [IReadOnlyList](http://go.microsoft.com/fwlink/p/?LinkId=324970) collection of **StorageFile** objects.
-4.  Once you have the access to a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) object representing the desired file(s), the value of the [**StorageFile.IsAvailable**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.storagefile.isavailable.aspx) property reflects whether or not the file is available.
+1.  アクセスするライブラリに適した機能を宣言します。
+2.  [
+            **Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346) 名前空間を含めます。 この名前空間には、ファイル、フォルダー、アプリケーション設定を管理するための型が含まれています。 また、必要な [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) 型も含まれています。
+3.  必要なファイルの [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) オブジェクトを取得します。 ライブラリを列挙する場合、通常、この手順は [**StorageFolder.CreateFileQuery**](https://msdn.microsoft.com/library/windows/apps/BR227252) メソッドを呼び出し、結果の [**StorageFileQueryResult**](https://msdn.microsoft.com/library/windows/apps/BR208046) オブジェクトの [**GetFilesAsync**](https://msdn.microsoft.com/en-us/library/windows/apps/br227276.aspx) メソッドを呼び出して行います。 **GetFilesAsync** メソッドは、**StorageFile** オブジェクトの [IReadOnlyList](http://go.microsoft.com/fwlink/p/?LinkId=324970) コレクションを返します。
+4.  目的のファイルを表す [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) オブジェクトにアクセスできるようになると、[**StorageFile.IsAvailable**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.storagefile.isavailable.aspx) プロパティの値は、ファイルが利用できるかどうかを表します。
 
-The following generic method illustrates how to enumerate any folder and return the collection of [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) objects for that folder. The calling method then iterates over the returned collection referencing the [**StorageFile.IsAvailable**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.storagefile.isavailable.aspx) property for each file.
+次の汎用的なメソッドは、フォルダーを列挙し、そのフォルダーの [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) オブジェクトのコレクションを返す方法を示しています。 その後、呼び出し元メソッドで、各ファイルの [**StorageFile.IsAvailable**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.storagefile.isavailable.aspx) プロパティを参照する返されたコレクションを反復処理します。
 
 ```CSharp
 /// <summary>

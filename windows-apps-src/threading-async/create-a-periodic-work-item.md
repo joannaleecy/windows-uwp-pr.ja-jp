@@ -1,30 +1,30 @@
 ---
 ms.assetid: 1B077801-0A58-4A34-887C-F1E85E9A37B0
-title: Create a periodic work item
-description: Learn how to create a work item that repeats periodically.
+title: 定期的な作業項目の作成
+description: 定期的に実行される作業項目の作成方法を説明します。
 ---
-# Create a periodic work item
+# 定期的な作業項目の作成
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-** Important APIs **
+** 重要な API **
 
 -   [**CreatePeriodicTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967915)
 -   [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587)
 
-Learn how to create a work item that repeats periodically.
+定期的に実行される作業項目の作成方法を説明します。
 
-## Create the periodic work item
+## 定期的な作業項目の作成
 
-Use the [**CreatePeriodicTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967915) method to create a periodic work item. Supply a lambda that accomplishes the work, and use the *period* parameter to specify the interval between submissions. The period is specified using a [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/BR225996) structure. The work item will be resubmitted every time the period elapses, so make sure the period is long enough for work to complete.
+定期的な作業項目を作成するには、[**CreatePeriodicTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967915) メソッドを使います。 作業を実行するラムダを指定し、*period* パラメーターを使って送信の間隔を指定します。 period パラメーターは [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/BR225996) 構造体を使って指定します。 この期間が経過するたびに作業項目が再送信されるため、作業を完了できる十分な長さを確保してください。
 
-[**CreateTimer**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.threading.threadpooltimer.createtimer.aspx) returns a [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587) object. Store this object in case the timer needs to be canceled.
+[**CreateTimer**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.threading.threadpooltimer.createtimer.aspx) は [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587) オブジェクトを返します。 タイマーを取り消す必要が生じた場合は、このオブジェクトを格納します。
 
-> **Note**  Avoid specifying a value of zero (or any value less than one millisecond) for the interval. This causes the periodic timer to behave as a single-shot timer instead.
+> **注:** 間隔の値を 0 にする (または 1 ミリ秒未満の値にする) ことは避けてください。 この場合、定期タイマーは 1 回限りのタイマーとして動作します。
 
-> **Note**  You can use [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) to access the UI and show progress from the work item.
+> **注:** [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) を使って UI にアクセスしたり、作業項目の進捗状況を表示したりすることができます。
 
-The following example creates a work item that runs once every 60 seconds:
+次の例では、60 秒ごとに 1 回実行される作業項目を作成します。
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -76,11 +76,11 @@ The following example creates a work item that runs once every 60 seconds:
 >         }), period);
 > ```
 
-## Handle cancellation of the periodic work item (optional)
+## 定期的な作業項目の取り消しの処理 (オプション)
 
-If needed, you can handle cancellation of the periodic timer with a [**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926). Use the [**CreatePeriodicTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967915) overload to supply an additional lambda that handles cancellation of the periodic work item.
+必要であれば、[**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926) を使って、定期タイマーの取り消しを処理できます。 定期的な作業項目の取り消しを処理するラムダを追加で指定するには、[**CreatePeriodicTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967915) オーバーロードを使います。
 
-The following example creates a periodic work item that repeats every 60 seconds and it also supplies a cancellation handler:
+次の例では、60 秒ごとに実行される定期的な作業項目を作成します。ここでは取り消しハンドラーも指定しています。
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp
@@ -175,9 +175,9 @@ The following example creates a periodic work item that repeats every 60 seconds
 >         }));
 > ```
 
-## Cancel the timer
+## タイマーの取り消し
 
-When necessary, call the [**Cancel**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.threading.threadpooltimer.cancel.aspx) method to stop the periodic work item from repeating. If the work item is running when the periodic timer is cancelled it is allowed to complete. The [**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926) (if provided) is called when all instances of the periodic work item have completed.
+必要に応じて [**Cancel**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.threading.threadpooltimer.cancel.aspx) メソッドを呼び出し、定期的な作業項目の繰り返しを停止します。 定期タイマーが取り消されたときに作業項目が実行中だった場合には、完了するまで実行することができます。 定期的な作業項目のすべてのインスタンスが完了したときに、[**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926) が呼び出されます (指定していた場合)。
 
 > [!div class="tabbedCodeSnippets"]
 > ``` csharp
@@ -187,15 +187,15 @@ When necessary, call the [**Cancel**](https://msdn.microsoft.com/en-us/library/w
 > PeriodicTimer->Cancel();
 > ```
 
-## Remarks
+## 注釈
 
-For information about single-use timers, see [Use a timer to submit a work item](use-a-timer-to-submit-a-work-item.md).
+1 回限りのタイマーについて詳しくは、「[タイマーを使った作業項目の送信](use-a-timer-to-submit-a-work-item.md)」をご覧ください。
 
-## Related topics
+## 関連トピック
 
-* [Submit a work item to the thread pool](submit-a-work-item-to-the-thread-pool.md)
-* [Best practices for using the thread pool](best-practices-for-using-the-thread-pool.md)
-* [Use a timer to submit a work item](use-a-timer-to-submit-a-work-item.md)
+* [スレッド プールへの作業項目の送信](submit-a-work-item-to-the-thread-pool.md)
+* [スレッド プールを使うためのベスト プラクティス](best-practices-for-using-the-thread-pool.md)
+* [タイマーを使った作業項目の送信](use-a-timer-to-submit-a-work-item.md)
  
 
 

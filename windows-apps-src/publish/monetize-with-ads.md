@@ -1,61 +1,61 @@
 ---
-Description: If your app uses ad mediation or displays banner or video interstitial ads from Microsoft Advertising, use the Monetization &gt; Monetize with ads page to manage your use of ads.
-title: Monetize with ads
+Description: アプリで Microsoft Advertising の広告仲介を使ったり、バナーやスポット広告ビデオを表示したりする場合は、[収益化] &gt; [広告で収入を増やす] ページで広告の使用を管理します。
+title: 広告による収益獲得
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 ---
 
-# Monetize with ads
+# 広告による収益獲得
 
 
-If your app uses an **AdMediatorControl**, **AdControl**, or **InterstitialAd** control to display banner or video interstitial ads, use the **Monetization** &gt; **Monetize with ads** page to manage your use of ads.
+アプリで **AdMediatorControl**、**AdControl**、または **InterstitialAd** コントロールを使用してバナー広告またはビデオのスポット広告を表示する場合は、**[収益化]** &gt; **[広告で収入を増やす]** ページで広告の使用を管理します。
 
-## Windows ad mediation
+## Windows 広告仲介
 
 
-If your app uses ad mediation, use this section to configure your mediation settings and add required parameters for each of the ad networks used by your app. For more information about the options in this section, see [Submit your app and configure ad mediation](https://msdn.microsoft.com/library/windows/apps/mt219689).
+アプリで広告仲介を使う場合は、このセクションを使って、仲介の設定を構成し、アプリで使う各広告ネットワークで必要なパラメーターを追加します。 このセクションのオプションについて詳しくは、「[アプリの提出と広告の仲介の構成](https://msdn.microsoft.com/library/windows/apps/mt219689)」をご覧ください。
 
-Ad mediation lets you optimize your in-app advertising revenue by mediating banner ad requests from multiple ad networks. For more information about ad mediation, see [Use ad mediation to maximize revenue](https://msdn.microsoft.com/library/windows/apps/mt219691).
+広告仲介によって、複数の広告ネットワークからのバナー広告要求を仲介してアプリ内広告の収益を最大限に増やすことができます。 広告の仲介について詳しくは、「[広告の仲介を追加して収益を最大限に高める](https://msdn.microsoft.com/library/windows/apps/mt219691)」をご覧ください。
 
-## COPPA compliance
+## COPPA 準拠
 
-For purposes of the Children's Online Privacy Protection Act (“COPPA”), you must notify Microsoft if your app is directed at children under the age of 13. If you use Dev Center to indicate to Microsoft that your app is directed at children under the age of 13, Microsoft will take steps to disable its behavioral advertising services when delivering advertising into your app. If your app is directed at children under the age of 13, you have certain obligations under COPPA.
+アプリが 13 歳未満の子供を対象としている場合、児童オンライン プライバシー保護法 ("COPPA") に従って、マイクロソフトに通知する必要があります。 デベロッパー センターを使用して、アプリの対象が 13 歳未満の子供であることをマイクロソフトに通知した場合、マイクロソフトはアプリに広告を配信する際に、行動広告サービスを無効にする手順を実行します。 アプリの対象が 13 歳未満の子供である場合、COPPA の下で特定の義務が発生します。
 
-For more information on your obligations under COPPA, please see [this page](http://go.microsoft.com/fwlink/p/?linkid=536558).
+COPPA の下での義務について詳しくは、[こちらのページ](http://go.microsoft.com/fwlink/p/?linkid=536558)をご覧ください。
 
-## Microsoft affiliate ads
+## Microsoft アフィリエイト広告
 
-Check the box in this section if you want to show Microsoft affiliate ads in your app. If you check this box, ads for products in the Store, including music, games, movies, apps, hardware and software, will be served to your app when no ads from other ad networks are available. When users click the ads and bus products in the Store within a given attribution window, you will earn a commission on approved purchases.
+Microsoft アフィリエイト広告をアプリに表示する場合は、このセクションのボックスをオンにします。 このボックスをオンにすると、他の広告ネットワークから広告が配信されない場合にのみ、音楽、ゲーム、映画、アプリ、ハードウェア、ソフトウェアなど、ストアの製品の広告がアプリに表示されます。 ユーザーが広告をクリックし、所定の属性を備えたウィンドウでストアの製品を購入すると、承認された購入について手数料を獲得できます。
 
-If you change this selection, you do not need to republish your app for the changes to take effect. For more information about Microsoft affiliate ads, see [About affiliate ads](about-affiliate-ads.md).
+この選択を変更した場合、変更を反映させるためにアプリを再公開する必要はありません。 Microsoft アフィリエイト広告について詳しくは、「[アフィリエイト広告について](about-affiliate-ads.md)」をご覧ください。
 
-> **Note**  If your app uses ad mediation (that is, it uses an **AdMediatorControl** to display ads), your app can show affiliate ads only if your ad mediation settings are configured to show ads from Microsoft.
+> **注**  アプリで広告仲介を使用するときは (つまり、**AdMediatorControl** を使用して広告を表示する場合)、Microsoft からの広告を表示するように広告仲介が設定されている場合にのみ、アプリでアフィリエイト広告を表示できます。
 
-## Community ads
+## コミュニティ広告
 
-Check the box in this section if you want to cross-promote your app with apps from other developers. If you check this box and then [create a community ad campaign](create-an-ad-campaign-for-your-app.md), your app will show ads for apps published by other developers who also create community ad campaigns, and ads for their apps will show in your app. Community ads are free, and they are shown only when no ads from other ad networks are available.
+自分のアプリと他の開発者が公開したアプリを相互に販売促進する場合は、このセクションのボックスをオンにします。 このボックスをオンにして、[コミュニティ広告キャンペーンを作成](create-an-ad-campaign-for-your-app.md)すると、自分のアプリの広告が他の開発者 (コミュニティ広告キャンペーンの作成者) が公開したアプリに表示され、他の開発者のアプリの広告が自分のアプリに表示されます。 コミュニティ広告は無料で、他の広告ネットワークからの広告が配信されない場合にのみ表示されます。
 
-If you change this selection, you do not need to republish your app for the changes to take effect. For more information about community ads, see [About community ads](about-community-ads.md).
+この選択を変更した場合、変更を反映させるためにアプリを再公開する必要はありません。 コミュニティ広告について詳しくは、「[コミュニティ広告について](about-community-ads.md)」をご覧ください。
 
-## Microsoft Advertising ad units
+## Microsoft Advertising 広告ユニット
 
-Use this section to create a Microsoft Advertising ad unit. You only need to create ad units in the following scenarios:
+このセクションを使って、Microsoft Advertising 広告ユニットを作成できます。 次のシナリオでのみ、広告ユニットを作成する必要があります。
 
--   Your app shows banner ads from Microsoft Advertising by using an [AdControl](https://msdn.microsoft.com/library/mt313154.aspx) object.
--   Your app shows video interstitial ads from Microsoft Advertising by using an [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx) object.
+-   アプリで [AdControl](https://msdn.microsoft.com/library/mt313154.aspx) オブジェクトを使って、Microsoft Advertising のバナー広告を表示する。
+-   アプリで [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx) オブジェクトを使って、Microsoft Advertising のスポット広告ビデオを表示する。
 
-To create an ad unit for these scenarios:
+これらのシナリオの広告ユニットを作成するには
 
-1.  Name the ad unit.
-2.  Select the ad unit type (**Banner** or **Video interstitial**).
-3.  Select the device type (**Mobile** or **PC/Tablet**).
-4.  Click **Create ad unit**.
+1.  広告ユニットに名前を付けます。
+2.  広告ユニットの種類 (**[バナー]** または **[ビデオ (スポット)]**) を選びます。
+3.  デバイスの種類 (**[モバイル]** または **[PC/タブレット]**) を選びます。
+4.  **[広告ユニットを作成]** をクリックします。
 
-Your ad units appear in a table at the bottom of this section. For each ad unit you will see an **Application ID** and an **Ad unit ID**. To show ads in your app, you'll need to use these values in your code:
+広告ユニットは、このセクションの下部にある表に表示されます。 広告ユニットごとに**アプリケーション ID** と**広告ユニット ID** が表示されます。 アプリに広告を表示するには、コードでこれらの値を使う必要があります。
 
--   If your app shows banner ads, assign these values to the [ApplicationId](https://msdn.microsoft.com/library/mt313174.aspx) and [AdUnitId](https://msdn.microsoft.com/library/mt313171.aspx) properties of your [AdControl](https://msdn.microsoft.com/library/mt313154.aspx) object.
--   If your app shows video interstitial ads, pass these values to the [RequestAd](https://msdn.microsoft.com/library/mt313192.aspx) method of your [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx) object.
+-   アプリにバナー広告を表示する場合は、これらの値を [AdControl](https://msdn.microsoft.com/library/mt313154.aspx) オブジェクトの [ApplicationId](https://msdn.microsoft.com/library/mt313174.aspx) プロパティと [AdUnitId](https://msdn.microsoft.com/library/mt313171.aspx) プロパティに割り当てる必要があります。
+-   アプリでスポット広告ビデオを表示する場合は、[InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx) オブジェクトの [RequestAd](https://msdn.microsoft.com/library/mt313192.aspx) メソッドにこれらの値を渡します。
 
-> **Note**  If your app uses ad mediation to show banner ads from Microsoft Advertising (that is, it uses an **AdMediatorControl** object), you do not need to request ad units. In this scenario, Microsoft Advertising ad units are automatically generated for you.
+> **注**  アプリで広告の仲介を使って、Microsoft Advertising からバナー広告を表示する (つまり、**AdMediatorControl** オブジェクトを使う) 場合は、広告ユニットを要求する必要はありません。 このシナリオでは、Microsoft Advertising 広告ユニットが自動的に生成されます。
 
  
 

@@ -1,60 +1,63 @@
 ---
-title: Display a splash screen for more time
-description: Display a splash screen for more time by creating an extended splash screen for your app. This extended screen imitates the splash screen shown when your app is launched, but can be customized.
+title: スプラッシュ画面の表示時間の延長
+description: アプリに追加スプラッシュ画面を作成すれば、より長い時間、スプラッシュ画面を表示することができます。 この追加画面は、アプリを起動したときに表示されるスプラッシュ画面に似ていますが、カスタマイズできます。
 ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
 ---
 
-# Display a splash screen for more time
+# スプラッシュ画面の表示時間の延長
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-**Important APIs**
+**重要な API**
 
--   [**SplashScreen class**](https://msdn.microsoft.com/library/windows/apps/br224763)
--   [**Window.SizeChanged event**](https://msdn.microsoft.com/library/windows/apps/br209055)
--   [**Application.OnLaunched method**](https://msdn.microsoft.com/library/windows/apps/br242335)
+-   [**SplashScreen クラス**](https://msdn.microsoft.com/library/windows/apps/br224763)
+-   [**Window.SizeChanged イベント**](https://msdn.microsoft.com/library/windows/apps/br209055)
+-   [**Application.OnLaunched メソッド**](https://msdn.microsoft.com/library/windows/apps/br242335)
 
-Display a splash screen for more time by creating an extended splash screen for your app. This extended screen imitates the splash screen shown when your app is launched, but can be customized. Whether you want to show real-time loading information or simply give your app extra time to prepare its initial UI, an extended splash screen lets you define the launch experience.
+アプリに追加スプラッシュ画面を作成すれば、より長い時間、スプラッシュ画面を表示することができます。 この追加この画面は、アプリを起動したときに表示されるスプラッシュ画面に似ていますが、カスタマイズできます。 読み込み状況をリアルタイムにユーザーに表示する場合や、アプリの最初の UI の準備に時間がかかる場合、追加スプラッシュ画面を使って起動時のエクスペリエンスを定義できます。
 
-> **Note**  The phrase "extended splash screen" in this topic refers to a splash screen that stays on the screen for an extended period of time. It does not mean a subclass that derives from the [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) class.
+> **注:** このトピックで "追加スプラッシュ画面" という用語は、表示される時間が延長されたスプラッシュ画面を指します。 [
+            **SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) クラスを拡張するサブクラスやこのクラスから派生したサブクラスという意味ではありません。
 
  
 
-Make sure your extended splash screen accurately imitates the default splash screen by following these recommendations:
+追加スプラッシュ画面の外観は、次の推奨事項に従って、既定のスプラッシュ画面に厳密に似せるようにしてください。
 
--   Your extended splash screen page should use a 620 x 300 pixel image that is consistent with the image specified for your splash screen in your app manifest (your app's splash screen image). In Microsoft Visual Studio 2015, splash screen settings are stored in the **Splash Screen** section of the **Visual Assets** tab in your app manifest (Package.appxmanifest file).
--   Your extended splash screen should use a background color that is consistent with the background color specified for your splash screen in your app manifest (your app's splash screen background).
--   Your code should use the [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) class to position your app's splash screen image at the same screen coordinates as the default splash screen.
--   Your code should respond to window resize events (such as when the screen is rotated or your app is moved next to another app onscreen) by using the [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) class to reposition items on your extended splash screen.
+-   この追加スプラッシュ画面ページでは、アプリ マニフェスト内でスプラッシュ画面に指定したイメージ (アプリのスプラッシュ画面のイメージ) と一致する 620 x 300 ピクセルのイメージを使います。 Microsoft Visual Studio 2015 では、スプラッシュ画面の設定はアプリ マニフェストの **[ビジュアル資産]** タブの **[スプラッシュ画面]** セクション (Package.appxmanifest ファイル) に保存されています。
+-   追加スプラッシュ画面では、アプリ マニフェスト内でスプラッシュ画面に指定した背景色 (アプリのスプラッシュ画面の背景) と一致する背景色を使います。
+-   コードでは、[**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) クラスを使って、アプリのスプラッシュ画面画像の座標が、既定のスプラッシュ画面と同じになるようにします。
+-   コードでは、[**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) クラスを使って追加スプラッシュ画面上の項目を配置し直すことで、ウィンドウ サイズ変更イベント (画面が回転されたり、画面上で次の別のアプリに移動したりするなど) に応答するようにする必要があります。
 
-Use the following steps to create an extended splash screen that effectively imitates the default splash screen.
+次の手順を使うと、既定のスプラッシュ画面とよく似た追加スプラッシュ画面を作成できます。
 
-## Add a **Blank Page** item to your existing app
-
-
-This topic assumes you want to add an extended splash screen to an existing Universal Windows Platform (UWP) app project using C#, Visual Basic, or C++.
-
--   Open your app in Visual Studio 2015.
--   Press or open **Project** from the menu bar and click **Add New Item**. An **Add New Item** dialog box will appear.
--   From this dialog box, add a new **Blank Page** to your app. This topic names the extended splash screen page "ExtendedSplash".
-
-Adding a **Blank Page** item generates two files, one for markup (ExtendedSplash.xaml) and another for code (ExtendedSplash.xaml.cs).
-
-## Essential XAML for an extended splash screen
+## **[空白のページ]** 項目を既にあるアプリに追加する
 
 
-Follow these steps to add an image and progress control to your extended splash screen.
+また、このトピックでは、C#、Visual Basic、C++ を使って、既にあるユニバーサル Windows プラットフォーム (UWP) アプリ プロジェクト用の追加スプラッシュ画面を作成することを想定しています。
 
-In your ExtendedSplash.xaml file:
+-   Visual Studio 2015 でアプリを開きます。
+-   メニュー バーから **[プロジェクト]** を開き、**[新しい項目の追加]** をクリックします。 **[新しい項目の追加]** ダイアログ ボックスが表示されます。
+-   このダイアログ ボックスから新しい**空白のページ**をアプリに追加します。 このトピックでは、追加スプラッシュ画面ページの名前を "ExtendedSplash" とします。
 
--   Change the [**Background**](https://msdn.microsoft.com/library/windows/apps/br209396) property of the default [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) element to match the background color you set for your app's splash screen in your app manifest (in the **Visual Assets** section of your Package.appxmanifest file). The default splash screen color is a light gray (hex value \#464646). Note that this **Grid** element is provided by default when you create a new **Blank Page**. You don't have to use a **Grid**; it's just a convenient base for building an extended splash screen.
--   Add a [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) element to the [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704). You'll use this **Canvas** to position your extended splash screen image.
--   Add an [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752) element to the [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267). Use the same 600 x 320 pixel image for your extended splash screen that you chose for the default splash screen.
--   (Optional) Add a progress control to show users that your app is loading. This topic adds a [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538), instead of a determinate or indeterminate [**ProgressBar**](https://msdn.microsoft.com/library/windows/apps/br227529).
+**[空白のページ]** 項目を追加すると、2 つのファイルが生成されます。1 つはマークアップ用 (ExtendedSplash.xaml)、もう 1 つはコード用 (ExtendedSplash.xaml.cs) です。
 
-Add the following code to define [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) and [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752) elements, as well as a [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) control, in ExtendedSplash.xaml:
+## 追加スプラッシュ画面の基本的な XAML
+
+
+次の手順に従って、追加スプラッシュ画面にイメージやプログレス コントロールを追加します。
+
+ExtendedSplash.xaml ファイルで次の操作を行います。
+
+-   既定の [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) 要素の [**Background**](https://msdn.microsoft.com/library/windows/apps/br209396) プロパティを変更して、アプリ マニフェスト (Package.appxmanifest ファイルの **[ビジュアル資産]** セクション) でアプリのスプラッシュ画面に設定した背景色に合わせます。 既定のスプラッシュ画面の色は薄い灰色 (16 進数 #464646) です。 新しい**空白のページ**を作成すると、この **Grid** 要素が既定で使われることに注意してください。 必ずしも **Grid** を使う必要はありません。追加スプラッシュ画面を作り始めるときに便利なだけです。
+-   [
+            **Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) に [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 要素を追加します。 この **Canvas** を使って追加スプラッシュ画面にイメージを配置します。
+-   [
+            **Image**](https://msdn.microsoft.com/library/windows/apps/br242752) 要素を [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) に追加します。 既定のスプラッシュ画面用に選んだ同じ 600 × 320 ピクセルの画像を追加スプラッシュ画面に使います。
+-   (省略可能) アプリが読み込み中であることをユーザーに示すにはプログレス コントロールを追加します。 このトピックでは、確定または不定の [**ProgressBar**](https://msdn.microsoft.com/library/windows/apps/br227529) ではなく、[**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) を追加します。
+
+次のコードを追加して、[**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 要素、[**Image**](https://msdn.microsoft.com/library/windows/apps/br242752) 要素、[**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) コントロールを ExtendedSplash.xaml に定義します。
 
 ```xaml
     <Grid Background="#464646">
@@ -65,29 +68,29 @@ Add the following code to define [**Canvas**](https://msdn.microsoft.com/library
     </Grid>
 ```
 
-**Note**  This code sets the width of the [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) to 20 pixels. You can manually set its width to a value that works for your app, however, the control will not render at widths of less than 20 pixels.
+**注:** このコードでは [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) の幅を 20 ピクセルに設定しています。 この幅はアプリに合わせて手動で設定できますが、20 ピクセル未満の幅ではコントロールがレンダリングされません。
 
  
 
-## Essential code for an extended splash screen class
+## 追加スプラッシュ画面クラスの基本的なコード
 
 
-Your extended splash screen needs to respond whenever the window size (Windows only) or orientation changes. The position of the image you use must be updated so that your extended splash screen looks good no matter how the window changes.
+追加スプラッシュ画面はウィンドウのサイズ (Windows のみ) や向きの変更に応答する必要があります。 ウィンドウのサイズがどのように変更されても追加スプラッシュ画面が適切に表示されるように、使う画像の位置は更新される必要があります。
 
-Use these steps to define methods to correctly display your extended splash screen.
+これらの手順を使って、追加スプラッシュ画面を正しく表示するためのメソッドを定義します。
 
-1.  **Add required namespaces**
+1.  **必要な名前空間を追加する**
 
-    You'll need to add the following namespaces to ExtendedSplash.xaml.cs to access the [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) class, [**Window.SizeChanged**](https://msdn.microsoft.com/library/windows/apps/br209055) events.
+    次の名前空間を ExtendedSplash.xaml.cs に追加して、[**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) クラス、[**Window.SizeChanged**](https://msdn.microsoft.com/library/windows/apps/br209055) イベントにアクセスできるようにします。
 
     ```cs
     using Windows.ApplicationModel.Activation;
     using Windows.UI.Core;
     ```
 
-2.  **Create a partial class and declare class variables**
+2.  **部分クラスを作成し、クラス変数を宣言する**
 
-    Include the following code in ExtendedSplash.xaml.cs to create a partial class to represent an extended splash screen.
+    次のコードを ExtendedSplash.xaml.cs に挿入して、追加スプラッシュ画面を表す部分クラスを作成します。
 
     ```cs
     partial class ExtendedSplash : Page
@@ -101,11 +104,11 @@ Use these steps to define methods to correctly display your extended splash scre
     }
     ```
 
-    These class variables are used by several methods. The `splashImageRect` variable stores the coordinates where the system displayed the splash screen image for the app. The `splash` variable stores a [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) object, and the `dismissed` variable tracks whether or not the splash screen that is displayed by the system has been dismissed.
+    これらのクラス変数は、複数のメソッドで使われます。 `splashImageRect` は、アプリのスプラッシュ画面のイメージが表示された座標を格納する変数です。 `splash` は [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) オブジェクトを格納する変数であり、`dismissed` は表示されたスプラッシュ画面が閉じられたかどうかを追跡する変数です。
 
-3.  **Define a constructor for your class that correctly positions the image**
+3.  **画像を正しく配置するクラスのコンストラクターを定義する**
 
-    The following code defines a constructor for the extended splash screen class that listens for window resizing events, positions the image and (optional) progress control on the extended splash screen, creates a frame for navigation, and calls an asynchronous method to restore a saved session state.
+    次のコードでは、ウィンドウ サイズ変更イベントをリッスンする追加スプラッシュ画面クラスのコンストラクターを定義し、追加スプラッシュ画面にイメージ (必要に応じてプログレス コントロール) を配置し、ナビゲーション用のフレームを作成し、保存済みのセッションを復元する非同期メソッドを呼び出しています。
 
     ```cs
     public ExtendedSplash(SplashScreen splashscreen, bool loadState)
@@ -135,11 +138,11 @@ Use these steps to define methods to correctly display your extended splash scre
     }
     ```
 
-    Make sure to register your [**Window.SizeChanged**](https://msdn.microsoft.com/library/windows/apps/br209055) handler (`ExtendedSplash_OnResize` in the example) in your class constructor so that your app positions the image correctly in your extended splash screen.
+    アプリが追加スプラッシュ画面でイメージを正しく配置できるように、クラス コンストラクターに [**Window.SizeChanged**](https://msdn.microsoft.com/library/windows/apps/br209055) ハンドラー (この例の `ExtendedSplash_OnResize`) を登録します。
 
-4.  **Define a class method to position the image in your extended splash screen**
+4.  **追加スプラッシュ画面にイメージを配置するクラスのメソッドを定義する**
 
-    This code demonstrates how to position the image on the extended splash screen page with the `splashImageRect` class variable.
+    次のコードでは、`splashImageRect` クラス変数を使って追加スプラッシュ画面ページにイメージを配置する方法を示しています。
 
     ```cs
     void PositionImage()
@@ -151,9 +154,10 @@ Use these steps to define methods to correctly display your extended splash scre
     }
     ```
 
-5.  **(Optional) Define a class method to position a progress control in your extended splash screen**
+5.  **(省略可能) 追加スプラッシュ画面にプログレス コントロールを配置するクラスのメソッドを定義する**
 
-    If you chose to add a [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) to your extended splash screen, position it relative to the splash screen image. Add the following code to ExtendedSplash.xaml.cs to center the **ProgressRing** 32 pixels below the image.
+    [
+            **ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) を追加スプラッシュ画面に追加する場合、スプラッシュ画面のイメージに相対的に配置します。 ExtendedSplash.xaml.cs で、**ProgressRing** をイメージの 32 ピクセル下の中央に配置する次のコードを追加します。
 
     ```cs
     void PositionRing()
@@ -163,9 +167,9 @@ Use these steps to define methods to correctly display your extended splash scre
     }
     ```
 
-6.  **Inside the class, define a handler for the Dismissed event**
+6.  **クラス内で Dismissed イベントのハンドラーを定義する**
 
-    In ExtendedSplash.xaml.cs, respond when the [**SplashScreen.Dismissed**](https://msdn.microsoft.com/library/windows/apps/br224764) event occurs by setting the `dismissed` class variable to true. If your app has setup operations, add them to this event handler.
+    ExtendedSplash.xaml.cs で、`dismissed` クラス変数を true に設定することで、[**SplashScreen.Dismissed**](https://msdn.microsoft.com/library/windows/apps/br224764) イベントが発生したときに応答するようにします。 アプリにセットアップ操作がある場合は、それらの操作をこのイベント ハンドラーに追加します。
 
     ```cs
     // Include code to be executed when the system has transitioned from the splash screen to the extended splash screen (application&#39;s first view).
@@ -177,7 +181,7 @@ Use these steps to define methods to correctly display your extended splash scre
     }
     ```
 
-    After app setup is complete, navigate away from your extended splash screen. The following code defines a method called `DismissExtendedSplash` that navigates to the `MainPage` defined in your app's MainPage.xaml file.
+    アプリのセットアップが完了したら、追加スプラッシュ画面から移動するようにします。 次のコードでは、アプリの MainPage.xaml ファイルで定義されている `MainPage` に移動する `DismissExtendedSplash` というメソッドを定義しています。
 
     ```cs
     void DismissExtendedSplash()
@@ -189,9 +193,9 @@ Use these steps to define methods to correctly display your extended splash scre
     }
     ```
 
-7.  **Inside the class, define a handler for Window.SizeChanged events**
+7.  **クラス内で Window.SizeChanged イベントのハンドラーを定義する**
 
-    Prepare your extended splash screen to reposition its elements if a user resizes the window. This code responds when a [**Window.SizeChanged**](https://msdn.microsoft.com/library/windows/apps/br209055) event occurs by capturing the new coordinates and repositioning the image. If you added a progress control to your extended splash screen, reposition it inside this event handler as well.
+    ユーザーによってウィンドウのサイズが変更された場合にその要素を配置し直すように、追加スプラッシュ画面を準備します。 このコードでは、新しい座標を取得してイメージを配置し直すことで、[**Window.SizeChanged**](https://msdn.microsoft.com/library/windows/apps/br209055) イベントが発生したときに応答するようにしています。 追加スプラッシュ画面にプログレス コントロールを追加した場合は、同様に、このイベント ハンドラー内でそのコントロールを配置し直すようにします。
 
     ```cs
     void ExtendedSplash_OnResize(Object sender, WindowSizeChangedEventArgs e)
@@ -209,13 +213,13 @@ Use these steps to define methods to correctly display your extended splash scre
     }
     ```
 
-    **Note**  Before you try to get the image location make sure the class variable (`splash`) contains a valid [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) object, as shown in the example.
+    **注:** イメージの場所を取得する前に、クラス変数 (`splash`) に有効な [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) オブジェクトが含まれていることを確認してください (例を参照)。
 
      
 
-8.  **(Optional) Add a class method to restore a saved session state**
+8.  **(省略可能) クラス メソッドを追加して保存済みのセッション状態を復元する**
 
-    The code you added to the [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) method in Step 4: [Modify the launch activation handler](#modify-the-launch-activation-handler) causes your app to display an extended splash screen when it launches. To consolidate all methods related to app launch in your extended splash screen class, you could consider adding an asynchronous method to your ExtendedSplash.xaml.cs file to restore the app's state.
+    手順 4「[起動アクティブ化ハンドラーの変更](#modify-the-launch-activation-handler)」で [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) メソッドに追加したコードにより、アプリでは起動時に追加スプラッシュ画面が表示されます。 追加スプラッシュ画面クラスにアプリの起動に関連するすべてのメソッドを統合するには、ExtendedSplash.xaml.cs ファイルに、アプリの状態を復元する非同期メソッドを追加することを検討します。
 
     ```cs
     async void RestoreStateAsync(bool loadState)
@@ -227,16 +231,16 @@ Use these steps to define methods to correctly display your extended splash scre
     }
     ```
     
-    When you modify the launch activation handler in App.xaml.cs, you'll also set `loadstate` to true if the previous [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) of your app was **Terminated**. If so, the `RestoreStateAsync` method restores the app to its previous state. For an overview of app launch, suspension, and termination, see [App lifecycle](app-lifecycle.md).
+    App.xaml.cs ファイルで起動アクティブ化ハンドラーを変更するときは、アプリの以前の [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) が **Terminated** だった場合にも `loadstate` を true に設定します。 その場合、`RestoreStateAsync` メソッドは、アプリを前の状態に復元します。 アプリの起動、中断、終了の概要については、「[アプリのライフサイクル](app-lifecycle.md)」をご覧ください。
 
-## Modify the launch activation handler
+## 起動アクティブ化ハンドラーの変更
 
 
-When your app is launched, the system passes splash screen information to the app's launch activation event handler. You can use this information to correctly position the image on your extended splash screen page. You can get this splash screen information from the activation event arguments that are passed to your app's [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) handler (see the `args` variable in the following code).
+アプリが起動されるとき、スプラッシュ画面の情報がアプリの起動アクティブ化イベント ハンドラーに渡されます。 この情報を使って、追加スプラッシュ画面ページにイメージを適切に配置できます。 このスプラッシュ画面の情報は、アプリの [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) ハンドラーに渡されるアクティブ化イベント引数から取得できます (次のコードの `args` 変数を参照)。
 
-If you have not already overridden the [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) handler for your app, see [App lifecycle](app-lifecycle.md) to learn how to handle activation events.
+アプリの [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) ハンドラーをまだオーバーライドしていない場合、アクティブ化イベントを処理する方法については、「[アプリのライフサイクル](app-lifecycle.md)」をご覧ください。
 
-In App.xaml.cs, add the following code to create and display an extended splash screen.
+App.xaml.cs ファイルで、追加スプラッシュ画面を作成して表示する次のコードを挿入します。
 
 ```cs
 protected override void OnLaunched(LaunchActivatedEventArgs args)
@@ -252,14 +256,14 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
 }
 ```
 
-## Complete code
+## コードを完成させる
 
 
-> **Note**  The following code slightly differs from the snippets shown in the previous steps.
--   ExtendedSplash.xaml includes a `DismissSplash` button. When this button is clicked, an event handler, `DismissSplashButton_Click`, calls the `DismissExtendedSplash` method. In your app, call `DismissExtendedSplash` when your app is done loading resources or initializing its UI.
--   This app also uses a UWP app project template, which uses [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) navigation. As a result, in App.xaml.cs, the launch activation handler ([**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)) defines a `rootFrame` and uses it to set the content of the app window.
+> **注:** 次のコードは、前の手順に示したスニペットとは少し異なります。
+-   ExtendedSplash.xaml には `DismissSplash` ボタンが含まれています。 このボタンがクリックされると、イベント ハンドラーである `DismissSplashButton_Click` が `DismissExtendedSplash` メソッドを呼び出します。 アプリで、リソースの読み込みまたは UI の初期化の完了時に `DismissExtendedSplash` を呼び出します。
+-   このアプリは、[**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) ナビゲーションを使う、UWP アプリのプロジェクト テンプレートも使います。 その結果、App.xaml.cs ファイルで、起動アクティブ化ハンドラー ([**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)) は `rootFrame` を定義し、それを使ってアプリのウィンドウのコンテンツを設定します。
 
-ExtendedSplash.xaml: This example includes a `DismissSplash` button because it doesn't have app resources to load. In your app, dismiss the extended splash screen automatically when your app is done loading resources or preparing its initial UI.
+ExtendedSplash.xaml: この例には `DismissSplash` ボタンが含まれています。読み込むアプリのリソースがないためです。 アプリでは、リソースの読み込みまたはその最初の UI の準備の完了時に追加スプラッシュ画面が自動的に閉じられます。
 
 ```xaml
 <Page
@@ -283,7 +287,7 @@ ExtendedSplash.xaml: This example includes a `DismissSplash` button because it d
 </Page>
 ```
 
-ExtendedSplash.xaml.cs: Note that the `DismissExtendedSplash` method is called from the click event handler for the `DismissSplash` button. In your app, you won't need a `DismissSplash` button. Instead, call `DismissExtendedSplash` when your app is done loading resources and you want to navigate to its main page.
+ExtendedSplash.xaml.cs: `DismissExtendedSplash` メソッドが `DismissSplash` ボタンのクリック イベント ハンドラーから呼び出されることに注意してください。 アプリでは、`DismissSplash` ボタンは不要です。 その代わりに、アプリがリソースの読み込みの完了時に `DismissExtendedSplash` を呼び出し、そのメイン ページに移動します。
 
 ```cs
 using System;
@@ -409,9 +413,9 @@ namespace SplashScreenExample
 }
 ```
 
-App.xaml.cs: This project was created using the UWP app **Blank App (XAML)** project template in Visual Studio 2015. Both the `OnNavigationFailed` and `OnSuspending` event handlers are automatically generated and don't need to be changed to implement an extended splash screen. This topic only modifies `OnLaunched`.
+App.xaml.cs: このプロジェクトは、UWP アプリの **[新しいアプリケーション (XAML)]** プロジェクト テンプレートを使って Visual Studio 2015 で作成されました。 `OnNavigationFailed` と `OnSuspending` の両方のイベント ハンドラーは自動的に生成され、追加スプラッシュ画面を実装するために変更する必要はありません。 このトピックでは、`OnLaunched` のみを変更します。
 
-If you didn't use a project template for your app, see Step 4: [Modify the launch activation handler](#modify_the_launch_activation_handler) for an example of a modified `OnLaunched` that doesn't use [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) navigation.
+アプリにプロジェクト テンプレートを使わなかった場合、[**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) ナビゲーションを使用しないように変更した `OnLaunched` の例については、手順 4「[起動アクティブ化ハンドラーの変更](#modify_the_launch_activation_handler)」をご覧ください。
 
 ```cs
 using System;
@@ -528,17 +532,17 @@ namespace SplashScreenExample
 }
 ```
 
-## Related topics
+## 関連トピック
 
 
-* [App lifecycle](app-lifecycle.md)
+* [アプリのライフサイクル](app-lifecycle.md)
 
-**Reference**
+**リファレンス**
 
-* [**Windows.ApplicationModel.Activation namespace**](https://msdn.microsoft.com/library/windows/apps/br224766)
-* [**Windows.ApplicationModel.Activation.SplashScreen class**](https://msdn.microsoft.com/library/windows/apps/br224763)
-* [**Windows.ApplicationModel.Activation.SplashScreen.ImageLocation property**](https://msdn.microsoft.com/library/windows/apps/br224765)
-* [**Windows.ApplicationModel.Core.CoreApplicationView.Activated event**](https://msdn.microsoft.com/library/windows/apps/br225018)
+* [**Windows.ApplicationModel.Activation 名前空間**](https://msdn.microsoft.com/library/windows/apps/br224766)
+* [**Windows.ApplicationModel.Activation.SplashScreen クラス**](https://msdn.microsoft.com/library/windows/apps/br224763)
+* [**Windows.ApplicationModel.Activation.SplashScreen.ImageLocation プロパティ**](https://msdn.microsoft.com/library/windows/apps/br224765)
+* [**Windows.ApplicationModel.Core.CoreApplicationView.Activated イベント**](https://msdn.microsoft.com/library/windows/apps/br225018)
 
  
 

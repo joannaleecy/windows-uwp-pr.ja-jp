@@ -1,38 +1,38 @@
 ---
 ms.assetid: 374D1983-60E0-4E18-ABBB-04775BAA0F0D
-title: Scan from your app
-description: Learn here how to scan content from your app by using a flatbed, feeder, or auto-configured scan source.
+title: アプリからスキャンする
+description: フラットベッド、フィーダー、自動構成の各スキャン ソースを使ってアプリからコンテンツをスキャンする方法について説明します。
 ---
-# Scan from your app
+# アプリからスキャンする
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-** Important APIs **
+** 重要な API **
 
 -   [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250)
 -   [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393)
 -   [**DeviceClass**](https://msdn.microsoft.com/library/windows/apps/BR225381)
 
-Learn here how to scan content from your app by using a flatbed, feeder, or auto-configured scan source.
+フラットベッド、フィーダー、自動構成の各スキャン ソースを使ってアプリからコンテンツをスキャンする方法について説明します。
 
-**Important**  The [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) APIs are part of the desktop [device family](https://msdn.microsoft.com/library/windows/apps/Dn894631). Apps can use these APIs only on the desktop version of Windows 10.
+**重要**  [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) API はデスクトップ [デバイス ファミリ](https://msdn.microsoft.com/library/windows/apps/Dn894631) の一部です。 アプリでは、デスクトップ版の Windows 10 でのみこれらの API を使用できます。
 
-To scan from your app, you must first list the available scanners by declaring a new [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) object and getting the [**DeviceClass**](https://msdn.microsoft.com/library/windows/apps/BR225381) type. Only scanners that are installed locally with WIA drivers are listed and available to your app.
+アプリからスキャンを実行するにはまず、新しい [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) オブジェクトを宣言し、[**DeviceClass**](https://msdn.microsoft.com/library/windows/apps/BR225381) 型を取得することによって、利用できるスキャナーをリストする必要があります。 WIA ドライバーと共にインストールされているローカルのスキャナーのみがリストされ、アプリから利用することができます。
 
-After your app has listed available scanners, it can use the auto-configured scan settings based on the scanner type, or just scan using the available flatbed or feeder scan source. To use auto-configured settings, the scanner must be enabled for auto-configuration must not be equipped with both a flatbed and a feeder scanner. For more info, see [Auto-Configured Scanning](https://msdn.microsoft.com/library/windows/hardware/Ff539393).
+利用できるスキャナーをリストしたら、スキャナーの種類に基づく自動構成のスキャン設定を使うか、フラットベッドとフィーダーのいずれかのスキャン ソースを使ってスキャンのみを実行することができます。 自動構成設定を使うには、スキャナーが自動構成に対応し、なおかつ、フラットベッドとフィーダーのどちらか一方のみを備えたスキャナーであることが必要です。 詳細については、[自動構成スキャン](https://msdn.microsoft.com/library/windows/hardware/Ff539393)に関するページを参照してください。
 
-## Enumerate available scanners
+## 利用できるスキャナーを列挙する
 
-Windows does not detect scanners automatically. You must perform this step in order for your app to communicate with the scanner. In this example, the scanner device enumeration is done using the [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) namespace.
+Windows はスキャナーを自動的には検出しません。 アプリがスキャナーと通信するためには、次の手順を実行する必要があります。 この例では、[**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) 名前空間を使ってスキャナー デバイスの列挙処理を実行しています。
 
-1.  First, add these using statements to your class definition file.
+1.  まず、クラス定義ファイルに次の using ステートメントを追加します。
 
 ``` csharp
     using Windows.Devices.Enumeration;
     using Windows.Devices.Scanners;
 ```
 
-2.  Next, implement a device watcher to start enumerating scanners. For more info, see [Enumerate devices](enumerate-devices.md).
+2.  次に、スキャナーの列挙処理を開始するためのデバイス ウォッチャーを実装します。 詳しくは、「[デバイスの列挙](enumerate-devices.md)」をご覧ください。
 
 ```csharp
     void InitDeviceWatcher()
@@ -46,7 +46,7 @@ Windows does not detect scanners automatically. You must perform this step in or
     }
 ```
 
-3.  Create an event handler for when a scanner is added.
+3.  スキャナーが追加されたタイミングで実行されるイベント ハンドラーを作成します。
 
 ```csharp
     private async void OnScannerAdded(DeviceWatcher sender,  DeviceInformation deviceInfo)
@@ -75,34 +75,35 @@ Windows does not detect scanners automatically. You must perform this step in or
     }
 ```
 
-## Scan
+## スキャン
 
-1.  **Get an ImageScanner object**
+1.  **ImageScanner オブジェクトを取得する**
 
-For each [**ImageScannerScanSource**](https://msdn.microsoft.com/library/windows/apps/Dn264238) enumeration type, whether it's **Default**, **AutoConfigured**, **Flatbed**, or **Feeder**, you must first create an [**ImageScanner**](https://msdn.microsoft.com/library/windows/apps/Dn263806) object by calling the [**ImageScanner.FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.scanners.imagescanner.fromidasync) method, like this.
+[
+            **ImageScannerScanSource**](https://msdn.microsoft.com/library/windows/apps/Dn264238) 列挙型の各メンバーに対しては、**Default**、**AutoConfigured**、**Flatbed**、**Feeder** のいずれであれ、最初に [**ImageScanner.FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.scanners.imagescanner.fromidasync) メソッドを呼び出して [**ImageScanner**](https://msdn.microsoft.com/library/windows/apps/Dn263806) オブジェクトを作成する必要があります。その例を次に示します。
 
  ```csharp
     ImageScanner myScanner = await ImageScanner.FromIdAsync(deviceId);
  ```
 
-2.  **Just scan**
+2.  **スキャンのみ**
 
-To scan with the default settings, your app relies on the [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) namespace to select a scanner and scans from that source. No scan settings are changed. The possible scanners are auto-configure, flatbed, or feeder. This type of scan will most likely produce a successful scan operation, even if it scans from the wrong source, like flatbed instead of feeder.
+既定の設定でスキャンを行う場合、アプリは、[**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) 名前空間を使ってスキャナーを選び、そのソースからスキャンを実行します。 スキャンの設定は変更されません。 この場合、自動構成、フラットベッド、フィーダーのいずれかのスキャナーが選ばれます。 このタイプのスキャンは、意図しないソースからスキャンが実行されたとしても (意図したフィーダーではなくフラットベッドからスキャンされるなど) スキャン操作が正常に実行される可能性は最も高くなります。
 
-**Note**  If the user places the document to scan in the feeder, the scanner will scan from the flatbed instead. If the user tries to scan from an empty feeder, the scan job won't produce any scanned files.
+**注**  スキャンする文書をユーザーがフィーダーに置いた場合、フィーダーからではなくフラットベッドからスキャンが実行されます。 空のフィーダーからスキャンを実行した場合、スキャン ジョブからは一切、スキャンしたファイルが生成されません。
  
 ```csharp
     var result = await myScanner.ScanFilesToFolderAsync(ImageScannerScanSource.Default, 
         folder).AsTask(cancellationToken.Token, progress);
 ```
 
-3.  **Scan from Auto-configured, Flatbed, or Feeder source**
+3.  **自動構成、フラットベッド、フィーダーのいずれかのソースからスキャンする**
 
-Your app can use the device's [Auto-Configured Scanning](https://msdn.microsoft.com/library/windows/hardware/Ff539393) to scan with the most optimal scan settings. With this option, the device itself can determine the best scan settings, like color mode and scan resolution, based on the content being scanned. The device selects the scan settings at run time for each new scan job.
+デバイスの[自動構成スキャン](https://msdn.microsoft.com/library/windows/hardware/Ff539393)を使うと、最適なスキャン設定でスキャンを実行することができます。 このオプションでは、スキャン対象のコンテンツに応じた最適なスキャン設定 (カラー モード、スキャン解像度など) をデバイスが自動的に判断します。 スキャン設定は、新しいスキャン ジョブの実行時にその都度選択されます。
 
-**Note**  Not all scanners support this feature, so the app must check if the scanner supports this feature before using this setting.
+**注**  スキャナーによっては、この機能がサポートされない場合もあります。この機能を使う場合は、スキャナーがこの機能をサポートしているかどうかを先にチェックする必要があります。
 
-In this example, the app first checks if the scanner is capable of auto-configuration and then scans. To specify either flatbed or feeder scanner, simply replace **AutoConfigured** with **Flatbed** or **Feeder**.
+この例では、スキャナーが自動構成に対応しているかどうかをアプリがまずチェックしたうえで、スキャンを実行しています。 フラットベッド スキャナーまたはフィーダー スキャナーを指定する場合は、単に **AutoConfigured** を **Flatbed** または **Feeder** に置き換えます。
 
 ```csharp
     if (myScanner.IsScanSourceSupported(ImageScannerScanSource.AutoConfigured))
@@ -115,9 +116,9 @@ In this example, the app first checks if the scanner is capable of auto-configur
     }
 ```
 
-## Preview the scan
+## スキャンをプレビューする
 
-You can add code to preview the scan before scanning to a folder. In the example below, the app checks if the **Flatbed** scanner supports preview, then previews the scan.
+フォルダーに格納する前にスキャン結果をプレビューするコードを追加できます。 以下の例では、**Flatbed** スキャナーがプレビューをサポートしているかどうかをアプリでチェックした後、スキャン結果をプレビューしています。
 
 ```csharp
 if (myScanner.IsPreviewSupported(ImageScannerScanSource.Flatbed))
@@ -128,9 +129,9 @@ if (myScanner.IsPreviewSupported(ImageScannerScanSource.Flatbed))
                     ImageScannerScanSource.Flatbed, stream);
 ```
 
-## Cancel the scan
+## スキャンを取り消す
 
-You can let users cancel the scan job midway through a scan, like this.
+スキャンの途中でユーザーがスキャン ジョブを取り消すことができるようにする例を次に示します。
 
 ```csharp
 void CancelScanning()
@@ -148,24 +149,25 @@ void CancelScanning()
 }
 ```
 
-## Scan with progress
+## スキャンの進行状況を表示する
 
-1.  Create a **System.Threading.CancellationTokenSource** object.
+1.  **System.Threading.CancellationTokenSource** オブジェクトを作成します。
 
 ```csharp
 cancellationToken = new CancellationTokenSource();
 ```
 
-2.  Set up the progress event handler and get the progress of the scan.
+2.  進行状況のイベント ハンドラーを設定してスキャンの進行状況を取得します。
 
 ```csharp
     rootPage.NotifyUser(&quot;Scanning&quot;, NotifyType.StatusMessage);
     var progress = new Progress&lt;UInt32&gt;(ScanProgress);
 ```
 
-## Scanning to the pictures library
+## 画像ライブラリにスキャンする
 
-Users can scan to any folder dynamically using the [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/BR207881) class, but you must declare the *Pictures Library* capability in the manifest to allow users to scan to that folder. For more info on app capabilities, see [App capability declarations](https://msdn.microsoft.com/library/windows/apps/Mt270968).
+[
+            **FolderPicker**](https://msdn.microsoft.com/library/windows/apps/BR207881) クラスを使うことで、ユーザーは任意のフォルダーにスキャン結果を動的に格納することができます。ただし、画像ライブラリ フォルダーにスキャン結果を格納できるようにするには、*画像ライブラリ*の機能をマニフェストで宣言する必要があります。 アプリの機能の詳細については、「[アプリ機能の宣言](https://msdn.microsoft.com/library/windows/apps/Mt270968)」を参照してください。
 
 
 

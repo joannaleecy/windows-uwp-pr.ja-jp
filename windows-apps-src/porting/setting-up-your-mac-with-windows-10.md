@@ -1,40 +1,40 @@
 ---
-description: Use your current Mac computer to develop apps for Windows.
-title: Setting up your Mac with Windows 10
+description: 現在の Mac コンピューターを使用して、Windows 用アプリを開発します。
+title: Windows 10 を使用するための Mac のセットアップ
 ms.assetid: 6D520610-5DE0-476E-A792-AA57E002D309
 ---
 
-# Setting up your Mac with Windows 10
+# Windows 10 を使用するための Mac のセットアップ
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-Use your current Mac computer to develop apps for Windows.
+現在の Mac コンピューターを使用して、Windows 用アプリを開発します。
 
-## Run Windows on your Mac and use Visual Studio
+## Mac で Windows を実行し、Visual Studio を使う
 
-Are you ready to start developing Universal Windows apps, but you don't have a PC handy? That's okay — you can use your Mac! With popular third-party solutions like Apple Boot Camp, Oracle VirtualBox, VMware Fusion, and Parallels Desktop, you can install Windows 10 and Microsoft Visual Studio on your Apple computer.
+ユニバーサル Windows アプリの開発を始める準備は整っているのに、PC が手元にない、そういう方でも 大丈夫です。Mac を使うことができます。 Apple Boot Camp や Oracle VirtualBox、VMware Fusion、Parallels Desktop のような人気のサードパーティ ソリューションを使って、Windows 10 と Microsoft Visual Studio を Apple コンピューターにインストールできます。
 
-**Note**  You will need a Windows 10 bootable image on disk or USB flash drive. If you are a MSDN Subscriber, you can download the install image from the MSDN Subscriber Downloads center. If you aren't a subscriber, the installer can be purchased from the [Windows Store](http://apps.microsoft.com/windows/app). You can also download it from [this location](http://go.microsoft.com/fwlink/?LinkId=623906), which is useful if you are already running Windows and wish to upgrade.
+**注** ディスクまたは USB フラッシュ ドライブ上の Windows 10 の起動可能なイメージが必要です。 MSDN サブスクライバーである場合は、MSDN サブスクライバー ダウンロード センターからインストール イメージをダウンロードできます。 サブスクライバーでない場合は、[Windows ストアに関するページ](http://apps.microsoft.com/windows/app)からインストーラーを購入できます。 [この場所](http://go.microsoft.com/fwlink/?LinkId=623906)からダウンロードすることもできます。これは、Windows を既に実行中でありアップグレードする場合に便利です。
 
-Once you have Windows running, you can then install Visual Studio 2015 from [Developer downloads for Windows 10](http://go.microsoft.com/fwlink/p/?LinkId=302144) and start writing apps!
+Windows を実行したら、「[Windows 10 用のダウンロードとツール](http://go.microsoft.com/fwlink/p/?LinkId=302144)」から Visual Studio 2015 をインストールし、アプリの作成を開始できます。
 
-**Note**  If you plan to use the Visual Studio device emulators, you **must** install a 64-bit (x64) version of Windows 10 Pro or better. Unfortunately, some older Macs cannot run 64-bit Windows. Please check with Apple if your hardware is compatible on this[Apple support page](http://go.microsoft.com/fwlink/p/?LinkID=397959).
+**注** Visual Studio のデバイスのエミュレーターを使用する予定の場合、64 ビット (x64) バージョンの Windows 10 Pro 以上をインストールする**必要があります**。 ただし、以前の Mac では 64 ビット版の Windows を実行できない場合があります。 この [Apple サポート ページ](http://go.microsoft.com/fwlink/p/?LinkID=397959)で、お使いのハードウェアに互換性があるかどうかを確認してください。
 
 ## Apple Boot Camp
 
-The Boot Camp Assistant app is pre-installed on every recent Mac, and launching it will walk you through the process of installing Windows 10. All you need is a copy of Windows (from the sources listed above) and at least 30 Gb of free disk space. Once installed, you can choose to boot into Mac OSX or Windows 10. For more info, see Apple's [Boot Camp instructions page](http://go.microsoft.com/fwlink/?LinkId=623912).
+Boot Camp アシスタント アプリは最近のすべての Mac にプリインストールされていて、起動すると Windows 10 をインストールするプロセスが案内されます。 必要なのもは、上記のソースからダウンロードした Windows のコピーと 30 Gb 以上の空きディスク領域だけです。 インストールしたら、Mac OSX と Windows 10 のどちらを起動するかを選択できます。 詳しくは、Apple の [Boot Camp に関するページ](http://go.microsoft.com/fwlink/?LinkId=623912)をご覧ください。
 
 ## Parallels Desktop
 
-Using Parallels Desktop 11, you can run Windows apps side-by-side with existing Mac applications, including Visual Studio and Cortana. A pro version is available that includes extra features for developers, including improved debugging, and support for Docker and Jenkins. For more info, and a free trial version, see [Parallels Desktop](http://go.microsoft.com/fwlink/p/?LinkId=281827).
+Parallels Desktop 11 を使用すると、Visual Studio と Cortana など、Windows アプリと既存の Mac アプリケーションを並べて実行できます。 強化されたデバッグや Docker と Jenkins のサポートなど、開発者向けの追加機能を含むプロ バージョンを利用できます。 詳しい情報、および無料試用版については、[Parallels Desktop に関するページ](http://go.microsoft.com/fwlink/p/?LinkId=281827)をご覧ください。
 
 ## VMWare Fusion
 
-Fusion 8 from VMWare will let you run Visual Studio right on your Mac desktop. A pro version is available to offer developers some more advanced features such as vSphere support. For more info, and a free trial version, see [VMware Fusion](http://go.microsoft.com/fwlink/p/?LinkId=281826).
+VMWare の Fusion 8 を使うと、Mac デスクトップで Visual Studio を実行できます。 vSphere サポートなど、いくつかの高度な機能を開発者に提供するプロ バージョンを利用できます。 詳しい情報、および無料試用版については、「[VMware Fusion](http://go.microsoft.com/fwlink/p/?LinkId=281826)」をご覧ください。
 
 ## Oracle VirtualBox
 
-VirtualBox is a free application for running virtual machines on your computer, and it supports running Windows on Mac. It is a no-frills option, but the price is appealing. For more info, see [VirtualBox](http://go.microsoft.com/fwlink/p/?LinkId=280599).
+VirtualBox は、お使いのコンピューター上で仮想マシンを実行するための無料アプリケーションであり、Mac での Windows の実行をサポートしています。 余分な機能を省いたバージョンですが、価格は魅力的です。 詳しくは、「[VirtualBox](http://go.microsoft.com/fwlink/p/?LinkId=280599)」をご覧ください。
 
 
 

@@ -2,14 +2,14 @@
 Description: Microsoft UI オートメーションのコントロール パターン、それらにアクセスするためにクライアントが使うクラス、それらを実装するためにプロバイダーが使うインターフェイスを示します。
 title: コントロール パターンとインターフェイス
 ms.assetid: 2091883C-5D0C-44ED-936A-709022926A42
-label: コントロール パターンとインターフェイス
+label: Control patterns and interfaces
 template: detail.hbs
 ---
 
 コントロール パターンとインターフェイス
 ===================================================================================================
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 Microsoft UI オートメーションのコントロール パターン、それらにアクセスするためにクライアントが使うクラス、それらを実装するためにプロバイダーが使うインターフェイスを示します。
 
@@ -63,7 +63,7 @@ Microsoft UI オートメーションのコントロール パターン、それ
 
 **注:** Windows Phone ストア アプリでは、ここに示されているすべての UI オートメーションのコントロール パターンがサポートされているわけではありません。 **Annotation**、**Dock**、**Drag**、**DropTarget**、**ObjectModel** がサポートされていないパターンの例です。
 
-関連トピック
+<span id="related_topics"></span>関連トピック
 -----------------------------------------------
 
 * [カスタム オートメーション ピア](custom-automation-peers.md)
@@ -76,6 +76,6 @@ Microsoft UI オートメーションのコントロール パターン、それ
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=Mar16_HO3-->
 
 

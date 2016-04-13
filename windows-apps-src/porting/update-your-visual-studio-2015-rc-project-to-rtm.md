@@ -1,38 +1,38 @@
 ---
-description: If you have a Windows 10 project that you created with Microsoft Visual Studio 2015 RC, then you have two options when it comes to updating the project files to the format suitable for Visual Studio 2015 RTM.
-title: Update your UWP Microsoft Visual Studio 2015 RC project to RTM
+description: Microsoft Visual Studio 2015 RC で作成した Windows 10 プロジェクトがある場合、プロジェクト ファイルを Visual Studio 2015 RTM に適した形式に更新するには 2 つの方法があります。
+title: UWP Microsoft Visual Studio 2015 RC プロジェクトを RTM に更新する
 ms.assetid: 104E36CE-36DE-4E9C-A944-711C200B44EF
 ---
 
-# Update your UWP Microsoft Visual Studio 2015 RC project to RTM
+# UWP Microsoft Visual Studio 2015 RC プロジェクトを RTM に更新する
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-If you have a Windows 10 project that you created with Microsoft Visual Studio 2015 RC, then you have two options when it comes to updating the project files to the format suitable for Visual Studio 2015 RTM. The recommended method is to create a new Windows 10 project in Visual Studio 2015 RTM and copy your files into it. Alternatively, you can follow advanced documentation to edit your existing project files and move them over to the new format.
+Microsoft Visual Studio 2015 RC で作成した Windows 10 プロジェクトがある場合、プロジェクト ファイルを Visual Studio 2015 RTM に適した形式に更新するには 2 つの方法があります。 推奨される方法は、Visual Studio 2015 RTM で新しい Windows 10 プロジェクトを作成し、お使いのファイルをそのプロジェクトにコピーする方法です。 代わりに、詳細なドキュメントに従って、既存のプロジェクト ファイルを編集し、新しい形式に移行することもできます。
 
-## What you see when you open a Windows 10Visual Studio 2015 RC project in Visual Studio 2015 RTM
+## Visual Studio 2015 RTM で Windows 10Visual Studio 2015 RC プロジェクトを開いたときの表示内容
 
-When you open a Windows 10Visual Studio 2015 RC project in Visual Studio 2015 RTM, you'll see an "update required" message in **Solution Explorer**.
+Visual Studio 2015 RTM で Windows 10Visual Studio 2015 RC プロジェクトを開くと、**ソリューション エクスプ ローラー**に "更新が必要" というメッセージが表示されます。
 
-![update required](images/vsrc-to-rtm/solution-explorer.png)
+![更新が必要](images/vsrc-to-rtm/solution-explorer.png)
 
-If you access the context menu for the project in **Solution Explorer** and choose **Reload Project**, then you'll see this dialog.
+**ソリューション エクスプローラー**のプロジェクトのコンテキスト メニューにアクセスして、**[プロジェクトの再読み込み]** を選ぶと、このダイアログ ボックスが表示されます。
 
-![visual studio update required](images/vsrc-to-rtm/reload-project.png)
+![Visual Studio 更新プログラムが必要](images/vsrc-to-rtm/reload-project.png)
 
-## Create a new project and copy files into it
+## 新しいプロジェクトを作成し、ファイルをコピーする
 
-1.  Launch Visual Studio 2015 RTM and create a new Blank Application (Windows Universal) project. Remember that, by default, your new project builds an app package (an appx file) that targets the Universal device family. Change that if you're targeting one or more specific device families.
-2.  In your Visual Studio 2015 RC project, identify all of the source code files and visual asset files that you want to copy over. Using File Explorer, copy data models, view models, visual assets, Resource Dictionaries, folder structure, and anything else that you need (including AssemblyInfo.cs), to your new project. Copy or create sub-folders on disk as necessary.
-3.  Copy views (for example, MainPage.xaml and MainPage.xaml.cs) into the new project, too. Again, create new sub-folders as necessary, and remove the existing views from the project. But, before you over-write or remove a view that Visual Studio generated, keep a copy because it may be useful to refer to it later.
-4.  In **Solution Explorer**, make sure **Show All Files** is toggled on. Select the files that you copied, right-click them, and click **Include In Project**. This will automatically include their containing folders. You can then toggle **Show All Files** off if you like. An alternative workflow, if you prefer, is to use the **Add Existing Item** command, having created any necessary sub-folders in the Visual Studio **Solution Explorer**. Double-check that your visual assets have **Build Action** set to **Content** and **Copy to Output Directory** set to **Do not copy**.
-5.  Add references to any extension SDKs that you referenced in your RC project, and copy any changes over from your previous Package.appxmanifest (for example, any capabilities that you declared) to the one in the new RTM project.
+1.  Visual Studio 2015 RTM を起動し、"新しいアプリケーション (Windows ユニバーサル)" プロジェクトを新たに作成します。 既定で、新しいプロジェクトによって、ユニバーサル デバイス ファミリの対象となる 1 つのアプリ パッケージ (appx ファイル) が構築されることに注意してください。 1 つまたは複数の特定のデバイス ファミリを対象としている場合は、変更します。
+2.  Visual Studio 2015 RC プロジェクトで、コピーするすべてのソース コード ファイルとビジュアル アセット ファイルを確認します。 エクスプローラーを使って、データ モデル、ビュー モデル、ビジュアル アセット、リソース ディクショナリ、フォルダー構造、および必要なその他すべての要素 (AssemblyInfo.cs を含む) を、新しいプロジェクトにコピーします。 必要に応じて、ディスクにサブフォルダーをコピーするか、作成します。
+3.  新しいプロジェクトに、ビュー (たとえば MainPage.xaml、MainPage.xaml.cs など) もコピーします。 ここでも、必要に応じて新しいサブフォルダーを作成し、プロジェクトから既にあるビューを削除します。 ただし、Visual Studio が生成したビューを上書きまたは削除する前に、後で参照するときに役立つ場合があるため、コピーを保存しておきます。
+4.  **ソリューション エクスプローラー**で、**[すべてのファイルを表示]** がオンであることを確認します。 コピーしたファイルを選択して右クリックし、**[プロジェクトに含める]** をクリックします。 これによって、含まれるフォルダーが自動的に取り込まれます。 後で必要に応じて、**[すべてのファイルを表示]** をオフに切り替えることができます。 代替ワークフローとして、**[既存項目の追加]** コマンドを使って Visual Studio **ソリューション エクスプローラー**で必要なすべてのサブフォルダーを作成することもできます。 ビジュアル アセットで、**[ビルド アクション]** が **[コンテンツ]** に設定されており、**[出力ディレクトリにコピー]** が **[コピーしない]** に設定されていることを確認します。
+5.  RC プロジェクトで参照した任意の拡張 SDK への参照を追加し、変更を以前の Package.appxmanifest (たとえば、宣言した機能) から新しい RTM プロジェクト内の 1 つにコピーします。
 
-## Advanced: Edit your existing project files
+## 詳細設定: 既存のプロジェクト ファイルを編集する
 
-One significant difference between the Windows 10 project format of Visual Studio 2015 RC and Visual Studio 2015 RTM is that the RTM format uses [NuGet](http://docs.nuget.org/) version 3. Bear this difference in mind if you intend to manually update your project.
+Visual Studio 2015 RC と Visual Studio 2015 RTM の Windows 10 プロジェクト形式の 1 つの大きな違いは、RTM 形式では [NuGet](http://docs.nuget.org/) バージョン 3 が使われることです。 プロジェクトを手動で更新する場合は、この違いに注意してください。
 
-If you do want to manually update your project, or if you're interested in knowing the differences between the project formats of Visual Studio 2015 RC and Visual Studio 2015 RTM, then see [Migrate apps to the Universal Windows Platform (UWP)](http://msdn.microsoft.com/library/mt148501.aspx).
+プロジェクトを手動で更新する場合、または Visual Studio 2015 RC と Visual Studio 2015 RTM のプロジェクトの形式の違いを知りたい場合は、「[アプリをユニバーサル Windows プラットフォーム (UWP) へ移行する](http://msdn.microsoft.com/library/mt148501.aspx)」をご覧ください。
 
 
 

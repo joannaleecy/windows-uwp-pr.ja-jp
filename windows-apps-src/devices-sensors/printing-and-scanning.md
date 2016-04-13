@@ -1,26 +1,26 @@
 ---
 ms.assetid: 95481C7E-E905-4477-955B-90D292634E2E
-title: Printing and scanning
-description: This section describes how to print and scan from your Universal Windows app.
+title: 印刷とスキャン
+description: このセクションでは、ユニバーサル Windows アプリから印刷およびスキャンする方法について説明します。
 ---
-# Printing and scanning
+# 印刷とスキャン
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-This section describes how to print and scan from your Universal Windows app.
+このセクションでは、ユニバーサル Windows アプリから印刷およびスキャンする方法について説明します。
 
-| Topic | Description | 
+| トピック | 説明 | 
 |-------|-------------|
-| [Epson ESC/POS with formatting](epson-esc-pos-with-formatting.md) | Learn how to use the ESC/POS command language to format text, such as bold and double size characters, for your Point of Service printer. |
-| [Print from your app](print-from-your-app.md) | Learn how to print documents from a Universal Windows app. This topic also shows how to print specific pages. |
-| [Customize the print preview UI](customize-the-print-preview-ui.md) | This section describes how to customize the print options and settings in the print preview UI. |
-| [Scan from your app](scan-from-your-app.md) | Learn here how to scan content from your app by using a flatbed, feeder, or auto-configured scan source.|
+| [書式設定における Epson ESC/POS](epson-esc-pos-with-formatting.md) | POS プリンターで、ESC/POS コマンド言語を使用して、太字、倍角文字など、テキストの書式を設定する方法について説明します。 |
+| [アプリからの印刷](print-from-your-app.md) | ユニバーサル Windows アプリからドキュメントを印刷する方法について説明します。 また、このトピックでは特定のページを印刷する方法も示します。 |
+| [印刷プレビュー UI のカスタマイズ](customize-the-print-preview-ui.md) | このセクションでは、印刷プレビュー UI の印刷オプションや設定をカスタマイズする方法について説明します。 |
+| [アプリからスキャンする](scan-from-your-app.md) | フラットベッド、フィーダー、自動構成の各スキャン ソースを使ってアプリからコンテンツをスキャンする方法について説明します。|
 
-## Related topics
+## 関連トピック
 
-* [Design guidelines for printing](https://msdn.microsoft.com/library/windows/apps/Hh868178)
-* [//Build 2015 video: Developing apps that print in Windows 10](https://channel9.msdn.com/Events/Build/2015/2-94)
-* [UWP print sample](http://go.microsoft.com/fwlink/p/?LinkId=619984)
+* [印刷のガイドラインの設計](https://msdn.microsoft.com/library/windows/apps/Hh868178)
+* [//Build 2015 のビデオ: Windows 10 で印刷するアプリの開発](https://channel9.msdn.com/Events/Build/2015/2-94)
+* [UWP 印刷サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619984)
  
 
 

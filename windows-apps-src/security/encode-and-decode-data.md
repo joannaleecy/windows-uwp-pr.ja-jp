@@ -2,12 +2,13 @@
 title: データのエンコードとデコード
 description: 次のコード例は、ユニバーサル Windows プラットフォーム (UWP) アプリで base64 データと 16 進データをエンコードおよびデコードする方法を示しています。
 ms.assetid: 2CC23863-E840-48F4-B087-0479045743AC
+author: awkoren
 ---
 
 # データのエンコードとデコード
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 次のコード例は、ユニバーサル Windows プラットフォーム (UWP) アプリで base64 データと 16 進データをエンコードおよびデコードする方法を示しています。
 
@@ -37,15 +38,7 @@ public void EncodeDecodeHex()
 }
 ```
 
- 
 
- 
-
-
-
-
-
-
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=Mar16_HO5-->
 
 

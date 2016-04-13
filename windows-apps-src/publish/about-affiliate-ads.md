@@ -1,40 +1,40 @@
 ---
-Description: If your app uses an AdMediatorControl or AdControl to display banner ads, you could increase your ad fill rate and revenue by showing Microsoft affiliate ads in your app.
-title: About affiliate ads
+Description: アプリで AdMediatorControl または AdControl を使用してバナー広告を表示する場合は、Microsoft アフィリエイト広告をアプリに表示して、広告のフィル レートと収益を増やすことができます。
+title: アフィリエイト広告について
 ms.assetid: 7B5478FB-7E68-4956-82EF-B43C2873E3EF
 ---
 
-# About affiliate ads
+# アフィリエイト広告について
 
-If your app uses an **AdMediatorControl** or **AdControl** to display banner ads, you could increase your revenue and ad fill rate by showing Microsoft affiliate ads in your app for products in the Store. When users click the affiliate ads and buy products within a given attribution window, you earn revenue on approved purchases.
+アプリで **AdMediatorControl** または **AdControl** を使用してバナー広告を表示する場合は、ストア内の製品の Microsoft アフィリエイト広告をアプリに表示して、広告のフィル レートと収益を増やすことができます。 ユーザーがアフィリエイト広告をクリックして一定の期間内に製品を購入すると、承認された購入について収益を獲得できます。
 
-Here's how this program works:
+このプログラムの内容を次に示します。
 
-* After you [opt-in to the Microsoft affiliate ads program](#how-to-opt-in-to-affiliate-ads) in Dev Center, Microsoft picks ads for top products in the Store to serve to your app. These products may include apps, games, music, movies, hardware, and software.
-* Microsoft will serve affiliate ads to your app only when no ads from other ad networks are available. This is intended to help to monetize your unfilled impressions and maximize your ad fill rate.
-* When a user clicks an affiliate ad and buys any product in the Store within a given attribution window, you will be paid a revenue share or a fixed commission for the purchase (up to 10% commission). 
+* デベロッパー センターで [Microsoft アフィリエイト広告プログラムにオプトイン](#how-to-opt-in-to-affiliate-ads)すると、Microsoft がストア内の有力製品の広告を選択してアプリに提供します。 アプリ、ゲーム、音楽、映画、ハードウェア、およびソフトウェアがこれらの製品に含まれます。
+* Microsoft がアフィリエイト広告をアプリに提供するのは、他の広告ネットワークの広告が利用できない場合のみです。 これは、満たされないインプレッションを収益につなげ、広告のフィル レートを最大限に高めることを目的としています。
+* ユーザーがアフィリエイト広告をクリックして一定の期間内にストアの製品を購入すると、その購入に対する収益の配分または固定の手数料 (最大 10%) を獲得できます。 
 
-    > **Note**  You can get paid for *any* product the user purchases within the attribution window, not just the product that was promoted in your app. For free apps that are promoted in your app, you can earn a revenue share for in-app purchases made by the user within the attribution window.
+    > **注**  アプリ内で販売促進を行った製品だけでなく、一定の期間内にユーザーが購入した*すべての*製品について支払いを受けることができます。 アプリ内で販売促進を行った無料アプリについては、一定の期間内におけるユーザーのアプリ内購入の収益配分を獲得できます。
 
-* Any earnings you accrue in connection with the Microsoft affiliate ads program will be distributed to you in the [payout account you set up in Dev Center](setting-up-your-payout-account-and-tax-forms.md), along with your Microsoft advertising earnings.
-* To track the performance of the affiliate ads in your app, refer to the [affiliates performance report](affiliates-performance-report.md). You can track daily purchases made through affiliate ads in your app and the revenue share that you received.  
-
-
-## How to opt in to the affiliate ads program
-
-To opt in to the Microsoft affiliate ads program:
-
-1. Go to the **Monetization** &gt; **Monetize with ads** page in the Windows Dev Center dashboard.
-2. In the **Microsoft affiliate ads** section, check the **Show Microsoft affiliate ads in my app** box.
-
-After you check or uncheck this box, you do not need to republish your app for the changes to take effect.
+* Microsoft アフィリエイト広告プログラムに関連して獲得する売り上げは、Microsoft Advertising による売り上げと併せて、[デベロッパー センターで設定した受取りアカウント](setting-up-your-payout-account-and-tax-forms.md)に配分されます。
+* アプリ内のアフィリエイト広告のパフォーマンスを追跡するには、[アフィリエイト パフォーマンス レポート](affiliates-performance-report.md)をご覧ください。 アプリ内のアフィリエイト広告を経由して行われた 1 日の購入および受け取った収益配分を追跡できます。  
 
 
-## Related topics
+## アフィリエイト広告プログラムにオプトインする方法
+
+Microsoft アフィリエイト広告プログラムにオプトインするには、次の手順を実行します。
+
+1. Windows デベロッパー センター ダッシュボードで、**[収益化]** &gt; **[広告で収入を増やす]** ページにアクセスします。
+2. **[Microsoft affiliate ads]** (Microsoft アフィリエイト広告) セクションの **[Show Microsoft affiliate ads in my app]** (アプリに Microsoft アフィリエイト広告を表示する) チェック ボックスをオンにします。
+
+このチェック ボックスをオンまたはオフにした後は、アプリを再公開して変更を有効にする必要はありません。
 
 
-* [Monetize with ads](monetize-with-ads.md)
-* [Affiliates performance report](affiliates-performance-report.md)
+## 関連トピック
+
+
+* [広告による収益獲得](monetize-with-ads.md)
+* [アフィリエイト パフォーマンス レポート](affiliates-performance-report.md)
 
 
 <!--HONumber=Mar16_HO5-->

@@ -1,101 +1,101 @@
 ---
 ms.assetid: 79C284CA-C53A-4C24-807E-6D4CE1A29BFA
-description: This section describes how to modify your PlayReady Web app to support the changes made from the previous Windows 8.1 version to the Windows 10 version.
-title: PlayReady Encrypted Media Extension
+description: このセクションでは、以前の Windows 8.1 から、Windows 10 バージョンに加えられた変更をサポートするために、PlayReady Web アプリを変更する方法について説明します。
+title: PlayReady の Encrypted Media Extension
 ---
 
-# PlayReady Encrypted Media Extension
+# PlayReady の Encrypted Media Extension
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-This section describes how to modify your PlayReady Web app to support the changes made from the previous Windows 8.1 version to the Windows 10 version.
+このセクションでは、以前の Windows 8.1 から、Windows 10 バージョンに加えられた変更をサポートするために、PlayReady Web アプリを変更する方法について説明します。
 
-Using PlayReady media elements in Internet Explorer enables developers to create Web apps capable of providing PlayReady content to the user while enforcing the access rules defined by the content provider. This section describes how to add PlayReady media elements to your existing Web apps using only HTML5 and JavaScript.
+Internet Explorer で PlayReady メディア要素を使うと、開発者はコンテンツ プロバイダーが定義したアクセス ルールを適用しながら、ユーザーに PlayReady コンテンツを提供することのできる Web アプリを作成することができます。 ここでは、HTML5 と JavaScript のみを使って、既存の Web アプリに PlayReady メディア要素を追加する方法について説明します。
 
-## What's New in PlayReady Encrypted Media Extension
+## PlayReady の Encrypted Media Extension の新機能
 
-This section provides a list of changes made to the PlayReady Encrypted Media Extension to enable PlayReady content protection on Windows 10.
+このセクションでは、Windows 10 で PlayReady コンテンツ保護を有効にするために PlayReady Encrypted Media Extension に加えられた変更を示します。
 
-The following list describes the new features and changes made to PlayReady Encrypted Media Extension for Windows 10:
+次に、Windows 10 の PlayReady Encrypted Media Extension に関する新機能や変更点について説明します。
 
--   Added hardware digital rights management (DRM).
+-   追加されたハードウェア デジタル著作権管理 (DRM)。
 
-    Hardware-based content protection support enables secure playback of high definition (HD) and ultra-high definition (UHD) content on multiple device platforms. Key material (including private keys, content keys, and any other key material used to derive or unlock said keys), and decrypted compressed and uncompressed video samples are protected by leveraging hardware security.
+    ハードウェア ベースのコンテンツ保護により、複数のデバイス プラットフォーム上で、高解像度 (HD) と超高解像度 (UHD) のコンテンツを安全に再生できます。 キー マテリアル (秘密キー、コンテンツ キー、これらのキーを派生またはロック解除するために使われるその他のキー マテリアルを含みます)、および暗号化解除された圧縮および非圧縮ビデオ サンプルは、ハードウェア セキュリティを利用して保護されます。
 
--   Provides proactive acquisition of non-persistent licenses.
--   Provides acquisition of multiple licenses in one message.
+-   永続的でないライセンスの事前の取得を提供します。
+-   1 つのメッセージで複数のライセンスを取得できるようにします。
 
-    You can either use a PlayReady object with multiple key identifiers (KeyIDs) as in Windows 8.1, or use [content decryption model data (CDMData)](https://go.microsoft.com/fwlink/p/?LinkID=626819) with multiple KeyIDs.
+    Windows 8.1 のように PlayReady オブジェクトと複数のキー識別子 (KeyID) を使うか、[Content Decryption Model データ (CDMData)](https://go.microsoft.com/fwlink/p/?LinkID=626819) と複数の KeyID を使うことができます。
 
-    **Note**  In Windows 10, multiple key identifiers are supported under &lt;KeyID&gt; in CDMData.
+    **注:** Windows 10 では、複数のキー識別子が CDMData の &lt;KeyID&gt; でサポートされます。
 
      
 
--   Added real time expiration support, or limited duration license (LDL).
+-   リアルタイムの有効期限のサポートや期間限定ライセンス (LDL) が追加されました。
 
-    Provides the ability to set real-time expiration on licenses.
+    ライセンスに対してリアルタイムの有効期限を設定することができます。
 
--   Added HDCP Type 1 (version 2.2) policy support.
--   Miracast is now implicit as an output.
--   Added secure stop.
+-   HDCP Type 1 (バージョン 2.2) ポリシーのサポートを追加しました。
+-   Miracast が暗黙的な出力となりました。
+-   セキュア ストップが追加されました。
 
-    Secure stop provides the means for a PlayReady device to confidently assert to a media streaming service that media playback has stopped for any given piece of content.
+    セキュア ストップによって、特定のコンテンツについてのメディア再生が停止したメディア ストリーミング サービスに対して、PlayReady デバイスが確実にアサートするための手段が提供されます。
 
--   Added audio and video license separation.
+-   オーディオとビデオに関するライセンスの分離が追加されました。
 
-    Separate tracks prevent video from being decoded as audio; enabling more robust content protection. Emerging standards are requiring separate keys for audio and visual tracks.
+    トラックを分離することによって、ビデオがオーディオにデコードされるのを防ぐことができます。これにより、さらに強力なコンテンツ保護が可能になります。 最新の標準では、オーディオ トラックと映像トラックに対して別々のキーが必要になります。
 
--   Added MaxResDecode.
+-   MaxResDecode が追加されました。
 
-    This feature was added to limit playback of content to a maximum resolution even when in possession of a more capable key (but not a license). It supports cases where multiple stream sizes are encoded with a single key.
+    この機能は、コンテンツの再生を最大解像度に制限するために追加されました (ライセンスではなく、より強力なキーを所有している場合にも制限を受けます)。 これは、複数のストリーム サイズが 1 つのキーでエンコードされる状況をサポートします。
 
-## Encrypted Media Extension Support in PlayReady
+## PlayReady の Encrypted Media Extension のサポート
 
-This section describes the version of the W3C Encrypted Media Extension supported by PlayReady.
+このセクションでは、PlayReady でサポートされている W3C 暗号化メディア拡張機能のバージョンについて説明します。
 
-PlayReady for Web Apps is currently bound to the [W3C Encrypted Media Extension (EME) draft of May 10, 2013](http://www.w3.org/TR/2013/WD-encrypted-media-20130510/). This support will be changed to the updated EME specification in future versions of Windows.
+Web アプリ用の PlayReady は、現在 [2013 年 5 月 10 日付けの W3C Encrypted Media Extension (EME) 草案](http://www.w3.org/TR/2013/WD-encrypted-media-20130510/)に準拠しています。 このサポートは、将来のバージョンの Windows では更新された EME 仕様に合わせて変更されます。
 
-## Use Hardware DRM
+## ハードウェア DRM の使用
 
-This section describes how your web app can use PlayReady hardware DRM, and how to disable hardware DRM if the protected content does not support it.
+このセクションでは、Web アプリで PlayReady ハードウェア DRM を使う方法と、保護されたコンテンツがハードウェア DRM をサポートしていない場合にそれを無効にする方法について説明します。
 
-To use PlayReady hardware DRM, your JavaScript web app should use the **isTypeSupported** EME method with a key system identifier of `com.microsoft.playready.hardware` to query for PlayReady hardware DRM support from the browser.
+PlayReady ハードウェア DRM を使うには、JavaScript Web アプリは、キー システム識別子 `com.microsoft.playready.hardware` と共に **isTypeSupported** EME メソッドを使って、ブラウザーから PlayReady ハードウェア DRM のサポートを照会する必要があります。
 
-Occasionally, some content is not supported in hardware DRM. Cocktail content is never supported in hardware DRM; if you want to play cocktail content, you must opt out of hardware DRM. Some hardware DRM will support HEVC and some will not; if you want to play HEVC content and hardware DRM doesn’t support it, you will want to opt out as well.
+一部のコンテンツは、ハードウェア DRM ではサポートされない場合があります。 Cocktail コンテンツがハードウェア DRM でサポートされることはありません。Cocktail コンテンツを再生する場合は、ハードウェア DRM を除外する必要があります。 一部のハードウェア DRM は HEVC をサポートしますが、サポートしないものもあります。HEVC コンテンツを再生したいが、ハードウェア DRM がサポートしていない場合も、これを除外してください。
 
-**Note**  To determine whether HEVC content is supported, after instantiating `com.microsoft.playready`, use the [**PlayReadyStatics.CheckSupportedHardware**](https://msdn.microsoft.com/library/windows/apps/dn986441) method.
+**注:** HEVC コンテンツがサポートされているかどうかを判断するには、`com.microsoft.playready` をインスタンス化した後で、[**PlayReadyStatics.CheckSupportedHardware**](https://msdn.microsoft.com/library/windows/apps/dn986441) メソッドを使います。
 
  
 
-## Add Secure Stop to your Web App
+## Web アプリにセキュア ストップを追加する
 
-This section describes how to add secure stop to your web app.
+このセクションでは、Web アプリにセキュア ストップを追加する方法を説明します。
 
-Secure stop provides the means for a PlayReady device to confidently assert to a media streaming service that media playback has stopped for any given piece of content. This capability ensures your media streaming services provide accurate enforcement and reporting of usage limitations on different devices for a given account.
+セキュア ストップによって、特定のコンテンツについてのメディア再生が停止したメディア ストリーミング サービスに対して、PlayReady デバイスが確実にアサートするための手段が提供されます。 この機能により、メディア ストリーミング サービスは、特定のアカウントのさまざまなデバイスに対する使用制限を正しく適用し報告することができるようになります。
 
-There are two primary scenarios for sending a secure stop challenge:
+セキュア ストップのチャレンジを送信する主なシナリオが 2 つあります。
 
--   When the media presentation stops because end of content was reached or when the user stopped the media presentation somewhere in the middle.
--   When the previous session ends unexpectedly (for example, due to a system or app crash). The app will need to query, either at startup or shutdown, for any outstanding secure stop sessions and send challenge(s) separate from any other media playback.
+-   コンテンツの最後に達したか、ユーザーがメディア プレゼンテーションを途中で停止したため、メディア プレゼンテーションが停止した場合。
+-   (システムまたはアプリのクラッシュなどにより) 前回のセッションが予期せずに終了した場合。 アプリは、起動時またはシャットダウン時に、未処理のセキュア ストップ セッションについて照会し、その他のメディア再生とは別にチャレンジを送信する必要があります。
 
-The following procedures describe how to set up secure stop for various scenarios.
+次の手順は、さまざまなシナリオでセキュア ストップを設定する方法について説明します。
 
-To set up secure stop for a normal end of a presentation:
+プレゼンテーションの通常の終了時にセキュア ストップを設定するには
 
-1.  Register the **onEnded** event before playback starts.
-2.  The **onEnded** event handler needs to call `removeAttribute(“src”)` from the video/audio element object to set the source to **NULL** which will trigger the media foundation to tear down the topology, destroy the decryptor(s), and set the stop state.
-3.  You can start the secure stop CDM session inside the handler to send the secure stop challenge to the server to notify the playback has stopped at this time, but it can be done later as well.
+1.  再生が開始する前に **onEnded** イベントを登録します。
+2.  **onEnded** イベント ハンドラーは、ビデオ/オーディオ要素のオブジェクトから `removeAttribute(“src”)` を呼び出し、ソースを **NULL** に設定する必要があります。これにより、メディア ファンデーションをトリガーしてトポロジを終了し、暗号化解除機能を破棄して、停止状態を設定します。
+3.  ハンドラー内の CDM セッションのセキュア ストップを開始し、セキュア ストップ チャレンジをサーバーに送信して、現在は再生が停止したが、後でも実行できることを通知できます。
 
-To set up secure stop if the user navigates away from the page or closes down the tab or browser:
+ユーザーがページから移動したか、タブまたはブラウザーを閉じた場合にセキュア ストップを設定するには
 
--   No app action is required to record the stop state; it will be recorded for you.
+-   停止状態を記録するためにアプリの操作は必要ありません。自動的に記録されます。
 
-To set up secure stop for custom page controls or user actions (such as custom navigation buttons or starting a new presentation before the current presentation completed):
+カスタム ページ コントロールまたはユーザーの操作 (カスタム ナビゲーション ボタンや、現在のプレゼンテーションを完了する前に新しいプレゼンテーションを開始するなど) のセキュア ストップを設定するには
 
--   When custom user action occurs, the app needs to set the source to **NULL** which will trigger the media foundation to tear down the topology, destroy the decryptor(s), and set the stop state.
+-   カスタム ユーザー アクションが発生すると、アプリは、ソースを **NULL** に設定する必要があります。これにより、メディア ファンデーションをトリガーして、トポロジを終了し、暗号化解除機能を破棄して、停止状態を設定します。
 
-The following example demonstrates how to use secure stop in your web app:
+次の例は、Web アプリでのセキュア ストップの使い方を示しています。
 
 ``` syntax
 // JavaScript source code
@@ -254,13 +254,13 @@ function formatSecureStopCDMData(encodedSessionId, customData, encodedPublisherC
 }
 ```
 
-**Note**  The secure stop data’s `<SessionID>B64 encoded session ID</SessionID>` in the sample above can be an asterisk (\*), which is a wild card for all the secure stop sessions recorded. That is, the **SessionID** tag can be a specific session, or a wild card (\*) to select all the secure stop sessions.
+**注:** 前のセキュア ストップのデータの `<SessionID>B64 encoded session ID</SessionID>` は、アスタリスク (\*) にすることができます。これは、記録されたすべてのセキュア ストップ セッション用のワイルドカードです。 つまり、**SessionID** タグは特定のセッションにするか、すべてのセキュア ストップ セッションを選択するワイルドカード (\*) にすることができます。
 
-## Programming Considerations for Encrypted Media Extension
+## Encrypted Media Extension のプログラミングについての考慮事項
 
-This section lists the programming considerations that you should take into account when creating your PlayReady-enabled web app for Windows 10.
+このセクションでは、PlayReady 対応の Windows 10 用の Web アプリを作成するときに検討する必要があるプログラミングの考慮事項を示します。
 
-The **MSMediaKeys** and **MSMediaKeySession** objects created by your app must be kept alive until your app closes. One way of ensuring these objects stay alive is to assign them as global variables (the variables would become out of scope and subject to garbage collection if declared as a local variable inside of a function). For example, the following sample assigns the variables *g\_msMediaKeys* and *g\_mediaKeySession* as global variables, which are then assigned to the **MSMediaKeys** and **MSMediaKeySession** objects in the function.
+アプリで作成した **MSMediaKeys** オブジェクトと **MSMediaKeySession** オブジェクトは、アプリが終了するまで有効なままである必要があります。 これらのオブジェクトが必ず有効な状態にとどまるようにする方法の 1 つは、それらをグローバル変数として割り当てることです (関数内でローカル変数宣言された場合、変数はスコープ外になり、ガベージ コレクションの対象になります)。 次の例では、変数 *g\_msMediaKeys* と *g\_mediaKeySession* をグローバル変数として割り当てています。これらの変数は、関数内で **MSMediaKeys** オブジェクトと **MSMediaKeySession** オブジェクトに割り当てられます。
 
 ``` syntax
 var g_msMediaKeys;
@@ -288,7 +288,7 @@ function foo() {
 }
 ```
 
-Refer to the [sample applications](https://code.msdn.microsoft.com/windowsapps/PlayReady-samples-for-124a3738) for more information.
+詳しくは、[サンプル アプリケーション](https://code.msdn.microsoft.com/windowsapps/PlayReady-samples-for-124a3738)に関するページをご覧ください。
 
  
 

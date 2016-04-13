@@ -2,10 +2,11 @@
 description: この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリで、クリップボードを使用してコピーと貼り付けをサポートする方法について説明します。
 title: コピーと貼り付け
 ms.assetid: E882DC15-E12D-4420-B49D-F495BB484BEE
+author: awkoren
 ---
 #コピーと貼り付け
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
 この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリで、クリップボードを使用してコピーと貼り付けをサポートする方法について説明します。 コピーと貼り付けはアプリ間やアプリ内でデータを交換するための古典的な方法であり、クリップボード操作はほとんどすべてのアプリである程度サポートできます。
@@ -26,12 +27,13 @@ DataPackage dataPackage = new DataPackage();
 
 ## コピーと切り取り
 
-コピーと切り取り (移動とも呼ばれます) には、ほぼ同じ機能があります。 [**DataPackage.RequestedOperation**][RequestedOperation] プロパティを使用して、必要な操作を選択します。
+コピーと切り取り (移動とも呼ばれます) には、ほぼ同じ機能があります。 [
+            **DataPackage.RequestedOperation**][RequestedOperation] プロパティを使用して、必要な操作を選択します。
 
 ```cs
-// コピー 
+// copy 
 dataPackage.RequestedOperation = DataPackageOperation.Copy;
-// または切り取り
+// or cut
 dataPackage.RequestedOperation = DataPackageOperation.Move;
 ```
 
@@ -48,14 +50,14 @@ Clipboard.SetContent(dataPackage);
 ```
 ## 貼り付け
 
-クリップボードの内容を取得するには、静的な [**Clipboard.GetContent**][GetContent] メソッドを呼び出します。 このメソッドは、コンテンツを含む [**DataPackageView**][DataPackageView] を返します。 このオブジェクトは、コンテンツが読み取り専用であることを除いて [**DataPackage**][DataPackage] オブジェクトとほぼ同じです。 このオブジェクトがあれば、[**AvailableFormats**][AvailableFormats] または [**Contains**][Contains] のメソッドを使って使用可能な形式を特定できます。 その後、対応する **DataPackageView** メソッドを呼び出してデータを取得できます。
+クリップボードの内容を取得するには、静的な **Clipboard.GetContent**[GetContent] メソッドを呼び出します。 このメソッドは、コンテンツを含む [**DataPackageView**][DataPackageView] を返します。 このオブジェクトは、コンテンツが読み取り専用であることを除いて [**DataPackage**][DataPackage] オブジェクトとほぼ同じです。 このオブジェクトがあれば、[**AvailableFormats**][AvailableFormats] または [**Contains**][Contains] のメソッドを使って使用可能な形式を特定できます。 その後、対応する **DataPackageView** メソッドを呼び出してデータを取得できます。
 
 ```cs
 DataPackageView dataPackageView = Clipboard.GetContent();
 if (dataPackageView.Contains(StandardDataFormats.Text))
 {
     string text = await dataPackageView.GetTextAsync();
-    // この例のテキストを出力するには、TextBlock コントロールが必要です
+    // To output the text from this example, you need a TextBlock control
     TextOutput.Text = "Clipboard now contains: " + text;
 }
 ```
@@ -96,6 +98,6 @@ Clipboard.ContentChanged += (s, e) =>
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=Mar16_HO5-->
 
 

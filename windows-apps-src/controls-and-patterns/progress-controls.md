@@ -1,84 +1,84 @@
 ---
-Description: A progress control provides feedback to the user that a long-running operation is underway.
-title: Guidelines for progress controls
+Description: プログレス コントロールは、時間のかかる操作が進行中であることを示すフィードバックをユーザーに返します。
+title: プログレス コントロールのガイドライン
 ms.assetid: FD53B716-C43D-408D-8B07-522BC1F3DF9D
-label: Progress controls
+label: プログレス コントロール
 template: detail.hbs
 ---
-# Progress controls
+# プログレス コントロール
 
-A progress control provides feedback to the user that a long-running operation is underway. A *determinate* progress bar shows the percentage of completion of an operation. An *indeterminate* progress bar, or a progress ring, shows that an operation is underway.
+プログレス コントロールは、時間のかかる操作が進行中であることを示すフィードバックをユーザーに返します。 進行状況*確定*バーは、操作の完了割合を示します。 進行状況*不定*バーと進行状況リングは、操作が進行中であることを示します。
 
-A progress control is read only; it is not interactive.
+プログレス コントロールは読み取り専用です。対話型ではありません。
 
-<span class="sidebar_heading" style="font-weight: bold;">Important APIs</span>
+<span class="sidebar_heading" style="font-weight: bold;">重要な API</span>
 
--   [**ProgressBar class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.aspx)
--   [**IsIndeterminate property**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx)
--   [**ProgressRing class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.aspx)
--   [**IsActive property**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.isactive.aspx)
+-   [**ProgressBar クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.aspx)
+-   [**IsIndeterminate プロパティ**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx)
+-   [**ProgressRing クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.aspx)
+-   [**IsActive プロパティ**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.isactive.aspx)
 
-![Windows app: indeterminate progress bar, progress ring, and determinate progress bar](images/ProgressBar.png)
+![Windows アプリ: 進行状況不定バー、進行状況リング、進行状況確定バー](images/ProgressBar.png)
 
-Windows app: indeterminate progress bar, progress ring, and determinate progress bar
+Windows アプリ: 進行状況不定バー、進行状況リング、進行状況確定バー
 
-![Windows Phone app: status bar progress indicator and progress bars](images/wp_progress_bar.png)
+![Windows Phone アプリ: ステータス バーの進行状況インジケーターと進行状況バー](images/wp_progress_bar.png)
 
-Windows Phone app: status bar progress indicator and progress bars
+Windows Phone アプリ: ステータス バーの進行状況インジケーターと進行状況バー
 
-## Examples
+## 例
 
-Here's an example of a progress ring control on a splash screen.
+スプラッシュ画面の進行状況不定リング コントロールの例を次に示します。
 
-![A screenshot that illustrates the standard progress ring control](images/ProgressBar_Standard.png)
+![標準的な進行状況リング コントロールを示すスクリーンショット](images/ProgressBar_Standard.png)
 
-A progress bar is also a good indicator of state or position. A progress bar used for a music track corresponds to the timeline of the song: the bar’s value is the song position; the paused state indicates that playback is paused.
+進行状況バーは、状態や位置を示す優れたインジケーターでもあります。 音楽トラックで使われる進行状況バーは、曲のタイムラインに対応しています。バーの値は、曲の位置を示します。一時停止状態は、再生が一時停止されていることを示します。
 
-![Xbox Music app displays a progress bar when playing a song](images/ProgressBar_MusicTimeline.png)
+![Xbox ミュージック アプリでは、曲を再生すると進行状況バーが表示されます](images/ProgressBar_MusicTimeline.png)
 
-## Is this the right control?
+## 適切なコントロールの選択
 
-It's not always necessary to show a progress control. Sometimes a task's progress is obvious enough on its own or the task completes so quickly that showing a progress control would be distracting. Here are some points to consider when determining whether you should show a progress control.
+常にプログレス コントロールを示す必要があるわけではありません。 タスクが進行中であることが十分に明白であったり、タスクがすぐに完了するのでプログレス コントロールを表示するとわずらわしかったりする場合もあります。 プログレス コントロールを表示するかどうかを判断するときには、次のような点を考慮します。
 
--   **Does the operation take more than two seconds to complete?**
+-   **操作を完了するまでに 2 秒より長くかかるか**
 
-    If so, show a progress control as soon as the operation starts. If an operation takes more than two seconds to complete most of the time, but sometimes completes in under two seconds, wait 500ms before showing the control to avoid flickering.
+    そうである場合は、操作を開始したらすぐに、プログレス コントロールを表示します。 操作の完了までに 2 秒より長い時間が通常かかるとしても、2 秒未満で完了することもある場合は、ちらつきを避けるために、500 ミリ秒待機してからコントロールを表示します。
 
--   **Is the operation waiting for the user to complete a task?**
+-   **操作は、ユーザーがタスクを完了するのを待っているか?**
 
-    If so, don't use a progress bar. Progress bars are for computer progress, not user progress.
+    そうである場合は、プログレス バーを使いません。 プログレス バーは、ユーザーの作業ではなく、コンピューターの作業の進行状況を示すものです。
 
--   **Does the user need to know that something is happening?**
+-   **何かが行われていることをユーザーが知る必要があるか?**
 
-    For example, if the app is downloading something in the background and the user didn’t initiate the download, the user doesn’t need to know about it.
+    たとえば、アプリがバックグラウンドで何かをダウンロードしていて、ダウンロードを開始したのがユーザーでない場合、ユーザーはそのことを知る必要がありません。
 
--   **Is the operation a background activity that doesn't block user activity and is of minimal (but still some) interest to the user?**
+-   **操作が、ユーザーのアクティビティをブロックしないバックグラウンド アクティビティであり、ユーザーにはほとんど関与しない (少しだけ関与する) か?**
 
-    Use text and ellipses when your app is performing tasks that don't have to be visible all the time, but you still need to show the status.
+    アプリが、常に見えている必要はないものの、進行状況を表示する必要はあるタスクを実行している場合は、テキストと省略記号を使います。
 
-    ![Example of text as a progress indicator](images/textprogress.png)
+    ![進行状況インジケーターとしてのテキストの例](images/textprogress.png)
 
-    Use the ellipses to indicate that the task is ongoing. If there are multiple tasks or items, you can indicate the number of remaining tasks. When all tasks complete, dismiss the indicator.
+    タスクが進行中であることを示すために、省略記号を使います。 複数のタスクまたは項目がある場合は、残りのタスクの数を示すことができます。 すべてのタスクが完了したら、インジケーターを消します。
 
--   **Can you use the content from the operation to visualize progress?**
+-   **進行状況を視覚化するために、操作からのコンテンツを使えるか?**
 
-    If so, don't show a progress control. For example, when displaying /src/assets loaded from the disk, /src/assets appear on the screen one-by-one as they are loaded. Displaying a progress control would provide no benefit; it would just clutter the UI.
+    使える場合は、プログレス コントロールを表示しません。 たとえば、ディスクから読み込まれる /src/assets を表示する場合は、/src/assets が読み込まれるたびに、画面に 1 つずつ表示されます。 プログレス コントロールを表示しても、余分な UI が増えるだけで、何の利点もありません。
 
--   **Can you determine, relatively, how much of the total work is complete while the operation is progressing?**
+-   **操作の進行中に、作業が全体に対してどの程度完了したかを決定できるか?**
 
-    If so, use a determinate progress bar, especially for operations that block the user. Use an indeterminate progress bar or ring otherwise. Even if all the user knows is that something is happening, that’s still helpful.
+    その場合は進行状況確定バーを使います。ユーザーをブロックする作業の場合は特に使ってください。 それ以外の場合は、進行状況不定バーまたは進行状況リングを使います。 ユーザーは何かが行われていることを知るだけですが、それでも十分に有用です。
 
-## Create a determinate progress control
+## 進行状況確定コントロールの作成
 
-A determinate progress bar shows how much progress the app has made. As work progresses , the bar fills up. If you can estimate remaining amount of work in time, bytes, files, or some other quantifiable units of measure, use a determinate progress bar.
+進行状況確定バーには、アプリで実行された作業量が示されます。 作業の進行に合わせて、バーが塗りつぶされます。 時間単位、バイト単位、ファイル単位などの定量化できる測定単位で残りの作業量を推定できる場合は、進行状況確定バーを使います。
 
-The progress bar provides several properties for setting and determining progress:
-- [**IsIndeterminate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx): Specifies whether the progress bar is indeterminate. Set to **false** to create a determinate progress bar.
-- [**Minimum**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.rangebase.minimum.aspx): The start of the value range. The default is 0.0.
-- [**Maximum**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.rangebase.maximum.aspx): The end of the vlaue range. The default is 1.0. 
-- [**Value**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.rangebase.value.aspx): A number that specifies the current progress. If you're showing the progress of a file download, this value might be the number of bytes downloaded (and then you set Maximum to the total number of bytes to download).
+進行状況バーには、進行状況の設定と判断のためのプロパティが複数あります。
+- [**IsIndeterminate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx): 進行状況バーが不定であるかどうかを指定します。 **false** に設定すると、進行状況確定バーが作成されます。
+- [**Minimum**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.rangebase.minimum.aspx): 値の範囲の開始点。 既定値は 0.0 です。
+- [**Maximum**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.rangebase.maximum.aspx): 値の範囲の終了点。 既定値は 1.0 です。 
+- [**Value**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.rangebase.value.aspx): 現在の進行状況を示す数値。 ファイルのダウンロードの進行状況を表示する場合、この値はダウンロード済みのバイト数になります (さらに、Maximum を、ダウンロードする全バイト数に設定します)。
  
-The following example shows a value-based determinate progress bar. 
+次の例では、値ベースの進行状況確定バーを示しています。 
 
 ```xaml
 <ProgressBar IsIndeterminate="False" Maximum="100" Width="200"/>
@@ -94,13 +94,13 @@ progressBar1.Width = 200;
 stackPanel1.Children.Add(progressBar1);
 ```
 
-You don't typically specify the value of a progress bar in markup. Instead, you use procedural code or data binding to update the value of the progress bar as a response to some indicator of progress. For example, if your progress bar indicates how many files have been downloaded, you update the value each time another file is downloaded.
+通常、マークアップで進行状況バーの値を指定しません。 代わりに、手続き型コードまたはデータ バインディングを使って、進行状況インジケーターに対する応答として進行状況バーの値を更新します。 たとえば、進行状況バーを使ってダウンロード済みファイル数を示す場合、ファイルがダウンロードされるたびに値を更新します。
 
-## Create an indeterminate progress control
+## 進行状況不定コントロールの作成
 
-When you can't estimate how much work remains to finish a task and the task doesn't block user interaction, use an indeterminate progress bar or progress ring. Instead of showing a bar that fills up as progress completes, an indeterminate progress bar shows an animation of dots moving from left to right. An indeterminate progress ring shows an animated sequence of dots moving in a circle. 
+タスクが完了するまでの残りの作業量を推定できず、タスクの実行中にユーザー操作がブロックされない場合は、進行状況不定バーや進行状況リングを使います。 進行状況不定バーでは、作業が完了すると塗りつぶされるバーではなく、左から右へ移動する点のアニメーションが表示されます。 進行状況不定リングでは、複数の点が円を描いて移動するアニメーションが示されます。 
 
-To make a progess bar indeterminate, set its [**IsIndeterminate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx) property to **true**.
+進行状況バーを不定にするには、[**IsIndeterminate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx) プロパティを **true** に設定します。
 
 ```xaml
 <ProgressBar IsIndeterminate="True" Width="200"/>
@@ -115,7 +115,7 @@ progressBar1.Width = 200;
 stackPanel1.Children.Add(progressBar1);
 ```
 
-To show a progress ring in your app, set its [**IsActive**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.isactive.aspx) property to **true**.
+アプリで進行状況リングを表示するには、[**IsActive**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.isactive.aspx) プロパティを **true** に設定します。
 
 ```xaml
 <ProgressRing IsActive="True"/>
@@ -129,168 +129,168 @@ progressRing1.IsActive = true;
 stackPanel1.Children.Add(progressRing1);
 ```
 
-## Recommendations
+## 推奨事項
 
--   Use the determinate progress bar when a task is determinate, that is when it has a well-defined duration or a predictable end. For example, if you can estimate remaining amount of work in time, bytes, files, or some other quantifiable units of measure, use a determinate progress bar. Here are some examples of determinate tasks:
+-   タスクが確定的である場合、つまり、継続時間が明確に定義されていたり、終了が予測可能だったりする場合は、進行状況確定バーを使います。 たとえば、時間単位、バイト単位、ファイル単位などの定量化できる測定単位で残りの作業量を推定できる場合は、進行状況確定バーを使います。 確定的なタスクには、次のような例があります。
 
-    -   The app is downloading a 500k photo and has received 100k so far.
-    -   The app is displaying a 15 second advertisement and 2 seconds have elapsed.
+    -   アプリが 500 k の写真をダウンロードしていて、これまでに 100 k を受信した。
+    -   アプリが 15 秒の広告を表示していて、2 秒が経過した。
 
-    ![Example of a determinate progress bar](images/progress_determinate_bar.png)
+    ![進行状況確定バーの例](images/progress_determinate_bar.png)
 
--   Use the indeterminate progress ring for tasks that are not determinate and are modal (block user interaction).
+-   ユーザーの操作をブロックするモーダルな確定的でないタスクでは、進行状況不定バーを使います。
 
-    ![Example of a progress ring](images/progress_ring.png)
+    ![進行状況リングの例](images/progress_ring.png)
 
--   Use the indeterminate progress bar for tasks that are not determinate that are non-modal (don't block user interaction).
+-   ユーザーの操作をブロックしない非モーダルな確定的でないタスクでは、進行状況不定バーを使います。
 
-    ![Example of an indeterminate progress bar](images/progress_indeterminate_bar.png)
+    ![進行状況不定バーの例](images/progress_indeterminate_bar.png)
 
--   Treat partially modal tasks as non-modal if the modal state lasts less than 2 seconds. Some tasks block interaction until some progress has been made, and then the user can start interacting with the app again. For example, when the user performs a search query, interaction is blocked until the first result is displayed. Treat tasks such as these as non-modal and use the indeterminate progress bar style if modal state lasts less than 2 seconds. If modal state can last more than 2 seconds, use the indeterminate progress ring for the modal phase of the task, and use the indeterminate progress bar for the non-modal phase.
--   Consider providing a way to cancel or pause the operation that is in progress, particularly when the user is blocked awaiting the completion of the operation and has a good idea of how much longer the operation has left to run.
--   Don't use the "wait cursor" to indicate activity, because users who use touch to interact with the system won't see it, and those users who use mouse don't need two ways to visualize activity (the cursor and the progress control).
--   Show a single progress control for multiple active related tasks. If there are multiple related items on the screen that are all simultaneously performing some kind of activity, don't show multiple progress controls. Instead, show one that ends when the last task completes. For example, if the app downloads multiple photos, show a single progress control, instead of showing one for every photo.
--   Don't change the location or size of the progress control while the task is running.
+-   一部モーダルなタスクで、モーダルな状態が 2 秒未満である場合は、非モーダルなタスクとして扱います。 一部のタスクは、処理がある程度進むまで操作をブロックし、その後はユーザーがアプリの操作を始められるようになります。 たとえば、ユーザーが検索クエリを実行した場合、最初の結果が表示されるまでは操作がブロックされます。 このようなタスクは、モーダルな状態が 2 秒未満である場合は非モーダルとして扱い、進行状況不定バー スタイルを使います。 モーダルな状態が 2 秒より長く続く場合は、タスクのモーダルなフェーズでは進行状況不定リングを使い、非モーダルなフェーズでは進行状況不定バーを使います。
+-   進行中の操作をキャンセルするか一時停止するための方法を用意することを検討します。操作が完了するまでユーザーがブロックされるときに、操作の残りの実行時間が明らかな場合は、特に考慮してください。
+-   アクティビティを示すために、"待機カーソル" は使いません。システムの操作にタッチを使っているユーザーには表示されず、マウスを使っているユーザーにはアクティビティを視覚化する方法が 2 つ (カーソルとプログレス コントロール) は必要ないためです。
+-   複数のアクティブな関連するタスクには、1 つのプログレス コントロールを表示します。 画面に複数の関連する項目があり、すべてがなんらかのアクティビティを同時に行う場合でも、複数のプログレス コントロールは表示しません。 代わりに、最後のタスクの完了時に終了する 1 つのプログレス コントロールを表示します。 たとえば、アプリが複数の写真をダウンロードする場合は、写真ごとにプログレス コントロールを表示するのではなく、1 つだけを表示します。
+-   タスクの実行中は、プログレス コントロールの場所やサイズを変更しません。
 
-### Guidelines for determinate tasks
+### 確定的タスクのガイドライン
 
--   If the operation is modal (blocks user interaction), and takes longer than 10 seconds, provide a way to cancel it. The option to cancel should be available when the operation begins.
--   Space progress updates evenly. Avoid situations where progress increases to over 80% and then stops for a long period of time. You want to speed up progress towards the end, not slow it down. Avoid drastic jumps, such as from 0% to 90%.
--   After setting progress to 100%, wait until the determinate progress bar finishes animating before hiding it.
--   If your task is stopped (by a user or an external condition), but a user can resume it, visually indicate that progress is paused. In JavaScript apps, you do this by using the win-paused CSS style. In C\#/C++/VB apps, you do this by setting the ShowPaused property to true. Provide status text under the progress bar that tells the user what's going on.
--   If the task is stopped and can’t be resumed or has to be restarted from scratch, visually indicate that there's an error. In JavaScript apps, you do this by using the win-error CSS style. In C\#/C++/VB apps, you do this by setting the ShowError property to true. Replace the status text (underneath the bar) with a message that tells the user what happened and how to fix the issue (if possible).
--   If some time (or action) is needed before you can provide determinate progress, use the indeterminate bar first, and then switch to the determinate bar. For example, if the first step of a download task is connecting to a server, you can’t estimate how long that takes. After the connection is established, switch to the determinate progress bar to show the download progress. Keep the progress bar in exactly the same place, and of the same size after the switch.
+-   操作がモーダルで (ユーザーの操作がブロックされ)、10 秒より長い時間がかかる場合は、操作を取り消す方法を用意します。 操作を取り消すためのオプションは、操作の開始と同時に使えるようにします。
+-   進行状況は均等に更新します。 進行状況が 80% を超えた後で長い間停止するような状況にならないようにします。 進行が終わりに近づくにつれて、スピードが下がるのではなく、上がることが望まれます。 0% から 90% に飛躍するようなことも、ないようにします。
+-   進行状況が 100% になった後、進行状況確定バーがアニメーションを終了するまで待機してから、バーを非表示にします。
+-   タスクはユーザーまたは外部の条件によって停止したが、ユーザーがタスクを再開できる場合は、進行が一時停止されていることをはっきりと示します。 JavaScript アプリでは、win-paused CSS スタイルを使います。 C\#/C++/VB アプリでは、ShowPaused プロパティを true に設定します。 進行状況バーの下に、何が起こっているかを示す状態テキストを示します。
+-   タスクが停止し、再開できないか始めからやり直す必要がある場合は、エラーが発生したことをはっきりと示します。 JavaScript アプリでは、win-error CSS スタイルを使います。 C\#/C++/VB アプリでは、ShowError プロパティを true に設定します。 バーの下の状態テキストを、何が起きてどのように問題に対処すればよいか (可能な場合) をユーザーに知らせるメッセージに置き換えます。
+-   進行状況確定バーを表示する前に、多少の時間 (またはなんらかのアクション) が必要な場合は、まず進行状況不定バーを使い、その後で進行状況確定バーに切り替えます。 たとえば、ダウンロード タスクの最初の手順がサーバーへの接続である場合、接続にかかる時間は推定できません。 接続の確立後に、進行状況確定バーに切り替えて、ダウンロードの進行状況を表示します。 切り替え後も、進行状況バーは正確に同じ位置、同じサイズになるようにします。
 
-    ![Changing from an indeterminate to a determinate progress bar](images/progress_changing.png)
+    ![進行状況不定バーから進行状況確定バーへの変更](images/progress_changing.png)
 
--   If you have a list of items, such as a list of printers, and certain actions can initiate an operation on items in that list (such as installing a driver for one of the printers), show a determinate progress bar next to the item.
+-   プリンター一覧のような項目の一覧があるときに、一覧の項目に対してなんらかの操作 (いずれかのプリンター用のドライバーのインストールなど) を開始できる場合は、項目の横に進行状況確定バーを表示します。
 
-    Show the subject (label) of the task above the progress bar and status underneath. Don’t provide status text if what's happening is obvious. After the task completes, hide the progress bar. Use the status text to communicate the new state of an item.
+    進行状況バーの上にタスクの表題 (ラベル)、下に状態を表示します。 何が起きているかが明白な場合は、状態テキストは表示しません。 タスクの完了後は、進行状況バーを非表示にします。 状態テキストは、項目の新しい状態を知らせるために使います。
 
-    ![Showing inline progress with status](images/progress_multiplebars.png)
+    ![インラインでの進行状況と状態の表示](images/progress_multiplebars.png)
 
--   To show a list of tasks, align the content in a grid so users can see the status at a glance. Show progress bars for all items, even those that are pending.
+-   タスク一覧を表示するには、コンテンツをグリッド内で整列させ、ユーザーが状態をひとめで見られるようにします。 保留中の項目も含めて、すべての項目の進行状況バーを表示します。
 
-    Because the purpose of this list is to show ongoing operations, remove operations from the list when they complete.
+    この一覧の目的は進行中の操作を示すことなので、完了した操作は一覧から削除します。
 
-    ![Displaying multiple progress bars](images/progress_bar_multiple.png)
+    ![複数の進行状況バーの表示](images/progress_bar_multiple.png)
 
--   If a user initiated a task from the app bar and it blocks user interaction, show the progress control in the app bar.
+-   ユーザーがアプリ バーからタスクを開始し、ユーザーの操作がブロックされた場合は、アプリ バーにプログレス コントロールを表示します。
 
-    If it's clear what the progress bar is showing progress for, you can align progress bar to the top of the app bar and omit the label and status; otherwise, provide a label and status text.
+    進行状況バーが何の進行状況を示しているかが明白な場合は、進行状況バーをアプリ バーの上部に配置して、ラベルと状態は省略できます。そうでない場合は、ラベルと状態テキストを表示します。
 
-    Disable interaction during the task by disabling controls in the app bar and ignoring input in the content area.
+    アプリ バーのコントロールを無効にし、コンテンツ領域への入力を無視して、タスクの間は操作を無効にします。
 
--   Don’t decrement progress. Always increment the progress value. If you need to reverse an action, show the progress of reversal as you would show progress of any other action.
--   Don’t restart progress (from 100% to 0%), unless it’s obvious to the user that a current step or task is not the last one. For example, suppose a task has two parts: downloading some data, and then processing and displaying the data. After the download is complete, reset the progress bar to 0% and begin showing the data processing progress. If it’s unclear to users that there are multiple steps in a task, collapse the tasks into a single 0-100% scale and update status text as you move from one task to the next.
+-   進行状況を後退させないでください。 進行状況の値は常に増やします。 操作を元に戻さなければならない場合は、他の操作の進行状況を示すのと同じように、元に戻す処理の進行状況を示します。
+-   現在の手順またはタスクが最後のものでないことがユーザーに明白でない場合は、進行状況を再開始 (100% から 0% に) しないようにします。 たとえば、データのダウンロードと、そのデータの処理および表示という 2 つの部分がタスクにあるとします。 ダウンロードが完了した後、進行状況バーを 0% にリセットし、データ処理の進行状況の表示を始めます。 タスクに複数の手順が含まれていることがユーザーに明白でない場合は、タスクを 1 つの 0 ～ 100% の尺度にまとめて、1 つのタスクから次のタスクに移る際に状態テキストを更新します。
 
-### Guidelines for modal, indeterminate tasks that use the progress ring
+### 進行状況リングを使う不定的なモーダル タスクのガイドライン
 
--   Display the progress ring in the context of the action: show it near the location where the user initiated the action or where the resulting data will display.
--   Provide status text to the right of the progress ring.
--   Make the progress ring the same color as its status text.
--   Disable controls that user shouldn’t interact with while the task is running.
--   If the task results in an error, hide the progress indicator and status text and display an error message in their place.
--   In a dialog, if an operation must complete before you move to the next screen, place the progress ring just above the button area, left-aligned with the content of the dialog.
+-   操作のコンテキスト内に進行状況リングを表示します。つまり、ユーザーが操作を開始した場所または結果のデータが表示される場所の近くにリングを表示します。
+-   進行状況リングの右側に状態テキストを示します。
+-   進行状況リングの色を状態テキストの色と同じにします。
+-   タスクの実行中にユーザーが操作してはいけないコントロールを無効にします。
+-   タスクの結果がエラーになった場合は、進行状況インジケーターと状態テキストを非表示にして、その場所にエラー メッセージを表示します。
+-   ダイアログでは、次の画面に移動する前に操作を完了する必要がある場合は、進行状況リングをボタン領域のすぐ上に、ダイアログのコンテンツと左揃えで配置します。
 
-    ![Progress in a dialog](images/prog_ring_dialog.png)
+    ![ダイアログでの進行状況](images/prog_ring_dialog.png)
 
--   In an app window with right-aligned controls, place the progress ring to the left or just above the control that caused the action. Left-align the progress ring with related content.
+-   右揃えのコントロールがあるアプリ ウィンドウでは、進行状況リングを、処理を引き起こしたコントロールの左またはすぐ上に配置します。 進行状況リングを、関連するコンテンツと左揃えで配置します。
 
-    ![Showing progress in an app window with right-aligned controls](images/prog_right_aligned_controls.png)
+    ![右揃えのコントロールがあるアプリ ウィンドウでの進行状況の表示](images/prog_right_aligned_controls.png)
 
--   In an app window with left-aligned controls, place the progress ring to the right or just under the control that caused the action.
+-   左揃えのコントロールがあるアプリ ウィンドウでは、進行状況リングを、処理を引き起こしたコントロールの右またはすぐ下に配置します。
 
-    ![A progress ring with left-aligned controls](images/prog_left_aligned_1.png)
+    ![左揃えのコントロールと進行状況リング](images/prog_left_aligned_1.png)
 
-    ![A progress ring below left-aligned controls](images/prog_left_aligned_2.png)
+    ![左揃えのコントロールの下の進行状況リング](images/prog_left_aligned_2.png)
 
--   If you are showing multiple items, place the progress ring and status text underneath the title of the item. If an error occurs, replace the progress ring and status with error text.
+-   複数の項目を表示している場合は、項目のタイトルの下に、進行状況リングと状態テキストを配置します。 エラーが発生した場合は、進行状況リングと状態をエラー テキストに置き換えます。
 
-    ![A progress ring in a list of multiple items](images/prog_ring_multiple.png)
+    ![複数項目の一覧での進行状況リング](images/prog_ring_multiple.png)
 
-### Guidelines for non-modal, indeterminate tasks that use the progress bar
+### 進行状況リングを使う不定的な非モーダル タスクのガイドライン
 
--   If you show progress in a flyout, place the indeterminate progress bar at the top of the flyout and set its width so that it spans the entire flyout. This placement minimizes distraction but still communicates ongoing activity. Don't give the flyout a title, because a title prevents you from placing the progress bar at the top of the flyout.
+-   ポップアップの中に進行状況を表示する場合は、ポップアップの上部に進行状況不定バーを配置し、幅はポップアップ全体にわたるように設定します。 このように配置すると、不必要に目立つことなく、進行中のアクティビティを示すことができます。 ポップアップにタイトルを表示すると、上部に進行状況バーを配置できなくなるので、タイトルは表示しません。
 
-    ![An indeterminate progress bar in a flyout](images/prog_flyout_indeterminate_bar.png)
+    ![ポップアップでの進行状況不定バー](images/prog_flyout_indeterminate_bar.png)
 
--   If you show progress in an app window, place the indeterminate progress bar at the top of the app window, spanning the entire window.
+-   アプリ ウィンドウに進行状況を表示する場合は、アプリ ウィンドウの最上部に、ウィンドウ全体にわたるように進行状況不定バーを配置します。
 
-    ![A progress bar at the top of an app window](images/prog_indeterminate_bar_app_window.png)
+    ![アプリ ウィンドウの上部の進行状況バー](images/prog_indeterminate_bar_app_window.png)
 
-### Guidelines for status text
+### 状態テキストのガイドライン
 
--   When you use the determinate progress bar, don’t show the progress percentage in the status text. The control already provides that info.
--   If you use text to indicate activity without a progress control, use ellipsis to convey that the activity is ongoing.
--   If you use a progress control, don't use ellipsis in your status text, because the progress control already indicates that the operation is ongoing.
+-   進行状況確定バーを使う場合は、状態テキストに進行状況の割合を表示しません。 コントロール自体に、その情報が含まれています。
+-   プログレス コントロールなしでアクティビティを示すためにテキストを使う場合は、アクティビティが進行中であることを表すために省略記号を使います。
+-   プログレス コントロールを使う場合は、操作が進行中であることをプログレス コントロール自体が示しているので、状態テキストでは省略記号を使いません。
 
-### Guidelines for appearance and layout
+### 外観とレイアウトのガイドライン
 
--   A determinate progress bar appears as a colored bar that grows to fill a gray background bar. The proportion of the total length that is colored indicates, relatively, how much of the operation is complete.
--   An indeterminate progress bar or ring is made of continually moving colored dots.
--   Choose the progress control's location and prominence based on its importance.
+-   進行状況確定バーは、背景が灰色のバーの中を徐々に埋めていく色付きのバーとして表示されます。 色付きのバーの全長部分が、操作がどの程度完了したかを相対的に示します。
+-   進行状況不定バーまたは進行状況リングは、常に移動する色付きの点で構成されます。
+-   プログレス コントロールをどの程度目立つ位置に配置するかどうかは、その重要性に基づいて決定します。
 
-    Important progress controls can serve as a call-to-action, telling the user to resume a certain operation after the system has done its work. Some built-in Windows Phone apps use a status bar progress indicator at the top of the screen for important cases. You can do this, too, and configure it to be determinate or indeterminate.
+    重要なプログレス コントロールは特定の行動を促す印として使うことができ、システムが作業を完了した後で特定の操作が再開されることをユーザーに伝えます。 組み込みの Windows Phone アプリの一部では、重要度に応じて、画面の上部にステータス バーの進行状況インジケーターを使っています。 同じようにすることができ、確定または不定になるように構成できます。
 
-    Cases that are less critical, such as during downloading, appear smaller and are restricted to one view.
+    重要度が低い場合 (ダウンロード中など) は、小さいサイズのコントロールを 1 つのビューに限定して表示します。
 
--   Use a label to show the progress value, or to describe the process taking place, or to indicate that the operation has been interrupted. A label is optional, but we highly recommend it.
+-   ラベルを使って、進行状況の値を表示するか、進行中の処理を説明するか、処理が中断されていることを示します。 ラベルはオプションですが、使うことを強くお勧めします。
 
-    To describe the process taking place, use a gerund (an –ing verb), e.g. ‘connecting’, ‘downloading’, or ‘sending’.
+    進行中の処理を説明する場合は、動名詞を使います (例: '接続中'、'ダウンロード中'、'送信中')。
 
-    To indicate that progress is paused or has encountered an exception, use past participles, e.g. ‘paused’, ‘download failed’, or ‘canceled’.
+    進行が一時停止したり例外が発生しりした場合は、過去形を使います (例: '一時停止しました'、'ダウンロードは失敗しました'、'取り消されました')。
 
--   Determinate progress bar with label and status
+-   ラベルと状態付きの進行状況確定バー
 
-    ![A determinate progress bar with a lable and status information](images/progress_bar_determinate_redline.png)
+    ![ラベルと状態情報付きの進行状況確定バー](images/progress_bar_determinate_redline.png)
 
--   Multiple progress bars
+-   複数の進行状況バー
 
-    ![Recommended layout for multiple progress bars](images/progress_bar_multi_redline.png)
+    ![複数の進行状況バーのための推奨レイアウト](images/progress_bar_multi_redline.png)
 
--   Indeterminate progress ring with status text
+-   状態テキスト付きの進行状況不定リング
 
-    ![Layout for indeterminate progress ring with status text](images/progress_ring_status_text.png)
+    ![状態テキスト付きの進行状況不定リングのためのレイアウト](images/progress_ring_status_text.png)
 
--   Indeterminate progress bar
+-   進行状況不定バー
 
-    ![Layout for indeterminate progress bar](images/progress_indeterminate_bar_redline.png)
+    ![進行状況不定バーのためのレイアウト](images/progress_indeterminate_bar_redline.png)
 
-## Additional usage guidance
+## その他の使い方のガイダンス
 
-### Decision tree for choosing a progress style
+### 進行状況のスタイルを選ぶためのデシジョン ツリー
 
--   **Does the user need to know that something is happening?**
+-   **何かが行われていることをユーザーが知る必要があるか?**
 
-    If the answer is no, don't show a progress control.
+    必要がない場合は、プログレス コントロールを表示しません。
 
--   **Is info about how much time it will take to complete the task available?**
-    -   **Yes:** **Does the task take more than two seconds to complete?**
-        -   **Yes:** Use a determinate progress bar. For tasks that take longer than 10 seconds, provide a way to cancel the task.
-        -   **No:** Don't show a progress control.
+-   **タスクの完了に要する時間に関する情報があるか?**
+    -   **ある場合:** **タスクを完了するまでに 2 秒より長くかかるか?**
+        -   **かかる場合:** 進行状況確定バーを使います。 10 秒より長くかかるタスクの場合は、タスクを取り消す方法を用意します。
+        -   **かからない場合:** プログレス コントロールを表示しません。
 
-    -   **No:** **Are users blocked from interacting with the UI until the task is complete?**
-        -   **Yes:** **Is this task part of a multi-step process where the user needs to know specific details of the operation?**
-            -   **Yes:** Use an indeterminate progress ring with status text horizontally centered in the screen.
-            -   **No:** Use an indeterminate progress ring without text in the center of the screen.
-        -   **No:** **Is this a primary activity?**
-            -   **Yes:** **Is progress related to a single, specific element in the UI?**
-                -   **Yes:** Use an inline indeterminate progress ring with status text next to its related UI element.
-                -   **No:** **Is a large amount of data being loaded into a list?**
-                    -   **Yes:** Use the indeterminate progress bar at the top with placeholders to represent incoming content.
-                    -   **No:** Use the indeterminate progress bar at the top of the screen or surface.
-            -   **No:** Use status text in an upper corner of the screen.
+    -   **ない場合:** **タスクが完了するまでユーザーは UI を操作できないか?**
+        -   **できない場合:** **このタスクは、操作の特定の詳細をユーザーが認識する必要がある複数手順の一部か?**
+            -   **そうである場合:** 画面の中央に水平に配置された状態テキストがある進行状況不定リングを使います。
+            -   **そうではない場合:** 画面の中央にテキストのない進行状況不定リングを使います。
+        -   **できる場合:** **これは主要アクティビティか?**
+            -   **そうである場合:** **進行状況は UI の特定の 1 つの要素に関連しているか?**
+                -   **関連している場合:** その関連する UI 要素の横に状態テキストがあるインラインの進行状況不定リングを使います。
+                -   **関連していない場合:** **大量のデータが一覧に読み込まれているか?**
+                    -   **読み込まれている場合:** 受信したコンテンツを表すプレースホルダーの上部の進行状況不定バーを使います。
+                    -   **読み込まれていない場合:** 画面またはサーフェイスの上部の進行状況不定バーを使います。
+            -   **そうではない場合:** 画面の上隅の状態テキストを使います。
 
-## Related articles
+## 関連記事
 
 
-- [**ProgressBar class**](https://msdn.microsoft.com/library/windows/apps/br227529)
-- [**ProgressRing class**](https://msdn.microsoft.com/library/windows/apps/br227538)
+- [**ProgressBar クラス**](https://msdn.microsoft.com/library/windows/apps/br227529)
+- [**ProgressRing クラス**](https://msdn.microsoft.com/library/windows/apps/br227538)
 
-**For developers (XAML)**
-- [Adding progress controls](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651)
-- [How to create a custom indeterminate progress bar for Windows Phone](http://go.microsoft.com/fwlink/p/?LinkID=392426)
+**開発者向け (XAML)**
+- [プログレス コントロールの追加](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651)
+- [Windows Phone 向けのカスタム進行状況不定バーを作成する方法](http://go.microsoft.com/fwlink/p/?LinkID=392426)
 
 
 <!--HONumber=Mar16_HO1-->

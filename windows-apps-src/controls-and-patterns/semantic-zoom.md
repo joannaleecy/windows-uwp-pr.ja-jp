@@ -1,60 +1,60 @@
 ---
-Description: A semantic zoom control allows the user to zoom between two different semantic views of the same data set.
-title: Semantic zoom
+Description: セマンティック ズーム コントロールを使うと、ユーザーは同じデータ セットの 2 つの異なるセマンティック表示間でズームを実行できるようになります。
+title: セマンティック ズーム
 ms.assetid: B5C21FE7-BA83-4940-9CC1-96F6A2DC28C7
-label: Semantic zoom
+label: セマンティック ズーム
 template: detail.hbs
 ---
 
-# Semantic zoom
+# セマンティック ズーム
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-The semantic zoom control enables the user to zoom between two different views of the same content so that they can quickly navigate through a large data set. The zoomed-in view is the main view of the content. You show the complete data set in this view. The zoomed-out view is a higher-level view of the same content. You typically show the group headers for a grouped data set in this view. For example, when viewing an address book, the user could zoom in on a letter and see the names associated with that letter. 
+ユーザーはセマンティック ズーム コントロールによって、大きなデータ セットを迅速に移動できるように、同じコンテンツを 2 つの異なる表示に拡大縮小できます。 拡大表示は、コンテンツのメイン表示です。 このビューでは、完全なデータ セットを表示します。 縮小表示は、同じコンテンツの上位レベルの表示です。 通常、グループ化されたデータ セットのグループ ヘッダーは、このビューで表示します。 たとえば、アドレス帳を表示しているときに、ユーザーは文字を拡大表示して、その文字に関連付けられている名前を調べることができます。 
 
-**Important APIs**
+**重要な API**
 
--   [**SemanticZoom class**](https://msdn.microsoft.com/library/windows/apps/hh702601)
+-   [**SemanticZoom クラス**](https://msdn.microsoft.com/library/windows/apps/hh702601)
 
-**Features**:
+**機能**:
 
--   The size of the zoomed-out view is constrained by the bounds of the semantic zoom control.
--   Tapping on a group header toggles views. Pinching as a way to toggle between views can be enabled.
--   Active headers switch between views.
+-   縮小表示ビューのサイズは、セマンティック ズーム コントロールの境界によって制限されます。
+-   グループ ヘッダーをタップするとビューが切り替わります。 ピンチしてビューを切り替える方法を有効にできます。
+-   アクティブなヘッダーによりビューが切り替わります。
 
-## Examples
+## 例
 
-A semantic zoom used in the Photos app.
+フォト アプリで使われるセマンティック ズームです。
 
-![A semantic zoom used in the Photos app](images/control-examples/semantic-zoom-photos.png)
+![フォト アプリで使われるセマンティック ズーム](images/control-examples/semantic-zoom-photos.png)
 
-An address book is one example of a data set that can be much easier to navigate using a semantic zoom control. In one view is the complete, alphanumerical overview of people in the address book (left image), while the zoomed-in view displays the data in order and with greater detail (right image).
+セマンティック ズーム コントロールを使って簡単にナビゲートできるデータ セットの例として、アドレス帳があります。 1 つのビューでは、アドレス帳に登録されているすべての人の概要がアルファベット順に表示されますが (左側のイメージ)、拡大表示ビューでは、データが順番に表示され、より詳細な情報が表示されます (右側のイメージ)。
 
-![example of semantic zoom used in a contacts list](images/semanticzoom-win10.png)
+![連絡先の一覧で使用されているセマンティック ズームの例](images/semanticzoom-win10.png)
 
-## Recommendations
+## 推奨事項
 
--   When using semantic zoom in your app, be sure that the item layout and panning direction don't change based on the zoom level. Layouts and panning interactions should be consistent and predictable across zoom levels.
--   Semantic zoom enables the user to jump quickly to content, so limit the number of pages/screens to three in the zoomed-out mode. Too much panning diminishes the practicality of semantic zoom.
--   Avoid using semantic zoom to change the scope of the content. For example, a photo album shouldn't switch to a folder view in File Explorer.
--   Use a structure and semantics that are essential to the view.
--   Use group names for items in a grouped collection.
--   Use sort ordering for a collection that is ungrouped but sorted, such as chronological for dates or alphabetical for a list of names.
+-   アプリでセマンティック ズームを使うときは、ズーム レベルごとに項目のレイアウトとパン方向が変わらないようにする必要があります。 レイアウトとパン操作は、ズーム レベルに関係なく一貫して予測できるものにしてください。
+-   セマンティック ズームを使ってすばやくコンテンツにジャンプできるようにするため、縮小モードでのページや画面の数は 3 つまでに制限します。 パンが多すぎると、セマンティック ズームの実用性が損なわれます。
+-   セマンティック ズームを使ってコンテンツの範囲を変更しないでください。 たとえば、フォト アルバムをファイル エクスプローラーのフォルダー表示に切り替えないでください。
+-   各ビューに不可欠な構造とセマンティクスを使います。
+-   グループ化したコレクションの項目にはグループ名を使います。
+-   グループ化せずに並べ替えたコレクションには並べ替え順序を使います (日付の場合は時系列順、名前の一覧の場合はアルファベット順など)。
 
-\[This article contains information that is specific to Universal Windows Platform (UWP) apps and Windows 10. For Windows 8.1 guidance, please download the [Windows 8.1 guidelines PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+\[この記事には、ユニバーサル Windows プラットフォーム (UWP) アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
 
-## Related articles
+## 関連記事
 
-* [Guidelines for common user interactions](https://dev.windows.com/design/inputs-devices)
+* [一般的なユーザー操作のガイドライン](https://dev.windows.com/design/inputs-devices)
 
 
-**Samples (XAML)**
-* [Input: XAML user input events sample](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [XAML scrolling, panning, and zooming sample](http://go.microsoft.com/fwlink/p/?linkid=251717)
+**サンプル (XAML)**
+* [入力: XAML ユーザー入力イベントのサンプル](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [XAML のスクロール、パン、ズームのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=251717)
 
-**Samples (DirectX)**
-* [DirectX touch input sample](http://go.microsoft.com/fwlink/p/?LinkID=231627)
-* [Input: Manipulations and gestures (C++) sample](http://go.microsoft.com/fwlink/p/?linkid=231605)
+**サンプル (DirectX)**
+* [DirectX タッチ入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=231627)
+* [入力: 操作とジェスチャ (C++) のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=231605)
  
 
  

@@ -1,49 +1,49 @@
 ---
-Description: You can respond directly to reviews of your app to let customers know you’re listening to their feedback.
-title: Respond to customer reviews
+Description: フィードバックを確認していることを顧客に伝えるために、アプリのレビューに直接返信できます。
+title: 顧客のレビューに返信する
 ms.assetid: 96AA2108-E793-4DD0-8CDA-0D115423C68D
 ---
 
-# Respond to customer reviews
+# 顧客のレビューに返信する
 
 
-You can respond directly to reviews of your app to let customers know you’re listening to their feedback. With a review response, you can tell customers about the features you’ve added or bugs you’ve fixed based on their comments, or get more specific feedback on how to improve your app. You can also opt to have your response displayed in the Store for all Windows 10 customers to see.
+フィードバックを確認していることを顧客に伝えるために、アプリのレビューに直接返信できます。 レビューへの返信機能を使えば、追加した機能や、顧客のコメントに基づいて修正したバグについて顧客に伝えたり、アプリを改善する方法についてさらに細かいフィードバックを得たりできます。 すべての Windows 10 の顧客から見えるように、返信をストアに表示することもできます。
 
-> **Note**  You won't be able to directly respond to reviews written by customers who have chosen not to receive review responses. Responses also can’t be left for any reviews that were created by customers outside of the U.S. with Windows Phone 8 devices.
+> **注**  レビューへの返信を受け取らない設定にしている顧客が書いたレビューには直接返信できません。 また、米国外の顧客が Windows Phone 8 デバイスを使って作成したレビューに対して 返信することもできません。
 
-To view your app's reviews and provide responses, find the appropriate app in your Windows Dev Center dashboard. In the left navigation menu, expand **Analytics** and then click **Reviews** to display the [Reviews report](reviews-report.md).
+アプリのレビューを表示し、返信するには、Windows デベロッパー センター ダッシュボードで適切なアプリを検索します。 左側のナビゲーション メニューで、**[分析]** を展開し、**[レビュー]** をクリックして[レビュー レポート](reviews-report.md)を表示します。
 
-When you send a review response, the customer will receive an email from Microsoft that lets them see your response. This email will also include your app’s support email address, which the customer can then use to contact you directly. If you didn’t add a support email address for your app during the submission process, you'll be asked to include one before you can respond.
+レビューへの返信を送信すると、顧客には Microsoft からその返信を見ることを促すメールが届きます。 このメールには、顧客が直接連絡するときに使うアプリのサポート メール アドレスも記載されます。 提出プロセスの過程でアプリのサポート メール アドレスを追加していない場合、返信する前にサポート メール アドレスを含めることを求められます。
 
-By default, your response will only be seen by the customer to whom you are responding. If you want to let other customers view your response, check the **Make this response public** box.
+既定では、返信は返信先の顧客が見るだけです。 その他の顧客にも返信を表示する場合は、**[この返信を公開する]** チェック ボックスをオンにします。
 
-> **Note**   Public responses are displayed only to customers viewing the Store on Windows 10 devices.
+> **注**   公開の返信は、Windows 10 デバイスでストアを表示している顧客にのみ表示されます。
 
-Checking the **Make this response public** box lets us display your response in your app’s Store listing, directly below the customer’s review. The response will be visible to all customers, not just the one that left the review.
+**[この返信を公開する]** チェック ボックスをオンにすると、アプリのストアの内容の顧客によるレビューのすぐ下に返信が表示されます。 返信は、レビューを残した顧客だけでなく、すべての顧客に表示されます。
 
-> **Important**  You won’t be able to change a public response later (unless the customer revises their original review), so review your response carefully before you choose to make it public. If a customer does revise their review, your response will be removed. You can then submit a new response to the revised review if you wish.
+> **重要**  公開の返信は後で変更できないため (顧客が元のレビューを改訂しない限り)、返信を公開にする前に慎重に検討してください。 顧客がレビューを改訂すると、返信は削除されます。 必要な場合は、改訂されたレビューに対する新しい返信を提出できます。
 
-## Guidelines for responses
-
-
-When responding to a customer's review, you must follow these guidelines. These apply to all responses, whether you choose to make them public or not.
-
--   Responses must be no longer than 1000 characters.
--   You may not offer any type of compensation, including digital app items, to users for changing the app rating. Remember, attempts to manipulate ratings are not permitted under the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058).
--   Don’t include any marketing content or ads in your response. Remember, your reviewer is already your customer.
--   Don’t promote other apps or services in your response.
--   Your response must be directly related to the specific app and review. Duplicating the same response to a large number of users isn’t allowed if the canned response doesn’t address the same question.
--   Don’t include any profane, aggressive, personal, or malicious comments in your response. Always be polite and keep in mind that happy customers will likely be your app’s biggest promoters.
-
-> **Note**  Customers can report an inappropriate review response from a developer to Microsoft. They can also opt out of receiving review responses.
-Microsoft retains the right to revoke a developer’s permission to send responses for any reason, including if your responses prompt an unusually high number of inappropriate response reports, or an unusually high number of customers to opt out of receiving review responses.
-
-Your relationship with your customers is your own. Microsoft doesn’t get involved in disputes between developers and customers. However, if you think that the content of a customer’s review of your app is inappropriate, please submit a [support ticket](http://go.microsoft.com/fwlink/p/?LinkID=401178).
-
-## Use customer feedback to improve your app
+## 返信のガイドライン
 
 
-Listening and responding to your customers is only the beginning. Acting on their feedback is also critical. If you make significant improvements, showcase them in the Store with confidence by [creating a new submission](app-submissions.md) to update your app.
+顧客のレビューに返信する場合、次のガイドラインに従う必要があります。 返信を公開にするかどうかにかかわらず、これらのガイドラインはすべての返信に適用されます。
+
+-   返信は 1,000 文字以内である必要があります。
+-   デジタル アプリ アイテムなど、アプリの評価を変更してもらうための補償は一切認められていません。 [アプリケーション開発者契約](https://msdn.microsoft.com/library/windows/apps/hh694058)では、評価の操作は許可されていないので注意してください。
+-   返信にマーケティング的な内容や広告を含めないでください。 レビュアーは既に顧客です。
+-   返信で他のアプリやサービスを宣伝しないでください。
+-   返信は、特定のアプリおよびレビューに直接関係したものにする必要があります。 同じ質問に対する定型の返信ではない限り、多数のユーザーに同じ返信を送ることはできません。
+-   品位を欠いたコメントや、攻撃的、個人的、あるいは悪意のあるコメントを、返信に記載しないでください。 常に礼儀正しさを保つようにしてください。また、満足した顧客はアプリの最も重要な推薦人となるということを忘れないでください。
+
+> **注**  顧客は、レビューに対する開発者からの不適切な返信を Microsoft に報告できます。 また、レビューに対する返信を受信しないことを選ぶこともできます。
+Microsoft は、返信が不適切であるという報告が非常に多い場合や、レビューに対する返信を受信しないことを選択している顧客の数が非常に多い場合など、いかなる理由であっても、開発者が返信を送信するための許可を取り消す権利を留保します。
+
+顧客との関係はお客様の責任です。 開発者と顧客との間の係争に Microsoft は関与しません。 ただし、顧客からのアプリのレビュー内容が不適切であると思われる場合は、[サポート チケット](http://go.microsoft.com/fwlink/p/?LinkID=401178)を送信してください。
+
+## 顧客からのフィードバックを使ってアプリを改善する
+
+
+顧客の声を聞いて返信するのは第一歩に過ぎません。 彼らのフィードバックに対応することも重要です。 大幅な改善を行う場合は、アプリを更新するための[新しい申請を作成](app-submissions.md)して、ストアで自信を持ってお知らせしてください。
 
 
 <!--HONumber=Mar16_HO1-->

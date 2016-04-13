@@ -1,36 +1,36 @@
 ---
-Description: Extend the basic functionality of Cortana with voice commands that launch and execute a single action in an external application.
-title: Cortana interactions
+Description: 音声コマンドが Cortana の基本機能を拡張し、外部アプリケーションで単一の操作を起動して実行します。
+title: Cortana の操作
 ms.assetid: 4C11A7CF-DA26-4CA1-A9B9-FE52670101F5
 label: Cortana
 template: detail.hbs
 ---
 
-# Cortana interactions in UWP apps
+# UWP アプリでの Cortana の操作
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-Extend the basic functionality of **Cortana** with voice commands that launch and execute a single action in an external application. 
-
-
-**Other speech components**
-
--   See the [Speech design guidelines](speech-interactions.md) if integrating speech recognition and text-to-speech (also known as TTS, or speech synthesis) directly into your app.
-
-> **Note**  
-> A voice command is a single utterance with a specific intent, defined in a Voice Command Definition (VCD) file, directed at an installed app through **Cortana**.
-
-> A VCD file defines one or more voice commands, each with a unique intent.
-
-> A voice command definition can vary in complexity. It can support anything from a single, constrained utterance to a collection of more flexible, natural language utterances, all denoting the same intent.
+音声コマンドが **Cortana** の基本機能を拡張し、外部アプリケーションで単一の操作を起動して実行します。 
 
 
-The target app can be launched in the foreground (the app takes focus and **Cortana** is dismissed) or activated in the background (**Cortana** retains focus but provides results from the app), depending on the complexity of the interaction. For example, voice commands that require additional context or user input are best handled in a foreground app, while basic commands can be handled in **Cortana** through a background app.
+**他の音声機能コンポーネント**
+
+-   音声認識や音声合成 (TTS: text-to-speech) をアプリに直接統合する場合は、「[音声認識の設計ガイドライン](speech-interactions.md)」をご覧ください。
+
+> **注**  
+> 音声コマンドは、具体的な目的を持って 1 つの言葉を声に出すことであり、音声コマンド定義 (VCD) ファイルで定義されています。**Cortana** を通じてインストール済みアプリに指示が伝えられます。
+
+> VCD ファイルでは、1 つ以上の音声コマンドが定義されており、各音声コマンドは固有の目的を持っています。
+
+> 音声コマンド定義にはさまざまなものがあり、定義が複雑になる場合があります。 音声コマンド定義では、制限された 1 つの言葉の発声から、より柔軟性の高い自然言語の発声のコレクションまで、あらゆる発声をサポートできます。ただし、これらの発声はすべて、同じ目的を示している必要があります。
+
+
+ターゲット アプリは、操作の複雑さに応じて、フォアグラウンドで起動したり (アプリがフォーカスを取得し、**Cortana** は消えます)、バックグラウンドでアクティブ化されたりします (**Cortana** がフォーカスを維持しますが、アプリからの結果を表示します)。 たとえば、追加のコンテキストやユーザー入力が必要な音声コマンドはフォアグラウンド アプリで処理するのが最適ですが、基本的なコマンドは **Cortana** でバックグラウンド アプリを通じて処理できます。
 
  
 
-By integrating the basic functionality of your app, and providing a central entry point for the user to accomplish most of the tasks without opening your app directly, **Cortana** becomes a liaison between your app and the user. Providing this shortcut to app functionality and reducing the need to switch apps can save the user significant time and effort.
+アプリの基本的な機能を統合し、ユーザーが直接アプリを開かずにほとんどのタスクを実行できる中心的エントリ ポイントを提供することで、**Cortana** はアプリとユーザーの仲介役となります。 アプリの機能にこのショートカットを提供し、アプリを切り替える必要性を減らすことによって、ユーザーの時間と労力を大幅に節約できます。
 
 
 <table>
@@ -40,55 +40,55 @@ By integrating the basic functionality of your app, and providing a central entr
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Article</th>
-<th align="left">Description</th>
+<th align="left">記事</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>[Design guidelines](cortana-design-guidelines.md)</p></td>
-<td align="left"><p>These guidelines and recommendations describe how your app can best use **Cortana** to interact with the user, help them accomplish a task, and communicate clearly how it's all happening.</p></td>
+<td align="left"><p>このガイドラインおよび推奨事項では、アプリがユーザーとやり取りしてタスクを実行し、どのように行われているかがすべて明らかになるように **Cortana** を有効に活用する方法について説明します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Launch a foreground app with voice commands](launch-a-foreground-app-with-voice-commands-in-cortana.md)</p></td>
-<td align="left"><p>In addition to using voice commands within <strong>Cortana</strong> to access system features, you can also use voice commands through <strong>Cortana</strong> to launch a foreground app and specify an action or command to execute within the app.</p></td>
+<td align="left"><p><strong>Cortana</strong> 内で音声コマンドを使ってシステム機能にアクセスするだけでなく、<strong>Cortana</strong> を通じて音声コマンドを使ってフォアグラウンド アプリを起動し、アプリ内で実行するアクションやコマンドを指定することもできます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[Dynamically modify VCD phrase lists](dynamically-modify-voice-command-definition--vcd--phrase-lists.md)</p></td>
-<td align="left"><p>Learn how to access and update the list of supported phrases (<strong>PhraseList</strong> elements) in a VCD file using the speech recognition result at run time.</p></td>
+<td align="left"><p>実行時に音声認識結果を使って、VCD ファイルのサポート対象語句の一覧 (<strong>PhraseList</strong> 要素) にアクセスして更新する方法を説明します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Launch a background app with voice commands](launch-a-background-app-with-voice-commands-in-cortana.md)</p></td>
-<td align="left"><p>In addition to using voice commands within <strong>Cortana</strong> to access system features, you can also extend <strong>Cortana</strong> with features and functionality from a background app using voice commands that specify an action or command to execute within the app.</p></td>
+<td align="left"><p><strong>Cortana</strong> 内で音声コマンドを使ってシステム機能にアクセスするだけでなく、アプリ内で実行するアクションやコマンドを指定する音声コマンドを使うバックグラウンド アプリの機能によって <strong>Cortana</strong> を拡張することもできます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[Interact with a background app](interact-with-a-background-app-in-cortana.md)</p></td>
-<td align="left"><p>Learn how a user can interact with a background app through the <strong>Cortana</strong> voice and canvas during the execution of a voice command.</p></td>
+<td align="left"><p>音声コマンドの実行時に <strong>Cortana</strong> の音声とキャンバスを通じてバックグラウンド アプリを操作する方法について説明します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Deep link to a background app](deep-link-into-your-app-from-cortana.md)</p></td>
-<td align="left"><p>Provide deep links from the background app service in <strong>Cortana</strong> to launch the app to the foreground in a specific state or context.</p></td>
+<td align="left"><p><strong>Cortana</strong> でバックグラウンド アプリのサービスからのディープ リンクを提供し、フォアグラウンドに特定の状態やコンテキストでアプリを起動します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[Support natural language voice commands](support-natural-language-voice-commands-in-cortana.md)</p></td>
-<td align="left"><p>Learn how to extend <strong>Cortana</strong> with more flexible and natural voice commands, so a user can say your app's name anywhere in the command.</p></td>
+<td align="left"><p>ユーザーがコマンド内の任意の場所にアプリ名を含めることができるように、柔軟で自然な音声コマンドで <strong>Cortana</strong> を拡張する方法について説明します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <span id="related_topics"></span>Related articles
+## <span id="related_topics"></span>関連記事
 
 
-* [**VCD elements and attributes v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
+* [**VCD 要素および属性 v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
 
-**Designers**
-* [Speech design guidelines](https://msdn.microsoft.com/library/windows/apps/dn596121)
-* [Cortana design guidelines](https://msdn.microsoft.com/library/windows/apps/dn974233)
+**デザイナー向け**
+* [音声認識の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596121)
+* [Cortana の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn974233)
 
-**Samples**
-* [Cortana voice command sample](http://go.microsoft.com/fwlink/p/?LinkID=619899)
+**サンプル**
+* [Cortana 音声コマンドのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619899)
  
 
  

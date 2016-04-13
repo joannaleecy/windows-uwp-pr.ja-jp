@@ -7,7 +7,7 @@ title: エラー報告データの取得
 # エラー報告データの取得
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 特定の日付範囲などのオプション フィルターを使って集計エラー報告データを取得するには、Windows ストア分析 API でこのメソッドを使います。 このメソッドは、データを JSON 形式で返します。
 
@@ -244,10 +244,10 @@ title: エラー報告データの取得
 エラー報告データを取得するためのいくつかの要求の例を次に示します。 *applicationId* 値を、目的のアプリの製品 ID に置き換えてください。
 
 ```
-GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/failurehits?applicationId=9NBLGGGZ5QDR&amp;startDate=1/1/2015&amp;endDate=2/1/2015&amp;top=10&amp;skip=0 HTTP/1.1
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/failurehits?applicationId=9NBLGGGZ5QDR&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0 HTTP/1.1
 Authorization: Bearer <your access token>
 
-GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/failurehits?applicationId=9NBLGGGZ5QDR&amp;startDate=8/1/2015&amp;endDate=8/31/2015&amp;skip=0&amp;$filter=market eq &#39;US&#39; and deviceType eq &#39;phone’ HTTP/1.1
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/failurehits?applicationId=9NBLGGGZ5QDR&startDate=8/1/2015&endDate=8/31/2015&skip=0&filter=market eq 'US' and deviceType eq 'phone' HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 
@@ -310,7 +310,7 @@ Authorization: Bearer <your access token>
       "eventCount": 1.0
     }
   ],
-  "@nextLink": "failurehits?applicationId=9NBLGGGZ5QDR&amp;aggregationLevel=week&amp;startDate=2015/03/01&amp;endDate=2016/02/01&amp;top=1&amp;skip=1",
+  "@nextLink": "failurehits?applicationId=9NBLGGGZ5QDR&aggregationLevel=week&startDate=2015/03/01&endDate=2016/02/01&top=1&skip=1",
   "TotalCount": 191753
 }
 
@@ -325,6 +325,6 @@ Authorization: Bearer <your access token>
 * [アプリのレビューの取得](get-app-reviews.md)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=Mar16_HO2-->
 
 

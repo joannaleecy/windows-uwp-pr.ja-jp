@@ -1,32 +1,32 @@
 ---
-title: Declare background tasks in the application manifest
-description: Enable the use of background tasks by declaring them as extensions in the app manifest.
+title: アプリケーション マニフェストでのバックグラウンド タスクの宣言
+description: アプリ マニフェストでバックグラウンド タスクを拡張機能として宣言し、バックグラウンド タスクを使うことができるようにします。
 ms.assetid: 6B4DD3F8-3C24-4692-9084-40999A37A200
 ---
 
-# Declare background tasks in the application manifest
+# アプリケーション マニフェストでのバックグラウンド タスクの宣言
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-**Important APIs**
+**重要な API**
 
--   [**BackgroundTasks Schema**](https://msdn.microsoft.com/library/windows/apps/br224794)
+-   [**BackgroundTasks スキーマ**](https://msdn.microsoft.com/library/windows/apps/br224794)
 -   [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847)
 
-Enable the use of background tasks by declaring them as extensions in the app manifest.
+アプリ マニフェストでバックグラウンド タスクを拡張機能として宣言し、バックグラウンド タスクを使うことができるようにします。
 
-Background tasks but be declared in the app manifest or else your app will not be able to register them (an exception will be thrown). Additionally, background tasks must be declared in the application manifest to pass certification.
+バックグラウンド タスクはアプリ マニフェストで宣言されている必要があります。このようにしないと、アプリはバックグラウンド タスクを登録できません (例外がスローされます)。 また、認定に合格するように、アプリケーション マニフェストでバックグラウンド タスクを宣言する必要があります。
 
-This topic assumes you have a created one or more background task classes, and that your app registers each background task to run in response to at least one trigger.
+このトピックでは、1 つ以上のバックグラウンド タスク クラスが作られていて、少なくとも 1 つのトリガーに応答して実行されるようにアプリで各バックグラウンド タスクを登録するものとします。
 
-## Add Extensions Manually
+## 手動での拡張機能の追加
 
 
-Open the application manifest (Package.appxmanifest) and go to the Application element. Create an Extensions element (if one doesn't already exist).
+アプリケーション マニフェスト (Package.appxmanifest) を開き、Application 要素に移動します。 Extensions 要素を作ります (まだ存在していない場合)。
 
-The following snippet is taken from the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666):
+次に示す例は、[バックグラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)から抜粋したものです。
 
 ```xml
 <Application Id="App"
@@ -47,12 +47,12 @@ The following snippet is taken from the [background task sample](http://go.micro
  </Application>
 ```
 
-## Add a Background Task Extension
+## バックグラウンド タスク拡張機能の追加
 
 
-Declare your first background task.
+最初のバックグラウンド タスクを宣言します。
 
-Copy this code into the Extensions element (you will add attributes in the following steps).
+このコードを Extensions 要素にコピーします (次の手順で属性を追加します)。
 
 ```xml
       <Extensions>
@@ -64,9 +64,9 @@ Copy this code into the Extensions element (you will add attributes in the follo
       </Extensions>
 ```
 
-1.  Change the EntryPoint attribute to have the same string used by your code as the entry point when registering your background task (**namespace.classname**).
+1.  EntryPoint 属性を、バックグラウンド タスクの登録時にエントリ ポイントとしてコードで使ったものと同じ文字列に変更します (**namespace.classname**)。
 
-    In this example, the entry point is ExampleBackgroundTaskNameSpace.ExampleBackgroundTaskClassName:
+    この例のエントリ ポイントは、ExampleBackgroundTaskNameSpace.ExampleBackgroundTaskClassName です。
 
     ```xml
           <Extensions>
@@ -78,11 +78,11 @@ Copy this code into the Extensions element (you will add attributes in the follo
           </Extensions>
     ```
 
-2.  Change the list of Task Type attribute to indicate the type of task registration used with this background task. If the background task is registered with multiple trigger types, add additional Task elements and Type attributes for each one.
+2.  Task Type 属性のリストを、このバックグラウンド タスクで使われるタスク登録の種類を示すように変更します。 バックグラウンド タスクを複数の種類のトリガーで登録する場合は、必要な Task 要素と Type 属性を個々に追加します。
 
-    **Note**  Make sure to list each of the trigger types you're using, or the background task will not register with the undeclared trigger types (the [**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) method will fail and throw an exception).
+    **Note**  使っているトリガーの各種類を確実に列記してください。そうしないと、バックグラウンド タスクは宣言されていない種類のトリガーには登録されません ([**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) メソッドが失敗し、例外がスローされます)。
 
-    This snippet example indicates the use of system event triggers and push notifications:
+    次の抜粋例は、システム イベント トリガーとプッシュ通知の使用法を示します。
 
     ```xml
                 <Extension Category="windows.backgroundTasks" EntryPoint="Tasks.BackgroundTaskClass">
@@ -141,11 +141,11 @@ The following example is the complete Application element from the [background t
 </Applications>
 ```
 
-## Related topics
+## 関連トピック
 
-* [Debug a background task](debug-a-background-task.md)
-* [Register a background task](register-a-background-task.md)
-* [Guidelines for background tasks](guidelines-for-background-tasks.md)
+* [バックグラウンド タスクのデバッグ](debug-a-background-task.md)
+* [バックグラウンド タスクの登録](register-a-background-task.md)
+* [バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)
 
  
 

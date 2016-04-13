@@ -1,85 +1,85 @@
 ---
 ms.assetid: 9322B3A3-8F06-4329-AFCB-BE0C260C332C
-description: This article guides you through the steps to target various deployment and debugging targets.
-title: Deploying and debugging Universal Windows Platform (UWP) apps
+description: この記事では、さまざまな展開およびデバッグのターゲットを指定する手順について説明します。
+title: ユニバーサル Windows プラットフォーム (UWP) アプリの展開とデバッグ
 ---
 
-# Deploying and debugging Universal Windows Platform (UWP) apps
+# ユニバーサル Windows プラットフォーム (UWP) アプリの展開とデバッグ
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-This article guides you through the steps to target various deployment and debugging targets.
+この記事では、さまざまな展開およびデバッグのターゲットを指定する手順について説明します。
 
-Microsoft Visual Studio allows you to deploy and debug your Universal Windows Platform (UWP) apps on a variety of Windows 10 devices. Visual Studio will handle the process of building and registering the application on the target device.
+Microsoft Visual Studio では、さまざまな Windows 10 デバイスにユニバーサル Windows プラットフォーム (UWP) アプリを展開してデバッグできます。 Visual Studio は、ターゲット デバイスにアプリケーションを展開して登録するプロセスを処理します。
 
-## Picking a deployment target
+## 展開ターゲットの選択
 
-To pick a target, navigate to the debug target dropdown next to the **Start Debugging** button and select which target you want to deploy your application to. After the target is selected, choose **Start Debugging (F5)** to deploy and debug on that target, or press **Ctrl+F5** to just deploy to that target.
+ターゲットを選択するには、**[デバッグの開始]** ボタンの横にあるデバッグ ターゲットのドロップダウンに移動し、アプリケーションの展開先のターゲットを選択します。 ターゲットを選択した後で、そのターゲットに展開してデバッグする場合は **[デバッグの開始 (F5)]** を選択し、単にそのターゲットに展開する場合は **Ctrl + F5** キーを押します。
 
 ![](images/debug-device-target-list.png)
 
--   **Local Machine** will deploy the application to your current development machine. This option is only available if your application's **Target Platform Min. Version** is less than or equal to the operating system on your development machine.
--   **Simulator** will deploy the application to a simulated environment on your current development machine. This option is only available if your application's **Target Platform Min. Version** is less than or equal to the operating system on your development machine.
--   **Device** will deploy the application to a USB connected device. The device must be developer unlocked and have the screen unlocked.
--   An **Emulator** target will boot up and deploy the application to an emulator with the configuration specified in the name. Emulators are only available on Hyper-V enabled machines running Windows 8.1 or beyond.
--   **Remote Machine** will let you specify a remote target to deploy the application. More information about deploying to a remote machine can be found in [Specifying a remote device](#specifying-a-remote-device).
+-   **[ローカル コンピューター]** は、現在の開発コンピューターにアプリケーションを展開します。 このオプションは、アプリケーションの **[ターゲット プラットフォームの最小バージョン]** が開発コンピューターのオペレーティング システム以下である場合にのみ使用できます。
+-   **[シミュレーター]** は、現在の開発コンピューター上のシミュレートされた環境にアプリケーションを展開します。 このオプションは、アプリケーションの **[ターゲット プラットフォームの最小バージョン]** が開発コンピューターのオペレーティング システム以下である場合にのみ使用できます。
+-   **[デバイス]** は、USB 接続のデバイスにアプリケーションを展開します。 デバイスが開発者によりロック解除され、画面がロック解除されている必要があります。
+-   **[エミュレーター]** ターゲットが起動し、名前で指定された構成のエミュレーターにアプリケーションが展開されます。 エミュレーターは、Windows 8.1 以降を実行している Hyper-V 対応コンピューターでのみ使用できます。
+-   **[リモート コンピューター]** では、アプリケーションを展開するリモート ターゲットを指定できます。 リモート コンピューターへの展開について詳しくは、「[リモート デバイスの指定](#specifying-a-remote-device)」をご覧ください。
 
-## Specifying a remote device
+## リモート デバイスの指定
 
-### C# and Microsoft Visual Basic
+### C# および Microsoft Visual Basic
 
-To specify a remote machine for C# or Microsoft Visual Basic apps, select **Remote Machine** in the debug target dropdown. The **Remote Connections** dialog will appear which will let you specify an IP Address or select a discovered device. By default, the **Universal** authentication mode is selected. To determine which authentication mode to use, see [Authentication modes](#authentication-modes).
+C# または Microsoft Visual Basic のアプリのリモート コンピューターを指定するには、デバッグ ターゲットのドロップダウンで **[リモート コンピューター]** を選択します。 **[リモート接続]** ダイアログが表示され、IP アドレスを指定するか、または検出されたデバイスを選択できます。 既定では、**[ユニバーサル]** 認証モードが選択されます。 使用する認証モードを決定するには、「[認証モード](#authentication-modes)」をご覧ください。
 
 ![](images/debug-remote-connections.png)
 
-To return to this dialog, you can open project properties and navigate to the **Debug** tab. From there, select **Find…** next to **Remote machine:**
+このダイアログに戻るには、プロジェクト プロパティを開き、**[デバッグ]** タブに移動します。 そこから、**[リモート コンピューター:]** の横にある **[検索…]** を選択します。
 
 ![](images/debug-remote-machine-config.png)
 
-To deploy an application to a remote PC, you will also need to download and install the Visual Studio Remote Tools on the target PC. See [Remote PC instructions](#remote-pc-instructions) for full instructions.
+アプリケーションをリモート PC に展開するには、Visual Studio リモート ツールをターゲット PC にダウンロードしてインストールする必要もあります。 詳しい手順については、「[リモート PC の手順](#remote-pc-instructions)」をご覧ください。
 
-### C++ and JavaScript
+### C++ および JavaScript
 
-To specify a remote machine target for a C++ or JavaScript UWP app, go to project properties by right clicking on the project in the **Solution Explorer**, and clicking **Properties**. Navigate to **Debugging** settings and change **Debugger to launch** to **Remote Machine**. Then fill in the **Machine Name** (or click **Locate…** to find one) and set the **Authentication Type** property.
+C++ または JavaScript UWP アプリのリモート コンピューター ターゲットを指定するには、**[ソリューション エクスプローラー]** でプロジェクトを右クリックしてプロジェクト プロパティに移動し、**[プロパティ]** をクリックします。 **[デバッグ]** 設定に移動し、**[起動するデバッガー]** を **[リモート コンピューター]** に変更します。 次に、**[コンピューター名]** を入力 (または **[検索…]** をクリックして検出) し、**[認証の種類]** プロパティを設定します。
 
 ![](images/debug-property-pages.png)
-After the machine is specified, you can select **Remote Machine** in the debug target dropdown to return to that specified machine. Only one remote machine can be selected at a time.
+コンピューターを指定した後で、デバッグ ターゲットのドロップダウンで **[リモート コンピューター]** を選択し、その指定コンピューターに戻ることができます。 一度に選ぶことができるリモート コンピューターは 1 つだけです。
 
-### Remote PC instructions
+### リモート PC の手順
 
-To deploy to a remote PC, the target PC must have the Visual Studio Remote Tools installed. The remote PC must also be running a version of Windows that is greater than or equal to your apps **Target Platform Min. Version** property. Once you have installed the remote tools, you must launch the remote debugger on the target PC. To do this, search for **Remote Debugger** in the **Start** menu launch it, and if prompted allow the debugger to configure your firewall settings. By default, the debugger launches with Windows authentication. This will require user credentials if the logged in user is not the same on both PCs. To change it to **No authentication**, go to **Tools** -&gt; **Options** in the **Remote Debugger** and set it to **No Authentication**. Once the remote debugger is setup, you can deploy from your development machine.
+リモート PC に展開するには、ターゲット PC に Visual Studio リモート ツールがインストールされている必要があります。 また、リモート PC がアプリの **[ターゲット プラットフォームの最小バージョン]** プロパティ以上の Windows バージョンを実行している必要もあります。 リモート ツールをインストールしたら、ターゲット PC でリモート デバッガーを起動する必要があります。 これを行うには、**[スタート]** メニューで **[リモート デバッガー]** を探して起動し、プロンプトが表示されたらデバッガーがファイアウォール設定を構成できるようにします。 既定では、デバッガーは Windows 認証を使用して起動します。 両方の PC でログイン ユーザーが同じでない場合、これにはユーザー資格情報が必要になります。 **[認証なし]** に変更するには、**[リモート デバッガー]** で **[ツール]**、**[オプション]** の順にクリックし、**[認証なし]** に設定します。 リモート デバッガーを設定したら、開発コンピューターから展開できます。
 
-For more information see the [Remote Tools for Visual Studio]( http://go.microsoft.com/fwlink/?LinkId=717039) download page.
+詳しくは、[Remote Tools for Visual Studio]( http://go.microsoft.com/fwlink/?LinkId=717039) ダウンロード ページをご覧ください。
 
-## Authentication modes
+## 認証モード
 
-There are three authentication modes for remote machine deployment:
+リモート コンピューターへの展開用に 3 つの認証モードがあります。
 
-- **Universal (Unencrypted Protocol)**: Use this authentication mode whenever you are deploying to a remote device that is not a Windows PC (desktop or laptop). Currently, this is only IoT devices. Universal (Unencrypted Protocol) should only be used on trusted networks. The debugging connection is vulnerable to malicious users who could intercept and change data being passed between the development and remote machine.
-- **Windows**: This authentication mode is only intended to be used for remote PC deployment (desktop or laptop). Use this authentication mode when you have access to the credentials of the logged in user of the target machine. This is the most secure channel for remote deployment.
-- **None**: This authentication mode is only intended to be used for remote PC deployment (desktop or laptop). Use this authentication mode when you have a test machine setup in an environment that has a test account logged in and you cannot enter the credentials. Make sure the remote debugger settings are set to accept no authentication.
+- **[ユニバーサル (暗号化されていないプロトコル)]**: Windows PC (デスクトップまたはラップトップ) ではないリモート デバイスに展開するときは、必ずこの認証モードを使います。 現時点では、これは IoT デバイスのみです。 ユニバーサル (暗号化されていないプロトコル) は、信頼されたネットワークで使う必要があります。 デバッグ接続は、開発マシンとリモート マシンとの間で渡されるデータを傍受して変更できる悪意のあるユーザーに対して脆弱です。
+- **[Windows]**: この認証モードは、リモート PC への展開 (デスクトップまたはラップトップ) に使用することのみを意図しています。 ターゲット コンピューターのログイン ユーザーの資格情報にアクセスできる場合は、この認証モードを使用します。 これは、リモート展開用の最も安全なチャネルです。
+- **[なし]**: この認証モードは、リモート PC への展開 (デスクトップまたはラップトップ) に使用することのみを意図しています。 テスト アカウントがログインしていて資格情報を入力できない環境にテスト コンピューターがセットアップされている場合は、この認証モードを使用します。 リモート デバッガーの設定が、認証を受け入れないように設定されていることを確認してください。
 
-## Debugging options
+## デバッグのオプション
 
-On Windows 10, the startup performance of UWP apps is improved by proactively launching and then suspending apps in a technique called [prelaunch](https://msdn.microsoft.com/library/windows/apps/Mt593297). Many applications will not need to do anything special to work in this mode, but some applications may need to adjust their behavior. To help debug any issues in these code paths you can start debugging the app from Visual Studio in prelaunch mode. Debugging is supported both from a Visual Studio project (**Debug** -&gt; **Other Debug Targets** -&gt; **Debug Universal Windows App Prelaunch**), and for apps already installed on the machine (**Debug** -&gt; **Other Debug Targets** -&gt; **Debug Installed App Package**, and check the box for **Activate app with Prelaunch**). For more information read about how to [Debug UWP Prelaunch]( http://go.microsoft.com/fwlink/?LinkId=717245).
+Windows 10 では、 [事前起動](https://msdn.microsoft.com/library/windows/apps/Mt593297)と呼ばれる手法でアプリを事前に起動してから中断することにより、UWP アプリの起動パフォーマンスが向上します。 多くのアプリケーションはこのモードで動作するために特別に何もする必要はありませんが、一部のアプリケーションでは動作を調整する必要があります。 これらのコード パスの問題をデバッグするために、事前起動モードで Visual Studio からアプリのデバッグを開始できます。 デバッグは、Visual Studio プロジェクト (**[デバッグ]** -&gt; **[その他のデバッグ ターゲット]** -&gt; **[Debug Universal Windows App Prelaunch] (事前起動のユニバーサル Windows アプリのデバッグ)**)、および既にコンピューターにインストールされているアプリ (**[デバッグ]** -&gt; **[その他のデバッグ ターゲット]** -&gt; **[インストールされているアプリケーション パッケージのデバッグ]**、**[Activate app with Prelaunch] (事前起動のアプリのアクティブ化)** のボックスをオンにする) の両方でサポートされます。 詳しくは、[事前起動 UWP をデバッグする]( http://go.microsoft.com/fwlink/?LinkId=717245)方法をお読みください。
 
-You can set the following deployment options on the **Debug** property page of the startup project.
+スタートアップ プロジェクトの **[デバッグ]** プロパティ ページで、次の展開オプションを設定できます。
 
-**Allow Network Loopback**
+**[Allow Network Loopback] (ネットワーク ループバックの許可)**
 
-For security reasons, a UWP app that is installed in the standard manner is not allowed to make network calls to the device it is installed on. By default, Visual Studio deployment creates an exemption from this rule for the deployed app. This exemption allows you to test communication procedures on a single machine. Before submitting your app to the Windows Store, you should test your app without the exemption.
+セキュリティ上の理由で、標準的な方法でインストールされた UWP アプリでは、それがインストールされているデバイスに対してネットワーク呼び出しを実行することは許可されません。 既定では、Visual Studio の展開では、展開されたアプリについてこの規則が除外されます。 この除外により、単一コンピューター上で通信手順をテストできます。 アプリを Windows ストアに申請する前に、この除外を使用せずにアプリをテストする必要があります。
 
-To remove the network loopback exemption from the app:
+ネットワーク ループバックに関する除外をアプリから除去するには:
 
--   On the C# and Visual Basic **Debug** property page, clear the **Allow Network Loopback** check box.
--   On the JavaScript and C++ **Debugging** property page, set the **Allow Network Loopback** value to **No**.
+-   C# および Visual Basic の **[デバッグ]** プロパティ ページで、**[Allow Network Loopback] (ネットワーク ループバックの許可)** チェック ボックスをオフにします。
+-   JavaScript および C++ の **[デバッグ]** プロパティ ページで、**[Allow Network Loopback] (ネットワーク ループバックの許可)** 値を **[いいえ]** に設定します。
 
-**Do not launch, but debug my code when it starts (C# and Visual Basic) / Launch App (JavaScript and C++)**
+**[起動しないが、開始時にマイ コードをデバッグする] (C# および Visual Basic) / [アプリの起動] (JavaScript および C++)**
 
-To configure the deployment to automatically start a debugging session when the app is launched:
+アプリ起動時にデバッグ セッションが自動的に開始されるように展開を構成するには:
 
--   On the C# and Visual Basic **Debug** property page, check the **Do not launch, but debug my code when it starts** check box.
--   On the JavaScript and C++ **Debugging** property page, set the **Launch Application** value to **Yes**.
+-   C# および Visual Basic の **[デバッグ]** プロパティ ページで、**[起動しないが、開始時にマイ コードをデバッグする]** チェック ボックスをオンにします。
+-   JavaScript および C++ の **[デバッグ]** プロパティ ページで、**[アプリの起動]** 値を **[はい]** に設定します。
 
 
 

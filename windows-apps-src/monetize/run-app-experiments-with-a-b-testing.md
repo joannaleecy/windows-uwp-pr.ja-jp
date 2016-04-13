@@ -1,52 +1,52 @@
 ---
-Description: You can use the Windows Dev Center dashboard to run experiments for your Universal Windows Platform (UWP) apps with A/B testing.
-title: Run app experiments with A/B testing
+Description: Windows デベロッパー センター ダッシュボードを使用して、ユニバーサル Windows プラットフォーム (UWP) アプリの A/B テストを実行することができます。
+title: A/B テストを使用してアプリの試験的機能を実行する
 ms.assetid: 790B4B37-C72D-4CEA-97AF-D226B2216DCC
 ---
 
-# Run app experiments with A/B testing
+# A/B テストを使用してアプリの試験的機能を実行する
 
-You can use the Windows Dev Center dashboard to run experiments for your Universal Windows Platform (UWP) apps with A/B testing.
+Windows デベロッパー センター ダッシュボードを使用して、ユニバーサル Windows プラットフォーム (UWP) アプリの A/B テストを実行することができます。
 
-In an A/B test, you experiment with program variable assignments in your apps through Dev Center. By building app logic around A/B testable program variables, you can enable variations of your app for randomized segments of your user audience. The goal of your A/B test is to identify a variation that is likely to earn you improved conversion rates (for example, more in-app purchases).
+A/B テストでは、デベロッパー センターを通じてアプリのプログラムの変数割り当てを検証します。 A/B テストが可能なプログラムの変数にアプリのロジックを構築することによって、ユーザーのランダム化されたセグメント向けにアプリのバリエーションを有効にすることができます。 A/B テストの目的は、アプリ内購入が増えるなど、コンバージョン率を上げる可能性のあるバリエーションを識別することです。
 
-After you have identified a variation that best meets your business goals, you can immediately end the experiment and enable that variation for your entire user audience from the Dev Center dashboard, without having to republish your app.
+ビジネス目標に最も適したバリエーションを識別したら、アプリを再公開しなくても、すぐに試験的機能を終了してデベロッパー センター ダッシュボードからユーザー全体にそのバリエーションを有効にすることができます。
 
-## Create and run an A/B test
+## A/B テストを作成および実行する
 
-To create and run an A/B test, follow these steps:
+A/B テストを作成および実行するには、次の手順に従います。
 
-1. [Define your experiment in the Dev Center dashboard](define-your-experiment-in-the-dev-center-dashboard.md). Each experiment consists of:
-  * A *view event* that indicates when the user starts viewing a variation that is part of your experiment.
-  * One or more goals with *conversion events* that indicate when an objective has been reached.
-  * One or more *variations* that define the settings used by your experiment.
-2. [Code your app for experimentation](code-your-experiment-in-your-app.md). Use an API in the Microsoft Store Engagement and Monetization SDK to get variation settings for the experiment, use this data to modify the behavior of the feature you are testing, and send view event and conversion events to Dev Center.
-3. [Run and manage your experiment in the Dev Center dashboard](manage-your-experiment.md). Use the dashboard to review the results of the experiment and complete the experiment.
+1. [デベロッパー センター ダッシュボードで試験的機能を定義します](define-your-experiment-in-the-dev-center-dashboard.md)。 試験的機能はそれぞれ、以下のもので構成されます。
+  * ビュー イベントは試験的機能の一部であるバリエーションのチェックをユーザーが開始することを示します。**
+  * コンバージョン イベントによる 1 つ以上の目標では、いつ目標に達したかを示します。**
+  * 1 つ以上のバリエーションでは、試験的機能で使用する設定を定義します。**
+2. [アプリで試験的機能のコードを記述します](code-your-experiment-in-your-app.md)。 Microsoft Store Engagement and Monetization SDK にある API を使用して、実験のバリエーション設定を取得します。次にこのデータを使用して、テストしている機能の動作を変更します。そしてビュー イベントおよびコンバージョン イベントをデベロッパー センターへ送信します。
+3. [デベロッパー センター ダッシュボードで試験的機能を実行および管理します](manage-your-experiment.md)。 ダッシュボードを使用して、試験的機能の結果を確認し、試験的機能を完了します。
 
-For a walkthrough that demonstrates the end-to-end process, see [Create and run your first experiment with A/B testing](create-and-run-your-first-experiment-with-a-b-testing.md).
+エンド ツー エンドのプロセスを示すチュートリアルについては、「[A/B テストを使用して最初の試験的機能を作成および実行する](create-and-run-your-first-experiment-with-a-b-testing.md)」をご覧ください。
 
-## Requirements
+## 必要条件
 
-A/B testing in Windows Dev Center is supported only for UWP apps.
+Windows デベロッパー センターの A/B テストは、UWP アプリのみでサポートされています。
 
-Before you can run experiments with A/B testing, you must set up your development computer:
+A/B テストを実行する前に、開発用コンピューターを設定する必要があります。
 
-* Follow the instructions [here](../get-started/get-set-up.md) to set up your development computer for UWP development.
-* Install the [Microsoft Store Engagement and Monetization SDK](http://aka.ms/store-em-sdk). In addition to the API for experiments, this SDK also provides APIs for other features such as displaying ads and directing your customers to Feedback Hub to collect feedback on your app. For more information about this SDK, see [Monetize your app with the Store Engagement and Monetization SDK](monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md).
+* [ここ](../get-started/get-set-up.md)で説明する指示に従って、UWP 開発のための開発用コンピューターを設定します。
+* [Microsoft Store Engagement and Monetization SDK](http://aka.ms/store-em-sdk) をインストールします。 試験的機能用の API に加えて、この SDK は広告を表示したり、アプリのフィードバックを収集するフィードバック Hub にユーザーを誘導するなど、その他の機能のための API も提供します。 この SDK について詳しくは、「[Store Engagement and Monetization SDK によるアプリ収益の獲得](monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md)」をご覧ください。
 
-## Best practices
+## ベスト プラクティス
 
-For the most useful results, we recommend that you follow these recommendations when running experiments with A/B testing:
+最も有用な結果を得るには、A/B テストを実行しているときに、次の推奨事項に従うことをお勧めします。
 
-* Consider running experiments with only two variations with a randomized 50/50 split distribution for variation assignments.
-* Run experiments for at least 2 – 4 weeks to gather sufficient data that is statistically significant and actionable.
+* バリエーションの割り当て用に、ランダム化された 50/50 分割の配布による 2 つのみのバリエーションで試験的機能を実行することを検討してください。
+* 統計的に重要でアクション可能なデータを十分収集するために、少なくとも 2 ～ 4 週間はテストを実行します。
 
-## Related topics
+## 関連トピック
 
-* [Define your experiment in the Dev Center dashboard](define-your-experiment-in-the-dev-center-dashboard.md)
-* [Code your app for experimentation](code-your-experiment-in-your-app.md)
-* [Manage your experiment in the Dev Center dashboard](manage-your-experiment.md)
-* [Create and run your first experiment with A/B testing](create-and-run-your-first-experiment-with-a-b-testing.md)
+* [デベロッパー センター ダッシュボードで試験的機能を定義する](define-your-experiment-in-the-dev-center-dashboard.md)
+* [アプリで試験的機能のコードを記述する](code-your-experiment-in-your-app.md)
+* [デベロッパー センター ダッシュボードで試験的機能を管理する](manage-your-experiment.md)
+* [A/B テストを使用して最初の試験的機能を作成および実行する](create-and-run-your-first-experiment-with-a-b-testing.md)
 
 
 <!--HONumber=Mar16_HO5-->

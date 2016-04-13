@@ -1,72 +1,72 @@
 ---
-Description: Use a tooltip to reveal more info about a control before asking the user to perform an action.
-title: Tooltips
+Description: ユーザーに操作の実行を指示する前に、ヒントを使ってコントロールに関する詳しい情報を表示します。
+title: ヒント
 ms.assetid: A21BB12B-301E-40C9-B84B-C055FD43D307
 label: Tooltips
 template: detail.hbs
 
 ---
 
-# Tooltips
+# ヒント
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-A tooltip is a short description that is linked to another control or object. Tooltips help users understand unfamiliar objects that aren't described directly in the UI. They display automatically when the user moves focus to, presses and holds, or hovers the mouse pointer over a control. The tooltip disappears after a few seconds, or when the user moves the finger, pointer or keyboard/gamepad focus.
+ヒントは、他のコントロールまたはオブジェクトにリンクされた短い説明です。 ヒントを使うと、UI では直接説明されていない、なじみのないオブジェクトをユーザーが理解しやすくなります。 ヒントは、ユーザーがコントロールにフォーカスを移動する、コントロール上で長押しする、またはマウス ポインターをコントロール上にホバーすると、自動的に表示されます。 また、ヒントは数秒経過するか、ユーザーが指、ポインター、またはキーボード/ゲームパッドのフォーカスを移動すると消えます。
 
-![A tooltip](images/controls/tool-tip.png)
+![ヒント](images/controls/tool-tip.png)
 
-<span class="sidebar_heading" style="font-weight: bold;">Important APIs</span>
+<span class="sidebar_heading" style="font-weight: bold;">重要な API</span>
 
--   [**ToolTip class**](https://msdn.microsoft.com/library/windows/apps/br227608)
--   [**ToolTipService class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltipservice)
+-   [**ToolTip クラス**](https://msdn.microsoft.com/library/windows/apps/br227608)
+-   [**ToolTipService クラス**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.tooltipservice)
 
-## Is this the right control?
+## 適切なコントロールの選択
 
-Use a tooltip to reveal more info about a control before asking the user to perform an action. Tooltips should be used sparingly, and only when they are adding distinct value for the user who is trying to complete a task. One rule of thumb is that if the information is available elsewhere in the same experience, you do not need a tooltip. A valuable tooltip will clarify an unclear action.
+ユーザーに操作の実行を指示する前に、ヒントを使ってコントロールに関する詳しい情報を表示します。 ヒントは慎重に使い、タスクを完了しようとしているユーザーにとって明らかに重要である場合にのみ追加します。 1 つの目安は、情報が同じエクスペリエンスのどこかで入手できる場合、ヒントは必要ありません。 価値あるヒントによって、不明瞭な操作を明確にします。
 
-When should you use a tooltip? To decide, consider these questions:
+ヒントはどのような場合に使えばよいでしょうか。 それを判断するには、以下の質問を考えます。
 
--   **Should info become visible based on pointer hover?**
-    If not, use another control. Display tips only as the result of user interaction, never display them on their own.
+-   **情報はポインターのホバーに基づいて表示すべきですか?**
+    そうでない場合は、別のコントロールを使います。 ヒントは、ユーザーの操作の結果としてのみ表示します。自動的には表示しません。
 
--   **Does a control have a text label?**
-    If not, use a tooltip to provide the label. It is a good UX design practice to label most controls inline and for these you don't need tooltips. Toolbar controls and command buttons showing only icons need tooltips.
+-   **コントロールにはテキスト ラベルがありますか?**
+    ない場合は、ヒントを使ってラベルを表示します。 UX の設計では、ほとんどのコントロールにインラインでラベルを付けることをお勧めします。それらのコントロールには、ヒントは必要ありません。 アイコンだけが表示されるツール バー コントロールとコマンド ボタンには、ヒントが必要です。
 
--   **Does an object benefit from a description or further info?**
-    If so, use a tooltip. But the text must be supplemental — that is, not essential to the primary tasks. If it is essential, put it directly in the UI so that users don't have to discover or hunt for it.
+-   **説明や追加情報がオブジェクトに対して役立ちますか?**
+    そうであれば、ヒントを使います。 ただし、このテキストは、主要なタスクに必須なものではなく、補助的なものである必要があります。 必須なものであれば、直接 UI に配置して、ユーザーが探さなくても済むようにします。
 
--   **Is the supplemental info an error, warning, or status?**
-    If so, use another UI element, such as a flyout.
+-   **表示する補助的な情報は、エラー、警告、または状態ですか?**
+    その場合は、ポップアップなど、他の UI 要素を使います。
 
--   **Do users need to interact with the tip?**
-    If so, use another control. Users can't interact with tips because moving the mouse makes them disappear.
+-   **ユーザーがヒントを操作する必要がありますか?**
+    その場合は、別のコントロールを使います。 ヒントはマウスを動かすと消えるため、ユーザーはヒントを操作できません。
 
--   **Do users need to print the supplemental info?**
-    If so, use another control.
+-   **ユーザーが補助的な情報を印刷する必要がありますか?**
+    その場合は、別のコントロールを使います。
 
--   **Will users find the tips annoying or distracting?**
-    If so, consider using another solution — including doing nothing at all. If you do use tips where they might be distracting, allow users to turn them off.
+-   **ユーザーがヒントを煩わしいと感じますか?**
+    その場合は、別の手段を使うことを検討します。何もしない、という選択肢もあります。 煩わしいと感じる可能性があってもヒントを使う場合は、ユーザーがヒントをオフにできるようにします。
 
-## Example
+## 例
 
-A tooltip in the Bing Maps app.
+Bing Maps アプリのヒントです。
 
-![A tooltip in the Bing Maps app](images/control-examples/tool-tip-maps.png)
+![Bing Maps アプリのヒントです](images/control-examples/tool-tip-maps.png)
 
-## Recommendations
+## 推奨事項
 
--   Use tooltips sparingly (or not at all). Tooltips are an interruption. A tooltip can be as distracting as a pop-up, so don't use them unless they add significant value.
--   Keep the tooltip text concise. Tooltips are perfect for short sentences and sentence fragments. Large blocks of text can be overwhelming and the tooltip may time out before the user has finished reading.
--   Create helpful, supplemental tooltip text. Tooltip text must be informative. Don't make it obvious or just repeat what is already on the screen. Because tooltip text isn't always visible, it should be supplemental info that users don't have to read. Communicate important info using self-explanatory control labels or in-place supplemental text.
--   Use images when appropriate. Sometimes it's better to use an image in a tooltip. For example, when the user hovers over a hyperlink, you can use a tooltip to show a preview of the linked page.
--   Don't use a tooltip to display text already visible in the UI. For example, don't put a tooltip on a button that shows the same text of the button.
--   Don't put interactive controls inside the tooltip.
--   Don't put images that look like they are interactive inside the tooltip.
+-   ヒントは慎重に使います (または使わない)。 ヒントは作業の中断になります。 ヒントはポップアップと同じように煩わしい場合があるため、大きな付加価値がない限り使わないでください。
+-   ヒントのテキストは簡潔なものにします。 ヒントは短い文やフレーズに適しています。 大きなテキストのまとまりは圧迫感を与えることがあり、ユーザーが読み終える前にヒントがタイムアウトする可能性があります。
+-   役に立つ補足的なヒント テキストを作成します。 ヒントのテキストは、情報として役に立つ必要があります。 表示しなくても明らかな情報や、既に画面上に表示されている内容の繰り返しなどは避けます。 ヒントのテキストは常に表示されているわけではないため、ユーザーが必ずしも読まなくても問題がないような、補足的な情報である必要があります。 重要な情報は、名前から判別できるコントロール ラベルを使うか、補足的なテキストを適切な場所に配置することで伝えるようにします。
+-   状況に応じて画像を使います。 ヒント内に画像を使うとよい場合もあります。 たとえば、ユーザーがハイパーリンクの上にカーソルを置いたときに、ヒントを使ってリンク先ページのプレビューを表示できます。
+-   既に UI に表示されているテキストは、ヒントとして表示しないでください。 たとえば、ボタンと同じテキストを表示するヒントをボタンに表示しないでください。
+-   ヒント内に対話的なコントロールを配置しないでください。
+-   対話的に見えるような画像をヒント内に配置しないでください。
 
-<span id="related_topics"></span>Related topics
+<span id="related_topics"></span>関連トピック
 -----------------------------------------------
 
-* [**ToolTip class**](https://msdn.microsoft.com/library/windows/apps/br227608)
+* [**ToolTip クラス**](https://msdn.microsoft.com/library/windows/apps/br227608)
 
 
 <!--HONumber=Mar16_HO4-->

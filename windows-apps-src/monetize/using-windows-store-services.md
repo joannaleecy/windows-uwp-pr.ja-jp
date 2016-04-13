@@ -1,23 +1,23 @@
 ---
 ms.assetid: 9FCBAF2E-5419-4169-A17C-9C4058DCF909
-description: The Windows Store exposes several services that you can call via REST APIs to programmatically access certain types of data for apps that are registered to your or your organization''s Windows Dev Center account.
-title: Use Windows Store services
+description: Windows ストアでは、REST API を経由して呼び出すことができるサービスがいくつか公開されています。これらのサービスを利用することで、お客さまやお客様の組織の Windows デベロッパー センター アカウントに登録されているアプリの特定の種類のデータに、プログラムを使ってアクセスすることができます。
+title: Windows ストア サービスの使用
 ---
 
-# Use Windows Store services
+# Windows ストア サービスの使用
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-The Windows Store exposes several services that you can call via REST APIs to programmatically access certain types of data for apps that are registered to your or your organization's Windows Dev Center account.
+Windows ストアでは、REST API を経由して呼び出すことができるサービスがいくつか公開されています。これらのサービスを利用することで、お客さまやお客様の組織の Windows デベロッパー センター アカウントに登録されているアプリの特定の種類のデータに、プログラムを使ってアクセスすることができます。
 
-## In this section
+## このセクションの内容
 
 
-| Topic                                                                                                       | Description                 |
+| トピック                                                                                                       | 説明                 |
 |-------------------------------------------------------------------------------------------------------------|-----------------------------|
-| [Access analytics data](access-analytics-data-using-windows-store-services.md) | Use the <em>Windows Store analytics API</em> to programmatically retrieve analytics data for apps that are registered to your or your organization's Windows Dev Center account. This API enables you to retrieve data for app and IAP acquisitions, app failures, app ratings and reviews. |
-| [View and grant products from a service](view-and-grant-products-from-a-service.md)  | If you have a catalog of apps and in-app products (IAPs), you can use the Windows Store collection API and Windows Store purchase API to access ownership information for these products from your services.  |
+| [分析データへのアクセス](access-analytics-data-using-windows-store-services.md) | <em>Windows ストア分析 API</em> を使って、お客様またはお客様の組織の Windows デベロッパー センター アカウントに登録されたアプリの分析データをプログラムで取得することができます。 この API では、アプリおよび IAP の入手数、アプリのエラー、アプリの評価とレビューに関するデータを取得できます。 |
+| [サービスからの製品の表示と許可](view-and-grant-products-from-a-service.md)  | アプリおよびアプリ内製品 (IAP) のカタログがある場合は、Windows ストア コレクション API と Windows ストア購入 API を使って、サービスからこれらの製品の所有権情報にアクセスできます。  |
 
 
 

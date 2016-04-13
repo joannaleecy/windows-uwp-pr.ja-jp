@@ -1,88 +1,93 @@
 ---
 ms.assetid: 9BA3F85A-970F-411C-ACB1-B65768B8548A
-description: This article describes how to quickly display the camera preview stream within a XAML page in a Universal Windows Platform (UWP) app.
-title: Simple camera preview access
+description: この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリで XAML ページ内にカメラ プレビュー ストリームをすばやく表示する方法について説明します。
+title: シンプルなカメラ プレビューへのアクセス
 ---
 
-# Simple camera preview access
+# シンプルなカメラ プレビューへのアクセス
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-This article describes how to quickly display the camera preview stream within a XAML page in a Universal Windows Platform (UWP) app. Creating an app that captures photos and videos using the camera requires you to perform tasks like handling device and camera orientation or setting encoding options for the captured file. For some app scenarios, you may want to just simply show the preview stream from the camera without worrying about these other considerations. This article shows you how to do that with a minimum of code. Note that you should always shut down the preview stream properly when you are done with it by following the steps below.
+この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリで XAML ページ内にカメラ プレビュー ストリームをすばやく表示する方法について説明します。 カメラを使って写真やビデオをキャプチャするアプリを作成するには、デバイスとカメラの向きの処理や、キャプチャされたファイルのエンコーディング オプションの設定などのタスクを実行する必要があります。 アプリ シナリオによっては、このような他の考慮事項について考えなくても、カメラからプレビュー ストリームをそのまま表示することができます。 この記事では、最小限のコードでそれを行う方法を示します。 プレビュー ストリームの操作が完了したら、必ず以下の手順に従ってプレビュー ストリームを正しくシャットダウンする必要がある点に注意してください。
 
-For information on writing a camera app that captures photos or videos, see [Capture photos and video with MediaCapture](capture-photos-and-video-with-mediacapture.md).
+写真やビデオをキャプチャするカメラ アプリの作成方法について詳しくは、「[MediaCapture を使った写真とビデオのキャプチャ](capture-photos-and-video-with-mediacapture.md)」をご覧ください。
 
-## Add capability declarations to the app manifest
+## アプリ マニフェストに機能宣言を追加する
 
-In order for your app to access a device's camera, you must declare that your app uses the *webcam* and *microphone* device capabilities. If you want to save captured photos and videos to the users's Pictures or Videos library, you must also declare the *picturesLibrary* and *videosLibrary* capability.
+アプリからデバイスのカメラにアクセスするには、アプリでデバイス機能 (*webcam* と *microphone*) の使用を宣言する必要があります。 キャプチャした写真とビデオをユーザーの画像ライブラリまたはビデオ ライブラリに保存する場合は、*picturesLibrary* 機能と *videosLibrary* 機能も宣言する必要があります。
 
-**Add capabilities to the app manifest**
+**アプリ マニフェストに機能を追加する**
 
-1.  In Microsoft Visual Studio, in **Solution Explorer**, open the designer for the application manifest by double-clicking the **package.appxmanifest** item.
-2.  Select the **Capabilities** tab.
-3.  Check the box for **Webcam** and the box for **Microphone**.
-4.  For access to the Pictures and Videos library check the boxes for **Pictures Library** and the box for **Videos Library**.
+1.  Microsoft Visual Studio では、**ソリューション エクスプローラー**で **package.appxmanifest** 項目をダブルクリックし、アプリケーション マニフェストのデザイナーを開きます。
+2.  **[機能]** タブをクリックします。
+3.  **[Web カメラ]** のボックスと **[マイク]** のボックスをオンにします。
+4.  画像ライブラリとビデオ ライブラリにアクセスするには、**画像ライブラリ**のボックスと**ビデオ ライブラリ**のボックスをオンにします。
 
-## Add a CaptureElement to your page
+## ページに CaptureElement コントロールを追加する
 
-Use a [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) to display the preview stream within your XAML page.
+[
+            **CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) を使って、XAML ページ内にプレビュー ストリームを表示します。
 
 [!code-xml[CaptureElement](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml#SnippetCaptureElement)]
 
-## Use MediaCapture to start the preview stream
+## MediaCapture を使ってプレビュー ストリームを開始する
 
-The [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) object is your app's interface to the device's camera. This class is a member of the Windows.Media.Capture namespace. The example in this article also uses APIs from the [**Windows.ApplicationModel**](https://msdn.microsoft.com/library/windows/apps/br224691) and [System.Threading.Tasks](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.aspx) namespaces, in addition to those included by the default project template.
+[
+            **MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) オブジェクトは、デバイスのカメラに対するアプリのインターフェイスです。 このクラスは、Windows.Media.Capture 名前空間のメンバーです。 この記事の例では、既定のプロジェクト テンプレートに含まれている API に加えて、[**Windows.ApplicationModel**](https://msdn.microsoft.com/library/windows/apps/br224691) 名前空間と [System.Threading.Tasks](https://msdn.microsoft.com/library/windows/apps/xaml/system.threading.tasks.aspx) 名前空間の API も使われます。
 
 [!code-cs[CaptureElement](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml#SnippetCaptureElement)]
 
-Add using directives to include the following namespaces in your page's .cs file.
+ページの .cs ファイルに次の名前空間を含めるには using ディレクティブを追加します。
 
 [!code-cs[SimpleCameraPreviewUsing](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetSimpleCameraPreviewUsing)]
 
-Declare a class variable for the **MediaCapture** object.
+**MediaCapture** オブジェクトのクラス変数を宣言します。
 
 [!code-cs[DeclareMediaCapture](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetDeclareMediaCapture)]
 
-Create a new instance of the **MediaCapture** class and call [**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) to initialize the capture device. This method may fail, on devices that don't have a camera for example, so you should call it from within a **try** block. An **UnauthorizedAccessException** will be thrown when you attempt to initialize the camera if the user has disabled camera access in the device's privacy settings. You will also see this exception during development if you have neglected to add the proper capabilities to your app manifest.
+**MediaCapture** クラスの新しいインスタンスを作成し、[**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) を呼び出してキャプチャ デバイスを初期化します。 カメラがないデバイスなどではこのメソッドが失敗することがあるため、**try** ブロック内から呼び出してください。 ユーザーがデバイスのプライバシー設定でカメラへのアクセスを無効にしている場合、カメラを初期化しようとすると **UnauthorizedAccessException** がスローされます。 この例外は、開発中、アプリ マニフェストに適切な機能を追加し忘れた場合も表示されます。
 
-**Important** On some device families, a user consent prompt is displayed to the user before your app is granted access to the device's camera. For this reason, you must only call [**MediaCapture.InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) from the main UI thread. Attempting to initialize the camera from another thread may result in initialization failure.
+**重要** 一部のデバイス ファミリでは、アプリがデバイスのカメラへのアクセスを付与される前に、ユーザー同意のプロンプトがユーザーに表示されます。 このため、[**MediaCapture.InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) のみをメイン UI スレッドから呼び出す必要があります。 別のスレッドからカメラを初期化しようとすると、初期化エラーになる可能性があります。
 
-Connect the **MediaCapture** to the **CaptureElement** by setting the [**Source**](https://msdn.microsoft.com/library/windows/apps/br209280) property. Finally, start the preview by calling [**StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226613).
+[
+            **Source**](https://msdn.microsoft.com/library/windows/apps/br209280) プロパティを設定して、**MediaCapture** を **CaptureElement** に接続します。 最後に、[**StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226613) を呼び出してプレビューを開始します。
 
 [!code-cs[StartPreviewAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStartPreviewAsync)]
 
 
-## Shut down the preview stream
+## プレビュー ストリームをシャットダウンする
 
-When you are done using the preview stream, you should always shut down the stream and properly dispose of the associated resources to ensure that the camera is available to other apps on the device. The required steps for shutting down the preview stream are:
+プレビュー ストリームを使い終わったら、必ずストリームをシャットダウンして関連するリソースを適切に破棄し、デバイスで他のアプリがカメラを使うことができるようにしてください。 プレビュー ストリームをシャットダウンするために必要な手順は次のとおりです。
 
--   Call [**StopPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226622) to stop the preview stream.
--   Set the [**Source**](https://msdn.microsoft.com/library/windows/apps/br209280) property of the **CaptureElement** to null.
--   Call the **MediaCapture** object's [**Dispose**](https://msdn.microsoft.com/library/windows/apps/dn278858) method to release the object.
--   Set the **MediaCapture** member variable to null.
+-   [
+            **StopPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226622) を呼び出してプレビュー ストリームを停止します。
+-   **CaptureElement** の [**Source**](https://msdn.microsoft.com/library/windows/apps/br209280) プロパティを null に設定します。
+-   **MediaCapture** オブジェクトの [**Dispose**](https://msdn.microsoft.com/library/windows/apps/dn278858) メソッドを呼び出してオブジェクトを解放します。
+-   **MediaCapture** メンバー変数を null に設定します。
 
 [!code-cs[CleanupCameraAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetCleanupCameraAsync)]
 
-You should shut down the preview stream when the user navigates away from your page by overriding the [**OnNavigatedFrom**](https://msdn.microsoft.com/library/windows/apps/br227507) method.
+[
+            **OnNavigatedFrom**](https://msdn.microsoft.com/library/windows/apps/br227507) メソッドをオーバーライドすることで、ユーザーがページから離れるときにプレビュー ストリームをシャットダウンする必要があります。
 
 [!code-cs[OnNavigatedFrom](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetOnNavigatedFrom)]
 
-You should also shut down the preview stream properly when your app is suspending. To do this, register a handler for the [**Application.Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860) event in your page's constructor.
+アプリの中断中もプレビュー ストリームを適切にシャットダウンする必要があります。 これを行うには、ページのコンストラクターで [**Application.Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860) イベントのハンドラーを登録します。
 
 [!code-cs[RegisterSuspending](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetRegisterSuspending)]
 
-In the **Suspending** event handler, first check to make sure that the page is being displayed the application's [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) by comparing the page type to the [**CurrentSourcePageType**](https://msdn.microsoft.com/library/windows/apps/hh702390) property. If the page is not currently being displayed, then the **OnNavigatedFrom** event should already have been raised and the preview stream shut down. If the page is currently being displayed, get a [**SuspendingDeferral**](https://msdn.microsoft.com/library/windows/apps/br224684) object from the event args passed into the handler to make sure the system does not suspend your app until the preview stream has been shut down. After shutting down the stream, call the deferral's [**Complete**](https://msdn.microsoft.com/library/windows/apps/br224685) method to let the system continue suspending your app.
+**Suspending** イベント ハンドラーで、まずページの種類と [**CurrentSourcePageType**](https://msdn.microsoft.com/library/windows/apps/hh702390) プロパティを比較することで、アプリケーションの [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) にページが表示されることを確認します。 ページが現在表示されていない場合、**OnNavigatedFrom** イベントが既に発生しており、プレビュー ストリームはシャットダウンしています。 現在ページが表示されている場合、ハンドラーに渡されるイベント引数から [**SuspendingDeferral**](https://msdn.microsoft.com/library/windows/apps/br224684) オブジェクトを取得し、プレビュー ストリームがシャットダウンするまでシステムがアプリを中断しないことを確認します。 ストリームをシャットダウンした後、保留の [**Complete**](https://msdn.microsoft.com/library/windows/apps/br224685) メソッドを呼び出し、システムがアプリの中断を続行できるようにします。
 
 [!code-cs[SuspendingHandler](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetSuspendingHandler)]
 
-## Capture a still image from the preview stream
+## プレビュー ストリームから静止画像をキャプチャする
 
-It's simple to get a still image from the media capture preview stream in the form of a [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358). For more information, see [Get a preview frame](get-a-preview-frame.md).
+メディア キャプチャのプレビュー ストリームから、[**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 形式で静止画像を取得するのは簡単です。 詳しくは、「[プレビュー フレームの取得](get-a-preview-frame.md)」をご覧ください。
 
-## Related topics
+## 関連トピック
 
-* [Capture photos and video with MediaCapture](capture-photos-and-video-with-mediacapture.md)
-* [Get a preview frame](get-a-preview-frame.md)
+* [MediaCapture を使った写真とビデオのキャプチャ](capture-photos-and-video-with-mediacapture.md)
+* [プレビュー フレームの取得](get-a-preview-frame.md)
 
 
 <!--HONumber=Mar16_HO5-->

@@ -1,65 +1,68 @@
 ---
-description: Through the Windows.ApplicationModel.Contacts namespace, you have several options for selecting contacts.
-title: Select contacts
+description: Windows.ApplicationModel.Contacts 名前空間では、複数の方法で連絡先を選ぶことができます。
+title: 連絡先の選択
 ms.assetid: 35FEDEE6-2B0E-4391-84BA-5E9191D4E442
-keywords: contacts, selecting
-keywords: select single contact
-keywords: select multiple contacts
-keywords: contacts, select multiple
-keywords: select specific contact data
-keywords: contact, selecting specific data
-keywords: contact, selecting specific fields
+キーワード: 連絡先、選択
+キーワード: 1 つの連絡先の選択
+キーワード: 複数の連絡先の選択
+キーワード: 連絡先、複数の選択
+キーワード: 特定の連絡先データの選択
+キーワード: 連絡先、特定のデータの選択
+キーワード: 連絡先、特定のフィールドの選択
 ---
 
-# Select contacts
+# 連絡先の選択
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-Through the [**Windows.ApplicationModel.Contacts**](https://msdn.microsoft.com/library/windows/apps/BR225002) namespace, you have several options for selecting contacts. Here, we'll show you how to select a single contact or multiple contacts, and we'll show you how to configure the contact picker to retrieve only the contact information that your app needs.
+[
+            **Windows.ApplicationModel.Contacts**](https://msdn.microsoft.com/library/windows/apps/BR225002) 名前空間では、複数の方法で連絡先を選ぶことができます。 ここでは、1 つまたは複数の連絡先を選ぶ方法について説明します。また、アプリで必要な連絡先情報だけを取得するように連絡先ピッカーを構成する方法についても説明します。
 
-## Set up the contact picker
+## 連絡先ピッカーを設定する
 
-Create an instance of [**Windows.ApplicationModel.Contacts.ContactPicker**](https://msdn.microsoft.com/library/windows/apps/BR224913) and assign it to a variable.
+[
+            **Windows.ApplicationModel.Contacts.ContactPicker**](https://msdn.microsoft.com/library/windows/apps/BR224913) のインスタンスを作成し、変数に割り当てます。
 
 ```cs
 var contactPicker = new Windows.ApplicationModel.Contacts.ContactPicker();
 ```
 
-## Set the selection mode (optional)
+## 選択モードを設定する (省略可能)
 
-By default, the contact picker retrieves all of the available data for the contacts that the user selects. The [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/BR224913-selectionmode) property lets you configure the contact picker to retrieve only the data fields that your app needs. This is a more efficient way to use the contact picker if you only need a subset of the available contact data.
+連絡先ピッカーの既定の動作では、ユーザーが選んだ連絡先について、利用可能なすべてのデータが取得されます。 [
+            **SelectionMode**](https://msdn.microsoft.com/library/windows/apps/BR224913-selectionmode) プロパティを使うと、アプリに必要なデータ フィールドだけを取得するように連絡先ピッカーを構成できます。 利用可能な連絡先データのうちの一部だけが必要な場合は、この方法で連絡先ピッカーを使うと効率的です。
 
-First, set the [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/BR224913-selectionmode) property to **Fields**:
+最初に、[**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/BR224913-selectionmode) プロパティを **Fields** に設定します。
 
 ```cs
 contactPicker.SelectionMode = Windows.ApplicationModel.Contacts.ContactSelectionMode.Fields;
 ```
 
-Then, use the [**desiredFieldsWithContactFieldType**](https://msdn.microsoft.com/library/windows/apps/BR224913-desiredfieldswithcontactfieldtype) property to specify the fields that you want the contact picker to retrieve. This example configures the contact picker to retrieve email addresses:
+次に、[**desiredFieldsWithContactFieldType**](https://msdn.microsoft.com/library/windows/apps/BR224913-desiredfieldswithcontactfieldtype) プロパティを使って、連絡先ピッカーで取得するフィールドを指定します。 次の例では、メール アドレスを取得するように連絡先ピッカーを構成しています。
 
 ``` cs
 contactPicker.DesiredFieldsWithContactFieldType.Add(Windows.ApplicationModel.Contacts.ContactFieldType.Email);
 ```
 
-## Launch the picker
+## ピッカーを起動する
 
 ```cs
 Contact contact = await contactPicker.PickContactAsync();
 ```
 
-Use [**pickContactsAsync**](https://msdn.microsoft.com/library/windows/apps/BR224913-pickcontactsasync) if you want the user to select one or more contacts.
+ユーザーが連絡先を複数選べるようにする場合は、[**pickContactsAsync**](https://msdn.microsoft.com/library/windows/apps/BR224913-pickcontactsasync) を使います。
 
 ```cs
 public IList&lt;Contact&gt; contacts;
 contacts = await contactPicker.PickContactsAsync();
 ```
 
-## Process the contacts
+## 連絡先を処理する
 
-When the picker returns, check whether the user has selected any contacts. If so, process the contact information.
+ピッカーから制御が戻ったら、ユーザーが連絡先を選んだかどうかを調べ、 選んでいた場合は連絡先情報を処理します。
 
-This example shows how to processes a single contact. Here we retrieve the contact's name and copy it into a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) control called *OutputName*.
+1 つの連絡先を処理する例を次に示します。 この例では、連絡先の名前を取得し、*OutputName* と呼ばれる [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) コントロールにコピーしています。
 
 ```cs
 if (contact != null)
@@ -72,7 +75,7 @@ else
 }
 ```
 
-This example shows how to process multiple contacts.
+複数の連絡先を処理する例を次に示します。
 
 ```cs
 if (contacts != null &amp;&amp; contacts.Count &gt; 0)
@@ -84,9 +87,9 @@ if (contacts != null &amp;&amp; contacts.Count &gt; 0)
 }
 ```
 
-## Complete example (single contact)
+## 完全な例 (1 つの連絡先)
 
-This example uses the contact picker to retrieve a single contact's name along with an email address, location or phone number.
+この例では、連絡先ピッカーを使って、1 つの連絡先の名前、メール アドレス、電話番号、住所を取得しています。
 
 ```cs
 // ...
@@ -164,9 +167,9 @@ private void AppendContactFieldValues&lt;T&gt;(TextBlock content, IList&lt;T&gt;
 }
 ```
 
-## Complete example (multiple contacts)
+## 完全な例 (複数の連絡先)
 
-This example uses the contact picker to retrieve multiple contacts and then adds the contacts to a [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) control called `OutputContacts`.
+次の例では、連絡先ピッカーを使って複数の連絡先を取得し、`OutputContacts` という名前の [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) コントロールに追加しています。
 
 ```cs
 MainPage rootPage = MainPage.Current;
@@ -227,9 +230,9 @@ public class ContactItemAdapter
 }
 ```
 
-## Summary and next steps
+## 要約と次のステップ
 
-Now you have a basic understanding of how to use the contact picker to retrieve contact information. Download the [Universal Windows app samples](http://go.microsoft.com/fwlink/p/?linkid=619979) from GitHub to see more examples of how to use contacts and the contact picker.
+ここでは、連絡先ピッカーを使って連絡先情報を取得する基本的な方法について説明しました。 連絡先や連絡先選択ツールの使い方に関するその他の例については、GitHub から [ユニバーサル Windows アプリのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619979) をダウンロードしてください。
 
 
 

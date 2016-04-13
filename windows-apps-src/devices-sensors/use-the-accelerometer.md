@@ -1,38 +1,38 @@
 ---
 ms.assetid: F90686F5-641A-42D9-BC44-EC6CA11B8A42
-title: Use the accelerometer
-description: Learn how to use the accelerometer to respond to user movement.
+title: 加速度計の使用
+description: 加速度計を使ってユーザーの動きに応答する方法を説明します。
 ---
-# Use the accelerometer
+# 加速度計の使用
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-** Important APIs **
+** 重要な API **
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**Accelerometer**](https://msdn.microsoft.com/library/windows/apps/BR225687)
 
-\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
+\[一部の情報はリリース前の製品に関することであり、正式版がリリースされるまでに大幅に変更される可能性があります。 ここに記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。\]
 
-Learn how to use the accelerometer to respond to user movement.
+加速度計を使ってユーザーの動きに応答する方法を説明します。
 
-A simple game app relies on a single sensor, the accelerometer, as an input device. These apps typically use only one or two axes for input; but they may also use the shake event as another input source.
+シンプルなゲーム アプリでは、加速度計などの単一のセンサーを入力デバイスとして使います。 このようなアプリでは、一般的に、入力として 1 軸または 2 軸のみを使いますが、もう 1 つの入力ソースとしてシェイク イベントを使う場合もあります。
 
-## Prerequisites
+## 前提条件
 
-You should be familiar with Extensible Application Markup Language (XAML), Microsoft Visual C#, and events.
+Extensible Application Markup Language (XAML)、Microsoft Visual C#、イベントについて理解している必要があります。
 
-The device or emulator that you're using must support an accelerometer.
+使うデバイスやエミュレーターが加速度計をサポートしている必要があります。
 
-## Create a simple accelerometer app
+## シンプルな加速度計アプリを作成する
 
-This section is divided into two subsections. The first subsection will take you through the steps necessary to create a simple accelerometer application from scratch. The following subsection explains the app you have just created.
+このセクションは、次の 2 つのサブセクションに分かれています。 最初のサブセクションでは、シンプルな加速度計アプリケーションを最初から作成するために必要な手順を示します。 次のサブセクションでは、作成したアプリについて説明します。
 
-### Instructions
+### 手順
 
--   Create a new project, choosing a **Blank App (Universal Windows)** from the **Visual C#** project templates.
+-   **[Visual C#]** プロジェクト テンプレートから **[空白のアプリ (ユニバーサル Windows]** を選んで、新しいプロジェクトを作成します。
 
--   Open your project's MainPage.xaml.cs file and replace the existing code with the following.
+-   プロジェクトの MainPage.xaml.cs ファイルを開き、記載されているコードを次のコードで置き換えます。
 
 ```csharp
     using System;
@@ -97,9 +97,9 @@ This section is divided into two subsections. The first subsection will take you
     }
 ```
 
-You'll need to rename the namespace in the previous snippet with the name you gave your project. For example, if you created a project named **AccelerometerCS**, you'd replace `namespace App1` with `namespace AccelerometerCS`.
+元のスニペットの名前空間の名前を、自分のプロジェクトに指定した名前に変更する必要があります。 たとえば、作成したプロジェクトの名前が **AccelerometerCS** だとすると、`namespace App1` を `namespace AccelerometerCS` に置き換えます。
 
--   Open the file MainPage.xaml and replace the original contents with the following XML.
+-   MainPage.xaml ファイルを開き、元の内容を次の XML に置き換えます。
 
 ```xml
         <Page
@@ -123,25 +123,25 @@ You'll need to rename the namespace in the previous snippet with the name you ga
     </Page>
 ```
 
-You'll need to replace the first part of the class name in the previous snippet with the namespace of your app. For example, if you created a project named **AccelerometerCS**, you'd replace `x:Class="App1.MainPage"` with `x:Class="AccelerometerCS.MainPage"`. You should also replace `xmlns:local="using:App1"` with `xmlns:local="using:AccelerometerCS"`.
+元のスニペットのクラス名の最初の部分を、自分のアプリの名前空間に置き換える必要があります。 たとえば、作成したプロジェクトの名前が **AccelerometerCS** である場合、`x:Class="App1.MainPage"` を `x:Class="AccelerometerCS.MainPage"` に置き換えます。 また、`xmlns:local="using:App1"` を `xmlns:local="using:AccelerometerCS"` に置き換える必要があります。
 
--   Press F5 or select **Debug** &gt; **Start Debugging** to build, deploy, and run the app.
+-   アプリをビルド、展開、実行するには、F5 キーを押すか、**[デバッグ]**、**[デバッグの開始]** の順にクリックします。
 
-Once the app is running, you can change the accelerometer values by moving the device or using the emulator tools.
+アプリを実行した後、デバイスを移動するか、エミュレーター ツールを使うことによって、加速度計の値を変更できます。
 
--   Stop the app by returning to Visual Studio and pressing Shift+F5 or select **Debug** &gt; **Stop Debugging** to stop the app.
+-   アプリを停止するには、Visual Studio に戻り、Shift キーを押しながら F5 キーを押すか、**[デバッグ]**、**[デバッグの停止]** の順にクリックします。
 
-### Explanation
+### 説明
 
-The previous example demonstrates how little code you'll need to write in order to integrate accelerometer input in your app.
+上に示した例では、ごく短いコードを作成するだけで、加速度計の入力をアプリに組み込むことができることがわかります。
 
-The app establishes a connection with the default accelerometer in the **MainPage** method.
+このアプリでは、**MainPage** メソッドで、既定の加速度計との接続を確立しています。
 
 ```csharp
 _accelerometer = Accelerometer.GetDefault();
 ```
 
-The app establishes the report interval within the **MainPage** method. This code retrieves the minimum interval supported by the device and compares it to a requested interval of 16 milliseconds (which approximates a 60-Hz refresh rate). If the minimum supported interval is greater than the requested interval, the code sets the value to the minimum. Otherwise, it sets the value to the requested interval.
+このアプリでは、**MainPage** メソッドで、レポート間隔を設定しています。 次のコードは、デバイスでサポートされる最小の間隔を取得し、要求される 16 ミリ秒の間隔 (約 60 Hz のリフレッシュ レート) と比較します。 サポートされる最小の間隔が要求される間隔よりも大きい場合は、値を最小値に設定します。 それ以外の場合は、値を要求される間隔に設定します。
 
 ```csharp
 uint minReportInterval = _accelerometer.MinimumReportInterval;
@@ -149,23 +149,23 @@ uint reportInterval = minReportInterval > 16 ? minReportInterval : 16;
 _accelerometer.ReportInterval = reportInterval;
 ```
 
-The new accelerometer data is captured in the **ReadingChanged** method. Each time the sensor driver receives new data from the sensor, it passes the values to your app using this event handler. The app registers this event handler on the following line.
+**ReadingChanged** メソッドで、新しい加速度計データをキャプチャしています。 センサーのドライバーは、センサーから新しいデータを受け取るたびに、このイベント ハンドラーを使ってアプリに値を渡します。 このアプリの場合、このイベント ハンドラーが次の行で登録されています。
 
 ```csharp
 _accelerometer.ReadingChanged += new TypedEventHandler<Accelerometer, 
 AccelerometerReadingChangedEventArgs>(ReadingChanged);
 ```
 
-These new values are written to the TextBlocks found in the project's XAML.
+プロジェクトの XAML 内にある TextBlock に、以下の新しい値が書き込まれます。
 
 ```xml
 <TextBlock x:Name="txtXAxis" HorizontalAlignment="Left" Height="15" Margin="70,16,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="61" Foreground="#FFF2F2F2"/>
  <TextBlock x:Name="txtYAxis" HorizontalAlignment="Left" Height="15" Margin="70,49,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="53" Foreground="#FFF2EEEE"/>
  <TextBlock x:Name="txtZAxis" HorizontalAlignment="Left" Height="15" Margin="70,80,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="53" Foreground="#FFFFF8F8"/>
 ```
-## Related topics
+## 関連トピック
 
-* [Accelerometer Sample](http://go.microsoft.com/fwlink/p/?linkid=241377)
+* [加速度計センサーのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=241377)
 
 
 

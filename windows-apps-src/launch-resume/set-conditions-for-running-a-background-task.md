@@ -1,39 +1,39 @@
 ---
-title: Set conditions for running a background task
-description: Learn how to set conditions that control when your background task will run.
+title: バックグラウンド タスクを実行するための条件の設定
+description: バックグラウンド タスクをいつ実行するかを制御する条件の設定方法について説明します。
 ms.assetid: 10ABAC9F-AA8C-41AC-A29D-871CD9AD9471
 ---
 
-# Set conditions for running a background task
+# バックグラウンド タスクを実行するための条件の設定
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-**Important APIs**
+**重要な API**
 
 -   [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834)
 -   [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)
 -   [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
 
-Learn how to set conditions that control when your background task will run.
+バックグラウンド タスクをいつ実行するかを制御する条件の設定方法について説明します。
 
-Sometimes, background tasks require certain conditions to be met, in addition to the event that triggers the task, so that the background task can succeed. You can specify one or more of the conditions specified by [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) when registering your background task. The condition will be checked after the trigger has been fired; the background task will be queued, but it will not run until all the required conditions are satisfied.
+場合によっては、バックグラウンド タスクを正しく実行するために、タスクをトリガーするイベント以外に特定の条件を満たす必要があります。 バックグラウンド タスクを登録するときに、[**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) で指定される条件を 1 つ以上指定することができます。 条件がチェックされるのは、トリガーが発生した後です。バックグラウンド タスクは、キューに入れられますが、必要な条件がすべて満たされるまでは実行されません。
 
-Putting conditions on background tasks saves battery life and CPU runtime by preventing tasks from running unnecessarily. For example, if your background task runs on a timer and requires Internet connectivity, add the **InternetAvailable** condition to the [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) before registering the task. This will help prevent the task from using system resources and battery life unnecessarily by letting it run when the timer has elapsed and the Internet is available.
+バックグラウンド タスクに条件を設定すると、タスクが不必要に実行されなくなるため、バッテリ寿命と CPU 実行時間が節約できます。 たとえば、バックグラウンド タスクがタイマーで実行され、インターネット接続が必要な場合は、タスクを登録する前に、**InternetAvailable** 条件を [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) に追加します。 これにより、タイマーの設定時間が経過した後、インターネットが利用可能であれば実行が許可されるため、タスクがシステム リソースやバッテリ寿命を無駄にすることはなくなります。
 
-**Note**  It is possible to combine multiple conditions by calling AddCondition multiple times on the same [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768). Take care not to add conflicting conditions, such as **UserPresent** and **UserNotPresent**.
+**注**  同じ [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) で AddCondition を複数回呼び出すことで、複数の条件を組み合わせることができます。 **UserPresent** や **UserNotPresent** など競合する条件を追加しないように注意してください。
 
  
 
-## Create a SystemCondition object
+## SystemCondition オブジェクトを作る
 
 
-This topic assumes that you have a background task already associated with your app, and that your app already includes code that creates a [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) object named **taskBuilder**
+ここでは、既にバックグラウンド タスクがアプリと関連付けられており、アプリでは、**taskBuilder** という [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) オブジェクトを作るためのコードが記述済みであることを前提とします。
 
-Before adding the condition, create a [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) object representing the condition that must be in effect for a background task to run. In the constructor, specify the condition that must be met by providing a [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) enumeration value.
+条件を追加する前に、バックグラウンド タスクを実行するために有効にする必要のある条件を表す [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) オブジェクトを作ります。 コンストラクターで、[**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) 列挙値を渡して、必要な条件を指定します。
 
-The following code creates a [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) object specifying Internet availability as the conditional requirement:
+次のコードでは、満たす必要のある要件としてインターネットの可用性を条件付ける [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) オブジェクトを作ります。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -43,12 +43,12 @@ The following code creates a [**SystemCondition**](https://msdn.microsoft.com/li
 > SystemCondition ^ internetCondition = ref new SystemCondition(SystemConditionType::InternetAvailable);
 > ```
 
-## Add the SystemCondition object to your background task
+## SystemCondition オブジェクトをバックグラウンド タスクに追加する
 
 
-To add the condition, call the [**AddCondition**](https://msdn.microsoft.com/library/windows/apps/br224769) method on the [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) object, and pass it the [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) object.
+条件を追加するには、[**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) オブジェクトで [**AddCondition**](https://msdn.microsoft.com/library/windows/apps/br224769) メソッドを呼び出して、[**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) オブジェクトに渡します。
 
-The following code registers the InternetAvailable background task condition with the TaskBuilder:
+次のコードでは、InternetAvailable バックグラウンド タスク条件を TaskBuilder に登録します。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -58,12 +58,12 @@ The following code registers the InternetAvailable background task condition wit
 > taskBuilder->AddCondition(internetCondition);
 > ```
 
-## Register your background task
+## バックグラウンド タスクを登録する
 
 
-Now you can register your background task with the [**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) method, and the task will not start until the specified condition is met.
+これで、バックグラウンド タスクを [**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) メソッドに登録できます。このタスクは、指定した条件が満たされるまで、開始されません。
 
-The following code registers the task and stores the resulting BackgroundTaskRegistration object:
+次のコードでは、タスクを登録し、生成される BackgroundTaskRegistration オブジェクトを保存します。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -73,20 +73,20 @@ The following code registers the task and stores the resulting BackgroundTaskReg
 > BackgroundTaskRegistration ^ task = taskBuilder->Register();
 > ```
 
-> **Note**  Universal Windows apps must call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) before registering any of the background trigger types.
+> **注**  ユニバーサル Windows アプリは、どの種類のバックグラウンド トリガーを登録する場合でも、先に [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) を呼び出す必要があります。
 
-To ensure that your Universal Windows app continues to run properly after you release an update, you must call [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471) and then call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) when your app launches after being updated. For more information, see [Guidelines for background tasks](guidelines-for-background-tasks.md).
+更新プログラムのリリース後にユニバーサル Windows アプリが引き続き適切に実行されるようにするには、更新後にアプリが起動する際に、[**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471)、[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) の順に呼び出す必要があります。 詳しくは、「[バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)」をご覧ください。
 
-> **Note**  Background task registration parameters are validated at the time of registration. An error is returned if any of the registration parameters are invalid. Ensure that your app gracefully handles scenarios where background task registration fails - if instead your app depends on having a valid registration object after attempting to register a task, it may crash.
+> **注**  バックグラウンド タスクの登録パラメーターは登録時に検証されます。 いずれかの登録パラメーターが有効でない場合は、エラーが返されます。 バックグラウンド タスクの登録が失敗するシナリオをアプリが適切に処理するようにします。タスクを登録しようとした後で、有効な登録オブジェクトを持っていることを前提として動作するアプリは、クラッシュする場合があります。
 
-## Place multiple conditions on your background task
+## バックグラウンド タスクに複数の条件を設定する
 
-To add multiple conditions, your app makes multiple calls to the [**AddCondition**](https://msdn.microsoft.com/library/windows/apps/br224769) method. These calls must come before task registration to be effective.
+複数の条件を追加するには、アプリから [**で**](https://msdn.microsoft.com/library/windows/apps/br224769) メソッドを複数回呼び出します。 呼び出しは必ず、タスクの登録が有効になる前に行います。
 
-> **Note**  Take care not to add conflicting conditions to a background task.
+> **注**  1 つのバックグラウンド タスクに競合する条件を追加しないように注意してください。
  
 
-The following snippet shows multiple conditions in the context of creating and registering a background task:
+次のスニペットでは、バックグラウンド タスクを作り、登録するコンテキストでの複数の条件を示したものです。
 
 > [!div class="tabbedCodeSnippets"]
 ```cs

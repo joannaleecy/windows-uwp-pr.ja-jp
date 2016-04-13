@@ -1,73 +1,73 @@
 ---
-Description: The Windows Push Notification Services (WNS) enables third-party developers to send toast, tile, badge, and raw updates from their own cloud service. This provides a mechanism to deliver new updates to your users in a power-efficient and dependable way.
-title: Windows Push Notification Services (WNS) overview
+Description: Windows プッシュ通知サービス (WNS) を利用することで、サード パーティの開発者が独自のクラウド サービスからトースト更新、タイル更新、バッジ更新、直接更新を送ることができます。 これにより、新しい更新を電力効率に優れた信頼できる方法でユーザーに配信するためのメカニズムが提供されます。
+title: Windows プッシュ通知サービス (WNS) の概要
 ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 label: TBD
 template: detail.hbs
 ---
 
-# Windows Push Notification Services (WNS) overview
+# Windows プッシュ通知サービス (WNS) の概要
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-The Windows Push Notification Services (WNS) enables third-party developers to send toast, tile, badge, and raw updates from their own cloud service. This provides a mechanism to deliver new updates to your users in a power-efficient and dependable way.
+Windows プッシュ通知サービス (WNS) を利用することで、サード パーティの開発者が独自のクラウド サービスからトースト更新、タイル更新、バッジ更新、直接更新を送ることができます。 これにより、新しい更新を電力効率に優れた信頼できる方法でユーザーに配信するためのメカニズムが提供されます。
 
-## <span id="How_it_works"></span><span id="how_it_works"></span><span id="HOW_IT_WORKS"></span>How it works
-
-
-The following diagram shows the complete data flow for sending a push notification. It involves these steps:
-
-1.  Your app requests a push notification channel from the Universal Windows Platform.
-2.  Windows asks WNS to create a notification channel. This channel is returned to the calling device in the form of a Uniform Resource Identifier (URI).
-3.  The notification channel URI is returned by Windows to your app.
-4.  Your app sends the URI to your own cloud service. You then store the URI on your own cloud service so that you can access the URI when you send notifications. The URI is an interface between your own app and your own service; it's your responsibility to implement this interface with safe and secure web standards.
-5.  When your cloud service has an update to send, it notifies WNS using the channel URI. This is done by issuing an HTTP POST request, including the notification payload, over Secure Sockets Layer (SSL). This step requires authentication.
-6.  WNS receives the request and routes the notification to the appropriate device.
-
-![wns data flow diagram for push notification](images/wns-diagram-01.png)
-
-## <span id="registering_wit_store"></span><span id="REGISTERING_WIT_STORE"></span>Registering your app and receiving the credentials for your cloud service
+## <span id="How_it_works"></span><span id="how_it_works"></span><span id="HOW_IT_WORKS"></span>しくみ
 
 
-Before you can send notifications using WNS, your app must be registered with the Store Dashboard. This will provide you with credentials for your app that your cloud service will use in authenticating with WNS. These credentials consist of a Package Security Identifier (SID) and a secret key. To perform this registration, go to the [Windows Dev Center](http://go.microsoft.com/fwlink/p/?linkid=511146) and select **Dashboard**.
+次の図に、プッシュ通知を送るときの全体のデータ フローを示します。 次の手順で行われます。
 
-Each app has its own set of credentials for its cloud service. These credentials cannot be used to send notifications to any other app.
+1.  アプリがユニバーサル Windows プラットフォームにプッシュ通知チャネルを要求します。
+2.  Windows が、通知チャネルを作成するように WNS に要求します。 このチャネルは、Uniform Resource Identifier (URI) の形式で呼び出し元のデバイスに返されます。
+3.  通知チャネルの URI が、Windows によってアプリに返されます。
+4.  アプリから独自のクラウド サービスに URI を送ります。 その後で、URI をユーザー独自のクラウド サービスに保存し、通知を送るときに URI にアクセスできるようにします。 この URI は、独自のアプリと独自のサービスの間のインターフェイスです。このインターフェイスは、セキュリティで保護された安全な Web 標準に従って実装する必要があります。
+5.  送られる更新情報がクラウド サービスにある場合、チャネルの URI を使って WNS に通知されます。 この処理では、通知ペイロードを含む HTTP POST 要求が Secure Sockets Layer (SSL) 経由で発行されます。 この手順では認証が必要になります。
+6.  WNS が要求を受け取り、適切なデバイスに通知をルーティングします。
 
-For more details on how to register your app, please see [How to authenticate with the Windows Notification Service (WNS)](https://msdn.microsoft.com/library/windows/apps/hh465407).
+![プッシュ通知の WNS データ フローの図](images/wns-diagram-01.png)
 
-## <span id="Requesting_a_notification_channel"></span><span id="requesting_a_notification_channel"></span><span id="REQUESTING_A_NOTIFICATION_CHANNEL"></span>Requesting a notification channel
-
-
-When an app that is capable of receiving push notifications runs, it must first request a notification channel through the [**CreatePushNotificationChannelForApplicationAsync**](https://msdn.microsoft.com/library/windows/apps/br241285). For a full discussion and example code, see [How to request, create, and save a notification channel](https://msdn.microsoft.com/library/windows/apps/hh465412). This API returns a channel URI that is uniquely linked to the calling application and its tile, and through which all notification types can be sent.
-
-After the app has successfully created a channel URI, it sends it to its cloud service, together with any app-specific metadata that should be associated with this URI.
-
-### <span id="important_notes1"></span><span id="IMPORTANT_NOTES1"></span>Important notes
-
--   We do not guarantee that the notification channel URI for an app will always remain the same. We advise that the app requests a new channel every time it runs and updates its service when the URI changes. The developer should never modify the channel URI and should consider it as a black-box string. At this time, channel URIs expire after 30 days. If your Windows 10 app will periodically renew its channel in the background then you can download the [Push and periodic notifications sample](http://go.microsoft.com/fwlink/p/?linkid=231476) for Windows 8.1 and re-use its source code and/or the pattern it demonstrates.
--   The interface between the cloud service and the client app is implemented by you, the developer. We recommend that the app go through an authentication process with its own service and transmit data over a secure protocol such as HTTPS.
--   It is important that the cloud service always ensures that the channel URI uses the domain "notify.windows.com". The service should never push notifications to a channel on any other domain. If the callback for your app is ever compromised, a malicious attacker could submit a channel URI to spoof WNS. Without inspecting the domain, your cloud service could be potentially disclose information to this attacker unknowingly.
--   If your cloud service attempts to deliver a notification to an expired channel, WNS will return [response code 410](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#WNSResponseCodes). In response to that code, your service should no longer attempt to send notifications to that URI.
-
-## <span id="Authenticating_your_cloud_service"></span><span id="authenticating_your_cloud_service"></span><span id="AUTHENTICATING_YOUR_CLOUD_SERVICE"></span>Authenticating your cloud service
+## <span id="registering_wit_store"></span><span id="REGISTERING_WIT_STORE"></span>アプリの登録とクラウド サービスの資格情報の取得
 
 
-To send a notification, the cloud service must be authenticated through WNS. The first step in this process occurs when you register your app with the Windows Store Dashboard. During the registration process, your app is given a Package security identifier (SID) and a secret key. This information is used by your cloud service to authenticate with WNS.
+WNS を使って通知を送るには、アプリをストア ダッシュボードに登録しておく必要があります。 これにより、WNS に対する認証を行うときにクラウド サービスで使うアプリの資格情報が提供されます。 これらの資格情報は、パッケージ セキュリティ識別子 (SID) と秘密鍵で構成されます。 この登録を行うには、[Windows デベロッパー センター](http://go.microsoft.com/fwlink/p/?linkid=511146)にアクセスし、**ダッシュボード**をクリックします。
 
-The WNS authentication scheme is implemented using the client credentials profile from the [OAuth 2.0](http://go.microsoft.com/fwlink/p/?linkid=226787) protocol. The cloud service authenticates with WNS by providing its credentials (Package SID and secret key). In return, it receives an access token. This access token allows a cloud service to send a notification. The token is required with every notification request sent to the WNS.
+アプリにはそれぞれ、クラウド サービスの独自の資格情報が割り当てられます。 これらの資格情報を使って他のアプリに通知を送ることはできません。
 
-At a high level, the information chain is as follows:
+アプリの登録方法について詳しくは、「[Windows 通知サービス (WNS) に対して認証する方法](https://msdn.microsoft.com/library/windows/apps/hh465407)」をご覧ください。
 
-1.  The cloud service sends its credentials to WNS over HTTPS following the OAuth 2.0 protocol. This authenticates the service with WNS.
-2.  WNS returns an access token if the authentication was successful. This access token is used in all subsequent notification requests until it expires.
+## <span id="Requesting_a_notification_channel"></span><span id="requesting_a_notification_channel"></span><span id="REQUESTING_A_NOTIFICATION_CHANNEL"></span>通知チャネルの要求
 
-![wns diagram for cloud service authentication](images/wns-diagram-02.png)
 
-In the authentication with WNS, the cloud service submits an HTTP request over Secure Sockets Layer (SSL). The parameters are supplied in the "application/x-www-for-urlencoded" format. Supply your Package SID in the "client\_id" field and your secret key in the "client\_secret" field. For syntax details, see the [access token request](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#access_token_request) reference.
+プッシュ通知を受け取ることができるアプリを実行するときは、最初に [**CreatePushNotificationChannelForApplicationAsync**](https://msdn.microsoft.com/library/windows/apps/br241285) を使って通知チャネルを要求する必要があります。 詳しい説明とコード例については、「[通知チャネルを要求、作成、保存する方法](https://msdn.microsoft.com/library/windows/apps/hh465412)」をご覧ください。 この API から返されるチャネルの URI は、呼び出し元のアプリケーションとそのタイルに一意にリンクされます。これには送信可能なすべての種類の通知が使われます。
 
-**Note**  This is just an example, not cut-and-paste code that you can successfully use in your own code.
+アプリでは、チャネルの URI の作成が正常に完了すると、その URI に関連付けられるアプリ固有のメタデータと一緒にクラウド サービスに送ります。
+
+### <span id="important_notes1"></span><span id="IMPORTANT_NOTES1"></span>重要な注意
+
+-   アプリの通知チャネルの URI は、常に同じであるとは限りません。 アプリを実行するたびに新しいチャネルを要求し、URI が変更されたらサービスを更新することをお勧めします。 チャネルの URI の文字列はブラック ボックスと見なし、変更しないようにしてください。 現時点で、チャネルの URI は 30 日が経過すると有効期限切れになります。 Windows 10 アプリのバックグラウンドでそのチャネルを定期的に更新する場合は、Windows 8.1 の[プッシュ通知と定期的な通知のサンプル](http://go.microsoft.com/fwlink/p/?linkid=231476)をダウンロードし、紹介されているソース コードやパターンを再利用することができます。
+-   クラウド サービスとクライアント アプリの間のインターフェイスは開発者が実装します。 独自のサービスに対するアプリの認証プロセスでは、データの送信に HTTPS などのセキュリティで保護されたプロトコルを使うことをお勧めします。
+-   クラウド サービスでは、チャネルの URI で必ず "notify.windows.com" ドメインを使うことが重要です。 他のドメインのチャネルに通知をプッシュしないでください。 アプリのコールバックが侵害された場合、悪意のある攻撃者によってチャネルの URI が送信され、WNS がなりすまされるおそれがあります。 ドメインを調べないと、そのような攻撃者に対して、気付かないうちに情報を開示してしまう可能性があります。
+-   クラウド サービスが期限切れのチャネルに通知を配信しようとすると、WNS は[応答コード 410](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#WNSResponseCodes) を返します。 このコードを受け取った後、サービスはその URI に対して通知を送らないようにする必要があります。
+
+## <span id="Authenticating_your_cloud_service"></span><span id="authenticating_your_cloud_service"></span><span id="AUTHENTICATING_YOUR_CLOUD_SERVICE"></span>クラウド サービスの認証
+
+
+通知を送るには、クラウド サービスが WNS に認証される必要があります。 そのためには、まず、アプリを Windows ストア ダッシュボードに登録します。 この登録プロセスで、アプリにパッケージ セキュリティ識別子 (SID) と秘密鍵が割り当てられます。 クラウド サービスでは、この情報を使って WNS に対する認証を行います。
+
+WNS の認証方式は、[OAuth 2.0](http://go.microsoft.com/fwlink/p/?linkid=226787) プロトコルのクライアント資格情報のプロファイルを使って実装されます。 資格情報 (パッケージ SID と秘密鍵) を指定して、WNS に対してクラウド サービスの認証を行うと、 アクセス トークンを受け取ります。 このアクセス トークンを使って、クラウド サービスで通知を送ることができます。 このトークンは、WNS に送るすべての通知要求で必要になります。
+
+大まかな情報の流れを次に示します。
+
+1.  クラウド サービスから WNS に、OAuth 2.0 プロトコルに従って HTTPS 経由で資格情報が送られます。 これにより、WNS でサービスが認証されます。
+2.  認証に成功すると、WNS からアクセス トークンが返されます。 このアクセス トークンを、有効期限切れになるまで以降のすべての通知要求で使います。
+
+![クラウド サービス認証の WNS の図](images/wns-diagram-02.png)
+
+WNS に対する認証では、クラウド サービスからの HTTP 要求の送信に Secure Sockets Layer (SSL) を使います。 パラメーターの形式は "application/x-www-for-urlencoded" です。 "client\_id" フィールドにパッケージ SID を指定し、"client\_secret" フィールドに秘密鍵を指定します。 構文について詳しくは、[アクセス トークン要求](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#access_token_request)のリファレンスをご覧ください。
+
+**注**  次のコードは単なる例であり、切り取って貼り付けても独自のコードで使うことはできません。
 
  
 
@@ -80,9 +80,9 @@ In the authentication with WNS, the cloud service submits an HTTP request over S
  grant_type=client_credentials&client_id=ms-app%3a%2f%2fS-1-15-2-2972962901-2322836549-3722629029-1345238579-3987825745-2155616079-650196962&client_secret=Vex8L9WOFZuj95euaLrvSH7XyoDhLJc7&scope=notify.windows.com
 ```
 
-The WNS authenticates the cloud service and, if successful, sends a response of "200 OK". The access token is returned in the parameters included in the body of the HTTP response, using the "application/json" media type. After your service has received the access token, you are ready to send notifications.
+WNS はクラウド サービスを認証し、成功した場合、"200 OK" という応答を送ります。 アクセス トークンは、"application/json" メディア タイプを使って、HTTP 応答の本文に含まれるパラメーターで返されます。 アクセス トークンを受け取ると、通知を送ることができるようになります。
 
-The following example shows a successful authentication response, including the access token. For syntax details, see [Push notification service request and response headers](https://msdn.microsoft.com/library/windows/apps/hh465435).
+次の例は、アクセス トークンを含む認証成功時の応答を示しています。 構文について詳しくは、「[プッシュ通知サービスの要求ヘッダーと応答ヘッダー](https://msdn.microsoft.com/library/windows/apps/hh465435)」をご覧ください。
 
 ``` syntax
  HTTP/1.1 200 OK   
@@ -96,25 +96,25 @@ The following example shows a successful authentication response, including the 
  }
 ```
 
-### <span id="important_notes2"></span><span id="IMPORTANT_NOTES2"></span>Important notes
+### <span id="important_notes2"></span><span id="IMPORTANT_NOTES2"></span>重要な注意
 
--   The OAuth 2.0 protocol supported in this procedure follows draft version V16.
--   The OAuth Request for Comments (RFC) uses the term "client" to refer to the cloud service.
--   There might be changes to this procedure when the OAuth draft is finalized.
--   The access token can be reused for multiple notification requests. This allows the cloud service to authenticate just once to send many notifications. However, when the access token expires, the cloud service must authenticate again to receive a new access token.
+-   この手順でサポートされる OAuth 2.0 プロトコルは、草案の第 16 版に準拠したものです。
+-   OAuth の Request for Comments (RFC) では、クラウド サービスのことを "クライアント" と表現しています。
+-   この手順は、OAuth の草案が完成したときに変更される可能性があります。
+-   アクセス トークンは、複数の通知要求に再利用できます。 そのため、クラウド サービスを 1 回認証するだけで、複数の通知を送ることができます。 ただし、アクセス トークンの有効期限が切れた場合は、認証をもう一度行って新しいアクセス トークンを受け取る必要があります。
 
-## <span id="Sending_a_notification"></span><span id="sending_a_notification"></span><span id="SENDING_A_NOTIFICATION"></span>Sending a notification
+## <span id="Sending_a_notification"></span><span id="sending_a_notification"></span><span id="SENDING_A_NOTIFICATION"></span>通知の送信
 
 
-Using the channel URI, the cloud service can send a notification whenever it has an update for the user.
+クラウド サービスにユーザー向けの更新があるときは、チャネルの URI を使って通知を送ることができます。
 
-The access token described above can be reused for multiple notification requests; the cloud server is not required to request a new access token for every notification. If the access token has expired, the notification request will return an error. We recommended that you do not try to re-send your notification more than once if the access token is rejected. If you encounter this error, you will need to request a new access token and resend the notification. For the exact error code, see [Push notification response codes](https://msdn.microsoft.com/library/windows/apps/hh465435).
+既に説明したように、アクセス トークンは複数の通知要求に再利用できます。そのため、通知のたびに新しいアクセス トークンを要求する必要はありません。 アクセス トークンの有効期限が切れると、通知要求でエラーが返されます。 アクセス トークンが拒否されたときに通知の送信を何度も再試行しないようにしてください。 このエラーが発生した場合は、新しいアクセス トークンを要求して通知を再送する必要があります。 具体的なエラー コードについては、「[プッシュ通知の応答コード](https://msdn.microsoft.com/library/windows/apps/hh465435)」をご覧ください。
 
-1.  The cloud service makes an HTTP POST to the channel URI. This request must be made over SSL and contains the necessary headers and the notification payload. The authorization header must include the acquired access token for authorization.
+1.  クラウド サービスで、チャネルの URI に対する HTTP POST 要求を行います。 この要求は SSL 経由で行う必要があります。要求には、必要なヘッダーと通知のペイロードが含まれます。 承認用に取得したアクセス トークンを承認ヘッダーに含める必要があります。
 
-    An example request is shown here. For syntax details, see [Push notification response codes](https://msdn.microsoft.com/library/windows/apps/hh465435).
+    要求の例を次に示します。 構文について詳しくは、「[プッシュ通知の応答コード](https://msdn.microsoft.com/library/windows/apps/hh465435)」をご覧ください。
 
-    For details on composing the notification payload, see [Quickstart: Sending a push notification](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252). The payload of a tile, toast, or badge push notification is supplied as XML content that adheres to their respective defined [Adaptive tiles schema](tiles-and-notifications-adaptive-tiles-schema.md) or [Legacy tiles schema](https://msdn.microsoft.com/library/windows/apps/br212853). The payload of a raw notification does not have a specified structure. It is strictly app-defined.
+    通知のペイロードの構成について詳しくは、「[クイック スタート: プッシュ通知の送信](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)」をご覧ください。 タイル、トースト、またはバッジのプッシュ通知のペイロードは、それぞれの定義済み[アダプティブ タイル スキーマ](tiles-and-notifications-adaptive-tiles-schema.md)または[レガシ タイル スキーマ](https://msdn.microsoft.com/library/windows/apps/br212853)に準拠した XML コンテンツとして提供されます。 直接通知のペイロードには、指定された構造体はありません。 これは、アプリによって厳密に定義されます。
 
     ``` syntax
      POST https://cloud.notify.windows.com/?token=AQE%bU%2fSjZOCvRjjpILow%3d%3d HTTP/1.1
@@ -128,47 +128,47 @@ The access token described above can be reused for multiple notification request
      ....
     ```
 
-2.  WNS responds to indicate that the notification has been received and will be delivered at the next available opportunity. However, WNS does not provide end-to-end confirmation that your notification has been received by the device or application.
+2.  WNS から、受け取った通知を次回の配信時に送ることを示す応答を受け取ります。 ただし、WNS では、デバイスやアプリケーションで通知を受け取ったかどうかに関するエンド ツー エンドの確認は行われません。
 
-This diagram illustrates the data flow:
+次の図はデータ フローを示しています。
 
-![wns diagram for sending a notification](images/wns-diagram-03.png)
+![通知送信の WNS の図](images/wns-diagram-03.png)
 
-### <span id="important_notes3"></span><span id="IMPORTANT_NOTES3"></span>Important notes
+### <span id="important_notes3"></span><span id="IMPORTANT_NOTES3"></span>重要な注意
 
--   WNS does not guarantee the reliability or latency of a notification.
--   Notifications should never include confidential or sensitive data.
--   To send a notification, the cloud service must first authenticate with WNS and receive an access token.
--   An access token only allows a cloud service to send notifications to the single app for which the token was created. One access token cannot be used to send notifications across multiple apps. Therefore, if your cloud service supports multiple apps, it must provide the correct access token for the app when pushing a notification to each channel URI.
--   When the device is offline, by default WNS will store up to five tile notifications (if queuing is enabled; otherwise, one tile notification) and one badge notification for each channel URI, and no raw notifications. This default caching behavior can be changed through the [X-WNS-Cache-Policy header](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_cache). Note that toast notifications are never stored when the device is offline.
--   In scenarios where the notification content is personalized to the user, WNS recommends that the cloud service immediately send those updates when those are received. Examples of this scenario include social media feed updates, instant communication invitations, new message notifications, or alerts. As an alternative, you can have scenarios in which the same generic update is frequently delivered to a large subset of your users; for example, weather, stock, and news updates. WNS guidelines specify that the frequency of these updates should be at most one every 30 minutes. The end user or WNS may determine more frequent routine updates to be abusive.
+-   WNS では、通知の信頼性や待機時間については保証されません。
+-   機密データや重要なデータは通知に含めないでください。
+-   通知を送るには、事前に WNS に対してクラウド サービスを認証し、アクセス トークンを受け取る必要があります。
+-   アクセス トークンを使用する場合、クラウド サービスはそのトークンが作成された単一のアプリに対してのみ通知を送信できます。 1 つのアクセス トークンで複数のアプリに通知を送ることはできません。 そのため、クラウド サービスで複数のアプリをサポートしている場合は、それぞれのチャネルの URI に通知をプッシュするときに、該当するアプリの正しいアクセス トークンを指定する必要があります。
+-   デバイスがオフラインの場合、WNS では既定で、チャネル URI ごとに最大 5 つ (キューが有効になっていない場合は 1 つ) のタイル通知と 1 つのバッジ通知が保存されます。直接通知は保存されません。 この既定のキャッシュ処理は、[X-WNS-Cache-Policy ヘッダー](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_cache)を使って変更することができます。 デバイスがオフラインである場合、トースト通知は保存されませんので注意してください。
+-   通知の内容がユーザーごとに異なる場合、WNS では、クラウド サービスでそれらの更新を受け取ったら、それらを直ちに送るように推奨されています。 これには、たとえば、ソーシャル メディアのフィードの更新、即座の通知への招待、新しいメッセージの通知、アラートなどが該当します。 また、天気、株価情報、ニュースの更新など、多くのユーザーに同じ更新を頻繁に配信する場合もあります。 WNS のガイドラインでは、それらの更新頻度を 30 分に 1 回までにするように規定されています。 それよりも頻繁に更新を配信すると、エンド ユーザーや WNS に不正な通知と見なされる場合があります。
 
-## <span id="expiry"></span><span id="EXPIRY"></span>Expiration of tile and badge notifications
-
-
-By default, tile and badge notifications expire three days after being downloaded. When a notification expires, the content is removed from the tile or queue and is no longer shown to the user. It's a best practice to set an expiration (using a time that makes sense for your app) on all tile and badge notifications so that your tile's content doesn't persist longer than it is relevant. An explicit expiration time is essential for content with a defined lifespan. This also assures the removal of stale content if your cloud service stops sending notifications, or if the user disconnects from the network for an extended period.
-
-Your cloud service can set an expiration for each notification by setting the X-WNS-Expires HTTP header to specify the time (in seconds) that your notification will remain valid after it is sent. For more information, see [Push notification service request and response headers](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_ttl).
-
-For example, during a stock market's active trading day, you can set the expiration for a stock price update to twice that of your sending interval (such as one hour after receipt if you are sending notifications every half-hour). As another example, a news app might determine that one day is an appropriate expiration time for a daily news tile update.
-
-## <span id="Push_notifications_and_battery_saver"></span><span id="push_notifications_and_battery_saver"></span><span id="PUSH_NOTIFICATIONS_AND_BATTERY_SAVER"></span>Push notifications and battery saver
+## <span id="expiry"></span><span id="EXPIRY"></span>タイル通知とバッジ通知の有効期限
 
 
-Battery saver extends battery life by limiting background activity on the device. Windows 10 lets the user set battery saver to turn on automatically when the battery drops below a specified threshold. When battery saver is on, the receipt of push notifications is disabled to save energy. But there are a couple exceptions to this. The following Windows 10 battery saver settings (found in the **Settings** app) allow your app to receive push notifications even when battery saver is on.
+既定では、タイル通知とバッジ通知は、ダウンロードされたときから 3 日後に有効期限切れになります。 通知の有効期限が切れると、タイルまたはキューからコンテンツが削除され、ユーザーに表示されなくなります。 すべてのタイル通知とバッジ通知には、アプリにとって適切な時間を使って有効期限を設定し、タイルのコンテンツの意味がなくなっても保持されないようにすることをお勧めします。 明示的な有効期限は、コンテンツの存続期間が決まっている場合に重要です。 また、クラウド サービスによる通知の送信が停止した場合や、ユーザーがネットワークに長時間接続していない場合に、古いコンテンツを確実に削除することができます。
 
--   **Allow push notifications from any app while in battery saver**: This setting lets all apps receive push notifications while battery saver is on. Note that this setting applies only to Windows 10 for desktop editions (Home, Pro, Enterprise, and Education).
--   **Always allowed**: This setting lets specific apps run in the background while battery saver is on - including receiving push notifications. This list is maintained manually by the user.
+クラウド サービスでは、送信後の通知が有効である時間を秒単位で指定する X-WNS-Expires HTTP ヘッダーを設定することで、通知ごとに有効期限を設定できます。 詳しくは、「[プッシュ通知サービスの要求ヘッダーと応答ヘッダー](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_ttl)」を参照してください。
 
-There is no way to check the state of these two settings, but you can check the state of battery saver. In Windows 10, use the [**EnergySaverStatus**](https://msdn.microsoft.com/library/windows/apps/dn966190) property to check battery saver state. Your app can also use the [**EnergySaverStatusChanged**](https://msdn.microsoft.com/library/windows/apps/dn966191) event to listen for changes to battery saver.
+たとえば、株式市場の取引が活発な日は、株価の更新の有効期限を送信間隔の有効期限の 2 倍に設定することをお勧めします (30 分ごとに通知を送っている場合は有効期限を受け取り後 1 時間にするなど)。 また、ニュース アプリの場合、毎日のニュースを表示するタイルの更新の有効期限は 1 日が適しています。
 
-If your app depends heavily on push notifications, we recommend notifying users that they may not receive notifications while battery saver is on and to make it easy for them to adjust **battery saver settings**. Using the battery saver settings URI scheme in Windows 10, `ms-settings:batterysaver-settings`, you can provide a convenient link to the Settings app.
+## <span id="Push_notifications_and_battery_saver"></span><span id="push_notifications_and_battery_saver"></span><span id="PUSH_NOTIFICATIONS_AND_BATTERY_SAVER"></span>プッシュ通知とバッテリー セーバー
 
-**Tip**   When notifying the user about battery saver settings, we recommend providing a way to suppress the message in the future. For example, the `dontAskMeAgainBox` checkbox in the following example persists the user's preference in [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622).
+
+バッテリー セーバーは、デバイスでのバックグラウンド アクティビティを制限することでバッテリーの寿命を延ばします。 Windows 10 を使うと、バッテリーが指定されたしきい値を下回ったときに、ユーザーは自動的にバッテリー セーバーをオンになるように設定することができます。 バッテリー セーバーがオンのときは、電力を節約するため、プッシュ通知の受信は無効になります。 ただし、これにはいくつかの例外があります。 次の Windows 10 バッテリ セーバー設定 (**[設定]** アプリにあります) により、バッテリ セーバーがオンになっているときでも、プッシュ通知を受け取ることができます。
+
+-   **[バッテリ節約機能がオンのときも、すべてのアプリケーションからのプッシュ通知を許可する]**: この設定では、バッテリ セーバーがオンになっているときでも、すべてのアプリがプッシュ通知を受け取ることができます。 この設定が適用されるのは、デスクトップ エディション (Home、Pro、Enterprise、Education の各エディション) 用 Windows 10 のみです。
+-   **Always allowed**: この設定では、バッテリ セーバーがオンになっているときでも、プッシュ通知の受け取りを含めて、バックグラウンドで特定のアプリを実行できます。 この一覧は、ユーザーによって手動で管理されます。
+
+これら 2 つの設定の状態を確認する方法はありませんが、バッテリ セーバーの状態を確認することはできます。 Windows 10 では、[**EnergySaverStatus**](https://msdn.microsoft.com/library/windows/apps/dn966190) プロパティを使って、バッテリ セーバーの状態を確認します。 アプリでは、[**EnergySaverStatusChanged**](https://msdn.microsoft.com/library/windows/apps/dn966191) イベントを使って、バッテリ セーバーの変更をリッスンすることもできます。
+
+アプリがプッシュ通知を多用している場合は、バッテリ セーバーがオンの時は通知を受け取らないことをユーザーに通知し、**バッテリ セーバーの設定**を簡単に調整できるようにすることをお勧めします。 Windows 10 でバッテリ セーバー設定の URI スキーム `ms-settings:batterysaver-settings` を使って、設定アプリへの便利なリンクを提供することができます。
+
+**ヒント**   バッテリー セーバーの設定をユーザーに通知するときは、今後、メッセージを表示しないようにする方法を提供することをお勧めします。 たとえば、次の例の [`dontAskMeAgainBox`] チェックボックスは、[**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) でユーザーの設定を保持します。
 
  
 
-Here's an example of how to check if battery saver is turned on in Windows 10. This example notifies the user and launches the Settings app to **battery saver settings**. The `dontAskAgainSetting` lets the user suppress the message if they don't want to be notified again.
+Windows 10 でバッテリー セーバーがオンになっているかどうかを確認する方法の例を示します。 この例では、ユーザーに通知し、[設定] アプリを**バッテリ セーバー設定**で起動します。 `dontAskAgainSetting` により、ユーザーは再度通知を表示しないようにする場合に、メッセージを非表示にすることができます。
 
 ```CSharp
 using System;
@@ -215,7 +215,7 @@ async public void CheckForEnergySaving()
 }
 ```
 
-This is the XAML for the [**ContentDialog**](https://msdn.microsoft.com/library/windows/apps/dn633972) featured in this example.
+これは、次の例で使われている [**ContentDialog**](https://msdn.microsoft.com/library/windows/apps/dn633972) の XAML です。
 
 ```XAML
 <ContentDialog x:Name="saveEnergyDialog"
@@ -235,23 +235,23 @@ This is the XAML for the [**ContentDialog**](https://msdn.microsoft.com/library/
 </ContentDialog>
 ```
 
-**Note**  
-This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
+**注:**  
+この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
  
 
-## <span id="related_topics"></span>Related topics
+## <span id="related_topics"></span>関連トピック
 
 
-* [Send a local tile notification](tiles-and-notifications-sending-a-local-tile-notification.md)
-* [Quickstart: Sending a push notification](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)
-* [How to update a badge through push notifications](https://msdn.microsoft.com/library/windows/apps/hh465450)
-* [How to request, create, and save a notification channel](https://msdn.microsoft.com/library/windows/apps/hh465412)
-* [How to intercept notifications for running applications](https://msdn.microsoft.com/library/windows/apps/hh465450)
-* [How to authenticate with the Windows Push Notification Service (WNS)](https://msdn.microsoft.com/library/windows/apps/hh465407)
-* [Push notification service request and response headers](https://msdn.microsoft.com/library/windows/apps/hh465435)
-* [Guidelines and checklist for push notifications](https://msdn.microsoft.com/library/windows/apps/hh761462)
-* [Raw notifications](https://msdn.microsoft.com/library/windows/apps/hh761488)
+* [ローカル タイル通知の送信](tiles-and-notifications-sending-a-local-tile-notification.md)
+* [クイック スタート: プッシュ通知の送信](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)
+* [プッシュ通知を使用してバッジを更新する方法](https://msdn.microsoft.com/library/windows/apps/hh465450)
+* [通知チャネルを要求、作成、保存する方法](https://msdn.microsoft.com/library/windows/apps/hh465412)
+* [実行中のアプリの通知を中断する方法](https://msdn.microsoft.com/library/windows/apps/hh465450)
+* [Windows プッシュ通知サービス (WNS) に対して認証する方法](https://msdn.microsoft.com/library/windows/apps/hh465407)
+* [プッシュ通知サービスの要求ヘッダーと応答ヘッダー](https://msdn.microsoft.com/library/windows/apps/hh465435)
+* [プッシュ通知のガイドラインとチェック リスト](https://msdn.microsoft.com/library/windows/apps/hh761462)
+* [直接通知](https://msdn.microsoft.com/library/windows/apps/hh761488)
  
 
  

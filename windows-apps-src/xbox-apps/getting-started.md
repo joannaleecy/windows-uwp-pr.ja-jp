@@ -1,61 +1,61 @@
 ---
-title: Getting started with UWP app development on Xbox One
-description: How to set up your PC and Xbox One for UWP development.
+title: Xbox One の UWP アプリ開発の概要
+description: UWP 開発のために PC と Xbox One を設定する方法。
 area: Xbox
 ---
 
-#Getting started with UWP app development on Xbox One
+#Xbox One の UWP アプリ開発の概要
 
-**Carefully** follow these steps to successfully set up your PC and Xbox One for UWP development. After you’ve got things set up, you can learn more about Developer Mode on Xbox One and building UWP apps on the [UWP for Xbox One](index.md) page. 
+UWP 開発のために PC と Xbox One を設定する方法の手順に**注意深く**従います。 この設定の完了後に、Xbox One の開発者モードと UWP アプリの構築について詳しくは、「[Xbox one の UWP](index.md)」ページをご覧ください。 
 
-## Before you start
-Before you start you will need to do the following:
--   Create a [Windows Dev Center](https://dev.windows.com) account.
--   Join the [Windows Insider Program](https://insider.windows.com/). You’ll need this to get the preview Windows SDK.
--   Set up a Windows 10 PC (any version will do including the most up-to-date Windows 10 insider flight) – for this preview, our development tools require you to be running Windows 10. 
--   Connect your Xbox One console to a wired network (wireless may work, but performance is currently much better with a wired connection).
-- Have at least 30 GB of free space on your Xbox One console.
+## 開始前の作業
+開始する前に、次の操作をする必要があります。
+-   [Windows デベロッパー センター](https://dev.windows.com) アカウントを作成します。
+-   [Windows Insider Program](https://insider.windows.com/) に参加します。 これは Windows SDK のプレビュー版を入手するために必要です。
+-   Windows 10 PC (最新の Windows 10 Insider フライトを含め、どのバージョンでも構いません) を設定します。このプレビュー版では開発ツールには Windows 10 が必要となります。 
+-   Xbox One コンソールを有線ネットワークに接続します (ワイヤレスでも動作しますが、現在では有線接続の方がパフォーマンスが非常に優れています)。
+- Xbox One コンソール上に少なくとも 30 GB の空き領域が必要です。
 
-## Setting up your development PC
-1.  Install Visual Studio 2015 Update 2. Make sure that you choose **Custom** install and select the **Universal Windows App Development Tools** checkbox – it's not part of the default install. See [Development environment setup](development-environment-setup.md) for more information (also if you are a C++ developer make sure that you choose Custom install and select C++ too).
+## 開発用 PC のセットアップ
+1.  Visual Studio 2015 Update 2 をインストールします。 既定のインストールには含まれていないため、**カスタム** インストールを選択し、**[ユニバーサル Windows アプリ開発ツール]** チェック ボックスをオンにします。 詳しくは、「[開発環境のセットアップ](development-environment-setup.md)」をご覧ください (また C++ 開発者の方は、カスタム インストールで C++ も選択してください)。
 
-2.  Install the Windows 10 SDK preview build 14295. You can get this from the [Windows Insider Program](http://go.microsoft.com/fwlink/p/?LinkId=780552).
+2.  Windows 10 SDK 14295 プレビュー ビルド 14295 をインストールします。 これは [Windows Insider Program](http://go.microsoft.com/fwlink/p/?LinkId=780552) で入手できます。
   
-  > **Important**&nbsp;&nbsp;Installing this preview SDK on your PC will prevent you from submitting apps to the store built on this PC, so don’t do this on your production development PC. 
+  > **重要** このプレビュー SDK を PC にインストールすると、その PC でビルドされたアプリをストアに提出できなくなります。実開発環境の PC には、このプレビュー SDK をインストールしないでください。 
 
-## Setting up your Xbox One console
-1.  Activate Developer Mode on your Xbox One. Download the app, get the activation code, enter it into the xboxactivate page in your Dev Center account. See [Enabling developer mode on Xbox One](devkit-activation.md) for more information. 
+## Xbox One コンソールの設定
+1.  Xbox One の開発者モードを有効にします。 アプリをダウンロードして、アクティブ化コードを取得し、デベロッパー センターのアカウントを使って、xboxactivate ページでそれを入力します。 詳しくは、「[Xbox One で開発者モードを有効にする](devkit-activation.md)」をご覧ください。 
 
-2.  Wait until your Xbox One takes a system update so that it's running the Developer Preview. This can take up to 4 hours. If you don’t want to wait,  “hard” reboot your console by pressing and holding the power button for 10 seconds, and then turning it back on. This will trigger the update.  
+2.  Xbox One がシステム アップデートを取得し、Developer Preview が実行されるようになるのを待機します。 最大 4 時間ほどかかる場合があります。 待機しない場合は、10 秒以上電源ボタンを長押しして、その後再度電源をオンにして、コンソールの "ハード" リブートを行うと、 更新がトリガーされます。  
 
-3.  Go into the Dev Mode Activation app and select **Switch and restart**. Congratulations, you now have an Xbox One in Developer Mode!
+3.  開発者モードのアクティブ化のアプリに移動し、**[切り替えと再起動]** を選択します。 これで Xbox One は開発者モードとなりました。
   
-  > **Note**&nbsp;&nbsp;Your retail games and apps won’t run in Developer Mode, but the apps or games you create will. Switch back to Retail Mode to run your favorite games and apps.
+  > **注** 市販のゲームやアプリは開発者モードでは実行できません。自分で作成するアプリまたはゲームを実行できます。 市販のゲームやアプリを実行するには、リテール モードに切り替えます。
 
-## Creating your first project in Visual Studio 2015
+## Visual Studio 2015 の初めてのプロジェクトの作成
 
-See [Development environment setup](development-environment-setup.md) for more detailed information.
+詳しくは、「[開発環境のセットアップ](development-environment-setup.md)」をご覧ください。
 
-1.  For C#: Create a new Universal Windows project, go into the project properties and select the **Debug** tab, change **Target device** to **Remote Machine**, type the IP address or hostname of your Xbox One into the **Remote machine** field, and select **Universal (Unencrypted Protocol)** in the **Authentication Mode** drop-down list.   
+1.  C# の場合: 新しいユニバーサル Windows プロジェクトを作成し、プロジェクトのプロパティに移動して、**[デバッグ]** タブを選択し、**[ターゲット デバイス]** を **[リモート コンピューター]** に変更して、Xbox One の IP アドレスまたはホスト名を **[リモート コンピューター]** フィールドに入力し、**[認証モード]** のドロップダウン リストで **[ユニバーサル (暗号化されていないプロトコル)]** を選択します。   
 
-    You can find your Xbox One IP address by starting Dev Home on your console (the big tile on the right side of Home) and looking at the top left corner. See [Introduction to Xbox One tools](introduction-to-xbox-tools.md) for more information about Dev Home.  
+    コンソールで Dev Home (ホーム画面の右側の大きなタイル) を開始すると、左上隅に Xbox One の IP アドレスが表示されます。 Dev Home について詳しくは、「[Xbox One ツールの概要](introduction-to-xbox-tools.md)」をご覧ください。  
 
-2.  For C++ and HTML/Javascript projects:  You follow a similar path, but in project properties go to the **Debugging** tab, select **Remote Machine** in the Debugger to open the drop-down list, type the IP address or hostname of the console into the **Machine Name** field, and select **Universal (Unencrypted Protocol)** in the **Authentication Type** field.
+2.  C++ と HTML/Javascript プロジェクトの場合: 同様の手順を行いますが、プロジェクトのプロパティで **[デバッグ]** タブに移動し、デバッガーで **[リモート コンピューター]** を選択してドロップダウン リストを開き、**[コンピューター名]** フィールドにコンソールの IP アドレスまたはホスト名を入力して、**[認証の種類]** フィールドで **[ユニバーサル (暗号化されていないプロトコル)]** を選択します。
    
-3.  When you press F5, your app will build and start to deploy on your Xbox One.
+3.  F5 キーを押してアプリをビルドして、Xbox One での展開を開始します。
   
-4.  The first time you do this, Visual Studio will prompt you for a PIN for your Xbox One. You can get a PIN by starting Dev Home on your Xbox One and pressing the **Pair with Visual Studio** button.
+4.  初めてこれを行う際には、Visual Studio に Xbox One の PIN の入力を求められます。 Xbox One で Dev Home を開始して、**[Pair with Visual Studio]** ボタンを押すと PIN を取得できます。
   
-5.  After you have paired, your app will start to deploy. The first time you do this it might be a bit slow (we have to copy all the tools over to your Xbox), but if it takes more than a few minutes, something is probably wrong. Make sure that you have followed all of the steps above (particularly did you set the **Authentication Mode** to **Universal**?) and that you are using a wired network connection to your Xbox One.  
+5.  ペアリングを行うと、アプリの展開が開始されます。 初めてこれを行う際には、(すべてのツールを Xbox にコピーする必要があるため) 少し時間がかかることがありますが、数分以上かかる場合には、何か問題がある場合があります。 上記のすべての手順を実行していることを確認します (特に **[認証モード]** を **[ユニバーサル]** に設定していることを確認します)。また Xbox One に有線接続していることを確認します。  
 
-6. Sit back and relax. Enjoy your first app running on the console!  
+6. 用意ができました。 コンソールでの初めてのアプリの実行をお楽しみください。  
    ![Hello World](images/getting-started-hello-world.png)
    
 
-## See also  
+## 参照  
 - [FAQ](frequently-asked-questions.md)  
-- [Known issues](known-issues.md)
-- [UWP on Xbox One](index.md)
+- [既知の問題](known-issues.md)
+- [Xbox One の UWP](index.md)
 
 
 <!--HONumber=Mar16_HO5-->

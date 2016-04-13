@@ -1,39 +1,39 @@
 ---
-Description: Use the reposition animation to move an element or elements into a new position.
-title: Reposition animations in UWP apps
+Description: 位置変更アニメーションを使って、1 つまたは複数の要素を新しい位置に移動します。
+title: UWP アプリでの位置変更アニメーション
 ms.assetid: 25D1EE31-5C25-4F21-B34C-FBD8FB1C8FFF
 label: Motion--Reposition
 template: detail.hbs
 ---
 
-# Reposition animations
+# 位置変更アニメーション
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-Use the reposition animation to move an element or elements into a new position.
+位置変更アニメーションを使って、1 つまたは複数の要素を新しい位置に移動します。
 
-**Important APIs**
+**重要な API**
 
--   [**RepositionThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210421)
--   [**RepositionThemeTransition class**](https://msdn.microsoft.com/library/windows/apps/br210429)
-
-
-## Do's and don'ts
+-   [**RepositionThemeAnimation クラス**](https://msdn.microsoft.com/library/windows/apps/br210421)
+-   [**RepositionThemeTransition クラス**](https://msdn.microsoft.com/library/windows/apps/br210429)
 
 
--   If you're showing or hiding edge-based UI, use [edge-based UI animations](motion-edgebased.md). Edge-based UI is an element or container that is anchored at one edge of the screen.
+## 推奨と非推奨
 
 
-## Related articles
+-   エッジに基づく UI を表示または非表示にする場合、[エッジに基づく UI アニメーション](motion-edgebased.md)を使います。 エッジに基づく UI とは、画面の端の 1 つに固定された要素またはコンテナーを指します。
 
 
-**For developers (XAML)**
-* [Animations overview](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [Animating repositions](https://msdn.microsoft.com/library/windows/apps/xaml/jj649434)
-* [Quickstart: Animating your UI using library animations](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
-* [**RepositionThemeAnimation class**](https://msdn.microsoft.com/library/windows/apps/br210421)
-* [**RepositionThemeTransition class**](https://msdn.microsoft.com/library/windows/apps/br210429)
+## 関連記事
+
+
+**開発者向け (XAML)**
+* [アニメーションの概要](https://msdn.microsoft.com/library/windows/apps/mt187350)
+* [位置変更のアニメーション化](https://msdn.microsoft.com/library/windows/apps/xaml/jj649434)
+* [クイック スタート: ライブラリのアニメーションを使った UI のアニメーション化](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [**RepositionThemeAnimation クラス**](https://msdn.microsoft.com/library/windows/apps/br210421)
+* [**RepositionThemeTransition クラス**](https://msdn.microsoft.com/library/windows/apps/br210429)
 
 
  

@@ -1,49 +1,49 @@
 ---
-Description: Edge-based animations show or hide UI that originates from the edge of the screen.
-title: Edge-based UI animations in UWP apps
+Description: エッジに基づく UI アニメーションでは、画面の端を起点とする UI の表示と非表示を切り替えられます。
+title: UWP アプリでのエッジに基づく UI アニメーション
 ms.assetid: 5A8F73B1-F4F6-424b-9EDF-A9766C5DEAE8
 label: Motion--edge-based UI
 template: detail.hbs
 ---
 
-# Edge-based UI animations
+# エッジに基づく UI アニメーション
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-Edge-based animations show or hide UI that originates from the edge of the screen. The show and hide actions can be initiated either by the user or by the app. The UI can either overlay the app or be part of the main app surface. If the UI is part of the app surface, the rest of the app might need to be resized to accommodate it.
+エッジに基づく UI アニメーションでは、画面の端を起点とする UI の表示と非表示を切り替えられます。 この表示と非表示のアクションは、ユーザーが開始することも、アプリから開始することもできます。 UI は、アプリの手前に表示するか、メイン アプリ サーフェスの一部として表示することができます。 UI をアプリ サーフェスの一部として表示する場合は、UI を表示できるようにアプリの残りの部分のサイズを調整する必要があります。
 
-**Important APIs**
+**重要な API**
 
--   [**EdgeUIThemeTransition class**](https://msdn.microsoft.com/library/windows/apps/hh702324)
-
-
-## Do's and don'ts
+-   [**EdgeUIThemeTransition クラス**](https://msdn.microsoft.com/library/windows/apps/hh702324)
 
 
--   Use edge UI animations to show or hide a custom message or error bar that does not extend far into the screen.
--   Use panel animations to show UI that slides a significant distance into the screen, such as a task pane or a custom soft keyboard.
--   Slide the UI in from the same edge it will be attached to.
--   Slide the UI out to the same edge it came from.
--   If the contents of the app need to resize in response to the UI sliding in or out, use fade animations for the resize.
-    -   If the UI is sliding in, use a fade animation after the edge UI or panel animation.
-    -   If the UI is sliding out, use a fade animation at the same time as the edge UI or panel animation.
--   Don't apply these animations to notifications. Notifications should not be housed within edge-based UI.
--   Don't apply the edge UI or panel animations to any UI container or control that is not at the edge of the screen. These animations are used only for showing, resizing, and dismissing UI at the edges of the screen. To move other types of UI, use reposition animations.
-
-    ![illustrates when to use edge ui or panel animations and when to use reposition.](images/edgevsreposition.png)
-
-## Related articles
+## 推奨と非推奨
 
 
-**For developers (XAML)**
-* [Animations overview](https://msdn.microsoft.com/library/windows/apps/mt187350)
-* [Animating edge-based UI](https://msdn.microsoft.com/library/windows/apps/xaml/jj649428)
-* [Quickstart: Animating your UI using library animations](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
-* [**EdgeUIThemeTransition class**](https://msdn.microsoft.com/library/windows/apps/hh702324)
-* [**PaneThemeTransition class**](https://msdn.microsoft.com/library/windows/apps/hh969160)
-* [Animating fades](https://msdn.microsoft.com/library/windows/apps/xaml/jj649429)
-* [Animating repositions](https://msdn.microsoft.com/library/windows/apps/xaml/jj649434)
+-   画面領域をあまり占有しないカスタム メッセージ バーやエラー バーを表示または非表示にするには、エッジ (端) UI アニメーションを使います。
+-   作業ウィンドウやカスタム ソフト キーボードなど、画面内側にスライドして領域を大きく確保する UI を表示するには、パネル アニメーションを使います。
+-   UI を開くには、それが関連付けられている端から画面内側にスライドします。
+-   UI を閉じるには、画面内側から、開いたときと同じ端に向かってスライドします。
+-   UI のスライド操作に応じてアプリのコンテンツ サイズを変更する必要がある場合は、フェード アニメーションを使ってサイズを変更します。
+    -   UI を画面内側に向かってスライドする場合は、エッジ (端) UI アニメーションまたはパネル アニメーションの後にフェード アニメーションを使います。
+    -   UI を画面外側に向かってスライドする場合は、エッジ (端) UI アニメーションまたはパネル アニメーションと同時にフェード アニメーションを使います。
+-   通知には、このアニメーションを適用しないでください。 エッジに基づく UI に通知を格納することはお勧めしません。
+-   画面のエッジ (端) にない UI コンテナーやコントロールには、エッジ (端) UI アニメーションとパネル アニメーションを適用しないでください。 このアニメーションは、画面のエッジ (端) にある UI の開閉とサイズ変更にのみ使います。 他のタイプの UI を移動するには、位置変更アニメーションを使います。
+
+    ![エッジ (端) UI アニメーションまたはパネル アニメーションを使うケースと位置変更を使うケースの図](images/edgevsreposition.png)
+
+## 関連記事
+
+
+**開発者向け (XAML)**
+* [アニメーションの概要](https://msdn.microsoft.com/library/windows/apps/mt187350)
+* [エッジに基づく UI のアニメーション化](https://msdn.microsoft.com/library/windows/apps/xaml/jj649428)
+* [クイック スタート: ライブラリのアニメーションを使った UI のアニメーション化](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703)
+* [**EdgeUIThemeTransition クラス**](https://msdn.microsoft.com/library/windows/apps/hh702324)
+* [**PaneThemeTransition クラス**](https://msdn.microsoft.com/library/windows/apps/hh969160)
+* [フェードのアニメーション化](https://msdn.microsoft.com/library/windows/apps/xaml/jj649429)
+* [位置変更のアニメーション化](https://msdn.microsoft.com/library/windows/apps/xaml/jj649434)
 
  
 

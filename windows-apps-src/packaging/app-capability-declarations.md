@@ -114,7 +114,7 @@ description: 一部の API またはピクチャ、ミュージック、デバ�
                 </td>
             </tr>
             <tr>
-                <td>**リムーバブル ストレージ**</td>
+                <td>**リムーバブル記憶域**</td>
                 <td>
                     The **removableStorage** capability provides programmatic access to files on removable storage, like USB keys and external hard drives, filtered to the file-type associations declared in the package manifest. For example, if a document-reader app declares a .doc file-type association, it can open .doc files on the removable storage device, but not other types of files. Be careful when you declare this capability, because users may include a variety of info in their removable storage devices, and will expect your app to provide a valid justification for programmatic access to the removable storage for all files of the declared type.
 
@@ -485,8 +485,8 @@ description: 一部の API またはピクチャ、ミュージック、デバ�
 | **位置情報**\* | **location** 機能は、位置情報機能へのアクセスを提供します。この情報は PC が備えている GPS センサーなどの専用ハードウェアや、利用可能なネットワーク情報から取得されます。 アプリは、ユーザーが **[設定]** チャームで位置情報サービスを無効にした場合に対応する必要があります。 |
 | **マイク** | **microphone** 機能は、マイクのオーディオ フィードへのアクセスを提供します。これによって、接続されたマイクからオーディオを録音できます。 アプリは、ユーザーが **[設定]** チャームでマイクを無効にした場合に対応する必要があります。 |
 | **近接** | **proximity** 機能を使うと、きわめて近い場所にある複数のデバイスが相互に通信できます。 通常、この機能は、カジュアルなマルチプレーヤー ゲームや情報を交換するアプリで使われます。 デバイスは、Bluetooth、Wi-Fi、インターネットを含む、最適な接続を提供する通信テクノロジを使います。 この機能は、デバイス間の通信を開始するためにのみ使われます。 |
-| **Webcam** | **webcam** 機能は、内蔵カメラや外付け Web カメラのビデオ フィードへのアクセスを提供します。これによって、アプリで写真やビデオをキャプチャできます。 Windows の場合、アプリはユーザーが **[設定]** チャームでカメラを無効にした場合に対応する必要があります。<br/>**webcam** 機能では、ビデオ ストリームへのアクセスだけが許可されます。 オーディオ ストリームへのアクセスも許可するには、**microphone** 機能を追加する必要があります。 | 
-| **USB** | **usb** デバイス機能を使うと、「[USB デバイスのアプリ マニフェスト パッケージの更新](http://go.microsoft.com/fwlink/p/?LinkId=302259)」で API にアクセスできます。 | 
+| **Webcam** | **webcam** 機能は、内蔵カメラや外付け Web カメラのビデオ フィードへのアクセスを提供します。これによって、アプリで写真やビデオをキャプチャできます。 Windows の場合、アプリはユーザーが **[設定]** チャームでカメラを無効にした場合に対応する必要があります。<br/>**webcam** 機能では、ビデオ ストリームへのアクセスだけが許可されます。 オーディオ ストリームへのアクセスも許可するには、**microphone** 機能を追加する必要があります。 |
+| **USB** | **usb** デバイス機能を使うと、「[USB デバイスのアプリ マニフェスト パッケージの更新](http://go.microsoft.com/fwlink/p/?LinkId=302259)」で API にアクセスできます。 |
 | **ヒューマン インターフェイス デバイス (HID)** | **humaninterfacedevice** デバイス機能を使うと、「[HID のデバイス機能を指定する方法](https://msdn.microsoft.com/library/windows/apps/Dn263091)」で API にアクセスできます。 |
 | **Point of Service (POS)** | **pointOfService** デバイス機能を使うと、[**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071) 名前空間の API にアクセスできます。 この名前空間により、アプリは、Point of Service (POS) バー コード スキャナーや磁気ストライプ リーダーにアクセスできます。 この名前空間は、さまざまな製造元の POS デバイスに Windows ストア アプリからアクセスするための、ベンダーに依存しないインターフェイスを提供します。 |
 | **Bluetooth** | **bluetooth** デバイス機能を使うと、アプリは Generic Attribute (GATT) または Classic Basic Rate (RFCOMM) プロトコル経由で既にペアリングされている Bluetooth デバイスと通信できます。<br/>[
@@ -520,12 +520,12 @@ description: 一部の API またはピクチャ、ミュージック、デバ�
 次に示すように、Package.appxmanifest ファイルの先頭に **xmlns:rescap** 名前空間の宣言も追加する必要があります。
 
 ```xml
-<Package 
-    xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" 
-    xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" 
-    xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" 
-    xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities" 
-    IgnorableNamespaces="uap mp wincap rescap"> 
+<Package
+    xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+    xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
+    xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+    xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+    IgnorableNamespaces="uap mp wincap rescap">
 ```
 
 <table>
@@ -576,7 +576,7 @@ description: 一部の API またはピクチャ、ミュージック、デバ�
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left">**共有ユーザー証明書**</td>
+<td align="left">**ユーザー証明書の共有**</td>
 <td align="left"><p>特殊な機能 **sharedUserCertificates** を使って、アプリは共有ユーザー ストア内のソフトウェアベースおよびハードウェアベースの証明書 (スマート カードに格納されている証明書など) を追加したり、それらの証明書にアクセスしたりできます。 通常、この機能は、認証にスマート カードを必要とする財務アプリまたはエンタープライズ アプリで使われます。</p>
 <p>アプリのパッケージ マニフェストで宣言するとき、以下に示すように、**sharedUserCertificates** 機能に **uap** 名前空間を含める必要があります。</p>
 <div class="code">
@@ -643,7 +643,7 @@ description: 一部の API またはピクチャ、ミュージック、デバ�
             **Windows.Media.Capture**](https://msdn.microsoft.com/library/windows/apps/BR226738) 名前空間の一部の API を使う場合は、この機能が必要になります。</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**携帯ネットワーク**</td>
+<td align="left">**携帯電話**</td>
 <td align="left"><p>制限された機能 **cellularDeviceControl** を使うと、アプリは携帯デバイスを制御できます。</p>
 <p>**cellularDeviceIdentity** 機能を使うと、アプリは携帯デバイスの ID データにアクセスできます。</p>
 <p>**cellularMessaging** 機能を使うと、アプリは SMS と RCS を利用できます。</p>
@@ -859,10 +859,18 @@ description: 一部の API またはピクチャ、ミュージック、デバ�
 <td align="left"><p>制限された機能 **oemDeployment** を使うと、Microsoft パートナー製のアプリは、新しいアプリをインストールし、デバイスに現在インストールされているアプリを照会できます。</p>
 <p>制限された機能 **oemPublicDirectory** を使うと、Microsoft パートナー製のアプリは、共有アプリ フォルダーにアクセスできます。</p></td>
 </tr>
+<tr class="odd">
+<td align="left">**アプリのライセンス**</td>
+<td align="left"><p>制限された機能 **appLicensing** を使うと、ライセンスの必要なくアプリを実行できます。 マニフェストにこの機能を宣言している場合、ストアにアプリを提出することはできません。 ストアへの提出を目的とするこの機能へのアクセス要求は、常に拒否されます。</p></td>
+</tr>
+<tr class="even">
+<td align="left">**場所システム**</td>
+<td align="left"><p>制限された機能 **LocationSystem** を使うと、アプリは特権のある特定の場所の構成 (デバイスの既定の場所の設定など) を実行できます。 マニフェストにこの機能を宣言している場合、ストアにアプリを提出することはできません。 ストアへの提出を目的とするこの機能へのアクセス要求は、常に拒否されます。</p></td>
+</tr>
 </tbody>
 </table>
 
-**注:**  
+**注**  
 この記事は、UWP アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください。
 
 ## 関連トピック
@@ -874,7 +882,6 @@ description: 一部の API またはピクチャ、ミュージック、デバ�
  
 
 
-
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=Mar16_HO5-->
 
 

@@ -1,192 +1,192 @@
 ---
-Description: Getting to know the devices that support Universal Windows Platform (UWP) apps will help you offer the best user experience for each form factor.
-title: Device primer for Universal Windows Platform (UWP) apps
+Description: ユニバーサル Windows プラットフォーム (UWP) アプリをサポートするデバイスを理解すると、各フォーム ファクター向けの最適なユーザー エクスペリエンスを提供するために役立ちます。
+title: ユニバーサル Windows プラットフォーム (UWP) アプリ用デバイスの基本情報
 ms.assetid: 7665044E-F007-495D-8D56-CE7C2361CDC4
 label: Device primer
 template: detail.hbs
 ---
 
-#  Device primer for Universal Windows Platform (UWP) apps
+#  ユニバーサル Windows プラットフォーム (UWP) アプリ用デバイスの基本情報
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-![windows-powered devices](images/device-primer/1894834-hig-device-primer-01-500.png)
+![Windows デバイス](images/device-primer/1894834-hig-device-primer-01-500.png)
 
-Getting to know the devices that support Universal Windows Platform (UWP) apps will help you offer the best user experience for each form factor. When designing for a particular device, the main considerations include how the app will appear on that device, where, when, and how the app will be used on that device, and how the user will interact with that device.
+ユニバーサル Windows プラットフォーム (UWP) アプリをサポートするデバイスを理解すると、各フォーム ファクター向けの最適なユーザー エクスペリエンスを提供するために役立ちます。 特定のデバイス向けのアプリを設計するときは、アプリがデバイスにどのように表示されるか、そのデバイスでアプリがいつどこでどのように使われるか、ユーザーがそのデバイスをどのように操作するかについて、特に考慮する必要があります。
 
-## <span id="Phones_and_phablets"></span><span id="phones_and_phablets"></span><span id="PHONES_AND_PHABLETS"></span>Phones and phablets
-
-
-The most widely-used of all computing devices, phones can do a lot with limited screen real estate and basic inputs. Phones are available in a variety of sizes; larger phones are called phablets. App experiences on phablets are similar to those on phones, but the increased screen real estate of phablets enable some key changes in content consumption.
-
-With Continuum for Phones, a new experience for compatible Windows 10 mobile devices, users can connect their phones to a monitor and even use a mouse and keyboard to make their phones work like a laptop. (For more info, see the [Continuum for Phone article](http://go.microsoft.com/fwlink/p/?LinkID=699431).)
-
-Screen sizes
--   4'' to 5'' for phone
--   5.5'' to 7'' for phablet
-
-![windows phone](images/device-primer/1894834-hig-device-primer-03.png)
-
-Typical usage
--   Primarily used in portrait orientation, mostly due to the ease of holding the phone with one hand and being able to fully interact with it that way, but there are some experiences that work well in landscape, such as viewing photos and video, reading a book, and composing text.
--   Mostly used by just one person, the owner of the device.
--   Always within reach, usually stashed in a pocket or a bag.
--   Used for brief periods of time.
--   Users are often multitasking when using the phone.
--   Text is entered in short bursts.
-
-UI considerations
--   The small size of a phone's screen allows only one frame at a time to be viewed in both portrait and landscape orientations. All hierarchical navigation patterns on a phone use the "drill" model, with the user navigating through single-frame UI layers.
-
--   Similar to phones, phablets in portrait mode can view only one frame at a time. But with the greater screen real estate available on a phablet, users have the ability to rotate to landscape orientation and stay there, so two app frames can be visible at a time.
-
--   In both landscape and portrait orientations, be sure that there's enough screen real estate for the app bar when the on-screen keyboard is up.
-
-Inputs
--   Touch
--   Voice
-
-Typical device capabilities
--   Microphone
--   Camera
--   Movement sensors
--   Location sensors
-
- 
-
-## <span id="Tablets"></span><span id="tablets"></span><span id="TABLETS"></span>Tablets
+## <span id="Phones_and_phablets"></span><span id="phones_and_phablets"></span><span id="PHONES_AND_PHABLETS"></span>電話とファブレット
 
 
-Ultra-portable tablet computers are equipped with touchscreens, cameras, microphones, and accelerometers. Tablet screen sizes usually range from 7” to 13.3”.
+すべてのコンピューティング デバイスの中で最も広く使われている電話では、限られた画面領域と基本的な入力方法を使って、さまざまな操作を行うことができます。 電話にはさまざまなサイズがあり、大きい電話はファブレットと呼ばれます。 ファブレットでのアプリのエクスペリエンスは、電話でのエクスペリエンスと似ていますが、画面領域が大きくなることで、コンテンツ操作時に重要な変更が可能になります。
 
-Screen sizes
--   7” to 13.3”
+互換性のある Windows 10 Mobile デバイスの新しいエクスペリエンスである電話用 Continuum を使用すると、ユーザーが電話をモニターに接続し、マウスやキーボードを使用して、その電話をノート PC のように使うことができます。 詳しくは、「[電話用 Continuum](http://go.microsoft.com/fwlink/p/?LinkID=699431)」をご覧ください。
 
-![a tablet device](images/device-primer/1894834-hig-device-primer-05.png)
+画面サイズ
+-   電話の場合、4" ～ 5"
+-   ファブレットの場合、5.5" ～ 7"
 
-Typical usage
--   About 80% of tablet use is by the owner, with the other 20% being shared use.
--   It’s most commonly used at home as a companion device while watching TV.
--   It’s used for longer periods than phones and phablets.
--   Text is entered in short bursts.
+![Windows Phone](images/device-primer/1894834-hig-device-primer-03.png)
 
-UI considerations
--   In both landscape and portrait orientations, tablets allow two frames at a time.
--   System back is located on the navigation bar.
+一般的な使い方
+-   主に縦向きで使われます。これはほとんどの場合、片手で電話を持つのが簡単であること、その方法で完全に電話を操作できることが理由ですが、写真やビデオの表示、本の閲覧、テキストの作成など、横向きが適切なエクスペリエンスもあります。
+-   ほとんどの場合、そのデバイスの所有者である 1 人のユーザーによって使われます。
+-   常に手近にあり、通常はポケットやバッグに入れられます。
+-   短時間使われます。
+-   ユーザーは、電話を使うときによくマルチタスクを実行します。
+-   テキストは一気に入力されます。
 
-Inputs
--   Touch
--   Stylus
--   External keyboard (occasionally)
--   Mouse (occasionally)
--   Voice (occasionally)
+UI に関する考慮事項
+-   電話の画面の小さいサイズでは、横方向でも縦方向でも、一度に 1 つのフレームのみを表示できます。 電話のすべての階層型ナビゲーション パターンでは「ドリルダウン」モデルを使い、ユーザーが単一フレームの UI レイヤーを移動するようにします。
 
-Typical device capabilities
--   Camera
--   Microphone
--   Movement sensors
--   Location sensors
+-   電話と同じように、縦モードのファブレットには、一度に 1 つのフレームのみを表示できます。 ただし、ファブレットで使うことができる画面領域は大きいため、ユーザーはファブレットを横方向に回転させてそのまま保持することで、2 つのアプリ フレームを同時に表示できます。
+
+-   横方向と縦方向の両方で、スクリーン キーボードが表示されているときに、アプリ バーを表示するための十分な画面領域があることを確認します。
+
+入力
+-   タッチ
+-   音声
+
+デバイスの標準的な機能
+-   マイク
+-   カメラ
+-   移動センサー (複数)
+-   位置センサー (複数)
 
  
 
-## <span id="PCs_and_laptops"></span><span id="pcs_and_laptops"></span><span id="PCS_AND_LAPTOPS"></span>PCs and laptops
+## <span id="Tablets"></span><span id="tablets"></span><span id="TABLETS"></span>タブレット
 
 
-Windows PCs and laptops include a wide array of devices and screen sizes. In general, PCs and laptops can display more info than phone or tablets.
+超軽量のタブレット コンピューターは、タッチスクリーン、カメラ、マイク、および加速度計を備えています。 タブレットの画面サイズは、通常は 7" ～ 13.3" です。
 
-Screen sizes
--   13” and greater
+画面サイズ
+-   7" ～ 13.3"
 
-![a pc](images/device-primer/1894834-hig-device-primer-06-349.png)
+![タブレット デバイス](images/device-primer/1894834-hig-device-primer-05.png)
 
-Typical usage
--   Apps on desktops and laptops see shared use, but by one user at a time, and usually for longer periods.
+一般的な使い方
+-   タブレットは、約 80% がその所有者によって使われ、残りの約 20% が共有されています。
+-   最も一般的なのは、自宅でテレビを視聴しているときのコンパニオン デバイスとして使うことです。
+-   電話とファブレットよりも長い時間使われます。
+-   テキストは一気に入力されます。
 
-UI considerations
--   Apps can have a windowed view, the size of which is determined by the user. Depending on window size, there can be between one and three frames. On larger monitors, the app can have more than three frames.
+UI に関する考慮事項
+-   タブレットは、横方向でも縦方向でも一度に 2 つのフレームを表示できます。
+-   システムの戻るボタンはナビゲーション バーに配置されます。
 
--   When using an app on a desktop or laptop, the user has control over app files. As an app designer, be sure to provide the mechanisms to manage your app’s content. Consider including commands and features such as "Save As", "Recent files", and so on.
+入力
+-   タッチ
+-   スタイラス
+-   外部キーボード (ときどき)
+-   マウス (ときどき)
+-   音声 (ときどき)
 
--   System back is optional. When an app developer chooses to show it, it appears in the app title bar.
-
-Inputs
--   Mouse
--   Keyboard
--   Touch on laptops and all-in-one desktops.
--   Gamepads, such as the Xbox controller, are sometimes used.
-
-Typical device capabilities
--   Camera
--   Microphone
-
- 
-
-## <span id="Surface_Hub_devices"></span><span id="surface_hub_devices"></span><span id="SURFACE_HUB_DEVICES"></span>Surface Hub devices
-
-
-Microsoft Surface Hub is a large-screen team collaboration device designed for simultaneous use by multiple users.
-
-Screen sizes
--   55” and 84''
-
-![a surface hub](images/device-primer/1894834-hig-device-primer-07-349.png)
-
-Typical usage
--   Apps on Surface Hub see shared use for short periods of time, such as in meetings.
-
--   Surface Hub devices are mostly stationary and rarely moved.
-
-UI considerations
--   Apps on Surface Hub can appear in one of four states - full (standard full-screen view), background (hidden from view while the app is still running, available in task switcher), fill (a fixed view that occupies the available stage area), and snapped (variable view that occupies the right or left sides of the stage).
--   In snapped mode or fill modes, the system displays the Skype sidebar and shrinks the app horizontally.
--   System back is optional. When an app developer chooses to show it, it appears in the app title bar.
-
-Inputs
--   Touch
--   Pen
--   Voice
--   Keyboard (on-screen/remote)
--   Touchpad (remote)
-
-Typical device capabilities
--   Camera
--   Microphone
+デバイスの標準的な機能
+-   カメラ
+-   マイク
+-   移動センサー (複数)
+-   位置センサー (複数)
 
  
 
-## <span id="Windows_IoT_devices"></span><span id="windows_iot_devices"></span><span id="WINDOWS_IOT_DEVICES"></span>Windows IoT devices
+## <span id="PCs_and_laptops"></span><span id="pcs_and_laptops"></span><span id="PCS_AND_LAPTOPS"></span>PC とノート PC
 
 
-Windows IoT devices are an emerging class of devices centered around embedding small electronics, sensors, and connectivity within physical objects. These devices are usually connected through a network or the Internet to report on the real-world data they sense, and in some cases act on it. Devices can either have no screen (also known as “headless” devices) or are connected to a small screen (known as “headed” devices) with a screen size usually 3.5” or smaller.
+Windows PC とノート PC には、多種多様なデバイスと画面サイズがあります。 一般に、PC やノート PC は電話やタブレットより多くの情報を表示できます。
 
-Screen sizes
--   3.5'' or smaller
--   Some devices have no screen
+画面サイズ
+-   13" 以上
 
-![an iot device](images/device-primer/1894834-hig-device-primer-02.png)
+![PC](images/device-primer/1894834-hig-device-primer-06-349.png)
 
-Typical usage
--   Usually connected through a network or the Internet to report on the real-world data they sense, and in some cases act on it.
--   These devices can only run one application at a time unlike phones or other larger devices.
--   It isn’t something that is interacted with all the time, but instead is available when you need it, out of the way when you don’t.
--   App doesn’t have a dedicated back affordance, that is the developers responsibility.
+一般的な使い方
+-   デスクトップとノート PC のアプリは共有で使われますが、一度に使うことができるのは 1 人のユーザーだけであり、通常は長時間使われます。
 
-UI considerations
--   "headless" devices have no screen.
--   Display for “headed” devices is minimal, only showing what is necessary due to limited screen real estate and functionality.
--   Orientation is most times locked, so your app only needs to consider one display direction.
+UI に関する考慮事項
+-   アプリは、ユーザーが決めたウィンドウ表示のサイズにすることができます。 ウィンドウのサイズによっては、1 ～ 3 つのフレームを表示できます。 大型のモニターでは、アプリは 3 つを超えるフレームを表示できます。
 
-Inputs
--   Variable, depending on the device
+-   アプリをデスクトップまたはノート PC で使う場合、ユーザーがアプリのファイルを制御できます。 アプリの設計者は、アプリのコンテンツを管理するメカニズムを必ず用意してください。 [名前を付けて保存] や [最近使ったファイル] などのコマンドや機能を含めることを検討してください。
 
-Typical device capabilities
--   Variable, depending on the device
+-   システムの戻るボタンはオプションです。 アプリの開発者が表示するように選択した場合、アプリのタイトル バーに表示されます。
+
+入力
+-   マウス
+-   キーボード
+-   タッチ (ノート PC とオールインワン型デスクトップ)。
+-   Xbox コントローラーなどのゲームパッドが使われることがあります。
+
+デバイスの標準的な機能
+-   カメラ
+-   マイク
 
  
 
-\[This article contains information that is specific to UWP apps and Windows 10. For Windows 8.1 guidance, please download the [Windows 8.1 guidelines PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+## <span id="Surface_Hub_devices"></span><span id="surface_hub_devices"></span><span id="SURFACE_HUB_DEVICES"></span>Surface Hub デバイス
+
+
+Microsoft Surface Hub は、複数のユーザーによる同時使用のために設計された大画面のチーム コラボレーション デバイスです。
+
+画面サイズ
+-   55" および 84"
+
+![Surface Hub](images/device-primer/1894834-hig-device-primer-07-349.png)
+
+一般的な使い方
+-   Surface Hub 上のアプリは、会議などで短時間共有して使われます。
+
+-   ほとんどの場合、Surface Hub デバイス固定された状態で使われ、移動することはめったにありません。
+
+UI に関する考慮事項
+-   Surface Hub 上のアプリは 4 つの状態のいずれかで表示されます。全画面 (標準の全画面表示)、バックグラウンド (アプリの実行中に非表示になり、タスク スイッチャーで利用可能)、フィル (利用可能なステージ エリアを使う固定表示)、スナップ (ステージの右端または左端を使う可変表示) です。
+-   スナップ モードまたはフィル モードでは、Skype サイドバーが表示され、アプリは横方向に縮小されます。
+-   システムの戻るボタンはオプションです。 アプリの開発者が表示するように選択した場合、アプリのタイトル バーに表示されます。
+
+入力
+-   タッチ
+-   ペン
+-   音声
+-   キーボード (スクリーン/リモート)
+-   タッチパッド (リモート)
+
+デバイスの標準的な機能
+-   カメラ
+-   マイク
+
+ 
+
+## <span id="Windows_IoT_devices"></span><span id="windows_iot_devices"></span><span id="WINDOWS_IOT_DEVICES"></span>Windows IoT デバイス
+
+
+Windows IoT デバイスは、最新クラスのデバイスであり、主に小型のエレクトロニクス、センサー、接続機能が物理オブジェクト内に埋め込まれたものです。 通常、これらのデバイスはネットワークまたはインターネット経由で接続され、感知した実際のデータについて報告します。場合によっては、それに対して処理を実行することもあります。 デバイスには、画面がない場合 ("ヘッドレス" デバイスとも呼ばれます) と、一般的に 3.5" 以下の小さい画面に接続される場合 ("ヘッド付き" デバイスとも呼ばれます) があります。
+
+画面サイズ
+-   3.5" 以下
+-   一部のデバイスには画面がない
+
+![IoT デバイス](images/device-primer/1894834-hig-device-primer-02.png)
+
+一般的な使い方
+-   通常、ネットワークまたはインターネット経由で接続されており、感知した実際のデータについて報告します。場合によっては、それに対して処理を実行することもあります。
+-   これらのデバイスは電話やその他の大型デバイスとは異なり、一度に 1 つのアプリケーションのみ実行できます。
+-   常に操作するデバイスではありませんが、必要なときに利用でき、必要でないときに邪魔になりません。
+-   アプリには専用のバック アフォーダンスはなく、これは開発者の責任です。
+
+UI に関する考慮事項
+-   "ヘッドレス "デバイスには画面がありません。
+-   "ヘッド付き" デバイスの画面は最小限で、画面サイズと機能が制限されているため、必要なもののみが表示されます。
+-   ほとんどの場合、向きはロックされるため、アプリでは 1 つの表示方向を考慮するだけで済みます。
+
+入力
+-   デバイスに応じて可変
+
+デバイスの標準的な機能
+-   デバイスに応じて可変
+
+ 
+
+\[この記事には、UWP アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
 
  
 

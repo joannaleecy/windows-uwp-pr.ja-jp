@@ -2,11 +2,11 @@
 Description: Cortana 内で音声コマンドを使ってシステム機能にアクセスするだけでなく、アプリ内で実行するアクションやコマンドを指定する音声コマンドを使うバックグラウンド アプリの機能によって Cortana を拡張することもできます。
 title: Cortana の音声コマンドを使ったバックグラウンド アプリの起動
 ms.assetid: DF5B530C-57DD-4CA5-B3BE-1A0B3695C9C6
-label: バックグラウンド アプリの起動
+label: Launch a background app
 template: detail.hbs
 ---
 
-# Cortana の音声コマンドを使ったバックグラウンド アプリの起動
+# Cortana の音声コマンドを使ったバックグラウンド アプリのアクティブ化
 
 
 \[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
@@ -17,20 +17,20 @@ template: detail.hbs
 -   [**Windows.ApplicationModel.VoiceCommands**](https://msdn.microsoft.com/library/windows/apps/dn706594)
 -   [**VCD 要素および属性 v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
 
-**Cortana** 内で音声コマンドを使ってシステム機能にアクセスするだけでなく、アプリ内で実行するアクションやコマンドを指定する音声コマンドを使うバックグラウンド アプリの機能によって **Cortana** を拡張することもできます。 アプリがバックグラウンドで音声コマンドを処理する際、**Cortana** キャンバスにフィードバックが表示され、**Cortana** 音声の使用方法についてユーザーに通知されることがあります。
+**Cortana** 内で音声コマンドを使ってシステム機能にアクセスするだけでなく、実行するアクションやコマンドを指定する音声コマンドを使うアプリの機能 (バックグラウンド タスク) によって **Cortana** を拡張することもできます。 アプリはバックグラウンドで音声コマンドを処理するとき、フォーカスを取得しません。 その代わり、**Cortana** キャンバスと **Cortana** 音声を介して、すべてのフィードバックと結果が返されます。
 
-**注**  
-音声コマンドは、具体的な目的を持って 1 つの言葉を声に出すことであり、音声コマンド定義 (VCD) ファイルで定義されています。**Cortana** を通じてインストール済みアプリに指示が伝えられます。
+アプリは、操作の複雑さに応じて、フォアグラウンド (アプリがフォーカスを取得します) またはバックグラウンド (**Cortana** がフォーカスを維持します) でアクティブ化することができます。 たとえば、追加のコンテキストやユーザー入力 (特定の連絡先へのメッセージの送信など) が必要な音声コマンドはフォアグラウンド アプリで処理するのが最適ですが、基本的なコマンド (旅行の予定の一覧表示など) はバックグラウンド アプリを介して **Cortana** で処理できます。
 
-音声コマンド定義にはさまざまなものがあり、定義が複雑になる場合があります。 音声コマンド定義では、制限された 1 つの言葉の発声から、より柔軟性の高い自然言語の発声のコレクションまで、あらゆる発声をサポートできます。ただし、これらの発声はすべて、同じ目的を示している必要があります。
+音声コマンドを使用してフォアグラウンドでアプリをアクティブ化する場合は、「[Cortana の音声コマンドを使ったフォアグラウンド アプリのアクティブ化](launch-a-foreground-app-with-voice-commands-in-cortana.md)」をご覧ください。
 
-VCD ファイルでは、1 つ以上の音声コマンドが定義されており、各音声コマンドは固有の目的を持っています。
+> **注**  
+> 音声コマンドは、具体的な目的を持って 1 つの言葉を声に出すことであり、音声コマンド定義 (VCD) ファイルで定義されています。**Cortana** を通じてインストール済みアプリに指示が伝えられます。
 
-ターゲット アプリは、操作の複雑さに応じて、フォアグラウンドで起動したり (アプリがフォーカスを取得します)、バックグラウンドでアクティブ化されたりします (**Cortana** がフォーカスを維持しますが、アプリからの結果を表示します)。 たとえば、追加のコンテキストやユーザー入力 (特定の連絡先へのメッセージの送信など) が必要な音声コマンドはフォアグラウンド アプリで処理するのが最適ですが、基本的なコマンドはバックグラウンド アプリを介して **Cortana** で処理できます。
+> VCD ファイルでは、1 つ以上の音声コマンドが定義されており、各音声コマンドは固有の目的を持っています。
 
- 
+> 音声コマンド定義にはさまざまなものがあり、定義が複雑になる場合があります。 音声コマンド定義では、制限された 1 つの言葉の発声から、より柔軟性の高い自然言語の発声のコレクションまで、あらゆる発声をサポートできます。ただし、これらの発声はすべて、同じ目的を示している必要があります。
 
-ここでは、[Cortana 音声コマンドのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619899)の **Adventure Works** という旅行の計画および管理アプリを使ってそれらの機能について説明します。
+バックグラウンド アプリの機能を示すために、[Cortana 音声コマンドのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619899)の **Adventure Works** という旅行の計画および管理アプリを使用します。
 
 **Cortana** のキャンバスに統合された **Adventure Works** アプリの概要は次のとおりです。
 
@@ -72,148 +72,264 @@ VCD ファイルでは、1 つ以上の音声コマンドが定義されてお�
 
     **[新しいプロジェクト]** ダイアログ ボックスが表示されます。 ダイアログの左側のウィンドウで、表示するテンプレートの種類を選択できます。
 
-3.  左側のウィンドウで、**[インストール済み]、[テンプレート]、[Visual C#]、[Windows]** の順に展開した後、**[ユニバーサル]** テンプレート グループを選びます。 ユニバーサル Windows プラットフォーム (UWP) アプリで使うことができるプロジェクト テンプレートの一覧がダイアログの中央のウィンドウに表示されます。
+3.  左側のウィンドウで、**[インストール済み]、[テンプレート]、[Visual C\#]、[Windows]** の順に展開した後、**[ユニバーサル]** テンプレート グループを選びます。 ユニバーサル Windows プラットフォーム (UWP) アプリで使うことができるプロジェクト テンプレートの一覧がダイアログの中央のウィンドウに表示されます。
 4.  中央のウィンドウで、**[空白のアプリ (ユニバーサル Windows)]** プロジェクト テンプレートを選びます。
 
     **[空白のアプリ]** テンプレートは、コンパイルして実行できる最小限の UWP アプリを作成しますが、ユーザー インターフェイス コントロールやデータは含まれていません。 コントロールは、このチュートリアルの途中でアプリに追加します。
 
-5.  **[名前]** ボックスで、プロジェクト名を入力します。
+5.  **[名前]** ボックスで、プロジェクト名を入力します。 この例では、"AdventureWorks" を使用します。
 6.  **[OK]** をクリックしてプロジェクトを作ります。
 
     Microsoft Visual Studio によってプロジェクトが作られ、**ソリューション エクスプローラー**に表示されます。
 
-## <span id="Create_an_app_service_project"></span><span id="create_an_app_service_project"></span><span id="CREATE_AN_APP_SERVICE_PROJECT"></span>アプリ サービス プロジェクトの作成
 
+## <span id="Add_image_assets_to_primary_project_and_specify_them_in_the_app_manifest"></span><span id="add_image_assets_to_primary_project_and_specify_them_in_the_app_manifest"></span><span id="ADD_IMAGE_ASSETS_TO_PRIMARY_PROJECT_AND_SPECIFY_THEM_IN_THE_APP_MANIFEST"></span>画像アセットをプライマリ プロジェクトに追加してアプリ マニフェストで指定する
+      
+UWP アプリでは、特定の設定とデバイス機能 (ハイ コントラスト、有効ピクセル、ロケールなど) に基づいて最適な画像を自動的に選択できます。 必要な作業は、画像を提供し、リソースのバージョンごとに、アプリ プロジェクト内で適切な名前付け規則とフォルダー構造を使用していることを確認することだけです。 推奨されるリソースのバージョンが提供されない場合、ユーザーの基本設定、身体能力、デバイスの種類、場所によって、アクセシビリティ、ローカライズ、画像の品質が影響を受ける可能性があります。
 
-1.  ソリューション名を右クリックし、[追加]、[新しいプロジェクト] の順にクリックし、**[Windows ランタイム コンポーネント]** をクリックします。 これは、アプリ サービスが実装されるコンポーネントです (「[**Windows.ApplicationModel.AppService**](https://msdn.microsoft.com/library/windows/apps/dn921731)」をご覧ください)。
-2.  プロジェクトの名前 (たとえば、"VoiceCommandService") を入力し、**[OK]** をクリックします。
-3.  **ソリューション エクスプローラー**で、"VoiceCommandService" プロジェクトを選び、Visual Studio によって生成された "Class1.cs" ファイルの名前を変更します。 たとえば、"YourAppVoiceCommandService.cs" などです。
-4.  "YourAppVoiceCommandService.cs" ファイルで、ディレクティブを使って次の内容を追加します。
-```    CSharp
-using Windows.ApplicationModel.Background;</code></pre></td>
-    </tr>
-    </tbody>
-    </table>
+ハイ コントラストとスケール ファクター用の画像リソースについて詳しくは、「[タイルとアイコン アセットのガイドライン](https://msdn.microsoft.com/en-us/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets)」をご覧ください。
+
+修飾子を使ってリソースに名前を付けます。 リソース修飾子は、リソースの特定のバージョンが使われるコンテキストを識別するフォルダーとファイル名の修飾子です。
+
+標準の命名規則は、`foldername/qualifiername-value[_qualifiername-value]/filename.qualifiername-value[_qualifiername-value].ext` です。 たとえば、`images/en-US/logo.scale-100_contrast-white.png` は、コード内ではルート フォルダーとファイル名を使用して単に `images/logo.png` と参照されます。 「[修飾子を使ってリソースに名前を付ける方法](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh965324.aspx)」をご覧ください。
+
+ローカライズされたリソースや複数の解像度のリソースの提供を現在計画していない場合でも、文字列リソース ファイルに既定の言語をマークし (`en-US\resources.resw` など)、画像に既定のスケール ファクターをマークする (`logo.scale-100.png` など) ことをお勧めします。 ただし、100、200、400 の倍率のアセットを提供することをお勧めします。
+
+> *重要
+
+> **Cortana** キャンバスのタイトル領域で使用するアプリ アイコンは、"Package.appxmanifest" ファイルで指定される Square44x44Logo アイコンです。 
+
+> **Cortana** キャンバスのコンテンツ領域で各エントリのアイコンを指定することもできます。 結果のアイコンに対して有効な画像のサイズは次のとおりです。
+
+> - 幅 68 x 高さ 68 
+> - 幅 68 x 高さ 92 
+> - 幅 280 x 高さ 140 
+
+コンテンツ タイルは、[**VoiceCommandResponse**](https://msdn.microsoft.com/library/windows/apps/dn974182) が [**VoiceCommandServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn974204) に渡されるまで検証されません。 画像がこれらのサイズ比率に準拠していないコンテンツ タイルを含む **VoiceCommandResponse** オブジェクトを **Cortana** に渡した場合、例外が発生する可能性があります。 
+
+この **Adventure Works** アプリ (VoiceCommandService\\AdventureWorksVoiceCommandService.cs) の例では、[**TitleWith68x68IconAndText**](https://msdn.microsoft.com/library/windows/apps/dn974169) タイル テンプレートを使用して、単純な灰色の四角形 ("GreyTile.png") を [**VoiceCommandContentTile**](https://msdn.microsoft.com/library/windows/apps/dn974168) 上に指定します。 ロゴのバリアントは VoiceCommandService\\Images にあり、[**GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) メソッドを使って取得できます。
+
+```CSharp
+var destinationTile = new VoiceCommandContentTile();
+
+destinationTile.ContentTileType = 
+  VoiceCommandContentTileType.TitleWith68x68IconAndText;
+destinationTile.Image = 
+  await StorageFile.GetFileFromApplicationUriAsync(
+    new Uri("ms-appx:///AdventureWorks.VoiceCommands/Images/GreyTile.png"));
 ```
 
-5.  [
-            **IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) インターフェイスを実装する新しいクラスを作成します。 このクラスの [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811) メソッドは、**Cortana** が音声コマンドを認識するときに呼び出される必須のエントリ ポイントです。
+## <span id="Create_an_app_service_project"></span><span id="create_an_app_service_project"></span><span id="CREATE_AN_APP_SERVICE_PROJECT"></span>アプリ サービス プロジェクトの作成
 
-    **注**  バックグラウンド タスク クラス自体と、バックグラウンド タスク プロジェクト内のその他すべてのクラスは、sealed public クラスである必要があります。
+<ol>
+    <li>
+    Right-click your Solution name, select **New > Project**.
+    </li>
+    <li>
+    Under **Installed > Templates > Visual C# > Windows > Universal**, select **Windows Runtime Component**. This is the component that implements the app service (**[Windows.ApplicationModel.AppService](https://msdn.microsoft.com/library/windows/apps/dn921731)**).
+    </li>
+    <li>
+    Type a name for the project (for example, "VoiceCommandService") and click **OK**.
+    </li>
+    <li>
+    In **Solution Explorer**, select the "VoiceCommandService" project and rename the "Class1.cs" file generated by Visual Studio. For the **Adventure Works** example we use "AdventureWorksVoiceCommandService.cs".
+    </li>
+    <li>
+    Click **Yes** when asked if you want to rename all occurrences of "Class1.cs". 
+    </li>
+    <li>
+    In the "AdventureWorksVoiceCommandService.cs" file:
+        <ol type="i">
+ <li>
+ 次の using ディレクティブを追加します。  
+ ```using Windows.ApplicationModel.Background;```
+ </li>
+ <li>
+ 新しいプロジェクトを作成するときに、プロジェクト名は、すべてのファイルで既定のルート名前空間として使用されます。 プライマリ プロジェクトの下でアプリ サービスのコードを入れ子にするために、名前空間の名前を変更します。 たとえば、`namespace AdventureWorks.VoiceCommands` と記述します。 
+ </li>
+ <li>
+ ソリューション エクスプローラーでアプリ サービスのプロジェクト名を右クリックし、**[プロパティ]** を選択します。 
+ </li>
+ <li>
+ **[ライブラリ]** タブで、**"既定の名前空間"** フィールドをこの同じ値で更新します (たとえば、"AdventureWorks.VoiceCommands")。 
+ </li>
+ <li>
+ [
+            **IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) インターフェイスを実装する新しいクラスを作成します。 このクラスには、Cortana が音声コマンドを認識するときのエントリ ポイントである [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811) メソッドが必要です。 
+ </li>
+        </ol>
+    </li>
+</ol>
 
-     
-
-    Here's a basic background task class for the **Adventure Works** app.
-
-    Note that we've renamed the default namespace assigned by Visual Studio.
-
-    <span codelanguage="CSharp"></span>
-```    CSharp
-    <colgroup>
-    <col width="100%" />
-    </colgroup>
-    <thead>
-    <tr class="header">
-    <th align="left">C#</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr class="odd">
-using Windows.ApplicationModel.Background;
-
-    namespace AdventureWorks.VoiceCommands
+**Adventure Works** アプリの基本的なバックグラウンド タスク クラスは次のとおりです。 後でさらに詳しく入力します。
+> **注**
+>             
+バックグラウンド タスク クラス自体と、バックグラウンド タスク プロジェクト内のその他すべてのクラスは、sealed public クラスである必要があります。
+ 
+``` csharp
+namespace AdventureWorks.VoiceCommands
+{
+    ...
+    
+    /// <summary>
+    /// The VoiceCommandService implements the entry point for all voice commands.
+    /// The individual commands supported are described in the VCD xml file. 
+    /// The service entry point is defined in the appxmanifest.
+    /// </summary>
+    public sealed class AdventureWorksVoiceCommandService : IBackgroundTask
     {
-      public sealed class AdventureWorksVoiceCommandService : IBackgroundTask
-      {
+        ...
+        
+        /// <summary>
+        /// The background task entrypoint. 
+        /// 
+        /// Background tasks must respond to activation by Cortana within 0.5 seconds, and must 
+        /// report progress to Cortana every 5 seconds (unless Cortana is waiting for user
+        /// input). There is no execution time limit on the background task managed by Cortana,
+        /// but developers should use plmdebug (https://msdn.microsoft.com/en-us/library/windows/hardware/jj680085%28v=vs.85%29.aspx)
+        /// on the Cortana app package in order to prevent Cortana timing out the task during
+        /// debugging.
+        /// 
+        /// The Cortana UI is dismissed if Cortana loses focus. 
+        /// The background task is also dismissed even if being debugged. 
+        /// Use of Remote Debugging is recommended in order to debug background task behaviors. 
+        /// Open the project properties for the app package (not the background task project), 
+        /// and enable Debug -> "Do not launch, but debug my code when it starts". 
+        /// Alternatively, add a long initial progress screen, and attach to the background task process while it executes.
+        /// </summary>
+        /// <param name="taskInstance">Connection to the hosting background service process.</param>
         public void Run(IBackgroundTaskInstance taskInstance)
         {
-          BackgroundTaskDeferral _deferral = taskInstance.GetDeferral();
         
           //
           // TODO: Insert code 
           //
           //
         
-          _deferral.Complete();
-        }        
-      }
-    }
+    }        
+  }
+}
 ```
 
-6.  アプリ マニフェストでバックグラウンド タスクを **AppService** として宣言します。
+<ol start="7">
+    <li>
+    Declare your background task as an **AppService** in the app manifest.
+    <ol type="i">
+        <li>
+        In **Solution Explorer**, right click the "Package.appxmanifest" file and select **View Code**. 
+        </li>
+        <li>
+        Find the [**Application**](https://msdn.microsoft.com/library/windows/apps/dn934738) element.
+        </li>
+        <li>
+        Add an [**Extensions**](https://msdn.microsoft.com/library/windows/apps/dn934720) element to the [**Application**](https://msdn.microsoft.com/library/windows/apps/dn934738) element.
+        </li>
+        <li>
+        Add a [**uap:Extension**](https://msdn.microsoft.com/library/windows/apps/dn986788) element to the [**Extensions**](https://msdn.microsoft.com/library/windows/apps/dn934720) element.
+        </li>
+        <li>**Category** 属性を **uap:Extension** 要素に追加し、**Category** 属性の値を "windows.appService" に設定します。
+        </li>
+        <li>
+        Add an **EntryPoint** attribute to the **uap:Extension** element and set the value of the **EntryPoint** attribute to the name of the class that implements [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794), in this case "AdventureWorks.VoiceCommands.AdventureWorksVoiceCommandService".
+        </li>
+        <li>
+        Add a [**uap:AppService**](https://msdn.microsoft.com/library/windows/apps/dn934779) element to the **uap:Extension** element.
+        </li>
+        <li>
+        Add a **Name** attribute to the [**uap:AppService**](https://msdn.microsoft.com/library/windows/apps/dn934779) element and set the value of the **Name** attribute to a name for the app service, in this case "AdventureWorksVoiceCommandService".
+        </li>
+        <li>
+        Add a second [**uap:Extension**](https://msdn.microsoft.com/library/windows/apps/dn986788) element to [**Extensions**](https://msdn.microsoft.com/library/windows/apps/dn934720).
+        </li>
+        <li>
+        Add a **Category** attribute to this [**uap:Extension**](https://msdn.microsoft.com/library/windows/apps/dn986788) element and set the value of the **Category** attribute to "windows.personalAssistantLaunch".
+        </li>
+    </li> 
+    </ol>
+    </li>    
+</ol>  
 
-    1.  **ソリューション エクスプローラー**で、"Package.appxmanifest" ファイルを右クリックして **[コードの表示]** を選択します。
-    2.  [****Application****](https://msdn.microsoft.com/library/windows/apps/dn934738) 要素を検索します。
-    3.  [****Extensions****](https://msdn.microsoft.com/library/windows/apps/dn934720) 要素を [****Application****](https://msdn.microsoft.com/library/windows/apps/dn934738) 要素に追加します。
-    4.  [****uap:Extension****](https://msdn.microsoft.com/library/windows/apps/dn986788) 要素を [****Extensions****](https://msdn.microsoft.com/library/windows/apps/dn934720) 要素に追加します。
-    5.  **Category** 属性を **uap:Extension** 要素に追加し、**Category** 属性の値を "windows.appService" に設定します。
-    6.  **EntryPoint** 属性を **uap:Extension** 要素に追加し、**EntryPoint** 属性の値を、[**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) を実装するクラスの名前 (この場合は "AdventureWorks.VoiceCommands.AdventureWorksVoiceCommandService") に設定します。
-    7.  [****uap:AppService****](https://msdn.microsoft.com/library/windows/apps/dn934779) 要素を **uap:Extension** 要素に追加します。
-    8.  **Name** 属性を [****uap:AppService****](https://msdn.microsoft.com/library/windows/apps/dn934779) 要素に追加し、**Name** 属性の値を、アプリ サービスの名前 (この場合は "AdventureWorksVoiceCommandService") に設定します。
-```        XML
+Adventure Works アプリのマニフェストを次に示します。
+```xml
 <Package>
-          <Applications>
-            <Application>
+  <Applications>
+    <Application>
 
-              <Extensions>
-                <uap:Extension Category="windows.appService" 
-                  EntryPoint="AdventureWorks.VoiceCommands.AdventureWorksVoiceCommandService">
-                  <uap:AppService Name="AdventureWorksVoiceCommandService"/>
-                </uap:Extension>
-                <uap:Extension Category="windows.personalAssistantLaunch"/>
-              </Extensions>
+      <Extensions>
+        <uap:Extension Category="windows.appService" 
+          EntryPoint="CortanaBack1.VoiceCommands.CortanaBack1VoiceCommandService">
+          <uap:AppService Name="CortanaBack1VoiceCommandService"/>
+        </uap:Extension>
+        <uap:Extension Category="windows.personalAssistantLaunch"/>
+      </Extensions>
 
-            <Application>
-          <Applications>
-        </Package>
+    <Application>
+  <Applications>
+</Package>
 ```
+
+<ol start="8">
+    <li>
+    Add this app service project as a reference in the primary project. 
+    <ol type="i">
+        <li>
+        Right click **References**. 
+        </li>
+        <li>
+        Select **Add Reference...** 
+        </li>
+        <li>
+        In the **Reference Manager** dialog, expand **Projects** and select the app service project. 
+        </li>
+        <li>
+        Click OK. 
+        </li>
+    </ol>
+    </li>
+</ol>
 
 ## <span id="Create_a_VCD_file"></span><span id="create_a_vcd_file"></span><span id="CREATE_A_VCD_FILE"></span>VCD ファイルの作成
 
 
-1.  Visual Studio で、プライマリ プロジェクト名を右クリックし、[追加]、[新しい項目] の順にクリックし、**[テキスト ファイル]** をクリックします。
-2.  [
-            **VCD**](https://msdn.microsoft.com/library/windows/apps/dn706593) ファイルの名前を入力します。ファイル拡張子は ".xml" とします。 たとえば、"AdventureWorksCommands.xml" などです。 **[追加]** をクリックします。
-3.  **ソリューション エクスプローラー**で、[**VCD**](https://msdn.microsoft.com/library/windows/apps/dn706593) ファイルを選びます。
+1. Visual Studio で、プライマリ プロジェクト名を右クリックし、**[追加]、[新しい項目]** の順にクリックします。 **XML ファイル**を追加します。
+2. [
+            **VCD**](https://msdn.microsoft.com/library/windows/apps/dn706593) ファイルの名前 (この例では、"AdventureWorksCommands.xml") を入力し、[追加] をクリックします。 
+3. **ソリューション エクスプローラー**で、[**VCD**](https://msdn.microsoft.com/library/windows/apps/dn706593) ファイルを選びます。
 4.  **[プロパティ]** ウィンドウで、**[ビルド アクション]** を **[コンテンツ]** に設定し、**[出力ディレクトリにコピー]** を **[常にコピーする]** に設定します。
 
 ## <span id="Edit_the_VCD_file"></span><span id="edit_the_vcd_file"></span><span id="EDIT_THE_VCD_FILE"></span>VCD ファイルの編集
 
+1. "http://schemas.microsoft.com/voicecommands/1.2" を指す **xmlns** 属性を持つ **VoiceCommands** 要素を追加します。
 
-アプリでサポートされる言語ごとに、アプリが処理できる音声コマンドの **CommandSet** を作成します。
+2. アプリがサポートする各言語に対して、アプリがサポートする音声コマンドを含む [**CommandSet**](https://msdn.microsoft.com/library/windows/apps/dn722331) 要素を作成します。
 
-[
+  複数の [**CommandSet**](https://msdn.microsoft.com/library/windows/apps/dn722331) 要素を宣言し、それぞれに異なる [**xml:lang**](https://msdn.microsoft.com/library/windows/apps/dn722331) 属性を指定することで、アプリをさまざまな市場で使うことができるようにします。 たとえば、米国用のアプリに、英語の [**CommandSet**](https://msdn.microsoft.com/library/windows/apps/dn722331) とスペイン語の [**CommandSet**](https://msdn.microsoft.com/library/windows/apps/dn722331) を含めることができます。
+
+  >  **注意**  
+  音声コマンドを使ってアプリをアクティブ化して操作を開始するには、ユーザーがデバイスで選んだ音声の言語に一致する言語を含む [**CommandSet**](https://msdn.microsoft.com/library/windows/apps/dn722331) を格納している VCD ファイルをアプリで登録する必要があります。 音声の言語は、**[設定]、[システム]、[音声認識]、[音声認識の言語]** にあります。
+
+3. サポートする各コマンドの **Command** 要素を追加します。
+
+  [
             **VCD**](https://msdn.microsoft.com/library/windows/apps/dn706593) ファイルで宣言された各 **Command** は、次の情報を含む必要があります。
 
--   実行時に音声コマンドを識別するためにアプリケーションが使うコマンド名
--   ユーザーがコマンドを呼び出す方法を説明する語句を含む **Example** 要素。 ユーザーが「何と言ったらよいですか」、「ヘルプ」と言ったり、**[もっと見る]** をタップしたときに、**Cortana** にこの例が表示されます。
+  - アプリが実行時に音声コマンドを識別するために使用する **Name** 属性。 
+  - ユーザーがコマンドを呼び出す方法を説明する語句を含む **Example** 要素。 ユーザーが「何と言ったらよいですか」、「ヘルプ」と言ったり、**[もっと見る]** をタップしたときに、**Cortana** にこの例が表示されます。    
+  -   アプリがコマンドとして認識する単語または語句を含む **ListenFor** 要素。 各 **ListenFor** 要素には、コマンドに関連する特定の単語を含む 1 つまたは複数の **PhraseList** 要素への参照を格納できます。
+  > **注**  
+  **ListenFor** 要素はプログラムで変更できません。 ただし、**ListenFor** 要素に関連付けられた **PhraseList** 要素はプログラムで変更できます。 アプリケーションは、ユーザーがアプリを使うときに生成されたデータ セットに基づいて実行時に **PhraseList** の内容を変更する必要があります。 「[音声コマンド定義 (VCD) の語句一覧の動的な変更](dynamically-modify-voice-command-definition--vcd--phrase-lists.md)」をご覧ください。
 
-    以下をご覧ください。
+  -   アプリケーションが起動したときに **Cortana** に表示されて読み上げられるテキストを含む **Feedback** 要素。
 
--   アプリが認識してコマンドを開始するための単語または語句を含む **ListenFor** 要素。 各コマンドには、**ListenFor** 要素が少なくとも 1 つ必要です。
--   アプリケーションが起動したときに **Cortana** に表示されて読み上げられるテキストを含む **Feedback** 要素。
--   音声コマンドにアプリをバックグラウンドで起動するように指示する **VoiceCommandService** 要素。
+**Navigate** 要素は、音声コマンドにアプリをフォアグラウンドでアクティブ化するように指示します。 この例では、```showTripToDestination``` コマンドはフォアグラウンド タスクです。
+
+**VoiceCommandService** 要素は、音声コマンドにアプリをバックグラウンドでアクティブ化するように指示します。 この要素の **Target** 属性の値は、package.appxmanifest ファイルにある [**uap:AppService**](https://msdn.microsoft.com/library/windows/apps/dn934779) 要素の **Name** 属性の値に一致する必要があります。 この例では、```whenIsTripToDestination``` コマンドと ```cancelTripToDestination``` コマンドは、アプリ サービス名を "AdventureWorksVoiceCommandService" として指定するバックグラウンド タスクです。
 
 詳しくは、「[**VCD 要素および属性 v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)」をご覧ください。
 
-アプリのアクティブ化とコマンドの実行に使われるコマンドに対して、複数の言語バージョンを指定できます。 複数の [****CommandSet****](https://msdn.microsoft.com/library/windows/apps/dn722331) 要素を作成し、それぞれに異なる [****xml:lang****](https://msdn.microsoft.com/library/windows/apps/dn722331) 属性を指定することで、アプリをさまざまな市場で使うことができるようにします。 たとえば、米国用のアプリに、英語の [****CommandSet****](https://msdn.microsoft.com/library/windows/apps/dn722331) とスペイン語の [****CommandSet****](https://msdn.microsoft.com/library/windows/apps/dn722331) を含めることができます。
+**Adventure Works** アプリ向けの en-us 音声コマンドを定義する [**VCD**](https://msdn.microsoft.com/library/windows/apps/dn706593) ファイルの一部は次のとおりです。
 
-**注意**  
-音声コマンドを使ってアプリをアクティブ化して操作を開始するには、ユーザーがデバイスで選んだ音声の言語に一致する言語を含む [****CommandSet****](https://msdn.microsoft.com/library/windows/apps/dn722331) を格納している VCD ファイルをアプリで登録する必要があります。 この言語は、デバイスで [設定]、[システム]、[音声認識]、[音声認識の言語] の順に移動し、画面上でユーザーが設定します。
-
- 
-
-**Adventure Works** アプリの音声コマンドを定義する [**VCD**](https://msdn.microsoft.com/library/windows/apps/dn706593) ファイルは以下のとおりです。
-
-この例では、**CommandPrefix** が "Adventure Works" に設定されており、**Command** は "whenIsTripToDestination" に設定されています。**ListenFor** は、認識可能なテキストを指定しており (認識ターゲットを制約する **PhraseList** 要素を参照)、**VoiceCommandService** は音声コマンドがアプリ サービスによりバックグラウンドで処理されることを指定します。また、**Feedback** は、**Cortana** がアプリ サービスを起動したときにユーザーに聞こえる内容を指定します。
-
-**VoiceCommandService** 要素の **Target** 属性の値は、package.appxmanifest の [****uap:AppService****](https://msdn.microsoft.com/library/windows/apps/dn934779) 要素で指定されたアプリ サービスの名前である必要があります。 この例では、アプリ サービスの名前は "AdventureWorksVoiceCommandService" です。
-
-"whenIsTripToDestination" コマンドには、制約されたターゲット セットの **PhraseList** を参照する **ListenFor** 要素が含まれています。
-
-**ListenFor** 要素はプログラムで変更できません。 ただし、**ListenFor** 要素に関連付けられた **PhraseList** 要素はプログラムで変更できます。 アプリケーションは、ユーザーがアプリを使うときに生成されたデータ セットに基づいて実行時に **PhraseList** の内容を変更する必要があります。 「[音声コマンド定義 (VCD) の語句一覧の動的な変更](dynamically-modify-voice-command-definition--vcd--phrase-lists.md)」をご覧ください。
-
-```XML
+```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.2">
   <CommandSet xml:lang="en-us" Name="AdventureWorksCommandSet_en-us">
@@ -241,7 +357,7 @@ using Windows.ApplicationModel.Background;
       <ListenFor RequireAppName="BeforeOrAfterPhrase"> cancel [my] trip to {destination}</ListenFor>
       <ListenFor RequireAppName="ExplicitlySpecified"> cancel [my] {builtin:AppName} trip to {destination} </ListenFor>
       <Feedback> Cancelling trip to {destination}</Feedback>
-    <VoiceCommandService Target="AdventureWorksVoiceCommandService"/>
+      <VoiceCommandService Target="AdventureWorksVoiceCommandService"/>
     </Command>
 
     <PhraseList Label="destination">
@@ -251,63 +367,234 @@ using Windows.ApplicationModel.Background;
       <Item>Yosemite National Park</Item>
     </PhraseList>
   </CommandSet>
-</VoiceCommands>
 ```
 
 ## <span id="Install_the_VCD_commands"></span><span id="install_the_vcd_commands"></span><span id="INSTALL_THE_VCD_COMMANDS"></span>VCD コマンドのインストール
 
+VCD をインストールするには、アプリを 1 回実行する必要があります。 
 
-VCD のコマンド セットをインストールするには、アプリを 1 回実行する必要があります。
+>  **注**  
+音声コマンド データは、アプリのインストールで保持されません。 アプリの音声コマンド データをそのまま保持する場合は、アプリを起動またはアクティブ化するたびに VCD ファイルを初期化するか、VCD が現在インストールされているかどうかを示す設定を保持することを考慮してください。
 
-アプリがアクティブ化されたら、[**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) ハンドラーの [**InstallCommandDefinitionsFromStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn708205) を呼び出し、システムがリッスンするコマンドを登録します。
+"app.xaml.cs" ファイルで、次の操作を実行します。
 
-**注**  デバイスのバックアップが発生し、アプリが自動的に再インストールされる場合、音声コマンド データは保持されません。 アプリの音声コマンド データをそのまま保持するには、アプリを起動またはアクティブ化するたびに VCD ファイルを初期化するか、VCD が現在インストールされているかどうかを示す設定を保存し、アプリを起動またはアクティブ化するたびにその設定をチェックするようにしてください。
+1. 次の using ディレクティブを追加します。  
+```csharp
+using Windows.Storage;
+```
+2. "OnLaunched" メソッドを async 修飾子でマークします。  
+```csharp
+protected async override void OnLaunched(LaunchActivatedEventArgs e)
+```
+3. [
+            **OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) ハンドラーの [**InstallCommandDefinitionsFromStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn708205) を呼び出し、システムが認識する必要のある音声コマンドを登録します。
 
- 
+  Adventure Works のサンプルで、まず [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトを定義します。 
 
-この例では、まず [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトを定義します。
+  次に、[**GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) を呼び出し、"AdventureWorksCommands.xml" ファイルを使って初期化します。
 
-次に、[**GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) を呼び出し、"AdventureWorksCommands.xml" ファイルを使って初期化します。
-
-次に、この [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトが [**InstallCommandDefinitionsFromStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn708205) に渡されます。
-
+  次に、この [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトが [**InstallCommandDefinitionsFromStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn708205) に渡されます。    
 ```CSharp
 try
 {
-    // Install the VCD. 
-    StorageFile vcdStorageFile = 
-        await Package.Current.InstalledLocation.GetFileAsync(
-        @"AdventureWorksCommands.xml");
+  // Install the main VCD. 
+  StorageFile vcdStorageFile = 
+    await Package.Current.InstalledLocation.GetFileAsync(
+      @"AdventureWorksCommands.xml");
 
-    await 
-        Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager.
-        InstallCommandDefinitionsFromStorageFileAsync(vcdStorageFile);
+  await Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager.
+    InstallCommandDefinitionsFromStorageFileAsync(vcdStorageFile);
+
+  // Update phrase list.
+  ViewModel.ViewModelLocator locator = App.Current.Resources["ViewModelLocator"] as ViewModel.ViewModelLocator;
+  if(locator != null)
+  {
+     await locator.TripViewModel.UpdateDestinationPhraseList();
+  }
 }
 catch (Exception ex)
 {
-    System.Diagnostics.Debug.WriteLine(
-      "Installing Voice Commands Failed: " + ex.ToString());
+  System.Diagnostics.Debug.WriteLine("Installing Voice Commands Failed: " + ex.ToString());
+}```
+
+## <span id="Handle_activation_and_execute_voice_commands"></span><span id="handle_activation_and_execute_voice_commands"></span><span id="HANDLE_ACTIVATION_AND_EXECUTE_VOICE_COMMANDS"></span>Handle activation
+
+Specify how your app responds to subsequent voice command activations (after it has been launched at least once and the voice command sets have been installed).
+
+1.  Confirm that your app was activated by a voice command.
+
+    Override the [**Application.OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) event and check whether [**IActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224727).[**Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) is [**VoiceCommand**](https://msdn.microsoft.com/library/windows/apps/br224693).
+
+2.  Determine the name of the command and what was spoken.
+
+    Get a reference to a [**VoiceCommandActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn609755) object from the [**IActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224727) and query the [**Result**](https://msdn.microsoft.com/library/windows/apps/dn609758) property for a [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432) object.
+
+    To determine what the user said, check the value of [**Text**](https://msdn.microsoft.com/library/windows/apps/dn631441) or the semantic properties of the recognized phrase in the [**SpeechRecognitionSemanticInterpretation**](https://msdn.microsoft.com/library/windows/apps/dn631443) dictionary.
+
+3.  Take the appropriate action in your app, such as navigating to the desired page.
+
+For this example, we refer back to the VCD in Step 3: Edit the VCD file.
+
+Once we get the speech-recognition result for the voice command, we get the command name from the first value in the [**RulePath**](https://msdn.microsoft.com/library/windows/apps/dn631438) array. As the VCD file defined more than one possible voice command, we need to compare the value against the command names in the VCD and take the appropriate action.
+
+The most common action an application can take is to navigate to a page with content relevant to the context of the voice command. For this example, we navigate to a **TripPage** page and pass in the value of the voice command, how the command was input, and the recognized "destination" phrase (if applicable). Alternatively, the app could send a navigation parameter to the [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432) when navigating to the page.
+
+You can find out whether the voice command that launched your app was actually spoken, or whether it was typed in as text, from the [**SpeechRecognitionSemanticInterpretation.Properties**](https://msdn.microsoft.com/library/windows/apps/dn631445) dictionary using the **commandMode** key. The value of that key will be either "voice" or "text". If the value of the key is "voice", consider using speech synthesis ([**Windows.Media.SpeechSynthesis**](https://msdn.microsoft.com/library/windows/apps/dn278951)) in your app to provide the user with spoken feedback.
+
+Use the [**SpeechRecognitionSemanticInterpretation.Properties**](https://msdn.microsoft.com/library/windows/apps/dn631445) to find out the content spoken in the **PhraseList** or **PhraseTopic** constraints of a **ListenFor** element. The dictionary key is the value of the **Label** attribute of the **PhraseList** or **PhraseTopic** element. Here, we show how to access the value of **{destination}** phrase.
+
+``` csharp
+/// <summary>
+/// Entry point for an application activated by some means other than normal launching. 
+/// This includes voice commands, URI, share target from another app, and so on. 
+/// 
+/// NOTE:
+/// A previous version of the VCD file might remain in place 
+/// if you modify it and update the app through the store. 
+/// Activations might include commands from older versions of your VCD. 
+/// Try to handle these commands gracefully.
+/// </summary>
+/// <param name="args">Details about the activation method.</param>
+protected override void OnActivated(IActivatedEventArgs args)
+{
+    base.OnActivated(args);
+
+    Type navigationToPageType;
+    ViewModel.TripVoiceCommand? navigationCommand = null;
+
+    // Voice command activation.
+    if (args.Kind == ActivationKind.VoiceCommand)
+    {
+        // Event args can represent many different activation types. 
+        // Cast it so we can get the parameters we care about out.
+        var commandArgs = args as VoiceCommandActivatedEventArgs;
+
+        Windows.Media.SpeechRecognition.SpeechRecognitionResult speechRecognitionResult = commandArgs.Result;
+
+        // Get the name of the voice command and the text spoken. 
+        // See VoiceCommands.xml for supported voice commands.
+        string voiceCommandName = speechRecognitionResult.RulePath[0];
+        string textSpoken = speechRecognitionResult.Text;
+
+        // commandMode indicates whether the command was entered using speech or text.
+        // Apps should respect text mode by providing silent (text) feedback.
+        string commandMode = this.SemanticInterpretation("commandMode", speechRecognitionResult);
+        
+        switch (voiceCommandName)
+        {
+            case "showTripToDestination":
+                // Access the value of {destination} in the voice command.
+                string destination = this.SemanticInterpretation("destination", speechRecognitionResult);
+
+                // Create a navigation command object to pass to the page. 
+                navigationCommand = new ViewModel.TripVoiceCommand(
+                    voiceCommandName,
+                    commandMode,
+                    textSpoken,
+                    destination);
+
+                // Set the page to navigate to for this voice command.
+                navigationToPageType = typeof(View.TripDetails);
+                break;
+            default:
+                // If we can't determine what page to launch, go to the default entry point.
+                navigationToPageType = typeof(View.TripListView);
+                break;
+        }
+    }
+    // Protocol activation occurs when a card is clicked within Cortana (using a background task).
+    else if (args.Kind == ActivationKind.Protocol)
+    {
+        // Extract the launch context. In this case, we're just using the destination from the phrase set (passed
+        // along in the background task inside Cortana), which makes no attempt to be unique. A unique id or 
+        // identifier is ideal for more complex scenarios. We let the destination page check if the 
+        // destination trip still exists, and navigate back to the trip list if it doesn't.
+        var commandArgs = args as ProtocolActivatedEventArgs;
+        Windows.Foundation.WwwFormUrlDecoder decoder = new Windows.Foundation.WwwFormUrlDecoder(commandArgs.Uri.Query);
+        var destination = decoder.GetFirstValueByName("LaunchContext");
+
+        navigationCommand = new ViewModel.TripVoiceCommand(
+                                "protocolLaunch",
+                                "text",
+                                "destination",
+                                destination);
+
+        navigationToPageType = typeof(View.TripDetails);
+    }
+    else
+    {
+        // If we were launched via any other mechanism, fall back to the main page view.
+        // Otherwise, we'll hang at a splash screen.
+        navigationToPageType = typeof(View.TripListView);
+    }
+
+    // Repeat the same basic initialization as OnLaunched() above, taking into account whether
+    // or not the app is already active.
+    Frame rootFrame = Window.Current.Content as Frame;
+
+    // Do not repeat app initialization when the Window already has content,
+    // just ensure that the window is active.
+    if (rootFrame == null)
+    {
+        // Create a frame to act as the navigation context and navigate to the first page.
+        rootFrame = new Frame();
+        App.NavigationService = new NavigationService(rootFrame);
+
+        rootFrame.NavigationFailed += OnNavigationFailed;
+
+        // Place the frame in the current window.
+        Window.Current.Content = rootFrame;
+    }
+
+    // Since we're expecting to always show a details page, navigate even if 
+    // a content frame is in place (unlike OnLaunched).
+    // Navigate to either the main trip list page, or if a valid voice command
+    // was provided, to the details page for that trip.
+    rootFrame.Navigate(navigationToPageType, navigationCommand);
+
+    // Ensure the current window is active
+    Window.Current.Activate();
+}
+
+/// <summary>
+/// Returns the semantic interpretation of a speech result. 
+/// Returns null if there is no interpretation for that key.
+/// </summary>
+/// <param name="interpretationKey">The interpretation key.</param>
+/// <param name="speechRecognitionResult">The speech recognition result to get the semantic interpretation from.</param>
+/// <returns></returns>
+private string SemanticInterpretation(string interpretationKey, SpeechRecognitionResult speechRecognitionResult)
+{
+  return speechRecognitionResult.SemanticInterpretation.Properties[interpretationKey].FirstOrDefault();
 }
 ```
 
 ## <span id="Handle_the_voice_command_in_the_app_service"></span><span id="handle_the_voice_command_in_the_app_service"></span><span id="HANDLE_THE_VOICE_COMMAND_IN_THE_APP_SERVICE"></span>アプリ サービスでの音声コマンドの処理
 
 
-アプリが起動されて音声コマンド セットがインストールされた後、音声コマンドのアクティブ化にアプリがどのように応答するかをアプリ サービスで指定します。
+アプリ サービスで音声コマンドを処理します。
 
-1.  音声コマンドを処理するときにアプリ サービスが終了しないように、サービス遅延を取得します。
-2.  バックグラウンド タスクが、音声コマンドによってアクティブ化されたアプリ サービスとして実行されていることを確認します。
+
+1.  次の using ディレクティブをこの例の音声コマンド サービス ファイル "AdventureWorksVoiceCommandService.cs" に追加します。
+```csharp
+using Windows.ApplicationModel.VoiceCommands;
+using Windows.ApplicationModel.Resources.Core;
+using Windows.ApplicationModel.AppService;
+```
+
+2.  音声コマンドを処理するときにアプリ サービスが終了しないように、サービス遅延を取得します。
+3.  バックグラウンド タスクが、音声コマンドによってアクティブ化されたアプリ サービスとして実行されていることを確認します。
 
     1.  [
             **IBackgroundTaskInstance.TriggerDetails**](https://msdn.microsoft.com/library/windows/apps/br224802) を [**Windows.ApplicationModel.AppService.AppServiceTriggerDetails**](https://msdn.microsoft.com/library/windows/apps/dn921727) にキャストします。
     2.  [
             **IBackgroundTaskInstance.TriggerDetails.Name**](https://msdn.microsoft.com/library/windows/apps/br224807) が "Package.appxmanifest" ファイル内のアプリ サービスの名前であることを確認します。
 
-3.  [
+4.  [
             **IBackgroundTaskInstance.TriggerDetails**](https://msdn.microsoft.com/library/windows/apps/br224802) を使って **Cortana** への [**VoiceCommandServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn974204) を作成し、音声コマンドを取得します。
-4.  ユーザーによるキャンセルのためにアプリ サービスが閉じたときに通知を受け取ることができるように、[**VoiceCommandServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn974204).[**VoiceCommandCompleted**](https://msdn.microsoft.com/library/windows/apps/dn706584) のイベント ハンドラーを登録します。
-5.  予期しないエラーのためにアプリ サービスが閉じたときに通知を受け取ることができるようにするため、[**IBackgroundTaskInstance.Canceled**](https://msdn.microsoft.com/library/windows/apps/br224798) のイベント ハンドラーを登録します。
-6.  コマンドの名前と内容を判断します。
+5.  ユーザーによるキャンセルのためにアプリ サービスが閉じたときに通知を受け取ることができるように、[**VoiceCommandServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn974204).[**VoiceCommandCompleted**](https://msdn.microsoft.com/library/windows/apps/dn706584) のイベント ハンドラーを登録します。
+6.  予期しないエラーのためにアプリ サービスが閉じたときに通知を受け取ることができるようにするため、[**IBackgroundTaskInstance.Canceled**](https://msdn.microsoft.com/library/windows/apps/br224798) のイベント ハンドラーを登録します。
+7.  コマンドの名前と内容を判断します。
 
     1.  [
             **VoiceCommand**](https://msdn.microsoft.com/library/windows/apps/dn974162).[**CommandName**](https://msdn.microsoft.com/library/windows/apps/dn706589) プロパティを使って、音声コマンドの名前を決定します。
@@ -321,7 +608,7 @@ catch (Exception ex)
 
     この例では、手順 3 の「VCD ファイルの編集」の VCD について思い出す必要があります。
 
-```    CSharp
+```csharp
 public sealed class VoiceCommandService : IBackgroundTask
     {
       private BackgroundTaskDeferral serviceDeferral;
@@ -342,39 +629,39 @@ public sealed class VoiceCommandService : IBackgroundTask
         {
           try
           {
-            voiceServiceConnection = 
-              VoiceCommandServiceConnection.FromAppServiceTriggerDetails(
-                triggerDetails);
+ voiceServiceConnection = 
+   VoiceCommandServiceConnection.FromAppServiceTriggerDetails(
+     triggerDetails);
 
-            voiceServiceConnection.VoiceCommandCompleted += 
-              VoiceCommandCompleted;
+ voiceServiceConnection.VoiceCommandCompleted += 
+   VoiceCommandCompleted;
 
-            VoiceCommand voiceCommand = await
-            voiceServiceConnection.GetVoiceCommandAsync();
+ VoiceCommand voiceCommand = await
+ voiceServiceConnection.GetVoiceCommandAsync();
 
-            switch (voiceCommand.CommandName)
-            {
-              case "whenIsTripToDestination":
-              {
-                var destination = 
-                  voiceCommand.Properties["destination"][0];
-                SendCompletionMessageForDestination(destination);
-                break;
-              }
+ switch (voiceCommand.CommandName)
+ {
+   case "whenIsTripToDestination":
+   {
+     var destination = 
+       voiceCommand.Properties["destination"][0];
+     SendCompletionMessageForDestination(destination);
+     break;
+   }
 
-              // As a last resort, launch the app in the foreground.
-              default:
-                LaunchAppInForeground();
-                break;
-            }
+   // As a last resort, launch the app in the foreground.
+   default:
+     LaunchAppInForeground();
+     break;
+ }
           }
           finally
           {
-            if (this.serviceDeferral != null)
-            {
-              // Complete the service deferral.
-              this.serviceDeferral.Complete();
-            }
+ if (this.serviceDeferral != null)
+ {
+   // Complete the service deferral.
+   this.serviceDeferral.Complete();
+ }
           }
         }
       }
@@ -427,7 +714,7 @@ public sealed class VoiceCommandService : IBackgroundTask
         // of content tiles.
         var response = 
           VoiceCommandResponse.CreateResponse(
-            userMessage, destinationsContentTiles);
+ userMessage, destinationsContentTiles);
 
         // Cortana will present a “Go to app_name” link that the user 
         // can tap to launch the app. 
@@ -457,45 +744,9 @@ public sealed class VoiceCommandService : IBackgroundTask
     }
 ```
 
-起動時、アプリ サービスは 0.5 秒以内に [**ReportSuccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn706580) を呼び出すことができます。 **Cortana** は、VCD ファイルで指定したフィードバックを表示して読み上げるためにアプリによって提供されたデータを使います。 アプリが呼び出しに 0.5 秒以上かかる場合、次に示すように **Cortana** はハンドオフ画面を挿入します。 アプリケーションが **ReportSuccessAsync** を呼び出すまで最大 5 秒間、**Cortana** にハンドオフ画面が表示されます。 アプリ サービスが **ReportSuccessAsync** を呼び出さないか、**Cortana** に情報を提供する [**VoiceCommandServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn974204) メソッドを何も呼び出さない場合、エラー メッセージが表示されてアプリ サービスがキャンセルされます。
+アクティブ化されたら、アプリ サービスは 0.5 秒以内に [**ReportSuccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn706580) を呼び出すことができます。 **Cortana** は、VCD ファイルで指定したフィードバックを表示して読み上げるためにアプリによって提供されたデータを使います。 アプリが呼び出しに 0.5 秒以上かかる場合、次に示すように **Cortana** はハンドオフ画面を挿入します。 アプリケーションが **ReportSuccessAsync** を呼び出すまで最大 5 秒間、**Cortana** にハンドオフ画面が表示されます。 アプリ サービスが **ReportSuccessAsync** を呼び出さないか、**Cortana** に情報を提供する [**VoiceCommandServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn974204) メソッドを何も呼び出さない場合、エラー メッセージが表示されてアプリ サービスがキャンセルされます。
 
 ![Adventure Works アプリをバックグラウンドで使った場合の基本的なクエリと結果画面 (進行状況も表示される)](images/cortana-backgroundapp-progress-result.png)
-
-## <span id="Image_resources_and_scaling"></span><span id="image_resources_and_scaling"></span><span id="IMAGE_RESOURCES_AND_SCALING"></span>画像リソースとスケーリング
-
-
-UWP アプリでは、特定の設定とデバイス機能 (ハイ コントラスト、有効ピクセル、ロケールなど) に基づいて最適な画像を自動的に選択できます。 必要な作業は、画像を提供し、リソースのバージョンごとに、アプリ プロジェクト内で適切な名前付け規則とフォルダー構造を使用していることを確認することだけです。 推奨されるリソースのバージョンが提供されない場合、ユーザーの基本設定、身体能力、デバイスの種類、場所によって、アクセシビリティ、ローカライズ、画像の品質が影響を受ける可能性があります。
-
-ハイ コントラストとスケール ファクター用の画像リソースについて詳しくは、「[タイルとアイコン アセットのガイドライン](https://msdn.microsoft.com/library/windows/apps/mt412102)」をご覧ください。
-
-修飾子を使ってリソースに名前を付けます。 リソース修飾子は、リソースの特定のバージョンが使われるコンテキストを識別するフォルダーとファイル名の修飾子です。
-
-標準的な命名規則は、"foldername/qualifiername-value\[\_qualifiername-value\]/filename.qualifiername-value\[\_qualifiername-value\].ext" です。 たとえば、images/en-US/logo.scale-100\_contrast-white.png は、コード内ではルート フォルダーとファイル名を使用して単に images/logo.png と参照されます。 詳しくは、「[ファイル、データ、グローバリゼーションのガイドライン](https://msdn.microsoft.com/library/windows/apps/dn611859)」と「[修飾子を使ってリソースに名前を付ける方法](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)」をご覧ください。
-
-ローカライズされたリソースや複数の解像度のリソースの提供を現在計画していない場合でも、文字列リソース ファイルに既定の言語をマークし ("en-US\\resources.resw" など)、画像に既定のスケール ファクターをマークする ("logo.scale-100.png" など) ことをお勧めします。 ただし、100、200、400 のスケール ファクターのアセットを提供する必要があります。
-
-**重要**  
-**Cortana** コンテンツ タイルの有効なアイコンのサイズは次のとおりです。
-
--   幅 68 x 高さ 68
--   幅 68 x 高さ 92
--   幅 280 x 高さ 140
-
-コンテンツ タイルは、[**VoiceCommandResponse**](https://msdn.microsoft.com/library/windows/apps/dn974182) が [**VoiceCommandServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn974204) に渡されるまで検証されません。 画像がこれらのサイズ比率に準拠していないコンテンツ タイルを含む **VoiceCommandResponse** オブジェクトを **Cortana** に渡した場合、例外が発生する可能性があります。
-
- 
-
-この **Adventure Works** アプリ (VoiceCommandService\\AdventureWorksVoiceCommandService.cs) の例では、[**TitleWith68x68IconAndText**](https://msdn.microsoft.com/library/windows/apps/dn974169) タイル テンプレートを使用して、単純な灰色の四角形 ("GreyTile.png") を [**VoiceCommandContentTile**](https://msdn.microsoft.com/library/windows/apps/dn974168) 上のアプリのロゴとして指定します。 ロゴのバリアントは VoiceCommandService\\Images にあり、[**GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) メソッドを使って取得できます。
-
-```CSharp
-var destinationTile = new VoiceCommandContentTile();
-
-destinationTile.ContentTileType = 
-  VoiceCommandContentTileType.TitleWith68x68IconAndText;
-destinationTile.Image = 
-  await StorageFile.GetFileFromApplicationUriAsync(
-    new Uri("ms-appx:///AdventureWorks.VoiceCommands/Images/GreyTile.png"));
-```
 
 ## <span id="related_topics"></span>関連記事
 
@@ -507,11 +758,13 @@ destinationTile.Image =
 * [**VCD 要素および属性 v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
 * [クイック スタート: ファイルまたは画像リソースの使用](https://msdn.microsoft.com/library/windows/apps/xaml/hh965325)
 * [修飾子を使ってリソースに名前を付ける方法](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)
+
 **デザイナー向け**
 * [Cortana の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn974233)
 * [音声認識の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596121)
 * [UWP アプリ用レスポンシブ デザイン 101](https://msdn.microsoft.com/library/windows/apps/dn958435)
 * [タイルとアイコン アセットのガイドライン](https://msdn.microsoft.com/library/windows/apps/mt412102)
+
 **サンプル**
 * [Cortana 音声コマンドのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619899)
  
@@ -523,6 +776,6 @@ destinationTile.Image =
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=Mar16_HO4-->
 
 

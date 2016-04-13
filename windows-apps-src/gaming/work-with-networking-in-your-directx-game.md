@@ -1,79 +1,83 @@
 ---
-title: Networking for games
-description: Learn how to develop and incorporate networking features into your DirectX game.
+title: ゲームのネットワーク
+description: ネットワーク機能を開発し、DirectX ゲームに組み込む方法について説明します。
 ms.assetid: 212eee15-045c-8ba1-e274-4532b2120c55
 ---
 
-# Networking for games
+# ゲームのネットワーク
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-Learn how to develop and incorporate networking features into your DirectX game.
+ネットワーク機能を開発し、DirectX ゲームに組み込む方法について説明します。
 
-## Concepts at a glance
-
-
-A variety of networking features can be used in your DirectX game, whether it is a simple standalone game to massively multi-player games. The simplest use of networking would be to store user names and game scores on a central network server.
-
-Networking APIs are needed in multi-player games that use the infrastructure (client-server or internet peer-to-peer) model and also by ad hoc (local peer-to-peer) games. For server-based multi-player games, a central game server usually handles most of the game operations and the client game app is used for input, displaying graphics, playing audio, and other features. The speed and latency of network transfers is a concern for a satisfactory game experience.
-
-For peer-to-peer games, each player's app handles the input and graphics. In most cases, the game players are located in close proximity so that network latency should be lower but is still a concern. How to discovery peers and establish a connection becomes a concern.
-
-For single-player games, a central Web server or service is often used to store user names, game scores, and other miscellaneous information. In these games, the speed and latency of networking transfers is less of a concern since it doesn't directly affect game operation.
-
-Network conditions can change at any time, so any game that uses networking APIs needs to handle network exceptions that may occur. To learn more about handling network exceptions, see [Networking basics](https://msdn.microsoft.com/library/windows/apps/mt280233).
-
-Firewalls and web proxies are common and can affect the ability to use networking features. A game that uses networking needs to be prepared to properly handle firewalls and proxies.
-
-For mobile devices, it is important to monitor available network resources and behave accordingly when on metered networks where roaming or data costs can be significant.
-
-Network isolation is part of the app security model used by Windows. Windows actively discovers network boundaries and enforces network access restrictions for network isolation. Apps must declare network isolation capabilities in order to define the scope of network access. Without declaring these capabilities, your app will not have access to network resources. To learn more about how Windows enforces network isolation for apps, see [How to configure network isolation capabilities](https://msdn.microsoft.com/library/windows/apps/hh770532).
-
-## Design considerations
+## 概要
 
 
-A variety of networking APIs can be used in DirectX games. So, it is important to pick the right API. Windows supports a variety of networking APIs that your app can use to communicate with other computers and devices over either the Internet or private networks. Your first step is to figure out what networking features your app needs.
+単純なスタンドアロン ゲームか多人数のマルチプレイヤー ゲームかにかかわらず、DirectX ゲームには、さまざまなネットワーク機能を使うことができます。 ネットワークの最も単純な用途は、一元的なネットワーク サーバーにユーザー名とゲーム スコアを保存することです。
 
-The more popular network APIs for games include:
+Networking API は、インフラストラクチャ (クライアント サーバーまたはインターネット ピア ツー ピア) モデルを使うマルチプレイヤー ゲームや、アドホック (ローカル ピア ツー ピア) ゲームに必要です。 サーバー ベースのマルチプレイヤー ゲームでは、ゲーム操作のほとんどを通常はセントラル ゲーム サーバーで処理し、入力、グラフィックス表示、オーディオ再生などの機能にクライアント ゲーム アプリを使います。 ネットワーク転送の速度と待機時間は、満足度の高いゲーム エクスペリエンスを実現するための課題です。
 
--   TCP and sockets - Provides a reliable connection. Use TCP for game operations that don’t need security. TCP allows the server to easily scale, so it is commonly used in games that use the infrastructure (client-server or internet peer-to-peer) model. TCP can also be used by ad hoc (local peer-to-peer) games over Wi-Fi Direct and Bluetooth. TCP is commonly used for game object movement, character interaction, text chat, and other operations. The [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) class provides a TCP socket that can be used in Windows Store games. The **StreamSocket** class is used with related classes in the [**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) namespace.
--   TCP and sockets using SSL - Provides a reliable connection that prevents eavesdropping. Use TCP connections with SSL for game operations that need security. The encryption and overhead of SSL adds a cost in latency and performance, so it is only used when security is needed. TCP with SSL is commonly used for login, purchasing and trading assets, game character creation and management. The [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) class provides a TCP socket that supports SSL.
--   UDP and sockets - Provides unreliable network transfers with low overhead. UDP is used for game operations that require low latency and can tolerate some packet loss. This is often used for fighting games, shooting and tracers, network audio, and voice chat. The [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) class provides a UDP socket that can be used in Windows Store games. The **DatagramSocket** class is used with related classes in the [**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) namespace.
--   HTTP Client - Provides a reliable connection to HTTP servers. The most common networking scenario is to access a web site to retrieve or store information. A simple example would be a game that uses a website to store user information and game scores. When used with SSL for security, an HTTP client can be used for login, purchasing, trading assets, game character creation, and management. The [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) class provides a modern HTTP client API for use in Windows Store games. The **HttpClient** class is used with related classes in the [**Windows::Web::Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) namespace.
+ピア ツー ピア ゲームでは、各プレイヤーのアプリで、入力とグラフィックスを処理します。 ほとんどの場合、各ゲーム プレイヤーはきわめて近い場所にいるため、ネットワーク待機時間は長くありませんが、重要度に変わりはありません。 ピアの検出と接続の確立も、重要事項です。
 
-## Handling network exceptions in your DirectX game
+単一プレイヤーのゲームでは、ユーザー名、ゲームのスコア、その他のさまざまな情報を保存するために、セントラル Web サーバーまたはサービスがよく使われます。 これらのゲームでは、直接ゲーム操作に影響しないため、ネットワーク転送の速度と待機時間はそれほど大きな問題ではありません。
+
+ネットワークの状態はいつでも変化する可能性があり、Networking API を使うゲームでは、発生する可能性のあるネットワーク例外を処理できるようにしておく必要があります。 ネットワーク例外の処理について詳しくは、「[ネットワークの基本](https://msdn.microsoft.com/library/windows/apps/mt280233)」をご覧ください。
+
+ファイアウォールと Web プロキシは一般的で、ネットワーク機能の使用に影響する可能性があります。 ネットワークを使うゲームでは、ファイアウォールとプロキシを適切に処理できるようにしておく必要があります。
+
+モバイル デバイスでは、ローミングまたはデータのコストが大きい従量制課金接続を使う場合、利用できるネットワーク リソースを監視し、それに従って動作することが重要です。
+
+ネットワーク分離は、Windows で採用されているアプリ セキュリティ モデルの一部です。 Windows がネットワークの境界を能動的に検出し、ネットワーク アクセスの制限を強制的に適用することによって、ネットワーク分離が実現されています。 アプリがネットワーク アクセスのスコープを定義するには、ネットワーク分離機能を宣言する必要があります。 この機能を宣言しないと、アプリはネットワーク リソースにアクセスできません。 Windows でアプリにネットワーク分離が適用されるしくみについて詳しくは、「[ネットワーク分離機能を構成する方法](https://msdn.microsoft.com/library/windows/apps/hh770532)」をご覧ください。
+
+## 設計時の考慮事項
 
 
-When a network exception occurs in your DirectX game, this indicates a significant problem or failure. Exceptions can occur for many reasons when using networking APIs. Often, the exception can result from changes in network connectivity or other networking issues with the remote host or server.
+DirectX ゲームに使うことのできる Networking API は、多数あります。 このため、適切な API を選ぶことが重要です。 Windows では、アプリがインターネットまたはプライベート ネットワーク上で他のコンピューターやデバイスと通信するために使うことができるさまざまな Networking API がサポートされています。 最初のステップは、アプリに必要なネットワーク機能を理解することです。
 
-Some causes of exceptions when using networking APIs include the following:
+ゲームに使うことができる主要なネットワーク API には、次のようなものがあります。
 
--   Input from the user for a hostname or a URI contains errors and is not valid.
--   Name resolutions failures when looking up a hostname or a URi.
--   Loss or change in network connectivity.
--   Network connection failures using sockets or the HTTP client APIs.
--   Network server or remote endpoint errors.
--   Miscellaneous networking errors.
+-   TCP とソケット - 信頼性の高い接続を実現します。 TCP は、セキュリティを必要としないゲーム操作に使います。 TCP を使うとサーバーの規模変更が容易であるため、インフラストラクチャ (クライアント サーバーまたはインターネット ピア ツー ピア) モデルのゲームでよく使われます。 TCP は、Wi-Fi Direct と Bluetooth を経由したアドホック (ローカル ピア ツー ピア) ゲームでも使うことができます。 TCP は一般的に、ゲーム オブジェクトの動き、文字操作、テキスト チャットなどの操作に使います。 [
+            **StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) クラスは、Windows ストア ゲームで使うことができる TCP ソケットを提供します。 **StreamSocket** クラスは、[**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 名前空間の関連クラスと共に使われます。
+-   SSL を使う TCP とソケット - 信頼性の高い接続を提供して改ざんを防ぎます。 SSL を伴う TCP 接続は、セキュリティを必要とするゲーム操作で使います。 SSL の暗号化とオーバーヘッドにより、待機時間とパフォーマンスのコストが増加するため、セキュリティが必要な場合にのみ使うようにします。 一般的に、SSL を伴う TCP は、ログイン、アセットの購入とトレーディング、ゲーム キャラクターの作成と管理に使います。 SSL をサポートする TCP ソケットは、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) クラスで提供されます。
+-   UDP とソケット - 信頼性の低いネットワーク転送を低いオーバーヘッドで提供します。 UDP は、待機時間を短くする必要があり、ある程度のパケット損失を許容できるゲーム操作に使われます。 これは、ファイティング ゲーム、シューティング、トレーサー、ネットワーク オーディオ、ボイス チャットなどによく使われます。 [
+            **DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) クラスは、Windows ストア ゲームで使うことができる UDP ソケットを提供します。 **DatagramSocket** クラスは、[**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 名前空間の関連クラスと共に使われます。
+-   HTTP クライアント - HTTP サーバーへの、信頼性の高い接続を実現します。 最も一般的なネットワーク シナリオは、Web サイトにアクセスして情報を取得または保存することです。 単純な例としては、Web サイトを使ってユーザー情報とゲームのスコアを保存するゲームが考えられます。 HTTP クライアントは、SSL と組み合わせてセキュリティを強化すると、ログイン、購入、アセットのトレーディング、ゲーム キャラクターの作成、管理に使うことができます。 [
+            **HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) クラスは、Windows ストア ゲームで使う最新の HTTP クライアント API を提供します。 **HttpClient** クラスは、[**Windows::Web::Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 名前空間の関連クラスと共に使われます。
 
-Exceptions from network errors (for example, loss or change of connectivity, connection failures, and server failures) can happen at any time. These errors result in exceptions being thrown. If an exception is not handled by your app, it can cause your entire app to be terminated by the runtime.
+## DirectX ゲームでのネットワーク例外の処理
 
-You must write code to handle exceptions when you call most asynchronous network methods. Sometimes, when an exception occurs, a network method can be retried as a way to resolve the problem. Other times, your app may need to plan to continue without network connectivity using previously cached data.
 
-Universal Windows Platform (UWP) apps generally throw a single exception. Your exception handler can retrieve more detailed information about the cause of the exception to better understand the failure and make appropriate decisions.
+DirectX ゲームでのネットワーク例外の発生は、重大な問題やエラーを示します。 Networking API を使う場合、例外はさまざまな理由で発生します。 リモート ホストやサーバー側でネットワーク接続を変更したなど、ネットワークの問題のために例外が発生することもよくあります。
 
-When an exception occurs in a DirectX game that is a UWP app, the **HRESULT** value for the cause of the error can be retrieved. The *Winerror.h* include file contains a large list of possible **HRESULT** values that includes network errors.
+Networking API を使う場合の例外の理由には、次のようなものがあります。
 
-The networking APIs support different methods for retrieving this detailed information about the cause of an exception.
+-   ホスト名や URI のユーザー入力にエラーがあり有効ではない
+-   ホスト名または URI の参照時の名前解決の失敗
+-   ネットワーク接続の切断または変更
+-   ソケットと HTTP クライアント API を使っているネットワーク接続の失敗
+-   ネットワーク サーバーまたはリモート エンドポイントのエラー
+-   その他のネットワーク エラー
 
--   A method to retrieve the **HRESULT** value of the error that caused the exception. The possible list of potential **HRESULT** values is large and unspecified. The **HRESULT** value can be retrieved when using any of the networking APIs.
--   A helper method that converts the **HRESULT** value to an enumeration value. The list of possible enumeration values is specified and relatively small. A helper method is available for the socket classes in the [**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960).
+ネットワークのエラーによる例外 (たとえば、接続の切断または変更、接続エラー、サーバー エラー) は、いつでも発生する場合があります。 これらのエラーが起きると、例外がスローされます。 例外がアプリによって処理されない場合、ランタイムによってアプリ全体が終了されることがあります。
 
-### Exceptions in Windows.Networking.Sockets
+非同期ネットワーク メソッドの多くは、呼び出す場合、例外を処理するようにコードを記述する必要があります。 例外の発生時に、場合によっては、問題を解決するためにネットワーク メソッドが再試行されることがあります。 また、ネットワーク接続なしで、以前にキャッシュされたデータを使ってアプリを継続するように計画しなければならない場合もあります。
 
-The constructor for the [**HostName**](https://msdn.microsoft.com/library/windows/apps/br207113) class used with sockets can throw an exception if the string passed is not a valid hostname (contains characters that are not allowed in a host name). If an app gets input from the user for the **HostName** for a peer connection for gaming, the constructor should be in a try/catch block. If an exception is thrown, the app can notify the user and request a new hostname.
+ユニバーサル Windows プラットフォーム (UWP) アプリは、一般に、1 つの例外をスローします。 エラーについてよく理解し、適切な判断ができるように、例外ハンドラーは例外の原因についての詳しい情報を取得できます。
 
-Add code to validate a string for a hostname from the user
+例外が UWP アプリである DirectX ゲームで発生すると、エラーの原因の **HRESULT** 値を取得できます。 *Winerror.h* インクルード ファイルには、ネットワーク エラーを含む、出力される可能性がある **HRESULT** 値の大きなリストが格納されています。
+
+Networking API は、例外の原因についての詳しい情報を取得するために、さまざまなメソッドをサポートしています。
+
+-   例外の原因となったエラーの **HRESULT** 値を取得するメソッド。 可能な **HRESULT** 値の一覧はサイズが大きく指定されていません。 Networking API の 1 つを使っている場合は **HRESULT** の値を取得できます。
+-   **HRESULT** 値を列挙値に変換するヘルパー メソッド。 可能な列挙値の一覧は指定されていて、比較的小さいサイズです。 [
+            **Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 内のソケット クラスにヘルパー メソッドを使うことができます。
+
+### Windows.Networking.Sockets の例外
+
+ソケットと共に使われる [**HostName**](https://msdn.microsoft.com/library/windows/apps/br207113) クラスのコンストラクターは、有効なホスト名ではない (ホスト名に使うことができない文字が含まれている) 文字列が渡された場合に例外をスローすることができます。 アプリがゲームのピア接続用にユーザーから **HostName** の入力を取得する場合、このコンストラクターを try/catch ブロックに配置する必要があります。 例外がスローされた場合、アプリは、ユーザーに通知し、新しいホスト名を要求することができます。
+
+ユーザーが指定したホスト名の文字列を検証するコードの追加
 
 ```cpp
 
@@ -109,13 +113,15 @@ Add code to validate a string for a hostname from the user
     // ... Continue with code to execute with a valid hostname.
 ```
 
-The [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) namespace has convenient helper methods and enumerations for handling errors when using sockets. This can be useful for handling specific network exceptions differently in your app.
+[
+            **Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 名前空間には、ソケットを使う場合のエラー処理に便利なヘルパー メソッドと列挙があります。 これは、アプリで特定のネットワーク例外を異なる方法で処理する場合に役立つことがあります。
 
-An error encountered on [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319), [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882), or [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) operation results in an exception being thrown. The cause of the exception is an error value represented as an **HRESULT** value. The [**SocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701462) method is used to convert a network error from a socket operation to a [**SocketErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh701457) enumeration value. Most of the **SocketErrorStatus** enumeration values correspond to an error returned by the native Windows sockets operation. An app can filter on specific **SocketErrorStatus** enumeration values to modify app behavior depending on the cause of the exception.
+スローされた例外の [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)、[**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) の操作結果で発生したエラー。 例外の原因は、**HRESULT** として表現されるエラー値です。 [
+            **SocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701462) メソッドは、ネットワーク エラーをソケット操作から [**SocketErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh701457) 列挙値に変換するために使われます。 ほとんどの **SocketErrorStatus** 列挙値は、ネイティブ Windows ソケット操作から返されるエラーに対応しています。 アプリは特定の **SocketErrorStatus** 列挙値に対するフィルター処理を行い、例外の原因に応じてアプリの動作を変更できます。
 
-For parameter validation errors, an app can also use the **HRESULT** from the exception to learn more detailed information about the error that caused the exception. Possible **HRESULT** values are listed in the *Winerror.h* header file. For most parameter validation errors, the **HRESULT** returned is **E\_INVALIDARG**.
+パラメーター検証エラーの場合、アプリは例外からの **HRESULT** を使って、その例外の原因となったエラーの詳細情報を確認することもできます。 使うことができる **HRESULT** 値は、*Winerror.h* ヘッダー ファイルに記載されています。 ほとんどのパラメーター検証エラーの場合、返される **HRESULT** は **E\_INVALIDARG** です。
 
-Add code to handle exceptions when trying to make a stream socket connection
+ストリーム ソケット接続の実行時に発生する例外を処理するコードの追加
 
 ```cpp
 using namespace Windows::Networking;
@@ -212,13 +218,14 @@ using namespace Windows::Networking::Sockets;
 
 ```
 
-### Exceptions in Windows.Web.Http
+### Windows.Web.Http の例外
 
-The constructor for the [**Windows::Foundation::Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) class used with [**Windows::Web::Http::HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) can throw an exception if the string passed is not a valid URI (contains characters that are not allowed in a URI). In C++, there is no method to try and parse a string to a URI. If an app gets input from the user for the **Windows::Foundation::Uri**, the constructor should be in a try/catch block. If an exception is thrown, the app can notify the user and request a new URI.
+[
+            **Windows::Web::Http::HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) と共に使われる [**Windows::Foundation::Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) クラスのコンストラクターは、有効な URI ではない (URI に使うことができない文字が含まれている) 文字列が渡された場合に例外をスローすることができます。 C++ では、URI として渡される文字列を試行して解析するメソッドはありません。 アプリがユーザーから **Windows::Foundation::Uri** の入力を取得する場合、このコンストラクターを try/catch ブロックに配置する必要があります。 例外がスローされた場合、アプリは、ユーザーに通知して、新しい URI を要求することができます。
 
-Your app should also check that the scheme in the URI is HTTP or HTTPS since these are the only schemes supported by the [**Windows::Web::Http::HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639).
+アプリでは、URI 内のスキーマが HTTP または HTTPS であることも確認する必要があります。[**Windows::Web::Http::HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) では、これらのスキーマしかサポートされていないためです。
 
-Add code to validate a string for a URI from the user
+ユーザーが指定した URI の文字列を検証するコードの追加
 
 ```cpp
 
@@ -261,13 +268,17 @@ Add code to validate a string for a URI from the user
     // ... Continue with code to execute with a valid URI.
 ```
 
-The [**Windows::Web::Http**](https://msdn.microsoft.com/library/windows/apps/windows.web.http.aspx) namespace lacks a convenience function. So, an app using [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) and other classes in this namespace needs to use the **HRESULT** value.
+[
+            **Windows::Web::Http**](https://msdn.microsoft.com/library/windows/apps/windows.web.http.aspx) 名前空間には便利な関数がありません。 そのため、この名前空間の [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) と他のクラスを使うアプリは、**HRESULT** 値を使う必要があります。
 
-In apps using C++, the [**Platform::Exception**](https://msdn.microsoft.com/library/windows/apps/hh755825.aspx) represents an error during app execution when an exception occurs. The [**Platform::Exception::HResult**](https://msdn.microsoft.com/library/windows/apps/hh763371.aspx) property returns the **HRESULT** assigned to the specific exception. The [**Platform::Exception::Message**](https://msdn.microsoft.com/library/windows/apps/hh763375.aspx) property returns the system-provided string that is associated with the **HRESULT** value. Possible **HRESULT** values are listed in the *Winerror.h* header file. An app can filter on specific **HRESULT** values to modify app behavior depending on the cause of the exception.
+C++ を使うアプリでは、アプリの実行中に例外が発生したときに、[**Platform::Exception**](https://msdn.microsoft.com/library/windows/apps/hh755825.aspx) がエラーを表します。 [
+            **Platform::Exception::HResult**](https://msdn.microsoft.com/library/windows/apps/hh763371.aspx) プロパティは、特定の例外に割り当てられた **HRESULT** を返します。 [
+            **Platform::Exception::Message**](https://msdn.microsoft.com/library/windows/apps/hh763375.aspx) プロパティは、**HRESULT** 値に関連付けられた、システムが提供する文字列を返します。 使うことができる **HRESULT** 値は、*Winerror.h* ヘッダー ファイルに記載されています。 アプリは特定の **HRESULT** 値に対するフィルター処理を行い、例外の原因に応じてアプリの動作を変更できます。
 
-For most parameter validation errors, the **HRESULT** returned is **E\_INVALIDARG**. For some illegal method calls, the **HRESULT** returned is **E\_ILLEGAL\_METHOD\_CALL**.
+ほとんどのパラメーター検証エラーの場合、返される **HRESULT** は **E\_INVALIDARG** です。 一部の無効なメソッド呼び出しでは、返される **HRESULT** は **E\_ILLEGAL\_METHOD\_CALL** です。
 
-Add code to handle exceptions when trying to use [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) to connect to an HTTP server
+[
+            **HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) を使って HTTP サーバーに接続するときに発生する例外を処理するコードの追加
 
 ```cpp
 using namespace Windows::Foundation;
@@ -357,20 +368,20 @@ using namespace Windows::Web::Http;
 
 ```
 
-## Related topics
+## 関連トピック
 
 
-**Other resources**
+**その他のリソース**
 
-* [Connecting with a datagram socket](https://msdn.microsoft.com/library/windows/apps/xaml/jj635238)
-* [Connecting to a network resource with a stream socket](https://msdn.microsoft.com/library/windows/apps/xaml/jj150599)
-* [Connecting to network services](https://msdn.microsoft.com/library/windows/apps/xaml/hh452976)
-* [Connecting to web services](https://msdn.microsoft.com/library/windows/apps/xaml/hh761504)
-* [Networking basics](https://msdn.microsoft.com/library/windows/apps/mt280233)
-* [How to configure network isolation capabilities](https://msdn.microsoft.com/library/windows/apps/hh770532)
-* [How to enable loopback and debug network isolation](https://msdn.microsoft.com/library/windows/apps/hh780593)
+* [データグラム ソケットを使った接続](https://msdn.microsoft.com/library/windows/apps/xaml/jj635238)
+* [ストリーム ソケットによるネットワーク リソースへの接続](https://msdn.microsoft.com/library/windows/apps/xaml/jj150599)
+* [ネットワーク サービスへの接続](https://msdn.microsoft.com/library/windows/apps/xaml/hh452976)
+* [Web サービスへの接続](https://msdn.microsoft.com/library/windows/apps/xaml/hh761504)
+* [ネットワークの基本](https://msdn.microsoft.com/library/windows/apps/mt280233)
+* [ネットワーク分離機能を構成する方法](https://msdn.microsoft.com/library/windows/apps/hh770532)
+* [ループバックを有効にする方法とネットワーク分離のトラブルシューティングを行う方法](https://msdn.microsoft.com/library/windows/apps/hh780593)
 
-**Reference**
+**リファレンス**
 
 * [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)
 * [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639)
@@ -378,12 +389,12 @@ using namespace Windows::Web::Http;
 * [**Windows::Web::Http**](https://msdn.microsoft.com/library/windows/apps/dn279692)
 * [**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960)
 
-**Samples**
+**サンプル**
 
-* [DatagramSocket sample](http://go.microsoft.com/fwlink/p/?LinkID=243037)
-* [HttpClient Sample]( http://go.microsoft.com/fwlink/p/?linkid=242550)
-* [Proximity sample](http://go.microsoft.com/fwlink/p/?linkid=245082)
-* [StreamSocket sample](http://go.microsoft.com/fwlink/p/?linkid=243037)
+* [DatagramSocket のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=243037)
+* [HttpClient のサンプル]( http://go.microsoft.com/fwlink/p/?linkid=242550)
+* [近接通信のサンプル](http://go.microsoft.com/fwlink/p/?linkid=245082)
+* [StreamSocket のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=243037)
 
 
 <!--HONumber=Mar16_HO1-->

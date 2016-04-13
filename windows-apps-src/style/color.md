@@ -1,6 +1,6 @@
 ---
-Description: Color provides intuitive wayfinding through an app's various levels of information and serves as a crucial tool for reinforcing the interaction model.
-title: Color
+Description: 色により、アプリのさまざまな情報レベルで直感的に移動先を見つけることができます。また、色は操作モデルを強化するための重要なツールとして機能します。
+title: 色
 ms.assetid: 3ba7176f-ac47-498c-80ed-4448edade8ad
 label: Color
 template: detail.hbs
@@ -8,27 +8,27 @@ extraBodyClass: style-color
 brief: Color provides intuitive wayfinding through an app's various levels of information and serves as a crucial tool for reinforcing the interaction model.<br /><br />In Windows, color is also personal. Users can choose a color and a light or dark theme to be reflected throughout their experience.
 ---
 
-# Color for UWP apps
-Color provides intuitive wayfinding through an app's various levels of information and serves as a crucial tool for reinforcing the interaction model.
+# UWP アプリの色
+色により、アプリのさまざまな情報レベルで直感的に移動先を見つけることができます。また、色は操作モデルを強化するための重要なツールとして機能します。
 
-## Accent color
+## アクセント カラー
 
-The user can pick a single color called the accent. They have their choice from a curated set of 48 color swatches.
+ユーザーは、アクセントと呼ばれる 1 つの色を選ぶことができます。 選別された 48 色の見本から選びます。
 
 
 <!-- Alternate version for the dev center. Need to add hex values. -->
 <figure>
 ![Accent colors](images/accentcolorswatch.png)
-<figcaption>As a rule of thumb, when the original accent color is used as a background, always put white text overtop.</figcaption>
+<figcaption>一般に、元のアクセント カラーを背景として使用する場合は、必ず白色のテキストをその上に配置します。</figcaption>
 </figure>
 
-When users choose an accent color, it appears as part of their system theme. The areas affected are Start, Taskbar, window chrome, selected interaction states and hyperlinks within [common controls](https://dev.windows.com/design/controls-patterns). Each app can further incorporate the accent color through their typography, backgrounds, and interactions—or override it to preserve their specific branding.
+ユーザーがアクセント カラーを選ぶと、その色がシステムのテーマの一部として表示されます。 アクセント カラーが適用される領域は、スタート画面、タスク バー、ウィンドウ クロム、選択した操作の状態、および[共通コントロール](https://dev.windows.com/design/controls-patterns)内のハイパーリンクです。 また、各アプリの文字体裁、背景、および操作にアクセント カラーを組み込んだり、アクセント カラーを無視してアプリ固有のブランドを維持したりできます。
 
-## Color selection
+## 色の選択
 
-Once an accent color is selected, light and dark shades of the accent color are created based on HCL values of color luminosity. Apps can use shade variations to create visual hierarchy and to provide an indication of interaction.
+アクセント カラーを選ぶと、色の明度の HCL 値に基づいて明るい色調と暗い色調のアクセント カラーが作成されます。 アプリはこの色調のバリエーションを使用して視覚的な階層を作成し、操作を示します。
 
-![A single accent color with its 6 shades](images/shades.png)
+![1 つのアクセント カラーとその 6 つの色調](images/shades.png)
 
 <aside class="aside-dev">
     <div class="aside-dev-title">
@@ -38,38 +38,38 @@ Once an accent color is selected, light and dark shades of the accent color are 
     </div>
 </aside>
 
-## Color themes
+## 色のテーマ
 
-The user may also choose between a light or dark theme for the system (on phone, but tablet and desktop don’t yet have that option—they can provide an in-app setting). Some apps choose to change their theme based on the user’s preference, while others opt out.
+ユーザーはシステムの淡色テーマまたは濃色テーマを選ぶこともできます (携帯電話の場合。タブレットとデスクトップにはこのオプションが用意されていません。タブレットとデスクトップではアプリ内の設定を使用できます)。 一部のアプリでは、ユーザーの設定を基にテーマを変更し、その他のテーマを使用しないように選択できます。
 
-Apps using light theme are for scenarios involving productivity apps. Examples would be the suite of apps available with Microsoft Office. Light theme affords the ease of reading long lengths of text in conjunction with prolonged periods of time-at-task.
+淡色テーマを使用するアプリは、生産性アプリが関係するシナリオに適しています。 Microsoft Office で利用可能なアプリ スイートがその例です。 淡色テーマを使用すると、長時間のタスクの際に長いテキストが読みやすくなります。
 
-Dark theme allows more visible contrast of content for apps that are media centric or scenarios where users are presented with an abundance of videos or imagery. In these scenarios, reading is not necessarily the primary task, though a movie watching experience might be, and shown under low-light ambient conditions.
+濃色テーマを使用すると、メディアを中心とするアプリまたは多数のビデオや画像がユーザーに対して表示されるシナリオにおいて、コンテンツのコントラストをはっきりさせることができます。 このようなシナリオでは、映画を視聴する場合や、低光量の周囲条件下であっても、読むことが必ずしも第一の目標というわけではありません。
 
-If your app doesn’t quite fit either of these descriptions, consider following the system theme to let the user decide what's right for them.
+前述のどちらかの説明に該当しないアプリの場合は、ユーザーが最適なテーマを決められるように、次のシステム テーマの使用を検討してください。
 
-To make designing for themes easier, Windows provides an additional color palette that automatically adapts to the theme.
+テーマを設計しやすくするために、Windows では、テーマに合わせて自動的に追加のカラー パレットが表示されます。
 
 
 <!-- OP version -->
-### Light theme
-#### Base
-![The base light theme](images/themes-light-base.png)
-#### Alt
-![The alt light theme](images/themes-light-alt.png)
-#### List
-![The list light theme](images/themes-light-list.png)
-#### Chrome
-![The chrome light theme](images/themes-light-chrome.png)
-### Dark theme
-#### Base
-![The base dark theme](images/themes-dark-base.png)
-#### Alt
-![The alt dark theme](images/themes-dark-alt.png)
-#### List
-![The list dark theme](images/themes-dark-list.png)
-#### Chrome
-![The chrome dark theme](images/themes-dark-chrome.png)
+### 淡色テーマ
+#### 基本
+![淡色テーマ (基本)](images/themes-light-base.png)
+#### 代替
+![淡色テーマ (代替)](images/themes-light-alt.png)
+#### リスト
+![淡色テーマ (リスト)](images/themes-light-list.png)
+#### クロム
+![淡色テーマ (クロム)](images/themes-light-chrome.png)
+### 濃色テーマ
+#### 基本
+![濃色テーマ (基本)](images/themes-dark-base.png)
+#### 代替
+![濃色テーマ (代替)](images/themes-dark-alt.png)
+#### リスト
+![濃色テーマ (リスト)](images/themes-dark-list.png)
+#### クロム
+![濃色テーマ (クロム)](images/themes-dark-chrome.png)
 
 
 <aside class="aside-dev">
@@ -80,9 +80,9 @@ To make designing for themes easier, Windows provides an additional color palett
     </div>
 </aside>
 
-## Accessibility
+## アクセシビリティ
 
-Our palette is optimized for screen usage. We recommend maintaining a minimal contrast ratio for text of 4.5:1 for optimal readability.
+画面を使用するためにパレットが最適化されています。 読みやすさをできる限り高めるため、テキストのコントラスト比を 4.5:1 以上にすることをお勧めします。
 
 
 <!--HONumber=Mar16_HO5-->

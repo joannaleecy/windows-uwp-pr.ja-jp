@@ -7,13 +7,14 @@ template: detail.hbs
 ---
 # ハイパーリンク
 
-ハイパーリンクはユーザーを、アプリの別の部分、別のアプリ、または別のブラウザー アプリを使って呼び出した URI (Uniform Resource Identifier) に誘導します。 XAML アプリにハイパーリンクを追加するには 2 つの方法、ハイパーリンク テキスト要素と HyperlinkButton コントロールがあります。
+ハイパーリンクはユーザーを、アプリの別の部分、別のアプリ、または別のブラウザー アプリを使って呼び出した URI (Uniform Resource Identifier) に誘導します。 XAML アプリにハイパーリンクを追加するには 2 つの方法、**ハイパーリンク** テキスト要素と **HyperlinkButton** コントロールがあります。
+
+![ハイパーリンク ボタン](images/controls/hyperlink-button.png)
 
 <span class="sidebar_heading" style="font-weight: bold;">重要な API</span>
 
--   [**ハイパーリンク テキスト要素 (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn279356)
--   [**HyperlinkButton コントロール (XAML)**](https://msdn.microsoft.com/library/windows/apps/br242739)
--   [**要素 | オブジェクト (HTML)**](https://msdn.microsoft.com/library/windows/apps/hh465917)
+-   [**ハイパーリンク テキスト要素**](https://msdn.microsoft.com/library/windows/apps/dn279356)
+-   [**HyperlinkButton コントロール**](https://msdn.microsoft.com/library/windows/apps/br242739)
 
 ## 適切なコントロールの選択
 
@@ -21,19 +22,15 @@ template: detail.hbs
 
 必要に応じて適切な種類のハイパーリンクを選んでください。
 
--   テキスト コントロール内でインライン ハイパーリンク テキスト要素を使用します。 ハイパーリンク要素は他のテキスト要素とともに表示され、すべて InlineCollection で使うことができます。 自動テキスト折り返しを必要とするが、大きいサイズのヒット ターゲットを必要としない場合は、テキスト ハイパーリンクを使います。 ハイパーリンク テキストのサイズは小さく、ターゲットとして使うのが難しくなることがあります (特にタッチ操作の場合)。
--   スタンドアロンのハイパーリンクには HyperlinkButton を使用します。 HyperlinkButton は、ボタンを使用する任意の場所で使用できる特殊なボタン コントロールです。
--   クリック可能なイメージを作成するには、[イメージ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.image.aspx) と一緒にそのコンテンツとして HyperlinkButton を使用します。
+-   テキスト コントロール内でインライン **ハイパーリンク** テキスト要素を使用します。 ハイパーリンク要素は他のテキスト要素とともに表示され、すべて InlineCollection で使うことができます。 自動テキスト折り返しを必要とするが、大きいサイズのヒット ターゲットを必要としない場合は、テキスト ハイパーリンクを使います。 ハイパーリンク テキストのサイズは小さく、ターゲットとして使うのが難しくなることがあります (特にタッチ操作の場合)。
+-   スタンドアロンのハイパーリンクには **HyperlinkButton** を使用します。 HyperlinkButton は、ボタンを使用する任意の場所で使用できる特殊なボタン コントロールです。
+-   クリック可能なイメージを作成するには[イメージ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.image.aspx) と一緒にそのコンテンツとして **HyperlinkButton** を使用します。
 
 ## 例
 
-ハイパーリンク テキスト要素 | 
-----------|----------------
-![テキスト要素としてのハイパーリンクの例](images/controls_hyperlink-element.png) | インラインで周囲のテキストと表示されるハイパーリンク テキスト要素の例を次に示します。  
+電卓アプリでのハイパーリンク。
 
-HyperlinkButton コントロール | 
-----------|----------------
-![ボタン コントロールとしてのハイパーリンクの例](images/controls_hyperlink-button-image.png) | ハイパーリンク ボタンの例を次に示します。 これは、マークアップ テキストとして表示され、レイアウト コンテナー内に配置できます。 Contoso ロゴ画像もクリック可能なハイパーリンクです。
+![電卓アプリでのハイパーリンクの例](images/control-examples/hyperlinks-calculator.png)
 
 ## ハイパーリンク テキスト要素を作成する
 
@@ -41,16 +38,18 @@ HyperlinkButton コントロール |
 
 ```xml
 <StackPanel Width="200">
-    <TextBlock Style="{StaticResource SubheaderTextBlockStyle}">Privacy</TextBlock>
+    <TextBlock Text="Privacy" Style="{StaticResource SubheaderTextBlockStyle}"/>
     <TextBlock TextWrapping="WrapWholeWords">
         <Span xml:space="preserve"><Run>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Read the </Run><Hyperlink NavigateUri="http://www.contoso.com">Contoso Privacy Statement</Hyperlink><Run> in your browser.</Run> Donec pharetra, enim sit amet mattis tincidunt, felis nisi semper lectus, vel porta diam nisi in augue.</Span>
     </TextBlock>
 </StackPanel>
 
 ```
+ハイパーリンクは、インラインで周囲のテキストと表示されます。
 
->チップ  
-テキスト コントロールでハイパーリンクを XAML のその他のテキスト要素と一緒に使用する場合、[スパン](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx) コンテナーにコンテンツを配置してスパンに `xml:space="preserve"` 属性を適用すると、ハイパーリンクとその他の要素間に空白を保持します。
+![テキスト要素としてのハイパーリンクの例](images/controls_hyperlink-element.png) 
+
+> **ヒント** テキスト コントロールでハイパーリンクを XAML のその他のテキスト要素と一緒に使用する場合、[スパン](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx) コンテナーにコンテンツを配置してスパンに `xml:space="preserve"` 属性を適用すると、ハイパーリンクとその他の要素間に空白を保持します。
 
 ## HyperlinkButton を作成する
 
@@ -69,17 +68,19 @@ HyperlinkButton コントロール |
 </StackPanel>
 
 ```
+テキスト コンテンツの付いたハイパーリンク ボタンは、マークアップ テキストとして表示されます。 Contoso ロゴ画像もクリック可能なハイパーリンクです。
+
+![ボタン コントロールとしてのハイパーリンクの例](images/controls_hyperlink-button-image.png)
 
 ## ナビゲーションの処理
 
-どちらの種類のハイパーリンクでも同様にナビゲーションを処理します。**NavigateUri** プロパティを設定するか、または**クリック**イベントを処理することができます。
+どちらの種類のハイパーリンクでも同様にナビゲーションを処理します。**NavigateUri** プロパティを設定するか、または**クリック** イベントを処理することができます。
 
 **URI に移動**
 
 ハイパーリンクを使用して URI に移動するには、NavigateUri プロパティを設定します。 ユーザーがハイパーリンクをクリックしてまたはタップすると、指定された URI が既定のブラウザーで開きます。 既定のブラウザーは、アプリと別のプロセスで実行されます。
 
-> 注:  
->Http: または https: スキームを使用する必要はありません。 ブラウザーに読み込むのに適したリソース コンテンツがこれらの場所にある場合は、ms-appx:、ms-appdata: または ms リソース: などのスキームを使うことができます。 ただし、file: スキームは明確に禁止されます。 詳しくは、「[URI スキーム](https://msdn.microsoft.com/library/windows/apps/jj655406.aspx)」 をご覧ください。
+> **注**  http: または https: スキームを使用する必要はありません。 ブラウザーに読み込むのに適したリソース コンテンツがこれらの場所にある場合は、ms-appx:、ms-appdata: または ms リソース: などのスキームを使うことができます。 ただし、file: スキームは明確に禁止されます。 詳しくは、「[URI スキーム](https://msdn.microsoft.com/library/windows/apps/jj655406.aspx)」 をご覧ください。
 
 > ユーザーがハイパーリンクをクリックすると、URI の種類とスキームのシステムのハンドラーに NavigateUri プロパティの値が渡されます。 システムは、NavigateUri の指定された URI のスキームに対して登録されているアプリを起動します。
 
@@ -92,25 +93,7 @@ HyperlinkButton コントロール |
 
 通常は、これらはハイパーリンク要素を使用する別の 2 つの方法に相当するので、Click イベントの処理は行わず、NavigateUri 値も指定しません。 既定のブラウザーで URI を開き、NavigateUri の値を指定した場合は、クリック イベントは処理しません。 逆に、クリック イベントを処理する場合は、NavigateUri を指定しないでください。
 
-既定のブラウザーが NavigateUri に指定されている任意の有効なターゲットを読み込むことを防ぐためにClick イベント ハンドラー内でできることはありません。ハイパーリンクがアクティブ化されると操作は自動的に (非同期的に) 行われ、Click イベント ハンドラー内で取り消すことはできません。 
-
-## ハイパーリンク テキスト要素の注意点
-
-このセクションは、ハイパーリンク テキスト要素にのみ該当します。HyperlinkButton コントロールには該当しません。
-
-**入力イベント**
-
-ハイパーリンクは [UIElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.aspx) ではないため、Tapped、PointerPressed などの UI 要素の入力イベントのセットはありません。 代わりに、ハイパーリンクには、独自の Click イベントに加えて、NavigateUri として指定されている任意の URI を読み込むシステムの暗黙的な動作があります。 システムは、ハイパーリンクのアクションを呼び出し、応答で Click イベントを発生させる必要があるすべての入力動作を処理します。
-
-**コンテンツ**
-
-ハイパーリンクには、その [Inlines](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.inlines.aspx) コレクション内にあるコンテンツの制限があります。 具体的には、ハイパーリンクは、[実行](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.run.aspx)および別のハイパーリンクではないその他の[スパン]() タイプのみ許可します。 [InlineUIContainer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.inlineuicontainer.aspx) は、ハイパーリンクの Inlines コレクション内にはありません。 制限されたコンテンツを追加しようとすると、無効な引数の例外、または XAML 解析例外がスローされます。
-
-**ハイパーリンクとテーマまたはスタイルの動作**
-
-ハイパーリンクは [コントロール](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.aspx) から継承しないため、[Style](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.style.aspx) プロパティまたは [Template](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.template.aspx) がありません。 Foreground または FontFamily など、[TextElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.aspx) から継承されたプロパティを編集してハイパーリンクの外観を変更できますが、一般的なスタイルまたはテンプレートを使用して変更を適用することはできません。 テンプレートを使う代わりに、一貫性を保つためにハイパーリンクのプロパティの値の一般的なリソースの使用を検討してください。 一部のプロパティのハイパーリンクは、システムによって提供される {themeresource} マークアップ拡張機能の値から既定の設定を使用します。 これにより、ハイパーリンクの外観は、実行時にシステム テーマが変更されると、適切な方法で切り替わります。
-
-ハイパーリンクの既定の色は、システムのアクセント カラーです。 [Foreground](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.foreground.aspx)  プロパティを設定するとこれを上書きできます。
+既定のブラウザーが NavigateUri に指定されている任意の有効なターゲットを読み込むことを防ぐために Click イベント ハンドラー内でできることはありません。ハイパーリンクがアクティブ化されると操作は自動的に (非同期的に) 行われ、Click イベント ハンドラー内で取り消すことはできません。 
 
 ## ハイパーリンクの下線
 既定では、ハイパーリンクに下線が引かれます。 この下線は、アクセシビリティ要件を満たすために役立つので重要です。 色覚に障碍があるユーザーは、ハイパーリンクとその他のテキストを区別するために下線を使用します。 下線を無効にした場合は、ハイパーリンクを他のテキストと区別するために、FontWeight または FontStyle など、他の書式設定の違いを追加することを検討してください。
@@ -129,6 +112,23 @@ HyperlinkButton コントロール |
 
 下線の無いテキストとして表示されるボタンが必要な場合は、標準のボタン コントロールを使い、そのスタイルのプロパティに組み込みの `TextBlockButtonStyle` システム リソースを適用することを検討してください。
 
+## ハイパーリンク テキスト要素の注意点
+
+このセクションは、ハイパーリンク テキスト要素にのみ該当します。HyperlinkButton コントロールには該当しません。
+
+**入力イベント**
+
+ハイパーリンクは [UIElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.aspx) ではないため、Tapped、PointerPressed などの UI 要素の入力イベントのセットはありません。 代わりに、ハイパーリンクには、独自の Click イベントに加えて、NavigateUri として指定されている任意の URI を読み込むシステムの暗黙的な動作があります。 システムは、ハイパーリンクのアクションを呼び出し、応答で Click イベントを発生させる必要があるすべての入力動作を処理します。
+
+**コンテンツ**
+
+ハイパーリンクには、その [Inlines](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.inlines.aspx) コレクション内にあるコンテンツの制限があります。 具体的には、ハイパーリンクは、[実行](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.run.aspx)および別のハイパーリンクではないその他の[スパン]() タイプのみ許可します。 [InlineUIContainer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.inlineuicontainer.aspx) は、ハイパーリンクの Inlines コレクション内にはありません。 制限されたコンテンツを追加しようとすると、無効な引数の例外、または XAML 解析例外がスローされます。
+
+**ハイパーリンクとテーマまたはスタイルの動作**
+
+ハイパーリンクは [コントロール](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.aspx) から継承しないため、[Style](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.style.aspx) プロパティまたは [Template](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.template.aspx) がありません。 Foreground または FontFamily など、[TextElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.aspx) から継承されたプロパティを編集してハイパーリンクの外観を変更できますが、一般的なスタイルまたはテンプレートを使用して変更を適用することはできません。 テンプレートを使う代わりに、一貫性を保つためにハイパーリンクのプロパティの値の一般的なリソースの使用を検討してください。 一部のプロパティのハイパーリンクは、システムによって提供される {themeresource} マークアップ拡張機能の値から既定の設定を使用します。 これにより、ハイパーリンクの外観は、実行時にシステム テーマが変更されると、適切な方法で切り替わります。
+
+ハイパーリンクの既定の色は、システムのアクセント カラーです。 [Foreground](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.foreground.aspx) プロパティを設定するとこれを上書きできます。
 
 ## 推奨事項
 

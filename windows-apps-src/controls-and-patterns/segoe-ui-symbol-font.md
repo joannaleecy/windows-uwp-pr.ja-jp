@@ -1,60 +1,60 @@
 ---
-Description: This article lists and provides usage guidance for the glyphs that come with the Segoe MDL2 Assets font.
+Description: この記事には、Segoe MDL2 Assets フォントに付属しているグリフの一覧と、その使い方のガイダンスが含まれています。
 Search.Refinement.TopicID: 184
-title: Segoe MDL2 icon guidelines
+title: Segoe MDL2 アイコンのガイドライン
 ms.assetid: DFB215C2-8A61-4957-B662-3B1991AC9BE1
-label: Segoe MDL2 icons
+label: Segoe MDL2 アイコン
 template: detail.hbs
 ---
 
-# Guidelines for Segoe MDL2 icons
+# Segoe MDL2 アイコンのガイドライン
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-**Important APIs**
+**重要な API**
 
--   [**Symbol enumeration (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn252842)
--   [**AppBarIcon enumeration (HTML)**](https://msdn.microsoft.com/library/windows/apps/hh770557)
+-   [**Symbol 列挙値 (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn252842)
+-   [**AppBarIcon 列挙値 (HTML)**](https://msdn.microsoft.com/library/windows/apps/hh770557)
 
-This article lists and provides usage guidance for the glyphs that come with the Segoe MDL2 Assets font. To obtain the font, you must install Windows 10.
+この記事には、Segoe MDL2 Assets フォントに付属しているグリフの一覧と、その使い方のガイダンスが含まれています。 このフォントを入手するには Windows 10 をインストールする必要があります。
 
-## <span id="Recommendations"></span><span id="recommendations"></span><span id="RECOMMENDATIONS"></span>Recommendations
-
-
--   Use these glyphs only when you can explicitly specify the **Segoe MDL2 Assets** font.
-
-## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>Additional usage guidance
+## <span id="Recommendations"></span><span id="recommendations"></span><span id="RECOMMENDATIONS"></span>推奨事項
 
 
-The Windows 8/8.1 **Segoe UI Symbol** icon font has been replaced with the **Segoe MDL2 Assets** font effective with the release of Windows 10. It can be used in much the same manner as the older font, but many glyphs have been redrawn in the Windows 10 icon style with the font’s metrics set so that icons are aligned within the font’s em-square instead of on a typographic baseline.
+-   これらのグリフは、**Segoe MDL2 アセット** フォントを明示的に指定できる場合にのみ使います。
 
-**Note**   An **Em** is a unit of measure in the font. 1 Em in the font is equal to 100% of the specified point value at 72ppi. For example 16pt is equal to 16px at 72ppi (aka 100% Plateau). The new MDL2 fonts are designed so that the footprint of the icon area is a square Em. So if you put 16px for Width and Height in the code, you get a 16x16px icon footprint. That does not always mean the icon will be the full dimension of the footprint.
+## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>その他の使い方のガイダンス
+
+
+Windows 8 または 8.1 の **Segoe UI Symbol** アイコン フォントは、**Segoe MDL2 アセット** フォントに置き換えられました。これは Windows 10 のリリースで有効です。 以前のフォントとほとんど同じ方法で使えますが、多くのグリフは、アイコンが文字体裁のベースライン上に合わせられるのではなくフォントの em スクエア内で調整されるようにフォントのメトリックが設定された、Windows 10 のアイコン スタイルに作り替えられました。
+
+**注** **Em** は、フォントの測定単位です。 フォントの 1 Em は、72 ppi で指定したポイント値の 100% に相当します。 たとえば、16 ポイントは 72 ppi で 16 ピクセルに相当します (100% のプラトーとも言います)。 新しい MDL2 フォントはアイコン領域の面積が正方形の Em となるように設計されています。 このため、コードで幅と高さを 16 ピクセルに指定すると、アイコンの面積は 16 x 16 ピクセルになります。 これは、常にアイコンがこの面積いっぱいに表示されるということではありません。
 
  
 
-The **Segoe UI Symbol** will still be available as a "legacy" resource. But it is advised that all applications be updated to use the new **Segoe MDL2 Assets**.
+**Segoe UI Symbol** は「レガシ」リソースとして使うことができます。 ただし、アプリケーションはすべて、新しい **Segoe MDL2 アセット** を使うように更新することをお勧めします。
 
-Most of the icons and UI controls included in the **Segoe MDL2 Assets** font are mapped to the Private Use Area of Unicode (PUA). The PUA allows font developers to assign private Unicode values to glyphs that don’t map to existing code points. This is useful when creating a symbol font, but it creates an interoperability problem. If the font is not available, the glyphs won’t show up. Only use these glyphs when you can specify the **Segoe MDL2 Assets** font.
+**Segoe MDL2 アセット** フォントに含まれるアイコンや UI コントロールのほとんどは、Unicode の私用領域 (PUA) にマップされます。 フォント開発者は PUA を使って、既にあるコード ポイントにマップされないグリフにプライベート Unicode 値を割り当てることができます。 これは、記号フォントを作成するときに役立ちますが、相互運用性の問題が生じます。 フォントが利用できない場合、グリフは表示されません。 これらのグリフは、 **Segoe MDL2 アセット** フォントを明示的に指定できる場合にのみ使います。
 
-If you are working with tiles, you can't use these glyphs because you can't specify the tile font and PUA glyphs are not available via font-fallback.
+タイルを使っている場合は、タイルのフォントを指定できず、フォントのフォールバックで PUA グリフを使うことができないため、これらのグリフは使うことができません。
 
-Unlike with **Segoe UI Symbol**, the icons in the **Segoe MDL2 Assets** font are not intended for use in-line with text. This means that some older "tricks" like the progressive disclosure arrows no longer apply. Likewise, since all of the new icons are sized and positioned the same, they do not have to be made with zero width; we have just made sure they work as a set. Ideally, you can overlay two icons that were designed as a set and they will fall into place. We may do this to allow colorization in the code. For example, U+EA3A and U+EA3B were created for the Start tile Badge status. Because these are already centered the circle fill can be colored for different states.
+**Segoe UI Symbol** と異なり、**Segoe MDL2 アセット** フォントのアイコンは、テキストとインラインで使用することは意図されていません。 これは、段階的表示の矢印のような一部の古い方法は利用できなくなったことを意味します。 さらに、新しいアイコンはすべて同じ場所に同じ大きさで表示されるため、幅を 0 にして作成する必要はありません。一組で機能することが確認済みです。 一組として設計された 2 つのアイコンは、ぴったり重ねることができ、正しい位置に収まることが理想的です。 これにより、コード内の色付けが可能になります。 たとえば、スタート タイルのバッチ ステータス用に、U+EA3A と U+EA3B が作成されました。 これらは既に中央揃えされているため、ステータスが変わった場合に円を色で塗りつぶすことができます。
 
-Segoe UI Symbol also relied on “zero width” glyphs for layering and colorization, as in this example, a black outline (U+E006) could be drawn on top of the zero-width red heart (U+E00B).
+同様に、Segoe UI Symbol は、重ね合わせたり色付けする際に “幅が 0” のグリフに依存していたため、次の例のように、黒い枠 (U+E006) を幅が 0 の赤いハート (U+E00B) に重ねて描画することができました。
 
-![using a zero-width glyph](images/segoe-ui-symbol-layering.png)
+![幅が 0 のグリフの使用](images/segoe-ui-symbol-layering.png)
 
-All glyphs in **Segoe MDL2 Assets** have the same fixed width with a consistent height and left origin point, so layering and colorization effects can be achieved by drawing glyphs directly on top of each other.
+**Segoe MDL2 アセット**のグリフにはすべて、一貫した高さと、左を原点とした同一の固定幅が設定されているため、重ね合わせや色付けの効果はグリフどうしを直接重ねて描画することで表現できます。
 
-Many of the icons also have mirrored forms available for use in languages that use right-to-left text directionality such as Arabic, Farsi, and Hebrew.
+また、アイコンの多くは、アラビア語、ペルシア語、ヘブライ語などの右から左に書く文字を使う言語でも利用できるように、左右が反転した形式も作成されています。
 
-If you are developing an app in C#/VB/C++ and XAML, you can choose to use the [**Symbol enumeration**](https://msdn.microsoft.com/library/windows/apps/dn252842) instead of the Unicode ID to specify glyphs from the Segoe MDL2 Assets font. If you are developing an app in JavaScript and HTML, you can choose to use the [**AppBarIcon enumeration**](https://msdn.microsoft.com/library/windows/apps/hh770557) instead of the Unicode ID to specify glyphs from the **Segoe MDL2 Assets** font.
+C#/VB/C++ と XAML を使ってアプリを開発している場合は、Unicode ID の代わりに [**Symbol 列挙値**](https://msdn.microsoft.com/library/windows/apps/dn252842) を使って Segoe MDL2 アセット フォントのグリフを指定できます。 JavaScript と HTML を使ってアプリを開発している場合、Unicode ID の代わりに [**AppBarIcon 列挙値**](https://msdn.microsoft.com/library/windows/apps/hh770557)を使って **Segoe MDL2 アセット** フォントのグリフを指定できます。
 
-Also, keep in mind that the **Segoe MDL2 Assets** font includes many more icons than we can show here. Many of these are intended for specialized purposed and are not typically used anywhere else.
+さらに、**Segoe MDL2 アセット** フォントには、以下に示すアイコンもあります。 ここで紹介するアイコンの多くは、特殊な目的のために使用されるもので、それ以外の場合は通常使用しません。
 
-## <span id="Hearts"></span><span id="hearts"></span><span id="HEARTS"></span>Hearts
+## <span id="Hearts"></span><span id="hearts"></span><span id="HEARTS"></span>ハート
 
 
 <table>
@@ -66,10 +66,10 @@ Also, keep in mind that the **Segoe MDL2 Assets** font includes many more icons 
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Code</th>
-<th align="left">Symbol</th>
+<th align="left">コード</th>
+<th align="left">記号</th>
 <th align="left">Enum</th>
-<th align="left">Description</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
@@ -77,38 +77,38 @@ Also, keep in mind that the **Segoe MDL2 Assets** font includes many more icons 
 <td align="left"><p>U+E006</p></td>
 <td align="left"><img src="images/heartlegacy.png" alt="HeartLegacy" /></td>
 <td align="left"><p>HeartLegacy</p></td>
-<td align="left"><p>Outlined heart</p></td>
+<td align="left"><p>輪郭のみのハート</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>U+E0A5</p></td>
 <td align="left"><img src="images/heartfilllegacy.png" alt="HeartFillLegacy" /></td>
 <td align="left"><p>HeartFillLegacy</p></td>
-<td align="left"><p>Solid heart</p></td>
+<td align="left"><p>塗りつぶされたハート</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>U+E007</p></td>
 <td align="left"><img src="images/heartbrokenlegacy.png" alt="HeartBrokenLegacy" /></td>
 <td align="left"><p>HeartBrokenLegacy</p></td>
-<td align="left"><p>Broken heart</p></td>
+<td align="left"><p>ひびの入ったハート</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>U+E00B</p></td>
 <td align="left"><img src="images/heartfillzerowidthlegacy.png" alt="HeartFillZeroWidthLegacy" /></td>
 <td align="left"><p>HeartFillZeroWidthLegacy</p></td>
-<td align="left"><p>Solid heart (zero width)</p></td>
+<td align="left"><p>塗りつぶされたハート (幅が 0)</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>U+E00C</p></td>
 <td align="left"><img src="images/heartbrokenzerowidthlegacy.png" alt="HeartBrokenZeroWidthLegacy" /></td>
 <td align="left"><p>HeartBrokenZeroWidthLegacy</p></td>
-<td align="left"><p>Broken heart (zero width)</p></td>
+<td align="left"><p>ひびの入ったハート (幅が 0)</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <span id="Rating_stars"></span><span id="rating_stars"></span><span id="RATING_STARS"></span>Rating stars
+## <span id="Rating_stars"></span><span id="rating_stars"></span><span id="RATING_STARS"></span>星評価
 
 
 <table>
@@ -120,10 +120,10 @@ Also, keep in mind that the **Segoe MDL2 Assets** font includes many more icons 
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Code</th>
-<th align="left">Symbol</th>
+<th align="left">コード</th>
+<th align="left">記号</th>
 <th align="left">Enum</th>
-<th align="left">Description</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
@@ -131,73 +131,73 @@ Also, keep in mind that the **Segoe MDL2 Assets** font includes many more icons 
 <td align="left">U+E224</td>
 <td align="left"><img src="images/ratingstarlegacy.png" alt="RatingStarLegacy" /></td>
 <td align="left">RatingStarLegacy</td>
-<td align="left">Outlined star</td>
+<td align="left">星 (輪郭のみ)</td>
 </tr>
 <tr class="even">
 <td align="left">U+E0B4</td>
 <td align="left"><img src="images/ratingstarfilllegacy.png" alt="RatingStarFillLegacy" /></td>
 <td align="left">RatingStarFillLegacy</td>
-<td align="left">Solid star</td>
+<td align="left">塗りつぶされた星</td>
 </tr>
 <tr class="odd">
 <td align="left">U+E00A</td>
 <td align="left"><img src="images/ratingstarfillzerowidthlegacy.png" alt="RatingStarFillZeroWidthLegacy" /></td>
 <td align="left">RatingStarFillZeroWidthLegacy</td>
-<td align="left">Solid star (zero width)</td>
+<td align="left">塗りつぶされた星 (幅が 0)</td>
 </tr>
 <tr class="even">
 <td align="left">U+E082</td>
 <td align="left"><img src="images/ratingstarfillreducedpaddinghtmllegacy.png" alt="RatingStarFillReducedPaddingHTMLLegacy" /></td>
 <td align="left">RatingStarFillReducedPaddingHTMLLegacy</td>
-<td align="left">Solid star (reduced padding for use in HTML)</td>
+<td align="left">塗りつぶされた星 (HTML で使用するためにパディングを小さくしたもの)</td>
 </tr>
 <tr class="odd">
 <td align="left">U+E0B5</td>
 <td align="left"><img src="images/ratingstarfillsmalllegacy.png" alt="RatingStarFillSmallLegacy" /></td>
 <td align="left">RatingStarFillSmallLegacy</td>
-<td align="left">Small star</td>
+<td align="left">小さい星</td>
 </tr>
 <tr class="even">
 <td align="left">U+E7C6</td>
 <td align="left"><img src="images/halfstarleft.png" alt="HalfStarLeft" /></td>
 <td align="left">HalfStarLeft</td>
-<td align="left">Half star, left side</td>
+<td align="left">半分の星 (左側)</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>U+E7C7</p></td>
 <td align="left"><img src="images/halfstarright.png" alt="HalfStarRight" /></td>
 <td align="left">HalfStarRight</td>
-<td align="left">Half star, right side</td>
+<td align="left">半分の星 (右側)</td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <span id="Checkbox_components"></span><span id="checkbox_components"></span><span id="CHECKBOX_COMPONENTS"></span>Checkbox components
+## <span id="Checkbox_components"></span><span id="checkbox_components"></span><span id="CHECKBOX_COMPONENTS"></span>チェック ボックス コンポーネント
 
 
 |        |                                                                                |                                 |                         |
 |--------|--------------------------------------------------------------------------------|---------------------------------|-------------------------|
-| Code   | Symbol                                                                         | Enum                            | Description             |
-| U+E001 | ![checkmarklegacy](images/checkmarklegacy.png)                                 | CheckMarkLegacy                 | Check mark              |
-| U+E002 | ![checkboxfilllegacy](images/checkboxfilllegacy.png)                           | CheckboxFillLegacy              | Filled checkbox         |
-| U+E003 | ![checkboxlegacy](images/checkboxlegacy.png)                                   | CheckboxLegacy                  | Checkbox                |
-| U+E004 | ![checkboxindeterminatelegacy](images/checkboxindeterminatelegacy.png)         | CheckboxIndeterminateLegacy     | Indeterminate state     |
-| U+E005 | ![checkboxcompositereversedlegacy](images/checkboxcompositereversedlegacy.png) | CheckboxCompositeReversedLegacy | Reversed                |
-| U+E008 | ![checkmarkzerowidthlegacy](images/checkmarkzerowidthlegacy.png)               | CheckMarkZeroWidthLegacy        | Check mark (zero width) |
-| U+E009 | ![checkboxfillzerowidthlegacy](images/checkboxfillzerowidthlegacy.png)         | CheckboxFillZeroWidthLegacy     | Fill (zero width)       |
-| U+E0A2 | ![checkboxcompositelegacy](images/checkboxcompositelegacy.png)                 | CheckboxCompositeLegacy         | Composite               |
-| U+E739 | ![checkbox](images/checkbox.png)                                               | Checkbox                        | Checkbox                |
-| U+E73A | ![checkboxcomposite](images/checkboxcomposite.png)                             | CheckboxComposite               | Composite checkbox      |
-| U+E73B | ![checkboxfill](images/checkboxfill.png)                                       | CheckboxFill                    | Filled checkbox         |
-| U+E73C | ![checkboxindeterminate](images/checkboxindeterminate.png)                     | CheckboxIndeterminate           | Indeterminate state     |
-| U+E73D | ![checkboxcompositereversed](images/checkboxcompositereversed.png)             | CheckboxCompositeReversed       | Reversed composite      |
-| U+E73E | ![checkmark](images/checkmark.png)                                             | CheckMark                       | Check mark              |
+| コード   | 記号                                                                         | Enum                            | Description             |
+| U+E001 | ![checkmarklegacy](images/checkmarklegacy.png)                                 | CheckMarkLegacy                 | チェック マーク              |
+| U+E002 | ![checkboxfilllegacy](images/checkboxfilllegacy.png)                           | CheckboxFillLegacy              | 塗りつぶされたチェック ボックス         |
+| U+E003 | ![checkboxlegacy](images/checkboxlegacy.png)                                   | CheckboxLegacy                  | チェック ボックス                |
+| U+E004 | ![checkboxindeterminatelegacy](images/checkboxindeterminatelegacy.png)         | CheckboxIndeterminateLegacy     | 不確定の状態     |
+| U+E005 | ![checkboxcompositereversedlegacy](images/checkboxcompositereversedlegacy.png) | CheckboxCompositeReversedLegacy | 反転                |
+| U+E008 | ![checkmarkzerowidthlegacy](images/checkmarkzerowidthlegacy.png)               | CheckMarkZeroWidthLegacy        | チェック マーク (幅が 0) |
+| U+E009 | ![checkboxfillzerowidthlegacy](images/checkboxfillzerowidthlegacy.png)         | CheckboxFillZeroWidthLegacy     | 塗りつぶし (幅が 0)       |
+| U+E0A2 | ![checkboxcompositelegacy](images/checkboxcompositelegacy.png)                 | CheckboxCompositeLegacy         | コンポジット               |
+| U+E739 | ![チェック ボックス](images/checkbox.png)                                               | チェック ボックス                        | チェック ボックス                |
+| U+E73A | ![checkboxcomposite](images/checkboxcomposite.png)                             | CheckboxComposite               | コンポジット チェックボックス      |
+| U+E73B | ![checkboxfill](images/checkboxfill.png)                                       | CheckboxFill                    | 塗りつぶされたチェック ボックス         |
+| U+E73C | ![checkboxindeterminate](images/checkboxindeterminate.png)                     | CheckboxIndeterminate           | 不確定の状態     |
+| U+E73D | ![checkboxcompositereversed](images/checkboxcompositereversed.png)             | CheckboxCompositeReversed       | 反転したコンポジット      |
+| U+E73E | ![checkmark](images/checkmark.png)                                             | CheckMark                       | チェック マーク              |
 
  
 
-## <span id="Miscellaneous"></span><span id="miscellaneous"></span><span id="MISCELLANEOUS"></span>Miscellaneous
+## <span id="Miscellaneous"></span><span id="miscellaneous"></span><span id="MISCELLANEOUS"></span>その他
 
 
 <table>
@@ -209,8 +209,8 @@ Also, keep in mind that the **Segoe MDL2 Assets** font includes many more icons 
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Code</th>
-<th align="left">Symbol</th>
+<th align="left">コード</th>
+<th align="left">記号</th>
 <th align="left">Enum</th>
 <th align="left">Description</th>
 </tr>
@@ -220,7 +220,7 @@ Also, keep in mind that the **Segoe MDL2 Assets** font includes many more icons 
 <td align="left"><p>U+E134</p></td>
 <td align="left"><img src="images/commentlegacy.png" alt="CommentLegacy" /></td>
 <td align="left">CommentLegacy</td>
-<td align="left">Comment</td>
+<td align="left">コメント</td>
 </tr>
 <tr class="even">
 <td align="left"><p>U+E113</p></td>
@@ -238,7 +238,7 @@ Also, keep in mind that the **Segoe MDL2 Assets** font includes many more icons 
 <td align="left"><p>U+E734</p></td>
 <td align="left"><img src="images/favoritestar.png" alt="FavoriteStar" /></td>
 <td align="left">FavoriteStar</td>
-<td align="left">Favorite outlined</td>
+<td align="left">お気に入り (輪郭のみ)</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>U+E735</p></td>
@@ -286,19 +286,19 @@ Also, keep in mind that the **Segoe MDL2 Assets** font includes many more icons 
 <td align="left"><p>U+E20B</p></td>
 <td align="left"><img src="images/mailmessagelegacy.png" alt="MailMessageLegacy" /></td>
 <td align="left">MailMessageLegacy</td>
-<td align="left">Mail legacy</td>
+<td align="left">メール (レガシ)</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>U+E248</p></td>
 <td align="left"><img src="images/replylegacy.png" alt="ReplyLegacy" /></td>
 <td align="left">ReplyLegacy</td>
-<td align="left">Reply</td>
+<td align="left">返信する</td>
 </tr>
 <tr class="even">
 <td align="left"><p>U+E249</p></td>
 <td align="left"><img src="images/favorite2legacy.png" alt="Favorite2Legacy" /></td>
 <td align="left">Favorite2Legacy</td>
-<td align="left">Favorite filled</td>
+<td align="left">塗りつぶされたお気に入り</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>U+E24E</p></td>
@@ -310,41 +310,41 @@ Also, keep in mind that the **Segoe MDL2 Assets** font includes many more icons 
 <td align="left"><p>U+E25A</p></td>
 <td align="left"><img src="images/mobilecontactlegacy.png" alt="MobileContactLegacy" /></td>
 <td align="left">MobileContactLegacy</td>
-<td align="left">Mobile contact</td>
+<td align="left">携帯電話の連絡先</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>U+E25B</p></td>
 <td align="left"><img src="images/blockedlegacy.png" alt="BlockedLegacy" /></td>
 <td align="left">BlockedLegacy</td>
-<td align="left">Blocked contact</td>
+<td align="left">ブロックされた連絡先</td>
 </tr>
 <tr class="even">
 <td align="left"><p>U+E25C</p></td>
 <td align="left"><img src="images/typingindicatorlegacy.png" alt="TypingIndicatorLegacy" /></td>
 <td align="left">TypingIndicatorLegacy</td>
-<td align="left">Typing indicator</td>
+<td align="left">入力インジケーター</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>U+E25D</p></td>
 <td align="left"><img src="images/presencechickletvideolegacy.png" alt="PresenceChickletVideoLegacy" /></td>
 <td align="left">PresenceChickletVideoLegacy</td>
-<td align="left">Video presence chicklet</td>
+<td align="left">ビデオのプレゼンス情報のアイコン</td>
 </tr>
 <tr class="even">
 <td align="left"><p>U+E25E</p></td>
 <td align="left"><img src="images/presencechickletlegacy.png" alt="PresenceChickletLegacy" /></td>
 <td align="left">PresenceChickletLegacy</td>
-<td align="left">Presence chicklet</td>
+<td align="left">プレゼンス情報のアイコン</td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <span id="Scroll_bar_arrows"></span><span id="scroll_bar_arrows"></span><span id="SCROLL_BAR_ARROWS"></span>Scroll bar arrows
+## <span id="Scroll_bar_arrows"></span><span id="scroll_bar_arrows"></span><span id="SCROLL_BAR_ARROWS"></span>スクロール バーの矢印
 
 
-| Code   | Symbol                                                                   | Enum                         |
+| コード   | 記号                                                                   | Enum                         |
 |--------|--------------------------------------------------------------------------|------------------------------|
 | U+E00E | ![scrollchevronleftlegacy](images/scrollchevronleftlegacy.png)           | ScrollChevronLeftLegacy      |
 | U+E00F | ![scrollchevronrightlegacy](images/scrollchevronrightlegacy.png)         | ScrollChevronRightLegacy     |
@@ -357,38 +357,39 @@ Also, keep in mind that the **Segoe MDL2 Assets** font includes many more icons 
 
  
 
-## <span id="Back_buttons"></span><span id="back_buttons"></span><span id="BACK_BUTTONS"></span>Back buttons
+## <span id="Back_buttons"></span><span id="back_buttons"></span><span id="BACK_BUTTONS"></span>戻るボタン
 
 
-Legacy glyphs for back buttons are available in 2 different sizes so that the weight of the outer ring is consistent at 20pt, and 42pt. Two new proportional chrome back buttons are also available. These glyphs are designed to support layering.
+従来の戻るボタンのグリフは 2 つの異なるサイズのものを使うことができるため、20 ポイントと 42 ポイントの両方で外側の輪の太さの一貫性を確保できます。 2 つの新しいプロポーショナル クロムの戻るボタンも使用できます。 これらのグリフは重ねることができます。
 
-| Code   | Symbol                                                                     | Enum                          | Description                               |
+| コード   | 記号                                                                     | Enum                          | Description                               |
 |--------|----------------------------------------------------------------------------|-------------------------------|-------------------------------------------|
-| U+E0C4 | ![backbttnarrow20legacy](images/backbttnarrow20legacy.png)                 | BackBttnArrow20Legacy         | Back button arrow, 20pt                   |
-| U+E0A6 | ![backbttnarrow42legacy](images/backbttnarrow42legacy.png)                 | BackBttnArrow42Legacy         | Back button arrow, 42pt                   |
-| U+E0AD | ![backbttnmirroredarrow20legacy](images/backbttnmirroredarrow20legacy.png) | BackBttnMirroredArrow20Legacy | Mirrored back button arrow reversed, 20pt |
-| U+E0AB | ![backbttnmirroredarrow42legacy](images/backbttnmirroredarrow42legacy.png) | BackBttnMirroredArrow42Legacy | Mirrored back button arrow reversed, 42pt |
-| U+E830 | ![chromeback](images/chromeback.png)                                       | ChromeBack                    | Chrome back button                        |
-| U+EA47 | ![chromebackmirrored](images/chromebackmirrored.png)                       | ChromeBackMirrored            | Chrome back mirrored button               |
+| U+E0C4 | ![backbttnarrow20legacy](images/backbttnarrow20legacy.png)                 | BackBttnArrow20Legacy         | 戻るボタンの矢印、20pt                   |
+| U+E0A6 | ![backbttnarrow42legacy](images/backbttnarrow42legacy.png)                 | BackBttnArrow42Legacy         | 戻るボタンの矢印、42pt                   |
+| U+E0AD | ![backbttnmirroredarrow20legacy](images/backbttnmirroredarrow20legacy.png) | BackBttnMirroredArrow20Legacy | 左右と白黒が反転して矢印も反転した戻るボタン、20pt |
+| U+E0AB | ![backbttnmirroredarrow42legacy](images/backbttnmirroredarrow42legacy.png) | BackBttnMirroredArrow42Legacy | 左右が反転した戻るボタンの矢印、42pt |
+| U+E830 | ![chromeback](images/chromeback.png)                                       | ChromeBack                    | Chrome の戻るボタン                        |
+| U+EA47 | ![chromebackmirrored](images/chromebackmirrored.png)                       | ChromeBackMirrored            | Chrome の左右が反転した戻るボタン               |
 
  
 
-## <span id="Back_arrows_for_HTML"></span><span id="back_arrows_for_html"></span><span id="BACK_ARROWS_FOR_HTML"></span>Back arrows for HTML
+## <span id="Back_arrows_for_HTML"></span><span id="back_arrows_for_html"></span><span id="BACK_ARROWS_FOR_HTML"></span>HTML の戻るボタン
 
 
-Add additional code to create circles around these glyphs.
+これらのグリフの周囲に円を作成するには別のコードを追加します。
 
-| Code   | Symbol                                                         | Enum                    | Description                |
+| コード   | 記号                                                         | Enum                    | Description                |
 |--------|----------------------------------------------------------------|-------------------------|----------------------------|
-| U+E0D5 | ![arrowhtmllegacy](images/arrowhtmllegacy.png)                 | ArrowHTMLLegacy         | Arrow for HTML use         |
-| U+E0AE | ![arrowhtmlmirroredlegacy](images/arrowhtmlmirroredlegacy.png) | ArrowHTMLMirroredLegacy | Mirrored version of U+E0D5 |
+| U+E0D5 | ![arrowhtmllegacy](images/arrowhtmllegacy.png)                 | ArrowHTMLLegacy         | HTML 用の矢印         |
+| U+E0AE | ![arrowhtmlmirroredlegacy](images/arrowhtmlmirroredlegacy.png) | ArrowHTMLMirroredLegacy | U+E0D5 の左右が反転したバージョン |
 
  
 
-## <span id="AppBar_glyphs"></span><span id="appbar_glyphs"></span><span id="APPBAR_GLYPHS"></span>AppBar glyphs
+## <span id="AppBar_glyphs"></span><span id="appbar_glyphs"></span><span id="APPBAR_GLYPHS"></span>AppBar のグリフ
 
 
-Use glyphs from the following list for an [**AppBar**](https://msdn.microsoft.com/library/windows/apps/br229670). By convention, they're referred to by their enum names. And they're designed as 20x20px icons with no circle.
+[
+            **AppBar**](https://msdn.microsoft.com/library/windows/apps/br229670) では、次の一覧のグリフを使います。 慣例として、これらは enum 名で参照されます。 これらは、丸で囲まれていない 20 x 20 ピクセルのアイコンとして設計されています。
 
 <table>
 <colgroup>
@@ -399,10 +400,10 @@ Use glyphs from the following list for an [**AppBar**](https://msdn.microsoft.co
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Code</th>
-<th align="left">Symbol</th>
+<th align="left">コード</th>
+<th align="left">記号</th>
 <th align="left">Enum</th>
-<th align="left">Description</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
@@ -415,7 +416,7 @@ Use glyphs from the following list for an [**AppBar**](https://msdn.microsoft.co
 <tr class="even">
 <td align="left">U+E910</td>
 <td align="left"><img src="images/accounts.png" alt="Accounts" /></td>
-<td align="left">Accounts</td>
+<td align="left">アカウント</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
@@ -433,7 +434,7 @@ Use glyphs from the following list for an [**AppBar**](https://msdn.microsoft.co
 <tr class="odd">
 <td align="left">U+E7EF</td>
 <td align="left"><img src="images/admin.png" alt="Admin" /></td>
-<td align="left">Admin</td>
+<td align="left">管理者</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
@@ -475,13 +476,13 @@ Use glyphs from the following list for an [**AppBar**](https://msdn.microsoft.co
 <tr class="even">
 <td align="left">U+E8D6</td>
 <td align="left"><img src="images/audio.png" alt="Audio" /></td>
-<td align="left">Audio</td>
+<td align="left">オーディオ</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
 <td align="left">U+E72B</td>
 <td align="left"><img src="images/back.png" alt="Back" /></td>
-<td align="left">Back</td>
+<td align="left">戻る</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
@@ -529,7 +530,7 @@ Use glyphs from the following list for an [**AppBar**](https://msdn.microsoft.co
 <tr class="odd">
 <td align="left">U+E787</td>
 <td align="left"><img src="images/calendar.png" alt="Calendar" /></td>
-<td align="left">Calendar</td>
+<td align="left">カレンダー</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
@@ -553,13 +554,13 @@ Use glyphs from the following list for an [**AppBar**](https://msdn.microsoft.co
 <tr class="odd">
 <td align="left">U+E722</td>
 <td align="left"><img src="images/camera.png" alt="Camera" /></td>
-<td align="left">Camera</td>
+<td align="left">カメラ</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
 <td align="left">U+E711</td>
 <td align="left"><img src="images/cancel.png" alt="Cancel" /></td>
-<td align="left">Cancel</td>
+<td align="left">キャンセル</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
@@ -589,7 +590,7 @@ Use glyphs from the following list for an [**AppBar**](https://msdn.microsoft.co
 <tr class="odd">
 <td align="left">U+E894</td>
 <td align="left"><img src="images/clear.png" alt="Clear" /></td>
-<td align="left">Clear</td>
+<td align="left">明確である</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
@@ -607,13 +608,13 @@ Use glyphs from the following list for an [**AppBar**](https://msdn.microsoft.co
 <tr class="even">
 <td align="left">U+E753</td>
 <td align="left"><img src="images/cloud.png" alt="Cloud" /></td>
-<td align="left">Cloud</td>
+<td align="left">クラウド</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
 <td align="left">U+E90A</td>
 <td align="left"><img src="images/comment.png" alt="Comment" /></td>
-<td align="left">Comment</td>
+<td align="left">コメント</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
@@ -649,7 +650,7 @@ Use glyphs from the following list for an [**AppBar**](https://msdn.microsoft.co
 <tr class="odd">
 <td align="left">U+E7A8</td>
 <td align="left"><img src="images/crop.png" alt="Crop" /></td>
-<td align="left">Crop</td>
+<td align="left">トリミング</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
@@ -661,7 +662,7 @@ Use glyphs from the following list for an [**AppBar**](https://msdn.microsoft.co
 <tr class="odd">
 <td align="left">U+E74D</td>
 <td align="left"><img src="images/delete.png" alt="Delete" /></td>
-<td align="left">Delete</td>
+<td align="left">削除</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
@@ -709,19 +710,19 @@ Use glyphs from the following list for an [**AppBar**](https://msdn.microsoft.co
 <tr class="odd">
 <td align="left">U+E8A5</td>
 <td align="left"><img src="images/document.png" alt="Document" /></td>
-<td align="left">Document</td>
+<td align="left">ドキュメント</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
 <td align="left">U+E896</td>
 <td align="left"><img src="images/download.png" alt="Download" /></td>
-<td align="left">Download</td>
+<td align="left">ダウンロード</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
 <td align="left">U+E70F</td>
 <td align="left"><img src="images/edit.png" alt="Edit" /></td>
-<td align="left">Edit</td>
+<td align="left">編集</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
@@ -811,7 +812,7 @@ Use glyphs from the following list for an [**AppBar**](https://msdn.microsoft.co
 <tr class="even">
 <td align="left">U+E72A</td>
 <td align="left"><img src="images/forward.png" alt="Forward" /></td>
-<td align="left">Forward</td>
+<td align="left">進む</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
@@ -859,7 +860,7 @@ Use glyphs from the following list for an [**AppBar**](https://msdn.microsoft.co
 <tr class="even">
 <td align="left">U+E897</td>
 <td align="left"><img src="images/help.png" alt="Help" /></td>
-<td align="left">Help</td>
+<td align="left">ヘルプ</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
@@ -871,7 +872,7 @@ Use glyphs from the following list for an [**AppBar**](https://msdn.microsoft.co
 <tr class="even">
 <td align="left">U+E7E6</td>
 <td align="left"><img src="images/highlight.png" alt="Highlight" /></td>
-<td align="left">Highlight</td>
+<td align="left">ハイライト</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
@@ -919,7 +920,7 @@ Use glyphs from the following list for an [**AppBar**](https://msdn.microsoft.co
 <tr class="even">
 <td align="left">U+E8F1</td>
 <td align="left"><img src="images/library.png" alt="Library" /></td>
-<td align="left">Library</td>
+<td align="left">ライブラリ</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
@@ -943,7 +944,7 @@ Use glyphs from the following list for an [**AppBar**](https://msdn.microsoft.co
 <tr class="even">
 <td align="left">U+EA37</td>
 <td align="left"><img src="images/list.png" alt="List" /></td>
-<td align="left">List</td>
+<td align="left">一覧</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
@@ -1015,7 +1016,7 @@ Use glyphs from the following list for an [**AppBar**](https://msdn.microsoft.co
 <tr class="even">
 <td align="left">U+E720</td>
 <td align="left"><img src="images/microphone.png" alt="Microphone" /></td>
-<td align="left">Microphone</td>
+<td align="left">マイク</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
@@ -1093,7 +1094,7 @@ Use glyphs from the following list for an [**AppBar**](https://msdn.microsoft.co
 <tr class="odd">
 <td align="left">U+E8B4</td>
 <td align="left"><img src="images/orientation.png" alt="Orientation" /></td>
-<td align="left">Orientation</td>
+<td align="left">向き</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
@@ -1111,13 +1112,13 @@ Use glyphs from the following list for an [**AppBar**](https://msdn.microsoft.co
 <tr class="even">
 <td align="left">U+E7C3</td>
 <td align="left"><img src="images/page.png" alt="Page" /></td>
-<td align="left">Page</td>
+<td align="left">ページ</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
 <td align="left">U+E77F</td>
 <td align="left"><img src="images/paste.png" alt="Paste" /></td>
-<td align="left">Paste</td>
+<td align="left">貼り付け</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
@@ -1135,7 +1136,7 @@ Use glyphs from the following list for an [**AppBar**](https://msdn.microsoft.co
 <tr class="even">
 <td align="left">U+E8D7</td>
 <td align="left"><img src="images/permissions.png" alt="Permissions" /></td>
-<td align="left">Permissions</td>
+<td align="left">アクセス許可</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
@@ -1153,7 +1154,7 @@ Use glyphs from the following list for an [**AppBar**](https://msdn.microsoft.co
 <tr class="odd">
 <td align="left">U+E718</td>
 <td align="left"><img src="images/pin.png" alt="Pin" /></td>
-<td align="left">Pin</td>
+<td align="left">ピン</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
@@ -1183,7 +1184,7 @@ Use glyphs from the following list for an [**AppBar**](https://msdn.microsoft.co
 <tr class="even">
 <td align="left">U+E892</td>
 <td align="left"><img src="images/previous.png" alt="Previous" /></td>
-<td align="left">Previous</td>
+<td align="left">前へ</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
@@ -1213,7 +1214,7 @@ Use glyphs from the following list for an [**AppBar**](https://msdn.microsoft.co
 <tr class="odd">
 <td align="left">U+E72C</td>
 <td align="left"><img src="images/refresh.png" alt="Refresh" /></td>
-<td align="left">Refresh</td>
+<td align="left">更新</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
@@ -1279,7 +1280,7 @@ Use glyphs from the following list for an [**AppBar**](https://msdn.microsoft.co
 <tr class="even">
 <td align="left">U+E74E</td>
 <td align="left"><img src="images/save.png" alt="Save" /></td>
-<td align="left">Save</td>
+<td align="left">保存</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
@@ -1321,7 +1322,7 @@ Use glyphs from the following list for an [**AppBar**](https://msdn.microsoft.co
 <tr class="odd">
 <td align="left">U+E713</td>
 <td align="left"><img src="images/settings.png" alt="Settings" /></td>
-<td align="left">Settings</td>
+<td align="left">設定</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
@@ -1411,7 +1412,7 @@ Use glyphs from the following list for an [**AppBar**](https://msdn.microsoft.co
 <tr class="even">
 <td align="left">U+E8EC</td>
 <td align="left"><img src="images/tag.png" alt="Tag" /></td>
-<td align="left">Tag</td>
+<td align="left">タグ</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
@@ -1477,7 +1478,7 @@ Use glyphs from the following list for an [**AppBar**](https://msdn.microsoft.co
 <tr class="odd">
 <td align="left">U+E74A</td>
 <td align="left"><img src="images/up.png" alt="Up" /></td>
-<td align="left">Up</td>
+<td align="left">上へ</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
@@ -1495,7 +1496,7 @@ Use glyphs from the following list for an [**AppBar**](https://msdn.microsoft.co
 <tr class="even">
 <td align="left">U+E890</td>
 <td align="left"><img src="images/view.png" alt="View" /></td>
-<td align="left">View</td>
+<td align="left">表示</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
@@ -1519,7 +1520,7 @@ Use glyphs from the following list for an [**AppBar**](https://msdn.microsoft.co
 <tr class="even">
 <td align="left">U+E909</td>
 <td align="left"><img src="images/world.png" alt="World" /></td>
-<td align="left">World</td>
+<td align="left">世界</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
@@ -1531,7 +1532,7 @@ Use glyphs from the following list for an [**AppBar**](https://msdn.microsoft.co
 <tr class="even">
 <td align="left">U+E71E</td>
 <td align="left"><img src="images/zoom.png" alt="Zoom" /></td>
-<td align="left">Zoom</td>
+<td align="left">ズーム</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
@@ -1551,10 +1552,10 @@ Use glyphs from the following list for an [**AppBar**](https://msdn.microsoft.co
 
  
 
-## <span id="Battery_icons"></span><span id="battery_icons"></span><span id="BATTERY_ICONS"></span>Battery icons
+## <span id="Battery_icons"></span><span id="battery_icons"></span><span id="BATTERY_ICONS"></span>バッテリ アイコン
 
 
-| Code | Symbol                                             | Enum              | Code | Symbol                                                  | Enum                |
+| コード | 記号                                             | Enum              | コード | 記号                                                  | Enum                |
 |------|----------------------------------------------------|-------------------|------|---------------------------------------------------------|---------------------|
 | E996 | ![batteryunknown](images/batteryunknown.png)       | BatteryUnknown    | EC02 | ![mobbatteryunknown](images/mobbatteryunknown.png)      | MobBatteryUnknown   |
 | E850 | ![battery0](images/battery0.png)                   | Battery0          | EBA0 | ![mobbattery0](images/mobbattery0.png)                  | MobBattery0         |
@@ -1593,14 +1594,14 @@ Use glyphs from the following list for an [**AppBar**](https://msdn.microsoft.co
 
  
 
-## <span id="related_topics"></span>Related topics
+## <span id="related_topics"></span>関連トピック
 
 
-**For designers**
-* [Guidelines for fonts](fonts.md)
-* [W3C on which languages are written right-to-left (RTL)?](http://www.i18nguy.com/temp/rtl.mdl)
-**For developers (XAML)**
-* [**Symbol enumeration**](https://msdn.microsoft.com/library/windows/apps/dn252842)
+**デザイナー向け**
+* [フォントのガイドライン](fonts.md)
+* [W3C: 右から左に書く (RTL) 言語](http://www.i18nguy.com/temp/rtl.mdl)
+**開発者向け (XAML)**
+* [**Symbol 列挙値**](https://msdn.microsoft.com/library/windows/apps/dn252842)
 
 
  

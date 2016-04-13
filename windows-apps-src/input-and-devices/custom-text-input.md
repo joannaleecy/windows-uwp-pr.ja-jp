@@ -1,166 +1,176 @@
 ---
-Description: The core text APIs in the Windows.UI.Text.Core namespace enable a Universal Windows Platform (UWP) app to receive text input from any text service supported on Windows devices.
-title: Custom text input overview
+Description: Windows.UI.Text.Core 名前空間の基本的なテキスト API によって、ユニバーサル Windows プラットフォーム (UWP) アプリは、Windows デバイスでサポートされている任意のテキスト サービスからテキスト入力を受け取ることができます。
+title: カスタム テキスト入力の概要
 ms.assetid: 58F5F7AC-6A4B-45FC-8C2A-942730FD7B74
-label: Custom text input
+label: カスタム テキスト入力
 template: detail.hbs
 ---
 
-# Custom text input
+# カスタム テキスト入力
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-The core text APIs in the [**Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238) namespace enable a Universal Windows Platform (UWP) app to receive text input from any text service supported on Windows devices. The APIs are similar to the [Text Services Framework](https://msdn.microsoft.com/library/windows/desktop/ms629032) APIs in that the app is not required to have detailed knowledge of the text services. This enables the app to receive text in any language and from any input type, like keyboard, speech, or pen.
+[
+            **Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238) 名前空間の基本的なテキスト API によって、ユニバーサル Windows プラットフォーム (UWP) アプリは、Windows デバイスでサポートされている任意のテキスト サービスからテキスト入力を受け取ることができます。 この API は、アプリがテキスト サービスの詳細を認識している必要がないという点で、[テキスト サービス フレームワーク](https://msdn.microsoft.com/library/windows/desktop/ms629032) API に似ています。 これにより、アプリは、任意の言語で、キーボード、音声、ペンなどの任意の入力の種類からテキストを受け取ることができます。
 
 
-**Important APIs**
+**重要な API**
 
 -   [**Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238)
 -   [**CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158)
 
 
-## <span id="Why_use_core_text_APIs_"></span><span id="why_use_core_text_apis_"></span><span id="WHY_USE_CORE_TEXT_APIS_"></span>Why use core text APIs?
+## <span id="Why_use_core_text_APIs_"></span><span id="why_use_core_text_apis_"></span><span id="WHY_USE_CORE_TEXT_APIS_"></span>基本的なテキスト API を使う理由
 
 
-For many apps, the XAML or HTML text box controls are sufficient for text input and editing. However, if your app handles complex text scenarios, like a word processing app, you might need the flexibility of a custom text edit control. You could use the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) keyboard APIs to create your text edit control, but these don't provide a way to receive composition-based text input, which is required to support East Asian languages.
+多くのアプリでは、テキストの入力や編集には XAML や HTML のテキスト ボックス コントロールで十分です。 ただし、ワード プロセッシング アプリなど、アプリでテキストの複雑なシナリオを処理する場合は、柔軟なカスタム テキスト編集コントロールが必要になる可能性があります。 [
+            **CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) キーボード API を使ってテキスト編集コントロールを作成できますが、これらは、東アジアの言語をサポートするために必要なコンポジション ベースのテキスト入力を受け取る方法を提供しません。
 
-Instead, use the [**Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238) APIs when you need to create a custom text edit control. These APIs are designed to give you a lot of flexibility in processing text input, in any language, and let you provide the text experience best suited to your app. Text input and edit controls built with the core text APIs can receive text input from all existing text input methods on Windows devices, from [Text Services Framework](https://msdn.microsoft.com/library/windows/desktop/ms629032) based Input Method Editors (IMEs) and handwriting on PCs to the WordFlow keyboard (which provides auto-correction, prediction, and dictation) on mobile devices.
+カスタム テキスト編集コントロールを作成する必要がある場合は、代わりに [**Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238) API を使います。 これらの API は、任意の言語でのテキスト入力の処理において高い柔軟性を実現するように設計されており、アプリに最適なテキスト エクスペリエンスを提供できます。 基本的なテキスト API に組み込まれているテキスト入力および編集コントロールは、Windows デバイスでの既存のすべてのテキスト入力方式からテキスト入力を受け取ることができます。これには、[テキスト サービス フレームワーク](https://msdn.microsoft.com/library/windows/desktop/ms629032) ベースの入力方式エディター (IME) や PC での手書き入力、モバイル デバイスでの WordFlow キーボード (自動修正、予測入力、ディクテーションを提供する) が含まれます。
 
-## <span id="Architecture"></span><span id="architecture"></span><span id="ARCHITECTURE"></span>Architecture
-
-
-The following is a simple representation of the text input system.
-
--   "Application" represents a UWP app hosting a custom edit control built using the core text APIs.
--   The [**Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238) APIs facilitate the communication with text services through Windows. Communication between the text edit control and the text services is handled primarily through a [**CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158) object that provides the methods and events to facilitate the communication.
-
-![core text architecture diagram](images/coretext/architecture.png)
-
-## <span id="Text_ranges_and_selection"></span><span id="text_ranges_and_selection"></span><span id="TEXT_RANGES_AND_SELECTION"></span>Text ranges and selection
+## <span id="Architecture"></span><span id="architecture"></span><span id="ARCHITECTURE"></span>アーキテクチャ
 
 
-Edit controls provide space for text entry and users expect to edit text anywhere in this space. Here, we explain the text positioning system used by the core text APIs and how ranges and selections are represented in this system.
+テキスト入力システムの単純な例を次に示します。
 
-### <span id="Application_caret_position"></span><span id="application_caret_position"></span><span id="APPLICATION_CARET_POSITION"></span>Application caret position
+-   "アプリケーション" は、基本的なテキスト API を使って構築されたカスタム編集コントロールをホストする UWP アプリを表します。
+-   [
+            **Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238) API は、Windows 経由でのテキスト サービスとの通信を容易にします。 テキスト編集コントロールとテキスト サービス間の通信は、主に [**CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158) オブジェクトによって処理されます。このオブジェクトが通信を容易にするメソッドとイベントを提供します。
 
-Text ranges used with the core text APIs are expressed in terms of caret positions. An "Application Caret Position (ACP)" is a zero-based number that indicates the count of characters from the start of the text stream immediately before the caret, as shown here.
+![基本的なテキストのアーキテクチャ図](images/coretext/architecture.png)
 
-![example text stream diagram](images/coretext/stream-1.png)
-### <span id="Text_ranges_and_selection"></span><span id="text_ranges_and_selection"></span><span id="TEXT_RANGES_AND_SELECTION"></span>Text ranges and selection
+## <span id="Text_ranges_and_selection"></span><span id="text_ranges_and_selection"></span><span id="TEXT_RANGES_AND_SELECTION"></span>テキスト範囲と選択範囲
 
-Text ranges and selections are represented by the [**CoreTextRange**](https://msdn.microsoft.com/library/windows/apps/dn958201) structure which contains two fields:
 
-| Field                  | Data type                                                                 | Description                                                                      |
+編集コントロールはテキスト入力用の領域を提供し、ユーザーはこの領域の任意の場所でテキストを編集できることを期待しています。 ここでは、基本的なテキスト API で使用されるテキスト配置システムについて説明します。また、範囲と選択範囲がこのシステムでどのように表現されるかについても説明します。
+
+### <span id="Application_caret_position"></span><span id="application_caret_position"></span><span id="APPLICATION_CARET_POSITION"></span>アプリケーションのカーソル位置
+
+基本的なテキスト API で使用されるテキスト範囲は、カーソル位置の観点で表されます。 "アプリケーション カーソル位置 (ACP)" は、次に示すように、カーソルの直前にあるテキスト ストリームの先頭からの文字数を示す 0 から始まる数値です。
+
+![テキスト ストリームの例の図](images/coretext/stream-1.png)
+### <span id="Text_ranges_and_selection"></span><span id="text_ranges_and_selection"></span><span id="TEXT_RANGES_AND_SELECTION"></span>テキスト範囲と選択範囲
+
+テキスト範囲と選択範囲は、次の 2 つのフィールドが含まれる [**CoreTextRange**](https://msdn.microsoft.com/library/windows/apps/dn958201) 構造体で表されます。
+
+| フィールド                  | データ型                                                                 | 説明                                                                      |
 |------------------------|---------------------------------------------------------------------------|----------------------------------------------------------------------------------|
-| **StartCaretPosition** | **Number** \[JavaScript\] | **System.Int32** \[.NET\] | **int32** \[C++\] | The start position of a range is the ACP immediately before the first character. |
-| **EndCaretPosition**   | **Number** \[JavaScript\] | **System.Int32** \[.NET\] | **int32** \[C++\] | The end position of a range is the ACP immediately after the last character.     |
+| **StartCaretPosition** | **Number** \[JavaScript\] | **System.Int32** \[.NET\] | **int32** \[C++\] | 範囲の開始位置は、最初の文字の直前の ACP です。 |
+| **EndCaretPosition**   | **Number** \[JavaScript\] | **System.Int32** \[.NET\] | **int32** \[C++\] | 範囲の終了位置は、最後の文字の直後の ACP です。     |
 
  
 
-For example, in the text range shown previously, the range \[0, 5\] specifies the word "Hello". **StartCaretPosition** must always be less than or equal to the **EndCaretPosition**. The range \[5, 0\] is invalid.
+たとえば、前に示したテキスト範囲で、範囲 \[0, 5\] は "Hello" という単語を指します。 **StartCaretPosition** は、常に **EndCaretPosition** 以下である必要があります。 範囲 \[5, 0\] は無効です。
 
-### <span id="Insertion_point"></span><span id="insertion_point"></span><span id="INSERTION_POINT"></span>Insertion point
+### <span id="Insertion_point"></span><span id="insertion_point"></span><span id="INSERTION_POINT"></span>挿入ポイント
 
-The current caret position, frequently referred to as the insertion point, is represented by setting the **StartCaretPosition** to be equal to the **EndCaretPosition**.
+現在のカーソル位置は挿入ポイントとも呼ばれ、**StartCaretPosition** を **EndCaretPosition** と等しくなるように設定することによって表されます。
 
-### <span id="Noncontiguous_selection"></span><span id="noncontiguous_selection"></span><span id="NONCONTIGUOUS_SELECTION"></span>Noncontiguous selection
+### <span id="Noncontiguous_selection"></span><span id="noncontiguous_selection"></span><span id="NONCONTIGUOUS_SELECTION"></span>連続しない選択範囲
 
-Some edit controls support noncontiguous selections. For example, Microsoft Office apps support multiple arbitrary selections, and many source code editors support column selection. However, the core text APIs do not support noncontiguous selections. Edit controls must report only a single contiguous selection, most often the active sub-range of the noncontiguous selections.
+一部の編集コントロールでは、連続しない選択範囲がサポートされます。 たとえば、Microsoft Office アプリでは任意の複数の選択範囲がサポートされ、多くのソース コード エディターでは列の選択がサポートされています。 ただし、基本的なテキスト API では連続しない選択範囲はサポートされません。 編集コントロールは、1 つ連続した選択範囲のみをレポートする必要があります。これは通常、連続しない選択範囲のアクティブな下位範囲です。
 
-For example, consider this text stream:
+たとえば、次のようなテキスト ストリームがあるとします。
 
-![example text stream diagram](images/coretext/stream-2.png)
-There are two selections: \[0, 1\] and \[6, 11\]. The edit control must report only one of them; either \[0, 1\] or \[6, 11\].
+![テキスト ストリームの例の図](images/coretext/stream-2.png)
+\[0, 1\] と \[6, 11\] の 2 つの選択範囲があります。 編集コントロールは、\[0, 1\] と \[6, 11\] のいずれか一方のみをレポートする必要があります。
 
-## <span id="Working_with_text"></span><span id="working_with_text"></span><span id="WORKING_WITH_TEXT"></span>Working with text
+## <span id="Working_with_text"></span><span id="working_with_text"></span><span id="WORKING_WITH_TEXT"></span>テキストの操作
 
 
-The [**CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158) class enables text flow between Windows and edit controls through the [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) event, the [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) event, and the [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172) method.
+[
+            **CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158) クラスの [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) イベント、[**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) イベント、[**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172) メソッドによって、Windows と編集コントロールとの間でのテキスト フローを実現できます。
 
-Your edit control receives text through [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) events that are generated when users interact with text input methods like keyboards, speech, or IMEs.
+編集コントロールは、ユーザーがキーボード、音声、IME などのテキスト入力方式を操作したときに生成される [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) イベントによってテキストを受け取ります。
 
-When you change text in your edit control, for example, by pasting text into the control, you need to notify Windows by calling [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172).
+テキストをコントロールに貼り付けるなどの方法で、編集コントロールでテキストを変更する場合、[**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172) を呼び出して Windows に通知する必要があります。
 
-If the text service requires the new text, then a [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) event is raised. You must provide the new text in the **TextRequested** event handler.
+テキスト サービスが新しいテキストを必要とする場合、[**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) イベントが発生します。 **TextRequested** イベント ハンドラーで、新しいテキストを提供する必要があります。
 
-### <span id="Accepting_text_updates"></span><span id="accepting_text_updates"></span><span id="ACCEPTING_TEXT_UPDATES"></span>Accepting text updates
+### <span id="Accepting_text_updates"></span><span id="accepting_text_updates"></span><span id="ACCEPTING_TEXT_UPDATES"></span>テキストの更新の受け付け
 
-Your edit control should typically accept text update requests because they represent the text the user wants to enter. In the [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) event handler, these actions are expected of your edit control:
+編集コントロールでは、通常、テキストの更新要求を受け付ける必要があります。これらは、ユーザーが入力するテキストを表しているためです。 [
+            **TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) イベント ハンドラーでは、編集コントロールの次の操作が想定されています。
 
-1.  Insert the text specified in [**CoreTextTextUpdatingEventArgs.Text**](https://msdn.microsoft.com/library/windows/apps/dn958236) in the position specified in [**CoreTextTextUpdatingEventArgs.Range**](https://msdn.microsoft.com/library/windows/apps/dn958234).
-2.  Place selection at the position specified in [**CoreTextTextUpdatingEventArgs.NewSelection**](https://msdn.microsoft.com/library/windows/apps/dn958233).
-3.  Notify the system that the update succeeded by setting [**CoreTextTextUpdatingEventArgs.Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) to [**CoreTextTextUpdatingResult.Succeeded**](https://msdn.microsoft.com/library/windows/apps/dn958237).
+1.  [
+            **CoreTextTextUpdatingEventArgs.Text**](https://msdn.microsoft.com/library/windows/apps/dn958236) で指定されたテキストを、[**CoreTextTextUpdatingEventArgs.Range**](https://msdn.microsoft.com/library/windows/apps/dn958234) で指定された位置に挿入します。
+2.  [
+            **CoreTextTextUpdatingEventArgs.NewSelection**](https://msdn.microsoft.com/library/windows/apps/dn958233) で指定された位置に選択範囲を配置します。
+3.  [
+            **CoreTextTextUpdatingEventArgs.Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) を [**CoreTextTextUpdatingResult.Succeeded**](https://msdn.microsoft.com/library/windows/apps/dn958237) に設定することによって、更新が成功したことをシステムに通知します。
 
-For example, this is the state of an edit control before the user types "d". The insertion point is at \[10, 10\].
+たとえば、これは、ユーザーが "d" を入力する前の編集コントロールの状態です。 挿入ポイントは \[10, 10\] にあります。
 
-![example text stream diagram](images/coretext/stream-3.png)
-When the user types "d", a [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) event is raised with the following [**CoreTextTextUpdatingEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn958229) data:
+![テキスト ストリームの例の図](images/coretext/stream-3.png)
+ユーザーが "d" を入力すると、次の [**CoreTextTextUpdatingEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn958229) データを使って、[**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) イベントが発生します。
 
 -   [**Range**](https://msdn.microsoft.com/library/windows/apps/dn958234) = \[10, 10\]
 -   [**Text**](https://msdn.microsoft.com/library/windows/apps/dn958236) = "d"
 -   [**NewSelection**](https://msdn.microsoft.com/library/windows/apps/dn958233) = \[11, 11\]
 
-In your edit control, apply the specified changes and set [**Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) to **Succeeded**. Here's the state of the control after the changes are applied.
+編集コントロールで、指定された変更を適用し、[**Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) を **Succeeded** に設定します。 変更が適用された後のコントロールの状態は、次のようになります。
 
-![example text stream diagram](images/coretext/stream-4.png)
-### <span id="Rejecting_text_updates"></span><span id="rejecting_text_updates"></span><span id="REJECTING_TEXT_UPDATES"></span>Rejecting text updates
+![テキスト ストリームの例の図](images/coretext/stream-4.png)
+### <span id="Rejecting_text_updates"></span><span id="rejecting_text_updates"></span><span id="REJECTING_TEXT_UPDATES"></span>テキストの更新の拒否
 
-Sometimes, you cannot apply text updates because the requested range is in an area of the edit control that should not be changed. In this case, you should not apply any changes. Instead, notify the system that the update failed by setting [**CoreTextTextUpdatingEventArgs.Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) to [**CoreTextTextUpdatingResult.Failed**](https://msdn.microsoft.com/library/windows/apps/dn958237).
+要求された範囲が編集コントロールの変更してはいけない領域にある場合、テキストの更新を適用できないことがあります。 この場合、変更を適用しないでください。 代わりに、[**CoreTextTextUpdatingEventArgs.Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) を [**CoreTextTextUpdatingResult.Failed**](https://msdn.microsoft.com/library/windows/apps/dn958237) に設定することによって、更新が失敗したことをシステムに通知します。
 
-For example, consider an edit control that accepts only an e-mail address. Spaces should be rejected because e-mail addresses cannot contain spaces, so when [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) events are raised for the space key, you should simply set [**Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) to **Failed** in your edit control.
+たとえば、電子メール アドレスのみを受け付ける編集コントロールがあるとします。 電子メール アドレスにスペースを含めることはできないため、スペースは拒否する必要があります。そのため、Space キーについて [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) イベントが発生した場合は、編集コントロールで単に [**Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) を **Failed** に設定する必要があります。
 
-### <span id="Notifying_text_changes"></span><span id="notifying_text_changes"></span><span id="NOTIFYING_TEXT_CHANGES"></span>Notifying text changes
+### <span id="Notifying_text_changes"></span><span id="notifying_text_changes"></span><span id="NOTIFYING_TEXT_CHANGES"></span>テキストの変更の通知
 
-Sometimes, your edit control makes changes to text such as when text is pasted or auto-corrected. In these cases, you must notify the text services of these changes by calling the [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172) method.
+テキストの貼り付けや自動修正などが行われた場合に、編集コントロールのテキストが変更されることがあります。 このような場合、[**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172) を呼び出すことによって、これらの変更をテキスト サービスに通知する必要があります。
 
-For example, this is the state of an edit control before the user pastes "World". The insertion point is at \[6, 6\].
+たとえば、これは、ユーザーが "World" を貼り付ける前の編集コントロールの状態です。 挿入ポイントは \[6, 6\] にあります。
 
-![example text stream diagram](images/coretext/stream-5.png)
-The user performs the paste action and the edit control ends up with the following text:
+![テキスト ストリームの例の図](images/coretext/stream-5.png)
+ユーザーが貼り付け操作を実行すると、編集コントロールのテキストは次のようになります。
 
-![example text stream diagram](images/coretext/stream-4.png)
-When this happens, you should call [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172) with these arguments:
+![テキスト ストリームの例の図](images/coretext/stream-4.png)
+この場合、次の引数を使って、[**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172) を呼び出す必要があります。
 
 -   *modifiedRange* = \[6, 6\]
 -   *newLength* = 5
 -   *newSelection* = \[11, 11\]
 
-One or more [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) events will follow, which you handle to update the text that the text services are working with.
+1 つまたは複数の [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) イベントが発生し、これを処理することによって、テキスト サービスが操作しているテキストを更新します。
 
-### <span id="Overriding_text_updates"></span><span id="overriding_text_updates"></span><span id="OVERRIDING_TEXT_UPDATES"></span>Overriding text updates
+### <span id="Overriding_text_updates"></span><span id="overriding_text_updates"></span><span id="OVERRIDING_TEXT_UPDATES"></span>テキストの更新の上書き
 
-In your edit control, you might want to override a text update to provide auto-correction features.
+編集コントロールで、自動修正機能を提供するために、テキストの更新を上書きすることが必要になる場合があります。
 
-For example, consider an edit control that provides a correction feature that formalizes contractions. This is the state of the edit control before the user types the space key to trigger the correction. The insertion point is at \[3, 3\].
+たとえば、短縮形を正式なつづりにする修正機能を提供する編集コントロールがあるとします。 ユーザーが Space キーを押して修正機能をトリガーする前の編集コントロールの状態は、次のようになっています。 挿入ポイントは \[3, 3\] にあります。
 
-![example text stream diagram](images/coretext/stream-6.png)
-The user presses the space key and a corresponding [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) event is raised. The edit control accepts the text update. This is the state of the edit control for a brief moment before the correction is completed. The insertion point is at \[4, 4\].
+![テキスト ストリームの例の図](images/coretext/stream-6.png)
+ユーザーが Space キーを押すと、対応する [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) イベントが発生します。 編集コントロールは、テキストの更新を受け付けます。 修正が完了する直前の編集コントロールの状態は、次のようになります。 挿入ポイントは \[4, 4\] にあります。
 
-![example text stream diagram](images/coretext/stream-7.png)
-Outside of the [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) event handler, the edit control makes the following correction. This is the state of the edit control after the correction is complete. The insertion point is at \[5, 5\].
+![テキスト ストリームの例の図](images/coretext/stream-7.png)
+[
+            **TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) イベント ハンドラーの外部で、編集コントロールは次の修正を実行します。 修正が完了した後の編集コントロールの状態は、次のようになります。 挿入ポイントは \[5, 5\] にあります。
 
-![example text stream diagram](images/coretext/stream-8.png)
-When this happens, you should call [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172) with these arguments:
+![テキスト ストリームの例の図](images/coretext/stream-8.png)
+この場合、次の引数を使って、[**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172) を呼び出す必要があります。
 
 -   *modifiedRange* = \[1, 2\]
 -   *newLength* = 2
 -   *newSelection* = \[5, 5\]
 
-One or more [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) events will follow, which you handle to update the text that the text services are working with.
+1 つまたは複数の [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) イベントが発生し、これを処理することによって、テキスト サービスが操作しているテキストを更新します。
 
-### <span id="Providing_requested_text"></span><span id="providing_requested_text"></span><span id="PROVIDING_REQUESTED_TEXT"></span>Providing requested text
+### <span id="Providing_requested_text"></span><span id="providing_requested_text"></span><span id="PROVIDING_REQUESTED_TEXT"></span>要求されたテキストの提供
 
-It's important for text services to have the correct text to provide features like auto-correction or prediction, especially for text that already existed in the edit control, from loading a document, for example, or text that is inserted by the edit control as explained in previous sections. Therefore, whenever a [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) event is raised, you must provide the text currently in your edit control for the specified range.
+テキスト サービスでは、自動修正や予測入力などの機能を提供する場合、正しいテキストがあることが重要です。特に、ドキュメントの読み込みなどから編集コントロールに既に存在しているテキストや、前のセクションで説明したように編集コントロールによって挿入されたテキストについて重要です。 そのため、[**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) イベントが発生するたびに、現在編集コントロール内にあり、指定された範囲のテキストを提供する必要があります。
 
-There will be times the [**Range**](https://msdn.microsoft.com/library/windows/apps/dn958227) in [**CoreTextTextRequest**](https://msdn.microsoft.com/library/windows/apps/dn958221) specifies a range that your edit control cannot accommodate as-is. For example, the **Range** is larger than the size of the edit control at the time of the [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) event, or the end of the **Range** is out of bounds. In these cases, you should return whatever range makes sense, which is typically a subset of the requested range.
+[
+            **CoreTextTextRequest**](https://msdn.microsoft.com/library/windows/apps/dn958221) 内の [**Range**](https://msdn.microsoft.com/library/windows/apps/dn958227) が、編集コントロールでそのまま格納できない範囲を指定する場合があります。 たとえば、[**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) イベントの発生時に **Range** が編集コントロールのサイズよりも大きい場合や、**Range** の最後が範囲外である場合です。 このような場合は、何か適切な範囲を返す必要があります。通常、これは要求された範囲のサブセットです。
 
-## <span id="related_topics"></span>Related articles
+## <span id="related_topics"></span>関連記事
 
 
-**Archive samples**
-* [XAML text editing sample](http://go.microsoft.com/fwlink/p/?LinkID=251417)
+**サンプルのアーカイブ**
+* [XAML テキスト編集のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?LinkID=251417)
  
 
  

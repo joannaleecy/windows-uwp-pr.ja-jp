@@ -1,25 +1,25 @@
 ---
 ms.assetid: 3b75d881-bdcf-402b-a330-23cd29d68e53
-description: This article lists the DeviceInformation properties related to audio devices
-title: Audio device information properties
+description: この記事では、オーディオ デバイスに関連する DeviceInformation プロパティを示します。
+title: オーディオ デバイス情報プロパティ
 ---
 
-# Audio device information properties
+# オーディオ デバイス情報プロパティ
 
-This article lists the device information properties related to audio devices. On Windows, each hardware device has associated [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) properties providing detailed information about a device that you can use when you need specific information about the device or when you are building a device selector. 
-For general information about enumerating devices on Windows, see [**Enumerate devices**](../devices-sensors/enumerate-devices.md) and [**Device information properties**](../devices-sensors/device-information-properties.md).
+この記事では、オーディオ デバイスに関連するデバイス情報プロパティを示します。 Windows では、ハードウェア デバイスにはそれぞれ [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) プロパティが関連付けられており、デバイスについての特定の情報が必要な場合やデバイス セレクターを作成する場合に使うことができる、デバイスに関する詳細情報を提供します。 
+Windows でのデバイスの列挙に関する一般的な情報については、「[**デバイスの列挙**](../devices-sensors/enumerate-devices.md)」と「[**デバイス情報プロパティ**](../devices-sensors/device-information-properties.md)」をご覧ください。
 
 
-|Name|Type|Description|
+|名前|型|説明|
 |------------------------------------------------------------|------------|------------------------------------------------------|
-|**System.Devices.AudioDevice.SpeechProcessingSupported**|Boolean|Indicates whether the audio device supports speech processing.|
-|**System.Devices.AudioDevice.RawProcessingSupported**|Boolean|Indicates whether the audio device supports raw processing.|
-|**System.Devices.MicrophoneArray.Geometry**|unsigned char[]|Geometry data for a microphone array.|
-## Related topics
+|**System.Devices.AudioDevice.SpeechProcessingSupported**|Boolean|オーディオ デバイスが、音声処理をサポートするかどうかを示します。|
+|**System.Devices.AudioDevice.RawProcessingSupported**|Boolean|オーディオ デバイスが、raw 処理をサポートするかどうかを示します。|
+|**System.Devices.MicrophoneArray.Geometry**|unsigned char[]|マイク配列のジオメトリ データです。|
+## 関連トピック
 
-* [**Enumerate devices**](../devices-sensors/enumerate-devices.md)
-* [**Device information properties**](../devices-sensors/device-information-properties.md)
-* [**Build a device selector**](../devices-sensors/build-a-device-selector.md)
+* [**デバイスの列挙**](../devices-sensors/enumerate-devices.md)
+* [**デバイス情報プロパティ**](../devices-sensors/device-information-properties.md)
+* [**デバイス セレクターのビルド**](../devices-sensors/build-a-device-selector.md)
 
 
 

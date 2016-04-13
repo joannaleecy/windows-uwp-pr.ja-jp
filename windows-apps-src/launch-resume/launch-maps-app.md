@@ -10,7 +10,7 @@ ms.assetid: E363490A-C886-4D92-9A64-52E3C24F1D98
 \[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-アプリから Windows マップ アプリを起動する方法について説明します。 このトピックでは、**bingmaps:**、**ms-drive-to:**、**ms-walk-to:** の各 URI (Uniform Resource Identifier) スキームについて説明します。 これらの URI スキームを使って Windows マップ アプリを起動し、特定の地図、ルート案内、検索結果を表示できます。
+アプリから Windows マップ アプリを起動する方法について説明します。 このトピックでは、**bingmaps:**、**ms-drive-to:**、**ms-walk-to:**、*ms-settings:* の各 URI (Uniform Resource Identifier) スキームについて説明します。 これらの URI スキームを使って、Windows マップ アプリを起動し、特定の地図、ルート案内、検索結果を表示したり、設定アプリから Windows マップ オフライン マップをダウンロードしたりします。
 
 **ヒント** アプリから Windows マップ アプリを起動する方法について詳しくは、GitHub の [Windows-universal-samples リポジトリ](http://go.microsoft.com/fwlink/p/?LinkId=619979)から[ユニバーサル Windows プラットフォーム (UWP) の地図サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619977)をダウンロードしてください。
 
@@ -33,7 +33,7 @@ URI スキームを使うと、ハイパーリンクのクリックによって 
 
 URI スキームについて次に説明します。
 
-**bingmaps://?query**
+**bingmaps:?query**
 
 この URI スキームでは、*query* は、次のようなパラメーター名と値の一連のペアを示します。
 
@@ -135,7 +135,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 ## ターン バイ ターン方式のルート案内の表示
 
 
-**ms-drive-to:** と **ms-walk-to:** の各 URI スキームでは、直接ターン バイ ターン方式のルート案内を起動できます。 これらの URI スキームでは、ユーザーの現在の場所からのルート案内のみを提供できます。 ユーザーの現在の場所を含まないポイント間のルート案内を提供する必要がある場合は、前のセクションで説明した **binmaps:** URI スキームを使います。 これらの URI スキームについて詳しくは、[ms-drive-to:](#msdriveto) と [ms-walk-to:](#mswalkto) のパラメーター リファレンスをご覧ください。
+**ms-drive-to:** と **ms-walk-to:** の各 URI スキームでは、直接ターン バイ ターン方式のルート案内を起動できます。 これらの URI スキームでは、ユーザーの現在の場所からのルート案内のみを提供できます。 ユーザーの現在の場所を含まないポイント間のルート案内を提供する必要がある場合は、前のセクションで説明した **bingmaps:** URI スキームを使います。 これらの URI スキームについて詳しくは、[ms-drive-to:](#msdriveto) と [ms-walk-to:](#mswalkto) のパラメーター リファレンスをご覧ください。
 
 > **重要**  **ms-drive-to:** または **ms-walk-to:** の URI スキームが呼び出されると、マップ アプリは、デバイスで GPS 位置情報の修正が行われたことがあるかどうかを確認します。 行われたことがある場合は、ターン バイ ターン方式のルート案内に進みます。 行われたことがない場合は、「[ルート案内と交通情報の表示](#directions)」で説明したルートの概要を表示します。
 
@@ -148,6 +148,15 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 | ms-drive-to:?destination.latitude=47.680504&destination.longitude=-122.328262&destination.name=Green Lake | 現在の場所からグリーン湖までのターン バイ ターン方式の自動車ルート案内と共に地図を表示します。 |
 | ms-walk-to:?destination.latitude=47.680504&destination.longitude=-122.328262&destination.name=Green Lake  | 現在の場所からグリーン湖までのターン バイ ターン方式の徒歩ルート案内と共に地図を表示します。 |
 
+
+## オフライン マップのダウンロード
+
+
+**ms-settings:** URI スキームでは、設定アプリで特定のページを直接起動することができます。 **ms-settings:** URI スキームでは、マップ アプリが起動されませんが、設定アプリでオフライン マップ ページを直接起動し、マップ アプリが使用するオフライン マップをダウンロードするための確認ダイアログ ボックスを表示することができます。 URI スキームは、緯度と経度で指定されたポイントを受け取り、そのポイントが含まれる地域のオフライン マップが利用できるかどうかを自動的に判定します。  渡された緯度と経度が複数のダウンロード地域内にある場合、ユーザーは、確認ダイアログ ボックスでダウンロードする地域を選択できます。 そのポイントが含まれる地域のオフライン マップが利用できない場合、設定アプリのオフライン マップ ページがエラー ダイアログと共に表示されます。
+
+| サンプル URI                                                                                                | 結果                                                                                       |
+|-----------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
+| ms-settings:maps-downloadmaps?latlong=47.6,-122.3 | 設定アプリで、確認ダイアログ ボックスが表示されたオフライン マップ ページを開き、緯度と経度で指定されたポイントが含まれた地域のマップをダウンロードします。 |
  
 
 ## bingmaps: のパラメーター リファレンス
@@ -192,11 +201,13 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>northlatitude = degreeslat</p>
 <p>westlongitude = degreeslon</p>
 <p>eastlongitude = degreeslon</p>
+<p>degreeslat = ["-"] 13DIGIT ["." 17DIGIT]</p>
+<p>degreeslon = ["-"] 12DIGIT ["." 17DIGIT]</p>
 <p>例:</p>
 <p>bb=39.719_-74.52~41.71_-73.5</p></td>
 <td align="left"><p>境界ボックスを指定する四角形の領域。10 進角で表し、左下隅と右上隅を区別するためにチルダ (**~**) を使います。 それぞれの緯度と経度は、アンダー スコア (**_**) で区切られます。</p>
 <p>有効な経度の値の範囲は -180 ～ +180 です (両端の値を含む)。</p>
-<p>有効な緯度の値の範囲は -90 ～ +90 です (両端の値を含む)。</p></td>
+<p>有効な緯度の値の範囲は -90 ～ +90 です (両端の値を含む)。</p><p>境界ボックスが提供されている場合、cp パラメーターと lvl パラメーターは無視されます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>**where**</p></td>
@@ -205,13 +216,13 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>whereval = 1*( ALPHA / DIGIT / "-" / "." / "_" / pct-encoded / "!" / "$" / "'" / "(" / ")" / "*" / "+" / "," / ";" / ":" / "@" / "/" / "?")</p>
 <p>例:</p>
 <p>where=1600%20Pennsylvania%20Ave,%20Washington,%20DC</p></td>
-<td align="left"><p>検索語句 (所在地、ランドマークや場所の名称)。</p></td>
+<td align="left"><p>特定の所在地、ランドマーク、または場所を検索するための語句。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>**q**</p></td>
 <td align="left"><p>クエリ語句</p></td>
-<td align="left"><p>q = "q=" qval</p>
-<p>qval = whereval / "~"</p>
+<td align="left"><p>q = "q="</p>
+<p>whereval</p>
 <p>例:</p>
 <p>q=mexican%20restaurants</p></td>
 <td align="left"><p>各地のビジネスや業種を検索するための語句。</p></td>
@@ -221,7 +232,6 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <td align="left"><p>ズーム レベル</p></td>
 <td align="left"><p>lvl = "lvl=" 1*2DIGIT ["." 1*2DIGIT]</p>
 <p>例:</p>
-l
 <p>lvl=10.50</p></td>
 <td align="left"><p>地図ビューのズーム レベルを定義します。 有効な値は 1 ～ 20 です。1 は、最も縮小された状態で表示します。</p></td>
 </tr>
@@ -237,8 +247,9 @@ l
 <li>**r**: 地図の道路図を表示します。</li>
 <li>**3d**: 地図を 3D で表示します。 **cp** パラメーターと組み合わせて使います。必要に応じて、**rad** パラメーターと共に使うこともできます。</li>
 </ul>
+<p>Windows 10 では、航空写真表示と 3D ビューのスタイルは同じです。</p>
 <div class="alert">
-> **注**  **sty** パラメーターを省略すると、sty=r と同じ結果が表示されます。
+**注**  **sty** パラメーターを省略すると、sty=r と同じ結果が表示されます。
 </div>
 <div>
  
@@ -258,7 +269,7 @@ l
 <td align="left"><p>pit = "pit=" pitch</p>
 <p>例:</p>
 <p>pit=60</p></td>
-<td align="left"><p>地図を表示する角度を指定します。90 は水平方向を見ること (最大) を表し、0 は真下を見下ろすこと (最小) を表します。</p></td>
+<td align="left"><p>地図を表示する角度を指定します。90 は水平方向を見ること (最大) を表し、0 は真下を見下ろすこと (最小) を表します。</p><p>有効なピッチの値の範囲は 0 ～ 90 です (両端の値を含む)。</td>
 </tr>
 <tr class="odd">
 <td align="left"><p>**hdg**</p></td>
@@ -300,14 +311,22 @@ l
 <td align="left"><p>**rtp**</p></td>
 <td align="left"><p>ルート</p></td>
 <td align="left"><p>rtp = "rtp=" (waypoint "~" [waypoint]) / ("~" waypoint)</p>
-<p>waypoint = (("pos." cpval ["_" whereval]) / ("adr." whereval))</p>
+<p>waypoint = ("pos." point ) / ("adr." whereval)</p>
+<p>point = "point." pointval ["_" title]</p>
+<p>pointval = degreeslat "" degreeslon</p>
+<p>degreeslat = ["-"] 13DIGIT ["." 17DIGIT]</p>
+<p>degreeslon = ["-"] 12DIGIT ["." 17DIGIT]</p>
+<p>title = whereval</p>
+<p>whereval = 1( ALPHA / DIGIT / "-" / "." / "_" / pct-encoded / "!" / "$" / "'" / "(" / ")" / "" / "+" / "," / ";" / ":" / "@" / "/" / "?")</p>
+
+
 <p>例:</p>
 <p>rtp=adr.Mountain%20View,%20CA~adr.SFO</p>
 <p>rtp=adr.One%20Microsoft%20Way,%20Redmond,%20WA~pos.45.23423_-122.1232 _My%20Picnic%20Spot</p></td>
-<td align="left"><p>地図上に表示するルートの開始地点と終了地点を、チルダ (**~**) で区切って定義します。 各中間点は、緯度と経度を使った位置 (**cp**) または住所の識別情報 (**where**) を使って定義します。</p>
+<td align="left"><p>地図上に表示するルートの開始地点と終了地点を、チルダ (**~**) で区切って定義します。 各中間点は、緯度、経度、オプションのタイトルを使った位置、または住所の識別情報を使って定義します。</p>
 <p>完全なルートとは、中間点が 2 つだけ含まれるルートです。 たとえば、2 つの中間点を持つルートは、rtp="A"~"B" のように定義されます。 <code>rtp="A"~"B"</code>.</p>
-<p>不完全なルートを指定することもできます。 たとえば、ルートの開始地点だけを定義する場合は、rtp="A"~ のように指定できます。 <code>rtp="A"~</code>. この場合、自動車ルート案内の入力パネルが表示されると、**[出発地]** フィールドには指定された中間点が表示され、**[目的地]** フィールドにフォーカスが設定されます。</p>
-<p>また、ルートの終了地点だけを定義する場合は、rtp=~"B" のように指定できます。 <code>rtp=~"B"</code>自動車ルート案内のパネルが表示されると、**[目的地]** フィールドには指定された中間点が表示されます。 可能な場合は、**[出発地]** フィールドに現在の場所があらかじめ入力され、フォーカスが設定されます。</p>
+<p>不完全なルートを指定することもできます。 たとえば、ルートの開始地点だけを定義する場合は、rtp="A"~ のように指定できます。 <code>rtp="A"~</code>. この場合、ルート案内の入力が表示されると、**[出発地]** フィールドには指定された中間点が表示され、**[目的地]** フィールドにフォーカスが設定されます。</p>
+<p>また、ルートの終了地点だけを定義する場合は、rtp=~"B" のように指定できます。 <code>rtp=~"B"</code>ルート案内のパネルが表示されると、**[目的地]** フィールドには指定された中間点が表示されます。 現在の正確な位置情報にアクセスできる場合、**[出発地]** フィールドに現在の場所があらかじめ入力され、フォーカスが設定されます。</p>
 <p>不完全なルートが指定されている場合は、ルートの線は表示されません。</p>
 <p>**mode** パラメーターと組み合わせて使うと、交通手段のモード (自動車、公共交通機関、徒歩) を指定できます。 **mode** が指定されていない場合、ルート案内は、ユーザーの交通手段の設定のモードを使って提供されます。</p>
 <div class="alert">
@@ -319,52 +338,41 @@ l
 </tr>
 <tr class="odd">
 <td align="left"><p>**mode**</p></td>
-<td align="left"><p>ルート モード</p></td>
+<td align="left"><p>交通手段モード</p></td>
 <td align="left"><p>mode = "mode=" ("d" / "t" / "w")</p>
 <p>例:</p>
 <p>mode=d</p></td>
-<td align="left"><p>ルート モードを定義します。 このパラメーターの有効な値は次のとおりです。</p>
+<td align="left"><p>交通手段モードを定義します。 このパラメーターの有効な値は次のとおりです。</p>
 <ul>
 <li>**d**: 自動車ルート案内のルートの概要を表示します。</li>
 <li>**t**: 乗り換え案内のルートの概要を表示します。</li>
 <li>**w**: 徒歩ルート案内のルートの概要を表示します。</li>
 </ul>
-<p>ルート案内の **rtp** パラメーターと組み合わせて使います。 **mode** が指定されていない場合、ルート案内は、ユーザーの交通手段の設定のモードを使って提供されます。</p></td>
+<p>交通手段案内の **rtp** パラメーターと組み合わせて使います。 **mode** が指定されていない場合、ルート案内は、ユーザーの交通手段の設定のモードを使って提供されます。 現在の位置情報からこのモード用のルート案内に入力するルート パラメーターなしに、**mode** を提供することができます。</p></td>
 </tr>
+
 <tr class="even">
 <td align="left"><p>**collection**</p></td>
 <td align="left"><p>コレクション</p></td>
-<td align="left"><p>collection = "collection="</p>
+<td align="left"><p>collection = "collection="(name"~"/)point["~"point]</p>
+<p>name = "name." whereval </p>
+<p>whereval = 1( ALPHA / DIGIT / "-" / "." / "_" / pct-encoded / "!" / "$" / "'" / "(" / ")" / "" / "+" / "," / ";" / ":" / "@" / "/" / "?") </p>
+<p>point = "point." pointval ["_" title] </p>
+<p>pointval = degreeslat "" degreeslon </p>
+<p>degreeslat = ["-"] 13DIGIT ["." 17DIGIT] </p>
+<p>degreeslon = ["-"] 12DIGIT ["." 17DIGIT] </p>
+<p>title = whereval</p>
+
+
 <p>例:</p>
-<p>collection=name.Custom%20List</p></td>
-<td align="left"><p>地図と一覧に追加されるエンティティのコレクションです。</p>
-<p>サポートされているエンティティは、次のとおりです。</p>
-<ul>
-<li>point</li>
-</ul>
-<p>コレクションを編集する際に複数の項目を含める場合は、各項目をチルダ (**~**) で区切ります。</p>
-<p>指定した項目にチルダが含まれている場合は、そのチルダを %7E としてエンコードしてください。 <code>%7E</code>. 中心点のパラメーターやズーム レベルのパラメーターと共に使わない場合、コレクションによって、最適な地図ビューが表示されます。</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>**point**</p></td>
-<td align="left"><p>ポイント</p></td>
-<td align="left"><p>point = "point." pointval_title_notes_link URL_photo URL</p>
-<p>pointval = degreeslat "_" degreeslon</p>
-<p>title = whereval / _</p>
-<p>例:</p>
-<p>collection=point.40.726966_-74.006076_Pin%20Title</p></td>
-<td align="left"><p>緯度と経度を使って、追加するポイントを指定します。 ポイントの値としては、緯度、経度、タイトル、メモ、リンク URL、表示する写真の URL などを使うことができます。それぞれの値は、アンダースコア (**_**) で区切ります。</p>
-<p>指定した項目にアンダースコアが含まれている場合は、そのアンダースコアを %255F としてダブル エンコードしてください。 <code>%255F</code>.</p>
-<p>タイトルとメモのパラメーターの最大長は 255 文字です。</p>
-<p>名前を指定せずにポイントを定義すると、タイトルが "Custom pin" になります。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>**name**</p></td>
-<td align="left"><p>名前</p></td>
-<td align="left"><p>name = "name." whereval</p>
-<p>例:</p>
-<p>collection=name.Hotel%20List</p></td>
-<td align="left"><p>コレクションの名前です。 名前を指定しない場合、コレクションに複数のエンティティが含まれていると、既定の名前は "Custom pins" になります。</p></td>
+<p>collection=name.My%20Trip%20Stops~point.36.116584_-115.176753_Las%20Vegas~point.37.8268_-122.4798_Golden%20Gate%20Bridge</p></td>
+<td align="left"><p>地図と一覧に追加されるポイントのコレクションです。 name パラメーターを使用して、ポイントのコレクションに名前を付けることができます。 ポイントは、緯度、経度、およびオプションのタイトルを使用して指定されます。</p>
+<p>名前と複数のポイントをチルダ (**~**) で区切ります。</p>
+<p>指定した項目にチルダが含まれている場合は、そのチルダを %7E としてエンコードしてください。 <code>%7E</code>. 中心点のパラメーターやズーム レベルのパラメーターと共に使わない場合、コレクションによって、最適な地図ビューが表示されます。</p>
+
+<p>**重要** 指定した項目にアンダースコアが含まれている場合は、そのアンダースコアを %255F としてダブル エンコードしてください。</p>
+
+<p>指定した項目にアンダースコアが含まれている場合は、そのアンダースコアを %255F としてダブル エンコードしてください。</p></td>
 </tr>
 </tbody>
 </table>
@@ -374,7 +382,7 @@ l
 ## ms-drive-to: のパラメーター リファレンス
 
 
-ターン バイ ターン方式の自動車ルート案内の要求を起動する URI は、次の形式になります。
+ターン バイ ターン方式の自動車ルート案内の要求を起動する URI は、エンコードする必要がありません。その形式は、次のようになります。
 
 > **注**  この URI スキームでは出発地を指定しません。 常に、現在の場所が出発地であると見なされます。 現在の場所以外の出発地を指定する必要がある場合は、「[ルート案内と交通情報の表示](#directions)」をご覧ください。
 
@@ -382,16 +390,16 @@ l
 
 | パラメーター | 定義 | 例 | 詳細 |
 |------------|-----------|---------|---------|
-| **destination.latitude** | 目的地の緯度 | 例: destination.latitude=47.6451413797194 | 目的地の緯度です。 |
-| **destination.longitude** | 目的地の経度 | 例: destination.longitude=-122.141964733601 | 目的地の経度です。 |
-| **name** | 目的地の名前 | 例: destination.name=Redmond, WA | 目的地の名前です。 URI や **name** の値をエンコードする必要はありません。 |
+| **destination.latitude** | 目的地の緯度 | 例: destination.latitude=47.6451413797194 | 目的地の緯度です。 有効な緯度の値の範囲は -90 ～ +90 です (両端の値を含む)。 |
+| **destination.longitude** | 目的地の経度 | 例: destination.longitude=-122.141964733601 | 目的地の経度です。 有効な経度の値の範囲は -180 ～ +180 です (両端の値を含む)。 |
+| **destination.name** | 目的地の名前 | 例: destination.name=Redmond, WA | 目的地の名前です。 **destination.name** 値をエンコードする必要はありません。 |
 
  
 
 ## ms-walk-to: のパラメーター リファレンス
 
 
-ターン バイ ターン方式の徒歩ルート案内の要求を起動する URI は、次の形式になります。
+ターン バイ ターン方式の徒歩ルート案内の要求を起動する URI は、エンコードする必要がありません。その形式は、次のようになります。
 
 > **注**  この URI スキームでは出発地を指定しません。 常に、現在の場所が出発地であると見なされます。 現在の場所以外の出発地を指定する必要がある場合は、「[ルート案内と交通情報の表示](#directions)」をご覧ください。
 
@@ -399,20 +407,26 @@ l
 
 | パラメーター | 定義 | 例 | 詳細 |
 |-----------|------------|---------|----------|
-| **destination.latitude** | 目的地の緯度 | 例: destination.latitude=47.6451413797194 | 目的地の緯度です。 |
-| **destination.longitude** | 目的地の経度 | 例: destination.longitude=-122.141964733601 | 目的地の経度です。 |
-| **name** | 目的地の名前 | 例: destination.name=Redmond, WA | 目的地の名前です。 URI や **name** の値をエンコードする必要はありません。 |
+| **destination.latitude** | 目的地の緯度 | 例: destination.latitude=47.6451413797194 | 目的地の緯度です。 有効な緯度の値の範囲は -90 ～ +90 です (両端の値を含む)。 |
+| **destination.longitude** | 目的地の経度 | 例: destination.longitude=-122.141964733601 | 目的地の経度です。 有効な経度の値の範囲は -180 ～ +180 です (両端の値を含む)。 |
+| **destination.name** | 目的地の名前 | 例: destination.name=Redmond, WA | 目的地の名前です。 **destination.name** 値をエンコードする必要はありません。 |
 
+ 
+## ms-settings: のパラメーター リファレンス
+
+
+**ms-settings:** URI スキームのマップ アプリ固有のパラメーターの構文は、次のように定義されます。 **maps-downloadmaps** は、**ms-settings:** URI と共に **ms-settings:maps-downloadmaps?** の形式で指定され、 オフライン マップの設定ページを示します。
+
+ 
+
+| パラメーター | 定義 | 例 | 詳細 |
+|-----------|------------|---------|----------|
+| **latlong** | オフライン マップの地域を定義するポイント。 | 例: latlong=47.6,-122.3 | GeoPoint は、コンマ区切りの緯度と経度で指定されます。 有効な緯度の値の範囲は -90 ～ +90 です (両端の値を含む)。 有効な経度の値の範囲は -180 ～ +180 です (両端の値を含む)。 |
  
 
  
 
- 
 
-
-
-
-
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=Mar16_HO5-->
 
 

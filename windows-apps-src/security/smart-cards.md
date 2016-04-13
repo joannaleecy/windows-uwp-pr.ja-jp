@@ -1,27 +1,28 @@
 ---
-title: Smart cards
-description: This topic explains how Universal Windows Platform (UWP) apps can use smart cards to connect users to secure network services, including how to access physical smart card readers, create virtual smart cards, communicate with smart cards, authenticate users, reset user PINs, and remove or disconnect smart cards.
+title: スマート カード
+description: このトピックでは、ユニバーサル Windows プラットフォーム (UWP) アプリでセキュリティで保護されたネットワーク サービスにスマート カードを使って、ユーザーを接続する方法のほか、物理スマート カード リーダーにアクセスする方法、仮想スマート カードの作成方法、スマート カードとの通信方法、ユーザーの認証方法、ユーザーの Pin のリセット方法、スマート カードを削除または切断する方法などについて説明します。
 ms.assetid: 86524267-50A0-4567-AE17-35C4B6D24745
 author: awkoren
 ---
 
-# Smart cards
+# スマート カード
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-This topic explains how Universal Windows Platform (UWP) apps can use smart cards to connect users to secure network services, including how to access physical smart card readers, create virtual smart cards, communicate with smart cards, authenticate users, reset user PINs, and remove or disconnect smart cards.
+このトピックでは、ユニバーサル Windows プラットフォーム (UWP) アプリでセキュリティで保護されたネットワーク サービスにスマート カードを使って、ユーザーを接続する方法のほか、物理スマート カード リーダーにアクセスする方法、仮想スマート カードの作成方法、スマート カードとの通信方法、ユーザーの認証方法、ユーザーの Pin のリセット方法、スマート カードを削除または切断する方法などについて説明します。
 
-## Configure the app manifest
-
-
-Before your app can authenticate users using smart cards or virtual smart cards, you must set the **Shared User Certificates** capability in the project Package.appxmanifest file.
-
-## Access connected card readers and smart cards
+## アプリ マニフェストの構成
 
 
-You can query for readers and attached smart cards by passing the device ID (specified in [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393)) to the [**SmartCardReader.FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/dn263890) method. To access the smart cards currently attached to the returned reader device, call [**SmartCardReader.FindAllCardsAsync**](https://msdn.microsoft.com/library/windows/apps/dn263887).
+アプリでスマート カードや仮想スマート カードを使ってユーザーを認証するには、あらかじめプロジェクトの Package.appxmanifest ファイルで、**共有ユーザー証明書**機能を設定しておく必要があります。
+
+## 接続されているカード リーダーとスマート カードへのアクセス
+
+
+[
+            **DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) に指定されているデバイス ID を [**SmartCardReader.FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/dn263890) メソッドに渡すと、リーダーや装着されているスマート カードを照会することができます。 返されたリーダー デバイスに現在装着されているスマート カードにアクセスするには、[**SmartCardReader.FindAllCardsAsync**](https://msdn.microsoft.com/library/windows/apps/dn263887) を呼び出します。
 
 ```cs
 string selector = SmartCardReader.GetDeviceSelector();
@@ -41,7 +42,7 @@ foreach (DeviceInformation device in devices)
 }
 ```
 
-You should also enable your app to observe for [**CardAdded**](https://msdn.microsoft.com/library/windows/apps/dn263866) events by implementing a method to handle app behavior on card insertion.
+また、カードが挿入されたときのアプリの動作を処理するメソッドを実装して、アプリによる [**CardAdded**](https://msdn.microsoft.com/library/windows/apps/dn263866) イベントの監視を有効にする必要もあります。
 
 ```cs
 private void reader_CardAdded(SmartCardReader sender, CardAddedEventArgs args)
@@ -50,16 +51,17 @@ private void reader_CardAdded(SmartCardReader sender, CardAddedEventArgs args)
 }
 ```
 
-You can then pass each returned [**SmartCard**](https://msdn.microsoft.com/library/windows/apps/dn297565) object to [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) to access the methods that allow your app to access and customize its configuration.
+その後、返された各 [**SmartCard**](https://msdn.microsoft.com/library/windows/apps/dn297565) オブジェクトを [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) に渡すことで、その構成へのアクセスやカスタマイズを行うメソッドを使えるようになります。
 
-## Create a virtual smart card
+## 仮想スマート カードの作成
 
 
-To create a virtual smart card using [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801), your app will first need to provide a friendly name, an admin key, and a [**SmartCardPinPolicy**](https://msdn.microsoft.com/library/windows/apps/dn297642). The friendly name is generally something provided to the app, but your app will still need to provide an admin key and generate an instance of the current **SmartCardPinPolicy** before passing all three values to [**RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830).
+アプリで [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) を使って仮想スマート カードを作成するには、まずフレンドリ名、管理者キー、[**SmartCardPinPolicy**](https://msdn.microsoft.com/library/windows/apps/dn297642) を提供する必要があります。 通常、フレンドリ名は既にアプリに用意されている可能性がありますが、アプリではさらに、管理者キーを提供し、現在の **SmartCardPinPolicy** のインスタンスを生成する必要があります。その後、これらの 3 つの値をすべて [**RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830) に渡します。
 
-1.  Create a new instance of a [**SmartCardPinPolicy**](https://msdn.microsoft.com/library/windows/apps/dn297642)
-2.  Generate the admin key value by calling [**CryptographicBuffer.GenerateRandom**](https://msdn.microsoft.com/library/windows/apps/br241392) on the admin key value provided by the service or management tool.
-3.  Pass these values along with the *FriendlyNameText* string to [**RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830).
+1.  [
+            **SmartCardPinPolicy**](https://msdn.microsoft.com/library/windows/apps/dn297642) の新しいインスタンスを作成します。
+2.  サービスまたは管理ツールから提供された管理者キーの値に対して [**CryptographicBuffer.GenerateRandom**](https://msdn.microsoft.com/library/windows/apps/br241392) を呼び出して、管理者キーの値を生成します。
+3.  これらの値と *FriendlyNameText* 文字列を [**RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830) に渡します。
 
 ```cs
 SmartCardPinPolicy pinPolicy = new SmartCardPinPolicy();
@@ -74,14 +76,14 @@ SmartCardProvisioning provisioning = await
           pinPolicy);
 ```
 
-Once [**RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830) has returned the associated [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) object, the virtual smart card is provisioned and ready for use.
+関連付けられた [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) オブジェクトが [**RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830) から返されたら、仮想スマート カードのプロビジョニングが完了し、使う準備ができたことになります。
 
-## Handle authentication challenges
+## 認証チャレンジの処理
 
 
-To authenticate with smart cards or virtual smart cards, your app must provide the behavior to complete challenges between the admin key data stored on the card, and the admin key data maintained by the authentication server or management tool.
+スマート カードや仮想スマート カードを使って認証するには、カードに格納されている管理者キーのデータと、認証サーバーまたは管理ツールによって管理されている管理者キーのデータとの間で、チャレンジを完了する動作をアプリに実装する必要があります。
 
-The following code shows how to support smart card authentication for services or modification of physical or virtual card details. If the data generated using the admin key on the card ("challenge") is the same as the admin key data provided by the server or management tool ("adminkey"), authentication is successful.
+次のコードは、サービスのスマート カード認証をサポートする方法、または物理カードや仮想カードの詳細を変更する方法の例を示します。 カードの管理者キーを使って生成されたデータ ("challenge") が、サーバーまたは管理者ツールから提供された管理者キーのデータ ("adminkey") と一致すれば、認証は成功します。
 
 ```cs
 static class ChallengeResponseAlgorithm
@@ -101,18 +103,18 @@ static class ChallengeResponseAlgorithm
 }
 ```
 
-You will see this code referenced throughout the remainder of this topic was we review how to complete an authentication action, and how to apply changes to smart card and virtual smart card information.
+このコードは、このトピックの残りの部分で説明する、認証操作を完了する方法や、スマート カードまたは仮想スマート カードの情報に変更を適用する方法の中で使われます。
 
-## Verify smart card or virtual smart card authentication response
+## スマート カードまたは仮想スマート カード認証の応答の確認
 
 
-Now that we have the logic for authentication challenges defined, we can communicate with the reader to access the smart card, or alternatively, access a virtual smart card for authentication.
+これで認証チャレンジのロジックが定義されたので、リーダーと通信してスマート カードにアクセスするか、その代わりに仮想スマート カードにアクセスして、認証を行うことができます。
 
-1.  To begin the challenge, call [**GetChallengeContextAsync**](https://msdn.microsoft.com/library/windows/apps/dn263811) from the [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) object associated with the smart card. This will generate an instance of [**SmartCardChallengeContext**](https://msdn.microsoft.com/library/windows/apps/dn297570), which contains the card's [**Challenge**](https://msdn.microsoft.com/library/windows/apps/dn297578) value.
+1.  チャレンジを始めるには、スマート カードに関連付けられた [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) オブジェクトから [**GetChallengeContextAsync**](https://msdn.microsoft.com/library/windows/apps/dn263811) を呼び出します。 これにより、[**SmartCardChallengeContext**](https://msdn.microsoft.com/library/windows/apps/dn297570) のインスタンスが生成されます。このインスタンスには、カードの [**Challenge**](https://msdn.microsoft.com/library/windows/apps/dn297578) 値が含まれています。
 
-2.  Next, pass the card's challenge value and the admin key provided by the service or management tool to the **ChallengeResponseAlgorithm** that we defined in the previous example.
+2.  次に、カードのチャレンジ値とサービスまたは管理ツールから提供された管理者キーを、前の例で定義した **ChallengeResponseAlgorithm** に渡します。
 
-3.  [**VerifyResponseAsync**](https://msdn.microsoft.com/library/windows/apps/dn297627) will return **true** if authentication is successful.
+3.  [**VerifyResponseAsync**](https://msdn.microsoft.com/library/windows/apps/dn297627) は、認証に成功すると **true** を返します。
 
 ```cs
 bool verifyResult = false;
@@ -131,14 +133,15 @@ using (SmartCardChallengeContext context =
 }
 ```
 
-## Change or reset a user PIN
+## ユーザー PIN の変更またはリセット
 
 
-To change the PIN associated with a smart card:
+スマート カードに関連付けられている PIN を変更するには、次の手順に従います。
 
-1.  Access the card and generate the associated [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) object.
-2.  Call [**RequestPinChangeAsync**](https://msdn.microsoft.com/library/windows/apps/dn263823) to display a UI to the user to complete this operation.
-3.  If the PIN was successfully changed the call will return **true**.
+1.  カードにアクセスし、関連付けられた [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) オブジェクトを生成します。
+2.  [
+            **RequestPinChangeAsync**](https://msdn.microsoft.com/library/windows/apps/dn263823) を呼び出して、この操作を完了するための UI をユーザーに表示します。
+3.  PIN が正しく変更された場合は、呼び出しから **true** が返されます。
 
 ```cs
 SmartCardProvisioning provisioning =
@@ -147,12 +150,13 @@ SmartCardProvisioning provisioning =
 bool result = await provisioning.RequestPinChangeAsync();
 ```
 
-To request a PIN reset:
+PIN のリセットを要求するには、次の手順に従います。
 
-1.  Call [**RequestPinResetAsync**](https://msdn.microsoft.com/library/windows/apps/dn263825) to initiate the operation. This call includes a [**SmartCardPinResetHandler**](https://msdn.microsoft.com/library/windows/apps/dn297701) method that represents the smart card and the pin reset request.
-2.  [**SmartCardPinResetHandler**](https://msdn.microsoft.com/library/windows/apps/dn297701) provides information that our **ChallengeResponseAlgorithm**, wrapped in a [**SmartCardPinResetDeferral**](https://msdn.microsoft.com/library/windows/apps/dn297693) call, uses to compare the card's challenge value and the admin key provided by the service or management tool to authenticate the request.
+1.  [
+            **RequestPinResetAsync**](https://msdn.microsoft.com/library/windows/apps/dn263825) を呼び出して操作を開始します。 この呼び出しには、スマート カードと PIN のリセット要求を表す [**SmartCardPinResetHandler**](https://msdn.microsoft.com/library/windows/apps/dn297701) メソッドが含まれます。
+2.  [**SmartCardPinResetHandler**](https://msdn.microsoft.com/library/windows/apps/dn297701) が提供する情報は、[**SmartCardPinResetDeferral**](https://msdn.microsoft.com/library/windows/apps/dn297693) 呼び出しにラップされた **ChallengeResponseAlgorithm** で、カードのチャレンジ値とサービスまたは管理ツールから提供された管理者キーを比較して、要求を認証するために使われます。
 
-3.  If the challenge is successful, the [**RequestPinResetAsync**](https://msdn.microsoft.com/library/windows/apps/dn263825) call is completed; returning **true** if the PIN was successfully reset.
+3.  チャレンジが成功すると、[**RequestPinResetAsync**](https://msdn.microsoft.com/library/windows/apps/dn263825) の呼び出しが完了し、PIN が正しくリセットされた場合は **true** が返されます。
 
 ```cs
 SmartCardProvisioning provisioning =
@@ -180,19 +184,19 @@ bool result = await provisioning.RequestPinResetAsync(
 }
 ```
 
-## Remove a smart card or virtual smart card
+## スマート カードまたは仮想スマート カードの取り外し
 
 
-When a physical smart card is removed a [**CardRemoved**](https://msdn.microsoft.com/library/windows/apps/dn263875) event will fire when the card is deleted.
+物理スマート カードが取り外されると、カードの削除時に [**CardRemoved**](https://msdn.microsoft.com/library/windows/apps/dn263875) イベントが発生します。
 
-Associate the firing of this event with the card reader with the method that defines your app's behavior on card or reader removal as an event handler. This behavior can be something as simply as providing notification to the user that the card was removed.
+カード リーダーでこのイベントが発生したときのイベント ハンドラーとして、カードまたはリーダーが取り外されたときのアプリの動作を定義するメソッドを関連付けます。 この動作は、カードが取り外されたことをユーザーに通知するといった単純なものでかまいません。
 
 ```cs
 reader = card.Reader;
 reader.CardRemoved += HandleCardRemoved;
 ```
 
-The removal of a virtual smart card is handled programmatically by first retrieving the card and then calling [**RequestVirtualSmartCardDeletionAsync**](https://msdn.microsoft.com/library/windows/apps/dn263850) from the [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) returned object.
+仮想スマート カードの削除はプログラムによって行います。まずカードを取得し、次に [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) によって返されたオブジェクトから [**RequestVirtualSmartCardDeletionAsync**](https://msdn.microsoft.com/library/windows/apps/dn263850) を呼び出します。
 
 ```cs
 bool result = await SmartCardProvisioning

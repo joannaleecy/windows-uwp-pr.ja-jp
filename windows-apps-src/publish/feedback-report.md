@@ -1,52 +1,52 @@
 ---
-Description: The Feedback report in the Windows Dev Center dashboard lets you see the problems, suggestions, and upvotes that your Windows 10 customers have submitted through Feedback Hub.
-title: Feedback report
+Description: Windows デベロッパー センターのダッシュボードのフィードバック レポートにより、Windows 10 のユーザーがフィードバック Hub から送信した問題、提案、賛成票を参照できます。
+title: フィードバック レポート
 ms.assetid: 9EA8B456-CA57-40CE-A55B-7BFDC55CA8A8
 ---
 
-# Feedback report
+# フィードバック レポート
 
-Encouraging your customers to give you feedback about your app is a great way to learn about the problems and features that are most important to them. When your customers know they can send you feedback directly, they may be less likely to leave that feedback as a negative review. 
+アプリについてのフィードバックをユーザーに送信してもらうように促すのは、ユーザーにとって重要な問題や機能について知ることができる、よい方法です。 ユーザーは、アプリの作成者に直接フィードバックを送ることができるとわかると、否定的なレビューをフィードバックとして残す可能性がより低くなります。 
 
-You can use the Feedback API in the [Microsoft Store Engagement and Monetization SDK](http://aka.ms/store-em-sdk) to let customers [directly launch Feedback Hub from your app](../monetize/launch-feedback-hub-from-your-app.md). Keep in mind that any customer who has downloaded your app on a Windows 10 device that supports Feedback Hub has the ability to leave feedback for it by using the Feedback Hub app. Because of this, you may see customer feedback in this report, even if you have not specifically asked for feedback from within your app.
+[Microsoft Store Engagement and Monetization SDK](http://aka.ms/store-em-sdk) のフィードバック API を使って、ユーザーが直接[アプリからフィードバック Hub を起動](../monetize/launch-feedback-hub-from-your-app.md)するようにできます。 フィードバック Hub をサポートする Windows 10 デバイスにアプリをダウンロードしたユーザーはだれでも、フィードバック Hub アプリを使ってフィードバックを残すことができます。 このため、アプリ内でフィードバックを特に促していない場合でも、このレポートでユーザーからのフィードバックが表示される場合があります。
 
-> **Tip** Feedback becomes especially valuable if you are using [package flighting](package-flights.md), since the Feedback report will show you the specific package that each customer had installed on their device when they left the feedback.
+> **ヒント** [パッケージ フライト](package-flights.md)を使用している場合には特にフィードバックは有益です。各ユーザーがデバイスにインストールした特定のパッケージがフィードバック レポートに表示されるためです。
 
-The **Feedback** report in the Windows Dev Center dashboard lets you see the the problems, suggestions and upvotes that your Windows 10 customers have submitted through Feedback Hub. You can view this data in your dashboard, or export the data to view offline. 
+Windows デベロッパー センターのダッシュボードの**フィードバック** レポートにより、Windows 10 のユーザーがフィードバック Hub から送信した問題、提案、賛成票を参照できます。 このデータは、ダッシュボードで表示することも、データをエクスポートしてオフラインで表示することもできます。 
 
-## Viewing feedback details
+## フィードバックの詳細の表示
 
-In the **Details** section of this report, you’ll find the individual feedback left by your customers. To the left of the feedback text, you’ll see the number of times the feedback was upvoted by other customers in the Feedback Hub. You can sort the feedback in three ways:
+このレポートの**詳細**セクションには、ユーザーからの個々のフィードバックが表示されます。 フィードバックのテキストの左には、フィードバック Hub で他のユーザーがそのフィードバックに投じた賛成票の回数が表示されます。 3 つの方法で、フィードバックを並べ替えることができます。
 
-- **Upvoted** (default): Shows feedback that has been upvoted by other customers, starting with the feedback which received the most upvotes.
-- **Trending**: Shows feedback that has been upvoted by other customers in the last seven days, starting with the feedback which has been getting the most recent activity.
-- **Most recent**: Shows all feedback, starting with the feedback most recently left. 
+- **賛成票** (既定): 他のユーザーから最も多くの賛成票を受けたフィードバックを先頭に、賛成票を受けたフィードバックを表示します。
+- **人気上昇中**: 最も直近に受けたフィードバックを先頭に、最近 7 日間に他のユーザーから賛成票を受けたフィードバックを表示します。
+- **最近のフィードバック**: 最も直近のフィードバックを先頭に、すべてのフィードバックを表示します。 
 
-Next to each comment you’ll see the date on which the feedback was left, and the type of feedback. You’ll also see the customer’s market, the specific package of your app that was installed on the device they were using when they left the feedback, the type of that device, and **Windows Insider** if the customer submitting the feedback is a member of the Windows Insider program.
+各コメントの横には、フィードバックを受けた日付と、フィードバックの種類が表示されます。 またユーザーの市場、アプリのフィードバックを行ったときに使っていたデバイスにインストールされている特定のパッケージ、デバイスの種類、**Windows Insider** (フィードバックを送信したユーザーが Windows Insider Program のメンバーである場合) も表示されます。
 
 
-## Apply filters
+## フィルターの適用
 
-Near the top of the page, you can expand **Apply filters** to filter all of the data on this page.
+ページの上部にある **[フィルターの適用]** を展開して、このページのすべてのデータをフィルター処理できます。
 
-> **Tip** If you don't see any feedback on the page, check to make sure your filters haven't excluded all of your feedback. For example, if you filter by a **Device type** that your app doesn't support, you won't see any feedback.
+> **ヒント** このページにフィードバックが表示されない場合は、フィルターですべてのフィードバックを除外していないかどうかを確認してください。 たとえば、アプリがサポートされていない**デバイスの種類**でフィルター処理する場合、フィードバックは表示されません。
 
-- **Date**: The default filter is **All time**. You can select shorter timeframes ranging from **Last 30 days** up to **Last 12 months**.
-- **Feedback type**: The default setting is **All**. You can select **Problem** or **Suggestion** to show only that type of feedback.
-- **Device type**: The default setting is **All devices**. You can select **Phone**, **PC**, or **Tablet** to show only feedback left from that type of device.
-- **Package version**: The default setting is **All packages**. You can select one of your packages to show only feedback left from customers who were using that particular package when they left feedback.
-- **Market**: The default setting is **All markets**. You can choose a specific to show only feedback from customers in that market.
-- **Group**: The default setting is **All**. You can choose to view only feedback submitted by [Windows Insiders](http://insider.windows.com).
+- **日付**: 既定のフィルターは **[すべての日付]** です。 **[過去 30 日]** から **[過去 12 か月]** までの範囲を選択できます。
+- **[フィードバックの種類]**: 既定の設定は **[すべて]** です。 **[問題]** または **[提案]** を選択して、表示するフィードバックの種類を選択できます。
+- **[デバイスの種類]**: 既定の設定は **[すべてのデバイス]** です。 **[携帯電話]**、**[PC]**、**[タブレット]** を選択して、フィードバックを行ったデバイスの種類を選択できます。
+- **[パッケージ バージョン]**: 既定の設定は **[すべてのパッケージ]** です。 パッケージの 1 つを選択して、ユーザーがフィードバックを行ったときに使っていた特定のパッケージのみのフィードバックを表示できます。
+- **[市場]**: 既定の設定は **[すべての市場]** です。 特定の市場でのユーザーからフィードバックのみを表示することができます。
+- **[グループ]**: 既定の設定は **[すべて]** です。 [Windows Insider](http://insider.windows.com) から送信されたフィードバックのみを表示することもできます。
 
-## Translating feedback
+## フィードバックの翻訳
 
-By default, reviews that were not written in your preferred language are translated for you. If you prefer, feedback translation can be disabled by unchecking the **Translate reviews** checkbox at the upper right, above the list of feedback.
+既定では、優先する言語で記述されていないレビューは翻訳されます。 必要に応じて、フィードバックの一覧の右上にある **[レビューを翻訳する]** チェック ボックスをオフにして、フィードバックの翻訳を無効にすることができます。
 
-Please note that feedback is translated by an automatic translation system, and the resulting translation may not always be accurate. The original text is provided if you wish to compare it to the translation, or translate it through some other means.
+フィードバックは自動翻訳システムによって翻訳されるため、翻訳の結果が正確でない場合があることに注意してください。 元のテキストと翻訳を比較する場合や、元のテキストを他の方法で翻訳する場合は、元のテキストが提供されます。
 
-## Launching Feedback Hub directly from your app
+## アプリから直フィードバック Hub を起動する
 
-As noted above, we recommend incorporating a link to Feedback Hub directly in your app to encourage customers to provide feedback. For more info, see [Launch Feedback Hub from your app](../monetize/launch-feedback-hub-from-your-app.md).
+前に説明したように、フィードバック Hub への直接のリンクをアプリ内に組み込んで、ユーザーにフィードバックの提供を促すことをお勧めします。 詳しくは、「[アプリからのフィードバック Hub の起動](../monetize/launch-feedback-hub-from-your-app.md)」をご覧ください。
 
 
 <!--HONumber=Mar16_HO5-->

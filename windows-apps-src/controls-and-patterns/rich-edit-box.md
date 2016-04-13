@@ -1,43 +1,43 @@
 ---
-Description: You can use a RichEditBox control to enter and edit rich text documents that contain formatted text, hyperlinks, and images. You can make a RichEditBox read-only by setting its IsReadOnly property to true.
+Description: 書式付きテキスト、ハイパーリンク、イメージなどを含んだリッチ テキスト ドキュメントの入力と編集には、RichEditBox コントロールを使うことができます。 このコントロールの IsReadOnly プロパティを true に設定すると、RichEditBox を読み取り専用にできます。
 title: RichEditBox
 ms.assetid: 4AFC0DFA-3B89-434D-9F86-4309CCFF7839
-label: Rich edit box
+label: リッチ エディット ボックス
 template: detail.hbs
 ---
-# Rich edit box
-You can use a RichEditBox control to enter and edit rich text documents that contain formatted text, hyperlinks, and images. You can make a RichEditBox read-only by setting its IsReadOnly property to **true**.
+# リッチ エディット ボックス
+書式付きテキスト、ハイパーリンク、イメージなどを含んだリッチ テキスト ドキュメントの入力と編集には、RichEditBox コントロールを使うことができます。 このコントロールの IsReadOnly プロパティを **true** に設定すると、RichEditBox を読み取り専用にできます。
 
-<span class="sidebar_heading" style="font-weight: bold;">Important APIs</span>
+<span class="sidebar_heading" style="font-weight: bold;">重要な API</span>
 
--   [**RichEditBox class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)
--   [**Document property**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.document.aspx)
--   [**IsReadOnly property**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isreadonly.aspx)
--   [**IsSpellCheckEnabled property**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx)
+-   [**RichEditBox クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)
+-   [**Document プロパティ**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.document.aspx)
+-   [**IsReadOnly プロパティ**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isreadonly.aspx)
+-   [**IsSpellCheckEnabled プロパティ**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx)
 
-## Is this the right control?
+## 適切なコントロールの選択
 
-Use a **RichEditBox** to display and edit text files. You don't use a RichEditBox to get user input into you app the way you use other standard text input boxes. Rather, you use it to work with text files that are separate from your app. You typically save text entered into a RichEditBox to a .rtf file.
--   If the primary purpose of the multi-line text box is for creating documents (such as blog entries or the contents of an email message), and those documents require rich text, use a rich text box.
--   If you want users to be able to format their text, use a rich text box.
--   When capturing text that will only be consumed and not redisplayed to users, use a plain text input control.
--   For all other scenarios, use a plain text input control.
+**RichEditBox** を使用して、テキスト ファイルを表示および編集します。 その他の標準的なテキスト入力ボックスを使用するように、アプリへユーザー入力を行うために RichEditBox を使用しません。 むしろ、アプリとは別のテキスト ファイルで行うために RichEditBox を使用します。 通常は、RichEditBox に入力されたテキストを .rtf ファイルに保存します。
+-   複数行テキスト ボックスの主な目的がドキュメントの作成 (ブログのエントリ、メール メッセージのコンテンツなど) であり、ドキュメントでリッチ テキストが必要な場合は、リッチ テキスト ボックスを使います。
+-   ユーザーがテキストを書式設定できるようにする場合は、リッチ テキスト ボックスを使います。
+-   内部的に使うだけで、ユーザーに再表示しないテキストを取得する場合は、プレーンテキスト入力コントロールを使います。
+-   他のすべてのシナリオでは、プレーンテキスト入力コントロールを使います。
 
-For more info about choosing the right text control, see the [Text controls](text-controls.md) article.
+適切なテキスト コントロールの選択について詳しくは、「[テキスト コントロール](text-controls.md)」をご覧ください。
 
-## Examples
+## 例
 
-This rich edit box has a rich text document open in it. The formatting and file buttons aren't part of the rich edit box, but you should provide at least a minimal set of styling buttons and implement their actions.
+このリッチ エディット ボックスで、リッチ テキスト ドキュメントを開きます。 書式設定とファイルのボタンは、リッチ エディット ボックスの一部ではありませんが、最小限のスタイル設定ボタンを用意し、その動作を実装する必要があります。
 
-![A rich text box with an open document](images/rich-edit-box.png)
+![開いたドキュメントが用意されたリッチ テキスト ボックス](images/rich-edit-box.png)
 
-## Create a rich edit box
+## リッチ エディット ボックスを作成します。
 
-By default, the RichEditBox supports spell checking. To disable the spell checker, set the [IsSpellCheckEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx) property to **false**. For more info, see Guidelines and checklist for spell checking.
+既定では、RichEditBox はスペル チェックをサポートします。 スペル チェックを無効にするには、[IsSpellCheckEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx) プロパティを **false** に設定します。 詳しくは、「スペル チェックのガイドラインとチェック リスト」をご覧ください。
 
-You use the [Document](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.document.aspx) property of the RichEditBox to get its content. The content of a RichEditBox is a [Windows.UI.Text.ITextDocument](https://msdn.microsoft.com/library/windows/apps/xaml/bb774052.aspx) object, unlike the RichTextBlock control, which uses [Windows.UI.Xaml.Documents.Block](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.block.aspx) objects as its content. The ITextDocument interface provides a way to load and save the document to a stream, retrieve text ranges, get the active selection, undo and redo changes, set default formatting attributes, and so on.
+RichEditBox のコンテンツを取得するには、このコントロールの [Document](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.document.aspx) プロパティを使います。 RichTextBlock コントロールと異なり、RichEditBox のコンテンツは [Windows.UI.Text.ITextDocument](https://msdn.microsoft.com/library/windows/apps/xaml/bb774052.aspx) オブジェクトです。このコンテンツは、[Windows.UI.Xaml.Documents.Block](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.block.aspx) オブジェクトをそのコンテンツとして使います。 ITextDocument インターフェイスは、ドキュメントの読み込みとストリームへの保存、テキスト範囲の取得、アクティブな選択内容の取得、変更の取り消しとやり直し、既定の書式設定属性の設定などに利用できます。
 
-This example shows how to edit, load, and save a Rich Text Format (.rtf) file in a RichEditBox.
+この例では、RichEditBox でリッチ テキスト形式 (.rtf) ファイルの編集、読み込み、保存を行う方法を示します。
 
 ```xaml
 <RelativePanel Margin="20" HorizontalAlignment="Stretch">
@@ -176,41 +176,41 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## Choose the right keyboard for your text control
+## テキスト コントロールに適切なキーボードの選択
 
-To help users to enter data using the touch keyboard, or Soft Input Panel (SIP), you can set the input scope of the text control to match the kind of data the user is expected to enter. The default keyboard layout is usually appropriate for working with rich text documents.
+ユーザーがタッチ キーボード、つまりソフト入力パネル (SIP) でデータを入力できるように、ユーザーが入力すると予想されるデータの種類に合わせてテキスト コントロールの入力値の種類を設定できます。 通常、既定のキーボード レイアウトは、リッチ テキスト ドキュメントを扱う場合に適しています。
 
-For more info about how to use input scopes, see [Use input scope to change the touch keyboard]().
+入力値の種類の使い方について詳しくは、「[入力値の種類を使ったタッチ キーボードの変更]()」をご覧ください。
 
-## Recommendations
+## 推奨事項
 
--   When you create a rich text box, provide styling buttons and implement their actions.
--   Use a font that's consistent with the style of your app.
--   Make the height of the text control tall enough to accommodate typical entries.
--   Don't let your text input controls grow in height while users type.
--   Don't use a multi-line text box when users only need a single line.
--   Don't use a rich text control if a plain text control is adequate.
-
-
-
-\[This article contains information that is specific to Universal Windows Platform (UWP) apps and Windows 10. For Windows 8.1 guidance, please download the [Windows 8.1 guidelines PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
-
-## Related articles
-
-[Text controls](text-controls.md)
-
-**For designers**
-- [Guidelines for spell checking](spell-checking-and-prediction.md)
-- [Adding search](https://msdn.microsoft.com/library/windows/apps/hh465231)
-- [Guidelines for text input](text-controls.md)
-
-**For developers (XAML)**
-- [**TextBox class**](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [**Windows.UI.Xaml.Controls PasswordBox class**](https://msdn.microsoft.com/library/windows/apps/br227519)
+-   リッチ テキスト ボックスを作る場合は、スタイル設定ボタンを用意し、その動作を実装します。
+-   アプリのスタイルに合ったフォントを使います。
+-   テキスト コントロールの高さは、典型的な入力が十分に入るように設定します。
+-   ユーザーの入力中にテキスト入力コントロールの高さが増加するようにはしません。
+-   ユーザーが 1 行しか必要としていない場合は、複数行テキスト ボックスを使いません。
+-   プレーンテキスト コントロールで十分な場合に、リッチ テキスト コントロールを使わないでください。
 
 
-**For developers (other)**
-- [String.Length property](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
+
+\[この記事には、ユニバーサル Windows プラットフォーム (UWP) アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
+
+## 関連記事
+
+[テキスト コントロール](text-controls.md)
+
+**デザイナー向け**
+- [スペル チェックのガイドライン](spell-checking-and-prediction.md)
+- [検索の追加](https://msdn.microsoft.com/library/windows/apps/hh465231)
+- [テキスト入力のガイドライン](text-controls.md)
+
+**開発者向け (XAML)**
+- [**TextBox クラス**](https://msdn.microsoft.com/library/windows/apps/br209683)
+- [**Windows.UI.Xaml.Controls PasswordBox クラス**](https://msdn.microsoft.com/library/windows/apps/br227519)
+
+
+**開発者向け (その他)**
+- [String.Length プロパティ](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
 
 
 <!--HONumber=Mar16_HO1-->

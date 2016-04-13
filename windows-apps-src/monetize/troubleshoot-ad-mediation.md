@@ -1,36 +1,36 @@
 ---
-Description: Following are some solutions to several common development issues related to ad mediation.
-title: Troubleshoot ad mediation
+Description: 広告の仲介に関連した、開発に関するいくつかの一般的な問題に対する解決策を以下に示します。
+title: 広告の仲介のトラブルシューティング
 ms.assetid: 8728DE4F-E050-4217-93D3-588DD3280A3A
 ---
 
-# Troubleshoot ad mediation
+# 広告の仲介のトラブルシューティング
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-Following are some solutions to several common development issues related to ad mediation.
+広告の仲介に関連した、開発に関するいくつかの一般的な問題に対する解決策を以下に示します。
 
-**You can't add an AdMediatorControl to the design surface**  
-When you drag the **AdMediatorControl** control to the designer for the first time in a Universal Windows Platform (UWP), Windows 8.1, or Windows Phone 8.1 project using C# or Visual Basic with XAML, Visual Studio adds the required ad mediator assembly reference to your project, but the control isn't added to the designer yet. To add the control, click OK in the message displayed by Visual Studio, wait several seconds for the designer to refresh, and then drag the control back to the designer again.
+**デザイン サーフェイスに AdMediatorControl を追加できない**  
+C# または Visual Basic と XAML を使ったユニバーサル Windows プラットフォーム (UWP)、Windows 8.1、または Windows Phone 8.1 プロジェクトで、最初に **AdMediatorControl** コントロールをデザイナーにドラッグしたときに、Visual Studio によって、必要な広告メディエーター アセンブリ参照がプロジェクトに追加されますが、コントロールはまだデザイナーに追加されていません。 コントロールを追加するには、Visual Studio によって表示されるメッセージで [OK] をクリックし、デザイナーが更新されるまで数秒待ちます。その後、もう一度コントロールをデザイナーにドラッグします。
 
-If you still can't successfully add the control to the designer, make sure your project targets the applicable processor architecture for your app (for example, **x86**) rather than **Any CPU**. The control cannot be added to the designer if the project targets **Any CPU** for the build platform.
+それでもコントロールをデザイナーに正常に追加できない場合は、プロジェクトのターゲットが **[Any CPU]** (任意の CPU) ではなく、アプリに該当するプロセッサ アーキテクチャ (たとえば、**[x86]**) であることを確認します。 プロジェクトのビルド プラットフォームのターゲットを **[Any CPU]** (任意の CPU) にしている場合、このコントロールをデザイナーに追加できません。
 
-**The AdMediatorControl shows the error “&lt;*width*&gt; x &lt;*height*&gt; Not supported” at run time when serving ads from Microsoft**  
-Microsoft advertising only supports [certain ad sizes recommended by the Interactive Advertising Bureau (IAB)](add-and-use-the-ad-mediator-control.md#supported-ad-sizes-for-microsoft-advertising). In some cases, even if you set the height and width of the ad mediator control in the designer or in your XAML to one of these supported ad sizes, scaling and rounding issues might cause prevent the ad mediation framework from serving an ad. To avoid this issue, assign the **Width** and **Height** optional parameters for Microsoft advertising in your code to one of the supported ad sizes.
+**Microsoft** から広告を提供しているときに、AdMediatorControl によって "&lt;*width*&gt; x &lt;*height*&gt; はサポートされていません" というエラーが表示される  
+Microsoft Advertising は、[Interactive Advertising Bureau (IAB) が推奨する特定の広告サイズ](add-and-use-the-ad-mediator-control.md#supported-ad-sizes-for-microsoft-advertising)のみをサポートします。 状況によっては、デザイナーまたは XAML で、広告メディエーターのコントロールの幅と高さをサポートされている広告サイズのいずれかに設定した場合でも、拡大縮小や丸めの問題によって、広告の仲介フレームワークに広告が提供されない可能性があります。 この問題を回避するには、コード内で Microsoft Advertising のオプションのパラメーター **Width** と **Height** に、サポートされている広告サイズのいずれかを割り当てます。
 
-The following code example demonstrates how to assign the **Width** and **Height** optional parameters for Microsoft advertising to 728 x 90.
+次のコード例では、Microsoft Advertising のオプション パラメーター **Width** と **Height** に 728 x 90 を割り当てる方法を示しています。
 
 ```CSharp
 myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.MicrosoftAdvertising]["Width"] = 728;
 myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.MicrosoftAdvertising]["Height"] = 90;
 ```
 
-**Ad mediation does not include location (latitude/longitude) for the ad network**  
-If you enable the location capability in your app, the ad mediator control will automatically fetch the latitude/longitude coordinates and provide them to ad networks that support them.
+**広告の仲介に広告ネットワーク用の場所 (緯度と経度) が含まれない**  
+アプリで位置情報機能を有効にした場合、広告メディエーター コントロールは自動的に、緯度と経度の座標を取得し、それらをサポートする広告ネットワークに提供します。
 
-**The Smaato ad control doesn’t line up correctly**  
-Try using the optional parameters to set values on the SDK controls:
+**Smaato 広告コントロールが正しく配置されない**  
+オプション パラメーターを使って、SDK コントロールに値を設定してみてください。
 
 ```
 myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.Smaato][“Margin”] = new Thickness(0, -20, 0, 0);
@@ -38,25 +38,25 @@ myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.Smaato][“Width”] = 50
 myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.Smaato][“Height”] = 320d;
 ```
 
-**The AdDuplex ad control does not show with the correct size (it shows as 250×250)**  
-Ad mediation does not set any value for the size, so you should change it using the optional parameter Size. For example:
+**AdDuplex 広告コントロールが正しいサイズで表示されない (250 × 250 で表示される)**  
+広告の仲介はサイズの値を設定しないため、オプション パラメーターの Size を使ってサイズを変更する必要があります。 例:
 
 ```
 myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.AdDuplex][“Size”] = “160×600″;
 ```
 
-**You receive the error “Something is covering the ad control”**  
-Ad Duplex will always show an error if the ad is obscured in any way within your app. [Read their solution](http://blog.adduplex.com/2014/01/solving-something-is-covering-ad.mdl) to this error.
+**「Something is covering the ad control」(何かが広告コントロールを覆っています) というエラーが発生する**  
+アプリ内の広告が何らかの方法で隠されている場合、AdDuplex は必ずエラーを表示します。 このエラーに対する[解決策をお読みください](http://blog.adduplex.com/2014/01/solving-something-is-covering-ad.mdl)。
 
-**You receive the error "There was a conflict between two files"**  
-You have referenced the Microsoft advertising assemblies elsewhere in your app. Ad mediation is designed to work exclusively in your app, and it will not work if other references to the Microsoft advertising assemblies are used. Remove the Microsoft advertising references manually and reinstall the Microsoft Store Engagement and Monetization SDK to clear the error.
+**「2 つのファイルの間で競合が見つかりました」というエラーが発生する**  
+アプリ内の別の場所で Microsoft Advertising アセンブリを参照しています。 広告の仲介はアプリ内で排他的に動作するようにデザインされており、Microsoft Advertising アセンブリに対する他の参照が使われている場合は機能しません。 Microsoft Advertising の参照を手動で削除し、Microsoft Store Engagement and Monetization SDK を再インストールして、エラーをクリアします。
 
-## Related topics
+## 関連トピック
 
-* [Select and manage your ad networks](select-and-manage-your-ad-networks.md)
-* [Add and use the ad mediation control](add-and-use-the-ad-mediator-control.md)
-* [Test your ad mediation implementation](test-your-ad-mediation-implementation.md)
-* [Submit your app and configure ad mediation](submit-your-app-and-configure-ad-mediation.md)
+* [広告ネットワークの選択と管理](select-and-manage-your-ad-networks.md)
+* [広告の仲介コントロールの追加と使用](add-and-use-the-ad-mediator-control.md)
+* [広告の仲介の実装のテスト](test-your-ad-mediation-implementation.md)
+* [アプリの提出と広告の仲介の構成](submit-your-app-and-configure-ad-mediation.md)
  
 
  

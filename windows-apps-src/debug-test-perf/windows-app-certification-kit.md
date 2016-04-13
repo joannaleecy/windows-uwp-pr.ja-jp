@@ -1,90 +1,90 @@
 ---
 ms.assetid: 78D833B9-E528-4BCA-9C48-A757F17E6C22
-title: Windows App Certification Kit
-description: To give your app the best chance of being published on the Windows Store, or becoming Windows Certified, validate and test it locally before you submit it for certification. This topic shows you how to install and run the Windows App Certification Kit.
+title: Windows アプリ認定キット
+description: 作成したアプリを Windows ストアに公開する、または Windows 認定を受ける最善の方法は、認定のためアプリを提出する前に、ローカルでアプリの検証とテストを行うことです。 このトピックでは、Windows アプリ認定キットのインストール方法と実行方法について説明します。
 ---
-# Windows App Certification Kit
+# Windows アプリ認定キット
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-To give your app the best chance of being [published on the Windows Store](https://msdn.microsoft.com/library/windows/apps/Hh694062), or becoming [Windows Certified](https://msdn.microsoft.com/windows/desktop/jj134964.aspx), validate and test it locally before you submit it for certification. This topic shows you how to install and run the [Windows App Certification Kit](http://go.microsoft.com/fwlink/p/?LinkID=309666).
+作成したアプリを [Windows ストアに公開](https://msdn.microsoft.com/library/windows/apps/Hh694062)する、または [Windows 認定](https://msdn.microsoft.com/windows/desktop/jj134964.aspx)を受ける最善の方法は、認定のためアプリを提出する前に、ローカルでアプリの検証とテストを行うことです。 このトピックでは、[Windows アプリ認定キット](http://go.microsoft.com/fwlink/p/?LinkID=309666)のインストール方法と実行方法について説明します。
 
-## Prerequisites
+## 前提条件
 
-Prerequisites for testing a Universal Windows app:
+ユニバーサル Windows アプリのテストの前提条件:
 
--   You must install and run Windows 10.
--   You must install [Windows App Certification Kit version 10]( http://go.microsoft.com/fwlink/p/?LinkID=309666), which is included in the Windows Software Development Kit (SDK) for Windows 10.
--   You must have a valid developer license for your computer. See [Get a developer license](https://msdn.microsoft.com/library/windows/apps/Hh974578) to learn how.
--   You must deploy the Windows app that you want to test to your computer.
+-   Windows 10 をインストールして実行する必要があります。
+-   Windows 10 用 Windows ソフトウェア開発キット (Windows SDK) に含まれる [Windows アプリ認定キット 10]( http://go.microsoft.com/fwlink/p/?LinkID=309666) をインストールする必要があります。
+-   コンピューターに有効な開発者用ライセンスが必要です。 方法については、「[開発者用ライセンスの取得](https://msdn.microsoft.com/library/windows/apps/Hh974578)」をご覧ください。
+-   テストする Windows アプリをコンピューターに展開する必要があります。
 
-**A note about in-place upgrades**
+**一括アップグレードに関する注意事項**
 
-The installation of a more recent [Windows App Certification Kit]( http://go.microsoft.com/fwlink/p/?LinkID=309666) will replace any previous version of the kit that is installed on the machine.
+最新の [Windows アプリ認定キット]( http://go.microsoft.com/fwlink/p/?LinkID=309666)をインストールすると、コンピューターにインストールされているキットの以前のバージョンが置き換えられます。
 
-## Validate your Windows app using the Windows App Certification Kit interactively
+## Windows アプリ認定キットを使った Windows アプリをインタラクティブに検証する
 
-1.  From the **Start** menu, search **Apps**, find **Windows Kits**, and click **Windows App Cert Kit**.
+1.  **[スタート]** メニューから、**[アプリ]**、**[Windows キット]** の順に進み、**[Windows アプリ認定キット]** をクリックします。
 
-2.  From the Windows App Certification Kit, select the category of validation you would like to perform. For example: If you are validating a Windows app, select **Validate a Windows app**.
+2.  [Windows アプリ認定キット] で、実行する検証のカテゴリを選びます。 たとえば、Windows アプリを検証する場合、**[Validate a Windows app]** (Windows アプリの検証) を選択します。
 
-    You may browse directly to the app you're testing, or choose the app from a list in the UI. When the Windows App Certification Kit is run for the first time, the UI lists all the Windows apps that you have installed on your computer. For any subsequent runs, the UI will display the most recent Windows apps that you have validated. If the app that you want to test is not listed, you can click on **My app isn't listed** to get a comprehensive list of all apps installed on your system.
+    テストするアプリを直接参照するか、UI で一覧からアプリを選ぶことができます。 Windows アプリ認定キットを初めて実行すると、UI にはコンピューターにインストールされているすべての Windows アプリが一覧表示されます。 以降の実行では、UI には検証済みの最新の Windows アプリが表示されます。 テストするアプリが表示されていない場合は、**[自分のアプリが表示されない]** をクリックして、システムにインストールされているすべてのアプリを一覧表示できます。
 
-3.  After you have input or selected the app that you want to test, click **Next**.
+3.  テストするアプリを入力するか選択したら **[次へ]** をクリックします。
 
-4.  From the next screen, you will see the test workflow that aligns to the app type you are testing. If a test is grayed out in the list, the test is not applicable to your environment. For example, if you are testing a Windows 10 app on Windows 7, only static tests will apply to the workflow. Note that the Windows Store may apply all tests from this workflow. Select the tests you want to run and click **Next**.
+4.  次の画面からは、テストするアプリの種類に合ったテスト ワークフローが表示されます。 一覧でテストが淡色されている場合、お使いの環境にはそのテストが適用されません。 たとえば、Windows 7 で Windows 10 アプリをテストする場合、静的テストのみがワークフローに適用されます。 Windows ストアにはこのワークフローのすべてのテストを適用できる点に注意してください。 実行するテストを選んで **[次へ]** をクリックします。
 
-    The Windows App Certification Kit begins validating the app.
+    Windows アプリ認定キットによってアプリの検証が開始されます。
 
-5.  At the prompt after the test, enter the path to the folder where you want to save the test report.
+5.  テストが終わった後のプロンプトで、テスト レポートを保存するフォルダーのパスを入力します。
 
-    The Windows App Certification Kit creates an HTML along with an XML report and saves it in this folder.
+    Windows アプリ認定キットによって XML 形式のレポートと共に HTML が作成され、このフォルダーに保存されます。
 
-6.  Open the report file and review the results of the test.
+6.  レポート ファイルを開いて、テストの結果を確認します。
 
-**Note**  If you're using Visual Studio, you can run the Windows App Certification Kit when you create your app package. See [Packaging UWP apps](https://msdn.microsoft.com/library/windows/apps/Mt627715) to learn how.
+**注**  Visual Studio を使っている場合は、アプリ パッケージを作るときに Windows アプリ認定キットを実行できます。 方法については、「[UWP アプリのパッケージ化](https://msdn.microsoft.com/library/windows/apps/Mt627715)」をご覧ください。
 
  
 
-## Validate your Windows app using the Windows App Certification Kit from a command line
+## コマンド ラインから Windows アプリ認定キットを使った Windows アプリを検証する
 
-**Important**  The Windows App Certification Kit must be run within the context of an active user session.
+**重要**  Windows アプリ認定キットは、アクティブなユーザー セッションで実行する必要があります。
 
-1.  In the command window, navigate to the directory that contains the Windows App Certification Kit.
+1.  コマンド ウィンドウで、Windows アプリ認定キットを含むディレクトリに移動します。
 
-    **Note**   The default path is C:\\Program Files\\Windows Kits\\10\\App Certification Kit\\.
+    **注**   既定のパスは C:\\Program Files\\Windows Kits\\10\\App Certification Kit\\ です。
 
-2.  Enter the following commands in this order to test an app that is already installed on your test computer:
+2.  次のコマンドをこの順序で入力し、テスト コンピューターにすでにインストールされているアプリをテストします。
 
     `appcert.exe reset`
 
     `appcert.exe test -packagefullname [package full name] -reportoutputpath [report file name]`
 
-    Or you can use the following commands if the app is not installed. The Windows App Certification Kit will open the package and apply the appropriate test workflow:
+    または、アプリがインストールされていない場合は次のコマンドを使うことができます。 Windows アプリ認定キットにパッケージが開き、適切なテスト ワークフローが適用されます。
 
     `appcert.exe reset`
 
     `appcert.exe test -appxpackagepath [package path] -reportoutputpath [report file name]`
 
-3.  After the test completes, open the report file named `[report file name]` and review the test results.
+3.  テストが完了したら、`[report file name]` という名前のレポート ファイルを開いて、テスト結果を確認します。
 
-**Note**  The Windows App Certification Kit can be run from a service, but the service must initiate the kit process within an active user session and cannot be run in Session0.
+**注**  Windows アプリ認定キットはサービスから実行できますが、サービスはアクティブなユーザー セッションでキットのプロセスを開始する必要があり、Session0 では実行できません。
 
-**Note**   For more info about the Windows App Certification Kit command line, enter the command `appcert.exe /?`
+**注**   Windows アプリ認定キットのコマンド ラインについて詳しく知るには、コマンド「`appcert.exe /?`」を入力します。
 
-## Testing with a low-power computer
+## 低電力コンピューターでのテスト
 
-The performance test thresholds of the Windows App Certification Kit are based on the performance of a low-power computer.
+Windows アプリ認定キットで使用するパフォーマンス テストのしきい値は、低電力コンピューターのパフォーマンスに基づいて設定します。
 
-The characteristics of the computer on which the test is performed can influence the test results. To determine if your app’s performance meets the [Windows Store Policies](https://msdn.microsoft.com/library/windows/apps/Dn764944), we recommend that you test your app on a low-power computer, such as an Intel Atom processor-based computer with a screen resolution of 1366x768 (or higher) and a rotational hard drive (as opposed to a solid-state hard drive).
+テストを実行するコンピューターの特性がテスト結果に影響することがあります。 アプリのパフォーマンスが [Windows ストア ポリシー](https://msdn.microsoft.com/library/windows/apps/Dn764944)を満たしているかどうかを判断するには、アプリを低電力コンピューター (たとえば画面の解像度が 1366x768 またはそれ以上で、ソリッド ステート ハード ドライブではなく回転式ハード ドライブを搭載した Intel Atom プロセッサ ベースのコンピューター) 上でテストすることをお勧めします。
 
-As low-power computers evolve, their performance characteristics might change over time. Refer to the most current [Windows Store Policies](https://msdn.microsoft.com/library/windows/apps/Dn764944) and test your app with the most current version of the Windows App Certification Kit to make sure that your app complies with the latest performance requirements.
+低電力コンピューターの進化に伴い、パフォーマンスの特性が時間の経過と共に変化する可能性があります。 アプリが最新のパフォーマンス要件を満たすように、最新の [Windows ストア ポリシー](https://msdn.microsoft.com/library/windows/apps/Dn764944) を参照し、最新版の Windows アプリ認定キットでアプリをテストしてください。
 
-## Related topics
+## 関連トピック
 
-* [Windows App Certification Kit tests](windows-app-certification-kit-tests.md)
-* [Windows Store Policies](https://msdn.microsoft.com/library/windows/apps/Dn764944)
+* [Windows アプリ認定キットのテスト](windows-app-certification-kit-tests.md)
+* [Windows ストア ポリシー](https://msdn.microsoft.com/library/windows/apps/Dn764944)
  
 
  

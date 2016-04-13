@@ -1,98 +1,98 @@
 ---
-Description: The Payout summary shows you details about the money you’ve earned with your apps and in-app products. It also lets you know when you’ll receive payments and how much you'll be paid.
-title: Payout summary
+Description: [入金状況] には、アプリやアプリ内製品による売り上げの詳細が表示されます。 支払いを受ける時期と支払われる金額も示されます。
+title: 支払いの要約
 ms.assetid: F0D070BE-8267-4CC9-B0D2-085EBA74AC98
 ---
 
-# Payout summary
+# 支払いの要約
 
 
-The **Payout summary** shows you details about the money you’ve earned with your apps and in-app products. It also lets you know when you’ll receive payments and how much you'll be paid.
+**[入金状況]** には、アプリやアプリ内製品による売り上げの詳細が表示されます。 支払いを受ける時期と支払われる金額も示されます。
 
-If you use Microsoft Advertising to earn money, as of April 1, 2016, you'll also see payment info for advertising proceeds in the **Payout summary**. For more details regarding Advertising Payment policies, see the [pubCenter Payment policies](http://go.microsoft.com/fwlink/p/?LinkID=624469).
+Microsoft Advertising を使用して収益を上げた場合、2016 年 4 月 1 日以降、広告の収益のお支払い情報が **[入金状況]** に表示されます。 広告の支払いポリシーについて詳しくは、[pubCenter の支払いポリシー](http://go.microsoft.com/fwlink/p/?LinkID=624469)をご覧ください。
 
-If you sell products in the Azure Marketplace, you’ll also see info on successful payouts from November 1, 2015 and forward in the **Payout summary**. For more details regarding Azure Marketplace payment, see the [Microsoft Azure Marketplace Participation Policies](http://go.microsoft.com/fwlink/p/?LinkId=722436) and the [Microsoft Azure Marketplace Publisher Agreement](http://go.microsoft.com/fwlink/p/?LinkID=699560 ). More info about viewing earlier Azure Marketplace payout info can be found [here](http://go.microsoft.com/fwlink/p/?LinkID=722439).
+Azure Marketplace で製品を販売する場合、2015 年 11 月 1 日以降、**[入金状況]** に正常に行われた支払いに関する情報も表示されます。 Azure Marketplace での支払いについて詳しくは、[Microsoft Azure Marketplace への参加ポリシーに関するページ](http://go.microsoft.com/fwlink/p/?LinkId=722436)と [Microsoft Azure Marketplace の発行元契約に関するページ](http://go.microsoft.com/fwlink/p/?LinkID=699560 )をご覧ください。 以前の Azure Marketplace の支払い情報の表示については、[こちら](http://go.microsoft.com/fwlink/p/?LinkID=722439)をご覧ください。
 
-> **Note**  To be eligible for payout, your app proceeds must reach the applicable payment threshold. If the proceeds are less than the payment threshold, they will remain in the Reserved category until the threshold has been met. For more details, see the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058).
+> **注:** 支払いを受けるには、アプリの収益が規定の額に達する必要があります。 支払しきい値未満の収益は、しきい値が満たされるまで [処理待ち] カテゴリに残ります。 詳しくは、「[アプリ開発者契約書](https://msdn.microsoft.com/library/windows/apps/hh694058)」をご覧ください。
 >
-> Payments are made on a monthly basis (provided any applicable payment threshold has been met). We will typically send any payment due in a given month by the 15th day of that month. Note that payments generally take between 3 to 10 additional business days to reach your payout account.
+> 支払いは毎月行われます (支払いのしきい値に達している場合)。 通常、支払いは、該当する月の 15 日に行われます。 支払いが受取りアカウントに到着するまで、通常は 3 ～ 10 営業日かかることに注意してください。
 
-## Current proceeds and payments
-
-
-Near the top of the page, you’ll find your **Current proceeds and payments**, which contains three sections: **Reserved**, **Upcoming payment**, and **Most recent payment**.
-
--   **Reserved** shows the amount of money your account has accumulated but which has not yet been scheduled for payment, including advertising proceeds. (Azure Marketplace proceeds do not appear in the Reserved section; if you only participate in the Azure Marketplace, you will see $0.00 here.) Proceeds from your most recent advertising and app sales remain on hold for about 30 days before they become eligible for payout. After that, the proceeds will be scheduled for payment the following month (assuming the payment threshold has been met). When a payment is attempted, your reserved balance will decrease by the payment amount and you will see the amount reflected in **Upcoming payment**. Note that the amount shown in **Reserved** is an estimate, because exchange rates for sales in other currencies may fluctuate prior to payment creation. You may notice your reserved balance change slightly at the beginning of every month. Your reserved balance is updated monthly to reflect monthly exchange rates, so that it represents a more accurate estimate. You can click **View details** to see additional information, or click the link to **Download your reserved transactions** to view a .csv file of all your **Reserved** transactions.
--   **Upcoming payment** shows the number of upcoming payments, the amount of your next payment(s), and the payment creation date(s). If your eligible proceeds haven’t met the payment threshold yet, no upcoming payment will be shown here. You can click **View details** to see additional information, including the payment amount(s) and their respective revenue source.
--   **Most recent payment** shows the amount of the last payment attempted. If the payment was successful, the **View details** link will be blue, and you can click it to see the details for each payment. Note that if we attempted to make multiple payments and only one of them was successful, only the amount of the successful payment will be shown here. If one or more payments failed, the **View details** link will be red and the number of failed payments will be displayed. You can click **View details** to see more details about the problem so that you can remedy the situation.
-
-## Proceeds by app and adjustments
+## 現在の収益とお支払い
 
 
-This section breaks down the summary info to let you see specifics by app. If you earned money through Microsoft Advertising, the total amount of your advertising proceeds is shown here as a single line item.
+ページの上部には、**[現在の収益と入金]** が表示されます。ここには、**[処理待ち]**、**[今後の入金]**、**[最近の入金]** の 3 つのセクションがあります。
 
-By reviewing this section, you can determine which apps have earned money that’s currently in the **Reserved** or **Most recent payment** category. You can also see the total amount you’ve received for each app. If it was necessary to make any [adjustments](#proceeds-by-app-and-adjustments) to your account balance, you can view them here too. (Note that adjustments for Microsoft Advertising proceeds are not currently shown here.)
+-   **[処理待ち]** には、アカウントに蓄積されただけで、まだ支払いがスケジュールされていない金額 (広告の収益を含む) が表示されます (Azure Marketplace の収益は、[処理待ち] セクションには表示されません。Azure Marketplace に参加しているだけの場合、ここには $0.00 と表示されます)。最近の広告とアプリの売上からの収益は、支払いの対象となるまで約 30 日間留保されます。 その後、収益が支払いのしきい値に達していれば、翌月に支払いがスケジュールされます。 支払いが試行されると、処理待ちの残高から支払い額分が減少し、反映された金額が **[今後の入金]** に表示されます。 他の通貨での売上については為替レートが支払いの前に変動する可能性があるため、**[処理待ち]** に示されている金額は見積もりであることに注意してください。 処理待ちの残高は、毎月の月初に若干変化する場合があります。 処理待ちの残高は、より正確な見積もりを表すように、月ごとの為替レートを反映して毎月更新されます。 **[詳細の表示]** をクリックして追加情報を確認したり、**処理待ちのトランザクションのダウンロード**のリンクをクリックして、**[処理待ち]** のすべてのトランザクションを含む .csv ファイルを表示したりすることもできます。
+-   **[今後の入金]** には、今後予定されている支払いの回数、次回の支払い額と支払い日が表示されます。 対象となる収益がしきい値に達していない場合、次回の支払いは表示されません。 **[詳細の表示]** をクリックして支払い額やそれぞれの収益源などの追加の情報を見ることもできます。
+-   **[最近の入金]** には、最後に試みられた支払いの金額が表示されます。 支払いが成功している場合、**[詳細の表示]** リンクが青色になり、クリックすると各支払いの詳細が表示されます。 複数の支払いを試みたときに、1 つだけが成功している場合は、成功した支払いの金額だけがここに表示されます。 1 つ以上の支払いが失敗した場合は、**[詳細の表示]** リンクが赤色になり、失敗した支払いの数が表示されます。 **[詳細の表示]** をクリックすると問題の詳細が表示されるので、状況を修正することができます。
 
-## Payment statements
-
-
-In this section you can view statements for all successful monthly payments and see the total amount of money you've been paid.
-
-The **Total paid to date** section shows the total amount you've been paid for all your sales. Click **View details** to see the amounts that came from each revenue source.
-
-Below the **Total paid to date** section, you will see your last three statements by default. To see the full statement (for successful payments), click **View**. You can access your historical payment statements through the drop-down box.
-
-At the top of each statement, you’ll see the total amount of your monthly payment. Immediately below, in **Payments issued**, you’ll see a summary of how your payment amount was calculated.
-
-Underneath, in the **Proceeds breakdown** section, you can view details on how much money was made per market and per revenue source (such as Windows Phone Store, Windows Store 8, Windows Store, etc.) by app. You’ll also see details on any [adjustments](#proceeds-by-app-and-adjustments) that were made, including the date, amount, and reason for the adjustment.
-
-Note that the sections mentioned above only show info on your proceeds (and adjustments) from app sales; if you earned money through advertising, you’ll see a separate Microsoft Advertising section with details about the payouts and currency conversions.
-
-## Adjustments
+## アプリ別の収益と調整
 
 
-| Adjustment category     | Description                                                                                                |
+このセクションでは、要約情報を分析してアプリ別の詳細を表示できます。 Microsoft Advertising によって収益を得た場合、広告の収益の合計金額は、1 つの行項目としてここに表示されます。
+
+このセクションを調べると、現在 **[処理待ち]** または **[最近の入金]** のカテゴリに分類されている金額が、どのアプリの売り上げによるものかを特定できます。 また、アプリごとに受け取った合計額を確かめることもできます。 アカウントの残高を[調整](#proceeds-by-app-and-adjustments)する必要があった場合は、それもここで確認できます (Microsoft Advertising の収益に対する調整は、現在ここには表示されません)。
+
+## お支払い明細
+
+
+このセクションでは、成功したすべての月ごとの支払いに関する明細と、支払われた合計額を確認できます。
+
+**[今までの入金総額]** セクションには、すべての売り上げに対して支払われた合計額が表示されます。 それぞれの収益源で発生した金額を確認するには、**[詳細の表示]** をクリックします。
+
+**[今までの入金総額]** セクションの下には、既定で過去 3 か月分の明細が表示されます。 成功した支払いの完全な明細を表示するには、**[表示]** をクリックします。 過去の支払い明細にはドロップダウン ボックスからアクセスできます。
+
+各明細の上部には、当該月の支払いの合計額が表示されます。 そのすぐ下の **[発行済みの支払]** には、支払い額の計算方法の要約が表示されます。
+
+その下の **[Proceeds breakdown] (収益の内訳)** セクションでは、市場ごとの売り上げや収益源 (Windows Phone ストア、Windows ストア 8、Windows ストアなど) ごとの売り上げに関する詳細を、アプリ別に確認できます。 [調整](#proceeds-by-app-and-adjustments)が行われた場合は、日付、金額、調整の理由など、その調整に関する詳細も表示されます。
+
+既に説明したセクションでは、アプリの販売による収益 (および調整) に関する情報のみが表示されます。広告によって収益を得た場合、Microsoft Advertising に関する別のセクションに、支払いと通貨換算の詳細が表示されます。
+
+## 調整
+
+
+| 調整のカテゴリ     | 説明                                                                                                |
 |-------------------------|------------------------------------------------------------------------------------------------------------|
-| Compensatory adjustment | Any adjustment made to your payout balance that does not pertain to the other adjustment categories listed |
-| Historic balance        | Payout balances from a historic payment system                                                             |
-| Passin tax              | Tax adjustment related to sales in Korea                                                                   |
+| 補償の調整 | 表示されている他の調整カテゴリに関係しないを支払い残高に対して行われたすべての調整 |
+| 履歴残高        | 支払い履歴システムからの支払い残高                                                             |
+| Passin 税              | 韓国での販売に関連する税調整                                                                   |
 
  
 
-## Downloading payment transactions
+## 支払いトランザクションのダウンロード
 
 
-At the top of each statement, you’ll see a link to **Download transactions**. Click this link to get a .csv file with detailed info about each of the transactions included in your payment.
+各明細の上部には、**トランザクションをダウンロード**できるリンクが表示されます。 このリンクをクリックすると、支払いに含まれる各トランザクションについての詳しい情報が記載された .csv ファイルを入手できます。
 
-The following table describes the fields that appear in the .csv file. Note that the exact fields you see may vary as we continue to update our reporting.
+次の表では、.csv ファイルに出力される各フィールドについて説明します。 今後のレポート機能の更新に伴って、実際に表示されるフィールドと異なる場合もあります。
 
-| Field name              | Description                                                                                                                              |
+| フィールド名              | 説明                                                                                                                              |
 |-------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| Revenue Source          | The source of your revenue, based on where the transaction occurred (such as Windows Phone Store, Windows Store 8, Windows Store, etc.)  |
-| Transaction ID          | Unique transaction identifier                                                                                                            |
-| Transaction Date Time   | The date and time the transaction occurred (UTC)                                                                                         |
-| Parent Product ID       | Unique parent product identifier. Please note: if there isn’t a parent product for the transaction, then Parent Product ID = Product ID. |
-| Product ID              | Unique product identifier                                                                                                                |
-| Parent Product Name     | Name of the parent product. Please note: if there isn’t a parent product for the transaction, then Parent Product Name = Product Name.   |
-| Product Name            | Name of the product                                                                                                                      |
-| Product Type            | Type of product (such as App, In-App, Game, etc.)                                                                                        |
-| Transaction Type        | Type of transaction (such as purchase, refund, reversal, chargeback, etc.)                                                               |
-| Payment Method          | Customer payment instrument used for the transaction (such as credit card, mobile operator, etc,)                                        |
-| Country / Region        | Country/region where the transaction occurred                                                                                            |
-| Local Provider / Seller | Local provider/seller of record                                                                                                          |
-| Transaction Currency    | Currency of the transaction                                                                                                              |
-| Transaction Amount      | Amount of the transaction                                                                                                                |
-| Tax Remitted            | Amount of tax remitted (sales, use, or VAT/GST taxes)                                                                                    |
-| Net Receipts            | Transaction amount less tax remitted                                                                                                     |
-| Store Fee               | The percentage of Net Receipts retained by Microsoft as a fee for making the app or in-app product available in the Store                |
-| App Proceeds            | Net receipts minus the Store Fee                                                                                                         |
-| Taxes Withheld          | Amount of income tax withheld                                                                                                            |
-| Payment                 | App Proceeds less any applicable income tax withholding (amount shown in Transaction Currency)                                           |
-| FX Rate                 | Foreign exchange rate used to convert Transaction Currency to Payment Currency                                                           |
-| Payment Currency        | Currency your payment is made in                                                                                                         |
-| Converted Payment       | Payment amount converted to Payment Currency using the FX Rate                                                                           |
-| Tax Remit Model         | Party responsible for remitting taxes (sales, use, or VAT/GST taxes)                                                                     |
-| Charges                 | Shows a breakdown of all the charge details aggregated in the Transaction Amount column. (Only included for Azure Marketplace.)          |
+| 収益源          | 収益の発生元です。トランザクションがどこで行われたかに基づいています (Windows Phone ストア、Windows ストア 8、Windows ストアなど)。  |
+| お取引 ID          | 一意のトランザクション識別子                                                                                                            |
+| お取引日時   | トランザクションが行われた日時 (UTC)                                                                                         |
+| 親製品 ID       | 一意の親製品識別子。 注意: トランザクションの親製品がない場合、親製品 ID = 製品 ID です。 |
+| 製品 ID              | 一意の製品識別子                                                                                                                |
+| 親製品名     | 親製品の名前。 注意: トランザクションの親製品がない場合、親製品名 = 製品名です。   |
+| 製品名            | 製品の名前                                                                                                                      |
+| 製品の種類            | 製品の種類 (アプリ、アプリ内、ゲームなど)                                                                                        |
+| 取引の種類        | 取引の種類 (購入、払戻し、取り消し、支払取り消しなど)                                                               |
+| 入金方法          | 取引にユーザーが使用した支払い方法 (クレジット カード、携帯電話会社など)                                        |
+| 国/地域        | トランザクションが行われた国/地域                                                                                            |
+| ローカル プロバイダー/販売者 | 登録のあるローカル プロバイダーまたは販売元                                                                                                          |
+| お取引の通貨    | 取引に使われた通貨                                                                                                              |
+| お取引金額      | お取引の金額                                                                                                                |
+| 税送金済み            | 徴収された税額 (売上税、使用税、または VAT/GST 税)                                                                                    |
+| 純収益            | 取引金額から税額を差し引いた金額                                                                                                     |
+| ストアの手数料               | アプリまたはアプリ内製品をストアで入手できるようにするために Microsoft が確保する手数料の純収益に対する割合                |
+| アプリの収益            | 純収益からストアの手数料を引いた額                                                                                                         |
+| 源泉徴収税額          | 源泉徴収の税額                                                                                                            |
+| 支払い                 | 所得税源泉徴収を差し引いたアプリの収益 (金額は [お取引の通貨] に表示されます)                                           |
+| 外国為替レート                 | 取引通貨を支払い通貨に換算するために使われた外国為替レート                                                           |
+| 入金する通貨        | 支払いに使われる通貨                                                                                                         |
+| 入金 (換算済み)       | 外国為替レートを使って支払い通貨に換算した後の支払い額                                                                           |
+| 免税モデル         | 徴収される税金の種類 (売上税、使用税、または VAT/GST 税)                                                                     |
+| 請求額                 | お取引金額の列で集計されたすべての請求額の内訳を表示します (Azure Marketplace についてのみ含まれます)。          |
 
  
 

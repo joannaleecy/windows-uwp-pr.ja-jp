@@ -1,52 +1,53 @@
 ---
-description: We explain XAML syntax rules and the terminology that describes the restrictions or choices available for XAML syntax.
-title: XAML syntax guide
+description: ここでは、XAML 構文の規則と、XAML 構文に存在する制限や選択肢を説明する用語について説明します。
+title: XAML 構文のガイド
 ms.assetid: A57FE7B4-9947-4AA0-BC99-5FE4686B611D
 ---
 
-# XAML syntax guide
+# XAML 構文のガイド
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-We explain XAML syntax rules and the terminology that describes the restrictions or choices available for XAML syntax. You'll find this topic useful if you are new to using the XAML language, you want a refresher on the terminology or parts of syntax, or you are curious about how the XAML language works and want more background and context.
+ここでは、XAML 構文の規則と、XAML 構文に存在する制限や選択肢を説明する用語について説明します。 このトピックは、XAML 言語の初心者を対象に作成されています。XAML の用語や構文の復習にも使用できます。また、XAML 言語のしくみや背景知識を知ることもできます。
 
-## XAML is XML
+## XAML は XML
 
-Extensible Application Markup Language (XAML) has a basic syntax that builds on XML, and by definition valid XAML must be valid XML. But XAML also has its own syntax concepts that extend XML. A given XML entity might be valid in plain XML, but that syntax might have a different and more complete meaning as XAML. This topic explains these XAML syntax concepts.
+Extensible Application Markup Language (XAML) の基本的な構文は XML に基づいています。したがって、有効な XAML は有効な XML である必要があります。 ただし、XAML には XML を拡張した独自の構文概念もあります。 ある XML エンティティの構文がプレーン XML で有効であったとしても、XAML では別のより完全な意味を持つことがあります。 ここでは、次の XAML 構文の概念について説明します。
 
-## XAML vocabularies
+## XAML ボキャブラリ
 
-One area where XAML differs from most XML usages is that XAML is not typically enforced with a schema, such as an XSD file. That's because XAML is intended to be extensible, that's what the "X" in the acronym XAML means. Once XAML is parsed, the elements and attributes you reference in XAML are expected to exist in some backing code representation, either in the core types defined by the Windows Runtime, or in types that extend or are based off the Windows Runtime. The SDK documentation sometimes refers to the types that are already built-in to the Windows Runtime and can be used in XAML as being the *XAML vocabulary* for the Windows Runtime. Microsoft Visual Studio helps you to produce markup that's valid within this XAML vocabulary. Visual Studio can also include your custom types for XAML usage so long as the source of those types is referenced correctly in the project. For more info about XAML and custom types, see [XAML namespaces and namespace mapping](xaml-namespaces-and-namespace-mapping.md).
+XAML がほとんどの XML 応用言語と異なる点としては、XAML には通常、XSD ファイルのようなスキーマが必須でないという点があります。 これは、XAML が拡張可能であることを目的としているためです。XAML という略語の "X" はそういう意味 (Extensible) です。 XAML を解析すると、XAML で参照される要素と属性は、Windows ランタイムで定義された中核となる型、または、Windows ランタイムを拡張または基にした型として、なんらかのバッキング コード表現に存在することが期待されます。 SDK ドキュメントでは、Windows ランタイムで既に定義されていて XAML で使うことのできる型を Windows ランタイムの *XAML ボキャブラリ*と呼ぶことがあります。 Microsoft Visual Studio では、この XAML ボキャブラリ内で有効なマークアップを作成できます。 Visual Studio では、カスタム型のソースがプロジェクトで正しく参照されている限り、XAML で使うカスタム型を含めることもできます。 XAML とカスタム型について詳しくは、「[XAML 名前空間と名前空間マッピング](xaml-namespaces-and-namespace-mapping.md)」をご覧ください。
 
-##  Declaring objects
+##  オブジェクトの宣言
 
-Programmers often think in terms of objects and members, whereas a markup language is conceptualized as elements and attributes. In the most basic sense, an element that you declare in XAML markup becomes an object in a backing runtime object representation. To create a run-time object for your app, you declare a XAML element in the XAML markup. The object is created when the Windows Runtime loads your XAML.
+プログラミングの際にはオブジェクトとメンバーの観点から考えるのが一般的ですが、マークアップ言語は要素と属性で概念化されています。 最も基本的な意味においては、XAML マークアップで宣言する要素はバッキング ランタイム オブジェクト表現のオブジェクトになります。 アプリのランタイム オブジェクトを作成するには、XAML マークアップで XAML 要素を宣言します。 オブジェクトは、Windows ランタイムによって XAML が読み込まれたときに作成されます。
 
-A XAML file always has exactly one element serving as its root, which declares an object that will be the conceptual root of some programming structure such as a page, or the object graph of the entire run-time definition of an application.
+XAML ファイルには、ルートとして機能する要素が常に 1 つあります。ルートは、ページなどのいくつかのプログラミング構造の概念上のルートとなるオブジェクトまたはアプリケーションのランタイム定義全体のオブジェクト グラフを宣言します。
 
-In terms of XAML syntax, there are three ways to declare objects in XAML:
+XAML 構文では、次の 3 つの方法を使って XAML でオブジェクトを宣言できます。
 
--   **Directly, using object element syntax:** This uses opening and closing tags to instantiate an object as an XML-form element. You can use this syntax to declare root objects or to create nested objects that set property values.
--   **Indirectly, using attribute syntax:** This uses an inline string value that has instructions for how to create an object. The XAML parser uses this string to set the value of a property to a newly created reference value. Support for it is limited to certain common objects and properties.
--   Using a markup extension.
+-   **オブジェクト要素構文を直接使用:** 開始タグと終了タグを使って、オブジェクトを XML 形式の要素としてインスタンス化します。 この構文を使うと、ルート オブジェクトを宣言することも、プロパティ値を設定する入れ子になったオブジェクトを作成することもできます。
+-   **属性構文を間接的に使用:** オブジェクトの作成方法に関する命令が含まれるインライン文字列値を使います。 XAML パーサーは、この文字列を使って、新しく作成した参照値にプロパティ値を設定します。 この方法に対するサポートは、共通のオブジェクトとプロパティの一部に限定されます。
+-   マークアップ拡張を使用。
 
-This does not mean that you always have the choice of any syntax for object creation in a XAML vocabulary. Some objects can be created only by using object element syntax. Some objects can be created only by being initially set in an attribute. In fact, objects that can be created with either object element or attribute syntax are comparatively rare in XAML vocabularies. Even if both syntax forms are possible, one of the syntaxes will be more common as a matter of style.
-There are also techniques you can use in XAML to reference existing objects rather than creating new values. The existing objects might be defined either in other areas of XAML, or might exist implicitly through some behavior of the platform and its application or programming models.
+これは、XAML ボキャブラリでオブジェクトの作成用にどの構文を使うかをいつも選択できるというわけではありません。 一部のオブジェクトは、作成時にオブジェクト要素構文しか使用できません。 また、オブジェクトのなかには、最初から属性に設定する方法でしか作成できないものもあります。 実際、オブジェクト要素構文または属性構文のどちらを使っても作成できるというオブジェクトは、XAML ボキャブラリでは比較的まれです。 構文形式が両方とも使用できたとしても、スタイルとしてはどちらか一方が使われることが多くなります。
+また、XAML で新しい値を作成するのではなく、今あるオブジェクトを参照するために使用できる手法もあります。 今あるオブジェクトは、XAML の他の領域で定義されていることもあれば、プラットフォームとそのアプリケーションまたはプログラミング モデルの特定の動作を介して暗黙的に存在することもあります。
 
-### Declaring an object by using object element syntax
+### オブジェクト要素構文を使用したオブジェクトの宣言
 
-To declare an object with object element syntax, you write tags like this: `<objectName>  </objectName>`, where *objectName* is the type name for the object you want to instantiate. Here's object element usage to declare a [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) object:
+オブジェクト要素構文を使ってオブジェクトを宣言するには、`<objectName>  </objectName>` のようにタグを記述します。ここで、*objectName* は、インスタンス化するオブジェクトの型名を表します。 [
+            **Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) オブジェクトを宣言するためのオブジェクト要素の使用方法は次のとおりです。
 
 ```xaml
 <Canvas>
 </Canvas>
 ```
 
-If the object does not contain other objects, you can declare the object element by using one self-closing tag instead of an opening/closing pair: `<Canvas />`
+オブジェクトに他のオブジェクトを含めない場合は、開始タグと終了タグのペアを使う代わりに、1 つの自己終了タグ (`<Canvas />`) を使ってオブジェクト要素を宣言できます。
 
-### Containers
+### コンテナー
 
-Many objects used as UI elements, such as [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267), can contain other objects. These are sometimes referred to as containers. The following example shows a **Canvas** container that contains one element, a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371).
+UI 要素として使われるオブジェクト ([**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) など) の多くは、他のオブジェクトを格納することができます。 そのようなオブジェクトは、コンテナーとも呼ばれます。 次の例は、要素 [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) を 1 つ格納している **Canvas** コンテナーを示しています。
 
 ```xaml
 <Canvas>
@@ -54,17 +55,18 @@ Many objects used as UI elements, such as [**Canvas**](https://msdn.microsoft.co
 </Canvas>
 ```
 
-### Declaring an object by using attribute syntax
+### 属性構文を使用したオブジェクトの宣言
 
-Because this behavior is tied to property setting, we'll talk about this more in upcoming sections.
+この動作はプロパティの設定に関連付けられているため、次のセクションでさらに詳しく説明します。
 
-### Initialization text
+### 初期化テキスト
 
-For some objects you can declare new values using inner text that's used as initialization values for construction. In XAML, this technique and syntax is called *initialization text*. Conceptually, initialization text is similar to calling a constructor that has parameters. Initialization text is useful for setting initial values of certain structures.
+一部のオブジェクトでは、構造の初期値として使われる内部テキストを使って新しい値を宣言できます。 XAML では、この手法と構文を*初期化テキスト*と呼びます。 初期化テキストは概念的に、パラメーターを持つコンストラクターの呼び出しに似ています。 初期化テキストは、一部の構造体の初期値を設定するのに便利です。
 
-You often use an object element syntax with initialization text if you want a structure value with an **x:Key**, so it can exist in a [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794). You might do this if you share that structure value among multiple target properties. For some structures, you can't use attribute syntax to set the structure's values: initialization text is the only way to produce a useful and shareable [**CornerRadius**](https://msdn.microsoft.com/library/windows/apps/br242343), [**Thickness**](https://msdn.microsoft.com/library/windows/apps/br208864), [**GridLength**](https://msdn.microsoft.com/library/windows/apps/br208754) or [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) resource.
+構造体の値に **x:Key** を持たせ、[**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 内に存在できるようにする必要がある場合にはよく、オブジェクト要素構文を初期化テキストと共に使います。 この手法は、その構造体の値を複数のターゲット プロパティで共有する場合に使用できます。 一部の構造体では、属性構文を使って構造体の値を設定することができません。このため、初期化テキストが、便利で共有可能な [**CornerRadius**](https://msdn.microsoft.com/library/windows/apps/br242343)、[**Thickness**](https://msdn.microsoft.com/library/windows/apps/br208864)、[**GridLength**](https://msdn.microsoft.com/library/windows/apps/br208754)、[**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) リソースを生成するための唯一の方法になります。
 
-This abbreviated example uses initialization text to specify values for a [**Thickness**](https://msdn.microsoft.com/library/windows/apps/br208864), in this case specifying values that set both **Left** and **Right** to 20, and both **Top** and **Bottom** to 10. This example shows the **Thickness** created as a keyed resource, and then the reference to that resource. For more info on [**Thickness**](https://msdn.microsoft.com/library/windows/apps/br208864) initialization text, see [**Thickness**](https://msdn.microsoft.com/library/windows/apps/br208864).
+この省略された例では、初期化テキストを使って [**Thickness**](https://msdn.microsoft.com/library/windows/apps/br208864) の値 (**Left** と **Right** を 20 に、**Top** と **Bottom** を 10 に設定する値) を指定しています。 この例は、キーを持つリソースとして作成された **Thickness** と、そのリソースへの参照を示しています。 [
+            **Thickness**](https://msdn.microsoft.com/library/windows/apps/br208864) の初期化テキストについて詳しくは、「[**Thickness**](https://msdn.microsoft.com/library/windows/apps/br208864)」をご覧ください。
 
 ```xaml
 <UserControl ...>
@@ -79,31 +81,31 @@ This abbreviated example uses initialization text to specify values for a [**Thi
 </UserControl ...>
 ```
 
-**Note**  Some structures can't be declared as object elements. Initialization text isn't supported and they can't be used as resources. You must use an attribute syntax in order to set properties to these values in XAML. These types are: [**Duration**](https://msdn.microsoft.com/library/windows/apps/br242377), [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/br210411), [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870), [**Rect**](https://msdn.microsoft.com/library/windows/apps/br225994) and [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995).
+**注**  一部の構造体は、オブジェクト要素として宣言することはできません。 初期化テキストがサポートされておらず、リソースとして使うことができません。 XAML でそれらの値にプロパティを設定するには、属性構文を使う必要があります。 そのような型には、[**Duration**](https://msdn.microsoft.com/library/windows/apps/br242377)、[**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/br210411)、[**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)、[**Rect**](https://msdn.microsoft.com/library/windows/apps/br225994)、[**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) などがあります。
 
-## Setting properties
+## プロパティの設定
 
-You can set properties on objects that you declared by using object element syntax. There are multiple ways to set properties in XAML:
+オブジェクト要素構文を使用して宣言したオブジェクトのプロパティを設定できます。 XAML では、複数の方法でプロパティを設定できます。
 
--   By using attribute syntax.
--   By using property element syntax.
--   By using element syntax where the content (inner text or child elements) is setting the XAML content property of an object.
--   By using a collection syntax (which is usually the implicit collection syntax).
+-   属性構文を使用する。
+-   プロパティ要素構文を使用する。
+-   コンテンツ (内部テキストまたは子要素) によってオブジェクトの XAML コンテンツ プロパティが設定される要素構文を使用する。
+-   コレクション構文を使用する (通常は暗黙的なコレクション構文)。
 
-As with object declaration, this list doesn't imply that any property could be set with each of the techniques. Some properties support only one of the techniques.
-Some properties support more than one form; for example, there are properties that can use property element syntax, or attribute syntax. What's possible depends both on the property and on the object type that the property uses. In the Windows Runtime API reference, you'll see the XAML usages you can use in the **Syntax** section. Sometimes there is an alternative usage that would work but would be more verbose. Those verbose usages aren't always shown because we are trying to show you the best practices or the real world scenarios for using that property in XAML. Guidance for XAML syntax is provided in the **XAML Usage** sections of reference pages for properties that can be set in XAML.
+オブジェクトの宣言の場合と同様に、プロパティを設定する際にどの方法でも使用できるというわけではありません。 一部のプロパティでは、1 種類の方法しかサポートされません。
+プロパティのなかには、複数の形式をサポートしているものもあります。たとえば、プロパティ要素構文と属性構文のどちらも使用できるプロパティもあります。 どれを使用できるかは、プロパティと、そのプロパティが使うオブジェクト型の両方に応じて決まります。 Windows ランタイム API リファレンスでは、「**構文**」セクションに、使うことができる XAML の使用方法が表示されます。 ときには、使うことができても冗長な別の方法が存在することがあります。 そのような冗長な方法は、表示されないこともあります。それは、リファレンスでは XAML でそのプロパティを使うためのベスト プラクティスや実世界のシナリオを示すようにしているためです。 XAML で設定できるプロパティのリファレンス ページにある **XAML の使用方法**に関するセクションに、XAML 構文に関するガイダンスが記載されています。
 
-Some properties on objects that cannot be set in XAML by any means, and can only be set using code. Usually these are properties that are more appropriate to work with in the code-behind, not in XAML.
+オブジェクトのプロパティには、XAML では設定できず、コードを使った場合にのみ設定できるプロパティもあります。 このようなプロパティは通常、XAML よりコード ビハインドで使う方が適しています。
 
-A read-only property cannot be set in XAML. Even in code, the owning type would have to support some other way to set it, like a constructor overload, helper method, or calculated property support. A calculated property relies on the values of other settable properties plus sometimes an event with built-in handling; these features are available in the dependency property system. For more info on how dependency properties are useful for calculated property support, see [Dependency properties overview](dependency-properties-overview.md).
+読み取り専用プロパティは、XAML で設定することはできません。 コードでも、所有する型はコンストラクター オーバーロード、ヘルパー メソッド、集計プロパティのサポートなど、他の設定方法をサポートしている必要があります。 集計プロパティは、設定可能な他のプロパティの値のほか、組み込み処理のあるイベントに依存することもあります。これらの機能は、依存関係プロパティ システムで使用できます。 集計プロパティをサポートするうえで依存関係プロパティがいかに便利であるかについて詳しくは、「[依存関係プロパティの概要](dependency-properties-overview.md)」をご覧ください。
 
-Collection syntax in XAML gives an appearance that you are setting a read-only property, but in fact you are not. See "Setting a Property by Using a Collection Syntax" section later in this topic.
+XAML のコレクション構文の場合、一見、読み取り専用のプロパティを設定しているかのように見えますが、実際は違います。 このトピックの「コレクション構文によるプロパティの設定」をご覧ください。
 
-### Setting a property by using attribute syntax
+### 属性構文によるプロパティの設定
 
-Setting an attribute value is the typical means by which you set a property value in a markup language, for example in XML or HTML. Setting XAML attributes is similar to how you set attribute values in XML. The attribute name is specified at any point within the tags following the element name, separated from element name by at least one whitespace. The attribute name is followed by an equals sign. The attribute value is contained within a pair of quotes. The quotes can be either double quotes or single quotes so long as they match and enclose the value. The attribute value itself must be expressible as a string. The string often contains numerals, but to XAML, all attribute values are string values until the XAML parser gets involved and does some basic value conversion.
+XML や HTML などのマークアップ言語でプロパティ値を設定するには、属性値を設定するのが一般的です。 XAML 属性は、XML で属性値を設定する場合と同じように設定できます。 タグで囲まれ、要素名に続く任意の場所で属性名を指定します。要素名との間は少なくとも 1 つの空白で区切ります。 属性名の後に、等号を挟んで、 引用符で囲んだ属性値を指定します。 引用符は、値の前後で対応していれば二重引用符と単一引用符のどちらでもかまいません。 属性値は、文字列として表現できる値である必要があります。 文字列には数字が含まれることが多いものの、XAML では、XAML パーサーが関与して基本的な値の変換を実行するまで、属性値がすべて文字列値となります。
 
-This example uses attribute syntax for four attributes to set the [**Name**](https://msdn.microsoft.com/library/windows/apps/br208735), [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751), [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718), and [**Fill**](https://msdn.microsoft.com/library/windows/apps/br243378) properties of a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) object.
+この例では、4 つの属性の属性構文を使用して、[**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) オブジェクトの [**Name**](https://msdn.microsoft.com/library/windows/apps/br208735)、[**Width**](https://msdn.microsoft.com/library/windows/apps/br208751)、[**Height**](https://msdn.microsoft.com/library/windows/apps/br208718)、[**Fill**](https://msdn.microsoft.com/library/windows/apps/br243378) の各プロパティを設定しています。
 
 ```xaml
 <Rectangle Name="rectangle1" Width="100" Height="100" Fill="Blue" /></code></pre></td>
@@ -112,13 +114,13 @@ This example uses attribute syntax for four attributes to set the [**Name**](htt
 </table>
 ```
 
-### Setting a property by using property element syntax
+### プロパティ要素構文によるプロパティの設定
 
-Many properties of an object can be set by using property element syntax. A property element looks like this: `<`*object*`.`*property*`>`.
+オブジェクトの多くのプロパティは、プロパティ要素構文を使って設定できます。 プロパティ要素は次のようになります。`<`*object*`.`*property*`>`
 
-To use property element syntax, you create XAML property elements for the property that you want to set. In standard XML, this element would just be considered an element that has a dot in its name. However, in XAML, the dot in the element name identifies the element as a property element, with *property* expected to a member of *object* in a backing object model implementation. To use property element syntax, it must be possible to specify an object element in order to "fill" the property element tags. A property element will always have some content (single element, multiple elements, or inner text); there's no point in having a self-closing property element.
+プロパティ要素構文を使うには、設定するプロパティに対応する XAML プロパティ要素を作成します。 標準 XML の場合、この要素は、その名前にドットが含まれている要素と見なされます。 しかし、XAML では、要素名に含まれるドットによって、その要素がプロパティ要素であること、つまり、バッキング オブジェクト モデルの実装で *property* が *object* のメンバーになると想定されていることがわかります。 プロパティ要素構文を使うには、プロパティ要素タグに "設定する" ためにオブジェクト要素を指定できる必要があります。 プロパティ要素にはコンテンツ (単一の要素、複数の要素、または内部テキスト) が常に存在します。自己終了プロパティ要素を使う意味はありません。
 
-In the following grammar, *property* is the name of the property that you want to set and *propertyValueAsObjectElement* is a single object element, that's expected to satisfy the value type requirements of the property.
+次の文法では、*property* は設定するプロパティの名前、*propertyValueAsObjectElement* はプロパティの値の型の要件を満たす単一のオブジェクト要素をそれぞれ表します。
 
 `<`*object*`>`
 
@@ -130,7 +132,7 @@ In the following grammar, *property* is the name of the property that you want t
 
 `</`*object*`>`
 
-The following example uses property element syntax to set the [**Fill**](https://msdn.microsoft.com/library/windows/apps/br243378) of a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) with a [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) object element. (Within the **SolidColorBrush**, [**Color**](https://msdn.microsoft.com/library/windows/apps/br242963) is set as an attribute.) The parsed result of this XAML is identical to the previous XAML example that set **Fill** using attribute syntax.
+次の例では、プロパティ要素構文を使用して、[**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) オブジェクト要素で [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) の [**Fill**](https://msdn.microsoft.com/library/windows/apps/br243378) を設定しています (**SolidColorBrush** 内では [**Color**](https://msdn.microsoft.com/library/windows/apps/br242963) が属性として設定されています)。この XAML を解析すると、属性構文を使用して **Fill** を設定した上記の XAML の例とまったく同じ結果になります。
 
 ```xaml
 <colgroup>
@@ -154,17 +156,18 @@ The following example uses property element syntax to set the [**Fill**](https:/
 </Rectangle>
 ```
 
-### XAML vocabularies and object-oriented programming
+### XAML ボキャブラリとオブジェクト指向のプログラミング
 
-Properties and events as they appear as XAML members of a Windows Runtime XAML type are often inherited from base types. Consider this example: `<Button Background="Blue" .../>`. The [**Background**](https://msdn.microsoft.com/library/windows/apps/br209395) property is not an immediately declared property on the [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) class. Instead, **Background** is inherited from the base [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390) class. In fact, if you look at the reference topic for **Button** you'll see that the members lists contain at least one inherited member from each of a chain of successive base classes: [**ButtonBase**](https://msdn.microsoft.com/library/windows/apps/br227736), [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390), [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706), [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911), [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356). In the **Properties** list, all the read-write properties and collection properties are inherited in a XAML vocabulary sense. Events (like the various [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) events) are inherited too.
+Windows ランタイムの XAML 型の XAML メンバーとして表示されるプロパティとイベントは、ほとんどの場合基本型から継承されます。 `<Button Background="Blue" .../>` を例にして考えてみましょう。 [
+            **Background**](https://msdn.microsoft.com/library/windows/apps/br209395) プロパティは、[**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) クラスで即座に宣言されるプロパティではありません。 代わりに、[**Control**](https://msdn.microsoft.com/library/windows/apps/br209390) 基底クラスから **Background** が継承されます。 実際、**Button** に関するリファレンスのトピックを見ると、メンバーのリストには連続した基底クラス ([**ButtonBase**](https://msdn.microsoft.com/library/windows/apps/br227736)、[**Control**](https://msdn.microsoft.com/library/windows/apps/br209390)、[**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706)、[**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911)、[**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)) の各チェーンから継承されたメンバーが少なくとも 1 つ含まれることがわかります。 **[プロパティ]** の一覧では、読み取り/書き込みプロパティとコレクション プロパティがすべて、XAML ボキャブラリという意味で継承されます。 ほかには、イベント (さまざまな [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) イベントなど) が継承されます。
 
-If you use the Windows Runtime reference for XAML guidance, the element name that's shown in a syntax or even in example code is sometimes for the type that originally defines the property, because that reference topic is shared by all the possible types that inherit it from a base class. If you use Visual Studio's IntelliSense for XAML in the XML editor, the IntelliSense and its drop-downs do a great job of coalescing the inheritance and providing an accurate list of attributes that are available for setting once you've started with an object element for a class instance.
+XAML のガイダンスに Windows ランタイム リファレンスを使う場合には、構文やコード例に示されている要素名が、プロパティを定義する型の名前のこともあります。これは、リファレンスのそのトピックが基底クラスからプロパティを継承する型になる可能性のあるものすべてに共通するものであるためです。 Visual Studio の XML エディターで IntelliSense for XAML を使うと、IntelliSense とそのドロップダウン リストによって継承が結合されるほか、クラス インスタンスのオブジェクト要素を開始した時点で設定に利用できる属性の正確な一覧が提供されます。
 
-### XAML content properties
+### XAML コンテンツ プロパティ
 
-Some types define one of their properties such that the property enables a XAML content syntax. For the XAML content property of a type, you can omit the property element for that property when specifying it in XAML. Or, you can set the property to an inner text value by providing that inner text directly within the owning type's object element tags. XAML content properties support straightforward markup syntax for that property and makes the XAML more human-readable by reducing the nesting.
+一部の型には、XAML コンテンツ構文を有効にするように定義されたプロパティが 1 つ含まれています。 型に XAML コンテンツ プロパティが含まれている場合には、XAML でプロパティ要素を指定するときにそのプロパティのプロパティ要素を省略できます。 つまり、所有する型のオブジェクト要素タグ内で直接内部テキストを指定することによって、プロパティをその内部テキストの値に設定できます。 XAML コンテンツ プロパティでは、そのプロパティのマークアップ構文を単純化できるため、入れ子の数を少なくすることによって XAML をわかりやすくすることができます。
 
-If a XAML content syntax is available, that syntax will be shown in the "XAML" sections of **Syntax** for that property in the Windows Runtime reference documentation. For example, the [**Child**](https://msdn.microsoft.com/library/windows/apps/br209258) property page for [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) shows XAML content syntax instead of property element syntax to set the single-object **Border.Child** value of a **Border**, like this:
+XAML コンテンツ構文が利用できる場合、Windows ランタイム リファレンス ドキュメントでは、該当するプロパティの「**構文**」の XAML に関するセクションにその構文が示されています。 たとえば、[**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) の [**Child**](https://msdn.microsoft.com/library/windows/apps/br209258) プロパティのページには、プロパティ要素構文の代わりに、**Border** の単一オブジェクト **Border.Child** 値を設定する XAML コンテンツ構文が示されています。
 
 ```xaml
 <Border>
@@ -172,7 +175,7 @@ If a XAML content syntax is available, that syntax will be shown in the "XAML" s
 </Border>
 ```
 
-If the property that is declared as the XAML content property is the **Object** type, or is type **String**, then the XAML content syntax supports what's basically inner text in the XML document model: a string between the opening and closing object tags. For example, the [**Text**](https://msdn.microsoft.com/library/windows/apps/br209676) property page for [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) shows XAML content syntax that has an inner text value to set **Text**, but the string "Text" never appears in the markup. Here's an example usage:
+XAML コンテンツ プロパティとして宣言されているプロパティで、プロパティの型が **Object** と **String** のいずれかの場合には、基本的に XML ドキュメント モデルの内部テキストになるもの (開始オブジェクト タグと終了オブジェクト タグの間の文字列) が XAML コンテンツ構文でサポートされます。 たとえば、[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) の [**Text**](https://msdn.microsoft.com/library/windows/apps/br209676) プロパティのページには、**Text** を設定する内部テキスト値のある XAML 構文が示されていますが、文字列 "Text" が表示されることはありません。 次に使用方法の例を示します。
 
 ```xaml
 <TextBlock>Hello!</TextBlock></code></pre></td>
@@ -181,9 +184,10 @@ If the property that is declared as the XAML content property is the **Object** 
 </table>
 ```
 
-If a XAML content property exists for a class, that's indicated in the reference topic for the class, in the "Attributes" section. Look for the value of the [**ContentPropertyAttribute**](https://msdn.microsoft.com/library/windows/apps/br228011). This attribute uses a named field "Name". The value of "Name" is the name of the property of that class that is the XAML content property. For example, on the [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) reference page, you'll see this: ContentProperty("Name=Child").
+あるクラスに XAML コンテンツ プロパティが存在する場合には、そのクラスに関するリファレンス トピックの「属性」のセクションに記載されています。 [
+            **ContentPropertyAttribute**](https://msdn.microsoft.com/library/windows/apps/br228011) の値を検索します。 この属性は名前の付いたフィールド、"Name" を使います。 "Name" の値は、XAML コンテンツ プロパティとなるクラスのプロパティの名前です。 たとえば、[**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) リファレンス ページでは、ContentProperty("Name=Child") と表示されています。
 
-One important XAML syntax rule we should mention is that you can't intermix the XAML content property and other property elements you set on the element. The XAML content property must be set entirely before any property elements, or entirely after. For example this is invalid XAML:
+ここで重要になる XAML 構文の規則の 1 つは、XAML コンテンツ プロパティ要素と、その要素で設定する他のプロパティ要素は混在できないというものです。 XAML コンテンツ プロパティは、プロパティ要素の前か、後に設定する必要があります。 たとえば、このような XAML は無効です。
 
 ``` syntax
 <StackPanel>
@@ -195,11 +199,11 @@ One important XAML syntax rule we should mention is that you can't intermix the 
 </StackPanel>
 ```
 
-## Collection syntax
+## コレクション構文
 
-All of the syntaxes shown thus far are setting properties to single objects. But many UI scenarios require that a given parent element can have multiple child elements. For example, a UI for an input form needs several text box elements, some labels, and perhaps a "Submit" button. Still, if you were to use a programming object model to access these multiple elements, they would typically be items in a single collection property, rather than each item being the value of different properties. XAML supports multiple child elements as well as supporting a typical backing collection model by treating properties that use a collection type as implicit, and performing special handling for any child elements of a collection type.
+これまでに見てきた構文はすべて、プロパティを 1 つのオブジェクトに設定しています。 しかし、複数の子要素を持つ親要素が必要な UI シナリオも数多くあります。 たとえば、入力フォームの UI では、複数のテキスト ボックス要素、いくつかのラベル、そしておそらくは 1 つの "Submit" ボタンが必要になります。 それでも、プログラミング オブジェクト モデルを使用してそれらの要素にアクセスする場合は、別々のプロパティの値としてアクセスするのではなく、1 つのコレクション プロパティの項目としてアクセスするのが一般的です。 XAML では、複数の子要素や、一般的なバッキング コレクション モデルがサポートされています。これは、暗黙的にコレクション型を使うプロパティを扱い、コレクション型の子要素を特別な方法で処理することによって実現されます。
 
-Many collection properties are also identified as the XAML content property for the class. The combination of implicit collection processing and XAML content syntax is frequently seen in types used for control compositing, such as panels, views, or items controls. For example, the following examples show the simplest possible XAML for compositing two peer UI elements within a [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635).
+このほか、多くのコレクション プロパティが、クラスの XAML コンテンツ プロパティとして識別されます。 暗黙的なコレクション処理と XAML コンテンツ構文を組み合わせた記述は、パネル、ビュー、項目コントロールなどのコントロールを合成するために広く使われる型によく見られます。 次の例は、[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635) 内で 2 つのピア UI 要素を合成させる XAML を可能な限り単純化したものです。
 
 ```xaml
 <colgroup>
@@ -218,25 +222,25 @@ Many collection properties are also identified as the XAML content property for 
 </StackPanel>
 ```
 
-### The mechanism of XAML collection syntax
+### XAML コレクション構文のメカニズム
 
-It might at first appear that XAML is enabling a "set" of the read-only collection property. In reality, what XAML enables here is adding items to an existing collection. The XAML language and XAML processors implementing XAML support rely on a convention in backing collection types to enable this syntax. Typically there is a backing property such as an indexer or **Items** property that refers to specific items of the collection. Generally, that property is not explicit in the XAML syntax. For collections, the underlying mechanism for XAML parsing is not a property, but a method: specifically, the **Add** method in most cases. When the XAML processor encounters one or more object elements within a XAML collection syntax, each such object is first created from an element, then each new object is added in order to the containing collection by calling the collection's **Add** method.
+最初は、XAML で読み取り専用のコレクションのプロパティを "設定" しているかのように思えます。 しかし、実際には、XAML によって実現されているのは、既にあるコレクションに項目を追加することです。 XAML のサポートを実装する XAML 言語および XAML プロセッサは、この構文を有効にするためにバッキング コレクション型の規則に依存します。 通常は、コレクションの特定の項目を参照するインデクサーや **Items** プロパティなどのバッキング プロパティが存在しますが、 XAML 構文では、一般にそのようなプロパティは明示されません。 コレクションの場合、XAML の解析の基になるメカニズムは、プロパティではなくメソッド (ほとんどの場合 **Add** メソッド) です。 XAML プロセッサが XAML コレクション構文内に 1 つまたは複数のオブジェクト要素を見つけると、各オブジェクトが要素から作成され、次に、コレクションの **Add** メソッドの呼び出しによって、新しく作成された各オブジェクトが格納先のコレクションに順番に追加されます。
 
-When a XAML parser adds items to a collection, it is the logic of the **Add** method that determines whether a given XAML element is a permissible item child of the collection object. Many collection types are strongly typed by the backing implementation, meaning that the input parameter of **Add** expects that whatever is passed must be a type match with the **Add** parameter type.
+XAML パーサーによってコレクションに項目が追加されるときに、特定の XAML 要素がコレクション オブジェクトの子項目として許容されるかどうかは、**Add** メソッドのロジックによって決まります。 多くのコレクション型はバッキング実装によって厳密に型指定されているため、**Add** の入力パラメーターに渡される値の型が **Add** のパラメーター型と一致する必要があります。
 
-For collection properties, be careful about when you try to specify the collection explicitly as an object element. A XAML parser will create a new object whenever it encounters an object element. If the collection property you're trying to use is read-only, this can throw a XAML parse exception. Just use the implicit collection syntax, and you won't see that exception.
+コレクション プロパティでは、オブジェクト要素としてコレクションを明示的に指定するときには注意が必要です。 XAML パーサーは、オブジェクト要素を検出するたびに新しいオブジェクトを作成します。 使おうとしているコレクション プロパティが読み取り専用の場合には、XAML 解析で例外が発生する可能性があります。 暗黙的なコレクション構文だけを使えば、その例外が表示されることはありません。
 
-## When to use attribute or property element syntax
+## 属性構文を使用する状況とプロパティ要素構文を使用する状況
 
-All properties that support being set in XAML will support attribute or property element syntax for direct value setting, but potentially will not support either syntax interchangeably. Some properties do support either syntax, and some properties support additional syntax options like a XAML content property. The type of XAML syntax supported by a property depends on the type of object that the property uses as its property type. If the property type is a primitive type, such as a double (float or decimal), integer, Boolean, or string, the property always supports attribute syntax.
+XAML で設定可能なプロパティはいずれも、直接値を設定するための属性構文またはプロパティ要素構文をサポートしますが、両方の構文をサポートしない可能性もあります。 いずれかの構文をサポートするプロパティもあれば、XAML コンテンツ プロパティなど、他の構文オプションをサポートしているプロパティもあります。 プロパティでサポートされる XAML 構文の種類は、そのプロパティでプロパティの型として使われるオブジェクトの型によって決まります。 プロパティ型が double (float または decimal)、integer、Boolean、string など、プリミティブ型の場合には、そのプロパティは常に属性構文をサポートします。
 
-You can also use attribute syntax to set a property if the object type you use to set that property can be created by processing a string. For primitives, this is always the case, the type conversion is built in to the parser. However, certain other object types can also be created by using a string specified as an attribute value, rather than an object element within a property element. For this to work, there has to be an underlying type conversion, supported either by that particular property or supported generally for all values that use that property type. The string value of the attribute is used to set properties that are important for the initialization of the new object value. Potentially, a specific type converter can also create different subclasses of a common property type, depending on how it uniquely processes information in the string. Object types that support this behavior will have a special grammar listed in the syntax section of the reference documentation. As an example, the XAML syntax for [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) shows how an attribute syntax can be used to create a new [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) value for any property of type **Brush** (and there are many **Brush** properties in Windows Runtime XAML).
+プロパティを設定する際、その設定に使うオブジェクト型を文字列の処理によって作成できる場合も、属性構文を使用できます。 プリミティブではこれが常に当てはまり、パーサーには型変換が組み込まれています。 ただし、その他のオブジェクト型のなかにも、プロパティ要素内のオブジェクト要素ではなく、属性値として指定された文字列を使って作成できるものがあります。 これを正しく機能させるには、基になる型変換が必要です。この型変換は、特定のプロパティでサポートされるか、該当するプロパティ型を使う値すべてでサポートされます。 属性の文字列値を使って、新しいオブジェクト値の初期化にとって重要なプロパティが設定されます。 型コンバーターによっては、文字列の情報を処理する方法に応じて、一般的なプロパティ型のさまざまなサブクラスが作成される可能性もあります。 この動作をサポートするオブジェクト型は、リファレンス ドキュメントの構文のセクションに特別な文法が記載されます。 たとえば、[**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) の XAML 構文では、属性構文を使って **Brush** 型のプロパティの新しい [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) 値を作成する方法を示しています (Windows ランタイム XAML には多数の **Brush** プロパティがあります)。
 
-## XAML parsing logic and rules
+## XAML 解析のロジックと規則
 
-Sometime's it's informative to read the XAML in a similar way to how a XAML parser must read it: as a set of string tokens encountered in a linear order. A XAML parser must interpret these tokens under a set of rules that are part of the definition of how XAML works.
+XAML パーサーが XAML を読み取るのと似た (文字列トークンのセットを順番に読み取っていく) 方法で XAML を読んでみると、有益な情報が得られることがあります。 XAML パーサーは、XAML の動作に関する定義に含まれる規則に基づいて、トークンを解釈する必要があります。
 
-Setting an attribute value is the typical means by which you set a property value in a markup language, for example in XML or HTML. In the following syntax, *objectName* is the object you want to instantiate, *propertyName* is the name of the property that you want to set on that object, and *propertyValue* is the value to set.
+XML や HTML などのマークアップ言語でプロパティ値を設定するには、属性値を設定するのが一般的です。 次の構文では、*objectName* はインスタンス化するオブジェクト、*propertyName* はそのオブジェクトに設定するプロパティの名前、*propertyValue* は設定する値をそれぞれ表します。
 
 ```xaml
 <objectName propertyName="propertyValue" .../>
@@ -250,19 +254,19 @@ Setting an attribute value is the typical means by which you set a property valu
 </objectName>
 ```
 
-Either syntax enables you to declare an object and set a property on that object. Although the first example is a single element in markup, there are actually discrete steps here with regard to how a XAML processor parses this markup.
+このどちらの構文でも、オブジェクトを宣言し、そのオブジェクトのプロパティを設定できます。 最初のサンプルは、1 つのマークアップ要素ですが、このマークアップの解析は、実際には XAML プロセッサで別々の手順で行われます。
 
-First, the presence of the object element indicates that a new *objectName* object must be instantiated. Only after such an instance exists can the instance property *propertyName* can be set on it.
+まず、オブジェクト要素があるので、新しい *objectName* オブジェクトをインスタンス化する必要があることがわかります。 そのようなインスタンスが作成された後にのみ、そのインスタンスにインスタンス プロパティ *propertyName* を設定できます。
 
-Another rule of XAML is that attributes of an element must be able to be set in any order. For example, there's no difference between `<Rectangle Height="50" Width="100" />` and `<Rectangle Width="100"  Height="50" />`. Which order you use is a matter of style.
+XAML のもう 1 つの規則は、要素の属性がどのような順序でも設定できる必要があるというものです。 たとえば、`<Rectangle Height="50" Width="100" />` と `<Rectangle Width="100"  Height="50" />` の間には違いがありません。 順序をどちらにするかは、スタイルの問題です。
 
-**Note**  XAML designers often promote ordering conventions if you use design surfaces other than the XML editor, but you can freely edit that XAML later, to reorder the attributes or introduce new ones.
+**注**  XML エディター以外のデザイン サーフェイスを使うと、通常は XAML デザイナーによって並び順の規則が提示されますが、その XAML は後で自由に編集して、属性を並べ替えたり、新たな属性を導入したりできます。
 
-## Attached properties
+## 添付プロパティ
 
-XAML extends XML by adding a syntax element known as an *attached property*. Similar to the property element syntax, the attached property syntax contains a dot, and the dot holds special meaning to XAML parsing. Specifically, the dot separates the owner provider of the attached property, and the property name.
+XAML は、*添付プロパティ*と呼ばれる構文要素を追加することによって XML を拡張したものです。 プロパティ要素構文と同様に、添付プロパティ構文にはドットが含まれます。このドットは XAML 解析にとって特別な意味があります。 具体的には、添付プロパティの所有者プロバイダーとプロパティ名がドットで区切られます。
 
-In XAML, you set attached properties by using the syntax *AttachedPropertyProvider*.*PropertyName* Here is an example of how you can set the attached property [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) in XAML:
+XAML では、*AttachedPropertyProvider*.*PropertyName* 構文を使って添付プロパティを設定します。XAML で添付プロパティ [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) を設定する例を次に示します。
 
 ```xaml
 <Canvas>
@@ -270,43 +274,43 @@ In XAML, you set attached properties by using the syntax *AttachedPropertyProvid
 </Canvas>
 ```
 
-You can set the attached property on elements that don't have a property of that name in the backing type, and in that way they function somewhat like a global property, or an attribute defined by a different XML namespace like the **xml:space** attribute.
+添付プロパティは、バッキング型に同じ名前のプロパティがない要素に設定できます。そのため、添付プロパティの機能は、グローバル プロパティ、または異なる XML 名前空間によって定義される属性 (**xml:space** 属性など) に似ています。
 
-In Windows Runtime XAML you'll see attached properties that support these scenarios:
+Windows ランタイム XAML には、次のシナリオをサポートする添付プロパティがあります。
 
--   Child elements can inform parent container panels how they should behave in layout: [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267), [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704), [**VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/br227651).
--   Control usages can influence behavior of an important control part that comes from the control template: [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527), [**VirtualizingStackPanel**](https://msdn.microsoft.com/library/windows/apps/br227689).
--   Using a service that's available in a related class, where the service and the class that uses it don't share inheritance: [**Typography**](https://msdn.microsoft.com/library/windows/apps/hh702143), [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/br209021), [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/br209081), [**ToolTipService**](https://msdn.microsoft.com/library/windows/apps/br227609).
--   Animation targeting: [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490).
+-   子要素が親コンテナーのパネルにレイアウト内での動作を通知する: [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267)、[**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704)、[**VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/br227651)。
+-   コントロールの使用が、コントロール テンプレートから取得するコントロールの重要性の高い部分の動作に影響を及ぼす: [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527)、[**VirtualizingStackPanel**](https://msdn.microsoft.com/library/windows/apps/br227689)。
+-   サービスと、そのサービスを使うクラスが継承を共有しない場合に、関連クラスで利用できるサービスを利用する: [**Typography**](https://msdn.microsoft.com/library/windows/apps/hh702143)、[**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/br209021)、[**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/br209081)、[**ToolTipService**](https://msdn.microsoft.com/library/windows/apps/br227609)。
+-   アニメーションのターゲット設定: [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490)。
 
-For more info, see [Attached properties overview](attached-properties-overview.md).
+詳しくは、「[添付プロパティの概要](attached-properties-overview.md)」をご覧ください。
 
-## Literal "{" values
+## リテラルの "{" 値
 
-Because the opening brace symbol \{ is the opening of the markup extension sequence, you use an escape sequence to specify a literal string value that starts with "\{". The escape sequence is "\{\}". For example, to specify a string value that is a single opening brace, specify the attribute value as "\{\}\{". You can also use the alternative quotation marks (for example, a **'** within an attribute value delimited by **""**) to provide a "\{" value as a string.
+左中かっこ記号 (\{) はマークアップ拡張シーケンスの開始を表すため、この記号で始まるリテラル文字列値を指定するには、エスケープ シーケンスを使う必要があります。 エスケープ シーケンスは "\{\}" です。 たとえば、単一の左中かっこを表す文字列値を指定するには、属性値を "\{\}\{" として指定します。 このほか、"\{" 値を文字列として指定するために、代替引用符 (**""** で区切られた属性値内の **'** など) を使うこともできます。
 
-**Note**  "\\}" also works if it's inside a quoted attribute.
+**注**  "\\}" は、引用符で囲まれている属性の内側にある場合にも機能します。
  
-## Enumeration values
+## 列挙値
 
-Many properties in the Windows Runtime API use enumerations as values. If the member is a read-write property you can set such a property by providing an attribute value. You identify which enumeration value to use as the value of the property by using the unqualified name of the constant name . For example here's how to set [**UIElement.Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) in XAML: `<Button Visibility="Visible"/>`. Here the "Visible" as a string is directly mapped to a named constant of the [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br209006) enumeration, **Visible**.
+Windows ランタイム API の多くのプロパティでは、値として列挙型が使われます。 メンバーが読み取り/書き込みプロパティの場合には、属性値を指定することによって設定できます。 プロパティの値に使う列挙値を指定するには、定数名の非修飾名を使います。 たとえば、XAML で [**UIElement.Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) を設定するには、`<Button Visibility="Visible"/>` のように記述します。 次に、文字列として "Visible" が [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br209006) 列挙値、**Visible** の名前付きの定数に直接マップされます。
 
--   Don't use a qualified form, it won't work. For example, this is invalid XAML: `<Button Visibility="Visibility.Visible"/>`.
--   Don't use the value of the constant. In other words, don't rely on the integer value of the enumeration that's there explicitly or implicitly depending on how the enumeration was defined. Although it might appear to work, it's a bad practice either in XAML or in code because you're relying on what could be a transient implementation detail. For example, don't do this: `<Button Visibility="1"/>`.
+-   修飾された形式は機能しないので、使わないでください。 たとえば、`<Button Visibility="Visibility.Visible"/>` のような XAML は無効です。
+-   定数の値を使わないでください。 要するに、列挙体の整数値に依存しないようにしてください。この整数値は、明示的または暗黙的な列挙体の定義方法に応じて変わります。 一見、機能しているように見えても、永続的でない実装の詳細となるものに依存しているため、XAML でもコードでも好ましくない方法です。 たとえば、`<Button Visibility="1"/>` のように記述しないでください。
 
-**Note**  In reference topics for APIs that use XAML and use enumerations, click the link to the enumeration type in the **Property value** section of **Syntax**. This links to the enumeration page where you can discover the named constants for that enumeration.
+**注**  XAML と列挙体を使う API のリファレンス トピックで、「**構文**」の「**プロパティ値**」セクションに表示される列挙型へのリンクをクリックします。 列挙体のページに移動するので、その列挙体の名前付き定数を確認できます。
 
-Enumerations can be flagwise, meaning that they are attributed with **FlagsAttribute**. If you need to specify a combination of values for a flagwise enumeration as a XAML attribute value, use the name of each enumeration constant, with a comma (,) between each name, and no intervening space characters. Flagwise attributes aren't common in the Windows Runtime XAML vocabulary, but [**ManipulationModes**](https://msdn.microsoft.com/library/windows/apps/br227934) is an example where setting a flagwise enumeration value in XAML is supported.
+列挙体は、フラグのように機能します。つまり、**FlagsAttribute** で属性が設定されます。 フラグのように機能する列挙体の値の組み合わせを XAML 属性値として指定する必要がある場合は、各列挙体定数の名前を使います。各名前はコンマ (,) で区切り、空白文字は含めません。 フラグのような属性は、Windows ランタイム XAML ボキャブラリでは一般的ではありませんが、それが利用できる例の 1 つが [**ManipulationModes**](https://msdn.microsoft.com/library/windows/apps/br227934) で、XAML でフラグのように機能する列挙値の設定がサポートされています。
 
-## Interfaces in XAML
+## XAML でのインターフェイス
 
-In rare cases you'll see a XAML syntax where the type of a property is an interface. In the XAML type system, a type that implements that interface is acceptable as a value when parsed. There must be a created instance of such a type available to serve as the value. You'll see an interface used as a type in the XAML syntax for [**Command**](https://msdn.microsoft.com/library/windows/apps/br227740) and [**CommandParameter**](https://msdn.microsoft.com/library/windows/apps/br227741) properties of [**ButtonBase**](https://msdn.microsoft.com/library/windows/apps/br227736). These properties support Model-View-ViewModel (MVVM) design patterns where the **ICommand** interface is the contract for how the views and models interact.
+まれに、プロパティの型がインターフェイスである XAML 構文があります。 XAML の型システムでは、インターフェイスを実装する型は解析時に値として許容されます。 値として使えるように、このような型の作成済みのインスタンスが必要になります。 型として使われるインターフェイスは、[**ButtonBase**](https://msdn.microsoft.com/library/windows/apps/br227736) の [**Command**](https://msdn.microsoft.com/library/windows/apps/br227740) と [**CommandParameter**](https://msdn.microsoft.com/library/windows/apps/br227741) プロパティの XAML 構文で見ることができます。 これらのプロパティは、Model-View-ViewModel (MVVM) 設計パターンをサポートしています。この設計パターンでは、**ICommand** インターフェイスはビューとモデルがどのように相互作用するかのコントラクトです。
 
-## XAML placeholder conventions in Windows Runtime reference
+## Windows ランタイム リファレンスでの XAML プレースホルダーの規則
 
-If you've examined any of the **Syntax** section of reference topics for Windows Runtime APIs that can use XAML, you've probably seen that the syntax includes quite a few placeholders. XAML syntax is different than the C#, Microsoft Visual Basic or Visual C++ component extensions (C++/CX) syntax because the XAML syntax is a usage syntax. It's hinting at your eventual usage in your own XAML files, but without being over-prescriptive about the values you can use. So usually the usage describes a type of grammar that mixes literals and placeholders, and defines some of the placeholders in the **XAML Values** section.
+XAML を使用できる Windows ランタイム API のリファレンス トピックでいずれかの「**構文**」セクションを調べたことがあれば、構文にかなりの数のプレースホルダーが含まれていることに気付いたことでしょう。 XAML 構文は使用法構文なので、C#、Microsoft Visual Basic、または Visual C++ コンポーネント拡張機能 (C++/CX) の構文とは異なります。 独自の XAML ファイルでの具体的な使い方を示しますが、使用できる値について説明し過ぎないようにしています。 そのため、通常は使用法としてリテラルとプレースホルダーを混ぜて文法を説明し、プレースホルダーの一部は「**XAML 値**」のセクションで定義します。
 
-When you see type names / element names in a XAML syntax for a property, the name that's shown is for the type that originally defines the property. But Windows Runtime XAML supports a class inheritance model for the [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)-based classes. So you can often use an attribute on a class that's not literally the defining class, but instead derives from a class that first defined the property/attribute. For example, you can set [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) as an attribute on any [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) derived class using a deep inheritance. For example: `<Button Visibility="Visible" />`. So don't take the element name shown in any XAML usage syntax too literally; the syntax may be viable for elements representing that class, and also elements that represent a derived class. In cases where it's rare or impossible for the type shown as the defining element to be in a real-world usage, that type name is deliberately lowercased in the syntax. For example, the syntax you see for **UIElement.Visibility** is :
+プロパティの XAML 構文で型名または要素名が表示されている場合、それらの名前は、元はプロパティを定義する型のための名前です。 しかし、Windows ランタイム XAML は、[**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) ベースのクラスのクラス継承モデルをサポートしています。 そのため、多くの場合、実際の定義クラスではなく、プロパティまたは属性を最初に定義したクラスから派生したクラスの属性を使います。 たとえば、深い継承を使って、任意の [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 派生クラスの属性として [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) を設定できます (例: `<Button Visibility="Visible" />`)。 そのため、XAML 使用方法の構文で示されている要素名が厳密に文字どおりであるとは考えないでください。そのクラスを表す要素と、派生クラスを表す要素でも、その構文が使用できることがあります。 定義要素として示されている型が、現実に使うことはまれであるか不可能である場合、その型の名前は構文内で意図的に小文字にしてあります。 たとえば、**UIElement.Visibility** の構文は、次のようになっています。
 
 ``` syntax
 <uiElement Visibility="Visible"/>
@@ -314,26 +318,26 @@ When you see type names / element names in a XAML syntax for a property, the nam
 <uiElement Visibility="Collapsed"/>
 ```
 
-Many XAML syntax sections include placeholders in the "Usage" that are then defined in a **XAML Values** section that's directly under the **Syntax** section.
+多くの XAML 構文のセクションでは、「使用方法」にプレースホルダーが含まれており、それらは「**構文**」セクションのすぐ下の「**XAML 値**」セクションで定義されています。
 
-XAML usage sections also use various generalized placeholders. These placeholders aren't redefined every time in **XAML Values**, because you'll guess or eventually learn what they represent. We think most readers would get tired of seeing them in **XAML Values** again and again so we left them out of the definitions. For reference, here's a list of some of these placeholders and what they mean in a general sense:
+XAML の使用方法のセクションでも、さまざまな一般化されたプレースホルダーが使われています。 これらのプレースホルダーは、「**XAML 値**」で毎回再定義されるわけではありません。何を表しているかを推測したり、しだいに覚えることができるためです。 ほとんどの読者は、「**XAML 値**」で定義を繰り返し見ることに飽きてしまうと思われるので、定義しないままにしています。 参考までに、これらのプレースホルダーの一部と、それらの一般的な意味を、次の一覧に示しておきます。
 
--   *object*: theoretically any object value, but often practically limited to certain types of objects such as a string-or-object choice, and you should check the Remarks on the reference page for more info.
--   *object* *property*: *object* *property* in combination is used for cases where the syntax being shown is the syntax for a type that can be used as an attribute value for many properties. For example, the **Xaml Attribute Usage** shown for [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) includes: <*object* *property*="*predefinedColorName*"/>
--   *eventhandler*: This appears as the attribute value for every XAML syntax shown for an event attribute. What you're supplying here is the function name for an event handler function. That function must be defined in the code-behind for the XAML page. At the programming level, that function must match the delegate signature of the event that you're handling, or your app code won't compile. But that's really a programming consideration, not a XAML consideration, so we don't try to hint anything about the delegate type in the XAML syntax. If you want to know which delegate you should be implementing for an event, that's in the **Event information** section of the reference topic for the event, in a table row that's labeled **Delegate**.
--   *enumMemberName*: shown in attribute syntax for all enumerations. There's a similar placeholder for properties that use an enumeration value, but it usually prefixes the placeholder with a hint of the enumeration's name. For example, the syntax shown for [**FrameworkElement.FlowDirection**](https://msdn.microsoft.com/library/windows/apps/br208716) is <*frameworkElement***FlowDirection**="*flowDirectionMemberName*"/>. If you're on one of those property reference pages, click the link to the enumeration type that appears in the **Property Value** section, next to the text **Type:**. For the attribute value of a property that uses that enumeration, you can use any string that is listed in the **Member** column of the **Members** list.
--   *double*, *int*, *string*, *bool*: These are primitive types known to the XAML language. If you're programming using C# or Visual Basic, these types are projected to Microsoft .NET equivalent types such as [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx), [**Int32**](https://msdn.microsoft.com/library/windows/apps/xaml/system.int32.aspx), [**String**](https://msdn.microsoft.com/library/windows/apps/xaml/system.string.aspx) and [**Boolean**](https://msdn.microsoft.com/library/windows/apps/xaml/system.boolean.aspx), and you can use any members on those .NET types when you work with your XAML-defined values in .NET code-behind. If you're programming using C++/CX, you'll use the C++ primitive types but you can also consider these equivalent to types defined by the [**Platform**](https://msdn.microsoft.com/library/windows/apps/xaml/hh710417.aspx) namespace, for example [**Platform::String**](https://msdn.microsoft.com/library/windows/apps/xaml/hh755812.aspx). There will sometimes be additional value restrictions for particular properties. But you'll usually see these noted in a **Property value** section or Remarks section and not in a XAML section, because any such restrictions apply both to code usages and XAML usages.
+-   *object*: 理論上は任意のオブジェクト値ですが、多くの場合、実際には特定の型のオブジェクトに限定されます (文字列かオブジェクトかの選択など)。詳しくは、リファレンス ページの「解説」をご覧ください。
+-   *object* *property*: *object* *property* の組み合わせは、示されている構文が多くのプロパティの属性値として使用できる型のための構文である場合に使われます。 たとえば、[**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) の「**XAML 属性の使用方法**」には、<*object* *property*="*predefinedColorName*"/> が含まれています。
+-   *eventhandler*: これは、イベント属性のために示される各 XAML 構文の属性値を表します。 これに対して指定するのは、イベント ハンドラー関数の関数名です。 この関数は、XAML ページのコード ビハインドで定義されている必要があります。 プログラミングのレベルでは、その関数は処理するイベントのデリゲート シグネチャと一致する必要があり、一致しない場合はアプリのコードがコンパイルされません。 ただし、それは実際にはプログラミングでの考慮事項であり、XAML での考慮事項ではないため、XAML 構文ではデリゲート型について何も言及しようとはしていません。 イベントのためにどのデリゲートを実装する必要があるかを知りたい場合は、イベントのリファレンス トピックにある「**イベント情報**」セクションの表で、" **デリゲート**" というラベルの行をご覧ください。
+-   *enumMemberName*: すべての列挙体の属性構文に示されます。 列挙値を使うプロパティのための同じようなプレースホルダーがありますが、通常は、列挙体の名前を示すプレフィックスがプレースホルダーに付けられます。 たとえば、[**FrameworkElement.FlowDirection**](https://msdn.microsoft.com/library/windows/apps/br208716) で示される構文は、<*frameworkElement***FlowDirection**="*flowDirectionMemberName*"/> です。 これらのプロパティのリファレンス ページで、「**プロパティ値**」のセクションの "**型:**" というテキストの横に表示される、列挙型へのリンクをクリックしてください。 その列挙体を使うプロパティの属性値には、「**メンバー**」の表の「**メンバー名**」列に表示される任意の文字列を使用できます。
+-   *double*、*int*、*string*、*bool*: これらは、XAML 言語既知のプリミティブ型です。 C# または Visual Basic を使ってプログラミングを行う場合は、これらの型が Microsoft .NET での対応する型 ([**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)、[**Int32**](https://msdn.microsoft.com/library/windows/apps/xaml/system.int32.aspx)、[**String**](https://msdn.microsoft.com/library/windows/apps/xaml/system.string.aspx)、[**Boolean**](https://msdn.microsoft.com/library/windows/apps/xaml/system.boolean.aspx) など) に対応付けられ、XAML で定義された値を .NET コード ビハインドで扱うときには、それらの .NET 型の任意のメンバーを使うことができます。 C++/CX を使ってプログラミングを行う場合は、C++ のプリミティブ型を使いますが、[**Platform**](https://msdn.microsoft.com/library/windows/apps/xaml/hh710417.aspx) 名前空間で定義されている、それらと同等の型 (たとえば [**Platform::String**](https://msdn.microsoft.com/library/windows/apps/xaml/hh755812.aspx)) を使うこともできます。 場合によっては、特定のプロパティに対して、追加の値の制限があります。 しかし、そのような制限はコードの使用方法と XAML の使用方法の両方に適用されるので、それらの注は通常は「XAML」セクションではなく「**プロパティ値**」または「解説」セクションに記載されます。
 
-## Tips and tricks, notes on style
+## スタイルに関するヒントと注意事項
 
--   Markup extensions in general are described in the main [XAML overview](xaml-overview.md). But the markup extension that most impacts the guidance given in this topic is the [StaticResource](staticresource-markup-extension.md) markup extension (and related [ThemeResource](themeresource-markup-extension.md)). The function of the StaticResource markup extension is to enable factoring your XAML into reusable resources that come from a XAML [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794). You almost always define control templates and related styles in a **ResourceDictionary**. You often define the smaller parts of a control template definition or app-specific style in a **ResourceDictionary** too, for example a [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) for a color that your app uses more than once for different parts of UI. By using a StaticResource, any property that would otherwise require a property element usage to set can now be set in attribute syntax. But the benefits of factoring XAML for reuse go beyond just simplifying the page-level syntax. For more info, see [ResourceDictionary and XAML resource references](https://msdn.microsoft.com/library/windows/apps/mt187273).
--   You'll see several different conventions for how white space and line feeds are applied in XAML examples. In particular, there are different conventions for how to break up object elements that have a lot of different attributes set. That's just a matter of style. The Visual Studio XML editor applies some default style rules when you edit XAML, but you can change these in the settings. There are a small number of cases where the white space in a XAML file is considered significant; for more info see [XAML and whitespace](xaml-and-whitespace.md).
+-   マークアップ拡張の全般的な説明は、メインの「[XAML の概要](xaml-overview.md)」に記載されています。 ただし、このトピックで示されているガイダンスに最も大きな影響を及ぼすマークアップ拡張は、[StaticResource](staticresource-markup-extension.md) マークアップ拡張 (および関連する [ThemeResource](themeresource-markup-extension.md)) です。 StaticResource マークアップ拡張の機能は、XAML を XAML の [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) の再利用可能なリソースにファクタリングできるようにすることです。 ほとんどの場合、**ResourceDictionary** でコントロール テンプレートと関連スタイルを定義します。 コントロール テンプレートの定義またはアプリ固有のスタイルの小さな部分についても、**ResourceDictionary** で定義します。たとえば、[**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) ではアプリが UI の各部分で何度も使う色を定義します。 StaticResource を使うと、設定にプロパティ要素を使う必要のあるプロパティが、属性構文で設定できるようになります。 XAML をファクタリングして再利用するメリットは、ページ レベルの構文を簡略化するだけにとどまりません。 詳しくは、「[ResourceDictionary と XAML リソースの参照](https://msdn.microsoft.com/library/windows/apps/mt187273)」をご覧ください。
+-   XAML の例では、空白や改行がどのように適用されるかに関するさまざまな規則が確認できます。 特に、多くの異なる属性が設定されたオブジェクト要素の分割方法に関してはさまざまな規則があります。 これは、単にスタイルの問題です。 Visual Studio の XML エディターでは、XAML を編集するときに既定のスタイル規則が適用されますが、設定で変更することもできます。 まれではあるものの、XAML ファイル内の空白が意味を持つこともあります。このような場合について詳しくは、「[XAML と空白](xaml-and-whitespace.md)」をご覧ください。
 
-## Related topics
+## 関連トピック
 
-* [XAML overview](xaml-overview.md)
-* [XAML namespaces and namespace mapping](xaml-namespaces-and-namespace-mapping.md)
-* [ResourceDictionary and XAML resource references](https://msdn.microsoft.com/library/windows/apps/mt187273)
+* [XAML の概要](xaml-overview.md)
+* [XAML 名前空間と名前空間マッピング](xaml-namespaces-and-namespace-mapping.md)
+* [ResourceDictionary と XAML リソースの参照](https://msdn.microsoft.com/library/windows/apps/mt187273)
  
 
 

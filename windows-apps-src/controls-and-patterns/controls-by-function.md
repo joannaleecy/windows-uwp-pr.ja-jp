@@ -24,7 +24,7 @@ Windows の XAML UI フレームワークには、UI 開発をサポートする
 ### アプリ バーのボタン
 アプリ バー スタイルを使ってコマンドを表示するボタン。
 
-*アプリ バーのボタン アイコン* 
+![アプリ バーのボタン アイコン](images/controls/app-bar-buttons.png) 
 
 リファレンス: [AppBarButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx)、[SymbolIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.symbolicon.aspx)、[BitmapIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.bitmapicon.aspx)、[FontIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.fonticon.aspx)、[PathIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pathicon.aspx) 
 
@@ -49,7 +49,7 @@ Windows の XAML UI フレームワークには、UI 開発をサポートする
 ### コマンド バー
 アプリ バーのボタン要素のサイズ変更を処理する専用のアプリ バー。
 
-*コマンド バー コントロール* 
+![コマンド バー コントロール](images/command-bar-compact.png)
 
 ```xaml
 <CommandBar>
@@ -68,8 +68,8 @@ Windows の XAML UI フレームワークには、UI 開発をサポートする
 
 ### ボタン
 ユーザーの入力に応答して **Click** イベントを発生させるコントロール。
- 
-*標準のボタンとスタイルを適用したボタン* 
+
+![標準的なボタン](images/controls/button.png)
 
 ```xaml
 <Button x:Name="button1" Content="Button" 
@@ -84,12 +84,13 @@ Windows の XAML UI フレームワークには、UI 開発をサポートする
 「ハイパーリンク ボタン」をご覧ください。
 
 ### ハイパーリンク ボタン
-マークアップされたテキストとして表示されるボタン。通常はテキスト ブロック内でインラインで使われます。
+ブラウザーでマークアップ テキストとして表示され、指定された URI を開くボタンです。
 
-*ハイパーリンク ボタン* 
+![ハイパーリンク ボタン](images/controls/hyperlink-button.png)
 
 ```xaml
-<HyperlinkButton Content="www.microsoft.com" NavigateUri="http://www.microsoft.com"/>
+<HyperlinkButton Content="www.microsoft.com" 
+                 NavigateUri="http://www.microsoft.com"/>
 ```
 
 リファレンス: [HyperlinkButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.hyperlinkbutton.aspx) 
@@ -99,7 +100,7 @@ Windows の XAML UI フレームワークには、UI 開発をサポートする
 ### 繰り返しボタン
 押されたときから離されるまでの間、繰り返し **Click** イベントを発生させるボタン。 
 
-*繰り返しボタン コントロール* 
+![繰り返しボタン コントロール](images/controls/repeat-button.png) 
 
 ```xaml
 <RepeatButton x:Name="repeatButton1" Content="Repeat Button" 
@@ -114,8 +115,6 @@ Windows の XAML UI フレームワークには、UI 開発をサポートする
 
 ### FlipView
 ユーザーが 1 つずつめくって表示することができる項目のコレクションを表示するコントロール。
-
-*FlipView コントロール* 
 
 ```xaml
 <FlipView x:Name="flipView1" SelectionChanged="FlipView_SelectionChanged">
@@ -144,26 +143,6 @@ Windows の XAML UI フレームワークには、UI 開発をサポートする
 デザインと使い方: [リスト](lists.md) 
 
 サンプル コード: [ListView のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=619900)
-
-### ハブ
-ユーザーが、コンテンツの異なるセクションの表示とナビゲートを実行できるようにするコンテナー コントロール。
-
-```xaml
-<Hub>
-    <HubSection>
-        <!--- hub section content -->
-                </HubSection>
-    <HubSection>
-        <!--- hub section content -->
-                </HubSection>
-</Hub>
-```
-
-リファレンス: [Hub](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.hub.aspx) 
-
-デザインと使い方: [ハブ コントロールのガイド](hub.md) 
-
-サンプル コード: [XAML ハブ コントロールのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=309828)
 
 ### 項目コントロール
 データ テンプレートで指定された UI にある項目のコレクションを表示するコントロール。 
@@ -195,7 +174,7 @@ Windows の XAML UI フレームワークには、UI 開発をサポートする
 ### カレンダーの日付の選択コントロール
 ドロップダウン カレンダー表示を使って、ユーザーが日付を選択できるコントロール。
 
-*カレンダー ビューが開いたカレンダーの日付の選択コントロール* 
+![カレンダー ビューが開いたカレンダーの日付の選択コントロール](images/controls/calendar-date-picker-open.png)
 
 ```xaml
 <CalendarDatePicker/>
@@ -219,7 +198,7 @@ Windows の XAML UI フレームワークには、UI 開発をサポートする
 ### 日付の選択コントロール
 ユーザーが日付を選択できるコントロール。
 
-*日付の選択コントロール* 
+![日付の選択コントロール](images/controls/date-picker.png)
 
 ```xaml
 <DatePicker Header="Arrival Date"/>
@@ -232,7 +211,7 @@ Windows の XAML UI フレームワークには、UI 開発をサポートする
 ### 時刻の選択コントロール
 ユーザーが時間値を設定できるコントロール。
 
-*TimePicker コントロール* 
+![TimePicker コントロール](images/controls/time-picker.png) 
 
 ```xaml
 <TimePicker Header="Arrival Time"/>
@@ -250,13 +229,13 @@ Windows の XAML UI フレームワークには、UI 開発をサポートする
 ### ポップアップ
 ユーザーの操作が必要であることを示すメッセージを表示します (ダイアログでは他のユーザー操作がブロックされますが、ポップアップでは別のウィンドウが作成されず、操作もブロックされません)。
 
-*ポップアップ コントロール* 
+![ポップアップ コントロール](images/controls/flyout.png)
 
 ```xaml
 <Flyout>
     <StackPanel>
-        <TextBlock>All items will be permanently removed from your cart.</TextBlock>
-        <Button Click="DeleteConfirmation_Click">Empty my cart</Button>
+        <TextBlock Text="All items will be removed. Do you want to continue?"/>
+        <Button Click="DeleteConfirmation_Click" Content="Yes, empty my cart"/>
     </StackPanel>
 </Flyout>
 ```
@@ -268,7 +247,7 @@ Windows の XAML UI フレームワークには、UI 開発をサポートする
 ### メニュー ポップアップ
 ユーザーが現在行っている内容に関連するコマンドまたはオプションの一覧を一時的に表示します。
 
-*メニュー ポップアップ コントロール* 
+![メニュー ポップアップ コントロール](images/controls/menu-flyout.png) 
 
 ```xaml
 <MenuFlyout>
@@ -296,8 +275,8 @@ Windows の XAML UI フレームワークには、UI 開発をサポートする
 
 ### ヒント
 要素についての情報を表示するポップアップ ウィンドウ。 
-
-*ヒント コントロール* 
+ 
+![ヒント コントロール](images/controls/tool-tip.png)
 
 ```xaml
 <Button Content="Button" Click="Button_Click" 
@@ -312,8 +291,6 @@ Windows の XAML UI フレームワークには、UI 開発をサポートする
 
 ### 画像
 画像を表示するコントロール。
-
-*イメージ コントロール*
 
 ```xaml
 <Image Source="Assets/Logo.png" />
@@ -339,7 +316,8 @@ Windows の XAML UI フレームワークには、UI 開発をサポートする
 ### 図形
 楕円形、四角形、直線、ベジエ パスなどのように表示できる、保持モードの各種グラフィック オブジェクト。
 
-*多角形* *パス* 
+![多角形](images/controls/shapes-polygon.png) 
+![パス](images/controls/shapes-path.png) 
 
 ```xaml
 <Ellipse/>
@@ -358,15 +336,16 @@ Windows の XAML UI フレームワークには、UI 開発をサポートする
 ### 境界線
 境界線、背景、またはこの両方を他のオブジェクトの周囲に描画するコンテナー コントロール。
 
-*2 つの四角形の周囲の境界線* 
+![2 つの四角形の周囲の境界線](images/controls/border.png) 
 
 ```xaml
-<Border BorderBrush="Gray" BorderThickness="4" 
-        Height="108" Width="64">
-    <StackPanel>
+<Border BorderBrush="Blue" BorderThickness="4" 
+        Height="108" Width="64" 
+        Padding="8" CornerRadius="4">
+    <Canvas>
         <Rectangle Fill="Yellow"/>
-        <Rectangle Fill="Green"/>
-    </StackPanel>
+        <Rectangle Fill="Green" Margin="0,44"/>
+    </Canvas>
 </Border>
 ```
 
@@ -375,7 +354,7 @@ Windows の XAML UI フレームワークには、UI 開発をサポートする
 ### キャンバス
 キャンバスの左上隅を基準とする子要素の絶対配置をサポートするレイアウト パネル。
  
-*キャンバス レイアウト パネル* 
+![キャンバス レイアウト パネル](images/controls/canvas.png) 
 
 ```xaml
 <Canvas Width="120" Height="120">
@@ -391,7 +370,7 @@ Windows の XAML UI フレームワークには、UI 開発をサポートする
 ### グリッド
 複数行と複数列での子要素の配置をサポートするレイアウト パネル。
 
-*グリッド レイアウト パネル* 
+![グリッド レイアウト パネル](images/controls/grid.png) 
 
 ```xaml
 <Grid>
@@ -418,7 +397,7 @@ Windows の XAML UI フレームワークには、UI 開発をサポートする
 ### RelativePanel
 互いまたは親パネルを基準にして、子オブジェクトの位置を決定し、調整できるパネル。
 
-*RelativePanel レイアウト パネル* 
+![RelativePanel レイアウト パネル](images/controls/relative-panel.png) 
 
 ```xaml
 <RelativePanel>
@@ -439,7 +418,8 @@ Windows の XAML UI フレームワークには、UI 開発をサポートする
 
 ```xaml
 <ScrollViewer ZoomMode="Enabled" MaxZoomFactor="10" 
-              HorizontalScrollMode="Enabled" HorizontalScrollBarVisibility="Visible"
+              HorizontalScrollMode="Enabled" 
+              HorizontalScrollBarVisibility="Visible"
               Height="200" Width="200">
     <Image Source="Assets/Logo.png" Height="400" Width="400"/>
 </ScrollViewer>
@@ -447,34 +427,14 @@ Windows の XAML UI フレームワークには、UI 開発をサポートする
 
 リファレンス: [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.aspx)
 
-デザインと使い方: [パン、スクロール、ズームのコントロールのガイド](scroll-controls.md) 
+デザインと使い方: [スクロールとパンのコントロールのガイド](scroll-controls.md) 
 
 サンプル コード: [XAML のスクロール、パン、ズームのサンプル](http://go.microsoft.com/fwlink/p/?linkid=238577)
-
-### SplitView
-2 つのビューを持つコンテナー コントロール。1 つはメイン コンテンツ用で、もう 1 つは、通常、ナビゲーション メニューに使います。
-
-*分割ビュー コントロール* 
-
-```xaml
-<SplitView>
-    <SplitView.Pane>
-        <!-- Menu content -->
-    </SplitView.Pane>
-    <SplitView.Content>
-        <!-- Main content -->
-    </SplitView.Content>
-</SplitView>
-```
-
-リファレンス: [SplitView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.aspx) 
-
-デザインと使い方: [分割ビュー コントロールのガイド]()
 
 ### スタック パネル
 子要素を水平方向または垂直方向の単一行に配置するレイアウト パネル。
 
-*スタック パネル レイアウト コントロール* 
+![スタック パネル レイアウト コントロール](images/controls/stack-panel.png) 
 
 ```xaml
 <StackPanel>
@@ -490,7 +450,7 @@ Windows の XAML UI フレームワークには、UI 開発をサポートする
 ### VariableSizedWrapGrid
 複数行と複数列での子要素の配置をサポートするレイアウト パネル。 各子要素を、複数の行と列に配置できます。
 
-*可変サイズ折り返しグリッド レイアウト パネル* 
+![可変サイズ折り返しグリッド レイアウト パネル](images/controls/variable-sized-wrap-grid.png) 
 
 ```xaml
 <VariableSizedWrapGrid MaximumRowsOrColumns="3" ItemHeight="44" ItemWidth="44">
@@ -510,7 +470,7 @@ Windows の XAML UI フレームワークには、UI 開発をサポートする
 ### Viewbox
 コンテンツを指定されたサイズに拡大縮小するコンテナー コントロール。
 
-*Viewbox コントロール* 
+![Viewbox コントロール](images/controls/view-box.png) 
 
 ```xaml
 <Viewbox MaxWidth="25" MaxHeight="25">
@@ -548,7 +508,7 @@ Windows の XAML UI フレームワークには、UI 開発をサポートする
 ### MediaTransportControls
 MediaElement の再生コントロールを提供するコントロール。
 
-*トランスポート コントロールを含むメディア要素* 
+![トランスポート コントロールを含むメディア要素](images/controls/media-transport-controls.png) 
 
 ```xaml
 <MediaTransportControls MediaElement="myMediaElement"/>
@@ -565,6 +525,26 @@ MediaElement の再生コントロールを提供するコントロール。
 
 ## ナビゲーション
 
+### ハブ
+ユーザーが、コンテンツの異なるセクションの表示とナビゲートを実行できるようにするコンテナー コントロール。
+
+```xaml
+<Hub>
+    <HubSection>
+        <!--- hub section content -->
+    </HubSection>
+    <HubSection>
+        <!--- hub section content -->
+    </HubSection>
+</Hub>
+```
+
+リファレンス: [Hub](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.hub.aspx) 
+
+デザインと使い方: [ハブ コントロールのガイド](hub.md) 
+
+サンプル コード: [XAML ハブ コントロールのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=309828)
+
 ### ピボット
 通常は同じデータ セット内の異なるピボット (ビューまたはフィルター) 間で、迅速な移動手段を提供する全画面表示のコンテナーおよびナビゲーション モデルです。
 
@@ -579,8 +559,6 @@ Pivot コントロールに、"タブ" レイアウトを含むスタイルを�
 ### セマンティック ズーム
 ユーザーが、項目のコレクションの 2 つの異なる表示の間でズームを実行できるようにするコンテナー コントロール。
 
-*セマンティック ズーム コントロール* 
-
 ```xaml
 <SemanticZoom>
     <ZoomedInView>
@@ -594,9 +572,29 @@ Pivot コントロールに、"タブ" レイアウトを含むスタイルを�
 
 リファレンス: [SemanticZoom](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.semanticzoom.aspx) 
 
-デザインと使い方: [ジャンプ リスト](semantic-zoom.md) 
+デザインと使い方: [セマンティック ズーム コントロールのガイド](semantic-zoom.md) 
 
 サンプル コード: [XAML GridView のグループ化と SemanticZoom のサンプル](http://go.microsoft.com/fwlink/p/?linkid=226564)
+
+### SplitView
+2 つのビューを持つコンテナー コントロール。1 つはメイン コンテンツ用で、もう 1 つは、通常、ナビゲーション メニューに使います。
+
+![分割ビュー コントロール](images/controls/split-view.png) 
+
+```xaml
+<SplitView>
+    <SplitView.Pane>
+        <!-- Menu content -->
+    </SplitView.Pane>
+    <SplitView.Content>
+        <!-- Main content -->
+    </SplitView.Content>
+</SplitView>
+```
+
+リファレンス: [SplitView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.aspx) 
+
+デザインと使い方: [分割ビュー コントロールのガイド](split-view.md)
 
 ### Web ビュー
 Web コンテンツをホストするコンテナー コントロール。
@@ -617,7 +615,7 @@ Web コンテンツをホストするコンテナー コントロール。
 ### 進行状況バー
 バーを表示して進行状況を示すコントロール。
 
-*進行状況バー コントロール*
+![進行状況バー コントロール](images/controls/progress-bar-determinate.png)
 
 特定の値を表示する進行状況バー。
 
@@ -625,7 +623,7 @@ Web コンテンツをホストするコンテナー コントロール。
 <ProgressBar x:Name="progressBar1" Value="50" Width="100"/>
 ```
 
-*進行状況不定バー コントロール*
+![進行状況不定バー コントロール](images/controls/progress-bar-indeterminate.png)
 
 進行状況が不定であることを表す進行状況バー。
 
@@ -640,7 +638,7 @@ Web コンテンツをホストするコンテナー コントロール。
 ### 進行状況リング
 リングを表示して進行状況が不定であることを示すコントロール。 
 
-*進行状況リング コントロール* 
+![進行状況リング コントロール](images/controls/progress-ring.png) 
 
 ```xaml
 <ProgressRing x:Name="progressRing1" IsActive="True"/>
@@ -655,7 +653,7 @@ Web コンテンツをホストするコンテナー コントロール。
 ### 自動提案ボックス
 ユーザーが入力するときに、候補のテキストを表示するテキスト入力ボックスです。
 
-検索の自動提案ボックス 
+![検索の自動提案ボックス](images/controls/auto-suggest-box.png) 
 
 リファレンス: [AutoSuggestBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)
 
@@ -669,10 +667,11 @@ Web コンテンツをホストするコンテナー コントロール。
 ### パスワード ボックス
 パスワードを入力するためのコントロール。
 
-*パスワード ボックス コントロール* 
+ ![パスワード ボックス](images/controls/password-box.png)
 
 ```xaml
-<PasswordBox x:Name="passwordBox1" PasswordChanged="PasswordBox_PasswordChanged" />
+<PasswordBox x:Name="passwordBox1" 
+             PasswordChanged="PasswordBox_PasswordChanged" />
 ```
 
 リファレンス: [PasswordBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx) 
@@ -706,7 +705,7 @@ Web コンテンツをホストするコンテナー コントロール。
 ### テキスト ブロック
 テキストを表示するコントロール。
 
-*テキスト ブロック コントロール* 
+![テキスト ブロック コントロール](images/controls/text-block.png) 
 
 ```xaml
 <TextBlock x:Name="textBlock1" Text="I am a TextBlock"/>
@@ -721,7 +720,7 @@ Web コンテンツをホストするコンテナー コントロール。
 ### テキスト ボックス
 1 行または複数行のプレーンテキスト フィールド。
 
-*テキスト ボックス コントロール* 
+![テキスト ボックス コントロール](images/controls/text-box.png) 
 
 ```xaml
 <TextBox x:Name="textBox1" Text="I am a TextBox" 
@@ -739,7 +738,7 @@ Web コンテンツをホストするコンテナー コントロール。
 ### チェック ボックス
 ユーザーがオンまたはオフにできるコントロール。
 
-*チェック ボックスの 3 状態* 
+![チェック ボックスの 3 状態](images/templates-checkbox-states-default.png)
 
 ```xaml
 <CheckBox x:Name="checkbox1" Content="CheckBox" 
@@ -753,10 +752,11 @@ Web コンテンツをホストするコンテナー コントロール。
 ### コンボ ボックス
 ユーザーが選択できる項目のドロップダウン リスト。
 
-*開かれた状態のコンボ ボックス* 
+![開かれた状態のコンボ ボックス](images/controls/combo-box-open.png) 
 
 ```xaml
-<ComboBox x:Name="comboBox1" SelectionChanged="ComboBox_SelectionChanged" Width="100">
+<ComboBox x:Name="comboBox1" Width="100"
+          SelectionChanged="ComboBox_SelectionChanged">
     <x:String>Item 1</x:String>
     <x:String>Item 2</x:String>
     <x:String>Item 3</x:String>
@@ -770,10 +770,11 @@ Web コンテンツをホストするコンテナー コントロール。
 ### リスト ボックス
 ユーザーが選択できる項目のインライン リストを表示するコントロール。 
 
-*リスト ボックス コントロール*
+![リスト ボックス コントロール](images/controls/list-box.png)
 
 ```xaml
-<ListBox x:Name="listBox1" SelectionChanged="ListBox_SelectionChanged" Width="100">
+<ListBox x:Name="listBox1" Width="100"
+         SelectionChanged="ListBox_SelectionChanged">
     <x:String>Item 1</x:String>
     <x:String>Item 2</x:String>
     <x:String>Item 3</x:String>
@@ -787,7 +788,7 @@ Web コンテンツをホストするコンテナー コントロール。
 ### ラジオ ボタン
 ユーザーがオプションのグループから 1 つのオプションを選択できるようにするコントロール。 グループ化されたラジオ ボタンは、それぞれ相互に排他的です。
 
-*ラジオ ボタン コントロール* 
+![ラジオ ボタン コントロール](images/controls/radio-button.png)
 
 ```xaml
 <RadioButton x:Name="radioButton1" Content="RadioButton 1" GroupName="Group1" 
@@ -805,7 +806,7 @@ Web コンテンツをホストするコンテナー コントロール。
 ### スライダー
 ユーザーがトラックに沿って Thumb コントロールを動かすことで値の範囲から選択できるようにするコントロール。
 
-*スライダー コントロール* 
+![スライダー コントロール](images/controls/slider.png)
 
 ```xaml
 <Slider x:Name="slider1" Width="100" ValueChanged="Slider_ValueChanged" />
@@ -817,8 +818,6 @@ Web コンテンツをホストするコンテナー コントロール。
 
 ### トグル ボタン
 2 つの状態を切り替えることができるボタン。
-
-*トグル ボタン コントロール* 
 
 ```xaml
 <ToggleButton x:Name="toggleButton1" Content="Button" 
@@ -832,7 +831,7 @@ Web コンテンツをホストするコンテナー コントロール。
 ### トグル スイッチ
 2 つの状態を切り替えることができるスイッチ。
 
-*トグル スイッチ コントロール* 
+![トグル スイッチ コントロール](images/controls/toggle-switch.png) 
 
 ```xaml
 <ToggleSwitch x:Name="toggleSwitch1" Header="ToggleSwitch" 

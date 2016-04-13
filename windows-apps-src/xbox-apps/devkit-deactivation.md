@@ -1,85 +1,85 @@
 ---
-title: Xbox One Developer Mode deactivation
-description: How to deactivate Developer Mode.
+title: Xbox One 開発者モードの非アクティブ化
+description: 開発者モードを非アクティブ化する方法を説明します。
 area: Xbox
 ---
 
-# Xbox One Developer Mode deactivation
+# Xbox One 開発者モードの非アクティブ化
 
-* [Switch to Retail Mode](#switch-to-retail-mode)
-* [Deactivate your console using the Dev Mode Activation app](#deactivate-your-console-using-the-dev-mode-activation-app)  
-* [Reset your console](#reset-your-console)
-* [Deactivate your console using Windows Dev Center](#deactivate-your-console-using-windows-dev-center)
+* [リテール モードに切り替える](#switch-to-retail-mode)
+* [開発者モードのアクティブ化用アプリを使って本体を非アクティブ化する](#deactivate-your-console-using-the-dev-mode-activation-app)  
+* [本体をリセットする](#reset-your-console)
+* [Windows デベロッパー センターを使って本体を非アクティブ化する](#deactivate-your-console-using-windows-dev-center)
 
-If you decide you no longer want to use your console for development, use the following steps to deactivate Developer Mode.
+本体を開発用に使うことをやめる場合は、以下の手順を使って開発者モードを非アクティブ化します。
 
-## Switch to Retail Mode
-First, return your Xbox One console to Retail Mode.
+## リテール モードに切り替える
+まず、Xbox One 本体をリテール モードに戻します。
 
-1. Open **Dev Home**.
-2. Click **Leave developer mode**.  Your console will restart in Retail Mode.  
+1. **Dev Home** を開きます。
+2. **[Leave developer mode]** (開発者モードの終了) をクリックします。  本体がリテール モードで再起動します。  
 
    ![](images/deactivation-leave-dev-mode.png)
 
-Now deactivate your console by using one of the following methods.
+次のいずれかの方法を使って本体を非アクティブ化します。
 
-## Deactivate your console using the Dev Mode Activation app
+## 開発者モードのアクティブ化用アプリを使って本体を非アクティブ化する
 
-The preferred method of deactivating Developer Mode on your console is to use the Dev Mode Activation app. 
+開発者モードを非アクティブ化するための推奨される方法は、開発者モードのアクティブ化用アプリを使うことです。 
 
-1. Navigate to **My games & apps** > **Apps**.
+1. **[マイ コレクション]** の **[アプリ]** に移動します。
   
-   ![Activation Step 3](images/activation-step-3.png)    
+   ![アクティブ化手順 3](images/activation-step-3.png)    
    
-2.  Open the Dev Mode Activation app.    
-3.  Click **Deactivate**.
+2.  開発者モードのアクティブ化用アプリを開きます。    
+3.  **[Deactivate]** (非アクティブ化) をクリックします。
   
-![Deactivate console](images/deactivation-app.png)
+![本体の非アクティブ化](images/deactivation-app.png)
 
-## Reset your console
+## 本体をリセットする
 
-You can also deactivate Developer Mode by resetting your console.  
+開発者モードを非アクティブ化するには、本体をリセットする方法を使うこともできます。  
 
-> **Note**&nbsp;&nbsp;When you reset your console, all local save game data will be lost.
+> **注**&nbsp;&nbsp;本体をリセットすると、ローカルに保存されているゲーム データはすべて失われます。
 
-To reset your console perform the following steps:
+本体をリセットするには、次の手順を実行します。
 
-1.  Go to **My games & apps**.  
-2.  Select **Apps**, and then select **Settings**.  
-3.  Go to **System** in the left pane, and then select **Console info & updates** in the right pane.  
-4.  Go to **Console info & updates**.  
+1.  **[マイ コレクション]** に移動します。  
+2.  **[アプリ]** を選択し、**[設定]** を選択します。  
+3.  左ペインの **[システム]** に移動し、右ペインの **[本体の情報と更新]** を選択します。  
+4.  **[本体の情報と更新]** に移動します。  
    
-    ![Console info and updates](images/deactivation-console-info-updates.png)  
+    ![本体の情報と更新](images/deactivation-console-info-updates.png)  
     
-5.  Click **Reset console**.
+5.  **[Reset console]** (本体のリセット) をクリックします。
     
-    ![Reset console](images/deactivation-reset-console.png)
+    ![本体のリセット](images/deactivation-reset-console.png)
     
-6.  Next, click **Reset and remove everything**. This option resets the console to its original retail state.  All of your apps, games, and local save data will be deleted. Note that choosing the other option, **Reset and keep my games & apps**, will not remove your console from the developer program.  
+6.  次に、**[Reset and remove everything]** (すべてを削除してリセット) をクリックします。 このオプションは、本体をリセットして元の製品版の状態にします。  アプリ、ゲーム、ローカルに保存されたデータはすべて削除されます。 もう 1 つのオプションである **[Reset and keep my games & apps]** (ゲームとアプリを保持してリセット) を選んだ場合、本体は開発者プログラムから削除されません。  
    
-    ![Reset and remove everything](images/deactivation-reset-remove.png)
+    ![すべてを削除してリセット](images/deactivation-reset-remove.png)
 
-## Deactivate your console using Windows Dev Center
+## Windows デベロッパー センターを使って本体を非アクティブ化する
 
-If you are unable to access your console for any reason, you can also deactivate Developer Mode on your console by using Windows Dev Center.
+何らかの理由で本体にアクセスできない場合は、Windows デベロッパー センターを使って本体の開発者モードを非アクティブ化できます。
 
-1. Go to [developer.microsoft.com/xboxdevices](https://developer.microsoft.com/xboxdevices).    
-2. Sign in to Dev Center with your Dev Center account.    
-3. Find the console that you want to deactivate in the list of consoles by matching the serial number, console ID, or the device ID.  
-4. Click **Deactivate**.  
+1. [developer.microsoft.com/xboxdevices](https://developer.microsoft.com/xboxdevices) にアクセスします。    
+2. デベロッパー センター アカウントを使ってデベロッパー センターにサインインします。    
+3. 本体の一覧で、シリアル番号、本体の ID、またはデバイス ID を照らし合わせて、非アクティブ化する本体を見つけます。  
+4. **[Deactivate]** (非アクティブ化) をクリックします。  
   
-![Deactivate using DevCenter](images/deactivation-devcenter.png)
+![DevCenter を使った非アクティブ化](images/deactivation-devcenter.png)
 
-If you didn't previously return your Xbox One console to Retail Mode, do so now.
+事前に Xbox One 本体をリテール モードに戻していない場合は、ここで戻してください。
 
-1. Launch **Dev Home**.
-2. Click **Leave developer mode**.  Your console will restart in Retail Mode.
+1. **Dev Home** を起動します。
+2. **[Leave developer mode]** (開発者モードの終了) をクリックします。  本体がリテール モードで再起動します。
 
-![Activation Step 13](images/activation-step-13.png)
+![アクティブ化手順 13](images/activation-step-13.png)
 
-## See also
-- [Xbox One Developer Mode activation](devkit-activation.md)
-- [UWP on Xbox One](index.md)
+## 参照
+- [Xbox One 開発者モードのアクティブ化](devkit-activation.md)
+- [Xbox One の UWP](index.md)
 
 
 <!--HONumber=Mar16_HO5-->

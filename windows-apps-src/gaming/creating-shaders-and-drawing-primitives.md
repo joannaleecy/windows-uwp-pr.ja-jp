@@ -1,36 +1,36 @@
 ---
-title: Create shaders and drawing primitives
-description: Here, we show you how to use HLSL source files to compile and create shaders that you can then use to draw primitives on the display.
+title: シェーダーの作成とプリミティブの描画
+description: ここでは、HLSL ソース ファイルを使い、シェーダーをコンパイルして作成する方法について説明します。作成したシェーダーを使って、ディスプレイ上にプリミティブを描画することができます。
 ms.assetid: 91113bbe-96c9-4ef9-6482-39f1ff1a70f4
 ---
 
-# Create shaders and drawing primitives
+# シェーダーの作成とプリミティブの描画
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-Here, we show you how to use HLSL source files to compile and create shaders that you can then use to draw primitives on the display.
+ここでは、HLSL ソース ファイルを使い、シェーダーをコンパイルして作成する方法について説明します。作成したシェーダーを使って、ディスプレイ上にプリミティブを描画することができます。
 
-We create and draw a yellow triangle by using vertex and pixel shaders. After we create the Direct3D device, the swap chain, and the render-target view, we read data from binary shader object files on the disk.
+頂点シェーダーとピクセル シェーダーを使って、黄色の三角形を作成し描画します。 Direct3D デバイス、スワップ チェーン、レンダー ターゲット ビューを作成した後、ディスク上のバイナリ シェーダー オブジェクト ファイルからデータを読み取ります。
 
-**Objective:** To create shaders and to draw primitives.
+**目標:** シェーダーを作成し、プリミティブを描画する。
 
-## Prerequisites
+## 前提条件
 
 
-We assume that you are familiar with C++. You also need basic experience with graphics programming concepts.
+C++ に習熟していることを前提としています。 また、グラフィックス プログラミングの概念に対する基礎的な知識も必要となります。
 
-We also assume that you went through [Quickstart: setting up DirectX resources and displaying an image](setting-up-directx-resources.md).
+また、「[クイック スタート: DirectX リソースの設定と画像の表示](setting-up-directx-resources.md)」にひととおり目を通しておく必要があります。
 
-**Time to complete:** 20 minutes.
+**完了までの時間:** 20 分。
 
-## Instructions
+## 手順
 
-### 1. Compiling HLSL source files
+### 1. HLSL ソース ファイルのコンパイル
 
-Microsoft Visual Studio uses the [fxc.exe](https://msdn.microsoft.com/library/windows/desktop/bb232919) HLSL code compiler to compile the .hlsl source files (SimpleVertexShader.hlsl and SimplePixelShader.hlsl) into .cso binary shader object files (SimpleVertexShader.cso and SimplePixelShader.cso). For more info about the HLSL code compiler, see Effect-Compiler Tool. For more info about compiling shader code, see [Compiling Shaders](https://msdn.microsoft.com/library/windows/desktop/bb509633).
+Microsoft Visual Studio は [fxc.exe](https://msdn.microsoft.com/library/windows/desktop/bb232919) HLSL コード コンパイラを使って .hlsl ソース ファイル (SimpleVertexShader.hlsl と SimplePixelShader.hlsl) を .cso バイナリ シェーダー オブジェクト ファイル (SimpleVertexShader.cso と SimplePixelShader.cso) にコンパイルします。 HLSL コード コンパイラについて詳しくは、「エフェクト コンパイラ ツール」をご覧ください。 シェーダー コードのコンパイルについて詳しくは、「[シェーダーのコンパイル](https://msdn.microsoft.com/library/windows/desktop/bb509633)」をご覧ください。
 
-Here is the code in SimpleVertexShader.hlsl:
+以下に示したのは、SimpleVertexShader.hlsl のコードです。
 
 ```hlsl
 struct VertexShaderInput
@@ -54,7 +54,7 @@ PixelShaderInput SimpleVertexShader(VertexShaderInput input)
 }
 ```
 
-Here is the code in SimplePixelShader.hlsl:
+以下に示したのは、SimplePixelShader.hlsl のコードです。
 
 ```hlsl
 struct PixelShaderInput
@@ -69,15 +69,16 @@ float4 SimplePixelShader(PixelShaderInput input) : SV_TARGET
 }
 ```
 
-### 2. Reading data from disk
+### 2. ディスクからのデータの読み取り
 
-We use the DX::ReadDataAsync function from DirectXHelper.h in the DirectX 11 App (Universal Windows) template to asynchronously read data from a file on the disk.
+DirectX 11 アプリ (ユニバーサル Windows) テンプレート内の DirectXHelper.h から DX::ReadDataAsync 関数を使って、ディスク上のファイルからデータを非同期的に読み取ります。
 
-### 3. Creating vertex and pixel shaders
+### 3. 頂点シェーダーとピクセル シェーダーの作成
 
-We read data from the SimpleVertexShader.cso file and assign the data to the *vertexShaderBytecode* byte array. We call [**ID3D11Device::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) with the byte array to create the vertex shader ([**ID3D11VertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476641)). We set the vertex depth value to 0.5 in the SimpleVertexShader.hlsl source to guarantee that our triangle is drawn. We populate an array of [**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180) structures to describe the layout of the vertex shader code and then call [**ID3D11Device::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512) to create the layout. The array has one layout element that defines the vertex position. We read data from the SimplePixelShader.cso file and assign the data to the *pixelShaderBytecode* byte array. We call [**ID3D11Device::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) with the byte array to create the pixel shader ([**ID3D11PixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476576)). We set the pixel value to (1,1,1,1) in the SimplePixelShader.hlsl source to make our triangle yellow. You can change the color by changing this value.
+SimpleVertexShader.cso ファイルからデータを読み取り、そのデータを *vertexShaderBytecode* バイト配列に割り当てます。 このバイト配列を使って [**ID3D11Device::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) を呼び出し、頂点シェーダー ([**ID3D11VertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476641)) を作成します。 三角形が確実に描画されるように、SimpleVertexShader.hlsl ソースで頂点の深度値を 0.5 に設定します。 [
+            **D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180) 構造体の配列に値を設定して頂点シェーダー コードのレイアウトを記述し、その後、[**ID3D11Device::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512) を呼び出してレイアウトを作成します。 配列には頂点の位置を定義するレイアウト要素が 1 つあります。 SimplePixelShader.cso ファイルからデータを読み取り、そのデータを *pixelShaderBytecode* バイト配列に割り当てます。 このバイト配列を使って [**ID3D11Device::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) を呼び出し、ピクセル シェーダー ([**ID3D11PixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476576)) を作成します。 三角形を黄色にするために、SimplePixelShader.hlsl ソースでピクセル値を (1,1,1,1) に設定します。 この値を変更することで色を変えることができます。
 
-We create vertex and index buffers that define a simple triangle. To do this, we first define the triangle, next describe the vertex and index buffers ([**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) and [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220)) using the triangle definition, and finally call [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) once for each buffer.
+単純な三角形を定義する頂点バッファーとインデックス バッファーを作成します。 そのためにまず三角形を定義し、次に三角形の定義を使って頂点バッファーとインデックス バッファー ([**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) と [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220)) を記述し、最後にバッファーごとに [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) を 1 回呼び出します。
 
 ```cpp
         auto loadVSTask = DX::ReadDataAsync(L"SimpleVertexShader.cso");
@@ -190,23 +191,25 @@ We create vertex and index buffers that define a simple triangle. To do this, we
         });
 ```
 
-We use the vertex and pixel shaders, the vertex shader layout, and the vertex and index buffers to draw a yellow triangle.
+頂点シェーダー、ピクセル シェーダー、頂点シェーダー レイアウト、頂点バッファー、インデックス バッファーを使って、黄色の三角形を描画します。
 
-### 4. Drawing the triangle and presenting the rendered image
+### 4. 三角形の描画とレンダリングされた画像の表示
 
-We enter an endless loop to continually render and display the scene. We call [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) to specify the render target as the output target. We call [**ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) with { 0.071f, 0.04f, 0.561f, 1.0f } to clear the render target to a solid blue color.
+シーンをレンダリングして表示し続けるために、無限ループを使います。 [
+            **ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) を呼び出して、レンダー ターゲットを出力ターゲットとして指定します。 [
+            **ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) の呼び出しに { 0.071f, 0.04f, 0.561f, 1.0f } を渡して、レンダー ターゲットを無地の青色にクリアします。
 
-In the endless loop, we draw a yellow triangle on the blue surface.
+無限ループで、黄色の三角形を青色のサーフェス上に描画します。
 
-**To draw a yellow triangle**
+**黄色の三角形を描画するには**
 
-1.  First, we call [**ID3D11DeviceContext::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) to describe how vertex buffer data is streamed into the input-assembler stage.
-2.  Next, we call [**ID3D11DeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) and [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453) to bind the vertex and index buffers to the input-assembler stage.
-3.  Next, we call [**ID3D11DeviceContext::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455) with the [**D3D11\_PRIMITIVE\_TOPOLOGY\_TRIANGLESTRIP**](https://msdn.microsoft.com/library/windows/desktop/ff476189#D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP) value to specify for the input-assembler stage to interpret the vertex data as a triangle strip.
-4.  Next, we call [**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) to initialize the vertex shader stage with the vertex shader code and [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) to initialize the pixel shader stage with the pixel shader code.
-5.  Finally, we call [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) to draw the triangle and submit it to the rendering pipeline.
+1.  まず、頂点バッファーから入力アセンブラー ステージへのデータの流れを定義するために、[**ID3D11DeviceContext::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) を呼び出します。
+2.  次に、[**ID3D11DeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) と [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453) を呼び出して、頂点バッファーとインデックス バッファーを入力アセンブラー ステージにバインドします。
+3.  次に、[**ID3D11DeviceContext::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455) の呼び出しで [**D3D11\_PRIMITIVE\_TOPOLOGY\_TRIANGLESTRIP**](https://msdn.microsoft.com/library/windows/desktop/ff476189#D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP) 値を渡し、頂点データを三角形ストリップとして解釈するよう入力アセンブラー ステージに指定します。
+4.  次に、[**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) を呼び出して頂点シェーダー ステージを頂点シェーダー コードで初期化し、さらに、[**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) を呼び出してピクセル シェーダー ステージをピクセル シェーダー コードで初期化します。
+5.  最後に、[**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) を呼び出して三角形を描画し、レンダリング パイプラインに送ります。
 
-We call [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576) to present the rendered image to the window.
+レンダリングされた画像をウィンドウに表示するために、[**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576) を呼び出しています。
 
 ```cpp
             // Specify the render target we created as the output target.
@@ -272,14 +275,14 @@ We call [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows
                 );
 ```
 
-## Summary and next steps
+## 要約と次のステップ
 
 
-We created and drew a yellow triangle by using vertex and pixel shaders.
+ここでは、頂点シェーダーとピクセル シェーダーを使って、黄色の三角形を作成し描画しました。
 
-Next, we create an orbiting 3D cube and apply lighting effects to it.
+次に、周回する 3D 立方体を作成し、そこに照明効果を適用します。
 
-[Using depth and effects on primitives](using-depth-and-effects-on-primitives.md)
+[プリミティブに対する深度と各種効果の使用](using-depth-and-effects-on-primitives.md)
 
  
 

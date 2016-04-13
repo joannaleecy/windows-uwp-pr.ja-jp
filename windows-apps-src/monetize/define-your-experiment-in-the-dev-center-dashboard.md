@@ -1,82 +1,82 @@
 ---
-Description: Before you can run an experiment in your Universal Windows Platform (UWP) app with A/B testing, you must define your experiment in the Dev Center dashboard.
-title: Define your experiment in the Dev Center dashboard
+Description: ユニバーサル Windows プラットフォーム (UWP) アプリで A/B テストを実施する前に、デベロッパー センター ダッシュボードで試験的機能を定義する必要があります。
+title: デベロッパー センター ダッシュボードで試験的機能を定義する
 ms.assetid: 675F2ADE-0D4B-41EB-AA4E-56B9C8F32C41
 ---
 
-# Define your experiment in the Dev Center dashboard
+# デベロッパー センター ダッシュボードで試験的機能を定義する
 
-To run an experiment in your Universal Windows Platform (UWP) app with A/B testing, start by defining your experiment in the Dev Center dashboard.
+ユニバーサル Windows プラットフォーム (UWP) アプリで A/B テストを実行するには、最初にデベロッパー センター ダッシュボードで試験的機能を定義します。
 
-The following sections describe the general process to define an experiment in the dashboard. For a walkthrough that demonstrates the end-to-end process of creating and running an experiment, see [Create and run your first experiment with A/B testing](create-and-run-your-first-experiment-with-a-b-testing.md).
+次のセクションでは、ダッシュボードで試験的機能を定義する一般的なプロセスについて説明します。 試験的機能の作成および実行のプロセスについて詳しく示すチュートリアルについては、「[A/B テストを使用して最初の試験的機能を作成および実行する](create-and-run-your-first-experiment-with-a-b-testing.md)」をご覧ください。
 
-## Get an API key
+## API キーを取得する
 
-To get started, go to the **Experimentation** page of the Dev Center dashboard and get an *API key* for your experiment.
+最初に、デベロッパー センター ダッシュボードの **[Experimentation]** ページに移動し、試験的機能用の *API キー*を取得します。
 
-An API key is a unique ID that associates your app with an experiment in your Dev Center account. Each experiment is associated with exactly one API key. However, an app can have multiple API keys, and each API key can be associated with multiple experiments. You can use API keys to help differentiate between different sets of experiments. For example, you might have one set of experiments that you release to testers in your organization and another set of experiments that you release only to external users of your app.
+API キーは、アプリをデベロッパー センターアカウントの試験的機能に関連付ける一意の ID です。 各試験的機能は、ただ 1 つの API キーに関連付けられます。 ただし、アプリに複数の API キーを含めることができ、各 API キーを複数の試験的機能に関連付けることができます。 API キーを使用することで、さまざまな試験的機能セットを区別しやすくなります。 たとえば、ある試験的機能セットは社内のテスターにリリースし、別の試験的機能セットは外部のアプリ ユーザーにのみリリースするという場合があります。
 
-You must use this API key to connect with the A/B testing service in your app code. For more information, see [Code your app for experimentation](code-your-experiment-in-your-app.md).
+この API キーを使用して、アプリ コードの A/B テスト サービスに接続する必要があります。 詳しくは、「[アプリで試験的機能のコードを記述する](code-your-experiment-in-your-app.md)」をご覧ください。
 
-1. Sign in to the [Dev Center dashboard](https://dev.windows.com/overview).
-2. Under **Your apps**, select the app for which you want to create an experiment.
-3. In the navigation pane, select **Services** and then select **Experimentation**.
-4. The **API keys** section provides a default API key for your app that is named **API key #1**. If you want to use this key, optionally type a friendly name for this key and copy it to use in your app code. To generate a new API key, select **New API key** and enter a friendly name for the API key.
+1. [デベロッパー センター ダッシュボード](https://dev.windows.com/overview)にサインインします。
+2. **[Your apps]** で、試験的機能を作成するアプリを選択します。
+3. ナビゲーション ウィンドウで、**[Services]** を選択し、**[Experimentation]** を選択します。
+4. **[API keys]** セクションに、アプリの既定の API キー (**API key #1**) が表示されています。 このキーを使用する場合は、必要に応じて、このキーのフレンドリ名を入力し、それをコピーしてアプリ コードで使用できます。 新しい API キーを生成するには、**[New API key]** を選択し、API キーのフレンドリ名を入力します。
 
-## Create an experiment
+## 試験的機能を作成する
 
-Next, create a new experiment and define the goals for the experiment.
+次に、新しい試験的機能を作成し、試験的機能の目標を定義します。
 
-1. In the **Experiments** section, click the **New experiment** button.
-2. In the **API key name** section, choose the API key you want to associate with this experiment. If you have only one API key, that API key will be selected by default.
-3. In the **Experiment name** field, type a name that you can use to easily identify the experiment. After you create an experiment, this name appears in the list of draft, active, and completed experiments on the **Experimentation** page.
-4. If you want to create a test experiment, click the **Test experiment** check box. The difference between test experiments and regular experiments is that only test experiments can be changed after they are activated.
+1. **[Experiments]** セクションで、**[New experiment]** ボタンをクリックします。
+2. **[API key name]** セクションで、この試験的機能に関連付ける API キーを選択します。 API キーが 1 つしかない場合は、その API キーが既定で選択されます。
+3. **[Experiment name]** フィールドに、試験的機能を簡単に識別できるような名前を入力します。 試験的機能を作成すると、その名前が **[Experimentation]** ページの試験的機能の草案、アクティブな試験的機能、完了した試験的機能の一覧に表示されます。
+4. テスト用の試験的機能を作成する場合は、**[Test experiment]** チェック ボックスをオンにします。 テスト用の試験的機能と通常の試験的機能の違いは、テスト用の試験的機能はアクティブ化した後も変更できるという点です。
 
-  Test experiments are intended to help you test all the variations on a client device before you release your experiment to customers. To make sure that a variation is served to clients as expected, you can activate a test experiment with 100% distribution allocated to one variation and 0% allocated to other variations. After you verify this variation, you can repeat the process for other variations.
-  > **Note**  Check this box only if you are creating a test experiment to validate parameters through internal testing. Do not check this box if you are creating an experiment that you will release to customers.
+  テスト用の試験的機能は、試験的機能をユーザーにリリースする前に、クライアント デバイス上のすべてのバリエーションをテストすることを目的としています。 バリエーションを予想どおりに確実にクライアントに提供するために、テスト用の試験的機能をアクティブ化する際に、1 つのバリエーションに 100% の配布率を割り当て、その他のバリエーションに 0% の配布率を割り当てることができます。 そのバリエーションを検証した後、他のバリエーションについても、このプロセスを繰り返します。
+  > **注**  このチェック ボックスは、テスト用の試験的機能を作成して内部テストによってパラメーターを検証する場合にのみオンにしてください。 ユーザーにリリースする試験的機能を作成する場合は、このチェック ボックスをオンにしないでください。
 
-5. In the **View event name** field, type the name of the *view event* for your experiment. The view event is an arbitrary string that represents an activity when the user starts viewing a variation that is part of your experiment. Your app code will send this view event string to Dev Center when the user starts viewing a variation. For more information, see [Code your app for experimentation](code-your-experiment-in-your-app.md).
-6. In the **Goals and conversion events** section, define at least one goal for your experiment:
-  * In the **Goal name** field, type a descriptive name for your goal. After you run an experiment, this name appears in the results summary for the experiment.
-  * In the **Conversion event name** field, type the name of the *conversion event* for this goal. A conversion event is an arbitrary string that represents an objective for this goal. Your app code will send this conversion event string to Dev Center when the user reaches an objective. For more information, see [Code your app for experimentation](code-your-experiment-in-your-app.md).
-  * In the **Objective** field, choose **Maximize** or **Minimize**, depending on whether you want to maximize or minimize the occurrences of the conversion event. This information is used in the results summary for the experiment.
+5. **[ビュー イベント名]** フィールドに、試験的機能の*ビュー イベント*の名前を入力します。 ビュー イベントとは、試験的機能の一部であるバリエーションのチェックをユーザーが開始するときのアクティビティを表す任意の文字列です。 ユーザーがバリエーションのチェックを開始すると、このビュー イベント文字列がアプリ コードによってデベロッパー センターに送信されます。 詳しくは、「[アプリで試験的機能のコードを記述する](code-your-experiment-in-your-app.md)」をご覧ください。
+6. **[Goals and conversion events]** セクションで、試験的機能の目標を 1 つ以上定義します。
+  * **[Goal name]** フィールドに、わかりやすい目標の名前を入力します。 試験的機能を実行すると、この名前が試験的機能の結果の要約に表示されます。
+  * **[コンバージョン イベント名]** フィールドに、この目標の*コンバージョン イベント*の名前を入力します。 コンバージョン イベントとは、その到達目標を表す任意の文字列です。 ユーザーが目標に到達すると、このコンバージョン イベント文字列がアプリ コードによってデベロッパー センターに送信されます。 詳しくは、「[アプリで試験的機能のコードを記述する](code-your-experiment-in-your-app.md)」をご覧ください。
+  * **[目標]** フィールドで、コンバージョン イベントの発生回数を最大化するか最小化するかに応じて、**[最大化]** または **[最小化]** を選択します。 この情報は、試験的機能の結果の要約で使用されます。
 
-  >**Note** Dev Center reports only the first conversion event for each user view in a 24-hour time period. If a user triggers multiple conversion events in your app within a 24-hour period, only the first conversion event is reported. This is intended to help prevent a single user from skewing the experiment results for a sample group of users when the goal is to maximize the number of users who perform a conversion.
+  >**注** デベロッパー センターで報告されるのは、24 時間以内に発生した、各ユーザー ビューの最初のコンバージョン イベントのみです。 ユーザーが 24 時間以内にアプリで複数のコンバージョン イベントをトリガーした場合は、最初のコンバージョン イベントのみ報告されます。 これは、コンバージョンを行ったユーザーの数を最大化することを目標としていた場合に、単一のユーザーによって、サンプルのユーザー グループの試験的機能の結果が歪曲されないようにすることを目的としています。
 
-## Define the variations and settings for the experiment
+## 試験的機能のバリエーションと設定を定義する
 
-Next, define the variations and settings for your experiment.
+次に、試験的機能のバリエーションと設定を定義します。
 
-* A *variation* is a collection of one or more settings that you are testing in your experiment. Every experiment must have at least one setting and two variations (including the control). An experiment can have up to five variations.
-* A *setting* is a value that your app uses to initialize a program variable. During the experiment, the value of the setting changes from variation to variation. After you end the experiment, the setting is assigned the value from the variation that you choose release to all users of your app. Settings can have the following types: string, Boolean, double, and integer.
+* *バリエーション*とは、試験的機能でテストする 1 つ以上の設定のコレクションのことです。 いずれの試験的機能でも、少なくとも 1 つの設定と 2 つのバリエーション (コントロールなど) があります。 試験的機能には、最大 5 つのバリエーションを定義できます。
+* *設定*とは、アプリがプログラムの変数を初期化するときに使用する値のことです。 試験的機能の実行中、設定の値は、バリエーションに従って変化します。 試験的機能が終了したら、すべてのアプリ ユーザーにリリースするバリエーションの値を設定に割り当てます。 設定には、文字列型、ブール値型、倍精度浮動小数点数型、または整数型を含めることができます。
 
-To define the variations and settings for your experiment:
-1. In the **Variations and settings** section, you should see two default variations, **Variation A (Control)** and **Variation B**. If you want more variations, click **Add variation**. Optionally, you can rename each variation.
-2. Next, create the settings for your variations. Click **Add setting** to create each new setting, and type the setting name and the value of the setting in each variation.
-3. By default, variations are distributed equally to your app users. If you want to choose a specific distribution percentage, clear the **Distribute equally** check box and type the percentages in the **Distribution (%)** row.
+試験的機能のバリエーションと設定を定義するには
+1. **[Variations and settings]** セクションには、**[Variation A (Control)]** と **[Variation B]** という 2 つの既定のバリエーションが表示されます。さらにバリエーションが必要な場合は、**[Add variation]** をクリックします。 必要に応じて、各バリエーションの名前を変更することができます。
+2. 次に、バリエーションに設定を作成します。 **[設定の追加]** をクリックして新しい設定をそれぞれ作成し、各バリエーションの設定の名前および設定値を入力します。
+3. 既定では、バリエーションは、アプリ ユーザーに均等に配布されます。 特定の配布の割合を選択する場合は、**[均等な配分]** チェック ボックスをオフにし、**[Distribution (%)]** 行に割合を入力します。
 
-## Save your experiment
+## 試験的機能を保存する
 
-When you finish entering the required fields for your experiment, click **Save** to save your experiment.
+試験的機能の必須フィールドへの入力が完了したら、**[保存]** をクリックして試験的機能を保存します。
 
-> **Important** After you save an experiment, you can no longer change the API key for the experiment, even if you haven't yet activated the experiment.
+> **重要** 試験的機能を保存すると、その試験的機能をアクティブ化していなくても、試験的機能の API キーを変更できなくなります。
 
-If you are satisfied with the parameters of your experiment and you are ready to activate it so you can start collecting experiment data from your app, click **Activate**. When the experiment is active, your app can retrieve variation settings and report view and conversion events to Dev Center.
+試験的機能のパラメーターに問題がなく、試験的機能をアクティブ化する準備ができたら、**[アクティブ化]** をクリックして、アプリから試験的機能データの収集を開始することができます。 試験的機能がアクティブになっていると、アプリはバリエーション設定を取得し、デベロッパー センターにビュー イベントとコンバージョン イベントをレポートできます。
 
-> **Important**  After you activate an experiment, you can no longer modify the experiment parameters unless it is a test experiment (you clicked the **Test experiment** check box when you created the experiment). We recommend that you code the experiment in your app before activating your experiment.
+> **重要**  試験的機能をアクティブ化した後は、試験的機能がテスト用でない限り (試験的機能の作成時に **[Test experiment]** チェック ボックスをオンにした場合を除き)、試験的機能のパラメーターを変更できなくなります。 アプリで試験的機能のコードを記述してから試験的機能をアクティブ化することをお勧めします。
 
-## Next steps
+## 次の手順
 
-After you define your experiment in the Dev Center dashboard, you are ready for the following steps:
-1. [Code your app for experimentation](code-your-experiment-in-your-app.md). Use an API in the Microsoft Store Engagement and Monetization SDK to get variation settings for the experiment, use this data to modify the behavior of the feature you are testing, and send view event and conversion events to Dev Center.
-2. [Run and manage your experiment in the Dev Center dashboard](manage-your-experiment.md). Use the dashboard to review the results of the experiment and complete the experiment.
+デベロッパー センター ダッシュボードで試験的機能を定義したら、次の手順に進むことができます。
+1. [アプリで試験的機能のコードを記述します](code-your-experiment-in-your-app.md)。 Microsoft Store Engagement and Monetization SDK にある API を使用して、試験的機能のバリエーション設定を取得します。次にこのデータを使用して、テストしている機能の動作を変更します。そしてビュー イベントおよびコンバージョン イベントをデベロッパー センターへ送信します。
+2. [デベロッパー センター ダッシュボードで試験的機能を実行および管理します](manage-your-experiment.md)。 ダッシュボードを使用して、試験的機能の結果を確認し、試験的機能を完了します。
 
-## Related topics
+## 関連トピック
 
-  * [Code your app for experimentation](code-your-experiment-in-your-app.md)
-  * [Manage your experiment in the Dev Center dashboard](manage-your-experiment.md)
-  * [Create and run your first experiment with A/B testing](create-and-run-your-first-experiment-with-a-b-testing.md)
-  * [Run app experiments with A/B testing](run-app-experiments-with-a-b-testing.md)
+  * [アプリで試験的機能のコードを記述する](code-your-experiment-in-your-app.md)
+  * [デベロッパー センター ダッシュボードで試験的機能を管理する](manage-your-experiment.md)
+  * [A/B テストを使用して最初の試験的機能を作成および実行する](create-and-run-your-first-experiment-with-a-b-testing.md)
+  * [A/B テストを使用してアプリの試験的機能を実行する](run-app-experiments-with-a-b-testing.md)
 
 
 <!--HONumber=Mar16_HO5-->

@@ -1,77 +1,77 @@
 ---
 ms.assetid: 5A47301A-2291-4FC8-8BA7-55DB2A5C653F
-title: SQLite databases
-description: SQLite is a server-less, embedded database engine. This article explains how to use the SQLite library included in the SDK, package your own SQLite library in a Universal Windows app, or build it from the source.
+title: SQLite データベース
+description: SQLite は、サーバーを使わない埋め込みデータベース エンジンです。 この記事では、SDK に付属している SQLite ライブラリを使って、独自の SQLite ライブラリをユニバーサル Windows アプリにパッケージ化する方法、およびソースから SQLite ライブラリを構築する方法について説明します。
 ---
-# SQLite databases
+# SQLite データベース
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-SQLite is a server-less, embedded database engine. This article explains how to use the SQLite library included in the SDK, package your own SQLite library in a Universal Windows app, or build it from the source.
+SQLite は、サーバーを使わない埋め込みデータベース エンジンです。 この記事では、SDK に付属している SQLite ライブラリを使って、独自の SQLite ライブラリをユニバーサル Windows アプリにパッケージ化する方法、およびソースから SQLite ライブラリを構築する方法について説明します。
 
-## What SQLite is and when to use it
+## SQLite についての説明と SQLite を使う状況
 
-SQLite is an open source, embedded, server-less database. Over the years it has emerged as the dominant device side technology for data storage on many platforms and devices. Universal Windows Platform (UWP) supports and recommends SQLite for local storage across all Windows 10 device families.
+SQLite は、オープン ソースの埋め込みデータベース エンジンで、サーバーを使いません。 SQLite は、長い年月をかけて、さまざまなプラットフォームやデバイスでデータを保管するために使われる、デバイス側の主要なテクノロジとして登場しました。 ユニバーサル Windows プラットフォーム (UWP) では、すべての Windows 10 デバイス ファミリで、ローカル記憶域用に SQLite をサポートしており、その利用を推奨しています。
 
-SQLite is best suited for phone apps, embedded applications for Windows 10 IoT Core (IoT Core), and as a cache for enterprise relations database server (RDBS) data. It will satisfy most local data access needs unless they entail heavy concurrent writes, or a big data scale—scenarios unlikely for most apps.
+SQLite は、電話アプリや、Windows 10 IoT Core (IoT Core) 用埋め込みアプリケーションに最適です。また、企業向けのリレーショナル データベース サーバー (RDBS) のデータ用キャッシュとしても適しています。 ほとんどのローカル データ アクセスのニーズを満たします。条件として、高負荷の同時実行の書き込みを伴わない (ビッグ データ規模のシナリオでない) ことが挙げられますが、この条件はほとんどのアプリで発生する可能性が低いと考えられます。
 
-In media playback and gaming applications, SQLite can also be used as a file format to store catalogues or other assets, such as levels of a game, that can be downloaded as-is from a web server.
+メディア再生アプリケーションやゲーム アプリケーションでは、SQLite を、ストア カタログや他のアセット (ゲームのレベルなど) を保存するためのファイル形式として使うことができます。この形式で保存したデータは、Web サーバーから手を加えない状態でダウンロードすることができます。
 
-## Adding SQLite to a UWP app project
+## UWP アプリ プロジェクトへの SQLite の追加
 
-There are three ways of adding SQLite to a UWP project.
+SQLite を UWP プロジェクトに追加するには、次の 3 つの方法があります。
 
-1.  [Using the SDK SQLite](#using-the-sdk-sqlite)
-2.  [Including SQLite in the App Package](#including-sqlite-in-the-app-package)
-3.  [Building SQLite from source in Visual Studio](#building-sqlite-from-source-in-visual-studio)
+1.  [SDK の SQLite を使う](#using-the-sdk-sqlite)
+2.  [SQLite をアプリ パッケージに含める](#including-sqlite-in-the-app-package)
+3.  [Visual Studio でソースから SQLite を構築する](#building-sqlite-from-source-in-visual-studio)
 
-### Using the SDK SQLite
+### SDK の SQLite を使う
 
-You may wish to use the SQLite library included in the UWP SDK to reduce the size of your application package, and rely on the platform to update the library periodically. Using the SDK SQLite might also lead to performance advantages such as faster launch times given the SQLite library is highly likely to already be loaded in memory for use by system components.
+UWP SDK に含まれている SQLite ライブラリを使って、アプリケーション パッケージのサイズを小さくし、プラットフォームに依存してライブラリを定期的に更新することができます。 SDK の SQLite を利用すると、パフォーマンスが向上する場合もあります。たとえば、システム コンポーネントで利用される際に SQLite ライブラリが既にメモリに読み込まれていれば、起動時間が短縮される可能性があります。
 
-To reference the SDK SQLite, include the following header in your project. The header also contains the version of SQLite supported in the platform.
+SDK の SQLite を参照するには、次のヘッダーをプロジェクトに追加します。 ヘッダーには、プラットフォームでサポートされている SQLite のバージョンも含まれています。
 
 `#include <winsqlite/winsqlite3.h>`
 
-Configure the project to link to winsqlite3.lib. In **Solution Explorer**, right-click your project and select **Properties** &gt; **Linker** &gt; **Input**, then add winsqlite3.lib to **Additional Dependencies**.
+winsqlite3.lib にリンクするようにプロジェクトを構成します。 **ソリューション エクスプ ローラー**でプロジェクトを右クリックし、**[プロパティ]**、**[リンカー]**、**[入力]** の順に選択して、winsqlite3.lib を **[追加の依存関係]** に追加します。
 
-### 2. Including SQLite in the App Package
+### 2. SQLite をアプリ パッケージに含める
 
-Sometimes, you might wish to package your own library instead of using the SDK version, for example, you might wish to use a particular version of it in your cross-platform clients that is different from the version of SQLite included in the SDK.
+場合によっては、SDK バージョンを使うのではなく、独自のライブラリをパッケージ化することができます。たとえば、クロスプラットフォーム クライアントで特定のバージョンの SQLite を使うとき、SDK に含まれている SQLite のバージョンとは異なる場合があります。
 
-Install the SQLite library on the Universal Windows Platform Visual Studio extension available from SQLite.org, or through the Extensions and Updates tool.
+SQLite.org から、または [拡張機能と更新プログラム] ツールを使って、利用可能なユニバーサル Windows プラットフォームの Visual Studio の拡張機能に SQLite ライブラリをインストールします。
 
-![Extensions and Updates screen](./images/extensions-and-updates.png)
+![[拡張機能と更新プログラム] 画面](./images/extensions-and-updates.png)
 
-Once the extension is installed, reference the following header file in your code.
+拡張機能をインストールしたら、コードで次のヘッダー ファイルを参照します。
 
 `#include <sqlite3.h>`
 
-### 3. Building SQLite from source in Visual Studio
+### 3. Visual Studio でソースから SQLite を構築する
 
-Sometimes you might wish to compile your own SQLite binary to use [various compiler options](http://www.sqlite.org/compile.html) to reduce the file size, performance tune the library, or tailor the feature set to your application. SQLite provides options for platform configuration, setting default parameter values, setting size limits, controlling operating characteristics, enabling features normally turned off, disabling features normally turned on, omitting features, enabling analysis and debugging, and managing memory allocation behavior on Windows.
+場合によっては、[さまざまなコンパイラ オプション](http://www.sqlite.org/compile.html) を使って独自の SQLite バイナリをコンパイルし、ファイル サイズを小さくしたり、ライブラリのパフォーマンスを調整したり、アプリケーションに合わせて機能セットを調整したりすることができます。 SQLite には、プラットフォーム構成向けのオプションが用意されており、既定のパラメーター値の設定、サイズ制限の設定、動作特性の制御、通常は無効になっている機能の有効化、通常は有効になっている機能の無効化、機能の省略、分析とデバッグの有効化、および Windows でのメモリ割り当て動作の管理などを行うことができます。
 
-*Adding source to a Visual Studio project*
+*ソースを Visual Studio プロジェクトに追加する*
 
-The SQLite source code is available for download at the [SQLite.org download page](https://www.sqlite.org/download.html). Add this file to the Visual Studio project of the application you wish to use SQLite in.
+SQLite のソース コードは、[SQLite.org のダウンロード ページ](https://www.sqlite.org/download.html)でダウンロードできます。 このファイルを、SQLite を使うアプリケーションの Visual Studio プロジェクトに追加します。
 
-*Configure Preprocessors*
+*プリプロセッサを構成する*
 
-Always use SQLITE\_OS\_WINRT and SQLITE\_API=\_\_declspec(dllexport) in addition to any other [compile time options](http://www.sqlite.org/compile.html).
+他の[コンパイル時のオプション](http://www.sqlite.org/compile.html)に加えて、常に SQLITE\_OS\_WINRT と SQLITE\_API=\_\_declspec(dllexport) を使います。
 
-![SQLite Property Pages screen](./images/property-pages.png)
+![[SQLite プロパティ ページ] 画面](./images/property-pages.png)
 
-## Managing a SQLite Database
+## SQLite データベースの管理
 
-SQLite databases can be created, updated, and deleted with the SQLite C APIs. Details of the SQLite C API can be found at the SQLite.org [Introduction To The SQLite C/C++ Interface](http://www.sqlite.org/cintro.html) page.
+SQLite データベースは、SQLite C API を使って、作成、更新、削除することができます。 SQLite C API について詳しくは、SQLite.org の「[SQLite C/C++ インターフェイスの概要](http://www.sqlite.org/cintro.html)」のページをご覧ください。
 
-To gain sound understanding of how SQLite works, work backwards from the main task of the SQL database which is to evaluate SQL statements. There are two objects to keep in mind:
+SQLite のしくみを正しく理解するには、SQL データベースの主なタスクである SQL ステートメントの評価からさかのぼって作業を行います。 そのためには、2 つのオブジェクトを把握しておいてください。
 
--   [The database connection handle](https://www.sqlite.org/c3ref/sqlite3.html)
--   [The prepared statement object](https://www.sqlite.org/c3ref/stmt.html)
+-   [データベース接続ハンドル](https://www.sqlite.org/c3ref/sqlite3.html)
+-   [prepared ステートメント オブジェクト](https://www.sqlite.org/c3ref/stmt.html)
 
-There are six interfaces to perform database operations on these objects:
+これらのオブジェクトでデータベース操作を実行するために、次の 6 つのインターフェイスがあります。
 
 -   [sqlite3\_open()](https://web.archive.org/web/20141228070025/http:/www.sqlite.org/c3ref/open.html)
 -   [sqlite3\_prepare()](https://web.archive.org/web/20141228070025/http:/www.sqlite.org/c3ref/prepare.html)

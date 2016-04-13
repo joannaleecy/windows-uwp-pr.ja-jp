@@ -1,48 +1,51 @@
 ---
 ms.assetid: 1889AC3A-A472-4294-89B8-A642668A8A6E
-title: Use the orientation sensor
-description: Learn how to use the orientation sensors to determine the device orientation.
+title: 方位センサーの使用
+description: 方位センサーを使ってデバイスの向きを判断する方法について説明します。
 ---
-# Use the orientation sensor
+# 方位センサーの使用
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-** Important APIs **
+** 重要な API **
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371)
 -   [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399)
 
-Learn how to use the orientation sensors to determine the device orientation.
+方位センサーを使ってデバイスの向きを判断する方法について説明します。
 
-There are two different types of orientation sensor APIs included in the [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408) namespace: [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) and [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399). While both of these sensors are orientation sensors, that term is overloaded and they are used for very different purposes. However, since both are orientation sensors, they are both covered in this article.
+[
+            **Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408) 名前空間には、[**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) と [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) の 2 種類の方位センサー API が含まれています。 これらのセンサーはいずれも方位センサーですが、この用語は多重定義されており、さまざまな目的に使用されます。 ただし、いずれも方位センサーであるため、ここではその両方について説明します。
 
-The [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) API is used for 3-D apps two obtain a quaternion and a rotation matrix. A quaternion can be most easily understood as a rotation of a point \[x,y,z\] about an arbitrary axis (contrasted with a rotation matrix, which represents rotations around three axes). The mathematics behind quaternions is fairly exotic in that it involves the geometric properties of complex numbers and mathematical properties of imaginary numbers, but working with them is simple, and frameworks like DirectX support them. A complex 3-D app can use the Orientation sensor to adjust the user's perspective. This sensor combines input from the accelerometer, gyrometer, and compass.
+[
+            **OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) API は、3-D アプリで四元数と回転マトリックスを取得するために使われます。 四元数は、任意の 1 つの軸を中心とした点 \[x,y,z\] の回転と考えるとわかりやすいでしょう (一方、回転マトリックスは 3 軸を中心とした回転を表します)。 四元数の演算には複素数の幾何学的特性と虚数の数学的特性が含まれ、非常に特殊ですが、四元数自体の扱いは簡単であり、DirectX などのフレームワークでもサポートされています。 複雑な 3D アプリでは、Orientation センサーを使ってユーザーの視点を調整する場合があります。 このセンサーでは、加速度計、ジャイロメーター、コンパスからの入力が組み合わされます。
 
-The [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) API is used to determine the current device orientation in terms of definitions like portrait up, portrait down, landscape left, and landscape right. It can also detect if a device is face-up or face-down. Rather than returning properties like "portrait up" or "landscape left", this sensor returns a rotation value: "Not rotated", "Rotated90DegreesCounterclockwise", and so on. The following table maps common orientation properties to the corresponding sensor reading.
+[
+            **SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) API は、デバイスの現在の向き (上下が正しい縦向き、上下が逆の縦向き、左側を下にした横向き、右側を下にした横向き) を検出するために使用されます。 デバイスの表向き、裏向きも検出できます。 このセンサーは、"上下が正しい縦向き" や "左側を下にした横向き" などのプロパティを返すのではなく、"NotRotated" や "Rotated90DegreesCounterclockwise" などの回転値を返します。 次の表に、一般的な向きのプロパティとセンサーの読み取り値との関係を示します。
 
-| Orientation     | Corresponding sensor reading      |
+| 向き     | 対応するセンサーの読み取り値      |
 |-----------------|-----------------------------------|
-| Portrait Up     | NotRotated                        |
-| Landscape Left  | Rotated90DegreesCounterclockwise  |
-| Portrait Down   | Rotated180DegreesCounterclockwise |
-| Landscape Right | Rotated270DegreesCounterclockwise |
+| 上下が正しい縦向き     | NotRotated                        |
+| 左側を下にした横向き  | Rotated90DegreesCounterclockwise  |
+| 上下が逆の縦向き   | Rotated180DegreesCounterclockwise |
+| 右側を下にした横向き | Rotated270DegreesCounterclockwise |
 
-## Prerequisites
+## 前提条件
 
-You should be familiar with Extensible Application Markup Language (XAML), Microsoft Visual C#, and events.
+Extensible Application Markup Language (XAML)、Microsoft Visual C#、イベントについて理解している必要があります。
 
-The device or emulator that you're using must support a orientation sensor.
+使うデバイスやエミュレーターが方位センサーをサポートしている必要があります。
 
-## Create an OrientationSensor app
+## OrientationSensor アプリを作成する
 
-This section is divided into two subsections. The first subsection will take you through the steps necessary to create an orientation application from scratch. The following subsection explains the app you have just created.
+このセクションは、次の 2 つのサブセクションに分かれています。 最初のサブセクションでは、方位センサー アプリケーションを最初から作成するために必要な手順を示します。 次のサブセクションでは、作成したアプリについて説明します。
 
-###  Instructions
+###  手順
 
--   Create a new project, choosing a **Blank App (Universal Windows)** from the **Visual C#** project templates.
+-   **[Visual C#]** プロジェクト テンプレートから **[空白のアプリ (ユニバーサル Windows]** を選んで、新しいプロジェクトを作成します。
 
--   Open your project's MainPage.xaml.cs file and replace the existing code with the following.
+-   プロジェクトの MainPage.xaml.cs ファイルを開き、記載されているコードを次のコードで置き換えます。
 
 ```csharp
     using System;
@@ -115,9 +118,9 @@ This section is divided into two subsections. The first subsection will take you
     }
 ```
 
-You'll need to rename the namespace in the previous snippet with the name you gave your project. For example, if you created a project named **OrientationSensorCS**, you'd replace `namespace App1` with `namespace OrientationSensorCS`.
+元のスニペットの名前空間の名前を、自分のプロジェクトに指定した名前に変更する必要があります。 たとえば、作成したプロジェクトの名前が **OrientationSensorCS** だとすると、`namespace App1` を `namespace OrientationSensorCS` に置き換えます。
 
--   Open the file MainPage.xaml and replace the original contents with the following XML.
+-   MainPage.xaml ファイルを開き、元の内容を次の XML に置き換えます。
 
 ```xml
         <Page
@@ -161,25 +164,25 @@ You'll need to rename the namespace in the previous snippet with the name you ga
     </Page>
 ```
 
-You'll need to replace the first part of the class name in the previous snippet with the namespace of your app. For example, if you created a project named **OrientationSensorCS**, you'd replace `x:Class="App1.MainPage"` with `x:Class="OrientationSensorCS.MainPage"`. You should also replace `xmlns:local="using:App1"` with `xmlns:local="using:OrientationSensorCS"`.
+元のスニペットのクラス名の最初の部分を、自分のアプリの名前空間に置き換える必要があります。 たとえば、作成したプロジェクトの名前が **OrientationSensorCS** だとすると、`x:Class="App1.MainPage"` を `x:Class="OrientationSensorCS.MainPage"` に置き換えます。 また、`xmlns:local="using:App1"` を `xmlns:local="using:OrientationSensorCS"` に置き換える必要があります。
 
--   Press F5 or select **Debug** > **Start Debugging** to build, deploy, and run the app.
+-   アプリをビルド、展開、実行するには、F5 キーを押すか、**[デバッグ]**、**[デバッグの開始]** の順にクリックします。
 
-Once the app is running, you can change the orientation by moving the device or using the emulator tools.
+アプリを実行した後、デバイスを移動するか、エミュレーター ツールを使うことによって、方位センサーの値を変更できます。
 
--   Stop the app by returning to Visual Studio and pressing Shift+F5 or select **Debug** > **Stop Debugging** to stop the app.
+-   アプリを停止するには、Visual Studio に戻り、Shift キーを押しながら F5 キーを押すか、**[デバッグ]**、**[デバッグの停止]** の順にクリックします。
 
-###  Explanation
+###  説明
 
-The previous example demonstrates how little code you'll need to write in order to integrate orientation-sensor input in your app.
+上に示した例では、ごく短いコードを作成するだけで、方位センサー入力をアプリに組み込むことができることがわかります。
 
-The app establishes a connection with the default orientation sensor in the **MainPage** method.
+このアプリでは、**MainPage** メソッドで、既定の方位センサーとの接続を確立しています。
 
 ```csharp
 _sensor = OrientationSensor.GetDefault();
 ```
 
-The app establishes the report interval within the **MainPage** method. This code retrieves the minimum interval supported by the device and compares it to a requested interval of 16 milliseconds (which approximates a 60-Hz refresh rate). If the minimum supported interval is greater than the requested interval, the code sets the value to the minimum. Otherwise, it sets the value to the requested interval.
+このアプリでは、**MainPage** メソッドで、レポート間隔を設定しています。 次のコードは、デバイスでサポートされる最小の間隔を取得し、要求される 16 ミリ秒の間隔 (約 60 Hz のリフレッシュ レート) と比較します。 サポートされる最小の間隔が要求される間隔よりも大きい場合は、値を最小値に設定します。 それ以外の場合は、値を要求される間隔に設定します。
 
 ```csharp
 uint minReportInterval = _sensor.MinimumReportInterval;
@@ -187,24 +190,24 @@ uint reportInterval = minReportInterval > 16 ? minReportInterval : 16;
 _sensor.ReportInterval = reportInterval;
 ```
 
-The new sensor data is captured in the **ReadingChanged** method. Each time the sensor driver receives new data from the sensor, it passes the values to your app using this event handler. The app registers this event handler on the following line.
+**ReadingChanged** メソッドで、新しいセンサー データをキャプチャしています。 センサーのドライバーは、センサーから新しいデータを受け取るたびに、このイベント ハンドラーを使ってアプリに値を渡します。 このアプリの場合、このイベント ハンドラーが次の行で登録されています。
 
 ```csharp
 _sensor.ReadingChanged += new TypedEventHandler<OrientationSensor, 
 OrientationSensorReadingChangedEventArgs>(ReadingChanged);
 ```
 
-These new values are written to the TextBlocks found in the project's XAML.
+プロジェクトの XAML 内にある TextBlock に、これらの新しい値が書き込まれます。
 
-## Create a SimpleOrientation app
+## SimpleOrientation アプリを作成する
 
-This section is divided into two subsections. The first subsection will take you through the steps necessary to create a simple orientation application from scratch. The following subsection explains the app you have just created.
+このセクションは、次の 2 つのサブセクションに分かれています。 最初のサブセクションでは、シンプルな方位センサー アプリケーションを最初から作成するために必要な手順を示します。 次のサブセクションでは、作成したアプリについて説明します。
 
-### Instructions
+### 手順
 
--   Create a new project, choosing a **Blank App (Universal Windows)** from the **Visual C#** project templates.
+-   **[Visual C#]** プロジェクト テンプレートから **[空白のアプリ (ユニバーサル Windows]** を選んで、新しいプロジェクトを作成します。
 
--   Open your project's MainPage.xaml.cs file and replace the existing code with the following.
+-   プロジェクトの MainPage.xaml.cs ファイルを開き、記載されているコードを次のコードで置き換えます。
 
 ```csharp
     using System;
@@ -285,9 +288,9 @@ This section is divided into two subsections. The first subsection will take you
     }
 ```
 
-You'll need to rename the namespace in the previous snippet with the name you gave your project. For example, if you created a project named **SimpleOrientationCS**, you'd replace `namespace App1` with `namespace SimpleOrientationCS`.
+元のスニペットの名前空間の名前を、自分のプロジェクトに指定した名前に変更する必要があります。 たとえば、作成したプロジェクトの名前が **SimpleOrientationCS** だとすると、`namespace App1` を `namespace SimpleOrientationCS` に置き換えます。
 
--   Open the file MainPage.xaml and replace the original contents with the following XML.
+-   MainPage.xaml ファイルを開き、元の内容を次の XML に置き換えます。
 
 ```xml
     <Page
@@ -307,42 +310,42 @@ You'll need to rename the namespace in the previous snippet with the name you ga
     </Page>
 ```
 
-You'll need to replace the first part of the class name in the previous snippet with the namespace of your app. For example, if you created a project named **SimpleOrientationCS**, you'd replace `x:Class="App1.MainPage"` with `x:Class="SimpleOrientationCS.MainPage"`. You should also replace `xmlns:local="using:App1"` with `xmlns:local="using:SimpleOrientationCS"`.
+元のスニペットのクラス名の最初の部分を、自分のアプリの名前空間に置き換える必要があります。 たとえば、作成したプロジェクトの名前が **SimpleOrientationCS** だとすると、`x:Class="App1.MainPage"` を `x:Class="SimpleOrientationCS.MainPage"` に置き換えます。 また、`xmlns:local="using:App1"` を `xmlns:local="using:SimpleOrientationCS"` に置き換える必要があります。
 
--   Press F5 or select **Debug** > **Start Debugging** to build, deploy, and run the app.
+-   アプリをビルド、展開、実行するには、F5 キーを押すか、**[デバッグ]**、**[デバッグの開始]** の順にクリックします。
 
-Once the app is running, you can change the orientation by moving the device or using the emulator tools.
+アプリを実行した後、デバイスを移動するか、エミュレーター ツールを使うことによって、方位センサーの値を変更できます。
 
--   Stop the app by returning to Visual Studio and pressing Shift+F5 or select **Debug** > **Stop Debugging** to stop the app.
+-   アプリを停止するには、Visual Studio に戻り、Shift キーを押しながら F5 キーを押すか、**[デバッグ]**、**[デバッグの停止]** の順にクリックします。
 
-### Explanation
+### 説明
 
-The previous example demonstrates how little code you'll need to write in order to integrate simple-orientation sensor input in your app.
+上に示した例では、ごく短いコードを作成するだけで、SimpleOrientation センサー入力をアプリに組み込むことができることがわかります。
 
-The app establishes a connection with the default sensor in the **MainPage** method.
+このアプリでは、**MainPage** メソッドで、既定のセンサーとの接続を確立しています。
 
 ```csharp
 _simpleorientation = SimpleOrientationSensor.GetDefault();
 ```
 
-The new sensor data is captured in the **OrientationChanged** method. Each time the sensor driver receives new data from the sensor, it passes the values to your app using this event handler. The app registers this event handler on the following line.
+**OrientationChanged** メソッドで、新しいセンサー データをキャプチャしています。 センサーのドライバーは、センサーから新しいデータを受け取るたびに、このイベント ハンドラーを使ってアプリに値を渡します。 このアプリの場合、このイベント ハンドラーが次の行で登録されています。
 
 ```csharp
 _simpleorientation.OrientationChanged += new TypedEventHandler<SimpleOrientationSensor, 
 SimpleOrientationSensorOrientationChangedEventArgs>(OrientationChanged);
 ```
 
-These new values are written to a TextBlock found in the project's XAML.
+プロジェクトの XAML 内にある TextBlock に、以下の新しい値が書き込まれます。
 
 ```csharp
 <TextBlock HorizontalAlignment="Left" Height="24" Margin="8,8,0,0" TextWrapping="Wrap" Text="Current Orientation:" VerticalAlignment="Top" Width="101" Foreground="#FFF8F7F7"/>
  <TextBlock x:Name="txtOrientation" HorizontalAlignment="Left" Height="24" Margin="118,8,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="175" Foreground="#FFFEFAFA"/>
 ```
 
-## Related topics
+## 関連トピック
 
-* [OrientationSensor Sample](http://go.microsoft.com/fwlink/p/?linkid=241382)
-* [SimpleOrientation Sensor Sample](http://go.microsoft.com/fwlink/p/?linkid=241383)
+* [OrientationSensor のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=241382)
+* [SimpleOrientation センサーのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=241383)
  
 
 

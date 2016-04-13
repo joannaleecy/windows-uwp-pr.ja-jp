@@ -1,55 +1,55 @@
 ---
-Description: After you define your experiment in the Dev Center dashboard and code your experiment in your app, you are ready to active your experiment and use the Dev Center dashboard to review the results of your experiment.
-title: Manage your experiment in the Dev Center dashboard
+Description: デベロッパー センター ダッシュ ボードで試験的機能を定義し、アプリでその試験的機能のコードを記述したら、試験的機能をアクティブ化し、デベロッパー センター ダッシュ ボードを使用して、試験的機能の結果を確認できます。
+title: デベロッパー センター ダッシュボードで試験的機能を管理する
 ms.assetid: D48EE0B4-47F2-455C-8FB9-630769AC5ACE
 ---
 
-# Manage your experiment in the Dev Center dashboard
+# デベロッパー センター ダッシュボードで試験的機能を管理する
 
-After you [define your experiment in the Dev Center dashboard](define-your-experiment-in-the-dev-center-dashboard.md) and [code your app for experimentation](code-your-experiment-in-your-app.md), you are ready to activate your experiment and use the Dev Center dashboard to review the results of your experiment. After you have obtained all the data you need, you can end your experiment and choose whether to keep using the control variation settings in all your apps or switch to using the settings in one of your variations.
+[デベロッパー センター ダッシュ ボードで試験的機能を定義](define-your-experiment-in-the-dev-center-dashboard.md)し、[アプリでその試験的機能のコードを記述](code-your-experiment-in-your-app.md)したら、試験的機能をアクティブ化し、デベロッパー センター ダッシュ ボードを使用して、試験的機能の結果を確認できます。 必要なすべてのデータを取得したら、試験的機能を終了し、すべてのアプリのコントロールのバリエーション設定を使用し続けるか、いずれかのバリエーションの設定を使用することに切り替えるかを選択できます。
 
-> **Note** When you activate an experiment, Dev Center immediately starts collecting data from any apps that are instrumented to log data for your experiment. However, it can take several hours for experiment data to appear in the dashboard.
+> **注** 試験的機能をアクティブ化すると、デベロッパー センターでは、試験的機能のデータをログに記録するようにインストルメント化されたアプリからデータの収集を開始します。 ただし、試験的機能のデータがダッシュボードに表示されるまでに数時間かかることがあります。
 
-For a walkthrough that demonstrates the end-to-end process of creating and running an experiment, see [Create and run your first experiment with A/B testing](create-and-run-your-first-experiment-with-a-b-testing.md).
+試験的機能の作成および実行のプロセスについて詳しく示すチュートリアルについては、「[A/B テストを使用して最初の試験的機能を作成および実行する](create-and-run-your-first-experiment-with-a-b-testing.md)」をご覧ください。
 
-## Activate your experiment
+## 試験的機能をアクティブ化する
 
-When you are satisfied with the parameters of your experiment on the dashboard and you have updated your app code, you are ready to activate your experiment so you can start collecting experiment data from your app. When the experiment is active, your app can retrieve variation settings and report view and conversion events to Dev Center.
+ダッシュボードの試験的機能のパラメーターに問題がなく、アプリのコードを更新したら、試験的機能をアクティブ化し、アプリから試験的機能のデータを収集できるようになります。 試験的機能がアクティブになっていると、アプリはバリエーション設定を取得し、デベロッパー センターにビュー イベントとコンバージョン イベントをレポートできます。
 
-1. Sign in to the [Dev Center dashboard](https://dev.windows.com/overview).
-2. Under **Your apps**, select the app with the experiment that you want to activate.
-3. In the navigation pane, select **Services** and then select **Experimentation**.
-4. The **Experiments** section lists the draft, active, and completed experiments for the current app. Click the **Draft** filter and then click **Activate** for the experiment you want to activate.
+1. [デベロッパー センター ダッシュボード](https://dev.windows.com/overview)にサインインします。
+2. **[Your apps]** の下で、アクティブ化する試験的機能を備えたアプリを選択します。
+3. ナビゲーション ウィンドウで、**[Services]** を選択し、**[Experimentation]** を選択します。
+4. **[Experiments]** セクションには、現在のアプリの試験的機能の草案、アクティブな試験的機能、完了した試験的機能の一覧が表示されます。 **[Draft]** フィルターをクリックしてから、**[Activate]** をクリックし、試験的機能をアクティブ化します。
 
-> **Important**  After you activate an experiment, you can no longer modify the experiment parameters unless it is a test experiment (you clicked the **Test experiment** check box when you created the experiment). We recommend that you code the experiment in your app before activating your experiment.
-
-
-## Review the results of your experiment
-
-1. In Dev Center, return to the **Experimentation** page for your app.
-2. In the **Experiments** section, click the **Active** filter and then click the name of your active experiment to go to the experiment page.
-3. For an active or completed experiment, the first two sections in this page provide the results of your experiment:
-  * The **Results summary** section lists your experiment goals and the conversion rate percentage for each variation.
-  * The **Results details** section provides more details for each goal in your experiment, including the views, conversions, conversion rate, delta %, confidence, and significance. The *confidence* is a statistical measure of the reliability of an estimate, which calculates the margin of error. The *significance* is a statistical measure, based on sample size, to determine the likelihood that a result is not due to chance, but is instead attributed to a specific cause.
-
-  >**Note** Dev Center reports only the first conversion event for each user in a 24-hour time period. If a user triggers multiple conversion events in your app within a 24-hour period, only the first conversion event is reported. This is intended to help prevent a single user with many conversion events from skewing the experiment results for a sample group of users.
+> **重要**  試験的機能をアクティブ化した後は、試験的機能がテスト用でない限り (試験的機能の作成時に **[Test experiment]** チェック ボックスをオンにした場合を除き)、試験的機能のパラメーターを変更できなくなります。 アプリで試験的機能のコードを記述してから試験的機能をアクティブ化することをお勧めします。
 
 
-## Complete your experiment
+## 試験的機能の結果を確認する
 
-1. In the dashboard, return to your experiment page. For instructions, see the previous section.
-2. In the **Results summary** section, do one of the following:
-  * If you want to end the experiment and continue using the settings in the control variation in your app, click **Keep**.
-  * If you want to end the experiment but switch to using the settings in a different variation in your app, click **Switch** under the variation to which you want to switch.
-3. Click **OK** to confirm that you want to end the experiment.
+1. デベロッパー センターで、アプリの **[Experimentation]** ページに戻ります。
+2. **[Experiments]** セクションで、**[Active]** フィルターをクリックしてから、アクティブな試験的機能の名前をクリックし、試験的機能のページに移動します。
+3. アクティブな試験的機能または完了した試験的機能の場合、このページの最初の 2 つのセクションに試験的機能の結果が表示されます。
+  * **[Results summary]** セクションには、試験的機能の目標と各バリエーションのコンバージョン率の一覧が表示されます。
+  * **[Results details]** セクションには、ビュー、コンバージョン、コンバージョン率、デルタ %、信頼性、重要性など、試験的機能の各目標の詳細が表示されます。 *信頼性*は、推定値の信頼性の統計的な計測であり、許容誤差を計算したものです。 *重要性*は、サンプル サイズに基づいた統計的な計測であり、結果が偶然に発生したものではなく、特定の原因によって発生したものである可能性を判定します。
+
+  >**注** デベロッパー センターで報告されるのは、24 時間以内に発生した、各ユーザーの最初のコンバージョン イベントのみです。 ユーザーが 24 時間以内にアプリで複数のコンバージョン イベントをトリガーした場合は、最初のコンバージョン イベントのみ報告されます。 これは、多数のコンバージョン イベントを使用する単一のユーザーによって、サンプルのユーザー グループの試験的機能の結果が歪曲されないようにすることを目的としています。
 
 
-## Related topics
+## 試験的機能を完了する
 
-  * [Define your experiment in the Dev Center dashboard](define-your-experiment-in-the-dev-center-dashboard.md)
-  * [Code your app for experimentation](code-your-experiment-in-your-app.md)
-  * [Create and run your first experiment with A/B testing](create-and-run-your-first-experiment-with-a-b-testing.md)
-  * [Run app experiments with A/B testing](run-app-experiments-with-a-b-testing.md)
+1. ダッシュボードで、試験的機能のページに戻ります。 手順については、前のセクションをご覧ください。
+2. **[Results summary]** セクションで、次のいずれかの操作を行います。
+  * 試験的機能を終了し、アプリのコントロールのバリエーション設定を使用し続ける場合は、**[Keep]** をクリックします。
+  * 試験的機能を終了するが、アプリの別のバリエーション設定を使用することに切り替える場合は、切り替え先のバリエーションの下にある **[Switch]** をクリックします。
+3. **[OK]** をクリックして、試験的機能を終了することを確認します。
+
+
+## 関連トピック
+
+  * [デベロッパー センター ダッシュボードで試験的機能を定義する](define-your-experiment-in-the-dev-center-dashboard.md)
+  * [アプリで試験的機能のコードを記述する](code-your-experiment-in-your-app.md)
+  * [A/B テストを使用して最初の試験的機能を作成および実行する](create-and-run-your-first-experiment-with-a-b-testing.md)
+  * [A/B テストを使用してアプリの試験的機能を実行する](run-app-experiments-with-a-b-testing.md)
 
 
 <!--HONumber=Mar16_HO5-->

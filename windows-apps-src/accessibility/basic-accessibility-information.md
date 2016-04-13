@@ -2,14 +2,14 @@
 Description: 基本的なアクセシビリティ情報は、多くの場合、名前、役割、値に分類されます。 このトピックでは、支援技術が必要とする基本情報をアプリで公開するのに役立つコードについて説明します。
 title: 基本的なアクセシビリティ情報の開示
 ms.assetid: 9641C926-68C9-4842-8B55-C38C39A9E5C5
-label: 基本的なアクセシビリティ情報の開示
+label: Expose basic accessibility information
 template: detail.hbs
 ---
 
 基本的なアクセシビリティ情報の開示
 ==========================================================================================================
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 
 基本的なアクセシビリティ情報は、多くの場合、名前、役割、値に分類されます。 このトピックでは、支援技術が必要とする基本情報をアプリで公開するのに役立つコードについて説明します。
@@ -175,7 +175,7 @@ Windows では、*データ バインディング*という機能によって、
 [
             **AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/BR209081) プロパティなどの添付プロパティは、リソース名で特殊な修飾構文を使うので、リソースでは特定の要素に適用される添付プロパティを参照することに注意してください。 たとえば、`MediumButton` という名前の UI 要素に適用される [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) のリソース名は、`MediumButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name` です。
 
-関連トピック
+<span id="related_topics"></span>関連トピック
 -----------------------------------------------
 
 * [アクセシビリティ](accessibility.md)
@@ -190,6 +190,6 @@ Windows では、*データ バインディング*という機能によって、
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=Mar16_HO3-->
 
 

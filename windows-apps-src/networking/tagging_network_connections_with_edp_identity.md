@@ -1,46 +1,46 @@
 ---
-Description: 'This topic shows how to create a protected thread context before creating network connections in an enterprise data protection (EDP) scenario.'
+Description: 'このトピックでは、エンタープライズ データ保護 (EDP) のシナリオでネットワーク接続を作成する前に、保護されたスレッド コンテキストを作成する方法を説明します。'
 MS-HAID: 'dev\_networking.tagging\_network\_connections\_with\_edp\_identity'
 MSHAttr: 'PreferredLib:/library/windows/apps'
 Search.Product: eADQiWindows 10XVcnh
-title: Tagging network connections with EDP identity
+title: EDP ID を使ったネットワーク接続のタグ付け
 ---
 
-# Tagging network connections with EDP identity
+# EDP ID を使ったネットワーク接続のタグ付け
 
-__Note__ Enterprise data protection (EDP) policy cannot be applied on Windows 10, Version 1511 (build 10586) or earlier.
+__注__ Windows 10 バージョン 1511 (ビルド 10586) またはそれ以前のバージョンでは、エンタープライズ データ保護 (EDP) ポリシーを適用できません。
 
-This topic shows how to create a protected thread context before creating network connections in an enterprise data protection (EDP) scenario. For the full developer picture of how EDP relates to files, streams, the clipboard, networking, background tasks, and data protection under lock, see [enterprise data protection (EDP)](../enterprise/edp-hub.md).
+このトピックでは、エンタープライズ データ保護 (EDP) のシナリオでネットワーク接続を作成する前に、保護されたスレッド コンテキストを作成する方法を説明します。 EDP とファイル、ストリーム、クリップボード、ネットワーク、バックグラウンド タスク、ロックの背後でのデータ保護との関係についての開発者向けの詳しい情報については、「[エンタープライズ データ保護 (EDP)](../enterprise/edp-hub.md)」をご覧ください。
 
-**Note**  The [enterprise data protection (EDP) sample](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409) covers many EDP scenarios.
-
-
-
-## Prerequisites
+**注**  [エンタープライズ データ保護 (EDP) のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)に関するページでは、多くの EDP のシナリオを紹介しています。
 
 
--   **Get set up for EDP**
 
-    See [Set up your computer for EDP](../enterprise/edp-hub.md#set-up-your-computer-for-EDP).
-
--   **Commit to building an enterprise-enlightened app**
-
-    An app that autonomously ensures that enterprise data stays under the managing enterprise’s control is known as an enterprise-enlightened app. An enlightened app is more powerful, smart, flexible, and trusted than an unenlightened one. Your app announces to the system that it is enlightened by declaring the restricted **enterpriseDataPolicy** capability. There's more to being enlightened than setting a capability, though. To learn more, see [Enterprise-enlightened apps](../enterprise/edp-hub.md#enterprise-enlightened-apps).
-
--   **Understand async programming for Universal Windows Platform (UWP) apps**
-
-    To learn about how to write asynchronous apps in C\# or Visual Basic, see [Call asynchronous APIs in C\# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). To learn about how to write asynchronous apps in C++, see [Asynchronous programming in C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
-
-## Accessing enterprise resources over the network
+## 前提条件
 
 
-In this scenario, an enlightened mail app is synchronizing a set of mailboxes that are a mixture of both enterprise and personal mailboxes. The app passes the user's identity to a call to [**ProtectionPolicyManager.CreateCurrentThreadNetworkContext**](https://msdn.microsoft.com/library/windows/apps/dn706025) to create a protected thread context. This tags all network connections that are made subsequently on the same thread with that identity, and allows access to enterprise network resources that are access-controlled by the enterprise’s policy.
+-   **EDP の設定を行う**
 
-Here, "the enterprise" refers to the enterprise that the user identity belongs to. [**CreateCurrentThreadNetworkContext**](https://msdn.microsoft.com/library/windows/apps/dn706025) returns a [**ThreadNetworkContext**](https://msdn.microsoft.com/library/windows/apps/dn706029) object irrespective of policy enforcement. Generally, if the app expects to handle mixed resources, it can choose to call **CreateCurrentThreadNetworkContext** for all identities. After retrieving network resources, the app calls **Dispose** on the **ThreadNetworkContext** to clear any identity tag from the current thread. The pattern you use for disposing the context object will depend on your programming language.
+    「[EDP のためのコンピューターの設定](../enterprise/edp-hub.md#set-up-your-computer-for-EDP)」をご覧ください。
 
-If the identity is unknown, the app can query the enterprise-policy-managed identity from the network address of the resource using the [**ProtectionPolicyManager.GetPrimaryManagedIdentityForNetworkEndpointAsync**](https://msdn.microsoft.com/library/windows/apps/dn706027) API.
+-   **エンタープライズ対応アプリの作成に取り組む**
 
-**Note**  As you can see in the code example, the correct usage pattern for [**CreateCurrentThreadNetworkContext**](https://msdn.microsoft.com/library/windows/apps/dn706025) is to keep to a minimum the scope in which it is in effect. You should set enterprise network context, create network connections, then revert the context, use the connections and then close them. The code example below illustrates the details. It is important that you not create files on a thread while enterprise network context is set on that thread. Doing so will cause the file to be automatically encrypted regardless of whether your intention is for the file to be personal. This is one of the reasons we recommend reverting the context as early as possible.
+    企業データがそれを管理する企業の制御下に置かれている状態が自律的に確保されるアプリをエンタープライズ対応アプリと呼びます。 対応アプリは非対応アプリより強力かつスマートで、柔軟性と信頼性の面でもより優れています。 アプリが対応アプリであることをシステムに知らせるには、制限された **enterpriseDataPolicy** 機能を宣言します。 ただし、アプリを対応アプリにするために必要なことは機能の設定だけではありません。 詳しくは、「[エンタープライズ対応アプリ](../enterprise/edp-hub.md#enterprise-enlightened-apps)」をご覧ください。
+
+-   **ユニバーサル Windows プラットフォーム (UWP) アプリの非同期プログラミングについての理解**
+
+    C\# や Visual Basic での非同期アプリの作成方法については、「[C\# または Visual Basic での非同期 API の呼び出し](https://msdn.microsoft.com/library/windows/apps/mt187337)」をご覧ください。 C++ での非同期アプリの作成方法については、「[C++ での非同期プログラミング](https://msdn.microsoft.com/library/windows/apps/mt187334)」をご覧ください。
+
+## ネットワーク経由で企業リソースへのアクセス
+
+
+このシナリオでは、先進的なメール アプリで、企業と個人の両方のメールボックスが混在している一連のメールボックスを同期しています。 このアプリは、ユーザーの ID を [**ProtectionPolicyManager.CreateCurrentThreadNetworkContext**](https://msdn.microsoft.com/library/windows/apps/dn706025) の呼び出しに渡して、保護されたスレッド コンテキストを作成します。 これにより、同じスレッドでそれ以降作成されるすべてのネットワーク接続にその ID のタグが付けられ、企業のポリシーでのアクセス制御されている企業ネットワークのリソースへのアクセスが許可されます。
+
+ここでの "企業" は、ユーザー ID が属している企業を指します。 [**CreateCurrentThreadNetworkContext**](https://msdn.microsoft.com/library/windows/apps/dn706025) は、ポリシーの実施とは関係なく、[**ThreadNetworkContext**](https://msdn.microsoft.com/library/windows/apps/dn706029) オブジェクトを返します。 一般的に、アプリで混在リソースを処理することが予想される場合、すべての ID について **CreateCurrentThreadNetworkContext** を呼び出すことができます。 ネットワーク リソースを取得した後、アプリは **ThreadNetworkContext** の **Dispose** を呼び出して、現在のスレッドからすべての ID タグを消去します。 コンテキスト オブジェクトを破棄するためのパターンは、プログラミング言語によって異なります。
+
+ID が不明な場合は、アプリで [**ProtectionPolicyManager.GetPrimaryManagedIdentityForNetworkEndpointAsync**](https://msdn.microsoft.com/library/windows/apps/dn706027) API を使って、リソースのネットワーク アドレスからエンタープライズ ポリシーで管理される ID を照会できます。
+
+**注**  コード例に示されているように、[**CreateCurrentThreadNetworkContext**](https://msdn.microsoft.com/library/windows/apps/dn706025) の正しい使用パターンは、有効なスコープを最小限にしておくことです。 エンタープライズ ネットワーク コンテキストを設定し、ネットワーク接続を作成したら、コンテキストを元に戻してから、その接続を使います。その後、接続を閉じます。 その詳細は次のコード例で示しています。 重要なのは、エンタープライズ ネットワーク コンテキストがスレッドで設定されている間は、そのスレッドでファイルを作成しないことです。 作成すると、そのファイルは個人用であるかどうかに関係なく、自動的に暗号化されます。 これは、できる限り早くコンテキストを戻すことをお勧めしている理由の 1 つです。
 
 
 
@@ -105,16 +105,16 @@ public static async void SyncMailbox(string identity)
 }
 ```
 
-**Note**  This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
+**注**  この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
 
 
-## Related topics
+## 関連トピック
 
 
-[enterprise data protection (EDP) sample](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)
+[企業のデータ保護 (EDP) のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)
 
-[**Windows.Security.EnterpriseData namespace**](https://msdn.microsoft.com/library/windows/apps/dn279153)
+[**Windows.Security.EnterpriseData 名前空間**](https://msdn.microsoft.com/library/windows/apps/dn279153)
 
  
 

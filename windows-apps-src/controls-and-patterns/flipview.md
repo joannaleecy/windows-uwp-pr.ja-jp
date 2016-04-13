@@ -1,8 +1,8 @@
 ---
 Description: コレクション内の画像 (アルバム内の写真や製品の詳細ページ内の項目など) を一度に 1 つずつ表示します。
-title: フリップ ビュー コントロールのガイドライン
+title: FlipView コントロールのガイドライン
 ms.assetid: A4E05D92-1A0E-4CDD-84B9-92199FF8A8A3
-label: フリップ ビュー
+label: Flip view
 template: detail.hbs
 ---
 # フリップ ビュー
@@ -13,8 +13,8 @@ template: detail.hbs
 <span class="sidebar_heading" style="font-weight: bold;">重要な API</span>
 
 -   [**FlipView クラス**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx)
--   [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx)
--   [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx)
+-   [**ItemsSource プロパティ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx)
+-   [**ItemTemplate プロパティ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx)
 
 ## 適切なコントロールの選択
 
@@ -180,7 +180,7 @@ ItemsSource が `itemsViewSource` という名前の [**CollectionViewSource**](
 
 ![コンテキスト インジケーターの例](images/controls_contextindicator.jpg)
 
-## 推奨事項
+## 推奨と非推奨
 
 -   FlipView は最大 25 個程度の項目のコレクションに最適です。
 -   大規模なコレクションでは FlipView コントロールを使わないでください。これは、項目ごとにフリップ操作を繰り返す必要があり、ユーザーの負担になるためです。 フォト アルバムは例外です。フォト アルバムには数百または数千の画像が含まれている場合があります。 ほとんどの場合、フォト アルバムでは、グリッド ビューのレイアウトで写真を選ぶと、フリップ ビューに切り替わります。 他の大きいコレクションについては、[リスト ビューまたはグリッド ビュー](lists.md)を検討してください。
@@ -190,7 +190,15 @@ ItemsSource が `itemsViewSource` という名前の [**CollectionViewSource**](
     -   強調表示されているドットは現在の項目を示します。 通常、強調表示されているドットは白で、その他のドットは灰色で表されます。
     -   ドットの数は変更できますが、多すぎるとユーザーは現在の場所を把握することが難しくなります。通常、表示するドットの最大数は 10 個です。
 
-\[この記事には、ユニバーサル Windows プラットフォーム (UWP) アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
+## グローバリゼーションとローカライズのチェックリスト
+
+<table>
+<tr>
+<th>双方向対応に関する考慮事項</th><td>RTL 言語には標準の左右反転を使用します。 "戻る" と "進む" のコントロールは言語の方向に基づく必要があります。RTL 言語では、右ボタンが "戻る" で、左ボタンが "進む" となります。</td>
+</tr>
+
+</table>
+
 
 ## 関連記事
 
@@ -199,6 +207,6 @@ ItemsSource が `itemsViewSource` という名前の [**CollectionViewSource**](
 - [**CarouselPanel クラス (XAML)**](https://msdn.microsoft.com/library/windows/apps/hh967950)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=Mar16_HO4-->
 
 

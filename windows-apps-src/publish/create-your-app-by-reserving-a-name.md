@@ -1,56 +1,56 @@
 ---
-Description: When creating a new app in your Windows Dev Center dashboard, the app's name must be unique throughout the entire Store. This topic explains how to reserve names and includes some suggestions for choosing a great app name.
-title: Create your app by reserving a name
+Description: Windows デベロッパー センター ダッシュボードで新しいアプリを作るときは、アプリの名前がストア全体で一意でなければなりません。 このトピックでは、名前を予約する方法について説明します。優れたアプリ名を選ぶための推奨事項も含まれています。
+title: 名前の予約によるアプリの作成
 ms.assetid: 6DC58A9A-DF47-4652-8D13-0AC9289F5950
 ---
 
-# Create your app by reserving a name
+# 名前の予約によるアプリの作成
 
 
-When creating a new app in your Windows Dev Center dashboard, the app's name must be unique throughout the entire Store. This topic explains how to reserve names and includes some suggestions for [choosing a great app name](#choosing-your-app-s-name).
+Windows デベロッパー センター ダッシュボードで新しいアプリを作るときは、アプリの名前がストア全体で一意でなければなりません。 このトピックでは、名前を予約する方法について説明します。[優れたアプリ名を選ぶ](#choosing-your-app-s-name)ための推奨事項も含まれています。
 
-> **Note**  If you have a Windows Phone app that you created earlier, and you never reserved a name for it, you can still manage and submit that app. However, in order to upload .appx packages for it, or to [view app identity details](view-app-identity-details.md) specific to creating .appx packages, you'll need to reserve a unique name by following the steps below. This also prevents anyone else from reserving that name for themselves.
+> **注**  以前に作った Windows Phone アプリがあり、そのアプリ用に名前を予約していなかった場合でも、そのアプリを管理および申請できます。 ただし、アプリの .appx パッケージをアップロードしたり、.appx パッケージの作成に関する[アプリ ID の詳細情報を表示](view-app-identity-details.md)したりするには、次の手順に従って一意の名前を予約する必要があります。 これにより、他の開発者がその名前を予約できないようになります。
 
-When you [upload your app's packages](upload-app-packages.md), the [**Package/Properties/DisplayName**](https://msdn.microsoft.com/library/windows/apps/dn423240) value must match the name that you reserved for your app in the **Dashboard**. If you use Microsoft Visual Studio to create your app's package, this attribute will be filled in for you.
+[アプリのパッケージをアップロード](upload-app-packages.md)するには、**ダッシュボード**でアプリに予約した名前と [**Package/Properties/DisplayName**](https://msdn.microsoft.com/library/windows/apps/dn423240) の値が一致している必要があります。 アプリのパッケージを作成するために Microsoft Visual Studio を使う場合は、この属性が自動的に入力されます。
 
-## Create your app by reserving a new name
-
-
-Reserving a name is the first step in creating an app in the dashboard. You can do this even if you haven't started to build your app yet. We recommend doing it as soon as possible, so that nobody else can use the name.
-
-1.  From the **Dashboard overview** or **All apps** page, click **Create a new app**.
-2.  In the text box, enter the name that you want to use, and then click the **Check availability** link. If the name is available, you'll see a green check mark. (If the name you entered is already reserved or in use by another developer, you'll see a message that the name is not available.)
-3.  Click **Reserve app name**.
-
-The name is now reserved for you and you can start working on your [submission](app-submissions.md) whenever you're ready.
-
-> **Note**  Because names can be reserved for one year, you might find that you can't reserve a name, even though you don't see any apps listed by that name in the Store. This is usually because another developer has reserved the name for their app but hasn't submitted it yet. If you are unable to reserve a name for which you hold the trademark or other legal right, or if you see another app in the Windows Store using that name, [contact Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=233777).
-
-After you reserve a name, you'll have one year to submit that app. If you don't submit it within the year, the reservation will expire and another developer could use that name for an app. You may encounter an error if you try to submit an app under a name which you have let expire.
-
-## Choosing your app's name
+## 新しい名前の予約によるアプリの作成
 
 
-Choosing the right name for your app is an important task. Pick a name that will capture your customers' interest and draw them in to learn more about your app. Here are some tips for choosing a great app name.
+名前の予約は、ダッシュボードでのアプリを作るための最初の手順です。 アプリの構築をまだ開始していない場合でも、これを行うことができます。 アプリの名前は、他の開発者に使われないように、できる限り早く予約することをお勧めします。
 
--   **Keep it short.** The space to display your app's name is limited in many places, so we suggest using the shortest name as you can. While your app's name can have up to 256 characters, the end of a very long name may not always be visible to customers.
+1.  **[ダッシュボード概要]** ページまたは **[すべてのアプリ]** ページで、**[新しいアプリの作成]** をクリックします。
+2.  使う名前をテキスト ボックスに入力して、**[利用可能か確認]** リンクをクリックします。 名前が利用可能な場合は、緑色のチェック マークが表示されます (入力した名前が他の開発者によって既に予約または使用されている場合は、名前が利用できないことを示すエラー メッセージが表示されます)。
+3.  **[アプリ名の予約]** をクリックします。
 
-    > **Note**  The actual number of characters displayed in various locations may vary, depending on the length allotted and on the types of characters used in your app's name. For example, in the Segoe UI font that Windows uses, about 30 "I" characters will fit in the same space as 10 "W" characters. Because of this variation, be sure to test your app and verify how its name appears on its tiles (if you choose to overlay the app name), in search results, and within the app itself before you submit your app. Also consider each language in which you offer your app. Keep in mind that East-Asian characters tend to be wider than Latin characters, so fewer characters will be displayed.
+これにより名前が予約され、準備ができたときに[申請](app-submissions.md)を開始することができます。
 
--   **Avoid adding differentiating info at the end of the name.** If the info that differentiates multiple apps is added to the end of a name, customers might miss it, especially if the name is long; all of the apps could appear to have the same name. If this is unavoidable, use different logos and app images so it's easier to differentiate one app from another.
--   **Be original.** Make sure your app name is distinctive enough so that it isn't easily confused with an existing app.
--   **Don't use names trademarked by others.** Make sure that you have the rights to use the name that you reserve. If someone else has trademarked the name, they can report an infringement and you won't be able to keep using that name. If that happens after your app has been published, it will be removed from the Store. You'll then need to change the name of your app, and all instances of the name throughout your app and its content, before you can [submit your app](app-submissions.md) for certification again.
+> **注**  アプリ名は 1 年間予約しておくことができるため、ストアで一覧に表示されていない名前であっても、名前として予約できないことがあります。 これは多くの場合、他の開発者がアプリのために既にその名前を予約していて、そのアプリをまだ申請していないことが原因です。 自分が商標などの法的権利を持っている名前を予約できない場合や、Windows ストア内でその名前を使っている別のアプリを見つけた場合は、[Microsoft にお知らせください](http://go.microsoft.com/fwlink/p/?LinkId=233777)。
 
-## Manage additional app names
+名前を予約した後は、そのアプリを 1 年以内に申請します。 1 年以内にアプリを申請しない場合、予約は期限切れになり、他の開発者がアプリにその名前を使うことができるようになります。 期限切れの名前でアプリを申請しようとすると、エラーが発生する可能性があります。
+
+## アプリ名の選択
 
 
-You can manage names for your apps on the **Manage app names** page in the **App management** section for each of your apps in the Windows Dev Center dashboard.
+アプリ用に適切な名前を選ぶことは、重要な作業です。 ユーザーの興味を引き、アプリについてもっと知りたくなるような名前を選んでください。 優れたアプリ名を選ぶためのヒントを次にいくつか紹介します。
 
-In some cases, you may want to reserve multiple names to use for the same app, such as when you want to offer your app in multiple languages and want to use different names. You will need to reserve an additional name if you want to change an app's name completely.
+-   **短い名前にする。** ほとんどの場合、アプリの名前を表示する場所は限られているので、できるだけ短い名前を使うことをお勧めします。 アプリには最大 256 文字の名前を付けることができますが、長い名前は常にユーザーに対して最後まで表示されません。
 
-On this page, you can also delete any names that you have reserved but no longer want to use.
+    > **注**  さまざまな場所に実際に表示できる文字の数は、割り当てられている長さと、アプリ名に使われている文字の種類によって異なります。 たとえば、Windows で使われている Segoe UI フォントの場合、10 個の "W" が入る幅に約 30 個の "I" が入ります。 このような差があるため、アプリを申請する前に、アプリ名がタイル (アプリ名のオーバーレイを選択している場合)、検索結果、アプリ自体でどのように表示されるかどうかを確認してください。 さらに、アプリを提供する各言語についても考慮します。 東アジアの文字はラテン文字よりも幅広である場合が多く、表示文字数も少なくなる点に注意してください。
 
-For more info, see [Manage app names](manage-app-names.md).
+-   **区別のための情報を名前の末尾に追加しない。** 複数のアプリを区別するための情報が名前の末尾に追加されていると、長い名前の場合は特に、その情報をユーザーが見落としかねません。その結果、すべてのアプリが同じ名前に見える可能性があります。 この問題を避けられない場合には、使用するロゴとアプリの画像を変えることで、アプリの違いを判別しやすくすることをお勧めします。
+-   **独自の名前にする。** 既にある別のアプリと間違えられることのないよう、区別しやすいアプリ名を選ぶようにします。
+-   **他者が登録した商標名を使わない。** 予約した名前が商標などの法的権利を侵害していないことを確認してください。 その名前が他者によって商標登録されている場合は、侵害が通報され、その名前の使用を続行できなくなることがあります。 アプリの公開後にこの問題が発生した場合は、アプリがストアから削除されます。 また、もう一度認定用に[アプリを提出](app-submissions.md)する前に、アプリ名を変更し、アプリとコンテンツ全体にわたって名前の記載や表示をすべて変更する必要があります。
+
+## 追加のアプリ名の管理
+
+
+Windows デベロッパー センター ダッシュボードの各アプリの **[アプリ管理]** セクションで、**[アプリ名の管理]** ページからアプリの名前を管理できます。
+
+アプリを複数の言語で提供し、異なる名前を使う場合などに、同じアプリに複数の名前を予約しておきたいことがあります。 アプリの名前を完全に変更する場合は、追加の名前を予約する必要があります。
+
+このページでは、予約したが使う必要がなくなった名前を削除することもできます。
+
+詳しくは、「[アプリ名の管理](manage-app-names.md)」をご覧ください。
 
  
 

@@ -56,11 +56,11 @@ https://login.microsoftonline.com/<tenant id>/oauth2/token
 -   テナント ID を取得するには、[Azure 管理ポータル](http://manage.windowsazure.com/) にログインし、**Active Directory** に移動し、デベロッパー センター アカウントにリンクされているディレクトリをクリックします。 以下の例にある *your\_tenant\_ID* 文字列からわかるように、このディレクトリのテナント ID がこのページの URL に埋め込まれます。
 
   ```
-  https://manage.windowsazure.com/@&lt;your_tenant_name&gt;#Workspaces/ActiveDirectoryExtension/Directory/&lt;your_tenant_ID&gt;/directoryQuickStart
+  https://manage.windowsazure.com/@<your_tenant_name>#Workspaces/ActiveDirectoryExtension/Directory/<your_tenant_ID>/directoryQuickStart
   ```
 
 -   *client\_id* および *client\_secret* パラメーターには、前の手順でデベロッパー センターから取得したアプリケーションのクライアント ID とキーを指定します。
--   *resource* パラメーターには、**https://manage.devcenter.microsoft.com** という URI を指定します。
+-   *resource* パラメーターには、次の URI を指定します: ```https://manage.devcenter.microsoft.com```。
 
 
 ### Windows ストア分析 API の呼び出し
@@ -76,7 +76,7 @@ Azure AD アクセス トークンを取得したら、Windows ストア分析 A
 ## コードの例
 
 
-次のコード例は、Azure AD アクセス トークンを取得し、C\# コンソール アプリから Windows ストア分析 API を呼び出す方法を示しています。 このコード例を使う場合は、変数 *tenantId*、*clientId*、*clientSecret*、および *appID* を自分のシナリオに合った適切な値に割り当ててください。 この例では、Windows ストア分析 API から返される JSON データを逆シリアル化するときに、Newtonsoft から提供されている [Json.NET パッケージ](http://www.newtonsoft.com/json) が必要になります。
+次のコード例は、Azure AD アクセス トークンを取得し、C# コンソール アプリから Windows ストア分析 API を呼び出す方法を示しています。 このコード例を使う場合は、変数 *tenantId*、*clientId*、*clientSecret*、および *appID* を自分のシナリオに合った適切な値に割り当ててください。 この例では、Windows ストア分析 API から返される JSON データを逆シリアル化するときに、Newtonsoft から提供されている [Json.NET パッケージ](http://www.newtonsoft.com/json) が必要になります。
 
 ```CSharp
 using Newtonsoft.Json;
@@ -107,9 +107,9 @@ namespace TestAnalyticsAPI
                     clientSecret,
                     scope).Result;
 
-            // This is your app&#39;s product ID. This ID is embedded in the app&#39;s listing link
+            // This is your app's product ID. This ID is embedded in the app's listing link
             // on the App identity page of the Dev Center dashboard.
-            string appID = "<your app&#39;s product ID>";
+            string appID = "<your app's product ID>";
 
             DateTime startDate = DateTime.Parse("08-01-2015");
             DateTime endDate = DateTime.Parse("11-01-2015");
@@ -128,27 +128,27 @@ namespace TestAnalyticsAPI
 
             // Get app acquisitions
             requestURI = string.Format(
-                "https://manage.devcenter.microsoft.com/v1.0/my/analytics/appacquisitions?applicationId={0}&amp;startDate={1}&amp;endDate={2}&amp;top={3}&amp;skip={4}",
+                "https://manage.devcenter.microsoft.com/v1.0/my/analytics/appacquisitions?applicationId={0}&startDate={1}&endDate={2}&top={3}&skip={4}",
                 appID, startDate, endDate, top, skip);
 
             //// Get IAP acquisitions
             //requestURI = string.Format(
-            //    "https://manage.devcenter.microsoft.com/v1.0/my/analytics/inappacquisitions?applicationId={0}&amp;startDate={1}&amp;endDate={2}&amp;top={3}&amp;skip={4}",
+            //    "https://manage.devcenter.microsoft.com/v1.0/my/analytics/inappacquisitions?applicationId={0}&startDate={1}&endDate={2}&top={3}&skip={4}",
             //    appID, startDate, endDate, top, skip);
 
             //// Get app failures
             //requestURI = string.Format(
-            //    "https://manage.devcenter.microsoft.com/v1.0/my/analytics/failurehits?applicationId={0}&amp;startDate={1}&amp;endDate={2}&amp;top={3}&amp;skip={4}",
+            //    "https://manage.devcenter.microsoft.com/v1.0/my/analytics/failurehits?applicationId={0}&startDate={1}&endDate={2}&top={3}&skip={4}",
             //    appID, startDate, endDate, top, skip);
 
             //// Get app ratings
             //requestURI = string.Format(
-            //    "https://manage.devcenter.microsoft.com/v1.0/my/analytics/ratings?applicationId={0}&amp;startDate={1}&amp;endDate={2}&amp;top={3}&amp;skip={4}",
+            //    "https://manage.devcenter.microsoft.com/v1.0/my/analytics/ratings?applicationId={0}&startDate={1}&endDate={2}top={3}&skip={4}",
             //    appID, startDate, endDate, top, skip);
 
             //// Get app reviews
             //requestURI = string.Format(
-            //    "https://manage.devcenter.microsoft.com/v1.0/my/analytics/reviews?applicationId={0}&amp;startDate={1}&amp;endDate={2}&amp;top={3}&amp;skip={4}",
+            //    "https://manage.devcenter.microsoft.com/v1.0/my/analytics/reviews?applicationId={0}&startDate={1}&endDate={2}&top={3}&skip={4}",
             //    appID, startDate, endDate, top, skip);
 
             HttpRequestMessage requestMessage = new HttpRequestMessage(HttpMethod.Get, requestURI);
@@ -181,7 +181,7 @@ namespace TestAnalyticsAPI
                 {
                     string content =
                         string.Format(
-                            "grant_type=client_credentials&amp;client_id={0}&amp;client_secret={1}&amp;resource={2}",
+                            "grant_type=client_credentials&client_id={0}&client_secret={1}&resource={2}",
                             clientId,
                             clientSecret,
                             scope);
@@ -236,6 +236,6 @@ Windows ストア分析 API は、エラー コードとメッセージが含ま
  
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=Mar16_HO3-->
 
 

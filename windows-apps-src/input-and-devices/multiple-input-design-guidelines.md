@@ -1,43 +1,43 @@
 ---
-Description: Just as people use a combination of voice and gesture when communicating with each other, multiple types and modes of input can also be useful when interacting with an app.
-title: Multiple inputs design guidelines
+Description: 人がお互いにコミュニケーションをとる際に音声とジェスチャを組み合わせて使うように、アプリの操作では、複数の種類とモードの入力を使うと便利な場合があります。
+title: 複数の入力の設計ガイドライン
 ms.assetid: 03EB5388-080F-467C-B272-C92BE00F2C69
-label: Multiple inputs
+label: 複数の入力
 template: detail.hbs
 ---
 
-# Multiple inputs
+# 複数の入力
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-Just as people use a combination of voice and gesture when communicating with each other, multiple types and modes of input can also be useful when interacting with an app.
+人がお互いにコミュニケーションをとる際に音声とジェスチャを組み合わせて使うように、アプリの操作では、複数の種類とモードの入力を使うと便利な場合があります。
 
 
-To accommodate as many users and devices as possible, we recommend that you design your apps to work with as many input types as possible (gesture, speech, touch, touchpad, mouse, and keyboard). Doing so will maximize flexibility, usability, and accessibility.
+できるだけ多くのユーザーやデバイスに対応するため、可能な限り多くの入力の種類 (ジェスチャ、音声、タッチ、タッチパッド、マウス、キーボード) で作業できるようにアプリを設計することをお勧めします。 これにより、柔軟性、操作性、アクセシビリティが最大限に高まります。
 
-To begin, consider the various scenarios in which your app handles input. Try to be consistent throughout your app, and remember that the platform controls provide built-in support for multiple input types.
+最初に、アプリで入力を処理するさまざまなシナリオを検討します。 アプリ全体で一貫性を保つようにし、プラットフォーム コントロールでは、複数の入力の種類に対応する組み込みサポートを用意します。
 
--   Can users interact with the application through multiple input devices?
--   Are all input methods supported at all times? With certain controls? At specific times or circumstances?
--   Does one input method take priority?
+-   ユーザーは、複数の入力デバイスを使ってアプリケーションを操作できますか?
+-   すべての入力方法が常にサポートされていますか? 特定のコントロールでサポートされていますか? 特定の時間や環境でサポートされていますか?
+-   1 つの入力方法が優先されますか?
 
-## <span id="Single__or_exclusive_-mode_interactions_"></span><span id="single__or_exclusive_-mode_interactions_"></span><span id="SINGLE__OR_EXCLUSIVE_-MODE_INTERACTIONS_"></span>Single (or exclusive)-mode interactions
-
-
-With single-mode interactions, multiple input types are supported, but only one can be used per action. For example, speech recognition for commands, and gestures for navigation; or, text entry using touch or gestures, depending on proximity.
-
-## <span id="Multimodal_interactions"></span><span id="multimodal_interactions"></span><span id="MULTIMODAL_INTERACTIONS"></span>Multimodal interactions
+## <span id="Single__or_exclusive_-mode_interactions_"></span><span id="single__or_exclusive_-mode_interactions_"></span><span id="SINGLE__OR_EXCLUSIVE_-MODE_INTERACTIONS_"></span>単一 (排他) モードの操作
 
 
-With multimodal interactions, multiple input methods in sequence are used to complete a single action.
+単一モードの操作では、複数の入力の種類がサポートされますが、1 つのアクションで使用できるのは、1 つのみです。 たとえば、コマンドに音声認識、ナビゲーションにジェスチャなどです。または近接度に応じて、タッチかジェスチャを使用してテキストを入力します。
 
-<span id="Speech___gesture"></span><span id="speech___gesture"></span><span id="SPEECH___GESTURE"></span>Speech + gesture  
-The user points to a product, and then says “Add to cart.”
+## <span id="Multimodal_interactions"></span><span id="multimodal_interactions"></span><span id="MULTIMODAL_INTERACTIONS"></span>マルチモーダル操作
 
-<span id="Speech___touch"></span><span id="speech___touch"></span><span id="SPEECH___TOUCH"></span>Speech + touch  
-The user selects a photo using press and hold, and then says “Send photo.”
+
+マルチモーダル操作では、1 つのアクションを完了するために複数の入力方法が順番に使われます。
+
+<span id="Speech___gesture"></span><span id="speech___gesture"></span><span id="SPEECH___GESTURE"></span>音声認識 + ジェスチャ  
+ユーザーは製品をポイントし、「カートに追加」と言います。
+
+<span id="Speech___touch"></span><span id="speech___touch"></span><span id="SPEECH___TOUCH"></span>音声認識 + タッチ  
+ユーザーは長押しを使用して写真を選択し、「写真の送信」と言います。
 
 
 

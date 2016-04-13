@@ -1,77 +1,77 @@
 ---
-title: DirectX game project templates
-description: Learn about the templates for creating a Universal Windows Platform (UWP) and DirectX game.
+title: DirectX ゲーム プロジェクト テンプレート
+description: ユニバーサル Windows プラットフォーム (UWP) および DirectX ゲームを作成するためのテンプレートについて説明します。
 ms.assetid: 41b6cd76-5c9a-e2b7-ef6f-bfbf6ef7331d
 ---
 
-# DirectX game project templates
+# DirectX ゲーム プロジェクト テンプレート
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-The DirectX and Universal Windows Platform (UWP) templates allow you to quickly create a project as a starting point for your game.
+DirectX とユニバーサル Windows プラットフォーム (UWP) のテンプレートは、ゲームの出発点として使ってプロジェクトをすばやく作成することができます。
 
-## Prerequisites
-
-
-To create the project you need to:
-
--   [Download Microsoft Visual Studio 2015](https://www.visualstudio.com/vs-2015-product-editions). Visual Studio 2015 has tools for graphics programming, such as debugging tools. For an overview of DirectX graphics and gaming features and tools, see [Visual Studio tools for DirectX game development](set-up-visual-studio-for-game-development.md).
-
-## Choosing a template
+## 前提条件
 
 
-Visual Studio 2015 includes three DirectX and UWP templates:
+プロジェクトを作成するには、次の作業が必要です。
 
--   DirectX 11 App (Universal Windows) - The DirectX 11 App (Universal Windows) template creates a UWP project, which renders directly to an app window using DirectX 11.
--   DirectX 12 App (Universal Windows) - The DirectX 12 App (Universal Windows) template creates a project UWP, which renders directly to an app window using DirectX 12.
--   DirectX 11 and XAML App (Universal Windows) - The DirectX 11 and XAML App (Universal Windows) template creates a UWP project, which renders inside a XAML control using DirectX 11. This template uses a [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834), so you can use XAML UI controls. This can make adding user interface elements easier, but using the XAML template may result in lower performance.
+-   [Microsoft Visual Studio 2015 をダウンロードします](https://www.visualstudio.com/vs-2015-product-editions)。 Visual Studio 2015 には、デバッグ ツールなど、グラフィックス プログラミングのためのツールが含まれています。 DirectX グラフィックス、ゲーム機能、ツールの概要については、「[DirectX ゲーム開発用の Visual Studio ツール](set-up-visual-studio-for-game-development.md)」をご覧ください。
 
-Which template you choose depends on the performance and what technologies you want to use.
-
-## Template structure
+## テンプレートの選択
 
 
-The DirectX Universal Windows templates contain the following files:
+Visual Studio 2015 には、DirectX と UWP のテンプレートが 3 つ用意されています。
 
--   pch.h and pch.cpp - Precompiled header support.
--   Package.appxmanifest - The properties of the deployment package for the app.
--   \*.pfx - Certificates for the application.
--   External Dependencies - Links to external files the project use.s
--   \*Main.h and \*Main.cpp - Methods for managing application assets, updating application state, and rendering the frame.
--   App.h and App.cpp - Main entry point for the application. Connects the app with the Windows shell and handles application lifecycle events. These files only appear in the DirectX 11 App (Universal Windows) and DirectX 12 App (Universal Windows) templates.
--   App.xaml, App.xaml.cpp, and App.xaml.h - Main entry point for the application. Connects the app with the Windows shell and handles application lifecycle events. These files only appear in the DirectX 11 and XAML App (Universal Windows) template.
--   DirectXPage.xaml, DirectXPage.xaml.cpp, and DirectXPage.xaml.h - A page that hosts a DirectX SwapChainPanel. These files only appear in the DirectX 11 and XAML App (Universal Windows) template.
--   Content
-    -   Sample3DSceneRenderer.h and Sample3DSceneRenderer.cpp - A sample renderer that instantiates a basic rendering pipeline.
-    -   SampleFpsTextRenderer.h and SampleFpsTextRenderer.cpp - Renders the current FPS value in the bottom right corner of the screen using Direct2D and DirectWrite. These files only appear in the DirectX 11 App (Universal Windows) and DirectX 11 and XAML App (Universal Windows) templates.
-    -   SamplePixelShader.hlsl - A simple example pixel shader.
-    -   SampleVertexShader.hlsl - A simple example vertex shader.
-    -   ShaderStructures.h - Structures used to send date to the example vertex shader.
--   Common
-    -   StepTimer.h - A helper class for animation and simulation timing.
-    -   DirectXHelper.h - Misc Helper functions.
-    -   DeviceResources.h and Device Resources.cpp - Provides an interface for an application that owns DeviceResources to be notified of the device being lost or created.
-    -   d3dx12.h - Contains the D3DX12 utility library. This file only appears in the DirectX 12 App (Universal Windows).
--   Assets - Logo and splashscreen images used by the application.
+-   DirectX 11 アプリ (ユニバーサル Windows) - DirectX 11 アプリ (ユニバーサル Windows) テンプレートは、DirectX 11 を使ってアプリ ウィンドウに直接レンダリングする UWP プロジェクトを作成します。
+-   DirectX 12 アプリ (ユニバーサル Windows) - DirectX 12 アプリ (ユニバーサル Windows) テンプレートは、DirectX 12 を使ってアプリ ウィンドウに直接レンダリングする UWP プロジェクトを作成します。
+-   DirectX 11 および XAML アプリ (ユニバーサル Windows) - DirectX 11 および XAML アプリ (ユニバーサル Windows) テンプレートは、DirectX 11 を使って XAML コントロール内にレンダリングする UWP プロジェクトを作成します。 このテンプレートは [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) を使うため、XAML UI コントロールを使うことができます。 そのため、ユーザー インターフェイス要素をより簡単に追加できますが、XAML テンプレートを使うとパフォーマンスが低下する場合があります。
 
-## Next steps
+どちらのテンプレートを使うかは、必要なパフォーマンスと利用するテクノロジによって異なります。
+
+## テンプレートの構造
 
 
-Now that you have a starting point, add to it to build your game development knowledge and Windows Store game development skills.
+DirectX ユニバーサル Windows テンプレートには、次のファイルが含まれています。
 
-If you are porting an existing game, see the following topics.
+-   pch.h and pch.cpp - プリコンパイル済みヘッダーのサポートです。
+-   Package.appxmanifest - アプリの展開パッケージのプロパティです。
+-   \*.pfx - アプリケーションの証明書です。
+-   外部の依存関係 - プロジェクトが使う外部ファイルへのリンクです。
+-   \*Main.h と \*Main.cpp - アプリケーション アセットの管理、アプリケーション状態の更新、フレームのレンダリングを行うためのメソッドです。
+-   App.h と App.cpp - アプリのメイン エントリ ポイントです。 アプリと Windows シェルを接続し、アプリケーション ライフサイクル イベントを処理します。 これらのファイルは、DirectX 11 アプリ (ユニバーサル Windows) と DirectX 12 アプリ (ユニバーサル Windows) のテンプレートにのみ表示されます。
+-   App.xaml、App.xaml.cpp、App.xaml.h - アプリのメイン エントリ ポイントです。 アプリと Windows シェルを接続し、アプリケーション ライフサイクル イベントを処理します。 これらのファイルは、DirectX 11 および XAML アプリ (ユニバーサル Windows) のテンプレートにのみ表示されます。
+-   DirectXPage.xaml、DirectXPage.xaml.cpp、DirectXPage.xaml.h - DirectX SwapChainPanel をホストするページ。 これらのファイルは、DirectX 11 および XAML アプリ (ユニバーサル Windows) のテンプレートにのみ表示されます。
+-   コンテンツ
+    -   Sample3DSceneRenderer.h and Sample3DSceneRenderer.cpp - 基本的なレンダリング パイプラインをインスタンス化するサンプル レンダラーです。
+    -   SampleFpsTextRenderer.h and SampleFpsTextRenderer.cpp - Direct2D と DirectWrite を使って画面の右下隅に現在の FPS 値をレンダリングします。 これらのファイルは、DirectX 11 アプリ (ユニバーサル Windows) と DirectX 11 および XAML アプリ (ユニバーサル Windows) のテンプレートにのみ表示されます。
+    -   SamplePixelShader.hlsl - シンプルなサンプル ピクセル シェーダーです。
+    -   SampleVertexShader.hlsl - シンプルなサンプル頂点シェーダーです。
+    -   ShaderStructures.h - サンプル頂点シェーダーに日付を送信するために使われる構造体。
+-   共通
+    -   StepTimer.h - アニメーションとシミュレーションのタイミングを行うためのヘルパー クラスです。
+    -   DirectXHelper.h - その他のヘルパー関数。
+    -   DeviceResources.h and Device Resources.cpp - 消失または作成されるデバイスについて通知する DeviceResources を所有するアプリケーションにインターフェイスを提供します。
+    -   d3dx12.h - D3DX12 ユーティリティ ライブラリが含まれています。 このファイルは、DirectX 12 アプリ (ユニバーサル Windows) にのみ表示されます。
+-   アセット - アプリケーションが使うロゴとスプラッシュ画面の画像です。
 
--   [Port from OpenGL ES 2.0 to Direct3D 11.1](port-from-opengl-es-2-0-to-directx-11-1.md)
--   [Port from DirectX 9 to Universal Windows Platform](porting-your-directx-9-game-to-windows-store.md)
+## 次のステップ
 
-If you are creating a new DirectX game, see the following topics.
 
--   [Create a simple UWP game with DirectX](tutorial--create-your-first-metro-style-directx-game.md)
--   [Developing Marble Maze, a Universal Windows Platform game in C++ and DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+これで、出発点に立つことができました。次は、ゲーム開発の知識と Windows ストア ゲームの開発スキルを学びます。
 
-> **Note**  
-This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
+既にあるゲームを移植する場合は、次のトピックをご覧ください。
+
+-   [OpenGL ES 2.0 から Direct3D 11.1 への移植](port-from-opengl-es-2-0-to-directx-11-1.md)
+-   [DirectX 9 からユニバーサル Windows プラットフォームへの移植](porting-your-directx-9-game-to-windows-store.md)
+
+新しい DirectX ゲームを作成する場合は、次のトピックをご覧ください。
+
+-   [DirectX によるシンプルな UWP ゲームの作成](tutorial--create-your-first-metro-style-directx-game.md)
+-   [Marble Maze、C++ と DirectX でのユニバーサル Windows プラットフォーム ゲームの開発](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+
+> **注:**  
+この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
  
 

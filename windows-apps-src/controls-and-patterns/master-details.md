@@ -1,84 +1,84 @@
 ---
-Description: The master/detail pattern displays a master list and the details for the currently selected item. This pattern is frequently used for email and contact lists/address books.
-title: Master/details
+Description: マスター/詳細パターンでは、マスター リストと、現在選択されている項目の詳細が表示されます。 このパターンは、メールや連絡先一覧/アドレス帳によく使用されます。
+title: マスター/詳細
 ms.assetid: 45C9FE8B-ECA6-44BF-8DDE-7D12ED34A7F7
-label: Master/details
+label: マスター/詳細
 template: detail.hbs
 ---
-# Master/details pattern
+# マスター/詳細パターン
 
-The master/details pattern has a master pane (usually with a [list view](lists.md)) and a details pane for content. When an item in the master list is selected, the details pane is updated. This pattern is frequently used for email and address books.
+マスター/詳細パターンには、コンテンツのマスター ウィンドウ (通常は[リスト ビュー](lists.md)も表示されます) と詳細ウィンドウがあります。 マスター リストの項目を選ぶと、詳細ウィンドウが更新されます。 このパターンは、メールやアドレス帳によく使われます。
 
-![Example of master-details pattern](images/HIGSecOne_MasterDetail.png)
+![マスター/詳細パターンの例](images/HIGSecOne_MasterDetail.png)
 
-## Is this the right pattern?
+## 適切なパターンの選択
 
-The master/details pattern works well if you want to:
+次の場合は、マスター/詳細パターンが適しています。
 
--   Build an email app, address book, or any app that is based on a list-details layout.
--   Locate and prioritize a large collection of content.
--   Allow the quick addition and removal of items from a list while working back-and-forth between contexts.
+-   メール アプリ、アドレス帳、またはリスト/詳細レイアウトをベースとするアプリを構築する。
+-   大きいコンテンツ コレクションを特定して優先順位を設定する。
+-   コンテキスト間を前後に移動しながら、リストから項目をすばやく追加および削除できるようにする。
 
-## Choose the right style
+## 適切なスタイルの選択
 
-When implementing the master/details pattern, we recommend that you use either the stacked style or the side-by-side style, based on the amount of available screen space.
+マスター/詳細パターンを実装するとき、利用可能な画面領域の量に応じて、スタック スタイルまたは左右に並べるスタイルを使うことをお勧めします。
 
-| Available window width | Recommended style |
+| 利用可能なウィンドウの幅 | 推奨スタイル |
 |------------------------|-------------------|
-| 320 epx-719 epx        | Stacked           |
-| 720 epx or wider       | Side-by-side      |
+| 320 epx ～ 719 epx        | スタック           |
+| 720 epx 以上       | 左右に並べる      |
 
  
-## Stacked style
+## スタック スタイル
 
-In the stacked style, only one pane is visible at a time: the master or the details.
+スタック スタイルでは、マスター ウィンドウと詳細ウィンドウのうち 1 つのウィンドウだけが一度に表示されます。
 
-![A master detail in stacked mode](images/patterns-md-stacked.png)
+![スタック モードのマスター詳細](images/patterns-md-stacked.png)
 
-The user starts at the master pane and "drills down" to the details pane by selecting an item in the master list. To the user, it appears as though the master and details views exist on two separate pages.
+ユーザーがマスター ウィンドウで作業を始め、マスター リストで項目を選んで詳細ウィンドウに "ドリルダウン" します。 ユーザーから見ると、マスター ビューと詳細ビューが別々の 2 つのページに存在するように表示されます。
 
-### Create a stacked master/details pattern
+### スタック マスター/詳細パターンの作成
 
-One way to create the stacked master/details pattern is to use separate pages for the master pane and the details pane. Place the list view that provides the master list on one page, and the content element for the details pane on a separate page.
+スタック マスター/詳細パターンを作る方法の 1 つは、マスター ウィンドウと詳細ウィンドウにそれぞれ別のページを使うことです。 マスター リストを表示するリスト ビューを 1 つのページに配置し、詳細ウィンドウのコンテンツ要素を別のページに配置します。
 
-![Parts for the stacked-style master detail](images/patterns-md-stacked-parts.png)
+![スタック スタイルのマスター詳細の構成要素](images/patterns-md-stacked-parts.png)
 
-For the master pane, a [list view](lists.md) control works well for presenting lists that can contain images and text.
+マスター ウィンドウでは、イメージとテキストが含まれるリストを表示するのに[リスト ビュー](lists.md) コントロールが適しています。
 
-For the details pane, use the content element that makes the most sense. If you have a lot of separate fields, consider using a grid layout to arrange elements into a form.
+詳細ウィンドウの場合、最も意味のあるコンテンツ要素を使います。 多くの個別フィールドがある場合は、グリッド レイアウトを使って要素をフォームに配置することを検討します。
 
-## Side-by-side style
+## 左右に並べるスタイル
 
-In the side-by-side style, the master pane and details pane are visible at the same time.
+横に並べるスタイルでは、マスター ウィンドウと詳細ウィンドウを同時に表示できます。
 
-![The master/detail pattern](images/patterns-masterdetail-400x227.png)
+![マスター/詳細パターン](images/patterns-masterdetail-400x227.png)
 
-The list in the master pane has a selection visual to indicate the currently selected item. Selecting a new item in the master list updates the details pane.
+マスター ウィンドウのリストは、現在選択されている項目を示すために選択ビジュアルを使用します。 マスター リストで新しい項目を選ぶと、詳細ウィンドウが更新されます。
 
-### Create a side-by-side master/details pattern
+### 左右に並べるマスター/詳細パターンの作成
 
-For the master pane, a [list view](lists.md) control works well for presenting lists that can contain images and text.
+マスター ウィンドウでは、イメージとテキストが含まれるリストを表示するのに[リスト ビュー](lists.md) コントロールが適しています。
 
-For the details pane, use the content element that makes the most sense. If you have a lot of separate fields, consider using a grid layout to arrange elements into a form.
+詳細ウィンドウの場合、最も意味のあるコンテンツ要素を使います。 多くの個別フィールドがある場合は、グリッド レイアウトを使って要素をフォームに配置することを検討します。
 
-## Examples
+## 例
 
-This design of an app that tracks the stock market uses a master/details pattern. In this example of the app as it would appear on phone, the master pane/list is on the left, with the details pane on the right.
+株式市場を追跡するアプリの設計では、マスター/詳細パターンを使います。 次のアプリの例は、携帯電話に表示されているため、左側にマスター ウィンドウ/リストが、右側に詳細ウィンドウが表示されています。
 
-![Example of an app using the master-details pattern, on phone](images/uap-finance-phone-masterdetails-600.png)
+![マスター/詳細パターンを使ったアプリの例 (携帯電話)](images/uap-finance-phone-masterdetails-600.png)
 
-This design of an app that tracks the stock market uses a master/details pattern. In this example of the app as it would appear on desktop, the master pane/list and details pane are both visible and full-screen. The master pane features a search box at the top and a command bar at the bottom.
+株式市場を追跡するアプリの設計では、マスター/詳細パターンを使います。 次のアプリの例は、デスクトップ PC に表示されているため、マスター ウィンドウ/リストと詳細ウィンドウがどちらも全画面に表示されています。 マスター ウィンドウの上部には検索ボックスがあり、下部にはコマンド バーがあります。
 
-![Example of an app using the master-details pattern, on desktop](images/uap-finance-desktop700.png)
+![マスター/詳細パターンを使ったアプリの例 (デスクトップ PC)](images/uap-finance-desktop700.png)
 
-\[This article contains information that is specific to Universal Windows Platform (UWP) apps and Windows 10. For Windows 8.1 guidance, please download the [Windows 8.1 guidelines PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+\[この記事には、ユニバーサル Windows プラットフォーム (UWP) アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
 
-## Related articles
+## 関連記事
 
-- [Lists](lists.md)
-- [Search](search.md)
-- [App and command bars](app-bars.md)
-- [**ListView class (XAML)**](https://msdn.microsoft.com/library/windows/apps/br242878)
+- [リスト](lists.md)
+- [検索](search.md)
+- [アプリ バーとコマンド バー](app-bars.md)
+- [**ListView クラス (XAML)**](https://msdn.microsoft.com/library/windows/apps/br242878)
 
 
 <!--HONumber=Mar16_HO1-->

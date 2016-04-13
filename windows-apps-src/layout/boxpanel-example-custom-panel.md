@@ -1,15 +1,18 @@
 ---
-Description: カスタム Panel クラスのコードの記述、ArrangeOverride メソッドと MeasureOverride メソッドの実装、Children プロパティの使用について説明します。
-title: BoxPanel、カスタム パネルの例
+Description: 'カスタム Panel クラスのコードの記述、ArrangeOverride メソッドと MeasureOverride メソッドの実装、Children プロパティの使用について説明します。'
+MS-HAID: 'dev\_ctrl\_layout\_txt.boxpanel\_example\_custom\_panel'
+MSHAttr: 'PreferredLib:/library/windows/apps'
+Search.Product: eADQiWindows 10XVcnh
+title: 'BoxPanel、カスタム パネルの例'
 ms.assetid: 981999DB-81B1-4B9C-A786-3025B62B74D6
-label: BoxPanel、カスタム パネルの例
+label: BoxPanel, an example custom panel
 template: detail.hbs
 ---
 
 # BoxPanel、カスタム パネルの例
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 
 **重要な API**
@@ -221,7 +224,7 @@ if (UseOppositeRCRatio) { aspectratio = 1 / aspectratio;}
 10 項目の場合にパネルが、ちょうど収まる 5×2 を選択しないのは不思議に思われます。 ただし、実際には、向きがはっきりした縦横比の四角形としてパネルがサイズ設定されることは稀です。 最小正方形の手法は、サイズ設定ロジックを偏らせて、一般的なレイアウトの図形を適切に処理し、セルの形状が極端な縦横比になるサイズ設定を防ぐための 1 つの方法です。
 
 **注**
-この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください。
+この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
 ??
 
@@ -229,16 +232,23 @@ if (UseOppositeRCRatio) { aspectratio = 1 / aspectratio;}
 
 
 **リファレンス**
-*[**FrameworkElement.ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711)
+[**FrameworkElement.ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711)
 
-* [**FrameworkElement.MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730)
-* [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511)
+[**FrameworkElement.MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730)
+
+[**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511)
 
 **概念**
-* [配置、余白、およびパディング](alignment-margin-padding.md)
+[配置、余白、およびパディング](alignment-margin-padding.md)
+
+??
+
+??
 
 
 
-<!--HONumber=Mar16_HO1-->
+
+
+<!--HONumber=Mar16_HO4-->
 
 

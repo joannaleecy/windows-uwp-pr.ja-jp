@@ -1,54 +1,58 @@
 ---
-title: Supporting screen orientation (DirectX and C++)
-description: Here, we'll discuss best practices for handling screen rotation in your UWP DirectX app, so that the Windows 10 device's graphics hardware are used efficiently and effectively.
+title: 画面の向きのサポート (DirectX と C++)
+description: ここでは、UWP DirectX アプリで、Windows 10 デバイスのグラフィックス ハードウェアを効率的、効果的に使って画面の回転を処理するためのベスト プラクティスについて説明します。
 ms.assetid: f23818a6-e372-735d-912b-89cabeddb6d4
 ---
 
-# Supporting screen orientation (DirectX and C++)
+# 画面の向きのサポート (DirectX と C++)
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-Your Universal Windows Platform (UWP) app can support multiple screen orientations when you handle the [**DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) event. Here, we'll discuss best practices for handling screen rotation in your UWP DirectX app, so that the Windows 10 device's graphics hardware are used efficiently and effectively.
+ユニバーサル Windows プラットフォーム (UWP) アプリでは、[**DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) イベントを処理するとき、複数の画面の向きをサポートできます。 ここでは、UWP DirectX アプリで、Windows 10 デバイスのグラフィックス ハードウェアを効率的、効果的に使って画面の回転を処理するためのベスト プラクティスについて説明します。
 
-Before you start, remember that graphics hardware always outputs pixel data in the same way, regardless of the orientation of the device. Windows 10 devices can determine their current display orientation (with some sort of sensor, or with a software toggle) and allow users to change the display settings. Because of this, Windows 10 itself handles the rotation of the images to ensure they are "upright" based on the orientation of the device. By default, your app receives the notification that something has changed in orientation, for example, a window size. When this happens, Windows 10 immediately rotates the image for final display. For three of the four specific screen orientations (discussed later), Windows 10 uses additional graphic resources and computation to display the final image.
+始める前に、グラフィックス ハードウェアは、デバイスの向きにかかわらず、常に同じ方法でピクセル データを出力するということを覚えておいてください。 Windows 10 デバイスは、現在の表示の向きを判断し (ある種のセンサーやソフトウェア トグルを使用)、ユーザーが表示の設定を変更できるようにしています。 そのため、Windows 10 自体が画像の回転を処理して、デバイスの向きに基づいて画像が "直立" するようにします。 既定では、アプリは何か (たとえば、ウィンドウ サイズ) の方向が変化したという通知を受け取ります。 その場合、Windows 10 は直ちに最終的な表示の画像を回転させます。 4 つの特定の画面の向きのうちの 3 つで (後で説明します)、Windows 10 は最終的な画像を表示するために追加のグラフィックス リソースと計算を使います。
 
-For UWP DirectX apps, the [**DisplayInformation**](https://msdn.microsoft.com/library/windows/apps/dn264258) object provides basic display orientation data that your app can query. The default orientation is *landscape*, where the pixel width of the display is greater than the height; the alternative orientation is *portrait*, where the display is rotated 90 degrees in either direction and the width becomes less than the height.
+UWP DirectX アプリでは、アプリが照会できる基本的な表示の向きのデータを [**DisplayInformation**](https://msdn.microsoft.com/library/windows/apps/dn264258) オブジェクトが提供します。 既定の向きは*横*で、表示のピクセルの幅が高さよりも大きくなります。もう 1 つの向きは*縦*で、表示はどちらかの方向に 90° 回転され、幅は高さより小さくなります。
 
-Windows 10 defines four specific display orientation modes:
+Windows 10 では、表示の向きのモードとして、次の 4 つが定義されています。
 
--   Landscape—the default display orientation for Windows 10, and is considered the base or identity angle for rotation (0 degrees).
--   Portrait—the display has been rotated clockwise 90 degrees (or counter-clockwise 270 degrees).
--   Landscape, flipped—the display has been rotated 180 degrees (turned upside-down).
--   Portrait, flipped—the display has been rotated clockwise 270 degrees (or counter-clockwise 90 degrees).
+-   横: Windows 10 の既定の表示の向きであり、回転の基準または本来の角度 (0°) と見なされます。
+-   縦: 表示は時計回りに 90° (または反時計回りに 270°) 回転します。
+-   横、反転: 表示は 180° 回転されます (上下が逆になります)。
+-   縦、反転: 表示は時計回りに 270° (または反時計回りに 90°) 回転します。
 
-When the display rotates from one orientation to another, Windows 10 internally performs a rotation operation to align the drawn image with the new orientation, and the user sees an upright image on the screen.
+ある向きから別の向きに表示が回転されるとき、Windows 10 は内部的に回転操作を行い、描画される画像を新しい向きで配置します。そのため、ユーザーは画面上で直立した画像を見ることができます。
 
-Also, Windows 10 displays automatic transition animations to create a smooth user experience when shifting from one orientation to another. As the display orientation shifts, the user sees these shifts as a fixed zoom and rotation animation of the displayed screen image. Time is allocated by Windows 10 to the app for layout in the new orientation.
+また、Windows 10 は自動的な切り替えアニメーションを表示して、向きが変化するときのユーザー エクスペリエンスをスムーズにします。 表示の向きが変わる際に、ユーザーにはその変化が、表示されている画面の画像の固定拡大と回転アニメーションとして表示されます。 アプリには、Windows 10 によって、新しい向きでのレイアウトのための時間が割り当てられます。
 
-Overall, this is the general process for handling changes in screen orientation:
+画面の向きの変更を処理する一般的なプロセスは、ほぼ次のようになります。
 
-1.  Use a combination of the window bounds values and the display orientation data to keep the swap chain aligned with the native display orientation of the device.
-2.  Notify Windows 10 of the orientation of the swap chain using [**IDXGISwapChain1::SetRotation**](https://msdn.microsoft.com/library/windows/desktop/hh446801).
-3.  Change the rendering code to generate images aligned with the user orientation of the device.
+1.  ウィンドウの境界値と表示の向きのデータの組み合わせを使って、デバイスの本来の表示の向きに合わせたスワップ チェーンを維持します。
+2.  [
+            **IDXGISwapChain1::SetRotation**](https://msdn.microsoft.com/library/windows/desktop/hh446801) を使って、Windows 10 にスワップ チェーンの向きを通知します。
+3.  レンダリング コードを変更して、デバイスのユーザーによる向きに合わせた画像を生成します。
 
-## Resizing the swap chain and pre-rotating its contents
+## スワップ チェーンのサイズ変更とその内容の事前回転
 
 
-To perform a basic display resize and pre-rotate its contents in your UWP DirectX app , implement these steps:
+UWP DirectX アプリで基本的な表示サイズ変更とその内容の事前回転を行うには、次の手順を実装します。
 
-1.  Handle the [**DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) event.
-2.  Resize the swap chain to the new dimensions of the window.
-3.  Call [**IDXGISwapChain1::SetRotation**](https://msdn.microsoft.com/library/windows/desktop/hh446801) to set the orientation of the swap chain.
-4.  Recreate any window size dependent resources, such as your render targets and other pixel data buffers.
+1.  [
+            **DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) イベントを処理します。
+2.  ウィンドウの新しいサイズにスワップ チェーンをサイズ変更します。
+3.  [
+            **IDXGISwapChain1::SetRotation**](https://msdn.microsoft.com/library/windows/desktop/hh446801) を呼び出して、スワップ チェーンの向きを設定します。
+4.  ウィンドウ サイズに依存するすべてのリソース (レンダー ターゲット、その他のピクセル データ バッファーなど) を再作成します。
 
-Now's let's look at those steps in a bit more detail.
+それでは、これらの手順をもう少し詳しく見てみましょう。
 
-Your first step is to register a handler for the [**DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) event. This event is raised in your app every time the screen orientation changes, such as when the display is rotated.
+最初の手順は、[**DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) イベントのハンドラーを登録することです。 このイベントは、アプリで画面の向きが変更されるたびに発生します (表示が回転されたときなど)。
 
-To handle the [**DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) event, you connect your handler for **DisplayInformation::OrientationChanged** in the required [**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509) method, which is one of the methods of the [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) interface that your view provider must implement.
+[
+            **DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) イベントを処理するには、必須の [**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509) メソッドで **DisplayInformation::OrientationChanged** のハンドラーを接続します。このメソッドは、ビュー プロバイダーが実装しなければならない [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) インターフェイスのメソッドのうちの 1 つです。
 
-In this code example, the event handler for [**DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) is a method called **OnOrientationChanged**. When **DisplayInformation::OrientationChanged** is raised, it in turn calls a method called **SetCurrentOrientation** which then calls **CreateWindowSizeDependentResources**.
+このコード例では、[**DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) のイベント ハンドラーは、**OnOrientationChanged** というメソッドです。 **DisplayInformation::OrientationChanged** が発生すると、**SetCurrentOrientation** というメソッドを呼び出し、このメソッドが **CreateWindowSizeDependentResources** を呼び出します。
 
 ```cpp
 void App::SetWindow(CoreWindow^ window)
@@ -81,7 +85,7 @@ void DX::DeviceResources::SetCurrentOrientation(DisplayOrientations currentOrien
 }
 ```
 
-Next, you resize the swap chain for the new screen orientation and prepare it to rotate the contents of the graphic pipeline when the rendering is performed. In this example, **DirectXBase::CreateWindowSizeDependentResources** is a method that handles calling IDXGISwapChain::ResizeBuffers, setting a 3D and a 2D rotation matrix, calling SetRotation, and recreating your resources.
+次に、スワップ チェーンを新しい画面の向きにサイズ変更し、レンダリングが行われるときにグラフィックス パイプラインの内容を回転させる準備をします。 この例では、**DirectXBase::CreateWindowSizeDependentResources** は、IDXGISwapChain::ResizeBuffers の呼び出し、3D および 2D 回転マトリックスの設定、SetRotation の呼び出し、リソースの再作成を処理するメソッドです。
 
 ```cpp
 void DX::DeviceResources::CreateWindowSizeDependentResources() 
@@ -316,53 +320,56 @@ void DX::DeviceResources::CreateWindowSizeDependentResources()
 
 ```
 
-After saving the current height and width values of the window for the next time this method is called, convert the device independent pixel (DIP) values for the display bounds to pixels. In the sample, you call **ConvertDipsToPixels**, which is a simple function that runs this code:
+このメソッドを次回に呼び出すときのためにウィンドウの現在の高さと幅の値を保存した後で、表示の境界の DIP (デバイスに依存しないピクセル) 値をピクセルに変換します。 例では、**ConvertDipsToPixels** を呼び出しています。これは、次のコードを実行する単純な関数です。
 
 ` floor((dips * dpi / 96.0f) + 0.5f);`
 
-You add the 0.5f to ensure rounding to the nearest integer value.
+0.5f を追加しているのは、最も近い整数に丸めるためです。
 
-As an aside, [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) coordinates are always defined in DIPs. For Windows 10 and earlier versions of Windows, a DIP is defined as 1/96th of an inch, and aligned to the OS's definition of *up*. When the display orientation rotates to portrait mode, the app flips the width and height of the **CoreWindow**, and the render target size (bounds) must change accordingly. Because Direct3D’s coordinates are always in physical pixels, you must convert from **CoreWindow**'s DIP values to integer pixel values before you pass these values to Direct3D to set up the swap chain.
+なお、[**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) の座標は、常に DIP で定義されます。 Windows 10 とそれより前のバージョンの Windows では、DIP は 1 インチの 1/96 として定義され、OS での *"上"* の定義に合わせて配置されます。 表示の向きが縦モードに回転されると、アプリは **CoreWindow** の幅と高さを反転するので、レンダー ターゲットのサイズ (境界) もそれに応じて変更する必要があります。 Direct3D の座標は常に物理ピクセルであるため、スワップ チェーンをセットアップするために Direct3D に渡す **CoreWindow** の DIP 値は、事前に整数ピクセル値に変換する必要があります。
 
-Process-wise, you're doing a bit more work than you would if you simply resized the swap chain: you're actually rotating the Direct2D and Direct3D components of your image before you composite them for presentation, and you're telling the swap chain that you've rendered the results in a new orientation. Here's a little more detail on this process, as shown in the code example for **DX::DeviceResources::CreateWindowSizeDependentResources**:
+プロセスに関しては、単にスワップ チェーンをサイズ変更する場合よりも少し多くの作業を行っています。実際には、画像の Direct2D と Direct3D のコンポーネントを提示用に合成する前に回転させ、スワップ チェーンに結果を新しい向きでレンダリングしたことを伝えます。 ここでは、**DX::DeviceResources::CreateWindowSizeDependentResources** のコード例で示されているように、このプロセスについてさらに詳しく説明します。
 
--   Determine the new orientation of the display. If the display has flipped from landscape to portrait, or vice versa, swap the height and width values—changed from DIP values to pixels, of course—for the display bounds.
+-   表示の新しい向きを判断します。 表示が横から縦に (またはその逆に) 反転された場合は、表示境界の高さと幅の値を交換します (当然、DIP 値をピクセルに変換します)。
 
--   Then, check to see if the swap chain has been created. If it hasn't been created, create it by calling [**IDXGIFactory2::CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559). Otherwise, resize the existing swap chain's buffers to the new display dimensions by calling [**IDXGISwapchain:ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577). Although you don't need to resize the swap chain for the rotation event—you're outputting the content already rotated by your rendering pipeline, after all—there are other size change events, such as snap and fill events, that require resizing.
+-   次に、スワップ チェーンが作成されたかどうかを確認します。 作成されていない場合は、[**IDXGIFactory2::CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559) を呼び出して作成します。 または、[**IDXGISwapchain:ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577) を呼び出して、既にあるスワップ チェーンのバッファーのサイズを新しい表示サイズに変更します。 回転イベントのためにスワップ チェーンをサイズ変更する必要はありませんが (レンダリング パイプラインによって既に回転された内容を出力するだけであるため)、スナップ イベントやページ横幅に合わせるイベントのように、サイズ変更が必要なその他のイベントもあります。
 
--   After that, set the appropriate 2-D or 3-D matrix transformation to apply to the pixels or the vertices (respectively) in the graphics pipeline when rendering them to the swap chain. We have 4 possible rotation matrices:
+-   その後、グラフィックス パイプラインのピクセルまたは頂点をスワップ チェーンにレンダリングするときに適用する、適切な 2-D または 3-D マトリックス変換を設定します。 可能性のある回転マトリックスは、次の 4 つです。
 
-    -   landscape (DXGI\_MODE\_ROTATION\_IDENTITY)
-    -   portrait (DXGI\_MODE\_ROTATION\_ROTATE270)
-    -   landscape, flipped (DXGI\_MODE\_ROTATION\_ROTATE180)
-    -   portrait, flipped (DXGI\_MODE\_ROTATION\_ROTATE90)
+    -   横 (DXGI\_MODE\_ROTATION\_IDENTITY)
+    -   縦 (DXGI\_MODE\_ROTATION\_ROTATE270)
+    -   横、反転 (DXGI\_MODE\_ROTATION\_ROTATE180)
+    -   縦、反転 (DXGI\_MODE\_ROTATION\_ROTATE90)
 
-    The correct matrix is selected based on the data provided by Windows 10 (such as the results of [**DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268)) for determining display orientation, and it will be multiplied by the coordinates of each pixel (Direct2D) or vertex (Direct3D) in the scene, effectively rotating them to align to the orientation of the screen. (Note that in Direct2D, the screen origin is defined as the upper-left corner, while in Direct3D the origin is defined as the logical center of the window.)
+    正しいマトリックスが、表示の向きを決定するために Windows 10 によって提供されるデータ ([**DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) の結果など) に基づいて選ばれ、シーンの各ピクセル (Direct2D) または頂点 (Direct3D) に乗算されて、画面の向きに合わせた回転が行われます。 Direct2D では画面の原点が左上隅として定義されていますが、Direct3D では原点がウィンドウの論理的中央として定義されていることに注意してください。
 
-> **Note**   For more info about the 2-D transformations used for rotation and how to define them, see [Defining matrices for screen rotation (2-D)](#defining_matrices_2d). For more info about the 3-D transformations used for rotation, see [Defining matrices for screen rotation (3-D)](#defining_matrices_3d).
+> **注**   回転で使われる 2-D 変換とその定義方法について詳しくは、「[画面の回転のためのマトリックスの適用 (2-D)](#defining_matrices_2d)」をご覧ください。 回転で使われる 3-D 変換について詳しくは、「[画面の回転のためのマトリックスの適用 (3-D)](#defining_matrices_3d)」をご覧ください。
 
  
 
-Now, here's the important bit: call [**IDXGISwapChain1::SetRotation**](https://msdn.microsoft.com/library/windows/desktop/hh446801) and provide it with your updated rotation matrix, like this:
+ここからが重要な部分です。次のように、[**IDXGISwapChain1::SetRotation**](https://msdn.microsoft.com/library/windows/desktop/hh446801) を呼び出して、更新した回転マトリックスを渡します。
 
 `m_swapChain->SetRotation(rotation);`
 
-You also store the selected rotation matrix where your render method can get it when it computes the new projection. You'll use this matrix when you render your final 3-D projection or composite your final 2-D layout. (It doesn't automatically apply it for you.)
+また、選択された回転マトリックスを、レンダリング メソッドが新しいプロジェクションを計算するときに取得できる場所に格納します。 最終的な 3-D プロジェクションをレンダリングするとき、または最終的な 2-D レイアウトを合成するときに、このマトリックスを使います。 自動的に適用されることはありません。
 
-After that, create a new render target for the rotated 3-D view, as well as a new depth stencil buffer for the view. Set the 3-D rendering viewport for the rotated scene by calling [**ID3D11DeviceContext:RSSetViewports**](https://msdn.microsoft.com/library/windows/desktop/ff476480).
+その後、回転された 3-D ビューのための新しいレンダー ターゲットと、ビューのための新しい深度ステンシル バッファーを作成します。 [
+            **ID3D11DeviceContext:RSSetViewports**](https://msdn.microsoft.com/library/windows/desktop/ff476480) を呼び出して、回転されたシーンのための 3-D レンダリング ビューポートを設定します。
 
-Lastly, if you have 2-D images to rotate or lay out, create a 2-D render target as a writable bitmap for the resized swap chain using [**ID2D1DeviceContext::CreateBitmapFromDxgiSurface**](https://msdn.microsoft.com/library/windows/desktop/hh404482) and composite your new layout for the updated orientation. Set any properties you need to on the render target, such as the anti-aliasing mode (as seen in the code example).
+最後に、回転またはレイアウトする 2-D 画像がある場合は、[**ID2D1DeviceContext::CreateBitmapFromDxgiSurface**](https://msdn.microsoft.com/library/windows/desktop/hh404482) を使って、サイズ変更されたスワップ チェーンのための書き込み可能なビットマップとして 2-D レンダー ターゲットを作成し、更新された向きのための新しいレイアウトを合成します。 レンダー ターゲットで、必要に応じて任意のプロパティ (コード例でのアンチエイリアシング モードなど) を設定します。
 
-Now, present the swap chain.
+ここで、スワップ チェーンを表示します。
 
-## Reduce the rotation delay by using CoreWindowResizeManager
+## CoreWindowResizeManager の使用による回転の遅延の短縮
 
 
-By default, Windows 10 provides a short but noticeable window of time for any app, regardless of app model or language, to complete the rotation of the image. However, chances are that when your app performs the rotation calculation using one of the techniques described here, it will be done well before this window of time has closed. You'd like to get that time back and complete the rotation animation, right? That's where [**CoreWindowResizeManager**](https://msdn.microsoft.com/library/windows/apps/jj215603) comes in.
+既定では、Windows 10 はすべてのアプリに (モデルや言語に関係なく)、画像の回転を完了するための短いながらも目立つ程度の時間枠を提供します。 ただし、アプリがここで説明したいずれかの方法で回転の計算を行った場合は、この時間枠が閉じる前に処理を完了できる可能性があります。 残った時間は返して、回転アニメーションを完了するために使いたいと思うでしょう。 ここで、[**CoreWindowResizeManager**](https://msdn.microsoft.com/library/windows/apps/jj215603) が登場します。
 
-Here's how to use [**CoreWindowResizeManager**](https://msdn.microsoft.com/library/windows/apps/jj215603): when a [**DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) event is raised, call [**CoreWindowResizeManager::GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/hh404170) within the handler for the event to obtain an instance of **CoreWindowResizeManager** and, when the layout for the new orientation is complete and presented, call the [**NotifyLayoutCompleted**](https://msdn.microsoft.com/library/windows/apps/jj215605) to let Windows know that it can complete the rotation animation and display the app screen.
+[
+            **CoreWindowResizeManager**](https://msdn.microsoft.com/library/windows/apps/jj215603) の使い方は、次のようになります。[**DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) イベントが発生したら、イベントのハンドラー内で [**CoreWindowResizeManager::GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/hh404170) を呼び出して、**CoreWindowResizeManager** のインスタンスを取得します。新しい向きのレイアウトが完了して提示されたら、[**NotifyLayoutCompleted**](https://msdn.microsoft.com/library/windows/apps/jj215605) を呼び出し、Windows に対して、回転アニメーションを完了してアプリ画面を表示できることを知らせます。
 
-Here's what the code in your event handler for [**DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) might look like:
+[
+            **DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) のイベント ハンドラー内のコードは、次のようになります。
 
 ```cpp
 CoreWindowResizeManager^ resizeManager = Windows::UI::Core::CoreWindowResizeManager::GetForCurrentView();
@@ -372,30 +379,30 @@ CoreWindowResizeManager^ resizeManager = Windows::UI::Core::CoreWindowResizeMana
 resizeManager->NotifyLayoutCompleted();
 ```
 
-When a user rotates the orientation of the display, Windows 10 shows an animation independent of your app as feedback to the user. There are three parts to that animation that happen in the following order:
+ユーザーが画面の向きを回転させると、Windows 10 はアプリとは無関係に、ユーザーへのフィードバックとしてアニメーションを表示します。 アニメーションは 3 つの部分から成り、次の順序で実行されます。
 
--   Windows 10 shrinks the original image.
--   Windows 10 holds the image for the time it takes to rebuild the new layout. This is the window of time that you'd like to reduce, because your app probably doesn't need all of it.
--   When the layout window expires, or when a notification of layout completion is received, Windows rotates the image and then cross-fade zooms to new orientation.
+-   Windows 10 が元の画像を縮小します。
+-   Windows 10 が、新しいレイアウトの再構築を行っている間、画像を保持します。 これが、短縮したい時間枠です。アプリはおそらく、この時間のすべては必要としません。
+-   レイアウトの時間枠が終了するか、レイアウトの完了通知を受け取ると、Windows は画像を回転させ、クロスフェードが新しい向きにズームします。
 
-As suggested in the third bullet, when an app calls [**NotifyLayoutCompleted**](https://msdn.microsoft.com/library/windows/apps/jj215605), Windows 10 stops the timeout window, completes the rotation animation and returns control to your app, which is now drawing in the new display orientation. The overall effect is that your app now feels a little bit more fluid and responsive, and works a little more efficiently!
+3 つ目の項目で示したように、アプリが [**NotifyLayoutCompleted**](https://msdn.microsoft.com/library/windows/apps/jj215605) を呼び出すと、Windows 10 はタイムアウトの時間枠を停止し、回転アニメーションを完了して、アプリに制御を返します。これで、アプリは新しい表示の向きで描画を行うようになります。 全体的な効果は、アプリの動作が少し滑らかで機敏になり、効率もいくらか向上することです。
 
-## Appendix A: Applying matrices for screen rotation (2-D)
+## 付録 A: 画面の回転のためのマトリックスの適用 (2-D)
 
 
-In the sample in [Optimizing the rotation process](#rotation) (and in the [DXGI swap chain rotation sample](http://go.microsoft.com/fwlink/p/?linkid=257600)), you might have noticed that we had separate rotation matrices for Direct2D output and Direct3D output. Let's look at the 2-D matrices, first.
+[回転プロセスの最適化](#rotation)のサンプル (および [DXGI スワップ チェーンの回転のサンプル](http://go.microsoft.com/fwlink/p/?linkid=257600)) で既にお気付きかもしれませんが、回転マトリックスは Direct2D 出力用と Direct3D 出力用とに分けてきました。 まずは、2-D マトリックスを見てみましょう。
 
-There are two reasons that we can't apply the same rotation matrices to Direct2D and Direct3D content:
+Direct2D コンテンツと Direct3D コンテンツに同じ回転マトリックスを適用できない理由は、次の 2 つです。
 
--   One, they use different Cartesian coordinate models. Direct2D uses the right-handed rule, where the y-coordinate increases in positive value moving upward from the origin. However, Direct3D uses the left-handed rule, where the y-coordinate increases in positive value rightward from the origin. The result is the origin for the screen coordinates is located in the upper-left for Direct2D, while the origin for the screen (the projection plane) is in the lower-left for Direct3D. (See [3-D coordinate systems](https://msdn.microsoft.com/library/windows/apps/bb324490.aspx) for more info.)
+-   1 つ目の理由は、異なるデカルト座標モデルが使われていることです。 Direct2D では右手の法則が使われており、Y 座標は原点から上へ移動すると正の値が増加します。 一方、Direct3D では左手の法則が使われており、Y 座標は原点から右に移動すると正の値が増加します。 そのため、Direct2D では画面座標の原点が左上にあり、Direct3D では画面 (プロジェクション平面) の原点が左下にあります。 詳しくは、「[3-D 座標系](https://msdn.microsoft.com/library/windows/apps/bb324490.aspx)」をご覧ください。
 
-    ![direct3d coordinate system.](images/direct3d-origin.png)![direct2d coordinate system.](images/direct2d-origin.png)
+    ![Direct3D 座標系。](images/direct3d-origin.png)![Direct2D 座標系。](images/direct2d-origin.png)
 
--   Two, the 3-D rotation matrices must be specified explicitly to avoid rounding errors.
+-   2 つ目の理由は、3-D 回転マトリックスは、丸めエラーを回避するために、明示的に指定する必要があることです。
 
-The swap chain assumes that the origin is located in the lower-left, so you must perform a rotation to align the right-handed Direct2D coordinate system with the left-handed one used by the swap chain. Specifically, you reposition the image under the new left-handed orientation by multiplying the rotation matrix with a translation matrix for the rotated coordinate system origin, and transform the image from the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)'s coordinate space to the swap chain's coordinate space. Your app also must consistently apply this transform when the Direct2D render target is connected with the swap chain. However, if your app is drawing to intermediate surfaces that are not associated directly with the swap chain, don't apply this coordinate space transformation.
+スワップ チェーンは原点が左下にあると想定するため、右手による Direct2D 座標系を回転させて、スワップ チェーンで使われる左手による座標系に揃える必要があります。 具体的には、回転した座標系原点の変換マトリックスで回転マトリックスを乗算して、左手による新しい向きに画像を位置変更します。次に、画像を [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) の座標空間からスワップ チェーンの座標空間に変換します。 Direct2D レンダー ターゲットがスワップ チェーンに接続されている場合は、アプリも一貫してこの変換を適用する必要があります。 ただし、スワップ チェーンに直接関連付けられていない中間サーフェスにアプリが描画している場合は、この座標空間変換を適用しないでください。
 
-Your code to select the correct matrix from the four possible rotations might look like this (be aware of the translation to the new coordinate system origin):
+4 つの回転の中から適切なマトリックスを選ぶコードは、次のようになります (新しい座標系原点への変換に注意が必要です)。
 
 ```cpp
    
@@ -439,9 +446,9 @@ default:
     
 ```
 
-After you have the correct rotation matrix and origin for the 2-D image, set it with a call to [**ID2D1DeviceContext::SetTransform**](https://msdn.microsoft.com/library/windows/desktop/dd742857) between your calls to [**ID2D1DeviceContext::BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/dd371768) and [**ID2D1DeviceContext::EndDraw**](https://msdn.microsoft.com/library/windows/desktop/dd371924).
+2-D 画像の正しい変換マトリックスと原点を取得したら、[**ID2D1DeviceContext::BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/dd371768) と [**ID2D1DeviceContext::EndDraw**](https://msdn.microsoft.com/library/windows/desktop/dd371924) の呼び出しの間で、[**ID2D1DeviceContext::SetTransform**](https://msdn.microsoft.com/library/windows/desktop/dd742857) を呼び出して設定します。
 
-**Warning**   Direct2D doesn't have a transformation stack. If your app is also using the [**ID2D1DeviceContext::SetTransform**](https://msdn.microsoft.com/library/windows/desktop/dd742857) as a part of its drawing code, this matrix needs to be post-multiplied to any other transform you have applied.
+**警告**   Direct2D には、変換スタックがありません。 アプリが [**ID2D1DeviceContext::SetTransform**](https://msdn.microsoft.com/library/windows/desktop/dd742857) を描画コードの一部としても使っている場合、このマトリックスは、適用した他のすべての変換で、右から乗算する必要があります。
 
  
 
@@ -475,14 +482,14 @@ After you have the correct rotation matrix and origin for the 2-D image, set it 
     HRESULT hr = context->EndDraw();
 ```
 
-The next time you present the swap chain, your 2-D image will be rotated to match the new display orientation.
+次にスワップ チェーンを表示するときは、2-D 画像が新しい表示の向きに合わせて回転されています。
 
-## Appendix B: Applying matrices for screen rotation (3-D)
+## 付録 B: 画面の回転のためのマトリックスの適用 (3-D)
 
 
-In the sample in [Optimizing the rotation process](#rotation) (and in the [DXGI swap chain rotation sample](http://go.microsoft.com/fwlink/p/?linkid=257600)), we defined a specific transformation matrix for each possible screen orientation. Now, let's look at the matrixes for rotating 3-D scenes. As before, you create a set of matrices for each of the 4 possible orientations. To prevent rounding errors and thus minor visual artifacts, declare the matrices explicitly in your code.
+[回転プロセスの最適化](#rotation)のサンプル (および [DXGI スワップ チェーンの回転のサンプル](http://go.microsoft.com/fwlink/p/?linkid=257600)) では、画面の向きごとに特定の変換マトリックスを定義しました。 ここでは、3-D シーンを回転させるためのマトリックスを見てみましょう。 前と同じように、4 つのそれぞれの向きのために、マトリックスのセットを作成します。 丸めエラー、つまりわずかな視覚的アーティファクトを避けるために、コード内でマトリックスを明示的に宣言します。
 
-You set up these 3-D rotation matrices as follows. The matrices shown in the following code example are standard rotation matrices for 0, 90, 180, and 270 degree rotations of the vertices that define points in the camera's 3-D scene space. Each vertex's \[x, y, z\] coordinate value in the scene is multiplied by this rotation matrix when the 2-D projection of the scene is computed.
+これらの 3-D 回転マトリックスは、次のようにセットアップします。 次のコード例で示されているマトリックスは、カメラの 3-D シーン空間内の点を定義する頂点を 0°、90°、180°、または 270° 回転させる、標準的な回転マトリックスです。 シーン内の各頂点の \[x, y, z\] 座標値は、シーンの 2-D プロジェクションが計算されるときに、この回転マトリックスによって乗算されます。
 
 ```cpp
    
@@ -520,11 +527,11 @@ static const XMFLOAT4X4 Rotation270(
     }
 ```
 
-You set the rotation type on the swap chain with a call to [**IDXGISwapChain1::SetRotation**](https://msdn.microsoft.com/library/windows/desktop/hh446801), like this:
+スワップ チェーンの回転の種類は、次のように、[**IDXGISwapChain1::SetRotation**](https://msdn.microsoft.com/library/windows/desktop/hh446801) を呼び出して設定します。
 
 `   m_swapChain->SetRotation(rotation);`
 
-Now, in your render method, implement some code similar to this:
+ここで、レンダリング メソッド内に、次のようなコードを実装します。
 
 ``` syntax
 struct ConstantBuffer // This struct is provided for illustration.
@@ -541,7 +548,7 @@ ConstantBuffer  m_constantBufferData;          // Constant buffer resource data
 m_constantBufferData.projection = mul(m_constantBufferData.projection, m_rotationTransform3D);
 ```
 
-Now, when you call your render method, it multiplies the current rotation matrix (as specified by the class variable **m\_orientationTransform3D**) with the current projection matrix, and assigns the results of that operation as the new projection matrix for your renderer. Present the swap chain to see the scene in the updated display orientation.
+これで、レンダリング メソッドを呼び出すと、現在の回転マトリックス (クラス変数 **m\_orientationTransform3D** によって指定されたもの) が現在のプロジェクション マトリックスで乗算され、この演算の結果がレンダラーの新しいプロジェクション マトリックスとして割り当てられます。 スワップ チェーンを表示すると、更新された表示の向きでシーンを見ることができます。
 
  
 

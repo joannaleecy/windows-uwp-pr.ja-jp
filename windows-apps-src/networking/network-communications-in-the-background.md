@@ -1,29 +1,29 @@
 ---
-description: Apps use background tasks and two main mechanisms to maintain communications when they are not in the foreground.
-title: Network communications in the background
+description: アプリは、フォアグラウンドでないとき、バックグラウンド タスクと 2 つの主要なメカニズムを使って通信を維持します。
+title: バックグラウンドでのネットワーク通信
 ms.assetid: 537F8E16-9972-435D-85A5-56D5764D3AC2
 ---
 
-# Network communications in the background
+# バックグラウンドでのネットワーク通信
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-**Important APIs**
+**重要な API**
 
 -   [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009)
 -   [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)
 
-Apps use background tasks and two main mechanisms to maintain communications when they are not in the foreground: The socket broker, and control channel triggers. Apps that use sockets can delegate ownership of a socket to a system socket broker when they leave the foreground. The broker then activates the app when traffic arrives on the socket, transfers ownership back to the app, and the app processes the arriving traffic.
+アプリは、フォアグラウンドでないとき、バックグラウンド タスクと 2 つの主要なメカニズム (ソケット ブローカーとコントロール チャネル トリガー) を使って通信を維持します。 ソケットを使うアプリは、フォアグラウンドから離れるときにソケットの所有権をシステムのソケット ブローカーに委任できます。 次に、トラフィックがソケットに到着したときにブローカーがアプリをアクティブにして、所有権をアプリに戻し、アプリが着信トラフィックを処理します。
 
-## Socket broker and the SocketActivityTrigger
+## ソケット ブローカーと SocketActivityTrigger
 
-If your app uses [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319), [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882), or [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) connections, then you should use [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) and the socket broker to be notified when traffic arrives for your app while it's not in the foreground.
+アプリが [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)、または [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) 接続を使う場合、[**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) とソケット ブローカーを使って、フォアグラウンドでないときにトラフィックがアプリに到着したという通知を受け取る必要があります。
 
-In order for your app to receive and process data received on a socket when your app is not active, your app must perform some one-time setup at startup, and then transfer socket ownership to the socket broker when it is transitioning to a state where it is not active.
+アプリがアクティブでないときにソケットでデータを受け取って処理するには、アプリは起動時に 1 回限りのセットアップをいくつか実行した後、アクティブでない状態に移行するときにソケットの所有権をソケット ブローカーに転送する必要があります。
 
--   The one-time setup steps are:
+-   1 回限りのセットアップ手順は次のとおりです。
 
-    -   Create a SocketActivityTrigger and register a background task for the trigger with the TaskEntryPoint parameter set to your code for processing a received packet.
+    -   SocketActivityTrigger を作成し、TaskEntryPoint パラメーターを受信パケットを処理するためのコードに設定してトリガーのバックグラウンド タスクを登録します。
 
 ```csharp
             var socketTaskBuilder = new BackgroundTaskBuilder(); 
@@ -49,15 +49,18 @@ In order for your app to receive and process data received on a socket when your
            await _tcpListener.BindServiceNameAsync("my-service-name"); 
 ```
 
--   The action to take at suspend is:
+-   中断時に実行するアクションは次のとおりです。
 
-    When your app is about to suspend, call **TransferOwnership** on the socket to transfer it to a socket broker. The broker monitors the socket and activates your background task when data is received. The following example includes a utility **TransferOwnership** function to perform the transfer for **StreamSocketListener** sockets. (Note that the different types of sockets each have their own **TransferOwnership** method, so you must call the method appropriate for the socket whose ownership you are transferring. Your code would probably contain an overloaded **TransferOwnership** helper with one implementation for each socket type you use, so that the **OnSuspending** code remains easy to read.)
+    アプリが中断する直前に、ソケットで **TransferOwnership** を呼び出してソケット ブローカーに転送します。 ブローカーはソケットを監視し、データが受信されたらバックグラウンド タスクをアクティブにします。 次の例には、**StreamSocketListener** ソケットの転送を実行する **TransferOwnership** ユーティリティ関数が含まれています (さまざまな種類の各ソケットに独自の **TransferOwnership** メソッドがあるため、転送する所有権を持つソケットに適したメソッドを呼び出す必要があります。 **OnSuspending** コードの読みやすさを維持するため、コードにはオーバーロードされた **TransferOwnership** ヘルパーを含め、使用するソケットの種類ごとに 1 つずつ実装することをお勧めします)。
 
-    An app transfers ownership of a socket to a socket broker and passes the ID for the background task using the appropriate one of the following methods:
+    アプリは、次のうち適切なメソッドを使って、ソケットの所有権をソケット ブローカーに転送し、バックグラウンド タスクの ID を渡します。
 
-    -   One of the [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn804256) methods on a [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319).
-    -   One of the [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn781433) methods on a [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882).
-    -   One of the [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn804407) methods on a [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906).
+    -   [
+            **DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) の [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn804256) メソッドのいずれか
+    -   [
+            **StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) の [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn781433) メソッドのいずれか
+    -   [
+            **StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) の [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn804407) メソッドのいずれか
 
 ```csharp
     private void TransferOwnership(StreamSocketListener tcpListener) 
@@ -80,15 +83,15 @@ In order for your app to receive and process data received on a socket when your
     } 
 ```
 
--  In your background task's event handler:
+-  バックグラウンド タスクのイベント ハンドラーで、次の作業を行います。
 
-   -  First, get a background task deferral so that you can handle the event using asynchronous methods.
+   -  まず、非同期メソッドを使ってイベントを処理できるように、バックグラウンド タスクの保留を取得します。
 
 ```csharp
 var deferral = taskInstance.GetDeferral();
 ```
 
-   -  Next, extract the SocketActivityTriggerDetails from the event arguments, and find the reason that the event was raised:
+   -  次に、イベント引数から SocketActivityTriggerDetails を抽出し、イベントが発生した理由を調べます。
 
 ```csharp
 var details = taskInstance.TriggerDetails as SocketActivityTriggerDetails; 
@@ -143,38 +146,43 @@ case SocketActivityTriggerReason.SocketClosed:
             break; 
 ```
 
--   Don't forget to Complete your deferral, once you have finished processing the event notification:
+-   イベント通知の処理を完了したら、必ず保留を終了してください。
 
 ```csharp
   deferral.Complete();
 ```
 
-For a complete sample demonstrating the use of the [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) and socket broker, see the [SocketActivityStreamSocket sample](http://go.microsoft.com/fwlink/p/?LinkId=620606). The initialization of the socket is performed in Scenario1\_Connect.xaml.cs, and the background task implementation is in SocketActivityTask.cs.
+[
+            **SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) とソケット ブローカーの使い方を示す詳しいサンプルについては、[SocketActivityStreamSocket のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?LinkId=620606)をご覧ください。 Scenario1\_Connect.xaml.cs ではソケットの初期化が実行され、SocketActivityTask.cs ではバックグラウンド タスクが実装されます。
 
-You will probably notice that the sample calls **TransferOwnership** as soon as it creates a new socket or acquires an existing socket, rather than using the **OnSuspending** even handler to do so as described in this topic. This is because the sample focuses on demonstrating the [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009), and doesn't use the socket for any other activity while it is running. Your app will probably be more complex, and should use **OnSuspending** to determine when to call **TransferOwnership**.
+サンプルを見ると、新しいソケットが作成されるか、既存のソケットが取得されると、すぐに **TransferOwnership** が呼び出されることがわかります。このトピックで説明したように **OnSuspending** イベント ハンドラーを使って行われるのではありません。 これは、このサンプルが [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) の使い方を示すことに重点を置いており、実行中に他のアクティビティにソケットを使っていないためです。 実際のアプリはより複雑と思われるため、**OnSuspending** を使って **TransferOwnership** を呼び出すタイミングを判断してください。
 
-## Control channel triggers
+## コントロール チャネル トリガー
 
-First, ensure that you're using control channel triggers (CCTs) appropriately. If you're using [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319), [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882), or [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) connections, we recommend you use [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009). You can use CCTs for **StreamSocket**, but they use more resources and might not work in Connected Standby mode.
+まず、コントロール チャネル トリガー (CCT) を適切に使っていることを確認します。 [
+            **DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)、または [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) 接続を使っている場合、[**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) を使うことをお勧めします。 **StreamSocket** には CCT を使うことができますが、リソースを多く使うため、コネクト スタンバイ モードでは動作しない可能性があります。
 
-If you are using WebSockets, [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151), [**System.Net.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) or **Windows.Web.Http.HttpClient**, you must use [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).
+WebSocket、[**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151)、[**System.Net.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639)、または **Windows.Web.Http.HttpClient** を使っている場合は、[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) を使う必要があります。
 
-## ControlChannelTrigger with WebSockets
+## ControlChannelTrigger と WebSocket
 
-Some special considerations apply when using [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) or [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) with [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032). There are some transport-specific usage patterns and best practices that should be followed when using a **MessageWebSocket** or **StreamWebSocket** with **ControlChannelTrigger**. In addition, these considerations affect the way that requests to receive packets on the **StreamWebSocket** are handled. Requests to receive packets on the **MessageWebSocket** are not affected.
+[
+            **ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) で [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) または [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) を使う場合は、特別な注意事項がいくつかあります。 **ControlChannelTrigger** で **MessageWebSocket** または **StreamWebSocket** を使う際には、トランスポート固有の使用パターンとベスト プラクティスに従う必要があります。 また、**StreamWebSocket** でパケットを受け取る要求の処理方法にも、これらの注意事項が関係します。 **MessageWebSocket** でパケットを受け取るための要求には影響しません。
 
-The following usage patterns and best practices should be followed when using [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) or [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) with [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032):
+[
+            **ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) で [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) または [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) を使う際に従う必要のある使用パターンとベスト プラクティスを次に示します。
 
--   An outstanding socket receive must be kept posted at all times. This is required to allow the push notification tasks to occur.
--   The WebSocket protocol defines a standard model for keep-alive messages. The [**WebSocketKeepAlive**](https://msdn.microsoft.com/library/windows/apps/hh701531) class can send client-initiated WebSocket protocol keep-alive messages to the server. The **WebSocketKeepAlive** class should be registered as the TaskEntryPoint for a KeepAliveTrigger by the app.
+-   未処理のソケット受信は、常にポストされ続ける必要があります。 これは、プッシュ通知タスクの実行を許可するために必要です。
+-   WebSocket プロトコルで、キープアライブ メッセージの標準モデルを定義します。 [
+            **WebSocketKeepAlive**](https://msdn.microsoft.com/library/windows/apps/hh701531) クラスは、クライアント側から開始される WebSocket プロトコルのキープアライブ メッセージをサーバーに送信することができます。 **WebSocketKeepAlive** クラスは、アプリによって KeepAliveTrigger の TaskEntryPoint として登録される必要があります。
 
-Some special considerations affect the way that requests to receive packets on the [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) are handled. In particular, when using a **StreamWebSocket** with the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032), your app must use a raw async pattern for handling reads instead of the **await** model in C# and VB.NET or Tasks in C++. The raw async pattern is illustrated in a code sample later in this section.
+いくつかの特別な注意事項は、[**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) でパケットを受け取る要求の処理方法にかかわってきます。 特に、[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) で **StreamWebSocket** を使うアプリは、読み取り処理に、**await** モデル (C# と VB.NET) やタスク (C++) ではなく、生の非同期パターンを使う必要があります。 生の非同期パターンは、このセクションで後述するサンプル コードに示しています。
 
-Using the raw async pattern allows Windows to synchronize the [**IBackgroundTask.Run**](https://msdn.microsoft.com/library/windows/apps/br224811) method on the background task for the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) with the return of the receive completion callback. The **Run** method is invoked after the completion callback returns. This ensures that the app has received the data/errors before the **Run** method is invoked.
+生の非同期パターンを使うことによって、Windows は、[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) のバックグラウンド タスクの [**IBackgroundTask.Run**](https://msdn.microsoft.com/library/windows/apps/br224811) メソッドを、受信完了コールバックの戻りと同期させることができます。 **Run** メソッドは、完了コールバックから制御が戻った後に呼び出されます。 これによって、**Run** メソッドが呼び出される前に、アプリはデータ/エラーを確実に受け取ることができます。
 
-It is important to note that the app has to post another read before it returns control from the completion callback. It is also important to note that the [**DataReader**](https://msdn.microsoft.com/library/windows/apps/br208119) cannot be directly used with the [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) or [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) transport since that breaks the synchronization described above. It is not supported to use the [**DataReader.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/br208135) method directly on top of the transport. Instead, the [**IBuffer**](https://msdn.microsoft.com/library/windows/apps/br241656) returned by the [**IInputStream.ReadAsync**](https://msdn.microsoft.com/library/windows/apps/br241719) method on the [**StreamWebSocket.InputStream**](https://msdn.microsoft.com/library/windows/apps/br226936) property can be later passed to [**DataReader.FromBuffer**](https://msdn.microsoft.com/library/windows/apps/br208133) method for further processing.
+アプリは、完了コールバックから制御を戻す前に別の読み取りをポストしなければならない点に注意してください。 また、[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) または [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) トランスポートで [**DataReader**](https://msdn.microsoft.com/library/windows/apps/br208119) を直接使うことはできません。上で説明した同期に支障をきたします。 トランスポートで直接 [**DataReader.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/br208135) メソッドを使うことはサポートされません。 別の方法として、[**StreamWebSocket.InputStream**](https://msdn.microsoft.com/library/windows/apps/br226936) プロパティの [**IInputStream.ReadAsync**](https://msdn.microsoft.com/library/windows/apps/br241719) メソッドから返された [**IBuffer**](https://msdn.microsoft.com/library/windows/apps/br241656) を後で [**DataReader.FromBuffer**](https://msdn.microsoft.com/library/windows/apps/br208133) メソッドに渡して処理することはできます。
 
-The following sample shows how to use a raw async pattern for handling reads on the [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923).
+次のサンプルでは、[**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) の読み取りを生の非同期パターンを使って処理しています。
 
 ```csharp
 void PostSocketRead(int length) 
@@ -217,9 +225,10 @@ void PostSocketRead(int length)
 }
 ```
 
-The read completion handler is guaranteed to fire before the [**IBackgroundTask.Run**](https://msdn.microsoft.com/library/windows/apps/br224811) method on the background task for the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) is invoked. Windows has internal synchronization to wait for an app to return from the read completion callback. The app typically quickly processes the data or the error from the [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) or [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) in the read completion callback. The message itself is processed within the context of the **IBackgroundTask.Run** method. In this sample below, this point is illustrated by using a message queue that the read completion handler inserts the message into and the background task later processes.
+[
+            **ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) のバックグラウンド タスクの [**IBackgroundTask.Run**](https://msdn.microsoft.com/library/windows/apps/br224811) メソッドが呼び出される前に確実に読み取り完了ハンドラーが呼び出されます。 Windows は、読み取り完了コールバックからのアプリの復帰を待機する内部的な同期機構を備えています。 通常、アプリは、[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) または [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) からのデータやエラーを読み取り完了コールバックですぐに処理します。 メッセージそのものは、**IBackgroundTask.Run** メソッドのコンテキスト内で処理されます。 以下のサンプルでは、この点をメッセージ キューを使って示しています。メッセージは、読み取り完了ハンドラーによってメッセージ キューに挿入され、バックグラウンド タスクによって後から処理されます。
 
-The following sample shows the read completion handler to use with a raw async pattern for handling reads on the [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923).
+次のサンプルは、[**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) の読み取りを処理するための生の非同期パターンで使う読み取り完了ハンドラーを示しています。
 
 ```csharp
 public void OnDataReadCompletion(uint bytesRead, DataReader readPacket)
@@ -258,16 +267,18 @@ public void OnDataReadCompletion(uint bytesRead, DataReader readPacket)
 }
 ```
 
-An additional detail for Websockets is the keep-alive handler. The WebSocket protocol defines a standard model for keep-alive messages.
+WebSocket に関連して、キープアライブ ハンドラーについても詳しく説明します。 WebSocket プロトコルで、キープアライブ メッセージの標準モデルを定義します。
 
-When using [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) or [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923), register a[**WebSocketKeepAlive**](https://msdn.microsoft.com/library/windows/apps/hh701531) class instance as the [**TaskEntryPoint**](https://msdn.microsoft.com/library/windows/apps/br224774) for a KeepAliveTrigger to allow the app to be unsuspended and send keep-alive messages to the server (remote endpoint) periodically. This should be done as part of the background registration app code as well as in the package manifest.
+[
+            **MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) または [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) を使う場合、アプリの中断状態を解除し、キープアライブ メッセージをサーバー (リモート エンドポイント) に定期的に送信するためには、[**WebSocketKeepAlive**](https://msdn.microsoft.com/library/windows/apps/hh701531) クラス インスタンスを KeepAliveTrigger の [**TaskEntryPoint**](https://msdn.microsoft.com/library/windows/apps/br224774) として登録する必要があります。 これは、アプリのバックグラウンド登録コードとパッケージ マニフェストで行う必要があります。
 
-This task entry point of [**Windows.Sockets.WebSocketKeepAlive**](https://msdn.microsoft.com/library/windows/apps/hh701531) needs to be specified in two places:
+[
+            **Windows.Sockets.WebSocketKeepAlive**](https://msdn.microsoft.com/library/windows/apps/hh701531) のタスク エントリ ポイントは、次の 2 か所で指定する必要があります。
 
--   When creating KeepAliveTrigger trigger in the source code (see example below).
--   In the app package manifest for the keepalive background task declaration.
+-   ソース コードで KeepAliveTrigger トリガーを作成する部分 (以下の例を参照)。
+-   キープアライブのバックグラウンド タスクが宣言されているアプリ パッケージ マニフェスト。
 
-The following sample adds a network trigger notification and a keepalive trigger under the &lt;Application&gt; element in an app manifest.
+次のサンプルでは、アプリ マニフェストの &lt;Application&gt; 要素の下に、ネットワーク トリガー通知とキープアライブ トリガーを追加しています。
 
 ```xml
   <Extensions>
@@ -288,9 +299,10 @@ The following sample adds a network trigger notification and a keepalive trigger
   </Extensions> 
 ```
 
-An app must be extremely careful when using an **await** statement in the context of a [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) and an asynchronous operation on a [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923), [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842), or [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882). A **Task&lt;bool&gt;** object can be used to register a **ControlChannelTrigger** for push notification and WebSocket keep-alives on the **StreamWebSocket** and connect the transport. As part of the registration, the **StreamWebSocket** transport is set as the transport for the **ControlChannelTrigger** and a read is posted. The **Task.Result** will block the current thread until all steps in the task execute and return statements in message body. The task is not resolved until the method returns either true or false. This guarantees that the whole method is executed. The **Task** can contain multiple **await** statements that are protected by the **Task**. This pattern should be used with the **ControlChannelTrigger** object when a **StreamWebSocket** or **MessageWebSocket** is used as the transport. For those operations that may take a long period of time to complete (a typical async read operation, for example), the app should use the raw async pattern discussed previously.
+[
+            **ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) と [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923)、[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842)、または [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) に対する非同期操作のコンテキストで **await** ステートメントを使う際には、特に注意する必要があります。 **Task&lt;bool&gt;** オブジェクトを使うと、プッシュ通知と WebSocket キープアライブの **ControlChannelTrigger** を **StreamWebSocket** に対して登録し、このトランスポートを接続できます。 この登録の一環として、**StreamWebSocket** トランスポートが **ControlChannelTrigger** のトランスポートとして設定され、読み取りがポストされます。 **Task.Result** は、タスクのすべてのステップが実行されてメッセージ本文でステートメントが返されるまで現在のスレッドをブロックします。 タスクは、このメソッドが true または false を返すまで解決されません。 これにより、メソッド全体が実行されることが保証されます。 **Task** には、**Task** によって保護される **await** ステートメントを複数含めることができます。 **ControlChannelTrigger** オブジェクトで **StreamWebSocket** または **MessageWebSocket** をトランスポートとして使う場合はこのパターンを使う必要があります。 完了までに長時間かかる可能性がある操作 (一般的な非同期読み取り操作など) に対しては、既に説明した生の非同期パターンを使う必要があります。
 
-The following sample registers [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) for push notification and WebSocket keep-alives on the [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923).
+次のサンプルは、プッシュ通知と WebSocket キープアライブの [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) を [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) に対して登録します。
 
 ```csharp
 private bool RegisterWithControlChannelTrigger(string serverUri)
@@ -426,23 +438,26 @@ async Task<bool> RegisterWithCCTHelper(string serverUri)
 }
 ```
 
-For more information on using [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) or [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) with [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032), see the [ControlChannelTrigger StreamWebSocket sample](http://go.microsoft.com/fwlink/p/?linkid=251232).
+[
+            **ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) で [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) または [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) を使う方法について詳しくは、[ControlChannelTrigger StreamWebSocket のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=251232)をご覧ください。
 
-## ControlChannelTrigger with HttpClient
+## ControlChannelTrigger と HttpClient
 
-Some special considerations apply when using [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) with [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032). There are some transport-specific usage patterns and best practices that should be followed when using a [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) with **ControlChannelTrigger**. In addition, these considerations affect the way that requests to receive packets on the [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) are handled.
+[
+            **ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) で [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) を使う場合は、特別な注意事項がいくつかあります。 **ControlChannelTrigger** で [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) を使う際には、トランスポート固有の使用パターンとベスト プラクティスに従う必要があります。 また、[HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) でパケットを受信する要求の処理方法にも、これらの注意事項が関係します。
 
-**Note**  [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) using SSL is not currently supported using the network trigger feature and [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).
+**注**  SSL を使う [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) では、ネットワーク トリガー機能と [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) の使用は現在サポートされていません。
 
  
-The following usage patterns and best practices should be followed when using [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) with [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032):
+[
+            **ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) で [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) を使う際に従う必要のある使用パターンとベスト プラクティスを次に示します。
 
--   The app may need to set various properties and headers on the [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) or [HttpClientHandler](http://go.microsoft.com/fwlink/p/?linkid=241638) object in the [System.Net.Http](http://go.microsoft.com/fwlink/p/?linkid=227894) namespace before sending the request to the specific URI.
--   An app may need to make need to an initial request to test and setup the transport properly before creating the [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) transport to be used with [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032). Once the app determines that the transport can be properly setup, an [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) object can be configured as the transport object used with the **ControlChannelTrigger** object. This process is designed prevent some scenarios from breaking the connection established over the transport. Using SSL with a certificate, an app may require a dialog to be displayed for PIN entry or if there are multiple certificates to choose from. Proxy authentication and server authentication may be required. If the proxy or server authentication expires, the connection may be closed. One way an app can deal with these authentication expiration issues is to set a timer. When an HTTP redirect is required, it is not guaranteed that the second connection can be established reliably. An initial test request will ensure that the app can use the most up-to-date redirected URL before using the [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) object as the transport with the **ControlChannelTrigger** object.
+-   アプリで、特定の URI に要求を送る前に、[System.Net.Http](http://go.microsoft.com/fwlink/p/?linkid=227894) 名前空間の [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) オブジェクトまたは [HttpClientHandler](http://go.microsoft.com/fwlink/p/?linkid=241638) オブジェクトにさまざまなプロパティやヘッダーを設定する必要がある場合があります。
+-   アプリには、[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) で使う [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) トランスポートを作る前に、トランスポートをテストし、正しく設定するための初期要求が必要な場合があります。 トランスポートを正しく設定できることがアプリによって確認されると、[HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) オブジェクトを **ControlChannelTrigger** オブジェクトで使うトランスポート オブジェクトとして構成できます。 このプロセスは、一部のシナリオでトランスポートを使って確立された接続が中断されないようにするためのものです。 SSL と証明書を使う場合、アプリには、PIN 入力用、または選択する証明書が複数ある場合に表示されるダイアログが必要になる場合があります。 プロキシ認証とサーバー認証が必要になる場合があります。 プロキシ認証またはサーバー認証の期限が切れると、接続が閉じる場合があります。 これらの認証期限の問題に対処する 1 つの方法として、タイマーを設定できます。 HTTP リダイレクトが必要な場合、2 回目の接続は正しく確立できないことがあります。 初期テスト要求により、[HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) オブジェクトを **ControlChannelTrigger** オブジェクトでトランスポートとして使う前にアプリが最新のリダイレクト URL を使用できることが確認されます。
 
-Unlike other network transports, the [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) object cannot be directly passed into the [**UsingTransport**](https://msdn.microsoft.com/library/windows/apps/hh701175) method of the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) object. Instead, an [HttpRequestMessage](http://go.microsoft.com/fwlink/p/?linkid=259153) object must be specially constructed for use with the [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) object and the **ControlChannelTrigger**. The [HttpRequestMessage](http://go.microsoft.com/fwlink/p/?linkid=259153) object is created using the [RtcRequestFactory.Create](http://go.microsoft.com/fwlink/p/?linkid=259154) method. The [HttpRequestMessage](http://go.microsoft.com/fwlink/p/?linkid=259153) object that is created is then passed to **UsingTransport** method .
+他のネットワーク トランスポートとは異なり、[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) オブジェクトの [**UsingTransport**](https://msdn.microsoft.com/library/windows/apps/hh701175) メソッドに直接 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) オブジェクトを渡すことはできません。 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) オブジェクトと **ControlChannelTrigger** 用に特別な方法で [HttpRequestMessage](http://go.microsoft.com/fwlink/p/?linkid=259153) オブジェクトを構築する必要があります。 [HttpRequestMessage](http://go.microsoft.com/fwlink/p/?linkid=259153) オブジェクトは、[RtcRequestFactory.Create](http://go.microsoft.com/fwlink/p/?linkid=259154) メソッドを使って作成します。 そのうえで、作成した [HttpRequestMessage](http://go.microsoft.com/fwlink/p/?linkid=259153) オブジェクトを **UsingTransport** メソッドに渡します。
 
-The following sample shows how to construct an [HttpRequestMessage](http://go.microsoft.com/fwlink/p/?linkid=259153) object for use with the [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) object and the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).
+次のサンプルでは、[HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) オブジェクトと [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) で使う [HttpRequestMessage](http://go.microsoft.com/fwlink/p/?linkid=259153) オブジェクトを構築しています。
 
 ```csharp
 using System;
@@ -484,13 +499,14 @@ private void SetupHttpRequestAndSendToHttpServer()
 }
 ```
 
-Some special considerations affect the way that requests to send HTTP requests on the [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) to initiate receiving a response are handled. In particular, when using a [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) with the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032), your app must use a Task for handling sends instead of the **await** model.
+いくつかの特別な注意事項は、[HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) で HTTP 要求を送信して応答の受け取りを開始するための要求の処理方法にかかわってきます。 特に、[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) で [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) を使うアプリは、送信処理に、**await** モデルではなく、Task を使う必要があります。
 
-Using [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637), there is no synchronization with the [**IBackgroundTask.Run**](https://msdn.microsoft.com/library/windows/apps/br224811) method on the background task for the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) with the return of the receive completion callback. For this reason, the app can only use the blocking HttpResponseMessage technique in the **Run** method and wait until the whole response is received.
+[HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) を使った場合、[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) のバックグラウンド タスクの [**IBackgroundTask.Run**](https://msdn.microsoft.com/library/windows/apps/br224811) メソッドと、受信完了コールバックの戻りとの同期が生じません。 したがって、アプリは、ブロックする HttpResponseMessage を **Run** メソッドで使い、応答全体を受け取るまで待機するしかありません。
 
-Using [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) with [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) is noticeably different from the [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882), [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) or [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) transports . The [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) receive callback is delivered via a Task to the app since the [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) code. This means that the **ControlChannelTrigger** push notification task will fire as soon as the data or error is dispatched to the app. In the sample below, the code stores the responseTask returned by [HttpClient.SendAsync](http://go.microsoft.com/fwlink/p/?linkid=241637) method into global storage that the push notify task will pick up and process inline.
+[
+            **ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) での [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) の使用は、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) や [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842)、[**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) のトランスポートとは大きく異なります。 [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) 受信コールバックは、[HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) コード以後、Task を介してアプリに送られます。 つまり、データまたはエラーがアプリにディスパッチされるとすぐに **ControlChannelTrigger** プッシュ通知タスクが作動します。 以下のサンプル コードは、[HttpClient.SendAsync](http://go.microsoft.com/fwlink/p/?linkid=241637) メソッドから返された responseTask をグローバルなストレージに格納します。プッシュ通知タスクがそれを取り出し、インラインで処理します。
 
-The following sample shows how to handle send requests on the [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) when used with [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).
+次のサンプルは、[HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) を [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) と組み合わせて使い、送信要求を処理しています。
 
 ```csharp
 using System;
@@ -535,7 +551,7 @@ private void SendHttpRequest()
 }
 ```
 
-The following sample shows how to read responses received on the [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) when used with [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).
+次のサンプルは、[HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) を [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) と組み合わせて使い、受け取った応答を読み取っています。
 
 ```csharp
 using System.Net;
@@ -576,19 +592,23 @@ public string ReadResponse(Task<HttpResponseMessage> httpResponseTask)
 }
 ```
 
-For more information on using [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) with [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032), see the [ControlChannelTrigger HttpClient sample](http://go.microsoft.com/fwlink/p/?linkid=258323).
+[HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) と [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) を使う方法について詳しくは、[ControlChannelTrigger HttpClient のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=258323)をご覧ください。
 
-## ControlChannelTrigger with IXMLHttpRequest2
+## ControlChannelTrigger と IXMLHttpRequest2
 
-Some special considerations apply when using [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) with [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032). There are some transport-specific usage patterns and best practices that should be followed when using a **IXMLHTTPRequest2** with **ControlChannelTrigger**. Using **ControlChannelTrigger** does not affect the way that requests to send or receive HTTP requests on the **IXMLHTTPRequest2** are handled.
+[
+            **ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) で [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) を使う場合は、特別な注意事項がいくつかあります。 **ControlChannelTrigger** で **IXMLHTTPRequest2** を使う際には、トランスポート固有の使用パターンとベスト プラクティスに従う必要があります。 **ControlChannelTrigger** の使用が、**IXMLHTTPRequest2** で HTTP 要求を送受信するための要求の処理方法に影響することはありません。
 
-Usage patterns and best practices when using [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) with [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)
+[
+            **ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) で [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) を使う際の使用パターンとベスト プラクティス
 
--   An [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) object when used as the transport has a lifetime of only one request/response. When used with the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) object, it is convenient to create and set up the **ControlChannelTrigger** object once and then call the [**UsingTransport**](https://msdn.microsoft.com/library/windows/apps/hh701175) method repeatedly, each time associating a new **IXMLHTTPRequest2** object. An app should delete the previous **IXMLHTTPRequest2** object before supplying a new **IXMLHTTPRequest2** object to ensure that the app does not exceed the allocated resource limits.
--   The app may need to call the [**SetProperty**](https://msdn.microsoft.com/library/windows/desktop/hh831167) and [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/desktop/hh831168) methods to set up the HTTP transport before calling [**Send**](https://msdn.microsoft.com/library/windows/desktop/hh831164) method.
--   An app may need to make need to an initial [**Send**](https://msdn.microsoft.com/library/windows/desktop/hh831164) request to test and setup the transport properly before creating the transport to be used with [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032). Once the app determines that the transport is properly setup, the [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) object can be configured as the transport object used with the **ControlChannelTrigger**. This process is designed prevent some scenarios from breaking the connection established over the transport. Using SSL with a certificate, an app may require a dialog to be displayed for PIN entry or if there are multiple certificates to choose from. Proxy authentication and server authentication may be required. If the proxy or server authentication expires, the connection may be closed. One way an app can deal with these authentication expiration issues is to set a timer. When an HTTP redirect is required, it is not guaranteed that the second connection can be established reliably. An initial test request will ensure that the app can use the most up-to-date redirected URL before using the **IXMLHTTPRequest2** object as the transport with the **ControlChannelTrigger** object.
+-   トランスポートとして使われる [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) オブジェクトの有効期限は、1 つの要求/応答のみで構成されます。 [
+            **ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) オブジェクトと併用する場合は、**ControlChannelTrigger** オブジェクトを一度作って設定してから [**UsingTransport**](https://msdn.microsoft.com/library/windows/apps/hh701175) メソッドを繰り返し呼び出して、そのたびに新しい **IXMLHTTPRequest2** オブジェクトを関連付けると便利です。 アプリは、新しい **IXMLHTTPRequest2** オブジェクトを提供する前に以前の **IXMLHTTPRequest2** オブジェクトを削除して、割り当てられたリソース制限を超えないようにする必要があります。
+-   アプリは、[**Send**](https://msdn.microsoft.com/library/windows/desktop/hh831164) メソッドを呼び出す前に、[**SetProperty**](https://msdn.microsoft.com/library/windows/desktop/hh831167) メソッドと [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/desktop/hh831168) メソッドを呼び出して HTTP トランスポートを設定する必要がある場合があります。
+-   アプリには、[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) で使うトランスポートを作る前に、トランスポートをテストし、正しく設定するための初期 [**Send**](https://msdn.microsoft.com/library/windows/desktop/hh831164) 要求が必要な場合があります。 アプリによってトランスポートが正しく設定されていることが確認されると、[**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) オブジェクトを **ControlChannelTrigger** で使うトランスポート オブジェクトとして構成できます。 このプロセスは、一部のシナリオでトランスポートを使って確立された接続が中断されないようにするためのものです。 SSL と証明書を使う場合、アプリには、PIN 入力用、または選択する証明書が複数ある場合に表示されるダイアログが必要になる場合があります。 プロキシ認証とサーバー認証が必要になる場合があります。 プロキシ認証またはサーバー認証の期限が切れると、接続が閉じる場合があります。 これらの認証期限の問題に対処する 1 つの方法として、タイマーを設定できます。 HTTP リダイレクトが必要な場合、2 回目の接続は正しく確立できないことがあります。 初期テスト要求により、**IXMLHTTPRequest2** オブジェクトを **ControlChannelTrigger** オブジェクトでトランスポートとして使う前にアプリが最新のリダイレクト URL を使用できることが確認されます。
 
-For more information on using [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) with [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032), see the [ControlChannelTrigger with IXMLHTTPRequest2 sample](http://go.microsoft.com/fwlink/p/?linkid=258538).
+[
+            **IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) と [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) を使う方法について詳しくは、[ControlChannelTrigger と IXMLHTTPRequest2 のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=258538)をご覧ください。
 
 
 

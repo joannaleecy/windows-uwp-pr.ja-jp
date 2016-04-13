@@ -2,7 +2,7 @@
 Description: この記事では、アプリ設定を作成し表示する際のベスト プラクティスについて説明します。
 title: アプリ設定のガイドライン
 ms.assetid: 2D765E90-3FA0-42F5-A5CB-BEDC14C3F60A
-label: ガイドライン
+label: Guidelines
 template: detail.hbs
 ---
 
@@ -125,7 +125,7 @@ template: detail.hbs
 
 \[この記事には、ユニバーサル Windows プラットフォーム (UWP) アプリと Windows�10 に固有の情報が含まれています。 Windows�8.1 のガイダンスについては、[Windows�8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
 
-## 関連トピック
+## <span id="related_topics"></span>関連トピック
 
 * [コマンド設計の基本](https://msdn.microsoft.com/library/windows/apps/dn958433)
 * [プログレス コントロールのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465469)
@@ -137,6 +137,6 @@ template: detail.hbs
 �
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=Mar16_HO4-->
 
 

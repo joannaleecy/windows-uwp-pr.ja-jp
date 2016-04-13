@@ -1,37 +1,37 @@
 ---
-title: Register a background task
-description: Learn how to create a function that can be re-used to safely register most background tasks.
+title: バックグラウンド タスクの登録
+description: ほとんどのバックグラウンド タスクを安全に登録できる再利用可能な関数の作成方法について説明します。
 ms.assetid: 8B1CADC5-F630-48B8-B3CE-5AB62E3DFB0D
 ---
 
-# Register a background task
+# バックグラウンド タスクの登録
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-**Important APIs**
+**重要な API**
 
--   [**BackgroundTaskRegistration class**](https://msdn.microsoft.com/library/windows/apps/br224786)
--   [**BackgroundTaskBuilder class**](https://msdn.microsoft.com/library/windows/apps/br224768)
--   [**SystemCondition class**](https://msdn.microsoft.com/library/windows/apps/br224834)
+-   [**BackgroundTaskRegistration クラス**](https://msdn.microsoft.com/library/windows/apps/br224786)
+-   [**BackgroundTaskBuilder クラス**](https://msdn.microsoft.com/library/windows/apps/br224768)
+-   [**SystemCondition クラス**](https://msdn.microsoft.com/library/windows/apps/br224834)
 
-Learn how to create a function that can be re-used to safely register most background tasks.
+ほとんどのバックグラウンド タスクを安全に登録できる再利用可能な関数の作成方法について説明します。
 
-This topic assumes that you already have a background task that needs to be registered. (See [Create and register a background task](create-and-register-a-background-task.md) for information about how to write a background task).
+このトピックでは、登録する必要があるバックグラウンド タスクが既にあることを前提とします (バックグラウンド タスクの作成方法について詳しくは、「[バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)」をご覧ください)。
 
-This topic walks through a utility function that registers background tasks. This utility function checks for existing registrations first before registering the task multiple times to avoid problems with multiple registrations, and it can apply a system condition to the background task. The walkthrough includes a complete, working example of this utility function.
+このトピックは、バックグラウンド タスクを登録するユーティリティ関数の作り方を順に説明します。 このユーティリティ関数は、二重登録による問題を防ぐために、同じタスクが登録されていないかどうかをチェックしたうえでタスクを登録します。バックグラウンド タスクにシステムの条件を適用することができます。 ここで紹介しているユーティリティ関数は、それ自体で完結した実用的なコード例となっています。
 
-**Note**  
+**注:**  
 
-Universal Windows apps must call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) before registering any of the background trigger types.
+ユニバーサル Windows アプリは、どの種類のバックグラウンド トリガーを登録する場合でも、先に [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) を呼び出す必要があります。
 
-To ensure that your Universal Windows app continues to run properly after you release an update, you must call [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471) and then call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) when your app launches after being updated. For more information, see [Guidelines for background tasks](guidelines-for-background-tasks.md).
+更新プログラムのリリース後にユニバーサル Windows アプリが引き続き適切に実行されるようにするには、更新後にアプリが起動する際に、[**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471)、[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) の順に呼び出す必要があります。 詳しくは、「[バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)」をご覧ください。
 
-## Define the method signature and return type
+## メソッドのシグニチャと戻り値の型の定義
 
 
-This method takes in the task entry point, task name, a pre-constructed background task trigger, and (optionally) a [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) for the background task. This method returns a [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786) object.
+このメソッドは、タスクのエントリ ポイント、タスク名、構築済みのバックグラウンド タスク トリガーのほか、(必要に応じて) バックグラウンド タスクの [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) を引数として受け取ります。 このメソッドは、[**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786) オブジェクトを返します。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -59,16 +59,16 @@ This method takes in the task entry point, task name, a pre-constructed backgrou
 > }
 > ```
 
-## Check for existing registrations
+## 登録の重複確認
 
 
-Check whether the task is already registered. It's important to check this because if a task is registered multiple times, it will run more than once whenever it’s triggered; this can use excess CPU and may cause unexpected behavior.
+既に登録されたタスクかどうかを確認します。 同じタスクが二重に登録されると、1 回のトリガーにつきタスクが複数回実行され、CPU が無駄に消費されるばかりか、予期しない動作を招くこともあるため、この確認は重要です。
 
-You can check for existing registrations by querying the [**BackgroundTaskRegistration.AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) property and iterating on the result. Check the name of each instance – if it matches the name of the task you’re registering, then break out of the loop and set a flag variable so that your code can choose a different path in the next step.
+同じタスクが登録されているかどうかは、[**BackgroundTaskRegistration.AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) プロパティを照会し、返された結果を反復処理することで確認できます。 各インスタンスの名前を調べ、登録しようとしているタスクの名前と一致した場合、ループを抜けて、フラグ変数を設定します。このフラグに応じたコード パスが次のステップで選択されます。
 
-> **Note**  Use background task names that are unique to your app. Ensure each background task has a unique name.
+> **注** バックグラウンド タスクには、アプリ内で重複しない名前を使ってください。 各バックグラウンド タスクには一意の名前が付いている必要があります。
 
-The following code registers a background task using the [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) we created in the last step:
+次のコードは、最後の手順で作成した [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) を使ってバックグラウンド タスクを登録します。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -132,16 +132,16 @@ The following code registers a background task using the [**SystemTrigger**](htt
 > }
 > ```
 
-## Register the background task (or return the existing registration)
+## バックグラウンド タスクを登録する (または既に登録されているタスクを返す)
 
 
-Check to see if the task was found in the list of existing background task registrations. If so, return that instance of the task.
+同じバックグラウンド タスクが既に登録されているかどうかを確認します。 登録されている場合は、そのタスクのインスタンスを返します。
 
-Then, register the task using a new [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) object. This code should check whether the condition parameter is null, and if not, add the condition to the registration object. Return the [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786) returned by the [**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772) method.
+登録されていない場合は、新しい [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) オブジェクトを使ってタスクを登録します。 このコードは、condition パラメーターが null かどうかを確認し、null でない場合は、その condition を登録オブジェクトに追加します。 戻り値は、[**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772) メソッドから返された [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786) です。
 
-> **Note**  Background task registration parameters are validated at the time of registration. An error is returned if any of the registration parameters are invalid. Ensure that your app gracefully handles scenarios where background task registration fails - if instead your app depends on having a valid registration object after attempting to register a task, it may crash.
+> **注**  バックグラウンド タスクの登録パラメーターは登録時に検証されます。 いずれかの登録パラメーターが有効でない場合は、エラーが返されます。 バックグラウンド タスクの登録が失敗するシナリオをアプリが適切に処理するようにします。タスクを登録しようとした後で、有効な登録オブジェクトを持っていることを前提として動作するアプリは、クラッシュする場合があります。
 
-The following example either returns the existing task, or adds code that registers the background task (including the optional system condition if present):
+次の例には、既にあるタスクを返すか、バックグラウンド タスクを登録するコードが追加されています。また、システムの条件 (省略可能) が指定された場合の処理も追加されています。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -241,10 +241,10 @@ The following example either returns the existing task, or adds code that regist
 > }
 > ```
 
-## Complete background task registration utility function
+## バックグラウンド タスク登録ユーティリティ関数の完成
 
 
-This example shows the completed background task registration function. This function can be used to register most background tasks, with the exception of networking background tasks.
+この例は、バックグラウンド タスク登録ユーティリティ関数全体を示しています。 ネットワーク関連のバックグラウンド タスクを除くほとんどのバックグラウンド タスクは、この関数を使って登録できます。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -361,29 +361,29 @@ This example shows the completed background task registration function. This fun
 > }
 > ```
 
-> **Note**  This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **注**  この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
  
-## Related topics
+## 関連トピック
 
 
 ****
 
-* [Create and register a background task](create-and-register-a-background-task.md)
-* [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md)
-* [Handle a cancelled background task](handle-a-cancelled-background-task.md)
-* [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)
-* [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md)
-* [Set conditions for running a background task](set-conditions-for-running-a-background-task.md)
-* [Update a live tile from a background task](update-a-live-tile-from-a-background-task.md)
-* [Use a maintenance trigger](use-a-maintenance-trigger.md)
-* [Run a background task on a timer](run-a-background-task-on-a-timer-.md)
-* [Guidelines for background tasks](guidelines-for-background-tasks.md)
+* [バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)
+* [アプリケーション マニフェストでのバックグラウンド タスクの宣言](declare-background-tasks-in-the-application-manifest.md)
+* [取り消されたバックグラウンド タスクの処理](handle-a-cancelled-background-task.md)
+* [バックグラウンド タスクの進捗状況と完了の監視](monitor-background-task-progress-and-completion.md)
+* [バックグラウンド タスクによるシステム イベントへの応答](respond-to-system-events-with-background-tasks.md)
+* [バックグラウンド タスクを実行するための条件の設定](set-conditions-for-running-a-background-task.md)
+* [バックグラウンド タスクのライブ タイルの更新](update-a-live-tile-from-a-background-task.md)
+* [メンテナンス トリガーの使用](use-a-maintenance-trigger.md)
+* [タイマーでのバックグラウンド タスクの実行](run-a-background-task-on-a-timer-.md)
+* [バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)
 
 ****
 
-* [Debug a background task](debug-a-background-task.md)
-* [How to trigger suspend, resume, and background events in Windows Store apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [バックグラウンド タスクのデバッグ](debug-a-background-task.md)
+* [Windows ストア アプリで一時停止イベント、再開イベント、バックグラウンド イベントをトリガーする方法 (デバッグ時)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
  
 

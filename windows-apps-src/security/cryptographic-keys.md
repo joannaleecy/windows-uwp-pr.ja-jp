@@ -1,72 +1,77 @@
 ---
-title: Cryptographic keys
-description: This article shows how to use standard key derivation functions to derive keys and how to encrypt content using symmetric and asymmetric keys.
+title: 暗号化キー
+description: この記事では、標準のキー派生関数を使ってキーを派生させる方法、および対称キーと非対称キーを使ってコンテンツを暗号化する方法について説明します。
 ms.assetid: F35BEBDF-28C5-4F91-A94E-F7D862B6ED59
 author: awkoren
 ---
 
-# Cryptographic keys
+# 暗号化キー
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-This article shows how to use standard key derivation functions to derive keys and how to encrypt content using symmetric and asymmetric keys.
+この記事では、標準のキー派生関数を使ってキーを派生させる方法、および対称キーと非対称キーを使ってコンテンツを暗号化する方法について説明します。
 
-## Symmetric keys
-
-
-Symmetric key encryption, also called secret key encryption, requires that the key used for encryption also be used for decryption. You can use a [**SymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241537) class to specify a symmetric algorithm and create or import a key. You can use static methods on the [**CryptographicEngine**](https://msdn.microsoft.com/library/windows/apps/br241490) class to encrypt and decrypt data by using the algorithm and key.
-
-Symmetric key encryption typically uses block ciphers and block cipher modes. A block cipher is a symmetric encryption function that operates on fixed size blocks. If the message you want to encrypt is longer than the block length, you must use a block cipher mode. A block cipher mode is a symmetric encryption function built by using a block cipher. It encrypts plaintext as a series of fixed size blocks. The following modes are supported for apps:
-
--   The ECB (electronic codebook) mode encrypts each block of the message separately. This is not considered a secure encryption mode.
--   The CBC (cipher block chaining) mode uses the previous ciphertext block to obfuscate the current block. You must determine what value to use for the first block. This value is called the initialization vector (IV).
--   The CCM (counter with CBC-MAC) mode combines the CBC block cipher mode with a message authentication code (MAC).
--   The GCM (Galois counter mode) mode combines the counter encryption mode with the Galois authentication mode.
-
-Some modes such as CBC require that you use an initialization vector (IV) for the first ciphertext block. The following are common initialization vectors. You specify the IV when calling [**CryptographicEngine.Encrypt**](https://msdn.microsoft.com/library/windows/apps/br241494). For most cases it is important that the IV never be reused with the same key.
-
--   Fixed uses the same IV for all messages to be encrypted. This leaks information and its use is not recommended.
--   Counter increments the IV for each block.
--   Random creates a pseudorandom IV. You can use [**CryptographicBuffer.GenerateRandom**](https://msdn.microsoft.com/library/windows/apps/br241392) to create the IV.
--   Nonce-Generated uses a unique number for each message to be encrypted. Typically, the nonce is a modified message or transaction identifier. The nonce does not have to be kept secret, but it should never be reused under the same key.
-
-Most modes require that the length of the plaintext be an exact multiple of the block size. This usually requires that you pad the plaintext to obtain the appropriate length.
-
-While block ciphers encrypt fixed size blocks of data, stream ciphers are symmetric encryption functions that combine plaintext bits with a pseudorandom bit stream (called a key stream) to generate the ciphertext. Some block cipher modes such as output feedback mode (OTF) and counter mode (CTR) effectively turn a block cipher into a stream cipher. Actual stream ciphers such as RC4, however, typically operate at higher speeds than block cipher modes are capable of achieving.
-
-The following example shows how to use the [**SymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241537) class to create a symmetric key and use it to encrypt and decrypt data.
-
-## Asymmetric keys
+## 対称キー
 
 
-Asymmetric key cryptography, also called public key cryptography, uses a public key and a private key to perform encryption and decryption. The keys are different but mathematically related. Typically the private key is kept secret and is used to encrypt data while the public key is distributed to interested parties and is used to decrypt data. Asymmetric cryptography is also useful for signing data.
+秘密鍵の暗号化とも呼ばれる対称キーの暗号化には、暗号化にも暗号化解除にも使われるキーが必要です。 [
+            **SymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241537) クラスを使って対称アルゴリズムを指定し、キーを作成またはインポートできます。 [
+            **CryptographicEngine**](https://msdn.microsoft.com/library/windows/apps/br241490) クラスで静的メソッドを使って、アルゴリズムとキーでデータを暗号化および暗号化解除できます。
 
-Because asymmetric cryptography is much slower than symmetric cryptography, it is seldom used to encrypt large amounts of data directly. Instead, it is typically used in the following manner to encrypt keys.
+通常、対称キーの暗号化ではブロック暗号とブロック暗号モードを使います。 ブロック暗号は、固定サイズのブロックで動作する対称暗号化機能です。 暗号化するメッセージがブロックの長さよりも長い場合は、ブロック暗号モードを使う必要があります。 ブロック暗号モードは、ブロック暗号を使って作成された対称暗号化機能です。 このモードでは、プレーンテキストが一連の固定サイズ ブロックとして暗号化されます。 アプリでは、次のモードがサポートされます。
 
--   Alice requires that Bob send her only encrypted messages.
--   Alice creates a private/public key pair, keeps her private key secret and publishes her public key.
--   Bob has a message he wants to send to Alice.
--   Bob creates a symmetric key.
--   Bob uses his new symmetric key to encrypt his message to Alice.
--   Bob uses Alice’s public key to encrypt his symmetric key.
--   Bob sends the encrypted message and the encrypted symmetric key to Alice (enveloped).
--   Alice uses her private key (from the private/public pair) to decrypt Bob’s symmetric key.
--   Alice uses Bob’s symmetric key to decrypt the message.
+-   ECB (電子コードブック) モードでは、メッセージの各ブロックが個別に暗号化されます。 これは、セキュリティで保護された暗号化モードとは見なされません。
+-   CBC (暗号ブロック チェーン) モードでは、前の暗号テキスト ブロックを使って現在のブロックを難読にします。 最初のブロックに使う値を決める必要があります。 この値は初期化ベクトル (IV) と呼ばれます。
+-   CCM (Counter with CBC-MAC) モードは、CBC ブロック暗号モードとメッセージ認証コード (MAC) が組み合わされたものです。
+-   GCM (ガロア カウンター モード) モードは、カウンター暗号化モードとガロア認証モードが組み合わされたものです。
 
-You can use an [**AsymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241478) object to specify an asymmetric algorithm or a signing algorithm, to create or import an ephemeral key pair, or to import the public key portion of a key pair.
+CBC などの一部のモードでは、最初の暗号テキスト ブロックに初期化ベクトル (IV) を使う必要があります。 一般的な初期化ベクトルを次に示します。 IV は [**CryptographicEngine.Encrypt**](https://msdn.microsoft.com/library/windows/apps/br241494) を呼び出すときに指定します。 多くの場合、IV は同じキーで再利用しないことが重要です。
 
-## Deriving keys
+-   "固定" では、暗号化されるすべてのメッセージで同じ IV を使います。 情報が漏れるので、この方法を使うことはお勧めできません。
+-   "カウンター" ではブロックごとに IV を増分します。
+-   "ランダム" では、擬似乱数の IV を作成します。 [
+            **CryptographicBuffer.GenerateRandom**](https://msdn.microsoft.com/library/windows/apps/br241392) を使って IV を追加できます。
+-   "nonce 生成" では、暗号化されるメッセージごとに固有の番号を使います。 通常、nonce は修正されたメッセージまたはトランザクションの識別子を表します。 nonce は秘密にする必要はありませんが、同じキーで再利用できません。
+
+ほとんどのモードでは、プレーンテキストの長さをブロック サイズの正確な倍数にする必要があります。 このため、通常はプレーンテキストをパディングして適切な長さにする必要があります。
+
+ブロック暗号は固定サイズのデータ ブロックを暗号化する一方、ストリーム暗号はプレーンテキスト ビットと擬似乱数ビット ストリーム (キー ストリームと呼ばれる) を組み合わせて暗号テキストを生成する対称暗号化機能を表します。 出力フィードバック モード (OTF) やカウンター モード (CTR) などの一部のブロック暗号モードでは、ブロック暗号がストリーム暗号に効率よく変換されます。 ただし、RC4 などの実際のストリーム暗号は通常、ブロック暗号モードよりも高速で動作します。
+
+次の例に、[**SymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241537) クラスを使って対称キーを作成し、それを使ってデータを暗号化および暗号化解除する方法を示します。
+
+## 非対称キー
 
 
-It is often necessary to derive additional keys from a shared secret. You can use the [**KeyDerivationAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241518) class and one of the following specialized methods in the [**KeyDerivationParameters**](https://msdn.microsoft.com/library/windows/apps/br241524) class to derive keys.
+非対称キーの暗号化 (公開キーの暗号化とも呼ばれます) は、公開キーと秘密キーを使って暗号化および暗号化解除します。 これらのキーは異なるものですが、数学的に関連性があります。 通常、秘密キーは秘密として保持され、データの暗号化に使われます。一方、公開キーは関係者に配布され、データの暗号化解除に使われます。 非対称キーの暗号化は、データ署名にも役立ちます。
 
-| Object                                                                            | Description                                                                                                                                |
+非対称暗号化方式は対称暗号化方式よりかなり遅いため、大量のデータを直接暗号化する場合にはあまり使われません。 非対称暗号化が一般に使われるのは、次のような方法でキーを暗号化する場合です。
+
+-   アリスはボブに、暗号化されたメッセージだけを送るように要求します。
+-   アリスは秘密キー/公開キーのペアを作り、秘密キーを秘密に保有し、公開キーを公開します。
+-   ボブにはアリスに送りたいメッセージがあります。
+-   ボブは対称キーを作ります。
+-   ボブは、新しい対称キーを使って、アリスへのメッセージを暗号化します。
+-   ボブは、アリスの公開キーを使って、対称キーを暗号化します。
+-   ボブは、暗号化したメッセージと暗号化した対称キーを、(エンベロープにして) アリスに送ります。
+-   アリスは、(秘密キー/公開キー ペアの) 自分の秘密キーを使って、ボブの対称キーを暗号化解除します。
+-   アリスは、ボブの対称キーを使って、メッセージを暗号化解除します。
+
+[
+            **AsymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241478) オブジェクトを使うと、非対称アルゴリズムまたは署名アルゴリズムの指定、短期的なキー ペアの作成またはインポート、キー ペアの公開キー部分のインポートが可能になります。
+
+## キーの派生
+
+
+多くの場合、共有シークレットから追加キーを派生する必要があります。 [
+            **KeyDerivationAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241518) クラスおよび [**KeyDerivationParameters**](https://msdn.microsoft.com/library/windows/apps/br241524) クラスの次の専用メソッドのいずれかを使って、キーを派生できます。
+
+| オブジェクト                                                                            | 説明                                                                                                                                |
 |-----------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
-| [**BuildForPbkdf2**](https://msdn.microsoft.com/library/windows/apps/br241525)    | Creates a KeyDerivationParameters object for use in the password-based key derivation function 2 (PBKDF2).                                 |
-| [**BuildForSP800108**](https://msdn.microsoft.com/library/windows/apps/br241526)  | Creates a KeyDerivationParameters object for use in a counter mode, hash-based message authentication code (HMAC) key derivation function. |
-| [**BuildForSP80056a**](https://msdn.microsoft.com/library/windows/apps/br241527)  | Creates a KeyDerivationParameters object for use in the SP800-56A key derivation function.                                                 |
+| [**BuildForPbkdf2**](https://msdn.microsoft.com/library/windows/apps/br241525)    | パスワードベースのキー派生関数 2 (PBKDF2) で使う KeyDerivationParameters オブジェクトを作成します。                                 |
+| [**BuildForSP800108**](https://msdn.microsoft.com/library/windows/apps/br241526)  | カウンター モードのハッシュベース メッセージ認証コード (HMAC) キー派生関数で使う KeyDerivationParameters オブジェクトを作成します。 |
+| [**BuildForSP80056a**](https://msdn.microsoft.com/library/windows/apps/br241527)  | SP800-56A キー派生関数で使う KeyDerivationParameters オブジェクトを作成します。                                                 |
 
  
 

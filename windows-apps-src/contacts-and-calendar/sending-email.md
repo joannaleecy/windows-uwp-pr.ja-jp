@@ -1,26 +1,26 @@
 ---
-description: Shows how to launch the compose email dialog to allow the user to send an email message. You can pre-populate the fields of the email with data before showing the dialog. The message will not be sent until the user taps the send button.
-title: Send email
+description: メールの作成ダイアログを起動して、ユーザーがメール メッセージを送信できるようにする方法について説明します。 ダイアログを表示する前に、メールの各フィールドにデータを設定することができます。 メッセージは、ユーザーが送信ボタンをタップするまで送信されません。
+title: メールの送信
 ms.assetid: 74511E90-9438-430E-B2DE-24E196A111E5
-keywords: contacts, email, send
+キーワード: 連絡先、メール、送信
 ---
 
-# Send email
+# メールの送信
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-Shows how to launch the compose email dialog to allow the user to send an email message. You can pre-populate the fields of the email with data before showing the dialog. The message will not be sent until the user taps the send button.
+メールの作成ダイアログを起動して、ユーザーがメール メッセージを送信できるようにする方法について説明します。 ダイアログを表示する前に、メールの各フィールドにデータを設定することができます。 メッセージは、ユーザーが送信ボタンをタップするまで送信されません。
 
-**In this article**
+**この記事の内容**
 
--   [Launch the compose email dialog](#launch-the-compose-email-dialog)
--   [Summary and next steps](#summary-and-next-steps)
--   [Related topics](#related-topics)
+-   [メールの作成ダイアログの起動](#launch-the-compose-email-dialog)
+-   [要約と次のステップ](#summary-and-next-steps)
+-   [関連トピック](#related-topics)
 
-## Launch the compose email dialog
+## メールの作成ダイアログの起動
 
-Create a new [**EmailMessage**](https://msdn.microsoft.com/library/windows/apps/Dn631270) object and set the data that you want to be pre-populated in the compose email dialog. Call [**ShowComposeNewEmailAsync**](https://msdn.microsoft.com/library/windows/apps/Dn631269) to show the dialog.
+新しい [**EmailMessage**](https://msdn.microsoft.com/library/windows/apps/Dn631270) オブジェクトを作成し、メールの作成ダイアログに事前に入力するデータを設定します。 ダイアログを表示するには、[**ShowComposeNewEmailAsync**](https://msdn.microsoft.com/library/windows/apps/Dn631269) を呼び出します。
 
 ``` cs
 private async void ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipient, 
@@ -53,14 +53,14 @@ private async void ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipi
 }
 ```
 
-## Summary and next steps
+## 要約と次のステップ
 
-This topic has shown you how to launch the compose email dialog. For information on selecting contacts to use as recipients for an email message, see [Select contacts](selecting-contacts.md). See [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/JJ635275) to select a file to use as an email attachment.
+このトピックでは、メールの作成ダイアログの起動方法を示しました。 メール メッセージの受信者として使う連絡先を選ぶ方法については、「[連絡先の選択](selecting-contacts.md)」をご覧ください。 電子メールの添付ファイルとして使用するファイルの選択については、「[**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/JJ635275)」をご覧ください。
 
-## Related topics
+## 関連トピック
 
-* [Selecting contacts](selecting-contacts.md)
-* [How to continue your Windows Phone app after calling a file picker](https://msdn.microsoft.com/library/windows/apps/xaml/Dn614994)
+* [連絡先の選択](selecting-contacts.md)
+* [ファイル ピッカーの呼び出し後に Windows Phone アプリを続行する方法](https://msdn.microsoft.com/library/windows/apps/xaml/Dn614994)
  
 
  

@@ -1,36 +1,36 @@
 ---
-Description: Lists the practices to avoid if you want to create an accessible Universal Windows Platform (UWP) app.
-title: Accessibility practices to avoid
+Description: アクセシビリティ対応のユニバーサル Windows プラットフォーム (UWP) アプリを作成するために避ける事項の一覧を示します。
+title: アクセシビリティ対応にするために避ける事項
 ms.assetid: 024A9B70-9821-45BB-93F1-61C0B2ECF53E
 label: Practices to avoid
 template: detail.hbs
 ---
-Accessibility practices to avoid
+アクセシビリティ対応にするために避ける事項
 =======================================================================================
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-Lists the practices to avoid if you want to create an accessible Universal Windows Platform (UWP) app.
+アクセシビリティ対応のユニバーサル Windows プラットフォーム (UWP) アプリを作成するために避ける事項の一覧を示します。
 
--   Avoid building custom UI elements if you can use the default Windows controls or controls that have already implemented Microsoft UI Automation support. Standard Windows controls are accessible by default and usually require adding only a few accessibility attributes that are app-specific. In contrast, implementing the [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) support for a true custom control is somewhat more involved (see [Custom automation peers](custom-automation-peers.md)).
--   Don't put static text or other non-interactive elements into the tab order (for example, by setting the [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) property for an element that is not interactive). If non-interactive elements are in the tab order, that is against keyboard accessibility guidelines because it decreases efficiency of keyboard navigation for users. Many assistive technologies use tab order and ability to focus an element as part of their logic for how to present an app's interface to the assistive technology user. Text-only elements in the tab order can confuse users who expect only interactive elements in the tab order (buttons, check boxes, text input fields, combo boxes, lists, and so on).
--   Avoid using absolute positioning of UI elements (such as in a [**Canvas**](https://msdn.microsoft.com/library/windows/apps/BR209267) element) because the presentation order often differs from the child element declaration order (which is the de facto logical order). Whenever possible, arrange UI elements in document or logical order to ensure that screen readers can read those elements in the correct order. If the visible order of UI elements can diverge from the document or logical order, use explicit tab index values (set [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461)) to define the correct reading order.
--   Don’t use color as the only way to convey information. Users who are color blind cannot receive information that is conveyed only through color, such as in a color status indicator. Include other visual cues, preferably text, to ensure that information is accessible.
--   Don’t automatically refresh an entire app canvas unless it is really necessary for app functionality. If you need to automatically refresh page content, update only certain areas of the page. Assistive technologies generally must assume that a refreshed app canvas is a totally new structure, even if the effective changes were minimal. The cost of this to the assistive technology user is that any document view or description of the refreshed app now must be recreated and presented to the user again.
-    **Note**  If you do refresh content within a region, consider setting the [**AccessibilityProperties.LiveSetting**](https://msdn.microsoft.com/library/windows/apps/JJ191516) accessibility property on that element to one of the non-default settings **Polite** or **Assertive**. Some assistive technologies can map this setting to the Accessible Rich Internet Applications (ARIA) concept of live regions and can thus inform the user that a region of content has changed.
+-   既定の Windows コントロールか、Microsoft UI オートメーション サポートを既に実装しているコントロールを使うことができる場合には、カスタム UI 要素を作成しないようにします。 Windows の標準コントロールは、既定でアクセシビリティに対応しており、追加する必要があるのは、通常、アプリ固有のわずかなアクセシビリティ属性のみです。 それに対し、純粋なカスタム コントロールに [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) サポートを実装するのは、これより複雑です (「[カスタム オートメーション ピア](custom-automation-peers.md)」をご覧ください)。
+-   静的テキストなどの非対話型の要素をタブ オーダーに含めないようにします (たとえば、対話的に操作できない要素に [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) プロパティを設定することは避けます)。 非対話型の要素をタブ オーダーに含めると、キーボード ナビゲーションの効率が下がるため、キーボードのアクセシビリティ ガイドラインで推奨されていません。 多くの支援技術では、支援技術のユーザーにアプリのインターフェイスを表示する方法に関するロジックの一部として、要素をフォーカスする機能とタブ オーダーが使われています。 タブ オーダーにテキスト専用要素が含まれると、タブ オーダーに対話型の要素 (ボタン、チェック ボックス、テキスト入力フィールド、コンボ ボックス、リストなど) しか含まれていないと想定しているユーザーを混乱させる可能性があります。
+-   UI 要素の絶対配置 ([**Canvas**](https://msdn.microsoft.com/library/windows/apps/BR209267) 要素内など) は、しばしば表示の順序が (事実上の論理的な順序である) 子要素の宣言の順序と異なるため、使用を避けます。 スクリーン リーダーが UI 要素を正しい順序で読み取ることができるように、これらの要素をできるだけドキュメントの順序または論理的な順序に並べます。 UI 要素の視覚的な順序がドキュメントの順序または論理的な順序とは異なる可能性がある場合は、正しい読み取り順序を定義するために明示的なタブ インデックス値 ([**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) に設定) を使います。
+-   色を情報を伝える唯一の手段として使わないようにします。 色覚に障碍があるユーザーは、色によるステータス インジケーターのような色を通じてのみ伝えられる情報は受け取ることができません。 他の視覚的な合図 (テキストが望ましい) を含めるようにして、情報にアクセスできるようにします。
+-   アプリの機能に本当に必要でない限り、アプリのキャンバス全体を自動的に更新しないようにします。 ページの内容を自動的に更新する必要がある場合には、ページの一部の領域だけを更新するようにします。 支援技術では通常、更新されたアプリのキャンバスは、実質的な変更がわずかな場合でも、完全に新しい構造であると見なす必要があります。 このため、更新されたアプリのドキュメント ビューや説明を再作成し、支援技術を使うユーザーに再提示する必要があります。
+    **注:** 領域内のコンテンツを更新する場合は、要素上の [**AccessibilityProperties.LiveSetting**](https://msdn.microsoft.com/library/windows/apps/JJ191516) アクセシビリティ プロパティを既定以外の設定である **Polite** または **Assertive** に設定することをお勧めします。 支援技術の中には、ライブ領域の Accessible Rich Internet Applications (ARIA) 概念にこの設定をマップして、コンテンツの領域が変更されたことをユーザーに通知できるものもあります。
 
      
 
--   A deliberate page navigation that is initiated by the user is a legitimate case for refreshing the app's structure. But make sure that the UI item that initiates the navigation is correctly identified or named to give some indication that invoking it will result in a context change and page reload.
--   Don’t use UI elements that flash more than three times per second. Flashing elements can cause some people to have seizures. It is best to avoid using UI elements that flash.
--   Don’t change user context or activate functionality automatically. Context or activation changes should occur only when the user takes a direct action on a UI element that has focus. Changes in user context include changing focus, displaying new content, and navigating to a different page. Making context changes without involving the user can be disorienting for users who have disabilities. The exceptions to this requirement include displaying submenus, validating forms, displaying help text in another control, and changing context in response to an asynchronous event.
+-   ユーザーが開始する意図的なページのナビゲーションによってアプリの構造が更新されることは、問題ありません。 ただし、ナビゲーションを開始する UI 項目に適切な ID または名前を設定し、呼び出すとコンテキストが変更されてページが再読み込みされることがわかるようにしてください。
+-   1 秒間に 4 回以上光る UI 要素は使わないようにします。 明滅する要素は一部の人にとって発作を起こす原因になります。 明滅する UI 要素の使用は避けた方が良いでしょう。
+-   ユーザー コンテキストを変えたり自動的に機能をアクティブ化しないようにします。 コンテキストやアクティブ化の変更は、フォーカスのある UI 要素上でユーザーが直接操作したときにだけ行うようにします。 ユーザー コンテキストの変更には、フォーカスの変更、新しいコンテンツの表示、別のページへの移動が含まれます。 ユーザーと無関係に行われるコンテキストの変更は、障碍のあるユーザーを混乱させる可能性があります。 この要件の例外としては、サブメニューの表示、フォームの検証、別のコントロールでのヘルプ テキストの表示、非同期イベントへの応答によるコンテキストの変更などがあります。
 
-<span id="related_topics"></span>Related topics
+<span id="related_topics"></span>関連トピック
 -----------------------------------------------
 
-* [Accessibility](accessibility.md)
-* [Accessibility in the Store](accessibility-in-the-store.md)
-* [Accessibility checklist](accessibility-checklist.md)
+* [アクセシビリティ](accessibility.md)
+* [ストア内のアクセシビリティ](accessibility-in-the-store.md)
+* [アクセシビリティのチェック リスト](accessibility-checklist.md)
  
 
  

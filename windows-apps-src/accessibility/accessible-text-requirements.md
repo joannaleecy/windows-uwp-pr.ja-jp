@@ -2,7 +2,7 @@
 Description: このトピックでは、色と背景のコントラスト比を適切な値にすることで、アプリのテキストをアクセシビリティ対応にするためのベスト プラクティスについて説明します。
 title: アクセシビリティに対応したテキストの要件
 ms.assetid: BA689C76-FE68-4B5B-9E8D-1E7697F737E6
-label: テキストの要件
+label: Text requirements
 template: detail.hbs
 ---
 
@@ -118,7 +118,7 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 -   [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652)
 -   [**TextElement**](https://msdn.microsoft.com/library/windows/apps/BR209967) クラスと派生クラス
 
-関連トピック
+<span id="related_topics"></span>関連トピック
 -----------------------------------------------
 
 * [アクセシビリティ](accessibility.md)
@@ -134,6 +134,6 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=Mar16_HO3-->
 
 

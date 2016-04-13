@@ -1,34 +1,35 @@
 ---
-title: UWP on Xbox One
-description: How to build apps for the Universal Windows Platform (UWP) on Xbox One.
+title: Xbox One の UWP
+description: Xbox One でユニバーサル Windows プラットフォーム (UWP) アプリを構築する方法。
 area: Xbox
 ---
 
-# UWP on Xbox One
+# Xbox One の UWP
 
-Get started building apps for the Universal Windows Platform (UWP) on Xbox One.
+Xbox One でユニバーサル Windows プラットフォーム (UWP) 向けのアプリの構築を始めましょう。
 
-This preview release supports developing both apps and games. You don't need to be an [ID@Xbox](http://www.xbox.com/en-us/Developers/id) developer to experiment, create, and test games or apps on Xbox, but you do need to enroll with [ID@Xbox](http://www.xbox.com/en-us/Developers/id) if you want to publish and sell a game on Xbox One or take advantage of Xbox Live on Windows 10. To join our community of independent developers and enthusiasts, register for [ID@Xbox](http://www.xbox.com/en-us/Developers/id). 
+このプレビュー リリースでは、アプリとゲームの開発をどちらもサポートします。 Xbox でゲームを実験したり、作成したり、テストするには [ID@Xbox](http://www.xbox.com/en-us/Developers/id) 開発者である必要はありませんが、Xbox One のゲームを公開して販売したり、Windows 10 で Xbox Live を活用するには、[ID@Xbox](http://www.xbox.com/en-us/Developers/id) に登録する必要があります。 独立系の開発者や熱心なユーザーのコミュニティに参加するには [ID@Xbox](http://www.xbox.com/en-us/Developers/id) に登録します。 
 
-This section includes setup steps, a guide through the authentication process, information about installing the required versions of Visual Studio and Windows 10 tools, and the steps to build, run, and debug your first simple application. 
+このセクションでは、設定方法、承認手順のガイド、必要なバージョンの Visual Studio と Windows 10 ツールをインストールする方法、
+および簡単なアプリケーションを初めて構築、実行、デバッグする手順を説明します。 
 
-| Topic      | Description |
+| トピック      | 説明 |
 |------------|-------------|
-|[Getting started](getting-started.md)| Getting started guide for UWP on Xbox One development. |
-|[Known issues](known-issues.md)| Known issues with UWP on Xbox One Developer Preview. |
-|[FAQ](frequently-asked-questions.md)| Frequently asked questions related to UWP on Xbox One. |
-|[Xbox One Developer Mode Activation](devkit-activation.md)| Explains how to enable Developer Mode on Xbox One. |
-|[Introduction to Xbox One tools](introduction-to-xbox-tools.md)| Describes the Xbox One specific tool _Dev Home_, using the Windows Device Portal, and setting up Visual Studio for development, and guides a new developer through their first Xbox UWP application. |
-|[Set up your UWP on Xbox development environment](development-environment-setup.md)| Describes the steps to set up and test your Xbox One development environment. |
-|[System resources for UWP apps and games on Xbox One](system-resource-allocation.md)| Describes the resources available to your application when it is running on Xbox One. | 
-|[10-foot design guidelines](..\input-and-devices\designing-for-tv.md)| Describes best practices for designing an app that will be viewed on a TV and use a controller for input. |  
-|[Introduction to multi-user applications](multi-user-applications.md)| Describes multi-user applications (MUAs) on Xbox One. |
-|[Samples](samples.md)| Pointer to the github location – TVHelpers - where you will find useful XAML and JavaScript samples to get you started developing for Xbox. Samples include a full XAML Media App template as well as automatic controller navigation, rich media playback, and search for web-based technologies. |
-|[Disabling Developer Mode on Xbox One](devkit-deactivation.md)| Explains how to disable Developer Mode on Xbox One. |
-|[UWP features that aren’t yet supported on Xbox One](http://go.microsoft.com/fwlink/?LinkId=760755)|  Describes UWP feature areas that are not yet fully functional on Xbox One.|  
+|[概要](getting-started.md)| Xbox One での UWP の開発の概要を説明します。 |
+|[既知の問題](known-issues.md)| Xbox One Developer Preview の UWP の既知の問題です。 |
+|[FAQ](frequently-asked-questions.md)| Xbox One の UWP に関してよく寄せられる質問です。 |
+|[Xbox One 開発者モードのライセンス認証](devkit-activation.md)| Xbox One で開発者モードを有効にする方法について説明します。 |
+|[Xbox One ツールの概要](introduction-to-xbox-tools.md)| Xbox One 固有のツールである _Dev Home_ について、Windows Device Portal の使い方、開発用の Visual Studio の設定、最初の Xbox UWP アプリケーションによる新しい開発のガイドなどを説明します。 |
+|[Xbox の開発環境に UWP を設定する](development-environment-setup.md)| Xbox One の開発環境を設定してテストする手順について説明します。 |
+|[UWP アプリと Xbox One でゲームのシステム リソース](system-resource-allocation.md)| アプリケーションが Xbox One で実行されている場合に利用できるリソースについて説明します。 | 
+|[10 フィートの設計に関するガイドライン](..\input-and-devices\designing-for-tv.md)| テレビに表示して、コントローラーを使って入力するアプリを設計するための、ベスト プラクティスについて説明します。 |  
+|[複数ユーザーのアプリケーションの概要](multi-user-applications.md)| Xbox One での複数ユーザーのアプリケーション (MUA) について説明します。 |
+|[サンプル](samples.md)| GitHub の場所 (TVHelpers) へのポインターです。TVHelpers には Xbox の開発を始めるのに役立つ、XAML と JavaScript のサンプルが掲載されています。 サンプルには、完全なメディア アプリの XAML テンプレート、コントローラーの自動ナビゲーション、リッチ メディアの再生、Web ベース テクノロジの検索などが含まれています。 |
+|[Xbox One で開発者モードを無効にする](devkit-deactivation.md)| Xbox One で開発者モードを無効にする方法について説明します。 |
+|[Xbox One でまだサポートされていない UWP 機能](http://go.microsoft.com/fwlink/?LinkId=760755)|  Xbox One でまだ完全に機能していない UWP 機能について説明します。|  
 
-## See also
-- [Overview of UWP apps on Xbox One](http://go.microsoft.com/fwlink/?LinkId=780786)  
+## 参照
+- [Xbox One の UWP アプリの概要](http://go.microsoft.com/fwlink/?LinkId=780786)  
   
 
 

@@ -1,115 +1,115 @@
 ---
 ms.assetid: 88e16ec8-deff-4a60-bda6-97c5dabc30b8
-description: This topic presents a case study of porting a functioning peer-to-peer quiz game WinRT 8.1 sample app to a Windows 10 Universal Windows Platform (UWP) app.
-title: Windows Runtime 8.x to UWP case study, QuizGame peer-to-peer sample app
+description: このトピックでは、機能しているピア ツー ピアのクイズ ゲームに関する WinRT 8.1 サンプル アプリを、Windows 10 ユニバーサル Windows プラットフォーム (UWP) アプリへ移植する場合のケース スタディについて説明します。
+title: Windows ランタイム 8.x から UWP へのケース スタディ: QuizGame ピア ツー ピアのサンプル アプリ
 ---
 
-# Windows Runtime 8.x to UWP case study: QuizGame peer-to-peer sample app
+# Windows ランタイム 8.x から UWP へのケース スタディ: QuizGame ピア ツー ピアのサンプル アプリ
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-This topic presents a case study of porting a functioning peer-to-peer quiz game WinRT 8.1 sample app to a Windows 10 Universal Windows Platform (UWP) app.
+このトピックでは、機能しているピア ツー ピアのクイズ ゲームに関する WinRT 8.1 サンプル アプリを、Windows 10 ユニバーサル Windows プラットフォーム (UWP) アプリへ移植する場合のケース スタディについて説明します。
 
-A Universal 8.1 app is one that builds two versions of the same app: one app package for Windows 8.1, and a different app package for Windows Phone 8.1. The WinRT 8.1 version of QuizGame uses a Universal Windows app project arrangement, but it takes a different approach and it builds a functionally distinct app for the two platforms. The Windows 8.1 app package serves as the host for a quiz game session, while the Windows Phone 8.1 app package plays the role of the client to the host. The two halves of the quiz game session communicate via peer-to-peer networking.
+ユニバーサル 8.1 アプリは、同じアプリの 2 つのバージョン (Windows 8.1 用のアプリ パッケージと Windows Phone 8.1 用の別のアプリ パッケージ) をビルドするアプリです。 QuizGame の WinRT 8.1 バージョンでは、ユニバーサル Windows アプリ プロジェクトに用意されているデータを使いますが、独自の方法が採用されており、2 つのプラットフォームに対して機能的に異なるアプリがビルドされます。 Windows 8.1 用のアプリ パッケージはクイズ ゲーム セッションのホストとして機能します。これに対して、Windows Phone 8.1 用のアプリ パッケージはホストに対するクライアントとして機能します。 クイズ ゲーム セッションの 2 つの要素は、ピア ツー ピア ネットワークを経由して通信します。
 
-Tailoring the two halves to PC, and phone, respectively makes good sense. But, wouldn't it be even better if you could run both the host and the client on just about any device of your choosing? In this case study, we'll port both apps to Windows 10 where they will each build into a single app package that users can install onto a wide range of devices.
+これら 2 つの要素を PC や電話向けにそれぞれ調整することで、適切なアプリを作ることができます。 また、必要となるほとんどのデバイスでホストとクライアントの両方を実行できたら、より便利ではないでしょうか。 このケース スタディでは、両方のアプリを Windows 10 に移植します。Windows 10 では、これらのアプリを基に単一のアプリ パッケージが作成されます。このアプリ パッケージは、さまざまな種類のデバイスにインストールできます。
 
-The app uses patterns that make use of views and view models. As a result of this clean separation, the porting process for this app is very straightforward, as you'll see.
+アプリでは、ビューとビュー モデルを使うパターンを採用します。 このパターンではビューとビュー モデルが明確に分離されているため、以下の説明をご覧になるとわかりますが、このアプリの移植プロセスは非常に簡単です。
 
-**Note**  This sample assumes your network is configured to send and receive custom UDP group multicast packets (most home networks are, although your work network may not be). The sample also sends and receives TCP packets.
-
- 
-
-**Note**   When opening QuizGame10 in Visual Studio, if you see the message "Visual Studio update required", then follow the steps in [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md#targetplatformversion).
+**注**  このサンプルでは、カスタム UDP グループ マルチキャスト パケットを送受信するようにネットワークが構成されていることを前提としています (ほとんどのホーム ネットワークはこの前提に該当しますが、社内ネットワークはそのように構成されていない場合があります)。 また、このサンプルでは TCP パケットを送受信します。
 
  
 
-## Downloads
+**注**   Visual Studio で QuizGame10 を開くときに、"Visual Studio 更新プログラムが必要" というメッセージが表示されたら、「[TargetPlatformVersion](w8x-to-uwp-troubleshooting.md#targetplatformversion)」の手順を実行してください。
 
-[Download the QuizGame Universal 8.1 app](http://go.microsoft.com/fwlink/?linkid=532953). This is the initial state of the app prior to porting. 
+ 
 
-[Download the QuizGame10 Windows 10 app](http://go.microsoft.com/fwlink/?linkid=532954). This is the state of the app just after  porting. 
+## ダウンロード
 
-[See the latest version of this sample on GitHub](https://github.com/Microsoft/Windows-appsample-quizgame).
+[QuizGame ユニバーサル 8.1 アプリをダウンロードします](http://go.microsoft.com/fwlink/?linkid=532953)。 これは、移植前の初期状態のアプリです。 
 
-## The WinRT 8.1 solution
+[QuizGame10 Windows 10 アプリをダウンロードします](http://go.microsoft.com/fwlink/?linkid=532954)。 これは、移植直後の状態のアプリです。 
+
+[このサンプルの最新バージョンについては GitHub をご覧ください](https://github.com/Microsoft/Windows-appsample-quizgame)。
+
+## WinRT 8.1 ソリューション
 
 
-Here’s what QuizGame—the app that we're going to port—looks like.
+次に、ここで移植するアプリ QuizGame の外観を示します。
 
-![the quizgame host app running on windows](images/w8x-to-uwp-case-studies/c04-01-win81-how-the-host-app-looks.png)
+![Windows で実行されている QuizGame ホスト アプリ](images/w8x-to-uwp-case-studies/c04-01-win81-how-the-host-app-looks.png)
 
-The QuizGame host app running on Windows
+Windows で実行されている QuizGame ホスト アプリ
 
  
 
-![the quizgame client app running on windows phone](images/w8x-to-uwp-case-studies/c04-02-wp81-how-the-client-app-looks.png)
+![Windows Phone で実行されている QuizGame クライアント アプリ](images/w8x-to-uwp-case-studies/c04-02-wp81-how-the-client-app-looks.png)
 
-The QuizGame client app running on Windows Phone
+Windows Phone で実行されている QuizGame クライアント アプリ
 
-## A walkthrough of QuizGame in use
+## このケース スタディで使う QuizGame のチュートリアル
 
-This is a short hypothetical account of the app in use, but it provides useful info should you want to try out the app for yourself over your wireless network.
+ここで使うアプリの簡単な説明を示します。これは架空のアプリの説明ですが、ワイヤレス ネットワークでアプリを使う場合に役立つ情報も記載されています。
 
-A fun quiz game is taking place in a bar. There's a big TV in the bar that everyone can see. The quizmaster has a PC whose output is being shown on the TV. That PC has "the host app" running on it. Anyone who wants to take part in the quiz just needs to install "the client app" on their phone or Surface.
+楽しいクイズ ゲームがバーで行われています。 バーには大型テレビがあり、全員がそのテレビを見ることができます。 クイズ番組の司会者は PC を使っており、その出力画面が TV に映し出されています。 その PC では "ホスト アプリ" が実行されています。 クイズへの参加を希望する視聴者は、"クライアント アプリ" を自分の携帯電話や Surface にインストールするだけです。
 
-The host app is in lobby mode, and on the big TV, it's advertising that it's ready for client apps to connect. Joan launches the client app on her mobile device. She types her name into the **Player name** text box and taps **Join game**. The host app acknowledges that Joan has joined by displaying her name, and Joan’s client app indicates that it's waiting for the game to begin. Next, Maxwell goes through those same steps on his mobile device.
+ホスト アプリはロビー モードになっており、大型テレビでは、クライアント アプリ接続の準備ができていることを通知しています。 Joan は、モバイル デバイスでクライアント アプリを起動します。 彼女は、**[Player name] (プレーヤー名)** テキスト ボックスに自分の名前を入力してから **[Join game] (ゲームに参加)** をタップします。 ホスト アプリでは Joan の名前が表示され、彼女の参加が認識されました。また、Joan のクライアント アプリでは、ゲームの開始を待機していることが示されています。 次に、Maxwell が同じ手順を自分のモバイル デバイスで実行しました。
 
-The quizmaster clicks **Start game** and the host app shows a question and the possible answers (it also shows a list of the joined players in normal fontweight, colored gray). Simultaneously, the answers appear displayed on buttons on joined client devices. Joan taps the button with the answer "1975" on it whereupon all her buttons become disabled. On the host app, Joan’s name is painted green (and becomes bold) in acknowledgment of the receipt of her answer. Maxwell answers, also. The quizmaster, noting that all players' names are green, clicks **Next question**.
+クイズ番組の司会者が **[Start game] (ゲームの開始)** をクリックすると、ホスト アプリには質問と正しいと思われる回答がいくつか表示されます (参加しているプレイヤーの一覧も表示されます。この一覧では、フォントの太さは通常、色は灰色で表示されます)。 同時に、参加しているクライアント デバイスでは、回答がボタンで表示されます。 Joan は "1975" と示されている回答のボタンをタップしました。するとすぐに、すべてのボタンが無効になりました。 ホスト アプリでは、Joan の名前が太字の緑色で表示され、彼女の回答が受信されたことが示されました。 Maxwell の回答しました。 クイズ番組の司会者はすべてプレーヤーの名前が緑色になったことを確認して、**[Next question] (次の質問)** をクリックしました。
 
-Questions continue to be asked and answered in this same cycle. When the last question is being shown on the host app, **Show results** is the content of the button, and not **Next question**. When **Show results** is clicked, the results are shown. Clicking **Return to lobby** returns to the beginning of the game lifecycle with the exception that joined players remain joined. But, going back to the lobby gives new players a chance to join, and even a convenient time for joined players to leave (although a joined player can leave at any time by tapping **Leave game**).
+引き続き、同じ手順で質問の表示と回答が繰り返されました。 最後の質問がホスト アプリに表示されると、ボタンの内容は **[Next question] (次の質問)** ではなく、**[Show results] (結果の表示)** となりました。 **[Show results] (結果の表示)** をクリックすると、結果が表示されました。 **[Return to lobby] (ロビーに戻る)** をクリックすると、ゲームのライフ サイクルの最初に戻りますが、プレイヤーは参加したままになります。 ただし、ロビーに戻ると、新しいプレイヤーが参加できるようになります。このとき、参加していたプレイヤーはゲームの参加をやめることができます (**[Leave game] (ゲームの参加をやめる)** をタップすることで、参加しているプレイヤーはいつでもゲームをやめることができます)。
 
-## Local test mode
+## ローカル テスト モード
 
-To try out the app and its interactions on a single PC instead of distributed across devices, you can build the host app in local test mode. This mode completely bypasses use of the network. Instead, the UI of the host app displays the host portion to the left of the window and, to the right, two copies of the client app UI stacked vertically (note that, in this version, the local test mode UI is fixed for a PC display; it does not adapt to small devices). These segments of UI, all in the same app, communicate with one another via a mock client communicator, which simulates the interactions that would otherwise take place over the network.
+アプリとその操作を、(複数のデバイスに分散された状態ではなく) 1 台の PC でテストする場合は、ローカル テスト モードでホスト アプリをビルドできます。 このモードでは、ネットワークはまったく使われません。 代わりに、ホスト アプリの UI では、ウィンドウの左側にはホスト部分の画面が表示され、右側にはクライアント アプリの UI をコピーした 2 つの画面が上下に並べて表示されます (このバージョンでは、ローカル テスト モードの UI は PC のディスプレイ用に固定されており、小型のデバイスには対応していません)。 UI のこれらのセグメント (すべて同じアプリに属しています) は、モック クライアント コミュニケーターを経由して相互に通信します。このコミュニケーターは、ネットワークを通じて実行される操作をシミュレートします。
 
-To activate local test mode, define **LOCALTESTMODEON** (in project properties) as a conditional compilation symbol, and rebuild.
+ローカル テスト モードを有効にするには、**LOCALTESTMODEON** (プロジェクトのプロパティ) を条件付きコンパイル シンボルとして定義して、リビルドします。
 
-## Porting to a Windows 10 project
+## Windows 10 プロジェクトへの移植
 
-QuizGame has the following pieces.
+QuizGame には、次の要素が含まれています。
 
--   P2PHelper. This is a portable class library that contains the peer-to-peer networking logic.
--   QuizGame.Windows. This is the project that builds the app package for the host app, which targets Windows 8.1.
--   QuizGame.WindowsPhone. This is the project that builds the app package for the client app, which targets Windows Phone 8.1.
--   QuizGame.Shared. This is the project that contains source code, markup files, and other assets and resources, that are used by both of the other two projects.
+-   P2PHelper。 これは、ピア ツー ピアのネットワーク ロジックを含むポータブル クラス ライブラリです。
+-   QuizGame.Windows。 これは、Windows 8.1 を対象とするホスト アプリのアプリ パッケージをビルドするプロジェクトです。
+-   QuizGame.WindowsPhone。 これは、Windows Phone 8.1 を対象とするクライアント アプリのアプリ パッケージをビルドするプロジェクトです。
+-   QuizGame.Shared。 これは、他の 2 つのプロジェクトの両方で使われるソース コード、マークアップ ファイル、および他のアセットやリソースを含むプロジェクトです。
 
-For this case study, we have the usual options described in [If you have a Universal 8.1 app](w8x-to-uwp-root.md#if-you-have-an-81-universal-windows-app) with respect to what devices to support.
+このケース スタディでは、サポートするデバイスに関して、「[ユニバーサル 8.1 アプリがある場合](w8x-to-uwp-root.md#if-you-have-an-81-universal-windows-app)」で説明した通常のオプションを使います。
 
-Based on those options, we'll port QuizGame.Windows to a new Windows 10 project called QuizGameHost. And, we'll port QuizGame.WindowsPhone to a new Windows 10 project called QuizGameClient. These projects will target the universal device family, so they will run on any device. And, we'll keep the QuizGame.Shared source files, etc, in their own folder, and we'll link those shared files into the two new projects. Just like before, we'll keep everything in one solution and we'll name it QuizGame10.
+これらのオプションに基づいて、QuizGame.Windows を QuizGameHost と呼ばれる新しい Windows 10 プロジェクトに移植します。 QuizGame.WindowsPhone は、QuizGameClient と呼ばれる新しい Windows 10 プロジェクトに移植します。 これらのプロジェクトはユニバーサル デバイス ファミリを対象としているため、どのようなデバイスでも実行できます。 また、QuizGame.Shared ソース ファイルなどのファイルを独自のフォルダーに保存し、これらの共有ファイルを 2 つの新しいプロジェクトにリンクします。 これまでと同様に、すべてのデータを 1 つのソリューションに保存し、QuizGame10 という名前を付けます。
 
-**The QuizGame10 solution**
+**QuizGame10 ソリューション**
 
--   Create a new solution (**New Project** &gt; **Other Project Types** &gt; **Visual Studio Solutions**) and name it QuizGame10.
+-   新しいソリューションを作成し (**[新しいプロジェクト]**、**[その他のプロジェクトの種類]**、**[Visual Studio ソリューション]** の順に移動して作成します)、QuizGame10 という名前を付けます。
 
 **P2PHelper**
 
--   In the solution, create a new Windows 10 class library project (**New Project** &gt; **Windows Universal** &gt; **Class Library (Windows Universal)**) and name it P2PHelper.
--   Delete Class1.cs from the new project.
--   Copy P2PSession.cs, P2PSessionClient.cs, and P2PSessionHost.cs into the new project's folder and include the copied files in the new project.
--   The project will build without needing further changes.
+-   ソリューション内に、新しい Windows 10 クラス ライブラリ プロジェクトを作成し (**[新しいプロジェクト]**、**[Windows ユニバーサル]**、**[Class Library (Windows Universal)]** の順に移動して作成します)、P2PHelper という名前を付けます。
+-   新しいプロジェクトから Class1.cs を削除します。
+-   P2PSession.cs、P2PSessionClient.cs、P2PSessionHost.cs を新しいプロジェクトのフォルダーにコピーし、コピーしたファイルを新しいプロジェクトに追加します。
+-   プロジェクトをビルドします。その他の変更は必要ありません。
 
-**Shared files**
+**共有ファイル**
 
--   Copy the folders Common, Model, View, and ViewModel from \\QuizGame.Shared\\ to \\QuizGame10\\.
--   Common, Model, View, and ViewModel are what we'll mean when we refer to the shared folders on disk.
+-   \\QuizGame.Shared\\ から \\QuizGame10\\ に、Common、Model、View、ViewModel の各フォルダーをコピーします。
+-   Common、Model、View、ViewModel は、ディスク上の共有フォルダーを参照するときに意味のある名前です。
 
 **QuizGameHost**
 
--   Create a new Windows 10 app project (**Add** &gt; **New Project** &gt; **Windows Universal** &gt; **Blank Application (Windows Universal)**) and name it QuizGameHost.
--   Add a reference to P2PHelper (**Add Reference** &gt; **Projects** &gt; **Solution** &gt; **P2PHelper**).
--   In **Solution Explorer**, create a new folder for each of the shared folders on disk. In turn, right-click each folder you just created and click **Add** &gt; **Existing Item** and navigate up a folder. Open the appropriate shared folder, select all files, and then click **Add As Link**.
--   Copy MainPage.xaml from \\QuizGame.Windows\\ to \\QuizGameHost\\ and change the namespace to QuizGameHost.
--   Copy App.xaml from \\QuizGame.Shared\\ to \\QuizGameHost\\ and change the namespace to QuizGameHost.
--   Instead of overwriting app.xaml.cs, we'll keep the version in the new project and just make one targeted change to it to support local test mode. In app.xaml.cs, replace this line of code:
+-   新しい Windows 10 アプリ プロジェクトを作成し (**[追加]**、**[新しいプロジェクト]**、**[Windows ユニバーサル]**、**[Blank Application (Windows Universal)]** の順に移動して作成します)、QuizGameHost という名前を付けます。
+-   P2PHelper に参照を追加します (**[参照の追加]**、**[プロジェクト]**、**[ソリューション]**、**[P2PHelper]** の順に移動して追加します)。
+-   **ソリューション エクスプ ローラー**で、ディスク上の各共有フォルダー用に新しいフォルダーを作成します。 次に、作成した各フォルダーを右クリックし、**[追加]**、**[既存の項目]** の順にクリックして、フォルダーに移動します。 適切な共有フォルダーを開き、すべてのファイルを選んで、**[リンクとして追加]** をクリックします。
+-   \\QuizGame.Windows\\ から \\QuizGameHost\\ に MainPage.xaml をコピーして、名前空間を QuizGameHost に変更します。
+-   \\QuizGame.Shared\\ から \\QuizGameHost\\ に App.xaml をコピーして、名前空間を QuizGameHost に変更します。
+-   app.xaml.cs を上書きせずに、このファイルのバージョンを新しいプロジェクトに保存しておきます。ローカル テスト モードをサポートするように、対象となる変更を 1 つだけそのファイルに加えます。 app.xaml.cs で、次のコード行を置き換えます。
 
 ```CSharp
 rootFrame.Navigate(typeof(MainPage), e.Arguments);
 ```
 
-with this:
+上のコード行を次のコード行と置き換えます。
 
 ```CSharp
 #if LOCALTESTMODEON
@@ -119,35 +119,35 @@ with this:
 #endif
 ```
 
--   In **Properties** &gt; **Build** &gt; **conditional compilation symbols**, add LOCALTESTMODEON.
--   You'll now be able to go back to the code you added to app.xaml.cs and resolve the TestView type.
--   In package.appxmanifest, change the capability name from internetClient to internetClientServer.
+-   **[プロパティ]**、**[ビルド]**、**[条件付きコンパイル シンボル]** の順に移動して、LOCALTESTMODEON を追加します。
+-   これで、app.xaml.cs に追加したコードに戻り、TestView 型を解決できます。
+-   package.appxmanifest で、機能名を internetClient から internetClientServer に変更します。
 
 **QuizGameClient**
 
--   Create a new Windows 10 app project (**Add** &gt; **New Project** &gt; **Windows Universal** &gt; **Blank Application (Windows Universal)**) and name it QuizGameClient.
--   Add a reference to P2PHelper (**Add Reference** &gt; **Projects** &gt; **Solution** &gt; **P2PHelper**).
--   In **Solution Explorer**, create a new folder for each of the shared folders on disk. In turn, right-click each folder you just created and click **Add** &gt; **Existing Item** and navigate up a folder. Open the appropriate shared folder, select all files, and then click **Add As Link**.
--   Copy MainPage.xaml from \\QuizGame.WindowsPhone\\ to \\QuizGameClient\\ and change the namespace to QuizGameClient.
--   Copy App.xaml from \\QuizGame.Shared\\ to \\QuizGameClient\\ and change the namespace to QuizGameClient.
--   In package.appxmanifest, change the capability name from internetClient to internetClientServer.
+-   新しい Windows 10 アプリ プロジェクトを作成し (**[追加]**、**[新しいプロジェクト]**、**[Windows ユニバーサル]**、**[Blank Application (Windows Universal)]** の順に移動して作成します)、QuizGameClient という名前を付けます。
+-   P2PHelper に参照を追加します (**[参照の追加]**、**[プロジェクト]**、**[ソリューション]**、**[P2PHelper]** の順に移動して追加します)。
+-   **ソリューション エクスプ ローラー**で、ディスク上の各共有フォルダー用に新しいフォルダーを作成します。 次に、作成した各フォルダーを右クリックし、**[追加]**、**[既存の項目]** の順にクリックして、フォルダーに移動します。 適切な共有フォルダーを開き、すべてのファイルを選んで、**[リンクとして追加]** をクリックします。
+-   \\QuizGame.WindowsPhone\\ から \\QuizGameClient\\ に MainPage.xaml をコピーして、名前空間を QuizGameClient に変更します。
+-   \\QuizGame.Shared\\ から \\QuizGameClient\\ に App.xaml をコピーして、名前空間を QuizGameClient に変更します。
+-   package.appxmanifest で、機能名を internetClient から internetClientServer に変更します。
 
-You'll now be able to build and run.
+これで、ビルドして実行することができます。
 
-## Adaptive UI
+## アダプティブ UI
 
-The QuizGameHost Windows 10 app looks fine when the app is running in a wide window (which is only possible on a device with a large screen). When the app's window is narrow, though (which happens on a small device, and can also happen on a large device), the UI is squashed so much that it's unreadable.
+アプリを幅の広いウィンドウで実行するときには (大型画面を備えたデバイスの場合)、QuizGameHost Windows 10 アプリでは問題は発生しません。 ただし、アプリのウィンドウが狭い場合は (小型のデバイスが該当しますが、大型のデバイスの場合もあり得ます)、UI がかなり縮小され、認識するのが難しくなります。
 
-We can use the adaptive Visual State Manager feature to remedy this, as we explained in [Case study: Bookstore2](w8x-to-uwp-case-study-bookstore2.md). First, set properties on visual elements so that, by default, the UI is laid out in the narrow state. All of these changes take place in \\View\\HostView.xaml.
+この問題を解決するには、アダプティブな Visual State Manager 機能を使うことができます。これについては、「[ケース スタディ: Bookstore2](w8x-to-uwp-case-study-bookstore2.md)」で説明しています。 最初に、既定で UI が幅の狭い状態でレイアウトされるように、視覚要素のプロパティを設定します。 これらの変更はすべて、\\View\\HostView.xaml で行います。
 
--   In the main **Grid**, change the **Height** of the first **RowDefinition** from "140" to "Auto".
--   On the **Grid** that contains the **TextBlock** named `pageTitle`, set `x:Name="pageTitleGrid"` and `Height="60"`. These first two steps are so that we can effectively control the height of that **RowDefinition** via a setter in a visual state.
--   On `pageTitle`, set `Margin="-30,0,0,0"`.
--   On the **Grid** indicated by the comment `<!-- Content -->`, set `x:Name="contentGrid"` and `Margin="-18,12,0,0"`.
--   On the **TextBlock** immediately above the comment `<!-- Options -->`, set `Margin="0,0,0,24"`.
--   In the default **TextBlock** style (the first resource in the file), change the **FontSize** setter's value to "15".
--   In `OptionContentControlStyle`, change the **FontSize** setter's value to "20". This step and the previous one will give us a good type ramp that will work well on all devices. These are much more flexible sizes than the "30" we were using for the Windows 8.1 app.
--   Finally, add the appropriate Visual State Manager markup to the root **Grid**.
+-   メインの **Grid** で、最初の **RowDefinition** の **Height** を、"140" から "Auto" に変更します。
+-   `pageTitle` という名前の **TextBlock** を含んでいる **Grid** で、`x:Name="pageTitleGrid"` と `Height="60"` を設定します。 最初の 2 つの手順は、表示状態の setter を使って **RowDefinition** の高さを効果的に制御できるようにするための手順です。
+-   `pageTitle` で、`Margin="-30,0,0,0"` を設定します。
+-   コメント `<!-- Content -->` で示されている **Grid** で、`x:Name="contentGrid"` と `Margin="-18,12,0,0"` を設定します。
+-   コメント `<!-- Options -->` のすぐ上にある **TextBlock** で、`Margin="0,0,0,24"` を設定します。
+-   既定の **TextBlock** スタイル (ファイル内の最初のリソース) で、**FontSize** setter の値を "15" に変更します。
+-   `OptionContentControlStyle` で、**FontSize** setter の値を "20" に変更します。 この手順と前の手順によって、すべてのデバイスで適切に動作する優れた書体見本を使うことができます。 これらの書体のサイズは、Windows 8.1 アプリで使っていた "30" よりも、大幅に柔軟なサイズとなっています。
+-   最後に、適切な Visual State Manager のマークアップをルートの **Grid** に追加します。
 
 ```xaml
 <VisualStateManager.VisualStateGroups>
@@ -166,10 +166,10 @@ We can use the adaptive Visual State Manager feature to remedy this, as we expla
 </VisualStateManager.VisualStateGroups>
 ```
 
-## Universal styling
+## ユニバーサル スタイル設定
 
 
-You'll notice that in Windows 10, the buttons don't have the same touch-target padding in their template. Two small changes will remedy that. First, add this markup to app.xaml in both QuizGameHost and QuizGameClient.
+Windows 10 のボタンのテンプレートでは、ボタンに関するタッチ ターゲットのパディングが同じになっていないことに注意してください。 小規模な変更を 2 つ行うことによって、この問題が解決されます。 最初に、QuizGameHost と QuizGameClient の両方の app.xaml に、次のマークアップを追加します。
 
 ```xaml
 <Style TargetType="Button">
@@ -177,17 +177,17 @@ You'll notice that in Windows 10, the buttons don't have the same touch-target p
 </Style>
 ```
 
-And second, add this setter to `OptionButtonStyle` in \\View\\ClientView.xaml.
+次に、以下の setter を \\View\\ClientView.xaml の `OptionButtonStyle` に追加します。
 
 ```xaml
 <Setter Property="Margin" Value="6"/>
 ```
 
-With that last tweak, the app will behave and look just the same as it did before the port, with the additional value that it will now run everywhere.
+上に示した最後の調整を行うことで、アプリの動作と外観が移植前と同じになります。また、アプリはどのデバイスでも実行できるという機能が追加されます。
 
-## Conclusion
+## まとめ
 
-The app that we ported in this case study was a relatively complex one involving several projects, a class library, and quite a large amount of code and user interface. Even so, the port was straightforward. Some of the ease of porting is directly attributable to the similarity between the Windows 10 developer platform and the Windows 8.1 and Windows Phone 8.1 platforms. Some is due to the way the original app was designed to keep the models, the view models, and the views separate.
+このケース スタディで移植したアプリは、複数のプロジェクト、1 つのクラス ライブラリ、および多くのコードやユーザー インターフェイスを含んでいるため、比較的複雑なアプリになっています。 それでも、移植は非常に簡単に行われました。 移植を簡単に行うことができた直接的な原因は、Windows 10 開発者プラットフォームと、Windows 8.1 および Windows Phone 8.1 プラットフォームが類似していることです。 また、元のアプリがモデル、ビュー モデル、およびビューを別個に維持するように設計されていたことも、その原因の 1 つです。
 
 
 <!--HONumber=Mar16_HO3-->

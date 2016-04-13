@@ -1,79 +1,79 @@
 ---
-Description: The Windows Store enforces certain rules related to version numbers, which work somewhat differently in different OS versions.
-title: Package version numbering
+Description: Windows ストアではバージョン番号に関する特定の規則が適用され、別の OS バージョンでは機能が多少異なります。
+title: パッケージ バージョンの番号付け
 ms.assetid: DD7BAE5F-C2EE-44EE-8796-055D4BCB3152
 ---
 
-# Package version numbering
+# パッケージ バージョンの番号付け
 
 
-Each package you provide must have a version number (provided as a value in the **Version** attribute of the **Package/Identity** element in the app manifest). The Windows Store enforces certain rules related to version numbers, which work somewhat differently in different OS versions.
+提供する各パッケージには、バージョン番号がある必要があります (アプリ マニフェストの **Package/Identity** 要素の **Version** 属性の値として提供されます)。 Windows ストアではバージョン番号に関する特定の規則が適用され、別の OS バージョンでは機能が多少異なります。
 
-> **Note**  This topic refers to "packages", but unless noted, the same rules apply to version numbers for both .appx and .appxbundle files.
+> **注:** このトピックは "パッケージ" について説明していますが、特に記載のない限り、.appx ファイルと .appxbundle ファイルのバージョン番号にも同じ規則が適用されます。
 
-## Version numbering for Windows 10 packages
+## Windows 10 パッケージのバージョン番号付け
 
 
-The version number of any Windows 10 package must always be higher than any version number for Windows 8, Windows 8.1, and/or Windows Phone 8.1 packages you are publishing (or packages for those OS versions that you have previously published) for the same app. (For more info, see [Adding packages for Windows 10 to a previously-published app](guidance-for-app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app).)
+Windows 10 パッケージのバージョン番号は、同じアプリについて公開中の Windows 8、Windows 8.1、Windows Phone 8.1 のパッケージ (または前に公開したこれらの OS バージョンのパッケージ) のバージョン番号より常に大きい必要があります (詳しくは、「[以前に公開したアプリに Windows 10 用のパッケージを追加する](guidance-for-app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app)」をご覧ください)。
 
-> **Note**  The last (fourth) section of the version number is reserved for Store use and must be left as 0.
+> **注:** バージョン番号の最後 (4 番目) のセクションはストア用に予約されており、0 のままにしておく必要があります。
 
-When choosing a Windows 10 package from your published submission, the Windows Store will always use the highest-versioned package that is applicable to the customer’s device. This gives you greater flexibility and puts you in control over which packages will be provided to customers on specific device types. Importantly, you can submit these packages in any order; you are not limited to providing higher-versioned packages with each subsequent submission.
+公開された申請から Windows 10 パッケージを選択すると、Windows ストアは常にユーザーのデバイスに適用可能で最も高いバージョンのパッケージを使用します。 これにより高い柔軟性が与えられ、特定のデバイスの種類のユーザーにどのパッケージを提供するかを管理することができます。 重要なことに、これらのパッケージは任意の順序で申請することができます。後続の各申請でより高いバージョンのパッケージを提供する必要はありません。
 
-You can even provide multiple Windows 10 packages with the same version number. However, packages that share a version number cannot also have the same architecture, because the full identity that the Store uses for each of your packages must be unique. For more info, see [**Identity**](https://msdn.microsoft.com/library/windows/apps/br211441).
+同じバージョン番号を持つ複数の Windows 10 パッケージを提供することもできます。 ただし、バージョン番号を共有するパッケージが同じアーキテクチャを持つことはできません。ストアで各パッケージに使用する完全な ID は一意である必要があるためです。 詳しくは、「[**Identity**](https://msdn.microsoft.com/library/windows/apps/br211441)」をご覧ください。
 
-If you do provide multiple Windows 10 packages that use the same version number, the architecture (in the order x64, x86, ARM, neutral) will be used to decide which one is of higher rank when considering which package to provide to given device. When ranking app bundles that use the same version number, the highest architecture rank within the bundle is considered: an app bundle that contains an x64 package will have a higher rank than one that only contains an x86 package.
+同じバージョン番号を使う複数の Windows 10 パッケージを提供する場合、指定のデバイスにどのパッケージを提供するかを検討する際にどのランクがより高いかを決定するのにアーキテクチャ (x64、x86、ARM、ニュートラルの順番) が使用されます。 バージョン番号が同じアプリ バンドルにランクを付けるときは、x64 パッケージが含まれているアプリ バンドルが x86 パッケージしか含まれていないアプリ バンドルより高いランクとなるようにバンドル内で最高のアーキテクチャのランクを考慮します。
 
-This gives you a lot of flexibility to evolve your app over time. You can upload and submit new packages that use lower version numbers to add support for affordable devices that you did not previously support, you can add higher-versioned packages that have stricter dependencies to take advantage of hardware or OS features, or you can add higher-versioned packages that serve as updates to some or all of your existing customer base.
+これにより、アプリを時間をかけて進化させる大きな柔軟性が与えられます。 小さいバージョン番号を使って新しいパッケージをアップロードして申請し、以前サポートしていなかった手頃なデバイスのサポートを追加したり、より厳密な依存関係を持つより高いバージョンのパッケージを追加してハードウェアまたは OS の機能を利用したり、既存のユーザー ベースの一部または全部に更新となるより高いバージョンのパッケージを追加したりすることができます。
 
-The following example illustrates how version numbering can be managed to deliver the intended packages to your customers over multiple submissions.
+次の例は、バージョン番号を管理して複数の申請でユーザーに目的のパッケージを提供する方法について説明します。
 
-### Example: Moving to a single package over multiple submissions
+### 例: 複数の申請で 1 つのパッケージに移行する
 
-Windows 10 enables you to write a single codebase that runs everywhere. This makes starting a new cross-platform project much easier. However, for a number of reasons, you might not want to merge existing codebases to create a single project right away.
+Windows 10 では、すべての場所で実行される単一のコードベースを記述することができます。 これにより、新しいクロスプラットフォーム プロジェクトの開始がはるかに簡単になります。 ただし、さまざまな理由から、既存のコードベースを結合してすぐに 1 つのプロジェクトを作成したくない場合があります。
 
-You can use the package versioning rules to gradually move your customers to a single package for the Universal device family, while shipping a number of interim updates for specific device families (including ones that take advantage of Windows 10 APIs). The example below illustrates how the same rules are consistently applied.
+パッケージのバージョンの規則を使用すると、ユニバーサル デバイス ファミリではユーザーを 1 つのパッケージに徐々に移行させ、一方で (Windows 10 API を利用するものを含む) 特定のデバイス ファミリでは暫定的な多数の更新を配布することができます。 次の例では、同じ規則を一貫して適用する方法を示しています。
 
-| Submission | Contents                                                  | Customer experience                                                                                                                                                                             |
+| 申請 | 内容                                                  | カスタマー エクスペリエンス                                                                                                                                                                             |
 |------------|-----------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1          | -   Package version: 1.1.10.0 <br> -   Device family: Windows.Desktop, minVersion 10.0.10240.0 <br> <br> -   Package version: 1.1.0.0 <br> -   Device family: Windows.Mobile, minVersion 10.0.10240.0     | -   Devices on Windows 10 Desktop build 10.0.10240.0 and above will get 1.1.10.0 <br> -   Devices on Windows 10 Mobile build 10.0.10240.0 and above will get 1.1.0.0 <br> -   Other device families will not be able to purchase and install the app |
-| 2          | -   Package version: 1.1.10.0 <br> -   Device family: Windows.Desktop, minVersion 10.0.10240.0 <br> <br> -   Package version: 1.1.0.0 <br> -   Device family: Windows.Mobile, minVersion 10.0.10240.0 <br> <br> -   Package version: 1.0.0.0 <br> -   Device family: Windows.Universal, minVersion 10.0.10240.0    | -   Devices on Windows 10 Desktop build 10.0.10240.0 and above will get 1.1.10.0 <br> -   Devices on Windows 10 Mobile build 10.0.10240.0 and above will get 1.1.0.0 <br> -   Other (non-desktop, non-mobile) device families when they are introduced will get 1.0.0.0 <br> -   Desktop and mobile devices that already have the app installed will not see any update (because they already have the best available version—1.1.10.0 and 1.1.0.0 are both higher than 1.0.0.0) |
-| 3          | -   Package version: 1.1.10.0 <br> -   Device family: Windows.Desktop, minVersion 10.0.10240.0 <br> <br> -   Package version: 1.1.5.0 <br> -   Device family: Windows.Universal, minVersion 10.0.10250.0 <br> <br> -   Package version: 1.0.0.0 <br> -   Device family: Windows.Universal, minVersion 10.0.10240.0    | -   Devices on Windows 10 Desktop build 10.0.10240.0 and above will get 1.1.10.0 <br> -   Devices on Windows 10 Mobile build 10.0.10250.0 and above will get 1.1.5.0 <br> -   Devices on Windows 10 Mobile build >=10.0.10240.0 and < 10.010250.0 will get 1.1.0.0 
-| 4          | -   Package version: 2.0.0.0 <br> -   Device family: Windows.Universal, minVersion 10.0.10240.0   | -   All customers on all device families on Windows 10 build v10.0.10240.0 and above will get package 2.0.0.0 | 
+| 1          | -   パッケージ バージョン: 1.1.10.0 <br> -   デバイス ファミリ: Windows.Desktop、minVersion 10.0.10240.0 <br> <br> -   パッケージ バージョン: 1.1.0.0 <br> -   デバイス ファミリ: Windows.Mobile、minVersion 10.0.10240.0     | -   Windows 10 デスクトップ ビルド 10.0.10240.0 以上のデバイスでは 1.1.10.0 を取得。 <br> -   Windows 10 Mobile ビルド 10.0.10240.0 以上のデバイスでは 1.1.0.0 を取得。 <br> -   その他のデバイス ファミリでアプリの購入とインストールを行うことはできない。 |
+| 2          | -   パッケージ バージョン: 1.1.10.0 <br> -   デバイス ファミリ: Windows.Desktop、minVersion 10.0.10240.0 <br> <br> -   パッケージ バージョン: 1.1.0.0 <br> -   デバイス ファミリ: Windows.Mobile、minVersion 10.0.10240.0 <br> <br> -   パッケージ バージョン: 1.0.0.0 <br> -   デバイス ファミリ: Windows.Universal、minVersion 10.0.10240.0    | -   Windows 10 デスクトップ ビルド 10.0.10240.0 以上のデバイスでは 1.1.10.0 を取得。 <br> -   Windows 10 Mobile ビルド 10.0.10240.0 以上のデバイスでは 1.1.0.0 を取得。 <br> -   導入されているその他の (非デスクトップ、非モバイル) デバイス ファミリでは 1.0.0.0 を取得。 <br> -   アプリが既にインストールされているデスクトップ デバイスとモバイル デバイスでは更新が表示されない (利用可能な最高のバージョンが既にあり、1.1.10.0 と 1.1.0.0 は共に 1.0.0.0 より上位であるため)。 |
+| 3          | -   パッケージ バージョン: 1.1.10.0 <br> -   デバイス ファミリ: Windows.Desktop、minVersion 10.0.10240.0 <br> <br> -   パッケージ バージョン: 1.1.5.0 <br> -   デバイス ファミリ: Windows.Universal、minVersion 10.0.10250.0 <br> <br> -   パッケージ バージョン: 1.0.0.0 <br> -   デバイス ファミリ: Windows.Universal、minVersion 10.0.10240.0    | -   Windows 10 デスクトップ ビルド 10.0.10240.0 以上のデバイスでは 1.1.10.0 を取得。 <br> -   Windows 10 Mobile ビルド 10.0.10250.0 以上のデバイスでは 1.1.5.0 を取得。 <br> -   Windows 10 Mobile ビルド 10.0.10240.0 以上 10.010250.0 未満のデバイスでは 1.1.0.0 を取得。 
+| 4          | -   パッケージ バージョン: 2.0.0.0 <br> -   デバイス ファミリ: Windows.Universal、minVersion 10.0.10240.0   | -   Windows 10 ビルド v10.0.10240.0 以上のすべてのデバイス ファミリのすべてのユーザーはパッケージ 2.0.0.0 を取得。 | 
 
-> **Note**  In all cases, customer devices will receive the package that has the highest possible version number that they qualify for. For example, in the third submission above, all desktop devices will get v1.1.10.0, even if they have OS version 10.0.10250.0 or higher and thus could also accept v1.1.5.0. Since 1.1.10.0 is the highest version number available to them, that is the package they will get.
+> **注:** どの場合でも、ユーザーのデバイスでは条件を満たす最も大きいバージョン番号のパッケージを受け取ります。 たとえば、上記の 3 番目の申請では、OS バージョン 10.0.10250.0 以上で v1.1.5.0 を取得できる場合でも、すべてのデスクトップ デバイスが v1.1.10.0 を取得します。 1.1.10.0 は利用可能な最も大きいバージョン番号であるため、これが取得するパッケージになります。
 
-### Using version numbering to roll back to a previously-shipped package for new acquisitions
+### 新規の取得のためにバージョン番号を使用して以前配布したパッケージにロールバックする
 
-If you keep copies of your earlier Windows 10 package files, you'll be able to roll back your app’s package in the Store to an earlier Windows 10 package if you discover problems with a release. This is a temporary way to limit the disruption to your customers while you fix the issue.
+以前の Windows 10 パッケージ ファイルのコピーを維持する場合は、リリースに関する問題が見つかった場合にストア内のアプリのパッケージを以前の Windows 10 パッケージにロールバックすることができます。 これは、問題を修正する間のユーザーの中断を限定するための一時的な方法です。
 
-To do this, create a new submission. Remove the problematic package and upload the old package that you want to provide in the Store. Customers who have already received the package you are rolling back will still have the problematic package (since your older package will have an earlier version number). But this will stop anyone else from acquiring the problematic package, while allowing the app to still be available in the Store.
+このためには、新しい申請を作成します。 問題があるパッケージを削除して、ストアで提供する以前のパッケージをアップロードします。 ロールバックするパッケージを既に受け取っているユーザーは問題のあるパッケージを持ったままになります (以前のパッケージのバージョン番号がより小さいため)。 しかし、これにより、ストアでアプリを利用できるようにした間にその他のユーザーが問題のあるパッケージを取得することができなくなります。
 
-To fix the issues for the customers who have already received the problematic package, you can submit a new Windows 10 package that has a higher version number than the bad package as soon as you can. After that submission goes through the certification process, all customers will be updated to the new package, since it will have a higher version number.
+問題があるパッケージを既に受信したユーザーの問題を解決するためには、できるだけ早く問題のあるパッケージよりも大きいバージョン番号を持つ新しい Windows 10 パッケージを申請することです。 その申請の認定プロセスが完了すると、それがより大きいバージョン番号になるため、すべてのユーザーが新しいパッケージに更新されます。
 
-## Version numbering for Windows 8.1 (and earlier) and Windows Phone 8.1 packages
+## Windows 8.1 (以前) と Windows Phone 8.1 パッケージのバージョン番号付け
 
-For .appx packages that target Windows Phone 8.1, the version number of the package in a new submission must always be greater than that of the package included in the last submission (or any previous submission).
+Windows Phone 8.1 を対象とする .appx パッケージでは、新しい申請のパッケージのバージョン番号は最後の申請 (または、以前の申請) に含まれるパッケージの番号より常に大きい必要があります。
 
-For .appx packages that target Windows 8 and Windows 8.1, the same rule applies per architecture: the version number of the package in a new submission must always be greater than that of the package last shipped to the Windows Store for the same architecture.
+Windows 8 と Windows 8.1 を対象とする .appx パッケージでは、アーキテクチャごとに同じ規則が適用されます。新しい申請のパッケージのバージョン番号は、同じアーキテクチャで最後に Windows ストアに送信されたパッケージの番号より常に大きい必要があります。
 
-Additionally, the version number of Windows 8.1 packages must always be greater than the version numbers of any of your Windows 8 packages for the same app. In other words, the version number of any Windows 8 package that you submit must be lower than the version number of any Windows 8.1 package that you've submitted for the same app.
+さらに、Windows 8.1 用パッケージのバージョン番号は、同じアプリのどの Windows 8 用パッケージのバージョン番号よりも常に大きい必要があります。 言い換えれば、申請する Windows 8 用パッケージのバージョン番号は、同じアプリについて申請したすべての Windows 8.1 用パッケージのバージョン番号よりも小さい必要があります。
 
-> **Note**  If you also have Windows 10 packages, the version number of the Windows 10 packages must be higher than those for Windows 8, Windows 8.1, and/or Windows Phone 8.1 packages you are publishing or have published. For more info, see [Adding packages for Windows 10 to a previously-published app](guidance-for-app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app).
+> **注:** Windows 10 パッケージもある場合、Windows 10 パッケージのバージョン番号は、公開中または公開したことがある Windows 8、Windows 8.1、Windows Phone 8.1 のパッケージのバージョン番号より大きい必要があります。 詳しくは、「[以前に公開したアプリに Windows 10 用のパッケージを追加する](guidance-for-app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app)」をご覧ください。
 
-Here are some examples of what happens in different version number update scenarios for Windows 8 and Windows 8.1.
+ここでは、Windows 8 と Windows 8.1 のさまざまなバージョン番号の更新シナリオで何が起きるかの例を示します。
 
-| With this version of your app in the Store  | And you upload this version | After the new version is in the Windows Store, this will be installed in a new acquisition | After the new version is in the Windows Store, this will be updated if a customer already has the app |
+| ストア内のアプリのバージョン  | アップロードするバージョン | 新しいバージョンが Windows ストアにアップロードされた後の動作、新規インストールのバージョン | 新しいバージョンが Windows ストアにアップロードされた後の動作、既存のバージョンの更新 |
 |---------------------------------------------|-----------------------------|--------------------------------------------------------------------------------------------|----------|
-| Nothing                                     | x86, v1.0.0.0               | x86, v1.0.0.0 on both x86 and x64 computers                                                | Nothing. |
-| x86, v1.0.0.0                               | x64, v1.0.0.0               | v1.0.0.0 for the customer's architecture                                                   | Nothing. The version numbers are the same. |
-| x86, v1.0.0.0 <br> x64, v1.0.0.0            | x64, v1.0.0.1               | v1.0.0.0 for customers with an x86 <br> v1.0.0.1 for customers with an x64                 | Nothing for customers running the app on an x86 computer. <br> v1.0.0.0 will be updated to v1.0.0.1 for customers running the app on an x64 computer. <br> **Note**  If the x86 version of the app is running on an x64 computer, the app won’t get updated to the x64 version unless the customer uninstalls and reinstalls. |
-| Nothing                                     | neutral, v1.0.0.1           | neutral, v1.0.0.1 on all computers                                                         | Nothing. |
-| neutral, v1.0.0.1                           | x86, v1.0.0.0 <br> x64, v1.0.0.0 <br> ARM, v1.0.0.0 | v1.0.0.0 for the architecture of the customer's computer.          | Nothing. Those who have the neutral, v1.0.0.1 version of the app will continue to use it. |
-| neutral, v1.0.0.1 <br> x86, v1.0.0.0 <br> x64, v1.0.0.0 <br> ARM, v1.0.0.0 | x86, v1.0.0.1 <br> x64, v1.0.0.1 <br> ARM, v1.0.0.1 | v1.0.0.1 for the architecture of the customer's computer. | Nothing for customers running the neutral, v1.0.0.1 version app. <br> v1.0.0.0 will be updated to v1.0.0.1 for customers running v1.0.0.0 of the app built for their computer's specific architecture. |
-| x86, v1.0.0.1 <br> x64, v1.0.0.1 <br> ARM, v1.0.0.1 | x86, v1.0.0.2 <br> x64, v1.0.0.2 <br> ARM, v1.0.0.2 | v1.0.0.2 for the architecture of the customer's computer.  | v1.0.0.1 will be updated to v1.0.0.2 for customers running either v1.0.0.1 of the app built for their computer's specific architecture. |
+| なし                                     | x86, v1.0.0.0               | x86, v1.0.0.0 (x86 と x64 の両方のコンピューター)                                                | なし。 |
+| x86, v1.0.0.0                               | x64, v1.0.0.0               | 対応するアーキテクチャ用の v1.0.0.0                                                   | なし: バージョン番号は同じであるため。 |
+| x86, v1.0.0.0 <br> x64, v1.0.0.0            | x64, v1.0.0.1               | x86 の場合は v1.0.0.0 <br> x64 の場合は v1.0.0.1                 | アプリを x86 コンピューターで実行している場合はなし。 <br> アプリを x64 コンピューターで実行している場合は v1.0.0.0 から v1.0.0.1 に更新。 <br> **注:** x86 バージョンのアプリを x64 コンピューターで実行している場合、アンインストールして再インストールしない限り、アプリは x64 バージョンに更新されません。 |
+| なし                                     | neutral, v1.0.0.1           | neutral, v1.0.0.1 (すべてのコンピューター)                                                         | なし。 |
+| neutral, v1.0.0.1                           | x86, v1.0.0.0 <br> x64, v1.0.0.0 <br> ARM, v1.0.0.0 | 対応するアーキテクチャ用の v1.0.0.0          | なし: neutral, v1.0.0.1 のアプリは引き続き使用される。 |
+| neutral, v1.0.0.1 <br> x86, v1.0.0.0 <br> x64, v1.0.0.0 <br> ARM, v1.0.0.0 | x86, v1.0.0.1 <br> x64, v1.0.0.1 <br> ARM, v1.0.0.1 | 対応するアーキテクチャ用の v1.0.0.1 | neutral, v1.0.0.1 のアプリを実行している場合はなし。 <br> 特定のアーキテクチャ用の v1.0.0.0 のアプリを実行している場合は v1.0.0.0 から v1.0.0.1 に更新。 |
+| x86, v1.0.0.1 <br> x64, v1.0.0.1 <br> ARM, v1.0.0.1 | x86, v1.0.0.2 <br> x64, v1.0.0.2 <br> ARM, v1.0.0.2 | 対応するアーキテクチャ用の v1.0.0.2  | 特定のアーキテクチャ用の v1.0.0.1 のアプリを実行している場合は v1.0.0.1 から v1.0.0.2 に更新。 |
  
-> **Note**  Unlike .appx packages, the version numbers in any .xap packages are not considered when determining which package to provide a given customer. To update a customer from one .xap package to a newer one, make sure to remove the older .xap in the new submission.
+> **注:** .appx パッケージとは異なり、.xap パッケージのバージョン番号は、特定の顧客にどのパッケージを提供するかを決める場合に考慮されません。 特定の .xap パッケージから新しいパッケージへと顧客を更新するには、新しい提出で以前の .xap を削除してください。
 
 
 <!--HONumber=Mar16_HO4-->

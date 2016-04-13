@@ -2,7 +2,7 @@
 Description: カレンダー ビューを使うと、ユーザーはカレンダーを表示し操作できます (カレンダーは、月、年、または 10 年単位で操作できます)。
 title: カレンダー ビュー
 ms.assetid: d8ec5ba8-7a9d-405d-a1a5-5a1b502b9e64
-label: カレンダー ビュー
+label: Calendar view
 template: detail.hbs
 ---
 
@@ -182,16 +182,15 @@ private void CalendarView_CalendarViewDayItemChanging(CalendarView sender,
     }
 }
 ```
-\[この記事には、ユニバーサル Windows プラットフォーム (UWP) アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
 
-## 関連トピック
+## 関連記事
 
-* [日付と時刻コントロール](date-and-time.md)
-* [カレンダーの日付の選択コントロール](calendar-date-picker.md)
-* [日付の選択コントロール](date-picker.md)
-* [時刻の選択コントロール](time-picker.md)
+- [日付と時刻コントロール](date-and-time.md)
+- [カレンダーの日付の選択コントロール](calendar-date-picker.md)
+- [日付の選択コントロール](date-picker.md)
+- [時刻の選択コントロール](time-picker.md)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=Mar16_HO4-->
 
 

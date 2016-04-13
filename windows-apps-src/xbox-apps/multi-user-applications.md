@@ -1,45 +1,45 @@
 ---
-title: Introduction to multi-user applications
+title: マルチ ユーザー アプリケーションの概要
 description: 
 area: Xbox
 ---
 
-# Introduction to multi-user applications
+# マルチ ユーザー アプリケーションの概要
 
-This topic is intended to be a simple high-level introduction to the Xbox multi-user model.
+このトピックは、Xbox のマルチ ユーザー モデルの簡単な概要となるものです。
 
-> **Note**&nbsp;&nbsp;In this initial developer preview, multi-user applications are not enabled. In a future developer preview, multi-user applications will be enabled, and at that time we will publish more detailed documentation, guidelines, and samples. 
+> **注**&nbsp;&nbsp;この最初の開発者向けプレビューでは、マルチ ユーザー アプリケーションは有効になっていません。 将来の開発者向けプレビューでは、マルチ ユーザー アプリケーションが有効になり、その時点で、より詳細なドキュメント、ガイドライン、サンプルが公開されるようになるでしょう。 
 
-The Xbox One user model is tuned to the requirements of a gaming console that supports multiple users playing games cooperatively on a single device. 
-It enables multiple users, each with their own controller, to be signed in and using the console at the same time in a single interactive session. 
-This is different from other Windows devices. For example:
-* **Windows desktop PCs** allow multiple users to use the same device, but each user has their own interactive session and each session is completely independent of the other sessions on the device.
-* **Windows phones** allow only a single user to use the device. That single user is determined during the OOBE (out-of-box-experience) and the user cannot sign out after they are signed in. In effect, if a different user wants to use the device, the device has to be reset. 
-* **Xbox One** allows multiple users to be signed in and use the device at the same time in a single interactive session.
+Xbox One ユーザー モデルは、複数のユーザーが単一のデバイスで互いに協力しながらゲームをプレイできるゲーム機本体の要件に合わせて調整されています。 
+それぞれが自分のコントローラーを持つ複数のユーザーがサインインして、同時に 1 つの対話型セッションでコンソールを使用できます。 
+これは、他の Windows デバイスとは異なります。 次に例を示します。
+* **Windows のデスクトップ PC** では、同じデバイスを使用する複数のユーザーが許可されますが、各ユーザーに独自の対話型セッションがあり、各セッションはデバイス上の他のセッションから完全に独立しています。
+* **Windows Phone** では、デバイスを使用するシングル ユーザーのみを許可します。 OOBE (Out-Of-Box Experience) 中にそのシングル ユーザーが決定され、ユーザーはサインイン後にサインアウトできません。 事実上、別のユーザーがデバイスを使用するにはデバイスをリセットする必要があります。 
+* **Xbox One** では、複数のユーザーがサインインして、単一の対話型セッションで同時にデバイスを使用できます。
 
-Each user in the Xbox One user model is backed by a local user account. 
-This local user account is associated with an Xbox Live account (and therefore a Microsoft account). 
-This means that there is a strict one-to-one mapping of an Xbox user account to an Xbox Live account and to a Microsoft account.
+Xbox One ユーザー モデル内の各ユーザーには、対応するローカル ユーザー アカウントがあります。 
+このローカル ユーザー アカウントは、Xbox Live アカウント (と Microsoft アカウント) に関連付けられています。 
+これは、Xbox のユーザー アカウントには Xbox Live アカウントおよび Microsoft アカウントとの厳密な 1 対 1 のマッピングがあることを意味します。
 
-## Single user applications
-By default, UWP apps run in the context of the user that launched the application. 
-These “single user applications” (SUAs) are only aware of that single user, and run in a mode that is compatible with the user model on other Windows devices. 
-The Xbox user model manages which user is associated with the app and guarantees that a user is signed in when the app is launched. 
-In this model, UWP app and games authors do not have to do anything special to run on Xbox. 
+## シングル ユーザー アプリケーション
+既定では、UWP アプリは、アプリケーションを起動したユーザーのコンテキストで実行されます。 
+これらの「シングル ユーザー アプリケーション」(SUA) は、その 1 人のユーザーのみを認識し、他の Windows デバイス上のユーザー モデルと互換性があるモードで実行されます。 
+この Xbox ユーザー モデルでは、アプリに関連付けられているユーザーが管理され、アプリの起動時にユーザーがサインインすることが保証されます。 
+このモデルでは、UWP アプリやゲームの作成者が Xbox 上で実行するために特別な操作をする必要はありません。 
 
-## Multi-user applications
-UWP games can choose to opt into the Xbox One multi-user model. 
-These “multi-user applications” (MUAs) run in the context of a system account (called the Default Account) and can take full advantage of the flexibility and power of the Xbox One user model. 
-For these games, the Xbox user model does not manage which user is associated with the game and does not even require that a user is signed in for the game to run. 
-This means that they have to be written to be explicitly aware of, and manage their user requirements: whether they require a signed-in user or not, whether they implement the concept of a current user, whether they allow simultaneous input from multiple users, and so on.
+## マルチ ユーザー アプリケーション
+UWP ゲームでは、Xbox One のマルチ ユーザー モデルを選択できます。 
+これらの「マルチ ユーザー アプリケーション」(MUA) はシステム アカウント (既定のアカウントと呼ばれます) のコンテキストで実行され、Xbox One ユーザー モデルのパワーと柔軟性を最大限に活用できます。 
+この Xbox ユーザー モデルでは、ゲームに関連付けられているユーザーは管理されず、ユーザーがゲームを実行するためにサインインする必要もありません。 
+これは、ユーザー要件を明示的に認識および管理するように作成する必要があることを意味します (サインインしたユーザーが必要かどうか、現在のユーザーの概念を実装するかどうか、複数のユーザーからの入力を同時に許可するかどうかなど)。
 
-##Guidance on which model to choose
-All UWP apps and the majority of single user games can be written to be SUA. 
-We recommend that only cooperative multi-player games consider opting into the Xbox One multi-user model. 
-We will provide more detailed documentation, guidance and samples in a future developer preview.
+##モデルの選択に関するガイダンス
+すべての UWP アプリと、シングル ユーザーのゲームの大多数は、SUA として作成できます。 
+協力型のマルチ プレーヤー ゲームについてのみ、Xbox One のマルチ ユーザー モデルを選ぶことを検討するようお勧めします。 
+詳細なドキュメント、ガイダンス、サンプルは、将来の開発者プレビューで提供されます。
 
-## See also
-- [UWP on Xbox One](index.md)
+## 参照
+- [Xbox One の UWP](index.md)
 
 
 <!--HONumber=Mar16_HO5-->

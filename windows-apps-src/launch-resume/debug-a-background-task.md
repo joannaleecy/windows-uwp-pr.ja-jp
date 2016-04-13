@@ -1,108 +1,109 @@
 ---
-title: Debug a background task
-description: Learn how to debug a background task, including background task activation and debug tracing in the Windows event log.
+title: バックグラウンド タスクのデバッグ
+description: バックグラウンド タスクをデバッグする方法について説明します。バックグラウンド タスクのアクティブ化のほか、Windows イベント ログでのデバッグ トレースなどについて取り上げます。
 ms.assetid: 24E5AC88-1FD3-46ED-9811-C7E102E01E9C
 ---
 
-# Debug a background task
+# バックグラウンド タスクのデバッグ
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-**Important APIs**
+**重要な API**
 
 -   [Windows.ApplicationModel.Background](https://msdn.microsoft.com/library/windows/apps/br224847)
 
-Learn how to debug a background task, including background task activation and debug tracing in the Windows event log.
+バックグラウンド タスクをデバッグする方法について説明します。バックグラウンド タスクのアクティブ化のほか、Windows イベント ログでのデバッグ トレースなどについて取り上げます。
 
-This topic assumes that you already have an existing app with a background task to debug.
+このトピックは、デバッグ対象のバックグラウンド タスクを備えたアプリが既に手元にあることを前提としています。
 
-## Make sure the background task project is set up correctly
-
-
--   In C# and C++, make sure the main project references the background task project. If this reference is not in place, the background task won't be included in the app package.
--   In C# and C++, make sure the **Output type** of the background task project is "Windows Runtime Component".
--   The background class and must be declared in the entry point attribute in the package manifest.
-
-## Trigger background tasks manually to debug background task code
+## バックグラウンド タスク プロジェクトが正しく設定されていることを確認
 
 
-Background tasks can be triggered manually through Microsoft Visual Studio. Then you can step through the code and debug it.
+-   C# と C++ の場合、メイン プロジェクトがバックグラウンド タスク プロジェクトを参照していることを確認します。 この参照が行われない場合、アプリ パッケージにバックグラウンド タスクが含まれていない可能性があります。
+-   C# と C++ の場合、バックグラウンド タスク プロジェクトの **Output type** が "Windows ランタイム コンポーネント" になっていることを確認します。
+-   バックグラウンド クラスは、パッケージ マニフェストのエントリ ポイント属性で宣言されている必要があります。
 
-1.  In C#, put a breakpoint in the Run method of the background class, and/or write debugging output by using [**System.Diagnostics**](https://msdn.microsoft.com/library/windows/apps/xaml/hh441592.aspx).
-
-    In C++, put a breakpoint in the Run function of the background class, and/or write debugging output by using [**OutputDebugString**](https://msdn.microsoft.com/library/windows/desktop/aa363362).
-
-2.  Run your application in the debugger and then trigger the background task using the suspend drop down menu in the **Lifecycle Events** toolbar. This drop down shows the names of the background tasks that can be activated by Visual Studio.
-
-    For this to work, the background task must already be registered and it must still be waiting for the trigger. For example, if a background task was registered with a one-shot TimeTrigger and that trigger has already fired, launching the task through Visual Studio will have no effect.
-
-    **Note**  Background tasks using the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) or [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543), and background tasks using a [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) with the [**SmsReceived**](https://msdn.microsoft.com/library/windows/apps/br224839) trigger type, cannot be activated in this manner.     
-
-    ![debugging background tasks](images/debugging-activation.png)
-
-3.  When the background task activates, the debugger will attach to it and display debug output in VS.
-
-## Debug background task activation
+## バックグラウンド タスク コードをデバッグするためバックグラウンド タスクを手動でトリガー
 
 
-Background task activation depends on three things matching up correctly. This procedure shows how to check and make sure that these all match up.
+バックグラウンド タスクは、Microsoft Visual Studio を使って手動でトリガーできます。 その後で、コードをステップ実行してデバッグできます。
 
--   The name and namespace of the background task class
--   The entry point attribute specified in the package manifest
--   The entry point specified by your app when registering the background task
+1.  C# の場合、バックグラウンド クラスの Run メソッドにブレークポイントを設定します。デバッグ出力は、[**System.Diagnostics**](https://msdn.microsoft.com/library/windows/apps/xaml/hh441592.aspx) を使って記述します。
 
-1.  Use Visual Studio to note the entry point of the background task:
+    C++ の場合、バックグラウンド クラスの Run 関数にブレークポイントを設定します。デバッグ出力は、[**OutputDebugString**](https://msdn.microsoft.com/library/windows/desktop/aa363362) を使って記述します。
 
-    -   In C# and C++, note the name and namespace of the background task class specified in the background task project.
+2.  デバッガーでアプリケーションを実行し、**[ライフサイクル イベント]** ツール バーにある [中断] ドロップ ダウン メニューを使ってバックグラウンド タスクをトリガーします。 このドロップダウンには、Visual Studio でアクティブ化できるバックグラウンド タスクの名前が表示されます。
 
-2.  Use the manifest designer to check that the background task is correctly declared in the package manifest:
+    この機能を使うには、バックグラウンド タスクが既に登録されていて、トリガーを待機する状態になっていることが必要です。 たとえば、1 回限りの TimeTrigger に対してバックグラウンド タスクを登録した場合、そのトリガーが起動された後に Visual Studio からそのタスクを起動しても何も起こりません。
 
-    -   In C# and C++, the entry point attribute must match the background task namespace followed by the class name. For example: RuntimeComponent1.MyBackgroundTask.
-    -   All the trigger type(s) used with the task must also be specified.
-    -   The executable MUST NOT be specified unless you are using the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) or [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543).
+    **注**  [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) (または [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543)) を使ったバックグラウンド タスクや、トリガーの種類が [**SmsReceived**](https://msdn.microsoft.com/library/windows/apps/br224839) である [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) を使ったバックグラウンド タスクをこの方法でアクティブ化することはできません。     
 
-3.  Windows only. To see the entry point used by Windows to activate the background task, enable debug tracing and use the Windows event log.
+    ![バックグラウンド タスクのデバッグ](images/debugging-activation.png)
 
-    If you follow this procedure and the event log shows the wrong entry point or trigger for the background task, your app is not registering the background task correctly. For help with this task see [Register a background task](register-a-background-task.md).
+3.  バックグラウンド タスクがアクティブになると、デバッガーがアタッチされて、デバッグ出力が VS に表示されます。
 
-    1.  Open event viewer by going to the Start screen and searching for eventvwr.exe.
-    2.  Go to **Application and Services Logs** -&gt; **Microsoft** -&gt; **Windows** -&gt; **BackgroundTaskInfrastructure** in the event viewer.
-    3.  In the actions pane, select **View** -&gt; **Show Analytic and Debug Logs** to enable the diagnostic logging.
-    4.  Select the **Diagnostic log** and click **Enable Log**.
-    5.  Now try using your app to register and activate the background task again.
-    6.  View the diagnostic logs for detailed error information. This will include the entry point registered for the background task.
-
-![event viewer for background tasks debug information](images/event-viewer.png)
-
-## Background tasks and Visual Studio package deployment
+## バックグラウンド タスクのアクティブ化のデバッグ
 
 
-If an app that uses background tasks is deployed using Visual Studio, and the version (major and/or minor) specified in Manifest Designer is then updated, subsequently re-deploying the app with Visual Studio may cause the app’s background tasks to stall. This can be remedied as follows:
+バックグラウンド タスクをアクティブ化するには、3 つのものを正しく一致させる必要があります。 この手順では、これらがすべて一致しているかをチェックし、確実に一致させる方法を示します。
 
--   Use Windows PowerShell to deploy the updated app (instead of Visual Studio) by running the script generated alongside the package.
--   If you already deployed the app using Visual Studio and its background tasks are now stalled, reboot or log off/log in to get the app’s background tasks working again.
--   You can select the "Always re-install my package" debugging option to avoid this in C# projects.
--   Wait until the app is ready for final deployment to increment the package version (don’t change it while debugging).
+-   バック グラウンド タスク クラスの名前と名前空間
+-   パッケージ マニフェストで指定されたエントリ ポイント属性
+-   バックグラウンド タスクの登録時にアプリによって指定されたエントリ ポイント
 
-## Remarks
+1.  Visual Studio を使い、バックグラウンド タスクのエントリ ポイントを確認します。
+
+    -   C# と C++ の場合、バックグラウンド タスク プロジェクトで指定されたバックグラウンド タスク クラスの名前と名前空間を確認します。
+
+2.  マニフェスト デザイナーを使い、バックグラウンド タスクがパッケージ マニフェストで正しく宣言されているかどうかを確認します。
+
+    -   C# と C++ の場合、エントリ ポイント属性が、クラス名の前のバックグラウンド タスク名前空間と一致している必要があります。 たとえば、RuntimeComponent1.MyBackgroundTask のようになります。
+    -   タスクと共に使われるトリガー タイプがすべて指定されている必要があります。
+    -   [
+            **ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) または [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) を使う場合以外、実行可能ファイルを指定しないでください。
+
+3.  Windows のみ。 バックグラウンド タスクをアクティブ化するために Windows で使われるエントリ ポイントを確認するには、デバッグ トレースを有効にして Windows イベント ログを使います。
+
+    この手順を実行し、その結果イベント ログにバックグラウンド タスクの間違ったエントリ ポイントまたはトリガーが表示される場合は、アプリにバックグラウンド タスクが正しく登録されていません。 このタスクのヘルプが必要な場合は、「[バックグラウンド タスクの登録](register-a-background-task.md)」をご覧ください。
+
+    1.  スタート画面に移動して eventvwr.exe を検索し、イベント ビューアーを開きます。
+    2.  イベント ビューアーで **[アプリケーションとサービス ログ]**、**[Microsoft]**、**[Windows]**、**[BackgroundTaskInfrastructure]** の順に展開します。
+    3.  操作ウィンドウで、**[表示]**、**[分析およびデバッグ ログの表示]** の順にクリックして、診断ログを有効にします。
+    4.  **診断ログ**を選び、**[ログの有効化]** をクリックします。
+    5.  次に、アプリを使ってバックグラウンド タスクの登録とアクティブ化をもう一度試します。
+    6.  診断ログで、詳しいエラー情報を確認します。 このログには、バックグラウンド タスクに登録されたエントリ ポイントが含まれます。
+
+![イベント ビューアーでバックグラウンド タスクのデバッグ情報を表示](images/event-viewer.png)
+
+## バックグラウンド タスクと Visual Studio パッケージの展開
 
 
--   Make sure your app checks for existing background task registrations before registering the background task again. Multiple registrations of the same background task can cause unexpected results by running the background task more than once each time it is triggered.
--   On Windows, if the background task requires lock screen access make sure to put the app on the lock screen before trying to debug the background task. For info on specifying manifest options for lock screen-capable apps, see [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md).
--   Background task registration parameters are validated at the time of registration. An error is returned if any of the registration parameters are invalid. Ensure that your app gracefully handles scenarios where background task registration fails - if instead your app depends on having a valid registration object after attempting to register a task, it may crash.
+バックグラウンド タスクを使ったアプリが Visual Studio を使って展開され、その後、マニフェスト デザイナーで指定されたバージョン (メジャー バージョンとマイナー バージョン、またはそのどちらか一方) が更新された場合、以後、Visual Studio を使ってそのアプリを再展開すると、アプリのバックグラウンド タスクが停止することがあります。 これは、次のようにして対処できます。
 
-For more info on using VS to debug a background task see [How to trigger suspend, resume, and background events in Windows Store apps](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx).
+-   更新したアプリを (Visual Studio ではなく) Windows PowerShell を使って展開します。パッケージと一緒に生成されるスクリプトを実行してください。
+-   既に Visual Studio でアプリを展開したことによってアプリのバックグラウンド タスクが停止している場合は、再起動するか、いったんログオフしてからログインし直し、アプリのバックグラウンド タスクをもう一度作動させます。
+-   C# プロジェクトでは、"パッケージを常に再インストール" というデバッグ オプションを選ぶことで、この問題を回避することができます。
+-   展開用にアプリが最終確定するのを待ってパッケージのバージョンをインクリメントします (デバッグ中は変更しない)。
 
-## Related topics
+## 注釈
 
-* [Create and register a background task](create-and-register-a-background-task.md)
-* [Register a background task](register-a-background-task.md)
-* [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md)
-* [Guidelines for background tasks](guidelines-for-background-tasks.md)
-* [How to trigger suspend, resume, and background events in Windows Store apps](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)
-* [Analyzing the code quality of Windows Windows Store apps with Visual Studio code analysis](https://msdn.microsoft.com/library/windows/apps/xaml/hh441471.aspx)
+
+-   バックグラウンド タスクは、同じバックグラウンド タスクが登録されていないことをアプリ側で必ずチェックしたうえで登録してください。 同じバックグラウンド タスクを重複して登録すると、1 回のトリガーにつきバックグラウンド タスクが複数回実行され、予期しない結果を招きます。
+-   Windows では、バックグラウンド タスクがロック画面へのアクセスを必要とする場合は、バックグラウンド タスクをデバッグする前にロック画面にアプリを配置してください。 ロック画面対応アプリのマニフェスト オプションを指定する方法については、「[アプリケーション マニフェストでのバックグラウンド タスクの宣言](declare-background-tasks-in-the-application-manifest.md)」をご覧ください。
+-   バックグラウンド タスクの登録パラメーターは登録時に検証されます。 いずれかの登録パラメーターが有効でない場合は、エラーが返されます。 バックグラウンド タスクの登録が失敗するシナリオをアプリが適切に処理するようにします。タスクを登録しようとした後で、有効な登録オブジェクトを持っていることを前提として動作するアプリは、クラッシュする場合があります。
+
+VS を使ってバックグラウンド タスクをデバッグする方法について詳しくは、「[Windows ストア アプリで中断イベント、再開イベント、バックグラウンド イベントをトリガーする方法](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)」をご覧ください。
+
+## 関連トピック
+
+* [バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)
+* [バックグラウンド タスクの登録](register-a-background-task.md)
+* [アプリケーション マニフェストでのバックグラウンド タスクの宣言](declare-background-tasks-in-the-application-manifest.md)
+* [バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)
+* [Windows ストア アプリで一時停止イベント、再開イベント、バックグラウンド イベントをトリガーする方法](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)
+* [Visual Studio のコード分析機能を使って Windows ストア アプリのコードの品質を分析する](https://msdn.microsoft.com/library/windows/apps/xaml/hh441471.aspx)
 
  
 

@@ -1,27 +1,27 @@
 ---
-description: You can use both Windows.Networking.Sockets and Winsock to communicate with other devices as a Universal Windows Platform (UWP) app developer.
-title: Sockets
+description: ユニバーサル Windows プラットフォーム (UWP) アプリ開発者として、Windows.Networking.Sockets と Winsock の両方を使って、他のデバイスと通信できます。
+title: ソケット
 ms.assetid: 23B10A3C-E33F-4CD6-92CB-0FFB491472D6
 ---
 
-# Sockets
+# ソケット
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-**Important APIs**
+**重要な API**
 
 -   [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960)
 -   [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms740673)
 
-You can use both [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) and [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms737523) to communicate with other devices as a Universal Windows Platform (UWP) app developer. This topic provides in-depth guidance on using the **Windows.Networking.Sockets** namespace to perform networking operations.
+ユニバーサル Windows プラットフォーム (UWP) アプリ開発者として、[**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) と [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms737523) の両方を使って、他のデバイスと通信できます。 このトピックでは、**Windows.Networking.Sockets** 名前空間を使ってネットワーク操作を実行する方法の詳しいガイダンスを示します。
 
-## Basic TCP socket operations
+## 基本的な TCP ソケット操作
 
-A TCP socket provides low-level network data transfers in either direction for long-lived connections. TCP sockets are the underlying feature used by most of the network protocols used on the Internet. This section shows how to enable a UWP app to send and receive data with a TCP stream socket using the [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) and [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) classes as part of the [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) namespace. For this section, we will be creating a very simple app that will function as an echo server and client to demonstrate basic TCP operations.
+TCP ソケットは、有効期間が長い接続用にどちらの方向にも下位レベルのネットワーク データ転送機能を提供します。 TCP ソケットは、インターネットで使われるほとんどのネットワーク プロトコルのベースとなる機能です。 このセクションでは、UWP アプリで [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 名前空間の一部として [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) クラスと [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) クラスを使って TCP ストリーム ソケットでデータを送受信する方法について説明します。 このセクションでは、基本的な TCP 操作を示すためにエコー サーバーおよびクライアントとして機能する非常にシンプルなアプリを作成します。
 
-**Creating a TCP echo server**
+**TCP エコー サーバーの作成**
 
-The following code example demonstrates how to create a [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) object and start listening for incoming TCP connections.
+次のコード例は、[**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) オブジェクトを作成し、着信 TCP 接続のリッスンを開始する方法を示しています。
 
 ```csharp
 try
@@ -41,7 +41,7 @@ catch (Exception e)
 }
 ```
 
-The following code example implements the SocketListener\_ConnectionReceived event handler that was attached to the [**StreamSocketListener.ConnectionReceived**](https://msdn.microsoft.com/library/windows/apps/hh701494) event in the above example. This event handler is called by the [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) class every time a remote client has established a connection with the echo server.
+次のコード例では、上の例で [**StreamSocketListener.ConnectionReceived**](https://msdn.microsoft.com/library/windows/apps/hh701494) イベントにアタッチされている SocketListener\_ConnectionReceived イベント ハンドラーが実装されています。 このイベント ハンドラーは、リモート クライアントがエコ サーバーとの接続を確立するたびに [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) クラスにより呼び出されます。
 
 ```csharp
 private async void SocketListener_ConnectionReceived(Windows.Networking.Sockets.StreamSocketListener sender, 
@@ -60,9 +60,9 @@ private async void SocketListener_ConnectionReceived(Windows.Networking.Sockets.
 }
 ```
 
-**Creating a TCP echo client**
+**TCP エコー クライアントの作成**
 
-The following code example demonstrates how to create a [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) object, establish a connection to the remote server, send a request, and receive a response.
+次のコード例は、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) オブジェクトの作成、リモート サーバーへの接続の確立、要求の送信、および応答の受信の方法を示しています。
 
 ```csharp
 try
@@ -97,13 +97,13 @@ catch (Exception e)
 }
 ```
 
-## Basic UDP socket operations
+## 基本的な UDP ソケット操作
 
-A UDP socket provides low-level network data transfers in either direction for network communication that does not require an established connection. Because UDP sockets do not maintain connection on both endpoints they provide fast and simple solution for networking between remote machines. However, UDP sockets do not ensure integrity of the network packets or whether they make it to the remote destination at all. Some examples of applications that use UDP sockets are local network discovery and local chat clients. This section demonstrates the use of the [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) class to sending and receiving UDP messages by creating a simple echo server and client.
+UDP ソケットは、確立された接続が必要なネットワーク通信用にどちらの方向にも下位レベルのネットワーク データ転送機能を提供します。 UDP ソケットはどちらのエンドポイントでも接続を保持しないため、リモート コンピューター間のネットワークに高速でシンプルなソリューションを提供します。 ただし、UDP ソケットは、ネットワーク パケットの整合性や、リモートの宛先に到達するかどうかをまったく保証しません。 UDP ソケットを使うアプリケーションの例には、ローカル ネットワーク探索やローカル チャット クライアントなどがあります。 このセクションでは、[**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) クラスを使って、シンプルなエコ サーバーおよびクライアントを作成することで UDP メッセージを送受信する方法を示します。
 
-**Creating a UDP echo server**
+**UDP エコー サーバーの作成**
 
-The following code example demonstrates how to create a [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) object and bind it to a specific port so that you can listen for incoming UDP messages.
+次のコード例は、[**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) オブジェクトを作成し、着信 UDP メッセージをリッスンできるように特定のポートにバインドする方法を示しています。
 
 ```csharp
 Windows.Networking.Sockets.DatagramSocket socket = new Windows.Networking.Sockets.DatagramSocket();
@@ -117,7 +117,7 @@ string serverPort = "1337";
 await socket.BindServiceNameAsync(serverPort);
 ```
 
-The following code example implements the **Socket\_MessageReceived** event handler to read a message that was received from a client and send the same message back.
+次のコード例では、クライアントから受信したメッセージを読み取り、同じメッセージを返送する **Socket\_MessageReceived** イベント ハンドラーが実装されています。
 
 ```csharp
 private async void Socket_MessageReceived(Windows.Networking.Sockets.DatagramSocket sender, Windows.Networking.Sockets.DatagramSocketMessageReceivedEventArgs args)
@@ -139,9 +139,9 @@ private async void Socket_MessageReceived(Windows.Networking.Sockets.DatagramSoc
 }
 ```
 
-**Creating a UDP echo client**
+**UDP エコー クライアントの作成**
 
-The following code example demonstrates how to create a [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) object and bind it to a specific port so that you can listen for incoming UDP messages and send a UDP message to the UDP echo server.
+次のコード例は、[**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) オブジェクトを作成し、着信 UDP メッセージをリッスンして UDP エコ サーバーに UDP メッセージを送信できるように特定のポートにバインドする方法を示しています。
 
 ```csharp
 private async void testUdpSocketServer()
@@ -170,7 +170,7 @@ private async void testUdpSocketServer()
 }
 ```
 
-The following code example implements the **Socket\_MessageReceived** event handler to read a message that was received from the UDP echo server.
+次のコード例では、UDP エコ サーバーから受信したメッセージを読み取る **Socket\_MessageReceived** イベント ハンドラーが実装されています。
 
 ```csharp
 private async void Socket_MessageReceived(Windows.Networking.Sockets.DatagramSocket sender, 
@@ -183,17 +183,17 @@ private async void Socket_MessageReceived(Windows.Networking.Sockets.DatagramSoc
 }
 ```
 
-## Background operations and the socket broker
+## バック グラウンド操作とソケット ブローカー
 
-If your app receives connections or data on sockets, then you must be prepared to perform those operations properly while your app is not in the foreground. To do so, you use the socket broker. For more information on how to use the socket broker, see [Network communications in the background](network-communications-in-the-background.md).
+アプリがソケットで接続またはデータを受信する場合は、アプリがフォアグラウンドにないときにこれらの操作が正しく実行されるように準備する必要があります。 そのために、ソケット ブローカーを使います。 ソケット ブローカーの使い方について詳しくは、「[バックグラウンドでのネットワーク通信](network-communications-in-the-background.md)」をご覧ください。
 
-## Batched sends
+## バッチ送信
 
-Starting with Windows 10, Windows.Networking.Sockets supports batched sends, a way for you to send multiple buffers of data together with much lower context-switching overhead than if you send each of the buffers separately. This is especially useful if your app is doing VoIP, VPN, or other tasks which involve moving a lot of data as efficiently as possible.
+Windows 10 以降、Windows.Networking.Sockets はバッチ送信をサポートします。これは、データの複数のバッファーをまとめて送信することで、各バッファーを別々に送信する場合に比べ、コンテキスト切り替えのオーバーヘッドを非常に少なくする方法です。 これは、多くのデータをできるだけ効率的に移動させる必要がある VoIP、VPN、またはその他のタスクをアプリで実行する場合に特に便利です。
 
-Each call to WriteAsync on a socket triggers a kernel transition to reach the network stack. When an app writes many buffers at a time, each write incurs a separate kernel transition, and this creates substantial overhead. The new batched sends pattern optimizes the frequency of kernel transitions. This functionality is currently limited to [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) and connected [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) instances.
+ソケットで WriteAsync が呼び出されるたびに、ネットワーク スタックに到達するためにカーネルの遷移がトリガーされます。 アプリが一度に多数のバッファーを書き込むと、書き込みごとに別のカーネルの遷移が発生し、これによって大量のオーバーヘッドが発生します。 新しいバッチ送信パターンは、カーネルの遷移の発生頻度を最適化します。 この機能は、現時点では [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) インスタンスと、接続された [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) インスタンスに限定されます。
 
-Here is an example of how an app would send a large number of buffers in a non-optimal way.
+次に示すのは、多数のバッファーを最適化されない方法で送信するアプリの例です。
 
 ```csharp
 // Send a set of packets inefficiently, one packet at a time.
@@ -208,7 +208,7 @@ foreach (IBuffer packet in packetsToSend)
 }
 ```
 
-This example shows a more efficient way to send a large number of buffers. Because this technique uses features unique to the C# language, it is only available to C# programmers. By sending multiple packets at a time, this example enables the system to batch sends, and thus optimize kernel transitions for improved performance.
+次の例は、多数のバッファーを送信するための効率的な方法を示しています。 この手法は C# 言語固有の機能を使っているため、C# プログラマだけが利用できます。 この例では、一度に複数のパケットを送信することでシステムが送信をバッチ処理できるようにし、それによってカーネルの遷移が最適化され、パフォーマンスが向上しています。
 
 ```csharp
 // More efficient way to send packets.
@@ -228,7 +228,7 @@ foreach (IBuffer packet in packetsToSend)
 await Task.WaitAll(pendingTasks);
 ```
 
-This example shows another way to send a large number of buffers in a way that's compatible with batched sends. And since it doesn't use any C#-specific features, it is applicable for all languages (though it is demonstrated here in C#). Instead, it uses changed behavior in the **OutputStream** member of the [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) and [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) classes that is new in Windows 10.
+次の例は、バッチ送信と互換性がある方法で、多数のバッファーを送信する別の方法を示しています。 ここでは C# 固有の機能は使われていないため、すべての言語に適用できます (ここでは C# を使っています)。 代わりに、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) クラスと [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) クラスの **OutputStream** メンバーの変更された動作を使っています。これは Windows 10 で新しく導入された動作です。
 
 ```csharp
 // More efficient way to send packets in Windows 10, using the new behavior of OutputStream.FlushAsync().
@@ -248,24 +248,25 @@ foreach (IBuffer packet in packetsToSend)
 await outputStream.FlushAsync();
 ```
 
-In earlier versions of Windows, **FlushAsync** returned immediately, and did not guarantee that all operations on the stream had completed yet. In Windows 10, the behavior has changed. **FlushAsync** is now guaranteed to return after all operations on the output stream have completed.
+これまでのバージョンの Windows では、**FlushAsync** はすぐに返り、ストリームに対するすべての動作が完了しているかどうかは保証されませんでした。 Windows 10 では、この動作が変更されています。 **FlushAsync** は、出力ストリームに対するすべての操作が完了した後で返ることが保証されるようになりました。
 
-There are some important limitations imposed by using batched writes in your code.
+コードでバッチ処理される書き込みを使うことで課せられているいくつかの重要な制限があります。
 
--   You cannot modify the contents of the **IBuffer** instances being written until the asynchronous write is complete.
--   The **FlushAsync** pattern only works on **StreamSocket.OutputStream** and **DatagramSocket.OutputStream**.
--   The **FlushAsync** pattern only works in Windows 10 and onward.
--   In other cases, use **Task.WaitAll** instead of the **FlushAsync** pattern.
+-   書き込まれる **IBuffer** インスタンスの内容は、非同期書き込みが完了するまで変更できません。
+-   **FlushAsync**パターンは、**StreamSocket.OutputStream** と **DatagramSocket.OutputStream** のみで機能します。
+-   **FlushAsync** パターンは、Windows 10 以降でのみ機能します。
+-   状況によっては、**FlushAsync** パターンの代わりに **Task.WaitAll** を使います。
 
-## Port sharing for DatagramSocket
+## DatagramSocket でのポートの共有
 
-Windows 10 introduces a new [**DatagramSocketControl**](https://msdn.microsoft.com/library/windows/apps/hh701190) property, [**MulticastOnly**](https://msdn.microsoft.com/library/windows/apps/dn895368), which enables you to specify that the **DatagramSocket** in question is able to coexist with other Win32 or WinRT multicast sockets bound to the same address/port.
+Windows 10 では、[**MulticastOnly**](https://msdn.microsoft.com/library/windows/apps/dn895368) という新しい [**DatagramSocketControl**](https://msdn.microsoft.com/library/windows/apps/hh701190) プロパティが導入されています。このプロパティを使って、対象の **DatagramSocket** を、同じアドレス/ポートにバインドされた他の Win32 または WinRT マルチキャスト ソケットと共存させることができます。
 
-## Providing a client certificate with the StreamSocket class
+## StreamSocket クラスによるクライアント証明書の提供
 
-The [**Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) class supports using SSL/TLS to authenticate the server the app is talking to. In certain cases, the app also needs to authenticate itself to the server using a TLS client certificate. In Windows 10, you can provide a client certificate on the [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893) object (this must be set before the TLS handshake is started). If the server requests the client certificate, Windows will respond with the certificate provided.
+[
+            **Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) クラスは、SSL/TLS を使ったアプリの接続先サーバーの認証をサポートします。 場合によっては、アプリは、TLS クライアント証明書を使って自身をサーバーに対して認証する必要があります。 Windows 10 では、クライアント証明書を [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893) オブジェクトに提供できます (これは TLS ハンドシェイクが開始される前に設定する必要があります)。 サーバーがクライアント証明書を要求した場合、Windows が提供された証明書を使って応答します。
 
-Here is a code snippet showing how to implement this:
+これを実装する方法を示すコード スニペットを次に示します。
 
 ```csharp
 var socket = new StreamSocket();
@@ -274,21 +275,25 @@ socket.Control.ClientCertificate = certificate;
 await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 ```
 
-## Exceptions in Windows.Networking.Sockets
+## Windows.Networking.Sockets の例外
 
-The constructor for the [**HostName**](https://msdn.microsoft.com/library/windows/apps/br207113) class used with sockets can throw an exception if the string passed is not a valid hostname (contains characters that are not allowed in a host name). If an app gets input from the user for the **HostName**, the constructor should be in a try/catch block. If an exception is thrown, the app can notify the user and request a new hostname.
+ソケットと共に使われる [**HostName**](https://msdn.microsoft.com/library/windows/apps/br207113) クラスのコンストラクターは、有効なホスト名ではない (ホスト名に使うことができない文字が含まれている) 文字列が渡された場合に例外をスローすることができます。 アプリがユーザーから **HostName** の入力を取得する場合、このコンストラクターを try/catch ブロックに配置する必要があります。 例外がスローされた場合、アプリは、ユーザーに通知し、新しいホスト名を要求することができます。
 
-The [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) namespace has convenient helper methods and enumerations for handling errors when using sockets and WebSockets. This can be useful for handling specific network exceptions differently in your app.
+[
+            **Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 名前空間には、ソケットと WebSocket を使う場合のエラーの処理に便利なヘルパー メソッドと列挙があります。 これは、アプリで特定のネットワーク例外を異なる方法で処理する場合に役立つことがあります。
 
-An error encountered on [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319), [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882), or [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) operation is returned as an **HRESULT** value. The [**SocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701462) method is used to convert a network error from a socket operation to a [**SocketErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh701457) enumeration value. Most of the **SocketErrorStatus** enumeration values correspond to an error returned by the native Windows sockets operation. An app can filter on specific **SocketErrorStatus** enumeration values to modify app behavior depending on the cause of the exception.
+[
+            **DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)、[**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) 操作で発生したエラーは、**HRESULT** 値として返されます。 [
+            **SocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701462) メソッドは、ネットワーク エラーをソケット操作から [**SocketErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh701457) 列挙値に変換するために使われます。 ほとんどの **SocketErrorStatus** 列挙値は、ネイティブ Windows ソケット操作から返されるエラーに対応しています。 アプリは特定の **SocketErrorStatus** 列挙値に対するフィルター処理を行い、例外の原因に応じてアプリの動作を変更できます。
 
-An error encountered on a [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) or [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) operation is returned as an **HRESULT** value. The [**WebSocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701529) method is used to convert a network error from a WebSocket operation to a [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh747818) enumeration value. Most of the **WebErrorStatus** enumeration values correspond to an error returned by the native HTTP client operation. An app can filter on specific **WebErrorStatus** enumeration values to modify app behavior depending on the cause of the exception.
+[
+            **MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) または [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 操作で発生したエラーは **HRESULT** 値として返されます。 ネットワーク エラーを WebSocket 操作から [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh747818) 列挙値に変換するには、[**WebSocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701529) メソッドを使います。 **WebErrorStatus** 列挙値のほとんどは、ネイティブ HTTP クライアント操作から返されるエラーに対応しています。 アプリは特定の **WebErrorStatus** 列挙値に対するフィルター処理を行い、例外の原因に応じてアプリの動作を変更できます。
 
-For parameter validation errors, an app can also use the **HRESULT** from the exception to learn more detailed information on the error that caused the exception. Possible **HRESULT** values are listed in the *Winerror.h* header file. For most parameter validation errors, the **HRESULT** returned is **E\_INVALIDARG**.
+パラメーター検証エラーの場合は、例外の **HRESULT** を使って、その例外の原因となったエラーの詳細情報を確認することもできます。 使うことができる **HRESULT** 値は、*Winerror.h* ヘッダー ファイルに記載されています。 ほとんどのパラメーター検証エラーの場合、返される **HRESULT** は **E\_INVALIDARG** です。
 
-## The Winsock API
+## Winsock API
 
-You can use [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms740673) in your UWP app, as well. The supported Winsock API is based on that of Windows Phone 8.1Microsoft Silverlight and continues to support most of the types, properties and methods (some APIs that are considered obsolete have been removed). You can find more information on Winsock programming [here](https://msdn.microsoft.com/library/windows/desktop/ms740673).
+[Winsock](https://msdn.microsoft.com/library/windows/desktop/ms740673) は、UWP アプリでも同じように使うことができます。 サポートされる Winsock API は Windows Phone 8.1 Microsoft Silverlight に基づいており、ほとんどの型、プロパティ、メソッドが引き続きサポートされます (互換性のために残されていたいくつかの API は削除されます)。 Winsock プログラミングについて詳しくは、[こちら](https://msdn.microsoft.com/library/windows/desktop/ms740673)をご覧ください。
 
 
 

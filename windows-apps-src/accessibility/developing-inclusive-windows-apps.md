@@ -1,78 +1,78 @@
 ---
-Description: A roadmap for developing accessible Universal Windows Platform (UWP) apps.
-title: Developing inclusive Windows apps
+Description: アクセシビリティに対応したユニバーサル Windows プラットフォーム (UWP) アプリの開発のためのロードマップ
+title: 包括性を備えた Windows アプリの開発
 ms.assetid: 9311D23A-B340-42F0-BEFE-9261442AF108
 label: Developing inclusive Windows apps
 template: detail.hbs
 ---
 
-Developing inclusive Windows apps
+包括性を備えた Windows アプリの開発
 =================================
-This article discusses how to develop accessible Universal Windows Platform (UWP) apps. Specifically, it assumes that you understand how to design the logical hierarchy for your app.  
+この記事では、アクセシビリティに対応したユニバーサル Windows プラットフォーム (UWP) アプリを開発する方法について説明します。 特に、この記事では、アプリの論理的な階層を設計する方法を理解していることが前提となっています。  
 
-If you have not yet done so, please start by reading [Designing inclusive Software](designing-inclusive-software.md).
+まだ準備ができていない場合は、「[包括性を備えたソフトウェアの設計](designing-inclusive-software.md)」をご覧ください。
 
-There are three things you should do to make sure that your app is accessible:
-1. Expose your UI elements to [programmatic access](#programmatic-access).
-2. Ensure that your app supports [keyboard navigation](#keyboard-navigation) for people who are unable to use a mouse or touchscreen.
-3. Make sure that your app supports accessible [color and contrast](#color-and-contrast) settings.
+アプリをアクセシビリティに対応させるには、次の 3 つの手順を実行する必要があります。
+1. UI 要素を[プログラムによるアクセス](#programmatic-access)で認識できるようにします。
+2. マウスまたはタッチスクリーンを使用できないユーザーのために、[キーボード ナビゲーション](#keyboard-navigation)がアプリでサポートされていることを確認します。
+3. アクセシビリティに対応した[色およびコントラスト](#color-and-contrast)設定がアプリでサポートされていることを確認します。
 
-## Programmatic access  
-Programmatic access is critical for creating accessibility in apps. This is achieved by setting the accessible name (required) and description (optional) for content and interactive UI elements in your app. This ensures that UI controls are exposed to assistive technology (AT) such as screen readers (for example, Narrator) or alternative output devices (such as Braille displays). Without programmatic access, the APIs for assistive technology cannot interpret information correctly, leaving the user unable to use the products sufficiently, or forcing the AT to use undocumented programming interfaces or techniques never intended to be used as an accessibility interface. When UI controls are exposed to assistive technology, the AT is able to determine what actions and options are available to the user.  
+## プログラムによるアクセス  
+プログラムによるアクセスは、アプリにアクセシビリティを実装させるうえで非常に重要です。 これを行うには、アプリのコンテンツや対話型の UI 要素にアクセシビリティ対応の名前 (必須) と説明 (省略可能) を設定します。 これにより、スクリーン リーダー (ナレーターなど) または代替出力デバイス (点字ディスプレイなど) などの支援技術 (AT) で、UI コントロールを認識できるようになります。 プログラムによるアクセスがないと、支援技術の API は情報を正しく解釈することができません。このため、ユーザーは製品を十分に利用できないか、支援技術が文書化されていないプログラミング インターフェイスや、アクセシビリティ インターフェイスとして使用することを目的としていない技術を使用することになります。 支援技術で UI コントロールを認識できるようになると、ユーザーに利用可能な操作およびオプションを支援技術が判断できるようになります。  
 
-For more information about making your app UI elements available to assistive technologies (AT), see [Expose basic accessibility information](basic-accessibility-information.md).
+アプリの UI 要素を支援技術 (AT) で利用できるようにする方法について詳しくは、「[基本的なアクセシビリティ情報の開示](basic-accessibility-information.md)」をご覧ください。
 
-## Keyboard navigation  
-For users who are blind or have mobility issues, being able to navigate the UI with a keyboard is extremely important. However, only those UI controls that require user interaction to function should be given keyboard focus. Components that don’t require an action, such as static images, do not need keyboard focus.  
+## キーボード ナビゲーション  
+視覚障碍または運動障碍のあるユーザーにとって、キーボードを使用して UI を移動できることは非常に重要です。 ただし、機能するためにユーザーの操作が必要となる UI コントロールだけにキーボード フォーカスを移動させる必要があります。 静止画像など、操作を必要としないコンポーネントについては、キーボード フォーカスは必要ありません。  
 
-It is important to remember that unlike navigating with a mouse or touch, keyboard navigation is linear. When considering keyboard navigation, think about how your user will interact with your product and what the logical navigation will be. In Western cultures, people read from left to right, top to bottom. It is, therefore, common practice to follow this pattern for keyboard navigation.  
+マウスまたはタッチ スクリーンによるナビゲーションとは異なり、キーボード ナビゲーションは直線的であることを覚えておくことは大切です。 キーボード ナビゲーションを検討するときには、ユーザーが製品を操作する方法や論理的なナビゲーションについて考えます。 西洋文化では、ユーザーは、左から右へ、上から下へ読みます。 このため、キーボード ナビゲーションについても、このパターンに従うことが通例となっています。  
 
-When designing keyboard navigation, examine your UI, and think about these questions:
-* How are the controls laid out or grouped in the UI?
-* Are there a few significant groups of controls?
-    * If yes, do those groups contain another level of groups?
-*   Among peer controls, should navigation be done by tabbing around, or via special navigation (such as arrow keys), or both?
+キーボード ナビゲーションを設計するときには、UI を調査し、次の質問について考慮します。
+* UI にコントロールがどのようにレイアウトされ、まとめられているか?
+* 重要なコントロール グループが存在するか?
+    * 存在する場合は、それらのグループに別のレベルのグループが含まれているか?
+*   コントロール間を移動する場合、Tab キーまたは特別なナビゲーション (矢印キー)、あるいはその両方を使用する必要があるか?
 
-The goal is to help the user understand how the UI is laid out and identify the controls that are actionable. If you are finding that there are too many tab stops before the user completes the navigation loop, consider grouping related controls together. Some controls that are related, such as a hybrid control, may need to be addressed at this early exploration stage. After you begin to develop your product, it is difficult to rework the keyboard navigation, so plan carefully and plan early!  
+目的は、ユーザーがどのように UI がレイアウトされているかを理解し、操作できるコントロールがどれかを識別できるように支援することです。 ユーザーがナビゲーションを 1 周するのに押す必要がある Tab キーの回数が多すぎる場合、関連するコントロールを 1 つにまとめられないか検討します。 ハイブリッド コントロールなど、関連するいくつかのコントロールは、調査段階の早い段階で対応する必要がある場合があります。 製品の開発を開始した後でキーボード ナビゲーションをやり直すことは難しいため、早い段階で慎重に計画するようにします。  
 
-To learn more about keyboard navigation among UI elements, see [Keyboard accessibility](keyboard-accessibility.md).  
+UI 要素のキーボード ナビゲーションについて詳しくは、「[キーボードのアクセシビリティ](keyboard-accessibility.md)」をご覧ください。  
 
-Also, the [Engineering Software for Accessibility](https://www.microsoft.com/en-us/download/details.aspx?id=19262) eBook has an excellent chapter on this subject titled _Designing the Logical Hierarchy_.
+また、[アクセシビリティ ソフトウェアのエンジニアリング](https://www.microsoft.com/en-us/download/details.aspx?id=19262)に関する eBook の_論理的な階層の設計_のチャプターにも、これらのことがわかりやすく説明されています。
 
-## Color and contrast  
-One of the built-in accessibility features in Windows is the High Contrast mode, which heightens the color contrast of text and images on the computer screen. For some people, increasing the contrast in colors reduces eyestrain and makes it easier to read. When you verify your UI in high contrast, you want to check that controls have been coded consistently and with system colors (not with hard-coded colors) to ensure that they will be able to see all the controls on the screen that a user not using high contrast would see.  
+## 色とコントラスト  
+Windows に組み込まれているアクセシビリティ機能の 1 つに、コンピューター画面に表示されたテキストや画像の色コントラストを大きくするハイ コントラスト モードがあります。 一部のユーザーは、色コントラストを大きくすることで、目の疲れを軽減し、読みやすくなります。 ハイ コントラスト モードで UI を確認したら、コントロールがシステム カラー (ハード コードされた色ではなく) によって一貫した方法で色分けされていることを確認し、ハイ コントラストを使用しないユーザーに表示される画面にすべてのコントロールが表示されることを確認することができます。  
 
 ```XAML
 <Button Background="{ThemeResource ButtonBackgroundThemeBrush}">OK</Button>
 ```
-For more information about using system colors and resources, see [XAML theme resources](https://msdn.microsoft.com/en-us/windows/uwp/controls-and-patterns/xaml-theme-resources).
+システム カラーとリソースの使用方法について詳しくは、「[XAML テーマ リソース](https://msdn.microsoft.com/en-us/windows/uwp/controls-and-patterns/xaml-theme-resources)」をご覧ください。
 
-As long as you haven’t overridden system colors, a UWP app supports high-contrast themes by default. If a user has chosen that they want the system to use a high-contrast theme from system settings or accessibility tools, the framework automatically uses colors and style settings that produce a high-contrast layout and rendering for controls and components in the UI.   
+UWP アプリでは、システム カラーを上書きしない限り、既定でハイ コントラスト テーマがサポートされます。 ユーザーが、システム設定またはアクセシビリティ ツールでハイ コントラスト テーマが使われるように指定すると、色とスタイルの設定が自動的に変わって、UI のコントロールとコンポーネントにハイ コントラスト レイアウトおよびハイ コントラスト レンダリングが使われます。   
 
-For more information, see [High-contrast themes](high-contrast-themes.md).  
+詳しくは、「[ハイ コントラスト テーマ](high-contrast-themes.md)」をご覧ください。  
 
-If you have decided to use you own color theme instead of system colors, consider these guidelines:  
+システム カラーの代わりに、独自のカラー テーマを使用する場合は、次のガイドラインを検討してください。  
 
-**Color contrast ratio** – The updated Section 508 of the Americans with Disability Act, as well as other legislation, requires that the default color contrasts between text and its background must be 5:1. For large text (18-point font sizes, or 14 points and bolded), the required default contrast is 3:1.  
+**色コントラスト比** – 改正された障碍を持つアメリカ人法の第 508 条およびその他の法律によって、テキストと背景の既定の色コントラストを 5:1 にすることが求められています。 大きなテキスト (フォント サイズが 18 ポイントであるテキスト、またはフォント サイズが 14 ポイントで太字であるテキスト) の場合、必要な既定のコントラストは 3:1 です。  
 
-**Color  combinations** – About 7 percent of males (and less than 1 percent of females) have some form of color deficiency. Users with colorblindness have problems distinguishing between certain colors, so it is important that color alone is never used to convey status or meaning in an application. As for decorative images (such as icons or backgrounds), color combinations should be chosen in a manner that maximizes the perception of the image by colorblind users.  
+**色の組み合わせ** – 男性の約 7% (女性では 1% 未満) は、何らかの色覚異常を持っています。 色覚に障碍があるユーザーは、特定の色を区別することができません。このため、アプリケーションの特定の状態または意味を色だけで表さないことが重要です。 装飾用の画像 (アイコンや背景) についても、色覚に障碍があるユーザーが画像を認識しやすいように、色の組み合わせを選択する必要があります。  
 
-## Accessibility checklist ##
-Following is an abbreviated version of the accessibility checklist:  
-1. Set the accessible name (required) and description (optional) for content and interactive UI elements in your app.
-2. Implement keyboard accessibility.
-3. Visually verify your UI to ensure that the text contrast is adequate, elements render correctly in the high-contrast themes, and colors are used correctly.
-4. Run accessibility tools, address reported issues, and verify the screen reading experience. (See Accessibility testing topic.)
-5. Make sure your app manifest settings follow accessibility guidelines.
-6. Declare your app as accessible in the Windows Store. (See the [Accessibility in the store](accessibility-in-the-store.md) topic.)
+## アクセシビリティのチェック リスト ##
+簡易版のアクセシビリティ チェックリストを次に示します。  
+1. コンテンツやアプリの対話型の UI 要素にアクセシビリティ対応の名前 (必須) と説明 (省略可能) を設定します。
+2. キーボード アクセシビリティを実装します。
+3. テキスト コントラストが適切であること、ハイ コントラスト テーマで要素が正しくレンダリングされること、色が正しく使われていることを確認するため、UI を表示して検証します。
+4. アクセシビリティ ツールを実行し、報告された問題に対処して、画面の読み上げを確認します。 (「アクセシビリティ テスト」をご覧ください。)
+5. アプリ マニフェストの設定がアクセシビリティ ガイドラインに準拠しているかどうかを確認します。
+6. Windows ストアでアプリがアクセシビリティ対応であることを宣言します。 (「[ストア内のアクセシビリティ](accessibility-in-the-store.md)」をご覧ください。)
 
-For more detail, please see the full [Accessibility checklist](accessibility-checklist.md) topic.
+詳しくは、完全版の「[アクセシビリティ チェックリスト](accessibility-checklist.md)」をご覧ください。
 
-## See also ##
-* [Designing inclusive Software](designing-inclusive-software.md)  
-* [Inclusive design](http://design.microsoft.com/inclusive)
-* [Engineering Software for Accessibility](https://www.microsoft.com/en-us/download/details.aspx?id=19262)
-* [Microsoft accessibility developer hub](https://msdn.microsoft.com/enable)
+## 参照 ##
+* [包括性を備えたソフトウェアの設計](designing-inclusive-software.md)  
+* [包括性を備えた設計](http://design.microsoft.com/inclusive)
+* [アクセシビリティ ソフトウェアのエンジニアリング](https://www.microsoft.com/en-us/download/details.aspx?id=19262)
+* [Microsoft アクセシビリティ開発者ハブ](https://msdn.microsoft.com/enable)
 
 
 <!--HONumber=Mar16_HO3-->

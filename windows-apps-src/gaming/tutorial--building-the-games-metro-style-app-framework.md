@@ -1,31 +1,31 @@
 ---
-title: Define the game's Universal Windows Platform (UWP) app framework
-description: The first part of coding a Universal Windows Platform (UWP) with DirectX game is building the framework that lets the game object interact with Windows.
+title: ゲームのユニバーサル Windows プラットフォーム (UWP) アプリ フレームワークの定義
+description: DirectX によるユニバーサル Windows プラットフォーム (UWP) ゲームのコーディングでは、まず、ゲーム オブジェクトと Windows との対話を可能にするフレームワークを構築します。
 ms.assetid: 7beac1eb-ba3d-e15c-44a1-da2f5a79bb3b
 ---
 
-#  Define the game's Universal Windows Platform (UWP) app framework
+#  ゲームのユニバーサル Windows プラットフォーム (UWP) アプリ フレームワークの定義
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-The first part of coding a Universal Windows Platform (UWP) with DirectX game is building the framework that lets the game object interact with Windows. This includes Windows Runtime properties like suspend/resume event handling, window focus, and snapping, plus as the events, interactions and transitions for the user interface. We go over how the sample game is structured, and how it defines the high-level state machine for the player and system interaction.
+DirectX によるユニバーサル Windows プラットフォーム (UWP) ゲームのコーディングでは、まず、ゲーム オブジェクトと Windows との対話を可能にするフレームワークを構築します。 これには、中断/再開イベントの処理、ウィンドウのフォーカス、スナップなどの Windows ランタイムのプロパティや、ユーザー インターフェイスのイベント、対話式操作、トランザクションが含まれます。 ここでは、サンプル ゲームを構成する方法と、サンプル ゲームでプレーヤーとシステムの対話用の上位レベルのステート マシンを定義する方法について説明します。
 
-## Objective
-
-
--   To set up the framework for a UWP DirectX game, and implement the state machine that defines the overall game flow.
-
-## Initializing and starting the view provider
+## 目標
 
 
-In any UWP DirectX game, you must obtain a view provider that the app singleton, the Windows Runtime object that defines an instance of your running app, can use to access the graphics resources it needs. Through the Windows Runtime, your app has a direct connection with the graphics interface, but you need to specify the resources you need and how to handle them.
+-   UWP DirectX ゲーム用のフレームワークをセットアップし、ゲーム全体のフローを定義するステート マシンを実装する。
 
-As we discussed in [Setting up the game project](tutorial--setting-up-the-games-infrastructure.md), Microsoft Visual Studio 2015 provides an implementation of a basic renderer for DirectX in the **Sample3DSceneRenderer.cpp** file that is available when you pick the **DirectX 11 App (Universal Windows)** template.
+## ビュー プロバイダーの初期化と開始
 
-For more details about understanding and creating a view provider and renderer, see [How to set up your UWP with C++ and DirectX to display a DirectX view](https://msdn.microsoft.com/library/windows/apps/hh465077).
 
-Suffice to say, you must provide the implementation for 5 methods that the app singleton calls:
+どの UWP DirectX ゲームでも、アプリ シングルトン (実行中のアプリのインスタンスを定義する Windows ランタイム オブジェクト) が必要なグラフィックス リソースにアクセスできるようにするビュー プロバイダーを取得する必要があります。 Windows ランタイムを通じて、アプリはグラフィックス インターフェイスに直接接続できますが、必要なリソースとその処理方法を指定する必要があります。
+
+「[ゲーム プロジェクトの設定](tutorial--setting-up-the-games-infrastructure.md)」で説明したとおり、Microsoft Visual Studio 2015 には、**DirectX 11 アプリ (ユニバーサル Windows)** テンプレートの選択時に使うことができる **Sample3DSceneRenderer.cpp** ファイルに、DirectX 用の基本的なレンダラーの実装が用意されています。
+
+ビュー プロバイダーとレンダラーの概要と作成について詳しくは、「[C++ および DirectX による UWP で DirectX ビューを表示するための設定方法](https://msdn.microsoft.com/library/windows/apps/hh465077)」をご覧ください。
+
+言うまでもなく、アプリ シングルトンが呼び出す 5 つのメソッドの実装を用意する必要があります。
 
 -   [**Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495)
 -   [**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509)
@@ -33,9 +33,9 @@ Suffice to say, you must provide the implementation for 5 methods that the app s
 -   [**Run**](https://msdn.microsoft.com/library/windows/apps/hh700505)
 -   [**Uninitialize**](https://msdn.microsoft.com/library/windows/apps/hh700523)
 
-In the DirectX11 App (Universal Windows) template, these 5 methods are defined on the **App** object in [App.h](#code_sample). Let's take a look at the way they are implemented in this game.
+DirectX11 アプリ (ユニバーサル Windows) テンプレートでは、これら 5 つのメソッドは、[App.h](#code_sample) の **App** オブジェクトに定義されています。 これらのメソッドがこのゲームに実装されている方法を見てみましょう。
 
-The Initialize method of the view provider
+ビュー プロバイダーの Initialize メソッド
 
 ```cpp
 void App::Initialize(
@@ -57,13 +57,13 @@ void App::Initialize(
 }
 ```
 
-The app singleton first calls **Initialize**. Therefore, it is crucial that this method handles the most fundamental behaviors of a UWP game, such as handling the activation of the main window and making sure that the game can handle a sudden suspend (and a possible later resume) event.
+アプリ シングルトンは、最初に **Initialize** を呼び出します。 このため、メイン ウィンドウのアクティブ化の処理や、ゲームが突然の中断 (とその後に行われる場合がある再開) イベントを処理できることの確認など、UWP ゲームの最も基本的な動作をこのメソッドで処理することが非常に重要です。
 
-When the game app is initialized, it allocates specific memory for the controller to allow the player to begin providing input. It also creates new, uninitialized instances of the game's renderer and state machine. We discuss the details in [Defining the main game object](tutorial--defining-the-main-game-loop.md).
+ゲーム アプリは、初期化される際、コントローラー専用のメモリを割り当てて、プレーヤーが入力を開始できるようにします。 さらに、ゲームのレンダラーとステート マシンの新しい初期化されていないインスタンスも作成します。 これについては、「[メイン ゲーム オブジェクトの定義](tutorial--defining-the-main-game-loop.md)」で詳しく説明します。
 
-At this point, the game app can handle a suspend (or resume) message, and has memory allocated for the controller, the renderer, and the game itself. But there's no window to work with, and the game is uninitialized. There's a few more things that need to happen!
+この時点では、このゲーム アプリには、中断 (または再開) メッセージを処理する機能があり、コントローラー、レンダラー、ゲーム自体用のメモリが割り当てられています。 ただし、操作するウィンドウはなく、ゲームは初期化されていません。 必要なことが、あといくつか残っています。
 
-The SetWindow method of the view provider
+ビュー プロバイダーの SetWindow メソッド
 
 ```cpp
 void App::SetWindow(
@@ -101,15 +101,15 @@ void App::SetWindow(
 }
 ```
 
-Now, with a call to an implementation of [**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509), the app singleton provides a [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) object that represents the game's main window, and makes its resources and events available to the game. Because there's a window to work with, the game can now start adding in the basic user interface components and events: a pointer (used by both mouse and touch controls), and the basic events for window resizing, closing, and DPI changes (if the display device changes).
+ここでは、アプリ シングルトンは、[**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509) の実装を呼び出して、ゲームのメイン ウィンドウを表す [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) オブジェクトを提供し、そのリソースとイベントをゲームで使用できるようにします。 操作するウィンドウがあるため、この時点で、ゲームはユーザー インターフェイスの基本的なコンポーネントとイベントの追加を開始できます。具体的には、ポインター (マウスとタッチの両方のコントロールで使用) と、ウィンドウのサイズ変更用、ウィンドウを閉じる操作用、DPI の変更用 (表示デバイスが変更された場合) の基本的なイベントを追加します。
 
-The game app also initializes the controller, because there's a window to interact with, and initializes the game object itself. It can read input from the controller (touch, mouse, or XBox 360 controller).
+ゲーム アプリではさらに、対話するウィンドウがあるため、コントローラーも初期化し、ゲーム オブジェクト自体も初期化します。 ゲーム アプリでは、コントローラー (タッチ、マウス、または Xbox 360 コントローラー) からの入力を読み取ることができます。
 
-After the controller is initialized, the app defines two rectangular areas in the lower-left and lower-right corners of the screen for the move and camera touch controls, respectively. The player uses the lower-left rectangle, defined by the call to **SetMoveRect**, as a virtual control pad for moving the camera forward and backward, and side to side. The lower-right rectangle, defined by the **SetFireRect** method, is used as a virtual button to fire the ammo.
+コントローラーを初期化したら、移動とカメラのそれぞれのタッチ コントロール用に、画面の左下と右下の 2 つの四角形の領域を定義します。 **SetMoveRect** を呼び出して定義される左下の四角形は、カメラを前後左右に動かすための仮想のコントロール パッドとして使われ、 **SetFireRect** メソッドで定義される右下の四角形は、弾を撃つための仮想のボタンとして使われます。
 
-It's all starting to come together.
+すべてがまとまり始めました。
 
-The Load method of the view provider
+ビュー プロバイダーの Load メソッド
 
 ```cpp
 void App::Load(
@@ -153,23 +153,23 @@ void App::Load(
 }
 ```
 
-After the main window is set, the app singleton calls **Load**. In the sample, this method uses a set of asynchronous tasks (the syntax for which is defined in the [Parallel Patterns Library](https://msdn.microsoft.com/library/windows/apps/dd492418.aspx)) to create the game objects, load graphics resources, and initialize the game’s state machine. By using the async task pattern, the Load method completes quickly and allows the app to start processing input. In this method, the app also displays a progress bar as the resource files load.
+メイン ウィンドウが設定された後、アプリ シングルトンは **Load** を呼び出します。 このサンプルでは、このメソッドで一連の非同期タスク (構文は[並列パターン ライブラリ](https://msdn.microsoft.com/library/windows/apps/dd492418.aspx)で定義されています) を使って、ゲーム オブジェクトを作成し、グラフィックス リソースを読み込み、ゲームのステート マシンを初期化します。 非同期タスク パターンを使うことで、Load メソッドがすばやく完了し、アプリで入力の処理を開始できます。 このメソッドでは、さらに、リソース ファイルの読み込み状況を示す進行状況バーを表示します。
 
-We break resource loading into two separate stages, because access to the Direct3D 11 device context is restricted to the thread the device context was created on, while access to the Direct3D 11 device for object creation is free-threaded. The **CreateGameDeviceResourcesAsync** task runs on a separate thread from the completion task (*FinalizeCreateGameDeviceResources*), which runs on the original thread. We use a similar pattern for loading level resources with **LoadLevelAsync** and **FinalizeLoadLevel**.
+リソースの読み込みは 2 段階に分けて処理します。Direct3D 11 のデバイス コンテキストへのアクセスはそのデバイス コンテキストが作成されたスレッドに制限されるのに対し、オブジェクト作成用の Direct3D 11 のデバイスへのアクセスはスレッドが制限されないからです。 **CreateGameDeviceResourcesAsync** タスクは、元のスレッドで実行される完了タスク (*FinalizeCreateGameDeviceResources*) とは別のスレッドで実行されます。 **LoadLevelAsync** と **FinalizeLoadLevel** を使うレベル リソースの読み込みにも同様のパターンを使います。
 
-After we create the game’s objects and load the graphics resources, we initialize the game's state machine to the starting conditions (for example: setting the initial ammo count, level number, and object positions). If the game state indicates that the player is resuming a game, we load the current level (the level that player was on when the game was suspended).
+ゲームのオブジェクトを作成し、グラフィックス リソースを読み込んだら、ゲームのステート マシンを開始時の状態に初期化します (たとえば、初期状態の弾薬の数、レベル、オブジェクトの位置などを設定します)。 ゲームの状態を確認し、プレーヤーがゲームを再開した状態のときは、現在のレベル (プレーヤーがゲームを中断した時点のプレーヤーのレベル) を読み込みます。
 
-In the **Load** method, we do any necessary preparations before the game begins, like setting any starting states or global values. If you want to pre-fetch game data or assets, this is a better place for it rather than in **SetWindow** or **Initialize**. Use async tasks in your game for any loading as Windows imposes restrictions on the time your game can take before it must start processing input. If loading takes awhile—if there are lots of resources — then provide your users with a regularly updated progress bar.
+開始時の状態やグローバルな値の設定など、ゲームを開始する前に必要な準備があれば、**Load** メソッドで行います。 ゲームのデータまたはアセットを事前に取得するには、**SetWindow** や **Initialize** よりも、このメソッドが適しています。 ゲームでは、ゲームを起動してから入力の処理を開始するまでの時間に制限があるため、すべての読み込みに非同期タスクを使います。 リソースが多いなど、読み込みに時間がかかる場合は、進行状況バーを用意して定期的に更新するようにします。
 
-When developing your own game, design your startup code around these methods. Here's a simple list of basic suggestions for each method:
+ゲームを開発するときは、これらのメソッドの近くにスタートアップ コードを設計してください。 各メソッドの基本的な推奨事項を次に示します。
 
--   Use **Initialize** to allocate your main classes and connect up the basic event handlers.
--   Use **SetWindow** to create your main window and connect any window-specific events.
--   Use **Load** to handle any remaining setup, and to initiate the async creation of objects and loading of resources. If you need to create any temporary files or data, such as procedurally generated assets, do it here too.
+-   メイン クラスの割り当てと基本的なイベント ハンドラーの接続には **Initialize** を使います。
+-   メイン ウィンドウの作成とウィンドウ固有のイベントの接続には **SetWindow** を使います。
+-   その他のセットアップの処理と非同期のオブジェクト作成やリソース読み込みには **Load** を使います。 一時ファイルまたは一時データを作成する必要がある場合は (手続き的に生成されるアセットなど)、その処理もこのメソッドで行います。
 
-So, the sample game creates an instance of the game's state machine and sets it to the starting configuration. It handles all the system and input events. It provides a window to display content in. The gameplay code is now ready to run.
+サンプル ゲームでは、このようにゲームのステート マシンのインスタンスを作成し、開始時の構成に設定します。 また、すべてのシステム イベントと入力イベントを処理し、 コンテンツを表示するウィンドウを提供します。 これで、ゲーム プレイ コードを実行する準備ができました。
 
-The Run method of the view provider
+ビュー プロバイダーの Run メソッド
 
 ```cpp
 void App::Run()
@@ -205,22 +205,22 @@ void App::Run()
 }
 ```
 
-Here's where we get to the play part of the game app. Having run the 3 methods and set the stage, the game app runs the **Run** method, starting the fun!
+これが、ゲーム アプリの実行部分です。 ゲーム アプリは、3 つのメソッドを実行してステージを設定した後、**Run** メソッドを実行します。いよいよお楽しみの始まりです。
 
-In the game sample, we start a while loop that terminates when the player closes the game window. The sample code transitions to one of two states in the game engine state machine:
+このゲーム サンプルでは、プレーヤーがゲーム ウィンドウを閉じると終了する while ループを開始します。 サンプル コードは、ゲーム エンジンのステート マシンの次の 2 つのいずれかの状態に移行します。
 
--   The game window gets deactivated (loses focus) or snapped. When this happens, the game suspends event processing and waits for the window to focus or unsnap.
--   Otherwise, the game updates its own state and renders the graphics for display.
+-   ゲーム ウィンドウが非アクティブ化される (フォーカスを失う) か、スナップされます。 この場合、ゲームではイベントの処理を中断し、ウィンドウがフォーカスまたはスナップを解除されるまで待機します。
+-   または、ゲームが自身の状態を更新し、表示するグラフィックスをレンダリングします。
 
-When your game has focus, you must handle every event in the message queue as it arrives, and so you must call [**CoreWindowDispatch.ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) with the **ProcessAllIfPresent** option. Other options can cause delays in processing message events, which makes your game feel unresponsive, or result in touch behaviors that feel sluggish and not "sticky".
+ゲームにフォーカスがある場合、メッセージ キューに到達する各イベントを処理する必要があるため、[**CoreWindowDispatch.ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) を **ProcessAllIfPresent** オプションで呼び出す必要があります。 他のオプションでは、メッセージ イベントの処理に遅延が発生することがあり、この場合、ゲームが応答しなくなったように見えるか、タッチ動作の反応が遅くて "敏感" でないように見えます。
 
-Of course, when the app is not visible, suspended or snapped, we don't want it to consume any resources cycling to dispatch messages that will never arrive. So your game must use **ProcessOneAndAllPending**, which blocks until it gets an event, and then processes that event and any others that arrive in the process queue during the processing of the first. [**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) then immediately returns after the queue has been processed.
+もちろん、アプリが表示されていないときや中断またはスナップ状態のときにリソースを循環させてどこにも到達しないメッセージをディスパッチすることは回避する必要があるため、 ゲームでは **ProcessOneAndAllPending** を使う必要があります。この結果、イベントが取得されるまではブロックが行われ、その後、そのイベントと、そのイベントの処理中にプロセス キューに到達した他のイベントが処理されます。 その後、キューの処理が終了すると、[**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) に即座に戻ります。
 
-The game is running! The events that it uses to transition between game states are being dispatched and processed. The graphics are being updated as the game loop cycles. We hope the player is having fun. But eventually, the fun has to end...
+ゲームの実行は続いています。 ゲームの状態間の移行に使われるイベントのディスパッチと処理が行われています。 ゲーム ループの循環に応じてグラフィックスが更新されています。 プレイヤーがずっと楽しんでくれることを願っています。 でも、お楽しみもいつかは終わります。
 
-...and we need to clean up the place. This is where **Uninitialize** comes in.
+そして、クリーンアップが必要になります。 **Uninitialize** はまさにそのような用途に使います。
 
-The Uninitialize method of the view provider
+ビュー プロバイダーの Uninitialize メソッド
 
 ```cpp
 void App::Uninitialize()
@@ -228,24 +228,24 @@ void App::Uninitialize()
 }
 ```
 
-In the game sample, we let the app singleton for the game clean everything up after the game is terminated. In Windows 10, closing the app window doesn't kill the app's process, but instead writes the state of the app singleton to memory. If anything special must happen when the system must reclaim this memory, any special cleanup of resources, then put the code for that cleanup in this method.
+このゲーム サンプルでは、ゲームの終了後、ゲームのアプリ シングルトンがすべてのクリーンアップを行います。 Windows 10 では、アプリ ウィンドウを閉じてもアプリのプロセスは強制終了されず、代わりに、アプリ シングルトンの状態がメモリに書き込まれます。 システムでこのメモリの再利用が必要になった際に、リソースの特別なクリーンアップなどの特別な処理が必要な場合は、そのクリーンアップ用のコードをこのメソッドに入れてください。
 
-We refer back to these 5 methods in this tutorial, so keep them in mind. Now, let's look at the game engine's overall structure and the state machines that define it.
+これら 5 つのメソッドについては、このチュートリアルで再確認するため、忘れないでおいてください。 次に、ゲーム エンジン全体の構造と、それを定義するステート マシンを見てみましょう。
 
-## Initializing the game engine state
+## ゲーム エンジンの状態の初期化
 
 
-Because a user can resume a UWP game app from a suspended state at any time, the app can have any number of possible states.
+ユーザーは UWP ゲーム アプリを中断状態からいつでも再開できるため、アプリが置かれる可能性のある状態は任意に設定できます。
 
-The game sample can be in one of the three states when it starts:
+このゲーム サンプルは、開始時に、次の 3 つのいずれかの状態になります。
 
--   The game loop was running and was in the middle of a level.
--   The game loop was not running because a game had just been completed. (The high score is set.)
--   No game has been started, or the game was between levels. (The high score is 0.)
+-   ゲーム ループが実行中で、いずれかのレベル中の状態。
+-   ゲームがちょうど完了したため、ゲーム ループが実行されていない状態。 (ハイ スコアが設定されます。)
+-   ゲームが開始されていないか、ゲームが 2 つのレベルの中間にある状態。 (ハイ スコアは 0)。
 
-Obviously, in your own game, you could have more or fewer states. Again, always be aware that your UWP game can be terminated at any time, and when it resumes, the player expects the game to behave as though they had never stopped playing.
+もちろん、作成するゲームでは、状態の数を増減できます。 繰り返しますが、UWP ゲームはいつでも終了できるため、プレーヤーは再開時に、ゲームをまったく停止していなかったかのようにゲームが動作すると期待することを常に覚えておいてください。
 
-In the game sample, the code flow looks like this.
+ゲーム サンプルでは、コード フローは次のようになります。
 
 ```cpp
 void App::InitializeGameState()
@@ -274,22 +274,22 @@ void App::InitializeGameState()
 }
 ```
 
-Initialization is less about cold starting the app, and more about restarting the app after it has been terminated. The sample game always saves state, which gives the appearance that the app is always running. The suspended state is just that: the game play is suspended, but the resources of the game are still in memory. Likewise, the resume event indicates that the sample game is picking up where it was last suspended or terminated. When the sample game restarts after termination, it starts up normally and then determines the last known state so the player can immediately continue playing.
+初期化では、アプリをコールド スタートするというよりは、終了されたアプリを再起動します。 サンプル ゲームでは状態が常に保存されるので、アプリが常に実行中のように見えます。 中断状態では、ゲーム プレイは中断されますが、ゲームのリソースはメモリに残されます。 同様に、再開イベントは、サンプル ゲームが前回中断または終了された点から再開されることを示しています。 サンプル ゲームが終了後に再起動されると、通常どおり開始され、その後、最後の既知の状態が判断されるため、プレーヤーはゲームの続きを即座に続行できます。
 
-The flowchart lays out the initial states and transitions for the game sample's initialization process.
+このフローチャートは、ゲーム サンプルの初期化プロセスの初期状態と移行を示しています。
 
-![the process for initializing and preparing our game before the main loop starts](images/simple3dgame-appstartup.png)
+![メイン ループの開始前にゲームの初期化と準備を行うプロセス](images/simple3dgame-appstartup.png)
 
-Depending on the state, different options are presented to the player. If the game resumes mid-level, it appears as paused, and the overlay presents a continue option. If the game resumed in a state where the game is completed, it displays the high scores and an option to play a new game. Lastly, if the game resumes before a level has started, the overlay presents a start option to the user.
+状態に応じて、異なるオプションがプレーヤーに表示されます。 ゲームは、2 つのレベルの中間から再開された場合、一時停止しているように見え、オーバーレイで続行オプションが表示されます。 また、完了状態から再開された場合は、ハイ スコアと、新しいゲームを開始するオプションが表示されます。 そして、いずれかのレベルが開始される前にゲームが再開された場合は、オーバーレイで開始オプションがユーザーに表示されます。
 
-The game sample doesn't distinguish between the game itself cold starting, that is a game that is launching for the first time without a suspend event, and the game resuming from a suspended state. This is proper design for any UWP app.
+このゲーム サンプルでは、ゲーム自体のコールド スタート (ゲームが初めて起動されていて、中断イベントがない状態) と、ゲームの中断状態からの再開とを区別していません。 これは、どの UWP アプリにも適切な設計です。
 
-## Handling events
+## イベントの処理
 
 
-Our sample code registered a number of handlers for specific events in **Initialize**, **SetWindow**, and **Load**. You probably guessed that these were important events, because the code sample did this work well before it got into any game mechanics or graphics development. You're right! These events are fundamental to a proper UWP app experience, and because a UWP app can be activated, deactivated, resized, snapped, unsnapped, suspended, or resumed at any time, the game must register for those very events as soon as it can, and handle them in a way that keeps the experience smooth and predictable for the player.
+サンプル コードでは、特定のイベントに対する多数のハンドラーが **Initialize**、**SetWindow**、**Load** に登録されています。 コード サンプルでは、この登録を、ゲームのしくみやグラフィックスの開発を始めるよりもずっと前に行っているため、これらのイベントが重要であると思っている方もいるでしょう。 その推測は当たっています。 これらのイベントは UWP アプリの適切なエクスペリエンスに不可欠であり、また、UWP アプリはいつでもアクティブ化、非アクティブ化、サイズ変更、スナップ、スナップの解除、中断、再開ができるため、ゲームではこれらのイベント自体をできる限り早く登録し、プレーヤーのエクスペリエンスをスムーズで予測可能な状態に保てる方法で、これらのイベントを処理する必要があります。
 
-Here's the event handlers in the sample, and the events they handle. You can find the full code for these event handlers in [Complete code for this section](#code_sample).
+次の表に、このサンプルのイベント ハンドラーと、ハンドラーが処理するイベントを示します。 これらのイベント ハンドラーの完全なコードは、「[このセクションのサンプル コード一式](#code_sample)」で確認できます。
 
 <table>
 <colgroup>
@@ -298,20 +298,20 @@ Here's the event handlers in the sample, and the events they handle. You can fin
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Event handler</th>
-<th align="left">Description</th>
+<th align="left">イベント ハンドラー</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">OnActivated</td>
-<td align="left">Handles [<strong>CoreApplicationView::Activated</strong>](https://msdn.microsoft.com/library/windows/apps/br225018). The game app has been brought to the foreground, so the main window is activated.</td>
+<td align="left">[<strong>CoreApplicationView::Activated</strong>](https://msdn.microsoft.com/library/windows/apps/br225018) を処理します。 ゲーム アプリがフォアグラウンドに表示されているため、メイン ウィンドウがアクティブ化されます。</td>
 </tr>
 <tr class="even">
 <td align="left">OnLogicalDpiChanged</td>
-<td align="left">Handles [<strong>DisplayProperties::LogicalDpiChanged</strong>](https://msdn.microsoft.com/library/windows/apps/br226150). The DPI for the main game window has changed, and the game app adjusts its resources accordingly.
+<td align="left">[<strong>DisplayProperties::LogicalDpiChanged</strong>](https://msdn.microsoft.com/library/windows/apps/br226150) を処理します。 ゲームのメイン ウィンドウの DPI が変更されていて、それに応じてゲーム アプリがそのリソースを調整します。
 <div class="alert">
-<strong>Note</strong>  [<strong>CoreWindow</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404559) coordinates are in DIPs (Device Independent Pixels), as in [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370987). As a result, you must notify Direct2D of the change in DPI to display any 2D assets or primitives correctly.
+<strong>注</strong>  [<strong>CoreWindow</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404559) 座標の単位は、[Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370987) と同様に、DIP (デバイスに依存しないピクセル数) です。 このため、2D アセットまたはプリミティブを正しく表示するには、Direct2D に DPI の変更を通知する必要があります。
 </div>
 <div>
  
@@ -319,49 +319,49 @@ Here's the event handlers in the sample, and the events they handle. You can fin
 </tr>
 <tr class="odd">
 <td align="left">OnResuming</td>
-<td align="left">Handles [<strong>CoreApplication::Resuming</strong>](https://msdn.microsoft.com/library/windows/apps/br205859). The game app restores the game from a suspended state.</td>
+<td align="left">[<strong>CoreApplication::Resuming</strong>](https://msdn.microsoft.com/library/windows/apps/br205859) を処理します。 ゲーム アプリがゲームを中断状態から復元します。</td>
 </tr>
 <tr class="even">
 <td align="left">OnSuspending</td>
-<td align="left">Handles [<strong>CoreApplication::Suspending</strong>](https://msdn.microsoft.com/library/windows/apps/br205860). The game app saves its state to disk. It has 5 seconds to save state to storage.</td>
+<td align="left">[<strong>CoreApplication::Suspending</strong>](https://msdn.microsoft.com/library/windows/apps/br205860) を処理します。 ゲーム アプリがその状態をディスクに保存します。 ストレージへの状態の保存に使用できる時間は 5 秒です。</td>
 </tr>
 <tr class="odd">
 <td align="left">OnVisibilityChanged</td>
-<td align="left">Handles [<strong>CoreWindow::VisibilityChanged</strong>](https://msdn.microsoft.com/library/windows/apps/hh701591). The game app has changed visibility, and has either become visible or been made invisible by another app becoming visible.</td>
+<td align="left">[<strong>CoreWindow::VisibilityChanged</strong>](https://msdn.microsoft.com/library/windows/apps/hh701591) を処理します。 ゲーム アプリの表示が切り替わり、表示されるようになったか、別のアプリが表示されたために非表示になったことを示します。</td>
 </tr>
 <tr class="even">
 <td align="left">OnWindowActivationChanged</td>
-<td align="left">Handles [<strong>CoreWindow::Activated</strong>](https://msdn.microsoft.com/library/windows/apps/br208255). The game app's main window has been deactivated or activated, so it must remove focus and pause the game, or regain focus. In both cases, the overlay indicates that the game is paused.</td>
+<td align="left">[<strong>CoreWindow::Activated</strong>](https://msdn.microsoft.com/library/windows/apps/br208255) を処理します。 ゲーム アプリのメイン ウィンドウが非アクティブ化またはアクティブ化されたため、フォーカスを動かしてゲームを一時停止するか、フォーカスを再取得する必要があります。 どちらの場合も、ゲームが一時停止されていることがオーバーレイに表示されます。</td>
 </tr>
 <tr class="odd">
 <td align="left">OnWindowClosed</td>
-<td align="left">Handles [<strong>CoreWindow::Closed</strong>](https://msdn.microsoft.com/library/windows/apps/br208261). The game app closes the main window and suspends the game.</td>
+<td align="left">[<strong>CoreWindow::Closed</strong>](https://msdn.microsoft.com/library/windows/apps/br208261) を処理します。 ゲーム アプリがメイン ウィンドウを閉じ、ゲームを中断します。</td>
 </tr>
 <tr class="even">
 <td align="left">OnWindowSizeChanged</td>
-<td align="left">Handles [<strong>CoreWindow::SizeChanged</strong>](https://msdn.microsoft.com/library/windows/apps/br208283). The game app reallocates the graphics resources and overlay to accommodate the size change, and then updates the render target.</td>
+<td align="left">[<strong>CoreWindow::SizeChanged</strong>](https://msdn.microsoft.com/library/windows/apps/br208283) を処理します。 サイズ変更に応じてゲーム アプリがグラフィックス リソースとオーバーレイを再割り当てし、その後、レンダー ターゲットを更新します。</td>
 </tr>
 </tbody>
 </table>
 
  
 
-Your own game must handle these events, because they are part of UWP app design.
+これらのイベントは UWP アプリ設計に含まれるため、作成するゲームではこれらのイベントを処理する必要があります。
 
-## Updating the game engine
+## ゲーム エンジンの更新
 
 
-Within the game loop in **Run**, the sample has implemented a basic state machine for handling all the major actions the player can take. The highest level of this state machine deals with loading a game, playing a specific level, or continuing a level after the game has been paused (by the system or the player).
+このサンプルでは、**Run** のゲーム ループ内に、プレーヤーが実行できる主な操作すべてを処理する基本的なステート マシンを実装しています。 このステート マシンの最上位レベルは、ゲームの読み込み、特定のレベルのゲーム プレイ、ゲームが (システムあるいはプレーヤーによって) 一時停止された後のレベルの続行を処理します。
 
-In the game sample, there are 3 major states (UpdateEngineState) the game can be in:
+このゲーム サンプルには、ゲームの主な状態 (UpdateEngineState) として次の 3 つがあります。
 
--   **Waiting for resources**. The game loop is cycling, unable to transition until resources (specifically graphics resources) are available. When the async tasks for loading resources completes, it updates the state to **ResourcesLoaded**. This usually happens between levels when the level needs to load new resources from disk. In the game sample, we simulate this behavior because the sample doesn't need any additional per-level resources at that time.
--   **Waiting for press**. The game loop is cycling, waiting for specific user input. This input is a player action to load a game, start a level, or continue a level. The sample code refers to these sub-states as PressResultState enumeration values.
--   **Dynamics**. The game loop is running with the user playing. While the user is playing, the game checks for 3 conditions that it can transition on: the expiration of the set time for a level, the completion of a level by the player, or the completion of all levels by the player.
+-   **Waiting for resources**。 ゲーム ループが循環していて、リソース (具体的にはグラフィックス リソース) が使用可能になるまで、移行はできません。 リソースを読み込む非同期タスクが完了すると、状態が **ResourcesLoaded** に更新されます。 これは通常、2 つのレベルの中間で発生します。レベルの中間では、新しいリソースをディスクから読み込む必要があるためです。 このゲーム サンプルでは、その時点ではレベルごとに追加のリソースは必要ないため、この動作はシミュレートされます。
+-   **Waiting for press**. ゲーム ループが循環していて、特定のユーザー入力を待機しています。 この入力は、プレーヤーによるゲームの読み込み、レベルの開始、またはレベルの続行の操作です。 サンプル コードでは、これらの下位状態として、PressResultState 列挙値を使っています。
+-   **Dynamics**。 ゲーム ループが実行中で、ユーザーがゲームをしています。 ユーザーがゲームをしている間、ゲームでは移行が可能な 3 つの条件、つまり、レベルの設定時間切れ、プレーヤーによるいずれかのレベルの完了、プレーヤーによる全レベルの完了を確認します。
 
-Here's the code structure. The complete code is in [Complete code for this section](#code_sample).
+コード構造は次のとおりです。 完全なコードは、「[このセクションのサンプル コード一式](#code_sample)」にあります。
 
-The structure of the state machine used to update the game engine
+ゲーム エンジンの更新に使われるステート マシンの構造
 
 ```cpp
 void App::Update()
@@ -460,27 +460,27 @@ void App::Update()
 }
 ```
 
-Visually, the main game state machine looks like this:
+図で表すと、ゲームのメイン ステート マシンは次のようになります。
 
-![the main state machine for our game](images/simple3dgame-mainstatemachine.png)
+![ゲームのメイン ステート マシン](images/simple3dgame-mainstatemachine.png)
 
-We talk about the game logic itself in more detail in [Defining the main game object](tutorial--defining-the-main-game-loop.md). For now, the important takeaway is that your game is a state machine. Each specific state must have very specific criteria to define it, and the transitions from one state to another must be based on discrete user input or system actions (such as graphics resource loading). When you are planning your game, draw out a diagram like the one we use, making sure you address all possible actions the user or system can take at a high level. Games can be very complicated, and the state machine is a powerful tool to visualize this complexity and make it very manageable.
+ゲームのロジック自体については、「[メイン ゲーム オブジェクトの定義](tutorial--defining-the-main-game-loop.md)」でより詳しく説明します。 今のところは、ゲームはステート マシンである、という重要なポイントを覚えておいてください。 それぞれの状態に、それを定義する非常に具体的な条件が必要であり、ある状態から別の状態への移行は、ユーザー入力またはシステムによる個々の操作 (グラフィックス リソースの読み込みなど) に基づいて行われる必要があります。 ゲームの計画をするときは、ここで使ったような図を作成し、ユーザーまたはシステムが上位レベルで実行する可能性のあるすべての操作に対処していることを確認してください。 ゲームは非常に複雑な場合があり、ステート マシンは、この複雑さを視覚化して非常に扱いやすくする強力なツールです。
 
-Of course, as you saw, there are state machines within state machines. There's one for the controller, that handles all of the acceptable inputs the player can generate. In the diagram, a press is some form of user input. This state machine doesn't care what it is, because it works at a higher level; it assumes that the state machine for the controller will handle any transitions that affect movement and shooting behaviors, and the associated rendering updates. We talk about managing input states in [Adding controls](tutorial--adding-controls.md).
+もちろん、今までに見てきたように、ステート マシンの内部にステート マシンがあります。 コントローラーには、プレーヤーが実行可能でコントローラーで許容されるすべての入力を処理するステート マシンがあります。 上の図では、押し操作はユーザー入力の一種です。 このステート マシンは、どのようなユーザー入力かは認識しません。それより上位のレベルで処理されるからです。コントローラーのステート マシンは、移動とシューティングの動作に影響をあたえる移行と、それに関連するレンダリング更新を処理すると想定されます。 入力状態の管理については、「[コントロールの追加](tutorial--adding-controls.md)」で説明します。
 
-## Updating the user interface
+## ユーザー インターフェイスの更新
 
 
-We need to keep the player apprised of the state of the system, and allow him to change the high-level state according to the rules of the game. For most games, this game sample included, this is done with a heads-up display that contains representations of game state, and other play-specific info such as score, or ammo, or the number of chances remaining. We call this the overlay, because it is rendered separate from the main graphics pipeline and placed on top the 3D projection. In the sample game, we create this overlay using the Direct2D APIs. We can also create this overlay using XAML, which we discuss in [Extending the game sample](tutorial-resources.md).
+プレーヤーには、システムの状態を継続的に通知して、ゲームのルールに応じて上位レベルの状態を変更できるようにする必要があります。 このゲーム サンプルも含めてほとんどのゲームでは、これは、ゲームの状態や、スコア、弾薬、残りライフ数などのゲームに固有の他の情報の表現が含まれているヘッドアップ ディスプレイで行われます。 これをオーバーレイと呼びます。メインのグラフィックス パイプラインとは別にレンダリングされ、3D プロジェクションの上に配置されるためです。 このサンプル ゲームでは、このオーバーレイを Direct2D API を使って作成しています。 このオーバーレイは、XAML を使って作成することもできます。これについては、「[ゲーム サンプルの紹介](tutorial-resources.md)」で説明します。
 
-There are two components to the user interface:
+ユーザー インターフェイスには次の 2 つのコンポーネントがあります。
 
--   The heads-up display that contains the score and info about the current state of game play.
--   The pause bitmap, which is a black rectangle with text overlaid during the paused/suspended state of the game. This is the game overlay. We discuss it further in [Adding a user interface](tutorial--adding-a-user-interface.md).
+-   スコアとゲーム プレイの現在の状態に関する情報が含まれているヘッドアップ ディスプレイ。
+-   一時停止ビットマップ。これは、ゲームの一時停止/中断状態中にテキストがオーバーレイされる黒の四角形です。 これがゲーム オーバーレイです。 これについては、「[ユーザー インターフェイスの追加](tutorial--adding-a-user-interface.md)」で詳しく説明します。
 
-Unsurprisingly, the overlay has a state machine too. The overlay can display a level start or game over message. It is essentially a canvas to output any info about game state that we display to the player when the game is paused or suspended.
+当然のことながら、オーバーレイにもステート マシンがあります。 オーバーレイは、レベル開始またはゲーム オーバーのメッセージを表示できます。 これは、ゲームが一時停止または中断されたときに、プレーヤーに表示する必要があるゲームの状態に関する情報を出力するキャンバスのように機能します。
 
-Here's how the game sample structures the overlay's state machine.
+このゲーム サンプルでオーバーレイのステート マシンを構成する方法は次のとおりです。
 
 ```cpp
 void App::SetGameInfoOverlay(GameInfoOverlayState state)
@@ -516,18 +516,18 @@ void App::SetGameInfoOverlay(GameInfoOverlayState state)
 }
 ```
 
-There are 6 state screens that the overlay displays, depending on the state of the game itself: a resources loading screen at the start of the game, a game play screen, a level start message screen, a game over screen when all of the levels are competed without time running out, a game over screen when time runs out, and a pause menu screen.
+ゲーム自体の状態に応じて、6 つの状態画面がオーバーレイに表示されます。ゲームの開始時のリソース読み込み画面、ゲーム プレイ画面、レベル開始メッセージ画面、時間切れにならずに全レベルが完了した場合のゲーム オーバー画面、時間切れの場合のゲーム オーバー画面、一時停止メニュー画面です。
 
-Separating your user interface from your game's graphics pipeline allows you to work on it independent of the game's graphics rendering engine and decreases the complexity of your game's code significantly.
+ユーザー インターフェイスをゲームのグラフィックス パイプラインから分離すると、ゲームのグラフィックス レンダリング エンジンとは別に操作でき、ゲームのコードの複雑さが大幅に軽減されます。
 
-## Next steps
+## 次のステップ
 
 
-This covers the basic structure of the game sample, and presents a good model for UWP game app development with DirectX. Of course, there's more to it than this. We only walked through the skeleton of the game. Now, we take an in-depth look at the game and its mechanics, and how those mechanics are implemented as the core game object. We review that part in [Defining the main game object](tutorial--defining-the-main-game-loop.md).
+ここでは、ゲーム サンプルの基本構造について説明し、DirectX を使って UWP ゲーム アプリを開発する際に役立つモデルを紹介しました。 もちろん、それだけではありませんが、 ここでは、ゲームのフレームワークについて簡単に説明しました。 次は、ゲームとそのしくみ、そして、ゲームのコア オブジェクトとしてそのしくみを実装する方法を詳しく見てみましょう。 これについては、「[メイン ゲーム オブジェクトの定義](tutorial--defining-the-main-game-loop.md)」で説明します。
 
-It's also time to consider the sample game's graphics engine in greater detail. That part is covered in [Assembling the rendering pipeline](tutorial--assembling-the-rendering-pipeline.md).
+また、サンプル ゲームのグラフィックス エンジンについても詳しく確認する段階になりました。 これについては、「[レンダリング パイプラインのアセンブル](tutorial--assembling-the-rendering-pipeline.md)」で説明します。
 
-## Complete sample code for this section
+## このセクションのサンプル コード一式
 
 
 App.h

@@ -1,43 +1,43 @@
 ---
-Description: Use the app-level and account-level affiliates performance reports on the Windows Dev Center dashboard to view performance data for affiliate ads in your apps.
-title: Affiliates performance report
+Description: アプリ内のアフィリエイト広告のパフォーマンス データを表示するには、Windows デベロッパー センター ダッシュボードにあるアプリ レベルとアカウント レベルのアフィリエイト パフォーマンス レポートを使います。
+title: アフィリエイト パフォーマンス レポート
 ms.assetid: 38AD494C-0F85-4FED-8732-9064D1FC503D
 ---
 
-# Affiliates performance report
+# アフィリエイト パフォーマンス レポート
 
-If you have [opted in to the Microsoft affiliate ads program](about-affiliate-ads.md), you can view performance data for the affiliate ads that appear in your app in the following reports on the Windows Dev Center dashboard:
+[Microsoft アフィリエイト広告プログラムにオプトインした](about-affiliate-ads.md)場合は、アプリに表示されるアフィリエイト広告のパフォーマンス データを、Windows デベロッパー センター ダッシュボードの次のレポートで確認できます。
 
--   [App-level affiliates performance report](affiliates-performance-report.md#app-level-affiliates-performance-report). This report provides performance data for affiliate ads in the currently selected app in the dashboard.
--   [Dashboard-level affiliates performance report](affiliates-performance-report.md#dashboard-level-affiliates-performance-report). This report provides a summary of performance data for affiliate ads in all apps that you have opted in to the Microsoft affiliate ads program.
+-   [アプリ レベルのアフィリエイト パフォーマンス レポート](affiliates-performance-report.md#app-level-affiliates-performance-report)。 このレポートは、ダッシュボードで現在選択されているアプリ内のアフィリエイト広告についてパフォーマンス データを提供します。
+-   [ダッシュボード レベルのアフィリエイト パフォーマンス レポート](affiliates-performance-report.md#dashboard-level-affiliates-performance-report)。 このレポートは、Microsoft アフィリエイト広告プログラムにオプトインしたすべてのアプリ内のアフィリエイト広告について、パフォーマンス データの要約を提供します。
 
-These reports are updated daily. By default, the reports are filtered on performance from the last 30 days, on all devices. To change these filters, click **Page filters** and choose a different time frame or an individual device type. Note that all data is aggregated based using UTC, not your particular time zone.
+これらのレポートは毎日更新されます。 既定では、レポートはすべてのデバイスにおける過去 30 日間のパフォーマンスでフィルター処理されます。 これらのフィルターを変更するには、**[ページ フィルター]** をクリックし、異なる期間や個々のデバイスの種類を選択します。 すべてのデータは、特定のタイム ゾーンではなく、UTC に基づいて集計されることに注意してください。
 
-The following sections provide more details about these reports.
+以降のセクションでは、これらのレポートについてさらに詳しく説明します。
 
-## App-level affiliate ads performance report
+## アプリ レベルのアフィリエイト広告パフォーマンス レポート
 
-This report provides affiliate ads performance data in graph and table form for the currently selected app in the dashboard. To view this report, select one of your apps in the dashboard and click **Analytics** &gt; **Affiliates performance** in the navigation pane.
+このレポートは、ダッシュボードで現在選択されているアプリ内のアフィリエイト広告のパフォーマンス データを、グラフと表の形式で提供します。 このレポートを表示するには、ダッシュボードでいずれかのアプリを選択し、ナビゲーション ウィンドウで **[分析]** &gt; **[Affiliates performance] (アフィリエイトのパフォーマンス)** の順にクリックします。
 
-The data is obtained from the following seven performance metrics we track for the ads in your app:
+データは、アプリの広告について追跡される次の 7 つのパフォーマンス メトリックから取得されます。
 
--   **Estimated revenue**: The estimated amount of money you received as a commission for approved purchases made by users clicking affiliate ads in your app.
--   **Impressions**: The number of times an affiliate ad was shown in your app.
--   **Clicks**: The number of times someone clicked on an affiliate ad in your app.
--   **CTR**: Click-through rate, meaning the number of times an affiliate ad was clicked, divided by the number of affiliate ad impressions.
--   **Purchases (approved)**: The number of approved purchases made by users clicking affiliate ads in your app.
--   **Purchases (pending approval)**: The number of purchases pending approval that were made by users clicking affiliate ads in your app.
+-   **[売上見込み]**: アプリ内のアフィリエイト広告をクリックしたユーザーによって行われた、承認された購入の手数料として受け取った見込み金額。
+-   **[インプレッション数]**: アフィリエイト広告がアプリに表示された回数。
+-   **[クリック数]**: アプリでアフィリエイト広告がユーザーによってクリックされた回数。
+-   **[CTR]**: クリック スルー レート、つまりアフィリエイト広告がクリックされた回数をアフィリエイト広告のインプレッション数で割った値。
+-   **[Purchases (approved)] (購入数 (承認済み))**: アプリ内のアフィリエイト広告をクリックしたユーザーによって行われた、承認された購入の数。
+-   **[Purchases (pending approval)] (購入数 (承認保留中))**: アプリ内のアフィリエイト広告をクリックしたユーザーによって行われた、承認保留中の購入の数。
 
-> **Note**  The **Estimated revenue**, **Purchases (approved)** and **Purchases (pending approval)** data for a given day can change after purchases are approved or rejected.
+> **注**  指定した日の **[売上見込み]**、**[Purchases (approved)] (購入数 (承認済み))**、**[Purchases (pending approval)] (購入数 (承認保留中))** のデータは、購入が承認または拒否された後に変わる可能性があります。
 
-## Dashboard-level affiliate ads performance report
+## ダッシュボード レベルのアフィリエイト広告のパフォーマンス レポート
 
-The **Affiliates performance** section on your **Dashboard overview** page provides a summary of performance data for affiliate ads in all apps that you have opted in to the Microsoft affiliate ads program, in graph and table form. This report shows the same performance metrics and filters as the app-level affiliates performance report described above.
+**[ダッシュボード概要]** ページの **[Affiliates performance] (アフィリエイトのパフォーマンス)** セクションには、Microsoft アフィリエイト広告プログラムにオプトインしたすべてのアプリ内のアフィリエイト広告について、パフォーマンス データの要約が提供されます。 このレポートは、上記で説明したアプリ レベルのアフィリエイト パフォーマンス レポートと同じパフォーマンスのメトリックおよびフィルターを示します。
 
-## Related topics
+## 関連トピック
 
-* [About affiliate ads](about-affiliate-ads.md)
-* [Monetize with ads](monetize-with-ads.md)
+* [アフィリエイト広告について](about-affiliate-ads.md)
+* [広告による収益獲得](monetize-with-ads.md)
  
 
  

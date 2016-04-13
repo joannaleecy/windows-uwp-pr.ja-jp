@@ -1,43 +1,43 @@
 ---
-Description: When submitting an IAP, the options on the Pricing and availability page determine what to charge for your IAP and how it should be offered to customers.
-title: Set IAP pricing and availability
+Description: IAP を申請するときに、[価格と使用可能状況] ページのオプションで、IAP の料金やユーザーに提供する方法を指定します。
+title: IAP の価格と使用可能状況の設定
 ms.assetid: B3D4B753-716B-460B-A3B1-ED5712ECD694
 ---
 
-# Set IAP pricing and availability
+# IAP の価格と使用可能状況の設定
 
 
-When submitting an IAP, the options on the **Pricing and availability** page determine what to charge for your IAP and how it should be offered to customers.
+IAP を申請するときに、**[価格と使用可能状況]** ページのオプションで、IAP の料金やユーザーに提供する方法を指定します。
 
-## Base price
-
-
-You must select a base price for your IAP. These price tiers are the same as the price tiers for apps, starting at .99 USD. You also have the option to offer your IAP for free.
-
-## Markets and custom prices
+## 基本価格
 
 
-By default, your IAP will be listed in all possible markets, including any future markets that we may add later, at its base price.
+IAP の基本価格を選ぶ必要があります。 これらの価格帯は、0.99 米ドルから始まるアプリの価格帯と同じです。 また、IAP を無料で提供するためのオプションもあります。
 
-However, just as with an app, you have the option to choose the markets in which you'd like to offer your IAP. In most cases you'll want to pick the same set of markets as the app, but you have the flexibility to make changes as needed. You can also set custom prices so that you can charge different prices for the IAP in different markets.
-
-For more info and a full list of the available markets, see [Define pricing and market selection](define-pricing-and-market-selection.md).
-
-## Sale pricing
+## 市場と特別価格
 
 
-If you want to offer your IAP at a reduced price for a limited period of time, you can create and schedule a sale. For more info, see [Put apps and IAPs on sale](put-apps-and-iaps-on-sale.md).
+既定では、IAP は販売できるすべての市場 (今後追加される可能性のある市場も含む) にその基本価格で公開されます。
 
-## Distribution and visibility
+ただし、アプリと同様に、IAP を提供する市場を選ぶためのオプションもあります。 ほとんどの場合、アプリと同じ一連の市場の選びますが、必要に応じて柔軟に変更できます。 さまざまな市場で IAP の異なる価格を課金できるように、特別価格を設定することもできます。
+
+詳しい情報と利用可能な市場の一覧については、「[価格と市場の選択の定義](define-pricing-and-market-selection.md)」をご覧ください。
+
+## セール価格
 
 
-You can determine whether your IAP should be offered for purchase to customers. Choose from one of the following options:
+期間限定で IAP を割引価格で提供する場合は、特売を作成し、そのスケジュールを設定できます。 詳しくは、「[アプリと IAP の販売](put-apps-and-iaps-on-sale.md)」をご覧ください。
 
--   **Available for purchase. May be displayed in your app's listing:** This is the default setting and is recommended unless you want to restrict access to your IAP. Leave this option checked for IAPs that will be made available to any customer.
--   **Available for purchase. Not displayed in your app's listing:** Choosing this option allows customers to purchase the IAP from within your app, but the IAP will not be displayed in your app's Store listing. Use this only when the offer is not broadly available, for example during initial periods of internal testing.
--   **No longer available for purchase. Not displayed in your app's listing.** Choosing this option means that the IAP won't be displayed in your app's listing, and no new customers may purchase the IAP. However, **this option is not supported for customers on Windows 8.1 or earlier**. If your app is available on Windows 8.1 or earlier, the IAP will still be available for purchase to those customers. To stop offering this IAP to customers on Windows 8.1 or earlier, you'll need to update your app to remove the code that offers the IAP, then publish a new submission for the app. This is recommended even if your app doesn't target Windows 8.1 or earlier; it's a better experience for your customers if you never offer them an IAP that you've opted to make unavailable.
+## Distribution and visibility (配布と表示)
+
+
+IAP をユーザーが購入できるようにするかどうかを指定できます。 次のいずれかのオプションを選びます。
+
+-   **[購入可能。アプリのリストに表示されます]**: これは既定の設定であり、IAP へのアクセスを制限する必要がない場合にお勧めします。 IAP をすべてのユーザーに提供する場合は、このオプションをオンのままにしておきます。
+-   **[購入可能。アプリのリストには表示されません]**: このオプションを選ぶと、ユーザーはアプリ内から IAP を購入できますが、IAP はストア内のアプリの内容ページには表示されません。 初期の内部テスト期間中など、IAP が広く利用可能ではない場合にのみ、このオプションを使います。
+-   **[購入不可。 アプリのリストには表示されません]** このオプションを選ぶと、IAP はアプリの内容ページに表示されず、新しいユーザーは IAP を購入することができません。 ただし、**このオプションは、Windows 8.1 またはそれ以前のバージョンのユーザーについてはサポートされていません**。 アプリが Windows 8.1 またはそれ以前のバージョンで利用できる場合、それらのユーザーは引き続き IAP を購入できます。 Windows 8.1 またはそれ以前バージョンのユーザーに対して、この IAP の提供を停止するには、アプリを更新して IAP を提供するコードを削除し、新しいアプリの提出パッケージを公開する必要があります。 アプリが Windows 8.1 またはそれ以前のバージョンを対象としていない場合でも、この方法をお勧めします。利用できないようにすることを選択した IAP をユーザーに提供しないことは、ユーザーのエクスペリエンス向上につながります。
     
-    > **Note**  Choosing this setting, and/or submitting an app update that removes the IAP from your app's code, does not affect any customers who have already purchased the IAP, regardless of their operating system.
+    > **注**  この設定を選択した場合や、アプリのコードから IAP を削除するアプリの更新プログラムを提出した場合でも、オペレーティング システムに関係なく、IAP を購入済みのユーザーには影響しません。
 
      
 

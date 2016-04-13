@@ -1,125 +1,125 @@
 ---
 ms.assetid: 86D9D3CF-8FDC-4B67-881B-DF33A1BEE8BF
-description: Before using ad mediation, you'll need to set up accounts with each ad network that you’d like to use in your apps.
-title: Select and manage your ad networks
+description: 広告の仲介を使うには、アプリで使う各広告ネットワークにアカウントを設定する必要があります。
+title: 広告ネットワークの選択と管理
 ---
 
-# Select and manage your ad networks
+# 広告ネットワークの選択と管理
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-Before using ad mediation, you'll need to set up accounts with each ad network that you’d like to use in your apps. We recommend doing this before you add the ad mediator control to your Microsoft Visual Studio project. We also recommend that you set up accounts with as many ad networks as possible, so you have maximum flexibility to optimize your ad mediation performance.
+広告の仲介を使うには、アプリで使う各広告ネットワークにアカウントを設定する必要があります。 広告メディエーター コントロールを Microsoft Visual Studio プロジェクトに追加する前に、これを行うことをお勧めします。 また、広告仲介のパフォーマンスを最適化する際に最大限の柔軟性が得られるように、できるだけ多くの広告ネットワークにアカウントを設定することをお勧めします。
 
-## Supported ad networks and project types
+## サポートされている広告ネットワークとプロジェクトの種類
 
-Currently, ad mediation is supported for the following ad networks and project types.
+現時点では、次の種類の広告ネットワークとプロジェクトで広告仲介がサポートされています。
 
-|  Ad network    | Universal Windows Platform (UWP) app using C# or Visual Basic with XAML | Windows 8.1 app using C# or Visual Basic with XAML | Windows Phone 8.1 app using C# or Visual Basic with XAML | Windows Phone 8.x Silverlight app |               
+|  広告ネットワーク    | C# または Visual Basic と XAML を使ったユニバーサル Windows プラットフォーム (UWP) アプリ | C# または Visual Basic と XAML を使った Windows 8.1 アプリ | C# または Visual Basic と XAML を使った Windows Phone 8.1 アプリ | Windows Phone 8.x Silverlight アプリ |               
 |-------------------------------------------------------------------------|----------------------------------------------------|----------------------------------------------------------|-----------------------------------|---------------|
-| [Microsoft](#microsoft)                         | **Supported**                                      | **Supported**                                            | **Supported**                     | **Supported** |
-| [AdDuplex](#adduplex)                                                   | **Supported**                                      | **Supported**                                            | **Supported**                     | **Supported** |
-| [Smaato](#smaato)                                                       | Not supported                                      | **Supported**                                            | **Supported**                     | **Supported** |
-| [AdMob (Google)](#admob)                                                | Not supported                                      | Not supported                                            | Not supported                     | **Supported** |
-| [Inneractive](#inneractive)                                             | Not supported                                      | Not supported                                            | Not supported                     | **Supported** |
-| [Vserv VMAX](#vserv)                                                    | Not supported                                      | Not supported                                            | **Supported**                     | Not supported | 
+| [Microsoft](#microsoft)                         | **サポートされています**                                      | **サポートされています**                                            | **サポートされています**                     | **サポートされています** |
+| [AdDuplex](#adduplex)                                                   | **サポートされています**                                      | **サポートされています**                                            | **サポートされています**                     | **サポートされています** |
+| [Smaato](#smaato)                                                       | サポートされていません                                      | **サポートされています**                                            | **サポートされています**                     | **サポートされています** |
+| [AdMob (Google)](#admob)                                                | サポートされていません                                      | サポートされていません                                            | サポートされていません                     | **サポートされています** |
+| [Inneractive](#inneractive)                                             | サポートされていません                                      | サポートされていません                                            | サポートされていません                     | **サポートされています** |
+| [Vserv VMAX](#vserv)                                                    | サポートされていません                                      | サポートされていません                                            | **サポートされています**                     | サポートされていません | 
 
-Some project types, such as C++ with XAML and JavaScript with HTML, are not currently supported by ad mediation. For these project types, you can show ads from Microsoft without using ad mediation. For more information, see [AdControl in XAML and .NET](https://msdn.microsoft.com/library/mt313186.aspx) and [AdControl in HTML 5 and JavaScript](https://msdn.microsoft.com/library/mt313130.aspx).
+C++ と XAML、JavaScript と HTML など、いくつかのプロジェクトの種類は、現時点では広告仲介でサポートされていません。 これらの種類のプロジェクトについては、広告仲介を使用せず、Microsoft から広告を表示できます。 詳しくは、[XAML および .NET の AdControl ](https://msdn.microsoft.com/library/mt313186.aspx) または [HTML 5 および JavaScript の AdControl](https://msdn.microsoft.com/library/mt313130.aspx) に関するページをご覧ください。
 
-## Specific parameters and details for each network
+## 各ネットワーク固有のパラメーターと詳細
 
 
-Here are the specific details you'll need for each ad network, including how to set up your account and how to onboard an app. We also list the required parameters that you need to provide when you [submit your app and configure ad mediation](submit-your-app-and-configure-ad-mediation.md) (and/or in Connected Services for [testing your ad mediation implementation](test-your-ad-mediation-implementation.md)). For more details about using a specific ad network, visit its website.
+ここでは、アカウントの設定方法やアプリの登録方法など、各広告ネットワークに必要な具体的な詳細情報を示します。 また、[アプリの提出と広告仲介の構成](submit-your-app-and-configure-ad-mediation.md)を行うときに (または、[広告仲介の実装をテストする](test-your-ad-mediation-implementation.md)ために接続済みサービスで) 指定する必要がある必須のパラメーターも一覧に示しています。 特定の広告ネットワークの使い方について詳しくは、そのネットワークの Web サイトをご覧ください。
 
-In addition to the required parameters, each ad network also has additional optional parameters you can set via code in your app. For examples, see [Optional ad network parameters](#optionalparameters) later in this topic. For the complete list of optional parameters, see the documentation provided by each ad network. Some of these parameters will be ignored or overwritten by ad mediation, and these are listed in the sections below. For example, parameters related to current location are usually overwritten with information about the customer's location that is determined by the location capability within the app itself.
+各広告ネットワークには、必須のパラメーターに加えて、アプリでのコードで追加設定できるオプション パラメーターもあります。 例については、このトピックの「[広告ネットワークのオプション パラメーター](#optionalparameters)」をご覧ください。 すべてのオプション パラメーターを網羅した一覧については、各広告ネットワークから提供されるドキュメントをご覧ください。 これらのパラメーターの一部は広告仲介によって無視または上書きされます (これらについては、以降のセクションで示します)。 たとえば、現在位置に関連するパラメーターは、アプリ内の位置情報機能によって決定される、ユーザーの位置に関する情報で通常は上書きされます。
 
-Note that when you [add the ad mediator control](add-and-use-the-ad-mediator-control.md) and specify which ad networks to use, Visual Studio attempts to fetch the required assemblies programmatically for some ad networks. If there are any assemblies that cannot be automatically retrieved, you can install them using the links shown below for each ad network.
+[広告仲介コントロールを追加](add-and-use-the-ad-mediator-control.md)し、どの広告ネットワークを使うかを指定すると、Visual Studio では、広告ネットワーク用に必要なアセンブリの取得がプログラムによって試行されます。 自動的に取得できないアセンブリがある場合は、各広告ネットワークの下に表示されているリンクを使ってインストールできます。
 
 ### Microsoft
 
-| Website                        | To configure ad network parameters, use the [Monetize with ads](https://msdn.microsoft.com/library/windows/apps/mt170658) page on the [Windows Dev Center dashboard](https://dev.windows.com/overview).   |
+| Web サイト                        | 広告ネットワークのパラメーターを構成するには、[Windows デベロッパー センター ダッシュボード](https://dev.windows.com/overview)の [[広告で収入を増やす]](https://msdn.microsoft.com/library/windows/apps/mt170658) ページを使います。   |
 |--------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| SDK location                   | [Microsoft Store Engagement and Monetization SDK](http://aka.ms/store-em-sdk).                                                                                                                                                                                                                         |
-| Onboarding an app              | Add the ad mediation control to your app, and submit your app to the Windows Dev Center dashboard.                                                                                                                                                                                                            |
-| Required parameters            | ApplicationId and AdUnitId: These parameters are automatically filled in for you when you submit your app package, based on the contents of your app. However, you can optionally edit these parameters when you [submit your app and configure ad mediation](submit-your-app-and-configure-ad-mediation.md). <br> <br> Height and Width (only required for Windows Phone 8 Silverlight and Windows Phone 8.1 Silverlight).                                                                                                                                                                                                           |
-| Overwritten/ignored parameters | Latitude (overwritten)  <br><br> Longitude (overwritten) <br><br> AutoRefreshIntervalInSeconds (ignored) <br><br> IsAutoRefreshEnabled (ignored) <br><br> IsAutoCollapsedEnabled (ignored) <br><br> IsEngaged (ignored) <br><br> IsSuspended (ignored) |
+| SDK の場所                   | [Microsoft Store Engagement and Monetization SDK](http://aka.ms/store-em-sdk)。                                                                                                                                                                                                                         |
+| アプリの登録              | 広告の仲介コントロールをアプリに追加し、アプリを Windows デベロッパー センター ダッシュボードに提出します。                                                                                                                                                                                                            |
+| 必須のパラメーター            | ApplicationId と AdUnitId: これらのパラメーターは、アプリ パッケージを提出するときに、アプリのコンテンツに基づいて自動的に入力されます。 ただし、[アプリの提出と広告の仲介の構成](submit-your-app-and-configure-ad-mediation.md)を行うときに、これらのパラメーターを必要に応じて編集することができます。 <br> <br> Height と Width (Windows Phone 8 Silverlight と Windows Phone 8.1 Silverlight の場合にのみ必要)。                                                                                                                                                                                                           |
+| 上書き/無視されるパラメーター | Latitude (上書きされます)  <br><br> Longitude (上書きされます) <br><br> AutoRefreshIntervalInSeconds (無視されます) <br><br> IsAutoRefreshEnabled (無視されます) <br><br> IsAutoCollapsedEnabled (無視されます) <br><br> IsEngaged (無視されます) <br><br> IsSuspended (無視されます) |
 
  
 
 ### AdDuplex
 
-| Website                        | [http://adduplex.com](http://go.microsoft.com/fwlink/p/?LinkId=518028)      |
+| Web サイト                        | [http://adduplex.com](http://go.microsoft.com/fwlink/p/?LinkId=518028)      |
 |--------------------------------|-----------------------------------------------------------------------------|
-| SDK location                   | First, try to let the ad mediator control retrieve the assemblies through Connected Services as described in [Add and use the ad mediator control](add-and-use-the-ad-mediator-control.md). If you need to download them manually, go to the [Getting Started](http://go.microsoft.com/fwlink/p/?LinkId=518029) section on the AdDuplex website. |
-| Onboarding an app              | In the AdDuplex portal, create a new app.                                                                                                                                                                                                                                                                                                        |
-| Required parameters            | AppKey <br><br> AdUnitId <br><br> Size (only required for Windows 8.1 XAML)  |
-| Overwritten/ignored parameters | Latitude (overwritten) <br><br> Longitude (overwritten) <br><br> AutoRefreshIntervalInSeconds (ignored) <br><br> IsAutoRefreshEnabled (ignored) <br><br> IsAutoCollapsedEnabled (ignored) <br><br> IsEngaged (ignored) <br><br> IsSuspended (ignored) |
+| SDK の場所                   | まず、広告仲介コントロールで接続済みサービスからアセンブリの取得を試行してください。詳しくは、「[広告の仲介コントロールの追加と使用](add-and-use-the-ad-mediator-control.md)」をご覧ください。 アセンブリを手動でダウンロードする必要がある場合は、AdDuplex の Web サイトで [[Getting started]](http://go.microsoft.com/fwlink/p/?LinkId=518029) (作業の開始) セクションに移動します。 |
+| アプリの登録              | AdDuplex ポータルで新しいアプリを作成します。                                                                                                                                                                                                                                                                                                        |
+| 必須のパラメーター            | AppKey <br><br> AdUnitId <br><br> Size (Windows 8.1 XAML でのみ必須)  |
+| 上書き/無視されるパラメーター | Latitude (上書きされます) <br><br> Longitude (上書きされます) <br><br> AutoRefreshIntervalInSeconds (無視されます) <br><br> IsAutoRefreshEnabled (無視されます) <br><br> IsAutoCollapsedEnabled (無視されます) <br><br> IsEngaged (無視されます) <br><br> IsSuspended (無視されます) |
  
 
 ### Smaato
 
-| Website                        | [http://www.smaato.com/](http://go.microsoft.com/fwlink/p/?LinkId=518030)                                                                                                                                                                                                        |
+| Web サイト                        | [http://www.smaato.com/](http://go.microsoft.com/fwlink/p/?LinkId=518030)                                                                                                                                                                                                        |
 |--------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| SDK location                   | First, try to let the ad mediator control retrieve the assemblies through Connected Services as described in [Add and use the ad mediator control](add-and-use-the-ad-mediator-control.md). If you need to download them manually, go to the Downloads tab in the Smaato portal. |
-| Onboarding an app              | In the Smaato portal, go to My Spaces and generate a new Adspace.                                                                                                                                                                                                                |
-| Required parameters            | Pub <br> <br> Adspace <br> <br> Height and Width (only required for Windows 8.1 XAML)  |
-| Overwritten/ignored parameters | Gps (overwritten)                                                                                                                                                                                                                                                                |
+| SDK の場所                   | まず、広告仲介コントロールで接続済みサービスからアセンブリの取得を試行してください。詳しくは、「[広告の仲介コントロールの追加と使用](add-and-use-the-ad-mediator-control.md)」をご覧ください。 手動でダウンロードする必要がある場合は、Smaato ポータルで [Downloads] (ダウンロード) タブに移動します。 |
+| アプリの登録              | Smaato ポータルで、[My Spaces] (マイ スペース) に移動し、新しい Adspace (広告スペース) を生成します。                                                                                                                                                                                                                |
+| 必須のパラメーター            | Pub <br> <br> Adspace <br> <br> Height、Width (Windows 8.1 XAML でのみ必須)  |
+| 上書き/無視されるパラメーター | Gps (上書きされます)                                                                                                                                                                                                                                                                |
 
  
 
 ### AdMob (Google)
 
-| Website                        | [http://apps.admob.com](http://go.microsoft.com/fwlink/p/?LinkId=518031)                                               |
+| Web サイト                        | [http://apps.admob.com](http://go.microsoft.com/fwlink/p/?LinkId=518031)                                               |
 |--------------------------------|------------------------------------------------------------------------------------------------------------------------|
-| SDK location                   | Get the Windows Phone 8 SDK from the [Google Mobile Ads SDK website](http://go.microsoft.com/fwlink/p/?LinkId=518032). |
-| Onboarding an app              | In the AdMob portal, select Monetize new app.                                                                          |
-| Required parameters            | AdUnitID <br> <br> Format                                                                                              |
-| Overwritten/ignored parameters | Location (overwritten)  <br><br> ForceTesting (ignored) <br><br> Refresh Rate (ignored)                                |
+| SDK の場所                   | [Google Mobile Ads SDK の Web サイト](http://go.microsoft.com/fwlink/p/?LinkId=518032)から Windows Phone 8 SDK を入手します。 |
+| アプリの登録              | AdMob ポータルで、[新しいアプリを収益化] を選びます。                                                                          |
+| 必須のパラメーター            | AdUnitID <br> <br> 形式                                                                                              |
+| 上書き/無視されるパラメーター | Location (上書きされます)  <br><br> ForceTesting (無視されます) <br><br> Refresh Rate (無視されます)                                |
  
 
 ### Inneractive
 
-| Website             | [http://inner-active.com](http://go.microsoft.com/fwlink/p/?LinkId=518035)                                                                                                                                                                                                                                                             |
+| Web サイト             | [http://inner-active.com](http://go.microsoft.com/fwlink/p/?LinkId=518035)                                                                                                                                                                                                                                                             |
 |---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| SDK location        | First, try to let the ad mediator control retrieve the assemblies through Connected Services as described in [Add and use the ad mediator control](add-and-use-the-ad-mediator-control.md). If you need to download them manually, sign in to your account and go to the SDK tab in the Dashboard to download the Windows Phone 8 SDK. |
-| Onboarding an app   | In the Inneractive portal, create a new app.                                                                                                                                                                                                                                                                                           |
-| Required parameters | AppID <br> <br> AdType (either IaAdType_Banner or IaAdType_Text)                                                                               |
+| SDK の場所        | まず、広告仲介コントロールで接続済みサービスからアセンブリの取得を試行してください。詳しくは、「[広告の仲介コントロールの追加と使用](add-and-use-the-ad-mediator-control.md)」をご覧ください。 手動でダウンロードする必要がある場合は、アカウントにサインインし、ダッシュボードの [SDK] タブに移動して、Windows Phone 8 SDK をダウンロードします。 |
+| アプリの登録   | Inneractive ポータルで新しいアプリを作成します。                                                                                                                                                                                                                                                                                           |
+| 必須のパラメーター | AppID <br> <br> AdType (IaAdType_Banner または IaAdType_Text)                                                                               |
  
 
 ### Vserv VMAX
 
-| Website             | [http://www.vmax.com](http://www.vmax.com)                                                                                                                                                                                                                                                                         |
+| Web サイト             | [http://www.vmax.com](http://www.vmax.com)                                                                                                                                                                                                                                                                         |
 |---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| SDK location        | First, try to let the ad mediator control retrieve the assemblies through Connected Services as described in [Add and use the ad mediator control](add-and-use-the-ad-mediator-control.md). If you need to download them manually, go to the [SDK](http://go.microsoft.com/fwlink/?LinkId=627078) section on the VMAX website. |
-| Onboarding an app   | Obtain the Adspot ID for your app from the VMAX website (the Adspot ID is called ZoneId in the VMAX APIs).                                                                                                                                                                                                                     |
-| Required parameters | ZoneId                                                                                                                                                                                                                                                                                                                         |12345
+| SDK の場所        | まず、広告仲介コントロールで接続済みサービスからアセンブリの取得を試行してください。詳しくは、「[広告の仲介コントロールの追加と使用](add-and-use-the-ad-mediator-control.md)」をご覧ください。 アセンブリを手動でダウンロードする必要がある場合は、VMAX の Web サイトで [SDK](http://go.microsoft.com/fwlink/?LinkId=627078) セクションに移動します。 |
+| アプリの登録   | VMAX の Web サイトから、アプリの Adspot ID を取得します (Adspot ID は、VMAX API では ZoneId と呼ばれています)。                                                                                                                                                                                                                     |
+| 必須のパラメーター | ZoneId                                                                                                                                                                                                                                                                                                                         |12345
 
  
 
-## Optional ad network parameters
+## 広告ネットワークのオプション パラメーター
 
 
-In addition to the required parameters, each ad network also has additional optional parameters you can set via code in your app. For the complete list of optional parameters, see the documentation provided by each ad network. To set these optional parameters in your code, use the **AdSdkOptionalParameters** property of your **AdMediatorControl** object.
+各広告ネットワークには、必須のパラメーターに加えて、アプリでのコードで追加設定できるオプション パラメーターもあります。 すべてのオプション パラメーターを網羅した一覧については、各広告ネットワークから提供されるドキュメントをご覧ください。 コードでこれらのオプション パラメーターを設定するには、**AdMediatorControl** オブジェクトの **AdSdkOptionalParameters** プロパティを使用します。
 
-The following example demonstrates how to set the **CountryOrRegion** parameter for Microsoft advertising.
+次の例では、Microsoft advertising の **CountryOrRegion** パラメーターを設定する方法を示しています。
 
 ```CSharp
 myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.MicrosoftAdvertising]["CountryOrRegion"] = "IN";
 ```
 
-The following example demonstrates how to set the **Width** and **Height** parameters for Smaato.
+次の例では、Smaato の **Width** パラメーターと **Height** パラメーターを設定する方法を示しています。
 
 ```CSharp
 myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.Smaato]["Width"] = 300;
 myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.Smaato]["Height"] = 250;
 ```
 
-## Related topics
+## 関連トピック
 
-* [Add and use the ad mediation control](add-and-use-the-ad-mediator-control.md)
-* [Test your ad mediation implementation](test-your-ad-mediation-implementation.md)
-* [Submit your app and configure ad mediation](submit-your-app-and-configure-ad-mediation.md)
-* [Troubleshoot ad mediation](troubleshoot-ad-mediation.md)
+* [広告の仲介コントロールの追加と使用](add-and-use-the-ad-mediator-control.md)
+* [広告の仲介の実装のテスト](test-your-ad-mediation-implementation.md)
+* [アプリの提出と広告の仲介の構成](submit-your-app-and-configure-ad-mediation.md)
+* [広告の仲介のトラブルシューティング](troubleshoot-ad-mediation.md)
  
 
  

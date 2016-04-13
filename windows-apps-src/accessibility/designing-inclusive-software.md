@@ -1,106 +1,106 @@
 ---
-Description: This article is an overview of the concepts related to designing accessible software for Universal Windows Platform (UWP) apps.
-title: Designing inclusive software
+Description: この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリ向けのアクセシビリティに対応したソフトウェアの設計に関連した概念の概要を示します。
+title: 包括性を備えたソフトウェアの設計
 ms.assetid: A6393A57-53F2-4F06-89AF-0D806FD76DB0
 label: Designing inclusive software
 template: detail.hbs
 ---
 
-Designing inclusive software
+包括性を備えたソフトウェアの設計
 ============================
 
-At Microsoft, we’re evolving our design principles and practices. These inform how our experiences look, feel, function, and behave. We’re elevating our perspective.
+Microsoft では、設計原則とその実践方法を常に進化させています。 それらは、Microsoft が提供しているエクスペリンス (外観、操作性、機能および動作) を伝えるものです。 Microsoft では、より高い視点を持つようになりました。
 
-This new design philosophy has been called universal design or inclusive design. The idea is to design software with everyone in mind from the very beginning. This is in contrast to viewing accessibility as a technology you bolt on at the end of the development process in order to satisfy some small group of users.
+この新しい設計哲学は、ユニバーサル設計または包括性を備えた設計と呼ばれています。 その考えとは、最初からすべての人を念頭に置いてソフトウェアを設計することです。 これは、アクセシビリティを、少数のユーザーを満足させるために開発プロセスの最後に搭載するテクノロジと見なすこととは大きく異なっています。
 
-“We define disability as a mismatch between the needs of the individual and the service, product or environment offered. Anyone can experience a disability. It is a common human trait to be excluded.”  
-   - from the [Inclusive](https://www.microsoft.com/en-us/design/inclusive) video  
+「当社では、障碍を個人のニーズと、提供されるサービス、製品、環境との不一致と定義しています。 誰でも障碍を経験する可能性があります。 それらを排除しようとしてしまうのは、よく見られる人間の特性です。」  
+   - [包括性](https://www.microsoft.com/en-us/design/inclusive)のビデオより  
 
-Inclusive design creates better products for everyone. It’s about considering the full range of human diversity.
+包括性を備えた設計を行うことで、すべてのユーザーにとってより良い製品を創り出すことができます。 それは、さまざまな人間の多様性を考慮することと言えます。
 
-For example, consider the curb cutouts that you now find on most street corner sidewalks. They were clearly intended to be used by people in wheelchairs. But now nearly everyone uses them, including people with baby strollers, bicyclists, skateboarders, even pedestrians will usually use the curb cutout because it is there and is just a better experience. The television remote control could be considered an assistive technology (AT) for someone with physical limitations. And yet, today it is nearly impossible to buy a television without one. Before children learn to tie their shoes, they can wear shoes that fasten with Velcro. These are just a few examples that could be considered inclusive design.
+たとえば、現在、街角のほとんどの歩行者道路には、縁石がスロープになっている箇所があります。 それらは、明らかに車いすで移動する人を想定して作られたものです。 しかし、現在では、ベビー カーを押す人、自転車やスケートボードに乗っている人など、ほぼ全員がスロープを使用しています。また、歩行者でさえ、そこにスロープがあり、スロープの方が楽であるという理由だけで、いつもスロープを使用するようになります。 テレビのリモコンは、身体的な制約がある人のための支援技術 (AT) と見なされることがあります。 しかし、現在では、リモコンのないテレビを購入することはほとんど不可能でしょう。 靴の紐を結べない子供でも、マジック テープでなら靴を履くことができます。 これらは、包括性を備えた設計と見なすことができる、ほんの一部の例にすぎません。
 
-## Inclusive design principles ##
-The following 4 principles are guiding Microsoft’s shift to inclusive design:
+## 包括性を備えた設計の原則 ##
+Microsoft では、包括性を備えた設計へと移行するときに、次の 4 つの原則を指針としています。
 
-**Think universal**: We focus on what unifies people—human motivations, relationships, and abilities. This drives us to consider the broader social impact of our work. The result is an experience that has a diversity of ways for all people to participate.
+**ユニバーサルに考える**: ユーザーに共通しているもの (人間の動機、つながり、能力) に焦点を当てます。 これにより、商品が与える社会への幅広い影響について考えるようになります。 その結果、さまざまな方法を備えた、すべてのユーザーが参加できるエクスペリエンスを実現できます。
 
-**Make it personal**: Next, we challenge ourselves to create emotional connection. Human-to-human interactions can inspire better human-to-technology interaction. A person’s unique circumstances can improve a design for everyone. The result is an experience that feels like it was created for one person.
+**パーソナルにする**: 次に、感情面の結び付きを生み出すという課題に取り組みます。 人間と人間のやり取りを見ることで、人間とテクノロジのやり取りを良くするためのヒントが得られます。 ユーザーに固有の状況がすべてのユーザーにとってより良い設計を生み出すことがあります。 その結果、特定のユーザーのために作られたかのようなエクスペリエンスを実現できます。
 
-**Keep it simple**: We start with simplicity as the ultimate unifier. When we reduce clutter people know what to do next. They’re inspired to move forward into spaces that are clean, light, and open. The result is an experience that’s honest and timeless.
+**シンプルな状態を保つ**: 最終的なよりどころとなるシンプルさから始めます。 余分なものをなくすことで、ユーザーは次に何をする必要があるかがわかるようになります。 ユーザーは、きれいで明るく開けた場所へと進むように促されます。 その結果、時代を超越した本物のエクスペリエンスを実現できます。
 
-**Create delight**: Delightful experiences evoke wonder and discovery. Sometimes it’s magical. Sometimes it’s a detail that’s just right. We design these moments to feel like a welcomed change in tempo. The result is an experience that has momentum and flow.
+**喜びを生み出す**: 楽しい体験は、驚きや新しい発見を引き起こします。 それは、魔法のように感じることがあります。 まさに必要とされていたディテールであることもあります。 これらの瞬間が心地良いテンポの変化のように感じられるように設計します。 その結果、勢いよく流れるエクスペリエンスを生み出します。
 
-## Inclusive design users ##
-There are essentially two types of users of assistive technology (AT):
+## 包括性を備えた設計のユーザー ##
+支援技術 (AT) を利用するユーザーには、基本的に 2 つの種類があります。
 
-1. Those who need it, because of disabilities or impairments, age-related conditions, or temporary conditions (such as limited mobility from a broken arm)  
-2. Those who use it out of preference, for a more comfortable or convenient computing experience
+1. 障碍、加齢に関連した状況、または一時的な状況 (腕の骨折による運動障碍など) などのために支援技術を必要としているユーザー。  
+2. コンピューティング環境をより快適で便利なものにするために、支援技術を好きで利用しているユーザー。
 
-The majority of computer users (54 per-cent) are aware of some form of assistive technology, and 44 percent of computer users use some form of it, but many of them are not using AT that would benefit them (Forrester 2004).  
+コンピューター ユーザーの大部分 (54%) は何らかの形の支援技術を知っており、コンピューター ユーザーの 44% は何らかの形の支援技術を使用しています。しかし、多くのユーザーは、役に立つかもしれない支援技術を使用していません (Forrester 2004 年)。  
 
-A 2003-2004 study commissioned by Microsoft and conducted by Forrester Research found that over half&mdash;57 percent&mdash;of computer users in the United States between the ages of 18 and 64 could benefit from assistive technology. Most of these users did not identify themselves as having a disability or impaired but expressed certain task-related difficulties or impairments when using a computer. Forrester (2003) also found the following number of users with these specific difficulties: One in four experiences a visual difficulty. One in four experiences pain in the wrists or hands. One in five experiences hearing difficulty.  
+Microsoft の依頼を受けて Forrester Research が実施した 2003 ～ 2004 年の調査では、米国の 18 歳から 64 歳のコンピューター ユーザーの半数以上 (57%) が支援技術からメリットが得られる可能性があることが指摘されています。 それらのユーザーのほとんどは、自分に障碍があることを認識していませんが、コンピューターを使用するときに特定のタスクに関連して障碍があると回答しています。 Forrester (2003 年) では、これらの特定の障碍を抱えるユーザーの数について、4 人に 1 人が視覚的な障碍を経験したり、 手首や手に痛みを経験したりしており、 5 人に 1 人が聴覚障碍を経験していると述べています。  
 
-Besides permanent disabilities, the severity and types of difficulties an individual experiences can vary throughout their life. There is no such thing as a normal human. Our capabilities are always changing. Margaret Meade said, “We are all unique. Being all unique makes us all the same.”  
+永続的な障碍に加えて、個々のユーザーが体験する障碍の重さや種類は年齢と共に変化します。 まったく障碍がないという人はいません。 私たちの能力は、常に変化しています。 マーガレット・ミードによれば、「私たちは、それぞれ違います。 それぞれ違うことで、全員が同じであることができます。」  
 
-Microsoft is dedicated to conducting computer science and software engineering research with goals to enhance the computing experience and invent novel computing technologies. See [Current Microsoft Research and Development Projects](https://www.microsoft.com/enable/microsoft/research.aspx) aimed at making the computer more accessible, and easier to see, hear, and interact with.  
+Microsoft では、コンピューティング環境の向上と斬新なコンピューティング テクノロジの考案を目標として、コンピューター サイエンスとソフトウェア エンジニアリングに関する調査を実施しています。 アクセシビリティに対応した、視聴および操作が簡単なコンピューターを提供するために [Microsoft が現在実施している研究開発プロジェクト](https://www.microsoft.com/enable/microsoft/research.aspx)をご覧ください。  
 
-## Just tell me what to do &mdash; practical design steps ##
-This section describes the practical design steps to consider when implementing inclusive design in your app.  
+## 何をすれば良いか &mdash; 実用的な設計手順 ##
+このセクションでは、包括性を備えた設計をアプリに実装するときに検討することができる実用的な設計手順について説明します。  
 
-### Describe the target audience ###
-Define the potential users of your app. Think through all of their different abilities and characteristics. For example, age, gender, language, deaf or hard of hearing users, visual impairments, cognitive abilities, learning style, mobility restrictions, and so on. Is your design meeting their individual needs?  
+### 対象ユーザーを書き出す ###
+アプリを使用する可能性があるユーザーを定義します。 それらのユーザーの能力および特徴をすべて考慮します。 たとえば、年齢、性別、言語、認知能力、学習スタイル、運動制限に加えて、聴覚障碍や難聴、また視覚障碍があるかどうかなどです。 設計が個々のユーザーのニーズを満たしていることを確認します。  
 
-### Talk to actual humans with specific needs ###
-Meet with potential users who have diverse characteristics. Make sure you are considering all of their needs when designing your app. For example, Microsoft discovered that deaf users were turning off toast notifications on their Xbox consoles. When we asked actual deaf users about this, we learned that toast notifications were obscuring a section of closed captioning. The fix was to display the toast slight higher on the screen. This was a simple solution that was not necessarily obvious from the telemetry data that initially revealed the behavior.  
+### 特定のニーズを持つユーザーと実際に話す ###
+アプリを使用する可能性がある、さまざまな特徴を持つユーザーと会います。 アプリを設計するときに、それらのユーザーのニーズをすべて考慮していることを確認します。 たとえば、Microsoft は、聴覚に障碍があるユーザーが Xbox コンソールのトースト通知をオフにしていることに気付きました。 聴覚に障碍がある実際のユーザーにその点を尋ねたところ、トースト通知によって字幕のセクションが見えにくくなることがわかりました。 そこで、画面の少し上側にトーストが表示されるように修正しました。 これは、簡単な解決方法でしたが、最初にその行動が判明した利用統計情報だけでは、原因がはっきりわからなかった可能性があります。  
 
-### Choose a development framework wisely ###
-In the design stage, the development framework you will use (i.e. UWP, Win32, web) is critical to the development of your product. If you have the luxury of choosing your framework, think about how much effort it will take to create your controls within the framework. What are the default or built-in accessibility properties that come with it? Which controls will you need to customize? When choosing your framework, you are essentially choosing how much of the accessibility controls you will get “for free” (that is, how much of the controls are already built-in) and how much will require additional development costs because of control customizations.   
+### 開発フレームワークを賢明に選択する ###
+設計段階において、どの開発フレームワーク (UWP、Win32、web など) を使用するかは、製品の開発にとって非常に重要です。 フレームワークを選択する余裕がある場合は、フレームワークにコントロールを作成するのにかかる労力について考えます。 付属している既定または組み込みのアクセシビリティ プロパティを確認します。 また、カスタマイズする必要があるコントロールを確認します。 基本的に、フレームワークを選択するときには、どのくらいのアクセシビリティ コントロールを "無料" で入手できるか (どのくらいのコントロールが組み込まれているか)、またコントロールのカスタマイズによって発生する追加の開発コストがどのくらい必要になるかを選択していることになります。   
 
-Use standard Windows controls whenever possible. These controls are already enabled with the technology necessary to interface with assistive technologies.
+可能であれば、標準の Windows コントロールを使用します。 これらのコントロールは、支援技術とのインターフェイスを構築するために必要なテクノロジに既に対応しています。
 
-### Design a logical hierarchy for your controls ###
-Once you have your framework, design a logical hierarchy to map out your controls. The logical hierarchy of your app includes the layout and tab order of controls. When assistive technology (AT) programs, such as screen readers, read your UI, visual presentation is not sufficient; you must provide a programmatic alternative that makes sense structurally to the users. A logical hierarchy can help you do that. It is a way of studying the layout of your UI and structuring each element so that users can understand it. A logical hierarchy is mainly used:  
+### コントロールの論理的な階層を設計する ###
+フレームワークを用意したら、コントロールをマッピングするための論理的な階層を設計します。 アプリの論理的な階層には、コントロールのレイアウトやタブの順序などが含まれます。 スクリーン リーダーなどの支援技術 (AT) プログラムによって UI が読み上げられる場合、視覚的な表現だけでは十分ではありません。ユーザーにとって構造的にわかりやすい代替プログラムを用意する必要があります。 これを行うのに、論理的な階層を設計することが役立ちます。 論理的な階層を設計するとは、UI のレイアウトを調査し、ユーザーが理解できるように各要素を構築することです。 論理的な階層は、主に次の目的で使用されます。  
 
-1.  To provide programs context for the logical (reading) order of the elements in the UI  
-2.  To identify clear boundaries between custom controls and standard controls in the UI  
-3.  To determine how pieces of the UI interact together  
+1.  UI 要素の論理的な (読み上げる) 順序に関するコンテキストをプログラムに提供するため。  
+2.  UI のカスタム コントロールと標準コントロールの境界をはっきりと認識するため。  
+3.  各 UI が相互にどのように作用しているか理解するため。  
 
-A logical hierarchy is a great way to address any potential usability issues. If you cannot structure the UI in a relatively simple manner, you may have problems with usability. A logical representation of a simple dialog box should not result in pages of diagrams. For logical hierarchies that become too deep or too wide, you may need to redesign your UI. For more information, download the [Engineering Software for Accessibility](https://www.microsoft.com/en-us/download/details.aspx?id=19262) eBook.  
+論理的な階層は、潜在的な操作性の問題に対処する優れた方法です。 比較的に単純な方法で UI を構築することができない場合、操作性に問題がある可能性があります。 単純なダイアログ ボックスで論理的に表現できる場合は、図表が何ページも続くことはありません。 論理的な階層が深くなりすぎたり広くなりすぎたりする場合は、UI を設計し直す必要があることがあります。 詳しくは、[アクセシビリティ ソフトウェアのエンジニアリング](https://www.microsoft.com/en-us/download/details.aspx?id=19262)に関する eBook をダウンロードしてください。  
 
-### Design appropriate visual UI settings ###
-When designing the visual UI, ensure that your product has a high contrast setting, uses the default system fonts and smoothing options, correctly scales to the dots per inch (dpi) screen settings, has default text with at least a 5:1 contrast ratio with the background, and has color combinations that will be easy for users with color deficiencies to differentiate.  
+### 適切な視覚的な UI 設定を設計する ###
+視覚的な UI を設計するときには、製品にハイ コントラスト設定があること、製品が既定のシステム フォントおよび平滑化オプションを使用していること、製品が DPI (1 インチあたりのドット数) 画面設定に合わせて正しくスケーリングされること、背景とのコントラスト比が 5:1 以上である既定のテキストが使用されていること、また色覚障碍のユーザーでも簡単に区別できる色の組み合わせであることを確認します。  
 
-#### High contrast setting ####
-One of the built-in accessibility features in Windows is High Contrast mode, which heightens the color contrast of text and images. For some people, increasing the contrast in colors reduces eyestrain and makes it easier to read. When you verify your UI in high contrast mode, you want to check that controls, such as links, have been coded consistently and with system colors (not with hard-coded colors) to ensure that they will be able to see all the controls on the screen that a user not using high contrast would see.  
+#### ハイ コントラスト設定 ####
+Windows に組み込まれているアクセシビリティ機能の 1 つに、テキストや画像の色コントラストを大きくするハイ コントラスト モードがあります。 一部のユーザーは、色コントラストを大きくすることで、目の疲れを軽減し、読みやすくなります。 ハイ コントラスト モードで UI を確認したら、リンクなどのコントロールがシステム カラー (ハード コードされた色ではなく) によって一貫した方法で色分けされていることを確認し、ハイ コントラストを使用しないユーザーに表示される画面にすべてのコントロールが表示されることを確認することができます。  
 
-#### System font settings ####
-To ensure readability and minimize any unexpected distortions to the text, make sure that your product always adheres to the default system fonts and uses the anti-aliasing and smoothing options. If your product uses custom fonts, users may face significant readability issues and distractions when they customize the presentation of their UI (through the use of a screen reader or by using different font styles to view your UI, for instance).  
+#### システム フォントの設定 ####
+読みやすさを維持し、テキストに予期しないゆがみを生じるのを最小限に抑えるために、製品が常に既定のシステム フォントに準拠し、アンチエイリアシングおよび平滑化オプションを使用していることを確認します。 製品にカスタム フォントを使用した場合、(スクリーン リーダーを使用したり、異なるフォント スタイルで UI を表示したりするなどして) ユーザーが UI の表示設定をカスタマイズしたときに、非常に読みにくくなったり、気が散らされたりすることがあります。  
 
-#### High DPI resolutions ####
-For users with vision impairments, having a scalable UI is important. User interfaces that do not scale correctly in high dpi resolutions may cause important components to overlap or hide other components and can become inaccessible.  
+#### 高 DPI 分解能 ####
+視覚に障碍があるユーザーにとって、UI を拡大できることは非常に重要です。 高 DPI 分解能時に正しくスケーリングされないユーザー インターフェイスでは、重要なコンポーネントが他のコンポーネントに重なったり隠れたりして、アクセスできなくなることがあります。  
 
-#### Color contrast ratio ####
-The updated Section 508 of the Americans with Disability Act, as well as other legislations, requires that the default color contrasts between text and its background must be 5:1. For large texts (18-point font sizes, or 14 points and bolded) the required default contrast is 3:1.  
+#### 色コントラスト比 ####
+改正された障碍を持つアメリカ人法の第 508 条およびその他の法律によって、テキストと背景の既定の色コントラストを 5:1 にすることが求められています。 大きなテキスト (フォント サイズが 18 ポイントであるテキスト、またはフォント サイズが 14 ポイントで太字であるテキスト) の場合、必要な既定のコントラストは 3:1 です。  
 
-#### Color combinations ####
-About 7 percent of males (and less than 1 percent of females) have some form of color deficiency. Users with colorblindness have problems distinguishing between certain colors, so it is important that color alone is never used to convey status or meaning in an application. As for decorative images (such as icons or backgrounds), color combinations should be chosen in a manner that maximizes the perception of the image by colorblind users. If you design using these color recommendations from the beginning, your app will already be taking significant steps toward being inclusive.  
+#### 色の組み合わせ ####
+男性の約 7% (女性では 1% 未満) は、何らかの色覚異常を持っています。 色覚に障碍があるユーザーは、特定の色を区別することができません。このため、アプリケーションの特定の状態または意味を色だけで表さないことが重要です。 装飾用の画像 (アイコンや背景) についても、色覚に障碍があるユーザーが画像を認識しやすいように、色の組み合わせを選択する必要があります。 これらの色に関する推奨事項を最初から考慮に入れて設計するだけで、包括性を備えたアプリへと大きく前進することができます。  
 
-## Summary &mdash; seven steps for inclusive design ##
-In summary, follow these seven steps to ensure your software is inclusive.  
-1.  Decide if inclusive design is an important aspect to your software. If it is, learn and appreciate how it enables real users to live, work, and play, to help guide your design.  
-2.  As you design solutions for your requirements, use controls provided by your framework (standard controls) as much as possible, and avoid any unnecessary effort and costs of custom controls.  
-3.  Design a logical hierarchy for your product, noting where the standard controls, any custom controls, and keyboard focus are in the UI.  
-4.  Design useful system settings (such as keyboard navigation, high contrast, and high dpi) into your product.  
-5.  Implement your design, using the Microsoft accessibility developer hub and your framework’s accessibility specification as a reference point.  
-6.  Test your product with users who have special needs to ensure they will be able to take advantage of the inclusive design techniques implemented in it.  
-7.  Deliver your finished product and document your implementation for those who may work on the project after you.  
+## まとめ &mdash; 包括性を備えた設計を行うための 7 つの手順 ##
+まとめると、包括性を備えたソフトウェアにするには、次の 7 つの手順に従う必要があります。  
+1.  包括性を備えた設計がソフトウェアにとって重要な側面であるかどうかを判断します。 包括性を備えた設計が重要な側面である場合は、それによって実際のユーザーがどのように生活や仕事をしたり、楽しんだりすることができるようになるかを認識および理解し、それらを設計に役立てます。  
+2.  要件に対するソリューションを設計するときには、フレームワークによって提供されているコントロール (標準のコントロール) をできるだけ使用して、カスタム コントロールに関連した不必要な労力およびコストが発生しないようにします。  
+3.  製品の論理的な階層を設計し、UI のどこに標準コントロール、カスタム コントロール、およびキーボード フォーカスがあるかを確認します。  
+4.  便利なシステム設定 (キーボード ナビゲーション、ハイ コントラスト、高 DPI など) を製品に設計します。  
+5.  Microsoft アクセシビリティ開発者ハブおよびフレームワークのアクセシビリティ仕様を基準としながら、設計を実装します。  
+6.  特別なニーズを持つユーザーに製品をテストしてもらい、それらのユーザーが製品に実装されている包括性を備えた設計のメリットを活用できることを確認します。  
+7.  完成した製品を出荷し、後からプロジェクトに参加する可能性がある人のために実装内容を記録しておきます。  
 
-## See also ##
-* [Inclusive design](http://design.microsoft.com/inclusive)
-* [Engineering Software for Accessibility](https://www.microsoft.com/en-us/download/details.aspx?id=19262)
-* [Microsoft accessibility developer hub](https://msdn.microsoft.com/enable)
-* [Developing inclusive Windows apps](developing-inclusive-windows-apps.md)  
+## 参照 ##
+* [包括性を備えた設計](http://design.microsoft.com/inclusive)
+* [アクセシビリティ ソフトウェアのエンジニアリング](https://www.microsoft.com/en-us/download/details.aspx?id=19262)
+* [Microsoft アクセシビリティ開発者ハブ](https://msdn.microsoft.com/enable)
+* [包括性を備えた Windows アプリの開発](developing-inclusive-windows-apps.md)  
 
 
 <!--HONumber=Mar16_HO3-->

@@ -1,8 +1,8 @@
 ---
-description: ページ上の要素のレイアウトに影響する配置、余白、およびパディングを使います。
+Description: ページ上の要素のレイアウトに影響する配置、余白、およびパディングを使います。
 title: ユニバーサル Windows プラットフォーム (UWP) アプリの配置、余白、およびパディング
 ms.assetid: 9412ABD4-3674-4865-B07D-64C7C26E4842
-label: 配置、余白、およびパディング
+label: Alignment, margin, and padding
 template: detail.hbs
 ---
 # 配置、余白、およびパディング
@@ -74,13 +74,18 @@ template: detail.hbs
 
 **リファレンス**
 
-* [**FrameworkElement.Height**](https://msdn.microsoft.com/library/windows/apps/br208718)
-* [**FrameworkElement.Width**](https://msdn.microsoft.com/library/windows/apps/br208751)
-* [**FrameworkElement.HorizontalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208720)
-* [**FrameworkElement.VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208749)
-* [**FrameworkElement.Margin**](https://msdn.microsoft.com/library/windows/apps/br208724)
-* [**Control.Padding**](https://msdn.microsoft.com/library/windows/apps/br209459)
+[**FrameworkElement.Height**](https://msdn.microsoft.com/library/windows/apps/br208718)
 
-<!--HONumber=Mar16_HO1-->
+[**FrameworkElement.Width**](https://msdn.microsoft.com/library/windows/apps/br208751)
+
+[**FrameworkElement.HorizontalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208720)
+
+[**FrameworkElement.VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/br208749)
+
+[**FrameworkElement.Margin**](https://msdn.microsoft.com/library/windows/apps/br208724)
+
+[**Control.Padding**](https://msdn.microsoft.com/library/windows/apps/br209459)
+
+<!--HONumber=Mar16_HO4-->
 
 

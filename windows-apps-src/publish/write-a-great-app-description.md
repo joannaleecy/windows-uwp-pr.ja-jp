@@ -1,29 +1,29 @@
 ---
-Description: A great description can make your app stand out in the Windows Store and help encourage customers to download it.
-title: Write a great app description
+Description: 説明が良いと、Windows ストアでアプリが引き立ち、お客様がアプリをダウンロードするための後押しになります。
+title: 人の心をつかむアプリの説明を書く
 ms.assetid: E477E98E-090A-4ACE-832F-A98D273EFCA0
 ---
 
-# Write a great app description
+# 人の心をつかむアプリの説明を書く
 
 
-A great description can make your app stand out in the Windows Store and help encourage customers to download it. [The description you enter when submitting your app](create-app-descriptions.md) is displayed in your app's Store listing. The first few lines may also be displayed in search results and algorithm lists in the Store.
+説明が良いと、Windows ストアでアプリが引き立ち、お客様がアプリをダウンロードするための後押しになります。 [アプリの提出時に入力した説明](create-app-descriptions.md)は、アプリのストアの内容に表示されます。 最初の数行は、検索結果や、ストアのアルゴリズム リストにも表示されます。
 
 
-Here are some tips for making your app's description the best it can be.
+アプリを効果的にアピールする説明を書くためのヒントを次にいくつか紹介します。
 
--   **Grab attention in the first few sentences.** The beginning of your description is the most important, so make sure it grabs and holds attention. Think about what you can say in one or two sentences to explain your app's unique appeal and make someone decide they want it.
--   **Make it easy to learn about your app.** After your initial hook, describe additional benefits, in-app purchase opportunities, and other details about your app that customers will want to know. Make sure you include any disclosures or information that you are required to provide under the law in the markets where you are distributing your app.
--   **Use lists and short paragraphs.** Potential customers may just take a quick glance at your app's description. Breaking up the content by using short paragraphs and lists makes it easier to scan.
-    > **Note**  Adding a list of [app features](create-app-descriptions.md#app-features) can also help to quickly show what your app does. This list appears directly below the app description.
--   **Avoid dry language.** Write your description using engaging language. Be sure the wording clearly describes what your app does, but say it in a way that doesn't sound boring. For many apps, a casual and friendly tone works well.
--   **Use a length that is just right.** A good description reads quickly, but also includes enough info to get the reader interested and explain what the app does. A complex app will need more sentences to describe it; a simple app may need only a few. In most cases the right length is somewhere over 200 words, but well under 3000.
--   **Be clear about free trials and in-app products.** If you offer a free trial of your app, be sure to explain how that trial works, so that customers understand which features are limited. It's also a good idea to mention what types of in-app products are available, particularly if they have significant impacts on your app's functionality.
--   **Use standard capitalization and punctuation.** Descriptions in all caps, or those that have unusual punctuation, can be hard to read.
--   **Don't forget to check the spelling and grammar.** A description with lots of misspelled words or mangled sentences doesn't reflect well on the quality of your app. Be sure to review your description (or have someone else take a look) to check for errors.
--   **Don't include links or info that belongs elsewhere.** URLs that you enter in the description field won't be clickable, so don't try to add links for things like your privacy policy or support website. Instead, add these in the designated areas of the **App description** page.
--   **Don't try to use HTML tags.** HTML or other code will not be rendered. Your description needs to be plain text only.
--   **Get ideas by reviewing descriptions of similar apps in the Store.** Take a look at how other developers describe their apps. This also helps you figure out what you can emphasize that is different about your app.
+-   **冒頭文で注意を引き付ける。** 説明の冒頭は最も重要な部分であるため、ここで注意を引き付けるようにします。 1 文から 2 文でアプリの特徴を説明し、それを読んだ人がアプリを欲しくなるようにするには、どのように言えばよいか考えてください。
+-   **アプリについての理解を容易にする。** 冒頭の宣伝文の後には、その他の利点やアプリ内購入を紹介したり、ユーザーが知りたいと思うようなアプリの詳しい情報を書き込みます。 アプリを配布する市場で適用される法律によって提供が義務付けられている開示や情報が含められていることを確認します。
+-   **箇条書きや短い段落を使う。** 見込み客は、アプリの説明に軽く目を通すだけで終わることがあります。 可能であれば短い段落や箇条書きを使ってコンテンツを分割すると、目を通しやすくなります。
+    > **注:** [アプリの機能](create-app-descriptions.md#app-features)の一覧を加えることも、アプリでできることをすばやく伝えるのに役立ちます。 この一覧は、アプリの説明のすぐ下に表示されます。
+-   **無味乾燥な文章を避ける。** 魅力的な文章で説明を記述してください。 アプリの機能を明確に説明する文章を使いつつ、退屈でない表現を選びます。 多くのアプリで、カジュアルでフレンドリーなトーンが適しています。
+-   **適切な長さにする。** 優れた説明はすばやく読むことができますが、その一方で、読み手の興味を引きアプリの機能を説明するために十分な情報が含まれています。 複雑なアプリであれば、説明に必要な文の数が多くなります。単純なアプリであれば、2 文から 3 文で足りる場合があります。 多くの場合、適切な長さは 200 語をやや上回る程度であり、3,000 語になると長すぎます。
+-   **無料試用版とアプリ内製品について明確に説明する。** アプリの試用版を無料で提供する場合は、制限されている機能をお客様が理解できるように、試用版のしくみを説明してください。 また、アプリ内製品がアプリの機能に大きく影響する場合は特に、どのようなアプリ内製品が用意されているのかについても示します。
+-   **大文字と小文字の使い分けや句読点は標準的な用法に従う。** アプリの説明全大文字で説明を記述したり、不自然な句読法を使うと、読みづらくなる場合があります。
+-   **誤字脱字や文法の誤りがないか確認する。** 説明の文章に誤字脱字が多く日本語として正しくないと、アプリの品質まで疑われかねません。 説明を読み直して (または、別の人に読んでもらって) 間違いがないかチェックしてください。
+-   **関係のないリンクや情報を含めない。** 説明フィールドでは、入力した URL はクリック可能にならないため、プライバシー ポリシーやサポート Web サイトなどへのリンクを追加しないでください。 代わりに、このようなリンクや情報は、**[アプリの説明]** ページの指定された領域に追加してください。
+-   **HTML タグを使わない。** HTML やその他のコードはレンダリングされません。 説明はプレーンテキストだけにする必要があります。
+-   **ストア内の類似するアプリの説明を参考にする。** 他の開発者がアプリをどのように説明しているかを見ます。 これは、他のアプリと異なるということを強調できる点は何か、判断するうえでも役立ちます。
 
  
 

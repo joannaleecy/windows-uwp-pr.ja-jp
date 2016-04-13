@@ -1,114 +1,117 @@
 ---
-description: You can use the PropertyPath class and the string syntax to instantiate a PropertyPath value either in XAML or in code.
-title: Property-path syntax'
+description: PropertyPath クラスと文字列構文を使うと、PropertyPath 値を XAML またはコードでインスタンス化できます。
+title: プロパティ パス構文'
 ms.assetid: FF3ECF47-D81F-46E3-BE01-C839E0398025
 ---
 
-# Property-path syntax
+# プロパティ パス構文
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-You can use the [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) class and the string syntax to instantiate a **PropertyPath** value either in XAML or in code. **PropertyPath** values are used by data binding. A similar syntax is used for targeting storyboarded animations. But animation targeting doesn't create underlying Property-path syntax values, it keeps the info as a string. For both scenarios, a property path describes a traversal of one or more object-property relationships that eventually resolve to a single property.
+[
+            **PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) クラスと文字列構文を使うと、**PropertyPath** 値を XAML またはコードでインスタンス化できます。 **PropertyPath** 値は、データ バインディングで使われます。 ストーリーボードに設定されたアニメーションのターゲットを設定する場合も、同様の構文が使われます。 アニメーション ターゲット設定では基になる PropertyPath 値が作成されず、情報は文字列として保持されます。 どちらのシナリオにおいても、プロパティ パスは、最終的に 1 つのプロパティに解決される 1 つまたは複数のオブジェクトとプロパティの関係のトラバーサルを記述します。
 
-You can set a property path string directly to an attribute in XAML. You can use the same string syntax to construct a [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) that sets a [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) in code, or to set an animation target in code using [**SetTargetProperty**](https://msdn.microsoft.com/library/windows/apps/br210503). There are two distinct feature areas in the Windows Runtime that use a property path: data binding, and animation targeting. Animation targeting doesn't create underlying Property-path syntax values in the Windows Runtime implementation, it keeps the info as a string, but the concepts of object-property traversal are very similar. Data binding and animation targeting each evaluate a property path slightly differently, so we describe property path syntax separately for each.
+プロパティ パス文字列は、XAML の属性に直接設定できます。 同じ文字列構文を使って、[**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) をコードで設定する [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) を作成することも、[**SetTargetProperty**](https://msdn.microsoft.com/library/windows/apps/br210503) を使ってコードでアニメーション ターゲットを設定することもできます。 Windows ランタイムには、プロパティ パスを使う機能領域として、データ バインディングとアニメーション ターゲット設定の 2 つがあります。 Windows ランタイムの実装時には、アニメーション ターゲット設定で基になる PropertyPath 値が作成されず、情報が文字列として保持されます。しかし、オブジェクトとプロパティのトラバーサルの概念はよく似ています。 データ バインディングとアニメーション ターゲット設定ではプロパティ パスの評価方法が多少異なるため、それぞれについてプロパティ パス構文を説明していきます。
 
-## Property path for objects in data binding
+## データ バインディングでのオブジェクトのプロパティ パス
 
-In Windows Runtime, you can bind to the target value of any dependency property. The source property value for a data binding doesn't have to be a dependency property; it can be a property on a business object (for example a class written in a Microsoft .NET language or C++). Or, the source object for the binding value can be an existing dependency object already defined by the app. The source can be referenced either by a simple property name, or by a traversal of the object-property relationships in the object graph of the business object.
+Windows ランタイムでは、任意の依存関係プロパティのターゲット値にバインドできます。 データ バインディングのソース プロパティ値は、依存関係プロパティである必要はなく、ビジネス オブジェクト (たとえば、Microsoft .NET 言語または C++ で書かれたクラス) のプロパティを使うことができます。 また、バインド値のソース オブジェクトには、アプリによって定義され、既に存在している依存関係オブジェクトを使うことができます。 ソースは、単純なプロパティ名を使うか、またはビジネス オブジェクトのオブジェクト グラフのオブジェクトとプロパティの関係のトラバーサルによって参照できます。
 
-You can bind to an individual property value, or you can bind to a target property that holds lists or collections. If your source is a collection, or if the path specifies a collection property, the data-binding engine matches the collection items of the source to the binding target, resulting in behavior such as populating a [**ListBox**](https://msdn.microsoft.com/library/windows/apps/br242868) with a list of items from a data source collection without needing to anticipate the specific items in that collection.
+バインド先として、個々のプロパティか、またはリストまたはコレクションを保持するターゲット プロパティを設定できます。 ソースがコレクションの場合、またはパスにコレクション プロパティが指定されている場合、データ バインディング エンジンにより、ソースのコレクション項目がバインディング ターゲットと照合されます。その結果、コレクション内の特定の項目を予測する必要なく、[**ListBox**](https://msdn.microsoft.com/library/windows/apps/br242868) にデータ ソース コレクションの項目のリストを設定する動作が実行されます。
 
-### Traversing an object graph
+### オブジェクト グラフのトラバーサル
 
-The element of the syntax that denotes the traversal of an object-property relationship in an object graph is the dot (**.**) character. Each dot in a property path string indicates a division between an object (left side of the dot) and a property of that object (right side of the dot). The string is evaluated left-to-right, which enables stepping through multiple object-property relationships. Let's look at an example:
+オブジェクト グラフ内のオブジェクトとプロパティの関係のトラバーサルを示す構文要素は、ドット (**.**) 文字です。 プロパティ パス文字列の各ドットは、オブジェクト (ドットの左側) とそのオブジェクトのプロパティ (ドットの右側) の間の区切りを表します。 文字列は左から右へ評価され、これにより複数のオブジェクトとプロパティの関係をステップごとに表すことができます。 次に例を示します。
 
 ``` syntax
 <Binding Path="Customer.Address.StreetAddress1"
 ```
 
-Here's how this path is evaluated:
+このパスは、次のように評価されます。
 
-1.  The data context object (or a [**Source**](https://msdn.microsoft.com/library/windows/apps/br209832) specified by the same [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820)) is searched for a property named "Customer".
-2.  The object that is the value of the "Customer" property is searched for a property named "Address".
-3.  The object that is the value of the "Address" property is searched for a property named "StreetAddress1".
+1.  データ コンテキスト オブジェクト (または同じ [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) によって指定された [**Source**](https://msdn.microsoft.com/library/windows/apps/br209832)) で、"Customer" という名前のプロパティが検索されます。
+2.  "Customer" プロパティの値であるオブジェクトで、"Address" という名前のプロパティが検索されます。
+3.  "Address" プロパティの値であるオブジェクトで、"StreetAddress1" という名前のプロパティが検索されます。
 
-At each of these steps, the value is treated as an object. The type of the result is checked only when the binding is applied to a specific property. This example would fail if "Address" were just a string value that didn't expose what part of the string was the street address. Typically, the binding is pointing to the specific nested property values of a business object that has a known and deliberate information structure.
+これらのそれぞれの手順で、値はオブジェクトとして扱われます。 結果の型は、バインドが特定のプロパティに割り当てられたときにのみ確認されます。 "Address" が単なる文字列値で、文字列のどの部分が番地を表しているかが示されない場合、この例は失敗します。 通常、バインドは、既知の意図的な情報構造を持つビジネス オブジェクトの特定の入れ子にされたプロパティ値を指し示します。
 
-### Rules for the properties in a data-binding property path
+### データ バインディング プロパティ パスのプロパティの規則
 
--   All properties referenced by a property path must be public in the source business object.
--   The end property (the property that is the last named property in the path) must be public and must be mutable – you can't bind to static values.
--   The end property must be read/write if this path is used as the [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) information for a two-way binding.
+-   プロパティ パスで参照されるすべてのプロパティは、ソース ビジネス オブジェクト内でパブリックであることが必要です。
+-   終了プロパティ (パスに指定された最後のプロパティ) は、パブリックであり変更可能である必要があります。静的値にバインドすることはできません。
+-   このパスが双方向バインドの [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 情報として使われる場合、終了プロパティは読み取り/書き込み可能である必要があります。
 
-### Indexers
+### インデクサー
 
-A property path for data-binding can include references to indexed properties. This enables binding to ordered lists/vectors, or to dictionaries/maps. Use square brackets "\[\]" characters to indicate an indexed property. The contents of these brackets can be either an integer (for ordered list) or an unquoted string (for dictionaries). You can also bind to a dictionary where the key is an integer. You can use different indexed properties in the same path with a dot separating the object-property.
+データ バインディングのプロパティ パスには、インデックス付きプロパティへの参照を含めることができます。 これにより、順序指定された一覧/ベクターまたは辞書/地図へのバインドが可能になります。 インデックス付きプロパティを示すには、角かっこ "\[\]" を使います。 角かっこ内には、整数 (順序指定された一覧用) または引用符で囲まれていない文字列 (辞書用) を含めることができます。 また、キーが整数である辞書にバインドすることもできます。 オブジェクトとプロパティを区切るドットを使って、同じパス内で異なるインデックス付きプロパティを使うことができます。
 
-For example, consider a business object where there is a list of "Teams" (ordered list), each of which has a dictionary of "Players" where each player is keyed by last name. An example property path to a specific player on the second team is: "Teams\[1\].Players\[Smith\]". (You use 1 to indicate the second item in "Teams" because the list is zero-indexed.)
+たとえば、"Teams" (順序指定された一覧) の一覧を含むビジネス オブジェクトがあるとします。それぞれには、各プレイヤーの姓がキーとして使われている、"Players" という辞書があるとします。 たとえば、2 番目のチームの特定のプレイヤーのプロパティ パスは、"Teams\[1\].Players\[Smith\]" となります (一覧はインデックス 0 で始まるため、"Teams" の 2 番目の項目を示すには 1 を使います)。
 
-**Note**  Indexing support for C++ data sources is limited; see [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946).
+**注:** C++ データ ソースに対してインデックスを付けられる局面は限られています。詳しくは、「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」をご覧ください。
 
-### Attached properties
+### 添付プロパティ
 
-Property paths can include references to attached properties. Because the identifying name of an attached property already includes a dot, you must enclose any attached property name within parentheses so that the dot isn't treated as an object-property step. For example, the string to specify that you want to use [**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/hh759773) as a binding path is "(Canvas.ZIndex)". For more info on attached properties see [Attached properties overview](attached-properties-overview.md).
+プロパティ パスには、添付プロパティへの参照を含めることができます。 添付プロパティの識別名には既にドットが含まれているため、ドットがオブジェクトとプロパティのステップとして処理されないように、すべての添付プロパティ名をかっこで囲む必要があります。 たとえば、[**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/hh759773) をバインド パスとして使うことを指定する文字列は "(Canvas.ZIndex)" となります。 添付プロパティについて詳しくは、「[添付プロパティの概要](attached-properties-overview.md)」をご覧ください。
 
-### Combining property path syntax
+### プロパティ パス構文の組み合わせ
 
-You can combine various elements of property path syntax in a single string. For example, you can define a property path that references an indexed attached property, if your data source had such a property.
+プロパティ パス構文のさまざまな要素を 1 つの文字列で組み合わせることができます。 たとえば、インデックス付き添付プロパティを参照するプロパティ パスを定義できます (データ ソースにインデックス付き添付プロパティがある場合)。
 
-### Debugging a binding property path
+### バインド プロパティ パスのデバッグ
 
-Because a property path is interpreted by a binding engine and relies on info that may be present only at run-time, you must often debug a property path for binding without being able to rely on conventional design-time or compile-time support in the development tools. In many cases the run-time result of failing to resolve a property path is a blank value with no error, because that is the by-design fallback behavior of binding resolution. Fortunately, Microsoft Visual Studio provides a debug output mode that can isolate which part of a property path that's specifying a binding source failed to resolve. For more info on using this development tool feature, see ["Debugging" section of Data binding in depth](../data-binding/data-binding-in-depth.md#debugging).
+プロパティ パスはバインド エンジンによって解釈され、実行時にのみ存在する可能性がある情報に依存するため、開発ツールの従来の設計時またはコンパイル時サポートに頼らずに、バインドのためのプロパティ パスをデバッグすることが必要になります。 多くの場合、実行時にプロパティ パスの解決に失敗すると、エラーなしで空白値が生成されます。これは、バインド解決の意図的なフォールバック動作です。 Microsoft Visual Studio には、バインド ソースを指定するプロパティ パスのどの部分で解決が失敗したかを特定できるデバッグ出力モードが用意されています。 この開発ツールの機能の使い方について詳しくは、[「データ バインディングの詳細」の「デバッグ」セクション](../data-binding/data-binding-in-depth.md#debugging)をご覧ください。
 
-## Property path for animation targeting
+## アニメーション ターゲット設定のためのプロパティ パス
 
-Animations rely on targeting a dependency property where storyboarded values are applied when the animation runs. To identify the object where the property to be animated exists, the animation targets an element by name ([x:Name attribute](x-name-attribute.md)). It is often necessary to define a property path that starts with the object identified as the [**Storyboard.TargetName**](https://msdn.microsoft.com/library/windows/apps/hh759823), and ends with the particular dependency property value where the animation should apply. That property path is used as the value for [**Storyboard.TargetProperty**](https://msdn.microsoft.com/library/windows/apps/hh759824).
+アニメーションは、アニメーションの実行時にストーリーボードに設定された値が適用される依存関係プロパティのターゲット設定に依存します。 アニメーション化されるプロパティが存在するオブジェクトを識別するために、アニメーションは、要素を名前 ([x:Name 属性](x-name-attribute.md)) でターゲット設定します。 通常、[**Storyboard.TargetName**](https://msdn.microsoft.com/library/windows/apps/hh759823) として識別されたオブジェクトで始まり、アニメーションが適用される特定の依存関係プロパティ値で終わるプロパティ パスを定義する必要があります。 このプロパティ パスは、[**Storyboard.TargetProperty**](https://msdn.microsoft.com/library/windows/apps/hh759824) の値として使われます。
 
-For more info on the how to define animations in XAML, see [Storyboarded animations](https://msdn.microsoft.com/library/windows/apps/mt187354).
+XAML でアニメーションを定義する方法について詳しくは、「[ストーリーボードに設定されたアニメーション](https://msdn.microsoft.com/library/windows/apps/mt187354)」をご覧ください。
 
-## Simple targeting
+## 単純なターゲット設定
 
-If you are animating a property that exists on the targeted object itself, and that property's type can have an animation applied directly to it (rather than to a sub-property of a property's value) then you can simply name the property being animated without any further qualification. For example, if you are targeting a [**Shape**](https://msdn.microsoft.com/library/windows/apps/br243377) subclass such as [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371), and you are applying an animated [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) to the [**Fill**](https://msdn.microsoft.com/library/windows/apps/br243378) property, your property path can be "Fill".
+ターゲット設定されたオブジェクト自体に存在するプロパティをアニメーション化するときに、(プロパティ値のサブプロパティではなく) このプロパティの型にアニメーションを直接適用できる場合は、修飾を追加することなく、アニメーション化の対象のプロパティを指定するだけでかまいません。 たとえば、[**Shape**](https://msdn.microsoft.com/library/windows/apps/br243377) サブクラス ([**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) など) をターゲット設定し、アニメーション化された [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) を [**Fill**](https://msdn.microsoft.com/library/windows/apps/br243378) プロパティに割り当てる場合、プロパティ パスとして "Fill" を指定できます。
 
-## Indirect property targeting
+## 間接的なプロパティのターゲット設定
 
-You can animate a property that is a sub-property of the target object. In other words, if there's a property of the target object that's an object itself, and that object has properties, you must define a property path that explains how to step through that object-property relationship. Whenever you are specifying an object where you want to animate a sub-property, you enclose the property name in parentheses, and you specify the property in *typename*.*propertyname* format. For example, to specify that you want the object value of a target object's [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/br208980) property, you specify "(UIElement.RenderTransform)" as the first step in the property path. This isn't yet a complete path, because there are no animations that can apply to a [**Transform**](https://msdn.microsoft.com/library/windows/apps/br243006) value directly. So for this example, you now complete the property path so that the end property is a property of a **Transform** subclass that can be animated by a **Double** value: "(UIElement.RenderTransform).(CompositeTransform.TranslateX)"
+ターゲット オブジェクトのサブプロパティであるプロパティをアニメーション化できます。 言い換えると、ターゲット オブジェクトにプロパティがあり (つまり、オブジェクト自体)、このオブジェクトにプロパティがある場合は、オブジェクトとプロパティの関係をステップごとに表す方法を説明するプロパティ パスを定義する必要があります。 サブプロパティをアニメーション化するオブジェクトを指定するときは、必ずプロパティ名をかっこで囲み、プロパティを *typename*.*propertyname* 形式で指定します。 たとえば、ターゲット オブジェクトの [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/br208980) プロパティのオブジェクト値を指定するには、"(UIElement.RenderTransform)" をプロパティ パスの最初のステップとして指定します。 [
+            **Transform**](https://msdn.microsoft.com/library/windows/apps/br243006) 値に直接適用できるアニメーションはないため、これはまだ完全なパスではありません。 そこで、この例では、**Double** 値によってアニメーション化できる **Transform** サブクラスのプロパティを終了プロパティに指定して、"(UIElement.RenderTransform).(CompositeTransform.TranslateX)" というプロパティ パスを完成させます。
 
-## Specifying a particular child in a collection
+## コレクション内の特定の子の指定
 
-To specify a child item in a collection property, you can use a numeric indexer. Use square brackets "\[\]" characters around the integer index value. You can reference only ordered lists, not dictionaries. Because a collection isn't a value that can be animated, an indexer usage can never be the end property in a property path.
+コレクション プロパティ内の子項目を指定する場合、数値インデクサーを使うことができます。 整数インデックス値を角かっこ "\[\]" で囲みます。 参照できるのは順序指定された一覧のみで、辞書は参照できません。 コレクションはアニメーション化できる値ではないため、インデクサーの使用はプロパティ パスの終了プロパティとなりません。
 
-For example, to specify that you want to animate the first color stop color in a [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/br210108) that is applied to a control's [**Background**](https://msdn.microsoft.com/library/windows/apps/br209395) property, this is the property path: "(Control.Background).(GradientBrush.GradientStops)\[0\].(GradientStop.Color)". Note how the indexer is not the last step in the path, and that the last step particularly must reference the [**GradientStop.Color**](https://msdn.microsoft.com/library/windows/apps/br210094) property of item 0 in the collection to apply a [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) animated value to it.
+たとえば、コントロールの [**Background**](https://msdn.microsoft.com/library/windows/apps/br209395) プロパティに適用される [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/br210108) の最初のカラー ストップ カラーをアニメーション化する場合のプロパティ パスは、"(Control.Background).(GradientBrush.GradientStops)\[0\].(GradientStop.Color)" となります。 インデクサーがパスの最終ステップにならないことに注目してください。さらに、アニメーション化された値 [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) を適用するために特に最終ステップでコレクション内の項目 0 の [**GradientStop.Color**](https://msdn.microsoft.com/library/windows/apps/br210094) プロパティを参照する必要があることに注目してください。
 
-## Animating an attached property
+## 添付プロパティのアニメーション化
 
-It isn't a common scenario, but it is possible to animate an attached property, so long as that attached property has a property value that matches an animation type. Because the identifying name of an attached property already includes a dot, you must enclose any attached property name within parentheses so that the dot isn't treated as an object-property step. For example, the string to specify that you want to animate the [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795) attached property on an object, use the property path "(Grid.Row)".
+これは一般的なシナリオではありませんが、添付プロパティがアニメーションの種類と一致するプロパティ値を持つ限り、添付プロパティをアニメーション化することもあります。 添付プロパティの識別名には既にドットが含まれているため、ドットがオブジェクトとプロパティのステップとして処理されないように、すべての添付プロパティ名をかっこで囲む必要があります。 たとえば、オブジェクトの [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795) 添付プロパティをアニメーション化することを指定する文字列として、プロパティ パス "(Grid.Row)" を使います。
 
-**Note**  For this example, the value of [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795) is an **Int32** property type. so you can't animate it with a **Double** animation. Instead, you'd define an [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320) that has [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/br243132) components, where the [**ObjectKeyFrame.Value**](https://msdn.microsoft.com/library/windows/apps/br210344) is set to an integer such as "0" or "1".
+**注:** この例では、[**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795) の値は **Int32** プロパティ型です。 したがって、**Double** アニメーションを使ってこれをアニメーション化することはできません。 その代わり、[**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/br243132) コンポーネントを持つ [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320) を定義します。ここで、[**ObjectKeyFrame.Value**](https://msdn.microsoft.com/library/windows/apps/br210344) は、"0"、"1" などの整数に設定します。
 
-## Rules for the properties in an animation targeting property path
+## アニメーション ターゲット設定プロパティ パスのプロパティの規則
 
--   The assumed starting point of the property path is the object identified by a [**Storyboard.TargetName**](https://msdn.microsoft.com/library/windows/apps/hh759823).
--   All objects and properties referenced along the property path must be public.
--   The end property (the property that is the last named property in the path) must be public, be read-write, and be a dependency property.
--   The end property must have a property type that is able to be animated by one of the broad classes of animation types ([**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) animations, **Double** animations, [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) animations, [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320)).
+-   プロパティ パスの想定される開始点は、[**Storyboard.TargetName**](https://msdn.microsoft.com/library/windows/apps/hh759823) によって識別されるオブジェクトです。
+-   プロパティ パスで参照されるすべてのオブジェクトおよびプロパティは、パブリックであることが必要です。
+-   終了プロパティ (パスに指定された最後のプロパティ) は、パブリックで読み取り/書き込み可能な依存関係プロパティである必要があります。
+-   終了プロパティは、さまざまなアニメーションの種類 ([**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) アニメーション、**Double** アニメーション、[**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) アニメーション、[**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320)) のいずれかでアニメーション化できるプロパティ型を持つ必要があります。
 
-## The PropertyPath class
+## PropertyPath クラス
 
-The [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) class is the underlying property type of [**Binding.Path**](https://msdn.microsoft.com/library/windows/apps/br209830) for the binding scenario.
+[
+            **PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) クラスは、バインド シナリオのための [**Binding.Path**](https://msdn.microsoft.com/library/windows/apps/br209830) の基になるプロパティ型です。
 
-Most of the time, you can apply a [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) in XAML without using any code at all. But in some cases you may want to define a **PropertyPath** object using code and assign it to a property at run-time.
+ほとんどの場合、コードをまったく使わずに [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) を XAML で適用できます。 しかし、場合によっては、コードを使って **PropertyPath** オブジェクトを定義し、実行時にプロパティに割り当てることができます。
 
-[**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) has a [**PropertyPath(String)**](https://msdn.microsoft.com/library/windows/apps/br244261) constructor, and doesn't have a default constructor. The string you pass to this constructor is a string that's defined using the property path syntax as we explained earlier. This is also the same string you'd use to assign [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) as a XAML attribute. The only other API of the **PropertyPath** class is the [**Path**](https://msdn.microsoft.com/library/windows/apps/br244260) property, which is read-only. You could use this property as the construction string for another **PropertyPath** instance.
+[**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) は [**PropertyPath(String)**](https://msdn.microsoft.com/library/windows/apps/br244261) コンストラクターを持ちますが、既定のコンストラクターはありません。 このコンストラクターには、前に説明したプロパティ パス構文を使って定義した文字列を渡します。 これは、パスを [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 属性として割り当てるために使うのと同じ文字列でもあります。 **PropertyPath** クラスの唯一の他の API は [**Path**](https://msdn.microsoft.com/library/windows/apps/br244260) プロパティで、これは読み取り専用です。 このプロパティは、他の **PropertyPath** インスタンスの構成文字列として使うことができます。
 
-## Related topics
+## 関連トピック
 
-* [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946)
-* [Storyboarded animations](https://msdn.microsoft.com/library/windows/apps/mt187354)
-* [{Binding} markup extension](binding-markup-extension.md)
+* [データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)
+* [ストーリーボードに設定されたアニメーション](https://msdn.microsoft.com/library/windows/apps/mt187354)
+* [{Binding} マークアップ拡張](binding-markup-extension.md)
 * [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259)
 * [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820)
-* [**Binding constructor**](https://msdn.microsoft.com/library/windows/apps/br209825)
+* [**Binding コンストラクター**](https://msdn.microsoft.com/library/windows/apps/br209825)
 * [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713)
 
 

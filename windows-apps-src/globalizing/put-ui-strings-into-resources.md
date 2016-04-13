@@ -1,57 +1,57 @@
 ---
-Description: Put string resources for your UI into resource files. You can then reference those strings from your code or markup.
-title: Put UI strings into resources
+Description: UI の文字列リソースをリソース ファイルに格納します。 その後、これらの文字列をコードやマークアップから参照できます。
+title: UI 文字列をリソースに格納する
 ms.assetid: E420B9BB-C0F6-4EC0-BA3A-BA2875B69722
-label: Put UI strings into resources
+label: UI 文字列をリソースに格納する
 template: detail.hbs
 ---
 
-# Put UI strings into resources
+# UI 文字列をリソースに格納する
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-**Important APIs**
+**重要な API**
 
 -   [**ApplicationModel.Resources.ResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br206014)
 -   [**WinJS.Resources.processAll**](https://msdn.microsoft.com/library/windows/apps/br211864)
 
-Put string resources for your UI into resource files. You can then reference those strings from your code or markup.
+UI の文字列リソースをリソース ファイルに格納します。 その後、これらの文字列をコードやマークアップから参照できます。
 
-This topic shows the steps to add several language string resources to your Universal Windows app, and how to briefly test it.
+このトピックでは、いくつかの言語の文字列リソースをユニバーサル Windows アプリに追加する手順と、簡単なテスト方法について説明します。
 
-## <span id="put_strings_into_resource_files__instead_of_putting_them_directly_in_code_or_markup."></span><span id="PUT_STRINGS_INTO_RESOURCE_FILES__INSTEAD_OF_PUTTING_THEM_DIRECTLY_IN_CODE_OR_MARKUP."></span>Put strings into resource files, instead of putting them directly in code or markup.
+## <span id="put_strings_into_resource_files__instead_of_putting_them_directly_in_code_or_markup."></span><span id="PUT_STRINGS_INTO_RESOURCE_FILES__INSTEAD_OF_PUTTING_THEM_DIRECTLY_IN_CODE_OR_MARKUP."></span>文字列を、コードまたはマークアップに直接含める代わりに、リソース ファイルに格納します。
 
 
-1.  Open your solution (or create a new one) in Visual Studio.
+1.  Visual Studio でソリューションを開きます (または新しいソリューションを作成します)。
 
-2.  Open package.appxmanifest in Visual Studio, go to the **Application** tab, and (for this example) set the Default language to "en-US". If there are multiple package.appxmanifest files in your solution, do this for each one.
-    <br>**Note**  This specifies the default language for the project. The default language resources are used if the user's preferred language or display languages do not match the language resources provided in the application.
-3.  Create a folder to contain the resource files.
-    1.  In the Solution Explorer, right-click the project (the Shared project if your solution contains multiple projects) and select **Add** &gt; **New Folder**.
-    2.  Name the new folder "Strings".
-    3.  If the new folder is not visible in Solution Explorer, select **Project** &gt; **Show All Files** from the Microsoft Visual Studio menu while the project is still selected.
+2.  Visual Studio で package.appxmanifest を開き、**[アプリケーション]** タブに移動して、(この例の場合) 既定の言語を "en-US" に設定します。 ソリューションに複数の package.appxmanifest ファイルがある場合、各ファイルに対してこの手順を実行します。
+    <br>**注:** これにより、プロジェクトの既定の言語を指定します。 既定の言語リソースは、ユーザーが優先する言語または表示言語がアプリケーションで提供される言語リソースに一致しない場合に使われます。
+3.  リソース ファイルを格納するためのフォルダーを作ります。
+    1.  ソリューション エクスプローラーで、プロジェクト (ソリューションに複数のプロジェクトが含まれる場合は共有プロジェクト) を右クリックし、**[追加]**、**[新しいフォルダー]** を順に選びます。
+    2.  新しいフォルダーに "Strings" という名前を付けます。
+    3.  ソリューション エクスプローラーに新しいフォルダーが表示されない場合は、プロジェクトが選ばれている状態で Microsoft Visual Studio のメニューの **[プロジェクト]**、**[すべてのファイルを表示]** を順に選びます。
 
-4.  Create a sub-folder and a resource file for English (United States).
-    1.  Right-click the Strings folder and add a new folder beneath it. Name it "en-US". The resource file is to be placed in a folder that has been named for the [BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302) language tag. See [How to name resources using qualifiers](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324) for details on the language qualifier and a list of common language tags.
-    2.  Right-click the en-US folder and select **Add** &gt; **New Item…**.
-    3.  **XAML:** Select "Resources File (.resw)".
-        <br>**HTML:** Select "Resources File (.resjson)".
+4.  英語 (米国) 用のサブフォルダーとリソース ファイルを作ります。
+    1.  Strings フォルダーを右クリックし、その下に新しいフォルダーを追加します。 新しいフォルダーに "en-US" という名前を付けます。 リソース ファイルは、[BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302) 言語タグの名前を持つフォルダーに格納します。 言語修飾子の詳しい情報と共通の言語タグの一覧は、「[修飾子を使ってリソースに名前を付ける方法](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)」をご覧ください。
+    2.  en-US フォルダーを右クリックし、**[追加]**、**[新しい項目]** の順に選びます。
+    3.  **XAML:** [リソース ファイル (.resw)] を選びます。
+        <br>**HTML:** [リソース ファイル (.resjson)] を選びます。
 
-    4.  Click **Add**. This adds a resource file with the default name "Resources.resw" (for **XAML**) or "resources.rejson" (for **HTML**). We recommend that you use this default filename. Apps can partition their resources into other files, but you must be careful to refer to them correctly (see [How to load string resources](https://msdn.microsoft.com/library/windows/apps/xaml/hh965323)).
-    5.  **XAML only:** If you have .resx files with only string resources from previous .NET projects, select **Add** &gt; **Existing Item…**, add the .resx file, and rename it to .resw.
-    6.  Open the file and use the editor to add these resources:
+    4.  **[追加]** をクリックします。 "Resources.resw" (**XAML** の場合) または "resources.rejson" (**HTML** の場合) という既定の名前の付いたリソース ファイルが追加されます。 この既定のファイル名を使うことをお勧めします。 アプリはリソースを他のファイルに分割できますが、そのファイルを正しく参照するように注意する必要があります (「[文字列リソースを読み込む方法](https://msdn.microsoft.com/library/windows/apps/xaml/hh965323)」をご覧ください)。
+    5.  **XAML のみ:** 以前の .NET プロジェクトの文字列リソースだけを含む .resx ファイルがある場合は、**[追加]**、**[既存の項目]** の順に選び、.resx ファイルを追加し、.resw に名前を変更します。
+    6.  ファイルを開き、エディターを使ってこれらのリソースを追加します。
 
         **XAML:**
 
         Strings/en-US/Resources.resw
-        ![add resource, english](images/addresource-en-us.png)
-        In this example, "Greeting.Text" and "Farewell" identify the strings that are to be displayed. "Greeting.Width" identifies the Width property of the "Greeting" string. The comments are a good place to provide any special instructions to translators who localize the strings to other languages.
+        ![リソースの追加 (英語)](images/addresource-en-us.png)
+        この例では、"Greeting.Text" と "Farewell" が、表示される文字列を特定しています。 "Greeting.Width" は "Greeting" 文字列の Width プロパティを特定しています。 コメントは、文字列を他の言語にローカライズする翻訳者に特別な指示を伝えるのに便利です。
 
         **HTML:**
 
-        The new file contains default content. Replace the content with the following (which may be similar to the default):
+        新しいファイルには既定のコンテンツが含まれます。 このコンテンツを次のものと置き換えます (既定と類似している場合もあります)。
 
         Strings/en-US/resources.resjson
 
@@ -65,33 +65,33 @@ This topic shows the steps to add several language string resources to your Univ
         }
         ```
 
-        This is strict JavaScript Object Notation (JSON) syntax where a comma must be placed after each name/value pair, except the last one. In this sample, "greeting" and "farewell" identify the strings that are to be displayed. The other pairs ("\_greeting.comment" and "\_farewell.comment") are comments that describe the strings. The comments are a good place to provide any special instructions to translators who localize the strings to other languages.
+        これは厳密な JavaScript Object Notation (JSON) 構文で、最後のペアを除く各名前と値のペアの後にコンマが必要です。 この例では、"greeting" と "farewell" が表示される文字列を特定しています。 他方のペア ("\_greeting.comment" と "\_farewell.comment") は文字列を説明するコメントです。 コメントは、文字列を他の言語にローカライズする翻訳者に特別な指示を伝えるのに便利です。
 
-## <span id="associate_controls_to_resources."></span><span id="ASSOCIATE_CONTROLS_TO_RESOURCES."></span>Associate controls to resources.
+## <span id="associate_controls_to_resources."></span><span id="ASSOCIATE_CONTROLS_TO_RESOURCES."></span>リソースにコントロールを関連付けます。
 
 
-**XAML only:**
+**XAML のみ:**
 
-You need to associate every control that needs localized text with the .resw file. You do this using the **x:Uid** attribute on your XAML elements like this:
+ローカライズされたテキストを必要とするすべてのコントロールを .resw ファイルに関連付ける必要があります。 これを行うには、次に示すように XAML 要素の **x:Uid** 属性を使います。
 
 ```XAML
 <TextBlock x:Uid="Greeting" Text="" />
 ```
 
-For the resource name, you give the **Uid** attribute value, plus you specify what property is to get the translated string (in this case the Text property). You can specify other properties/values for different languages such as Greeting.Width, but be careful with such layout-related properties. You should strive to allow the controls to lay out dynamically based on the device's screen.
+リソース名には、**Uid** 属性値に加え、翻訳された言語を取得するプロパティ (この場合は Text プロパティ) を指定します。 Greeting.Width など、異なる言語の他のプロパティ/値を指定できますが、このようなレイアウト関連のプロパティを指定する際には注意が必要です。 デバイスの画面に基づいてコントロールを動的にレイアウトする必要があります。
 
-Note that attached properties are handled differently in resw files such as AutomationPeer.Name. You need to explicitly write out the namespace like this:
+AutomationPeer.Name などのアタッチされたプロパティは、resw ファイルでは異なる方法で処理されます。 次のように名前空間を明示的に書き出す必要があります。
 
 ```XAML
 MediumButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name</code></pre></td>
 ```
 
-## <span id="add_string_resource_identifiers_to_code_and_markup."></span><span id="ADD_STRING_RESOURCE_IDENTIFIERS_TO_CODE_AND_MARKUP."></span>Add string resource identifiers to code and markup.
+## <span id="add_string_resource_identifiers_to_code_and_markup."></span><span id="ADD_STRING_RESOURCE_IDENTIFIERS_TO_CODE_AND_MARKUP."></span>コードとマークアップに文字列リソース識別子を追加します。
 
 
 **XAML:**
 
-In your code, you can dynamically reference strings:
+コードでは、文字列を動的に参照できます。
 
 **C#**
 ```CSharp
@@ -107,9 +107,9 @@ auto str = loader->GetString("Farewell");
 
 **HTML:**
 
-1.  Add references to the Windows Library for JavaScript to your HTML file, if they aren't already there.
+1.  JavaScript 用 Windows ライブラリへの参照を HTML ファイルに追加していない場合は追加します。
 
-    **Note**  The following code shows the HTML for the default.html file of the Windows project that is generated when you create a new **Blank App (Universal Windows)** JavaScript project in Visual Studio. Note that the file already contains references to the WinJS.
+    **注:** 次のコードは、Visual Studio で新しい **[空のアプリケーション (ユニバーサル Windows)]** JavaScript プロジェクトを作ると生成される Windows プロジェクトの default.html ファイルの HTML を示しています。 ファイルには WinJS への参照が既に含まれていることに注意してください。
 
     ```    HTML
     <!-- WinJS references -->
@@ -118,7 +118,7 @@ auto str = loader->GetString("Farewell");
     <script src="WinJS/js/ui.js"></script>
     ```
 
-2.  In the JavaScript code that accompanies your HTML file, call the [**WinJS.Resources.processAll**](https://msdn.microsoft.com/library/windows/apps/br211864) function when your HTML is loaded.
+2.  HTML ファイルに付随する JavaScript コードで、HTML が読み込まれるときに [**WinJS.Resources.processAll**](https://msdn.microsoft.com/library/windows/apps/br211864) 関数を呼び出します。
 
     ```    JavaScript
     WinJS.Application.onloaded = function(){
@@ -126,7 +126,7 @@ auto str = loader->GetString("Farewell");
     }
     ```
     
-    If additional HTML is loaded into a [**WinJS.UI.Pages.PageControl**](https://msdn.microsoft.com/library/windows/apps/jj126158) object, call [**WinJS.Resources.processAll**](https://msdn.microsoft.com/library/windows/apps/br211864)(*element*) in the page control's [**IPageControlMembers.ready**](https://msdn.microsoft.com/library/windows/apps/hh770590) method, where *element* is the HTML element (and its child elements) being loaded. This example is based on scenario 6 of the [Application resources and localization sample](http://go.microsoft.com/fwlink/p/?linkid=227301):
+    追加の HTML が [**WinJS.UI.Pages.PageControl**](https://msdn.microsoft.com/library/windows/apps/jj126158) オブジェクトに読み込まれると、ページ コントロールの [**IPageControlMembers.ready**](https://msdn.microsoft.com/library/windows/apps/hh770590) メソッドで [**WinJS.Resources.processAll**](https://msdn.microsoft.com/library/windows/apps/br211864) (*element*) を呼び出します。ここでは、*element* は、読み込まれる HTML 要素 (およびその子要素) です。 この例は、「[アプリ リソースとローカライズのサンプル](http://go.microsoft.com/fwlink/p/?linkid=227301)」のシナリオ 6 に基づいています。
 
     ```    JavaScript
     var output;
@@ -143,23 +143,23 @@ auto str = loader->GetString("Farewell");
     });
     ```
 
-3.  In the HTML, refer to the string resources using the resource identifiers ('greeting' and 'farewell') from the resource files.
+3.  HTML でリソース識別子 ('greeting' と 'farewell') を使ってリソース ファイルから文字列リソースを参照します。
     ```    HTML
     <h2><span data-win-res="{textContent: 'greeting';}"></span></h2>
     <h2><span data-win-res="{textContent: 'farewell'}"></span></h2>
     ```
 
-4.  Refer to string resources for attributes.
+4.  属性の文字列リソースを参照します。
 
     ```    HTML
     <div data-win-res="{attributes: {'aria-label'; : 'String1'}}" >
     ```
 
-    The general pattern of the data-win-res attribute for HTML replacement is data-win-res="{*propertyname1*: '*resource ID*', *propertyname2*: '*resource ID2*'}".
+    HTML の置き換えの data-win-res 属性の標準パターンは data-win-res="{*propertyname1*: '*resource ID*', *propertyname2*: '*resource ID2*'}" です。
 
-    **Note**  If the string does not contain any markup, then bind the resource wherever possible to the textContent property instead of innerHTML. The textContent property is much faster to replace than innerHTML.
+    **注:** 文字列にマークアップが含まれていない場合は、可能な限り、リソースを innerHTML ではなく textContent プロパティにバインドします。 textContent プロパティの方が、innerHTML よりも高速で置き換えることができます。
 
-5.  Refer to string resources in JavaScript.
+5.  JavaScript で文字列リソースを参照します。
     <span codelanguage="JavaScript"></span>
     ```    JavaScript
     var el = element.querySelector('#header');
@@ -168,17 +168,17 @@ auto str = loader->GetString("Farewell");
     el.setAttribute('lang', res.lang);
     ```
 
-## <span id="add_folders_and_resource_files_for_two_additional_languages."></span><span id="ADD_FOLDERS_AND_RESOURCE_FILES_FOR_TWO_ADDITIONAL_LANGUAGES."></span>Add folders and resource files for two additional languages.
+## <span id="add_folders_and_resource_files_for_two_additional_languages."></span><span id="ADD_FOLDERS_AND_RESOURCE_FILES_FOR_TWO_ADDITIONAL_LANGUAGES."></span>他の 2 つの言語用にフォルダーとリソース ファイルを追加します。
 
 
-1.  Add another folder under the Strings folder for German. Name the folder "de-DE" for Deutsch (Deutschland).
-2.  Create another resources file in the de-DE folder, and add the following:
+1.  Strings フォルダーの下にドイツ語用の別のフォルダーを追加します。 フォルダーに Deutsch (Deutschland) を表す "de-DE" という名前を付けます。
+2.  [de-DE] フォルダー内に別のリソース ファイルを作り、次のように追加します。
 
     **XAML:**
 
     strings/de-DE/Resources.resw
 
-    ![add resource, german](images/addresource-de-de.png)
+    ![リソースを追加する (ドイツ語)](images/addresource-de-de.png)
 
     **HTML:**
 
@@ -194,12 +194,12 @@ auto str = loader->GetString("Farewell");
     }
     ```
 
-3.  Create one more folder named "fr-FR", for français (France). Create a new resources file and add the following:
+3.  フォルダーをもう 1 つ作り、français (France) を表す "fr-FR" という名前を付けます。 新規のリソース ファイルを作り、次のように追加します。
 
     **XAML:**
 
     strings/fr-FR/Resources.resw
-    ![add resource, french](images/addresource-fr-fr.png)
+    ![リソースを追加する (フランス語)](images/addresource-fr-fr.png)
     **HTML:**
 
     strings/fr-FR/resources.resjson
@@ -214,30 +214,30 @@ auto str = loader->GetString("Farewell");
     }
     ```
 
-## <span id="build_and_run_the_app."></span><span id="BUILD_AND_RUN_THE_APP."></span>Build and run the app.
+## <span id="build_and_run_the_app."></span><span id="BUILD_AND_RUN_THE_APP."></span>アプリをビルドして実行します。
 
 
-Test the app for your default display language.
+既定の表示言語に対してアプリをテストします。
 
-1.  Press F5 to build and run the app.
-2.  Note that the greeting and farewell are displayed in the user's preferred language.
-3.  Exit the app.
+1.  F5 キーを押して、アプリをビルドし、実行します。
+2.  "greeting" と "farewell" が、ユーザーの優先する言語で表示されることを確かめます。
+3.  アプリを終了します。
 
-Test the app for the other languages.
+他の言語に対してアプリをテストします。
 
-1.  Bring up **Settings** on your device.
-2.  Select **Time & language**.
-3.  Select **Region & language** (or on a phone or phone emulator, **Language**).
-4.  Note that the language that was displayed when you ran the app is the top language listed that is English, German, or French. If your top language is not one of these three, the app falls back to the next one on the list that the app supports.
-5.  If you do not have all three of these languages on your machine, add the missing ones by clicking **Add a language** and adding them to the list.
-6.  To test the app with another language, select the language in the list and click **Set as default** (or on a phone or phone emulator, tap and hold the language in the list and then tap **Move up** until it is at the top). Then run the app.
+1.  デバイスで **[設定]** を表示します。
+2.  **[時刻と言語]** を選択します。
+3.  **[地域と言語]** (電話または電話エミュレーターでは **[言語]**) を選択します。
+4.  前回アプリを実行したときに表示された言語は、一覧の中で最上位にリストされている言語 (英語、ドイツ語、またはフランス語) です。 最上位にリストされている言語がこれらのいずれでもない場合、アプリでサポートされているリスト内の次の言語にフォールバックされます。
+5.  これらの 3 つの言語のいずれかがコンピューターにインストールされていない場合は、**[言語の追加]** をクリックして、言語を一覧に追加します。
+6.  別の言語でアプリをテストするには、一覧で言語を選択し、**[既定に設定]** をクリックします (電話または電話エミュレーターでは、一覧で言語を長押しして、最上位に来るまで **[上へ移動]** をタップします)。 その後、アプリを実行します。
 
-## <span id="related_topics"></span>Related topics
+## <span id="related_topics"></span>関連トピック
 
 
-* [How to name resources using qualifiers](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)
-* [How to load string resources](https://msdn.microsoft.com/library/windows/apps/xaml/hh965323)
-* [The BCP-47 language tag](http://go.microsoft.com/fwlink/p/?linkid=227302)
+* [修飾子を使ってリソースに名前を付ける方法](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)
+* [文字列リソースを読み込む方法](https://msdn.microsoft.com/library/windows/apps/xaml/hh965323)
+* [BCP-47 言語タグに関するページ](http://go.microsoft.com/fwlink/p/?linkid=227302)
  
 
  

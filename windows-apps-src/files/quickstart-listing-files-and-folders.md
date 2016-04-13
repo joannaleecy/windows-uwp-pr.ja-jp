@@ -1,34 +1,34 @@
 ---
 ms.assetid: 4C59D5AC-58F7-4863-A884-E9E54228A5AD
-title: Enumerate and query files and folders
-description: Access files and folders in either a folder, library, device, or network location. You can also query the files and folders in a location by constructing file and folder queries.
+title: ファイルとフォルダーの列挙と照会
+description: フォルダー、ライブラリ、デバイス、またはネットワークの場所にあるファイルやフォルダーにアクセスします。 ファイルやフォルダーのクエリを作成することで、任意の場所にあるファイルやフォルダーを照会することもできます。
 ---
-# Enumerate and query files and folders
+# ファイルとフォルダーの列挙と照会
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-Access files and folders in either a folder, library, device, or network location. You can also query the files and folders in a location by constructing file and folder queries.
+フォルダー、ライブラリ、デバイス、またはネットワークの場所にあるファイルやフォルダーにアクセスします。 ファイルやフォルダーのクエリを作成することで、任意の場所にあるファイルやフォルダーを照会することもできます。
 
-**Note**  Also see the [Folder enumeration sample](http://go.microsoft.com/fwlink/p/?linkid=619993).
+**注:** [フォルダーの列挙のサンプル](http://go.microsoft.com/fwlink/p/?linkid=619993)に関するページも参照してください。
 
  
-## Prerequisites
+## 必要条件
 
--   **Understand async programming for Universal Windows Platform (UWP) apps**
+-   **ユニバーサル Windows プラットフォーム (UWP) アプリの非同期プログラミングについての理解**
 
-    You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
+    C# や Visual Basic での非同期アプリの作成方法については、「[C# または Visual Basic での非同期 API の呼び出し](https://msdn.microsoft.com/library/windows/apps/mt187337)」をご覧ください。 C++ での非同期アプリの作成方法については、「[C++ での非同期プログラミング](https://msdn.microsoft.com/library/windows/apps/mt187334)」をご覧ください。
 
--   **Access permissions to the location**
+-   **場所へのアクセス許可**
 
-    For example, the code in these examples require the **picturesLibrary** capability, but your location may require a different capability or no capability at all. To learn more, see [File access permissions](file-access-permissions.md).
+    たとえば、これらの例のコードでは **picturesLibrary** 機能が必要ですが、場所によっては別の機能が必要であったり、機能をまったく必要としない場合もあります。 詳しくは、「[ファイル アクセス許可](file-access-permissions.md)」をご覧ください。
 
-## Enumerate files and folders in a location
+## ある場所のファイルやフォルダーを列挙する
 
-> **Note**  Remember to declare the **picturesLibrary** capability.
+> **注:** 必ず **picturesLibrary** 機能を宣言してください。
 
-In this example we first use the [**StorageFolder.GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227276) method to get all the files in the root folder of the [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) (not in subfolders) and list the name of each file. Next, we use the [**GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br227280) method to get all the subfolders in the **PicturesLibrary** and list the name of each subfolder.
+この例では、まず [**StorageFolder.GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227276) メソッドを使って [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) 内のルート フォルダー (サブフォルダーは除く) にあるすべてのファイルを取得し、各ファイルの名前を一覧表示します。 次に、[**GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br227280) メソッドを使って **PicturesLibrary** 内のすべてのサブフォルダーを取得し、各サブフォルダーの名前を一覧表示します。
 
 <!--BUGBUG: IAsyncOperation<IVectorView<StorageFolder^>^>^  causes build to flake out-->
 > [!div class="tabbedCodeSnippets"] 
@@ -131,10 +131,10 @@ In this example we first use the [**StorageFolder.GetFilesAsync**](https://msdn.
 > ```
 
 
-> **Note**  In C# or Visual Basic, remember to put the **async** keyword in the method declaration of any method in which you use the **await** operator.
+> **注:** C# または Visual Basic では、**await** 演算子を使うすべてのメソッドのメソッド宣言で、必ず **async** キーワードを使ってください。
  
 
-Alternatively, you can use the [**GetItemsAsync**](https://msdn.microsoft.com/library/windows/apps/br227286) method to get all items (both files and subfolders) in a particular location. The following example uses the **GetItemsAsync** method to get all files and subfolders in the root folder of the [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) (not in subfolders). Then the example lists the name of each file and subfolder. If the item is a subfolder, the example appends `"folder"` to the name.
+または、[**GetItemsAsync**](https://msdn.microsoft.com/library/windows/apps/br227286) メソッドを使って、特定の場所にあるすべての項目 (ファイルとサブフォルダーの両方) を取得することもできます。 次の例では、**GetItemsAsync** メソッドを使って [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) 内のルート フォルダー (サブフォルダーは除く) にあるすべてのファイルとサブフォルダーを取得します。 その後、各ファイルとサブフォルダーの名前を一覧表示します。 項目がサブフォルダーの場合は、名前に `"folder"` を追加します。
 
 > [!div class="tabbedCodeSnippets"] 
 > ```cpp
@@ -203,11 +203,11 @@ Alternatively, you can use the [**GetItemsAsync**](https://msdn.microsoft.com/li
 > Next item
 > ```
 
-## Query files in a location and enumerate matching files
+## ある場所のファイルのクエリを実行して一致するファイルを列挙する
 
-In this example we query for all the files in the [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) grouped by the month, and this time the example recurses into subfolders. First, we call [**StorageFolder.CreateFolderQuery**](https://msdn.microsoft.com/library/windows/apps/br227262) and pass the [**CommonFolderQuery.GroupByMonth**](https://msdn.microsoft.com/library/windows/apps/br207957) value to the method. That gives us a [**StorageFolderQueryResult**](https://msdn.microsoft.com/library/windows/apps/br208066) object.
+この例では [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) にある月ごとにグループ化されたすべてのファイルを照会し、今回はサブフォルダーに再帰的に呼び出します。 まず、[**StorageFolder.CreateFolderQuery**](https://msdn.microsoft.com/library/windows/apps/br227262) を呼び出し、[**CommonFolderQuery.GroupByMonth**](https://msdn.microsoft.com/library/windows/apps/br207957) の値をメソッドに渡します。 これで、[**StorageFolderQueryResult**](https://msdn.microsoft.com/library/windows/apps/br208066) オブジェクトが取得されます。
 
-Next we call [**StorageFolderQueryResult.GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br208074) which returns [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) objects representing virtual folders. In this case we're grouping by month, so the virtual folders each represent a group of files with the same month.
+次に、仮想フォルダーを表す [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) のオブジェクトを返す [**StorageFolderQueryResult.GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br208074) を呼び出します。 ここでは月でグループ化されているため、各仮想フォルダーは同じ月にあるファイルのグループを表します。
 
 > [!div class="tabbedCodeSnippets"] 
 > ```cpp
@@ -306,7 +306,7 @@ Next we call [**StorageFolderQueryResult.GetFoldersAsync**](https://msdn.microso
 > Next folder
 > ```
 
-The output of the example looks similar to the following.
+この例の出力は次のようになります。
 
 ``` syntax
 July ‎2015 (2)

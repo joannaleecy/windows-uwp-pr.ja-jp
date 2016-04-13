@@ -1,79 +1,79 @@
 ---
-Description: Provide deep links from the background app service in Cortana to launch the app to the foreground in a specific state or context.
-title: Deep link from Cortana to a background app
+Description: Cortana でバックグラウンド アプリのサービスからのディープ リンクを提供し、フォアグラウンドに特定の状態やコンテキストでアプリを起動します。
+title: Cortana からバックグラウンド アプリへのディープ リンク
 ms.assetid: BE811A87-8821-476A-90E4-2E20D37E4043
 label: Deep link to a background app
 template: detail.hbs
 ---
 
-# Deep link from Cortana to a background app
+# Cortana からバックグラウンド アプリへのディープ リンク
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-**Important APIs**
+**重要な API**
 
 -   [**Windows.ApplicationModel.VoiceCommands**](https://msdn.microsoft.com/library/windows/apps/dn706594)
--   [**Voice Command Definition (VCD) elements and attributes v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
+-   [**音声コマンド定義 (VCD) の要素および属性 v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
 
-Provide deep links from a background app in **Cortana** that launch the app to the foreground in a specific state or context.
+**Cortana** でバックグラウンド アプリからのディープ リンクを提供し、フォアグラウンドに特定の状態やコンテキストでアプリを起動します。
 
-> **Note**  
-Both **Cortana** and the background app service are terminated when the foreground app is launched.
+> **注**  
+フォアグラウンド アプリが起動すると、**Cortana** とバックグラウンド アプリ サービスはいずれも終了します。
 
-A deep link is displayed by default on the **Cortana** completion screen as shown here ("Go to AdventureWorks"), but you can display deep links on various other screens. 
+既定では、ディープ リンクは、ここに示されているように **Cortana** の完了画面 ("AdventureWorks に移動") に表示されますが、他のさまざまな画面にもディープ リンクを表示できます。 
 
-![cortana background app completion screen](images/cortana-completion-screen-upcomingtrip-small.png)
+![Cortana のバックグラウンド アプリの完了画面](images/cortana-completion-screen-upcomingtrip-small.png)
 
-**Prerequisites:  **
+**前提条件:  **
 
-This topic builds on [Interact with a background app in Cortana](interact-with-a-background-app-in-cortana.md). We continue using a trip planning and management app named **Adventure Works** to demonstrate various **Cortana** features.
+このトピックは、「[Cortana でのバックグラウンド アプリの操作](interact-with-a-background-app-in-cortana.md)」に基づいています。 引き続き **Adventure Works** という旅行の計画および管理アプリを使って、**Cortana** のさまざまな機能について説明します。
 
-If you're new to developing Universal Windows Platform (UWP) apps, have a look through these topics to get familiar with the technologies discussed here.
+ユニバーサル Windows プラットフォーム (UWP) アプリを開発するのが初めての場合は、以下のトピックに目を通して、ここで説明されているテクノロジをよく理解できるようにしてください。
 
--   [Create your first app](https://msdn.microsoft.com/library/windows/apps/bg124288)
--   Learn about events with [Events and routed events overview](https://msdn.microsoft.com/library/windows/apps/mt185584)
+-   [初めてのアプリ作成](https://msdn.microsoft.com/library/windows/apps/bg124288)
+-   「[イベントとルーティング イベントの概要](https://msdn.microsoft.com/library/windows/apps/mt185584)」でイベントについて学習します。
 
-**User experience guidelines:  **
+**ユーザー エクスペリエンス ガイドライン:  **
 
-See [Cortana design guidelines](https://msdn.microsoft.com/library/windows/apps/dn974233) for info about how to integrate your app with **Cortana** and [Speech design guidelines](https://msdn.microsoft.com/library/windows/apps/dn596121) for helpful tips on designing a useful and engaging speech-enabled app.
+アプリと **Cortana** を統合する方法については「[Cortana の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn974233)」を、魅力的な音声認識対応アプリの設計に役立つ便利なヒントについては「[音声機能の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596121)」をご覧ください。
 
-## <span id="Overview"></span><span id="overview"></span><span id="OVERVIEW"></span>Overview
-
-
-Users can access your app through **Cortana** by:
-
--   Activating it as a foreground app (see [Activate a foreground app with voice commands through Cortana](launch-a-foreground-app-with-voice-commands-in-cortana.md)).
--   Exposing specific functionality as a background app service (see [Activate a background app with voice commands through Cortana](launch-a-background-app-with-voice-commands-in-cortana.md)).
--   Deep linking to specific pages, content, and state or context.
-
-We discuss deep linking here.
-
-Deep linking is useful when Cortana and your app service act as a gateway to your full-featured app (instead of requiring the user to launch the app through the Start menu), or for providing access to richer detail and functionality within your app that is not possible through Cortana. Deep linking is another way to increase usability and promote your app.
-
-There are three ways to provide deep links:
-
--   A "Go to &lt;app&gt;" link on various **Cortana** screens.
--   A link embedded in a content tile on various **Cortana** screens.
--   Programmatically launching the foreground app from the background app service.
-
-## <span id="Go_to__app__deep_link"></span><span id="go_to__app__deep_link"></span><span id="GO_TO__APP__DEEP_LINK"></span>"Go to &lt;app&gt;" deep link
+## <span id="Overview"></span><span id="overview"></span><span id="OVERVIEW"></span>概要
 
 
-**Cortana** displays a "Go to &lt;app&gt;" deep link below the content card on most screens.
+ユーザーは、次のような方法で **Cortana** 経由でアプリにアクセスできます。
 
-![cortana background app completion screen](images/cortana-completion-screen.png)
+-   アプリをフォアグラウンド アプリとしてアクティブ化する (「[Cortana の音声コマンドを使ったフォアグラウンド アプリのアクティブ化](launch-a-foreground-app-with-voice-commands-in-cortana.md)」をご覧ください)。
+-   特定の機能をバックグラウンド アプリ サービスとして公開する (「[Cortana の音声コマンドを使ったバックグラウンド アプリのアクティブ化](launch-a-background-app-with-voice-commands-in-cortana.md)」をご覧ください)。
+-   特定のページ、コンテンツ、状態やコンテキストへのディープ リンク。
 
-You can provide a launch argument for this link that opens your app in similar context as the app service. If you don't provide a launch argument, the app is launched to the main screen.
+ここでは、ディープ リンクについて説明します。
 
-In this example from AdventureWorksVoiceCommandService.cs of the **AdventureWorks** sample, we pass the specified destination to the SendCompletionMessageForDestination method, which retrieves all matching trips and provides a deep link to the app.
+ディープ リンクは、(スタート メニューからアプリを起動することをユーザーに要求する代わりに) Cortana とアプリ サービスがすべての機能を備えたアプリへのゲートウェイとなっている場合や、Cortana 経由では不可能なアプリ内の充実した詳細情報や機能へのアクセスを提供する場合に便利です。 ディープ リンクは、操作性を向上させ、アプリを宣伝するためのもう 1 つの方法です。
 
-First, we create a  [**VoiceCommandUserMessage**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandusermessage.aspx) (```userMessage```) that is spoken by **Cortana** and shown on the **Cortana** canvas. A [**VoiceCommandContentTile**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandcontenttile.aspx) list object is then created for displaying the collection of result cards on the canvas. 
+ディープ リンクを提供するには、3 つの方法があります。
 
-These two objects are then passed to the [CreateResponse](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandresponse.createresponse.aspx) method of the [**VoiceCommandResponse**](https://msdn.microsoft.com/library/windows/apps/dn974182) object (```response```). We then set the [**AppLaunchArgument**](https://msdn.microsoft.com/library/windows/apps/dn974183) property value to the value of the destination in the voice command.
+-   さまざまな **Cortana** 画面にある "&lt;アプリ&gt; に移動" リンク。
+-   さまざまな **Cortana** 画面のコンテンツ タイルに埋め込まれているリンク。
+-   プログラムによるバックグラウンド アプリ サービスからのフォアグラウンド アプリの起動。
 
-Finally, we call the [**ReportSuccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn706580) method of the [**VoiceCommandServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn974204).
+## <span id="Go_to__app__deep_link"></span><span id="go_to__app__deep_link"></span><span id="GO_TO__APP__DEEP_LINK"></span>"&lt;アプリ&gt; に移動" ディープ リンク
+
+
+**Cortana** では、ほとんどの画面のコンテンツ カードの下に "&lt;アプリ&gt; に移動" ディープ リンクが表示されます。
+
+![Cortana のバックグラウンド アプリの完了画面](images/cortana-completion-screen.png)
+
+このリンクに、アプリ サービスと同様のコンテキストでアプリを開く起動引数を指定できます。 起動引数を指定しない場合、アプリはメイン画面で起動されます。
+
+この例では、指定した目的地をサンプルの **AdventureWorks** の AdventureWorksVoiceCommandService.cs から SendCompletionMessageForDestination メソッドに渡します。このメソッドは、一致するすべての旅行を受け取り、アプリへのディープ リンクを提供します。
+
+最初に、**Cortana** に話させ、**Cortana** キャンバスに表示する [**VoiceCommandUserMessage**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandusermessage.aspx) (```userMessage```) を作成します。 結果のカード コレクションをキャンバスに表示するための [**VoiceCommandContentTile**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandcontenttile.aspx) リスト オブジェクトが作成されます。 
+
+これら 2 つのオブジェクトが [**VoiceCommandResponse**](https://msdn.microsoft.com/library/windows/apps/dn974182) オブジェクトの [CreateResponse](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandresponse.createresponse.aspx)メソッド (```response```) に渡されます。 次に、[**AppLaunchArgument**](https://msdn.microsoft.com/library/windows/apps/dn974183) プロパティの値を音声コマンドの目的地の値に設定します。
+
+最後に、[**VoiceCommandServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn974204) の [**ReportSuccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn706580) メソッドを呼び出します。
 
 ```csharp
 /// <summary>
@@ -101,23 +101,23 @@ private async Task SendCompletionMessageForDestination(string destination)
 ```
 
 
-## <span id="Content_tile_deep_link"></span><span id="content_tile_deep_link"></span><span id="CONTENT_TILE_DEEP_LINK"></span>Content tile deep link
+## <span id="Content_tile_deep_link"></span><span id="content_tile_deep_link"></span><span id="CONTENT_TILE_DEEP_LINK"></span>コンテンツ タイルのディープ リンク
 
 
-You can add deep links to content cards on various **Cortana** screens.
+ディープ リンクは、さまざまな **Cortana** 画面にあるコンテンツ カードに追加できます。
 
-![cortana background app hand-off screen ](images/cortana-backgroundapp-progress-result.png)
+![Cortana のバックグラウンド アプリのハンドオフ画面 ](images/cortana-backgroundapp-progress-result.png)
 
-Like the "Go to &lt;app&gt;" links, you can provide a launch argument to open your app with similar context as the app service. If you don't provide a launch argument, the content tile does not link to your app.
+"&lt;アプリ&gt; に移動" リンクと同様に、アプリ サービスと同様のコンテキストでアプリを開くために、起動引数を指定できます。 起動引数を指定しない場合、コンテンツ タイルはアプリにリンクされません。
 
-In this example from AdventureWorksVoiceCommandService.cs of the **AdventureWorks** sample, we pass the specified destination to the SendCompletionMessageForDestination method, which retrieves all matching trips and provides content cards with deep links to the app.
+この例では、指定した目的地をサンプルの **AdventureWorks** の AdventureWorksVoiceCommandService.cs から SendCompletionMessageForDestination メソッドに渡します。このメソッドは、一致するすべての旅行を受け取り、アプリへのディープ リンクをコンテンツ カードに提供します。
 
-First, we create a  [**VoiceCommandUserMessage**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandusermessage.aspx) (```userMessage```) that is spoken by **Cortana** and shown on the **Cortana** canvas. A [**VoiceCommandContentTile**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandcontenttile.aspx) list object is then created for displaying the collection of result cards on the canvas. 
+最初に、**Cortana** に話させ、**Cortana** キャンバスに表示する [**VoiceCommandUserMessage**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandusermessage.aspx) (```userMessage```) を作成します。 結果のカード コレクションをキャンバスに表示するための [**VoiceCommandContentTile**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandcontenttile.aspx) リスト オブジェクトが作成されます。 
 
-These two objects are then passed to the [CreateResponse](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandresponse.createresponse.aspx) method of the [**VoiceCommandResponse**](https://msdn.microsoft.com/library/windows/apps/dn974182) object (```response```). We then set the [**AppLaunchArgument**](https://msdn.microsoft.com/library/windows/apps/dn974183) property value to the value of the destination in the voice command.
+これら 2 つのオブジェクトが [**VoiceCommandResponse**](https://msdn.microsoft.com/library/windows/apps/dn974182) オブジェクトの [CreateResponse](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandresponse.createresponse.aspx)メソッド (```response```) に渡されます。 次に、[**AppLaunchArgument**](https://msdn.microsoft.com/library/windows/apps/dn974183) プロパティの値を音声コマンドの目的地の値に設定します。
 
-Finally, we call the [**ReportSuccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn706580) method of the [**VoiceCommandServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn974204).
-Here, we add two content tiles with different [**AppLaunchArgument**](https://msdn.microsoft.com/library/windows/apps/dn974183) parameter values to a [**VoiceCommandContentTile**](https://msdn.microsoft.com/library/windows/apps/dn974168) list used in the [**ReportSuccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn706580) call of the [**VoiceCommandServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn974204) object.
+最後に、[**VoiceCommandServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn974204) の [**ReportSuccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn706580) メソッドを呼び出します。
+ここでは、[**VoiceCommandServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn974204) オブジェクトの [**ReportSuccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn706580) の呼び出しで使用される [**VoiceCommandContentTile**](https://msdn.microsoft.com/library/windows/apps/dn974168) リストに、異なる [**AppLaunchArgument**](https://msdn.microsoft.com/library/windows/apps/dn974183) パラメーター値を持つ 2 つのコンテンツ タイルを追加します。
 
 ```csharp
 /// <summary>
@@ -203,12 +203,12 @@ private async Task SendCompletionMessageForDestination(string destination)
     await voiceServiceConnection.ReportSuccessAsync(response);
 }
 ```
-## <span id="Programmatic_deep_link"></span><span id="programmatic_deep_link"></span><span id="PROGRAMMATIC_DEEP_LINK"></span>Programmatic deep link
+## <span id="Programmatic_deep_link"></span><span id="programmatic_deep_link"></span><span id="PROGRAMMATIC_DEEP_LINK"></span>プログラムによるディープ リンク
 
 
-You can also programmatically launch your app with a launch argument to open your app with similar context as the app service. If you don't provide a launch argument, the app is launched to the main screen.
+アプリ サービスと同様のコンテキストでアプリを開くために、起動引数を指定して、プログラムによってアプリを起動することもできます。 起動引数を指定しない場合、アプリはメイン画面で起動されます。
 
-Here, we add an [**AppLaunchArgument**](https://msdn.microsoft.com/library/windows/apps/dn974183) parameter with a value of "Las Vegas" to a [**VoiceCommandResponse**](https://msdn.microsoft.com/library/windows/apps/dn974182) object used in the [**RequestAppLaunchAsync**](https://msdn.microsoft.com/library/windows/apps/dn706581) call of the [**VoiceCommandServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn974204) object.
+ここでは、[**VoiceCommandServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn974204) オブジェクトの [**RequestAppLaunchAsync**](https://msdn.microsoft.com/library/windows/apps/dn706581) の呼び出しで使用される [**VoiceCommandResponse**](https://msdn.microsoft.com/library/windows/apps/dn974182) オブジェクトに、"Las Vegas" という値の [**AppLaunchArgument**](https://msdn.microsoft.com/library/windows/apps/dn974183) パラメーターを追加します。
 
 ```CSharp
 var userMessage = new VoiceCommandUserMessage();
@@ -221,12 +221,12 @@ response.AppLaunchArgument = “Las Vegas”;
 await  VoiceCommandServiceConnection.RequestAppLaunchAsync(response);
 ```
 
-## <span id="App_manifest"></span><span id="app_manifest"></span><span id="APP_MANIFEST"></span>App manifest
+## <span id="App_manifest"></span><span id="app_manifest"></span><span id="APP_MANIFEST"></span>アプリ マニフェスト
 
 
-To enable deep linking to your app, you must declare the `windows.personalAssistantLaunch` extension in the Package.appxmanifest file of your app project.
+アプリへのディープ リンクを有効にするには、アプリ プロジェクトの Package.appxmanifest ファイルで、`windows.personalAssistantLaunch` 拡張機能を宣言する必要があります
 
-Here, we declare the `windows.personalAssistantLaunch` extension for the **Adventure Works** app.
+ここでは、**Adventure Works** アプリの `windows.personalAssistantLaunch` 拡張機能を宣言します。
 
 ```XML
 <Extensions>
@@ -238,12 +238,12 @@ Here, we declare the `windows.personalAssistantLaunch` extension for the **Adven
 </Extensions>
 ```
 
-## <span id="Protocol_contract"></span><span id="protocol_contract"></span><span id="PROTOCOL_CONTRACT"></span>Protocol contract
+## <span id="Protocol_contract"></span><span id="protocol_contract"></span><span id="PROTOCOL_CONTRACT"></span>プロトコル コントラクト
 
 
-Your app is launched to the foreground through Uniform Resource Identifier (URI) activation using a [**Protocol**](https://msdn.microsoft.com/library/windows/apps/br224693) contract. Your app must override your app's [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) event and check for an **ActivationKind** of **Protocol**. For more info, see [Handle URI activation](https://msdn.microsoft.com/library/windows/apps/mt228339).
+アプリは、[**Protocol**](https://msdn.microsoft.com/library/windows/apps/br224693) コントラクトを使用して、Uniform Resource Identifier (URI) アクティブ化によってフォアグラウンドで起動されます。 アプリは、アプリの [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) イベントをオーバーライドし、**Protocol** の **ActivationKind** を確認する必要があります。 詳しくは、「[URI のアクティブ化の処理](https://msdn.microsoft.com/library/windows/apps/mt228339)」をご覧ください。
 
-Here, we decode the URI provided by the [**ProtocolActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224742) to access the launch argument. For this example, the [**Uri**](https://msdn.microsoft.com/library/windows/apps/br224746) is set to "windows.personalassistantlaunch:?LaunchContext=Las Vegas".
+ここでは、[**ProtocolActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224742) によって提供される URI をデコードして、起動引数にアクセスします。 この例では、[**Uri**](https://msdn.microsoft.com/library/windows/apps/br224746) は "windows.personalassistantlaunch:?LaunchContext=Las Vegas" に設定されています。
 
 ```CSharp
 if (args.Kind == ActivationKind.Protocol)
@@ -268,19 +268,19 @@ if (args.Kind == ActivationKind.Protocol)
   }
 ```
 
-## <span id="related_topics"></span>Related articles
+## <span id="related_topics"></span>関連記事
 
 
-**Developers**
-* [Cortana interactions](cortana-interactions.md)
-* [**VCD elements and attributes v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
+**開発者向け**
+* [Cortana の操作](cortana-interactions.md)
+* [**VCD 要素および属性 v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
 
-**Designers**
-* [Cortana design guidelines](https://msdn.microsoft.com/library/windows/apps/dn974233)
-* [Speech design guidelines](https://msdn.microsoft.com/library/windows/apps/dn596121)
+**デザイナー向け**
+* [Cortana の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn974233)
+* [音声認識の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596121)
 
-**Samples**
-* [Cortana voice command sample](http://go.microsoft.com/fwlink/p/?LinkID=619899)
+**サンプル**
+* [Cortana 音声コマンドのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619899)
  
 
  

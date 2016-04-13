@@ -1,168 +1,168 @@
 ---
 ms.assetid: 7234DD5F-8E86-424E-99A0-93D01F1311F2
-title: Test with the Microsoft Emulator for Windows 10 Mobile
-description: Simulate real-world interaction with a device and test the features of your app by using the tools included with Microsoft Emulator for Windows 10 Mobile.
+title: Microsoft Emulator for Windows 10 Mobile を使ったテスト
+description: Microsoft Emulator for Windows 10 Mobile に用意されているツールを使って、デバイスでの実際の操作をシミュレートし、アプリの機能をテストします。
 ---
-# Test with the Microsoft Emulator for Windows 10 Mobile
+# Microsoft Emulator for Windows 10 Mobile を使ったテスト
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-Simulate real-world interaction with a device and test the features of your app by using the tools included with Microsoft Emulator for Windows 10 Mobile. The emulator is a desktop application that emulates a mobile device running Windows 10. It provides a virtualized environment in which you can debug and test Windows apps without a physical device. It also provides an isolated environment for your application prototypes.
+Microsoft Emulator for Windows 10 Mobile に用意されているツールを使って、デバイスでの実際の操作をシミュレートし、アプリの機能をテストします。 エミュレーターは、Windows 10 を実行するモバイル デバイスをエミュレートするデスクトップ アプリケーションです。 このアプリケーションを使用すると、仮想化された環境が提供されるため、物理デバイスを使用せずに Windows アプリのデバッグとテストを実行できます。 また、アプリケーションのプロトタイプのための隔離環境としても使用できます。
 
-The emulator is designed to provide comparable performance to an actual device. Before you publish your app to the Windows Store, however, we recommend that you test your app on a physical device.
+エミュレーターは実際の機器と同等のパフォーマンスを発揮するように設計されています。 ただし、Windows ストアにアプリを公開する前に、物理デバイスでアプリをテストすることをお勧めします。
 
-You can test your universal app using a unique Windows 10 Mobile emulator image for various screen resolution and screen size configurations. You can simulate real-world interaction with a device and test various features of your app by using the tools included in the Microsoft Emulator.
+さまざまな画面解像度と画面サイズ構成に対応する一意の Windows 10 Mobile エミュレーター イメージを使用して、ユニバーサル アプリをテストすることができます。 Microsoft Emulator に用意されているツールを使って、デバイスでの実際の操作をシミュレートし、アプリのさまざまな機能をテストできます。
 
-## System requirements
+## システム要件
 
-Your computer must meet the following requirements:
+コンピューターは次の要件を満たす必要があります。
 
 BIOS
 
--   Hardware-assisted virtualization.
--   Second Level Address Translation (SLAT).
--   Hardware-based Data Execution Prevention (DEP).
+-   ハードウェア支援による仮想化機能。
+-   Second Level Address Translation (SLAT)。
+-   ハードウェアベースのデータ実行防止 (DEP)。
 
 RAM
 
--   4 GB or more.
+-   4 GB 以上。
 
-Operating system
+オペレーティング システム
 
--   Windows 8 or higher (Windows 10 strongly recommended)
--   64-bit
--   Pro edition or higher
+-   Windows 8 以上 (Windows 10 を強く推奨)
+-   64 ビット
+-   Pro エディション以上
 
-To check the BIOS requirements, see [How to enable Hyper-V for the emulator for Windows Phone 8](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj863509.aspx).
+BIOS 要件を確認するには、「[Windows Phone 8 のエミュレーター用に Hyper-V を有効にする方法](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj863509.aspx)」をご覧ください。
 
-To check requirements for RAM and operating system, in Control Panel, click **System and Security**, and then click **System**.
+コントロール パネルで RAM とオペレーティング システムの要件を確認するには、**[システムとセキュリティ]** をクリックし、**[システム]** をクリックします。
 
-Microsoft Emulator for Windows 10 Mobile requires Visual Studio 2015; it is not backward compatible with earlier versions of Visual Studio.
+Microsoft Emulator for Windows 10 Mobile には Visual Studio 2015 が必要です。以前のバージョンの Visual Studio との下位互換性はありません。
 
-Microsoft Emulator for Windows 10 Mobile cannot load apps that target the Windows Phone OS version earlier than Windows Phone OS 7.1.
+Microsoft Emulator for Windows 10 Mobile は、Windows Phone OS 7.1 より前の Windows Phone OS バージョンを対象とするアプリを読み込むことはできません。
 
-## Installing and uninstalling
+## インストールとアンインストール
 
--   **Installing**.
+-   **インストール**。
 
-    Microsoft Emulator for Windows 10 Mobile ships as part of the Windows 10 SDK. The Windows 10 SDK and emulator can be installed as part of the Visual Studio 2015 install. See the [Visual Studio download page](https://go.microsoft.com/fwlink/p/?LinkId=534785).
+    Microsoft Emulator for Windows 10 Mobile は、Windows 10 SDK の一部としてリリースされています。 Windows 10 SDK とエミュレーターは、Visual Studio 2015 の一部としてインストールできます。 「[Visual Studio 2015 RC 用の Windows 10 開発ツールをインストールする手順](https://go.microsoft.com/fwlink/p/?LinkId=534785)」をご覧ください。
 
-    You can also install the Microsoft Emulator for Windows 10 Mobile using the Microsoft Emulator setup. See the [Windows 10 Tools download page](https://go.microsoft.com/fwlink/p/?LinkID=534189).
+    Microsoft Emulator for Windows 10 Mobile は、Microsoft Emulator のセットアップを使ってインストールすることもできます。 「[Windows 10 開発者ツール プレビュー](https://go.microsoft.com/fwlink/p/?LinkID=534189)」をご覧ください。
 
--   **Uninstalling**.
+-   **アンインストール**。
 
-    You can uninstall the Microsoft Emulator for Windows 10 Mobile using Visual Studio setup/repair. Or you can use **Programs and Features** under **Control Panel** to remove the emulator.
+    Microsoft Emulator for Windows 10 Mobile は、Visual Studio のセットアップ/修復を使ってアンインストールできます。 または、**コントロール パネル**の [**プログラムと機能**] を使ってエミュレーターを削除することもできます。
 
-    When you uninstall the Microsoft Emulator for Windows 10 Mobile, the Hyper-V Virtual Ethernet Adapter that was created for the emulator to use is not automatically removed. You can manually remove this virtual adapter from **Network Connections** in **Control Panel**.
+    Microsoft Emulator for Windows 10 Mobile をアンインストールしても、使うエミュレーター用に作られた Hyper-V 仮想イーサネット アダプターは自動的に削除されません。 この仮想アダプターは、**コントロール パネル**の [**ネットワーク接続**] から手動で削除できます。
 
-## What’s new in Microsoft Emulator for Windows 10 Mobile
+## Microsoft Emulator for Windows 10 Mobile に関する最新情報
 
-In addition to providing support for Universal Windows Platform (UWP), the emulator has added the following functionality:
+ユニバーサル Windows プラットフォーム (UWP) をサポートするだけでなく、エミュレーターには次の機能も追加されています。
 
--   Mouse input mode support to differentiate between mouse and single touch input.
--   NFC Support. The emulator allows you to simulate NFC and make it possible to test and develop NFC/Proximity-enabled universal apps.
--   Native hardware acceleration improves graphics performance in the emulator by using the local graphics card. You must have a supported graphics card installed, and enable acceleration on the **Sensors** tab of the emulator's **Additional Tools** settings user interface in order to use acceleration.
+-   マウスとシングル タッチ入力を区別するマウス入力モードのサポート。
+-   NFC のサポート。 エミュレーターを使うと、NFC をシミュレートし、NFC/近接通信が有効なユニバーサル アプリをテストおよび開発することができます。
+-   ネイティブのハードウェア アクセラレーションは、ローカル グラフィックス カードを使ってエミュレーターのグラフィックス パフォーマンスを向上させます。 アクセラレーションを使うには、サポートされているグラフィックス カードを取り付け、エミュレーターの **[その他のツール]** 設定ユーザー インターフェイスの **[センサー]** タブでアクセラレーションを有効にする必要があります。
 
-> **Note**  One important user interface change has been made. In this version of the emulator, the keyboard shortcut to show or hide the hardware keyboard is now F4, acting as a toggle, rather than the Page Up/Page Down pair of keys used in earlier emulators.
+> **注**  1 つの重要なユーザー インターフェイスの変更が加えられています。 このバージョンのエミュレーターでは、ハードウェア キーボードを表示または非表示にするキーボード ショートカットは F4 キーになっており、以前のエミュレーターで使われていた PageUp/PageDown キーのペアに代わり、トグルとして機能します。
 
  
 
-## Features that you can test in the emulator
+## エミュレーター上でテストできる機能
 
-In addition to the new features mentioned in the previous section, you can test the following commonly used features in the Microsoft Emulator for Windows 10 Mobile.
+前のセクションで説明した新機能に加え、次のよく使われる機能を Microsoft Emulator for Windows 10 Mobile でテストできます。
 
--   **Screen resolution, screen size, and memory**. Reach a broad market for your app by testing it on various emulator images to simulate various screen resolutions, physical sizes, and memory constraints.
+-   **画面解像度、画面サイズ、メモリ**。 アプリをさまざまなエミュレーター イメージでテストし、さまざまな画面解像度、物理的なサイズ、メモリの制限をシミュレートすることで、幅広い市場にアプリを届けます。
 
-    ![Available emulators with resolution, size, and memory](images/em-list.png)
+    ![解像度、サイズ、メモリに使うことができるエミュレーター](images/em-list.png)
 
--   **Screen configuration**. Change the emulator from portrait to landscape mode. Change the zoom setting to fit the emulator to your desktop screen.
+-   **画面構成**。 エミュレーターを縦モードから横モードに変更します。 デスクトップ画面に合うようにエミュレーターのズーム設定を変更します。
 
--   **Networking**. Networking support is integrated with Windows Phone Emulator. Networking is enabled by default. You do not have to install network drivers for Windows Phone Emulator or configure networking options manually in most environments.
+-   **ネットワーク**。 ネットワークのサポートは、Windows Phone エミュレーターに統合されています。 ネットワークは、既定で有効になっています。 ほとんどの環境では、Windows Phone エミュレーターのネットワーク ドライバーをインストールしたり、ネットワーク オプションを手動で構成する必要はありません。
 
-    The emulator uses the network connection of the host computer. It does not appear as a separate device on the network. This eliminates some of the configuration issues that users encountered with the Windows Phone SDK 8.0 emulator.
+    エミュレーターはホスト コンピューターのネットワーク接続を使います。 ネットワーク上に個別のデバイスとして表示されません。 これにより、Windows Phone SDK 8.0 エミュレーターで発生していた構成に関するいくつかの問題が解決しました。
 
--   **Language and region settings**. Prepare your app for an international market by changing the display language and region settings in Windows Phone Emulator.
+-   **言語と地域の設定**。 Windows Phone エミュレーターで表示言語と地域の設定を変更し、国際的な市場に向けてアプリを準備します。
 
-    On the running emulator, go to the **Settings** app, then select the **system** settings, then select **language** or **region**. Change the settings that you want to test. If you're prompted, click **restart phone** to apply the new settings and restart the emulator.
+    実行中のエミュレーターで、**[設定]** アプリに進み、**[システム]** 設定をクリックして、**[言語]** または **[地域]** をクリックします。 テストする設定を変更します。 ダイアログが表示されたら、[**電話を再起動**] をクリックして新しい設定を適用し、エミュレーターを再起動します。
 
--   **Application lifecycle and tombstoning**. Test the behavior or your app when it's deactivated or tombstoned by changing the value of the option **Tombstone upon deactivation while debugging** on the **Debug** page of project properties.
+-   **アプリケーションのライフサイクルと廃棄**。 プロジェクトのプロパティの [**デバッグ**] ページにある [**デバッグ中の非アクティブ化時に廃棄する**] オプションの値を変更することで、アプリが非アクティブ化されたとき、または廃棄されたときの動作をテストします。
 
--   **Local folder storage (previously known as isolated storage)**. Data in isolated storage persists while the emulator is running, but is lost once the emulator closes.
+-   **ローカル フォルダー ストレージ (以前は分離ストレージと呼ばれていました)**。 分離ストレージのデータはエミュレーターの実行中は維持されますが、エミュレーターが終了すると失われます。
 
--   **Microphone**. Requires and uses the microphone on the host computer.
+-   **マイク**。 ホスト コンピューターでマイクを要求して使います。
 
--   **Lock screen**. With the emulator open, press F12 on your computer keyboard twice. The F12 key emulates the power button on the phone. The first key press turns off the display. The second key press turns the display on again with the lock screen engaged. Unlock the screen by using the mouse to slide the lock screen upward.
+-   **ロック画面**。 エミュレーターを開いた状態で、コンピューターのキーボードの F12 を 2 回押します。 F12 キーは、電話の電源ボタンをエミュレートします。 このキーを 1 回押すと、ディスプレイがオフになります。 2 回目にキーを押すことで、ロック画面の状態で画面がもう一度オンになります。 マウスを使ってロック画面を上方向へスライドし、画面のロックを解除します。
 
-## Features that you can't test in the emulator
+## エミュレーターでテストできない機能
 
-Test the following features only on a physical device.
+次の機能は物理デバイスでのみテストします。
 
--   Compass
--   Gyroscope
--   Vibration controller
--   Brightness. The brightness level of the emulator is always High.
--   High-resolution video. Videos with a resolution higher than VGA resolution (640 x 480) cannot be displayed reliably, especially on emulator images with only 512MB of memory.
+-   コンパス
+-   ジャイロスコープ
+-   バイブレーション コントローラー
+-   明るさ。 エミュレーターの明るさのレベルは常に高です。
+-   高解像度ビデオ。 VGA 解像度 (640 x 480) より高い解像度のビデオは、特に 512 MB メモリのみを備えるエミュレーター イメージでは、安定して表示できません。
 
-## Mouse input
+## マウス入力
 
-Simulate mouse input using the physical mouse or trackpad on your Windows PC and the mouse input button on the emulator toolbar. This feature is useful if your app provides the user with an ability to utilize a mouse paired to their Windows 10 device to provide input.
+Windows PC の物理的なマウスまたはトラック パッド、およびエミュレーター ツール バーのマウス入力ボタンを使用して入力をシミュレートします。 この機能は、Windows 10 デバイスにペアリングされたマウスを利用して入力を行う機能をアプリがユーザーに提供する場合に便利です。
 
-Tap the mouse input button on the emulator toolbar to enable mouse input. Any click events within the emulator chrome will now be sent to the Windows 10 Mobile OS running inside the emulator VM as mouse events.
+エミュレーター ツール バーのマウス入力ボタンをタップしてマウス入力を有効にします。 エミュレーター クロム内でクリック イベントがあると、エミュレーター VM の内部で実行されている Windows 10 Mobile OS にマウス イベントとして送信されるようになります。
 
-![Emulator screen with mouse input enabled](images/emulator-with-mouse-enabled.png)
+![マウス入力が有効になっているエミュレーターの画面](images/emulator-with-mouse-enabled.png)
 
-The emulator screen with the mouse input enabled.
+マウス入力が有効になっているエミュレーターの画面。
 
-![The mouse input button on the emulator toolbar](images/emulator-showing-mouse-input-button-bar.png)
+![エミュレーター ツール バーのマウス入力ボタン](images/emulator-showing-mouse-input-button-bar.png)
 
-The mouse input button on the emulator toolbar.
+エミュレーター ツール バーのマウス入力ボタン。
 
-## Near Field Communications (NFC)
+## 近距離無線通信 (NFC)
 
-Build and test apps that use Near Field Communication (NFC) enabled features on Windows 10 Mobile by using the **NFC** tab of the emulator’s **Additional Tools** menu. NFC is useful for a number of scenarios ranging from Proximity scenarios (such as tap to share) to card emulation (such as tap to pay).
+エミュレーターの **[その他のツール]** メニューの **[NFC]** タブを使って、Windows 10 Mobile で近距離無線通信 (NFC) が有効な機能を使用するアプリをビルドしてテストします。 NFC は、近接通信シナリオ (タップして共有など) からカード エミュレーション (タップして支払いなど) まで、多くのシナリオで役立ちます。
 
-You can test your app by simulating a pair of phones tapping together by using a pair of emulators, or you can test your app by simulating a tap to a tag. Also in Windows 10, mobile devices are enabled with HCE (Host Card Emulation) feature and by using the phone emulator you can simulate tapping your device to a payment terminal for APDU command-response traffic.
+アプリをテストするには、1 組のエミュレーターを使って互いにタップする 1 組の電話をシミュレートします。または、タグへのタップをシミュレートしてアプリをテストすることもできます。 Windows 10 では、モバイル デバイスが HCE (ホスト カード エミュレーション) 機能にも対応しており、電話エミュレーターを使うことで、デバイスを支払い端末にタップして APDU コマンド応答トラフィックを送信する操作をシミュレートできます。
 
-The NFC tab supports three modes:
+[NFC] タブは 3 つのモードをサポートしています。
 
--   Proximity Mode
--   HCE (Host Card Emulation) Mode
--   Smart Card Reader Mode
+-   近接通信モード
+-   HCE (ホスト カード エミュレーション) モード
+-   スマート カード リーダー モード
 
-In all modes, the emulator window has three areas of interest.
+すべてのモードで、エミュレーター ウィンドウには 3 つの対象エリアがあります。
 
--   The top left section is specific to the mode selected. The features of this section depend on the mode, and are detailed in the mode-specific sections below.
--   The top right section lists the logs. When you tap a pair of devices together (or tap to the POS terminal) the tap event is logged and when the devices are untapped the untap event is logged. This section also records if your app responded before the connection is broken or any other action you have taken in the emulator UI with time stamps. Logs are persistent between mode switches, and you can clear the logs at any point by hitting the **Clear** button above the **Logs** screen.
--   The bottom half of the screen is the message log and shows the transcript of all messages sent or received over the currently selected connection, depending on the mode selected.
+-   左上のセクションは、選択されたモードに固有です。 このセクションの機能はモードによって決まります。詳しくは、以下のモード固有のセクションで説明します。
+-   右上のセクションには、ログが一覧表示されます。 1 組のデバイスを互いにタップする (または POS 端末にタップする) と、タップ イベントが記録され、デバイスがアンタップされるとアンタップ イベントが記録されます。 このセクションには、接続が切断される前にアプリが応答したかどうかや、エミュレーター UI で実行した他の操作もタイムスタンプ付きで記録されます。 モードを切り替えてもログは存続します。ログは、**[ログ]** 画面の **[消去]** ボタンを押すことでいつでも消去できます。
+-   画面の下半分はメッセージ ログになっており、選択されたモードに応じて、現在選択されている接続を経由して送受信されたすべてのメッセージのトランスクリプトが表示されます。
 
-> **Important**  When you first launch the tapper tool, you will get a Windows Firewall prompt. You MUST select ALL 3 check boxes and allow the tool through the firewall, or the tool will silently fail to work.
+> **重要**  タップ ツールを初めて起動すると、Windows ファイアウォールのプロンプトが表示されます。 3 つのチェック ボックスをすべてオンにし、ツールがファイアウォールを通過できるようにする必要があります。そうしないと、ツールが動作せず、通知も表示されません。
 
-After launching the quick start installer, make sure you follow the above instruction to select all 3 check boxes on the firewall prompt. Also, the tapper tool must be installed and used on the same physical host machine as the Microsoft Emulator.
+クイック スタート インストーラーを起動したら、必ず上の手順に従ってファイアウォールのプロンプトで 3 つのチェック ボックスをすべてオンにしてください。 さらに、タップ ツールをインストールし、Microsoft Emulator と同じ物理ホスト コンピューターで使う必要があります。
 
-### Proximity mode
+### 近接通信モード
 
-To simulate a pair of phones tapping together you'll need to launch a pair of Windows Phone 8 emulators. Since Visual Studio doesn't support running two identical emulators at the same time, you'll need to select different resolutions for each of the emulators to work around it.
+1 組の電話を互いにタップする操作をシミュレートするには、1 組の Windows Phone 8 エミュレーターを起動する必要があります。 Visual Studio では同一のエミュレーターを 2 つ同時に実行することはできないため、これを回避するため、エミュレーターごとに異なる解像度を選ぶ必要があります。
 
-![The NFC Proximity page](images/emulator-nfc-proximity.png)
+![NFC 近接通信ページ](images/emulator-nfc-proximity.png)
 
-When you check the **Enable discovery of peer devices** checkbox, the **Peer device** dropdown box shows Microsoft Emulators (running on the same physical host machine or in the local network) as well as the Windows machines running the simulator driver (running on the same machine or in the local network).
+**[ピア デバイスの検出を有効にする]** チェック ボックスをオンにすると、**[ピア デバイス]** ドロップダウン ボックスに Microsoft Emulators (同じ物理ホスト コンピューターまたはローカル ネットワークで実行) とシミュレーター ドライバーを実行している Windows コンピューター (同じコンピューターまたはローカル ネットワークで実行) が表示されます。
 
-Once both emulators are running:
+両方のエミュレーターが実行されたら、次のようにします。
 
--   Select the emulator you would like to target in the **Peer device** list.
--   Select the **Send to peer device** radio button.
--   Click **Tap** button. This will simulate the two devices tapping together and you should be hearing the NFC tap notification sound
--   To disconnect the 2 devices, simply hit the **Untap** button.
+-   **[ピア デバイス]** ボックスの一覧で、対象とするエミュレーターを選びます。
+-   **[ピア デバイスに送信]** ラジオ ボタンをオンにします。
+-   **[タップ]** ボタンをクリックします。 これにより、2 つのデバイスを互いにタップする操作がシミュレートされ、NFC タップ通知音が鳴ります。
+-   2 つのデバイスを切断するには、**[アンタップ]** ボタンをクリックします。
 
-Alternatively, you can enable **Automatically untap in (seconds)** check box where you can specify the number of seconds you want the devices to be tapped and they will be automatically untapped after the specified number of seconds (simulating what would be expected of a user in real life, they would only hold their phones together for a short time). Note however that currently the message log isn't available after the connection has been untapped.
+または、**[この秒数後に自動的にアンタップする]** チェック ボックスをオンにすると、デバイスをタップした状態にする秒数を指定でき、指定した秒数が経過すると自動的にアンタップされます (実際のユーザーに対して何が予想されるかをシミュレートしているため、電話を互いにタップするのは短時間と考えられます)。 ただし、現在のところ接続がアンタップされた後はメッセージ ログを使用できない点に注意してください。
 
-To simulate reading messages from a tag or receiving messages from another device:
+タグからのメッセージを読む操作や他のデバイスからのメッセージを受信する操作をシミュレートするには、次のようにします。
 
--   Select the **Send to self** radio button to test scenarios that require only one NFC enabled device.
--   Click **Tap** button. This will simulate the tapping a device to a tag and you should be hearing the NFC tap notification sound
--   To disconnect, simply hit the **Untap** button.
+-   **[自分に送信]** ラジオ ボタンをオンにし、NFC 対応デバイスが 1 台だけ必要なシナリオをテストします。
+-   **[タップ]** ボタンをクリックします。 これにより、デバイスをタグにタップする操作がシミュレートされ、NFC タップ通知音が鳴ります。
+-   切断するには、**[アンタップ]** ボタンをクリックします。
 
-Using the proximity mode you can inject messages as if they came from a tag or another peer device. The toolallows you to send messages of the following types.
+近接通信モードを使うと、タグまたは別のピア デバイスから送信されたかのようにメッセージを挿入できます。 このツールを使うと、次の種類のメッセージを送信できます。
 
 -   WindowsURI
 -   WindowsMime
@@ -173,35 +173,35 @@ Using the proximity mode you can inject messages as if they came from a tag or a
 -   NDEF:URI
 -   NDEF:wkt.U
 
-You can either create these messages by editing the **Payload** windows or providing them in a file. For more information about these types and how to use them please refer to the Remarks section of the[**ProximityDevice.PublishBinaryMessage**](https://msdn.microsoft.com/library/windows/apps/Hh701129) reference page.
+これらのメッセージは、**[ペイロード]** ウィンドウで編集するか、ファイルに入力することで作ることができます。 これらの種類とその使用方法について詳しくは、[**ProximityDevice.PublishBinaryMessage**](https://msdn.microsoft.com/library/windows/apps/Hh701129) のリファレンス ページの「注釈」セクションをご覧ください。
 
-The Windows 8 Driver Kit (WDK) includes a driver sample that exposes the same protocol as the Windows Phone 8 emulator. You'll need to download the DDK, build that sample driver, install it on a Windows 8 device, then add the Windows 8 device's IP address or hostname to the devices list and tap it either with another Windows 8 device or with a Windows Phone 8 emulator.
+Windows 8 Driver Kit (WDK) には、Windows Phone 8 エミュレーターと同じプロトコルを公開しているドライバー サンプルが含まれています。 DDK をダウンロードしてそのサンプル ドライバーをビルドし、Windows 8 デバイスにインストールした後、Windows 8 デバイスの IP アドレスまたはホスト名をデバイス リストに追加し、別の Windows 8 デバイスまたは Windows Phone 8 エミュレーターを使ってタップします。
 
-### Host Card Emulation (HCE) Mode
+### ホスト カード エミュレーション (HCE) モード
 
-In Host Card Emulation (HCE) mode you can test your HCE-based card emulation application by writing your own custom scripts to simulate a smart card reader terminal, such as a Point of Sale (POS) terminal. This tool assumes that you are familiar with the command response pairs (compliant with ISO-7816-4) that are sent between a reader terminal (such as POS, badge reader or transit card reader) and the smart card (that you are emulating in your application).
+ホスト カード エミュレーション (HCE) モードでは、販売時点管理 (POS) 端末などのスマート カード リーダーをシミュレートする独自のカスタム スクリプトを記述して、HCE ベースのカード エミュレーション アプリケーションをテストできます。 このツールは、リーダー端末 (POS、バッジ リーダー、輸送カード リーダーなど) とスマート カード (アプリケーションでエミュレートするカード) の間で送信されるコマンド応答ペア (ISO-7816-4 に準拠) に精通していることを前提としています。
 
-![The NFC HCE page](images/emulator-nfc-hce.png)
+![NFC HCE ページ](images/emulator-nfc-hce.png)
 
--   Create a new script by clicking the **Add** button in the script editor section. You can provide a name for your script and after you are done with editing, you can save your script using the **Save** button.
--   Your saved scripts will be available the next time you launch the emulator.
--   Run your scripts by hitting the **Play** button in the scripts editor window. This action results in simulating of tapping your phone to the terminal and sending commands written in your script. Alternatively you can hit the **Tap** button and then the **Play** button, until you hit **Play** the script will not run.
--   Stop sending commands by hitting the **Stop** button, which stops sending the commands to your application but the devices remain tapped until you hit the **Untap** button.
--   Delete your scripts by selecting the script in the dropdown menu and hitting **Delete** button.
--   The emulator tool does not check for the syntax of your scripts until you run the script using the **Play** button. The messages sent by your script are dependent on your implementation of your card emulation app.
+-   スクリプト エディター セクションで **[追加]** ボタンをクリックして、新しいスクリプトを作ります。 スクリプトの名前を指定できます。編集が完了したら、**[保存]** ボタンを使ってスクリプトを保存できます。
+-   保存されたスクリプトは、次回エミュレーターを起動したときに使うことができます。
+-   スクリプト エディター ウィンドウで **[再生]** ボタンをクリックして、スクリプトを実行します。 この操作の結果、電話を端末にタップし、スクリプトに記述されたコマンドが送信される操作がシミュレートされます。 または、**[タップ]** ボタンをクリックして **[再生]** ボタンをクリックします。**[再生]** をクリックするまで、スクリプトは実行されません。
+-   **[停止]** ボタンをクリックしてコマンドの送信を停止します。これにより、アプリケーションへのコマンドの送信が停止されますが、**[アンタップ]** ボタンをクリックするまでデバイスはタップされたままです。
+-   ドロップダウン メニューでスクリプトを選んで **[削除]** ボタンをクリックし、スクリプトを削除します。
+-   **[再生]** ボタンを使ってスクリプトを実行するまで、エミュレーター ツールはスクリプトの構文をチェックしません。 スクリプトによって送信されるメッセージは、カード エミュレーション アプリの実装によって異なります。
 
-You can also use the terminal simulator tool from MasterCard ([https://www.terminalsimulator.com/](https://www.terminalsimulator.com/ )) for payments app testing.
+支払いアプリのテストには、MasterCard の端末シミュレーター ツール ([https://www.terminalsimulator.com/ ](https://www.terminalsimulator.com/ )) を使うこともできます。
 
--   Check the **Enable MasterCard** listener checkbox below the script editor windows and launch the simulator from MasterCard.
--   Using the tool, you can generate commands that are relayed to your application running on the emulator through the NFC tool.
+-   スクリプト エディター ウィンドウの下にある **[MasterCard リスナーを有効にする]** チェック ボックスをオンにし、MasterCard のシミュレーターを起動します。
+-   このツールを使うと、NFC ツールを通じてエミュレーターで実行されているアプリケーションに中継されるコマンドを生成することができます。
 
-To learn more about HCE support and how to develop HCE apps in Windows 10 Mobile, please refer to the [Microsoft NFC Team Blog](http://go.microsoft.com/fwlink/?LinkId=534749).
+HCE のサポートと Windows 10 Mobile で HCE アプリを開発する方法について詳しくは、[Microsoft NFC チームのブログ](http://go.microsoft.com/fwlink/?LinkId=534749)をご覧ください。
 
-### How to Create Scripts for HCE Testing
+### HCE テスト用のスクリプトを作る方法
 
-The scripts are written as C# code and your script’s Run method is called when you click the **Play** button, this method takes an IScriptProcessor interface which is used to transceive APDU commands, output to the log window, and control the timeout for waiting on an APDU response from the phone.
+スクリプトは、C# コードとして記述され、**[再生]** ボタンをクリックするとスクリプトの Run メソッドが呼び出されます。このメソッドは、APDU コマンドの送受信に使われる IScriptProcessor インターフェイスを取得してログ ウィンドウに出力し、電話からの APDU 応答を待機する場合のタイムアウトを制御します。
 
-Below is a reference on what functionality is available:
+以下に、使用可能な機能の参考例を示します。
 
 ```csharp     
         public interface IScriptProcessor
@@ -224,332 +224,332 @@ Below is a reference on what functionality is available:
         }
 ```
 
-### Smart Card Reader Mode
+### スマート カード リーダー モード
 
-The emulator can be connected to a smart card reader device on your host computer, such that smart cards inserted or tapped will show up to your phone application and can be communicated to with APDUs using the [**Windows.Devices.SmartCards.SmartCardConnection**](https://msdn.microsoft.com/library/windows/apps/Dn608002) class. For this to work, you will need a compatible smart card reader device attached to your computer, USB smart card readers (both NFC/contactless and insert/contact) are widely available. To enable the emulator to work with an attached smart card reader, first choose the **Card Reader** mode which should show a dropdown box listing all the compatible smart card readers attached to the host system, then choose the smart card reader device you’d like to be connected from the dropdown.
+エミュレーターは、ホスト コンピューター上のスマート カード リーダー デバイスに接続できます。そのようにすると、挿入またはタップされたスマート カードが電話アプリケーションに表示され、[**Windows.Devices.SmartCards.SmartCardConnection**](https://msdn.microsoft.com/library/windows/apps/Dn608002) クラスを使って APDU と通信できるようになります。 これを実現するには、互換性のあるスマート カード リーダー デバイスをコンピューターに接続する必要があります。USB スマート カード リーダー (NFC/非接触型および挿入/接触型) は、簡単に入手することができます。 エミュレーターが接続されたスマート カード リーダーとやり取りできるようにするには、まず**カード リーダー** モードを選ぶと、ホスト システムに接続された互換性のあるスマート カード リーダーがすべて一覧表示されたドロップダウン ボックスが表示されます。次に、接続先のスマート カード リーダー デバイスをドロップダウンから選びます。
 
-Note that not all NFC-capable smart card readers support some types of NFC cards, and some do not support the standard PC/SC storage card APDU commands.
+NFC 対応スマート カード リーダーの中には、一部の種類の NFC カードがサポートされないものや、標準 PC/SC メモリ カード APDU コマンドがサポートされないものがある点に注意してください。
 
-## Multi-point input
+## マルチポイント入力
 
-Simulate multi-touch input for pinching and zooming, rotating, and panning objects by using the **Multi-touch Input** button on the emulator toolbar. This feature is useful if your app displays photos, maps, or other visual elements that users can pinch and zoom, rotate, or pan.
+エミュレーター ツール バーの [**マルチタッチ入力**] を使って、オブジェクトのピンチとズーム、回転、パンのマルチタッチ入力をシミュレートします。 この機能を使うと、アプリが写真、地図、またはユーザーがピンチとズーム、回転、またはパンできるその他の視覚要素を表示する場合に役立ちます。
 
-1.  Tap the **Multi-touch Input** button on the emulator toolbar to enable multi-point input. Two touch points appear on the emulator screen around a center point.
-2.  Right-click and drag one of the touch points to position them without touching the screen.
-3.  Left-click and drag one of the touch points to simulate pinching and zooming, rotating, or panning.
-4.  Tap the **Single Point Input** button on the emulator toolbar to restore normal input.
+1.  エミュレーター ツール バーの [**マルチタッチ入力**] をタップしてマルチポイント入力を有効にします。 エミュレーター画面の中心点の周囲に 2 つのタッチ ポイントが表示されます。
+2.  画面にタッチすることなく配置を変更するには、いずれかのタッチ ポイントを右クリックしてドラッグします。
+3.  ピンチとズーム、回転、またはパンをシミュレートするには、いずれかのタッチ ポイントを左クリックしてドラッグします。
+4.  エミュレーター ツール バーの [**Single Point Input**] (シングル ポイント入力) をタップして通常の入力に戻します。
 
-The following screenshot shows multi-touch input.
+次のスクリーンショットは、マルチタッチ入力を示しています。
 
-1.  The small left image shows the **Multi-touch Input** button on the emulator toolbar.
-2.  The middle image shows the emulator screen after tapping the **Multi-touch Input** button to display the touch points.
-3.  The right image shows the emulator screen after dragging the touch points to zoom the image.
+1.  小さい左の画像は、エミュレーター ツール バーの [**マルチタッチ入力**] を示しています。
+2.  真ん中の画像は、[**マルチタッチ入力**] をタップした後の、タッチ ポイントを表示するエミュレーター画面を示しています。
+3.  右の画像は、イメージをズームするためにタッチ ポイントをドラッグした後のエミュレーター画面を示しています。
 
-![Multi-point input option on the Emulator toolbar](images/em-multipoint.png)
+![エミュレーター ツール バーのマルチポイント入力オプション](images/em-multipoint.png)
 
-## Accelerometer
+## 加速度計
 
-Test apps that track the movement of the phone by using the **Accelerometer** tab of the emulator's **Additional Tools**.
+エミュレーターの [**その他のツール**] の [**加速度計**] タブを使って、電話の動きを追跡するアプリをテストします。
 
-You can test the accelerometer sensor with live input or pre-recorded input. The only type of recorded data that’s available simulates shaking the phone. You can’t record or save your own simulations for the accelerometer.
+ライブ入力または事前に記録した入力を使って加速度計センサーをテストできます。 使用できる記録済みのデータの種類は、電話をシェイクする動作をシミュレートします。 加速度計の独自のシミュレーションを記録または保存することはできません。
 
-1.  Select the desired starting orientation in the **Orientation** drop-down list.
+1.  [**向き**] ドロップダウン リストから目的の開始方向をクリックします。
 
-2.  -   Select the type of input.
+2.  -   入力の種類を選びます。
 
-        **To run the simulation with live input**
+        **ライブ入力を使ってシミュレーションを実行するには**
 
-        In the middle of the accelerometer simulator, drag the colored dot to simulate movement of the device in a 3D plane.
+        加速度計シミュレーターの中央で、色の付いたドットをドラッグして 3D でのデバイスの動きをシミュレートします。
 
-        Moving the dot on the horizontal access rotates the simulator from side to side. Moving the dot on the vertical access rotates the simulator back and forth, rotating around the x-axis. As you drag the dot, the X, Y, and Z coordinates update based on the rotation calculations. You cannot move the dot outside the bounding circle in the touch pad area.
+        水平アクセスのドットを動かすと、シミュレーターが左右に回転します。 垂直アクセスのドットを動かすと、x 軸を中心としてシミュレーターが前後に回転します。 ドットをドラッグすると、X、Y、Z 座標が回転の計算に基づいて更新されます。 タッチ パッド領域の境界の円の外側にドットを動かすことはできません。
 
-        Optionally, click **Reset** to restore the starting orientation.
+        必要に応じて、[**リセット**] をクリックして開始方向を復元します。
 
-    -   **To run the simulation with recorded input**
+    -   **記録された入力を使ってシミュレーションを実行するには**
 
-        In the **Recorded Data** section, click the **Play** button to start playback of the simulated data. The only option available in the **Recorded Data** list is shake. The simulator does not move on the screen when it plays back the data.
+        [**Recorded Data**] (記録されたデータ) セクションで、[**再生**] をクリックしてシミュレートされたデータの再生を開始します。 [**Recorded Data**] (記録されたデータ) リストで利用できるオプションはシェイクのみです。 シミュレーターはデータの再生時に画面上で動きません。
 
-![Accelerometer page in Additional Tools for the Emulator](images/em-accelerometer.png)
+![エミュレーターのその他のツールの加速度計ページ](images/em-accelerometer.png)
 
-## Location and driving
+## 位置とドライブ
 
-Test apps that use navigation or geofencing by using the **Location** tab of the emulator's **Additional Tools**. This feature is useful for simulating driving, biking, or walking in conditions similar to the real world.
+エミュレーターの [**その他のツール**] の [**位置**] タブを使って、ナビゲーションまたはジオフェンスを使うアプリをテストします。 この機能は、現実の世界と同様の条件でドライブ、自転車移動、ウォーキングをシミュレートするために役立ちます。
 
-You can test your app while you simulate moving from one location to another at different speeds and with different accuracy profiles. The location simulator can help you to identify changes in your usage of the location APIs usage that improve the user experience. For example, the tool can help you identify that you have to tune geofence parameters, such as size or dwell time, to detect the geofences successfully in different scenarios.
+さまざまな速度や精度プロファイルである場所から別の場所への移動をシミュレートして、アプリをテストすることができます。 位置シミュレーターを使うことで、ユーザー エクスペリエンスを向上させるための位置情報 API の利用方法の変更を判別できます。 たとえば、さまざまなシナリオでジオフェンスを正しく検出するために、サイズやドウェル時間などのジオフェンス パラメーターを調整する必要があることを判別することができます。
 
-The **Location** tab supports three modes. In all modes, when the emulator receives a new position, that position is available to trigger the [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/BR225540) event or to respond to a [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/Hh973536) call in your location-aware app.
+[**位置**] タブは 3 つのモードをサポートしています。 すべてのモードで、エミュレーターが新しい位置を受け取ると、位置認識アプリでその位置を [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/BR225540) イベントのトリガーや、[**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/Hh973536) 呼び出しへの応答に利用することができます。
 
--   In **Pin** mode, you place pushpins on the map. When you click **Play all points**, the location simulator sends the location of each pin to the emulator one after another, at the interval specified in the **Seconds per pin** text box.
+-   **[ピン]** モードでは、地図にプッシュピンを配置します。 [**Play all points**] (すべてのポイントを再生) をクリックすると、位置シミュレーターが [**Seconds per pin**] (ピンごとの秒数) テキスト ボックスで指定された間隔で各ピンの位置を次々にエミュレーターに送ります。
 
--   In **Live** mode, you place pushpins on the map. The location simulator sends the location of each pin to the emulator immediately as you place them on the map.
+-   [**ライブ**] モードでは、地図にプッシュピンを配置します。 ピンを地図上に配置するとすぐに、位置シミュレーターが各ピンの位置をエミュレーターに送ります。
 
--   In **Route** mode, you place pushpins on the map to indicate waypoints, and the location simulator automatically calculates a route. The route includes invisible pins at one-second intervals along the route. For example, if you have select the **Walking** speed profile, which assumes a speed of 5 kilometers per hour, then invisible pins are generated at intervals of 1.39 meters. When you click **Play all points**, the location simulator sends the location of each pin to the emulator one after another, at the interval determined by the speed profile selected in the drop-down list.
+-   [**ルート**] モードでは、地図にプッシュピンを配置して中間地点を示すと、位置シミュレーターが自動的にルートを計算します。 ルートには、ルートに沿って 1 秒間隔で表示されないピンが含まれています。 たとえば、毎時 5 km の速度を想定する [**Walking**] (ウォーキング) 速度プロファイルを選んだ場合、表示されないピンが 1.39 m 間隔で生成されます。 [**Play all points**] (すべてのポイントを再生) をクリックすると、位置シミュレーターがドロップダウン リストで選ばれた速度プロファイルによって決定された間隔で各ピンの位置を次々にエミュレーターに送ります。
 
-In all modes of the location simulator, you can do the following things.
+位置シミュレーターのすべてのモードで、次のことができます。
 
--   You can search for a location by using the **Search** box.
+-   [**検索**] ボックスを使って位置を検索できます。
 
--   You can **Zoom in** and **Zoom out** on the map.
+-   地図の **[拡大]** と **[縮小]** ができます。
 
--   You can save the current set of data points to an XML file, and reload the file later to reuse the same data points.
+-   現在のデータ ポイントのセットを XML ファイルに保存し、後で再読み込みして同じデータ ポイントを再利用することができます。
 
--   You can **Toggle pushpin mode on or off** and **Clear all points**.
+-   [**Toggle pushpin mode on or off**] (プッシュピン モードのオンとオフの切り替え) と [**Clear all points**] (すべてのポイントのクリア) ができます。
 
-In Pin and Route mode, you can also do the following things.
+ピン モードとルート モードでは、次のこともできます。
 
--   Save a route you created for later use.
+-   作成したルートを保存して後で使うことができます。
 
--   Load a route previously created. You can even load route files created in previous versions of the tool.
+-   以前に作成したルートを読み込むことができます。 以前のバージョンのツールで作成されたルート ファイルを読み込むこともできます。
 
--   Modify a route by deleting pushpins (in Pin mode) or waypoints (in Route mode).
+-   プッシュピン (ピン モード) または中間点 (ルート モード) を削除することでルートを修正できます。
 
-**Accuracy profiles**
+**精度プロファイル**
 
-In all modes of the location simulator, you can select one of the following accuracy profiles in the **Accuracy profile** drop-down list.
+位置シミュレーターのすべてのモードで、[**Accuracy profile**] (精度プロファイル) ドロップダウン リストから次のいずれかの精度プロファイルを選ぶことができます。
 
-| Profile  | Description                                        |
+| プロファイル  | 説明                                        |
 |----------|----------------------------------------------------|
-| Pinpoint | Assumes perfectly accurate location readings. This setting is not realistic, but it's useful for testing the logic of your app.  |
-| Urban    | Assumes that buildings are restricting the number of satellites in view, but there is often a high density of cell towers and Wi-Fi access points that can be used for positioning. |
-| Suburban | Assumes that satellite positioning is relatively good and there is good density of cell towers, but the density of Wi-Fi access points is not high.  |
-| Rural    | Assumes that satellite positioning is good, but there is low density of cell towers and almost no Wi-Fi access points that can be used for positioning. |
+| Pinpoint (ピンポイント) | 完全に正確な位置の読み取りを想定します。 この設定は現実的ではありませんが、アプリのロジックをテストする場合に便利です。  |
+| Urban (都市)    | 利用できる衛星の数が建物によって制限されるものの、位置決定に使うことができる携帯電話の基地局や Wi-Fi アクセス ポイントが多くの場合高密度で存在すると想定します。 |
+| 郊外 (Suburban) | 衛星による位置決定を比較的良好に行うことができ、携帯電話の基地局の密度も高いものの、Wi-Fi アクセス ポイントの密度は高くないと想定します。  |
+| Rural (地方)    | 衛星による位置決定を良好に行うことができるものの、位置決定に使うことができる携帯電話の基地局の密度は低く、Wi-Fi アクセス ポイントはほとんどないと想定します。 |
 
-**Speed profiles**
+**速度プロファイル**
 
-In **Route** mode, you can select one of the following speed profiles in the drop-down list.
+[**ルート**] モードでは、ドロップダウン リストから次のいずれかの速度プロファイルを選ぶことができます。
 
-| Profile | Speed per hour               | Speed per second | Description | 
+| プロファイル | 時速               | 秒速 | 説明 | 
 |---------|------------------------------|------------------|-------------|
-| Speed Limit | Speed limit of the route | Not applicable   | Traverse the route at the posted speed limit. |
-| Walking     | 5 km/h                   | 1.39 m           | Traverse the route at a natural walking pace of 5 km/h. |
-| Biking      | 25 km/h                  | 6.94 m           | Traverse the route at a natural biking pace of 25 km/h. |
-| Fast        |                          |                  |Traverse the route faster than the posted speed limit. | 
+| Speed Limit (制限速度) | ルートの速度制限 | 該当なし   | ポストされた制限速度でルートをスキャンします。 |
+| Walking (ウォーキング)     | 5 km/時                   | 1.39 m           | 自然な歩行ペースの 5 km/時でルートをスキャンします。 |
+| Biking (自転車移動)      | 25 km/時                  | 6.94 m           | 自然な自転車移動ペースの 25 km/時でルートをスキャンします。 |
+| Fast (高速)        |                          |                  |ポストされた制限速度よりも高速でルートをスキャンします。 | 
 
-**Route mode**
+**ルート モード**
 
-Route mode has the following features and limitations.
+ルート モードには次の機能と制限事項があります。
 
--   Route mode requires an Internet connection.
+-   ルート モードにはインターネット接続が必要です。
 
--   When the Urban, Suburban, or Rural accuracy profile is selected, the location simulator calculates a simulated satellite-based position, a simulated Wi-Fi position, and a simulated cellular position for each pin. Your app receives only one of these positions. The three sets of coordinates for the current location are displayed in different colors on the map and in the **Current location** list.
+-   都市、郊外、または地方の精度プロファイルが選ばれていると、位置シミュレーターはシミュレートされた衛星ベースの位置、シミュレートされた Wi-Fi 位置、シミュレートされた携帯電話位置を各ピンに計算します。 アプリはこれらの位置のいずれかのみを受け取ります。 現在の場所の座標の 3 つのセットが地図と [**現在の場所**] リストに異なる色で表示されます。
 
--   The accuracy of the pins along route the route is not uniform. Some of the pins use satellite accuracy, some use Wi-Fi accuracy, and some use cellular accuracy.
+-   ルートに沿ったピンの精度は均一ではありません。 一部のピンは衛星精度を使い、一部のピンは Wi-Fi 精度を使い、一部のピンは携帯電話精度を使います。
 
--   You cannot select more than 20 waypoints for the route.
+-   ルートに 20 個を超える中間点を選ぶことはできません。
 
--   Positions for the visible and invisible pins on the map are generated only once when you select a new accuracy profile. When you play the route more than once with the same accuracy profile during the same emulator session, the previously generated positions are reused.
+-   地図上の表示されているピンと表示されていないピンの位置は、新しい精度プロファイルを選んだときに一度だけ生成されます。 同じエミュレーター セッションで同じ精度プロファイルを使ってルートを 2 回以上再生すると、前に生成された位置が再利用されます。
 
-The following screenshot shows Route mode. The orange line indicates the route. The blue dot indicates the accurate location of the car determined by satellite-based positioning. The red and green dots indicate less accurate locations calculated by using Wi-Fi and cellular positioning and the Suburban accuracy profile. The three calculated locations are also displayed in the **Current location** list.
+次のスクリーン ショットは、ルート モードを示しています。 オレンジ色の線はルートを示しています。 青いドットは衛星ベースで位置決定された正確な車の場所を示しています。 赤のドットと緑のドットは、Wi-Fi と携帯電話の位置決定と郊外精度プロファイルを使って計算された、精度の劣る位置を示しています。 計算された 3 つの位置も [**現在の場所**] リストに表示されます。
 
-![Location page in Additional Tools for the Emulator](images/em-drive.png)
+![エミュレーターのその他のツールの位置ページ](images/em-drive.png)
 
-**More info about the location simulator**
+**位置シミュレーターの詳細**
 
--   You can request a position with the accuracy set to Default. A limitation that existed in the Windows Phone 8 version of the location simulator, and required you to request a position with the accuracy set to High, has been fixed.
+-   精度が既定に設定された位置を要求できます。 位置シミュレーターの Windows Phone 8 バージョンに存在した、精度が高に設定された位置の要求が必須となる制限が修正されました。
 
--   When you test geofencing in the emulator, create a simulation that gives the geofencing engine a “warm-up” period to learn and adjust to the movement patterns.
+-   エミュレーターでジオフェンスをテストするときは、ジオフェンス エンジンに「ウォーミングアップ」期間を与えるシミュレーションを作成し、移動パターンを把握して調整します。
 
--   The only position properties that are simulated are the Latitude, Longitude, Accuracy, and PositionSource. The location simulator does not simulate other properties such as Speed, Heading, and so forth.
+-   シミュレートされる位置プロパティは、[緯度]、[経度]、[精度]、[PositionSource] (位置ソース) のみです。 位置シミュレーターでは [速度] や [方位] などのその他のプロパティはシミュレートされません。
 
-## Network
+## ネットワーク
 
-Test your app with different network speeds and different signal strengths by using the **Network** tab of the emulator's **Additional Tools**. This feature is useful if your app calls web services or transfers data.
+エミュレーターの [**その他のツール**] の [**ネットワーク**] タブを使って、さまざまなネットワークの速度とシグナルの強さでアプリをテストします。 この機能は、アプリで Web サービスを呼び出す場合や、データを移す場合に便利です。
 
-The network simulation feature helps you to make sure that your app runs well in the real world. The Windows Phone Emulator runs on a computer that usually has a fast WiFi or Ethernet connection. Your app, however, runs on phones that are typically connected over a slower cellular connection.
+ネットワーク シミュレーション機能を使うことで、アプリが現実世界で適切に実行されることを確認することができます。 Windows Phone エミュレーターは、通常は高速 WiFi またはイーサネット接続を備えたコンピューターで実行されます。 しかし、アプリは通常より低速な携帯電話接続で接続されている電話で実行されます。
 
-1.  Check **Enable network simulation** to test your app with different network speeds and different signal strengths.
-2.  In the **Network speed** dropdown list, select one of the following options:
-    -   No network
+1.  [**ネットワーク シミュレーションを有効にする**] にチェックを入れて、さまざまな速度とシグナルの強さでアプリをテストします。
+2.  [**ネットワークの速度**] ドロップダウン リストで、次のいずれかのオプションを選びます。
+    -   ネットワークなし
     -   2G
     -   3G
     -   4G
 
-3.  In the **Signal strength** dropdown list, select one of the following options:
-    -   Good
-    -   Average
-    -   Poor
+3.  **[シグナルの強さ]** ドロップダウン リストで、次のいずれかのオプションを選びます。
+    -   良い
+    -   平均
+    -   悪い
 
-4.  Clear **Enable network simulation** to restore the default behavior, which uses the network settings of your development computer.
+4.  [**ネットワーク シミュレーションを有効にする**] をクリアして、開発用コンピューターのネットワーク設定を使う既定の動作に戻します。
 
-You can also review the current network settings on the **Network** tab.
+また、[**ネットワーク**] タブで現在のネットワーク設定を確認することもできます。
 
-![Network page in Additional Tools for the Emulator](images/em-network.png)
+![エミュレーターのその他のツールのネットワーク ページ](images/em-network.png)
 
-## SD card
+## SD カード
 
-Test your app with a simulated removable SD card by using the **SD Card** tab of the emulator's **Additional Tools**. This feature is useful if your app reads or write files.
+エミュレーターの [**その他のツール**] の [**SD カード**] タブを使って、シミュレートされたリムーバブル SD カードでアプリをテストします。 この機能は、アプリでファイルの読み取りまたは書き込みを行うときに役立ちます。
 
-![SD Card page in Additional Tools for the Emulator](images/em-sdcard.png)
+![エミュレーターのその他のツールの SD カード ページ](images/em-sdcard.png)
 
-The **SD Card** tab uses a folder on the development computer to simulate a removable SD card in the phone.
+[**SD カード**] タブは開発用コンピューターのフォルダーを使って電話のリムーバブル SD カードをシミュレートします。
 
-1.  **Select a folder**.
+1.  **フォルダーを選びます**。
 
-    Click **Browse** to pick a folder on the development computer to hold the contents of the simulated SD card.
+    [**参照**] をクリックして、シミュレートされた SD カードのコンテンツを格納する開発用コンピューターのフォルダーを選びます。
 
-2.  **Insert the SD card**.
+2.  **SD カードを挿入します**。
 
-    After selecting a folder, click **Insert SD card**. When you insert the SD card, the following things happen:
+    フォルダーを選んだら、[**Insert SD card**] (SD カードの挿入) をクリックします。 SD カードを挿入すると、次のことが行われます。
 
-    -   If you didn't specify a folder, or the folder's not valid, an error occurs.
-    -   The files in the specified folder on the development computer are copied to the root folder of the simulated SD card on the emulator. A progress bar indicates the progress of the sync operation.
-    -   The **Insert the SD card** button changes to **Eject SD card**.
-    -   If you click **Eject SD card** while the sync operation is in progress, the operation is canceled.
+    -   フォルダーを指定しなかった場合、またはフォルダーが有効でない場合は、エラーが発生します。
+    -   開発用コンピューターの指定されたフォルダーが、エミュレーターのシミュレートされた SD カードのルート フォルダーにコピーされます。 進行状況バーにより、同期操作の進行状況が示されます。
+    -   [**Insert the SD card**] (SD カードの挿入) が [**Eject SD card**] (SD カードの取り出し) に変わります。
+    -   同期操作の進行中に、[**Eject SD card**] (SD カードの取り出し) をクリックすると、操作が取り消されます。
 
-3.  Optionally, select or clear **Sync updated files back to the local folder when I eject the SD card**.
+3.  必要に応じて、[**Sync updated files back to the local folder when I eject the SD card**] (SD カードの取り出し時に更新されたファイルをローカル フォルダーに同期) をオンまたはオフにします。
 
-    This option is enabled by default. When this option is enabled, files are synced from the emulator back to the folder on the development computer when you eject the SD card.
+    既定では、このオプションは有効になっています。 このオプションを有効にすると、SD カードの取り出し時にエミュレーターのファイルが開発用コンピューターのフォルダーに同期されます。
 
-4.  **Eject the SD card**.
+4.  **SD カードを取り出します**。
 
-    Click **Eject SD card**. When you eject the SD card, the following things happen:
+    [**Eject SD card**] (SD カードの取り出し) をクリックします。 SD カードを取り出すと、次のことが行われます。
 
-    -   if you have selected **Sync updated files back to the local folder when I eject the SD card**, the following things happen:
-        -   The files on the simulated SD card on the emulator are copied to the specified folder on the development computer. A progress bar indicates the progress of the sync operation.
-        -   The **Eject SD card** button changes to **Cancel sync**.
-        -   If you click **Cancel sync** while the sync operation is in progress, the card is ejected and the results of the sync operation are incomplete.
-    -   The **Eject SD card** button changes back to **Insert SD card**.
+    -   [**Sync updated files back to the local folder when I eject the SD card**] (SD カードの取り出し時に更新されたファイルをローカル フォルダーに同期) をオンにしていた場合、次のことが行われます。
+        -   エミュレーターのシミュレートされた SD カードのファイルが、開発用コンピューターの指定されたフォルダーにコピーされます。 進行状況バーにより、同期操作の進行状況が示されます。
+        -   [**Eject SD card**] (SD カードの取り出し) が [**同期のキャンセル**] に変わります。
+        -   同期操作の進行中に **[同期のキャンセル]** をクリックすると、カードが取り出され、同期操作の結果は不完全になります。
+    -   **[SD カードの取り出し]** が再び **[SD カードの挿入]** に変わります。
 
-> **Note**  Since an SD card used by the phone is formatted with the FAT32 file system, 32GB is the maximum size.
+> **注**  電話に使われる SD カードは FAT32 ファイル システムでフォーマットされているため、最大サイズは 32 GB です。
 
-The speed of reading from and writing to the simulated SD card is throttled to imitate real-world speeds. Accessing an SD card is slower than accessing the computer's hard drive.
+シミュレートされた SD カードとの間の読み込みと書き込みの速度が、実際の速度と似せるために調整されます。 SD カードへのアクセスは、コンピューターのハード ドライブへのアクセスよりも遅くなります。
 
-## Notifications
+## 通知
 
-Send push notifications to your app by using the **Notifications** tab of the emulator's **Additional Tools**. This feature is useful if your app receives push notifications.
+エミュレーターの **[その他のツール]** の **[通知]** タブを使ってアプリにプッシュ通知を送ります。 この機能は、アプリでプッシュ通知を受け取るときに役立ちます。
 
-You can easily test push notifications without creating the working cloud service that's required after you publish your app.
+アプリの公開後に必要となる実際に使えるクラウド サービスを作成することなく、簡単にプッシュ通知をテストできます。
 
-1.  **Enable simulation.**
+1.  **シミュレーションを有効にします。**
 
-    After you select **Enabled**, all apps deployed on the emulator use the simulation engine instead of the WNS or MPN service until you disable simulation.
+    [**有効**] をオンにすると、シミュレーションを無効にするまでエミュレーターに展開されているすべてのアプリが WNS または MPN サービスの代わりにシミュレーション エンジンを使います。
 
-2.  **Select an app to receive notifications.**
+2.  **通知を受け取るアプリを選びます。**
 
-    The **AppId** list is automatically populated with all apps deployed to the emulator that are enabled for push notifications. Select an app in the drop-down list.
+    [**AppId**] リストには、プッシュ通知を有効にされた、エミュレーターに展開されているすべてのアプリが自動的に追加されます。 ドロップダウン リストからアプリを選びます。
 
-    If you deploy another push-enabled app after enabling simulation, click **Refresh** to add the app to the list.
+    シミュレーションを有効にした後に別のプッシュ対応アプリを展開する場合は、[**更新**] をクリックしてアプリをリストに追加します。
 
-3.  **Select a notification channel.**
+3.  **通知チャネルを選びます。**
 
-    After you select an app in the **AppId** list, the **URI** list is automatically populated with all the notification channels registered for the selected app. Select a notification channel in the drop-down list.
+    [**AppId**] リストでアプリを選ぶと、選択したアプリに登録されたすべての通知チャネルが [**URI**] リストに自動的に追加されます。 ドロップダウン リストから通知チャネルを選びます。
 
-4.  **Select a notification type.**
+4.  **通知の種類を選びます。**
 
-    After you select a notification channel in the **URI** list, the **Notification Type** list is automatically populated with all the types available for the notification service. Select a notification type in the drop-down list.
+    [**URI**] リストから通知チャネルを選ぶと、通知サービスに利用可能なすべての種類が [**通知の種類**] リストに自動的に追加されます。 ドロップダウン リストから通知の種類を選びます。
 
-    The simulator uses the Uri format of the notification channel to determine whether the app is using WNS or MPN push notifications.
+    シミュレーターは Uri 形式の通知チャネルを使ってアプリが WNS または MPN プッシュ通知を使っているかどうかを判断します。
 
-    Simulation supports all notification types. The default notification type is **Tile**.
+    シミュレーションはすべての通知の種類をサポートしています。 既定の通知の種類は [**タイル**] です。
 
-    -   The following WNS notification types are supported.
+    -   次の WNS 通知の種類がサポートされています。
 
-        -   Raw
-        -   Toast
+        -   直接
+        -   トースト
 
-            When your app uses WNS notifications and you select the **Toast** notification type, the simulation tab displays the **Tag** and **Group** fields. You can select these options and enter **Tag** and **Group** values to manage toast notifications in the Notification Center.
+            アプリが WNS 通知を使っている場合に通知の種類に [**トースト**] を選ぶと、シミュレーション タブに**タグ** フィールドと**グループ** フィールドが表示されます。 これらのオプションを選択して [**タグ**] と [**グループ**] の値を入力し、通知センターのトースト通知を管理することができます。
 
-        -   Tile
-        -   Badge
+        -   タイル
+        -   バッジ
 
-    -   The following MPN notification types are supported.
+    -   次の MPN 通知の種類がサポートされています。
 
-        -   Raw
-        -   Toast
-        -   Tile
+        -   直接
+        -   トースト
+        -   タイル
 
-5.  **Select a notification template.**
+5.  **通知テンプレートを選びます。**
 
-    After you select a notification type in the **Notification Type** list, the **Templates** list is automatically populated with all the templates available for the notification type. Select a template in the drop-down list.
+    [**通知の種類**] リストから通知の種類を選ぶと、その通知の種類に利用可能なすべてのテンプレートが [**テンプレート**] リストに自動的に追加されます。 ドロップダウン リストでテンプレートを選びます。
 
-    Simulation supports all template types.
+    シミュレーションはすべてのテンプレートの種類をサポートしています。
 
-6.  **Optionally, change the notification payload.**
+6.  **必要に応じて、通知のペイロードを変更します。**
 
-    After you select a template in the **Templates** list, the **Notification Payload** text box is automatically populated with a sample payload for the template. Review the sample payload in the **Notification Payload** text box.
+    [**テンプレート**] リストのテンプレートを選ぶと、そのテンプレートのサンプル ペイロードが [**Notification Payload**] (通知のペイロード) テキスト ボックスに自動的に追加されます。 [**Notification Payload**] (通知のペイロード) テキスト ボックスのサンプル ペイロードを確認します。
 
-    -   You can send the sample payload without changing it.
+    -   サンプル ペイロードは変更せずに送信できます。
 
-    -   You can edit the sample payload in the text box.
+    -   テキスト ボックスでサンプル ペイロードを編集できます。
 
-    -   You can click **Load** to load a payload from a text or XML file.
+    -   [**読み込み**] をクリックしてテキスト ファイルまたは XML ファイルからペイロードを読み込むことができます。
 
-    -   You can click **Save** to save the XML text of the payload to use again later.
+    -   [**保存**] をクリックして、後で再利用するためにペイロードの XML テキストを保存することができます。
 
-    The simulator does not validate the XML text of the payload.
+    シミュレーターはペイロードの XML テキストを検証しません。
 
-7.  **Send the push notification.**
+7.  **プッシュ通知を送信します。**
 
-    Click **Send** to deliver the push notification to the selected app.
+    [**送信**] をクリックして選択したアプリにプッシュ通知を送信します。
 
-    The screen displays a message to indicate success or failure.
+    画面に成功または失敗を示すメッセージが表示されます。
 
-![Notifications page in Additional Tools for the Emulator](images/em-notifications.png)
+![エミュレーターのその他のツールの通知ページ](images/em-notifications.png)
 
-## Sensors
+## センサー
 
-Test how your app works on low-cost phones that don't have all the optional sensors or camera features by using the **Sensors** tab of the emulator's **Additional Tools**. This feature is useful if your app uses the camera or some of the phone's sensors, and you want your app to reach the largest possible market.
+エミュレーターの [**その他のツール**] の [**センサー**] タブを使って、すべてのオプションのセンサーまたはカメラ機能を備えていない低コストな電話でアプリがどのように動作するかをテストします。 この機能は、アプリでカメラや一部の電話のセンサーを使い、このアプリを可能な限り幅広い市場に提供する場合に便利です。
 
--   By default, all sensors are enabled in the **Optional sensors** list. Select or clear individual check boxes to enable or disable individual sensors.
--   After you change your selections, click **Apply**. Then you have to restart the emulator.
--   If you make changes, and then you switch tabs or close the **Additional Tools** window without clicking **Apply**, your changes are discarded.
--   Your settings are persisted between for the emulator session until you change them or reset them. If you capture a checkpoint, the settings are saved with the checkpoint. The settings are persisted only for the specific emulator that you're using - for example, **Emulator 8.1 WVGA 4" 512MB**.
+-   既定では、すべてのセンサーが [**Optional sensors**] (オプション センサー) リストで有効になっています。 個々のチェック ボックスをオンまたはオフにし、個々のセンサーを有効または無効にします。
+-   選択内容を変更したら、[**適用**] をクリックします。 その後、エミュレーターを再起動する必要があります。
+-   変更を行った後に、[**適用**] をクリックせずにタブを切り替えたり [**その他のツール**] ウィンドウを閉じると、変更内容は破棄されます。
+-   設定は、エミュレーター セッションの間、設定を変更するかリセットするまで保持されます。 チェックポイントをキャプチャすると、設定がチェックポイントと共に保存されます。 設定は使っている特定のエミュレーターでのみ保持されます (**エミュレーター 8.1 WVGA 4" 512 MB** など)。
 
-![Sensors page in Additional Tools for the Emulator](images/em-sensors.png)
+![エミュレーターのその他のツールのセンサー ページ](images/em-sensors.png)
 
-**Sensor options**
+**センサーのオプション**
 
-You can enable or disable the following optional hardware sensors:
+次のオプションのハードウェア センサーを有効または無効にすることができます。
 
--   Ambient light sensor
--   Front-facing camera
--   Gyroscope
--   Compass (magnetometer)
+-   環境光センサー
+-   正面カメラ
+-   ジャイロスコープ
+-   コンパス (磁力計)
 -   NFC
--   Software buttons (only on some high-resolution emulator images)
+-   ソフトウェア ボタン (一部の高解像度エミュレーター イメージでのみ)
 
-**Camera options**
+**カメラのオプション**
 
-You can enable or disable the optional front-facing camera by selecting or clearing the check box in the **Optional sensors** list.
+[**Optional sensors**] (オプション センサー) リストのチェック ボックスをオンまたはオフにすることで、オプションの正面カメラを有効または無効にすることができます。
 
-You can also select one of the following camera profiles in the **Camera** dropdown list.
+[**カメラ**] ドロップダウン リストから次のいずれかのカメラ プロファイルを選ぶこともできます。
 
--   Windows Phone 8.0 camera.
--   Windows Phone 8.1 camera.
+-   Windows Phone 8.0 カメラ。
+-   Windows Phone 8.1 カメラ。
 
-Here is the list of camera features supported by each of the profiles.
+各プロファイルによってサポートされているカメラ機能の一覧を示します。
 
-| Feature            | Windows Phone 8.0 camera | Windows Phone 8.1 camera  |
+| 機能            | Windows Phone 8.0 カメラ | Windows Phone 8.1 カメラ  |
 |--------------------|--------------------------|---------------------------|
-| Resolution         | 640 x 480 (VGA)          | 640 x 480 (VGA) or better |
-| Autofocus          | Yes                      | Yes                       |
-| Flash              | No                       | Yes                       |
-| Zoom               | 2x (digital or optical)  | 2x (digital or optical)   |
-| Video resolution   | 640 x 480 (VGA)          | 640 x 480 (VGA) or better |
-| Preview resolution | 640 x 480 (VGA)          | 640 x 480 (VGA)           |
+| 解像度         | 640 x 480 (VGA)          | 640 x 480 (VGA) 以上 |
+| 自動フォーカス          | あり                      | あり                       |
+| フラッシュ              | なし                       | あり                       |
+| ズーム               | 2x (デジタルまたは光学)  | 2x (デジタルまたは光学)   |
+| ビデオ解像度   | 640 x 480 (VGA)          | 640 x 480 (VGA) 以上 |
+| プレビュー解像度 | 640 x 480 (VGA)          | 640 x 480 (VGA)           |
 
-## Frame rate counters
+## フレーム レート カウンター
 
-Use the frame rate counters in Windows Phone emulator to monitor the performance of your running app.
+Windows Phone エミュレーターのフレーム レート カウンターを使って、実行中のアプリのパフォーマンスを監視します。
 
-![Frame rate counters in Windows Phone emulator](images/em-frameratecounters.PNG)
+![Windows Phone エミュレーターのフレーム レート カウンター](images/em-frameratecounters.PNG)
 
-**Descriptions of the frame rate counters**
+**フレーム レート カウンターの説明**
 
-The following table describes each frame rate counter.
+次の表で、各フレーム レート カウンターについて説明します。
 
-| Frame rate counter                           | Description        |
+| フレーム レート カウンター                           | 説明        |
 |----------------------------------------------|--------------------|
-| Composition (Render) Thread Frame Rate (FPS) | The rate at which the screen is updated.  |
-| User Interface Thread Frame Rate (FPS)       | The rate at which the UI thread is running.    |
-| Texture Memory Usage                         | The video memory and system memory copies of textures being used in the app.    |
-| Surface Counter                              | The number of explicit surfaces being passed to the GPU for processing.     |
-| Intermediate Surface Counter                 | The number of implicit surfaces generated as a result of cached surfaces.    |
-| Screen Fill Rate Counter                     | The number of pixels being painted per frame in terms of screens. A value of 1 represents the number of pixels in the current screen resolution – for example, 480 x 800 pixels. |
+| コンポジション (レンダリング) スレッド フレーム レート (FPS) | 画面が更新される速度です。  |
+| ユーザー インターフェイス スレッド フレーム レート (FPS)       | UI スレッドの実行速度です。    |
+| テクスチャ メモリ使用率                         | アプリで使用されているテクスチャのビデオメモリやシステム メモリのコピーです。    |
+| サーフェス カウンター                              | 処理するために GPU に渡された明示的なサーフェイスの数です。     |
+| 中間サーフェス カウンター                 | キャッシュされたサーフェイスの結果として生成された暗黙的なサーフェイスの数です。    |
+| 画面フィル レート カウンター                     | 画面数に換算したフレームあたりの描画されるピクセルの数です。 値 1 は現在の画面解像度のピクセル数、たとえば 480 x 800 ピクセルを表します。 |
 
-**Enabling and disabling the frame rate counters**
+**フレーム レート カウンターを有効/無効にする**
 
-You can enable or disable the display of the frame rate counters in your code. When you create a Windows Phone app project in Visual Studio, the following code to enable the frame rate counters is added by default in the file App.xaml.cs. To disable the frame rate counters, set **EnableFrameRateCounter** to **false** or comment out the line of code.
+コード内でフレーム レート カウンターの表示を有効および無効にすることができます。 Visual Studio で Windows Phone アプリ プロジェクトを作成すると、フレーム レート カウンターを有効にするための次のコードが既定で App.xaml.cs ファイルに追加されます。 フレーム レート カウンターを無効にするには、**EnableFrameRateCounter** を **false** に設定するか、コード行をコメント アウトします。
 
 > [!div class="tabbedCodeSnippets"]
 >```csharp
@@ -573,54 +573,54 @@ You can enable or disable the display of the frame rate counters in your code. W
 >End If
 >```
 
-## Known Issues
+## 既知の問題
 
-The following are known issues with the emulator, with suggested ways to work around problems if you encounter them.
+エミュレーターの既知の問題と、問題が発生した場合の推奨される解決策を次に示します。
 
-### Error message: “Failed while removing virtual Ethernet switch”
+### エラー メッセージ: "仮想イーサネット スイッチの削除中にエラーが発生しました"
 
-In certain situations, including after you update to a new Windows 10 flight, a virtual network switch associated with the emulator can get into a state where it can't be deleted through the user interface.
+新しい Windows 10 Insider Preview ビルドへの更新後など、状況によっては、エミュレーターに関連付けられている仮想ネットワーク スイッチが、ユーザー インターフェイスを使って削除できなくなることがあります。
 
-To recover from this situation run "netcfg -d" from an administrator command prompt: `C:\Program Files (x86)\Microsoft XDE\<version>\XdeCleanup.exe`. When the command is finished running, reboot your computer to complete the recovery process.
+この状況から回復するには、管理者のコマンド プロンプト `C:\Program Files (x86)\Microsoft XDE\<version>\XdeCleanup.exe` から "netcfg -d" を実行します。 コマンドの実行が完了したら、コンピューターを再起動して回復プロセスを実行します。
 
-**Note**  This command will delete all networking devices, not just those associated with the emulator. When your computer starts again, all hardware networking devices will be discovered automatically.
+**注**  このコマンドにより、エミュレーターに関連付けられているデバイスだけでなく、すべてのネットワーク デバイスが削除されます。 使用しているコンピューターを再度起動すると、すべてのハードウェア ネットワーク デバイスが自動的に検出されます。
  
-### Unable to launch the emulators
+### エミュレーターを起動できない
 
-Microsoft Emulator includes XDECleanup.exe, a tool that deletes all VMs, diff disks, and emulator specific network switches, and it ships with the emulator (XDE) binaries already. You should use this tool to clean up emulator VMs if they get into a bad state. Run the tool from an administrator command prompt:`C:\Program Files (x86)\Microsoft XDE\<version>\XdeCleanup.exe`
+Microsoft Emulator には、すべての VM、差分ディスク、およびエミュレーター固有のネットワーク スイッチを削除するツールである XDECleanup.exe が含まれており、これはエミュレーター (XDE) バイナリに既に付属しています。 エミュレーター VM が無効な状態になったら、このツールを使用して、その VM をクリーンアップする必要があります。 ツールは、管理者のコマンド プロンプトから実行します (`C:\Program Files (x86)\Microsoft XDE\<version>\XdeCleanup.exe`)。
 
-> **Note**  XDECleanup.exe deletes all emulator specific Hyper-V VMs, and it also deletes any VM checkpoints or saved states.
+> **注**  XDECleanup.exe により、エミュレーター固有のすべての Hyper-V VM のほか、VM チェックポイントや保存された状態も削除されます。
 
-### Uninstall Windows 10 for Mobile Image
+### モバイル向け Windows 10 イメージのアンインストール
 
-When you install the emulator, a Windows 10 for Mobile VHD image is installed, which gets its own entry in the **Programs and Features** list in the Control Panel. If you wish to uninstall the image, find **Windows 10 for Mobile Image - <version>** in the list of installed programs, right-click on it, and choose **Uninstall**.
+エミュレーターをインストールすると、モバイル向け Windows 10 の VHD イメージがインストールされ、独自のエントリがコントロール パネルの **[プログラムと機能]** の一覧に示されます。 このイメージをアンインストールするには、インストールされているプログラムの一覧で **[Windows 10 for Mobile Image - <version>]** を見つけて右クリックし、**[アンインストール]** をクリックします。
 
-In the current release, you must then manually delete the VHD file for the emulator. If you installed the emulator to the default path, the VHD file is at C:\\Program Files (x86)\\Windows Kits\\10\\Emulation\\Mobile\\<version>\\flash.vhd.
+その後、現在のリリースで、エミュレーターの VHD ファイルを手動で削除する必要があります。 エミュレーターを既定のパスにインストールした場合、VHD ファイルは、C:\\Program Files (x86)\\Windows Kits\\10\\Emulation\\Mobile\\<version>\\flash.vhd にあります。
 
-###How to disable hardware accelerated graphics
+###ハードウェア アクセラレータに対応したグラフィックを無効にする方法
 
-By default, Windows 10 Mobile Emulator uses hardware accelerated graphics. If you are having trouble launching the emulator with hardware acceleration enabled, you can turn it off by setting a registry value.
+既定では、Windows 10 Mobile Emulator は、ハードウェア アクセラレータに対応したグラフィックを使用します。 ハードウェア アクセラレータが有効になっており、エミュレーターを起動できない場合は、レジストリ値を設定して無効にすることができます。
 
-To disable hardware acceleration:
+ハードウェア アクセラレータを無効にするには
 
-1. Start Registry Editor.
-2. Create the following registry subkey if it doesn't exist:
+1. レジストリ エディターを開きます。
+2. 存在しない場合は、次のレジストリ サブキーを作成します。
    HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Xde\10.0
-3. Right click the 10.0 folder, point to **New**, and then click **DWORD Value**.
-4. Type **DisableRemoteFx**, and then press Enter.
-5. Double-click **DisableRemoteFx**, enter 1 in the **Value** data box, select the **Decimal** option, and then click **OK**.
-6. Close Registry Editor.
+3. [10.0] フォルダーを右クリックし、**[新規]** をポイントして、**[DWORD 値]** をクリックします。
+4. 「**DisableRemoteFx**」と入力し、Enter キーを押します。
+5. **[DisableRemoteFx]** をダブルクリックして、**[値]** データ ボックスに「1」と入力します。次に、**[10 進数]** オプションを選択して **[OK]** をクリックします。
+6. レジストリ エディターを閉じます。
 
-**Note:** After setting this registry value, you must delete the virtual machine in Hyper-V manager for the configuration that you launched in Visual Studio, and then relaunch the emulator with software-rendered graphics.
+**注** このレジストリ値を設定した後、Visual Studio で起動した構成について、Hyper-V マネージャーで仮想マシンを削除し、ソフトウェア レンダリングされたグラフィックを使ってエミュレーターを再起動します。
 
-## Support Resources
+## サポート資料
 
-To find answers and solve problems as you start working with the Windows 10 tools, please visit [Windows 10 Tools forum](http://go.microsoft.com/fwlink/?LinkId=534765). To see all the forums for Windows 10 development, visit [this link](http://go.microsoft.com/fwlink/?LinkId=535000).
+Windows 10 ツールを使う際に生じた質問の答えを探したり、問題を解決したりするには、[Windows 10 ツール フォーラム](http://go.microsoft.com/fwlink/?LinkId=534765)にアクセスしてください。 Windows 10 開発のすべてのフォーラムを参照するには、[このリンク](http://go.microsoft.com/fwlink/?LinkId=535000)にアクセスしてください。
 
-## Related topics
+## 関連トピック
 
-* [Run Windows Phone apps in the emulator](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dn632391.aspx)
-* [Windows and Windows Phone SDK archive](https://dev.windows.com/downloads/sdk-archive)
+* [エミュレーターで Windows Phone アプリを実行する](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dn632391.aspx)
+* [Windows と Windows Phone SDK のアーカイブ](https://dev.windows.com/downloads/sdk-archive)
  
 
 

@@ -1,29 +1,30 @@
 ---
-Description: If you encounter errors while uploading app packages during the app submission process, you must resolve them before you can submit your app to the Store.
-title: Resolve package upload errors
+description: アプリを申請する際に、アプリ パッケージのアップロード中にエラーが発生した場合は、ストアにアプリを申請する前にそれらのエラーを解決する必要があります。
+title: パッケージのアップロード エラーの解決
 ms.assetid: 0D01E43C-F3A7-4FA2-B479-1B5579FF531A
 ---
 
-# Resolve package upload errors
+# パッケージのアップロード エラーの解決
 
 
-If you encounter errors while [uploading app packages](upload-app-packages.md) during the [app submission](app-submissions.md) process, you must resolve them before you can submit your app to the Store. The error message will indicate what the problem is and what you might need to do in order to fix the issue. Here are a few pointers to additional info to help you resolve these errors.
+[アプリを申請する](app-submissions.md)際に、[アプリ パッケージのアップロード](upload-app-packages.md)中にエラーが発生した場合は、ストアにアプリを申請する前にそれらのエラーを解決する必要があります。 エラー メッセージには、どのような問題があるのか、問題を修正するために何をする必要があるのかが示されます。 これらのエラーの解決に役立つ追加情報に関するアドバイスをいくつか次に示します。
 
-## Package type errors for Windows Phone 8.1
-
-
-When you are updating apps that were previously published for Windows Phone 8.1, you may encounter errors related to package types. For more info about package type requirements, see [Maintaining package compatibility for Windows Phone 8.1](guidance-for-app-package-management.md#maintaining-package-compatibility-for-windows-phone-8-1).
-
-Failure to follow these requirements will result in package upload errors that will prevent you from completing your submission.
-
-## Version number conflicts
+## Windows Phone 8.1 のパッケージの種類のエラー
 
 
-For info about resolving errors related to version numbers and the requirements when submitting updates, see [Package version numbering](package-version-numbering.md).
+Windows Phone 8.1 用に以前公開されていたアプリを更新するときに、パッケージの種類に関連するエラーが発生することがあります。 パッケージの種類の要件について詳しくは、「[Windows Phone 8.1 に対するパッケージの互換性を維持する](guidance-for-app-package-management.md#maintaining-package-compatibility-for-windows-phone-8-1)」をご覧ください。
 
-Additionally, be aware that if your submission has more than one Windows Phone 8.1 XAP, they must have the same version number.
+これらの要件に従わない場合、パッケージのアップロード エラーとなり申請を完了できません。
 
-**Note**  For additional questions related to other error messages and help with resolving them, please visit our [forums](http://go.microsoft.com/fwlink/p/?LinkId=224196).
+## バージョン番号の競合
+
+
+バージョン番号と更新プログラムを申請するときの要件に関するエラーの解決について詳しくは、「[パッケージ バージョンの番号付け](package-version-numbering.md)」をご覧ください。
+
+また、申請に複数の Windows Phone 8.1 XAP が含まれる場合、それらは同じバージョン番号である必要があることに注意してください。
+
+そ
+						**注** その他のエラー メッセージとその解決のためのヘルプに関する追加の質問については、[フォーラム](http://go.microsoft.com/fwlink/p/?LinkId=224196)をご利用ください。
 
  
 

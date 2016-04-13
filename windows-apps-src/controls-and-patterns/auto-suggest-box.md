@@ -3,12 +3,13 @@ Description: ユーザーが入力するときに、検索候補を表示する�
 title: 自動提案ボックスのガイドライン
 ms.assetid: 1F608477-F795-4F33-92FA-F200CC243B6B
 dev.assetid: 54F8DB8A-120A-4D79-8B5A-9315A3764C2F
-label: 自動提案ボックス
+label: Auto-suggest box
 template: detail.hbs
 ---
 # 自動提案ボックス
 AutoSuggestBox を使って、ユーザーが入力と同時に選べる候補リストを表示します。
 
+![自動提案ボックス](images/controls/auto-suggest-box-open.png)
 
 <span class="sidebar_heading" style="font-weight: bold;">重要な API</span>
 
@@ -25,6 +26,11 @@ AutoSuggestBox を使って、ユーザーが入力と同時に選べる候補�
 
 ## 例
 
+Groove ミュージック アプリの自動提案ボックス。
+
+![Groove ミュージック アプリの自動提案ボックス](images/control-examples/auto-suggest-box-groove.png)
+
+## 構造
 自動提案ボックスのエントリ ポイントは、オプションのヘッダーとオプションのヒント テキスト付きのテキスト ボックスで構成されます。
 
 ![自動提案コントロールのエントリ ポイントの例](images/controls_autosuggest_entrypoint.png)
@@ -128,33 +134,23 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 }
 ```
 
-## 推奨事項
+## 推奨と非推奨
 
 -   自動提案ボックスを使って検索を実行したときに、入力したテキストに対応する検索結果が存在しなかった場合は、"検索結果が見つかりませんでした" という 1 行を表示します。これにより、ユーザーは検索要求が実行されたことがわかります。
 
     ![検索結果のない自動提案ボックスの例](images/controls_autosuggest_noresults.png)
 
 
-\[この記事には、ユニバーサル Windows プラットフォーム (UWP) アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
-
 ## 関連記事
 
-[テキスト コントロール](text-controls.md)
-
-**デザイナー向け**
-- [スペル チェックのガイドライン](spell-checking-and-prediction.md)
-- [検索の追加](https://msdn.microsoft.com/library/windows/apps/hh465231)
-- [テキスト入力のガイドライン](text-controls.md)
-
-**開発者向け (XAML)**
+- [テキスト コントロール](text-controls.md)
+- [スペル チェック](spell-checking-and-prediction.md)
+- [検索](search.md)
 - [**TextBox クラス**](https://msdn.microsoft.com/library/windows/apps/br209683)
 - [**Windows.UI.Xaml.Controls PasswordBox クラス**](https://msdn.microsoft.com/library/windows/apps/br227519)
-
-
-**開発者向け (その他)**
 - [String.Length プロパティ](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=Mar16_HO4-->
 
 

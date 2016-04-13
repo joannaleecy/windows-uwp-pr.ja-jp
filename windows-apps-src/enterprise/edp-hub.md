@@ -1,67 +1,68 @@
 ---
-Description: 'This is a hub topic covering the full developer picture of how enterprise data protection (EDP) relates to files, buffers, clipboard, networking, background tasks, and data protection under lock.'
+Description: 'ここでは、エンタープライズ データ保護 (EDP) とファイル、バッファー、クリップボード、ネットワーク、バックグラウンド タスク、ロックの背後でのデータ保護との関係について、開発者向けに詳しく説明します。'
 MS-HAID: 'dev\_enterprise.edp\_hub'
 MSHAttr: 'PreferredLib:/library/windows/apps'
 Search.Product: eADQiWindows 10XVcnh
-title: 'Enterprise data protection (EDP)'
+title: 'エンタープライズ データ保護 (EDP)'
 ---
 
-# Enterprise data protection (EDP)
+# エンタープライズ データ保護 (EDP)
 
-__Note__ Enterprise data protection (EDP) policy cannot be applied on Windows 10, Version 1511 (build 10586) or earlier.
+__注__ Windows 10 バージョン 1511 (ビルド 10586) またはそれ以前のバージョンでは、エンタープライズ データ保護 (EDP) ポリシーを適用できません。
 
-This is a hub topic covering the full developer picture of how enterprise data protection (EDP) relates to files, buffers, clipboard, networking, background tasks, and data protection under lock.
+ここでは、エンタープライズ データ保護 (EDP) とファイル、バッファー、クリップボード、ネットワーク、バックグラウンド タスク、ロックの背後でのデータ保護との関係について、開発者向けに詳しく説明します。
 
-For more info about EDP from the point of view of end-users and administrators, see [Enterprise data protection (EDP) overview](https://technet.microsoft.com/library/dn985838(v=vs.85).aspx).
+エンド ユーザーと管理者の観点から見た EDP について詳しくは、「[エンタープライズ データ保護 (EDP) の概要](https://technet.microsoft.com/library/dn985838(v=vs.85).aspx)」をご覧ください。
 
-## What is EDP?
+## EDP とは
 
-EDP is a set of features on desktops, laptops, tablets, and phones for Mobile Device Management (MDM). EDP gives an enterprise greater control over how its data (enterprise files and data blobs) is handled on devices that the enterprise manages.
+EDP は、デスクトップ、ノート PC、タブレット、電話に搭載された、モバイル デバイス管理 (MDM) 用の機能のセットです。 EDP を使用すると、企業では、自社が管理するデバイス上で、データ (企業のファイルやデータ BLOB) がどのように扱われるかをより細かく制御できるようになります。
 
--   Enterprise data is tagged with encryption. This is "enterprise-protected data", or just "protected data" for short.
--   Only apps that the managing enterprise explicitly allows via EDP policy can access enterprise-protected data, for example, in files.
--   Only apps explicitly allowed via EDP policy have enterprise Virtual Private Network (VPN) access.
--   App-restriction policy also determines how allowed apps should handle enterprise data.
--   Policy-based restrictions apply even to enterprise content exchanged via the Windows clipboard or via the Share contract.
--   On demand, the managing enterprise can revoke the device's access to protected content, essentially wiping the device of enterprise data while leaving personal data intact.
--   A channel app is an app that downloads protected data. Examples include mail and file-synchronization apps.
+-   エンタープライズ データは暗号化でタグ付けされます。 これを "エンタープライズ保護データ"、または略して "保護データ" と呼びます。
+-   管理側のエンタープライズにより、EDP を通じて明示的に許可されたアプリだけが、エンタープライズ保護データ (たとえばファイル内のデータ) にアクセスできます。
+-   また、EDP ポリシーを通じて明示的に許可されたアプリだけが、エンタープライズ仮想プライベート ネットワーク (VPN) にアクセスできます。
+-   アプリの制限ポリシーにより、許可されたアプリでのデータの扱い方が決まります。
+-   ポリシー ベースの制限は、Windows クリップボードや共有コントラクトを通じて交換されるエンタープライズ コンテンツにも適用されます。
+-   管理側のエンタープライズでは、必要に応じて、保護されたコンテンツへのデバイスのアクセスを取り消すことができます。この場合、個人用データには影響を与えずに、デバイスからエンタープライズ データがワイプされます。
+-   保護データをダウンロードするアプリをチャネル アプリといいます。 たとえば、メール アプリやファイル同期アプリがあります。
 
-EDP enhances the [Encrypting File System (EFS)](http://technet.microsoft.com/library/cc700811.aspx) and [Windows Selective Wipe](https://technet.microsoft.com/library/dn486874.aspx) to provide more security and flexibility options. New EDP APIs let you create apps that protect and revoke access to enterprise content, work with protected file properties, and access encrypted data in its raw form. In addition to introducing new APIs for protecting files and folders, it introduces APIs for protecting buffers and streams. It also introduces a set of APIs that allow apps to identify and indicate the enterprise that must enforce data protection policy.
+EDP は、[暗号化ファイル システム (EFS)](http://technet.microsoft.com/library/cc700811.aspx) と [Windows 選択的ワイプ](https://technet.microsoft.com/library/dn486874.aspx)を拡張して、セキュリティと柔軟性に関するより多くのオプションを提供します。 新しい EDP API では、エンタープライズ コンテンツへのアクセスの保護と取り消しを行うアプリの作成、保護されたファイル プロパティの操作、暗号化されたデータへの未加工の形式でのアクセスを行うことができます。 ファイルとフォルダーを保護する新しい API に加えて、バッファーとストリームを保護するための API も導入されています。 さらに、データ保護ポリシーを適用する必要のあるエンタープライズの識別と指定をアプリで行えるようにする API のセットも追加されています。
 
-So that the managing enterprise can control access to its protected data, the app-restriction policy defines a list of apps, and restrictions on those apps. By default, an app is unable to autonomously access protected data. To gain access, the app must be added to a list called the allowed list, and apps on the allowed list are called allowed apps. On a managed device, Windows can restrict and/or audit access to protected data on the clipboard or via the share contract, so that access by an app not on the allowed list is audited and/or requires user consent, or else is completely blocked.
+アプリの制限ポリシーでは、管理側のエンタープライズが保護データへのアクセスを制御できるように、アプリの一覧と、それぞれのアプリに対する制限を定義します。 既定では、アプリが自律的に保護データにアクセスすることはできません。 アクセスを取得するには、許可一覧と呼ばれる一覧にアプリを追加する必要があります。許可一覧に含まれるアプリは、許可されたアプリと呼ばれます。 管理されたデバイスでは、クリップボードや共有コントラクト経由での保護データへのアクセスを Windows によって制限または監査できます。許可一覧に含まれていないアプリによるアクセスは、監査されるか、ユーザーの同意が求められるか、または完全にブロックされます。
 
-Policy for EDP is provided to a device by the managing enterprise (this makes the device a "managed device"). Provisioning of policy can happen through enrollment by the user in mobile device management (MDM), through manual configuration by IT, or through another management and policy delivery mechanism such as System Center Configuration Manager (SCCM).
+EDP のポリシーは、管理側のエンタープライズによってデバイスに提供されます (これにより、デバイスが "管理されたデバイス" になります)。 ポリシーのプロビジョニングは、モバイル デバイス管理 (MDM) のユーザーによる登録、IT による手動構成、または System Center Configuration Manager (SCCM) のような管理とポリシー配信のメカニズムを通じて行われる可能性があります。
 
-EDP file protection leverages Rights Management Service (RMS) keys, if provisioned, since these keys can roam across devices and therefore allow protected data to roam. In the absence of RMS keys, these APIs will fall back to local Selective Wipe keys and limit roaming functionality. Data that roams encrypted will be accessible on down-level Windows and on third-party devices via platform-specific RMS apps provided by Microsoft, as well as with RMS-enlightened third party apps.
+EDP のファイル保護では、Rights Management Service (RMS) キーがプロビジョニングされている場合はそれが利用されます。これらのキーはデバイス間でローミングできるため、保護データもローミングできるようになります。 RMS キーがない場合、これらの API はローカルの選択的ワイプ キーにフォールバックし、ローミング機能が制限されます。 暗号化されてローミングされるデータには、ダウンレベルの Windows と、Microsoft からプラットフォーム固有の RMS アプリが提供されているサード パーティ製デバイスでアクセスできるほか、RMS 対応のサード パーティ アプリを使ってアクセスすることもできます。
 
-In summary—data protected with the EDP APIs can be managed by the enterprise, so you can build your app in a way that helps the enterprise protect and manage its data. In other words, you can build an enterprise-ready app. And, helping you do just that is what the rest of this guide is about.
+簡潔に言うと、EDP API で保護されたデータはエンタープライズで管理でき、そのエンタープライズによるデータの保護と管理を支援するようにアプリを構築できます。 つまり、エンタープライズ対応のアプリを作成できるということです。 このガイドの残りの部分では、そのために役立つ情報を説明します。
 
-## Set up your computer for EDP
-
-
-In order to properly develop your app, and test how it will behave in the enterprise, you'll want to set up your computer or device with the right conditions. That involves a few tasks ordinarily in the domain of IT administrators.
-
--   Have your development machine enrolled into mobile device management (MDM).
--   Have your app added to the allowed list via the [AppLocker configuration service provider](https://msdn.microsoft.com/library/windows/hardware/dn920019).
-
-The next task is to build an app that's aware of, and can respond dynamically to, the managed identity of the enterprise it's running inside, and the protection policy in effect. That means "enlightening" your app. Apps that enlighten to follow policy are much more likely to be on the list allowed to access enterprise data.
-
-## Enterprise-enlightened apps
+## EDP 用にコンピューターをセットアップする
 
 
-Once your app is on the allowed list, it can read protected data. And, by default, any data output by your app is automatically protected by the system. That automatic protection is because the managing enterprise must, one way or another, ensure that enterprise data stays under its own control. But, keeping your app on such a short leash is only the default way to achieve that. A better way is to ask the system to trust you enough to give you more power and flexibility. And, the price of admission for that is to make your app smarter. That means going a step further than getting on the allowed list; it means making your app—and declaring it to be—enterprise-enlightened.
+アプリを適切に開発し、エンタープライズ内での動作をテストするには、コンピューターまたはデバイスを適切な条件でセットアップする必要があります。 これには通常、IT 管理者の担当となるタスクがいくつか含まれます。
 
-Your app is enlightened if it uses the techniques we'll describe to autonomously keep enterprise data protected whether the data is at rest, in use, or in flight. Your enlightened app recognizes enterprise data sources and enterprise data, and protects it when it arrives in your app. Being enlightened also means being aware of, and abiding by, EDP policy whenever enterprise data leaves your app. This includes disallowing content from going to a non-enterprise network end-point, wrapping the data in a portable encrypted form before allowing it to roam, and potentially (depending on policy settings), prompting the user before pasting enterprise data into an app not on the allowed list. Once you've made your app enlightened, your app announces to the system that it is enlightened by declaring the restricted **enterpriseDataPolicy** capability. For more info about working with restricted capabilities, see [Special and restricted capabilities](https://msdn.microsoft.com/library/windows/apps/mt270968#special_and_restricted_capabilities).
+-   開発コンピューターをモバイル デバイス管理 (MDM) に登録します。
+-   [AppLocker 構成サービス プロバイダー](https://msdn.microsoft.com/library/windows/hardware/dn920019) を使って、アプリを許可一覧に追加します。
 
-Ideally, all enterprise data is protected data, both at rest and in flight. But, inevitably, there must be some brief period between enterprise data being initially generated and it being protected. And, sometimes enterprise data can exist on an enterprise network endpoint without being encrypted. An enlightened app is capable of autonomously protecting such data; allowed-but-not-enlightened apps will need to have protection imposed by the system.
+次のタスクはアプリの作成です。このアプリは、実行元のエンタープライズの管理されている ID と有効な保護ポリシーを認識し、動的に応答できるようにします。 これは、アプリを "対応させる" ことを意味します。 ポリシーへの準拠に対応するアプリは、多くの場合、エンタープライズ データへのアクセスが許可される一覧に含められます。
 
-This is because an unenlightened app always runs in enterprise mode. The system makes sure of that. But, an enlightened app is free to move between enterprise mode and personal mode at will and as appropriate for the kind of data the app is working with at any given time. It's also important for an enlightened app to respect personal data, and not to tag personal data as enterprise data. An enlightened app may concurrently handle both enterprise data and personal data, so long as these promises are kept. The next section shows how to switch modes in code.
+## エンタープライズ対応アプリ
 
-## Confirming an identity is managed, and determining protection policy enforcement level
 
-Your app generally gets an enterprise identity from an external resource such as a mailbox email address, or a domain that is managed, or a uri hostname. You can call [**ProtectionPolicyManager.GetPrimaryManagedIdentityForNetworkEndpointAsync**](https://msdn.microsoft.com/library/windows/apps/dn706027) to obtain the managed identity, if any, for a network endpoint hostname.
+アプリが許可一覧に追加されたら、そのアプリで保護データを読み取ることができます。 また、既定では、アプリから出力されたデータはすべてシステムによって自動的に保護されます。 このような自動保護機能が用意されているのは、管理側のエンタープライズでは、エンタープライズ データを常に制御下に置いておく必要があるためです。 ただし、アプリにこのような厳しい制約がかかるのは、既定の方法を使った場合だけです。 より良い方法として、アプリがシステムに信頼されるようにすると、十分な機能と柔軟性を得ることができます。 この承認を得るためには、アプリをスマートにする必要があります。 つまり、許可一覧に追加する方法よりも 1 歩進んで、アプリをエンタープライズ対応として作成および宣言します。
 
-This code example illustrates the general structure for enlightened behavior, including how to determine whether an enterprise identity actually is managed, and what policy is currently in effect.
+以降では、データが使われていなくても、使用中でも、移動中でも、自律的にエンタープライズ データを保護された状態に保つテクニックを説明します。このテクニックを使うと、アプリを対応型にすることができます。 対応アプリは、エンタープライズ データのソースを認識し、アプリで受け取ったときに保護します。 対応するということは、エンタープライズ データがアプリの外部に送られるときに、常に EDP ポリシーを認識して準拠するということでもあります。 これには、エンタープライズ ネットワーク外のエンドポイントにコンテンツが送信されないようにすること、ローミングを許可する前にポータブルな暗号化形式でデータをラップすること、また必要であれば (ポリシーの設定に依存)、許可一覧に含まれていないアプリにエンタープライズ データを貼り付ける前にユーザーに確認を表示することが含まれます。 アプリを対応させたら、制限された **enterpriseDataPolicy** 機能を宣言して、アプリが対応していることをシステムに通知します。 制限された機能の使い方について詳しくは、「[特殊な用途および制限された用途に関する機能](https://msdn.microsoft.com/library/windows/apps/mt270968#special_and_restricted_capabilities)」をご覧ください。
+
+すべてのエンタープライズ データは、使われていないときでも移動中でも保護データとなることが理想的です。 ただし、エンタープライズ データが初めて作成されてから保護されるまでには、必然的に未保護の状態が短時間発生します。 また、場合によっては、エンタープライズ データが暗号化されていない状態でエンタープライズ ネットワークに存在することもあります。 対応アプリでは、このようなデータを自律的に保護することができますが、許可された非対応のアプリでは、システムによる保護が必要です。
+
+これは、非対応アプリは常にエンタープライズ モードで実行されるためです。 これはシステムによって保証されます。 一方、対応アプリでは、操作中のデータの種類に対して適切であれば、いつでもエンタープライズ モードと個人用モードを自由に切り替えることができます。 対応アプリでは、個人用データを尊重し、個人用データをエンタープライズ データとしてタグ付けしないようにすることも重要です。 これらの条件が守られている限り、対応アプリはエンタープライズ データと個人用データの両方を同時に処理できます。 次のセクションでは、コードでモードを切り替える方法を示します。
+
+## ID が管理されていることを確認し、保護ポリシーの強制レベルを特定する
+
+アプリは通常、メールボックスのメール アドレス、管理されているドメイン、URI ホスト名など、外部リソースからエンタープライズ ID を取得します。 [
+            **ProtectionPolicyManager.GetPrimaryManagedIdentityForNetworkEndpointAsync**](https://msdn.microsoft.com/library/windows/apps/dn706027) を呼び出すと、ネットワーク エンドポイント ホスト名に対して管理されている ID があれば取得されます。
+
+次のコード例では、対応動作の一般的な構造を示します。これには、エンタープライズ ID が実際に管理されているかどうかを判別する方法と、現在有効なポリシーを確認する方法が含まれています。
 
 ```CSharp
 using Windows.Security.EnterpriseData;
@@ -90,51 +91,51 @@ else
 }
 ```
 
-As shown, you first determine whether EDP policy is set for the enterprise's identity. The term "managed" is short for "managed by an EDP policy". When EDP policy is set for a specific identity, [**ProtectionPolicyManager.IsIdentityManaged**](https://msdn.microsoft.com/library/windows/apps/dn705171) returns true for that identity. This is your cue to use EDP APIs with that identity. Although the file and buffer APIs are somewhat exceptional in that they will function as expected even for an unmanaged identity, that scenario doesn't make sense. If a device is managed, then it is managed for a enterprise identity. If an identity is not managed, then protecting data to that identity is meaningless.
+上に示したように、まずエンタープライズの ID に EDP ポリシーが設定されているかどうかを判別します。 "管理されている" という用語は、"EDP ポリシーによって管理されている" ことを意味します。 特定の ID に EDP ポリシーが設定されている場合、[**ProtectionPolicyManager.IsIdentityManaged**](https://msdn.microsoft.com/library/windows/apps/dn705171) はその ID に対して true を返します。 これが、その ID で EDP API を使う根拠になります。 ファイルとバッファーの API は例外的で、管理されていない ID に対しても期待どおりに機能しますが、このような使い方には意味がありません。 デバイスが管理されている場合、それはエンタープライズ ID のために管理されているということです。 ID が管理されていなければ、その ID のデータを保護しても意味はありません。
 
-The next step is to determine and implement the enforcement level for the policy. To determine the enforcement level for the policy, call the [**GetEnforcementLevel**](https://msdn.microsoft.com/library/windows/apps/mt608406) method. When an enterprise policy is enforced on the identity, your enlightened app must help the system with policy enforcement by calling [**ProtectionPolicyManager**](https://msdn.microsoft.com/library/windows/apps/dn705170) APIs during UI activities or network accesses to ensure that the system tags data transfers with this identity when necessary. More info about how to interpret the enforcement level and put it into practice is contained in this guide. The code example also shows how to enter enterprise mode, and return to personal mode, by setting the value of [**ProtectionPolicyManager.Identity**](https://msdn.microsoft.com/library/windows/apps/dn705785) to the enterprise identity, or the empty string, respectively. Again, note that entering and exiting enterprise mode only makes sense with a managed identity.
+次の手順では、ポリシーの強制レベルを特定して実装します。 ポリシーの強制レベルを特定するには、[**GetEnforcementLevel**](https://msdn.microsoft.com/library/windows/apps/mt608406) メソッドを呼び出します。 ID にエンタープライズ ポリシーが強制されている場合、対応アプリでは、UI アクティビティやネットワーク アクセスの実行中に [**ProtectionPolicyManager**](https://msdn.microsoft.com/library/windows/apps/dn705170) API を呼び出して、システムがポリシーを適用できるようにする必要があります。これにより、システムは、この ID でのデータ転送を必要に応じて確実にタグ付けできるようになります。 強制レベルを解釈して実際に処理する方法の詳細は、このガイドで説明しています。 コード例には、エンタープライズ モードに移行する方法と、個人用モードに戻す方法についても示されています。これを行うには、[**ProtectionPolicyManager.Identity**](https://msdn.microsoft.com/library/windows/apps/dn705785) の値をエンタープライズ ID または空の文字列にそれぞれ設定します。 ここでも、エンタープライズ モードの開始と終了は、管理されている ID でのみ意味を持つことに注意してください。
 
-## EDP features at a glance
-
-
-**File and buffer protection.**
-
--   Your app can protect, containerize and wipe data associated with an enterprise identity.
--   Key-management is handled by Windows. Windows uses the enterprise’s RMS keys when they are available to the device; otherwise, Windows falls back to local Selective Wipe protection.
-
-**Device policy management.**
-
--   Your app can query the identity (enterprise or organization) that is managing the device.
--   Your app can protect users from inadvertent data disclosure by associating an identity with the data in question.
--   Your app can protect enterprise resources over the network by checking for enterprise-owned network endpoint connections (servers, IP ranges), and associating the data to a managed (that is, MDM-enrolled) identity.
--   The EDP APIs only work with managed identities that have an EDP policy defined on the device. If an identity is not managed, then, the APIs indicate that to the application, when necessary.
-
-Here's a list of links to topics that drill into EDP APIs and scenarios specific to these particular feature areas.
-
-## Files
-
-See [Use EDP to protect files](../files/protect-your-enterprise-data-with-edp.md).
-
-## Streams and buffers
-
-See [Use EDP to protect streams and buffers](../files/use-edp-to-protect-streams-and-buffers.md).
-
-## Clipboard, share, and exchanging data between apps
-
-See [Use EDP to protect enterprise data transferred between apps](../app-to-app/use-edp-to-protect-enterprise-data-transferred-between-apps.md).
-
-## Networking
-
-See [Tagging network connections with EDP identity](../networking/tagging_network_connections_with_edp_identity.md).
-
-## Data protection under lock (DPL), and background tasks
-
-An organization can choose to administer a secure "data protection under lock" (DPL) policy, where encryption keys required to access protected resources are temporarily removed from device memory when the device is locked. To prepare your app for this eventuality, see the [Handle device lock events and avoid leaving unprotected content in memory](#handle_lock_events) section in this topic. Also, if your app has a background task that needs to protect files, see [Protect enterprise data in a new file (for a background task)](../files/protect-your-enterprise-data-with-edp.md#protect_data_new_file_bg).
-
-## UI-policy enforcement
+## EDP 機能の概要
 
 
-In this section, we'll take the example of an enlightened mail app, which is currently displaying an enterprise mailbox among a set of mailboxes that include both enterprise and personal mailboxes belonging to the user. To ensure that there are no data leaks from the enterprise data in the enterprise mailbox, the app calls [**ProtectionPolicyManager.TryApplyProcessUIPolicy**](https://msdn.microsoft.com/library/windows/apps/dn705791) to make sure that the operating system knows about the current context of the app, whether enterprise or personal. The API returns false if the identity is not being managed by an enterprise policy.
+**ファイルとバッファーの保護。**
+
+-   エンタープライズ ID に関連付けられているデータを、アプリで保護、コンテナー化、ワイプすることができます。
+-   キー管理は Windows によって処理されます。 Windows は、デバイスにエンタープライズの RMS キーがあればそれを使います。キーがない場合は、ローカルの選択的ワイプによる保護にフォールバックします。
+
+**デバイス ポリシーの管理。**
+
+-   アプリでは、デバイスを管理している ID (エンタープライズまたは組織) を照会できます。
+-   アプリでは、問題となるデータに ID を関連付けることで、ユーザーの不注意によるデータの漏えいを防止できます。
+-   アプリでは、エンタープライズが所有するネットワーク エンドポイント接続 (サーバー、IP 範囲) を調べ、管理されている (MDM に登録されている) ID にデータを関連付けることで、ネットワーク上のエンタープライズ リソースを保護できます。
+-   EDP API は、管理されていて、デバイスに EDP ポリシーを定義している ID でのみ機能します。 ID が管理されていない場合は、必要に応じて API からアプリケーションに通知が返されます。
+
+次の一覧は、EDP API と、それぞれの特定の機能領域に固有のシナリオについて詳しく説明するトピックへのリンクを示したものです。
+
+## ファイル
+
+「[EDP によるファイルの保護](../files/protect-your-enterprise-data-with-edp.md)」をご覧ください。
+
+## ストリームとバッファー
+
+「[EDP を使ったストリームとバッファーの保護](../files/use-edp-to-protect-streams-and-buffers.md)」をご覧ください。
+
+## クリップボード、共有、アプリ間でのデータ交換
+
+「[EDP を使ったアプリ間で転送されるエンタープライズ データの保護](../app-to-app/use-edp-to-protect-enterprise-data-transferred-between-apps.md)」をご覧ください。
+
+## ネットワーク
+
+「[EDP ID を使ったネットワーク接続のタグ付け](../networking/tagging_network_connections_with_edp_identity.md)」をご覧ください。
+
+## ロックの背後でのデータ保護 (DPL) とバックグラウンド タスク
+
+組織では、必要に応じて安全な "ロックの背後でのデータ保護" (DPL) ポリシーを管理できます。このポリシーが有効な場合は、デバイスがロックされると、保護されたリソースへのアクセスに必要な暗号化キーが一時的にデバイスのメモリから削除されます。 この状況に対応するようにアプリを準備するには、このトピックの「[デバイスのロック イベントを処理し、保護されていないコンテンツをメモリ内に残さないようにする](#handle_lock_events)」をご覧ください。 また、ファイルを保護する必要のあるバックグラウンド タスクをアプリで実行する場合は、「[新しいファイルで企業データを保護する (バックグラウンド タスクの場合)](../files/protect-your-enterprise-data-with-edp.md#protect_data_new_file_bg)」をご覧ください。
+
+## UI ポリシーの適用
+
+
+このセクションでは、対応型のメール アプリの例を取り上げます。このアプリは現在、ユーザーが所有するエンタープライズ メールボックスと個人用メールボックスの両方を含むメールボックスのセットの中から、エンタープライズ メールボックスを表示しています。 エンタープライズ メールボックス内のエンタープライズ データからデータが漏えいすることのないように、アプリは [**ProtectionPolicyManager.TryApplyProcessUIPolicy**](https://msdn.microsoft.com/library/windows/apps/dn705791) を呼び出して、アプリの現在のコンテキスト (エンタープライズか個人用か) をオペレーティング システムに通知します。 ID がエンタープライズ ポリシーによって管理されていない場合、API は false を返します。
 
 ```CSharp
 using Windows.Security.EnterpriseData;
@@ -168,21 +169,21 @@ private void SwitchMailbox(Mailbox targetMailbox)
 }
 ```
 
-## Handle device lock events and avoid leaving unprotected content in memory
+## デバイスのロック イベントを処理し、保護されていないコンテンツをメモリ内に残さないようにする
 
 
-In this scenario, we'll take the example of an enlightened mail app that's designed to handle both enterprise mail and personal mail. When the app is running in an organization that has chosen to administer a secure "data protection under lock" (DPL) policy, the app must be sure to remove all sensitive data from memory while the device is locked. To do this, it registers for the [**ProtectionPolicyManager.ProtectedAccessSuspending**](https://msdn.microsoft.com/library/windows/apps/dn705787) and [**ProtectionPolicyManager.ProtectedAccessResumed**](https://msdn.microsoft.com/library/windows/apps/dn705786) events so that it's notified whenever the device is locked and unlocked (in case DPL is in effect).
+このシナリオでは、エンタープライズ メールと個人用メールの両方を処理するように設計された対応型のメール アプリの例を取り上げます。 安全な "ロックの背後でのデータ保護" (DPL) ポリシーを管理している組織内でアプリが実行されている場合、そのアプリでは、デバイスがロックされている間、メモリからすべての機密データを削除する必要があります。 これを実行するには、(DPL が有効な場合に) デバイスがロックされたときとロックが解除されたときに通知を受け取るように、[**ProtectionPolicyManager.ProtectedAccessSuspending**](https://msdn.microsoft.com/library/windows/apps/dn705787) イベントと [**ProtectionPolicyManager.ProtectedAccessResumed**](https://msdn.microsoft.com/library/windows/apps/dn705786) イベントに登録します。
 
-[**ProtectedAccessSuspending**](https://msdn.microsoft.com/library/windows/apps/dn705787) is raised before data protection keys provisioned on the device are temporarily removed. The reason these keys are removed when the device is locked is to ensure that there can't be unauthorized access to encrypted data while the device is locked and also possibly not in possession of its owner. [**ProtectedAccessResumed**](https://msdn.microsoft.com/library/windows/apps/dn705786) is raised once the keys are available again upon device unlock.
+[**ProtectedAccessSuspending**](https://msdn.microsoft.com/library/windows/apps/dn705787) は、デバイスにプロビジョニングされたデータ保護キーが一時的に削除される前に発生します。 デバイスがロックされたときにこれらのキーが削除される理由は、デバイスのロック中、場合によってはデバイスが所有者の手元から離れている間に、暗号化されたデータに対して未承認のアクセスが行われないようにするためです。 [**ProtectedAccessResumed**](https://msdn.microsoft.com/library/windows/apps/dn705786) は、デバイスのロックが解除され、キーが再び利用可能になったときに発生します。
 
-By handing these two events, the app can ensure that it protects any sensitive content in memory with [**DataProtectionManager**](https://msdn.microsoft.com/library/windows/apps/dn706017). It should also close any file streams open on its protected files to ensure that the system does not cache any sensitive data in memory. You can do this in one of several ways. To close a file stream returned from an Open method of a **StorageFile**, you can call the **Dispose** method on the stream. You can scope the use of stream with a using statement (C\# or VB). Or, you can wrap a **DataReader** or a **DataWriter** object around the stream and use the **Dispose** method or using statement with that object.
+アプリでこれらの 2 つのイベントを処理すれば、[**DataProtectionManager**](https://msdn.microsoft.com/library/windows/apps/dn706017) によって、メモリ内の機密性の高いコンテンツをすべて確実に保護できます。 また、システムが機密データをメモリ内にキャッシュしないように、保護されたファイルに対して開かれているファイル ストリームをすべて閉じる必要があります。 これはいくつかの方法で行うことができます。 **StorageFile** の Open メソッドから返されたファイル ストリームを閉じるには、ストリームの **Dispose** メソッドを呼び出します。 ストリームを使用するスコープは、using ステートメント (C\# または VB) で指定できます。 または、ストリームを **DataReader** オブジェクトか **DataWriter** オブジェクトでラップし、そのオブジェクトで **Dispose** メソッドまたは using ステートメントを使う方法もあります。
 
-**Note**  
-In an environment without a DPL policy configured, the [**ProtectedAccessResumed**](https://msdn.microsoft.com/library/windows/apps/dn705786) event is raised, but not the [**ProtectedAccessSuspending**](https://msdn.microsoft.com/library/windows/apps/dn705787) event. Be aware of this in your code, and be careful not to assume that the events always come in pairs on every system, nor that you can always use the events to determine the locked/unlocked state of the device. You can see that in the code example here that we are careful not to assume anything about the protected state of the currently displayed email nor about the open state of the database file stream.
+**注**  
+DPL ポリシーが構成されていない環境では、[**ProtectedAccessResumed**](https://msdn.microsoft.com/library/windows/apps/dn705786) イベントは発生しますが、[**ProtectedAccessSuspending**](https://msdn.microsoft.com/library/windows/apps/dn705787) イベントは発生しません。 コードではこの点に注意し、これらのイベントがどのストリームでも常に組になって発生するとは想定しないでください。これらのイベントは、デバイスのロック/ロック解除状態を判別するために使用できるとは限りません。 次のコード例を見ると、現在表示しているメールの保護状態や、データベース ファイル ストリームのオープン状態に関して、何の想定もしないように注意を払っていることがわかります。
 
-Also, be aware that when resuming from lock on a device without a DPL policy configured, [**ProtectedAccessResumedEventArgs.Identities**](https://msdn.microsoft.com/library/windows/apps/dn705772) is an empty collection.
+また、DPL ポリシーが構成されていないデバイスでロック状態から再開するときは、[**ProtectedAccessResumedEventArgs.Identities**](https://msdn.microsoft.com/library/windows/apps/dn705772) が空のコレクションになることにも注意が必要です。
 
-In the interest of brevity, this code example is slightly simplified, and it focuses on dealing with enterprise mail. In a real app, personal mails would be written to a different, unprotected, mail database file, and you wouldn't protect personal emails under lock.
+わかりやすくするために、このコード例は単純化され、エンタープライズ メールの処理に焦点を当てています。 実際のアプリでは、個人用メールは保護されていない別のメール データベース ファイルに書き込まれ、ロック状態で個人用メールを保護する必要もありません。
 
 ```CSharp
 using Windows.Security.Cryptography;
@@ -320,14 +321,14 @@ private async void ProtectionPolicyManager_ProtectedAccessResumed
 }
 ```
 
-## Register to be notified when protected content is revoked
+## 保護されたコンテンツが失効したときに通知を受け取るように登録する
 
 
-Picture the scenario where a mail app has set up an enterprise mailbox on a user’s device. At some point—and for one of several possible reasons—the enterprise wishes to revoke access to the enterprise-protected emails and other resources on that device. There are several possible reasons for the revocation. It's more likely than not that the particular enterprise policy will trigger a revocation on un-enroll, so one scenario is that the user has un-enrolled their device from the enterprise (perhaps they're gifting or selling the device, they just want to use a different one, they're moving to another job, or they're retiring). Another scenario is that an un-enroll notification is sent by an IT administrator remotely via Mobile Device Management (MDM), perhaps if a device is reported as lost.
+このシナリオでは、メール アプリがユーザーのデバイスにエンタープライズ メールボックスをセットアップしたと想定します。 エンタープライズでは、いずれかの時点で、何らかの理由から、そのデバイス上にあるエンタープライズで保護されたメールやその他のリソースへのアクセスを取り消すことがあります。 取り消しが必要となる理由はいくつか考えられます。 特に可能性が高いのは、登録解除に伴って特定のエンタープライズ ポリシーによって取り消された場合です。1 つのシナリオとして、ユーザーがエンタープライズからデバイスの登録を解除した場合 (デバイスを譲渡または販売する場合、別のデバイスを使うことにした場合、転職した場合、退職した場合など) が考えられます。 別のシナリオとしては、IT 管理者により、モバイル デバイス管理 (MDM) を通じてリモートから登録解除の通知が送信された場合があります。これは、デバイスを紛失したという報告を受けて行われることがあります。
 
-Whatever the specifics of the case, the enterprise sends a request to wipe all mail from the user’s device, since it's no longer needed on there. A remote management client on a device receives the request from the enterprise’s remote management server, and calls [**ProtectionPolicyManager.RevokeContent**](https://msdn.microsoft.com/library/windows/apps/dn705790) to revoke the keys that are required to access content protected on that device to that enterprise identity.
+詳しい状況はどうあれ、ユーザーのデバイスにメールを保持する必要はなくなったため、エンタープライズはデバイスからすべてのメールをワイプする要求を送信します。 デバイス上のリモート管理クライアントは、エンタープライズのリモート管理サーバーから要求を受け取り、[**ProtectionPolicyManager.RevokeContent**](https://msdn.microsoft.com/library/windows/apps/dn705790) を呼び出して、そのデバイス上にある、そのエンタープライズ ID で保護されたコンテンツにアクセスするためのキーを失効させます。
 
-If your app needs to be notified when a revoke happens, then you can register with the [**ProtectionPolicyManager.ProtectedContentRevoked**](https://msdn.microsoft.com/library/windows/apps/dn705788) event. When your app receives the event, it can delete any metadata associated with the enterprise mailbox, which will no longer be required.
+失効の発生時にアプリで通知を受け取る必要がある場合は、[**ProtectionPolicyManager.ProtectedContentRevoked**](https://msdn.microsoft.com/library/windows/apps/dn705788) イベントに登録することができます。 アプリでイベントを受け取ったら、エンタープライズ メールボックスに関連付けられているメタデータは不要になるため、すべて削除できます。
 
 ```CSharp
 using Windows.Security.EnterpriseData;
@@ -355,10 +356,10 @@ private void ProtectionPolicyManager_ProtectedContentRevoked(object sender, Prot
 }
 ```
 
-## Remote management client initiates a wipe of enterprise-protected data
+## リモート管理クライアントでエンタープライズ保護データのワイプを開始する
 
 
-A user has several enterprise files on their personal device that are protected to the enterprise identity. The user loses their device. When the enterprise is notified that the user has lost their device, the enterprise sends a request to wipe all sensitive data from the user’s device to prevent that data from leaking. The remote management client on the device receives this request from the enterprise’s remote management server, and it calls [**ProtectionPolicyManager.RevokeContent**](https://msdn.microsoft.com/library/windows/apps/dn705790) to revoke the keys required to access content protected to the enterprise identity.
+ユーザーの個人用デバイスに、エンタープライズ ID で保護されたエンタープライズ ファイルがいくつか存在するとします。 このデバイスをユーザーが紛失しました。 エンタープライズでは、ユーザーがデバイスを紛失したことに気付いたら、すべての機密データをユーザーのデバイスからワイプする要求を送信して、データの漏えいを防ぎます。 デバイス上のリモート管理クライアントは、エンタープライズのリモート管理サーバーからこの要求を受け取り、[**ProtectionPolicyManager.RevokeContent**](https://msdn.microsoft.com/library/windows/apps/dn705790) を呼び出して、エンタープライズ ID で保護されたコンテンツにアクセスするためのキーを失効させます。
 
 ```CSharp
 Windows.Security.EnterpriseData.ProtectionPolicyManager.RevokeContent("contoso.com");

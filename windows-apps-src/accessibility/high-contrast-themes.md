@@ -2,7 +2,7 @@
 Description: ハイ コントラスト テーマがアクティブになっているときにユニバーサル Windows プラットフォーム (UWP) アプリを使用できることを確かめるために必要な手順について説明します。
 title: ハイ コントラスト テーマ
 ms.assetid: FD7CA6F6-A8F1-47D8-AA6C-3F2EC3168C45
-label: ハイ コントラスト テーマ
+label: High-contrast themes
 template: detail.hbs
 ---
 
@@ -32,7 +32,7 @@ UWP アプリでは、[**AccessibilitySettings**](https://msdn.microsoft.com/lib
 
 実行中にハイ コントラスト リソース値を使うようにアプリを切り替えることができます。 この動作は、リソースがスタイルまたはテンプレート XAML で [{ThemeResource} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt185591)を使って要求されている限り有効です。 既定のテーマ (generic.xaml) ではすべてこの {ThemeResource} マークアップ拡張手法が使われているため、既定のコントロール テーマを使う場合はこの動作が得られます。 また、カスタム テンプレートとスタイルでこの {ThemeResource} マークアップ拡張リソース手法を使っている場合は、カスタム コントロールまたはカスタム コントロールのスタイル設定でこれを実行できます。
 
-関連トピック
+<span id="related_topics"></span>関連トピック
 -----------------------------------------------
 
 * [Accessibility (ユーザー補助機能)](accessibility.md)
@@ -48,6 +48,6 @@ UWP アプリでは、[**AccessibilitySettings**](https://msdn.microsoft.com/lib
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=Mar16_HO3-->
 
 

@@ -1,77 +1,77 @@
 ---
-description: Provides a value for any XAML attribute by evaluating a reference to a resource, with additional system logic that retrieves different resources depending on the currently active theme.
-title: ThemeResource markup extension
+description: 現在アクティブなテーマに応じて異なるリソースを取得する追加のシステム ロジックと共に、リソースへの参照を評価して任意の XAML 属性の値を提供します。
+title: ThemeResource マークアップ拡張
 ms.assetid: 8A1C79D2-9566-44AA-B8E1-CC7ADAD1BCC5
 ---
 
-# {ThemeResource} markup extension
+# {ThemeResource} マークアップ拡張
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-Provides a value for any XAML attribute by evaluating a reference to a resource, with additional system logic that retrieves different resources depending on the currently active theme. Similar to [{StaticResource} markup extension](staticresource-markup-extension.md), resources are defined in a [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794), and a **ThemeResource** usage references the key of that resource in the **ResourceDictionary**.
+現在アクティブなテーマに応じて異なるリソースを取得する追加のシステム ロジックと共に、リソースへの参照を評価して任意の XAML 属性の値を提供します。 [{StaticResource} マークアップ拡張](staticresource-markup-extension.md)と同様、リソースは [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) で定義されており、**ThemeResource** の使用は **ResourceDictionary** 内のそのリソースのキーを参照します。
 
-## XAML attribute usage
+## XAML 属性の使用方法
 
 ``` syntax
 <object property="{ThemeResource key}" .../>
 ```
 
-## XAML values
+## XAML 値
 
-| Term | Description |
+| 用語 | 説明 |
 |------|-------------|
-| key | The key for the requested resource. This key is initially assigned by the [**ResourceDictionary**>](https://msdn.microsoft.com/library/windows/apps/br208794). A resource key can be any string defined in the XamlName Grammar. |
+| key | 要求されたリソースのキー。 このキーは、[**ResourceDictionary**>](https://msdn.microsoft.com/library/windows/apps/br208794) によって最初に割当てられます。 リソース キーとしては、XamlName の文法で定義されている任意の文字列を使うことができます。 |
  
-## Remarks
+## 注釈
 
-A **ThemeResource** is a technique for obtaining values for a XAML attribute that are defined elsewhere in a XAML resource dictionary. The markup extension serves the same basic purpose as the [{StaticResource} markup extension](staticresource-markup-extension.md). The difference in behavior versus {StaticResource} markup extension is that a **ThemeResource** reference can dynamically use different dictionaries as the primary lookup location, depending on which theme is currently being used by the system.
+**ThemeResource** は、XAML リソース ディクショナリ内の別の場所で定義されている XAML 属性の値を取得するための手法です。 このマークアップ拡張は、[{StaticResource} マークアップ拡張](staticresource-markup-extension.md)と同じ基本的な目的を果たします。 {StaticResource} マークアップ拡張との動作の違いとして、**ThemeResource** 参照では、システムによってどのテーマが現在使われているかに応じて、一次検索場所として異なるディクショナリを動的に使うことができます。
 
-When the app first starts, any resource reference made by a **ThemeResource** reference is evaluated based on the theme in use at startup. But if the user subsequently changes the active theme at run-time, the system will re-evaluate every **ThemeResource** reference, retrieve a theme-specific resource that may be different, and redisplay the app with new resource values in all appropriate places in the visual tree. A **StaticResource** is determined at XAML load time / app startup and won't be re-evaluated at run-time. (There are other techniques such as visual states that reload XAML dynamically, but those techniques operate at a higher level that the basic resource evaluation enabled by [{StaticResource} markup extension](staticresource-markup-extension.md)).
+アプリが最初に起動されると、**ThemeResource** 参照によって行われたすべてのリソース参照が、起動時に使われたテーマに基づいて評価されます。 ただし、ユーザーが後で実行時にアクティブなテーマを変更した場合、システムは、すべての **ThemeResource** 参照を再評価し、(異なっている可能性のある) テーマに固有のリソースを取得した後、ビジュアル ツリーのすべての適切な場所に新しいリソース値を持つアプリを再表示します。 **StaticResource** は、XAML の読み込み時またはアプリの起動時に判定され、実行時には再評価されません (XAML を動的に再読み込みする表示状態などの他の方法もありますが、これらの方法は、基本的なリソースの評価が [{StaticResource} マークアップ拡張](staticresource-markup-extension.md)によって有効化されるより高いレベルで動作します)。
 
-**ThemeResource** takes one argument, which specifies the key for the requested resource. A resource key is always a string in Windows Runtime XAML. For more info on how the resource key is initially specified, see [x:Key attribute](x-key-attribute.md).
+**ThemeResource** は、要求されたリソースについてキーを指定する 1 個の引数を受け取ります。 リソース キーは常に、Windows ランタイム XAML の文字列です。 リソース キーを最初に指定する方法について詳しくは、「[x:Key 属性](x-key-attribute.md)」をご覧ください。
 
-For more info on how to define resources and properly use a [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794), including sample code, see [ResourceDictionary and XAML resource references](https://msdn.microsoft.com/library/windows/apps/mt187273).
+リソースの定義方法と [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) の適切な使用方法 (サンプル コードを含む) について詳しくは、「[ResourceDictionary と XAML リソースの参照](https://msdn.microsoft.com/library/windows/apps/mt187273)」をご覧ください。
 
-**Important**  
-As with **StaticResource**, a **ThemeResource** must not attempt to make a forward reference to a resource that is defined lexically further within the XAML file. Attempting to do so is not supported. Even if the forward reference doesn't fail, trying to make one carries a performance penalty. For best results, adjust the composition of your resource dictionaries so that forward references are avoided.
+**重要**  
+**StaticResource** と同様、**ThemeResource** は、XAML ファイルの中で辞書的に定義されているリソースへの前方参照を行うことはできません。 そのようなことを試みることはサポートしていません。 前方参照が失敗しなかったとしても、そのようなことを試みるだけでパフォーマンスの低下を招きます。 最善の結果を得るには、前方参照を避けるようにリソース ディクショナリの構成を調整します。
 
-Attempting to specify a **ThemeResource** to a key that cannot resolve throws a XAML parse exception at run time. Design tools may also offer warnings or errors.
+解決できないキーに **ThemeResource** を指定しようとすると、実行時に XAML 解析例外がスローされます。 デザイン ツールでも、警告やエラーが通知されることがあります。
 
-In the Windows Runtime XAML processor implementation, there is no backing class representation for **ThemeResource**. The closest equivalent in code is to use the collection API of a [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794), for example calling [**Contains**](https://msdn.microsoft.com/library/windows/apps/jj635925) or [**TryGetValue**](https://msdn.microsoft.com/library/windows/apps/jj603139).
+Windows ランタイム XAML プロセッサの実装では、**ThemeResource** のバッキング クラス表現はありません。 コードで最も近いのは、[**Contains**](https://msdn.microsoft.com/library/windows/apps/jj635925) または [**TryGetValue**](https://msdn.microsoft.com/library/windows/apps/jj603139) を呼び出すなど、[**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) のコレクション API を使うことです。
 
-**ThemeResource** is a markup extension. Markup extensions are typically implemented when there is a requirement to escape attribute values to be other than literal values or handler names, and the requirement is more global than just putting type converters on certain types or properties. All markup extensions in XAML use the "{" and "}" characters in their attribute syntax, which is the convention by which a XAML processor recognizes that a markup extension must process the attribute.
+**ThemeResource** はマークアップ拡張です。 通常、マークアップ拡張は、属性値をリテラル値やハンドラー名以外にエスケープする必要があり、特定の型やプロパティに対して型コンバーターを指定するのではなく、よりグローバルにその必要がある場合に実装します。 XAML のすべてのマークアップ拡張では、それぞれの属性構文で "{" と "}" の文字を使います。これは規約であり、これに従って XAML プロセッサは、マークアップ拡張で属性を処理する必要があることを認識します。
 
-### When and how to use {ThemeResource} rather than {StaticResource}
+### {StaticResource} ではなく {ThemeResource} を使う状況とその方法
 
-The rules by which a **ThemeResource** resolves to an item in a resource dictionary are generally the same as **StaticResource**. A **ThemeResource** lookup can extend into the [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) files that are referenced in a [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807) collection, but a **StaticResource** can do that also. The difference is that a **ThemeResource** can re-evaluate at run-time and a **StaticResource** can't.
+**ThemeResource** がリソース ディクショナリの項目に解決される規則は、通常、**StaticResource** の場合と同じです。 **ThemeResource** 検索は [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807) のコレクションで参照される [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) ファイルまで拡張できます。これは、**StaticResource** の場合も同じです。 その違いは、**ThemeResource** では実行時に再評価を行うことができるのに対し、**StaticResource** では再評価を行うことができない点にあります。
 
-The set of keys in each theme dictionary should provide the same set of keyed resources no matter which theme is active. If a given keyed resource exists in the **HighContrast** theme dictionary, then another resource with that name should also exist in **Light** and **Default**. If that isn't true, resource lookup might fail when the user switches themes and your app won't look right. It is possible though that a theme dictionary can contain keyed resources that are only referenced from within the same scope to provide sub-values; these don't need to be equivalent in all themes.
+各テーマ ディクショナリのキー セットでは、どのテーマがアクティブであるかに関係なく、キーを持つリソースの同じセットを提供する必要があります。 特定のキーを持つリソースが **HighContrast** テーマ ディクショナリに存在する場合、**Light** と **Default** にも同じ名前を持つ別のリソースが存在する必要があります。 そうでないと、ユーザーがテーマを切り替えたときにリソース検索が失敗し、アプリが適切に表示されなくなります。 テーマ ディクショナリには、サブ値を指定するために同じスコープ内からのみ参照されるキーを持つリソースを含めることができます。ただし、これらはすべてのテーマで等価である必要はありません。
 
-In general you should place resources in theme dictionaries and make references to those resources using **ThemeResource** only when those values can change between themes or are supported by values that change. This is appropriate for these kinds of resources:
+通常は、リソースをテーマ ディクショナリに格納し、これらの値がテーマごとに変化するときや、変化する値によってサポートされているときにのみ、**ThemeResource** を使ってこれらのリソースを参照します。 これは、次の種類のリソースに適しています。
 
--   Brushes, in particular colors for [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962). These make up about 80% of the **ThemeResource** usages in the default XAML control templates (generic.xaml).
--   Pixel values for borders, offsets, margin and padding and so on.
--   Font properties such as **FontFamily** or **FontSize**.
--   Complete templates for a limited number of controls that are usually system-styled and used for dynamic presentation, like [**GridViewItem**](https://msdn.microsoft.com/library/windows/apps/hh738501) and [**ListViewItem**](https://msdn.microsoft.com/library/windows/apps/br242919).
--   Text display styles (usually to change font color, background, and possibly size).
+-   ブラシ。特に [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) の色。 この使い方は、既定の XAML コントロール テンプレート (generic.xaml) において **ThemeResource** の約 80% を占めています。
+-   境界線、オフセット、余白、パディングなどのピクセル値。
+-   **FontFamily**、**FontSize** などのフォント プロパティ。
+-   通常システムによってスタイルが設定され、動的な表示に使われる、限られた数のコントロールの完全なテンプレート ([**GridViewItem**](https://msdn.microsoft.com/library/windows/apps/hh738501)、[**ListViewItem**](https://msdn.microsoft.com/library/windows/apps/br242919) など)。
+-   テキスト表示スタイル (通常はフォントの色、背景、サイズを変更する目的で使われます)。
 
-The Windows Runtime provides a set of resources that are specifically intended to be referenced by **ThemeResource**. These are all listed as part of the XAML file themeresources.xaml, which is available in the include/winrt/xaml/design folder as part of the Windows Software Development Kit (SDK). For documentation on the theme brushes and additional styles that are defined in themeresources.xaml, see [XAML theme resources](https://msdn.microsoft.com/library/windows/apps/mt187274). The brushes are documented in a table that tells you what color value each brush has for each of the three possible active themes.
+Windows ランタイムには、特に **ThemeResource** から参照するためのリソースのセットが用意されています。 これらはすべて、Windows ソフトウェア開発キット (Windows SDK) の include/winrt/xaml/design フォルダーにある XAML ファイル themeresources.xaml に記載されています。 themeresources.xaml に定義されているテーマ ブラシと追加のスタイルについて詳しくは、「[XAML テーマ リソース リファレンス](https://msdn.microsoft.com/library/windows/apps/mt187274)」をご覧ください。 ブラシについては、アクティブになる可能性のある 3 種類のテーマごとに、各ブラシの色の値を表形式で示しています。
 
-The XAML definitions of visual states in a control template should use **ThemeResource** references whenever there's an underlying resource that might change because of a theme change. A system theme change won't typically also cause a visual state change. The resources need to use **ThemeResource** references in this case so that values can be re-evaluated for the still-active visual state. For example, if you have a visual state that changes a brush color of a particular UI part and one of its properties, and that brush color is different per-theme, you should use a **ThemeResource** reference for providing that property's value in the default template and also any visual state modification to that default template.
+コントロール テンプレートの表示状態の XAML 定義では、テーマの変更によって変更される可能性がある基になるリソースがある場合は常に **ThemeResource** 参照を使う必要があります。 通常、システム テーマが変更されても、表示状態の変更は発生しません。 この場合、リソースでは、**ThemeResource** 参照を使って、依然アクティブな表示状態に対して値を再評価できるようにする必要があります。 たとえば、特定の UI 部分のブラシの色とそのプロパティの 1 つを変更する表示状態があり、そのブラシの色がテーマごとに異なる場合は、**ThemeResource** 参照を使って、既定のテンプレートのこのプロパティ値と、その既定のテンプレートに対する表示状態の変更を提供する必要があります。
 
-**ThemeResource** usages might be seen in a series of dependent values. For example, a [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) value used by a [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) that is also a keyed resource might use a **ThemeResource** reference. But any UI properties that use the keyed **SolidColorBrush** resource would also use a **ThemeResource** reference, so that it's specifically each [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076)-type property that's enabling a dynamic value change when the theme changes.
+**ThemeResource** は、一連の依存型の値で使われる場合があります。 たとえば、キーを持つリソースである [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) で使われる [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) で **ThemeResource** 参照を使うことがあります。 ただし、キーを持つ **SolidColorBrush** リソースを使う任意の UI プロパティで **ThemeResource** 参照を使うこともあります。この場合、テーマが変更されたときに動的な値の変更を可能にするのはそれぞれの [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) タイプのプロパティです。
 
-**Note**  `{ThemeResource}` and run-time resource evaluation on theme switching is supported in Windows 8.1 XAML but not supported in XAML for apps targeting Windows 8.
+**注**  `{ThemeResource}` とテーマの切り替え時の実行時のリソース評価は Windows 8.1 XAML でサポートされますが、Windows 8 をターゲットとするアプリの XAML ではサポートされません。
 
-### System resources
+### システム リソース
 
-Some theme resources reference system resource values as an underlying sub-value. A system resource is a special resource value that isn't found in any XAML resource dictionary. These values rely on behavior in Windows Runtime XAML support to forward values from the system itself, and represent them in a form that a XAML resource can reference. For example, there is a system resource named "SystemColorButtonFaceColor" that represents an RGB color. This color comes from the aspects of system colors and themes that aren't just specific to Windows Runtime and Windows Runtime apps.
+一部のテーマ リソースは、システム リソース値を基になるサブ値として参照します。 システム リソースは、どの XAML リソース ディクショナリにも含まれていない特殊なリソース値です。 これらの値は、Windows ランタイム XAML サポートの動作に依存してシステム自体から値を転送し、XAML リソースが参照できる形式でその値を表します。 たとえば、"SystemColorButtonFaceColor" という名前の、RGB 色を表すシステム リソースがあります。 この色は、Windows ランタイムと Windows ランタイム アプリだけに限定されないシステム カラーとテーマの観点に基づきます。
 
-System resources are often the underlying values for a high-contrast theme. The user is in control of the color choices for their high-contrast theme, and the user makes these choices using system features that also aren't specific to Windows Runtime apps. By referencing the system resources as **ThemeResource** references, the default behavior of the high-contrast themes for Windows Runtime apps can use these theme-specific values that are controlled by the user and exposed by the system. Also, the references are now marked for re-evaluation if the system detects a run-time theme change.
+通常、システム リソースは、ハイ コントラスト テーマの基になる値です。 ユーザーはハイ コントラスト テーマの色の選択を管理します。ユーザーは、同様に Windows ランタイム アプリに固有ではないシステム機能を使って、これらの選択を行います。 システム リソースを **ThemeResource** 参照として参照すると、Windows ランタイム アプリのハイ コントラスト テーマの既定の動作で、ユーザーによって制御されシステムによって公開される、テーマに固有のこれらの値を使うことができます。 また、これらの参照は、システムによって実行時のテーマの変更が検出された場合に再評価のマークが付けられます。
 
-### An example {ThemeResource} usage
+### {ThemeResource} の使用例
 
-Here's some example XAML taken from the default generic.xaml and themeresources.xaml files to illustrate how to use **ThemeResource**. We'll look at just one template (the default [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)) and how two properties are declared ([**Background**](https://msdn.microsoft.com/library/windows/apps/br209395) and [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414)) to be responsive to theme changes.
+**ThemeResource** の使い方の例として、既定の generic.xaml ファイルと themeresources.xaml ファイルから抜粋した XAML の例を示します。 ここでは、1 つのテンプレート (既定の [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)) と、テーマの変更に対応するための 2 つのプロパティ ([**Background**](https://msdn.microsoft.com/library/windows/apps/br209395) と [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414)) の宣言方法について注目します。
 
 ```xaml
     <!-- Default style for Windows.UI.Xaml.Controls.Button -->
@@ -81,9 +81,9 @@ Here's some example XAML taken from the default generic.xaml and themeresources.
 ...
 ```
 
-Here, the properties take a [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) value, and the reference to [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) resources named `ButtonBackgroundThemeBrush` and `ButtonForegroundThemeBrush` are made using **ThemeResource**.
+ここで、これらのプロパティは [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) 値を受け取ります。[**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) リソース (`ButtonBackgroundThemeBrush` と `ButtonForegroundThemeBrush`) の参照には、**ThemeResource** が使われています。
 
-These same properties are also adjusted by some of the visual states for a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265). Notably, the background color changes when a button is clicked. Here too, the [**Background**](https://msdn.microsoft.com/library/windows/apps/br209395) and [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414) animations in the visual state storyboard use [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/br243132) objects and references to brushes with **ThemeResource** as the key frame value.
+これらの同じプロパティは、[**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) の表示状態のいくつかによっても調整されます。 特に、背景色は、ボタンをクリックしたときに変更されます。 同様に、表示状態のストーリーボードの [**Background**](https://msdn.microsoft.com/library/windows/apps/br209395) と [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414) のアニメーションでは、[**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/br243132) オブジェクトと共に、キー フレーム値として **ThemeResource** を含むブラシへの参照を使っています。
 
 ```xaml
 <VisualState x:Name="Pressed">
@@ -100,7 +100,7 @@ These same properties are also adjusted by some of the visual states for a [**Bu
 </VisualState>
 ```
 
-Each of these brushes is defined earlier in generic.xaml: they had to be defined prior to any templates using them to avoid XAML forward references. Here's those definitions, for the "Default" theme dictionary.
+これらのブラシはそれぞれ generic.xaml で事前に定義されています。XAML の前方参照を避けるためには、これらのブラシは、これを使う任意のテンプレートに先だって定義されている必要があります。 "Default" テーマ ディクショナリのための定義を次に示します。
 
 ```xaml
     <ResourceDictionary.ThemeDictionaries>
@@ -114,7 +114,7 @@ Each of these brushes is defined earlier in generic.xaml: they had to be defined
 ...
 ```
 
-Then each of the other theme dictionaries also has these brushes defined, for example:
+他の各テーマ ディクショナリにも、次に示すようにこれらのブラシが定義されています。
 
 ```xaml
         <ResourceDictionary x:Key="HighContrast">
@@ -128,24 +128,24 @@ Then each of the other theme dictionaries also has these brushes defined, for ex
             <SolidColorBrush x:Key="ButtonPressedForegroundThemeBrush" Color="{ThemeResource SystemColorButtonFaceColor}" />
 ```
 
-Here the [**Color**](https://msdn.microsoft.com/library/windows/apps/br242963) value is another **ThemeResource** reference to a system resource. If you reference a system resource, and you want it to change in response to a theme change, you should use **ThemeResource** to make the reference.
+この [**Color**](https://msdn.microsoft.com/library/windows/apps/br242963) 値は、システム リソースに対するもう 1 つの **ThemeResource** 参照です。 システム リソースを参照し、テーマの変更に応じてシステム リソースを変更する場合は、**ThemeResource** を使って参照を行う必要があります。
 
-## Windows 8 behavior
+## Windows 8 の動作
 
-Windows 8 did not support the **ThemeResource** markup extension, it is available starting with Windows 8.1. Also, Windows 8 did not support dynamically switching the theme-related resources for a Windows Runtime app. The app had to be restarted in order to pick up the theme change for the XAML templates and styles. This isn't a good user experience, so apps are strongly encouraged to recompile and target Windows 8.1 so that they can use styles with **ThemeResource** usages and can dynamically switch themes when the user does. Apps that were compiled for Windows 8 but running on Windows 8.1 continue to use the Windows 8 behavior.
+Windows 8 では **ThemeResource** マークアップ拡張はサポートされていませんでしたが、Windows 8.1 以降で利用できるようになりました。 また、Windows 8 は、Windows ランタイム アプリのテーマ関連リソースの動的切り替えをサポートしていません。 XAML テンプレートとスタイルのテーマ変更を認識するには、アプリを再起動する必要がありました。 これは褒められたユーザー エクスペリエンスではありません。そのため、アプリを再コンパイルして Windows 8.1 をターゲットにすることを強くお勧めします。そうすれば、**ThemeResource** を利用したスタイルを使うことができ、ユーザーがテーマを切り替えたときに動的にテーマを切り替えることができます。 Windows 8 用にコンパイルしたアプリは、Windows 8.1 上で実行しても Windows 8 のときと同じ動作になります。
 
-## Design-time tools support for the **{ThemeResource}** markup extension
+## 設計時ツールの **{ThemeResource}** マークアップ拡張のサポート
 
-Microsoft Visual Studio 2013 can include possible key values in the Microsoft IntelliSense dropdowns when you use the **{ThemeResource}** markup extension in a XAML page. For example, as soon as you type "{ThemeResource", any of the resource keys from the [XAML theme resources](https://msdn.microsoft.com/library/windows/apps/mt187274) are displayed.
+Microsoft Visual Studio 2013 では、XAML ページで **{ThemeResource}** マークアップ拡張を使うときに Microsoft IntelliSense のドロップダウンに可能なキー値を含めることができます。 たとえば、「{ThemeResource」と入力するとすぐに、[XAML テーマ リソース](https://msdn.microsoft.com/library/windows/apps/mt187274)のリソース キーが表示されます。
 
-Once a resource key exists as part of any **{ThemeResource}** usage, the **Go To Definition** (F12) feature can resolve that resource and show you the generic.xaml for design time, where the theme resource is defined. Because theme resources are defined more than once (per-theme) **Go To Definition** takes you to the first definition found in the file, which is the definition for **Default**. If you want the other definitions you can search for the key name within the file and find the other themes' definitions.
+**{ThemeResource}** の一部としてリソース キーが存在すると、**[定義へ移動]** (F12 キー) 機能でそのリソースを解決して、テーマ リソースが定義されている設計時の generic.xaml を表示できます。 テーマ リソースを何度も定義されるため (テーマごとに)、**[定義へ移動]** ではファイルで見つかった最初の定義に移動します。これは **Default** の定義です。 他の定義が必要な場合は、ファイル内のキー名を検索して、他のテーマの定義を参照できます。
 
-## Related topics
+## 関連トピック
 
-* [ResourceDictionary and XAML resource references](https://msdn.microsoft.com/library/windows/apps/mt187273)
-* [XAML theme resources](https://msdn.microsoft.com/library/windows/apps/mt187274)
+* [ResourceDictionary と XAML リソースの参照](https://msdn.microsoft.com/library/windows/apps/mt187273)
+* [XAML テーマ リソース](https://msdn.microsoft.com/library/windows/apps/mt187274)
 * [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794)
-* [x:Key attribute](x-key-attribute.md)
+* [x:Key 属性](x-key-attribute.md)
  
 
 

@@ -1,31 +1,31 @@
 ---
-title: Monitor background task progress and completion
-description: Learn how your app can recognize progress and completion reported by a background task.
+title: バックグラウンド タスクの進捗状況と完了の監視
+description: バックグラウンド タスクから報告される進行状況と完了をアプリから認識する方法について説明します。
 ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
 ---
 
-# Monitor background task progress and completion
+# バックグラウンド タスクの進捗状況と完了の監視
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-**Important APIs**
+**重要な API**
 
 -   [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786)
 -   [**BackgroundTaskProgressEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224785)
 -   [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781)
 
-Learn how your app can recognize progress and completion reported by a background task. Background tasks are decoupled from the app, and they run separately, but background task progress and completion can be monitored by app code. To make this happen, the app subscribes to events from the background task(s) it has registered with the system.
+バックグラウンド タスクから報告される進行状況と完了をアプリから認識する方法について説明します。 バックグラウンド タスクは、アプリから切り離され、個別に実行されますが、バックグラウンド タスクの進行と完了の状況をアプリ コードによって監視することができます。 これを行うために、アプリでは、システムに登録されたバックグラウンド タスクのイベントを受信登録します。
 
--   This topic assumes that you have an app that registers background tasks. To get started quickly building a background task, see [Create and register a background task](create-and-register-a-background-task.md). For more in-depth information on conditions and triggers, see [Support your app with background tasks](support-your-app-with-background-tasks.md).
+-   このトピックでは、アプリで既にバックグラウンド タスクが登録されていることを前提とします。 バックグラウンド タスクを直ちに構築する場合は、「[バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)」をご覧ください。 条件とトリガーについて詳しくは、「[バックグラウンド タスクによるアプリのサポート](support-your-app-with-background-tasks.md)」をご覧ください。
 
-## Create an event handler to handle completed background tasks
+## 完了したバックグラウンド タスクを処理するイベント ハンドラーの作成
 
 
-1.  Create an event handler function to handle completed background tasks. This code needs to follow a specific footprint, which takes in an [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803) object and a [**BackgroundTaskCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224778) object.
+1.  完了したバックグラウンド タスクを処理するイベント ハンドラー関数を作ります。 このコードは、[**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803) オブジェクトと [**BackgroundTaskCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224778) オブジェクトを受け入れる特定のフットプリントに従っている必要があります。
 
-    Use the following footprint for the OnCompleted background task event handler method:
+    OnCompleted バックグラウンド タスク イベント ハンドラー メソッドには次のフットプリントを使います。
 
 >  [!div class="tabbedCodeSnippets"]
 >  ```cs
@@ -41,9 +41,9 @@ Learn how your app can recognize progress and completion reported by a backgroun
 >  };
 >  ```
     
-2.  Add code to the event handler that deals with the background task completion.
+2.  バックグラウンド タスクの完了を処理するイベント ハンドラーにコードを追加します。
 
-    For example, the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666) updates the UI.
+    たとえば、[バックグラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)は UI を更新します。
 
     > [!div class="tabbedCodeSnippets"]
     >     ```cs
@@ -59,12 +59,12 @@ Learn how your app can recognize progress and completion reported by a backgroun
     >     };
     >     ```
 
-## Create an event handler function to handle background task progress
+## バックグラウンド タスクの進行状況を処理するイベント ハンドラー関数を作成する
 
 
-1.  Create an event handler function to handle completed background tasks. This code needs to follow a specific footprint, which takes in an [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803) object and a [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782) object:
+1.  完了したバックグラウンド タスクを処理するイベント ハンドラー関数を作ります。 このコードは、[**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803) オブジェクトと [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782) オブジェクトを受け入れる特定のフットプリントに従っている必要があります。
 
-    Use the following footprint for the OnProgress background task event handler method:
+    OnProgress バックグラウンド タスク イベント ハンドラー メソッドには次のフットプリントを使います。
 
     > [!div class="tabbedCodeSnippets"]
     >     ```cs
@@ -80,9 +80,9 @@ Learn how your app can recognize progress and completion reported by a backgroun
     >     };
     >     ```
 
-2.  Add code to the event handler that deals with the background task completion.
+2.  バックグラウンド タスクの完了を処理するイベント ハンドラーにコードを追加します。
 
-    For example, the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666) updates the UI with the progress status passed in via the *args* parameter:
+    たとえば、[バックグラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)では、*args* パラメーターで渡された進行状態により、UI が更新されます。
 
     > [!div class="tabbedCodeSnippets"]
     >     ```cs
@@ -104,12 +104,12 @@ Learn how your app can recognize progress and completion reported by a backgroun
     >     };
     >     ```
 
-## Register the event handler functions with new and existing background tasks.
+## 新規および既存のバックグラウンド タスクと共にイベント ハンドラー関数を登録する
 
 
-1.  When the app registers a background task for the first time, it should register to receive progress and completion updates for it, in case the task runs while the app is still active in the foreground.
+1.  アプリで初めてバックグラウンド タスクを登録するときは、フォアグラウンドでまだアプリがアクティブになっていてタスクか実行されている場合に、進行状況と完了の更新を受け取ることができるように登録する必要があります。
 
-    For example, the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666) calls the following function on each background task that it registers:
+    たとえば、[バックグラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)では、登録するバックグラウンド タスクごとに次の関数を呼び出します。
 
     > [!div class="tabbedCodeSnippets"]
     >     ```cs
@@ -141,9 +141,9 @@ Learn how your app can recognize progress and completion reported by a backgroun
     >     }
     >     ```
 
-2.  When the app launches, or navigates to a new page where background task status is relevant, it should get a list of background tasks currently registered and associate them with the progress and completion event handler functions. The list of background tasks currently registered by the application is kept in the [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786).[**AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) property.
+2.  アプリが起動された時点、またはバックグラウンド タスクの状態が関連する新しいページに移動した時点で、現在登録されているバックグラウンド タスクの一覧を取得し、進行状況と完了に対応するイベント ハンドラー関数に関連付ける必要があります。 アプリケーションで現在登録されているバックグラウンド タスクの一覧は、[**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786).[**AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) プロパティで保持されます。
 
-    For example, the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666) uses the following code to attach event handlers when the SampleBackgroundTask page is navigated to:
+    たとえば、[バックグラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)では、次のコードを使って SampleBackgroundTask ページの移動時にイベント ハンドラーをアタッチします。
 
     > [!div class="tabbedCodeSnippets"]
     >     ```cs
@@ -190,26 +190,26 @@ Learn how your app can recognize progress and completion reported by a backgroun
     >     }
     >     ```
 
-## Related topics
+## 関連トピック
 
 
 ****
 
-* [Create and register a background task](create-and-register-a-background-task.md)
-* [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md)
-* [Handle a cancelled background task](handle-a-cancelled-background-task.md)
-* [Register a background task](register-a-background-task.md)
-* [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md)
-* [Set conditions for running a background task](set-conditions-for-running-a-background-task.md)
-* [Update a live tile from a background task](update-a-live-tile-from-a-background-task.md)
-* [Use a maintenance trigger](use-a-maintenance-trigger.md)
-* [Run a background task on a timer](run-a-background-task-on-a-timer-.md)
-* [Guidelines for background tasks](guidelines-for-background-tasks.md)
+* [バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)
+* [アプリケーション マニフェストでのバックグラウンド タスクの宣言](declare-background-tasks-in-the-application-manifest.md)
+* [取り消されたバックグラウンド タスクの処理](handle-a-cancelled-background-task.md)
+* [バックグラウンド タスクの登録](register-a-background-task.md)
+* [バックグラウンド タスクによるシステム イベントへの応答](respond-to-system-events-with-background-tasks.md)
+* [バックグラウンド タスクを実行するための条件の設定](set-conditions-for-running-a-background-task.md)
+* [バックグラウンド タスクのライブ タイルの更新](update-a-live-tile-from-a-background-task.md)
+* [メンテナンス トリガーの使用](use-a-maintenance-trigger.md)
+* [タイマーでのバックグラウンド タスクの実行](run-a-background-task-on-a-timer-.md)
+* [バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)
 
 ****
 
-* [Debug a background task](debug-a-background-task.md)
-* [How to trigger suspend, resume, and background events in Windows Store apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [バックグラウンド タスクのデバッグ](debug-a-background-task.md)
+* [Windows ストア アプリで一時停止イベント、再開イベント、バックグラウンド イベントをトリガーする方法 (デバッグ時)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
  
 

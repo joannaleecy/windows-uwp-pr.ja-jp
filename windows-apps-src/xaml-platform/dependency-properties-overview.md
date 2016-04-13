@@ -1,54 +1,56 @@
 ---
-description: This topic explains the dependency property system that is available when you write a Windows Runtime app using C++, C#, or Visual Basic along with XAML definitions for UI.
-title: Dependency properties overview
+description: このトピックでは、C++、C#、または Visual Basic と UI の XAML 定義を使って Windows ランタイム アプリを作成するときに使うことができる依存関係プロパティについて説明します。
+title: 依存関係プロパティの概要
 ms.assetid: AD649E66-F71C-4DAA-9994-617C886FDA7E
 ---
 
-# Dependency properties overview
+# 依存関係プロパティの概要
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-This topic explains the dependency property system that is available when you write a Windows Runtime app using C++, C#, or Visual Basic along with XAML definitions for UI.
+このトピックでは、C++、C#、または Visual Basic と UI の XAML 定義を使って Windows ランタイム アプリを作成するときに使うことができる依存関係プロパティについて説明します。
 
-## What is a dependency property?
+## 依存関係プロパティとは
 
-A dependency property is a specialized type of property. Specifically it's a property where the property's value is tracked and influenced by a dedicated property system that is part of the Windows Runtime.
+依存関係プロパティとは、特殊な種類のプロパティです。 具体的には、Windows ランタイムの一部である専用のプロパティ システムによってプロパティの値が追跡され影響を受けるプロパティです。
 
-In order to support a dependency property, the object that defines the property must be a [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) (in other words a class that has the **DependencyObject** base class somewhere in its inheritance). Many of the types you use for your UI definitions for a Windows Store app with XAML will be a **DependencyObject** subclass, and will support dependency properties. However, any type that comes from a Windows Runtime namespace that doesn't have "XAML" in its name won't support dependency properties; properties of such types are ordinary properties that won't have the property system's dependency behavior.
+依存関係プロパティをサポートするには、そのプロパティを定義するオブジェクトが [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) (継承関係のどこかに **DependencyObject** 基底クラスを持つクラス) である必要があります。 XAML を使った Windows ストア アプリで UI 定義のために使う型の多くが **DependencyObject** のサブクラスで、依存関係プロパティをサポートしています。 ただし、名前に "XAML" がない Windows ランタイム名前空間に由来する型は、依存関係プロパティをサポートしていません。このような型のプロパティは、プロパティ システムによる依存関係の動作をしない通常のプロパティです。
 
-The purpose of dependency properties is to provide a systemic way to compute the value of a property based on other inputs (other properties, events and states that occur within your app while it runs). These other inputs might include:
+依存関係プロパティの目的は、他の入力 (その他のプロパティや、アプリの実行時にアプリ内で発生するイベントと状態) に基づいてプロパティの値を計算する方法を提供することです。 たとえば、他の入力には次のようなものがあります。
 
--   External input such as user preference
--   Just-in-time property determination mechanisms such as data binding, animations and storyboards
--   Multiple-use templating patterns such as resources and styles
--   Values known through parent-child relationships with other elements in the object tree
+-   ユーザー設定などの外部入力
+-   データ バインディング、アニメーション、ストーリーボードなどのジャスト イン タイム プロパティ判定機構
+-   リソースやスタイルなどの多目的テンプレート パターン
+-   オブジェクト ツリー内の他の要素との親子のリレーションシップから判断される値
 
-A dependency property represents or supports a specific feature of the programming model for defining a Windows Runtime app with XAML for UI and C#, Microsoft Visual Basic or Visual C++ component extensions (C++/CX) for code. These features include:
+依存関係プロパティは、UI に XAML、コードに C#、Microsoft Visual Basic、または Visual C++ コンポーネント拡張機能 (C++/CX) を使って Windows ランタイム アプリを定義するためのプログラミング モデルの特定の機能を表現またはサポートしています。 次のような機能があります。
 
--   Data binding
--   Styles
--   Storyboarded animations
--   "PropertyChanged" behavior; a dependency property can be implemented to provide callbacks that can propagate changes to other dependency properties
--   Using a default value that comes from property metadata
--   General property system utility such as [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357) and metadata lookup
+-   データ バインディング
+-   スタイル
+-   ストーリーボードに設定されたアニメーション
+-   "PropertyChanged" の動作 (依存関係プロパティを実装して、他の依存関係プロパティに対する変更を反映できるコールバックを提供する)
+-   プロパティ メタデータに由来する既定値の使用
+-   一般的なプロパティ システム ユーティリティ ([**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357)、メタデータ参照など)
 
-## Dependency properties and Windows Runtime properties
+## 依存関係プロパティと Windows ランタイム プロパティ
 
-Dependency properties extend basic Windows Runtime property functionality by providing a global, internal property store that backs all of the dependency properties in an app at run time. This is an alternative to the standard pattern of backing a property with a private field that's private in the property-definition class. You can think of this internal property store as being a set of property identifiers and values that exist for any particular object (so long as it's a [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)). Rather than being identified by name, each property in the store is identified by a [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) instance. However, the property system mostly hides this implementation detail: you can usually access dependency properties by using a simple name (the programmatic property name in the code language you're using, or an attribute name when you're writing XAML).
+依存関係プロパティは、実行時にアプリのすべての依存関係プロパティをサポートするグローバルな内部プロパティ ストアを提供することによって、Windows ランタイム プロパティの基本機能を拡張します。 これは、プロパティ定義クラスでプライベート フィールドのあるプロパティをサポートする標準的なパターンの代わりとなるものです。 この内部プロパティ ストアは、特定のオブジェクトのために存在する一連のプロパティ識別子とプロパティ値であると考えてかまいません (それが [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) である限り)。 ストア内の各プロパティは、名前ではなく、[**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) インスタンスで識別されます。 ただし、プロパティ システムによってこの実装の詳細はほとんどが隠されます。通常は、依存関係プロパティに単純な名前 (使っているコード言語のプログラム可能なプロパティ名、または、XAML を作成しているときは属性名) を使ってアクセスできます。
 
-The base type that provides the underpinnings of the dependency property system is [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356). **DependencyObject** defines methods that can access the dependency property, and instances of a **DependencyObject** derived class internally support the property store concept we mentioned earlier.
+依存関係プロパティ システムの土台となる基本型は [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) です。 **DependencyObject** では、依存関係プロパティにアクセスできるメソッドを定義します。先に述べたプロパティ ストアという概念を内部的にサポートするのは **DependencyObject** 派生クラスのインスタンスです。
 
-Here is a summation of the terminology that we use in the documentation when discussing dependency properties:
+依存関係プロパティについて説明するときにこのドキュメントで使用する用語の概要を次に示します。
 
-| Term | Description |
+| 用語 | 説明 |
 |------|-------------|
-| Dependency property | A property that exists on a [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) identifier (see below). Usually this identifier is available as a static member of the defining **DependencyObject** derived class. |
-| Dependency property identifier | A [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361), that's why it is typically public even though it is read-only. |
-| Property wrapper | The callable **get** and **set** implementations for a Windows Runtime property. Or, the language-specific projection of the original definition. A **get** property wrapper implementation calls [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361), passing the relevant dependency property identifier as one input and the value to set as the second input. | 
+| 依存関係プロパティ | [
+            **DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 識別子上に存在するプロパティ (下記参照)。 この識別子は通常、定義する **DependencyObject** 派生クラスの静的メンバーとして使用できます。 |
+| 依存関係プロパティ識別子 | [
+            **SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361)。このため、読み取り専用でありながら、通常はパブリックになっています。 |
+| プロパティ ラッパー | Windows ランタイム プロパティの呼び出し可能な **get** 実装と **set** 実装。 または、元の定義の言語固有のプロジェクション。 **get** プロパティ ラッパーの実装は、[**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) を呼び出して、該当する依存関係プロパティの識別子を 1 つ目の入力として渡し、設定する値を 2 つ目の入力として渡します。 | 
 
-The property wrapper is not just convenience for callers, it also exposes the dependency property to any process, tool or projection that uses Windows Runtime definitions for properties.
+プロパティ ラッパーは呼び出し元に対して便利なだけではありません。プロパティの Windows ランタイム定義を使用するプロセス、ツール、プロジェクションに対する依存関係プロパティの公開も行います。
 
-The following example defines a custom "IsSpinning" dependency property as defined for C#, and shows the relationship of the dependency property identifier to the property wrapper.
+次の例では、C# のカスタム "IsSpinning" 依存関係プロパティを定義し、依存関係プロパティの識別子とプロパティ ラッパーの関係を示します。
 
 ```csharp
 // IsSpinningProperty is the dependency property identifier
@@ -66,71 +68,72 @@ public bool IsSpinning
 }
 ```
 
-**Note**  The preceding example is not intended as the complete example for how to create a custom dependency property. It is intended to show dependency property concepts for anyone that prefers learning concepts through code. For a more complete example, see [Custom dependency properties](custom-dependency-properties.md).
+**注**  前の例の目的は、カスタム依存関係プロパティを作成する方法の完全な例を示すことではありません。 コードを使って概念を学習する方法によって、依存関係プロパティの概念を示すことです。 もっと完全な例については、「[カスタム依存関係プロパティ](custom-dependency-properties.md)」をご覧ください。
 
-## Dependency property value precedence
+## 依存関係プロパティ値の優先順位
 
-When you get the value of a dependency property, you are obtaining a value that was determined for that property through any one of the inputs that participate in the Windows Runtime property system. Dependency property value precedence exists so that the Windows Runtime property system can calculate values in a predictable way, and it's important that you be familiar with the basic precedence order too. Otherwise, you might find yourself in a situation where you're trying to set a property at one level of precedence but something else (the system, third-party callers, some of your own code) is setting it at another level, and you'll get frustrated trying to figure out which property value is used and where that value came from.
+依存関係プロパティの値を取得する場合、Windows ランタイムのプロパティ システムに関係する入力のいずれかを介して、そのプロパティで決定された値を取得することになります。 依存関係プロパティの値には優先順位が存在するため、Windows ランタイムのプロパティ システムは予測可能な方法で値を計算できます。基本的な優先順位の順序に関する知識は、ユーザーにとっても重要です。 知識がない場合、あるレベルの優先順位でプロパティを設定しようとしたのに、何か別のもの (システム、サードパーティの呼び出し元、自分のコード) がそれを別のレベルで設定したために、どのプロパティ値が使われ、その値がどこからきているかがわからなくていらいらするという状況になることもありえます。
 
-For example, styles and templates are intended to be a shared starting point for establishing property values and thus appearances of a control. But on a particular control instance you might want to change its value versus the common templated value, such as giving that control a different background color or a different text string as content. The Windows Runtime property system considers local values at higher precedence than values provided by styles and templates. That enables the scenario of having app-specific values overwrite the templates so that the controls are useful for your own use of them in app UI.
+たとえば、スタイルとテンプレートは、プロパティ値 (コントロールの外観) を設定するための共有の開始点として設計されています。 ただし、特定のコントロール インスタンスでは、そのコントロールの背景色を変えたり、コンテンツとして異なるテキスト文字列を使用したりするなど、その値を共通のテンプレート値から変更する場合があります。 Windows ランタイムのプロパティ システムでは、スタイルおよびテンプレートで指定される値より高い優先順位をローカル値で使います。 こうすることで、アプリ固有の値でテンプレートを上書きして、アプリの UI でコントロールを独自の使い方で便利に利用することができます。
 
-### Dependency property precedence list
+### 依存関係プロパティの優先順位リスト
 
-The following is the definitive order that the property system uses when assigning the run-time value for a dependency property. Highest precedence is listed first. You'll find more detailed explanations just past this list.
+依存関係プロパティのランタイム値を割り当てる際に、最終的にプロパティ システムで使用される順序を次に示します。 優先順位の高いものから順に示します。 このリストの直後に、詳しい説明があります。
 
-1.  **Animated values:** Active animations, visual state animations, or animations with a [**HoldEnd**](https://msdn.microsoft.com/library/windows/apps/br210306) behavior. To have any practical effect, an animation applied to a property must have precedence over the base (unanimated) value, even if that value was set locally.
-2.  **Local value:** A local value might be set through the convenience of the property wrapper, which also equates to setting as an attribute or property element in XAML, or by a call to the [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) method using a property of a specific instance. If you set a local value by using a binding or a static resource, these each act in the precedence as if a local value was set, and bindings or resource references are erased if a new local value is set.
-3.  **Templated properties:** An element has these if it was created as part of a template (from a [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) or [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348)).
-4.  **Style setters:** Values from a [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) within styles from page or application resources.
-5.  **Default value:** A dependency property can have a default value as part of its metadata.
+1.  **アニメーション化された値:** アクティブなアニメーション、表示状態のアニメーション、または [**HoldEnd**](https://msdn.microsoft.com/library/windows/apps/br210306) 動作を使ったアニメーションです。 実際的な効果を持たせるためには、プロパティに適用されるアニメーションは、値がローカルに設定されている場合でも、その基本値 (アニメーション化されていない値) よりも優先される必要があります。
+2.  **ローカル値:** ローカル値の場合は、プロパティ ラッパーを利用した簡便な設定方法が利用できます (XAML 内で属性またはプロパティ要素として設定することに相当)。また、特定のインスタンスのプロパティを使用して [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) メソッドを呼び出すことによって設定することもできます。 バインドまたは静的リソースを使用してローカル値を設定すると、優先順位に関してはローカル値を設定した場合と同じように扱われます。新しいローカル値が設定されると、バインドやリソース参照は削除されます。
+3.  **テンプレートが適用されたプロパティ:** [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) または [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) からテンプレートの一部として作成された要素は、このプロパティを持ちます。
+4.  **スタイル setter:** ページ リソースまたはアプリケーション リソースから得たスタイル内にある [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) から得た値。
+5.  **既定値:** 依存関係プロパティには、プロパティ メタデータの一部として既定値を定義できます。
 
-### Templated properties
+### テンプレートが適用されたプロパティ
 
-Templated properties as a precedence item do not apply to any property of an element that you declare directly in XAML page markup. The templated property concept exists only for objects that are created when the Windows Runtime applies a XAML template to a UI element and thus defines its visuals.
+優先順位項目としてのテンプレートが適用されたプロパティは、XAML ページ マークアップで直接宣言した要素のプロパティには適用されません。 テンプレートが適用されたプロパティという概念は、Windows ランタイムが UI 要素に XAML テンプレートを適用して視覚効果を定義するときに作成されるオブジェクトのためだけに存在します。
 
-All the properties that are set from a control template have values of some kind. These values are almost like an extended set of default values for the control and are often associated with values you can reset later by setting the property values directly. Thus the template-set values must be distinguishable from a true local value, so that any new local value can overwrite it.
+コントロール テンプレートから設定されているすべてのプロパティになんらかの値があります。 これらの値は、ほぼコントロールの既定値を拡張したものであり、多くの場合、プロパティ値を直接設定することで、後でリセットできる値に関連付けられています。 そのため、テンプレートで設定された値は、新しいローカル値で上書きできるように、本当のローカル値とは区別できる必要があります。
 
-**Note**  
-In some cases the template might override even local values, if the template failed to expose [{TemplateBinding} markup extension](templatebinding-markup-extension.md) references for properties that should have been settable on instances. This is usually done only if the property is really not intended to be set on instances, for example if it's only relevant to visuals and template behavior and not to the intended function or runtime logic of the control that uses the template.
+**注:**  
+場合によっては、テンプレートがローカル値より優先されることもあります。それは、インスタンスに対して設定可能なプロパティの [{TemplateBinding} マークアップ拡張](templatebinding-markup-extension.md) 参照をテンプレートが公開しなかった場合です。 これは、通常、プロパティが実際にインスタンスで設定されないことを意図している場合にのみ行われます。たとえば、プロパティが視覚効果とテンプレートの動作だけに関係し、テンプレートを使うコントロールの目的の機能または実行時ロジックとは関係していない場合などです。
 
-###  Bindings and precedence
+###  バインドと優先順位
 
-Binding operations have the appropriate precedence for whatever scope they're used for. For example, a binding applied to a local value acts as local value, and a binding ([{TemplateBinding} markup extension](templatebinding-markup-extension.md)) for a property setter applies as a style setter does. Because bindings must wait until run-time to obtain values from data sources, the process of determining the property value precedence for any property extends into run-time as well.
+バインド操作には、目的のスコープが何であれ、適切な優先順位があります。 たとえば、ローカル値に適用されるバインドはローカル値として機能し、プロパティ setter のバインド ([{TemplateBinding} マークアップ拡張](templatebinding-markup-extension.md)) はスタイル setter の場合と同じように適用されます。 バインドは、データ ソースから値を取得するのを実行時まで待つ必要があります。このため、任意のプロパティに対してプロパティ値の優先順位を決定するプロセスも、実行時まで拡張されます。
 
-Not only do bindings operate at the same precedence as a local value, they really are a local value, where the binding is the placeholder for a value that is deferred. If you have a binding in place for a property value, and you set a local value on it at run-time, that replaces the binding entirely. Similarly, if you call [**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257) to define a binding that only comes into existence at run-time, you replace any local value you might have applied in XAML or with previously executed code.
+バインドはローカル値と同じ優先順位で動作するだけでなく、実際はローカル値です。この場合、バインドは、遅延された値のプレースホルダーです。 プロパティ値にバインドを指定し、実行時にプロパティにローカル値を設定した場合、このローカル値でバインド全体が置き換えられます。 同様に、[**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257) を呼び出して、実行時にのみ存在するバインドを定義すると、XAML で、または以前に実行したコードで適用したローカル値が置き換えられます。
 
-### Storyboarded animations and base value
+### ストーリーボードに設定されたアニメーションと基本値
 
-Storyboarded animations act on a concept of a *base value*. The base value is the value that's determined by the property system using its precedence, but omitting that last step of looking for animations. For example, a base value might come from a control's template, or it might come from setting a local value on an instance of a control. Either way, applying an animation will overwrite this base value and apply the animated value for as long as your animation continues to run.
+ストーリボードに設定されたアニメーションは、*基本値*という概念に基づいて動作します。 基本値とは、優先順位を使ってプロパティ システムによって決定される値ですが、アニメーションを探すという最後の手順が省略されています。 たとえば、基本値は、コントロールのテンプレートに由来する場合も、コントロールのインスタンスに設定したローカル値に由来する場合もあります。 どちらの場合も、アニメーションを適用すると、この基本値が上書きされ、アニメーションが動作し続ける限り、アニメーション化された値が適用されます。
 
-For an animated property, the base value can still have an effect on the animation's behavior, if that animation does not explicitly specify both **From** and **To**, or if the animation reverts the property to its base value when completed. In these cases, once an animation is no longer running, the rest of the precedence is used again.
+アニメーション化されたプロパティでは、そのアニメーションが **From** と **To** の両方を明示的に指定していない場合、またはアニメーションが完了するとプロパティが基本値に戻る場合に、基本値は依然としてアニメーションの動作に影響を与えます。 このような場合、アニメーションが実行されなくなると、優先順位の残りの部分が再び使用されます。
 
-However, an animation that specifies a **To** with a [**HoldEnd**](https://msdn.microsoft.com/library/windows/apps/br210306) behavior can override a local value until the animation is removed, even when it visually appears to be stopped. Conceptually this is like an animation that's running forever even if there is not a visual animation in the UI.
+ただし、[**HoldEnd**](https://msdn.microsoft.com/library/windows/apps/br210306) 動作と共に **To** を指定したアニメーションは、停止しているように見えていても、アニメーションが削除されるまでローカル値をオーバーライドできます。 これは概念的には、UI に視覚的なアニメーションが存在しない場合でも、永遠に実行されるアニメーションのようなものです。
 
-Multiple animations can be applied to a single property. Each of these animations might have been defined to replace base values that came from different points in the value precedence. However, these animations will all be running simultaneously at run time, and that often means that they must combine their values because each animation has equal influence on the value. This depends on exactly how the animations are defined, and the type of the value that is being animated.
+1 つのプロパティに複数のアニメーションを適用できます。 このアニメーションそれぞれが、値の優先順位の異なる場所に由来する基本値を置き換えるように定義されている場合が考えられます。 ただし、これらのアニメーションは、実行時にすべて同時に実行され、多くの場合、これは各アニメーションが値に対して与える影響が等しいため、値を結合する必要があることを意味します。 これは、アニメーションが実際にどのように定義されているか、およびアニメーション化される値の型によって異なります。
 
-For more info, see [Storyboarded animations](https://msdn.microsoft.com/library/windows/apps/mt187354).
+詳しくは、「[ストーリーボードに設定されたアニメーション](https://msdn.microsoft.com/library/windows/apps/mt187354)」をご覧ください。
 
-### Default values
+### 既定値
 
-Establishing the default value for a dependency property with a [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) value is explained in more detail in the [Custom dependency properties](custom-dependency-properties.md) topic.
+[
+            **PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) 値を持つ依存関係プロパティの既定値の設定については、「[カスタム依存関係プロパティ](custom-dependency-properties.md)」で詳しく説明しています。
 
-Dependency properties still have default values even if those default values weren't explicitly defined in that property's metadata. Unless they have been changed by metadata, default values for the Windows Runtime dependency properties are generally one of the following:
+依存関係プロパティは、その既定値がプロパティのメタデータで明示的に定義されていない場合でも、既定値を持ちます。 メタデータによって変更されていない限り、Windows ランタイムの依存関係プロパティの既定値は、通常、次のいずれかです。
 
--   A property that uses a run-time object or the basic **Object** type (a *reference type*) has a default value of **null**. For example, [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) is **null** until it's deliberately set or is inherited.
--   A property that uses a basic value such as numbers or a Boolean value (a *value type*) uses an expected default for that value. For example, 0 for integers and floating-point numbers, **false** for a Boolean.
--   A property that uses a Windows Runtime structure has a default value that's obtained by calling that structure's implicit default constructor. This constructor uses the defaults for each of the basic value fields of the structure. For example, a default for a [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) value is initialized with its **X** and **Y** values as 0.
--   A property that uses an enumeration has a default value of the first defined member in that enumeration. Check the reference for specific enumerations to see what the default value is.
--   A property that uses a string ([**System.String**](https://msdn.microsoft.com/library/windows/apps/xaml/system.string.aspx) for .NET, [**Platform::String**](https://msdn.microsoft.com/library/windows/apps/xaml/hh755812.aspx) for C++/CX) has a default value of an empty string (**""**).
--   Collection properties aren't typically implemented as dependency properties, for reasons discussed further on in this topic. But if you implement a custom collection property and you want it to be a dependency property, make sure to avoid an *unintentional singleton* as described near the end of [Custom dependency properties](custom-dependency-properties.md).
+-   実行時オブジェクトまたは基本的な **Object** 型 (*参照型*) を使うプロパティには、**null** という既定値があります。 たとえば、[**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) は、意図的に設定されるか継承されるまで、**null** です。
+-   数値やブール値 (*値型*) のような基本的な値を使うプロパティでは、その値に期待される既定値が使われます。 たとえば、整数と浮動小数点数の場合は 0、ブール値の場合は **false** です。
+-   Windows ランタイムの構造体を使うプロパティには、その構造体の暗黙の既定のコンストラクターを呼び出して取得される既定値があります。 このコンストラクターは、構造体の基本的な値フィールドごとの既定値を使います。 たとえば、[**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) の既定値は、**X** と **Y** の値が 0 として初期化されます。
+-   列挙型を使うプロパティには、その列挙型で定義されている最初のメンバーの既定値があります。 既定値を確認するには、特定の列挙型のリファレンスをご覧ください。
+-   文字列 (.NET では [**System.String**](https://msdn.microsoft.com/library/windows/apps/xaml/system.string.aspx)、C++/CX では [**Platform::String**](https://msdn.microsoft.com/library/windows/apps/xaml/hh755812.aspx)) を使うプロパティには、空の文字列 (**""**) という既定値があります。
+-   コレクション プロパティは、このトピックで詳しく説明する理由から、一般に依存関係プロパティとして実装されます。 ただし、カスタム コレクション プロパティを実装して、それを依存関係プロパティにする場合は、「[カスタム依存関係プロパティ](custom-dependency-properties.md)」の最後のあたりで説明されているように、*意図しないシングルトン*にならないよう注意します。
 
-## Property functionality provided by a dependency property
+## 依存関係プロパティによって提供されるプロパティ機能
 
-### Data binding
+### データ バインディング
 
-A dependency property can have its value set through applying a data binding. Data binding uses the [{Binding} markup extension](binding-markup-extension.md) syntax in XAML, or the [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) class in code. For a databound property, the final property value determination is deferred until run time. At that time the value is obtained from a data source. The role that the dependency property system plays here is enabling a placeholder behavior for operations like loading XAML when the value is not yet known, and then supplying the value at run time by interacting with the Windows Runtime data binding engine.
+依存関係プロパティには、データ バインディングを適用して値を設定することができます。 データ バインディングは、XAML であれば [{Binding} マークアップ拡張](binding-markup-extension.md)構文、コードであれば [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) クラスを使います。 データ バインディング プロパティの場合、最終的なプロパティ値の決定は実行時まで遅延されます。 その時点で、データ ソースから値が取得されます。 依存関係プロパティ システムがここで果たす役割は、値がまだ未知のときに XAML を読み込むような操作のプレースホルダー動作を可能にし、次に、Windows ランタイム データ バインディング エンジンとやり取りして実行時に値を供給することです。
 
-The following example sets the [**Text**](https://msdn.microsoft.com/library/windows/apps/br209676) value for a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) element, using a binding in XAML. The binding uses an inherited data context and an object data source. (Neither of these is shown in the shortened example; for a more complete sample that shows context and source, see [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946).)
+XAML でバインドを使用して、[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 要素の [**Text**](https://msdn.microsoft.com/library/windows/apps/br209676) 値を設定する例を次に示します。 バインドでは、継承されたデータ コンテキストおよびオブジェクト データ ソースが使用されます (この短い例ではどちらも示されていません。コンテキストとソースを含むより完全なサンプルについては、「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」をご覧ください)。
 
 ```XAML
 <Canvas>
@@ -138,64 +141,66 @@ The following example sets the [**Text**](https://msdn.microsoft.com/library/win
 </Canvas>
 ```
 
-You can also establish bindings using code rather than XAML. See [**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257).
+XAML ではなく、コードを使ってバインドを確立することもできます。 「[**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257)」をご覧ください。
 
-**Note**  Bindings like this are treated as a local value for purposes of dependency property value precedence. If you set another local value for a property that originally held a [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) value, you will overwrite the binding entirely, not just the binding's run-time value.
+**注**  このようなバインドは、依存関係プロパティ値の優先順位を処理するために、ローカル値として扱われます。 もともと [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 値を保持していたプロパティに別のローカル値を設定すると、バインドの実行時の値だけでなく、バインド全体が上書きされます。
 
-### Binding sources, binding targets, the role of FrameworkElement
+### バインディング ソース、バインディング ターゲット、FrameworkElement の役割
 
-To be the source of a binding, a property does not need to be a dependency property; you can generally use any property as a binding source, although this depends on your programming language and each has certain edge cases. However, to be the target of a binding, that property must be a dependency property.
+プロパティをバインディング ソースとして使う場合は、依存関係プロパティでなくてもかまいません。通常は、バインディング ソースとして任意のプロパティを使うことができます。もっとも、これはプログラミング言語に左右され、それぞれ特殊なケースが存在します。 ただし、プロパティをバインディング ターゲットとして使用する場合は、依存関係プロパティである必要があります。
 
-If you are creating a binding in code, note that the [**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257) API is defined only for [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706). However, you can create a binding definition using [**BindingOperations**](https://msdn.microsoft.com/library/windows/apps/br209823) instead, and thus reference any [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) property.
+コードでバインドを作成する場合、[**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257) API は [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) に対してのみ定義されている点に注意してください。 ただし、バインド定義は [**BindingOperations**](https://msdn.microsoft.com/library/windows/apps/br209823) を使用して作成できるため、どのような [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) プロパティでも参照することができます。
 
-For either code or XAML, remember that [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) is a [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) property. By using a form of parent-child property inheritance (typically established in XAML markup), the binding system can resolve a **DataContext** that exists on a parent element. This inheritance can evaluate even if the child object (which has the target property) is not a **FrameworkElement** and therefore does not hold its own **DataContext** value. However, the parent element being inherited must be a **FrameworkElement** in order to set and hold the **DataContext**. Alternatively, you must define the binding such that it can function with a **null** value for **DataContext**.
+コードであれ XAML であれ、[**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) は [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) プロパティです。 親子プロパティの継承という形を使って (通常は XAML マークアップで確立)、バインディング システムは親要素に存在する **DataContext** を解決することができます。 この継承は、子オブジェクト (ターゲット プロパティを持つ) が **FrameworkElement** でなく、そのために独自の **DataContext** 値を保持していない場合でも、評価できます。 ただし、**DataContext** を設定し保持するためには、継承する親要素が **FrameworkElement** であることが必要です。 その一方で、**DataContext** が **null** 値であっても機能できるようにバインドを定義する必要があります。
 
-Wiring the binding is not the only thing that's needed for most data binding scenarios. For a one-way or two-way binding to be effective, the source property must support change notifications that propagate to the binding system and thus the target. For custom binding sources, this means that the property must support [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx). Collections should support [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx). Certain classes support these interfaces in their implementations so that they are useful as base classes for data binding scenarios; an example of such a class is [**ObservableCollection&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx). For more information on data binding and how data binding relates to the property system, see [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946).
+ほとんどのデータ バインディング シナリオに必要なのは、バインドを作成することだけではありません。 一方向または双方向のバインドを有効にするためには、バインディング システム (とターゲット) への伝播をつかさどる変更通知が、ソース プロパティによってサポートされている必要があります。 つまり、カスタム バインディング ソースの場合、このプロパティは、[**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx) をサポートしている必要があります。 コレクションの場合は、[**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) をサポートしている必要があります。 一部のクラスは、データ バインディングのシナリオで基底クラスとして使用できるように、実装でこれらのインターフェイスをサポートしています。たとえば、[**ObservableCollection&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx) はそうしたクラスの 1 つです。 データ バインディングについての詳しい情報と、データ バインディングをプロパティ システムに関連付ける方法については、「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」をご覧ください。
 
-**Note**  The types listed here support Microsoft .NET data sources. C++/CX data sources use different interfaces for change notification or observable behavior, see [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946).
+**注**  ここに挙げた型は、Microsoft .NET データ ソースをサポートします。 C++/CX データ ソースは、変更通知または監視可能な動作のために異なるインターフェイスを使います。「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」をご覧ください。
 
-### Styles and templates
+### スタイルとテンプレート
 
-Styles and templates are two of the scenarios for properties being defined as dependency properties. Styles are useful for setting properties that define the app's UI. Styles are defined as resources in XAML, either as an entry in a [**Resources**](https://msdn.microsoft.com/library/windows/apps/br208740) collection, or in separate XAML files such as theme resource dictionaries. Styles interact with the property system because they contain setters for properties. The most important property here is the [**Control.Template**](https://msdn.microsoft.com/library/windows/apps/br209465) property of a [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390): it defines most of the visual appearance and visual state for a **Control**. For more info on styles, and some example XAML that defines a [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) and uses setters, see [Styling controls](https://msdn.microsoft.com/library/windows/apps/mt210950).
+スタイルとテンプレートは、依存関係プロパティとして定義されるプロパティに関する 2 つのシナリオです。 スタイルは、アプリの UI を定義するプロパティを設定する際に役立ちます。 スタイルは XAML のリソースとして定義されます。その方法は、[**Resources**](https://msdn.microsoft.com/library/windows/apps/br208740) コレクションのエントリとするか、テーマ リソース ディクショナリなど、別の XAML ファイル内で定義するかのいずれかです。 スタイルにはプロパティの setter が含まれるため、スタイルはプロパティ システムと対話します。 ここで最も重要なプロパティは、[**Control**](https://msdn.microsoft.com/library/windows/apps/br209390) の [**Control.Template**](https://msdn.microsoft.com/library/windows/apps/br209465) プロパティです。このプロパティは、**Control** のほとんどの表示形式と表示状態を定義します。 スタイルについての詳しい情報と、[**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) を定義し、setter を使う XAML の例については、「[クイック スタート: コントロールのスタイル](https://msdn.microsoft.com/library/windows/apps/mt210950)」をご覧ください。
 
-Values that come from styles or templates are deferred values, similar to bindings. This is so that control users can re-template controls or redefine styles. And that's why property setters in styles can only act on dependency properties, not ordinary properties.
+スタイルやテンプレートの値は、バインドと同様に、遅延された値です。 これは、コントロールのユーザーがコントロールにテンプレートを適用し直したりスタイルを定義し直したりできるようにするためです。 そのため、スタイルのプロパティ setter は、通常のプロパティではなく、依存関係プロパティしか操作できません。
 
-### Storyboarded animations
+### ストーリーボードに設定されたアニメーション
 
-You can animate a dependency property's value using a storyboarded animation. Storyboarded animations in the Windows Runtime are not merely visual decorations. It's more useful to think of animations as being a state machine technique that can set the values of individual properties or of all properties and visuals of a control, and change these values over time.
+ストーリーボードに設定されたアニメーションを使うと、依存関係プロパティの値をアニメーション化できます。 Windows ランタイムのストーリーボードに設定されたアニメーションは、単なる視覚的装飾ではありません。 アニメーションは、個々のプロパティの値またはコントロールのすべてのプロパティと視覚効果の値を設定でき、時間の経過と共にこれらの値を変えることができるステート マシンと考えると便利です。
 
-To be animated, the animation's target property must be a dependency property. Also, to be animated, the target property's value type must be supported by one of the existing [**Timeline**](https://msdn.microsoft.com/library/windows/apps/br210517)-derived animation types. Values of [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723), [**Double**](T:System.Double) and [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) can be animated using either interpolation or keyframe techniques. Most other values can be animated using discrete **Object** key frames.
+アニメーション化するためには、アニメーションのターゲット プロパティは依存関係プロパティである必要があります。 また、そのターゲット プロパティの値の型は、既存の [**Timeline**](https://msdn.microsoft.com/library/windows/apps/br210517) から派生したアニメーション型のいずれかでサポートされている必要があります。 [
+            **Color**](https://msdn.microsoft.com/library/windows/apps/hh673723)、[**Double**](T:System.Double)、および [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) は、補間またはキーフレームの技法を使ってアニメーション化できます。 その他の値の大半は、個別の **Object** キー フレームを使ってアニメーション化できます。
 
-When an animation is applied and running, the animated value operates at a higher precedence than any value (such as a local value) that the property otherwise has. Animations also have an optional [**HoldEnd**](https://msdn.microsoft.com/library/windows/apps/br210306) behavior that can cause animations to apply to property values even if the animation visually appears to be stopped.
+アニメーションが適用されて実行されると、アニメーション化された値は、それ以外の場合のプロパティの値 (ローカル値など) よりも高い優先順位で動作します。 アニメーションにはオプションの [**HoldEnd**](https://msdn.microsoft.com/library/windows/apps/br210306) 動作もあり、アニメーションが停止しているように見えていても、アニメーションをプロパティ値に適用できます。
 
-The state machine principle is embodied by the use of storyboarded animations as part of the [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/br209021) state model for controls. For more info on storyboarded animations, see [Storyboarded animations](https://msdn.microsoft.com/library/windows/apps/mt187354). For more info on **VisualStateManager** and defining visual states for controls, see [Storyboarded animations for visual states](https://msdn.microsoft.com/library/windows/apps/xaml/jj819808) or [Quickstart: Control templates](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374).
+このステート マシン原則は、コントロールの [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/br209021) 状態モデルの一部としてストーリーボードに設定されたアニメーションを使って実現されます。 ストーリーボードに設定されたアニメーションについて詳しくは、「[ストーリーボードに設定されたアニメーション](https://msdn.microsoft.com/library/windows/apps/mt187354)」をご覧ください。 **VisualStateManager** とコントロールの視覚的状態の定義について詳しくは、「[表示状態用にストーリーボードに設定されたアニメーション](https://msdn.microsoft.com/library/windows/apps/xaml/jj819808)」または「[クイック スタート: コントロール テンプレート](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)」をご覧ください。
 
-### Property-changed behavior
+### プロパティ変更動作
 
-Property-changed behavior is the origin of the "dependency" part of dependency property terminology. Maintaining valid values for a property when another property can influence the first property's value is a difficult development problem in many frameworks. In the Windows Runtime property system, each dependency property can specify a callback that is invoked whenever its property value changes. This callback can be used to notify or change related property values, in a generally synchronous manner. Many existing dependency properties have a property-changed behavior. You can also add similar callback behavior to custom dependency properties, and implement your own property-changed callbacks. See [Custom dependency properties](custom-dependency-properties.md) for an example.
+プロパティ変更動作は、依存関係プロパティという用語で "依存関係" という言葉の起源です。 他のプロパティの値によって影響を受ける可能性のあるプロパティで有効な値を維持することは、多くのフレームワークにおいて、開発上の難しい問題です。 Windows ランタイムのプロパティ システムでは、各依存関係プロパティでプロパティ値が変更されるたびに呼び出されるコールバックを指定できます。 このコールバックを使用して、一般的な同期方法で、関連プロパティ値を通知または変更できます。 多くの既存の依存関係プロパティに、プロパティ変更動作があります。 また、同様のコールバック動作をカスタム依存関係プロパティに追加し、独自のプロパティ変更コールバックを実装することもできます。 例については、「[カスタム依存関係プロパティ](custom-dependency-properties.md)」をご覧ください。
 
-### Default value and **ClearValue**
+### 既定値と **ClearValue**
 
-A dependency property can have a default value defined as part of its property metadata. For a dependency property, its default value doesn't become irrelevant after the property's been set the first time. The default value might apply again at run-time whenever some other determinant in value precedence disappears. (Dependency property value precedence is discussed in the next section.) For example, you might deliberately remove a style value or an animation that applies to a property, but you want the value to be a reasonable default after you do so. The dependency property default value can provide this value, without needing to specifically set each property's value as an extra step.
+依存関係プロパティには、プロパティ メタデータの一部として既定値を定義できます。 依存関係プロパティの場合、その既定値は、プロパティが最初に設定された後も無効にはなりません。 既定値は、値の優先順位で他の決定要因がなくなるたびに、実行時に再び適用されることがあります (依存関係プロパティ値の優先順位については、次のセクションで説明します)。たとえば、ユーザーが意図的にプロパティに適用されるスタイル値またはアニメーションを削除しても、削除後に適切な既定値がこれらのプロパティ値に適用されるようにしたい場合があります。 依存関係プロパティの既定値を使うと、各プロパティの値を余分な手間をかけて特に設定することなく、適切な値を適用することができます。
 
-You can deliberately set a property to the default value even after you have already set it with a local value. To reset a value to be the default again, and also to enable other participants in precedence that might override the default but not a local value, call the [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357) method (reference the property to clear as a method parameter). You don't always want the property to literally use the default value, but clearing the local value and reverting to the default value might enable another item in precedence that you want to act now, such as using the value that came from a style setter in a control template.
+既にローカル値を設定した後でも、意図的にプロパティを既定値に設定することができます。 値を既定値にリセットし、優先順位が既定値よりも高く、ローカル値よりも低い値を有効にするには、プロパティの [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357) メソッドを呼び出します (メソッド パラメーターとしてクリアするプロパティを参照)。 プロパティで常に既定値がそのまま使われるようにしたくない場合、ローカル値をクリアして既定値に戻しても、コントロール テンプレートのスタイル setter に由来する値など、優先順位内の別の項目が有効になることがあります。
 
-## **DependencyObject** and threading
+## **DependencyObject** とスレッド
 
-All [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) instances must be created on the UI thread which is associated with the current [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) that is shown by a Windows Runtime app. Although each **DependencyObject** must be created on the main UI thread, the objects can be accessed using a dispatcher reference from other threads, by accessing the [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br230616) property. Then you can call methods such as [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) on the [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) object, and execute your code within the rules of thread restrictions on the UI thread.
+すべての [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) インスタンスは、Windows ランタイム アプリによって表示される現在の [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) と関連付けられている UI スレッド上で作成する必要があります。 それぞれの **DependencyObject** はメイン UI スレッド上で作成する必要がありますが、オブジェクトは、[**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br230616) プロパティにアクセスすることにより、他のスレッドからディスパッチャー参照を使ってアクセスできます。 続いて、[**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) オブジェクトの [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) のようなメソッドを呼び出して、UI スレッドのスレッド制限の規則内でコードを実行します。
 
-The threading aspects of [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) are relevant because it generally means that only code that runs on the UI thread can change or even read the value of a dependency property. Threading issues can usually be avoided in typical UI code that makes correct use of **async** patterns and background worker threads. You typically only run into **DependencyObject**-related threading issues if you are defining your own **DependencyObject** types and you attempt to use them for data sources or other scenarios where a **DependencyObject** isn't necessarily appropriate.
+[
+            **DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) のスレッドの側面も問題となります。それは、通常、UI スレッド上で実行されるコードのみが依存関係プロパティの値を変更または読み取ることができることを意味するためです。 通常、**非同期**パターンとバックグラウンド ワーカー スレッドを適切に使う一般的な UI コードでは、スレッドの問題を回避できます。 独自に **DependencyObject** 型を定義し、それをデータ ソースや **DependencyObject** が必ずしも適切でないその他のシナリオで使おうとすると、通常は **DependencyObject** に関連するスレッドの問題が発生します。
 
-## Related topics
+## 関連トピック
 
-**Conceptual material**
-* [Custom dependency properties](custom-dependency-properties.md)
-* [Attached properties overview](attached-properties-overview.md)
-* [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946)
-* [Storyboarded animations](https://msdn.microsoft.com/library/windows/apps/mt187354)
-* [Creating Windows Runtime components](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
-* [XAML user and custom controls sample](http://go.microsoft.com/fwlink/p/?linkid=238581)
-**APIs related to dependency properties**
+**概念に関する資料**
+* [カスタム依存関係プロパティ](custom-dependency-properties.md)
+* [添付プロパティの概要](attached-properties-overview.md)
+* [データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)
+* [ストーリーボードに設定されたアニメーション](https://msdn.microsoft.com/library/windows/apps/mt187354)
+* [Windows ランタイム コンポーネントの作成](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
+* [XAML ユーザーとカスタム コントロールのサンプル](http://go.microsoft.com/fwlink/p/?linkid=238581)
+**依存関係プロパティに関連する API**
 * [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)
 * [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362)
 

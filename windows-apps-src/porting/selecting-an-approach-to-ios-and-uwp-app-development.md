@@ -1,92 +1,92 @@
 ---
-description: What are the choices when developing cross-platform apps?.
-title: Selecting an approach to iOS and UWP app development
+description: クロスプラットフォーム アプリを開発するときの選択肢
+title: iOS と UWP のアプリ開発方法の選択
 ms.assetid: 5CDAB313-07B7-4A32-A49B-026361DCC853
 ---
 
-# Selecting an approach to iOS and UWP app development
+# iOS と UWP のアプリ開発方法の選択
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-What are the choices when developing cross-platform apps?
+クロスプラットフォーム アプリを開発するときの選択肢
 
-## What's the best way to support both iOS and Windows?
+## iOS と Windows の両方をサポートするための最適な方法
 
-Windows and iOS may seem to be very different beasts, but a growing number of tools and techniques can greatly assist you if you need to write apps that support both platforms (and Android too). The best solution depends on the type of app you are writing, and whether you are starting from scratch or porting an existing project.
+Windows と iOS はまったく違うものに見えるかもしれませんが、増え続けるツールと手法が、両方のプラットフォーム (Android も含めて) をサポートするアプリを作成する場合に非常に役に立ちます。 最適なソリューションは、作成するアプリの種類によって、またゼロから始めるか既存のプロジェクトを移植するかによって異なります。
 
-## Writing a new app
+## 新しいアプリの作成
 
-With a clean slate, you have many options at your disposal, including:
+ゼロから始める場合、次のように自由に選べる多くのオプションがあります。
 
 -   [Xamarin](http://go.microsoft.com/fwlink/p/?LinkID=320484)
 
-    With Xamarin, you can write your app in C#, have it run on Windows, and create native iOS apps too. Support for Xamarin is built into Visual Studio; just select the correct project type.
+    Xamarin を使うと、C# でアプリを作成して Windows 上で実行することができ、ネイティブの iOS アプリを作成することもできます。 Xamarin のサポートは Visual Studio に組み込まれており、適切なプロジェクトの種類を選ぶだけです。
 
 -   [Apache Cordova](http://go.microsoft.com/fwlink/p/?LinkID=400439)
 
-    If Javascript and HTML is more your thing, Apache Cordova (aka PhoneGap) will help you create cross-platform apps for iOS, Windows, and Android. This project type is also built into Visual Studio.
+    Javascript と HTML の方がよい場合は、Apache Cordova (PhoneGap とも呼ばれる) を使うと、iOS、Windows、および Android 向けのクロスプラットフォーム アプリを容易に作成できます。 このプロジェクトの種類は、Visual Studio にも組み込まれています。
 
--   Game-engines
+-   ゲーム エンジン
 
-    With tools like [Unity3D](http://go.microsoft.com/fwlink/p/?LinkID=320479) and [Unreal Engine](http://go.microsoft.com/fwlink/p/?LinkID=394062) at your disposal, you can write AAA-quality games for Windows and many other platforms, including iOS. Unity supports C# scripting; Unreal uses C++.
+    [Unity3D](http://go.microsoft.com/fwlink/p/?LinkID=320479) や [Unreal Engine](http://go.microsoft.com/fwlink/p/?LinkID=394062) などのツールを自由に利用することで、Windows のほか、iOS など多くのプラットフォーム用に最高品質のゲームを作成することができます。 Unity は C# スクリプトをサポートし、Unreal は C++ を使います。
 
 -   [MonoGame](http://go.microsoft.com/fwlink/p/?LinkID=320483)
 
-    The spiritual successor to XNA. Now, it's an open-source cross-platform framework, which means you can write apps in C# for many platforms with support for physics engines, and 2D and 3D graphics.
+    XNA の後継にあたります。 これは、オープン ソースのクロスプラットフォーム フレームワークです。つまり、物理エンジン、2D および 3D グラフィック サポートにより、多くのプラットフォーム向けに C# でアプリを作成できます。
 
-## Adapting an existing app
+## 既存のアプリの適応変更
 
-With an existing iOS app, your options are a little more limited. However, all is most certainly not lost.
+既存の iOS アプリを使う場合、オプションが少し制限されます。 ただし、何も失われません。
 
 -   [Windows Bridge for iOS](https://go.microsoft.com/fwlink/p/?LinkId=619014)
 
-    Also known as Project Islandwood, this is a still-in-development tool that can import Xcode projects directly into Visual Studio. Objective-C code can be built and debugged from within Visual Studio. If your project makes use of libraries such as Cocos for graphics, you might find this a useful way to quickly port your app.
+    Project Islandwood とも呼ばれます。これはまだ開発中のツールで、Xcode プロジェクトを Visual Studio に直接インポートできます。 Objective-C コードは Visual Studio からビルドおよびデバッグできます。 プロジェクトでグラフィックス用に Cocos などのライブラリを使用している場合、これはアプリを迅速に移植するための便利な方法です。
 
--   Repurpose your C++ code.
+-   C++ コードの目的変更
 
-    If your core business logic is written in C++, rather than Objective-C or Swift, you can often use this code with only minor changes in your project. You can then use XAML to define your UI, as with other Windows apps, and call into the C++ code when necessary.
+    主要なビジネス ロジックが、Objective-C や Swift ではなく C++ で作成されている場合、そのコードを少し変更するだけでプロジェクトで使用できます。 そして、他の Windows でアプリと同様に、XAML を使って UI を定義し、必要に応じて C++ コードを呼び出すことができます。
 
--   [Use ANGLE to run OpenGL ES on Windows](http://go.microsoft.com/fwlink/p/?linkid=618387)
+-   [ANGLE を使った Windows での OpenGL ES の実行](http://go.microsoft.com/fwlink/p/?linkid=618387)
 
-    An intermediate step to porting your OpenGL ES 2.0 project is to use ANGLE. ANGLE allows you to run OpenGL ES content on Windows by translating OpenGL ES API calls to DirectX 11 API calls.
+    OpenGL ES 2.0 プロジェクトを移植する中間の手順で ANGLE を使います。 ANGLE では、OpenGL ES API 呼び出しを DirectX 11 API 呼び出しに変換することにより、Windows で OpenGL ES コンテンツを実行することができます。
 
-## Other cross-platform authoring tools
+## その他のクロスプラットフォームの作成ツール
 
 -   [GameSalad](http://go.microsoft.com/fwlink/p/?LinkID=320480)
 
-    A game authoring environment.
+    ゲーム作成環境。
 
 -   [Construct 2]( http://go.microsoft.com/fwlink/p/?LinkID=320481)
 
-    A game authoring environment.
+    ゲーム作成環境。
 
 -   [Titanium Studio](http://go.microsoft.com/fwlink/p/?LinkID=320482)
 
-    A cross-platform authoring environment.
+    クロスプラットフォームの作成環境。
 
 -   [Cocos2D-x](http://go.microsoft.com/fwlink/p/?LinkID=320485)
 
-    A cross-platform code library for sprite handling and physics modeling.
+    スプライト処理と物理モデリング用のクロスプラットフォームのコード ライブラリ。
 
 -   [Impact.js](http://go.microsoft.com/fwlink/p/?LinkID=320486)
 
-    An HTML based game library.
+    HTML ベースのゲーム ライブラリ。
 
 -   [Marmalade](http://go.microsoft.com/fwlink/p/?LinkID=320487)
 
-    A cross-platform SDK.
+    クロスプラットフォーム SDK。
 
 -   [OpenFL](http://go.microsoft.com/fwlink/p/?LinkID=320488)
 
-    A cross-platform development tool.
+    クロスプラットフォームの開発ツール。
 
 -   [GameMaker](http://go.microsoft.com/fwlink/p/?LinkID=320490)
 
-    An authoring environment specifically for games.
+    特にゲーム用の作成環境。
 
 -   [PlayCanvas](http://go.microsoft.com/fwlink/p/?LinkID=394061)
 
-    An HTML based game development tool.
+    HTML ベースのゲーム開発用ツール。
 
 
 

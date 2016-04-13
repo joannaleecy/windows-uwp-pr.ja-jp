@@ -1,37 +1,37 @@
 ---
-Description: Store ink stroke data in a Graphics Interchange Format (GIF) file using embedded Ink Serialized Format (ISF) metadata.
-title: Store and retrieve ink strokes
+Description: 埋め込みの Ink Serialized Format (ISF) メタデータを使って、インク ストローク データをグラフィックス交換形式 (GIF) ファイルに保存します。
+title: インク ストロークの保存と取得
 ms.assetid: C96C9D2F-DB69-4883-9809-4A0DF7CEC506
 label: Store and retrieve ink strokes
 template: detail.hbs
 ---
 
-# Store and retrieve ink strokes
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+# インク ストロークの保存と取得
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-Apps that support ink input can serialize and deserialize the ink metadata with full fidelity, maintaining all properties and behaviors. Apps that are not ink-enabled, can view the static GIF image, including alpha-channel background transparency.
+インク入力をサポートしているアプリでは、インクのメタデータを完全な再現性でシリアル化および逆シリアル化でき、すべてのプロパティと動作を維持できます。 インク対応ではないアプリでは、アルファ チャンネルの背景色の透明度を含めて、静的な GIF 画像を表示できます。
 
 
-**Important APIs**
+**重要な API**
 
 -   [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)
 -   [**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
 
 
 
-**Note**  
-ISF is the most compact persistent representation of ink. It can be embedded within a binary document format, such as a GIF file, or placed directly on the Clipboard.
+**注**  
+ISF は、最もコンパクトなインクの永続表現です。 バイナリ ドキュメント形式 (GIF ファイルなど) に埋め込むことも、クリップボードに直接配置することもできます。
 
  
 
-## <span id="Save_ink_strokes_to_a_file"></span><span id="save_ink_strokes_to_a_file"></span><span id="SAVE_INK_STROKES_TO_A_FILE"></span>Save ink strokes to a file
+## <span id="Save_ink_strokes_to_a_file"></span><span id="save_ink_strokes_to_a_file"></span><span id="SAVE_INK_STROKES_TO_A_FILE"></span>インク ストロークをファイルに保存する
 
 
-Here, we demonstrate how to save ink strokes drawn on an [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) control.
+ここでは、[**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) コントロールに描画されたインク ストロークの保存方法を説明します。
 
-1.  First, we set up the UI.
+1.  まず、UI を設定します。
 
-    The UI includes "Save", "Load", and "Clear" buttons, and the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
+    UI には [Save]、[Load]、[Clear] の各ボタンと、[**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) が含まれています。
 
 ```    XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -60,9 +60,10 @@ Here, we demonstrate how to save ink strokes drawn on an [**InkCanvas**](https:/
     </Grid>
 ```
 
-2.  We then set some basic ink input behaviors.
+2.  次に、基本的なインク入力の動作をいくつか設定します。
 
-    The [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) is configured to interpret input data from both pen and mouse as ink strokes ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)), and listeners for the click events on the buttons are declared.
+    [
+            **InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) は、ペンとマウスのいずれからの入力データもインク ストローク ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)) として解釈するように構成します。各ボタンのイベントに対するリスナーも宣言します。
 
 ```    CSharp
 public MainPage()
@@ -83,13 +84,14 @@ public MainPage()
     }
 ```
 
-3.  Finally, we save the ink in the click event handler of the **Save** button.
+3.  最後に、**[Save]** ボタンのクリック イベント ハンドラーで、インクを保存します。
 
-    A [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) lets the user select both the file and the location where the ink data is saved.
+    [
+            **FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) を使用すると、インク データの保存先としてファイルと場所の両方をユーザーが選択できます。
 
-    Once a file is selected, we open an [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) stream set to [**ReadWrite**](https://msdn.microsoft.com/library/windows/apps/br241635).
+    ファイルが選択されたら、[**ReadWrite**](https://msdn.microsoft.com/library/windows/apps/br241635) に設定された [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) ストリームを開きます。
 
-    We then call [**SaveAsync**](https://msdn.microsoft.com/library/windows/apps/br242114) to serialize the ink strokes managed by the [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) to the stream.
+    次に [**SaveAsync**](https://msdn.microsoft.com/library/windows/apps/br242114) を呼び出して、[**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) によって管理されているインク ストロークをストリームにシリアル化します。
 
 ```    CSharp
 // Save ink data to a file.
@@ -154,19 +156,19 @@ public MainPage()
     }
 ```
 
-**Note**  
-GIF is the only supported format for saving ink data. However, the [**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) method (demonstrated in the next section) does support additional formats for backward compatibility.
+**注**  
+インク データの保存用にサポートされる形式は GIF のみです。 ただし、[**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) メソッド (次のセクションで説明します) では、下位互換性のためにその他の形式もサポートされています。
 
  
 
-## <span id="Load_ink_strokes_from_a_file"></span><span id="load_ink_strokes_from_a_file"></span><span id="LOAD_INK_STROKES_FROM_A_FILE"></span>Load ink strokes from a file
+## <span id="Load_ink_strokes_from_a_file"></span><span id="load_ink_strokes_from_a_file"></span><span id="LOAD_INK_STROKES_FROM_A_FILE"></span>インク ストロークをファイルから読み込む
 
 
-Here, we demonstrate how to load ink strokes from a file and render them on an [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) control.
+ここでは、ファイルからインク ストロークを読み込んで [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) コントロールにレンダリングする方法を示します。
 
-1.  First, we set up the UI.
+1.  まず、UI を設定します。
 
-    The UI includes "Save", "Load", and "Clear" buttons, and the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
+    UI には [Save]、[Load]、[Clear] の各ボタンと、[**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) が含まれています。
 
 ```    XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -195,9 +197,10 @@ Here, we demonstrate how to load ink strokes from a file and render them on an [
     </Grid>
 ```
 
-2.  We then set some basic ink input behaviors.
+2.  次に、基本的なインク入力の動作をいくつか設定します。
 
-    The [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) is configured to interpret input data from both pen and mouse as ink strokes ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)), and listeners for the click events on the buttons are declared.
+    [
+            **InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) は、ペンとマウスのいずれからの入力データもインク ストローク ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)) として解釈するように構成します。各ボタンのイベントに対するリスナーも宣言します。
 
 ```    CSharp
 public MainPage()
@@ -218,13 +221,14 @@ public MainPage()
     }
 ```
 
-3.  Finally, we load the ink in the click event handler of the **Load** button.
+3.  最後に、**[Load]** ボタンのクリック イベント ハンドラーで、インクを読み込みます。
 
-    A [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) lets the user select both the file and the location from where to retrieve the saved ink data.
+    [
+            **FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) を使用すると、保存済みインク データを取得するためのファイルと場所の両方をユーザーが選択できます。
 
-    Once a file is selected, we open an [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) stream set to [**Read**](https://msdn.microsoft.com/library/windows/apps/br241635).
+    ファイルが選択されたら、[**Read**](https://msdn.microsoft.com/library/windows/apps/br241635) に設定された [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) ストリームを開きます。
 
-    We then call [**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) to read, de-serialize, and load the saved ink strokes into the [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492). Loading the strokes into the **InkStrokeContainer** causes the [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) to immediately render them to the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
+    次に [**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) を呼び出して、保存済みのインク ストロークの読み取りと逆シリアル化を行い、[**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) に読み込みます。 ストロークを **InkStrokeContainer** に読み込むと、[**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) は直ちにストロークを [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) にレンダリングします。
 
 ``` csharp
 // Load ink data from a file.
@@ -259,32 +263,32 @@ private async void btnLoad_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-**Note**  
-GIF is the only supported format for saving ink data. However, the [**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) method does support the following formats for backward compatibility.
+**注**  
+インク データの保存用にサポートされる形式は GIF のみです。 ただし、[**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) メソッドでは、下位互換性のために次の形式もサポートされています。
 
-| Format                    | Description                                                                                                                                                                                                                                                                                                                                                                                           |
+| 形式                    | 説明                                                                                                                                                                                                                                                                                                                                                                                           |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| InkSerializedFormat       | Specifies ink that is persisted using ISF. This is the most compact persistent representation of ink. It can be embedded within a binary document format or placed directly on the Clipboard.                                                                                                                                                                                                         |
-| Base64InkSerializedFormat | Specifies ink that is persisted by encoding the ISF as a base64 stream. This format is provided so ink can be encoded directly in an XML or HTML file.                                                                                                                                                                                                                                                |
-| Gif                       | Specifies ink that is persisted by using a GIF file that contains ISF as metadata embedded within the file. This enables ink to be viewed in applications that are not ink-enabled and maintain its full ink fidelity when it returns to an ink-enabled application. This format is ideal when transporting ink content within an HTML file and for making it usable by ink and non-ink applications. |
-| Base64Gif                 | Specifies ink that is persisted by using a base64-encoded fortified GIF. This format is provided when ink is to be encoded directly in an XML or HTML file for later conversion into an image. A possible use of this is in an XML format generated to contain all ink information and used to generate HTML through Extensible Stylesheet Language Transformations (XSLT).                           |
+| InkSerializedFormat       | ISF で永続化されたインクを指定します。 これは最もコンパクトなインクの永続表現です。 バイナリ ドキュメント形式への埋め込みまたはクリップボードへの直接配置を実行できます。                                                                                                                                                                                                         |
+| Base64InkSerializedFormat | base64 ストリームとして ISF をエンコードすることで永続化されたインクを指定します。 この形式を指定すると、インクを XML ファイルや HTML ファイルで直接エンコードできます。                                                                                                                                                                                                                                                |
+| Gif                       | ファイル内に ISF がメタデータとして埋め込まれた GIF ファイルで永続化されたインクを指定します。 この形式では、インクに対応していないアプリケーションでインクを表示でき、インク対応のアプリケーションに返されたときもまったく同じように再現できます。 この形式は、HTML ファイル内のインクのコンテンツを転送して、インク アプリとインク対応でないアプリで使えるようにする場合に適しています。 |
+| Base64Gif                 | base64 エンコードの拡張 GIF で永続化されたインクを指定します。 この形式は、後で画像に変換するために、インクを XML ファイルや HTML ファイルで直接エンコードする場合に指定します。 すべてのインク情報を格納するために生成された XML 形式で、Extensible Stylesheet Language Transformations (XSLT) を介して HTML を生成するために使うことができます。                           |
 
  
 
  
 
-## <span id="Copy_and_paste_ink_strokes_with_the_clipboard"></span><span id="copy_and_paste_ink_strokes_with_the_clipboard"></span><span id="COPY_AND_PASTE_INK_STROKES_WITH_THE_CLIPBOARD"></span>Copy and paste ink strokes with the clipboard
+## <span id="Copy_and_paste_ink_strokes_with_the_clipboard"></span><span id="copy_and_paste_ink_strokes_with_the_clipboard"></span><span id="COPY_AND_PASTE_INK_STROKES_WITH_THE_CLIPBOARD"></span>クリップボードを使ってインク ストロークのコピーと貼り付けを行う
 
 
-Here, we demonstrate how to use the clipboard to transfer ink strokes between apps.
+ここでは、クリップボードを使って、アプリ間でインク ストロークを転送する方法について説明します。
 
-To support clipboard functionality, the built-in [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) cut and copy commands require one or more ink strokes be selected.
+クリップボード機能をサポートするために、組み込みの [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) の切り取り/コピー コマンドでは、1 つまたは複数のインク ストロークの選択が求められます。
 
-For this example, we enable stroke selection when input is modified with a pen barrel button (or right mouse button). For a complete example of how to implement stroke selection, see [Pass-through input for advanced processing](pen-and-stylus-interactions.md#passthrough) in [Pen and stylus interactions](pen-and-stylus-interactions.md).
+次の例では、ペン バレル ボタン (またはマウスの右ボタン) で入力が変更された場合にストロークを選べるようにする手順を示しています。 ストローク選択の実装方法を示す詳しい例については、「[ペン操作とスタイラス操作](pen-and-stylus-interactions.md)」の「[高度な処理のための入力のパススルー](pen-and-stylus-interactions.md#passthrough)」をご覧ください。
 
-1.  First, we set up the UI.
+1.  まず、UI を設定します。
 
-    The UI includes "Cut", "Copy", "Paste", and "Clear" buttons, along with the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) and a selection canvas.
+    UI には、[Cut]、[Copy]、[Paste]、[Clear] の各ボタン、[**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)、選択キャンバスが含まれています。
 
 ```    XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -319,11 +323,12 @@ For this example, we enable stroke selection when input is modified with a pen b
     </Grid>
 ```
 
-2.  We then set some basic ink input behaviors.
+2.  次に、基本的なインク入力の動作をいくつか設定します。
 
-    The [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) is configured to interpret input data from both pen and mouse as ink strokes ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)). Listeners for the click events on the buttons as well as pointer and stroke events for selection functionality are also declared here.
+    [
+            **InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) は、ペンとマウスのいずれからの入力データもインク ストローク ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)) として解釈するように構成します。 ここでは、ボタンのクリック イベント、選択機能のポインター イベントおよびストローク イベントに対するリスナーも宣言されています。
 
-    For a complete example of how to implement stroke selection, see [Pass-through input for advanced processing](pen-and-stylus-interactions.md#passthrough) in [Pen and stylus interactions](pen-and-stylus-interactions.md) .
+    ストローク選択の実装方法を示す詳しい例については、「[ペン操作とスタイラス操作](pen-and-stylus-interactions.md)」の「[高度な処理のための入力のパススルー](pen-and-stylus-interactions.md#passthrough)」をご覧ください。
 
 ```    CSharp
 public MainPage()
@@ -370,13 +375,13 @@ public MainPage()
     }
 ```
 
-3.  Finally, after adding stroke selection support, we implement clipboard functionality in the click event handlers of the **Cut**, **Copy**, and **Paste** buttons.
+3.  最後に、ストローク選択サポートを追加した後で、**[Cut]** ボタン、**[Copy]** ボタン、**[Paste]** ボタンのクリック イベント ハンドラーにクリップボード機能を実装します。
 
-    For cut, we first call [**CopySelectedToClipboard**](https://msdn.microsoft.com/library/windows/apps/br244232) on the [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) of the [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011).
+    切り取りの場合は、まず [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) の [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) で [**CopySelectedToClipboard**](https://msdn.microsoft.com/library/windows/apps/br244232) を呼び出します。
 
-    We then call [**DeleteSelected**](https://msdn.microsoft.com/library/windows/apps/br244233) to remove the strokes from the ink canvas.
+    次に [**DeleteSelected**](https://msdn.microsoft.com/library/windows/apps/br244233) を呼び出して、インク キャンバスからストロークを削除します。
 
-    Finally, we delete all selection strokes from the selection canvas.
+    最後に、選択キャンバスからすべてのストローク選択を削除します。
 
 ```    CSharp
 private void btnCut_Click(object sender, RoutedEventArgs e)
@@ -437,14 +442,14 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
     }
 ```
 
-## <span id="related_topics"></span>Related articles
+## <span id="related_topics"></span>関連記事
 
 
-* [Pen and stylus interactions](pen-and-stylus-interactions.md)
-**Samples**
-* [Ink sample](http://go.microsoft.com/fwlink/p/?LinkID=620308)
-* [Simple ink sample](http://go.microsoft.com/fwlink/p/?LinkID=620312)
-* [Complex ink sample](http://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [ペン操作とスタイラス操作](pen-and-stylus-interactions.md)
+**サンプル**
+* [インクのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620308)
+* [単純なインクのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620312)
+* [複雑なインクのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620314)
  
 
  

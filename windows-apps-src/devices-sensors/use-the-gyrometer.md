@@ -1,38 +1,38 @@
 ---
 ms.assetid: 454953E1-DD8F-44B7-A614-7BAD8C683536
-title: Use the gyrometer
-description: Learn how to use the gyrometer to detect changes in user movement.
+title: ジャイロメーターの使用
+description: ジャイロメーターを使ってユーザーの動きの変化を検出する方法を説明します。
 ---
-# Use the gyrometer
+# ジャイロメーターの使用
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-** Important APIs **
+** 重要な API **
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**Gyrometer**](https://msdn.microsoft.com/library/windows/apps/BR225718)
 
-\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
+\[一部の情報はリリース前の製品に関することであり、正式版がリリースされるまでに大幅に変更される可能性があります。 ここに記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。\]
 
-Learn how to use the gyrometer to detect changes in user movement.
+ジャイロメーターを使ってユーザーの動きの変化を検出する方法を説明します。
 
-Gyrometers compliment accelerometers as game controllers. The accelerometer can measure linear motion while the gyrometer measures angular velocity or rotational motion.
+ゲーム コントローラーとして使う場合、ジャイロメーターは加速度計の機能を補完します。 加速度計で直線的な動きを計測し、ジャイロメーターで角速度、つまり回転の動きを計測します。
 
-## Prerequisites
+## 前提条件
 
-You should be familiar with Extensible Application Markup Language (XAML), Microsoft Visual C#, and events.
+Extensible Application Markup Language (XAML)、Microsoft Visual C#、イベントについて理解している必要があります。
 
-The device or emulator that you're using must support a gyrometer.
+使うデバイスやエミュレーターがジャイロメーターをサポートしている必要があります。
 
-## Create a simple gyrometer app
+## シンプルなジャイロメーター アプリを作成する
 
-This section is divided into two subsections. The first subsection will take you through the steps necessary to create a simple gyrometer application from scratch. The following subsection explains the app you have just created.
+このセクションは、次の 2 つのサブセクションに分かれています。 最初のサブセクションでは、シンプルなジャイロメーター アプリケーションを最初から作成するために必要な手順を示します。 次のサブセクションでは、作成したアプリについて説明します。
 
-###  Instructions
+###  手順
 
--   Create a new project, choosing a **Blank App (Universal Windows)** from the **Visual C#** project templates.
+-   **[Visual C#]** プロジェクト テンプレートから **[空白のアプリ (ユニバーサル Windows]** を選んで、新しいプロジェクトを作成します。
 
--   Open your project's MainPage.xaml.cs file and replace the existing code with the following.
+-   プロジェクトの MainPage.xaml.cs ファイルを開き、記載されているコードを次のコードで置き換えます。
 
 ```csharp
     using System;
@@ -97,9 +97,9 @@ This section is divided into two subsections. The first subsection will take you
     }
 ```
 
-You'll need to rename the namespace in the previous snippet with the name you gave your project. For example, if you created a project named **GyrometerCS**, you'd replace `namespace App1` with `namespace GyrometerCS`.
+元のスニペットの名前空間の名前を、自分のプロジェクトに指定した名前に変更する必要があります。 たとえば、作成したプロジェクトの名前が **GyrometerCS** だとすると、`namespace App1` を `namespace GyrometerCS` に置き換えます。
 
--   Open the file MainPage.xaml and replace the original contents with the following XML.
+-   MainPage.xaml ファイルを開き、元の内容を次の XML に置き換えます。
 
 ```xml 
         <Page
@@ -123,25 +123,25 @@ You'll need to rename the namespace in the previous snippet with the name you ga
     </Page>
 ```
 
-You'll need to replace the first part of the class name in the previous snippet with the namespace of your app. For example, if you created a project named **GyrometerCS**, you'd replace `x:Class="App1.MainPage"` with `x:Class="GyrometerCS.MainPage"`. You should also replace `xmlns:local="using:App1"` with `xmlns:local="using:GyrometerCS"`.
+元のスニペットのクラス名の最初の部分を、自分のアプリの名前空間に置き換える必要があります。 たとえば、作成したプロジェクトの名前が **GyrometerCS** である場合は、`x:Class="App1.MainPage"` を `x:Class="GyrometerCS.MainPage"` に置き換えます。 また、`xmlns:local="using:App1"` を `xmlns:local="using:GyrometerCS"` に置き換える必要があります。
 
--   Press F5 or select **Debug** > **Start Debugging** to build, deploy, and run the app.
+-   アプリをビルド、展開、実行するには、F5 キーを押すか、**[デバッグ]**、**[デバッグの開始]** の順にクリックします。
 
-Once the app is running, you can change the gyrometer values by moving the device or using the emulator tools.
+アプリを実行した後、デバイスを移動するか、エミュレーター ツールを使うことによって、ジャイロメーターの値を変更できます。
 
--   Stop the app by returning to Visual Studio and pressing Shift+F5 or select **Debug** > **Stop Debugging** to stop the app.
+-   アプリを停止するには、Visual Studio に戻り、Shift キーを押しながら F5 キーを押すか、**[デバッグ]**、**[デバッグの停止]** の順にクリックします。
 
-###  Explanation
+###  説明
 
-The previous example demonstrates how little code you'll need to write in order to integrate gyrometer input in your app.
+上に示した例では、ごく短いコードを作成するだけで、ジャイロメーター入力をアプリに組み込むことができることがわかります。
 
-The app establishes a connection with the default gyrometer in the **MainPage** method.
+このアプリでは、**MainPage** メソッドで、既定のジャイロメーターとの接続を確立しています。
 
 ```csharp
 _gyrometer = Gyrometer.GetDefault(); // Get the default gyrometer sensor object
 ```
 
-The app establishes the report interval within the **MainPage** method. This code retrieves the minimum interval supported by the device and compares it to a requested interval of 16 milliseconds (which approximates a 60-Hz refresh rate). If the minimum supported interval is greater than the requested interval, the code sets the value to the minimum. Otherwise, it sets the value to the requested interval.
+このアプリでは、**MainPage** メソッドで、レポート間隔を設定しています。 次のコードは、デバイスでサポートされる最小の間隔を取得し、要求される 16 ミリ秒の間隔 (約 60 Hz のリフレッシュ レート) と比較します。 サポートされる最小の間隔が要求される間隔よりも大きい場合は、値を最小値に設定します。 それ以外の場合は、値を要求される間隔に設定します。
 
 ```csharp
 uint minReportInterval = _gyrometer.MinimumReportInterval;
@@ -149,14 +149,14 @@ uint reportInterval = minReportInterval > 16 ? minReportInterval : 16;
 _gyrometer.ReportInterval = reportInterval;
 ```
 
-The new gyrometer data is captured in the **ReadingChanged** method. Each time the sensor driver receives new data from the sensor, it passes the values to your app using this event handler. The app registers this event handler on the following line.
+**ReadingChanged** メソッドで、新しいジャイロメーター データをキャプチャしています。 センサーのドライバーは、センサーから新しいデータを受け取るたびに、このイベント ハンドラーを使ってアプリに値を渡します。 このアプリの場合、このイベント ハンドラーが次の行で登録されています。
 
 ```csharp
 _gyrometer.ReadingChanged += new TypedEventHandler<Gyrometer, 
 GyrometerReadingChangedEventArgs>(ReadingChanged);
 ```
 
-These new values are written to the TextBlocks found in the project's XAML.
+プロジェクトの XAML 内にある TextBlock に、以下の新しい値が書き込まれます。
 
 ```xml
         <TextBlock HorizontalAlignment="Left" Height="23" Margin="8,8,0,0" TextWrapping="Wrap" Text="X-Axis:" VerticalAlignment="Top" Width="46" Foreground="#FFFDFDFD"/>
@@ -167,9 +167,9 @@ These new values are written to the TextBlocks found in the project's XAML.
         <TextBlock x:Name="txtZAxis" HorizontalAlignment="Left" Height="21" Margin="54,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="63" Foreground="#FFF8F3F3"/></code></pre></td>
 ```
 
- ## Related topics
+ ## 関連トピック
 
-* [Gyrometer Sample](http://go.microsoft.com/fwlink/p/?linkid=241379)
+* [ジャイロメーター センサーのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=241379)
 
 
 

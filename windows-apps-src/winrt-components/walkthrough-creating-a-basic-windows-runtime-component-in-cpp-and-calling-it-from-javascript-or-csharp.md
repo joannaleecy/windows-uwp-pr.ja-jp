@@ -1,38 +1,38 @@
 ---
-title: Creating a basic Windows Runtime component in C++ and calling it from JavaScript or C#
-description: This walkthrough shows how to create a basic Windows Runtime Component DLL that's callable from JavaScript, C#, or Visual Basic.
+title: C++ での基本的な Windows ランタイム コンポーネントの作成と JavaScript または C# からの呼び出し#
+description: このチュートリアルでは、JavaScript、C#、または Visual Basic から呼び出すことができる基本的な Windows ランタイム コンポーネント DLL を作成する方法について説明します。
 ms.assetid: 764CD9C6-3565-4DFF-88D7-D92185C7E452
 ---
 
-# Walkthrough: Creating a basic Windows Runtime component in C++ and calling it from JavaScript or C#
+# チュートリアル: C++ での基本的な Windows ランタイム コンポーネントの作成と JavaScript または C# からの呼び出し#
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
+\[一部の情報はリリース前の製品に関することであり、正式版がリリースされるまでに大幅に変更される可能性があります。 ここに記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。\]
 
-This walkthrough shows how to create a basic Windows Runtime Component DLL that's callable from JavaScript, C#, or Visual Basic. Before you begin this walkthrough, make sure that you understand concepts such as the Abstract Binary Interface (ABI), ref classes, and the Visual C++ Component Extensions that make working with ref classes easier. For more information, see [Creating Windows Runtime Components in C++](creating-windows-runtime-components-in-cpp.md) and [Visual C++ Language Reference (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699871.aspx).
+このチュートリアルでは、JavaScript、C#、または Visual Basic から呼び出すことができる基本的な Windows ランタイム コンポーネント DLL を作成する方法について説明します。 このチュートリアルを開始する前に、抽象バイナリ インターフェイス (ABI)、ref クラス、Visual C++ コンポーネント拡張などの概念を必ず理解しておいてください。ref クラスの操作が容易になります。 詳しくは、「[C++ での Windows ランタイム コンポーネントの作成](creating-windows-runtime-components-in-cpp.md)」および「[Visual C++ の言語リファレンス (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699871.aspx)」をご覧ください。
 
-## Creating the C++ component DLL
+## C++ コンポーネント DLL の作成
 
 
-In this example, we create the component project first, but you could create the JavaScript project first. The order doesn’t matter.
+この例では、最初にコンポーネント プロジェクトを作成しますが、JavaScript プロジェクトを最初に作成しても構いません。 順序は重要ではありません。
 
-Notice that the main class of the component contains examples of property and method definitions, and an event declaration. These are provided just to show you how it's done. They are not required, and in this example, we'll replace all of the generated code with our own code.
+コンポーネントのメイン クラスには、プロパティとメソッドの定義およびイベント宣言の例が含まれています。 これらは方法を示すことだけを目的に用意されており、 必須ではありません。この例では、生成されたコードはすべて独自のコードに置き換えます。
 
-## **To create the C++ component project**
+## **C++ コンポーネント プロジェクトを作成するには**
 
-1.  On the Visual Studio menu bar, choose **File, New, Project**.
-2.  In the **New Project** dialog box, in the left pane, expand **Visual C++** and then select the node for Universal Windows apps.
-3.  In the center pane, select **Windows Runtime Component** and then name the project WinRT\_CPP.
-4.  Choose the **OK** button.
+1.  Visual Studio のメニュー バーで、**[ファイル]、[新規作成]、[プロジェクト]** の順にクリックします。
+2.  **[新しいプロジェクト]** ダイアログ ボックスの左ペインで、**[Visual C++]** を展開し、ユニバーサル Windows アプリのノードを選択します。
+3.  中央ペインで **[Windows ランタイム コンポーネント]** を選び、プロジェクトに WinRT\_CPP という名前を付けます。
+4.  **[OK]** をクリックします。
 
-## **To add an activatable class to the component**
+## **コンポーネントにアクティブ化可能なクラスを追加するには**
 
-1.  An activatable class is one that client code can create by using a **new** expression (**New** in Visual Basic, or **ref new** in C++). In your component, you declare it as **public ref class sealed**. In fact, the Class1.h and .cpp files already have a ref class. You can change the name, but in this example we’ll use the default name—Class1. You can define additional ref classes or regular classes in your component if they are required. For more information about ref classes, see [Type System (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx).
+1.  アクティブ化可能なクラスとは、クライアント コードで **new** 式 (Visual Basic では **New**、C++ では **ref new**) を使って作成できるクラスのことです。 コンポーネントでは、**public ref class sealed** として宣言します。 実際には、Class1.h ファイルと .cpp ファイルに ref クラスが既に含まれています。 名前を変更することはできますが、この例では既定の名前 (Class1) を使います。 必要に応じて、コンポーネント内で追加の ref クラスまたは regular クラスを定義できます。 ref クラスについて詳しくは、「[型システム (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx)」をご覧ください。
 
-2.  Add these \#include directives to Class1.h:
+2.  次の \#include ディレクティブを Class1.h に追加します。
 
     ```cpp
              private void PrimesUnOrderedButton_Click_1(object sender, RoutedEventArgs e)
@@ -73,45 +73,45 @@ Notice that the main class of the component contains examples of property and me
             }
     ```
 
-## Running the app
+## アプリの実行
 
 
-Select either the C# project or JavaScript project as the startup project by opening the shortcut menu for the project node in Solution Explorer and choosing **Set As Startup Project**. Then press F5 to run with debugging, or Ctrl+F5 to run without debugging.
+ソリューション エクスプローラーでプロジェクト ノードのショートカット メニューを開き、**[スタートアップ プロジェクトに設定]** を選んで、C# プロジェクトまたは JavaScript プロジェクトをスタートアップ プロジェクトとして選びます。 デバッグして実行する場合は、F5 キーを押します。デバッグせずに実行する場合は、Ctrl キーを押しながら F5 キーを押します。
 
-## Inspecting your component in Object Browser (optional)
-
-
-In Object Browser, you can inspect all Windows Runtime types that are defined in .winmd files. This includes the types in the Platform namespace and the default namespace. However, because the types in the Platform::Collections namespace are defined in the header file collections.h, not in a winmd file, they don’t appear in Object Browser.
-
-## **To inspect a component**
-
-1.  On the menu bar, choose **View, Object Browser** (Ctrl+Alt+J).
-2.  In the left pane of the Object Browser, expand the WinRT\_CPP node to show the types and methods that are defined on your component.
-
-## Debugging tips
+## オブジェクト ブラウザーでのコンポーネントの検査 (省略可能)
 
 
-For a better debugging experience, download the debugging symbols from the public Microsoft symbol servers:
+オブジェクト ブラウザーで、.winmd ファイルで定義されているすべての Windows ランタイム型を検査できます。 これには、Platform 名前空間と既定の名前空間の型が含まれます。 ただし、Platform::Collections 名前空間の型は、winmd ファイルではなく、collections.h ヘッダー ファイルで定義されているため、オブジェクト ブラウザーでは表示されません。
 
-## **To download debugging symbols**
+## **コンポーネントを検査するには**
 
-1.  On the menu bar, choose **Tools, Options**.
-2.  In the **Options** dialog box, expand **Debugging** and select **Symbols**.
-3.  Select **Microsoft Symbol Servers** and the choose the **OK** button.
+1.  メニュー バーで、**[表示]、[オブジェクト ブラウザー]** の順にクリックします (または、Ctrl + Alt + J キーを押します)。
+2.  オブジェクト ブラウザーの左ペインで、[WinRT\_CPP] ノードを展開して、コンポーネントで定義されている型とメソッドを表示します。
 
-It might take some time to download the symbols the first time. For faster performance the next time you press F5, specify a local directory in which to cache the symbols.
+## デバッグのヒント
 
-When you debug a JavaScript solution that has a component DLL, you can set the debugger to enable either stepping through script or stepping through native code in the component, but not both at the same time. To change the setting, open the shortcut menu for the JavaScript project node in Solution Explorer and choose **Properties, Debugging, Debugger Type**.
 
-Be sure to select appropriate capabilities in the package designer. You can open the package designer by opening the Package.appxmanifest file. For example, if you are attempting to programmatically access files in the Pictures folder, be sure to select the **Pictures Library** check box in the **Capabilities** pane of the package designer.
+デバッグ操作を向上させるには、パブリックな Microsoft シンボル サーバーからデバッグ シンボルをダウンロードします。
 
-If your JavaScript code doesn't recognize the public properties or methods in the component, make sure that in JavaScript you are using camel casing. For example, the `ComputeResult` C++ method must be referenced as `computeResult` in JavaScript.
+## **デバッグ シンボルをダウンロードするには**
 
-If you remove a C++ Windows Runtime Component project from a solution, you must also manually remove the project reference from the JavaScript project. Failure to do so prevents subsequent debug or build operations. If necessary, you can then add an assembly reference to the DLL.
+1.  メニュー バーで、**[ツール]、[オプション]** の順にクリックします。
+2.  **[オプション]** ダイアログ ボックスで、**[デバッグ]** を展開し、**[シンボル]** をクリックします。
+3.  **[Microsoft シンボル サーバー]** を選択し、**[OK]** をクリックします。
 
-## Related topics
+シンボルを初めてダウンロードするときは時間がかかる場合があります。 次回 F5 キーを押したときのパフォーマンスを向上させるには、シンボルをキャッシュするローカル ディレクトリを指定します。
 
-* [Creating Windows Runtime Components in C++](creating-windows-runtime-components-in-cpp.md)
+コンポーネント DLL を含む JavaScript ソリューションをデバッグするときは、コンポーネントでスクリプトのステップ実行またはネイティブ コードのステップ実行を有効にするようにデバッガーを設定できますが、この両方を同時に有効にすることはできません。 設定を変更するには、ソリューション エクスプローラーで JavaScript プロジェクト ノードのショートカット メニューを開き、**[プロパティ]、[デバッグ]、[デバッガーの種類]** の順にクリックします。
+
+パッケージ デザイナーで必ず適切な機能を選択してください。 パッケージ デザイナーを開くには、Package.appxmanifest ファイルを開きます。 たとえば、プログラムを使ってピクチャ フォルダーのファイルにアクセスする場合は、パッケージ デザイナーの **[機能]** ペインで **[画像ライブラリ]** チェック ボックスをオンにしてください。
+
+JavaScript コードがコンポーネントのパブリック プロパティまたはパブリック メソッドを認識しない場合は、JavaScript で camel 規約を使っていることを確認します。 たとえば、`ComputeResult` C++ メソッドは、JavaScript で `computeResult` として参照する必要があります。
+
+C++ Windows ランタイム コンポーネント プロジェクトをソリューションから削除する場合、JavaScript プロジェクトからプロジェクト参照も手動で削除する必要があります。 これを行わないと、後続のデバッグまたはビルド操作が妨げられます。 その後、必要に応じてアセンブリ参照を DLL に追加できます。
+
+## 関連トピック
+
+* [C++ での Windows ランタイム コンポーネントの作成](creating-windows-runtime-components-in-cpp.md)
 
 
 

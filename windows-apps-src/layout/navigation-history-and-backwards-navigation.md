@@ -1,64 +1,64 @@
 ---
-Description: Navigation in Universal Windows Platform (UWP) apps is based on a flexible model of navigation structures, navigation elements, and system-level features.
-title: Navigation design basics for Universal Windows Platform (UWP) apps
+Description: ユニバーサル Windows プラットフォーム (UWP) アプリのナビゲーションは、ナビゲーション構造、ナビゲーション要素、システム レベルの機能から成る柔軟なモデルに基づいています。
+title: ユニバーサル Windows プラットフォーム (UWP) アプリのナビゲーション デザインの基本
 ms.assetid: e9876b4c-242d-402d-a8ef-3487398ed9b3
 isNew: true
-label: History and backwards navigation
+label: 履歴と前に戻る移動
 template: detail.hbs
 ---
 
-#  Navigation history and backwards navigation
+#  ナビゲーション履歴と前に戻る移動
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-On the Web, individual web sites provide their own navigation systems, such as tables of contents, buttons, menus, simple lists of links, and so on. The navigation experience can vary wildly from website to website. However, there is one consistent navigation experience: back. Most browsers provide a back button that behaves the same way regardless of the website.
+Web の場合、個々の Web サイトには独自のナビゲーション システム (目次、ボタン、メニュー、リンクの簡単な一覧など) が用意されています。 ナビゲーション エクスペリエンスは、Web サイトによっては大幅に異なる場合があります。 ただし、一貫して同じナビゲーション エクスペリエンスが 1 つあります。それは "戻る" 操作です。 ほとんどのブラウザーには、Web サイトに関係なく同じように動作する戻るボタンがあります。
 
-For similar reasons, the Universal Windows Platform (UWP) provides a consistent back navigation system for traversing the user's navigation history within an app and, depending on the device, from app to app.
+同様の理由から、ユニバーサル Windows プラットフォーム (UWP) では、アプリのユーザーのナビゲーションの履歴内の移動や、デバイスによってはアプリ間の移動について、一貫性のある "戻る" ナビゲーション システムを提供します。
 
-The UI for the system back button is optimized for each form factor and input device type, but the navigation experience is global and consistent across devices and UWP apps.
+システムの戻るボタンの UI は、フォーム ファクターや入力デバイスの種類ごとに最適化されますが、ナビゲーション エクスペリエンスはグローバルであり、デバイスや UWP アプリで一貫しています。
 
-Here are the primary form factors with the back button UI:
+主なフォーム ファクターでの戻るボタン UI を次に示します。
 
 
 <table>
     <tr>
-        <td colspan="2">Devices</td>
-        <td>Back button behavior</td>
+        <td colspan="2">デバイス</td>
+        <td>戻るボタンの動作</td>
      </tr>
     <tr>
-        <td>Phone</td>
+        <td>電話</td>
         <td>![system back on a phone](images/back-systemback-phone.png)</td>
         <td>
         <ul>
-<li>Always present.</li>
-<li>A software or hardware button at the bottom of the device.</li>
-<li>Global back navigation within the app and between apps.</li>
+<li>常に表示されます。</li>
+<li>デバイスの下部にあるソフトウェアまたはハードウェア ボタン。</li>
+<li>アプリ内部やアプリ間で、グローバルな戻るナビゲーションを実現します。</li>
 </ul>
 </td>
      </tr>
      <tr>
-        <td>Tablet</td>
+        <td>タブレット</td>
         <td>![system back on a tablet (in tablet mode)](images/back-systemback-tablet.png)</td>
         <td>
 <ul>
-<li>Always present in Tablet mode.
+<li>タブレット モードでは、常に表示されます。
 
     Not available in Desktop mode. Title bar back button can be enabled, instead. See [PC, Laptop, Tablet](#PC).
 
     Users can switch between running in Tablet mode and Desktop mode by going to **Settings &gt; System &gt; Tablet mode** and setting **Make Windows more touch-friendly when using your device as a tablet**.</li>
 
-<li> A software button in the navigation bar at the bottom of the device.</li>
-<li>Global back navigation within the app and between apps.</li></ul>        
+<li> デバイスの下部のナビゲーション バーにあるソフトウェア ボタン。</li>
+<li>アプリ内部やアプリ間で、グローバルな戻るナビゲーションを実現します。</li></ul>        
         </td>
      </tr>
     <tr>
-        <td>PC, Laptop, Tablet</td>
+        <td>PC、ノート PC、タブレット</td>
         <td>![system back on a pc or laptop](images/back-systemback-pc.png)</td>
         <td>
 <ul>
-<li>Optional in Desktop mode.
+<li>デスクトップ モードではオプションです。
 
     Not available in Tablet mode. See [Tablet](#Tablet).
 
@@ -66,8 +66,8 @@ Here are the primary form factors with the back button UI:
 
     Users can switch between running in Tablet mode and Desktop mode by going to **Settings &gt; System &gt; Tablet mode** and setting **Make Windows more touch-friendly when using your device as a tablet**.</li>
 
-<li>A software button in the title bar of the app.</li>
-<li>Back navigation within the app only. Does not support app-to-app navigation.</li></ul>        
+<li>アプリのタイトル バーにあるソフトウェア ボタン。</li>
+<li>アプリ内部のみでの戻るナビゲーション。 アプリ間のナビゲーションはサポートされません。</li></ul>        
         </td>
      </tr>
     <tr>
@@ -75,34 +75,34 @@ Here are the primary form factors with the back button UI:
         <td>![system back on a surface hub](images/nav/nav-back-surfacehub.png)</td>
         <td>
 <ul>
-<li>Optional.</li>
-<li>Disabled by default. Must opt in to enable it.</li>
-<li>A software button in the title bar of the app.</li>
-<li>Back navigation within the app only. Does not support app-to-app navigation.</li></ul>        
+<li>省略可能。</li>
+<li>既定では無効になっています。 有効にすることをオプトインする必要があります。</li>
+<li>アプリのタイトル バーにあるソフトウェア ボタン。</li>
+<li>アプリ内部のみでの戻るナビゲーション。 アプリ間のナビゲーションはサポートされません。</li></ul>        
         </td>
      </tr>     
 <table>
 
 
-Here are some alternative input types that don't rely on a back button UI, but still provide the exact same functionality.
+ここでは、戻るボタンの UI に依存しないが、まったく同じ機能を提供する代替入力の種類をいくつか示します。
 
 
 <table>
-<tr><td colspan="3">Input devices</td></tr>
-<tr><td>Keyboard</td><td>![keyboard](images/keyboard-wireframe.png)</td><td>Windows key + Backspace</td></tr>
-<tr><td>Cortana</td><td>![speech](images/speech-wireframe.png)</td><td>Say, "Hey Cortana, go back"</td></tr>
+<tr><td colspan="3">入力デバイス</td></tr>
+<tr><td>キーボード</td><td>![keyboard](images/keyboard-wireframe.png)</td><td>Windows キー + BackSpace</td></tr>
+<tr><td>Cortana</td><td>![speech](images/speech-wireframe.png)</td><td>「ねえ、コルタナ、戻る」と話す。</td></tr>
 </table>
  
 
-When your app runs on a phone, tablet, or on a PC or laptop that has system back enabled, the system notifies your app when the back button is pressed. The user expects the back button to navigate to the previous location in the app's navigation history. It's up to you to decide which navigation actions to add to the navigation history and how to respond to the back button press.
+アプリが電話、タブレット、PC、ノート PC で実行され、システムの戻るボタンが有効になっていると、戻るボタンが押されたときに、システムからアプリに通知されます。 ユーザーは、戻るボタンによって、アプリのナビゲーション履歴における前の場所に戻ることを想定しています。 ナビゲーション履歴に追加するナビゲーション操作の種類、および戻るボタンが押されたときの応答方法は、自由に決めることができます。
 
 
-## <span id="Enable_system_back_navigation_support"></span><span id="enable_system_back_navigation_support"></span><span id="ENABLE_SYSTEM_BACK_NAVIGATION_SUPPORT"></span>How to enable system back navigation support
+## <span id="Enable_system_back_navigation_support"></span><span id="enable_system_back_navigation_support"></span><span id="ENABLE_SYSTEM_BACK_NAVIGATION_SUPPORT"></span>システムの "戻る" ナビゲーションのサポートを有効にする方法
 
 
-Apps must enable back navigation for all hardware and software system back buttons. Do this by registering a listener for the [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) event and defining a corresponding handler.
+アプリは、すべてのハードウェアとソフトウェアによるシステムの戻るボタンの "戻る" ナビゲーションを有効にする必要があります。 これを行うには、[**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) イベントのリスナーを登録し、対応するハンドラーを定義します。
 
-Here we register a global listener for the [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) event in the App.xaml code-behind file. You can register for this event in each page if you want to exclude specific pages from back navigation, or you want to execute page-level code before displaying the page.
+ここでは、App.xaml 分離コード ファイルで、[**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) イベントのグローバル リスナーを登録しています。 "戻る" ナビゲーションから特定のページを除外する場合や、ページを表示する前にページ レベルのコードを実行する場合は、各ページでこのイベントについて登録できます。
 
 ```CSharp
 Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->
@@ -116,9 +116,9 @@ Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested +=
     App_BackRequested;
 ```
 
-Here's the corresponding [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) event handler that calls [**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568) on the root frame of the app.
+対応する [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) イベント ハンドラーを以下に示します。このイベント ハンドラーは、アプリのルート フレームで [**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568) を呼び出します。
 
-This handler is invoked on a global back event. If the in-app back stack is empty, the system might navigate to the previous app in the app stack or to the Start screen. There is no app back stack in Desktop mode and the user stays in the app even when the in-app back stack is depleted.
+このハンドラーは、グローバルな戻るイベントで呼び出されます。 アプリ内のバック スタックが空である場合、システムはアプリ スタック内の前のアプリまたはスタート画面にナビゲートする可能性があります。 デスクトップ モードにはアプリのバック スタックはなく、アプリ内のバック スタックが使い果たされている場合でも、ユーザーはアプリ内に留まります。
 
 ```CSharp
 void App::App_BackRequested(
@@ -156,29 +156,29 @@ private void App_BackRequested(object sender,
     }
 }
 ```
-## <span id="Enable_the_title_bar_back_button"></span><span id="enable_the_title_bar_back_button"></span><span id="ENABLE_THE_TITLE_BAR_BACK_BUTTON"></span>How to enable the title bar back button
+## <span id="Enable_the_title_bar_back_button"></span><span id="enable_the_title_bar_back_button"></span><span id="ENABLE_THE_TITLE_BAR_BACK_BUTTON"></span>タイトル バーの戻るボタンを有効にする方法
 
 
-Devices that support Desktop mode (typically PCs and laptops, but also some tablets) and have the setting enabled (**Settings &gt; System &gt; Tablet mode**), do not provide a global navigation bar with the system back button.
+デスクトップ モードをサポートするデバイス (通常は PC とノート PC、一部のタブレットも含む) で、設定を有効にしている (**[設定]、[システム]、[タブレット モード]** の順に選択) 場合、システムの戻るボタンを備えたグローバルなナビゲーション バーは提供されません。
 
-In Desktop mode, every app runs in a window with a title bar. You can provide an alternative back button for your app that is displayed in this title bar.
+デスクトップ モードでは、すべてのアプリは、タイトル バーのあるウィンドウで実行されます。 このタイトル バーに表示される、代わりの戻るボタンをアプリに提供できます。
 
-The title bar back button is only available in apps running on devices in Desktop mode, and only supports in-app navigation history—it does not support app-to-app navigation history.
+タイトル バーの戻るボタンは、デスクトップ モードのデバイスで実行されているアプリでのみ利用でき、アプリ内のナビゲーション履歴のみをサポートします。アプリ間のナビゲーション履歴はサポートされません。
 
-**Important**  The title bar back button is not displayed by default. You must opt in.
+**重要**  タイトル バーの戻るボタンは、既定では表示されません。 オプトインする必要があります。
 
  
 
 |                                                             |                                                        |
 |-------------------------------------------------------------|--------------------------------------------------------|
-| ![no system back in desktop mode](images/nav-noback-pc.png) | ![system back in desktop mode](images/nav-back-pc.png) |
-| Desktop mode, no back navigation.                           | Desktop mode, back navigation enabled.                 |
+| ![デスクトップ モードでシステムの戻るボタンがない場合](images/nav-noback-pc.png) | ![デスクトップ モードでのシステムの戻るボタン](images/nav-back-pc.png) |
+| デスクトップ モード、"戻る" ナビゲーションがない場合                           | デスクトップ モード、"戻る" ナビゲーションが有効な場合                 |
 
  
 
-Override the [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) event and set [**AppViewBackButtonVisibility**](https://msdn.microsoft.com/library/windows/apps/dn986448) to [**Visible**](https://msdn.microsoft.com/library/windows/apps/dn986276) in the code-behind file for each page that you want to enable the title bar back button.
+タイトル バーの戻るボタンを有効にする各ページの分離コード ファイルで、[**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) イベントをオーバーライドして [**AppViewBackButtonVisibility**](https://msdn.microsoft.com/library/windows/apps/dn986448) を [**Visible**](https://msdn.microsoft.com/library/windows/apps/dn986276) に設定します。
 
-For this example, we list each page in the back stack and enable the back button if the [**CanGoBack**](https://msdn.microsoft.com/library/windows/apps/br242685) property of the frame has a value of **true**.
+この例では、フレームの [**CanGoBack**](https://msdn.microsoft.com/library/windows/apps/br242685) プロパティの値が **true** である場合に、バック スタック内の各ページの一覧を表示し、戻るボタンを有効にします。
 
 ```ManagedCPlusPlus
 void StartPage::OnNavigatedTo(NavigationEventArgs^ e)
@@ -238,9 +238,9 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 }
 ```
 
-### Guidelines for custom back navigation behavior
+### カスタムの "戻る" ナビゲーションの動作のガイドライン
 
-If you choose to provide your own back stack navigation, the experience should be consistent with other apps. We recommend that you follow the following patterns for navigation actions:
+独自のバック スタック ナビゲーションを提供する場合、エクスペリエンスが他のアプリと一貫している必要があります。 ナビゲーション操作では、次のパターンに従うことをお勧めします。
 
 <table>
 <colgroup>
@@ -249,57 +249,57 @@ If you choose to provide your own back stack navigation, the experience should b
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Navigation action</th>
-<th align="left">Add to navigation history?</th>
+<th align="left">ナビゲーション操作</th>
+<th align="left">ナビゲーション履歴への追加</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>Page to page, different peer groups</strong></p></td>
-<td align="left"><strong>Yes</strong>
-          <p>In this illustration, the user navigates from level 1 of the app to level 2, crossing peer groups, so the navigation is added to the navigation history.</p>
+<td align="left"><p><strong>ページ間、異なるピア グループ</strong></p></td>
+<td align="left"><strong>○</strong>
+          <p>この図では、ユーザーはピア グループを横断して、アプリのレベル 1 からレベル 2 に移動します。そのため、このナビゲーションはナビゲーション履歴に追加されます。</p>
 <p><img src="images/nav/nav-pagetopage-diffpeers-imageonly1.png" alt="Navigation across peer groups" /></p>
-<p>In the next illustration, the user navigates between two peer groups at the same level, again crossing peer groups, so the navigation is added to the navigation history.</p>
+<p>次の図では、ユーザーは同じレベルにある 2 つのピア グループの間を移動し、この場合もピア グループを横断します。そのため、このナビゲーションはナビゲーション履歴に追加されます。</p>
 <p><img src="images/nav/nav-pagetopage-diffpeers-imageonly2.png" alt="Navigation across peer groups" /></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Page to page, same peer group, no on-screen navigation element</strong></p>
-<p>The user navigates from one page to another with the same peer group. There is no navigation element that is always present (such as tabs/pivots or a docked navigation pane) that provides direct navigation to both pages.</p></td>
-<td align="left"><strong>Yes</strong>
-          <p>In the following illustration, the user navigates between two pages in the same peer group. The pages don't use tabs or a docked navigation pane, so the navigation is added to the navigation history.</p>
+<td align="left"><p><strong>ページ間、同じピア グループ、ナビゲーション要素は画面上に表示されない</strong></p>
+<p>ユーザーは、同じピア グループでページ間を移動します。 両方のページを対象とした直接的なナビゲーションを実現するナビゲーション要素 (タブ/ピボットや、ドッキングされたナビゲーション ウィンドウなど) は画面に表示されません。</p></td>
+<td align="left"><strong>○</strong>
+          <p>次の図では、ユーザーは同じピア グループ内の 2 つのページ間を移動します。 ページでは、タブやドッキングされたナビゲーション ウィンドウは使われていません。そのため、このナビゲーションはナビゲーション履歴に追加されます。</p>
 <p><img src="images/nav/nav-pagetopage-samepeer-noosnavelement.png" alt="Navigation within a peer group" /></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>Page to page, same peer group, with an on-screen navigation element</strong></p>
-<p>The user navigates from one page to another in the same peer group. Both pages are shown in the same navigation element. For example, both pages use the same tabs/pivots element, or both pages appear in a docked navigation pane.</p></td>
-<td align="left"><strong>No</strong>
-          <p>When the user presses back, go back to the last page before the user navigated to the current peer group.</p>
+<td align="left"><p><strong>ページ間、同じピア グループ、画面上に表示されるナビゲーション要素を使う</strong></p>
+<p>ユーザーは、同じピア グループ内のページ間を移動します。 両方のページは同じナビゲーション要素に表示されます。 たとえば、両方のページで同じタブ/ピボット要素を使っていたり、両方のページがドッキングされたナビゲーション ウィンドウに表示されるとします。</p></td>
+<td align="left"><strong>×</strong>
+          <p>ユーザーが戻るボタンを押すと、現在のピア グループに移動する前に表示していた最後のページに戻ります。</p>
 <p><img src="images/nav/nav-pagetopage-samepeer-yesosnavelement.png" alt="Navigation across peer groups when a navigation element is present" /></p></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Show a transient UI</strong>
-          <p>The app displays a pop-up or child window, such as a dialog, splash screen, or on-screen keyboard, or the app enters a special mode, such as multiple selection mode.</p></td>
-<td align="left"><strong>No</strong>
-          <p>When the user presses the back button, dismiss the transient UI (hide the on-screen keyboard, cancel the dialog, etc) and return to the page that spawned the transient UI.</p>
+<td align="left"><strong>一時的な UI の表示</strong>
+          <p>アプリは、ダイアログ、スプラッシュ画面、スクリーン キーボードなどのポップアップ ウィンドウや子ウィンドウを表示します。または、アプリが複数選択モードなどの特別なモードに移行します。</p></td>
+<td align="left"><strong>×</strong>
+          <p>ユーザーが戻るボタンを押すと、一時的な UI が閉じられ (スクリーン キーボードが非表示になる、ダイアログがキャンセルされるなど)、一時的な UI を生成したページに戻ります。</p>
 <p><img src="images/back-transui.png" alt="Showing a transient UI" /></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><strong>Enumerate items</strong>
-          <p>The app displays content for an on-screen item, such as the details for the selected item in master/details list.</p></td>
-<td align="left"><strong>No.</strong>
-          <p>Enumerating items is similar to navigating within a peer group. When the user presses back, navigate to the page that preceded the current page that has the item enumeration.</p>
+<td align="left"><strong>項目の列挙</strong>
+          <p>アプリが、マスター/詳細リストで選んだ項目の詳細など、画面上の項目のコンテンツを表示します。</p></td>
+<td align="left"><strong>×</strong>
+          <p>項目の列挙は、ピア グループ内の移動に似ています。 ユーザーが戻るボタンを押すと、項目の列挙が表示されている現在のページの前のページに移動されます。</p>
 <img src="images/nav/nav-enumerate.png" alt="Iterm enumeration" /></td>
 </tr>
 </tbody>
 </table>
 
 
-### <span id="Resuming"></span><span id="resuming"></span><span id="RESUMING"></span>Resuming
+### <span id="Resuming"></span><span id="resuming"></span><span id="RESUMING"></span>再開
 
-When the user switches to another app and returns to your app, we recommend returning to the last page in the navigation history.
+ユーザーが別のアプリに切り替えた後で、元のアプリに戻った場合は、ナビゲーション履歴にある最後のページに戻すことをお勧めします。
 
 
-\[This article contains information that is specific to UWP apps and Windows 10. For Windows 8.1 guidance, please download the [Windows 8.1 guidelines PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+\[この記事には、UWP アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
 
 
 

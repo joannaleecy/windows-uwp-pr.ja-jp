@@ -1,84 +1,84 @@
 ---
-Description: Windows 10, version 1511 and updates to developer tools continue to provide the tools, features, and experiences powered by the Universal Windows Platform.
-title: What is new for developers in Windows 10, version 1511: November 2015
+Description: Windows 10 バージョン 1511 と開発者ツールの更新プログラムでは、引き続きユニバーサル Windows プラットフォームによって強化されたツール、機能、およびエクスペリエンスを提供しています。
+title: Windows 10 の開発者向け新着情報 (バージョン 1511: 2015 年 11 月)
 ---
 
-# What's new for developers in Windows 10, version 1511: November 2015
+# Windows 10 の開発者向け新着情報 (バージョン 1511: 2015 年 11 月)
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-Windows 10, version 1511 and updates to developer tools continue to provide the tools, features, and experiences powered by the Universal Windows Platform. [Install the tools and SDK](https://dev.windows.com/downloads) on Windows 10, version 1511 and you’re ready to either [create a new Universal Windows app](https://msdn.microsoft.com/library/windows/apps/bg124288) or explore how you can use your [existing app code on Windows](https://msdn.microsoft.com/library/windows/apps/mt238321).
+Windows 10 バージョン 1511 と開発者ツールの更新プログラムでは、引き続きユニバーサル Windows プラットフォームによって強化されたツール、機能、およびエクスペリエンスを提供しています。 Windows 10 バージョン 1511 用の[ツールと SDK をインストール](https://dev.windows.com/downloads)すると、[新しいユニバーサル Windows アプリを作成](https://msdn.microsoft.com/library/windows/apps/bg124288)したり、[Windows の既存のアプリ コード](https://msdn.microsoft.com/library/windows/apps/mt238321)がどのように使えるかを試したりすることができます。
 
-## User Experience
+## ユーザー エクスペリエンス
 
-The new <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.startscreen.aspx">Windows.UI.StartScreen.JumpList</a> and <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.startscreen.aspx">Windows.UI.StartScreen.JumpListItem</a>  classes provide apps with the ability to programmatically select the type of system-managed jump list they want to use, to add custom task entry points to their jump list, and to add custom groups to their jump list.
+新しい <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.startscreen.aspx">Windows.UI.StartScreen.JumpList</a> クラスと <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.startscreen.aspx">Windows.UI.StartScreen.JumpListItem</a> クラスは、アプリで使用するシステム管理されたジャンプ リストの種類をプログラミングで選択したり、ジャンプ リストにカスタム タスク エントリ ポイントを追加したり、カスタム グループを追加したりできる機能を提供します。
 
-## Input
+## 入力
                                         
-* <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.input.keyboarddeliveryinterceptor.aspx">Keyboard delivery interceptor</a>
+* <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.input.keyboarddeliveryinterceptor.aspx">デリバリー インターセプター</a>
                                         
-    Enables an app to override the system processing of raw keyboard input, including shortcut keys, access keys (or hot keys), accelerator keys, and application keys, but excluding secure attention sequence (SAS) key combinations.
+    アプリでショートカット キーやアクセス キー (またはホット キー)、アクセラレータ キー、アプリケーション キーなどの、キーボードからの生の入力のシステム プロセスを上書きします。ただし、Secure Attention Sequence (SAS) キーの組み合わせは除きます。
 
-    Secure attention sequence (SAS) key combinations, including Ctrl-Alt-Del and Windows-L, continue to be processed by the system.
+    Ctrl + Alt + Del と Windows + L を含む Secure Attention Sequence (SAS) キーの組み合わせは引き続きシステムで処理されます。
                                         
-* Cross-process chaining of pointer input for both <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.core.corewindow.aspx">UWP apps</a> and <a href="https://msdn.microsoft.com/library/windows/desktop/hh454903(v=vs.85).aspx">Classic Windows apps</a>.
+* <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.core.corewindow.aspx">UWP アプリ</a>と<a href="https://msdn.microsoft.com/library/windows/desktop/hh454903(v=vs.85).aspx">従来の Windows アプリ</a>のポインター入力のチェーンはプロセスを超えて処理されます。
                                         
-    New pointer events that enable cross-process chaining of input.    
+    プロセス間の入力チェーンを実現する新しいポインター イベント。    
                                         
-* <a href="https://msdn.microsoft.com/library/windows/desktop/mt622165(v=vs.85).aspx">Ink Presenter for Classic Desktop apps</a>
+* <a href="https://msdn.microsoft.com/library/windows/desktop/mt622165(v=vs.85).aspx">従来のデスクトップ アプリ用のインク プレゼンター</a>
                                         
-    The ink presenter APIs enable Microsoft Win32 apps to manage the input, processing, and rendering of ink input (standard and modified) through an <a href="https://msdn.microsoft.com/library/windows/desktop/windows.ui.input.inking.inkpresenter.aspx">InkPresenter</a> object inserted into the app's <a href="https://msdn.microsoft.com/library/windows/desktop/hh437371(v=vs.85).aspx">DirectComposition</a> visual tree.    
+    インク プレゼンター API では、アプリの <a href="https://msdn.microsoft.com/library/windows/desktop/hh437371(v=vs.85).aspx">DirectComposition</a> ビジュアル ツリーに挿入された <a href="https://msdn.microsoft.com/library/windows/desktop/windows.ui.input.inking.inkpresenter.aspx">InkPresenter</a> オブジェクトを通じて、入力、処理、インク入力 (標準と変更) の描画の Microsoft Win32 アプリによる管理を実現しています。    
                                     
-## Networking
+## ネットワーク
                                                                         
-For WebSockets users: <a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.streams.datawriter.flushasync.aspx">MessageWebSocket.OutputStream.FlushAsync</a> and <a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.streams.datawriter.flushasync.aspx">StreamWebSocket.OutputStream.FlushAsync</a> have been fully implemented, and wait for previously-issued WriteAsync calls to complete. Note that this may cause existing code to throw an exception if the WebSocket is in an invalid state when you call <a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.streams.datawriter.flushasync.aspx">FlushAsync</a>.    
+WebSocket ユーザー向け: <a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.streams.datawriter.flushasync.aspx">MessageWebSocket.OutputStream.FlushAsync</a> と <a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.streams.datawriter.flushasync.aspx">StreamWebSocket.OutputStream.FlushAsync</a> の実装がすべて完了し、後は以前に発行された WriteAsync 呼び出しの完了を待つのみとなりました。 これにより、<a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.streams.datawriter.flushasync.aspx">FlushAsync</a> 呼び出し時に WebSocket が無効な状態にあると、既存のコードが例外をスローする場合があります。    
 
-A new property <a href="https://msdn.microsoft.com/library/windows/apps/windows.web.http.filters.httpbaseprotocolfilter.aspx">CookieUsageBehavior</a> was added to the existing <a href="https://msdn.microsoft.com/library/windows/apps/windows.web.http.filters.httpbaseprotocolfilter.aspx">Windows.Web.Http.Filters.HttpBaseProtocolFilter class</a>. This allows developers to have control of how cookies are handled by the system.    
+新しいプロパティ <a href="https://msdn.microsoft.com/library/windows/apps/windows.web.http.filters.httpbaseprotocolfilter.aspx">CookieUsageBehavior</a> が既存の <a href="https://msdn.microsoft.com/library/windows/apps/windows.web.http.filters.httpbaseprotocolfilter.aspx">Windows.Web.Http.Filters.HttpBaseProtocolFilter クラス</a>に追加されました。 これにより、開発者は、システムによる Cookie の処理方法を制御できるようになります。    
                                     
 ## ORTC
                                     
-Microsoft Edge now implements <a href="https://msdn.microsoft.com/library/mt433097(v=vs.85).aspx">ORTC (Object Real-Time Communications)</a> enabling real-time audio/video calls on the web directly between browsers, mobile devices, and servers via native Javascript APIs. Developers can now build advanced real-time audio/video communication applications on top of the Microsoft Edge browser using the ORTC API, with support for group video calls, simulcast, scalable video coding (SVC), and more.    
+Microsoft Edge に実装された <a href="https://msdn.microsoft.com/library/mt433097(v=vs.85).aspx">ORTC (Object Real-Time Communications)</a> を使用すると、ネイティブ Javascript API を通じ、ブラウザー、モバイル デバイス、サーバーの間で直接、Web の音声通話とビデオ通話をリアルタイムで行うことができます。 開発者は ORTC API と、グループ ビデオ通話、サイマルキャスト、スケーラブル ビデオ コーディング (SVC) などのサポートを使用して、Microsoft Edge ブラウザー上に高度なリアルタイム音声/ビデオ コミュニケーション アプリケーションを構築することができるようになりました。    
 
-For a demo of a 1:1 audio/video call via the ORTC API between Microsoft Edge browsers, visit <a href="/microsoft-edge/testdrive/demos/ortcdemo/">Test Drive sites and demos</a>. For an overview and code sample walk-through, visit the <a href="https://msdn.microsoft.com/library/mt588497(v=vs.85).aspx">ORTC Developer Guide entry</a>.
+ORTC API を使った Microsoft Edge ブラウザー間の 1 対 1 の音声/ビデオ通話のデモは、<a href="/microsoft-edge/testdrive/demos/ortcdemo/">テスト ドライブ サイトとデモ</a>をご覧ください。 概要とコード サンプル デモは <a href="https://msdn.microsoft.com/library/mt588497(v=vs.85).aspx">ORTC 開発者向けガイド エントリ</a>をご覧ください。
                                         
-## Microsoft Edge F12 Developer Tools
+## Microsoft Edge F12 開発者ツール
                                                                         
-Microsoft Edge introduces great new improvements to F12 developer tools, including some of the most requested features from <a href="https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer">UserVoice</a>. Explore new features in the DOM Explorer, Console, Debugger, Network, Performance, Memory, Emulation, and a new Experiments tool, that allows you to try out powerful new features before they're finished. The new tools are built in TypeScript, and are always running, so no reloads are required. In addition, F12 developer tools documentation is now part of the <a href="http://dev.modern.ie/">Microsoft Edge Dev site</a> and fully available on <a href="https://github.com/MicrosoftEdge/MicrosoftEdge-Documentation">GitHub</a>. From this point on, the docs will not only be influenced by your feedback, but you're invited to contribute and help shape our documentation. For a brief video introduction to the F12 developer tools, visit <a href="https://channel9.msdn.com/Blogs/One-Dev-Minute/Microsoft-Edge-F12-tools">Channel9’s One Dev Minute</a>.    
+Microsoft Edge の F12 開発者ツールでは、<a href="https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer">UserVoice</a> で最も要望の多かったいくつかの機能を含む、新しい改善点が導入されています。 DOM Explorer、コンソール、デバッガー、ネットワーク、パフォーマンス、メモリ、エミュレーション、そして新しい試験的機能ツールでは、完成間近の強力な新機能を試すことができます。 新しいツールは TypeScript で構築されており、常に実行されているため、再読み込みは必要ありません。 さらに、F12 開発者ツールのドキュメントが <a href="http://dev.modern.ie/">Microsoft Edge デベロッパー サイト</a>の一部になり、<a href="https://github.com/MicrosoftEdge/MicrosoftEdge-Documentation">GitHub</a> でも閲覧できるようになりました。 今後、ドキュメントはみなさんのフィードバックによって進化するだけでなく、ドキュメントの構築そのものに参加してもらえるようになります。 F12 開発者ツールに関する短いビデオによる説明は <a href="https://channel9.msdn.com/Blogs/One-Dev-Minute/Microsoft-Edge-F12-tools">Channel9 の One Dev Minute</a> をご覧ください。    
                                     
 ## Windows Hello
                                     
-Windows Hello provides your app the ability to enable facial or fingerprint recognition to log on to a Windows system or device.
+Windows Hello は Windows システムやデバイスへの顔認証または指紋認証によるログインを実現します。
 
-The Providers APIs allow IHVs and OEMs to expose depth, infrared, and color cameras (and related metadata) for computer vision into UWP, and to designate a camera as participating in Windows Hello face authentication. The <a href="http://go.microsoft.com/fwlink/?LinkId=691697">Windows.Devices.Perception</a> namespace contains the client APIs that allow a UWP application to access the color, depth, or infrared data of computer vision cameras.
+Providers API は、IHV と OEM によるコンピューター ビジョンの深度、赤外線、色のカラー カメラ (および関連するメタデータ) の UWP への取り込み、カメラによる Windows Hello の顔認証を実現します。 <a href="http://go.microsoft.com/fwlink/?LinkId=691697">Windows.Devices.Perception</a> 名前空間には、UWP アプリケーションからコンピューター ビジョン カメラの色、深度、赤外線データへのアクセスを実現するクライアント API が含まれています。
                                     
-## New Gaming API
+## 新しいゲーム API
 
-Use the new Windows.Gaming.UI.GameBar class to receive notifications when Game bar is shown or dismissed.    
+新しい Windows.Gaming.UI.GameBar クラスを使うと、ゲーム バーを表示または非表示にした時に通知を受け取ることができます。    
                             
                                     
-## Bluetooth APIs
+## Bluetooth API
                                     
-Several APIs were added and updated to extend support for Bluetooth LE, device enumeration, and other features in Bluetooth. See <a href="https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.aspx">Windows.Devices.Bluetooth</a> namespace .    
+複数の API が追加、更新され、Bluetooth LE、デバイス列挙、および Bluetooth のその他の機能のサポートが拡張されました。 <a href="https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.aspx">Windows.Devices.Bluetooth</a> 名前空間をご覧ください。    
                                    
-## Smart Card APIs ## 
+## Smart Card API ## 
 
-Several SmartCardCryptogram APIs were added to the <a href="https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.aspx">Windows.Devices.SmartCards</a> namespace to support secure cryptogram payment protocols. Payment apps using host card emulation to support tap-to-pay can use these APIs for additional security and performance. Apps can create a key and protect limited-use transaction keys using the TPM. Apps can also leverage the NGC (Next Generation Credentials) framework to protect the keys with the user’s PIN. These APIs delegate cryptogram generation to the system for enhanced performance. This also prevents any access to the keys and cryptograms by other apps.    
+複数の SmartCardCryptogram API が <a href="https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.aspx">Windows.Devices.SmartCards</a> 名前空間に追加され、セキュアな暗号文支払いプロトコルがサポートされるようになりました。 ホスト カード エミュレーションを使って「タップして支払い」をサポートする支払いアプリでは、これらの API を使ってセキュリティとパフォーマンスを強化できます。 アプリでキーを作成して、TPM を使って使用制限のあるトランザクション キーを保護します。 また、NGC (Next Generation Credentials) フレームワークを活用してユーザーの PIN のキーを保護します。 これらの API は暗号文の生成をシステムに委任することでパフォーマンスが向上します。 これにより、他のアプリからのキーと暗号文へのあらゆるアクセスを防止することができます。    
                                     
-## Updated Storage APIs ## 
+## Updated Storage API ## 
     
-<a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.downloadsfolder.aspx">Windows.Storage.DownloadsFolder class</a><br />
-Your app can now <a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.downloadsfolder.createfileforuserasync.aspx">create a file</a> or <a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.downloadsfolder.createfolderforuserasync.aspx">create a folder</a> inside the Downloads folder for a specific <a href="https://msdn.microsoft.com/library/windows/apps/windows.system.user.aspx">User</a>.
+<a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.downloadsfolder.aspx">Windows.Storage.DownloadsFolder クラス</a><br />
+特定の<a href="https://msdn.microsoft.com/library/windows/apps/windows.system.user.aspx">ユーザー</a>のダウンロード フォルダーに<a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.downloadsfolder.createfileforuserasync.aspx">ファイルを作成</a>したり、<a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.downloadsfolder.createfolderforuserasync.aspx">フォルダーを作成</a>したりできるようになりました。
                                             
-<a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.storagelibrary.aspx">Windows.Storage.StorageLibrary class</a><br />
-Your app can now <a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.storagelibrary.getlibraryforuserasync.aspx">get a specified Library</a> for a specific <a href="https://msdn.microsoft.com/library/windows/apps/windows.system.user.aspx">User</a>.
+<a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.storagelibrary.aspx">Windows.Storage.StorageLibrary クラス</a><br />
+特定の<a href="https://msdn.microsoft.com/library/windows/apps/windows.system.user.aspx">ユーザー</a>の<a href="https://msdn.microsoft.com/library/windows/apps/windows.storage.storagelibrary.getlibraryforuserasync.aspx">特定のライブラリを取得</a>できるようになりました。
                                     
-## Windows App Certification Kit ## 
+## Windows アプリ認定キット ## 
                                     
-The Windows App Certification Kit has been updated with improved tests. For a complete list of updates, visit the <a href="/develop/app-certification-kit">Windows App Certification Kit</a> page.    
+Windows アプリ認定キットが更新され、テストも改善されました。 更新のリストについては、<a href="/develop/app-certification-kit">Windows アプリ認定キット</a>のページをご覧ください。    
                                     
-## Design downloads ## 
+## デザインに関するダウンロード ## 
 
-Check out our new UWP app design templates for Adobe Photoshop. We also updated our Microsoft PowerPoint and Adobe Illustrator templates and made a PDF version of our guidelines available. <a href="/design/assets">Visit the Design downloads page</a>.    
+Adobe Photoshop 用の新しい UWP アプリ デザイン テンプレートをご覧ください。 Microsoft PowerPoint と Adobe Illustrator のテンプレートも更新され、ガイドラインの PDF 版も利用可能になりました。 <a href="/design/assets">デザインに関するダウンロード</a>のページをご覧ください。    
 
 
 

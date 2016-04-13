@@ -1,30 +1,30 @@
 ---
-Description: This article covers the four notification options&\#8212;local, scheduled, periodic, and push&\#8212;that deliver tile and badge updates and toast notification content.
-title: Choose a notification delivery method
+Description: この記事では、タイルとバッジの更新およびトースト通知のコンテンツを配信するための 4 つの通知オプション (ローカル、スケジュール、定期的、プッシュ) について説明します。
+title: 通知配信方法の選択
 ms.assetid: FDB43EDE-C5F2-493F-952C-55401EC5172B
-label: Choose a notification delivery method
+label: 通知配信方法の選択
 template: detail.hbs
 ---
 
-# Choose a notification delivery method
+# 通知配信方法の選択
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-This article covers the four notification options—local, scheduled, periodic, and push—that deliver tile and badge updates and toast notification content. A tile or a toast notification can get information to your user even when the user is not directly engaged with your app. The nature and content of your app and the information that you want to deliver can help you determine which notification method or methods is best for your scenario.
+この記事では、タイルとバッジの更新およびトースト通知のコンテンツを配信するための 4 つの通知オプション (ローカル、スケジュール、定期的、プッシュ) について説明します。 タイルやトースト通知では、ユーザーがアプリを直接利用していないときでもユーザーに情報を伝えることができます。 アプリおよび配信する情報の性質と内容から、シナリオに最適な通知方法を決めることができます。
 
-## <span id="Notification_delivery_methods__overview"></span><span id="notification_delivery_methods__overview"></span><span id="NOTIFICATION_DELIVERY_METHODS__OVERVIEW"></span>Notification delivery methods overview
+## <span id="Notification_delivery_methods__overview"></span><span id="notification_delivery_methods__overview"></span><span id="NOTIFICATION_DELIVERY_METHODS__OVERVIEW"></span>通知配信方法の概要
 
 
-There are four mechanisms that an app can use to deliver a notification:
+通知を配信するためにアプリで使用できるメカニズムには、次の 4 種類があります。
 
--   **Local**
--   **Scheduled**
--   **Periodic**
--   **Push**
+-   **ローカル**
+-   **スケジュール**
+-   **定期的**
+-   **プッシュ**
 
-This table summarizes the notification delivery types.
+次の表は、通知配信の種類をまとめたものです。
 
 <table>
 <colgroup>
@@ -35,50 +35,50 @@ This table summarizes the notification delivery types.
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Delivery method</th>
-<th align="left">Use with</th>
-<th align="left">Description</th>
-<th align="left">Examples</th>
+<th align="left">配信方法</th>
+<th align="left">使用対象</th>
+<th align="left">説明</th>
+<th align="left">例</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Local</td>
-<td align="left">Tile, Badge, Toast</td>
-<td align="left">A set of API calls that send notifications while your app is running, directly updating the tile or badge, or sending a toast notification.</td>
+<td align="left">ローカル</td>
+<td align="left">タイル、バッジ、トースト</td>
+<td align="left">アプリが実行されている間、タイルやバッジを直接更新している間、またはトースト通知を送信している間に通知を送信する API 呼び出しのセットです。</td>
 <td align="left"><ul>
-<li>A music app updates its tile to show what's &quot;Now Playing&quot;.</li>
-<li>A game app updates its tile with the user's high score when the user leaves the game.</li>
-<li>A badge whose glyph indicates that there's new info int the app is cleared when the app is activated.</li>
+<li>音楽アプリでは、タイルを更新して &quot;再生中&quot; の音楽を表示します。</li>
+<li>ゲーム アプリでは、ユーザーがゲームから離れるとタイルを更新してユーザーのハイ スコアを表示します。</li>
+<li>グリフでアプリに新しい情報があることが示されたバッジは、アプリがアクティブ化されるとクリアされます。</li>
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left">Scheduled</td>
-<td align="left">Tile, Toast</td>
-<td align="left">A set of API calls that schedule a notification in advance, to update at the time you specify.</td>
+<td align="left">スケジュール</td>
+<td align="left">タイル、トースト</td>
+<td align="left">指定した時間に更新が行われるように事前に通知をスケジュールする API 呼び出しのセットです。</td>
 <td align="left"><ul>
-<li>A calendar app sets a toast notification reminder for an upcoming meeting.</li>
+<li>カレンダー アプリでは、予定されている会議用のトースト通知のアラームを設定します。</li>
 </ul></td>
 </tr>
 <tr class="odd">
-<td align="left">Periodic</td>
-<td align="left">Tile, Badge</td>
-<td align="left">Notifications that update tiles and badges regularly at a fixed time interval by polling a cloud service for new content.</td>
+<td align="left">定期的</td>
+<td align="left">タイル、バッジ</td>
+<td align="left">クラウド サービスをポーリングして新しいコンテンツの有無を調べて、タイルとバッジを一定の間隔で定期的に更新する通知です。</td>
 <td align="left"><ul>
-<li>A weather app updates its tile, which shows the forecast, at 30-minute intervals.</li>
-<li>A &quot;daily deals&quot; site updates its deal-of-the-day every morning.</li>
-<li>A tile that displays the days until an event updates the displayed countdown each day at midnight.</li>
+<li>天気予報アプリでは、予報を表示するタイルを 30 分間隔で更新します。</li>
+<li>&quot;日替わりセール情報&quot; サイトでは、本日のお買い得品を毎朝更新します。</li>
+<li>イベントまでの日数を表示するタイルでは、表示される日数のカウントダウンを毎日深夜 0 時に更新します。</li>
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left">Push</td>
-<td align="left">Tile, Badge, Toast, Raw</td>
-<td align="left">Notifications sent from a cloud server, even if your app isn't running.</td>
+<td align="left">プッシュ</td>
+<td align="left">タイル、バッジ、トースト、直接</td>
+<td align="left">アプリが実行されていなくてもクラウド サーバーから送信される通知です。</td>
 <td align="left"><ul>
-<li>A shopping app sends a toast notification to let a user know about a sale on an item that they're watching.</li>
-<li>A news app updates its tile with breaking news as it happens.</li>
-<li>A sports app keeps its tile up-to-date during an ongoing game.</li>
-<li>A communication app provides alerts about incoming messages or phone calls.</li>
+<li>ショッピング アプリでは、トースト通知を送信して、ユーザーが注目している商品のセール情報を知らせます。</li>
+<li>ニュース アプリでは、ニュース速報が発生したときにタイルを更新します。</li>
+<li>スポーツ アプリでは、試合の進行中にタイルを更新し続けます。</li>
+<li>通信アプリでは、メッセージや電話の着信をアラートで知らせます。</li>
 </ul></td>
 </tr>
 </tbody>
@@ -86,81 +86,81 @@ This table summarizes the notification delivery types.
 
  
 
-## <span id="Local_notifications"></span><span id="local_notifications"></span><span id="LOCAL_NOTIFICATIONS"></span>Local notifications
+## <span id="Local_notifications"></span><span id="local_notifications"></span><span id="LOCAL_NOTIFICATIONS"></span>ローカル通知
 
 
-Updating the app tile or badge or raising a toast notification while the app is running is the simplest of the notification delivery mechanisms; it only requires local API calls. Every app can have useful or interesting information to show on the tile, even if that content only changes after the user launches and interacts with the app. Local notifications are also a good way to keep the app tile current, even if you also use one of the other notification mechanisms. For instance, a photo app tile could show photos from a recently added album.
+アプリの実行中に行われるタイルまたはバッジの更新やトースト通知の表示は、ローカルの API 呼び出しのみが必要となる、最もシンプルな通知配信メカニズムです。 どのアプリでも、役立つ情報や興味を引く情報をタイルに表示することができます。これは、ユーザーがアプリを起動して操作を開始した後でのみコンテンツが変更される場合でも可能です。 他の通知メカニズムと併用する場合でも、ローカル通知はアプリのタイルを最新の状態にする手段として適しています。 たとえば、フォト アプリのタイルでは、最近追加されたアルバムの写真を表示できます。
 
-We recommended that your app update its tile locally on first launch, or at least immediately after the user makes a change that your app would normally reflect on the tile. That update isn't seen until the user leaves the app, but by making that change while the app is being used ensures that the tile is already up-to-date when the user departs.
+アプリによるタイルのローカルな更新は、アプリが最初に起動されたとき、またはアプリによってタイルに反映される変更をユーザーが加えた直後に行うことをお勧めします。 この更新内容は、ユーザーがアプリから離れるまで表示されせんが、アプリが使われている間にタイルを更新することで、ユーザーがアプリから離れたときにタイルは確実に最新の状態になります。
 
-While the API calls are local, the notifications can reference web images. If the web image is not available for download, is corrupted, or doesn't meet the image specifications, tiles and toast respond differently:
+API 呼び出しはローカルですが、通知では Web 画像を参照できます。 Web 画像が、ダウンロードできない場合、破損している場合、または画像の仕様を満たしていない場合、タイルとトーストでは応答が次のように異なります。
 
--   Tiles: The update is not shown
--   Toast: The notification is displayed, but with a placeholder image
+-   タイル: 更新情報が表示されません。
+-   トースト: 通知は表示されますが、プレースホルダー イメージが使われます。
 
-Although local notifications don't expire, it's a best practice to set an explicit expiration time.
+ローカル通知は無期限ですが、有効期限を明示的に設定することをお勧めします。
 
-For more information, see these topics:
+詳しくは、次のトピックをご覧ください。
 
--   [Send a local tile notification](tiles-and-notifications-sending-a-local-tile-notification.md)
--   [Universal Windows Platform (UWP) notifications code samples](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [ローカル タイル通知の送信](tiles-and-notifications-sending-a-local-tile-notification.md)
+-   [ユニバーサル Windows プラットフォーム (UWP) の通知コード サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
-## <span id="Scheduled_notifications"></span><span id="scheduled_notifications"></span><span id="SCHEDULED_NOTIFICATIONS"></span>Scheduled notifications
-
-
-Scheduled notifications are the subset of local notifications that can specify the precise time when a tile should be updated or a toast notification should be shown. Scheduled notifications are ideal in situations where the content to be updated is known in advance, such as a meeting invitation. If you don't have advance knowledge of the notification content, you should use a push or periodic notification.
-
-By default, scheduled notifications expire three days from the time that they are delivered. If needed, you can override this default with an explicit expiration time.
-
-For more information, see these topics:
-
--   [Guidelines for scheduled notifications](https://msdn.microsoft.com/library/windows/apps/hh761464)
--   [Universal Windows Platform (UWP) notifications code samples](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
-
-## <span id="Periodic_notifications"></span><span id="periodic_notifications"></span><span id="PERIODIC_NOTIFICATIONS"></span>Periodic notifications
+## <span id="Scheduled_notifications"></span><span id="scheduled_notifications"></span><span id="SCHEDULED_NOTIFICATIONS"></span>スケジュールされた通知
 
 
-Periodic notifications give you live tile updates with a minimal cloud service and client investment. They are also an excellent method of distributing the same content to a wide audience. Your client code specifies the URL of a cloud location that Windows polls for tile or badge updates, and how often the location should be polled. At each polling interval, Windows contacts the URL to download the specified XML content and display it on the tile.
+スケジュールされた通知は、タイルを更新する時刻またはトースト通知を表示する時刻を正確に指定できるローカル通知のサブセットです。 スケジュールされた通知は、会議の招集など、更新される内容があらかじめわかっている場合に適しています。 通知の内容が事前にわからない場合は、プッシュ通知または定期的な通知を使う必要があります。
 
-Periodic notifications require the app to host a cloud service, and this service will be polled at the specified interval by all users who have the app installed. Note that periodic updates cannot be used for toast notifications; toast notifications are best served by scheduled or push notifications.
+スケジュールされた通知は、既定で配信されたときから 3 日後に有効期限切れになります。 必要に応じて、明示的な有効期限を設定してこの既定値を上書きできます。
 
-By default, periodic notifications expire three days from the time that the polling occurs. If needed, you can override this default with an explicit expiration time.
+詳しくは、次のトピックをご覧ください。
 
-For more information, see these topics:
+-   [スケジュールされた通知のガイドライン](https://msdn.microsoft.com/library/windows/apps/hh761464)
+-   [ユニバーサル Windows プラットフォーム (UWP) の通知コード サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
--   [Periodic notification overview](tiles-and-notifications-periodic-notification-overview.md)
--   [Universal Windows Platform (UWP) notifications code samples](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
-
-## <span id="Push_notifications"></span><span id="push_notifications"></span><span id="PUSH_NOTIFICATIONS"></span>Push notifications
+## <span id="Periodic_notifications"></span><span id="periodic_notifications"></span><span id="PERIODIC_NOTIFICATIONS"></span>定期的な通知
 
 
-Push notifications are ideal to communicate real-time data or data that is personalized for your user. Push notifications are used for content that is generated at unpredictable times, such as breaking news, social network updates, or instant messages. Push notifications are also useful in situations where the data is time-sensitive in a way that would not suit periodic notifications, such as sports scores during a game.
+定期的な通知では、最小限のクラウド サービスとクライアントの投資で、ライブ タイルを更新することができます。 この通知は、同じコンテンツを多数のユーザーに配信する方法としても優れています。 クライアント コードでは、Windows がタイルまたはバッジの更新の有無を確認するためにポーリングするクラウドの場所の URL と、ポーリングの頻度を指定します。 各ポーリング間隔で、Windows は URL にアクセスして指定された XML コンテンツをダウンロードして、タイルに表示します。
 
-Push notifications require a cloud service that manages push notification channels and chooses when and to whom to send notifications.
+定期的な通知では、アプリがクラウド サービスをホストする必要があります。このサービスは、アプリをインストールしたすべてのユーザーから指定した間隔でポーリングされます。 トースト通知には定期的な更新を使うことができないので注意してください。トースト通知は、スケジュールされた通知またはプッシュ通知で適切に表示されます。
 
-By default, push notifications expire three days from the time that they are received by Windows Push Notification Services (WNS). If needed, you can override this default with an explicit expiration time.
+定期的な通知は、既定でポーリングが実行されたときから 3 日後に有効期限切れになります。 必要に応じて、明示的な有効期限を設定してこの既定値を上書きできます。
 
-For more information, see:
+詳しくは、次のトピックをご覧ください。
 
--   [Windows Push Notification Services (WNS) overview](tiles-and-notifications-windows-push-notification-services--wns--overview.md)
--   [Guidelines for push notifications](https://msdn.microsoft.com/library/windows/apps/hh761462)
--   [Universal Windows Platform (UWP) notifications code samples](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [定期的な通知の概要](tiles-and-notifications-periodic-notification-overview.md)
+-   [ユニバーサル Windows プラットフォーム (UWP) の通知コード サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
-**Note**  
-This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you're developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
+## <span id="Push_notifications"></span><span id="push_notifications"></span><span id="PUSH_NOTIFICATIONS"></span>プッシュ通知
+
+
+プッシュ通知は、リアルタイム データまたはユーザー向けにカスタマイズされたデータと通信する場合に適しています。 また、ニュース速報、ソーシャル ネットワークの更新、インスタント メッセージなどの予測不可能なタイミングで生成されるコンテンツについても、プッシュ通知が使われます。 プッシュ通知は、定期的な通知が適さない即時性を必要とするデータ (スポーツの試合中の得点など) にも役立ちます。
+
+プッシュ通知を利用するには、プッシュ通知チャネルを管理して、通知を送信するタイミングと送信先のユーザーを判断するクラウド サービスが必要です。
+
+プッシュ通知は、既定で Windows プッシュ通知サービス (WNS) によって受信されたときから 3 日後に有効期限切れになります。 必要に応じて、明示的な有効期限を設定してこの既定値を上書きできます。
+
+詳しくは、次のトピックをご覧ください。
+
+-   [Windows プッシュ通知サービス (WNS) の概要](tiles-and-notifications-windows-push-notification-services--wns--overview.md)
+-   [プッシュ通知のガイドライン](https://msdn.microsoft.com/library/windows/apps/hh761462)
+-   [ユニバーサル Windows プラットフォーム (UWP) の通知コード サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+
+**注**  
+この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
  
 
-## <span id="related_topics"></span>Related topics
+## <span id="related_topics"></span>関連トピック
 
 
-* [Send a local tile notification](tiles-and-notifications-sending-a-local-tile-notification.md)
-* [Guidelines for push notifications](https://msdn.microsoft.com/library/windows/apps/hh761462)
-* [Guidelines for scheduled notifications](https://msdn.microsoft.com/library/windows/apps/hh761464)
-* [Guidelines for toast notifications](https://msdn.microsoft.com/library/windows/apps/hh465391)
-* [Periodic notification overview](tiles-and-notifications-periodic-notification-overview.md)
-* [Windows Push Notification Services (WNS) overview](tiles-and-notifications-windows-push-notification-services--wns--overview.md)
-* [Universal Windows Platform (UWP) notifications code samples on GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+* [ローカル タイル通知の送信](tiles-and-notifications-sending-a-local-tile-notification.md)
+* [プッシュ通知のガイドライン](https://msdn.microsoft.com/library/windows/apps/hh761462)
+* [スケジュールされた通知のガイドライン](https://msdn.microsoft.com/library/windows/apps/hh761464)
+* [トースト通知のガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465391)
+* [定期的な通知の概要](tiles-and-notifications-periodic-notification-overview.md)
+* [Windows プッシュ通知サービス (WNS) の概要](tiles-and-notifications-windows-push-notification-services--wns--overview.md)
+* [GitHub でのユニバーサル Windows プラットフォーム (UWP) の通知コード サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
  
 
  

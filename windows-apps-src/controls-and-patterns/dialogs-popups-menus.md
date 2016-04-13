@@ -1,119 +1,119 @@
 ---
-Description: A flyout is a lightweight popup that is used to temporarily show UI that is related to what the user is currently doing.
-title: Context menus and dialogs
+Description: ポップアップ (flyout) は、ユーザーが現在操作している内容に関係する UI を一時的に表示するために使われる軽量なポップアップです。
+title: コンテキスト メニューとダイアログ
 ms.assetid: 7CA2600C-A1DB-46AE-8F72-24C25E224417
 label: Menus, dialogs, and popups
 template: detail.hbs
 ---
-# Menus, dialogs, and popups
+# メニュー、ダイアログ、ポップアップ
 
-Menus, dialogs, and popups display transient UI elements that appear when the user requests them or when something happens that requires notification or approval. 
+メニュー、ダイアログ、ポップアップは、ユーザーが要求したとき、または通知や許可を必要とする状況が発生したときに表示される一時的な UI 要素です。 
 
-<span class="sidebar_heading" style="font-weight: bold;">Important APIs</span>
+<span class="sidebar_heading" style="font-weight: bold;">重要な API</span>
 
--   [MenuFlyout class](https://msdn.microsoft.com/library/windows/apps/dn299030)
--   [Flyout class](https://msdn.microsoft.com/library/windows/apps/dn279496)
+-   [MenuFlyout クラス](https://msdn.microsoft.com/library/windows/apps/dn299030)
+-   [Flyout クラス](https://msdn.microsoft.com/library/windows/apps/dn279496)
 
-A context menu provides the user with instant actions. It can be filled with custom commands. Context menus can be dismissed by tapping or clicking somewhere outside the menu.
+コンテキスト メニューは、すぐに実行できる操作をユーザーに表示します。 コンテキスト メニューにはカスタム コマンドを追加できます。 コンテキスト メニューは、外側をタップまたはクリックして閉じることができます。
 
-Dialogs are modal UI overlays that provide contextual app information. In most cases, dialogs block interactions with the app window until being explicitly dismissed, and often request some kind of action from the user.
+ダイアログは、状況依存のアプリ情報を表示するモーダル UI オーバーレイです。 ほとんどの場合、ダイアログは明示的に閉じられるまでアプリ ウィンドウの操作をブロックします。また、多くの場合、ユーザーに何らかの操作を要求します。
 
-A popup, also known as a flyout, is a lightweight contextual popup that displays UI related to what the user is doing. It includes placement and sizing logic, and can be used to show a menu, reveal a hidden control, show more detail about an item, or ask the user to confirm an action. Popups can be dismissed by tapping or clicking somewhere outside the popup.
-
-
-## Is this the right control?
-
-Context menus can be used for:
-
--   Contextual actions on text selections, such as Copy, Cut, Paste, Check Spelling, and so on.
--   Clipboard commands.
--   Custom commands.
--   Commands for an object that must be acted upon but that can't be selected or otherwise indicated.
-
-Dialogs can be used for:
-
-- Expressing important information that the user must read and acknowledge before proceeding.
-- Requesting a clear action from the user or communicating an important message that the user should acknowledge. Examples include:
-  - When the user's security might be compromised
-  - When the user is about to permanently alter a valuable asset
-  - When the user is about to delete a valuable asset
-  - To confirm an in-app purchase
-- Error messages that apply to the overall app context, such as a connectivity error.
-- Questions, when the app needs to ask the user a blocking question, such as when the app can't choose on the user's behalf. A blocking question can't be ignored or postponed, and should offer the user well-defined choices.
-
-Popups (flyouts) can be used for:
-
--   Contextual, transient UI.
--   Warnings and confirmations, including ones related to potentially destructive actions.
--   Displaying more information, such as details about an item on the screen.
--   Second-level menus.
--   Custom commands.
+ポップアップは、ユーザーが現在実行している操作に関連する UI を表示する軽量な状況依存のポップアップです。 このポップアップは、配置ロジックとサイズ設定ロジックを備えており、メニューを表示する場合、非表示コントロールを表示する場合、項目の詳細を表示する場合、またはユーザーに操作の確認を求める場合に使うことができます。 ポップアップは、その外側をタップするかクリックすると閉じることができます。
 
 
-## Examples
+## 適切なコントロールの選択
 
-Here's a typical single-pane context menu. This would be used for a shorter list of simple commands. Use separators as needed to group similar commands.
+コンテキスト メニューは、次のような目的で使うことができます。
 
-![Example of a typical context menu](images/controls_contextmenu_singlepane.png)
+-   選択されたテキストに対する状況依存の操作 (コピー、切り取り、貼り付け、スペル チェックなど)。
+-   クリップボード コマンド。
+-   カスタム コマンド。
+-   操作する必要があるものの、選択することも、他の方法で指定することもできないオブジェクトのためのコマンド。
 
-A cascading context menu would be used for a more comprehensive collection of commands. It features one flyout level and can scroll. Use separators as needed to group similar commands.
+ダイアログは、次のような目的で使うことができます。
 
-![Example of a cascading context menu](images/controls_contextmenu_cascading.png)
+- 続行前にユーザーが読んだり確認したりする必要のある重要な情報を表示する場合。
+- ユーザーによる明確な操作を求める場合、またはユーザーが確認する必要のある重要なメッセージを伝える場合。 次のようなシナリオが考えられます。
+  - ユーザーのセキュリティが侵害される可能性がある場合
+  - ユーザーが重要な資産に永続的な変更を加えようとしている場合
+  - ユーザーが重要な資産を削除しようとしている場合
+  - アプリ内購入を確認する場合
+- 接続エラーなど、アプリ全体の状況に適用されるエラー メッセージ
+- アプリからユーザーにブロック質問を表示する必要がある場合 (アプリで自動的に選ぶことができない場合など) ブロック質問とは、無視したり先送りにしたりできない質問です。この質問では、ユーザーに明確な選択肢を提示する必要があります。
 
-This is an example of a full-screen, single-button confirmation dialog. With this kind of dialog, the user is presented with a fair amount of information that they're expected to read before pressing the button to proceed.
+ポップアップは次の目的で使うことができます。
 
-![Example of a full-page, single-button dialog](images/controls_dialog_singlebutton.png)
-
-Here's an example of a two-button dialog that presents the user with an A/B choice. Generally, the amount of information presented in this dialog is brief.
-
-![Example of a full-button dialog](images/controls_dialog_twobutton.png)
-
-
-## Usage guidance
-
-**Context menus**
-- Use a separator between groups of commands in a context menu to:
-  - Distinguish groups of related commands.
-  - Group together sets of commands.
-  - Divide a predictable set of commands, such as clipboard commands (Cut / Copy / Paste), from app-specific or view-specific commands.
--   On laptops and desktops, context menus and tooltips aren't limited to the application window and can paint outside of it. If the app tries to render a context menu completely outside of its window, an exception will be thrown.
-
-**Dialogs**
--   Clearly identify the issue or the user's objective in the first line of the dialog's text.
--   The dialog title is the main instruction and is optional.
-    -   Use a short title to explain what people need to do with the dialog. Long titles do not wrap and are truncated.
-    -   If you're using the dialog to deliver a simple message, error or question, you can optionally omit the title. Rely on the content text to deliver that core information.
-    -   Make sure that the title relates directly to the button choices.
--   The dialog content contains the descriptive text and is required.
-    -   Present the message, error, or blocking question as simply as possible.
-    -   If a dialog title is used, use the content area to provide more detail or define terminology. Don't repeat the title with slightly different wording.
--   At least one dialog button must appear.
-    -   Use buttons with text that identifies specific responses to the main instruction or content. An example is, "Do you want to allow AppName to access your location?", followed by "Allow" and "Block" buttons. Specific responses can be understood more quickly, resulting in efficient decision making.
--   Error dialogs display the error message in the dialog box, along with any pertinent information. The only button used in an error dialog should be “Close” or a similar action.
--   Don't use dialogs for errors that are contextual to a specific place on the page, such as validation errors (in password fields, for example), use the app's canvas itself to show inline errors.
-
-**Popups**
-
--   As with other contextual UI, place a popup next to the point from which it's called.
-    -   Specify the object to which you want the popup anchored, and the side of the object on which the popup will appear.
-    -   Try to position the popup so that it doesn’t block important UI.
--   The popup should be dismissed as soon as something in it is selected.
--   Popup menus work best with just one level. Multiple popup menu levels are difficult to navigate and provide a poor user experience.
-
-## Do's and don'ts
-
--   Keep context menu commands short. Longer commands end up being truncated.
--   Use sentence capitalization for each command name.
--   In any context menu, show the fewest possible number of commands.
--   If direct manipulation of a UI element is possible, avoid placing that command within a context menu. A context menu should be reserved for contextual commands that aren't otherwise discoverable on-screen.
+-   一時的な状況依存の UI。
+-   警告と確認 (被害が発生する可能性のある操作に関するものなど)。
+-   より詳しい情報の表示 (画面上の項目に関する詳細など)。
+-   第 2 レベルのメニュー。
+-   カスタム コマンド。
 
 
+## 例
 
-## Related articles
+次に、一般的な単一ペインのコンテキスト メニューを示します。 これは、少数の単純なコマンドに使用されます。 必要に応じて区切り記号を使い、類似のコマンドをグループ化します。
 
-**For developers**
-- [**MenuFlyout class**](https://msdn.microsoft.com/library/windows/apps/dn299030)
-- [**Flyout class**](https://msdn.microsoft.com/library/windows/apps/dn279496)
+![一般的なコンテキスト メニューの例](images/controls_contextmenu_singlepane.png)
+
+より包括的なコマンドの集合には、カスケード コンテキスト メニューが使われます。 ポップアップ レベルが 1 つで、スクロール可能です。 必要に応じて区切り記号を使い、類似のコマンドをグループ化します。
+
+![カスケード コンテキスト メニューの例](images/controls_contextmenu_cascading.png)
+
+次に、ボタンを 1 つ備えた確認ダイアログの全画面表示の例を示します。 この種類のダイアログ ボックスでは、ボタンを押して次に進む前に読まれることを想定した、多くの情報が表示されます。
+
+![ボタンを 1 つ備えたダイアログの全画面表示の例](images/controls_dialog_singlebutton.png)
+
+ボタンを 2 つ備えたダイアログの例を次に示します。このダイアログでは二者択一の選択肢が表示されます。 一般に、このダイアログに表示される情報は簡潔にまとめられています。
+
+![フルボタン ダイアログの例](images/controls_dialog_twobutton.png)
+
+
+## 使い方のガイダンス
+
+**コンテキスト メニュー**
+- 次のような場合は、コンテキスト メニューのコマンドのグループ間に区切り記号を使います。
+  - 関連するコマンドのグループを区別する場合。
+  - コマンドのセットをグループ化する場合。
+  - クリップボード コマンド (切り取り/コピー/貼り付け) などの一般的なコマンドのセットを、アプリまたはビューに固有のコマンドと区別する場合。
+-   ノート PC とデスクトップ PC では、コンテキスト メニューとヒントはアプリケーションのウィンドウに限定されず、外側に描画できます。 アプリが完全にウィンドウの外側にコンテキスト メニューをレンダリングしようとすると、例外がスローされます。
+
+**ダイアログ**
+-   ダイアログ内のテキストの 1 行目で、問題やユーザーの目的 (実行する内容) を明確に示す必要があります。
+-   ダイアログのタイトルは主な説明で、省略可能です。
+    -   簡潔なタイトルを使って、ユーザーがそのダイアログで行う必要がある操作を説明します。 タイトルが長い場合は、折り返されず省略されます。
+    -   ダイアログを使って、簡単なメッセージ、エラー、または質問を表示する場合は、タイトルを省略することもできます。 主な情報はコンテンツのテキストを使って伝えます。
+    -   タイトルは、ボタンの選択に直接関連するものにします。
+-   ダイアログ コンテンツには説明のテキストを含め、これは必須です。
+    -   メッセージ、エラー、または操作をブロック質問をできる限り簡潔に示します。
+    -   ダイアログ タイトルを使う場合は、コンテンツ領域を詳しい情報の提示や用語の定義に使います。 タイトルの言葉づかいを変えただけの文を繰り返さないようにします。
+-   少なくとも 1 つのダイアログ ボタンを表示する必要があります。
+    -   テキストを指定したボタンを使って、主な説明またはコンテンツに対する応答を示します。 たとえば、主な説明が "使っているコンピューターへの AppName からのアクセスを許可しますか?" の場合、"許可" ボタンと "ブロック" ボタンを使います。 具体的な応答の言葉はすばやく理解できるので、効率的に判断できます。
+-   エラー ダイアログでは、ダイアログ ボックスにエラー メッセージと関連情報 (ある場合) を表示します。 エラー ダイアログで使う唯一のボタンは "閉じる" かこれに似た操作である必要があります。
+-   パスワード フィールドの検証エラーなど、ページの特定の場所に関連するエラーでは、ダイアログを使わずに、アプリのキャンバス自体を使ってインライン エラーを表示します。
+
+**ポップアップ**
+
+-   他の状況依存 UI と同様に、ポップアップは、呼び出された位置の横に配置します。
+    -   ポップアップの固定先とするオブジェクトと、そのオブジェクトのどの側面にポップアップを表示するかを指定します。
+    -   ポップアップは、重要な UI の妨げにならないように配置してください。
+-   ポップアップは、いずれかの項目が選択されたらすぐに閉じる必要があります。
+-   ポップアップ メニューは、1 レベルにするのが最適です。 ポップアップ メニューのレベルが複数あると、ナビゲーションが難しくなり、ユーザー エクスペリエンスが低下します。
+
+## 推奨と非推奨
+
+-   コンテキスト メニューのコマンドは短くします。 長いコマンドは末尾が切り捨てられます。
+-   各コマンド名には、文としての大文字表記を使います。
+-   すべてのコンテキスト メニューで、表示するコマンドの数を最小限にします。
+-   UI 要素を直接操作できる場合は、そのコマンドをコンテキスト メニューに入れないようにします。 コンテキスト メニューは、それ以外では画面に表示されない状況依存のコマンドに限定する必要があります。
+
+
+
+## 関連記事
+
+**開発者向け**
+- [**MenuFlyout クラス**](https://msdn.microsoft.com/library/windows/apps/dn299030)
+- [**Flyout クラス**](https://msdn.microsoft.com/library/windows/apps/dn279496)
 
 
 <!--HONumber=Mar16_HO4-->

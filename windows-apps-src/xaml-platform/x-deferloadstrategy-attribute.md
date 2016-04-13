@@ -1,58 +1,63 @@
 ---
-title: xDeferLoadStrategy attribute
-description: xDeferLoadStrategy delays the creation of an element and its children, decreasing startup time but increasing memory usage slightly. Each element affected adds about 600 bytes to the memory usage.
+title: xDeferLoadStrategy 属性
+description: xDeferLoadStrategy は、要素とその子の作成を遅延させます。起動時間は短くなりますが、メモリ使用量は若干増加します。 影響を受けるそれぞれの要素によって、メモリ使用量が約 600 バイト増加します。
 ms.assetid: E763898E-13FF-4412-B502-B54DBFE2D4E4
 ---
 
-# x:DeferLoadStrategy attribute
+# x:DeferLoadStrategy 属性
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-**x:DeferLoadStrategy="Lazy"** delays the creation of an element and its children, decreasing startup time but increasing memory usage slightly. Each element affected adds about 600 bytes to the memory usage. The larger the element tree you defer, the more startup time you'll save, but at the cost of a greater memory footprint. Therefore it's possible to overuse this attribute to the extent that your performance decreases.
+**x:DeferLoadStrategy="Lazy"** は、要素とその子の作成を遅延させます。起動時間は短くなりますが、メモリ使用量は若干増加します。 影響を受けるそれぞれの要素によって、メモリ使用量が約 600 バイト増加します。 遅延させる要素ツリーが大きいほど、起動時間がより節約されます。ただし、メモリ使用量のコストは増加します。 したがって、この属性を過剰に使うとパフォーマンスが低下する可能性があります。
 
-## XAML attribute usage
+## XAML 属性の使用方法
 
 ``` syntax
 <object x:DeferLoadStrategy="Lazy" .../>
 ```
 
-## Remarks
+## 注釈
 
-The restrictions for using **x:DeferLoadStrategy** are:
+**x:DeferLoadStrategy** を使う際の制約を以下に示します。
 
--   Requires an [x:Name](x-name-attribute.md) defined, as there needs to be a way to find the element later.
--   Only a [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) can be marked as deferred, with the exception of types deriving from [**FlyoutBase**](https://msdn.microsoft.com/library/windows/apps/dn279249).
--   Root elements can not be deferred in a [**Page**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.page), a [**UserControls**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.usercontrol), nor a [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348).
--   Elements in a [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) cannot be deferred.
--   Does not work with loose XAML loaded with [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048).
--   Moving a parent element will clear out any elements that have not been realized.
+-   この要素を後で検索する手段が必要なため、定義済みの [x:Name](x-name-attribute.md) が必要です。
+-   遅延としてマークできるのは、[**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) のみです ([**FlyoutBase**](https://msdn.microsoft.com/library/windows/apps/dn279249) から派生した型は除く)。
+-   [
+            **Page**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.page)、[**UserControls**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.usercontrol)、[**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) では、ルート要素を遅延できません。
+-   [
+            **ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) の要素は遅延できません。
+-   [
+            **XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) で読み込まれた Loose XAML では機能しません。
+-   親要素を移動すると、実現されていない要素はすべて消去されます。
 
-There are several different ways to realize the deferred elements:
+遅延要素を実現するには、いくつかの方法があります。
 
--   Call [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) with the name that was defined on the element.
--   Call [**GetTemplateChild**](https://msdn.microsoft.com/library/windows/apps/br209416) with the name that was defined on the element.
--   In a [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007), use a [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) or **Storyboard** animation that is targeting the deferred element.
--   Target the deferred element in any **Storyboard**.
--   Use a binding that is targeting the deferred element.
--   NOTE: Once the instantiation of an element has started, it is created on the UI thread, so it could cause the UI to stutter if too much is created at once.
+-   要素で定義された名前を指定して [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) を呼び出します。
+-   要素で定義された名前を指定して [**GetTemplateChild**](https://msdn.microsoft.com/library/windows/apps/br209416) を呼び出します。
+-   [
+            **VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) で、遅延要素をターゲットに設定している [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) または **Storyboard** アニメーションを使います。
+-   任意の **Storyboard** の遅延要素をターゲットに設定します。
+-   遅延要素をターゲットに設定しているバインドを使います。
+-   注: 要素のインスタンス化が開始されると、インスタンスは UI スレッド上で作成されます。そのため、一度に作成されるインスタンスが多すぎると、UI で引っかかりが起きることがあります。
 
-Once a deferred element is created by any of the methods listed above, several things will happen:
+上記のいずれかの方法で遅延要素が作成されると、いくつかの処理が実行されます。
 
--   The [**Loaded**](https://msdn.microsoft.com/library/windows/apps/br208723) event on the element will get raised.
--   Any bindings on the element will get evaluated.
--   If the application has registered to receive property change notifications on the property containing the deferred element(s), the notification will be raised.
+-   要素の [**Loaded**](https://msdn.microsoft.com/library/windows/apps/br208723) イベントが生成されます。
+-   要素の任意のバインドが評価されます。
+-   遅延要素を含むプロパティに関するプロパティ変更通知を受信するようにアプリケーションが登録されている場合は、通知が生成されます。
 
-You can nest deferred elements, however they have to be realized from the outer-most element in.  If you try to realize a child element before the parent has been realized, an exception will be raised.
+遅延要素は入れ子にできますが、最も外側の要素から実現する必要があります。  親が実現される前に子要素を実現しようとすると、例外が生成されます。
 
-In general, the recommendation is to defer things that are not viewable in the first frame.  A good guideline for finding candidates to be deferred is to look for elements that are being created with collapsed [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992).  Also incidental UI (that is, UI that is triggered by user interaction) is a good place to look for deferring elements.  
+通常は、最初のフレームに表示できないものを遅延させることをお勧めします。  遅延対象の候補を見つけるための指針の 1 つは、[**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) が折りたたまれた状態で作成されている要素を探すことです。  また、付随 UI (ユーザーの操作によってトリガーされる UI) は、遅延要素を探すのに適した場所です。  
 
-Be wary of deferring elements in a [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) scenario, as it will decrease your startup time, but could also decrease your panning performance depending on what you're creating.  If you are looking to increase panning performance, please refer to the [{x:Bind} markup extension](x-bind-markup-extension.md) and [x:Phase attribute](x-phase-attribute.md) documentation.
+[
+            **ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) シナリオでの遅延要素に注意してください。この場合、遅延要素により起動時間が短縮しますが、作成する内容によっては、パンのパフォーマンスも低下することがあります。  パンのパフォーマンスを向上させるには、[{x:Bind} マークアップ拡張](x-bind-markup-extension.md) および [x:Phase 属性](x-phase-attribute.md) に関するドキュメントをご覧ください。
 
-If the [x:Phase attribute](x-phase-attribute.md) is used in conjunction with **x:DeferLoadStrategy** then, when an element or an element tree is realized, the bindings will be applied up to and including the current phase. The phase specified for **x:Phase** will not affect or control the deferral of the element. When a list item is recycled as part of panning, realized elements will behave in the same way as other active elements, and compiled bindings (**{x:Bind}** bindings) will be processed using the same rules, including phasing.
+**x:DeferLoadStrategy** と同時に [x:Phase](x-phase-attribute.md) 属性を使った場合、要素または要素ツリーが実現すると、バインディングが現在のフェーズまで (現在のフェーズを含む) 適用されます。 **x:Phase** に指定されたフェーズが、要素の保留に影響を与えたり、制御したりすることはありません。 パンの一部としてリスト項目がリサイクルされると、実現した要素は、アクティブな他の要素と同じように機能し、コンパイル済みバインド (**{x:Bind}** バインディング) は同じルール (フェージングを含む) を使って処理されます。
 
-A general guideline is to measure your application before and after to make sure you are getting the performance that you want.
+一般的なガイドラインでは、必要なパフォーマンスが得られていることを確認するために、作業の前と後にアプリケーションを測定します。
 
-## Example
+## 例
 
 ```xaml
 <Grid x:Name="DeferredGrid" x:DeferLoadStrategy="Lazy">

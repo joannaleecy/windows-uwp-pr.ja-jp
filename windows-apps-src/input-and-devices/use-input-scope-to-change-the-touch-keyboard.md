@@ -1,46 +1,49 @@
 ---
-Description: To help users to enter data using the touch keyboard, or Soft Input Panel (SIP), you can set the input scope of the text control to match the kind of data the user is expected to enter.
+Description: ユーザーがタッチ キーボード、つまりソフト入力パネル (SIP) でデータを入力できるように、ユーザーが入力すると予想されるデータの種類に合わせてテキスト コントロールの入力値の種類を設定できます。
 MS-HAID: 'dev\_ctrl\_layout\_txt.use\_input\_scope\_to\_change\_the\_touch\_keyboard'
 MSHAttr: 'PreferredLib:/library/windows/apps'
 Search.Product: eADQiWindows 10XVcnh
-title: Use input scope to change the touch keyboard
+title: 入力値の種類を使ったタッチ キーボードの変更
 ms.assetid: 6E5F55D7-24D6-47CC-B457-B6231EDE2A71
 template: detail.hbs
 ---
 
-# Use input scope to change the touch keyboard
+# 入力値の種類を使ったタッチ キーボードの変更
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-**Important APIs**
+**重要な API**
 
 -   [**InputScope**](https://msdn.microsoft.com/library/windows/apps/hh702632)
 -   [**InputScopeNameValue**](https://msdn.microsoft.com/library/windows/apps/hh702028)
 
-To help users to enter data using the touch keyboard, or Soft Input Panel (SIP), you can set the input scope of the text control to match the kind of data the user is expected to enter.
+ユーザーがタッチ キーボード、つまりソフト入力パネル (SIP) でデータを入力できるように、ユーザーが入力すると予想されるデータの種類に合わせてテキスト コントロールの入力値の種類を設定できます。
 
-The touch keyboard can be used for text entry when your app runs on a device with a touch screen. The touch keyboard is invoked when the user taps on an editable input field, such as a [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) or [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/br227548). You can make it much faster and easier for users to enter data in your app by setting the *input scope* of the text control to match the kind of data you expect the user to enter. The input scope provides a hint to the system about the type of text input expected by the control so the system can provide a specialized touch keyboard layout for the input type.
+タッチ キーボードは、アプリがタッチ スクリーン付きのデバイスで実行されているときにテキスト入力に使うことができます。 タッチ キーボードは、[**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) または [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/br227548) などの編集可能な入力フィールドをユーザーがタップしたときに呼び出されます。 ユーザーが入力すると予想されるデータの種類と一致するようにテキスト コントロールの*入力値の種類*を設定することで、ユーザーはより速く簡単にアプリでデータを入力できるようになります。 入力値の種類は、システムに対してコントロールが予期しているテキスト入力の種類のヒントとなるため、システムはその入力の種類用の特殊なタッチ キーボード レイアウトを提供できます。
 
-For example, if a text box is used only to enter a 4-digit PIN, set the [**InputScope**](https://msdn.microsoft.com/library/windows/apps/hh702632) property to **Number**. This tells the system to show the number keypad layout, which makes it easier for the user to enter the PIN.
+たとえば、テキスト ボックスが 4 桁の PIN の入力専用である場合は、[**InputScope**](https://msdn.microsoft.com/library/windows/apps/hh702632) プロパティを **Number** に設定します。 これにより、システムに数字キーパッド レイアウトの表示が指示されるため、ユーザーは簡単に PIN を入力できます。
 
-> **Important**&nbsp;&nbsp;
-- This info applies only to the SIP. It does not apply to hardware keyboards or the On-Screen Keyboard available in the Windows Ease of Access options.
-- The input scope does not cause any input validation to be performed, and does not prevent the user from providing any input through a hardware keyboard or other input device. You are still responsible for validating the input in your code as needed.
+> **重要**&nbsp;&nbsp;
+- この情報は、SIP にのみ適用されます。 ハードウェア キーボードにも、Windows の簡単操作オプションで使用できるスクリーン キーボードにも適用されません。
+- 入力値の種類の設定によって、入力の検証が実行されるわけではありません。また、ユーザーが、ハードウェア キーボードやその他の入力デバイスから入力できなくなることもありません。 必要に応じて、コードで入力を検証する必要があります。
 
-## Changing the input scope of a text control
+## テキスト コントロールの入力値の種類を変更する
 
-The input scopes that are available to your app are members of the [**InputScopeNameValue**](https://msdn.microsoft.com/library/windows/apps/hh702028) enumeration. You can set the **InputScope** property of a [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) or [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/br227548) to one of these values.
+アプリで使用可能な入力値の種類は、[**InputScopeNameValue**](https://msdn.microsoft.com/library/windows/apps/hh702028) 列挙体のメンバーです。 [
+            **TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) または [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/br227548) の **InputScope** プロパティを、これらの値のいずれかに設定できます。
 
-> **Important**&nbsp;&nbsp;The [**InputScope**](https://msdn.microsoft.com/library/windows/apps/dn996570) property on [**PasswordBox**](https://msdn.microsoft.com/library/windows/apps/br227519) supports only the **Password** and **NumericPin** values. Any other value is ignored.
+> **重要**&nbsp;&nbsp;[**PasswordBox**](https://msdn.microsoft.com/library/windows/apps/br227519) の [**InputScope**](https://msdn.microsoft.com/library/windows/apps/dn996570) プロパティは、**Password** 値と **NumericPin** 値のみをサポートします。 それ以外の値はすべて無視されます。
 
-Here, you change the input scope of several text boxes to match the expected data for each text box.
+ここでは、各テキスト ボックスで予期されるデータと一致するように、いくつかのテキスト ボックスの入力値の種類を変更します。
 
-**To change the input scope in XAML**
+**XAML の入力値の種類を変更するには**
 
-1.  In the XAML file for your page, locate the tag for the text control that you want to change.
-2.  Add the [**InputScope**](https://msdn.microsoft.com/library/windows/apps/hh702632) attribute to the tag and specify the [**InputScopeNameValue**](https://msdn.microsoft.com/library/windows/apps/hh702028) value that matches the expected input.
+1.  ページの XAML ファイルで、変更するテキスト コントロールのタグを見つけます。
+2.  [
+            **InputScope**](https://msdn.microsoft.com/library/windows/apps/hh702632) 属性をタグに追加し、予期される入力に一致する [**InputScopeNameValue**](https://msdn.microsoft.com/library/windows/apps/hh702028) 値を指定します。
 
-    Here are some text boxes that might appear on a common customer-contact form. With the [**InputScope**](https://msdn.microsoft.com/library/windows/apps/hh702632) set, a touch keyboard with a suitable layout for the data shows for each text box.
+    次に示すのは、一般的な顧客の連絡先フォームに表示されるテキスト ボックスです。 [
+            **InputScope**](https://msdn.microsoft.com/library/windows/apps/hh702632) を設定すると、各テキスト ボックスに、データに適切なレイアウトのタッチ キーボードが表示されます。
 
     ```xaml
     <StackPanel Width="300">
@@ -51,45 +54,48 @@ Here, you change the input scope of several text boxes to match the expected dat
     </StackPanel>
     ```
 
-**To change the input scope in code**
+**コードの入力値の種類を変更するには**
 
-1.  In the XAML file for your page, locate the tag for the text control that you want to change. If it's not set, set the [x:Name attribute](https://msdn.microsoft.com/library/windows/apps/mt204788) so you can reference the control in your code.
+1.  ページの XAML ファイルで、変更するテキスト コントロールのタグを見つけます。 設定されていない場合は、[x: Name 属性](https://msdn.microsoft.com/library/windows/apps/mt204788) を設定します。これで、コード内でコントロールを参照できます。
 
     ```csharp
     <TextBox Header="Telephone Number" x:Name="phoneNumberTextBox"/>
     ```
 
-2.  Instantiate a new [**InputScope**](https://msdn.microsoft.com/library/windows/apps/hh702025) object.
+2.  新しい [**InputScope**](https://msdn.microsoft.com/library/windows/apps/hh702025) オブジェクトをインスタンス化します。
 
     ```csharp
     InputScope scope = new InputScope();
     ```
 
-3.  Instantiate a new [**InputScopeName**](https://msdn.microsoft.com/library/windows/apps/hh702027) object.
+3.  新しい [**InputScopeName**](https://msdn.microsoft.com/library/windows/apps/hh702027) オブジェクトをインスタンス化します。
     
     ```csharp
     InputScopeName scopeName = new InputScopeName();
     ```
 
-4.  Set the [**NameValue**](https://msdn.microsoft.com/library/windows/apps/hh702032) property of the [**InputScopeName**](https://msdn.microsoft.com/library/windows/apps/hh702027) object to a value of the [**InputScopeNameValue**](https://msdn.microsoft.com/library/windows/apps/hh702028) enumeration.
+4.  [
+            **InputScopeName**](https://msdn.microsoft.com/library/windows/apps/hh702027) オブジェクトの [**NameValue**](https://msdn.microsoft.com/library/windows/apps/hh702032) プロパティを [**InputScopeNameValue**](https://msdn.microsoft.com/library/windows/apps/hh702028) 列挙体の値に設定します。
 
     ```csharp
     scopeName.NameValue = InputScopeNameValue.TelephoneNumber;
     ```
 
-5.  Add the [**InputScopeName**](https://msdn.microsoft.com/library/windows/apps/hh702027) object to the [**Names**](https://msdn.microsoft.com/library/windows/apps/hh702034) collection of the [**InputScope**](https://msdn.microsoft.com/library/windows/apps/hh702025) object.
+5.  [
+            **InputScope**](https://msdn.microsoft.com/library/windows/apps/hh702025) オブジェクトの [**Names**](https://msdn.microsoft.com/library/windows/apps/hh702034) コレクションに [**InputScopeName**](https://msdn.microsoft.com/library/windows/apps/hh702027) オブジェクトを追加します。
 
     ```csharp
     scope.Names.Add(scopeName);
     ```
 
-6.  Set the [**InputScope**](https://msdn.microsoft.com/library/windows/apps/hh702025) object as the value of the text control's [**InputScope**](https://msdn.microsoft.com/library/windows/apps/hh702632) property.
+6.  [
+            **InputScope**](https://msdn.microsoft.com/library/windows/apps/hh702025) オブジェクトを、テキスト コントロールの [**InputScope**](https://msdn.microsoft.com/library/windows/apps/hh702632) プロパティの値として設定します。
 
     ```csharp
     phoneNumberTextBox.InputScope = scope;
     ```
 
-Here's the code all together.
+コード全体を次に示します。
 
 ```CSharp
 InputScope scope = new InputScope();
@@ -99,7 +105,7 @@ scope.Names.Add(scopeName);
 phoneNumberTextBox.InputScope = scope;
 ```
 
-The same steps can be condensed into this shorthand code.
+同じ手順を、次の短縮形のコードにまとめることもできます。
 
 ```CSharp
 phoneNumberTextBox.InputScope = new InputScope() 
@@ -108,79 +114,81 @@ phoneNumberTextBox.InputScope = new InputScope()
 };
 ```
 
-## Text prediction, spell checking, and auto-correction
+## 予測入力、スペル チェック、および自動修正
 
-The [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) and [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/br227548) controls have several properties that influence the behavior of the SIP. To provide the best experience for your users, it's important to understand how these properties affect text input using touch.
+[
+            **TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) コントロールと [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/br227548) コントロールには、SIP の動作に影響を与えるプロパティがいくつかあります。 ユーザーに最適なエクスペリエンスを提供するには、これらのプロパティが、タッチ操作を使用したテキスト入力に与える影響を理解しておく必要があります。
 
--   [**IsSpellCheckEnabled**](https://msdn.microsoft.com/library/windows/apps/br209688)—When spell check is enabled for a text control, the control interacts with the system's spell-check engine to mark words that are not recognized. You can tap a word to see a list of suggested corrections. Spell checking is enabled by default.
+-   [**IsSpellCheckEnabled**](https://msdn.microsoft.com/library/windows/apps/br209688): テキスト コントロールでスペル チェックが有効である場合、コントロールは、システムのスペル チェック エンジンと連携して、認識されない単語をマークします。 単語をタップすると、修正候補の一覧を表示できます。 スペル チェック オプションは既定で有効になっています。
 
-    For the **Default** input scope, this property also enables automatic capitalization of the first word in a sentence and auto-correction of words as you type. These auto-correction features might be disabled in other input scopes. For more info, see the tables later in this topic.
+    入力値の種類が **Default** である場合、このプロパティを使用すると、文字列を入力するときに、文の最初の単語に対する大文字の自動設定および単語の自動修正が有効になります。 これらの自動修正機能は、他の入力値の種類では無効である場合があります。 詳しくは、このトピックの後半にある表をご覧ください。
 
--   [**IsTextPredictionEnabled**](https://msdn.microsoft.com/library/windows/apps/br209690)—When text prediction is enabled for a text control, the system shows a list of words that you might be beginning to type. You can select from the list so you don't have to type the whole word. Text prediction is enabled by default.
+-   [**IsTextPredictionEnabled**](https://msdn.microsoft.com/library/windows/apps/br209690): テキスト コントロールで予測入力が有効である場合は、入力開始時に予測される単語の一覧が表示されます。 一覧から選択できるため、単語全体を入力しなくても済みます。 予測入力は既定で有効になっています。
 
-    Text prediction might be disabled if the input scope is other than **Default**, even if the [**IsTextPredictionEnabled**](https://msdn.microsoft.com/library/windows/apps/br209690) property is **true**. For more info, see the tables later in this topic.
+    入力値の種類が **Default** 以外のとき、[**IsTextPredictionEnabled**](https://msdn.microsoft.com/library/windows/apps/br209690) プロパティが **true** であっても、予測入力が無効になる場合があります。 詳しくは、このトピックの後半にある表をご覧ください。
 
-    **Note**&nbsp;&nbsp;On the Mobile device family, text predictions and spelling corrections are shown in the SIP in the area above the keyboard. If [**IsTextPredictionEnabled**](https://msdn.microsoft.com/library/windows/apps/br209690) is set to **false**, this part of the SIP is hidden and auto-correction is disabled, even if [**IsSpellCheckEnabled**](https://msdn.microsoft.com/library/windows/apps/br209688) is **true**.
+    **注**&nbsp;&nbsp;モバイル デバイス ファミリでは、予測入力やスペル修正の候補が SIP のキーボードの上の領域に表示されます。 [
+            **IsTextPredictionEnabled**](https://msdn.microsoft.com/library/windows/apps/br209690) が **false** に設定されている場合は、[**IsSpellCheckEnabled**](https://msdn.microsoft.com/library/windows/apps/br209688) が **true** であっても、SIP のこの部分は表示されず、自動修正が無効になります。
 
--   [**PreventKeyboardDisplayOnProgrammaticFocus**](https://msdn.microsoft.com/library/windows/apps/dn299273)—When this property is **true**, it prevents the system from showing the SIP when focus is programmatically set on a text control. Instead, the keyboard is shown only when the user interacts with the control.
+-   [**PreventKeyboardDisplayOnProgrammaticFocus**](https://msdn.microsoft.com/library/windows/apps/dn299273): このプロパティが **true** の場合は、プログラムによりフォーカスがテキスト コントロールに設定されていると、SIP が表示されなくなります。 代わりに、ユーザーがコントロールで操作するときにだけ、キーボードが表示されます。
 
-## Touch keyboard index for Windows and Windows Phone
+## Windows と Windows Phone のタッチ キーボード インデックス
 
-These tables show the Soft Input Panel (SIP) layouts on desktop and mobile devices for common input scope values. The effect of the input scope on the features enabled by the **IsSpellCheckEnabled** and **IsTextPredictionEnabled** properties is listed for each input scope. This is not a comprehensive list of available input scopes.
+次の各表は、一般的な入力値の種類について、デスクトップおよびモバイル デバイスのソフト入力パネル (SIP) レイアウトを示しています。 **IsSpellCheckEnabled** プロパティや **IsTextPredictionEnabled** プロパティによって有効になっている機能に対する入力値の種類の影響が、入力値の種類ごとに説明されています。 これは、利用できる入力値の種類をすべて示したものではありません。
 
-> **Note**&nbsp;&nbsp;The smaller size of the SIP on mobile devices makes it particularly important for mobile apps that you set the correct input scope. As we show here, Windows Phone provides a greater variety of specialized keyboard layouts. A text field that doesn't need to have its input scope set in a Windows Store app might benefit from having it set in a Windows Phone Store app.
+> **注**&nbsp;&nbsp;モバイル デバイスの SIP はサイズが小さいため、正しい入力値の種類を設定することは、モバイル アプリで特に重要になります。 ここで示すように、Windows Phone には、さまざまな種類の特殊なキーボード レイアウトがあります。 Windows ストア アプリで入力値の種類を設定する必要のないテキスト フィールドであっても、Windows Phone ストア アプリでは、入力値の種類を設定することにより、便利になる場合があります。
 
-> **Tip**&nbsp;&nbsp;You can toggle most touch keyboards between an alphabetic layout and a numbers-and-symbols layout. On Windows, toggle the **&123** key. On Windows Phone, press the **&123** key to change to the numbers-and-symbols layout, and press the **abcd** key to change to the alphabetic layout.
+> **ヒント**&nbsp;&nbsp;ほとんどのタッチ キーボードでは、アルファベットのレイアウトと、数字と記号のレイアウトを切り替えることができます。 Windows では、**&123** キーを切り替えます。 Windows Phone では、**&123** キーを押して、数字と記号のレイアウトに切り替え、**abcd** キーを押して、アルファベットのレイアウトに切り替えます。
 
 ### Default
 
 `<TextBox InputScope="Default"/>`
 
-The default keyboard.
+既定のキーボード。
 
 | Windows                                                    | Windows Phone                                                    |
 |------------------------------------------------------------|------------------------------------------------------------------|
-| ![Default Windows touch keyboard](images/input-scopes/kbdpcdefault.png) | ![Default Windows Phone touch keyboard](images/input-scopes/kbdwpdefault.png) |
+| ![既定の Windows タッチ キーボード](images/input-scopes/kbdpcdefault.png) | ![既定の Windows Phone タッチ キーボード](images/input-scopes/kbdwpdefault.png) |
 
-Availability of features:
+機能の可用性:
 
--   Spell check: enabled if **IsSpellCheckEnabled** = **true**, disabled if **IsSpellCheckEnabled** = **false**
--   Auto-correction: enabled if **IsSpellCheckEnabled** = **true**, disabled if **IsSpellCheckEnabled** = **false**
--   Automatic capitalization: enabled if **IsSpellCheckEnabled** = **true**, disabled if **IsSpellCheckEnabled** = **false**
--   Text prediction: enabled if **IsTextPredictionEnabled** = **true**, disabled if **IsTextPredictionEnabled** = **false**
+-   スペル チェック: **IsSpellCheckEnabled** = **true** の場合は有効、**IsSpellCheckEnabled** = **false** の場合は無効
+-   自動修正: **IsSpellCheckEnabled** = **true** の場合は有効、**IsSpellCheckEnabled** = **false** の場合は無効
+-   大文字の自動設定: **IsSpellCheckEnabled** = **true** の場合は有効、**IsSpellCheckEnabled** = **false** の場合は無効
+-   予測入力: **IsTextPredictionEnabled** = **true** の場合は有効、**IsTextPredictionEnabled** = **false** の場合は無効
 
 ### CurrencyAmountAndSymbol
 
 `<TextBox InputScope="CurrencyAmountAndSymbol"/>`
 
-The default numbers and symbols keyboard layout.
+既定の数字と記号のキーボード レイアウト。
 
 | Windows                                                    | Windows Phone                                                    |
 |------------------------------------------------------------|------------------------------------------------------------------|
-| ![Windows touch keyboard for currency](images/input-scopes/kbdpccurrencyamountandsymbol.png)<br>Also includes page left/right keys to show more symbols.| ![Windows Phone touch keyboard for currency](images/input-scopes/kbdwpcurrencyamountandsymbol.png) |
-|Availability of features:<ul><li>Spell check: on by default, can be disabled</li><li>Auto-correction: always disabled</li><li>Automatic capitalization: always disabled</li><li>Text prediction: always disabled</li></ul>Same as **Number** and **TelephoneNumber**. | Availability of features:<ul><li>Spell check: on by default, can be disabled</li><li>Auto-correction: on by default, can be disabled</li><li>Automatic capitalization: always disabled</li><li>Text prediction: on by default, can be disabled</li>| 
+| ![通貨用 Windows タッチ キーボード](images/input-scopes/kbdpccurrencyamountandsymbol.png)<br>その他の記号を表示するためのページの左/右キーもあります。| ![通貨用 Windows Phone タッチ キーボード](images/input-scopes/kbdwpcurrencyamountandsymbol.png) |
+|機能の可用性:<ul><li>スペル チェック: 既定では有効だが、無効にすることも可能</li><li>自動修正: 常に無効</li><li>大文字の自動設定: 常に無効</li><li>予測入力: 常に無効</li></ul>**Number** および **TelephoneNumber** と同じ。 | 機能の可用性:<ul><li>スペル チェック: 既定では有効だが、無効にすることも可能</li><li>自動修正: 既定では有効だが、無効にすることも可能</li><li>大文字の自動設定: 常に無効</li><li>予測入力: 既定では有効だが、無効にすることも可能</li>| 
 
 ### Url
 
 `<TextBox InputScope="Url"/>`
 
-Includes the **.com** and ![go key](images/input-scopes/kbdgokey.png) (Go) keys. Press and hold the **.com** key to display additional options (**.org**, **.net**, and region-specific suffixes).
+**.com** キーと ![Go キー](images/input-scopes/kbdgokey.png) (Go) キーがあります。 **.com** キーを長押しすると、追加オプション (**.org**、**.net**、地域固有のサフィックス) が表示されます。
 
 | Windows                                                    | Windows Phone                                                    |
 |------------------------------------------------------------|------------------------------------------------------------------|
-| ![Windows touch keyboard for URLs](images/input-scopes/kbdpcurl.png)<br>Also includes the **:**, **-**, and **/** keys.| ![Windows Phone touch keyboard for URLs](images/input-scopes/kbdwpurl.png)<br>Press and hold the period key to display additional options ( - + &quot; / &amp; : , ). |
-|Availability of features:<ul><li>Spell check: on by default, can be disabled</li><li>Auto-correction: on by default, can be disabled</li><li>Automatic capitalization: always disabled</li><li>Text prediction: always disabled</li></ul> | Availability of features:<ul><li>Spell check: off by default, can be enabled</li><li>Auto-correction: off by default, can be enabled</li><li>Automatic capitalization: off by default, can be enabled</li><li>Text prediction: off by default, can be enabled</li></ul> |
+| ![URL 用 Windows タッチ キーボード](images/input-scopes/kbdpcurl.png)<br>**:**、**-**、および **/** の各キーもあります。| ![URL 用 Windows Phone タッチ キーボード](images/input-scopes/kbdwpurl.png)<br>ピリオド キーを長押しすると、追加オプション ( - + &quot; / &amp; : , ) が表示されます。 |
+|機能の可用性:<ul><li>スペル チェック: 既定では有効だが、無効にすることも可能</li><li>自動修正: 既定では有効だが、無効にすることも可能</li><li>大文字の自動設定: 常に無効</li><li>予測入力: 常に無効</li></ul> | 機能の可用性:<ul><li>スペル チェック: 既定では無効だが、有効にすることも可能</li><li>自動修正: 既定では無効だが、有効にすることも可能</li><li>大文字の自動設定: 既定では無効だが、有効にすることも可能</li><li>予測入力: 既定では無効だが、有効にすることも可能</li></ul> |
 
 ### EmailSmtpAddress
 
 `<TextBox InputScope="EmailSmtpAddress"/>`
 
-Includes the **@** and **.com** keys. Press and hold the **.com** key to display additional options (**.org**, **.net**, and region-specific suffixes).
+**@** キーと **.com** キーがあります。 **.com** キーを長押しすると、追加オプション (**.org**、**.net**、地域固有のサフィックス) が表示されます。
 
 | Windows                                                    | Windows Phone                                                    |
 |------------------------------------------------------------|------------------------------------------------------------------|
-| ![Windows touch keyboard for email addresses](images/input-scopes/kbdpcemailsmtpaddress.png)<br>Also includes the **_** and **-** keys.| ![Windows Phone touch keyboard for email addresses](images/input-scopes/kbdwpemailsmtpaddress.png)<br>Press and hold the period key to display additional options ( - _ , ; ). |
-|Availability of features:<ul><li>Spell check: on by default, can be disabled</li><li>Auto-correction: on by default, can be disabled</li><li>Automatic capitalization: always disabled</li><li>Text prediction: always disabled</li></ul> | Availability of features:<ul><li>Spell check: off by default, can be enabled</li><li>Auto-correction: off by default, can be enabled</li><li>Automatic capitalization: off by default, can be enabled</li><li>Text prediction: off by default, can be enabled</li></ul> |
+| ![メール アドレス用の Windows タッチ キーボード](images/input-scopes/kbdpcemailsmtpaddress.png)<br>**_** キーと **-** キーもあります。| ![メール アドレス用の Windows Phone タッチ キーボード](images/input-scopes/kbdwpemailsmtpaddress.png)<br>ピリオド キーを長押しすると、追加オプション ( - _ , ; ) が表示されます。 |
+|機能の可用性:<ul><li>スペル チェック: 既定では有効だが、無効にすることも可能</li><li>自動修正: 既定では有効だが、無効にすることも可能</li><li>大文字の自動設定: 常に無効</li><li>予測入力: 常に無効</li></ul> | 機能の可用性:<ul><li>スペル チェック: 既定では無効だが、有効にすることも可能</li><li>自動修正: 既定では無効だが、有効にすることも可能</li><li>大文字の自動設定: 既定では無効だが、有効にすることも可能</li><li>予測入力: 既定では無効だが、有効にすることも可能</li></ul> |
 
 ### Number
 
@@ -188,8 +196,8 @@ Includes the **@** and **.com** keys. Press and hold the **.com** key to display
 
 | Windows                                                    | Windows Phone                                                    |
 |------------------------------------------------------------|------------------------------------------------------------------|
-| ![Windows touch keyboard for numbers](images/input-scopes/kbdpccurrencyamountandsymbol.png)| ![Windows Phone touch keyboard for numbers](images/input-scopes/kbdwpnumber.png)<br>Keyboard contains numbers and a decimal point. Press and hold the decimal point key to display additional options ( , - ). |
-|Same as **CurrencyAmountAndSymbol** and **TelephoneNumber**. | Availability of features:<ul><li>Spell check: always disabled</li><li>Auto-correction: always disabled</li><li>Automatic capitalization: always disabled</li><li>Text prediction: always disabled</li></ul> |
+| ![電話番号用 Windows タッチ キーボード](images/input-scopes/kbdpccurrencyamountandsymbol.png)| ![電話番号用 Windows Phone タッチ キーボード](images/input-scopes/kbdwpnumber.png)<br>キーボードには、数字と小数点が含まれます。 小数点キーを長押しすると、追加オプション ( , - ) が表示されます。 |
+|**CurrencyAmountAndSymbol** および **TelephoneNumber** と同じ。 | 機能の可用性:<ul><li>スペル チェック: 常に無効</li><li>自動修正: 常に無効</li><li>大文字の自動設定: 常に無効</li><li>予測入力: 常に無効</li></ul> |
 
 ### TelephoneNumber
 
@@ -197,19 +205,19 @@ Includes the **@** and **.com** keys. Press and hold the **.com** key to display
 
 | Windows                                                    | Windows Phone                                                    |
 |------------------------------------------------------------|------------------------------------------------------------------|
-| ![Windows touch keyboard for telephone numbers](images/input-scopes/kbdpccurrencyamountandsymbol.png)| ![Windows Phone touch keyboard for telephone numbers](images/input-scopes/kbdwptelephonenumber.png)<br>Keyboard mimics the telephone keypad. Press and hold the period key to display additional options ( , ( ) X . ). Press and hold the 0 key to enter +. |
-|Same as **CurrencyAmountAndSymbol** and **TelephoneNumber**. | Availability of features:<ul><li>Spell check: always disabled</li><li>Auto-correction: always disabled</li><li>Automatic capitalization: always disabled</li><li>Text prediction: always disabled</li></ul> |
+| ![電話番号用 Windows タッチ キーボード](images/input-scopes/kbdpccurrencyamountandsymbol.png)| ![電話番号用 Windows Phone タッチ キーボード](images/input-scopes/kbdwptelephonenumber.png)<br>キーボードは、電話のキーパッドに似ています。 ピリオド キーを長押しすると、追加オプション ( , ( ) X . ) が表示されます。 ). + を入力するには、0 キーを長押しします。 |
+|**CurrencyAmountAndSymbol** および **TelephoneNumber** と同じ。 | 機能の可用性:<ul><li>スペル チェック: 常に無効</li><li>自動修正: 常に無効</li><li>大文字の自動設定: 常に無効</li><li>予測入力: 常に無効</li></ul> |
 
 ### Search
 
 `<TextBox InputScope="Search"/>`
 
-Includes the **Search** key instead of the **Enter** key.
+**Enter** キーの代わりに **Search** キーが含まれます。
 
 | Windows                                                    | Windows Phone                                                    |
 |------------------------------------------------------------|------------------------------------------------------------------|
-| ![Windows touch keyboard for search](images/input-scopes/kbdpcsearch.png)| ![Windows Phone touch keyboard for search](images/input-scopes/kbdwpsearch.png)|
-|Availability of features:<ul><li>Spell check: on by default, can be disabled</li><li>Auto-correction: always disabled</li><li>Auto-capitalization: always disabled</li><li>Text prediction: on by default, can be disabled</li></ul> | Availability of features:<ul><li>Spell check: on by default, can be disabled</li><li>Auto-correction: on by default, can be disabled</li><li>Auto-capitalization: always disabled</li><li>Text prediction: on by default, can be disabled</li></ul> |
+| ![検索用 Windows タッチ キーボード](images/input-scopes/kbdpcsearch.png)| ![検索用 Windows Phone タッチ キーボード](images/input-scopes/kbdwpsearch.png)|
+|機能の可用性:<ul><li>スペル チェック: 既定では有効だが、無効にすることも可能</li><li>自動修正: 常に無効</li><li>大文字の自動設定: 常に無効</li><li>予測入力: 既定では有効だが、無効にすることも可能</li></ul> | 機能の可用性:<ul><li>スペル チェック: 既定では有効だが、無効にすることも可能</li><li>自動修正: 既定では有効だが、無効にすることも可能</li><li>大文字の自動設定: 常に無効</li><li>予測入力: 既定では有効だが、無効にすることも可能</li></ul> |
 
 ### SearchIncremental
 
@@ -217,19 +225,19 @@ Includes the **Search** key instead of the **Enter** key.
 
 | Windows                                                    | Windows Phone                                                    |
 |------------------------------------------------------------|------------------------------------------------------------------|
-| ![Default Windows touch keyboard](images/input-scopes/kbdpcdefault.png)<br>Same layout as **Default**.| ![Default Windows Phone touch keyboard](images/input-scopes/kbdwpdefault.png)|
-|Availability of features:<ul><li>Spell check: off by default, can be enabled</li><li>Auto-correction: always disabled</li><li>Automatic capitalization: always disabled</li><li>Text prediction: always disabled</li></ul> | Same as **Default.** |
+| ![既定の Windows タッチ キーボード](images/input-scopes/kbdpcdefault.png)<br>**Default** と同じレイアウト。| ![既定の Windows Phone タッチ キーボード](images/input-scopes/kbdwpdefault.png)|
+|機能の可用性:<ul><li>スペル チェック: 既定では無効だが、有効にすることも可能</li><li>自動修正: 常に無効</li><li>大文字の自動設定: 常に無効</li><li>予測入力: 常に無効</li></ul> | **Default** と同じ。 |
 
 ### Formula
 
 `<TextBox InputScope="Formula"/>`
 
-Includes the **=** key.
+**=** キーがあります。
 
 | Windows                                                    | Windows Phone                                                    |
 |------------------------------------------------------------|------------------------------------------------------------------|
-| ![Windows touch keyboard for telephone formula](images/input-scopes/kbdpcformula.png)<br>Also includes the **%**, **$**, and **+** keys.| ![Windows Phone touch keyboard for formula](images/input-scopes/kbdwpformula.png)<br>Press and hold the period key to display additional options ( - ! ? , ). Press and hold the **=** key to display additional options ( ( ) : &lt; &gt; ). |
-|Availability of features:<ul><li>Spell check: off by default, can be enabled</li><li>Auto-correction: always disabled</li><li>Automatic capitalization: always disabled</li><li>Text prediction: always disabled</li></ul> | Availability of features:<ul><li>Spell check: on by default, can be disabled</li><li>Auto-correction: on by default, can be disabled</li><li>Automatic capitalization: always disabled</li><li>Text prediction: on by default, can be disabled</li></ul> |
+| ![数式用 Windows タッチ キーボード](images/input-scopes/kbdpcformula.png)<br>**%%**、**$**、および **+** の各キーもあります。| ![数式用 Windows Phone タッチ キーボード](images/input-scopes/kbdwpformula.png)<br>ピリオド キーを長押しすると、追加オプション ( - ! ? , ) が表示されます。 **=** キーを長押しすると、追加オプション ( ( ) : &lt; &gt; ) が表示されます。 |
+|機能の可用性:<ul><li>スペル チェック: 既定では無効だが、有効にすることも可能</li><li>自動修正: 常に無効</li><li>大文字の自動設定: 常に無効</li><li>予測入力: 常に無効</li></ul> | 機能の可用性:<ul><li>スペル チェック: 既定では有効だが、無効にすることも可能</li><li>自動修正: 既定では有効だが、無効にすることも可能</li><li>大文字の自動設定: 常に無効</li><li>予測入力: 既定では有効だが、無効にすることも可能</li></ul> |
 
 ### Chat
 
@@ -237,8 +245,8 @@ Includes the **=** key.
 
 | Windows                                                    | Windows Phone                                                    |
 |------------------------------------------------------------|------------------------------------------------------------------|
-| ![Default Windows touch keyboard](images/input-scopes/kbdpcdefault.png)<br>Same layout as **Default**.| ![Default Windows Phone touch keyboard](images/input-scopes/kbdwpdefault.png)<br>Same layout as **Default**.|
-|Availability of features:<ul><li>Spell check: off by default, can be enabled</li><li>Auto-correction: always disabled</li><li>Automatic capitalization: always disabled</li><li>Text prediction: always disabled</li></ul> | Availability of features:<ul><li>Spell check: on by default, can be disabled</li><li>Auto-correction: on by default, can be disabled</li><li>Automatic capitalization: on by default, can be disabled</li><li>Text prediction: on by default, can be disabled</li></ul> |
+| ![既定の Windows タッチ キーボード](images/input-scopes/kbdpcdefault.png)<br>**Default** と同じレイアウト。| ![既定の Windows Phone タッチ キーボード](images/input-scopes/kbdwpdefault.png)<br>**Default** と同じレイアウト。|
+|機能の可用性:<ul><li>スペル チェック: 既定では無効だが、有効にすることも可能</li><li>自動修正: 常に無効</li><li>大文字の自動設定: 常に無効</li><li>予測入力: 常に無効</li></ul> | 機能の可用性:<ul><li>スペル チェック: 既定では有効だが、無効にすることも可能</li><li>自動修正: 既定では有効だが、無効にすることも可能</li><li>大文字の自動設定: 既定では有効だが、無効にすることも可能</li><li>予測入力: 既定では有効だが、無効にすることも可能</li></ul> |
 
 ### NameOrPhoneNumber
 
@@ -246,8 +254,8 @@ Includes the **=** key.
 
 | Windows                                                    | Windows Phone                                                    |
 |------------------------------------------------------------|------------------------------------------------------------------|
-| ![Default Windows touch keyboard](images/input-scopes/kbdpcdefault.png)<br>Same layout as **Default**.| ![Windows Phone touch keyboard for name or phone number](images/input-scopes/kbdwpnameorphonenumber.png)<br>Includes the **;** and **@** keys. The **&amp;123** key is replaced by the **123** key, which opens the phone keypad (see **TelephoneNumber**).|
-|Availability of features:<ul><li>Spell check: on by default, can be disabled</li><li>Auto-correction: always disabled</li><li>Automatic capitalization: always enabled</li><li>Text prediction: always disabled</li></ul> | Availability of features:<ul><li>Spell check: off by default, can be enabled</li><li>Auto-correction: off by default, can be enabled</li><li>Automatic capitalization: off by default, can be enabled. First letter of each word is capitalized.</li><li>Text prediction: off by default, can be enabled</li></ul> |
+| ![既定の Windows タッチ キーボード](images/input-scopes/kbdpcdefault.png)<br>**Default** と同じレイアウト。| ![名前または電話番号用 Windows Phone タッチ キーボード](images/input-scopes/kbdwpnameorphonenumber.png)<br>**;** キーと **@** キーがあります。 **&amp;123** キーの代わりに **123** キーがあり、これで電話のキーパッドが表示されます (**TelephoneNumber** をご覧ください)。|
+|機能の可用性:<ul><li>スペル チェック: 既定では有効だが、無効にすることも可能</li><li>自動修正: 常に無効</li><li>大文字の自動設定: 常に有効</li><li>予測入力: 常に無効</li></ul> | 機能の可用性:<ul><li>スペル チェック: 既定では無効だが、有効にすることも可能</li><li>自動修正: 既定では無効だが、有効にすることも可能</li><li>大文字の自動設定: 既定では無効だが、有効にすることも可能。 各単語の最初の文字を大文字にする。</li><li>予測入力: 既定では無効だが、有効にすることも可能</li></ul> |
 
 
 <!--HONumber=Mar16_HO4-->

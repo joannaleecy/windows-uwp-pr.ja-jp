@@ -2,7 +2,7 @@
 Description: ユニバーサル Windows プラットフォーム (UWP) アプリがアクセシビリティ対応であると Windows ストアで宣言するための要件について説明します。
 title: ストア内のアクセシビリティ
 ms.assetid: 59FA3B87-75A6-4B30-BA7C-A0E769D68050
-label: ストアの要件
+label: Store requirements
 template: detail.hbs
 ---
 
@@ -38,7 +38,7 @@ Windows ストアで認定を受けるためにアプリを提出している間
 
 これらの手順と、その実行に役立つリソースへのリンクを確認する場合は、「[アクセシビリティのチェック リスト](accessibility-checklist.md)」をご覧ください。
 
-関連トピック
+<span id="related_topics"></span>関連トピック
 -----------------------------------------------
 
 * [アクセシビリティ](accessibility.md)
@@ -50,6 +50,6 @@ Windows ストアで認定を受けるためにアプリを提出している間
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=Mar16_HO3-->
 
 

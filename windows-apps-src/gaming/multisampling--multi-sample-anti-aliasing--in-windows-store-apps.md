@@ -1,30 +1,31 @@
 ---
-title: Multisampling in Universal Windows Platform (UWP) apps
-description: Learn how to use multisampling in Universal Windows Platform (UWP) apps built with Direct3D.
+title: ユニバーサル Windows プラットフォーム (UWP) アプリのマルチサンプリング
+description: Direct3D を使って構築されたユニバーサル Windows プラットフォーム (UWP) アプリでマルチサンプリングを使う方法について説明します。
 ms.assetid: 1cd482b8-32ff-1eb0-4c91-83eb52f08484
 ---
 
-# <span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"></span> Multisampling in Universal Windows Platform (UWP) apps
+# <span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"></span> ユニバーサル Windows プラットフォーム (UWP) アプリのマルチサンプリング
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-Learn how to use multisampling in Universal Windows Platform (UWP) apps built with Direct3D. Multisampling, also known as multi-sample antialiasing, is a graphics technique used to reduce the appearance of aliased edges. It works by drawing more pixels than are actually in the final render target, then averaging values to maintain the appearance of a "partial" edge in certain pixels. For a detailed description of how multisampling actually works in Direct3D, see [Multisample Anti-Aliasing Rasterization Rules](https://msdn.microsoft.com/library/windows/desktop/cc627092#Multisample).
+Direct3D を使って構築されたユニバーサル Windows プラットフォーム (UWP) アプリでマルチサンプリングを使う方法について説明します。 マルチサンプリングとは、マルチサンプル アンチエイリアシングとも呼ばれ、エッジを滑らかに描画するために使用されるグラフィックス技法です。 最終的なレンダー ターゲットの実際のピクセルよりも多くのピクセルを描画し、その値を平均して、特定のピクセルで "部分的" エッジの外観を維持するというしくみです。 Direct3D で実際にマルチサンプリングがどのように働くかについて詳しくは、「[マルチサンプル アンチエイリアシング ラスタライズ規則](https://msdn.microsoft.com/library/windows/desktop/cc627092#Multisample)」をご覧ください。
 
-## Multisampling and the flip model swap chain
+## マルチサンプリングとフリップ モデル スワップ チェーン
 
 
-UWP apps that use DirectX must use flip model swap chains. Flip model swap chains don't support multisampling directly, but multisampling can still be applied in a different way by rendering the scene to a multisampled render target view, and then resolving the multisampled render target to the back buffer before presenting. This article explains the steps required to add multisampling to your UWP app.
+DirectX を使う UWP アプリでは、フリップ モデル スワップ チェーンを使う必要があります。 フリップ モデル スワップ チェーンは、マルチサンプリングを直接サポートするわけではなく、方法は異なりますが、マルチサンプリングされたレンダー ターゲット ビューにシーンをレンダリングした後、マルチサンプリングされたレンダー ターゲットをバック バッファーに解決して表示することで、マルチサンプリングを適用することができます。 この記事では、UWP アプリにマルチサンプリングを追加するための手順を説明します。
 
-### How to use multisampling
+### マルチサンプリングを使う方法
 
-Direct3D feature levels guarantee support for specific, minimum sample count capabilities, and guarantee certain buffer formats will be available that support multisampling. Graphics devices often support a wider range of formats and sample counts than the minimum required. Multisampling support can be determined at run-time by checking feature support for multisampling with specific DXGI formats, and then checking the sample counts you can use with each supported format.
+Direct3D 機能レベルは、特定の最小サンプル数機能のサポートを保証し、マルチサンプリングをサポートする特定のバッファー形式が使用できることを保証します。 グラフィックス デバイスは、多くの場合、最小限必要なものよりも広い範囲の形式とサンプル数をサポートしています。 マルチサンプリング サポートは、特定の DXGI 形式を使うマルチサンプリング機能がサポートされているか確認し、サポートされている形式ごとに使うことのできるサンプル数を確認することで、実行時に判断できます。
 
-1.  Call [**ID3D11Device::CheckFeatureSupport**](https://msdn.microsoft.com/library/windows/desktop/ff476497) to find out which DXGI formats can be used with multisampling. Supply the render target formats your game can use. Both the render target and resolve target must use the same format, so check for both [**D3D11\_FORMAT\_SUPPORT\_MULTISAMPLE\_RENDERTARGET**](https://msdn.microsoft.com/library/windows/desktop/ff476134) and **D3D11\_FORMAT\_SUPPORT\_MULTISAMPLE\_RESOLVE**.
+1.  [
+            **ID3D11Device::CheckFeatureSupport**](https://msdn.microsoft.com/library/windows/desktop/ff476497) を呼び出して、どの DXGI 形式をマルチサンプリングで使うことができるか確認します。 ゲームで使うことのできるレンダー ターゲット形式を指定します。 レンダー ターゲットと解決ターゲットは、どちらも同じ形式を使う必要があるため、[**D3D11\_FORMAT\_SUPPORT\_MULTISAMPLE\_RENDERTARGET**](https://msdn.microsoft.com/library/windows/desktop/ff476134) と **D3D11\_FORMAT\_SUPPORT\_MULTISAMPLE\_RESOLVE** の両方を確認します。
 
-    **Feature level 9:  ** Although feature level 9 devices [guarantee support for multisampled render target formats](https://msdn.microsoft.com/library/windows/desktop/ff471324#MultiSample_RenderTarget), support is not guaranteed for multisample resolve targets. So this check is necessary before trying to use the multisampling technique described in this topic.
+    **機能レベル 9:  ** 機能レベル 9 デバイスは、[マルチサンプリングされたレンダー ターゲット形式のサポートを保証](https://msdn.microsoft.com/library/windows/desktop/ff471324#MultiSample_RenderTarget)しますが、マルチサンプル解決ターゲットのサポートは保証されません。 そこで、このトピックで説明するマルチサンプリング技法を使おうとする前に、この確認が必要になります。
 
-    The following code checks multisampling support for all the DXGI\_FORMAT values:
+    次のコードは、すべての DXGI\_FORMAT 値についてマルチサンプリング サポートを確認します。
 
     ```cpp
     // Determine the format support for multisampling.
@@ -47,9 +48,9 @@ Direct3D feature levels guarantee support for specific, minimum sample count cap
     }
     ```
 
-2.  For each supported format, query for sample count support by calling [**ID3D11Device::CheckMultisampleQualityLevels**](https://msdn.microsoft.com/library/windows/desktop/ff476499).
+2.  サポートされている形式ごとに、[**ID3D11Device::CheckMultisampleQualityLevels**](https://msdn.microsoft.com/library/windows/desktop/ff476499) を呼び出して、サンプル数のサポートを照会します。
 
-    The following code checks sample size support for supported DXGI formats:
+    次のコードは、サポートされている DXGI 形式についてサンプル サイズのサポートを確認します。
 
     ```cpp
     // Find available sample sizes for each supported format.
@@ -74,13 +75,13 @@ Direct3D feature levels guarantee support for specific, minimum sample count cap
     }
     ```
 
-    > **Note**   Use [**ID3D11Device2::CheckMultisampleQualityLevels1**](https://msdn.microsoft.com/library/windows/desktop/dn280494) instead if you need to check multisample support for tiled resource buffers.
+    > **注**   タイル リソース バッファーのマルチサンプル サポートを確認する必要がある場合は、代わりに [**ID3D11Device2::CheckMultisampleQualityLevels1**](https://msdn.microsoft.com/library/windows/desktop/dn280494) を使います。
 
      
 
-3.  Create a buffer and render target view with the desired sample count. Use the same DXGI\_FORMAT, width, and height as the swap chain, but specify a sample count greater than 1 and use a multisampled texture dimension (**D3D11\_RTV\_DIMENSION\_TEXTURE2DMS** for example). If necessary, you can re-create the swap chain with new settings that are optimal for multisampling.
+3.  目的のサンプル数を使って、バッファーとレンダー ターゲット ビューを作成します。 スワップ チェーンと同じ DXGI\_FORMAT、幅、高さを使いますが、1 より大きなサンプル数を指定してマルチサンプリングされたテクスチャ ディメンション (たとえば、**D3D11\_RTV\_DIMENSION\_TEXTURE2DMS**) を使います。 必要な場合、マルチサンプリングに最適な新しい設定を使ってスワップ チェーンを再作成することもできます。
 
-    The following code creates a multisampled render target:
+    次のコードでは、マルチサンプリングされたレンダー ターゲットが作成されます。
 
     ```cpp
     float widthMulti = m_d3dRenderTargetSize.Width;
@@ -117,9 +118,9 @@ Direct3D feature levels guarantee support for specific, minimum sample count cap
         );
     ```
 
-4.  The depth buffer must have the same width, height, sample count, and texture dimension to match the multisampled render target.
+4.  深度バッファーは、マルチサンプリングされたレンダー ターゲットと一致する、同じ幅、高さ、サンプル数、テクスチャ ディメンションを待つ必要があります。
 
-    The following code creates a multisampled depth buffer:
+    次のコードでは、マルチサンプリングされた深度バッファーが作成されます。
 
     ```cpp
     // Create a depth stencil view for use with 3D rendering if needed.
@@ -155,9 +156,9 @@ Direct3D feature levels guarantee support for specific, minimum sample count cap
         );
     ```
 
-5.  Now is a good time to create the viewport, because the viewport width and height must also match the render target.
+5.  ここでビューボートを作成します。ビューポートの幅と高さもレンダー ターゲットと一致している必要があるためです。
 
-    The following code creates a viewport:
+    次のコードでは、ビューポートが作成されます。
 
     ```cpp
     // Set the 3D rendering viewport to target the entire window.
@@ -171,9 +172,9 @@ Direct3D feature levels guarantee support for specific, minimum sample count cap
     m_d3dContext->RSSetViewports(1, &m_screenViewport);
     ```
 
-6.  Render each frame to the multisampled render target. When rendering is complete, call [**ID3D11DeviceContext::ResolveSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476474) before presenting the frame. This instructs Direct3D to peform the multisampling operation, computing the value of each pixel for display and placing the result in the back buffer. The back buffer then contains the final anti-aliased image and can be presented.
+6.  マルチサンプリングされたレンダー ターゲットに各フレームをレンダリングします。 レンダリングが完了したら、フレームを表示する前に [**ID3D11DeviceContext::ResolveSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476474) を呼び出します。 これにより Direct3D はマルチサンプリング操作を実行し、表示する各ピクセルの値を計算して、結果をバック バッファーに配置します。 バック バッファーには最終的なアンチエイリアシングされた画像が格納され、表示できるようになります。
 
-    The following code resolves the subresource before presenting the frame:
+    次のコードは、フレームを表示する前に、サブリソースを解決します。
 
     ```cpp
     if (m_sampleSize > 1)

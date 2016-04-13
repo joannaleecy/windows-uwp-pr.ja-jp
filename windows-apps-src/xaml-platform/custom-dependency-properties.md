@@ -1,65 +1,71 @@
 ---
-description: Explains how to define and implement custom dependency properties for a Windows Runtime app using C++, C#, or Visual Basic.
-title: Custom dependency properties
+description: C++、C#、または Visual Basic を使った Windows ランタイム アプリでカスタム依存関係プロパティを定義および実装する方法を説明します。
+title: カスタム依存関係プロパティ
 ms.assetid: 5ADF7935-F2CF-4BB6-B1A5-F535C2ED8EF8
 ---
 
-# Custom dependency properties
+# カスタム依存関係プロパティ
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-Here we explain how to define and implement your own dependency properties for a Windows Runtime app using C++, C#, or Visual Basic. We list reasons why app developers and component authors might want to create custom dependency properties. We describe the implementation steps for a custom dependency property, as well as some best practices that can improve performance, usability, or versatility of the dependency property.
+ここでは、C++、C#、または Visual Basic を使った Windows ランタイム アプリで固有の依存関係プロパティを定義および実装する方法を説明します。 アプリ開発者とコンポーネント作成者がカスタム依存関係プロパティを作成する理由の一覧を示します。 カスタム依存関係プロパティの実装手順と、依存関係プロパティのパフォーマンス、操作性、または汎用性を向上させることのできるいくつかのヒントについて説明します。
 
-## Prerequisites
-
-
-We assume that you have read the [Dependency properties overview](dependency-properties-overview.md) and that you understand dependency properties from the perspective of a consumer of existing dependency properties. To follow the examples in this topic, you should also understand XAML and know how to write a basic Windows Runtime app using C++, C#, or Visual Basic.
-
-## What is a dependency property?
+## 必要条件
 
 
-Dependency properties are properties that are registered with the Windows Runtime property system by calling the [**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) method, and that are identified by a [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) identifier member on the defining class. You can enable what would otherwise be a common language runtime (CLR) or C++ property to support styling, data binding, animations, and default values by implementing it as a dependency property. Dependency properties can be used only by [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) types. But **DependencyObject** is quite high in the class hierarchy, so the majority of classes that are intended for UI and presentation support can support dependency properties. For more information about dependency properties and some of the terminology and conventions used for describing them in this documentation, see [Dependency properties overview](dependency-properties-overview.md).
+「[依存関係プロパティの概要](dependency-properties-overview.md)」を読み、依存関係プロパティを既にある依存関係プロパティのユーザーの観点から理解していることを前提としています。 このトピックの例を参考にするには、XAML について理解し、C++、C#、または Visual Basic を使った基本的な Windows ランタイム アプリを作る方法を理解している必要もあります。
 
-Examples of dependency properties in the Windows Runtime are: [**Control.Background**](https://msdn.microsoft.com/library/windows/apps/br209395), [**FrameworkElement.Width**](https://msdn.microsoft.com/library/windows/apps/br208751), and [**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/br209702), among many others. Each dependency property exposed by a class has a corresponding **public** **static** **readonly** property of type [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) that is exposed on that same class and that is the identifier for the dependency property. The identifier's name follows this convention: the name of the dependency property, with the string "Property" added to the end of the name. For example, the corresponding **DependencyProperty** identifier for the **Control.Background** property is [**Control.BackgroundProperty**](https://msdn.microsoft.com/library/windows/apps/br209396). The identifier stores the information about the dependency property as it was registered, and the identifier can then be used later for other operations involving the dependency property, such as calling [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361).
+## 依存関係プロパティとは
 
-##  Property wrappers
 
-Dependency properties typically have a wrapper implementation. Without the wrapper, the only way to get or set the properties would be to use the dependency property utility methods [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) and [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) and to pass the identifier to them as a parameter. This is a rather unnatural usage for something that is ostensibly a property. But with the wrapper, your code and any other code that references the dependency property can use a straightforward object-property syntax that is natural for the language you're using.
+依存関係プロパティは、[**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) メソッドを呼び出すことで Windows ランタイム プロパティ システムに登録され、定義クラスの [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 識別子メンバーによって識別されるプロパティです。 依存関係プロパティとして実装することで、共通言語ランタイム (CLR) または C++ プロパティでスタイル、データ バインディング、アニメーション、既定値をサポートできます。 依存関係プロパティは、[**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 型でのみ使うことができます。 ただし、**DependencyObject** はクラス階層のかなり上位にあるため、UI とプレゼンテーションのサポートを目的とするクラスの大半は、依存関係プロパティをサポートできます。 依存関係プロパティと、このドキュメントでそれらを説明するために使っている用語と表記規則の一部については、「[依存関係プロパティの概要](dependency-properties-overview.md)」を参照してください。
 
-If you implement a custom dependency property yourself and want it to be public and easy to call, define the property wrappers too. The property wrappers are also useful for reporting basic information about the dependency property to reflection or static analysis processes. Specifically, the wrapper is where you place attributes such as [**ContentPropertyAttribute**](https://msdn.microsoft.com/library/windows/apps/br228011).
+Windows ランタイムでの依存関係プロパティの例として、[**Control.Background**](https://msdn.microsoft.com/library/windows/apps/br209395)、[**FrameworkElement.Width**](https://msdn.microsoft.com/library/windows/apps/br208751)、および [**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/br209702) があります。 クラスで公開されている各依存関係プロパティには、同じクラスで公開され、依存関係プロパティの識別子となっている対応する [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 型の **public** **static** **readonly** プロパティがあります。 識別子の名前は、依存関係プロパティの名前の終わりに "Property" という文字列を追加した名前です。 たとえば、**Control.Background** プロパティに対応する **DependencyProperty** 識別子は [**Control.BackgroundProperty**](https://msdn.microsoft.com/library/windows/apps/br209396) です。 識別子を登録したときに依存関係プロパティに関する情報が格納され、後で [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) の呼び出しなど、依存関係プロパティに関係する他の操作でその識別子を使うことができます。
 
-## When to implement a property as a dependency property
+##  プロパティ ラッパー
 
-Whenever you implement a public read/write property on a class, as long as your class derives from [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356), you have the option to make your property work as a dependency property. Sometimes the typical technique of backing your property with a private field is adequate. Defining your custom property as a dependency property is not always necessary or appropriate. The choice will depend on the scenarios that you intend your property to support.
+通常、依存関係プロパティにはラッパー実装があります。 ラッパーがない場合は、依存関係プロパティのユーティリティ メソッド [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) および [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) を使って識別子をパラメーターとして渡す方法でのみプロパティを取得または設定できます。 これは、明らかにプロパティであるものについては不自然な使用方法です。 しかし、ラッパーがあれば、お使いのコード、および依存関係プロパティを参照する他のコードで、使っている言語にとって自然な単純なオブジェクト プロパティ構文を使うことができます。
 
-You might consider implementing your property as a dependency property when you want it to support one or more of these features of the Windows Runtime or of Windows Runtime apps:
+カスタム依存関係プロパティを自分で実装し、パブリックにして簡単に呼び出すには、プロパティ ラッパーも定義します。 プロパティ ラッパーは、依存関係プロパティに関する基本情報をリフレクション プロセスまたは静的分析プロセスにレポートする場合にも役立ちます。 具体的には、ラッパーは [**ContentPropertyAttribute**](https://msdn.microsoft.com/library/windows/apps/br228011) などの属性を配置する場所です。
 
--   Setting the property through a [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849)
--   Acting as valid target property for data binding
--   Supporting animated values through a [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490)
--   Reporting when the previous value of the property has been changed by:
-    -   Actions taken by the property system itself
-    -   The environment
-    -   User actions
-    -   Reading and writing styles
+## プロパティを依存関係プロパティとして実装する状況
 
-## Checklist for defining a dependency property
+クラスにパブリック読み取り/書き込みプロパティを実装する場合、クラスが [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) から派生する限り、プロパティを依存関係プロパティとして機能させるオプションがあります。 場合によっては、プライベート フィールドでプロパティをバッキングする標準的な手法で十分です。 カスタム プロパティを依存関係プロパティとして定義することは、必ずしも必須または適切ではありません。 どれを選ぶかは、プロパティでサポートするシナリオによって決まります。
 
-Defining a dependency property can be thought of as a set of concepts. These concepts are not necessarily procedural steps, because several concepts can be addressed in a single line of code in the implementation. This list gives just a quick overview. We'll explain each concept in more detail later in this topic, and we'll show you example code in several languages.
+Windows ランタイムまたは Windows ランタイム アプリの次の機能の 1 つ以上をサポートする場合は、プロパティを依存関係プロパティとして実装することを検討してください。
 
--   (Optional) Create property metadata for the dependency property. You need property metadata only if you want property-changed behavior, or a metadata-based default value that can be restored by calling [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357).
--   Register the property name with the property system (call [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829)), specifying an owner type and the type of the property value. There's a required parameter for [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) that expects property metadata. Specify **null** for this, or specify the actual property metadata if you have declared any.
--   Define a [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) identifier as a **public** **static** **readonly** property member on the owner type.
--   Define a wrapper property, following the property accessor model that's used in the language you are implementing. The wrapper property name should match the *name* string that you used in [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829). Implement the **get** and **set** accessors to connect the wrapper with the dependency property that it wraps, by calling [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) and [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) and passing your own property's identifier as a parameter.
--   (Optional) Place attributes such as [**ContentPropertyAttribute**](https://msdn.microsoft.com/library/windows/apps/br228011) on the wrapper.
+-   [
+            **Style**](https://msdn.microsoft.com/library/windows/apps/br208849) によるプロパティの設定
+-   データ バインディングの有効なターゲット プロパティとしての機能
+-   [
+            **Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490) によるアニメーション化された値のサポート
+-   プロパティの以前の値が次のものによって変更された場合のレポート:
+    -   プロパティ システム自体によって実行されたアクション
+    -   環境
+    -   ユーザーの操作
+    -   スタイルの読み取りと書き込み
 
-**Note**  If you are defining a custom attached property, you generally omit the wrapper. Instead, you write a different style of accessor that a XAML processor can use. See [Custom attached properties](custom-attached-properties.md). 
+## 依存関係プロパティの定義のチェック リスト
 
-## Registering the property
+依存関係プロパティの定義は、一連の概念と考えることができます。 いくつかの概念は実装の単一コード行で処理できるため、これらの概念は必ずしも手順ではありません。 このリストでは、概要のみ示します。 各概念については後でこのトピックで詳しく説明し、複数の言語でのコード例を示します。
 
-For your property to be a dependency property, you must register the property into a property store maintained by the Windows Runtime property system. You must give the property a unique identifier to be used as the qualifier for later property-system operations. These operations might be internal operations, or your own code calling property-system APIs. To register the property, you call the [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) method.
+-   (省略可能) 依存関係プロパティのプロパティ メタデータを作ります。 プロパティ変更動作、または [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357) を呼び出すことで復元できるメタデータ ベースの既定値が必要な場合にのみ、プロパティ メタデータが必要です。
+-   プロパティ名をプロパティ システムに登録して ([**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) を呼び出す)、所有者型とプロパティ値の型を指定します。 [
+            **Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) にはプロパティ メタデータを要求する必須パラメーターがあります。 これには **null** を指定するか、何かを宣言した場合は実際のプロパティ メタデータを指定します。
+-   [
+            **DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 識別子を所有者型の **public** **static** **readonly** プロパティ メンバーとして定義します。
+-   実装する言語で使うプロパティ アクセサー モデルに従ってラッパー プロパティを定義します。 ラッパー プロパティ名は、[**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) で使った *name* 文字列と一致する必要があります。 [
+            **GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) と [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) を呼び出し、独自のプロパティの識別子をパラメーターとして渡すことで、**get** アクセサーと **set** アクセサーを実装して、ラップする依存関係プロパティにラッパーを関連付けます。
+-   (省略可能) ラッパーに [**ContentPropertyAttribute**](https://msdn.microsoft.com/library/windows/apps/br228011) などの属性を配置します。
 
-For Microsoft .NET languages (C# and Microsoft Visual Basic) you call [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) within the body of your class (inside the class, but outside any member definitions). The identifier is also provided by the [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) method call, as the return value. The [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) call is typically made outside of other member definitions because you use the return value to assign and create a **public** **static** **readonly** property of type [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) as part of your class. This property becomes the identifier for your dependency property. Here are examples of the [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) call.
+**注:** カスタム添付プロパティを定義する場合は、一般にラッパーを省略します。 代わりに、XAML プロセッサで使うことのできる別のスタイルのアクセサーを作ります。 詳しくは、「[カスタム添付プロパティ](custom-attached-properties.md)」をご覧ください。 
+
+## プロパティの登録
+
+プロパティを依存関係プロパティにするには、Windows ランタイム プロパティ システムでメンテナンスされるプロパティ ストアにプロパティを登録する必要があります。 プロパティに、後でプロパティ システム操作で識別子として使う一意の識別子を付与する必要があります。 これらの操作は内部操作の場合、またはプロパティ システム API を呼び出す独自のコードの場合があります。 プロパティを登録するには、[**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) メソッドを呼び出します。
+
+Microsoft .NET 言語 (C# と Microsoft Visual Basic) では、クラスの本文 (クラス内だがメンバー定義の外部) で [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) を呼び出します。 識別子は、[**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) メソッド呼び出しで戻り値としても提供されます。 戻り値を使って [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 型の **public** **static** **readonly** プロパティをクラスの一部として割り当て、作るため、通常、[**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) は他のメンバー定義の外部で呼び出されます。 このプロパティは、依存関係プロパティの識別子になります。 [
+            **Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 呼び出しの例を次に示します。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -78,9 +84,9 @@ Public Shared ReadOnly LabelProperty As DependencyProperty =
       New PropertyMetadata(Nothing))
 ```
 
-**Note**  Registering the dependency property in a class body is the typical implementation, but you can also register a dependency property in the class static constructor. This approach may make sense if you need more than one line of code to initialize the dependency property.
+**注:** クラス本文に依存関係プロパティを登録するのが標準的な実装ですが、クラスの静的コンストラクターで依存関係プロパティを登録することもできます。 このアプローチは、依存関係プロパティの初期化に複数のコード行が必要な場合に意味を持つことがあります。
 
-For C++, you have options for how you split the implementation between the header and the code file. The typical split is to declare the identifier itself as **public** **static** property in the header, with a **get** implementation but no **set**. The **get** implementation refers to a private field, which is an uninitialized [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) instance. You can also declare the wrappers and the **get** and **set** implementations of the wrapper. In this case the header includes some minimal implementation. If the wrapper needs Windows Runtime attribution, attribute in the header too. Put the [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) call in the code file, within a helper function that only gets run when the app initializes the first time. Use the return value of **Register** to fill the static but uninitialized identifiers that you declared in the header, which you initially set to **nullptr** at the root scope of the implementation file.
+C++ の場合は、ヘッダーとコード ファイル間で実装を分割する方法についてのオプションがあります。 一般的な分割では、**set** ではなく **get** 実装で、識別子自体をヘッダーで **public** **static** プロパティとして宣言します。 **get** 実装は、初期化されていない [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) インスタンスであるプライベート フィールドを参照します。 ラッパー、およびラッパーの **get** 実装と **set** 実装を宣言することもできます。 この場合、ヘッダーにはいくつかの最小限の実装が含まれます。 ラッパーに Windows ランタイム属性が必要な場合は、ヘッダーにも属性が必要です。 コード ファイルの最初にアプリが初期化するときにのみ実行されるヘルパー関数内に [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) の呼び出しを配置します。 **Register** の戻り値を使って、ヘッダーで宣言した初期化されていない静的識別子を入力します。これは実装ファイルのルート スコープで当初は **nullptr** に設定します。
 
 ```cpp
 //.h file
@@ -123,21 +129,21 @@ void ImageWithLabelControl::RegisterDependencyProperties()
 }
 ```
 
-**Note**  For the C++ code, the reason why you have a private field and a public read-only property that surfaces the [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) is so that other callers who use your dependency property can also use property-system utility APIs that require the identifier to be public. If you keep the identifier private, people can't use these utility APIs. Examples of such API and scenarios include [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) or [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) by choice, [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357), [**GetAnimationBaseValue**](https://msdn.microsoft.com/library/windows/apps/br242358), [**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257), and [**Setter.Property**](https://msdn.microsoft.com/library/windows/apps/br208836). You can't use a public field for this, because Windows Runtime compile rules don't allow public data members that use reference types like **DependencyProperty**.
+**注:** C++ コードの場合、プライベート バッキング フィールドに加えて [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) を表面化するパブリック読み取り専用プロパティがある理由は、依存関係プロパティを使う他の呼び出し元も、パブリックな識別子を必要とするプロパティ システム ユーティリティ API を使用できるようにするためです。 識別子をプライベートのままにした場合、他のユーザーはこれらのユーティリティ API を使うことができません。 このような API とシナリオの例には、[**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359)、任意の [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361)、[**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357)、[**GetAnimationBaseValue**](https://msdn.microsoft.com/library/windows/apps/br242358)、[**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257)、および [**Setter.Property**](https://msdn.microsoft.com/library/windows/apps/br208836) があります。 Windows ランタイムのコンパイル規則では、**DependencyProperty** のような参照型を使うパブリック データ メンバーが許可されないため、これにパブリック フィールドを使うことはできません。
 
-## Dependency property name conventions
+## 依存関係プロパティの命名規則
 
-There are naming conventions for dependency properties; follow them in all but exceptional circumstances. The dependency property itself has a basic name ("Label" in the preceding example) that is given as the first parameter of [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829). The name must be unique within each registering type, and the uniqueness requirement also applies to any inherited members. Dependency properties inherited through base types are considered to be part of the registering type already; names of inherited properties cannot be registered again.
+依存関係プロパティには命名規則があります。例外的な状況を除き、これに従ってください。 依存関係プロパティ自体には、[**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) の最初のパラメーターとして与えられる基本的な名前 (前の例では "Label") があります。 名前は登録の種類ごとに一意である必要があり、一意性の要件は継承されるメンバーにも適用されます。 基本型を通じて継承された依存関係プロパティは、既に登録型の一部と見なされます。継承されたプロパティの名前を再び登録することはできません。
 
-**Caution**  Although the name you provide here can be any string identifier that is valid in programming for your language of choice, you usually want to be able to set your dependency property in XAML too. To be set in XAML, the property name you choose must be a valid XAML name. For more info, see [XAML overview](xaml-overview.md).
+**注:** 選んだ言語のプログラミングで有効な任意の文字列識別子をここで名前として指定できますが、通常は XAML でも依存関係プロパティを設定できる必要があります。 XAML で設定するには、選ぶプロパティが有効な XAML 名である必要があります。 詳しくは、「[XAML の概要](xaml-overview.md)」をご覧ください。
 
-When you create the identifier property, combine the name of the property as you registered it with the suffix "Property" ("LabelProperty", for example). This property is your identifier for the dependency property, and it is used as an input for the [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) and [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) calls you make in your own property wrappers. It is also used by the property system and potentially by XAML processors.
+識別子プロパティを作る場合は、登録したプロパティの名前にサフィックス "Property" を結合します ("LabelProperty" など)。 このプロパティは依存関係プロパティの識別子であり、独自のプロパティ ラッパーで呼び出す [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) と [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) の入力として使われます。 プロパティ システムでも使われ、XAML プロセッサで使われることもあります。
 
-## Implementing the wrapper
+## ラッパーの実装
 
-Your property wrapper should call [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) in the **get** implementation, and [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) in the **set** implementation.
+プロパティ ラッパーでは、**get** 実装の [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) と **set** 実装の [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) を呼び出す必要があります。
 
-**Caution**  In all but exceptional circumstances, your wrapper implementations should perform only the [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) and [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) operations. Otherwise, you'll get different behavior when your property is set via XAML versus when it is set via code. For efficiency, the XAML parser bypasses wrappers when setting dependency properties; whenever possible, it uses the registry of dependency properties.
+**注意:** 例外的な状況を除き、ラッパー実装では [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) 操作と [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) 操作のみ実行する必要があります。 そうしないと、プロパティは XAML で設定された場合とコードで設定された場合とで動作が異なります。 効率を上げるために、XAML パーサーは依存関係プロパティの設定時にラッパーをバイパスします。可能な場合には、依存関係プロパティのレジストリを使います。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -172,22 +178,22 @@ public:
   }
 ```
 
-## Property metadata for a custom dependency property
+## カスタム依存関係プロパティのプロパティ メタデータ
 
-When property metadata is assigned to a dependency property, the same metadata is applied to that property for any instance of the property-owner type or its subclasses. In property metadata, you can specify two behaviors:
+プロパティ メタデータが依存関係プロパティに割り当てられている場合、同じメタデータが、プロパティ所有者型の任意のインスタンスまたはそのサブクラスのそのプロパティに適用されます。 プロパティ メタデータでは、次の 2 つの動作を指定できます。
 
--   A default value that the property system assigns to all cases of the property.
--   A static callback method that is automatically invoked within the property system whenever a property value is detected.
+-   プロパティ システムがプロパティのすべてのケースに割り当てる既定値。
+-   プロパティ値が検出されるたびにプロパティ システム内で自動的に呼び出される静的コールバック メソッド。
 
-### Calling Register with property metadata
+### プロパティ メタデータでの登録の呼び出し
 
-In the previous examples of calling [**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829), we passed a null value for the *propertyMetadata* parameter. To enable a dependency property to provide a default value or use a property-changed callback, you must define a [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) instance that provides one or both of these capabilities.
+前に示した [**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) を呼び出す例では、*propertyMetadata* パラメーターに null 値を渡しました。 依存関係プロパティを有効にして、既定値を提供するかプロパティ変更コールバックを使うには、これらの機能のいずれかまたは両方を提供する、[**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) インスタンスを定義する必要があります。
 
-Typically you provide a [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) as an inline-created instance, within the parameters for [**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829).
+通常、[**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) のパラメーター内で、インラインで作られたインスタンスとして [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) を提供します。
 
-**Note**  If you are defining a [**CreateDefaultValueCallback**](https://msdn.microsoft.com/library/windows/apps/hh701812) implementation, you must use the utility method [**PropertyMetadata.Create**](https://msdn.microsoft.com/library/windows/apps/hh702099) rather than calling a [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) constructor to define the **PropertyMetadata** instance.
+**注:** [**CreateDefaultValueCallback**](https://msdn.microsoft.com/library/windows/apps/hh701812) の実装を定義している場合、[**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) コンストラクターを呼び出して **PropertyMetadata** インスタンスを定義するのではなく、ユーティリティ メソッド [**PropertyMetadata.Create**](https://msdn.microsoft.com/library/windows/apps/hh702099) を使う必要があります。
 
-This next example modifies the previously shown [**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) examples by referencing a [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) instance with a [**PropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/br208770) value. The implementation of the "OnLabelChanged" callback will be shown later in this section.
+次の例では、前に示した [**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) の例を、[**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) インスタンスを [**PropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/br208770) 値を使って参照することで変更します。 "OnLabelChanged" コールバックの実装については、このセクションの後半で説明します。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -216,27 +222,29 @@ DependencyProperty^ ImageWithLabelControl::_LabelProperty =
     );
 ```
 
-### Default value
+### 既定値
 
-You can specify a default value for a dependency property such that the property always returns a particular default value when it is unset. This value can be different than the inherent default value for the type of that property.
+プロパティが設定されていないときには常に特定の既定値が返されるように、依存関係プロパティに既定値を指定することができます。 この値は、そのプロパティの型固有の既定値とは別の値にすることができます。
 
-If a default value is not specified, the default value for a dependency property is null for a reference type, or the default of the type for a value type or language primitive (for example, 0 for an integer or an empty string for a string). The main reason for establishing a default value is that this value is restored when you call [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357) on the property. Establishing a default value on a per-property basis might be more convenient than establishing default values in constructors, particularly for value types. However, for reference types, make sure that establishing a default value does not create an unintentional singleton pattern. For more info, see [Best practices](#best-practices) later in this topic
+既定値が指定されていない場合、参照型の依存関係プロパティの既定値は null になるか、値型または言語プリミティブの型の既定になります (たとえば、整数の場合は 0、文字列の場合は空の文字列)。 既定値を設定する主な理由は、プロパティに対して [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357) を呼び出すときに、この値が復元されるためです。 プロパティごとに既定値を設定すると、値型の場合には特に、コンストラクターで既定値を設定するよりも便利な場合があります。 ただし、参照型の場合は、既定値を設定しても意図しないシングルトン パターンが作られないことを確認してください。 詳しくは、このトピックの「[ベスト プラクティス](#best-practices)」をご覧ください。
 
-**Note**  Do not register with a default value of [**UnsetValue**](https://msdn.microsoft.com/library/windows/apps/br242371). If you do, it will confuse property consumers and will have unintended consequences within the property system.
+**注:** [**UnsetValue**](https://msdn.microsoft.com/library/windows/apps/br242371) の既定値は登録しないでください。 登録すると、プロパティのユーザーが混乱し、プロパティ システム内で意図しない結果が発生します。
 
 ### CreateDefaultValueCallback
 
-In some scenarios, you are defining dependency properties for objects that are used on more than one UI thread. This might be the case if you are defining a data object that is used by multiple apps, or a control that you use in more than one app. You can enable the exchange of the object between different UI threads by providing a [**CreateDefaultValueCallback**](https://msdn.microsoft.com/library/windows/apps/hh701812) implementation rather than a default value instance, which is tied to the thread that registered the property. Basically a [**CreateDefaultValueCallback**](https://msdn.microsoft.com/library/windows/apps/hh701812) defines a factory for default values. The value returned by **CreateDefaultValueCallback** is always associated with the current UI **CreateDefaultValueCallback** thread that is using the object.
+シナリオによっては、複数の UI スレッドで使われるオブジェクトの依存関係プロパティを定義します。 これは、複数のアプリで使われるデータ オブジェクト、または複数のアプリで使用するコントロールを定義している場合に当てはまることがあります。 プロパティを登録したスレッドと関連している、既定値インスタンスではなく [**CreateDefaultValueCallback**](https://msdn.microsoft.com/library/windows/apps/hh701812) の実装を提供することで、さまざまな UI スレッド間でオブジェクトの交換を有効にすることができます。 基本的に、[**CreateDefaultValueCallback**](https://msdn.microsoft.com/library/windows/apps/hh701812) は既定値のファクトリを定義します。 **CreateDefaultValueCallback** により返された値は、オブジェクトを使っている現在の UI **CreateDefaultValueCallback** スレッドと常に関連付けられています。
 
-To define metadata that specifies a [**CreateDefaultValueCallback**](https://msdn.microsoft.com/library/windows/apps/hh701812), you must call [**PropertyMetadata.Create**](https://msdn.microsoft.com/library/windows/apps/hh702115) to return a metadata instance; the [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) constructors do not have a signature that includes a **CreateDefaultValueCallback** parameter.
+[
+            **CreateDefaultValueCallback**](https://msdn.microsoft.com/library/windows/apps/hh701812) を指定するメタデータを定義するには、[**PropertyMetadata.Create**](https://msdn.microsoft.com/library/windows/apps/hh702115) を呼び出して、メタデータ インスタンスを返す必要があります。[**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) コンストラクターには **CreateDefaultValueCallback** パラメーターを含むシグネチャがありません。
 
-The typical implementation pattern for a [**CreateDefaultValueCallback**](https://msdn.microsoft.com/library/windows/apps/hh701812) is to create a new [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) class, set the specific property value of each property of the **DependencyObject** to the intended default, and then return the new class as an **Object** reference via the return value of the **CreateDefaultValueCallback** method.
+[
+            **CreateDefaultValueCallback**](https://msdn.microsoft.com/library/windows/apps/hh701812) の一般的な実装パターンでは、新しい [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) クラスを作成し、**DependencyObject** の各プロパティの特定のプロパティ値を目的の既定値に設定してから、**CreateDefaultValueCallback** メソッドの戻り値によって新しいクラスを **Object** リファレンスとして返します。
 
-### Property-changed callback method
+### プロパティ変更コールバック メソッド
 
-You can define a property-changed callback method to define your property's interactions with other dependency properties, or to set an internal property or state of your object whenever the property changes. If your callback is invoked, the property system has determined that there is an effective property value change. Because the callback method is static, the *d* parameter of the callback is important because it tells you which instance of the class has reported a change. A typical implementation uses the [**NewValue**](https://msdn.microsoft.com/library/windows/apps/br242364) property of the event data and processes that value in some manner, usually by performing some other change on the object passed as *d*. Additional responses to a property change are to reject the value reported by **NewValue**, to restore [**OldValue**](https://msdn.microsoft.com/library/windows/apps/br242365), or to set the value to a programmatic constraint applied to the **NewValue**.
+プロパティ変更コールバック メソッドを定義して、プロパティと他の依存関係プロパティの対話を定義することや、プロパティが変更されるたびに内部プロパティまたはオブジェクトの状態を設定することができます。 コールバックが呼び出された場合、プロパティ システムは有効なプロパティ値の変更があるかどうかを判断しています。 コールバック メソッドは静的であるため、変更をレポートしたクラスのインスタンスを示すコールバックの *d* パラメーターは重要です。 標準的な実装では、通常は *d* として渡されるオブジェクトに対して他の変更を実行することで、イベント データの [**NewValue**](https://msdn.microsoft.com/library/windows/apps/br242364) プロパティを使い、その値をいずれかの方法で処理します。 プロパティ変更に対する追加の応答では、**NewValue** でレポートされる値を拒否、[**OldValue**](https://msdn.microsoft.com/library/windows/apps/br242365) を復元、または **NewValue** に適用されるプログラムの制約に値を設定します。
 
-This next example shows a [**PropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/br208770) implementation. It implements the method you saw referenced in the previous [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) examples, as part of the construction arguments for the [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771). The scenario addressed by this callback is that the class also has a calculated read-only property named "HasLabelValue" (implementation not shown). Whenever the "Label" property gets reevaluated, this callback method is invoked, and the callback enables the dependent calculated value to remain in synchronization with changes to the dependency property.
+次の例では、[**PropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/br208770) の実装を示しています。 これは、前の [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) の例で参照したメソッドを、[**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) の構成引数の一部として実装します。 このコールバックで処理するシナリオは、クラスに "HasLabelValue" という名前の計算された読み取り専用プロパティもある場合です (実装は示していません)。 "Label" プロパティが再評価されるたびに、このコールバック メソッドが呼び出され、コールバックは依存する計算された値が依存関係プロパティに対する変更との同期を保てるようにします。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -273,9 +281,10 @@ static void OnLabelChanged(DependencyObject^ d, DependencyPropertyChangedEventAr
 }
 ```
 
-### Property changed behavior for structures and enumerations
+### 構造体と列挙に対するプロパティ変更動作
 
-If the type of a [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) is an enumeration or a structure, the callback may be invoked even if the internal values of the structure or the enumeration value did not change. This is different from a system primitive such as a string where it only is invoked if the value changed. This is a side effect of box and unbox operations on these values that is done internally. If you have a [**PropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/br208770) method for a property where your value is an enumeration or structure, you need to compare the [**OldValue**](https://msdn.microsoft.com/library/windows/apps/br242365) and [**NewValue**](https://msdn.microsoft.com/library/windows/apps/br242364) by casting the values yourself and using the overloaded comparison operators that are available to the now-cast values. Or, if no such operator is available (which might be the case for a custom structure), you may need to compare the individual values. You would typically choose to do nothing if the result is that the values have not changed.
+[
+            **DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) の型が列挙または構造体である場合、構造体または列挙値の内部値が変更されなかった場合でも、コールバックが呼び出されることがあります。 これは、値が変更された場合にのみ呼び出される、文字列などのシステム プリミティブとは異なります。 これは、内部で実行されたこれらの値でのボックスとボックス解除操作による影響です。 値が列挙または構造体であるプロパティに [**PropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/br208770) メソッドがある場合、自分で値をキャストし、now-cast 値に使用可能なオーバーロードされた比較演算子を使用して、[**OldValue**](https://msdn.microsoft.com/library/windows/apps/br242365) と [**NewValue**](https://msdn.microsoft.com/library/windows/apps/br242364) を比較する必要があります。 または、このような演算子が使用できなければ (カスタム構造の場合など)、個別の値を比較する必要がある場合もあります。 値が変更されていないという結果の場合、通常は何もしないことを選びます。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -306,65 +315,67 @@ static void OnVisibilityValueChanged(DependencyObject^ d, DependencyPropertyChan
 }
 ```
 
-## Best practices
+## ベスト プラクティス
 
-Keep the following considerations in mind as best practices when as you define your custom dependency property.
+カスタム依存関係プロパティを定義するときには、次の考慮事項をヒントとして念頭に置いてください。
 
-### DependencyObject and threading
+### DependencyObject とスレッド
 
-All [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) instances must be created on the UI thread which is associated with the current [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) that is shown by a Windows Runtime app. Although each **DependencyObject** must be created on the main UI thread, the objects can be accessed using a dispatcher reference from other threads, by calling [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br230616).
+すべての [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) インスタンスは、Windows ランタイム アプリによって表示される現在の [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) と関連付けられている UI スレッド上で作成する必要があります。 それぞれの **DependencyObject** はメイン UI スレッド上で作成する必要がありますが、オブジェクトは、[**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br230616) を呼び出すことにより、他のスレッドからディスパッチャー参照を使ってアクセスできます。
 
-The threading aspects of [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) are relevant because it generally means that only code that runs on the UI thread can change or even read the value of a dependency property. Threading issues can usually be avoided in typical UI code that makes correct use of **async** patterns and background worker threads. You typically only run into **DependencyObject**-related threading issues if you are defining your own **DependencyObject** types and you attempt to use them for data sources or other scenarios where a **DependencyObject** isn't necessarily appropriate.
+[
+            **DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) のスレッドの側面も問題となります。それは、通常、UI スレッド上で実行されるコードのみが依存関係プロパティの値を変更または読み取ることができることを意味するためです。 通常、**非同期**パターンとバックグラウンド ワーカー スレッドを適切に使う一般的な UI コードでは、スレッドの問題を回避できます。 独自に **DependencyObject** 型を定義し、それをデータ ソースや **DependencyObject** が必ずしも適切でないその他のシナリオで使おうとすると、通常は **DependencyObject** に関連するスレッドの問題が発生します。
 
-### Avoiding unintentional singletons
+### 意図しないシングルトンの回避
 
-An unintentional singleton can happen if you are declaring a dependency property that takes a reference type, and you call a constructor for that reference type as part of the code that establishes your [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771). What happens is that all usages of the dependency property share just one instance of **PropertyMetadata** and thus try to share the single reference type you constructed. Any subproperties of that value type that you set through your dependency property then propagate to other objects in ways you probably don't intend.
+意図しないシングルトンは、参照型を受け取る依存関係プロパティを宣言し、その参照型のコンストラクターを、[**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) を設定するコードの一部として呼び出す場合に発生することがあります。 その場合、使用するすべての依存関係が **PropertyMetadata** の 1 つのインスタンスを共有し、したがって構築した単一の参照型を共有しようとします。 依存関係プロパティで設定するその値型のすべてのサブプロパティは、おそらく意図しない方法で他のオブジェクトに伝播されます。
 
-You can use class constructors to set initial values for a reference-type dependency property if you want a non-null value, but be aware that this would be considered a local value for purposes of [Dependency properties overview](dependency-properties-overview.md). It might be more appropriate to use a template for this purpose, if your class supports templates. Another way to avoid a singleton pattern, but still provide a useful default, is to expose a static property on the reference type that provides a suitable default for the values of that class.
+クラス コンストラクターを使うと、null 以外の値が必要な場合に参照型の依存関係プロパティの初期値を設定できますが、[依存関係プロパティの概要](dependency-properties-overview.md)の趣旨に沿って、これはローカル値と見なされることに注意してください。 クラスでテンプレートがサポートされる場合は、この目的にテンプレートを使う方が適切な場合があります。 シングルトン パターンを回避すると同時に便利な既定値を提供する別の方法は、そのクラスの値に適した既定値を提供する静的プロパティを参照型で公開することです。
 
-### Collection-type dependency properties
+### コレクション型の依存関係プロパティ
 
-Collection-type dependency properties have some additional implementation issues to consider.
+コレクション型の依存関係プロパティでは、いくつかの実装の問題を追加で考慮する必要があります。
 
-Collection-type dependency properties are relatively rare in the Windows Runtime API. In most cases, you can use collections where the items are a [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) subclass, but the collection property itself is implemented as a conventional CLR or C++ property. This is because collections do not necessarily suit some typical scenarios where dependency properties are involved. For example:
+コレクション型の依存関係プロパティは、Windows ランタイム API では比較的まれです。 ほとんどの場合、項目が [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) サブクラスであるコレクションを使うことができますが、コレクション プロパティ自体は従来の CLR または C++ プロパティとして実装されます。 これは、依存関係プロパティが関与するいくつかの典型的なシナリオにはコレクションが必ずしも適さないためです。 次に例を示します。
 
--   You do not typically animate a collection.
--   You do not typically prepopulate the items in a collection with styles or a template.
--   Although binding to collections is a major scenario, a collection does not need to be a dependency property to be a binding source. For binding targets, it is more typical to use subclasses of [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/br242803) or [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) to support collection items, or to use view-model patterns. For more info about binding to and from collections, see [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946).
--   Notifications for collection changes are better addressed through interfaces such as **INotifyPropertyChanged** or **INotifyCollectionChanged**, or by deriving the collection type from [**ObservableCollection**](T:System.Collections.ObjectModel.ObservableCollection%601).
+-   通常は、コレクションをアニメーション化しません。
+-   通常、スタイルまたはテンプレートを持つコレクションには項目を事前設定しません。
+-   コレクションへのバインディングは主要なシナリオですが、コレクションはバインディング ソースとなる依存関係プロパティでなくてもかまいません。 バインディング ターゲットの場合は、[**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/br242803) または [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) のサブクラスを使ってコレクション項目をサポートするか、ビュー モデル パターンを使う方が一般的です。 コレクションとのバインディングについて詳しくは、「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」をご覧ください。
+-   コレクションの変更の通知は、**INotifyPropertyChanged** や **INotifyCollectionChanged** などのインターフェイスを通じて処理するか、[**ObservableCollection**](T:System.Collections.ObjectModel.ObservableCollection%601) からコレクション型を派生させることで処理する方が適切です。
 
-Nevertheless, scenarios for collection-type dependency properties do exist. The next three sections provide some guidance on how to implement a collection-type dependency property.
+それでも、コレクション型の依存関係プロパティのシナリオは存在します。 次の 3 つのセクションでは、コレクション型の依存関係プロパティを実装する方法に関するガイダンスを示します。
 
-### Initializing the collection
+### コレクションの初期化
 
-When you create a dependency property, you can establish a default value by means of dependency property metadata. But be careful to not use a singleton static collection as the default value. Instead, you must deliberately set the collection value to a unique (instance) collection as part of class-constructor logic for the owner class of the collection property.
+依存関係プロパティを作る場合は、依存関係プロパティ メタデータを使って既定値を設定できます。 ただし、シングルトン静的コレクションを既定値として使わないように注意してください。 代わりに、コレクション プロパティの所有者クラスのクラス コンストラクター ロジックの一部として、コレクション値を一意の (インスタンス) コレクションに意図的に設定する必要があります。
 
-### Change notifications
+### 変更通知
 
-Defining the collection as a dependency property does not automatically provide change notification for the items in the collection by virtue of the property system invoking the "PropertyChanged" callback method. If you want notifications for collections or collection items—for example, for a data-binding scenario— implement the **INotifyPropertyChanged** or **INotifyCollectionChanged** interface. For more info, see [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946).
+コレクションを依存関係プロパティとして定義しても、"PropertyChanged" コールバック メソッドを呼び出すプロパティ システムによってコレクションの項目の変更通知が自動的に提供されるわけではありません。 たとえばデータ バインディング シナリオなどでコレクションまたはコレクション項目の通知が必要な場合は、**INotifyPropertyChanged** インターフェイスまたは **INotifyCollectionChanged** インターフェイスを実装します。 詳しくは、「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」をご覧ください。
 
-### Dependency property security considerations
+### 依存関係プロパティのセキュリティに関する考慮事項
 
-Declare dependency properties as public properties. Declare dependency property identifiers as public static read-only members. Even if you attempt to declare other access levels permitted by a language (such as **protected**), a dependency property can always be accessed through the identifier in combination with the property-system APIs. Declaring the dependency property identifier as internal or private will not work, because then the property system cannot operate properly.
+依存関係プロパティはパブリック プロパティとして宣言します。 依存関係プロパティ識別子は、パブリック静的読み取り専用メンバーとして宣言します。 言語で許可されている他のアクセス レベル (**protected** など) を宣言しようとした場合でも、依存関係プロパティは常に、プロパティ システム API と組み合わせた識別子を使ってアクセスできます。 依存関係プロパティ識別子を内部またはプライベートして宣言すると、プロパティ システムは正常に動作できないため、このような宣言は機能しません。
 
-Wrapper properties are really just for convenience, Security mechanisms applied to the wrappers can be bypassed by calling [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) or [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) instead. So keep wrapper properties public; otherwise you just make your property harder for legitimate callers to use without providing any real security benefit.
+ラッパー プロパティは便宜だけが目的であるため、ラッパーに適用されるセキュリティ メカニズムは [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) または [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) を代わりに呼び出すことでバイパスできます。 したがって、ラッパー プロパティはパブリックのままにしてください。そうしないと、正当な呼び出し元がプロパティを使いにくくなるだけで、実際のセキュリティ上の利点はありません。
 
-The Windows Runtime does not provide a way to register a custom dependency property as read-only.
+Windows ランタイムには、カスタム依存関係プロパティを読み取り専用として登録する方法は用意されていません。
 
-### Dependency properties and class constructors
+### 依存関係プロパティとクラス コンストラクター
 
-There is a general principle that class constructors should not call virtual methods. This is because constructors can be called to accomplish base initialization of a derived class constructor, and entering the virtual method through the constructor might occur when the object instance being constructed is not yet completely initialized. When you derive from any class that already derives from [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356), remember that the property system itself calls and exposes virtual methods internally as part of its services. To avoid potential problems with run-time initialization, don't set dependency property values within constructors of classes.
+クラス コンストラクターは仮想メソッドを呼び出してはならないという一般的な原則があります。 これは、コンストラクターは派生クラス コンストラクターの基本の初期化を実行するために呼び出すことができ、構築されるオブジェクト インスタンスの初期化がまだ完了していないときにコンストラクターから仮想メソッドに入ることがあるためです。 [
+            **DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) から既に派生したクラスから派生する場合は、プロパティ システム自体がそのサービスの一部として仮想メソッドを内部的に呼び出し、公開することに注意してください。 実行時の初期化での潜在的な問題を回避するために、クラスのコンストラクター内では依存関係プロパティを設定しないでください。
 
-### Registering the dependency properties for C++/CX apps
+### C++/CX アプリの依存関係プロパティの登録
 
-The implementation for registering a property in C++/CX is trickier than C#C#, both because of the separation into header and implementation file and also because initialization at the root scope of the implementation file is a bad practice. (Visual C++ component extensions (C++/CX) puts static initializer code from the root scope directly into **DllMain**, whereas C# compilers assign the static initializers to classes and thus avoid **DllMain** load lock issues.). The best practice here is to declare a helper function that does all your dependency property registration for a class, one function per class. Then for each custom class your app consumes, you'll have to reference the helper registration function that's exposed by each custom class you want to use. Call each helper registration function once as part of the [**Application constructor**](https://msdn.microsoft.com/library/windows/apps/br242325) (`App::App()`), prior to `InitializeComponent`. That constructor only runs when the app is really referenced for the first time, it won't run again if a suspended app resumes, for example. Also, as seen in the previous C++ registration example, the **nullptr** check around each [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) call is important: it's insurance that no caller of the function can register the property twice. A second registration call would probably crash your app without such a check because the property name would be a duplicate. You can see this implementation pattern in the [XAML user and custom controls sample](http://go.microsoft.com/fwlink/p/?linkid=238581) if you look at the code for the C++/CX version of the sample.
+C++/CX のプロパティ登録の実装は、C# より込み入っています。それは、ヘッダー ファイルと実装ファイルに分かれているためと、実装ファイルのルート スコープでの初期化が好ましくないためです (Visual C++ コンポーネント拡張機能 (C++/CX) はルート スコープの静的な初期化子コードを直接 **DllMain** に配置しますが、C# コンパイラは静的な初期化子をクラスに割り当てて、**DllMain** の読み込み時ロックの問題を回避しています)。 ここでのベスト プラクティスは、クラスごとに 1 つ、そのクラスの依存関係プロパティの登録をすべて実行するヘルパー関数を宣言することです。 続いて、アプリで使う各カスタム クラスについて、使う各カスタム クラスが公開したヘルパー登録関数を参照する必要があります。 `InitializeComponent` の前に、[**Application constructor**](https://msdn.microsoft.com/library/windows/apps/br242325) (`App::App()`) の一環として各ヘルパー登録関数を 1 回だけ呼び出します。 そのコンストラクターは、アプリが実際に初めて参照されたときにだけ実行され、たとえば中断されたアプリが再開された場合には実行されません。 また、前の C++ 登録の例に示すように、各 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 呼び出し時の **nullptr** チェックが重要です。これによって、関数の呼び出し元がプロパティを 2 回登録できないことが保証されます。 このようなチェックをしないで 2 回、登録を呼び出すと、プロパティ名が重複するためアプリはおそらくクラッシュします。 [XAML ユーザー コントロールとカスタム コントロールのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=238581)でサンプルの C++/CX バージョンのコードを参照すると、この実装パターンを確認できます。
 
-## Related topics
+## 関連トピック
 
 * [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)
 * [**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829)
-* [Dependency properties overview](dependency-properties-overview.md)
-* [XAML user and custom controls sample](http://go.microsoft.com/fwlink/p/?linkid=238581)
+* [依存関係プロパティの概要](dependency-properties-overview.md)
+* [XAML ユーザーとカスタム コントロールのサンプル](http://go.microsoft.com/fwlink/p/?linkid=238581)
  
 
 

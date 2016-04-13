@@ -1,49 +1,49 @@
 ---
-Description: The Packages page is where you upload all of the package files (.xap, .appx, .appxupload, and/or .appxbundle) for the app that you're submitting. You can upload packages for any operating system that your app targets in this step.
-title: Upload app packages
+Description: [パッケージ] ページは、提出するアプリのすべてのパッケージ ファイル (.xap、.appx、.appxupload、.appxbundle) をアップロードする場所です。 この手順では、アプリがターゲットとしているすべてのオペレーティング システムのパッケージをアップロードできます。
+title: アプリ パッケージのアップロード
 ms.assetid: B1BB810D-3EAA-4FB5-B03C-1F01AFB2DE36
 ---
 
-# Upload app packages
+# アプリ パッケージのアップロード
 
 
-The **Packages** page is where you upload all of the package files (.xap, .appx, .appxupload, and/or .appxbundle) for the app that you're submitting. You can upload packages for any operating system that your app targets in this step. When a customer downloads your app, the Store will look through all of your app's available packages and will automatically provide each customer with the package that works best for their device.
+**[パッケージ]** ページは、提出するアプリのすべてのパッケージ ファイル (.xap、.appx、.appxupload、.appxbundle) をアップロードする場所です。 この手順では、アプリがターゲットとしているすべてのオペレーティング システムのパッケージをアップロードできます。 ユーザーがアプリをダウンロードするときに、ストアはアプリのすべての利用可能なパッケージを調べて、ユーザーのデバイスに最適なパッケージを各ユーザーに自動的に提供します。
 
-For details about what a package includes and how it must be structured, see [App package requirements](app-package-requirements.md). You'll also want to learn about [how version numbers may impact which packages are delivered to specific customers](package-version-numbering.md), and [how packages are distributed to different operating systems](guidance-for-app-package-management.md).
+パッケージに含まれる内容やパッケージの構成方法について詳しくは、「[アプリ パッケージの要件](app-package-requirements.md)」をご覧ください。 また、必要に応じて、"[特定のユーザーに配信されるパッケージに対するバージョン番号の影響](package-version-numbering.md)" や、"[さまざまなオペレーティング システムへのパッケージの配布方法](guidance-for-app-package-management.md)" についても学習してください。
 
-## Uploading packages to your submission
-
-
-To upload packages, drag them into the upload field or click to browse your files. The **Packages** page will let you upload .xap, .appx, .appxupload, and/or .appxbundle files.
-
-If you have created any [package flights](package-flights.md) for your app, you’ll see a drop-down with the option to copy packages from one of your package flights. Select the package flight that has the packages you want to pull in. You can then select any or all of its packages to include in this submission.
-
-> **Important**  For Windows 10, you should always upload the .appxupload file here, not the .appx or .appxbundle. For more info about packaging UWP apps for the Store, see [Packaging Universal Windows apps for Windows 10](../packaging/packaging-uwp-apps.md).
-
-If we detect issues with your packages while validating them, you'll need to remove the package, fix the issue, and then try uploading it again. For more info, see [Resolve package upload errors](resolve-package-upload-errors.md).
-
-You may also see warnings to let you know about issues that may cause problems but won't block you from continuing with your submission.
-
-## Package details
+## 申請へのパッケージのアップロード
 
 
-After your packages have been successfully uploaded, we'll list them, grouped by target operating system. The name, version, and architecture of the package will be displayed. For more info such as the supported languages, app capabilities, and file size for each package, click **Details**.
+パッケージをアップロードするには、アップロード フィールドにパッケージをドラッグするか、クリックしてファイルを参照します。 **[パッケージ]** ページでは、.xap、.appx、.appxupload、.appxbundle ファイルをアップロードできます。
 
-If you are using [Windows ad mediation](../monetize/use-ad-mediation-to-maximize-revenue.md), you'll also see a link to configure ad mediation for each package.
+アプリの[パッケージ フライト](package-flights.md)を作成すると、いずれかのパッケージ フライトからパッケージをコピーするオプションがドロップダウンに表示されます。 必要なパッケージが含まれているパッケージ フライトを選びます。 その後で、いずれかまたはすべてのパッケージを選んで、この申請に含めることができます。
 
-If you need to remove a package from your submission, click the **Remove** link at the bottom of each package's **Details** section.
+> **重要**  Windows 10 の場合は、.appx や .appxbundle ではなく、常に .appxupload ファイルをここにアップロードする必要があります。 ストア用の UWP アプリのパッケージ化について詳しくは、「[Windows 10 用ユニバーサル Windows アプリのパッケージ化](../packaging/packaging-uwp-apps.md)」をご覧ください。
 
-## Removing redundant packages
+検証中にパッケージに問題が検出された場合は、パッケージを削除し、問題を解決した後、パッケージをもう一度アップロードする必要があります。 詳しくは、「[パッケージのアップロード エラーの解決](resolve-package-upload-errors.md)」をご覧ください。
 
+また、問題を引き起こす可能性はあるが、申請の続行は妨げない事柄について通知する警告が表示されることもあります。
 
-If we detect that one or more of your packages is redundant, we'll display a warning suggesting that you remove the redundant packages from this submission. Often this happens when you have previously uploaded packages, and now you are providing higher-versioned packages that support the same set of customers. In this case, no customers would ever get the redundant package, because you now have a better (higher-versioned) package to support these customers.
-
-When we detect that you have redundant packages, we'll provide an option to remove all of the redundant packages from this submission automatically. You can also remove packages from the submission individually if you prefer.
-
-## Packages with Visual Studio Application Insights
+## パッケージの詳細
 
 
-We recommend that you use [Visual Studio Application Insights](http://go.microsoft.com/fwlink/?LinkId=615086) in your packages (or enable it by checking the box for “Show telemetry in the Windows Dev Center” when building your package) so that we can provide you with [app usage telemetry details](usage-report.md). If you didn’t configure Application Insights in Microsoft Visual Studio, when we detect that a package includes it, we'll display a message confirming that by submitting your package, you agree to enable app usage telemetry about your developer account. You can disable app usage telemetry at any time in your **Account settings**.
+パッケージが正常にアップロードされた後、ターゲットのオペレーティング システムごとにグループ化されて一覧に表示されます。 パッケージの名前、バージョン、アーキテクチャが表示されます。 各パッケージのサポートされる言語、アプリの機能、ファイル サイズなどの詳しい情報については、**[詳細]** をクリックします。
+
+[Windows 広告仲介](../monetize/use-ad-mediation-to-maximize-revenue.md)を使用している場合は、各パッケージの広告仲介を構成するためのリンクも表示されます。
+
+提出からパッケージを削除する必要がある場合は、各パッケージの **[詳細]** セクションの下部にある **[削除]** リンクをクリックします。
+
+## 冗長なパッケージの削除
+
+
+1 つ以上のパッケージが重複している場合、この申請から冗長なパッケージを削除することを提案する警告が表示されます。 これは多くの場合、以前にパッケージをアップロードした後で、同じユーザーをサポートする新しいバージョンのパッケージを提供するときに発生します。 この場合、これらのユーザーをサポートするより良い (より高いバージョンの) パッケージがあるため、ユーザーが冗長なパッケージを取得することはありません。
+
+冗長なパッケージが存在することが検出された場合、すべての冗長なパッケージをこの申請から自動的に削除するオプションを提供します。 必要に応じて、パッケージを申請から個別に削除することもできます。
+
+## Visual Studio Application Insights を含むパッケージ
+
+
+[アプリの利用統計詳細情報](usage-report.md)を提供できるように、パッケージで [Visual Studio Application Insights](http://go.microsoft.com/fwlink/?LinkId=615086) を使う (または、パッケージをビルドするときに [Windows Dev Center でテレメトリを表示] をオンにすることで有効にする) ことをお勧めします。 Microsoft Visual Studio で Application Insights を構成しなかった場合、パッケージに Application Insights が含まれていることが検出されると、パッケージを提出することによって、開発者アカウントに関するアプリの利用統計情報を有効にすることに同意したことを確認するメッセージが表示されます。 アプリの利用統計情報は、**[アカウント設定]** でいつでも無効にすることができます。
 
  
 

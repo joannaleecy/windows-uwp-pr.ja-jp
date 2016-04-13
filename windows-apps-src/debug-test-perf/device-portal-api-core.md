@@ -1,51 +1,51 @@
 ---
 ms.assetid: bfabd3d5-dd56-4917-9572-f3ba0de4f8c0
-title: Device Portal core API reference
-description: Learn about the Windows Device Portal core REST API's that you can use to access the data and control your device programmatically.
+title: デバイス ポータル コア API リファレンス
+description: Windows Device Portal コア REST API について説明します。これによって、データにアクセスし、プログラムを使ってデバイスを制御することが可能になります。
 ---
 
-# Device Portal core API reference
+# デバイス ポータル コア API リファレンス
 
-Everything in the Windows Device Portal is built on top of REST API's that you can use to access the data and control your device programmatically.
+Windows Device Portal のすべての機能は REST API の上に構築されます。REST API を使用してデータにアクセスしたり、プログラムを使ってデバイスを制御できます。
 
-## App deployment
+## アプリの展開
 
 ---
-### Install an app
+### アプリをインストールする
 
-**Request**
+**要求**
 
-You can install an app by using the following request format.
+次の要求形式を使用して、アプリをインストールできます。
 
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 POST | /api/appx/packagemanager/package
 
-**URI parameters**
+**URI パラメーター**
 
-You can specify the following additional parameters on the request URI:
+次の追加パラメーターを要求 URI に指定できます。
 
-URI parameter | Description
+URI パラメーター | 説明
 :---          | :---
-package   | (**required**) The file name of the package to be installed.
+package   | (**必須**) インストールするパッケージのファイル名。
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Mobile
 * Windows Desktop
@@ -53,37 +53,37 @@ package   | (**required**) The file name of the package to be installed.
 * IoT
 
 ---
-### Get app installation status
+### アプリのインストール状態を取得する
 
-**Request**
+**要求**
 
-You can get the status of an app installation that is currently in progress by using the following request format.
+次の要求形式を使用して、現在進行中のアプリのインストールの状態を取得できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/appx/packagemanager/state
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Mobile
 * Windows Desktop
@@ -91,38 +91,38 @@ GET | /api/appx/packagemanager/state
 * IoT
 
 ---
-### Uninstall an app
+### アプリをアンインストールする
 
-**Request**
+**要求**
 
-You can uninstall an app by using the following request format.
+次の要求形式を使用して、アプリをアンインストールできます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 DELETE | /api/appx/packagemanager/package
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Mobile
 * Windows Desktop
@@ -131,38 +131,38 @@ DELETE | /api/appx/packagemanager/package
 * IoT
 
 ---
-### Get installed apps
+### インストールされたアプリを取得する
 
-**Request**
+**要求**
 
-You can get a list of apps installed on the system by using the following request format.
+次の要求形式を使用して、システムにインストールされているアプリの一覧を取得できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/appx/packagemanager/packages
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-The response includes a list of installed packages with associated details.
+応答には、インストールされているパッケージの一覧と関連する詳細情報が含まれます。
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Mobile
 * Windows Desktop
@@ -171,530 +171,530 @@ The response includes a list of installed packages with associated details.
 * IoT
 
 ---
-## Device manager
+## デバイス マネージャー
 ---
-### Get the installed devices on the machine
+### コンピューターにインストールされているデバイスを取得する
 
-**Request**
+**要求**
 
-You can get a list of devices that are installed on the machine by using the following request format.
+次の要求形式を使用して、コンピューターにインストールされているデバイスの一覧を取得できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/devicemanager/devices
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- The response includes a JSON structure that contains a hierarchical device tree.
+- 応答には、階層型のデバイス ツリーを格納する JSON 構造体が含まれます。
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Mobile
 * Windows Desktop
 * IoT
 
 ---
-## Dump collection
+## ダンプの収集
 ---
-### Get the list of all crash dumps for apps
+### アプリのすべてのクラッシュ ダンプの一覧を取得する
 
-**Request**
+**要求**
 
-You can get the list of all the available crash dumps for all sideloaded apps by using the following request format.
+次の要求形式を使用して、サイドローディングされたすべてのアプリについて、利用可能なすべてのクラッシュ ダンプの一覧を取得できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/debug/dump/usermode/dumps
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- The response includes a list of crash dumps for each sideloaded application.
+- 応答には、サイドローディングされたアプリケーションごとにクラッシュ ダンプの一覧が含まれます。
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Desktop
 * HoloLens
 * IoT
 
 ---
-### Get the crash dump collection settings for an app
+### アプリのクラッシュ ダンプ収集設定を取得する
 
-**Request**
+**要求**
 
-You can get the crash dump collection settings for a sideloaded app by using the following request format.
+次の要求形式を使用して、サイドローディングされたアプリのクラッシュ ダンプ収集設定を取得できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/debug/dump/usermode/crashcontrol
 
 
-**URI parameters**
+**URI パラメーター**
 
-You can specify the following additional parameters on the request URI:
+次の追加パラメーターを要求 URI に指定できます。
 
-URI parameter | Description
+URI パラメーター | 説明
 :---          | :---
-packageFullname   | (**required**) The full name of the package for the sideloaded app.
+packageFullname   | (**必須**) サイドローディングされたアプリのパッケージの完全な名前。
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Desktop
 * HoloLens
 * IoT
 
 ---
-### Delete a crash dump for a sideloaded app
+### サイドローディングされたアプリのクラッシュ ダンプを削除する
 
-**Request**
+**要求**
 
-You can delete a sideloaded app's crash dump by using the following request format.
+次の要求形式を使用して、サイドローディングされたアプリのクラッシュ ダンプを削除できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 DELETE | /api/debug/dump/usermode/crashdump
 
 
-**URI parameters**
+**URI パラメーター**
 
-You can specify the following additional parameters on the request URI:
+次の追加パラメーターを要求 URI に指定できます。
 
-URI parameter | Description
+URI パラメーター | 説明
 :---          | :---
-packageFullname   | (**required**) The full name of the package for the sideloaded app.
-fileName   | (**required**) The name of the dump file that should be deleted.
+packageFullname   | (**必須**) サイドローディングされたアプリのパッケージの完全な名前。
+fileName   | (**必須**) 削除する必要があるダンプ ファイルの名前。
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Desktop
 * HoloLens
 * IoT
 
 ---
-### Disable crash dumps for a sideloaded app
+### サイドローディングされたアプリのクラッシュ ダンプを無効にする
 
-**Request**
+**要求**
 
-You can disable crash dumps for a sideloaded app by using the following request format.
+次の要求形式を使用して、サイドローディングされたアプリのクラッシュ ダンプを無効にすることができます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 DELETE | /api/debug/dump/usermode/crashcontrol
 
 
-**URI parameters**
+**URI パラメーター**
 
-You can specify the following additional parameters on the request URI:
+次の追加パラメーターを要求 URI に指定できます。
 
-URI parameter | Description
+URI パラメーター | 説明
 :---          | :---
-packageFullname   | (**required**) The full name of the package for the sideloaded app.
+packageFullname   | (**必須**) サイドローディングされたアプリのパッケージの完全な名前。
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Desktop
 * HoloLens
 * IoT
 
 ---
-### Download the crash dump for a sideloaded app
+### サイドローディングされたアプリのクラッシュ ダンプをダウンロードする
 
-**Request**
+**要求**
 
-You can download a sideloaded app's crash dump by using the following request format.
+次の要求形式を使用して、サイドローディングされたアプリのクラッシュ ダンプをダウンロードできます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/debug/dump/usermode/crashdump
 
 
-**URI parameters**
+**URI パラメーター**
 
-You can specify the following additional parameters on the request URI:
+次の追加パラメーターを要求 URI に指定できます。
 
-URI parameter | Description
+URI パラメーター | 説明
 :---          | :---
-packageFullname   | (**required**) The full name of the package for the sideloaded app.
-fileName   | (**required**) The name of the dump file that you want to download.
+packageFullname   | (**必須**) サイドローディングされたアプリのパッケージの完全な名前。
+fileName   | (**必須**) ダウンロードするダンプ ファイルの名前。
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- The response includes a dump file. You can use WinDbg or Visual Studio to examine the dump file.
+- 応答には、ダンプ ファイルが含まれます。 WinDbg または Visual Studio を使用して、ダンプ ファイルを検証できます。
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Desktop
 * HoloLens
 * IoT
 
 ---
-### Enable crash dumps for a sideloaded app
+### サイドローディングされたアプリのクラッシュ ダンプを有効にする
 
-**Request**
+**要求**
 
-You can enable crash dumps for a sideloaded app by using the following request format.
+次の要求形式を使用して、サイドローディングされたアプリのクラッシュ ダンプを有効にすることができます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 POST | /api/debug/dump/usermode/crashcontrol
 
 
-**URI parameters**
+**URI パラメーター**
 
-You can specify the following additional parameters on the request URI:
+次の追加パラメーターを要求 URI に指定できます。
 
-URI parameter | Description
+URI パラメーター | 説明
 :---          | :---
-packageFullname   | (**required**) The full name of the package for the sideloaded app.
+packageFullname   | (**必須**) サイドローディングされたアプリのパッケージの完全な名前。
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Desktop
 * HoloLens
 * IoT
 
 ---
-### Get the list of bugcheck files
+### バグチェック ファイルの一覧を取得する
 
-**Request**
+**要求**
 
-You can get the list of bugcheck minidump files by using the following request format.
+次の要求形式を使用して、バグチェックのミニダンプ ファイルの一覧を取得できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/debug/dump/kernel/dumplist
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- The response includes a list of dump file names and the sizes of these files.
+- 応答には、ダンプ ファイル名とこれらのファイルのサイズの一覧が含まれます。
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Desktop
 * IoT
 
 ---
-### Download a bugcheck dump file
+### バグチェックのダンプ ファイルをダウンロードする
 
-**Request**
+**要求**
 
-You can download a bugcheck dump file by using the following request format.
+次の要求形式を使用して、バグチェックのダンプ ファイルをダウンロードできます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/debug/dump/kernel/dump
 
 
-**URI parameters**
+**URI パラメーター**
 
-You can specify the following additional parameters on the request URI:
+次の追加パラメーターを要求 URI に指定できます。
 
-URI parameter | Description
+URI パラメーター | 説明
 :---          | :---
-filename   | (**required**) The file name of the dump file. You can find this by using the API to get the dump list.
+filename   | (**必須**) ダンプ ファイルのファイル名。 API を使ってダンプの一覧を取得することによって確認できます。
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- The response includes the dump file. You can inspect this file using WinDbg.
+- 応答には、ダンプ ファイルが含まれます。 WinDbg を使用してこのファイルを調べることができます。
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Desktop
 * IoT
 
 ---
-### Get the bugcheck crash control settings
+### バグチェックのクラッシュ制御の設定を取得する
 
-**Request**
+**要求**
 
-You can get the bugcheck crash control settings by using the following request format.
+次の要求形式を使用して、バグチェックのクラッシュ制御の設定を取得できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/debug/dump/kernel/crashcontrol
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- The response includes the crash control settings. For more information about CrashControl, see the [CrashControl](https://technet.microsoft.com/library/cc951703.aspx) article.
+- 応答には、クラッシュの制御の設定が含まれます。 CrashControl について詳しくは、「[CrashControl](https://technet.microsoft.com/library/cc951703.aspx)」をご覧ください。
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Desktop
 * IoT
 
 ---
-### Get a live kernel dump
+### ライブ カーネル ダンプを取得する
 
-**Request**
+**要求**
 
-You can get a live kernel dump by using the following request format.
+次の要求形式を使用して、ライブ カーネル ダンプを取得できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/debug/dump/livekernel
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- The response includes the full kernel mode dump. You can inspect this file using WinDbg.
+- 応答には、カーネル モードの完全なダンプが含まれます。 WinDbg を使用してこのファイルを調べることができます。
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Desktop
 * IoT
 
 ---
-### Get a dump from a live user process
+### ライブ ユーザー プロセスからダンプを取得する
 
-**Request**
+**要求**
 
-You can get the dump for live user process by using the following request format.
+次の要求形式を使用して、ライブ ユーザー プロセスのダンプを取得できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/debug/dump/usermode/live
 
 
-**URI parameters**
+**URI パラメーター**
 
-You can specify the following additional parameters on the request URI:
+次の追加パラメーターを要求 URI に指定できます。
 
-URI parameter | Description
+URI パラメーター | 説明
 :---          | :---
-pid   | (**required**) The unique process id for the process you are interested in.
+pid   | (**必須**) 目的のプロセスの一意のプロセス ID。
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- The response includes the process dump. You can inspect this file using WinDbg or Visual Studio.
+- 応答には、プロセス ダンプが含まれます。 WinDbg または Visual Studio を使用してこのファイルを調べることができます。
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Desktop
 * IoT
 
 ---
-### Set the bugcheck crash control settings
+### バグチェックのクラッシュ制御の設定を行う
 
-**Request**
+**要求**
 
-You can set the settings for collecting bugcheck data by using the following request format.
+次の要求形式を使用して、バグチェック データの収集に関する設定を行うことができます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 POST | /api/debug/dump/kernel/crashcontrol
 
 
-**URI parameters**
+**URI パラメーター**
 
-You can specify the following additional parameters on the request URI:
+次の追加パラメーターを要求 URI に指定できます。
 
-URI parameter | Description
+URI パラメーター | 説明
 :---          | :---
-autoreboot   | (**optional**) True or false. This indicates whether the system restarts automatically after it fails or locks.
-dumptype   | (**optional**) The dump type. For the supported values, see the [CrashDumpType Enumeration](https://msdn.microsoft.com/library/azure/microsoft.azure.management.insights.models.crashdumptype.aspx).
-maxdumpcount   | (**optional**) The maximum number of dumps to save.
-overwrite   | (**optional**) True of false. This indicates whether or not to overwrite old dumps when the dump counter limit specified by *maxdumpcount* has been reached.
+autoreboot   | (**オプション**) true または false。 これは、エラーやロックの発生後に、システムが自動的に再起動するかどうかを示します。
+dumptype   | (**オプション**) dump タイプ。 サポートされる値については、「[CrashDumpType 列挙体](https://msdn.microsoft.com/library/azure/microsoft.azure.management.insights.models.crashdumptype.aspx)」をご覧ください。
+maxdumpcount   | (**オプション**) 保存するダンプの最大数。
+overwrite   | (**オプション**) true または false。 これは、*maxdumpcount*で指定されているダンプ カウンターの制限に達した場合に古いダンプを上書きするかどうかを示します。
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Desktop
 * IoT
@@ -702,38 +702,38 @@ overwrite   | (**optional**) True of false. This indicates whether or not to ove
 ---
 ## ETW
 ---
-### Create a realtime ETW session over a websocket
+### Websocket 経由でリアルタイムの ETW セッションを作成する
 
-**Request**
+**要求**
 
-You can create a realtime ETW session by using the following request format. This will be managed over a websocket.
+次の要求形式を使用して、リアルタイムの ETW セッションを作成できます。 これは、websocket 経由で管理されます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET/WebSocket | /api/etw/session/realtime
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- The response includes the ETW events from the enabled providers.
+- 応答には、有効なプロバイダーの ETW イベントが含まれます。
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Mobile
 * Windows Desktop
@@ -741,38 +741,38 @@ GET/WebSocket | /api/etw/session/realtime
 * IoT
 
 ---
-### Enumerate the registered ETW providers
+### 登録済みの ETW プロバイダーを列挙する
 
-**Request**
+**要求**
 
-You can enumerate through the registered providers by using the following request format.
+次の要求形式を使用して、登録済みプロバイダーを列挙できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/etw/providers
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- The response includes the list of ETW providers. The list will include the friendly name and GUID for each provider.
+- 応答には、ETW プロバイダーの一覧が含まれます。 一覧には、各プロバイダーのフレンドリ名と GUID が含まれます。
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Mobile
 * Windows Desktop
@@ -780,45 +780,45 @@ GET | /api/etw/providers
 * IoT
 
 ---
-## Networking
+## ネットワーク
 ---
-### Get the current IP configuration
+### 現在の IP 構成を取得する
 
-**Request**
+**要求**
 
-You can get the current IP configuration by using the following request format.
+次の要求形式を使用して、現在の IP 構成を取得できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/networking/ipconfig
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- The response includes the IP configuration
+- 応答には、IP 構成が含まれます。
 
-**Status code**
+**状態コード**
 
-The following table shows possible additional status codes that can be returned as a result of this operation.
+次の表に、この操作の結果として返される可能性があるその他の状態コードを示します。
 
-HTTP status code      | Description
+HTTP 状態コード      | 説明
 :------     | :-----
-200 | The operation completed successfully
-500 | There was an internal server error
+200 | 操作が正常に完了している
+500 | 内部サーバー エラーが発生している
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Mobile
 * Windows Desktop
@@ -827,40 +827,40 @@ HTTP status code      | Description
 * IoT
 
 ---
-## OS information
+## OS 情報
 ---
-### Get the machine name
+### コンピューター名を取得する
 
-**Request**
+**要求**
 
-You can get the name of a machine by using the following request format.
+次の要求形式を使用して、コンピューターの名前を取得できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/os/machinename
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Mobile
 * Windows Desktop
@@ -869,38 +869,38 @@ GET | /api/os/machinename
 * IoT
 
 ---
-### Get the operating system information
+### オペレーティング システムの情報を取得する
 
-**Request**
+**要求**
 
-You can get the OS information for a machine by using the following request format.
+次の要求形式を使用して、コンピューターの OS 情報を取得できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/os/info
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Mobile
 * Windows Desktop
@@ -909,42 +909,42 @@ GET | /api/os/info
 * IoT
 
 ---
-### Set the machine name
+### コンピューター名を設定する
 
-**Request**
+**要求**
 
-You can set the name of a machine by using the following request format.
+次の要求形式を使用して、コンピューターの名前を設定できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 POST | /api/os/machinename
 
 
-**URI parameters**
+**URI パラメーター**
 
-You can specify the following additional parameters on the request URI:
+次の追加パラメーターを要求 URI に指定できます。
 
-URI parameter | Description
+URI パラメーター | 説明
 :---          | :---
-name | (**required**) The new name for the machine.
+name | (**必須**) コンピューターの新しい名前。
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Mobile
 * Windows Desktop
@@ -953,40 +953,40 @@ name | (**required**) The new name for the machine.
 * IoT
 
 ---
-## Performance data
+## パフォーマンス データ
 ---
-### Get the list of running processes
+### 実行中のプロセスの一覧を取得する
 
-**Request**
+**要求**
 
-You can get the list of currently running processes by using the following request format.
+次の要求形式を使用して、現在実行中のプロセスの一覧を取得できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/resourcemanager/processes
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- The response includes a list of processes with details for each process. The information is in JSON format.
+- 応答には、プロセスの一覧と各プロセスの詳細情報が含まれます。 情報は、JSON 形式で示されます。
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Mobile
 * Windows Desktop
@@ -994,38 +994,38 @@ GET | /api/resourcemanager/processes
 * IoT
 
 ---
-### Get the system performance statistics
+### システム パフォーマンスの統計情報を取得する
 
-**Request**
+**要求**
 
-You can get the system performance statistics by using the following request format. This includes information such as read and write cycles and how much memory has been used.
+次の要求形式を使用して、システム パフォーマンスの統計情報を取得できます。 これには、読み取りと書き込みのサイクルや、使用されているメモリの量などの情報が含まれます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/resourcemanager/systemperf
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- The response includes the performance statistics for the system such as CPU and GPU usage, memory access, and network access. This information is in JSON format.
+- 応答には、CPU と GPU の使用量、メモリ アクセス、ネットワーク アクセスなど、パフォーマンスの統計情報が含まれます。 この情報は、JSON 形式で示されます。
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Mobile
 * Windows Desktop
@@ -1034,390 +1034,390 @@ GET | /api/resourcemanager/systemperf
 * IoT
 
 ---
-## Power
+## 電源
 ---
-### Get the current battery state
+### 現在のバッテリ状態を取得する
 
-**Request**
+**要求**
 
-You can get the current state of the battery by using the following request format.
+次の要求形式を使用して、バッテリの現在の状態を取得できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/power/battery
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Desktop
 * HoloLens
 * IoT
 
 ---
-### Get the active power scheme
+### アクティブな電源設定を取得する
 
-**Request**
+**要求**
 
-You can get the active power scheme by using the following request format.
+次の要求形式を使用して、アクティブな電源設定を取得できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/power/activecfg
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Desktop
 * IoT
 
 ---
-### Get the sub-value for a power scheme
+### 電源設定のサブ値を取得する
 
-**Request**
+**要求**
 
-You can get the sub-value for a power scheme by using the following request format.
+次の要求形式を使用して、電源設定のサブ値を取得できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/power/cfg/*<power scheme path>*
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Desktop
 * IoT
 
 ---
-### Get the power state of the system
+### システムの電源状態を取得する
 
-**Request**
+**要求**
 
-You can check the power state of the system by using the following request format. This will let you check to see if it is in a low power state.
+次の要求形式を使用して、システムの電源状態を確認できます。 これによって、低電力状態になっているかどうかを確認できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/power/state
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Desktop
 * HoloLens
 * IoT
 
 ---
-### Get a sleep study report
+### SleepStudy レポートを取得する
 
-**Request**
+**要求**
 
-You can get a sleep study report by using the following request format.
+次の要求形式を使用して、SleepStudy レポートを取得できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/power/sleepstudy/reports
 
 
-**URI parameters**
+**URI パラメーター**
 
-You can specify the following additional parameters on the request URI:
+次の追加パラメーターを要求 URI に指定できます。
 
-URI parameter | Description
+URI パラメーター | 説明
 :---          | :---
-FileName | (**required**) The file name of sleep study report that you want to download.
+FileName | (**必須**) ダウンロードする SleepStudy レポートのファイル名。
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Desktop
 * IoT
 
 ---
-### Set the active power scheme
+### アクティブな電源設定を設定する
 
-**Request**
+**要求**
 
-You can set the active power scheme by using the following request format.
+次の要求形式を使用して、アクティブな電源設定を設定できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 POST | /api/power/activecfg
 
 
-**URI parameters**
+**URI パラメーター**
 
-You can specify the following additional parameters on the request URI:
+次の追加パラメーターを要求 URI に指定できます。
 
-URI parameter | Description
+URI パラメーター | 説明
 :---          | :---
-scheme | (**required**) The GUID of the scheme you want to set as the active power scheme for the system.
+scheme | (**必須**) システムのアクティブな電源設定として設定するスキームの GUID。
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Desktop
 * IoT
 
 ---
-### Set the sub-value for a power scheme
+### 電源設定のサブ値を設定する
 
-**Request**
+**要求**
 
-You can set the sub-value for a power scheme by using the following request format.
+次の要求形式を使用して、電源設定のサブ値を設定できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 POST | /api/power/cfg/*<power scheme path>*
 
 
-**URI parameters**
+**URI パラメーター**
 
-You can specify the following additional parameters on the request URI:
+次の追加パラメーターを要求 URI に指定できます。
 
-URI parameter | Description
+URI パラメーター | 説明
 :---          | :---
-valueAC | (**required**) The value to use for A/C power.
-valueDC | (**required**) The value to use for battery power.
+valueAC | (**必須**) AC 電源に使用する値。
+valueDC | (**必須**) バッテリ電源に使用する値。
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Desktop
 * IoT
 
 ---
-### Enumerate the available sleep study reports
+### 利用可能な SleepStudy レポートを列挙する
 
-**Request**
+**要求**
 
-You can enumerate the available sleep study reports by using the following request format.
+次の要求形式を使用して、利用可能な SleepStudy レポートを列挙できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/power/sleepstudy/reports
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Desktop
 * IoT
 
 ---
-### Get the sleep study transform
+### スリープ スタディ変換を取得する
 
-**Request**
+**要求**
 
-You can get the sleep study transform by using the following request format. This transform is an XSLT that converts the sleep study report into an XML format that can be read by a person.
+次の要求形式を使用して、スリープ スタディ変換を取得できます。 この変換は、SleepStudy レポートを、ユーザーが読み取ることができる XML 形式に変換する XSLT です。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/power/sleepstudy/reports
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Desktop
 * IoT
 
 ---
-## Remote control
+## リモート制御
 ---
-### Restart the target computer
+### ターゲット コンピューターを再起動する
 
-**Request**
+**要求**
 
-You can restart the target computer by using the following request format.
+次の要求形式を使用して、ターゲット コンピューターを再起動できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 POST | /api/control/restart
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Mobile
 * Windows Desktop
@@ -1426,38 +1426,38 @@ POST | /api/control/restart
 * IoT
 
 ---
-### Shut down the target computer
+### ターゲット コンピューターをシャットダウンする
 
-**Request**
+**要求**
 
-You can shut down the target computer by using the following request format.
+次の要求形式を使用して、ターゲット コンピューターをシャット ダウンできます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 POST | /api/control/shutdown
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Mobile
 * Windows Desktop
@@ -1466,45 +1466,45 @@ POST | /api/control/shutdown
 * IoT
 
 ---
-## Task manager
+## タスク マネージャー
 ---
-### Start a modern app
+### 最新のアプリを起動する
 
-**Request**
+**要求**
 
-You can start a modern app by using the following request format.
+次の要求形式を使用して、最新のアプリを起動できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 POST | /api/taskmanager/app
 
 
-**URI parameters**
+**URI パラメーター**
 
-You can specify the following additional parameters on the request URI:
+次の追加パラメーターを要求 URI に指定できます。
 
-URI parameter | Description
+URI パラメーター | 説明
 :---          | :---
-appid   | (**required**) The PRAID for the app you want to start. This value should be hex64 encoded.
-package   | (**required**) The full name for the app package you want to start. This value should be hex64 encoded.
+appid   | (**必須**) 起動するアプリの PRAID。 この値は、hex64 エンコードされている必要があります。
+package   | (**必須**) 起動するアプリ パッケージの完全な名前。 この値は、hex64 エンコードされている必要があります。
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Mobile
 * Windows Desktop
@@ -1513,43 +1513,43 @@ package   | (**required**) The full name for the app package you want to start. 
 * IoT
 
 ---
-### Stop a modern app
+### 最新のアプリを停止する
 
-**Request**
+**要求**
 
-You can stop a modern app by using the following request format.
+次の要求形式を使用して、最新のアプリを停止できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 DELETE | /api/taskmanager/app
 
 
-**URI parameters**
+**URI パラメーター**
 
-You can specify the following additional parameters on the request URI:
+次の追加パラメーターを要求 URI に指定できます。
 
-URI parameter | Description
+URI パラメーター | 説明
 :---          | :---
-package   | (**required**) The full name of the app packages that you want to stop. This value should be hex64 encoded.
-forcestop   | (**optional**) A value of **yes** indicates that the system should force all processes to stop.
+package   | (**必須**) 停止するアプリ パッケージの完全な名前。 この値は、hex64 エンコードされている必要があります。
+forcestop   | (**オプション**) 値が **yes** の場合は、システムがすべてのプロセスを強制的に停止することを示します。
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Mobile
 * Windows Desktop
@@ -1560,38 +1560,38 @@ forcestop   | (**optional**) A value of **yes** indicates that the system should
 ---
 ## WiFi
 ---
-### Enumerate wireless network interfaces
+### ワイヤレス ネットワーク インターフェイスを列挙する
 
-**Request**
+**要求**
 
-You can enumerate the available wireless network interfaces by using the following request format.
+次の要求形式を使用して、利用可能なワイヤレス ネットワーク インターフェイスを列挙できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/wifi/interfaces
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- A list of the available wireless interfaces with details. The details will include items such as GUID, description, friendly name, and more.
+- 利用可能なワイヤレス インターフェイスの一覧と詳細情報。 詳細情報には、GUID、説明、フレンドリ名などの項目が含まれます。
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Mobile
 * Windows Desktop
@@ -1600,42 +1600,42 @@ GET | /api/wifi/interfaces
 * IoT
 
 ---
-### Enumerate wireless networks
+### ワイヤレス ネットワークを列挙する
 
-**Request**
+**要求**
 
-You can enumerate the list of wireless networks on the specified interface by using the following request format.
+次の要求形式を使用して、指定されたインターフェイスのワイヤレス ネットワークの一覧を列挙できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/wifi/networks
 
 
-**URI parameters**
+**URI パラメーター**
 
-You can specify the following additional parameters on the request URI:
+次の追加パラメーターを要求 URI に指定できます。
 
-URI parameter | Description
+URI パラメーター | 説明
 :---          | :---
-interface   | (**required**) The GUID for the network interface to use to search for wireless networks.
+interface   | (**必須**) ワイヤレス ネットワークの検索に使用するネットワーク インターフェイスの GUID。
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- The list of wireless networks found on the provided *interface*. This includes details for the networks.
+- 指定された*インターフェイス*で見つかったワイヤレス ネットワークの一覧。 これにはネットワークの詳細情報が含まれます。
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Mobile
 * Windows Desktop
@@ -1644,45 +1644,45 @@ interface   | (**required**) The GUID for the network interface to use to search
 * IoT
 
 ---
-### Connect and disconnect to a Wi-Fi network.
+### Wi-Fi ネットワークを接続および切断する
 
-**Request**
+**要求**
 
-You can connect or disconnect to a Wi-Fi network by using the following request format.
+次の要求形式を使用して、Wi-Fi ネットワークを接続および切断できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 POST | /api/wifi/network
 
 
-**URI parameters**
+**URI パラメーター**
 
-You can specify the following additional parameters on the request URI:
+次の追加パラメーターを要求 URI に指定できます。
 
-URI parameter | Description
+URI パラメーター | 説明
 :---          | :---
-interface   | (**required**) The GUID for the network interface you use to connect to the network.
-op   | (**required**) Indicates the action to take. Possible values are connect or disconnect.
-ssid   | (**required if *op* == connect**) The SSID to connect to.
-key   | (**required if *op* == connect**) The shared key.
+interface   | (**必須**) ネットワークへの接続に使用するネットワーク インターフェイスの GUID。
+op   | (**必須**) 実行するアクションを示します。 設定可能な値は、connect または disconnect です。
+ssid   | (***op* == connect の場合は必須**) 接続先 SSID。
+key   | (***op* == connect** の場合は必須) 共有キー。
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Mobile
 * Windows Desktop
@@ -1691,43 +1691,43 @@ key   | (**required if *op* == connect**) The shared key.
 * IoT
 
 ---
-### Delete a Wi-Fi profile
+### Wi-Fi のプロファイルを削除する
 
-**Request**
+**要求**
 
-You can delete a profile associated with a network on a specific interface by using the following request format.
+次の要求形式を使用して、特定のインターフェイス上のネットワークに関連付けられたプロファイルを削除できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 DELETE | /api/wifi/network
 
 
-**URI parameters**
+**URI パラメーター**
 
-You can specify the following additional parameters on the request URI:
+次の追加パラメーターを要求 URI に指定できます。
 
-URI parameter | Description
+URI パラメーター | 説明
 :---          | :---
-interface   | (**required**) The GUID for the network interface associated with the profile to delete.
-profile   | (**required**) The name of the profile to delete.
+interface   | (**必須**) 削除するプロファイルに関連付けられたネットワーク インターフェイスの GUID。
+profile   | (**必須**) 削除するプロファイルの名前。
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Mobile
 * Windows Desktop
@@ -1736,129 +1736,129 @@ profile   | (**required**) The name of the profile to delete.
 * IoT
 
 ---
-## Windows Error Reporting (WER)
+## Windows エラー報告 (WER)
 ---
-### Download a Windows error reporting (WER) file
+### Windows エラー報告 (WER) ファイルをダウンロードする
 
-**Request**
+**要求**
 
-You can download a WER file by using the following request format.
+次の要求形式を使用して、WER ファイルをダウンロードできます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/wer/reports/file
 
 
-**URI parameters**
+**URI パラメーター**
 
-You can specify the following additional parameters on the request URI:
+次の追加パラメーターを要求 URI に指定できます。
 
-URI parameter | Description
+URI パラメーター | 説明
 :---          | :---
-user   | (**required**) The user name associated with the report.
-type   | (**required**) The type of report. This can be either **queried** or **archived**.
-name   | (**required**) The name of the report.
-file   | (**required**) The name of the file to download from the report.
+user   | (**必須**) レポートに関連付けられたユーザー名。
+type   | (**必須**) レポートの種類。 これは **queried** または **archived** のいずれかになります。
+name   | (**必須**) レポートの名前。
+file   | (**必須**) レポートからダウンロードするファイルの名前。
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Desktop
 * HoloLens
 * IoT
 
 ---
-### Enumerate files in a Windows error reporting (WER) report
+### Windows エラー報告 (WER) レポート内のファイルを列挙する
 
-**Request**
+**要求**
 
-You can enumerate the files in a WER report by using the following request format.
+次の要求形式を使用して、WER レポート内のファイルを列挙できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/wer/reports/files
 
 
-**URI parameters**
+**URI パラメーター**
 
-You can specify the following additional parameters on the request URI:
+次の追加パラメーターを要求 URI に指定できます。
 
-URI parameter | Description
+URI パラメーター | 説明
 :---          | :---
-user   | (**required**) The user associated with the report.
-type   | (**required**) The type of report. This can be either **queried** or **archived**.
-name   | (**required**) The name of the report.
+user   | (**必須**) レポートに関連付けられたユーザー。
+type   | (**必須**) レポートの種類。 これは **queried** または **archived** のいずれかになります。
+name   | (**必須**) レポートの名前。
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Desktop
 * HoloLens
 * IoT
 
 ---
-### List the Windows error reporting (WER) reports
+### Windows エラー報告 (WER) レポートを一覧表示する
 
-**Request**
+**要求**
 
-You can get the WER reports by using the following request format.
+次の要求形式を使用して、WER レポートを取得できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/wer/reports
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Desktop
 * HoloLens
@@ -1867,38 +1867,38 @@ GET | /api/wer/reports
 ---
 ## Windows Performance Recorder (WPR) 
 ---
-### Start tracing with a custom profile
+### カスタム プロファイルを使用してトレースを開始する
 
-**Request**
+**要求**
 
-You can upload a WPR profile and start tracing using that profile by using the following request format.
+次の要求形式を使用して、WPR プロファイルをアップロードし、そのプロファイルを使用してトレースを開始できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 POST | /api/wpr/customtrace
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- A multi-part conforming http body that contains the custom WPR profile.
+- カスタム WPR プロファイルが含まれる、原則に従ったマルチパートの http 本文。
 
-**Response**
+**応答**
 
-- Returns the WPR session status.
+- WPR セッションの状態を返します。
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Mobile
 * Windows Desktop
@@ -1906,42 +1906,42 @@ POST | /api/wpr/customtrace
 * IoT
 
 ---
-### Start a boot performance tracing session
+### 起動パフォーマンス トレース セッションを開始する
 
-**Request**
+**要求**
 
-You can start a boot WPR tracing session by using the following request format. This is also known as a performance tracing session.
+次の要求形式を使用して、WPR の起動トレース セッションを開始できます。 これは、パフォーマンス トレース セッションとも呼びます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 POST | /api/wpr/boottrace
 
 
-**URI parameters**
+**URI パラメーター**
 
-You can specify the following additional parameters on the request URI:
+次の追加パラメーターを要求 URI に指定できます。
 
-URI parameter | Description
+URI パラメーター | 説明
 :---          | :---
-profile   | (**required**) This parameter is required on start. The name of the profile that should start a performance tracing session. The possible profiles are stored in perfprofiles/profiles.json.
+profile   | (**必須**) このパラメーターは起動時に必要です。 パフォーマンス トレース セッションを開始する必要があるプロファイルの名前。 指定可能なプロファイルは、perfprofiles/profiles.json に格納されています。
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- On start, this API returns the WPR session status.
+- この API は、起動時に WPR セッションの状態を返します。
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Mobile
 * Windows Desktop
@@ -1949,38 +1949,38 @@ profile   | (**required**) This parameter is required on start. The name of the 
 * IoT
 
 ---
-### Stop a boot performance tracing session
+### 起動パフォーマンス トレース セッションを停止する
 
-**Request**
+**要求**
 
-You can stop a boot WPR tracing session by using the following request format. This is also known as a performance tracing session.
+次の要求形式を使用して、WPR の起動トレース セッションを停止できます。 これは、パフォーマンス トレース セッションとも呼びます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/wpr/boottrace
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- Returns the trace ETL file.
+- トレース ETL ファイルを返します。
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Mobile
 * Windows Desktop
@@ -1988,42 +1988,42 @@ GET | /api/wpr/boottrace
 * IoT
 
 ---
-### Start a performance tracing session
+### パフォーマンス トレース セッションを開始する
 
-**Request**
+**要求**
 
-You can start a WPR tracing session by using the following request format. This is also known as a performance tracing session.
+次の要求形式を使用して、WPR のトレース セッションを開始できます。 これは、パフォーマンス トレース セッションとも呼びます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 POST | /api/wpr/trace
 
 
-**URI parameters**
+**URI パラメーター**
 
-You can specify the following additional parameters on the request URI:
+次の追加パラメーターを要求 URI に指定できます。
 
-URI parameter | Description
+URI パラメーター | 説明
 :---          | :---
-profile   | (**required**) The name of the profile that should start a performance tracing session. The possible profiles are stored in perfprofiles/profiles.json.
+profile   | (**必須**) パフォーマンス トレース セッションを開始する必要があるプロファイルの名前。 指定可能なプロファイルは、perfprofiles/profiles.json に格納されています。
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- On start, this API returns the WPR session status.
+- この API は、起動時に WPR セッションの状態を返します。
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Mobile
 * Windows Desktop
@@ -2031,38 +2031,38 @@ profile   | (**required**) The name of the profile that should start a performan
 * IoT
 
 ---
-### Stop a performance tracing session
+### パフォーマンスのトレース セッションを停止する
 
-**Request**
+**要求**
 
-You can stop a WPR tracing session by using the following request format. This is also known as a performance tracing session.
+次の要求形式を使用して、WPR のトレース セッションを停止できます。 これは、パフォーマンス トレース セッションとも呼びます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/wpr/trace
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- Returns the trace ETL file.
+- トレース ETL ファイルを返します。
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Mobile
 * Windows Desktop
@@ -2070,38 +2070,38 @@ GET | /api/wpr/trace
 * IoT
 
 ---
-### Retrieve the status of a tracing session
+### トレース セッションの状態を取得する
 
-**Request**
+**要求**
 
-You can retrieve the status of the current WPR session by using the following request format.
+次の要求形式を使用して、現在の WPR セッションの状態を取得できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/wpr/status
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- The status of the WPR tracing session.
+- WPR トレース セッションの状態。
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
-**Available device families**
+**利用可能なデバイス ファミリ**
 
 * Windows Mobile
 * Windows Desktop

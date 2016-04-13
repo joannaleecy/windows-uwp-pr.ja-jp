@@ -1,66 +1,66 @@
 ---
-Description: The Ratings report in the Windows Dev Center dashboard lets you see the distribution of how customers rate your app in the Windows Store.
-title: Ratings report
+Description: Windows デベロッパー センター ダッシュボードの [評価] レポートには、Windows ストアに掲載されているアプリに関するユーザー評価の分布が示されます。
+title: レーティング レポート
 ms.assetid: CAFEC20B-04FB-48C8-B663-1238C0B85ECD
 ---
 
-# Ratings report
+# レーティング レポート
 
 
-The **Ratings** report in the Windows Dev Center dashboard lets you see the distribution of how customers rate your app in the Windows Store. You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline. Alternatively, you can programmatically retrieve this data by using the [Windows Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
+Windows デベロッパー センター ダッシュボードの **[評価]** レポートには、Windows ストアに掲載されているアプリに関するユーザー評価の分布が示されます。 このデータは、ダッシュボードで表示することも、[レポートをダウンロード](download-analytic-reports.md)してオフラインで表示することもできます。 または、[Windows ストア分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) を使って、プログラムでこのデータを取得できます。
 
-In this report, a rating means the number of stars (from 1 to 5) that a customer gave your app when rating it in the Store. The **Ratings** report does not include info on any individual comments left as reviews; those are available in the [Reviews report](reviews-report.md).
+このレポートで、評価とは、ストアでのアプリの評価時に、ユーザーがアプリに付けた星の数 (1 ～ 5) を意味します。 **評価**レポートにはレビューとして残された個々のコメントに関する情報は含まれません。これらは[レビュー レポート](reviews-report.md)で参照できます。
 
-## Apply filters
-
-
-Near the top of the page, you can expand **Apply filters** to filter all of the data on this page by date range and/or by market.
-
--   **Date**: The default filter is **Last 30 days**, but you can expand this up to **Last 12 months**.
--   **Market**: The default filter is **All markets**. You can choose a specific market if you want this page to only show ratings from customers in that market.
--   **Device type**: The default filter is **All devices**. You can choose a specific device type if you want this page to only show ratings left by customers using that type of device.
-
-The info in all of the charts listed below will reflect the period of time selected in the **Apply filters** section, and will reflect any other filters you've chosen here.
-
-## Average rating
+## フィルターの適用
 
 
-The **Average rating** chart shows the average rating of your app over the selected period of time.
+ページの上部にある **[フィルターの適用]** を展開して、このページのすべてのデータを日付の範囲や市場によってフィルター処理できます。
 
-## Number of ratings
+-   **[日付]**: 既定のフィルターは **[過去 30 日]** ですが、これを **[過去 12 か月]** まで拡張できます。
+-   **[市場]**: 既定のフィルターは **[すべての市場]** です。 このページに特定の市場のユーザーからの評価のみを表示する場合は、特定の市場を選ぶことができます。
+-   **[デバイスの種類]**: 既定のフィルターは **[すべてのデバイス]** です。 このページにその種類のデバイスを使っているユーザーによる評価のみを表示する場合は、特定のデバイスの種類を選ぶことができます。
 
+以下のすべてのグラフに示される情報は、**[フィルターの適用]** で選んだ期間と、ここで選んだ他のフィルターを反映しています。
 
-The **Number of ratings** chart shows the total number of ratings of your app over the selected period of time.
-
-## New and revised ratings
-
-
-The **New and revised ratings** chart shows the number of ratings for each type of rating (new or revised) over the selected period of time.
-
--   **New ratings** are ratings that customers have submitted but haven't changed.
--   **Revised ratings** are ratings that have been changed by the customer.
-
->**Note**  A rating will appear here as revised even if the customer only changed or added the text or title of their review and left the actual rating the same.
-
-## Average rating over time
+## 平均評価
 
 
-The **Average rating over time** chart shows how the app's average rating has changed over the selected period of time.
+**[平均評価]** のグラフには、選んだ期間中のアプリの平均評価が示されます。
 
-Rather than calculating the average of all ratings left during the selected period of time (as in the **Average rating** chart), the **Average rating over time** chart shows you how customers rated the app on a given day or week during the period. This helps you identify trends or determine if ratings were affected by updates or other factors.
-
-If you have filtered the info by **Last 30 days** or **Last 3 months**, the chart displays your average rating by day. If you've filtered by **Last 6 months** or **Last 12 months**, the chart displays your average rating by week (with a new week considered to start on Monday; the average rating shown is for the previous week).
-
-## Markets
+## 評価の数
 
 
-The **Markets** chart shows average rating and number of ratings over the selected period of time by market.
+**[評価の数]** のグラフには、選んだ期間中のアプリの評価の合計数が示されます。
 
-> **Note**  If you have used the **Page filters** to specify a specific market, you won't see this chart on the **Ratings** report. To see this chart, change the **Page filters** to show all markets.
+## 新着および更新済み評価
 
-By default, we show you the market which had the most reviews and continue downward from there, but you can reverse this order by toggling the arrow in the **Number of ratings** column of this chart. You can also sort the data by **Average rating** or **Market** by clicking those columns.
 
-> **Note**  It’s likely that you’ll see a different number of ratings when comparing the **Ratings** report in the Windows Dev Center with the Reviews report in the older Dev Center mobile app. This is because the app only shows data for reviews left from customers on Windows Phone 8.1 and earlier. This may also be a result of work by Microsoft to remove reviews from the Windows Store that have been identified as spam, inappropriate, offensive or have other policy violations. We expect this action will result in a better customer experience.
+**[新着および更新済み評価]** のグラフには、選んだ期間中の評価の種類 (新着または更新済み) ごとの評価の数が示されます。
+
+-   **新着評価**は、ユーザーが送信し変更していない評価です。
+-   **更新済み評価**は、ユーザーによって変更された評価です。
+
+>**注** ユーザーがテキストやレビューのタイトルのみを変更または追加し、実際の評価は同じにしている場合でも、評価は更新済みとして表示されます。
+
+## 長期的な平均評価
+
+
+**[長期的な平均評価]** のグラフには、選んだ期間中に、アプリの平均評価がどのように変化したかが示されます。
+
+**[長期的な平均評価]** グラフは、選択した期間に残されたすべての評価の平均を計算するのではなく (**[平均評価]** グラフのように)、期間中の特定の日または週にユーザーがどのようにアプリを評価したかを示します。 このグラフは、傾向を特定したり、更新プログラムまたはその他の要因によって評価が影響を受けたかどうかを判断したりするのに役立ちます。
+
+情報を **[過去 30 日]** または **[過去 3 か月]** でフィルター処理している場合、グラフには日ごとの平均評価が表示されます。 **[過去 6 か月]** または **[過去 12 か月]** でフィルター処理している場合、グラフには週ごとの平均評価が表示されます (新しい週は月曜日から始まると見なされ、前の週の平均評価が表示されます)。
+
+## 市場
+
+
+**[市場]** のグラフには、市場別の、選んだ期間中の平均評価と評価の数が示されます。
+
+> **注** **[ページ フィルター]** を使って特定の市場を指定している場合、**[評価]** レポートにこのグラフは表示されません。 次のグラフを表示するには、すべての市場を表示するように **[ページ フィルター]** の設定を変更します。
+
+既定では、評価が最も多い市場が最初に表示され、そこから降順に表示されますが、このグラフの **[評価の数]** 列の矢印をクリックすることで、この順序を逆にすることができます。 **[平均評価]** や **[市場]** の列をクリックすることによって、データを並べ替えることもできます
+
+> **注** Windows デベロッパー センターの **[評価]** レポートと古いデベロッパー センター モバイル アプリのレビュー レポートを比較すると、表示される評価の数が違っていることがよくあります。 これは、アプリで表示されるのは、Windows Phone 8.1 以前のユーザーによるレビューのデータだけであるためです。 また、スパム、不適切、不快感を与えるなどのポリシー違反と見なされたレビューが、Microsoft によって Windows ストアから削除されたためである場合もあります。 この操作は、カスタマー エクスペリエンスの改善になることを期待して行われています。
 
  
 

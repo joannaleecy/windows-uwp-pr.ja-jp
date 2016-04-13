@@ -1,23 +1,23 @@
 ---
-Description: Good icons harmonize with typography and with the rest of the design language. They don’t mix metaphors, and they communicate only what’s needed, as speedily and simply as possible. 
-title: Icons
+Description: 優れたアイコンは、文字の体裁やその他のデザイン言語と調和するものです。 アイコンは比喩と混用しないようにします。優れたアイコンは、できるだけすばやくシンプルに、必要なことのみを伝えます。 
+title: アイコン
 ms.assetid: b90ac02d-5467-4304-99bd-292d6272a014
 label: Icons
 template: detail.hbs
 ---
 
-# Icons for UWP apps
+# UWP アプリのアイコン
 
-Good icons harmonize with typography and with the rest of the design language. They don’t mix metaphors, and they communicate only what’s needed, as speedily and simply as possible. 
+優れたアイコンは、文字の体裁やその他のデザイン言語と調和するものです。 アイコンは比喩と混用しないようにします。優れたアイコンは、できるだけすばやくシンプルに、必要なことのみを伝えます。 
 
-## Linear scaling size ramps 
+## 線形のスケーリングのサイズの見本 
 
 <table>
     <tr> 
-        <td>16px x 16px</td>
-        <td>24px x 24px</td>
-        <td>32px x 32px</td>
-        <td>48px x 48px</td>
+        <td>16 ピクセル x 16 ピクセル</td>
+        <td>24 ピクセル x 24 ピクセル</td>
+        <td>32 ピクセル x 32 ピクセル</td>
+        <td>48 ピクセル x 48 ピクセル</td>
     </tr>
     <tr> 
         <td>![Icons at 16x16 effective pixels](images/icons-16x16.png)</td>
@@ -27,19 +27,19 @@ Good icons harmonize with typography and with the rest of the design language. T
     </tr>
 </table>
 
-## Common shapes
+## 一般的な形状
 
-Icons should generally maximize their given space with little padding. These shapes provide starting points for sizing basic shapes. 
+アイコンは通常、余白を少なく、スペースを最大限に使用します。 下記の図形は基本的な形状のサイズを決めるためのヒントとなります。 
 
-![32px by 32px grid](images/icons-common-shapes.png)
+![32 ピクセル x 32 ピクセルのグリッド](images/icons-common-shapes.png)
 
-Use the shape that corresponds to the icon's orientation and compose around these basic parameters. Icons don't necessarily need to fill or fit completely inside the shape and may be adjusted as needed to ensure optimal balance. 
+アイコンの向きに対応した図形を使用して、これらの基本的なパラメーターをヒントとして構成します。 アイコンは必ずしも図形内側に完全に合わせて埋める必要はありません。最適なバランスを取るために適宜調整します。 
 
 <table>
     <tr>
-        <td>Circle<td>
-        <td>Square</td>
-        <td>Triangle</td>
+        <td>円形<td>
+        <td>正方形</td>
+        <td>三角形</td>
     </tr>
     <tr>
         <td>![A circle](images/icons-common-shapes-examples-1.png)<td>
@@ -47,8 +47,8 @@ Use the shape that corresponds to the icon's orientation and compose around thes
         <td>![A triangle ](images/icons-common-shapes-examples-3.png)</td>
     </tr>
         <tr>
-        <td>Horizontal rectangle<td>
-        <td colspan="2">Vertical rectangle</td>        
+        <td>横型の長方形<td>
+        <td colspan="2">縦型の長方形</td>        
         </tr>
     <tr>
         <td>![A horizontal rectangle](images/icons-common-shapes-examples-4.png)<td>
@@ -58,20 +58,20 @@ Use the shape that corresponds to the icon's orientation and compose around thes
 
 </table>
 
-## Angles
+## 角度
 
-In addition to using the same grid and line weight, icons are constructed with common elements. 
+同じグリッドや線の太さなどをはじめ、アイコンは共通的な要素で構成されています。 
 
-Using only these angles in building shapes creates consistency across all our icons, and ensures the icons render correctly. 
+これらの共通の角度を使って図形を作成すると、Microsoft のすべてのアイコンとの一貫性を保つことができ、アイコンが正しくレンダリングされます。 
 
-These lines can be combined, joined, rotated, and reflected in creating icons. 
+これらの線の組み合わせ、合体、回転、反転を使って、アイコンを作成します。 
 
 <table>
     <tr>
         <td>**1:1**<br/>45°</td>
-        <td>**1:2**<br />26.57° (vertical)<br/>63.43° (horizontal)</td>
-        <td>**1:3**<br/>18.43° (vertical)<br/>71.57° (horizontal)</td>
-        <td>**1:4**<br/>14.04° (vertical)<br/>75.96° (horizontal)</td>
+        <td>**1:2**<br />26.57° (垂直)<br/>63.43° (水平)</td>
+        <td>**1:3**<br/>18.43° (垂直)<br/>71.57° (水平)</td>
+        <td>**1:4**<br/>14.04° (垂直)<br/>75.96° (水平)</td>
     </tr>
     <tr>
         
@@ -82,7 +82,7 @@ These lines can be combined, joined, rotated, and reflected in creating icons.
     </tr>  
 </table>
 
-### Examples
+### 例
 
 <table>
     <tr>
@@ -93,14 +93,14 @@ These lines can be combined, joined, rotated, and reflected in creating icons.
     </tr>
 </table>
 
-## Curves
+## 曲線
 
-Curved lines are constructed from sections of a whole circle and should not be skewed unless needed to snap to the pixel grid. 
+曲線は円の一部から構成します。ピクセル グリッドにスナップするために必要な場合以外は、ゆがめて使用しないようにします。 
 
 <table>
     <tr>
-        <td>1/4 circle</td>
-        <td>1/8 circle</td>
+        <td>円形の 1/4</td>
+        <td>円形の 1/8</td>
     </tr>
     <tr>
         <td>![1/4 circle](images/icons-curves-14circle.png)</td>
@@ -112,32 +112,32 @@ Curved lines are constructed from sections of a whole circle and should not be s
     </tr>    
 </table>
 
-## Geometric construction
+## 幾何学図形の使用
 
-We recommend using only pure geometric shapes when constructing icons.
+アイコンを作成する場合には、純粋な幾何学図形のみを使用することをお勧めします。
 
-![Guitar icon with geometric overlay ](images/icons-geometric-construction.png)
+![幾何学図形のオーバーレイを使ったギターのアイコン ](images/icons-geometric-construction.png)
 
-## Filled shapes 
+## 図形の塗りつぶし 
 
-Icons can contain filled shapes when needed, but they should not be more than 4px at 32px × 32px. Filled circles should not be larger than 6px × 6px. 
+アイコンは、必要な場合は、塗りつぶされた図形を含めることができますが、32 ピクセル × 32 ピクセルの場合、4 ピクセルを超えないようにします。 円形の塗りつぶしは 6 ピクセル × 6 ピクセルを超えないようにします。 
 
-![5px by 8px fill ](images/icons-filled-shapes.png)
+![5 ピクセル x 8 ピクセルの塗りつぶし ](images/icons-filled-shapes.png)
 
-## Badges
+## バッジ
 
-A "badge" is a generic term used to describe an element added to an icon that's not meant to be integrated with the base icon element. These usually convey other pieces of information about the icon like status or action. Other commons terms include: overlay, annotation, or modifier. 
+「バッジ」は、元になるアイコンの要素との統合を意図することなくアイコンに追加された要素を記述するために使用する一般的な用語です。 これらは通常、状態や操作など、元になるアイコンに関連する情報を示すために使用します。 この他に一般的に使われる用語には、オーバーレイ、注釈、修飾子などがあります。 
 
-![Status badge ](images/icons-badge-status.png)
+![状態を示すバッジ ](images/icons-badge-status.png)
 
-![Action badge ](images/icons-badge-action.png)
+![操作を示すバッジ ](images/icons-badge-action.png)
 
-Status badges utilize a filled, colored object that is on top of the icon, whereas action badges are integrated into the icon in the same monochrome style and line weight.
+状態を示すバッジでは、塗りつぶして色を付けたオブジェクトが、元となるアイコンの上で使用されています。操作を示すバッジでは、同じモノクロ スタイルと線の太さでアイコンに統合されています。
 
 <table>
 <tr>
-    <td>Common status badges</td>
-    <td>Common action badges</td>
+    <td>一般的な状態を示すバッジ</td>
+    <td>一般的な操作を示すバッジ</td>
 </tr>
 <tr>
     <td>![Status badge ](images/icons-badge-common-states-1.png)</td>
@@ -146,31 +146,31 @@ Status badges utilize a filled, colored object that is on top of the icon, where
 </table>
 <p></p>
 
-### Badge color 
+### バッジの色 
 
-Color badging should only be used to convey the state of an icon. The colors used in status badging convey specific emotional messages to the user. 
+色のバッジは、アイコンの状態を示す場合にのみ使用する必要があります。 状態を示すバッジに使用される色は、ユーザーに特定の感情的なメッセージを伝えます。 
 
 <table>
-<tr><td>Green - #128B44</td><td>Blue - #2C71B9</td><td>Yellow - #FDC214</td></tr>
-<tr><td>Positive: done, 
-completed </td><td>Neutral: help, 
-notification </td><td>Cautionary: alert, warning </td></tr>
+<tr><td>緑 - #128B44</td><td>青 - #2C71B9</td><td>黄 - #FDC214</td></tr>
+<tr><td>ポジティブ: 終了、 
+完了 </td><td>中立: ヘルプ、 
+通知 </td><td>注意: 警報、警告 </td></tr>
 <tr><td>![Green status](images/icons-color-inbadging-1.png)</td><td>![Blue status](images/icons-color-inbadging-2.png)</td>
 <td>![Yellow status](images/icons-color-inbadging-3.png)</td></tr>
 </table>
 <p></p>
 
-### Badge position
+### バッジの位置
 
-The default position for any status or action is the bottom right. Only use the other positions when the design will not allow it. 
+状態または操作を示すバッジの既定の位置は、右下です。 その他の位置は、デザイン上やむを得ない場合にのみ使用します。 
 
-### Badge sizing
+### バッジのサイズ変更
 
-Badges should be sized to 10–18 px on a 32 px × 32 px grid. 
+バッジは 32 ピクセル × 32 ピクセル グリッドで、10 ～ 18 ピクセルのサイズで使用します。 
 
-## Related articles
+## 関連記事
 
-* [Guidelines for tile and icon assets](../controls-and-patterns/tiles-and-notifications-app-assets.md)
+* [タイルとアイコン アセットのガイドライン](../controls-and-patterns/tiles-and-notifications-app-assets.md)
 
 <!--HONumber=Mar16_HO5-->
 

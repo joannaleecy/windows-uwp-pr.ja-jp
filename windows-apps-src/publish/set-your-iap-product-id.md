@@ -1,26 +1,26 @@
 ---
-Description: The first step in submitting an IAP (in-app product) in the Windows Dev Center dashboard.
-title: Set your IAP product ID
+Description: この手順から Windows デベロッパー センター ダッシュボードでの IAP (アプリ内製品) の申請は始まります。
+title: IAP の製品 ID の設定
 ms.assetid: 59497B0F-82F0-4CEE-B628-040EF9ED8D3D
 ---
 
-# Set your IAP product ID
+# IAP の製品 ID の設定
 
 
-The first step in submitting an IAP (in-app product) in the Windows Dev Center dashboard. This is the same identifier that you will need to reference in [your app's code to call the IAP](https://msdn.microsoft.com/library/windows/apps/mt219684).
+この手順から Windows デベロッパー センター ダッシュボードでの IAP (アプリ内製品) の申請は始まります。 IAP の製品 ID は、[アプリのコードで IAP を呼び出す](https://msdn.microsoft.com/library/windows/apps/mt219684)ときに参照する ID になります。
 
-An IAP must be associated with an app that you've created in the dashboard already (even if you haven't submitted it yet). You can find the button to **Create a new IAP** on either your app's **Overview** page or its **IAPs** page.
+IAP は、ダッシュボードで作成済みのアプリと関連付けている必要があります (アプリが未申請であっても同様)。 アプリの **[概要]** ページまたは **[IAP]** ページに **[新しい IAP の作成]** ボタンがあります。
 
-Once you've clicked the button, you'll see the **Create IAP** page. Here, you'll type in the unique product ID that you'll use to refer to the offer in your code.
+このボタンをクリックすると、**[Create IAP]** (IAP の作成) ページが表示されます。 アプリのコードで IAP を呼び出すときに使う一意の製品 ID をこのページで入力します。
 
-Here are a few things to keep in mind when choosing a product ID:
+次に示しているのは、IAP の製品 ID を選ぶときの留意点です。
 
--   Customers won't see this product ID. (Later, you can enter a [title and description](create-iap-descriptions.md) to be displayed to customers.)
--   You can’t change or delete an IAP's product ID after it's been published.
--   A product ID can't be more than 100 characters in length.
--   A product ID cannot include any of the following characters: **&lt; &gt; \* % & : \\ ? + ,**
--   To offer your IAP on all devices, you must only use alphanumeric characters, periods, and/or underscores. If you use any other types of characters, the IAP will not be available for purchase to customers running Windows Phone 8.1 or earlier.
--   A product ID doesn't have to be unique within the Windows Store, but it must be unique to your developer account.
+-   この製品 ID はお客様には表示されません (後で、お客様に表示される[タイトルと説明](create-iap-descriptions.md)を入力できます)。
+-   この IAP の製品 ID はアプリの公開後に変更することも削除することもできません。
+-   この製品 ID の長さは 100 文字以内にする必要があります。
+-   この製品 ID に **&lt; &gt; \* % & : \\ ? + ,** のいずれの文字も含めることはできません。
+-   すべてのデバイスに対応した IAP を提供するには、英数字、ピリオド、アンダースコアのみを使う必要があります。 その他の種類の文字を使った場合、Windows Phone 8.1 以前を実行しているお客様はその IAP を購入できなくなります。
+-   この製品 ID は Windows ストアでは一意である必要はありませんが、開発者アカウントには一意である必要があります。
 
  
 

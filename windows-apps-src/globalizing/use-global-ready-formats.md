@@ -1,46 +1,46 @@
 ---
-Description: Develop a global-ready app by appropriately formatting dates, times, numbers, and currencies.
-title: Use global-ready formats
+Description: 日付、時刻、数字、通貨を適切に書式設定することで、グローバル対応のアプリを開発します。
+title: グローバル対応の形式の使用
 ms.assetid: 6ECE8BA4-9A7D-49A6-81EE-AB2BE7F0254F
-label: Use global-ready formats
+label: グローバル対応の形式の使用
 template: detail.hbs
 ---
 
-# <span id="dev_globalizing.use_global-ready_formats"></span>Use global-ready formats
+# <span id="dev_globalizing.use_global-ready_formats"></span>グローバル対応の形式の使用
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-**Important APIs**
+**重要な API**
 
 -   [**Windows.Globalization.Calendar**](https://msdn.microsoft.com/library/windows/apps/br206724)
 -   [**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)
 -   [**Windows.Globalization.NumberFormatting**](https://msdn.microsoft.com/library/windows/apps/br226136)
 
-Develop a global-ready app by appropriately formatting dates, times, numbers, and currencies. This permits you to adapt it later for additional cultures, regions, and languages in the global market.
+日付、時刻、数字、通貨を適切に書式設定することで、グローバル対応のアプリを開発します。 これを行うと、後に世界市場の他のカルチャ、地域、言語に適応させることができます。
 
-## <span id="Introduction"></span><span id="introduction"></span><span id="INTRODUCTION"></span>Introduction
-
-
-Many app developers naturally create their apps thinking only of their own language and culture. But when the app begins to grow into other markets, adapting the app for new languages and regions can be difficult in unexpected ways. For example, dates, times, numbers, calendars, currency, telephone numbers, units of measurement, and paper sizes are all items that can be displayed differently in different cultures or languages.
-
-The process of adapting to new markets can be simplified by taking a few things into account as you develop your app.
-
-## <span id="Prerequisites"></span><span id="prerequisites"></span><span id="PREREQUISITES"></span>Prerequisites
+## <span id="Introduction"></span><span id="introduction"></span><span id="INTRODUCTION"></span>概要
 
 
-[Plan for a global market](https://msdn.microsoft.com/library/windows/apps/hh465405)
-## <span id="Tasks"></span><span id="tasks"></span><span id="TASKS"></span>Tasks
+多くのアプリ開発者は、自然に自分たちの言語とカルチャだけを考慮してアプリを作ります。 しかし、そうしたアプリを新しい言語や地域に適応させて他の市場に参入しようとすると、予想しないことで困難に遭遇することがあります。 たとえば、日付、時刻、数値、カレンダー、通貨、電話番号、計測単位、紙のサイズは、すべてカルチャや言語によって表示が異なる場合があります。
+
+アプリを開発する段階で、いくつかのことを考慮しておけば、新しい市場に参入するプロセスを簡単にできます。
+
+## <span id="Prerequisites"></span><span id="prerequisites"></span><span id="PREREQUISITES"></span>前提条件
 
 
-1.  **Format dates and times appropriately.**
+[世界市場向けの計画](https://msdn.microsoft.com/library/windows/apps/hh465405)
+## <span id="Tasks"></span><span id="tasks"></span><span id="TASKS"></span>処理手順
 
-    There are many different ways to properly display dates and times. Different regions and cultures use different conventions for the order of day and month in the date, for the separation of hours and minutes in the time, and even for what punctuation is used as a separator. In addition, dates may be displayed in various long formats ("Wednesday, March 28, 2012") or short formats ("3/28/12"), which can vary across cultures. And of course, the names and abbreviations for the days of the week and months of the year differ for every language.
 
-    If you need to allow users to choose a date or select a time, use the standard [date and time picker](https://msdn.microsoft.com/library/windows/apps/hh465466) controls. These will automatically use the date and time formats for the user's preferred language and region.
+1.  **日付と時刻を適切に書式設定します。**
 
-    If you need to display dates or times yourself, use [**Date/Time**](https://msdn.microsoft.com/library/windows/apps/br206859) and [**Number**](https://msdn.microsoft.com/library/windows/apps/br226136) formatters to automatically display the user's preferred format for dates, times and numbers. The code below formats a given DateTime by using the preferred language and region. For example, if the current date is 3 June 2012, the formatter gives "6/3/2012", if the user prefers English (United States), but it gives "03.06.2012" if the user prefers German (Germany):
+    日付と時刻は、さまざまな方法で表示することができます。 さまざまな地域やカルチャで、日付の月と日の順、時刻の時と分との分離、セパレーターとして使われる句読点について、さまざまな規則が使われています。 また、日付にはさまざまな表示形式があり、長い形式 ("Wednesday, March 28, 2012") や短い形式 ("3/28/12") など、カルチャによってその表示形式が異なる場合があります。 当然ですが、曜日や月の名称と省略形は言語によって異なります。
+
+    ユーザーが日付や時刻を選択できるようにする必要がある場合には、標準の[DatePicker と TimePicker](https://msdn.microsoft.com/library/windows/apps/hh465466) コントロールを使います。 これらのコントロールでは、ユーザーの優先する言語と地域に対応した日付と時刻の形式を自動的に使います。
+
+    日付や時刻を独自に表示する必要がある場合は、[**Date/Time**](https://msdn.microsoft.com/library/windows/apps/br206859) フォーマッタと [**Number**](https://msdn.microsoft.com/library/windows/apps/br226136) フォーマッタを使って、ユーザーの優先する形式で日付、時刻、数字を自動的に表示します。 次のコードは、現在設定されている言語と地域を使って特定の DateTime を書式設定します。 たとえば、現在の日付が 2012 年 6 月 3 日の場合、フォーマッタでは、ユーザーが英語 (米国) を選んだ場合は "6/3/2012" を生成しますが、ドイツ語 (ドイツ) を選んだ場合は "03.06.2012" を生成します。
 
     **C#**
     ```    CSharp
@@ -83,11 +83,12 @@ The process of adapting to new markets can be simplified by taking a few things 
                   "Short Time: " + stime;
     ```
 
-2.  **Format numbers and currencies appropriately.**
+2.  **数字と通貨を適切に書式設定します。**
 
-    Different cultures format numbers differently. Format differences may include how many decimal digits to display, what characters to use as decimal separators, and what currency symbol to use. Use [**NumberFormatting**](https://msdn.microsoft.com/library/windows/apps/br226136) to display decimal, percent, or permille numbers, and currencies. In most cases you simply display numbers or currencies according to the user's current preferences. But you may also use the formatters to display a currency for a particular region or format.
+    数字の書式設定はカルチャによって異なります。 数字の書式設定が異なるものには、表示する小数の桁数、小数点記号に使う文字、通貨記号などがあります。 [
+            **NumberFormatting**](https://msdn.microsoft.com/library/windows/apps/br226136) を使って、小数、パーセントまたはパーミル数値、通貨を表示します。 多くの場合、単にユーザーの通貨設定に従って数字や通貨を表示します。 ただし、フォーマッタを使って特定の地域または形式の通貨を表示することもできます。
 
-    The code below gives an example of how to display currencies per the user's preferred language and region, or for a specific given currency system:
+    以下のコードは、ユーザーの優先する言語と地域に対応した通貨、または特定の通貨制度に対応した通貨を表示する方法の例を示しています。
 
     **C#**
     ```    CSharp
@@ -154,33 +155,33 @@ The process of adapting to new markets can be simplified by taking a few things 
                   "Formatted Euro (fr-FR defaults): " + currencyEuroFR;
     ```
 
-3.  **Use a culturally appropriate calendar.**
+3.  **カルチャに適したカレンダーを使用します。**
 
-    The calendar differs across regions and languages. The Gregorian calendar is not the default for every region. Users in some regions may choose alternate calendars, such as the Japanese era calendar or Arabic lunar calendars. Dates and times on the calendar are also sensitive to different time zones and daylight saving time.
+    カレンダーは地域や言語によって異なります。 グレゴリオ暦がすべての地域で既定となっているわけではありません。 ある地域のユーザーは、日本の年号、アラビアの太陰暦など別のカレンダーを選ぶ場合があります。 カレンダーの日付や時刻も、さまざまなタイム ゾーンや夏時間に影響されます。
 
-    Use the standard [date and time picker](https://msdn.microsoft.com/library/windows/apps/hh465466) controls to allow users to choose a date, to ensure that the preferred calendar format is used. For more complex scenarios, where working directly with operations on calendar dates may be required, Windows.Globalization provides a [**Calendar**](https://msdn.microsoft.com/library/windows/apps/br206724) class that gives an appropriate calendar representation for the given culture, region, and calendar type.
+    必要なカレンダー形式を使うために、ユーザーが日付を選べるようにするには、標準の [DatePicker と TimePicker](https://msdn.microsoft.com/library/windows/apps/hh465466) コントロールを使います。 カレンダーの日付を直接操作することが必要な、さらに複雑なシナリオの場合、特定のカルチャ、地域、カレンダーの種類を表す適切なカレンダーを提供する [**Calendar**](https://msdn.microsoft.com/library/windows/apps/br206724) クラスが Windows.Globalization によって提供されています。
 
-4.  **Respect the user's Language and Cultural Preferences.**
+4.  **ユーザーの言語とカルチャを考慮します。**
 
-    For scenarios where you provide different functionality based on the user's language, region, or cultural preferences, Windows gives you a way to access those preferences, through [**Windows.System.UserProfile.GlobalizationPreferences**](https://msdn.microsoft.com/library/windows/apps/br241825). When needed, use the **GlobalizationPreferences** class to get the value of the user's current geographic region, preferred languages, preferred currencies, and so on.
+    ユーザーの言語、地域、カルチャの設定に基づいてさまざまな機能を提供するシナリオでは、[**Windows.System.UserProfile.GlobalizationPreferences**](https://msdn.microsoft.com/library/windows/apps/br241825) を使ってそれらの設定にアクセスするための方法が、Windows によって提供されます。 必要に応じて、**GlobalizationPreferences** クラスを使って、ユーザーの現在の地理的な地域、優先する言語や通貨などの値を取得します。
 
-## <span id="related_topics"></span>Related topics
+## <span id="related_topics"></span>関連トピック
 
 
-* [Plan for a global market](https://msdn.microsoft.com/library/windows/apps/hh465405)
-* [Guidelines for date and time controls](https://msdn.microsoft.com/library/windows/apps/hh465466)
+* [世界市場向けの計画](https://msdn.microsoft.com/library/windows/apps/hh465405)
+* [日付コントロールと時刻コントロールのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465466)
 
-**Reference**
+**リファレンス**
 * [**Windows.Globalization.Calendar**](https://msdn.microsoft.com/library/windows/apps/br206724)
 * [**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)
 * [**Windows.Globalization.NumberFormatting**](https://msdn.microsoft.com/library/windows/apps/br226136)
 * [**Windows.System.UserProfile.GlobalizationPreferences**](https://msdn.microsoft.com/library/windows/apps/br241825)
 
-**Samples**
-* [Calendar details and math sample](http://go.microsoft.com/fwlink/p/?linkid=231636)
-* [Date and time formatting sample](http://go.microsoft.com/fwlink/p/?linkid=231618)
-* [Globalization preferences sample](http://go.microsoft.com/fwlink/p/?linkid=231608)
-* [Number formatting and parsing sample](http://go.microsoft.com/fwlink/p/?linkid=231620)
+**サンプル**
+* [カレンダーの詳細と数値演算のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=231636)
+* [日付と時刻の書式設定のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=231618)
+* [グローバリゼーション設定サンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=231608)
+* [数字の書式設定と解析サンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=231620)
  
 
  

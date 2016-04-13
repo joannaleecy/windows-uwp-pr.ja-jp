@@ -2,7 +2,7 @@
 Description: カレンダーの日付の選択コントロールは、カレンダーの曜日や埋まり具合などのコンテキスト情報が必要となるカレンダー ビューから単一の日付を選ぶ用途に最適なドロップダウン コントロールです。
 title: カレンダーの日付の選択コントロール
 ms.assetid: 9e0213e0-046a-4906-ba86-0b49be51ca99
-label: カレンダーの日付の選択コントロール
+label: Calendar date picker
 template: detail.hbs
 ---
 
@@ -77,16 +77,14 @@ Date 値が変化したときに通知を受け取るには、[**DateChanged**](
 ```
 
 
-\[この記事には、ユニバーサル Windows プラットフォーム (UWP) アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
+## 関連記事
 
-## 関連トピック
-
-* [日付と時刻コントロール](date-and-time.md)
-* [カレンダー ビュー](calendar-view.md)
-* [日付の選択コントロール](date-picker.md)
-* [時刻の選択コントロール](time-picker.md)
+- [日付と時刻コントロール](date-and-time.md)
+- [カレンダー ビュー](calendar-view.md)
+- [日付の選択コントロール](date-picker.md)
+- [時刻の選択コントロール](time-picker.md)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=Mar16_HO4-->
 
 

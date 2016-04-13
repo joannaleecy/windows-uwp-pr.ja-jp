@@ -1,9 +1,9 @@
 ---
-Description: Create and manage groups of your app’s customers. You can create segments to target a particular set of an app’s customers, or flight groups to use with package flighting.
+Description: アプリのユーザーのグループを作成し、管理します。 アプリのユーザーのうち特定のユーザーをターゲットにするためにセグメントを作成することや、パッケージ フライトで使うフライト グループを作成することができます。
 ms.assetid: 6A5CD416-7FD8-43F7-8D31-A70BD08960A4
 ---
 
-# Customer groups
+# ユーザー グループ
 
 
 

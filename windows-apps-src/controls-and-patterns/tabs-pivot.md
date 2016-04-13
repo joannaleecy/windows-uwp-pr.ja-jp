@@ -1,66 +1,66 @@
 ---
-Description: Tabs and pivots are enable users to navigate between frequently accessed content.
-title: Tabs and pivots
+Description: タブとピボットを使うと、アクセス頻度の高いコンテンツ間を移動できます。
+title: タブとピボット
 ms.assetid: 556BC70D-CF5D-4295-A655-D58163CC1824
-label: Tabs and pivots
+label: タブとピボット
 template: detail.hbs
 ---
-# Tabs and pivots
+# タブとピボット
 
-Tabs and pivots are used for navigating frequently accessed, distinct content categories. The tab/pivot pattern is made of two or more content panes that have corresponding category headers. The headers persist on-screen and have a selection state that's clearly shown, so users are always aware of which category they're in.
-![An examples of tabs](images/HIGSecOne_Tabs.png)
+タブとピボットは、アクセス頻度の高い個別のコンテンツ カテゴリ間を移動するために使います。 タブ/ピボット パターンは、対応するカテゴリ ヘッダーがある 2 つ以上のコンテンツ ウィンドウで構成されます。 ヘッダーは常に画面上に表示され、選択状態が明確に示されるので、ユーザーは現在使っているカテゴリを常に意識するようになります。
+![タブの例](images/HIGSecOne_Tabs.png)
 
-Tabs and pivots are effectively the same pattern, and both are built using the [**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) control. The basic functionality of the Pivot control is described later in this article.
+タブとピボットは実質的には同じパターンであり、どちらも [**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) コントロールを使って構築されます。 Pivot コントロールの基本機能については、この記事で後述します。
 
-<span class="sidebar_heading" style="font-weight: bold;">Important APIs</span>
+<span class="sidebar_heading" style="font-weight: bold;">重要な API</span>
 
--   [**Pivot class**](https://msdn.microsoft.com/library/windows/apps/dn608241)
+-   [**Pivot クラス**](https://msdn.microsoft.com/library/windows/apps/dn608241)
 
-## The tab/pivot pattern
+## タブ/ピボット パターン
 
-When building an app with the tab/pivot pattern, there are a few key design variables to consider based on the pattern's configurable feature set.
+タブ/ピボット パターンを使ってアプリを構築する場合は、パターンの構成可能な機能セットに基づいて考慮すべきいくつかの重要なデザインの変数があります。
 
-- **Header placement.**   Headers can be placed at the top or the bottom of the screen.
+- **ヘッダーの配置。**   ヘッダーは、画面の一番上または一番下に配置できます。
     
-    **Note**&nbsp;&nbsp;Placing headers at the bottom of the screen requires re-templating the Pivot control.
-- **Header labels.**  Headers can have an icon with text, text only, or icon only.
-- **Header alignment.**  Headers can be left-justified or centered.
-- **Top-level or sub-level navigation.**  Tabs/pivots can be used for either level of navigation, and can be stacked in a top-level/sub-level pattern. When there are two levels of tabs/pivots, the top-level and sub-level headers should have enough visual differentiation so that users can clearly separate the two.
-- **Touch gesture support.**  For devices that support touch gestures, you can use one of two interaction sets to navigate between content categories:
-    1. Tap on a tab/pivot header to navigate to that category, or swipe on the content area to navigate to the adjacent category.
-    2. Tap on a tab/pivot header to navigate to that category (no swipe).
+    **注**&nbsp;&nbsp;ヘッダーを画面の下部に配置するには、Pivot コントロールを再テンプレート化する必要があります。
+- **ヘッダー ラベル。**  ヘッダーは、テキスト付きのアイコン、テキストのみ、またはアイコンのみで示すことができます。
+- **ヘッダーの整列。**  ヘッダーは、左揃えまたは中央揃えにすることができます。
+- **トップレベルまたはサブレベルのナビゲーション。**  タブ/ピボットは、どちらかのレベルのナビゲーションに使うことができ、トップレベル/サブレベル パターンで並べて表示できます。 タブ/ピボットのレベルが 2 つある場合は、トップレベルとサブレベルのヘッダーを視覚的に差別化して、ユーザーがその 2 つを明確に区別できるようにする必要があります。
+- **タッチ ジェスチャのサポート。**  タッチ ジェスチャをサポートするデバイスでは、次に示す 2 つの操作セットのどちらかを使ってコンテンツ カテゴリ間を移動できます。
+    1. タブ/ピボット ヘッダーをタップして、そのカテゴリに移動するか、またはコンテンツ領域上でスワイプして隣接するカテゴリに移動します。
+    2. タブ/ピボット ヘッダーをタップして、そのカテゴリに移動します (スワイプ操作なし)。
 
-### Pattern configurations
+### パターン構成
 
-The optimal arrangement of the tab/pivot pattern depends on the interaction scenario and the device(s) on which your app will appear. This table outlines some of the top scenarios and pattern configurations.
+タブ/ピボット パターンの最適な配置は、操作のシナリオとアプリが表示されるデバイスによって異なります。 次の表に、いくつかの使用頻度の高いシナリオとパターン構成の概要を示します。
 
-Interaction scenario|Recommended configuration
+操作のシナリオ|推奨される構成
 --------------------|-------------------------
-Moving laterally between 2 to 5 top-level list or grid view content categories on a phone or phablet|Tab/pivots: Placed at the top of the screen, centered
-|Header labels: Icons + text
-|Swipe on content area: Enabled
-Moving between a range of content categories on a phone or phablet in which swiping on a content area isn't practical for navigation|Tab/pivots: Placed at the bottom of the screen, centered
-|Header labels: Icons + text
-|Swipe on content area: Disabled
-Top-level navigation with a mouse and keyboard|Tab/pivots: Placed at the top of the screen, left-aligned
- *or*|Header labels: Text-only
- Page-level navigation on a touch device|Swipe on content area: Disabled
+携帯電話またはファブレットで 2 ～ 5 個のトップレベルの一覧またはグリッド ビューのコンテンツ カテゴリ間を横方向に移動する|タブ/ピボット: 画面の一番上に配置 (中央揃え)
+|ヘッダー ラベル: アイコンとテキスト
+|コンテンツ領域でのスワイプ: 有効
+携帯電話またはファブレットでコンテンツ カテゴリの範囲内を移動する (ナビゲーション用としては実用的でないコンテンツ領域上でスワイプする)|タブ/ピボット: 画面の一番下に配置 (中央揃え)
+|ヘッダー ラベル: アイコンとテキスト
+|コンテンツ領域でのスワイプ: 無効
+マウスとキーボードを使ったトップレベルのナビゲーション|タブ/ピボット: 画面の一番上に配置 (左揃え)
+ *または*|ヘッダー ラベル: テキストのみ
+ タッチ デバイスでのページ レベルのナビゲーション|コンテンツ領域でのスワイプ: 無効
 
-## Examples
+## 例
 
-This design of a food truck app shows what placing tab/pivot headers on the top or bottom can look like. On mobile devices, placing them at the bottom works well for reachability.
+このフード トラック アプリのデザインは、タブ/ピボット ヘッダーを画面の一番上または一番下に配置するとどのようになるかを示しています。 モバイル デバイスでは、一番下に配置すると手に届きやすくなります。
 
-![An example of tabs on a mobile device](images/uap_foodtruck_phone_320_tabsboth.png)
+![モバイル デバイスでのタブの例](images/uap_foodtruck_phone_320_tabsboth.png)
 
-The food truck app design on laptop/desktop features text-only headers. Using icons with text for headers helps with touch targeting, but for mouse and keyboard, text-only headers work well.
+ノート PC/デスクトップ PC のフード トラック アプリのデザインではテキストのみのヘッダーを使います。 テキスト付きのアイコンをヘッダーに使うと、タッチ補正には役立ちますが、マウスとキーボードを使う場合はテキストのみのヘッダーが適しています。
 
-![Example of tabs on desktop](images/uap_foodtruck_desktop_home_700.png)
+![デスクトップ PC でのタブの例](images/uap_foodtruck_desktop_home_700.png)
 
-## Create a pivot control
+## ピボット コントロールの作成
 
-The tab/pivot navigation pattern is built using the [**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) control. The control comes with the basic functionality described in this section.
+タブ/ピボット ナビゲーション パターンは [**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) コントロールを使って構築します。 このコントロールには、このセクションで説明する基本的な機能が付属しています。
 
-This XAML creates a basic pivot control with 3 sections of content.
+この XAML では、コンテンツの 3 つのセクションで、基本的なピボット コントロールを作成します。
 
 ```xaml
 <Pivot x:Name="rootPivot" Title="PIVOT TITLE">
@@ -79,52 +79,54 @@ This XAML creates a basic pivot control with 3 sections of content.
 </Pivot>
 ```
 
-**Pivot items**
+**ピボット項目**
 
-Pivot is an [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.aspx), so it can contain a collection of items of any type. Any item you add to the Pivot that is not explicitly a [**PivotItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivotitem.aspx) is implicitly wrapped in a PivotItem. Because a Pivot is often used to navigate between pages of content, it's common to populate the [**Items**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.items.aspx) collection directly with XAML UI elements. Or, you can set the [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) property to a data source. Items bound in the ItemsSource can be of any type, but if they aren't explicitly PivotItems, you must define an [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) and [**HeaderTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.headertemplate.aspx) to specify how the items are displayed.
+Pivot は [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.aspx) であるため、あらゆる種類の項目をコレクションを含めることができます。 ピボットに追加する項目が明示的に [ **PivotItem** ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivotitem.aspx) ではない場合、PivotItem で暗黙的にラップされます。 ピボットは通常コンテンツのページ間を移動するために使用されるため、XAML UI 要素を使用して直接 [**Items**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.items.aspx) コレクションを設定するのが一般的です。 または、[**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) プロパティをデータ ソースに設定することもできます。 ItemsSource にバインドされている項目は、任意の型にすることができますが、明示的に PivotItem ではない場合は、[**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) と [**HeaderTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.headertemplate.aspx) を定義して、項目を表示する方法を指定する必要があります。
 
-You can use the [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.selecteditem.aspx) property to get or set the Pivot's active item. Use the [**SelectedIndex**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.selectedindex.aspx) property to get or set the index of the active item. 
+[
+            **SelectedItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.selecteditem.aspx) プロパティを使って、ピボットのアクティブな項目を取得または設定できます。 アクティブな項目のインデックスを取得または設定するには、[**SelectedIndex**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.selectedindex.aspx) プロパティを使います。 
 
-**Pivot headers**
+**ピボット ヘッダー**
 
-You can use the [**LeftHeader**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.leftheader.aspx) and [**RightHeader**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.rightheader.aspx) properties to add other controls to the Pivot header. 
+[
+            **LeftHeader**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.leftheader.aspx) プロパティと [**RightHeader**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.rightheader.aspx) プロパティを使って、ピボット ヘッダーに他のコントロールを追加できます。 
 
-### Pivot interaction
+### ピボットの操作
 
-The control features these touch gesture interactions:
+ピボット コントロールを使うと、次のタッチ ジェスチャ操作が可能になります。
 
--   Tapping on a header navigates to that header's section content.
--   Swiping left or right on a header navigates to the adjacent header/section.
--   Swiping left or right on section content navigates to the adjacent header/section.
+-   ヘッダーをタップすると、そのヘッダーのセクション コンテンツに移動します。
+-   ヘッダー上で左または右にスワイプすると、隣接するヘッダー/セクションに移動します。
+-   セクション コンテンツ上で左または右にスワイプすると、隣接するヘッダー/セクションに移動します。
 
-The control comes in two modes:
+コントロールには次の 2 つのモードがあります。
 
-**Stationary**
+**固定**
 
--   Pivots are stationary when all pivot headers fit within the allowed space.
--   Tapping on a pivot label navigates to the corresponding page, though the pivot itself will not move. The active pivot is highlighted.
+-   許可されている領域内にすべてのピボット ヘッダーが収まる場合、ピボットは固定されます。
+-   ピボット ラベルをタップすると、ピボット自体は移動しませんが、対応するページに移動します。 アクティブなピボットは強調表示されます。
 
-**Carousel**
+**カルーセル**
 
--   Pivots carousel when all pivot headers don't fit within the allowed space.
--   Tapping a pivot label navigates to the corresponding page, and the active pivot label will carousel into the first position.
+-   許可されている領域内にすべてのピボット ヘッダーが収まらない場合、ピボットがカルーセル表示されます。
+-   ピボット ラベルをタップすると対応するページに移動し、アクティブなピボット ラベルは最初の位置までカルーセル表示されます。
 
-The control has built-in breakpoint functionality, which is based on the number of headers and the string length of the labels.
+このコントロールには、ヘッダーの数とラベルの文字列の長さに基づく組み込みのブレークポイント機能があります。
 
-## Recommendations
+## 推奨事項
 
--   Base the alignment of tab/pivot headers on screen size. For screen widths below 720 epx, center-aligning usually works better, while left-aligning for screen widths above 720 epx is recommended in most cases.
--   When scaling a window, once the number of tabs/pivot headers exceeds available real estate, start pushing headers into the overflow area.
--   Tabs/pivots can be used in either screen orientation, but be sure to maintain the same total number of headers (visible and hidden) in both landscape and portrait orientations.
--   Avoid using more than 5 headers when using carousel (round-trip) mode, as having more than 5 can cause the user to lose orientation.
--   On mobile devices, placing tabs/pivots at the bottom works well for reachability, if swiping is used in another part of the UI, and to avoid top-heavy UI.
--   When the on-screen keyboard is deployed, headers can move off-screen to preserve space.
+-   タブ/ピボット ヘッダーの配置は画面サイズに基づいて行います。 画面幅が 720 epx 未満の場合、通常は中央揃えが適しています。720 epx 以上の画面幅では、ほとんどの場合、左揃えをお勧めします。
+-   ウィンドウの拡大/縮小時に、タブ/ピボット ヘッダーの数が利用可能な領域を超えると、ヘッダーをオーバーフロー領域に表示する処理を開始します。
+-   タブ/ピボットは横向きまたは縦向きの画面で使うことができますが、どちらの向きでもヘッダー (表示と非表示) の総数が同じになるようにしてください。
+-   カルーセル (ラウンド トリップ) モードを使う場合は、6 つ以上のヘッダーを使わないようにしてください。6 つ以上のヘッダーを使うと、ユーザーが画面の向きを認識できなくなる可能性があります。
+-   モバイル デバイスでは、UI の別の部分でスワイプを使う場合や、UI が上部に集中しすぎないようにするために、タブ/ピボットを一番下に配置すると手に届きやすくなります。
+-   スクリーン キーボードが表示されている場合は、ヘッダーを画面外に移動して領域を確保できます。
 
-\[This article contains information that is specific to Universal Windows Platform (UWP) apps and Windows 10. For Windows 8.1 guidance, please download the [Windows 8.1 guidelines PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+\[この記事には、ユニバーサル Windows プラットフォーム (UWP) アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
 
-## Related topics
+## 関連トピック
 
-[Navigation design basics](https://msdn.microsoft.com/library/windows/apps/dn958438)
+[ナビゲーション デザインの基本](https://msdn.microsoft.com/library/windows/apps/dn958438)
 
 
 <!--HONumber=Mar16_HO1-->

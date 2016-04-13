@@ -1,23 +1,25 @@
 ---
 ms.assetid: C5623861-6280-4352-8F22-80EB009D662C
-description: The MediaSource class provides a common way to reference and play back media from different sources such as local or remote files and exposes a common model for accessing media data, regardless of the underlying media format.
-title: Media playback with MediaSource
+description: MediaSource クラスは、ローカル ファイルやリモート ファイルなど、さまざまなソースのメディアを参照および再生するための一般的な方法を提供し、基になるメディア形式に関係なく、メディア データにアクセスするための一般的なモデルを公開します。
+title: MediaSource を使ったメディアの再生
 ---
 
-# Media playback with MediaSource
+# MediaSource を使ったメディアの再生
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
+\[一部の情報はリリース前の製品に関することであり、正式版がリリースされるまでに大幅に変更される可能性があります。 ここに記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。\]
 
-The [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/dn930905) class provides a common way to reference and play back media from different sources such as local or remote files and exposes a common model for accessing media data, regardless of the underlying media format. The [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/dn930939) class extends the functionality of **MediaSource**, allowing you to manage and select from multiple audio, video, and metadata tracks contained in a media item. [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) allows you to create playback lists from one or more media playback items.
+[
+            **MediaSource**](https://msdn.microsoft.com/library/windows/apps/dn930905) クラスは、ローカル ファイルやリモート ファイルなど、さまざまなソースのメディアを参照および再生するための一般的な方法を提供し、基になるメディア形式に関係なく、メディア データにアクセスするための一般的なモデルを公開します。 [
+            **MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/dn930939) クラスは、メディア項目に含まれている複数のオーディオ、ビデオ、メタデータ トラックを管理および選択できるようにして、**MediaSource** の機能を拡張します。 [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) を使用すると、1 つまたは複数のメディア再生項目から再生リストを作成できます。
 
-The code in this article was adapted from the [Video Playback SDK](http://go.microsoft.com/fwlink/p/?LinkId=620020&clcid=0x409) sample. You can download this sample to see the code used in context or to use as a starting point for your own app.
+この記事のコードは、[ビデオ再生 SDK](http://go.microsoft.com/fwlink/p/?LinkId=620020&clcid=0x409) のサンプルを基にしています。 このサンプルをダウンロードすると、コンテキスト内のコードを確認できます。独自のアプリの出発点として使うこともできます。
 
-## Create and play a MediaSource
+## MediaSource を作成および再生する
 
-Create a new instance of **MediaSource** by calling one of the factory methods exposed by the class:
+クラスによって公開されているファクトリ メソッドのいずれかを呼び出すことによって、**MediaSource** の新しいインスタンスを作成します。
 
 -   [**CreateFromAdaptiveMediaSource**](https://msdn.microsoft.com/library/windows/apps/dn930906)
 -   [**CreateFromIMediaSource**](https://msdn.microsoft.com/library/windows/apps/dn965527)
@@ -28,52 +30,54 @@ Create a new instance of **MediaSource** by calling one of the factory methods e
 -   [**CreateFromStreamReference**](https://msdn.microsoft.com/library/windows/apps/dn930911)
 -   [**CreateFromUri**](https://msdn.microsoft.com/library/windows/apps/dn930912)
 
-After creating a **MediaSource** you can play the source directly with a [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926), by calling [**SetPlaybackSource**](https://msdn.microsoft.com/library/windows/apps/dn899085), or with a [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652535), by setting the [**Source**](https://msdn.microsoft.com/library/windows/apps/dn987010) property. The following example shows how to play back a user-selected media file in a **MediaElement** using **MediaSource**.
+**MediaSource** を作成した後、[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) を使って、[**SetPlaybackSource**](https://msdn.microsoft.com/library/windows/apps/dn899085) を呼び出すことによって、または [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652535) を使って、[**Source**](https://msdn.microsoft.com/library/windows/apps/dn987010) プロパティを設定することによって、ソースを直接再生できます。 次の例では、**MediaSource** を使って **MediaElement** でユーザーが選択したメディア ファイルを再生する方法を示します。
 
-You will need to include the [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962) and [**Windows.Media.Playback**](https://msdn.microsoft.com/library/windows/apps/dn640562) namespaces in order to complete this scenario.
+このシナリオを実現するには、[**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962) および [**Windows.Media.Playback**](https://msdn.microsoft.com/library/windows/apps/dn640562) 名前空間を含める必要があります。
 
 [!code-cs[Using](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetUsing)]
 
-Declare a variable of type **MediaSource**. For the examples in this article, the media source is declared as a class member so that it can be accessed from multiple locations.
+**MediaSource** 型の変数を宣言します。 この記事の例では、複数の場所からアクセスできるように、メディア ソースはクラス メンバーとして宣言されています。
 
 [!code-cs[DeclareMediaSource](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetDeclareMediaSource)]
 
-To allow the user to pick a media file to play, use a [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847). With the [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) object returned from the picker's [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) method, initialize a new MediaObject by calling [**MediaSource.CreateFromStorageFile**](https://msdn.microsoft.com/library/windows/apps/dn930909). Finally, set the media source as the playback source for the **MediaElement** by calling the [**SetPlaybackSource**](https://msdn.microsoft.com/library/windows/apps/dn899085) method.
+ユーザーが再生するメディア ファイルを選択できるようにするには、[**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) を使います。 ピッカーの [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) メソッドから返された [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトを使って、[**MediaSource.CreateFromStorageFile**](https://msdn.microsoft.com/library/windows/apps/dn930909) を呼び出すことにより、新しい MediaObject を初期化します。 最後に、[**SetPlaybackSource**](https://msdn.microsoft.com/library/windows/apps/dn899085) メソッドを呼び出すことによって、メディア ソースを、**MediaElement** の再生ソースとして設定します。
 
 [!code-cs[PlayMediaSource](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetPlayMediaSource)]
 
-## Handle multiple audio, video, and metadata tracks with MediaPlaybackItem
+## MediaPlaybackItem を使って複数のオーディオ、ビデオ、メタデータ トラックを処理する
 
-Using a [**MediaSource**](https://msdn.microsoft.com/library/windows/apps/dn930905) for playback is convenient because it provides a common way to playback media from different kinds of sources, but more advanced behavior can be accessed by using a [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/dn930939). This includes the ability to access and manage multiple audio, video, and data tracks for a media item.
+[
+            **MediaSource**](https://msdn.microsoft.com/library/windows/apps/dn930905) を使った再生では、さまざまな種類のソースからメディアを再生するための共通の方法が提供されるため便利ですが、[**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/dn930939) を使うことにより、さらに高度な動作を実現できます。 これには、メディアの項目の複数のオーディオ、ビデオ、データのトラックにアクセスして管理する機能が含まれます。
 
-Declare a variable to store your **MediaPlaybackItem**.
+**MediaPlaybackItem** を格納するための変数を宣言します。
 
 [!code-cs[DeclareMediaPlaybackItem](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetDeclareMediaPlaybackItem)]
 
-Create a **MediaPlaybackItem** by calling the constructor and passing in an initialized **MediaSource** object.
+コンストラクターを呼び出して、初期化された **MediaSource** オブジェクトを渡すことによって、**MediaPlaybackItem** を作成します。
 
-If your app supports multiple audio, video, or data tracks in a media playback item, register event handlers for the [**AudioTracksChanged**](https://msdn.microsoft.com/library/windows/apps/dn930948), [**VideoTracksChanged**](https://msdn.microsoft.com/library/windows/apps/dn930954), or [**TimedMetadataTracksChanged**](https://msdn.microsoft.com/library/windows/apps/dn930952) events.
+アプリがメディア再生項目で複数のオーディオ、ビデオ、データのトラックをサポートしている場合は、[**AudioTracksChanged**](https://msdn.microsoft.com/library/windows/apps/dn930948)、[**VideoTracksChanged**](https://msdn.microsoft.com/library/windows/apps/dn930954)、または [**TimedMetadataTracksChanged**](https://msdn.microsoft.com/library/windows/apps/dn930952) イベントのイベント ハンドラーを登録します。
 
-Finally, set the playback source of the **MediaElement** or **MediaPlayer** to your **MediaPlaybackItem**.
+最後に、**MediaElement** または **MediaPlayer** の再生ソースを **MediaPlaybackItem** に設定します。
 
 [!code-cs[PlayMediaPlaybackItem](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetPlayMediaPlaybackItem)]
 
-**Note**  
-A **MediaSource** can only be associated with a single **MediaPlaybackItem**. After creating a **MediaPlaybackItem** from a source, attempting to create another playback item from the same source will result in an error. Also, after creating a **MediaPlaybackItem** from a media source, you can't set the **MediaSource** object directly as the source for a **MediaElement** or **MediaPlayer** but should instead use the **MediaPlaybackItem**.
+**注**  
+**MediaSource** は、単一の **MediaPlaybackItem** にのみ関連付けることができます。 ソースから **MediaPlaybackItem** を作成した後、同じソースから別の再生項目を作成しようとすると、エラーが発生します。 また、メディア ソースから **MediaPlaybackItem** を作成した後、**MediaSource** オブジェクトを、**MediaElement** や **MediaPlayer** のソースとして直接設定することはできません。この場合は、代わりに **MediaPlaybackItem** を使う必要があります。
 
-The [**VideoTracksChanged**](https://msdn.microsoft.com/library/windows/apps/dn930954) event is raised after a **MediaPlaybackItem** containing multiple video tracks is assigned as a playback source, and can be raised again if the list of video tracks changes for the item changes. The handler for this event gives you the opportunity to update your UI to allow the user to switch between available tracks. This example uses a [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348) to display the available video tracks.
+複数のビデオ トラックを含む **MediaPlaybackItem** が再生ソースとして割り当てられると、[**VideoTracksChanged**](https://msdn.microsoft.com/library/windows/apps/dn930954) イベントが発生します。項目の変更としてビデオ トラックのリストが変更された場合は、再びイベントが発生することがあります。 このイベントのハンドラーを使うと、ユーザーが利用可能なトラックを切り替えることができるように UI を更新する機会が提供されます。 この例では、[**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348) を使って利用可能なビデオ トラックを表示します。
 
 [!code-xml[VideoComboBox](./code/MediaSource_Win10/cs/MainPage.xaml#SnippetVideoComboBox)]
 
-In the **VideoTracksChanged** handler, loop through all of the tracks in the playback item's [**VideoTracks**](https://msdn.microsoft.com/library/windows/apps/dn930953) list. For each track, a new [**ComboBoxItem**](https://msdn.microsoft.com/library/windows/apps/br209349) is created. If the track does not already have a label, a label is generated from the track index. The [**Tag**](https://msdn.microsoft.com/library/windows/apps/br208745) property of the combo box item is set to the track index so that it can be identified later. Finally, the item is added to the combo box. Note that these operations are performed within a [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) call because all UI changes must be made on the UI thread and this event is raised on a different thread.
+**VideoTracksChanged** ハンドラーで、再生の項目の [**VideoTracks**](https://msdn.microsoft.com/library/windows/apps/dn930953) のリストにあるすべてのトラックをループ処理します。 各トラックについて、新しい [**ComboBoxItem**](https://msdn.microsoft.com/library/windows/apps/br209349) が作成されます。 トラックにまだラベルがない場合、トラックのインデックスからラベルが生成されます。 コンボ ボックス項目の [**Tag**](https://msdn.microsoft.com/library/windows/apps/br208745) プロパティが、後で識別できるようにトラックのインデックスに設定されます。 最後に、コンボ ボックスに項目が追加されます。 これらの処理は [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) の呼び出し内で実行されます。UI の変更はすべて UI スレッドで実行される必要があり、このイベントは別のスレッドで発生しているためです。
 
 [!code-cs[VideoTracksChanged](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetVideoTracksChanged)]
 
-In the [**SelectionChanged**](https://msdn.microsoft.com/library/windows/apps/br209776) handler for the combo box, the track index is retrieved from the selected item's **Tag** property. Setting the [**SelectedIndex**](https://msdn.microsoft.com/library/windows/apps/dn956634) property of the media playback item's [**VideoTracks**](https://msdn.microsoft.com/library/windows/apps/dn930953) list causes the **MediaElement** or **MediaPlayer** to switch the active video track to the specified index.
+コンボ ボックスの [**SelectionChanged**](https://msdn.microsoft.com/library/windows/apps/br209776) ハンドラーで、選択した項目の **Tag** プロパティからトラックのインデックスが取得されます。 メディア再生項目の [**VideoTracks**](https://msdn.microsoft.com/library/windows/apps/dn930953) リストの [**SelectedIndex**](https://msdn.microsoft.com/library/windows/apps/dn956634) プロパティを設定すると、**MediaElement** または **MediaPlayer** はアクティブなビデオ トラックを、指定されたインデックスに切り替えます。
 
 [!code-cs[VideoTracksSelectionChanged](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetVideoTracksSelectionChanged)]
 
-Managing media items with multiple audio tracks works exactly the same as with video tracks. Handle the [**AudioTracksChanged**](https://msdn.microsoft.com/library/windows/apps/dn930948) to update your UI with the audio tracks found in the playback item's [**AudioTracks**](https://msdn.microsoft.com/library/windows/apps/dn930947) list. When the user selects an audio track, set the [**SelectedIndex**](https://msdn.microsoft.com/library/windows/apps/dn930937) property of the **AudioTracks** list to cause the **MediaElement** or **MediaPlayer** to switch the active audio track to the specified index.
+複数のオーディオ トラックを含むメディア項目の管理は、ビデオ トラックの場合とまったく同じです。 [
+            **AudioTracksChanged**](https://msdn.microsoft.com/library/windows/apps/dn930948) を処理し、再生項目の [**AudioTracks**](https://msdn.microsoft.com/library/windows/apps/dn930947) リストで見つかったオーディオ トラックを使って、UI を更新します。 ユーザーがオーディオ トラックを選んだときに、**AudioTracks** リストの [**SelectedIndex**](https://msdn.microsoft.com/library/windows/apps/dn930937) プロパティを設定すると、**MediaElement** または **MediaPlayer** はアクティブなオーディオ トラックを、指定されたインデックスに切り替えます。
 
 [!code-xml[AudioComboBox](./code/MediaSource_Win10/cs/MainPage.xaml#SnippetAudioComboBox)]
 
@@ -81,87 +85,95 @@ Managing media items with multiple audio tracks works exactly the same as with v
 
 [!code-cs[AudioTracksSelectionChanged](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetAudioTracksSelectionChanged)]
 
-In addition to audio and video, a **MediaPlaybackItem** object may contain zero or more [**TimedMetadataTrack**](https://msdn.microsoft.com/library/windows/apps/dn956580) objects. A timed metadata track can contain subtitle or caption text, or it may contain custom data that is proprietary to your app. A timed metadata track contains a list of cues represented by objects that inherit from [**IMediaCue**](https://msdn.microsoft.com/library/windows/apps/dn930899), such as a [**DataCue**](https://msdn.microsoft.com/library/windows/apps/dn930892) or a [**TimedTextCue**](https://msdn.microsoft.com/library/windows/apps/dn956655). Each cue has a start time and a duration that determines when the cue is activated and for how long.
+オーディオとビデオに加え、**MediaPlaybackItem** オブジェクトは 0 個以上の [**TimedMetadataTrack**](https://msdn.microsoft.com/library/windows/apps/dn956580) オブジェクトを格納する場合があります。 タイミングが設定されたメタデータ トラックは、サブタイトルまたはキャプション テキストを含めることができます。またはアプリに固有のカスタム データを含めることができます。 タイミングが設定されたメタデータ トラックには、[**DataCue**](https://msdn.microsoft.com/library/windows/apps/dn930892) や [**TimedTextCue**](https://msdn.microsoft.com/library/windows/apps/dn956655) など、[**IMediaCue**](https://msdn.microsoft.com/library/windows/apps/dn930899) を継承するオブジェクトで表されるキューのリストが含まれます。 各キューには開始時刻と継続時間があり、キューがいつアクティブ化され、どのくらいの時間アクティブ化されているかを決定します。
 
-Similar to audio tracks and video tracks, the timed metadata tracks for a media item can be discovered by handling the [**TimedMetadataTracksChanged**](https://msdn.microsoft.com/library/windows/apps/dn930952) event of a **MediaPlaybackItem**. With timed metadata tracks, however, the user may want to enable more than one metadata track at a time. Also, depending on your app scenario, you may want to enable or disable metadata tracks automatically, without user intervention. For illustration purposes, this example adds a [**ToggleButton**](https://msdn.microsoft.com/library/windows/apps/br209795) for each metadata track in a media item to allow the user to enable and disable the track. The **Tag** property of each button is set to the index of the associated metadata track so that it can be identified when the button is toggled.
+オーディオ トラックやビデオ トラックと同様に、**MediaPlaybackItem** の [**TimedMetadataTracksChanged**](https://msdn.microsoft.com/library/windows/apps/dn930952) イベントを処理することによって、メディア項目のタイミングが設定されたメタデータ トラックを検出できます。 ただし、タイミングが設定されたメタデータ トラックを使って、ユーザーは一度に複数のメタデータ トラックを有効にすることができます。 また、アプリ シナリオに応じて、ユーザーの介入なしに、自動的にメタデータ トラックを有効または無効にすることもできます。 この例では、わかりやすくするために、メディア項目の各メタデータ用の [**ToggleButton**](https://msdn.microsoft.com/library/windows/apps/br209795) を追加し、ユーザーがトラックを有効または無効にすることができるようにしています。 各ボタンの **Tag** プロパティは、ボタンが切り替えられたときに識別できるように、関連付けられたメタデータ トラックのインデックスに設定されます。
 
 [!code-xml[MetaStackPanel](./code/MediaSource_Win10/cs/MainPage.xaml#SnippetMetaStackPanel)]
 
 [!code-cs[TimedMetadataTrackschanged](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetTimedMetadataTrackschanged)]
 
-Because more than one metadata track can be active at a time, you don't simply set the active index for the metadata track list. Instead, call the **MediaPlaybackItem** object's [**SetPresentationMode**](https://msdn.microsoft.com/library/windows/apps/dn986977) method, passing in the index of the track you want to toggle, and then providing a value from the [**TimedMetadataTrackPresentationMode**](https://msdn.microsoft.com/library/windows/apps/dn987016) enumeration. The presentation mode you choose depends on the implementation of your app. In this example, the metadata track is set to **PlatformPresented** when enabled. For text-based tracks, this means that the system will automatically display the text cues in the track. When the toggle button is toggled off, the presentation mode is set to **Disabled**, which means that no text is displayed and no cue events are raised. Cue events are discussed later in this article.
+一度に複数のメタデータ トラックをアクティブ化することができるため、メタデータ トラック リストについて、単にアクティブなインデックスを設定しません。 代わりに、**MediaPlaybackItem** オブジェクトの [**SetPresentationMode**](https://msdn.microsoft.com/library/windows/apps/dn986977) メソッドを呼び出して、切り替えるトラックのインデックスを渡し、[**TimedMetadataTrackPresentationMode**](https://msdn.microsoft.com/library/windows/apps/dn987016) 列挙体から値を指定します。 選択する表示モードは、アプリの実装によって異なります。 この例では、メタデータ トラックは、有効な場合 **PlatformPresented** に設定されます。 テキスト ベースのトラックの場合、これは、システムが自動的にトラックにテキスト キューを表示することを意味します。 トグル ボタンをオフにすると、表示モードは **Disabled** に設定されます。つまり、テキストは表示されず、キュー イベントは発生しません。 キュー イベントについては、この記事で後述します。
 
 [!code-cs[ToggleChecked](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetToggleChecked)]
 
 [!code-cs[ToggleUnchecked](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetToggleUnchecked)]
 
-## Add external timed text with TimedTextSource
+## TimedTextSource を使って外部のタイミングが設定されたテキストを追加する
 
-For some scenarios, you may have external files that contains timed text associated with a media item, such as separate files that contain subtitles for different locales. Use the [**TimedTextSource**](https://msdn.microsoft.com/library/windows/apps/dn956679) class to load in external timed text files from a stream or URI.
+シナリオによっては、さまざまなロケールのサブタイトルが含まれる個別のファイルなど、メディア項目に関連付けられているタイミングが設定されたテキストが外部のファイルに含まれている場合があります。 ストリームや URI から外部のタイミングが設定されたテキスト ファイルを読み込むには、[**TimedTextSource**](https://msdn.microsoft.com/library/windows/apps/dn956679) クラスを使います。
 
-This example uses a **Dictionary** collection to store a list of the timed text sources for the media item using the source URI and the **TimedTextSource** object as the key/value pair in order to identify the tracks after they have been resolved.
+この例では、**Dictionary** コレクションでソース URI を使ってメディア項目のタイミングが設定されたテキスト ソースのリストを格納し、解決された後のトラックを識別するためにキーと値のペアとして **TimedTextSource** オブジェクトを使用します。
 
 [!code-cs[TimedTextSourceMap](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetTimedTextSourceMap)]
 
-Create a new **TimedTextSource** for each external timed text file by calling [**CreateFromUri**](https://msdn.microsoft.com/library/windows/apps/dn708190). Add an entry to the **Dictionary** for the timed text source. Add a handler for the [**TimedTextSource.Resolved**](https://msdn.microsoft.com/library/windows/apps/dn965540) event to handle if the item failed to load or to set additional properties after the item was loaded successfully.
+[
+            **CreateFromUri**](https://msdn.microsoft.com/library/windows/apps/dn708190) を呼び出すことによって、外部のタイミングが設定されたテキスト ファイルごとに新しい **TimedTextSource** を作成します。 タイミングが設定されたテキスト ソース用のエントリを **Dictionary** に追加します。 [
+            **TimedTextSource.Resolved**](https://msdn.microsoft.com/library/windows/apps/dn965540) イベントのハンドラーを追加して、項目の読み込みに失敗した場合の処理をしたり、項目が正常に読み込まれた後で追加のプロパティを設定したりします。
 
-Register all of your **TimedTextSource** objects with the **MediaSource** by adding them to the [**ExternalTimedTextSources**](https://msdn.microsoft.com/library/windows/apps/dn930916) collection. Note that external timed text sources are added to directly the **MediaSource** and not the **MediaPlaybackItem** created from the source. To update your UI to reflect the external text tracks, register and handle the **TimedMetadataTracksChanged** event as described previously in this article.
+**TimedTextSource** オブジェクトを [**ExternalTimedTextSources**](https://msdn.microsoft.com/library/windows/apps/dn930916) コレクションに追加して、すべてのオブジェクトを **MediaSource** に登録します。 タイミングが設定された外部のテキスト ソースは、ソースから作成された **MediaPlaybackItem** ではなく、**MediaSource** に直接追加されることに注意してください。 外部のテキスト トラックを反映するように UI を更新するには、この記事で既に説明したように、**TimedMetadataTracksChanged** イベントを登録して処理します。
 
 [!code-cs[TimedTextSource](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetTimedTextSource)]
 
-In the handler for the [**TimedTextSource.Resolved**](https://msdn.microsoft.com/library/windows/apps/dn965540) event, check the **Error** property of the [**TimedTextSourceResolveResultEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn965537) passed into the handler to determine if an error occurred while trying to load the timed text data. If the item was resolved successfully, you can use this handler to update additional properties of the resolved track. This example adds a label for each track based on the URI previously stored in the **Dictionary**.
+[
+            **TimedTextSource.Resolved**](https://msdn.microsoft.com/library/windows/apps/dn965540) イベントのハンドラーで、ハンドラーに渡された [**TimedTextSourceResolveResultEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn965537) の **Error** プロパティを確認して、タイミングが設定されたテキスト データの読み込み中にエラーが発生したかどうかを判断します。 項目が正しく解決された場合は、このハンドラーを使って、解決されたトラックの他のプロパティを更新できます。 この例では、以前に **Dictionary** に格納された URI に基づいて、各トラックのラベルを追加します。
 
 [!code-cs[TimedTextSourceResolved](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetTimedTextSourceResolved)]
 
-## Add additional metadata tracks
+## その他のメタデータ トラックを追加する
 
-You can dynamically create custom metadata tracks in code and associate them with a media source. The tracks you create can contain subtitle or caption text, or they can contain your proprietary app data.
+コードで動的にカスタム メタデータ トラックを作成し、メディア ソースを関連付けることができます。 作成するトラックにサブタイトルやキャプション テキストを含めたり、独自のアプリ データを含めたりすることができます。
 
-Create a new [**TimedMetadataTrack**](https://msdn.microsoft.com/library/windows/apps/dn956580) by calling the constructor and specifying an ID, the language identifier, and a value from the [**TimedMetadataKind**](https://msdn.microsoft.com/library/windows/apps/dn956578) enumeration. Register handlers for the [**CueEntered**](https://msdn.microsoft.com/library/windows/apps/dn956583) and [**CueExited**](https://msdn.microsoft.com/library/windows/apps/dn956584) events. These events are raised when the start time for a cue has been reached and when the duration for a cue has expired, respectively.
+コンストラクターを呼び出して、ID、言語識別子、および [**TimedMetadataKind**](https://msdn.microsoft.com/library/windows/apps/dn956578) 列挙体からの値を指定することによって、新しい [**TimedMetadataTrack**](https://msdn.microsoft.com/library/windows/apps/dn956580) を作成します。 [
+            **CueEntered**](https://msdn.microsoft.com/library/windows/apps/dn956583) イベントと [**CueExited**](https://msdn.microsoft.com/library/windows/apps/dn956584) イベントのハンドラーを登録します。 これらのイベントはそれぞれ、キューの開始時刻になったときと、キューの継続時間が終了したときに発生します。
 
-Create a new cue object, appropriate for the type of metadata track you created, and set the ID, start time, and duration for the track. This example creates a data track, so a set of [**DataCue**](https://msdn.microsoft.com/library/windows/apps/dn930892) objects are generated and a buffer containing app-specific data is provided for each cue. To register the new track, add it to the [**ExternalTimedMetadataTracks**](https://msdn.microsoft.com/library/windows/apps/dn930915) collection of the **MediaSource** object.
+作成するメタデータ トラックの種類に適切な新しいキュー オブジェクトを作成し、トラックの ID、開始時刻、継続時間を設定します。 この例では、データ トラックが作成されるため、一連の [**DataCue**](https://msdn.microsoft.com/library/windows/apps/dn930892) オブジェクトが生成され、アプリ固有のデータを格納するバッファーが各キューに提供されます。 新しいトラックを登録するには、**MediaSource** オブジェクトの [**ExternalTimedMetadataTracks**](https://msdn.microsoft.com/library/windows/apps/dn930915) コレクションにトラックを追加します。
 
 [!code-cs[AddDataTrack](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetAddDataTrack)]
 
-The **CueEntered** event is raised when a cue's start time has been reached as long as the associated track has a presentation mode of **ApplicationPresented**, **Hidden**, or **PlatformPresented.** Cue events are not raised for metadata tracks while the presentation mode for the track is **Disabled**. This example simply outputs the custom data associated with the cue to the debug window.
+**CueEntered** イベントは、関連付けられたトラックの表示モードが **ApplicationPresented**、**Hidden**、または **PlatformPresented** である限り、キューの開始時間になると発生します。トラックの表示モードが **Disabled** である場合、メタデータ トラックのキュー イベントは発生しません。 この例では、キューに関連付けられているカスタム データを、単にデバッグ ウィンドウに出力します。
 
 [!code-cs[DataCueEntered](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetDataCueEntered)]
 
-This example adds a custom text track by specifying **TimedMetadataKind.Caption** when creating the track and using [**TimedTextCue**](https://msdn.microsoft.com/library/windows/apps/dn956655) objects to add cues to the track.
+この例では、トラックを作成するときに **TimedMetadataKind.Caption** を指定し、[**TimedTextCue**](https://msdn.microsoft.com/library/windows/apps/dn956655) オブジェクトを使ってトラックにキューを追加することによって、カスタム テキスト トラックを追加します。
 
 [!code-cs[AddTextTrack](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetAddTextTrack)]
 
 [!code-cs[TextCueEntered](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetTextCueEntered)]
 
-## Play a list of media items with MediaPlaybackList
+## MediaPlaybackList を使ってメディア項目のリストを再生する
 
-The [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) allows you to create a playlist of media items, which are represented by **MediaPlaybackItem** objects.
+[
+            **MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) を使うことにより、**MediaPlaybackItem** オブジェクトによって表されるメディア項目の再生リストを作成できます。
 
-**Note**  Items in a [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) are rendered using gapless playback. The system will use provided metadata in MP3 or AAC encoded files to determine the delay or padding compensation needed for gapless playback. If the MP3 or AAC encoded files don't provide this metadata, then the system determines the delay or padding heuristically. For lossless formats, such as PCM, FLAC, or ALAC, the system takes no action because these encoders don't introduce delay or padding.
+**注**  [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) 内の項目は、ギャップレス再生を使用してレンダリングされます。 システムは、MP3 または AAC でエンコードされたファイルで提供されるメタデータを使用して、ギャップレス再生に必要な遅延またはパディングの補正を決定します。 MP3 または AAC でエンコードされているファイルでこのメタデータが提供されない場合は、システムがヒューリスティックによって遅延またはパディングを決定します。 ロスレス形式 (PCM、FLAC、ALAC など) の場合、これらのエンコーダーによる遅延やパディングが発生しないため、システムが実行する処理はありません。
 
-To get started, declare a variable to store your **MediaPlaybackList**.
+最初に、**MediaPlaybackList** を格納するための変数を宣言します。
 
 [!code-cs[DeclareMediaPlaybackList](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetDeclareMediaPlaybackList)]
 
-Create a **MediaPlaybackItem** for each media item you want to add to your list using the same procedure described previously in this article. Initialize your **MediaPlaybackList** object and add the media playback items to it. Register a handler for the [**CurrentItemChanged**](https://msdn.microsoft.com/library/windows/apps/dn930957) event. This event allows you to update your UI to reflect the currently playing media item. Finally, set the playback source of the **MediaElement** or **MediaPlayer** to your **MediaPlaybackList**.
+この記事で既に説明した手順と同じ手順で、リストに追加する各メディア項目について **MediaPlaybackItem** を作成します。 **MediaPlaybackList** オブジェクトを初期化し、メディア再生項目を追加します。 [
+            **CurrentItemChanged**](https://msdn.microsoft.com/library/windows/apps/dn930957) イベントのハンドラーを登録します。 このイベントによって、UI を更新して現在再生中のメディア項目を反映できます。 最後に、**MediaElement** または **MediaPlayer** の再生ソースを **MediaPlaybackList** に設定します。
 
 [!code-cs[PlayMediaPlaybackList](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetPlayMediaPlaybackList)]
 
-In the **CurrentItemChanged** event handler, update your UI to reflect the currently playing item, which can be retrieved using the [**NewItem**](https://msdn.microsoft.com/library/windows/apps/dn930930) property of the [**CurrentMediaPlaybackItemChangedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn930929) object passed into the event. Remember that if you update the UI from this event, you should do so within a call to [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) so that the updates are made on the UI thread.
+**CurrentItemChanged** イベント ハンドラーで、UI を更新して現在再生中の項目を反映します。再生中の項目は、イベントに渡された [**CurrentMediaPlaybackItemChangedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn930929) オブジェクトの [**NewItem**](https://msdn.microsoft.com/library/windows/apps/dn930930) プロパティを使って取得できます。 このイベントから UI を更新する場合は、更新が UI スレッドで行われるように、[**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) の呼び出し内で実行する必要があります。
 
 [!code-cs[MediaPlaybackListItemChanged](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetMediaPlaybackListItemChanged)]
 
-Call [**MovePrevious**](https://msdn.microsoft.com/library/windows/apps/mt146455) or [**MoveNext**](https://msdn.microsoft.com/library/windows/apps/mt146454) to cause the media player to play the previous or next item in your **MediaPlaybackList**.
+メディア プレーヤーで **MediaPlaybackList** の前の項目や次の項目を再生するには、[**MovePrevious**](https://msdn.microsoft.com/library/windows/apps/mt146455) または [**MoveNext**](https://msdn.microsoft.com/library/windows/apps/mt146454) を呼び出します。
 
 [!code-cs[PrevButton](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetPrevButton)]
 
 [!code-cs[NextButton](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetNextButton)]
 
-Set the [**ShuffleEnabled**](https://msdn.microsoft.com/library/windows/apps/mt146457) property to specify whether the media player should play the items in your list in random order.
+[
+            **ShuffleEnabled**](https://msdn.microsoft.com/library/windows/apps/mt146457) プロパティを設定して、メディア プレーヤーがリスト内の項目をランダムな順序で再生するかどうかを指定します。
 
 [!code-cs[ShuffleButton](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetShuffleButton)]
 
-Set the [**AutoRepeatEnabled**](https://msdn.microsoft.com/library/windows/apps/mt146452) property to specify whether the media player should loop playback of your list.
+[
+            **AutoRepeatEnabled**](https://msdn.microsoft.com/library/windows/apps/mt146452) プロパティを設定して、メディア プレーヤーがリストをループ再生するかどうかを指定します。
 
 [!code-cs[RepeatButton](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetRepeatButton)]
 

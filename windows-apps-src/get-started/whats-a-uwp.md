@@ -1,92 +1,92 @@
 ---
 ms.assetid: C9787269-B54F-4FFA-A884-D4A3BF28F80D
-title: What's a Universal Windows Platform (UWP) app?
-description: Learn about the different types of apps that we call Universal Windows apps--Windows Store apps, Windows Phone Store apps, and Windows Runtime apps.
+title: ユニバーサル Windows プラットフォーム (UWP) アプリとは
+description: ユニバーサル Windows アプリと呼ばれるさまざまな種類のアプリ (Windows ストア アプリ、Windows Phone ストア アプリ、Windows ランタイム アプリ) について説明します。
 ---
 
-# What's a Universal Windows Platform (UWP) app?
+# ユニバーサル Windows プラットフォーム (UWP) アプリとは
 
-A Universal Windows Platform (UWP) app is a Windows experience that is built upon the Universal Windows Platform (UWP), which was first introduced in Windows 8 as the Windows Runtime. At the core of UWP apps is the idea that users want their *experiences* to be mobile across ALL their devices, and they want to use whatever device is most convenient or productive for the task at hand.
+ユニバーサル Windows プラットフォーム (UWP) アプリは、ユニバーサル Windows プラットフォーム (UWP) 上に構築された Windows エクスペリエンスであり、Windows 8 で Windows ランタイムとして初めて導入されました。 UWP アプリの中核となるのは、ユーザーがすべてのデバイスでモバイル *エクスペリエンス*を手に入れたい、目の前の作業に一番便利で効率的なデバイスを使いたいという考え方です。
 
-Windows 10 makes it easier to develop apps for the UWP with just one API set, one app package, and one store to reach all Windows 10 devices – PC, tablet, phone and more. It’s easier to support a number of screen sizes, and also a variety of interaction models, whether it be touch, mouse & keyboard, a game controller, or a pen.
+Windows 10 を使うことで、UWP 用アプリの開発がこれまでよりも簡単になります。API セット、アプリ パッケージ、ストアをそれぞれ 1 つ使うだけで、すべての Windows 10 デバイス (PC、タブレット、電話など) で利用可能なアプリを作成できます。 また、さまざまな画面サイズ、操作方式 (タッチ、マウスとキーボード、ゲームコントローラー、ペン) のサポートもより簡単になります。
 
-![Windows-powered devices](images/1894834-hig-device-primer-01-500.png)
+![Windows デバイス](images/1894834-hig-device-primer-01-500.png)
 
-##So, what's a UWP app?
-
-
-What makes a UWP app special? Here are some of the characteristics that make UWP apps on Windows 10 different.
-
--   You target device families, not an OS.
-
-    A device family identifies the APIs, system characteristics, and behaviors that you can expect across devices within the device family. It also determines the set of devices on which your app can be installed from the store.
-
--   Apps are packaged and distributed using the .AppX packaging format.
-
-    All UWP apps are distributed as an AppX package. This provides a trustworthy installation mechanism and ensures that your apps can be deployed and updated seamlessly.
-
--   There's one store for all devices.
-
-    After you register as an app developer, you can submit your app to the store and make it available on all device families, or only those you choose. You submit and manage all your apps for Windows devices in one place.
-
--   There's a common API surface across device families.
-
-    The Universal Windows Platform (UWP) core APIs are the same for all Windows device families. If your app uses only the core APIs, it will run on any Windows 10 device.
-
--   Extension SDKs make your app light up on specialized devices.
-
-    Extension SDKs add specialized APIs for each device family. If your app is intended for a particular device family, you can make it light up by using these APIs. You can still have one app package that runs on all devices by checking what device family your app is running on before calling an extension API.
-
--   Adaptive Controls and input
-
-    UI elements use *effective pixels* (see [Responsive design 101 for UWP apps](https://msdn.microsoft.com/library/windows/apps/Dn958435)), so they automatically adapt themselves based on the number of screen pixels available on the device. And they work well with multiple types of input such as keyboard, mouse, touch, pen, and Xbox One controllers. If you need to further tailor your UI to a specific screen size or device, new layout panels and tooling help you adapt your UI to the devices your app may run on.
-
-For a more detailed look at the UWP, see [Guide to Universal Windows Platform apps](universal-application-platform-guide.md).
-
-## Use a language you already know
+##それでは、UWP アプリとは何でしょうか。
 
 
-You can create UWP apps using the programming languages you're most familiar with, like C# or Visual Basic with XAML, JavaScript with HTML, or C++ with DirectX and/or Extensible Application Markup Language (XAML). You can even write components in one language and use them in an app that's written in another language.
+UWP アプリの一番の特徴は何でしょうか。 以下に、それらの特徴をいくつか挙げます。
 
-UWP apps use the Windows Runtime, a native API built into the operating system. This API is implemented in C++ and supported in C#, Visual Basic, C++, and JavaScript in a way that feels natural for each language.
+-   OS ではなくデバイス ファミリを対象にする。
 
-Microsoft Visual Studio 2015 provides a UWP app template for each language that lets you create a single project for all devices. When your work is finished, you can produce an app package and submit it to the Windows Store from within Visual Studio to get your app out to customers on any Windows 10 device.
+    デバイス ファミリに基づいて、デバイス ファミリのデバイス全体で想定できる API、システム特性、動作を特定します。 ストアからアプリをインストールできる一連のデバイスも決定します。
 
-## UWP apps come to life on Windows
+-   アプリは .AppX パッケージ形式を使ってパッケージ化されて配布される。
 
+    すべての UWP アプリは、AppX パッケージとして配布されます。 これにより、信頼できるインストール方法をユーザーに提供でき、アプリはシームレスに展開、更新できるようになります。
 
-On Windows, your app can deliver relevant, real-time info to your users and keep them coming back for more. In the modern app economy, your app has to be engaging to stay at the front of your users’ lives. Windows provides you with lots of resources to help keep your users returning to your app:
+-   1 つのストアですべてのデバイスに対応する。
 
--   Live tiles and the lock screen show contextually relevant and timely info at a glance.
--   Push notifications bring real-time, breaking alerts to your user’s attention when they're needed.
+    アプリ開発者として登録した後、アプリをストアに提出し、すべてまたは特定のデバイス ファミリ向けに販売できます。 Windows デバイス向けのすべてのアプリを 1 か所で提出、管理できます。
 
--   The Action Center is a place where you can organize and display notifications and content that users need to take action on.
+-   デバイス ファミリに共通の API セットが用意されている。
 
--   Background execution and triggers bring your app to life just when the user needs it.
+    ユニバーサル Windows プラットフォーム (UWP) のコア API はすべての Windows デバイス ファミリに共通です。 アプリにコア API のみを使う場合は、そのアプリはいずれの Windows 10 デバイスでも動作します。
 
--   Your app can use voice and Bluetooth LE devices to help users interact with the world around them.
+-   拡張機能 SDK によりアプリを特殊デバイスで機能アップする。
 
-Finally, you can use roaming data and the Windows Credential Locker to enable a consistent roaming experience across all of the Windows screens where users run your app. Roaming data gives you an easy way to store a user’s preferences and settings in the cloud, without having to build your own sync infrastructure. And you can store user credentials in the Credential Locker, where security and reliability are the top priority.
+    拡張機能 SDK により、各デバイス ファミリに特化した API が追加されます。 アプリが特定のデバイス ファミリ向けであれば、これらの API を使ってそのデバイスで機能アップできます。 この場合でも、すべてのデバイスで動作するアプリ パッケージを 1 つ用意できますが、拡張 API を呼び出す前に、アプリが実行されるデバイス ファミリを確認するようにします。
 
-##  Monetize your app your way
+-   アダプティブ コントロールおよび入力。
 
+    UI 要素には *有効ピクセル* (「[UWP アプリ用レスポンシブ デザイン 101](https://msdn.microsoft.com/library/windows/apps/Dn958435)」を参照) が使われるため、UI はデバイスの画面のピクセル数に基づいて自動的に調整されます。 また、キーボード、マウス、タッチ、ペン、Xbox One コントローラーなど、さまざまな種類の入力デバイスで問題なく機能します。 アプリが実行される特定のデバイスや画面サイズに合わせて UI をさらに調整する場合は、新しく追加されたレイアウト パネルとツールが便利です。
 
-On Windows, you can choose how you'll monetize your app—across phones, tablets, PCs, and other devices. We give you a number of ways to make money with your app and the services it delivers. All you need to do is choose the one that works best for you:
+UWP について詳しくは、「[ユニバーサル Windows プラットフォーム アプリのガイド](universal-application-platform-guide.md)」をご覧ください。
 
--   A paid download is the simplest option. Just name your price.
--   Trials give you a great way to let users try your app before buying it, providing easier discoverability and conversion than the more traditional "freemium" options.
--   In-app purchase offers you the most flexibility for monetizing your app.
-
-## Let's get started
+## 使い慣れた言語の使用
 
 
-For a more detailed look at the UWP, read the [Guide to Universal Windows Platform apps](universal-application-platform-guide.md). Then, check out [Get set up](get-set-up.md) to download the tools you need to start creating apps.
+UWP アプリは、C#、Visual Basic と XAML、JavaScript と HTML、C++ と DirectX/Extensible Application Markup Language (XAML) など、使い慣れたプログラミング言語で作成できます。 ある言語で作ったコンポーネントを、別の言語で作ったアプリで使うこともできます。
 
-## Related topics
+UWP アプリは、オペレーティング システムに組み込まれているネイティブな API である Windows ランタイムを使います。 この API は C++ で実装され、C#、Visual Basic、C++、JavaScript の各言語で自然な形でサポートされます。
+
+Microsoft Visual Studio 2015 には、各言語の UWP アプリ用テンプレートが用意されており、いずれのデバイス向けのアプリも 1 つのプロジェクトから作成できます。 作業が終わったら、Visual Studio 内でアプリ パッケージを生成し、Windows ストアに提出できます。これで、すべての Windows 10 デバイスのユーザーがそのアプリを利用できるようになります。
+
+## Windows での UWP アプリの実現
 
 
-* [Guide to Universal Windows Platform apps](universal-application-platform-guide.md)
-* [Get set up](get-set-up.md)
+Windows では、アプリが、関連するリアルタイム情報をユーザーに表示し、ユーザーが何度も戻ってくるようにすることができます。 最新のアプリの経済活動において、アプリは、ユーザーの生活の中で常に最初に思い出されるように魅力的なものにしておく必要があります。 Windows では、ユーザーが繰り返しアプリを使うように、次のような多くのリソースを提供しています。
+
+-   ライブ タイルとロック画面は、コンテキストに関連したタイムリーな情報をひとめでわかるように表示します。
+-   プッシュ通知は、ユーザーが必要なときにリアルタイムの最新の通知に注目できるようにします。
+
+-   アクション センターでは、ユーザーの操作を必要とする通知やコンテンツを整理して表示できます。
+
+-   バックグラウンドの実行とトリガーにより、ユーザーが必要とするときだけアプリが有効になります。
+
+-   アプリで音声と Bluetooth LE デバイスを使うと、ユーザーはそれらのデバイスを中心に広がる世界とインタラクトできるようになります。
+
+最終的に、ローミング データと Windows 資格情報保管ボックスを使うと、ユーザーがアプリを実行するすべての Windows 画面で一貫したローミング エクスペリエンスを実現できます。 ローミング データを使うと、独自の同期インフラストラクチャを構築する必要なく、ユーザーの基本設定とその他の設定をクラウドに簡単に保存できます。 資格情報保管ボックスには、ユーザーの資格情報を保存できます。このボックスにおける最優先事項はセキュリティと信頼性です。
+
+##  好きな方法でアプリから収益を得る
+
+
+Windows では、好きな方法で (電話、タブレット、PC、その他のデバイス) アプリから収益を得る方法を選ぶことができます。 ここでは、アプリとアプリが提供するサービスで収益を得るさまざまな方法について説明します。 必要なのは、ニーズに合った最適な方法を選ぶことだけです。
+
+-   有料のダウンロードは最も簡単な方法です。 必要な作業は価格の指定だけです。
+-   試用版はユーザーに購入前にアプリを試してもらうための効果的な方法であり、従来の試用オプションよりも目につきやすく、コンバージョンも簡単です。
+-   アプリで収益を得るということに関して最も柔軟性が高いのは、アプリ内購入です。
+
+## 作業の開始
+
+
+UWP について詳しくは、[ユニバーサル Windows プラットフォーム アプリのガイド](universal-application-platform-guide.md)をご覧ください。 その後、「[準備](get-set-up.md)」を確認のうえ、アプリの作成を始めるために必要なツールをダウンロードしてください。
+
+## 関連トピック
+
+
+* [ユニバーサル Windows プラットフォーム アプリのガイド](universal-application-platform-guide.md)
+* [準備](get-set-up.md)
 
 
 <!--HONumber=Mar16_HO1-->

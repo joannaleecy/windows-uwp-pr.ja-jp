@@ -1,28 +1,28 @@
 ---
 ms.assetid: E322DFFE-8EEC-499D-87BC-EDA5CFC27551
-description: Each Windows Store transaction that results in a successful product purchase can optionally return a transaction receipt.
-title: Use receipts to verify product purchases
+description: 製品購入が成功した各 Windows ストアのトランザクションでは、必要に応じてトランザクションの通知を返すことができます。
+title: 通知を使った製品購入の確認
 ---
 
-# Use receipts to verify product purchases
+# 通知を使った製品購入の確認
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-**Important APIs**
+**重要な API**
 
 -   [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765)
 -   [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766)
 
-Each Windows Store transaction that results in a successful product purchase can optionally return a transaction receipt. This receipts provides information about the listed product and monetary cost to the customer.
+製品購入が成功した各 Windows ストアのトランザクションでは、必要に応じてトランザクションの通知を返すことができます。 この通知は、ユーザーに対する製品と金銭的コストの一覧を掲載します。
 
-Having access to this information supports scenarios where your app needs to verify that a user purchased your app, or has made in-app product purchases from the Windows Store. For example, imagine a game that offers downloaded content. If the user who purchased the game content wants to play it on a different device, you need to verify that the user already owns the content. Here's how.
+この情報は、ユーザーがアプリを購入したことや、Windows ストアからアプリ内製品の購入が行われたことをアプリで確認する必要がある場合などに役立ちます。 たとえば、ダウンロードしたコンテンツを提供するゲームを想像してください。 ゲーム コンテンツを購入したユーザーが別のデバイスでゲームをする場合、そのユーザーが既にコンテンツを所有していることを確認する必要があります。 以下にその方法を示します。
 
-## Requesting a receipt
+## 通知の要求
 
 
-The **Windows.ApplicationModel.Store** namespace supports two ways of getting a receipt: by using the [**CurrentApp.RequestProductPurchaseAsync | requestProductPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/dn263381) or [**CurrentApp.RequestAppPurchaseAsync | requestAppPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/hh967813) method and using the *includeReceipt* parameter, or by calling the [**CurrentApp.GetAppReceiptAsync | getAppReceiptAsync**](https://msdn.microsoft.com/library/windows/apps/hh967811) method. An app receipt looks something like this.
+**Windows.ApplicationModel.Store** 名前空間は、通知を受け取る 2 つの方法として、[**CurrentApp.RequestProductPurchaseAsync | requestProductPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/dn263381) または [**CurrentApp.RequestAppPurchaseAsync | requestAppPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/hh967813) メソッドを利用し *includeReceipt* パラメーターを使う方法と、[**CurrentApp.GetAppReceiptAsync | getAppReceiptAsync**](https://msdn.microsoft.com/library/windows/apps/hh967811) メソッドを呼び出す方法をサポートしています。 アプリの通知は次のようになります。
 
 ```XML
 <Receipt Version="1.0" ReceiptDate="2012-08-30T23:10:05Z" CertificateId="b809e47cd0110a4db043b3f73e83acd917fe1336" ReceiptDeviceId="4e362949-acc3-fe3a-e71b-89893eb4f528">
@@ -45,7 +45,7 @@ The **Windows.ApplicationModel.Store** namespace supports two ways of getting a 
 </Receipt>
 ```
 
-A product receipt looks like this.
+製品の通知は次のようになります。
 
 ```XML
 <Receipt Version="1.0" ReceiptDate="2012-08-30T23:08:52Z" CertificateId="b809e47cd0110a4db043b3f73e83acd917fe1336" ReceiptDeviceId="4e362949-acc3-fe3a-e71b-89893eb4f528">
@@ -67,12 +67,12 @@ A product receipt looks like this.
 </Receipt>
 ```
 
-You can use either of these receipt examples to test your validation code.
+これらの通知の例のいずれかを使って検証コードをテストできます。
 
-## Validating a receipt
+## 通知の検証
 
 
-After you get a receipt, you need your back-end system (a web service or something similar) to validate it. Here's a .NET Framework example of that validation process.
+通知を受け取ったら、バックエンド システム (Web サービスのようなもの) でその通知を検証することが必要です。 次に、検証プロセスの .NET Framework サンプルを示します。
 
 ```CSharp
 using System;

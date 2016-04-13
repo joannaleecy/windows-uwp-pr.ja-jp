@@ -50,7 +50,7 @@ For example: Microsoft.Cpp.Build.dll
 **拡張 SDK を作成するには**
 
 1.  Visual Studio SDK がインストールされていることを確認します。 Visual Studio SDK は、[Visual Studio ダウンロード](https://www.visualstudio.com/downloads/download-visual-studio-vs) ページからダウンロードできます。
-2.  VSIX プロジェクト テンプレートを使用して、新しいプロジェクトを作成します。 [機能拡張] カテゴリの [Visual C\#] または [Visual Basic] の下にテンプレートがあります。 このテンプレートは、Visual Studio SDK の一部としてインストールされます。 ([C\# または Visual Basic を使用して SDK を作成する方法のチュートリアル](https://msdn.microsoft.com/library/jj127119.aspx)または [C++ を使用して SDK を作成する方法のチュートリアル](https://msdn.microsoft.com/library/jj127117.aspx)で、このテンプレートを非常に単純なシナリオで使用する方法を紹介しています。 )
+2.  VSIX プロジェクト テンプレートを使用して、新しいプロジェクトを作成します。 [機能拡張] カテゴリの [Visual C#] または [Visual Basic] の下にテンプレートがあります。 このテンプレートは、Visual Studio SDK の一部としてインストールされます。 ([C# または Visual Basic を使用して SDK を作成する方法のチュートリアル](https://msdn.microsoft.com/library/jj127119.aspx) または [C++ を使用して SDK を作成する方法のチュートリアル](https://msdn.microsoft.com/library/jj127117.aspx)では、このテンプレートをごく単純なシナリオで使う方法を紹介しています。 )
 3.  SDK のフォルダー構造を決定します。 フォルダーの構造は、VSIX プロジェクトのルート レベルの、**References**、**Redist**、および **DesignTime** フォルダーで始まります。
 
     -   **References** は、ユーザーがプログラミングできるバイナリ ファイルの場所です。 拡張 SDK は、ユーザーの Visual Studio プロジェクトで、これらのファイルへの参照を作成します。

@@ -1,29 +1,30 @@
 ---
-title: Handle app resume
-description: Learn how to refresh displayed content when the system resumes your app.
+title: アプリの再開の処理
+description: システムがアプリを再開するときに表示されるコンテンツを更新する方法について説明します。
 ms.assetid: DACCC556-B814-4600-A10A-90B82664EA15
 ---
 
-# Handle app resume
+# アプリの再開の処理
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-**Important APIs**
+**重要な API**
 
 -   [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339)
 
-Learn how to refresh displayed content when the system resumes your app. The example in this topic registers an event handler for the [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) event.
+システムがアプリを再開するときに表示されるコンテンツを更新する方法について説明します。 このトピックの例では、[**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) イベントのイベント ハンドラーを登録します。
 
-**Roadmap:** How does this topic relate to others? See:
+**ロードマップ:** このトピックと他のトピックとの関連については、 以下をご覧ください。
 
--   [Roadmap for Windows Runtime apps using C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/br229583)
--   [Roadmap for Windows Runtime apps using C++](https://msdn.microsoft.com/library/windows/apps/hh700360)
+-   [C# または Visual Basic を使った Windows ランタイム アプリのためのロードマップ](https://msdn.microsoft.com/library/windows/apps/br229583)
+-   [C++ を使った Windows ランタイム アプリのためのロードマップ](https://msdn.microsoft.com/library/windows/apps/hh700360)
 
-## Register the resuming event handler
+## Resuming イベント ハンドラーに登録する
 
-Register to handle the [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) event, which indicates that the user switched away from your app and then back to it.
+[
+            **Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) イベントを処理するために登録します。このイベントは、ユーザーがアプリを切り替えてから、アプリに戻ったことを示します。
 
 > [!div class="tabbedCodeSnippets"]
 ```cs
@@ -55,9 +56,9 @@ MainPage::MainPage()
 }
 ```
 
-## Refresh displayed content after suspension
+## 一時停止の後で表示されるコンテンツを更新する
 
-When your app handles the [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) event, it has the opportunity to refresh its displayed content.
+アプリでは、[**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) イベントを処理する時点で、表示されているコンテンツを更新できます。
 
 > [!div class="tabbedCodeSnippets"]
 ```cs
@@ -87,25 +88,26 @@ void MainPage::App_Resuming(Object^ sender, Object^ e)
 }
 ```
 
-> **Note**  Because the [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) event is not raised from the UI thread, a dispatcher must be used to get to the UI thread and inject an update to the UI, if that's something you want to do in your handler.
+> **注**  [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) イベントは UI スレッドからは生成されないため、ハンドラーでこのような処理が必要な場合は、ディスパッチャーを使って UI スレッドにアクセスし、UI に更新を流し込む必要があります。
 
-## Remarks
+## 注釈
 
 
-The system suspends your app whenever the user switches to another app or to the desktop. The system resumes your app whenever the user switches back to it. When the system resumes your app, the content of your variables and data structures is the same as it was before the system suspended the app. The system restores the app exactly where it left off, so that it appears to the user as if it's been running in the background. However, the app may have been suspended for a significant amount of time, so it should refresh any displayed content that might have changed while the app was suspended, such as news feeds or the user's location.
+ユーザーが別のアプリまたはデスクトップに切り替えると、システムはアプリを中断します。 ユーザーが元のアプリに戻すと、システムはアプリを再開します。 システムがアプリを再開した時点で、変数とデータ構造の内容は、システムがアプリを一時停止する前の状態と同じです。 システムはアプリを厳密に一時停止前の状態に復元するので、ユーザーからはアプリがバックグラウンドで実行していたように見えます。 しかし、アプリは長時間一時停止している場合があるので、ニュース フィードやユーザーの位置情報など、アプリが一時停止している間に変化した可能性のある表示コンテンツを更新する必要があります。
 
-If your app doesn't have any displayed content to refresh, there's no need for it to handle the [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) event.
+アプリに更新する表示コンテンツがない場合、アプリで [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) イベントを処理する必要はありません。
 
-**A note about debugging using Visual Studio:  ** When your app is attached to the Visual Studio debugger, you can send it a **Resume** event. Make sure the **Debug Location toolbar** is being shown, and click the drop-down next to the **Suspend** icon. Then choose **Resume**.
+**Visual Studio によるデバッグに関する注意事項: ** アプリが Visual Studio デバッガーにアタッチされている場合、そのアプリに **Resume** イベントを送信できます。 **[デバッグの場所]** ツール バーが表示されていることを確認し、**[中断]** アイコンの横のドロップダウンをクリックします。 次に、**[再開]** をクリックします。
 
-> **Note**  For Windows Phone Store apps, the [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) event is always followed by [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335), even when your app is currently suspended and the user re-launches your app from a primary tile or app list. Apps can skip initialization if there is already content set on the current window. You can check the [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) property to determine if the app was launched from a primary or a secondary tile and, based on that information, decide whether you should present a fresh or resume app experience.
+> **注**  Windows Phone ストア アプリでは、アプリが現在一時停止中で、ユーザーがプライマリ タイルまたはアプリの一覧からアプリを再起動した場合でも、[**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) イベントの後に、[**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) イベントが常に発生します。 現在のウィンドウにコンテンツ セットが既にある場合、アプリは初期化をスキップすることがあります。 [
+            **LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) プロパティをチェックすると、アプリがプライマリ タイルとセカンダリ タイルのどちらから起動されたかを調べ、その情報に基づいて新しいアプリ エクスペリエンスを表示するか、アプリ エクスペリエンスを再開するかを判断できます。
 
-## Related topics
+## 関連トピック
 
-* [Handle app activation](activate-an-app.md)
-* [Handle app suspend](suspend-an-app.md)
-* [Guidelines for app suspend and resume](https://msdn.microsoft.com/library/windows/apps/hh465088)
-* [App lifecycle](app-lifecycle.md)
+* [アプリのアクティブ化の処理](activate-an-app.md)
+* [アプリの中断の処理](suspend-an-app.md)
+* [アプリの中断と再開のガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465088)
+* [アプリのライフサイクル](app-lifecycle.md)
 
 
 

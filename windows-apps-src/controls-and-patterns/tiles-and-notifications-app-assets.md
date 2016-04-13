@@ -1,42 +1,42 @@
 ---
-Description: App icon assets, which appear in a variety of forms throughout the Windows 10 operating system, are the calling cards for your Universal Windows Platform (UWP) app.
-title: Tile and icon assets
+Description: Windows 10 オペレーティング システム全体でさまざまな形式で表示される、アプリ アイコン アセットは、ユニバーサル Windows プラットフォーム (UWP) アプリの名刺です。
+title: タイルとアイコン アセット
 ms.assetid: D6CE21E5-2CFA-404F-8679-36AA522206C7
-label: Tile and icon assets
+label: タイルとアイコン アセット
 template: detail.hbs
 ---
 
-# Guidelines for tile and icon assets
+# タイルとアイコン アセットのガイドライン
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-App icon assets, which appear in a variety of forms throughout the Windows 10 operating system, are the calling cards for your Universal Windows Platform (UWP) app. These guidelines detail where app icon assets appear in the system, and provide in-depth design tips on how to create the most polished icons.
+Windows 10 オペレーティング システム全体でさまざまな形式で表示される、アプリ アイコン アセットは、ユニバーサル Windows プラットフォーム (UWP) アプリの名刺です。 このガイドラインでは、システム内でアプリ アイコン アセットが表示される場所の詳細について説明し、最も洗練されたアイコンを作成する方法に関して詳細なデザインのヒントを提供します。
 
-![windows 10 start and tiles](images/assetguidance01.jpg)
+![Windows 10 のスタート画面とタイル](images/assetguidance01.jpg)
 
-## <span id="Adaptive_scaling"></span><span id="adaptive_scaling"></span><span id="ADAPTIVE_SCALING"></span>Adaptive scaling
-
-
-First, a brief overview on adaptive scaling to better understand how scaling works with assets. Windows 10 introduces an evolution of the existing scaling model. In addition to scaling vector content, there is a unified set of scale factors that provides a consistent size for UI elements across a variety of screen sizes and display resolutions. The scale factors are also compatible with the scale factors of other operating systems such as iOS and Android, which makes it easier to share assets between these platforms.
-
-The Store picks the assets to download based in part of the DPI of the device. Only the assets that best match the device are downloaded.
-
-## <span id="Tile_elements"></span><span id="tile_elements"></span><span id="TILE_ELEMENTS"></span>Tile elements
+## <span id="Adaptive_scaling"></span><span id="adaptive_scaling"></span><span id="ADAPTIVE_SCALING"></span>アダプティブ スケーリング
 
 
-The basic components of a Start tile consist of a back plate, an icon, a branding bar, margins, and an app title:
+まず、スケーリングとアセットがどのように連携しているかを深く理解するために、アダプティブ スケーリングの概要について簡単に説明します。 Windows 10 には、既存のスケーリング モデルの進化形が導入されています。 表示スケール ベクター コンテンツに加えて、さまざまな画面サイズと画面の解像度で UI 要素に一貫したサイズを提供するスケール ファクターの統合されたセットがあります。 スケール ファクターは、iOS や Android などの他のオペレーティング システムのスケール ファクターとも互換性があり、これにより、こうしたプラットフォーム間でのアセットの共有が簡単になります。
 
-![breakdown of tile elements](images/assetguidance02.png)
+ストアでは、デバイスの DPI の一部に基づいて、ダウンロードするアセットが選ばれます。 デバイスに最適なアセットのみがダウンロードされます。
 
-The branding bar at the bottom of a tile is where the app name, badging, and counter (if used) appear:
+## <span id="Tile_elements"></span><span id="tile_elements"></span><span id="TILE_ELEMENTS"></span>タイル要素
 
-![branding bar in tile](images/assetguidance03.png)
 
-The height of the branding bar is based on the scale factor of the device on which it appears:
+スタート画面のタイルの基本コンポーネントは、バック プレート、アイコン、ブランド バー、余白、およびアプリのタイトルで構成されます。
 
-| Scale factor | Pixels |
+![タイルの要素の詳細](images/assetguidance02.png)
+
+タイルの下部にあるブランド バーは、アプリ名、バッジ、カウンター (使用する場合) が表示される場所です。
+
+![タイルのブランド バー](images/assetguidance03.png)
+
+ブランドのバーの高さは、表示されているデバイスの倍率に基づいています。
+
+| 倍率 | ピクセル |
 |--------------|--------|
 | 100%         | 32     |
 | 125%         | 40     |
@@ -46,13 +46,13 @@ The height of the branding bar is based on the scale factor of the device on whi
 
  
 
-The system sets tile margins and cannot be modified. Most content appears inside the margins, as seen in this example:
+タイルの余白はシステムによって設定され、変更できません。 次の例で示すように、コンテンツのほとんどが余白の内側に表示されます。
 
-![tile margins](images/assetguidance04.png)
+![タイルの余白](images/assetguidance04.png)
 
-Margin width is based on the scale factor of the device on which it appears:
+余白の幅は、表示されているデバイスの倍率に基づいています。
 
-| Scale factor | Pixels |
+| 倍率 | ピクセル |
 |--------------|--------|
 | 100%         | 8      |
 | 125%         | 10     |
@@ -62,141 +62,141 @@ Margin width is based on the scale factor of the device on which it appears:
 
  
 
-## <span id="Tile_assets"></span><span id="tile_assets"></span><span id="TILE_ASSETS"></span>Tile assets
+## <span id="Tile_assets"></span><span id="tile_assets"></span><span id="TILE_ASSETS"></span>タイル アセット
 
 
-Each tile asset is the same size as the tile on which it is placed. You can brand your app's tiles with two different representations of an asset:
+各タイル アセットは、配置されるタイルと同じサイズです。 アセットの 2 つの異なる表示によって、アプリのタイルをブランド化できます。
 
-1. An icon or logo centered with padding. This lets the back plate color show through:
+1. パディングによって中央に配置されたアイコンまたはロゴ。 この場合、バック プレートの色が透けて見えます。
 
-![tile and back plate](images/assetguidance05.png)
+![タイルとバック プレート](images/assetguidance05.png)
 
-2. A full-bleed, branded tile without padding:
+2. パディングのない、フルブリードのブランド化されたタイル。
 
-![tile showing full bleed](images/assetguidance06.png)
+![フルブリードを表示するタイル](images/assetguidance06.png)
 
-For consistency across devices, each tile size (small, medium, wide, and large) has its own sizing relationship. In order to achieve a consistent icon placement across tiles, we recommend a few basic padding guidelines for the following tile sizes. The area where the two purple overlays intersect represents the ideal footprint for an icon. Although icons won't always fit inside the footprint, the visual volume of an icon should be roughly equivalent to the provided examples.
+デバイス間で一貫性を確保するために、各タイル サイズ (小、普通、ワイド、大) には独自のサイズの関係があります。 タイルの間で一貫したアイコンの配置を実現するために、以下のタイル サイズについて、パディングの基本的なガイドラインに従うことをお勧めします。 紫色の 2 つのオーバーレイが交差する領域が、アイコンの最適な面積を表しています。 アイコンがこの面積の内側に収まらない場合もありますが、アイコンの表示領域は用意されている例とほぼ同じである必要があります。
 
-Small tile sizing:
+小さいタイルのサイズ調整:
 
-![small tile sizing example](images/assetguidance07a.png)
+![小さいタイルのサイズ調整の例](images/assetguidance07a.png)
 
-Medium tile sizing:
+普通サイズのタイルのサイズ調整:
 
-![medium tile sizing example](images/assetguidance07b.png)
+![普通サイズのタイルのサイズ調整の例](images/assetguidance07b.png)
 
-Wide tile sizing:
+ワイド タイルのサイズ調整:
 
-![wide tile sizing example](images/assetguidance07c.png)
+![ワイド タイルのサイズ調整の例](images/assetguidance07c.png)
 
-Large tile sizing:
+大きいタイルのサイズ調整:
 
-![large tile sizing example](images/assetguidance07d.png)
+![大きいタイルのサイズ調整の例](images/assetguidance07d.png)
 
-In this example, the icon is too large for the tile:
+この例では、アイコンがタイルに対して大きすぎます。
 
-![icon too big for tile](images/assetguidance08a.png)
+![タイルに対して大きすぎるアイコン](images/assetguidance08a.png)
 
-In this example, the icon is too small for the tile:
+この例では、アイコンがタイルに対して小さすぎます。
 
-![icon too small for tile](images/assetguidance08b.png)
+![タイルに対して小さすぎるアイコン](images/assetguidance08b.png)
 
-The following padding ratios are optimal for horizontally or vertically oriented icons.
+水平方向または垂直方向のアイコンに最適なパディングの比率は次のとおりです。
 
-For small tiles, limit the icon width and height to 66% of the tile size:
+小さいタイルでは、アイコンの幅と高さをタイル サイズの 66% に制限します。
 
-![small tile sizing ratios](images/assetguidance09.png)
+![小さいタイルのサイズの比率](images/assetguidance09.png)
 
-For medium tiles, limit the icon width to 66% and height to 50% of tile size. This prevents overlapping of elements in the branding bar:
+普通サイズのタイルでは、アイコンの幅をタイル サイズの 66% に、高さをタイル サイズの 50% に制限します。 これによって、ブランド バー内の要素と重ならないようにします。
 
-![medium tile sizing ratios](images/assetguidance10.png)
+![普通サイズのタイルのサイズの比率](images/assetguidance10.png)
 
-For wide tiles, limit the icon width to 66% and height to 50% of tile size. This prevents overlapping of elements in the branding bar:
+ワイド タイルでは、アイコンの幅をタイル サイズの 66% に、高さをタイル サイズの 50% に制限します。 これによって、ブランド バー内の要素と重ならないようにします。
 
-![wide tile sizing ratios](images/assetguidance11.png)
+![ワイド タイルのサイズの比率](images/assetguidance11.png)
 
-For large tiles, limit the icon width and height to 50% of tile size:
+大きいタイルでは、アイコンの幅と高さをタイル サイズの 50% に制限します。
 
-![large tile size ratios](images/assetguidance12.png)
+![大きいタイルのサイズの比率](images/assetguidance12.png)
 
-Some icons are designed to be horizontally or vertically oriented, while others have more complex shapes that prevent them from fitting squarely within the target dimensions. Icons that appear to be centered can be weighted to one side. In this case, parts of an icon may hang outside the recommended footprint, provided it occupies the same visual weight as a squarely fitted icon:
+水平方向または垂直方向にデザインされたアイコンがある一方で、ターゲット サイズの正方形に収まらない、より複雑な形状のアイコンもあります。 中央に配置されるアイコンの一方の辺に重みを付けることができます。 この場合、アイコンの視覚的な重みが正方形に収まるアイコンと同じであれば、アイコンの一部が推奨される面積の外側にはみ出していてもかまいません。
 
-![three centered icons](images/assetguidance13.png)
+![中央に配置された 3 つのアイコン](images/assetguidance13.png)
 
-With full-bleed assets, take into account elements that interact within the margins and edges of the tiles. Maintain margins of at least 16% of the height or width of the tile. This percentage represents double the width of the margins at the smallest tile sizes:
+フルブリード アセットでは、要素が余白およびタイルの端の内側に接するように考慮します。 タイルの高さまたは幅の 16% 以上の余白を維持します。 この割合は、最小タイル サイズでの余白の幅の 2 倍を表しています。
 
-![full-bleed tile with margins](images/assetguidance14.png)
+![余白のあるフルブリード タイル](images/assetguidance14.png)
 
-In this example, margins are too tight:
+次の例では、余白が狭すぎます。
 
-![full bleed tile with margins that are too small](images/assetguidance15.png)
+![余白が小さすぎるフルブリード タイル](images/assetguidance15.png)
 
-## <span id="Tile_assets_in_list_views"></span><span id="tile_assets_in_list_views"></span><span id="TILE_ASSETS_IN_LIST_VIEWS"></span>Tile assets in list views
+## <span id="Tile_assets_in_list_views"></span><span id="tile_assets_in_list_views"></span><span id="TILE_ASSETS_IN_LIST_VIEWS"></span>リスト ビューでのタイル アセット
 
 
-Tiles can also appear in a list view. Sizing guidelines for tile assets that appear in list views are a bit different than tile assets previously outlined. This section details those sizing specifics.
+タイルはリスト ビューにも表示されます。 リスト ビューに表示されるタイル アセットのサイズ調整に関するガイドラインは、先ほど説明したタイル アセットとは少し異なります。 このセクションでは、これらのサイズ調整の詳細について説明します。
 
-![tile assets in a list view](images/assetguidance16.png)
+![リスト ビューでのタイル アセット](images/assetguidance16.png)
 
-Limit icon width and height to 75% of the tile size:
+アイコンの幅と高さをタイル サイズの 75% に制限します。
 
-![sizing of icon of list view tile](images/assetguidance17.png)
+![リスト ビュー タイルのアイコンのサイズ調整](images/assetguidance17.png)
 
-For vertical and horizontal icon formats, limit width and height to 75% of the tile size:
+垂直方向および水平方向のアイコンでは、幅と高さをタイル サイズの 75% に制限します。
 
-![sizing of icon of list view tile](images/assetguidance18.png)
+![リスト ビュー タイルのアイコンのサイズ調整](images/assetguidance18.png)
 
-For full bleed artwork of important brand elements, maintain margins of at least 12.5%:
+重要なブランド要素のフルブリード アートワークの場合、12.5% 以上の余白を維持します。
 
-![full-bleed artwork in list view tile](images/assetguidance19.png)
+![リスト ビュー タイルでのフルブリード アートワーク](images/assetguidance19.png)
 
-In this example, the icon is too big inside its tile:
+次の例では、アイコンがタイル内で大きすぎます。
 
-![icon that is too big for tile](images/assetguidance20a.png)
+![タイルに対して大きすぎるアイコン](images/assetguidance20a.png)
 
-In this example, the icon is too small inside its tile:
+次の例では、アイコンがタイル内で小さすぎます。
 
-![icon that is too small for tile](images/assetguidance20b.png)
+![タイルに対して小さすぎるアイコン](images/assetguidance20b.png)
 
-## <span id="Target-based_assets"></span><span id="target-based_assets"></span><span id="TARGET-BASED_ASSETS"></span>Target-based assets
+## <span id="Target-based_assets"></span><span id="target-based_assets"></span><span id="TARGET-BASED_ASSETS"></span>ターゲット ベースのアセット
 
 
-Target-based assets are for icons and tiles that appear on the Windows taskbar, task view, ALT+TAB, snap-assist, and the lower-right corner of Start tiles. You don't have to add padding to these assets; Windows adds padding if needed. These assets should account for a minimum footprint of 16 pixels. Here's an example of these assets as they appear in icons on the Windows taskbar:
+ターゲット ベースのアセットは、Windows タスク バー、タスク ビュー、スナップ アシスト、Alt + Tab キーを押したとき、およびスタート画面のタイルの右下に表示されるアイコンおよびタイルで使用されます。 これらのアセットにパディングを追加する必要はありません。パディングは、必要に応じて Windows によって追加されます。 これらのアセットは、16 ピクセルの最小面積を占めている必要があります。 Windows タスク バーのアイコンに表示される、このようなアセットの例を以下に示します。
 
-![assets in windows taskbar](images/assetguidance21.png)
+![Windows タスク バーのアセット](images/assetguidance21.png)
 
-Although these UI will use a target-based asset on top of a colored backplate by default, you may use a target-based unplated asset as well. Unplated assets should be created with the possibility that they may appear on various background colors:
+これらの UI では、既定で色付きバック プレート上でターゲット ベースのアセットが使用されますが、ターゲット ベースのプレートなしのアセットを使用することもできます。 プレートなしのアセットは、さまざまな背景色で表示される可能性があることを考慮して作成する必要があります。
 
-![unplated and plated assets](images/assetguidance22.png)
+![プレートなしのアセットとプレート付きのアセット](images/assetguidance22.png)
 
-These are size recommendations for target-based assets, at 100% scale:
+100% の倍率でのターゲット ベースのアセットのサイズに関する推奨事項を次に示します。
 
-![target-based asset sizing at 100% scale](images/assetguidance23.png)
+![100% の倍率でのターゲット ベースのアセットのサイズ調整](images/assetguidance23.png)
 
-**Iconic template app assets**
+**アイコン テンプレート アプリのアセット**
 
-The iconic template (also known as the "IconWithBadge" template) lets you display a small image in the center of the tile. Windows 10 supports the template on both phone and tablet/desktop. (Learn about creating iconic tiles in the [Special tile templates article](tiles-and-notifications-special-tile-templates-catalog.md).)
+アイコン テンプレート ("IconWithBadge" テンプレートとも呼ばれます) を使用すると、タイルの中央に小さい画像を表示できます。 Windows 10 では、電話とタブレット/デスクトップの両方でテンプレートがサポートされています (アイコン タイルの作成について詳しくは、[特別なタイル テンプレートに関する記事](tiles-and-notifications-special-tile-templates-catalog.md)をご覧ください)。
 
-Apps that use the iconic template, such as Messaging, Phone, and Store, have target-based assets that can feature a badge (with the live counter). As with other target-based assets, no padding is needed. Iconic assets aren't part of the app manifest, but are part of a live tile payload. Assets are scaled to fit and centered within a 3:2 ratio container:
+メッセージング、電話、ストアなど、アイコン テンプレートを使ったアプリでは、ターゲット ベースのアセットでバッジ (ライブ カウンターを含む) を表示できます。 他のターゲット ベースのアセットと同様にパディングは必要ありません。 アイコン アセットは、アプリ マニフェストの一部ではなく、ライブ タイルのペイロードの一部です。 アセットは 3:2 の比率のコンテナーに収まるように拡大縮小され、中央に配置されます。
 
-![sizing for assets with and without badge](images/assetguidance24.png)
+![バッジがあるアセットとバッジがないアセットのサイズ調整](images/assetguidance24.png)
 
-For square assets, automatic centering within the container occurs:
+正方形のアセットの場合、コンテナー内で自動的に中央に配置されます。
 
-![square asset sizing, with and without badge](images/assetguidance25.png)
+![正方形のアセットのサイズ調整、バッジがある場合とバッジがない場合](images/assetguidance25.png)
 
-For non-square assets, automatic horizontal/vertical centering and snapping to the width/height of the container occurs:
+正方形以外のアセットの場合、自動的に水平方向/垂直方向の中央に配置され、コンテナーの幅/高さに合わせてスナップされます。
 
-![non-square asset sizing, with and without badge](images/assetguidance26a.png)
+![正方形以外のアセットのサイズ調整、バッジがある場合とバッジがない場合](images/assetguidance26a.png)
 
-![non-square asset sizing, with and without badge](images/assetguidance26b.png)
+![正方形以外のアセットのサイズ調整、バッジがある場合とバッジがない場合](images/assetguidance26b.png)
 
-## <span id="Splash_screen_assets"></span><span id="splash_screen_assets"></span><span id="SPLASH_SCREEN_ASSETS"></span>Splash screen assets
+## <span id="Splash_screen_assets"></span><span id="splash_screen_assets"></span><span id="SPLASH_SCREEN_ASSETS"></span>スプラッシュ画面のアセット
 
 
-The splash screen image can be given either as a direct path to an image file or as a resource. By using a resource reference, you can supply images of different scales so that Windows can choose the best size for the device and screen resolution. You can also supply high contrast images for accessibility and localized images to match different UI languages.
+スプラッシュ画面の画像は、画像ファイルへの直接パスまたはリソースとして指定できます。 リソース参照を使用すると、Windows がデバイスと画面の解像度に最適なサイズを選択できるように、さまざまなスケールの画像を提供できます。 アクセシビリティのためのハイ コントラスト画像や、さまざまな UI 言語に対応するローカライズされた画像を提供することもできます。
 
-If you open "Package.appxmanifest" in a text editor, the [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br211467) element appears as a child of the [**VisualElements**](https://msdn.microsoft.com/library/windows/apps/br211471) element. The default splash screen markup in the manifest file looks like this in a text editor:
+テキスト エディターで "Package.appxmanifest" を開くと、[**VisualElements**](https://msdn.microsoft.com/library/windows/apps/br211471) 要素の子として [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br211467) 要素が表示されます。 マニフェスト ファイル内の既定のスプラッシュ画面のマークアップはテキスト エディターで次のようになります。
 
 ```XML
 <uap:SplashScreen Image="Assets\SplashScreen.png" /></code></pre></td>
@@ -205,175 +205,175 @@ If you open "Package.appxmanifest" in a text editor, the [**SplashScreen**](http
 </table>
 ```
 
-The splash screen asset is centered by whichever device it appears on:
+スプラッシュ画面のアセットは、表示されるすべてのデバイスで中央に配置されます。
 
-![sizing of splash screen asset](images/assetguidance27.png)
+![スプラッシュ画面のアセットのサイズ調整](images/assetguidance27.png)
 
-## <span id="High-contrast_assets"></span><span id="high-contrast_assets"></span><span id="HIGH-CONTRAST_ASSETS"></span>High-contrast assets
-
-
-High-contrast mode makes use of separate sets of assets for high-contrast white (white background with black text) and high-contrast black (black background with white text). If you don't provide high-contrast assets for your app, standard assets will be used.
-
-If your app's standard assets provide an acceptable viewing experience when rendered on a black-and-white background, then your app should look at least satisfactory in high-contrast mode. If your standard assets don't afford an acceptable viewing experience when rendered on a black-and-white background, consider specifically including high-contrast assets. These examples illustrate the two types of high-contrast assets:
-
-![high-contrast ratio asset examples](images/assetguidance28.png)
-
-If you decide to provide high-contrast assets, you need to include both sets—both white-on-black and black-on-white. When including these assets in your package, you could create a "contrast-black" folder for white-on-black assets, and a "contrast-white" folder for black-on-white assets.
-
-## <span id="Asset_size_tables"></span><span id="asset_size_tables"></span><span id="ASSET_SIZE_TABLES"></span>Asset size tables
+## <span id="High-contrast_assets"></span><span id="high-contrast_assets"></span><span id="HIGH-CONTRAST_ASSETS"></span>ハイ コントラストのアセット
 
 
-At a bare minimum, we strongly recommend that you provide assets for the 100, 200, and 400 scale factors. Providing assets for all scale factors will provide the optimal user experience.
+ハイ コントラスト モードでは、別のハイ コントラスト白 (白の背景に黒のテキスト) とハイ コントラスト黒 (黒の背景に白のテキスト) のアセットを使用します。 アプリでハイ コントラストのアセットが提供されない場合、標準アセットが使用されます。
 
-**Scale-based assets**
+アプリの標準アセットをモノクロの背景にレンダリングしたときに許容できる表示エクスペリエンスが提供される場合、アプリはハイ コントラスト モードでも最低限満足できる表示になります。 標準アセットをモノクロの背景にレンダリングしたときに、許容できる表示エクスペリエンスが得られない場合は、明確にハイ コントラストのアセットを含めることを検討します。 以下の例は、2 種類のハイ コントラストのアセットを示しています。
 
-| Category             | Element name      | At 100% scale | At 125% scale | At 150% scale | At 200% scale | At 400% scale |
+![ハイ コントラスト比のアセットの例](images/assetguidance28.png)
+
+ハイ コントラストのアセットを用意する場合は、黒地に白と白地に黒の両方のセットを含める必要があります。 これらのアセットをパッケージに含める場合は、黒地に白のアセット用に "contrast-black" フォルダーを、白地に黒のアセット用に "contrast-white" フォルダーを作成できます。
+
+## <span id="Asset_size_tables"></span><span id="asset_size_tables"></span><span id="ASSET_SIZE_TABLES"></span>アセット サイズの一覧表
+
+
+少なくとも、100、200、400 の倍率のアセットを提供することを強くお勧めします。 すべての倍率のアセットを提供することによって、最適なユーザー エクスペリエンスを提供できます。
+
+**倍率ベースのアセット**
+
+| カテゴリ             | 要素名      | 倍率 100% | 倍率 125% | 倍率 150% | 倍率 200% | 倍率 400% |
 |----------------------|-------------------|---------------|---------------|---------------|---------------|---------------|
-| Small                | Square71x71Logo   | 71x71         | 89x89         | 107x107       | 142x142       | 284x284       |
-| Medium               | Square150x150Logo | 150x150       | 188x188       | 225x225       | 300x300       | 600x600       |
-| Wide                 | Square310x150Logo | 310x150       | 388x188       | 465x225       | 620x300       | 1240x600      |
-| Large (desktop only) | Square310x310Logo | 310x310       | 388x388       | 465x465       | 620x620       | 1240x1240     |
-| App list (icon)      | Square44x44Logo   | 44x44         | 55x55         | 66x66         | 88x88         | 176x176       |
+| 小                | Square71x71Logo   | 71 x 71         | 89 x 89         | 107 x 107       | 142 x 142       | 284 x 284       |
+| 普通               | Square150x150Logo | 150 x 150       | 188 x 188       | 225 x 225       | 300 x 300       | 600 x 600       |
+| ワイド                 | Square310x150Logo | 310 x 150       | 388 x 188       | 465 x 225       | 620 x 300       | 1240 x 600      |
+| 大 (デスクトップのみ) | Square310x310Logo | 310 x 310       | 388 x 388       | 465 x 465       | 620 x 620       | 1240 x 1240     |
+| アプリの一覧 (アイコン)      | Square44x44Logo   | 44 x 44         | 55 x 55         | 66 x 66         | 88 x 88         | 176 x 176       |
 
  
 
-**File name examples for scale-based assets**
+**倍率ベースのアセットのファイル名の例**
 
-| Category             | Element name      | At 100% scale                  | At 125% scale                  | At 150% scale                  |
+| カテゴリ             | 要素名      | 倍率 100%                  | 倍率 125%                  | 倍率 150%                  |
 |----------------------|-------------------|--------------------------------|--------------------------------|--------------------------------|
-| Small                | Square71x71Logo   | AppNameSmallTile.scale-100.png | AppNameSmallTile.scale-125.png | AppNameSmallTile.scale-150.png |
-| Medium               | Square150x150Logo | AppNameMedTile.scale-100.png   | AppNameMedTile.scale-125.png   | AppNameMedTile.scale-150.png   |
-| Wide                 | Square310x150Logo | AppNameWideTile.scale-100.png  | AppNameWideTile.scale-125.png  | AppNameWideTile.scale-150.png  |
-| Large (desktop only) | Square310x310Logo | AppNameLargeTile.scale-100.png | AppNameLargeTile.scale-125.png | AppNameLargeTile.scale-150.png |
-| App list (icon)      | Square44x44Logo   | AppNameLargeTile.scale-100.png | AppNameLargeTile.scale-125.png | AppNameLargeTile.scale-150.png |
+| 小                | Square71x71Logo   | AppNameSmallTile.scale-100.png | AppNameSmallTile.scale-125.png | AppNameSmallTile.scale-150.png |
+| 普通               | Square150x150Logo | AppNameMedTile.scale-100.png   | AppNameMedTile.scale-125.png   | AppNameMedTile.scale-150.png   |
+| ワイド                 | Square310x150Logo | AppNameWideTile.scale-100.png  | AppNameWideTile.scale-125.png  | AppNameWideTile.scale-150.png  |
+| 大 (デスクトップのみ) | Square310x310Logo | AppNameLargeTile.scale-100.png | AppNameLargeTile.scale-125.png | AppNameLargeTile.scale-150.png |
+| アプリの一覧 (アイコン)      | Square44x44Logo   | AppNameLargeTile.scale-100.png | AppNameLargeTile.scale-125.png | AppNameLargeTile.scale-150.png |
 
  
 
-| Category             | Element name      | At 200% scale                  | At 400% scale                  |
+| カテゴリ             | 要素名      | 倍率 200%                  | 倍率 400%                  |
 |----------------------|-------------------|--------------------------------|--------------------------------|
-| Small                | Square71x71Logo   | AppNameSmallTile.scale-200.png | AppNameSmallTile.scale-400.png |
-| Medium               | Square150x150Logo | AppNameMedTile.scale-200.png   | AppNameMedTile.scale-400.png   |
-| Wide                 | Square310x150Logo | AppNameWideTile.scale-200.png  | AppNameWideTile.scale-400.png  |
-| Large (desktop only) | Square310x310Logo | AppNameLargeTile.scale-200.png | AppNameLargeTile.scale-400.png |
-| App list (icon)      | Square44x44Logo   | AppNameLargeTile.scale-200.png | AppNameLargeTile.scale-400.png |
+| 小                | Square71x71Logo   | AppNameSmallTile.scale-200.png | AppNameSmallTile.scale-400.png |
+| 普通               | Square150x150Logo | AppNameMedTile.scale-200.png   | AppNameMedTile.scale-400.png   |
+| ワイド                 | Square310x150Logo | AppNameWideTile.scale-200.png  | AppNameWideTile.scale-400.png  |
+| 大 (デスクトップのみ) | Square310x310Logo | AppNameLargeTile.scale-200.png | AppNameLargeTile.scale-400.png |
+| アプリの一覧 (アイコン)      | Square44x44Logo   | AppNameLargeTile.scale-200.png | AppNameLargeTile.scale-400.png |
 
  
 
-**Target-based assets**
+**ターゲット ベースのアセット**
 
-Target-based assets are used across multiple scale factors. The element name for target-based assets is **Square44x44Logo**. We strongly recommend submitting the following assets as a bare minimum:
+ターゲット ベースのアセットは、複数の倍率で使用されます。 ターゲット ベースのアセットの要素名は **Square44x44Logo** です。 最低でも以下のアセットを提出することを強くお勧めします。
 
-16x16, 24x24, 32x32, 48x48, 256x256
+16 x 16、24 x 24、32 x 32、48 x 48、256 x 256
 
-The following table lists all target-based asset sizes and corresponding file name examples:
+次の表は、すべてのターゲット ベースのアセットのサイズと対応するファイル名の例を示します。
 
-| Asset size | File name example                 |
+| アセットのサイズ | ファイル名の例                 |
 |------------|-----------------------------------|
-| 16x16\*    | AppNameAppList.targetsize-16.png  |
-| 24x24\*    | AppNameAppList.targetsize-24.png  |
-| 32x32\*    | AppNameAppList.targetsize-32.png  |
-| 48x48\*    | AppNameAppList.targetsize-48.png  |
-| 256x256\*  | AppNameAppList.targetsize-256.png |
-| 20x20      | AppNameAppList.targetsize-20.png  |
-| 30x30      | AppNameAppList.targetsize-30.png  |
-| 36x36      | AppNameAppList.targetsize-36.png  |
-| 40x40      | AppNameAppList.targetsize-40.png  |
-| 60x60      | AppNameAppList.targetsize-60.png  |
-| 64x64      | AppNameAppList.targetsize-64.png  |
-| 72x72      | AppNameAppList.targetsize-72.png  |
-| 80x80      | AppNameAppList.targetsize-80.png  |
-| 96x96      | AppNameAppList.targetsize-96.png  |
+| 16 x 16\*    | AppNameAppList.targetsize-16.png  |
+| 24 x 24\*    | AppNameAppList.targetsize-24.png  |
+| 32 x 32\*    | AppNameAppList.targetsize-32.png  |
+| 48 x 48\*    | AppNameAppList.targetsize-48.png  |
+| 256 x 256\*  | AppNameAppList.targetsize-256.png |
+| 20 x 20      | AppNameAppList.targetsize-20.png  |
+| 30 x 30      | AppNameAppList.targetsize-30.png  |
+| 36 x 36      | AppNameAppList.targetsize-36.png  |
+| 40 x 40      | AppNameAppList.targetsize-40.png  |
+| 60 x 60      | AppNameAppList.targetsize-60.png  |
+| 64 x 64      | AppNameAppList.targetsize-64.png  |
+| 72 x 72      | AppNameAppList.targetsize-72.png  |
+| 80 x 80      | AppNameAppList.targetsize-80.png  |
+| 96 x 96      | AppNameAppList.targetsize-96.png  |
 
  
 
-\* Submit these asset sizes as a baseline
+\* ベースラインとしてこれらのサイズのアセットを提出します
 
-## <span id="Asset_types"></span><span id="asset_types"></span><span id="ASSET_TYPES"></span>Asset types
+## <span id="Asset_types"></span><span id="asset_types"></span><span id="ASSET_TYPES"></span>アセットの種類
 
 
-Listed here are all asset types, their uses, and recommended file names.
+ここでは、すべてのアセットの種類、その用途、推奨されるファイル名の一覧を示します。
 
-**Tile assets**
+**タイル アセット**
 
--   Centered assets are generally used on the Start to showcase your app.
--   File name format: \*Tile.scale-\*.PNG
--   Impacted apps: Every UWP app
--   Uses:
-    -   Default Start tiles (desktop and mobile)
-    -   Action center (desktop and mobile)
-    -   Task switcher (mobile)
-    -   Share picker (mobile)
-    -   Picker (mobile)
-    -   Store
+-   中央に配置されるアセットは、通常、スタート画面にアプリを表示するために使用されます。
+-   ファイル名の形式: \*Tile.scale-\*.PNG
+-   影響を受けるアプリ: すべての UWP アプリ
+-   用途:
+    -   既定のスタート画面のタイル (デスクトップとモバイル)
+    -   アクション センター (デスクトップとモバイル)
+    -   タスク スイッチャー (モバイル)
+    -   共有ピッカー (モバイル)
+    -   ピッカー (モバイル)
+    -   ストア
 
-**Scalable list assets with plate**
+**プレート付きのスケーラブルな一覧のアセット**
 
--   These assets are used on surfaces that request scale factors. Assets either get plated by the system or come with their own background color if the app includes that.
--   File name format: \*AppList.scale-\*.PNG
--   Impacted apps: Every UWP app
--   Uses:
-    -   Start all apps list (desktop)
-    -   Start most-frequently used list (desktop)
-    -   Task manager (desktop)
-    -   Cortana search results
-    -   Start all apps list (mobile)
-    -   Settings
+-   これらのアセットは拡大縮小が必要なサーフェスで使われます。 アセットのバック プレートはシステムによって提供されるか、アプリに含まれている場合は独自の背景色のプレートが使用されます。
+-   ファイル名の形式: \*AppList.scale-\*.PNG
+-   影響を受けるアプリ: すべての UWP アプリ
+-   用途:
+    -   スタート画面のすべてのアプリの一覧 (デスクトップ)
+    -   スタート画面のよく使うアプリの一覧 (デスクトップ)
+    -   タスク マネージャー (デスクトップ)
+    -   Cortana の検索結果
+    -   スタート画面のすべてのアプリの一覧 (モバイル)
+    -   設定
 
-**Target-size list assets with plate**
+**プレート付きのターゲット サイズの一覧のアセット**
 
--   These are fixed asset sizes that don't scale with plateaus. Mostly used for legacy experiences. Assets are checked by the system.
--   File name format: \*AppList.targetsize-\*.PNG
--   Impacted apps: Every UWP app
--   Uses:
-    -   Start jump list (desktop)
-    -   Start lower corner of tile (desktop)
-    -   Shortcuts (desktop)
-    -   Control Panel (desktop)
+-   これらはプレート付きで、拡大縮小されない固定サイズのアセットです。 ほとんどの場合、従来のエクスペリエンスに使用されます。 アセットはシステムによって確認されます。
+-   ファイル名の形式: \*AppList.targetsize-\*.PNG
+-   影響を受けるアプリ: すべての UWP アプリ
+-   用途:
+    -   スタート画面のジャンプ リスト (デスクトップ)
+    -   スタート画面のタイルの下隅 (デスクトップ)
+    -   ショートカット (デスクトップ)
+    -   コントロール パネル (デスクトップ)
 
-**Target-size list assets without plate**
+**プレートなしのターゲット サイズの一覧のアセット**
 
--   These are assets that don't get plated or scaled by the system.
--   File name format: \*AppList.targetsize-\*\_altform-unplated.PNG
--   Impacted apps: Every UWP app
--   Uses:
-    -   Taskbar and taskbar thumbnail (desktop)
-    -   Taskbar jumplist
-    -   Task view
-    -   ALT+TAB
+-   これらは、システムによってプレートの追加や拡大縮小が行われないアセットです。
+-   ファイル名の形式: \*AppList.targetsize-\*\_altform-unplated.PNG
+-   影響を受けるアプリ: すべての UWP アプリ
+-   用途:
+    -   タスク バーとタスク バー サムネイル (デスクトップ)
+    -   タスク バーのジャンプ リスト
+    -   タスク ビュー
+    -   Alt + Tab キー
 
-**File extension assets**
+**ファイル拡張子アセット**
 
--   These are assets specific to file extensions. They appear next to Win32-style file association icons in File Explorer and must be theme-agnostic. Sizing is different on desktop and mobile platforms.
--   File name format: \*LogoExtensions.targetsize-\*.PNG
--   Impacted apps: Music, Video, Photos, Microsoft Edge, Microsoft Office
--   Uses:
-    -   File Explorer
+-   これらはファイル拡張子に固有のアセットです。 エクスプ ローラーで Win32 スタイルのファイルの関連付けアイコンの横に表示され、テーマに依存しません。 サイズ調整は、デスクトップ プラットフォームとモバイル プラットフォームで異なります。
+-   ファイル名の形式: \*LogoExtensions.targetsize-\*.PNG
+-   影響を受けるアプリ: ミュージック、ビデオ、フォト、Microsoft Edge、Microsoft Office
+-   用途:
+    -   エクスプローラー
     -   Cortana
-    -   Various UI surfaces (desktop)
+    -   さまざまな UI サーフェス (デスクトップ)
 
-**Splash screen**
+**スプラッシュ画面**
 
--   The asset that appears on your app's splash screen. Automatically scales on both desktop and mobile platforms.
--   File name format: \*SplashScreen.screen-100.PNG
--   Impacted apps: Every UWP app
--   Uses:
-    -   App's splash screen
+-   アプリのスプラッシュ画面に表示されるアセット。 デスクトップとモバイルの両方のプラットフォームで自動的に拡大縮小されます。
+-   ファイル名の形式: \*SplashScreen.screen-100.PNG
+-   影響を受けるアプリ: すべての UWP アプリ
+-   用途:
+    -   アプリのスプラッシュ画面
 
-**Iconic tile assets**
+**アイコン タイル アセット**
 
--   These are assets for apps that make use of the iconic template.
--   File name format: Not applicable
--   Impacted apps: Messaging, Phone, Store, more
--   Uses:
-    -   Iconic tile
+-   これらは、アイコン テンプレートを使用するアプリ用のアセットです。
+-   ファイル名の形式: 該当なし
+-   影響を受けるアプリ: メッセージング、電話、ストアなど
+-   用途:
+    -   アイコン タイル
 
-\[This article contains information that is specific to Universal Windows Platform (UWP) apps and Windows 10. For Windows 8.1 guidance, please download the [Windows 8.1 guidelines PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+\[この記事には、ユニバーサル Windows プラットフォーム (UWP) アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
 
-## <span id="related_topics"></span>Related topics
+## <span id="related_topics"></span>関連トピック
 
 
 
-* [Special tile templates](tiles-and-notifications-special-tile-templates-catalog.md)
+* [特別なタイル テンプレート](tiles-and-notifications-special-tile-templates-catalog.md)
  
 
  

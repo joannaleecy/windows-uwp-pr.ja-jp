@@ -1,51 +1,51 @@
 ---
-Description: Special tile templates are unique templates that are either animated, or just allow you to do things that aren't possible with adaptive tiles.
-title: Special tile templates
+Description: 特別なタイル テンプレートは、アニメーション化や、アダプティブ タイルでは不可能な機能を実行できる独特なテンプレートです。
+title: 特別なタイル テンプレート
 ms.assetid: 1322C9BA-D5B2-45E2-B813-865884A467FF
 label: TBD
 template: detail.hbs
 ---
 
-# Special tile templates
+# 特別なタイル テンプレート
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-Special tile templates are unique templates that are either animated, or just allow you to do things that aren't possible with adaptive tiles. Each special tile template was specifically built for Windows 10, except for the iconic tile template, a classic special template that has been updated for Windows 10. This article covers three special tile templates: Iconic, Photos, and People.
+特別なタイル テンプレートは、アニメーション化や、アダプティブ タイルでは不可能な機能を実行できる独特なテンプレートです。 特別なタイル テンプレートは、それぞれ Windows 10 用に特別に構築されたテンプレートです。ただし、アイコン タイル テンプレートは、特別に構築されたテンプレートではなく、従来の特別なテンプレートが Windows 10 向けに更新されたものです。 この記事では、3 つの特別なタイル テンプレートである、アイコン タイル テンプレート、フォト タイル テンプレート、および People タイル テンプレートについて取り上げています。
 
-## <span id="Iconic_tile_template"></span><span id="iconic_tile_template"></span><span id="ICONIC_TILE_TEMPLATE"></span>Iconic tile template
+## <span id="Iconic_tile_template"></span><span id="iconic_tile_template"></span><span id="ICONIC_TILE_TEMPLATE"></span>アイコン タイル テンプレート
 
 
-The iconic template (also known as the "IconWithBadge" template) lets you display a small image in the center of the tile. Windows 10 supports the template on both phone and tablet/desktop.
+アイコン テンプレート ("IconWithBadge" テンプレートとも呼ばれます) を使うと、タイルの中央に小さい画像を表示できます。 Windows 10 では、電話とタブレット/デスクトップの両方でテンプレートがサポートされています
 
-![small and medium mail tiles](images/iconic-template-mail-2sizes.png)
+![小サイズと普通サイズのメール タイル](images/iconic-template-mail-2sizes.png)
 
-### <span id="How_to_create_an_iconic_tile"></span><span id="how_to_create_an_iconic_tile"></span><span id="HOW_TO_CREATE_AN_ICONIC_TILE"></span>How to create an iconic tile
+### <span id="How_to_create_an_iconic_tile"></span><span id="how_to_create_an_iconic_tile"></span><span id="HOW_TO_CREATE_AN_ICONIC_TILE"></span>アイコン タイルを作成する方法
 
-The following steps cover everything you need to know to create an iconic tile for Windows 10. At a high level, you need your iconic image asset, then you send a notification to the tile using the iconic template, and finally you send a badge notification that provides the number to be displayed on the tile.
+次の手順では、Windows 10 のアイコン タイルを作成するために必要なすべての情報について説明します。 大まかに言うと、まずアイコンの画像アセットを用意する必要があります。次に、アイコン テンプレートを使って通知をタイルに送信し、最後に、タイルに表示される番号を指定するバッジ通知を送信します。
 
-![developer flow of iconic tile](images/iconic-template-dev-flow.png)
+![アイコン タイルの開発フロー](images/iconic-template-dev-flow.png)
 
-**Step 1: Create your image assets in PNG format**
+**手順 1: 画像アセットを PNG 形式で作成する**
 
-Create the icon assets for your tile and place those in your project resources with your other assets. At a bare minimum, create a 200x200 pixel icon, which works for both small and medium tiles on phone and desktop. To provide the best user experience, create an icon for each size. See sizing details in the below image.
+タイルのアイコン アセットを作成し、他のアセットと共にプロジェクト リソースに配置します。 200 x 200 ピクセル以上のアイコンを作成してください。これは最小サイズで、電話やデスクトップ上の小サイズと普通サイズのタイルのどちらにも使うことができます。 最適なユーザー エクスペリエンスを実現するには、各サイズのアイコンを作成します。 サイズについて詳しくは、次の画像をご覧ください。
 
-Save icon assets in PNG format and with transparency. On Windows Phone, every non-transparent pixel is displayed as white (RGB 255, 255, 255). For consistency and simplicity, use white for desktop icons as well.
+透明度を設定し、PNG 形式でアイコン アセットを保存します。 Windows Phone では、透明でないピクセルは白色 (RGB 255, 255, 255) で表示されます。 一貫性と簡素化を保つには、デスクトップのアイコンにも白色を使ってください。
 
-Windows 10 on tablet, laptop, and desktop only supports square icon assets. Phone supports both square assets and assets that are taller than they are wide, up to a 2:3 width:height ratio, which is useful for images such as a phone icon.
+タブレット、ノート PC、デスクトップの Windows 10 では、正方形のアイコン アセットのみがサポートされます。 Windows Phone では、正方形のアセットと、電話アイコンなどの画像に便利な、高さが幅よりも大きいアセット (幅と高さの比率は最大 2:3) の両方がサポートされます。
 
-![icon sizing on small and medium tiles, on phone and desktop](images/iconic-template-sizing-info.png)
+![小サイズと普通サイズのタイルでのアイコンのサイズ (電話とデスクトップ)](images/iconic-template-sizing-info.png)
 
-**Step 2: Create your base tile**
+**手順 2: ベース タイルを作成する**
 
-You can use the iconic template on both primary and secondary tiles. If you're using it on a secondary tile, you'll first have to create the secondary tile or use an already-pinned secondary tile. Primary tiles are implicitly pinned and can always be sent notifications.
+アイコン テンプレートは、プライマリ タイルとセカンダリ タイルのどちらでも使うことができます。 セカンダリ タイルで使う場合は、最初にセカンダリ タイルを作成するか、既にピン留めされているセカンダリ タイルを使う必要があります。 プライマリ タイルは暗黙的にピン留めされるので、このタイルに対しては常に通知を送信することができます。
 
-**Step 3: Send a notification to your tile**
+**手順 3: 通知をタイルに送信する**
 
-Although this step can vary based on whether the notification is sent locally or via server push, the XML payload that you send remains the same. To send a local tile notification, create a [**TileUpdater**](https://msdn.microsoft.com/library/windows/apps/br208628) for your tile (either primary or secondary tile), then send a notification to the tile that uses the iconic tile template as seen below. Ideally, you should also include bindings for wide and large tile sizes using [adaptive tile templates](tiles-and-notifications-adaptive-tiles-schema.md).
+この手順は、通知をローカルで送信するのか、サーバー プッシュを使って送信するのかによって異なります。ただし、送信する XML ペイロードは変わりません。 ローカル タイル通知を送信するには、タイル (プライマリ タイルまたはセカンダリ タイル) に対して [**TileUpdater**](https://msdn.microsoft.com/library/windows/apps/br208628) を作成してから、次に示すように、アイコン タイル テンプレートを使うタイルに通知を送信します。 また、[アダプティブ タイル テンプレート](tiles-and-notifications-adaptive-tiles-schema.md)を使って、ワイド タイルや大きいタイルのバインドを含めることをお勧めします。
 
-Here's sample code for the XML payload:
+XML ペイロードのサンプル コードを次に示します。
 
 ```XML
 <tile>
@@ -63,13 +63,13 @@ Here's sample code for the XML payload:
 </tile>
 ```
 
-This iconic tile template XML payload uses an image element that points to the image that you created in Step 1. Now your tile is ready to display the badge next to your icon; all that's left is sending badge notifications.
+このアイコン タイル テンプレートの XML ペイロードでは、手順 1. で作成した画像を示す image 要素を使います。 これで、タイルのアイコンの横にバッジを表示する準備ができました。あとは、バッジ通知を送信するだけです。
 
-**Step 4: Send a badge notification to your tile**
+**手順 4: バッジ通知をタイルに送信する**
 
-As with step 3, this step can vary based on whether the notification is sent locally or via server push, yet the XML payload that you send remains the same. To send a local badge notification, create a [**BadgeUpdater**](https://msdn.microsoft.com/library/windows/apps/br208537) for your tile (either primary or secondary tile), then send a badge notification with your desired value (or clear the badge).
+手順 3. と同様に、この手順は、通知をローカルで送信するのか、サーバー プッシュを使って送信するのかによって異なります。ただし、送信する XML ペイロードは変わりません。 ローカル バッジ通知を送信するには、タイル (プライマリ タイルまたはセカンダリ タイル) に対して [**BadgeUpdater**](https://msdn.microsoft.com/library/windows/apps/br208537) を作成してから、目的の値を使ってバッジ通知を送信します (またはバッジをクリアします)。
 
-Here's sample code for the XML payload:
+XML ペイロードのサンプル コードを次に示します。
 
 ```XML
 <badge value="2"/></code></pre></td>
@@ -78,28 +78,28 @@ Here's sample code for the XML payload:
 </table>
 ```
 
-The tile's badge will update accordingly.
+タイルのバッジは状況に応じて適切に更新されます。
 
-**Step 5: Putting it all together**
+**手順 5: 組み立てる**
 
-The following image illustrates how the various APIs and payloads are associated with each aspect of the iconic tile template. A [tile notification](https://msdn.microsoft.com/library/windows/apps/hh779724) (which contains those &lt;binding&gt; elements) is used to specify the iconic template and the image asset; a [badge notification](https://msdn.microsoft.com/library/windows/apps/hh779719) specifies the numerical value; tile properties control your tile's display name, color, and more.
+次の図は、さまざまな API やペイロードがアイコン タイル テンプレートの各要素とどのように関連しているかを示しています。 [タイル通知](https://msdn.microsoft.com/library/windows/apps/hh779724) (&lt;binding&gt; 要素が含まれています) を使って、アイコン テンプレートと画像アセットを指定します。[バッジ通知](https://msdn.microsoft.com/library/windows/apps/hh779719)では、数値を指定し、タイル プロパティによってタイルの表示名や色などを制御します。
 
-![apis and payloads associated with the iconic tile template](images/iconic-template-properties-info.png)
+![アイコン タイル テンプレートに関連付けられている API とペイロード](images/iconic-template-properties-info.png)
 
-## <span id="Photos_tile_template"></span><span id="photos_tile_template"></span><span id="PHOTOS_TILE_TEMPLATE"></span>Photos tile template
+## <span id="Photos_tile_template"></span><span id="photos_tile_template"></span><span id="PHOTOS_TILE_TEMPLATE"></span>フォト タイル テンプレート
 
 
-The photos tile template lets you display a slideshow of photos on your live tile. The template is supported on all tile sizes, including small, and behaves the same on each tile size. The below example shows five frames of a medium tile that uses the photos template. The template has a zoom and cross-fade animation that cycles through selected photos and loops indefinitely.
+フォト タイル テンプレートを使うと、ライブ タイルに写真のスライドショーを表示できます。 このテンプレートは、すべてのタイルのサイズ (小サイズのタイルを含む) でサポートされており、各サイズのタイルで同じ動作をします。 次の例は、フォト テンプレートを使った普通サイズのタイルが持つ 5 つのフレームを示しています。 テンプレートには、ズームやクロスフェード アニメーションが用意されており、選んだ写真に対して繰り返し適用し、無限にループすることができます。
 
-![image slideshow using photos tile template](images/photo-tile-template-image01.jpg)
+![フォト タイル テンプレートを使った画像のスライド ショー](images/photo-tile-template-image01.jpg)
 
-### <span id="How_to_use_the_photos_template"></span><span id="how_to_use_the_photos_template"></span><span id="HOW_TO_USE_THE_PHOTOS_TEMPLATE"></span>How to use the photos template
+### <span id="How_to_use_the_photos_template"></span><span id="how_to_use_the_photos_template"></span><span id="HOW_TO_USE_THE_PHOTOS_TEMPLATE"></span>フォト テンプレートを使う方法
 
-Using the photos template is easy if you've installed the [Windows 10 version of NotificationExtensions](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/08/20/introducing-notificationsextensions-for-windows-10.aspx). Although you can use raw XML, we highly recommend going with NotificationExtensions so that you don't have to worry about generating valid XML or XML-escaping content.
+[Windows 10 バージョンの NotificationExtensions](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/08/20/introducing-notificationsextensions-for-windows-10.aspx) がインストールされていれば、フォト テンプレートを簡単に使うことができます。 生の XML を使うこともできますが、NotificationExtensions を利用することを強くお勧めします。これにより、有効な XML や XML エスケープされたコンテンツを生成することを考慮する必要がなくなります。
 
-Windows Phone displays up to 9 photos in a slideshow; tablet, laptop, and desktop display up to 12.
+Windows Phone では、スライド ショーで最大 9 枚の写真を表示できます。タブレット、ノート PC、デスクトップでは、最大で 12 枚の写真を表示できます。
 
-For information about sending the tile notification, see the [Send notifications article](tiles-badges-notifications.md).
+タイル通知の送信について詳しくは、[通知の送信に関する記事](tiles-badges-notifications.md)をご覧ください。
 
 <span codelanguage="XML"></span>
 ```XML
@@ -177,36 +177,36 @@ TileContent content = new TileContent()
 };
 ```
 
-## <span id="People_tile_template"></span><span id="people_tile_template"></span><span id="PEOPLE_TILE_TEMPLATE"></span>People tile template
+## <span id="People_tile_template"></span><span id="people_tile_template"></span><span id="PEOPLE_TILE_TEMPLATE"></span>People タイル テンプレート
 
 
-The People app in Windows 10 uses a special tile template that displays a collection of images in circles that slide around vertically or horizontally on the tile. This tile template has been available since Windows 10 Build 10572, and anyone is welcome to use it in their app.
+Windows 10 の People アプリでは、円の中に画像のコレクションを表示する特別なタイル テンプレートを使います。これらの円は、タイル上で垂直方向または水平方向にスライドされます。 このタイル テンプレートは、Windows 10 ビルド 10572 以降で利用でき、すべてのユーザーがアプリで使うことができます。
 
-The People tile template works on tiles of these sizes:
+People タイル テンプレートは、次のサイズのタイルで動作します。
 
-**Medium tile** (TileMedium)
+**普通サイズのタイル** (TileMedium)
 
-![medium people tile](images/people-tile-medium.png)
-
- 
-
-**Wide tile** (TileWide)
-
-![wide people tile](images/people-tile-wide.png)
+![普通サイズの People タイル](images/people-tile-medium.png)
 
  
 
-**Large tile (desktop only)** (TileLarge)
+**ワイド タイル** (TileWide)
 
-![large people tile](images/people-tile-large.png)
+![ワイド People タイル](images/people-tile-wide.png)
 
  
 
-If you're using [NotificationExtensions](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/08/20/introducing-notificationsextensions-for-windows-10.aspx), all you have to do to make use of the People tile template is create a new *TileBindingContentPeople* object for your *TileBinding* content. The *TileBindingContentPeople* class has an Images property where you add your images.
+**大きいタイル (デスクトップのみ)** (TileLarge)
 
-If you're using raw XML, set the *hint-presentation* to "people" and add your images as children of the binding element.
+![大きい People タイル](images/people-tile-large.png)
 
-The following C# code sample assumes that you're using [NotificationExtensions](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/08/20/introducing-notificationsextensions-for-windows-10.aspx).
+ 
+
+[NotificationExtensions](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/08/20/introducing-notificationsextensions-for-windows-10.aspx) を使っている場合、People タイル テンプレートを利用するために必要な操作は、*TileBinding* コンテンツ用に新しい *TileBindingContentPeople* オブジェクトを作成することだけです。 *TileBindingContentPeople* クラスには、画像を追加するための Images プロパティがあります。
+
+生の XML を使っている場合は、*hint-presentation* を "people" に設定し、画像を binding 要素の子として追加します。
+
+次の C# コード サンプルは、[NotificationExtensions](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/08/20/introducing-notificationsextensions-for-windows-10.aspx) を使っていることを前提としています。
 
 ```CSharp
 TileContent content = new TileContent()
@@ -255,24 +255,24 @@ TileContent content = new TileContent()
 </tile>
 ```
 
-For the best user experience, we recommend that you provide the following number of photos for each tile size:
+最適なユーザー エクスペリエンスを実現するには、タイルの各サイズに対して、写真の数を次のように指定することをお勧めします。
 
--   Medium tile: 9 photos
--   Wide tile: 15 photos
--   Large tile: 20 photos
+-   普通サイズのタイル: 9 枚の写真
+-   ワイド タイル: 15 枚の写真
+-   大きいタイル: 20 枚の写真
 
-Having that number of photos allows for a few empty circles, which means that the tile won't be too visually busy. Feel free to tweak the number of photos to get the look that works best for you.
+このように写真の枚数を指定することで、空の円をいくつか使うことができます。これにより、タイルが表示中にビジー状態になりません。 写真の数を自由に調整して、最適な表示状態を確認してください。
 
-To send the notification, see [Choose a notification delivery method](tiles-and-notifications-choosing-a-notification-delivery-method.md).
+通知を送信するには、「[通知配信方法の選択](tiles-and-notifications-choosing-a-notification-delivery-method.md)」をご覧ください。
 
-## <span id="related_topics"></span>Related topics
+## <span id="related_topics"></span>関連トピック
 
 
-* [Full code sample on GitHub](https://github.com/WindowsNotifications/quickstart-people-tile-template)
-* [NotificationsExtensions on GitHub](https://github.com/WindowsNotifications/NotificationsExtensions/wiki)
-* [Tiles, badges, and notifications](tiles-badges-notifications.md)
-* [Create adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md)
-* [Adaptive tile templates: schema and documentation](tiles-and-notifications-adaptive-tiles-schema.md)
+* [Github での完全なコード サンプル](https://github.com/WindowsNotifications/quickstart-people-tile-template)
+* [GitHub の NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki)
+* [タイル、バッジ、通知](tiles-badges-notifications.md)
+* [アダプティブ タイルの作成](tiles-and-notifications-create-adaptive-tiles.md)
+* [アダプティブ タイル テンプレート: スキーマとドキュメント](tiles-and-notifications-adaptive-tiles-schema.md)
  
 
  

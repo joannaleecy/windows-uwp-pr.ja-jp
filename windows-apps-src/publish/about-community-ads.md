@@ -1,37 +1,37 @@
 ---
-Description: You can cross-promote your app with apps published by other developers. We call this feature community ads.
-title: About community ads
+Description: 自分のアプリと他の開発者が公開したアプリを相互に販売促進 (クロス プロモーション) することができます。 この機能をコミュニティ広告と呼びます。
+title: コミュニティ広告について
 ms.assetid: F55CE478-99AF-4B70-90D1-D16419562136
 ---
 
-# About community ads
+# コミュニティ広告について
 
-If your app uses an **AdMediatorControl** or **AdControl** to display banner ads, you can cross-promote your app with other developers with apps in the Windows Store for free. We call this feature *community ads*.  
+アプリで **AdMediatorControl** または **AdControl** を使用してバナー広告を表示する場合は、Windows ストア内の自分のアプリと他の開発者のアプリを無料で相互に販売促進 (クロス プロモーション) することができます。 この機能を*コミュニティ広告*と呼びます。  
 
-Here's how this program works:
+このプログラムの内容を次に示します。
 
-* After you [opt-in to community ads](#how-to-opt-in-to-community-ads) and [create a free community ad campaign](create-an-ad-campaign-for-your-app.md), your app will share promotional ad space with other developers who also opt in to community ads. Your app will show ads for apps published by other developers who participate in community ads, and their apps will show ads for your app.
-* You earn credits for promotional ad space in other apps by showing community ads in your app. Credits are calculated according to the following process:
-  * For each country or region where an app that is serving community ads is available, the current market-rate eCPM (effective cost per thousand impressions) value for the country or region is multiplied by the number of community ad impressions served by your app in that country or region. This value is the credits you have earned for your app in that country or region.
-  * Your total credits earned for a given time period is equal to the sum of all credits earned in each country or region for each of your apps that is serving community ads.
-* Your credits are divided equally across all active community ad campaigns, and are converted to ad impressions for your app based on the current market-rate eCPM values of the countries your community ad campaigns target.
-* To track the performance of the community ads in your app, refer to the [account-level advertising performance report](advertising-performance-report.md#account-level-advertising-performance-report).
+* [コミュニティ広告にオプトイン](#how-to-opt-in-to-community-ads)して[無料のコミュニティ広告キャンペーンを作成](create-an-ad-campaign-for-your-app.md)すると、コミュニティ広告にオプトインした他の開発者とプロモーション用の広告スペースを共有します。 自分のアプリに、コミュニティ広告に参加している他の開発者が公開したアプリの広告が表示され、他の開発者のアプリに自分のアプリの広告が表示されます。
+* アプリにコミュニティ広告を表示することによって、他のアプリ内のプロモーション用の広告スペースのクレジットを獲得できます。 次のプロセスに従ってクレジットが計算されます。
+  * コミュニティ広告を提供するアプリが利用可能な国や地域ごとに、現在の市場レートの eCPM (1000 回の広告表示あたりの有効な料金) 値に、その国や地域でアプリが提供するコミュニティ広告のインプレッション数が掛けられます。 この値は、対象の国や地域でアプリが獲得したクレジットです。
+  * 特定の期間に獲得したクレジットの合計は、それぞれの国や地域でコミュニティ広告を提供する各アプリによって獲得したすべてのクレジットの合計と同じになります。
+* クレジットは、すべてのアクティブなコミュニティ広告キャンペーンで均等に分割され、コミュニティ広告キャンペーンの対象となる国の現在の市場レートの eCPM 値に基づいてアプリの広告インプレッション数に変換されます。
+* アプリ内のコミュニティ広告のパフォーマンスを追跡するには、[アカウント レベルの広告パフォーマンス レポート](advertising-performance-report.md#account-level-advertising-performance-report)をご覧ください。
 
-## How to opt in to community ads
+## コミュニティ広告にオプトインする方法
 
-To opt in to community ads:
+コミュニティ広告にオプトインするには、次の手順を実行します。
 
-1. Go to the **Monetization** &gt; **Monetize with ads** page in the Windows Dev Center dashboard.
-2. In the **Community ads** section, check the **Show community ads in my app** box.
-   > **Note**  After you check or uncheck this box, you do not need to republish your app for the changes to take effect.
+1. Windows デベロッパー センター ダッシュボードで、**[収益化]** &gt; **[広告で収入を増やす]** ページにアクセスします。
+2. **[Community ads]** (コミュニティ広告) セクションの **[Show community ads in my app]** (アプリにコミュニティ広告を表示する) チェック ボックスをオンにします。
+   > **注**  このチェック ボックスをオンまたはオフにした後は、アプリを再公開して変更を有効にする必要はありません。
 
-3. [Create an ad campaign](create-an-ad-campaign-for-your-app.md) for your app. For the campaign type, select **Free community ads**.
+3. アプリの[広告キャンペーンを作成](create-an-ad-campaign-for-your-app.md)します。 キャンペーンの種類として **[Free community ads]** (無料のコミュニティ広告) を選択します。
 
 
-## Related topics
+## 関連トピック
 
-* [Monetize with ads](monetize-with-ads.md)
-* [Create an ad campaign for your app](create-an-ad-campaign-for-your-app.md)
+* [広告による収益獲得](monetize-with-ads.md)
+* [アプリ向けの広告キャンペーンの作成](create-an-ad-campaign-for-your-app.md)
 
 
 <!--HONumber=Mar16_HO5-->

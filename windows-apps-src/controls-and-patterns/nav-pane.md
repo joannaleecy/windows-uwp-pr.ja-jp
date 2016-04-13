@@ -1,21 +1,21 @@
 ---
-Description: Provides top-level navigation while conserving screen real estate.
-title: Guidelines for navigation panes
+Description: トップ レベルのナビゲーションを提供して、画面領域を節約します。
+title: ナビゲーション ウィンドウのガイドライン
 ms.assetid: 8FB52F5E-8E72-4604-9222-0B0EC6A97541
 label: Nav pane
 template: detail.hbs
 ---
 
-Nav panes
+ナビゲーション ウィンドウ
 =============================================================================================
-A navigation pane (or just "nav" pane) is a pattern that allows for many top-level navigation items while conserving screen real estate. The nav pane is widely used for mobile apps, but also works well on larger screens. When used as an overlay, the pane remains collapsed and out-of-the way until the user presses the button, which is handy for smaller screens. When used in its docked mode, the pane remains open, which allows greater utility if there's enough screen real estate.
+ナビゲーション ウィンドウは、さまざまなトップ レベルのナビゲーション項目を使うことができるパターンです。これにより、画面領域を節約することができます。 ナビゲーション ウィンドウはモバイル アプリに広く使われていますが、大きい画面でも適切に機能します。 オーバーレイとして使うと、ユーザーがボタンを押すまでウィンドウは折りたたまれたままで邪魔にならないため、小さい画面で便利です。 固定モードで使うと、ウィンドウは開いたままであるため、十分な画面領域がある場合に便利です。
 
-![Example of a nav pane](images/NAV_PANE_EXAMPLE.png)
+![ナビゲーション ウィンドウの例](images/NAV_PANE_EXAMPLE.png)
 
-<span class="sidebar_heading" style="font-weight: bold;">Important APIs</span>
+<span class="sidebar_heading" style="font-weight: bold;">重要な API</span>
 
--   [**SplitView class (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn864360)
--   [**SplitView object (HTML)**](https://msdn.microsoft.com/library/windows/apps/dn919970)
+-   [**SplitView クラス (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn864360)
+-   [**SplitView オブジェクト (HTML)**](https://msdn.microsoft.com/library/windows/apps/dn919970)
 
 <<<<<<< HEAD
 
@@ -23,74 +23,74 @@ A navigation pane (or just "nav" pane) is a pattern that allows for many top-lev
 
 >>>>>>> origin
 
-<span id="Is_this_the_right_pattern_"></span><span id="is_this_the_right_pattern_"></span><span id="IS_THIS_THE_RIGHT_PATTERN_"></span>Is this the right pattern?
+<span id="Is_this_the_right_pattern_"></span><span id="is_this_the_right_pattern_"></span><span id="IS_THIS_THE_RIGHT_PATTERN_"></span>適切なパターンの選択
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-The nav pane works well for:
+ナビゲーション ウィンドウは、次の場合に適しています。
 
--   Apps with many top-level navigation items that are in the same class, such as a sports app with categories like Football, Baseball, Basketball, Soccer, and so on.
--   Providing a consistent navigational experience across apps, provided that only navigational elements are placed within the pane.
--   A medium-to-high number (5-10+) of top-level navigational categories.
--   Preserving screen real estate (as an overlay).
--   Navigation items that are infrequently accessed. (as an overlay).
--   Drag-and-drop scenarios (when docked).
+-   同じクラス内にトップレベルのナビゲーション項目が多数あるアプリ (フットボール、野球、バスケットボール、サッカーといったカテゴリがあるスポーツ アプリなど)。
+-   アプリ間で一貫性のあるナビゲーション エクスペリエンスを提供する場合 (ただし、ウィンドウ内にナビゲーション要素だけを配置する場合に限る)。
+-   トップレベルのナビゲーションのカテゴリの数が中程度から多い (5 ～ 10 以上) 場合。
+-   画面領域を節約する場合 (オーバーレイとして)。
+-   ナビゲーション項目のアクセス頻度が低い場合 (オーバーレイとして)。
+-   ドラッグ アンド ドロップのシナリオ (固定の場合)。
 
-<span id="Building_a_nav_pane"></span><span id="building_a_nav_pane"></span><span id="BUILDING_A_NAV_PANE"></span>Building a nav pane
+<span id="Building_a_nav_pane"></span><span id="building_a_nav_pane"></span><span id="BUILDING_A_NAV_PANE"></span>ナビゲーション ウィンドウの構築
 -------------------------------------------------------------------------------------------------------------------------------------
 
-The nav pane pattern consists of a button, a pane for navigation categories, and a content area. The easiest way to build a nav pane is with a [split view control](split-view.md), which comes with an empty pane and a content area that's always visible. The pane can either be visible or hidden, and can present itself from either the left side or right side of an app window.
+ナビゲーション ウィンドウ パターンは、ボタン、ナビゲーションのカテゴリ用のウィンドウ、およびコンテンツ領域で構成されます。 ナビゲーション ウィンドウを構築する最も簡単な方法は、[分割ビュー コントロール](split-view.md)を使う方法です。このコントロールには、空のウィンドウとコンテンツ領域 (常に表示) が用意されています。 ウィンドウは表示することも非表示にすることもでき、アプリ ウィンドウの右側または左側から表示できます。
 
-If you'd like to build a nav pane without the split view control, you'll need three primary components: a button, a pane, and a content area. The button allows the user to open and close the pane. The pane is a container for navigation elements. The content area displays information from the selected navigation item. The nav pane can also exist in a docked mode, in which the pane is always shown, so a button wouldn't be necessary in that case.
+分割ビュー コントロールを使わずにナビゲーション ウィンドウを構築する場合、3 つの主要なコンポーネント (ボタン、ウィンドウ、コンテンツ領域) が必要です。 ボタンは、ウィンドウを開閉できるようにします。 ウィンドウは、ナビゲーション要素のコンテナーです。 コンテンツ領域に、選んだナビゲーション項目からの情報が表示されます。 また、ナビゲーション ウィンドウは固定モードで表示することもできます。この場合、ウィンドウは常に表示され、ボタンは必要ありません。
 
-### <span id="Button"></span><span id="button"></span><span id="BUTTON"></span>Button
+### <span id="Button"></span><span id="button"></span><span id="BUTTON"></span>ボタン
 
-The nav pane button is visualized, by default, as three stacked horizontal lines and is commonly referred to as the "hamburger" button. The button allows the user to open and close the pane when needed and does not move with the pane. We recommend placing the button in the upper-left corner of your app. The button does not move with the pane.
+既定では、ナビゲーション ウィンドウのボタンは積み重ねられた 3 本の横線として表示されます。このボタンは、一般的には "ハンバーガー" ボタンと呼ばれます。 ナビゲーション ウィンドウのボタンを使うと、必要なときにウィンドウを開いたり閉じたりすることができます。また、このボタンはウィンドウと共に移動されません。 ナビゲーション ウィンドウのボタンはアプリの左上隅に配置することをお勧めします。 ナビゲーション ウィンドウのボタンは、ウィンドウと共に移動されません。
 
-![Example of the nav pane button](images/NAVPANE_BUTTONONLY.png)
+![ナビゲーション ウィンドウ ボタンの例](images/NAVPANE_BUTTONONLY.png)
 
-The button is usually associated with a text string. At the top level of the app, the app title can be displayed next to the button. At lower levels of the app, the text string can be associated with the page that the user is currently on.
+通常、ナビゲーション ウィンドウのボタンはテキスト文字列に関連付けられています。 アプリの最上部では、ナビゲーション ウィンドウのボタンの横にアプリのタイトルを表示できます。 アプリの下部では、テキスト文字列をユーザーが現在表示しているページに関連付けることができます。
 
-### <span id="Pane"></span><span id="pane"></span><span id="PANE"></span>Pane
+### <span id="Pane"></span><span id="pane"></span><span id="PANE"></span>ウィンドウ
 
-Headers for navigational categories go in the pane. Entry points to app settings and account management, if applicable, also go in the pane. Navigation headers can either be top-level, or nested top-level/second-level.
+ナビゲーションのカテゴリのヘッダーがウィンドウに移動します。 アプリ設定とアカウント管理へのエントリ ポイント (該当する場合) もウィンドウに移動します。 ナビゲーション ヘッダーは、トップレベルであるか、入れ子になったトップレベル/第 2 レベルです。
 
-![Example of the nav pane's pane](images/NAVPANE_PANE.png)
+![ナビゲーション ウィンドウ のウィンドウの例](images/NAVPANE_PANE.png)
 
-### <span id="Content_area"></span><span id="content_area"></span><span id="CONTENT_AREA"></span>Content area
+### <span id="Content_area"></span><span id="content_area"></span><span id="CONTENT_AREA"></span>コンテンツ領域
 
-The content area is where information for the selected nav location is displayed. It can contain individual elements or other sub-level navigation.
+コンテンツ領域は、選んだナビゲーション位置の情報が表示される場所です。 個々の要素やその他のサブレベル ナビゲーションを含めることができます。
 
-<span id="Nav_pane_variations"></span><span id="nav_pane_variations"></span><span id="NAV_PANE_VARIATIONS"></span>Nav pane variations
+<span id="Nav_pane_variations"></span><span id="nav_pane_variations"></span><span id="NAV_PANE_VARIATIONS"></span>ナビゲーション ウィンドウのバリエーション
 -------------------------------------------------------------------------------------------------------------------------------------
 
-The nav pane has two main variations, overlay and docked. An overlay collapses and expands as needed. A docked pane remains open by default.
+ナビゲーション ウィンドウには、オーバーレイと固定の 2 つのバリエーションがあります。 オーバーレイは必要に応じて折りたたまれたり展開されたりします。 固定ウィンドウは既定で開いたままです。
 
-### <span id="Overlay"></span><span id="overlay"></span><span id="OVERLAY"></span>Overlay
+### <span id="Overlay"></span><span id="overlay"></span><span id="OVERLAY"></span>オーバーレイ
 
--   An overlay can be used on any screen size and in either portrait or landscape orientation. In its default (collapsed) state, the overlay takes up no real-estate, with only the button shown.
--   Provides on-demand navigation that conserves screen real estate. Ideal for apps on phones and phablets.
--   The pane is hidden by default, with only the button visible.
--   Pressing the nav pane button opens and closes the overlay.
--   The expanded state is transient and is dismissed when a selection is made, when the back button is used, or when the user taps outside of the pane.
--   The overlay draws over the top of content and does not reflow content.
+-   オーバーレイは、画面サイズに関係なく、縦方向でも横方向でも使うことができます。 既定の (折りたたまれた) 状態では、オーバーレイは領域を消費せず、ボタンだけが表示されます。
+-   画面領域を節約するオンデマンドのナビゲーションを提供します。 携帯電話やファブレット上のアプリに最適です。
+-   ウィンドウは既定で非表示になり、ボタンだけが表示されます。
+-   ナビゲーション ウィンドウのボタンを押すと、オーバーレイの開閉を切り替えることができます。
+-   展開された状態は一時的なものであるため、選択が行った場合、[戻る] ボタンを使った場合、またはユーザーがウィンドウの外部でタップした場合に消滅します。
+-   オーバーレイは、コンテンツの上に描画されます。コンテンツを再配置するわけではありません。
 
-### <span id="Docked"></span><span id="docked"></span><span id="DOCKED"></span>Docked
+### <span id="Docked"></span><span id="docked"></span><span id="DOCKED"></span>固定
 
--   The navigation pane remains open. This mode is better suited for larger screens, generally tablets and above.
--   In landscape orientation, the minimum screen width that can take advantage of the docked state is 720 epx. The docked state at this size may require special attention to content scaling.
--   Supports drag-and-drop scenarios to and from the pane.
--   The nav pane button is not required for this state. If the button is used, then the content area is pushed out and the content within that area will reflow.
--   The selection should be shown on the list items to highlight where the user is in the navigation tree.
--   When the device is too narrow in portrait orientation to display the docked pane, the following behavior is recommended when a device is rotated:
-    -   Landscape-to-portrait. The pane collapses to either the overlay state or minimized state.
-    -   Portrait-to-landscape. The pane reappears.
+-   ナビゲーション ウィンドウは開いたままです。 このモードは、目安としてタブレット以上のサイズの大きい画面に適しています。
+-   横方向の場合、固定状態を有効活用できる最小画面幅は 720 epx です。 このサイズで固定状態にするは、コンテンツの拡大/縮小に特別な注意が必要です。
+-   ウィンドウ間でのドラッグ アンド ドロップ シナリオがサポートされます。
+-   ナビゲーション ウィンドウのボタンは、この状態には必要ありません。 ボタンを使った場合、コンテンツ領域が押し出され、その領域内のコンテンツが再配置されます。
+-   ナビゲーション ツリーにおけるユーザーの位置を強調表示するため、選択内容を一覧の項目に表示する必要があります。
+-   デバイスの幅が狭すぎて縦方向では固定ウィンドウを表示できない場合、デバイスの回転時に次の動作をお勧めします。
+    -   横向きから縦向き: ウィンドウが折りたたまれて、オーバーレイ状態または最小化状態になります。
+    -   縦向きから横向き: ウィンドウが再び表示されます。
 
-<span id="related_topics"></span>Related topics
+<span id="related_topics"></span>関連トピック
 -----------------------------------------------
 
-* [Split view control](split-view.md)
-* [Master/details](master-details.md)
-* [Navigation basics](https://msdn.microsoft.com/library/windows/apps/dn958438)
+* [分割ビュー コントロール](split-view.md)
+* [マスター/詳細](master-details.md)
+* [ナビゲーションの基本](https://msdn.microsoft.com/library/windows/apps/dn958438)
  
 
  

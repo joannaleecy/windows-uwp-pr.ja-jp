@@ -1,37 +1,37 @@
 ---
-Description: 'This topic shows examples of the coding tasks needed to achieve some of the most common file-related enterprise data protection (EDP) scenarios.'
+Description: 'このトピックでは、ファイルに関連する最も一般的なエンタープライズ データ保護 (EDP) シナリオのいくつかを実現するために必要なコード作成タスクの例を示します。'
 MS-HAID: 'dev\_files.protect\_your\_enterprise\_data\_with\_edp'
 MSHAttr: 'PreferredLib:/library/windows/apps'
 Search.Product: eADQiWindows 10XVcnh
-title: 'Use enterprise data protection (EDP) to protect files'
+title: '企業のデータ保護 (EDP) を使ったファイルの保護'
 ---
 
-# Use enterprise data protection (EDP) to protect files
+# 企業のデータ保護 (EDP) を使ったファイルの保護
 
-__Note__ Enterprise data protection (EDP) policy cannot be applied on Windows 10, Version 1511 (build 10586) or earlier.
+__注__ Windows 10 バージョン 1511 (ビルド 10586) またはそれ以前のバージョンでは、エンタープライズ データ保護 (EDP) ポリシーを適用できません。
 
-This topic shows examples of the coding tasks needed to achieve some of the most common file-related enterprise data protection (EDP) scenarios. For the full developer picture of how EDP relates to files, streams, the clipboard, networking, background tasks, and data protection under lock, see [enterprise data protection (EDP)](../enterprise/edp-hub.md).
+このトピックでは、ファイルに関連する最も一般的なエンタープライズ データ保護 (EDP) シナリオのいくつかを実現するために必要なコード作成タスクの例を示します。 EDP とファイル、ストリーム、クリップボード、ネットワーク、バックグラウンド タスク、ロックの背後でのデータ保護との関係についての開発者向けの詳しい情報については、「[エンタープライズ データ保護 (EDP)](../enterprise/edp-hub.md)」をご覧ください。
 
-**Note**  The [enterprise data protection (EDP) sample](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409) covers many of the same scenarios demonstrated in this topic.
+**注:** このトピックで取り上げるファイルのシナリオの多くは、[企業のデータ保護 (EDP)](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409) のサンプルにも含まれています。
 
-## Prerequisites
+## 必要条件
 
--   **Get set up for EDP**
+-   **EDP の設定を行う**
 
-    See [Set up your computer for EDP](../enterprise/edp-hub.md#set-up-your-computer-for-EDP).
+    「[EDP のためのコンピューターの設定](../enterprise/edp-hub.md#set-up-your-computer-for-EDP)」をご覧ください。
 
--   **Commit to building an enterprise-enlightened app**
+-   **エンタープライズ対応アプリの作成に取り組む**
 
-    An app that autonomously ensures that enterprise data stays under the managing enterprise’s control is known as an enterprise-enlightened app. An enlightened app is more powerful, smart, flexible, and trusted than an unenlightened one. Your app announces to the system that it is enlightened by declaring the restricted **enterpriseDataPolicy** capability. There's more to being enlightened than setting a capability, though. To learn more, see [Enterprise-enlightened apps](../enterprise/edp-hub.md#enterprise-enlightened-apps).
+    企業データがそれを管理する企業の制御下に置かれている状態が自律的に確保されるアプリをエンタープライズ対応アプリと呼びます。 対応アプリは非対応アプリより強力かつスマートで、柔軟性と信頼性の面でもより優れています。 アプリが対応アプリであることをシステムに知らせるには、制限された **enterpriseDataPolicy** 機能を宣言します。 ただし、アプリを対応アプリにするために必要なことは機能の設定だけではありません。 詳しくは、「[エンタープライズ対応アプリ](../enterprise/edp-hub.md#enterprise-enlightened-apps)」をご覧ください。
 
--   **Understand async programming for Universal Windows Platform (UWP) apps**
+-   **ユニバーサル Windows プラットフォーム (UWP) アプリの非同期プログラミングについての理解**
 
-    To learn about how to write asynchronous apps in C\# or Visual Basic, see [Call asynchronous APIs in C\# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). To learn about how to write asynchronous apps in C++, see [Asynchronous programming in C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
+    C\# や Visual Basic での非同期アプリの作成方法については、「[C\# または Visual Basic での非同期 API の呼び出し](https://msdn.microsoft.com/library/windows/apps/mt187337)」をご覧ください。 C++ での非同期アプリの作成方法については、「[C++ での非同期プログラミング](https://msdn.microsoft.com/library/windows/apps/mt187334)」をご覧ください。
 
-## Your local folder path, and viewing protected files in File Explorer
+## ローカル フォルダーのパスとエクスプローラーでの保護されたファイルの表示
 
 
-You can create an app to host the code examples in this topic to try them out. The code examples write files to your app's local folder, and the exact location of that folder on disk is unique to your app. To determine the location of your app's local folder, you can add the following code.
+このトピックのコード例をホストするアプリを作成してコード例を試してみることができます。 これらのコード例は、そのアプリのローカル フォルダーにファイルを書き込みます。そのフォルダーのディスク上の正確な場所はアプリごとに固有です。 アプリのローカル フォルダーの場所を特定するには、次のコードを追加します。
 
 ```CSharp
 // Put a breakpoint on the line after the line of code below. Use the value of localFolderPath
@@ -39,16 +39,16 @@ You can create an app to host the code examples in this topic to try them out. T
 string localFolderPath = ApplicationData.Current.LocalFolder.Path;
 ```
 
-Once you have the path, you'll be able to use File Explorer to easily find the files that your app creates. That way, you'll be able to confirm that they're protected, and that they're protected to the correct identity.
+このパスがわかると、アプリによって作成されるファイルをエクスプローラーで簡単に見つけられるようになります。 これにより、それらが保護されているかどうか、適切な ID に対して保護されているかどうかを確認できます。
 
-In File Explorer, **Change folder and search options** and on the **View** tab, check **Show encrypted files in color**. Also, use File Explorer's **View** &gt; **Add columns** command to add the **Encrypted to** column so that you can see the enterprise identity that you're protecting your files to.
+エクスプローラーで、**[フォルダーと検索のオプションの変更]** を選択し、**[表示]** タブで **[Show encrypted files in color]** をオンにします。 また、エクスプローラーの **[表示]** &gt; **[列の追加]** コマンドを使って **[暗号化の所有者]** 列を追加して、ファイルが保護される対象の企業 ID を確認できるようにします。
 
-## Protect enterprise data in a new file (for an interactive app)
+## 新しいファイルで企業データを保護する (対話型アプリの場合)
 
 
-There are many ways enterprise data might enter your app, including from certain network endpoints, from files, from the clipboard, or from the share contract. Your app might create new enterprise data, too. Whatever the means by which your enlightened app comes by enterprise data, your app will need to be careful to protect the data to the managed enterprise identity when it persists the data to a new file.
+企業データはさまざまな方法でアプリに入力されます (特定のネットワーク エンドポイントから、ファイルから、クリップボードから、共有コントラクトからなど)。 アプリで新しい企業データが作成される場合もあります。 企業データが入力された方法に関係なく、対応アプリでそのデータを新しいファイルに保存する際には、管理されている企業 ID に対してそのデータを保護するように注意する必要があります。
 
-The basic steps are to use a regular storage API to create the file, use an EDP API to protect the file to the enterprise identity, and then (again, using regular storage APIs) to write to the file. Be careful to protect the file before you write to it (as shown in the example below). You use the [**FileProtectionManager.ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/dn705157) method to protect the file. And, as always, it only makes sense to protect to an identity if that identity is managed. For more info about why that's the case, and how your app can determine the identity of the enterprise it's running in, see [Confirming an identity is managed](../enterprise/edp-hub.md#confirming_an_identity_is_managed).
+基本的な手順では、標準の Storage API を使ってファイルを作成し、EDP API を使ってファイルを企業 ID に対して保護し、(再び標準の Storage API を使って) そのファイルへの書き込みを行います。 書き込みの前にファイルを保護することに注意してください (次の例をご覧ください)。 ファイルを保護するには [**FileProtectionManager.ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/dn705157) メソッドを使います。 また、通常どおり、ID に対する保護が意味をなすのはその ID が管理されている場合だけです。 その理由と、アプリが実行されている企業の ID を特定する方法については、「[ID が管理されていることの確認](../enterprise/edp-hub.md#confirming_an_identity_is_managed)」をご覧ください。
 
 ```CSharp
 using Windows.Security.EnterpriseData;
@@ -76,20 +76,20 @@ private async void SaveEnterpriseDataToFile(string enterpriseData, string identi
 }
 ```
 
-## Protect enterprise data in a new file (for a background task)
+## 新しいファイルで企業データを保護する (バックグラウンド タスクの場合)
 
 
-The [**FileProtectionManager.ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/dn705157) API that we used in the previous section is only appropriate for interactive apps. For a background task, your code can execute while under the lock screen. And the organization may be administering a secure "data protection under lock" (DPL) policy, where encryption keys required to access protected resources are temporarily removed from device memory when the device is locked. This prevents data leaks if the device is lost. The feature also removes keys associated with protected files when their handles are closed. It is, however, possible to create new protected files during the lock window (the time between the device being locked and unlocked) and access them while keeping the file handle open. **StorageFolder.CreateFileAsync** closes the handle when the file is created, so this algorithm can't be used.
+前のセクションで使った [**FileProtectionManager.ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/dn705157) API が適切なのは対話型アプリに対してのみです。 バックグラウンド タスクの場合は、ロック画面の下でコードを実行できます。 また、"ロックの背後でのデータ保護" (DPL) の安全なポリシーが組織で管理されていて、デバイスがロックされているときは、保護されたリソースへのアクセスに必要な暗号化キーが一時的にデバイスのメモリから削除されます。 これにより、デバイスを紛失した場合のデータ漏えいを防ぐことができます。 この機能によって、保護されたファイルのハンドルを閉じたときに、ファイルに関連付けられているキーも削除されます。 ただし、ロック期間 (デバイスがロックされてからロック解除されるまでの時間) 中に保護された新しいファイルを作成し、そのファイル ハンドルを開いている間、それらにアクセスできる場合があります。 **StorageFolder.CreateFileAsync** は、ファイルが作成されるとハンドルを閉じるため、このアルゴリズムは使用できません。
 
-1.  Create a new file using **StorageFolder.CreateFileAsync**.
-2.  Encrypt using **FileProtectionManager.ProtectAsync**.
-3.  Open the file and write to it.
+1.  **StorageFolder.CreateFileAsync** を使って新しいファイルを作成します。
+2.  **FileProtectionManager.ProtectAsync** を使って暗号化します。
+3.  ファイルを開いて、ファイルに書き込みます。
 
-Since Step 1 involves closing the file handle (and even if Step 1 didn’t close the handle, Step 2 would), Step 3 is not possible because encryption keys to access that file are no longer available.
+手順 1. でファイル ハンドルを閉じるため (手順 1. でハンドルを閉じない場合でも、手順 2. で閉じられる)、ファイルにアクセスするための暗号化キーは使用できず、手順 3. を実行できません。
 
-To address this scenario, you can use [**FileProtectionManager.CreateProtectedAndOpenAsync**](https://msdn.microsoft.com/library/windows/apps/dn705153) to create a protected file and return an **IRandomAccessStream** to it. This allows apps to make multiple writes to a file while keeping the file handle open.
+このシナリオに対応するには、[**FileProtectionManager.CreateProtectedAndOpenAsync**](https://msdn.microsoft.com/library/windows/apps/dn705153) を使って保護されたファイルを作成し、ファイルへの **IRandomAccessStream** を返します。 これにより、アプリは、ファイル ハンドルを開いたままにしている間、ファイルに複数の書き込みを実行できます。
 
-The example code demonstrates a simplistic mail app writing out a new file when new mail is received. Mail apps must sync email when the device is locked. When this app receives new mail, it creates a new file using [**CreateProtectedAndOpenAsync**](https://msdn.microsoft.com/library/windows/apps/dn705153), retrieves an output stream, and writes the mail body to it.
+このコード例では、新しいメールを受信したときに新しいファイルを書き出す単純化されたメール アプリを示します。 メール アプリは、デバイスがロックされているときにメールを同期する必要があります。 このアプリは新しいメールを受信すると、[**CreateProtectedAndOpenAsync**](https://msdn.microsoft.com/library/windows/apps/dn705153) を使って新しいファイルを作成します。次に、出力ストリームを取得し、メール本文を書き込みます。
 
 ```CSharp
 using Windows.Security.EnterpriseData;
@@ -131,10 +131,11 @@ private async void SaveEnterpriseDataToFile(string enterpriseData, string identi
 }
 ```
 
-## Protect a folder whose purpose is to contain enterprise data
+## 企業データの格納を目的とするフォルダーを保護する
 
 
-If you want every item inside a folder to be protected, then you can do that, too. You can use [**FileProtectionManager.ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/dn705157) to protect an empty folder. Then, any file or folder subsequently created inside the folder will also be protected. You can protect an existing folder, or you can create a new folder to protect (the example below creates a new folder). But, in either case, for protection to succeed, the folder must be empty at the time. If it isn't, then [**FileProtectionInfo.Status**](https://msdn.microsoft.com/library/windows/apps/dn705150) will contain a value of [**FileProtectionStatus.NotProtectable**](https://msdn.microsoft.com/library/windows/apps/dn279147).
+フォルダー内のすべての項目を保護することもできます。 [
+            **FileProtectionManager.ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/dn705157) を使って空のフォルダーを保護します。 これにより、その後にそのフォルダー内に作成されたファイルやフォルダーもすべて保護されるようになります。 既にあるフォルダーを保護することも、新しいフォルダーを作成して保護することもできます (次の例では新しいフォルダーを作成しています)。 ただし、いずれの場合も、保護が適切に行われるためにはフォルダーがその時点で空になっている必要があります。 なっていない場合は、[**FileProtectionInfo.Status**](https://msdn.microsoft.com/library/windows/apps/dn705150) の値が [**FileProtectionStatus.NotProtectable**](https://msdn.microsoft.com/library/windows/apps/dn279147) になります。
 
 ```CSharp
 using Windows.Security.EnterpriseData;
@@ -161,14 +162,14 @@ private async void CreateANewFolderAndProtectItAsync(string folderName, string i
 }
 ```
 
-## Copy protection from one file to another
+## 保護をファイル間でコピーする
 
 
-In this scenario, a file already exists that you know is protected to the appropriate enterprise identity. You can replicate that protection onto another file very conveniently. You don't even need to know what the identity is: you only need to know that it's the right one.
+このシナリオでは、適切な企業 ID に対して保護されていることがわかっているファイルが既に存在しています。 この場合、その保護を別のファイルに簡単に複製することができます。 ID を把握している必要もありません。適切な ID であることがわかっていればかまいません。
 
-To make a simple copy of a protected file, you can call [**StorageFile.CopyAsync**](https://msdn.microsoft.com/library/windows/apps/br227190). The resulting copy of the file will have the same protection as the original.
+保護されたファイルを単純にコピーするには、[**StorageFile.CopyAsync**](https://msdn.microsoft.com/library/windows/apps/br227190) を呼び出します。 結果のコピーには、オリジナルと同じ保護が適用されます。
 
-To protect an existing unprotected file before writing enterprise data to it, an alternative to calling [**FileProtectionManager.ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/dn705157) (which we saw in an earlier scenario, and to which you need to pass a managed identity) is to call [**FileProtectionManager.CopyProtectionAsync**](https://msdn.microsoft.com/library/windows/apps/dn705152) as shown in the code example.
+既にある保護されていないファイルを、企業データを書き込む前に保護するには、[**FileProtectionManager.ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/dn705157) を呼び出す方法 (前のシナリオで説明したこの方法では、管理されている ID を渡す必要があります) のほかに、次のコード例のように [**FileProtectionManager.CopyProtectionAsync**](https://msdn.microsoft.com/library/windows/apps/dn705152) を呼び出す方法もあります。
 
 ```CSharp
 using Windows.Security.EnterpriseData;
@@ -191,10 +192,10 @@ private async void CopyProtectionFromOneFileToAnother
 }
 ```
 
-## Handle being denied access to a file you protected
+## 保護したファイルのアクセス拒否を処理する
 
 
-In this scenario, your app attempts to access a file—which your app previously protected—and is denied access. You'll need to check the status of the file to see what went wrong. In this code example, the app calls the [**FileProtectionManager.GetProtectionInfoAsync**](https://msdn.microsoft.com/library/windows/apps/dn705154) API to query the status and determine whether the reason is because access to the file has now been revoked as a result of remote management.
+このシナリオでは、アプリがファイル (以前にアプリで保護したファイル) にアクセスしようとするとアクセスを拒否されます。 この場合は、ファイルの状態を確認して、何が問題かを調べる必要があります。 次のコード例では、アプリで [**FileProtectionManager.GetProtectionInfoAsync**](https://msdn.microsoft.com/library/windows/apps/dn705154) API を呼び出して状態を照会し、リモート管理によってファイルへのアクセスが取り消されたことが原因かどうかを確認しています。
 
 ```CSharp
 using Windows.Security.EnterpriseData;
@@ -216,10 +217,10 @@ private async System.Threading.Tasks.Task<bool> IsFileProtectionStatusRevoked
 }
 ```
 
-## Enable UI-policy enforcement based on a file’s protected identity
+## ファイルの保護された ID に基づいて UI ポリシーの適用を有効にする
 
 
-When your app is about to display the contents of a protected file (such as a PDF) on its UI, it must enable UI-policy enforcement based on the identity the file is protected to. You should query the protection information of the file and enable the system's UI-policy enforcement from the retrieved identity.
+アプリがその UI で保護されたファイル (PDF など) の内容を表示しようとした場合、ファイルが保護されている ID に基づく UI ポリシーの適用を有効にする必要があります。 ファイルの保護の情報を照会して、取得した ID からシステムの UI ポリシーの適用を有効にする必要があります。
 
 ```CSharp
 using Windows.Security.EnterpriseData;
@@ -244,16 +245,16 @@ private async void EnableUIPolicyFromFile(StorageFile storageFile)
 }
 ```
 
-**Note**  This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
+**注:** この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
  
 
-## Related topics
+## 関連トピック
 
 
-[enterprise data protection (EDP) sample](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)
+[企業のデータ保護 (EDP) のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)
 
-[**Windows.Security.EnterpriseData namespace**](https://msdn.microsoft.com/library/windows/apps/dn279153)
+[**Windows.Security.EnterpriseData 名前空間**](https://msdn.microsoft.com/library/windows/apps/dn279153)
 
  
 

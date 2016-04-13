@@ -1,43 +1,43 @@
 ---
-title: Port the GLSL
-description: Once you've moved over the code that creates and configures your buffers and shader objects, it's time to port the code inside those shaders from OpenGL ES 2.0's GL Shader Language (GLSL) to Direct3D 11's High-level Shader Language (HLSL).
+title: GLSL の移植
+description: バッファーとシェーダー オブジェクトを作成して構成するコードが完成したら、それらのシェーダー内のコードを OpenGL ES 2.0 の GL シェーダー言語 (GLSL) から Direct3D 11 の上位レベル シェーダー言語 (HLSL) に移植します。
 ms.assetid: 0de06c51-8a34-dc68-6768-ea9f75dc57ee
 ---
 
-# Port the GLSL
+# GLSL の移植
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-**Important APIs**
+**重要な API**
 
--   [HLSL Semantics](https://msdn.microsoft.com/library/windows/desktop/bb205574)
--   [Shader Constants (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509581)
+-   [HLSL セマンティクス](https://msdn.microsoft.com/library/windows/desktop/bb205574)
+-   [シェーダー定数 (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509581)
 
-Once you've moved over the code that creates and configures your buffers and shader objects, it's time to port the code inside those shaders from OpenGL ES 2.0's GL Shader Language (GLSL) to Direct3D 11's High-level Shader Language (HLSL).
+バッファーとシェーダー オブジェクトを作成して構成するコードが完成したら、それらのシェーダー内のコードを OpenGL ES 2.0 の GL シェーダー言語 (GLSL) から Direct3D 11 の上位レベル シェーダー言語 (HLSL) に移植します。
 
-In OpenGL ES 2.0, shaders return data after execution using intrinsics such as **gl\_Position**, **gl\_FragColor**, or **gl\_FragData\[n\]** (where n is the index for a specific render target). In Direct3D, there are no specific intrinsics, and the shaders return data as the return type of their respective main() functions.
+OpenGL ES 2.0 では、シェーダーは **gl\_Position**、**gl\_FragColor**、または **gl\_FragData\[n\]** (n は特定のレンダー ターゲットのインデックス) などの組み込みメソッドを使って実行した後にデータを返します。 Direct3D では、特定の組み込みメソッドはなく、シェーダーはそれぞれの main() 関数の戻り値の型としてデータを返します。
 
-Data that you want interpolated between shader stages, such as the vertex position or normal, is handled through the use of the **varying** declaration. However, Direct3D doesn't have this declaration; rather, any data that you want passed between shader stages must be marked with an [HLSL semantic](https://msdn.microsoft.com/library/windows/desktop/bb205574). The specific semantic chosen indicates the purpose of the data, and is. For example, you'd declare vertex data that you want interpolated between the fragment shader as:
+頂点の位置や法線など、シェーダー ステージ間で補間されるデータは、**varying** 宣言を使って処理します。 ただし、Direct3D にはこの宣言がありません。そのため、シェーダー ステージ間で受け渡されるデータは [HLSL セマンティクス](https://msdn.microsoft.com/library/windows/desktop/bb205574)でマークする必要があります。 選んだ特定のセマンティクスはデータの目的を示します。 たとえば、フラグメント シェーダー間で補完される頂点データは次のように宣言します。
 
 `float4 vertPos : POSITION;`
 
-or
+または
 
 `float4 vertColor : COLOR;`
 
-Where POSITION is the semantic used to indicate vertex position data. POSITION is also a special case, since after interpolation, it cannot be accessed by the pixel shader. Therefore, you must specify input to the pixel shader with SV\_POSITION and the interpolated vertex data will be placed in that variable.
+POSITION は、頂点の位置データを示すために使うセマンティクスです。 また、POSITION は特殊なケースで、補間後にピクセル シェーダーからアクセスできません。 そのため、SV\_POSITION を使ってピクセル シェーダーへの入力を指定する必要があります。補完された頂点データはその変数に配置されます。
 
 `float4 position : SV_POSITION;`
 
-Semantics can be declared on the body (main) methods of shaders. For pixel shaders, SV\_TARGET\[n\], which indicates a render target, is required on the body method. (SV\_TARGET without a numeric suffix defaults to render target index 0.)
+セマンティクスは、シェーダーの body (main) メソッドで宣言できます。 ピクセル シェーダーでは、body メソッドにレンダー ターゲットを示す SV\_TARGET\[n\] が必要です (数値サフィックスのない SV\_TARGET は、既定でレンダー ターゲット インデックス 0 に設定されます)。
 
-Also note that vertex shaders are required to output the SV\_POSITION system value semantic. This semantic resolves the vertex position data to coordinate values where x is between -1 and 1, y is between -1 and 1, z is divided by the original homogeneous coordinate w value (z/w), and w is 1 divided by the original w value (1/w). Pixel shaders use the SV\_POSITION system value semantic to retrieve the pixel location on the screen, where x is between 0 and the render target width and y is between 0 and the render target height (each offset by 0.5). Feature level 9\_x pixel shaders cannot read from the SV\_POSITION value.
+また、頂点シェーダーでは、SV\_POSITION システム値セマンティクスを出力する必要があります。 このセマンティクスは頂点の位置データを座標値に解決します。x は -1 ～ 1 の値に、y は -1 ～ 1 の値になり、z は元の同次座標 w の値で割られ (z/w)、w は 1 を元の w の値で割った値 (1/w) になります。 ピクセル シェーダーでは、SV\_POSITION システム値セマンティクスを使って、画面上のピクセル位置を取得します。x は 0 からレンダー ターゲットの幅までの値に、y は 0 からレンダー ターゲットの高さまでの値になります (各オフセットは 0.5 単位)。 機能レベル 9\_x ピクセル シェーダーでは、SV\_POSITION 値から読み取ることができません。
 
-Constant buffers must be declared with **cbuffer** and be associated with a specific starting register for lookup.
+定数バッファーは **cbuffer** を使って宣言し、検索のために特定の開始レジスタに関連付ける必要があります。
 
-Direct3D 11: An HLSL constant buffer declaration
+Direct3D 11: HLSL での定数バッファーの宣言
 
 ``` syntax
 cbuffer ModelViewProjectionConstantBuffer : register(b0)
@@ -46,16 +46,16 @@ cbuffer ModelViewProjectionConstantBuffer : register(b0)
 };
 ```
 
-Here, the constant buffer uses register b0 to hold the packed buffer. All registers are referred to in the form b\#. For more information on the HLSL implementation of constant buffers, registers, and data packing, read [Shader Constants (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509581).
+ここでは、定数バッファーはレジスタ b0 を使って、パックされたバッファーを保持します。 b\# という形式ですべてのレジスタを参照します。 HLSL での定数バッファー、レジスタ、データ パッキングの実装について詳しくは、「[シェーダー定数 (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509581)」をご覧ください。
 
-Instructions
+手順
 ------------
 
-### Step 1: Port the vertex shader
+### 手順 1: 頂点シェーダーの移植
 
-In our simple OpenGL ES 2.0 example, the vertex shader has three inputs: a constant model-view-projection 4x4 matrix, and two 4-coordinate vectors. These two vectors contain the vertex position and its color. The shader transforms the position vector to perspective coordinates and assigns it to the gl\_Position intrinsic for rasterization. The vertex color is copied to a varying variable for interpolation during rasterization, as well.
+この簡単な OpenGL ES 2.0 の例では、頂点シェーダーに 3 つの入力があります。1 つの定数のモデル ビュー プロジェクション 4x4 マトリックスと 2 つの 4 座標ベクトルです。 これら 2 つのベクトルには、頂点の位置と色が含まれます。 シェーダーでは、ラスタライズするために、位置ベクトルをパースペクティブ座標に変換し、それを gl\_Position 組み込みメソッドに割り当てます。 また、頂点の色は、ラスタライズ時に補間のために varying 変数にコピーされます。
 
-OpenGL ES 2.0: Vertex shader for the cube object (GLSL)
+OpenGL ES 2.0: 立方体オブジェクトの頂点シェーダー (GLSL)
 
 ``` syntax
 uniform mat4 u_mvpMatrix; 
@@ -70,9 +70,9 @@ void main()
 }
 ```
 
-Now, in Direct3D, the constant model-view-projection matrix is contained in a constant buffer packed at register b0, and the vertex position and color are specifically marked with the appropriate respective HLSL semantics: POSITION and COLOR. Since our input layout indicates a specific arrangement of these two vertex values, you create a struct to hold them and declare it as the type for the input parameter on the shader body function (main). (You could also specify them as two individual parameters, but that could get cumbersome.) You also specify an output type for this stage, which contains the interpolated position and color, and declare it as the return value for the body function of the vertex shader.
+次に、Direct3D では、レジスタ b0 にパックされた定数バッファーに定数のモデル ビュー プロジェクション マトリックスを格納し、頂点の位置と色をそれぞれ適切な HLSL セマンティクス (POSITION と COLOR) 使って明確にマークします。 入力レイアウトはこれら 2 つの頂点の値の特定の配置を示しているため、それらの値を保持する構造体を作成し、シェーダーの body 関数 (main) でその構造体を入力パラメーターの型として宣言します (それらの値を 2 つのパラメーターとして指定することもできますが、そうすると扱いにくくなる場合があります)。また、補完された位置と色を格納するこのステージの出力の型を指定し、それを頂点シェーダーの body 関数の戻り値として宣言します。
 
-Direct3D 11: Vertex shader for the cube object (HLSL)
+Direct3D 11: 立方体オブジェクトの頂点シェーダー (HLSL)
 
 ``` syntax
 cbuffer ModelViewProjectionConstantBuffer : register(b0)
@@ -108,13 +108,13 @@ PixelShaderInput main(VertexShaderInput input)
 }
 ```
 
-The output data type, PixelShaderInput, is populated during rasterization and provided to the fragment (pixel) shader.
+出力のデータ型 PixelShaderInput は、ラスタライズ時に設定され、フラグメント (ピクセル) シェーダーに渡されます。
 
-### Step 2: Port the fragment shader
+### 手順 2: フラグメント シェーダーの移植
 
-Our example fragment shader in GLSL is extremely simple: provide the gl\_FragColor intrinsic with the interpolated color value. OpenGL ES 2.0 will write it to the default render target.
+GLSL のフラグメント シェーダーの例は非常に簡単です。補完された色値を gl\_FragColor 組み込みメソッドに渡します。 OpenGL ES 2.0 では、それを既定のレンダー ターゲットに書き込みます。
 
-OpenGL ES 2.0: Fragment shader for the cube object (GLSL)
+OpenGL ES 2.0: 立方体オブジェクトのフラグメント シェーダー (GLSL)
 
 ``` syntax
 varying vec4 destColor;
@@ -125,9 +125,9 @@ void main()
 } 
 ```
 
-Direct3D is almost as simple. The only significant difference is that the body function of the pixel shader must return a value. Since the color is a 4-coordinate (RGBA) float value, you indicate float4 as the return type, and then specify the default render target as the SV\_TARGET system value semantic.
+Direct3D も同じくらい簡単です。 大きな違いは、ピクセル シェーダーの body 関数で値を返す必要があることだけです。 色が 4 座標 (RGBA) の浮動小数点値であるため、戻り値の型として float4 を指定し、SV\_TARGET システム値セマンティクスとして既定のレンダー ターゲットを指定します。
 
-Direct3D 11: Pixel shader for the cube object (HLSL)
+Direct3D 11: 立方体オブジェクトのピクセル シェーダー (HLSL)
 
 ``` syntax
 struct PixelShaderInput
@@ -143,38 +143,38 @@ float4 main(PixelShaderInput input) : SV_TARGET
 }
 ```
 
-The color for the pixel at the position is written to the render target. Now, let's see how to display the contents of that render target in [Draw to the screen](draw-to-the-screen.md)!
+位置のピクセルの色はレンダー ターゲットに書き込まれます。 次に、「[画面への描画](draw-to-the-screen.md)」でそのレンダー ターゲットのコンテンツを表示する方法を見ていきます。
 
-## Previous step
+## 前の手順
 
 
-[Port the vertex buffers and data](port-the-vertex-buffers-and-data-config.md)
-Next step
+[頂点バッファーと頂点データの移植](port-the-vertex-buffers-and-data-config.md)
+次の手順
 ---------
 
-[Draw to the screen](draw-to-the-screen.md)
-Remarks
+[画面への描画](draw-to-the-screen.md)
+注釈
 -------
 
-Understanding HLSL semantics and the packing of constant buffers can save you a bit of a debugging headache, as well as provide optimization opportunities. If you get a chance, read through [Variable Syntax (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509706), [Introduction to Buffers in Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476898), and [How to: Create a Constant Buffer](https://msdn.microsoft.com/library/windows/desktop/ff476896). If not, though, here's a few starting tips to keep in mind about semantics and constant buffers:
+HLSL セマンティクスと定数バッファーのパッキングについて理解すると、デバッグの苦労がいくらか少なくなるだけでなく、最適化できるようにもなります。 機会があれば、「[変数の構文 (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509706)」、「[Direct3D 11 のバッファーについて](https://msdn.microsoft.com/library/windows/desktop/ff476898)」、「[定数バッファーを作成する方法](https://msdn.microsoft.com/library/windows/desktop/ff476896)」をご覧ください。 機会がない場合は、次のセマンティクスと定数バッファーについての基本的なヒントを心に留めておいてください。
 
--   Always double check your renderer's Direct3D configuration code to make sure that the structures for your constant buffers match the cbuffer struct declarations in your HLSL, and that the component scalar types match across both declarations.
--   In your renderer's C++ code, use [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833) types in your constant buffer declarations to ensure proper data packing.
--   The best way to efficiently use constant buffers is to organize shader variables into constant buffers based on their frequency of update. For example, if you have some uniform data that is updated once per frame, and other uniform data that is updated only when the camera moves, consider separating that data into two separate constant buffers.
--   Semantics that you have forgotten to apply or which you have applied incorrectly will be your earliest source of shader compilation (FXC) errors. Double-check them! The docs can be a bit confusing, as many older pages and samples refer to different versions of HLSL semantics prior to Direct3D 11.
--   Make sure you know which Direct3D feature level you are targeting for each shader. The semantics for feature level 9\_\* are different from those for 11\_1.
--   The SV\_POSITION semantic resolves the associated post-interpolation position data to coordinate values where x is between 0 and the render target width, y is between 0 and the render target height, z is divided by the original homogeneous coordinate w value (z/w), and w is 1 divided by the original w value (1/w).
+-   必ずレンダラーの Direct3D 構成コードを見直して、定数バッファーの構造体が HLSL の cbuffer 構造体の宣言と一致し、コンポーネントのスカラー型が両方の宣言で一致していることを確認する。
+-   レンダラーの C++ コードでは、データ パッキングが適切に行われるように、定数バッファーの宣言で [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833) 型を使う。
+-   定数バッファーを効率的に使う最良の方法として、更新頻度に応じてシェーダーの変数を定数バッファーにまとめる。 たとえば、フレームごとに 1 回更新される uniform データと、カメラが移動したときにだけ更新される uniform データがある場合は、それらのデータを 2 つの定数バッファーに分けることを考えます。
+-   セマンティクスの適用し忘れや誤った適用は、シェーダー コンパイル (FXC) エラーのよくある原因である。 よく見直してください。 以前のページやサンプルの多くでは Direct3D 11 より前のさまざまなバージョンの HLSL セマンティクスを参照しているため、ドキュメントが混乱を招くことがあります。
+-   各シェーダーのターゲットとする Direct3D 機能レベルを確認する。 機能レベル 9\_\* のセマンティクスは 11\_1 のセマンティクスと異なります。
+-   SV\_POSITION セマンティクスは関連する補間後の位置データを座標値に解決します。x は 0 からレンダー ターゲットの幅までの値に、y は 0 からレンダー ターゲットの高さまでの値になり、z は元の同次座標 w の値で割られ (z/w)、w は 1 を元の w の値で割った値 (1/w) になります。
 
-## Related topics
+## 関連トピック
 
 
-[How to: port a simple OpenGL ES 2.0 renderer to Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
+[簡単な OpenGL ES 2.0 レンダラーを Direct3D 11 に移植する方法](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
 
-[Port the shader objects](port-the-shader-config.md)
+[シェーダー オブジェクトの移植](port-the-shader-config.md)
 
-[Port the vertex buffers and data](port-the-vertex-buffers-and-data-config.md)
+[頂点バッファーと頂点データの移植](port-the-vertex-buffers-and-data-config.md)
 
-[Draw to the screen](draw-to-the-screen.md)
+[画面への描画](draw-to-the-screen.md)
 
  
 

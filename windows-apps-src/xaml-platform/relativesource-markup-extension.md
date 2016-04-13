@@ -1,16 +1,16 @@
 ---
-description: Provides a means to specify the source of a binding in terms of a relative relationship in the run-time object graph.
-title: RelativeSource markup extension
+description: ランタイム オブジェクト グラフの相対関係に関するバインドのソースを指定する手段を提供します。
+title: RelativeSource マークアップ拡張
 ms.assetid: B87DEF36-BE1F-4C16-B32E-7A896BD09272
 ---
 
-# {RelativeSource} markup extension
+# {RelativeSource} マークアップ拡張
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-Provides a means to specify the source of a binding in terms of a relative relationship in the run-time object graph.
+ランタイム オブジェクト グラフの相対関係に関するバインドのソースを指定する手段を提供します。
 
-## XAML attribute usage (Self mode)
+## XAML 属性の使用方法 (Self モード)
 
 ``` syntax
 <Binding RelativeSource="{RelativeSource Self}" .../>
@@ -18,7 +18,7 @@ Provides a means to specify the source of a binding in terms of a relative relat
 <object property="{Binding RelativeSource={RelativeSource Self} ...}" .../>
 ```
 
-## XAML attribute usage (TemplatedParent mode)
+## XAML 属性の使用方法 (TemplatedParent モード)
 
 ``` syntax
 <Binding RelativeSource="{RelativeSource TemplatedParent}" .../>
@@ -26,21 +26,22 @@ Provides a means to specify the source of a binding in terms of a relative relat
 <object property="{Binding RelativeSource={RelativeSource TemplatedParent} ...}" .../>
 ```
 
-## XAML values
+## XAML 値
 
-| Term | Description |
-| {RelativeSource Self} | Produces a [<strong>Mode</strong>](https://msdn.microsoft.com/library/windows/apps/br209915) value is <strong>Self</strong>. The target element should be used as the source for this binding. This is useful for binding one property of an element to another property on the same element. |
-| {RelativeSource TemplatedParent} | Produces a [<strong>ControlTemplate</strong>](https://msdn.microsoft.com/library/windows/apps/br209391) is applied is the source for this binding. This is useful for applying runtime information to bindings at the template level. | 
+| 用語 | 説明 |
+| {RelativeSource Self} | [<strong>モード</strong>](https://msdn.microsoft.com/library/windows/apps/br209915)値の生成は <strong>Self</strong> です。 ターゲット要素をこのバインドのソースとして使う必要があります。 要素の 1 つのプロパティを同じ要素の別のプロパティにバインドする場合に便利です。 |
+| {RelativeSource TemplatedParent} | [<strong>ControlTemplate</strong>](https://msdn.microsoft.com/library/windows/apps/br209391)の生成が適用されるは、このバインドのソースです。 ランタイム情報をテンプレート レベルでバインドに適用する場合に便利です。 | 
 
-## Remarks
+## 注釈
 
-A [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) can set [**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) either as an attribute on a **Binding** object element or as a component within a [{Binding} markup extension](binding-markup-extension.md). This is why two different XAML syntaxes are shown.
+[
+            **Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) では、**Binding** オブジェクト要素の属性または [{Binding} マークアップ拡張](binding-markup-extension.md)内のコンポーネントとして [**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) を設定できます。 これが、2 つの異なる XAML 構文が示されている理由です。
 
-**RelativeSource** is similar to [{Binding} markup extension](binding-markup-extension.md) in that it is a markup extension that is capable of returning instances of itself, supporting a string-based construction that essentially passes an argument to the constructor. In this case, the argument being passed is the [**Mode**](https://msdn.microsoft.com/library/windows/apps/br209915) value.
+**RelativeSource** は、自分自身のインスタンスを返すことができ、基本的に引数をコンストラクターに渡す文字列ベースの構築をサポートできるマークアップ拡張機能であるという点で、[{Binding} マークアップ拡張](binding-markup-extension.md)に似ています。 この場合、渡される引数は [**Mode**](https://msdn.microsoft.com/library/windows/apps/br209915) 値になります。
 
-The **Self** mode is useful for cases where the same element should be used as the source object and target object for a binding, but different properties are the source and the target. This is useful for binding one property of an element to another property on the same element, and is a variation on [**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828) binding that does not require naming and then self-referencing the element. If you bind one property of an element to another property on the same element, either the properties must use the same property type, or you must also use a [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826) on the binding to convert the values. For example, you could use [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) as a source for [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) without conversion, but you'd need a converter to use [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/br209419) as a source for [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br209006).
+**Self** モードは、バインドのソース オブジェクトとターゲット オブジェクトに同じ要素を使う必要がある一方でソースとターゲットのプロパティが異なる場合に便利です。 これは、要素の 1 つのプロパティを同じ要素の別のプロパティにバインドする場合に便利です。これは、要素の名前の指定の後に自己参照を必要としない、[**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828) バインドの 1 つのバリエーションです。 要素の 1 つのプロパティを同じ要素の別のプロパティにバインドする場合、プロパティで同じプロパティの型を使うか、またはバインドに対して [**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826) を使って値を変換する必要があります。 たとえば、[**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) は変換せずに [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) のソースとして使用できますが、[**Visibility**](https://msdn.microsoft.com/library/windows/apps/br209419) のソースとして [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/br209006) を使う場合には、コンバーターが必要です。
 
-Here's an example. This [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) uses a [{Binding} markup extension](binding-markup-extension.md) so that its [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) and [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) are always equal and it renders as a square. Only the Height is set as a fixed value. For this **Rectangle** its default [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) is **null**, not **this**. So to establish the data context source to be the object itself (and enable binding to its other properties) we use the `RelativeSource={RelativeSource Self}` argument in the {Binding} markup extension usage.
+次に例を示します。 この [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) は [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) と [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) が常に等しく、正方形として表示されるように [{Binding} マークアップ拡張](binding-markup-extension.md) を使います。 Height のみが固定値として設定されます。 この **Rectangle** の既定の[**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) は**これ**ではなく **null** です。 そこで、データ コンテキストのソースをオブジェクト自体にするために (そして他のプロパティにバインドできるようにするために)、{Binding} マークアップ拡張の使用時に `RelativeSource={RelativeSource Self}` 引数を使います。
 
 ```XAML
 <Rectangle
@@ -49,16 +50,16 @@ Here's an example. This [**Rectangle**](https://msdn.microsoft.com/library/windo
 />
 ```
 
-Another technique that can be useful is to use `RelativeSource={RelativeSource Self}` as a way to set an object's [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) to itself, where the [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) class has been extended with a custom property that's already providing a ready-to-go view model for its own data binding. You see this technique in some of the SDK examples: `<common:LayoutAwarePage ... DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}">`
+便利なもう 1 つの方法は、オブジェクトの [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) を自分自身に設定する方法として `RelativeSource={RelativeSource Self}` を使うことです。この場合、[**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) クラスは、独自のデータ バインドのために準備の完了したビュー モデルを既に提供しているカスタム プロパティによって拡張されています。 SDK のサンプルでこの技法は確認できます: `<common:LayoutAwarePage ... DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}">`
 
-**Note**  The XAML usage for **RelativeSource** shows only the usage for which it is intended: setting a value for [**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) in XAML as part of a binding expression. Theoretically, other usages are possible if setting a property where the value is [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913).
+**注**  XAML での **RelativeSource** の使用法には、意図されている使用法、つまり、バインド式の一部として XAML で [**Binding.RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) の値を設定する方法のみが示されています。 ただし、値が [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913) のプロパティを設定する場合は、理論的にそれ以外の使用法も可能です。
 
-## Related topics
+## 関連トピック
 
-* [XAML overview](xaml-overview.md)
-* [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946)
-* [{Binding} markup extension](binding-markup-extension.md)
-* [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820)
+* [XAML の概要](xaml-overview.md)
+* [データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)
+* [{Binding} マークアップ拡張](binding-markup-extension.md)
+* [**バインディング**](https://msdn.microsoft.com/library/windows/apps/br209820)
 * [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209913)
 
 

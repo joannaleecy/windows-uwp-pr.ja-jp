@@ -1,56 +1,57 @@
 ---
-title: Assemble the rendering framework
-description: Now, it's time to look at how the sample game uses that structure and state to display its graphics.
+title: レンダリング フレームワークの作成
+description: 次に、作成した構造と状態をサンプル ゲームで使ってグラフィックスを表示する方法を見てみましょう。
 ms.assetid: 1da3670b-2067-576f-da50-5eba2f88b3e6
 ---
 
-# Assemble the rendering framework
+# レンダリング フレームワークの作成
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-By now, you've seen how to structure a Universal Windows Platform (UWP) game to work with the Windows Runtime, and how to define a state machine to handle the flow of the game. Now, it's time to look at how the sample game uses that structure and state to display its graphics. Here, we look at how to implement a rendering framework, starting from the initialization of the graphics device through the presentation of the graphics objects for display.
+これまで、Windows ランタイムで動作するユニバーサル Windows プラットフォーム (UWP) ゲームを構築する方法、ステート マシンを定義してゲームのフローを処理する方法について確認してきました。 次に、作成した構造と状態をサンプル ゲームで使ってグラフィックスを表示する方法を見てみましょう。 ここでは、グラフィックス デバイスの初期化からディスプレイへのグラフィックス オブジェクトの表示まで、レンダリング フレームワークの実装方法について見ていきます。
 
-## Objective
+## 目標
 
 
--   To understand how to set up a basic rendering framework to display the graphics output for a UWP DirectX game.
+-   基本的なレンダリング フレームワークを設定して、UWP DirectX ゲームのグラフィックス出力を表示する方法を理解する。
 
-> **Note**   The following code files are not discussed here, but provide classes and methods referred to in this topic and are [provided as code at the end of this topic](#code_sample):
--   **Animate.h/.cpp**.
--   **BasicLoader.h/.cpp**. Provides methods for loading meshes, shaders and textures, both synchronously and asynchronously. Very useful!
--   **MeshObject.h/.cpp**, **SphereMesh.h/.cpp**, **CylinderMesh.h/.cpp**, **FaceMesh.h/.cpp**, and **WorldMesh.h/.cpp**. Contains the definitions of the object primitives used in the game, such as the ammo spheres, the cylinder and cone obstacles, and the walls of the shooting gallery. (**GameObject.cpp**, briefly discussed in this topic, contains the method for rendering these primitives.)
--   **Level.h/.cpp** and **Level\[1-6\].h/.cpp**. Contains the configuration for each of the games six levels, including the success criteria and the number and position of the targets and obstacles.
--   **TargetTexture.h/.cpp**. Contains a set of methods for drawing the bitmaps used as the textures on the targets.
+> **注**   ここでは次のコード ファイルについては説明しませんが、コード ファイルはこのトピックで参照するクラスとメソッドを提供しており、[このトピックの最後でコードとして提供されます](#code_sample)。
+-   **Animate.h/.cpp**。
+-   **BasicLoader.h/.cpp**。 メッシュ、シェーダー、テクスチャを同期または非同期で読み込むメソッドを提供します。 これは非常に便利です。
+-   **MeshObject.h/.cpp**、**SphereMesh.h/.cpp**、**CylinderMesh.h/.cpp**、**FaceMesh.h/.cpp**、**WorldMesh.h/.cpp**。 弾に使う球体、円柱形と円すい状の障害物、シューティング ギャラリーの壁など、ゲームで使うオブジェクト プリミティブの定義が含まれます (**GameObject.cpp**にはこれらのプリミティブをレンダリングするためのメソッドが含まれます。このトピックで簡単に説明します)。
+-   **Level.h/.cpp** および **Level\[1-6\].h/.cpp**。 成功のための条件や、ターゲットと障害物の数や位置など、ゲームの 6 つのレベル用の構成が含まれます。
+-   **TargetTexture.h/.cpp**。 ターゲットのテクスチャとして使うビットマップを描画するためのメソッドのセットが含まれます。
 
-These files contain code that is not specific to UWP DirectX games. But you can review them separately if you'd like more implementation details.
+これらのファイルには、UWP DirectX ゲームに固有ではないコードが含まれています。 ただし、実装について詳しく知りたい場合は個別に確認できます。
 
  
 
-This section covers three key files from the game sample ([provided as code at the end of this topic](#code_sample)):
+このセクションでは、ゲーム サンプルの 3 つの主要ファイルを取り上げます ([このトピックの最後でコードとして紹介します](#code_sample))。
 
 -   **Camera.h/.cpp**
 -   **GameRenderer.h/.cpp**
 -   **PrimObject.h/.cpp**
 
-Again, we assume that you understand basic 3D programming concepts like meshes, vertices, and textures. For more info about Direct3D 11 programming in general, see [Programming Guide for Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476345).
-With that said, let's look at the work that must be done to put our game on the screen.
+繰り返しになりますが、メッシュ、頂点、テクスチャなどの 3D プログラミングの基本的な概念を理解しているものとします。 Direct3D 11 のプログラミング全般について詳しくは、「[Direct 3D 11 のプログラミング ガイド](https://msdn.microsoft.com/library/windows/desktop/ff476345)」をご覧ください。
+それでは、ゲームを画面に表示するために必要な作業を見ていきましょう。
 
-## An overview of the Windows Runtime and DirectX
-
-
-DirectX is a fundamental part of the Windows Runtime and of the Windows 10 experience. All of Windows 10's visuals are built on top of DirectX, and you have the same direct line to the same low-level graphics interface, [DXGI](https://msdn.microsoft.com/library/windows/desktop/hh404534), which provides an abstraction layer for the graphics hardware and its drivers. All the Direct3D 11 APIs are available for you to talk to DXGI directly. The result is fast, high performing graphics in your games that give you access to all the latest graphics hardware features.
-
-To add DirectX support to a UWP app, you create a view provider for DirectX resources by implementing the [**IFrameworkViewSource**](https://msdn.microsoft.com/library/windows/apps/hh700482) and [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) interfaces. These provide a factory pattern for your view provider type and the implementation of your DirectX view provider, respectively. The UWP singleton, represented by the [**CoreApplication**](https://msdn.microsoft.com/library/windows/apps/br225016) object, runs this implementation.
-
-In [Defining the game's UWP framework](tutorial--building-the-games-metro-style-app-framework.md), we looked at how the renderer fit into the game sample's app framework. Now, let's look at how the game renderer connects to the view and builds the graphics that define the look of the game.
-
-## Defining the renderer
+## Windows ランタイムと DirectX の概要
 
 
-The **GameRenderer** abstract type inherits from the **DirectXBase** renderer type, adds support for stereo 3-D, and declares constant buffers and resources for the shaders that create and define our graphic primitives.
+DirectX は、Windows ランタイムと Windows 10 エクスペリエンスの基本となる部分です。 Windows 10 の視覚効果はすべて DirectX の上に構築されており、同じダイレクト ラインを、同じ下位レベルのグラフィックス インターフェイスである [DXGI](https://msdn.microsoft.com/library/windows/desktop/hh404534) に対して持ちます。DXGI はグラフィックス ハードウェアとそのドライバーにアブストラクション レイヤーを提供します。 DXGI と直接対話するためのすべての Direct3D 11 API を利用できます。 これによって、ゲームで高速かつ高性能なグラフィックスを使用でき、すべての最新のグラフィックス ハードウェア機能にアクセスすることができます。
 
-Here's the definition of **GameRenderer**.
+UWP アプリに DirectX のサポートを追加するには、[**IFrameworkViewSource**](https://msdn.microsoft.com/library/windows/apps/hh700482) インターフェイスと [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) インターフェイスを実装して DirectX リソース用のビュー プロバイダーを作成します。 これらのインターフェイスはそれぞれ、ビュー プロバイダー型用のファクトリ パターンと DirectX ビュー プロバイダーの実装を提供します。 [
+            **CoreApplication**](https://msdn.microsoft.com/library/windows/apps/br225016) オブジェクトで表す UWP アプリ シングルトンが、この実装を実行します。
+
+「[ゲームのユニバーサル Windows プラットフォーム (UWP) アプリ フレームワークの定義](tutorial--building-the-games-metro-style-app-framework.md)」では、レンダラーがゲーム サンプルのアプリ フレームワークにどのように適合するかについて説明しています。 それでは、ゲーム レンダラーをビューに接続して、ゲームの外観を定義するグラフィックスを作成する方法を見ていきましょう。
+
+## レンダラーの定義
+
+
+**GameRenderer** 抽象型は **DirectXBase** レンダラー型から継承され、ステレオ 3-D に対するサポートを追加して、グラフィックス プリミティブの作成と定義を行うシェーダーの定数バッファーとリソースを宣言します。
+
+次に **GameRenderer** の定義を示します。
 
 ```cpp
 ref class GameRenderer : public DirectXBase
@@ -119,29 +120,29 @@ protected private:
 };
 ```
 
-Because the Direct3D 11 APIs are defined as COM APIs, you must provide [**ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983) references to the objects defined by these APIs. These objects are automatically freed when their last reference goes out of scope when the app terminates.
+Direct3D 11 API は COM API として定義されるため、これらの API で定義されたオブジェクトへの [**ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983) 参照を指定する必要があります。 これらのオブジェクトは、アプリ終了時に最後の参照がスコープ外になったときに自動的に解放されます。
 
-The game sample declares 4 specific constant buffers:
+このゲーム サンプルでは、4 つの定数バッファーを宣言します。
 
--   **m\_constantBufferNeverChanges**. This constant buffer contains the lighting parameters. It's set one time and never changes again.
--   **m\_constantBufferChangeOnResize**. This constant buffer contains the projection matrix. The projection matrix is dependent on the size and aspect ratio of the window. It's updated only when the window size changes.
--   **m\_constantBufferChangesEveryFrame**. This constant buffer contains the view matrix. This matrix is dependent on the camera position and look direction (the normal to the projection) and changes only one time per frame.
--   **m\_constantBufferChangesEveryPrim**. This constant buffer contains the model matrix and material properties of each primitive. The model matrix transforms vertices from local coordinates into world coordinates. These constants are specific to each primitive and are updated for every draw call.
+-   **m\_constantBufferNeverChanges**。 この定数バッファーには照明パラメーターが含まれます。 設定されるのは一度だけで、変更はされません。
+-   **m\_constantBufferChangeOnResize**。 この定数バッファーにはプロジェクション マトリックスが含まれます。 プロジェクション マトリックスは、ウィンドウのサイズと縦横比に依存します。 ウィンドウのサイズが変更されたときにのみ更新されます。
+-   **m\_constantBufferChangesEveryFrame**。 この定数バッファーにはビュー マトリックスが含まれます。 このマトリックスは、カメラ位置とルック方向 (標準はプロジェクション方向) に依存し、1 フレームあたり 1 回だけ変更されます。
+-   **m\_constantBufferChangesEveryPrim**。 この定数バッファーには各プリミティブのモデル マトリックスとマテリアル プロパティが含まれます。 モデル マトリックスは、頂点をローカル座標からワールド座標に変換します。 これらの定数は各プリミティブに固有で、描画呼び出しのたびに更新されます。
 
-The whole idea of multiple constant buffers with different frequencies is to reduce the amount of data that must be sent to the GPU per frame. Therefore, the sample separates constants into different buffers based on the frequency that they must be updated. This is a best practice for Direct3D programming.
+複数の定数バッファーに異なる更新頻度を設定する趣旨は、GPU に送信するデータの 1 フレームあたりの量を減らすことです。 このため、サンプルでは、更新する必要のある頻度に基づいて定数を異なるバッファーに分けています。 Direct3D プログラミングでは、このような処理をお勧めします。
 
-The renderer contains the shader objects that compute our primitives and textures: **m\_vertexShader** and **m\_pixelShader**. The vertex shader processes the primitives and the basic lighting, and the pixel shader (sometimes called a fragment shader) processes the textures and any per-pixel effects. There are two versions of these shaders (regular and flat) for rendering different primitives. The flat versions are much simpler and don't do specular highlights or any per pixel lighting effects. These are used for the walls and make rendering faster on lower powered devices.
+レンダラーには、プリミティブとテクスチャを計算する **m\_vertexShader** と **m\_pixelShader** というシェーダー オブジェクトが含まれます。 頂点シェーダーはプリミティブと基本的な照明を処理し、ピクセル シェーダー (フラグメント シェーダーとも呼ばれます) はテクスチャとピクセルごとの効果を処理します。 これらのシェーダーには、異なるプリミティブをレンダリングするための 2 つのバージョン (標準とフラット) があります。 フラット バージョンは、標準と比べるときわめて単純であり、鏡面ハイライトやピクセル単位の照明効果は一切実行しません。 壁に使われ、低電力デバイスでレンダリングを高速化します。
 
-The renderer class contains the [DirectWrite and Direct2D](https://msdn.microsoft.com/library/windows/desktop/ff729481) resources used for the overlay and the Heads Up Display (the **GameHud** object). The overlay and HUD are drawn on top of the render target when projection is complete in the graphics pipeline.
+レンダラー クラスには、オーバーレイとヘッドアップ ディスプレイ (**GameHud** オブジェクト) に使う [DirectWrite and Direct2D](https://msdn.microsoft.com/library/windows/desktop/ff729481) というリソースが含まれます。 オーバーレイと HUD は、グラフィックス パイプラインでプロジェクションが完了するときに、レンダー ターゲット上に描画されます。
 
-The renderer also defines the shader resource objects that hold the textures for the primitives. Some of these textures are pre-defined (DDS textures for the walls and floor of the world as well as the ammo spheres).
+レンダラーは、プリミティブのテクスチャを保持するシェーダー リソース オブジェクトも定義します。 これらのテクスチャの中には、事前定義されているもの (ゲーム内の壁や床の DDS テクスチャ、弾に使う球体) もあります。
 
-Now, it's time to see how this object is created!
+それでは、このオブジェクトの作成方法を見ていきましょう。
 
-## Initializing the renderer
+## レンダラーの初期化
 
 
-The sample game calls this **Initialize** method as part of the CoreApplication initialization sequence in **App::SetWindow**.
+サンプル ゲームでは、この **Initialize** メソッドを **App::SetWindow** の CoreApplication 初期化シーケンスの一部として呼び出します。
 
 ```cpp
 void GameRenderer::Initialize(
@@ -168,28 +169,28 @@ void GameRenderer::Initialize(
 }
 ```
 
-This is a pretty straightforward method. It checks to see if the renderer had been previously initialized, and if it hasn't, it instantiates the **GameHud** and **GameInfoOverlay** objects.
+これは、非常に単純なメソッドです。 レンダラーが前に初期化されているかどうかを確認し、初期化されていない場合は **GameHud** オブジェクトと **GameInfoOverlay** オブジェクトをインスタンス化します。
 
-After that, the renderer initialization process runs the base implementation of **Initialize** provided on the **DirectXBase** class it inherited from.
+その後、レンダラー初期化プロセスにより、継承された **DirectXBase** クラスで提供される **Initialize** の基本実装が実行されます。
 
-When the DirectXBase initialization completes, the **GameInfoOverlay** object is initialized. After initialization is complete, it's time to look at the methods for creating and loading the graphics resources for the game.
+DirectXBase の初期化が完了すると、**GameInfoOverlay** オブジェクトが初期化されます。 初期化が完了したら、ゲームのグラフィックス リソースの作成と読み込みを行うためのメソッドを確認します。
 
-## Creating and loading DirectX graphics resources
+## DirectX グラフィックス リソースの作成と読み込み
 
 
-The first order of business in any game is to establish a connection to our graphics interface, create the resources we need to draw the graphics, and then set up a render target into which we can draw those graphics. In the game sample (and in the Microsoft Visual Studio**DirectX 11 App (Universal Windows)** template), this process is implemented with three methods:
+どのようなゲームでも、まずグラフィックス インターフェイスへの接続を確立し、グラフィックスの描画に必要なリソースを作成してから、これらのグラフィックスを描画するレンダー ターゲットを設定します。 このゲーム サンプル (および Microsoft Visual Studio の **DirectX 11 アプリ (ユニバーサル Windows)** テンプレート) では、このプロセスは 3 つのメソッドを使って実装されます。
 
 -   **CreateDeviceIndependentResources**
 -   **CreateDeviceResources**
 -   **CreateWindowSizeDependentResources**
 
-Now, in the game sample, we override two of these methods (**CreateDeviceIndependentResources** and **CreateDeviceResources**) provided on the **DirectXBase** class implemented in the **DirectX 11 App (Universal Windows)** template. For each of these override methods, we first call the **DirectXBase** implementations they override, and then add more implementation details specific to the game sample. Be aware that the **DirectXBase** class implementation included with the game sample has been modified from the version provided in the Visual Studio template to include stereoscopic view support and includes pre-rotation of the **SwapBuffer** object.
+このゲーム サンプルでは、これらのメソッドのうちの 2 つ (**CreateDeviceIndependentResources** と **CreateDeviceResources**) を、**DirectX 11 App (Universal Windows)** テンプレートに実装されている **DirectXBase** クラスで提供されるメソッドで上書きします。 これらの上書きメソッドごとに、まず上書きする **DirectXBase** 実装を呼び出して、次にゲーム サンプルに固有の実装の詳細をさらに追加します。 ゲーム サンプルに含まれている **DirectXBase** クラスの実装は、ステレオスコピック ビューのサポートと **SwapBuffer** オブジェクトの事前回転を含むように、Visual Studio テンプレートで提供されているバージョンから変更されています。
 
-**CreateWindowSizeDependentResources** is not overridden by the **GameRenderer** object. We use the implementation of it provided in the **DirectXBase** class.
+**CreateWindowSizeDependentResources** は **GameRenderer** オブジェクトによって上書きされません。 **DirectXBase** クラスで提供されているこのメソッドの実装を使います。
 
-For more info about the **DirectXBase** base implementations of these methods, see [How to set up your UWP DirectX app to display a view](https://msdn.microsoft.com/library/windows/apps/hh465077).
+これらのメソッドの **DirectXBase** 基本実装について詳しくは、「[DirectX UWP アプリでビューを表示するための設定方法](https://msdn.microsoft.com/library/windows/apps/hh465077)」をご覧ください。
 
-The first of these overridden methods, **CreateDeviceIndependentResources**, calls the **GameHud::CreateDeviceIndependentResources** method to create the [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038) text resources that use the Segoe UI font, which is the font used by most UWP apps.
+上書きされるメソッドのうちの最初のメソッドである **CreateDeviceIndependentResources** では、**GameHud::CreateDeviceIndependentResources** メソッドを呼び出して、ほとんどの UWP アプリで使われる Segoe UI フォントを使う [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038) テキスト リソースを作成します。
 
 CreateDeviceIndependentResources
 
@@ -270,9 +271,9 @@ void GameHud::CreateDeviceIndependentResources(
 }
 ```
 
-The sample uses four text formatters: two for title header and title body text, and two for body text. This is used in much of the overlay text.
+サンプルでは、タイトル ヘッダーとタイトル本文テキスト用に 2 つ、本文テキスト用に 2 つの合わせて 4 つのテキスト フォーマッタを使っています。 ほとんどのオーバーレイ テキストで、このテキスト フォーマッタが使われています。
 
-The second method, **CreateDeviceResources**, loads the specific resources for the game that will be computed on the graphics device. Let's look at the code for this method.
+2 つ目のメソッドである **CreateDeviceResources**は、グラフィックス デバイスで計算されるゲーム固有のリソースを読み込みます。 それでは、このメソッドのコードを見てみましょう。
 
 CreateDeviceResources
 
@@ -372,9 +373,9 @@ void GameHud::CreateDeviceResources(_In_ ID2D1DeviceContext* d2dContext)
 }
 ```
 
-In this example, in normal execution, the **CreateDeviceResources** method just calls the base class method and then calls the **GameHud::CreateDeviceResources** method (also listed previously). If there's a problem later with the underlying graphics device, it might have to be re-initialized. In this case, the **CreateDeviceResources** method initiates a set of async tasks to create the game device resources. This is done through a sequence of two methods: a call to **CreateDeviceResourcesAsync**, and then, when it completes, **FinalizeCreateGameDeviceResources**.
+この例では、通常の実行時には、**CreateDeviceResources** メソッドは単に基底クラスのメソッドを呼び出し、前に示した **GameHud::CreateDeviceResources** メソッドを呼び出します。 後でベースとなるグラフィックス デバイスに問題が生じた場合は、再初期化が必要になる可能性があります。 この場合、**CreateDeviceResources** メソッドは一連の非同期タスクを開始し、ゲーム デバイスのリソースを作成します。 これは、**CreateDeviceResourcesAsync** を呼び出してその完了時に **FinalizeCreateGameDeviceResources** を呼び出す、一連の 2 つのメソッドによって実行されます。
 
-CreateGameDeviceResourcesAsync and FinalizeCreateGameDeviceResources
+CreateGameDeviceResourcesAsync と FinalizeCreateGameDeviceResources
 
 ```cpp
 task<void> GameRenderer::CreateGameDeviceResourcesAsync(_In_ Simple3DGame^ game)
@@ -657,47 +658,47 @@ void GameRenderer::FinalizeCreateGameDeviceResources()
 }
 ```
 
-**CreateDeviceResourcesAsync** is a method that runs as a separate set of async tasks to load the game resources. Because it's expected to run on a separate thread, it only has access to the Direct3D 11 device methods (those defined on [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379)) and not the device context methods (the methods defined on [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)), so it has the option to not perform any rendering. The **FinalizeCreateGameDeviceResources** method runs on the main thread and does have access to the Direct3D 11 device context methods.
+**CreateDeviceResourcesAsync** は、ゲームのリソースを読み込むための一連の非同期タスクとして別個に実行されるメソッドです。 個別のスレッドで実行されると想定されるので、Direct3D 11 デバイス メソッド ([**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) で定義されているメソッド) にのみアクセスでき、デバイス コンテキスト メソッド ([**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) で定義されているメソッド) にはアクセスできないため、レンダリングを実行しないように選ぶことができます。 **FinalizeCreateGameDeviceResources** メソッドはメイン スレッドで実行され、Direct3D 11 デバイス コンテキスト メソッドにアクセスできます。
 
-The sequence of events for loading the game devices resources proceeds as follows.
+ゲーム デバイスのリソースを読み込むための一連のイベントは、次のように処理を進めます。
 
-**CreateDeviceResourcesAsync** first initializes constant buffers for the primitives. Constant buffers are low-latency, fixed-width buffers that hold the data that a shader uses during shader execution. (Think of these buffers as passing data to the shader that is constant over the execution of the particular draw call.) In this sample, the buffers contain the data that the shaders will use to:
+まず、**CreateDeviceResourcesAsync** がプリミティブの定数バッファーを初期化します。 定数バッファーは、シェーダー実行時にシェーダーが使うデータを保持する、待機時間の短い固定長バッファーです。 (これらのバッファーは、特定の描画呼び出しの実行時に一定であるシェーダーにデータを渡すと考えてください。) このサンプルでは、バッファーには、シェーダーが以下の用途に使うデータが含まれます。
 
--   Place the light sources and set their color when the renderer initializes
--   Compute the view matrix whenever the window is resized
--   Compute the projection matrix for every frame update
--   Compute the transformations of the primitives on every render update
+-   レンダラーの初期化時に光源を配置し、色を設定する
+-   ウィンドウのサイズが変更されたときに、ビュー マトリックスを計算する
+-   フレームが更新されるたびに、プロジェクション マトリックスを計算する
+-   レンダーが更新されるたびに、プリミティブの変換を計算する
 
-The constants receive the source information (vertices) and transform the vertex coordinates and data from model space into the device space. Ultimately, this data results in texel coordinates and pixels in the render target.
+定数がソースの情報 (頂点) を受け取り、頂点の座標とデータをモデル空間からデバイス空間に変換します。 最終的に、このデータはレンダー ターゲットのテクセル座標とピクセルに変換されます。
 
-Next, the game renderer object creates a loader for the shaders that will perform the computation. (See **BasicLoader.cpp** in the sample for the specific implementation.)
+次に、ゲーム レンダラー オブジェクトが計算を実行するシェーダーのローダーを作成します (具体的な実装については、サンプルの **BasicLoader.cpp** をご覧ください)。
 
-Then, **CreateDeviceResourcesAsync** initiates async tasks for loading all the texture resources into **ShaderResourceViews**. These texture resources are stored in the DirectDraw Surface (DDS) textures that came with the sample. DDS textures are a lossy texture format that work with DirectX Texture Compression (DXTC). We use these textures on the walls, ceiling and floor of the world, and on the ammo spheres and pillar obstacles.
+その後、**CreateDeviceResourcesAsync** は、すべてのテクスチャ リソースを **ShaderResourceViews** に読み込む非同期タスクを開始します。 これらのテクスチャ リソースは、サンプルに付属の DirectDraw Surface (DDS) テクスチャに格納されます。 DDS テクスチャは、DirectX Texture Compression (DXTC) で使われる、不可逆のテクスチャ形式です。 これらのテクスチャは、ゲーム内の壁、天井、床、および弾に使用する球体や柱の障害物で使用します。
 
-Finally, it returns a task group that contains all the async tasks created by the method. The calling function waits for the completion of all these async tasks, and then calls **FinalizeCreateGameDeviceResources**.
+最後に、メソッドで作成されたすべての非同期タスクを含むタスク グループが返されます。 呼び出し元の関数は、これらすべての非同期タスクが完了するまで待機してから **FinalizeCreateGameDeviceResources** を呼び出します。
 
-**FinalizeCreateGameDeviceResources** loads the initial data into the constant buffers with a device context method call to [**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486): `m_deviceContext->UpdateSubresource`. This method creates the mesh objects for the sphere, cylinder, face, and world game objects and the associated materials. It then walks the game object list associating the appropriate device resources with each object.
+**FinalizeCreateGameDeviceResources** は、[**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486) のデバイス コンテキスト メソッド呼び出し `m_deviceContext->UpdateSubresource` によって、最初のデータを定数バッファーに読み込みます。 このメソッドによって、球体、円柱形、フェイス、ゲーム オブジェクト、関連するマテリアルのメッシュ オブジェクトが作成されます。 その後、ゲーム オブジェクト リストで、適切なデバイス リソースが各オブジェクトに関連付けられます。
 
-The textures for the ringed and numbered target objects are procedurally generated using the code in **TargetTexture.cpp**. The renderer creates an instance of the **TargetTexture** type, which creates the bitmap texture for the target objects in the game when we call the **TargetTexture::CreateTextureResourceView** method. The resulting texture is composed of concentric colored rings, with a numeric value on the top. These generated resources are associated with the appropriate target game objects.
+輪で囲まれ、番号が付いたターゲット オブジェクトのテクスチャは、**TargetTexture.cpp**。 レンダラーは、**TargetTexture** 型のインスタンスを作成します。このインスタンスは、**TargetTexture::CreateTextureResourceView** メソッドを呼び出すときにゲームのターゲット オブジェクトのビットマップ テクスチャを作成します。 作成されるテクスチャは、上部に数字の付いた、色付きの同心の輪で構成されます。 これらの生成されたリソースは、適切なターゲット ゲーム オブジェクトに関連付けられます。
 
-Lastly, **FinalizeCreateGameDeviceResources** set the `m_gameResourcesLoaded` Boolean global variable to indicate that all resources are now loaded.
+最後に、**FinalizeCreateGameDeviceResources** はブール型の `m_gameResourcesLoaded` グローバル変数を設定し、すべてのリソースが読み込まれたことを示します。
 
-The game has the resources to display the graphics in the current window, and it can recreate those resources as the window changes. Now, let's look at the camera used to define the player's view of the scene in that window.
+ゲームには、現在のウィンドウにグラフィックスを表示するためのリソースがあり、ウィンドウが変更されたときにこれらのリソースを再作成できます。 次に、そのウィンドウ内のシーンのプレイヤー ビューを定義するカメラを見てみましょう。
 
-## Implementing the camera object
+## カメラ オブジェクトの実装
 
 
-The game has the code in place to update the world in its own coordinate system (sometimes called the world space or scene space). All objects, including the camera, are positioned and oriented in this space. In the sample game, the camera's position along with the look vectors (the "look at" vector that points directly into the scene from the camera, and the "look up" vector that is upwards perpendicular to it) define the camera space. The projection parameters determine how much of that space is actually visible in the final scene; and the Field of View (FoV), aspect ratio, and clipping planes define the projection transformation. A vertex shader does the heavy lifting of converting from the model coordinates to device coordinates with the following algorithm (where V is a vector and M is a matrix):
+ゲームには、独自の座標系でワールドを更新するためのコードがあります (ワールド空間またはシーン空間と呼ばれることもあります)。 カメラを含むすべてのオブジェクトはこの空間に配置されます。 サンプル ゲームでは、カメラの位置とルック ベクター (カメラからシーンを直接ポイントする "ルック アット" ベクターとシーンに対して垂直かつ上向きの "ルック アップ" ベクター) によってカメラ空間が定義されます。 プロジェクション パラメーターは、最終シーン内でその空間のどのくらいが実際に表示されるのかを決定します。また、視野 (FoV)、縦横比、クリッピング プレーンはプロジェクション変換を定義します。 頂点シェーダーは、次のアルゴリズムを使って (V はベクター、M はマトリックスを表す) モデル座標からデバイス座標への変換を行います。
 
-`              V(device) = V(model) x M(model-to-world) x M(world-to-view) x M(view-to-device)           `.
+`              V(device) = V(model) x M(model-to-world) x M(world-to-view) x M(view-to-device)           `。
 
--   `M(model-to-world)` is a transformation matrix for model coordinates to world coordinates. This is provided by the primitive. (We'll review this in the section on primitives, here.)
--   `M(world-to-view)` is a transformation matrix for world coordinates to view coordinates. This is provided by the view matrix of the camera.
--   `M(view-to-device)` is a transformation matrix for view coordinates to device coordinates. This is provided by the projection of the camera.
+-   `M(model-to-world)` はモデル座標からワールド座標への変換マトリックスです。 このマトリックスは、プリミティブによって提供されます。 (このページのプリミティブについてのセクションで確認します。)
+-   `M(world-to-view)` はワールド座標からビュー座標への変換マトリックスです。 このマトリックスは、カメラのビュー マトリックスによって提供されます。
+-   `M(view-to-device)` はビュー座標からデバイス座標への変換マトリックスです。 このマトリックスは、カメラのプロジェクションによって提供されます。
 
-The shader code in **VertexShader.hlsl** is loaded with these vectors and matrices from the constant buffers, and performs this transformation for every vertex.
+**VertexShader.hlsl** のシェーダー コードがこれらのベクターとマトリックスと共に定数バッファーから読み込まれ、各頂点に対してこの変換を実行します。
 
-The **Camera** object defines the view and projection matrices. Let's look at how the sample game declares it.
+**Camera** オブジェクトは、ビュー マトリックスとプロジェクション マトリックスを定義します。 次に、サンプル ゲームがこのオブジェクトをどのように宣言するか見てみましょう。
 
 ```cpp
 ref class Camera
@@ -747,12 +748,12 @@ protected private:
 };
 ```
 
-There are two 4x4 matrices that define the transformations to the view and projection coordinates, **m\_viewMatrix** and **m\_projectionMatrix**. (For stereo projection, you use two projection matrices: one for each eye's view.) They are calculated with these two methods, respectively:
+ビュー座標とプロジェクション座標 (**m\_viewMatrix** と **m\_projectionMatrix**) への変換を定義する 2 つの 4x4 マトリックスがあります。 (ステレオ プロジェクションの場合、それぞれの目のビューに 1 つずつ、2 つのプロジェクション マトリックスを使用します。) これらのマトリックスは、それぞれ次の 2 つのメソッドを使って計算されます。
 
 -   **SetViewParams**
 -   **SetProjParams**
 
-The code for these two methods looks like this:
+これら 2 つのメソッドのコードは次のとおりです。
 
 ```cpp
 void Camera::SetViewParams(
@@ -842,18 +843,18 @@ void Camera::SetProjParams(
 }
 ```
 
-We get the resulting view and projection data by calling the **View** and **Projection** methods, respectively, on the **Camera** object. These calls occur in the next step we review, the **GameRenderer::Render** method called in the game loop.
+**Camera** オブジェクトで **View** メソッドと **Projection** メソッドをそれぞれ呼び出して、生成されたビューとプロジェクション データを取得します。 これらの呼び出しは、これから確認する次の手順 (ゲーム ループで呼び出される **GameRenderer::Render** メソッド) で行われます。
 
-Now, let's look at how the game creates the framework to draw our game graphics using the camera. This includes defining the primitives that comprise the game world and its elements.
+次に、ゲームでフレームワークを作成し、カメラを使ってゲーム グラフィックスを描画する方法を見てみましょう。 この手順には、ゲーム ワールドとその要素で構成されるプリミティブを定義することも含まれます。
 
-## Defining the primitives
+## プリミティブの定義
 
 
-In the game sample code, we define and implement the primitives in two base classes and the corresponding specializations for each primitive type.
+ゲーム サンプル コードでは、2 つの基底クラスでプリミティブを定義して実装し、プリミティブ型ごとに対応する特殊化を定義して実装します。
 
-**MeshObject.h/.cpp** defines the base class for all mesh objects. The **SphereMesh.h/.cpp**, **CylinderMesh.h/.cpp**, **FaceMesh.h/.cpp**, and **WorldMesh.h/.cpp** files contain the code that populates the constant buffers for each primitive with the vertex and vertex normal data that defines the primitive's geometry. These code files are a good place to start if you're looking to understand how to create Direct3D primitives in your own game app, but we won't cover them here as it's too specific to this game's implementation. For now, we assume that the vertex buffers for each primitive have been populated, and look at how the game sample handles those buffers to update the game itself.
+**MeshObject.h/.cpp** では、すべてのメッシュ オブジェクトの基底クラスを定義します。 **SphereMesh.h/.cpp**、**CylinderMesh.h/.cpp**、**FaceMesh.h/.cpp**、**WorldMesh.h/.cpp** の各ファイルには、プリミティブのジオメトリを定義する頂点データと頂点標準データを使って各プリミティブに定数バッファーを設定するコードが含まれます。 これらのコード ファイルは、ゲーム アプリで Direct3D プリミティブを作成する方法を理解するための最初のファイルとしては適していますが、このゲームの実装に固有の要素が多いため、ここでは説明しません。 ここでは、各プリミティブの頂点バッファーが設定されていると想定して、ゲーム サンプルでこれらのバッファーがどのように処理され、ゲーム自体が更新されるかを見ていきます。
 
-The base class for objects that represent the primitives from the perspective of the game is defined in **GameObject.h./.cpp.** This class, **GameObject**, defines the fields and methods for the common behaviors across all primitives. Each primitive object type derives from it. Let's look at how it's defined:
+ゲーム側から見た場合のプリミティブを表すオブジェクトの基底クラスは、**GameObject.h./.cpp** で定義されます。このクラス **GameObject** は、すべてのプリミティブに共通する動作のフィールドとメソッドを定義します。 各プリミティブのオブジェクトの型は、ここから派生します。 オブジェクトがどのように定義されるかを見てみましょう。
 
 ```cpp
 ref class GameObject
@@ -946,22 +947,22 @@ protected private:
 };
 ```
 
-Most of the fields contain data about the state, visual properties, or position of the primitive in the game world. There are a few methods in particular that are necessary in most games:
+ほとんどのフィールドには、状態、視覚プロパティ、またはゲーム ワールドでのプリミティブの位置に関するデータが含まれます。 特に、次のメソッドはほとんどのゲームで必須です。
 
--   **Mesh**. Gets the mesh geometry for the primitive, which is stored in **m\_mesh**. This geometry is defined in **MeshObject.h/.cpp**.
--   **IsTouching**. This method determines if the primitive is within a specific distance of a point, and returns the point on the surface closest to the point and the normal to the surface of the object at that point. Because the sample is only concerned with ammo-primitive collisions, this is enough for the game's dynamics. It is not a general purpose primitive-primitive intersection function, although it could be used as the basis for one.
--   **AnimatePosition**. Updates the movement and animation for the primitive.
--   **UpdatePosition**. Updates the position of the object in the world coordinate space.
--   **Render**. Puts the material properties of the primitive into the primitive constant buffer and then renders (draws) the primitive geometry using the device context.
+-   **Mesh**。 **m\_mesh** に格納されている、プリミティブのメッシュ ジオメトリを取得します。 このジオメトリは、**MeshObject.h/.cpp** で定義されています。
+-   **IsTouching**。 このメソッドは、プリミティブがポイントから特定の距離内にあるかどうかを判断して、そのポイントに最も近いサーフェス上のポイントと、そのポイントにあるオブジェクトのサーフェスに対する垂線を返します。 サンプルでは、弾のプリミティブの衝突のみに関係しているため、ゲームのダイナミクスはこれで十分です。 これはプリミティブどうしの汎用の交点関数ではありませんが、そのベースとして使うことはできます。
+-   **AnimatePosition**。 プリミティブの動きとアニメーションを更新します。
+-   **UpdatePosition**。 ワールド座標空間でのオブジェクトの位置を更新します。
+-   **Render**。 プリミティブのマテリアル プロパティをプリミティブ定数バッファーに入れて、デバイス コンテキストを使ってプリミティブ ジオメトリをレンダリング (描画) します。
 
-It's a good practice to create a base object type that defines the minimum set of methods for a primitive because most games have a very large number of primitives, and the code can quickly become difficult to manage. It also simplifies game code when the update loop can treat the primitives polymorphically, letting the objects themselves define their own update and rendering behaviors.
+プリミティブに最小限必要なメソッドのセットを定義する基本オブジェクト型を作成することをお勧めします。ほとんどのゲームには多数のプリミティブがあり、すぐにコードを管理するのが難しくなるためです。 更新ループによってプリミティブをさまざまな形で処理できる場合も、ゲーム コードを単純にすることができます。これにより、オブジェクト自身で自らの更新動作とレンダリング動作を定義できるようになります。
 
-Let's look at the basic rendering of a primitive in the game sample.
+次に、このゲーム サンプルでのプリミティブの基本的なレンダリングを確認しましょう。
 
-## Rendering the primitives
+## プリミティブのレンダリング
 
 
-The primitives in the game sample use the base **Render** method implemented on the parent **GameObject** class, as here:
+ゲーム サンプルのプリミティブは、次のように、親の **GameObject** クラスに実装された基本の **Render** メソッドを使います。
 
 ```cpp
 void GameObject::Render(
@@ -995,15 +996,15 @@ void GameObject::Render(
 }
 ```
 
-The **GameObject::Render** method updates the primitive constant buffer with the data specific to a given primitive. The game uses multiple constant buffers, but only needs to update these buffers one time per primitive.
+**GameObject::Render** メソッドは、特定のプリミティブに固有のデータでプリミティブ定数バッファーを更新します。 ゲームでは複数の定数バッファーが使われますが、これらのバッファーはプリミティブごとに 1 回更新するだけで済みます。
 
-Think of the constant buffers as input to the shaders that run for each primitive. Some data is static (**m\_constantBufferNeverChanges**); some data is constant over the frame (**m\_constantBufferChangesEveryFrame)**, like the position of the camera; and some data is specific to the primitive, like its color and textures (**m\_constantBufferChangesEveryPrim**). The game renderer separates these inputs into different constant buffers to optimize the memory bandwidth that the CPU and GPU use. This approach also helps to minimize the amount of data the GPU needs to keep track of. Remember, the GPU has a big queue of commands, and each time the game calls **Draw**, that command is queued along with the data associated with it. When the game updates the primitive constant buffer and issues the next **Draw** command, the graphics driver adds this next command and the associated data to the queue. If the game draws 100 primitives, it could potentially have 100 copies of the constant buffer data in the queue. We want to minimize the amount of data the game is sending to the GPU, so the game uses a separate primitive constant buffer that only contains the updates for each primitive.
+定数バッファーは、プリミティブごとに実行されるシェーダーに対する入力と考えることができます。 静的なデータ (**m\_constantBufferNeverChanges**) もあれば、カメラの位置のようにフレームで一定のデータ (**m\_constantBufferChangesEveryFrame)** もあれば、色やテクスチャなどのようにプリミティブに固有のデータ (**m\_constantBufferChangesEveryPrim**) もあります。 ゲーム レンダラーはこれらの入力を別個の定数バッファーに分けて、CPU や GPU が使うメモリ帯域幅を最適化します。 この方法は、GPU が追跡する必要のあるデータ量を最小限に抑えるのにも役立ちます。 GPU にはコマンドの大きいキューがあり、ゲームが **Draw** を呼び出すたびに、そのコマンドは関連するデータと共にキューに入れられます。 ゲームがプリミティブ定数バッファーを更新して、次の **Draw** コマンドを発行すると、グラフィックス ドライバーはこの次のコマンドと関連するデータをキューに追加します。 ゲームで 100 のプリミティブを描画する場合、キューに定数バッファー データの 100 のコピーが存在する可能性があります。 ゲームから GPU に送るデータ量を最小限に抑えるために、ゲームでは、各プリミティブの更新情報のみを含む個別のプリミティブ定数バッファーを使用します。
 
-If a collision (a hit) is detected, **GameObject::Render** checks the current context, which indicates whether the target has been hit by an ammo sphere. If the target has been hit, this method applies a hit material, which reverses the colors of the rings of the target to indicate a successful hit to the player. Otherwise, it applies the default material with the same method. In both cases, it sets the material by calling **Material::RenderSetup**, which sets the appropriate constants into the constant buffer. Then, it calls [**ID3D11DeviceContext::PSSetShaderResources**](https://msdn.microsoft.com/library/windows/desktop/ff476473) to set the corresponding texture resource for the pixel shader, and [**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) and [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) to set the vertex shader and pixel shader objects themselves, respectively.
+衝突 (ヒット) が検出された場合、**GameObject::Render** は現在のコンテキストを確認し、弾 (球体) が標的に当たったと示しているかを調べます。 標的に弾が当たった場合、このメソッドは標的の輪の色を反転するヒット マテリアルを適用して、弾が当たったことをプレイヤーに示します。 弾が当たらなかった場合、同じメソッドで既定のマテリアルが適用されます。 どちらの場合も、このメソッドは、適切な定数を定数バッファーに設定する **Material::RenderSetup** を呼び出してマテリアルを設定します。 次に、[**ID3D11DeviceContext::PSSetShaderResources**](https://msdn.microsoft.com/library/windows/desktop/ff476473) を呼び出してピクセル シェーダーの対応するテクスチャ リソースを設定し、[**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) と [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) を呼び出してそれぞれ頂点シェーダー オブジェクトとピクセル シェーダー オブジェクト自体を設定します。
 
-Here's how **Material::RenderSetup** configures the constant buffers and assigns the shader resources. Again, note that the constant buffer is the one used for updating changes to primitives, specifically.
+次に、**Material::RenderSetup** で定数バッファーを構成してシェーダー リソースを割り当てる方法を示します。 繰り返しになりますが、この定数バッファーは、特にプリミティブに対する変更を更新するために使います。
 
-> **Note**   The **Material** class is defined in **Material.h/.cpp**.
+> **注**   **Material** クラスは **Material.h/.cpp** で定義されています。
 
  
 
@@ -1024,7 +1025,7 @@ void Material::RenderSetup(
 }
 ```
 
-Finally, the **PrimObject::Render** calls the **Render** method for the underlying **MeshObject** object.
+最後に、**PrimObject::Render** は、ベースとなる **MeshObject** オブジェクトの **Render** メソッドを呼び出します。
 
 ```cpp
 void MeshObject::Render(_In_ ID3D11DeviceContext *context)
@@ -1039,21 +1040,21 @@ void MeshObject::Render(_In_ ID3D11DeviceContext *context)
 }
 ```
 
-Now, the game sample’s **MeshObject::Render** method queues the drawing command to execute the shaders on the GPU using the current scene state. The vertex shader converts the geometry (vertices) from model coordinates into device (world) coordinates, taking into account where the camera is and the perspective transformation. Lastly, the pixel shaders render the transformed triangles into the back buffer using the texture set above.
+ゲーム サンプルの **MeshObject::Render** メソッドは描画コマンドをキューに入れ、現在のシーン状態を使って GPU 上でシェーダーを実行します。 頂点シェーダーは、カメラの位置や視点の変換を考慮して、ジオメトリ (頂点) をモデル座標からデバイス (ワールド) 座標に変換します。 最後に、ピクセル シェーダーは上で設定したテクスチャを使って、変換された三角形をバック バッファーにレンダリングします。
 
-This happens on the actual rendering process!
+これが実際のレンダリング プロセスで行われます。
 
-## Creating the vertex and pixel shaders
+## 頂点シェーダーとピクセル シェーダーの作成
 
 
-At this point, the game sample has defined the primitives to draw and the constant buffers that define their rendering. These constant buffers serve as the sets of parameters to the shaders that run on the graphics device. These shader programs come in two types:
+これまでにゲーム サンプルでは、描画するプリミティブと、レンダリングを定義する定数バッファーが定義されました。 これらの定数バッファーは、グラフィックス デバイス上で実行されるシェーダーに対するパラメーター セットとして機能します。 これらのシェーダー プログラムには 2 つの型があります。
 
--   Vertex shaders perform per-vertex operations, such as vertex transformations and lighting.
--   Pixel (or fragment) shaders perform per-pixel operations, such as texturing and per-pixel lighting. They can also be used to perform post-processing effects on bitmaps, such as the final render target.
+-   頂点シェーダーは、頂点変換や照明などの頂点ごとの操作を実行します。
+-   ピクセル (またはフラグメント) シェーダーは、テクスチャリングやピクセルごとの照明などの、ピクセルごとの操作を実行します。 最終レンダー ターゲットなど、ビットマップでの後処理効果の実行にも使用できます。
 
-The shader code is defined using High-Level Shader Language (HLSL), which, in Direct3D 11, is compiled from a program created with a C-like syntax. (The complete syntax can be found [here](https://msdn.microsoft.com/library/windows/desktop/bb509635).) The two principal shaders for the sample game are defined in **PixelShader.hlsl** and **VertexShader.hlsl**. (There are also two "low power" shaders defined for low power devices: **PixelShaderFlat.hlsl** and **VertexShaderFlat.hlsl**. These two shaders provide reduced effects, such as a lack of specular highlights on textures surfaces.) FInally, there is an .hlsli file that contains the format of the constant buffers, **ConstantBuffers.hlsli**.
+シェーダー コードは、上位レベル シェーダー言語 (HLSL) を使って定義されます。これは、Direct3D 11 では C ライクな構文で作成されたプログラムからコンパイルされます (完全な構文は、[ここ](https://msdn.microsoft.com/library/windows/desktop/bb509635)にあります)。サンプル ゲームの 2 つの主要シェーダーは、**PixelShader.hlsl** と **VertexShader.hlsl** で定義されています。 (低電力デバイス向けに定義されている "低電力" シェーダー **PixelShaderFlat.hlsl** と **VertexShaderFlat.hlsl** もあります。 これら 2 つのシェーダーで提供される効果は制限されており、たとえば、テクスチャ サーフェスで鏡面ハイライトは実行されません)。最後に、定数バッファーの形式が含まれている .hlsli ファイル **ConstantBuffers.hlsli** があります。
 
-**ConstantBuffers.hlsli** is defined like this:
+**ConstantBuffers.hlsli** は次のように定義されています。
 
 ```cpp
 Texture2D diffuseTexture : register(t0);
@@ -1111,7 +1112,7 @@ struct PixelShaderFlatInput
 };
 ```
 
-**VertexShader.hlsl** is defined like this:
+**VertexShader.hlsl** は次のように定義されています。
 
 VertexShader.hlsl
 
@@ -1141,7 +1142,7 @@ PixelShaderInput main(VertextShaderInput input)
 }
 ```
 
-The **main** function in **VertexShader.hlsl** performs the vertex transformation sequence we discussed in the camera section. It's run one time per vertex. The resultant outputs are passed to the pixel shader code for texturing and material effects.
+**VertexShader.hlsl** の **main** 関数は、カメラについてのセクションで説明した頂点変換シーケンスを実行します。 頂点ごとに 1 回ずつ実行されます。 生成された出力は、テクスチャリングとマテリアル効果のためにピクセル シェーダー コードに渡されます。
 
 PixelShader.hlsl
 
@@ -1172,14 +1173,14 @@ float4 main(PixelShaderInput input) : SV_Target
 }
 ```
 
-The **main** function in **PixelShader.hlsl** takes the 2-D projections of the triangle surfaces for each primitive in the scene, and computes the color value for each pixel of the visible surfaces based on the textures and effects (in this case, specular lighting) applied to them.
+この **PixelShader.hlsl** の **main** 関数は、シーンのプリミティブごとに三角形サーフェスの 2-D プロジェクションを取得して、これらに適用されるテクスチャと効果 (この場合、鏡面反射) に基づいて、表示されるサーフェスのピクセルごとに色値を計算します。
 
-Now, let's bring all these ideas (primitives, camera, and shaders) together, and see how the sample game builds the complete rendering process.
+次に、これらのすべての概念 (プリミティブ、カメラ、シェーダー) をまとめて、サンプル ゲームで完全なレンダリング プロセスがどのように構築されるかを見てみましょう。
 
-## Rendering the frame for output
+## 出力用のフレームのレンダリング
 
 
-We briefly discussed this method in [Defining the main game object](tutorial--defining-the-main-game-loop.md). Now, let's look at it in a little more detail.
+このメソッドについては、「[メイン ゲーム オブジェクトの定義](tutorial--defining-the-main-game-loop.md)」で簡単に説明しました。 それでは、もう少し詳しく見てみましょう。
 
 ```cpp
 void GameRenderer::Render()
@@ -1329,26 +1330,26 @@ void GameRenderer::Render()
 }
 ```
 
-The game has all the pieces to assemble a view for output: primitives and the rules for their behavior, a camera object to provide the player's view of the game world, and the graphics resources for drawing.
+ゲームには、プリミティブとその動作の規則、ゲーム ワールドのプレイヤー ビューを提供するカメラ オブジェクト、描画のためのグラフィックス リソースなど、出力用のビューを作成するためのすべての要素があります。
 
-Now, let's look at the process that brings it all together.
+それでは、これらすべてをまとめるプロセスを見てみましょう。
 
-1.  If stereo 3D is enabled, set the following rendering process to run two times, one time for each eye.
-2.  The whole scene is enclosed in a bounding world volume, so draw every pixel (even those we don’t need) to clear the color planes of the render target. Set the depth stencil buffer to the default value.
-3.  Update the constant buffer for frame update data by using the camera's view matrix and data.
-4.  Set up the Direct3D context to use the four content buffers that were defined earlier.
-5.  Call the **Render** method on each primitive object. This results in a **Draw** or **DrawIndexed** call on the context to draw the geometry of that each primitive. Specifically, this **Draw** call queues commands and data to the GPU, as parameterized by the constant buffer data. Each draw call executes the vertex shader one time per vertex, and then the pixel shader one time for every pixel of each triangle in the primitive. The textures are part of the state that the pixel shader uses to do the rendering.
-6.  Draw the HUD and the overlay using the Direct2D context.
-7.  Call **DirectXBase::Present**.
+1.  ステレオ 3D が有効な場合、次のレンダリング プロセスを、それぞれの目ごとに 1 回ずつ、計 2 回実行するように設定します。
+2.  シーン全体が境界ワールド ボリュームで囲まれるので、すべてのピクセル (不要なものも) を描画してレンダー ターゲットのカラー プレーンを消去します。 深度ステンシル バッファーを既定値に設定します。
+3.  カメラのビュー マトリックスとデータを使って、フレーム更新データの定数バッファーを更新します。
+4.  前に定義した 4 つのコンテンツ バッファーを使う Direct3D コンテキストを設定します。
+5.  プリミティブ オブジェクトごとに **Render** メソッドを呼び出します。 これにより、各プリミティブのジオメトリを描画するコンテキストで **Draw** 呼び出しまたは **DrawIndexed** 呼び出しが行われます。 特に、この **Draw** 呼び出しは、定数バッファー データによってパラメーター化されたとおり、コマンドとデータを GPU のキューに入れます。 各描画呼び出しは、頂点ごとに 1 回頂点シェーダーを実行し、次にプリミティブの各三角形のピクセルごとに 1 回ピクセル シェーダーを実行します。 テクスチャは、ピクセル シェーダーがレンダリングの実行に使う状態の一部です。
+6.  Direct2D コンテキストを使って HUD とオーバーレイを描画します。
+7.  **DirectXBase::Present** を呼び出します。
 
-And the game has updated the display! Altogether, this is the basic process for implementing the graphics framework of a game. Of course, the larger your game, the more abstractions you must put in place to handle that complexity, such as entire hierarchies of object types and animation behaviors, and more complex methods for loading and managing assets such as meshes and textures.
+これでゲームの表示が更新されます。 このように、これはゲームのグラフィックス フレームワークを実装する基本的なプロセスです。 もちろん、ゲームの規模が大きくなるほど、その複雑な構造 (オブジェクトの型やアニメーション動作の全体の階層など) を処理するために配置する必要のあるアブストラクションは多くなり、メッシュやテクスチャなどのアセットの読み込みと管理を行うためにより複雑なメソッドが必要になります。
 
-## Next steps
+## 次のステップ
 
 
-Moving forward, let's look at a few important parts of the game sample that we've only discussed in passing: [the user interface overlay](tutorial--adding-a-user-interface.md), [the input controls](tutorial--adding-controls.md), and [the sound](tutorial--adding-sound.md).
+次に、他のセクションで簡単に説明した、ゲーム サンプルのいくつかの重要な要素、[ユーザー インターフェイスのオーバーレイ](tutorial--adding-a-user-interface.md)、[入力コントロール](tutorial--adding-controls.md)、[サウンド](tutorial--adding-sound.md)について確認しましょう。
 
-## Complete sample code for this section
+## このセクションのサンプル コード一式
 
 
 Camera.h
@@ -6301,15 +6302,15 @@ void Material::RenderSetup(
             
 ```
 
-> **Note**  
-This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **注:**  
+この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
  
 
-## Related topics
+## 関連トピック
 
 
-* [Create a simple UWP game with DirectX](tutorial--create-your-first-metro-style-directx-game.md)
+* [DirectX によるシンプルな UWP ゲームの作成](tutorial--create-your-first-metro-style-directx-game.md)
 
  
 

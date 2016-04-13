@@ -1,46 +1,47 @@
 ---
-title: Update a live tile from a background task
-description: Use a background task to update your app's live tile with fresh content.
-Search.SourceType: Video
+title: バックグラウンド タスクのライブ タイルの更新
+description: アプリのライブ タイルを新しいコンテンツで更新するためにバックグラウンド タスクを使います。
+Search.SourceType: ビデオ
 ms.assetid: 9237A5BD-F9DE-4B8C-B689-601201BA8B9A
 ---
 
 
-# Update a live tile from a background task
+# バックグラウンド タスクのライブ タイルの更新
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-**Important APIs**
+**重要な API**
 
 -   [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)
 -   [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
 
-Use a background task to update your app's live tile with fresh content.
+アプリのライブ タイルを新しいコンテンツで更新するためにバックグラウンド タスクを使います。
 
-Here's a video that shows how to add live tiles to your apps.
+アプリにライブ タイルを追加する方法について説明するビデオをご覧ください。
 
-<iframe src="https://hubs-video.ssl.catalog.video.msn.com/embed/afb47cc5-edd3-4262-ae45-8f0e3ae664ac/IA?csid=ux-en-us&MsnPlayerLeadsWith=html&PlaybackMode=Inline&MsnPlayerDisplayShareBar=false&MsnPlayerDisplayInfoButton=false&iframe=true&QualityOverride=HD" width="720" height="405" allowFullScreen="true" frameBorder="0" scrolling="no">One Dev Minute - Updating a live tile from a background task</iframe>
+<iframe src="https://hubs-video.ssl.catalog.video.msn.com/embed/afb47cc5-edd3-4262-ae45-8f0e3ae664ac/IA?csid=ux-en-us&MsnPlayerLeadsWith=html&PlaybackMode=Inline&MsnPlayerDisplayShareBar=false&MsnPlayerDisplayInfoButton=false&iframe=true&QualityOverride=HD" width="720" height="405" allowFullScreen="true" frameBorder="0" scrolling="no">One Dev Minute - バックグラウンド タスクからのライブ タイルの更新</iframe>
 
-## Create the background task project
-
-
-To enable a live tile for your app, add a new Windows Runtime Component project to your solution. This is a separate assembly that the OS loads and runs in the background when a user installs your app.
-
-1.  In Solution Explorer, right-click the solution, point to **Add**, and click or tap **New Project**.
-2.  In the **Add New Project** dialog, select the **Windows Runtime Component** template in the **Visual C# &gt; Windows Store** section.
-3.  Name the project BackgroundTasks and click or tap **OK**. Microsoft Visual Studio adds the new project to the solution.
-4.  In the main project, add a reference to the BackgroundTasks project.
-
-## Implement the background task
+## バックグラウンド タスク プロジェクトを作る
 
 
-Implement the [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) interface to create a class that updates your app's live tile. Your background work goes in the Run method. In this case, the task gets a syndication feed for the MSDN blogs. To prevent the task from closing prematurely while asynchronous code is still running, get a deferral.
+アプリのライブ タイルを有効にするには、新しい Windows ランタイム コンポーネント プロジェクトをソリューションに追加します。 このプロジェクトは個別のアセンブリです。ユーザーがアプリをインストールするとき、OS ではこのプロジェクトがバックグラウンドで読み込まれ、実行されます。
 
-1.  In Solution Explorer, rename the automatically generated file, Class1.cs, to BlogFeedBackgroundTask.cs.
-2.  In BlogFeedBackgroundTask.cs, replace the automatically generated code with the stub code for the **BlogFeedBackgroundTask** class.
-3.  In the Run method implementation, add code for the **GetMSDNBlogFeed** and **UpdateTile** methods.
+1.  ソリューション エクスプローラーでソリューションを右クリックし、**[追加]** をポイントして、**[新しいプロジェクト]** をクリックまたはタップします。
+2.  **[新しいプロジェクトの追加]** ダイアログ ボックスで、 **[Visual C#] の [Windows ストア]** セクションにある **[Windows ランタイム コンポーネント]** テンプレートを選びます。
+3.  プロジェクトに "BackgroundTasks" という名前を付け、 **[OK]**をクリックまたはタップします。 Microsoft Visual Studio によって、新しいプロジェクトがソリューションに追加されます。
+4.  メイン プロジェクトで、BackgroundTasks プロジェクトへの参照を追加します。
+
+## バックグラウンド タスクの実装
+
+
+[
+            **IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) インターフェイスを実装して、アプリのライブ タイルを更新するクラスを作ります。 バックグラウンドの作業は、Run メソッドで実行されます。 この場合、タスクによって MSDN ブログの配信フィードが取得されます。 非同期コードの実行中にタスクが途中で終了するのを防ぐには、保留を取得します。
+
+1.  ソリューション エクスプローラーで、自動的に生成されたファイルである Class1.cs の名前を BlogFeedBackgroundTask.cs に変更します。
+2.  BlogFeedBackgroundTask.cs を開き、自動的に生成されたコードを、**BlogFeedBackgroundTask** クラスのスタブ コードに置き換えます。
+3.  Run メソッドの実装で、**GetMSDNBlogFeed** メソッドと **UpdateTile** のメソッドのコードを追加します。
 
 ```cs
 using System;
@@ -136,32 +137,33 @@ namespace BackgroundTasks
 }
 ```
 
-## Set up the package manifest
+## パッケージ マニフェストの設定
 
 
-To set up the package manifest, open it and add a new background task declaration. Set the entry point for the task to the class name, including its namespace.
+パッケージ マニフェストを設定するには、そのマニフェストを開き、新しいバックグラウンド タスクの宣言を追加します。 タスクのエントリ ポイントを設定します。このエントリ ポイントには、名前空間を含めてクラスの名前を指定します。
 
-1.  In Solution Explorer, open Package.appxmanifest.
-2.  Click or tap the **Declarations** tab.
-3.  Under **Available Declarations**, select **BackgroundTasks** and click **Add**. Visual Studio adds **BackgroundTasks** under **Supported Declarations**.
-4.  Under **Supported task types**, ensure that **Timer** is checked.
-5.  Under **App settings**, set the entry point to **BackgroundTasks.BlogFeedBackgroundTask**.
-6.  Click or tap the **Application UI** tab.
-7.  Set **Lock screen notifications** to **Badge and Tile Text**.
-8.  Set a path to a 24x24 pixel icon in the **Badge logo** field.
-    **Important**  This icon must use monochrome and transparent pixels only.
-9.  In the **Small logo** field, set a path to a 30x30 pixel icon.
-10. In the **Wide logo** field, set a path to a 310x150 pixel icon.
+1.  ソリューション エクスプローラーで、Package.appxmanifest を開きます。
+2.  **[宣言]** タブをタップまたはクリックします。
+3.  **[使用可能な宣言]** で、**[BackgroundTasks]** を選び、**[追加]** をクリックします。 Visual Studio で、**[サポートされる宣言]** の下に **[BackgroundTasks]** が追加されます。
+4.  **[サポートされるタスクの種類]** で、**[タイマー]** がオンになっていることを確認します。
+5.  **[アプリの設定]** で、エントリ ポイントを **[BackgroundTasks.BlogFeedBackgroundTask]** に設定します。
+6.  **[アプリケーション UI]** タブをクリックまたはタップします。
+7.  **[ロック画面通知]** を **[バッジとタイル テキスト]** に設定します。
+8.  **[バッジ ロゴ]** フィールドに、24x24 ピクセルのアイコンへのパスを設定します。
+    **重要**  このアイコンには、モノクロで透明のピクセルだけを使ってください。
+9.  **[小さいロゴ]** フィールドに、30x30 ピクセルのアイコンへのパスを設定します。
+10. **[ワイド ロゴ]** フィールドに、310x150 ピクセルのアイコンへのパスを設定します。
 
-## Register the background task
+## バックグラウンド タスクの登録
 
 
-Create a [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) to register your task.
+[
+            **BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) を作って、タスクを登録します。
 
-> **Note**  Starting in Windows 8.1, background task registration parameters are validated at the time of registration. An error is returned if any of the registration parameters are invalid. Your app must be able to handle scenarios where background task registration fails - for example, use a conditional statement to check for registration errors and then retry failed registration using different parameter values.
+> **注**  Windows 8.1 以降では、バックグラウンド タスクの登録パラメーターが登録時に検証されます。 いずれかの登録パラメーターが有効でない場合は、エラーが返されます。 アプリは、バックグラウンド タスクの登録が失敗するシナリオを処理できる必要があります。たとえば、条件ステートメントを使って登録エラーを確認し、失敗した登録は別のパラメーター値を使ってやり直してみます。
  
 
-In your app's main page, add the **RegisterBackgroundTask** method and call it in the **OnNavigatedTo** event handler.
+アプリのメイン ページで、**RegisterBackgroundTask** メソッドを追加し、このメソッドを **OnNavigatedTo** イベント ハンドラーで呼び出します。
 
 ```cs
 using System;
@@ -235,29 +237,29 @@ namespace ContosoApp
 }
 ```
 
-## Debug the background task
+## バックグラウンド タスクのデバッグ
 
 
-To debug the background task, set a breakpoint in the task’s Run method. In the **Debug Location** toolbar, select your background task. This causes the system to call the Run method immediately.
+バックグラウンド タスクをデバッグするには、タスクの Run メソッドにブレークポイントを設定します。 **[デバッグの場所]** ツール バーで、バックグラウンド タスクを選びます。 この操作によって、システムで Run メソッドがすぐに呼び出されます。
 
-1.  Set a breakpoint in the task’s Run method.
-2.  Press F5 or tap **Debug &gt; Start Debugging** to deploy and run the app.
-3.  After the app launches, switch back to Visual Studio.
-4.  Ensure that the **Debug Location** toolbar is visible. It's on the **View &gt; Toolbars** menu.
-5.  On the **Debug Location** toolbar, click the **Suspend** dropdown and select **BlogFeedBackgroundTask**.
-6.  Visual Studio suspends execution at the breakpoint.
-7.  Press F5 or tap **Debug &gt; Continue** to continue running the app.
-8.  Press Shift+F5 or tap **Debug &gt; Stop Debugging** to stop debugging.
-9.  Return to the app's tile on the Start screen. After a few seconds, tile notifications appear on your app's tile.
+1.  タスクの Run メソッドにブレークポイントを設定します。
+2.  アプリを展開し実行するには、F5 キーを押すか、**[デバッグ]、[デバッグの開始]** の順にタップします。
+3.  アプリを起動した後で、Visual Studio に戻ります。
+4.  **[デバッグの場所]** ツール バーが表示されていることを確認します。 **[表示] の [ツール バー]** メニューで確認できます。
+5.  **[デバッグの場所]** ツール バーで、**[中断]** ドロップダウンをクリックし、**[BlogFeedBackgroundTask]**を選びます。
+6.  Visual Studio では、ブレークポイントで実行が中断します。
+7.  アプリの実行を続けるには、F5 キーを押すか、**[デバッグ]、[続行]** の順にタップします。
+8.  デバッグを停止するには、Shift キーを押しながら F5 キーを押すか、**[デバッグ]、[デバッグの停止]** の順にタップします。
+9.  スタート画面にあるアプリのタイルに戻ります。 数秒後、アプリのタイルにタイル通知が表示されます。
 
-## Related topics
+## 関連トピック
 
 
 * [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
 * [**TileUpdateManager**](https://msdn.microsoft.com/library/windows/apps/br208622)
 * [**TileNotification**](https://msdn.microsoft.com/library/windows/apps/br208616)
-* [Support your app with background tasks](support-your-app-with-background-tasks.md)
-* [Guidelines and checklist for tiles and badges](https://msdn.microsoft.com/library/windows/apps/hh465403)
+* [バックグラウンド タスクによるアプリのサポート](support-your-app-with-background-tasks.md)
+* [タイルとバッジのガイドラインとチェック リスト](https://msdn.microsoft.com/library/windows/apps/hh465403)
 
  
 

@@ -1,143 +1,148 @@
 ---
 ms.assetid: 40B97E0C-EB1B-40C2-A022-1AB95DFB085E
-description: This article shows you how to cast media to remote devices from a Universal Windows app.
-title: Media casting
+description: この記事では、ユニバーサル Windows アプリからリモート デバイスにメディアをキャストする方法について説明します。
+title: メディアのキャスト
 ---
 
-# Media casting
+# メディアのキャスト
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-This article shows you how to cast media to remote devices from a Universal Windows app.
+この記事では、ユニバーサル Windows アプリからリモート デバイスにメディアをキャストする方法について説明します。
 
-## Built-in media casting with MediaElement
+## MediaElement を使った組み込みのメディア キャスト機能
 
-The simplest way to cast media from a Universal Windows app is to use the built-in casting capability of the [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) control.
+ユニバーサル Windows アプリからメディアをキャストする方法としては、[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) コントロールの組み込みのキャスト機能を使うのが最も簡単です。
 
-To allow the user to open a video file to be played in the **MediaElement** control, add the following namespaces to your project.
+**MediaElement** コントロールで再生するビデオ ファイルをユーザーが開くことができるようにするには、以下の名前空間をプロジェクトに追加します。
 
 [!code-cs[BuiltInCastingUsing](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetBuiltInCastingUsing)]
 
-In your app's XAML file, add a **MediaElement** and set [**AreTransportControlsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn298977) to true.
+アプリの XAML ファイルに **MediaElement** を追加し、[**AreTransportControlsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn298977) を true に設定します。
 
 [!code-xml[MediaElement](./code/MediaCastingWin10/cs/MainPage.xaml#SnippetMediaElement)]
 
-Add a button to let the user initiate picking a file.
+ユーザーがファイルを選択するときに使うボタンを追加します。
 
 [!code-xml[OpenButton](./code/MediaCastingWin10/cs/MainPage.xaml#SnippetOpenButton)]
 
-In the [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) event handler for the button, create a new instance of the [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847), add video file types to the [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850) collection, and set the starting location to the user's videos library.
+このボタンの [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) イベント ハンドラーで [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) の新しいインスタンスを作成し、ビデオ ファイルの種類を [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850) コレクションに追加して、開始位置をユーザーのビデオ ライブラリに設定します。
 
-Call [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) to launch the file picker dialog. When this method returns, the result is a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) object representing the video file. Check to make sure the file isn't null, which it will be if the user cancels the picking operation. Call the file's [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/br227221.aspx) method to get an [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) for the file. Finally, call the **MediaElement** object's [**SetSource**](https://msdn.microsoft.com/library/windows/apps/br244338) method to make the video file the video source for the control.
+[
+            **PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) を呼び出して、ファイル ピッカー ダイアログを起動します。 このメソッドからは、ビデオ ファイルを表す [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトが返されます。 ファイル選択操作をユーザーが取り消した場合は null が返されます。返されたファイルが null ではないことを確認してください。 ファイルの [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) を取得するには、そのファイルの [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/br227221.aspx) メソッドを呼び出します。 最後に、**MediaElement** オブジェクトの [**SetSource**](https://msdn.microsoft.com/library/windows/apps/br244338) メソッドを呼び出して、そのビデオ ファイルをコントロールのビデオ ソースに設定します。
 
 [!code-cs[OpenButtonClick](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetOpenButtonClick)]
 
-Once the video is loaded in the **MediaElement**, the user can simply press the casting button on the transport controls to launch a built-in dialog that allows them to choose a device to which the loaded media will be cast.
+**MediaElement** にビデオを読み込んだら、ユーザーがトランスポート コントロールのキャスト ボタンを押すだけで、組み込みのダイアログを起動し、読み込まれているメディアのキャスト先となるデバイスを選択できます。
 
 ![mediaelement casting button](images/media-element-casting-button.png)
 
-## Media casting with the CastingDevicePicker
+## CastingDevicePicker を使ったメディアのキャスト
 
-A second way to cast media to a device is to use the [**CastingDevicePicker**](https://msdn.microsoft.com/library/windows/apps/dn972525). To use this class, include the [**Windows.Media.Casting**](https://msdn.microsoft.com/library/windows/apps/dn972568) namespace in your project.
+メディアをデバイスにキャストするもう 1 つの方法は、[**CastingDevicePicker**](https://msdn.microsoft.com/library/windows/apps/dn972525) を使うことです。 このクラスを使うには、プロジェクトに [**Windows.Media.Casting**](https://msdn.microsoft.com/library/windows/apps/dn972568) 名前空間を追加します。
 
 [!code-cs[CastingNamespace](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetCastingNamespace)]
 
-Declare a member variable for the **CastingDevicePicker** object.
+**CastingDevicePicker** オブジェクトのメンバー変数を宣言します。
 
 [!code-cs[DeclareCastingPicker](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetDeclareCastingPicker)]
 
-When you page is initialized, create a new instance of the casting picker and set the [**Filter**](https://msdn.microsoft.com/library/windows/apps/dn972540) to [**SupportsVideo**](https://msdn.microsoft.com/library/windows/apps/dn972526) property to indicate that the casting devices listed by the picker should support video. Register a handler for the [**CastingDeviceSelected**](https://msdn.microsoft.com/library/windows/apps/dn972539) event, which is raised when the user picks a device for casting.
+対象のページが初期化されたタイミングで CastingDevicePicker の新しいインスタンスを作成します。さらに、ビデオをサポートするデバイスだけをキャスト先としてピッカーに一覧表示するために、[**Filter**](https://msdn.microsoft.com/library/windows/apps/dn972540) を [**SupportsVideo**](https://msdn.microsoft.com/library/windows/apps/dn972526) プロパティに設定します。 [
+            **CastingDeviceSelected**](https://msdn.microsoft.com/library/windows/apps/dn972539) イベントのハンドラーを登録します。これは、ユーザーがキャスト先のデバイスを選んだときに発生するイベントです。
 
 [!code-cs[InitCastingPicker](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetInitCastingPicker)]
 
-In your XAML file, add a button to allow the user to launch the picker.
+ユーザーがピッカーを起動するためのボタンを XAML ファイルに追加します。
 
 [!code-xml[CastPickerButton](./code/MediaCastingWin10/cs/MainPage.xaml#SnippetCastPickerButton)]
 
-In the **Click** event handler for the button, call [**TransformToVisual**](https://msdn.microsoft.com/library/windows/apps/br208986) to get the transform of a UI element relative to another element. In this example, the transform is the position of the cast picker button relative to the visual root of the application window. Call the [**Show**](https://msdn.microsoft.com/library/windows/apps/dn972542) method of the [**CastingDevicePicker**](https://msdn.microsoft.com/library/windows/apps/dn972525) object to launch the casting picker dialog. Specify the location and dimensions of the cast picker button so that the system can make the dialog fly out from the button that the user pressed.
+ボタンの **Click** イベント ハンドラーで [**TransformToVisual**](https://msdn.microsoft.com/library/windows/apps/br208986) を呼び出し、別の要素を基準とした UI 要素の変換を取得します。 この例の変換は、アプリケーション ウィンドウの表示ルートを基準としたキャスト ピッカー ボタンの位置です。 [
+            **CastingDevicePicker**](https://msdn.microsoft.com/library/windows/apps/dn972525) オブジェクトの [**Show**](https://msdn.microsoft.com/library/windows/apps/dn972542) メソッドを呼び出して、キャスト先の選択ダイアログを起動します。 ユーザーによって押されたボタンから飛び出すようにダイアログを表示させるため、キャスト ピッカー ボタンの位置とサイズを指定します。
 
 [!code-cs[CastPickerButtonClick](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetCastPickerButtonClick)]
 
-In the **CastingDeviceSelected** event handler, call the [**CreateCastingConnection**](https://msdn.microsoft.com/library/windows/apps/dn972547) method of the [**SelectedCastingDevice**](https://msdn.microsoft.com/library/windows/apps/dn972546) property of the event args, which represents the casting device selected by the user. Register handlers for the [**ErrorOccurred**](https://msdn.microsoft.com/library/windows/apps/dn972519) and [**StateChanged**](https://msdn.microsoft.com/library/windows/apps/dn972523) events. Finally, call [**RequestStartCastingAsync**](https://msdn.microsoft.com/library/windows/apps/dn972520) to begin casting, passing in the result of the **MediaElement** object's [**GetAsCastingSource**](https://msdn.microsoft.com/library/windows/apps/dn920012) method to specify that the media to be cast is the content of the **MediaElement**.
+**CastingDeviceSelected** イベント ハンドラーで、イベント引数の [**SelectedCastingDevice**](https://msdn.microsoft.com/library/windows/apps/dn972546) プロパティ (ユーザーが選択したキャスト先デバイスを表す) の [**CreateCastingConnection**](https://msdn.microsoft.com/library/windows/apps/dn972547) メソッドを呼び出します。 [
+            **ErrorOccurred**](https://msdn.microsoft.com/library/windows/apps/dn972519) イベントと [**StateChanged**](https://msdn.microsoft.com/library/windows/apps/dn972523) イベントのハンドラーを登録します。 最後に、[**RequestStartCastingAsync**](https://msdn.microsoft.com/library/windows/apps/dn972520) を呼び出すとキャストが開始されます。キャストするメディアが **MediaElement** の内容であることを指定するために、このメソッドの引数には、**MediaElement** オブジェクトの [**GetAsCastingSource**](https://msdn.microsoft.com/library/windows/apps/dn920012) メソッドの結果を渡します。
 
-**Note**  The casting connection must be initiated on the UI thread. Since the **CastingDeviceSelected** is not called on the UI thread, you must place these calls inside a call to [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) which causes them to be called on the UI thread.
+**注**  キャスト接続は UI スレッドで開始する必要があります。 **CastingDeviceSelected** は UI スレッドでは呼び出されないため、上に挙げた一連の呼び出しを、[**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) の呼び出しの中に置いて、UI スレッドで呼び出されるようにする必要があります。
 
 [!code-cs[CastingDeviceSelected](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetCastingDeviceSelected)]
 
-In the **ErrorOccurred** and **StateChanged** event handlers, you should update your UI to inform the user of the current casting status. These events are discussed in detail in the following section on creating a custom casting device picker.
+**ErrorOccurred** イベントと **StateChanged** イベントのハンドラーでは、UI を更新して、現在のキャスト ステータスをユーザーに通知する必要があります。 これらのイベントについては、次のセクションで、カスタムのキャスト先デバイス ピッカーを作成する方法の中で詳しく説明します。
 
 [!code-cs[EmptyStateHandlers](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetEmptyStateHandlers)]
 
-## Media casting with a custom device picker
+## カスタム デバイス ピッカーを使ったメディアのキャスト
 
-The following section describes how to create your own casting device picker UI by enumerating the casting devices and initiating the connection from your code.
+次のセクションでは、独自のコードでキャスト先デバイスを列挙し、接続を開始することによって、キャスト先デバイス ピッカーの UI を作成する方法を説明します。
 
-To enumerate the available casting devices, include the [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/br225459) namespace in your project.
+利用可能なキャスト先デバイスを列挙するには、[**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/br225459) 名前空間をプロジェクトに追加します。
 
 [!code-cs[EnumerationNamespace](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetEnumerationNamespace)]
 
-Add the following controls to your XAML page to implement the rudimentary UI for this example:
+この例の基本的な UI を実装するために、以下のコントロールを XAML ページに追加します。
 
--   A button to start the device watcher that looks for available casting devices.
--   A [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) control to provide feedback to the user that casting enumeration is ongoing.
--   A [**ListBox**](https://msdn.microsoft.com/library/windows/apps/br242868) to list the discovered casting devices. Define an [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/br242830) for the control so that we can assign the casting device objects directly to the control and still display the [**FriendlyName**](https://msdn.microsoft.com/library/windows/apps/dn972549) property.
--   A button to allow the user to disconnect the casting device.
+-   利用可能なキャスト先デバイスを探すデバイス ウォッチャーの起動ボタン。
+-   キャスト先を列挙する処理の進行状況をユーザーにフィードバックする [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) コントロール。
+-   検出されたキャスト先デバイスを一覧表示する [**ListBox**](https://msdn.microsoft.com/library/windows/apps/br242868)。 キャスト先デバイス オブジェクトを直接コントロールに割り当てたうえで、さらに [**FriendlyName**](https://msdn.microsoft.com/library/windows/apps/dn972549) プロパティを表示できるようにコントロールの [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/br242830) を定義します。
+-   キャスト先デバイスとの接続をユーザーが切断するためのボタン。
 
 [!code-xml[CustomPickerXAML](./code/MediaCastingWin10/cs/MainPage.xaml#SnippetCustomPickerXAML)]
 
-In your code behind, declare member variables for the [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/br225446) and the [**CastingConnection**](https://msdn.microsoft.com/library/windows/apps/dn972510).
+分離コードには、[**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/br225446) と [**CastingConnection**](https://msdn.microsoft.com/library/windows/apps/dn972510) のメンバー変数を宣言します。
 
 [!code-cs[DeclareDeviceWatcher](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetDeclareDeviceWatcher)]
 
-In the **Click** handler for the *startWatcherButton*, first update the UI by disabling the button and making the progress ring active while device enumeration is ongoing. Clear the list box of casting devices.
+*startWatcherButton* の **Click** ハンドラーでまず行うのは UI の更新です。デバイスの列挙中はボタンを無効にし、プログレス リングをアクティブにします。 キャスト先デバイスのリスト ボックスをクリアします。
 
-Next, create a device watcher by calling [**DeviceInformation.CreateWatcher**](https://msdn.microsoft.com/library/windows/apps/br225427). This method can be used to watch for many different types of devices. Specify that you want to watch for devices that support video casting by using the device selector string returned by [**CastingDevice.GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/dn972551).
+次に、[**DeviceInformation.CreateWatcher**](https://msdn.microsoft.com/library/windows/apps/br225427) を呼び出してデバイス ウォッチャーを作成します。 このメソッドを使うと、さまざまな種類のデバイスを監視することができます。 ビデオ キャストに対応しているデバイスを監視対象として指定するには、[**CastingDevice.GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/dn972551) から返されるデバイスのセレクター文字列を使います。
 
-Finally, register event handlers for the [**Added**](https://msdn.microsoft.com/library/windows/apps/br225450), [**Removed**](https://msdn.microsoft.com/library/windows/apps/br225453), [**EnumerationCompleted**](https://msdn.microsoft.com/library/windows/apps/br225451), and [**Stopped**](https://msdn.microsoft.com/library/windows/apps/br225457) events.
+最後に、[**Added**](https://msdn.microsoft.com/library/windows/apps/br225450)、[**Removed**](https://msdn.microsoft.com/library/windows/apps/br225453)、[**EnumerationCompleted**](https://msdn.microsoft.com/library/windows/apps/br225451)、[**Stopped**](https://msdn.microsoft.com/library/windows/apps/br225457) の各イベントのハンドラーを登録します。
 
 [!code-cs[StartWatcherButtonClick](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetStartWatcherButtonClick)]
 
-The **Added** event is raised when a new device is discovered by the watcher. In the handler for this event, create a new [**CastingDevice**](https://msdn.microsoft.com/library/windows/apps/dn972524) object by calling [**CastingDevice.FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/dn972550) and passing in the ID of the discovered casting device, which is contained in the **DeviceInformation** object passed into the handler.
+**Added** は、ウォッチャーで新しいデバイスが検出されたときに発生するイベントです。 このイベントのハンドラーで [**CastingDevice.FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/dn972550) を呼び出して新しい [**CastingDevice**](https://msdn.microsoft.com/library/windows/apps/dn972524) オブジェクトを作成します。このメソッドの引数には、検出されたキャスト先デバイスの ID を指定します。ID は、ハンドラーに渡された **DeviceInformation** オブジェクトに格納されています。
 
-Add the **CastingDevice** to the casting device **ListBox** so that the user can select it. Because of the [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/br242830) defined in the XAML, the [**FriendlyName**](https://msdn.microsoft.com/library/windows/apps/dn972549) property will be used as the item text for in the list box. Because this event handler is not called on the UI thread, you must update the UI from within a call to [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317).
+この **CastingDevice** をキャスト先デバイスの **ListBox** に追加して、ユーザーが選択できるようにします。 リスト ボックスの項目テキストには、XAML で定義した [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/br242830) により、[**FriendlyName**](https://msdn.microsoft.com/library/windows/apps/dn972549) プロパティが使われます。 このイベント ハンドラーは UI スレッドで呼び出されないため、UI の更新は、[**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) の呼び出しの中で行う必要があります。
 
 [!code-cs[WatcherAdded](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetWatcherAdded)]
 
-The **Removed** event is raised when the watcher detects that a casting device is no longer present. Compare the ID property of the **Added** object passed into the handler to the ID of each **Added** in the list box's [**Items**](https://msdn.microsoft.com/library/windows/apps/br242823) collection. If the ID matches, remove that object from the collection. Again, because the UI is being updated, this call must be made from within a **RunAsync** call.
+キャスト先デバイスがもう存在しないことをウォッチャーが検出すると、**Removed** イベントが発生します。 ハンドラーに渡された **Added** オブジェクトの ID プロパティと、リスト ボックスの [**Items**](https://msdn.microsoft.com/library/windows/apps/br242823) コレクションに含まれている各 **Added** の ID とを比較します。 ID が一致する場合は、そのオブジェクトをコレクションから削除します。 UI が更新中であるため、先ほどと同様、この呼び出しは **RunAsync** の呼び出しの中で行う必要があります。
 
 [!code-cs[WatcherRemoved](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetWatcherRemoved)]
 
-The **EnumerationCompleted** event is raised when the watcher has finished detecting devices. In the handler for this event, update the UI to let the user know that device enumeration has completed and stop the device watcher by calling [**Stop**](https://msdn.microsoft.com/library/windows/apps/br225456).
+ウォッチャーがデバイスの検出を完了すると、**EnumerationCompleted** イベントが発生します。 このイベントのハンドラーで UI を更新して、デバイスの列挙処理が完了したことをユーザーに知らせ、[**Stop**](https://msdn.microsoft.com/library/windows/apps/br225456) を呼び出してデバイス ウォッチャーを停止します。
 
 [!code-cs[WatcherEnumerationCompleted](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetWatcherEnumerationCompleted)]
 
-The Stopped event is raised when the device watcher has finished stopping. In the handler for this event, stop the [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) control and reenable the *startWatcherButton* so that the user can restart the device enumeration process.
+デバイス ウォッチャーの停止処理が完了すると Stopped イベントが発生します。 このイベントのハンドラーで [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) コントロールを停止したうえで、デバイス列挙処理をユーザーが再開できるように *startWatcherButton* を再び有効にします。
 
 [!code-cs[WatcherStopped](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetWatcherStopped)]
 
-When the user selects one of the casting devices from the list box, the [**SelectionChanged**](https://msdn.microsoft.com/library/windows/apps/br209776) event is raised. It is within this handler that the casting connection will be created and casting will be started.
+リスト ボックスからいずれかのキャスト先デバイスをユーザーが選択すると、[**SelectionChanged**](https://msdn.microsoft.com/library/windows/apps/br209776) イベントが発生します。 このハンドラーの中でキャスト接続を作成し、キャストを開始することになります。
 
-First, make sure the device watcher is stopped so that device enumeration doesn't interfere with media casting. Create a casting connection by calling [**CreateCastingConnection**](https://msdn.microsoft.com/library/windows/apps/dn972547) on the **CastingDevice** object selected by the user. Add event handlers for the [**StateChanged**](https://msdn.microsoft.com/library/windows/apps/dn972523) and [**ErrorOccurred**](https://msdn.microsoft.com/library/windows/apps/dn972519) events.
+まず、デバイスの列挙処理がメディアのキャスト処理に干渉しないよう、デバイス ウォッチャーが停止していることを確認します。 キャスト接続を作成するには、ユーザーが選択した **CastingDevice** オブジェクトの [**CreateCastingConnection**](https://msdn.microsoft.com/library/windows/apps/dn972547) を呼び出します。 [
+            **StateChanged**](https://msdn.microsoft.com/library/windows/apps/dn972523) イベントおよび [**ErrorOccurred**](https://msdn.microsoft.com/library/windows/apps/dn972519) イベントに対応するイベント ハンドラーを追加します。
 
-Start media casting by calling [**RequestStartCastingAsync**](https://msdn.microsoft.com/library/windows/apps/dn972520), passing in the casting source returned by calling the **MediaElement** method [**GetAsCastingSource**](https://msdn.microsoft.com/library/windows/apps/dn920012). Finally, make the disconnect button visible to allow the user to stop media casting.
+メディアのキャストを開始するには、[**RequestStartCastingAsync**](https://msdn.microsoft.com/library/windows/apps/dn972520) を呼び出します。その際、引数には、**MediaElement** の [**GetAsCastingSource**](https://msdn.microsoft.com/library/windows/apps/dn920012) メソッドを呼び出して取得したキャスト ソースを指定します。 最後に、メディアのキャストをユーザーが停止するための切断ボタンを表示状態にします。
 
 [!code-cs[SelectionChanged](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetSelectionChanged)]
 
-In the state changed handler, the action you take depends on the new state of the casting connection:
+StateChanged ハンドラーで実行する操作は、キャスト接続の新しい状態によって異なります。
 
--   If the state is **Connected** or **Rendering**, make sure the **ProgressRing** control is inactive and the disconnect button is visible.
--   If the state is **Disconnected**, unselect the current casting device in the list box, make the **ProgressRing** control inactive, and hide the disconnect button.
--   If the state is **Connecting**, make the **ProgressRing** control active and hide the disconnect button.
--   If the state is **Disconnecting**, make the **ProgressRing** control active and hide the disconnect button.
+-   状態が **Connected** または **Rendering** である場合は、**ProgressRing** コントロールを非アクティブにし、切断ボタンを表示します。
+-   状態が **Disconnected** である場合は、現在のキャスト先デバイスの選択をリスト ボックスで解除し、**ProgressRing** コントロールを非アクティブにして、切断ボタンを非表示にします。
+-   状態が **Connecting** である場合は、**ProgressRing** コントロールをアクティブにして、切断ボタンを非表示にします。
+-   状態が **Disconnecting** である場合は、**ProgressRing** コントロールをアクティブにして、切断ボタンを非表示にします。
 
 [!code-cs[StateChanged](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetStateChanged)]
 
-In the handler for the **ErrorOccurred** event, update your UI to let the user know that a casting error occurred and unselect the current **CastingDevice** object in the list box.
+**ErrorOccurred** イベントのハンドラーでは、UI を更新してキャスト エラーの発生をユーザーに知らせると共に、リスト ボックスで現在の **CastingDevice** オブジェクトの選択を解除します。
 
 [!code-cs[ErrorOccurred](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetErrorOccurred)]
 
-Finally, implement the handler for the disconnect button. Stop media casting and disconnect from the casting device by calling the **CastingConnection** object's [**DisconnectAsync**](https://msdn.microsoft.com/library/windows/apps/dn972518) method. This call must be dispatched to the UI thread by calling [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317).
+最後に、切断ボタンのハンドラーを実装します。 メディアのキャストを停止してキャスト先デバイスから切断するために、**CastingConnection** オブジェクトの [**DisconnectAsync**](https://msdn.microsoft.com/library/windows/apps/dn972518) メソッドを呼び出します。 この呼び出しは、[**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) を呼び出して UI スレッドにディスパッチする必要があります。
 
 [!code-cs[DisconnectButton](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetDisconnectButton)]
 

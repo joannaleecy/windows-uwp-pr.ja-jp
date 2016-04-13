@@ -1,55 +1,55 @@
 ---
-Description: In this walkthrough, you will create and run your first experiment with A/B testing.
-title: Create and run your first experiment with A/B testing
+Description: このチュートリアルでは、A/B テストを使用して最初の試験的機能を作成および実行します。
+title: A/B テストを使用して最初の試験的機能を作成および実行する
 ms.assetid: 16A2B129-14E1-4C68-86E8-52F1BE58F256
 ---
 
-# Create and run your first experiment with A/B testing
+# A/B テストを使用して最初の試験的機能を作成および実行する
 
-In this walkthrough, you will:
-* Create an experiment on the Windows Dev Center dashboard that tests whether changing the background color of an app button successfully increases the number of button clicks.
-* Create an app that retrieves variation settings from Dev Center, uses this data to change the background color of a button, and logs view and conversion event data to Dev Center.
-* Run the app to gather experiment data.
-* Review the experiment results on the Dev Center dashboard, choose a variation to enable for all users of the app, and complete the experiment.
+このチュートリアルでは、次の作業を行います。
+* アプリのボタンの背景色を変更するとボタンのクリック回数が正常に増えるかどうかをテストする試験的機能を Windows デベロッパー センター ダッシュボードで作成します。
+* デベロッパー センターからバリエーション設定を取得し、そのデータを使用してボタンの背景色を変更し、デベロッパー センターでビュー イベントとコンバージョン イベントのデータをログに記録するアプリを作成します。
+* アプリを実行して、試験的機能のデータを収集します。
+* デベロッパー センター ダッシュボードで試験的機能の実行結果を確認し、アプリのすべてのユーザーに有効なバリエーションを選択して、試験的機能の実行を完了します。
 
-For an overview of A/B testing with Dev Center, see [Run app experiments with A/B testing](run-app-experiments-with-a-b-testing.md).
+デベロッパー センターでの A/B テストの概要については、「[A/B テストを使用してアプリの試験的機能を実行する](run-app-experiments-with-a-b-testing.md)」をご覧ください。
 
-## Prerequisites
+## 前提条件
 
-To follow this walkthrough, you must have a Windows Dev Center account and you must configure your development computer as described in [Run app experiments with A/B testing](run-app-experiments-with-a-b-testing.md).
+このチュートリアルを実行するには、Windows デベロッパー センターのアカウントが必要です。また、「[A/B テストを使用してアプリの試験的機能を実行する](run-app-experiments-with-a-b-testing.md)」の説明に従って開発用コンピューターを構成する必要があります。
 
-## Create the experiment in Windows Dev Center
+## Windows デベロッパー センターで試験的機能を作成する
 
-1. Sign in to the [Dev Center dashboard](https://dev.windows.com/overview).
-2. If you already have an app in Dev Center that you want to use to create an experiment, under **Your apps**, select the app. If you do not yet have an app in your dashboard, [create a new app by reserving a name](../publish/create-your-app-by-reserving-a-name.md) and then select that app in your dashboard.
-3. In the navigation pane, click **Services** and then click **Experimentation**.
-4. In the **API keys** section, select **New API key** to generate a new API key, and enter the name **My First Experiment** for the API key. You will use this API key in the next section of this walkthrough.
-5. In the **Experiments** section, click **New experiment**. In the **Experiment name** field, type the name **Optimize Button Clicks**.
-6. In the **View event name** field, type the name **userViewedButton**. Later in this walkthrough, you will add code that logs this view event when the main page for your app is initialized and the button is visible to the user.
-7. In the **Goals and conversion events** section, enter the following values:
-  * In the **Goal name** field, type **Increase Button Clicks**.
-  * In the **Conversion event name** field, type the name **userClickedButton**. Later in this walkthrough, you will add code that logs this conversion event in the click event handler for the button.
-  * In the **Objective** field, choose **Maximize**.
-8. In the **Variations and settings** section, click **Add setting** three times. You should now have four rows of empty settings.
-  * In the first row, type **buttonText** for the setting name, type **Grey Button** in the **Variation A** column, and type **Blue Button** in the **Variation B** column.
-  * In the second row, type **r** for the setting name, type **128** in the **Variation A** column, and type **1** in the **Variation B** column.
-  * In the third row, type **g** for the setting name, type **128** in the **Variation A** column, and type **1** in the **Variation B** column.
-  * In the fourth row, type **b** for the setting name, type **128** in the **Variation A** column, and type **255** in the **Variation B** column.  
-9. Confirm that the **Distribute equally** check box is selected so that the variations will be distributed equally to your app.
-10. Click **Save** and then click **Activate**.
+1. [デベロッパー センター ダッシュボード](https://dev.windows.com/overview)にサインインします。
+2. 試験的機能の作成に使用するアプリが既にデベロッパー センターにある場合は、**[Your apps]** (自分のアプリ) でアプリを選択します。 ダッシュボードにまだアプリがない場合は、[名前を予約して新しいアプリを作成](../publish/create-your-app-by-reserving-a-name.md)し、ダッシュボードでそのアプリを選択します。
+3. ナビゲーション ウィンドウで、**[サービス]** をクリックし、**[Experimentation]** (試験的機能) をクリックします。
+4. **[API keys]** (API キー) セクションで、**[New API key]** (新しい API キー) を選択して新しい API キーを生成し、API キーの名前として「**My First Experiment**」と入力します。 この API キーは、このチュートリアルの次のセクションで使用します。
+5. **[Experiments]** (試験的機能) セクションで、**[New experiment]** (新しい試験的機能) をクリックします。 **[Experiment name]** (試験的機能の名前) フィールドに「**Optimize Button Clicks**」という名前を入力します。
+6. **[ビュー イベント名]** フィールドに「**userViewedButton**」という名前を入力します。 このチュートリアルの後半では、アプリのメイン ページが初期化され、ボタンがユーザーに表示されるときにこのビュー イベントをログに記録するコードを追加します。
+7. **[Goals and conversion events]** (目標とコンバージョン イベント) セクションで、次の値を入力します。
+  * **[Goal name]** (目標名) フィールドに「**Increase Button Clicks**」と入力します。
+  * **[コンバージョン イベント名]** フィールドに「**userClickedButton**」という名前を入力します。 このチュートリアルの後半では、ボタンのクリック イベント ハンドラーでこのコンバージョン イベントをログに記録するコードを追加します。
+  * **[目標]** フィールドで、**[最大化]** を選択します。
+8. **[Variations and settings]** (バリエーションと設定) セクションで、**[設定の追加]** を 3 回クリックします。 これで、空の設定が 4 行追加されます。
+  * 最初の行に、設定名として「**buttonText**」と入力し、**[Variation A]** (バリエーション A) 列に「**Grey Button**」と入力し、**[Variation B]** (バリエーション B) 列に「**Blue Button**」と入力します。
+  * 2 番目の行に、設定名として「**r**」と入力し、**[Variation A]** (バリエーション A) 列に「**128**」と入力し、**[Variation B]** (バリエーション B) 列に「**1**」と入力します。
+  * 3 番目の行に、設定名として「**g**」と入力し、**[Variation A]** (バリエーション A) 列に「**128**」と入力し、**[Variation B]** (バリエーション B) 列に「**1**」と入力します。
+  * 4 番目の行に、設定名として「**b**」と入力し、**[Variation A]** 列に「**128**」と入力し、**[Variation B]** 列に「**255**」と入力します。  
+9. **[均等な配分]** チェック ボックスがオンになっていることを確認します。これで、バリエーションがアプリに均等に配分されます。
+10. **[保存]** をクリックし、**[アクティブ化]** をクリックします。
 
-> **Important**  After you activate an experiment, you can no longer modify the experiment parameters unless it is a test experiment (you clicked the **Test experiment** check box when you created the experiment). Typically, we recommend that you code the experiment in your app before activating your experiment. For simplicity, in this walkthrough you can activate the experiment now.
+> **重要**  試験的機能をアクティブ化した後は、試験的機能がテスト用でない限り (試験的機能の作成時に **[Test experiment]** (試験的機能をテストする) チェック ボックスをオンにした場合を除き)、試験的機能のパラメーターを変更できなくなります。 通常は、アプリで試験的機能のコードを記述してから試験的機能をアクティブ化することをお勧めします。 わかりやすくするために、このチュートリアルでは試験的機能をすぐにアクティブ化できるようにしています。
 
-## Code the experiment in your app
+## アプリで試験的機能のコードを記述する
 
-1. In Visual Studio 2015, create a new Universal Windows Platform project using Visual C#. Name the project **SampleExperiment**.
-2. In Solution Explorer, expand your project node, right-click **References**, and click **Add Reference**.
-3. In **Reference Manager**, expand **Universal Windows** and click **Extensions**.
-4. In the list of SDKs, select the check box next to **Microsoft Store Engagement SDK** and click **OK**.
-5. In **Solution Explorer**, double-click MainPage.xaml to open the designer for the main page in the app.
-6. Drag a **Button** from **Toolbox** to the page.
-7. Double-click the button on the designer to open the code file and add an event handler for the **Click** event.  
-8. Replace the entire contents of the code file with the following code.
+1. Visual Studio 2015 で、Visual C# を使用して新しいユニバーサル Windows プラットフォーム プロジェクトを作成します。 プロジェクトに「**SampleExperiment**」という名前を付けます。
+2. ソリューション エクスプローラーで、プロジェクト ノードを展開し、**[参照設定]** を右クリックして **[参照の追加]** をクリックします。
+3. **[参照マネージャー]**で、**[ユニバーサル Windows]** を展開し、**[拡張機能]** をクリックします。
+4. SDK の一覧で、**[Microsoft Store Engagement SDK]** の横にあるチェック ボックスをオンにして、**[OK]** をクリックします。
+5. **ソリューション エクスプローラー**で、MainPage.xaml をダブルクリックして、アプリでメイン ページのデザイナーを開きます。
+6. **[ツールボックス]** からページに**ボタン**をドラッグします。
+7. デザイナーでボタンをダブルクリックしてコード ファイルを開き、**Click** イベントのイベント ハンドラーを追加します。  
+8. コード ファイルのすべての内容を次のコードで置き換えます。
 
   ```CSharp
   using System;
@@ -137,41 +137,41 @@ To follow this walkthrough, you must have a Windows Dev Center account and you m
      }
   }
   ```
-9. In the following line of code, assign the *apiKey* variable to the API key you obtained from the Dev Center dashboard in the previous section. The API key shown below is for example purposes only.
+9. 次のコード行で、前のセクションでデベロッパー センター ダッシュボードから取得した API キーに *apiKey* 変数を割り当てます。 次に示す API キーは例示のためのものです。
 ```CSharp
 private string apiKey = "F48AC670-4472-4387-AB7D-D65B095153FB";
 ```
-10. Save the code file and build the project.
+10. コード ファイルを保存して、プロジェクトをビルドします。
 
-## Run the app to gather experiment data
+## アプリを実行して試験的機能のデータを収集する
 
-1. Run the **SampleExperiment** app you created in the previous section.
-2. Confirm that you see either a grey or blue button. Click the button and then close the app.
-3. Repeat the above steps several times on the same computer to confirm that your app shows the same button color.
+1. 前のセクションで作成した **SampleExperiment** アプリを実行します。
+2. 灰色または青色のボタンが表示されることを確認します。 ボタンをクリックしてアプリを閉じます。
+3. 同じコンピューターで上記の手順を複数回繰り返して、同じボタンの色がアプリに表示されることを確認します。
 
-## Review the results and complete the experiment
+## 結果を確認して試験的機能の実行を完了する
 
-Wait at least several hours after completing the previous section, and then follow these steps to review the results of your experiment and complete the experiment.
+前のセクションの手順を完了して少なくとも数時間経ってから、次の手順に従って試験的機能の実行結果を確認し、試験的機能の実行を完了します。
 
-> **Note** As soon as you activate an experiment, Dev Center immediately starts collecting data from any apps that are instrumented to log data for your experiment. However, it can take several hours for experiment data to appear in the dashboard.
+> **注** 試験的機能をアクティブ化するとすぐに、デベロッパー センターでは、試験的機能のデータをログに記録するようにインストルメント化されたアプリからデータの収集を開始します。 ただし、試験的機能のデータがダッシュボードに表示されるまでに数時間かかることがあります。
 
-1. In Dev Center, return to the **Experimentation** page for your app.
-2. In the **Experiments** section, click the **Active** filter and then click **Optimize Button Clicks** to go to the page for this experiment.
-3. Confirm that the results shown in the **Results summary** and **Results details** sections matches what you expect to see. For more details about these sections, see [Manage your experiment in the Dev Center dashboard](manage-your-experiment.md#review-the-results-of-your-experiment).
+1. デベロッパー センターで、アプリの **[Experimentation]** (試験的機能) ページに戻ります。
+2. **[Experiments]** (試験的機能) セクションで、**[アクティブ]** フィルターをクリックし、**[Optimize Button Clicks]** (ボタンのクリックを最適化) をクリックしてこの試験的機能のページに移動します。
+3. **[Results summary]** (結果の要約) セクションと **[Results details]** (結果の詳細) セクションに表示される結果が想定した結果と一致していることを確認します。 これらのセクションについて詳しくは、「[デベロッパー センター ダッシュボードで試験的機能を管理する](manage-your-experiment.md#review-the-results-of-your-experiment)」をご覧ください。
 
-  >**Note** Dev Center reports only the first conversion event for each user in a 24-hour time period. If a user triggers multiple conversion events in your app within a 24-hour period, only the first conversion event is reported. This is intended to help prevent a single user with many conversion events from skewing the experiment results for a sample group of users.
+  >**注** デベロッパー センターで報告されるのは、24 時間以内に発生した、各ユーザーの最初のコンバージョン イベントのみです。 ユーザーが 24 時間以内にアプリで複数のコンバージョン イベントをトリガーした場合は、最初のコンバージョン イベントのみ報告されます。 これは、多数のコンバージョン イベントを使用する単一のユーザーによって、サンプルのユーザー グループの試験的機能の実行結果が歪曲されないようにすることを目的としています。
 
-4. Now you are ready to end the experiment. In the **Results summary** section, in the **Variation B** column, click **Switch**. This switches all users of your app to the blue button.
-5. Click **OK** to confirm that you want to end the experiment.
-6. Run the **SampleExperiment** app you created in the previous section.
-7. Confirm that you see a blue button. Note that it may take up to two minutes for your app to receive an updated variation assignment.
+4. これで、試験的機能の実行を終了できるようになりました。 **[Results summary]** (結果の要約) セクションの **[Variation B]** (バリエーション B) 列で、**[切り替え]** をクリックします。 これで、アプリのすべてのユーザーが青色のボタンに切り替えられます。
+5. **[OK]** をクリックして、試験的機能の実行を終了することを確認します。
+6. 前のセクションで作成した **SampleExperiment** アプリを実行します。
+7. 青色のボタンが表示されることを確認します。 更新されたバリエーションの割り当てをアプリが受信するまでに、最大で 2 分かかる場合があります。
 
-## Related topics
+## 関連トピック
 
-  * [Define your experiment in the Dev Center dashboard](define-your-experiment-in-the-dev-center-dashboard.md)
-  * [Code your app for experimentation](code-your-experiment-in-your-app.md)
-  * [Manage your experiment in the Dev Center dashboard](manage-your-experiment.md)
-  * [Run app experiments with A/B testing](run-app-experiments-with-a-b-testing.md)
+  * [デベロッパー センター ダッシュボードで試験的機能を定義する](define-your-experiment-in-the-dev-center-dashboard.md)
+  * [アプリで試験的機能のコードを記述する](code-your-experiment-in-your-app.md)
+  * [デベロッパー センター ダッシュボードで試験的機能を管理する](manage-your-experiment.md)
+  * [A/B テストを使用してアプリの試験的機能を実行する](run-app-experiments-with-a-b-testing.md)
 
 
 <!--HONumber=Mar16_HO5-->

@@ -1,6 +1,6 @@
 ---
 title: Windows ランタイム コンポーネント
-description: 。
+description: Windows ランタイム コンポーネントは自己完結型オブジェクトで、C#、Visual Basic、JavaScript、C++ など、すべての言語からインスタンス化して使うことができます。
 ms.assetid: 55887622-828b-4318-87f2-25592268f7c1
 ---
 
@@ -9,9 +9,9 @@ ms.assetid: 55887622-828b-4318-87f2-25592268f7c1
 
 \[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-Windows ランタイム コンポーネントは自己完結型オブジェクトで、C#、Visual Basic、JavaScript、C++ など、すべての言語からインスタンス化して使うことができます。
+Windows ランタイム コンポーネントは自己完結型オブジェクトで、C#、Visual Basic、JavaScript、C++ など、すべての言語からインスタンス化して使用することができます。
 
-Visual Studio と C#、Visual Basic、または C++ を使って、ユニバーサル Windows プラットフォーム (UWP) アプリで利用できる Windows ランタイム コンポーネントを作成できます。
+Visual Studio と C#、Visual Basic、または C++ を使って、ユニバーサル Windows プラットフォーム (UWP) アプリで使用できる Windows ランタイム コンポーネントを作成できます。
 
 | トピック | 説明 |
 |-------|-------------|

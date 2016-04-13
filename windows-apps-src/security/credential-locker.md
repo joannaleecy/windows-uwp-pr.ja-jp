@@ -1,27 +1,29 @@
 ---
-title: Credential locker
-description: This article describes how Universal Windows Platform (UWP) apps can use the Credential Locker to securely store and retrieve user credentials, and roam them between devices with the user's Microsoft account.
+title: 資格情報保管ボックス
+description: この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリで資格情報保管ボックスを使ってユーザーの資格情報を安全に保管し、ユーザーの Microsoft アカウントを使ってデバイス間をローミングする方法について説明します。
 ms.assetid: 7BCC443D-9E8A-417C-B275-3105F5DED863
 author: awkoren
 ---
 
-# Credential locker
+# 資格情報保管ボックス
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-This article describes how Universal Windows Platform (UWP) apps can use the Credential Locker to securely store and retrieve user credentials, and roam them between devices with the user's Microsoft account.
+この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリで資格情報保管ボックスを使ってユーザーの資格情報を安全に保管し、ユーザーの Microsoft アカウントを使ってデバイス間をローミングする方法について説明します。
 
-For example, you have an app that connects to a service to access protected resources such as media files, or social networking. Your service requires login information for each user. You’ve built UI into your app that gets the username and password for the user, which is then used to log the user into the service. Using the Credential Locker API, you can store the username and password for your user and easily retrieve them and log the user in automatically the next time they open your app, regardless of what device they're on.
+たとえば、メディア ファイルやソーシャル ネットワークなど、保護されたリソースにアクセスするサービスに接続するアプリがあるとします。 サービスには、ユーザーごとにログイン情報を渡す必要があります。 そこで、ユーザーのユーザー名とパスワードを取得するための UI をアプリに組み込み、サービスへのログインに使うことにしました。 Credential Locker API を使うと、ユーザーのユーザー名とパスワードを格納し、次回のアプリの実行時に取得してデバイスを問わずユーザーを自動的にログインさせることができます。
 
-Credential locker works a little differently for domain accounts. If there are credentials stored with your Microsoft account, and you associate that account with a domain account (such as the account that you use at work), your credentials will roam to that domain account. However, any new credentials added when signed on with the domain account won’t roam. This ensures that private credentials for the domain aren’t exposed outside of the domain.
+ドメイン アカウントの場合、資格情報保管ボックスは動作が少し異なります。 Microsoft アカウントと共に格納された資格情報がある場合、そのアカウントをドメイン アカウント (職場で使うアカウントなど) に関連付けると、資格情報はドメイン アカウントにローミングされます。 ただし、ドメイン アカウントでのサインオン中に追加された新しい資格情報はローミングされません。 これは、ドメインのプライベートな資格情報がドメイン外部に公開されないようにするためです。
 
-## Storing user credentials
+## ユーザー資格情報の格納
 
 
-1.  Obtain a reference to the Credential Locker using the [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) object from the [**Windows.Security.Credentials**](https://msdn.microsoft.com/library/windows/apps/br227089) namespace.
-2.  Create a [**PasswordCredential**](https://msdn.microsoft.com/library/windows/apps/br227061) object that contains an identifier for your app, the username and the password, and pass that to the [**PasswordVault.Add**](https://msdn.microsoft.com/library/windows/apps/hh701231) method to add the credential to the locker.
+1.  [
+            **Windows.Security.Credentials**](https://msdn.microsoft.com/library/windows/apps/br227089) 名前空間の [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) オブジェクトを使って、資格情報保管ボックスへの参照を取得します。
+2.  [
+            **PasswordCredential**](https://msdn.microsoft.com/library/windows/apps/br227061) オブジェクトを作成し、アプリの識別子、ユーザー名、パスワードを含めます。これを [**PasswordVault.Add**](https://msdn.microsoft.com/library/windows/apps/hh701231) メソッドに渡して、資格情報を保管ボックスに追加します。
 
 ```cs
 var vault = new Windows.Security.Credentials.PasswordVault();
@@ -29,20 +31,22 @@ vault.Add(new Windows.Security.Credentials.PasswordCredential(
     "My App", username, password));
 ```
 
-## Retrieving user credentials
+## ユーザー資格情報の取得
 
 
-You have several options for retrieving user credentials from the Credential Locker after you have a reference to the [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) object.
+[
+            **PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) オブジェクトへの参照を取得した後、資格情報保管ボックスからユーザー資格情報を取得するには、いくつかの方法があります。
 
--   You can retrieve all the credentials the user has supplied for your app in the locker with the [**PasswordVault.RetrieveAll**](https://msdn.microsoft.com/library/windows/apps/br227088) method.
+-   [
+            **PasswordVault.RetrieveAll**](https://msdn.microsoft.com/library/windows/apps/br227088) メソッドを使うと、ユーザーからアプリに提供された保管ボックス内の資格情報をすべて取得できます。
 
--   If you know the username for the stored credentials, you can retrieve all the credentials for that username with the [**PasswordVault.FindAllByUserName**](https://msdn.microsoft.com/library/windows/apps/br227084) method.
+-   格納されている資格情報のユーザー名がわかっている場合は、[**PasswordVault.FindAllByUserName**](https://msdn.microsoft.com/library/windows/apps/br227084) メソッドを使うことで、そのユーザー名の資格情報をすべて取得できます。
 
--   If you know the resource name for the stored credentials, you can retrieve all the credentials for that resource name with the [**PasswordVault.FindAllByResource**](https://msdn.microsoft.com/library/windows/apps/br227083) method.
+-   格納されている資格情報のリソース名がわかっている場合は、[**PasswordVault.FindAllByResource**](https://msdn.microsoft.com/library/windows/apps/br227083) メソッドを使うことで、そのリソース名の資格情報をすべて取得できます。
 
--   Finally, if you know both the username and the resource name for a credential, you can retrieve just that credential with the [**PasswordVault.Retrieve**](https://msdn.microsoft.com/library/windows/apps/br227087) method.
+-   最後に、資格情報のユーザー名とリソース名の両方がわかっている場合は、[**PasswordVault.Retrieve**](https://msdn.microsoft.com/library/windows/apps/br227087) メソッドを使うことで、該当する資格情報だけを取得できます。
 
-Let’s look at an example where we have stored the resource name globally in an app and we log the user on automatically if we find a credential for them. If we find multiple credentials for the same user, we ask the user to select a default credential to use when logging on.
+例を見てみましょう。次の例では、リソース名をアプリ内でグローバルに格納し、ユーザーの資格情報が見つかった場合に、そのユーザーとして自動的にログインします。 同じユーザーに対して複数の資格情報がある場合は、ログオンに使う既定の資格情報をユーザーに選んでもらいます。
 
 ```cs
 private string resourceName = "My App";
@@ -100,14 +104,15 @@ private Windows.Security.Credentials.PasswordCredential GetCredentialFromLocker(
 }
 ```
 
-## Deleting user credentials
+## ユーザー資格情報の削除
 
 
-Deleting user credentials in the Credential Locker is also a quick, two-step process.
+資格情報保管ボックスからのユーザー資格情報の削除も、2 段階のプロセスで簡単に行うことができます。
 
-1.  Obtain a reference to the Credential Locker using the [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) object from the [**Windows.Security.Credentials**](https://msdn.microsoft.com/library/windows/apps/br227089) namespace.
+1.  [
+            **Windows.Security.Credentials**](https://msdn.microsoft.com/library/windows/apps/br227089) 名前空間の [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) オブジェクトを使って、資格情報保管ボックスへの参照を取得します。
 
-2.  Pass the credential you want to delete to the [**PasswordVault.Remove**](https://msdn.microsoft.com/library/windows/apps/hh701242) method.
+2.  削除する資格情報を [**PasswordVault.Remove**](https://msdn.microsoft.com/library/windows/apps/hh701242) メソッドに渡します。
 
 ```cs
 var vault = new Windows.Security.Credentials.PasswordVault();
@@ -115,17 +120,17 @@ vault.Remove(new Windows.Security.Credentials.PasswordCredential(
     "My App", username, password));
 ```
 
-## Best practices
+## ベスト プラクティス
 
 
-Only use the credential locker for passwords and not for larger data blobs.
+資格情報保管ボックスはパスワードのみに使い、大きいデータ BLOB には使わないようにします。
 
-Save passwords in the credential locker only if the following criteria are met:
+次の条件が満たされている場合にのみ、資格情報保管ボックスにパスワードを保存します。
 
--   The user has successfully signed in.
--   The user has opted to save passwords.
+-   ユーザーが正常にサインインしている。
+-   ユーザーがパスワードの保存を選んでいる。
 
-Never store credentials in plain-text using app data or roaming settings.
+アプリ データまたはローミングの設定を使って資格情報をプレーンテキストに格納しないでください。
 
 <!--HONumber=Mar16_HO5-->
 

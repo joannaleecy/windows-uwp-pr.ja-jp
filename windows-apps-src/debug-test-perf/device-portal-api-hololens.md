@@ -1,1412 +1,1412 @@
 ---
 ms.assetid: 41ac0142-4d86-4bb3-b580-36d0d6956091
-title: Device Portal API reference for HoloLens
-description: Learn about the Windows Device Portal for HoloLens REST API's that you can use to access the data and control your device programmatically.
+title: HoloLens 用 Device Portal API リファレンス
+description: HoloLens 用の Windows Device Portal REST API について説明します。これらの API を使うと、プログラムからデータにアクセスしてデバイスを制御できます。
 ---
-# Device Portal API reference for HoloLens
+# HoloLens 用 Device Portal API リファレンス
 
-Everything in the Windows Device Portal is built on top of REST API's that you can use to access the data and control your device programmatically.
+Windows Device Portal の機能はすべて、REST API の上に構築されています。REST API は、プログラムからデータにアクセスしてデバイスを制御するために使用できます。
 
-## Holographic OS
+## ホログラフィック OS
 ---
-### Get HTTPS requirements for the Device Portal
+### Device Portal の HTTPS 要件を取得する
 
-**Request**
+**要求**
 
-You can get the HTTPS requirements for the Device Portal by using the following request format.
+次の要求型式を使用して、Device Portal の HTTPS 要件を取得できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/holographic/os/webmanagement/settings/https
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
 ---
-### Get the stored interpupillary distance (IPD)
+### 保存されている瞳孔間距離 (IPD) を取得する
 
-**Request**
+**要求**
 
-You can get the stored IPD value by using the following request format. The value is returned in millimeters.
+次の要求型式を使用して、保存されている IPD の値を取得できます。 値はミリメートル単位で返されます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/holographic/os/settings/ipd
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
 ---
-### Get a list of HoloLens specific ETW providers
+### HoloLens 固有の ETW プロバイダーの一覧を取得する
 
-**Request**
+**要求**
 
-You can get a list of HoloLens specific ETW providers that are not registered with the system by using the following request format.
+次の要求型式を使用して、システムには登録されていない HoloLens 固有の ETW プロバイダーの一覧を取得できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/holographic/os/etw/customproviders
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
 ---
-### Return the state for all active services
+### アクティブなすべてのサービスの状態を返す
 
-**Request**
+**要求**
 
-You can get the state of all services that are currently running by using the following request format.
+次の要求形式を使用して、現在実行されているすべてのサービスの状態を取得できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/holographic/os/services
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
 ---
-### Set the HTTPS requirement for the Device Portal.
+### Device Portal の HTTPS 要件を設定する
 
-**Request**
+**要求**
 
-You can set the HTTPS requirements for the Device Portal by using the following request format.
+次の要求形式を使用して、Device Portal の HTTPS 要件を設定できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 POST | /api/holographic/management/settings/https
 
 
-**URI parameters**
+**URI パラメーター**
 
-You can specify the following additional parameters on the request URI:
+次の追加パラメーターを要求 URI に指定できます。
 
-URI parameter | Description
+URI パラメーター | 説明
 :---          | :---
-required   | (**required**) Determines whether or not HTTPS is required for the Device Portal. Possible values are **yes**, **no**, and **default**.
+required   | (**必須**) Device Portal で HTTPS を必要とするかどうかを決定します。 指定できる値は、**yes**、**no**、**default** です。
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
 ---
-### Set the interpupillary distance (IPD)
+### 瞳孔間距離 (IPD) を設定する
 
-**Request**
+**要求**
 
-You can set the stored IPD by using the following request format.
+次の要求形式を使用して、保存されている IPD を設定できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 POST | /api/holographic/os/settings/ipd
 
 
-**URI parameters**
+**URI パラメーター**
 
-You can specify the following additional parameters on the request URI:
+次の追加パラメーターを要求 URI に指定できます。
 
-URI parameter | Description
+URI パラメーター | 説明
 :---          | :---
-ipd   | (**required**) The new IPD value to be stored. This value should be in millimeters.
+ipd   | (**必須**) 保存する新しい IPD 値。 この値はミリメートル単位で指定します。
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
 ---
-## Holographic perception
+## ホログラフィックの認識
 ---
-### Accept websocket upgrades and run a mirage client that sends updates
+### WebSocket のアップグレードを受け入れ、ミラージュ クライアントを実行する
 
-**Request**
+**要求**
 
-You can accept websocket upgrades and run a mirage client that sends updates at 30 fps by using the following request format.
+次の要求型式を使用して、WebSocket のアップグレードを受け入れ、30fps で更新を送信するミラージュ クライアントを実行できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET/WebSocket | /api/holographic/perception/client
 
 
-**URI parameters**
+**URI パラメーター**
 
-You can specify the following additional parameters on the request URI:
+次の追加パラメーターを要求 URI に指定できます。
 
-URI parameter | Description
+URI パラメーター | 説明
 :---          | :---
-clientmode   | (**required**) Determines the tracking mode. A value of **active** forces visual tracking mode when it can't be established passively.
+clientmode   | (**必須**) 追跡モードを決定します。 値を **active** に設定すると、パッシブに確立できない場合は視覚追跡モードが強制されます。
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
 ---
-## Holographic thermal
+## ホログラフィックの温度
 ---
-### Get the thermal stage of the device
+### デバイスの温度ステージを取得する
 
-**Request**
+**要求**
 
-You can get the thermal stage of the device by using the following request format.
+次の要求形式を使用して、デバイスの温度ステージを取得できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/holographic/
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-The possible values are indicated by the following table.
+返される可能性のある値を次の表に示します。
 
-Value | Description
+値 | 説明
 --- | ---
-1 | Normal
-2 | Warm
-3 | Critical
+1 | 正常
+2 | 中温
+3 | 臨界
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
 ---
-## HSimulation control
+## HSimulation の制御
 ---
-### Create a control stream or post data to a created stream
+### 制御ストリームを作成する、または作成されたストリームにデータをポストする
 
-**Request**
+**要求**
 
-You can create a control stream or post data to a created stream by using the following request format. The posted data is expected to be of type **application/octet-stream**.
+次の要求形式を使用して、制御ストリームを作成したり、作成されたストリームにデータをポストしたりできます。 ポストされるデータの種類は **application/octet-stream** と想定されます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 POST | /api/holographic/simulation/control/stream
 
 
-**URI parameters**
+**URI パラメーター**
 
-You can specify the following additional parameters on the request URI:
+次の追加パラメーターを要求 URI に指定できます。
 
-URI parameter | Description
+URI パラメーター | 説明
 :---          | :---
-priority   | (**required if creating a control stream**) Indicates the priority of the stream.
-streamid   | (**required if posting to a created stream**) The identifier for the stream to post to.
+priority   | (**制御ストリームを作成する場合は必須**) ストリームの優先度を示します。
+streamid   | (**作成されたストリームにポストする場合は必須**) ポスト先のストリームの識別子。
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
 ---
-### Delete a control stream
+### 制御ストリームを削除する
 
-**Request**
+**要求**
 
-You can delete a control stream by using the following request format.
+次の要求形式を使用して、制御ストリームを削除できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 DELETE | /api/holographic/simulation/control/stream
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
 ---
-### Get a control stream
+### 制御ストリームを取得する
 
-**Request**
+**要求**
 
-You can open a web socket connection for a control stream by using the following request format.
+次の要求形式を使用して、制御ストリームの Web ソケット接続を開くことができます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET/WebSocket | /api/holographic/simulation/control/stream
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
 ---
-### Get the simluation mode
+### シミュレーション モードを取得する
 
-**Request**
+**要求**
 
-You can get the simluation mode by using the following request format.
+次の要求形式を使用して、シミュレーション モードを取得できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/holographic/simulation/control/mode
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
 ---
-### Set the simluation mode
+### シミュレーション モードを設定する
 
-**Request**
+**要求**
 
-You can set the simulation mode by using the following request format.
+次の要求型式を使用して、シミュレーション モードを設定できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 POST | /api/holographic/simluation/control/mode
 
 
-**URI parameters**
+**URI パラメーター**
 
-You can specify the following additional parameters on the request URI:
+次の追加パラメーターを要求 URI に指定できます。
 
-URI parameter | Description
+URI パラメーター | 説明
 :---          | :---
-mode   | (**required**) Indicates the simulation mode. Possible values include **default**, **simulation**, **remote**, and **legacy**.
+mode   | (**必須**) シミュレーション モードを示します。 指定できる値は、**default**、**simulation**、**remote**、**legacy** です。
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
 ---
-## HSimulation playback
+## HSimulation の再生
 ---
-### Delete a recording
+### レコーディングを削除する
 
-**Request**
+**要求**
 
-You can delete a recording by using the following request format.
+次の要求型式を使用して、レコーディングを削除できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 DELETE | /api/holographic/simulation/playback/file
 
 
-**URI parameters**
+**URI パラメーター**
 
-You can specify the following additional parameters on the request URI:
+次の追加パラメーターを要求 URI に指定できます。
 
-URI parameter | Description
+URI パラメーター | 説明
 :---          | :---
-recording   | (**required**) The name of the recording to delete.
+recording   | (**必須**) 削除するレコーディングの名前。
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
 ---
-### Get all recordings
+### すべてのレコーディングを取得する
 
-**Request**
+**要求**
 
-You can get all the available recordings by using the following request format.
+次の要求形式を使用して、利用可能なすべてのレコーディングを取得できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/holographic/simulation/playback/files
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
 ---
-### Get the types of data in a loaded recording
+### 読み込まれたレコーディング内のデータの種類を取得する
 
-**Request**
+**要求**
 
-You can get the types of data in a loaded recording by using the following request format.
+次の要求形式を使用して、読み込まれたレコーディング内のデータの種類を取得できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/holographic/simulation/playback/session/types
 
 
-**URI parameters**
+**URI パラメーター**
 
-You can specify the following additional parameters on the request URI:
+次の追加パラメーターを要求 URI に指定できます。
 
-URI parameter | Description
+URI パラメーター | 説明
 :---          | :---
-recording   | (**required**) The name of the recording you are interested in.
+recording   | (**必須**) 対象とするレコーディングの名前。
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
 ---
-### Get all the loaded recordings
+### 読み込まれたすべてのレコーディングを取得する
 
-**Request**
+**要求**
 
-You can get all the loaded recordings by using the following request format.
+次の要求形式を使用して、読み込まれたすべてのレコーディングを取得できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/holographic/simulation/playback/session/files
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
 ---
-### Get the current playback state of a recording 
+### レコーディングの現在の再生状態を取得する 
 
-**Request**
+**要求**
 
-You can get the current playback state of a recording by using the following request format.
+次の要求形式を使用して、レコーディングの現在の再生状態を取得できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/holographic/simulation/playback/session
 
 
-**URI parameters**
+**URI パラメーター**
 
-You can specify the following additional parameters on the request URI:
+次の追加パラメーターを要求 URI に指定できます。
 
-URI parameter | Description
+URI パラメーター | 説明
 :---          | :---
-recording   | (**required**) The name of the recording that you are interested in.
+recording   | (**必須**) 対象とするレコーディングの名前。
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
 ---
-### Load a recording
+### レコーディングを読み込む
 
-**Request**
+**要求**
 
-You can load a recording by using the following request format.
+次の要求形式を使用して、レコーディングを読み込むことができます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 POST | /api/holographic/simulation/playback/session/file
 
 
-**URI parameters**
+**URI パラメーター**
 
-You can specify the following additional parameters on the request URI:
+次の追加パラメーターを要求 URI に指定できます。
 
-URI parameter | Description
+URI パラメーター | 説明
 :---          | :---
-recording   | (**required**) The name of the recording to load.
+recording   | (**必須**) 読み込むレコーディングの名前。
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
 ---
-### Pause a recording
+### レコーディングを一時停止する
 
-**Request**
+**要求**
 
-You can pause a recording by using the following request format.
+次の要求形式を使用して、レコーディングを一時停止できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 POST | /api/holographic/simulation/playback/session/pause
 
 
-**URI parameters**
+**URI パラメーター**
 
-You can specify the following additional parameters on the request URI:
+次の追加パラメーターを要求 URI に指定できます。
 
-URI parameter | Description
+URI パラメーター | 説明
 :---          | :---
-recording   | (**required**) The name of the recording to pause.
+recording   | (**必須**) 一時停止するレコーディングの名前。
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
 ---
-### Play a recording
+### レコーディングを再生する
 
-**Request**
+**要求**
 
-You can play a recording by using the following request format.
+次の要求形式を使用して、レコーディングを再生できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 POST | /api/holographic/simulation/playback/session/play
 
 
-**URI parameters**
+**URI パラメーター**
 
-You can specify the following additional parameters on the request URI:
+次の追加パラメーターを要求 URI に指定できます。
 
-URI parameter | Description
+URI パラメーター | 説明
 :---          | :---
-recording   | (**required**) The name of the recording to play.
+recording   | (**必須**) 再生するレコーディングの名前。
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
 ---
-### Stop a recording
+### レコーディングを停止する
 
-**Request**
+**要求**
 
-You can stop a recording by using the following request format.
+次の要求形式を使用して、レコーディングを停止できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 POST | /api/holographic/simulation/playback/session/stop
 
 
-**URI parameters**
+**URI パラメーター**
 
-You can specify the following additional parameters on the request URI:
+次の追加パラメーターを要求 URI に指定できます。
 
-URI parameter | Description
+URI パラメーター | 説明
 :---          | :---
-recording   | (**required**) The name of the recording to stop.
+recording   | (**必須**) 停止するレコーディングの名前。
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
 ---
-### Unload a recording
+### レコーディングをアンロードする
 
-**Request**
+**要求**
 
-You can unload a recording by using the following request format.
+次の要求形式を使用して、レコーディングをダウンロードできます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 DELETE | /api/holographic/simulation/playback/session/file
 
 
-**URI parameters**
+**URI パラメーター**
 
-You can specify the following additional parameters on the request URI:
+次の追加パラメーターを要求 URI に指定できます。
 
-URI parameter | Description
+URI パラメーター | 説明
 :---          | :---
-recording   | (**required**) The name of the recording to unload.
+recording   | (**必須**) アンロードするレコーディングの名前。
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
 ---
-### Upload a recording
+### レコーディングをアップロードする
 
-**Request**
+**要求**
 
-You can upload a recording by using the following request format.
+次の要求形式を使用して、レコーディングをアップロードできます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 POST | /api/holographic/simulation/playback/file
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
 ---
-## HSimulation recording
+## HSimulation のレコーディング
 ---
-### Get the recording state
+### レコーディングの状態を取得する
 
-**Request**
+**要求**
 
-You can get the current recording state by using the following request format.
+次の要求形式を使用して、現在のレコーディングの状態を取得できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/holographic/simulation/recording/status
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
 ---
-### Start a recording
+### レコーディングを開始する
 
-**Request**
+**要求**
 
-You can start a recording by using the following request format. There can only be one active recording at a time. 
+次の要求形式を使用して、レコーディングを開始できます。 アクティブにできるレコーディングは一度に 1 つだけです。 
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 POST | /api/holographic/simulation/recording/start
 
 
-**URI parameters**
+**URI パラメーター**
 
-You can specify the following additional parameters on the request URI:
+次の追加パラメーターを要求 URI に指定できます。
 
-URI parameter | Description
+URI パラメーター | 説明
 :---          | :---
-head   | (**see below**) Set this value to 1 to indicate the system should record head data.
-hands   | (**see below**) Set this value to 1 to indicate the system should record hands data.
-spatialMapping   | (**see below**) Set this value to 1 to indicate the system should record spatial mapping data.
-environment   | (**see below**) Set this value to 1 to indicate the system should record environment data.
-name   | (**required**) The name of the recording.
-singleSpatialMappingFrame   | (**optional**) Set this value to 1 to indicate that only a single sptial mapping frame should be recorded.
+head   | (**下記参照**) システムで頭部のデータを記録する必要があることを示すには、この値を 1 に設定します。
+hands   | (**下記参照**) システムで手のデータを記録する必要があることを示すには、この値を 1 に設定します。
+spatialMapping   | (**下記参照**) システムで空間マッピング データを記録する必要があることを示すには、この値を 1 に設定します。
+environment   | (**下記参照**) システムで環境データを記録する必要があることを示すには、この値を 1 に設定します。
+name   | (**必須**) レコーディングの名前。
+singleSpatialMappingFrame   | (**省略可能**) 単一の空間マッピング フレームのみを記録する必要があることを示すには、この値を 1 に設定します。
 
-For these parameters, exactly one of the following parameters must be set to 1: *head*, *hands*, *spatialMapping*, or *environment*.
+これらのパラメーターについては、*head*、*hands*、*spatialMapping*、*environment* のいずれか 1 つだけを 1 に設定する必要があります。
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
 ---
-### Stop the current recording
+### 現在のレコーディングを停止する
 
-**Request**
+**要求**
 
-You can stop the current recording by using the following request format. The recording will be returned as a file.
+次の要求形式を使用して、現在のレコーディングを停止できます。 レコーディングはファイルとして返されます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 POST | /api/holographic/simulation/recording/stop
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
 ---
-## Mixed reality capture
+## 複合現実キャプチャ
 ---
-### Delete a mixed reality capture (MRC) recording from the device
+### デバイスから複合現実キャプチャ (MRC) レコーディングを削除する
 
-**Request**
+**要求**
 
-You can delete an MRC recording by using the following request format.
+次の要求形式を使用して、MRC レコーディングを削除できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 DELETE | /api/holographic/mrc/file
 
 
-**URI parameters**
+**URI パラメーター**
 
-You can specify the following additional parameters on the request URI:
+次の追加パラメーターを要求 URI に指定できます。
 
-URI parameter | Description
+URI パラメーター | 説明
 :---          | :---
-filename   | (**required**) The name of the video file to delete. The name should be hex64 encoded.
+filename   | (**必須**) 削除するビデオ ファイルの名前。 この名前は hex64 エンコードされている必要があります。
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
 ---
-### Download a mixed reality capture (MRC) file
+### 複合現実キャプチャ (MRC) ファイルをダウンロードする
 
-**Request**
+**要求**
 
-You can download an MRC file from the device by using the following request format.
+次の要求形式を使用して、デバイスから MRC ファイルをダウンロードできます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/holographic/mrc/file
 
 
-**URI parameters**
+**URI パラメーター**
 
-You can specify the following additional parameters on the request URI:
+次の追加パラメーターを要求 URI に指定できます。
 
-URI parameter | Description
+URI パラメーター | 説明
 :---          | :---
-filename   | (**required**) The name of the video file you want to get. The name should be hex64 encoded.
-op   | (**optional**) Set this value to **stream** if you want to download a stream.
+filename   | (**必須**) 取得するビデオ ファイルの名前。 この名前は hex64 エンコードされている必要があります。
+op   | (**省略可能**) ストリームをダウンロードする場合は、この値を **stream** に設定します。
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
 ---
-### Get the mixed reality capture (MRC) settings
+### 複合現実キャプチャ (MRC) の設定を取得する
 
-**Request**
+**要求**
 
-You can get the MRC settings by using the following request format.
+次の要求形式を使用して、MRC の設定を取得できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/holographic/mrc/settings
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
 ---
-### Get the status of the mixed reality capture (MRC) recording
+### 複合現実キャプチャ (MRC) レコーディングの状態を取得する
 
-**Request**
+**要求**
 
-You can get the MRC recording status by using the following request format. The possible values include **running** and **stopped**.
+次の要求形式を使用して、MRC レコーディングの状態を取得できます。 返される可能性のある値は、**running** と **stopped** です。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/holographic/mrc/status
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
 ---
-### Get the list of mixed reality capture (MRC) files
+### 複合現実キャプチャ (MRC) ファイルのリストを取得する
 
-**Request**
+**要求**
 
-You can get the MRC files stored on the device by using the following request format.
+次の要求形式を使用して、デバイスに保存されている MRC ファイルを取得できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/holographic/mrc/files
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
 ---
-### Set the mixed reality capture (MRC) settings
+### 複合現実キャプチャ (MRC) の設定を行う
 
-**Request**
+**要求**
 
-You can set the MRC settings by using the following request format.
+次の要求形式を使用して、MRC の設定を行うことができます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 POST | /api/holographic/mrc/settings
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
 ---
-### Starts a mixed reality capture (MRC) recording
+### 複合現実キャプチャ (MRC) レコーディングを開始する
 
-**Request**
+**要求**
 
-You can start an MRC recording by using the following request format.
+次の要求形式を使用して、MRC レコーディングを開始できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 POST | /api/holographic/mrc/video/control/start
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
 ---
-### Stop the current mixed reality capture (MRC) recording
+### 現在の複合現実キャプチャ (MRC) レコーディングを停止する
 
-**Request**
+**要求**
 
-You can stop the current MRC recording by using the following request format.
+次の要求形式を使用して、現在の MRC レコーディングを停止できます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 POST | /api/holographic/mrc/video/control/stop
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
 ---
-### Take a mixed reality capture (MRC) photo
+### 複合現実キャプチャ (MRC) の写真を撮る
 
-**Request**
+**要求**
 
-You can take an MRC photo by using the following request format. The photo is returned in JPEG format.
+次の要求形式を使用して、MRC の写真を撮ることができます。 写真は JPEG 形式で返されます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/holographic/mrc/photo
 
 
-**URI parameters**
+**URI パラメーター**
 
-- None
+- なし
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
 ---
-## Mixed reality streaming
+## 複合現実のストリーミング
 ---
-### Initiates a chunked download of a fragmented mp4
+### フラグメント化 mp4 のチャンク ダウンロードを開始する
 
-**Request**
+**要求**
 
-You can initiate a chunked download of a fragmented mp4 by using the following request format. This API uses the default quality.
+次の要求型式を使用して、フラグメント化 mp4 のチャンク ダウンロードを開始できます。 この API では既定の品質が使われます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/holographic/stream/live.mp4
 
 
-**URI parameters**
+**URI パラメーター**
 
-You can specify the following additional parameters on the request URI:
+次の追加パラメーターを要求 URI に指定できます。
 
-URI parameter | Description
+URI パラメーター | 説明
 :---          | :---
-pv   | (**optional**) Indiates whether to capture the PV camera. Should be **true** or **false**.
-holo   | (**optional**) Indiates whether to capture holograms. Should be **true** or **false**.
-mic   | (**optional**) Indiates whether to capture the microphone. Should be **true** or **false**.
-loopback   | (**optional**) Indiates whether to capture the application audio. Should be **true** or **false**.
+pv   | (**省略可能**) PV カメラをキャプチャするかどうかを示します。 **true** または **false** を指定する必要があります。
+holo   | (**省略可能**) ホログラムをキャプチャするかどうかを示します。 **true** または **false** を指定する必要があります。
+mic   | (**省略可能**) マイクをキャプチャするかどうかを示します。 **true** または **false** を指定する必要があります。
+loopback   | (**省略可能**) アプリケーション オーディオをキャプチャするかどうかを示します。 **true** または **false** を指定する必要があります。
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
 ---
-### Initiates a chunked download of a fragmented mp4
+### フラグメント化 mp4 のチャンク ダウンロードを開始する
 
-**Request**
+**要求**
 
-You can initiate a chunked download of a fragmented mp4 by using the following request format. This API uses the high quality.
+次の要求型式を使用して、フラグメント化 mp4 のチャンク ダウンロードを開始できます。 この API では高品質が使われます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/holographic/stream/live_high.mp4
 
 
-**URI parameters**
+**URI パラメーター**
 
-You can specify the following additional parameters on the request URI:
+次の追加パラメーターを要求 URI に指定できます。
 
-URI parameter | Description
+URI パラメーター | 説明
 :---          | :---
-pv   | (**optional**) Indiates whether to capture the PV camera. Should be **true** or **false**.
-holo   | (**optional**) Indiates whether to capture holograms. Should be **true** or **false**.
-mic   | (**optional**) Indiates whether to capture the microphone. Should be **true** or **false**.
-loopback   | (**optional**) Indiates whether to capture the application audio. Should be **true** or **false**.
+pv   | (**省略可能**) PV カメラをキャプチャするかどうかを示します。 **true** または **false** を指定する必要があります。
+holo   | (**省略可能**) ホログラムをキャプチャするかどうかを示します。 **true** または **false** を指定する必要があります。
+mic   | (**省略可能**) マイクをキャプチャするかどうかを示します。 **true** または **false** を指定する必要があります。
+loopback   | (**省略可能**) アプリケーション オーディオをキャプチャするかどうかを示します。 **true** または **false** を指定する必要があります。
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
 ---
-### Initiates a chunked download of a fragmented mp4
+### フラグメント化 mp4 のチャンク ダウンロードを開始する
 
-**Request**
+**要求**
 
-You can initiate a chunked download of a fragmented mp4 by using the following request format. This API uses the low quality.
+次の要求型式を使用して、フラグメント化 mp4 のチャンク ダウンロードを開始できます。 この API では低品質が使われます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/holographic/stream/live_low.mp4
 
 
-**URI parameters**
+**URI パラメーター**
 
-You can specify the following additional parameters on the request URI:
+次の追加パラメーターを要求 URI に指定できます。
 
-URI parameter | Description
+URI パラメーター | 説明
 :---          | :---
-pv   | (**optional**) Indiates whether to capture the PV camera. Should be **true** or **false**.
-holo   | (**optional**) Indiates whether to capture holograms. Should be **true** or **false**.
-mic   | (**optional**) Indiates whether to capture the microphone. Should be **true** or **false**.
-loopback   | (**optional**) Indiates whether to capture the application audio. Should be **true** or **false**.
+pv   | (**省略可能**) PV カメラをキャプチャするかどうかを示します。 **true** または **false** を指定する必要があります。
+holo   | (**省略可能**) ホログラムをキャプチャするかどうかを示します。 **true** または **false** を指定する必要があります。
+mic   | (**省略可能**) マイクをキャプチャするかどうかを示します。 **true** または **false** を指定する必要があります。
+loopback   | (**省略可能**) アプリケーション オーディオをキャプチャするかどうかを示します。 **true** または **false** を指定する必要があります。
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
 ---
-### Initiates a chunked download of a fragmented mp4
+### フラグメント化 mp4 のチャンク ダウンロードを開始する
 
-**Request**
+**要求**
 
-You can initiate a chunked download of a fragmented mp4 by using the following request format. This API uses the medium quality.
+次の要求型式を使用して、フラグメント化 mp4 のチャンク ダウンロードを開始できます。 この API では中品質が使われます。
  
-Method      | Request URI
+メソッド      | 要求 URI
 :------     | :-----
 GET | /api/holographic/stream/live_med.mp4
 
 
-**URI parameters**
+**URI パラメーター**
 
-You can specify the following additional parameters on the request URI:
+次の追加パラメーターを要求 URI に指定できます。
 
-URI parameter | Description
+URI パラメーター | 説明
 :---          | :---
-pv   | (**optional**) Indiates whether to capture the PV camera. Should be **true** or **false**.
-holo   | (**optional**) Indiates whether to capture holograms. Should be **true** or **false**.
-mic   | (**optional**) Indiates whether to capture the microphone. Should be **true** or **false**.
-loopback   | (**optional**) Indiates whether to capture the application audio. Should be **true** or **false**.
+pv   | (**省略可能**) PV カメラをキャプチャするかどうかを示します。 **true** または **false** を指定する必要があります。
+holo   | (**省略可能**) ホログラムをキャプチャするかどうかを示します。 **true** または **false** を指定する必要があります。
+mic   | (**省略可能**) マイクをキャプチャするかどうかを示します。 **true** または **false** を指定する必要があります。
+loopback   | (**省略可能**) アプリケーション オーディオをキャプチャするかどうかを示します。 **true** または **false** を指定する必要があります。
 
-**Request headers**
+**要求ヘッダー**
 
-- None
+- なし
 
-**Request body**
+**要求本文**
 
-- None
+- なし
 
-**Response**
+**応答**
 
-- None
+- なし
 
-**Status code**
+**状態コード**
 
-- Standard status codes.
+- 標準の状態コード。
 
 
 <!--HONumber=Mar16_HO5-->

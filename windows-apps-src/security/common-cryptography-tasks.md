@@ -2,12 +2,13 @@
 title: 一般的な暗号化タスク
 description: これらの記事では、乱数の生成、バッファーの比較、文字列とバイナリ データの間の変換、バイト配列間のコピー、データのエンコードとデコードなどのユニバーサル Windows プラットフォーム (UWP) の一般的な暗号化タスクのコード例を提供します。
 ms.assetid: 2DE094F4-28E2-4C5D-BF8C-617BD90AB119
+author: awkoren
 ---
 
 # 一般的な暗号化タスク
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 これらの記事では、乱数の生成、バッファーの比較、文字列とバイナリ データの間の変換、バイト配列間のコピー、データのエンコードとデコードなどのユニバーサル Windows プラットフォーム (UWP) の一般的な暗号化タスクのコード例を提供します。
 
@@ -21,13 +22,7 @@ ms.assetid: 2DE094F4-28E2-4C5D-BF8C-617BD90AB119
 | [データのエンコードとデコード](encode-and-decode-data.md)                                   | 次のコード例は、UWP アプリで base64 データと 16 進データをエンコードおよびデコードする方法を示しています。            |
  
 
- 
 
-
-
-
-
-
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=Mar16_HO5-->
 
 

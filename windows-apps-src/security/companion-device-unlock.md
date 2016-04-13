@@ -1,213 +1,213 @@
-# Windows Unlock with companion devices
+# コンパニオン デバイスを使った Windows のロック解除
 
-A companion device is a device that can act in conjunction with your Windows 10 desktop to enhance the user authentication experience. Using the Companion Device Framework, a companion device can provide a rich experience for Microsoft Passport even when Windows Hello is not available (e.g., if the Windows 10 desktop lacks a camera for face authentication or fingerprint reader device, for example).
+コンパニオン デバイスは、ユーザー認証のエクスペリエンスを強化するために、Windows 10 のデスクトップと組み合わせて使用できるデバイスです。 コンパニオン デバイス フレームワークを使用すると、コンパニオン デバイスは、Windows Hello を利用できない場合 (たとえば、Windows 10 のデスクトップに顔認証のカメラまたは指紋リーダーのデバイスがない場合など) でも、Microsoft Passport のための優れたエクスペリエンスを提供できます。
 
-> **Note** The Companion Device Framework is a specialized feature not available to all app developers. To use this framework, your app must be specifically provisioned by Microsoft and list the restricted *secondaryAuthenticatorFactor* capability in its manifest. To obtain approval, contact [cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com). 
+> **注:** コンパニオン デバイス フレームワークは特別な機能であり、すべてのアプリ開発者が利用できるわけではありません。 このフレームワークを使用するには、アプリが Microsoft によって明確にプロビジョニングされ、制限された *secondaryAuthenticatorFactor* 機能がアプリ マニフェストに含まれている必要があります。 承認を得るには、[cdfonboard@microsoft.com](mailto:cdfonboard@microsoft.com) にお問い合わせください。 
 
-## Introduction 
+## はじめに 
 
-### Use cases 
+### 使用事例 
 
-There are numerous ways one can use the Companion Device Framework to build a great Windows unlock experience with a companion device. For example, users could: 
+さまざまな方法でコンパニオン デバイス フレームワークを使用して、コンパニオン デバイスによる優れた Windows のロック解除エクスペリエンスを構築できます。 たとえば、ユーザーは、次のことを実行できます。 
 
-- Attach their companion device to PC via USB, touch the button on the companion device, and automatically unlock their PC. 
-- Carry a phone in their pocket that is already paired with PC over Bluetooth. Upon hitting the spacebar on their PC, their phone receives a notification. Approve it and the PC simply unlocks.
-- Tap their companion device to an NFC reader to quickly unlock their PC. 
-- Wear a fitness band that has already authenticated the wearer. Upon approaching PC, and by performing a special gesture (like clapping), the PC unlocks. 
+- コンパニオン デバイスを USB 経由で PC に接続し、コンパニオン デバイスのボタンにタッチすると、PC のロックが自動的に解除されます。 
+- PC と Bluetooth でペアリング済みの電話を携帯します。 PC の Space キーを押すと、電話が通知を受信します。 通知を承認するだけで、PC のロックが解除されます。
+- NFC リーダーにコンパニオン デバイスをタップすると、PC のロックがすぐに解除されます。 
+- ユーザーの認証を完了しているフィットネス バンドを装着します。 PC に近づいて特別なジェスチャ (拍手など) を実行すると、PC のロックが解除されます。 
 
-### Biometric enabled companion devices 
+### 生体認証対応コンパニオン デバイス 
 
-If the companion device supports biometrics, the companion device framework can only be used if the device meets one of the follow conditions:
+コンパニオン デバイスが生体認証をサポートしている場合、コンパニオン デバイス フレームワークは、そのデバイスが次のいずれかの条件を満たしている場合のみ使用できます。
 
-- Has a UI and a non-Windows OS that can guide the user through biometric enrollment and management (for example, a phone with biometrics). If a companion device runs on Windows and supports biometrics (face and fingerprint) it must adhere to the [Windows Biometric framework](https://msdn.microsoft.com/en-us/library/windows/hardware/mt608302(v=vs.85).aspx). 
-- Is UI-less (like a USB dongle), but doesn't use face, iris, or fingerprint. 
+- 生体認証の登録と管理の方法をユーザーに示す UI と Windows 以外の OS を備えている (生体認証機能付きの電話など)。 コンパニオン デバイスが Windows で実行され、生体認証 (顔と指紋) をサポートしている場合は、[Windows 生体認証フレームワーク](https://msdn.microsoft.com/en-us/library/windows/hardware/mt608302(v=vs.85).aspx)に従う必要があります。 
+- UI はない (USB ドングルなど) が、顔、虹彩、または指紋を使用しない。 
 
-If neither of these apply and the companion device supports biometric, you must follow the guidelines for [Windows Hello OEM and IHV app scenarios](https://msdn.microsoft.com/en-us/library/windows/hardware/mt608302(v=vs.85).aspx). 
+上記のどちらにも当てはまらないコンパニオン デバイスで生体認証をサポートする場合は、[Windows Hello に関する OEM アプリと IHV アプリのシナリオ](https://msdn.microsoft.com/en-us/library/windows/hardware/mt608302(v=vs.85).aspx)に従う必要があります。 
 
-### Components of the solution
+### ソリューションのコンポーネント
 
-The diagram below depicts the components of the solution and who is responsible for building them. 
+次の図は、ソリューションのコンポーネントと、各コンポーネントの作成元を示しています。 
 
-![framework overview](images/companion-device-1.png)
+![フレームワークの概要](images/companion-device-1.png)
 
-The Companion Device Framework is implemented as a service running on Windows (called Companion Authentication Service in this article). This service is responsible for generating an unlock token which needs to be protected by an HMAC key stored on companion device. This guarantees that access to the unlock token requires companion device presence. Per each (PC, Windows user) tuple, there will be a unique unlock token. 
+コンパニオン デバイス フレームワークは、Windows で実行されるサービスとして実装されます (この記事では Companion Authentication Service と呼びます)。 このサービスは、コンパニオン デバイスに保存される HMAC キーによって保護する必要があるロック解除トークンを生成します。 これにより、ロック解除トークンにアクセスするにはコンパニオン デバイスが存在する必要があることが保証されます。 組 (PC、Windows ユーザー) ごとに、一意のロック解除トークンがあります。 
 
-Integration with the Companion Device Framework requires:
+コンパニオン デバイス フレームワークとの統合には、以下が必要です。
 
-- A [Universal Windows Platform (UWP)](https://msdn.microsoft.com/en-us/windows/uwp/get-started/universal-application-platform-guide) companion device app for the companion device, downloaded from the Windows app store. 
-- The ability to create two 256 bit HMAC keys on the companion device and generate HMAC with it (using SHA-256). 
-- Security settings on the Windows 10 desktop properly configured. The Companion Authentication Service will require this PIN to be set up before any companion device can be plugged into it. The users must set up a PIN via Settings > Accounts > Sign-in options.
+- コンパニオン デバイス用の[ユニバーサル Windows プラットフォーム (UWP)](https://msdn.microsoft.com/en-us/windows/uwp/get-started/universal-application-platform-guide) コンパニオン デバイス アプリ。Windows アプリ ストアからダウンロードできます。 
+- 2 つの 256 ビットの HMAC キーをコンパニオン デバイス上に作成し、HMAC を (SHA-256 を使用して) 生成する能力。 
+- 適切に構成された Windows 10 デスクトップのセキュリティ設定。 Companion Authentication Service では、コンパニオン デバイスが接続される前に PIN が設定されている必要があります。 ユーザーは、[設定]、[アカウント]、[サインイン オプション] の順に移動して、PIN を設定する必要があります。
 
-In addition to the above requirements, the companion device app is responsible for:
+上記の要件に加え、コンパニオン デバイス アプリは、次の処理を行う必要があります。
 
-- User experience and branding of initial registration and later de-registration of the companion device.
-- Running in the background, discovering the companion device, communicating to the companion device and also Companion Authentication Service. 
-- Error handling
+- 初回登録のユーザー エクスペリエンスとブランディング、およびその後のコンパニオン デバイスの登録解除。
+- バック グラウンドで実行してコンパニオン デバイスを検出し、コンパニオン デバイスと Companion Authentication Service と通信すること。 
+- エラー処理
 
-Normally, companion devices ship with an app for initial setup, like setting up a fitness band for the first time. The functionality described in this document can be part of that app and a separate app should not be required.  
+通常、コンパニオン デバイスには、フィットネス バンドの初回の設定などを実行するための初期セットアップ用のアプリが付属します。 このドキュメントに記載されている機能は、そのアプリの一部にすることができ、別のアプリは必要ありません。  
 
-### User signals
+### ユーザー シグナル
 
-Each companion device should be combined with an app that supports three user signals. These signals can be in form of an action or gesture. 
+各コンパニオン デバイスは、3 種類のユーザー シグナルをサポートするアプリと組み合わせる必要があります。 これらのシグナルは、操作またはジェスチャの形を取ることができます。 
 
-- **Intent signal**: Allows the user to show his intent for unlock by, for example, hitting a button on the companion device. The intent signal must be collected on **companion device** side.
-- **User presence signal**: Proves the presence of the user. The companion device might, for instance, require a PIN before it can be used for unlocking PC (not to be confused with PC PIN), or it might require press of a button. 
-- **Disambiguation signal**: Disambiguates which Windows 10 desktop the user wants to unlock when multiple options are available to the companion device. 
+- **インテント シグナル**: ユーザーがロックを解除する意図があることを示すことができるようにします (例: コンパニオン デバイス上のボタンを押す)。 インテント シグナルは、**コンパニオン デバイス**側で収集する必要があります。
+- **ユーザー プレゼンス シグナル**: ユーザーがそばにいることを証明します。 コンパニオン デバイスを使用して PC のロックを解除するには、その前に PIN (PC の PIN と混同しないでください) が必要な場合があります。また、ボタンの押下が必要な場合があります。 
+- **曖昧性解消シグナル**: コンパニオン デバイスで複数のオプションを使用できるときに、ユーザーがどの Windows 10 デスクトップのロックを解除するかを明確にします。 
 
-Any number of these user signals can be combined into one. User presence and intent signals must be required on each use. 
+任意の数のユーザー シグナルを 1 つに組み合わせることができます。 ユーザー プレゼンス シグナルとインテント シグナルは、毎回の使用時に必要です。 
 
-### Registration and future communication between a PC and companion devices
+### 登録および登録後の PC とコンパニオン デバイス間の通信
 
-Before a companion device can be plugged into Companion Device Framework, it needs to be registered with the framework. The experience for registration is completely owned by the companion device app. The Companion Device Framework does not impose any limitations on this UX. 
+コンパニオン デバイスは、コンパニオン デバイス フレームワークに接続する前に、フレームワークに登録する必要があります。 登録エクスペリエンスは、コンパニオン デバイス アプリがすべて管理します。 この UX に関してコンパニオン デバイス フレームワークによって設定される制限はありません。 
 
-Registered relationship between the companion device and the Windows 10 desktop  device can be one to many (i.e., one companion device can be used for many Windows 10 desktop  devices). However, each companion device can only be used for one user on each Windows 10 desktop  device.   
+コンパニオン デバイスと Windows 10 デスクトップ デバイス間の登録関係は、1 対多になることができます (つまり、1 台のコンパニオン デバイスを、多数の Windows 10 デスクトップ デバイスで使用できます)。 ただし、各コンパニオン デバイスは、Windows 10 デスクトップ デバイスごとに 1 人のユーザーのみが使用できます。   
 
-Before a companion device can communicate with a PC, they need to agree on a transport to use. Such choice is left to the companion device app; the Companion Device Framework does not impose any limitations on transport type (USB, NFC, WiFi, BT, BLE, etc) or protocol being used between the companion device and the companion device app on Windows 10 desktop device side. It does, however, suggests certain security considerations for the transport layer as outlined in the "Security Requirements" section of this document. It is the device provider’s responsibility to provide those requirements. The framework does not provide them for you.
+コンパニオン デバイスは、PC と通信する前に、使用するトランスポートに関して合意する必要があります。 その選択肢はコンパニオン デバイス アプリに任されています。コンパニオン デバイス フレームワークは、コンパニオン デバイスと Windows 10 デスクトップ デバイス側のコンパニオン デバイス アプリ間で使用されるトランスポートの種類 (USB、NFC、WiFi、BT、BLE など) とプロトコルを制限しません。 ただし、トランスポート層のセキュリティに関する考慮事項が、このドキュメントの「セキュリティ要件」セクションに示されています。 これらの要件に対応する責任は、デバイス プロバイダーの側にあります。 フレームワークがこれらに対応することはありません。
 
 
-## User Interaction Model 
+## ユーザー インタラクション モデル 
 
-### Companion device app discovery, installation, and first-time registration 
+### コンパニオン デバイス アプリの検出、インストール、および初回登録 
 
-A typical user workflow is as follows:
+一般的なユーザー ワークフローは次のようになります。
 
-- The user sets up the PIN on each of target Windows 10 desktop devices she wants to unlock with that companion device.
-- The user runs the companion device app on their Windows 10 desktop device to register her companion device with Windows 10 desktop. 
+- ユーザーは、コンパニオン デバイスを使用してロックを解除する各 Windows 10 デスクトップ デバイスで PIN を設定します。
+- ユーザーは、Windows 10 デスクトップ デバイスでコンパニオン デバイス アプリを実行して、自分のコンパニオン デバイスを Windows 10 デスクトップ デバイスに登録します。 
 
-Notes: 
+コメント: 
 
-- We recommend the discovery, download, and launch of the companion device app is streamlined and, if possible, automated (e.g., the app can be downloaded upon tapping companion device app on an NFC reader on Windows 10 desktop device side). This is, however, the responsibility of the companion device and companion device app.
-- In an enterprise environment, the companion device app can be deployed via MDM. 
-- The companion device app is responsible to show user any error messages that happen as part of registration.
+- コンパニオン デバイス アプリの検出、ダウンロード、および起動は効率化すること、可能な場合は自動化することをお勧めします (たとえば、コンパニオン デバイスを Windows 10 デスクトップ デバイス側の NFC リーダーにタップしたときに、アプリを自動的にダウンロードできるようにします)。 ただし、これは、コンパニオン デバイスとコンパニオン デバイス アプリの責任で実行する必要があります。
+- エンタープライズ環境では、MDM によってコンパニオン デバイス アプリを展開できます。 
+- 登録の一部として発生するエラー メッセージの表示は、コンパニオン デバイス アプリが担当します。
 
-### Registration and de-registration protocol
+### 登録/登録解除プロトコル
 
-The following diagram illustrates how the companion device interacts with Companion Authentication Service during registration.  
+次の図は、登録時のコンパニオン デバイスと Companion Authentication Service の対話方法を示しています。  
 
-![registration flow](images/companion-device-2.png)
+![登録フロー](images/companion-device-2.png)
 
-There are two keys used in our protocol:
+このプロトコルでは、2 つのキーが使用されます。
 
-- Device key (**devicekey**): used to protect unlock tokens that PC needs to unlock Windows. 
-- The authentication key (**authkey**): used to mutually authenticate the companion device and Companion Authentication Service. 
+- デバイス キー (**devicekey**): PC が Windows のロックを解除するために必要なロック解除トークンを保護するために使用されます。 
+- 認証キー (**authkey**): コンパニオン デバイスと Companion Authentication Service を相互認証するために使用されます。 
 
-The device key and authentication keys are exchanged at registration time between companion device app and the companion device. As a result, the companion device app and companion device must use a secure transport to protect keys. 
+デバイス キーと認証キーは、登録時にコンパニオン デバイス アプリとコンパニオン デバイス間で交換されます。 このため、コンパニオン デバイス アプリとコンパニオン デバイスは、セキュリティで保護されたトランスポートを使用してキーを保護する必要があります。 
 
-Also, note that while the diagram above displays two HMAC keys generating on the companion device, it is also possible for app to generate them and send them to companion device for storage. 
+また、上の図では、コンパニオン デバイスで 2 つの HMAC キーが生成されていますが、これらをアプリで生成してコンパニオン デバイスに送信して保存することもできます。 
 
-### Starting authentication flows
+### 認証開始フロー
 
-There are two ways for user to start the signing in flow to Windows 10 desktop using Companion Device Framework (i.e., provide intent signal):
+ユーザーがコンパニオン デバイス フレームワークを使用して Windows 10 デスクトップへのサインインを開始する (つまりインテント シグナルを提供する) 方法は 2 つあります。
 
-- Open up the lid on laptop, or hit the space or swipe up on PC. 
-- Perform a gesture or an action on companion device side. 
+- ノート PC のカバーを開ける、または PC で Space キーを押すか画面をスワイプする。 
+- コンパニオン デバイス側でジェスチャまたは操作を行う。 
 
-It is the companion device's choice to select which one is the starting point. The Companion Device Framework will inform companion device app when option one happens. For option two, the companion device app should query the companion device to see if that event has been captured. This ensures the companion device collects the intent signal before the unlock succeeds. 
+どれを開始点とするかは、コンパニオン デバイス側が選択します。 コンパニオン デバイス フレームワークは、オプション 1 が発生したら、それをコンパニオン デバイス アプリに通知します。 オプション 2 では、コンパニオン デバイス アプリがコンパニオン デバイスにクエリを行って、そのイベントがキャプチャされたかどうかを確認する必要があります。 これにより、コンパニオン デバイスがインテント シグナルを収集した後でロック解除が成功することが保証されます。 
 
-### Companion device credential provider
+### コンパニオン デバイス資格情報プロバイダー
 
-There is a new credential provider in Windows 10 that handles all companion devices. 
+Windows 10 には、すべてのコンパニオン デバイスを処理する新しい資格情報プロバイダーがあります。 
 
-The companion device credential provider is responsible for launching companion device background task via activating a trigger. The trigger is set for first time set when the PC awakens and a lock screen is displayed. The second time is when the PC is entering logon UI and the Companion Device Credential Provider is the selected tile. 
+トリガーのアクティブ化によるコンパニオン デバイスのバックグラウンド タスクの起動は、コンパニオン デバイス資格情報プロバイダーが担当します。 トリガーは、PC が起動され、ロック画面が表示されたときに、1 回目の設定が行われます。 2 回目は、PC がログオン UI に移行し、コンパニオン デバイス資格情報プロバイダー タイルが選択された時点です。 
 
-The helper library for companion device app will listen to the lock screen status change and send the event corresponding to the companion device background task.
+コンパニオン デバイス アプリのヘルパー ライブラリが、ロック画面の状態の変化をリッスンし、コンパニオン デバイスのバック グラウンド タスクに対応するイベントを送信します。
 
-If there are multiple companion device background tasks, the first background task that has finished the authentication process will unlock the PC. The companion device authentication service will ignore any remaining authentication calls. 
+複数のコンパニオン デバイスのバックグラウンド タスクがある場合は、最初に認証処理を終了したバックンド タスクが PC のロックを解除します。 コンパニオン デバイス認証サービスは、残りの認証呼び出しを無視します。 
 
-The experience on companion device side is owned and managed by the companion device app. The Companion Device Framework has no control over this part of the user experience. More specifically, the companion authentication provider informs the companion device app (via its background app) about state changes in logon UI (e.g., lock screen just came down, or user just dispelled lock screen by hitting spacebar), and it is the responsibility of the companion device app to build an experience around that (e.g., upon user hitting spacebar and dispelling unlock screen, start looking for the device over USB). 
+コンパニオン デバイス側のエクスペリエンスは、コンパニオン デバイス アプリが処理と管理を行います。 コンパニオン デバイス フレームワークは、ユーザー エクスペリエンスのこの部分を制御しません。 具体的には、コンパニオン認証プロバイダーは、ログオン UI の状態の変化 (ロック画面が今表示されたことや、ユーザーが Space キーを押してロック画面を消したばかりであることなど) をコンパニオン デバイス アプリに (そのバックグラウンド アプリ経由で) 通知します。その周辺のエクスペリエンス (ユーザーが Space キーを押したときのロック画面の消去や、USB 上のデバイス検索の開始など) の構築は、コンパニオン デバイス アプリが担当します。 
 
-The Companion Device Framework will provide a stock of (localized) text and error messages for the companion device app to choose from. These will be displayed on top of lock screen (or in logon UI). See the Dealing with Messages and Errors section for more details.
+コンパニオン デバイス フレームワークには、コンパニオン デバイス アプリが選択できる (ローカライズされた) テキストとエラー メッセージが多数用意されています。 これらは、ロック画面の上部 (またはログオン UI) に表示されます。 詳細については、メッセージとエラーの処理に関するセクションを参照してください。
 
-### Authentication protocol
+### 認証プロトコル
 
-Once the background task associated with a companion device app is trigger started, it is responsible for asking companion device to help calculate two HMAC values: 
-- The HMAC of the device key with a nonce. 
-- The HMAC of the authentication key with first HMAC value concatenated with a nonce generated by Companion Authentication Service. 
+トリガーによって開始されたコンパニオン デバイス アプリに関連付けられたバックグラウンド タスクは、次の 2 つの HMAC 値の計算を支援することをコンパニオン デバイスに依頼する必要があります。 
+- nonce を使用したデバイス キーの HMAC。 
+- Companion Authentication Service によって生成された nonce が連結された最初の HMAC 値を持つ認証キーの HMAC。 
 
-The second value is used by the service to authenticate the device and also prevent replay attack in transport channel.
+2 番目の値は、サービスがデバイスを認証し、さらにトランスポート チャネルでのリプレイ攻撃を防ぐために使用されます。
 
-![registration flow](images/companion-device-3.png)
+![登録フロー](images/companion-device-3.png)
 
-## Lifecycle management 
+## ライフサイクルの管理 
 
-### Register once, use everywhere
+### 一度登録すればどこでも使える
 
-Without a backend server, users must register their companion device with each Windows 10 desktop device separately.
+バックエンド サーバーなしで、ユーザーは、自分のコンパニオン デバイスを、各 Windows 10 デスクトップ デバイスに個別に登録する必要があります。
 
-A companion device vendor or OEM can implement a web service to roam the registration state across user Windows 10 desktops or mobile devices. For more details, see the Roaming, Revocation, and Filter Service section.
+コンパニオン デバイス ベンダーや OEM は、ユーザーの Windows 10 デスクトップやモバイル デバイスの登録状態をローミングする Web サービスを実装できます。 詳細については、ローミング、無効化、およびフィルター サービスに関するセクションを参照してください。
 
-### PIN management
+### PIN 管理
 
-Before a companion device can be used, a PIN needs to be set up on Windows 10 desktop device. This ensures the user has a backup in case their companion device is not working. The PIN is something that Windows manages and that apps never see. To change it, the user navigates to Settings > Accounts > Sign-in options. 
+コンパニオン デバイスを使用する前に、Windows 10 デスクトップ デバイスに PIN を設定する必要があります。 これにより、ユーザーのコンパニオン デバイスが動作しない場合のバックアップが保証されます。 PIN は、Windows によって管理されるものであり、アプリがまったく認識しないものです。 これを変更するには、ユーザーは、[設定]、[アカウント]、[サインイン オプション] の順に移動します。 
 
-### Management and policy
+### 管理とポリシー
 
-Users can remove a companion device from a Windows 10 desktops by running the companion device app on that desktop device. 
+ユーザーは、Windows 10 デスクトップ デバイス上のコンパニオン デバイス アプリを実行することで、Windows 10 デスクトップ デバイスからコンパニオン デバイスを削除できます。 
 
-Enterprises have two options for controlling the Companion Device Framework: 
+企業では、コンパニオン デバイス フレームワークを制御するためのオプションは 2 つあります。 
 
-- Turn the feature on or off
-- Define the whitelist of companion devices allowed using Windows app locker
+- 機能を有効または無効にする
+- Windows AppLocker を使用して、許可されるコンパニオン デバイスのホワイトリストを定義する
 
-The Companion Device Framework does not support any centralized way to keep inventory of available companion devices, or a method to further filter which instances of a companion device type is allowed (for example, only companion device with serial number between X and Y are allowed). Apps developers can, however, build a service to provide such functionality. For more details, see the Roaming, Revocation, and Filter Service section.
+コンパニオン デバイス フレームワークは、使用可能なコンパニオン デバイスのインベントリを保持するための一元管理や、許可されるコンパニオン デバイスの種類のフィルター処理 (たとえば、シリアル番号が X ～ Y の範囲にあるデバイスのみを許可する) をサポートしません。 ただし、アプリ開発者は、このような機能を提供するサービスを構築できます。 詳細については、ローミング、無効化、およびフィルター サービスに関するセクションを参照してください。
 
-### Revocation
+### 無効化
 
-The Companion Device Framework does not support removing a companion device from a specific Windows 10 desktop device remotely. Instead, users can remove the companion device via the companion device app running on that Windows 10 desktop. 
+コンパニオン デバイス フレームワークは、特定の Windows 10 デスクトップ デバイスからリモートでコンパニオン デバイスを削除することをサポートしません。 代わりに、ユーザーは、Windows 10 デスクトップで実行しているコンパニオン デバイス アプリ経由でコンパニオン デバイスを削除できます。 
 
-Companion device vendors, however, can build a service to provide remote revocation functionality. For more details, see Roaming, Revocation, and Filter Service section.
+ただし、コンパニオン デバイス ベンダーは、リモート無効化機能を提供するサービスを構築できます。 詳細については、ローミング、無効化、およびフィルター サービスに関するセクションを参照してください。
 
-### Roaming and filter services
+### ローミングとフィルター サービス
 
-Companion device vendors can implement a web service that can be used for the following scenarios:
+コンパニオン デバイス ベンダーは、次のシナリオで使用できる Web サービスを実装できます。
 
-- A filter service for enterprise: An enterprise can limit the set of companion devices that can work in their environment to a select few from a specific vendor. For example, the company Contoso could order 10,000 Model Y companion devices from Vendor X and ensure only those devices will work in the Contoso domain (and not any other device model from Vendor X).
-- Inventory:  An enterprise can determine the list of existing companion devices used in an enterprise environment.
-- Real time revocation: If an employee reports that his companion device is lost or stolen, the web service can be used to revoke that device.
-- Roaming: A user only has to register his companion device once and it works on all of his Windows 10 desktops and Mobile.
+- 企業向けのフィルター サービス: 企業は、エンタープライズ環境で動作できるコンパニオン デバイスを、特定のベンダーから選択して制限することができます。 たとえば、10,000 台のモデル Y コンパニオン デバイスをベンダー X に発注した Contoso 社は、それらのデバイスのみが Contoso ドメインで動作し、ベンダー X の他のデバイス モデルは動作しないことを保証できます。
+- インベントリ: 企業は、エンタープライズ環境で使用される既存のコンパニオン デバイスの一覧を確認できます。
+- リアルタイムの無効化: 従業員からコンパニオン デバイスの紛失や盗難があったことが報告された場合に、Web サービスを使用してそのデバイスを無効にできます。
+- ローミング: ユーザーは、自分のコンパニオン デバイスを 1 回登録するだけで、自分のすべての Windows 10 デスクトップとモバイルで機能させることができます。
 
-Implementing these features requires the companion device app to check with the web service at registration and usage time. The companion device app can optimize for cached logon scenarios like requiring checking with web service only once a day (at the cost of extending the revocation time to up to one day).  
+これらの機能を実装するには、登録時と使用時に Web サービスを確認するコンパニオン デバイス アプリが必要です。 コンパニオン デバイス アプリは、Web サービスの確認を 1 日に 1 回のみ要求するようなキャッシュされたログオン シナリオ用に最適化できます (無効化時間が最大 1 日遅くなります)。  
 
-## Companion Device Framework API model
+## コンパニオン デバイス フレームワーク API モデル
 
-### Overview
+### 概要
 
-A companion app should contain two components: a foregroud app with UI responsible for registering and unregistering the device, and a background task that handles authentication.
+コンパニオン アプリには、デバイスの登録と登録解除を行う UI を持つフォアグラウンド アプリと、認証を処理するバックグラウンド タスクという 2 つのコンポーネントを含める必要があります。
 
-The overall API flow is as follows:
+全体的な API フローは次のようになります。
 
-1. Register the companion device
-    * Make sure device is nearby and query its capability (if required)
-    * Generate two HMAC keys (either on the companion device side or the app side
-    * Call RequestStartRegisteringDeviceAsync
-    * Call FinishRegisteringDeviceAsync
-    * Make sure companion device app stores HMAC keys (if supported) and companion device app discards its copies
-2. Register your background task
-3. Wait for the right event in the background task
-    * WaitingForUserConfirmation: Wait for this event if the user action/gesture on the companion device side is required to start authentication flow
-    * CollectingCredential: Wait for this event if the companion device relies on user action/gesture on the PC side to start authentication flow (e.g., by hitting spacebar)
-    * Other trigger, like a smartcard: Make sure to query for current authentication state to call the right APIs. 
-4. Keep user informed about error messages or required next steps by calling ShowNotificationMessageAsync. Only call this API once an intent signal is collected
-5. Unlock
-    * Make sure intent and user presence signals were collected
-    * Call StartAuthenticationAsync
-    * Communicate with the companion device to perform required HMAC operations
-    * Call FinishAuthenticationAsync
-6. Un-register a companion device when the user requests it (for example, if they've lost their companion device)
-    * Enumerate the companion device for logged in user via FindAllRegisteredDeviceInfoAsync
-    * Un-register it using UnregisterDeviceAsync
+1. コンパニオン デバイスを登録する
+    * デバイスが近くにあることを確認し、その機能のクエリを実行する (必要な場合)
+    * 2 つの HMAC キーを生成する (コンパニオン デバイス側またはアプリ側のどちらかで実行)
+    * RequestStartRegisteringDeviceAsync を呼び出す
+    * FinishRegisteringDeviceAsync を呼び出す
+    * コンパニオン デバイス アプリに HMAC キーが保存されている (サポートされている場合) ことを確認し、コンパニオン デバイス アプリのそれらのコピーを破棄する
+2. バックグラウンド タスクを登録する
+3. バック グラウンド タスクで適切なイベントが発生するまで待機する
+    * WaitingForUserConfirmation: 認証フローを開始するにはコンパニオン デバイス側でのユーザーの操作/ジェスチャーが必要な場合は、このイベントを待つ
+    * CollectingCredential: コンパニオン デバイスが、PC 側でのユーザーの操作/ジェスチャー (Space キーを押すことなど) に依存して認証フローを開始する場合は、このイベントを待つ
+    * その他のトリガー (スマートカードなど): 現在の認証状態のクエリを実行して、適切な API を呼び出す。 
+4. エラー メッセージや次に必要な手順について、ShowNotificationMessageAsync を呼び出してユーザーに通知する。 この API は、インテント シグナルが収集された後でのみ呼び出します
+5. ロックを解除する
+    * インテント シグナルとユーザー プレゼンス シグナルが収集されたことを確認する
+    * StartAuthenticationAsync を呼び出す
+    * コンパニオン デバイスと通信して、必要な HMAC 操作を実行する
+    * FinishAuthenticationAsync を呼び出す
+6. ユーザーが要求したとき (コンパニオン デバイスを紛失した場合など) に、コンパニオン デバイスの登録を解除する
+    * FindAllRegisteredDeviceInfoAsync を使用してログインしているユーザーのコンパニオン デバイスを列挙する
+    * UnregisterDeviceAsync を使用してデバイスの登録を解除する
 
-### Registration and de-registration
+### 登録と登録解除
 
-Registration requires two API calls to the Companion Authentication Service: RequestStartRegisteringDeviceAsync and FinishRegisteringDeviceAsync.
+登録には、Companion Authentication Service への 2 つの API 呼び出し (RequestStartRegisteringDeviceAsync と FinishRegisteringDeviceAsync) が必要です。
 
-Before any of these calls are made, the companion device app must make sure that the companion device is available. If the companion device is responsible for generating HMAC keys (authentication and device keys), then the companion device app should also ask companion device to generate them before making any of the above two calls. If companion device app is responsible for generating HMAC keys, then it should do so before calling above two calls.
+これらの呼び出しを行う前に、コンパニオン デバイス アプリは、コンパニオン デバイスが使用可能であることを確認する必要があります。 コンパニオン デバイスが HMAC キー (認証キーとデバイス キー) の生成を担当する場合、コンパニオン デバイス アプリは、上記の 2 つの呼び出しを行う前に、それらを生成することをコンパニオン デバイスに依頼する必要があります。 コンパニオン デバイス アプリが HMAC キーの生成を担当する場合は、上記の 2 つの呼び出しを行う前にそれを実行する必要があります。
 
-Additionally, as part of first API call (RequestStartRegisteringDeviceAsync), the companion device app must decide on device capability and be prepared to pass it as part of the API call; for example, whether companion device supports secure storage for HMAC keys. If the same companion device app is used to manage multiple versions of the same companion device and those capabilities change (and requires a device query to decide), we recommend this queries occurs before first API call is made.   
+さらに、コンパニオン デバイス アプリは、最初の API 呼び出し (RequestStartRegisteringDeviceAsync) の一部としてデバイスの機能を決定し、それを API 呼び出しの一部として渡すための準備を行う必要があります (たとえば、コンパニオン デバイスが HMAC キーのセキュア ストレージをサポートしているかどうか)。 同じコンパニオン デバイス アプリを使用して、同じコンパニオン デバイスの複数のバージョンとそれらの機能変更を管理する場合は (管理の対象を決定するためのデバイスのクエリが必要です)、最初の API 呼び出しを行う前にそのクエリを行うことをお勧めします。   
 
-The first API (RequestStartRegisteringDeviceAsync) will return a handle used by the second API (FinishRegisteringDeviceAsync). The first call for registration will launch the PIN prompt to make sure user is present. If no PIN is set up, this call will fail. Companion device app can query whether PIN is set up or not via KeyCredentialManager.IsSupportedAsync call as well. RequestStartRegisteringDeviceAsync call can also fail if policy has disabled the usage of companion device. 
+最初の API (RequestStartRegisteringDeviceAsync) は、2 番目の API (FinishRegisteringDeviceAsync) で使用されるハンドルを返します。 登録するための最初の呼び出しは、PIN プロンプトを起動して、ユーザーが存在していることを確認します。 PIN が設定されていない場合、この呼び出しは失敗します。 コンパニオン デバイス アプリは、PIN が設定されているかどうかのクエリを、KeyCredentialManager.IsSupportedAsync 呼び出しを使用せずに実行できます。 RequestStartRegisteringDeviceAsync 呼び出しは、ポリシーがコンパニオン デバイスの使用を無効にしている場合も失敗します。 
 
-The result of first call is returned via SecondaryAuthenticationFactorRegistrationStatus enum:
+最初の呼び出しの結果は、SecondaryAuthenticationFactorRegistrationStatus 列挙型で返されます。
 
 ```C#
 {
@@ -219,13 +219,13 @@ The result of first call is returned via SecondaryAuthenticationFactorRegistrati
 }
 ```
 
-The second call (FinishRegisteringDeviceAsync) finishes the registration. As part of registration process, the companion device app can store companion device configuration data with Companion Authentication Service. There is a 4K size limit for this data. This data will be available to companion device app at authentication time. This data can be used, as an example, to connect to companion device, like a MAC address, or if companion device does not have storage and companion device wants to use PC for storage, then configuration data can be used. Note that any sensitive data stored as part of configuration data must be encrypted with a key that only companion device knows. Also, given that configuration data is stored by a Windows service, it is available to companion device app across user profiles. 
+2 番目の呼び出し (FinishRegisteringDeviceAsync) は登録を終了します。 登録プロセスの一部として、コンパニオン デバイス アプリは、Companion Authentication Service を使用してコンパニオン デバイスの構成データを保存できます。 このデータには 4 K というサイズ制限があります。 このデータは、コンパニオン デバイス アプリが認証時に使用できます。 このデータは、たとえば、コンパニオン デバイスに接続するときに MAC アドレスのように使用できます。または、コンパニオン デバイスにストレージがないときに PC をストレージ用として使用することをコンパニオンデバイスが望んだ場合、構成データを使用できます。 データの一部として保存される機密性の高いデータは、コンパニオン デバイスだけが知っているキーを使用して暗号化する必要があることに注意してください。 また、構成データが Windows サービスによって保存されるのであれば、コンパニオン デバイス アプリは、ユーザー プロファイルを通してそれを使用できます。 
 
-The companion device app can call AbortRegisteringDeviceAsync to cancel the registration and pass in an error code. The Companion Authentication Service will log the error in the telemetry data. A good example for this call would be when something went wrong with companion device and it could not finish registration (e.g., it cannot store HMAC keys or BT connection was lost). 
+コンパニオン デバイス アプリは、AbortRegisteringDeviceAsync を呼び出して登録をキャンセルし、エラー コードを渡すことができます。 Companion Authentication Service は、エラーを利用統計情報で記録します。 この呼び出しが適切な例として、コンパニオン デバイスで問題が発生し、登録を終了できなかった場合があります (HMAC キーが保存できなかったり、BT 接続が失われた場合など)。 
 
-The companion device app must provide an option for user to de-register their companion device from their Windows 10 desktop (e.g., if they lost their companion device or bought a newer version). When user selects that option, then the companion device app must call UnregisterDeviceAsync. This call by the companion device app will trigger companion device authentication service to delete all data (including HMAC keys) corresponding to the specific device Id and AppId of the caller app from PC side. This API call does not attempt to delete HMAC keys from companion device app or companion device side. That is left for companion device app to implement. 
+コンパニオン デバイス アプリは、ユーザーが (コンパニオンデバイスを紛失したり、新しいバージョンを購入した場合などに) Windows 10 デスクトップからコンパニオン デバイスの登録を解除するためのオプションを提供する必要があります。 ユーザーがそのオプションを選択したとき、コンパニオン デバイス アプリは、UnregisterDeviceAsync を呼び出す必要があります。 コンパニオン デバイス アプリからのこの呼び出しによって、コンパニオン デバイス認証サービスは、呼び出し元のアプリの特定のデバイス ID とアプリ ID に該当するすべてのデータ (HMAC キーを含みます) を PC 側から削除します。 この API 呼び出しは、コンパニオン デバイス アプリまたはコンパニオン デバイス側から HMAC キーを削除しません。 その実装は、コンパニオン デバイス アプリに任されています。 
 
-The companion device app is responsible for showing any error messages that happen in registration and de-registration phase. 
+登録フェーズと登録解除フェーズ中に発生したエラー メッセージの表示は、コンパニオン デバイス アプリが担当します。 
 
 ```C#
 using System;
@@ -329,13 +329,13 @@ namespace SecondaryAuthFactorSample
 }
 ```
 
-### Authentication
+### 認証
 
-Authentication requires two API calls to the Companion Authentication Service: StartAuthenticationAsync and FinishAuthencationAsync. 
+認証には、Companion Authentication Service への 2 つの API 呼び出し (StartAuthenticationAsync と FinishAuthencationAsync) が必要です。 
 
-The first initiation API will return a handle used by the second API.  The first call returns, among other things, a nonce that – once concatenated with other things - needs to be HMAC'ed with the device key stored on the companion device. The second call returns the results of HMAC with device key and can potentially end in successful authentication (i.e., the user will see their desktop).
+最初の開始 API は、2 番目の API で使用されるハンドルを返します。  最初の呼び出しは、特に nonce を返します。他のデータと連結されるこの nonce は、コンパニオン デバイスに保存されるデバイス キーを HMAC 処理するために必要です。 2 番目の呼び出しは、デバイス キーの HMAC の結果を返し、認証の成功で終了できます (つまり、ユーザーにデスクトップが表示されます)。
 
-The first initiation API (StartAuthenticationAsync) can fail if policy has disabled that companion device after initial registration. It can also fail if the API call was made outside WaitingForUserConfirmation or CollectingCredential states (more on this later in this section). It can also fail if an unregistered companion device app calls it. SecondaryAuthenticationFactorAuthenticationStatus Enum summarizes the possible outcomes:
+最初の開始 API (StartAuthenticationAsync) は、初回登録後にポリシーがそのコンパニオン デバイスを無効にしている場合は失敗します。 API 呼び出しは、WaitingForUserConfirmation 状態または CollectingCredential 状態以外のときに行われた場合も失敗します (詳細はこのセクションで後述します)。 さらに、未登録のコンパニオン デバイス アプリがそれを呼び出した場合も失敗します。 SecondaryAuthenticationFactorAuthenticationStatus 列挙型は、可能な結果を要約します。
 
 ```C#
 {
@@ -348,7 +348,7 @@ The first initiation API (StartAuthenticationAsync) can fail if policy has disab
 }
 ```
 
-The second API call (FinishAuthencationAsync) can fail if the nonce that was provided in the first call is expired (20 seconds). SecondaryAuthenticationFactorFinishAuthenticationStatus enum captures possible outcomes. 
+2 番目の API 呼び出し (FinishAuthencationAsync) は、最初の呼び出しで提供された nonce の有効期限 (20 秒) が終了した場合は失敗します。 SecondaryAuthenticationFactorFinishAuthenticationStatus 列挙型では、可能な結果をキャプチャします。 
 
 ```C#
 {
@@ -358,26 +358,26 @@ The second API call (FinishAuthencationAsync) can fail if the nonce that was pro
 }
 ```
 
-The timing of two API calls (StartAuthenticationAsync and FinishAuthencationAsync) need to align with how the companion device collects intent, user presence and disambiguation signals (see User Signals for more details). For example, the second call must not be submitted until intent signal is available. In other words, PC should not unlock if user has not expressed intent for it. To make this more clear, assume that Bluetooth proximity is used for PC unlock, then an explicit intent signal must be collected otherwise, as soon as user walks by his PC on the way to kitchen, PC will unlock. Also, the nonce returned from the first call is time bound (20 seconds) and will expire after certain period. As a result, the first call only should be made when companion device app has good indication of companion device presence, e.g., companion device is inserted into USB port, or tapped on NFC reader. With Bluetooth, care must be taken to avoid affecting battery on PC side or affecting other Bluetooth activities going on at that point when checking for companion device presence. Also, if user presence signal needs to be provided (e.g., by typing in PIN), it is recommended that the first authentication call is only made after that signal is collected.
+2 つの API 呼び出し (StartAuthenticationAsync と FinishAuthencationAsync) のタイミングは、コンパニオン デバイスがインテント シグナル、ユーザー プレゼンス シグナル、および曖昧性解消シグナル (詳細は「ユーザー シグナル」を参照) を収集する方法と合わせる必要があります。 たとえば、2 番目の呼び出しは、インテント シグナルを入手した後で送信する必要があります。 つまり、ユーザーがロック解除の意図を示していない場合は、PC のロックを解除すべきではありません。 具体的に言えば、Bluetooth の近接性を使用して PC のロックを解除する場合は、明確なインテント シグナルを収集する必要があります。そうしないと、ユーザーがキッチンに行く途中で PC の近くを通ったときに PC のロックが解除されます。 また、最初の呼び出しから返される nonce には時間制限 (20 秒) があり、一定期間後に有効期限が切れます。 このため、最初の呼び出しは、コンパニオン デバイスが確実に存在することをコンパニオン デバイス アプリが認識した (たとえば、コンパニオン デバイスが USB ポートに挿入されたり、NFC リーダーにタップされた) ときにのみ実行する必要があります。 Bluetooth の場合は、PC 側のバッテリーや、コンパニオン デバイスの存在を確認している時点で進行中の他の Bluetooth アクティビティへの影響を回避することを考慮する必要があります。 さらに、(たとえば PIN の入力による) ユーザー プレゼンス シグナルを提供する必要がある場合は、最初の認証呼び出しは、そのシグナルが収集された後でのみ実行することをお勧めします。
 
-The Companion Device Framework helps the companion device app to make informed decision on when to make above two calls by providing a complete picture of where user is in authentication flow. Companion Device Framework provides this functionality by providing lock state change notification to app background task. 
+コンパニオン デバイス フレームワークは、ユーザーが認証フローのどこにいるかの全体像を提供することによって、コンパニオン デバイス アプリが十分な情報に基づいて上記 2 つの呼び出しをいつ実行するかを決定できるようにしています。 コンパニオン デバイス フレームワークは、ロック状態変化通知をアプリのバックグラウンド タスクに提供することで、この機能を実現しています。 
 
-![companion device flow](images/companion-device-4.png)
+![コンパニオン デバイス フロー](images/companion-device-4.png)
 
-Details of each of these states are as follows: 
+これらの状態の詳細を次に示します。 
 
-| State                         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| 状態                         | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 |----------------------------   |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------    |
-| WaitingForUserConfirmation    | This state change notification event is fired when lock screen comes down (e.g., user pressed Windows + L). We recommend not to request any error messages relating to having difficulty finding a device in this state. In general, we recommend to only show messages, when intent signal is available. The companion device app should make the first API call for authentication in this state if companion device collects intent signal (e.g., tapping on NFC reader, press of a button on the companion device or a specific gesture, like clapping), and the companion device app background task receives indication from the companion device that intent signal was detected. Otherwise, if companion device app relies on PC to start authentication flow (by having user swipe up the unlock screen or hitting space bar), then companion device app needs to wait for next state (CollectingCredential).    |
-| CollectingCredential          | This state change notification event is fired when user either opens their laptop lid, hits any key on their keyboard, or swipes up to the unlock screen. If companion device relies on above actions to start collecting intent signal then companion device app should start collecting it (e.g., via a pop up on companion device asking whether user wants to unlock the PC). This would be a good time to provide error cases if companion device app needs user to provide user presence signal on the companion device (like typing in PIN on the companion device).                                                                                                                                                                                                                                                                                                                                               |
-| Suspendingauthentication      | When companion device app receives this state, it means that Companion Authentication Service has stopped accepting authentication requests.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| CredentialCollected           | This means that another companion device app has called the second API and that Companion Authentication Service is verifying what was submitted. At this point, Companion Authentication Service is not accepting any other authentication requests unless the currently submitted one does not pass verification. Companion device app should stay tuned until next state is reached.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| CredentialAuthenticated       | This means that the submitted credential worked. The credentialAuthenticated has device ID of the companion device that succeeded. Companion device app should make sure to check on that to see if its associated device was the winner. If not, then the companion device app should avoid showing any post authentication flows (like success message on the companion device or perhaps a vibration on that device). Note that if the submitted credential did not work, then state will change to CollectingCredential state.                                                                                                                                                                                                                                                                                                                                                                                        |
-| StoppoingAuthentication       | Authentication succeeded and user saw desktop. Time to kill your background task                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| WaitingForUserConfirmation    | この状態変化通知イベントは、ロック画面から移動した場合に発生します (例: ユーザーが Windows + L キーを押した)。 この状態中は、デバイスが見つからないことに関連するすべてのエラー メッセージを要求しないことをお勧めします。 一般に、メッセージの表示は、インテント シグナルが入手されるときにのみ実行することをお勧めします。 コンパニオン デバイスがインテント シグナル (NFC リーダーのタップ、コンパニオン デバイスのボタンの押下、拍手などの特定のジェスチャなど) を収集する場合、コンパニオン デバイス アプリは、認証するための最初の API 呼び出しをこの状態中に実行する必要があり、コンパニオン デバイス アプリのバックグラウンド タスクは、インテント シグナルが検出されたことの指示をコンパニオン デバイスから受信します。 コンパニオン デバイス アプリが PC に依存して認証フローを開始する場合 (ユーザーによるロック画面のスワイプや Space キーの押下)、コンパニオン デバイス アプリは、次の状態 (CollectingCredential) になるまで待機する必要があります。    |
+| CollectingCredential          | この状態変化通知イベントは、ユーザーがノート PC のふたを開けた、キーボードのいずれかのキーを押した、またはスワイプしてロック解除画面に移ったときに発生します。 コンパニオン デバイスが上記のアクションに依存してインテント シグナルの収集を開始する場合、コンパニオン デバイス アプリは (ユーザーが PC のロック解除を望んでいるかどうかを確認するコンパニオン デバイス上のポップアップなどで) その収集を開始する必要があります。 コンパニオン デバイス アプリがコンパニオン デバイスにユーザー プレゼンス シグナルを提供すること (コンパニオン デバイスで PIN を入力するなど) をユーザーに要求する場合、これは、エラー ケースを提示するための最適の状態です。                                                                                                                                                                                                                                                                                                                                               |
+| Suspendingauthentication      | コンパニオン デバイス アプリがこの状態を受信した場合は、Companion Authentication Service が認証要求の受け入れを停止したことを意味します。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| CredentialCollected           | これは、別のコンパニオン デバイス アプリから 2 番目の API の呼び出しがあり、何が送信されたかを Companion Authentication Service が検証していることを意味します。 この時点で、Companion Authentication Service は、現在送信されたものが検証に合格しない限り、他の認証要求を受け入れません。 コンパニオン デバイス アプリは、次の状態になるまで現在の状態を維持する必要があります。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| CredentialAuthenticated       | これは、送信された資格情報が機能したことを意味します。 CredentialAuthenticated は、成功したコンパニオン デバイスのデバイス ID を持ちます。 コンパニオン デバイス アプリは、それに関連付けられているデバイスが勝者であるかどうかを確認する必要があります。 そうでない場合、コンパニオン デバイス アプリは、認証後フローの表示 (コンパニオン デバイス上の成功メッセージなど。デバイスのバイブレーションも考えられます) を回避する必要があります。 送信された資格情報が機能しなかった場合、状態は CollectingCredential に変化します。                                                                                                                                                                                                                                                                                                                                                                                        |
+| StoppoingAuthentication       | 認証が成功し、ユーザーにデスクトップが表示されます。 この時点で、バックグラウンド タスクを終了します。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 
 
 
-Companion device apps should only call the two authentication APIs in the first two states.  Companion device apps should check is what scenario this event is being fired. There are two possibilities: unlock or post unlock. Currently, only unlock is supported. In upcoming releases, post-unlock scenarios may be supported. The SecondaryAuthenticationFactorAuthenticationScenario enum captures these two options: 
+コンパニオン デバイス アプリは、最初の 2 つの状態中にのみ、2 つの認証 API を呼び出す必要があります。  コンパニオン デバイス アプリがチェックする必要があるのは、このイベントがどのシナリオで発生しているかです。 ロック解除とロック解除後という 2 つの可能性があります。 現時点では、ロック解除のみがサポートされます。 今後のリリース後で、ロック解除後のシナリオがサポートされる可能性があります。 SecondaryAuthenticationFactorAuthenticationScenario 列挙型は、これら 2 つのオプションをキャプチャします。 
 
 ```C#
 {
@@ -386,7 +386,7 @@ Companion device apps should only call the two authentication APIs in the first 
 }
 ```
 
-Complete code sample: 
+完全なコード例: 
 
 ```C#
 using System;
@@ -550,9 +550,9 @@ namespace SecondaryAuthFactorSample
 }
 ```
 
-### Register a background task
+### バックグラウンド タスクの登録
 
-When the companion device app registers the first companion device, it should also register its background task component which will pass authentication information between device and companion device authentication service.
+コンパニオン デバイス アプリは、最初のコンパニオン デバイスを登録するときに、デバイスとコンパニオン デバイス認証サービス間で認証情報を渡すバックグラウンド タスク コンポーネントも同時に登録する必要があります。
 
 ```C#
 using System;
@@ -601,51 +601,51 @@ namespace SecondaryAuthFactorSample
 }
 ```
 
-### Errors and messages
+### エラーとメッセージ
 
-The Companion Device Framework is responsible for providing feedback to the user about success or failure of the signing in. The Companion Device Framework will provide a stock of (localized) text and error messages for the companion device app to choose from. These will be displayed in logon UI.
+サインインの成功または失敗のユーザーへのフィードバックは、コンパニオン デバイス フレームワークが担当します。 コンパニオン デバイス フレームワークには、コンパニオン デバイス アプリが選択できる (ローカライズされた) テキストとエラー メッセージが多数用意されています。 これらは、ログオン UI に表示されます。
 
-![companion device error](images/companion-device-5.png)
+![コンパニオン デバイス エラー](images/companion-device-5.png)
 
-Companion device apps can use ShowNotificationMessageAsync to show messages to user as part of logon UI. Call this API when intent signal is available. Note that intent signal must always be collected on companion device side. 
+コンパニオン デバイス アプリは、ShowNotificationMessageAsync を使用して、ログオン UI の一部としてユーザーにメッセージを表示できます。 この API は、インテント シグナルを入手できるときに呼び出します。 インテント シグナルは常にコンパニオン デバイス側で収集する必要があることに注意してください。 
 
-There are two types of messages: guidance and errors. 
+メッセージには、ガイダンスとエラーの 2 種類があります。 
 
-Guidance messages are designed to show to user how to start the unlock process. Those messages are only shown to user once, upon first device registration and never shown again. 
+ガイダンス メッセージは、ロック解除プロセスの開始方法をユーザーに表示することを目的としています。 これらのメッセージは、初回のデバイス登録時にユーザーに 1 回のみ表示され、その後表示されることはありません。 
 
-Error messages are always shown. Error messages will be shown to user for 5 seconds and then disappear. Given that intent signal must be collected before showing messages to user, and user will provide that intent only using one of this companion devices, there must not be a situation where multiple companion devices race for showing error messages. As a result, Companion Device Framework does not maintain any queue. When a caller asks for an error message, it will be shown for 5 seconds and all other requests for showing error message in that 5 seconds are dropped. Once 5 second is passed, then opportunity arises for another caller to show error message. We prohibit any caller from jamming the error channel.
+エラー メッセージはいつでも表示されます。 エラー メッセージは、ユーザーに 5 秒間表示された後、消えていきます。 ユーザーにメッセージを表示する前にインテント シグナルを収集する必要があるときに、ユーザーがいずれかのコンパニオン デバイスのみを使用して意図を表明するのであれば、複数のコンパニオン デバイスがエラー メッセージを表示するために競争するような状況は発生しません。 このため、コンパニオン デバイス フレームワークでは、キューの管理は行われません。 呼び出し元がエラー メッセージを要求すると、エラー メッセージは 5 秒間表示され、その 5 秒間はエラー メッセージに対するその他のすべての要求は破棄されます。 5 秒経過した後、別の呼び出し元がエラー メッセージを表示する機会が発生します。 これにより、任意の呼び出し元がエラー チャネルを停滞させることが禁止されます。
 
-Guidance and error messages are as follows. Device name is a parameter passed by companion device app as part of ShowNotificationMessageAsync.
+ガイダンス メッセージとエラー メッセージを次に示します。 デバイス名は、コンパニオン デバイス アプリによって、ShowNotificationMessageAsync の一部として渡されるパラメーターです。
 
-**Guidance**
+**ガイダンス**
 
-- Swipe up or press space bar to sign in with your *device name*
-- Tap *device name* to the NFC reader to sign in
-- Plug *device name* into a USB port to sign in
-- Looking for *device name*...
+- *デバイス名* にサインインするには、上にスワイプするか Space キーを押してください
+- サインインするには、*デバイス名* を NFC リーダーにタップしてください
+- サインインするには、*デバイス名* を USB ポートに差し込んでください
+- *デバイス名* を探しています...
 
-**Errors**
+**エラー**
 
-- See *device name* for sign-in instructions
-- Plug *device name* into a USB port to sign in
-- Turn on Bluetooth to use *device name* to sign in
-- Turn on NFC to use *device name* to sign in
-- Connect to a Wi-Fi network to use *device name* to sign in
-- Something went wrong. Please sign in with your PIN or password, and then set up *device name* again.
-- Tap *device name* again
-- Your enterprise prevents sign in with *device name*. Use another sign-in option.
-- Tap *device name* to sign in
-- Rest your finger on *device name* to sign in
-- Swipe your finger on *device name* to sign in
-- Couldn’t sign in with *device name*. Use another sign-in option. 
-- Try again
-- Say your password into your *device name*
-- Ready to sign in with *device name*
+- *デバイス名* にサインインする方法を確認してください
+- サインインするには、*デバイス名* を USB ポートに差し込んでください
+- *デバイス名* を使用してサインインするには、Bluetooth をオンにしてください
+- *デバイス名* を使用してサインインするには、NFC をオンにしてください
+- *デバイス名* を使用してサインインするには、Wi-Fi ネットワークに接続してください
+- 問題が発生しました。 PIN またはパスワードを使用してサインインし、*デバイス名* をもう一度設定してください。
+- *デバイス名* をもう一度タップしてください
+- *デバイス名*によるサインインは会社が無効にしています。 別のサインイン オプションを使用してください。
+- サインインするには、*デバイス名* をタップしてください
+- サインインするには、*デバイス名* の上に指を置いてください
+- サインインするには、*デバイス名* を指でスワイプしてください
+- *デバイス名* にサインインできませんでした。 別のサインイン オプションを使用してください。 
+- やり直してください
+- *デバイス名*にパスワードを言ってください
+- *デバイス名* にサインインする準備ができています
 
 
-### Enumerating registered devices 
+### 登録されているデバイスの列挙 
 
-Companion device app can enumerate the list of registered companion devices via FindAllRegisteredDeviceInfoAsync call. This API supports two query type defined via enum SecondaryAuthenticaitonFactorDeviceFindScope:
+コンパニオン デバイス アプリは、登録されているコンパニオン デバイスの一覧を、FindAllRegisteredDeviceInfoAsync 呼び出しで列挙できます。 この API は、SecondaryAuthenticaitonFactorDeviceFindScope 列挙型で定義される 2 種類のクエリをサポートします。
 
 ```C#
 {
@@ -654,25 +654,25 @@ Companion device app can enumerate the list of registered companion devices via 
 }
 ```
 
-The first scope returns the list of devices for the logged on user. The second one returns the list for all users on that PC. The first scope must be used at un-registration time to avoid un-registering other user's companion device. The second one must be used at authentication or registration time: at registration time, this enumeration can help app avoid trying to register the same companion device twice. 
+最初のスコープは、ログオン ユーザーのデバイスの一覧を返します。 2 番目は、その PC 上のすべてのユーザーの一覧を返します。 最初のスコープは、他のユーザーのコンパニオン デバイスの登録を解除しないようにするために、登録解除時に使用する必要があります。 2 番目は、認証時または登録時に使用する必要があります。登録時のこの列挙は、同じコンパニオン デバイスが 2 回登録されないようにするために役立ちます。 
 
-Note that even if app does not perform this check, PC does and will reject the same companion device be registered more than once. At authentication time, using AllUsers scope helps companion device app support switch user flow: log on user A when user B is logged in (this requires that both users have installed the companion device app and user A has registered their companion devices with PC and PC is sitting on lock screen (or logon screen)). 
+アプリがこのチェックを実行しない場合でも、PC はこのチェックを実行し、同じコンパニオン デバイスの 2 回以上の登録は拒否されます。 認証時の AllUsers スコープの使用は、コンパニオン デバイス アプリがユーザー切り替えフローをサポートするために役立ちます。このフローでは、ユーザー B がログインしているときにユーザー A をログオンします (両方のユーザーがコンパニオン デバイス アプリをインストール済みであり、ユーザー A が自分のコンパニオン デバイスを PC に登録済みであり、PC がロック画面 (またはログオン画面) を表示している必要があります)。 
     
-## Security requirements
+## セキュリティ要件
 
-The Companion Authentication Service provides the following security protections.
+Companion Authentication Service は、次のセキュリティ保護を提供します。
 
-- Malware on a Windows 10 desktop  device running as medium user or app container cannot use the companion device to access user credential keys (stored as part of Microsoft Passport) on PC silently.
-- A malicious user on a Windows 10 desktop device cannot use the companion device that belongs to another user on that Windows 10 desktop device to get silent access to his user credential keys (on the same Windows 10 desktop device).
-- Malware on the companion device cannot silently get access to user credential keys on Windows 10 desktop  device, including leveraging functionality or code developed specifically for the Companion Device Framework. 
-- A malicious user cannot unlock Windows 10 desktop  device by capturing traffic between the companion device and the Windows 10 desktop  device and replaying it later. Usage of nonce, authkey, and HMAC in our protocol guarantees protection against a replay attack.
-- Malware or a malicious user on a rouge PC cannot use companion device to get access to honest user PC. This is achieved through mutual authentication between Companion Authenticaiton Service and companion device through usage of authkey and HMAC in our protocol. 
+- 中間ユーザーまたはアプリ コンテナーとして実行される Windows 10 デスクトップ デバイス上のマルウェアが、コンパニオン デバイスを使用して、PC 上の (Microsoft Passport の一部として保存されている) ユーザーの資格情報キーに無許可でアクセスすることはできません。
+- Windows 10 デスクトップ デバイスの悪意のあるユーザーが、同じ Windows 10 デスクトップ デバイスの別のユーザーに属するコンパニオン デバイスを使用して、(同じ Windows 10 デスクトップ デバイス上の) 別のユーザーの資格情報キーに無許可でアクセスすることはできません。
+- コンパニオン デバイス上のマルウェアが、Windows 10 デスクトップデバイス上のユーザー資格情報キーに無許可でアクセスすることはできません。コンパニオン デバイス フレームワークのために特に開発された機能やコードを利用することもできません。 
+- 悪意のあるユーザーが、コンパニオン デバイスと Windows 10 デスクトップ デバイス間のトラフィックをキャプチャし、後で再生リプレイすることで Windows 10 デスクトップ デバイスのロックを解除することはできません。 プロトコルでの nonce、認証キー、および HMAC の使用によって、リプレイ攻撃からの防御が保証されます。
+- ルージュ PC 上のマルウェアまたは悪意のあるユーザーが、コンパニオン デバイスを使用して、正規ユーザーの PC にアクセスすることはできません。 これは、Companion Authenticaiton Service とコンパニオン デバイス間のプロトコルでの認証キーと HMAC の使用による相互認証を通して実現されます。 
 
-The key to achieve the security protections enumerated above is to protect HMAC keys from unauthorized access and also verifying user presence. More specifically, it must satisfy these requirements:
+上記に列挙したセキュリティ保護を実現するために重要なのは、HMAC キーを不正アクセスから保護するとともに、ユーザー プレゼンスを検証することです。 具体的には、次の要件を満たす必要があります。
 
-- Provide protection against cloning the companion device
-- Provide protection against eavesdropping when sending HMAC keys at registration time to PC
-- Make sure that user presence signal is available. 
+- コンパニオン デバイスの複製に対する防御を提供する
+- 登録時に PC に HMAC キーを送信するときに、傍受に対する防御を提供する
+- ユーザー プレゼンス シグナルを入手できることを確認する 
 
 
 

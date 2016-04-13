@@ -1,33 +1,35 @@
 ---
-title: Reduce latency with DXGI 1.3 swap chains
-description: Use DXGI 1.3 to reduce the effective frame latency by waiting for the swap chain to signal the appropriate time to begin rendering a new frame.
+title: DXGI 1.3 スワップ チェーンによる遅延の減少
+description: DXGI 1.3 を使って、スワップ チェーンが新しいフレームのレンダリング開始の適切な時間を通知するまで待機することで、実質的なフレーム待機時間を削減します。
 ms.assetid: c99b97ed-a757-879f-3d55-7ed77133f6ce
 ---
 
-# Reduce latency with DXGI 1.3 swap chains
+# DXGI 1.3 スワップ チェーンによる遅延の減少
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-Use DXGI 1.3 to reduce the effective frame latency by waiting for the swap chain to signal the appropriate time to begin rendering a new frame. Games typically need to provide the lowest amount of latency possible from the time the player input is received, to when the game responds to that input by updating the display. This topic explains a technique available starting in Direct3D 11.2 that you can use to minimize the effective frame latency in your game.
+DXGI 1.3 を使って、スワップ チェーンが新しいフレームのレンダリング開始の適切な時間を通知するまで待機することで、実質的なフレーム待機時間を削減します。 ゲームでは一般的に、プレイヤーの入力を受け取った時点からゲームがその入力に応答して表示を更新するまでの待機時間を、可能な限り短縮する必要があります。 このトピックでは、Direct3D 11.2 以降で利用できるようになった、ゲーム内の実際のフレーム待機時間を最小化する手法について説明します。
 
-## How does waiting on the back buffer reduce latency?
-
-
-With the flip model swap chain, back buffer "flips" are queued whenever your game calls [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576). When the rendering loop calls Present(), the system blocks the thread until it is done presenting a prior frame, making room to queue up the new frame, before it actually presents. This causes extra latency between the time the game draws a frame and the time the system allows it to display that frame. In many cases, the system will reach a stable equilibrium where the game is always waiting almost a full extra frame between the time it renders and the time it presents each frame. It's better to wait until the system is ready to accept a new frame, then render the frame based on current data and queue the frame immediately.
-
-Create a waitable swap chain with the [**DXGI\_SWAP\_CHAIN\_FLAG\_FRAME\_LATENCY\_WAITABLE\_OBJECT**](https://msdn.microsoft.com/library/windows/desktop/bb173076) flag. Swap chains created this way can notify your rendering loop when the system is actually ready to accept a new frame. This allows your game to render based on current data and then put the result in the present queue right away.
-
-## Step 1: Create a waitable swap chain
+## バック バッファーでの待機によって待機時間を減らす方法
 
 
-Specify the [**DXGI\_SWAP\_CHAIN\_FLAG\_FRAME\_LATENCY\_WAITABLE\_OBJECT**](https://msdn.microsoft.com/library/windows/desktop/bb173076) flag when you call [**CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559).
+フリップ モデルのスワップ チェーンでは、ゲームが [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576) を呼び出すたびにバック バッファーの "フリップ" がキューに入れられます。 レンダリング ループによって Present() が呼び出されると、前のフレームの表示が完了するまでスレッドがブロックされ、新しいフレームが実際に表示されるまでキューに入れておくための領域を確保します。 これにより、ゲームによってフレームを描画した時点から、そのフレームが表示できるようになる時点まで、追加の待機時間が生まれます。 多くの場合、各フレームのレンダリングが開始されてから表示されるまでの間にほぼ 1 フレーム分の追加待機時間が常に発生するという、安定した状態に到達します。 新しいフレームを許可する準備が整うまで待機してから、現在のデータに基づいてフレームをレンダリングし、即座にキューに入れることをお勧めします。
+
+[
+            **DXGI\_SWAP\_CHAIN\_FLAG\_FRAME\_LATENCY\_WAITABLE\_OBJECT**](https://msdn.microsoft.com/library/windows/desktop/bb173076) フラグを使って待機可能スワップ チェーンを作成します。 この方法で作成されたスワップ チェーンでは、システムが実際に新しいフレームを許可する準備ができたことをレンダリング ループに通知できます。 これにより、現在のデータに基づいてレンダリングした結果を即座に現在のキューに入れることができます。
+
+## 手順 1: 待機可能スワップ チェーンを作成する
+
+
+[
+            **CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559) を呼び出すときに [**DXGI\_SWAP\_CHAIN\_FLAG\_FRAME\_LATENCY\_WAITABLE\_OBJECT**](https://msdn.microsoft.com/library/windows/desktop/bb173076) フラグを指定します。
 
 ```cpp
 swapChainDesc.Flags = DXGI_SWAP_CHAIN_FLAG_FRAME_LATENCY_WAITABLE_OBJECT; // Enable GetFrameLatencyWaitableObject().
 ```
 
-> **Note**   In contrast to some flags, this flag can't be added or removed using [**ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577). DXGI returns an error code if this flag is set differently from when the swap chain was created.
+> **注** 一部の他のフラグと異なり、このフラグは [**ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577) を使って追加または削除できません。 このフラグの設定が、スワップ チェーンが作成された時点の設定と異なっている場合、DXGI はエラー コードを返します。
 
  
 
@@ -42,12 +44,12 @@ HRESULT hr = m_swapChain->ResizeBuffers(
     );
 ```
 
-## Step 2: Set the frame latency
+## 手順 2: フレーム待機時間を設定する
 
 
-Set the frame latency with the [**IDXGISwapChain2::SetMaximumFrameLatency**](https://msdn.microsoft.com/library/windows/desktop/dn268313) API, instead of calling [**IDXGIDevice1::SetMaximumFrameLatency**](https://msdn.microsoft.com/library/windows/desktop/ff471334).
+フレーム待機時間は、[**IDXGIDevice1::SetMaximumFrameLatency**](https://msdn.microsoft.com/library/windows/desktop/ff471334) を呼び出すのではなく [**IDXGISwapChain2::SetMaximumFrameLatency**](https://msdn.microsoft.com/library/windows/desktop/dn268313) API を使って設定します。
 
-By default, the frame latency for waitable swap chains is set to 1, which results in the least possible latency but also reduces CPU-GPU parallelism. If you need increased CPU-GPU parallelism to achieve 60 FPS - that is, if the CPU and GPU each spend less than 16.7 ms a frame processing rendering work, but their combined sum is greater than 16.7 ms — set the frame latency to 2. This allows the GPU to process work queued up by the CPU during the previous frame, while at the same time allowing the CPU to submit rendering commands for the current frame independently.
+既定では、待機可能スワップ チェーンのフレーム待機時間が 1 に設定されており、最小限の待機時間になっていますが、これにより CPU-GPU 並列処理も削減されます。 60 FPS を達成するために CPU-GPU 並列処理を増やす必要がある場合、つまり CPU と GPU それぞれの 1 フレーム分の処理レンダリング処理時間を 16.7 ミリ秒未満に抑えたが、CPU と GPU を合わせた合計処理時間が 16.7 ミリ秒を超えている場合は、フレームの待機時間を 2 に設定します。 これにより、前のフレームの間に CPU がキューに入れた作業を GPU で処理できます。同時に、CPU はそれと関係なく現在のフレームのレンダリング コマンドを送信できます。
 
 ```cpp
 // Swapchains created with the DXGI_SWAP_CHAIN_FLAG_FRAME_LATENCY_WAITABLE_OBJECT flag use their
@@ -60,10 +62,11 @@ By default, the frame latency for waitable swap chains is set to 1, which result
 //    );
 ```
 
-## Step 3: Get the waitable object from the swap chain
+## 手順 3: スワップ チェーンから待機可能オブジェクトを取得する
 
 
-Call [**IDXGISwapChain2::GetFrameLatencyWaitableObject**](https://msdn.microsoft.com/library/windows/desktop/dn268309) to retrieve the wait handle. The wait handle is a pointer to the waitable object. Store this handle for use by your rendering loop.
+[
+            **IDXGISwapChain2::GetFrameLatencyWaitableObject**](https://msdn.microsoft.com/library/windows/desktop/dn268309) を呼び出して待機ハンドルを取得します。 待機ハンドルは、待機可能オブジェクトへのポインターです。 レンダリング ループで使うために、このハンドルを格納します。
 
 ```cpp
 // Get the frame latency waitable object, which is used by the WaitOnSwapChain method. This
@@ -72,12 +75,13 @@ Call [**IDXGISwapChain2::GetFrameLatencyWaitableObject**](https://msdn.microsoft
 m_frameLatencyWaitableObject = swapChain2->GetFrameLatencyWaitableObject();
 ```
 
-## Step 4: Wait before rendering each frame
+## 手順 4: 各フレームをレンダリングする前に待機する
 
 
-Your rendering loop should wait for the swap chain to signal via the waitable object before it begins rendering every frame. This includes the first frame rendered with the swap chain. Use [**WaitForSingleObjectEx**](https://msdn.microsoft.com/library/windows/desktop/ms687036), providing the wait handle retrieved in Step 2, to signal the start of each frame.
+レンダリング ループでは、各フレームのレンダリングを開始する前に、待機可能オブジェクトを利用してスワップ チェーンによる通知を待機する必要があります。 これには、スワップ チェーンでレンダリングされた最初のフレームが含まれます。 [
+            **WaitForSingleObjectEx**](https://msdn.microsoft.com/library/windows/desktop/ms687036) を使い、手順 2. で取得した待機ハンドルを提供して各フレームの開始を通知します。
 
-The following example shows the render loop from the DirectXLatency sample:
+次の例は、DirectXLatency サンプルからのレンダー ループを示しています。
 
 ```cpp
 while (!m_windowClosed)
@@ -109,7 +113,7 @@ while (!m_windowClosed)
 }
 ```
 
-The following example shows the WaitForSingleObjectEx call from the DirectXLatency sample:
+次の例は、DirectXLatency サンプルからの WaitForSingleObjectEx 呼び出しを示しています。
 
 ```cpp
 // Block the current thread until the swap chain has finished presenting.
@@ -123,30 +127,30 @@ void DX::DeviceResources::WaitOnSwapChain()
 }
 ```
 
-## What should my game do while it waits for the swap chain to present?
+## ゲームがスワップ チェーンの表示を待機する間に実行する必要のあるタスク
 
 
-If your game doesn’t have any tasks that block on the render loop, letting it wait for the swap chain to present can be advantageous because it saves power, which is especially important on mobile devices. Otherwise, you can use multithreading to accomplish work while your game is waiting for the swap chain to present. Here are just a few tasks that your game can complete:
+レンダー ループをブロックするタスクがゲームに存在しない場合、スワップ チェーンが表示されるまで待機することが消費電力の削減 (モバイル デバイスで特に重要) に有効な場合があります。 レンダー ループをブロックするタスクが存在する場合は、スワップ チェーンの表示を待機している間にマルチスレッドを使って作業を完了できます。 次に、ゲームで実行できるタスクのごく一部を示します。
 
--   Process network events
--   Update the AI
--   CPU-based physics
--   Deferred-context rendering (on supported devices)
--   Asset loading
+-   ネットワーク イベントの処理
+-   AI の更新
+-   CPU ベースの物理
+-   遅延コンテキストのレンダリング (サポートされているデバイス)
+-   アセットの読み込み
 
-For more information about multithreaded programming in Windows, see the following related topics.
+Windows でのマルチスレッド プログラミングについて詳しくは、次の関連トピックをご覧ください。
 
-## Related topics
+## 関連トピック
 
 
-* [DirectXLatency sample](http://go.microsoft.com/fwlink/p/?LinkID=317361)
+* [DirectXLatency のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=317361)
 * [**IDXGISwapChain2::GetFrameLatencyWaitableObject**](https://msdn.microsoft.com/library/windows/desktop/dn268309)
 * [**WaitForSingleObjectEx**](https://msdn.microsoft.com/library/windows/desktop/ms687036)
 * [**Windows.System.Threading**](https://msdn.microsoft.com/library/windows/apps/br229642)
-* [Asynchronous programming in C++](https://msdn.microsoft.com/library/windows/apps/mt187334)
-* [Processes and Threads](https://msdn.microsoft.com/library/windows/desktop/ms684841)
-* [Synchronization](https://msdn.microsoft.com/library/windows/desktop/ms686353)
-* [Using Event Objects (Windows)](https://msdn.microsoft.com/library/windows/desktop/ms686915)
+* [C++ での非同期プログラミング](https://msdn.microsoft.com/library/windows/apps/mt187334)
+* [プロセスとスレッド](https://msdn.microsoft.com/library/windows/desktop/ms684841)
+* [同期](https://msdn.microsoft.com/library/windows/desktop/ms686353)
+* [イベント オブジェクトの使用 (Windows)](https://msdn.microsoft.com/library/windows/desktop/ms686915)
 
  
 

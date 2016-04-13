@@ -1,11 +1,11 @@
 ---
 ms.assetid: 03dd256f-78c0-e1b1-3d9f-7b3afab29b2f
 title: コンポジションのブラシ
-description: 。
+description: ブラシは、その出力で Visual の領域を塗りつぶします。 さまざまなブラシで、出力の種類もさまざまです。
 ---
 # コンポジションのブラシ
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 ブラシは、その出力で [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) の領域を塗りつぶします。 さまざまなブラシで、出力の種類もさまざまです。 コンポジション API には、次の 3 種類のブラシが用意されています。
 

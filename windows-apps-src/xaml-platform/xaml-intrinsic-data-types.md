@@ -1,40 +1,40 @@
 ---
-description: Lists language-level support in XAML for the Windows Runtime for certain data types in the common language runtime (CLR) and in other programming languages such as C++.
-title: XAML intrinsic data types
+description: Windows ランタイムの XAML について、共通言語ランタイム (CLR) や、C++ のような他のプログラミング言語での特定のデータ型に対する言語レベルのサポートの一覧を示します。
+title: XAML 固有のデータ型。
 ms.assetid: D50E6127-395D-4E27-BAA2-2FE627F4B711
 ---
 
-# XAML intrinsic data types
+# XAML 固有のデータ型
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-XAML for the Windows Runtime provides language-level support for several data types that are frequently used primitives in the common language runtime (CLR) and in other programming languages such as C++.
+Windows ランタイムの XAML は、共通言語ランタイム (CLR) や、C++ のような他のプログラミング言語で頻繁に使われるプリミティブである複数のデータ型に対して、言語レベルのサポートを提供します。
 
-The most common place you'll see XAML intrinsic data type usages is when resources are defined in a XAML resource dictionary. You might define constants there, for example numbers that you use for multiple values. Or you might use a storyboarded animation that animates using a string or Boolean value, and you'll then need a XAML object element representing the string or Boolean to fill the keyframe of your [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320) definition. The Windows Runtime default XAML templates use both these techniques.
+XAML 固有のデータ型が最も一般的に使われるのは、リソースが XAML リソース ディクショナリで定義されている場合です。 さまざまな値として使う数など、定数も定義できます。 文字列またはブール値によるストーリーボードに設定されたアニメーションも使えます。その場合は、[**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320) 定義のキーフレームを設定するための文字列またはブール値を表す XAML オブジェクト要素が必要です。 Windows ランタイムの既定の XAML テンプレートでは、この両方の手法が使われます。
 
-XAML for the Windows Runtime provides language-level support for these types.
+Windows ランタイムの XAML は、次の型に対する言語レベルのサポートを提供します。
 
-| XAML primitive | Description |
-| **x:Boolean**  | For CLR support, corresponds to [**Boolean**](https://msdn.microsoft.com/library/windows/apps/xaml/system.boolean.aspx). XAML parses values for **x:Boolean** as case insensitive. Note that "x:Bool" is not an accepted alternative. |
-| **x:String**   | For CLR support, corresponds to [**String**](https://msdn.microsoft.com/library/windows/apps/xaml/system.string.aspx). Encoding for the string defaults to the surrounding XML encoding. |
-| **x:Double**   | For CLR support, corresponds to [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx). In addition to the numeric values, text syntax for **x:Double** permits the token "NaN", which is how "Auto" for layout behavior can be stored as a resource value. The tokens are treated as case sensitive. You can use scientific notation, for example "1+E06" for `1,000,000`. |
-| **x:Int32**    | For CLR support, corresponds to [**Int32**](https://msdn.microsoft.com/library/windows/apps/xaml/system.int32.aspx). **x:Int32** is treated as signed, and you can include the minus ("-") symbol for a negative integer. In XAML, the absence of a sign in text syntax implies a positive signed value. |
+| XAML プリミティブ | 説明 |
+| **x:Boolean**  | CLR のサポートについては、[**Boolean**](https://msdn.microsoft.com/library/windows/apps/xaml/system.boolean.aspx) と同じです。 XAML は、**x:Boolean** の値の大文字と小文字を区別せずに解析します。 "x:Bool" は、承諾済みの代替プリミティブではありません。 |
+| **x:String**   | CLR のサポートについては、[**String**](https://msdn.microsoft.com/library/windows/apps/xaml/system.string.aspx) と同じです。 既定では、文字列型のエンコーディングは XML による全体的なエンコーディングです。 |
+| **x:Double**   | CLR のサポートについては、[**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) と同じです。 数値に加え、**x:Double** のテキスト構文は、"NaN" トークンも許可しています。これにより、レイアウト動作の "Auto" をリソース値として格納することができます。 トークンでは、大文字と小文字が区別されます。 `1,000,000` に "1+E06" のように、科学的記数法を使えます。 |
+| **x:Int32**    | CLR のサポートについては、[**Int32**](https://msdn.microsoft.com/library/windows/apps/xaml/system.int32.aspx) と同じです。 **x:Int32** は符号付きとして処理され、負の整数の場合は負の符号 ("-") を含めることができます。 XAML では、テキスト構文に符号がない場合、暗黙的に正符号付きの値を示します。 |
 
-These XAML language primitives are generally the only cases in which you define an object element that uses the **x:** prefix in your XAML. All other XAML language features are typically used in attribute form, or as a markup extension.
+これらの XAML 言語プリミティブは、通常、XAML で **x:** プレフィックスを使うオブジェクト要素を定義する場合のみ使われます。 他のすべての XAML 言語機能は、一般に属性形式で、またはマークアップ拡張として使われます。
 
-**Note**  By convention, the language primitives for XAML and all other XAML language elements are shown with the "x:" prefix. This is how XAML language elements are typically used in real-world markup. This convention is followed in the documentation for XAML and also in the XAML specification.
+**注**  慣例により、"x:" プレフィックスを含む、XAML とその他すべての XAML 言語要素の言語プリミティブが表示されます。 これは、XAML 言語要素が実際のマークアップでいかによく使われているかを表しています。 この規則は、XAML の説明書や XAML の仕様に従っています。
 
-## Other XAML primitives
+## その他の XAML プリミティブ
 
-The XAML 2009 specification notes other XAML language-level primitives such as **x:Uri** and **x:Single**. Unless listed in the table in this topic, other XAML language primitives as defined by other XAML vocabularies or by the XAML 2009 specification are not currently supported in XAML for the Windows Runtime.
+XAML 2009 の仕様には、**x:Uri**、**x:Single** など、他の XAML 言語レベルのプリミティブに関する情報が記載されています。 このトピックの表に示されていない場合、他の XAML ボキャブラリまたは XAML 2009 の仕様で定義されている他の XAML 言語プリミティブは、現在 Windows ランタイムの XAML ではサポートされていません。
 
-**Note**  Dates and times (properties that use [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576) or [**DateTimeOffset**](T:System.DateTimeOffset), [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/br225996) or [**System.TimeSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/system.timespan.aspx)) aren't settable with a XAML primitive. These properties generally aren't settable in XAML at all, because there's no default from-string conversion behavior in the Windows Runtime XAML parser for dates and times. For initialization values of any date and time properties, you'll have to use code-behind that runs when a page or element loads.
+**注**  日付と時刻 ([**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576) または [**DateTimeOffset**](T:System.DateTimeOffset)、[**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/br225996) または [**System.TimeSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/system.timespan.aspx) を使うプロパティ) は、XAML プリミティブでは設定できません。 これらのプロパティは一般に、XAML ではまったく設定できません。これは、Windows ランタイム XAML パーサーには、日付と時刻に対する既定の from 文字列変換の動作がないためです。 すべての日付と時刻のプロパティの初期化値には、ページまたは要素を読み込むときに実行されるコード ビハインドを使う必要があります。
 
-## Related topics
+## 関連トピック
 
-* [XAML overview](xaml-overview.md)
-* [XAML syntax guide](xaml-syntax-guide.md)
-* [Storyboarded animations](https://msdn.microsoft.com/library/windows/apps/mt187354)
+* [XAML の概要](xaml-overview.md)
+* [XAML 構文のガイド](xaml-syntax-guide.md)
+* [ストーリーボードに設定されたアニメーション](https://msdn.microsoft.com/library/windows/apps/mt187354)
  
 
 

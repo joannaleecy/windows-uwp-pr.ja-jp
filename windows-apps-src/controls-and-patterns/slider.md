@@ -1,67 +1,67 @@
 ---
-Description: Lets the user set a value in a given range.
-title: Sliders
+Description: ユーザーが有効な範囲から値を設定できます。
+title: スライダー
 ms.assetid: 7EC7EA33-BE7E-4FD5-B205-B8FA7B729ACC
-label: Sliders
+label: スライダー
 template: detail.hbs
 ---
-# Sliders
+# スライダー
 
-A slider is a control that lets the user select from a range of values by moving a thumb control along a track.
+スライダーはユーザーがトラックに沿って thumb コントロールを動かすことで値の範囲から選択できるようにするコントロールです。
 
-![A slider control](images/controls/slider.png)
+![スライダー コントロール](images/controls/slider.png)
 
-<span class="sidebar_heading" style="font-weight: bold;">Important APIs</span>
+<span class="sidebar_heading" style="font-weight: bold;">重要な API</span>
 
--   [**Slider class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx)
--   [**Value property**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx)
--   [**ValueChanged event**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx)
+-   [**Slider クラス**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx)
+-   [**Value プロパティ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx)
+-   [**ValueChanged イベント**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx)
 
-## Is this the right control?
+## 適切なコントロールの選択
 
-Use a slider when you want your users to be able to set defined, contiguous values (such as volume or brightness) or a range of discrete values (such as screen resolution settings).
+定義された連続的な値 (音量や明るさなど) または個別の値の範囲 (画面解像度の設定など) をユーザーが設定できるようにする場合に、スライダーを使います。
 
-A slider is a good choice when you know that users think of the value as a relative quantity, not a numeric value. For example, users think about setting their audio volume to low or medium—not about setting the value to 2 or 5.
+スライダーは、ユーザーが値を数値でなく相対的な量であると考えている場合に適しています。 たとえば、ユーザーはオーディオの音量を数値の 2 や 5 ではなく、低や中に設定しようと考えます。
 
-Don't use a slider for binary settings. Use a [toggle switch](toggles.md) instead.
+二者択一の設定には、スライダーは使いません。 代わりに[トグル スイッチ](toggles.md)を使います。
 
-Here are some additional factors to consider when deciding whether to use a slider:
+スライダーを使うかどうかを決める際には、他にも次のような点を考慮します。
 
--   **Does the setting seem like a relative quantity?** If not, use [radio buttons](radio-button.md) or a [list box](lists.md).
--   **Is the setting an exact, known numeric value?** If so, use a numeric [text box](text-box.md).
--   **Would a user benefit from instant feedback on the effect of setting changes?** If so, use a slider. For example, users can choose a color more easily by immediately seeing the effect of changes to hue, saturation, or luminosity values.
--   **Does the setting have a range of four or more values?** If not, use [radio buttons](radio-button.md).
--   **Can the user change the value?** Sliders are for user interaction. If a user can't ever change the value, use read-only text instead.
+-   **設定が相対的な量のように見えるか?** 見えない場合は、[ラジオ ボタン](radio-button.md)または[リスト ボックス](lists.md)を使います。
+-   **設定は正確な既知の数値か?** そのような数値である場合は、数値[テキスト ボックス](text-box.md)を使います。
+-   **設定の変更による効果をすぐに確認できると、ユーザーにとって便利か?** 便利である場合は、スライダーを使います。 たとえば、色合い、鮮やかさ、明度の値を変更した場合の効果をすぐに確認できると、ユーザーは色をより簡単に選べるようになります。
+-   **設定に 4 つ以上の値の範囲があるか?** ない場合は、[ラジオ ボタン](radio-button.md)を使います。
+-   **ユーザーが値を変えられるか?** スライダーは、ユーザーが操作するためのものです。 ユーザーが値を変えられない場合は、代わりに読み取り専用のテキストを使います。
 
-If you are deciding between a slider and a numeric text box, use a numeric text box if:
+スライダーと数値テキスト ボックスのどちらを使うかを決める際に、次の場合には数値テキスト ボックスを使います。
 
--   Screen space is tight.
--   The user is likely to prefer using the keyboard.
+-   画面領域が狭い。
+-   ユーザーがキーボードを使おうとする可能性が高い。
 
-Use a slider if:
+次の場合にはスライダーを使います。
 
--   Users will benefit from instant feedback.
+-   ユーザーにとって、すぐに結果がわかると便利。
 
-## Examples
+## 例
 
-A slider to control the volume on Windows Phone.
+Windows Phone の音量を制御するためのスライダー。
 
-![A slider to control the volume on Windows Phone](images/control-examples/slider-phone.png)
+![Windows Phone の音量を制御するためのスライダー](images/control-examples/slider-phone.png)
 
-A slider to change text size in Windows display settings.
+Windows 画面設定でテキスト サイズを変更するためのスライダー。
 
-![A slider to change text size in Windows display settings](images/control-examples/slider-display-settings.png)
+![Windows 画面設定でテキスト サイズを変更するためのスライダー](images/control-examples/slider-display-settings.png)
 
-## Create a slider
+## スライダーの作成
 
-Here's how to create a slider in XAML.
+XAML でスライダーを作成する方法を次に示します。
 
 ```xaml
 <Slider x:Name="volumeSlider" Header="Volume" Width="200"
         ValueChanged="Slider_ValueChanged"/>
 ```
 
-Here's how to create a slider in code.
+コードでスライダーを作成する方法を次に示します。
 
 ```csharp
 Slider volumeSlider = new Slider();
@@ -73,7 +73,8 @@ volumeSlider.ValueChanged += Slider_ValueChanged;
 stackPanel1.Children.Add(volumeSlider);
 ```
 
-You get and set the value of the slider from the [**Value**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx) property. To respond to value changes, you can use data binding to bind to the Value property, or handle the [**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx) event.
+[
+            **Value**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx) プロパティからスライダーの値を取得および設定します。 値の変更に応答するには、Value プロパティにバインドするデータ バインディングを使うか、[**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx) イベントを処理します。
 
 ```csharp
 private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
@@ -86,85 +87,85 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 }
 ```
 
-## Recommendations
+## 推奨事項
 
--   Size the control so that users can easily set the value they want. For settings with discrete values, make sure the user can easily select any value using the mouse. Make sure the endpoints of the slider always fit within the bounds of a view.
--   Give immediate feedback while or after a user makes a selection (when practical). For example, the Windows volume control beeps to indicate the selected audio volume.
--   Use labels to show the range of values. Exception: If the slider is vertically oriented and the top label is Maximum, High, More, or equivalent, you can omit the other labels because the meaning is clear.
--   Disable all associated labels or feedback visuals when you disable the slider.
--   Consider the direction of text when setting the flow direction and/or orientation of your slider. Script flows from left to right in some languages, and from right to left in others.
--   Don't use a slider as a progress indicator.
--   Don't change the size of the slider thumb from the default size.
--   Don't create a continuous slider if the range of values is large and users will most likely select one of several representative values from the range. Instead, use those values as the only steps allowed. For example if time value might be up to 1 month but users only need to pick from 1 minute, 1 hour, 1 day or 1 month, then create a slider with only 4 step points.
+-   コントロールのサイズは、ユーザーが値を簡単に設定できる大きさにします。 個別の値を設定する場合は、ユーザーがマウスを使って値を簡単に選べるようにします。 スライダーのエンドポイントが、常にビューの境界内にあることを確認します。
+-   ユーザーが選んでいるときまたは選んだ後で、すぐに結果が確認できるようにします (それが実際的な場合)。 たとえば、Windows のボリューム コントロールは、選ばれたオーディオ音量を示すためにビープ音を鳴らします。
+-   値の範囲を示すためにラベルを使います。 例外: スライダーが垂直方向で、上部のラベルが最大、高、多などの場合、下部の意味は明らかであるため、ラベルを省略できます。
+-   スライダーを無効にする場合は、関連するすべてのラベルまたはフィードバックの視覚効果も無効にします。
+-   スライダーのフロー方向や向きを設定するときには、テキストの方向を考慮してください。 言語によって、左から右に書く場合と、右から左に書く場合があります。
+-   スライダーは、進行状況インジケーターとしては使いません。
+-   スライダーのつまみは、既定のサイズのままにします。
+-   値の範囲が広く、ユーザーが選ぶのは範囲内のいくつかの代表的な値であることがほとんどの場合は、連続的なスライダーを作成しません。 代わりに、それらの値だけを、許可される間隔として使います。 たとえば、時間の最大値は 1 か月であっても、ユーザーが 1 分、1 時間、1 日、1 か月のいずれかを選ぶ場合は、4 つの間隔位置だけのスライダーを作成します。
 
-## Additional usage guidance
+## その他の使い方のガイダンス
 
-### Choosing the right layout: horizontal or vertical
+### 適切なレイアウトの選択: 水平または垂直
 
-You can orient your slider horizontally or vertically. Use these guidelines to determine which layout to use.
+スライダーは、水平方向または垂直方向に向きを設定できます。 次のガイドラインを使って、使うレイアウトを決めます。
 
--   Use a natural orientation. For example, if the slider represents a real-world value that is normally shown vertically (such as temperature), use a vertical orientation.
--   If the control is used to seek within media, like in a video app, use a horizontal orientation.
--   When using a slider in page that can be panned in one direction (horizontally or vertically), use a different orientation for the slider than the panning direction. Otherwise, users might swipe the slider and change its value accidentally when they try to pan the page.
--   If you're still not sure which orientation to use, use the one that best fits your page layout.
+-   自然な方向を使います。 たとえば、スライダーが現実世界の値を表していて、通常は垂直方向に表示される場合 (気温など) は、垂直方向にします。
+-   ビデオ アプリのように、メディア内をシークするためにコントロールが使われる場合は、水平方向にします。
+-   1 つの方向 (水平または垂直) にパンするページでスライダーを使う場合は、パンの方向とは異なる方向をスライダーに使います。 そうしないと、ユーザーはページをパンしようとしてスライダーをスワイプし、誤って値を変えてしまう場合があります。
+-   使用する方向がまだ決まらない場合は、ページ レイアウトに適した方を使います。
 
-### Range direction
+### 範囲方向
 
-The range direction is the direction you move the slider when you slide it from its current value to its max value.
+範囲方向とは、現在の値から最大値へスライダーを動かす方向のことです。
 
--   For vertical slider, put the largest value at the top of the slider, regardless of reading direction. For example, for a volume slider, always put the maximum volume setting at the top of the slider. For other types of values (such as days of the week), follow the reading direction of the page.
--   For horizontal styles, put the lower value on the left side of the slider for left-to-right page layout, and on the right for right-to-left page layout.
--   The one exception to the previous guideline is for media seek bars: always put the lower value on the left side of the slider.
+-   垂直方向スライダーでは、読みの方向に関係なく、最大値をスライダーの上部に配置します。 たとえば、音量スライダーでは、最大の音量設定を常にスライダーの上部に配置します。 他の種類の値 (曜日など) では、ページの読みの方向に従います。
+-   水平方向のスタイルでは、ページ レイアウトが左から右への場合は、低い方の値をスライダーの左側に配置します。ページ レイアウトが右から左への場合は、右側に配置します。
+-   前のガイドラインの 1 つの例外は、メディア シーク バーです。このバーでは、低い方の値を常にスライダーの左側に配置します。
 
-### Steps and tick marks
+### 間隔と目盛り
 
--   Use step points if you don't want the slider to allow arbitrary values between min and max. For example, if you use a slider to specify the number of movie tickets to buy, don't allow floating point values. Give it a step value of 1.
--   If you specify steps (also known as snap points), make sure that the final step aligns to the slider's max value.
--   Use tick marks when you want to show users the location of major or significant values. For example, a slider that controls a zoom might have tick marks for 50%, 100%, and 200%.
--   Show tick marks when users need to know the approximate value of the setting.
--   Show tick marks and a value label when users need to know the exact value of the setting they choose, without interacting with the control. Otherwise, they can use the value tooltip to see the exact value.
--   Always show tick marks when step points aren't obvious. For example, if the slider is 200 pixels wide and has 200 snap points, you can hide the tick marks because users won't notice the snapping behavior. But if there are only 10 snap points, show tick marks.
+-   スライダーで最小値から最大値までの任意の値を許可するのではない場合は、間隔位置を使います。たとえば、購入する映画のチケットの数を指定するためにスライダーを使う場合、浮動小数点値は許可しません。 間隔の値を 1 にします。
+-   間隔 (スナップ位置とも言います) を指定する場合、最後のステップがスライダーの最大値に揃うようにします。
+-   主な、または重要な値の位置をユーザーに示す場合は、目盛りを使います。 たとえば、ズームを制御するスライダーでは、50%、100%、200% の目盛りを設定します。
+-   設定のおおよその値をユーザーが知る必要がある場合に、目盛りを表示します。
+-   選択した設定の正確な値を、コントロールを操作しなくてもユーザーが確認できるようにするには、目盛りと値ラベルを表示します。 または、値ヒントを使って、正確な値が見られるようにします。
+-   間隔位置が明白でない場合は、常に目盛りを表示します。 たとえば、スライダーの幅が 200 ピクセルで、200 のスナップ位置がある場合は、ユーザーはスナップの動作に気付かないので、目盛りを非表示にできます。 しかし、スナップ位置が 10 個しかない場合は、目盛りを表示します。
 
-### Labels
+### ラベル
 
--   **Slider labels**
+-   **スライダー ラベル**
 
-    The slider label indicates what the slider is used for.
+    スライダー ラベルは、スライダーの使用目的を示します。
 
-    -   Use a label with no ending punctuation (this is the convention for all control labels).
-    -   Position labels above the slider when the slider is in a form that places most of its labels above their controls.
-    -   Position labels to the sides when the slider is in a form that places most of its labels to the side of their controls.
-    -   Avoid placing labels below the slider because the user's finger might occlude the label when the user touches the slider.
--   **Range labels**
+    -   ラベルを使うときは末尾に句点を付けません (これはすべてのコントロール ラベルでの規則です)。
+    -   スライダーのあるフォームで、ほとんどのラベルがコントロールの上にある場合は、ラベルをスライダーの上に配置します。
+    -   スライダーのあるフォームで、ほとんどのラベルがコントロールの横にある場合は、ラベルをスライダーの横に配置します。
+    -   ユーザーがスライダーにタッチするときに、指でラベルが見えなくなる場合があるので、ラベルをスライダーの下には配置しません。
+-   **範囲ラベル**
 
-    The range, or fill, labels describe the slider's minimum and maximum values.
+    範囲 (容量) ラベルは、スライダーの最小値と最大値を示します。
 
-    -   Label the two ends of the slider range, unless a vertical orientation makes this unnecessary.
-    -   Use only one word, if possible, for each label.
-    -   Don't use ending punctuation.
-    -   Make sure these labels are descriptive and parallel. Examples: Maximum/Minimum, More/Less, Low/High, Soft/Loud.
--   **Value labels**
+    -   垂直方向であることによって明白である場合以外は、スライダーの範囲の両端をラベルに表示します。
+    -   各ラベルは、できれば 1 ワードだけにします。
+    -   末尾に句点を付けません。
+    -   これらのラベルは、説明的で対比的なものにします。 例: 最大/最小、多/少、低/高、小/大
+-   **値ラベル**
 
-    A value label displays the current value of the slider.
+    値ラベルは、スライダーの現在の値を表示します。
 
-    -   If you need a value label, display it below the slider.
-    -   Center the text relative to the control and include the units (such as pixels).
-    -   Since the slider’s thumb is covered during scrubbing, consider showing the current value some other way, with a label or other visual. A slider setting text size could render some sample text of the right size beside the slider.
+    -   値ラベルが必要な場合は、スライダーの下に表示します。
+    -   テキストをコントロールに対して中央に配置し、単位 (ピクセルなど) を付記します。
+    -   スライダーのつまみはスクラブ中に隠れるため、ラベルや他の視覚効果で現在の値を表示することをお勧めします。 スライダー設定のテキスト サイズは、スライダー以外の適切なサイズのサンプル テキストに連動させることができます。
 
-### Appearance and interaction
+### 外観と操作
 
-A slider is composed of a track and a thumb. The track is a bar (which can optionally show various styles of tick marks) representing the range of values that can be input. The thumb is a selector, which the user can position by either tapping the track or by scrubbing back and forth on it.
+スライダーはトラックとつまみで構成されます。 トラックは入力できる値の範囲を表すバーです (オプションでさまざまなスタイルの目盛りを表示できます)。 つまみは、ユーザーがトラックをタップするか、トラックを前後にスクラブして位置を調整できるセレクターです。
 
-A slider has a large touch target. To maintain touch accessibility, a slider should be positioned far enough away from the edge of the display.
+スライダーには大きなタッチ ターゲットが設定されています。 タッチのアクセシビリティを維持するには、スライダーを表示の端から十分に離して配置する必要があります。
 
-When you’re designing a custom slider, consider ways to present all the necessary info to the user with as little clutter as possible. Use a value label if a user needs to know the units in order to understand the setting; find creative ways to represent these values graphically. A slider that controls volume, for example, could display a speaker graphic without sound waves at the minimum end of the slider, and a speaker graphic with sound waves at the maximum end.
+カスタム スライダーを設計する際は、余分な要素をできるだけなくし、ユーザーに必要なすべての情報を示す方法を検討してください。 ユーザーが設定を理解できるように単位を表示する必要がある場合は、値ラベルを使います。これらの値を視覚的に示す方法を工夫してください。 たとえば、音量を調整するスライダーでは、スライダーの最小の端に音波のないスピーカーのグラフィック、最大の端に音波のあるスピーカーのグラフィックを表示できます。
 
-## Related topics
+## 関連トピック
 
-**For designers**
-- [Guidelines for toggle switches](toggles.md)
-**For developers (XAML)**
-- [**Slider class**](https://msdn.microsoft.com/library/windows/apps/br209614)
+**デザイナー向け**
+- [トグル スイッチのガイドライン](toggles.md)
+**開発者向け (XAML)**
+- [**Slider クラス**](https://msdn.microsoft.com/library/windows/apps/br209614)
 
 
 <!--HONumber=Mar16_HO1-->

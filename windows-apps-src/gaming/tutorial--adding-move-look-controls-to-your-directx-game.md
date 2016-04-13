@@ -1,43 +1,43 @@
 ---
-title: Move-look controls for games
-description: Learn how to add traditional mouse and keyboard move-look controls (also known as mouselook controls) to your DirectX game.
+title: ゲームのムーブ/ルック コントロール
+description: ここでは、マウスとキーボードの従来のムーブ/ルック コントロール (マウスルック コントロールとも呼ばれます) を DirectX ゲームに追加する方法について説明します。
 ms.assetid: 4b4d967c-3de9-8a97-ae68-0327f00cc933
 ---
 
-# <span id="dev_gaming.tutorial__adding_move-look_controls_to_your_directx_game"></span>Move-look controls for games
+# <span id="dev_gaming.tutorial__adding_move-look_controls_to_your_directx_game"></span>ゲームのムーブ/ルック コントロール
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-Learn how to add traditional mouse and keyboard move-look controls (also known as mouselook controls) to your DirectX game.
+ここでは、マウスとキーボードの従来のムーブ/ルック コントロール (マウスルック コントロールとも呼ばれます) を DirectX ゲームに追加する方法について説明します。
 
-We also discuss move-look support for touch devices, with the move controller defined as the lower-left section of the screen that behaves like a directional input, and the look controller defined for the remainder of the screen, with the camera centering on the last place the player touched in that area.
+さらに、タッチ デバイスでのムーブ/ルックのサポートについても説明します。タッチ デバイスでは、ムーブ コントローラーは画面の左下の部分として定義され、方向入力と同じように動作します。ルック コントローラーは、画面の残りの部分に対して定義されます。カメラは、中心をプレイヤーがその領域内で最後にタッチした場所に合わせます。
 
-If this is an unfamiliar control concept to you, think of it this way: the keyboard (or the touch-based directional input box) controls your legs in this 3D space, and behaves as if your legs were only capable of moving forward or backward, or strafing left and right. The mouse (or touch pointer) controls your head. You use your head to look in a direction -- left or right, up or down, or somewhere in that plane. If there is a target in your view, you would use the mouse to center your camera view on that target, and then press the forward key to move towards it, or back to move away from it. To circle the target, you would keep the camera view centered on the target, and move left or right at the same time. You can see how this is a very effective control method for navigating 3D environments!
+このコントロールの概念に詳しくない場合は、キーボード (またはタッチ ベースの方向入力ボックス) は、この 3D 空間内で足を制御し、足が前後または左右にしか動けないかのように機能するものと考えてください。 マウス (またはタッチ ポインター) は、頭を制御します。 頭を動かして、ある方向 (左、右、上、下、またはその平面のどこか) を見ます。 視界の中にターゲットがある場合、マウスを使ってカメラ ビューの中心をそのターゲットに合わせてから、前進キーを押してターゲットに向かって前進するか、後退キーを押してターゲットから後退します。 ターゲットの周りを旋回するには、カメラ ビューの中心をターゲットに合わせたまま、左右に動きます。 このように、この制御方法は 3D 環境のナビゲートに非常に有効です。
 
-These controls are commonly known as WASD controls in gaming, where the W, A, S, and D keys are used for x-z plane fixed camera movement, and the mouse is used to control camera rotation around the x and y axes.
+これらのコントロールは、ゲームでは一般的に WASD コントロールと呼ばれます。WASD コントロールでは、x-z 平面に固定されたカメラを動かすのに W、A、S、D のキーを使用し、x 軸と y 軸を中心としたカメラの回転を制御するのにマウスを使用します。
 
-## Objectives
-
-
--   Add basic move-look controls to your DirectX game for both mouse and keyboard, and touch screens.
--   Implement a first-person camera used to navigate a 3D environment.
-
-## A note on touch control implementations
+## 目標
 
 
-For touch controls, we implement two controllers: the move controller, which handles movement in the x-z plane relative to the camera's look point; and the look controller, which aims the camera's look point. Our move controller maps to the keyboard WASD buttons, and the look controller maps to the mouse. But for touch controls, we need to define a region of the screen that serves as the directional inputs, or the virtual WASD buttons, with the remainder of the screen serving as the input space for the look controls.
+-   マウス/キーボード用とタッチ スクリーン用の両方の基本的なムーブ/ルック コントロールを DirectX ゲームに追加する。
+-   3D 環境のナビゲートに使う主観カメラを実装する。
 
-Our screen looks like this.
-
-![the move-look controller layout](images/movelook-touch.png)
-
-When you move the touch pointer (not the mouse!) in the lower left of the screen, any movement upwards will make the camera move forward. Any movement downwards will make the camera move backwards. The same holds for left and right movement inside the move controller's pointer space. Outside of that space, and it becomes a look controller -- you just touch or drag the camera to where you'd like it to face.
-
-## Set up the basic input event infrastructure
+## タッチ コントロールの実装に関する注意
 
 
-First, we must create our control class that we use to handle input events from the mouse and keyboard, and update the camera perspective based on that input. Because we're implementing move-look controls, we call it **MoveLookController**.
+タッチ コントロールには、2 つのコントローラーを実装します。1 つはカメラの視点に相対的な x-z 平面の動きを扱うムーブ コントローラー、もう 1 つはカメラの視点を合わせるためのルック コントローラーです。 ムーブ コントローラーはキーボードの WASD ボタンに相当し、ルック コントローラーはマウスに相当します。 ただし、タッチ コントロールでは、方向入力、または仮想的な WASD ボタンとして機能する画面の領域を定義する必要があります。画面の残りの部分は、ルック コントロール用の入力領域として機能します。
+
+画面は次のようになります。
+
+![ムーブ/ルック コントローラーのレイアウト](images/movelook-touch.png)
+
+タッチ ポインター (マウスではなく) を画面の左下で動かす場合、上方向に動かすとカメラは前方に動きます。 下方向に動かすとカメラは後方に動きます。 ムーブ コントローラーのポインター領域内でポインターを左右に動かす場合にも同じことが当てはまります。 この領域外ではルック コントローラーになるため、カメラを単にタッチまたはドラッグして、希望の向きにします。
+
+## 基本的な入力イベントのインフラストラクチャのセットアップ
+
+
+まず、マウスとキーボードからの入力イベントの処理と、その入力に基づいたカメラの視点の更新を行うコントロール クラスを作成する必要があります。 実装するのはムーブ/ルック コントロールであるため、**MoveLookController** という名前を付けます。
 
 ```cpp
 using namespace Windows::UI::Core;
@@ -52,7 +52,7 @@ ref class MoveLookController
 };  // class MoveLookController
 ```
 
-Now, let's create a header that defines the state of the move-look controller and its first-person camera, plus the basic methods and event handlers that implement the controls and that update the state of the camera.
+次に、ムーブ/ルック コントローラーの状態とその主観カメラを定義するヘッダーと、コントロールを実装してカメラの状態を更新する基本的なメソッドとイベント ハンドラーを作成します。
 
 ```cpp
 #define ROTATION_GAIN 0.004f    // Sensitivity adjustment for the look controller
@@ -133,56 +133,56 @@ internal:
 };  // class MoveLookController
 ```
 
-Our code contains 4 groups of private fields. Let's review the purpose of each one.
+このコードには、プライベート フィールドのグループが 4 つ含まれています。 それぞれの目的を確認してみましょう。
 
-First, we define some useful fields that hold our updated info about our camera view.
+まず、カメラ ビューに関する更新情報を保持する、便利なフィールドをいくつか定義します。
 
--   **m\_position** is the position of the camera (and therefore the viewplane) in the 3D scene, using scene coordinates.
--   **m\_pitch** is the pitch of the camera, or its up-down rotation around the viewplane's x-axis, in radians.
--   **m\_yaw** is the yaw of the camera, or its left-right rotation around the viewplane's y-axis, in radians.
+-   **m\_position** は、3D シーン内のカメラ (とビュー平面) の位置であり、シーンの座標を使います。
+-   **m\_pitch** は、カメラのピッチ (ビュー平面の x 軸を中心とする上下の回転) であり、単位はラジアンです。
+-   **m\_yaw** は、カメラのヨー (ビュー平面の y 軸を中心とする左右の回転) であり、単位はラジアンです。
 
-Now, let's define the fields that we use to store info about the status and position of our controllers. First, we'll define the fields we need for our touch-based move controller. (There's nothing special needed for the keyboard implementation of the move controller. We just read keyboard events with specific handlers.)
+次に、コントローラーの状態と位置に関する情報を格納するフィールドを定義してみましょう。 まず、タッチ ベースのムーブ コントローラーに必要なフィールドを定義します。 (ムーブ コントローラーのキーボード実装に関して特別必要なことはありません。 キーボードのイベントと具体的なハンドラーについては先ほど説明しました。)
 
--   **m\_moveInUse** indicates whether the move controller is in use.
--   **m\_movePointerID** is the unique ID for the current move pointer. We use it to differentiate between the look pointer and the move pointer when we check the pointer ID value.
--   **m\_moveFirstDown** is the point on the screen where the player first touched the move controller pointer area. We use this value later to set a dead zone to keep tiny movements from jittering the view.
--   **m\_movePointerPosition** is the point on the screen the player has currently moved the pointer to. We use it to determine what direction the player wanted to move by examining it relative to **m\_moveFirstDown**.
--   **m\_moveCommand** is the final computed command for the move controller: up (forward), down (back), left, or right.
+-   **m\_moveInUse** は、ムーブ コントローラーが使用中かどうかを示します。
+-   **m\_movePointerID** は、現在のムーブ ポインターの一意の ID です。 これは、ポインターの ID 値を確認するときにルック ポインターとムーブ ポインターを区別するために使います。
+-   **m\_moveFirstDown** は、プレイヤーがムーブ コントローラーのポインター領域で最初にタッチした画面上の点です。 この値は、小さな動きによってビューが不安定にならないようデッド ゾーンを設定するために後で使います。
+-   **m\_movePointerPosition** は、プレイヤーがポインターを現在動かしたばかりの画面上の点です。 これは、**m\_moveFirstDown** と比較して確認することで、プレイヤーが移動したい方向を判断するために使います。
+-   **m\_moveCommand** は、ムーブ コントローラーに対して計算された最終的なコマンドであり、up (前進)、down (後退)、left (左)、または right (右) です。
 
-Now, we define the fields we use for our look controller, both the mouse and touch implementations.
+次に、ルック コントローラーに使うフィールドを、マウス実装とタッチ実装の両方に対して定義します。
 
--   **m\_lookInUse** indicates whether the look control is in use.
--   **m\_lookPointerID** is the unique ID for the current look pointer. We use it to differentiate between the look pointer and the move pointer when we check the pointer ID value.
--   **m\_lookLastPoint** is the last point, in scene coordinates, that was captured in the previous frame.
--   **m\_lookLastDelta** is the computed difference between the current **m\_position** and **m\_lookLastPoint**.
+-   **m\_lookInUse** は、ルック コントロールが使用中かどうかを示します。
+-   **m\_lookPointerID** は、現在のルック ポインターの一意の ID です。 これは、ポインターの ID 値を確認するときにルック ポインターとムーブ ポインターを区別するために使います。
+-   **m\_lookLastPoint** は、シーンの座標内の、前のフレーム内でキャプチャされた最後の点です。
+-   **m\_lookLastDelta** は、現在の **m\_position** と **m\_lookLastPoint** との違いを計算した値です。
 
-Finally, we define 6 Boolean values for the 6 degrees of movement, which we use to indicate the current state of each directional move action (on or off):
+最後に、6 段階の動きに対して次の 6 つのブール値を定義します。これらの値は、それぞれの方向移動操作の現在の状態 (オンまたはオフ) を示すために使います。
 
--   **m\_forward**, **m\_back**, **m\_left**, **m\_right**, **m\_up** and **m\_down**.
+-   **m\_forward**、**m\_back**、**m\_left**、**m\_right**、**m\_up**、**m\_down**。
 
-We use the 6 event handlers to capture the input data we use to update the state of our controllers:
+これら 6 つのイベント ハンドラーを使って、次のコントローラーの状態を更新するための入力データをキャプチャします。
 
--   **OnPointerPressed**. The player pressed the left mouse button with the pointer in our game screen, or touched the screen.
--   **OnPointerMoved**. The player moved the mouse with the pointer in our game screen, or dragged the touch pointer on the screen.
--   **OnPointerReleased**. The player released the left mouse button with the pointer in our game screen, or stopped touching the screen.
--   **OnKeyDown**. The player pressed a key.
--   **OnKeyUp**. The player released a key.
+-   **OnPointerPressed**。 プレイヤーが、ポインターがゲーム画面にある状態でマウスの左ボタンを押したか、画面にタッチしました。
+-   **OnPointerMoved**。 プレイヤーが、ポインターがゲーム画面にある状態でマウスを動かしたか、画面上でタッチ ポインターをドラッグしました。
+-   **OnPointerReleased**。 プレイヤーが、ポインターがゲーム画面にある状態でマウスの左ボタンを離したか、画面から手を離しました。
+-   **OnKeyDown**。 プレイヤーがキーを押しました。
+-   **OnKeyUp**。 プレイヤーがキーを離しました。
 
-And finally, we use these methods and properties to initialize, access, and update the controllers' state info.
+最後に、次のメソッドとプロパティを使って、コントローラーの状態情報の初期化、アクセス、更新を行います。
 
--   **Initialize**. Our app calls this event handler to initialize the controls and attach them to the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) object that describes our display window.
--   **SetPosition**. Our app calls this method to set the (x, y, and z) coordinates of our controls in the scene space.
--   **SetOrientation**. Our app calls this method to set the pitch and yaw of the camera.
--   **get\_Position**. Our app accesses this property to get the current position of the camera in the scene space. You use this property as the method of communicating the current camera position to the app.
--   **get\_LookPoint**. Our app accesses this property to get the current point toward which the controller camera is facing.
--   **Update**. Reads the state of the move and look controllers and updates the camera position. You continually call this method from the app's main loop to refresh the camera controller data and the camera position in the scene space.
+-   **Initialize**。 Windows ストア アプリは、コントロールを初期化して、表示ウィンドウを定義する [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) オブジェクトにそれらのコントロールを適用するときに、このイベント ハンドラーを呼び出します。
+-   **SetPosition**。 Windows ストア アプリは、シーン空間内のコントロールの (x、y、z) 座標を設定するときに、このメソッドを呼び出します。
+-   **SetOrientation**。 Windows ストア アプリは、カメラのピッチとヨーを設定するときに、このメソッドを呼び出します。
+-   **get\_Position**。 Windows ストア アプリは、シーン空間内のカメラの現在の位置を取得するときに、このプロパティにアクセスします。 このプロパティは、カメラの現在の位置をアプリに伝える手段として使います。
+-   **get\_LookPoint**。 Windows ストア アプリは、現在コントローラーのカメラが向いている点を取得するときに、このプロパティにアクセスします。
+-   **Update**。 ムーブ コントローラーとルック コントローラーの状態を読み取り、カメラの位置を更新します。 このメソッドをアプリのメイン ループから継続的に呼び出して、カメラ コントローラーのデータとシーン空間内のカメラの位置を更新します。
 
-Now, you have here all the components you need to implement your move-look controls. So, let's connect these pieces together.
+これで、ムーブ/ルック コントロールの実装に必要なコンポーネントがすべて揃いました。 次は、これらのコンポーネントどうしを接続してみましょう。
 
-## Create the basic input events
+## 基本的な入力イベントを作成する
 
 
-The Windows Runtime event dispatcher provides 5 events we want instances of the **MoveLookController** class to handle:
+Windows ランタイムのイベント ディスパッチャーは、**MoveLookController** クラスのインスタンスで処理するイベントを 5 つ提供します。
 
 -   [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278)
 -   [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276)
@@ -190,11 +190,11 @@ The Windows Runtime event dispatcher provides 5 events we want instances of the 
 -   [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208271)
 -   [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208270)
 
-These events are implemented on the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) type. We assume that you have a **CoreWindow** object to work with. If you don't know how to obtain one, see [How to set up your Universal Windows Platform (UWP) C++ app to display a DirectX view](https://msdn.microsoft.com/library/windows/apps/hh465077).
+これらのイベントは、[**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 型に実装されています。 ここでは、操作する **CoreWindow** オブジェクトが既にあると想定しています。 取得方法が不明な場合は、「[ユニバーサル Windows プラットフォーム (UWP) C++ アプリで DirectX ビューを表示するための設定方法](https://msdn.microsoft.com/library/windows/apps/hh465077)」をご覧ください。
 
-As these events fire while our app is running, the handlers update the controllers' state info defined in our private fields.
+これらのイベントは Windows ストア アプリの実行中に起動するため、ハンドラーはプライベート フィールドに定義されているコントローラーの状態情報を更新します。
 
-First, let's populate the mouse and touch pointer event handlers. In the first event handler, **OnPointerPressed()**, we get the x-y coordinates of the pointer from the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) that manages our display when the user clicks the mouse or touches the screen in the look controller region.
+まず、マウス ポインターとタッチ ポインターのイベント ハンドラーを設定します。 最初のイベント ハンドラーである **OnPointerPressed()** では、ユーザーがルック コントローラー領域でマウスをクリックまたは画面をタッチすると、表示を管理する [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) からポインターの x-y 座標を取得します。
 
 **OnPointerPressed**
 
@@ -243,9 +243,9 @@ _In_ PointerEventArgs^ args)
 }
 ```
 
-This event handler checks whether the pointer is not the mouse (for the purposes of this sample, which supports both mouse and touch) and if it is in the move controller area. If both criteria are true, it checks whether the pointer was just pressed, specifically, whether this click is unrelated to a previous move or look input, by testing if **m\_moveInUse** is false. If so, the handler captures the point in the move controller area where the press happened and sets **m\_moveInUse** to true, so that when this handler is called again, it won't overwrite the start position of the move controller input interaction. It also updates the move controller pointer ID to the current pointer's ID.
+このイベント ハンドラーは、ポインターがマウスでないかどうか (このサンプルではマウスとタッチの両方をサポートするため) と、ムーブ コントローラー領域内にあるかどうかを確認します。 両方の条件が true の場合は、**m\_moveInUse** が false かどうかをテストして、ポインターが押されたばかりかどうか、具体的には、このクリックが前のムーブ入力またはルック入力に無関係かどうかを確認します。 無関係な場合、ハンドラーはムーブ コントローラー領域で押し操作が発生した点をキャプチャして **m\_moveInUse** を true に設定し、このハンドラーが再び呼び出されたときにムーブ コントローラーの入力操作の開始位置が上書きされないようにします。 さらに、ムーブ コントローラーのポインター ID を現在のポインターの ID に更新します。
 
-If the pointer is the mouse or if the touch pointer isn't in the move controller area, it must be in the look controller area. It sets **m\_lookLastPoint** to the current position where the user pressed the mouse button or touched and pressed, resets the delta, and updates the look controller's pointer ID to the current pointer ID. It also sets the state of the look controller to active.
+ポインターがマウスの場合、またはタッチ ポインターがムーブ コントローラー領域内にない場合は、ルック コントローラー領域内にある必要があります。 このハンドラーは、ユーザーがマウスのボタンを押した、またはタッチして押した現在の場所に **m\_lookLastPoint** を設定し、差分をリセットして、ルック コントローラーのポインター ID を現在のポインターの ID に更新します。 また、ルック コントローラーの状態をアクティブに設定します。
 
 **OnPointerMoved**
 
@@ -289,13 +289,13 @@ void MoveLookController::OnPointerMoved(
 }
 ```
 
-The **OnPointerMoved** event handler fires whenever the pointer moves (in this case, if a touch screen pointer is being dragged, or if the mouse pointer is being moved while the left button is pressed). If the pointer ID is the same as the move controller pointer's ID, then it's the move pointer; otherwise, we check if it's the look controller that's the active pointer.
+**OnPointerMoved** イベント ハンドラーは、ポインターが動くたび起動します (この場合、タッチ スクリーンのポインターがドラッグされているとき、またはマウスの左ボタンを押しながらマウス ポインターが動かされているとき)。 ポインター ID がムーブ コントローラーのポインターの ID と同じ場合は、ムーブ ポインターになります。違う場合は、アクティブなポインターであるルック コントローラーかどうかを確認します。
 
-If it's the move controller, we just update the pointer position. We keep updating it as long the [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) event keeps firing, because we want to compare the final position with the first one we captured with the **OnPointerPressed** event handler.
+ムーブ コントローラーの場合は、単にポインターの位置を更新します。 **OnPointerPressed** イベント ハンドラーでキャプチャした最初の位置と最後の位置を比較するため、[**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) イベントが起動を続ける限りポインターの位置を更新し続けます。
 
-If it's the look controller, things are a little more complicated. We need to calculate a new look point and center the camera on it, so we calculate the delta between the last look point and the current screen position, and then we multiply versus our scale factor, which we can tweak to make the look movements smaller or larger relative to the distance of the screen movement. Using that value, we calculate the pitch and the yaw.
+ルック コントローラーの場合は、やや複雑になります。 新しい視点を計算してカメラの中心をそこに合わせ、前の視点と現在の画面の位置との差分を計算する必要があります。その後、倍率を乗算します。倍率を調整すると、画面移動の距離に比例して動きが小さくまたは大きく見えるようにすることができます。 その値を使って、ピッチとヨーを計算します。
 
-Finally, we need to deactivate the move or look controller behaviors when the player stops moving the mouse or touching the screen. We use **OnPointerReleased**, which we call when [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) is fired, to set **m\_moveInUse** or **m\_lookInUse** to FALSE and turn off the camera pan movement, and to zero out the pointer ID.
+最後に、プレイヤーがマウスの移動を停止したとき、または画面から手を離したときに、ムーブ コントローラーまたはルック コントローラーの動作を非アクティブにする必要があります。 **m\_moveInUse** または **m\_lookInUse** を FALSE に設定してカメラのパン移動をオフにし、ポインター ID をゼロにするには、[**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) の起動時に呼び出す **OnPointerReleased** を使います。
 
 **OnPointerReleased**
 
@@ -321,7 +321,7 @@ _In_ PointerEventArgs ^args)
 }
 ```
 
-So far, we handled all the touch screen events. Now, let's handle the key input events for a keyboard-based move controller.
+今まで処理したのは、すべてタッチ スクリーン イベントでした。 次は、キーボード ベースのムーブ コントローラー用のキー入力イベントを処理しましょう。
 
 **OnKeyDown**
 
@@ -345,7 +345,7 @@ void MoveLookController::OnKeyDown(
 }
 ```
 
-As long as one of these keys is pressed, this event handler sets the corresponding directional move state to true.
+これらのキーのいずれかが押されている限り、このイベント ハンドラーは対応する方向移動状態を true に設定します。
 
 **OnKeyUp**
 
@@ -369,12 +369,12 @@ void MoveLookController::OnKeyUp(
 }
 ```
 
-And when the key is released, this event handler sets it back to false. When we call **Update**, it checks these directional move states, and move the camera accordingly. This is a bit simpler than the touch implementation!
+キーが離されると、状態を false にリセットします。 **Update** を呼び出すと、これらの方向移動状態が確認され、それに従ってカメラが動きます。 これは、タッチ実装より少し簡単です。
 
-## Initialize the touch controls and the controller state
+## タッチ コントロールとコントローラーの状態の初期化
 
 
-Let's hook up the events now, and initialize all the controller state fields.
+次は、イベントをフックして、コントローラー状態の全フィールドを初期化しましょう。
 
 **Initialize**
 
@@ -416,12 +416,12 @@ void MoveLookController::Initialize( _In_ CoreWindow^ window )
 }
 ```
 
-**Initialize** takes a reference to the app's [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) instance as a parameter and registers the event handlers we developed to the appropriate events on that **CoreWindow**. It initializes the move and look pointer's IDs, sets the command vector for our touch screen move controller implementation to zero, and sets the camera looking straight ahead when the app starts.
+**Initialize** は、アプリの [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) インスタンスへの参照をパラメーターとして使い、先ほど作成したイベント ハンドラーをその **CoreWindow** の適切なイベントに登録します。 このハンドラーは、ムーブ ポインターとルック ポインターの ID を初期化し、タッチ スクリーンのムーブ コントローラー実装用のコマンド ベクターをゼロに設定して、アプリの起動時にカメラが正面を向くように設定します。
 
-## Getting and setting the position and orientation of the camera
+## カメラの位置と向きの取得と設定
 
 
-Let's define some methods to get and set the position of the camera with respect to the viewport.
+ビューポートに対してカメラの位置の取得と設定を行うメソッドをいくつか定義してみましょう。
 
 ```cpp
 void MoveLookController::SetPosition( _In_ DirectX::XMFLOAT3 pos )
@@ -459,10 +459,10 @@ DirectX::XMFLOAT3 MoveLookController::get_LookPoint()
 }
 ```
 
-## Updating the controller state info
+## コントローラーの状態情報の更新
 
 
-Now, we perform our calculations that convert the pointer coordinate info tracked in **m\_movePointerPosition** into new coordinate information respective of our world coordinate system. Our app calls this method every time we refresh the main app loop. So, it is here that we compute the new look point position info we want to pass to the app for updating the view matrix before projection into the viewport.
+次は、**m\_movePointerPosition** で追跡したポインターの座標情報を、ワールド座標系における新しい座標情報に変換する計算を実行します。 Windows ストア アプリは、アプリのメイン ループが更新されるたびに、このメソッドを呼び出します。 このため、ビュー マトリックスをビューポートへのプロジェクションの前に更新するためにアプリに渡す新しい視点位置情報は、ここで計算します。
 
 ```cpp
 void MoveLookController::Update(CoreWindow ^window)
@@ -545,16 +545,16 @@ void MoveLookController::Update(CoreWindow ^window)
 }
 ```
 
-Because we don't want jittery movement when the player uses our touch-based move controller, we set a virtual dead zone around the pointer with a diameter of 32 pixels. We also add velocity, which is the command value plus a movement gain rate. (You can adjust this behavior to your liking, to slow down or speed up the rate of movement based on the distance the pointer moves in the move controller area.)
+プレイヤーがタッチ ベースのムーブ コントローラーを使う場合に動きが不安定にならないように、ポインターの周りに直径 32 ピクセルの仮想デッド ゾーンを設定します。 また、コマンド値に移動ゲイン速度を加えた速度も追加します (この動作は、ポインターがムーブ コントローラー領域内で動く距離に基づいて移動速度を低下または上昇させることができるように、任意に調整できます。)
 
-When we compute the velocity, we also translate the coordinates received from the move and look controllers into the movement of the actual look point we send to the method that computes our view matrix for the scene. First, we invert the x coordinate, because if we click-move or drag left or right with the look controller, the look point rotates in the opposite direction in the scene, as a camera might swing about its central axis. Then, we swap the y and z axes, because an up/down key press or touch drag motion (read as a y-axis behavior) on the move controller should translate into a camera action that moves the look point into or out of the screen (the z-axis).
+速度を計算するときは、さらに、ムーブ コントローラーとルック コントローラーから受け取った座標を、シーンのビュー マトリックスを計算するメソッドに送信する実際の視点の動きに変換します。 まず、x 座標を反転します。これは、ルック コントローラーで、クリックしてから左または右方向への移動またはドラッグを行うと、カメラがその中心軸の周囲でスイングするように視点がシーン内で反対方向に回転するためです。 次に、y 軸と z 軸を入れ替えます。これは、ムーブ コントローラーで、上/下方向キーを押す、またはタッチ ドラッグ動作 (y 軸動作として読み取られます) を行うと、視点を画面 (z 軸) の中に、または外へ動かすカメラ操作が行われるためです。
 
-The final position of the look point for the player is the last position plus the calculated velocity, and this is what is read by the renderer when it calls the **get\_Position** method (most likely during the setup for each frame). After that, we reset the move command to zero.
+プレイヤーの視点の最後の位置は、計算された速度を最後の位置に加えたものであり、この位置は、レンダラーが **get\_Position** メソッドを呼び出すときにレンダラーが読み取ります (通常は各フレームのセットアップ中)。 その後、移動コマンドをゼロにリセットします。
 
-## Updating the view matrix with the new camera position
+## カメラの新しい位置によるビュー マトリックスの更新
 
 
-We can obtain a scene space coordinate that our camera is focused on, and which is updated whenever you tell your app to do so (every 60 seconds in the main app loop, for example). This pseudocode suggests the calling behavior you can implement:
+カメラのフォーカスが合っているシーン空間の座標を取得できます。この座標は、アプリに指定した時間ごとに更新されます (たとえばアプリのメイン ループでは 60 秒ごと)。 次の疑似コードは、実装できる呼び出し動作を示しています。
 
 ```cpp
 myMoveLookController->Update( m_window );   
@@ -567,10 +567,10 @@ myFirstPersonCamera->SetViewParameters(
                  ); 
 ```
 
-Congratulations! You've implemented basic move-look controls for both touch screens and keyboard/mouse input touch controls in your game!
+これで、 タッチ スクリーン用とキーボード/マウス用の入力タッチ コントロールの両方の基本的なムーブ/ルック コントロールがゲームで実装されました。
 
-> **Note**  
-This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **注:**  
+この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
  
 

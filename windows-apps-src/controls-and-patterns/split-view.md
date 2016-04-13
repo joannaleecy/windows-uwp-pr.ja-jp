@@ -1,59 +1,59 @@
 ---
-title: Split view
+title: 分割ビュー
 ms.assetid: E9E4537F-1160-4183-9A83-26602FCFDC9A
-description: A split view control has an expandable/collapsible pane and a content area.
-label: Split view
+description: 分割ビュー コントロールには、展開/折りたたみ可能なウィンドウとコンテンツ領域があります。
+label: 分割ビュー
 template: detail.hbs
 ---
 
-# Guidelines for the split view control
+# 分割ビュー コントロールのガイドライン
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-**Important APIs**
+**重要な API**
 
--   [**SplitView class (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn864360)
--   [**SplitView object (HTML)**](https://msdn.microsoft.com/library/windows/apps/dn919970)
+-   [**SplitView クラス (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn864360)
+-   [**SplitView オブジェクト (HTML)**](https://msdn.microsoft.com/library/windows/apps/dn919970)
 
-A split view control has an expandable/collapsible pane and a content area. The content area is always visible. The pane can expand and collapse or remain in an open state, and can present itself from either the left side or right side of an app window. The pane has three modes:
+分割ビュー コントロールには、展開/折りたたみ可能なウィンドウとコンテンツ領域があります。 コンテンツ領域は常に表示されます。 ウィンドウは展開/折りたたみを行うことも、開いた状態のままにすることもでき、アプリ ウィンドウの右側または左側から表示できます。 このウィンドウには 3 つのモードがあります。
 
--   **Overlay**
+-   **オーバーレイ**
 
-    The pane is hidden until opened. When open, the pane overlays the content area.
+    ウィンドウは開くまで表示されません。 開くと、ウィンドウはコンテンツ領域をオーバーレイします。
 
--   **Inline**
+-   **インライン**
 
-    The pane is always visible and doesn't overlay the content area. The pane and content areas divide the available screen real estate.
+    ウィンドウは常に表示され、コンテンツ領域をオーバーレイしません。 画面領域はウィンドウとコンテンツ領域に分割されます。
 
--   **Compact**
+-   **コンパクト**
 
-    The pane is always visible in this mode, which is just wide enough to show icons (usually 48 epx wide). The pane and the content area divide the available screen real estate. Although the standard compact mode doesn't overlay the content area, it can transform to a wider pane to show more content which will overlay the content area.
+    このモードでは、ウィンドウは常にアイコンを表示できるだけの大きさ (通常は幅 48 epx) で表示されます。 画面領域はウィンドウとコンテンツ領域に分割されます。 標準的なコンパクト モードはコンテンツ領域をオーバーレイしませんが、より多くのコンテンツを表示するより大きなウィンドウに変換でき、コンテンツ領域をオーバーレイします。
 
-## <span id="Is_this_the_right_control_"></span><span id="is_this_the_right_control_"></span><span id="IS_THIS_THE_RIGHT_CONTROL_"></span>Is this the right control?
-
-
-The split view control can be used to make a [nav pane pattern](nav-pane.md). To build this pattern, add an expand/collapse button (the "hamburger" button) and a list view need to the split view control.
-
-## <span id="Examples"></span><span id="examples"></span><span id="EXAMPLES"></span>Examples
+## <span id="Is_this_the_right_control_"></span><span id="is_this_the_right_control_"></span><span id="IS_THIS_THE_RIGHT_CONTROL_"></span>適切なコントロールの選択
 
 
-The split view control in its default form is a basic container. With a button and a list view added, the split view control is ready as a navigation menu. Here are examples of the split view as a navigation menu, in expanded and compact modes.
+分割ビュー コントロールは、[ナビゲーション ウィンドウ パターン](nav-pane.md)の作成に使うことができます。 このパターンを構築するには、展開/折りたたみボタン ("ハンバーガー" ボタン) とリスト ビューを分割ビュー コントロールに追加する必要があります。
 
-![an example of a split view menu in overlay mode and compact mode](images/controls-splitview-menu01.png)
-## <span id="Recommendations"></span><span id="recommendations"></span><span id="RECOMMENDATIONS"></span>Recommendations
-
-
--   When using split view for a navigation menu, we recommend placing in the pane navigation controls that allow access to other areas of the app. Using the pane for navigation provides a consistent user experience. In addition, this menu implementation can help familiarize users to all parts of an app, provide quick access to the app's home page, and can encourage users to explore more areas of the app.
-
-\[This article contains information that is specific to Universal Windows Platform (UWP) apps and Windows 10. For Windows 8.1 guidance, please download the [Windows 8.1 guidelines PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
-
-## <span id="related_topics"></span>Related topics
+## <span id="Examples"></span><span id="examples"></span><span id="EXAMPLES"></span>例
 
 
-* [Nav pane pattern](nav-pane.md)
-* [List view](lists.md)
+既定の形式の分割ビュー コントロールは、基本的なコンテナーです。 ボタンとリスト ビューを追加すると、分割ビュー コントロールをナビゲーション メニューとして使うことができるようになります。 ナビゲーション メニューとしての分割ビューの例を次に示します (展開モードとコンパクト モード)。
+
+![オーバーレイ モードとコンパクト モードでの分割ビュー メニューの例](images/controls-splitview-menu01.png)
+## <span id="Recommendations"></span><span id="recommendations"></span><span id="RECOMMENDATIONS"></span>推奨事項
+
+
+-   ナビゲーション メニューの分割ビューを使う場合、アプリの別の領域にアクセスできるようにするためのナビゲーション コントロールをウィンドウ内に配置することをお勧めします。 ナビゲーションにウィンドウを使うことで、一貫したユーザー エクスペリエンスを提供できます。 このメニューを実装すると、ユーザーはアプリのすべての部分の使い方を習得することができ、アプリのホーム ページにすばやくアクセスできるようになります。また、アプリのさまざまな領域を探索するようにユーザーを促すこともできます。
+
+\[この記事には、ユニバーサル Windows プラットフォーム (UWP) アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
+
+## <span id="related_topics"></span>関連トピック
+
+
+* [ナビゲーション ウィンドウ パターン](nav-pane.md)
+* [リスト ビュー](lists.md)
  
 
  

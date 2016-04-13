@@ -1,30 +1,30 @@
 ---
 Description: TODO
-title: Gamepad and remote control interactions
+title: ゲームパッドとリモコンの操作
 ms.assetid: 784a08dc-2736-4bd3-bea0-08da16b1bd47
 label: Gamepad and remote interactions
 template: detail.hbs
 isNew: true
 ---
 
-# Gamepad and remote control interactions
+# ゲームパッドとリモコンの操作
 
-Universal Windows Platform (UWP) apps now support gamepad and remote control input. 
-Gamepads and remote controls are the primary input devices for Xbox and TV experiences. 
-UWP apps should be optimized for these input device types, just like they are for keyboard and mouse input on a PC, and touch input on a phone or tablet. 
-Making sure that your app works well with these input devices is the most important step when optimizing for Xbox and the TV.
-You can now plug in and use the gamepad with UWP apps on PC which makes validating the work easy.
+ユニバーサル Windows プラットフォーム (UWP) アプリでは、ゲームパッドとリモコンの入力がサポートされます。 
+ゲームパッドとリモコンは、Xbox とテレビのエクスペリエンスのための主要な入力デバイスです。 
+UWP アプリはこれらの入力デバイスに最適化される必要があります。これは PC ではキーボードとマウスに最適化し、スマートフォンやタブレットではタッチ入力に最適化することと同様です。 
+Xbox とテレビに最適化する場合には、アプリがこれらの入力デバイスで十分に機能することを確認することが最も重要なステップです。
+PC 上の UWP アプリで、ゲームパッドをプラグインして使用できます。これにより検証が容易に行えます。
 
-To ensure a successful and enjoyable user experience for your UWP app when using a gamepad or remote control, you should consider the following:
+UWP アプリでのゲームパッドやリモコンを使ったユーザー エクスペリエンスが十分に満足の行くものであることを確認するには、次のことを考慮します。
 
-* [Hardware buttons](designing-for-tv.md#hardware-buttons) -
-The gamepad and remote provide very different buttons and configurations.
+* [ハードウェア ボタン](designing-for-tv.md#hardware-buttons) -
+ゲームパッドとリモコンは異なるボタンと構成を提供します。
 
-* [XY focus navigation and interaction](designing-for-tv.md#xy-focus-navigation-and-interaction) -
-XY focus navigation enables the user to navigate around your app's UI.
+* [XY フォーカス ナビゲーションと操作](designing-for-tv.md#xy-focus-navigation-and-interaction) -
+ユーザーは XY フォーカス ナビゲーションを使用して、アプリの UI を移動できます。
 
-* [Mouse mode](designing-for-tv.md#mouse-mode) -
-Mouse mode lets your app emulate a mouse experience when XY focus navigation isn't sufficient.
+* [マウス モード](designing-for-tv.md#mouse-mode) -
+マウス モードは、XY フォーカス ナビゲーションでは十分でないときに、アプリでマウスのエクスペリエンスをエミュレートします。
 
 
 <!--HONumber=Mar16_HO5-->

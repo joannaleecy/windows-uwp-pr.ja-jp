@@ -66,7 +66,7 @@ ms.assetid: 18FF1104-1F73-47E1-9C7B-E2AA036C18ED
             **PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543)、[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)、または [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) で登録されたバックグラウンド タスクを組み込み、このタスクをアプリ マニフェストで宣言します。 エントリ ポイントとトリガーの種類が正しいことを確認します。 これは、認定の際に必要になります。これにより、ユーザーはロック画面にアプリを配置することができます。
 
 **注:**  
-この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、「[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください。
+この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
  
 

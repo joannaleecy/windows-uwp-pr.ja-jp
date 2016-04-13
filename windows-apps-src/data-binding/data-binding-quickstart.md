@@ -1,32 +1,32 @@
 ---
 ms.assetid: A9D54DEC-CD1B-4043-ADE4-32CD4977D1BF
-title: Data binding overview
-description: This topic shows you how to bind a control (or other UI element) to a single item or bind an items control to a collection of items in a Universal Windows Platform (UWP) app.
+title: データ バインディングの概要
+description: このトピックでは、ユニバーサル Windows プラットフォーム (UWP) アプリで、コントロール (または他の UI 要素) を単一の項目にバインドする方法や、項目コントロールを項目のコレクションにバインドする方法を説明します。
 ---
-Data binding overview
+データ バインディングの概要
 =====================
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-This topic shows you how to bind a control (or other UI element) to a single item or bind an items control to a collection of items in a Universal Windows Platform (UWP) app. In addition, we show how to control the rendering of items, implement a details view based on a selection, and convert data for display. For more detailed info, see [Data binding in depth](data-binding-in-depth.md).
+このトピックでは、ユニバーサル Windows プラットフォーム (UWP) アプリで、コントロール (または他の UI 要素) を単一の項目にバインドする方法や、項目コントロールを項目のコレクションにバインドする方法を説明します。 また、項目のレンダリングを制御する方法、選択内容に基づいて詳細ビューを実装する方法、表示するデータを変換する方法も紹介します。 詳しくは、「[データ バインディングの詳細](data-binding-in-depth.md)」をご覧ください。
 
-Prerequisites
+前提条件
 -------------------------------------------------------------------------------------------------------------
 
-This topic assumes that you know how to create a basic UWP app. For instructions on creating your first UWP app, see [Create your first UWP app using C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/Hh974581).
+このトピックでは、基本的な UWP アプリを作成できることを前提としています。 初めて UWP アプリを作る場合の手順については、「[C# または Visual Basic を使った初めての UWP アプリの作成](https://msdn.microsoft.com/library/windows/apps/Hh974581)」をご覧ください。
 
-Create the project
+プロジェクトの作成
 ---------------------------------------------------------------------------------------------------------------------------------
 
-Create a new **Blank Application (Windows Universal)** project. Name it "Quickstart".
+最初に、**"新しいアプリケーション (Windows ユニバーサル)"** プロジェクトを新規作成します。 プロジェクトに "Quickstart" という名前を付けます。
 
-Binding to a single item
+単一の項目へのバインド
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Every binding consists of a binding target and a binding source. Typically, the target is a property of a control or other UI element, and the source is a property of a class instance (a data model, or a view model). This example shows how to bind a control to a single item. The target is the **Text** property of a **TextBlock**. The source is an instance of a simple class named **Recording** that represents an audio recording. Let's look at the class first.
+すべてのバインディングにはバインディング ターゲットとバインディング ソースがあります。 通常、ターゲットはコントロールまたは他の UI 要素のプロパティであり、ソースはクラス インスタンス (データ モデルやビュー モデル) のプロパティです。 コントロールを単一の項目にバインドする例を次に示します。 ターゲットは **TextBlock** の **Text** プロパティです。 ソースは、オーディオの録音を表す **Recording** という名前の単純なクラスのインスタンスです。 まずクラスを見てみましょう。
 
-Add a new class to your project, name it Recording.cs (if you're using C#), and add this code to it.
+プロジェクトに新しいクラスを追加して Recording.cs (C# を使用している場合) という名前を付け、次のコードを追加します。
 
 ``` csharp
 namespace Quickstart
@@ -134,7 +134,7 @@ namespace Quickstart
 }
 ```
 
-Next, expose the binding source class from the class that represents your page of markup. We do that by adding a property of type **RecordingViewModel** to **MainPage**.
+次に、マークアップのページを表すクラスからバインディング ソース クラスを公開します。 これを行うには、**RecordingViewModel** 型のプロパティを **MainPage** に追加します。
 
 ``` csharp
 namespace Quickstart
@@ -175,7 +175,7 @@ namespace Quickstart
 }
 ```
 
-The last piece is to bind a **TextBlock** to the **ViewModel.DefaultRecording.OneLiner** property.
+最後の部分では、**TextBlock** を **ViewModel.DefaultRecording.OneLiner** プロパティにバインドします。
 
 ``` xml
 <Page x:Class="Quickstart.MainPage" ... >
@@ -187,16 +187,16 @@ The last piece is to bind a **TextBlock** to the **ViewModel.DefaultRecording.On
 </Page>
 ```
 
-Here's the result.
+結果は次のようになります。
 
-![Binding a textblock](images/xaml-databinding0.png)
+![テキストブロックのバインド](images/xaml-databinding0.png)
 
-Binding to a collection of items
+項目のコレクションへのバインド
 ------------------------------------------------------------------------------------------------------------------
 
-A common scenario is to bind to a collection of business objects. In C# and Visual Basic, the generic [**ObservableCollection&lt;T&gt;**](T:System.Collections.ObjectModel.ObservableCollection%601) class is a good collection choice for data binding, because it implements the [**INotifyPropertyChanged**](T:System.ComponentModel.INotifyPropertyChanged) and [**INotifyCollectionChanged**](T:System.Collections.Specialized.INotifyCollectionChanged) interfaces. These interfaces provide change notification to bindings when items are added or removed or a property of the list itself changes. If you want your bound controls to update with changes to properties of objects in the collection, the business object should also implement **INotifyPropertyChanged**. For more info, see [Data binding in depth](data-binding-in-depth.md).
+一般的なシナリオでは、ビジネス オブジェクトのコレクションにバインドします。 C# と Visual Basic では、データ バインディングのコレクションには汎用の [**ObservableCollection&lt;T&gt;**](T:System.Collections.ObjectModel.ObservableCollection%601) クラスが適しています。このクラスは [**INotifyPropertyChanged**](T:System.ComponentModel.INotifyPropertyChanged) インターフェイスと [**INotifyCollectionChanged**](T:System.Collections.Specialized.INotifyCollectionChanged) インターフェイスを実装するためです。 これらのインターフェイスは、項目が追加または変更された場合や一覧自体のプロパティが変更された場合に、バインディングに変更を通知します。 コレクション内のオブジェクトのプロパティの変更をバインドされたコントロールに反映する場合は、ビジネス オブジェクトでも **INotifyPropertyChanged** を実装します。 詳しくは、「[データ バインディングの詳細](data-binding-in-depth.md)」をご覧ください。
 
-This next example binds a [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) to a collection of `Recording` objects. Let's start by adding the collection to our view model. Just add these new members to the **RecordingViewModel** class.
+次の例では、[**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) を `Recording` オブジェクトのコレクションにバインドしています。 最初に、ビュー モデルにコレクションを追加します。 これらの新しいメンバーを **RecordingViewModel** クラスに追加します。
 
 ``` csharp
     public class RecordingViewModel
@@ -279,11 +279,11 @@ And then bind a [**ListView**](https://msdn.microsoft.com/library/windows/apps/B
 </Page>
 ```
 
-We haven't yet provided a data template for the **Recording** class, so the best the UI framework can do is to call [**ToString**](M:System.Object.ToString) for each item in the [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878). The default implementation of **ToString** is to return the type name.
+まだ **Recording** クラスのデータ テンプレートを用意していないため、UI フレームワークで [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) の各項目について [**ToString**](M:System.Object.ToString) を呼び出します。 **ToString** の既定の実装は、型名を返すことです。
 
-![Binding a list view](images/xaml-databinding1.png)
+![一覧ビューのバインド](images/xaml-databinding1.png)
 
-To remedy this we can either override [**ToString**](M:System.Object.ToString) to return the value of **OneLineSummary**, or we can provide a data template. The data template option is more common and arguably more flexible. You specify a data template by using the [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209369) property of a content control or the [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242830) property of an items control. Here are two ways we could design a data template for **Recording** together with an illustration of the result.
+これを修正するには、**OneLineSummary** の値を返すように [**ToString**](M:System.Object.ToString) をオーバーライドするか、データ テンプレートを用意します。 データ テンプレートを使う方法は、より一般的であり、間違いなくより柔軟です。 データ テンプレートを指定するには、コンテンツ コントロールの [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209369) プロパティか、項目コントロールの [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242830) プロパティを使います。 **Recording** のデータ テンプレートをデザインするための 2 つの方法と結果の図を以下に示します。
 
 ``` xml
     <ListView ItemsSource="{x:Bind ViewModel.Recordings}"
@@ -315,20 +315,21 @@ To remedy this we can either override [**ToString**](M:System.Object.ToString) t
     </ListView>
 ```
 
-![Binding a list view](images/xaml-databinding3.png)
+![一覧ビューのバインド](images/xaml-databinding3.png)
 
-For more information about XAML syntax, see [Create a UI with XAML](https://msdn.microsoft.com/library/windows/apps/Mt228349). For more information about control layout, see [Define layouts with XAML](https://msdn.microsoft.com/library/windows/apps/Mt228350).
+XAML 構文について詳しくは、「[XAML を使った UI の作成](https://msdn.microsoft.com/library/windows/apps/Mt228349)」をご覧ください。 コントロール レイアウトについて詳しくは、「[XAML を使ったレイアウトの定義](https://msdn.microsoft.com/library/windows/apps/Mt228350)」をご覧ください。
 
-Adding a details view
+詳細ビューの追加
 -----------------------------------------------------------------------------------------------------
 
-You can choose to display all the details of **Recording** objects in [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) items. But that takes up a lot of space. Instead, you can show just enough data in the item to identify it and then, when the user makes a selection, you can display all the details of the selected item in a separate piece of UI known as the details view. This arrangement is also known as a master/details view, or a list/details view.
+[
+            **ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) 項目内の **Recording** オブジェクトの詳細をすべて表示することを選択できます。 ただし、多くの領域が占有されます。 代わりに、項目を識別するのに十分な項目内のデータのみを表示し、ユーザーが選択を行ったら、選択された項目のすべての詳細を、詳細ビューと呼ばれる独立した UI に表示できます。 この配置は、マスター/詳細ビューまたはリスト/詳細ビューとも呼ばれます。
 
-There are two ways to go about this. You can bind the details view to the [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) property of the [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878). Or you can use a [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833): bind both the **ListView** and the details view to the **CollectionViewSource** (which will take care of the currently-selected item for you). Both techniques are shown below, and they both give the same results shown in the illustration.
+これには 2 つの方法があります。 詳細ビューを、[**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) の [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) プロパティにバインドできます。 または [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) を使うこともできます。**ListView** と詳細ビューの両方を **CollectionViewSource** にバインドします (現在選択されている項目が処理されます)。 両方の手法を以下に示します。図のように、いずれも結果は同じになります。
 
-**Note**  So far in this topic we've only used the [{x:Bind} markup extension](https://msdn.microsoft.com/library/windows/apps/Mt204783), but both of the techniques we'll show below require the more flexible (but less performant) [{Binding} markup extension](https://msdn.microsoft.com/library/windows/apps/Mt204782).
+**注**  このトピックでは、これまで [{x:Bind} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204783)のみを使ってきましたが、以下に示す 2 つの手法ではより柔軟な (ただし効率は低下する) [{Binding} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204782)が必要です。
 
-First, here's the [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) technique. If you're using Visual C++ component extensions (C++/CX) then, because we'll be using [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782), you'll need to add the [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) attribute to the **Recording** class.
+まず、[**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) の手法を示します。 Visual C++ コンポーネント拡張機能 (C++/CX) を使用している場合、ここでは [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) を使用するため、[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) 属性を **Recording** クラスに追加する必要があります。
 
 ``` cpp
     [Windows::UI::Xaml::Data::Bindable]
@@ -338,7 +339,7 @@ First, here's the [**SelectedItem**](https://msdn.microsoft.com/library/windows/
     };
 ```
 
-The only other change necessary is to the markup.
+必要なもう 1 つの変更はマークアップに対する変更のみです。
 
 ``` xml
 <Page x:Class="Quickstart.MainPage" ... >
@@ -367,7 +368,8 @@ The only other change necessary is to the markup.
 </Page>
 ```
 
-For the [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) technique, first add a **CollectionViewSource** as a page resource.
+[
+            **CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) の手法では、最初にページ リソースとして **CollectionViewSource** を追加します。
 
 ``` xml
     <Page.Resources>
@@ -375,7 +377,7 @@ For the [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/ap
     </Page.Resources>
 ```
 
-And then adjust the bindings on the [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) (which no longer needs to be named) and on the details view to use the [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833). Note that by binding the details view directly to the **CollectionViewSource**, you're implying that you want to bind to the current item in bindings where the path cannot be found on the collection itself. There's no need to specify the **CurrentItem** property as the path for the binding, although you can do that if there's any ambiguity).
+次に、[**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) (名前を付ける必要はない) と詳細ビューで、[**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) を使うようにバインディングを調整します。 詳細ビューを **CollectionViewSource** に直接バインドすることによって、コレクション自体ではパスが見つからない、バインディング内の現在の項目にバインドすることを意味します。 バインディングのパスとして **CurrentItem** プロパティを指定する必要はありませんが、あいまいさがある場合は指定することもできます。
 
 ``` xml
     ...
@@ -388,16 +390,16 @@ And then adjust the bindings on the [**ListView**](https://msdn.microsoft.com/li
     ...
 ```
 
-And here's the identical result in each case.
+次のように、いずれの場合も結果は同じです。
 
-![Binding a list view](images/xaml-databinding4.png)
+![一覧ビューのバインド](images/xaml-databinding4.png)
 
-Formatting or converting data values for display
+表示のためのデータ値の書式設定と変換
 --------------------------------------------------------------------------------------------------------------------------------------------
 
-There is one small issue with the rendering above. The **ReleaseDateTime** property is not just a date, it's a [**DateTime**](T:System.DateTime), so it's being displayed with more precision than we need. One solution is to add a string property to the **Recording** class that returns `this.ReleaseDateTime.ToString("d")`. Naming that property **ReleaseDate** would indicate that it returns a date, not a date-and-time. Naming it **ReleaseDateAsString** would further indicate that it returns a string.
+前のレンダリングには、小さな問題が 1 つあります。 **ReleaseDateTime** プロパティは日付だけではなく、[**DateTime**](T:System.DateTime) であるため、必要以上の精度で表示されています。 解決策の 1 つは、`this.ReleaseDateTime.ToString("d")` を返す **Recording** クラスに文字列プロパティを追加することです。 プロパティに **ReleaseDate** という名前を付けると、日付と時刻ではなく、日付が返されることを示します。 **ReleaseDateAsString** という名前を付けると、さらに文字列が返されることを示します。
 
-A more flexible solution is to use something known as a value converter. Here's an example of how to author your own value converter. Add this code to your Recording.cs source code file.
+より柔軟な解決策は、値コンバーターと呼ばれるものを使うことです。 独自の値コンバーターを作成する方法の例を示します。 次のコードを Recording.cs ソース コード ファイルに追加します。
 
 ``` csharp
 public class StringFormatter : Windows.UI.Xaml.Data.IValueConverter
@@ -428,7 +430,7 @@ public class StringFormatter : Windows.UI.Xaml.Data.IValueConverter
 }
 ```
 
-Now we can add an instance of **StringFormatter** as a page resource and use it in our binding. We pass the format string into the converter from markup for ultimate formatting flexibility.
+これで、**StringFormatter** のインスタンスをページ リソースとして追加し、バインドで使うことができます。 最終的な書式設定の柔軟性のために、マークアップからコンバーターに書式設定文字列を渡します。
 
 ``` xml
     <Page.Resources>
@@ -443,9 +445,9 @@ Now we can add an instance of **StringFormatter** as a page resource and use it 
     ...
 ```
 
-Here's the result.
+結果は次のようになります。
 
-![displaying a date with custom formatting](images/xaml-databinding5.png)
+![カスタム形式での日付の表示](images/xaml-databinding5.png)
 
 
 

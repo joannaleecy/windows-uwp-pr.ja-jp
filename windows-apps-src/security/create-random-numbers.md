@@ -1,16 +1,16 @@
 ---
-title: Create random numbers
-description: This example code shows how to create a random number or buffer for use in cryptography in an Universal Windows Platform (UWP) app.
+title: 乱数の生成
+description: 次のコード例は、ユニバーサル Windows プラットフォーム (UWP) アプリでの暗号化に使用する乱数やバッファーを作成する方法を示しています。
 ms.assetid: 15746824-F93A-4DC7-836E-EBA916D2CFD3
 author: awkoren
 ---
 
-# Create random numbers
+# 乱数の生成
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-This example code shows how to create a random number or buffer for use in cryptography in an Universal Windows Platform (UWP) app.
+次のコード例は、ユニバーサル Windows プラットフォーム (UWP) アプリでの暗号化に使用する乱数やバッファーを作成する方法を示しています。
 
 ```cs
 public string GenerateRandomData()

@@ -1,38 +1,38 @@
 ---
-title: Run a background task on a timer
-description: Learn how to schedule a one-time background task, or run a periodic background task.
+title: タイマーでのバックグラウンド タスクの実行
+description: 1 回限りのバックグラウンド タスクをスケジュールする方法、または定期的なバックグラウンド タスクを実行する方法について説明します。
 ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
 ---
 
-# Run a background task on a timer
+# タイマーでのバックグラウンド タスクの実行
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-**Important APIs**
+**重要な API**
 
 -   [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
 -   [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843)
 -   [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494)
 
-Learn how to schedule a one-time background task, or run a periodic background task.
+1 回限りのバックグラウンド タスクをスケジュールする方法、または定期的なバックグラウンド タスクを実行する方法について説明します。
 
--   This example assumes that you have a background task that needs to run periodically, or at a specific time, to support your app. A background task will only run using a [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) if you have called [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485).
--   This topic assumes you have already created a background task class, including the Run method that is used as the background task entry point. To get started quickly building a background task, see [Create and register a background task](create-and-register-a-background-task.md). For more in-depth information on conditions and triggers, see [Support your app with background tasks](support-your-app-with-background-tasks.md).
+-   この例は、アプリをサポートするために、定期的に、または特定の時刻に実行する必要があるバックグラウンド タスクがあることを前提にしています。 バックグラウンド タスクが [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) を使って実行されるのは、[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) を呼び出した場合のみです。
+-   このトピックでは、バックグラウンド タスクのエントリ ポイントとして使う Run メソッドも含めて、既にバックグラウンド タスク クラスが作られていることを前提とします。 バックグラウンド タスクを直ちに構築する場合は、「[バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)」をご覧ください。 条件とトリガーについて詳しくは、「[バックグラウンド タスクによるアプリのサポート](support-your-app-with-background-tasks.md)」をご覧ください。
 
-## Create a time trigger
+## 時刻のトリガーを作る
 
 
--   Create a new [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843). The second parameter, *OneShot*, specifies whether the background task will run once or keep running periodically. If *OneShot* is set to true, the first parameter (*FreshnessTime*) specifies the number of minutes to wait before scheduling the background task. If *OneShot* is set to false, *FreshnessTime* specifies the frequency by which the background task will run.
+-   新しい [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) を作ります。 2 つ目のパラメーター (*OneShot*) では、バックグラウンド タスクを一度だけ実行するか、または定期的に実行を続けるかを指定します。 *OneShot* を true に設定する場合は、1 つ目のパラメーター (*FreshnessTime*) に、バックグラウンド タスクをスケジュールするまで待機する時間 (分単位) を指定します。 *OneShot* を false に設定する場合は、*FreshnessTime* に、バックグラウンド タスクを実行する間隔を指定します。
 
-    The built-in timer for Universal Windows Platform (UWP) apps runs background tasks in 15-minute intervals.
+    ユニバーサル Windows プラットフォーム (UWP) アプリの組み込みタイマーは、15 分間隔でバックグラウンド タスクを実行します。
 
-    -   If *FreshnessTime* is set to 15 minutes and *OneShot* is true, the task will run once starting between 0 and 15 minutes from the time it is registered.
+    -   *FreshnessTime* が 15 分に設定され、*OneShot* が true の場合、タスクは登録された時点から 0 ～ 15 分の間に一度実行されます。
 
-    -   If *FreshnessTime* is set to 15 minutes and *OneShot* is false, the task will run every 15 minutes starting between 0 and 15 minutes from the time it is registered.
+    -   *FreshnessTime* が 15 分に設定され、*OneShot* が false の場合、タスクは登録された時点から 0 ～ 15 分の間に実行され、その後 15 分ごとに実行されます。
 
-    **Note**  If *FreshnessTime* is set to less than 15 minutes, an exception is thrown when attempting to register the background task.
+    **注**  *FreshnessTime* が 15 分未満に設定された場合、バックグラウンド タスクの登録が試行されたときに例外がスローされます。
 
      
 
@@ -46,12 +46,12 @@ Learn how to schedule a one-time background task, or run a periodic background t
     > TimeTrigger ^ hourlyTrigger = ref new TimeTrigger(60, false);
     > ```
 
-## (Optional) Add a condition
+## (省略可能) 条件の追加
 
 
--   If necessary, create a background task condition to control when the task runs. A condition prevents the background task from running until the condition is met - for more information, see [Set conditions for running a background task](set-conditions-for-running-a-background-task.md).
+-   いつタスクを実行するかを制御するバックグラウンド タスクの条件を必要に応じて作成します。 条件を指定すると、条件が満たされるまではバックグラウンド タスクが実行されないようにすることができます。詳しくは「[バックグラウンド タスクを実行するための条件の設定](set-conditions-for-running-a-background-task.md)」をご覧ください。
 
-    In this example the condition is set to **UserPresent** so that, once triggered, the task only runs once the user is active. For a list of possible conditions, see [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
+    この例では、条件が **UserPresent** に設定されているため、トリガー後、ユーザーがアクティブになった場合にタスクが 1 回だけ実行されます。 指定できる条件の一覧については、「[**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)」をご覧ください。
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -61,10 +61,11 @@ Learn how to schedule a one-time background task, or run a periodic background t
     > SystemCondition ^ userCondition = ref new SystemCondition(SystemConditionType::UserPresent)
     > ```
 
-##  Call RequestAccessAsync()
+##  RequestAccessAsync() の呼び出し
 
 
--   Before trying to register the [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) background task, call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494).
+-   [
+            **TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) バックグランド タスクを登録しようとする前に、[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494) を呼び出します。
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -74,12 +75,12 @@ Learn how to schedule a one-time background task, or run a periodic background t
     > BackgroundExecutionManager::RequestAccessAsync();
     > ```
 
-## Register the background task
+## バックグラウンド タスクの登録
 
 
--   Register the background task by calling your background task registration function. For more information on registering background tasks, see [Register a background task](register-a-background-task.md).
+-   バックグラウンド タスクの登録関数を呼び出してバックグラウンド タスクを登録します。 バックグラウンド タスクの登録について詳しくは、「[バックグラウンド タスクの登録](register-a-background-task.md)」をご覧ください。
 
-    The following code registers the background task:
+    次のコードでは、バックグラウンド タスクを登録しています。
 
     > > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -95,32 +96,32 @@ Learn how to schedule a one-time background task, or run a periodic background t
     > BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName, hourlyTrigger, userCondition);
     > ```
     
-    > **Note**  Background task registration parameters are validated at the time of registration. An error is returned if any of the registration parameters are invalid. Ensure that your app gracefully handles scenarios where background task registration fails - if instead your app depends on having a valid registration object after attempting to register a task, it may crash.
+    > **注**  バックグラウンド タスクの登録パラメーターは登録時に検証されます。 いずれかの登録パラメーターが有効でない場合は、エラーが返されます。 バックグラウンド タスクの登録が失敗するシナリオをアプリが適切に処理するようにします。タスクを登録しようとした後で、有効な登録オブジェクトを持っていることを前提として動作するアプリは、クラッシュする場合があります。
 
    
-## Remarks
+## 注釈
 
-> **Note**  Starting with Windows 10, it is no longer necessary for the user to add your app to the lock screen in order to utilize background tasks. For guidance on the types of background task triggers, see [Support your app with background tasks](support-your-app-with-background-tasks.md).
+> **注**  Windows 10 以降、ユーザーはバック グラウンド タスクを利用するために、アプリをロック画面に追加する必要はなくなりました。 このようなバックグラウンド タスクのトリガーについては、「[バックグラウンド タスクによるアプリのサポート](support-your-app-with-background-tasks.md)」をご覧ください。
 
-> **Note**  This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
-
-
-## Related topics
+> **注**  この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
 
-* [Create and register a background task](create-and-register-a-background-task.md)
-* [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md)
-* [Handle a cancelled background task](handle-a-cancelled-background-task.md)
-* [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)
-* [Register a background task](register-a-background-task.md)
-* [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md)
-* [Set conditions for running a background task](set-conditions-for-running-a-background-task.md)
-* [Update a live tile from a background task](update-a-live-tile-from-a-background-task.md)
-* [Use a maintenance trigger](use-a-maintenance-trigger.md)
-* [Guidelines for background tasks](guidelines-for-background-tasks.md)
+## 関連トピック
 
-* [Debug a background task](debug-a-background-task.md)
-* [How to trigger suspend, resume, and background events in Windows Store apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+
+* [バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)
+* [アプリケーション マニフェストでのバックグラウンド タスクの宣言](declare-background-tasks-in-the-application-manifest.md)
+* [取り消されたバックグラウンド タスクの処理](handle-a-cancelled-background-task.md)
+* [バックグラウンド タスクの進捗状況と完了の監視](monitor-background-task-progress-and-completion.md)
+* [バックグラウンド タスクの登録](register-a-background-task.md)
+* [バックグラウンド タスクによるシステム イベントへの応答](respond-to-system-events-with-background-tasks.md)
+* [バックグラウンド タスクを実行するための条件の設定](set-conditions-for-running-a-background-task.md)
+* [バックグラウンド タスクのライブ タイルの更新](update-a-live-tile-from-a-background-task.md)
+* [メンテナンス トリガーの使用](use-a-maintenance-trigger.md)
+* [バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)
+
+* [バックグラウンド タスクのデバッグ](debug-a-background-task.md)
+* [Windows ストア アプリで一時停止イベント、再開イベント、バックグラウンド イベントをトリガーする方法 (デバッグ時)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
  
 

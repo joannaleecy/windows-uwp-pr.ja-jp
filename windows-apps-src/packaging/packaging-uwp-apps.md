@@ -1,130 +1,130 @@
 ---
 ms.assetid: 96361CAF-C347-4671-9721-8208CE118CA4
-title: Packaging UWP apps
-description: To sell your Universal Windows Platform (UWP) app or distribute it to other users, you need to create an appxupload package for it.
+title: UWP アプリのパッケージ化
+description: ユニバーサル Windows プラットフォーム (UWP) アプリを販売、またはその他のユーザーに配布するには、appxupload パッケージを作成する必要があります。
 ---
-# Packaging UWP apps
+# UWP アプリのパッケージ化
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-To sell your Universal Windows Platform (UWP) app or distribute it to other users, you need to create an appxupload package for it. When you create the appxupload, another appx package will be generated to use for testing and sideloading. You can distribute your app directly by sideloading the appx package to a device. This article describes the process of configuring, creating and testing a UWP app package. For more information about sideloading, see [Sideload Apps with DISM](http://go.microsoft.com/fwlink/?LinkID=231020).
+ユニバーサル Windows プラットフォーム (UWP) アプリを販売、またはその他のユーザーに配布するには、appxupload パッケージを作成する必要があります。 appxupload を作成すると、別の appx パッケージがテストとサイドローディング用に生成されます。 デバイスに appx パッケージをサイドローディングすることで、アプリを直接配布できます。 この記事では、UWP アプリ パッケージを構成、作成、テストする方法について説明します。 サイドローディングについて詳しくは、「[DISM を使ったアプリのサイドローディング](http://go.microsoft.com/fwlink/?LinkID=231020)」をご覧ください。
 
-For Windows 10, you generate one package (.appxupload) that can be uploaded to the Windows Store. Your app is then available to be installed and run on any Windows 10 device. Here are the steps to create an app package.
+Windows 10 では、Windows ストアにアップロードできる 1 つのパッケージ (.appxupload) を作成します。 その後、アプリはどの Windows 10 デバイスでもインストールして実行できるようになります。 次に示しているのは、アプリ パッケージを作成する手順です。
 
-1.  [Before packaging your app](#before-packaging-your-app). Follow these steps to make sure your app is ready to be packaged for store submission.
-2.  [Configure an app package](#configure-an-app-package). Use the manifest designer to configure the package. For example, add tile images and choose the orientations your app supports.
-3.  [Create an app package](#create-an-app-package). Use the wizard in Microsoft Visual Studio to create an app package and then certify your package with the Windows App Certification Kit.
-4.  [Sideload you app package](#sideload-your-app-package). After sideloading your app to a device, you can test that it works correctly.
+1.  [アプリ パッケージを作成する前に](#before-packaging-your-app)。 ここでの手順に従って、アプリがストアへの提出用にパッケージ化の準備ができていることを確認します。
+2.  [アプリ パッケージを構成する](#configure-an-app-package)。 マニフェスト デザイナーを使って、パッケージを構成します。 たとえば、タイル画像を追加し、アプリでサポートされる向きを選びます。
+3.  [アプリ パッケージを作成する](#create-an-app-package)。 Microsoft Visual Studio のウィザードを使ってアプリ パッケージを作成してから、Windows アプリ認定キットを使ってそのパッケージを認定します。
+4.  [アプリ パッケージをサイドローディングする](#sideload-your-app-package)。 アプリをサイドローディングした後、そのアプリが正常に動作することをテストできます。
 
-After you have completed the steps above, you are ready to sell your app in the store. If you have a line-of-business (LOB) app, that you don't plan to sell because it's for internal users only, you can sideload this app to install it on any Windows 10 device.
+これらの手順を完了したら、アプリをストアで販売できます。 内部ユーザー専用で販売する予定がない基幹業務 (LOB) アプリがある場合は、そのアプリをサイドローディングして、任意の Windows 10 デバイスにインストールできます。
 
-## Before packaging your app
+## アプリ パッケージを作成する前に
 
-1.  Test your app. Before you package your app for store submission, make sure it works as expected on all device families that you plan to support. These device families may include desktop, mobile, Surface Hub, XBOX, IoT devices, or others.
-2.  Optimize your app. You can useVisual Studio’s profiling and debugging tools to optimize the performance of your UWP app. For example, the Timeline tool for UI responsiveness, the memory Usage tool, the CPU Usage tool, and more. For more information about these tools, see [Run diagnostic tools without debugging](https://msdn.microsoft.com/library/dn957936.aspx).
-3.  Check .NET Native compatibility (for VB and C# apps). With the UWP, there is now a new native compiler that will improve the runtime performance of your app. With this change, it is highly recommended that you test your app in this compilation environment. By default, the **Release** build configuration enables the .NET native toolchain, so it is important to test your app with this **Release** configuration and check that your app behaves as expected. Some common debugging issues that can happen with .NET Native are explained in more detail [here](http://blogs.msdn.com/b/visualstudioalm/archive/2015/07/29/debugging-net-native-windows-universal-apps.aspx).
+1.  アプリをテストする。 ストアへの提出用にアプリ パッケージを作成する前に、サポート予定のすべてのデバイス ファミリでそのアプリが想定どおりに動作することを確認します。 これらのデバイス ファミリには、デスクトップ、モバイル、Surface Hub、XBOX、IoT デバイスなどが含まれる場合があります。
+2.  アプリを最適化する。 Visual Studio のプロファイリングおよびデバッグ ツールを使って、UWP アプリのパフォーマンスを最適化できます。 たとえば、UI 応答のタイムライン ツール、メモリ使用率のツール、CPU 使用率のツールを使えます。 これらのツールについて詳しくは、「[デバッグなしの診断ツールの実行](https://msdn.microsoft.com/library/dn957936.aspx)」をご覧ください。
+3.  .NET ネイティブ互換性を確認する (VB と C# のアプリの場合)。 UWP で、アプリの実行時のパフォーマンスを向上させる新しいネイティブ コンパイラを使えるようになりました。 この変更により、新しいコンパイル環境でアプリをテストすることをお勧めします。 既定では、**リリース** ビルド構成により、.NET ネイティブ ツール チェーンが可能であるため、重要なのは、この**リリース**構成でアプリをテストし、想定どおりにアプリが動作することを確認することです。 .NET ネイティブで発生する可能性のあるいくつかの一般的なデバッグの問題について詳しくは、[こちら](http://blogs.msdn.com/b/visualstudioalm/archive/2015/07/29/debugging-net-native-windows-universal-apps.aspx) (英語) をご覧ください。
 
-## Configure an app package
+## アプリ パッケージを構成する
 
-The app manifest file (package.appxmanifest.xml) has the properties and settings that are required to create your app package. For example, properties in the manifest file describe the image to use as the tile of your app and the orientations that your app supports when a user rotates the device.
+アプリ マニフェスト ファイル (package.appxmanifest.xml) には、アプリ パッケージの作成に必要なプロパティと設定があります。 たとえば、マニフェスト ファイル内のプロパティには、アプリのタイルとして使う画像や、ユーザーがデバイスを回転するときにアプリでサポートされる向きを定義します。
 
-Visual Studio has a manifest designer that makes it easy for you to update the manifest file without editing the raw XML of the file.
+Visual Studio のマニフェスト デザイナーを使えば、生の XML を編集することなくマニフェスト ファイルを簡単に更新できます。
 
-Visual Studio can associate your package with the Store. When you do this, some of the fields in the Packaging tab of the manifest designer are automatically updated.
+Visual Studio では、パッケージをストアに関連付けることができます。 これを行うと、マニフェスト デザイナーの [パッケージ化] タブの一部のフィールドが自動的に更新されます。
 
-**Configure a package with the manifest designer**
+**マニフェスト デザイナーを使ってパッケージを構成する**
 
-1.  In **Solution Explorer**, expand the project node of your UWP app.
-2.  Double-click the **Package.appxmanifest** file. If the manifest file is already open in the XML code view, Visual Studio prompts you to close the file.
-3.  Now you can decide how to configure your app. Each tab contains information that you can configure about your app and links to more information if necessary.<br/>
+1.  **ソリューション エクスプローラー**で、UWP アプリのプロジェクト ノードを展開します。
+2.  **[Package.appxmanifest]** ファイルをダブルクリックします。 マニフェスト ファイルが既に XML コード ビューで開かれている場合は、ファイルを閉じるよう指示するプロンプトが Visual Studio で表示されます。
+3.  この時点で、アプリをどのように構成するかを決めることができます。 各タブには、アプリについて構成可能な情報や、さらに情報が必要なときのためのリンクがあります。<br/>
     ![](images/packaging-screen1.jpg)
 
-    Check that you have all the images that are required for a UWP app on the **Visual Assets** tab.
+    [**ビジュアル資産**] タブで、UWP アプリに必要なすべての画像があることを確認します。
 
-    From the **Packaging** tab, you can enter publishing data. This is where you can choose which certificate to use to sign your app. All UWP apps must be signed with a certificate. In order to sideload an app package, you need to trust the package. The certificate must be installed on that device to trust the package. For more information about sideloading, see [Enable your device for development](https://msdn.microsoft.com/library/windows/apps/Dn706236).
+    [**パッケージ化**] タブで、公開するデータを入力できます。 ここで、アプリの署名に使う証明書を選べます。 すべての UWP アプリは証明書で署名する必要があります。 アプリ パッケージをサイドローディングするには、パッケージを信頼する必要があります。 証明書は、パッケージを信頼するデバイスにインストールされていなければなりません。 サイドローディングについて詳しくは、「[デバイスを開発用に有効にする](https://msdn.microsoft.com/library/windows/apps/Dn706236)」をご覧ください。
 
-4.  Save your file after you have made the necessary edits for your app.
+4.  アプリに必要な編集を行った後に、ファイルを保存します。
 
-## Create an app package
+## アプリ パッケージを作成する
 
-To distribute an app through the Store you must create an appxupload package. You can do that by using the **Create App Packages** wizard. Follow these steps to create a package suitable for store submission with Microsoft Visual Studio 2015.
+ストアを通じてアプリを配布するには、appxupload パッケージを作成する必要があります。 これは**アプリ パッケージの作成**ウィザードを使って行えます。 ここでの手順に従って、Microsoft Visual Studio 2015 でストアへの提出用にパッケージを作成します。
 
-**To create your app package**
+**アプリ パッケージを作成するには**
 
-1.  In **Solution Explorer**, open the solution for your UWP app project.
-2.  Right-click the project and choose **Store**->**Create App Packages**. If this option is disabled or does not appear at all, check that the project is a UWP project.<br/>
+1.  **ソリューション エクスプローラー**で、UWP アプリ プロジェクトのソリューションを開きます。
+2.  プロジェクトを右クリックし、[**ストア**]、[**アプリ パッケージの作成**] の順に選びます。 このオプションが無効になっているか、まったく表示されない場合は、プロジェクトが UWP プロジェクトであることを確認します。<br/>
     ![](images/packaging-screen2.jpg)
 
-    The **Create App Packages** wizard appears.
+    **アプリ パッケージの作成**ウィザードが表示されます。
 
-3.  Select Yes in the first dialog asking if you want to build packages to upload to the Windows Store, then click Next.<br/>
+3.  Windows ストアにアップロードするパッケージを作成するかどうかを確認する最初のダイアログ ボックスで [はい] を選び、[次へ] をクリックします。<br/>
     ![](images/packaging-screen3.jpg)
 
-    If you choose No here, Visual Studio will not generate the required .appxupload package you need for store submission. If you only want to sideload your app to run it on internal devices, then you can select this option. For more information about sideloading, see [Enable your device for development](https://msdn.microsoft.com/library/windows/apps/Dn706236).
+    ここで [いいえ] を選んだ場合、Visual Studio では、ストアの提出に必要な .appxupload パッケージは生成されません。 アプリをサイドローディングして社内デバイスで実行するだけの場合は、このオプションを選べます。 サイドローディングについて詳しくは、「[デバイスを開発用に有効にする](https://msdn.microsoft.com/library/windows/apps/Dn706236)」をご覧ください。
 
-4.  Sign in with your developer account to the Windows Dev Center. (If you don't have a developer account yet, the wizard will help you create one.)
-5.  Select the app name for your package, or reserve a new one if you have not already reserved one with the Windows Dev Center portal.<br/>
+4.  開発者アカウントで Windows デベロッパー センターにログインします (まだ開発者アカウントがない場合は、ウィザードで作成できます)。
+5.  パッケージのアプリ名を選びます。または、Windows デベロッパー センター ポータルでまだ予約していない場合は、新しいアプリ名を予約します。<br/>
     ![](images/packaging-screen4.jpg)
-6.  Make sure you select all three architecture configurations (x86, x64, and ARM) in the **Select and Configure Packages** dialog. That way your app can be deployed to the widest range of devices. In the **Generate app bundle** listbox, select **Always**. This makes the store submission process much simpler because you will only have one file to upload (.appxupload). The single bundle will contain all the necessary packages to deploy to devices with each processor architecture.<br/>
+6.  [**パッケージの選択と構成**] ダイアログ ボックスで、必ず 3 つのアーキテクチャ構成 (x86、x64、ARM) をすべて選んでください。 それにより、アプリを多様なデバイスに展開できるようになります。 [**アプリケーション バンドルの生成**] ボックスで [**常に行う**] を選びます。 これにより、ストア提出プロセスははるかに簡単になります。アップロードするファイルが 1 つのみ (.appxupload) で済むためです。 1 つのバンドルには、各プロセッサ アーキテクチャのデバイスに展開するために必要なすべてのパッケージが含まれています。<br/>
     ![](images/packaging-screen5.jpg)
-7.  It is a good idea to include full PDB symbol files for the best [crash analytics](http://blogs.windows.com/buildingapps/2015/07/13/crash-analysis-in-the-unified-dev-center/) experience from the Windows Dev Center. You can learn more about debugging with symbols by visiting [Debugging with Symbols](https://msdn.microsoft.com/library/windows/desktop/Ee416588).
-8.  Now you can configure the details to create your package. When you're ready to publish your app, you'll upload the packages from the output location.
-9.  Click **Create** to generate your appxupload package.
-10. Now you will see this dialog.<br/>
+7.  Windows デベロッパー センターからの[クラッシュ分析](http://blogs.windows.com/buildingapps/2015/07/13/crash-analysis-in-the-unified-dev-center/)のエクスペリエンスを最大限に高めるために、完全な PDB シンボル ファイルを含めることをお勧めします。 シンボルを使ったデバッグについて詳しくは、「[シンボルを使用したデバッグ](https://msdn.microsoft.com/library/windows/desktop/Ee416588)」をご覧ください。
+8.  これで、パッケージを作成するための詳細を構成できるようになりました。 アプリを公開する準備ができたら、出力場所からパッケージをアップロードします。
+9.  [**作成**] をクリックして、appxupload パッケージを生成します。
+10. すると、次のダイアログ ボックスが表示されます。<br/>
     ![](images/packaging-screen6.jpg)
 
-    Validate your app before you submit it to the Store for certification on a local or remote machine. (You can only validate release builds for your app package and not debug builds.)
+    アプリをストアに提出する前に、認定されるようにローカルまたはリモート コンピューターで検証します (アプリ パッケージのデバッグ ビルドではなくリリース ビルドのみを検証できます)。
 
-11. To validate locally, leave the **Local machine** option selected and click **Launch Windows App Certification Kit**. For more information about testing your app with the Windows App Certification Kit, see [Windows App Certification Kit](https://msdn.microsoft.com/library/windows/apps/Mt186449).
+11. ローカルで検証するには、[**ローカル コンピューター**] オプションを選んだままで、[**Windows アプリ認定キットを起動する**] をクリックします。 Windows アプリ認定キットでアプリをテストする方法について詳しくは、「[Windows アプリ認定キット](https://msdn.microsoft.com/library/windows/apps/Mt186449)」をご覧ください。
 
-    The Windows App Certification Kit performs tests and shows you the results. See [Windows App Certification Kit tests](https://msdn.microsoft.com/library/windows/apps/mt186450).
+    Windows アプリ認定キットはテストを実行し、結果を表示します。 「[Windows アプリ認定キットのテスト](https://msdn.microsoft.com/library/windows/apps/mt186450)」をご覧ください。
 
-    If you have a remote Windows 10 that you want to use for testing, you will need to install the Windows App Certification Kit manually on that device. The next section will walk you through these steps. After you've done that, then you can select **Remote machine** and click **Launch Windows App Certification Kit** to connect to the remote device and run the validation tests.
+    リモート Windows 10 デバイスを使ってテストする場合は、そのデバイスに Windows アプリ認定キットを手動でインストールする必要があります。 この手順については、次のセクションで説明します。 その後、[**リモート コンピューター**] を選び、[**Windows アプリ認定キットを起動する**] をクリックしてリモート デバイスに接続し、検証テストを実行します。
 
-12. After WACK has finished and your app has passed, you are ready to upload to the store. Make sure you upload the correct file. It can be found in the root folder of your solution \\\[AppName\]\\AppPackages and it will end with the .appxupload file extension. The name will be of the form \[AppName\]\_\[AppVersion\]\_x86\_x64\_arm\_bundle.appxupload.
+12. WACK の終了後、アプリが合格したら、ストアにアップロードできます。 必ず正しいファイルをアップロードしてください。 そのファイルはソリューションのルート フォルダー \\\[AppName\]\\AppPackages にあり、.appxupload というファイル拡張子が付いています。 名前は \[AppName\]\_\[AppVersion\]\_x86\_x64\_arm\_bundle.appxupload という形式になります。
 
-**Validate your app package on a remote Windows 10 device**
+**リモート Windows 10 デバイスでアプリ パッケージを検証する**
 
-1.  Enable your Windows 10 device for development by following the [Enable your device for development](https://msdn.microsoft.com/library/windows/apps/Dn706236) instructions.
-    **Important**  You cannot validate your app package on a remote ARM device for Windows 10.
-2.  Download and install the remote tools for Visual Studio. These tools are used to run the Windows App Certification Kit remotely. You can get more information about these tools including where to download them by visiting [Run Windows Store apps on a remote machine](https://msdn.microsoft.com/library/hh441469.aspx#BKMK_Starting_the_Remote_Debugger_Monitor).
-3.  Download the required [Windows App Certification Kit](http://go.microsoft.com/fwlink/p/?LinkID=309666) and then install it on your remote Windows 10 device.
-4.  On the **Package Creation Completed** page of the wizard, choose the **Remote Machine** option button, and then choose the ellipsis button next to the **Test Connection** button.
-    **Note**  The **Remote Machine** option button is available only if you selected at least one solution configuration that supports validation. For more information about testing your app with the WACK, see [Windows App Certification Kit](https://msdn.microsoft.com/library/windows/apps/Mt186449).
-5.  Specify a device form inside your subnet, or provide the Domain Name Server (DNS) name or IP address of a device that's outside of your subnet.
-6.  In the **Authentication Mode** list, choose **None** if your device doesn't require you to log onto it by using your Windows credentials.
-7.  Choose the **Select** button, and then choose the **Launch Windows App Certification Kit** button. If the remote tools are running on that device, Visual Studio connects to it and then performs the validation tests. See [Windows App Certification Kit tests](https://msdn.microsoft.com/library/windows/apps/mt186450).
+1.  「[デバイスを開発用に有効にする](https://msdn.microsoft.com/library/windows/apps/Dn706236)」の手順に従って、開発用に Windows 10 デバイスを有効にします。
+    **重要:** Windows 10 対応のリモート ARM デバイスでアプリ パッケージを検証することはできません。
+2.  Visual Studio のリモート ツールをダウンロードしてインストールします。 これらのツールを使って Windows アプリ認定キットをリモートで実行します。 これらのツールについてダウンロード場所など詳しくは、[リモート コンピューターでの Windows ストア アプリの実行](https://msdn.microsoft.com/library/hh441469.aspx#BKMK_Starting_the_Remote_Debugger_Monitor)に関するページをご覧ください。
+3.  必要な [Windows アプリ認定キット](http://go.microsoft.com/fwlink/p/?LinkID=309666)をダウンロードし、リモート Windows 10 デバイスにインストールします。
+4.  **パッケージの作成が完了しました**ウィザードのページで、[**リモート コンピューター**] オプション ボタンを選び、[**テスト接続**] ボタンの横にある省略記号ボタンをクリックします。
+    **注:** [**リモート コンピューター**] オプション ボタンは、検証をサポートする少なくとも 1 つのソリューション構成を選んだ場合にのみ使えます。 WACK でアプリをテストする方法について詳しくは、「[Windows アプリ認定キット](https://msdn.microsoft.com/library/windows/apps/Mt186449)」をご覧ください。
+5.  サブネットの内部にあるデバイスの形式を指定するか、サブネットの外部にあるデバイスのドメイン ネーム サーバー (DNS) 名または IP アドレスを指定します。
+6.  Windows 資格情報を使ってデバイスにログオンする必要がない場合は、[**認証モード**] ボックスの一覧で [**なし**] を選びます。
+7.  [**選択**]、[**Windows アプリ認定キットを起動する**] の順に選びます。 デバイスでリモート ツールが実行されていれば、Visual Studio がデバイスに接続されてから、検証テストが実行されます。 「[Windows アプリ認定キットのテスト](https://msdn.microsoft.com/library/windows/apps/mt186450)」をご覧ください。
 
-## Sideload your app package
+## アプリ パッケージをサイドローディングする
 
-With UWP app packages, you cannot simply install an app to your device like Desktop apps. Typically, you download these apps from the Store and that is how they are installed on your device. But you can sideload apps to your device without submitting them to the Store. This lets you install them and test them out using the app package (.appx) that you have created. If you have an app that you don’t want to sell in the Store, like a line-of-business (LOB) app, you can sideload that app so that other users in your company can use it.
+UWP アプリ パッケージは、デスクトップ アプリとは異なり、デバイスにアプリを簡単にインストールすることはできません。 通常、ストアからこれらのアプリをダウンロードします。それがアプリをデバイスにインストールする方法です。 ただし、アプリをストアに提出することなく、デバイスにサイドローディングできます。 これにより、作成したアプリ パッケージ (.appx) を使って、アプリをインストールし、テストできます。 基幹業務 (LOB) アプリのように、ストアで販売しないアプリの場合は、そのアプリをサイドローディングして、社内の他のユーザーが使えるようにできます。
 
-The following list provides requirements for sideloading your app.
+次に示しているのは、アプリをサイドローディングするための要件です。
 
--   You must [enable your device for development](https://msdn.microsoft.com/library/windows/apps/Dn706236).
--   To sideload your app on a Windows 10 Mobile device, you must use the [WinAppDeployCmd.exe](install-universal-windows-apps-with-the-winappdeploycmd-tool.md) tool.
+-   [開発用にデバイスを有効にする](https://msdn.microsoft.com/library/windows/apps/Dn706236)必要があります。
+-   Windows 10 Mobile デバイスにアプリをサイドローディングするには、[WinAppDeployCmd.exe](install-universal-windows-apps-with-the-winappdeploycmd-tool.md) ツールを使う必要があります。
 
-**Sideload an app to a desktop, laptop, or tablet**
+**デスクトップ、ラップトップ、またはタブレットにアプリをサイドローディングする**
 
-1.  Copy the folders for the version that you want to install to the target device.
+1.  インストールするバージョンのフォルダーをターゲット デバイスにコピーします。
 
-    If you've created an app bundle, then you will have a folder based on the version number and a \_test folder. For example these two folders (where the version to install is 1.0.2):
+    アプリ バンドルを作成した場合は、バージョン番号に基づいたフォルダーおよび \_test フォルダーが必要です。 たとえば、2 つのフォルダーは次のようになります (インストールするバージョンは 1.0.2)。
 
     -   C:\\Projects\\MyApp\\MyApp\\AppPackages\\MyApp\_1.0.2.0
     -   C:\\Projects\\MyApp\\MyApp\\AppPackages\\MyApp\_1.0.2.0\_Test
 
-    If you don't have an app bundle, then you can just copy the folder for the correct architecture and the corresponding test folder. For example these two folders.
+    アプリ バンドルがない場合は、適切な構造になっているフォルダーおよび対応するテスト フォルダーをコピーできます。 たとえば、2 つのフォルダーは次のようになります。
 
     -   C:\\Projects\\MyApp\\MyApp\\AppPackages\\MyApp\_1.0.2.0\_x64
     -   C:\\Projects\\MyApp\\MyApp\\AppPackages\\MyApp\_1.0.2.0\_x64\_Test
-2.  On the target device, opent he test folder. For example, C:\\Projects\\MyApp\\MyApp\\AppPackages\\MyApp\_1.0.2.0\_Test
-3.  Right-click on the **Add-AppDevPackage.ps1** file, then choose **Run with PowerShell** and follow the prompts.<br/>
+2.  ターゲット デバイスでテスト フォルダーを開きます。 たとえば、C:\\Projects\\MyApp\\MyApp\\AppPackages\\MyApp\_1.0.2.0\_Test です。
+3.  **Add-AppDevPackage.ps1** ファイルを右クリックし、[**PowerShell で実行**] を選んで、画面の指示に従います。<br/>
     ![](images/packaging-screen7.jpg)
 
-    When the app package has been installed, you will see this message in your PowerShell window: Your app was successfully installed.
+    アプリ パッケージがインストールされると、PowerShell のウィンドウで "アプリが正常にインストールされました" というメッセージが表示されます。
 
-    **Note**  To open the shortcut menu on a tablet, touch the screen where you want to right-click, hold until a complete circle appears, then lift your finger. The shortcut menu appears after you lift your finger.
-4.  Click the Start button and then type the name of your app to launch it.
+    **注:** タブレットでショートカット メニューを開くには、右クリックする画面をタッチし、完全な円が表示されてから指を放します。 指を放した後にショートカット メニューが表示されます。
+4.  スタート ボタンをクリックし、起動するアプリの名前を入力します。
 
  
 

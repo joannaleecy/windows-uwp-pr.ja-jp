@@ -1,17 +1,17 @@
 ---
 ms.assetid: 40122343-1FE3-4160-BABE-6A2DD9AF1E8E
-title: Optimize file access
-description: Create Universal Windows Platform (UWP) apps that access the file system efficiently, avoiding performance issues due to disk latency and memory/CPU cycles.
+title: ファイル アクセスの最適化
+description: ファイル システムに効率的にアクセスすることで、ディスクの待ち時間とメモリ/CPU サイクルによるパフォーマンスの問題を回避するユニバーサル Windows プラットフォーム (UWP) アプリを作成します。
 ---
-# Optimize file access
+# ファイル アクセスの最適化
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-Create Universal Windows Platform (UWP) apps that access the file system efficiently, avoiding performance issues due to disk latency and memory/CPU cycles.
+ファイル システムに効率的にアクセスすることで、ディスクの待ち時間とメモリ/CPU サイクルによるパフォーマンスの問題を回避するユニバーサル Windows プラットフォーム (UWP) アプリを作成します。
 
-When you want to access a large collection of files and you want to access property values other than the typical Name, FileType, and Path properties, access them by creating [**QueryOptions**](https://msdn.microsoft.com/library/windows/apps/BR207995) and calling [**SetPropertyPrefetch**](https://msdn.microsoft.com/library/windows/apps/BR207995-setpropertyprefetch). The **SetPropertyPrefetch** method can dramatically improve the performance of apps that display a collection of items obtained from the file system, such as a collection of images. The next set of examples shows a few ways to access multiple files.
+ファイルの大規模なコレクションにアクセスして、Name、FileType、Path のような一般的なプロパティ以外のプロパティ値にアクセスする場合は、[**QueryOptions**](https://msdn.microsoft.com/library/windows/apps/BR207995) を作成して、[**SetPropertyPrefetch**](https://msdn.microsoft.com/library/windows/apps/BR207995-setpropertyprefetch) を呼び出してアクセスします。 **SetPropertyPrefetch** メソッドによって、イメージ コレクションなど、項目のコレクションをファイル システムから取得して表示するアプリのパフォーマンスを大幅に向上できます。 次の一連の例では、複数のファイルにアクセスする方法をいくつか紹介します。
 
-The first example uses [**Windows.Storage.StorageFolder.GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/BR227273) to retrieve the name info for a set of files. This approach provides good performance, because the example accesses only the name property.
+最初の例では、[**Windows.Storage.StorageFolder.GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/BR227273) を使って一連のファイルの名前情報を取得しています。 この例のように Name プロパティだけにアクセスすることで、この手法は高いパフォーマンスを実現しています。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -35,7 +35,7 @@ For i As Integer = 0 To files.Count - 1
 Next i
 ```
 
-The second example uses [**Windows.Storage.StorageFolder.GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/BR227273) and then retrieves the image properties for each file. This approach provides poor performance.
+2 番目の例では、[**Windows.Storage.StorageFolder.GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/BR227273) を使って、各ファイルのイメージ プロパティを取得しています。 この手法のパフォーマンスは高くありません。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -61,7 +61,7 @@ For i As Integer = 0 To files.Count - 1
 Next i
 ```
 
-The third example uses [**QueryOptions**](https://msdn.microsoft.com/library/windows/apps/BR207995) to get info about a set of files. This approach provides much better performance than the previous example.
+3 番目の例では、[**QueryOptions**](https://msdn.microsoft.com/library/windows/apps/BR207995) を使って、一連のファイルの情報を取得しています。 この手法のパフォーマンスは前の例よりもかなり高くなります。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -119,17 +119,17 @@ For Each file In files
 
 Next file
 ```
-If you're performing multiple operations on Windows.Storage objects such as `Windows.Storage.ApplicationData.Current.LocalFolder`, create a local variable to reference that storage source so that you don't recreate intermediate objects each time you access it.
+`Windows.Storage.ApplicationData.Current.LocalFolder` などの Windows.Storage オブジェクトで複数の操作を実行する場合は、対象のストレージ ソースを参照するローカル変数を作成すると、アクセスのたびに中間オブジェクトを再作成する必要がなくなります。
 
-## Stream performance in C# and Visual Basic
+## C# と Visual Basic におけるストリームのパフォーマンス
 
-### Buffering between UWP and .NET streams
+### UWP ストリームと .NET ストリーム間のバッファリング
 
-There are many scenarios when you might want to convert a UWP stream (such as a [**Windows.Storage.Streams.IInputStream**](https://msdn.microsoft.com/library/windows/apps/BR241718) or [**IOutputStream**](https://msdn.microsoft.com/library/windows/apps/BR241728)) to a .NET stream ([**System.IO.Stream**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.io.stream.aspx)). For example, this is useful when you are writing a UWP app and want to use existing .NET code that works on streams with the UWP file system. In order to enable this, .NET APIs for Windows Store apps provides extension methods that allow you to convert between .NET and UWP stream types. For more info, see [**WindowsRuntimeStreamExtensions**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.aspx).
+UWP ストリーム ([**Windows.Storage.Streams.IInputStream**](https://msdn.microsoft.com/library/windows/apps/BR241718)、[**IOutputStream**](https://msdn.microsoft.com/library/windows/apps/BR241728) など) から .NET ストリーム ([**System.IO.Stream**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.io.stream.aspx)) への変換が必要になるケースは少なくありません。 たとえば、UWP アプリを作成しているとき、ストリームを扱う従来の .NET コードを、UWP のファイル システムで利用する場合に活用できます。 Windows ストア アプリ用 .NET API には、.NET と UWP 間のストリーム型変換を行う拡張メソッドが用意されています。 詳しくは、「[**WindowsRuntimeStreamExtensions**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.aspx)」をご覧ください。
 
-When you convert a UWP stream to a .NET stream, you effectively create an adapter for the underlying UWP stream. Under some circumstances, there is a runtime cost associated with invoking methods on UWP streams. This may affect the speed of your app, especially in scenarios where you perform many small, frequent read or write operations.
+UWP のストリームを .NET のストリームに変換するとき、実質的には、基になる UWP ストリーム用のアダプターを作成することになります。 場合によっては、UWP ストリームのメソッド呼び出しに伴うコストが実行時に発生します。 このことがアプリの実行速度に影響を及ぼす可能性があり、特に、小規模な読み取り/書き込み操作を高頻度で何度も実行するケースにおいて顕著に表れます。
 
-In order to speed up apps, the UWP stream adapters contain a data buffer. The following code sample demonstrates small consecutive reads using a UWP stream adapter with a default buffer size.
+UWP のストリーム アダプターには、アプリの実行速度を高めるために、データ バッファーが用意されています。 次のコード サンプルでは、既定のバッファー サイズの UWP ストリーム アダプターを使い、少量のデータを連続して読み取ります。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -182,13 +182,13 @@ Using (managedStream)
 End Using
 ```
 
-This default buffering behavior is desirable in most scenarios where you convert a UWP stream to a .NET stream. However, in some scenarios you may want to tweak the buffering behavior in order to increase performance.
+ここに示した既定のバッファリング動作は、UWP のストリームを .NET のストリームに変換するほとんどのシナリオに対応します。 しかし、パフォーマンス強化の観点から、シナリオによっては、バッファリングの動作を調整した方がよい場合もあります。
 
-### Working with large data sets
+### 大きなデータ セットの操作
 
-When reading or writing larger sets of data you may be able to increase your read or write throughput by providing a large buffer size to the [**AsStreamForRead**](Overload:System.IO.WindowsRuntimeStreamExtensions.AsStreamForRead), [**AsStreamForWrite**](Overload:System.IO.WindowsRuntimeStreamExtensions.AsStreamForWrite), and [**AsStream**](Overload:System.IO.WindowsRuntimeStreamExtensions.AsStream) extension methods. This gives the stream adapter a larger internal buffer size. For instance, when passing a stream that comes from a large file to an XML parser, the parser can make many sequential small reads from the stream. A large buffer can reduce the number of calls to the underlying UWP stream and boost performance.
+大きなデータ セットの読み取りまたは書き込みを行う場合、そのスループットを向上させるには、[**AsStreamForRead**](Overload:System.IO.WindowsRuntimeStreamExtensions.AsStreamForRead)、[**AsStreamForWrite**](Overload:System.IO.WindowsRuntimeStreamExtensions.AsStreamForWrite)、[**AsStream**](Overload:System.IO.WindowsRuntimeStreamExtensions.AsStream) の各拡張メソッドに指定するバッファー サイズを増やします。 これによって、ストリーム アダプターに割り当てられる内部バッファーのサイズが大きくなります。 たとえば、大きなファイルから取得したストリームを XML パーサーに渡すと、パーサーが、ストリームから小刻みにデータを読み取り、多数の読み取りが連続して発生することがあります。 バッファーを大きくすると、基になる UWP ストリームに対する呼び出しの回数を減らし、パフォーマンスを大きく高めることができます。
 
-> **Note**   You should be careful when setting a buffer size that is larger than approximately 80 KB, as this may cause fragmentation on the garbage collector heap (see [Improve garbage collection performance](improve-garbage-collection-performance.md)). The following code example creates a managed stream adapter with an 81,920 byte buffer.
+> **注**   約 80 KB を超えるバッファー サイズを設定するときは注意が必要です。ガベージ コレクターのヒープが断片化する可能性があるためです (「[ガベージ コレクションのパフォーマンスの向上](improve-garbage-collection-performance.md)」を参照)。 次のコード例では、81,920 バイトのバッファーを持つマネージ ストリーム アダプターを作成しています。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -200,7 +200,9 @@ Stream managedStream = nativeStream.AsStreamForRead(bufferSize: 81920);
 Dim managedStream As Stream = nativeStream.AsStreamForRead(bufferSize:=81920)
 ```
 
-The [**Stream.CopyTo**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.io.stream.copyto.aspx) and [**CopyToAsync**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.io.stream.copytoasync.aspx) methods also allocate a local buffer for copying between streams. As with the [**AsStreamForRead**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstreamforread.aspx) extension method, you may be able to get better performance for large stream copies by overriding the default buffer size. The following code example demonstrates changing the default buffer size of a **CopyToAsync** call.
+[
+            **Stream.CopyTo**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.io.stream.copyto.aspx) メソッドと [**CopyToAsync**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.io.stream.copytoasync.aspx) メソッドでも、ストリーム間のコピー用にローカル バッファーが割り当てられます。 [
+            **AsStreamForRead**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstreamforread.aspx) 拡張メソッドと同様、大きなストリームのコピーでは、既定のバッファー サイズをオーバーライドすることによってパフォーマンスを向上できる場合があります。 次のコード例では、**CopyToAsync** 呼び出しの既定のバッファー サイズを変更しています。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -220,15 +222,16 @@ Await managedStream.CopyToAsync(destination)
 Await managedStream.CopyToAsync(destination, bufferSize:=1024 * 1024)
 ```
 
-This example uses a buffer size of 1 MB, which is greater than the 80 KB previously recommended. Using such a large buffer can improve throughput of the copy operation for very large data sets (that is, several hundred megabytes). However, this buffer is allocated on the large object heap and could potentially degrade garbage collection performance. You should only use large buffer sizes if it will noticeably improve the performance of your app.
+この例では、先ほど推奨した 80 KB を超える 1 MB をバッファー サイズに設定しています。 このように大きなバッファーを使うと、きわめて大きなデータ セット (数百メガバイトなど) のコピー操作で高いスループットを得ることができます。 ただし、このバッファーは大きなオブジェクト ヒープ上に割り当てられるため、ガベージ コレクションのパフォーマンスが損なわれる可能性があります。 大きなバッファー サイズの使用は、アプリのパフォーマンスに顕著な向上が見られる場合に限定してください。
 
-When you are working with a large number of streams simultaneously, you might want to reduce or eliminate the memory overhead of the buffer. You can specify a smaller buffer, or set the *bufferSize* parameter to 0 to turn off buffering entirely for that stream adapter. You can still achieve good throughput performance without buffering if you perform large reads and writes to the managed stream.
+多数のストリームを同時に扱うとき、必要に応じてバッファーのメモリ オーバーヘッドを削減 (または排除) することができます。 ストリーム アダプターに指定するバッファーを小さくするか、*bufferSize* パラメーターを 0 に設定してバッファリングを完全にオフにすることもできます。 大規模な読み取りと書き込みをマネージ ストリームに対して行う場合、バッファリングしなくても良好なスループット パフォーマンスを確保できます。
 
-### Performing latency-sensitive operations
+### 待機時間の影響を受けやすい操作の実行
 
-You might also want to avoid buffering if you want low-latency reads and writes and do not want to read in large blocks out of the underlying UWP stream. For example, you might want low-latency reads and writes if you are using the stream for network communications.
+バッファリングを回避した方がよいケースは他にもあります。読み取りと書き込みの待機時間を短くする必要があり、基になる UWP ストリームから大きなブロック単位で読み取ることが適していないケースが該当します。 たとえば、ネットワーク通信のストリームを使う場合、読み取りと書き込みの待機時間を短くする必要があります。
 
-In a chat app you might use a stream over a network interface to send messages back in forth. In this case you want to send messages as soon as they are ready and not wait for the buffer to fill up. If you set the buffer size to 0 when calling the [**AsStreamForRead**](Overload:System.IO.WindowsRuntimeStreamExtensions.AsStreamForRead), [**AsStreamForWrite**](Overload:System.IO.WindowsRuntimeStreamExtensions.AsStreamForWrite), and [**AsStream**](Overload:System.IO.WindowsRuntimeStreamExtensions.AsStream) extension methods, then the resulting adapter will not allocate a buffer, and all calls will manipulate the underlying UWP stream directly.
+チャット アプリでは、ネットワーク インターフェイス経由でストリームを使い、メッセージをやり取りすることが考えられます。 この場合、バッファーにメッセージが満たされるまで待機するのではなく、完成したメッセージをすぐに送信する必要があります。 [
+            **AsStreamForRead**](Overload:System.IO.WindowsRuntimeStreamExtensions.AsStreamForRead)、[**AsStreamForWrite**](Overload:System.IO.WindowsRuntimeStreamExtensions.AsStreamForWrite)、[**AsStream**](Overload:System.IO.WindowsRuntimeStreamExtensions.AsStream) の各拡張メソッドを呼び出す際にバッファー サイズを 0 に設定した場合、そのアダプターでは、バッファーが割り当てられず、すべての呼び出しについて、基になる UWP ストリームが直接操作されます。
 
 
 

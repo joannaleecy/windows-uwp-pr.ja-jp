@@ -1,117 +1,119 @@
 ---
 ms.assetid: A37ADD4A-2187-4767-9C7D-EDE8A90AA215
-title: Planning for performance
-description: Users expect their apps to remain responsive, to feel natural, and not to drain their battery.
+title: パフォーマンスの計画
+description: ユーザーは、高い応答性と自然な使用感、そしてバッテリーが消耗しないことをアプリに期待しています。
 ---
-# Planning for performance
+# パフォーマンスの計画
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-Users expect their apps to remain responsive, to feel natural, and not to drain their battery. Technically, performance is a non-functional requirement but treating performance as a feature will help you deliver on your users' expectations. Specifying goals, and measuring, are key factors. Determine what your performance-critical scenarios are; define what good performance mean. Then measure early and often enough throughout the lifecycle of your project to be confident you'll hit your goals.
+ユーザーは、高い応答性と自然な使用感、そしてバッテリーが消耗しないことをアプリに期待しています。 技術的には、パフォーマンスは機能要件ではありませんが、パフォーマンスを機能として扱うことで、ユーザーの期待に沿うことができます。 鍵となる要因は、目標の明確化と測定の実施です。 パフォーマンスが重要なシナリオを決定し、優れたパフォーマンスとは何を意味するかを定義します。 次に、プロジェクトの初期とライフサイクル全体で十分な回数の測定を行って、目標を達成できることを確認します。
 
-## Specifying goals
+## 目標を明確にする
 
-The user experience is a basic way to define good performance. An app's startup time can influence a user's perception of its performance. A user might consider an app launch time of less than one second to be excellent, less than 5 seconds to be good, and greater than 5 seconds to be poor.
+ユーザー エクスペリエンスは、優れたパフォーマンスを定義する基本的な方法です。 アプリの起動時間は、アプリのパフォーマンスに対するユーザーの認識に影響を与える可能性があります。 ユーザーは、アプリの起動時間が 1 秒未満は優秀、5 秒未満は良好、5 秒を超えると貧弱であると考えることがあります。
 
-Other metrics have a less obvious impact on user experience, for example memory. The chances of an app being terminated while either suspended or inactive rise with the amount of memory used by the active app. It's a general rule that high memory usage degrades the experience for all apps on the system, so having a goal on memory consumption is reasonable. Take into consideration the rough size of your app as perceived by users: small, medium, or large. Expectations around performance will correlate to this perception. For example, you might want a small app that doesn't use a lot of media to consume less than 100MB of memory.
+その他のメトリック (メモリなど) がユーザー エクスペリエンスに与える影響はそれほど明確ではありません。 アプリが使うメモリの量が増えると、中断しているか非アクティブになっているアプリが終了する可能性が高くなります。 一般に、メモリの使用量が高くなるとシステム上のすべてのアプリのエクスペリエンスが低下するため、メモリの消費量に関する目標を設定することは妥当なことです。 ユーザーが認識するアプリの大まかなサイズ (大、中、小) を考慮します。 パフォーマンスに関する期待は、この認識と関連性があります。 たとえば、たくさんのメディアは使わない小さいアプリであれば、消費するメモリが 100 MB を超えないようにします。
 
-It's better to set an initial goal, and then revise it later, than not to have a goal at all. Your app's performance goals should be specific and measurable and they should fall into three categories: how long it takes users, or the app, to complete tasks (time); the rate and continuity with which the app redraws itself in response to user interaction (fluidity); and how well the app conserves system resources, including battery power (efficiency).
+初期目標を設定して後で修正するほうが、目標をまったく持たないことよりもましです。 アプリのパフォーマンス目標は具体的かつ測定可能である必要があり、ユーザーまたはアプリがタスクを完了させるまでにかかる時間 (時間)、ユーザーの操作に応えてアプリが自身を再描画する割合と継続性 (滑らかな動作)、アプリがバッテリー電源を含むシステム リソースを節約する度合い (効率性) という 3 つのカテゴリに分類する必要があります。
 
-## Time
+## 時間
 
-Think of the acceptable ranges of elapsed time (*interaction classes*) it takes for users to complete their tasks in your app. For each interaction class assign a label, a perceived user sentiment, and ideal and maximum durations. Here are some suggestions.
+ユーザーがアプリでタスクを完了するためにかかる経過時間の容認できる範囲 (*インタラクション クラス*) を考えます。 各インタラクション クラスに対して、ラベル、認識されるユーザーの感情、理想時間、および最大時間を割り当てます。 いくつかの提案を次に示します。
 
-| Interaction class label | User perception                 | Ideal            | Maximum          | Examples                                                                     |
+| インタラクション クラスのラベル | ユーザーの体感                 | 理想時間            | 最大時間          | 例                                                                     |
 |-------------------------|---------------------------------|------------------|------------------|------------------------------------------------------------------------------|
-| Fast                    | Minimally noticeable delay      | 100 milliseconds | 200 milliseconds | Bring up the app bar; press a button (first response)                        |
-| Typical                 | Quick, but not fast             | 300 milliseconds | 500 milliseconds | Resize; semantic zoom                                                        |
-| Responsive              | Not quick, but feels responsive | 500 milliseconds | 1 second         | Navigate to a different page; resume the app from a suspended state          |
-| Launch                  | Competitive experience          | 1 second         | 3 seconds        | Launch the app for the first time or after it has been previously terminated |
-| Continuous              | No longer feels responsive      | 500 milliseconds | 5 seconds        | Download a file from the Internet                                            |
-| Captive                 | Long; user could switch away    | 500 milliseconds | 10 seconds       | Install multiple apps from the Store                                         |
+| Fast (高速)                    | ほとんど遅延を感じない      | 100 ミリ秒 | 200 ミリ秒 | アプリ バーを起動する、ボタンを押す (最初の応答)                        |
+| Typical (標準)                 | 速いが、高速ではない             | 300 ミリ秒 | 500 ミリ秒 | サイズ変更、セマンティック ズーム                                                        |
+| Responsive (応答)              | 速くはないが、反応はよい | 500 ミリ秒 | 1 秒         | 別のページに移動する、中断状態からアプリを再開する          |
+| Launch (起動)                  | 操作に干渉する          | 1 秒         | 3 秒        | アプリを初めて起動する、アプリを終了後にもう一度起動する |
+| Continuous (継続)              | 反応がよいと感じない      | 500 ミリ秒 | 5 秒        | インターネットからファイルをダウンロードする                                            |
+| Captive (占有)                 | 遅い、ユーザーが切り替えを検討する可能性がある    | 500 ミリ秒 | 10 秒       | ストアから複数のアプリをインストールする                                         |
 
  
 
-You can now assign interaction classes to your app's performance scenarios. You can assign the app's point-in-time reference, a portion of the user experience, and an interaction class to each scenario. Here are some suggestions for an example food and dining app.
+これで、インタラクション クラスをアプリのパフォーマンスのシナリオに割り当てることができます。 各シナリオに、アプリを参照した時点、ユーザー エクスペリエンスの一部、およびインタラクション クラスを割り当てることができます。 次に示すのは、サンプルのレシピ紹介アプリのための提案です。
 
 
 <!-- DHALE: used HTML table here b/c WDCML src used rowspans -->
 <table>
-<tr><th>Scenario</th><th>Time point</th><th>User experience</th><th>Interaction class</th></tr>
-<tr><td rowspan="3">Navigate to recipe page </td><td>First response</td><td>Page transition animation started</td><td>Fast (100-200 milliseconds)</td></tr>
-<tr><td>Responsive</td><td>Ingredients list loaded; no images</td><td>Responsive (500 milliseconds - 1 second)</td></tr>
-<tr><td>Visible complete</td><td>All content loaded; images shown</td><td>Continuous (500 milliseconds - 5 seconds)</td></tr>
-<tr><td rowspan="2">Search for recipe</td><td>First response</td><td>Search button clicked</td><td>Fast (100 - 200 milliseconds)</td></tr>
-<tr><td>Visible complete</td><td>List of local recipe titles shown</td><td>Typical (300 - 500 milliseconds)</td></tr>
+<tr><th>シナリオ</th><th>時点</th><th>ユーザー エクスペリエンス</th><th>インタラクション クラス</th></tr>
+<tr><td rowspan="3">レシピ ページに移動する </td><td>最初の応答</td><td>ページの切り替えアニメーションが始まった</td><td>Fast (高速) (100 から 200 ミリ秒)</td></tr>
+<tr><td>応答中</td><td>材料のリストが読み込まれた、画像は表示されていない</td><td>Responsive (応答) (500 ミリ秒から 1 秒)</td></tr>
+<tr><td>ページが表示された</td><td>すべてのコンテンツが読み込まれた、画像が表示された</td><td>Continuous (継続) (500 ミリ秒から 5 秒)</td></tr>
+<tr><td rowspan="2">レシピを検索する</td><td>最初の応答</td><td>検索ボタンをクリックした</td><td>Fast (高速) (100 から 200 ミリ秒)</td></tr>
+<tr><td>ページが表示された</td><td>ローカル レシピのタイトル一覧が表示された</td><td>Typical (標準) (300 から 500 ミリ秒)</td></tr>
 </table>
 
-If you're displaying live content then also consider content freshness goals. Is the goal to refresh content every few seconds? Or is refreshing content every few minutes, every few hours, or even once a day an acceptable user experience?
+ライブ コンテンツを表示する場合は、コンテンツの更新目標も考慮します。 目標は、コンテンツを数秒ごとに更新することですか。 それとも、数分ごと、数時間ごと、1 日に 1 回の更新で、ユーザー エクスペリエンスは許容できる範囲ですか。
 
-With your goals specified, you are now better able to test, analyze, and optimize your app.
+目標を明確にすることで、アプリのテスト、分析、最適化を実行しやすくなります。
 
-## Fluidity
+## 滑らかな動作
 
-Specific measurable fluidity goals for your app might include:
+アプリの具体的で測定可能な滑らかな動作の目標には、以下が含まれます。
 
--   No screen redraw stops-and-starts (glitches).
--   Animations render at 60 frames per second (FPS).
--   When a user pans/scrolls, the app presents 3-6 pages of content per second.
+-   画面の再描画で中断 (エラー) が発生しない。
+-   アニメーションは 1 秒あたり 60 フレームでレンダリングする (FPS)。
+-   ユーザーがパンまたはスクロールしたとき、アプリは 1 秒あたり 3 ～ 6 ページ分のコンテンツを表示する。
 
-## Efficiency
+## 効率性
 
-Specific measurable efficiency goals for your app might include:
+アプリの具体的で測定可能な効率性の目標には、以下が含まれます。
 
--   For your app's process, CPU percentage is at or below *N* and memory usage in MB is at or below *M* at all times.
--   When the app is inactive, *N* and *M* are zero for your app's process.
--   Your app can be used actively for *X* hours on battery power; when your app is inactive, the device retains its charge for *Y* hours.
+-   アプリのプロセスで、常に CPU の割合が *N* 以下であり、メモリ使用量 (MB 単位) が *M* 以下である。
+-   アプリがアクティブでないとき、*N* と *M* は、アプリのプロセスでは 0 である。
+-   アプリはバッテリー電源で *X* 時間アクティブに使用でき、アプリがアクティブでないとき、デバイスは充電状態を *Y* 時間保持する。
 
-## Design your app for performance
+## アプリのパフォーマンスを設計する
 
-You can now use your performance goals to influence your app's design. Using the example food and dining app, after the user navigates to the recipe page, you might choose to [update items incrementally](optimize-gridview-and-listview.md#update-items-incrementally) so that the recipe's name is rendered first, displaying the ingredients is deferred, and displaying images is deferred further. This maintains responsiveness and a fluid UI while panning/scrolling, with the full fidelity rendering taking place after the interaction slows to a pace that allow the UI thread to catch up. Here are some other aspects to consider.
+パフォーマンスの目標を使って、アプリの設計に役立てることができます。 サンプルのレシピ紹介アプリで、ユーザーがレシピ ページに移動した後、レシピの名前が最初に表示され、少し遅れて材料が表示され、さらに遅れて画像が表示されるように、項目を徐々に更新 ([update items incrementally](optimize-gridview-and-listview.md#update-items-incrementally)) します。 これで、パンまたはスクロール中の応答と滑らかな UI が保たれ、操作のペースが落ちて UI スレッドが追い付けるようになった後で完全なレンダリングを実行できます。 他にも次の局面を検討します。
 
 **UI**
 
--   Maximize parse and load time and memory efficiency for each page of your app's UI (especially the initial page) by [optimizing your XAML markup](optimize-xaml-loading.md). In a nutshell, defer loading UI and code until it's needed.
--   For [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) and [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705), make all the items the same size and use as many [ListView and GridView optimization techniques](optimize-gridview-and-listview.md) as you can.
--   Declare UI in the form of markup, which the framework can load and re-use in chunks, rather than constructing it imperatively in code.
--   Collapse UI elements until the user needs them. See the [**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208992) property.
--   Prefer theme transitions and animations to storyboarded animations. For more info, see [Animations overview](https://msdn.microsoft.com/library/windows/apps/Mt187350). Remember that storyboarded animations require constant updates to the screen, and keep the CPU and graphics pipeline active. To preserve the battery, don't have animations running if the user is not interacting with the app.
--   Images you load should be loaded at a size that is appropriate for the view in which you are presenting it, using the [**GetThumbnailAsync**](https://msdn.microsoft.com/library/windows/apps/BR227210) method.
+-   XAML マークアップを最適化 ([optimizing your XAML markup](optimize-xaml-loading.md)) することで、アプリの UI の各ページ (特に最初のページ) の解析と読み込みの時間とメモリの効率を最大化します。 簡単に言うと、必要になるまで UI とコードの読み込みを遅らせます。
+-   [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) と [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) では、すべての項目を同じサイズにし、できるだけ多くの ListView と GridView の最適化手法 ([ListView and GridView optimization techniques](optimize-gridview-and-listview.md)) を使います。
+-   UI は、コード内で命令を使って構築するのではなく、フレームワークが読み込んでチャンクで再利用できるマークアップ形式で宣言します。
+-   ユーザーが必要とするまでコンテンツを展開しません。 [
+            **Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208992) プロパティをご覧ください。
+-   ストーリーボードに設定されたアニメーションよりテーマ切り替えやテーマ アニメーションを優先的に使います。 詳しくは、「アニメーションの概要 ([Animations overview](https://msdn.microsoft.com/library/windows/apps/Mt187350))」をご覧ください。 ストーリーボードに設定されたアニメーションでは、画面を定期的に更新して CPU とグラフィックス パイプラインを常にアクティブにしておく必要があることを忘れないようにします。 バッテリーを節約するために、ユーザーがアプリを操作していない場合はアニメーションを実行しないようにします。
+-   読み込む画像は、[**GetThumbnailAsync**](https://msdn.microsoft.com/library/windows/apps/BR227210) メソッドを使って、そのときのビューに適したサイズで読み込む必要があります。
 
-**CPU, memory, and power**
+**CPU、メモリ、電源**
 
--   Schedule lower-priority work to run on lower-priority threads and/or cores. See [Asynchronous programming](https://msdn.microsoft.com/library/windows/apps/Mt187335), the [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/BR209054) property, and the [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/BR208211) class.
--   Minimize your app's memory footprint by releasing expensive resources (such as media) on suspend.
--   Minimize your code's working set.
--   Avoid memory leaks by unregistering event handlers and dereferencing UI elements whenever possible.
--   For the sake of the battery, be conservative with how often you poll for data, query a sensor, or schedule work on the CPU when it is idle.
+-   優先度の低い作業は、優先度の低いスレッドやコアで実行するようにスケジュールを設定します。 非同期プログラミング ([Asynchronous programming](https://msdn.microsoft.com/library/windows/apps/Mt187335))、[**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/BR209054) プロパティ、[**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/BR208211) クラスをご覧ください。
+-   一時停止中のメモリ使用量の多いリソース (メディアなど) を解放することで、アプリのメモリ使用量を最小限に抑えます。
+-   コードのワーキング セットを最小限に抑えます。
+-   イベント ハンドラーを登録解除し、UI 要素を逆参照して、できるだけメモリ リークを避けます。
+-   バッテリーを節約するために、データをポーリングする頻度、センサーを照会する頻度、またはアイドル状態の CPU に作業をスケジュールする頻度を控えめにします。
 
-**Data access**
+**データ アクセス**
 
--   If possible, prefetch content. For automatic prefetching, see the [**ContentPrefetcher**](https://msdn.microsoft.com/library/windows/apps/Dn279042) class. For manual prefetching, see the [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/BR224847) namespace and the [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/Hh700517) class.
--   If possible, cache content that's expensive to access. See the [**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/BR241621) and [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/BR241622) properties.
--   For cache misses, show a placeholder UI as quickly as possible that indicates that the app is still loading content. Transition from placeholder to live content in a way that is not jarring to the user. For example, don't change the position of content under the user's finger or mouse pointer as the app loads live content.
+-   可能であれば、コンテンツをプリフェッチします。 自動的プリフェッチについては、[**ContentPrefetcher**](https://msdn.microsoft.com/library/windows/apps/Dn279042) クラスをご覧ください。 手動プリフェッチについては、[**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/BR224847) 名前空間と [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/Hh700517) クラスをご覧ください。
+-   可能であれば、アクセスするときに負荷がかかるコンテンツはキャッシュしておきます。 [
+            **LocalFolder**](https://msdn.microsoft.com/library/windows/apps/BR241621) プロパティと [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/BR241622) プロパティをご覧ください。
+-   キャッシュが失われた場合は、できるだけ早くプレース ホルダー UI を表示して、アプリがコンテンツを読み込み中であることを示します。 ユーザーに不快感を与えないような方法で、プレースホルダーからライブ コンテンツに切り替えます。 たとえば、アプリがライブ コンテンツを読み込む際に、ユーザーの指またはマウス ポインターの下にあるコンテンツの位置を変更しないようにします。
 
-**App launch and resume**
+**アプリの起動と再開**
 
--   Defer the app's splash screen, and don't extend the app's splash screen unless necessary. For details, see [Creating a fast and fluid app launch experience](http://go.microsoft.com/fwlink/p/?LinkId=317595) and [Display a splash screen for more time](https://msdn.microsoft.com/library/windows/apps/Mt187309).
--   Disable animations that occur immediately after the splash screen is dismissed, as these will only lead to a perception of delay in app launch time.
+-   アプリのスプラッシュ画面の表示を遅らせ、必要ない場合は拡張しません。 詳しくは、「高速で滑らかな起動エクスペリエンスを作り上げる ([Creating a fast and fluid app launch experience](http://go.microsoft.com/fwlink/p/?LinkId=317595))」と「スプラッシュ画面の表示時間の延長 ([Display a splash screen for more time](https://msdn.microsoft.com/library/windows/apps/Mt187309))」をご覧ください。
+-   スプラッシュ画面が消えた直後に発生するアニメーションは無効にします。アプリの起動が遅くなるように感じられるためです。
 
-**Adaptive UI, and orientation**
+**アダプティブ UI と向き**
 
--   Use the [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) class.
--   Complete only required work immediately, deferring intensive app work until later—your app has between 200 and 800 milliseconds to complete work before the user sees your app's UI in a cropped state.
+-   [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) クラスを使います。
+-   必要な処理だけをすぐに完了し、負荷の大きなアプリの作業は後回しにします。処理を完了し、アプリの UI がトリミングされた状態で表示されるまでに 200 ～ 800 ミリ秒かかります。
 
-With your performance-related designs in place, you can start coding your app.
+パフォーマンス関連の設計が整ったら、アプリのコーディングを始めることができます。
 
-## Instrument for performance
+## パフォーマンスを計測する
 
-As you code, add code that logs messages and events at certain points while your app runs. Later, when you're testing your app, you can use profiling tools such as Windows Performance Recorder and Windows Performance Analyzer (both are included in the [Windows Performance Toolkit](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh162945.aspx)) to create and view a report about your app's performance. In this report, you can look for these messages and events to help you more easily analyze the report's results.
+アプリをコーディングする際に、アプリの実行中のある時点におけるメッセージやイベントをログに記録するコードを追加できます。 アプリを後でテストする際に、Windows Performance Recorder や Windows Performance Analyzer (どちらも [Windows Performance Toolkit](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh162945.aspx) に含まれています) などのプロファイリング ツールを使って、アプリのパフォーマンスに関するレポートを作成して閲覧できます。 このレポートでメッセージやイベントを確認して、レポートの結果を簡単に解析できます。
 
-The Universal Windows Platform (UWP) provides logging APIs, backed by [Event Tracing for Windows (ETW)](https://msdn.microsoft.com/library/windows/desktop/Bb968803), that together offer a rich event logging and tracing solution. The APIs, which are part of the [**Windows.Foundation.Diagnostics**](https://msdn.microsoft.com/library/windows/apps/BR206677) namespace, include the [**FileLoggingSession**](https://msdn.microsoft.com/library/windows/apps/Dn264138), [**LoggingActivity**](https://msdn.microsoft.com/library/windows/apps/Dn264195), [**LoggingChannel**](https://msdn.microsoft.com/library/windows/apps/Dn264202), and [**LoggingSession**](https://msdn.microsoft.com/library/windows/apps/Dn264217) classes.
+ユニバーサル Windows プラットフォーム (UWP) には、Windows イベント トレーシング (ETW) ([Event Tracing for Windows (ETW)](https://msdn.microsoft.com/library/windows/desktop/Bb968803)) と連動するログ記録 API が用意されており、イベント ログの記録とトレースを行う高機能なソリューションを提供します。 これらの API は [**Windows.Foundation.Diagnostics**](https://msdn.microsoft.com/library/windows/apps/BR206677) 名前空間の一部であり、[**FileLoggingSession**](https://msdn.microsoft.com/library/windows/apps/Dn264138) クラス、[**LoggingActivity**](https://msdn.microsoft.com/library/windows/apps/Dn264195) クラス、[**LoggingChannel**](https://msdn.microsoft.com/library/windows/apps/Dn264202) クラス、および [**LoggingSession**](https://msdn.microsoft.com/library/windows/apps/Dn264217) クラスが含まれます。
 
-To log a message in the report at a specific point while the app is running, create a **LoggingChannel** object, and then call the object's [**LogMessage**](https://msdn.microsoft.com/library/windows/apps/Dn264202-logmessage) method, like this.
+アプリ実行中の特定の時点でレポートにメッセージが記録するには、**LoggingChannel** オブジェクトを作成し、オブジェクトの [**LogMessage**](https://msdn.microsoft.com/library/windows/apps/Dn264202-logmessage) メソッドを、次のように呼び出します。
 
 ```csharp
 // using Windows.Foundation.Diagnostics;
@@ -124,7 +126,7 @@ myLoggingChannel.LogMessage(LoggingLevel.Information, &quot;Here' s my logged me
 // ...
 ```
 
-To log start and stop events in the report over a period of time while the app is running, create a **LoggingActivity** object, and then call the object's [**LoggingActivity**](https://msdn.microsoft.com/library/windows/apps/Dn264195-loggingactivity) constructor, like this.
+アプリ実行中の特定の期間にわたってレポートに開始イベントと停止イベントを記録するには、**LoggingActivity** オブジェクトを作成し、オブジェクトの [**LoggingActivity**](https://msdn.microsoft.com/library/windows/apps/Dn264195-loggingactivity) コンストラクターを次のように呼び出します。
 
 ```csharp
 // using Windows.Foundation.Diagnostics;
@@ -143,48 +145,48 @@ using (myLoggingActivity = new LoggingActivity(&quot;MyLoggingActivity&quot;), m
 // ...
 ```
 
-Also see the [Logging sample](http://go.microsoft.com/fwlink/p/?LinkId=529576).
+ログ記録のサンプル ([Logging sample](http://go.microsoft.com/fwlink/p/?LinkId=529576)) もご覧ください。
 
-With your app instrumented, you can test and measure your app's performance.
+アプリをインストルメント化したら、アプリのパフォーマンスのテストと測定を実行できます。
 
-## Test and measure against performance goals
+## アプリをテストしてパフォーマンスの目標と照らし合わせる
 
-Part of your performance plan is to define the points during development where you'll measure performance. This serves different purposes depending on whether you're measuring during prototyping, development, or deployment. Measuring performance during the early stages of prototyping can be tremendously valuable, so we recommend that you do so as soon as you have code that does meaningful work. Early measurements give you a good idea of where the important costs are in your app, and inform design decisions. This results in high performing and scaling apps. It's generally costlier to change designs later than earlier. Measuring performance late in the product cycle can result in last-minute hacks and poor performance.
+パフォーマンスの計画の一部として、開発のどの時点でパフォーマンスを測定するかを定義することがあります。 測定の目的は、それを実行する時点 (プロトタイプ中、開発中、展開中) に応じて変化します。 プロトタイプの初期段階でのパフォーマンスの測定は非常に有益である可能性があるため、意味のある作業を実行するコードができたら、すぐに測定することをお勧めします。 早いうちに測定しておくと、アプリのどの部分のコストが重要かがわかり、設計の決定事項に関する情報も得られます。 その結果、拡張しやすい高パフォーマンスのアプリを作成できます。 一般に、設計の変更が後になればなるほど、より多くのコストがかかります。 製品サイクルの後半でパフォーマンスを測定すると、十分な対応ができず、高いパフォーマンスが得られない可能性があります。
 
-Use these techniques and tools to test how your app stacks up against your original performance goals.
+次の手法とツールを使ってアプリのパフォーマンスをテストして、元のパフォーマンスの目標と比較します。
 
--   Test against a wide variety of hardware configurations including all-in-one and desktop PCs, laptops, ultrabooks, and tablets and other mobile devices.
--   Test against a wide variety of screen sizes. While wider screen sizes can show much more content, bringing in all of that extra content can negatively impact performance.
--   Eliminate as many testing variables as you can.
-    -   Turn off background apps on the testing device. To do this, in Windows, select **Settings** from the Start menu &gt; **Personalization** &gt; **Lock screen**. Select each active app and select **None**.
-    -   Compile your app to native code by building it in release configuration before deploying it to the testing device.
-    -   To ensure that automatic maintenance does not affect the performance of the testing device, trigger it manually and wait for it to complete. In Windows, in the Start menu search for **Security and Maintenance**. In the **Maintenance** area, under **Automatic Maintenance**, select **Start maintenance** and wait for the status to change from **Maintenance in progress**.
-    -   Run the app multiple times to help eliminate random testing variables and help ensure consistent measurements.
--   Test for reduced power availability. Your users' device might have significantly less power than your development machine. Windows was designed with low-power devices, such as mobile devices, in mind. Apps that run on the platform should ensure they perform well on these devices. As a heuristic, expect that a low power device runs at about a quarter the speed of a desktop computer, and set your goals accordingly.
--   Use a combination of tools like Microsoft Visual Studio and Windows Performance Analyzer to measure app performance. Visual Studio is designed to provide app-focused analysis, such as source code linking. Windows Performance Analyzer is designed to provide system-focused analysis, such as providing system info, info about touch manipulation events, and info about disk input/output (I/O) and graphics processing unit (GPU) cost. Both tools provide trace capture and export, and can reopen shared and post-mortem traces.
--   Before you submit your app to the Store for certification, be sure to incorporate into your test plans the performance-related test cases as described in the "Performance tests" section of [Windows App Certification Kit tests](windows-app-certification-kit-tests.md) and in the "Performance and stability" section of [Windows Store app test cases](https://msdn.microsoft.com/library/windows/apps/Dn275879).
+-   さまざまなハードウェア構成 (オールインワン PC、デスクトップ PC、ノート PC、タブレット) でテストを行います。
+-   さまざまな画面サイズでテストを行います。 画面サイズが大きいとより多くのコンテンツを表示できますが、すべてのコンテンツを表示するとパフォーマンスに悪影響が出る可能性があります。
+-   テストに影響する可変状態をできるだけ取り除きます。
+    -   テスト デバイスのバックグラウンド アプリを停止します。 これを行うには、Windows で、[スタート] メニューの **[設定]**、**[パーソナル設定]**、**[ロック画面]** の順に選択します。 アクティブなアプリを選択し、**[なし]** を選択します。
+    -   テスト デバイスに展開する前に、リリース構成でビルドすることで、アプリをネイティブ コードにコンパイルします。
+    -   自動メンテナンスがテスト デバイスのパフォーマンスに影響しないようにするため、メンテナンスを手動でトリガーして完了するまで待ちます。 Windows の [スタート] メニューで、**[セキュリティとメンテナンス]** を検索します。 **[メンテナンス]** 領域の **[自動メンテナンス]** で、**[メンテナンスの開始]** を選択し、状態が **[メンテナンスは進行中です]** から別の状態に変化するまで待ちます。
+    -   一貫性のある測定結果が得られるように、アプリを複数回実行して、テストのランダム要素を排除します。
+-   低電力での利用可能性をテストします。 ユーザーのデバイスは、開発用のコンピューターに比べ、大幅に低電力である可能性があります。 Windows は、モバイル デバイスなどの低電力デバイスでの動作を考慮して設計されています。 プラットフォームで動作するアプリが、これらのデバイスでも高いパフォーマンスを発揮できるようにする必要があります。 経験則として、低電力デバイスでの実行速度はデスクトップ コンピューターの約 1/4 であると考えられるため、これに応じて目標を設定します。
+-   アプリのパフォーマンスを測定するには、Microsoft Visual Studio や Windows Performance Analyzer のようなツールを組み合わせて使います。 Visual Studio は、ソース コードのリンク設定など、アプリに焦点を当てた分析を行うように設計されています。 Windows Performance Analyzer は、システム情報、タッチ操作イベントに関する情報、ディスクの入出力 (I/O) に関する情報、グラフィックス処理ユニット (GPU) のコストに関する情報の提供など、システムに焦点を当てた分析を行うように設計されています。 どちらのツールでも、トレースをキャプチャしてエクスポートし、共有トレースと事後検証トレースを再開することができます。
+-   認定を受けるためにアプリをストアに提出する前に、Windows アプリ認定キットのテスト ([Windows App Certification Kit tests](windows-app-certification-kit-tests.md)) の「パフォーマンスのテスト」セクションと Windows ストア アプリのテスト ケース ([Windows Store app test cases](https://msdn.microsoft.com/library/windows/apps/Dn275879)) の「パフォーマンスと安定性」セクションの説明に従って、パフォーマンス関連のテスト ケースをテスト プランに組み込みます。
 
-For more info, see these resources and profiling tools.
+詳しくは、次のリソースとプロファイリング ツールをご覧ください。
 
 -   [Windows Performance Analyzer](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh448170.aspx)
 -   [Windows Performance Toolkit](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh162945.aspx)
--   [Analyze performance using Visual Studio diagnostic tools](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh696636.aspx)
--   The //build/ session [XAML Performance](https://channel9.msdn.com/Events/Build/2015/3-698)
--   The //build/ session [New XAML Tools in Visual Studio 2015](https://channel9.msdn.com/Events/Build/2015/2-697)
+-   [Visual Studio 診断ツールを使用してパフォーマンスを分析するAnalyze performance using Visual Studio diagnostic tools](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh696636.aspx)
+-   //build/ セッション「[XAML Performance](https://channel9.msdn.com/Events/Build/2015/3-698)」
+-   //build/ セッション「[New XAML Tools in Visual Studio 2015](https://channel9.msdn.com/Events/Build/2015/2-697)」
 
-## Respond to the performance test results
+## パフォーマンス テストの結果に対応する
 
-After you analyze your performance test results, determine if any changes are needed, for example:
+アプリのパフォーマンス テストの結果を分析したら、次のような変更が必要かどうかを判断します。
 
--   Should you change any of your app design decisions, or optimize your code?
--   Should you add, remove, or change any of the instrumentation in the code?
--   Should you revise any of your performance goals?
+-   現在の設計の決定事項のいずれかを変更する必要があるか。またはコードを最適化する必要があるか。
+-   コードに対してインストルメンテーションを追加、削除、または変更する必要があるか。
+-   パフォーマンス目標のいずれかを変更する必要があるか。
 
-If any changes are needed, make them and then go back to instrumenting or testing and repeat.
+変更が必要な場合は、変更を行った後でインストルメント化に戻り、テストを繰り返します。
 
-## Optimizing
+## 最適化
 
-Optimize only the performance-critical code paths in your app: those where most time is spent. Profiling will tell you which. Often, there is a trade-off between creating software that follows good design practices and writing code that performs at the highest optimization. It is generally better to prioritize developer productivity and good software design in areas where performance is not a concern.
+アプリのパフォーマンスが重要なコード パスのみ最適化します。この場所に最も多くの時間を費やします。 プロファイリングによって、どの場所がこれに該当するかがわかります。 多くの場合、優れた設計のソフトウェアを作成することと、最高レベルの最適化を実現したコードを記述することは、両立しません。 一般的に、パフォーマンスがそれほど重視されない領域では、開発者の生産性や優れたソフトウェア設計を優先することが適切です。
 
 
 

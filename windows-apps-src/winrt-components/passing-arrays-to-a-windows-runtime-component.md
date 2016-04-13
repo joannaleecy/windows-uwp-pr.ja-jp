@@ -1,27 +1,27 @@
 ---
-title: Passing arrays to a Windows Runtime Component
-description: In the Windows Universal Platform (UWP), parameters are either for input or for output, never both. This means that the contents of an array that is passed to a method, as well as the array itself, are either for input or for output.
+title: Windows ランタイム コンポーネントに配列を渡す
+description: Windows ユニバーサル プラットフォーム (UWP) では、パラメーターは入力または出力のどちらかに使用され、両方に使用されることはありません。 つまり、メソッドに渡される配列の内容および配列自体は、入力か出力のどちらかに使用されます。
 ms.assetid: 8DE695AC-CEF2-438C-8F94-FB783EE18EB9
 ---
 
-# Passing arrays to a Windows Runtime Component
+# Windows ランタイム コンポーネントに配列を渡す
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
+\[一部の情報はリリース前の製品に関することであり、正式版がリリースされるまでに大幅に変更される可能性があります。 ここに記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。\]
 
-In the Windows Universal Platform (UWP), parameters are either for input or for output, never both. This means that the contents of an array that is passed to a method, as well as the array itself, are either for input or for output. If the contents of the array are for input, the method reads from the array but doesn't write to it. If the contents of the array are for output, the method writes to the array but doesn't read from it. This presents a problem for array parameters, because arrays in the .NET Framework are reference types, and the contents of an array are mutable even when the array reference is passed by value (**ByVal** in Visual Basic). The [Windows Runtime Metadata Export Tool (Winmdexp.exe)](https://msdn.microsoft.com/library/hh925576.aspx) requires you to specify the intended usage of the array if it is not clear from context, by applying the ReadOnlyArrayAttribute attribute or the WriteOnlyArrayAttribute attribute to the parameter. Array usage is determined as follows:
+Windows ユニバーサル プラットフォーム (UWP) では、パラメーターは入力または出力のどちらかに使用され、両方に使用されることはありません。 つまり、メソッドに渡される配列の内容および配列自体は、入力か出力のどちらかに使用されます。 配列の内容が入力に使用される場合、メソッドは配列から読み取りを行いますが、書き込みはしません。 配列の内容が出力に使用される場合、メソッドは配列に書き込みを行いますが、読み取りはしません。 .NET framework の配列は参照型であり、配列の参照が値 (Visual Basic では **ByVal**) で渡されるときも配列の内容は変更可能であるため、これは配列パラメーターにとって問題となります。 [Windows ランタイム メタデータのエクスポート ツール (Winmdexp.exe)](https://msdn.microsoft.com/library/hh925576.aspx) では、コンテキストから判別できない場合、パラメーターに ReadOnlyArrayAttribute 属性または WriteOnlyArrayAttribute 属性を適用して、配列の用途を指定する必要があります。 配列の使用方法は、次のように決定されます。
 
--   For the return value or for an out parameter (a **ByRef** parameter with the [OutAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.outattribute.aspx) attribute in Visual Basic) the array is always for output only. Do not apply the ReadOnlyArrayAttribute attribute. The WriteOnlyArrayAttribute attribute is allowed on output parameters, but it's redundant.
+-   戻り値、または出力パラメーター (Visual Basic では、[OutAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.outattribute.aspx) 属性の **ByRef** パラメーター) の場合、配列は常に出力に使用されます。 ReadOnlyArrayAttribute 属性は適用しないでください。 出力パラメーターで WriteOnlyArrayAttribute 属性を適用することはできますが、冗長になります。
 
-    > **Caution**  The Visual Basic compiler does not enforce output-only rules. You should never read from an output parameter; it may contain **Nothing**. Always assign a new array.
+    > **注意:** Visual Basic のコンパイラは、出力専用の規則を強制しません。 出力パラメーターからの読み取りは行わないでください。**Nothing** が含まれている可能性があります。 常に新しい配列を割り当ててください。
  
--   Parameters that have the **ref** modifier (**ByRef** in Visual Basic) are not allowed. Winmdexp.exe generates an error.
--   For a parameter that is passed by value, you must specify whether the array contents are for input or output by applying either the [ReadOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.readonlyarrayattribute.aspx) attribute or the [WriteOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute.aspx) attribute. Specifying both attributes is an error.
+-   **ref** 修飾子 (Visual Basic では **ByRef**) を持つパラメーターは使用できません。 Winmdexp.exe によりエラーが生成されます。
+-   値で渡されるパラメーターの場合、[ReadOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.readonlyarrayattribute.aspx) 属性または [WriteOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute.aspx) 属性を適用して、配列の内容が入力と出力のどちらで使用されるのかを指定する必要があります。 両方の属性を指定すると、エラーになります。
 
-If a method must accept an array for input, modify the array contents, and return the array to the caller, use a read-only parameter for the input and a write-only parameter (or the return value) for the output. The following code shows one way to implement this pattern:
+メソッドで、入力の配列を受け取り、配列の内容を変更して、呼び出し元に配列を返す必要がある場合、入力には読み取り専用のパラメーター、出力には書き込み専用のパラメーター (または戻り値) を使用します。 次のコードは、このパターンを実装する 1 つの方法を示します。
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -42,23 +42,23 @@ If a method must accept an array for input, modify the array contents, and retur
 > End Function 
 > ```
 
-We recommend that you make a copy of the input array immediately, and manipulate the copy. This helps ensure that the method behaves the same whether or not your component is called by .NET Framework code.
+すぐに入力の配列をコピーして、利用することをお勧めします。 コピーして利用することにより、コンポーネントを .NET Framework のコードで呼び出すかどうかに関係なく、メソッドが同じように動作します。
 
-## Using components from managed and unmanaged code
+## マネージ コードおよびアンマネージ コードからコンポーネントを使用する
 
 
-Parameters that have the ReadOnlyArrayAttribute attribute or the WriteOnlyArrayAttribute attribute behave differently depending on whether the caller is written in native code or managed code. If the caller is native code (JavaScript or Visual C++ component extensions), the array contents are treated as follows:
+ReadOnlyArrayAttribute 属性または WriteOnlyArrayAttribute 属性を持つパラメーターは、呼び出し元がネイティブ コードで記述されているか、マネージ コードで記述されているかによって、動作が異なります。 呼び出し元が、ネイティブ コード (JavaScript、または Visual C++ コンポーネント拡張機能) の場合、配列の内容は次のように処理されます。
 
--   ReadOnlyArrayAttribute: The array is copied when the call crosses the application binary interface (ABI) boundary. Elements are converted if necessary. Therefore, any accidental changes the method makes to an input-only array are not visible to the caller.
--   WriteOnlyArrayAttribute: The called method can't make any assumptions about the contents of the original array. For example, the array the method receives might not be initialized, or might contain default values. The method is expected to set the values of all the elements in the array.
+-   ReadOnlyArrayAttribute: アプリケーション バイナリ インターフェイス (ABI) の境界を越えた呼び出しの場合、配列はコピーされます。 要素は必要に応じて変換されます。 このため、入力専用の配列に、メソッドで誤って変更が加えられた場合でも、呼び出し元では認識されません。
+-   WriteOnlyArrayAttribute: 呼び出されたメソッドでは、元の配列の内容を推測できません。 たとえば、メソッドが受け取る配列は、初期化されていなかったり既定値を含む可能性があります。 メソッドは、配列内のすべての要素に値を設定することが求められます。
 
-If the caller is managed code, the original array is available to the called method, as it would be in any method call in the .NET Framework. Array contents are mutable in .NET Framework code, so any changes the method makes to the array are visible to the caller. This is important to remember because it affects unit tests written for a Windows Runtime Component. If the tests are written in managed code, the contents of an array will appear to be mutable during testing.
+呼び出し元がマネージ コードの場合、元の配列は .NET framework のメソッド呼び出しの中にあるため、呼び出されたメソッドでも使用可能です。 配列の内容は .NET Framework のコードで変更可能なため、メソッドが配列に加えた変更は、呼び出し元からも認識されます。 これは、Windows ランタイム コンポーネント用に作成された単体テストに影響するため、注意してください。 テストがマネージ コードで作成された場合、配列の内容はテスト中に変更可能になります。
 
-## Related topics
+## 関連トピック
 
 * [ReadOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.readonlyarrayattribute.aspx)
 * [WriteOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute.aspx)
-* [Creating Windows Runtime Components in C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+* [C# および Visual Basic での Windows ランタイム コンポーネントの作成](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
 
 
 

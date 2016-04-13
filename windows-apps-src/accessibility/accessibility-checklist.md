@@ -2,7 +2,7 @@
 Description: ユニバーサル Windows プラットフォーム (UWP) アプリをアクセシビリティ対応にするために役立つチェック リストを示します。
 title: アクセシビリティのチェック リスト
 ms.assetid: BB8399E2-7013-4F77-AF2C-C1A0E5412856
-label: チェック リスト
+label: Checklist
 template: detail.hbs
 ---
 
@@ -59,7 +59,7 @@ template: detail.hbs
 
     詳しくは、「[ストア内のアクセシビリティ](accessibility-in-the-store.md)」をご覧ください。
 
-関連トピック
+<span id="related_topics"></span>関連トピック
 -----------------------------------------------
 
 * [アクセシビリティ](accessibility.md)
@@ -73,6 +73,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=Mar16_HO3-->
 
 

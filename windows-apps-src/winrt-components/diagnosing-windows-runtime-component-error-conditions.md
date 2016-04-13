@@ -1,131 +1,131 @@
 ---
-title: Diagnosing Windows Runtime Component error conditions
-description: This article provides additional information about restrictions on Windows Runtime Components written with managed code.
+title: Windows ランタイム コンポーネントでのエラー状態の診断
+description: この記事では、マネージ コードで記述された Windows ランタイム コンポーネントでの制限に関する追加情報について説明します。
 ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
 ---
 
-# Diagnosing Windows Runtime Component error conditions
+# Windows ランタイム コンポーネントでのエラー状態の診断
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
+\[一部の情報はリリース前の製品に関することであり、正式版がリリースされるまでに大幅に変更される可能性があります。 ここに記載された情報について、マイクロソフトは明示または黙示を問わずいかなる保証をするものでもありません。\]
 
-This article provides additional information about restrictions on Windows Runtime Components written with managed code. It expands on the information that is provided in error messages from [Winmdexp.exe (Windows Runtime Metadata Export Tool)](https://msdn.microsoft.com/library/hh925576.aspx), and complements the information on restrictions that is provided in [Creating Windows Runtime Components in C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md).
+この記事では、マネージ コードで記述された Windows ランタイム コンポーネントでの制限に関する追加情報について説明します。 ここでは、[Winmdexp.exe (Windows ランタイム メタデータ エクスポート ツール)](https://msdn.microsoft.com/library/hh925576.aspx) からのエラー メッセージに示されている情報についても説明します。また、「[C# および Visual Basic での Windows ランタイム コンポーネントの作成](creating-windows-runtime-components-in-csharp-and-visual-basic.md)」に記載されている制限事項の情報について補足説明します。
 
-This article doesn’t cover all errors. The errors discussed here are grouped by general category, and each category includes a table of associated error messages. Search for message text (omitting specific values for placeholders) or for message number. If you don’t find the information you need here, please help us improve the documentation by using the feedback button at the end of this article. Include the error message. Alternatively, you can file a bug at the Microsoft Connect website.
+この記事では、すべてのエラーが説明されているわけではありません。 ここで説明するエラーは一般的なカテゴリにまとめられており、各カテゴリには、関連するエラー メッセージの表が示されています。 この表を利用するには、メッセージ テキストで検索するか (プレース ホルダーの特定の値は省略してください)、メッセージ番号で検索してください。 必要な情報が見つからない場合は、この記事の最後にあるフィードバック ボタンをご利用ください。ドキュメントの内容を充実させるためにご協力をお願いします。 フィードバックを送る際には、エラー メッセージを含めてください。 また、Microsoft Connect の Web サイトで問題点をご連絡していただくこともできます。
 
-## Error message for implementing async interface provides incorrect type
+## 非同期インターフェイスの実装に関するエラー メッセージで示される型が正しくない
 
 
-Managed Windows Runtime Components cannot implement the Universal Windows Platform (UWP) interfaces that represent asynchronous actions or operations ([IAsyncAction](https://msdn.microsoft.com/library/br205781.aspx), [IAsyncActionWithProgress&lt;TProgress&gt;](https://msdn.microsoft.com/library/br205784.aspx), [IAsyncOperation&lt;TResult&gt;](https://msdn.microsoft.com/library/windows/apps/br206598.aspx), or [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/br206594.aspx)). Instead, the .NET Framework provides the [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) class for generating async operations in Windows Runtime Components. The error message that Winmdexp.exe displays when you try to implement an async interface incorrectly refers to this class by its former name, AsyncInfoFactory. The .NET Framework no longer includes the AsyncInfoFactory class.
+Windows ランタイム マネージ コンポーネントは、非同期処理や非同期操作を表すユニバーサル Windows プラットフォーム (UWP) インターフェイス ([IAsyncAction](https://msdn.microsoft.com/library/br205781.aspx)、[IAsyncActionWithProgress&lt;TProgress&gt;](https://msdn.microsoft.com/library/br205784.aspx)、[IAsyncOperation&lt;TResult&gt;](https://msdn.microsoft.com/library/windows/apps/br206598.aspx)、[IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/br206594.aspx)) を実装することはできません。 代わりに、.NET Framework には、Windows ランタイム コンポーネントの非同期操作を生成するための [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) クラスが用意されています。 非同期インターフェイスを実装しようとしたときに Winmdexp.exe により表示されるエラー メッセージでは、このクラスが誤って以前の名前の AsyncInfoFactory として示されます。 .NET Framework では、AsyncInfoFactory クラスが使われなくなりました。
 
-| Error number | Message Text                                                                                                                                                                                                                                                          |
+| エラー番号 | メッセージ テキスト                                                                                                                                                                                                                                                          |
 |--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| WME1084      | Type '{0}' implements Windows Runtime async interface '{1}'. Windows Runtime types cannot implement async interfaces. Please use the System.Runtime.InteropServices.WindowsRuntime.AsyncInfoFactory class to generate async operations for export to Windows Runtime. |
+| WME1084      | 型 '{0}' は Windows ランタイムの非同期インターフェイス '{1}' を実装します。 Windows ランタイム型は、非同期インターフェイスを実装できません。 System.Runtime.InteropServices.WindowsRuntime.AsyncInfoFactory クラスを使用して、Windows ランタイムへのエクスポート用に非同期操作を生成してください。 |
 
  
 
-> **Note** The error messages that refer to the Windows Runtime use an old terminology. This is now referred to as the Universal Windows Platform (UWP). For example, Windows Runtime types are now called UWP types.
+> **注** Windows ランタイムについて言及したエラー メッセージでは、以前の用語が使われています。 現在では、Windows ランタイムはユニバーサル Windows プラットフォーム (UWP) と呼ばれます。 たとえば、Windows ランタイム型は UWP 型と呼ばれています。
 
  
 
-## Missing references to mscorlib.dll or System.Runtime.dll
+## mscorlib.dll または System.Runtime.dll への参照が指定されていない
 
 
-This issue occurs only when you use Winmdexp.exe from the command line. We recommend that you use the /reference option to include references to both mscorlib.dll and System.Runtime.dll from the .NET Framework core reference assemblies, which are located in "%ProgramFiles(x86)%\\Reference Assemblies\\Microsoft\\Framework\\.NETCore\\v4.5" ("%ProgramFiles%\\..." on a 32-bit computer).
+この問題は、コマンド ラインから Winmdexp.exe を使う場合にのみ発生します。 .NET Framework のコア参照アセンブリから mscorlib.dll と System.Runtime.dll の両方への参照を含めるには、/reference オプションを使うことをお勧めします。コア参照アセンブリは、"%ProgramFiles(x86)%\\Reference Assemblies\\Microsoft\\Framework\\.NETCore\\v4.5" (32 ビット コンピューターの場合は "%ProgramFiles%\\...") にあります)。
 
-| Error number | Message Text                                                                                                                                     |
+| エラー番号 | メッセージ テキスト                                                                                                                                     |
 |--------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
-| WME1009      | No reference was made to mscorlib.dll. A reference to this metadata file is required in order to export correctly.                               |
-| WME1090      | Could not determine the core reference assembly. Please make sure mscorlib.dll and System.Runtime.dll is referenced using the /reference switch. |
+| WME1009      | mscorlib.dll は参照されませんでした。 正しくエクスポートするには、このメタデータ ファイルへの参照が必要です。                               |
+| WME1090      | コア参照アセンブリを確認できませんでした。 /reference スイッチを使用して mscorlib.dll および System.Runtime.dll が参照されていることを確認してください。 |
 
  
 
-## Operator overloading is not allowed
+## 演算子のオーバーロードが許可されていない
 
 
-In a Windows Runtime Component written in managed code, you cannot expose overloaded operators on public types.
+マネージ コードで記述された Windows ランタイム コンポーネントでは、パブリック型のオーバーロードされた演算子を公開することはできません。
 
-> **Note** In the error message, the operator is identified by its metadata name, such as op\_Addition, op\_Multiply, op\_ExclusiveOr, op\_Implicit (implicit conversion), and so on.
+> **注** エラー メッセージでは、演算子は op\_Addition、op\_Multiply、op\_ExclusiveOr、op\_Implicit (暗黙の変換) などのメタデータ名によって識別されます。
 
  
 
-| Error number | Message Text                                                                                          |
+| エラー番号 | メッセージ テキスト                                                                                          |
 |--------------|-------------------------------------------------------------------------------------------------------|
-| WME1087      | '{0}' is an operator overload. Managed types cannot expose operator overloads in the Windows Runtime. |
+| WME1087      | '{0}' は演算子オーバーロードです。 マネージ型は、Windows ランタイムで演算子オーバーロードを公開できません。 |
 
  
 
-## Constructors on a class have the same number of parameters
+## クラスのコンストラクターに同じ数のパラメーターがある
 
 
-In the UWP, a class can have only one constructor with a given number of parameters; for example, you can't have one constructor that has a single parameter of type **String** and another that has a single parameter of type **int** (**Integer** in Visual Basic). The only workaround is to use a different number of parameters for each constructor.
+UWP のクラスは、指定された数のパラメーターを持つコンストラクターを 1 つしか保持できません。たとえば、**String** 型の 1 つのパラメーターを持つコンストラクターと **int** 型 (Visual Basic の **Integer**) の 1 つのパラメーターを持つコンストラクターを両方保持することはできません。 唯一の回避策は、各コンストラクターで異なる数のパラメーターを使うことです。
 
-| Error number | Message Text                                                                                                                                            |
+| エラー番号 | メッセージ テキスト                                                                                                                                            |
 |--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
-| WME1099      | Type '{0}' has multiple constructors with '{1}' argument(s). Windows Runtime types cannot have multiple constructors with the same number of arguments. |
+| WME1099      | 型 '{0}' には、'{1}' 個の引数を持つ複数のコンストラクターがあります。 Windows ランタイム型には、同じ数の引数を持つ複数のコンストラクターがありません。 |
 
  
 
-## Must specify a default for overloads that have the same number of parameters
+## 同じ数のパラメーターを持つオーバーロードには既定値を指定する必要がある
 
 
-In the UWP, overloaded methods can have the same number of parameters only if one overload is specified as the default overload. See "Overloaded Methods" in [Creating Windows Runtime Components in C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md).
+UWP では、オーバーロードされたメソッドの 1 つが既定のオーバーロードとして指定されている場合にのみ、同じ数のパラメーターを持つことができます。 「[C# および Visual Basic での Windows ランタイム コンポーネントの作成](creating-windows-runtime-components-in-csharp-and-visual-basic.md)」の「オーバーロードされたメソッド」をご覧ください。
 
-| Error number | Message Text                                                                                                                                                                      |
+| エラー番号 | メッセージ テキスト                                                                                                                                                                      |
 |--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| WME1059      | Multiple {0}-parameter overloads of '{1}.{2}' are decorated with Windows.Foundation.Metadata.DefaultOverloadAttribute.                                                            |
-| WME1085      | The {0}-parameter overloads of {1}.{2} must have exactly one method specified as the default overload by decorating it with Windows.Foundation.Metadata.DefaultOverloadAttribute. |
+| WME1059      | '{1}.{2}' の複数の {0} パラメーター オーバーロードは、Windows.Foundation.Metadata.DefaultOverloadAttribute で修飾されます。                                                            |
+| WME1085      | {1}.{2} の {0} パラメーター オーバーロードには、Windows.Foundation.Metadata.DefaultOverloadAttribute で修飾して既定のオーバーロードとして指定されたメソッドが 1 つだけ必要です。 |
 
  
 
-## Namespace errors and invalid names for the output file
+## 出力ファイルの名前空間のエラーと無効な名前
 
 
-In the Universal Windows Platform, all the public types in a Windows metadata (.winmd) file must be in a namespace that shares the .winmd file name, or in sub-namespaces of the file name. For example, if your Visual Studio project is named A.B (that is, your Windows Runtime Component is A.B.winmd), it can contain public classes A.B.Class1 and A.B.C.Class2, but not A.Class3 (WME0006) or D.Class4 (WME1044).
+ユニバーサル Windows プラットフォームでは、Windows メタデータ (.winmd) ファイルに含まれるすべてのパブリック型は、.winmd ファイルの名前を共有する名前空間、またはそのファイル名のサブ名前空間に含まれている必要があります。 たとえば、Visual Studio プロジェクトの名前が A.B (つまり、Windows ランタイム コンポーネントが A.B.winmd) の場合、パブリック クラス A.B.Class1 と A.B.C.Class2 を含めることができますが、A.Class3 (WME0006) または D.Class4 (WME1044) を含めることはできません。
 
-> **Note**  These restrictions apply only to public types, not to private types used in your implementation.
-
- 
-
-In the case of A.Class3, you can either move Class3 to another namespace or change the name of the Windows Runtime Component to A.winmd. Although WME0006 is a warning, you should treat it as an error. In the previous example, code that calls A.B.winmd will be unable to locate A.Class3.
-
-In the case of D.Class4, no file name can contain both D.Class4 and classes in the A.B namespace, so changing the name of the Windows Runtime Component is not an option. You can either move D.Class4 to another namespace, or put it in another Windows Runtime Component.
-
-The file system can't distinguish between uppercase and lowercase, so namespaces that differ by case are not allowed (WME1067).
-
-Your component must contain at least one **public sealed** type (**Public NotInheritable** in Visual Basic). If not, you will get WME1042 or WME1043, depending on whether your component contains private types.
-
-A type in a Windows Runtime Component cannot have a name that is the same as a namespace (WME1068).
-
-> **Caution**  If you call Winmdexp.exe directly and don't use the /out option to specify a name for your Windows Runtime Component, Winmdexp.exe tries to generate a name that includes all the namespaces in the component. Renaming namespaces can change the name of your component.
+> **注** これらの制限はパブリック型だけに適用され、実装で使われるプライベート型には適用されません。
 
  
 
-| Error number | Message Text                                                                                                                                                                                                                                                                                                                                             |
+A.Class3 の場合、Class3 を別の名前空間に移動するか、Windows ランタイム コンポーネントの名前を A.winmd に変更することができます。 WME0006 は警告ですが、エラーとして扱う必要があります。 前の例では、A.B.winmd を呼び出すコードは A.Class3 を特定することはできません。
+
+D.Class4 の場合、ファイル名には D.Class4 と A.B 名前空間内のクラスの両方を含めることはできないため、Windows ランタイム コンポーネントの名前を変更することはできません。 D.Class4 を別の名前空間に移動するか、別の Windows ランタイム コンポーネントに配置できます。
+
+ファイル システムは大文字と小文字を区別できないため、同じ名前で大文字と小文字だけが異なる名前空間は許可されません (WME1067)。
+
+コンポーネントには、少なくとも 1 つの **public sealed** 型 (Visual Basic の **Public NotInheritable**) を含める必要があります。 含めない場合、コンポーネントにプライベート型が含まれるかどうかに応じて、WME1042 または WME1043 を受け取ります。
+
+Windows ランタイム コンポーネントの型には、名前空間と同じ名前を付けることはできません (WME1068)。
+
+> **注意** Winmdexp.exe を直接呼び出し、Windows ランタイム コンポーネントの名前を指定する /out オプションを指定しなかった場合、Winmdexp.exe は、コンポーネント内のすべての名前空間を含めた名前を生成しようとします。 名前空間の名前を変更すると、コンポーネントの名前も変更される場合があります。
+
+ 
+
+| エラー番号 | メッセージ テキスト                                                                                                                                                                                                                                                                                                                                             |
 |--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| WME0006      | '{0}' is not a valid winmd file name for this assembly. All types within a Windows Metadata file must exist in a sub namespace of the namespace that is implied by the file name. Types that do not exist in such a sub namespace cannot be located at runtime. In this assembly, the smallest common namespace that could serve as a filename is '{1}'. |
-| WME1042      | Input module must contain at least one public type that is located inside a namespace.                                                                                                                                                                                                                                                                   |
-| WME1043      | Input module must contain at least one public type that is located inside a namespace. The only types found inside namespaces are private.                                                                                                                                                                                                               |
-| WME1044      | A public type has a namespace ('{1}') that shares no common prefix with other namespaces ('{0}'). All types within a Windows Metadata file must exist in a sub namespace of the namespace that is implied by the file name.                                                                                                                              |
-| WME1067      | Namespace names cannot differ only by case: '{0}', '{1}'.                                                                                                                                                                                                                                                                                                |
-| WME1068      | Type '{0}' cannot have the same name as namespace '{1}'.                                                                                                                                                                                                                                                                                                 |
+| WME0006      | '{0}' は、このアセンブリに有効な winmd ファイル名ではありません。 Windows メタデータ ファイル内のすべての型は、ファイル名で指定される名前空間のサブ名前空間に存在する必要があります。 このようなサブ名前空間に存在しない型は、ランタイムに見つかりません。 このアセンブリでは、ファイル名として使用できる最も小さい共通の名前空間は '{1}' です。 |
+| WME1042      | 入力モジュールには、名前空間内にある少なくとも 1 つのパブリック型を含める必要があります。                                                                                                                                                                                                                                                                   |
+| WME1043      | 入力モジュールには、名前空間内にある少なくとも 1 つのパブリック型を含める必要があります。 名前空間内で検出された型はプライベートのみです。                                                                                                                                                                                                               |
+| WME1044      | パブリック型の名前空間 ('{1}') は、他の名前空間 ('{0}') と共通プレフィックスを共有しません。 Windows メタデータ ファイル内のすべての型は、ファイル名で指定される名前空間のサブ名前空間に存在する必要があります。                                                                                                                              |
+| WME1067      | 名前空間名は、大文字小文字だけを変更しても区別されません: '{0}'、'{1}'。                                                                                                                                                                                                                                                                                                |
+| WME1068      | 型 '{0}' に、名前空間 '{1}' と同じ名前を指定することはできません。                                                                                                                                                                                                                                                                                                 |
 
  
 
-## Exporting types that aren't valid Universal Windows Platform types
+## 無効なユニバーサル Windows プラットフォーム型である型をエクスポートする
 
 
-The public interface of your component must expose only UWP types. However, the .NET Framework provides mappings for a number of commonly used types that are slightly different in the .NET Framework and the UWP. This enables the .NET Framework developer to work with familiar types instead of learning new ones. You can use these mapped .NET Framework types in the public interface of your component. See "Declaring types in Windows Runtime Components" and "Passing Universal Windows Platform types to managed code" in [Creating Windows Runtime Components in C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md), and [.NET Framework mappings of Windows Runtime types](net-framework-mappings-of-windows-runtime-types.md).
+コンポーネントのパブリック インターフェイスは UWP 型のみを公開する必要があります。 ただし、.NET Framework には、.NET Framework や UWP とはわずかに異なる多数の一般的な型に対応したマッピングが用意されています。 これにより、.NET Framework の開発者は、新しい型を習得せずに、使い慣れた型を使うことができます。 マップされた .NET Framework 型は、コンポーネントのパブリック インターフェイスで使うことができます。 [「C# および Visual Basic での Windows ランタイム コンポーネントの作成」](creating-windows-runtime-components-in-csharp-and-visual-basic.md)の「Windows ランタイム コンポーネントの宣言型」と「ユニバーサル Windows プラットフォーム型のマネージ コードへの引き渡し」、および「 [.NET Framework での Windows ランタイム型の対応付け](net-framework-mappings-of-windows-runtime-types.md)」をご覧ください。
 
-Many of these mappings are interfaces. For example, [IList&lt;T&gt;](https://msdn.microsoft.com/library/5y536ey6.aspx) maps to the UWP interface [IVector&lt;T&gt;](https://msdn.microsoft.com/library/windows/apps/br206631.aspx). If you use List&lt;string&gt; (`List(Of String)` in Visual Basic) instead of IList&lt;string&gt; as a parameter type, Winmdexp.exe provides a list of alternatives that includes all the mapped interfaces implemented by List&lt;T&gt;. If you use nested generic types, such as List&lt;Dictionary&lt;int, string&gt;&gt; (List(Of Dictionary(Of Integer, String)) in Visual Basic), Winmdexp.exe offers choices for each level of nesting. These lists can become quite long.
+これらのマッピングの多くはインターフェイスです。 たとえば、[IList&lt;T&gt;](https://msdn.microsoft.com/library/5y536ey6.aspx) は、UWP インターフェイス [IVector&lt;T&gt;](https://msdn.microsoft.com/library/windows/apps/br206631.aspx)にマップされます。 パラメーター型として IList&lt;string&gt; の代わりに List&lt;string&gt; (Visual Basic の `List(Of String)`) を使うと、Winmdexp.exe によって代替のインターフェイスのリストが提供されます。このリストには、List&lt;T&gt; によって実装されたマップ済みのインターフェイスがすべて含まれています。 List&lt;Dictionary&lt;int, string&gt;&gt; (Visual Basic の List(Of Dictionary(Of Integer, String))) など、入れ子になったジェネリック型を使う場合、Winmdexp.exe によって入れ子のレベルごとに選択肢のリストが提供されます。 これらのリストはかなり長くなる場合があります。
 
-In general, the best choice is the interface that is closest to the type. For example, for Dictionary&lt;int, string&gt;, the best choice is most likely IDictionary&lt;int, string&gt;.
+一般に、最適なのは型に最も近いインターフェイスです。 たとえば、Dictionary&lt;int, string&gt; の場合、IDictionary&lt;int, string&gt; が最適と考えられます。
 
-> **Important**  JavaScript uses the interface that appears first in the list of interfaces that a managed type implements. For example, if you return Dictionary&lt;int, string&gt; to JavaScript code, it appears as IDictionary&lt;int, string&gt; no matter which interface you specify as the return type. This means that if the first interface doesn't include a member that appears on later interfaces, that member isn't visible to JavaScript.
+> **重要** JavaScript では、マネージ型が実装するインターフェイスのリストに最初に現れるインターフェイスが使われます。 たとえば、JavaScript コードに Dictionary&lt;int, string&gt; を返した場合は、戻り値の型としてどのインターフェイスを指定しても、IDictionary&lt;int, string&gt; として表されます。 つまり、後のインターフェイスにメンバーが最初のインターフェイスに含まれていない場合、そのメンバーは JavaScript では認識されません。
 
-> **Caution**  Avoid using the non-generic [IList](https://msdn.microsoft.com/library/system.collections.ilist.aspx) and [IEnumerable](https://msdn.microsoft.com/library/system.collections.ienumerable.aspx) interfaces if your component will be used by JavaScript. These interfaces map to [IBindableVector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindablevector.aspx) and [IBindableIterator](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindableiterator.aspx), respectively. They support binding for XAML controls, and are invisible to JavaScript. JavaScript issues the run-time error "The function 'X' has an invalid signature and cannot be called."
+> **注意** JavaScript で利用されるコンポーネントでは、非ジェネリックな [IList](https://msdn.microsoft.com/library/system.collections.ilist.aspx) インターフェイスと [IEnumerable](https://msdn.microsoft.com/library/system.collections.ienumerable.aspx) インターフェイスを使わないでください。 これらのインターフェイスは、それぞれ [IBindableVector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindablevector.aspx) と [IBindableIterator](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindableiterator.aspx) にマップされます。 これらは、XAML コントロールのバインドをサポートし、JavaScript には参照されません。 JavaScript では、実行時エラー ("関数 'X' に無効なシグネチャがあるため、呼び出せません") が発生します。
 
  
 
@@ -136,84 +136,84 @@ In general, the best choice is the interface that is closest to the type. For ex
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Error number</th>
-<th align="left">Message Text</th>
+<th align="left">エラー番号</th>
+<th align="left">メッセージ テキスト</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">WME1033</td>
-<td align="left">Method '{0}' has parameter '{1}' of type '{2}'. '{2}' is not a valid Windows Runtime parameter type.</td>
+<td align="left">メソッド '{0}' には、型 '{2}' のパラメーター '{1}' が指定されています。 '{2}' は、有効な Windows ランタイム パラメーター型ではありません。</td>
 </tr>
 <tr class="even">
 <td align="left">WME1038</td>
-<td align="left">Method '{0}' has a parameter of type '{1}' in its signature. Although this type is not a valid Windows Runtime type, it implements interfaces that are valid Windows Runtime types. Consider changing the method signature to use one of the following types instead: '{2}'.</td>
+<td align="left">メソッド '{0}' は、そのシグネチャに型 '{1}' のパラメーターを指定しています。 この型は有効な Windows ランタイム型ではありませんが、有効な Windows ランタイム型であるインターフェイスを実装しています。 メソッド シグネチャを次のいずれかの型を使用するように変更することを検討してください: '{2}'。</td>
 </tr>
 <tr class="odd">
 <td align="left">WME1039</td>
-<td align="left"><p>Method '{0}' has a parameter of type '{1}' in its signature. Although this generic type is not a valid Windows Runtime type, the type or its generic parameters implement interfaces that are valid Windows Runtime types. {2}</p>
-> **Note**  For {2}, Winmdexp.exe appends a list of alternatives, such as "Consider changing the type 'System.Collections.Generic.List&lt;T&gt;' in the method signature to one of the following types instead: 'System.Collections.Generic.IList&lt;T&gt;, System.Collections.Generic.IReadOnlyList&lt;T&gt;, System.Collections.Generic.IEnumerable&lt;T&gt;'."
+<td align="left"><p>メソッド '{0}' は、そのシグネチャに型 '{1}' のパラメーターを指定しています。 このジェネリック型は有効な Windows ランタイム型ではありませんが、この型またはそのジェネリック パラメーターは、有効な Windows ランタイム型であるインターフェイスを実装します。 {2}</p>
+> **注** {2} には、Winmdexp.exe によって代替のインターフェイスのリストが付加されます。たとえば、"メソッド シグネチャの型 'System.Collections.Generic.List&lt;T&gt;' を次のいずれかの型に変更することを検討してください: 'System.Collections.Generic.IList&lt;T&gt;、System.Collections.Generic.IReadOnlyList&lt;T&gt;、System.Collections.Generic.IEnumerable&lt;T&gt;'。" のように表示されます。
 </td>
 </tr>
 <tr class="even">
 <td align="left">WME1040</td>
-<td align="left">Method '{0}' has a parameter of type '{1}' in its signature. Instead of using a managed Task type, use Windows.Foundation.IAsyncAction, Windows.Foundation.IAsyncOperation, or one of the other Windows Runtime async interfaces. The standard .NET await pattern also applies to these interfaces. Please see System.Runtime.InteropServices.WindowsRuntime.AsyncInfo for more information about converting managed task objects to Windows Runtime async interfaces.</td>
+<td align="left">メソッド '{0}' は、そのシグネチャに型 '{1}' のパラメーターを指定しています。 管理されているタスク型を使用するのではなく、Windows.Foundation.IAsyncAction、Windows.Foundation.IAsyncOperation、またはその他の Windows ランタイムの非同期インターフェイスのいずれかを使用してください。 標準の .NET await パターンもこれらのインターフェイスに適用されます。 管理されているタスク オブジェクトを Windows ランタイムの非同期インターフェイスに変換する方法の詳細については、System.Runtime.InteropServices.WindowsRuntime.AsyncInfo を参照してください。</td>
 </tr>
 </tbody>
 </table>
 
  
 
-## Structures that contain fields of disallowed types
+## 使うことができない型のフィールドを含む構造体
 
 
-In the UWP, a structure can contain only fields, and only structures can contain fields. Those fields must be public. Valid field types include enumerations, structures, and primitive types.
+UWP では、構造体にはフィールドのみを含めることができ、フィールドは構造体にのみ含めることができます。 これらのフィールドはパブリック型である必要があります。 有効なフィールド型には、列挙体、構造体、およびプリミティブ型があります。
 
-| Error number | Message Text                                                                                                                                                                                                                                                            |
+| エラー番号 | メッセージ テキスト                                                                                                                                                                                                                                                            |
 |--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| WME1060      | Structure '{0}' has field '{1}' of type '{2}'. '{2}' is not a valid Windows Runtime field type. Each field in a Windows Runtime structure can only be UInt8, Int16, UInt16, Int32, UInt32, Int64, UInt64, Single, Double, Boolean, String, Enum, or itself a structure. |
+| WME1060      | 構造体 '{0}' には、型 '{2}' のフィールド '{1}' が含まれています。 '{2}' は有効な Windows ランタイム フィールド型ではありません。 Windows ランタイムの構造体に含まれる各フィールドに指定できるのは、UInt8、Int16、UInt16、Int32、UInt32、Int64、UInt64、Single、Double、Boolean、String、Enum、または構造体自体のみです。 |
 
  
 
-## Restrictions on arrays in member signatures
+## メンバーのシグネチャ内における配列の制限
 
 
-In the UWP, arrays in member signatures must be one-dimensional with a lower bound of 0 (zero). Nested array types such as `myArray[][]` (`myArray()()` in Visual Basic) are not allowed.
+UWP では、メンバーのシグネチャ内の配列は 1 次元で、下限を 0 (ゼロ) に指定する必要があります。 `myArray[][]` (Visual Basic の `myArray()()`) など、入れ子になった配列型を使うことはできません。
 
-> **Note** This restriction does not apply to arrays you use internally in your implementation.
+> **注** この制限は、実装で内部的に使う配列には適用されません。
 
  
 
-| Error number | Message Text                                                                                                                                                     |
+| エラー番号 | メッセージ テキスト                                                                                                                                                     |
 |--------------|--------------------|
-| WME1034      | Method '{0}' has an array of type '{1}' with non-zero lower bound in its signature. Arrays in Windows Runtime method signatures must have a lower bound of zero. |
-| WME1035      | Method '{0}' has a multi-dimensional array of type '{1}' in its signature. Arrays in Windows Runtime method signatures must be one dimensional.                  |
-| WME1036      | Method '{0}' has a nested array of type '{1}' in its signature. Arrays in Windows Runtime method signatures cannot be nested.                                    |
+| WME1034      | メソッド '{0}' は、そのシグネチャに下限が 0 以外の型 '{1}' の配列を指定しています。 Windows ランタイム メソッドのシグネチャ内の配列では、下限を 0 に指定する必要があります。 |
+| WME1035      | メソッド '{0}' は、そのシグネチャに型 '{1}' の多次元配列を指定しています。 Windows ランタイム メソッドのシグネチャ内の配列は 1 次元配列にする必要があります。                  |
+| WME1036      | メソッド '{0}' は、そのシグネチャに型 '{1}' の入れ子にされた配列を指定しています。 Windows ランタイム メソッドのシグネチャ内の配列を入れ子にすることはできません。                                    |
 
  
 
-## Array parameters must specify whether array contents are readable or writable
+## 配列パラメーターでは、配列の内容が読み取り可能であるか書き込み可能であるかどうかを指定する必要がある
 
 
-In the UWP, parameters must be read-only or write-only. Parameters cannot be marked **ref** (**ByRef** without the [OutAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.outattribute.aspx) attribute in Visual Basic). This applies to the contents of arrays, so array parameters must indicate whether the array contents are read-only or write-only. The direction is clear for **out** parameters (**ByRef** parameter with the OutAttribute attribute in Visual Basic), but array parameters that are passed by value (ByVal in Visual Basic) must be marked. See [Passing arrays to a Windows Runtime Component](passing-arrays-to-a-windows-runtime-component.md).
+UWP では、パラメーターは読み取り専用または書き込み専用に指定する必要があります。 パラメーターは、**ref** (Visual Basic では [OutAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.outattribute.aspx) 属性のない **ByRef**) とマークすることはできません。 これは配列の内容に適用されるため、配列パラメーターは配列の内容が読み取り専用または書き込み専用であるかどうかを示す必要があります。 **out** パラメーター (Visual Basic では OutAttribute 属性のある **ByRef** パラメーター) の方向は明確ですが、値によって渡される配列パラメーター (Visual Basic の ByVal) はマークする必要があります。 [「Windows ランタイム コンポーネントに配列を渡す方法」](passing-arrays-to-a-windows-runtime-component.md)をご覧ください。
 
-| Error number | Message Text         |
+| エラー番号 | メッセージ テキスト         |
 |--------------|----------------------|
-| WME1101      | Method '{0}' has parameter '{1}' which is an array, and which has both {2} and {3}. In the Windows Runtime, the contents array parameters must be either readable or writable. Please remove one of the attributes from '{1}'.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| WME1102      | Method '{0}' has an output parameter '{1}' which is an array, but which has {2}. In the Windows Runtime, the contents of output arrays are writable. Please remove the attribute from '{1}'.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| WME1103      | Method '{0}' has parameter '{1}' which is an array, and which has either a System.Runtime.InteropServices.InAttribute or a System.Runtime.InteropServices.OutAttribute. In the Windows Runtime, array parameters must have either {2} or {3}. Please remove these attributes or replace them with the appropriate Windows Runtime attribute if necessary.                                                                                                                                                                                                                                                                                                                                                                                          |
-| WME1104      | Method '{0}' has parameter '{1}' which is not an array, and which has either a {2} or a {3}. Windows Runtime does not support marking non-array parameters with {2} or {3}.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| WME1105      | Method '{0}' has parameter '{1}' with a System.Runtime.InteropServices.InAttribute or System.Runtime.InteropServices.OutAttribute. Windows Runtime does not support marking parameters with System.Runtime.InteropServices.InAttribute or System.Runtime.InteropServices.OutAttribute. Please consider removing System.Runtime.InteropServices.InAttribute and replace System.Runtime.InteropServices.OutAttribute with 'out' modifier instead. Method '{0}' has parameter '{1}' with a System.Runtime.InteropServices.InAttribute or System.Runtime.InteropServices.OutAttribute. Windows Runtime only supports marking ByRef parameters with System.Runtime.InteropServices.OutAttribute, and does not support other usages of those attributes. |
-| WME1106      | Method '{0}' has parameter '{1}' which is an array. In the Windows Runtime, the contents of array parameters must be either readable or writable. Please apply either {2} or {3} to '{1}'.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| WME1101      | メソッド '{0}' のパラメーター '{1}' は配列で、{2} と {3} の両方が格納されています。 Windows ランタイムでは、配列パラメーターの内容は、読み取り可能または書き込み可能である必要があります。 属性の 1 つを '{1}' から削除してください。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| WME1102      | メソッド '{0}' の出力パラメーター '{1}' は配列ですが、{2} が含まれています。 Windows ランタイムでは、出力配列の内容は書き込み可能です。 '{1}' から属性を削除してください。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| WME1103      | メソッド '{0}' のパラメーター '{1}' は配列で、System.Runtime.InteropServices.InAttribute または System.Runtime.InteropServices.OutAttribute が指定されています。 Windows ランタイムでは、配列パラメーターに {2} または {3} を指定する必要があります。 これらの属性を削除するか、必要に応じて、適切な Windows ランタイム属性と置き換えてください。                                                                                                                                                                                                                                                                                                                                                                                          |
+| WME1104      | メソッド '{0}' のパラメーター '{1}' は、配列ではなく、{2} または {3} が指定されています。 Windows ランタイムでは、配列でないパラメーターを {2} または {3} でマークすることがサポートされていません。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| WME1105      | メソッド '{0}' に、System.Runtime.InteropServices.InAttribute または System.Runtime.InteropServices.OutAttribute が指定されたパラメーター '{1}' があります。 Windows ランタイムでは、System.Runtime.InteropServices.InAttribute または System.Runtime.InteropServices.OutAttribute でパラメーターをマークすることはサポートされていません。 System.Runtime.InteropServices.InAttribute を削除して、System.Runtime.InteropServices.OutAttribute を 'out' 修飾子と置き換えることを検討してください。 メソッド '{0}' に、System.Runtime.InteropServices.InAttribute または System.Runtime.InteropServices.OutAttribute が指定されたパラメーター '{1}' があります。 Windows ランタイムでは、System.Runtime.InteropServices.OutAttribute で ByRef パラメーターをマークすることのみサポートされており、これらの属性の他の使用方法はサポートされていません。 |
+| WME1106      | メソッド '{0}' には、配列パラメーター '{1}' が指定されています。 Windows ランタイムでは、配列パラメーターの内容が読み取り可能または書き込み可能である必要があります。 {2} または {3} を '{1}' に適用してください。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 
 
-## Member with a parameter named "value"
+## "value" という名前のパラメーターを持つメンバー
 
 
-In the UWP, return values are considered to be output parameters, and the names of parameters must be unique. By default, Winmdexp.exe gives the return value the name "value". If your method has a parameter named "value", you will get error WME1092. There are two ways to correct this:
+UWP では、戻り値は出力パラメーターであると見なされ、パラメーターの名前は一意である必要があります。 既定では、Winmdexp.exe は戻り値に "value" という名前を設定します。 メソッドに "value" という名前のパラメーターがあると、エラー WME1092 が発生します。 これを修正するには 2 つの方法があります。
 
--   Give your parameter a name other than "value" (in property accessors, a name other than "returnValue").
--   Use the ReturnValueNameAttribute attribute to change the name of the return value, as shown here:
+-   パラメーターに "value" 以外の名前を付けます (プロパティ アクセサーの場合は "returnValue" 以外の名前)。
+-   次に示すように、ReturnValueNameAttribute 属性を使って戻り値の名前を変更します。
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -231,20 +231,20 @@ In the UWP, return values are considered to be output parameters, and the names 
     > <Out> ByRef highValue As Integer) As <ReturnValueName("average")> String
     > ``` 
 
-> **Note**  If you change the name of the return value, and the new name collides with the name of another parameter, you will get error WME1091.
+> **注** 戻り値の名前を変更する場合、新しい名前が別のパラメーターの名前と競合すると、エラー WME1091 が発生します。
 
-JavaScript code can access the output parameters of a method by name, including the return value. For an example, see the [ReturnValueNameAttribute](https://msdn.microsoft.com/library/windows/apps/system.runtime.interopservices.windowsruntime.returnvaluenameattribute.aspx) attribute.
+JavaScript コードは、戻り値も含め、メソッドの出力パラメーターに名前でアクセスできます。 例については、[ReturnValueNameAttribute](https://msdn.microsoft.com/library/windows/apps/system.runtime.interopservices.windowsruntime.returnvaluenameattribute.aspx) 属性に関するトピックをご覧ください。
 
-| Error number | Message Text |
+| エラー番号 | メッセージ テキスト |
 |---------------|------------|
-| WME1091 | The method '\{0}' has the return value named '\{1}' which is the same as a parameter name. Windows Runtime method parameters and return value must have unique names. |
-| WME1092 | The method '\{0}' has a parameter named '\{1}' which is the same as the default return value name. Consider using another name for the parameter or use the System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute to explicitly specify the name of the return value.<br/>**Note**  The default name is "returnValue" for property accessors and "value" for all other methods. |
+| WME1091 | メソッド '\{0}' には、パラメーター名と同じ '\{1}' という名前の戻り値があります。 Windows ランタイム メソッドのパラメーターと戻り値には一意の名前を指定する必要があります。 |
+| WME1092 | メソッド '\{0}' には、既定の戻り値の名前と同じ '\{1}' という名前のパラメーターが指定されています。 このパラメーターに別の名前を使用するか、System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute を使用して、戻り値の名前を明示的に指定してください。<br/>**注** 既定の名前は、プロパティ アクセサーでは "returnValue"、その他のすべてのメソッドでは "value" となります。 |
  
 
-## Related topics
+## 関連トピック
 
-* [Creating Windows Runtime Components in C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
-* [Winmdexp.exe (Windows Runtime Metadata Export Tool)](https://msdn.microsoft.com/library/hh925576.aspx)
+* [C# および Visual Basic での Windows ランタイム コンポーネントの作成](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+* [Winmdexp.exe (Windows ランタイム メタデータ エクスポート ツール)](https://msdn.microsoft.com/library/hh925576.aspx)
 
 
 <!--HONumber=Mar16_HO1-->

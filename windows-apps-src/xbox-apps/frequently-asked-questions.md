@@ -1,148 +1,148 @@
 ---
-title: Frequently asked questions
-description: FAQ about UWP on Xbox.
+title: よく寄せられる質問
+description: Xbox の UWP についてのよく寄せられる質問。
 area: Xbox
 ---
 
-# Frequently asked questions
+# よく寄せられる質問
 
-Things not working the way you expected? 
-Look through this page of frequently asked questions. 
-Also check out the [Known issues](known-issues.md) topic and the [Developing Universal Windows apps](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop) forum. 
+期待どおりに動作しない場合には、 
+このページのよく寄せられる質問を確認します。 
+また、「[既知の問題](known-issues.md)」と「[ユニバーサル Windows アプリの開発](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop)」のフォーラムも確認します。 
 
-### Why are my games and apps not working?
+### 作成したゲームとアプリが動作しない
 
-If your games and apps are not working, or if you don’t have access to the store or to Live services, you are probably running in Developer Mode. 
-You can tell you’re running in Developer Mode if you select Home and you see a big Dev Home tile on the right side of your screen, instead of the usual Gold/Live content. 
-If you want to play games, you can open Dev Home and switch back to Retail Mode by using the **Leave developer mode** button.
+ゲームやアプリが動作しない場合、またストアや Live サービスにアクセスできない場合、開発者モードで実行している場合があります。 
+ホームを選択したときに画面の右側に、通常の Gold/Live コンテンツではなく、大きな Dev Home タイルが表示されている場合には、開発者モードで実行しています。 
+ゲームをプレイする場合には、Dev Home を開き、**[Leave developer mode] ** ボタンを使って、リテール モードに切り替えます。
 
-### Why can’t I connect to my Xbox One using Visual Studio?
+### Visual Studio を使って Xbox One に接続できない
 
-Start by verifying that you are running in Developer Mode, and not in Retail Mode. 
-You cannot connect to your Xbox One when it is in Retail Mode. 
-You can simply check this by pressing the **Home** button and looking for the Dev Home tile on the right side of your screen. 
-If the tile is not there, but instead you see Gold/Live content, you are in Retail Mode. 
-You need to run the Dev Mode Activation app to switch to Developer Mode.
+まず、リテール モードでなく、開発者モードで実行していることを確認します。 
+リテール モードでは、Xbox One に接続できません。 
+**[ホーム]** ボタンを押して、画面の右側に Dev Home タイルがあるかどうかを確認します。 
+Dev Home タイルがなく、Gold/Live コンテンツが表示されている場合には、リテール モードで実行されています。 
+開発者モードに切り替えるには、開発者モードのアクティブ化のアプリを実行する必要があります。
 
-For more information, see [Fixing deployment failures](frequently-asked-questions.md#fixing-deployment-failures) later on this page.
+詳しくは、このページの「[展開の失敗を修正する](frequently-asked-questions.md#fixing-deployment-failures)」をご覧ください。
 
-### How do I switch between Retail Mode and Developer Mode?
+### リテール モードと開発者モードの切り替え方法
 
-Follow the [Xbox One Developer Mode Activation](devkit-activation.md) instructions to understand more about these states.
+これらの状態について詳しくは、「[Xbox One の開発者モードのアクティブ化](devkit-activation.md)」の指示に従います。
 
-### How do I know if I am in Retail Mode or Developer Mode?
+### リテール モードと開発者モードのどちらで実行されているかを確認する方法
 
-Follow the [Xbox One Developer Mode Activation](devkit-activation.md) instructions to understand more about these states. 
+これらの状態について詳しくは、「[Xbox One の開発者モードのアクティブ化](devkit-activation.md)」の指示に従います。 
 
-You can simply check this by pressing the **Home** button and looking at the right side of the screen. 
-If you are in Developer Mode, you will see the Dev Home tile on the right side. 
-If you are in Retail Mode, you will see the usual Gold/Live content.
+**[ホーム]** ボタンを押して、画面の右側を確認します。 
+開発者モードの場合は、右側にある Dev Home のタイルが表示されます。 
+リテール モードの場合は、通常の Gold/Live コンテンツが表示されます。
 
-### Will my games and apps still work if I activate Developer Mode?
+### 開発者モードをアクティブ化してもゲームやアプリは動作しますか
 
-Yes, you can switch from Developer Mode to Retail Mode, where you can play your games. 
-For more information, see the [Xbox One Developer Mode Activation](devkit-activation.md) page. 
+はい、開発者モードからリテール モードに切り替えて、ゲームをプレイできます。 
+詳しくは、「[Xbox One の開発者モードのアクティブ化](devkit-activation.md)」をご覧ください。 
 
-> **CAUTION**&nbsp;&nbsp;The Xbox Developer Preview System Update includes experimental and early pre-release software. 
-This means that some popular games and apps will not work as expected and you may experience occasional crashes and data loss.
+> **注意** Xbox Developer Preview のシステム更新プログラムには、実験的な初期プレリリース版のソフトウェアが含まれています。 
+このため、一部の人気ゲームやアプリが想定どおりに動作しなかったり、クラッシュやデータの損失が発生する可能性があります。
 
-### Will I lose my games and apps or saved changes?
+### ゲームやアプリや保存した変更を失うことがありますか
 
-If you decide to leave the developer preview program, you might have to do a factory reset, which will erase all the content on your console. 
-If that happens, you will have to reinstall all the games and apps. 
-As long as you were online when you played them, your saved games are all saved on your Live account cloud profile, so you won’t lose them.
+開発者プレビュー プログラムへの参加を停止する場合には、本体を出荷時の設定にリセットする必要がある場合があります。その場合には、コンソールのすべてのデータが削除されます。 
+その場合には、すべてのゲームとアプリを再インストールする必要があります。 
+オンラインでプレイした場合には、保存したゲームはすべて Live アカウントのクラウド プロファイルに保存されていますので、それを失うことはありません。
 
-### How do I leave the developer preview?
+### 開発者プレビューへの参加を停止する方法
 
-See the [Xbox One Developer Mode Deactivation](devkit-deactivation.md) topic for details about how to leave the developer preview.
+開発者プレビューへの参加を停止する方法について詳しくは、「[Xbox One の開発者モードのアクティブ化](devkit-deactivation.md)」をご覧ください。
 
-### I sold my Xbox One and left it in Developer Mode. How do I deactivate Developer Mode?
+### Xbox One を開発者モードにしたままで売却した場合に、 開発者モードを非アクティブ化する方法
 
-If you no longer have access to your Xbox One, you can deactivate it in Windows Dev Center. 
-For details, see the **Deactivate your console using Windows Dev Center** section in the [Xbox One Developer Mode Deactivation](devkit-deactivation.md#deactivate-your-console-through-windows-dev-center) topic.
+Xbox One にアクセスできない場合には、Windows デベロッパー センターで非アクティブ化できます。 
+詳しくは、「[Xbox One の開発者モードのアクティブ化](devkit-deactivation.md#deactivate-your-console-through-windows-dev-center)」の「**Windows デベロッパー センターを使用したコンソールの非アクティブ化**」のセクションをご覧ください。
 
-### I left the developer preview using Windows Dev Center but I’m in still Developer Mode. What do I do?
+### Windows デベロッパー センターを使用して開発者プレビューを停止しましたが、まだ開発者モードのままです。 解決するには、
 
-Start Dev Home and select the **Leave developer mode** button. 
-This will restart your console in Retail Mode. 
+Dev Home を開始し、**[Leave developer mode]** ボタンを選択します。 
+コンソールはリテール モードで再起動します。 
 
-### Can I publish my app?
+### 自分のアプリを公開できますか
 
-Publishing for apps will be available through Dev Center later in the year. 
-UWP apps created and tested on a retail Xbox One will go through the same ingestion, review, and publication process that Windows conducts today, with additional reviews to meet today’s Xbox One standards.
+アプリの公開はデベロッパー センターで年内には利用可能となる予定です。 
+市販の Xbox One で作成されテストされた UWP アプリは、Windows で現在行われているものと同様の取り込み、レビュー、公開のプロセスが行われ、さらに Xbox One の標準を満たすための追加のレビューが行われます。
 
-### Can I publish my game?
+### 自分のゲームを公開できますか
 
-You can use UWP and your Xbox One in Developer Mode to build and test your games on Xbox One. 
-To publish UWP games you must register with [ID@XBOX](http://www.xbox.com/en-us/Developers/id). 
-[ID@XBOX](http://www.xbox.com/en-us/Developers/id) provides developers full access to Xbox Live APIs for their games, including Gamerscore and Achievements, 
-as well as the ability to take advantage of multiplayer between devices, cloud saves, and all the features of Xbox Live on Xbox One. 
-[ID@XBOX](http://www.xbox.com/en-us/Developers/id) can also provide access to Xbox One development kits for games that require access to the maximum potential of the Xbox One hardware.
+UWP と Xbox One の開発者モードを使って、Xbox One でゲームの構築とテストを行えます。 
+UWP ゲームを公開するには、[ID@XBOX](http://www.xbox.com/en-us/Developers/id) で登録する必要があります。 
+[ID@XBOX](http://www.xbox.com/en-us/Developers/id) では開発者は、ゲーム用の Xbox Live API のすべてにアクセスできます。これにはゲームスコア、達成度、 
+デバイス間でのマルチ プレーヤーの活用、クラウドの保存など、Xbox One の Xbox Live のすべての機能が含まれます。 
+さらに [ID@XBOX](http://www.xbox.com/en-us/Developers/id) は、ゲーム用の Xbox One 開発キットへのアクセスも提供します。これにより Xbox One のハードウェアの機能を最大限に活用できます。
 
-### Will the standard Game engines work?
+### 標準的なゲーム エンジンは機能しますか
 
-Check out the [Known issues](known-issues.md) page for this preview release.
+このプレビュー リリースの「[既知の問題](known-issues.md)」ページを確認してください。
 
-### What capabilities and system resources are available to UWP games on Xbox One? 
+### Xbox One の UWP ゲームで利用可能な機能とシステム リソース 
 
-See [System resources for UWP apps and games on Xbox One](system-resource-allocation.md) for information.
+詳しくは、「[Xbox One 上の UWP アプリとゲームのシステム リソース](system-resource-allocation.md)」をご覧ください。
 
-### If I create a DirectX 12 UWP game, will it run on my Xbox One in Developer Mode?
+### DirectX 12 の UWP ゲームを作成する場合、それは Xbox One の開発者モードで動作しますか
 
-See [System resources for UWP apps and games on Xbox One](system-resource-allocation.md) for information.
+詳しくは、「[Xbox One 上の UWP アプリとゲームのシステム リソース](system-resource-allocation.md)」をご覧ください。
 
-### Will the entire UWP API surface be available on Xbox?
+### Xbox では UWP API のすべてを利用できますか
 
-Check out the [Known issues](known-issues.md) page for this preview release.
+このプレビュー リリースの「[既知の問題](known-issues.md)」ページを確認してください。
 
-### Fixing deployment failures
+### 展開の失敗を修正する
 
-If you can’t deploy your app from Visual Studio, these steps may help you fix the problem. 
-If you get stuck, ask for help on the forum.
+Visual Studio からアプリを展開できない場合、次の手順が問題の解決に役立つ場合があります。 
+それでも解決できない場合には、フォーラムに投稿してみます。
 
-If Visual Studio cannot connect to your Xbox One:
+Visual Studio が Xbox One に接続できない場合:
 
-1. Make sure that you are in Developer Mode (discussed earlier on this page).
-2. Make sure that you have set up your development PC correctly. Did you follow *all* of the directions in [Getting started with UWP app development on Xbox One](getting-started.md)? 
+1. 開発者モードであることを確認します (このページで既に説明した方法を確認します)。
+2. 開発用 PC が正しく設定されていることを確認します。 [Xbox One の UWP アプリ開発の概要](getting-started.md)の*すべての*指示に従いましたか。 
 
-3. If you haven’t yet, read through the [Development environment setup](development-environment-setup.md) topic and the [Introduction to Xbox One tools](introduction-to-xbox-tools.md) topic.
+3. まだの場合、[開発環境のセットアップ](development-environment-setup.md) および [Xbox One ツールの概要](introduction-to-xbox-tools.md) をよく読みます。
 
-4. Make sure that you are using a wired network connection to Xbox One. We’ve seen performance and connectivity issues with some wireless endpoints.
+4. Xbox One を有線ネットワーク接続していることを確認します。 一部のワイヤレス エンドポイントでは、パフォーマンスと接続の問題が確認されています。
 
-5. Make sure that you can “ping” your console IP address from your development PC.
+5. 開発用 PC からコンソールの IP アドレスに "ping" ができることを確認します。
 
-6. Make sure that you are using the Universal (Unencrypted Protocol) in the Authentication drop-down list on the **Debug** tab. See [Development environment setup](development-environment-setup.md) for more details.
+6. **[デバッグ]** タブの [認証] ドロップダウンリストで [ユニバーサル (暗号化されていないプロトコル)] を使用していることを確認します。 詳しくは、「[開発環境のセットアップ](development-environment-setup.md)」をご覧ください。
 
-7. Make sure you are not hitting a PIN pairing issue; see "Visual Studio/Xbox PIN pairing failures" in the [FAQ](frequently-asked-questions.md) topic.
+7. PIN のペアリングの問題が発生していないことを確認します。「[よく寄せられる質問](frequently-asked-questions.md)」の「Visual Studio/Xbox の PIN のペアリングの失敗」を確認します。
 
-If Visual Studio can connect, but deployment is failing (for example you get this error message: "DEP0700 : Registration of the app failed.(0x80073cf9)"):
+Visual Studio は接続できるが、展開が失敗する場合 (たとえば、エラー メッセージ: "DEP0700 : アプリケーションの登録に失敗しました。(0x80073cf9)" が表示される場合):
 
-1. Make sure that your app is not installed by uninstalling it from the Collections app in the Xbox One shell. 
+1. Xbox One のシェルのコレクション アプリから、アプリをアンインストールして、アプリがインストールされていないことを確認します。 
 
-> **Note**&nbsp;&nbsp;Uninstalling your app from Windows Device Portal (WDP) will not resolve the issue.
+> **注** Windows Device Portal (WDP) からアプリをアンインストールしても、問題は解決されません。
 
-2. If your issues persist, uninstall your app or game in the Collections app, leave Developer Mode, restart to Retail Mode, and then switch back to Developer Mode. 
-This will clear Dev Storage.
+2. 問題が解決しない場合は、アプリやゲームをコレクション アプリからアンインストールして、開発者モードからリテール モードに切り替えて再起動し、さらに開発者モードに戻します。 
+これにより、開発者記憶域がクリアされます。
 
-3. If your issues persist, follow the steps above and then use **Reset and keep my games & apps** to delete any stored state on your Xbox One. 
-Go to Settings > System > Console info & updates > Reset console, and select the **Reset and keep my games & apps** button.
+3. 問題が解決しない場合は、上の手順に従い、次に **[ゲームとアプリを保持してリセット]** を使って、Xbox One に保存された状態を削除します。 
+[設定] > [システム] > [コンソール情報と更新] > [コンソールのリセット] の順に選択し、**[ゲームとアプリを保持してリセット]** ボタンを選択します。
 
-> **Caution**&nbsp;&nbsp;Doing this will delete all saved settings on your Xbox One including wireless settings, user accounts and any game progress that has not been saved to cloud storage.
+> **注意** これにより、ワイヤレス設定、ユーザー アカウント、クラウド ストレージに保存されていないゲーム進行状況など、Xbox One に保存されたすべての設定が削除されます。
 
-> **Caution**&nbsp;&nbsp;DO NOT select the **Reset and remove everything** button.
-This will delete all of your games, apps, settings and content, deactivate Developer Mode, and remove you console from the Developer Preview group.
+> **注意** **[すべてを削除してリセット]** ボタンを押さないでください。
+これにより、ゲーム、アプリ、設定とコンテンツのすべてが削除され、開発者モードが非アクティブ化され、コンソールは Developer Preview グループから削除されます。
 
-### If I’m building an app using HTML/JavaScript, how do I enable Gamepad navigation?
+### HTML/JavaScript を使用したアプリを構築する場合に、ゲームパッドのナビゲーションを有効にする方法
 
-TVHelpers is a set of JavaScript and XAML/C# samples and libraries to help you build great Xbox One and TV experiences in JavaScript and C#. 
-TVJS is a library that helps you build premium UWP apps for Xbox One. TVJS includes support for automatic controller navigation, rich media playback, search, and more. 
-You can use TVJS with your hosted web app just as easily as with a packaged web UWP app with full access to the Windows Runtime APIs.
+TVHelpers は、JavaScript と XAML/C# のサンプルとライブラリです。JavaScript と C# による、Xbox One とテレビの優れたエクスペリエンスの構築をサポートします。 
+TVJS は Xbox One のための優れた UWP アプリの構築をサポートします。 TVJS には、自動コントローラー ナビゲーション、リッチ メディアの再生、検索などのサポートが含まれています。 
+ホストされた Web アプリで TVJS を使うと、パッケージ化された Web UWP アプリを使う場合のように容易に、すべての Windows ランタイム API にアクセスできます。
 
-For more information see the [TVHelpers](https://github.com/Microsoft/TVHelpers) project and the project [wiki](https://github.com/Microsoft/TVHelpers/wiki).
+詳しくは、「[TVHelpers](https://github.com/Microsoft/TVHelpers) プロジェクトとプロジェクト [wiki](https://github.com/Microsoft/TVHelpers/wiki)」をご覧ください。
 
-## See also
-- [Known issues with UWP on Xbox One developer preview](known-issues.md)
-- [UWP on Xbox One](index.md)
+## 参照
+- [Xbox One Developer Preview の UWP の既知の問題](known-issues.md)
+- [Xbox One の UWP](index.md)
 
 
 <!--HONumber=Mar16_HO5-->

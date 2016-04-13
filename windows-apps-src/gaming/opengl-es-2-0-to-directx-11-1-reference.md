@@ -1,15 +1,15 @@
 ---
-title: OpenGL ES 2.0 to Direct3D 11 reference
-description: Use these reference topics to look up API mapping and short code samples when porting from OpenGL ES 2.0 to Direct3D 11.
+title: OpenGL ES 2.0 から Direct3D 11 への移行のためのリファレンス
+description: OpenGL ES 2.0 から Direct3D 11 への移植の際に API マッピングや簡単なコード サンプルを探す場合は、これらのリファレンス トピックをご覧ください。
 ms.assetid: fe18c8a9-b113-8f5d-9c31-c294dede8560
 ---
 
-# OpenGL ES 2.0 to Direct3D 11 reference
+# OpenGL ES 2.0 から Direct3D 11 への移行のためのリファレンス
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-Use these reference topics to look up API mapping and short code samples when porting from OpenGL ES 2.0 to Direct3D 11.
+OpenGL ES 2.0 から Direct3D 11 への移植の際に API マッピングや簡単なコード サンプルを探す場合は、これらのリファレンス トピックをご覧ください。
 ## 
 <table>
 <colgroup>
@@ -18,14 +18,15 @@ Use these reference topics to look up API mapping and short code samples when po
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Topic</th>
-<th align="left">Description</th>
+<th align="left">トピック</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>[GLSL-to-HLSL reference](glsl-to-hlsl-reference.md)</p></td>
-<td align="left"><p>You port your OpenGL Shader Language (GLSL) code to Microsoft High Level Shader Language (HLSL) code when you [port your graphics architecture from OpenGL ES 2.0 to Direct3D 11](port-from-opengl-es-2-0-to-directx-11-1.md) to create a game for Universal Windows Platform (UWP).</p></td>
+<td align="left"><p>[
+            port your graphics architecture from OpenGL ES 2.0 to Direct3D 11](port-from-opengl-es-2-0-to-directx-11-1.md)ユニバーサル Windows プラットフォーム (UWP) 向けのゲームを作成する際は、OpenGL シェーダー言語 (GLSL) コードを Microsoft 上位レベル シェーダー言語 (HLSL) コードに移植します。</p></td>
 </tr>
 </tbody>
 </table>

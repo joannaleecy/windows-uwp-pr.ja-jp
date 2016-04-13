@@ -1,36 +1,36 @@
 ---
 ms.assetid: 16AD53CA-1252-456C-8567-2263D3EC95F3
-title: Use the inclinometer
-description: Learn how to use the inclinometer to determine pitch, roll, and yaw.
+title: 傾斜計の使用
+description: 傾斜計を使ってピッチ、ロール、ヨーを検出する方法を説明します。
 ---
-# Use the inclinometer
+# 傾斜計の使用
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-** Important APIs **
+** 重要な API **
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR225766)
 
-Learn how to use the inclinometer to determine pitch, roll, and yaw.
+傾斜計を使ってピッチ、ロール、ヨーを検出する方法を説明します。
 
-Some 3-D games require an inclinometer as an input device. One common example is the flight simulator, which maps the three axes of the inclinometer (X, Y, and Z) to the elevator, aileron, and rudder inputs of the aircraft.
+一部の 3D ゲームでは、入力デバイスとして傾斜計が必要です。 よくある例としては、フライト シミュレーターがあります。傾斜計の 3 軸 (X、Y、Z) を、航空機のエレベーター、エルロン、ラダーの入力として割り当てます。
 
- ## Prerequisites
+ ## 前提条件
 
-You should be familiar with Extensible Application Markup Language (XAML), Microsoft Visual C#, and events.
+Extensible Application Markup Language (XAML)、Microsoft Visual C#、イベントについて理解している必要があります。
 
-The device or emulator that you're using must support a inclinometer.
+使うデバイスやエミュレーターが傾斜計をサポートしている必要があります。
 
- ## Create a simple inclinometer app
+ ## シンプルな傾斜計アプリを作成する
 
-This section is divided into two subsections. The first subsection will take you through the steps necessary to create a simple inclinometer application from scratch. The following subsection explains the app you have just created.
+このセクションは、次の 2 つのサブセクションに分かれています。 最初のサブセクションでは、シンプルな傾斜計アプリケーションを最初から作成するために必要な手順を示します。 次のサブセクションでは、作成したアプリについて説明します。
 
-###  Instructions
+###  手順
 
--   Create a new project, choosing a **Blank App (Universal Windows)** from the **Visual C#** project templates.
+-   **[Visual C#]** プロジェクト テンプレートから **[空白のアプリ (ユニバーサル Windows]** を選んで、新しいプロジェクトを作成します。
 
--   Open your project's MainPage.xaml.cs file and replace the existing code with the following.
+-   プロジェクトの MainPage.xaml.cs ファイルを開き、記載されているコードを次のコードで置き換えます。
 
 ```csharp
     using System;
@@ -95,9 +95,9 @@ This section is divided into two subsections. The first subsection will take you
     }
 ```
 
-You'll need to rename the namespace in the previous snippet with the name you gave your project. For example, if you created a project named **InclinometerCS**, you'd replace `namespace App1` with `namespace InclinometerCS`.
+元のスニペットの名前空間の名前を、自分のプロジェクトに指定した名前に変更する必要があります。 たとえば、作成したプロジェクトの名前が **InclinometerCS** だとすると、`namespace App1` を `namespace InclinometerCS` に置き換えます。
 
--   Open the file MainPage.xaml and replace the original contents with the following XML.
+-   MainPage.xaml ファイルを開き、元の内容を次の XML に置き換えます。
 
 ```xml
         <Page
@@ -121,25 +121,25 @@ You'll need to rename the namespace in the previous snippet with the name you ga
     </Page>
 ```
 
-You'll need to replace the first part of the class name in the previous snippet with the namespace of your app. For example, if you created a project named **InclinometerCS**, you'd replace `x:Class="App1.MainPage"` with `x:Class="InclinometerCS.MainPage"`. You should also replace `xmlns:local="using:App1"` with `xmlns:local="using:InclinometerCS"`.
+元のスニペットのクラス名の最初の部分を、自分のアプリの名前空間に置き換える必要があります。 たとえば、作成したプロジェクトの名前が **InclinometerCS** だとすると、`x:Class="App1.MainPage"` を `x:Class="InclinometerCS.MainPage"` に置き換えます。 また、`xmlns:local="using:App1"` を `xmlns:local="using:InclinometerCS"` に置き換える必要があります。
 
--   Press F5 or select **Debug** > **Start Debugging** to build, deploy, and run the app.
+-   アプリをビルド、展開、実行するには、F5 キーを押すか、**[デバッグ]**、**[デバッグの開始]** の順にクリックします。
 
-Once the app is running, you can change the inclinometer values by moving the device or using the emulator tools.
+アプリを実行した後、デバイスを移動するか、エミュレーター ツールを使うことによって、傾斜計の値を変更できます。
 
--   Stop the app by returning to Visual Studio and pressing Shift+F5 or select **Debug** > **Stop Debugging** to stop the app.
+-   アプリを停止するには、Visual Studio に戻り、Shift キーを押しながら F5 キーを押すか、**[デバッグ]**、**[デバッグの停止]** の順にクリックします。
 
-###  Explanation
+###  説明
 
-The previous example demonstrates how little code you'll need to write in order to integrate inclinometer input in your app.
+上に示した例では、ごく短いコードを作成するだけで、傾斜計入力をアプリに組み込むことができることがわかります。
 
-The app establishes a connection with the default inclinometer in the **MainPage** method.
+このアプリでは、**MainPage** メソッドで、既定の傾斜計との接続を確立しています。
 
 ```csharp
 _inclinometer = Inclinometer.GetDefault();
 ```
 
-The app establishes the report interval within the **MainPage** method. This code retrieves the minimum interval supported by the device and compares it to a requested interval of 16 milliseconds (which approximates a 60-Hz refresh rate). If the minimum supported interval is greater than the requested interval, the code sets the value to the minimum. Otherwise, it sets the value to the requested interval.
+このアプリでは、**MainPage** メソッドで、レポート間隔を設定しています。 次のコードは、デバイスでサポートされる最小の間隔を取得し、要求される 16 ミリ秒の間隔 (約 60 Hz のリフレッシュ レート) と比較します。 サポートされる最小の間隔が要求される間隔よりも大きい場合は、値を最小値に設定します。 それ以外の場合は、値を要求される間隔に設定します。
 
 ```csharp
 uint minReportInterval = _inclinometer.MinimumReportInterval;
@@ -147,14 +147,14 @@ uint reportInterval = minReportInterval > 16 ? minReportInterval : 16;
 _inclinometer.ReportInterval = reportInterval;
 ```
 
-The new inclinometer data is captured in the **ReadingChanged** method. Each time the sensor driver receives new data from the sensor, it passes the values to your app using this event handler. The app registers this event handler on the following line.
+**ReadingChanged** メソッドで、新しい傾斜計のデータをキャプチャしています。 センサーのドライバーは、センサーから新しいデータを受け取るたびに、このイベント ハンドラーを使ってアプリに値を渡します。 このアプリの場合、このイベント ハンドラーが次の行で登録されています。
 
 ```
 _inclinometer.ReadingChanged += new TypedEventHandler<Inclinometer, 
 InclinometerReadingChangedEventArgs>(ReadingChanged);
 ```
 
-These new values are written to the TextBlocks found in the project's XAML.
+プロジェクトの XAML 内にある TextBlock に、以下の新しい値が書き込まれます。
 
 ```xml
 <TextBlock HorizontalAlignment="Left" Height="21" Margin="0,8,0,0" TextWrapping="Wrap" Text="Pitch: " VerticalAlignment="Top" Width="45" Foreground="#FFF9F4F4"/>
@@ -165,9 +165,9 @@ These new values are written to the TextBlocks found in the project's XAML.
  <TextBlock x:Name="txtYaw" HorizontalAlignment="Left" Height="19" Margin="55,56,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="54" Foreground="#FFF6F2F2"/>
 ```
 
- ## Related topics
+ ## 関連トピック
 
-* [Inclinometer Sample](http://go.microsoft.com/fwlink/p/?linkid=241380)
+* [傾斜計センサーのサンプル](http://go.microsoft.com/fwlink/p/?linkid=241380)
 
 
 

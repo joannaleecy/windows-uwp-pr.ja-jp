@@ -1,21 +1,21 @@
 ---
-Description: To use map services in apps for Windows Phone 8.1 and earlier, you need a map service application ID and a token to include in your app's code. You can get this token in the Dev Center dashboard on the Maps page in the Services section.
-title: Use map services
+Description: Windows Phone 8.1 以前を対象としたアプリでマップ サービスを使うには、アプリのコードに含めるマップ サービス アプリケーション ID とトークンが必要です。 デベロッパー センター ダッシュボードで、[マップ] ページの [サービス] セクションでこのトークンを取得できます。
+title: マップ サービスの使用
 ms.assetid: E5EE6B56-B86F-4D62-B16A-F023FE98EFAB
 ---
 
-# Use map services
+# マップ サービスの使用
 
 
-To use map services in apps for Windows Phone 8.1 and earlier, you need a map service application ID and a token to include in your app's code. You can get this token in the Dev Center dashboard on the **Maps** page in the **Services** section.
+Windows Phone 8.1 以前を対象としたアプリでマップ サービスを使うには、アプリのコードに含めるマップ サービス アプリケーション ID とトークンが必要です。 デベロッパー センター ダッシュボードで、**[マップ]** ページの **[サービス]** セクションでこのトークンを取得できます。
 
-> **Note**  To use map services in apps targeting other operating systems, visit the [Bing Maps Dev Center](http://go.microsoft.com/fwlink/p/?LinkId=614880). See [Request a maps authentication key](https://msdn.microsoft.com/library/windows/apps/mt219694) for more info.
+> **注**  他のオペレーティング システムを対象としたアプリでマップ サービスを使うには、[Bing Maps デベロッパー センター](http://go.microsoft.com/fwlink/p/?LinkId=614880)にアクセスしてください。 詳しくは、「[マップ認証キーの要求](https://msdn.microsoft.com/library/windows/apps/mt219694)」をご覧ください。
 
-Once you've [reserved your app's name](create-your-app-by-reserving-a-name.md), look for the **Services** section in the left navigation menu and expand it to show the **Maps** page. When you click **Get token**, the **ApplicationID** and **AuthenticationToken** will be generated and will appear on this page.
+[アプリの名前を予約](create-your-app-by-reserving-a-name.md)したら、左側のナビゲーション メニューの **[サービス]** セクションを探し、そのセクションを展開して、**[マップ]** ページを表示します。 **[トークンの取得]** をクリックすると、**ApplicationID** と **AuthenticationToken** が生成され、このページに表示されます。
 
-> **Note**  You don’t have to finish submitting your app at this time. After you request a token and ID, this info will be saved on this page. You can return to this page at any time to access this info.
+> **注**  この時点でアプリの申請を完了する必要はありません。 トークンと ID を要求した後、この情報はこのページに保存されます。 いつでもこのページに戻って、この情報にアクセスできます。
 
-You'll also need to make sure to add the **ApplicationID** and **AuthenticationToken** to your code before you package and submit your app. For more info, see [How to add a Map control to a page (Windows Phone 8.1)](http://go.microsoft.com/fwlink/p/?LinkId=614882).
+また、アプリをパッケージ化して申請する前に、必ずアプリのコードに **ApplicationID** と **AuthenticationToken** を追加する必要があります。 詳細については、「[Windows Phone 8 でマップ コントロールをページに追加する方法](http://go.microsoft.com/fwlink/p/?LinkId=614882)」を参照してください。
 
  
 

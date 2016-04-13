@@ -1,116 +1,116 @@
 ---
-title: Introduction to Xbox One tools
-description: The Xbox One-specific tool Dev Home, using the Windows Device Portal.
+title: Xbox One ツールの概要
+description: Windows Device Portal を使った、Xbox One 固有のツールである Dev Home
 area: Xbox
 ---
 
-# Introduction to Xbox One tools
+# Xbox One ツールの概要
 
-This section covers the Xbox One-specific tool _Dev Home_, using the Windows Device Portal.
+このセクションでは、Windows Device Portal を使った、Xbox One 固有のツールである _Dev Home_ について説明します。
 
 ## Dev Home
 
-_Dev Home_ is a tools experience on the Xbox One Development Kit designed to aid developer productivity. Dev Home offers functionality to manage and configure your dev kit.
+_Dev Home_ は、Xbox One 開発キットに含まれ、開発者の生産性をサポートするための 1 つのツール エクスペリエンスです。 Dev Home は、開発キットの管理と構成の機能を提供します。
 
-To open Dev Home, select the **Dev Home** tile on the home screen. If there is no tile present, the console is not in Developer Mode.
+Dev Home を開くには、ホーム画面の **[Dev Home]** タイルを選択します。 タイルが表示されていない場合は、コンソールが開発者モードに設定されていません。
 
   ![Windows Device Portal](images/windowsdeviceportal_1.png)
 
-### User interface
-The Dev Home user interface is divided into the following areas.
+### ユーザー インターフェイス
+Dev Home のユーザー インターフェイスは、次の領域に分かれています。
 
   ![DevHome UI](images/devhome_ui.png)
 
-#### Header
-The header contains important “at a glance” information about the dev kit. This includes the console name, its IP address, the Xbox Live sandbox it is in, and the version of the operating system it is running. On the right of the header, the current system time and date is shown for convenience.
+#### ヘッダー
+ヘッダーには、開発キットについての重要な "概要" 情報が含まれています。 これには、コンソール名、IP アドレス、Xbox Live サンド ボックス、実行されているオペレーティング システムのバージョンが含まれます。 ヘッダーの右側に、現在のシステム時刻と日付が表示されます。
 
-#### Tool windows
-Under the header is the main area of the app, which contains a set of configurable tool windows. These are intended to allow developers to customize the app to provide access to various tools and sets of information. For more details about the tools, see the following individual tool descriptions. For information about how to configure the layout and appearance of the tool windows, see the [Customizing Dev Home](#customizing-dev-home) section later on this page. 
+#### ツール ウィンドウ
+ヘッダーの下のアプリのメイン領域には、構成可能なツールのウィンドウのセットが含まれています。 これらを使って、開発者はさまざまなツールや情報セットにアクセスして、アプリをカスタマイズできます。 ツールについて詳しくは、次の各ツールの説明をご覧ください。 ツール ウィンドウのレイアウトと外観を構成する方法について詳しくは、このページの「[Dev Home のカスタマイズ](#customizing-dev-home)」のセクションをご覧ください。 
 
-##### Main menu
-By pressing the **Menu** button on your controller or navigating to the menu (“Hamburger”) button at the top left of the screen, you can access the main menu that allows you to configure the theme color and background image for the app workspace, and provide feedback on the app.
+##### メイン メニュー
+コントローラーの **[メニュー]** ボタンを押すか、または画面の左上のメニュー (「ハンバーガー」) ボタンをクリックすると、メイン メニューにアクセスできます。ここでは、アプリのワークスペースのテーマの色と背景画像を構成したり、アプリのフィードバックを提供できます。
 
-  ![Main menu](images/devhome_mainmenu.png)
+  ![メイン メニュー](images/devhome_mainmenu.png)
 
-#### Snap mode
-Tools in Dev Home can be snapped to the side while you are running your title so that you can have easy access to tools while you are testing.
+#### スナップ モード
+Dev Home のツールは、タイトルの実行中に、端にスナップできます。これにより、テスト中にツールに容易にアクセスできます。
 
-To access **Snap** mode, select the title of the appropriate tool, press the **View** button on your controller, and on the context menu, select **Snap**.
+**スナップ** モードにアクセスするには、適切なツールのタイトルを選択して、コントローラーの **[ビュー]** ボタンを押し、コンテキスト メニューで **[スナップ]** を選択します。
 
-  ![Snap mode](images/devhome_snapmode.png)
+  ![スナップ モード](images/devhome_snapmode.png)
 
-Dev Home will snap right. You can switch context by double tapping the **Nexus** button as usual.
+Dev Home は右にスナップします。 通常どおり **[連結]** ボタンをダブル タップすると、コンテキストを切り替えることができます。
 
-  ![Nexus](images/devhome_nexus.png)
+  ![連結](images/devhome_nexus.png)
 
-##### Tool descriptions
-| Tool  | Capabilities |
+##### ツールの説明
+| ツール  | 機能 |
 |-------|--------------|
-| Games & Apps  | Lists the titles and apps installed on the dev kit and the ability to quickly open them. You can also view the process lifetime management (PLM) state of games and apps, and change PLM states from a context menu. |
-| Users | Lists the users currently registered on the console. Enables one-click user sign in/out, adding users and guests, and viewing details of users and guests. |
-| [Console settings](#console-settings) | Provides an “at a glance” view and editing options of console settings and information. |
-| Visual Studio | Enables you to pair the console with an instance of Visual Studio to allow deployment. If necessary, clear any existing paired VS instances to prevent UWP app deployment to a kit. |
-| [Windows Device Portal](#windows-device-portal) | Enables WDP (a browser-based device management tool) on the kit. |
-| Xbox Live status | Provides the current status of the Xbox Live service. |
+| アプリ+ゲーム  | 開発キットにインストールされているタイトルとアプリの一覧を表示し、それらをすばやく開くことができます。 ゲームやアプリのプロセス ライフタイム管理 (PLM) の状態を表示し、コンテキスト メニューから PLM 状態を変更することもできます。 |
+| ユーザー | コンソールに現在登録されているユーザーの一覧を表示します。 ユーザーのワン クリック サインインやサインアウトを有効化したり、ユーザーやゲストを追加したり、ユーザーやゲストの詳細を表示できます。 |
+| [コンソールの設定](#console-settings) | "概要" ビューおよびコンソールの設定と情報の編集オプションを提供します。 |
+| Visual Studio | 展開のために、コンソールを Visual Studio のインスタンスにペアリングできます。 必要に応じて、ペアリングされた既存の VS インスタンスをクリアして、UWP アプリがキットに展開されないようにできます。 |
+| [Windows Device Portal](#windows-device-portal) | キットの WDP (ブラウザー ベースのデバイス管理ツール) を有効にします。 |
+| Xbox Live の状態 | Xbox Live サービスの現在の状態を提供します。 |
 
-### Customizing Dev Home
+### Dev Home のカスタマイズ
 
-Dev Home has been designed to be customizable and personal. You can choose a background image and theme color to personalize your Dev Home experience. These options are found on the main menu.
+Dev Home は個人用設定を行ってカスタマイズすることができます。 背景画像とテーマの色を選んで、Dev Home のエクスペリエンスをカスタマイズできます。 これらのオプションは、メイン メニューに表示されます。
 
-#### Resizing and reordering tools
-To change the size or position of a tool, use the context menu button (**View** button on your controller) while the title has focus. On the context menu, select **Move** or **Resize**.
+#### サイズの変更とツールの並べ替え
+ツールのサイズや位置を変更するには、タイトルにフォーカスがあるときに、コンテキスト メニュー ボタン (コントローラー上の **[ビュー]** ボタン) を使用します。 コンテキスト メニューで **[移動]** または **[サイズ変更] ** を選択します。
 
-  ![Move or resize](images/devhome_move.png)
+  ![移動またはサイズ変更](images/devhome_move.png)
 
-#### Changing theme color and background image
-On the main menu, you can select **Change theme color**. To update the theme color used for focus highlighting, select a new color and then click **Save**.
+#### テーマの色と背景画像の変更
+メイン メニューで、**[テーマの色の変更]** を選択します。 フォーカスが強調表示されたテーマの色を更新するには、新しい色を選択して、**[保存]** をクリックします。
 
-  ![Change theme color](images/devhome_colors.png)
+  ![テーマの色の変更](images/devhome_colors.png)
 
-### Providing feedback
-To provide feedback on Dev Home, or any of the tools processes, select the **Provide feedback** option on the main menu.
+### フィードバックの提供
+Dev Home またはいずれかのツールのプロセスでフィードバックを提供するには、メイン メニューの **[フィードバック]** オプションを選択します。
 
-  ![Provide feedback](images/devhome_feedback.png)
+  ![フィードバックの提供](images/devhome_feedback.png)
 
-## Console settings
-The Console settings tool provides quick access to the settings of the dev kit.
+## コンソールの設定
+コンソールの設定ツールでは、開発キットの設定に簡単にアクセスできます。
 
-### Setting a hostname for the console
-When communicating with the console from your development PC, you can set a friendly name (called a _hostname_) for the Xbox One dev kit to use as an alternative to the console IP address. Your development PC and the dev kit must be on the same subnet for hostname connectivity to work.  
+### コンソールのホスト名の設定
+開発用 PC からコンソールに通信している場合は、Xbox One 開発キットにフレンドリ名 (_ホスト名_と呼ばれます) を設定して、コンソールの IP アドレスの代わりに使用できます。 開発用 PC と開発キットは、ホスト名への接続と同じサブネット上にある必要があります。  
 
-To define a hostname for a dev kit, go to the Console settings tool and type the hostname in the __Hostname__ box.  
+開発キットのホスト名を定義するには、コンソール設定ツールに移動して、__[ホスト名]__ ボックスにホスト名を入力します。  
 
-  > **Note**&nbsp;&nbsp;Name uniqueness is not enforced when the hostname is created. Be careful to avoid name duplication. One way to do this is to derive the hostname from the name of your development computer, which is usually unique within an organization.
+  > **注** ホスト名の作成時に名前の一意性は強制されません。 名前が重複しないように注意する必要があります。 1 つの方法としては、開発用コンピューターの名前からホスト名を取得することにより、通常は組織内で一意となります。
 
 ## Windows Device Portal
-Windows Device Portal (WDP) is a OneCore device management tool that allows a browser-based device management experience.
+Windows Device Portal (WDP) は、ブラウザー ベースのデバイス管理エクスペリエンスを実現する、OneCore デバイス管理ツールです。
 
-> **Note**&nbsp;&nbsp;In this developer preview, when you start WDP in Dev Home, it will cause Dev Home to crash after you have entered your user name and password and clicked **Save**. 
-The credentials are saved but WDP is not started. 
-You can start WDP by restarting Xbox One.
+> **注** この Developer Preview では、Dev Home で WDP を開始し、ユーザー名とパスワードを入力して **[保存]** をクリックすると、Dev Home はクラッシュします。 
+資格情報は保存されますが、WDP は開始されません。 
+Xbox One を再起動すると、WDP を開始できます。
 
-To enable WDP on your Xbox One console:
+Xbox One コンソールで WDP を有効にするには、次を実行します。
 
-1. Select the Dev Home tile on the home screen.
+1. ホーム画面で、Dev Home タイルを選択します。
 
-  ![Select Dev Home tile](images/windowsdeviceportal_1.png)
+  ![Dev Home タイルの選択](images/windowsdeviceportal_1.png)
 
-2. Within Dev Home, navigate to the **Remote management** tool.
+2. Dev Home 内で **[リモート管理]** ツールに移動します。
 
-  ![Remote management tool](images/windowsdeviceportal_2.png)
+  ![リモート管理ツール](images/windowsdeviceportal_2.png)
 
-3. Select __Manage Windows Device Portal__, and then press __A__.
-4. Select the __Enable Windows Device Portal__ check box.
-5. Enter a __Username__ and __Password__, and save them. These are used to authenticate access to your dev kit from a browser.
-6. Close the __Settings__ page, and note the URL listed on the _Remote Management_ tool to connect.
-7. Enter the URL in your browser, and then sign in with the credentials you configured.
-8. You will receive a warning about the certificate that was provided, similar to the following screenshot, because the security certificate signed by your Xbox One console is not considered a well-known trusted publisher. Click **Continue to this website** to access the Windows Device Portal.
+3. __[Windows Device Portal の管理]__ を選択し、__[A]__ を押します。
+4. __[Windows Device Portal を有効にする]__ のチェックボックスをオンにします。
+5. __[ユーザー名]__ と __[パスワード]__ を入力して、保存します。 これはブラウザーから開発キットへのアクセスの認証に使用されます。
+6. __[設定]__ ページを閉じ、_[リモート管理]_ ツールに表示された接続 URL を記録します。
+7. その URL をブラウザーに入力し、構成した資格情報でサインインします。
+8. 提供された証明書についての、次のスクリーン ショットのような警告が表示されます。これは、Xbox One コンソールによって署名されたセキュリティ証明書が、既知の信頼された発行元とは見なされないためです。 **[このサイトの閲覧を続行する]** をクリックして、Windows Device Portal にアクセスします。
 
-  ![Security certificate warning](images/security_cert_warning.jpg)
+  ![セキュリティ証明書の警告](images/security_cert_warning.jpg)
 
-## See also
-- [Microsoft Developer technologies: Windows Device Portal](https://ms-iot.github.io/content/en-US/win10/tools/DevicePortal.htm)
-- [UWP on Xbox One](index.md)
+## 参照
+- [Microsoft 開発者テクノロジ: Windows Device Portal](https://ms-iot.github.io/content/en-US/win10/tools/DevicePortal.htm)
+- [Xbox One の UWP](index.md)
 
 
 

@@ -1,21 +1,21 @@
 ---
-title: Render the scene with depth testing
-description: Create a shadow effect by adding depth testing to your vertex (or geometry) shader and your pixel shader.
+title: 深度のテストを使ったシーンのレンダリング
+description: シャドウ効果を作成するには、頂点 (またはジオメトリ) シェーダーとピクセル シェーダーに深度のテストを追加します。
 ms.assetid: bf496dfb-d7f5-af6b-d588-501164608560
 ---
 
-# Render the scene with depth testing
+# 深度のテストを使ったシーンのレンダリング
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-Create a shadow effect by adding depth testing to your vertex (or geometry) shader and your pixel shader. Part 3 of [Walkthrough: Implement shadow volumes using depth buffers in Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md).
+シャドウ効果を作成するには、頂点 (またはジオメトリ) シェーダーとピクセル シェーダーに深度のテストを追加します。 「[チュートリアル: Direct3D 11 の深度バッファーを使ったシャドウ ボリュームの実装](implementing-depth-buffers-for-shadow-mapping.md)」のパート 3 です。
 
-## Include transformation for light frustum
+## ライトの視錐台の変換の追加
 
 
-Your vertex shader needs to compute the transformed light space position for each vertex. Provide the light space model, view, and projection matrices using a constant buffer. You can also use this constant buffer to provide the light position and normal for lighting calculations. The transformed position in light space will be used during the depth test.
+頂点シェーダーで、各頂点の変換後のライト空間位置を計算する必要があります。 定数バッファーを使って、ライト空間のモデル、ビュー、プロジェクションの各マトリックスを提供します また、この定数バッファーを使って、照明計算用にライトの位置と法線を提供することもできます。 ライト空間内の変換された位置は深度のテスト時に使います。
 
 ```cpp
 PixelShaderInput main(VertexShaderInput input)
@@ -54,12 +54,12 @@ PixelShaderInput main(VertexShaderInput input)
 }
 ```
 
-Next, the pixel shader will use the interpolated light space position provided by the vertex shader to test whether the pixel is in shadow.
+次に、ピクセル シェーダーでは、頂点シェーダーから提供された補完済みのライト空間位置を使って、ピクセルがシャドウ内かどうかをテストします。
 
-## Test whether the position is in the light frustum
+## 位置がライトの視錐台内かどうかのテスト
 
 
-First, check that the pixel is in the view frustum of the light by normalizing the X and Y coordinates. If they are both within the range \[0, 1\] then it's possible for the pixel to be in shadow. Otherwise you can skip the depth test. A shader can test for this quickly by calling [Saturate](https://msdn.microsoft.com/library/windows/desktop/hh447231) and comparing the result against the original value.
+最初に、X 座標と Y 座標を正規化して、ピクセルがライトの視錐台内かどうかをチェックします。 両方が範囲 \[0, 1\] 内の場合は、ピクセルがシャドウ内にある可能性があります。 それ以外の場合は、深度のテストをスキップできます。 シェーダーでは、[Saturate](https://msdn.microsoft.com/library/windows/desktop/hh447231) を呼び出し、結果を元の値と比較することで、これをすばやくテストできます。
 
 ```cpp
 // Compute texture coordinates for the current point's location on the shadow map.
@@ -78,10 +78,10 @@ if ((saturate(shadowTexCoords.x) == shadowTexCoords.x) &&
 {
 ```
 
-## Depth test against the shadow map
+## シャドウ マップに対する深度のテスト
 
 
-Use a sample comparison function (either [SampleCmp](https://msdn.microsoft.com/library/windows/desktop/bb509696) or [SampleCmpLevelZero](https://msdn.microsoft.com/library/windows/desktop/bb509697)) to test the pixel's depth in light space against the depth map. Compute the normalized light space depth value, which is `z / w`, and pass the value to the comparison function. Since we use a LessOrEqual comparison test for the sampler, the intrinsic function returns zero when the comparison test passes; this indicates that the pixel is in shadow.
+サンプル比較関数 ([SampleCmp](https://msdn.microsoft.com/library/windows/desktop/bb509696) または [SampleCmpLevelZero](https://msdn.microsoft.com/library/windows/desktop/bb509697)) を使って、深度マップに対するライト空間内のピクセルの深度をテストします。 正規化されたライト空間の深度値 (`z / w`) を計算し、その値を比較関数に渡します。 サンプラーでは LessOrEqual 比較テストを使うため、比較テストに合格すると組み込みメソッドの関数は 0 を返します。これは、そのピクセルがシャドウの内側にあることを示しています。
 
 ```cpp
 // Use an offset value to mitigate shadow artifacts due to imprecise 
@@ -110,10 +110,10 @@ lighting = float(shadowMap.SampleCmpLevelZero(
     );
 ```
 
-## Compute lighting in or out of shadow
+## シャドウの内側または外側の照明の計算
 
 
-If the pixel is not in shadow, the pixel shader should compute direct lighting and add it to the pixel value.
+ピクセルがシャドウの内側にない場合は、ピクセル シェーダーは直接照明を計算し、それをピクセル値に追加します。
 
 ```cpp
 return float4(input.color * (ambient + DplusS(N, L, NdotL, input.view)), 1.f);
@@ -142,13 +142,13 @@ float3 DplusS(float3 N, float3 L, float NdotL, float3 view)
 }
 ```
 
-Otherwise, the pixel shader should compute the pixel value using ambient lighting.
+それ以外の場合は、アンビエント照明を使ってピクセル値を計算します。
 
 ```cpp
 return float4(input.color * ambient, 1.f);
 ```
 
-In the next part of this walkthrough, learn how to [Support shadow maps on a range of hardware](target-a-range-of-hardware.md).
+このチュートリアルの次のパートでは、[ハードウェアの範囲でシャドウ マップをサポートする](target-a-range-of-hardware.md)方法について説明します。
 
  
 

@@ -1,35 +1,35 @@
 ---
-Description: The date picker gives you a standardized way to let users pick a localized date value using touch, mouse, or keyboard input. 
-title: Date picker
+Description: DatePicker は、ユーザーがタッチ、マウス、またはキーボード入力を使ってローカライズされた日付値を選択できる標準化された方法です。 
+title: 日付の選択コントロール
 ms.assetid: d4a01425-4dee-4de3-9a05-3e85c3fc03cb
 isNew: true
 label: Date picker
 template: detail.hbs
 ---
 
-# Date picker
+# 日付の選択コントロール
 
-The date picker gives you a standardized way to let users pick a localized date value using touch, mouse, or keyboard input. 
+DatePicker は、ユーザーがタッチ、マウス、またはキーボード入力を使ってローカライズされた日付値を選択できる標準化された方法です。 
 
-<span class="sidebar_heading" style="font-weight: bold;">Important APIs</span>
+<span class="sidebar_heading" style="font-weight: bold;">重要な API</span>
 
--   [**DatePicker class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx)
--   [**Date property**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.date.aspx)
+-   [**DatePicker クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx)
+-   [**Date プロパティ**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.date.aspx)
 
-## Is this the right control?
-Use a date picker to let a user pick a known date, such as a date of birth, where the context of the calendar is not important.
+## 適切なコントロールの選択
+日付の選択コントロールは、ユーザーが誕生日などの既知の日付 (カレンダーのコンテキストが重要ではない日) を選べるようにする場合に使用します。
 
-For more info about choosing the right date control, see the [Date and time controls](date-and-time.md) article.
+適切な日付コントロールの選択について詳しくは、「[日付と時刻コントロール](date-and-time.md)」をご覧ください。
 
-## Examples
+## 例
 
-The entry point displays the chosen date, and when the user selects the entry point, a picker surface expands vertically from the middle for the user to make a selection. The date picker overlays other UI; it doesn't push other UI out of the way.
+エントリ ポイントには、選んだ日付が表示されます。ユーザーがエントリ ポイントを選ぶと、選択ツール サーフェイスが中央から縦方向に展開されて、日付を選べるようになります。 日付の選択は他の UI をオーバーレイし、他の UI を別の位置に移動させることはありません。
 
-![Example of the date picker expanding](images/controls_datepicker_expand.png)
+![展開した日付の選択コントロールの例](images/controls_datepicker_expand.png)
 
-## Create a date picker
+## 日付の選択コントロールの作成
 
-This example shows how to create a simple date picker with a header.
+次の例は、ヘッダーを含むシンプルな日付の選択コントロールを作成する方法を示しています。
 
 ```xaml
 <DatePicker x:Name=birthDatePicker Header="Date of birth"/>
@@ -40,20 +40,20 @@ DatePicker birthDatePicker = new DatePicker();
 birthDatePicker.Header = "Date of birth";
 ```
 
-The resulting date picker looks like this:
+結果として、日付の選択コントロールは、次のように表示されます。
 
-![Example of date picker](images/date-picker-closed.png)
+![日付の選択コントロールの例](images/date-picker-closed.png)
 
-> **Note**&nbsp;&nbsp;For important info about date values, see [DateTime and Calendar values](date-and-time.md#datetime-and-calendar-values) in the Date and time controls article.
+> **注:**&nbsp;日付値の重要な情報については、「日付と時刻コントロール」の「[DateTime と Calendar の値](date-and-time.md#datetime-and-calendar-values)」をご覧ください。
 
 
 
-## Related articles
+## 関連記事
 
-- [Date and time controls](date-and-time.md)
-- [Calendar date picker](calendar-date-picker.md)
-- [Calendar view](calendar-view.md)
-- [Time picker](time-picker.md)
+- [日付と時刻コントロール](date-and-time.md)
+- [カレンダーの日付の選択コントロール](calendar-date-picker.md)
+- [カレンダー ビュー](calendar-view.md)
+- [時刻の選択コントロール](time-picker.md)
 
 
 <!--HONumber=Mar16_HO4-->

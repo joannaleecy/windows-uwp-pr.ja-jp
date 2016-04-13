@@ -1,66 +1,66 @@
 ---
-Description: The toggle switch represents a physical switch that allows users to turn things on or off.
-title: Guidelines for toggle switch controls
+Description: トグル スイッチは、ユーザーが項目をオンまたはオフに切り替えることができる物理的なスイッチを表します。
+title: トグル スイッチ コントロールのガイドライン
 ms.assetid: 753CFEA4-80D3-474C-B4A9-555F872A3DEF
-label: Toggle switches
+label: トグル スイッチ
 template: detail.hbs
 ---
-# Toggle switches
+# トグル スイッチ
 
-The toggle switch represents a physical switch that allows users to turn things on or off. Use **ToggleSwitch** controls to present users with exactly two mutually exclusive options (like on/off), where choosing an option results in an immediate action.
+トグル スイッチは、ユーザーが項目をオンまたはオフに切り替えることができる物理的なスイッチを表します。 **ToggleSwitch** コントロールを使うと、ユーザーに 2 つの相互排他的なオプション (オン/オフのように) を表示できます。オプションの選択によって、即座にアクションが実行されます。
 
-<span class="sidebar_heading" style="font-weight: bold;">Important APIs</span>
+<span class="sidebar_heading" style="font-weight: bold;">重要な API</span>
 
--   [**ToggleSwitch class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.aspx)
--   [**IsOn property**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.ison.aspx)
--   [**Toggled event**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.toggled.aspx)
+-   [**ToggleSwitch クラス**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.aspx)
+-   [**IsOn プロパティ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.ison.aspx)
+-   [**Toggled イベント**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.toggled.aspx)
 
-## Is this the right control?
+## 適切なコントロールの選択
 
-Use a toggle switch for binary operations that take effect right after the user flips the toggle switch. For example, use a toggle switch to turn services or hardware components on or off, such as WiFi:
+トグル スイッチは、ユーザーがそのトグル スイッチをフリップした後すぐに有効になるバイナリ操作に対して使います。 たとえば、トグル スイッチを使って、WiFi などのサービスまたはハードウェア コンポーネントをオンまたはオフにできます。
 
-![WiFi toggle switch, on and off](images/toggleswitches01.png)
+![WiFi トグル スイッチ、オン/オフ](images/toggleswitches01.png)
 
-If a physical switch would work for the action, a toggle switch is probably the best control to use.
+物理的なスイッチが動作する操作については、多くの場合、トグル スイッチが最適なコントロールです。
 
-After the user toggles the switch on or off, we recommend that the corresponding action is immediately performed.
+ユーザーがスイッチをオンまたはオフに切り替えた後、対応する操作が直ちに実行されるようにすることをお勧めします。
 
-### Choosing between toggle switch and check box
+### トグル スイッチとチェック ボックスの選択
 
-For some actions, either a toggle switch or a check box might work. To decide which control would work better, follow these tips:
+操作によっては、トグル スイッチまたはチェック ボックスの両方が使えることがあります。 どちらのコントロールがより適切に動作するかを判断するには、次のヒントを参考にしてください。
 
--   Use a toggle switch for binary settings when changes become effective immediately after the user changes them.
+-   ユーザーが変更した後すぐに変更が有効になるようなバイナリ設定に対しては、トグル スイッチを使います。
 
-    ![Toggle switch versus check box](images/toggleswitches02.png)
+    ![トグル スイッチとチェック ボックス](images/toggleswitches02.png)
 
-    In the above example, it's clear with the toggle switch that the wireless is set to "On." But with the checkbox, the user needs to think about whether the wireless is on now or whether they need to check the box to turn wireless on.
+    上の例では、トグル スイッチの場合は、ワイヤレスが "オン" になっていることが明らかです。 一方、チェック ボックスの場合は、ワイヤレスが現在オンになっているのか、またはオンにするためにチェック ボックスをオンにする必要があるのか、ユーザーが考える必要があります。
 
--   Use a checkbox when the user has to perform extra steps for changes to be effective. For example, if the user must click a "submit" or "next" button to apply changes, use a check box.
+-   変更を有効にするためにユーザーが追加の手順を実行する必要があるときは、チェック ボックスを使います。 たとえば、ユーザーが [送信] や [次へ] などのボタンをクリックして変更を適用する必要がある場合は、チェック ボックスを使います。
 
-    ![A checkbox and a Submit button](images/submitcheckbox.png)
+    ![チェック ボックスと送信ボタン](images/submitcheckbox.png)
 
--   Use check boxes or a [list box](lists.md) when the user can select multiple items:
+-   ユーザーが複数の項目を選択できるときは、チェック ボックスまたは[リスト ボックス](lists.md)を使います。
 
-    ![A checkbox that has multiple items selected](images/guidelines_and_checklist_for_toggle_switches_checkbox_multi_select.png)
+    ![複数の項目が選択されたチェック ボックス](images/guidelines_and_checklist_for_toggle_switches_checkbox_multi_select.png)
 
-## Examples
+## 例
 
-Toggle switches in the general settings of the News app.
+ニュース アプリの全般的な設定のトグル スイッチです。
 
-![Toggle switches in the general settings of the News app](images/control-examples/toggle-switch-news.png)
+![ニュース アプリの全般的な設定のトグル スイッチ](images/control-examples/toggle-switch-news.png)
 
-Toggle switches in the start menu settings in Windows.
+Windows のスタート メニューの設定のトグル スイッチです。
 
-![Toggle switches in the start menu settings in Windows](images/control-examples/toggle-switch-start-settings.png)
+![Windows のスタート メニューの設定のトグル スイッチ](images/control-examples/toggle-switch-start-settings.png)
 
-## Create a toggle switch
+## トグル スイッチの作成
 
-Here's how to create a simple toggle switch. This XAML creates the WiFi toggle switch shown previously.
+簡単なトグル スイッチを作成する方法を次に示します。 この XAML では、前に示した WiFi トグル スイッチを作成します。
 
 ```xaml
 <ToggleSwitch x:Name="wiFiToggle" Header="Wifi"/>
 ```
-Here's how to create the same toggle switch in code.
+コードで同じトグル スイッチを作成する方法を次に示します。
 
 ```csharp
 ToggleSwitch wiFiToggle = new ToggleSwitch();
@@ -72,7 +72,8 @@ stackPanel1.Children.Add(wiFiToggle);
 
 ### IsOn
 
-The switch can be either on or off. Use the [**IsOn**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.ison.aspx) property to determine the state of the switch. When the switch is used to control the state of another binary property, you can use a binding as shown here.
+スイッチはオンまたはオフにできます。 [
+            **IsOn**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.ison.aspx)プロパティを使って、スイッチの状態を判断します。 スイッチを使って別のバイナリ プロパティの状態を制御している場合、次に示すようにバインドを使うことができます。
 
 ```
 <StackPanel Orientation="Horizontal">
@@ -83,16 +84,16 @@ The switch can be either on or off. Use the [**IsOn**](https://msdn.microsoft.co
 
 ### Toggled
 
-In other cases, you can handle the [**Toggled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.toggled.aspx) event to respond to changes in the state.
+状況によっては、[**Toggled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.toggled.aspx) イベントを処理して状態の変化に対応することができます。
 
-This example shows how to add a Toggled event handler in XAML and in code. The Toggled event is handled to turn a progress ring on or off, and change its visibility.
+この例は、XAML とコードに Toggled イベント ハンドラーを追加する方法を示しています。 Toggled イベントを処理すると、進行状況リングのオフとオフが切り替えられ、表示が変更されます。
 
 ```xaml
 <ToggleSwitch x:Name="toggleSwitch1" IsOn="True" 
               Toggled="ToggleSwitch_Toggled"/>
 ```
 
-Here's how to create the same toggle switch in code.
+コードで同じトグル スイッチを作成する方法を次に示します。
 
 ```csharp
 // Create a new toggle switch and add a Toggled event handler.
@@ -103,7 +104,7 @@ toggleSwitch1.Toggled += ToggleSwitch_Toggled;
 stackPanel1.Children.Add(toggleSwitch1);
 ```
 
-Here's the handler for the Toggled event.
+Toggled イベントのハンドラーを次に示します。
 
 ```csharp
 private void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
@@ -125,11 +126,11 @@ private void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
 }
 ```
 
-### On/Off labels
+### オン/オフ ラベル
 
-By default, the toggle switch includes literal On and Off labels, which are localized automatically. You can replace these labels by setting the [**OnContent**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.oncontent.aspx), and [**OffContent**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.offcontent.aspx) properties.
+既定では、トグル スイッチにはリテラルのオン/オフ ラベルが含まれており、自動的にローカライズされます。 これらのラベルは、[**OnContent**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.oncontent.aspx) プロパティと [**OffContent**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.offcontent.aspx) プロパティを設定して置き換えることができます。
 
-This example replaces the On/Off labels with Show/Hide labels.  
+この例では、オン/オフ ラベルを表示/非表示ラベルに置き換えます。  
 
 ```xaml
 <ToggleSwitch x:Name="imageToggle" Header="Show images"
@@ -137,23 +138,24 @@ This example replaces the On/Off labels with Show/Hide labels.
               Toggled="ToggleSwitch_Toggled"/>
 ```
 
-You can also use more complex content by setting the [**OnContentTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.oncontenttemplate.aspx) and [**OffContentTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.offcontenttemplate.aspx) properties.
+[
+            **OnContentTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.oncontenttemplate.aspx) プロパティと [**OffContentTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.toggleswitch.offcontenttemplate.aspx) プロパティを設定することで、より複雑なコンテンツを使うこともできます。
 
-## Recommendations
+## 推奨事項
 
--   Replace the On and Off labels when there are more specific labels for the setting. If there are short (3-4 characters) labels that represent binary opposites that are more appropriate for a particular setting, use those. For example, you could use "Show/Hide" if the setting is "Show images." Using more specific labels can help when localizing the UI.
--   Avoid replacing the On and Off labels unless you must; stick with the default labels unless the situation calls for custom ones.
--   Labels should be no more than 4 characters long.
+-   設定に対して具体的なラベルがある場合は、それらを "オン" や "オフ" の代わりに使います。 特定の設定に対してより適切な、対になる項目を表す短い (3 ～ 4 文字) ラベルがある場合は、それらを使います。 たとえば、設定が "画像の表示" である場合は、"表示/非表示" などを使います。 より具体的なラベルを使うと、UI のローカライズ時に役立ちます。
+-   "オン" と "オフ" のラベルは、必要がない限り変更しないでください。独自のラベルが必要な場合以外は既定のラベルを使います。
+-   ラベルは 4 文字以内である必要があります。
 
-## Related articles
+## 関連記事
 
 [**ToggleSwitch**](https://msdn.microsoft.com/library/windows/apps/hh701411)
-- [Radio buttons](radio-button.md)
-- [Toggle switches](toggles.md)
-- [Check boxes](checkbox.md)
+- [ラジオ ボタン](radio-button.md)
+- [トグル スイッチ](toggles.md)
+- [チェック ボックス](checkbox.md)
 
-**For developers (XAML)**
-- [**ToggleSwitch class**](https://msdn.microsoft.com/library/windows/apps/br209712)
+**開発者向け (XAML)**
+- [**ToggleSwitch クラス**](https://msdn.microsoft.com/library/windows/apps/br209712)
 
 
 <!--HONumber=Mar16_HO1-->

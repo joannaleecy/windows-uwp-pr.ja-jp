@@ -2,12 +2,13 @@
 title: 暗号化に関する輸出制限の順守
 description: Windows ストアで認定されない原因となり得るような暗号化がアプリで使われていないかを判断するためにこの情報をご利用ください。
 ms.assetid: 204C7D1D-6F08-4AEE-A333-434D715E7617
+author: awkoren
 ---
 
 # 暗号化に関する輸出制限の順守
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 Windows ストアで認定されない原因となり得るような暗号化がアプリで使われていないかを判断するためにこの情報をご利用ください。
 
@@ -53,15 +54,7 @@ Windows ストアで認定されない原因となり得るような暗号化が
 
 ECCN を持っていない場合は、[ECCN についての質問とその回答が掲載された Web ページ](http://go.microsoft.com/fwlink/p/?LinkID=245646)をご覧ください。
 
- 
 
- 
-
-
-
-
-
-
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=Mar16_HO5-->
 
 

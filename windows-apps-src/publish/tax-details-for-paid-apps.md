@@ -1,272 +1,272 @@
 ---
-Description: To understand your tax considerations for price selection, payout implications, and tax responsibility, see your countries/regions of distribution in the tables below.
-title: Tax details for paid apps
+Description: 選択された価格の税金に関する考慮事項、支払内容、および税金の負担について理解するには、下の表で配布対象の国/地域を参照してください。
+title: 有料アプリの税の詳細
 ms.assetid: 97F77EBA-EBA1-4308-8F64-F40988BCBB2C
 ---
 
-# Tax details for paid apps
+# 有料アプリの税の詳細
 
 
-To understand your tax considerations for price selection, payout implications, and tax responsibility, see your countries/regions of distribution in the tables below.
+選択された価格の税金に関する考慮事項、支払内容、および税金の負担について理解するには、下の表で配布対象の国/地域を参照してください。
 
-> **Note**  The Commerce Expansion Adjustment may have payout implications in a limited set of countries/regions. For further details about the Commerce Expansion Adjustment and the markets where it applies, see the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058) and the list of [affected countries/regions](define-pricing-and-market-selection.md#price-considerations-for-specific-markets).
+> **注**  Commerce Expansion Adjustment (商取引拡大調整) は、一部の国/地域で支払に影響することがあります。 Commerce Expansion Adjustment とそれが適用される市場の詳細については、[アプリ開発者契約](https://msdn.microsoft.com/library/windows/apps/hh694058)および[影響を受ける国/地域](define-pricing-and-market-selection.md#price-considerations-for-specific-markets)のリストを参照してください。
 
-> **Note**  Tax rates are subject to change at any time. Microsoft cannot guarantee that the rates in the tables below will always be accurate.
+> **注**  税率は、いつでも変更される可能性があります。 Microsoft は、下記の表に記載された税率が常に正確であることを保証できません。
 
  
 
-| Country/region                   | Tax consideration for price selection                                                                                                             | Payout implication                    | Tax responsibility |
+| 国/地域                   | 選択された価格の税金に関する考慮事項                                                                                                             | 支払内容                    | 税金の負担 |
 |----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------|--------------------|
-| Afghanistan                      | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Albania                          | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Algeria                          | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Andorra                          | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Angola                           | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Antigua and Barbuda              | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Argentina                        | Price being selected is the final sale price and includes any applicable taxes. [Read more about tax considerations for this country.](#mixed-remittance-countries-regions) | 70% of selected price  | Developer          |
-| Armenia                          | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Australia                        | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Austria                          | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.       | 70% of (selected price minus 20% tax)     | Microsoft          |
-| Azerbaijan                       | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| The Bahamas                      | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Bahrain                          | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Bangladesh                       | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Barbados                         | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Belarus                          | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Belgium                          | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.              | 70% of (selected price minus 21% tax) | Microsoft          |
-| Belize                           | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Benin                            | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Bhutan                           | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Bolivia                          | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Bosnia and Herzegovina           | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Botswana                         | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Brazil                           | Price being selected is the final sale price and includes any applicable taxes. [Read more about tax considerations for this country.](#mixed-remittance-countries-regions) | 70% of selected price                 | Developer          |
-| Brunei                           | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Bulgaria                         | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.       | 70% of (selected price minus 20% tax)   | Microsoft          |
-| Burkina Faso                     | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Burundi                          | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Cabo Verde                       | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Cambodia                         | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Cameroon                         | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Canada                           | Taxes are added to the price being selected.                                                                                                      | 70% of selected price                 | Microsoft          |
-| Central African Republic         | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Chad                             | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Chile                            | Price being selected is the final sale price and includes any applicable taxes. [Read more about tax considerations for this country.](#mixed-remittance-countries-regions) | 70% of selected price                 | Developer          |
-| China                            | Price being selected is the final sale price and includes any applicable taxes. [Read more about tax considerations for this country.](#mixed-remittance-countries-regions) | 70% of selected price                 | Developer          |
-| Colombia                         | Price being selected is the final sale price and includes any applicable taxes. [Read more about tax considerations for this country.](#mixed-remittance-countries-regions) | 70% of selected price                 | Developer          |
-| Comoros                          | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Congo                            | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Congo (DRC)                      | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Costa Rica                       | Price being selected is the final sale price and includes any applicable taxes. [Read more about tax considerations for this country.](#mixed-remittance-countries-regions) | 70% of selected price                 | Developer          |
-| Côte d’Ivoire                    | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Croatia                          | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.       | 70% of (selected price minus 25% tax)   | Microsoft          |
-| Cyprus                           | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.       | 70% of (selected price minus 19% tax)   | Microsoft          |
-| Czech Republic                   | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.       | 70% of (selected price minus 21% tax)   | Microsoft        |
-| Denmark                          | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.       | 70% of (selected price minus 25% tax)   | Microsoft          |
-| Djibouti                         | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Dominica                         | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Dominican Republic               | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Ecuador                          | Price being selected is the final sale price and includes any applicable taxes. [Read more about tax considerations for this country.](#mixed-remittance-countries-regions) | 70% of selected price                 | Developer          |
-| Egypt                            | Price being selected is the final sale price and includes any applicable taxes. [Read more about tax considerations for this country.](#mixed-remittance-countries-regions) | 70% of selected price                 | Developer          |
-| El Salvador                      | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Eritrea                          | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Estonia                          | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.              | 70% of (selected price minus 20% tax) | Microsoft          |
-| Ethiopia                         | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Equatorial Guinea                | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Faroe Islands                    | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Fiji                             | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Finland                          | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.              | 70% of (selected price minus 24% tax) | Microsoft          |
-| France                           | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.              | 70% of (selected price minus 20% tax) | Microsoft          |
-| Gabon                            | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| The Gambia                       | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Georgia                          | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Germany                          | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.              | 70% of (selected price minus 19% tax) | Microsoft          |
-| Ghana                            | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Greece                           | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.              | 70% of (selected price minus 23% tax) | Microsoft          |
-| Greenland                        | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Grenada                          | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Guatemala                        | Price being selected is the final sale price and includes any applicable taxes. [Read more about tax considerations for this country.](#mixed-remittance-countries-regions) | 70% of selected price                 | Developer          |
-| Guinea                           | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Guinea-Bissau                    | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Guyana                           | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Haiti                            | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Honduras                         | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Hong Kong SAR                    | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Hungary                          | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.              | 70% of (selected price minus 27% tax) | Microsoft          |
-| Iceland                          | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| India                            | Price being selected is the final sale price and includes any applicable taxes. [Read more about tax considerations for this country.](#tax-reporting-for-india-developers)    | 70% of selected price                 | Developer          |
-| Indonesia                        | Price being selected is the final sale price and includes any applicable taxes. [Read more about tax considerations for this country.](#mixed-remittance-countries-regions) | 70% of selected price                 | Developer          |
-| Iraq                             | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Ireland                          | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.              | 70% of (selected price minus 23% tax) | Microsoft          |
-| Israel                           | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Italy                            | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.              | 70% of (selected price minus 22% tax) | Microsoft          |
-| Jamaica                          | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Japan                            | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Jordan                           | Price being selected is the final sale price and includes any applicable taxes. [Read more about tax considerations for this country.](#mixed-remittance-countries-regions) | 70% of selected price                 | Developer          |
-| Kazakhstan                       | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Kenya                            | Price being selected is the final sale price and includes any applicable taxes. [Read more about tax considerations for this country.](#mixed-remittance-countries-regions) | 70% of selected price                 | Developer          |
-| Kiribati                         | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Korea                            | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.              | 70% of (selected price minus 10% tax) | Microsoft          |
-| Kuwait                           | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Kyrgyzstan                       | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Laos                             | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Latvia                           | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.              | 70% of (selected price minus 21% tax) | Microsoft          |
-| Lebanon                          | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Lesotho                          | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Liberia                          | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Libya                            | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Liechtenstein                    | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.              | 70% of (selected price minus 8% tax)  | Microsoft          |
-| Lithuania                        | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.              | 70% of (selected price minus 21% tax) | Microsoft          |
-| Luxembourg                       | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.              | 70% of (selected price minus 17% tax) | Microsoft          |
-| Macao SAR                        | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Macedonia (FYROM)                | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Madagascar                       | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Malawi                           | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Malaysia                         | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Maldives                         | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Mali                             | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Malta                            | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.              | 70% of (selected price minus 18% tax) | Microsoft          |
-| Marshall Islands                 | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Mauritania                       | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Mauritius                        | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Mexico                           | Price being selected is the final sale price and includes any applicable taxes. [Read more about tax considerations for this country.](#mixed-remittance-countries-regions) | 70% of selected price                 | Developer          |
-| Micronesia                       | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Monaco                           | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.              | 70% of (selected price minus 20% tax) | Microsoft          |
-| Mongolia                         | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Montenegro                       | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Morocco                          | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Mozambique                       | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Myanmar                          | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Namibia                          | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Nauru                            | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Nepal                            | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Netherlands                      | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.              | 70% of (selected price minus 21% tax) | Microsoft          |
-| New Zealand                      | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Nicaragua                        | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Niger                            | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Nigeria                          | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Norway                           | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.              | 70% of (selected price minus 25% tax) | Microsoft          |
-| Oman                             | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Pakistan                         | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Palau                            | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Panama                           | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Papua New Guinea                 | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Paraguay                         | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Peru                             | Price being selected is the final sale price and includes any applicable taxes. [Read more about tax considerations for this country.](#mixed-remittance-countries-regions) | 70% of selected price                 | Developer          |
-| Philippines                      | Price being selected is the final sale price and includes any applicable taxes. [Read more about tax considerations for this country.](#mixed-remittance-countries-regions)                                                                  | 70% of selected price                 | Developer          |
-| Poland                           | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.              | 70% of (selected price minus 23% tax) | Microsoft          |
-| Portugal                         | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.              | 70% of (selected price minus 23% tax) | Microsoft          |
-| Puerto Rico                      | Taxes are added to the price being selected. [Read more about tax considerations for this country.](#mixed-remittance-countries-regions)                                                                                                     | 70% of selected price                 | Developer          |
-| Qatar                            | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Romania                          | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.              | 70% of (selected price minus 24% tax) | Microsoft          |
-| Russia                           | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Rwanda                           | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Saint Kitts and Nevis            | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Saint Lucia                      | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Saint Vincent and the Grenadines | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Samoa                            | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| San Marino                       | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| São Tomé and Príncipe            | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Saudi Arabia                     | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Senegal                          | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Serbia                           | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Seychelles                       | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Sierra Leone                     | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Singapore                        | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Slovakia                         | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.              | 70% of (selected price minus 20% tax) | Microsoft          |
-| Slovenia                         | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.              | 70% of (selected price minus 22% tax) | Microsoft          |
-| Solomon Islands                  | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Somalia                          | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| South Africa                     | Price being selected is the final sale price and includes any applicable taxes. [Read more about tax considerations for this country.](#mixed-remittance-countries-regions) | 70% of selected price                 | Developer          |
-| Spain                            | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.              | 70% of (selected price minus 21% tax) | Microsoft          |
-| Sri Lanka                        | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Suriname                         | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Swaziland                        | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Sweden                           | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.              | 70% of (selected price minus 25% tax) | Microsoft          |
-| Switzerland                      | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.              | 70% of (selected price minus 8% tax)  | Microsoft          |
-| Taiwan                           | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.              | 70% of (selected price minus 5% tax)  | Microsoft          |
-| Tajikistan                       | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Tanzania                         | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Thailand                         | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Timor-Leste                      | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Togo                             | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Tonga                            | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Trinidad and Tobago              | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Tunisia                          | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Turkey                           | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Turkmenistan                     | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Tuvalu                           | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Uganda                           | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Ukraine                          | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| United Arab Emirates             | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| United Kingdom                   | Price being selected is the final sale price and includes any applicable taxes. Taxes are subtracted from the price prior to payout.              | 70% of (selected price minus 20% tax) | Microsoft          |
-| United States                    | Taxes are added to the price being selected.                                                                                                      | 70% of selected price                 | Microsoft          |
-| Uruguay                          | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Uzbekistan                       | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Vanuatu                          | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Venezuela                        | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Vietnam                          | Price being selected is the final sale price and includes any applicable taxes. [Read more about tax considerations for this country.](#mixed-remittance-countries-regions) | 70% of selected price                 | Developer          |
-| Yemen                            | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Zambia                           | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
-| Zimbabwe                         | Price being selected is the final sale price and includes any applicable taxes.                                                                   | 70% of selected price                 | Developer          |
+| アフガニスタン                      | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| アルバニア                          | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| アルジェリア                          | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| アンドラ                          | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| アンゴラ                           | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| アンティグア・バーブーダ              | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| アルゼンチン                        | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 [この国の税金の考慮事項の詳細を参照してください。](#mixed-remittance-countries-regions) | 選択した価格の 70%  | 開発者          |
+| アルメニア                          | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| オーストラリア                        | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| オーストリア                          | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 税金は、支払い前の価格から減算されます。       | (選択した価格 - 20% の税金) の 70%     | Microsoft          |
+| アゼルバイジャン                       | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| バハマ                      | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| バーレーン                          | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| バングラデシュ                       | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| バルバドス                         | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| ベラルーシ                          | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| ベルギー                          | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 税金は、支払い前の価格から減算されます。              | (選択した価格 - 21% の税金) の 70% | Microsoft          |
+| ベリーズ                           | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| ベナン                            | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| ブータン                           | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| ボリビア                          | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| ボスニア・ヘルツェゴビナ           | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| ボツワナ                         | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| ブラジル                           | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 [この国の税金の考慮事項の詳細を参照してください。](#mixed-remittance-countries-regions) | 選択した価格の 70%                 | 開発者          |
+| ブルネイ                           | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| ブルガリア                         | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 税金は、支払い前の価格から減算されます。       | (選択した価格 - 20% の税金) の 70%   | Microsoft          |
+| ブルキナファソ                     | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| ブルンジ                          | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| カーボベルデ                       | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| カンボジア                         | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| カメルーン                         | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| カナダ                           | 選択した価格に税金が追加されます。                                                                                                      | 選択した価格の 70%                 | Microsoft          |
+| 中央アフリカ共和国         | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| チャド                             | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| チリ                            | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 [この国の税金の考慮事項の詳細を参照してください。](#mixed-remittance-countries-regions) | 選択した価格の 70%                 | 開発者          |
+| 中国                            | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 [この国の税金の考慮事項の詳細を参照してください。](#mixed-remittance-countries-regions) | 選択した価格の 70%                 | 開発者          |
+| コロンビア                         | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 [この国の税金の考慮事項の詳細を参照してください。](#mixed-remittance-countries-regions) | 選択した価格の 70%                 | 開発者          |
+| コモロ                          | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| コンゴ共和国                            | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| コンゴ民主共和国                      | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| コスタリカ                       | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 [この国の税金の考慮事項の詳細を参照してください。](#mixed-remittance-countries-regions) | 選択した価格の 70%                 | 開発者          |
+| コートジボワール                    | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| クロアチア                          | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 税金は、支払い前の価格から減算されます。       | (選択した価格 - 25% の税金) の 70%   | Microsoft          |
+| キプロス                           | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 税金は、支払い前の価格から減算されます。       | (選択した価格 - 19% の税金) の 70%   | Microsoft          |
+| チェコ共和国                   | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 税金は、支払い前の価格から減算されます。       | (選択した価格 - 21% の税金) の 70%   | Microsoft        |
+| デンマーク                          | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 税金は、支払い前の価格から減算されます。       | (選択した価格 - 25% の税金) の 70%   | Microsoft          |
+| ジブチ                         | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| ドミニカ国                         | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| ドミニカ共和国               | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| エクアドル                          | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 [この国の税金の考慮事項の詳細を参照してください。](#mixed-remittance-countries-regions) | 選択した価格の 70%                 | 開発者          |
+| エジプト                            | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 [この国の税金の考慮事項の詳細を参照してください。](#mixed-remittance-countries-regions) | 選択した価格の 70%                 | 開発者          |
+| エルサルバドル                      | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| エリトリア                          | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| エストニア                          | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 税金は、支払い前の価格から減算されます。              | (選択した価格 - 20% の税金) の 70% | Microsoft          |
+| エチオピア                         | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| 赤道ギニア                | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| フェロー諸島                    | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| フィジー諸島                             | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| フィンランド                          | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 税金は、支払い前の価格から減算されます。              | (選択した価格 - 24% の税金) の 70% | Microsoft          |
+| フランス                           | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 税金は、支払い前の価格から減算されます。              | (選択した価格 - 20% の税金) の 70% | Microsoft          |
+| ガボン                            | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| ガンビア                       | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| ジョージア                          | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| ドイツ                          | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 税金は、支払い前の価格から減算されます。              | (選択した価格 - 19% の税金) の 70% | Microsoft          |
+| ガーナ                            | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| ギリシャ                           | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 税金は、支払い前の価格から減算されます。              | (選択した価格 - 23% の税金) の 70% | Microsoft          |
+| グリーンランド                        | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| グレナダ                          | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| グアテマラ                        | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 [この国の税金の考慮事項の詳細を参照してください。](#mixed-remittance-countries-regions) | 選択した価格の 70%                 | 開発者          |
+| ギニア                           | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| ギニアビサウ                    | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| ガイアナ                           | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| ハイチ                            | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| ホンジュラス                         | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| 香港特別行政区                    | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| ハンガリー                          | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 税金は、支払い前の価格から減算されます。              | (選択した価格 - 27% の税金) の 70% | Microsoft          |
+| アイスランド                          | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| インド                            | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 [この国の税金の考慮事項の詳細を参照してください。](#tax-reporting-for-india-developers)    | 選択した価格の 70%                 | 開発者          |
+| インドネシア                        | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 [この国の税金の考慮事項の詳細を参照してください。](#mixed-remittance-countries-regions) | 選択した価格の 70%                 | 開発者          |
+| イラク                             | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| アイルランド                          | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 税金は、支払い前の価格から減算されます。              | (選択した価格 - 23% の税金) の 70% | Microsoft          |
+| イスラエル                           | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| イタリア                            | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 税金は、支払い前の価格から減算されます。              | (選択した価格 - 22% の税金) の 70% | Microsoft          |
+| ジャマイカ                          | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| 日本                            | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| ヨルダン                           | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 [この国の税金の考慮事項の詳細を参照してください。](#mixed-remittance-countries-regions) | 選択した価格の 70%                 | 開発者          |
+| カザフスタン                       | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| ケニア                            | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 [この国の税金の考慮事項の詳細を参照してください。](#mixed-remittance-countries-regions) | 選択した価格の 70%                 | 開発者          |
+| キリバス                         | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| 韓国                            | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 税金は、支払い前の価格から減算されます。              | (選択した価格 - 10% の税金) の 70% | Microsoft          |
+| クウェート                           | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| キルギスタン                       | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| ラオス                             | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| ラトビア                           | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 税金は、支払い前の価格から減算されます。              | (選択した価格 - 21% の税金) の 70% | Microsoft          |
+| レバノン                          | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| レソト                          | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| リベリア                          | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| リビア                            | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| リヒテンシュタイン                    | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 税金は、支払い前の価格から減算されます。              | (選択した価格 - 8% の税金) の 70%  | Microsoft          |
+| リトアニア                        | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 税金は、支払い前の価格から減算されます。              | (選択した価格 - 21% の税金) の 70% | Microsoft          |
+| ルクセンブルク                       | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 税金は、支払い前の価格から減算されます。              | (選択した価格 - 17% の税金) の 70% | Microsoft          |
+| マカオ                        | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| マケドニア (FYROM)                | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| マダガスカル                       | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| マラウイ                           | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| マレーシア                         | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| モルディブ                         | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| マリ                             | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| マルタ                            | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 税金は、支払い前の価格から減算されます。              | (選択した価格 - 18% の税金) の 70% | Microsoft          |
+| マーシャル諸島                 | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| モーリタニア                       | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| モーリシャス                        | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| メキシコ                           | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 [この国の税金の考慮事項の詳細を参照してください。](#mixed-remittance-countries-regions) | 選択した価格の 70%                 | 開発者          |
+| ミクロネシア                       | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| モナコ                           | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 税金は、支払い前の価格から減算されます。              | (選択した価格 - 20% の税金) の 70% | Microsoft          |
+| モンゴル                         | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| モンテネグロ                       | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| モロッコ                          | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| モザンビーク                       | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| ミャンマー                          | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| ナミビア                          | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| ナウル                            | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| ネパール                            | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| オランダ                      | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 税金は、支払い前の価格から減算されます。              | (選択した価格 - 21% の税金) の 70% | Microsoft          |
+| ニュージーランド                      | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| ニカラグア                        | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| ニジェール                            | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| ナイジェリア                          | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| ノルウェー                           | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 税金は、支払い前の価格から減算されます。              | (選択した価格 - 25% の税金) の 70% | Microsoft          |
+| オマーン                             | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| パキスタン                         | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| パラオ                            | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| パナマ                           | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| パプアニューギニア                 | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| パラグアイ                         | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| ペルー                             | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 [この国の税金の考慮事項の詳細を参照してください。](#mixed-remittance-countries-regions) | 選択した価格の 70%                 | 開発者          |
+| フィリピン                      | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 [この国の税金の考慮事項の詳細を参照してください。](#mixed-remittance-countries-regions)                                                                  | 選択した価格の 70%                 | 開発者          |
+| ポーランド                           | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 税金は、支払い前の価格から減算されます。              | (選択した価格 - 23% の税金) の 70% | Microsoft          |
+| ポルトガル                         | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 税金は、支払い前の価格から減算されます。              | (選択した価格 - 23% の税金) の 70% | Microsoft          |
+| プエルトリコ                      | 選択した価格に税金が追加されます。 [この国の税金の考慮事項の詳細を参照してください。](#mixed-remittance-countries-regions)                                                                                                     | 選択した価格の 70%                 | 開発者          |
+| カタール                            | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| ルーマニア                          | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 税金は、支払い前の価格から減算されます。              | (選択した価格 - 24% の税金) の 70% | Microsoft          |
+| ロシア                           | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| ルワンダ                           | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| セントクリストファー・ネイビス            | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| セントルシア                      | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| セントビンセントおよびグレナディーン諸島 | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| サモア                            | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| サンマリノ                       | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| サントメ・プリンシペ            | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| サウジアラビア                     | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| セネガル                          | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| セルビア                           | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| セーシェル                       | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| シエラレオネ                     | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| シンガポール                        | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| スロバキア共和国                         | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 税金は、支払い前の価格から減算されます。              | (選択した価格 - 20% の税金) の 70% | Microsoft          |
+| スロベニア                         | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 税金は、支払い前の価格から減算されます。              | (選択した価格 - 22% の税金) の 70% | Microsoft          |
+| ソロモン諸島                  | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| ソマリア                          | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| 南アフリカ                     | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 [この国の税金の考慮事項の詳細を参照してください。](#mixed-remittance-countries-regions) | 選択した価格の 70%                 | 開発者          |
+| スペイン                            | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 税金は、支払い前の価格から減算されます。              | (選択した価格 - 21% の税金) の 70% | Microsoft          |
+| スリランカ                        | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| スリナム                         | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| スワジランド                        | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| スウェーデン                           | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 税金は、支払い前の価格から減算されます。              | (選択した価格 - 25% の税金) の 70% | Microsoft          |
+| スイス                      | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 税金は、支払い前の価格から減算されます。              | (選択した価格 - 8% の税金) の 70%  | Microsoft          |
+| 台湾                           | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 税金は、支払い前の価格から減算されます。              | (選択した価格 - 5% の税金) の 70%  | Microsoft          |
+| タジキスタン                       | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| タンザニア                         | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| タイ                         | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| 東ティモール                      | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| トーゴ                             | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| トンガ                            | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| トリニダードトバゴ              | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| チュニジア                          | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| トルコ                           | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| トルクメニスタン                     | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| ツバル                           | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| ウガンダ                           | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| ウクライナ                          | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| アラブ首長国連邦             | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| 英国                   | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 税金は、支払い前の価格から減算されます。              | (選択した価格 - 20% の税金) の 70% | Microsoft          |
+| 米国                    | 選択した価格に税金が追加されます。                                                                                                      | 選択した価格の 70%                 | Microsoft          |
+| ウルグアイ                          | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| ウズベキスタン                       | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| バヌアツ                          | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| ベネズエラ                        | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| ベトナム                          | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。 [この国の税金の考慮事項の詳細を参照してください。](#mixed-remittance-countries-regions) | 選択した価格の 70%                 | 開発者          |
+| イエメン                            | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| ザンビア                           | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
+| ジンバブエ                         | 選択されている価格は最終的な販売価格であり、該当する税金はすべて含まれています。                                                                   | 選択した価格の 70%                 | 開発者          |
 
  
 
-## Mixed remittance countries/regions
+## 混合送金の国/地域
 
 
-Certain Microsoft billing partners may collect and remit sales, use, goods and services, value added or similar taxes, if any, applicable to Customers' acquisition of your App(s) or In-App Product(s) through the Store in the countries/regions listed below. The reports that Microsoft makes available to you will identify the transactions for which a billing partner has collected sales, use, goods and services, value added or similar taxes applicable to Customers' acquisition of your App(s) or In-App Product(s) through the Store. Except for the transactions described in such reporting, neither Microsoft nor its billing services providers will remit any sales, use, goods and services, value added or other similar tax in connection with Customers' acquisition of your App(s) or In-App Product(s) in these country(s). You are responsible for reviewing the reporting provided to you and determining and complying with your obligations, if any, to register, collect, and remit taxes in connection with transactions involving your App(s) or In-App Product(s).
+特定の Microsoft の請求パートナーは、下記の国/地域において、お客様によるストアからのアプリまたはアプリ内製品の取得に適用される消費税、使用税、物品サービス税、付加価値税などの税金を収集し、送金することがあります。 Microsoft から提供されるレポートに、お客様によるストアからのアプリまたはアプリ内製品の取得に適用される消費税、使用税、物品サービス税、付加価値税などの税金を請求パートナーが収集したトランザクションが示されます。 そのレポートに示されているトランザクションを除いて、Microsoft もその請求サービス業者も、対象となる国でお客様が購入した当該アプリおよびアプリ内製品に適用される消費税、使用税、物品サービス税、付加価値税などの税を支払いません。 提供されたレポートを確認し、自分のアプリまたはアプリ内製品を含むトランザクションに関して、税金の登録、収集、および送金の義務がある場合は、それらを特定し、従う必要があります。
 
-| Mixed remittance countries/regions |
+| 混合送金の国/地域 |
 |------------------------------------|
-| Argentina                          |
-| Brazil                             |
-| Chile                              |
-| China                              |
-| Colombia                           |
-| Costa Rica                         |
-| Ecuador                            |
-| Egypt                              |
-| Guatemala                          |
-| India                              |
-| Indonesia                          |
-| Jordan                             |
-| Kenya                              |
-| Mexico                             |
-| Peru                               |
-| Philippines                        |
-| Puerto Rico                        |
-| South Africa                       |
-| Vietnam                            |
+| アルゼンチン                          |
+| ブラジル                             |
+| チリ                              |
+| 中国                              |
+| コロンビア                           |
+| コスタリカ                         |
+| エクアドル                            |
+| エジプト                              |
+| グアテマラ                          |
+| インド                              |
+| インドネシア                          |
+| ヨルダン                             |
+| ケニア                              |
+| メキシコ                             |
+| ペルー                               |
+| フィリピン                        |
+| プエルトリコ                        |
+| 南アフリカ                       |
+| ベトナム                            |
 
  
 
-## Reseller countries/regions
+## リセラーの国と地域
 
 
-In certain countries/regions, Microsoft acts as a reseller, rather than your agent, in making your app(s) and in-app product(s) available in the Store. For further details about terms and conditions for reseller countries/regions, see the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058).
+特定の国と地域では、お客様のアプリおよびアプリ内製品をストアで提供可能にする場合、Microsoft はお客様のエージェントではなくリセラーとしての役割を担います。 リセラーの国と地域に関するご契約条件について詳しくは、[アプリ開発者契約](https://msdn.microsoft.com/library/windows/apps/hh694058)をご覧ください。
 
-|                    Reseller countries/regions                                                                          |
+|                    リセラーの国と地域                                                                          |
 |------------------------------------------------------------------------------------------------------------------------|
-| China (except on mobile communication devices running Windows Phone 7.x and on personal computers running Windows 8.x) |
-| Brazil (only for purchases made via devices running Windows 10 and purchases made through mobile operator billing)     |
+| 中国 (Windows Phone 7.x を実行しているモバイル通信デバイスと、Windows 8.x を実行しているパーソナル コンピューターは除く) |
+| ブラジル (Windows 10 を実行しているデバイスで行われた購入と、通信事業者の課金を通じて行われた購入の場合のみ)     |
 
  
 
-## Tax reporting for India developers
+## インドの開発者の税務申告
 
 
-To obtain information relevant to remitting taxes for your Store transactions in India, generate a transaction report. You are responsible for reviewing the reporting and determining and complying with any obligations you have to register, collect, and remit taxes in connection with transactions involving your Application(s) or In-App Product(s).
+インドのストアのトランザクションに対する税の送金に関する情報を得るには、トランザクション レポートを生成してください。 レポートを確認し、アプリケーションまたはアプリ内製品を含むトランザクションに関して、税金の登録、収集、および送金の義務の有無を特定し、従う必要があります。
  
-**To generate a report:**
+**レポートを生成するには:**
 
-1.  Go to [https://commerce.microsoft.com/PaymentHub/TaxReport](http://go.microsoft.com/fwlink/p/?LinkID=264239).
-2.  Log on using the Microsoft account you use to access your Dev Center developer account.
-3.  Select the appropriate date(s).
-4.  In **Sold to Country/Region**, select **India.**
-5.  Click **Search.**
+1.  [https://commerce.microsoft.com/PaymentHub/TaxReport](http://go.microsoft.com/fwlink/p/?LinkID=264239) にアクセスします。
+2.  デベロッパー センターの開発者アカウントにアクセスするのに使用する Microsoft アカウントでログオンします。
+3.  適切な日付を選択します。
+4.  **[販売先の国/地域]** で **[インド]** を選びます。
+5.  **[検索]** をクリックします。
 
-Each row of the report contains the date and time of the transaction and, if available, the India state where the transaction occurred.
+レポートの各行にはトランザクションの日時と、トランザクションが行われたインドの州 (利用できる場合) が記載されます。
 
  
 

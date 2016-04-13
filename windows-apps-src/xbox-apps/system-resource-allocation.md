@@ -1,30 +1,30 @@
 ---
-title: System resources for UWP apps and games on Xbox One
-description: UWP on Xbox system resources
+title: Xbox One 上の UWP アプリとゲームのシステム リソース
+description: Xbox 上の UWP のシステム リソース
 area: Xbox
 ---
 
-# System resources for UWP apps and games on Xbox One
+# Xbox One 上の UWP アプリとゲームのシステム リソース
 
-UWP apps and games running on Xbox One share resources with the system and other apps. 
-Therefore, UWP apps and games will have access to the following resources:
+Xbox One で実行されている UWP アプリとゲームは、システムやその他のアプリとリソースを共有します。 
+そのため、UWP アプリやゲームは次のリソースにアクセスできます。
 
-* In this preview, the maximum available memory is 448 MB.
-    * In future releases, the maximum available memory will be 1 GB.
-    * When running your application or game from the Visual Studio debugger, these memory constraints do not apply. This limit is only applicable when not running in debugging mode.
+* このプレビューでは、利用可能なメモリは最大 448 MB です。
+    * 将来のリリースでは、利用可能な最大メモリは 1 GB になります。
+    * アプリケーションやゲームを Visual Studio デバッガーから実行している場合、これらのメモリ制限は適用されません。 この制限は、デバッグ モードで実行されていないときにのみ適用されます。
 
-* Share of 2-4 CPU cores depending on the number of apps and games running on the system.
+* システムで実行されているアプリとゲームの数に応じて、2 ～ 4 個の CPU コアを共有します。
 
-* Share of 45% of the GPU depending on the number of apps and games running on the system.
+* システムで実行されているアプリとゲームの数に応じて、GPU の 45% を共有します。
 
-* UWP on Xbox One supports DirectX 11 Feature Level 10. DirectX 12 is not supported at this time. 
+* Xbox One の UWP は、DirectX 11 の機能レベル 10 をサポートしています。 現時点では DirectX 12 はサポートされていません。 
 
-For **application development**, it's important to keep in mind that the resources available may be limited in comparison to a standard PC.
+**アプリケーション開発**の場合、標準的な PC と比較して、利用可能なリソースが制限される可能性があることに留意する必要があります。
 
-For **games development**, it’s important to keep in mind that Xbox One, like other games consoles, 
-is a specialized piece of hardware that requires a specific hardware-based development kit to access its full potential. 
-If you are working on a game that requires access to the maximum potential of the Xbox One hardware, 
-you can register with the [ID@Xbox](http://www.xbox.com/en-us/Developers/id) program to get access to Xbox One development kits, which include DirectX 12 support.
+**ゲームを開発**の場合、Xbox One は、他のゲーム コンソールと同様に、 
+その潜在的な機能を最大限に利用するために特定のハードウェア ベースの開発キットを必要とする、特殊なハードウェアであることに留意する必要があります。 
+Xbox One のハードウェアの機能を最大限に利用する必要があるゲームを開発している場合、 
+[ID@Xbox](http://www.xbox.com/en-us/Developers/id) プログラムに登録することで、DirectX 12 のサポートを含む、Xbox One 開発キットにアクセスできます。
 
 
 <!--HONumber=Mar16_HO5-->

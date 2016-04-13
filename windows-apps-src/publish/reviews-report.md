@@ -1,75 +1,75 @@
 ---
-Description: The Reviews report in the Windows Dev Center dashboard lets you see the comments that customers entered when rating your app in the Store.
-title: Reviews report
+Description: Windows デベロッパー センター ダッシュボードの [レビュー] レポートでは、顧客がストアのアプリを評価するときに入力したコメントを確認できます。
+title: レビュー レポート
 ms.assetid: E50C3A4D-1D8A-4E5B-8182-3FAD049F2A2D
 ---
 
-# Reviews report
+# レビュー レポート
 
 
-The **Reviews** report in the Windows Dev Center dashboard lets you see the comments that customers entered when rating your app in the Store. You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline. Alternatively, you can programmatically retrieve this data by using the [Windows Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
+Windows デベロッパー センター ダッシュボードの **[レビュー]** レポートでは、顧客がストアのアプリを評価するときに入力したコメントを確認できます。 このデータは、ダッシュボードで表示することも、[レポートをダウンロード](download-analytic-reports.md)してオフラインで表示することもできます。 または、[Windows ストア分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) を使って、プログラムでこのデータを取得できます。
 
-> **Note**  You can also [respond to customer reviews](respond-to-customer-reviews.md) from this page.
+> **注**  このページから[顧客のレビューに返信する](respond-to-customer-reviews.md)こともできます。
 
-This report shows the number of stars that a customer rated your app when leaving a review, but does not analyze star ratings across your app; for statistics about your ratings, see the [Ratings report](ratings-report.md).
+このレポートには、顧客がレビューを残す際に、アプリを評価した星の数が表示されますが、アプリ全体で星の評価は分析されません。評価に関する統計情報については、[レーティング レポート](ratings-report.md)をご覧ください。
 
-Note that customers can leave a rating for your app without adding any comments, so you will typically see fewer reviews than ratings. By default, this page also shows ratings that don't include review content, but you can use the **Page filters** to show only ratings that include reviews, as described below.
+ユーザーはコメントを追加しなくてもアプリを評価できるため、通常は評価数よりもレビュー数が少なくなります。 既定では、レビューの内容が含まれない評価もこのページに表示されますが、次のように、**[ページ フィルター]** を使ってレビューを含む評価のみを表示できます。
 
-Each customer review contains:
+各ユーザー レビューには、次の情報が含まれます。
 
--   The title and review text provided by the customer. (Reviews written by customers on Windows Phone 8.1 and earlier will not have a title.)
--   The date of the review.
--   The name of the reviewer as it appears in the Windows Store.
--   The reviewer's country/region.
--   The package version of the app on the customer's device at the time the review was left. (This info is not available for reviews submitted online or submitted by customers on Windows 8.1 and earlier.)
--   The OS version of the device which the customer was using when the review was left.
--   The name of the device which the customer was using when the review was left. (This info is not available for reviews submitted online or submitted by customers on Windows 8.1 and earlier.)
--   The review's "usefulness count," as rated by other customers when reading that review. These are shown as a series of two numbers: the first number shows how many customers rated it as useful, and the second number is the total number of customers who rated the review. For example, a usefulness count of 4/10 means that out of 10 raters, 4 found the review useful and 6 did not. (If there are no usefulness votes for a review, no usefulness count is displayed.)
+-   ユーザーが記入したタイトルとレビュー本文 (Windows Phone 8.1 およびそれ以前のユーザーによって作成されたレビューにはタイトルはありません)。
+-   レビューの日付。
+-   Windows ストアに表示されるレビューアーの名前。
+-   レビューアーの国/地域。
+-   レビューが残された時点でのユーザーのデバイス上のアプリのパッケージ バージョン (この情報はオンラインまたは Windows 8.1 およびそれ以前の顧客から送信されたレビューについては利用できません)。
+-   レビューが残されたときにユーザーが使っていたデバイスの OS のバージョン。
+-   レビューが残されたときにユーザーが使っていたデバイスの名前 (この情報はオンラインまたは Windows 8.1 およびそれ以前の顧客から送信されたレビューについては利用できません)。
+-   他のユーザーがこのレビューを読んだ際に評価される、レビューの "役立ち度" も表示されます。 これらは、2 つの数字のセットで示されます。最初の数字はこのレビューが役に立ったと評価したユーザーの数、2 番目の数字はレビューを評価したユーザーの総数です。 たとえば、役立ち度が "4/10" であった場合、10 人の評価者のうち 4 人はレビューが役立ったと評価し、6 人は役立ったとは評価していないことを意味します。 (レビューに対する役立ち度の評価がない場合、役立ち度は表示されません)。
 
-## Apply filters
-
-
-Near the top of the page, you can expand **Apply filters** to filter all of the data on this page.
-
->**Tip**  If you don't see any reviews on the page, check to make sure your filters haven't excluded all of your reviews. For example, if you filter by a Target OS that your app doesn't support, you won't see any reviews.
-
--   **Rating**: By default all star ratings are checked, but you can check and uncheck specific ratings (from 1 to 5 stars) if you want to only see reviews associated with particular star ratings.
--   **Date**: The default filter is **Last 30 days**, but you can expand this up to **Last 12 months**.
--   **Review content**: The default setting is **All**, which includes ratings without review text added. You can select **Ratings with review content** to only show ratings that include written review content.
--   **Target OS**: The default setting is **All**. You can choose a specific targeted operating system if you want this page to only show ratings from customers using your package(s) which target that OS.
--   **Responses**: The default setting is **All**. You can choose to filter the reviews to only show the reviews where you have [responded to customers](respond-to-customer-reviews.md), or only those where you have not yet responded.
--   **Updates**: The default setting is **All**. You can choose to filter the reviews to only show the reviews which have been updated by the customer since you [responded to a review](respond-to-customer-reviews.md), or only those which have not yet been updated by the customer.
--   **Market**: The default setting is **All markets**. You can choose a specific market if you want this page to only show reviews from customers in that market.
--   **Device type**: The default filter is **All devices**. You can choose a specific device type if you want this page to only show reviews left by customers using that type of device.
--   **Package version**: The default filter is **All packages**. You can choose a specific package if you want this page to only show reviews left by customers who had that package when they reviewed your app.
-
-The info in all of the charts listed below will reflect the period of time selected in the **Apply filters** section, and will reflect any other filters you've chosen here.
-
-> **Note**  The average rating that a customer sees in the Store takes into account the customer’s market and device type, and considers ratings over the past year, so it may differ from what you see in this report. To see how the average rating will appear in the Store for a given customer, you’ll need to apply filters to select a specific market and device type, and to set the **Date** to **Last 12 months**.
-
-## Translating reviews
+## フィルターの適用
 
 
-By default, reviews that were not written in your preferred language are translated for you. If you prefer, review translation can be disabled by unchecking the **Translate reviews** checkbox at the upper right, above the list of reviews.
+ページの上部にある **[フィルターの適用]** を展開して、このページのすべてのデータをフィルター処理できます。
 
-Please note that reviews are translated by an automatic translation system, and the resulting translation may not always be accurate. The original text is provided if you wish to compare it to the translation, or translate it through some other means.
+>**ヒント**  このページにレビューが表示されない場合は、フィルターですべてのレビューを除外していないかどうかを確認してください。 たとえば、アプリがサポートされていないターゲット OS でフィルター処理する場合、レビューは表示されません。
 
-## Sorting reviews
+-   **[評価]**: 既定ではすべての星評価がオンになっていますが、特定の星評価に関連するレビューのみを表示する場合は、特定の評価 (1 ～ 5 つの星) をオンまたはオフにすることができます。
+-   **[日付]**: 既定のフィルターは **[過去 30 日]** ですが、これを **[過去 12 か月]** まで拡張できます。
+-   **[レビュー コンテンツ]**: 既定の設定は **[すべて]** で、レビューのテキストが追加されていない評価が含まれます。 **[評価 (レビュー コンテンツあり)]** を選ぶと、記述されたレビュー コンテンツを含む評価のみを表示できます。
+-   **[ターゲット OS]**: 既定の設定は **[すべて]** です。 このページに特定の OS を対象とするパッケージを使っているユーザーからの評価のみを表示する場合は、特定のターゲット オペレーティング システムを選ぶことができます。
+-   **[応答]**: 既定の設定は **[すべて]** です。 [ユーザーに返信した](respond-to-customer-reviews.md)レビューのみを表示したり、まだ返信していないレビューのみを表示するには、レビューをフィルター処理できます。
+-   **[更新]**: 既定の設定は **[すべて]** です。 レビューをフィルター処理することを選んで、[レビューに返信](respond-to-customer-reviews.md)してからユーザーによって更新されたレビューのみを表示したり、まだ顧客によって更新されていないレビューのみを表示したりすることができます。
+-   **[市場]**: 既定の設定は **[すべての市場]** です。 このページに特定の市場のユーザーからのレビューのみを表示する場合は、特定の市場を選ぶことができます。
+-   **[デバイスの種類]**: 既定のフィルターは **[すべてのデバイス]** です。 このページにその種類のデバイスを使っているユーザーによるレビューのみを表示する場合は、特定のデバイスの種類を選ぶことができます。
+-   **[パッケージ バージョン]**: 既定のフィルターは **[すべてのパッケージ]** です。 このページにアプリのレビュー時にそのパッケージを持っていたユーザーからのレビューのみを表示する場合は、特定のパッケージを選ぶことができます。
+
+以下のすべてのグラフに示される情報は、**[フィルターの適用]** で選んだ期間と、ここで選んだ他のフィルターを反映しています。
+
+> **注**  ストア内で顧客に表示される平均評価では、ユーザーの市場とデバイスの種類が考慮され、過去 1 年間の評価が対象となるため、このレポートに表示される内容と異なる可能性があります。 ストア内で特定のユーザーに対して平均評価がどのように表示されるかを確認するには、フィルターを適用して特定の市場とデバイスの種類を選び、**[日付]** を **[過去 12 か月]** に設定します。
+
+## レビューの翻訳
 
 
-You can sort the reviews on the page by date and/or by rating, in ascending or descending order. Click the **Sort by** link to view options to sort by Date and/or Rating. When you click a radio button in the Date or Rating section, the sorting criteria will be applied and you will see the sorting label shown next to the **Sort by** heading. You can remove the sorting criteria altogether by clicking the **X** that appears on each label.
+既定では、優先する言語で記述されていないレビューは翻訳されます。 必要に応じて、レビューの一覧の右上にある **[レビューを翻訳する]** チェック ボックスをオフにして、レビューの翻訳を無効にすることができます。
 
-## Responding to customer reviews
+レビューは自動翻訳システムによって翻訳されるため、翻訳の結果が正確でない場合があることに注意してください。 元のテキストと翻訳を比較する場合や、元のテキストを他の方法で翻訳する場合は、元のテキストが提供されます。
+
+## レビューの並べ替え
 
 
-You can use the Windows Store Dev Center dashboard to send responses to many of your customers' reviews. For more info, see [Respond to customer reviews](respond-to-customer-reviews.md).
+このページのレビューは、日付や評価によって昇順または降順に並べ替えることができます。 **[並べ替え]** リンクをクリックして、日付や評価で並べ替えるオプションを表示します。 [日付] または [評価] セクションのラジオ ボタンをクリックすると、並べ替えの条件が適用され、**[並べ替え]** 見出しの横に並べ替えのラベルが表示されます。 各ラベルに表示される **[X]** をクリックして、並べ替えの条件を完全に削除できます。
 
-Here are some additional actions you may wish to consider, based on the ratings and reviews you're seeing.
+## 顧客のレビューへの返信
 
--   If you notice many reviews that suggest a new or changed feature, or complain about a problem, consider releasing a new version that addresses the specific feedback. (Be sure to update your app's [description](create-app-descriptions.md) to indicate that the issue has been fixed.)
--   If the average rating is high, but your number of downloads is low, you might want to look for ways to [expose your app to more people](app-promotion-and-customer-engagement.md), since it's been well-received by those who have tried it out.
 
-> **Note**  It’s likely that you’ll see a different number of reviews when comparing the **Reviews** report in the Windows Dev Center with the Reviews report in the older Dev Center mobile app. This is because the app only shows data for reviews left from customers on Windows Phone 8.1 and earlier. This may also be a result of work by Microsoft to remove reviews from the Windows Store that have been identified as spam, inappropriate, offensive or have other policy violations. We expect this action will result in a better customer experience.
+Windows ストア デベロッパー センター ダッシュボードを使って、多くの顧客のレビューに返信を送信できます。 詳しくは、「[顧客のレビューに返信する](respond-to-customer-reviews.md)」をご覧ください。
+
+アプリについて確認した評価とレビューに基づいて検討できるその他の対応を以下に示します。
+
+-   機能の追加または変更を望む意見や、問題に関する不満の声が多数ある場合は、特定のフィードバックに対応した新しいバージョンのリリースを検討します (その場合は、必ずアプリの[説明](create-app-descriptions.md)を更新して、問題が解決したことを示してください)。
+-   平均評価は高いが、ダウンロード数が少ない場合は、アプリを試した人には好評だったことを意味するため、[より多くの人にアプリについて知ってもらう](app-promotion-and-customer-engagement.md)方法を検討します。
+
+> **注**  Windows デベロッパー センターの **[レビュー]** レポートと古いデベロッパー センター モバイル アプリのレビュー レポートを比較すると、表示されるレビューの数が違っていることがよくあります。 これは、アプリで表示されるのは、Windows Phone 8.1 以前のユーザーによるレビューのデータだけであるためです。 また、スパム、不適切、不快感を与えるなどのポリシー違反と見なされたレビューが、Microsoft によって Windows ストアから削除されたためである場合もあります。 この操作は、カスタマー エクスペリエンスの改善になることを期待して行われています。
 
  
 

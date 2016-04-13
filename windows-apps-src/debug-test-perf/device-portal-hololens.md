@@ -1,168 +1,168 @@
 ---
 ms.assetid: bf0a8b01-79f1-4944-9d78-9741e235dbe9
-title: Device Portal for HoloLens
-description: Learn how the Windows Device Portal for HoloLens lets you remotely configure and manage your HoloLens device.
+title: HoloLens 用 Device Portal
+description: HoloLens 用 Windows Device Portal を使って、リモートから HoloLens デバイスの構成と管理を行う方法について説明します。
 ---
-# Device Portal for HoloLens
+# HoloLens 用 Device Portal
 
 
-## Set up device portal on HoloLens
+## HoloLens で Device Portal をセットアップする
 
-### Enable Device Portal
+### Device Portal を有効にする
 
-**To enable Device Portal**
+**Device Portal を有効にするには**
 
-1. Power on your HoloLens and put on the device.
-2. Perform the [bloom](https://dev.windows.com/holographic/Gestures.html#Bloom) gesture to launch the main menu.
-3. Gaze at the **Settings** tile and perform the [air tap](https://dev.windows.com/holographic/Gestures.html#Press_and_release) gesture. Perform a second air tap to place the app in your environment. The Settings app will launch after you place it.
-4. Select the **Update** menu item.
-5. Select the **For developers** menu item.
-6. Enable **Developer Mode**.
-7. [Scroll down](https://dev.windows.com/holographic/Gestures.html#Navigation) and enable Device Portal.
-
-
-### Pair your device
-
-### Connect over Wi-Fi 
-
-1. Connect your HoloLens to Wi-Fi.
-2. Look up your device's IP address.- Find the IP address on the device under Settings > Network & Internet > Wi-Fi > Advanced Options.
-    You can also ask, "Hey Cortana, what is my IP address?"
-
-3. From a web browser on your PC, go to `https://<YOUR_HOLOLENS_IP_ADDRESS>`
-    - The browser will display the following message: "There's a problem with this website's security certificate". This happens because the certificate which is issued to the Device Portal is a test certificate. You can ignore this certificate error for now and proceed.
-
-### Connect over USB 
-
-1. Install the tools to make sure you have Visual Studio Update 1 with the Windows 10 developer tools installed on your PC. This enables USB connectivity.
-2. Connect your HoloLens to your PC with a micro-USB cable.
-3. From a web browser on your PC, go to `http://127.0.0.1:10080`.
-
-### Connect to an emulator 
-
-You can also use the Device Portal with your emulator. To connect to the Device Portal, use the toolbar. Click on this icon:
-- Open Device Portal: Open the Windows Device Portal for the HoloLens OS in the emulator.
-
-### Create a Username and Password 
-
-The first time you connect to the Device Portal on your HoloLens, you will need to create a username and password.
-1. In a web browser on your PC, enter the IP address of the HoloLens. The Set up access page opens.
-2. Click or tap Request pin and look at the HoloLens display to get the generated PIN.
-3. Enter the PIN in the PIN displayed on your device textbox.
-4. Enter the user name you will use to connect to the Device Portal. It doesn't need to be a Microsoft Account (MSA) name or a domain name.
-5. Enter a password and confirm it. The password must be at least seven characters in length. It doesn't need to be an MSA or domain password.
-6. Click Pair to connect to Windows Device Portal on the HoloLens.
-
-If you wish to change this username or password at any time, you can repeat this process by visiting the device security page by either clicking the Security link along the top right, or navigating to: `https://<YOUR_HOLOLENS_IP_ADDRESS>/devicesecurity.htm`.
-
-### Security certificate 
-
-If you are see a "certificate error" in your browser, you can fix it by creating a trust relationship with the device.
-
-Each HoloLens generates a unique self-signed certificate for its SSL connection. By default, this certificate is not trusted by your PC's web browser and you may get a "certificate error". By downloading this certificate from your HoloLens (over USB or a Wi-Fi network you trust) and trusting it on your PC, you can securely connect to your device.
-1. Make sure you are on a secure network (USB or a Wi-Fi network you trust).
-2. Download this device's certificate from the "Security" page on the Device Portal.- Either click the Security link from the top right list of icons or navigate to: `https://<YOUR_HOLOLENS_IP_ADDRESS>/devicesecurity.htm`
-
-3. Install the certificate in the "Trusted Root Certification Authorities" store on your PC.- From the Windows menu, type: Manage Computer Certificates and start the applet.
-    - Expand the Trusted Root Certification Authority folder.
-    - Click on the Certificates folder.
-    - From the Action menu, select: All Tasks > Import...
-    - Complete the Certificate Import Wizard, using the certificate file you downloaded from the Device Portal.
-
-4. Restart the browser.
+1. HoloLens の電源を入れ、デバイスを装着します。
+2. [ブルーム](https://dev.windows.com/holographic/Gestures.html#Bloom) ジェスチャを実行して、メイン メニューを開きます。
+3. **[Settings]** (設定) タイルを見つめて、[エア タップ](https://dev.windows.com/holographic/Gestures.html#Press_and_release) ジェスチャを実行します。 2 回目のエア タップを実行して、アプリを環境内に配置します。 配置すると、設定アプリが起動します。
+4. **[Update]** (更新) メニュー項目を選択します。
+5. **[For developers]** (開発者向け) メニュー項目を選択します。
+6. **[Developer Mode]** (開発者モード) を有効にします。
+7. [下へスクロール](https://dev.windows.com/holographic/Gestures.html#Navigation) し、Device Portal を有効にします。
 
 
-## Device Portal Pages 
+### デバイスをペアリングする
 
-### Home 
+### Wi-Fi 経由で接続する 
 
-Your Device Portal session starts at the Home page. Access other pages from the navigation bar along the left side of the home page.
+1. HoloLens を Wi-Fi に接続します。
+2. デバイスの IP アドレスを調べます。デバイスで、[Settings] (設定)、[Network & Internet] (ネットワークとインターネット)、[Wi-Fi]、[Advanced Options] (詳細オプション) の順に移動して IP アドレスを確認します。
+    または、「Hey Cortana, what is my IP address?」 (コルタナさん、IP アドレスを教えて) のようにたずねることもできます。
 
-The toolbar at the top of the page provides access to commonly used status and features.
-- **Online**: Indicates whether the device is connected to Wi-Fi.
-- **Shutdown**: Turns off the device.
-- **Restart**: Cycles power on the device.
-- **Security**: Opens the Device Security page.
-- **Cool**: Indicates the temperature of the device.
-- **A/C**: Indicates whether the device is plugged in and charging.
-- **Help**: Opens the REST interface documentation page.
+3. PC 上の Web ブラウザーから、`https://<YOUR_HOLOLENS_IP_ADDRESS>` にアクセスします。
+    - ブラウザーから、"この Web サイトのセキュリティ証明書に問題があります" というメッセージが表示されます。 これは、Device Portal に発行された証明書がテスト証明書であるためです。 ここでは、この証明書エラーを無視して続行できます。
 
-The home page shows the following info:
-- **Device** Status: monitors the health of your device and reports critical errors.
-- **Windows information**: shows the name of the HoloLens and the currently installed version of Windows.
-- **Preferences** section contains the following settings:
-    - **IPD**: Sets the interpupillary distance (IPD), which is the distance, in millimeters, between the center of the user's pupils when looking straight ahead. The setting takes effect immediately. The default value was calculated automatically when you set up your device.
-    - **Device name**: Assign a name to the HoloLens. You must reboot the device after changing this value for it to take effect. After clicking Save, a dialog will ask if you want to reboot the device immediately or reboot later.
-    - **Sleep settings**: Sets the length of time to wait before the device goes to sleep when it's plugged in and when it's on battery.
+### USB 経由で接続する 
 
-### 3D View 
+1. PC に Visual Studio Update 1 と Windows 10 開発者ツールをインストールします。 これで USB 接続が有効になります。
+2. マイクロ USB ケーブルを使って HoloLens を PC に接続します。
+3. PC 上の Web ブラウザーから、`http://127.0.0.1:10080` にアクセスします。
 
-Use the 3D View page to see how HoloLens interprets your surroundings. Navigate the view by using the mouse:
-- **Rotate**: left click + mouse;
-- **Pan**: right click + mouse;
-- **Zoom**: mouse scroll.
-- **Tracking options**: Turn on continuous visual tracking by checking Force visual tracking. Pause stops visual tracking.
-- **View options**: Set options on the 3D view:- Tracking: Indicates whether visual tracking is active.
-- **Show floor**: Displays a checkered floor plane.
-- **Show frustum**: Displays the view frustum.
-- **Show stabilization plane**: Displays the plane that HoloLens uses for stabilizing motion.
-- **Show mesh**: Displays the surface mapping mesh that represents your surroundings.
-- **Show details**: Displays hand positions, head rotation quaternions, and the device origin vector as they change in real time.
-- **Full screen button**: Shows the 3D View in full screen mode. Press ESC to exit full screen view.
+### エミュレーターに接続する 
 
-- Surface reconstruction: Click or tap Update to display the latest spatial mapping mesh from the device. A full pass may take some time to complete, up to a few seconds. The mesh does not update automatically in the 3D view, and you must manually click Update to get the latest mesh from the device. Click Save to save the current spatial mapping mesh as an obj file on your PC.
+Device Portal はエミュレーターで使うこともできます。 Device Portal に接続するには、ツール バーを使います。 次のアイコンをクリックします。
+- [Open Device Portal] (Device Portal を開く): エミュレーターで HoloLens OS の Windows Device Portal を開きます。
 
-### Mixed Reality Capture 
+### ユーザー名とパスワードを作成する 
 
-Use the Mixed Reality Capture page to save media streams from the HoloLens.
-- Settings: Control the media streams that are captured by checking the following settings:- Holograms: Captures the holographic content in the video stream. Holograms are rendered in mono, not stereo.
-- **PV camera**: Captures the video stream from the photo/video camera.
-- **Mic Audio**: Captures audio from the microphone array.
-- **App Audio**: Captures audio from the currently running app.
-- **Live preview quality**: Select the screen resolution, frame rate, and streaming rate for the live preview.
+HoloLens で初めて Device Portal に接続するときは、ユーザー名とパスワードを作成する必要があります。
+1. PC 上の Web ブラウザーで、HoloLens の IP アドレスを入力します。 [Set up access] (アクセスのセットアップ) ページが開きます。
+2. [Request pin] (PIN の要求) をクリックまたはタップし、生成された PIN を HoloLens のディスプレイで確認します。
+3. [PIN displayed on your device] (デバイスに表示された PIN) テキスト ボックスに PIN を入力します。
+4. Device Portal への接続に使うユーザー名を入力します。 Microsoft アカウント (MSA) 名やドメイン アカウント名を指定する必要はありません。
+5. パスワードを入力し、確認用にもう一度入力します。 パスワードは 7 文字以上にする必要があります。 MSA やドメインのパスワードと同じにする必要はありません。
+6. [Pair] (ペアリング) をクリックして、HoloLens の Windows Device Portal に接続します。
 
-- Click or tap the Live preview button to show the capture stream. Stop live preview stops the capture stream.
-- Click or tap Record to start recording the mixed-reality stream, using the specified settings. Stop recording ends the recording and saves it.
-- Click or tap Take photo to take a still image from the capture stream.
-- **Videos and photos**: Shows a list of video and photo captures taken on the device.
+このユーザー名またはパスワードは、デバイスのセキュリティ ページでこの手順を繰り返すことでいつでも変更できます。デバイスのセキュリティ ページを表示するには、右上にある [Security] (セキュリティ) リンクをクリックするか、`https://<YOUR_HOLOLENS_IP_ADDRESS>/devicesecurity.htm` にアクセスします。
 
-Note that HoloLens apps will not be able to capture an MRC photo or video while you are recording or streaming a live preview from the Device Portal.
+### セキュリティ証明書 
 
-### System Performance 
+ブラウザーで "証明書エラー" が表示される場合は、デバイスとの信頼関係を作成することで修正できます。
 
-The System Performance tool on HoloLens has 3 additional metrics that can be recorded. 
+ぞれぞれの HoloLens では、SSL 接続用に一意の自己署名証明書が生成されます。 既定では、この証明書が PC の Web ブラウザーによって信頼されていないため、"証明書エラー" が発生することがあります。 この証明書を HoloLens から (USB または信頼している Wi-Fi ネットワーク経由で) ダウンロードし、PC で信頼すると、デバイスに安全に接続できます。
+1. 安全なネットワーク (USB または信頼している Wi-Fi ネットワーク) に接続していることを確認します。
+2. Device Portal の [Security] (セキュリティ) ページから、このデバイスの証明書をダウンロードします。ページを表示するには、右上にあるアイコンの一覧で [Security] (セキュリティ) リンクをクリックするか、`https://<YOUR_HOLOLENS_IP_ADDRESS>/devicesecurity.htm` にアクセスします。
 
-These are the available metrics:
-- **SoC power**: Instantaneous system-on-chip power utilization, averaged over one minute
-- **System power**: Instantaneous system power utilization, averaged over one minute
-- **Frame rate**: Frames per second, missed VBlanks per second, and consecutive missed VBlanks
+3. PC の [信頼されたルート証明機関] ストアに証明書をインストールします。Windows メニューから「コンピューター証明書の管理」と入力し、アプレットを起動します。
+    - [信頼されたルート証明機関] フォルダーを展開します。
+    - [証明書] フォルダーをクリックします。
+    - [操作] メニューの [すべてのタスク] をクリックし、[インポート] をクリックします。
+    - Device Portal からダウンロードした証明書ファイルを使って、証明書のインポート ウィザードを完了します。
 
-### App Crash Dumps Page 
-
-This page allows you to collect crash dumps for your side-loaded apps. Check the Crash Dumps Enabled checkbox for each app for which you want to collect crash dumps. Return to this page to collect crash dumps. Dump files can be opened in Visual Studio for debugging.
-
-### Kiosk Mode 
-
-Enables kiosk mode, which limits the user's ability to launch new apps or change the running app. When kiosk mode is enabled, the Bloom gesture and Cortana are disabled, and placed apps aren't shown in the user's surroundings.
-
-Check Enable Kiosk Mode to put the HoloLens into kiosk mode. Select the app to run at startup from the Startup app dropdown. Click or tap Save to commit the settings.
-
-Note that the app will run at startup even if kiosk mode is not enabled. Select None to have no app run at startup.
-
-### Simulation 
-
-Allows you to record and play back input data for testing.
-- **Capture room**: Used to download a simulated room file that contains the spatial mapping mesh for the user's surroundings. Name the room and then click Capture to save the data as a .xef file on your PC. This room file can be loaded into the HoloLens emulator.
-- **Recording**: Check the streams to record, name the recording, and click or tap Record to start recoding. Perform actions with your HoloLens and then click Stop to save the data as a .xef file on your PC. This file can be loaded on the HoloLens emulator or device.
-- **Playback**: Click or tap Upload recording to select a xef file from your PC and send the data to the HoloLens.
-- **Control mode**: Select Default or Simulation from the dropdown, and click or tap the Set button to select the mode on the HoloLens. Choosing "Simulation" disables the real sensors on your HoloLens and uses uploaded simulated data instead. If you switch to "Simulation", your HoloLens will not respond to the real user until you switch back to "Default".
+4. ブラウザーを再起動します。
 
 
-### Virtual Input 
+## Device Portal のページ 
 
-Sends keyboard input from the remote machine to the HoloLens.
+### Home (ホーム) 
 
-Click or tap the region under Virtual keyboard to enable sending keystrokes to the HoloLens. Type in the Input text textbox and click or tap Send to send the keystrokes to the active app.
+Device Portal セッションは Home (ホーム) ページから始まります。 他のページにアクセスするには、ホーム ページの左側にあるナビゲーション バーを使います。
+
+ページの最上部にあるツール バーでは、よく使われる状態や機能にアクセスできます。
+- **Online** (オンライン): デバイスが Wi-Fi に接続しているかどうかを示します。
+- **Shutdown** (シャットダウン): デバイスをオフにします。
+- **Restart** (再起動): デバイスの電源を入れ直します。
+- **Security** (セキュリティ): [Device Security] (デバイスのセキュリティ) ページを開きます。
+- **Cool** (低温): デバイスの温度を示します。
+- **A/C**: デバイスが電源に接続され、充電されているかどうかを示します。
+- **Help** (ヘルプ): REST インターフェイスのドキュメント ページを開きます。
+
+ホーム ページには次の情報が表示されます。
+- **Device** Status (デバイスの状態): デバイスの正常性を監視し、重大なエラーを報告します。
+- **Windows information** (Windows の情報): HoloLens の名前と、現在インストールされている Windows のバージョンを表示します。
+- **Preferences** (設定) セクションには次の設定が含まれます。
+    - **IPD**: 瞳孔間距離 (IPD) を設定します。これは、ユーザーがまっすぐ前を向いたときの瞳孔の中心間の距離をミリメートル単位で示すものです。 設定はすぐに反映されます。 既定値は、デバイスのセットアップ時に自動的に計算された値です。
+    - **Device name** (デバイス名): HoloLens に名前を割り当てます。 この値を変更した場合、変更を有効にするにはデバイスを再起動する必要があります。 [Save] (保存) をクリックすると、デバイスを今すぐ再起動するか、後で再起動するかをたずねるダイアログが表示されます。
+    - **Sleep settings** (スリープの設定): デバイスが電源に接続されているときとバッテリで動作しているときの、スリープ状態に移行するまでの待ち時間の長さを設定します。
+
+### 3D View (3D ビュー) 
+
+[3D View] (3D ビュー) ページを使うと、HoloLens がどのように周囲を解釈するかを確認できます。 ビュー内を移動するには、マウスを次のように使います。
+- **回転**: 左クリック + マウス
+- **パン**: 右クリック + マウス
+- **ズーム**: マウス スクロール。
+- **Tracking options** (追跡オプション): [Force visual tracking] (視覚追跡を強制) をオンにすると、連続的な視覚追跡が有効になります。 [Pause] (一時停止) は視覚追跡を停止します。
+- **[View options]** (表示オプション): 3D ビューのオプションを設定します。- [Tracking] (追跡): 視覚追跡がアクティブかどうかを示します。
+- **[Show floor]** (フロアを表示): チェック模様のフロア平面を表示します。
+- **[Show frustum]** (視錐台を表示): 視錐台を表示します。
+- **[Show stabilization plane]** (手ブレ補正平面を表示): HoloLens でモーションの手ブレ補正用に使われる平面を表示します。
+- **[Show mesh]** (メッシュを表示): 周囲を表すサーフェス マッピング メッシュを表示します。
+- **[Show details]** (詳細を表示): 手の位置、頭部の回転の四元数、デバイスの原点のベクトルを、動きに合わせてリアルタイムで表示します。
+- **[Full screen]** (全画面表示) ボタン: 3D ビューを全画面表示モードで表示します。 Esc キーを押すと全画面表示を終了します。
+
+- [Surface reconstruction] (サーフェスの認識): [Update] (更新) をクリックまたはタップすると、デバイスから最新の空間マッピング メッシュを表示します。 全体の処理が完了するまでには、最大で数秒かかる可能性があります。 3D ビューではメッシュは自動的に更新されないため、デバイスから最新のメッシュを取得するには、手動で [Update] (更新) をクリックする必要があります。 [Save] (保存) をクリックすると、現在の空間マッピング メッシュを obj ファイルとして PC に保存します。
+
+### Mixed Reality Capture (複合現実キャプチャ) 
+
+[Mixed Reality Capture] (複合現実キャプチャ) ページを使うと、HoloLens からメディア ストリームを保存できます。
+- 設定: 次の設定をオンにして、キャプチャするメディア ストリームを制御します。- [Holograms] (ホログラム): ビデオ ストリームのホログラフィック コンテンツをキャプチャします。 ホログラムは、ステレオではなくモノラルでレンダリングされます。
+- **[PV camera]** (PV カメラ): 写真/ビデオ カメラからビデオ ストリームをキャプチャします。
+- **[Mic Audio]** (マイク オーディオ): マイク配列からオーディオをキャプチャします。
+- **[App Audio]** (アプリ オーディオ): 現在実行中のアプリからオーディオをキャプチャします。
+- **[Live preview quality]** (ライブ プレビューの品質): ライブ プレビューの画面解像度、フレーム レート、ストリーミング レートを選択します。
+
+- [Live preview] (ライブ プレビュー) ボタンをクリックまたはタップすると、キャプチャ ストリームを表示します。 [Stop live preview] (ライブ プレビューの停止) は、キャプチャ ストリームを停止します。
+- [Record] (記録) をクリックまたはタップすると、指定された設定を使って複合現実ストリームのレコーディングを開始します。 [Stop recording] (記録の終了) は、レコーディングを終了して保存します。
+- [Take photo] (写真の撮影) をクリックまたはタップすると、キャプチャ ストリームから静止画像を取得します。
+- **[Videos and photos]** (ビデオと写真): デバイスで取得されたビデオと写真のキャプチャの一覧を表示します。
+
+Device Portal からライブ プレビューを記録またはストリーミングしている間、HoloLens アプリでは MRC の写真やビデオをキャプチャできないことに注意してください。
+
+### System Performance (システム パフォーマンス) 
+
+HoloLens の System Performance (システム パフォーマンス) ツールでは、3 つの追加のメトリックを記録できます。 
+
+利用可能なメトリックを次に示します。
+- **[SoC power]** (SoC 電力): System on a Chip の瞬間的な電力使用量 (1 秒あたりの平均)
+- **[System power]** (システム電力): システムの瞬間的な電力使用量 (1 秒あたりの平均)
+- **[Frame rate]** (フレーム レート): 1 秒あたりのフレーム数、1 秒あたりに失敗した VBlank 数、連続で失敗した VBlank 数
+
+### App Crash Dumps (アプリのクラッシュ ダンプ) ページ 
+
+このページでは、サイドローディングしたアプリのクラッシュ ダンプを収集できます。 クラッシュ ダンプを収集する各アプリについて、[Crash Dumps Enabled] (クラッシュ ダンプ有効) チェック ボックスをオンにします。 後でこのページに戻ると、クラッシュ ダンプが収集されています。 ダンプ ファイルは、デバッグ用に Visual Studio で開くことができます。
+
+### Kiosk Mode (キオスク モード) 
+
+キオスク モードを有効にします。キオスク モードではユーザーの操作が制限され、新しいアプリを起動したり、実行中のアプリを変更したりすることができなくなります。 キオスク モードを有効にすると、ブルーム ジェスチャと Cortana は無効になり、配置済みのアプリもユーザーの周囲に表示されなくなります。
+
+[Enable Kiosk Mode] (キオスク モードを有効にする) をオンにすると、HoloLens がキオスク モードになります。 [Startup app] (スタートアップ アプリ) ドロップダウンで、起動時に実行するアプリを選択します。 設定を決定するには、[Save] (保存) をクリックまたはタップします。
+
+選択したアプリは、キオスク モードが有効になっていない場合でも起動時に実行されます。 起動時にアプリが実行されないようにするには、[None] (なし) を選択します。
+
+### Simulation (シミュレーション) 
+
+テスト用に入力データを記録して再生できます。
+- **[Capture room]** (ルームのキャプチャ): シミュレートされたルーム ファイルをダウンロードするために使います。このファイルには、ユーザーの周囲の空間マッピング メッシュが含まれます。 ルームに名前を付けて [Capture] (キャプチャ) をクリックすると、データが .xef ファイルとして PC に保存されます。 このルーム ファイルは、HoloLens エミュレーターに読み込むことができます。
+- **[Recording]** (レコーディング): レコーディングを開始します。記録するストリームをオンにし、レコーディングに名前を付けて、[Record] (記録) をクリックまたはタップします。 HoloLens でアクションを実行した後、[Stop] (停止) をクリックすると、データが .xef ファイルとして PC に保存されます。 このファイルは、HoloLens エミュレーターまたはデバイスで読み込むことができます。
+- **[Playback]** (再生): [Upload recording] (レコーディングのアップロード) をクリックまたはタップし、PC から xef ファイルを選択して、そのデータを HoloLens に送信します。
+- **[Control mode]** (制御モード): HoloLens のモードを選択します。ドロップダウンから [Default] (既定) または [Simulation] (シミュレーション) を選択し、[Set] (設定) ボタンをクリックまたはタップします。 [Simulation] (シミュレーション) を選ぶと、HoloLens の実際のセンサーは無効になり、アップロードされたシミュレーション データが代わりに使われます。 [Simulation] (シミュレーション) に切り替えると、[Default] (既定) に戻すまで、HoloLens は実際のユーザーに応答しなくなります。
+
+
+### Virtual Input (仮想入力) 
+
+リモート コンピューターから HoloLens にキーボード入力を送信します。
+
+[Virtual keyboard] (仮想キーボード) の下にある領域をクリックまたはタップすると、HoloLens にキー入力を送信できるようになります。 [Input text] (テキストの入力) テキスト ボックスに入力し、[Send] (送信) をクリックまたはタップすると、アクティブなアプリにキー入力が送信されます。
 
 
 <!--HONumber=Mar16_HO5-->

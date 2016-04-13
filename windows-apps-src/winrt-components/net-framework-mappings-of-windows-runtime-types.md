@@ -1,28 +1,28 @@
 ---
-title: .NET Framework mappings of Windows Runtime types
-description: The following table lists the mappings that the .NET Framework makes between Universal Windows Platform (UWP) types and .NET Framework types.
+title: .NET Framework での Windows ランタイム型の対応付け
+description: 次の表は、.NET Framework での、ユニバーサル Windows プラットフォーム (UWP) 型と .NET Framework 型の間の対応付けを示しています。
 ms.assetid: 5317D771-808D-4B97-8063-63492B23292F
 ---
 
-# .NET Framework mappings of Windows Runtime types
+# .NET Framework での Windows ランタイム型の対応付け
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
+\[一部の情報はリリース前の製品に関することであり、正式版がリリースされるまでに大幅に変更される可能性があります。 ここに記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。\]
 
-The following table lists the mappings that the .NET Framework makes between Universal Windows Platform (UWP) types and .NET Framework types. In a Universal Windows app written with managed code, IntelliSense shows the .NET Framework type instead of the UWP type. For example, if a Windows Runtime method takes a parameter of type IVector&lt;string&gt;, IntelliSense shows a parameter of type IList&lt;string&gt;. Similarly, in a Windows Runtime Component written with managed code, you use the .NET Framework type in member signatures. When the [Windows Runtime Metadata Export Tool (Winmdexp.exe)](https://msdn.microsoft.com/library/hh925576.aspx) generates your Windows Runtime Component, the .NET Framework type becomes the corresponding UWP type.
+次の表は、.NET Framework での、ユニバーサル Windows プラットフォーム (UWP) 型と .NET Framework 型の間の対応付けを示しています。 マネージ コードで記述されたユニバーサル Windows アプリでは、IntelliSense は UWP 型ではなく .NET Framework 型を表示します。 たとえば、Windows ランタイム メソッドが IVector&lt;string&gt; 型のパラメーターを受け取る場合、IntelliSense は、IList&lt;string&gt; 型のパラメーターを表示します。 同様に、マネージ コードで記述された Windows ランタイム コンポーネントでは、.NET Framework 型をメンバーのシグネチャ内で使います。 [Windows ランタイム メタデータ エクスポート ツール (Winmdexp.exe)](https://msdn.microsoft.com/library/hh925576.aspx) で Windows ランタイム コンポーネントを生成すると、.NET Framework 型は、対応する UWP 型になります。
 
-## Mapping Tables
+## 対応表
 
 
-Most of the types that have the same namespace name and type name in both the UWP and the .NET Framework are structures (or types associated with structures, such as enumerations). In the UWP, structures have no members other than fields, and require helper types, which the .NET Framework hides. The .NET Framework versions of these structures have properties and methods that provide the functionality of the hidden helper types.
+UWP と .NET Framework の両方で同じ名前空間名と型名を持つ型の大部分は、構造体です (または列挙体など、構造体に関連付けられている型)。 UWP では、構造体にはフィールド以外にメンバーがなく、.NET Framework では非表示になるヘルパー型が必要です。 これらの構造体の .NET Framework バージョンには、非表示のヘルパー型の機能を提供するプロパティとメソッドがあります。
 
-For more information about the way the .NET Framework uses Windows metadata to simplify programming with the Windows Runtime, download the [CLR and the Windows Runtime](http://download.microsoft.com/download/2/3/E/23E1E9BE-41AA-4716-A7B3-82040271394C/CLR%20and%20the%20Windows%20Runtime.docx) white paper from the Windows Dev Center.
+.NET Framework で Windows メタデータを使って Windows ランタイムでのプログラミングを簡略化する方法について詳しくは、Windows デベロッパー センターから、[CLR と Windows ランタイム](http://download.microsoft.com/download/2/3/E/23E1E9BE-41AA-4716-A7B3-82040271394C/CLR%20and%20the%20Windows%20Runtime.docx)に関するホワイト ペーパーをダウンロードしてご確認ください。
 
-Table 1: UWP types that map to .NET Framework types with a different name and/or namespace.
+表 1: UWP 型と .NET Framework 型の対応 (異なる型名と名前空間名を持つ型)
 
-| UWP type/namespace                                            | .NET Framework type/namespace                                          | .NET Framework assembly                           |
+| UWP 型/名前空間                                            | .NET Framework 型/名前空間                                          | .NET Framework アセンブリ                           |
 |---------------------------------------------------------------|------------------------------------------------------------------------|---------------------------------------------------|
 | AttributeUsageAttribute (Windows.Foundation.Metadata)         | AttributeUsageAttribute (System)                                       | System.Runtime.dll                                |
 | AttributeTargets (Windows.Foundation.Metadata)                | AttributeTargets (System)                                              | System.Runtime.dll                                |
@@ -53,9 +53,9 @@ Table 1: UWP types that map to .NET Framework types with a different name and/or
 
  
 
-Table 2: UWP types that map to .NET Framework types with the same name and namespace.
+表 2: UWP 型と .NET Framework 型の対応 (同じ型名と名前空間名を持つ型)
 
-| Namespace                           | Type               | .NET Framework assembly                   |
+| 名前空間                           | 型               | .NET Framework アセンブリ                   |
 |-------------------------------------|--------------------|-------------------------------------------|
 | Windows.UI                          | Color              | System.Runtime.WindowsRuntime.dll         |
 | Windows.Foundation                  | Point              | System.Runtime.WindowsRuntime.dll         |
@@ -77,9 +77,9 @@ Table 2: UWP types that map to .NET Framework types with the same name and names
 
  
 
-## Related topics
+## 関連トピック
 
-* [Creating Windows Runtime Components in C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+* [C# および Visual Basic での Windows ランタイム コンポーネントの作成](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
 
 
 

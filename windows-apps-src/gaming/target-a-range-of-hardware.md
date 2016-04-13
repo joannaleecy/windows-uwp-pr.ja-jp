@@ -1,23 +1,23 @@
 ---
-title: Support shadow maps on a range of hardware
-description: Render higher-fidelity shadows on faster devices and faster shadows on less powerful devices.
+title: ハードウェアの範囲でのシャドウ マップのサポート
+description: より高速なデバイスでは高品質なシャドウを、性能が低いデバイスではよりすばやいシャドウをレンダリングします。
 ms.assetid: d97c0544-44f2-4e29-5e02-54c45e0dff4e
 ---
 
-# Support shadow maps on a range of hardware
+# ハードウェアの範囲でのシャドウ マップのサポート
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-Render higher-fidelity shadows on faster devices and faster shadows on less powerful devices. Part 4 of [Walkthrough: Implement shadow volumes using depth buffers in Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md).
+より高速なデバイスでは高品質なシャドウを、性能が低いデバイスではよりすばやいシャドウをレンダリングします。 「[チュートリアル: Direct3D 11 の深度バッファーを使ったシャドウ ボリュームの実装](implementing-depth-buffers-for-shadow-mapping.md)」のパート 4 です。
 
-## Comparison filter types
+## フィルターの種類の比較
 
 
-Only use linear filtering if the device can afford the performance penalty. Generally, Direct3D feature level 9\_1 devices don't have enough power to spare for linear filtering on shadows. Use point filtering instead on these devices. When you use linear filtering, adjust the pixel shader so that it blends the shadow edges.
+パフォーマンス ペナルティに対する余裕がデバイスにある場合にのみ、リニア フィルタリングを使います。 通常、Direct3D 機能レベル 9\_1 のデバイスには、シャドウにリニア フィルタリングを使うだけの処理能力がありません。 そうしたデバイスでは、代わりにポイント フィルタリングを使います。 リニア フィルタリングを使う場合は、シャドウのエッジをブレンドするようにピクセル シェーダーを調整します。
 
-Create the comparison sampler for point filtering:
+ポイント フィルタリングの比較サンプラーを作成します。
 
 ```cpp
 D3D11_SAMPLER_DESC comparisonSamplerDesc;
@@ -49,7 +49,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-Then create a sampler for linear filtering:
+次に、リニア フィルタリングのサンプラーを作成します。
 
 ```cpp
 comparisonSamplerDesc.Filter = D3D11_FILTER_COMPARISON_MIN_MAG_MIP_LINEAR;
@@ -61,7 +61,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-Choose a sampler:
+サンプラーを選びます。
 
 ```cpp
 ID3D11PixelShader* pixelShader;
@@ -88,7 +88,7 @@ context->PSSetSamplers(0, 1, comparisonSampler);
 context->PSSetShaderResources(0, 1, m_shadowResourceView.GetAddressOf());
 ```
 
-Blend shadow edges with linear filtering:
+リニア フィルタリングでシャドウのエッジをブレンドします。
 
 ```cpp
 // Blends the shadow area into the lit area.
@@ -97,22 +97,22 @@ float3 shadow = (1.0f - lighting) * ambient;
 return float4(input.color * (light + shadow), 1.f);
 ```
 
-## Shadow buffer size
+## シャドウ バッファーのサイズ
 
 
-Larger shadow maps won't look as blocky but they take up more space in graphics memory. Experiment with different shadow map sizes in your game and observe the results in different types of devices and different display sizes. Consider an optimization like cascaded shadow maps to get better results with less graphics memory. See [Common Techniques to Improve Shadow Depth Maps](https://msdn.microsoft.com/library/windows/desktop/ee416324).
+シャドウ マップを大きくするとブロックノイズが発生しなくなりますが、グラフィックス メモリ内の領域を多く消費します。 ゲームでさまざまなシャドウ マップのサイズを試し、さまざまなデバイスとディスプレイ サイズで結果を確認してください。 少ないグラフィックス メモリで良い結果が得られるように、カスケードされたシャドウ マップなどの最適化を検討してください。 「[シャドウ深度マップを向上させるための一般的な方法](https://msdn.microsoft.com/library/windows/desktop/ee416324)」をご覧ください。
 
-## Shadow buffer depth
-
-
-Greater precision in the shadow buffer will give more accurate depth test results, which helps avoid issues like z-buffer fighting. But like larger shadow maps, greater precision takes up more memory. Experiment with different depth precision types in your game - DXGI\_FORMAT\_R24G8\_TYPELESS versus DXGI\_FORMAT\_R16\_TYPELESS - and observe the speed and quality on different feature levels.
-
-## Optimizing precompiled shaders
+## シャドウ バッファーの深度
 
 
-Universal Windows Platform (UWP) apps can use dynamic shader compilation, but it's faster to use dynamic shader linking. You can also use compiler directives and `#ifdef` blocks to create different versions of shaders. This is done by opening the Visual Studio project file in a text editor and adding multiple `<FxcCompiler>` entries for the HLSL (each with the appropriate preprocessor definitions). Note that this necessitates different filenames; in this case, Visual Studio appends \_point and \_linear to the different versions of the shader.
+シャドウ バッファーの精度を上げると、深度のテスト結果がより正確になり、z バッファー ファイティングなどの問題を避けるのに役立ちます。 ただし、シャドウ マップを大きくした場合と同じように、精度を上げると、消費するメモリの量が多くなります。 ゲームで異なる深度の精度の種類 (DXGI\_FORMAT\_R24G8\_TYPELESS と DXGI\_FORMAT\_R16\_TYPELESS) を使って、さまざまな機能レベルで速度と品質を確認してください。
 
-The project file entry for the linear filtered version of the shader defines LINEAR:
+## プリコンパイル済みシェーダーの最適化
+
+
+ユニバーサル Windows プラットフォーム (UWP) アプリでは動的シェーダー コンパイルを使うことができますが、動的シェーダー リンクを使う方が高速に処理できます。 また、コンパイラ ディレクティブと `#ifdef` ブロックを使って、異なるバージョンのシェーダーを作成することができます。 この処理を実行するには、テキスト エディターで Visual Studio プロジェクト ファイルを開き、HLSL の `<FxcCompiler>` エントリを (それぞれ適切なプリプロセッサの定義を含めて) 複数追加します。 このとき、ファイル名を別々にする必要があることに注意してください。この例では、バージョンが異なるシェーダーの名前に \_point と \_linear が追加されます。
+
+リニア フィルター処理を行ったバージョンのシェーダーのプロジェクト ファイル エントリでは、次のように、LINEAR を定義します。
 
 ```
 <FxCompile Include="Content\ShadowPixelShader.hlsl">
@@ -141,7 +141,7 @@ The project file entry for the linear filtered version of the shader defines LIN
 </FxCompile>
 ```
 
-The project file entry for the linear filtered version of the shader does not include preprocessor definitions:
+リニア フィルター処理を行ったバージョンのシェーダーのプロジェクト ファイル エントリには、次のように、プリプロセッサの定義を含めません。
 
 ```
 <FxCompile Include="Content\ShadowPixelShader.hlsl">

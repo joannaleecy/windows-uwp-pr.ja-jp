@@ -1,23 +1,23 @@
 ---
-Description: A tile is an app's representation on the Start menu. Every app has a tile. When you create a new Universal Windows Platform (UWP) app project in Microsoft Visual Studio, it includes a default tile that displays your app's name and logo.
-title: Tiles
+Description: タイルとは、[スタート] メニュー上でアプリを表すものです。 すべてのアプリにはタイルがあります。 Microsoft Visual Studio で作成した新しいユニバーサル Windows プラットフォーム (UWP) アプリ プロジェクトには、アプリの名前とロゴを表示する既定のタイルが含まれます。
+title: タイル
 ms.assetid: 09C7E1B1-F78D-4659-8086-2E428E797653
-label: Tiles
+label: タイル
 template: detail.hbs
 ---
 
-# Tiles for UWP apps
+# UWP アプリのタイル
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-A *tile* is an app's representation on the Start menu. Every app has a tile. When you create a new Universal Windows Platform (UWP) app project in Microsoft Visual Studio, it includes a default tile that displays your app's name and logo. Windows displays this tile when your app is first installed. After your app is installed, you can change your tile's content through notifications; for example, you can change the tile to communicate new information to the user, such as news headlines, or the subject of the most recent unread message.
+*タイル*とは、[スタート] メニュー上でアプリを表すものです。 すべてのアプリにはタイルがあります。 Microsoft Visual Studio で作成した新しいユニバーサル Windows プラットフォーム (UWP) アプリ プロジェクトには、アプリの名前とロゴを表示する既定のタイルが含まれます。 このタイルは、アプリを初めてインストールしたときに Windows に表示されます。 アプリをインストールしたら、新しい情報 (ニュース ヘッドライン、最新の未読メッセージの件名など) をユーザーに伝えるようにタイルを変更するなど、通知を通じてタイルの内容を変更できます。
 
-## <span id="Configure_the_default_tile"></span><span id="configure_the_default_tile"></span><span id="CONFIGURE_THE_DEFAULT_TILE"></span>Configure the default tile
+## <span id="Configure_the_default_tile"></span><span id="configure_the_default_tile"></span><span id="CONFIGURE_THE_DEFAULT_TILE"></span>既定のタイルを構成する
 
 
-When you create a new project in Visual Studio, it creates a simple default tile that displays your app's name and logo.
+Visual Studio で新しいプロジェクトを作成すると、アプリの名前とロゴを表示する単純な既定のタイルが作成されます。
 
 ```XML
   <Applications>
@@ -36,17 +36,17 @@ When you create a new project in Visual Studio, it creates a simple default tile
   </Applications>
 ```
 
-There are a few items you should update:
+いくつか更新する必要がある項目があります。
 
--   DisplayName: Replace this value with the name you want to display on your tile.
--   ShortName: Because there is limited room for your display name to fit on tiles, we recommend that you to specify a ShortName as well, to make sure your app's name doesn’t get truncated.
--   Logo images:
+-   DisplayName: この値はタイルに表示する名前に置き換えます。
+-   ShortName: タイル上の表示名を収めるスペースには限りがあるため、アプリの名前が切り詰められないような名前を指定することをお勧めします。
+-   ロゴ イメージ:
 
-    You should replace these images with your own. You have the option of supplying images for different visual scales, but you are not required to supply them all. To ensure that you app looks good on a range of devices, we recommend that you provide 100%, 200%, and 400% scale versions of each image.
+    ここに挙げた画像を、自分で用意したものに置き換えます。 さまざまな倍率に応じて複数の画像を指定することができますが、必ずしもすべて指定する必要はありません。 多種多様なデバイスでアプリを適切に表示するために、各画像の複数のスケール バージョン (100%、200%、400%) を用意することをお勧めします。
 
-    Scaled images follow this naming convention:
+    拡大/縮小された画像の名前付け規則は次のとおりです。
     
-    *&lt;image name&gt;*.scale-*&lt;scale factor&gt;*.*&lt;image file extension&gt;* 
+    *&lt;画像名&gt;*.scale-*&lt;倍率&gt;*.*&lt;画像ファイルの拡張子&gt;* 
 
 
      
@@ -55,7 +55,7 @@ There are a few items you should update:
 
     When you refer to the image, you refer to it as *&lt;image name&gt;*.*&lt;image file extension&gt;* ("SmallLogo.png" in this example). The system will automatically select the appropriate scaled image for the device from the images you've provided.
 
--   You don't have to, but we highly recommend supplying logos for wide and large tile sizes so that the user can resize your app's tile to those sizes. To provide these additional images, you create a `DefaultTile` element and use the `Wide310x150Logo` and `Square310x310Logo` attributes to specify the additional images:
+-   強制ではありませんが、幅広で大きいタイル サイズに合ったロゴを用意して、ユーザーの側でアプリのタイルをそのサイズに変更できるようにすることを強くお勧めします。 追加の画像を指定するには、`DefaultTile` 要素を作成し、`Wide310x150Logo` および `Square310x310Logo` 属性を使って、その画像を指定します。
 ```    XML
   <Applications>
         <Application Id="App"
@@ -77,23 +77,25 @@ There are a few items you should update:
       </Applications>
 ```
 
-## <span id="Use_notifications_to_customize_your_tile"></span><span id="use_notifications_to_customize_your_tile"></span><span id="USE_NOTIFICATIONS_TO_CUSTOMIZE_YOUR_TILE"></span>Use notifications to customize your tile
+## <span id="Use_notifications_to_customize_your_tile"></span><span id="use_notifications_to_customize_your_tile"></span><span id="USE_NOTIFICATIONS_TO_CUSTOMIZE_YOUR_TILE"></span>通知を使ってタイルをカスタマイズする
 
 
-After your app is installed, you can use notifications to customize your tile. You can do this the first time your app launches or in response to some event, such as a push notification.
+アプリをインストールした後は、通知を使ってタイルをカスタマイズできます。 これは、アプリを初めてを起動したときや、プッシュ通知など、イベントへの応答として実行できます。
 
-1.  Create an XML payload (in the form of an [**Windows.Data.Xml.Dom.XmlDocument**](https://msdn.microsoft.com/library/windows/apps/br206173)) that describes the tile.
+1.  タイルについて説明する XML ペイロード ([**Windows.Data.Xml.Dom.XmlDocument**](https://msdn.microsoft.com/library/windows/apps/br206173) の形式) を作成します。
 
-    -   Windows 10 introduces a new adaptive tile schema you can use. For instructions, see [Adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md). For the schema, see the [Adaptive tiles schema](tiles-and-notifications-adaptive-tiles-schema.md). 
+    -   Windows 10 で新たにアダプティブ タイルのスキーマを使用できるようになりました。 手順については、「[アダプティブ タイル](tiles-and-notifications-create-adaptive-tiles.md)」をご覧ください。 スキーマについて詳しくは、「[アダプティブ タイルのスキーマ](tiles-and-notifications-adaptive-tiles-schema.md)」をご覧ください。 
 
-    -   You can use the Windows 8.1 tile templates to define your tile. For more info, see [Creating tiles and badges (Windows 8.1)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868260).
+    -   タイルの定義には、Windows 8.1 タイル テンプレートを使用できます。 詳しくは、「[タイルとバッジの作成 (Windows 8.1)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868260)」をご覧ください。
 
-2.  Create a tile notification object and pass it the [**XmlDocument**](https://msdn.microsoft.com/library/windows/apps/br206173) you created. There are several types of notification objects:
-    -   A [**Windows.UI.NotificationsTileNotification**](https://msdn.microsoft.com/library/windows/apps/br208616) object for updating the tile immediately.
-    -   A [**Windows.UI.Notifications.ScheduledTileNotification**](https://msdn.microsoft.com/library/windows/apps/hh701637) object for updating the tile at some point in the future.
+2.  タイル通知オブジェクトを作成し、作成した [**XmlDocument**](https://msdn.microsoft.com/library/windows/apps/br206173) に渡します。 通知オブジェクトには、次のようなものがあります。
+    -   タイルをすぐに更新するための [**Windows.UI.NotificationsTileNotification**](https://msdn.microsoft.com/library/windows/apps/br208616) オブジェクト。
+    -   タイルを後の任意の時点で更新するための [**Windows.UI.Notifications.ScheduledTileNotification**](https://msdn.microsoft.com/library/windows/apps/hh701637) オブジェクト。
 
-3.  Use the [**Windows.UI.Notifications.TileUpdateManager.CreateTileUpdaterForApplication**](https://msdn.microsoft.com/library/windows/apps/br208623) to create a [**TileUpdater**](https://msdn.microsoft.com/library/windows/apps/br208628) object.
-4.  Call the [**TileUpdater.Update**](https://msdn.microsoft.com/library/windows/apps/br208632) method and pass it the tile notification object you created in step 2.
+3.  [
+            **Windows.UI.Notifications.TileUpdateManager.CreateTileUpdaterForApplication**](https://msdn.microsoft.com/library/windows/apps/br208623) を使って [**TileUpdater**](https://msdn.microsoft.com/library/windows/apps/br208628) オブジェクトを作成します。
+4.  [
+            **TileUpdater.Update**](https://msdn.microsoft.com/library/windows/apps/br208632) メソッドを呼び出して、手順 2. で作成したタイル通知オブジェクトに渡します。
 
  
 

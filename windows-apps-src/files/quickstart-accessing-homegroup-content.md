@@ -1,50 +1,51 @@
 ---
 ms.assetid: 12ECEA89-59D2-4BCE-B24C-5A4DD525E0C7
-title: Accessing HomeGroup content
-description: Access content stored in the user's HomeGroup folder, including pictures, music, and videos.
+title: ホームグループ コンテンツへのアクセス
+description: ユーザーのホームグループ フォルダーに格納されているコンテンツ (画像、音楽、ビデオなど) にアクセスします。
 ---
-# Accessing HomeGroup content
+# ホームグループ コンテンツへのアクセス
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-** Important APIs **
+** 重要な API **
 
--   [**Windows.Storage.KnownFolders class**](https://msdn.microsoft.com/library/windows/apps/br227151)
+-   [**Windows.Storage.KnownFolders クラス**](https://msdn.microsoft.com/library/windows/apps/br227151)
 
-Access content stored in the user's HomeGroup folder, including pictures, music, and videos.
+ユーザーのホームグループ フォルダーに格納されているコンテンツ (画像、音楽、ビデオなど) にアクセスします。
 
-## Prerequisites
+## 必要条件
 
--   **Understand async programming for Universal Windows Platform (UWP) apps**
+-   **ユニバーサル Windows プラットフォーム (UWP) アプリの非同期プログラミングについての理解**
 
-    You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
+    C# や Visual Basic での非同期アプリの作成方法については、「[C# または Visual Basic での非同期 API の呼び出し](https://msdn.microsoft.com/library/windows/apps/mt187337)」をご覧ください。 C++ での非同期アプリの作成方法については、「[C++ での非同期プログラミング](https://msdn.microsoft.com/library/windows/apps/mt187334)」をご覧ください。
 
--   **App capabilty declarations**
+-   **アプリ機能の宣言**
 
-    To access HomeGroup content, the user's machine must have a HomeGroup set up and your app must have at least one of the following capabilities: **picturesLibrary**, **musicLibrary**, or **videosLibrary**. When your app accesses the HomeGroup folder, it will see only the libraries that correspond to the capabilities declared in your app's manifest. To learn more, see [File access permissions](file-access-permissions.md).
+    ホームグループ コンテンツにアクセスするには、ユーザーのコンピューターにホームグループがセットアップされ、アプリに **picturesLibrary**、**musicLibrary**、**videosLibrary** のうちの少なくとも 1 つの機能が備わっている必要があります。 アプリは、ホームグループ フォルダーにアクセスすると、アプリのマニフェストで宣言されている機能に対応するライブラリだけを参照します。 詳しくは、「[ファイル アクセス許可](file-access-permissions.md)」をご覧ください。
 
-    **Note**  Content in the Documents library of a HomeGroup isn't visible to your app regardless of the capabilities declared in your app's manifest and regardless of the user's sharing settings.
+    **注:** ホームグループのドキュメント ライブラリのコンテンツは、アプリのマニフェストで宣言されている機能や、ユーザーの共有設定にかかわらず、アプリからは参照できません。
 
      
 
--   **Understand how to use file pickers**
+-   **ファイル ピッカーの使い方についての理解**
 
-    You typically use the file picker to access files and folders in the HomeGroup. To learn how to use the file picker, see [Open files and folders with a picker](quickstart-using-file-and-folder-pickers.md).
+    ホームグループのファイルやフォルダーにアクセスするには、通常、ファイル ピッカーを使います。 ファイル ピッカーの使い方については、「[ピッカーでファイルやフォルダーを開く](quickstart-using-file-and-folder-pickers.md)」をご覧ください。
 
--   **Understand file and folder queries**
+-   **ファイルとフォルダーのクエリについての理解**
 
-    You can use queries to enumerate files and folders in the HomeGroup. To learn about file and folder queries, see [Enumerating and querying files and folders](quickstart-listing-files-and-folders.md).
+    ホームグループのファイルやフォルダーを列挙するには、クエリを使うことができます。 ファイルとフォルダーのクエリについて詳しくは、「[ファイルとフォルダーの列挙と照会](quickstart-listing-files-and-folders.md)」をご覧ください。
 
-## Open the file picker at the HomeGroup
+## ホームグループでファイル ピッカーを開く
 
-Follow these steps to open an instance of the file picker that lets the user pick files and folders from the HomeGroup:
+以下の手順に従って、ユーザーがホームグループのファイルとフォルダーを選ぶことができるファイル ピッカーのインスタンスを開きます。
 
-1.  **Create and customize the file picker**
+1.  **ファイル ピッカーを作成してカスタマイズする**
 
-    Use [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) to create the file picker, and then set the picker's [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) to [**PickerLocationId.HomeGroup**](https://msdn.microsoft.com/library/windows/apps/br207890). Or, set other properties that are relevant to your users and your app. For guidelines to help you decide how to customize the file picker, see [Guidelines and checklist for file pickers](https://msdn.microsoft.com/library/windows/apps/hh465182)
+    [
+            **FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) を使ってファイル ピッカーを作成し、ピッカーの [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) を [**PickerLocationId.HomeGroup**](https://msdn.microsoft.com/library/windows/apps/br207890) に設定します。 または、ユーザーとアプリに関連するその他のプロパティを設定します。 ファイル ピッカーのカスタマイズ方法を判断するためのガイドラインについては、「[ファイル ピッカーのガイドラインとチェック リスト](https://msdn.microsoft.com/library/windows/apps/hh465182)」をご覧ください。
 
-    This example creates a file picker that opens at the HomeGroup, includes files of any type, and displays the files as thumbnail images:
+    次の例では、ホームグループで開かれ、すべての種類のファイルを含み、ファイルをサムネイル イメージとして表示するファイル ピッカーを作成しています。
     ```csharp
     Windows.Storage.Pickers.FileOpenPicker picker = new Windows.Storage.Pickers.FileOpenPicker();
     picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
@@ -53,11 +54,11 @@ Follow these steps to open an instance of the file picker that lets the user pic
     picker.FileTypeFilter.Add("*");
     ```
   
-2.  **Show the file picker and process the picked file.**
+2.  **ファイル ピッカーを表示して、選ばれたファイルを処理する**
 
-    After you create and customize the file picker, let the user pick one file by calling [**FileOpenPicker.PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275), or multiple files by calling [**FileOpenPicker.PickMultipleFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br207851).
+    ファイル ピッカーを作成してカスタマイズしたら、ユーザーが 1 つのファイルを選べるように [**FileOpenPicker.PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) を呼び出すか、複数のファイルを選べるように [**FileOpenPicker.PickMultipleFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br207851) を呼び出します。
 
-    This example displays the file picker to let the user pick one file:
+    次の例では、ファイル ピッカーを表示して、ユーザーが 1 つのファイルを選べるようにしています。
     ```csharp
     Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
 
@@ -71,22 +72,22 @@ Follow these steps to open an instance of the file picker that lets the user pic
     }   
     ```
 
-## Search the HomeGroup for files
+## ホームグループでファイルを検索する
 
-This section shows how to find HomeGroup items that match a query term provided by the user.
+このセクションでは、ユーザーが指定したクエリ語句に一致するホームグループ項目を見つける方法を示します。
 
-1.  **Get the query term from the user.**
+1.  **ユーザーからクエリ語句を取得します。**
 
-    Here we get a query term that the user has entered into a [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) control called `searchQueryTextBox`:
+    ここでは、ユーザーが `searchQueryTextBox` という名前の [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) コントロールに入力したクエリ語句を取得します。
     ```csharp
     string queryTerm = this.searchQueryTextBox.Text;    
     ```
 
-2.  **Set the query options and search filter.**
+2.  **クエリ オプションと検索フィルターを設定します。**
 
-    Query options determine how the search results are sorted, while the search filter determines which items are included in the search results.
+    クエリ オプションは、検索結果をどのように並べ替えるかを決めます。検索フィルターは、どの項目が検索結果に含まれるかを決めます。
 
-    This example sets query options that sort the search results by relevance and then the date modified. The search filter is the query term that the user entered in the previous step:
+    次の例は、検索結果をまず関連性で、次に更新日で並べ替えるクエリ オプションを設定します。 検索フィルターは、ユーザーが前の手順で入力したクエリ語句です。
     ```csharp
     Windows.Storage.Search.QueryOptions queryOptions = 
             new Windows.Storage.Search.QueryOptions
@@ -96,9 +97,9 @@ This section shows how to find HomeGroup items that match a query term provided 
             Windows.Storage.KnownFolders.HomeGroup.CreateFileQueryWithOptions(queryOptions);    
     ```
 
-3.  **Run the query and process the results.**
+3.  **クエリを実行し、結果を処理します。**
 
-    The following example runs the search query in the HomeGroup and saves the names of any matching files as a list of strings.
+    次の例は、ホームグループで検索クエリを実行し、一致するファイルの名前を文字列の一覧として保存します。
     ```csharp
     System.Collections.Generic.IReadOnlyList<Windows.Storage.StorageFile> files = 
         await queryResults.GetFilesAsync();
@@ -114,21 +115,21 @@ This section shows how to find HomeGroup items that match a query term provided 
     ```
 
 
-## Search the HomeGroup for a particular user's shared files
+## ホームグループで特定のユーザーの共有ファイルを検索する
 
-This section shows you how to find HomeGroup files that are shared by a particular user.
+このセクションでは、特定のユーザーによって共有されているホームグループ ファイルを見つける方法を示します。
 
-1.  **Get a collection of HomeGroup users.**
+1.  **ホームグループ ユーザーのコレクションを取得します。**
 
-    Each of the first-level folders in the HomeGroup represents an individual HomeGroup user. So, to get the collection of HomeGroup users, call [**GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br227279) retrieve the top-level HomeGroup folders.
+    ホームグループの第 1 レベルのフォルダーは、それぞれが個々のホームグループ ユーザーを表しています。 そのため、ホームグループ ユーザーのコレクションを取得するには、[**GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br227279) を呼び出し、第 1 レベルのホームグループ フォルダーを取得します。
     ```csharp
     System.Collections.Generic.IReadOnlyList<Windows.Storage.StorageFolder> hgFolders = 
         await Windows.Storage.KnownFolders.HomeGroup.GetFoldersAsync();    
     ```
 
-2.  **Find the target user's folder, and then create a file query scoped to that user's folder.**
+2.  **目的のユーザーのフォルダーを見つけ、そのユーザーのフォルダーをスコープにしたファイル クエリを作成します。**
 
-    The following example iterates through the retrieved folders to find the target user's folder. Then, it sets query options to find all files in the folder, sorted first by relevance and then by the date modified. The example builds a string that reports the number of files found, along with the names of the files.
+    次の例は、取得したフォルダーを反復処理して、目的のユーザーのフォルダーを見つけます。 次に、クエリ オプションを設定して、フォルダー内のすべてのファイルを検索し、まずは関連性で、次に更新日で並べ替えます。 この例では、見つかったファイルの数とファイルの名前を報告する文字列を作成します。
     ```csharp
     bool userFound = false;
     foreach (Windows.Storage.StorageFolder folder in hgFolders)
@@ -159,22 +160,23 @@ This section shows you how to find HomeGroup files that are shared by a particul
     }    
     ```
 
-## Stream video from the HomeGroup
+## ホームグループからビデオをストリーミングする
 
-Follow these steps to stream video content from the HomeGroup:
+ホームグループからビデオ コンテンツをストリーミングするには、次の手順を実行します。
 
-1.  **Include a MediaElement in your app.**
+1.  **アプリに MediaElement を含めます。**
 
-    A [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) lets you play back audio and video content in your app. For more information on audio and video playback, see [Create custom transport controls](https://msdn.microsoft.com/library/windows/apps/mt187271) and [Audio, video, and camera](https://msdn.microsoft.com/library/windows/apps/mt203788).
+    [
+            **MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) は、アプリのオーディオ コンテンツとビデオ コンテンツを再生します。 オーディオとビデオの再生について詳しくは、「[カスタム トランスポート コントロールを作成する](https://msdn.microsoft.com/library/windows/apps/mt187271)」と「[オーディオ、ビデオ、およびカメラ](https://msdn.microsoft.com/library/windows/apps/mt203788)」をご覧ください。
     ```HTML
     <Grid x:Name="Output" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1">
         <MediaElement x:Name="VideoBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Width="400" Height="300"/>
     </Grid>    
     ```
 
-2.  **Open a file picker at the HomeGroup and apply a filter that includes video files in the formats that your app supports.**
+2.  **ファイル ピッカーをホームグループで開き、アプリでサポートされている形式のビデオ ファイルを含めるフィルターを適用します。**
 
-    This example includes .mp4 and .wmv files in the file open picker.
+    次の例では、ファイル オープン ピッカーに .mp4 ファイルと .wmv ファイルが含まれます。
     ```csharp
     Windows.Storage.Pickers.FileOpenPicker picker = new Windows.Storage.Pickers.FileOpenPicker();
     picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
@@ -185,7 +187,7 @@ Follow these steps to stream video content from the HomeGroup:
     Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();   
     ```
 
-3.  **Open the the user's file selection for read access, and set the file stream as the source for the** [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926), and then play the file.
+3.  **ユーザーが選んだファイルを読み取りアクセスで開き、ファイル ストリームを** [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) のソースとして設定して、ファイルを再生します。
     ```csharp
     if (file != null)
     {

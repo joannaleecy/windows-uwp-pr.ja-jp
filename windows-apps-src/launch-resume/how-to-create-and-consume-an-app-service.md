@@ -17,7 +17,7 @@ ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
 
 このトピックでは、わかりやすくするためにすべてを 1 つのソリューションで作成します。
 
--   Microsoft Visual Studio 2015 で、新しい UWP アプリ プロジェクトを作成し、これに AppServiceProvider という名前を付けます。 (**[新しいプロジェクト]** ダイアログ ボックスで、**[テンプレート] &gt; [他の言語] &gt; [Visual C\#] &gt; [Windows] &gt; [Windows ユニバーサル] &gt; [空のアプリケーション (Windows ユニバーサル)]** の順にクリックします)。 これは、アプリ サービスを提供するアプリです。
+-   Microsoft Visual Studio 2015 で、新しい UWP アプリ プロジェクトを作成し、これに AppServiceProvider という名前を付けます。 ( **[新しいプロジェクト]** ダイアログ ボックスで、 **[テンプレート]、[他の言語]、[Visual C#]、[Windows]、[Windows ユニバーサル]、[空のアプリケーション (Windows ユニバーサル)]**の順にクリックします)。 これは、アプリ サービスを提供するアプリです。
 
 ## package.appxmanifest に、アプリ サービスの拡張機能を追加します。
 
@@ -47,7 +47,7 @@ AppServiceProvider プロジェクトの Package.appxmanifest ファイルで、
 ## アプリ サービスの作成
 
 
-1.  アプリ サービスは、バックグラウンド タスクとして実装されます。 これにより、フォアグラウンド アプリケーションは、背後でタスクを実行する、別のアプリケーションのアプリ サービスを呼び出すことができます。 MyAppService という名前の新しい Windows ランタイム コンポーネント プロジェクトをソリューションに追加 (**[ファイル] &gt; [追加] &gt; [新しいプロジェクト]**) します。 (**[新しいプロジェクトの追加]** ダイアログ ボックスで、**[インストール済み] &gt; [他の言語] &gt; [Visual C#] &gt; [Windows] &gt; [Windows ユニバーサル] &gt; [Windows ランタイム コンポーネント (Windows ユニバーサル)]** の順に選びます)。
+1.  アプリ サービスは、バックグラウンド タスクとして実装されます。 これにより、フォアグラウンド アプリケーションは、背後でタスクを実行する、別のアプリケーションのアプリ サービスを呼び出すことができます。 MyAppService という名前の新しい Windows ランタイム コンポーネント プロジェクトをソリューションに追加 (**[ファイル] &gt; [追加] &gt; [新しいプロジェクト]**) します。 ( **[新しいプロジェクトの追加]** ダイアログ ボックスで、 **Installed &gt; Other Languages &gt; Visual C# &gt; Windows &gt; Windows Universal &gt; Windows Runtime Component (Windows Universal)**の順に選びます)。
 2.  AppServiceProvider プロジェクトで、MyAppService プロジェクトへの参照を追加します。
 3.  MyappService プロジェクトで、Class1.cs の上部に、次の **using** ステートメントを追加します。
     ```cs
@@ -177,7 +177,7 @@ private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequ
 ## アプリ サービスを呼び出すクライアントを作成する
 
 
-1.  ClientApp という名前の新しい空の Windows ユニバーサル アプリ プロジェクトをソリューションに追加 (**[ファイル] &gt; [追加] &gt; [新しいプロジェクト]**) します。 (**[新しいプロジェクトの追加]** ダイアログ ボックスで、**[インストール済み] &gt; [他の言語] &gt; [Visual C\#] &gt; [Windows] &gt; [Windows ユニバーサル] &gt; [空のアプリ (Windows ユニバーサル)]** の順に選びます)。
+1.  ClientApp という名前の新しい空の Windows ユニバーサル アプリ プロジェクトをソリューションに追加 (**[ファイル] &gt; [追加] &gt; [新しいプロジェクト]**) します。 (**[新しいプロジェクトの追加]** ダイアログ ボックスで、**[インストール済み]、[他の言語]、[Visual C#]、[Windows]、[Windows ユニバーサル]、[空のアプリ (Windows ユニバーサル)]** の順に選びます)。
 2.  ClientApp プロジェクトで、MainPage.xaml.cs の上部に、次の **using** ステートメントを追加します。
     ```cs
     >using Windows.ApplicationModel.AppService;

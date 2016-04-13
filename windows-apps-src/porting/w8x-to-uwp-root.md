@@ -1,76 +1,76 @@
 ---
-description: If you have a Universal 8.1 app&\#8212;whether it's targeting Windows 8.1, Windows Phone 8.1, or both&\#8212;then you'll find that your source code and skills will port smoothly to Windows 10.
-title: Move from Windows Runtime 8.x to UWP'
+description: ユニバーサル 8.1 アプリがある場合は、その対象が、Windows 8.1 と Windows Phone 8.1 のいずれかであるか、両方であるかにかかわらず、ソース コードとスキルがスムーズに Windows 10 に移植されることがわかるでしょう。
+title: Windows ランタイム 8.x から UWP への移行'
 ms.assetid: ac163b57-dee0-43fa-bab9-8c37fbee3913
 ---
 
-# Move from Windows Runtime 8.x to UWP
+# Windows ランタイム 8.x から UWP への移行
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-If you have a Universal 8.1 app—whether it's targeting Windows 8.1, Windows Phone 8.1, or both—then you'll find that your source code and skills will port smoothly to Windows 10. With Windows 10, you can create a Universal Windows Platform (UWP) app, which is a single app package that your customers can install onto every kind of device. For more background on Windows 10, UWP apps, and the concepts of adaptive code and adaptive UI that we'll mention in this porting guide, see [Guide to UWP apps](https://msdn.microsoft.com/library/windows/apps/dn894631).
+ユニバーサル 8.1 アプリがある場合は、その対象が、Windows 8.1 と Windows Phone 8.1 のいずれかであるか、両方であるかにかかわらず、ソース コードとスキルがスムーズに Windows 10 に移植されることがわかるでしょう。 Windows 10 では、ユニバーサル Windows プラットフォーム (UWP) アプリを作成できます。これは、どのような種類のデバイスにでもインストールできる単一のアプリ パッケージです。 Windows 10、UWP アプリ、およびこの移植ガイドで説明されているアダプティブ コードとアダプティブ UI の概念の詳しい背景については、「[UWP アプリのガイド](https://msdn.microsoft.com/library/windows/apps/dn894631)」をご覧ください。
 
-While porting, you'll find that Windows 10 shares the majority of APIs with the previous platforms, as well as XAML markup, UI framework, and tooling, and you'll find it all reassuringly familiar. Just as before, you can still choose between C++, C#, and Visual Basic for the programming language to use along with the XAML UI framework. Your first steps in planning exactly what to do with your current app or apps will depend on the kinds of apps and projects you have. That's explained in the following sections.
+移植を行うとき、Windows 10 では、API だけでなく、XAML マークアップ、UI フレームワーク、およびツールの大部分を以前のプラットフォームと共有しており、そのすべてが、見慣れたものであることがわかります。 以前と同様に、XAML UI フレームワークとともに使用するプログラミング言語として、C++、C#、Visual Basic のどれかを選択できます。 現在のアプリの取り扱いの詳細を計画する最初のステップは、所有するアプリとプロジェクトの種類によって異なります。 これについては、次のセクションで説明します。
 
-## If you have a Universal 8.1 app
+## ユニバーサル 8.1 アプリがある場合
 
-A Universal 8.1 app is built from an 8.1 Universal App project. Let's say the project's name is AppName\_81. It contains these sub-projects.
+ユニバーサル 8.1 アプリは、8.1 ユニバーサル アプリ プロジェクトから構築されます。 たとえば、プロジェクトの名前が AppName\_81 であるとします。 これには、次のサブプロジェクトが含まれます。
 
--   AppName\_81.Windows. This is the project that builds the app package for Windows 8.1.
--   AppName\_81.WindowsPhone. This is the project that builds the app package for Windows Phone 8.1.
--   AppName\_81.Shared. This is the project that contains source code, markup files, and other assets and resources that are used by both of the other two projects.
+-   AppName\_81.Windows。 これは、Windows 8.1 用アプリ パッケージを構築するプロジェクトです。
+-   AppName\_81.WindowsPhone。 これは、Windows Phone 8.1 用アプリ パッケージを構築するプロジェクトです。
+-   AppName\_81.Shared。 これは、他の 2 つのプロジェクトの両方で使われるソース コード、マークアップ ファイル、および他のアセットやリソースを含むプロジェクトです。
 
-Often, an 8.1 Universal Windows app offers the same features—and does so using the same code and markup—in both its Windows 8.1 and Windows Phone 8.1 forms. An app like that is an ideal candidate for porting to a single Windows 10 app that targets the Universal device family (and that you can install onto the widest range of devices). You'll essentially port the contents of the Shared project and you'll need to use little or nothing from the other two projects because there'll be little or nothing in them.
+多くの場合、8.1 ユニバーサル Windows アプリは、Windows 8.1 と Windows Phone 8.1 の両方の形式で、同じコードとマークアップを使って、同じ機能を提供します。 このようなアプリは、ユニバーサル デバイス ファミリを対象とする 1 つの Windows 10 アプリに移植するには最適な候補です (これにより、さまざまなデバイスにインストールできます)。 基本的には、共有プロジェクトのコンテンツを移植し、他の 2 つのプロジェクトには、コンテンツがほとんどないため、ほとんど使用する必要がありません。
 
-Other times, the Windows 8.1 and/or the Windows Phone 8.1 form of the app contain unique features. Or they contain the same features but they implement those features using different techniques or different technology. With an app like that, you can choose to port it to a single app that targets the Universal device family (in which case you will want the app to adapt itself to different devices), or you can choose to port it as more than one app, perhaps one targeting the Desktop device family and another targeting the Mobile device family. The nature of the Universal 8.1 app will determine which of these options is best for your case.
+また、Windows 8.1 と Windows Phone 8.1 のいずれかまたは両方の形式のアプリには、独自の機能が含まれます。 または、同じ機能が含まれていますが、別のテクニックやテクノロジを使用して、これらの機能を実装します。 このようなアプリでは、ユニバーサル デバイス ファミリを対象とした 1 つのアプリに移植するか (この場合、アプリ自体がさまざまなデバイスに対応する必要があります)、または複数のアプリ (たとえば、デスクトップ デバイス ファミリを対象としたアプリとモバイル デバイス ファミリを対象としたアプリ) として移植するかを選ぶことができます。 ユニバーサル 8.1 アプリの特性に基づいて、これらの選択肢のどちらが最適かを判別できます。
 
-1.  Port the contents of the Shared project to an app targeting the Universal device family. If applicable, salvage any other content from the Windows and WindowsPhone projects, and use that content either unconditionally in the app or conditional on the device that your app happens to be running on at the time (the latter behavior is known as *adaptive*).
-2.  Port the contents of the WindowsPhone project to an app targeting the Universal device family. If applicable, salvage any other content from the Windows project, using it either unconditionally or adaptively.
-3.  Port the contents of the Windows project to an app targeting the Universal device family. If applicable, salvage any other content from the WindowsPhone project, using it either unconditionally or adaptively.
-4.  Port the contents of the Windows project to an app targeting the Universal or the Desktop device family and also port the contents of the WindowsPhone project to an app targeting the Universal or the Mobile device family. You can create a solution with a Shared project, and continue to share source code, markup files, and other assets and resources between the two projects. Or, you can create different solutions and still share the same items using links.
+1.  共有プロジェクトのコンテンツを、ユニバーサル デバイス ファミリを対象とするアプリに移植します。 該当する場合は、Windows プロジェクトと WindowsPhone プロジェクトからその他のコンテンツをすべて回収し、それを無条件にアプリで使用するか、その時点でアプリが実行されているデバイスで条件付きで使用します (後者の動作は、*アダプティブ*と呼ばれます)。
+2.  WindowsPhone プロジェクトのコンテンツを、ユニバーサル デバイス ファミリーを対象とするアプリに移植します。 該当する場合は、Windows プロジェクトからその他のコンテンツをすべて回収し、それを無条件に、またはアダプティブに使用します。
+3.  Windows プロジェクトのコンテンツを、ユニバーサル デバイス ファミリーを対象とするアプリに移植します。 該当する場合は、WindowsPhone プロジェクトからその他のコンテンツをすべて回収し、それを無条件に、またはアダプティブに使用します。
+4.  Windows プロジェクトの内容を、ユニバーサル デバイス ファミリーまたはデスクトップ デバイス ファミリーが対象のアプリに移植し、WindowsPhone プロジェクトの内容も、ユニバーサル デバイス ファミリーまたはデスクトップ デバイス ファミリーが対象のアプリに移植します。 共有プロジェクトでソリューションを作成し、2 つのプロジェクト間で引き続き、ソース コード、マークアップ ファイル、およびその他の資産とリソースを共有することができます。 または、さまざまなソリューションを作成しながら、リンクを使用して、同じ項目を引き続き共有することもできます。
 
-## If you have a Windows 8.1 app
+## Windows 8.1 アプリがある場合
 
-Port the project to an app targeting the Universal or the Desktop device family. If you choose the Universal device family, and your app calls APIs that are implemented only in the Desktop device family, then you can guard those calls with adaptive code.
+プロジェクトを、ユニバーサル デバイス ファミリーまたはデスクトップ デバイス ファミリーを対象とするアプリに移植します。 ユニバーサル デバイス ファミリを選択しており、デスクトップ デバイス ファミリにのみ実装されている API を呼び出す場合は、これらの呼び出しをアダプティブ コードで保護できます。
 
-## If you have a Windows Phone 8.1 app
+## Windows Phone 8.1 アプリがある場合
 
-Port the project to an app targeting the Universal or the Mobile device family. If you choose the Universal device family, and your app calls APIs that are implemented only in the Mobile device family, then you can guard those calls with adaptive code.
+プロジェクトを、ユニバーサル デバイス ファミリーまたはモバイル デバイス ファミリーを対象とするアプリに移植します。 ユニバーサル デバイス ファミリを選択しており、モバイル デバイス ファミリにのみ実装されている API を呼び出す場合は、これらの呼び出しをアダプティブ コードで保護できます。
 
-## Adapting your app to multiple form factors
+## 複数のフォーム ファクターへのアプリの対応
 
-The option you choose from the previous sections will determine the range of devices that your app or apps will run on, and that may well be a very wide range of devices. Even limiting your app to the Mobile device family still leaves you with a wide range of screen sizes to support. So, if your app will be running on form factors that it didn't formerly support, then test your UI on those form factors and make any change necessary, so that your UI adapts appropriately on each. You can think of this is a post-porting task, or a porting stretch-goal, and there are some examples of it in practice in the [Bookstore2](w8x-to-uwp-case-study-bookstore2.md) and [QuizGame](w8x-to-uwp-case-study-quizgame.md) case studies.
+前のセクションで選んだ選択肢によって、アプリが実行されるデバイスの種類が決まります。場合によっては、非常に多種多様なデバイスになることがあります。 アプリをモバイル デバイス ファミリーに制限した場合でも、さまざまな画面サイズをサポートする必要があります。 そのため、以前はサポートしていなかったフォーム ファクターでアプリが実行される場合は、これらのフォーム ファクターで UI をテストし、必要なすべての変更を加えて、UI が各フォーム ファクターに適切に対応するようにします。 これは、移植後のタスクまたは移植の拡張目標と考えることができます。これについての実践的な例が「[Bookstore2](w8x-to-uwp-case-study-bookstore2.md)」や「[QuizGame](w8x-to-uwp-case-study-quizgame.md)」のケース スタディに紹介されています。
 
-## Approaching porting layer-by-layer
+## レイヤーごとの移植アプローチ
 
-When porting a Universal 8.1 app to the model for UWP apps, virtually all of your knowledge and experience will transfer, as will most of your source code and markup and the software patterns you use.
+ユニバーサル 8.1 アプリを UWP アプリのモデルに移植する場合、実際には、お持ちの知識と経験をすべて役立てることができます。同様に、お使いのソース コードやマークアップ、ソフトウェアのパターンのほとんどを利用することもできます。
 
--   **View**. The view (together with the view model) makes up your app's UI. Ideally, the view consists of markup bound to observable properties of a view model. Another pattern (common and convenient, but only in the short term) is for imperative code in a code-behind file to directly manipulate UI elements. In either case, your UI markup and design—and even imperative code that manipulates UI elements—will be straightforward to port.
--   **View models and data models**. Even if you don't formally embrace separation-of-concerns patterns (such as MVVM), there is inevitably code present in your app that performs the function of view model and data model. View model code makes use of types in the UI framework namespaces. Both view model and data model code also use non-visual operating system and .NET Framework APIs (including APIs for data-access). And those APIs are [available for UWP apps, too](https://msdn.microsoft.com/library/windows/apps/br211369), so most if not all of this code will port without change.
--   **Cloud services**. It's likely that some of your app (perhaps a great deal of it) runs in the cloud in the form of services. The part of the app running on the client device connects to those. This is the part of a distributed app most likely to remain unchanged when porting the client part. If you don't already have one, a good cloud services option for your UWP app is [Microsoft Azure Mobile Services](http://azure.microsoft.com/services/mobile-services/), which provides powerful back-end components that your app can call for services ranging from simple notifications for live tiles updates up to the kind of heavy-lifting scalability a server farm can provide.
+-   **ビュー**。 ビューは (ビュー モデルと共に)、アプリの UI を構成します。 理想的にはビューは、ビュー モデルの監視可能なプロパティに対するマークアップ バインドから成ります。 また、ビュー モデルのもう 1 つのパターンとして、UI 要素を直接操作する分離コード ファイル内の命令型コード用のビュー モデルがあります (このようなビュー モデルは一般的で使いやすいビュー モデルですが、使われるのは短期間です)。 いずれの場合でも、UI マークアップと設計、および UI 要素を操作するための命令型コードについても、移植は簡単に実行できます。
+-   **ビュー モデルとデータ モデル**。 形式的な懸念事項分離パターン (MVVM など) を取り入れていなくても、ビュー モデルおよびデータ モデルの関数を実行するコードがアプリ内に必然的に存在します。 ビュー モデル コードでは、UI フレームワークの名前空間内の型を使用します。 また、ビュー モデルおよびデータ モデル コードは共に、非視覚的なオペレーティング システム API および .NET Framework API を使います (データ アクセス用の API を含みます)。 これらの API は、[UWP アプリでも利用可能](https://msdn.microsoft.com/library/windows/apps/br211369)であるため、このコードの (すべてではありませんが) ほとんどが、変更なしで移植されます。
+-   **クラウド サービス**。 アプリのいくつか (おそらく、その多く) が、サービスの形式でクラウド内で実行します。 クライアント デバイス上で実行する一部のアプリは、こうしたアプリに接続します。 これは、クライアント部分の移植時に、変化しない可能性が最も高い分散アプリの部分です。 まだ用意されていない場合、[Microsoft Azure のモバイル サービス](http://azure.microsoft.com/services/mobile-services/)は、UWP アプリに対する適切なクラウド サービス オプションになります。これは、ライブ タイル更新のための簡単な通知から、サーバー ファームが提供する高負荷のスケーラビリティに至るまで、アプリで一連のサービスを呼び出すことができる強力なバックエンド コンポーネントを提供します。
 
-Before or during the porting, consider whether your app could be improved by refactoring it so that code with a similar purpose is gathered together in layers and not scattered arbitrarily. Factoring your app into layers like those described above makes it easier for you to make your app correct, to test it, and then subsequently to read and maintain it. You can make functionality more reusable by following the Model-View-ViewModel ([MVVM](http://msdn.microsoft.com/magazine/dd419663.aspx)) pattern. This pattern keeps the data, business, and UI parts of your app separate from one another. Even within the UI it can keep state and behavior separate, and separately testable, from the visuals. With MVVM, you can write your data and business logic once and use it on all devices no matter the UI. It's likely that you'll be able to re-use much of the view model and view parts across devices, too.
+移植前または移植中に、同様の目的を持つコードがレイヤー内に集められ、随意に散在しないように、アプリがリファクタリングによって向上するかどうかを考慮します。 前述したように、アプリをレイヤーにファクタリングすることで、アプリの適合性、テスト、以降の読み取りと維持が容易になります。 Model-View-ViewModel ([MVVM](http://msdn.microsoft.com/magazine/dd419663.aspx)) パターンに従うと、機能をより再利用可能にすることができます。 このパターンにより、アプリのデータ部、ビジネス部、UI 部の相互の分離性が維持されます。 UI 内であっても、状態と動作を別個に維持し、視覚効果から個別にテスト可能にすることができます。 MVVM により、データおよびビジネス ロジックを 1 回記述すれば、UI に関係なく、それをすべてのデバイスで使うことができます。 各デバイスで、ビュー モデルとビュー部品の多くを再利用できる可能性があります。
 
-## If you have a Microsoft Visual Studio 2015 RC project
+## Microsoft Visual Studio 2015 RC プロジェクトがある場合
 
-If you have a Windows 10 project that you created with Microsoft Visual Studio 2015 RC, then see [Update your UWP Microsoft Visual Studio 2015 RC project to RTM](update-your-visual-studio-2015-rc-project-to-rtm.md).
+Microsoft Visual Studio 2015 RC で作成した Windows 10 プロジェクトがある場合は、「[UWP Microsoft Visual Studio 2015 RC プロジェクトを RTM に更新する](update-your-visual-studio-2015-rc-project-to-rtm.md)」をご覧ください。
  
-| Topic | Description |
+| トピック | 説明 |
 |-------|-------------|
-| [Porting the project](w8x-to-uwp-porting-to-a-uwp-project.md) | You have two options when you begin the porting process. One is to edit a copy of your existing project files, including the app package manifest (for that option, see the info about updating your project files in [Migrate apps to the Universal Windows Platform (UWP)](https://msdn.microsoft.com/library/mt148501.aspx)). The other option is to create a new Windows 10 project in Visual Studio and copy your files into it. |
-| [Troubleshooting](w8x-to-uwp-troubleshooting.md) | We highly recommend reading to the end of this porting guide, but we also understand that you're eager to forge ahead and get to the stage where your project builds and runs. To that end, you can make temporary progress by commenting or stubbing out any non-essential code, and then returning to pay off that debt later. The table of troubleshooting symptoms and remedies in this topic may be helpful to you at this stage, although it's not a substitute for reading the next few topics. You can always refer back to the table as you progress through the later topics. |
-| [Porting XAML and UI](w8x-to-uwp-porting-xaml-and-ui.md) | The practice of defining UI in the form of declarative XAML markup translates extremely well from Universal 8.1 apps to UWP apps. You'll find that most of your markup is compatible, although you may need to make some adjustments to the system Resource keys or custom templates that you're using. |
-| [Porting for I/O, device, and app model](w8x-to-uwp-input-and-sensors.md) | Code that integrates with the device itself and its sensors involves input from, and output to, the user. It can also involve processing data. But, this code is not generally thought of as either the UI layer or the data layer. This code includes integration with the vibration controller, accelerometer, gyroscope, microphone and speaker (which intersect with speech recognition and synthesis), (geo)location, and input modalities such as touch, mouse, keyboard, and pen. |
-| [Case study: Bookstore1](w8x-to-uwp-case-study-bookstore1.md) | This topic presents a case study of porting a very simple Universal 8.1 app to a Windows 10 UWP app. A Universal 8.1 app is one that builds one app package for Windows 8.1, and a different app package for Windows Phone 8.1. With Windows 10, you can create a single app package that your customers can install onto a wide range of devices, and that's what we'll do in this case study. See [Guide to UWP apps](https://msdn.microsoft.com/library/windows/apps/dn894631). |
-| [Case study: Bookstore2](w8x-to-uwp-case-study-bookstore2.md) | This case study—which builds on the info given in [SemanticZoom](https://msdn.microsoft.com/library/windows/apps/hh702601) control. In the view model, each instance of the class Author represents the group of the books written by that author, and in the SemanticZoom, we can either view the list of books grouped by author or we can zoom out to see a jump list of authors. |
-| [Case study: QuizGame](w8x-to-uwp-case-study-quizgame.md) | This topic presents a case study of porting a functioning peer-to-peer quiz game WinRT 8.1 sample app to a Windows 10 UWP app. |
+| [プロジェクトの移植](w8x-to-uwp-porting-to-a-uwp-project.md) | 移植プロセスを開始するとき、2 つの方法から選ぶことができます。 1 つは、既にあるプロジェクト ファイル (アプリ パッケージ マニフェストなど) のコピーを編集する方法です。この方法については、[アプリをユニバーサル Windows プラットフォーム (UWP) へ移行する](https://msdn.microsoft.com/library/mt148501.aspx)に記載されているプロジェクト ファイルの更新に関する説明をご覧ください。 もう 1 つの方法は、Visual Studio で新しい Windows 10 プロジェクトを作成し、お使いのファイルをそのプロジェクトにコピーする方法です。 |
+| [トラブルシューティング](w8x-to-uwp-troubleshooting.md) | この移植ガイドを最後まで読み進むことを強くお勧めしますが、まず先に進み、プロジェクトの構築と実行の段階に到達することを非常に望まれていることも理解できます。 このために、重要でないコードに対してコメント アウトやスタブの挿入を行って一時的に先に進み、後でその部分に戻って対応することもできます。 このトピックには、トラブルシューティングの現象とその対処法を示す表が記載されており、以降のいくつかのトピックに示されている情報に代わるものではありませんが、この段階での作業に役立ちます。 以降のトピックを読み進む中で、いつでもこの表に戻って参考にすることができます。 |
+| [XAML と UI の移植](w8x-to-uwp-porting-xaml-and-ui.md) | 宣言型 XAML マークアップ形式での UI の定義は、ユニバーサル 8.1 アプリから UWP アプリに適切に変換されます。 ほとんどのマークアップには互換性がありますが、場合によっては、使っているシステムのリソース キーやカスタム テンプレートを調整する必要があります。 |
+| [入出力、デバイス、アプリ モデルの移植](w8x-to-uwp-input-and-sensors.md) | デバイス自体とそのセンサーに統合するコードには、ユーザーに対する入力と出力が含まれます。 また、データ処理を含むこともあります。 ただしこのコードは一般には、UI レイヤーまたはデータ レイヤーのいずれにも見なされません。 このコードには、振動コントローラー、加速度計、ジャイロスコープ、マイクとスピーカー (音声認識と音声合成で使います)、地理位置情報、およびタッチ、マウス、キーボード、ペンなどの入力モダリティとの統合が含まれます。 |
+| [ケース スタディ: Bookstore1](w8x-to-uwp-case-study-bookstore1.md) | このトピックでは、シンプルなユニバーサル 8.1 アプリを Windows 10 UWP アプリへ移植するケース スタディについて説明します。 ユニバーサル 8.1 アプリは、Windows 8.1 用のアプリ パッケージと、Windows Phone 8.1 用の別のアプリ パッケージをビルドするアプリです。 Windows 10 では、さまざまなデバイスにユーザーがインストールできる単一のアプリ パッケージを作成できます。このようなアプリ パッケージの作成を、このケース スタディで取り上げます。 「[UWP アプリのガイド](https://msdn.microsoft.com/library/windows/apps/dn894631)」をご覧ください。 |
+| [ケース スタディ: Bookstore2](w8x-to-uwp-case-study-bookstore2.md) | このケース スタディは、[SemanticZoom](https://msdn.microsoft.com/library/windows/apps/hh702601) コントロールに関する情報に基づいて作成されています。 ビュー モデルでは、Author クラスの各インスタンスが該当する著者によって書かれた書籍のグループを表します。SemanticZoom では、著者ごとにグループ化された書籍の一覧を表示したり、縮小して著者のジャンプ リストを表示したりすることができます。 |
+| [ケース スタディ: QuizGame](w8x-to-uwp-case-study-quizgame.md) | このトピックでは、機能しているピア ツー ピアのクイズ ゲームに関する WinRT 8.1 サンプル アプリを、Windows 10 UWP アプリへ移植する場合のケース スタディについて説明します。 |
 
-## Related topics
+## 関連トピック
 
-**Documentation**
-* [Windows Runtime reference](https://msdn.microsoft.com/library/windows/apps/br211377)
-* [Building Universal Windows apps for all Windows devices](http://go.microsoft.com/fwlink/p/?LinkID=397871)
-* [Designing UX for apps](https://msdn.microsoft.com/library/windows/apps/hh767284)
+**ドキュメント**
+* [Windows ランタイム リファレンス](https://msdn.microsoft.com/library/windows/apps/br211377)
+* [すべての Windows デバイスを対象としたユニバーサル Windows アプリの構築](http://go.microsoft.com/fwlink/p/?LinkID=397871)
+* [アプリの UX の設計](https://msdn.microsoft.com/library/windows/apps/hh767284)
 
 
 

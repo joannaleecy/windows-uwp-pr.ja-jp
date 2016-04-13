@@ -1,66 +1,66 @@
 ---
-Description: You can promote your app or in-app product (IAP) in the Windows Store by putting it on sale for a limited time.
-title: Put apps and IAPs on sale
+Description: 期間限定で特売することにより Windows ストアでアプリやアプリ内製品 (IAP) の販促活動をすることができます。
+title: アプリと IAP の販売
 ms.assetid: 71ABA960-0CDC-4E35-A1C8-1D34B6673817
 ---
 
-# Put apps and IAPs on sale
+# アプリと IAP の販売
 
 
-You can promote your app or in-app product (IAP) in the Windows Store by putting it on sale for a limited time.
+期間限定で特売することにより Windows ストアでアプリやアプリ内製品 (IAP) の販促活動をすることができます。
 
-When you schedule a sale to temporarily lower the price of your app or IAP, customers viewing your Store listing will see that the price has been reduced, and they'll be able to purchase it at the lower price during the time period that you have selected. If you lower the price to **Free**, they can download it without paying at all during the sale period.
+アプリまたは IAP の価格を一時的に下げる特売のスケジュールを設定すると、ストアの一覧を表示しているユーザーは価格が下げられていることを確認し、指定した期間の間それを割引価格で購入することができます。 価格を **[無料]** にした場合は、特売期間中、無料でダウンロードできます。
 
-> **Note**  Sale pricing is only shown to your customers on Windows 10. On other operating systems, customers will see the regular price for your app or IAP. You can always change a price by choosing a different price tier in a new submission, but it will not be displayed as a limited-time sale.
+> **注:** セール価格は、Windows 10 のユーザーにのみ表示されます。 他のオペレーティング システムでは、アプリや IAP の通常価格がユーザーに表示されます。 価格は新しい申請で異なる価格帯を選択することでいつでも変更できますが、その場合、期間限定販売としては表示されません。
 
-## Scheduling a sale
-
-
-Sales are scheduled as part of the submission for an app or IAP. If you want to schedule a sale for an app or IAP that has already been published, you'll need to create a new submission, even if that is the only change you want to make.
-
-**To schedule a sale**
-
-1.  On the **Pricing and availability** page of an in-progress app or IAP submission, go to the **Sale pricing** section.
-2.  Click **New sale**.
-3.  Enter the date and time for the start and end of the sale period. The times shown are in UTC.
-
-   > **Note**  For IAP sales, you can't schedule sales that overlap with each other.
-
-4.  Choose your sale price from the drop-down list. You can pick any price, including **Free**.
-5.  If you'd like to enter custom prices for this sale, click **Show custom market pricing options**. You can set custom sale prices per market (or exclude specific markets from the sale) here. For more info, see [Define pricing and market selection](define-pricing-and-market-selection.md).
-
-    > **Note**  Market selections that you make in the **Sale pricing** section will not affect the markets in which the app is offered; these selections only determine whether a sale price is offered, and in which markets. If you set sale pricing for a market in which your app is not available, this won't cause the app to become available in that market.
-
-6.  Click **Done** to save the scheduled sale.
-7.  Click **Save** at the bottom of the **Pricing and availability** page, then click **Submit to the Store** from the submission overview.
-
-> **Note**  It's possible to select a price tier that is higher than your app's base price. However, sale pricing will only be shown to customers if the sale price is lower than the regular price of the app in that market. Selecting a price that is higher than your app's base price might be appropriate for your sale if you've already set custom prices in certain markets that are higher than your app's base price, and you want to temporarily lower the price in those markets (but the sale price is still higher than the app's base price). If your selections would result in the price of the app being raised in a certain market, we won't show that (higher) price to customers in that market; they will continue to see the app at its previous (lower) price. We'll also show customers the lowest price available if you schedule separate overlapping sales with different prices.
-
-## Changing or canceling a scheduled sale
+## 特売のスケジュールの設定
 
 
-To revise or cancel a sale that you've previously scheduled for an app or IAP, you'll need to create a new submission and submit it to the Store.
+特売は、アプリまたは IAP の申請の一環としてスケジュールされます。 既に公開されているアプリや IAP の特売のスケジュールを設定する場合、それが唯一の変更点であったとしても、新しい申請を作成する必要があります。
 
-**To edit a scheduled sale**
+**特売のスケジュールを設定するには**
 
-1.  On the **Pricing and availability** page of an in-progress app or IAP submission, go to the **Sale pricing** section.
-2.  Find the sale that you want to update, then click its price to edit the sale.
-3.  Make your changes and then click **Done**.
-4.  Click **Save** at the bottom of the **Pricing and availability** page, then click **Submit to the Store** from the submission overview.
+1.  進行中のアプリまたは IAP 申請の **[価格と使用可能状況]** ページで、**[セール価格]** セクションに移動します。
+2.  **[新しい販売]** をクリックします。
+3.  特売を開始、終了する日時を入力します。 表示される時刻は UTC です。
 
-After your submission goes through the certification process, the changes will take effect (even if the sale had already started).
+   > **注:** IAP の特売の場合、互いに重なる特売をスケジュールすることはできません。
 
-> **Tip**  You can reuse a completed sale in a new submission by editing its start and end dates. This is especially useful if you’ve configured a sale with complicated custom market pricing.
+4.  ドロップダウンの一覧から販売価格を選びます。 **[無料]** を含む任意の価格を選択できます。
+5.  この特売のカスタム価格を入力する場合は、**[カスタム市場価格オプションを表示する]** をクリックします。 市場ごとのカスタム販売価格はここで設定できます (特売から特定の市場を除外することもできます)。 詳しくは、「[価格と市場の選択の定義](define-pricing-and-market-selection.md)」をご覧ください。
+
+    > **注:** **[セール価格]** セクションで行った市場の選択は、アプリが提供される市場には影響しません。これらの選択では、セール価格を提供するかどうかとその対象の市場のみを決定します。 アプリを利用できない市場のセール価格を設定しても、これによってその市場でアプリが利用できるようになることはありません。
+
+6.  **[完了]** をクリックして、特売のスケジュールを保存します。
+7.  **[価格と使用可能状況]** ページの下部の **[保存]** をクリックし、申請の概要から **[ストアに提出]** をクリックします。
+
+> **注:** アプリの基準価格より高い価格帯を選択することができます。 ただし、セール価格がユーザーに表示されるのは、価格がその市場でのアプリの通常価格よりも安い場合のみです。 特定の市場でアプリの基準価格より高いカスタム価格を既に設定していて、その市場での価格を一時的に下げる場合 (それでもセール価格はアプリの基準価格より高い)、アプリの基準価格より高い価格を選択することが特売において適切であることがあります。 選択の結果として特定の市場でアプリの価格が上がる場合、その (高い) 価格はその市場のユーザーには表示されず、引き続き以前の (低い) 価格でアプリが表示されます。 異なる価格で別の重複する特売をスケジュールする場合にも、ユーザーには適用される最低価格が表示されます。
+
+## スケジュールされた特売の変更または取り消し
+
+
+アプリや IAP に対して以前にスケジュール設定した特売を変更したり取り消したりするには、新しい申請を作成し、ストアに提出する必要があります。
+
+**スケジュールされた特売を編集するには**
+
+1.  進行中のアプリまたは IAP 申請の **[価格と使用可能状況]** ページで、**[セール価格]** セクションに移動します。
+2.  更新する特売を確認し、その価格をクリックして特売を編集します。
+3.  変更を加え、**[完了]** をクリックします。
+4.  **[価格と使用可能状況]** ページの下部の **[保存]** をクリックし、申請の概要から **[ストアに提出]** をクリックします。
+
+変更は申請の認定プロセスが完了した後に有効になります (特売が既に開始している場合でも)。
+
+> **ヒント:** 完了した特売は、開始日と終了日を編集して新しい申請で再利用できます。 これは特に、複雑なカスタム市場価格で特売を構成した場合に便利です。
  
-**To cancel a scheduled sale**
+**スケジュールされた特売を取り消すには**
 
-1.  On the **Pricing and availability** page of an in-progress app or IAP submission, go to the **Sale pricing** section.
-2.  Find the sale that you want to cancel and click **Delete** to remove it.
-3.  Click **Save** at the bottom of the **Pricing and availability** page, then click **Submit to the Store** from the submission overview.
+1.  進行中のアプリまたは IAP 申請の **[価格と使用可能状況]** ページで、**[セール価格]** セクションに移動します。
+2.  取り消す特売を確認し、**[削除]** をクリックして削除します。
+3.  **[価格と使用可能状況]** ページの下部の **[保存]** をクリックし、申請の概要から **[ストアに提出]** をクリックします。
 
-As long as the sale hasn't started by the time the submission completes the certification process, the deleted sale won't run at all. If you delete a sale that has already ended, the sale will simply be removed from your **Pricing and availability** page.
+申請の認定プロセスが完了するまでに特売が開始されない場合、削除された特売が実行されることはありません。 既に終了した特売を削除した場合は、**[価格と使用可能状況]** ページから特売が削除されるだけです。
 
-> **Important**   Since customers can see the scheduled end date when viewing your app's Store listing, we don't recommend deleting a sale after it's started. If you delete a sale that is already in progress, the sale will end when the submission completes the certification process, which can be frustrating to your potential customers.
+> **重要:** ストアのアプリの内容を表示するとユーザーはスケジュールされた終了日を確認できるため、開始後に特売を削除することはお勧めしません。 既に始まっている特売を削除した場合、特売は認定プロセスが完了した時点で終了するため、潜在的なユーザーに不満を感じさせる可能性があります。
 
 
 

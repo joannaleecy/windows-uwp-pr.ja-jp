@@ -1,34 +1,34 @@
 ---
-Description: The time picker gives you a standardized way to let users pick a time value using touch, mouse, or keyboard input.
-title: Time picker
+Description: ユーザーはタッチ、マウス、またはキーボードといった入力を使って時刻値を標準化された方法で選択出来ます。
+title: 時刻の選択コントロール
 ms.assetid: 5124ecda-09e6-449e-9d4a-d969dca46aa3
-label: Time picker
+label: 時刻の選択コントロール
 template: detail.hbs
 ---
 
-# Time picker
+# 時刻の選択コントロール
 
-The time picker gives you a standardized way to let users pick a time value using touch, mouse, or keyboard input. 
+TimePicker は、ユーザーがタッチ、マウス、またはキーボード入力を使って時刻値を選択できる標準化された方法です。 
 
-<span class="sidebar_heading" style="font-weight: bold;">Important APIs</span>
+<span class="sidebar_heading" style="font-weight: bold;">重要な API</span>
 
--   [**TimePicker class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx)
--   [**Time property**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.time.aspx)
+-   [**TimePicker クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx)
+-   [**Time プロパティ**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.time.aspx)
 
-## Is this the right control?
-Use a time picker to let a user pick a single time value.
+## 適切なコントロールの選択
+時刻の選択コントロールを使って、ユーザーが単一の時刻値を選べるようにします。
 
-For more info about choosing the right control, see the [Date and time controls](date-and-time.md) article.
+適切なコントロールの選択について詳しくは、「[日付と時刻コントロール](date-and-time.md)」をご覧ください。
 
-## Examples
+## 例
 
-The entry point displays the chosen time, and when the user selects the entry point, a picker surface expands vertically from the middle for the user to make a selection. The time picker overlays other UI; it doesn't push other UI out of the way.
+エントリ ポイントには、選んだ時刻が表示されます。ユーザーがエントリ ポイントを選ぶと、選択ツール サーフェスが中央から縦方向に展開されて、時刻を選べるようになります。 時刻の選択は他の UI をオーバーレイし、他の UI を別の位置に移動させることはありません。
 
-![Example of the time picker expanding](images/controls_timepicker_expand.png)
+![展開した時刻の選択コントロールの例](images/controls_timepicker_expand.png)
 
-## Create a time picker
+## 時刻の選択コントロールの作成
 
-This example shows how to create a simple time picker with a header.
+次の例は、ヘッダーを含むシンプルな時刻の選択コントロールを作成する方法を示しています。
 
 ```xaml
 <TimePicker x:Name=arrivalTimePicker Header="Arrival time"/>
@@ -39,20 +39,20 @@ TimePicker arrivalTimePicker = new TimePicker();
 arrivalTimePicker.Header = "Arrival time";
 ```
 
-The resulting time picker looks like this:
+結果として、時刻の選択コントロールは、次のように表示されます。
 
-![Example of time picker](images/time-picker-closed.png)
+![時刻の選択コントロールの例](images/time-picker-closed.png)
 
-> **Note**&nbsp;&nbsp;For important info about date and time values, see [DateTime and Calendar values](date-and-time.md#datetime-and-calendar-values) in the *Date and time controls* article.
+> **注:**&nbsp;&nbsp;日付値と時刻値の重要な情報については、「*日付と時刻コントロール*」の「[DateTime と Calendar の値](date-and-time.md#datetime-and-calendar-values)」をご覧ください。
 
-\[This article contains information that is specific to Universal Windows Platform (UWP) apps and Windows 10. For Windows 8.1 guidance, please download the [Windows 8.1 guidelines PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+\[この記事には、ユニバーサル Windows プラットフォーム (UWP) アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
 
-## Related topics
+## 関連トピック
 
-- [Date and time controls](date-and-time.md)
-- [Calendar date picker](calendar-date-picker.md)
-- [Calendar view](calendar-view.md)
-- [Date picker](date-picker.md)
+- [日付と時刻コントロール](date-and-time.md)
+- [カレンダーの日付の選択コントロール](calendar-date-picker.md)
+- [カレンダー ビュー](calendar-view.md)
+- [日付の選択コントロール](date-picker.md)
 
 
 <!--HONumber=Mar16_HO1-->

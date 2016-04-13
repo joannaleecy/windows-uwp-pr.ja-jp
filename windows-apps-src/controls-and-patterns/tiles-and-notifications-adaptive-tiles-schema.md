@@ -1,20 +1,20 @@
 ---
-Description: Here are the elements and attributes you use to create adaptive tiles.
-title: Adaptive tile schema and templates
+Description: アダプティブ タイルの作成に使う要素と属性を次に示します。
+title: アダプティブ タイル スキーマとテンプレート
 ms.assetid: 858FB05E-87A2-49CF-BE48-570980AD36C8
-label: Adaptive tile schema and templates
+label: アダプティブ タイル スキーマとテンプレート
 template: detail.hbs
 ---
 
-# Adaptive tile templates: schema and guidance
+# アダプティブ タイル テンプレート: スキーマとガイダンス
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-Here are the elements and attributes you use to create adaptive tiles. For instructions and examples, see [Create adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md).
+アダプティブ タイルの作成に使う要素と属性を次に示します。 手順と例については、「[アダプティブ タイルの作成](tiles-and-notifications-create-adaptive-tiles.md)」をご覧ください。
 
-## <span id="tile_element"></span><span id="TILE_ELEMENT"></span>tile element
+## <span id="tile_element"></span><span id="TILE_ELEMENT"></span>tile 要素
 
 
 ``` syntax
@@ -26,7 +26,7 @@ Here are the elements and attributes you use to create adaptive tiles. For instr
 </tile>
 ```
 
-## <span id="visual_element"></span><span id="VISUAL_ELEMENT"></span>visual element
+## <span id="visual_element"></span><span id="VISUAL_ELEMENT"></span>visual 要素
 
 
 ``` syntax
@@ -45,7 +45,7 @@ Here are the elements and attributes you use to create adaptive tiles. For instr
 </visual>
 ```
 
-## <span id="binding_element"></span><span id="BINDING_ELEMENT"></span>binding element
+## <span id="binding_element"></span><span id="BINDING_ELEMENT"></span>binding 要素
 
 
 ``` syntax
@@ -70,7 +70,7 @@ Here are the elements and attributes you use to create adaptive tiles. For instr
 </binding>
 ```
 
-## <span id="image_element"></span><span id="IMAGE_ELEMENT"></span>image element
+## <span id="image_element"></span><span id="IMAGE_ELEMENT"></span>image 要素
 
 
 ``` syntax
@@ -84,7 +84,7 @@ Here are the elements and attributes you use to create adaptive tiles. For instr
   hint-align? = "stretch" | "left" | "center" | "right" />
 ```
 
-## <span id="text_element"></span><span id="TEXT_ELEMENT"></span>text element
+## <span id="text_element"></span><span id="TEXT_ELEMENT"></span>text 要素
 
 
 ``` syntax
@@ -101,9 +101,9 @@ Here are the elements and attributes you use to create adaptive tiles. For instr
 </text>
 ```
 
-textStyle values: caption captionSubtle body bodySubtle base baseSubtle subtitle subtitleSubtle title titleSubtle titleNumeral subheader subheaderSubtle subheaderNumeral header headerSubtle headerNumber
+textStyle の値: caption captionSubtle body bodySubtle base baseSubtle subtitle subtitleSubtle title titleSubtle titleNumeral subheader subheaderSubtle subheaderNumeral header headerSubtle headerNumber
 
-## <span id="group_element"></span><span id="GROUP_ELEMENT"></span>group element
+## <span id="group_element"></span><span id="GROUP_ELEMENT"></span>group 要素
 
 
 ``` syntax
@@ -115,7 +115,7 @@ textStyle values: caption captionSubtle body bodySubtle base baseSubtle subtitle
 </group>
 ```
 
-## <span id="subgroup_element"></span><span id="SUBGROUP_ELEMENT"></span>subgroup element
+## <span id="subgroup_element"></span><span id="SUBGROUP_ELEMENT"></span>subgroup 要素
 
 
 ``` syntax
@@ -131,15 +131,15 @@ textStyle values: caption captionSubtle body bodySubtle base baseSubtle subtitle
 </subgroup>
 ```
 
-**Note**  
-This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
+**注**  
+この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
  
 
-## <span id="related_topics"></span>Related topics
+## <span id="related_topics"></span>関連トピック
 
 
-* [Create adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md)
+* [アダプティブ タイルの作成](tiles-and-notifications-create-adaptive-tiles.md)
  
 
  

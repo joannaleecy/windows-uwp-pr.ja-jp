@@ -1,125 +1,140 @@
 ---
 ms.assetid: 415F4107-0612-4235-9722-0F5E4E26F957
-title: Sensors
-description: Sensors let your app know the relationship between a device and the physical world around it. Sensors can tell your app the direction, orientation, and movement of the device.
+title: センサー
+description: センサーは、デバイスとその周囲の実際の世界の関係をアプリに通知します。 つまり、デバイスの方角や向き、動きをアプリに伝えることができます。
 ---
-# Sensors
+# センサー
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-Sensors let your app know the relationship between a device and the physical world around it. Sensors can tell your app the direction, orientation, and movement of the device. These sensors can help make your game, augmented reality app, or utility app more useful and interactive by providing a unique form of input, such as using the motion of the device to arrange the characters on the screen or to simulate being in a cockpit and using the device as the steering wheel.
+センサーは、デバイスとその周囲の実際の世界の関係をアプリに通知します。 つまり、デバイスの方角や向き、動きをアプリに伝えることができます。 こうしたセンサーは、デバイスのモーションを使って画面上に文字を配置すること、コックピット内のハンドルとしてデバイスのユーザー操作をシミュレートすることなど、ユニークな入力形態を提供することにより、ゲーム、拡張現実アプリ、ユーティリィティ アプリをより有用かつ対話的にするために役立ちます。
 
-As a general rule, decide from the outset whether your app will depend exclusively on sensors or if sensors will just offer an additional control mechanism. For example, a driving game using a device as a virtual steering wheel could alternatively be controlled through an on-screen GUI – this way, the app works regardless of the sensors available on the system. On the other hand, a marble tilt maze could be coded to only work on systems that have the appropriate sensors. You must make the strategic choice of whether to fully rely on sensors. Note that a mouse/touch control scheme trades immersion for greater control.
+一般に、アプリがセンサーのみに依存するかどうか、またはセンサーにより追加制御機構が提供されているかどうかを最初に特定しておきます。 たとえば、仮想ハンドルとしてデバイスを使うドライビング ゲームで、代わりに画面上の GUI を通じた制御が可能な場合が考えられます。この場合、システムでセンサーが使用できるかどうかにかかわらずアプリが動作します。 それに対して、ビー玉傾斜迷路ゲームでは、適切なセンサーを備えるシステムでのみ動作するようにコーディングされる場合も考えられます。 センサーに完全に依存するかどうかについて、戦略的な選択を行う必要があります。 マウス/タッチ制御スキームでは、没入感とより微細な制御性が両立しないことに注意してください。
 
-The following video demonstrates some of the sensors available to you when you are building your app. This is not an exhaustive list, but goes over some of the more common sensors and demonstrates their purpose.
+次のビデオでは、アプリの開発時に使用できるセンサーについて説明しています。 これは包括的な一覧ではありまりませんが、いくつかの一般的なセンサーとその目的について説明します。
 
-<iframe src="https://hubs-video.ssl.catalog.video.msn.com/embed/acea5c8e-8699-483b-87f0-f65f80065470/IA?csid=ux-en-us&MsnPlayerLeadsWith=html&PlaybackMode=Inline&MsnPlayerDisplayShareBar=false&MsnPlayerDisplayInfoButton=false&iframe=true&QualityOverride=HD" width="720" height="405" allowFullScreen="true" frameBorder="0" scrolling="no">One dev minute - Sensors Overview</iframe>
+<iframe src="https://hubs-video.ssl.catalog.video.msn.com/embed/acea5c8e-8699-483b-87f0-f65f80065470/IA?csid=ux-en-us&MsnPlayerLeadsWith=html&PlaybackMode=Inline&MsnPlayerDisplayShareBar=false&MsnPlayerDisplayInfoButton=false&iframe=true&QualityOverride=HD" width="720" height="405" allowFullScreen="true" frameBorder="0" scrolling="no">One Dev Minute - センサーの概要</iframe>
 
-| Topic                                                       | Description  |
+| トピック                                                       | Description  |
 |-------------------------------------------------------------|--------------|
-| [Calibrate sensors](calibrate-sensors.md)                   | Sensors in a device based on the magnetometer – the compass, inclinometer and orientation sensor - can become in need of calibration due to environmental factors. The [<strong>MagnetometerAccuracy</strong>](https://msdn.microsoft.com/library/windows/apps/Dn297552) enumeration can help determine a course of action when your device is in need of calibration. |
-| [Sensor orientation](sensor-orientation.md)                 | Sensor data from the [<strong>OrientationSensor</strong>](https://msdn.microsoft.com/library/windows/apps/BR206371) classes is defined by their reference axes. These axes are defined by the device's landscape orientation and rotate with the device as the user turns it. |
-| [Use the accelerometer](use-the-accelerometer.md)           | Learn how to use the accelerometer to respond to user movement. |
-| [Use the compass](use-the-compass.md)                       | Learn how to use the compass to determine the current heading. |
-| [Use the gyrometer](use-the-gyrometer.md)                   | Learn how to use the gyrometer to detect changes in user movement. | 
-| [Use the inclinometer](use-the-inclinometer.md)             | Learn how to use the inclinometer to determine pitch, roll, and yaw. |
-| [Use the light sensor](use-the-light-sensor.md)             | Learn how to use the ambient light sensor to detect changes in lighting. |
-| [Use the orientation sensor](use-the-orientation-sensor.md) | Learn how to use the orientation sensors to determine the device orientation.|
+| [センサーの調整](calibrate-sensors.md)                   | デバイスの磁力計 (コンパス、傾斜計、方位センサー) に基づくセンサーは、環境の要因に応じて調整が必要になることがあります。 [
+            <strong>MagnetometerAccuracy</strong>](https://msdn.microsoft.com/library/windows/apps/Dn297552) 列挙値は、デバイスの調整が必要になる場合の対応策を決めるのに役立ちます。 |
+| [センサーの向き](sensor-orientation.md)                 | [
+            <strong>OrientationSensor</strong>](https://msdn.microsoft.com/library/windows/apps/BR206371) クラスのセンサー データは、基準軸によって定義されます。 これらの軸はデバイスの横長の向きで定義され、ユーザーがデバイスの向きを変えると、デバイスと共に回転します。 |
+| [加速度計の使用](use-the-accelerometer.md)           | 加速度計を使ってユーザーの動きに応答する方法を説明します。 |
+| [コンパスの使用](use-the-compass.md)                       | コンパスを使って現在の方位を検出する方法を説明します。 |
+| [ジャイロメーターの使用](use-the-gyrometer.md)                   | ジャイロメーターを使ってユーザーの動きの変化を検出する方法を説明します。 | 
+| [傾斜計の使用](use-the-inclinometer.md)             | 傾斜計を使ってピッチ、ロール、ヨーを検出する方法を説明します。 |
+| [光センサーの使用](use-the-light-sensor.md)             | 環境光センサーを使って環境光の変化を検出する方法を説明します。 |
+| [方位センサーの使用](use-the-orientation-sensor.md) | 方位センサーを使ってデバイスの向きを判断する方法について説明します。|
 
-## Sensor batching
+## センサーの一括処理
 
-Some sensors support the concept of batching. This will vary depending on the individual sensor available. When a sensor implements batching, it collects several points of data over a specified time interval and then transfers all of that data at one time. This is different from normal behavior where a sensor reports its findings as soon as it performs a reading. Consider the following diagram which shows how data is collected and then delivered, first with normal delivery and then with batched delivery.
+一部のセンサーは、一括処理の概念をサポートします。 このサポートは、利用できる個々のセンサーによって異なります。 センサーが一括処理を実装すると、指定された期間のいくつかのポイントでデータを収集してから、そのすべてのデータを一度に転送します。 これは、センサーによる読み取りと同時に検出結果が報告されるといった通常の動作とは異なります。 次の図について考えてみましょう。この図では、データがどのように収集され、配信されるかが示されています。最初に示されているのが通常の配信で、次に一括処理による配信が示されています。
 
-![Sensor batch collection](images/batchsample.png)
+![センサーの一括処理による収集](images/batchsample.png)
 
-The primary advantage for sensor batching is prolonging battery life. When the data is not sent immediately, that saves on processor power and prevents the data from needing to be immediately processed. Parts of the system can sleep until they are needed, which generates a significant power savings.
+センサーで一括処理を行う主な利点は、バッテリの寿命が延長されることです。 データを直ちに送信しない場合は、プロセッサの電力が節約され、データをすぐに処理する必要がなくなります。 システムの一部は、必要とされるまでスリープ状態になる場合があり、消費電力の大幅な削減につながります。
 
-You can influence how often the sensor sends batches by adjusting the latency. For example, the [**Accelerometer**](https://msdn.microsoft.com/library/windows/apps/BR225687) sensor has the [**ReportLatency**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.reportlatency) property. When this property is set for an application, the sensor will send data after the specified amount of time. You can control how much data is accumulated over a given latency by setting the [**ReportInterval**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.reportinterval) property.
+待機時間を調整すると、一括処理によるデータをセンサーが送信する頻度が影響を受けます。 たとえば、[**Accelerometer**](https://msdn.microsoft.com/library/windows/apps/BR225687) センサーには [**ReportLatency**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.reportlatency) プロパティがあります。 このプロパティをアプリケーション用に設定すると、センサーは指定された時間の経過後にデータを送信します。 [
+            **ReportInterval**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.reportinterval) プロパティを設定することで、指定の待機時間に対して蓄積されるデータ量を制御できます。
 
-There are a couple of caveats to keep in mind with respect to setting the latency. The first caveat is that each sensor has a [**MaxBatchSize**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.sensors.accelerometer.maxbatchsize.aspx) that it can support based on the sensor itself. This is the number of events that the sensor can cache before it is forced to send them. If you multiply **MaxBatchSize** by [**ReportInterval**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.reportinterval), that determines the maximum [**ReportLatency**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.reportlatency) value. If you specify a higher value than this, the maximum latency will be used so that you do not lose data. In addition, multiple applications can each set a desired latency. In order to meet the needs of all applications, the shortest latency period will be used. Because of these facts, the latency you set in your application may not match the observed latency.
+待機時間の設定について注意事項がいくつかあります。 最初の注意事項は、各センサーの [**MaxBatchSize**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.sensors.accelerometer.maxbatchsize.aspx) プロパティによるサポートは、センサー自体に基づいて実行されるという点です。 このプロパティは、強制的にイベントが送信されるまでにセンサーがキャッシュできるイベントの数を表します。 **MaxBatchSize** に [**ReportInterval**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.reportinterval) を乗算すると、[**ReportLatency**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.reportlatency) の最大値が決まります。 この値よりも高い値を指定した場合は、データが失われないようにするために、最大待機時間が使われます。 また、複数のアプリケーションのそれぞれで、目的の待機時間を設定できます。 ただし、すべてのアプリケーションのニーズに対応するために、最短の待機時間が使われます。 このため、アプリケーションで設定した待機時間が実際の待機時間とは一致しない場合があります。
 
-If a sensor is using batch reporting, calling [**GetCurrentReading**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.getcurrentreading) will clear the current batch of data and start a new latency period.
+センサーで一括処理のレポートを使う場合は、[**GetCurrentReading**](https://msdn.microsoft.com/library/windows/apps/windows.devices.sensors.accelerometer.getcurrentreading) を呼び出すことによって、現在の一括処理のデータが消去され、新しい待機時間が開始されます。
 
-## Accelerometer
+## 加速度計
 
-The [**Accelerometer**](https://msdn.microsoft.com/library/windows/apps/BR225687) sensor measures G-force values along the X, Y, and Z axes of the device and is great for simple motion-based applications. Note that G-force values include acceleration due to gravity. If the device has the [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) of **FaceUp** on a table, then the accelerometer would read -1 G on the Z axis. Thus, accelerometers do not necessarily measure just coordinate acceleration – the rate of change of velocity. When using an accelerometer, make sure to differentiate between the gravitational vector from gravity and the linear acceleration vector from motion. Note that the gravitational vector should normalize to 1 for a stationary device.
+[
+            **Accelerometer**](https://msdn.microsoft.com/library/windows/apps/BR225687) センサーは、デバイスの X、Y、Z 軸に沿った重力加速度値を測定するもので、簡単なモーション ベースのアプリに適しています。 重力加速度値には、重力による加速度が含まれることに注意してください。 デバイスがテーブルの上にあり [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) が **FaceUp** である場合、加速度計の読み取り値は Z 軸で -1 G になります。 したがって、加速度計では必ずしも座標での加速度 (速度の変化率) のみを測定するわけではありません。 加速度計を使う場合、重力によるベクターと、モーションによる直線加速度ベクターとを区別する必要があります。 静止するデバイスでは重力ベクターを 1 に正規化する必要があることに注意してください。
 
-The following diagrams illustrate:
+次に、図でこれを説明します。
 
--   V1 = Vector 1 = Force due to gravity
--   V2 = Vector 2 = -Z axis of device chassis (points out of back of screen)
--   Θi = Tilt angle (inclination) = angle between –Z axis of device chassis and gravity vector
+-   V1 = ベクター 1 = 重力
+-   V2 = ベクター 2 = デバイス シャーシの -Z 軸 (画面の背面方向)
+-   Θi = 傾斜角 (傾き) = デバイス シャーシと重力ベクターの Z 軸間の角度
 
-![Accelerometer](images/accelerometer1.png)![Accelerometer measurement](images/accelerometer2.png)
+![加速度計](images/accelerometer1.png)![加速度計の測定](images/accelerometer2.png)
 
-Apps that might use the accelerometer sensor include a game where a marble on the screen rolls in the direction you tilt the device (gravitational vector). This type of functionality closely mirrors that of the [**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR225766) and could also be done with that sensor by using a combination of pitch and roll. Using the accelerometer’s gravity vector simplifies this somewhat by providing an easily mathematically manipulated vector for device tilt. Another example would be an app that makes a whip’s cracking sound when the user flicks the device through the air (linear acceleration vector).
+加速度計センサーを使うアプリとしては、デバイスを傾けた方向 (重力ベクター) に画面のビー玉が転がるゲームなどが考えられます。 このタイプの機能は、[**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR225766) の機能を厳密に反映したもので、ピッチとロールの組み合わせによりセンサーを扱うこともできます。 この処理は、加速度計の重力ベクターを使い、デバイスの傾きに対して簡単に数学的に操作されたベクターを提供することにより、ある程度簡素化されます。 もう 1 つの例としては、ユーザーが空中でデバイスをすばやく動かしたときに (直線加速度ベクター)、むちを打つ音を出すアプリが挙げられます。
 
-## Activity sensor
+## アクティビティ センサー
 
-The [**Activity**](https://msdn.microsoft.com/library/windows/apps/Dn785096) sensor determines the current status of the device attached to the sensor. This sensor is frequently used in fitness applications to keep track of when a user carrying a device is running or walking. See [**ActivityType**](https://msdn.microsoft.com/library/windows/apps/Dn785128) for a list of possible activities that can be detected by this sensor API.
+[
+            **Activity**](https://msdn.microsoft.com/library/windows/apps/Dn785096) センサーは、センサーに取り付けられたデバイスの現在の状態を特定します。 このセンサーはフィットネス アプリによく使用されます。デバイスを携帯するユーザーがランニングやウォーキングを行う場合に追跡します。 このセンサー API で検出できるアクティビティの一覧については、[**ActivityType**](https://msdn.microsoft.com/library/windows/apps/Dn785128) をご覧ください。
 
-## Altimeter
+## 高度計
 
-The [**Altimeter**](https://msdn.microsoft.com/library/windows/apps/Dn858893) sensor returns a value that indicates the altitude of the sensor. This enables you to keep track of a change in altitude in terms of meters from sea level. One example of an app that might use this would be a running app that keeps track of the elevation changes during a run to calculate the calories burned. In this case, this sensor data could be combined with the [**Activity**](https://msdn.microsoft.com/library/windows/apps/Dn785096) sensor to provide more accurate tracking information.
+[
+            **Altimeter**](https://msdn.microsoft.com/library/windows/apps/Dn858893) センサーは、センサーの高度を示す値を返します。 これにより、海面からの高さの変化をメートルで追跡できます。 これを使う可能性のあるアプリの 1 例としてランニング用アプリがあります。消費カロリーの計算時に高さの変化を追跡します。 この場合、このセンサー データを [**Activity**](https://msdn.microsoft.com/library/windows/apps/Dn785096) センサーと組み合わせて、より正確な追跡情報を提供できます。
 
-## Barometer
+## 気圧計
 
-The [**Barometer**](https://msdn.microsoft.com/library/windows/apps/Dn872405) sensor enables an application to get barometric readings. A weather application could use this information to provide the current atmospheric pressure. This could be used to provide more detailed information and predict potential weather changes.
+[
+            **Barometer**](https://msdn.microsoft.com/library/windows/apps/Dn872405) センサーを使用すると、アプリで気圧の値を取得できます。 天気予報のアプリはこの情報を使用して、現在の気圧を提供できます。 これを利用して、詳細な情報を提供し、天気変化の可能性を予想できます。
 
-## Compass
+## コンパス
 
-The [**Compass**](https://msdn.microsoft.com/library/windows/apps/BR225705) sensor returns a 2D heading with respect to magnetic north based on the horizontal plane of the earth. The compass sensor should not be used in determining specific device orientation or for representing anything in 3D space. Geographical features can cause natural declination in the heading, so some systems support both [**HeadingMagneticNorth**](https://msdn.microsoft.com/library/windows/apps/BR225705reading_headingmagneticnorth) and [**HeadingTrueNorth**](https://msdn.microsoft.com/library/windows/apps/BR225705reading_headingtruenorth). Think about which one your app prefers, but remember that not all systems will report a true north value. The gyrometer and magnetometer (a device measuring magnetic strength magnitude) sensors combine their data to produce the compass heading, which has the net effect of stabilizing the data (magnetic field strength is very unstable due to electrical system components).
+[
+            **Compass**](https://msdn.microsoft.com/library/windows/apps/BR225705) センサーは、地球の水平面に基づいて、磁北を基準にした 2 次元の方位を返します。 コンパス センサーは、特定のデバイスの向きを特定するため、または 3 次元空間での何らかの要素を表すために使用しないでください。 地理的な特徴により、方位に自然なずれが生じる場合があります。したがって、一部のシステムでは、[**HeadingMagneticNorth**](https://msdn.microsoft.com/library/windows/apps/BR225705reading_headingmagneticnorth) と [**HeadingTrueNorth**](https://msdn.microsoft.com/library/windows/apps/BR225705reading_headingtruenorth) を共にサポートしています。 それぞれのアプリでいずれが好ましいかを考えてください。ただし、すべてのシステムで真北値がレポートされるとは限らないことに注意してください。 ジャイロメーターおよび磁力計 (磁気の強度を測定するデバイス) センサーは、コンパスの方位を生成するためにデータを組み合わせます。これは最終的に、データを安定させる効果があります (電気的なシステム コンポーネントのために、磁場の強さは非常に不安定です)。
 
-![Compass readings in regards to Magnetic North Pole](images/compass.png)
+![磁北を基準にしたコンパスの読み取り値](images/compass.png)
 
-Apps that want to display a compass rose or navigate a map would typically use the compass sensor.
+羅針図の表示、地図のナビゲートを行うアプリは通常、コンパス センサーを使います。
 
-## Gyrometer
+## ジャイロメーター
 
-The [**Gyrometer**](https://msdn.microsoft.com/library/windows/apps/BR225718) sensor measures angular velocities along the X, Y, and Z axes. These are very useful in simple motion-based apps that do not concern themselves with device orientation but care about the device rotating at different speeds. Gyrometers can suffer from noise in the data or a constant bias along one or more of the axes. You should query the accelerometer to verify whether the device is moving in order to determine if the gyrometer suffers from a bias, and then compensate accordingly in your app.
+[
+            **Gyrometer**](https://msdn.microsoft.com/library/windows/apps/BR225718) センサーは、X 軸、Y 軸、Z 軸に沿った角速度を測定します。 これは、デバイスの向きにかかわらず、さまざまな速度でのデバイスの回転を検出する簡単なモーション ベースのアプリで非常に便利です。 ジャイロメーターでは、データのノイズ、または 1 つ以上の軸に沿った一定のバイアスの影響を受ける場合があります。 ジャイロメーターがバイアスの影響を受けているかどうかを判断するために、加速度計を照会してデバイスが移動しているかどうかを確認する必要があります。その結果に応じてアプリで補正が必要になります。
 
-![Gyrometer with pitch, roll, and yaw](images/gyrometer.png)
+![ピッチ、ロール、ヨーに対応するジャイロメーター](images/gyrometer.png)
 
-An example of an app that could use the gyrometer sensor is a game that spins a roulette wheel based on a quick rotational jerk of the device.
+ジャイロメーター センサーを使うアプリの例としては、デバイスの急な回転の動きに基づいてルーレットのホイールを回転させるゲームなどが考えられます。
 
-## Inclinometer
+## 傾斜計
 
-The [**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR225766) sensor specifies the yaw, pitch, and roll values of a device and work best with apps that care about how the device is situated in space. Pitch and roll are derived by taking the accelerometer’s gravity vector and by integrating the data from the gyrometer. Yaw is established from magnetometer and gyrometer (similar to compass heading) data. Inclinometers offer advanced orientation data in an easily digestible and understandable way. Use inclinometers when you need device orientation but do not need to manipulate the sensor data.
+[
+            **Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR225766) センサーは、デバイスのヨー、ピッチ、ロール値を示すもので、空間内でデバイスがどのように位置しているかを検出するアプリに最適な機能を提供します。 ピッチとロールは、加速度計の重力ベクターを読み取り、ジャイロメーターからのデータを統合することにより算出されます。 ヨーは、磁力計とジャイロメーターのデータから確定します (コンパスの方位と同様です)。 傾斜計は、理解しやすい方法で詳細な方向データを提供します。 デバイスの方向が必要であっても、センサー データを操作する必要がない場合は、傾斜計を使用します。
 
-![Inclinometer with pitch, roll and yaw data](images/inclinometer.png)
+![ピッチ、ロール、ヨーのデータを提供する傾斜計](images/inclinometer.png)
 
-Apps that change their view to match the orientation of the device can use the inclinometer sensor. Also, an app that displays an airplane that matches the yaw, pitch, and roll of the device would also use the inclinometer readings.
+デバイスの方向に合わせてビューを変更するアプリでは、傾斜計センサーを使うことができます。 また、デバイスのヨー、ピッチ、ロールに合わせて飛行機を表示するアプリでも、傾斜計の読み取り値を使います。
 
-## Light sensor
+## 光センサー
 
-The [**Light**](https://msdn.microsoft.com/library/windows/apps/BR225790) sensor is capable of determining the ambient light surrounding the sensor. This enables an app to determine when the light setting surrounding a device has changed. For example, a user with a slate device might walk from indoors to outdoors on a sunny day. A smart application could use this value to increase the contrast between the background and the font being rendered. That would make the content still readable in the brighter, outdoor setting.
+[
+            **Light**](https://msdn.microsoft.com/library/windows/apps/BR225790) センサーは、センサー周囲の環境光を測定することができます。 これにより、アプリはデバイス周囲の光源設定が変化すると測定を行います。 たとえば、スレート デバイスを持つユーザーが屋内から晴れた屋外に出たとします。 優れたアプリはこの値を使用し、レンダリングされるフォントと背景のコントラストを強めることができます。 それにより、明るい屋外設定で文字が変わらず読みやすくなります。
 
-## Orientation sensor
+## 方位センサー
 
-Device orientation is expressed through both quaternion and a rotation matrix. The [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) offers a high degree of precision in determining how the device is situated in space with respect to absolute heading. The **OrientationSensor** data is derived from the accelerometer, gyrometer, and magnetometer. As such, both the inclinometer and compass sensors can be derived from the quaternion values. Quaternions and rotation matrices lend themselves well to advanced mathematical manipulation and are often used in graphical programming. Apps using complex manipulation should favor the orientation sensor as many transforms are based off of quaternions and rotation matrices.
+デバイスの方位は、四元数と回転マトリックスの両方で表されます。 [
+            **OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) では、空間内で絶対方位を基準にしてデバイスがどのように位置しているかを高い精度で決定できます。 **OrientationSensor** のデータは、加速度計、ジャイロメーター、磁力計から取得されます。 このため、傾斜計とコンパスの両センサーの値を四元数から取得できます。 四元数および回転マトリックスは高度な数学的演算に適しており、グラフィカル プログラミングでよく使われます。 複雑な演算を使うアプリでは、多数の変換が四元数および回転マトリックスに基づくために、方位センサーを選択してください。
 
-![Orientation sensor data](images/orientation-sensor.png)
+![方位センサーのデータ](images/orientation-sensor.png)
 
-The orientation sensor is often used in advanced augmented reality apps that paint an overlay on your surroundings based on the direction the back of the device is pointing.
+方位センサーは、デバイスの背面の方向に基づいて、周囲にオーバーレイして描画する高度な拡張現実アプリでよく使われます。
 
-## Pedometer
+## 万歩計
 
-The [**Pedometer**](https://msdn.microsoft.com/library/windows/apps/Dn878203) sensor keeps track of the number of steps taken by the user carrying the connected device. The sensor is configured to keep track of the number of steps over a given time period. Several fitness applications like to keep track of the number of steps taken in order to help the user set and reach various goals. This information can then be collected and stored to show progress over time.
+[
+            **Pedometer**](https://msdn.microsoft.com/library/windows/apps/Dn878203) は、接続したデバイスを持ち運ぶユーザーが歩いた歩数を記録します。 このセンサーを構成すると、任意の時間の歩数を記録できます。 いくつかのフィットネス アプリでは、ユーザーがさまざまなゴールを設定してそれを達成できるように、歩いた歩数を記録します。 この情報を収集して保存すると、時間の経過と共に進み具合を表示することができます。
 
-## Proximity sensor
+## 近接センサー
 
-The [**Proximity**](https://msdn.microsoft.com/library/windows/apps/Dn872427) sensor can be used to indicate whether or not objects are detected by the sensor. In addition to determining whether or not an object is within range of the device, the proximity sensor also can determine the distance to the detected object. One example where this could be used is with an application that wants to emerge from a sleep state when a user comes within a specified range. The device could be in a low-powered sleep state until the proximity sensor detects an object, and then could enter a more active state.
+[
+            **Proximity**](https://msdn.microsoft.com/library/windows/apps/Dn872427) センサーを使用すると、このセンサーで物体を検出できるかどうかを示すことができます。 デバイスの範囲内に物体があるかどうかを特定するだけでなく、近接センサーは、検出物体までの距離を特定することもできます。 これを使用する可能性のある 1 例として、ユーザーが指定範囲内に入ったら、スリープ状態から復帰するアプリケーションがあります。 このデバイスは、近接センサーが物体を検出するまで低電力のスリープ状態で、その後、よりアクティブな状態に移行します。
 
-## Simple orientation
+## 簡易方位
 
-The [**SimpleOrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206399sensor) detects the current quadrant orientation of the specified device or it’s face-up or face-down. It has six possible [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) states (**NotRotated**, **Rotated90**, **Rotated180**, **Rotated270**, **FaceUp**, **FaceDown**).
+[
+            **SimpleOrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206399sensor) は、指定のデバイスの現在の象限方位 (表向きまたは裏向き) を検出します。 6 つの可能な [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) の状態があります (**NotRotated**、**Rotated90**、**Rotated180**、**Rotated270**、**FaceUp**、**FaceDown**)。
 
-A reader app that changes its display based on the device being held parallel or perpendicular to the ground would use the values from the SimpleOrientationSensor to determine how the device is being held.
+デバイスが水平または垂直のいずれで保持されているかに基づいて表示を変更するリーダー アプリでは、デバイスがどのように保持されているかを決定するために SimpleOrientationSensor からの値を使います。
 
-## Samples
+## サンプル
 
-For some samples that demonstrate using a couple of different sensors, see [Windows Sensor Samples](http://go.microsoft.com/fwlink/?LinkID=616041).
+複数の異なるセンサーを使用するサンプルについては、[Windows センサーのサンプルに関するページ](http://go.microsoft.com/fwlink/?LinkID=616041)をご覧ください。
 
 
 

@@ -1,468 +1,469 @@
 ---
 ms.assetid: 1526FF4B-9E68-458A-B002-0A5F3A9A81FD
-title: Windows App Certification Kit tests
-description: The Windows App Certification Kit contains a number of tests that can help ensure that your app is ready to be published on the Windows Store.
+title: Windows アプリ認定キットのテスト
+description: Windows アプリ認定キットには、Windows ストアでの公開に向けてアプリが準備できているかどうかを確認するためのテストが多数含まれています。
 ---
-## Windows App Certification Kit tests
+## Windows アプリ認定キットのテスト
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-The Windows App Certification Kit contains a number of tests that can help ensure that your app is ready to be published on the Windows Store.
+Windows アプリ認定キットには、Windows ストアでの公開に向けてアプリが準備できているかどうかを確認するためのテストが多数含まれています。
 
-## Deployment and launch tests
+## 展開と起動のテスト
 
-Monitors the app during certification testing to record when it crashes or hangs.
+認証テスト中にアプリを監視して、アプリがクラッシュやハングを起こしたタイミングを記録します。
 
-### Background
+### 背景
 
-Apps that stop responding or crash can cause the user to lose data and have a poor experience.
+応答しなくなったアプリやクラッシュしたアプリは、データが失われたり操作性が低下したりする原因になることがあります。
 
-We expect apps to be fully functional without the use of Windows compatibility modes, AppHelp messages, or compatibility fixes.
+アプリは、Windows の互換モードや AppHelp メッセージ、互換性修正プログラムを使わずにフル機能することが求められています。
 
-Apps must not list DLLs to load in the HKEY\-LOCAL\-MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Windows\\AppInit\-DLLs registry key.
+アプリは、HKEY\-LOCAL\-MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Windows\\AppInit\-DLLs レジストリ キーに読み込む DLL を一覧する必要はありません。
 
-### Test details
+### テストの詳細
 
-We test the app resilience and stability throughout the certification testing.
+認定テストを通じて、アプリの復元性や安定性をテストします。
 
-The Windows App Certification Kit calls [**IApplicationActivationManager::ActivateApplication**](https://msdn.microsoft.com/library/windows/desktop/Hh706903) to launch apps. For **ActivateApplication** to launch an app, User Account Control (UAC) must be enabled and the screen resolution must be at least 1024 x 768 or 768 x 1024. If either condition is not met, your app will fail this test.
+Windows アプリ認定キットで [**IApplicationActivationManager::ActivateApplication**](https://msdn.microsoft.com/library/windows/desktop/Hh706903) を呼び出し、アプリを起動します。 **ActivateApplication** でアプリを起動する場合は、ユーザー アカウント制御 (UAC) を有効にし、画面解像度を 1024 x 768 または 768 x 1024 以上にする必要があります。 どちらの条件も満たされない場合は、アプリはこのテストに合格しません。
 
-### Corrective actions
+### 問題への対応
 
-Make sure UAC is enabled on the test computer.
+テスト コンピューターで UAC が有効になっていることを確認します。
 
-Make sure you are running the test on a computer with large enough screen.
+十分な大きさの画面を備えたコンピューターでテストを実行していることを確認します。
 
-If your app fails to launch and your test platform satisfies the prerequisites of [**ActivateApplication**](https://msdn.microsoft.com/library/windows/desktop/Hh706903), you can troubleshoot the problem by reviewing the activation event log. To find these entries in the event log:
+テスト プラットフォームが [**ActivateApplication**](https://msdn.microsoft.com/library/windows/desktop/Hh706903) の前提条件を満たしているにもかかわらずアプリの起動に失敗する場合は、アクティブ化イベント ログを確認して問題のトラブルシューティングを行うことができます。 イベント ログでこのようなエントリを見つけるには、次の手順を実行します。
 
-1.  Open eventvwr.exe and navigate to the Application and Services Log\\Microsoft\\Windows\\Immersive-Shell folder.
-2.  Filter the view to show Event Ids: 5900-6000.
-3.  Review the log entries for info that might explain why the app didn't launch.
+1.  eventvwr.exe を開き、アプリケーションとサービス ログ\\Microsoft\\Windows\\Immersive-Shell フォルダーに移動します。
+2.  ビューをフィルター処理してイベント ID 5900 ～ 6000 を表示します。
+3.  アプリが起動しなかった理由を説明している可能性のある情報のログ エントリを確認します。
 
-Troubleshoot the file with the problem, identify and fix the problem. Rebuild and re-test the app. You can also check if a dump file was generated in the Windows App Certification Kit log folder that can be used to debug your app.
+問題のあるファイルをトラブルシューティングして問題を特定し、修正します。 アプリをリビルドして再テストします。 また、ダンプ ファイルが Windows アプリ認定キットのログ フォルダーに生成されたかどうかを確認します。ダンプ ファイルもアプリのデバッグに使用できます。
 
-## Platform Version Launch test
+## プラットフォーム バージョン起動テスト
 
-Checks that the Windows app can run on a future version of the OS. This test has historically been only applied to the Desktop app workflow, but this is now enabled for the Store and Universal Windows Platform (UWP) workflows.
+Windows アプリを将来のバージョンの OS で実行できることを確認します。 これまで、このテストはデスクトップ アプリ ワークフローにのみ適用されてきましたが、ストアおよびユニバーサル Windows プラットフォーム (UWP) のワークフローに有効になりました。
 
-### Background
+### 背景
 
-Operating system version info has restricted usage for the Windows Store. This has often been incorrectly used by apps to check OS version so that the app can provide users with functionality that is specific to an OS version.
+オペレーティング システムのバージョン情報により、Windows ストアの使用が制限されてきました。 これは、アプリが OS のバージョンに固有の機能をユーザーに提供できるように、アプリによって OS バージョンを確認する目的で誤って使用されることがよくありました。
 
-### Test details
+### テストの詳細
 
-The Windows App Certification Kit uses the HighVersionLie to detect how the app checks the OS version. If the app crashes, it will fail this test.
+Windows アプリ認定キットは、HighVersionLie を使って、アプリが OS のバージョンを確認する方法を検出します。 アプリがクラッシュした場合は、このテストに合格しません。
 
-### Corrective action
+### 問題への対応
 
-Apps should use Version API helper functions to check this. See [Operating System Version](https://msdn.microsoft.com/library/windows/desktop/ms724832) for more information.
+アプリは、バージョン API ヘルパー関数を使ってこれを確認する必要があります。 詳しくは、「[オペレーティング システムのバージョン](https://msdn.microsoft.com/library/windows/desktop/ms724832)」をご覧ください。
 
-## Background tasks cancellation handler validation
+## バックグラウンド タスクの取り消しハンドラーの検証
 
-This verifies that the app has a cancellation handler for declared background tasks. There needs to be a dedicated function that will be called when the task is cancelled. This test is applied only for deployed apps.
+宣言されているバックグラウンド タスクの取り消しハンドラーがアプリにあることを確認します。 タスクが取り消されたときに呼び出される専用の関数が必要です。 このテストは、展開済みのアプリにのみ適用されます。
 
-### Background
+### 背景
 
-Store apps can register a process that runs in the background. For example, an email app may ping a server from time to time. However, if the OS needs these resources, it will cancel the background task, and apps should gracefully handle this cancellation. Apps that don't have a cancellation handler may crash or not close when the user tries to close the app.
+ストア アプリは、バック グラウンドで実行されるプロセスを登録できます。 たとえば、メール アプリはときどき ping を実行することがあります。 しかし、OS がこれらのリソースを必要とする場合は、バックグラウンド タスクが取り消され、アプリはこの取り消しを適切に処理する必要があります。 取り消しハンドラーがないアプリはクラッシュする可能性や、ユーザーがアプリを閉じようとしても終了しない可能性があります。
 
-### Test details
+### テストの詳細
 
-The app is launched, suspended and the non-background portion of the app is terminated. Then the background tasks associated with this app are cancelled. The state of the app is checked, and if the app is still running then it will fail this test.
+アプリが起動して中断され、アプリの非バックグラウンド部分が終了します。 このアプリに関連付けられたバックグラウンド タスクは取り消されます。 アプリの状態が確認され、アプリがまだ実行中の場合はこのテストに合格しません。
 
-### Corrective action
+### 問題への対応
 
-Add the cancellation handler to your app. For more information see [Support your app with background tasks](https://msdn.microsoft.com/library/windows/apps/Mt299103).
+アプリに取り消しハンドラーを追加します。 詳しくは、「[バックグラウンド タスクによるアプリのサポート](https://msdn.microsoft.com/library/windows/apps/Mt299103)」をご覧ください。
 
-## App count
+## アプリ カウント
 
-This verifies that an app package (APPX, app bundle) contains one application. This was changed in the kit to be a standalone test.
+アプリ パッケージ (APPX、アプリ バンドル) に 1 つのアプリケーションが含まれていることを確認します。 これは、キットでスタンドアロン テストに変更されました。
 
-### Background
+### 背景
 
-This test was implemented as per Store policy.
+このテストは、ストア ポリシーに従って実装されていました。
 
-### Test details
+### テストの詳細
 
-For Windows Phone 8.1 apps the test verifies the total number of appx packages in the bundle is &lt; 512, there is only one main package in the bundle, and that the architecture of the main package in the bundle is marked as ARM or neutral.
+Windows Phone 8.1 アプリの場合は、テストにより、バンドル内の appx パッケージの合計数が 512 個未満であること、バンドル内に含まれるメイン パッケージが 1 個だけであること、そしてバンドル内のメイン パッケージのアーキテクチャが ARM またはニュートラルとしてマークされていることを確認します。
 
-For Windows 10 apps the test verifies that the revision number in the version of the bundle is set to 0.
+Windows 10 アプリの場合は、テストでは、バンドルのバージョンのリビジョン番号が 0 に設定されていることを確認します。
 
-### Corrective action
+### 問題への対応
 
-Ensure the app package and bundle meet requirements above in Test details.
+アプリ パッケージとバンドルが、テストの詳細で上記の要件を満たしていることを確認します。
 
-## App manifest compliance test
+## アプリ マニフェストの適合性のテスト
 
-Test the contents of app manifest to make sure its contents are correct.
+アプリ マニフェストのコンテンツをテストし、コンテンツが正しいかどうかを確認します。
 
-### Background
+### 背景
 
-Apps must have a correctly formatted app manifest.
+アプリ マニフェストは正しい形式でなければならない
 
-### Test details
+### テストの詳細
 
-Examines the app manifest to verify the contents are correct as described in the [App package requirements](https://msdn.microsoft.com/library/windows/apps/Mt148525).
+「[アプリ パッケージの要件](https://msdn.microsoft.com/library/windows/apps/Mt148525)」の説明に従って、アプリ マニフェストを調べてコンテンツが正しいかどうかを確認します。
 
--   **File extensions and protocols**
+-   **ファイル拡張子とプロトコル**
 
-    Your app can declare the file extensions that it wants to associate with. Used improperly, an app can declare a large number of file extensions, most of which it may not even use, resulting in a bad user experience. This test will add a check to limit the number of file extensions that an app can associate with.
+    アプリは、関連付ける必要があるファイル拡張子を宣言できます。 ただし不当に使用されると、アプリは大量のファイル拡張子 (しかも大半が使うことのない拡張子) を宣言することがあり、ユーザー エクスペリエンスが低下する可能性があります。 このテストで追加されるチェックにより、アプリに関連付けることができるファイル拡張子の数を制限できます。
 
--   **Framework Dependency rule**
+-   **フレームワークの依存関係規則**
 
-    This test enforces the requirement that apps take appropriate dependencies on the UWP. If there is an inappropriate dependency, this test will fail.
+    このテストは、アプリと UWP の依存関係が適切かどうかをチェックします。 不適切な依存関係がある場合は、このテストは失敗します。
 
-    If there is a mismatch between the OS version the app applies to and the framework dependencies made, the test will fail. The test would also fail if the app refers to any preview versions of the framework dlls.
+    アプリが動作する OS のバージョンと依存関係のあるフレームワークとの間に不整合がある場合は、テストは失敗します。 アプリがフレーム ワーク DLL の Preview 版を参照している場合にも、テストは失敗します。
 
--   **Inter-process Communication (IPC) verification**
+-   **プロセス間通信 (IPC) の確認**
 
-    This test enforces the requirement that Windows Store apps do not communicate outside of the app container to Desktop components. Inter-process communication is intended for side-loaded apps only. Apps that specify the [**ActivatableClassAttribute**](https://msdn.microsoft.com/library/windows/apps/BR211414) with name equal to "DesktopApplicationPath" will fail this test.
+    このテストでは、Windows ストア アプリがデスクトップ コンポーネントとアプリ コンテナーの外側で通信しないかどうかをチェックします。 プロセス間通信は、サイドローディングが行われたアプリのみを対象としています。 DesktopApplicationPath と同じ名前で [**ActivatableClassAttribute**](https://msdn.microsoft.com/library/windows/apps/BR211414) を指定しているアプリは、このテストに合格しません。
 
-### Corrective action
+### 問題への対応
 
-Review the app's manifest against the requirements described in the [App package requirements](https://msdn.microsoft.com/library/windows/apps/Mt148525).
+「[アプリ パッケージの要件](https://msdn.microsoft.com/library/windows/apps/Mt148525)」で説明されている要件に照らして、アプリのマニフェストを確認します。
 
-## Windows Security features test
+## Windows のセキュリティ機能のテスト
 
-### Background
+### 背景
 
-Changing the default Windows security protections can put customers at increased risk.
+Windows 既定のセキュリティ保護を変更すると、ユーザーが危険にさらされるリスクが増大します。
 
-### Test details
+### テストの詳細
 
-Tests the app's security by running the [BinScope Binary Analyzer](#binscope).
+[BinScope Binary Analyzer](#binscope) を起動して、アプリのセキュリティをテストします。
 
-The BinScope Binary Analyzer tests examine the app's binary files to check for coding and building practices that make the app less vulnerable to attack or to being used as an attack vector.
+BinScope Binary Analyzer テストでは、アプリのバイナリ ファイルを検査して、攻撃や悪用に対してアプリの強度を上げるコーディングとビルドの手法をチェックします。
 
-The BinScope Binary Analyzer tests check for the correct use of the following security-related features.
+BinScope Binary Analyzer テストは、次のセキュリティ関連の機能が適切に使われているかをチェックします。
 
--   BinScope Binary Analyzer tests
--   Private Code Signing
+-   BinScope Binary Analyzer テスト
+-   プライベート コードの署名
 
-### BinScope Binary Analyzer tests
+### BinScope Binary Analyzer テスト
 
-The [BinScope Binary Analyzer](http://go.microsoft.com/fwlink/p/?linkid=257276) tests examine the app's binary files to check for coding and building practices that make the app less vulnerable to attack or to being used as an attack vector.
+[BinScope Binary Analyzer](http://go.microsoft.com/fwlink/p/?linkid=257276) テストは、アプリのバイナリ ファイルを検査して、攻撃や悪用からアプリを守るコーディングとビルドの手法をチェックします。
 
-The BinScope Binary Analyzer tests check for the correct use of these security-related features:
+BinScope Binary Analyzer テストは、次のセキュリティ関連機能が適切に使われているかをチェックします。
 
 -   [AllowPartiallyTrustedCallersAttribute](#binscope-1)
--   [/SafeSEH Exception Handling Protection](#binscope-2)
--   [Data Execution Prevention](#binscope-3)
--   [Address Space Layout Randomization](#binscope-4)
--   [Read/Write Shared PE Section](#binscope-5)
+-   [/SafeSEH 例外処理の保護](#binscope-2)
+-   [データ実行防止](#binscope-3)
+-   [アドレス空間レイアウトのランダム化](#binscope-4)
+-   [共有されている PE セクションの読み取り/書き込み](#binscope-5)
 -   [AppContainerCheck](#appcontainercheck)
 -   [ExecutableImportsCheck](#binscope-7)
 -   [WXCheck](#binscope-8)
 
 ### <span id="binscope-1"></span>AllowPartiallyTrustedCallersAttribute
 
-**Windows App Certification Kit error message:** APTCACheck Test failed
+**Windows アプリ認定キットのエラー メッセージ:** APTCACheck Test failed
 
-The AllowPartiallyTrustedCallersAttribute (APTCA) attribute enables access to fully trusted code from partially trusted code in signed assemblies. When you apply the APTCA attribute to an assembly, partially trusted callers can access that assembly for the life of the assembly, which can compromise security.
+AllowPartiallyTrustedCallersAttribute (APTCA) 属性を使うと、署名されたアセンブリで、部分的に信頼されたコードから完全に信頼されたコードにアクセスできます。 アセンブリに APTCA 属性を適用すると、アセンブリが有効な間は、部分的に信頼された呼び出し元からそのアセンブリにアクセスできます。これにより、セキュリティが侵害されるおそれがあります。
 
-**What to do if your app fails this test**
+**アプリがこのテストに合格しなかった場合の対処方法**
 
-Don't use the APTCA attribute on strong named assemblies unless your project requires it and the risks are well understood. In cases where it's required, make sure that all APIs are protected with appropriate code access security demands. APTCA has no effect when the assembly is a part of a Universal Windows Platform (UWP) app.
+プロジェクトに必要で、リスクをよく認識している場合を除いて、厳密な名前の付いたアセンブリでは APTCA 属性を使わないでください。 APTCA 属性を使う必要がある場合は、すべての API が適切なコード アクセス セキュリティ要求によって保護されていることを確認します。 アセンブリがユニバーサル Windows プラットフォーム (UWP) アプリの一部となっている場合は、APTCA の影響はありません。
 
-**Remarks**
+**注釈**
 
-This test is performed only on managed code (C#, .NET, etc.).
+このテストは、マネージ コード (C#、.NET など) でのみ実行されます。
 
-### <span id="binscope-2"></span>/SafeSEH Exception Handling Protection
+### <span id="binscope-2"></span>/SafeSEH 例外処理の保護
 
-**Windows App Certification Kit error message:** SafeSEHCheck Test failed
+**Windows アプリ認定キットのエラー メッセージ:** SafeSEHCheck Test failed
 
-An exception handler runs when the app encounters an exceptional condition, such as a divide-by-zero error. Because the address of the exception handler is stored on the stack when a function is called, it could be vulnerable to a buffer overflow attacker if some malicious software were to overwrite the stack.
+例外ハンドラーは、アプリがゼロ除算エラーなどの例外的な状況に陥った場合に実行されます。 関数が呼び出されると例外ハンドラーのアドレスがスタックに格納されるため、悪意のあるソフトウェアがスタックを上書きしようとした場合は、バッファー オーバーフローによる攻撃を受けやすくなることがあります。
 
-**What to do if your app fails this test**
+**アプリがこのテストに合格しなかった場合の対処方法**
 
-Enable the /SAFESEH option in the linker command when you build your app. This option is on by default in the Release configurations of Visual Studio. Verify this option is enabled in the build instructions for all executable modules in your app.
+アプリをビルドするときに、リンカー コマンドの /SAFESEH オプションを有効にします。 Visual Studio のリリース構成では、既定で、このオプションが有効になっています。 このオプションが、アプリのすべての実行可能モジュールに対するビルド手順で有効になっていることを確認します。
 
-**Remarks**
+**注釈**
 
-The test is not performed on 64-bit binaries or ARM chipset binaries because they don't store exception handler addresses on the stack.
+このテストは、64 ビット バイナリまたは ARM チップセット バイナリでは実行されません。例外ハンドラーのアドレスがスタックに格納されないためです。
 
-### <span id="binscope-3"></span>Data Execution Prevention
+### <span id="binscope-3"></span>データ実行防止
 
-**Windows App Certification Kit error message:** NXCheck Test failed
+**Windows アプリ認定キットのエラー メッセージ:** NXCheck Test failed
 
-This test verifies that an app doesn't run code that is stored in a data segment.
+このテストでは、データ セグメントに格納されたコードが、アプリで実行されないことを確認します。
 
-**What to do if your app fails this test**
+**アプリがこのテストに合格しなかった場合の対処方法**
 
-Enable the /NXCOMPAT option in the linker command when you build your app. This option is on by default in linker versions that support Data Execution Prevention (DEP).
+アプリをビルドするときに、リンカー コマンドの /NXCOMPAT オプションを有効にします。 Data Execution Prevention (DEP) をサポートするリンカー バージョンでは、既定で、このオプションが有効になっています。
 
-**Remarks**
+**注釈**
 
-We recommend that you test your apps on a DEP-capable CPU and fix any failures you find that result from DEP.
+DEP 対応の CPU でアプリをテストし、DEP の結果として見つかったエラーをすべて修正することをお勧めします。
 
-### <span id="binscope-4"></span>Address Space Layout Randomization
+### <span id="binscope-4"></span>アドレス空間レイアウトのランダム化
 
-**Windows App Certification Kit error message:** DBCheck Test failed
+**Windows アプリ認定キットのエラー メッセージ:** DBCheck Test failed
 
-Address Space Layout Randomization (ASLR) loads executable images into unpredictable locations in memory, which makes it harder for malicious software that expects a program to be loaded at a certain virtual address to operate predictably. Your app and all components that your app uses must support ASLR.
+アドレス空間レイアウトのランダム化 (ASLR) を使うと、実行可能なイメージがメモリの予測不可能な場所に読み込まれます。これにより、特定の仮想アドレスにプログラムを読み込むことを想定している悪意のあるソフトウェアは、計画どおりに動作しにくくなります。 アプリとアプリで使うすべてのコンポーネントは、ASLR をサポートする必要があります。
 
-**What to do if your app fails this test**
+**アプリがこのテストに合格しなかった場合の対処方法**
 
-Enable the /DYNAMICBASE option in the linker command when you build your app. Verify that all modules that your app uses also use this linker option.
+アプリをビルドするときに、リンカー コマンドの /DYNAMICBASE オプションを有効にします。 アプリで使うすべてのモジュールでも、このリンカー オプションを使っていることを確認します。
 
-**Remarks**
+**注釈**
 
-Normally, ASLR doesn't affect performance. But in some scenarios there is a slight performance improvement on 32-bit systems. It is possible that performance could degrade in a highly congested system that have many images loaded in many different memory locations.
+通常、ASLR がパフォーマンスに影響を与えることはありません。 ただし、場合によっては、32 ビット システムでわずかにパフォーマンスが向上することがあります。 多くの画像がさまざまなメモリに読み込まれた非常に密集したシステムでは、パフォーマンスが低下する可能性があります。
 
-This test is performed on only apps written in managed code, such as by using C# or .NET Framework.
+このテストは、C# や .NET Framework などのマネージ コードで記述されたアプリでのみ実行されます。
 
-### <span id="binscope-5"></span>Read/Write Shared PE Section
+### <span id="binscope-5"></span>共有されている PE セクションの読み取り/書き込み
 
-**Windows App Certification Kit error message:** SharedSectionsCheck Test failed.
+**Windows アプリ認定キットのエラー メッセージ:** SharedSectionsCheck Test failed.
 
-Binary files with writable sections that are marked as shared are a security threat. Don't build apps with shared writable sections unless necessary. Use [**CreateFileMapping**](https://msdn.microsoft.com/library/windows/desktop/Aa366537) or [**MapViewOfFile**](https://msdn.microsoft.com/library/windows/desktop/Aa366761) to create a properly secured shared memory object.
+共有されている書き込み可能なセクションがあるバイナリ ファイルは、セキュリティの脅威です。 共有する書き込み可能なセクションを含むアプリは、必須の場合を除き、ビルドしないでください。 [
+            **CreateFileMapping**](https://msdn.microsoft.com/library/windows/desktop/Aa366537) または [**MapViewOfFile**](https://msdn.microsoft.com/library/windows/desktop/Aa366761) を使って適切に保護された共有メモリ オブジェクトを作成します。
 
-**What to do if your app fails this test**
+**アプリがこのテストに合格しなかった場合の対処方法**
 
-Remove any shared sections from the app and create shared memory objects by calling [**CreateFileMapping**](https://msdn.microsoft.com/library/windows/desktop/Aa366537) or [**MapViewOfFile**](https://msdn.microsoft.com/library/windows/desktop/Aa366761) with the proper security attributes and then rebuild your app.
+アプリからすべての共有セクションを削除し、適切なセキュリティ属性を指定した [**CreateFileMapping**](https://msdn.microsoft.com/library/windows/desktop/Aa366537) または [**MapViewOfFile**](https://msdn.microsoft.com/library/windows/desktop/Aa366761) を呼び出して共有メモリ オブジェクトを作成し、アプリをリビルドします。
 
-**Remarks**
+**注釈**
 
-This test is performed only on apps written in unmanaged languages, such as by using C or C++.
+このテストは、C や C++ などのアンマネージ言語で記述されたアプリでのみ実行されます。
 
 ### AppContainerCheck
 
-**Windows App Certification Kit error message:** AppContainerCheck Test failed.
+**Windows アプリ認定キットのエラー メッセージ:** AppContainerCheck Test failed.
 
-The AppContainerCheck verifies that the **appcontainer** bit in the portable executable (PE) header of an executable binary is set. Apps must have the **appcontainer** bit set on all .exe files and all unmanaged DLLs to execute properly.
+AppContainerCheck は、実行可能なバイナリの PE (Portable Executable) ヘッダーに **appcontainer** ビットが設定されているかを検証します。 すべての .exe ファイルとすべてのアンマネージ DLL で **appcontainer** ビットが設定されていないと、アプリは正しく動作しません。
 
-**What to do if your app fails this test**
+**アプリがこのテストに合格しなかった場合の対処方法**
 
-If a native executable file fails the test, make sure that you used the latest compiler and linker to build the file and that you use the */appcontainer* flag on the linker.
+ネイティブの実行可能ファイルでテストが不合格になった場合は、最新のコンパイラとリンカーを使ってファイルをビルドし、リンカーで */appcontainer* フラグを使います。
 
-If a managed executable fails the test, make sure that you used the latest compiler and linker, such as Microsoft Visual Studio, to build the Windows Store app.
+マネージ実行可能ファイルでテストが不合格になった場合は、最新のコンパイラとリンカー (Microsoft Visual Studio など) を使って、Windows ストア アプリをビルドします。
 
-**Remarks**
+**注釈**
 
-This test is performed on all .exe files and on unmanaged DLLs.
+このテストは、すべての .exe ファイル、およびアンマネージ DLL で実行されます。
 
 ### <span id="binscope-7"></span>ExecutableImportsCheck
 
-**Windows App Certification Kit error message:** ExecutableImportsCheck Test failed.
+**Windows アプリ認定キットのエラー メッセージ:** ExecutableImportsCheck Test failed.
 
-A portable executable (PE) image fails this test if its import table has been placed in an executable code section. This can occur if you enabled .rdata merging for the PE image by setting the */merge* flag of the Visual C++ linker as */merge:.rdata=.text*.
+移植可能な実行可能ファイル (PE) イメージで、実行可能コード セクションにインポート テーブルが置かれていると、このテストが不合格になります。 これは、Visual C++ リンカーの */merge* フラグを "*/merge:.rdata=.text*" に設定して、PE イメージの .rdata マージを有効にすると生じることがあります。
 
-**What to do if your app fails this test**
+**アプリがこのテストに合格しなかった場合の対処方法**
 
-Don't merge the import table into an executable code section. Make sure that the */merge* flag of the Visual C++ linker is not set to merge the ".rdata" section into a code section.
+インポート テーブルを実行可能コード セクションにマージしないでください。 Visual C++ リンカーの */merge* フラグをチェックして、.rdata セクションがコード セクションにマージされる設定になっていないことを確認します。
 
-**Remarks**
+**注釈**
 
-This test is performed on all binary code except purely managed assemblies.
+このテストは、純粋なマネージ アセンブリを除き、すべてのバイナリ コードで実行されます。
 
 ### <span id="binscope-8"></span>WXCheck
 
-**Windows App Certification Kit error message:** WXCheck Test failed.
+**Windows アプリ認定キットのエラー メッセージ:** WXCheck Test failed.
 
-The check helps to ensure that a binary does not have any pages that are mapped as writable and executable. This can occur if the binary has a writable and executable section or if the binary’s *SectionAlignment* is less than *PAGE\-SIZE*.
+このチェックでは、書き込み可能または実行可能としてマップされたページがバイナリに含まれていないことを確認します。 これが不合格になるのは、書き込み可能または実行可能なセクションがバイナリに含まれている場合と、バイナリの *SectionAlignment* が *PAGE\-SIZE* よりも小さい場合です。
 
-**What to do if your app fails this test**
+**アプリがこのテストに合格しなかった場合の対処方法**
 
-Make sure that the binary does not have a writeable or executable section and that the binary's *SectionAlignment* value is at least equal to its *PAGE\-SIZE*.
+書き込み可能または実行可能なセクションがバイナリに含まれていないこと、バイナリの *SectionAlignment* の値が *PAGE\-SIZE* の値以上であることを確認します。
 
-**Remarks**
+**注釈**
 
-This test is performed on all .exe files and on native, unmanaged DLLs.
+このテストは、すべての .exe ファイル、およびネイティブのアンマネージ DLL で実行されます。
 
-An executable may have a writable and executable section if it has been built with Edit and Continue enabled (/ZI). Disabling Edit and Continue will cause the invalid section to not be present.
+書き込み可能または実行可能なセクションは、エディット コンティニュ (/ZI) を有効にしてビルドした実行可能ファイルに含まれることがあります。 エディット コンティニュを無効にすると、無効なセクションは含まれなくなります。
 
-*PAGE\-SIZE* is the default *SectionAlignment* for executables.
+*PAGE\-SIZE* は実行可能ファイルの既定の *SectionAlignment* です。
 
-### Private Code Signing
+### プライベート コードの署名
 
-Tests for the existence of private code signing binaries within the app package.
+アプリ パッケージ内にプライベート コードの署名バイナリが存在するかテストします。
 
-### Background
+### 背景
 
-Private code signing files should be kept private as they may be used for malicious purposes in the event they are compromised.
+プライベート コードの署名ファイルは、セキュリティが侵害された場合は、悪用される可能性があるため、プライベートにしておく必要があります。
 
-### Test details
+### テストの詳細
 
-Tests for files within the app package that have an extension of .pfx or.snk that would indicate that private signing keys were included.
+アプリ パッケージ内でプライベート署名キーを含むことを示す .pfx または .snk という拡張子を持つファイルについてテストします。
 
-### Corrective actions
+### 問題への対応
 
-Remove any private code signing keys (e.g. .pfx and .snk files) from the package.
+パッケージからプライベート コードの署名キー (.pfx ファイルや .snk ファイルなど) を削除します。
 
-## Supported API test
+## サポートされる API のテスト
 
-Test the app for the use of any non-compliant APIs.
+アプリで非標準 API が使われていないかどうかをテストします。
 
-### Background
+### 背景
 
-Apps must use the APIs for Windows Store apps (Windows Runtime or supported Win32 APIs) to be certified for the Windows Store. This test also identifies situations where a managed binary takes a dependency on a function outside of the approved profile.
+Windows ストアで認定されるためには、アプリで Windows ストア アプリ用 API (Windows ランタイムまたはサポートされる Win32 API) だけを使う必要があります。 このテストでは、管理されたバイナリが承認済みのプロファイル外部の機能に依存している状況も特定されます。
 
-### Test details
+### テストの詳細
 
--   Verifies that each binary within the app package doesn't have a dependency on a Win32 API that is not supported for Windows Store app development by checking the import address table of the binary.
--   Verifies that each managed binary within the app package doesn't have a dependency on a function outside of the approved profile.
+-   バイナリのインポート アドレス テーブルをチェックすることで、アプリ パッケージ内の各バイナリが、Windows ストアのアプリ開発でサポートされていない Win32 API に依存していないことを確認します。
+-   アプリ パッケージ内の管理された各バイナリが承認済みのプロファイル外部の機能に依存していないことを確認します。
 
-### Corrective actions
+### 問題への対応
 
-Make sure that the app was compiled as a release build and not a debug build.
+アプリが、デバッグ用のビルドではなくリリース用ビルドとしてコンパイルされていることを確認します。
 
-> **Note**  The debug build of an app will fail this test even if the app uses only [APIs for Windows Store apps](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/bg124285.aspx).
+> **注**  アプリで [Windows ストア アプリ用 API](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/bg124285.aspx) のみを使っている場合でも、デバッグ用ビルドのアプリではこのテストに合格しません。
 
-Review the error messages to identify the API the app uses that is not an [API for Windows Store apps](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/bg124285.aspx).
+エラー メッセージを確認して、アプリで使われている、[Windows ストア アプリ用 API](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/bg124285.aspx) ではない API を特定します。
 
-> **Note**  C++ apps that are built in a debug configuration will fail this test even if the configuration only uses APIs from the Windows SDK for Windows Store apps. See, [Alternatives to Windows APIs in Windows Store apps](http://go.microsoft.com/fwlink/p/?LinkID=244022) for more info.
+> **注**  構成で Windows ストア アプリ用 Windows SDK だけを使っている場合でも、デバッグ構成でビルドされた C++ アプリではこのテストに合格しません。 詳しくは、「[Windows ストア アプリでの Windows API の代替](http://go.microsoft.com/fwlink/p/?LinkID=244022)」をご覧ください。
 
-## Performance tests
+## パフォーマンスのテスト
 
-The app must respond quickly to user interaction and system commands in order to present a fast and fluid user experience.
+軽快かつ柔軟なユーザー エクスペリエンスとなるように、アプリはユーザー操作とシステム コマンドに速やかに応答する必要があります。
 
-The characteristics of the computer on which the test is performed can influence the test results. The performance test thresholds for app certification are set such that low-power computers meet the customer’s expectation of a fast and fluid experience. To determine your app’s performance, we recommend that you test on a low-power computer, such as an Intel Atom processor-based computer with a screen resolution of 1366x768 (or higher) and a rotational hard drive (as opposed to a solid-state hard drive).
+テストを実行するコンピューターの特性がテスト結果に影響することがあります。 アプリ認定のパフォーマンス テストのしきい値は、ユーザーの高速で滑らかなエクスペリエンスへの期待が低電力コンピューターでも満たされるように設定されています。 アプリのパフォーマンスを確認するには、アプリを低電力コンピューター (たとえば画面の解像度が 1366 x 768 またはそれ以上で、回転式ハード ドライブを搭載した Intel Atom プロセッサ ベースのコンピューター) 上でテストすることをお勧めします。
 
-### Bytecode generation
+### バイトコードの作成
 
-As a performance optimization to accelerate JavaScript execution time, JavaScript files ending in the .js extension generate bytecode when the app is deployed. This significantly improves startup and ongoing execution times for JavaScript operations.
+JavaScript の実行時間を短縮するパフォーマンスの最適化として、アプリの展開時、末尾が .js 拡張子の JavaScript ファイルによりバイトコードが生成されます。 そのため、JavaScript 操作の開始時間と実行継続時間が大幅に短縮されます。
 
-### Test Details
+### テストの詳細
 
-Checks the app deployment to verify that all .js files have been converted to bytecode.
+アプリの展開をチェックして、すべての .js ファイルがバイトコードに変換されたことをチェックします。
 
-### Corrective Action
+### 問題への対応
 
-If this test fails, consider the following when addressing the issue:
+このテストに合格しなかった場合は、問題の対処に際して次の点を考慮します。
 
--   Verify that event logging is enabled.
--   Verify that all JavaScript files are syntactically valid.
--   Confirm that all previous versions of the app are uninstalled.
--   Exclude identified files from the app package.
+-   イベント ログが有効になっていることを確認します。
+-   すべての JavaScript ファイルが構文的に正しいことを確認します。
+-   以前のバージョンのアプリがすべてアンインストールされていることを確認します。
+-   識別されたファイルをアプリ パッケージから除外します。
 
-### Optimized binding references
+### 最適化されたバインディング参照
 
-When using bindings, WinJS.Binding.optimizeBindingReferences should be set to true in order to optimize memory usage.
+バインディングを使うときは、メモリ使用率を最適化するために WinJS.Binding.optimizeBindingReferences を true に設定する必要があります。
 
-### Test Details
+### テストの詳細
 
-Verify the value of WinJS.Binding.optimizeBindingReferences.
+WinJS.Binding.optimizeBindingReferences の値を確認します。
 
-### Corrective Action
+### 問題への対応
 
-Set WinJS.Binding.optimizeBindingReferences to **true** in the app JavaScript.
+アプリの JavaScript で WinJS.Binding.optimizeBindingReferences を "**true**" に設定します。
 
-## App manifest resources test
+## アプリ マニフェストのリソースのテスト
 
-### App resources validation
+### アプリ リソースの検証
 
-The app might not install if the strings or images declared in your app’s manifest are incorrect. If the app does install with these errors, your app’s logo or other images used by your app might not display correctly.
+アプリのマニフェストで宣言されている文字列や画像に誤りがある場合は、そのアプリはインストールされない可能性があります。 これらのエラーがあるアプリをインストールすると、アプリが使用するアプリのロゴなどの画像が適切に表示されません。
 
-### Test Details
+### テストの詳細
 
-Inspects the resources defined in the app manifest to make sure they are present and valid.
+アプリ マニフェストで定義されているリソースを調べて、それらのリソースが存在し有効であることを確認します。
 
-### Corrective Action
+### 問題への対応
 
-Use the following table as guidance.
+次の表をガイダンスとして使います。
 
 <table>
-<tr><th>Error message</th><th>Comments</th></tr>
+<tr><th>エラー メッセージ</th><th>コメント</th></tr>
 <tr><td>
-<p>The image {image name} defines both Scale and TargetSize qualifiers; you can define only one qualifier at a time.</p>
+<p>The image {image name} defines both Scale and TargetSize qualifiers; you can define only one qualifier at a time. (イメージ {image name} には Scale 修飾子と TargetSize 修飾子が定義されていますが、一度に定義可能な修飾子は 1 つだけです。)</p>
 </td><td>
-<p>You can customize images for different resolutions.</p>
-<p>In the actual message, {image name} contains the name of the image with the error.</p>
-<p> Make sure that each image defines either Scale or TargetSize as the qualifier.</p>
+<p>さまざまな解像度に合わせて画像をカスタマイズできます。</p>
+<p>実際のメッセージでは、{imageName} にエラーの発生した画像の名前が入ります。</p>
+<p> 各画像で Scale と TargetSize のいずれかが修飾子として定義されていることを確認します。</p>
 </td></tr>
 <tr><td>
-<p>The image {image name} failed the size restrictions.</p>
+<p>The image {image name} failed the size restrictions. (イメージ {image name} がサイズ制限を超えました。)</p>
 </td><td>
-<p>Ensure that all the app images adhere to the proper size restrictions.</p>
-<p>In the actual message, {image name} contains the name of the image with the error.</p>
+<p>すべてのアプリ画像が適切なサイズ制限に従っていることを確認します。</p>
+<p>実際のメッセージでは、{imageName} にエラーの発生した画像の名前が入ります。</p>
 </td></tr>
 <tr><td>
-<p>The image {image name} is missing from the package.</p>
+<p>The image {image name} is missing from the package. (イメージ {image name} がパッケージ内に見つかりません。)</p>
 </td><td>
-<p>A required image is missing.</p>
-<p>In the actual message, {image name} contains the name of the image that is missing.</p>
+<p>必要な画像がありません。</p>
+<p>実際のメッセージでは、{image name} に見つからない画像の名前が入ります。</p>
 </td></tr>
 <tr><td>
-<p>The image {image name} is not a valid image file.</p>
+<p>The image {image name} is not a valid image file. (イメージ {image name} は有効なイメージ ファイルではありません。)</p>
 </td><td>
-<p>Ensure that all the app images adhere to the proper file format type restrictions.</p>
-<p>In the actual message, {image name} contains the name of the image that is not valid.</p>
+<p>すべてのアプリ画像が適切なファイルの種類の制限に従っていることを確認します。</p>
+<p>実際のメッセージでは、{image name} に画像の色として無効な値が入ります。</p>
 </td></tr>
 <tr><td>
-<p>The image "BadgeLogo" has an ABGR value {value} at position (x, y) that is not valid. The pixel must be white (##FFFFFF) or transparent (00######)</p>
+<p>The image "BadgeLogo" has an ABGR value {value} at position (x, y) that is not valid. (画像 "BadgeLogo" の位置 (x, y) の ABGR 値 {value} が無効です。) The pixel must be white (##FFFFFF) or transparent (00######) (このピクセルは、白 (##FFFFFF) または透明 (00######) である必要があります。)</p>
 </td><td>
-<p>The badge logo is an image that appears next to the badge notification to identify the app on the lock screen. This image must be monochromatic (it can contain only white and transparent pixels).</p>
-<p>In the actual message, {value} contains the color value in the image that is not valid.</p>
+<p>バッジ ロゴはロック画面でアプリを識別するためにバッジ通知の横に表示される画像です。 この画像はモノクロである必要があります (含めることができるのは白または透明のピクセルだけです)。</p>
+<p>実際のメッセージでは、{value} に画像の色として無効な値が入ります。</p>
 </td></tr>
 <tr><td>
-<p>The image "BadgeLogo" has an ABGR value {value} at position (x, y) that is not valid for a high-contrast white image. The pixel must be (##2A2A2A) or darker, or transparent (00######).</p>
+<p>The image “BadgeLogo” has an ABGR value {value} at position (x, y) that is not valid for a high-contrast white image. (画像 "BadgeLogo" の位置 (x, y) にハイコントラストの白い画像には無効な ABGR 値 {value} があります。) The pixel must be (##2A2A2A) or darker, or transparent (00######). (ピクセルは (##2A2A2A) か、それより暗いか、透明 (00######) である必要があります。)</p>
 </td><td>
-<p>The badge logo is an image that appears next to the badge notification to identify the app on the lock screen.   Because the badge logo  appears on a white background when in high-contrast white, it must be a dark version of the normal badge logo. In high-contrast white, the badge logo can only contain pixels that are darker than (##2A2A2A) or transparent.</p>
-<p>In the actual message, {value} contains the color value in the image that is not valid.</p>
+<p>バッジ ロゴはロック画面でアプリを識別するためにバッジ通知の横に表示される画像です。   "ハイコントラスト 白" ではバッジ ロゴが白い背景に表示されるため、通常のバッジ ロゴの濃いバージョンを使う必要があります。 "ハイコントラスト 白" でバッジ ロゴに含めることができるピクセルは、(##2A2A2A) より濃い色か透明のピクセルだけです。</p>
+<p>実際のメッセージでは、{value} に画像の色として無効な値が入ります。</p>
 </td></tr>
 <tr><td>
-<p>The image must define at least one variant without a TargetSize qualifier. It must define a Scale qualifier or leave Scale and TargetSize unspecified, which defaults to Scale-100.</p>
+<p>The image must define at least one variant without a TargetSize qualifier. (画像では、TargetSize 修飾子がないバージョンが少なくとも 1 つ定義されている必要があります。) It must define a Scale qualifier or leave Scale and TargetSize unspecified, which defaults to Scale-100. (Scale 修飾子が定義されているか、または Scale と TargetSize が指定されていないままである必要があり、既定では Scale-100 です。)</p>
 </td><td>
-<p>For more info, see <a href="https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dn958435.aspx">Responsive design 101 for UWP apps</a> and <a href="https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh465241.aspx">Guidelines for app resources</a>.</p>
+<p>詳しくは、「<a href="https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dn958435.aspx">UWP アプリ用レスポンシブ デザイン 101</a>」と「<a href="https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh465241.aspx">アプリ リソースのガイドライン</a>」をご覧ください。</p>
 </td></tr>
 <tr><td>
-<p>The package is missing a "resources.pri" file.</p>
+<p>The package is missing a "resources.pri" file. (パッケージに "resources.pri" ファイルがありません。)</p>
 </td><td>
-<p>If you have localizable content in your app manifest, make sure that your app's package includes a valid resources.pri file.</p>
+<p>アプリ マニフェストにローカライズ可能なコンテンツがある場合は、アプリのパッケージに有効な resources.pri ファイルが含まれていることを確認します。</p>
 </td></tr>
 <tr><td>
-<p>The "resources.pri" file must contain a resource map with a name that matches the package name  {package full name}</p>
+<p>The "resources.pri" file must contain a resource map with a name that matches the package name {package full name} ("resources.pri" ファイルには、パッケージ名 {package full name} と名前が一致するリソース マップが含まれている必要があります。)</p>
 </td><td>
-<p>You can get this error if the manifest changed and  the name of the resource map in resources.pri no longer matches the package name in the manifest.</p>
-<p>In the actual message, {package full name} contains the package name that resources.pri must contain.</p>
-<p>To fix this, you need to rebuild resources.pri and the easiest way to do that is  by rebuilding the app's package.</p>
+<p>このエラーが表示される場合は、マニフェストが変更され、resources.pri 内のリソース マップの名前がマニフェストのパッケージ名と一致しなくなった可能性があります。</p>
+<p>実際のメッセージでは、{package full name} には resources.pri に含まれている必要があるパッケージ名が入ります。</p>
+<p>この問題を解決するには、resources.pri をリビルドする必要があります。その場合は、アプリのパッケージをリビルドするのが最も簡単です。</p>
 </td></tr>
 <tr><td>
-<p>The "resources.pri" file must not have AutoMerge enabled.</p>
+<p>The "resources.pri" file must not have AutoMerge enabled. ("resources.pri" ファイルは AutoMerge を有効にしないでください。)</p>
 </td><td>
-<p>MakePRI.exe supports an option called <strong>AutoMerge</strong>. The default value of <strong>AutoMerge</strong> is <strong>off</strong>. When enabled, <strong>AutoMerge</strong> merges an app's  language pack resources into a single resources.pri at runtime. We don't recommend this for apps that you intend to distribute through  the Windows Store. The resources.pri of an app that is distributed through the  Windows Store must be in  the root of the app's package and contain all the language references that the app supports.</p>
+<p>MakePRI.exe では、<strong>AutoMerge</strong> というオプションがサポートされています。 <strong>AutoMerge</strong> の規定値は "<strong>off</strong>" です。 オンにすると、<strong>AutoMerge</strong> が実行時にアプリの言語パックを単一の resources.pri にマージします。 これは、Windows ストアで配布するアプリには推奨されません。 Windows ストアで配布するアプリでは、resources.pri をアプリのパッケージのルートに置いて、アプリがサポートする言語のリファレンスをすべて含める必要があります。</p>
 </td></tr>
 <tr><td>
-<p>The string {string} failed the max length restriction of {number} characters.</p>
+<p>The string {string} failed the max length restriction of {number} characters. (文字列 {string} が {number} 文字の最大文字数の制限を満たしていません。)</p>
 </td><td>
-<p>Refer to the <a href="https://msdn.microsoft.com/en-us/library/windows/apps/xaml/mt148525.aspx">App package requirements</a>.</p>
-<p>In the actual message, {string} is replaced by the string with the error and {number} contains the maximum length.</p>
+<p>「<a href="https://msdn.microsoft.com/en-us/library/windows/apps/xaml/mt148525.aspx">アプリ パッケージの要件</a>」をご覧ください。</p>
+<p>実際のメッセージでは、{string} が問題の文字列に置き換わり、{number} に最大文字数が入ります。</p>
 </td></tr>
 <tr><td>
-<p>The string {string} must not have leading/trailing whitespace.</p>
+<p>The string {string} must not have leading/trailing whitespace. (文字列 {string} の先頭または末尾を空白にすることはできません。)</p>
 </td><td>
-<p>The schema for the elements in the app manifest don't allow leading or trailing white space characters.</p>
-<p>In the actual message, {string} is replaced by the string with the error.</p>
-<p>Make sure that none of the localized values of the manifest fields in resources.pri have leading or trailing white space characters.</p>
+<p>アプリ マニフェストの要素のスキーマでは、先頭および末尾の空白は許可されていません。</p>
+<p>実際のメッセージでは、{string} が問題の文字列に置き換わります。</p>
+<p>resources.pri のマニフェスト フィールドのローカライズされた値において、先頭または末尾にスペースが挿入されていないことを確認します。</p>
 </td></tr>
 <tr><td>
-<p>The string must be non-empty (greater than zero in length)</p>
+<p>The string must be non-empty (greater than zero in length) (文字列を空にすることはできません (文字数が 0 より大きい必要があります)。)</p>
 </td><td>
-<p>For more info, see <a href="https://msdn.microsoft.com/en-us/library/windows/apps/xaml/mt148525.aspx">App package requirements</a>.</p>
+<p>詳しくは、「<a href="https://msdn.microsoft.com/en-us/library/windows/apps/xaml/mt148525.aspx">アプリ パッケージの要件</a>」をご覧ください。</p>
 </td></tr>
 <tr><td>
-<p>There is no default resource specified in the "resources.pri" file.</p>
+<p>There is no default resource specified in the "resources.pri" file. ("resources.pri" ファイルで指定された既定のリソースがありません。)</p>
 </td><td>
-<p>For more info, see <a href="https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh465241.aspx">Guidelines for app resources</a>.</p>
-<p>In the default build configuration,  Visual Studio only includes scale-200 image resources in the app package when generating bundles, putting other resources in the resource package. Make sure  you either include scale-200 image resources or configure your project to include the resources you have.</p>
+<p>詳しくは、「<a href="https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh465241.aspx">アプリ リソースのガイドライン</a>」をご覧ください。</p>
+<p>既定のビルド構成では、Visual Studio はバンドル生成時に 200% スケールの画像リソースのみをアプリ パッケージ内に組み込み、その他のリソースはリソース パッケージ内に配置します。 200% スケールの画像リソースを組み込むか、または持っているリソースを組み込むようにプロジェクトを構成してください。</p>
 </td></tr>
 <tr><td>
-<p>There is no resource value specified in the "resources.pri" file.</p>
+<p>There is no resource value specified in the "resources.pri" file. ("resources.pri" ファイルに指定されたリソース値がありません。)</p>
 </td><td>
-<p>Make sure that the app manifest has valid resources defined in resources.pri.</p>
+<p>resources.pri でアプリ マニフェストの有効なリソースが定義されていることを確認します。</p>
 </td></tr>
 <tr><td>
-<p>The image file {filename} must be smaller than 204800 bytes.\*\*</p>
+<p>The image file {filename} must be smaller than 204800 bytes.\*\* (イメージ ファイル {filename} は、204,800 バイト未満である必要があります。)</p>
 </td><td>
-<p>Reduce the size of the indicated images.</p>
+<p>指定の画像のサイズを小さくします。</p>
 </td></tr>
 <tr><td>
-<p>The {filename} file must not contain a reverse map section.\*\*</p>
+<p>The {filename} file must not contain a reverse map section.\*\* ({filename} ファイルには、リバース マップ セクションを含めることはできません。)</p>
 </td><td>
-<p>While the reverse map is generated during Visual Studio 'F5 debugging' when calling into makepri.exe, it can be removed by running makepri.exe without the /m parameter when generating a pri file.</p>
+<p>逆マップは Visual Studio の F5 デバッグ時に makepri.exe を呼び出すと生成されますが、pri ファイルの生成時に /m パラメーターなしで makepri.exe を実行すると削除することができます。</p>
 </td></tr>
 <tr><td colspan="2">
-<p>\*\* Indicates that a test was added in the Windows App Certification Kit 3.3 for Windows 8.1 and is only applicable when using the that version of the kit or later.</p>
+<p>\*\* Windows 8.1 用の Windows アプリ認定キット 3.3 に追加されたテストであり、そのバージョン以降のキットを使う場合にのみ適用されます。</p>
 </td></tr>
 </table>
 
@@ -470,193 +471,193 @@ Use the following table as guidance.
 
  
 
-### Branding validation
+### ブランドの検証
 
-Windows Store apps are expected to be complete and fully functional. Apps using the default images (from templates or SDK samples) present a poor user experience and cannot be easily identified in the store catalog.
+Windows ストア アプリは、完成していて完全に機能することが期待されます。 既定の画像 (テンプレートまたは SDK サンプルの画像) を使ったアプリは、ユーザー エクスペリエンスが貧弱であることを示しているため、ストア カタログであまり識別されない可能性があります。
 
-### Test Details
+### テストの詳細
 
-The test will validate if the images used by the app are not default images either from SDK samples or from Visual Studio.
+このテストは、アプリで使われている画像が SDK サンプルまたは Visual Studio の既定の画像でないことを検証します。
 
-### Corrective actions
+### 問題への対応
 
-Replace default images with something more distinct and representative of your app.
+既定の画像を、もっとアプリを明確に表すものに置き換えます。
 
-## Debug configuration test
+## デバッグ構成のテスト
 
-Test the app to make sure it is not a debug build.
+アプリをテストして、デバッグ用のビルドでないことを確認します。
 
-### Background
+### 背景
 
-To be certified for the Windows Store, apps must not be compiled for debug and they must not reference debug versions of an executable file. In addition, you must build your code as optimized for your app to pass this test.
+Windows ストアで認定されるためには、アプリをデバッグ用にコンパイルせず、デバッグ版の実行可能ファイルを参照しないようにする必要があります。 また、アプリがこのテストに合格するよう最適化されたコードをビルドする必要もあります。
 
-### Test details
+### テストの詳細
 
-Test the app to make sure it is not a debug build and is not linked to any debug frameworks.
+アプリをテストして、デバッグ用のビルドでないことと、どのデバッグ用のフレームワークにもリンクされていないことを確認します。
 
-### Corrective actions
+### 問題への対応
 
--   Build the app as a release build before you submit it to the Windows Store.
--   Make sure that you have the correct version of .NET framework installed.
--   Make sure the app isn't linking to debug versions of a framework and that it is building with a release version. If this app contains .NET components, make sure that you have installed the correct version of the .NET framework.
+-   アプリを Windows ストアに提出する前に、リリース用ビルドとしてビルドします。
+-   適切なバージョンの .NET フレームワークがインストールされていることを確認します。
+-   アプリがフレームワークのデバッグ バージョンにリンクされていないことと、リリース バージョンで構築されたことを確認します。 このアプリに .NET コンポーネントが含まれている場合は、適切なバージョンの .NET Framework がインストールされていることを確認します。
 
-## File encoding test
+## ファイル エンコードのテスト
 
-### UTF-8 file encoding
+### UTF-8 ファイル エンコード
 
-### Background
+### 背景
 
-HTML, CSS, and JavaScript files must be encoded in UTF-8 form with a corresponding byte-order mark (BOM) to benefit from bytecode caching and avoid certain runtime error conditions.
+バイトコード キャッシュを活用して特定の実行時エラー状態を避けるには、HTML、CSS、JavaScript の各ファイルが、対応するバイト オーダー マーク (BOM) を持つ UTF-8 形式でエンコードされている必要があります。
 
-### Test details
+### テストの詳細
 
-Test the contents of app packages to make sure that they use the correct file encoding.
+アプリ パッケージのコンテンツをテストし、正しいファイル エンコードが使われていることを確認します。
 
-### Corrective Action
+### 問題への対応
 
-Open the affected file and select **Save As** from the **File** menu in Visual Studio. Select the drop-down control next to the **Save** button and select **Save with Encoding**. From the **Advanced** save options dialog, choose the Unicode (UTF-8 with signature) option and click **OK**.
+Visual Studio で、影響を受けるファイルを開き、**[ファイル]** メニューの **[名前を付けて保存]** を選択します。 **[保存]** ボタンの横のドロップダウン コントロールを選び、**[エンコード付きで保存]** をクリックします。 **[保存オプションの詳細設定]** ダイアログ ボックスで、Unicode (シグネチャを含む UTF-8) オプションを選び、**[OK]** をクリックします。
 
-## Direct3D feature level test
+## Direct3D の機能レベルのテスト
 
-### Direct3D feature level support
+### Direct3D の機能レベルのサポート
 
-Tests Microsoft Direct3D apps to ensure that they won't crash on devices with older graphics hardware.
+Microsoft Direct3D アプリをテストして、以前のグラフィックス ハードウェアを搭載したデバイスでクラッシュしないことを確認します。
 
-### Background
+### 背景
 
-Windows Store requires all applications using Direct3D to render properly or fail gracefully on feature level 9\-1 graphics cards.
+Windows ストアでは、すべてのアプリケーションが、Direct3D を使って機能レベル 9\-1 グラフィックス カードで正しくレンダリングされるか、適切な手順でエラーとなることが要求されます。
 
-Because users can change the graphics hardware in their device after the app is installed, if you choose a minimum feature level higher than 9\-1, your app must detect at launch whether or not the current hardware meets the minimum requirements. If the minimum requirements are not met, the app must display a message to the user detailing the Direct3D requirements. Also, if an app is downloaded on a device with which it is not compatible, it should detect that at launch and display a message to the customer detailing the requirements.
+アプリのインストール後にユーザーのデバイスのグラフィックス ハードウェアがユーザーによって変更されることもあるため、最小機能レベルを 9\-1 よりも高くする場合は、現在のハードウェアが最小要件を満たしているかどうかをアプリの起動時に検出するようにしなければなりません。 最小要件が満たされていない場合は、アプリでは Direct3D の要件に関する詳しいメッセージをユーザーに表示する必要があります。 また、アプリが互換性のないデバイスでダウンロードされた場合は、起動時にそれを検出し、要件について説明するメッセージをユーザーに表示する必要もあります。
 
-### Test Details
+### テストの詳細
 
-The test will validate if the apps render accurately on feature level 9\-1.
+このテストは、アプリが機能レベル 9\-1 で正確にレンダリングされるかどうかを検証します。
 
-### Corrective Action
+### 問題への対応
 
-Ensure that your app renders correctly on Direct3D feature level 9\-1, even if you expect it to run at a higher feature level. See [Developing for different Direct3D feature levels](http://go.microsoft.com/fwlink/p/?LinkID=253575) for more info.
+高い機能レベルで実行されると予想される場合でも、アプリが Direct3D 機能レベル 9\-1 で正しくレンダリングされることを確認します。 詳しくは、「[機能レベルが異なる Direct3D の開発](http://go.microsoft.com/fwlink/p/?LinkID=253575)」をご覧ください。
 
-### Direct3D Trim after suspend
+### 中断後の Direct3D トリミング
 
-> **Note**  This test only applies to Windows Store apps developed for Windows 8.1 and later.
+> **注**  このテストは、Windows 8.1 以降を対象に開発された Windows ストア アプリにのみ適用されます。
 
-### Background
+### 背景
 
-If the app does not call [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) on its Direct3D device, the app will not release memory allocated for its earlier 3D work. This increases the risk of apps being terminated due to system memory pressure.
+アプリが Direct3D デバイスで [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) を呼び出さない場合は、アプリは前の 3D 作業に割り当てられたメモリを解放しません。 この結果、システムのメモリ不足のためにアプリが終了するリスクが増加します。
 
-### Test Details
+### テストの詳細
 
-Checks apps for compliance with d3d requirements and ensures that apps are calling a new [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) API upon their Suspend callback.
+アプリが d3d 要件を満たしているかどうか、そして中断コールバック時に新しい [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) API を呼び出すかどうかを確認します。
 
-### Corrective Action
+### 問題への対応
 
-The app should call the [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) API on its [**IDXGIDevice3**](https://msdn.microsoft.com/library/windows/desktop/Dn280345) interface anytime it is about to be suspended.
+アプリは中断されそうになった時は常に [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280345) インターフェイスで [**IDXGIDevice3**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) API を呼び出す必要があります。
 
-## App Capabilities test
+## アプリ機能のテスト
 
-### Special use capabilities
+### 特殊な用途の機能
 
-### Background
+### 背景
 
-Special use capabilities are intended for very specific scenarios. Only company accounts are allowed to use these capabilities.
+特殊な用途の機能は、特殊なシナリオ向けの機能です。 会社アカウントだけがこれらの機能を使うことができます。
 
-### Test Details
+### テストの詳細
 
-Validate if the app is declaring any of the below capabilities:
+アプリが次のいずれかの機能を宣言することを検証します。
 
 -   EnterpriseAuthentication
 -   SharedUserCertificates
 -   DocumentsLibrary
 
-If any of these capabilities are declared, the test will display a warning to the user.
+これらの機能のいずれかが宣言される場合は、テストにより警告がユーザーに表示されます。
 
-### Corrective Actions
+### 問題への対応
 
-Consider removing the special use capability if your app doesn't require it. Additionally, use of these capabilities are subject to additional on-boarding policy review.
+アプリが必要としない場合は、特殊な用途の機能を削除することを検討してください。 さらに、これらの機能は、追加の登録ポリシー レビューの対象となります。
 <!--TODO: after migrating dev-packaging, link to [if your app doesn't require it](dev-packaging.app-capability-declarations#special-and-restricted-capabilities)-->
 
-## Windows Runtime metadata validation
+## Windows ランタイム メタデータ検証
 
-### Background
+### 背景
 
-Ensures that the components that ship in an app conform to the UWP type system.
+アプリに付属する Windows ランタイム コンポーネントが、Windows ランタイム型システムに準拠していることを確認します。
 
-### Test Details
+### テストの詳細
 
-Verifies that the **.winmd** files in the package conform to UWP rules.
+パッケージの **.winmd** ファイルが UWP 規則に準拠していることを確認します。
 
-### Corrective Actions
+### 問題への対応
 
--   **ExclusiveTo attribute test:** Ensure that UWP classes don't implement interfaces that are marked as ExclusiveTo another class.
--   **Type location test:** Ensure that the metadata for all UWP types is located in the winmd file that has the longest namespace-matching name in the app package.
--   **Type name case-sensitivity test:** Ensure that all UWP types have unique, case-insensitive names within your app package. Also ensure that no UWP type name is also used as a namespace name within your app package.
--   **Type name correctness test:** Ensure there are no UWP types in the global namespace or in the Windows top-level namespace.
--   **General metadata correctness test:** Ensure that the compiler you are using to generate your types is up to date with the UWP specifications.
--   **Properties test:** ensure that all properties on a UWP class have a get method (set methods are optional). Ensure that the type of the get method return value matches the type of the set method input parameter, for all properties on UWP types.
+-   **ExclusiveTo 属性のテスト:** UWP クラスに別の ExclusiveTo クラスとしてマークされたインターフェイスが実装されていないことを確認します。
+-   **型の場所のテスト:** UWP のすべての型のメタデータが、アプリ パッケージで最も長い名前空間に対応する名前の winmd ファイルにあることを確認します。
+-   **型名の大文字小文字の区別のテスト:** アプリ内のすべての UWP 型が一意で、かつ大文字と小文字で区別されていない名前であることを確認します。 また、UWP 型名が、アプリ パッケージ内で名前空間名として使われていないことも確認します。
+-   **型名の正確性のテスト:** グローバル名前空間または Windows の最上位の名前空間に UWP 型がないことを確認します。
+-   **一般的なメタデータの正確性のテスト:** 型の生成に使っているコンパイラが UWP の仕様に従って最新の状態になっていることを確認します。
+-   **プロパティのテスト:** UWP クラスのすべてのプロパティに get メソッドがあることを確認します (set メソッドは省略可能です)。 UWP 型のすべてのプロパティについて、get メソッドの戻り値の型が set メソッドの入力パラメーターの型に一致することを確認します。
 
-## Package Sanity tests
+## パッケージ サニティ テスト
 
-### Platform appropriate files test
+### プラットフォーム対応ファイル テスト
 
-Apps that install mixed binaries may crash or not run correctly depending upon the user’s processor architecture.
+ユーザーのプロセッサ アーキテクチャによっては、混在するバイナリをインストールしているアプリは、クラッシュしたり、正しく動作しなかったりすることがあります。
 
-### Background
+### 背景
 
-This test validates the binaries in an app package for architecture conflicts. An app package should not include binaries that can't be used on the processor architecture specified in the manifest. Including unsupported binaries can lead to your app crashing or an unnecessary increase in the app package size.
+このテストでは、アーキテクチャが競合していないか、アプリ パッケージのバイナリを検証します。 アプリ パッケージには、マニフェストに指定されたプロセッサ アーキテクチャで使用できないバイナリを含めることができません。 サポートされていないバイナリが含まれると、アプリがクラッシュしたり、アプリのパッケージ サイズが不必要に大きくなったりする可能性があります。
 
-### Test Details
+### テストの詳細
 
-Validates that each file's "bitness" in the PE header is appropriate when cross-referenced with the app package processor architecture declaration
+アプリ パッケージのプロセッサ アーキテクチャ宣言と相互参照される場合に、各ファイルの PE ヘッダー内のビットが適切かどうかを検証します。
 
-### Corrective Action
+### 問題への対応
 
-Follow these guidelines to ensure that your app package only contains files supported by the architecture specified in the app manifest:
+アプリ マニフェストで指定されたアーキテクチャでサポートされるファイルのみをアプリ パッケージが含むことを確認するために、次のガイドラインに従ってください。
 
--   If the Target Processor Architecture for your app is Neutral processor Type, the app package cannot contain x86, x64, or ARM binary or image type files.
+-   アプリのターゲット プロセッサ アーキテクチャがニュートラル プロセッサ形式の場合は、アプリ パッケージは、x86、x64、または ARM のバイナリ形式またはイメージ形式のファイルを含むことはできません。
 
--   If the Target Processor Architecture for your app is x86 processor type, the app package must only contain x86 binary or image type files. If the package contains x64 or ARM binary or image types, it will fail the test.
+-   アプリのターゲット プロセッサ アーキテクチャが x86 プロセッサ形式の場合は、アプリ パッケージは、x86 バイナリ形式またはイメージ形式のファイルのみを含む必要があります。 パッケージが x64 ないし ARM バイナリ形式またはイメージ形式を含む場合は、アプリはテストに合格しません。
 
--   If the Target Processor Architecture for your app is x64 processor type, the app package must contain x64 binary or image type files. Note that in this case the package can also include x86 files, but the primary app experience should utilize the x64 binary.
+-   アプリのターゲット プロセッサ アーキテクチャが x64 プロセッサ形式の場合は、アプリ パッケージは、x64 バイナリ形式またはイメージ形式のファイルを含む必要があります。 この場合は、パッケージに x86 ファイルを含めることもできますが、主なアプリ エクスペリエンスでは x64 バイナリを使ってください。
 
-    However, if the package contains ARM binary or image type files, or only contains x86 binaries or image type files, it will fail the test.
+    ただし、パッケージが ARM バイナリ形式またはイメージ形式のファイルを含む場合、または x86 バイナリ形式またはイメージ形式のファイルのみを含む場合は、パッケージはテストに合格しません。
 
--   If the Target Processor Architecture for your app is ARM processor type, the app package must only contain ARM binary or image type files. If the package contains x64 or x86 binary or image type files, it will fail the test.
+-   アプリのターゲット プロセッサ アーキテクチャが ARM プロセッサ形式の場合は、アプリ パッケージは、ARM バイナリ形式またはイメージ形式のファイルのみを含む必要があります。 パッケージが x64 または x86 バイナリ形式またはイメージ形式のファイルを含む場合は、パッケージはテストに合格しません。
 
-### Supported Directory Structure test
+### サポートされるディレクトリ構造のテスト
 
-Validates that applications are not creating subdirectories as part of installation that are longer than MAX\-PATH.
+アプリケーションがインストールの一環として MAX\-PATH より長いサブディレクトリを作成しないことを確認します。
 
-### Background
+### 背景
 
-OS components (including Trident, WWAHost, etc.) are internally limited to MAX\-PATH for file system paths and will not work correctly for longer paths.
+OS コンポーネント (Trident、WWAHost など) は、ファイル システム パスの MAX\-PATH に内部的に制限され、長いパスでは正しく機能しません。
 
-### Test Details
+### テストの詳細
 
-Verifies that no path within the app install directory exceeds MAX\-PATH.
+アプリのインストール ディレクトリ内のどのパスも MAX\-PATH を超えていないことを確認します。
 
-### Corrective Action
+### 問題への対応
 
-Use a shorter directory structure, and or file name.
+短いディレクトリ構造やファイル名にします。
 
-## Resource Usage test
+## リソース使用率のテスト
 
-### WinJS Background Task test
+### WinJS バックグラウンド タスクのテスト
 
-WinJS background task test ensures that JavaScript apps have the proper close statements so apps don’t consume battery.
+WinJS バックグラウンド タスクのテストは、JavaScript アプリに適切な close ステートメントがあり、アプリがバッテリを消費しないことを確認します。
 
-### Background
+### 背景
 
-Apps that have JavaScript background tasks need to call Close() as the last statement in their background task. Apps that do not do this could keep the system from returning to connected standby mode and result in draining the battery.
+JavaScript のバックグラウンド タスクがあるアプリは、バックグラウンド タスクの最後のステートメントとして Close() を呼び出す必要があります。 これがないアプリの場合は、システムがコネクト スタンバイ モードに戻らないため、バッテリを消耗する可能性があります。
 
-### Test Details
+### テストの詳細
 
-If the app does not have a background task file specified in the manifest, the test will pass. Otherwise the test will parse the JavaScript background task file that is specified in the app package, and look for a Close() statement. If found, the test will pass; otherwise the test will fail.
+マニフェストで指定されたバックグラウンド タスク ファイルがアプリにない場合は、テストに合格します。 それ以外の場合は、テストはアプリ パッケージで指定された JavaScript バックグラウンド タスク ファイルを解析し、Close() ステートメントを探します。 見つかった場合はテストに合格します。見つからない場合はテストに合格しません。
 
-### Corrective Action
+### 問題への対応
 
-Update the background JavaScript code to call Close() correctly.
+バックグラウンドの JavaScript コードを更新して、Close() を正しく呼び出します。
 
-> **Note**  This article is for Windows 10 developers writing UWP apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **注**  この記事は、UWP アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、アーカイブ ドキュメント ([archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132)) をご覧ください。
 
  
 

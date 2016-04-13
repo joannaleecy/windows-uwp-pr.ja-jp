@@ -157,22 +157,35 @@ template: detail.hbs
 
 コマンド バーの推奨事項については、「[コマンド バーのガイドライン](app-bars.md)」をご覧ください。
 
-\[この記事には、ユニバーサル Windows プラットフォーム (UWP) アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
+## グローバリゼーションとローカライズのチェックリスト
 
-## 関連トピック
+<table>
+<tr>
+<th>折り返し</th><td>一覧のラベルを 2 行にできます。</td>
+</tr>
+<tr>
+<th>水平方向の拡張</th><td>フィールドがテキストの伸張とスクロールに対応できるようにします。</td>
+</tr>
+<tr>
+<th>垂直方向の間隔</th><td>垂直方向の間隔に非ラテン文字を使用し、非ラテン文字が適切に表示されるようにします。</td>
+</tr>
+</table>
+
+
+## 関連記事
 
 **デザイナー向け**
-* [ハブ](hub.md)
-* [マスター/詳細](master-details.md)
-* [ナビゲーション ウィンドウ](nav-pane.md)
-* [セマンティック ズーム](semantic-zoom.md)
+- [ハブ](hub.md)
+- [マスター/詳細](master-details.md)
+- [ナビゲーション ウィンドウ](nav-pane.md)
+- [セマンティック ズーム](semantic-zoom.md)
 
 **開発者向け**
-* [**ListView クラス**](https://msdn.microsoft.com/library/windows/apps/br242878)
-* [**GridView クラス**](https://msdn.microsoft.com/library/windows/apps/br242705)
-* [**ComboBox クラス**](https://msdn.microsoft.com/library/windows/apps/br209348)
-* [**ListBox クラス**](https://msdn.microsoft.com/library/windows/apps/br242868)
-* [コンボ ボックスとリスト ボックスの追加](https://msdn.microsoft.com/library/windows/apps/xaml/hh780616)
+- [**ListView クラス**](https://msdn.microsoft.com/library/windows/apps/br242878)
+- [**GridView クラス**](https://msdn.microsoft.com/library/windows/apps/br242705)
+- [**ComboBox クラス**](https://msdn.microsoft.com/library/windows/apps/br209348)
+- [**ListBox クラス**](https://msdn.microsoft.com/library/windows/apps/br242868)
+- [コンボ ボックスとリスト ボックスの追加](https://msdn.microsoft.com/library/windows/apps/xaml/hh780616)
 
 
 

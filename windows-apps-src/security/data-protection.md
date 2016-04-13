@@ -1,30 +1,30 @@
 ---
-title: Data protection
-description: This article explains how to use the DataProtectionProvider class in the Windows.Security.Cryptography.DataProtection namespace to encrypt and decrypt digital data in a UWP app.
+title: データ保護
+description: この記事では、Windows.Security.Cryptography.DataProtection 名前空間の DataProtectionProvider クラスを使って、UWP アプリでデジタル データの暗号化と暗号化解除を行う方法について説明します。
 ms.assetid: 9EE3CC45-5C44-4196-BD8B-1D64EFC5C509
 author: awkoren
 ---
 
-# Data protection
+# データ保護
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-This article explains how to use the [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) class in the [**Windows.Security.Cryptography.DataProtection**](https://msdn.microsoft.com/library/windows/apps/br241585) namespace to encrypt and decrypt digital data in a UWP app.
+この記事では、[**Windows.Security.Cryptography.DataProtection**](https://msdn.microsoft.com/library/windows/apps/br241585) 名前空間の [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) クラスを使って、UWP アプリでデジタル データの暗号化と暗号化解除を行う方法について説明します。
 
-You can use the data protection APIs in multiple ways:
+データ保護 API はさまざまな方法で使用することができます。
 
--   To protect data to an Active Directory (AD) security principal like an AD group. Any member of the group can decrypt the data.
--   To protect data to the public key contained in an X.509 certificate. The owner of the private key can decrypt the data.
--   To protect data by using a symmetric key. This works, for example, to protect data to a non-AD principal such as Live ID.
--   To protect data to the credentials (password) used during logon to a website.
+-   Active Directory (AD) グループなどの AD セキュリティ プリンシパルに対するデータを保護します。 このグループのすべてのメンバーがデータを暗号化解除できます。
+-   X.509 証明書に含まれている公開キーでデータを保護します。 秘密キーの所有者がデータを暗号化解除できます。
+-   対称キーを使ってデータを保護します。 この方法は、たとえば、Live ID のような非 AD プリンシパルに対するデータを保護する場合に適しています。
+-   Web サイトへのログオン時に使われる資格情報 (パスワード) でデータを保護できます。
 
-To protect data, when you create a [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) object you must specify a protection descriptor before calling [**ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/br241563) or [**ProtectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241564). The following example shows possible sample protection descriptors.
+データを保護するには、[**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) オブジェクトを作成するときに、保護記述子を指定してから [**ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/br241563) または [**ProtectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241564) を呼び出す必要があります。 保護記述子の例を次に示します。
 
-## Protecting static data
+## 静的データの保護
 
 
-The following example shows how to use the [**ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/br241563) and [**UnprotectAsync**](https://msdn.microsoft.com/library/windows/apps/br241565) methods to asynchronously protect static data to the current user's SID.
+次の例に、[**ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/br241563) メソッドと [**UnprotectAsync**](https://msdn.microsoft.com/library/windows/apps/br241565) メソッドを使って、現在のユーザーの SID に対する静的データを非同期に保護する方法を示します。
 
 ```cs
 using Windows.Security.Cryptography;
@@ -106,10 +106,10 @@ namespace SampleProtectAsync
 }
 ```
 
-## Protecting stream data
+## ストリーム データの保護
 
 
-The following example shows how to use the [**ProtectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241564) and [**UnprotectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241566) methods to asynchronously protect stream data to the current user's SID.
+次の例に、[**ProtectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241564) メソッドと [**UnprotectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241566) メソッドを使って、現在のユーザーの SID に対するストリーム データを非同期に保護する方法を示します。
 
 ```cs
 using Windows.Security.Cryptography;

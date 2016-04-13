@@ -1,75 +1,75 @@
 ---
-Description: The Microsoft Store Engagement and Monetization SDK provides libraries and tools that you can use to add features to your apps that help you make more money and gain customers.
-title: Monetize your app and engage customers with the Microsoft Store Engagement and Monetization SDK
+Description: Microsoft Store Engagement and Monetization SDK が提供するライブラリとツールを利用すると、収益とユーザーの獲得を図る機能をアプリに追加できます。
+title: Microsoft Store Engagement and Monetization SDK によるアプリ収益の獲得と顧客エンゲージメント
 ms.assetid: 518516DB-70A7-49C4-B3B6-CD8A98320B9C
 ---
 
-# Monetize your app and engage customers with the Microsoft Store Engagement and Monetization SDK
+# Microsoft Store Engagement and Monetization SDK によるアプリ収益の獲得と顧客エンゲージメント
 
-The Microsoft Store Engagement and Monetization SDK provides libraries and tools that help you make more money and gain customers, such as displaying ads in your apps and running experiments with A/B testing. This SDK replaces the Microsoft Universal Ad Client SDK, and it will evolve over time to include new engagement and monetization features.
+Microsoft Store Engagement and Monetization SDK が提供するライブラリとツールを利用すると、収益とユーザーの獲得を向上することができます。たとえば、アプリで広告を表示したり、A/B テストを行ったりできます。 この SDK は Microsoft Universal Ad Client SDK の後継であり、エンゲージメントと収益化に関する新しい機能が徐々に追加されます。
 
 
-## Features available in the SDK
+## SDK で利用可能な機能
 
-The Microsoft Store Engagement and Monetization SDK provides libraries and tools that support the following features.
+Microsoft Store Engagement and Monetization SDK は、以下の機能をサポートするライブラリとツールを提供します。
 
-### Run experiments with A/B testing for UWP apps
+### UWP アプリの A/B テストの実行
 
-Run A/B tests in your Universal Windows Platform (UWP) apps to measure the effectiveness of features on some customers before you release the features to everyone. After you define an experiment in your Dev Center dashboard, use the [ExperimentClient](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.engagementclient.aspx) class to get variations for your experiment in your app, use this data to modify the behavior of the feature you are testing, and then use the [Log](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomevents.log.aspx) method to send view event and conversion events to Dev Center. Finally, use your dashboard to view the results and manage the experiment.
+ユニバーサル Windows プラットフォーム (UWP) アプリで A/B テストを実施して、すべてのユーザー向けに機能を公開する前に、一部のユーザーに対して機能の有効性を測定することができます。 デベロッパー センター ダッシュボードで実験を定義したら、アプリで [ExperimentClient](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.engagementclient.aspx) クラスを使用して実験のバリエーションを取得し、そのデータを使って、テストする機能の動作を変更し、[Log](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomevents.log.aspx) メソッドを使って、デベロッパー センターにビュー イベントとコンバージョン イベントを送信します。 最後に、ダッシュボードで結果を表示し、実験を管理します。
 
-For more information, see [Run experiments with A/B testing](run-app-experiments-with-a-b-testing.md).
+詳しくは、「[A/B テストの実行](run-app-experiments-with-a-b-testing.md)」をご覧ください。
 
-### App feedback for UWP apps
+### UWP アプリのアプリ フィードバック
 
-Use the [Feedback](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.feedback.aspx) class in your UWP apps to direct your Windows 10 customers to Feedback Hub, where they can submit problems, suggestions, and upvotes. Then, manage this feedback in the [Feedback report](../publish/feedback-report.md) in the Dev Center dashboard.
+UWP アプリで [Feedback](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.feedback.aspx) クラスを使用して、Windows 10 ユーザーをフィードバック Hub に誘導して、ユーザーが問題、提案、賛成票を送信できるようにします。 次に、デベロッパー センター ダッシュボードの[フィードバック レポート](../publish/feedback-report.md)でこのフィードバックを管理します。
 
-For more information, see [Launch Feedback Hub from your app](launch-feedback-hub-from-your-app.md).
+詳しくは、「[アプリからのフィードバック Hub の起動](launch-feedback-hub-from-your-app.md)」をご覧ください。
 
-### Display ads in your apps
+### アプリでの広告の表示
 
-Increase your revenue by displaying banner ads or video interstitial ads from Microsoft in UWP apps as well as Windows 8.1 and Windows Phone 8.x apps. You can also maximize your ad fill rates by using ad mediation to display ads from multiple ad network providers.
+UWP アプリに加えて、Windows 8.1 アプリや Windows Phone 8.x アプリで、Microsoft からのバナー広告およびスポット広告ビデオを表示し、収益を増やします。 また、広告仲介を使用して、複数の広告ネットワーク プロバイダーから広告を表示すると、広告のフィル レートを最大限に高めることができます。
 
-For more information, see [Display ads in your app](display-ads-in-your-app.md).
+詳しくは、「[アプリでの広告の表示](display-ads-in-your-app.md)」をご覧ください。
 
->**Note** The advertising features from previous releases of the Universal Ad Client SDK, Ad Mediator extension and Microsoft Advertising SDK are now included in the Microsoft Store Monetization and Engagement SDK.
+>**注** 以前のリリースである Universal Ad Client SDK、Ad Mediator 拡張機能、Microsoft Advertising SDK の広告機能は現在、Microsoft Store Monetization and Engagement SDK に含まれています。
 
-### API reference
+### API リファレンス
 
-For reference documentation about the APIs in the SDK, see [Microsoft Store Engagement and Monetization SDK API reference](https://msdn.microsoft.com/library/windows/apps/mt691886.aspx).
+SDK の API に関するリファレンス ドキュメントについては、「[Microsoft Store Engagement and Monetization SDK API リファレンス](https://msdn.microsoft.com/library/windows/apps/mt691886.aspx)」をご覧ください。
 
-## Install the SDK
+## SDK のインストール
 
-To install the Microsoft Store Monetization and Engagement SDK:
+Microsoft Store Monetization and Engagement SDK をインストールするには、次の手順を実行します。
 
-1.  Close all instances of Visual Studio 2013 or Visual Studio 2015 and uninstall any previous versions of the Universal Ad Client SDK, Ad Mediator extension or Microsoft Advertising SDK.
-2.  Download and install the [SDK](http://aka.ms/store-em-sdk). It may take a few minutes to install. Be sure and wait until the process has finished.
-3.  Restart Visual Studio.
+1.  Visual Studio 2013 または Visual Studio 2015 のすべてのインスタンスを閉じて、Universal Ad Client SDK、Ad Mediator 拡張機能、または Microsoft Advertising SDK の以前のバージョンをアンインストールします。
+2.  [SDK](http://aka.ms/store-em-sdk) をダウンロードしてインストールします。 インストールには数分かかることがあります。 確実に処理が完了するまでお待ちください。
+3.  Visual Studio を再起動します。
 
-Microsoft periodically releases new versions of the Microsoft Store Monetization and Engagement SDK with performance improvements and new features. If you have existing projects that use the Microsoft Store Monetization and Engagement SDK and you want to use the latest version, simply download and install the latest version of the SDK.
+マイクロソフトでは定期的に、向上したパフォーマンスと新しい機能を備えた、新しいバージョンの Microsoft Store Monetization and Engagement SDK をリリースしています。 Microsoft Store Monetization and Engagement SDK を使っている既存のプロジェクトがあり、そのプロジェクトで最新バージョンを使う場合は、最新バージョンの SDK をダウンロードしてインストールしてください。
 
-The advertising features from previous releases of the Universal Ad Client SDK, Ad Mediator extension and Microsoft Advertising SDK are now included in the Microsoft Store Monetization and Engagement SDK. If you have existing Visual Studio 2015 or Visual Studio 2013 projects that use advertising features from one of these previous releases, you can continue working with your projects without any changes after you install the Microsoft Store Monetization and Engagement SDK.
+以前のリリースである Universal Ad Client SDK、Ad Mediator 拡張機能、Microsoft Advertising SDK の広告機能は現在、Microsoft Store Monetization and Engagement SDK に含まれています。 以前のリリースの広告機能を使っている既存の Visual Studio 2015 または Visual Studio 2013 プロジェクトがある場合は、Microsoft Store Monetization and Engagement SDK をインストールした後も、変更を加える必要なしに、既存のプロジェクトを継続できます。
 
->**Note**  To install the Microsoft Store Engagement and Monetization SDK with Visual Studio 2015, you must have version 1.1 or later of the Visual Studio Tools for Universal Windows Apps installed. For more information about this update to the Visual Studio Tools for Universal Windows Apps, see the [release notes](http://go.microsoft.com/fwlink/?LinkID=624516).
+>**注**  Visual Studio 2015 の Microsoft Store Engagement and Monetization SDK をインストールするには、Visual Studio Tools for Universal Windows Apps のバージョン 1.1 以降がインストールされている必要があります。 Visual Studio Tools for Universal Windows Apps のこの更新について詳しくは、[リリース ノート](http://go.microsoft.com/fwlink/?LinkID=624516)をご覧ください。
 
-## Framework packages in the SDK
+## SDK のフレームワーク パッケージ
 
-The following library in the Microsoft Store Monetization and Engagement SDK is configured as a *framework package*:
+Microsoft Store Monetization and Engagement SDK に含まれる次のライブラリは、*フレームワーク パッケージ*として構成されます。
 
-* Microsoft.Advertising.dll (for UWP app projects only). This library contains the advertising APIs in the **Microsoft.Advertising** and **Microsoft.Advertising.WinRT.UI** namespaces.
+* Microsoft.Advertising.dll (UWP アプリ プロジェクトに対してのみ)。 このライブラリには、**Microsoft.Advertising** のアドバタイズ API と **Microsoft.Advertising.WinRT.UI** 名前空間が含まれます。
 
-This means that after you install the SDK on your development computer, this library is automatically updated through Windows Update whenever we publish new versions of the libraries with fixes and performance improvements. This helps to ensure that you always have the latest available version of the library installed on your development computer.
+つまり、SDK を開発用コンピューターにインストールした後、このライブラリは、修正されてパフォーマンスが向上した新しいバージョンのライブラリが公開されるたびに、Windows Update を介して自動的に更新されます。 これにより、利用できる最新バージョンのライブラリが開発用コンピューターに確実にインストールされます。
 
-In addition, after a user installs a version of your app that uses this library, the library will also automatically be updated on their device whenever we publish new versions of the library with fixes and performance improvements. This means that users will always have the most current version of the library, without any need for you to publish updated versions of your app to the Store.
+また、このライブラリを使用するバージョンのアプリをユーザーがインストールすると、このライブラリは、修正されてパフォーマンスが向上した新しいバージョンのライブラリが公開されるたびに、ユーザーのデバイスで自動的に更新されます。 つまり、開発者が更新されたバージョンのアプリをストアに公開しなくても、ユーザーは最新バージョンのライブラリを常に使用できるようになります。
 
-However, if we release a new version of the SDK that introduces new APIs or features in this library, you will need to install the latest version of the SDK to use those features. In this scenario, you would also need to publish your updated app to the Store.
+ただし、このライブラリに新しい API や機能が導入された新しいバージョンの SDK がリリースされた場合は、これらの機能を使用するために最新バージョンの SDK をインストールする必要があります。 このシナリオでは、更新されたアプリをストアに公開する必要もあります。
 
-Other libraries in the SDK, including Microsoft.Advertising.dll for other target platforms and the libraries for ad mediation, are not currently configured as framework libraries.
+他のプラットフォームを対象にした Microsoft.Advertising.dll や広告仲介用のライブラリなど、SDK のその他のライブラリは現在、フレームワーク ライブラリとして構成されていません。
 
-## Related topics
+## 関連トピック
 
-* [Run experiments with A/B testing](run-app-experiments-with-a-b-testing.md)
-* [Microsoft Store Engagement and Monetization SDK API reference](https://msdn.microsoft.com/library/windows/apps/mt691886.aspx)
-* [Launch Feedback Hub from your app](launch-feedback-hub-from-your-app.md)
+* [A/B テストの実行](run-app-experiments-with-a-b-testing.md)
+* [Microsoft Store Engagement and Monetization SDK API リファレンス](https://msdn.microsoft.com/library/windows/apps/mt691886.aspx)
+* [アプリからのフィードバック Hub の起動](launch-feedback-hub-from-your-app.md)
 
 
 <!--HONumber=Mar16_HO5-->

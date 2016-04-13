@@ -2,12 +2,13 @@
 title: 文字列とバイナリ データの間の変換
 description: 次のコード例は、ユニバーサル Windows プラットフォーム (UWP) アプリでの文字列とバイナリ データ間での変換方法を示しています。
 ms.assetid: AED4C74F-E63B-4980-BB4D-28ACCC1AB58B
+author: awkoren
 ---
 
 # 文字列とバイナリ データの間の変換
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 次のコード例は、ユニバーサル Windows プラットフォーム (UWP) アプリでの文字列とバイナリ データ間での変換方法を示しています。
 
@@ -28,15 +29,6 @@ public void ConvertData()
 }
 ```
 
- 
-
- 
-
-
-
-
-
-
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=Mar16_HO5-->
 
 

@@ -1,84 +1,84 @@
 ---
 ms.assetid: 9899F6A0-7EDD-4988-A76E-79D7C0C58126
-title: Universal Windows Platform Components and optimizing interop
-description: Create Universal Windows Platform (UWP) apps that use UWP Components and interop between native and managed types while avoiding interop performance issues.
+title: ユニバーサル Windows プラットフォーム コンポーネントと相互運用性の最適化
+description: 相互運用性のパフォーマンス上の問題を回避しながら、ネイティブ型とマネージ型の間で UWP コンポーネントと相互運用機能を使うユニバーサル Windows プラットフォーム (UWP) アプリを作成します。
 ---
-# Universal Windows Platform Components and optimizing interop
+# ユニバーサル Windows プラットフォーム コンポーネントと相互運用性の最適化
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-Create Universal Windows Platform (UWP) apps that use UWP Components and interop between native and managed types while avoiding interop performance issues.
+相互運用性のパフォーマンス上の問題を回避しながら、ネイティブ型とマネージ型の間で UWP コンポーネントと相互運用機能を使うユニバーサル Windows プラットフォーム (UWP) アプリを作成します。
 
-## Best practices for interoperability with UWP Components
+## UWP コンポーネントとの相互運用性のベスト プラクティス (UWP)
 
-If you are not careful, using UWP Components can have a large impact on your app performance. This section discusses how to get good performance when your app uses UWP Components.
+UWP コンポーネントを使うとアプリのパフォーマンスに大きな影響を与える場合があるので、注意してください。 このセクションでは、UWP コンポーネントを使用するアプリで高パフォーマンスを実現する方法について説明します。
 
-### Introduction
+### はじめに
 
-Interoperability can have a big impact on performance and you might be using it without even realizing that you are. The UWP handles a lot of the interoperability for you so that you can be more productive and reuse code that was written in other languages. We encourage you to take advantage of what the UWP does for you, but be aware that it can impact performance. This section discusses things you can do to lessen the impact that interoperability has on your app's performance.
+相互運用性はアプリのパフォーマンスに大きな影響を与えますが、その存在を意識せずに利用していることも多いでしょう。 UWP は、開発者に代わって多数の相互運用性を処理し、生産性の向上と、他の言語で記述されたコードの再利用を実現します。 UWP の機能を活用することをお勧めしますが、一方でそれがパフォーマンスに与える影響を認識しておく必要があります。 このセクションでは、相互運用性がアプリのパフォーマンスに与える影響を軽減するためにできることについて説明します。
 
-The UWP has a library of types that are accessible from any language that can write a UWP app. You use the UWP types in C# or Microsoft Visual Basic the same way you use .NET objects. You don't need to make platform invoke method calls to access the UWP components. This makes writing your apps much less complex, but it is important to realize that there might be more interoperability occurring than you expect. If a UWP component is written in a language other than C# or Visual Basic, you cross interoperability boundaries when you use that component. Crossing interoperability boundaries can impact the performance of an app.
+UWP には、UWP アプリの作成に使用できるすべての言語からアクセスできる型ライブラリが用意されています。 C# または Microsoft Visual Basic で、UWP の型を .NET オブジェクトと同様に使用することができます。 UWP コンポーネントにアクセスするために、プラットフォーム呼び出しメソッドを呼び出す必要はありません。 これによってアプリの作成作業が大幅に簡素化されますが、そのために相互運用性の利用が想像以上に発生していることを認識することが重要です。 UWP コンポーネントが C# または Visual Basic 以外の言語で記述されている場合、コンポーネントを使うためには相互運用性の境界を越えることが必要になります。 相互運用性の境界を越えると、アプリのパフォーマンスに影響する場合があります。
 
-When you develop a UWP app in C# or Visual Basic, the two most common set of APIs that you use are the UWP APIs and the .NET APIs for UWP apps. In general, types that are defined in the UWP are in namespaces that begin with "Windows." and .NET types are in namespaces that begin with "System." There are exceptions, though. The types in .NET for UWP apps do not require interoperability when they are used. If you find that you have bad performance in an area that uses UWP, you might be able to use .NET for UWP apps instead to get better performance.
+UWP アプリを C# または Visual Basic で開発する際、最もよく使用される API は、UWP API と UWP アプリ用 .NET API の 2 つです。 一般に、UWP で定義される型は "Windows." で始まる名前空間にあります。 また、.NET 型は "System." で始まる名前空間にあります。 ただし、例外もあります。 UWP アプリ用 .NET に含まれる型は、使う際に相互運用性を必要としません。 UWP を使っている領域のパフォーマンスが低い場合は、代わりに UWP アプリ用 .NET を使うことで良好なパフォーマンスを得られることがあります。
 
-**Note**  
-Most of the UWP components that ship with Windows 10 are implemented in C++ so you cross interoperability boundaries when you use them from C# or Visual Basic. As always, make sure to measure your app to see if using UWP components affects your app's performance before you invest in making changes to your code.
+**注**  
+Windows 10 と共に提供される UWP コンポーネントの大部分は C++ で実装されているため、これらを C# または Visual Basic から使う場合は、相互運用性の境界を越える必要があります。 通常の場合と同様に、アプリのパフォーマンスに UWP コンポーネントが影響を与えているかどうかを調査した後で、コードの変更に注力してください。
 
-In this topic, when we say "UWP components", we mean components that are written in a language other than C# or Visual Basic.
+このトピックでは、"UWP コンポーネント" とは、C# または Visual Basic 以外の言語で記述されたコンポーネントを指すものとします。
 
  
 
-Each time you access a property or call a method on a UWP component, an interoperability cost is incurred. In fact, creating a UWP component is more costly than creating a .NET object. The reasons for this are that the UWP must execute code that transitions from your app's language to the component's language. Also, if you pass data to the component, the data must be converted between managed and unmanaged types.
+UWP コンポーネントのプロパティにアクセスする、またはメソッドを呼び出す場合は、常に相互運用性のコストが発生します。 実際、UWP コンポーネントの作成は .NET オブジェクトの作成よりも高コストになります。 その理由は、UWP では、アプリの言語からコンポーネントの言語に移行するためのコードを実行する必要があるためです。 またコンポーネントにデータを渡す場合も、マネージ型とアンマネージ型の間でデータの変換が必要です。
 
-### Using UWP Components efficiently
+### UWP コンポーネントを効率的に使う
 
-If you find that you need to get better performance, you can ensure that your code uses UWP components as efficiently as possible. This section discusses some tips for improving performance when you use UWP components.
+パフォーマンスを高める必要がある場合は、現在のコードにおける UWP コンポーネントの使用効率を可能な限り高めることができます。 このセクションでは、UWP コンポーネントを使用する際のパフォーマンス向上のヒントをいくつか説明します。
 
-It takes a significant number of calls in a short period of time for the performance impact to be noticeable. A well-designed application that encapsulates calls to UWP components from business logic and other managed code should not incur huge interoperability costs. But if your tests indicate that using UWP components is affecting your app's performance, the tips discussed in this section help you improve performance.
+短時間で大量の呼び出しが行われることで、パフォーマンスに対する影響が顕著に表れます。 ビジネス ロジックおよびその他のマネージ コードからの UWP コンポーネントへの呼び出しをカプセル化している適切に設計されたアプリでは、相互運用性の大きなコストが発生することはありません。 UWP コンポーネントを使うことでアプリのパフォーマンスに影響が発生していることがテストによってわかった場合、このセクションのヒントを活用してパフォーマンスを向上してください。
 
-### Consider using .NET for UWP apps
+### UWP アプリ用 .NET の使用を検討する
 
-There are certain cases where you can accomplish a task by using either UWP or .NET for UWP apps. It is a good idea to try to not mix .NET types and UWP types. Try to stay in one or the other. For example, you can parse a stream of xml by using either the [**Windows.Data.Xml.Dom.XmlDocument**](https://msdn.microsoft.com/library/windows/apps/BR206173) type (a UWP type) or the [**System.Xml.XmlReader**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.xml.xmlreader.aspx) type (a .NET type). Use the API that is from the same technology as the stream. For example, if you read xml from a [**MemoryStream**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.io.memorystream.aspx), use the **System.Xml.XmlReader** type, because both types are .NET types. If you read from a file, use the **Windows.Data.Xml.Dom.XmlDocument** type because the file APIs and **XmlDocument** are UWP components.
+あるタスクを、UWP または UWP アプリ用 .NET のどちらを使っても達成できる場合があります。 こうした場合、.NET の型と UWP の型を組み合わせず、 どちらか一方に揃えることをお勧めします。 たとえば、xml のストリームを解析するには、[**Windows.Data.Xml.Dom.XmlDocument**](https://msdn.microsoft.com/library/windows/apps/BR206173) 型 (UWP の型) または [**System.Xml.XmlReader**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.xml.xmlreader.aspx) 型 (.NET の型) のどちらも使えます。 同じテクノロジの API をストリームとして使いましょう。 たとえば、[**MemoryStream**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.io.memorystream.aspx) から xml を読み取る場合は両方が同じ .NET の型になるので、**System.Xml.XmlReader** 型を使います。 ファイルから読み取る場合は、**Windows.Data.Xml.Dom.XmlDocument** 型を使います。これはファイル API と **XmlDocument** が UWP コンポーネントであるためです。
 
-### Copy Window Runtime objects to .NET types
+### Windows ランタイム オブジェクトを .NET 型にコピーする
 
-When a UWP component returns a UWP object, it might be beneficial to copy the returned object into a .NET object. Two places where this is especially important is when you're working with collections and streams.
+UWP コンポーネントが UWP オブジェクトを返す場合、返されるオブジェクトを .NET オブジェクトにコピーすると便利な場合があります。 これが特に重要になる 2 つの場面は、コレクションとストリームを使うときです。
 
-If you call a UWP API that returns a collection and then you save and access that collection many times, it might be beneficial to copy the collection into a .NET collection and use the .NET version from then on.
+コレクションを返す UWP API を呼び出して、その後そのコレクションを保存し何度もアクセスする場合、このコレクションを .NET コレクションにコピーし、それ以降は .NET バージョンを使うと便利です。
 
-### Cache the results of calls to UWP components for later use
+### UWP コンポーネントへの呼び出しの結果を後のためにキャッシュする
 
-You might be able to get better performance by saving values into local variables instead of accessing a UWP type multiple times. This can be especially beneficial if you use a value inside of a loop. Measure your app to see if using local variables improves your app's performance. Using cached values can increase your app's speed because it will spend less time on interoperability.
+UWP の型に繰り返しアクセスする代わりに、値をローカル変数に保存することでパフォーマンスを向上できる場合があります。 ループ内で値を使用する場合、この方法は特に有効です。 ローカル変数を使うことでアプリのパフォーマンスが向上できるかどうか、アプリを調べてください。 キャッシュされた値を使用することでアプリが高速化されるのは、相互運用性に費やされる時間が短縮されるためです。
 
-### Combine calls to UWP components
+### UWP コンポーネントへの呼び出しを結合する
 
-Try to complete tasks with the fewest number of calls to UWP objects as possible. For example, it is usually better to read a large amount of data from a stream than to read small amounts at a time.
+UWP オブジェクトの呼び出しは必要最小限にしてタスクを実行するようにしましょう。 たとえば、通常、ストリームのデータは少量を複数同時に読み取るよりも一度に大量に読み取ることをお勧めします。
 
-Use APIs that bundle work in as few calls as possible instead of APIs that do less work and require more calls. For example, prefer to create an object by calling constructors that initialize multiple properties instead of calling the default constructor and assigning properties one at a time.
+処理量が少なく呼び出し数が多くなる API の代わりに、処理をできる限り少ない呼び出しにバンドルする API を使います。 たとえば、既定のコンストラクターを呼び出してプロパティを 1 つずつ割り当てるのではなく、複数のコンストラクターを呼び出すオブジェクトを作成して複数のプロパティを初期化することをお勧めします。
 
-### Building a UWP components
+### UWP コンポーネントを構築する
 
-If you write a UWP Component that can be used by apps written in C++ or JavaScript, make sure that your component is designed for good performance. All the suggestions for getting good performance in apps apply to getting good performance in components. Measure your component to find out which APIs have high traffic patterns and for those areas, consider providing APIs that enable your users to do work with few calls.
+C++ または JavaScript で記述されたアプリで使用できる UWP コンポーネントを作成する場合、高いパフォーマンスを実現できるようにコンポーネントを設計する必要があります。 高パフォーマンスなアプリを実現するためのすべての推奨事項は、高パフォーマンスなコンポーネントを実現する際にも当てはまります。 コンポーネントを測定してトラフィックが大きいパターンを持つ API を特定し、それらの領域については、少ない呼び出しでユーザーが作業を実行できるようにする API を提供することを検討してください。
 
-## Keep your app fast when you use interop in managed code
+## マネージ コードで相互運用性を使うときのアプリの速さの維持
 
-The UWP makes it easy to interoperate between native and managed code, but if you're not careful it can incur performance costs. Here we show you how to get good performance when you use interop in your managed UWP apps.
+UWP では、ネイティブ コードとマネージ コードの間で簡単に相互運用性を利用できますが、注意しないとパフォーマンスが低下する場合があります。 ここでは、マネージ UWP アプリで相互運用機能を使う場合に高いパフォーマンスを実現する方法について説明します。
 
-The UWP allows developers to write apps using XAML with their language of choice thanks to the projections of the UWP APIs available in each language. When writing an app in C# or Visual Basic, this convenience comes at an interop cost because the UWP APIs are usually implemented in native code, and any UWP invocation from C# or Visual Basic requires that the CLR transition from a managed to a native stack frame and marshal function parameters to representations accessible by native code. This overhead is negligible for most apps. But when you make many calls (hundreds of thousands, to millions) to UWP APIs in the critical path of an app, this cost can become noticeable. In general you want to ensure that the time spent in transition between languages is small relative to the execution of the rest of your code. This is illustrated by the following diagram.
+UWP では、各言語に UWP API のプロジェクションが用意されているため、開発者は XAML と任意の言語でアプリを記述できます。 アプリを C# または Visual Basic で記述する場合は、この便利さの一方で、相互運用性のコストが高くなります。これは、UWP API は通常ネイティブ コードで実装され、C# または Visual Basic から UWP を呼び出すときには、マネージドからネイティブ スタック フレームへの CLR の移行と、ネイティブ コードでアクセスできる表現への関数パラメーターのマーシャリングが必要になるためです。 このオーバーヘッドは、ほとんどのアプリでは無視できます。 ただし、アプリの重要なパスで UWP API の呼び出しを多数 (数十万回～数百万回) 実行する場合は、このコストが無視できなくなる可能性があります。 一般に、言語間の移行に費やされる時間は、コードの他の部分の実行に対して小さくする必要があります。 この概念を示したのが次の図です。
 
-![Interop transitions should not dominate the program execution time.](images/interop-transitions.png)
+![相互運用に伴う移行がプログラムの実行時間を圧迫することは避けます。](images/interop-transitions.png)
 
-The types listed at [**.NET for Windows apps**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/br230232.aspx) don't incur this interop cost when used from C# or Visual Basic. As a rule of thumb, you can assume that types in namespaces which begin with “Windows.” are part of the UWP, and types in namespaces which begin with “System.” are .NET types. Keep in mind that even simple usage of UWP types such as allocation or property access incurs an interop cost.
+「[**Windows アプリ用 .NET**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/br230232.aspx)」に一覧の型では、C# または Visual Basic から使ったときにこの相互運用性コストの問題は発生しません。 一般に、"Windows." で始まる名前空間の型は UWP に属し、"System." で始まる名前空間の型は .NET 型に属します。 UWP の型に対する単純な操作 (メモリの割り当て、プロパティへのアクセスなど) でも、相互運用性のコストが発生する点に注意してください。
 
-You should measure your app and determine if interop is taking up a large portion of your apps execution time before optimizing your interop costs. When analyzing your app’s performance with Visual Studio, you can easily get an upper bound on your interop costs by using the **Functions** view and looking at inclusive time spent in methods which call into the UWP.
+相互運用性のコストを最適化するためには、アプリの実行時間の大部分が相互運用に費やされているかどうかの評価と判断が必要です。 Visual Studio でアプリのパフォーマンスを分析する際は、**[関数]** ビューを使い、UWP のメソッド呼び出しに費やされている包括時間を調べることで、相互運用性コストの上限を簡単に把握できます。
 
-If your app is slow because of interop overhead, you can improve its performance by reducing calls to UWP APIs on hot code paths. For example, a game engine that is doing tons of physics calculations by constantly querying the position and dimensions of [**UIElements**](https://msdn.microsoft.com/library/windows/apps/BR208911) can save a lot of time by storing the necessary info from **UIElements** to local variables, doing calculations on these cached values, and assigning the end result back to the **UIElements** after the calculations are done. Another example: if a collection is heavily accessed by C# or Visual Basic code, then it is more efficient to use a collection from the [**System.Collections**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.collections.aspx) namespace, rather than a collection from the [**Windows.Foundation.Collections**](https://msdn.microsoft.com/library/windows/apps/BR206657) namespace. You may also consider combining calls to UWP components; one example where this is possible is by using the [**Windows.Storage.BulkAccess**](https://msdn.microsoft.com/library/windows/apps/BR207676) APIs.
+相互運用性のオーバーヘッドによってアプリが低速になる場合は、実行頻度の高いコード パスでの UWP API の呼び出しを減らすことで、パフォーマンスを向上できます。 たとえば、[**UIElements**](https://msdn.microsoft.com/library/windows/apps/BR208911) の位置とサイズを継続的に照会することで大量の物理的計算を実行しているゲーム エンジンは、**UIElements** から必要な情報をローカル変数に格納し、それらのキャッシュされた値に対して計算を行い、計算実行後に最終結果を **UIElements** にもう一度割り当てることによって、多くの時間を節約できます。 別の例として、C# または Visual Basic のコードから頻繁にアクセスされるコレクションがある場合は、[**System.Collections**](https://msdn.microsoft.com/library/windows/apps/BR206657) 名前空間からのコレクションではなく、[**Windows.Foundation.Collections**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.collections.aspx) 名前空間からのコレクションを使ったほうが、より効率的です。 UWP コンポーネントの呼び出しを結合することも検討に値します。これは、たとえば、[**Windows.Storage.BulkAccess**](https://msdn.microsoft.com/library/windows/apps/BR207676) API で実現できます。
 
-### Building a UWP component
+### UWP コンポーネントを構築する
 
-If you write a UWP component for use in apps written in C++ or JavaScript, make sure that your component is designed for good performance. Your API surface defines your interop boundary and defines the degree to which your users will have to think about the guidance in this topic. If you are distributing your components to other parties then this becomes especially important.
+C++ または JavaScript で記述されたアプリに使う UWP コンポーネントを作成する場合は、高パフォーマンスを実現できるようにコンポーネントを設計します。 コンポーネントの API サーフェスによって、相互運用性の境界が決まるだけでなく、このトピックで取り上げた事柄をコンポーネントのユーザーがどの程度考慮しなければならないかも変わってきます。 コンポーネントを第三者に配布する場合は、この点が特に重要となります。
 
-All of the suggestions for getting good performance in apps apply to getting good performance in components. Measure your component to find out which APIs have high traffic patterns, and for those areas, consider providing APIs that enable your users to do work with few calls. Significant effort was put into designing the UWP to allow apps to use it without requiring frequent crossing of the interop boundary.
+高パフォーマンスなアプリを実現するためのすべての推奨事項は、高パフォーマンスなコンポーネントを実現する際にも当てはまります。 コンポーネントを測定してトラフィックが大きいパターンを持つ API を特定し、それらの領域については、少ない呼び出しでユーザーが作業を実行できるようにする API を提供することを検討してください。 UWP は、それを利用するアプリが相互運用性の境界を何度も行き来しなくても済むように、その設計には膨大な労力が費やされています。
 
  
 

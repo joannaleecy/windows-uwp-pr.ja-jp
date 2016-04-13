@@ -1,42 +1,45 @@
 ---
 ms.assetid: 26DF15E8-2C05-4174-A714-7DF2E8273D32
-title: ListView and GridView UI optimization
-description: Improve ListView and GridView performance and startup time through UI virtualization, element reduction, and progressive updating of items.
+title: ListView と GridView の UI の最適化
+description: ListView と GridView のパフォーマンスと起動時間を、UI の仮想化や要素の削減、項目の段階的な更新を通して向上させます。
 ---
-# ListView and GridView UI optimization
+# ListView と GridView の UI の最適化
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-**Note**  
-For more details, see the //build/ session [Dramatically Increase Performance when Users Interact with Large Amounts of Data in GridView and ListView](https://channel9.msdn.com/events/build/2013/3-158).
+**注**  
+詳しくは、//build/ セッション「[Dramatically Increase Performance when Users Interact with Large Amounts of Data in GridView and ListView (ユーザーが GridView と ListView で大量のデータを操作するときのパフォーマンスを大幅に向上させる)](https://channel9.msdn.com/events/build/2013/3-158)」をご覧ください。
 
-Improve [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) and [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) performance and startup time through UI virtualization, element reduction, and progressive updating of items. For data virtualization techniques, see [ListView and GridView data virtualization](listview-and-gridview-data-optimization.md).
+[
+            **ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) と [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) のパフォーマンスと起動時間を、UI の仮想化や要素の削減、項目の段階的な更新を通して向上させます。 データ仮想化の手法については、[ListView と GridView のデータ仮想化](listview-and-gridview-data-optimization.md)」をご覧ください。
 
-## Two key factors in collection performance
+## コレクションのパフォーマンスの主要な 2 つの要因
 
-Manipulating collections is a common scenario. A photo viewer has collections of photos, a reader has collections of articles/books/stories, and a shopping app has collections of products. This topic shows what you can do to make your app efficient at manipulating collections.
+コレクションの操作は、よくある状況です。 フォト ビューアーには写真のコレクションが、リーダーには記事/書籍/ストーリーのコレクションが、ショッピング アプリには製品のコレクションがあります。 このトピックでは、アプリでコレクションの操作を効率よく行うために何ができるかについて説明します。
 
-There are two key factors in performance when it comes to collections: one is the time spent by the UI thread creating items; the other is the memory used by both the raw data set and the UI elements used to render that data.
+コレクションのパフォーマンスに関しては、2 つの主要な要因があります。1 つは項目を作成する UI スレッドによって費やされる時間で、もう 1 つは生のデータ セットとそのデータをレンダリングするために使用される UI 要素の両方で使用されるメモリです。
 
-For smooth panning/scrolling, it's vital that the UI thread do an efficient and smart job of instantiating, data-binding, and laying out items.
+スムーズなパン/スクロールを行うには、UI スレッドで効率的かつスマートなインスタンス化、データ バインド、および項目のレイアウトを実行することが不可欠です。
 
-## UI virtualization
+## UI の仮想化
 
-UI virtualization is the most important improvement you can make. This means that UI elements representing the items are created on demand. For an items control bound to a 1000-item collection, it would be a waste of resources to create the UI for all the items at the same time, because they can't all be displayed at the same time. [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) and [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) (and other standard [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803)-derived controls) perform UI virtualization for you. When items are close to being scrolled into view (a few pages away), the framework generates the UI for the items and caches them. When it's unlikely that the items will be shown again, the framework re-claims the memory.
+UI の仮想化は、実行できる最も重要な改善策です。 これは、項目を表す UI 要素がオンデマンドで作成されることを意味します。 1,000 項目のコレクションにバインドされている項目コントロールでは、すべての項目の UI を同時に作成しても、同時に全部を表示することはできないため、リソースを無駄に使うことになります。 UI の仮想化は、[**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) と [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) (およびその他の [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) から派生した標準コントロール) によって実行されます。 数ページ先にある項目がスクロールされて表示されそうになると、フレームワークがその項目用の UI を生成してキャッシュします。 項目がもう一度表示される可能性が低い場合、フレームワークはメモリを解放します。
 
-If you provide a custom items panel template (see [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/BR242803-itemspanel)) then make sure you use a virtualizing panel such as [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/Dn298849) and [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/Dn298795). If you use [**VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/BR227651), [**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/BR227717), or [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635), then you will not get virtualization.
+カスタム項目パネル テンプレート ([**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/BR242803-itemspanel) をご覧ください) を用意する場合は、[**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/Dn298849) や [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/Dn298795) などの仮想パネルを必ず使用してください。 [
+            **VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/BR227651)、[**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/BR227717)、または [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635) を使用した場合、仮想化は得られません。
 
-The concept of a viewport is critical to UI virtualization because the framework must create the elements that are likely to be shown. In general, the viewport of an [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) is the extent of the logical control. For example, the viewport of a [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) is the width and height of the **ListView** element. Some panels allow child elements unlimited space, examples being [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/BR209527) and a [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704), with auto-sized rows or columns. When a virtualized **ItemsControl** is placed in a panel like that, it takes enough room to display all of its items, which defeats virtualization. Restore virtualization by setting a width and height on the **ItemsControl**.
+表示される可能性のある要素の作成はフレームワークが行う必要があるため、ビューポートの概念は UI の仮想化にとって非常に重要です。 一般的に、[**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) のビューポートは論理コントロールの範囲を指します。 たとえば、[**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) のビューポートは **ListView** 要素の幅と高さです。 一部のパネルでは子要素に制限のない空間を与えることができます。たとえば [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/BR209527) や [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) では、行または列のサイズが自動的に調整されます。 このようなパネルに仮想化された **ItemsControl** を配置すると、すべての項目を表示できるスペースが用意され、仮想化の意味がなくなります。 仮想化を復元するには、**ItemsControl** に幅と高さを設定します。
 
-## Element reduction per item
+## 項目ごとの要素の削減
 
-Keep the number of UI elements used to render your items to a reasonable minimum.
+項目をレンダリングするために使う UI 要素の数を、妥当と思われる最小限の数に抑えます。
 
-When an items control is first shown, all the elements needed to render a viewport full of items are created. Also, as items approach the viewport, the framework updates the UI elements in cached item templates with the bound data objects. Minimizing the complexity of the markup inside templates pays off in memory and in time spent on the UI thread, improving responsiveness especially while panning/scrolling. The templates in question are the item template (see [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242803-itemtemplate)) and the control template of a [**ListViewItem**](https://msdn.microsoft.com/library/windows/apps/BR242878item) or a [**GridViewItem**](https://msdn.microsoft.com/library/windows/apps/BR242705item) (the item control template, or [**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/BR242803-itemcontainerstyle)). The benefit of even a small reduction in element count is multiplied by the number of items displayed.
+項目コントロールが初めて表示されるとき、すべての項目を含むビューポートをレンダリングするために必要なすべての要素が作成されます。 さらに、項目がビューポートに近づくにつれて、キャッシュされている項目テンプレート内の UI 要素が、フレームワークによって、バインドされたデータ オブジェクトで更新されます。 テンプレート内のマークアップの複雑さを最小限に抑えると、メモリと UI スレッドで費やされる時間の減少という効果が生まれ、特にパン/スクロール中の応答性が向上します。 問題のテンプレートは、項目テンプレート ([**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242803-itemtemplate) をご覧ください) と、[**ListViewItem**](https://msdn.microsoft.com/library/windows/apps/BR242878item) または [**GridViewItem**](https://msdn.microsoft.com/library/windows/apps/BR242705item) のコントロール テンプレート (項目コントロール テンプレート、つまり [**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/BR242803-itemcontainerstyle)) です。 要素の数を少し減らすだけでも、その効果は、表示される項目の数と比例して大きくなります。
 
-For examples of element reduction, see [Optimize your XAML markup](optimize-xaml-loading.md).
+要素の削減の例については、「[XAML マークアップの最適化](optimize-xaml-loading.md)」をご覧ください。
 
-The default control templates for [**ListViewItem**](https://msdn.microsoft.com/library/windows/apps/BR242878item) and [**GridViewItem**](https://msdn.microsoft.com/library/windows/apps/BR242705item) contain a [**ListViewItemPresenter**](https://msdn.microsoft.com/library/windows/apps/Dn298500) and a [**GridViewItemPresenter**](https://msdn.microsoft.com/library/windows/apps/Dn279298) element, respectively. Each of these presenters is a single optimized element that displays complex visuals for focus, selection, and other visual states. If you already have custom item control templates ([**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/BR242803-itemcontainerstyle)), or if in future you edit a copy of an item control template, then we recommend you use a **ListViewItemPresenter** or a **GridViewItemPresenter** because those elements will give you optimum balance between performance and customizability in the majority of cases. You customize these presenters by setting properties on them. For example, here's markup that removes the check mark that appears by default when an item is selected, and changes the background color of the selected item to orange.
+[
+            **ListViewItem**](https://msdn.microsoft.com/library/windows/apps/BR242878item) と [**GridViewItem**](https://msdn.microsoft.com/library/windows/apps/BR242705item) 用の既定のコントロール テンプレートには、それぞれ [**ListViewItemPresenter**](https://msdn.microsoft.com/library/windows/apps/Dn298500) 要素と [**GridViewItemPresenter**](https://msdn.microsoft.com/library/windows/apps/Dn279298) 要素が含まれています。 これらのプレゼンターは、フォーカス状態や選択状態などの複雑な視覚効果を表示する、1 つの最適化された要素です。 カスタム項目コントロール テンプレート ([**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/BR242803-itemcontainerstyle)) が既に存在する場合、または今後項目コントロール テンプレートのコピーを編集する場合は、**ListViewItemPresenter** または **GridViewItemPresenter** を使用することをお勧めします。これらの要素を使うと、ほとんどの場合、パフォーマンスとカスタム可能性の最適バランスを得ることができます。 これらのプレゼンターは、プロパティを設定することによってカスタマイズできます。 例として、項目が選ばれたときに既定で表示されるチェック マークを削除し、選ばれた項目の背景色をオレンジ色に変更するマークアップを次に示します。
 
 ```xml
 ...
@@ -57,25 +60,26 @@ The default control templates for [**ListViewItem**](https://msdn.microsoft.com/
 <!-- ... -->
 ```
 
-There are about 25 properties with self-describing names similar to [**SelectionCheckMarkVisualEnabled**](https://msdn.microsoft.com/library/windows/apps/Dn298500-selectioncheckmarkvisualenabled) and [**SelectedBackground**](https://msdn.microsoft.com/library/windows/apps/Dn298500-selectedbackground). Should the presenter types prove not to be customizable enough for your use case, you can edit a copy of the `ListViewItemExpanded` or `GridViewItemExpanded` control template instead. These can be found in `\Program Files (x86)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\<version>\Generic\generic.xaml`. Be aware that using these templates means trading some performance for the increase in customization.
+[
+            **SelectionCheckMarkVisualEnabled**](https://msdn.microsoft.com/library/windows/apps/Dn298500-selectioncheckmarkvisualenabled) と [**SelectedBackground**](https://msdn.microsoft.com/library/windows/apps/Dn298500-selectedbackground) に似た 25 個のわかりやすい名前のプロパティがあります。 これらのプレゼンターを使用目的に合うように十分にカスタマイズできないことがわかった場合は、`ListViewItemExpanded` または `GridViewItemExpanded` コントロール テンプレートのコピーを代わりに編集できます。 これらは、`\Program Files (x86)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\<version>\Generic\generic.xaml` の中にあります。 ただし、これらのテンプレートの使用は、パフォーマンスを多少低下させる代償としてカスタマイズの可能性を大きくする意味があることに注意してください。
 
-## Update ListView and GridView items progressively
+## GridView と ListView の項目を段階的に更新する
 
-If you're using data virtualization then you can keep [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) and [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) responsiveness high by configuring the control to render temporary UI elements for the items still being (down)loaded. The temporary elements are then progressively replaced with actual UI as data loads.
+データ仮想化を使う場合は、項目の読み込み中に一時的な UI 要素をレンダリングするようにコントロールを構成することで、[**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) と [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) の高い応答性を維持できます。 一時的な要素は、データが読み込まれるときに実際の UI と段階的に置き換えることができます。
 
-Also—no matter where you're loading data from (local disk, network, or cloud)—a user can pan/scroll a [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) or [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) so rapidly that it's not possible to render each item with full fidelity while preserving smooth panning/scrolling. To preserve smooth panning/scrolling you can choose to render an item in multiple phases in addition to using placeholders.
+また、データの読み込み元 (ローカル ディスク、ネットワーク、またはクラウド) に関係なく、ユーザーは、[**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) または [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) をすばやくパン/スクロールできます。この間、スピードが速すぎて完全な忠実度で各項目をレンダリングすることはできませんが、スムーズなパン/スクロールは維持されます。 スムーズなパン/スクロールを維持するために、プレース ホルダーを使うだけでなく、項目を複数のフェーズでレンダリングすることを選ぶことができます。
 
-An example of these techniques is often seen in photo-viewing apps: even though not all of the images have been loaded and displayed, the user can still pan/scroll and interact with the collection. Or, for a "movie" item, you could show the title in the first phase, the rating in the second phase, and an image of the poster in the third phase. The user sees the most important data about each item as early as possible, and that means they're able to take action at once. Then the less important info is filled-in as time allows. Here are the platform features you can use to implement these techniques.
+これらの手法の使用例は、写真表示アプリでよく見られます。画像のすべてが読み込まれて表示されていない場合でも、ユーザーはコレクションをパン/スクロールして操作できます。 または、「映画」の項目の場合は、第 1 のフェーズでタイトルを表示し、第 2 のフェーズでその評価を表示し、第 3 のフェーズでポスターの画像を表示できます。 ユーザーは各項目について最も重要なデータをできるだけ早く見ることができ、それはユーザーがすぐに行動を起こせることを意味します。 その後、時間の許す限り、重要度の低い情報を表示します。 これらの手法を実装するために使うことができるプラットフォームの機能を次に示します。
 
-### Placeholders
+### プレースホルダー
 
-The temporary placeholder visuals feature is on by default, and it's controlled with the [**ShowsScrollingPlaceholders**](https://msdn.microsoft.com/library/windows/apps/BR242878base-showsscrollingplaceholders) property. During fast panning/scrolling, this feature gives the user a visual hint that there are more items yet to fully display while also preserving smoothness. If you use one of the techniques below then you can set **ShowsScrollingPlaceholders** to false if you prefer not to have the system render placeholders.
+一時的なプレースホルダーの視覚効果機能は、既定でオンになっています。それは [**ShowsScrollingPlaceholders**](https://msdn.microsoft.com/library/windows/apps/BR242878base-showsscrollingplaceholders) プロパティによって制御されます。 高速なパン/スクロールが行われている間、この機能は、滑らかな動きを維持したまま、完全に表示されていない項目が存在することを示す視覚的なヒントをユーザーに与えます。 次のいずれかの手法を使う場合は、必要に応じて **ShowsScrollingPlaceholders** を false に設定して、プレースホルダーが表示されないようにすることができます。
 
-**Progressive data template updates using x:Phase**
+**x:Phase を使った段階的なデータ テンプレートの更新**
 
-Here's how to use the [x:Phase attribute](https://msdn.microsoft.com/library/windows/apps/Mt204790) with [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) bindings to implement progressive data template updates.
+[x:Phase 属性](https://msdn.microsoft.com/library/windows/apps/Mt204790)と [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) バインドを使って段階的なデータ テンプレートの更新を実装する方法を次に示します。
 
-1.  Here's what the binding source looks like (this is the data source that we'll bind to).
+1.  これは、バインディング ソースがどのようになるかを示しています (これは、バインド先のデータ ソースです)。
 
     ```csharp
 namespace LotsOfItems
@@ -106,7 +110,7 @@ namespace LotsOfItems
         }
     }
     ```
-2.  Here's the markup that `DeferMainPage.xaml` contains. The grid view contains an item template with elements bound to the **Title**, **Subtitle**, and **Description** properties of the **MyItem** class. Note that **x:Phase** defaults to 0. Here, items will be initially rendered with just the title visible. Then the subtitle element will be data bound and made visible for all the items and so on until all the phases have been processed.
+2.  これは、`DeferMainPage.xaml` に含まれるマークアップです。 グリッド ビューには、**MyItem** クラスの **Title** プロパティ、**Subtitle** プロパティ、**Description** プロパティにバインドされた項目テンプレートが含まれます。 **x:Phase** の既定値は 0 であることに注意してください。 ここでは、項目は、そのタイトルだけが最初にレンダリングされます。 次に、サブタイトル要素がバインドされたデータになり、すべての項目に表示され、以下、同じようにすべてのフェーズが処理されます。
     ```xml
     <Page
         x:Class="LotsOfItems.DeferMainPage"
@@ -133,15 +137,16 @@ namespace LotsOfItems
     </Page>
     ```
 
-3.  If you run the app now and pan/scroll quickly through the grid view then you'll notice that as each new item appears on the screen, at first it is rendered as a dark gray rectangle (thanks to the [**ShowsScrollingPlaceholders**](https://msdn.microsoft.com/library/windows/apps/BR242878base-showsscrollingplaceholders) property defaulting to **true**), then the title appears, followed by subtitle, followed by description.
+3.  今すぐアプリを実行し、グリッド ビューですばやくパン/スクロールすると、新しい項目が画面に表示されるとき、項目は最初は濃い灰色の四角形としてレンダリングされ ([**ShowsScrollingPlaceholders**](https://msdn.microsoft.com/library/windows/apps/BR242878base-showsscrollingplaceholders) プロパティが既定で **true** に設定されているためです)、次にタイトルが表示され、その後にサブタイトルと説明が表示されることがわかります。
 
-**Progressive data template updates using ContainerContentChanging**
+**ContainerContentChanging を使った段階的なデータ テンプレートの更新**
 
-The general strategy for the [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/BR242878base-containercontentchanging) event is to use **Opacity** to hide elements that don’t need to be immediately visible. When elements are recycled, they will retain their old values so we want to hide those elements until we've updated those values from the new data item. We use the **Phase** property on the event arguments to determine which elements to update and show. If additional phases are needed, we register a callback.
+[
+            **ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/BR242878base-containercontentchanging) の一般的な戦略は、**Opacity** を使ってすぐに表示する必要がない要素を非表示にすることです。 要素をリサイクルすると以前の値が保持されるため、新しいデータ項目の値で更新するまで、要素を非表示にします。 イベント引数で **Phase** プロパティを使って、どの要素を更新して表示するかを決めます。 追加のフェーズが必要な場合は、コールバックを登録します。
 
-1.  We'll use the same binding source as for **x:Phase**.
+1.  **x:Phase** と同じバインド ソースを使用します。
 
-2.  Here's the markup that `MainPage.xaml` contains. The grid view declares a handler to its [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/BR242878base-containercontentchanging) event, and it contains an item template with elements used to display the **Title**, **Subtitle**, and **Description** properties of the **MyItem** class. To get the maximum performance benefits of using **ContainerContentChanging**, we don't use bindings in the markup but we instead assign values programmatically. The exception here is the element displaying the title, which we consider to be in phase 0.
+2.  これは、`MainPage.xaml` に含まれるマークアップです。 グリッド ビューは、その [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/BR242878base-containercontentchanging) イベントに対してハンドラーを宣言します。その中には、**MyItem** クラスの **Title** プロパティ、**Subtitle** プロパティ、**Description** プロパティを表示するために使われる要素を持つ項目テンプレートが含まれます。 **ContainerContentChanging** を使ったパフォーマンス上の最大のメリットを得るため、マークアップではバインドを使わず、代わりに値をプログラムを使って割り当てます。 ここでの例外は、フェーズ 0 とみなしているタイトルを表示する要素です。
     ```xml
     <Page
         x:Class="LotsOfItems.MainPage"
@@ -167,7 +172,7 @@ The general strategy for the [**ContainerContentChanging**](https://msdn.microso
         </Grid>
     </Page>
     ```
-3.  Lastly, here's the implementation of the [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/BR242878base-containercontentchanging) event handler. This code also shows how we add a property of type **RecordingViewModel** to **MainPage** to expose the binding source class from the class that represents our page of markup. As long as you don't have any [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) bindings in your data template, then mark the event arguments object as handled in the first phase of the handler to hint to the item that it needn't set a data context.
+3.  最後に、[**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/BR242878base-containercontentchanging) イベント ハンドラーの実装を示します。 このコードは、**RecordingViewModel** 型のプロパティを **MainPage** に追加して、マークアップのページを表すクラスからバインディング ソース クラスを公開する方法も示しています。 データ テンプレート内に [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) バインドが含まれていない限り、イベント引数オブジェクトをハンドラーの最初のフェーズで処理するようにマークして、データ コンテキストを設定する必要はないことを項目に通知します。
     ```csharp
     namespace LotsOfItems
     {
@@ -232,15 +237,15 @@ The general strategy for the [**ContainerContentChanging**](https://msdn.microso
     }
     ```
 
-4.  If you run the app now and pan/scroll quickly through the grid view then you'll see the same behavior as for as for **x:Phase**.
+4.  今すぐアプリを実行し、グリッド ビューですばやくパン/スクロールすると、**x:Phase** と同じ動作が起こることがわかります。
 
-## Container-recycling with heterogeneous collections
+## 異種コレクションでのコンテナー リサイクル
 
-In some applications, you need to have different UI for different types of item within a collection. This can create a situation where it is impossible for virtualizing panels to reuse/recycle the visual elements used to display the items. Recreating the visual elements for an item during panning undoes many of the performance wins provided by virtualization. However, a little planning can allow virtualizing panels to reuse the elements. Developers have a couple of options depending on their scenario: the [**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/BR242878base-choosingitemcontainer) event, or an item template selector. The **ChoosingItemContainer** event is the most performant approach.
+一部のアプリケーションでは、コレクション内のさまざまな種類の項目に合わせて異なる UI を用意する必要があります。 これにより、仮想化されるパネルで、項目を表示するために使用される視覚要素を再利用またはリサイクルすることができない状況が発生する場合があります。 パンした時に項目の視覚要素を再作成すると、仮想化によって得られた多くのパフォーマンスのメリットが取り消されます。 ただし、少し計画することで、仮想化されるパネルで要素を再利用できるようになります。 開発者には、シナリオに応じて、[**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/BR242878base-choosingitemcontainer) イベントまたは項目テンプレート セレクターの 2 つのオプションがあります。 **ChoosingItemContainer** イベントは最も効率的な方法です。
 
-**The ChoosingItemContainer event**
+**ChoosingItemContainer イベント**
 
-[**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/BR242878base-choosingitemcontainer) is an event that allows you to provide an item ([**ListViewItem**](https://msdn.microsoft.com/library/windows/apps/BR242878item)/[**GridViewItem**](https://msdn.microsoft.com/library/windows/apps/BR242705item)) to the [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878)/[**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) whenever a new item is needed during start-up or recycling. You can create a container based on the type of data item the container will display (shown in the example below). **ChoosingItemContainer** is the most performant way to use different data templates for different items. Container caching is something that can be achieved using **ChoosingItemContainer**. For example, if you have five different template, with one template occurring an order of magnitude more often than the others, then ChoosingItemContainer allows you not only to create items at the ratios needed but also to keep an appropriate number of elements cached and available for recycling. [**ChoosingGroupHeaderContainer**](https://msdn.microsoft.com/library/windows/apps/BR242878base-choosinggroupheadercontainer) provides the same functionality for group headers.
+[**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/BR242878base-choosingitemcontainer) イベントは、起動時やリサイクル時に新しい項目が必要になったときに、[**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878)/[**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) に項目 ([**ListViewItem**](https://msdn.microsoft.com/library/windows/apps/BR242878item)/[**GridViewItem**](https://msdn.microsoft.com/library/windows/apps/BR242705item)) を提供できるようにするイベントです。 コンテナーが表示するデータ項目の種類に基づいてコンテナーを作成できます (次の例で示します)。 **ChoosingItemContainer** は、異なる項目に異なるデータ テンプレートを使用するための最も効率的な方法です。 **ChoosingItemContainer** を使って実現できるものとして、コンテナーのキャッシュがあります。 たとえば、5 種類のテンプレートがあり、そのうちの 1 つのテンプレートが、他と比べて 1 桁多く発生している場合、ChoosingItemContainer を使うと、必要な比率で項目を作成できるだけでなく、キャッシュされた要素とリサイクルに利用できる要素も適切な数に維持されます。 [**ChoosingGroupHeaderContainer**](https://msdn.microsoft.com/library/windows/apps/BR242878base-choosinggroupheadercontainer) はグループ ヘッダーと同じ機能を提供します。
 
 ```csharp
 // Example shows how to use ChoosingItemContainer to return the correct
@@ -302,13 +307,13 @@ private void lst-ChoosingItemContainer
 }
 ```
 
-**Item template selector**
+**項目テンプレート セレクター**
 
-An item template selector ([**DataTemplateSelector**](https://msdn.microsoft.com/library/windows/apps/BR209469)) allows an app to return a different item template at runtime based on the type of the data item that will be displayed. This makes development more productive, but it makes UI virtualization more difficult because not every item template can be reused for every data item.
+項目テンプレート セレクター ([**DataTemplateSelector**](https://msdn.microsoft.com/library/windows/apps/BR209469)) により、アプリで、表示されるデータ項目の種類に基づいて、実行時に異なる項目テンプレートを返すことができます。 これにより、開発の生産性は向上しますが、すべてのデータ項目について、すべての項目テンプレートを再利用できるわけではないため、UI の仮想化はより難しくなります。
 
-When recycling an item ([**ListViewItem**](https://msdn.microsoft.com/library/windows/apps/BR242878item)/[**GridViewItem**](https://msdn.microsoft.com/library/windows/apps/BR242705item)), the framework must decide whether the items that are available for use in the recycle queue (the recycle queue is a cache of items that are not currently being used to display data) have an item template that will match the one desired by the current data item. If there are no items in the recycle queue with the appropriate item template then a new item is created, and the appropriate item template is instantiated for it. If, on other hand, the recycle queue contains an item with the appropriate item template then that item is removed from the recycle queue and is used for the current data item. An item template selector works in situations where only a small number of item templates are used and there is a flat distribution throughout the collection of items that use different item templates.
+項目 ([**ListViewItem**](https://msdn.microsoft.com/library/windows/apps/BR242878item)/[**GridViewItem**](https://msdn.microsoft.com/library/windows/apps/BR242705item)) をリサイクルする場合、リサイクル キュー (リサイクル キューは現在データを表示するために使用されていない項目のキャッシュです) で使用できる項目の項目テンプレートが、現在のデータ項目で求められるテンプレートと一致するかどうかを、フレームワークが判断する必要があります。 リサイクル キューに適切な項目テンプレートを持つ項目がない場合、新しい項目が作成され、適切な項目テンプレートがインスタンス化されます。 一方、リサイクル キューに、適切な項目テンプレートを持つ項目が含まれている場合、その項目はリサイクル キューから削除され、現在のデータ項目のために使用されます。 項目テンプレート セレクターは、使用されている項目テンプレートの数が少なく、異なる項目テンプレートを使用する項目のコレクション全体にわたって項目がフラットに分布しているような状況に適しています。
 
-When there is an uneven distribution of items that use different item templates then new item templates will likely need to be created during panning, and this negates many of the gains provided by virtualization. Additionally, an item template selector only considers five possible candidates when evaluating whether a particular container can be reused for the current data item. So you should carefully consider whether your data is appropriate for use with an item template selector before using one in your app. If your collection is mostly homogeneous then the selector is returning the same type most (possibly all) of the time. Just be aware of the price you're paying for the rare exceptions to that homegeneity, and consider whether using [**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/BR242878base-choosingitemcontainer) (or two items controls) is preferable.
+異なる項目テンプレートを使う項目が均一に分布していない場合、パン中に新しい項目テンプレートを作成することが必要になる可能性が高く、仮想化によって提供される利点の多くが打ち消されます。 さらに、項目テンプレート セレクターでは、特定のコンテナーが現在のデータ項目用に再利用できるかどうかを評価する際に、対象として検討される候補は 5 つだけです。 このため、アプリで項目テンプレート セレクターを使用する前に、データが項目テンプレート セレクターでの使用に適しているかどうかを慎重に検討する必要があります。 コレクションがほぼ同種の項目で構成される場合、セレクターはほとんど毎回 (状況によっては常に) 同じ種類を返すことになります。 ほぼ同種の中のまれな例外を処理するためにかかるコストに注意し、[**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/BR242878base-choosingitemcontainer) (または 2 つの項目コントロール) の使用が妥当であるかどうかを検討します。
 
  
 

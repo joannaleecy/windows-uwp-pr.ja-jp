@@ -1,43 +1,43 @@
 ---
-Description: When you are finished creating your app's submission and click Submit to the Store, it enters the certification step.
-title: The app certification process
+Description: アプリの申請の作成が完了し、[ストアに提出] をクリックすると、認定手順に入ります。
+title: アプリの認定プロセス
 ms.assetid: 0DCB4344-224D-4E5A-899F-FF7A89F23DBC
 ---
 
-# The app certification process
+# アプリの認定プロセス
 
 
-When you are finished creating your app's submission and click **Submit to the Store**, it enters the certification step. This process usually is completed within a few hours, though in some cases it may take longer. Here's a look at what happens during the certification step.
+アプリの申請の作成が完了し、**[ストアに提出]** をクリックすると、認定手順に入ります。 このプロセスは通常、数時間以内に完了しますが、場合によってはさらに時間がかかることがあります。 ここでは、認定手順がどのように進むかを示しています。
 
-## Preprocessing
+## 前処理
 
-After you successfully upload the app's packages and submit the app for certification, the packages are queued for testing. We'll display a message if we detect any errors during preprocessing. For more info on possible errors, see [Resolve submission errors](resolve-submission-errors.md).
+アプリのパッケージを正常にアップロードし、認定のためにアプリを提出すると、パッケージはテストを受けるためのキューに登録されます。 前処理中にエラーを検出した場合は、メッセージを表示します。 可能性のあるエラーについて詳しくは、「[申請エラーの解決](resolve-submission-errors.md)」をご覧ください。
 
-## Certification
+## 認定
 
-During this phase, several tests are conducted:
+このフェーズでは、いくつかのテストが行われます。
 
--   **Security tests:** This first test checks your app's packages for viruses and malware. If your app fails this test, you'll need to check your development system by running the latest antivirus software, then rebuild your app's package on a clean system.
--   **Technical compliance tests:** Technical compliance is tested by the Windows App Certification Kit. (You should always make sure to [test your app with the Windows App Certification Kit](../debug-test-perf/windows-app-certification-kit.md) before you submit it to the Store.)
--   **Content compliance:** The amount of time this takes varies depending on how complex your app is, how much visual content it has, and how many apps have been submitted recently. Be sure to provide any info that testers should be aware of in the [Notes for certification](notes-for-certification.md) page.
+-   **セキュリティ テスト:** 最初のテストでは、アプリのパッケージがチェックされ、ウイルスやマルウェアに感染していないか確認が行われます。 このテストで不合格になった場合は、最新のウイルス対策ソフトウェアを実行して開発システムをチェックしてから、クリーンなシステム上でアプリのパッケージをリビルドする必要があります。
+-   **技術的な適合性のテスト:** 技術的な適合性のテストは、Windows アプリ認定キットを使って行われます (開発者は、ストアに提出する前に必ず [Windows アプリ認定キットでアプリのテスト](../debug-test-perf/windows-app-certification-kit.md)を実施する必要があります)。
+-   **コンテンツの適合性:** このテストにかかる時間は、アプリの複雑さ、視覚的なコンテンツの量、同時期に提出されたアプリの数などによって異なります。 認定を求めるにあたって伝えておく必要のある情報があれば、[[Notes for certification]](notes-for-certification.md) (認定を求めるにあたってのコメント) ページに記入してください。
 
-After the certification process is complete, you'll get a certification report telling you whether or not your app passed certification. If it didn't pass, the report will indicate which test failed or which [policy](https://msdn.microsoft.com/library/windows/apps/dn764944) was not met. After you fix the problem, you can create a new submission for your app to start the certification process again.
+認定プロセスが完了した後、アプリが認定に合格したかどうかを示す認定レポートをお届けします。 アプリが認定されなかった場合、レポートには、どのテストに不合格になり、どの[ポリシー](https://msdn.microsoft.com/library/windows/apps/dn764944)を満たしていなかったかが示されます。 問題の修正後、アプリの新しい申請を作成して、認定プロセスを再び始めることができます。
 
-## Release
+## リリース
 
-When your app passes certification, it's ready to move to the to the **Publishing** process. If you've indicated that your submission should be published as soon as possible, this will happen right away. If you've specified that it should not be released until a certain date, we'll wait until that date, unless you click the link to **Change release date**. If you've indicated that you want to publish the submission manually, then we won't publish it until you indicate that we should by clicking the button to **Publish now**, or if you click the link to **Change release date** and pick a specific date.
+アプリが認定に合格すると、**公開**プロセスに進むことができます。 できる限り早く申請が公開されるように指定していた場合、このプロセスはすぐに始まります。 特定の日付までアプリがリリースされないように指定していた場合は、その日付までリリースされません。ただし、**[リリース日の変更]** へのリンクをクリックして、その日付を変更できます。 申請を手動で公開するように指定していた場合、**[今すぐ公開]** ボタンをクリックするまで、アプリは公開されません。または、**[リリース日の変更]** リンクをクリックして特定の日付を選んだ場合、その日付までアプリは公開されません。
 
-## Publishing
+## 公開
 
-Your app's packages are digitally signed to protect them against tampering after they have been released. Once this phase has begun, you can no longer cancel your submission or change its release date.
+リリース後の改ざん防止のために、アプリのパッケージにはデジタル署名が施されます。 このフェーズが始まると、申請をキャンセルしたり、リリース日を変更したりすることはできません。
 
-While your app is in the publishing phase, the **Show details** link in the Status column for your app’s submission will let you know when your new packages and Store listing details become available to customers on each of your supported OS versions. Your app will remain in the publishing phase until the new packages and listing details are available to all of your app’s potential customers. When that happens, the status will change from **Publishing** to **In the Store**. 
+アプリが公開フェーズになると、アプリの申請の [状態] 列で **[詳細の表示]** リンクをクリックして、新しいパッケージとストアに表示される内容の詳細が、サポートされている各 OS バージョンのユーザーに対して、いつ公開されるかを確認できます。 アプリの潜在的なすべてのユーザーが新しいパッケージと内容の詳細を利用できるようになるまで、アプリは公開フェーズのままです。 すべてのユーザーが利用できるようになると、状態は **[公開]** から **[ストア内]** に変わります。 
 
-## In the Store 
+## ストア内 
 
-After successfully going through the steps above, your submission will be available in the Windows Store for customers to download (unless you have chosen another [Distribution and visibility](set-app-pricing-and-availability.md#distribution-and-visibility) option).
+上記の手順が正常に完了すると、申請したアプリは Windows ストアでユーザーがダウンロードできるようになります (他の[配布や視認性](set-app-pricing-and-availability.md#distribution-and-visibility)のオプションを選んでいる場合は除きます)。
 
-**Note**  We also conduct spot checks of apps after they've been published so we can identity potential problems and ensure that your app complies with all of the [Windows Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944). If we find any problems, you'll be notified about the issue and how to fix it, if applicable, or if it has been removed from the Store.
+**注**  アプリの公開後にスポット チェックも実施して、発生する可能性のある問題を特定したり、アプリが [Windows ストアのポリシー](https://msdn.microsoft.com/library/windows/apps/dn764944)のすべてに準拠していることを確認したりできます。 アプリに問題が見つかった場合は、問題とその修正方法が通知されます。または、ストアからのアプリの削除が妥当な場合は、削除されたことが通知されます。
 
  
 

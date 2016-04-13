@@ -1,11 +1,11 @@
 ---
 ms.assetid: beac6333-655a-4bcf-9caf-bba15f715ea5
 title: スレッド化と非同期プログラミング
-description: 。
+description: スレッド化と非同期プログラミングによって、アプリは並列スレッドで作業を非同期的に実行できます。
 ---
 # スレッド化と非同期プログラミング
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 スレッド化と非同期プログラミングによって、アプリは並列スレッドで作業を非同期的に実行できます。
 

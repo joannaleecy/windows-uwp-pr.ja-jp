@@ -1,133 +1,133 @@
 ---
-title: Package your Universal Windows Platform (UWP) DirectX game
-description: Larger Universal Windows Platform (UWP) games, especially those that support multiple languages with region-specific assets or feature optional high-definition assets, can easily balloon to large sizes.
+title: ユニバーサル Windows プラットフォーム (UWP) DirectX ゲームのパッケージ化
+description: 規模の大きいユニバーサル Windows プラットフォーム (UWP) ゲーム (特に、地域固有のアセットや機能オプションによる高解像度アセットを伴って複数言語をサポートするゲーム) は、サイズが容易に膨張する可能性があります。
 ms.assetid: 68254203-c43c-684f-010a-9cfa13a32a77
 ---
 
-#  Package your Universal Windows Platform (UWP) DirectX game
+#  ユニバーサル Windows プラットフォーム (UWP) DirectX ゲームのパッケージ化
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-Larger Universal Windows Platform (UWP) games, especially those that support multiple languages with region-specific assets or feature optional high-definition assets, can easily balloon to large sizes. In this topic, learn how to use app packages and app bundles to customize your app so that your customers only receive the resources they actually need.
+規模の大きいユニバーサル Windows プラットフォーム (UWP) ゲーム (特に、地域固有のアセットや機能オプションによる高解像度アセットを伴って複数言語をサポートするゲーム) は、サイズが容易に膨張する可能性があります。 このトピックでは、ユーザーが実際に必要なリソースのみを受け取ることができるように、アプリ パッケージとアプリ バンドルを使ってアプリをカスタマイズする方法について説明します。
 
-In addition to the app package model, Windows 10 supports app bundles which group together two types of packs:
+アプリ パッケージ モデルに加え、Windows 10 では、2 種類のパッケージをグループ化するアプリ バンドルがサポートされます。
 
--   App packs contain platform-specific executables and libraries. Typically, a UWP game can have up to three app packs: one each for the x86, x64, and ARM CPU architectures. All code and data specific to that hardware platform must be included in its app pack. An app pack should also contain all the core assets for the game to run with a baseline level of fidelity and performance.
--   Resource packs contain optional or expanded platform-agnostic data, such as game assets (textures, meshes, sound, text). A UWP game can have one or more resource packs, including resource packs for high-definition assets or textures, DirectX feature level 11+ resources, or language-specific assets and resources.
+-   アプリ パッケージには、プラットフォーム固有の実行可能ファイルとライブラリが含まれます。 通常、UWP ゲームでは、それぞれ x86、x64、ARM の CPU アーキテクチャに対応する 3 つのアプリ パッケージを含めることができます。 そのハードウェア プラットフォームに固有のコードやデータはすべて、対応するアプリ パッケージに含める必要があります。 アプリ パッケージには、基本レベルの再現性とパフォーマンスでゲームを実行するための主要アセットもすべて含める必要があります。
+-   リソース パッケージにはゲーム アセット (テクスチャ、メッシュ、サウンド、テキスト) など、プラットフォームにとらわれないオプション データまたは拡張データが含まれます。 UWP ゲームには、1 つまたは複数のリソース パッケージを含めることができます。これには、高解像度のアセットまたはテクスチャ、DirectX 機能レベル 11 以上のリソース、言語固有のアセットやリソースなどのリソース パッケージが含まれます。
 
-For more information about app bundles and app packs, read [Defining app resources](https://msdn.microsoft.com/library/windows/apps/xaml/hh965321).
+アプリ バンドルとアプリ パッケージについて詳しくは、「[アプリ リソースの定義](https://msdn.microsoft.com/library/windows/apps/xaml/hh965321)」をご覧ください。
 
-While you can place all content in your app packs, this is inefficient and redundant. Why have the same large texture file replicated three times for each platform, especially for ARM platforms that may not use it? A good goal is to try to minimize what your customer has to download, so they can start playing your game sooner, save space on their device, and avoid possible metered bandwidth costs.
+アプリ パッケージにすべてのコンテンツを含めることもできますが、冗長であり非効率的になります。 テクスチャ ファイルは、サイズが大きいリソースです。これを各プラットフォーム用に (特に、不要かもしれない ARM プラットフォーム用を含めて) 3 回もレプリケートする必要はありません。 目標は、ユーザーがダウンロードする対象のサイズをできる限り小さくすることです。これにより、ユーザーはゲームの開始を早め、デバイス上の領域を節約でき、場合によっては従量制の帯域幅コストを回避することができます。
 
-To use this feature of the UWP app installer, it is important to consider the directory layout and file naming conventions for app and resource packaging early in game development, so your tools and source can output them correctly in a way that makes packaging simple. Follow the rules outlined in this doc when developing or configuring asset creation and managing tools and scripts, and when authoring code that loads or references resources.
+UWP アプリ インストーラーに含まれるこの機能を使用するには、ツールとソースから適切な出力を行いシンプルなパッケージを作成できるように、ゲーム開発の初期段階からアプリとリソース パッケージのディレクトリ レイアウトとファイル命名規則を考慮することが重要になります。 アセットを作成または構成してツールとスクリプトを管理する場合や、リソースの読み込みまたは参照を行うコードを作成する場合は、このドキュメントに示されている規則に従ってください。
 
-## Why create resource packs?
+## リソース パッケージを作成する理由
 
 
-When you create an app, particularly a game app that can be sold in many locales or a broad variety of UWP hardware platforms, you often need to include multiple versions of many files to support those locales or platforms. For example, if you are releasing your game in both the United States and Japan, you might need one set of voice files in English for the en-us locales, and another in Japanese for the jp-jp locale. Or, if you want to use an image in your game for ARM devices as well as x86 and x64 platforms, you must upload the same image asset 3 times, once for each CPU architecture.
+アプリを作成する場合、特に多くのロケールまたは多様な UWP ハードウェア プラットフォームで販売できるゲーム アプリを作成する場合は、これらのロケールやプラットフォームをサポートするために、多数のファイルの複数バージョンを含める必要が生じることが少なくありません。 たとえば、米国と日本の両方でゲームをリリースする場合、voice ファイルを en-us ロケール向けに英語で 1 セット、jp-jp ロケール向けに日本語で 1 セット用意する必要があります。 また、x86 および x64 プラットフォームと同様に ARM デバイスのゲームで画像を使う場合、同じ画像アセットを 3 回 (CPU アーキテクチャごとに 1 回ずつ) アップロードする必要があります。
 
-Additionally, if your game has a lot of high definition resources that do not apply to platforms with lower DirectX feature levels, why include them in the baseline app pack and require your user to a download a large volume of components that the device can’t use? Separating these high-def resources into an optional resource pack means that customers with devices that support those high-def resources can obtain them at the cost of (possibly metered) bandwidth, while those who do not have higher-end devices can get their game quicker and at a lower network usage cost.
+これに加えて、低い DirectX 機能レベルに適用されない高解像度リソースを多数使うゲームの場合、基本アプリ パッケージにこれらを含めても、デバイスで使うことのできない大量のコンポーネントをダウンロードするようにユーザーに求めることになります。 このような高解像度リソースをオプションのリソース パッケージに分離すると、高解像度リソースがサポートされるデバイスを持っているユーザーは、その分の帯域幅を使って (場合によってはその分の料金を支払って) 必要なリソースを取得することができ、ハイエンド デバイスを持っていないユーザーは、低いネットワーク使用コストで迅速にゲームを入手できます。
 
-Content candidates for game resource packs include:
+ゲーム リソース パッケージの内容には、次のようなものが考えられます。
 
--   International locale specific assets (localized text, audio, or images)
--   High resolution assets for different device scaling factors (1.0x, 1.4x, and 1.8x)
--   High definition assets for higher DirectX feature levels (9, 10, and 11)
+-   国際的なロケール固有アセット (ローカライズされたテキスト、オーディオ、または画像)
+-   多様なデバイス倍率 (1.0x、1.4x、1.8x) に対応する高解像度アセット
+-   高い DirectX 機能レベル (9、10、11) に対応する高解像度アセット
 
-All of this is defined in the package.appxmanifest that is part of your UWP project, and in your directory structure of your final package. Because of the new Visual Studio UI, if you follow the process in this document, you should not need to edit it manually.
+これらはすべて、UWP プロジェクトの一部である package.appxmanifest と、最終的なパッケージのディレクトリ構造で定義されます。 Visual Studio の新しい UI を使い、このドキュメントのプロセスに従うと、手動で編集する必要はありません。
 
-> **Important**   The loading and management of these resources are handled through the **Windows.ApplicationModel.Resources**\* APIs. If you use these app model resource APIs to load the correct file for a locale, scaling factor, or DirectX feature level, you do not need to load your assets using explicit file paths; rather, you provide the resource APIs with just the generalized file name of the asset you want, and let the resource management system obtain the correct variant of the resource for the user’s current platform and locale configuration (which you can specify directly as well with these same APIs).
+> **重要:** これらのリソースの読み込みと管理は、**Windows.ApplicationModel.Resources**\* API によって処理されます。 これらのアプリ モデル リソース API を使ってロケール、スケール ファクター、DirectX 機能レベルに応じた正しいファイルを読み込む場合、明示的なファイル パスを使ってアセットを読み込む必要はありません。リソース API に、必要なアセットの汎用的なファイル名を指定するだけで、ユーザーの現在のプラットフォームとロケール構成 (これらについても同じ API で指定できます) に応じた適切なバリアントのリソースが、リソース管理システムによって取得されます。
 
  
 
-Resources for resource packaging are specified in one of two basic ways:
+リソース パッケージのリソースは、次のいずれかの方法で指定します。
 
--   Asset files have the same filename, and the resource pack specific versions are placed in specific named directories. These directory names are reserved by the system. For example, \\en-us, \\scale-140, \\dxfl-dx11.
--   Asset files are stored in folders with arbitrary names, but the files are named with a common label that is appended with strings reserved by the system to denote language or other qualifiers. Specifically, the qualifier strings are affixed to the generalized filename after an underscore (“\_”). For example, \\assets\\menu\_option1\_lang-en-us.png, \\assets\\menu\_option1\_scale-140.png, \\assets\\coolsign\_dxfl-dx11.dds. You may also combine these strings. For example, \\assets\\menu\_option1\_scale-140\_lang-en-us.png.
-    > **Note**   When used in a filename rather than alone in a directory name, a language qualifier must take the form "lang-<tag>", e.g."lang-en-us" as described in [How to name resources using qualifiers](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324).
+-   アセット ファイルに同じファイル名を使用し、リソース パッケージ固有の各バージョンを固有の名前のディレクトリに配置する。 これらのディレクトリ名は、システムによって予約されています。 たとえば、\\en-us、\\scale-140、\\dxfl-dx11 などです。
+-   アセット ファイルは、任意の名前のフォルダーに格納されますが、ファイル名には共通ラベルが付けられ、言語や他の修飾子を示すためにシステムにより予約されている文字列が付加されます。 具体的には、修飾子文字列のアンダースコア ("\_") の後には汎的なファイル名が付加されます。 たとえば、\\assets\\menu\_option1\_lang-en-us.png、\\assets\\menu\_option1\_scale-140.png、\\assets\\coolsign\_dxfl-dx11.dds などです。 これらの文字列を連結することもできます。 たとえば、\\assets\\menu\_option1\_scale-140\_lang-en-us.png と記述します。
+    > **注:** 言語修飾子をディレクトリ名に単独で使うのではなく、ファイル名で使うときは、<tag>「[修飾子を使ってリソースに名前を付ける方法](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)」で説明されているように、"lang-" (たとえば "lang-en-us") という形式で指定する必要があります。
 
      
 
-Directory names can be combined for additional specificity in resource packaging. However, they cannot be redundant. For example, \\en-us\\menu\_option1\_lang-en-us.png is redundant.
+ディレクトリ名は、リソース パッケージの追加特性に応じて組み合わせることができます。 ただし、冗長な名前を指定することはできません。 たとえば、\\en-us\\menu\_option1\_lang-en-us.png は冗長です。
 
-You may specify any non-reserved subdirectory names you need underneath a resource directory, as long as the directory structure is identical in each resource directory. For example, \\dxfl-dx10\\assets\\textures\\coolsign.dds. When you load or reference an asset, the pathname must be generalized, removing any qualifiers for language, scale, or DirectX feature level, whether they are in folder nodes or in the file names. For example, to refer in code to an asset for which one of the variants is \\dxfl-dx10\\assets\\textures\\coolsign.dds, use \\assets\\textures\\coolsign.dds. Likewise, to refer to an asset with a variant \\images\\background\_scale-140.png, use \\images\\background.png.
+各リソース ディレクトリの構造が同じであれば、リソース ディレクトリの下位には、予約名ではない必要なサブディレクトリ名を指定することができます。 たとえば、\\dxfl-dx10\\assets\\textures\\coolsign.dds と記述します。 アセットを読み込むか参照するときは、フォルダー ノードやファイル名に含まれる言語、スケール、DirectX 機能レベルの修飾子をすべて削除して、パス名を汎用化する必要があります。 たとえば、バリアントの 1 つが \\dxfl-dx10\\assets\\textures\\coolsign.dds のアセットをコードで参照するには、\\assets\\textures\\coolsign.dds を使います。 同様に、バリアントが \\images\\background\_scale-140.png のアセットを参照するには、\\images\\background.png を使います。
 
-Here are the following reserved directory names and filename underscore prefixes:
+予約ディレクトリ名と、ファイル名にアンダースコアで連結されるサフィックスを次に示します。
 
-| Asset type                   | Resource pack directory name                                                                                                                  | Resource pack filename suffix                                                                                                    |
+| アセットの種類                   | リソース パッケージのディレクトリ名                                                                                                                  | リソース パッケージのファイル名サフィックス                                                                                                    |
 |------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
-| Localized assets             | All possible languages, or language and locale combinations, for Windows 10. (The qualifier prefix "lang-" is not required in a folder name.) | An "\_" followed by the language, locale, or language-locale specifier. For example, "\_en", "\_us", or "\_en-us", respectively. |
-| Scaling factor assets        | scale-100, scale-140, scale-180. These are for the 1.0x, 1.4x, and 1.8x UI scaling factors, respectively.                                     | An "\_" followed by "scale-100", "scale-140", or "scale-180".                                                                    |
-| DirectX feature level assets | dxfl-dx9, dxfl-dx10, and dxfl-dx11. These are for the DirectX 9, 10, and 11 feature levels, respectively.                                     | An "\_" followed by "dxfl-dx9", "dxfl-dx10", or "dxfl-dx11".                                                                     |
+| ローカライズされたアセット             | Windows 10 で使用可能なすべての言語または言語とロケールの組み合わせ (フォルダー名には、修飾子プレフィックス "lang-" は必要ありません)。 | "\_" の後に言語、ロケール、または言語とロケールの指定子を連結する (たとえば、それぞれ "\_en"、"\_us"、"\_en-us" など)。 |
+| 倍率アセット        | scale-100、scale-140、scale-180。 これらはそれぞれ、1.0x、1.4x、1.8x の UI 倍率を示します。                                     | "\_" の後に "scale-100"、"scale-140"、または "scale-180" を連結する。                                                                    |
+| DirectX 機能レベル アセット | dxfl-dx9、dxfl-dx10、dxfl-dx11。 これらはそれぞれ、DirectX の 9、10、11 機能レベルを示します。                                     | "\_" の後に "dxfl-dx9"、"dxfl-dx10"、"dxfl-dx11" を連結する。                                                                     |
 
  
 
-## Defining localized language resource packs
+## ローカライズされた言語リソース パッケージの定義
 
 
-Locale-specific files are placed in project directories named for the language (for example, "en").
+ロケール固有のファイルは、言語に応じた名前 ("en" など) のプロジェクト ディレクトリに配置します。
 
-When configuring your app to support localized assets for multiple languages, you should:
+複数言語用にローカライズされたアセットをサポートできるようにアプリを構成するには、次のことを行う必要があります。
 
--   Create an app subdirectory (or file version) for each language and locale you will support (for example, en-us, jp-jp, zh-cn, fr-fr, and so on).
--   During development, place copies of ALL assets (such as localized audio files, textures, and menu graphics) in the corresponding language locale subdirectory, even if they are not different across languages or locales. For the best user experience, ensure that the user is alerted if they have not obtained an available language resource pack for their locale if one is available (or if they have accidentally deleted it after download and installation).
--   Make sure each asset or string resource file (.resw) has the same name in each directory. For example, menu\_option1.png should have the same name in both the \\en-us and \\jp-jp directories even if the content of the file is for a different language. In this case, you'd see them as \\en-us\\menu\_option1.png and \\jp-jp\\menu\_option1.png.
-    > **Note**   You can optionally append the locale to the file name and store them in the same directory; for example, \\assets\\menu\_option1\_lang-en-us.png, \\assets\\menu\_option1\_lang-jp-jp.png.
-
-     
-
--   Use the APIs in [**Windows.ApplicationModel.Resources**](https://msdn.microsoft.com/library/windows/apps/br206022) and [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) to specify and load the locale-specific resources for you app. Also, use asset references that do no include the specific locale, since these APIs determine the correct locale based on the user's settings and then retrieve the correct resource for the user.
--   In Microsoft Visual Studio 2015, select **PROJECT->Store->Create App Package...** and create the package.
-
-## Defining scaling factor resource packs
-
-
-Windows 10 provides three user interface scaling factors: 1.0x, 1.4x, and 1.8x. Scaling values for each display are set during installation based on a number of combined factors: the size of the screen, the resolution of the screen, and the assumed average distance of the user from the screen. The user can also adjust scale factors to improve readability. Your game should be both DPI-aware and scaling factor-aware for the best possible experience. Part of this awareness means creating versions of critical visual assets for each of the three scaling factors. This also includes pointer interaction and hit testing!
-
-When configuring your app to support resource packs for different UWP app scaling factors, you should:
-
--   Create an app subdirectory (or file version) for each scaling factor you will support (scale-100, scale-140, and scale-180).
--   During development, place scale factor-appropriate copies of ALL assets in each scale factor resource directory, even if they are not different across scaling factors.
--   Make sure each asset has the same name in each directory. For example, menu\_option1.png should have the same name in both the \\scale-100 and \\scale-180 directories even if the content of the file is different. In this case, you'd see them as \\scale-100\\menu\_option1.png and \\scale-140\\menu\_option1.png.
-    > **Note**   Again, you can optionally append the scaling factor suffix to the file name and store them in the same directory; for example, \\assets\\menu\_option1\_scale-100.png, \\assets\\menu\_option1\_scale-140.png.
+-   サポートする各言語とロケール (たとえば、en-us、jp-jp、zh-cn、fr-fr など) について、アプリのサブディレクトリ (またはファイル バージョン) を作成します。
+-   開発中は、言語やロケールによる相違がなくても、すべてのアセット (ローカライズされたオーディオ ファイル、テクスチャ、メニュー用グラフィックスなど) のコピーを、対応する言語ロケールのサブディレクトリに配置します。 最善のユーザー エクスペリエンスを提供するには、ロケールに応じた言語リソース パッケージが存在するにもかかわらず取得されていない場合 (またはダウンロードしてインストールした後に誤って削除された場合) に、ユーザーへの警告が表示されるようにします。
+-   各ディレクトリに配置するアセットまたは文字列のリソース ファイル (.resw) は、必ず同じ名前にします。 たとえば、menu\_option1.png の名前は、ファイルの内容が言語ごとに異なっても、\\en-us ディレクトリと \\jp-jp ディレクトリの両方で同じにする必要があります。 この場合、それぞれ \\en-us\\menu\_option1.png および \\jp-jp\\menu\_option1.png としてファイルを配置します。
+    > **注:** オプションで、ファイル名にロケールを付加して、同じディレクトリに格納することもできます (例: \\assets\\menu\_option1\_lang-en-us.png、\\assets\\menu\_option1\_lang-jp-jp.png)。
 
      
 
--   Use the APIs in [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) to load the assets. Asset references should be generalized (no suffix), leaving out the specific scale variation. The system will retrieve the appropriate scale asset for the display and the user's settings.
--   In Visual Studio 2015, select **PROJECT->Store->Create App Package...** and create the package.
+-   ロケール固有のリソースをアプリ用に指定し、読み込むには、[**Windows.ApplicationModel.Resources**](https://msdn.microsoft.com/library/windows/apps/br206022) と [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) の API を使います。 また、これらの API は、ユーザーの設定に基づいて適切なロケールを判別し、ユーザーの適切なリソースを取得するため、特定のロケールが含まれないアセット参照を使ってください。
+-   Microsoft Visual Studio 2015 では、**[プロジェクト]、[ストア]、[アプリ パッケージの作成]** の順に選択して、パッケージを作成します。
 
-## Defining DirectX feature level resource packs
+## 倍率リソース パッケージの定義
 
 
-DirectX feature levels correspond to GPU feature sets for prior and current versions of DirectX (specifically, Direct3D). This includes shader model specifications and functionality, shader language support, texture compression support, and overall graphics pipeline features.
+Windows 10 では、ユーザー インターフェイスの倍率として、1.0x、1.4x、1.8x の 3 種類が用意されています。 ディスプレイごとの倍率は、いくつかの要因 (画面のサイズ、画面の解像度、画面からユーザーまでの距離の推定値) の組み合わせに基づいてインストール時に値が設定されます。 ユーザーは、倍率を調整して読みやすくすることもできます。 最善のエクスペリエンスを提供するには、ゲームは DPI 対応と倍率認識に対応する必要があります。 この "認識" には、重要なビジュアル アセットについて、3 つの倍率にそれぞれ対応するバージョンを作成するという意味合いが含まれています。 また、ポインター操作とヒット テストも含まれています。
 
-Your baseline app pack should use the baseline texture compression formats: BC1, BC2, or BC3. These formats can be consumed by any UWP device, from low-end ARM platforms up to dedicated multi-GPU workstations and media computers.
+UWP アプリの各種の倍率に応じたリソース パッケージをサポートできるようにアプリを構成するには、次のことを行う必要があります。
 
-Texture format support at DirectX feature level 10 or higher should be added in a resource pack to conserve local disk space and download bandwidth. This enables using the more advanced compression schemes for 11, like BC6H and BC7. (For more details, see [Texture block compression in Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/hh308955).) These formats are more efficient for the high-resolution texture assets supported by modern GPUs, and using them improves the look, performance, and space requirements of your game on high-end platforms.
+-   サポートする各倍率 (scale-100、scale-140、scale-180) に対応するアプリ サブディレクトリ (またはファイル バージョン) を作成します。
+-   開発中は、倍率による相違がなくても、倍率に応じたすべてのアセットのコピーを、各倍率用のリソース ディレクトリに配置します。
+-   各ディレクトリに配置するアセットは、必ず同じ名前にします。 たとえば、menu\_option1.png の名前は、ファイルの内容が異なっても、\\scale-100 ディレクトリと \\scale-180 ディレクトリの両方で同じにする必要があります。 この場合、それぞれ \\scale-100\\menu\_option1.png および \\scale-140\\menu\_option1.png としてファイルを配置します。
+    > **注:** オプションで、ファイル名に倍率サフィックスを付加して、同じディレクトリに格納することもできます (例: \\assets\\menu\_option1\_scale-100.png、\\assets\\menu\_option1\_scale-140.png)。
 
-| DirectX feature level | Supported texture compression |
+     
+
+-   アセットを読み込むには、[**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) の API を使います。 アセット参照は、特定のスケール バリエーションを除外して汎用化 (サフィックスなし) する必要があります。 システムは、ディスプレイの適切なスケール アセットとユーザーの設定を取得します。
+-   Visual Studio 2015 では、**[プロジェクト]、[ストア]、[アプリ パッケージの作成]** の順に選択して、パッケージを作成します。
+
+## DirectX 機能レベル リソース パッケージの定義
+
+
+DirectX の機能レベルは、以前のバージョンと現在のバージョンの DirectX (Direct3D) の GPU 機能セットに対応しています。 これには、シェーダー モデルの仕様と機能、シェーダー言語サポート、テクスチャ圧縮サポート、全体的なグラフィックス パイプライン機能が含まれています。
+
+基本アプリ パッケージでは、基本のテクスチャ圧縮形式 (BC1、BC2、または BC3) を使う必要があります。 これらの形式は、ローエンドの ARM プラットフォームから、専用のマルチ GPU ワークステーションやメディア コンピューターまで、任意の UWP デバイスで使うことができます。
+
+ローカル ディスク領域とダウンロード帯域幅を節約するには、DirectX 機能レベル 10 以上のテクスチャ形式サポートをリソース パッケージに追加する必要があります。 これにより、BC6H や BC7 など、11 に対応する高度な圧縮方式の使用が有効になります (詳しくは、「[Direct3D 11 でのテクスチャ ブロック圧縮](https://msdn.microsoft.com/library/windows/desktop/hh308955)」をご覧ください)。これらの形式は最新の GPU でサポートされる高解像度のテクスチャ アセットに有効です。また、これらを使うと、ハイエンドのプラットフォーム上で、優れたゲームの外観、パフォーマンス、ディスク領域要件を実現できます。
+
+| DirectX 機能レベル | サポートされるテクスチャ圧縮 |
 |-----------------------|-------------------------------|
-| 9                     | BC1, BC2, BC3                 |
-| 10                    | BC4, BC5                      |
-| 11                    | BC6H, BC7                     |
+| 9                     | BC1、BC2、BC3                 |
+| 10                    | BC4、BC5                      |
+| 11                    | BC6H、BC7                     |
 
  
 
-Also, each DirectX feature levels supports different shader model versions. Compiled shader resources can be created on a per-feature level basis, and can be included in DirectX feature level resource packs. Additionally, some later version shader models can use assets, such as normal maps, that earlier shader model versions cannot. These shader model specific assets should be included in a DirectX feature level resource pack as well.
+また、各 DirectX 機能レベルでは、別々のシェーダー モデル バージョンがサポートされています。 機能レベルごとにコンパイル済みのシェーダー リソースを作成し、DirectX 機能レベル リソース パッケージに含めることができます。 また、一部の新しいバージョンのシェーダー モデルでは、法線マップなど、以前のシェーダー モデル バージョンで使うことができなかったアセットを使うことができます。 これらのシェーダー モデル固有のアセットも、DirectX 機能レベル リソース パッケージに含める必要があります。
 
-The resource mechanism is primarily focused on texture formats supported for assets, so it supports only the 3 overall feature levels. If you need to have separate shaders for sub-levels (dot versions) like DX9\_1 vs DX9\_3, your asset management and rendering code must handle them explicitly.
+リソース メカニズムは、アセット用にサポートされるテクスチャ形式に焦点を合わせているため、3 つの全体機能レベルのみがサポート対象になります。 DX9\_1 と DX9\_3 など、異なるサブレベル (ドット バージョン) に別々のシェーダーが必要であれば、アセット管理とレンダリングのコードで、これらを明示的に処理する必要があります。
 
-When configuring your app to support resource packs for different DirectX feature levels, you should:
+各種の DirectX 機能レベルに応じたリソース パッケージをサポートできるようにアプリを構成するには、次のことを行う必要があります。
 
--   Create an app subdirectory (or file version) for each DirectX feature level you will support (dxfl-dx9, dxfl-dx10, and dxfl-dx11).
--   During development, place feature level specific assets in each feature level resource directory. Unlike locales and scaling factors, you may have different rendering code branches for each feature level in your game, and if you have textures, compiled shaders, or other assets that are only used in one or a subset of all supported feature levels, put the corresponding assets only in the directories for the feature levels that use them. For assets that are loaded across all feature levels, make sure that each feature level resource directory has a version of it with the same name. For example, for a feature level independent texture named "coolsign.dds", place the BC3-compressed version in the \\dxfl-dx9 directory and the BC7-compressed version in the \\dxfl-dx11 directory.
--   Make sure each asset (if it is available to multiple feature levels) has the same name in each directory. For example, coolsign.dds should have the same name in both the \\dxfl-dx9 and \\dxfl-dx11 directories even if the content of the file is different. In this case, you'd see them as \\dxfl-dx9\\coolsign.dds and \\dxfl-dx11\\coolsign.dds.
-    > **Note**   Again, you can optionally append the feature level suffix to the file name and store them in the same directory; for example, \\textures\\coolsign\_dxfl-dx9.dds, \\textures\\coolsign\_dxfl-dx11.dds.
+-   サポートする各 DirectX 機能レベル (dxfl-dx9、dxfl-dx10、dxfl-dx11) に対応するアプリ サブディレクトリ (またはファイル バージョン) を作成します。
+-   開発中は、機能レベル固有のアセットを、各機能レベル用のリソース ディレクトリに配置します。 ロケールや倍率の場合とは異なり、ゲーム内の各機能レベルに対してレンダリング コードの別々の分岐を割り当てることができます。サポートされるすべての機能レベルのうち、いずれか 1 つの機能レベルかサブセットのみで使うテクスチャ、コンパイル済みシェーダー、またはその他のアセットがある場合は、これらを使う機能レベルのディレクトリのみに、対応するアセットを配置します。 すべての機能レベルで読み込むアセットについては、各機能レベルのリソース ディレクトリに、同じ名前を持つ該当バージョンを必ず含めます。 たとえば、機能レベルに依存しない "coolsign.dds" という名前のテクスチャについては、BC3 圧縮バージョンを \\dxfl-dx9 ディレクトリに、BC7 圧縮バージョンを \\dxfl-dx11 ディレクトリに配置します。
+-   各ディレクトリに配置するアセット (複数の機能レベル用に存在する場合) は、必ず同じ名前にします。 たとえば、coolsign.dds の名前は、ファイルの内容が異なっても、\\dxfl-dx9 ディレクトリと \\dxfl-dx11 ディレクトリの両方で同じにする必要があります。 この場合、それぞれ \\dxfl-dx9\\coolsign.dds および \\dxfl-dx11\\coolsign.dds としてファイルを配置します。
+    > **注:** オプションで、ファイル名に機能レベル サフィックスを付加して、同じディレクトリに格納することもできます (例: \\textures\\coolsign\_dxfl-dx9.dds、\\textures\\coolsign\_dxfl-dx11.dds)。
 
      
 
--   Declare the supported DirectX feature levels when configuring your graphics resources.
+-   グラフィックス リソースを構成する際には、サポートされる DirectX 機能レベルを宣言します。
     ```cpp
     D3D_FEATURE_LEVEL featureLevels[] = 
     {
@@ -157,7 +157,7 @@ When configuring your app to support resource packs for different DirectX featur
     );
     ```
 
--   Use the APIs in [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) to load the resources. Asset references should be generalized (no suffix), leaving out the feature level. However, unlike language and scale, the system does not automatically determine which feature level is optimal for a given display; that is left to you to determine based on code logic. Once you make that determination, use the APIs to inform the OS of the preferred feature level. The system will then be able to retrieve the correct asset based on that preference. Here is a code sample that shows how to inform your app of the current DirectX feature level for the platform:
+-   リソースを読み込むには、[**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) の API を使います。 アセット参照は、機能レベルを除外して汎用化 (サフィックスなし) する必要があります。 ただし、言語やスケールとは異なり、システムは特定のディスプレイに適した機能レベルを自動的に判別しません。コード ロジックに基づいてご自身で判断してください。 この決定を行ったら、API を使って希望する機能レベルを OS に通知します。 その後、システムはその設定に基づいて適切なアセットを取得できます。 次のコード サンプルでは、プラットフォームの現在の DirectX 機能レベルをアプリに通知する方法を示します。
     
     ```cpp
     // Set the current UI thread's MRT ResourceContext's DXFeatureLevel with the right DXFL. 
@@ -181,11 +181,11 @@ When configuring your app to support resource packs for different DirectX featur
         ResourceContext::SetGlobalQualifierValue(L"DXFeatureLevel", dxFeatureLevel);
     ```
 
-    > **Note**  In your code, load the texture directly by name (or path below the feature level directory). Do not include either the feature level directory name or the suffix. For example, load "textures\\coolsign.dds", not "dxfl-dx11\\textures\\coolsign.dds" or "textures\\coolsign\_dxfl-dx11.dds".
+    > **注:** コードでは、テクスチャを直接名前 (または機能レベル以下のパス) で読み込みます。 機能レベルのディレクトリ名またはサフィックスを含めないでください。 たとえば、"dxfl-dx11\\textures\\coolsign.dds" や "textures\\coolsign\_dxfl-dx11.dds" ではなく、"textures\\coolsign.dds" を読み込みます。
 
      
 
--   Now, use the [**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/br206078) to locate the file that matches current DirectX feature level. The **ResourceManager** returns a [**ResourceMap**](https://msdn.microsoft.com/library/windows/apps/br206089), which you query with [**ResourceMap::GetValue**](https://msdn.microsoft.com/library/windows/apps/br206098) (or [**ResourceMap::TryGetValue**](https://msdn.microsoft.com/library/windows/apps/jj655438)) and a supplied [**ResourceContext**](https://msdn.microsoft.com/library/windows/apps/br206064). This returns a [**ResourceCandidate**](https://msdn.microsoft.com/library/windows/apps/br206051) that most closely matches the DirectX feature level that was specified by calling [**SetGlobalQualifierValue**](https://msdn.microsoft.com/library/windows/apps/mt622101).
+-   ここで、[**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/br206078) を使って、現在の DirectX 機能レベルに合致するファイルを見つけます。 **ResourceManager** は [**ResourceMap**](https://msdn.microsoft.com/library/windows/apps/br206089) を返します。その [**ResourceMap::GetValue**](https://msdn.microsoft.com/library/windows/apps/br206098) (または [**ResourceMap::TryGetValue**](https://msdn.microsoft.com/library/windows/apps/jj655438)) と渡された [**ResourceContext**](https://msdn.microsoft.com/library/windows/apps/br206064) を使って照会します。 これにより、[**SetGlobalQualifierValue**](https://msdn.microsoft.com/library/windows/apps/mt622101) を呼び出して指定された DirectX 機能レベルと最も近い [**ResourceCandidate**](https://msdn.microsoft.com/library/windows/apps/br206051) が返されます。
     
     ```cpp
     // An explicit ResourceContext is needed to match the DirectX feature level for the display on which the current view is presented.
@@ -204,15 +204,15 @@ When configuring your app to support resource packs for different DirectX featur
     Platform::String^ resourceName = possibleResource->ValueAsString;
     ```
 
--   In Visual Studio 2015, select **PROJECT->Store->Create App Package...** and create the package.
--   Make sure that you enable app bundles in the package.appxmanifest manifest settings.
+-   Visual Studio 2015 では、**[プロジェクト]、[ストア]、[アプリ パッケージの作成]** の順に選択して、パッケージを作成します。
+-   package.appxmanifest マニフェスト設定で、アプリ バンドルを必ず有効にしてください。
 
-## Related topics
+## 関連トピック
 
 
-* [Defining app resources](https://msdn.microsoft.com/library/windows/apps/xaml/hh965321)
-* [Packaging apps](https://msdn.microsoft.com/library/windows/apps/mt270969)
-* [App packager (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767)
+* [アプリ リソースの定義](https://msdn.microsoft.com/library/windows/apps/xaml/hh965321)
+* [アプリのパッケージ化](https://msdn.microsoft.com/library/windows/apps/mt270969)
+* [アプリ パッケージ ツール (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767)
 
  
 

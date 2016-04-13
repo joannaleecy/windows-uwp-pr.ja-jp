@@ -26,6 +26,7 @@ ms.assetid: 3A3C6F10-0DB1-416D-B632-CD388EA66759
 -   [状態レポート](health-report.md)
 -   [レーティング レポート](ratings-report.md)
 -   [レビュー レポート](reviews-report.md)
+-   [フィードバック レポート](feedback-report.md)
 -   [利用状況レポート](usage-report.md)
 -   [IAP 取得レポート](iap-acquisitions-report.md)
 -   [広告仲介レポート](ad-mediation-report.md)
@@ -44,6 +45,6 @@ ms.assetid: 3A3C6F10-0DB1-416D-B632-CD388EA66759
 実際のフィルターはレポートごとに異なります。 このセクションのトピックでは、利用可能なフィルターと、各レポートのページにあるその他のデータについて説明します。
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=Mar16_HO5-->
 
 

@@ -1,17 +1,17 @@
 ---
-title: Port from OpenGL ES 2.0 to Direct3D 11
-description: Includes articles, overviews, and walkthroughs for porting an OpenGL ES 2.0 graphics pipeline to a Direct3D 11 and the Windows Runtime.
+title: OpenGL ES 2.0 から Direct3D 11 への移植
+description: OpenGL ES 2.0 グラフィックス パイプラインを Direct3D 11 と Windows ランタイムに移植するための記事、概要、チュートリアルを紹介します。
 ms.assetid: 1e1cf668-a15f-0c7b-8daf-3260d27c6d9c
 ---
 
-# Port from OpenGL ES 2.0 to Direct3D 11
+# OpenGL ES 2.0 から Direct3D 11 への移植
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-Includes articles, overviews, and walkthroughs for porting an OpenGL ES 2.0 graphics pipeline to a Direct3D 11 and the Windows Runtime.
+OpenGL ES 2.0 グラフィックス パイプラインを Direct3D 11 と Windows ランタイムに移植するための記事、概要、チュートリアルを紹介します。
 
-> **Note**   An intermediate step to porting your OpenGL ES 2.0 project is to use ANGLE for Windows Store. ANGLE allows you to run OpenGL ES content on Windows by translating OpenGL ES API calls to DirectX 11 API calls. For more information about ANGLE, go to the [ANGLE for Windows Store Wiki](http://go.microsoft.com/fwlink/p/?linkid=618387).
+> **注:** OpenGL ES 2.0 プロジェクトを移植する中間の手順では、Windows ストア用の ANGLE を使います。 ANGLE では、OpenGL ES API 呼び出しを DirectX 11 API 呼び出しに変換することにより、Windows で OpenGL ES コンテンツを実行することができます。 ANGLE について詳しくは、「[Windows ストア用の ANGLE の Wiki](http://go.microsoft.com/fwlink/p/?linkid=618387)」をご覧ください。
 
  
 
@@ -22,30 +22,30 @@ Includes articles, overviews, and walkthroughs for porting an OpenGL ES 2.0 grap
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Topic</th>
-<th align="left">Description</th>
+<th align="left">トピック</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>[Map OpenGL ES 2.0 to Direct3D 11.1](map-concepts-and-infrastructure.md)</p></td>
-<td align="left"><p>When starting the process of porting your graphics architecture from OpenGL ES 2.0 to Direct3D for the first time, familiarize yourself with the key differences between the APIs. The topics in this section help you plan your port strategy and the API changes that you must make when moving your graphics processing to Direct3D.</p></td>
+<td align="left"><p>OpenGL ES 2.0 から Direct3D へのグラフィックス アーキテクチャの移植プロセスを初めて開始する場合は、API 間の主要な違いについて把握しておいてください。 このセクションのトピックは、グラフィックスの処理を Direct3D に移行する際に必ず必要な API の変更と移植戦略を計画するのに役立ちます。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Walkthrough sample ports from OpenGL ES 2.0](walkthrough-sample-ports-from-opengl-es-2-0.md)</p></td>
-<td align="left"><p>This set of topics walks a number of OpenGL ES 2.0 graphics pipeline porting scenarios of differing complexity.</p></td>
+<td align="left"><p>この一連のトピックでは、複雑さの異なるさまざまな OpenGL ES 2.0 グラフィックス パイプラインの移植シナリオについて説明します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[OpenGL ES 2.0 to Direct3D 11.1 reference](opengl-es-2-0-to-directx-11-1-reference.md)</p></td>
-<td align="left"><p>Use these reference topics to look up API mapping and short code samples when porting from OpenGL ES 2.0 to Direct3D 11.</p></td>
+<td align="left"><p>OpenGL ES 2.0 から Direct3D 11 への移植の際に API マッピングや簡単なコード サンプルを探す場合は、これらのリファレンス トピックをご覧ください。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-> **Note**  
-This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **注:**  
+この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
  
 

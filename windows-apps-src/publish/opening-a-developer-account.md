@@ -1,75 +1,75 @@
 ---
 ms.assetid: 284EBA1F-BFB4-4CDA-9F05-4927CDACDAA7
-title: Opening a developer account
-description: This overview of how to register for a developer account for the Windows Store and other Microsoft programs will help you understand the process of setting up your account.
+title: 開発者アカウントを開く
+description: Windows ストアと他のマイクロソフト製プログラムの開発者アカウントの登録方法に関するこの概要では、アカウントを設定する方法について説明します。
 ---
-# Opening a developer account
+# 開発者アカウントを開く
 
-This overview of how to register for a developer account for the Windows Store and other Microsoft programs will help you understand the process of setting up your account.
+Windows ストアと他のマイクロソフト製プログラムの開発者アカウントの登録方法に関するこの概要では、アカウントを設定する方法について説明します。
 
-> **Note**  When you sign up for a developer account, we'll use the email address you provide in your contact info to send email communications related to your account. At times, these may include informational emails about our programs. If you choose not to receive these informational emails by [opting out](http://go.microsoft.com/fwlink/p/?LinkId=533280), be aware that we will still send you transactional emails (for example, to let you know that your app has passed certification or that a payment is on the way). These emails are a necessary part of your account, and unless you close your account, you will continue to receive these transactional emails.
+> **注**  開発者アカウントにサインアップすると、連絡先情報に指定したメール アドレスを使って、アカウントに関連する連絡事項を記載したメールが送られます。 場合によっては、プログラムについての情報を示すメールが送られることがあります。 [オプトアウト](http://go.microsoft.com/fwlink/p/?LinkId=533280)を使ってこのような情報を示すメールを受信しないように選んだ場合でも、トランザクション メール (たとえば、アプリが認定に合格したことや、支払いが途中であることをお知らせするためのメールなど) が送信されることに注意してください。 これらのトランザクション メールは、アカウントにとって重要なメールであり、アカウントを終了するまで継続的に受信することになります。
 
-## The account signup process
+## アカウントのサインアップ手順
 
-> **Note**  In some cases, the screens and fields you see when registering for a developer account may vary slightly from what is outlined below, though the basic information and process is the same.
+> **注**  場合によっては、開発者アカウントの登録時に表示される画面とフィールドが以下の概要と少し異なることがありますが、基本的な情報は同じです。
 
-1.  Go to the [registration page](http://go.microsoft.com/fwlink/p/?LinkId=615100) and click **Sign up**.
-2.  Select the [country/region](account-types-locations-and-fees.md#account-markets) in which you live, or where your business is located. You won't be able to change this later.
-3.  Select your [developer account type](account-types-locations-and-fees.md) (individual or company). You won't be able to change this later, so be sure to choose the right type of account. For a company account, be sure to review the [guidelines](#additional-guidelines-for-company-accounts) below.
-4.  Enter the contact info you want to use for your developer account.
+1.  [登録ページ](http://go.microsoft.com/fwlink/p/?LinkId=615100)に移動して、**[サインアップ]** をクリックします。
+2.  お客様が住んでいる、またはお客様の会社が所在する[国/地域](account-types-locations-and-fees.md#account-markets)を選びます。 これは、後で変更できません。
+3.  [開発者アカウントの種類](account-types-locations-and-fees.md) (個人用または会社用) を選びます。 アカウントの種類は後で変更できません。適切な種類を選ぶ必要があります。 会社用のアカウントの場合は、下記の[ガイドライン](#additional-guidelines-for-company-accounts)を確認してください。
+4.  開発者アカウントに使う連絡先情報を入力します。
 
-  > **Note**  We'll use this to contact you about account-related matters. For example, you'll receive an email confirmation message after you complete your registration. After that, we'll send messages when we pay you, or if you need to fix something with your account. We may also send informational emails as described above, unless you opt out of receiving non-transactional emails.
+  > **注**  この情報は、アカウント関連事項について連絡をとる目的で使用されます。 たとえば、登録を完了した後の確認メッセージがメールで送られます。 その後は、マイクロソフトが支払いを行う場合や、アカウントに関する修正が必要になった場合にメッセージが送られます。 トランザクション以外のメールを受信しないように設定していない限り、上記のように、情報を示すメールが送られることがあります。
 
-   If you are registering as a company, you'll also need to enter the name, email address, and phone number of the person who will approve your company's account.
+   会社として登録する場合は、会社のアカウントを承認する人物の名前、メール アドレス、電話番号も入力する必要があります。
 
-5.  Enter the **publisher display name** that you wish to use. Note that if you enter a name that someone else has already selected, or if it appears that someone else has the rights to use that name, we will not allow you to select that name. For company accounts, the publisher display name must be your organization's registered business name or trade name. Select this carefully, as customers will see this name when browsing and will come to know your apps by this name.
+5.  お使いになる**発行者の表示名**を入力します。 他の人物が既に選んでいる名前を入力した場合、または他の人物がその名前を使用する権利を所有している場合、その名前を選ぶことはできません。 会社アカウントの場合、発行者の表示名は組織の登記されている会社名または商標名にする必要があります。 これは慎重に選んでください。ユーザーが Windows ストアを閲覧するとき、これらの名前を見てアプリを選択します。
 
-  >  **Note**  Make sure you have the rights to use this name. If someone else has trademarked or copyrighted the name you picked, your account could be closed. See your [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/Hh694058) for more info. If someone else is using a publisher display name for which you hold the trademark or other legal right, [contact Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=233777).    
+  >  **注**  この名前が商標などの法的権利を侵害していないことを確認してください。 選んだ名前が既に他の人物によって商標化または著作権登録されている場合、自分のアカウントが閉じられる可能性があります。 詳しくは、「[アプリ開発者契約](https://msdn.microsoft.com/library/windows/apps/Hh694058)」をご覧ください。 お客様が商標などの法的権利を所有している発行者の表示名を、他のユーザーが使っている場合は、[Microsoft にお知らせください](http://go.microsoft.com/fwlink/p/?LinkId=233777)。    
 
-6.  Enter the contact info for the account. For a company account, you'll also need to provide contact info for the person who can verify that you are authorized to create the account on behalf of your organization. When you are finished, click **Next** to move on to the **Payment** section.
+6.  アカウントの連絡先情報を入力します。 会社のアカウントの場合は、組織を代表してこのアカウントを作成する権限がお客様にあることを確認できる担当者の連絡先情報も入力する必要があります。 入力が完了したら、**[次へ]** をクリックし、**[支払い]** セクションに移動します。
 
-7.  Enter your payment info for the one-time registration fee. If you have a promo code that covers the cost of registration, you can enter that here. Otherwise, provide your credit card info (or PayPal in supported markets). Note that prepaid credit cards can't be used for this purchase. When you are finished, click **Next** to move on to the **Review** screen.
+7.  1 回限りの登録料金の支払い情報を入力します。 登録コストが対象に含まれているプロモーション コードをお持ちの場合は、ここでそのコードを入力することができます。 それ以外の場合は、クレジット カード情報 (または PayPal の情報 (市場でサポートされている場合)) を指定します。 プリペイド式クレジット カードをこの目的で使うことはできないことに注意してください。 入力が完了したら、**[次へ]** をクリックし、**[確認]** セクションに移動します。
 
-8.  Review your account info and confirm that everything is correct. Then, read and accept the terms and conditions of the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/Hh694058). Check the box to indicate you have read and accepted these terms.
+8.  アカウント情報を参照して、入力したすべての情報が正しいことを確認します。 次に、[アプリ開発者契約](https://msdn.microsoft.com/library/windows/apps/Hh694058)の諸条件をお読みいただき、同意してください。 これらの条件を読み、同意したことを示すには、チェック ボックスをオンにします。
 
-9.  Click **Finish** to confirm your purchase. We'll send a confirmation message to your developer email address.
+9.  **[完了]** をクリックして、購入を確認します。 開発者のメール アドレスに、確認メールが送られます。
 
-## Additional guidelines for company accounts
+## 会社アカウントのための追加のガイドライン
 
-When creating a company account, follow these guidelines, particularly if more than one person will need to access the account.
+会社のアカウントを作成するときは、次のガイドラインに従ってください。複数のユーザーがアカウントにアクセスする必要がある場合は、特に注意してください。
 
--   Create your Microsoft account using an email address that belongs to your company's domain, but not to a single individual—for example, windowsapps@fabrikam.com.
--   Limit access to your company account to the smallest possible number of developers.
--   Set up a corporate email distribution list that includes everyone who needs to access the developer account, and add this email address to your security info. This allows all of the employees on the list to receive security codes when needed and to manage your Microsoft account’s security info. If setting up a distribution list is not feasible, the owner of the individual email account will need to be available to access and share the security code when prompted (such as when new security info is added to the account or when it must be accessed from a new device).
--   Add a company phone number that does not require an extension and is accessible to key team members.
--   In general, have developers use trusted devices to log in to your company's developer account. All key team members should have access to these trusted devices. This will reduce the need for security codes to be sent when accessing the account.
--   If you need to allow access to the account from a non-trusted PC, limit that access to a maximum of five developers. Ideally, these developers should access the account from machines that share the same geographical and network location.
--   Frequently review your company’s security info at [https://account.live.com/proofs/Manage](http://go.microsoft.com/fwlink/p/?LinkID=266648) to make sure it's all current.
+-   会社のドメインに属し、個人には属さないメール アドレス (windowsapps@fabrikam.com など) を使って、Microsoft アカウントを作ります。
+-   会社のアカウントへのアクセスは、できるだけ少数の開発者だけに制限します。
+-   開発者アカウントにアクセスする必要があるすべての人を含めた会社のメール配布リストを設定し、このメール アドレスをセキュリティ情報に追加します。 こうすることで、Microsoft アカウントのセキュリティ情報の管理に必要なセキュリティ コードを、リストに記載されたすべての社員が受け取れるようになります。 配布リストを設定できない場合は、必要なとき (新しいセキュリティ情報がアカウントに追加されたときや、新しいデバイスからアクセスする必要があるときなど) に個々のメール アカウントの所有者がコードにアクセスして共有できることが必要です。
+-   主要なチーム メンバーがアクセスできる、内線番号を必要としない会社の電話番号を追加します。
+-   通常、開発者が会社の開発者アカウントにログインするときには信頼済みデバイスを使用してもらいます。 主要なチーム メンバー全員が、これらの信頼済みデバイスにアクセスできる必要があります。 これにより、アカウントにアクセスするときにセキュリティ コードを送る必要性が減ります。
+-   信頼済みでない PC からのアカウントへのアクセスを許可する必要がある場合は、そのアクセスを最大で 5 人の開発者に制限します。 これらの開発者は、同じ地理的な場所とネットワーク上の場所を共有するコンピューターからアカウントにアクセスすることが理想的です。
+-   [https://account.live.com/proofs/Manage](http://go.microsoft.com/fwlink/p/?LinkID=266648) で、会社のセキュリティ情報が最新であるかを頻繁に確認してください。
 
-Your developer account should be accessed primarily from trusted PCs. This is critical because there is a limit to the number of codes generated per account, per week. It also enables the most seamless sign-in experience.
+開発者アカウントは、主に信頼済み PC からアクセスされるようにする必要があります。 各アカウントに週ごとに生成されるコードの数には制限があるため、このことが重要になります。 また、これにより最もシームレスなサインイン エクスペリエンスが可能になります。
 
-## Developer account security
+## 開発者アカウントのセキュリティ
 
-We use security info that you provide to raise the security level of your developer account by associating it with multiple forms of identification. This makes unauthorized access to your Microsoft account substantially more difficult. Also, if you ever forget your password or someone tries to access your account, we’ll be able to reach you to reestablish appropriate control of your account.
+Microsoft では、ユーザーが提供するセキュリティ情報を使い、開発者アカウントを複数の形式の ID に関連付けることでセキュリティ レベルを上げています。 こうすることで、Microsoft アカウントへの不正なアクセスが大幅に難しくなります。 また、お客様がパスワードを忘れた場合や、第三者がお客様のアカウントにアクセスしようとした場合、Microsoft ではお客様のアカウントに適切なコントロールを再設定するために連絡することができます。
 
-You must have at least two email addresses and/or phone numbers on your account. We recommend adding as many as possible. Remember that some security info must be confirmed before it will be valid. Also, make sure to review your security info frequently and ensure it's up to date.
+アカウントには、少なくとも 2 つのメール アドレスまたは電話番号を設定する必要があります。 できるだけ多く追加することをお勧めします。 一部のセキュリティ情報は、有効になる前に確認が必要であることに注意してください。 また、セキュリティ情報を頻繁に確認し、最新の状態を保つようにしてください。
 
-You can manage your security info by going to [https://account.live.com/proofs/Manage](http://go.microsoft.com/fwlink/p/?LinkID=266648) and signing in with your Microsoft account. See [Microsoft account security info: FAQ](http://go.microsoft.com/fwlink/p/?LinkID=272177) for more info.
+セキュリティ情報を管理するには、[https://account.live.com/proofs/Manage](http://go.microsoft.com/fwlink/p/?LinkID=266648) に移動し、自分の Microsoft アカウントでサインインします。 詳しくは、「[Microsoft アカウントのセキュリティ情報: FAQ](http://go.microsoft.com/fwlink/p/?LinkID=272177)」をご覧ください。
 
-When you sign in to your Windows Dev Center dashboard, the system requests that you verify your identity. In the case of an email address or a phone number, we send a security code that you must then supply to complete the sign-in process.
+Windows デベロッパー センター ダッシュボードにサインインするときに、身元確認を行うことがシステムによって要求されます。 電子メール アドレスまたは電話番号の場合は、サインイン プロセスを完了するために入力する必要があるセキュリティ コードをお送りします。
 
-We recommend designating PCs that you use frequently as trusted devices. When you sign in from a trusted device, you usually won’t be prompted for a code, although you may occasionally be prompted to provide one in specific situations, or if you haven’t signed in on that device in a long time. See [Trusted devices: FAQ](http://go.microsoft.com/fwlink/p/?LinkID=331123) for more info.
+よく使う PC を信頼済みデバイスとして指定することをお勧めします。 信頼済みデバイスからサインインする場合、通常はコードの入力を求められませんが、特別な状況や、長期間そのデバイスからサインインしなかった場合は、コードの入力を求められることがあります。 詳しくは、「[信頼済みデバイス: FAQ](http://go.microsoft.com/fwlink/p/?LinkID=331123)」をご覧ください。
 
-## Closing your account
+## アカウントの終了
 
-Developer accounts don't expire, so there is no need to renew your account in order to keep it open. If you decide to close your account completely, you can do so by contacting support.
+開発者アカウントには有効期限がないため、維持するためにアカウントを更新する必要はありません。 アカウントを完全に終了する場合、サポートに問い合わせることで終了できます。
 
-When you close your account, it's important to understand what happens to any app that you have published in the Windows Store:
+アカウントを終了する場合は、Windows ストアで公開したアプリに何が起きるかを理解しておくことが大切です。
 
--   Your app's current customers will still be able to use the app. However, they will not be able to make in-app purchases.
--   Even though the app is still available to customers who have previously acquired it, your app listing will be removed from the Store. No new customers will be able to acquire your app.
--   Your app's name will be released for potential use by another developer.
--   If you have a balance due from previous app sales, you can request payment for that balance even if the amount due does not meet the usual payment threshold.
+-   アプリの現在のユーザーは、引き続きアプリを使うことができます。 ただし、アプリ内購入はできなくなります。
+-   以前に取得していたユーザーであれば引き続きそのアプリを利用できますが、アプリの一覧はストアから削除されます。 つまり、期限切れになったアカウントの下で開発されたアプリを新しいユーザーが取得することはできなくなります。
+-   また、アプリの名前は、別の開発者が利用できるようになります。
+-   アプリの売上金額で未払いのものがあるときには、通常の支払しきい値に達していなくともその金額の支払いを要求できます。
 
 
 

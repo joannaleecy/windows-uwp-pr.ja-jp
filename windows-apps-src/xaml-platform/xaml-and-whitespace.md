@@ -1,50 +1,50 @@
 ---
-description: Learn about the whitespace processing rules as used by XAML.
-title: XAML and whitespace
+description: XAML で使われる空白処理規則について説明します。
+title: XAML と空白
 ms.assetid: 025F4A8E-9479-4668-8AFD-E20E7262DC24
 ---
 
-# XAML and whitespace
+# XAML と空白
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-Learn about the whitespace processing rules as used by XAML.
+XAML で使われる空白処理規則について説明します。
 
-## Whitespace processing
+## 空白処理
 
-Consistent with XML, whitespace characters in XAML are space, linefeed, and tab. These correspond to the Unicode values 0020, 000A, and 0009 respectively. By default this whitespace normalization occurs when a XAML processor encounters any inner text found between elements in a XAML file:
+XML と同じように、XAML での空白文字には、スペース、改行、タブがあります。 これらは、それぞれ Unicode 値 0020、000A、0009 に対応します。 既定では、XAML プロセッサが XAML ファイル内の要素間にある内部テキストを検出すると、この空白の正規化が行われます。
 
--   Linefeed characters between East Asian characters are removed.
--   All whitespace characters (space, linefeed, tab) are converted into spaces.
--   All consecutive spaces are deleted and replaced by one space.
--   A space immediately following the start tag is deleted.
--   A space immediately before the end tag is deleted.
--   *East Asian characters* is defined as a set of Unicode character ranges U+20000 to U+2FFFD and U+30000 to U+3FFFD. This subset is also sometimes referred to as *CJK ideographs*. For more information, see http://www.unicode.org.
+-   東アジアの文字間の改行文字は削除されます。
+-   すべての空白文字 (スペース、改行、タブ) はスペースに変換されます。
+-   連続した複数のスペースはすべて削除され、1 つのスペースに置換されます。
+-   開始タグの直後にあるスペースは削除されます。
+-   終了タグの直前にあるスペースは削除されます。
+-   *東アジアの文字*は、Unicode 文字範囲 U+20000 から U+2FFFD と U+30000 から U+3FFFD のセットとして定義されます。 このサブセットは *CJK 漢字*とも呼ばれることもあります。 詳しくは、http://www.unicode.org をご覧ください。
 
-"Default" corresponds to the state denoted by the default value of the **xml:space** attribute.
+"既定" とは、**xml:space** 属性の既定値によって示される状態に相当します。
 
-### Whitespace in inner text, and string primitives
+### 内部テキスト内の空白と文字列のプリミティブ
 
-The above normalization rules apply to inner text within XAML elements. After normalization, a XAML processor converts any inner text into an appropriate type like this:
+上で説明した正規化規則は、XAML 要素内の内部テキストに適用されます。 正規化の後、XAML プロセッサが次のように内部テキストを適切な型に変換します。
 
--   If the type of the property is not a collection, but is not directly an **Object** type, the XAML processor tries to convert to that type using its type converter. A failed conversion here results in a XAML parse error.
--   If the type of the property is a collection, and the inner text is contiguous (no intervening element tags), the inner text is parsed as a single **String**. If the collection type cannot accept **String**, this also results in a XAML parser error.
--   If the type of the property is **Object**, then the inner text is parsed as a single **String**. If there are intervening element tags, this results in a XAML parser error, because the **Object** type implies a single object (**String** or otherwise).
--   If the type of the property is a collection, and the inner text is not contiguous, then the first substring is converted into a **String** and added as a collection item, the intervening element is added as a collection item, and finally the trailing substring (if any) is added to the collection as a third **String** item.
+-   プロパティの型がコレクションではないが、直接的には **Object** 型ではない場合、XAML プロセッサは型コンバーターを使って型の変換を試みます。 ここで変換が失敗すると、XAML 解析エラーになります。
+-   プロパティの型がコレクションで、内部テキストが連続的である (介在する要素タグがない) 場合、内部テキストは単一の **String** として解析されます。 コレクションの型で **String** が許容されていない場合も、XAML 解析エラーになります。
+-   プロパティの型が **Object** である場合、内部テキストは単一の **String** として解析されます。 介在する要素タグが存在する場合、XAML 解析エラーになります。これは、**Object** 型が単一のオブジェクト (**String** など) を前提としているためです。
+-   プロパティの型がコレクションであり、内部テキストが連続していない場合、最初の部分文字列が **String** に変換され、コレクション項目として追加されます。介在する要素は、コレクション項目として追加されます。最後に終了の部分文字列 (ある場合) が 3 番目の **String** 項目としてコレクションに追加されます。
 
-### Whitespace and text content models
+### 空白とテキスト コンテンツのモデル
 
-In practice, preserving whitespace is of concern only for a subset of all possible content models. That subset is composed of content models that can take a singleton **String** type in some form, a dedicated **String** collection, or a mixture of **String** and other types in lists, collections, or dictionaries.
+空白の保持は、実際には、考えられるすべてのコンテンツ モデルのサブセットに関してのみ関係するものです。 このサブセットは、特定の形式で単一の **String** 型を取ることができるコンテンツ モデルで構成されます。専用の **String** コレクション、**String** と一覧に記載されている他の型の混合、コレクション、または辞書で構成されます。
 
-Even for content models that can take strings, the default behavior within these content models is that any whitespace that remains is not treated as significant.
+文字列を使うことができるコンテンツ モデルの場合でも、これらのコンテンツ モデル内での既定の動作では、残される空白は重要なものとしては扱われません。
 
-### Preserving whitespace
+### 空白の保持
 
-Several techniques for preserving whitespace in the source XAML for eventual presentation are not affected by XAML processor whitespace normalization.
+最終的な表示に関して、ソース XAML 内の空白を保持するためのいくつかの手法は XAML プロセッサによる空白の正規化の影響を受けません。
 
-`xml:space="preserve"`: Specify this attribute at the level of the element where whitespace needs to be preserved. Note that this preserves all whitespace, including the spaces that might be added by code editors or design surfaces to align markup elements as a visually intuitive nesting. Whether those spaces render is again a matter of the content model for the containing element. We don't recommend that you specify `xml:space="preserve"` at the root level, because the majority of object models don't consider whitespace as significant one way or another. It is a better practice to only set the attribute specifically at the level of elements that render whitespace within strings, or are whitespace significant collections.
+`xml:space="preserve"`: この属性は、空白を保持する必要がある要素のレベルで指定します。 これを指定すると、見た目に直感的な入れ子としてマークアップ要素を配置するためにコード エディターまたはデザイン サーフェイスによって追加される場合があるスペースも含め、すべての空白が保持されることに注意してください。 これらのスペースのレンダリングは、包含要素のコンテンツ モデルの問題でもあります。 ルート レベルで `xml:space="preserve"` を指定することはお勧めしません。大半のオブジェクト モデルは、いずれにしても空白を重要なものと見なしていないためです。 文字列内で空白をレンダリングする要素、または空白が重要となるコレクションである要素のレベルに限定してこの属性を設定することが、より適切な方法です。
 
-Entities and nonbreaking spaces: XAML supports placing any Unicode entity within a text object model. You can use dedicated entities such as nonbreaking space (in UTF-8 encoding). You can also use rich text controls that support nonbreaking space characters. Be cautious if you are using entities to simulate layout characteristics such as indents, because the run-time output of the entities vary based on a greater number of factors than would the general layout facilities, such as proper use of panels and margins.
+エンティティと改行なしスペース: XAML は、テキスト オブジェクト モデル内への任意の Unicode エンティティの配置をサポートしています。 (UTF-8 エンコードでの) 改行なしスペースなど、専用のエンティティを使うことができます。 また、改行なしスペース文字をサポートするリッチ テキスト コントロールも使うことができます。 インデントなどのレイアウト特性をシミュレートするのにエンティティを使っている場合は注意が必要です。その理由は、エンティティの実行時出力は、パネルや余白の適切な使用など、一般的なレイアウト機能よりも、数が多いほうの要因によって変わるためです。
 
 
 

@@ -1,65 +1,66 @@
 ---
 ms.assetid: B4A550E7-1639-4C9A-A229-31E22B1415E7
-title: Sensor orientation
-description: Sensor data from the Accelerometer, Gyrometer, Compass, Inclinometer, and OrientationSensor classes is defined by their reference axes. These axes are defined by the device's landscape orientation and rotate with the device as the user turns it.
+title: センサーの向き
+description: Accelerometer、Gyrometer、Compass、Inclinometer、および OrientationSensor の各クラスのセンサー データは、基準軸によって定義されます。 これらの軸はデバイスの横長の向きで定義され、ユーザーがデバイスの向きを変えると、デバイスと共に回転します。
 ---
-# Sensor orientation
+# センサーの向き
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-** Important APIs **
+** 重要な API **
 
 -   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
 -   [**Windows.Devices.Sensors.Custom**](https://msdn.microsoft.com/library/windows/apps/Dn895032)
 
-Sensor data from the [**Accelerometer**](https://msdn.microsoft.com/library/windows/apps/BR225687), [**Gyrometer**](https://msdn.microsoft.com/library/windows/apps/BR225718), [**Compass**](https://msdn.microsoft.com/library/windows/apps/BR225705), [**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR225766), and [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) classes is defined by their reference axes. These axes are defined by the device's landscape orientation and rotate with the device as the user turns it. If your app supports automatic rotation and reorients itself to accommodate the device as the user rotates it, you must adjust your sensor data for the rotation before using it.
+[
+            **Accelerometer**](https://msdn.microsoft.com/library/windows/apps/BR225687)、[**Gyrometer**](https://msdn.microsoft.com/library/windows/apps/BR225718)、[**Compass**](https://msdn.microsoft.com/library/windows/apps/BR225705)、[**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR225766)、および [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) の各クラスのセンサー データは、基準軸によって定義されます。 これらの軸はデバイスの横長の向きで定義され、ユーザーがデバイスの向きを変えると、デバイスと共に回転します。 アプリが自動回転をサポートしており、ユーザーがデバイスを回転させたときに連動して向きが変わる場合、センサー データを使う前に回転に合わせて調整する必要があります。
 
-## Display orientation vs device orientation
+## 表示の向きとデバイスの向き
 
-In order to understand the reference axes for sensors, you need to distinguish display orientation from device orientation. Display orientation is the direction text and images are displayed on the screen whereas device orientation is the physical positioning of the device. In the following picture, both the device and display orientation are in **Landscape**.
+センサーの基準軸について理解するために、画面の向きとデバイスの向きを区別する必要があります。 画面の向きはテキストの向きであり、画面上に画像が表示されます。それに対してデバイスの向きは、デバイスの実際の配置です。 次の図では、デバイスと画面の向きは共に **Landscape** です。
 
-![Display and device orientation in Landscape](images/accelerometer-axis-orientation-landscape-with-text.png)
+![画面とデバイスの向きが Landscape](images/accelerometer-axis-orientation-landscape-with-text.png)
 
-The following picture shows both the display and device orientation in **LandscapeFlipped**.
+次の図では、画面とデバイスの向きが共に **LandscapeFlipped** です。
 
-![Display and device orientation in LandscapeFlipped](images/accelerometer-axis-orientation-landscape-180-with-text.png)
+![画面とデバイスの向きが LandscapeFlipped](images/accelerometer-axis-orientation-landscape-180-with-text.png)
 
-The next picture shows the display orientation in Landscape while the device orientation is LandscapeFlipped.
+次の図では、画面の向きが Landscape、デバイスの向きが LandscapeFlipped です。
 
-![Display orientation in Landscape while the device orientation is LandscapeFlipped](images/accelerometer-axis-orientation-landscape-180-with-text-inverted.png)
+![画面の向きが Landscape、デバイスの向きが LandscapeFlipped です。](images/accelerometer-axis-orientation-landscape-180-with-text-inverted.png)
 
-You can query the orientation values through the [**DisplayInformation**](https://msdn.microsoft.com/library/windows/apps/Dn264258) class by using the [**GetForCurrentView**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.display.displayinformation.getforcurrentview.aspx) method with the [**CurrentOrientation**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.display.displayinformation.currentorientation.aspx) property. Then you can create logic by comparing against the [**DisplayOrientations**](https://msdn.microsoft.com/library/windows/apps/BR226142) enumeration. Remember that for every orientation you support, you have to support a conversion of the reference axes to that orientation.
+向きの値は、[**DisplayInformation**](https://msdn.microsoft.com/library/windows/apps/Dn264258) クラスの [**GetForCurrentView**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.display.displayinformation.getforcurrentview.aspx) メソッドと [**CurrentOrientation**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.display.displayinformation.currentorientation.aspx) プロパティを使って照会することができます。 次に、[**DisplayOrientations**](https://msdn.microsoft.com/library/windows/apps/BR226142) 列挙値と比較することによってロジックを作成できます。 サポートするすべての向きについて、その向きへの基準軸の変換をサポートする必要があることに注意してください。
 
-## Landscape-first vs portrait-first devices
+## 横向き優先デバイスと縦向き優先デバイス
 
-Manufacturers produce both landscape-first and portrait-first devices. When manufacturers integrate components into devices, they do so in a unified and consistent way so that all devices operate within the same reference frame. The following table shows the sensor axes for both landscape-first and portrait first devices.
+製造元は、横向き優先および縦向き優先のいずれのデバイスも製造します。 製造元がデバイスにコンポーネントを統合する場合、すべてのデバイスが同じ参照フレーム内で動作するように、統一された一貫性のある方法で行います。 次の表は、横向き優先デバイスと縦向き優先デバイスの両方のセンサー軸を示しています。
 
-| Orientation | Landscape-first | Portrait-first |
+| 向き | 横向き優先 | 縦向き優先 |
 |-------------|-----------------|----------------|
-| **Landscape** | ![Landscape-first device in Landscape orientation](images/accelerometer-axis-orientation-landscape.png) | ![Portrait-first device in Landscape orientation](images/accelerometer-axis-orientation-portrait-270.png) |
-| **Portrait** | ![Landscape-first device in Portrait orientation](images/accelerometer-axis-orientation-landscape-90.png) | ![Portrait-first device in Portrait orientation](images/accelerometer-axis-orientation-portrait.png) |
-| **LandscapeFlipped ** | ![Landscape-first device in LandscapeFlipped orientation](images/accelerometer-axis-orientation-landscape-180.png) | ![Portrait-first device in LandscapeFlipped orientation](images/accelerometer-axis-orientation-portrait-90.png) | 
-| **PortraitFlipped** | ![Landscape-first device in PortraitFlipped orientation](images/accelerometer-axis-orientation-landscape-270.png)| ![Portrait-first device in PortraitFlipped orientation](images/accelerometer-axis-orientation-portrait-180.png) |
+| **横向き** | ![Landscape の向きの横向き優先デバイス](images/accelerometer-axis-orientation-landscape.png) | ![Landscape の向きの縦向き優先デバイス](images/accelerometer-axis-orientation-portrait-270.png) |
+| **縦向き** | ![Portrait の向きの横向き優先デバイス](images/accelerometer-axis-orientation-landscape-90.png) | ![Portrait の向きの縦向き優先デバイス](images/accelerometer-axis-orientation-portrait.png) |
+| **LandscapeFlipped ** | ![LandscapeFlipped の向きの横向き優先デバイス](images/accelerometer-axis-orientation-landscape-180.png) | ![LandscapeFlipped の向きの縦向き優先デバイス](images/accelerometer-axis-orientation-portrait-90.png) | 
+| **PortraitFlipped** | ![PortraitFlipped の向きの横向き優先デバイス](images/accelerometer-axis-orientation-landscape-270.png)| ![PortraitFlipped の向きの縦向き優先デバイス](images/accelerometer-axis-orientation-portrait-180.png) |
 
-## Devices broadcasting display and headless devices
+## ディスプレイをブロードキャストするデバイスとヘッドレス デバイス
 
-Some devices have the ability to broadcast the display to another device. For example, you could take a tablet and broadcast the display to a projector that will be in landscape orientation. In this scenario, it is important to keep in mind that the device orientation is based on the original device, not the one presenting the display. So an accelerometer would report data for the tablet.
+一部のデバイスは、別のデバイスにディスプレイをブロードキャストする機能を備えています。 たとえば、タブレットで、プロジェクターにディスプレイを横方向にブロードキャストできます。 このシナリオでは、デバイスの向きが、ディスプレイを表示しているものではなく、元のデバイスに基づいていることに留意することが重要です。 したがって、加速度計は、タブレットのデータを報告します。
 
-Furthermore, some devices do not have a display. With these devices, the default orientation for these devices is portrait.
+さらに、一部のデバイスにはディスプレイがありません。 これらのデバイスでは、デバイスの既定の向きは縦です。
 
-## Display orientation and compass heading
+## 表示と向きとコンパスの方位
 
 
-Compass heading depends upon the reference axes and so it changes with the device orientation. You compensate based on the this table (assume the user is facing north).
+コンパスの方位は基準軸に依存するため、デバイスの向きと共に変化します。 次の表に基づいて補正します (ユーザーが北を向いていると仮定します)。
 
-| Display orientation | Reference axis for compass heading | API compass heading when facing north | Compass heading compensation | 
+| 表示の向き | コンパスの方位の基準軸 | 北を向いている場合の API によるコンパスの方位 | コンパスの方位の補正 | 
 |---------------------|------------------------------------|---------------------------------------|------------------------------|
-| Landscape           | -Z | 0   | Heading               |
-| Portrait            |  Y | 90  | (Heading + 270) % 360 | 
-| LandscapeFlipped    |  Z | 180 | (Heading + 180) % 360 |
-| PortraitFlipped     |  Y | 270 | (Heading + 90) % 360  |
+| 横向き           | -Z | 0   | 方位               |
+| 縦向き            |  Y | 90  | (方位 + 270) % 360 | 
+| LandscapeFlipped    |  Z | 180 | (方位 + 180) % 360 |
+| PortraitFlipped     |  Y | 270 | (方位 + 90) % 360  |
 
-Modify the compass heading as shown in the table in order to correctly display the heading. The following code snippet demonstrates how to do this.
+正確に方位を表示するために、表に示されているようにコンパスの方位を修正します。 次のコード スニペットは、この方法を示しています。
 
 ```csharp
 private void ReadingChanged(object sender, CompassReadingChangedEventArgs e)
@@ -94,18 +95,18 @@ private void ReadingChanged(object sender, CompassReadingChangedEventArgs e)
 }
 ```
 
-## Display orientation with the accelerometer and gyrometer
+## 加速度計とジャイロメーターでの表示の向き
 
-This table converts accelerometer and gyrometer data for display orientation.
+表示の向きに合わせた加速度計とジャイロメーターのデータの変換を、次の表に示します。
 
-| Reference axes        |  X |  Y | Z |
+| 基準軸        |  X |  Y | Z |
 |-----------------------|----|----|---|
-| **Landscape**         |  X |  Y | Z |
-| **Portrait**          |  Y | -X | Z |
+| **横向き**         |  X |  Y | Z |
+| **縦向き**          |  Y | -X | Z |
 | **LandscapeFlipped**  | -X | -Y | Z |
 | **PortraitFlipped**   | -Y |  X | Z |
 
-The following code example applies these conversions to the gyrometer.
+ジャイロメーターにこれらの変換を適用するコード例を次に示します。
 
 ```csharp
 private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
@@ -148,20 +149,21 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
 }
 ```
 
-## Display orientation and device orientation
+## 表示の向きとデバイスの向き
 
-The [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) data must be changed in a different way. Think of these different orientations as rotations counterclockwise to the Z axis, so we need to reverse the rotation to get back the user’s orientation. For quaternion data, we can use Euler’s formula to define a rotation with a reference quaternion, and we can also use a reference rotation matrix.
+[
+            **OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) データは別の方法で変更する必要があります。 複数の向きとして Z 軸に対する反時計回りの回転を考えてみます。この場合、ユーザーの向きを元に戻すには、回転を逆にする必要があります。 四元数データの場合、オイラーの公式を使って、基準四元数により回転を定義できます。また、基準回転マトリックスを使うこともできます。
 
-![Euler's formula](images/eulers-formula.png)
-To get the relative orientation you want, multiply the reference object against the absolute object. Note that this math is not commutative.
+![オイラーの公式](images/eulers-formula.png)
+必要な相対的な向きを得るには、基準オブジェクトと絶対オブジェクトを乗算します。 この演算は非可換であることに注意してください。
 
-![Multiply the reference object against the absolute object](images/orientation-formula.png)
-In the preceding expression, the absolute object is returned by the sensor data.
+![基準オブジェクトと絶対オブジェクトの乗算](images/orientation-formula.png)
+前の式では、センサー データによって絶対オブジェクトが返されます。
 
-| Display orientation  | Counterclockwise rotation around Z | Reference quaternion (reverse rotation) | Reference rotation matrix (reverse rotation) | 
+| 表示の向き  | Z 軸を中心とする反時計回りの回転 | 基準四元数 (逆回転) | 基準回転マトリックス (逆回転) | 
 |----------------------|------------------------------------|-----------------------------------------|----------------------------------------------|
-| **Landscape**        | 0                                  | 1 + 0i + 0j + 0k                        | \[1 0 0<br/> 0 1 0<br/> 0 0 1\]               |
-| **Portrait**         | 90                                 | cos(-45⁰) + (i + j + k)*sin(-45⁰)       | \[0 1 0<br/>-1 0 0<br/>0 0 1]              |
+| **横向き**        | 0                                  | 1 + 0i + 0j + 0k                        | \[1 0 0<br/> 0 1 0<br/> 0 0 1\]               |
+| **縦向き**         | 90                                 | cos(-45⁰) + (i + j + k)*sin(-45⁰)       | \[0 1 0<br/>-1 0 0<br/>0 0 1]              |
 | **LandscapeFlipped** | 180                                | 0 - i - j - k                           | \[1 0 0<br/> 0 1 0<br/> 0 0 1]               |
 | **PortraitFlipped**  | 270                                | cos(-135⁰) + (i + j + k)*sin(-135⁰)     | \[0 -1 0<br/> 1  0 0<br/> 0  0 1]             |
 

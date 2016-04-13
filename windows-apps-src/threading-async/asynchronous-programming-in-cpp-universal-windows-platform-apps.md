@@ -6,13 +6,7 @@ title: C++ での非同期プログラミング
 
 # C++ での非同期プログラミング
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
-
-** 重要な API **
-
--   [task クラス]
--   [**concurrency 名前空間**][concurrencyNamespace]
--   [**IAsyncOperation**][IAsyncOperation]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 ここでは、ppltasks.h の `concurrency` 名前空間で定義された `task` クラスを使って Visual C++ コンポーネント拡張機能 (C++/CX) の非同期メソッドを実装する際に推奨される方法について説明します。
 
@@ -298,29 +292,30 @@ void App::InitDataSource(Vector<Object^>^ feedList, vector<wstring> urls)
 
 ## 関連トピック
 
-* [Windows ストア アプリ用に C++ で非同期操作を作成](createAsyncCpp)
+* [C++ における Windows ストア アプリ用の非同期操作の作成][createAsyncCpp]
 * [Visual C++ 言語のリファレンス](http://msdn.microsoft.com/library/windows/apps/hh699871.aspx)
-* [非同期プログラミング](AsyncProgramming)
-* [タスクの並列処理 (同時実行ランタイム)](taskParallelism)
-* [task クラス](task-class)
+* [非同期プログラミング][AsyncProgramming]
+* [タスクの並列処理 (同時実行ランタイム)][taskParallelism]
+* [task クラス][task-class]
  
 <!-- LINKS -->
-[AsyncProgramming]: https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh464924.aspx
-[concurrencyNamespace]: https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dd492819.aspx
-[createTask]: https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh913025.aspx
-[createAsyncCpp]: https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750082.aspx
-[deleteAsync]: https://msdn.microsoft.com/library/windows/apps/BR227199
-[IAsyncAction]: https://msdn.microsoft.com/library/windows/apps/BR206580
-[IAsyncOperation]: https://msdn.microsoft.com/library/windows/apps/BR206598
-[IAsyncInfo]: https://msdn.microsoft.com/library/windows/apps/BR206587
-[IAsyncInfoCancel]: https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncinfo.cancel
-[taskCanceled]: https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750106.aspx
-[task-class]: https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750113.aspx
-[taskGet]: https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750017.aspx
-[taskParallelism]: https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dd492427.aspx
-[taskThen]: https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750044.aspx
-[useArbitrary]: https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750036.aspx
+[AsyncProgramming]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh464924.aspx> "AsyncProgramming"
+[concurrencyNamespace]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dd492819.aspx> "concurrency 名前空間"
+[createTask]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh913025.aspx> "CreateTask"
+[createAsyncCpp]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750082.aspx> "CreateAsync"
+[deleteAsync]: <https://msdn.microsoft.com/library/windows/apps/BR227199> "DeleteAsync"
+[IAsyncAction]: <https://msdn.microsoft.com/library/windows/apps/BR206580> "IAsyncAction"
+[IAsyncOperation]: <https://msdn.microsoft.com/library/windows/apps/BR206598> "IAsyncOperation"
+[IAsyncInfo]: <https://msdn.microsoft.com/library/windows/apps/BR206587> "IAsyncInfo"
+[IAsyncInfoCancel]: <https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncinfo.cancel> "IAsyncInfoCancel"
+[taskCanceled]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750106.aspx> "TaskCancelled"
+[task-class]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750113.aspx> "task クラス"
+[taskGet]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750017.aspx> "TaskGet"
+[taskParallelism]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dd492427.aspx> "タスクの並列処理"
+[taskThen]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750044.aspx> "TaskThen"
+[useArbitrary]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750036.aspx> "UseArbitrary"
 
-<!--HONumber=Mar16_HO1-->
+
+<!--HONumber=Mar16_HO2-->
 
 

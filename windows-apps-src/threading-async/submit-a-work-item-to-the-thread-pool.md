@@ -1,28 +1,29 @@
 ---
 ms.assetid: E2A1200C-9583-40FA-AE4D-C9E6F6C32BCF
-title: Submit a work item to the thread pool
-description: Learn how to do work in a separate thread by submitting a work item to the thread pool.
+title: スレッド プールへの作業項目の送信
+description: スレッド プールに作業項目を送信することで独立したスレッドで作業を実行する方法について説明します。
 ---
-# Submit a work item to the thread pool
+# スレッド プールへの作業項目の送信
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-** Important APIs **
+** 重要な API **
 
 -   [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593)
 -   [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580)
 
-Learn how to do work in a separate thread by submitting a work item to the thread pool. Use this to maintain a responsive UI while still completing work that takes a noticeable amount of time, and use it to complete multiple tasks in parallel.
+スレッド プールに作業項目を送信することで独立したスレッドで作業を実行する方法について説明します。 これによって、非常に時間のかかる作業を実行しながら UI の応答性を確保でき、また複数のタスクを並行して実行することができます。
 
-## Create and submit the work item
+## 作業項目の作成と送信
 
-Create a work item by calling [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593). Supply a delegate to do the work (you can use a lambda, or a delegate function). Note that **RunAsync** returns an [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580) object; store this object for use in the next step.
+[
+            **RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593) を呼び出して作業項目を作成します。 作業を実行するデリゲートを指定します (ラムダやデリゲート関数を使うことができます)。 **RunAsync** が [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580) オブジェクトを返すことに注意してください。このオブジェクトは次の手順で使うために格納しておきます。
 
-Three versions of [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593) are available so that you can optionally specify the priority of the work item, and control whether it runs concurrently with other work items.
+3 つのバージョンの [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593) を使うことができるため、必要に応じて作業項目の優先度を指定し、他の作業項目と同時に実行するかどうかを制御できます。
 
-**Note**  Use [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) to access the UI thread and show progress from the work item.
+**注**  UI スレッドにアクセスしたり、作業項目の進捗状況を表示したりするには、[**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) を使います。
 
-The following example creates a work item and supplies a lambda to do the work:
+次の例では作業項目を作成し、作業を実行するラムダを指定します。
 
 > [!div class="tabbedCodeSnippets"]
 ``` cpp
@@ -186,15 +187,16 @@ IAsyncAction asyncAction = Windows.System.Threading.ThreadPool.RunAsync(
 m_workItem = asyncAction;
 ```
 
-Following the call to [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593), the work item is queued by the thread pool and runs when a thread becomes available. Thread pool work items run asynchronously and they can run in any order, so make sure your work items function independently.
+[
+            **RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593) が呼び出された後に、スレッド プールで作業項目がキューに入れられ、スレッドが使用可能になったときに実行されます。 スレッド プールの作業項目は非同期に実行されます。任意の順番で実行されることがあるため、作業項目は単独で機能するようにしてください。
 
-Note that the work item checks the [**IAsyncInfo.Status**](https://msdn.microsoft.com/library/windows/apps/BR206593) property, and exits if the work item is cancelled.
+作業項目は [**IAsyncInfo.Status**](https://msdn.microsoft.com/library/windows/apps/BR206593) プロパティをチェックし、作業項目が取り消されている場合は終了することに注意してください。
 
-## Handle work item completion
+## 作業項目の完了の処理
 
-Provide a completion handler by setting the [**IAsyncAction.Completed**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.foundation.iasyncaction.completed.aspx) property of the work item. Supply a delegate (you can use a lambda or a delegate function) to handle work item completion. For example, use [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) to access the UI thread and show the result.
+作業項目の [**IAsyncAction.Completed**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.foundation.iasyncaction.completed.aspx) プロパティを設定することで、完了ハンドラーを指定します。 作業項目の完了を処理するデリゲートを指定します (ラムダやデリゲート関数を使うことができます)。 たとえば、UI スレッドにアクセスしたり、結果を表示したりするには、[**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) を使います。
 
-The following example updates the UI with the result of the work item submitted in step 1:
+次の例では、手順 1. で送信した作業項目の結果を使って UI を更新します。
 
 > [!div class="tabbedCodeSnippets"]
 ``` cpp
@@ -242,17 +244,17 @@ asyncAction.Completed = new AsyncActionCompletedHandler(
 });
 ```
 
-Note that the completion handler checks whether the work item was cancelled before dispatching a UI update.
+完了ハンドラーは、UI 更新をディスパッチする前に作業項目が取り消されたかどうかをチェックします。
 
-## Summary and next steps
+## 要約と次のステップ
 
-You can learn more by downloading the code from this quickstart in the [Creating a ThreadPool work item sample](http://go.microsoft.com/fwlink/p/?LinkID=328569) written for Windows 8.1, and re-using the source code in a win\_unap Windows 10 app.
+詳しくは、Windows 8.1 用に記述された[スレッド プール作業項目のサンプルの作成に関するページ](http://go.microsoft.com/fwlink/p/?LinkID=328569)でこのクイックスタートのコードをダウンロードし、win\_unap Windows 10 アプリでソース コードを再利用してください。
 
-## Related topics
+## 関連トピック
 
-* [Submit a work item to the thread pool](submit-a-work-item-to-the-thread-pool.md)
-* [Best practices for using the thread pool](best-practices-for-using-the-thread-pool.md)
-* [Use a timer to submit a work item](use-a-timer-to-submit-a-work-item.md)
+* [スレッド プールへの作業項目の送信](submit-a-work-item-to-the-thread-pool.md)
+* [スレッド プールを使うためのベスト プラクティス](best-practices-for-using-the-thread-pool.md)
+* [タイマーを使った作業項目の送信](use-a-timer-to-submit-a-work-item.md)
  
 
 

@@ -1,119 +1,119 @@
 ---
-title: Microsoft Passport and Windows Hello
-description: This article describes the new Microsoft Passport technology that is shipping as part of the Windows 10 operating system and discusses how developers can implement this technology to protect their Universal Windows Platform (UWP) apps and backend services. It highlights specific capabilities of these technologies that help mitigate threats that arise from using conventional credentials and provides guidance about designing and deploying these technologies as part of a Windows 10 rollout.
+title: Microsoft Passport と Windows Hello
+description: この記事では、Windows 10 オペレーティング システムの一部としてリリースされる新しい Microsoft Passport テクノロジについて説明します。また、開発者がこのテクノロジを実装して、ユニバーサル Windows プラットフォーム (UWP) アプリやバックエンド サービスを保護する方法についても説明します。 従来の資格情報を使用する際に生じる脅威を軽減するこれらのテクノロジの特定の機能に着目し、Windows 10 ロールアウトに含まれるこれらのテクノロジの設計と展開について説明します。
 ms.assetid: 0B907160-B344-4237-AF82-F9D47BCEE646
 author: awkoren
 ---
 
-# Microsoft Passport and Windows Hello
+# Microsoft Passport と Windows Hello
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-This article describes the new Microsoft Passport technology that is shipping as part of the Windows 10 operating system and discusses how developers can implement this technology to protect their Universal Windows Platform (UWP) apps and backend services. It highlights specific capabilities of these technologies that help mitigate threats that arise from using conventional credentials and provides guidance about designing and deploying these technologies as part of a Windows 10 rollout.
+この記事では、Windows 10 オペレーティング システムの一部としてリリースされる新しい Microsoft Passport テクノロジについて説明します。また、開発者がこのテクノロジを実装して、ユニバーサル Windows プラットフォーム (UWP) アプリやバックエンド サービスを保護する方法についても説明します。 従来の資格情報を使用する際に生じる脅威を軽減するこれらのテクノロジの特定の機能に着目し、Windows 10 ロールアウトに含まれるこれらのテクノロジの設計と展開について説明します。
 
-Note that this article focuses on app development. For information on the architecture and implementation details of Microsoft Passport and Windows Hello, see the [Microsoft Passport Guide on TechNet](https://technet.microsoft.com/library/mt589441.aspx).
+この記事では、アプリの開発に焦点を当てていることに注意してください。 Microsoft Passport と Windows Hello のアーキテクチャおよび実装について詳しくは、「[TechNet の Microsoft Passport ガイド](https://technet.microsoft.com/library/mt589441.aspx)」をご覧ください。
 
-For a complete code sample, see the [Microsoft Passport code sample on GitHub](http://go.microsoft.com/fwlink/?LinkID=717812).
+完全なコード サンプルについては、「[GitHub の Microsoft Passport コード サンプル](http://go.microsoft.com/fwlink/?LinkID=717812)」をご覧ください。
 
-For a step-by-step walkthrough on creating a UWP app using Microsoft Passport and the backing authentication service, see the [Microsoft Passport login app](microsoft-passport-login.md) and [Microsoft Passport login service](microsoft-passport-login-auth-service.md) articles.
+Microsoft Passport と背後の認証サービスを使って UWP アプリを作成する具体的な手順については、「[Microsoft Passport ログイン アプリ](microsoft-passport-login.md)」と「[Microsoft Passport ログイン サービス](microsoft-passport-login-auth-service.md)」をご覧ください。
 
-## 1 Introduction
-
-
-A fundamental assumption about information security is that a system can identify who is using it. Identifying a user allows the system to decide whether the user is identified appropriately (a process known as authentication), and then decide what a properly authenticated user should be able to do (authorization). The overwhelming majority of computer systems deployed throughout the world depend on user credentials for making authentication and authorization decisions, which means that these systems depend on reusable, user-created passwords as the basis for their security. The oft-cited maxim that authentication can involve "something you know, something you have, or something you are" neatly highlights the issue: a reusable password is an authentication factor all by itself, so anyone who knows the password can impersonate the user who owns it.
-
-## 1.1 Problems with traditional credentials
+## 1 はじめに
 
 
-Ever since the mid-1960s, when Fernando Corbató and his team at the Massachusetts Institute of Technology championed the introduction of the password, users and administrators have had to deal with the use of passwords for user authentication and authorization. Over time, the state of the art for password storage and use has advanced somewhat (with secure hashing and salting, for example), but we are still faced with two problems. Passwords are easy to clone and they are easy to steal. In addition, implementation faults may render them insecure, and users have a hard time balancing convenience and security.
+情報セキュリティの基本的前提は、システムで使用ユーザーを識別できることです。 ユーザーを識別することにより、システムでは、ユーザーが適切に識別されているかどうかを判断し (認証と呼ばれるプロセス)、適切に認証されたユーザーが実行できる内容を決定できます (承認と呼ばれるプロセス)。 世界中に展開されたコンピューター システムの大部分は、認証と承認の判断を行う際にユーザーの資格情報に依存しています。つまり、これらのシステムにおけるセキュリティの基盤は、ユーザーが作成した再利用可能なパスワードに依存しています。 認証に「記憶によるもの、持ち物によるもの、本人の特長によるもの」を含めることができるということが、ある問題をしっかりと浮き彫りにしているとよく言われます。それは、再利用可能なパスワードは認証要素そのものであるため、パスワードを手に入れたユーザーは、元の所有者を偽装できるという点です。
 
-## 1.1.1 Credential theft
-
-
-The biggest risk of passwords is simple: an attacker can steal them easily. Every place a password is entered, processed, or stored is vulnerable. For example, an attacker can steal a collection of passwords or hashes from an authentication server by eavesdropping on network traffic to an application server, by implanting malware in an application or on a device, by logging user keystrokes on a device, or by watching to see which characters a user types. These are just the most common attack methods.
-
-Another related risk is that of credential replay, in which an attacker captures a valid credential by eavesdropping on an insecure network, and then replays it later to impersonate a valid user. Most authentication protocols (including Kerberos and OAuth) protect against replay attacks by including a time stamp in the credential exchange process, but that tactic only protects the token that the authentication system issues, not the password that the user provides to get the ticket in the first place.
-
-## 1.1.2 Credential reuse
+## 1.1 従来の資格情報の問題
 
 
+1960 年代中ごろから、Fernando Corbató と Massachusetts Institute of Technology の彼のチームはパスワードの導入を提唱し、ユーザーと管理者はユーザーの認証と承認用のパスワードの使用に対応する必要がありました。 時間の経過と共に、最新のパスワードの保存と使用方法が少しずつ進化してきましたが (安全なハッシュ化とソルトなど)、未だに 2 つの問題に直面しています。 パスワードは簡単に複製でき、簡単に盗むことができます。 さらに、実装を失敗すると、パスワードが危険にさらされてしまう可能性があり、ユーザーは利便性とセキュリティの難しい舵取りを強いられます。
+
+## 1.1.1 資格情報の盗難
 
 
-The common approach of using an email address as the username makes a bad problem worse. An attacker who successfully recovers a username–password pair from a compromised system can then try that same pair on other systems. This tactic works surprisingly often to allow attackers to springboard from a compromised system into other systems. The use of email addresses as usernames leads to additional problems that we will explore later in this guide.
+パスワードの最大のリスクは単純です。攻撃者がパスワードを簡単に盗むことができる点です。 パスワードの入力、処理、または保存を行うすべての場所に脆弱性があります。 たとえば、攻撃者が、アプリケーション サーバーへのネットワーク トラフィックを傍受したり、アプリケーションやデバイスにマルウェアを埋め込んだり、デバイスへのユーザーのキーボード操作をログに記録したり、ユーザーが入力する文字を観察したりして、認証サーバーから一連のパスワードまたはハッシュを盗むことができます。 これらは、最も一般的な攻撃の方法です。
 
-## 1.2 Solving credential problems
+資格情報再生に関連するリスクがもう 1 つあります。この場合、攻撃者がセキュリティで保護されていないネットワークを傍受して有効な資格情報を取得し、後でその資格情報を再生して有効なユーザーを偽装します。 ほとんどの認証プロトコル (Kerberos や OAuth など) は、資格情報交換プロセスにタイム スタンプを追加して再生攻撃を防いでいますが、この方法で保護されるのは、認証システムが発効したトークンだけであり、ユーザーが最初にチケットを取得するために入力したパスワードは保護されません。
 
-
-Solving the problems that passwords pose is tricky. Tightening password policies alone will not do it; users may just recycle, share, or write down passwords. Although user education is critical for authentication security, education alone does not eliminate the problem either.
-
-Microsoft Passport replaces passwords with strong two-factor authentication (2FA) by verifying existing credentials and by creating a device-specific credential that a biometric or PIN-based user gesture protects. 
-
-## 2 What is Microsoft Passport?
+## 1.1.2 資格情報の再利用
 
 
-## 2.1 What is Windows Hello?
 
 
-Windows Hello is the name Microsoft has given to the new biometric sign-in system built into Windows 10. Because it is built directly into the operating system, Windows Hello allows face or fingerprint identification to unlock users’ devices. Authentication happens when the user supplies his or her unique biometric identifier to access the device-specific Microsoft Passport credentials, which means that an attacker who steals the device can’t log on to it unless that attacker has the PIN. The Windows secure credential store protects biometric data on the device. By using Windows Hello to unlock a device, the authorized user gains access to all of his or her Windows experience, apps, data, websites, and services.
+ユーザー名としてメール アドレスを使う一般的な手法により、問題がさらに悪化します。 侵入したシステムからユーザー名とパスワードのペアをうまく復元した攻撃者は、この同じペアを他のシステムに試してみることができます。 非常に多くの場合、この方法によって、攻撃者は侵入したシステムから別のシステムに入り込むことができます。 ユーザー名にメール アドレスを使用すると、他の問題が発生します。それについては、このガイドの後半で説明します。
 
-The Windows Hello authenticator is known as a Hello. A Hello is unique to the combination of an individual device and a specific user. It does not roam across devices, is not shared with a server or calling app, and cannot easily be extracted from a device. If multiple users share a device, each user needs to set up his or her own account. Every account gets a unique Hello for that device. You can think of a Hello as a token you can use to unlock (or release) a stored credential. The Hello itself does not authenticate you to an app or service, but it releases credentials that can. In other words, the Hello is not a user credential but it is a second factor for Microsoft Passport.
-
-## 2.2 What is Microsoft Passport?
+## 1.2 資格情報の問題解決
 
 
-Windows Hello provides a robust way for a device to recognize an individual user, which addresses the first part of the path between a user and a requested service or data item. After the device has recognized the user, it still must authenticate the user before determining whether to grant access to a requested resource. Microsoft Passport provides strong 2FA that is fully integrated into Windows and replaces reusable passwords with the combination of a specific device, and a biometric gesture or PIN.
+パスワードが原因で発生する問題の解決は簡単ではありません。 パスワード ポリシーのみを強化しても役に立ちません。ユーザーは、単にパスワードを再利用、共有、またはメモしてしまう場合があります。 ユーザーの教育は認証セキュリティにとって重要ですが、教育だけでも問題を取り除けません。
 
-Microsoft Passport is not just a replacement for traditional 2FA systems, though. It is conceptually similar to smart cards: authentication is performed by using cryptographic primitives instead of string comparisons, and the user’s key material is secure inside tamper-resistant hardware. Microsoft Passport does not require the extra infrastructure components required for smart card deployment, either. In particular, you do not need a Public Key Infrastructure (PKI) to manage certificates, if you do not currently have one. Microsoft Passport combines the major advantages of smart cards—deployment flexibility for virtual smart cards and robust security for physical smart cards—without any of their drawbacks.
+Microsoft Passport では、パスワードに代わって 2 要素認証 (2FA) が利用されます。この認証は、既存の資格情報の確認、およびユーザーのジェスチャ (生体認証または PIN ベース) で保護されるデバイス固有の資格情報の作成によって実現されます。 
 
-## 2.3 How Microsoft Passport works
-
-
-When the user sets up Microsoft Passport on his or her machine, Microsoft Passport generates a new public–private key pair on the device. The TPM generates and protects this private key. If the device does not have a TPM, the private key is encrypted and protected by software. In addition TPM-enabled devices generate a block of data that that can be used to attest that a key is bound to TPM. This attestation information can be used in your solution to decide if the user is granted a different authorization level for example.
-
-To enable Microsoft Passport on a device, the user must have either their Azure Active Directory account or Microsoft Account connected in Windows settings.
-
-## 2.3.1 How keys are protected
+## 2 Microsoft Passport とは
 
 
-Any time key material is generated, it must be protected against attack. The most robust way to do this is through specialized hardware. There is a long history of using hardware security modules (HSMs) to generate, store, and process keys for security-critical applications. Smart cards are a special type of HSM, as are devices that are compliant with the Trusted Computing Group TPM standard. Wherever possible, the Microsoft Passport implementation takes advantage of onboard TPM hardware to generate, store, and process keys. However, Microsoft Passport and Microsoft Passport for Work do not require an onboard TPM.
-
-Whenever feasible, Microsoft recommends the use of TPM hardware. The TPM protects against a variety of known and potential attacks, including PIN brute-force attacks. The TPM provides an additional layer of protection after an account lockout as well. When the TPM has locked the key material, the user must reset the PIN. Resetting the PIN means that all keys and certificates encrypted with the old key material will be removed.
-
-## 2.3.2 Authentication
+## 2.1 Windows Hello とは
 
 
-When a user wants to access protected key material, the authentication process begins with the user entering a PIN or biometric gesture to unlock the device, a process sometimes called "releasing the key".
+Windows Hello は、Microsoft が Windows 10 に組み込まれた新しい生体認証サインイン システムに付けた名前です。 Windows Hello はオペレーティング システムに直接組み込まれているため、顔または指紋を識別して、ユーザーのデバイスのロックを解除できます。 ユーザーが自分固有の生体認証識別子を入力して、デバイス固有の Microsoft Passport 資格情報にアクセスする場合に認証が行われます。つまり、攻撃者がデバイスを盗んでも、PIN がない限りデバイスにログオンすることはできません。 Windows のセキュリティ保護された資格情報ストアは、デバイス上の生体認証データを保護します。 Windows Hello を使ってデバイスのロックを解除することで、承認済みユーザーは、Windows エクスペリエンス、アプリ、データ、Web サイト、およびサービスのすべてにアクセスできます。
 
-An application can never use the keys from another application, nor can someone ever use the keys from another user. These keys are used to sign requests that are sent to the identity provider or IDP, seeking access to specified resources. Applications can use specific APIs to request operations that require key material for particular actions. Access through these APIs does require explicit validation through a user gesture, and the key material is not exposed to the requesting application. Rather, the application asks for a specific action like signing a piece of data, and the Microsoft Passport layer handles the actual work and returns the results.
+Windows Hello 認証システムは、Hello と呼ばれています。 Hello は、個々のデバイスと特定のユーザーの組み合わせに対して一意です。 これは、デバイス間でローミングされず、サーバーまたは呼び出し元のアプリとは共有されず、デバイスから簡単に抽出することはできません。 複数のユーザーがデバイスを共有している場合、各ユーザーは自分のアカウントを設定する必要があります。 各アカウントには、そのデバイス用の一意の Hello が与えられます。 Hello は、保存されている資格情報のロック解除 (またはリリース) に使用できるトークンのようなものと考えることができます。 Hello 自体は、アプリまたはサービスに対する認証を行わず、認証できる資格情報をリリースします。 つまり、Hello はユーザーの資格情報ではなく、Microsoft Passport 用の 2 番目の要素となります。
 
-## 2.4 Getting ready to implement Passport
-
-
-Now that we have a basic understanding of how Microsoft Passport and Windows Hello work, let us take a look at how to implement them in our own applications. Just to be very clear: When we are talking about the APIs, we are talking about the Microsoft Passport APIs. At this moment, there are no APIs for Windows Hello.
-
-There are different scenarios we can implement using Microsoft Passport. For example, just logging on to your app on a device. The other common scenario would be to authenticate against a service. Instead of using a logon name and password, you will be using Microsoft Passport. In the following chapters, we will discuss implementing a couple of different scenarios, including how to authenticate against your services with Microsoft Passport, and how to convert from an existing username/password system to a Microsoft Passport system.
-
-Finally, be aware that the Microsoft Passport APIs require the use of the Windows 10 SDK that matches the operating system the app will be used on. In other words, the 10.0.10240 Windows SDK must be used for apps that will be deployed to Windows 10 and the 10.0.10586 must be used for apps that will be deployed to Windows 10, version 1511.
-
-## 3 Implementing Microsoft Passport
+## 2.2 Microsoft Passport とは
 
 
-In this chapter, we begin with a greenfield scenario with no existing authentication system, and we explain how to implement Microsoft Passport.
+Windows Hello は、個々のユーザーを認識するための堅牢な方法をデバイスに提供します。これにより、ユーザーと要求されたサービス (またはデータ項目) との間のパスの最初の部分が処理されます。 デバイスがユーザーを認識しても、要求されたリソースへのアクセス権を与えるかどうかを決める前に、ユーザーをまだ認証する必要があります。 Microsoft Passport は強力な 2FA で、Windows に完全に組み込まれています。これにより、再利用可能なパスワードが、特定のデバイスと生体認証ジェスチャや PIN の組み合わせに置き換わります。
 
-The next section covers how to migrate from an existing username/password system. However, even if that chapter interests you more, you may want to look through this one to get a basic understanding of the process and the code required.
+Microsoft Passport は、従来の 2FA システムの単なる代替機能ではありません。 概念的にはスマート カードと似ています。Microsoft Passport では、文字列比較ではなく、暗号化プリミティブを使って認証が行われます。また、ユーザーのキー マテリアルは、改ざんされにくいハードウェア内でセキュリティ保護されています。 Microsoft Passport では、スマート カード展開に必要なインフラストラクチャ コンポーネントも追加する必要はありません。 具体的には、現在、公開キー基盤 (PKI) を所持していない場合は、証明書を管理するための PKI は必要ありません。 Microsoft Passport では、スマート カードの主な利点である、仮想スマート カードの展開の柔軟性と物理スマート カードの堅牢なセキュリティを組み合わせ、それぞれの欠点を排除しています。
 
-## 3.1 Enrolling new users
+## 2.3 Microsoft Passport のしくみ
 
 
-We begin with a brand new service that will use Microsoft Passport, and a hypothetical new user who is ready to sign up on a new device.
+ユーザーがコンピューターで Microsoft Passport をセットアップするとき、Microsoft Passport によってデバイスの新しい公開/秘密キーのペアが生成されます。 TPM はこの秘密キーを生成し、保護します。 デバイスに TPM が搭載されていない場合、秘密キーはソフトウェアによって暗号化され、保護されます。 また、TPM が有効なデバイスでは、キーが TPM にバインドされていることを証明する際に使われるデータ ブロックが生成されます。 この証明情報をソリューションで利用し、たとえば、さまざまな認証レベルをユーザーに付与するかどうかを決定することができます。
 
-The first step is to verify that the user is able to use Passport. The app verifies user settings and machine capabilities to make sure it can create user ID keys. If the app determines the user has not yet enabled Microsoft Passport, it prompts the user to set this up before using the app.
+デバイスで Microsoft Passport を有効にするには、Azure Active Directory アカウントまたは Windows の設定で関連付けられた Microsoft アカウントが必要です。
 
-To enable Microsoft Passport, the user just needs to set up a PIN in Windows settings, unless the user set it up during the Out of Box Experience (OOBE).
+## 2.3.1 キーを保護する方法
 
-The following lines of code show a simple way to check if the user is set up for Microsoft Passport.
+
+キー マテリアルを生成する場合は、常に攻撃から保護する必要があります。 これを実現する最も堅牢な方法は、ハードウェアをカスタマイズすることです。 セキュリティ クリティカルなアプリケーションのキーの生成、保存、および処理には、これまでずっとハードウェア セキュリティ モジュール (HSM) を使用してきました。 スマート カードは特別な種類の HSM で、Trusted Computing Group TPM 標準に準拠しているデバイスでもあります。 可能であれば、Microsoft Passport 実装では、オンボード TPM ハードウェアを活用して、キーの生成、保存、および処理を行います。 ただし、Microsoft Passport と Microsoft Passport for Work では、オンボード TPM は必ずしも必要というわけではありません。
+
+可能であれば、TPM ハードウェアを使用することをお勧めします。 TPM は、PIN のブルート フォース攻撃など、さまざまな既知の潜在的な攻撃を防げます。 アカウント ロックアウト後も、TPM はさらなる保護を追加します。 TPM がキー マテリアルをロックしている場合、ユーザーは PIN をリセットする必要があります。 PIN をリセットすると、古いキー マテリアルで暗号化されたすべてのキーと証明書は削除されます。
+
+## 2.3.2 認証
+
+
+ユーザーが保護されたキー マテリアルにアクセスする場合、認証プロセスでは、最初に "キーのリリース" と呼ばれるプロセスが行われ、ユーザーは PIN または生体認証ジェスチャを入力してデバイスのロックを解除します。
+
+アプリケーションは、別のアプリケーションからのキーを使うことはできません。また、だれも別のユーザーからのキーを使うことはできません。 これらのキーを使って、ID プロバイダー (IDP) に送信される要求に署名し、指定したリソースへのアクセスを要求します。 アプリケーションは特定の API を使って、特定の動作でキー マテリアルを必要とする操作を要求できます。 これらの API 使ってアクセスする場合、ユーザーのジェスチャを利用した明示的な検証が必要になります。キー マテリアルは要求元のアプリケーションに公開されません。 代わりに、アプリケーションはデータへの署名などの特定の操作を要求し、Microsoft Passport レイヤーは、実際の作業を処理して、結果を返します。
+
+## 2.4 Passport を実装するための準備
+
+
+以上で、Microsoft Passport と Windows Hello のしくみの基本について学習しました。次に、Microsoft Passport や Windows Hello をアプリケーションに実装する方法について説明します。 ここでは、API について説明している部分では、Microsoft Passport の API について説明していることに留意してください。 現時点では、Windows Hello 用の API はありません。
+
+Microsoft Passport を使った実装については、さまざまなシナリオがあります。 たとえば、デバイスでアプリにログオンする場合が挙げられます。 他の一般的なシナリオとしては、サービスに対して認証を行うシナリオがあります。 ログオン名とパスワードを使う代わりに、Microsoft Passport を使います。 以降の章では、いくつかの異なるシナリオの実装について説明します。Microsoft Passport を使いサービスに対して認証する方法や、既にあるユーザー名/パスワード システムから Microsoft Passport システムへの変換方法などについて説明します。
+
+最後に、Microsoft Passport API については、アプリを使用するオペレーティング システムと一致する Windows 10 SDK を使用する必要があることに注意してください。 つまり、Windows 10 に展開するアプリには 10.0.10240 Windows SDK を使用する必要があり、Windows 10 バージョン 1511 に展開するアプリには 10.0.10586 を使用する必要があります。
+
+## 3 Microsoft Passport の実装
+
+
+この章では、認証システムがない新規のシナリオから始め、Microsoft Passport を実装する方法について説明します。
+
+次のセクションでは、既存のユーザー名/パスワード システムから移行する方法について説明します。 ただし、次の章の方に興味がある場合でも、この章に目を通して、必要なプロセスとコードの基本を理解することをお勧めします。
+
+## 3.1 新しいユーザーの登録
+
+
+まず、新しいデバイスにサインアップしようとしている新しいユーザーを仮定して、Microsoft Passport を使用する新しいサービスについて説明します。
+
+最初に、ユーザーが Passport を使用できることを確認します。 アプリは、ユーザー設定とコンピューターの機能を調べ、ユーザー ID キーを作成できることを確認します。 アプリは、ユーザーがまだ Microsoft Passport を有効にしていないと判断した場合、アプリを使う前に、ユーザーに対して Passport をセットアップするように求めます。
+
+ユーザーが Out of Box Experience (OOBE) で PIN をセットアップしていない場合、Microsoft Passport を有効にするには、ユーザーは Windows 設定で PIN をセットアップする必要があります。
+
+次のコード行は、ユーザーが Microsoft Passport をセットアップしたかどうかを調べるための簡単な方法を示しています。
 
 ```cs
 var keyCredentialAvailable = await KeyCredentialManager.IsSupportedAsync();
@@ -124,34 +124,36 @@ if (!keyCredentialAvailable)
 }
 ```
 
-The next step is to ask the user for information to sign up with your service. You may choose to ask the user for first name, last name, email address, and a unique username. You could use the email address as the unique identifier; it is up to you.
+次の手順では、サービスにサインアップするための情報をユーザーに要求します。 氏名、メール アドレス、および一意のユーザー名などをユーザーに要求できます。 メール アドレスを一意の識別子として使うこともできます。これは任意に指定できます。
 
-In this scenario, we use the email address as the unique identifier for the user. Once the user signs up, you should consider sending a validation email to ensure the address is valid. This gives you a mechanism to reset the account if necessary.
+このシナリオでは、ユーザーの一意の識別子としてメール アドレスを使用します。 ユーザーがサインアップしたら、アドレスが有効であることを確認するために確認メールを送信することを検討する必要があります。 これにより、必要な場合にアカウントをリセットすることができます。
 
-If the user has set up his or her PIN, the app creates the user’s [**KeyCredential**](https://msdn.microsoft.com/library/windows/apps/dn973029). The app also gets the optional key attestation information to acquire cryptographic proof that the key is generated on the TPM. The generated public key, and optionally the attestation, is sent to the backend server to register the device being used. Every key pair generated on every device will be unique.
+ユーザーが自分の PIN をセットアップすると、アプリはユーザーの [**KeyCredential**](https://msdn.microsoft.com/library/windows/apps/dn973029) を作成します。 また、アプリは、オプションでキーの構成証明情報も取得して、キーが TPM で生成されたことを示す暗号証明を入手します。 生成された公開キーと、キーの構成証明 (任意に指定) をバックエンド サーバーに送信して、使われているデバイスを登録します。 各デバイスで生成されたすべてのキーのペアは一意になります。
 
-The code to create the [**KeyCredential**](https://msdn.microsoft.com/library/windows/apps/dn973029) looks like this:
+[
+            **KeyCredential**](https://msdn.microsoft.com/library/windows/apps/dn973029) を作成するコードは、次のようになります。
 
 ```cs
 var keyCreationResult = await KeyCredentialManager
     .RequestCreateAsync(AccountId, KeyCredentialCreationOption.ReplaceExisting);
 ```
 
-The [**RequestCreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn973048) is the part that creates the public and private key. If the device has the right TPM chip, the APIs will request the TPM chip to create the private and public key and store the result; if there is no TPM chip available, the OS will create the key pair in code. There is no way for the app to access the created private keys directly. Part of the creation of the key pairs is also the resulting Attestation information. (See the next section for more information about attestation.)
+[
+            **RequestCreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn973048) では、公開キーと秘密キーの作成を行います。 デバイスに適切な TPM チップが搭載されている場合、API は、秘密キーと公開キーの作成およびその結果の保存を TPM チップに要求します。TPM チップが利用できない場合は、OS によって、コードでキーのペアが作成されます。 作成した秘密キーにアプリが直接アクセスする方法はありません。 キーのペアを作成する処理によって、構成証明情報も生成されます。 (構成証明について詳しくは、次のセクションをご覧ください。)
 
-After the key pair and attestation information are created on the device, the public key, the optional attestation information, and the unique identifier (such as the email address) need to be sent to the backend registration service and stored in the backend.
+デバイスでキーのペアと構成証明情報が作成されたら、公開キー、オプションの構成証明情報、および一意の識別子 (メール アドレスなど) をバックエンドの登録サービスに送信し、バックエンドに保存する必要があります。
 
-To allow the user to access the app on multiple devices, the backend service needs to be able to store multiple keys for the same user. Because every key is unique for every device, we will store all these keys connected to the same user. A device identifier is used to help optimize the server part when authenticating users. We talk about this in more detail in the next chapter.
+ユーザーが複数のデバイスでアプリにアクセスできるようにする場合、バックエンド サービスでは、同じユーザーに対して複数のキーを保存できるようにする必要があります。 すべてのキーは各デバイスで一意であるため、これらすべてのキーを同じユーザーに関連付けて保存します。 デバイス識別子を使うと、ユーザーを認証するときに、サーバー部分を最適化することができます。 これについては、次の章で詳しく説明します。
 
-A sample database schema to store this information at the backend might look like this:
+バックエンドでこの情報を保存するサンプルのデータベース スキーマは、次のようになります。
 
-![passport sample database schema](images/passport-db.png)
+![Passport のサンプル データベース スキーマ](images/passport-db.png)
 
-The registration logic might look like this:
+登録のロジックは次のようになります。
 
-![passport registration logic](images/passport-registration.png)
+![Passport の登録ロジック](images/passport-registration.png)
 
-The registration information you collect may of course include a lot more identifying information than we include in this simple scenario. For example, if your app accesses a secured service such as one for banking, you would need to request proof of identity and other things as part of the sign-up process. Once all the conditions are met, the public key of this user will be stored in the backend and used to validate the next time the user uses the service.
+収集する登録情報はもちろん、この単純なシナリオよりも多くの識別情報を含む場合があります。 たとえば、アプリが、バンキング用などのセキュリティで保護されたサービスにアクセスする場合、サインアップ プロセスの一部として ID やその他の項目の証明を要求する必要があります。 すべての条件が満たされると、ユーザーの公開キーがバックエンドに保存され、次回ユーザーがサービスを利用するときの検証でこの公開キーが使われます。
 
 ```cs
 using System;
@@ -209,35 +211,38 @@ static async void RegisterUser(string AccountId)
 }
 ```
 
-## 3.1.1 Attestation
+## 3.1.1 構成証明
 
 
-When creating the key pair, there is also an option to request the attestation information, which is generated by the TPM chip. This optional information can be sent to the server as part of the sign-up process. TPM key attestation is a protocol that cryptographically proves that a key is TPM-bound. This type of attestation can be used to guarantee that a certain cryptographic operation occurred in the TPM of a particular computer.
+キーのペアを作成するときに、TPM チップで生成される構成証明情報を要求することもできます。 このオプションの情報は、サインアップ プロセスの一環としてサーバーに送信できます。 TPM キーの構成証明は、キーが TPM にバインドされていることを暗号で証明するプロトコルです。 この種類の構成証明を使うことで、特定の暗号化操作が特定のコンピューターの TPM で行われたことを保証できます。
 
-When it receives the generated RSA key, the attestation statement, and the AIK certificate, the server verifies the following conditions:
+生成された RSA キー、構成証明ステートメント、および AIK 証明書をサーバーが受け取った場合、サーバーは次の項目を確認します。
 
--   The AIK certificate signature is valid.
--   The AIK certificate chains up to a trusted root.
--   The AIK certificate and its chain is enabled for EKU OID "2.23.133.8.3" (friendly name is "Attestation Identity Key Certificate").
--   The AIK certificate is time valid.
--   All issuing CA certificates in the chain are time-valid and not revoked.
--   The attestation statement is formed correctly.
--   The signature on [**KeyAttestation**](https://msdn.microsoft.com/library/windows/apps/dn298288) blob uses an AIK public key.
--   The public key included in the [**KeyAttestation**](https://msdn.microsoft.com/library/windows/apps/dn298288) blob matches the public RSA key that client sent alongside the attestation statement.
+-   AIK 証明書の署名が有効であること。
+-   AIK 証明書チェーンをたどって、信頼されたルートに到達できること。
+-   AIK 証明書とそのチェーンが、EKU OID "2.23.133.8.3" (フレンドリ名は "認証 ID キーの証明書") に対して有効になっていること。
+-   AIK 証明書の期間が有効であること。
+-   チェーンに含まれている発行元の CA の証明書がすべて有効期間内にあり、失効していないこと。
+-   構成証明ステートメントが正しい形式になっていること。
+-   [
+            **KeyAttestation**](https://msdn.microsoft.com/library/windows/apps/dn298288) BLOB の署名は、AIK 公開キーを使います。
+-   [
+            **KeyAttestation**](https://msdn.microsoft.com/library/windows/apps/dn298288) BLOB に含まれる公開キーは、クライアントが構成証明ステートメントと共に送信した公開 RSA キーと一致します。
 
-Your app might assign the user a different authorization level, depending on these conditions. For instance, if one of these checks fail, it might not enroll the user or it might limit what the user can do.
+アプリは、これらの条件によって、さまざまな認証レベルをユーザーに割り当てる場合があります。 たとえば、これらの確認項目のいずれかが適切でない場合、ユーザーを登録しない、またはユーザーが実行できる操作を制限することがあります。
 
-## 3.2 Logging on with Microsoft Passport
-
-
-Once the user is enrolled in your system, he or she can use the app. Depending on the scenario, you can ask users to authenticate before they can start using the app or just ask them to authenticate once they start using your backend services.
-
-## 3.3 Force the user to sign in again
+## 3.2 Microsoft Passport でのログオン
 
 
-For some scenarios, you may want the user to prove he or she is the person who is currently signed in, before accessing the app or sometimes before performing a certain action inside of your app. For example, before a banking app sends the transfer money command to the server, you want to make sure it is the user, rather than someone who found a logged-in device, attempting to perform a transaction. You can force the user to sign in again in your app by using the [**UserConsentVerifier**](https://msdn.microsoft.com/library/windows/apps/dn279134) class. The following line of code will force the user to enter their credentials.
+ユーザーがシステムに登録されると、そのユーザーはアプリを使うことができます。 シナリオによっては、アプリの使用を開始する前にユーザーに認証を求めたり、バックエンド サービスの使用を開始するときにだけユーザーに認証を求めたりすることができます。
 
-The following line of code will force the user to enter their credentials.
+## 3.3 もう一度サインインするようにユーザーに強制する
+
+
+いくつかのシナリオでは、ユーザーが、アプリにアクセスする前、または場合によってはアプリ内の特定の操作を実行する前に、そのユーザーが現在サインインしている人であることの証明を必要とすることがあります。 たとえば、バンキング アプリが送金のコマンドをサーバーに送信する前に、使用者がユーザー本人であり、ログインされたデバイスを見つけて取引を行おうとしている他の人物ではないことを確認する必要があります。 [
+            **UserConsentVerifier**](https://msdn.microsoft.com/library/windows/apps/dn279134) クラスを使って、アプリにもう一度サインインするようにユーザーに強制することができます。 次のコード行では、資格情報の入力をユーザーに強制します。
+
+次のコード行では、資格情報の入力をユーザーに強制します。
 
 ```cs
 UserConsentVerificationResult consentResult = await UserConsentVerifier.RequestVerificationAsync("userMessage");
@@ -247,22 +252,22 @@ if (consentResult.Equals(UserConsentVerificationResult.Verified))
 }
 ```
 
-Of course, you can also use the challenge response mechanism from the server, which requires a user to enter his or her PIN code or biometric credentials. It depends on the scenario you as a developer need to implement. This mechanism is described in the following section.
+また、サーバーのチャレンジ応答メカニズムを使うこともできます。このメカニズムでは、PIN コードや生体認証の資格情報を入力するようにユーザーに要求します。 シナリオによっては、開発者はこのメカニズムを実装する必要があります。 このメカニズムについては、次のセクションで説明します。
 
-## 3.4 Authentication at the backend
+## 3.4 バックエンドでの認証
 
 
-When the app attempts to access a protected backend service, the service sends a challenge to the app. The app uses the private key from the user to sign the challenge and sends it back to the server. Since the server has stored the public key for that user, it uses standard crypto APIs to make sure the message was indeed signed with the correct private key. On the client, the signing is done by the Microsoft Passport APIs; the developer will never have access to any user’s private key.
+保護されているバックエンド サービスにアプリがアクセスしようとするとき、そのサービスはチャレンジをアプリに送信します。 アプリはユーザーの秘密キーを使ってチャレンジに署名し、サーバーに返信します。 サーバーではそのユーザーの公開キーが保存されているため、標準的な暗号 API を使って、メッセージが適切な秘密キーによって実際に署名されていることを確認します。 クライアントでは、署名は Microsoft Passport の API によって実行され、開発者はどのユーザーの秘密キーにもアクセスできません。
 
-In addition to checking the keys, the service can also check the key attestation and discern if there are any limitations invoked on how the keys are stored on the device. For example, when the device uses TPM to protect the keys, it is more secure than devices storing the keys without TPM. The backend logic could decide, for example, that the user is only allowed to transfer a certain amount of money when no TPM is used to reduce the risks.
+キーを確認するだけでなく、サービスでは、キーの構成証明を確認し、デバイスでのキーの保存方法について適用される制限があるかどうかを判断します。 たとえば、デバイスが TPM を使ってキーを保護する場合は、デバイスが TPM を使わずにキーを保護する場合よりも安全性は高くなります。 また、バックエンド ロジックで、たとえば TPM を使わない場合は、リスクを軽減するためにユーザーに対して一定金額の送金を許可するように指定することができます。
 
-Attestation is only available for devices with a TPM chip that’s version 2.0 or higher. Therefore, you need to take into account that this information might not be available on every device.
+構成証明は、バージョン 2.0 以上の TPM チップを搭載しているデバイスでのみ利用できます。 そのため、この構成証明情報がすべてのデバイスで利用できるわけではないということを考慮する必要があります。
 
-The client workflow might look like the following chart:
+クライアントのワークフローは、次の図のようになります。
 
-![passport client workflow](images/passport-client-workflow.png)
+![Passport クライアントのワークフロー](images/passport-client-workflow.png)
 
-When the app calls the service on the backend, the server sends a challenge. The challenge is signed with the following code:
+アプリがバックエンドでサービスを呼び出すと、サーバーはチャレンジを送信します。 チャレンジは、次のコードで署名されます。
 
 ```cs
 var openKeyResult = await KeyCredentialManager.OpenAsync(AccountId);
@@ -284,17 +289,17 @@ if (openKeyResult.Status == KeyCredentialStatus.Success)
 }
 ```
 
-The first line, [**KeyCredentialManager.OpenAsync**](https://msdn.microsoft.com/library/windows/apps/dn973046), will ask the OS to open the key handle. If that is done successfully, you can sign the challenge message with the [**KeyCredential.RequestSignAsync**](https://msdn.microsoft.com/library/windows/apps/dn973058) method will trigger the OS to request the user’s PIN or biometrics through Windows Hello. At no time will the developer have access to the private key of the user. This is all kept secure through the APIs.
+最初の行の [**KeyCredentialManager.OpenAsync**](https://msdn.microsoft.com/library/windows/apps/dn973046) では、キー ハンドルを開くように OS に要求します。 これが正常に実行された場合、[**KeyCredential.RequestSignAsync**](https://msdn.microsoft.com/library/windows/apps/dn973058) メソッドにより、OS が Windows Hello を利用してユーザーの PIN や生体認証の情報を要求するようにトリガーされるため、チャレンジ メッセージに署名することができます。 開発者は、ユーザーの秘密キーにはアクセスすることはできません。 秘密キーに対する処理は、API を使うことにより安全性が保たれます。
 
-The APIs request the OS to sign the challenge with the private key. The system then asks the user for a PIN code or a configured biometric logon. When the correct information is entered, the system can ask the TPM chip to perform the cryptographic functions and sign the challenge. (Or use the fallback software solution, if no TPM is available). The client must send the signed challenge back to the server.
+この API を使って、OS に対して秘密キーを使ってチャレンジに署名するように要求します。 システムでは、PIN コードや構成済みの生体認証ログオンをユーザーに求めます。 適切な情報が入力されると、システムは、暗号化関数を実行してチャレンジに署名するように TPM に要求します。 (TPM を利用できない場合は、フォールバック ソフトウェア ソリューションを使います)。 クライアントは、署名されたチャレンジをサーバーに返信する必要があります。
 
-A basic challenge–response flow is shown in this sequence diagram:
+チャレンジ – 応答の基本フローを次のシーケンス図に示します。
 
-![passport challenge response](images/passport-challenge-response.png)
+![Passport のチャレンジ応答](images/passport-challenge-response.png)
 
-Next, the server must validate the signature. When you request the public key and send it to the server to use for future validation, it is in an ASN.1-encoded publicKeyInfo blob.If you look at the [Microsoft Passport code sample on GitHub](http://go.microsoft.com/fwlink/?LinkID=717812), you will see there are helper classes to wrap Crypt32 functions to translate the ASN.1-encoded blob to a CNG blob, which is more commonly used. The blob contains the public key algorithm, which is RSA, and the RSA public key.
+次に、サーバーは署名を検証する必要があります。 公開キーを要求し、以降の検証用にサーバーに送ると、そのキーは ASN.1 でエンコードされた publicKeyInfo BLOB に格納されます。[GitHub の Microsoft Passport コード サンプル](http://go.microsoft.com/fwlink/?LinkID=717812)では、Crypt32 の関数をラップしてヘルパー クラスを作成し、ASN.1 エンコードされた BLOB をよく使われる CNG BLOB に変換するために使っています。 この BLOB には、RSA と RSA 公開キーに関する公開キー アルゴリズムが格納されています。
 
-Once you have the CNG blob, you need to validate the signed challenge against the public key of the user. Since everyone uses his or her own system or backend technology, there is no generic way to implement this logic. We are using SHA256 as the hash algorithm and Pkcs1 for SignaturePadding, so make sure that’s what you use when you validate the signed response from the client. Again, refer to the sample for a way to do it on your server in .NET 4.6, but in general it will look something like this:
+CNG BLOB を作成したら、署名されたチャレンジをユーザーの公開キーに対して検証する必要があります。 各ユーザーは独自のシステムまたはバックエンド テクノロジを使うので、このロジックを実装する汎用的な方法はありません。 ハッシュ アルゴリズムとして SHA256 が使われ、また SignaturePadding の Pkcs1 も使われているので、クライアントからの署名済み応答を検証するときに何を使うかを確認してください。 また、.NET 4.6 でサーバー側のこのロジックを実装するための方法に関するサンプルが示されていますが、一般的には次のようになります。
 
 ```cs
 using (RSACng pubKey = new RSACng(publicKey))
@@ -303,9 +308,9 @@ using (RSACng pubKey = new RSACng(publicKey))
 }
 ```
 
-We read the stored public key, which is an RSA key. We validate the signed challenge message with the public key and if this checks out, we authorize the user. If the user is authenticated, the app can call the backend services as normal.
+保存されている公開キー (RSA キー) を読み取ります。 署名されたチャレンジ メッセージを公開キーを使って検証し、これが確認できたら、ユーザーが承認されます。 ユーザーが認証されると、アプリは通常どおりバックエンド サービスを呼び出すことができます。
 
-The complete code might look something like the following:
+完全なコードは、次のようになります。
 
 ```cs
 using System;
@@ -349,105 +354,105 @@ static async Task<IBuffer> GetAuthenticationMessageAsync(IBuffer message, String
 }
 ```
 
-Implementing the correct challenge–response mechanism is outside the scope of this document, but this topic is something that requires attention in order to successfully create a secure mechanism to prevent things like replay attacks or man-in-the-middle attacks.
+適切なチャレンジ – 応答メカニズムの実装は、このドキュメントでは説明しません。ただし、このトピックでは、リプレイ攻撃や man-in-the-middle 攻撃などを回避する安全なメカニズムを作成するために注意が必要です。
 
-## 3.5 Enrolling another device
+## 3.5 別のデバイスの登録
 
 
-Nowadays, it is common for users to have multiple devices with the same apps installed. How does this work when using Microsoft Passport with multiple devices?
+今日では、ユーザーが所有している複数のデバイスに同じアプリがインストールされていることが一般的になっています。 複数のデバイスで Microsoft Passport を使うとどのように機能するのでしょうか。
 
-When using Microsoft Passport every device will create a unique private and public key set. This means that if you want a user to be able to use multiple devices, your backend must be able to store multiple public keys from this user. Refer to the database diagram in section 2.1 for an example of the table structure.
+Microsoft Passport を使うと、各デバイスで、固有の秘密キーと公開キーのセットが作成されます。 これは、ユーザーが複数のデバイスを使えるようにするには、バックエンドでこのユーザーの複数の公開キーを保存できる必要があることを意味します。 テーブル構造の例としては、セクション 2.1 のデータベースの図を参照してください。
 
-Registering another device is almost the same as registering a user for the first time. You still need to be sure the user registering for this new device is really the user he or she claims to be. You can do so with any two-factor authentication mechanism that is used today. There are several ways to accomplish this in a secure way. It all depends on your scenario.
+別のデバイスの登録は、ユーザーを初めて登録する方法とほとんど同じです。 デバイスを登録するユーザーが、登録を求めている本人であるかどうかを確認する必要がまだあります。 この確認は、現在使っている 2 要素認証メカニズムに基づいて行うことができます。 セキュリティで保護された手段を利用してこの確認を行う方法はいくつかありますが、 どの方法を採用するかは、シナリオによって異なります。
 
-For example, if you still use login name and password you can use that to authenticate the user and ask them to use one of their verification methods like SMS or email. If you don’t have a login name and password, you can also use one of the already registered devices and send a notification to the app on that device. The MSA authenticator app is an example of this. In short, you should use a common 2FA mechanism to register extra devices for the user.
+たとえば、ログイン名とパスワードによる認証方法を使っている場合は、その方法を利用してユーザーを認証し、SMS やメールなどの検証方法の 1 つを使用するようユーザーに求めることができます。 ログイン名とパスワードを使っていない場合は、既に登録されているいずれかのデバイスを使い、そのデバイス上のアプリに通知を送信することもできます その一例として MSA 認証アプリがあります。 つまり、一般的な 2FA メカニズムを使って、ユーザーの追加のデバイスを登録する必要があります。
 
-The code to register the new device is exactly the same as registering the user for the first time (from within the app).
+新しいデバイスを登録するコードは、(アプリ内から) ユーザーを初めて登録する場合とまったく同じになります。
 
 ```cs
 var keyCreationResult = await KeyCredentialManager.RequestCreateAsync(
     AccountId, KeyCredentialCreationOption.ReplaceExisting);
 ```
 
-To make it easier for the user to recognize which devices are registered, you can choose to send the device name or another identifier as part of the registration. This is also useful, for example, if you want to implement a service on your backend where users can unregister devices when a device is lost.
+登録されているデバイスをユーザーが簡単に認識できるようにするために、登録の一環として、デバイス名や他の識別子を送信することができます。 これは、たとえばサービスをバックエンドに実装する場合、デバイスを紛失したためにユーザーがデバイスの登録を解除するときに役立ちます。
 
-## 3.6 Using multiple accounts in your app
+## 3.6 アプリでの複数のアカウントの使用
 
 
-In addition to supporting multiple devices for a single account, it is also common to support multiple accounts in a single app. For example, maybe you are connecting to multiple Twitter accounts from within your app. With Microsoft Passport, you can create multiple key pairs and support multiple accounts inside your app.
+1 つのアカウントに対して複数のデバイスをサポートすることに加え、1 つのアプリで複数のアカウントをサポートすることも一般的です。 たとえば、1 つのアプリから複数の Twitter アカウントに接続している場合があります。 Microsoft Passport を利用すれば、キーのペアを複数作成し、アプリ内で複数のアカウントをサポートできます。
 
-One way of doing this is keeping the username or unique identifier described in the previous chapter in isolated storage. Therefore, every time you create a new account, you store the account ID in isolated storage.
+そのための方法の 1 つは、前の章で説明したユーザー名や一意の識別子を分離ストレージに保存する方法です。 したがって、新しいアカウントを作成するたびに、アカウント ID を分離ストレージに保存します。
 
-In the app UI, you allow the user to either choose one of the previously created accounts or sign up with a new one. The flow of creating a new account is the same as described before. Choosing an account is a matter of listing the stored accounts on the screen. Once the user selects an account, use the account ID to log on the user in your app:
+アプリの UI では、ユーザーが、事前に作成済みのアカウントのいずれかを選べるか、または新しいアカウントでサインアップできるようにします。 新しいアカウントを作成するフローは、前に説明したフローと同じになります。 アカウントを選ぶ場合は、保存されているアカウントの一覧を画面に表示する方法が課題となります。 ユーザーがアカウントを選ぶと、そのアカウント ID で、ユーザーはアプリにログオンします。
 
 ```cs
 var openKeyResult = await KeyCredentialManager.OpenAsync(AccountId);
 ```
 
-The rest of the flow is the same as described earlier. To be clear, all these accounts are protected by the same PIN or biometric gesture since in this scenario they are being used on a single device with the same Windows Account.
+フローの他の部分は、前に説明したフローと同じになります。 もちろん、これらすべてのアカウントは同じ PIN または生体認証ジェスチャによって保護されます。このシナリオでは、これらは、同じ Windows アカウントを用いて 1 つのデバイス上で使われているためです。
 
-## 4 Migrating an Existing System to Microsoft Passport
+## 4 既存のシステムを Microsoft Passport に移行する
 
 
-In this short section, we will address an existing Universal Windows Platform app and backend system that uses a database that stores the username and hashed password. These apps collect credentials from the user when the app starts and use them when the backend system returns the authentication challenge.
+この短いセクションでは、ユニバーサル Windows プラットフォーム アプリが既にあり、ユーザー名とハッシュされたパスワードが保存されているデータベースを使うバックエンド システムがある場合を扱います。 これらのアプリでは、起動時にユーザーから資格情報を収集し、バックエンド システムが認証チャレンジを返すときに、これらの資格情報を使います。
 
-Here, we will describe what pieces need to be changed or replaced to make Microsoft Passport work.
+ここでは、Microsoft Passport が動作するためには、何を変更し、何を置き換える必要があるかを説明します。
 
-We have already described most of the techniques in the earlier chapters. Adding Microsoft Passport to your existing system involves adding a couple of different flows in the registration and authentication part of your code.
+ほとんどの手法については、これまでの章で既に説明しました。 既存のシステムに Microsoft Passport を追加する場合、コード上の登録と認証の部分にいくつかの異なるフローを追加する必要があります。
 
-One approach is to let the user choose when to upgrade. After the user logs on to the app and you detect that the app and OS are capable of supporting Microsoft Passport, you can ask the user if he or she wants to upgrade credentials to use this modern and more secure system. You can use the following code to check whether the user is capable of using Microsoft Passport.
+1 つのアプローチとして、いつアップグレードするかをユーザーが選べるようにする方法があります。 ユーザーがアプリにログオンし、アプリと OS が Microsoft Passport をサポートできることを検出した後で、この最新かつセキュリティ保護されたシステムを使うために、資格情報をアップグレードするかどうかをユーザーに問い合わせる方法があります。 次のコードを利用して、ユーザーが Microsoft Passport を使うことができるかどうかを確認できます。
 
 ```cs
 var keyCredentialAvailable = await KeyCredentialManager.IsSupportedAsync();
 ```
 
-The UI might look something like this:
+UI は次のようになります。
 
-![passport ui](images/passport-ui.png)
+![Passport UI](images/passport-ui.png)
 
-If the user elects to start using Microsoft Passport, you create the [**KeyCredential**](https://msdn.microsoft.com/library/windows/apps/dn973029) described before. The backend registration server adds the public key and optional attestation statement to the database. Because the user is already authenticated with username and password, the server can link the new credentials to the current user information in the database. The database model could be the same as the example described earlier.
+ユーザーが Microsoft Passport を使うことにした場合、前に説明した [**KeyCredential**](https://msdn.microsoft.com/library/windows/apps/dn973029) を作成します。 バックエンドの登録サーバーでは、公開キーとオプションの構成証明ステートメントをデータベースに追加します。 ユーザーはユーザー名とパスワードで既に認証されているため、サーバーではこの新しい資格情報をデータベース内の現在のユーザー情報にリンクできます。 データベース モデルは、前に説明した例と同じである場合があります。
 
-If the app was able to create the users [**KeyCredential**](https://msdn.microsoft.com/library/windows/apps/dn973029), it stores the user ID in isolated storage so the user can pick this account from the list once the app is started again. From this point on, the flow exactly follows the examples described in earlier chapters.
+アプリは、ユーザーの [**KeyCredential**](https://msdn.microsoft.com/library/windows/apps/dn973029) を作成できた場合、アプリを再起動したときにユーザーが一覧からアカウントを選ぶことができるように、ユーザー ID を分離ストレージに保存します。 これ以降、フローはこれまでの章で説明した例とまったく同じものとなります。
 
-The final step in migrating to a full Microsoft Passport scenario is disabling the logon name and password option in the app and removing the stored hashed passwords from your database.
+Microsoft Passport の完全なシナリオへ移行する最後の手順では、アプリでログオン名とパスワードのオプションを無効にし、保存されているハッシュ済みのパスワードをデータベースから削除します。
 
-## 5 Summary
-
-
-Windows 10 introduces a higher level of security that is also simple to put into practice. Windows Hello provides a new biometric sign-in system that recognizes the user and actively defeats efforts to circumvent proper identification. Microsoft Passport works with Windows Hello to deliver multiple layers of keys and certificates that can never be revealed or used outside the trusted platform module. In addition, a further layer of security is available through the optional use of attestation identity keys and certificates.
-
-As a developer, you can use this guidance on design and deployment of these technologies to easily add secure authentication to your Windows 10 rollouts to protect apps and backend services. The code required is minimal and easy to understand. Windows 10 does the heavy lifting.
-
-Flexible implementation options allow Microsoft Passport and Windows Hello to replace or work alongside your existing authentication system. The deployment experience is painless and economical. No additional infrastructure is needed to deploy Windows 10 security. With Microsoft Passport and Microsoft Hello built in to the operating system, Windows 10 offers the most secure solution to the authentication problems facing the modern developer.
-
-Mission accomplished! You just made the Internet a safer place!
-
-## 6 Resources
+## 5 まとめ
 
 
-### 6.1 Articles and sample code
+Windows 10 には、簡単に実現できる、高いレベルのセキュリティが導入されています。 Windows Hello によって、ユーザーを認識する新しい生体認証サインイン システムが提供されます。また、Windows Hello を使うことで、正しい ID を意図的に回避するような操作をアクティブに阻止することができます。 Microsoft Passport は Windows Hello と連携して、キーと証明書に関する複数の層を提供します。これらの層は、トラステッド プラットフォーム モジュールの外部で公開されたり、使われたりすることは決してありません。 また、より詳細なセキュリティ レイヤーを、オプションである構成証明識別キーや証明書の利用時に使うことができます。
 
--   [Windows Hello overview](http://windows.microsoft.com/windows-10/getstarted-what-is-hello)
--   [Implementation details for Microsoft Passport and Windows Hello](https://msdn.microsoft.com/library/mt589441)
--   [Microsoft Passport code sample on GitHub](http://go.microsoft.com/fwlink/?LinkID=717812)
+これらのテクノロジの設計や展開を行うときに開発者がこのガイダンスを利用すると、セキュリティ保護された認証を Windows 10 のロールアウトに簡単に追加して、アプリやバックエンド サービスを保護することができます。 必要なコードは最小限に抑えられ、簡単に理解することができます。 難しい処理は、Windows 10 が実行します。
 
-### 6.2 Terminology
+柔軟な実装オプションによって、Microsoft Passport と Windows Hello は、既にある認証システムに合わせて、置き換えを行ったり、動作したりすることができます。 展開エクスペリエンスは簡単で経済的に行うことができます。 Windows 10 のセキュリティを展開する際に、追加のインフラストラクチャは必要ありません。 Microsoft Passport と Microsoft Hello はオペレーティング システムに組み込まれており、Windows 10 によって、現代の開発者が直面する認証の問題に対して安全性が最も高いソリューションが提供されます。
+
+任務完了! これでインターネットがより安全な場所になりました!
+
+## 6 リソース
+
+
+### 6.1 記事とサンプル コード
+
+-   [Windows Hello の概要](http://windows.microsoft.com/windows-10/getstarted-what-is-hello)
+-   [Microsoft Passport と Windows Hello の実装の詳細](https://msdn.microsoft.com/library/mt589441)
+-   [GitHub の Microsoft Passport コード サンプル](http://go.microsoft.com/fwlink/?LinkID=717812)
+
+### 6.2 用語
 
 |                     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 |---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| AIK                 | An attestation identity key is used to provide such a cryptographic proof (TPM key attestation) by signing the properties of the non-migratable key and providing the properties and signature to the relying party for verification. The resulting signature is called an “attestation statement.” Since the signature is created using the AIK private key—which can only be used in the TPM that created it—the relying party can trust that the attested key is truly non-migratable and cannot be used outside that TPM. |
-| AIK Certificate     | An AIK certificate is used to attest to the presence of an AIK within a TPM. It is also used to attest that other keys certified by the AIK originated from that particular TPM.                                                                                                                                                                                                                                                                                                                                              |
-| IDP                 | An IDP is an identity provider. An example is the IDP build by Microsoft for Microsoft Accounts. Every time an application needs to authenticate with an MSA, it can call the MSA IDP.                                                                                                                                                                                                                                                                                                                                        |
-| PKI                 | Public key infrastructure is commonly used to point to an environment hosted by an organization itself and being responsible for creating keys, revoking keys, etc.                                                                                                                                                                                                                                                                                                                                                           |
-| TPM                 | The trusted platform module can be used to create cryptographic public/private key pairs in such a way that the private key can never be revealed or used outside the TPM (that is, the key is non-migratable).                                                                                                                                                                                                                                                                                                               |
-| TPM Key Attestation | A protocol that cryptographically proves that a key is TPM-bound. This type of attestation can be used to guarantee that a certain cryptographic operation occurred in the TPM of a particular computer                                                                                                                                                                                                                                                                                                                       |
+| AIK                 | 構成証明識別キー (AIK) を使って、暗号証明 (TPM キーの構成証明) などを提供します。そのためには、移行不可能なキーのプロパティに署名し、そのプロパティと署名を検証のために証明書利用者に提供します。 このプロパティへの署名は、"構成証明ステートメント" と呼ばれます。 署名は AIK 秘密キー (このキーを作成した TPM でのみ利用できます) を使って作成されるため、証明書利用者は、証明されたキーが実際に移行不可能であり、TPM の外部で利用できないことを信頼することができます。 |
+| AIK 証明書     | AIK 証明書は、TPM 内に AIK が存在すること証明するために使われます。 また、特定の TPM の AIK によって認証された他のキーを証明する場合にも使われます。                                                                                                                                                                                                                                                                                                                                              |
+| IDP                 | IDP とは ID プロバイダーを表します。 例として、Microsoft アカウント用に Microsoft が作成した IDP があります。 アプリケーションで MSA を使った認証を行うたびに、MSA IDP を呼び出すことができます。                                                                                                                                                                                                                                                                                                                                        |
+| PKI                 | 公開キー基盤 (PKI) は、一般的に、組織によってホストされ、キーの作成やキーの失効などを行う環境を示す際に使われる用語です。                                                                                                                                                                                                                                                                                                                                                           |
+| TPM                 | トラステッド プラットフォーム モジュール (TPM) を使って、暗号化された公開/秘密キーのペアを作成できます。作成された秘密キーは、TPM の外部で公開されたり、使われたりすることは決してありません (つまり、キーは移行できません)。                                                                                                                                                                                                                                                                                                               |
+| TPM キーの構成証明 | キーが TPM にバインドされていることを暗号で証明するプロトコルです。 この種類の構成証明を使うことで、特定の暗号化操作が特定のコンピューターの TPM で行われたことを保証できます。                                                                                                                                                                                                                                                                                                                       |
 
  
 
-## Related topics
+## 関連トピック
 
-* [Microsoft Passport login app](microsoft-passport-login.md)
-* [Microsoft Passport login service](microsoft-passport-login-auth-service.md)
+* [Microsoft Passport ログイン アプリ](microsoft-passport-login.md)
+* [Microsoft Passport ログイン サービス](microsoft-passport-login-auth-service.md)
 
 <!--HONumber=Mar16_HO5-->
 

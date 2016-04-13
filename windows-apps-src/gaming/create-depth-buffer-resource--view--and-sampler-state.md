@@ -1,36 +1,36 @@
 ---
-title: Create depth buffer device resources
-description: Learn how to create the Direct3D device resources necessary to support depth testing for shadow volumes.
+title: 深度バッファーのデバイス リソースの作成
+description: シャドウ ボリュームの深度のテストをサポートするために必要な Direct3D デバイス リソースを作成する方法について説明します。
 ms.assetid: 86d5791b-1faa-17e4-44a8-bbba07062756
 ---
 
-# Create depth buffer device resources
+# 深度バッファーのデバイス リソースの作成
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-Learn how to create the Direct3D device resources necessary to support depth testing for shadow volumes. Part 1 of [Walkthrough: Implement shadow volumes using depth buffers in Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md).
+シャドウ ボリュームの深度のテストをサポートするために必要な Direct3D デバイス リソースを作成する方法について説明します。 「[チュートリアル: Direct3D 11 の深度バッファーを使ったシャドウ ボリュームの実装](implementing-depth-buffers-for-shadow-mapping.md)」のパート 1 です。
 
-## Resources you'll need
-
-
-Rendering a depth map for shadow volumes requires the following Direct3D device-dependent resources:
-
--   A resource (buffer) for the depth map
--   A depth stencil view and shader resource view for the resource
--   A comparison sampler state object
--   Constant buffers for light POV matrices
--   A viewport for rendering the shadow map (typically a square viewport)
--   A rendering state object to enable front face culling
--   You will also need a rendering state object to switch back to back face culling, if you don't already use one.
-
-Note that creation of these resources needs to be included in a device-dependent resource creation routine, that way your renderer can recreate them if (for example) a new device driver is installed, or the user moves your app to a monitor attached to a different graphics adapter.
-
-## Check feature support
+## 必要なリソース
 
 
-Before creating the depth map, call the [**CheckFeatureSupport**](https://msdn.microsoft.com/library/windows/desktop/ff476497) method on the Direct3D device, request **D3D11\_FEATURE\_D3D9\_SHADOW\_SUPPORT**, and provide a [**D3D11\_FEATURE\_DATA\_D3D9\_SHADOW\_SUPPORT**](https://msdn.microsoft.com/library/windows/desktop/jj247569) structure.
+シャドウ ボリュームの深度マップをレンダリングするには、次の Direct3D デバイス依存リソースが必要です。
+
+-   深度マップのリソース (バッファー)
+-   リソースの深度ステンシル ビューとシェーダー リソース ビュー
+-   比較サンプラーの状態オブジェクト
+-   ライトの POV マトリックスの定数バッファー
+-   シャドウ マップをレンダリングするためのビューポート (通常は正方形のビューポート)
+-   前面のカリングを有効にするためのレンダリングの状態オブジェクト
+-   レンダリングの状態オブジェクトをまだ使っていない場合は、背面のカリングに戻るために、このオブジェクトも必要になります。
+
+これらのリソースの作成をデバイス依存リソースの作成ルーチンに含める必要があることに注意してください。そうすれば、新しいデバイス ドライバーがインストールされたり、別のグラフィックス アダプターに接続されているモニターにユーザーがアプリを移動したりした場合などに、レンダラーがデバイス依存リソースを再作成できます。
+
+## サポートされている機能
+
+
+深度マップを作成する前に、Direct3D デバイスで [**CheckFeatureSupport**](https://msdn.microsoft.com/library/windows/desktop/ff476497) メソッドを呼び出し、**D3D11\_FEATURE\_D3D9\_SHADOW\_SUPPORT** を要求して、[**D3D11\_FEATURE\_DATA\_D3D9\_SHADOW\_SUPPORT**](https://msdn.microsoft.com/library/windows/desktop/jj247569) 構造体を提供します。
 
 ```cpp
 D3D11_FEATURE_DATA_D3D9_SHADOW_SUPPORT isD3D9ShadowSupported;
@@ -47,14 +47,14 @@ if (isD3D9ShadowSupported.SupportsDepthAsTextureWithLessEqualComparisonFilter)
 
 ```
 
-If this feature is not supported, do not try to load shaders compiled for shader model 4 level 9\_x that call sample comparison functions. In many cases, lack of support for this feature means that the GPU is a legacy device with a driver that isn't updated to support at least WDDM 1.2. If the device supports at least feature level 10\_0 then you can load a sample comparison shader compiled for shader model 4\_0 instead.
+この構造体がサポートされていない場合は、サンプル比較関数を呼び出すシェーダー モデル 4 レベル 9\_x 向けにコンパイルされたシェーダーを読み込まないようにしてください。 この機能がサポートされない場合、GPU がレガシ デバイスであり、ドライバーが更新されていないため WDDM 1.2 以上がサポートされないというケースがほとんどです。 デバイスが機能レベル 10\_0 以上をサポートしている場合は、代わりにシェーダー モデル 4\_0 向けにコンパイルされたサンプル比較を読み込むことができます。
 
-## Create depth buffer
+## 深度バッファーの作成
 
 
-First, try creating the depth map with a higher-precision depth format. Set up matching shader resource view properties first. If the resource creation fails, for example due to low device memory or a format that the hardware doesn't support, try a lower-precision format and change properties to match.
+まず、高精度深度形式の深度マップを作成してください。 最初に、一致するシェーダー リソース ビュー プロパティを設定します。 デバイス メモリの不足やハードウェアでサポートされない形式などが原因でリソースの作成が失敗した場合は、低精度形式を試して、照合するプロパティを変更してください。
 
-This step is optional if you only need a low-precision depth format, for example when rendering on medium-resolution Direct3D feature level 9\_1 devices.
+中程度の解像度の Direct3D 機能レベル 9\_1 デバイスでレンダリングする場合など、低精度の深度形式だけが必要な場合は、この手順はオプションです。
 
 ```cpp
 D3D11_TEXTURE2D_DESC shadowMapDesc;
@@ -74,7 +74,7 @@ HRESULT hr = pD3DDevice->CreateTexture2D(
     );
 ```
 
-Then create the resource views. Set the mip slice to zero on the depth stencil view and set mip levels to 1 on the shader resource view. Both have a texture dimension of TEXTURE2D, and both need to use a matching [**DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059).
+次に、リソース ビューを作成します。 深度ステンシル ビューで mip スライスを 0 に設定し、シェーダー リソース ビューで mip レベルを 1 に設定します。 両方とも TEXTURE2D のテクスチャ ディメンションを持ち、一致する [**DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059) を使う必要があります。
 
 ```cpp
 D3D11_DEPTH_STENCIL_VIEW_DESC depthStencilViewDesc;
@@ -102,14 +102,14 @@ hr = pD3DDevice->CreateShaderResourceView(
     );
 ```
 
-## Create comparison state
+## 比較の状態の作成
 
 
-Now create the comparison sampler state object. Feature level 9\_1 only supports D3D11\_COMPARISON\_LESS\_EQUAL. Filtering choices are explained more in [Supporting shadow maps on a range of hardware](target-a-range-of-hardware.md) - or you can just pick point filtering for faster shadow maps.
+ここで、比較サンプラーの状態オブジェクトを作成します。 機能レベル 9\_1 では D3D11\_COMPARISON\_LESS\_EQUAL のみがサポートされます。 フィルタリングの選択肢について詳しくは、「[ハードウェアの範囲でのシャドウ マップのサポート](target-a-range-of-hardware.md)」をご覧ください。シャドウ マップの高速化のために、ポイント フィルタリングを選ぶこともできます。
 
-Note that you can specify the D3D11\_TEXTURE\_ADDRESS\_BORDER address mode and it will work on feature level 9\_1 devices. This applies to pixel shaders that don't test whether the pixel is in the light's view frustum before doing the depth test. By specifying 0 or 1 for each border, you can control whether pixels outside the light's view frustum pass or fail the depth test, and therefore whether they are lit or in shadow.
+D3D11\_TEXTURE\_ADDRESS\_BORDER アドレス モードを指定できます。これは、機能レベル 9\_1 のデバイスで機能します。 これは、深度のテストの実行前に、ピクセルがライトの視錐台内にあるかどうかをテストしないピクセル シェーダーに適用されます。 各境界線に 0 または 1 を指定することで、ライトの視錐台の外にあるピクセルが深度テストにパスするかどうかを制御できます。結果的に、ライトに照らされているか、シャドウ内にあるかを制御できます。
 
-On feature level 9\_1, the following required values must be set: **MinLOD** is set to zero, **MaxLOD** is set to **D3D11\_FLOAT32\_MAX**, and **MaxAnisotropy** is set to zero.
+機能レベル 9\_1 では、**MinLOD** を 0 に設定し、**MaxLOD** を **D3D11\_FLOAT32\_MAX** に設定し、**MaxAnisotropy** を 0 に設定する必要があります。
 
 ```cpp
 D3D11_SAMPLER_DESC comparisonSamplerDesc;
@@ -141,10 +141,10 @@ DX::ThrowIfFailed(
     );
 ```
 
-## Create render states
+## レンダリングの状態の作成
 
 
-Now create a render state you can use to enable front face culling. Note that feature level 9\_1 devices require **DepthClipEnable** set to **true**.
+次に、前面のカリングを有効にするために使用できるレンダリングの状態を作成します。 機能レベル 9\_1 のデバイスの場合、**DepthClipEnable** を **true** に設定する必要があります。
 
 ```cpp
 D3D11_RASTERIZER_DESC drawingRenderStateDesc;
@@ -160,7 +160,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-Create a render state you can use to enable back face culling. If your rendering code already turns on back face culling, then you can skip this step.
+背面のカリングを有効にするために使用できるレンダリングの状態を作成します。 レンダリング コードで既に背面のカリングを有効にしている場合は、この手順を省略できます。
 
 ```cpp
 D3D11_RASTERIZER_DESC shadowRenderStateDesc;
@@ -177,10 +177,10 @@ DX::ThrowIfFailed(
     );
 ```
 
-## Create constant buffers
+## 定数バッファーの作成
 
 
-Don't forget to create a constant buffer for rendering from the light's point of view. You can also use this constant buffer to specify the light position to the shader. Use a perspective matrix for point lights, and use an orthogonal matrix for directional lights (such as sunlight).
+ライトの位置からのレンダリングのために定数バッファーを忘れずに作成してください。 シェーダーにライトの位置を指定するために、この定数バッファーを使うこともできます。 ポイント ライトには遠近投影マトリックスを使い、指向性ライト (太陽光など) には正投影マトリックスを使います。
 
 ```cpp
 DX::ThrowIfFailed(
@@ -192,7 +192,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-Fill the constant buffer data. Update the constant buffers once during initialization, and again if the light values have changed since the previous frame.
+定数バッファーにデータを入力します。 定数バッファーは初期化中に一度更新し、前のフレームからライトの値が変更された場合にもう一度更新します。
 
 ```cpp
 {
@@ -234,10 +234,10 @@ context->UpdateSubresource(
     );
 ```
 
-## Create a viewport
+## ビューポートの作成
 
 
-You need a separate viewport to render to the shadow map. The viewport isn't a device-based resource; you're free to create it elsewhere in your code. Creating the viewport along with the shadow map can help make it more convenient to keep the dimension of the viewport congruent with the shadow map dimension.
+シャドウ マップにレンダリングするための個別のビューポートが必要です。 ビューポートはデバイス ベースのリソースではありません。コードの別の場所で自由に作成できます。 シャドウ マップと同時にビューポートを作成すると、ビューポートのサイズとシャドウ マップのサイズの整合性を保つのが簡単になります。
 
 ```cpp
 // Init viewport for shadow rendering
@@ -248,7 +248,7 @@ m_shadowViewport.MinDepth = 0.f;
 m_shadowViewport.MaxDepth = 1.f;
 ```
 
-In the next part of this walkthrough, learn how to create the shadow map by [rendering to the depth buffer](render-the-shadow-map-to-the-depth-buffer.md).
+このチュートリアルの次のパートでは、[深度バッファーへのレンダリング](render-the-shadow-map-to-the-depth-buffer.md)によってシャドウ マップを作成する方法について説明します。
 
  
 

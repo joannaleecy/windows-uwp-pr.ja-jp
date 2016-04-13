@@ -1,60 +1,60 @@
 ---
-Description: The Usage report in the Windows Dev Center dashboard lets you see how customers are using your app.
-title: Usage report
+Description: Windows デベロッパー センターダッシュボードの利用状況レポートでは、お客様によるアプリの利用状況を確認できます。
+title: 利用状況レポート
 ms.assetid: 5F0E7F94-D121-4AD3-A6E5-9C0DEC437BD3
 ---
 
-# Usage report
+# 利用状況レポート
 
 
-> **Important**  The **Usage** report only provides data if you have activated the [Visual Studio Application Insights SDK](http://go.microsoft.com/fwlink/?LinkId=615086) in your app (or enable it by checking the box for “Show telemetry in the Windows Dev Center” when building your package). You also must submit the app in the unified Dev Center dashboard before data will be shown in this report, and you must have app usage telemetry enabled in your Account settings.
+> **重要**  **利用状況**レポートには、アプリで [Visual Studio Application Insights SDK](http://go.microsoft.com/fwlink/?LinkId=615086) をアクティブにした (または、パッケージをビルドするときに [Windows デベロッパー センターでテレメトリを表示] をオンにすることでこの SDK 有効にした) 場合にのみデータが表示されます。 また、このレポートにデータが表示される前に、統合デベロッパー センター ダッシュボードでアプリを申請し、アカウント設定でアプリの製品利用統計情報を有効にしている必要があります。
 
-The **Usage** report in the Windows Dev Center dashboard lets you see how customers are using your app. You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline.
+Windows デベロッパー センターダッシュボードの**利用状況**レポートでは、お客様によるアプリの利用状況を確認できます。 このデータは、ダッシュボードで表示することも、[レポートをダウンロード](download-analytic-reports.md)してオフラインで表示することもできます。
 
-This report provides a high-level look at your app's usage. If you have associated an Azure subscription with the Visual Studio Application Insights SDK for your app, you can get more detailed app usage telemetry info in the Azure Portal. Links to your app's Azure Portal reports will be provided near the top of this report.
+このレポートには、アプリの利用状況の概要が表示されます。 Azure サブスクリプションとアプリの Visual Studio Application Insights SDK を関連付けた場合、より詳しいアプリの製品利用統計情報を Azure ポータルで確認できます。 アプリの Azure ポータル レポートへのリンクは、このレポートの上部に表示されます。
 
-Note that the Microsoft account associated with your developer account must be associated with the Azure subscription used for Application Insights. If you're not using the same Microsoft account in both places, you'll need to log into the Azure Management Portal, then add the Microsoft account associated with your developer account as a Service Administrator, Co-Administrator, or in the Owner role for this subscription.
+開発者アカウントに関連付けられている Microsoft アカウントが Application Insights 用の Azure サブスクリプションに関連付けられている必要があります。 開発者アカウントと Azure サブスクリプションに同じ Microsoft アカウントが関連付けられていない場合は、Azure 管理ポータルにログインし、開発者アカウントに関連付けられている Microsoft アカウントをこのサブスクリプションのサービス管理者、共同管理者、または所有者ロールとして追加する必要があります。
 
-## Apply filters
-
-
-Near the top of the page, you can expand **Apply filters** to filter all of the data on this page by date range and/or by product group (related OS versions).
-
--   **Date**: The default filter is **Last 72 hours**, but you can expand this up to **Last 12 months**.
--   **Product groups**: The default setting is **All**. If your app includes more than one product group, you can choose a specific one here.
-
-The info in all of the charts listed below will reflect the period of time selected in **Apply filters**. By default this will include data for all of your supported product groups, unless you've used the **Apply filters** section to filter for only one.
-
-## Total user sessions
+## フィルターの適用
 
 
-The **Total user sessions** chart shows the number of daily user sessions for your app over the selected period of time.
+ページの上部近くにある **[フィルターの適用]** を展開して、このページのすべてのデータを日付範囲/製品グループ (関連 OS バージョン) に基づいてフィルター処理できます。
 
-Each user session represents a customer launching and using your app over a period of time. This chart does not track unique users (that is, multiple user sessions shown here could be from the same customer).
+-   **[日付]**: 既定のフィルターは **[過去 72 時間]** ですが、これを **[過去 12 か月]** まで拡張できます。
+-   **製品グループ**: 既定の設定は **[すべて]** です。 アプリに複数の製品グループが含まれている場合は、特定のグループを選択できます。
 
-## Active users
+以下のすべてのグラフに示される情報は、**[フィルターの適用]** で選んだ期間を反映しています。 既定では、**[フィルターの適用]** セクションを使って製品グループを 1 つに絞り込んでいない限り、その情報にはサポートされるすべての製品グループのデータが含まれます。
 
-
-The **Active users** chart shows the number of customers who used your app on a specific day during the selected period of time.
-
-Each active user represents a customer who used your app that day. This chart does not track unique user sessions (that is, a customer is represented in this chart whether they used your app just once or multiple times that day).
-
-## Average user session length in seconds
+## ユーザー セッションの合計数
 
 
-The **Average user session length in seconds** chart shows average length of time that a customer used your app on a specific day during the selected period of time.
+**ユーザー セッションの合計数**のグラフには、選択した期間内のアプリに対する日次のユーザー セッションの数が示されます。
 
-You can also click **Average time between sessions in seconds** to have this chart display the average time that elapses between separate sessions of using your app over the selected period of time.
+各ユーザー セッションは、一定期間内にアプリを起動して使ったお客様を表します。 このグラフでは、個別のユーザーは追跡されません (つまり、ここに表示される複数のユーザー セッションが同じお客様から発生した可能性があります)。
 
-## Custom events over last 30 days
-
-
-The **Custom events over last 30 days** chart shows the total occurrences for any custom events that you have defined for your app. This may include multiple occurrences for the same customer.
-
-## Page views over last 30 days
+## アクティブ ユーザー
 
 
-The **Page views over last 30 days** chart shows the total number of views for specific pages in your app. This may include multiple views from the same customer.
+**アクティブ ユーザー**のグラフには、選択した期間内の特定の日にアプリを使ったお客様の数が示されます。
+
+各アクティブ ユーザーは、その日にアプリを使ったお客様を表します。 このグラフでは、特定のユーザー セッションは追跡されません (つまり、お客様はその日にアプリを 1 回のみ使ったか、複数回使ったかで示されます)。
+
+## 平均的なセッションの長さ (秒単位)
+
+
+**平均的なセッションの長さ (秒単位)** のグラフには、選択した期間内の特定の日にお客様がアプリを使った時間の平均的な長さが示されます。
+
+また、**[Average time between sessions in seconds]** (セッション間の平均的な時間) をクリックすると、このグラフには、選択した期間内にアプリを使ったセッション間で経過した平均的な時間が示されます。
+
+## 過去 30 日間のカスタム イベント
+
+
+**過去 30 日間のカスタム イベント**のグラフには、アプリに定義したカスタム イベントが発生した合計回数が示されます。 この回数には、それらのイベントが同じお客様によって複数回発生した場合も含まれます。
+
+## 過去 30 日間のページ ビュー
+
+
+**過去 30 日間のページ ビュー**のグラフには、アプリの特定のページが表示された合計回数が示されます。 この回数には、それらのページが同じお客様によって複数回表示された場合も含まれます。
 
  
 

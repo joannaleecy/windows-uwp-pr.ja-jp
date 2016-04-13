@@ -1,43 +1,44 @@
 ---
 ms.assetid: 1AE29512-7A7D-4179-ADAC-F02819AC2C39
-title: Files and folders in the Music, Pictures, and Videos libraries
-description: Add existing folders of music, pictures, or videos to the corresponding libraries. You can also remove folders from libraries, get the list of folders in a library, and discover stored photos, music, and videos.
+title: ミュージック、画像、およびビデオ ライブラリのファイルとフォルダー
+description: 音楽、画像、またはビデオの既存のフォルダーを対応するライブラリに追加できます。 ライブラリからフォルダーを削除したり、ライブラリ内のフォルダーの一覧を取得したり、保存した写真、音楽、ビデオにアクセスしたりすることもできます。
 ---
 
-# Files and folders in the Music, Pictures, and Videos libraries
+# ミュージック、画像、およびビデオ ライブラリのファイルとフォルダー
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-Add existing folders of music, pictures, or videos to the corresponding libraries. You can also remove folders from libraries, get the list of folders in a library, and discover stored photos, music, and videos.
+音楽、画像、またはビデオの既存のフォルダーを対応するライブラリに追加できます。 ライブラリからフォルダーを削除したり、ライブラリ内のフォルダーの一覧を取得したり、保存した写真、音楽、ビデオにアクセスしたりすることもできます。
 
-A library is a virtual collection of folders, which includes a known folder by default plus any other folders the user has added to the library by using your app or one of the built-in apps. For example, the Pictures library includes the Pictures known folder by default. The user can add folders to, or remove them from, the Pictures library by using your app or the built-in Photos app.
+ライブラリは、フォルダーの仮想コレクションです。既定で含まれている既知のフォルダーに加えて、ユーザーがアプリや組み込みのアプリのいずれかを使ってライブラリに追加した他のフォルダーが含まれています。 たとえば、画像ライブラリには、既定で画像の既知のフォルダーが含まれています。 ユーザーは、アプリや組み込みのフォト アプリを使って、画像ライブラリに対してフォルダーの追加や削除を行うことができます。
 
-## Prerequisites
-
-
--   **Understand async programming for Universal Windows Platform (UWP) apps**
-
-    You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
-
--   **Access permissions to the location**
-
-    In Visual Studio, open the app manifest file in Manifest Designer. On the **Capabilities** page, select the libraries that your app manages.
-
-    -   **Music Library**
-    -   **Pictures Library**
-    -   **Videos Library**
-
-    To learn more, see [File access permissions](file-access-permissions.md).
-
-## Get a reference to a library
+## 必要条件
 
 
-**Note**  Remember to declare the appropriate capability.
+-   **ユニバーサル Windows プラットフォーム (UWP) アプリの非同期プログラミングについての理解**
+
+    C# や Visual Basic での非同期アプリの作成方法については、「[C# または Visual Basic での非同期 API の呼び出し](https://msdn.microsoft.com/library/windows/apps/mt187337)」をご覧ください。 C++ での非同期アプリの作成方法については、「[C++ での非同期プログラミング](https://msdn.microsoft.com/library/windows/apps/mt187334)」をご覧ください。
+
+-   **場所へのアクセス許可**
+
+    Visual Studio のマニフェスト デザイナーで、アプリ マニフェスト ファイルを開きます。 **[機能]** ページで、アプリで管理するライブラリを選択します。
+
+    -   **音楽ライブラリ**
+    -   **画像ライブラリ**
+    -   **ビデオ ライブラリ**
+
+    詳しくは、「[ファイル アクセス許可](file-access-permissions.md)」をご覧ください。
+
+## ライブラリへの参照を取得する
+
+
+**注:** 必ず適切な機能を宣言してください。
  
 
-To get a reference to the user's Music, Pictures, or Video library, call the [**StorageLibrary.GetLibraryAsync**](https://msdn.microsoft.com/library/windows/apps/dn251725) method. Provide the corresponding value from the [**KnownLibraryId**](https://msdn.microsoft.com/library/windows/apps/dn298399) enumeration.
+ユーザーの音楽、画像、またはビデオ ライブラリへの参照を取得するには、[**StorageLibrary.GetLibraryAsync**](https://msdn.microsoft.com/library/windows/apps/dn251725) メソッドを呼び出します。 [
+            **KnownLibraryId**](https://msdn.microsoft.com/library/windows/apps/dn298399) 列挙体の対応する値を指定します。
 
 -   [**KnownLibraryId.Music**](https://msdn.microsoft.com/library/windows/apps/br227155)
 -   [**KnownLibraryId.Pictures**](https://msdn.microsoft.com/library/windows/apps/br227156)
@@ -48,10 +49,10 @@ To get a reference to the user's Music, Pictures, or Video library, call the [**
         (Windows.Storage.KnownLibraryId.Pictures);
 ```
 
-## Get the list of folders in a library
+## ライブラリ内のフォルダーの一覧を取得する
 
 
-To get the list of folders in a library, get the value of the [**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) property.
+ライブラリ内のフォルダーの一覧を取得するには、[**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) プロパティの値を取得します。
 
 ```CSharp
     using Windows.Foundation.Collections;
@@ -61,43 +62,45 @@ To get the list of folders in a library, get the value of the [**StorageLibrary.
     IObservableVector<Windows.Storage.StorageFolder> myPictureFolders = myPictures.Folders;
 ```
 
-## Get the folder in a library where new files are saved by default
+## 新しいファイルが既定で保存されるライブラリのフォルダーを取得する
 
 
-To get the folder in a library where new files are saved by default, get the value of the [**StorageLibrary.SaveFolder**](https://msdn.microsoft.com/library/windows/apps/dn251728) property.
+新しいファイルが既定で保存されるライブラリのフォルダーを取得するには、[**StorageLibrary.SaveFolder**](https://msdn.microsoft.com/library/windows/apps/dn251728) プロパティの値を取得します。
 
 ```CSharp
     Windows.Storage.StorageFolder savePicturesFolder = myPictures.SaveFolder;
 ```
 
-## Add an existing folder to a library
+## ライブラリに既存のフォルダーを追加する
 
 
-To add a folder to a library, you call the [**StorageLibrary.RequestAddFolderAsync**](https://msdn.microsoft.com/library/windows/apps/dn251726). Taking the Pictures Library as an example, calling this method causes a folder picker to be shown to the user with an **Add this folder to Pictures** button. If the user picks a folder then the folder remains in its original location on disk and it becomes an item in the [**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) property (and in the built-in Photos app), but the folder does not appear as a child of the Pictures folder in File Explorer.
+ライブラリにフォルダーを追加するには、[**StorageLibrary.RequestAddFolderAsync**](https://msdn.microsoft.com/library/windows/apps/dn251726) を呼び出します。 画像ライブラリを例として考えた場合、このメソッドを呼び出すとフォルダー ピッカーが **[ピクチャにこのフォルダーを追加]** ボタンと共に表示されます。 ユーザーがフォルダーを選ぶと、フォルダーはディスク上の元の場所に残り、[**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) プロパティ (および組み込みのフォト アプリ) 内の項目となりますが、フォルダーはエクスプローラーでピクチャ フォルダーの子として表示されません。
 
 
 ```CSharp
     Windows.Storage.StorageFolder newFolder = await myPictures.RequestAddFolderAsync();
 ```
 
-## Remove a folder from a library
+## フォルダーをライブラリから削除する
 
 
-To remove a folder from a library, call the [**StorageLibrary.RequestRemoveFolderAsync**](https://msdn.microsoft.com/library/windows/apps/dn251727) method and specify the folder to be removed. You could use [**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) and a [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) control (or similar) for the user to select a folder to remove.
+フォルダーをライブラリから削除するには、[**StorageLibrary.RequestRemoveFolderAsync**](https://msdn.microsoft.com/library/windows/apps/dn251727) メソッドを呼び出して、削除するフォルダーを指定します。 [
+            **StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) と [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) コントロール (または同様のコントロール) を使って、ユーザーが削除するフォルダーを選べるようにすることができます。
 
-When you call [**StorageLibrary.RequestRemoveFolderAsync**](https://msdn.microsoft.com/library/windows/apps/dn251727), the user sees a confirmation dialog saying that the folder "won't appear in Pictures anymore, but won't be deleted." What this means is that the folder remains in its original location on disk, is removed from the [**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) property, and will no longer included in the built-in Photos app.
+[
+            **StorageLibrary.RequestRemoveFolderAsync**](https://msdn.microsoft.com/library/windows/apps/dn251727) を呼び出すと、フォルダーが "ピクチャに表示されなくなるが、削除されない" ことを示す確認ダイアログがユーザーに表示されます。 これは、フォルダーがディスク上の元の場所に残るが、[**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) プロパティから削除され、組み込みのフォト アプリには含まれなくなることを意味します。
 
-The following example assumes that the user has selected the folder to remove from a [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) control named **lvPictureFolders**.
+次の例では、ユーザーが削除するフォルダーを **lvPictureFolders** という名前の [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) コントロールから選んだことを前提としています。
 
 
 ```CSharp
     bool result = await myPictures.RequestRemoveFolderAsync(folder);
 ```
 
-## Get notified of changes to the list of folders in a library
+## ライブラリ内のフォルダーの一覧に対する変更の通知を受け取る
 
 
-To get notified about changes to the list of folders in a library, register a handler for the [**StorageLibrary.DefinitionChanged**](https://msdn.microsoft.com/library/windows/apps/dn251723) event of the library.
+ライブラリ内のフォルダーの一覧に対する変更について通知を受け取るには、ライブラリの [**StorageLibrary.DefinitionChanged**](https://msdn.microsoft.com/library/windows/apps/dn251723) イベントにハンドラーを登録します。
 
 
 ```CSharp
@@ -110,57 +113,57 @@ void HandleDefinitionChanged(Windows.Storage.StorageLibrary sender, object args)
 }
 ```
 
-## Media library folders
+## メディア ライブラリ フォルダー
 
 
-A device provides five predefined locations for users and apps to store media files. Built-in apps store both user-created media and downloaded media in these locations.
+デバイスには、ユーザーやアプリがメディア ファイルを格納するための定義済みの場所が 5 つ用意されています。 組み込みのアプリでは、ユーザーが作成したメディアとダウンロードしたメディアをこれらの場所に格納できます。
 
-The locations are:
+次の場所が定義されています。
 
--   **Pictures** folder. Contains pictures.
+-   **ピクチャ** フォルダー。 画像が格納されます。
 
-    -   **Camera Roll** folder. Contains photos and video from the built-in camera.
+    -   **カメラ ロール** フォルダー。 組み込みのカメラからの写真やビデオが格納されます。
 
-    -   **Saved Pictures** folder. Contains pictures that the user has saved from other apps.
+    -   **保存済みの写真**フォルダー。 ユーザーが他のアプリから保存した画像が格納されます。
 
--   **Music** folder. Contains songs, podcasts, and audio books.
+-   **ミュージック** フォルダー。 楽曲、ポッドキャスト、オーディオ ブックが格納されます。
 
--   **Video** folder. Contains videos.
+-   **ビデオ** フォルダー。 ビデオが格納されます。
 
-Users or apps may also store media files outside the media library folders on the SD card. To find a media file reliably on the SD card, scan the contents of the SD card, or ask the user to locate the file by using a file picker. For more info, see [Access the SD card](access-the-sd-card.md).
+ユーザーやアプリは、メディア ライブラリ フォルダーだけではなく、SD カード上にメディア ファイルを保存することもできます。 SD カード上のメディア ファイルを確実に検索するには、SD カードのコンテンツをスキャンするか、ファイル ピッカーを使ってファイルを検索するようにユーザーに対して要求します。 詳しくは、「[SD カードへのアクセス](access-the-sd-card.md)」をご覧ください。
 
-## Querying the media libraries
+## メディア ライブラリへの照会
 
 
-### Query results include both internal and removable storage
+### 内部ストレージとリムーバブル ストレージの両方が含まれるクエリ結果
 
-Users can choose to store files by default on the optional SD card. Apps, however, can opt out of allowing files to be stored on the SD card. As a result, the media libraries can be split across the device's internal storage and the SD card.
+ユーザーは、既定でオプションの SD カードにファイルを格納するように選ぶことができます。 また、アプリでは、ファイルが SD カードに格納されないようにすることができます。 その結果、メディア ライブラリがデバイスの内部ストレージと SD カードの両方に存在する可能性があります。
 
-You don't have to write additional code to handle this possibility. The methods in the [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) namespace that query known folders transparently combine the query results from both locations. You don't have to specify the **removableStorage** capability in the app manifest file to get these combined results, either.
+この状況を処理するために追加のコードを記述する必要はありません。 既知のフォルダーを照会する [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) 名前空間のメソッドが、両方の場所からのクエリ結果を透過的に結合します。 結合された結果を取得するために、アプリ マニフェスト ファイルで **removableStorage** 機能を指定する必要もありません。
 
-Consider the state of the device's storage shown in the following image:
+次の図に示すデバイスのストレージの状態について考えてみましょう。
 
-![images on the phone and sd card](images/phone-media-locations.png)
+![電話と SD カード上にある画像](images/phone-media-locations.png)
 
-If you query the contents of the Pictures Library by calling `await KnownFolders.PicturesLibrary.GetFilesAsync()`, the results include both internalPic.jpg and SDPic.jpg.
+`await KnownFolders.PicturesLibrary.GetFilesAsync()`を呼び出して、画像ライブラリのコンテンツを照会すると、その結果には internalPic.jpg と SDPic.jpg の両方が含まれます。
 
-### Deep queries
+### 深いクエリ
 
-Use the deep queries to enumerate the entire contents of a media library quickly.
+メディア ライブラリの内容全体をすばやく列挙するには、深いクエリを使います。
 
-The deep queries return only files of the specified media type. For example, if you query the Music Library with a deep query, the query results do not include any picture files found in the Music folder.
+深いクエリは、指定されたメディア タイプのファイルのみを返します。 たとえば、深いクエリでミュージック ライブラリを照会した場合、ミュージック フォルダー内に画像ファイルが検出されたとしても、クエリ結果には含まれません。
 
-On devices where the camera saves both a low-resolution image and a high-resolution image of every picture, the deep queries return only the low-resolution image.
+すべての画像について低解像度の画像と高解像度の画像の両方を保存するカメラ機能を備えたデバイスでは、深いクエリからは低解像度の画像のみが返されます。
 
-The Camera Roll and the Saved Pictures folder do not support the deep queries.
+[カメラ ロール] フォルダーと [保存済みの写真] フォルダーでは、深いクエリがサポートされていません。
 
-The following deep queries are available:
+使うことができる深いクエリは次のとおりです。
 
-**Pictures library**
+**ピクチャ ライブラリ**
 
 -   `GetFilesAsync(CommonFileQuery.OrderByDate)`
 
-**Music library**
+**ミュージック ライブラリ**
 
 -   `GetFilesAsync(CommonFileQuery.OrderByName)`
 -   `GetFoldersAsync(CommonFolderQuery.GroupByArtist)`
@@ -168,38 +171,38 @@ The following deep queries are available:
 -   `GetFoldersAysnc(CommonFolderQuery.GroupByAlbumArtist)`
 -   `GetFoldersAsync(CommonFolderQuery.GroupByGenre)`
 
-**Video library**
+**ビデオ ライブラリ**
 
 -   `GetFilesAsync(CommonFileQuery.OrderByDate)`
 
-### Flat queries
+### フラット クエリ
 
-To get a complete listing of all the files and folders in a library, call `GetFilesAsync(CommonFileQuery.DefaultQuery)`. This method returns all files in the library, regardless of their type. This is a shallow query, so you have to enumerate the contents of subfolders recursively if the user has created subfolders in the library.
+ライブラリに格納されているすべてのファイルとフォルダーの完全なリストを取得するには、`GetFilesAsync(CommonFileQuery.DefaultQuery)` を呼び出します。 このメソッドは、ライブラリ内のすべてのファイルをその種類に関係なく返します。 これは浅いクエリであるため、ユーザーによってライブラリにサブフォルダーが作成されていた場合は、独自のコードでサブフォルダーの内容を再帰的に列挙する必要があります。
 
-Use flat queries to return media files of types that are not recognized by the built-in queries, or to return all the files in a library, including files that are not of the specified type. For example, if you query the Music Library with a flat query, the query results include any picture files found by the query in the Music folder.
+組み込みクエリで認識されない種類のメディア ファイルを取得したり、特定の種類に該当しないファイルも含め、ライブラリ内のすべてのファイルを取得したりするには、フラット クエリを使います。 たとえば、フラット クエリでミュージック ライブラリを照会し、ミュージック フォルダー内に画像ファイルが検出された場合、そのファイルもすべてクエリ結果に含まれます。
 
-### Sample queries
+### サンプル クエリ
 
-Assume that the device and its optional SD card contain the folders and files shown in the following image:
+デバイスとそのオプションの SD カードに、次の画像に示すフォルダーとファイルが格納されているとします。
 
-![files on ](images/phone-media-queries.png)
+![格納されているファイル ](images/phone-media-queries.png)
 
-Here are a few examples of queries and the results that they return.
+以下に、クエリと返される結果の例をいくつか挙げます。
 
-| Query | Results |
+| クエリ | 結果 |
 |--------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
-| KnownFolders.PicturesLibrary.GetItemsAsync();  | - Camera Roll folder from internal storage <br>- Camera Roll folder from the SD card <br>- Saved Pictures folder from internal storage <br>- Saved Pictures folder from the SD card <br><br>This is a flat query, so only immediate children of the Pictures folder   are returned. |
-| KnownFolders.PicturesLibrary.GetFilesAsync();  | No results. <br><br>This is flat query, and the Pictures folder does not contain any files as its immediate children. |
-| KnownFolders.PicturesLibrary.GetFilesAsync(CommonFileQuery.OrderByDate); | - 4-3-2012.jpg file from the SD card <br>- 1-1-2014.jpg file from internal storage <br>- 1-2-2014.jpg file from internal storage <br>- 1-6-2014.jpg file from the SD card <br><br>This is a deep query, so the contents of the Pictures folder and of its   child folders are returned. |
-| KnownFolders.CameraRoll.GetFilesAsync(); | - 1-1-2014.jpg file from internal storage <br>- 4-3-2012.jpg file from the SD card <br><br>This is a flat query. The ordering of the results is not guaranteed. |
+| KnownFolders.PicturesLibrary.GetItemsAsync();  | - 内部ストレージからの [カメラ ロール] フォルダー <br>- SD カードからの [カメラ ロール] フォルダー <br>- 内部ストレージからの [保存済みの写真] フォルダー <br>- SD カードからの [保存済みの写真] フォルダー <br><br>これはフラット クエリであるため、ピクチャ フォルダーの直下にある子だけが返されます。 |
+| KnownFolders.PicturesLibrary.GetFilesAsync();  | 結果は返されません。 <br><br>これはフラット クエリです。ピクチャ フォルダーの直下に子のファイルは存在しません。 |
+| KnownFolders.PicturesLibrary.GetFilesAsync(CommonFileQuery.OrderByDate); | - SD カードからの 4-3-2012.jpg ファイル <br>- 内部ストレージからの 1-1-2014.jpg ファイル <br>- 内部ストレージからの 1-2-2014.jpg ファイル <br>- SD カードからの 1-6-2014.jpg ファイル <br><br>これは深いクエリであるため、ピクチャ フォルダーの内容とその子のフォルダーの内容が返されます。 |
+| KnownFolders.CameraRoll.GetFilesAsync(); | - 内部ストレージからの 1-1-2014.jpg ファイル <br>- SD カードからの 4-3-2012.jpg ファイル <br><br>これはフラット クエリです。 結果の順序は保証されません。 |
 
  
-## Media library capabilities and file types
+## メディア ライブラリの機能とファイルの種類
 
 
-Here are the capabilities that you can specify in the app manifest file to access media files in your app.
+アプリでメディア ファイルにアクセスするためにアプリ マニフェスト ファイルで指定できる機能を次に示します。
 
--   **Music**. Specify the **Music Library** capability in the app manifest file to let your app see and access files of the following file types:
+-   **音楽**。 次の種類のファイルをアプリで参照したりアクセスしたりするには、アプリ マニフェスト ファイルで**音楽ライブラリ**機能を指定します。
 
     -   .qcp
     -   .wav
@@ -220,7 +223,7 @@ Here are the capabilities that you can specify in the app manifest file to acces
     -   .adt
     -   .adts
     -   .pya
--   **Photos**. Specify the **Pictures Library** capability in the app manifest file to let your app see and access files of the following file types:
+-   **写真**。 次の種類のファイルをアプリで参照したりアクセスしたりするには、アプリ マニフェスト ファイルで**画像ライブラリ**機能を指定します。
 
     -   .jpeg
     -   .jpe
@@ -233,7 +236,7 @@ Here are the capabilities that you can specify in the app manifest file to acces
     -   .wdp
     -   .jxr
     -   .hdp
--   **Videos**. Specify the **Video Library** capability in the app manifest file to let your app see and access files of the following file types:
+-   **ビデオ**。 次の種類のファイルをアプリで参照したりアクセスしたりするには、アプリ マニフェスト ファイルで**ビデオ ライブラリ**機能を指定します。
 
     -   .wm
     -   .m4v
@@ -249,16 +252,16 @@ Here are the capabilities that you can specify in the app manifest file to acces
     -   .3gpp
     -   .3gp2
 
-## Working with photos
+## 写真の操作
 
 
-On devices where the camera saves both a low-resolution image and a high-resolution image of every picture, the deep queries return only the low-resolution image.
+すべての画像について低解像度の画像と高解像度の画像の両方を保存するカメラ機能を備えたデバイスでは、深いクエリからは低解像度の画像のみが返されます。
 
-The Camera Roll and the Saved Pictures folder do not support the deep queries.
+[カメラ ロール] フォルダーと [保存済みの写真] フォルダーでは、深いクエリがサポートされていません。
 
-**Opening a photo in the app that captured it**
+**撮影に使ったアプリで写真を開く**
 
-If you want to let the user open a photo again later in the app that captured it, you can save the **CreatorAppId** with the photo's metadata by using code similar to the following example. In this example, **testPhoto** is a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171).
+ユーザーが撮影に使ったアプリで後から再び写真を表示できるようにするには、写真のメタデータと一緒に **CreatorAppId** を保存します。次のコード例を参考にしてください。 この例では、**testPhoto** は [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) です。
 
 ```CSharp
   IDictionary<string, object> propertiesToSave = new Dictionary<string, object>();
@@ -269,12 +272,12 @@ If you want to let the user open a photo again later in the app that captured it
   testPhoto.Properties.SavePropertiesAsync(propertiesToSave).AsyncWait();   
 ```
 
-## Using stream methods to add a file to a media library
+## ストリーム メソッドを使ってメディア ライブラリにファイルを追加する
 
 
-When you access a media library by using a known folder such as **KnownFolders.PictureLibrary**, and you use stream methods to add a file to the media library, you have to make sure to close all the streams that your code opens. Otherwise these methods fail to add the file to the media library as expected because at least one stream still has a handle to the file.
+**KnownFolders.PictureLibrary** など、既知のフォルダーを使ってメディア ライブラリにアクセスし、ストリーム メソッドを使ってそのメディア ライブラリにファイルを追加するときは、コードで開いているすべてのストリームを閉じる必要があります。 そのようにしなかった場合、ファイルへのハンドルを保持しているストリームが少なくとも 1 つは存在することとなり、ストリーム メソッドは、メディア ライブラリに正しくファイルを追加できません。
 
-For example, when you run the following code, the file is not added to the media library. In the line of code, `using (var destinationStream = (await destinationFile.OpenAsync(FileAccessMode.ReadWrite)).GetOutputStreamAt(0))`, both the **OpenAsync** method and the **GetOutputStreamAt** method open a stream. However only the stream opened by the **GetOutputStreamAt** method is disposed as a result of the **using** statement. The other stream remains open and prevents saving the file.
+たとえば、以下のコードを実行したときに、メディア ライブラリにファイルが追加されません。 `using (var destinationStream = (await destinationFile.OpenAsync(FileAccessMode.ReadWrite)).GetOutputStreamAt(0))` のコード行において、**OpenAsync** メソッドと **GetOutputStreamAt** メソッドの両方がストリームを開いています。 しかし、**using** ステートメントの結果として破棄されるのは、**GetOutputStreamAt** メソッドによって開かれたストリームだけです。 もう一方のストリームは開いたままであり、そのことがファイルの保存を妨げます。
 
 ```CSharp
 StorageFolder testFolder = await StorageFolder.GetFolderFromPathAsync(@"C:\test");
@@ -290,7 +293,7 @@ using (var sourceStream = (await sourceFile.OpenReadAsync()).GetInputStreamAt(0)
 
 ```
 
-To use stream methods successfully to add a file to the media library, make sure to close all the streams that your code opens, as shown in the following example.
+ストリーム メソッドを正しく使ってメディア ライブラリにファイルを追加するには、以下の例のように、コード中で開いているストリームをすべて閉じてください。
 
 ```CSharp
 StorageFolder testFolder = await StorageFolder.GetFolderFromPathAsync(@"C:\test");

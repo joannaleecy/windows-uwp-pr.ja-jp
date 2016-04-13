@@ -1,235 +1,235 @@
 ---
-title: Plan your Universal Windows Platform (UWP) app
-description: On Microsoft design teams, our process for creating apps consists of five distinct stages--concept, structure, dynamics, visual, and prototype. We encourage you to adopt a similar process and have fun making new experiences for the world to enjoy.
+title: ユニバーサル Windows プラットフォーム (UWP) アプリの計画
+description: Microsoft のデザイン チームのアプリ作成プロセスは、5 つの段階 (概念、構造、ダイナミクス、視覚、プロトタイプ) で構成されています。 同様のプロセスを採用して、だれもが楽しめるエクスペリエンスを実現することをお勧めします。
 ms.assetid: 9A5189CD-3B97-4967-8E7D-36D25F04F244
 ---
 
-#  Plan your Universal Windows Platform (UWP) app
+#  ユニバーサル Windows プラットフォーム (UWP) アプリの計画
 
-On Microsoft design teams, our process for creating apps consists of five distinct stages: concept, structure, dynamics, visual, and prototype. We encourage you to adopt a similar process and have fun making new experiences for the world to enjoy.
+Microsoft のデザイン チームのアプリ作成プロセスは、5 つの段階 (概念、構造、ダイナミクス、視覚、プロトタイプ) で構成されています。 同様のプロセスを採用して、だれもが楽しめるエクスペリエンスを実現することをお勧めします。
 
-## Concept
+## 概念
 
-**Focus your app**
+**アプリに焦点を当てる**
 
-When planning your Universal Windows Platform (UWP) app, you should determine not only what your app will do and who it's for, but also what your app will be great at. At the core of every great app is a strong concept that provides a solid foundation.
+ユニバーサル Windows プラットフォーム (UWP) アプリを計画する際は、アプリの内容や対象ユーザーだけでなく、アプリの 1 番の特徴も決定する必要があります。 すべての優れたアプリの中心には、しっかりした基盤を提供する強力な概念があります。
 
-Say you want to create a photo app. Thinking about the reasons users work with, save, and share their photos, you’ll realize that they want to relive memories, connect with others through the photos, and keep the photos safe. These, then, are the things that you want the app to be great at, and you use these experience goals to guide you through the rest of the design process.
+たとえば、写真アプリを作るとします。 ユーザーが写真を操作、保存、共有する動機を考えてみると、写真で思い出をたどったり、写真を通じて他の人々と交流したり、写真を安全に保管したりすることであるとわかります。 次に、このような用途に適した写真アプリを作ることにします。このユーザー エクスペリエンスの目標を意識しながら、アプリの設計プロセスを進めていきましょう。
 
-**What's your app about?** Start with a broad concept and list all of the things that you want to help users do with your app.
+**何のためのアプリか** まず、大まかなコンセプトを決めます。ユーザーがアプリで何をできるようにするか、一覧にまとめてみましょう。
 
-For example, suppose you want to build an app that helps people plan their trips. Here are some ideas you might sketch out on the back of a napkin:
+たとえば、旅行の計画に使うアプリを作るとします。 次のように、頭に浮かんだアイデアをメモしてみましょう。
 
--   Get maps of all the places on an itinerary, and take them with you on the trip.
--   Find out about special events happening while you're in a city.
--   Let travel buddies create separate but shareable lists of must-do activities and must-see attractions.
--   Let travel buddies compile all of their photos to share with friends and family.
--   Get recommended destinations based on flight prices.
--   Find a consolidated list of deals for restaurants, shops, and activities around your destination.
+-   旅行計画に含まれている場所の地図をすべて集めて、旅行中もそれを携帯する。
+-   旅行先で滞在中に開催されるイベントを見つける。
+-   必ずするアクティビティや必ず見る観光名所の一覧を、旅行に行くメンバーが各自で作成し、他のメンバーも見られるようにする。
+-   旅行のメンバーが撮ったすべての写真をまとめて、友人や家族と共有する。
+-   航空料金に基づいて、お勧めの行き先を選ぶ。
+-   目的地周辺のレストラン、店舗、アクティビティが多数掲載されている情報源を見つける。
 
-![a design for a travel app](images/ux-triptracker-tab-phone-700.png)
+![旅行アプリのデザイン](images/ux-triptracker-tab-phone-700.png)
 
-**What's your app great at?** Take a step back and look at your list of ideas to see if a particular scenario really jumps out at you. Challenge yourself to trim the list to just a single scenario that you want to focus on. In the process, you might cross off many good ideas, but saying "no" to them is crucial to making a single scenario great.
+**アプリの 1 番の特徴は何か** すべてのアイデアを全体的に見て、特に目立つシナリオがないか考えてみます。 数多くのアイデアの中から絞り込んで、これに集中しようと思えるシナリオを 1 つだけ選びます。 優れたアイデアをたくさん捨てることになりますが、その 1 つのシナリオを良いものにしあげるには、いさぎよくアイデアを捨てることが肝心です。
 
-After you choose a single scenario, decide how you would explain to an average person what your app is great at by writing it down in one sentence. For example:
+シナリオを 1 つ選んだら、アプリの 1 番の特徴を普通の人に 1 行で伝えるにはどうしたらよいかを考えます。 例:
 
--   My travel app is great at helping friends create itineraries collaboratively for group trips.
--   My workout app is great at letting friends track their workout progress and share their achievements with each other.
--   My grocery app is great at helping families coordinate their weekly grocery shopping so they never miss or duplicate a purchase.
+-   この旅行アプリを使えば、友人どうしで協力してグループ旅行の計画を作り上げることができます。
+-   このワークアウト アプリを使うと、友人どうしでトレーニングの経過を記録して、互いに成果を見せることができます。
+-   この食料雑貨アプリを使うと、家族で毎週の食料雑貨を計画的に買うことができ、買い忘れや重複がなくなります。
 
-![a design for a collaboration tool](images/ux-collaboration-tabphone-700.png)
+![コラボレーション ツールのデザイン](images/ux-collaboration-tabphone-700.png)
 
-This is your app's "great at" statement, and it can guide many design decisions and tradeoffs that you make as you build your app. Focus on the scenarios you want users to experience in your app, and be careful not to turn this into a feature list. It should be about what your users will be able to do, as opposed to what your app will be able to do.
+このようにアプリの 1 番の特徴を示す説明文を作っておくと、アプリを作るプロセスで、設計上のさまざまな決定事項や妥協点を判断する際に役立ちます。 アプリでユーザーに提供するエクスペリエンスのシナリオを中心とした説明文にしますが、単なる機能一覧にならないように注意してください。 この説明文では、アプリが実行できる機能を説明するのではなく、ユーザーがこのアプリを使ってできることを説明します。
 
-**The design funnel**
+**じょうご型設計**
 
-It’s very tempting—having thought of an idea you like—to go ahead and develop it, perhaps even taking it quite a ways into production. But let’s say you do that and then another interesting idea comes along. It’s natural that you’ll be tempted to stick with the idea you’ve already invested in regardless of the relative merits of the two ideas. If only you’d thought of that other idea earlier in the process! Well, the design funnel is a technique to help uncover your best ideas as early as possible.
+運用環境に取り入れるまでの道のりは長いと思いますが、自由にアイデアを考えて、開発することはとても魅力的です。 ただし、仮にそれを実現したとして、新たに別の興味深いアイデアが思い付きます。 当然のことながら、2 つのアイデアの優劣にかかわらず、既に投資してきたアイデアにこだわろうとするでしょう。 その別のアイデアをプロセスのもっと早い段階で思い付いていればよかったのです。 そこで、じょうご型設計は、できるだけ早く最善のアイデアを発見するのに役立つ手法です。
 
-The term "funnel" comes from its shape. At the wide end of the funnel, many ideas go in and each one is realized as a very low-fidelity design artifact (a sketch, perhaps, or a paragraph of text). As this collection of ideas travels through toward the narrow end of the funnel, the number of ideas is trimmed down while the fidelity of the artifacts representing the ideas increases. Each artifact should capture only the information necessary to judge one idea against another, or to answer a particular question such as "is this usable, or intuitive?". *Put no more time and effort into each than that*. Some ideas will fall by the wayside as you test them, and you’ll be okay with that because you won’t be invested in them any more than was necessary to judge the idea. Ideas that survive to move further into the funnel will receive successively high-fidelity treatments. In the end, you’ll have a single design artifact that represents the winning idea. This is the idea that won because of its merits, not merely because it came along first. You will have designed the best app you could.
+"じょうご" という用語は、その形に由来しています。 じょうごの幅広の部分では、多くのアイデアが入ると、各アイデアが忠実度の非常に低い設計アーティファクト (スケッチ、テキストの段落) であるとわかります。 このように集められたアイデアがじょうごの狭い方に向かって移動するにつれ、アイデアを表すアーティファクトの忠実度が高まると同時にアイデアの数は削減されます。 各アーティファクトでは、アイデアどうしを比較して判定するため、または "これが使って便利なのか (つまり直感的に使えるのか)" などの特定の質問に答えるために必要な情報のみをキャプチャする必要があります。 *各アーティファクトにそれ以上の時間と労力を使わないでください*。 アイデアによっては、テスト時に途中で挫折することもありますが、そのアイデアの判定に必要以上に投資しないようにするため、それでかまいません。 じょうごの中でさらに残り続けるアイデアは、忠実度の高いものとして扱われます。 最終的には、魅力的なアイデアを表す 1 つの設計アーティファクトが残ることになります。 これは、単に最初に思い付いたからではなく、その利点によって残ったアイデアといえます。 これで、最適なアプリを設計できるでしょう。
 
-## Structure
+## 構造
 
 
-**Organization makes everything easier**
+**構成によってすべてが簡単になる**
 
-![organization makes everything easier](images/ux-vision-and-process-organization.png)
+![構成によってすべてが簡単になる](images/ux-vision-and-process-organization.png)
 
-When you're happy with your concept, you're ready for the next stage—creating your app's blueprint. Information architecture (IA) gives your content the structural integrity it needs. It helps define your app's navigational model and, ultimately, your app's identity. By planning how your content will be organized—and how your users will discover that content—you can get a better idea of how users will experience your app.
+概念に満足したら、次の段階としてアプリの青写真を作る準備に入ります。 情報アーキテクチャ (IA) により、コンテンツには、必要な構造的整合性が提供されます。 これは、アプリのナビゲーション モデルを定義し、最終的にアプリの ID を定義するのに役立ちます。 コンテンツをどのように整理するか、また、どうすればユーザーがそのコンテンツを見つけられるのかを計画することにより、ユーザーがアプリを使ったときのエクスペリエンスについて理解を深めることができます。
 
-Good IA not only facilitates user scenarios, but it helps you envision the key screens to start with. The [Audible](http://go.microsoft.com/fwlink/p/?LinkID=268089) app, for example, launches directly into a hub that provides access to the user's library, store, news, and stats. The experience is focused, so users can get and enjoy audiobooks quickly. Deeper levels of the app focus on more specific tasks.
+優れた IA は、ユーザーのシナリオを容易にするだけでなく、最初に主な画面を構想するのに役立ちます。 たとえば、[Audible](http://go.microsoft.com/fwlink/p/?LinkID=268089) アプリは、ユーザーのライブラリ、ストア、ニュース、統計情報へのアクセスを提供するハブを直接開始します。 エクスペリエンスが重視されているため、ユーザーはオーディオ ブックをすばやく取得して楽しむことができます。 アプリのより深いレベルでは、より具体的なタスクに焦点を当てています。
 
-For related guidelines, see [Navigation design basics](../layout/navigation-basics.md).
+関連するガイドラインについては、「[Windows ユニバーサル アプリのナビゲーション デザインの基本](../layout/navigation-basics.md)」をご覧ください。
 
-## Dynamics
+## ダイナミクス
 
-**Execute your concept**
+**概念の実現**
 
-If the concept stage is about defining your app's purpose, the dynamics stage is all about executing that purpose. This can be accomplished in many ways, such as using wireframes to sketch out your page flows (how you get from one place to the next within the app to achieve their goals), and thinking about the voice and the words used throughout your app's UI. Wireframes are a quick, low-fidelity tool to help you make critical decisions about your app's user flow.
+概念の段階でアプリの目的を定義した場合、ダイナミクスの段階ではその目的を遂行するだけです。 これを実現するには多くの方法があります。たとえば、ワイヤーフレームを使ってページ フロー (目的を果たすためにアプリ内のある場所から別の場所に移動する方法) をスケッチしたり、アプリの UI 全体で使う音声や言葉について考えたりします。 ワイヤーフレームは簡単ですが忠実度の低いツールで、アプリのユーザー フローについて重要な判断を行うのに役立ちます。
 
-Your app flow should be tightly tied to your "great at" statement, and should help users achieve that single scenario that you want to light up. Great apps have flows that are easy to learn, and require minimal effort. Start thinking on a screen-to-screen level—see your app as if you're using it for the first time. When you pinpoint user scenarios for pages you create, you'll give people exactly what they want without lots of unnecessary screen touches. Dynamics are also about motion. The right motion capabilities will determine fluidity and ease of use from one page to the next.
+アプリ フローは、"1 番の特徴" の説明文と関連していることが必要です。アプリ用に選んだ 1 つのシナリオを実現できるように、フローを作ります。 優れたアプリは、最小限の労力で覚えられるフローを備えています。 まずは画面間レベルで考えてみましょう。アプリを初めて使うかのように眺めてください。 作るページのユーザー シナリオを正確に示す場合、不要な画面タッチが多くならないように、必要なものだけを提供します。 ダイナミクスはアニメーションにも関連しています。 適切なアニメーション機能によって、ページ間の滑らかな動作と使いやすさが決まります。
 
-Common techniques to help with this step:
+この手順に役立つ一般的な方法:
 
--   Outline the flow: What comes first, what comes next?
--   Storyboard the flow: How should users move through your UI to complete the flow?
--   Prototype: Try out the flow with a quick prototype.
+-   フローの概要: 最初の操作とその次の操作を決める
+-   フローのストーリーボード: フロー完了までの UI 操作の順序を決める
+-   プロトタイプ: 簡単なプロトタイプを使ってフローをテストする
 
-**What should users be able to do?** For example, the travel app is "great at helping friends collaboratively create itineraries for group trips." Let's list the flows that we want to enable:
+**ユーザーは何をできるか** たとえば、旅行アプリを使うと "友人どうしで協力してグループ旅行の計画を作り上げる" ことができます。 必要なフローをリストにまとめましょう。
 
--   Create a trip with general information.
--   Invite friends to join a trip.
--   Join a friend's trip.
--   See itineraries recommended by other travelers.
--   Add destinations and activities to trips.
--   Edit and comment on destinations and activities that friends added.
--   Share itineraries for friends and families to follow.
+-   一般的な情報で旅行計画を作る。
+-   友人たちを旅行に誘う。
+-   友人の旅行に参加する。
+-   他の旅行者が勧める旅行計画を見る。
+-   目的地とアクティビティを旅行に追加する。
+-   友人たちが追加した目的地とアクティビティを編集したり、コメントを書いたりする。
+-   友人や家族に見てもらえるように旅行計画を共有する。
 
-## Visual
+## 視覚
 
-**Speak without words**
+**言葉を使わずに伝える**
 
-![a design for a cocktail creator app](images/ux-cocktailcreator-tab-phone.png)
+![カクテル作成アプリのデザイン](images/ux-cocktailcreator-tab-phone.png)
 
-Once you've established the dynamics of your app, you can make your app shine with the right visual polish. Great visuals define not only how your app looks, but how it feels and comes alive through animation and motion. Your choice of color palette, icon, and artwork are just a few examples of this visual language.
+アプリのダイナミクスを確立したら、アプリの外観を洗練して魅力的なものにすることができます。 優れた視覚効果として、アプリの外観だけでなく、アニメーションやモーションを使ってライブ感を出す方法を定義します。 選んだカラー パレット、アイコン、アートワークは、この視覚言語の一例です。
 
-All apps have their own unique identity, so explore the visual directions you can take with your app. Let the content guide the look and feel; don't let the look dictate your content.
+どのアプリにも独自の一意な ID があるため、アプリで利用できる視覚的な向きを確かめます。 コンテンツによって外観を誘導できます。つまり、外観によってコンテンツが決まるのではありません。
 
-## Prototype
+## プロトタイプ
 
-**Refine your masterpiece**
+**作品を絞り込む**
 
-Prototyping is a stage in the *design funnel*—a technique we talked about earlier—at which the artifact representing your idea develops into something more than a sketch, but less complicated than a complete app. A prototype might be a flow of hand-drawn screens shown to a user. The person running the test might respond to cues from the user by placing different screens down, or sticking or unsticking smaller pieces of UI on the pages, to simulate a running app. Or, a prototype might be a very simple app that simulates some workflows, provided the operator sticks to a script and pushes the right buttons. At this stage, your ideas begin to really come alive and your hard work is tested in earnest. When prototyping areas of your app, take the time to sculpt and refine the components that need it the most.
+プロトタイプは、*じょうご型設計* (既に説明した手法) における 1 つの段階です。ここでは、アイデアを表すアーティファクトが、スケッチ以上だが、完成したアプリほど複雑ではないレベルに進化します。 プロトタイプは、ユーザーに表示される画面を手書きで表したフローである場合があります。 テストの実行者は、実行中のアプリをシミュレートするために、さまざまな画面を下に配置したり、ページ上のいくつかの UI をくっつけたり離したりすることで、ユーザーのキューに応答する場合があります。 また、操作者がスクリプト最後まで実行して正しいボタンを押す場合、プロトタイプは複数のワークフローをシミュレートする非常にシンプルなアプリになります。 この段階で、アイデアは実際に実現性を帯び始め、これまで費やしてきた作業が本格的にテストされます。 アプリの領域のプロトタイプを作る場合、時間をかけて、最も必要なコンポーネントを調整して絞り込んでください。
 
-To new developers, we can't stress enough: Making great apps is an iterative process. We recommend that you prototype early and often. Like any creative endeavor, the best apps are the product of intensive trial and error.
+優れたアプリの作成とは反復プロセスであるということは、経験の少ない開発者にとっていくら強調してもしすぎることはありません。 初期段階から何度もプロトタイプを作ることをお勧めします。 創造力を養う努力と同様、最適なアプリは徹底的な試行錯誤による成果です。
 
-## Decide what features to include
+## アプリに含める機能を決める
 
-When you know what your users want and how you can help them get there, you can look at the specific tools in your toolbox. Explore the Universal Windows Platform (UWP) and associate features with your app's needs. Be sure to follow the [user experience (UX) guidelines](https://msdn.microsoft.com/library/windows/apps/hh465424.aspx) for each feature.
+ユーザーの目的を理解し、その目的を助ける方法もわかったら、次にすることは、それを実現するための機能を探すことです。 ユニバーサル Windows プラットフォーム (UWP) を調べて、アプリのニーズに対応する機能を探します。 各機能については、「[ユニバーサル Windows プラットフォーム (UWP) アプリのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465424.aspx)」に従ってください。
 <!--need URL for landing page -->
 
-Common techniques:
+一般的な方法:
 
--   Platform research: Find out what features the platform offers and how you can use them.
--   Association diagrams: Connect your flows with features.
--   Prototype: Exercise the features to ensure that they do what you need.
+-   プラットフォームの調査: プラットフォームにある機能を確かめて、どのように使えるかを考える。
+-   関連付けのダイアグラム: フローと機能を結び付ける。
+-   プロトタイプ: 機能をテストして、必要な働きができるかを確かめる。
 
-**App contracts**  Your app can participate in app contracts that enable broad, cross-app, cross-feature user flows.
+**アプリ コントラクト**  幅広いアプリ間ユーザー フローと機能間ユーザー フローを実現するアプリ コントラクトに、アプリを参加させることができます。
 
--   **Share**  Let your users share content from your app with other people through other apps, and receive shareable content from other people and apps, too.
--   **Play To**  Let your users enjoy audio, video, or images streamed from your app to other devices in their home network.
--   **File picker and file picker extensions**   Let your users load and save their files from the local file system, connected storage devices, HomeGroup, or even other apps. You can also provide a file picker extension so other apps can load your app's content.
+-   **共有**  ユーザーがアプリのコンテンツを他のアプリ経由で他のユーザーと共有できるだけでなく、他のユーザーやアプリの共有コンテンツを受け取ることもできるようにします。
+-   **リモート再生:**  オーディオ、ビデオ、またはイメージをアプリからホーム ネットワーク上の別のデバイスにストリーミングして楽しむことができます。
+-   **ファイル ピッカーとファイル ピッカーの拡張機能**   ユーザーがローカル ファイル システム、接続された記憶装置、ホームグループ、さらに他のアプリからファイルをアプリに読み込み、保存できるようにします。 また、ファイル ピッカーの拡張機能を使って、アプリのコンテンツを他のアプリに読み込むこともできます。
 
-For more info, see [App contracts and extensions](https://msdn.microsoft.com/library/windows/apps/hh464906).
+詳しくは、「アプリ コントラクトと拡張機能 (Windows ランタイム アプリ) ([App contracts and extensions](https://msdn.microsoft.com/library/windows/apps/hh464906))」をご覧ください。
 <!-- Win 8 page. Should have replacement. -->
 
-**Different views, form factors, and hardware configurations**  Windows puts users in charge and your app in the forefront. You want your app UI to shine on any device, using any input mode, in any orientation, in any hardware configuration, and in whatever circumstance the user decides to use it.
+**さまざまなビュー、フォーム ファクター、ハードウェア構成**  Windows では、ユーザーがさまざまな持ち方や向きでデバイスを構えるので、アプリもそれに対応する必要があります。 アプリの UI は、ユーザーが使うあらゆるデバイス、入力モード、向き、ハードウェア構成、状況で適切に表示される必要があります。
 
-**Touch first**  Windows provides a unique and distinctive touch experience that does more than simply emulate mouse functionality.
+**タッチ優先**  Windows では、独自の直感的なタッチ操作を使うことができます。これはマウスと同じように使えるだけではありません。
 
-For example, semantic zoom is a touch-optimized way to navigate through a large set of content. Users can pan or scroll through categories of content, and then zoom in on those categories to view more and more detailed information. You can use this to present your content in a more tactile, visual, and informative way than with traditional navigation and layout patterns like tabs.
+たとえば、セマンティック ズームは、大きなコンテンツ セットの中を移動するときにタッチ操作のメリットが活かした操作方法です。 パンまたはスクロールでコンテンツのカテゴリを移動し、カテゴリを拡大して詳しい情報を見ることができます。 タブなどの従来のナビゲーション手法やレイアウト パターンよりも、コンテンツを感覚的、視覚的に表現でき、多くの情報を示すことができます。
 
-Of course, you can take advantage of a number of touch interactions, like rotate, pan, swipe, and others. Learn more about [Touch and other user interactions](../input-and-devices/input-primer.md).
+もちろん、回転、パン、スワイプなどタッチ操作のさまざまな長所を利用できます。 詳しくは、「[操作のガイドライン](../input-and-devices/input-primer.md)」をご覧ください。
 
-**Engaging and fresh**  Be sure your app feels fresh and engages users with these standard experiences:
+**魅力と新鮮さ:**  アプリが新鮮に感じられ、次のような標準的なエクスペリエンスでユーザーを魅了できることが重要です。
 
--   **Animations**  Use our library of animations to make your app fast and fluid for your users. Help users understand context changes and tie experiences together with visual transitions. Learn more about [animating your UI](../graphics/animations-overview.md).
--   **Toast notifications**  Let your users know about time-sensitive or personally relevant content through toast notifications, and invite them back to your app even when your app is closed. Learn more about [tiles, badges, and toast notifications](../controls-and-patterns/tiles-badges-notifications.md).
--   **App tiles**  Provide fresh and relevant updates to entice users back into your app. There's more info about this in the next section. Learn more about [app tiles](../controls-and-patterns/tiles-and-notifications-creating-tiles.md).
+-   **アニメーション**  アニメーションのライブラリを使って、ユーザーにとってアプリを軽快で柔軟なものにすることができます。 コンテキストの変化がわかりやすく、視覚的な切り替えがエクスペリエンスに結び付きます。 詳しくは、[UI のアニメーション化](../graphics/animations-overview.md)についてのページをご覧ください。
+-   **トースト通知**  トースト通知によって、即時性が必要なコンテンツや個人的に関係のあるコンテンツをユーザーに知らせ、アプリが非表示の場合は、アプリを表示するようにユーザーに促します。 詳しくは、[タイル、バッジ、トースト通知](../controls-and-patterns/tiles-badges-notifications.md)についてのページをご覧ください。
+-   **アプリ タイル**  ユーザーと関連性の深い最新の更新情報を知らせて、ユーザーがアプリを開くように誘います。 次のセクションで詳しく説明します。 詳しくは、「[アプリ タイル](../controls-and-patterns/tiles-and-notifications-creating-tiles.md)」をご覧ください。
 
-**Personalization**
+**個人設定**
 
--   **Settings**  Let your users create the experience they want by saving app settings. Consolidate all of your settings on one screen, and then users can configure your app through a common mechanism that they are already familiar with. Learn more about [Adding app settings](../app-settings/app-settings-and-data.md).
--   **Roaming**  Create a continuous experience across devices by roaming data that lets users pick up a task right where they left off and preserves the UX they care most about, regardless of the device they're using. Make it easy to use your app anywhere—their kitchen family PC, their work PC, their personal tablet, and other form factors—by maintaining settings and states with roaming. Learn more about [Managing application data](../app-settings/store-and-retrieve-app-data.md) and see [Guidelines for roaming application data](https://msdn.microsoft.com/library/windows/apps/hh465094).
--   **User tiles**   Make your app more personal to your users by loading their user tile image, or let the users set content from your app as their personal tile throughout Windows.
+-   **設定**  アプリ設定を保存することによって、ユーザーは好みのエクスペリエンスを作ることができます。 すべての設定を 1 つの画面にまとめて、ユーザーが使い慣れた一般的なメカニズムでアプリを構成できるようにします。 詳しくは、「[アプリ設定の追加](../app-settings/app-settings-and-data.md)」をご覧ください。
+-   **ローミング**  データのローミングによってデバイス間で連続性のあるエクスペリエンスを実現し、ユーザーが作業を中断したところから再開できるようにすると共に、使われているデバイスに関係なく、ユーザーが最も重視する UX を保持できるようにします。 設定と状態をローミングによって維持することで、キッチンで家族が使う PC、仕事用 PC、個人用のタブレット、その他のフォーム ファクターなど、どこにいてもアプリを快適に使えるようにします。 詳しくは、「[アプリケーション データの管理](../app-settings/store-and-retrieve-app-data.md)」と「[アプリケーション データのローミングのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465094)」をご覧ください。
+-   **ユーザー タイル**   ユーザーがアプリを個人設定で使えるようにします。ユーザーのイメージを読み込んだり、アプリからのコンテンツを Windows で個人用タイルとして設定できるようにします。
 
-**Device capabilities**  Be sure your app takes full advantage of the capabilities of today's devices.
+**デバイスの機能:**  最新のデバイスの機能をアプリで十分に活用してください。
 
--   **Proximity gestures**  Let your users connect devices with other users who are physically in close proximity, by physically tapping the devices together (multiplayer games). Learn more about [proximity and tapping](https://msdn.microsoft.com/library/windows/apps/hh465229).
--   **Cameras and external storage devices**  Connect your users to their built-in or plugged-in cameras for chatting and conferencing, recording vlogs, taking profile pics, documenting the world around them, or whatever activity your app is great at. Learn more about [Accessing content on removable storage](https://msdn.microsoft.com/library/windows/apps/hh465189).
--   **Accelerometers and other sensors**     Devices come with a number of sensors nowadays. Your app can dim or brighten the display based on ambient light, reflow the UI if the user rotates the display, or react to any physical movement. Learn more about [sensors](../devices-sensors/sensors.md).
--   **Geolocation**  Use geolocation information from standard web data or from geolocation sensors to help your users get around, find their position on a map, or get notices about nearby people, activities, and destinations. Learn more about [geolocation](https://msdn.microsoft.com/library/windows/apps/hh465139).
+-   **近接ジェスチャ**  ユーザーは、複数のデバイスを物理的に "タップ" することで、物理的に近くにいる他のユーザーとデバイスを接続できます (マルチプレイヤー ゲーム)。 詳しくは、「[近接通信とタップのサポート](https://msdn.microsoft.com/library/windows/apps/hh465229)」をご覧ください。
+-   **カメラと外部記憶装置**  内蔵カメラまたは接続されたカメラを利用します。チャットや電話会議、ビデオ ログの記録、プロファイル写真の撮影、日常的な文書作成など、アプリの特徴に応じたさまざまな活動に使うことができます。 詳しくは、[リムーバブル ストレージのコンテンツへのアクセス](https://msdn.microsoft.com/library/windows/apps/hh465189)についてのページをご覧ください。
+-   **加速度計やその他のセンサー**     最新のデバイスはさまざまなセンサーを備えています。 アプリでは、環境光に応じてディスプレイの明るさを調節したり、ユーザーがディスプレイの向きを変えたときに UI を自動的に再配置したり、物理的な動きに応じて処理を行ったりできます。 詳しくは、[センサー](../devices-sensors/sensors.md)についてのページをご覧ください。
+-   **地理位置情報**  標準的な Web データまたは地理位置情報センサーからの地理位置情報を使って、ユーザーの移動や地図上での位置確認、または近くのユーザー、アクティビティ、目的地に関するユーザー通知を支援します。 詳しくは、[地理位置情報](https://msdn.microsoft.com/library/windows/apps/hh465139)についてのページをご覧ください。
 
-Let's consider the travel app example again. To be great at helping friends collaboratively create itineraries for group trips, you could use some of these features, just to name a few:
+旅行アプリの例についてもう一度考えてみましょう。 友人どうしで協力してグループ旅行の計画を作り上げるアプリには、次のような機能があるとよいかもしれません。
 
--   Share: Users share upcoming trips and their itineraries to multiple social networks to share the pre-trip excitement with their friends and families.
--   Search: Users search for and find activities or destinations from others' shared or public itineraries that they can include in their own trips.
--   Notifications: Users are notified when travel companions update their itineraries.
--   Settings: Users configure the app to their preference, like which trip should bring up notifications or which social groups are allowed to search the users' itineraries.
--   Semantic zoom: Users navigate through the timeline of their itinerary and zoom in to see greater details of the long list of activities they've planned.
--   User tiles: Users choose the picture they want to appear when they share their trip with friends.
+-   共有: 次の旅行の計画を複数のソーシャル ネットワークで公開して、旅行前の楽しみを家族や友人と分かち合います。
+-   検索: 他の共有された旅行計画や公開された旅行計画を検索して、アクティビティや目的地を探し、自分たちの旅行に取り入れることができます。
+-   通知: 旅行の仲間が旅行計画を更新したときに、通知を受け取ります。
+-   設定: 通知する旅行、旅行計画の検索用を許可するソーシャル グループなどの設定をユーザーが構成できます。
+-   セマンティック ズーム: ユーザーは旅行計画のタイムラインを閲覧しながら、数多くの計画済みアクティビティを必要に応じて拡大表示し、詳しい内容を見ることができます。
+-   ユーザー タイル: 友人と旅行を共有するときに表示する画像を選択できます。
 
-## Decide how to monetize your app
+## アプリで収益を得る方法を決める
 
-You have a lot of options for earning money from your app. If you decide to use in-app ads or sales, you'll want to design your UI to support that. For more information, see [Plan for monetization](../monetize/index.md).
+さまざまな方法でアプリから収益を得られます。 アプリ内の広告や販売を使う場合は、それに対応するように UI を設計します。 詳しくは、「[収益の計画](../monetize/index.md)」をご覧ください。
 
-## Design the UX for your app
+## アプリの UX を設計する
 
-This is about getting the basics right. Now that you know what your app is great at, and you've figured out the flows that you want to support, you can start to think about the fundamentals of user experience (UX) design.
+ここでは、適切な基本構造を作ります。 アプリの 1 番の特徴が決まり、サポートするフローも決まったので、次はユーザー エクスペリエンス (UX) 設計の基本構造を検討します。
 
-**How should you organize UI content?**   Most app content can be organized into some form of groupings or hierarchies. What you choose as the top-level grouping of your content should match the focus of your "great at" statement.
+**UI コンテンツをどのようにまとめるか**   ほとんどのアプリ コンテンツは、特定の形式のグループまたは階層にまとめることができます。 コンテンツの最上位グループの内容は、1 番の特徴の説明文に沿ったものにします。
 
-To use the travel app as an example, there are multiple ways to group itineraries. If the focus of the app is discovering interesting destinations, you might group them based on interest, like adventure, fun in the sun, or romantic getaways. However, because the focus of the app is planning trips with friends, it makes more sense to organize itineraries based on social circles, like family, friends, or work.
+旅行アプリを例に考えてみましょう。旅行計画をグループ化する方法はいくつかあります。 アプリの主な目的が興味深い目的地を見つけることであれば、冒険旅行、リゾート旅行、ロマンチックな休暇旅行など、興味の対象ごとにグループ化できます。 しかし、このアプリの主な目的は友人と協力して旅行計画を立てることなので、家族、友人、同僚など、ソーシャル グループごとに旅行計画を整理する方が理にかなっています。
 
-Choosing how you want to group your content helps you decide what pages or views you need in your app. See UI basics for more info.
+コンテンツのグループ化の方法が決まると、アプリにどのようなページやビューが必要なのかがわかります。 詳しくは、「UI の基本」をご覧ください。
 
-**How should you present UI content?** After you've decided how to organize your UI, you can define UX goals that specify how your UI gets built and presented to your user. In any scenario, you want to make sure that your user can continue using and enjoying your app as quickly as possible. To do this, decide what parts of your UI need to be presented first, and make sure that those parts are complete before you spend time building the noncritical parts.
+**UI コンテンツをどのように表示するか** UI をまとめる方法が決まったら、UI がどのように構築され、ユーザーに表示されるかを指定する、UX の目標を定義できます。 どのシナリオでも、できるだけ早くユーザーがアプリを楽しんで使い続けることができるようにする必要があります。 これを行うには、最初にユーザーに表示する UI の部分を決めて、その部分を完成させてから、その他の重要でない部分の構築に時間を使う必要があります。
 
-In the travel app, probably the first thing the user will want to do in the app is find a specific trip itinerary. To present this info as fast as possible, you should show the list of trips first, using a **ListView** control.
+旅行アプリでは、ユーザーはまず具体的な旅行計画を探します。 この情報をできるだけ早くユーザーに表示するには、まず **ListView** コントロールを活用して、旅行の一覧を表示します。
 
-![a design for the itinerary selector in a travel app](images/ux-app-travel-cc-a-1-180.png)
+![旅行アプリの旅行計画セレクターのデザイン](images/ux-app-travel-cc-a-1-180.png)
 
-After showing the trips list, you could start loading other features, like a news feed of their friends' trips.
+旅行の一覧が表示されると、友人の旅行のニュース フィードなどの機能の読み込みが始まります。
 
-**What UI surfaces and commands do you need?**   Review the flows that you identified earlier. For each flow, create a rough outline of the steps users take.
+**必要な UI サーフェスとコマンドは何か**   前の手順で決めたフローをもう一度見てみます。 各フローについて、ユーザーが行う手順を大まかに作成します。
 
-Let's look at the "Share itineraries for friends and families to follow" flow. We'll assume that the user has already created a trip. Sharing a trip itinerary might require these steps:
+たとえば、"友人や家族が旅行計画を確認できるように共有する" フローで考えてみましょう。 ユーザーが既に旅行計画を立てているとします。 旅行計画を共有するには、次の手順が必要です。
 
-1.  The user opens the app and sees a list of trips she created.
-2.  The user taps on the trip she wants to share.
-3.  The details of the trip appear on screen.
-4.  The user accesses some UI to initiate sharing.
-5.  The user selects or enters the email address or name of the friend she wants to share the trip with.
-6.  The user accesses some UI to finalize sharing.
-7.  Your app updates the trip details with the list of people she has shared her trip with.
+1.  アプリを開き、作成した旅行の一覧を表示します。
+2.  共有する旅行をタップします。
+3.  旅行の詳しい内容が画面に表示されます。
+4.  共有を開始するための UI を操作します。
+5.  旅行を共有したい友人のメール アドレスまたは名前を選ぶか、入力します。
+6.  共有の操作を完了するための UI を操作します。
+7.  アプリの旅行の情報が更新され、旅行計画を共有するメンバーの一覧が反映されます。
 
-During this process, you begin to see what UI you need to create and the additional details you need to figure out (like drafting a standard email boilerplate for friends who aren't using your app yet). You also can start eliminating unnecessary steps. Perhaps the user doesn't actually need to see the details of the trip before sharing, for example. The cleaner the flow, the easier to use.
+このプロセスによって、作る必要のある UI と、さらに作り込みが必要な部分 (アプリをまだ使っていない友人に送るメールの定型文を考えるなど) を把握することができます。 さらに、不要な手順を削る作業も始めます。 たとえば、旅行の詳しい内容を共有前に実際に見る必要はないかもしれません。 フローが整理されると使いやすくなります。
 
-For more details on how to use different surfaces, take a look at <!--[Command design basics](../layout/commanding-basics.md)-->.
+さまざまなサーフェスを使う方法について詳しくは、「Windows ユニバーサル アプリのコマンド設計の基本」をご覧ください。 <!--[Command design basics](../layout/commanding-basics.md)-->.
 
-**What should the flow feel like?** When you have defined the steps your user will take, you can turn that flow into performance goals. For more info, see [Plan for performance](../debug-test-perf/planning-and-measuring-performance.md).
+**フローをどのようにするか** ユーザーの手順を定義したら、そのフローをパフォーマンスの目標にします。 詳しくは、「[パフォーマンスの計画](../debug-test-perf/planning-and-measuring-performance.md)」をご覧ください。
 
-**How should you organize commands?**  Use your outline of the flow steps to identify potential commands that you need to design for. Then think about where to use those commands in your app.
+**コマンドをどのように配置するか**  大まかなフロー手順に従って、設計する必要のあるコマンドを決めます。 次に、アプリのどこでコマンドを使うかを考えます。
 
--   **Always try to use the content.**  Whenever possible, let users directly manipulate the content on the app's canvas, rather than adding commands that act on the content. For example, in the travel app, let users rearrange their itinerary by dragging and dropping activities in a list on the canvas, rather than by selecting the activity and using Up or Down command buttons.
--   **If you can't use the content.** Place commands on one of these UI surfaces if you are not able to use the content:
+-   **できるだけコンテンツを直接操作できるようにする。**  できる限り、コンテンツを操作するコマンドを用意せず、アプリのキャンバス上でユーザーがコンテンツを直接操作できるようにします。 たとえば、旅行アプリで旅行計画を編集するときに、リスト内のアクティビティを上下に移動するコマンド ボタンを使うのではなく、キャンバスのリスト上でアクティビティをドラッグ アンド ドロップできるようにします。
+-   **コンテンツを直接操作できない場合。** コンテンツを直接操作できない場合は、コマンドを次の UI サーフェスのいずれかに配置します。
 
-    -   In the [command bar](https://msdn.microsoft.com/library/windows/apps/hh465302): You should put most commands on the command bar, which is usually hidden until the user taps to make it visible.
-    -   On the app's canvas: If the user is on a page or view that has a single purpose, you can provide commands for that purpose directly on the canvas. There should be very few of these commands.
-    -   In a [context menu](https://msdn.microsoft.com/library/windows/apps/hh465308): You can use context menus for clipboard actions (such as cut, copy, and paste), or for commands that apply to content that cannot be selected (like adding a push pin to a location on a map).
+    -   [コマンド バー](https://msdn.microsoft.com/library/windows/apps/hh465302): コマンドはできる限りコマンド バーに配置してください。通常、コマンド バーは非表示になっており、ユーザーがタップすると表示されます。
+    -   アプリのキャンバス上: 目的が 1 つに限られているページまたはビューは、その目的用のコマンドをキャンバス上に直接配置できます。 しかし、このようなコマンドはなるべく作らないでください。
+    -   [ショートカット メニュー](https://msdn.microsoft.com/library/windows/apps/hh465308): クリップボードの操作 (切り取り、コピー、貼り付けなど) や、選択できないコンテンツに実行するコマンド (地図の目的の位置にピンを追加するなど) に使うことができます。
 
-**Decide how to lay out your app in each view.**  Windows supports landscape and portrait orientations and supports resizing apps to any width, from full screen to a minimum width. You want your app to look and work great at any size, on any screen, in either orientation. This means you need to plan the layout of your UI elements for different sizes and views. When you do this, your app UI changes fluidly to meet your user's needs and preferences.
+**各ビューでアプリを準備する方法を決定します。**  Windows では横向きと縦向きがサポートされ、全画面表示から最小幅にいたるまで、アプリの幅をあらゆるサイズに変更できます。 アプリは、任意のサイズの任意の画面で、どの向きでも適切に表示され、機能することが望まれます。 つまり、さまざまなサイズとビューについて、UI 要素のレイアウトを計画する必要があります。 そうすることで、ユーザーのニーズと好みに合わせてアプリ UI が柔軟に変化します。
 
-![pc and mobile designs for an app](images/ux-budgettracker1-md-notablet.png)
+![PC とモバイルにおけるアプリのデザイン](images/ux-budgettracker1-md-notablet.png)
 
-For more info on designing for different screen sizes, see <!--[Responsive design 101](designing-in-effective-pixels.md)-->.
+さまざまな画面サイズ用のデザインについて詳しくは、「ユニバーサル Windows プラットフォーム (UWP) アプリ用レスポンシブ デザイン 101」をご覧ください。 <!--[Responsive design 101](designing-in-effective-pixels.md)-->.
 
-## Make a good first impression
+## 第一印象を良くする
 
-Think about what you want users to think, feel, or do when they first launch your app. Refer back to your "great at" statement. Even though you won't get a chance to personally tell your users what your app is great at, you can convey the message to them when you make your first impression. Take advantage of these:
+初めてアプリを起動したユーザーがどのように思ったり感じたりするかを考えましょう。 アプリの "1 番の特徴" の説明文を再確認します。 アプリの 1 番の特徴をユーザーに直接説明できなくても、第一印象を演出することでメッセージを伝えることができます。 次の機能を利用します。
 
-**Tile and notifications**    The tile is the face of your app. Among the many other apps on a user's Start screen, what will make the user want to launch your app? Be sure your tile highlights your app's brand and shows what the app is great at. Use tile notifications so your app will always feel fresh and relevant, bringing the user back to your app again and again.
+**タイルと通知**    タイルはアプリの顔です。 ユーザーのスタート画面に表示される数多くのアプリの中から自分のアプリが起動される決め手になるのは、何でしょうか。 タイルでアプリのブランドを明確にして、アプリの特徴を示すようにします。 アプリで常に最新の役立つ情報が伝えられるようにタイル通知を使うことで、ユーザーがアプリを繰り返し利用するようにします。
 
-**Splash screen**  The splash screen should load as fast as possible, and remain on the screen only as long as you need to initialize your app state. What you show on the splash screen should express your app's personality.
+**スプラッシュ画面**  スプラッシュ画面はできるだけ短時間で読み込む必要があります。この画面は、アプリの状態を初期化する必要が生じない限り画面上に維持する必要があります。 スプラッシュ画面の表示内容で、アプリの特徴を伝えます。
 
-**First launch**  Before users sign up for your service, log in to their account, or add their own content, what will they see? Try to demonstrate the value of your app before asking users for information. Consider showing sample content so people can look around and understand what your app does before you ask them to commit.
+**初めての起動**  ユーザーがサービスの新規登録、アカウントへのログイン、独自のコンテンツの追加を行う前に、ユーザーに対して何を表示しますか。 ユーザーに情報を求める前に、アプリの価値をアピールします。 アプリを使ってもらうためには、ユーザーが自由に見ることのできるサンプル コンテンツを表示して、どのようなアプリなのかを知ってもらうのもよいでしょう。
 
-**Home page**  The home page is where you bring users each time they launch your app. The content here should have a clear focus, and immediately showcase what your app is tailored to do. Make this page great at one thing and trust that people will explore the rest of your app. Focus on eliminating distractions on the landing page, and not on discoverability.
+**ホーム ページ**  ホーム ページとは、ユーザーがアプリを起動するたびに表示されるページです。 ここに表示されるコンテンツは、目的をはっきりさせ、アプリの特徴がすぐにわかるようにする必要があります。 このページでは、1 番の特徴だけを強調します。アプリの他の部分はユーザーが探し出してくれることを期待しましょう。 ランディング ページでは、ユーザーがアプリの特徴に気付きやすくするのではなく、散漫な印象を与えないようにすることを重視してください。
 
-## Validate your design
+## 設計を検証する
 
-Before you get too far into developing your app, you should validate your design or prototype against guidelines, user impressions, and requirements to avoid having to rework it later. Each feature has a set of UX guidelines to help you polish your app, and a set of Store requirements that you must meet to publish your app in the Windows Store. You can use [the Windows App Certification Kit](https://dev.windows.com/develop/app-certification-kit) to test for technical compliance with Store requirements. You can also use the performance tools in Microsoft Visual Studio to make sure that you're giving your users a great experience in every scenario.
+設計のやり直しを避けるために、アプリの開発があまり進まないうちに、設計内容またはプロトタイプをガイドライン、ユーザーの印象、要件に照らして検証します。 それぞれの機能について、アプリの改善に役立つ UX ガイドラインと、Windows ストアでアプリを公開するために必要なストア要件があります。 [Windows アプリ認定キット](https://dev.windows.com/develop/app-certification-kit)を使って、ストア要件を技術的に満たすかどうかのテストを実行できます。 また、Microsoft Visual Studio のパフォーマンス ツールを使って、すべてのシナリオでユーザーに快適なエクスペリエンスを提供しているかどうかを確認できます。
 
-Use the [detailed UX guidelines for UWP apps](https://msdn.microsoft.com/library/windows/apps/hh465424) to stay focused on important features. Use the [Visual Studio performance tools](https://msdn.microsoft.com/library/windows/apps/hh696636.aspx) to analyze the performance of each of your app's scenarios.
+[UWP アプリの詳細な UX ガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465424)を使って、重要な機能に集中して取り組みます。 [Visual Studio パフォーマンス ツール](https://msdn.microsoft.com/library/windows/apps/hh696636.aspx)を使って、各アプリのシナリオのパフォーマンスを分析します。
 
 
 <!--HONumber=Mar16_HO1-->

@@ -1,27 +1,27 @@
 ---
-Description: The Windows Dev Center dashboard lets you manage and submit all of your apps for Windows devices in one place.
-title: Using the Windows Dev Center dashboard
+Description: Windows デベロッパー センター ダッシュボードを利用すると、Windows デバイス向けのすべてのアプリの管理と申請を 1 か所で行うことができます。
+title: Windows デベロッパー センター ダッシュボードの使用
 ms.assetid: FB63F773-71AC-464E-BDE1-21C429FB2B0B
 ---
 
-# Using the Windows Dev Center dashboard
+# Windows デベロッパー センター ダッシュボードの使用
 
 
-The Windows Dev Center dashboard lets you manage and submit all of your apps for Windows devices in one place.
+Windows デベロッパー センター ダッシュボードを利用すると、Windows デバイス向けのすべてのアプリの管理と申請を 1 か所で行うことができます。
 
-> **Note**   You must have a [developer account](http://go.microsoft.com/fwlink/p/?LinkId=615100) in order to access the Windows Dev Center dashboard.
+> **注**   Windows デベロッパー センター ダッシュボードにアクセスするには、[開発者アカウント](http://go.microsoft.com/fwlink/p/?LinkId=615100)が必要です。
 
-When you create a [create a submission for your app](app-submissions.md) (for the first time or as an update), you can [upload app packages](upload-app-packages.md) for any supported operating system, and the Store will automatically offer customers the package that will work best for them. You can use the same [descriptions](create-app-descriptions.md) and [artwork](app-screenshots-and-images.md) for all of the operating systems your app supports, or you can [customize the description for specific platforms](create-platform-specific-descriptions.md).
+[アプリの申請を作成](app-submissions.md) (新規作成または更新) するとき、サポートされているオペレーティング システムに対応した[アプリ パッケージをアップロード](upload-app-packages.md)できます。ストアでは、最適なパッケージがユーザーに対して自動的に提供されます。 アプリがサポートするオペレーティング システムすべてに対して同じ[説明](create-app-descriptions.md)と[アートワーク](app-screenshots-and-images.md)を使うこともできますし、[特定のプラットフォーム向けに説明をカスタマイズ](create-platform-specific-descriptions.md)することもできます。
 
-In-app products (IAPs) are managed independently of your app's submission. This brings you greater flexibility and the ability to make changes independently. For more info, see [IAP submissions](iap-submissions.md).
+アプリ内製品 (IAP) は、アプリの申請とは別に管理されます。 これにより、IAP をさらに柔軟に変更できるようになります。 詳しくは、「[IAP の申請](iap-submissions.md)」をご覧ください。
 
-The Dev Center dashboard also offers capabilities for [app management and configuring services](app-management-and-services.md), [reviewing analytic data](analytics.md), [payout reporting](payout-summary.md), [promotion and customer engagement](app-promotion-and-customer-engagement.md), [beta testing](beta-testing-and-targeted-distribution.md), [distributing LOB apps to enterprises](distribute-lob-apps-to-enterprises.md), and much more.
+デベロッパー センター ダッシュボードでは、[アプリの管理および構成サービス](app-management-and-services.md)、[分析データの確認](analytics.md)、[支払いレポート](payout-summary.md)、[アプリの宣伝と顧客エンゲージメントの獲得](app-promotion-and-customer-engagement.md)、[ベータ テスト](beta-testing-and-targeted-distribution.md)、[LOB アプリの企業への配布](distribute-lob-apps-to-enterprises.md)などの機能も提供されます。
 
-## Tips for using the unified dashboard
+## 統合ダッシュボードを使うためのヒント
 
-If you had previously published apps for Windows 8.1, Windows Phone 8.1, or earlier OS versions, take a look at [How your app appears in the Store for Windows 10 customers](how-your-app-appears-in-the-store-for-windows-10-customers.md) to find out more about some of the changes in your app's listing for Windows 10 customers, and how we categorize your app's info in the new dashboard.
+Windows 8.1、Windows Phone 8.1、またはそれ以前の OS バージョン向けのアプリを公開したことがある場合は、「[ストアにおける Windows 10 ユーザー向けのアプリの表示形式](how-your-app-appears-in-the-store-for-windows-10-customers.md)」をご覧になり、Windows 10 ユーザーに対応したアプリの掲載ページの変更、および新しいダッシュボードでアプリの情報がどのように分類されるかについて、詳しい情報を確認してください。
 
-Apps that were linked to share identity in the earlier Windows Phone Dev Center and Windows Store dashboard will appear as the same app in the Dev Center dashboard. No matter which OS versions your app supports, you'll manage it as one app. The app will share the same details, such as price and category, across device types.
+以前の Windows Phone デベロッパー センターと Windows ストア ダッシュボードで ID を共有するようにリンクされたアプリは、デベロッパー センター ダッシュボードで同じアプリとして表示されます。 アプリがサポートする OS のバージョンにかかわらず、それらのアプリを 1 つのアプリとして管理します。 アプリの詳細 (価格やカテゴリなど) は、デバイスの種類間で同一になります。
 
  
 

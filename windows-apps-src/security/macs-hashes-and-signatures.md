@@ -2,6 +2,7 @@
 title: MAC、ハッシュ、および署名
 description: この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリでメッセージ認証コード (MAC)、ハッシュ、署名を使ってメッセージの改ざんを検出する方法について説明します。
 ms.assetid: E674312F-6678-44C5-91D9-B489F49C4D3C
+author: awkoren
 ---
 
 # MAC、ハッシュ、および署名
@@ -193,15 +194,6 @@ public void SampleReusableHash()
             **AsymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241478) オブジェクトを使って、利用できる署名アルゴリズムを列挙したり、キー ペアを生成またはインポートしたりできます。 [
             **CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) クラスの静的メソッドを使って、メッセージに署名したり、署名を検証したりできます。
 
- 
-
- 
-
-
-
-
-
-
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=Mar16_HO5-->
 
 

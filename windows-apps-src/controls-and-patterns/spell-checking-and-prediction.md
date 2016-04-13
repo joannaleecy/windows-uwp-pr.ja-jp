@@ -1,62 +1,62 @@
 ---
-Description: During text entry and editing, spell checking informs the user that a word is misspelled by highlighting it with a red squiggle and providing a way for the user to correct the misspelling.
-title: Spell checking and text prediction
+Description: テキストの入力と編集を行っているときに、スペル チェックは単語を赤い波線で強調表示してユーザーに単語のスペルの間違いを知らせ、それを修正する方法を提供します。
+title: スペル チェックと予測入力
 ms.assetid: B867C956-5AB2-4207-A8DE-179CE7871180
-label: Spell checking and text prediction
+label: スペル チェックと予測入力
 template: detail.hbs
 ---
 
-# Guidelines for spell checking
+# スペル チェックのガイドライン
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-During text entry and editing, spell checking informs the user that a word is misspelled by highlighting it with a red squiggle and provides a way for the user to correct the misspelling.
+テキストの入力と編集を行っているときに、スペル チェックは単語を赤い波線で強調表示してユーザーに単語のスペルの間違いを知らせ、それを修正する方法を提供します。
 
-**Important APIs**
+**重要な API**
 
--   [**IsSpellCheckEnabled property (XAML)**](https://msdn.microsoft.com/library/windows/apps/br209688)
-
-
-## <span id="checklist_section"></span><span id="CHECKLIST_SECTION"></span>Recommendations
+-   [**IsSpellCheckEnabled プロパティ (XAML)**](https://msdn.microsoft.com/library/windows/apps/br209688)
 
 
--   Use spell checking to help users as they enter words or sentences into text input controls. Spell checking works with touch, mouse, and keyboard inputs.
--   Don't use spell checking when a word is not likely to be in the dictionary or if users wouldn't value spell checking. For example, don't turn it on for input boxes of passwords, telephone numbers, or names. Spell checking is disabled by default for these controls.
--   Don't disable spell checking just because the current spell checking engine doesn't support your app language. When the spell checker doesn't support a language, it doesn't do anything, so there's no harm in leaving the option on. Also, some users might use an Input Method Editor (IME) to enter another language into your app, and that language might be supported. For example, when building a Japanese language app, even though the spell checking engine might not currently recognize that language, don't turn spell checking off. The user may switch to an English IME and type English into the app; if spell checking is enabled, the English will get spell checked.
-
-## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>Additional usage guidance
+## <span id="checklist_section"></span><span id="CHECKLIST_SECTION"></span>推奨事項
 
 
-Windows Store apps provide a built-in spell checker for multiline and single text input boxes, and elements that have their **contentEditable** property set to **true**. Here's an example of the built-in spell checker:
+-   スペル チェックは、テキスト入力コントロールに単語や文を入力するときにユーザーを補助するために使います。 スペル チェックは、タッチ、マウス、キーボード入力で機能します。
+-   単語が辞書になさそうな場合や、ユーザーがスペル チェックを重視しない場合は、スペル チェックを使わないでください。 たとえば、パスワード、電話番号、名前などの入力ボックスでは、スペル チェックを有効にしません。 これらのコントロールでは、スペル チェックが既定で無効になっています。
+-   現在のスペル チェック エンジンがアプリの言語をサポートしていないという理由だけで、スペル チェックを無効にしないでください。 スペル チェックでその言語がサポートされていない場合は、何も行われないので、有効にしたままで何も問題がありません。 また、一部のユーザーは Input Method Editor (IME) を使ってアプリに他の言語を入力する場合があり、その言語がサポートされている可能性もあります。 たとえば、日本語のアプリを構築している場合には、現在はスペル チェック エンジンが日本語を認識していなくても、スペル チェックを無効にしないでください。 ユーザーが英語 IME に切り替え、アプリに英語を入力する場合があります。スペル チェックが有効になっていれば、英語のスペル チェックが行われます。
 
-![the built-in spell checker](images/spellchecking.png)
+## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>その他の使い方のガイダンス
 
-For more info, see the [**TextBox class**](https://msdn.microsoft.com/library/windows/apps/br209683).
 
-Use spell checking with text input controls for these two purposes:
+Windows ストア アプリでは、複数行と単一行のテキスト入力ボックスや、**contentEditable** プロパティが **true** に設定されている要素のために組み込みのスペル チェックが用意されています。 組み込みスペル チェックの例を次に示します。
 
--   **To auto-correct misspellings**
+![組み込みスペル チェック](images/spellchecking.png)
 
-    The spell checking engine automatically corrects misspelled words when it's confident about the correction. For example, the engine automatically changes "teh" to "the."
+詳細については、「[**TextBox クラス**](https://msdn.microsoft.com/library/windows/apps/br209683)」を参照してください。
 
--   **To show alternate spellings**
+テキスト入力コントロールでのスペル チェックは、次の 2 つの目的で使います。
 
-    When the spell checking engine is not confident about the corrections, it adds a red line under the misspelled word and displays the alternates in a context menu when you tap or right-click the word.
+-   **スペル ミスを自動修正する**
 
-For JavaScript controls, spell checking is turned on by default for multi-line text input controls and turned off for single-line controls. You can manually turn it on for single-line controls by setting the control's **spellcheck** property to **true**. You can disable spell checking for a control by setting its **spellcheck** property to **false**.
+    スペル チェック エンジンは、単語にスペルの間違いがあり、修正が確実であれば自動的に修正します。 たとえば、エンジンは自動的に "teh" を "the" に変更します。
 
-For XAML TextBox controls, spell checking is turned off by default. You can turn it on by setting the **IsSpellCheckEnabled** property to **true**.
+-   **代わりのスペルを示す**
 
-\[This article contains information that is specific to Universal Windows Platform (UWP) apps and Windows 10. For Windows 8.1 guidance, please download the [Windows 8.1 guidelines PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+    修正が確実でないとスペル チェック エンジンが判断した場合、スペル ミスのある単語には赤い下線が引かれ、ユーザーがその単語をタップするか右クリックすると、ショートカット メニューに修正候補が表示されます。
 
-## <span id="related_topics"></span>Related articles
+JavaScript コントロールの場合、複数行テキスト入力コントロールでは、既定でスペル チェックが有効になっており、単一行コントロールでは無効になっています。 単一行コントロールでスペル チェックを手動で有効にするには、コントロールの **spellcheck** プロパティを **true** に設定します。 コントロールのスペル チェックを無効にするには、**spellcheck** プロパティを **false** に設定します。
 
-* [Text and text controls](text-controls.md)
-* [Guidelines for text input](https://msdn.microsoft.com/library/windows/apps/hh750315)
-* [Guidelines for text and typography](https://msdn.microsoft.com/library/windows/apps/hh700394)
-**For developers (XAML)**
-* [**TextBox.IsSpellCheckEnabled property**](https://msdn.microsoft.com/library/windows/apps/br209688)
-* [**TextBox class**](https://msdn.microsoft.com/library/windows/apps/br209683)
+XAML TextBox コントロールの場合、スペル チェックが既定で無効になっています。 **IsSpellCheckEnabled** プロパティを **true** に設定することによって有効にできます。
+
+\[この記事には、ユニバーサル Windows プラットフォーム (UWP) アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
+
+## <span id="related_topics"></span>関連記事
+
+* [テキストとテキスト コントロール](text-controls.md)
+* [テキスト入力のガイドライン](https://msdn.microsoft.com/library/windows/apps/hh750315)
+* [テキストとタイポグラフィのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh700394)
+**開発者向け (XAML)**
+* [**TextBox.IsSpellCheckEnabled プロパティ**](https://msdn.microsoft.com/library/windows/apps/br209688)
+* [**TextBox クラス**](https://msdn.microsoft.com/library/windows/apps/br209683)
 
  
 

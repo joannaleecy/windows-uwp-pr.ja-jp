@@ -1,62 +1,63 @@
 ---
-description: Explains how to implement a XAML attached property as a dependency property and how to define the accessor convention that is necessary for your attached property to be usable in XAML.
-title: Custom attached properties
+description: XAML 添付プロパティを依存関係プロパティとして実装する方法と、添付プロパティを XAML で使うために必要なアクセサー変換を定義する方法を説明します。
+title: カスタム添付プロパティ
 ms.assetid: E9C0C57E-6098-4875-AA3E-9D7B36E160E0
 ---
 
-# Custom attached properties
+# カスタム添付プロパティ
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-An *attached property* is a XAML concept. Attached properties are typically defined as a specialized form of dependency property. This topic explains how to implement an attached property as a dependency property and how to define the accessor convention that is necessary for your attached property to be usable in XAML.
+*添付プロパティ*は、XAML の概念です。 添付プロパティは、通常は依存関係プロパティの特殊な形式として定義されます。 このトピックでは、添付プロパティを依存関係プロパティとして実装する方法と、添付プロパティを XAML で使うために必要なアクセサー変換を定義する方法を説明します。
 
-## Prerequisites
+## 必要条件
 
-We assume that you understand dependency properties from the perspective of a consumer of existing dependency properties, and that you have read the [Dependency properties overview](dependency-properties-overview.md). You should also have read [Attached properties overview](attached-properties-overview.md). To follow the examples in this topic, you should also understand XAML and know how to write a basic Windows Runtime app using C++, C#, or Visual Basic.
+依存関係プロパティを既にある依存関係プロパティのユーザーの観点から理解し、「[依存関係プロパティの概要](dependency-properties-overview.md)」を読んでいることを前提としています。 「[添付プロパティの概要](attached-properties-overview.md)」も読んでいる必要があります。 このトピックの例を参考にするには、XAML について理解し、C++、C#、または Visual Basic を使った基本的な Windows ランタイム アプリを作る方法を理解している必要もあります。
 
-## Scenarios for attached properties
+## 添付プロパティのシナリオ
 
-You might create an attached property when there is a reason to have a property-setting mechanism available for classes other than the defining class. The most common scenarios for this are layout and services support. Examples of existing layout properties are [**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/hh759773) and [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/hh759772). In a layout scenario, elements that exist as child elements to layout-controlling elements can express layout requirements to their parent elements individually, each setting a property value that the parent defines as an attached property. An example of the services-support scenario in the Windows Runtime API is set of the attached properties of [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527), such as [**ScrollViewer.IsZoomChainingEnabled**](https://msdn.microsoft.com/library/windows/apps/br209561).
+定義クラス以外のクラスで利用できるプロパティ設定メカニズムが必要な場合は、添付プロパティを作成できます。 その最も一般的なシナリオは、レイアウトとサービス サポートです。 既にあるレイアウト プロパティの例として、[**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/hh759773) と [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/hh759772) があります。 レイアウトのシナリオでは、レイアウト制御要素の子要素として存在する要素は親要素に対するレイアウト要件を個別に表現でき、それぞれ、親が添付プロパティとして定義するプロパティ値を設定します。 Windows ランタイム API のサービス サポートのシナリオの例は、[**ScrollViewer.IsZoomChainingEnabled**](https://msdn.microsoft.com/library/windows/apps/br209561) など、[**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) の添付プロパティのセットです。
 
-**Caution**  An existing limitation of the Windows Runtime XAML implementation is that you cannot animate your custom attached property.
+**注意:** ただし、Windows ランタイム XAML 実装の制限があるため、カスタム添付プロパティをアニメーション化することはできません。
 
-## Registering a custom attached property
+## カスタム添付プロパティの登録
 
-If you are defining the attached property strictly for use on other types, the class where the property is registered does not have to derive from [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356). But you do need to have the target parameter for accessors use **DependencyObject** if you follow the typical model of having your attached property also be a dependency property, so that you can use the backing property store.
+他の種類で使う添付プロパティを厳密に定義する場合、プロパティが登録されているクラスが [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) から派生する必要はありません。 ただし、添付プロパティが依存関係プロパティでもある標準モデルに従う場合は、バッキング プロパティ ストアを使うことができるように、アクセサーのターゲット パラメーターで **DependencyObject** を使う必要があります。
 
-Define your attached property as a dependency property by declaring a **public** **static** **readonly** property of type [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362). You define this property by using the return value of the [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833) method. The property name must match the attached property name you specify as the **RegisterAttached** *name* parameter, with the string "Property" added to the end. This is the established convention for naming the identifiers of dependency properties in relation to the properties that they represent.
+[
+            **DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 型の **public** **static** **readonly** プロパティを宣言することで、添付プロパティを依存関係プロパティとして定義します。 このプロパティは、[**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833) メソッドの戻り値を使って定義します。 プロパティ名は、**RegisterAttached** *name* パラメーターとして指定した添付プロパティ名の終わりに "Property" という文字列を追加した名前と一致する必要があります。 これは、依存関係プロパティが表すプロパティとの関連で依存関係プロパティの識別子に名前を付ける場合の確立された規則です。
 
-The main area where defining a custom attached property differs from a custom dependency property is in how you define the accessors or wrappers. Instead of the using the wrapper technique described in [Custom dependency properties](custom-dependency-properties.md), you must also provide static **Get***PropertyName* and **Set***PropertyName* methods as accessors for the attached property. The accessors are used mostly by the XAML parser, although any other caller can also use them to set values in non-XAML scenarios.
+カスタム添付プロパティを定義する主要領域は、アクセサーまたはラッパーを定義する方法の点でカスタム依存関係プロパティとは異なります。 「[カスタム依存関係プロパティ](custom-dependency-properties.md)」で説明しているラッパー手法を使う代わりに、静的な **Get***PropertyName* メソッドと **Set***PropertyName* メソッドを添付プロパティのアクセサーとして提供する必要もあります。 アクセサーは主に XAML パーサーで使われますが、XAML 以外のシナリオでは他の任意の呼び出し元もこれらを使って値を設定できます。
 
-**Important**  If you don't define the accessors correctly, the XAML processor can't access your attached property and anyone who tries to use it will probably get a XAML parser error. Also, design and coding tools often rely on the "\*Property" conventions for naming identifiers when they encounter a custom dependency property in a referenced assembly.
+**重要:** アクセサーを正しく定義しないと、XAML プロセッサは添付プロパティにアクセスできず、それを使おうとするユーザーにはおそらく XAML パーサー エラーが返されます。 また、デザイン ツールとコーディング ツールは、参照されるアセンブリでカスタム依存関係プロパティを検出した場合に、"\*Property" という識別子の命名規則に依存することがよくあります。
 
-## Accessors
+## アクセサー
 
-The signature for the **Get**_PropertyName_ accessor must be this.
+**Get**_PropertyName_ アクセサーのシグネチャは次のようにする必要があります。
 
 `public static` _valueType_ **Get**_PropertyName_ `(DependencyObject target)`
 
-For Microsoft Visual Basic, it is this.
+Microsoft Visual Basic の場合は、次のようになります。
 
 ` Public Shared Function Get`_PropertyName_`(ByVal target As DependencyObject) As `_valueType_`)`
 
-The *target* object can be of a more specific type in your implementation, but must derive from [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356). The *valueType* return value can also be of a more specific type in your implementation. The basic **Object** type is acceptable, but often you'll want your attached property to enforce type safety. The use of typing in the getter and setter signatures is a recommended type-safety technique.
+*target* オブジェクトは実装でより具体的な型にすることができますが、[**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) から派生する必要があります。 *valueType* 戻り値も、実装でより具体的な型にすることができます。 基本的な **Object** 型が受け入れられますが、多くの場合、添付プロパティにタイプ セーフを適用します。 タイプ セーフ手法として、getter シグネチャと setter シグネチャで型指定を使うことをお勧めします。
 
-The signature for the **Set***PropertyName* accessor must be this.
+**Set***PropertyName* アクセサーのシグネチャは次のようにする必要があります。
 
 `  public static void Set`_PropertyName_` (DependencyObject target , `_valueType_` value)`
 
-For Visual Basic, it is this.
+Visual Basic の場合は、次のようになります。
 
 `Public Shared Sub Set`_PropertyName_` (ByVal target As DependencyObject, ByVal value As `_valueType_`)`
 
-The *target* object can be of a more specific type in your implementation, but must derive from [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356). The *value* object and its *valueType* can be of a more specific type in your implementation. Remember that the value for this method is the input that comes from the XAML processor when it encounters your attached property in markup. There must be type conversion or existing markup extension support for the type you use, so that the appropriate type can be created from an attribute value (which is ultimately just a string). The basic **Object** type is acceptable, but often you'll want further type safety. To accomplish that, put type enforcement in the accessors.
+*target* オブジェクトは実装でより具体的な型にすることができますが、[**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) から派生する必要があります。 *value* オブジェクトとその *valueType* は、実装でより具体的な型にすることができます。 添付プロパティがマークアップに検出された場合、このメソッドの値は XAML プロセッサからの入力であることに注意してください。 属性値 (最終的には単なる文字列) から適切な型を作成できるように、使う型の型変換または既存のマークアップ拡張サポートが必要です。 基本的な **Object** 型が受け入れられますが、多くの場合、さらにタイプ セーフにします。 これを実現するには、アクセサーに型を適用します。
 
-**Note**  It's also possible to define an attached property where the intended usage is through property element syntax. In that case you don't need type conversion for the values, but you do need to assure that the values you intend can be constructed in XAML. [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) is an example of an existing attached property that only supports property element usage.
+**注:** プロパティ要素構文で使うことを意図した添付プロパティを定義することもできます。 その場合、値の型変換は必要ではありませんが、意図した値を XAML で確実に作成できるようにする必要があります。 [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) は、プロパティ要素の使用だけをサポートする既存の添付プロパティの例です。
 
-## Code example
+## コードの例
 
-This example shows the dependency property registration (using the [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833) method), as well as the **Get** and **Set** accessors, for a custom attached property. In the example, the attached property name is `IsMovable`. Therefore, the accessors must be named `GetIsMovable` and `SetIsMovable`. The owner of the attached property is a service class named `GameService` that doesn't have a UI of its own; its purpose is only to provide the attached property services when the **GameService.IsMovable** attached property is used.
+この例は、([**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833) メソッドを使った) 依存関係プロパティの登録と、カスタム添付プロパティの **Get** アクセサーと **Set** アクセサーを示しています。 この例では、添付プロパティ名は `IsMovable` です。 したがって、アクセサーの名前は `GetIsMovable` と `SetIsMovable` にする必要があります。 添付プロパティの所有者は `GameService` という名前の独自の UI を持たないサービス クラスです。その目的は **GameService.IsMovable** 添付プロパティを使うときに、添付プロパティ サービスを提供することだけです。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -99,7 +100,7 @@ Public Class GameService
 End Class
 ```
 
-Defining the attached property in C++ is a bit more complex. You have to decide how to factor between the header and code file. Also, you should expose the identifier as a property with only a **get** accessor, for reasons discussed in [Custom dependency properties](custom-dependency-properties.md). In C++ you must define this property-field relationship explicitly rather than relying on .NET **readonly** keywording and implicit backing of simple properties. You also need to perform the registration of the attached property within a helper function that only gets run once, when the app first starts but before any XAML pages that need the attached property are loaded. The typical place to call your property registration helper functions for any and all dependency or attached properties is from within the **App** / [**Application**](https://msdn.microsoft.com/library/windows/apps/br242325) constructor in the code for your app.xaml file.
+添付プロパティを C++ で定義する場合はもう少し複雑です。 ヘッダーとコード ファイル間の関連性を決定する必要があります。 また、「[カスタム依存関係プロパティ](custom-dependency-properties.md)」で説明している理由から、識別子を **get** アクセサーのみ持つプロパティとして公開する必要があります。 C++ では、.NET **readonly** キーワードと単純なプロパティの暗黙的なバッキングに依存する代わりに、このプロパティとフィールドの関係を明示的に定義する必要があります。 また、アプリが最初に開始されたとき、添付プロパティを必要とする XAML ページが読み込まれる前に、1 回だけ実行されるヘルパー関数内で、添付プロパティの登録を実行する必要があります。 依存関係プロパティまたは添付プロパティのプロパティ登録ヘルパー関数を呼び出す一般的な場所は、app.xaml ファイルのコードの **App** / [**Application**](https://msdn.microsoft.com/library/windows/apps/br242325) コンストラクターの内部からです。
 
 ```cpp
 //
@@ -168,11 +169,11 @@ GameService::RegisterDependencyProperties() {
 }
 ```
 
-## Using your custom attached property in XAML
+## XAML でのカスタム添付プロパティの使用
 
-After you have defined your attached property and included its support members as part of a custom type, you must then make the definitions available for XAML usage. To do this, you must map a XAML namespace that will reference the code namespace that contains the relevant class. In cases where you have defined the attached property as part of a library, you must include that library as part of the app package for the app.
+添付プロパティを定義し、そのサポート メンバーをカスタム型の一部として含めたら、定義を XAML で利用できるようにする必要があります。 そのためには、関連クラスを含むコード名前空間を参照する XAML 名前空間をマップする必要があります。 添付プロパティをライブラリの一部として定義した場合は、そのライブラリをアプリのアプリ パッケージの一部として含める必要があります。
 
-An XML namespace mapping for XAML is typically placed in the root element of a XAML page. For example, for the class named `GameService` in the namespace `UserAndCustomControls` that contains the attached property definitions shown in preceding snippets, the mapping might look like this.
+XAML の XML 名前空間マッピングは、通常は XAML ページのルート要素に配置されます。 たとえば、前のスニペットで示した添付プロパティ定義を含む名前空間 `UserAndCustomControls` に `GameService` という名前のクラスがある場合、マッピングは次のようになります。
 
 ```XAML
 <UserControl
@@ -182,7 +183,7 @@ An XML namespace mapping for XAML is typically placed in the root element of a X
 >
 ```
 
-Using the mapping, you can set your `GameService.IsMovable` attached property on any element that matches your target definition, including an existing type that Windows Runtime defines.
+マッピングを使うと、Windows ランタイムで定義された既にある型も含め、ターゲット定義に一致する任意の要素に `GameService.IsMovable` 添付プロパティを設定できます。
 
 ```XAML
 <Image uc:GameService.IsMovable="true" .../></code></pre></td>
@@ -191,7 +192,7 @@ Using the mapping, you can set your `GameService.IsMovable` attached property on
 </table>
 ```
 
-If you are setting the property on an element that is also within the same mapped XML namespace, you still must include the prefix on the attached property name. This is because the prefix qualifies the owner type. The attached property's attribute cannot be assumed to be within the same XML namespace as the element where the attribute is included, even though, by normal XML rules, attributes can inherit namespace from elements. For example, if you are setting `GameService.IsMovable` on a custom type of `ImageWithLabelControl` (definition not shown), and even if both were defined in the same code namespace mapped to same prefix, the XAML would still be this.
+同じマップされた XML 名前空間内にもある要素にプロパティを設定する場合でも、添付プロパティ名にプレフィックスを含める必要があります。 これは、プレフィックスによって所有者型が修飾されるためです。 標準 XML 規則により属性が要素から名前空間を継承できる場合でも、添付プロパティの属性がその属性を含む要素と同じ XML 名前空間にあることは想定できません。 たとえば、`GameService.IsMovable` を `ImageWithLabelControl` のカスタム型 (定義は示しません) に設定する場合、その両方が同じプレフィックスにマップされる同じコード名前空間に定義されていても、XAML は依然として次のようになります。
 
 ```XAML
 <colgroup>
@@ -210,26 +211,28 @@ If you are setting the property on an element that is also within the same mappe
 </table>
 ```
 
-**Note**  If you are writing a XAML UI with C++, you must include the header for the custom type that defines the attached property, any time that a XAML page uses that type. Each XAML page has an associated .xaml.h code-behind header. This is where you should include (using **\#include**) the header for the definition of the attached property's owner type.
+**注:** XAML UI を C++ で作る場合は、XAML ページが添付プロパティを定義するカスタム型を使うたびに、そのカスタム型のヘッダーを含める必要があります。 各 XAML ページには、.xaml.h コード ビハインド ヘッダーが関連付けられています。 ここに、添付プロパティの所有者型の定義のヘッダーを (**\#include** を使って) 含める必要があります。
 
-## Value type of a custom attached property
+## カスタム添付プロパティの値型
 
-The type that is used as the value type of a custom attached property affects the usage, the definition, or both the usage and definition. The attached property's value type is declared in several places: in the signatures of both the **Get** and **Set** accessor methods, and also as the *propertyType* parameter of the [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833) call.
+カスタム添付プロパティの値型として使われる型は、使用方法、定義、または使用方法と定義の両方に影響します。 添付プロパティの値型は、複数の場所で (**Get** アクセサー メソッドと **Set** アクセサー メソッド両方のシグネチャで、また [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833) 呼び出しの *propertyType* パラメーターとして) 宣言されます。
 
-The most common value type for attached properties (custom or otherwise) is a simple string. This is because attached properties are generally intended for XAML attribute usage, and using a string as the value type keeps the properties lightweight. Other primitives that have native conversion to string methods, such as integer, double, or an enumeration value, are also common as value types for attached properties. You can use other value types—ones that don't support native string conversion—as the attached property value. However, this entails making a choice about either the usage or the implementation:
+添付プロパティ (カスタムまたはそれ以外) で最も一般的な値型は、単純な文字列です。 これは、添付プロパティは一般に XAML 属性で使われることが意図されており、文字列を値型として使うとプロパティが軽量になるためです。 整数、倍精度浮動小数点、列挙値など、文字列メソッドへのネイティブ変換を持つその他のプリミティブも、添付プロパティの値型として一般的です。 ネイティブ文字列変換をサポートしない他の値型を添付プロパティ値として使うこともできます。 ただし、その場合は、使用方法または実装について選択が必要です。
 
-- You can leave the attached property as it is, but the attached property can support usage only where the attached property is a property element, and the value is declared as an object element. In this case, the property type does have to support XAML usage as an object element. For existing Windows Runtime reference classes, check the XAML syntax to make sure that the type supports XAML object element usage.
-- You can leave the attached property as it is, but use it only in an attribute usage through a XAML reference technique such as a **Binding** or **StaticResource** that can be expressed as a string.
+- 添付プロパティはそのままにすることができますが、添付プロパティでは、添付プロパティがプロパティ要素であり、値がオブジェクト要素として宣言される使用方法のみサポートできます。 この場合、プロパティ型はオブジェクト要素としての XAML の使用をサポートする必要があります。 既にある Windows ランタイム参照クラスの場合は、XAML 構文を調べて、型が XAML オブジェクト要素の使用をサポートすることを確認します。
+- 添付プロパティはそのままにすることができますが、文字列として表現できる **Binding** や **StaticResource** などの XAML 参照手法で属性を使う場合にのみ使います。
 
-## More about the **Canvas.Left** example
+## **Canvas.Left** の例に関する詳細
 
-In earlier examples of attached property usages we showed different ways to set the [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) attached property. But what does that change about how a [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) interacts with your object, and when does that happen? We'll examine this particular example further, because if you implement an attached property, it's interesting to see what else a typical attached property owner class intends to do with its attached property values if it finds them on other objects.
+添付プロパティの使用法として前に挙げた例では、[**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) 添付プロパティを設定するさまざまな方法を説明しました。 しかし、それによって [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) がオブジェクトとやり取りする方法やタイミングがどのように変わるのでしょうか。 ここでは、この例をさらに詳しく検討します。添付プロパティを実装しており、他のオブジェクトで添付プロパティの値が検出された場合に、典型的な添付プロパティの所有者クラスが添付プロパティの値に対して実行する処理を理解するのは意味のあることだからです。
 
-The main function of a [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) is to be an absolute-positioned layout container in UI. The children of a **Canvas** are stored in a base-class defined property [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514). Of all the panels **Canvas** is the only one that uses absolute positioning. It would've bloated the object model of the common [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) type to add properties that might only be of concern to **Canvas** and those particular **UIElement** cases where they are child elements of a **UIElement**. Defining the layout control properties of a **Canvas** to be attached properties that any **UIElement** can use keeps the object model cleaner.
+[
+            **Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) の主な機能は、UI で絶対位置の決まったレイアウト コンテナーとなることです。 **Canvas** の子は、基底クラスの定義済みプロパティ [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) に格納されます。 パネルのうち、**Canvas** だけが絶対配置を使います。 **Canvas** や特定の **UIElement** が **UIElement** の子要素になっている場合にのみ関係するプロパティを追加した場合には、共通の [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 型のオブジェクト モデルが大きくなっていたおそれがあります。 **Canvas** のレイアウト コントロールのプロパティを、どの **UIElement** でも使用できる添付プロパティに定義すると、オブジェクト モデルをすっきりした状態に保つことができます。
 
-In order to be a practical panel, [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) has behavior that overrides the framework-level [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) and [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914) methods. This is where **Canvas** actually checks for attached property values on its children. Part of both the **Measure** and **Arrange** patterns is a loop that iterates over any content, and a panel has the [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) property that makes it explicit what's supposed to be considered the child of a panel. So the **Canvas** layout behavior iterates through these children, and makes static [**Canvas.GetLeft**](https://msdn.microsoft.com/library/windows/apps/br209269) and [**Canvas.GetTop**](https://msdn.microsoft.com/library/windows/apps/br209270) calls on each child to see whether those attached properties contain a non-default value (default is 0). These values are then used to absolutely position each child in the **Canvas** available layout space according to the specific values provided by each child, and committed using **Arrange**.
+[
+            **Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) にはパネルを実用的にするため、フレームワーク レベルの [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) と [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914) メソッドを上書きするという動作があります。 **Canvas** が子について実際に添付プロパティを確認するのはここです。 **Measure** と **Arrange** の両パターンの一部は、コンテンツを反復処理するループです。また、パネルには、パネルの子とされるものを明確にする [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) プロパティがあります。 このため、**Canvas** レイアウトの動作は、子を反復処理したうえで、子のそれぞれについて [**Canvas.GetLeft**](https://msdn.microsoft.com/library/windows/apps/br209269) と [**Canvas.GetTop**](https://msdn.microsoft.com/library/windows/apps/br209270) の静的呼び出しを実行し、その添付プロパティに既定以外の値 (既定値は 0) が含まれているかどうかを確認するというものになります。 確認された値はその後、**Canvas** の利用可能なレイアウト スペースで子のそれぞれが提供する値に応じて、子の絶対位置を設定するのに使われた後、**Arrange** を使ってコミットされます。
 
-The code looks something like this pseudocode:
+このコードは、以下に示す擬似コードによく似た形になります。
 
 ``` syntax
     protected override Size ArrangeOverride(Size finalSize)
@@ -245,14 +248,14 @@ The code looks something like this pseudocode:
     }
 ```
 
-**Note**  For more info on how panels work, see [XAML custom panels overview](https://msdn.microsoft.com/library/windows/apps/mt228351).
+**注:** パネルの動作方法について詳しくは、「[XAML カスタム パネルの概要](https://msdn.microsoft.com/library/windows/apps/mt228351)」をご覧ください。
 
-## Related topics
+## 関連トピック
 
 * [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833)
-* [Attached properties overview](attached-properties-overview.md)
-* [Custom dependency properties](custom-dependency-properties.md)
-* [XAML overview](xaml-overview.md)
+* [添付プロパティの概要](attached-properties-overview.md)
+* [カスタム依存関係プロパティ](custom-dependency-properties.md)
+* [XAML の概要](xaml-overview.md)
 
 
 

@@ -1,54 +1,54 @@
 ---
-Description: Design effective help to be displayed reactively inside your app.
-title: Guidelines for designing in-app help.
+Description: アプリ内で必要に応じて表示される、効果的なヘルプを設計します。
+title: アプリ内ヘルプの設計のためのガイドライン。
 label: In-app help
 template: detail.hbs
 ---
 
-# In-app help pages
+# アプリ内ヘルプのページ
 
-Most of the time, it is best that help be displayed within the application and when the user chooses to view it.
+多くの場合、ヘルプはアプリケーション内でユーザーがヘルプの表示を選択したときに表示されることが望ましい方法です。
 
-## <span id="when_to_use_in_app_help"></span><span id="WHEN_TO_USE_IN_APP_HELP"></span>When to use in-app help pages
+## <span id="when_to_use_in_app_help"></span><span id="WHEN_TO_USE_IN_APP_HELP"></span>アプリ内ヘルプのページを使用する状況
 
-In-app help should be the default method of displaying help for the user. It should be used for any help which is simple, straightforward, and does not introduce new content to the user. Instructions, advice, and tips & tricks are all suitable for in-app help.
+アプリ内ヘルプは、ユーザーにヘルプを表示する既定の方法として使用します。 これはすべてのヘルプで使用し、シンプルで単純にして、ユーザーに未知のコンテンツを表示しないようにします。 使用方法、アドバイス、ヒントやコツなどはすべて、アプリ内ヘルプに適しています。
 
-Complex instructions or tutorials are not easy to reference quickly, and they take up large amounts of space. Therefore, they should be hosted externally, and not incorporated into the app itself.
+複雑な使用方法やチュートリアルはすばやい参照には適しておらず、また大量の領域を占有します。 そのため、それらはアプリ自体には組み込まず、外部で提供するようにします。
 
-Users should not have to seek out help for basic instructions or to discover new features. If you need to have help that educates users, use instructional UI.
+基本的な手順や新機能を知るためには、ユーザーがヘルプを必要としないようにします。 ユーザーのためになる情報を提供する場合には、説明 UI を使用します。
 
-## <span id="types_of_in_app_help"></span><span id="TYPES_OF_IN_APP_HELP"></span>Types of In-app help
+## <span id="types_of_in_app_help"></span><span id="TYPES_OF_IN_APP_HELP"></span>アプリ内ヘルプの種類
 
-In-app help can come in several forms, though they all follow the same general principles of design and usability.
+アプリ内ヘルプにはいくつかの形式がありますが、それらはすべて同じ設計と操作性の原則に従っています。
 
-#### <span id="help_pages"></span><span id="HELP_PAGES"></span>Help Pages
+#### <span id="help_pages"></span><span id="HELP_PAGES"></span>ヘルプ ページ
 
-Having a separate page or pages of help within your app is a quick and easy way of displaying useful instructions.
+アプリ内に別のヘルプ ページを作成することは、役に立つ使用方法を表示するための、すばやく手軽な方法です。
 
--   **Be concise:** A large library of help topics is unwieldy and unsuited for in-app help.
--   **Be consistent:** Make sure that users can reach your help pages the same way from any part of your app. They should never have to search for it.
--   **Users scan, not read:** Because the help a user is looking for might be on the same page as other help topics, make sure they can easily tell which one they need to focus on.
+-   **簡潔にする:** 大規模なライブラリのヘルプ トピックは扱いにくく、アプリ内ヘルプに適しません。
+-   **一貫性を持たせる:** アプリ内のどこからでも、同じ方法でヘルプ ページを表示させられるようにします。 ユーザーがヘルプを探し回る必要がないようにします。
+-   **ユーザーはざっと読みますが、多くの場合熟読はしません:** ユーザーが求めている情報がページ上にある場合でも、他の情報と紛れてしまう場合があります。ユーザーが必要な情報を、容易に見つけられるようにします。
 
 
-#### <span id="popups"></span><span id="POPUPS"></span>Popups
+#### <span id="popups"></span><span id="POPUPS"></span>ポップアップ
 
-Popups allow for highly contexual help, displaying instructions and advice that is relevant to the specific task that the user is attempting.
+ポップアップを使うと、高度なコンテキスト ヘルプを実現でき、ユーザーが実行している具体的なタスクに直接役立つ手順やアドバイスを表示できます。
 
--   **Focus on one issue:** Space is even more restricted in a popup than a help page. Help popups needs to refer specifically a single task to be effective.
--   **Visibility is important:** Because help popups can only be viewed from one location, make sure that they're clearly visible to the user without being obstructive. If the user misses it, they might move away from the popup in search of a help page.
--   **Don't use too many resources:** Help shouldn't lag or be slow-loading. Using videos or audio files or high resolution images in popups is more likely to frustrate the user than it is to help them.
+-   **1 つの問題に集中する:** ポップアップではヘルプ ページよりも、スペースがさらに制限されます。 ヘルプ ポップアップを効果的にするには、1 つの具体的なタスクのみに関して説明するようにします。
+-   **可視性が重要:** ヘルプ ポップアップは 1 つの場所からのみ表示できるため、妨げになることなく、ユーザーに明確に見えるようにします。 ユーザーがポップアップ ヘルプを見落とした場合、ヘルプ ページを探しに移動してしまう場合があります。
+-   **多くのリソースを使用しない:** ヘルプが遅延を生じたり、読み込みに時間がかからないようにします。 ポップアップでビデオやオーディオ ファイルや高解像度の画像を使用すると、ユーザーの助けにならずに、妨げになる可能性が高くなります。
 
-#### <span id="descriptions"></span><span id="DESCRIPTIONS"></span>Descriptions
+#### <span id="descriptions"></span><span id="DESCRIPTIONS"></span>説明
 
-Sometimes, it can be useful to provide more information about a feature when a user inspects it. Descriptions are similar to instructive UI, but the key difference is that instructional UI attempts to teach and educate the user about features that they don't know about, whereas detailed descriptions enhance a user's understanding of app features that they're already interested in.
+ユーザーが機能の詳細について調べている場合には、より詳しい情報を提供すると有用な場合があります。 説明は、説明 UI に似ていますが、説明 UI はユーザーが知らない機能についてユーザーに教えようとするものであり、詳細な説明はユーザーがすでに関心を持っているアプリの機能についてのユーザーの理解を深めるためのものであることが、主な相違点です。
 
--   **Don't teach the basics:** Assume that the user already knows the fundamentals of how to use the item being described. Clarifying or offering further information is useful. Telling them what they already know is not.
--   **Describe interesting interactions:** One of the best uses for descriptions is to educate the user on how a features that they already know about can interact. This helps users learn more about things they already like to use.
--   **Stay out of the way:** Much like instructional UI, descriptions need to avoid interfering with a user's enjoyment of the app.
+-   **ユーザーに基本事項を教えようとしないようにします:** ユーザーは基本的な使い方についてはわかっていることを前提にします。 明確化することや、追加の情報を提供することは、有用です。 既知の情報を教えようとすることは、有用ではありません。
+-   **興味を引く操作について説明します:** 説明の最適な使用方法の 1 つは、ユーザーが既に知っている機能の操作の方法を説明することです。 これにより、ユーザーは既に使用している機能について、さらに知ることができます。
+-   **ユーザーを妨げない:** 説明 UI の場合と同様に、説明はユーザーのアプリの使用を妨げないようにします。
 
-## <span id="related_topics"></span>Related articles
+## <span id="related_topics"></span>関連記事
 
-* [Guidelines for app help](guidelines-for-app-help.md)
+* [アプリのヘルプのガイドライン](guidelines-for-app-help.md)
 
 
 <!--HONumber=Mar16_HO5-->

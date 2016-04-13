@@ -1,39 +1,39 @@
 ---
-Description: If you've provided packages targeting different operating systems, you have the option to customize parts of your description for different targeted operating systems.
-title: Create platform-specific descriptions
+Description: さまざまなオペレーティング システムを対象とするパッケージを提供する場合、対象のオペレーティング システムごとに説明の一部をカスタマイズするオプションがあります。
+title: プラットフォーム固有の説明の作成
 ms.assetid: 5BE66BE2-669C-49E0-8915-60F1027EF94A
 ---
 
-# Create platform-specific descriptions
+# プラットフォーム固有の説明の作成
 
 
-If you've provided packages targeting different operating systems, you have the option to customize parts of your description for different targeted operating systems.
+さまざまなオペレーティング システムを対象とするパッケージを提供する場合、対象のオペレーティング システムごとに説明の一部をカスタマイズするオプションがあります。
 
-> **Important**  Customers on Windows 10 will always see your default description.
+> **重要**  Windows 10 のユーザーには既定の説明が常に表示されます。
 
-Platform-specific descriptions can be useful if you want to mention features that appear only in one OS version, or want to provide screenshots that are specific to a particular OS (independent of device type), rather than having all customers see the same description.
+プラットフォーム固有の説明は、すべてのユーザーに同じ説明を表示するのではなく、ある OS バージョンでのみ表示される機能について説明したり、(デバイスの種類とは無関係に) 特定の OS に固有のスクリーンショットを指定する場合に役立ちます。
 
-> **Note**  Creating a platform-specific description in one language does not create a platform-specific description in other languages that your app supports, even if you have [entered description info](create-app-descriptions.md) for those languages. You'll need to create the platform-specific description separately for each language.
+> **注**  1 つの言語でプラットフォーム固有の説明を作成しても、アプリでサポートされる他の言語でプラットフォーム固有の説明が作成されるわけではありません。これは、それらの言語で[説明情報を入力](create-app-descriptions.md)した場合も同様です。 プラットフォーム固有の説明は、言語ごとに別個に作成する必要があります。
 
-## Creating a platform-specific description
-
-
-Near the top of your **Description** page, you'll see a link to **create a platform-specific app description**. When you click this link, a popup will appear asking you to choose from your supported targeted operating systems. Windows 10 is not included in the list of choices, because customers on Windows 10 will always see the app's default description.
-
-> **Note**  If you haven't provided packages targeting multiple OS versions, or if you've already created platform-specific descriptions for all of the OS versions your app targets, you won't be able to make a selection.
-
-You can choose to use your default description as a starting point, which will bring over all of the text and images you've entered for your default description; you'll then be able to make any changes you'd like before saving.
-
-You can also start from a completely blank description if you prefer.
-
-After you click **Continue**, your **Description** page will now include a section for the platform-specific description you've just created (underneath the [Default description](create-app-descriptions.md#default-description-fields) section). This section will include its own set of fields for **Description** (required), **Release notes**, **Screenshots**, **App tile icon**, **App features**, and **Recommended hardware**. Make sure to enter info into each field where you want to display info in the custom description, even if it's the same info as in your default description. If you leave any of these fields blank, no info will appear for that field in the custom description.
-
-> **Note**  Not all fields of your app's description can be customized for a specific targeted OS. For more info, see [Shared fields](create-app-descriptions.md#shared-fields).
-
-## Removing a platform-specific description
+## プラットフォーム固有の説明の作成
 
 
-If you create a platform-specific description and later decide you'd rather show your default description to customers on that operating system, click the **Delete** link. After confirming that you'd like to show those customers your default description, click **OK**. The platform-specific description will be removed. If you decide you want it back later, you can always create a new platform-specific description for that operating system by following the steps listed above.
+**[説明]** ページの上部付近に、**プラットフォーム固有のアプリの説明を作成**するためのリンクが表示されます。 このリンクをクリックすると、サポートされている対象のオペレーティング システムから選ぶように求めるポップアップが表示されます。 Windows 10 のユーザーにはアプリの既定の説明が常に表示されるため、Windows 10 は選択肢の一覧に含まれません。
+
+> **注**  複数の OS バージョンを対象とするパッケージを用意していない場合、またはアプリが対象とするすべての OS バージョンに対してプラットフォーム固有の説明を既に作成している場合、選ぶことはできません。
+
+スタート地点として既定の説明を使うことを選ぶことができます。この場合、既定の説明として入力したテキストと画像がすべて取り込まれます。その後、保存前に変更を加えることができます。
+
+必要に応じて、完全に空の説明から始めることもできます。
+
+**[続行]** をクリックすると、前の手順で作成したプラットフォーム固有の説明のセクションが **[説明]** ページに表示されます ([[既定の説明]](create-app-descriptions.md#default-description-fields) セクションの下)。 このセクションには、**[説明]** (必須)、**[リリース ノート]**、**[スクリーンショット]**、**[アプリのタイル アイコン]**、**[アプリの機能]**、**[推奨されるハードウェア]** の固有のフィールドが表示されます。 既定の説明と同じ情報であっても、カスタムの説明で情報を表示するすべてのフィールドに情報を入力してください。 これらのいずれかのフィールドを空白のままにした場合、カスタムの説明でそのフィールドに情報は表示されません。
+
+> **注**  アプリの説明のすべてのフィールドを、対象となる特定の OS に合わせてカスタマイズできるわけではありません。 詳しくは、[共有フィールド](create-app-descriptions.md#shared-fields)に関するページをご覧ください。
+
+## プラットフォーム固有の説明の削除
+
+
+プラットフォーム固有の説明を作成したが、後でそのオペレーティング システムではユーザーに既定の説明を表示することにした場合、**[削除]** リンクをクリックします。 それらのユーザーに既定の説明を表示することを確認したら、**[OK]** をクリックします。 プラットフォーム固有の説明は削除されます。 後で戻す場合には、上記の手順に従っていつでもそのオペレーティング システム用の新しいプラットフォーム固有の説明を作成できます。
 
  
 

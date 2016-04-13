@@ -1,39 +1,39 @@
 ---
-Description: Navigation in Universal Windows Platform (UWP) apps is based on a flexible model of navigation structures, navigation elements, and system-level features.
-title: Navigation design basics for Universal Windows Platform (UWP) apps
+Description: ユニバーサル Windows プラットフォーム (UWP) アプリのナビゲーションは、ナビゲーション構造、ナビゲーション要素、システム レベルの機能から成る柔軟なモデルに基づいています。
+title: ユニバーサル Windows プラットフォーム (UWP) アプリのナビゲーション デザインの基本
 ms.assetid: B65D33BA-AAFE-434D-B6D5-1A0C49F59664
-label: Navigation design basics
+label: ナビゲーション デザインの基本
 template: detail.hbs
 ---
 
-#  Navigation design basics for UWP apps
+#  UWP アプリのナビゲーション デザインの基本
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-Navigation in Universal Windows Platform (UWP) apps is based on a flexible model of navigation structures, navigation elements, and system-level features. Together, they enable a variety of intuitive user experiences for moving between apps, pages, and content.
+ユニバーサル Windows プラットフォーム (UWP) アプリのナビゲーションは、ナビゲーション構造、ナビゲーション要素、システム レベルの機能から成る柔軟なモデルに基づいています。 これら全体で、アプリ、ページ、コンテンツ間での移動の際にさまざまな直感的なユーザー エクスペリエンスを実現します。
 
-In some cases, you might be able to fit all of your app's content and functionality onto a single page without requiring the user to do anything more than pan to navigate through that content. However, the majority of apps typically have multiple pages of content and functionality with which to explore, engage, and interact. When an app has more than one page, you need to provide the right navigation experience.
+場合によっては、アプリのコンテンツと機能のすべてを単一ページに配置して、ユーザーがパンするだけでそのコンテンツ内を移動できるようにすることができます。 ただし、ほとんどのアプリは通常、複数ページのコンテンツと、それをユーザーが利用するための機能を備えています。 アプリに複数のページがある場合は、適切なナビゲーション エクスペリエンスを提供する必要があります。
 
-To be successful and make sense to users, multi-page navigation experiences in UWP apps include (described in detail later):
+UWP アプリにおいて効果的で便利なマルチページ ナビゲーション エクスペリエンスを実現するには、以下の要素が必要です (詳細は後述)。
 
--   **The right navigation structure**
+-   **適切なナビゲーション構造**
 
-    Building a navigation structure that makes sense to the user is crucial to creating an intuitive navigation experience.
+    直感的なナビゲーション エクスペリエンスを作成するためには、ユーザーにとってわかりやすいナビゲーション構造を構築することが重要です。
 
--   **Compatible navigation elements** that support the chosen structure.
+-   **互換性のあるナビゲーション要素** (選択した構造をサポートする要素)
 
-    Navigation elements can help the user get to the content they want and can also let users know where they are within the app. However, they also take up space that could be used for content or commanding elements, so it's important to use the navigation elements that are right for your app's structure.
+    ナビゲーション要素を使うと、ユーザーは必要なコンテンツにアクセスすることができ、アプリ内のどの位置にいるかを把握することもできます。 ただし、ナビゲーション要素は、コンテンツやコマンド実行要素用に使うことができる領域を占有します。そのため、アプリの構造に最適なナビゲーション要素を使うことが重要になります。
 
--   **Appropriate responses to system-level navigation features (such as Back)**
+-   **システム レベルのナビゲーション機能 ("戻る" など) に対する適切な応答**
 
-    To provide a consistent experience that feels intuitive, respond to system-level navigation features in predictable ways.
+    直感的な操作性を感じさせる一貫したエクスペリエンスを実現するには、予測可能な方法で、システム レベルのナビゲーション機能に応答します。
 
-## <span id="Build_the_right_navigation_structure"></span><span id="build_the_right_navigation_structure"></span><span id="BUILD_THE_RIGHT_NAVIGATION_STRUCTURE"></span>Build the right navigation structure
+## <span id="Build_the_right_navigation_structure"></span><span id="build_the_right_navigation_structure"></span><span id="BUILD_THE_RIGHT_NAVIGATION_STRUCTURE"></span>適切なナビゲーション構造を構築する
 
 
-Let's look at an app as a collection of groups of pages, with each page containing a unique set of content or functionality. For example, a photo app might have a page for taking photos, a page for image editing, and another page for managing your image library. The way you arrange these pages into groups defines the app's navigation structure. There are two common ways to arrange a group of pages:
+ページのグループから構成されるコレクションとしてアプリを見てみましょう。各ページには、コンテンツや機能の固有のセットが含まれます。 たとえば、写真アプリには、写真を撮影するためのページ、画像を編集するためのページ、画像ライブラリを管理するためのページが含まれている場合があります。 これらのページをグループに配置する方法によって、アプリのナビゲーション構造が定義されます。 ページのグループを配置する一般的な方法には、次の 2 つがあります。
 
 <table>
 <colgroup>
@@ -42,8 +42,8 @@ Let's look at an app as a collection of groups of pages, with each page containi
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">In a hierarchy</th>
-<th align="left">As peers</th>
+<th align="left">階層に配置する</th>
+<th align="left">ピアとして配置する</th>
 </tr>
 </thead>
 <tbody>
@@ -52,19 +52,19 @@ Let's look at an app as a collection of groups of pages, with each page containi
 <td align="left"><p><img src="images/nav/nav-pages-peer.png" alt="Pages arranged as peers" /></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Pages are organized into a tree-like structure. Each child page has only one parent, but a parent can have one or more child pages. To reach a child page, you travel through the parent.</p></td>
-<td align="left"><p>Pages exist side-by-side. You can go from one page to another in any order.</p></td>
+<td align="left"><p>ページは、ツリー状の構造に配置されます。 それぞれの子ページの親は 1 つだけですが、親ページは 1 つ以上の子ページを持つことができます。 子ページにアクセスするには、親ページを経由します。</p></td>
+<td align="left"><p>ページは、並列の関係で配置されます。 どのような順序でもページ間を移動できます。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-A typical app will use both arrangements, with some portions being arranged as peers and some portions being arranged into hierarchies.
+一般的なアプリでは両方の配置方法を使います。たとえば、一部のページはピアとして配置され、他のページは階層に配置されます。
 
-![an app with a hybrid structure](images/nav/nav-hybridstructure.png.png)
+![ハイブリッド構造のアプリ](images/nav/nav-hybridstructure.png.png)
 
-So, when should you arrange pages into hierarchies and when you should arrange them as peers? To answer that question we must consider the number of pages in the group, whether the pages should be traversed in a particular order, and the relationship between the pages. In general, flatter structures are easier to understand and faster to navigate, but sometimes it's appropriate to have a deep hierarchy.
+では、どのような場合にページを階層に配置し、どのような場合にページをピアとして配置すればよいでしょうか。 この質問に答えるには、グループ内のページ数、特定の順序でページ間を移動する必要があるかどうか、およびページ間の関係を考慮する必要があります。 一般に、構造がフラットであれば、構造を理解しやすくなり、すばやい移動が可能になります。ただし、深い階層が適している場合もあります。
 
 <table>
 <colgroup>
@@ -73,19 +73,19 @@ So, when should you arrange pages into hierarchies and when you should arrange t
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>We recommend using a hierarchical relationship when</p>
+<td align="left"><p>次の場合は、階層関係を使うことをお勧めします。</p>
 <ul>
-<li><p>You expect the user to traverse the pages in a specific order. Arrange the hierarchy to enforce that order.</p></li>
-<li><p>There is a clear parent-child relationship between one of the pages and the other pages in the group.</p></li>
-<li><p>If there are more than 7 pages in the group.</p>
-<p>When there are more than 7 pages in the group, it might be difficult for users to understand how the pages are unique or to understand their current location within the group. If you don't think that's an issue for your app, go ahead and make the pages peers. Otherwise, consider using a hierarchical structure to break the pages into two or more smaller groups. (A hub control can help you group pages into categories.)</p></li>
+<li><p>ユーザーが特定の順序でページ間を移動する必要がある場合。 その順序を強制的に適用するように階層を配置します。</p></li>
+<li><p>グループ内の各ページ間には明確な親子関係があります。</p></li>
+<li><p>グループ内のページ数が 7 ページを超える場合。</p>
+<p>グループ内のページ数が 7 ページを超える場合、ページが一意であるかどうかを判断したり、グループ内の現在の位置を把握したりするのが難しくなる場合があります。 このことがアプリでは問題にはならないと考えられる場合は、ページをピアとして作成します。 このことが問題となる可能性がある場合は、階層構造を使って、ページを 2 つ以上の小さなグループに分割することを検討してください (ハブ コントロールを使うと、ページをカテゴリにグループ化できます)。</p></li>
 </ul></td>
-<td align="left"><p>We recommend using a peer relationship when</p>
+<td align="left"><p>次の場合は、ピアの関係を使うことをお勧めします。</p>
 <ul>
-<li>The pages can be viewed in any order.</li>
-<li>The pages are clearly distinct from each other and don't have an obvious parent/child relationship.</li>
-<li><p>There are fewer than 8 pages in the group.</p>
-<p>When there are more than 7 pages in the group, it might be difficult for users to understand how the pages are unique or to understand their current location within the group. If you don't think that's an issue for your app, go ahead and make the pages peers. Otherwise, consider using a hierarchical structure to break the pages into two or more smaller groups. (A hub control can help you group pages into categories.)</p></li>
+<li>ページをどのような順序でも表示できる場合。</li>
+<li>各ページはそれぞれ異なるページであり、明確な親/子関係はありません。</li>
+<li><p>グループ内のページ数が 8 ページよりも少ない場合。</p>
+<p>グループ内のページ数が 7 ページを超える場合、ページが一意であるかどうかを判断したり、グループ内の現在の位置を把握したりするのが難しくなる場合があります。 このことがアプリでは問題にはならないと考えられる場合は、ページをピアとして作成します。 このことが問題となる可能性がある場合は、階層構造を使って、ページを 2 つ以上の小さなグループに分割することを検討してください (ハブ コントロールを使うと、ページをカテゴリにグループ化できます)。</p></li>
 </ul></td>
 </tr>
 </tbody>
@@ -93,18 +93,18 @@ So, when should you arrange pages into hierarchies and when you should arrange t
 
  
 
-## <span id="Use_the_right_navigation_elements"></span><span id="use_the_right_navigation_elements"></span><span id="USE_THE_RIGHT_NAVIGATION_ELEMENTS"></span>Use the right navigation elements
+## <span id="Use_the_right_navigation_elements"></span><span id="use_the_right_navigation_elements"></span><span id="USE_THE_RIGHT_NAVIGATION_ELEMENTS"></span>適切なナビゲーション要素の使用
 
 
-Navigation elements can provide two services: they help the user get to the content they want, and some elements also let users know where they are within the app. However, they also take up space that the app could use for content or commanding elements, so it's important to use the navigation elements that are just right for your app's structure.
+ナビゲーション要素は 2 つのサービスを提供できます。つまり、これらの要素を使うと、ユーザーは必要なコンテンツにアクセスすることができ、要素によっては、アプリ内のどの位置にいるかを把握することができます。 ただし、ナビゲーション要素は、コンテンツやコマンド実行要素用にアプリで使うことができる領域を占有します。そのため、アプリの構造に最適なナビゲーション要素を使うことが重要になります。
 
-### <span id="Peer-to-peer_navigation_elements"></span><span id="peer-to-peer_navigation_elements"></span><span id="PEER-TO-PEER_NAVIGATION_ELEMENTS"></span>Peer-to-peer navigation elements
+### <span id="Peer-to-peer_navigation_elements"></span><span id="peer-to-peer_navigation_elements"></span><span id="PEER-TO-PEER_NAVIGATION_ELEMENTS"></span>ピア ツー ピアのナビゲーション要素
 
-Peer-to-peer navigation elements enable navigation between pages in the same level of the same subtree.
+ピア ツー ピアのナビゲーション要素によって、同じサブツリーの同じレベルにあるページ間のナビゲーションが有効になります。
 
-![peer to peer navigation](images/nav/nav-lateralmovement.png)
+![ピア ツー ピアのナビゲーション](images/nav/nav-lateralmovement.png)
 
-For peer-to-peer navigation, we recommend using tabs or a navigation pane.
+ピア ツー ピアのナビゲーションでは、タブまたはナビゲーション ウィンドウを使うことをお勧めします。
 
 <table>
 <colgroup>
@@ -113,35 +113,35 @@ For peer-to-peer navigation, we recommend using tabs or a navigation pane.
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Navigation element</th>
-<th align="left">Description</th>
+<th align="left">ナビゲーション要素</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>[Tabs and pivot](../controls-and-patterns/tabs-pivot.md)</p>
 <p><img src="images/nav/nav-tabs-sm-300.png" alt="Tab-based navigation" /></p></td>
-<td align="left">Displays a persistent list of links to pages at the same level.
-<p>Use tabs/pivots when:</p>
+<td align="left">同じレベルにあるページへのリンクの永続的な一覧を表示します。
+<p>タブ/ピボットを使う場合</p>
 <ul>
-<li><p>There are 2-5 pages.</p>
-<p>(You can use tabs/pivots when there are more than 5 pages, but it might be difficult to fit all the tabs/pivots on the screen.)</p></li>
-<li>You expect users to switch between pages frequently.</li>
+<li><p>ページ数が 2 ～ 5 ページの場合</p>
+<p>5 ページを超える場合でもタブ/ピボットを使うことはできますが、すべてのタブ/ピボットを画面に収めることが難しくなることがあります。</p></li>
+<li>ユーザーが頻繁にページ間を切り替えることを前提としている場合。</li>
 </ul>
-<p>This design for a restaurant-finding app uses tabs/pivots:</p>
+<p>このレストラン検索アプリの設計では、タブ/ピボットを使っています。</p>
 <p><img src="images/food-truck-finder/uap-foodtruck-tabletphone-sbs-sm-400.png" alt="Example of an app using tabs/pivots pattern" /></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Nav pane](../controls-and-patterns/nav-pane.md)</p>
 <p><img src="images/nav/nav-navpane-4page-thumb.png" alt="A navigation pane" /></p></td>
-<td align="left">Displays a list of links to top-level pages.
-<p>Use a navigation pane when:</p>
+<td align="left">トップレベルのページへのリンクの一覧を表示します。
+<p>ナビゲーション ウィンドウを使う場合</p>
 <ul>
-<li>You don't expect users to switch between pages frequently.</li>
-<li>You want to conserve space at the expense of slowing down navigation operations.</li>
-<li>The pages exist at the top level.</li>
+<li>ユーザーが頻繁にページ間を切り替えることを前提としていない場合。</li>
+<li>ナビゲーション操作の速度を低下させて、領域を節約する必要がある場合。</li>
+<li>ページがトップレベルに存在する場合。</li>
 </ul>
-<p>This design for a smart home app features a nav pane:</p>
+<p>このスマート ホーム アプリ機能の設計では、ナビゲーション ウィンドウを使っています。</p>
 <p><img src="images/smart-home/uap-smarthome-tabletphone-sbs-sm-400.png" alt="Example of an app that uses a nav pane pattern" /></p>
 <p></p></td>
 </tr>
@@ -150,19 +150,19 @@ For peer-to-peer navigation, we recommend using tabs or a navigation pane.
 
  
 
-If your navigation structure has multiple levels, we recommend that peer-to-peer navigation elements only link to the peers within their current subtree. Consider the following illustration, which shows a navigation structure that has three levels:
+ナビゲーション構造に複数のレベルがある場合は、現在のサブツリー内のピアにのみリンクするピア ツー ピアのナビゲーション要素を使うことをお勧めします。 3 つのレベルを持つナビゲーション構造を示す、次の図について考えてみましょう。
 
-![an app with two subtrees](images/nav/nav-subtrees.png)
--   For level 1, the peer-to-peer navigation element should provide access to pages A, B, C, and D.
--   At level 2, the peer-to-peer navigation elements for the A2 pages should only link to the other A2 pages. They should not link to level 2 pages in the C subtree.
+![2 つのサブツリーを含むアプリ](images/nav/nav-subtrees.png)
+-   レベル 1 では、ピア ツー ピアのナビゲーション要素によって、ページ A、B、C、および D へのアクセスが提供されます。
+-   レベル 2 では、A2 ページのピア ツー ピアのナビゲーション要素は、他の A2 ページにのみリンクしています。 これらのナビゲーション要素は、C サブツリー内にあるレベル 2 のページにはリンクしていません。
 
-![an app with two subtrees](images/nav/nav-subtrees2.png)
+![2 つのサブツリーを含むアプリ](images/nav/nav-subtrees2.png)
 
-### <span id="Hierarchical_navigation_elements"></span><span id="hierarchical_navigation_elements"></span><span id="HIERARCHICAL_NAVIGATION_ELEMENTS"></span>Hierarchical navigation elements
+### <span id="Hierarchical_navigation_elements"></span><span id="hierarchical_navigation_elements"></span><span id="HIERARCHICAL_NAVIGATION_ELEMENTS"></span>階層型ナビゲーション要素
 
-Hierarchical navigation elements provide navigation between a parent page and its child pages.
+階層型ナビゲーション要素は、親ページとその子ページ間のナビゲーションを実現します。
 
-![hiearchical navigation](images/nav/nav-verticalmovement.png)
+![階層型ナビゲーション](images/nav/nav-verticalmovement.png)
 
 <table>
 <colgroup>
@@ -171,33 +171,33 @@ Hierarchical navigation elements provide navigation between a parent page and it
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Navigation element</th>
-<th align="left">Description</th>
+<th align="left">ナビゲーション要素</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>[Hub](../controls-and-patterns/hub.md)</p>
 <p><img src="images/higsecone-hub-thumb.png" alt="Hub" /></p></td>
-<td align="left">A hub is a special type of navigation control that provides previews/summaries of its child pages. Unlike the navigation pane or tabs, it provides navigation to these child pages through links and section headers embedded in the page itself.
-<p>Use a hub when:</p>
+<td align="left">ハブは、子ページのプレビュー/概要を提供する特殊な種類のナビゲーション コントロールです。 ナビゲーション ウィンドウやタブとは異なり、ページ自体に埋め込まれているリンクやセクション ヘッダーを使って、子ページへのナビゲーションを実現します。
+<p>ハブを使う場合</p>
 <ul>
-<li>You expect that users would want to view some of the content of the child pages without having to navigate to each one.</li>
+<li>ユーザーが、各子ページへ移動せずに、子ページのコンテンツの一部を表示することを前提としている場合。</li>
 </ul>
-<p>Hubs promote discovery and exploration, which makes them well suited for media, news-reader, and shopping apps.</p>
+<p>ハブでは検出や調査がサポートされるため、メディア、ニュース リーダー、ショッピング アプリに適しています。</p>
 <p></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Master/details](../controls-and-patterns/master-details.md)</p>
 <p><img src="images/higsecone-masterdetail-thumb.png" alt="Master/details" /></p></td>
-<td align="left">Displays a list (master view) of item summaries. Selecting an item displays its corresponding items page in the details section.
-<p>Use the Master/details element when:</p>
+<td align="left">項目の概要の一覧 (マスター ビュー) が表示されます。 項目を選ぶと、対応する項目ページが詳細セクションに表示されます。
+<p>マスター/詳細要素を使う場合</p>
 <ul>
-<li>You expect users to switch between child items frequently.</li>
-<li>You want to enable the user to perform high-level operations, such as deleting or sorting, on individual items or groups of items, and also want to enable the user to view or update the details for each item.</li>
+<li>ユーザーが頻繁に子項目間を切り替えることを前提としている場合。</li>
+<li>ユーザーが個々の項目や項目のグループに対して高いレベルの操作 (削除や並べ替えなど) を実行できるようにする場合、およびユーザーが各項目の詳細情報の表示や更新を実行できるようにする場合。</li>
 </ul>
-<p>Master/details elements are well suited for email inboxes, contact lists, and data entry.</p>
-<p>This design for a stock-tracking app makes use of a master/details pattern:</p>
+<p>マスター/詳細要素は、メールの受信トレイ、連絡先リスト、データ入力に適しています。</p>
+<p>この株式を追跡するアプリの設計では、マスター/詳細パターンを使っています。</p>
 <p><img src="images/stock-tracker/uap-finance-tabletphone-sbs-sm.png" alt="Example of a stock trading app that has a master/details pattern" /></p></td>
 </tr>
 </tbody>
@@ -205,7 +205,7 @@ Hierarchical navigation elements provide navigation between a parent page and it
 
  
 
-### <span id="Historical_navigation_elements"></span><span id="historical_navigation_elements"></span><span id="HISTORICAL_NAVIGATION_ELEMENTS"></span>Historical navigation elements
+### <span id="Historical_navigation_elements"></span><span id="historical_navigation_elements"></span><span id="HISTORICAL_NAVIGATION_ELEMENTS"></span>履歴ナビゲーション要素
 
 <table>
 <colgroup>
@@ -214,21 +214,21 @@ Hierarchical navigation elements provide navigation between a parent page and it
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Navigation element</th>
-<th align="left">Description</th>
+<th align="left">ナビゲーション要素</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Back</td>
-<td align="left"><p>Lets the user traverse the navigation history within an app and, depending on the device, from app to app. For more info, see the [Make your app work well with system-level navigation features](#backnavigation) section that appears later in this article.</p></td>
+<td align="left">戻る</td>
+<td align="left"><p>ユーザーは、アプリ内のナビゲーション履歴や、デバイスによってはアプリ間を移動できます。 詳細については、この後の「[Make your app work well with system-level navigation features](#backnavigation)」セクションをご覧ください。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <span id="Content-embedded_navigation_elements"></span><span id="content-embedded_navigation_elements"></span><span id="CONTENT-EMBEDDED_NAVIGATION_ELEMENTS"></span>Content-embedded navigation elements
+### <span id="Content-embedded_navigation_elements"></span><span id="content-embedded_navigation_elements"></span><span id="CONTENT-EMBEDDED_NAVIGATION_ELEMENTS"></span>コンテンツに埋め込まれたナビゲーション要素
 
 <table>
 <colgroup>
@@ -237,26 +237,26 @@ Hierarchical navigation elements provide navigation between a parent page and it
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Navigation element</th>
-<th align="left">Description</th>
+<th align="left">ナビゲーション要素</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Hyperlinks and buttons</td>
-<td align="left"><p>Content-embedded navigation elements appear in a page's content. Unlike other navigation elements, which should be consistent across the page's group or subtree, content-embedded navigation elements are unique from page to page.</p></td>
+<td align="left">ハイパーリンクとボタン</td>
+<td align="left"><p>コンテンツに埋め込まれたナビゲーション要素は、ページのコンテンツに表示されます。 他のナビゲーション要素はページのグループやサブツリー全体で一貫性がありますが、それとは異なり、コンテンツに埋め込まれたナビゲーション要素はそれぞれのページに固有のナビゲーション要素です。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <span id="Combining_navigation_elements"></span><span id="combining_navigation_elements"></span><span id="COMBINING_NAVIGATION_ELEMENTS"></span>Combining navigation elements
+### <span id="Combining_navigation_elements"></span><span id="combining_navigation_elements"></span><span id="COMBINING_NAVIGATION_ELEMENTS"></span>ナビゲーション要素の連結
 
-You can combine navigation elements to create a navigation experience that's right for your app. For example, your app might use a nav pane to provide access to top-level pages and tabs to provide access to second-level pages.
+ナビゲーション要素を連結してアプリに最適なナビゲーション エクスペリエンスを作成することができます。 たとえば、アプリでトップ レベルのページへのアクセスにはナビゲーション ウィンドウを、第 2 レベルのページへのアクセスにはタブを使用することができます。
 
 
-\[This article contains information that is specific to UWP apps and Windows 10. For Windows 8.1 guidance, please download the [Windows 8.1 guidelines PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+\[この記事には、UWP アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
 
 
 

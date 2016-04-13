@@ -127,9 +127,9 @@ Button1.Click += new RoutedEventHandler(Button_Click);
 
 ## 関連トピック
 
-* [**コマンド バー**](app-bars.md)
-* [検索](search.md)
-* [ポップアップ](dialogs-popups-menus.md)
+-   [**コマンド バー**](app-bars.md)
+-   [検索](search.md)
+-   [ポップアップ](dialogs-popups-menus.md)
 
 
 <!--HONumber=Mar16_HO1-->

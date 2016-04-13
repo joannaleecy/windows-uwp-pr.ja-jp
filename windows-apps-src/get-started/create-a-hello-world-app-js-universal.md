@@ -1,153 +1,153 @@
 ---
 ms.assetid: CFB3601D-3459-465F-80E2-520F57B88F62
-title: Create a "Hello, world" app (JS)
-description: This tutorial teaches you how to use JavaScript and HTML to create a simple &\#0034;Hello, world&\#0034; app that targets the Universal Windows Platform (UWP) on Windows 10.
+title: "Hello, world" アプリを作成する (JS)
+description: このチュートリアルでは、Windows 10 のユニバーサル Windows プラットフォーム (UWP) を対象にした単純な &\#0034;Hello, world&\#0034; アプリを JavaScript と HTML で作る方法について説明します。
 ---
-# Create a "Hello, world" app (JS)
+# "Hello, world" アプリを作成する (JS)
 
-This tutorial teaches you how to use JavaScript and HTML to create a simple "Hello, world" app that targets the Universal Windows Platform (UWP) on Windows 10. With a single project in Microsoft Visual Studio, you can build an app that runs on any Windows 10 device. Here we focus on creating an app that runs equally well on desktop and mobile devices.
+このチュートリアルでは、Windows 10 のユニバーサル Windows プラットフォーム (UWP) を対象にした単純な "Hello, world" アプリを JavaScript と HTML で作る方法について説明します。 Microsoft Visual Studio の 1 つのプロジェクトを使って、Windows 10 のすべてのデバイスで実行されるアプリを構築できます。 ここでは、デスクトップとモバイル デバイスで同じように適切に実行されるアプリを作ることに焦点を合わせます。
 
-**Important**   This tutorial is for use with Microsoft Visual Studio 2015 and Windows 10. It won't work correctly with earlier versions.
+**重要:**   このチュートリアルは、Microsoft Visual Studio 2015 と Windows 10 で使うためのものです。 それ以前のバージョンでは正しく動作しません。
 
-Here you'll learn how to:
+ここでは、次の方法について説明します。
 
--   Create a new project
--   Add HTML content to your start page
--   Handle touch, pen, and mouse input
--   Run the project on the local desktop and on the phone emulator in Visual Studio.
--   Create your own custom styles
--   Use a Windows Library for JavaScript control
+-   新しいプロジェクトを作る
+-   スタート ページに HTML コンテンツを追加する
+-   タッチ、ペン、マウス入力を処理する
+-   Visual Studio のローカル デスクトップと電話エミュレーターでプロジェクトを実行する
+-   カスタム スタイルを作成する
+-   JavaScript 用 Windows ライブラリのコントロールを使う
 
-##Before you start...
-
-
--   We're going to jump right into the steps you use to create a simple universal app. So we strongly recommend that you read and understand the overview information in [What's new in Windows 10](https://dev.windows.com/whats-new-windows-10-dev-preview) and [What's a Universal Windows app](whats-a-uwp.md) before you start this tutorial.
--   To complete this tutorial, you need Windows 10 and Visual Studio 2015. See [Get set up](get-set-up.md) for more info.
--   We also assume you're using the default window layout in Visual Studio. If you change the default layout, you can reset it in the **Window** menu by using the **Reset Window Layout** command.
-
-##Step 1: Create a new project in Visual Studio
+##はじめに...
 
 
-Let's create a new app named `HelloWorld`. Here's how:
+-   このチュートリアルでは、簡単なユニバーサル アプリを作る手順だけを説明します。 そのため、このチュートリアルを始める前に、「[Windows 10 の開発者向け最新情報](https://dev.windows.com/whats-new-windows-10-dev-preview)」と「[ユニバーサル Windows アプリとは?](whats-a-uwp.md)」で概要について読み、理解しておくことを強くお勧めします。
+-   このチュートリアルを行うには、Windows 10 と Visual Studio 2015 が必要です。 詳しくは、「[準備](get-set-up.md)」をご覧ください。
+-   また、Visual Studio の既定のウィンドウ レイアウトを使うことを前提としています。 既定のレイアウトを変更した場合は、**[ウィンドウ]** メニューの **[ウィンドウ レイアウトのリセット]** を使って、レイアウトをリセットできます。
 
-1.  Launch Visual Studio 2015.
-
-    The Visual Studio 2015 start screen appears.
-
-    (From now on, we'll refer to Visual Studio 2015 simply as Visual Studio .)
-
-2.  On the **File** menu, select **New** > **Project**.
-
-    The **New Project** dialog appears. The left pane of the dialog lets you pick the type of templates to display.
-
-3.  In the left pane, expand **Installed > Templates > JavaScript > Windows**, then pick the **Universal** template group. The dialog's center pane displays a list of project templates for Universal Windows Platform (UWP) apps.
-
-    ![The New Project window ](images/js-tut-newproject.png)
-
-    For this tutorial, we use the **Blank App** template. This template creates a minimal UWP app that compiles and runs, but contains no user interface controls or data. You add controls and data to the app over the course of this tutorials.
-
-4.  In the center pane, select the **Blank App (Universal Windows)** template.
-
-    The **Blank App** template creates a minimal UWP app that compiles and runs, but contains no user-interface controls or data. You add controls to the app over the course of this tutorial.
-
-5.  In the **Name** text box, type "HelloWorld".
-6.  Click **OK** to create the project.
-
-    Visual Studio creates your project and displays it in the **Solution Explorer**.
-
-    ![Visual Studio Solution Explorer for the HelloWorld project](images/js-tut-helloworld.png)
-
-Although the **Blank App** is a minimal template, it still contains a handful of files:
-
--   A manifest file (package.appxmanifest) that describes your app (its name, description, tile, start page, splash screen, and so on) and lists the files that your app contains.
--   A set of logo images (images/Square150x150Logo.scale-200.png, images/Square44x44Logo.scale-200.png, and images/Wide310x150Logo.scale-200.png)to display in the start menu.
--   An image (images/StoreLogo.png) to represent your app in the Windows Store.
--   A splash screen (images/SplashScreen.scale-200.png) to show when your app starts.
--   A start page (default.html) and an accompanying JavaScript file (default.js) that run when your app starts.
-
-To view and edit the files, double-click the file in the **Solution Explorer**.
-
-These files are essential to all UWP apps using JavaScript. Any project that you create in Visual Studio contains them.
-
-##Step 2: Launch the app
+##手順 1: Visual Studio での新しいプロジェクトの作成
 
 
-At this point, you've created a very simple app. This is a good time to build, deploy, and launch your app and see what it looks like. You can debug your app on the local machine, in a simulator or emulator, or on a remote device. Here's the target device menu in Visual Studio.
+`HelloWorld` という名前の新しいアプリを作成しましょう。 手順は次のとおりです。
 
-![Drop-down list of device targets for debugging your app](images/uap-debug.png)
+1.  Visual Studio 2015 を起動します。
 
-### Start the app on a Desktop device
+    Visual Studio 2015 のスタート画面が表示されます。
 
-By default, the app runs on the local machine. The target device menu provides several options for debugging your app on devices from the desktop device family.
+    (以下、Visual Studio 2015 を単に Visual Studio と表記します。)
 
--   **Simulator**
--   **Local Machine**
--   **Remote Machine**
+2.  **[ファイル]** メニューの **[新規作成]**、**[プロジェクト]** の順にクリックします。
 
-**To start debugging on the local machine**
+    **[新しいプロジェクト]** ダイアログ ボックスが表示されます。 ダイアログの左側のウィンドウで、表示するテンプレートの種類を選択できます。
 
-1.  In the target device menu (![Start debugging menu](images/startdebug-full.png)) on the **Standard** toolbar, make sure that **Local Machine** is selected. (It's the default selection.)
-2.  Click the **Start Debugging** button (![Start debugging button](images/startdebug-sm.png)) on the toolbar.
+3.  左側のウィンドウで、**[インストール済み]、[テンプレート]、[JavaScript]、[Windows]** の順に展開した後、**[ユニバーサル]** テンプレート グループを選びます。 ユニバーサル Windows プラットフォーム (UWP) アプリで使うことができるプロジェクト テンプレートの一覧がダイアログの中央のウィンドウに表示されます。
 
-   –or–
+    ![[新しいプロジェクト] ウィンドウ ](images/js-tut-newproject.png)
 
-   From the **Debug** menu, click **Start Debugging**.
+    このチュートリアルでは、**[空白のアプリ]** テンプレートを使います。 このテンプレートは、コンパイルして実行できる最小限の UWP アプリを作成しますが、ユーザー インターフェイス コントロールやデータは含まれていません。 コントロールとデータは、このチュートリアルの途中でアプリに追加します。
 
-   –or–
+4.  中央のウィンドウで、**[空白のアプリ (ユニバーサル Windows)]** プロジェクト テンプレートを選びます。
 
-   Press F5.
+    **[空白のアプリ]** テンプレートは、コンパイルして実行できる最小限の UWP アプリを作成しますが、ユーザー インターフェイス コントロールやデータは含まれていません。 コントロールは、このチュートリアルの途中でアプリに追加します。
 
-The app opens in a window, and a default splash screen appears first. The splash screen is defined by an image (SplashScreen.png) and a background color (specified in your app's manifest file).
+5.  **[名前]** ボックスに「HelloWorld」と入力します。
+6.  **[OK]** をクリックしてプロジェクトを作ります。
 
-The splash screen disappears, and then your app appears. It contains a black screen with the text "Content goes here".
+    Visual Studio によってプロジェクトが作られ、**ソリューション エクスプローラー**に表示されます。
 
-![The HelloWorld app on a PC](images/helloworld-1-js.png)
+    ![Visual Studio のソリューション エクスプローラーの HelloWorld プロジェクト](images/js-tut-helloworld.png)
 
-Press the Windows key to open the **Start** menu, then show all apps. Notice that deploying the app locally adds its tile to the **Start** menu. To run the app again (not in debugging mode), tap or click its tile in the **Start** menu.
+**[空白のアプリ]** は最小限のテンプレートですが、次の複数のファイルが含まれています。
 
-It doesn't do much—yet—but congratulations, you've built your first UWP app!
+-   アプリ (アプリの名前、説明、タイル、開始ページ、スプラッシュ画面など) を説明し、アプリに含まれるファイルを一覧表示するマニフェスト ファイル (package.appxmanifest)。
+-   スタート メニューに表示するロゴ イメージ (images/Square150x150Logo.scale-200.png、images/Square44x44Logo.scale-200.png、images/Wide310x150Logo.scale-200.png) のセット。
+-   Windows ストアに表示するアプリの画像 (images/StoreLogo.png)。
+-   アプリが起動したときに表示するスプラッシュ画面 (images/SplashScreen.scale-200.png)。
+-   スタート ページ (default.html) とそれに付随する、アプリの起動時に実行される JavaScript ファイル (default.js)。
 
-**To stop debugging**
+これらのファイルを表示して編集するには、**ソリューション エクスプローラー**でファイルをダブルクリックします。
 
--   Click the **Stop Debugging** button (![Stop debugging button](images/stopdebug.png)) in the toolbar.
+これらのファイルは、JavaScript を使うすべての UWP アプリに必要です。 Visual Studio で作るプロジェクトには、これらのファイルが必ず含まれます。
 
-   –or–
+##手順 2: アプリの起動
 
-   From the **Debug** menu, click **Stop debugging**.
 
-   –or–
+ここまでの操作で、非常に単純なアプリが作成されました。 ここで、アプリをビルド、デプロイ、起動してどうなるかを見てみましょう。 アプリは、ローカル コンピューター、シミュレーターかエミュレーター、またはリモート デバイスでデバッグできます。 Visual Studio の [ターゲット デバイス] メニューを示します。
 
-   Close the app window.
+![アプリをデバッグするデバイス ターゲットのドロップダウン リスト](images/uap-debug.png)
 
-### Start the app on a mobile device emulator
+### デスクトップ デバイスでアプリを起動する
 
-Your app runs on any Windows 10 device, so let’s see how it looks on a Windows Phone.
+既定では、アプリはローカル コンピューターで実行されます。 [ターゲット デバイス] メニューには、デスクトップ デバイス ファミリのデバイスでアプリをデバッグするためのいくつかのオプションが用意されています。
 
-In addition to the options to debug on a desktop device, Visual Studio provides options for deploying and debugging your app on a physical mobile device connected to the computer, or on a mobile device emulator. You can choose among emulators for devices with different memory and display configurations.
+-   **シミュレーター**
+-   **ローカル コンピューター**
+-   **リモート コンピューター**
 
--   **Device**
--   **Emulator <SDK version> WVGA 4 inch 512MB**
--   **Emulator <SDK version> WVGA 4 inch 1GB**
--   etc... (Various emulators in other configurations)
+**ローカル コンピューターでデバッグを開始するには**
 
-It's a good idea to test your app on a device with a small screen and limited memory, so use the **Emulator 10.0.10240.0 WVGA 4 inch 512MB** option.
-**To start debugging on a mobile device emulator**
+1.  **[標準]** ツール バーのターゲット デバイス メニュー (![[デバッグの開始] メニュー](images/startdebug-full.png)) で、**[ローカル コンピューター]** が選択されていることを確認します (既定で選択されています)。
+2.  ツール バーの **[デバッグの開始]** ボタン (![[デバッグの開始] ボタン](images/startdebug-sm.png)) をクリックします。
 
-1.  In the target device menu (![Start debugging menu](images/startdebug-full.png)) on the **Standard** toolbar, pick **Emulator 10.0.10240.0 WVGA 4 inch 512MB**.
-2.  Click the **Start Debugging** button (![Start debugging button](images/startdebug-sm.png)) in the toolbar.
+   または
 
-   –or–
+   **[デバッグ]** メニューの **[デバッグの開始]** をクリックします。
 
-   From the **Debug** menu, click **Start Debugging**.
+   または
+
+   F5 キーを押します。
+
+アプリがウィンドウで開かれ、最初に既定のスプラッシュ画面が表示されます。 スプラッシュ画面は、画像 (SplashScreen.png) と背景色によって定義されます (背景色はアプリのマニフェスト ファイルに指定します)。
+
+スプラッシュ画面が消えた後、アプリが表示されます。 黒い画面に "Content goes here" というテキストが表示されます。
+
+![PC で動作する HelloWorld アプリ](images/helloworld-1-js.png)
+
+Windows キーを押して **[スタート]** メニューを開き、すべてのアプリを表示します。 ローカルにデプロイしたアプリのタイルが **[スタート]** メニューに追加されています。 次にアプリを実行するときは (デバッグ モード以外で)、**[スタート]** メニューでこのタイルをタップまたはクリックします。
+
+お疲れさまでした。これで、初めての UWP アプリの作成は完了です。
+
+**デバッグを停止するには**
+
+-   ツール バーの **[デバッグの停止]** ボタン (![[デバッグの停止] ボタン](images/stopdebug.png)) をクリックします。
+
+   または
+
+   **[デバッグ]** メニューの **[デバッグの停止]** をクリックします。
+
+   または
+
+   アプリ ウィンドウを閉じます。
+
+### モバイル デバイス エミュレーターでアプリを起動する
+
+アプリは、すべての Windows 10 デバイスで実行できます。Windows Phone ではどのようになるかを見てみましょう。
+
+Visual Studio では、デスクトップ デバイスでデバッグするオプションに加えて、コンピューターに接続された物理的なモバイル デバイスにアプリをデプロイしてデバッグするか、モバイル デバイス エミュレーターでアプリをデプロイしてデバッグするオプションが用意されています。 メモリとディスプレイの構成がさまざまなデバイスのエミュレーターの中から選ぶことができます。
+
+-   **デバイス**
+-   **エミュレーター <SDK version> WVGA 4 inch 512MB**
+-   **エミュレーター <SDK version> WVGA 4 inch 1GB**
+-   その他... (他の構成のさまざまなエミュレーター)
+
+画面が小さくメモリが限られているデバイスでアプリをテストすることをお勧めします。そのためには、**[Emulator 10.0.10240.0 WVGA 4 inch 512MB]** オプションを使用します。
+**モバイル デバイス エミュレーターでデバッグを開始するには**
+
+1.  **[標準]** ツール バーのターゲット デバイス メニュー (![[デバッグの開始] メニュー](images/startdebug-full.png)) で、**[Emulator 10.0.10240.0 WVGA 4 inch 512MB]** を選びます。
+2.  ツール バーの **[デバッグの開始]** ボタン (![[デバッグの開始] ボタン](images/startdebug-sm.png)) をクリックします。
+
+   または
+
+   **[デバッグ]** メニューの **[デバッグの開始]** をクリックします。
 
    
-Visual Studio starts the selected emulator and then deploys and starts your app. On the mobile device emulator, the app looks like this.
+Visual Studio で、選択したエミュレーターが起動し、アプリが展開されて起動されます。 モバイル デバイス エミュレーターでは、アプリは次のように表示されます。
 
-![Initial app screen on mobile device](images/helloworld-1-js-phone.png)
+![モバイル デバイスでのアプリの初期画面](images/helloworld-1-js-phone.png)
 
-## Step 3: Modify your start page
+## 手順 3: スタート ページの変更
 
-One of the files that Visual Studio created for you is default.html, your app's start page. When the app runs, it displays the content of its start page. The start page also contains references to the app's code files and style sheets. Here's the start page that Visual Studio created for you:
+Visual Studio によって作成されるファイルの中に default.html があります。これはアプリのスタート ページです。 アプリが実行されると、スタート ページのコンテンツが表示されます。 スタート ページには、アプリのコード ファイルとスタイル シートへの参照も含まれます。 Visual Studio によって作成されるスタート ページを次に示します。
 
 ```html
 <!DOCTYPE html>
@@ -171,11 +171,11 @@ One of the files that Visual Studio created for you is default.html, your app's 
 </html>
 ```
 
-Let's add some new content to your default.html file. Just as you would add content to any other HTML file, you add your content inside the [**body**](https://msdn.microsoft.com/library/windows/apps/Hh453011) element. You can use HTML5 elements to create your app (with a [few exceptions](https://msdn.microsoft.com/library/windows/apps/Hh465380)). That means you can use HTML5 elements like [**h1**](https://msdn.microsoft.com/library/windows/apps/Hh441078), [**p**](https://msdn.microsoft.com/library/windows/apps/Hh453431), [**button**](https://msdn.microsoft.com/library/windows/apps/Hh453017), [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133), and [**img**](https://msdn.microsoft.com/library/windows/apps/Hh466114).
+この default.html ファイルに、新しいコンテンツを追加しましょう。 他の HTML ファイルでの追加と同じように、[**body**](https://msdn.microsoft.com/library/windows/apps/Hh453011) 要素の中にコンテンツを追加します。 HTML5 要素を使ってアプリを作成できます ([いくつか例外があります](https://msdn.microsoft.com/library/windows/apps/Hh465380))。 つまり、[**h1**](https://msdn.microsoft.com/library/windows/apps/Hh441078)、[**p**](https://msdn.microsoft.com/library/windows/apps/Hh453431)、[**button**](https://msdn.microsoft.com/library/windows/apps/Hh453017)、[**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133)、[**img**](https://msdn.microsoft.com/library/windows/apps/Hh466114) などの HTML5 要素を使うことができます。
 
-**To modify your start page**
+**スタート ページを変更するには**
 
-1.  Replace the existing content in the [**body**](https://msdn.microsoft.com/library/windows/apps/Hh453011) element with a first-level heading that says "Hello, world!", some text that asks the user's name, an [**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) element to accept the user's name, a [**button**](https://msdn.microsoft.com/library/windows/apps/Hh453017), and a [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) element. Assign IDs to the **input**, the **button**, and the **div**.
+1.  第 1 レベルの見出しが "Hello, world!" である [**body**](https://msdn.microsoft.com/library/windows/apps/Hh453011) 要素の既存のコンテンツを、ユーザーの名前をたずねるテキスト、ユーザーの名前を受け取る [**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) 要素、[**button**](https://msdn.microsoft.com/library/windows/apps/Hh453017) 要素、[**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) 要素に置き換えます。 **input**、**button**、**div** に ID を割り当てます。
 
  ```html
     <body class="win-type-body">
@@ -187,21 +187,22 @@ Let's add some new content to your default.html file. Just as you would add cont
     </body>
  ```
 
-2.  Run the app on the local machine. It look like this.
+2.  ローカル コンピューターでアプリを実行します。 次のようになります。
 
-![The HelloWorld app with new content](images/helloworld-2-js.png)
+![新しい内容の HelloWorld アプリ](images/helloworld-2-js.png)
 
-   You can type in the [**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) element, but right now, clicking the [**button**](https://msdn.microsoft.com/library/windows/apps/Hh453017) doesn't do anything. Some objects, such as **button**, can send messages when certain events occur. These event messages give you the opportunity to take some action in response to the event. You put code to respond to the event in an event handler method.
+   [
+            **input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) 要素に入力できますが、この時点では [**button**](https://msdn.microsoft.com/library/windows/apps/Hh453017) をクリックしても何も起こりません。 **button** などの一部のオブジェクトは、特定のイベントが発生したときにメッセージを送信できます。 これらのイベント メッセージにより、イベントに応答してアクションを実行できます。 イベントに応答するためのコードをイベント ハンドラー メソッドに配置します。
 
-   In the next steps, we create an event handler for the [**button**](https://msdn.microsoft.com/library/windows/apps/Hh453017) that displays a personalized greeting. We add our event handler code to our default.js file.
+   次の手順で、ユーザーに合わせたあいさつを表示する [**button**](https://msdn.microsoft.com/library/windows/apps/Hh453017) 用のイベント ハンドラーを作成します。 イベント ハンドラーのコードを default.js ファイルに追加します。
 
-##Step 4: Create an event handler
+##手順 4: イベント ハンドラーの作成
 
-When we created our new project, Visual Studio created a /js/default.js file for us. This file contains code for handling your app's life cycle. It's also where you write additional code that provides interactivity for your default.html file.
+新しいプロジェクトを作成したときに、/js/default.js というファイルが自動的に作成されました。 このファイルには、アプリのライフサイクルを処理するコードが含まれています。 このファイルは、default.html ファイルにインタラクティビティを追加するコードを記述する場所でもあります。
 
-Open the default.js file.
+default.js ファイルを開きます。
 
-Before we start adding our own code, let's take a look at the first and the last few lines of code in the file:
+独自のコードを追加する前に、ファイル内のコードの最初と最後の数行を見てみましょう。
 
 ```javascript
 (function () {
@@ -212,11 +213,11 @@ Before we start adding our own code, let's take a look at the first and the last
  })(); 
 ```
 
-You might be wondering what's going on here. These lines of code wrap the rest of the default.js code in a self-executing anonymous function. A self-executing anonymous function makes it easier to avoid naming conflicts or situations where you accidently modify a value that you didn't intend to modify. It also keeps unnecessary identifiers out of the global namespace, which helps performance. It looks a little strange, but it's a good programming practice.
+ここで何が行われているかについて説明します。 これらの行は、default.js コードの残りの行を自己実行型の匿名関数でラップしています。 自己実行型の匿名関数により、名前の競合や値の間違った変更を簡単に避けられます。 また、必要のない識別子をグローバル名前空間から排除できるため、パフォーマンスが向上します。 奇妙に思えるかもしれませんが、これは適切なプログラミング方法です。
 
-The next line of code turns on [strict mode](https://msdn.microsoft.com/en-us/library/windows/apps/br230269.aspx) for your JavaScript code. Strict mode provides additional error checking for your code. For example, it prevents you from using implicitly declared variables or assigning a value to a read-only property.
+次のコード行は、JavaScript コードに対して [strict モード](https://msdn.microsoft.com/en-us/library/windows/apps/br230269.aspx)を有効にします。 strict モードにより、コードのエラー チェック機能が強化されます。 たとえば、暗黙的に宣言された変数の使用や、読み取り専用プロパティへの値の割り当てを回避します。
 
-Take a look at the rest of the code in default.js. It handles your app's [**activated**](https://msdn.microsoft.com/library/windows/apps/BR212679) and [**checkpoint**](https://msdn.microsoft.com/library/windows/apps/BR229839) events. We go into more detail about these events later. For now, just know that the **activated** event fires when your app starts.
+default.js の残りのコードを見てください。 これは、アプリの [**activated**](https://msdn.microsoft.com/library/windows/apps/BR212679) イベントと [**checkpoint**](https://msdn.microsoft.com/library/windows/apps/BR229839) イベントを処理します。 これらのイベントについては、後で詳しく説明します。 ここでは、アプリが起動すると **activated** イベントが発生することだけを覚えておいてください。
 
 ```javascript
    (function () {
@@ -247,19 +248,20 @@ Take a look at the rest of the code in default.js. It handles your app's [**acti
 })();
 ```
 
-Let's define an event handler for your [**button**](https://msdn.microsoft.com/library/windows/apps/Hh453017). Our new event handler gets the user's name from the `nameInput` [**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) control and uses it to output a greeting to the `greetingOutput` [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) element that you created in the last section.
+それでは、[**button**](https://msdn.microsoft.com/library/windows/apps/Hh453017) 用のイベント ハンドラーを定義しましょう。 新しいイベント ハンドラーは、`nameInput` [**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) コントロールからユーザーの名前を取得し、それを使って前のセクションで作成した `greetingOutput` [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) 要素にあいさつを出力します。
 
-### Using events that work for touch, mouse, and pen input
+### タッチ、マウス、ペン入力で動作するイベントの使用
 
-In a UWP app, you don’t need to worry about the differences between touch, mouse, and other forms of pointer input. You can just use events that you know, like [**click**](https://msdn.microsoft.com/library/windows/apps/Hh441312), and they work for all forms of input.
+UWP アプリでは、入力方法 (タッチ、マウス、その他の形式のポインター入力) の違いを気にする必要はありません。 [
+            **click**](https://msdn.microsoft.com/library/windows/apps/Hh441312) などのイベントを使うだけで、あらゆる形式の入力に対応できます。
 
-**Tip**   Your app can also use the new *MSPointer\** and *MSGesture\** events, which work for touch, mouse, and pen input and can provide additional info about the device that triggered the event. For more info, see [Responding to user interaction](https://msdn.microsoft.com/library/windows/apps/Hh700412) and [Gestures, manipulations, and interactions](https://msdn.microsoft.com/library/windows/apps/Hh761498).
+**ヒント:**   アプリでは、新しい *MSPointer\** イベントと *MSGesture\** イベントも使用できます。これらはタッチ、マウス、ペン入力に対応し、イベントを発生させたデバイスについての情報も提供できます。 詳しくは、「[ユーザー操作への応答](https://msdn.microsoft.com/library/windows/apps/Hh700412)」と「[ジェスチャ、操作、対話的操作](https://msdn.microsoft.com/library/windows/apps/Hh761498)」をご覧ください。
 
-Let's go ahead and create the event handler.
+それでは、イベント ハンドラーを作成してみましょう。
 
-**To create the event handler**
+**イベント ハンドラーを作成するには**
 
-1.  In default.js, after the [**app.oncheckpoint**](https://msdn.microsoft.com/library/windows/apps/BR229839) event handler and before the call to [**app.start**](https://msdn.microsoft.com/library/windows/apps/BR229705), create a [**click**](https://msdn.microsoft.com/library/windows/apps/Hh441312) event handler function named `buttonClickHandler` that takes a single parameter named `eventInfo`.
+1.  default.js で、[**app.oncheckpoint**](https://msdn.microsoft.com/library/windows/apps/BR229839) イベント ハンドラーの後、[**app.start**](https://msdn.microsoft.com/library/windows/apps/BR229705) の呼び出しの前に、`eventInfo` という名前の 1 つのパラメーターを受け取る `buttonClickHandler` という名前の [**click**](https://msdn.microsoft.com/library/windows/apps/Hh441312) イベント ハンドラー関数を作成します。
 ```javascript
     function buttonClickHandler(eventInfo) {
      
@@ -275,12 +277,12 @@ Let's go ahead and create the event handler.
         }
  ```
 
-You added your event handler to default.js. Now you need to register it.
+これで、イベント ハンドラーが default.js に追加されました。 次に、そのハンドラーを登録する必要があります。
 
-## Step 5: Register the event handler when your app launches
+## 手順 5: アプリ起動時のイベント ハンドラーの登録
 
 
-The only thing we need to do now is register the event handler with the button. The recommended way to register an event handler is to call [**addEventListener**](https://msdn.microsoft.com/library/windows/apps/Hh441145) from our code. A good place to register the event handler is when our app is activated. Fortunately, Visual Studio generated some code for us in our default.js file that handles our app's activation: the [**app.onactivated**](https://msdn.microsoft.com/library/windows/apps/BR212679) event handler. Let's take a look at this code.
+ここで行う必要があるのは、ボタンにイベント ハンドラーを登録する作業だけです。 イベント ハンドラーを登録する際に推奨される方法は、コードから [**addEventListener**](https://msdn.microsoft.com/library/windows/apps/Hh441145) を呼び出す方法です。 イベント ハンドラーを登録するのに最適なタイミングは、アプリがアクティブ化される時点です。 幸いなことに、アプリのアクティブ化を処理するコード ([**app.onactivated**](https://msdn.microsoft.com/library/windows/apps/BR212679) イベント ハンドラー) が default.js ファイル内に自動的に生成されています。 このコードを見てみましょう。
 
 ```javascript
     var app = WinJS.Application;
@@ -299,16 +301,17 @@ The only thing we need to do now is register the event handler with the button. 
     };
 ```
 
-Inside the [**onactivated**](https://msdn.microsoft.com/library/windows/apps/BR212679) handler, the code checks to see what type of activation occurred. There are many different types of activations. For example, your app is activated when the user launches your app and when the user wants to open a file that is associated with your app. (For more info, see [App lifecycle](https://msdn.microsoft.com/library/windows/apps/Mt243287).)
+[
+            **onactivated**](https://msdn.microsoft.com/library/windows/apps/BR212679) ハンドラーのコードでは、発生したアクティブ化の種類を確認します。 アクティブ化にはさまざまな種類があります。 たとえば、ユーザーがアプリを起動したときと、ユーザーがアプリに関連付けられているファイルを開くときに、アプリはアクティブ化されます (詳しくは、「[アプリのライフサイクル](https://msdn.microsoft.com/library/windows/apps/Mt243287)」をご覧ください)。
 
-We're interested in the [**launch**](https://msdn.microsoft.com/library/windows/apps/BR224693) activation. An app is *launched* whenever it is not running and then a user activates it.
+ここでは、[**launch**](https://msdn.microsoft.com/library/windows/apps/BR224693) アクティブ化に注目します。 アプリは、実行されていないときにユーザーがアクティブ化すると*起動*します。
 
 ```javascript
     app.onactivated = function (args) {
         if (args.detail.kind === activation.ActivationKind.launch) {
 ```
 
-If the activation is a launch activation, the code checks to see how the app was shut down the last time it ran.
+アクティブ化が起動アクティブ化の場合、このコードでは、前回アプリがどのようにシャットダウンされたかを確認します。
 
 ```javascript
             if (args.detail.previousExecutionState !== activation.ApplicationExecutionState.terminated) {
@@ -319,7 +322,7 @@ If the activation is a launch activation, the code checks to see how the app was
             }
 ```
 
-Then it calls [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975).
+その後、[**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975) を呼び出します。
 
 ```javascript
             args.setPromise(WinJS.UI.processAll());
@@ -327,15 +330,17 @@ Then it calls [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windo
     };
 ```    
 
-It calls [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975) regardless of whether the app had been shut down in the past or whether this is the very first time it's being launched. The **WinJS.UI.processAll** is enclosed in a call to the [**setPromise**](https://msdn.microsoft.com/library/windows/apps/JJ215609) method, which makes sure the splash screen isn't taken down until the app's page is ready.
+[
+            **WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975) は、アプリが前回シャットダウンされているか、または今回が初めての起動であるかどうかにかかわらず、呼び出されます。 **WinJS.UI.processAll** を [**setPromise**](https://msdn.microsoft.com/library/windows/apps/JJ215609) メソッドの呼び出しで囲むことで、アプリのページが準備できるまで、スプラッシュ画面が消えないようにします。
 
-**Tip**   The [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975) function scans your default.html file for WinJS controls and initializes them. So far, we haven't added any of these controls, but it's a good idea to leave this code in case you want to add them later.
+**ヒント:**   [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975) 関数は、default.html ファイルをスキャンして WinJS コントロールを探し、それらを初期化します。 これらのコントロールはまだ追加しませんが、後で追加する場合に備えて、このコードを削除しないでおくことをお勧めします。
 
-A good place to register event handlers for non-WinJS controls is just after the call to [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975).
+WinJS 以外のコントロール用のイベント ハンドラーは、[**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975) を呼び出した直後に登録します。
 
-**To register your event handler**
+**イベント ハンドラーを登録するには**
 
--   In the [**onactivated**](https://msdn.microsoft.com/library/windows/apps/BR212679) event handler in default.js, retrieve `helloButton` and use [**addEventListener**](https://msdn.microsoft.com/library/windows/apps/Hh441145) to register our event handler for the [**click**](https://msdn.microsoft.com/library/windows/apps/Hh441312) event. Add this code after the call to [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975).
+-   default.js の [**onactivated**](https://msdn.microsoft.com/library/windows/apps/BR212679) イベント ハンドラーで、`helloButton` を取得し、[**addEventListener**](https://msdn.microsoft.com/library/windows/apps/Hh441145) を使用して、[**click**](https://msdn.microsoft.com/library/windows/apps/Hh441312) イベント用のイベント ハンドラーを登録します。 [
+            **WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975) の呼び出しの後に、次のコードを追加します。
 
 ```javascript
    app.onactivated = function (args) {
@@ -355,7 +360,7 @@ A good place to register event handlers for non-WinJS controls is just after the
         };
 ```    
 
-Here's the complete code for our updated default.js file:
+更新された default.js ファイルの完全なコードを以下に示します。
 
 ```javascript
    (function () {
@@ -396,24 +401,25 @@ Here's the complete code for our updated default.js file:
 })();
 ```
 
-Run the app. When you enter your name in the text box and click the button, the app displays a personalized greeting. Here's how it looks on the local machine and in the emulator.
+アプリを実行します。 テキスト ボックスに名前を入力してボタンをクリックすると、ユーザーに合わせたあいさつが表示されます。 ローカル コンピューターとエミュレーターでは次のように表示されます。
 
-![A personalized greeting from the HelloWorld app](images/helloworld-3-js.png)
+![HelloWorld アプリのユーザーに合わせたあいさつ](images/helloworld-3-js.png)
 
-![A personalized greeting from the HelloWorld app](images/helloworld-3-js-phone.png)
+![HelloWorld アプリのユーザーに合わせたあいさつ](images/helloworld-3-js-phone.png)
 
-**Note**   If you're curious as to why we use [**addEventListener**](https://msdn.microsoft.com/library/windows/apps/Hh441145) to register our event in code rather than setting the [**onclick**](https://msdn.microsoft.com/library/windows/apps/Hh441312) event in our HTML, see [Coding basic apps](https://msdn.microsoft.com/library/windows/apps/Hh780660) for a detailed explanation.
+**注:**   HTML に [**onclick**](https://msdn.microsoft.com/library/windows/apps/Hh441312) イベントを設定するのではなく [**addEventListener**](https://msdn.microsoft.com/library/windows/apps/Hh441145) を使ってコード内のイベントを登録する理由を理解するには、「[基本的なアプリのコーディング](https://msdn.microsoft.com/library/windows/apps/Hh780660)」の詳しい説明をご覧ください。
 
-## Step 6: Add a Windows Library for JavaScript control
+## 手順 6: JavaScript 用 Windows ライブラリ コントロールの追加
 
 
-In addition to standard HTML controls, your app can use any of the controls in the Windows Library for JavaScript, such as the [**WinJS.UI.DatePicker**](https://msdn.microsoft.com/library/windows/apps/BR211681), [**WinJS.UI.FlipView**](https://msdn.microsoft.com/library/windows/apps/BR211711), [**WinjS.UI.ListView**](https://msdn.microsoft.com/library/windows/apps/BR211837), and [**WinJS.UI.Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) controls.
+アプリでは、標準の HTML コントロール以外にも、[**WinJS.UI.DatePicker**](https://msdn.microsoft.com/library/windows/apps/BR211681)、[**WinJS.UI.FlipView**](https://msdn.microsoft.com/library/windows/apps/BR211711)、[**WinjS.UI.ListView**](https://msdn.microsoft.com/library/windows/apps/BR211837)、[**WinJS.UI.Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) コントロールなど、JavaScript 用 Windows ライブラリのいずれのコントロールも使うことができます。
 
-Unlike HTML controls, WinJS controls don't have dedicated markup elements: you can't create a [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) control by adding a `<rating />` element, for example. To add a WinJS control, you create a [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) element and use the [**data-win-control**](https://msdn.microsoft.com/library/windows/apps/Hh440969) attribute to specify the type of control you want. To add a **Rating** control, you set the attribute to "WinJS.UI.Rating".
+HTML コントロールには専用のマークアップ要素がありますが、WinJS コントロールにはありません。たとえば、`<rating />` 要素を追加しても、[**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) コントロールを作成することはできません。 WinJS コントロールを追加するには、[**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) 要素を作成し、[**data-win-control**](https://msdn.microsoft.com/library/windows/apps/Hh440969) 属性を使ってコントロールの種類を指定します。 **Rating** コントロールを追加するには、この属性を "WinJS.UI.Rating" に設定します。
 
-Let's add a [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) control to your app.
+[
+            **Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) コントロールをアプリに追加しましょう。
 
-1.  In your default.html file, add a [**label**](https://msdn.microsoft.com/library/windows/apps/Hh453321) and a [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) control after the `greetingOutput` [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133).
+1.  default.html ファイルで、`greetingOutput` [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) の後ろに [**label**](https://msdn.microsoft.com/library/windows/apps/Hh453321) コントロールと [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) コントロールを追加します。
 
 ```html
         <body class="win-type-body">
@@ -432,32 +438,35 @@ Let's add a [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR21189
 
     For the [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) to load, your page must call [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975). Because our app is using one of the Visual Studio templates, your default.js already includes a call to **WinJS.UI.processAll**, as described earlier, so you don't have to add any code.
 
-2.  Run the app on the local machine. Notice the new [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) control.
+2.  ローカル コンピューターでアプリを実行します。 新しい [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) コントロールに注目してください。
 
-   ![The Hello, world app, with a Windows Library for JavaScript control](images/helloworld-4-JS.png)
+   ![JavaScript 用 Windows ライブラリのコントロールを使った "Hello, world" アプリ](images/helloworld-4-JS.png)
 
-Right now, clicking the [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) control changes the rating, but it doesn't do anything else. Let's use an event handler to do something when the user changes the rating.
+ここで [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) コントロールをクリックすると評価が変化しますが、それ以外は何も起こりません。 イベント ハンドラーを使って、ユーザーが評価を変更したときに何か処理を行うようにしましょう。
 
-## Step 7: Register an event handler for a Windows Library for JavaScript control
+## 手順 7: Windows ライブラリの JavaScript 用コントロールのイベント ハンドラーの登録
 
 
-Registering an event handler for a WinJS control is a little different than registering an event handler for a standard HTML control. Earlier, we mentioned that the [**onactivated**](https://msdn.microsoft.com/library/windows/apps/BR212679) event handler calls [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975) method to initialize WinJS in your markup. The **WinJS.UI.processAll** is enclosed in a call to the [**setPromise**](https://msdn.microsoft.com/library/windows/apps/JJ215609) method.
+WinJS コントロールのイベント ハンドラーを登録する方法は、標準の HTML コントロールのイベント ハンドラーを登録する方法と少し異なります。 前に説明したように、[**onactivated**](https://msdn.microsoft.com/library/windows/apps/BR212679) イベント ハンドラーでは、[**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975) メソッドを呼び出して、マークアップ内で WinJS を初期化します。 **WinJS.UI.processAll** が、[**setPromise**](https://msdn.microsoft.com/library/windows/apps/JJ215609) メソッドの呼び出しの中にカプセル化されます。
 
 ```javascript
             args.setPromise(WinJS.UI.processAll());           
 ```
 
-If [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) were a standard HTML control, you could add your event handler after this call to [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975). But it's a little more complicated for a WinJS control like our **Rating**. Because **WinJS.UI.processAll** creates the **Rating** control for us, we can't add the event handler to **Rating** until after **WinJS.UI.processAll** has finished its processing.
+[
+            **Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) が標準の HTML コントロールであれば、この [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975) の呼び出しの後にイベント ハンドラーを追加できます。 しかし、**Rating** などの WinJS コントロールの場合は、もう少し複雑です。 **WinJS.UI.processAll** によって **Rating** コントロールが作成されるため、**WinJS.UI.processAll** の処理が終わるまで、**Rating** にイベント ハンドラーを追加できません。
 
-If [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975) were a typical method, we could register the [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) event handler right after we call it. But the **WinJS.UI.processAll** method is asynchronous, so any code that follows it might run before **WinJS.UI.processAll** completes. So, what do we do? We use a [**Promise**](https://msdn.microsoft.com/library/windows/apps/BR211867) object to receive notification when **WinJS.UI.processAll** completes.
+[
+            **WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975) が通常のメソッドであれば、呼び出した直後に [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) イベント ハンドラーを登録できます。 しかし、**WinJS.UI.processAll** メソッドは非同期メソッドです。そのため、**WinJS.UI.processAll** が完了する前に次のコードが実行されることもあります。 どうしたらよいでしょうか。 [
+            **Promise**](https://msdn.microsoft.com/library/windows/apps/BR211867) オブジェクトを使って、**WinJS.UI.processAll** が完了したときに通知を受け取るようにします。
 
-Like all asynchronous WinJS methods, [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975) returns a [**Promise**](https://msdn.microsoft.com/library/windows/apps/BR211867) object. A **Promise** is a "promise" that something will happen in the future; when that thing happens, the **Promise** is said to have completed.
+すべての非同期 WinJS メソッドと同じように、[**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975) は [**Promise**](https://msdn.microsoft.com/library/windows/apps/BR211867) オブジェクトを返します。 **Promise** は、後で何かが起こるという "約束" (promise) です。その何かが起こった場合、**Promise** が完了したと言います。
 
-[**Promise**](https://msdn.microsoft.com/library/windows/apps/BR211867) objects have a [**then**](https://msdn.microsoft.com/library/windows/apps/BR229728) method that takes a "completed" function as a parameter. The **Promise** calls this function when it completes.
+[**Promise**](https://msdn.microsoft.com/library/windows/apps/BR211867) オブジェクトには、パラメーターとして "completed" 関数を受け取る [**then**](https://msdn.microsoft.com/library/windows/apps/BR229728) メソッドがあります。 **Promise** が完了すると、この関数が呼び出されます。
 
-By adding your code to a "completed" function and passing it to the [**Promise**](https://msdn.microsoft.com/library/windows/apps/BR211867) object's [**then**](https://msdn.microsoft.com/library/windows/apps/BR229728) method, you can be sure your code executes after [**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975) is complete.
+"completed" 関数にコードを追加し、それを [**Promise**](https://msdn.microsoft.com/library/windows/apps/BR211867) オブジェクトの [**then**](https://msdn.microsoft.com/library/windows/apps/BR229728) メソッドに渡すと、[**WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975) の完了後に、そのコードを確実に実行できます。
 
-1.  Let's output the rating value when the user selects a rating. In your default.html file, create a [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) element to display the rating value and give it the **id** "ratingOutput".
+1.  ユーザーが評価を選んだときに、評価値を出力するようにします。 default.html ファイルで、評価値を表示する [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) 要素を作成し、それに "ratingOutput" という **ID** を付けます。
 ```html
         <body class="win-type-body">
         <h1>Hello, world!</h1>
@@ -474,7 +483,8 @@ By adding your code to a "completed" function and passing it to the [**Promise**
     </body>
 ```
 
-2.  In our default.js file, create an event handler for the [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) control's [**change**](https://msdn.microsoft.com/library/windows/apps/BR211891) event named `ratingChanged`. The [**eventInfo**](https://msdn.microsoft.com/library/windows/apps/Hh465776) parameter contains a **detail.tentativeRating** property that provides the new user rating. Retrieve this value and display it in the output [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133).
+2.  default.js ファイルで、[**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) コントロールの [**change**](https://msdn.microsoft.com/library/windows/apps/BR211891) イベントのイベント ハンドラーを作成します。このイベント ハンドラーには、`ratingChanged` という名前を付けます。 [
+            **eventInfo**](https://msdn.microsoft.com/library/windows/apps/Hh465776) パラメーターには、新しいユーザー評価を示す **detail.tentativeRating** プロパティが含まれています。 この値を取得し、出力 [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) で表示します。
 
 ```javascript
         function ratingChanged(eventInfo) {
@@ -535,15 +545,15 @@ Here's the updated [**onactivated**](https://msdn.microsoft.com/library/windows/
         };
 ```        
 
-5.  Run the app. When you select a rating value, it outputs the numeric value below the [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) control.
+5.  アプリを実行します。 評価値を選ぶと、[**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) コントロールの下に数値が出力されます。
 
-![The completed Hello world app on a PC](images/helloworld-5-js.png)
+![PC で動作する完成した HelloWorld アプリ](images/helloworld-5-js.png)
 
-![The completed Hello world app on a phone](images/helloworld-5-js-phone.png)
+![電話で動作する完成した HelloWorld アプリ](images/helloworld-5-js-phone.png)
 
-## Summary
+## 要約
 
-Congratulations, you've created your first app for Windows 10 and the UWP using JavaScript and HTML!
+これで、JavaScript と HTML を使って Windows 10 と UWP 用の初めてのアプリを作成しました。
 
 
 

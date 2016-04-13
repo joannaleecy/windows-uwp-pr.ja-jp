@@ -1,59 +1,59 @@
 ---
-description: Links the value of a property in a control template to the value of some other exposed property on the templated control. TemplateBinding can only be used within a ControlTemplate definition in XAML.
-title: TemplateBinding markup extension
+description: コントロール テンプレート内のプロパティの値を、template 宣言されたコントロールのその他の公開されているプロパティの値にリンクします。 XAML では、TemplateBinding は ControlTemplate 定義内でのみ使用できます。
+title: TemplateBinding マークアップ拡張
 ms.assetid: FDE71086-9D42-4287-89ED-8FBFCDF169DC
 ---
 
-# {TemplateBinding} markup extension
+# {TemplateBinding} マークアップ拡張
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-Links the value of a property in a control template to the value of some other exposed property on the templated control. **TemplateBinding** can only be used within a [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) definition in XAML.
+コントロール テンプレート内のプロパティの値を、template 宣言されたコントロールのその他の公開されているプロパティの値にリンクします。 XAML では、**TemplateBinding** は [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 定義内でのみ使用できます。
 
-## XAML attribute usage
+## XAML 属性の使用方法
 
 ``` syntax
 <object propertyName="{TemplateBinding sourceProperty}" .../>
 ```
 
-## XAML attribute usage (for Setter property in template or style)
+## XAML 属性の使用方法 (テンプレートまたはスタイルの Setter プロパティの場合)
 
 ``` syntax
 <Setter Property="propertyName" Value="{TemplateBinding sourceProperty}" .../>
 ```
 
-## XAML values
+## XAML 値
 
-| Term | Description |
+| 用語 | 説明 |
 |------|-------------|
-| propertyName | The name of the property being set in the setter syntax. This must be a dependency property. |
-| sourceProperty | The name of another dependency property that exists on the type being templated. |
+| propertyName | setter 構文で設定されるプロパティの名前。 これは依存関係プロパティであることが必要です。 |
+| sourceProperty | template 宣言された型に存在する、別の依存関係プロパティの名前。 |
 
-## Remarks
+## 注釈
 
-Using **TemplateBinding** is a fundamental part of how you define a control template, either if you are a custom control author or if you are replacing a control template for existing controls. For more info, see [Quickstart: Control templates](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374).
+カスタム コントロールの作成者である場合でも、コントロール テンプレートを今あるコントロールに置き換える場合でも、コントロール テンプレートを定義するうえでは **TemplateBinding** を使うことが欠かせません。 詳しくは、「[クイック スタート: コントロール テンプレート](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)」をご覧ください。
 
-It's fairly common for *propertyName* and *targetProperty* to use the same property name. In this case, a control might define a property on itself and forward the property to an existing and intuitively named property of one of its component parts. For example, a control that incorporates a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) in its compositing, which is used to display the control's own **Text** property, might include this XAML as a part in the control template: `<TextBlock Text="{TemplateBinding Text}" .... />`
+*propertyName* と *targetProperty* では同じプロパティ名を使うことが一般的です。 この場合、コントロール自体でプロパティを定義し、プロパティを、そのいずれかのコンポーネントの直感的な名前を持つ既にあるプロパティに転送します。 たとえば、[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) をコントロールの合成に組み込んでコントロール自体の **Text** プロパティの表示に使う場合は、コントロール テンプレートの一部として次の XAML を含めることができます。`<TextBlock Text="{TemplateBinding Text}" .... />`
 
-The types used as the value for the source property and the target property must match. There's no opportunity to introduce a converter when you're using **TemplateBinding**. Failing to match values results in an error when parsing the XAML. If you need a converter you can use the verbose syntax for a template binding such as: `{Binding RelativeSource={RelativeSource TemplatedParent}, Converter="..." ...}`
+ソース プロパティとターゲット プロパティの値として使う型は一致する必要があります。 **TemplateBinding** を使うとコンバーターを導入する機会がありません。 値が一致しないと、XAML を解析したときにエラーが発生します。 コンバーターを必要とする場合は、次のようなテンプレート バインドの冗長な形式の構文を使うことができます。`{Binding RelativeSource={RelativeSource TemplatedParent}, Converter="..." ...}`
 
-Attempting to use a **TemplateBinding** outside of a [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) definition in XAML will result in a parser error.
+XAML の [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 定義の外側で **TemplateBinding** を使うと、パーサー エラーが発生します。
 
-You can use **TemplateBinding** for cases where the templated parent value is also deferred as another binding. The evaluation for **TemplateBinding** can wait until any required runtime bindings have values.
+親のテンプレート値も別のバインドとして延期される場合は、**TemplateBinding** を使用できます。 **TemplateBinding** の評価は、必要な実行時バインドに値が設定されるまで待機することができます。
 
-A **TemplateBinding** is always a one-way binding. Both properties involved must be dependency properties.
+**TemplateBinding** は常に一方向バインドです。 関係するプロパティはどちらも依存関係プロパティである必要があります。
 
-**TemplateBinding** is a markup extension. Markup extensions are typically implemented when there is a requirement to escape attribute values to be other than literal values or handler names, and the requirement is more global than just putting type converters on certain types or properties. All markup extensions in XAML use the "{" and "}" characters in their attribute syntax, which is the convention by which a XAML processor recognizes that a markup extension must process the attribute.
+**TemplateBinding** はマークアップ拡張です。 通常、マークアップ拡張は、属性値をリテラル値やハンドラー名以外にエスケープする必要があり、特定の型やプロパティに対して型コンバーターを指定するのではなく、よりグローバルにその必要がある場合に実装します。 XAML のすべてのマークアップ拡張では、それぞれの属性構文で "{" と "}" の文字を使います。これは規約であり、これに従って XAML プロセッサは、マークアップ拡張で属性を処理する必要があることを認識します。
 
-**Note**  In the Windows Runtime XAML processor implementation, there is no backing class representation for **TemplateBinding**. **TemplateBinding** is exclusively for use in XAML markup. There isn't a straightforward way to reproduce the behavior in code.
+**注**  Windows ランタイム XAML プロセッサの実装では、**TemplateBinding** のバッキング クラス表現はありません。 **TemplateBinding** は、XAML マークアップでのみ使用できます。 コードの動作を再現する方法には単純なものがありません。
 
-## Related topics
+## 関連トピック
 
-* [Quickstart: Control templates](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
-* [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946)
+* [クイック スタート: コントロール テンプレート](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
+* [データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)
 * [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)
-* [XAML overview](xaml-overview.md)
-* [Dependency properties overview](dependency-properties-overview.md)
+* [XAML の概要](xaml-overview.md)
+* [依存関係プロパティの概要](dependency-properties-overview.md)
  
 
 

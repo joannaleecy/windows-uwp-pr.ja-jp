@@ -1,8 +1,8 @@
 ---
-description: アプリに十分なキーボード操作機能が備わっていない場合、視覚障碍や運動障碍のあるユーザーはアプリをうまく使うことができなかったり、まったく使うことができない可能性があります。
+Description: アプリに十分なキーボード操作機能が備わっていない場合、視覚障碍や運動障碍のあるユーザーはアプリをうまく使うことができなかったり、まったく使うことができない可能性があります。
 title: キーボードのアクセシビリティ
 ms.assetid: DDAE8C4B-7907-49FE-9645-F105F8DFAD8B
-label: キーボードのアクセシビリティ
+label: Keyboard accessibility
 template: detail.hbs
 ---
 
@@ -289,7 +289,8 @@ Windows Phone デバイスには、通常、専用のハードウェア キー�
 
 SIP には Ctrl キーや Alt キーがないため、キーボード ショートカットは通常、Windows Phone アプリには関係ありません。
 
-## 関連トピック
+<span id="related_topics"></span>関連トピック
+-----------------------------------------------
 
 * [アクセシビリティ](accessibility.md)
 * [キーボード操作](https://msdn.microsoft.com/library/windows/apps/Mt185607)
@@ -304,6 +305,6 @@ SIP には Ctrl キーや Alt キーがないため、キーボード ショー�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=Mar16_HO3-->
 
 

@@ -2,14 +2,13 @@
 Description: ユニバーサル Windows プラットフォーム (UWP) アプリに関連するアクセシビリティの概念について紹介します。
 title: アクセシビリティ
 ms.assetid: C89D79C2-B830-493D-B020-F3FF8EB5FFDD
-label: 概要
+label: Intro
 template: detail.hbs
 ---
 
 アクセシビリティ
-===============================================================
-
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
+===============================================================  
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 ユニバーサル Windows プラットフォーム (UWP) アプリに関連するアクセシビリティの概念について紹介します。
 
@@ -34,60 +33,63 @@ template: detail.hbs
 <td align="left"><p>この記事では、UWP アプリのアクセシビリティ シナリオに関連する概念とテクノロジの概要を示します。</p></td>
 </tr>
 <tr class="even">
+<td align="left">[Designing inclusive software](designing-inclusive-software.md)</td>
+<td align="left"><p>Microsoft では、設計原則とその実践方法を常に進化させています。 その考えとは、最初からすべての人を念頭に置いてソフトウェアを設計することです。</p></td>
+</tr>
+<tr class="odd">
+<td align="left">[Developing inclusive Windows apps](developing-inclusive-windows-apps.md)</td>
+<td align="left"><p>この記事は、アクセシビリティ対応の UWP アプリを開発するためのロードマップです。</p></td>
+</tr>
+<tr class="even">
+<td align="left">[Accessibility testing](accessibility-testing.md)</td>
+<td align="left"><p>UWP アプリをアクセシビリティ対応にするためのテスト手順です。</p></td>
+</tr>
+<tr class="odd">
+<td align="left">[Accessibility in the Store](accessibility-in-the-store.md)</td>
+<td align="left"><p>UWP アプリがアクセシビリティ対応であることを Windows ストアで宣言するために必要なことを説明します。</p></td>
+</tr>
+<tr class="even">
+<td align="left">[Accessibility checklist](accessibility-checklist.md)</td>
+<td align="left"><p>UWP アプリをアクセシビリティ対応にするために役立つチェック リストを示します。</p></td>
+</tr>
+<tr class="odd">
 <td align="left">[Expose basic accessibility information](basic-accessibility-information.md)</td>
 <td align="left"><p>基本的なアクセシビリティ情報は、多くの場合、名前、役割、値に分類されます。 このトピックでは、支援技術が必要とする基本情報をアプリで公開するのに役立つコードについて説明します。</p></td>
 </tr>
-<tr class="odd">
-<td align="left">[Keyboard accessibility](keyboard-accessibility.md)</td>
-<td align="left"><p>アプリに十分なキーボード操作機能が備わっていない場合、視覚障碍または運動障碍のあるユーザーはアプリをうまく使用できなかったり、まったく使用できない可能性があります。</p></td>
-</tr>
 <tr class="even">
-<td align="left">[Accessible text requirements](accessible-text-requirements.md)</td>
-<td align="left"><p>このトピックでは、色と背景のコントラスト比を適切な値にすることで、アプリのテキストをアクセシビリティ対応にするためのベスト プラクティスについて説明します。 また、UWP アプリ内のテキスト要素に設定できる Microsoft UI オートメーションの役割と、グラフィックス内のテキストに関するベスト プラクティスについても説明します。</p></td>
+<td align="left">[Keyboard accessibility](keyboard-accessibility.md)</td>
+<td align="left"><p>アプリに十分なキーボード操作機能が備わっていない場合、視覚障碍や運動障碍のあるユーザーはアプリをうまく使うことができなかったり、まったく使うことができない可能性があります。</p></td>
 </tr>
 <tr class="odd">
 <td align="left">[High-contrast themes](high-contrast-themes.md)</td>
 <td align="left"><p>ハイ コントラスト テーマがアクティブになっているときに UWP アプリを使えることを確かめるために必要な手順について説明します。</p></td>
 </tr>
 <tr class="even">
+<td align="left">[Accessible text requirements](accessible-text-requirements.md)</td>
+<td align="left"><p>このトピックでは、色と背景のコントラスト比を適切な値にすることで、アプリのテキストをアクセシビリティ対応にするためのベスト プラクティスについて説明します。 また、UWP アプリ内のテキスト要素に設定できる Microsoft UI オートメーションの役割と、グラフィックス内のテキストに関するベスト プラクティスについても説明します。</p></td>
+</tr>
+<tr class="odd">
 <td align="left">[Accessibility practices to avoid](practices-to-avoid.md)</td>
 <td align="left"><p>アクセシビリティ対応の UWP アプリを作成するために避ける事項の一覧を表示します。</p></td>
-</tr>
-<tr class="odd">
-<td align="left">[Accessibility testing](accessibility-testing.md)</td>
-<td align="left"><p>UWP アプリをアクセシビリティ対応にするためのテスト手順です。</p></td>
-</tr>
-<tr class="even">
-<td align="left">[Accessibility in the Store](accessibility-in-the-store.md)</td>
-<td align="left"><p>UWP アプリがアクセシビリティ対応であることを Windows ストアで宣言するために必要なことを説明します。</p></td>
-</tr>
-<tr class="odd">
-<td align="left">[Accessibility checklist](accessibility-checklist.md)</td>
-<td align="left"><p>UWP アプリをアクセシビリティ対応にするために役立つチェック リストを示します。</p></td>
 </tr>
 <tr class="even">
 <td align="left">[Custom automation peers](custom-automation-peers.md)</td>
 <td align="left"><p>UI オートメーションに対するオートメーション ピアの概念について説明します。また、独自のカスタム UI クラスに対してオートメーションのサポートを提供する方法についても説明します。</p></td>
 </tr>
+<tr class="odd">
+<td align="left">[Control patterns and interfaces](control-patterns-and-interfaces.md)</td>
+<td align="left"><p>Microsoft UI オートメーションのコントロール パターン、それらにアクセスするためにクライアントが使うクラス、それらを実装するためにプロバイダーが使うインターフェイスを示します。</p></td>
+</tr>
 </tbody>
 </table>
 
- 
-
-<span id="related_topics"></span>関連記事
------------------------------------------------
-
+## 参照  
 * [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/BR209179)
-* [アクセシビリティのための設計](https://msdn.microsoft.com/library/windows/apps/Hh700407)
-* [XAML アクセシビリティ サンプル](http://go.microsoft.com/fwlink/p/?linkid=238570)
  
 
  
 
 
-
-
-
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=Mar16_HO3-->
 
 
