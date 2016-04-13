@@ -5283,6 +5283,9 @@
   "c59957f2627efd0e0c6a3b2046c074820481aae4": [
     "windows-apps-src\\porting\\desktop-to-uwp-root.md"
   ],
+  "b8d3ce9b0934ae57180c152111e056f74bfdad15": [
+    "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
+  ],
   "01825e1c029e989199a4a1984efff6acd47dd6fa": [
     "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
   ],
