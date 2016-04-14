@@ -798,6 +798,9 @@
   "abdb784635e5d8d2175fe825cd2f6e8f308c1db7": [
     "windows-apps-src\\controls-and-patterns\\images\\controls_mtc_doublerow_phone.png"
   ],
+  "60a1b6c52418dbfca0a7194228f193a631c6d88a": [
+    "windows-apps-src\\controls-and-patterns\\nav-pane.md"
+  ],
   "f2f8dfb9583cde0a798ede8fb96f65d0bc79091f": [
     "windows-apps-src\\controls-and-patterns\\nav-pane.md"
   ],
@@ -814,10 +817,10 @@
     "windows-apps-src\\controls-and-patterns\\images\\nav-pane-example.png"
   ],
   "72731248d50d78bef1c124f6d5e416cfb5b0ceac": [
-    "windows-apps-src\\controls-and-patterns\\images\\NAVPANE_BUTTONONLY.png"
+    "windows-apps-src\\controls-and-patterns\\images\\navpane_buttononly.png"
   ],
   "4f291606904c1317c7ae32aea2bedd8221cc915d": [
-    "windows-apps-src\\controls-and-patterns\\images\\NAVPANE_PANE.png"
+    "windows-apps-src\\controls-and-patterns\\images\\navpane_pane.png"
   ],
   "6ef4932cb897d609254c3f5b8f51f08f36715c41": [
     "windows-apps-src\\controls-and-patterns\\password-box.md"
@@ -951,6 +954,9 @@
   "6989e01626b599065606317e28285b13f04ce123": [
     "windows-apps-src\\controls-and-patterns\\rich-text-block.md"
   ],
+  "ae2db47ce144fd4f4d0d8ea22544e6f7e2e9abbe": [
+    "windows-apps-src\\controls-and-patterns\\scroll-controls.md"
+  ],
   "7e2cd8a085a1f0b7d523268efcda27364539cfee": [
     "windows-apps-src\\controls-and-patterns\\scroll-controls.md"
   ],
@@ -958,10 +964,10 @@
     "windows-apps-src\\controls-and-patterns\\scroll-controls.md"
   ],
   "ab51ba891b69ef0b5fca86f1486685c464664257": [
-    "windows-apps-src\\controls-and-patterns\\images\\SCROLLBAR.png"
+    "windows-apps-src\\controls-and-patterns\\images\\Scrollbar.png"
   ],
   "d005c00f2bab0cf251fb9429d65f02e8459a9f81": [
-    "windows-apps-src\\controls-and-patterns\\images\\ScrollBar_Standard.jpg"
+    "windows-apps-src\\controls-and-patterns\\images\\Scrollbar_Standard.jpg"
   ],
   "2ca65f6948b79551909d8516ee42a1a56a511ebd": [
     "windows-apps-src\\controls-and-patterns\\search.md"
@@ -1011,6 +1017,9 @@
   "777b264685ef352a94c5809a1f08974f1fc2d76a": [
     "windows-apps-src\\controls-and-patterns\\images\\findinpage-counter.png"
   ],
+  "662eacde916be166c9bbab5baec9f990325e78f9": [
+    "windows-apps-src\\controls-and-patterns\\segoe-ui-symbol-font.md"
+  ],
   "f7642a27d431aade8a018210b61b09748092674e": [
     "windows-apps-src\\controls-and-patterns\\segoe-ui-symbol-font.md"
   ],
@@ -1032,7 +1041,7 @@
   ],
   "a66027f673849d2dbcfa2c2d725ad665ba01026b": [
     "windows-apps-src\\controls-and-patterns\\images\\checkboxlegacy.png",
-    "windows-apps-src\\controls-and-patterns\\images\\checkbox.png"
+    "windows-apps-src\\controls-and-patterns\\images\\Checkbox.png"
   ],
   "7dc3baf69c530bc0a6273383fd89e36cb9ab5ee2": [
     "windows-apps-src\\controls-and-patterns\\images\\checkboxindeterminatelegacy.png",
@@ -2998,6 +3007,9 @@
   "a6bc02ed66e33006047cdac06c6de7b85a5efb2a": [
     "windows-apps-src\\gaming\\working-with-audio-in-your-directx-game.md"
   ],
+  "e39752f9f13eaf93d23412252483093e704b1668": [
+    "windows-apps-src\\get-started\\create-a-basic-windows-10-app-in-cpp.md"
+  ],
   "2c8fb17628f685ba529ef75712fffdc6915ba2dc": [
     "windows-apps-src\\get-started\\create-a-basic-windows-10-app-in-cpp.md"
   ],
@@ -3023,7 +3035,6 @@
     "windows-apps-src\\get-started\\images\\hw10-screen1-mob.png"
   ],
   "25264704ed1696688454ca35303338eb719e8e07": [
-    "windows-apps-src\\get-started\\IMAGES\\EVENTSBUTTON.png",
     "windows-apps-src\\get-started\\images\\eventsbutton.png"
   ],
   "58ac8cc81cb6c520445d0084536eca328af7f067": [
@@ -3036,7 +3047,7 @@
     "windows-apps-src\\get-started\\images\\xaml-hw-app3.png"
   ],
   "381c7c54508d15ebad22287f91b22fedb33e38a6": [
-    "windows-apps-src\\get-started\\IMAGES\\PROPERTIESBUTTON.png"
+    "windows-apps-src\\get-started\\images\\propertiesbutton.png"
   ],
   "555649b6b18aa009da69eee7e6980365b473054e": [
     "windows-apps-src\\get-started\\images\\xaml-hw-style-cpp.png"
@@ -3046,6 +3057,9 @@
   ],
   "dd22a831e56b90a22ea20d2bfd3600f0ec70d491": [
     "windows-apps-src\\get-started\\images\\hw10-screen2-mob.png"
+  ],
+  "8f8ac6d931183c80c37d0f3578702127852408f1": [
+    "windows-apps-src\\get-started\\create-a-hello-world-app-js-universal.md"
   ],
   "526befbbb8b6a7e0f2b6a4bc91e3870b0e4831c8": [
     "windows-apps-src\\get-started\\create-a-hello-world-app-js-universal.md"
@@ -3081,7 +3095,7 @@
     "windows-apps-src\\get-started\\images\\helloworld-3-js-phone.png"
   ],
   "a41085798fc6698620a0c08a0a41b87c782e799e": [
-    "windows-apps-src\\get-started\\images\\helloworld-4-JS.png"
+    "windows-apps-src\\get-started\\images\\helloworld-4-js.png"
   ],
   "58b68146df767a20a719f1fb2381aee49c14e345": [
     "windows-apps-src\\get-started\\images\\helloworld-5-js.png"
@@ -7053,29 +7067,56 @@
   "d1847b18ae31b29cfd49ddf7893f51e0c6c23200": [
     "windows-apps-src\\xbox-apps\\images\\deactivation-reset-remove.png"
   ],
+  "af51b1ddf91057308396cc96b79b023827c75829": [
+    "windows-apps-src\\xbox-apps\\images\\devhome_colors.png"
+  ],
   "4dc0edc12e8188ce8abf73ca7b13b36f8ac5c14c": [
     "windows-apps-src\\xbox-apps\\images\\devhome_colors.png"
+  ],
+  "e7a3bd8deaa992cfac9de6663d15ef812f1041be": [
+    "windows-apps-src\\xbox-apps\\images\\devhome_feedback.png"
   ],
   "68f67c4e479c518de786abe912b9c31bf1c045d9": [
     "windows-apps-src\\xbox-apps\\images\\devhome_feedback.png"
   ],
+  "12575c276ab1e13e69b012abf3309cf2133ea733": [
+    "windows-apps-src\\xbox-apps\\images\\devhome_mainmenu.png"
+  ],
   "c0f4698e7b9dec3cb01675415f980acccdfd7da2": [
     "windows-apps-src\\xbox-apps\\images\\devhome_mainmenu.png"
+  ],
+  "4eebbda83fb4eb94926ca29b14f53915d6def50a": [
+    "windows-apps-src\\xbox-apps\\images\\devhome_move.png"
   ],
   "881c289e3751e6d9a07c7b79990fa6b84c73c456": [
     "windows-apps-src\\xbox-apps\\images\\devhome_move.png"
   ],
+  "795a3bd64fdeca20486cf55fd8c78f66ea3232eb": [
+    "windows-apps-src\\xbox-apps\\images\\devhome_nexus.png"
+  ],
   "8b0422010544da07e24e66377d4d42f93dde663b": [
     "windows-apps-src\\xbox-apps\\images\\devhome_nexus.png"
+  ],
+  "c75e21079e18743b000790cb9027f1f0c8212aff": [
+    "windows-apps-src\\xbox-apps\\images\\devhome_pin.png"
   ],
   "5c158e9f7b8f352c9d3951aec8b38bba1e1d9bf4": [
     "windows-apps-src\\xbox-apps\\images\\devhome_pin.png"
   ],
+  "81be47e9420c5fd34abb87bdf49fb94c0403638a": [
+    "windows-apps-src\\xbox-apps\\images\\devhome_snapmode.png"
+  ],
   "95131bcd222bde13a4b948a736dbcd4b3ff4cfe3": [
     "windows-apps-src\\xbox-apps\\images\\devhome_snapmode.png"
   ],
+  "5bbf53b2c3a1ccf8b414cf3e9cc2a2c381277012": [
+    "windows-apps-src\\xbox-apps\\images\\devhome_ui.png"
+  ],
   "500cc779cd0d3b4a91b78ba65ab15bead5dc31fa": [
     "windows-apps-src\\xbox-apps\\images\\devhome_ui.png"
+  ],
+  "b94d6454f675b6da674df61e49940a9ba28161d3": [
+    "windows-apps-src\\xbox-apps\\images\\devhome_visualstudio.png"
   ],
   "49f07d555255d30a4ead6c2500b18247377f91d4": [
     "windows-apps-src\\xbox-apps\\images\\devhome_visualstudio.png"
@@ -7104,8 +7145,14 @@
   "8ae958984fc3ed2d6621a1d2a1b0e036885734a9": [
     "windows-apps-src\\xbox-apps\\images\\vs_universal_cpp_blank.jpg"
   ],
+  "384de6e0e02383ccd37a8a4d9851294607ea6d85": [
+    "windows-apps-src\\xbox-apps\\images\\windowsdeviceportal_1.png"
+  ],
   "ffdd40357494d8a9e004120e7a21d908d16fb4af": [
     "windows-apps-src\\xbox-apps\\images\\windowsdeviceportal_1.png"
+  ],
+  "2d3d6ad9b3375350f6f2cb47d6fd170d39f8fec0": [
+    "windows-apps-src\\xbox-apps\\images\\windowsdeviceportal_2.png"
   ],
   "72706a1901d7b8fcd3ef265d5d230da44d939800": [
     "windows-apps-src\\xbox-apps\\images\\windowsdeviceportal_2.png"
@@ -7121,6 +7168,9 @@
   ],
   "1828a4183fab9853e522941bc9bfc10cdab1e81d": [
     "windows-apps-src\\xbox-apps\\index.md"
+  ],
+  "ad714bfbb9b095e98c242d6203888f712c9bea20": [
+    "windows-apps-src\\xbox-apps\\introduction-to-xbox-tools.md"
   ],
   "f1fc73447c8332af8ae77010737882731c77793a": [
     "windows-apps-src\\xbox-apps\\introduction-to-xbox-tools.md"
