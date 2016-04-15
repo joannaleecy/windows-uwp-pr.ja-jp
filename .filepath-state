@@ -2090,6 +2090,9 @@
   "68f2e5c1d62a0d70574037395b80f1d0c70fb43a": [
     "windows-apps-src\\debug-test-perf\\images\\interop-transitions.png"
   ],
+  "a56adc5c7bc3f2d5ec4976e4e5394ff26ea983dc": [
+    "windows-apps-src\\devices-sensors\\3d-printing.md"
+  ],
   "09406507f5f56390c9bc1d05e19e0ff5c8cbce5c": [
     "windows-apps-src\\devices-sensors\\3d-printing.md"
   ],
@@ -6205,6 +6208,9 @@
   "af817df780f291b6367a374e535cce22a84ba4c1": [
     "windows-apps-src\\xaml-platform\\xaml-syntax-guide.md"
   ],
+  "e68a9c681974152bc0d4dfa58e824f80e77dc51f": [
+    "windows-apps-src\\devices-sensors\\3d-print-from-app.md"
+  ],
   "a86d04e30ef17a87d95de00848a45e10f49a6f53": [
     "windows-apps-src\\devices-sensors\\3d-print-from-app.md"
   ],
@@ -6475,6 +6481,9 @@
   ],
   "89ebd15f0da89013e867d8ad9d54325f8b49c4fc": [
     "windows-apps-src\\style\\images\\accentcolorswatch.png"
+  ],
+  "99b00c855cc723dfca0aa8c4a70e31379bca8838": [
+    "windows-apps-src\\devices-sensors\\generate-3mf.md"
   ],
   "2cbb3e1ad45e01f6e24915a333701ee5ec30ab59": [
     "windows-apps-src\\devices-sensors\\generate-3mf.md"
