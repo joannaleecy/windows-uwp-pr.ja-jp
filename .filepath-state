@@ -2152,6 +2152,9 @@
     "windows-apps-src\\devices-sensors\\images\\ap-tools.png",
     "windows-apps-src\\launch-resume\\images\\ap-tools.png"
   ],
+  "9d2d58f2423688f895da1de56eef6448bb42692d": [
+    "windows-apps-src\\devices-sensors\\enumerate-devices-over-a-network.md"
+  ],
   "ca7f31066f4e2fd9f55ed561cbdad54132acc83f": [
     "windows-apps-src\\devices-sensors\\enumerate-devices-over-a-network.md"
   ],
