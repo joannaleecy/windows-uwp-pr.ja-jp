@@ -3503,6 +3503,9 @@
   "97e016047c864026fe0c72e4b7cb819f0fc80748": [
     "windows-apps-src\\index.md"
   ],
+  "3476a1db5804a2a4b48b969a6ed3449ab9b76207": [
+    "windows-apps-src\\input-and-devices\\convert-ink-to-text.md"
+  ],
   "6e8e19edaea6bfd87b09d806d9abd21363744748": [
     "windows-apps-src\\input-and-devices\\convert-ink-to-text.md"
   ],
@@ -3951,6 +3954,9 @@
   "a296abf623973da2d5403ac8991df6763780b298": [
     "windows-apps-src\\input-and-devices\\multiple-input-design-guidelines.md"
   ],
+  "eac095378f37265e4d050f574d12b6ae92583f17": [
+    "windows-apps-src\\input-and-devices\\pen-and-stylus-interactions.md"
+  ],
   "5f337635336900958308c3d7e2c3c07ba408f93f": [
     "windows-apps-src\\input-and-devices\\pen-and-stylus-interactions.md"
   ],
@@ -3983,6 +3989,9 @@
   ],
   "9531b80885d860cdf8bf306ed7a3e1674f4daa58": [
     "windows-apps-src\\input-and-devices\\respond-to-the-presence-of-the-touch-keyboard.md"
+  ],
+  "df2005734c3a7252afabf496e6dab43297d6806a": [
+    "windows-apps-src\\input-and-devices\\save-and-load-ink.md"
   ],
   "34e81fe52c59c1e0c8928723735788fb8af44c4f": [
     "windows-apps-src\\input-and-devices\\save-and-load-ink.md"
