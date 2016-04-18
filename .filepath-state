@@ -5746,6 +5746,9 @@
   "7ac4433f4acda4543a3d38f2487cbdbb15423f23": [
     "windows-apps-src\\publish\\write-a-great-app-description.md"
   ],
+  "9b32f768e9a5d6f3c2261ccf24c6fadb798140a7": [
+    "windows-apps-src\\security\\authentication-and-user-identity.md"
+  ],
   "83f0b598df8e16bcb497386fe32e52fb93586988": [
     "windows-apps-src\\security\\authentication-and-user-identity.md"
   ],
@@ -5790,6 +5793,9 @@
   ],
   "d7ae61cae68b34cb9a3b536d63b53677797a140e": [
     "windows-apps-src\\security\\fingerprint-biometrics.md"
+  ],
+  "75f8ebf555d03b3a5def28eb1da8af30d5b037b1": [
+    "windows-apps-src\\security\\index.md"
   ],
   "1e20d0fafc527133bd17f0dca3c1116ede4fba24": [
     "windows-apps-src\\security\\index.md"
@@ -5952,6 +5958,9 @@
   ],
   "cbfd24134820acbb570a5b81c2b04b99b0eb1543": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
+  ],
+  "57124398c8972777792eb97748bbaa270f7a983f": [
+    "windows-apps-src\\TOC.md"
   ],
   "51ab6dda40f18fa904a1f4592731421310cfca86": [
     "windows-apps-src\\TOC.md"
@@ -6841,6 +6850,9 @@
   ],
   "32d8bda5bf7b7f3e384dd9ecf0742740fa62754b": [
     "windows-apps-src\\publish\\package-flights.md"
+  ],
+  "38684f7a816807ebc81945ef91ead8e06a8ae1c0": [
+    "windows-apps-src\\security\\companion-device-unlock.md"
   ],
   "ca52cda51d30504007370743eb0c62dc4b33d6a4": [
     "windows-apps-src\\security\\companion-device-unlock.md"
