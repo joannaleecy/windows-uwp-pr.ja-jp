@@ -5551,6 +5551,9 @@
   "90184defe421975ceec9ec17e953d5e6b3b23fe1": [
     "windows-apps-src\\publish\\managing-your-profile.md"
   ],
+  "8c990588efb117a2f67a6e752edb94017a0ee584": [
+    "windows-apps-src\\publish\\mobile-operator-billing.md"
+  ],
   "f2d19284072a048c3240f619307ab85c994902b4": [
     "windows-apps-src\\publish\\mobile-operator-billing.md"
   ],
@@ -6838,6 +6841,9 @@
   ],
   "6e0ec4247a46572274cf7d355ff19f8f020aac60": [
     "windows-apps-src\\publish\\customer-groups.md"
+  ],
+  "38ede2808f662400f77e01ec802815cb25c2a22d": [
+    "windows-apps-src\\publish\\feedback-report.md"
   ],
   "e4dab7c3ee5b03c270d21d8476d226f3876c68c9": [
     "windows-apps-src\\publish\\feedback-report.md"
