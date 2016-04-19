@@ -6527,6 +6527,9 @@
   "6ac30be914c46cf953a3f1c344fa0441bed2f8d9": [
     "windows-apps-src\\devices-sensors\\generate-3mf.md"
   ],
+  "10630ccf572cabf7d1b70dfee60b0af74a7eba21": [
+    "windows-apps-src\\devices-sensors\\out-of-band-pairing.md"
+  ],
   "78ba691f91ff34cc923ca82425c8fde2b1d557a1": [
     "windows-apps-src\\devices-sensors\\out-of-band-pairing.md"
   ],
