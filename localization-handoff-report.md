@@ -1,42 +1,26 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\feedback-report.md](https://github.com/Microsoft/windows-apps/blob/715e90f62277a042d30d3e818a6fb1b8b451628e/windows-apps-src/publish/feedback-report.md) | OutofSyncHandedBackSuccess | [Details](#38ede2808f662400f77e01ec802815cb25c2a22d3393)
- [windows-apps-src\publish\mobile-operator-billing.md](https://github.com/Microsoft/windows-apps/blob/9836775732280f58b3e914f5173438d32a6874e9/windows-apps-src/publish/mobile-operator-billing.md) | OutofSyncHandedBackSuccess | [Details](#8c990588efb117a2f67a6e752edb94017a0ee5843411)
+ [windows-apps-src\monetize\troubleshoot-ad-mediation.md](https://github.com/Microsoft/windows-apps/blob/9dc480a47368c8b87e788281395e80ebaf33784c/windows-apps-src/monetize/troubleshoot-ad-mediation.md) | OutofSyncHandedBackSuccess | [Details](#78029778e4ac7fdc5adf622084ba56f5424a7a923237)
 
 ## Item Details
-##### <a name='38ede2808f662400f77e01ec802815cb25c2a22d3393'></a> Source: [windows-apps-src\publish\feedback-report.md](https://github.com/Microsoft/windows-apps/blob/715e90f62277a042d30d3e818a6fb1b8b451628e/windows-apps-src/publish/feedback-report.md)
+##### <a name='78029778e4ac7fdc5adf622084ba56f5424a7a923237'></a> Source: [windows-apps-src\monetize\troubleshoot-ad-mediation.md](https://github.com/Microsoft/windows-apps/blob/9dc480a47368c8b87e788281395e80ebaf33784c/windows-apps-src/monetize/troubleshoot-ad-mediation.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [feedback-report.5499a4a1ccb82642d7b4f42d639f318bb8c5a6ce.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/1ae2cd08263d518730c79facbb554cbce43d55c1/ol-handoff/Microsoft/windows-apps.ja-jp/master/feedback-report.5499a4a1ccb82642d7b4f42d639f318bb8c5a6ce.ja-jp.xlf)
-* Handoff Datetime: 2016-04-18 23:21:14
+* Handoff File: [troubleshoot-ad-mediation.597b8b3549bcf2234c187a1e36f7a3ba47e6bb45.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/cb006dfb8d20a6e06c594e0ccdd005346a1394c0/ol-handoff/Microsoft/windows-apps.ja-jp/master/troubleshoot-ad-mediation.597b8b3549bcf2234c187a1e36f7a3ba47e6bb45.ja-jp.xlf)
+* Handoff Datetime: 2016-04-19 17:46:25
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\publish\feedback-report.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/ede73b1a80d40d88b22b4a79f571f892d6d3809b/windows-apps-src/publish/feedback-report.md)
-* Current Handback File: [feedback-report.5499a4a1ccb82642d7b4f42d639f318bb8c5a6ce.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/a5742cb2d83625361cba5b5a0ead558fec4ff91c/ol-handback/Microsoft/windows-apps.ja-jp/master/feedback-report.5499a4a1ccb82642d7b4f42d639f318bb8c5a6ce.ja-jp.xlf)
-* Current Handback Datetime: 2016-04-13 14:10:35
-* [Back to Top](#report-top)
-
-##### <a name='8c990588efb117a2f67a6e752edb94017a0ee5843411'></a> Source: [windows-apps-src\publish\mobile-operator-billing.md](https://github.com/Microsoft/windows-apps/blob/9836775732280f58b3e914f5173438d32a6874e9/windows-apps-src/publish/mobile-operator-billing.md)
-* Status: OutofSyncHandedBackSuccess
-* Target File: 
-* Handoff File: [mobile-operator-billing.96a8e95eb21d2af1a509785b0af929f9738e7604.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/1ae2cd08263d518730c79facbb554cbce43d55c1/ol-handoff/Microsoft/windows-apps.ja-jp/master/mobile-operator-billing.96a8e95eb21d2af1a509785b0af929f9738e7604.ja-jp.xlf)
-* Handoff Datetime: 2016-04-18 23:21:14
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\publish\mobile-operator-billing.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/ede73b1a80d40d88b22b4a79f571f892d6d3809b/windows-apps-src/publish/mobile-operator-billing.md)
-* Current Handback File: [mobile-operator-billing.96a8e95eb21d2af1a509785b0af929f9738e7604.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/a5742cb2d83625361cba5b5a0ead558fec4ff91c/ol-handback/Microsoft/windows-apps.ja-jp/master/mobile-operator-billing.96a8e95eb21d2af1a509785b0af929f9738e7604.ja-jp.xlf)
+* Current Target File: [windows-apps-src\monetize\troubleshoot-ad-mediation.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/ede73b1a80d40d88b22b4a79f571f892d6d3809b/windows-apps-src/monetize/troubleshoot-ad-mediation.md)
+* Current Handback File: [troubleshoot-ad-mediation.597b8b3549bcf2234c187a1e36f7a3ba47e6bb45.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/a5742cb2d83625361cba5b5a0ead558fec4ff91c/ol-handback/Microsoft/windows-apps.ja-jp/master/troubleshoot-ad-mediation.597b8b3549bcf2234c187a1e36f7a3ba47e6bb45.ja-jp.xlf)
 * Current Handback Datetime: 2016-04-13 14:10:35
 * [Back to Top](#report-top)
 
