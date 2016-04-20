@@ -3545,6 +3545,9 @@
   "8279af980f0022382bf47036028f7da8ab14c539": [
     "windows-apps-src\\input-and-devices\\convert-ink-to-text.md"
   ],
+  "3065ab0a7b2ac407dbf03b478629d63e67db7e45": [
+    "windows-apps-src\\input-and-devices\\cortana-design-guidelines.md"
+  ],
   "99d163d17dd1155d88e0aec1dc23e7283da0a162": [
     "windows-apps-src\\input-and-devices\\cortana-design-guidelines.md"
   ],
@@ -7450,5 +7453,20 @@
   ],
   "2c991b63f7cf41c9950d274272b604b9bd5b007c": [
     "windows-apps-src\\layout\\test.md"
+  ],
+  "02f9a27f5b6bd58cbf406b2cf8bd5a0524ca7f77": [
+    "windows-apps-src\\input-and-devices\\images\\cortana\\voicecommandcontenttiletype_titleonly_small.png"
+  ],
+  "7df96da299be9b0a95dee92ca30a7d0f2c6c4137": [
+    "windows-apps-src\\input-and-devices\\images\\cortana\\voicecommandcontenttiletype_titlewith280x140iconandtext_small.png"
+  ],
+  "047588d900195dfeedc53f0786d1b2415949191f": [
+    "windows-apps-src\\input-and-devices\\images\\cortana\\voicecommandcontenttiletype_titlewith68x68iconandtext_small.png"
+  ],
+  "618bdecf30caf0ac7f2cd6181de2220500e19581": [
+    "windows-apps-src\\input-and-devices\\images\\cortana\\voicecommandcontenttiletype_titlewith68x92iconandtext_small.png"
+  ],
+  "326bdde5caaf3f610d434537f548563a7adc5a98": [
+    "windows-apps-src\\input-and-devices\\images\\cortana\\voicecommandcontenttiletype_titlewithtext_small.png"
   ]
 }
