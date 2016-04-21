@@ -5050,6 +5050,9 @@
   "7da378000723a9765a67235b3a6598dd983ef99d": [
     "windows-apps-src\\monetize\\add-ads-to-apps-with-microsoft-advertising.md"
   ],
+  "a0d73b50207d251c079714265845a816f4ac23da": [
+    "windows-apps-src\\monetize\\add-and-use-the-ad-mediator-control.md"
+  ],
   "068a6d7e3da5ff2ee51b67397f4f7b521d2dc8a4": [
     "windows-apps-src\\monetize\\add-and-use-the-ad-mediator-control.md"
   ],
@@ -5902,11 +5905,17 @@
   "d4588455732f548e4d0bc7dcb90d219cdadec74c": [
     "windows-apps-src\\publish\\create-a-custom-app-promotion-campaign.md"
   ],
+  "f1cd4158864e6be251da6ccecf211152489eaf61": [
+    "windows-apps-src\\publish\\create-an-ad-campaign-for-your-app.md"
+  ],
   "978dc0cfd3b6004c82a962f6c406f29480ad8478": [
     "windows-apps-src\\publish\\create-an-ad-campaign-for-your-app.md"
   ],
   "46c8f5eb38226c41be6b19da8facbe620d675165": [
     "windows-apps-src\\publish\\create-an-ad-campaign-for-your-app.md"
+  ],
+  "962498fdd76bb338a47824edffc855bf66074857": [
+    "windows-apps-src\\publish\\create-app-descriptions.md"
   ],
   "1bd489f19c7d203e5240c2c1fd4010adfd4cb564": [
     "windows-apps-src\\publish\\create-app-descriptions.md"
