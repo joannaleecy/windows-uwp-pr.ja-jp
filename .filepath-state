@@ -8221,5 +8221,8 @@
   ],
   "9f9081c9a4e567973da63b48ac6d414fe413fbb5": [
     "windows-apps-src\\monetize\\xaml-properties-example.md"
+  ],
+  "f5fb2188a554ed4f813773da9a3ef89d6ccb89d3": [
+    "windows-apps-src\\xbox-apps\\automate-launching-uwp-apps.md"
   ]
 }
