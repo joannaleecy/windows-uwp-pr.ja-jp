@@ -5365,6 +5365,9 @@
   "7af6d2fec91e26163ee54eb266d20c16ec1fd09d": [
     "windows-apps-src\\packaging\\images\\packaging-screen7.jpg"
   ],
+  "fa448bc9f44011c11b42462a628edf3fcf7654fb": [
+    "windows-apps-src\\porting\\android-ios-uwp-map.md"
+  ],
   "d3cf4126b6a98cd922ef9a7c9cd127ad26eed35b": [
     "windows-apps-src\\porting\\android-ios-uwp-map.md"
   ],
@@ -7411,6 +7414,9 @@
   ],
   "6d4a97042b52f2f2a3d778ad4fdc8d56a4c715f2": [
     "windows-apps-src\\monetize\\define-your-experiment-in-the-dev-center-dashboard.md"
+  ],
+  "d0d0c300c46f8c01ec148a3272d8c1bced2fd92e": [
+    "windows-apps-src\\monetize\\display-ads-in-your-app.md"
   ],
   "cdee824751b24c075db46d5a06a180a5b6de0b93": [
     "windows-apps-src\\monetize\\display-ads-in-your-app.md"
