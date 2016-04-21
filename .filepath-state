@@ -5941,6 +5941,9 @@
   "0350cac95ac92b30fe8483b1bd9c6db849518201": [
     "windows-apps-src\\publish\\create-platform-specific-descriptions.md"
   ],
+  "5e4933be456bc76eb5923f5c081e8376c43c118b": [
+    "windows-apps-src\\publish\\create-your-app-by-reserving-a-name.md"
+  ],
   "33908b8a1ae4d544b7a98380f3762460425ee020": [
     "windows-apps-src\\publish\\create-your-app-by-reserving-a-name.md"
   ],
@@ -6042,6 +6045,9 @@
   ],
   "278cec7f2c0f1fb4da978043dbc468fb02253028": [
     "windows-apps-src\\publish\\manage-account-users.md"
+  ],
+  "e03e99b5de2142c2bcf46ee2aad4a76bb87ee4e5": [
+    "windows-apps-src\\publish\\manage-app-names.md"
   ],
   "87d528e6aaae8af2f1749e6364561e9cbe72d46e": [
     "windows-apps-src\\publish\\manage-app-names.md"
