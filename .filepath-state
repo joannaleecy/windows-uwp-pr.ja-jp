@@ -5365,6 +5365,9 @@
   "7af6d2fec91e26163ee54eb266d20c16ec1fd09d": [
     "windows-apps-src\\packaging\\images\\packaging-screen7.jpg"
   ],
+  "d3cf4126b6a98cd922ef9a7c9cd127ad26eed35b": [
+    "windows-apps-src\\porting\\android-ios-uwp-map.md"
+  ],
   "464162286b703df58357a25b816c81ca6c7d28e4": [
     "windows-apps-src\\porting\\android-ios-uwp-map.md"
   ],
