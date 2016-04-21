@@ -47,6 +47,9 @@
   "8f3ec44999f8dcc62af1bd7ee0b058db077f24ac": [
     "windows-apps-src\\accessibility\\images\\inspect.png"
   ],
+  "2a2b247c5b17f73b4ae62a7d077b61ccd06ae974": [
+    "windows-apps-src\\accessibility\\accessibility.md"
+  ],
   "cd88c271329cb691585cead4087f9fcd3b2f303d": [
     "windows-apps-src\\accessibility\\accessibility.md"
   ],
@@ -8083,6 +8086,9 @@
   ],
   "6e2bdc86eecfbba5858faa451f0f603ed7074a6d": [
     "windows-apps-src\\debug-test-perf\\device-portal-desktop.md"
+  ],
+  "f14347012d412c87329ff71da33113863ffd00e9": [
+    "windows-apps-src\\layout\\test.md"
   ],
   "2c991b63f7cf41c9950d274272b604b9bd5b007c": [
     "windows-apps-src\\layout\\test.md"
