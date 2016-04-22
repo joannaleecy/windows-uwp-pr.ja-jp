@@ -6,22 +6,19 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\xbox-apps\known-issues.md](https://github.com/Microsoft/windows-apps/blob/c11ad0419594196f0466d262cd11c7642d35b5f3/windows-apps-src/xbox-apps/known-issues.md) | OutofSyncHandedBackSuccess | [Details](#e097e9f902f712aeb3e7b5ff6d5bea708c40493e3796)
+ [windows-apps-src\xbox-apps\automate-launching-uwp-apps.md](https://github.com/Microsoft/windows-apps/blob/adf2d16f9c208631f91fbcad19d1ea8087cd9cb5/windows-apps-src/xbox-apps/automate-launching-uwp-apps.md) | HandedOffSuccess | [Details](#ae2f80a915f4aed90c269c37a11d01a2f6c9849e3745)
 
 ## Item Details
-##### <a name='e097e9f902f712aeb3e7b5ff6d5bea708c40493e3796'></a> Source: [windows-apps-src\xbox-apps\known-issues.md](https://github.com/Microsoft/windows-apps/blob/c11ad0419594196f0466d262cd11c7642d35b5f3/windows-apps-src/xbox-apps/known-issues.md)
-* Status: OutofSyncHandedBackSuccess
+##### <a name='ae2f80a915f4aed90c269c37a11d01a2f6c9849e3745'></a> Source: [windows-apps-src\xbox-apps\automate-launching-uwp-apps.md](https://github.com/Microsoft/windows-apps/blob/adf2d16f9c208631f91fbcad19d1ea8087cd9cb5/windows-apps-src/xbox-apps/automate-launching-uwp-apps.md)
+* Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [known-issues.83c75815621268c5c51534a658527cef71ffe8bd.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/fac82dc58c16b01a147f69097c10f45e3056dc4d/ol-handoff/Microsoft/windows-apps.ja-jp/master/known-issues.83c75815621268c5c51534a658527cef71ffe8bd.ja-jp.xlf)
-* Handoff Datetime: 2016-04-22 18:14:42
+* Handoff File: [automate-launching-uwp-apps.d3a8973266c7d7241b819fad336d4645f47c154b.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/7a0455324635a415f4bc999b13c87ec1d8ecd34c/ol-handoff/Microsoft/windows-apps.ja-jp/master/automate-launching-uwp-apps.d3a8973266c7d7241b819fad336d4645f47c154b.ja-jp.xlf)
+* Handoff Datetime: 2016-04-22 19:13:44
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\xbox-apps\known-issues.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/ede73b1a80d40d88b22b4a79f571f892d6d3809b/windows-apps-src/xbox-apps/known-issues.md)
-* Current Handback File: [known-issues.83c75815621268c5c51534a658527cef71ffe8bd.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/a5742cb2d83625361cba5b5a0ead558fec4ff91c/ol-handback/Microsoft/windows-apps.ja-jp/master/known-issues.83c75815621268c5c51534a658527cef71ffe8bd.ja-jp.xlf)
-* Current Handback Datetime: 2016-04-13 14:10:35
 * [Back to Top](#report-top)
 
 
