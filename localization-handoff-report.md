@@ -1,19 +1,20 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\debug-test-perf\test-with-the-emulator.md](https://github.com/Microsoft/windows-apps/blob/0b8a789daa178ac8a89c664d58e8ff259fc1615e/windows-apps-src/debug-test-perf/test-with-the-emulator.md) | OutofSyncHandedBackSuccess | [Details](#98986ad367898c62de18cf5d3ad8dfbbc11d3dd41952)
+ [windows-apps-src\debug-test-perf\test-with-the-emulator.md](https://github.com/Microsoft/windows-apps/blob/c16b1bdd00533fac332904a36b1530aa961427ef/windows-apps-src/debug-test-perf/test-with-the-emulator.md) | OutofSyncHandedBackSuccess | [Details](#91649e31303803f6d156cdc1886992ddc7f559a41952)
+ [windows-apps-src\networking\sockets.md](https://github.com/Microsoft/windows-apps/blob/4557fa59d377edc2ae5bf5a9be63516d152949bb/windows-apps-src/networking/sockets.md) | OutofSyncHandedBackSuccess | [Details](#432d9849335c537836fd23a4cd95c79c51bc881d3316)
 
 ## Item Details
-##### <a name='98986ad367898c62de18cf5d3ad8dfbbc11d3dd41952'></a> Source: [windows-apps-src\debug-test-perf\test-with-the-emulator.md](https://github.com/Microsoft/windows-apps/blob/0b8a789daa178ac8a89c664d58e8ff259fc1615e/windows-apps-src/debug-test-perf/test-with-the-emulator.md)
+##### <a name='91649e31303803f6d156cdc1886992ddc7f559a41952'></a> Source: [windows-apps-src\debug-test-perf\test-with-the-emulator.md](https://github.com/Microsoft/windows-apps/blob/c16b1bdd00533fac332904a36b1530aa961427ef/windows-apps-src/debug-test-perf/test-with-the-emulator.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [test-with-the-emulator.4b51b8e4f7e15661b30d8f267fb7a8330b45ae3b.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/b4738c42188a2a01031a5bd8ae71ffe0f44d3c44/ol-handoff/Microsoft/windows-apps.ja-jp/master/test-with-the-emulator.4b51b8e4f7e15661b30d8f267fb7a8330b45ae3b.ja-jp.xlf)
-* Handoff Datetime: 2016-04-22 21:14:19
+* Handoff File: [test-with-the-emulator.4b51b8e4f7e15661b30d8f267fb7a8330b45ae3b.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/313bf88941be2e4d02187c4d1391a850603d5c04/ol-handoff/Microsoft/windows-apps.ja-jp/master/test-with-the-emulator.4b51b8e4f7e15661b30d8f267fb7a8330b45ae3b.ja-jp.xlf)
+* Handoff Datetime: 2016-04-22 21:43:34
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -21,6 +22,21 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * Current Target File: [windows-apps-src\debug-test-perf\test-with-the-emulator.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/ede73b1a80d40d88b22b4a79f571f892d6d3809b/windows-apps-src/debug-test-perf/test-with-the-emulator.md)
 * Current Handback File: [test-with-the-emulator.4b51b8e4f7e15661b30d8f267fb7a8330b45ae3b.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/a5742cb2d83625361cba5b5a0ead558fec4ff91c/ol-handback/Microsoft/windows-apps.ja-jp/master/test-with-the-emulator.4b51b8e4f7e15661b30d8f267fb7a8330b45ae3b.ja-jp.xlf)
+* Current Handback Datetime: 2016-04-13 14:10:35
+* [Back to Top](#report-top)
+
+##### <a name='432d9849335c537836fd23a4cd95c79c51bc881d3316'></a> Source: [windows-apps-src\networking\sockets.md](https://github.com/Microsoft/windows-apps/blob/4557fa59d377edc2ae5bf5a9be63516d152949bb/windows-apps-src/networking/sockets.md)
+* Status: OutofSyncHandedBackSuccess
+* Target File: 
+* Handoff File: [sockets.1d46eeae959ead85cf0827c0322c9176e8740a93.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/313bf88941be2e4d02187c4d1391a850603d5c04/ol-handoff/Microsoft/windows-apps.ja-jp/master/sockets.1d46eeae959ead85cf0827c0322c9176e8740a93.ja-jp.xlf)
+* Handoff Datetime: 2016-04-22 21:43:34
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\networking\sockets.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/ede73b1a80d40d88b22b4a79f571f892d6d3809b/windows-apps-src/networking/sockets.md)
+* Current Handback File: [sockets.1d46eeae959ead85cf0827c0322c9176e8740a93.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/a5742cb2d83625361cba5b5a0ead558fec4ff91c/ol-handback/Microsoft/windows-apps.ja-jp/master/sockets.1d46eeae959ead85cf0827c0322c9176e8740a93.ja-jp.xlf)
 * Current Handback Datetime: 2016-04-13 14:10:35
 * [Back to Top](#report-top)
 

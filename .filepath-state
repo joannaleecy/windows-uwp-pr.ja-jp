@@ -2228,6 +2228,9 @@
   "540b6d68ed9b9f32a6a0ee3211621c896441aaf2": [
     "windows-apps-src\\debug-test-perf\\planning-and-measuring-performance.md"
   ],
+  "91649e31303803f6d156cdc1886992ddc7f559a4": [
+    "windows-apps-src\\debug-test-perf\\test-with-the-emulator.md"
+  ],
   "98986ad367898c62de18cf5d3ad8dfbbc11d3dd4": [
     "windows-apps-src\\debug-test-perf\\test-with-the-emulator.md"
   ],
@@ -5298,6 +5301,9 @@
   ],
   "38e8e116a8a6d288bc73c6fbf837264845c67f83": [
     "windows-apps-src\\networking\\networking-basics.md"
+  ],
+  "432d9849335c537836fd23a4cd95c79c51bc881d": [
+    "windows-apps-src\\networking\\sockets.md"
   ],
   "5ec480f5a3da473737f83c5be72e09053ca11755": [
     "windows-apps-src\\networking\\sockets.md"
