@@ -6532,6 +6532,9 @@
   "cbfd24134820acbb570a5b81c2b04b99b0eb1543": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "8e3b2ad27e97a3ea745af1e534d2791e1dd1d8de": [
+    "windows-apps-src\\TOC.md"
+  ],
   "35ce8a9044944d79d1da6b0d037ff9b405702bbc": [
     "windows-apps-src\\TOC.md"
   ],
@@ -6834,6 +6837,9 @@
   ],
   "01112910296923a767e3968f35d286e661cf29e5": [
     "windows-apps-src\\xaml-platform\\xaml-and-whitespace.md"
+  ],
+  "93dd9df9cbb74b805b9f1cdbda4eda2a6cd313b7": [
+    "windows-apps-src\\xaml-platform\\xaml-intrinsic-data-types.md"
   ],
   "bb68781c5015ea28ed72bcd317239e10a5984fe1": [
     "windows-apps-src\\xaml-platform\\xaml-intrinsic-data-types.md"
@@ -7894,6 +7900,9 @@
   ],
   "72706a1901d7b8fcd3ef265d5d230da44d939800": [
     "windows-apps-src\\xbox-apps\\images\\windowsdeviceportal_2.png"
+  ],
+  "7c5e5326340b2caf6ffe2add0dd25fcf1fcc65e0": [
+    "windows-apps-src\\xbox-apps\\index.md"
   ],
   "b6fb51493dac39af2b5da87898268c5e5d95471e": [
     "windows-apps-src\\xbox-apps\\index.md"
