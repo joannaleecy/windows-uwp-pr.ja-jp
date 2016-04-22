@@ -5155,6 +5155,9 @@
   "fba2083caea35db71705db4181331131d3a99d88": [
     "windows-apps-src\\monetize\\grant-free-products.md"
   ],
+  "ac5b1f06ef6b57044c0561f0ccfa40c6db42ac27": [
+    "windows-apps-src\\monetize\\index.md"
+  ],
   "8a253ab052767691e8b09c056607b6a71742aab6": [
     "windows-apps-src\\monetize\\index.md"
   ],
@@ -7424,6 +7427,9 @@
   "6d4a97042b52f2f2a3d778ad4fdc8d56a4c715f2": [
     "windows-apps-src\\monetize\\define-your-experiment-in-the-dev-center-dashboard.md"
   ],
+  "c79ba96908cc7b52afefbe44c3f56ce009c87f16": [
+    "windows-apps-src\\monetize\\display-ads-in-your-app.md"
+  ],
   "d0d0c300c46f8c01ec148a3272d8c1bced2fd92e": [
     "windows-apps-src\\monetize\\display-ads-in-your-app.md"
   ],
@@ -7462,6 +7468,9 @@
   ],
   "4a0fa0a6f22fda52a2eebb978badd0da582dcfd6": [
     "windows-apps-src\\monetize\\manage-your-experiment.md"
+  ],
+  "2b260df9d10b6cab9f4ded939ccd8213e696ce4d": [
+    "windows-apps-src\\monetize\\monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md"
   ],
   "62cdfb343ac8a3b0ed6b84a4a163f0150e9dcc94": [
     "windows-apps-src\\monetize\\monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md"
@@ -8147,6 +8156,9 @@
   "4f901015de79a1d3abcfea42328d5943cf06d61a": [
     "windows-apps-src\\monetize\\developer-walkthroughs.md"
   ],
+  "892bad0f9f9e6ad719336c551b21ddd471b3d22a": [
+    "windows-apps-src\\monetize\\display-ads-using-the-microsoft-advertising-libraries.md"
+  ],
   "65c324c34c672c08600b91a8f1571b6330ed6a7f": [
     "windows-apps-src\\monetize\\display-ads-using-the-microsoft-advertising-libraries.md"
   ],
@@ -8236,6 +8248,9 @@
   ],
   "4469d833cdc84ccc9805c4e433244cd425e1228a": [
     "windows-apps-src\\monetize\\ui-and-user-experience-guidelines.md"
+  ],
+  "291e1c4d707e8987d29ae5840248918543d7d12a": [
+    "windows-apps-src\\monetize\\what-is-the-difference-admediatorcontrol-or-adcontrol.md"
   ],
   "9afaeb93b81a3cf0ee13db4b61699cccdae98645": [
     "windows-apps-src\\monetize\\what-is-the-difference-admediatorcontrol-or-adcontrol.md"
