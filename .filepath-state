@@ -2228,6 +2228,9 @@
   "540b6d68ed9b9f32a6a0ee3211621c896441aaf2": [
     "windows-apps-src\\debug-test-perf\\planning-and-measuring-performance.md"
   ],
+  "98986ad367898c62de18cf5d3ad8dfbbc11d3dd4": [
+    "windows-apps-src\\debug-test-perf\\test-with-the-emulator.md"
+  ],
   "42ed9e061b9707831ce506473c63a031926374b5": [
     "windows-apps-src\\debug-test-perf\\test-with-the-emulator.md"
   ],
