@@ -2228,6 +2228,9 @@
   "540b6d68ed9b9f32a6a0ee3211621c896441aaf2": [
     "windows-apps-src\\debug-test-perf\\planning-and-measuring-performance.md"
   ],
+  "a47a00042725bcc0826e1371f1c35560b6e3db55": [
+    "windows-apps-src\\debug-test-perf\\test-with-the-emulator.md"
+  ],
   "91649e31303803f6d156cdc1886992ddc7f559a4": [
     "windows-apps-src\\debug-test-perf\\test-with-the-emulator.md"
   ],
@@ -8266,6 +8269,9 @@
   ],
   "dab9f595003747c91225dceb3515e358e76cb047": [
     "windows-apps-src\\monetize\\troubleshooting-guides.md"
+  ],
+  "e7ef8b3361baebbab243254f78b25d3f3404aa5e": [
+    "windows-apps-src\\monetize\\ui-and-user-experience-guidelines.md"
   ],
   "4469d833cdc84ccc9805c4e433244cd425e1228a": [
     "windows-apps-src\\monetize\\ui-and-user-experience-guidelines.md"
