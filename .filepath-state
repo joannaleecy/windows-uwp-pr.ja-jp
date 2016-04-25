@@ -579,7 +579,8 @@
   ],
   "2071fa425a068823e0076eb5d99e895cc9b40533": [
     "windows-apps-src\\controls-and-patterns\\images\\nav-back-pc.png",
-    "windows-apps-src\\layout\\images\\nav-back-pc.png"
+    "windows-apps-src\\layout\\images\\nav-back-pc.png",
+    "windows-apps-src\\layout\\images\\back-systemback-pc.png"
   ],
   "cbb22a8e8cd0e47c804c65b5068a61222ccb5f31": [
     "windows-apps-src\\controls-and-patterns\\images\\nav-back-surfacehub.png"
@@ -747,7 +748,8 @@
     "windows-apps-src\\controls-and-patterns\\dialogs-popups-menus.md"
   ],
   "a089b660f0d583bbf83b959daf82750558233d53": [
-    "windows-apps-src\\controls-and-patterns\\images\\controls_contextmenu_singlepane.png"
+    "windows-apps-src\\controls-and-patterns\\images\\controls_contextmenu_singlepane.png",
+    "windows-apps-src\\layout\\images\\controls-contextmenu-singlepane.png"
   ],
   "4e1595572afc34a0e9a76663d4a7267a7ab253c8": [
     "windows-apps-src\\controls-and-patterns\\images\\controls_contextmenu_cascading.png"
@@ -1181,7 +1183,8 @@
   "62c262f100b51b2c7712746966b8992e78f8efdc": [
     "windows-apps-src\\controls-and-patterns\\images\\checkboxfilllegacy.png",
     "windows-apps-src\\controls-and-patterns\\images\\checkboxfillzerowidthlegacy.png",
-    "windows-apps-src\\controls-and-patterns\\images\\checkboxfill.png"
+    "windows-apps-src\\controls-and-patterns\\images\\checkboxfill.png",
+    "windows-apps-src\\controls-and-patterns\\images\\presencechickletlegacy.png"
   ],
   "a66027f673849d2dbcfa2c2d725ad665ba01026b": [
     "windows-apps-src\\controls-and-patterns\\images\\checkboxlegacy.png",
@@ -1978,9 +1981,6 @@
   ],
   "c2d896b749895fbf0ad3664c74a068c9053c9f1a": [
     "windows-apps-src\\controls-and-patterns\\xaml-theme-resources.md"
-  ],
-  "066080da368489e1521c67d0f13c3ad1fbacdc8f": [
-    "windows-apps-src\\controls-and-patterns\\images\\high-contrast-settings.png"
   ],
   "e51e5e6d7a84392ec22cfb725f8c38fe2d65968e": [
     "windows-apps-src\\controls-and-patterns\\images\\text-block-type-ramp.png"
@@ -2977,9 +2977,6 @@
   "b796fa67c9e190e421eaeceecf856610d2929b70": [
     "windows-apps-src\\gaming\\port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md"
   ],
-  "cf4da7d00957581d4c5d792234945000f45366ce": [
-    "windows-apps-src\\gaming\\images\\simple-opengl-cube.png"
-  ],
   "bac545f3490b3af876d3e8b5fd459bd626505916": [
     "windows-apps-src\\gaming\\port-from-opengl-es-2-0-to-directx-11-1.md"
   ],
@@ -3813,15 +3810,13 @@
     "windows-apps-src\\input-and-devices\\cortana-design-guidelines.md"
   ],
   "a1040f4045bc68278877bd700f61a3fb2db4fc51": [
-    "windows-apps-src\\input-and-devices\\images\\speech\\cortana-overview.png",
-    "windows-apps-src\\input-and-devices\\images\\cortana-overview.png"
+    "windows-apps-src\\input-and-devices\\images\\speech\\cortana-overview.png"
   ],
   "6ea0582f7be5e7a8f28868a83cfd7b23a832082d": [
     "windows-apps-src\\input-and-devices\\images\\speech\\e2e-canceltrip.png"
   ],
   "a6f4110cb6456c78ed5035b8a17ad8d39b4ee670": [
-    "windows-apps-src\\input-and-devices\\images\\speech\\cortana-backgroundapp-result.png",
-    "windows-apps-src\\input-and-devices\\images\\cortana-backgroundapp-result.png"
+    "windows-apps-src\\input-and-devices\\images\\speech\\cortana-backgroundapp-result.png"
   ],
   "14402bc0cea657c4df3019f78b4cc8e4c1661d2b": [
     "windows-apps-src\\input-and-devices\\images\\speech\\cortana-backgroundapp-progress-result.png"
@@ -5080,15 +5075,6 @@
   "1c632f2e3fccda7e62aca45fef81c8fddf76f715": [
     "windows-apps-src\\monetize\\add-and-use-the-ad-mediator-control.md"
   ],
-  "334faa35ee61c8148a2a1f1b12615bfae34cf7bc": [
-    "windows-apps-src\\monetize\\images\\ad-med-8.jpg"
-  ],
-  "8b1d375c6336d47083d49c6d1d2c7ba0b947534b": [
-    "windows-apps-src\\monetize\\images\\ad-med-6.jpg"
-  ],
-  "b022a06eb8384a024302c72a9ea5c27b4cf2e7e1": [
-    "windows-apps-src\\monetize\\images\\ad-med-4.png"
-  ],
   "25f09e043d61f1705f9f0a4fa34114fd06166fa4": [
     "windows-apps-src\\monetize\\enable-consumable-in-app-product-purchases.md"
   ],
@@ -5826,6 +5812,9 @@
   ],
   "b232b8175c163251c114b9de729ed53753b11e52": [
     "windows-apps-src\\publish\\age-ratings.md"
+  ],
+  "9f733b096cc91a29942728f8c33fb7c32e8460e8": [
+    "windows-apps-src\\publish\\analytics.md"
   ],
   "53538cf934e2900418e59b137f77f819f70dc0ec": [
     "windows-apps-src\\publish\\analytics.md"
@@ -8305,5 +8294,812 @@
   ],
   "b6ea33a4d2d47f051e882e9b083926cca59514dd": [
     "windows-apps-src\\xbox-apps\\images\\automate-uwp-apps-1.png"
+  ],
+  "2f25e12711fefdb924663da939c00d71c252c830": [
+    "windows-apps-src\\controls-and-patterns\\images\\accept.png"
+  ],
+  "1004bce85fc4e349d8e43616942ac0d583b71620": [
+    "windows-apps-src\\controls-and-patterns\\images\\accounts.png"
+  ],
+  "83b2e640f8db9b3516bca3191cbfb1be16d51a27": [
+    "windows-apps-src\\controls-and-patterns\\images\\add.png"
+  ],
+  "ab66db142ad296638ad05ebf44d65812834618f1": [
+    "windows-apps-src\\controls-and-patterns\\images\\addfriend.png"
+  ],
+  "9df89ca2967799878e3bb94dad21354959f0a67c": [
+    "windows-apps-src\\controls-and-patterns\\images\\admin.png"
+  ],
+  "cdbba5541ae882a3d1c40671873a84a856affe1f": [
+    "windows-apps-src\\controls-and-patterns\\images\\aligncenter.png"
+  ],
+  "1196ff4c780be442ac2e432789cdd088cb667098": [
+    "windows-apps-src\\controls-and-patterns\\images\\alignleft.png"
+  ],
+  "c94f4b9e3e392d9fe14d3fe2df4646bbafa740b9": [
+    "windows-apps-src\\controls-and-patterns\\images\\alignright.png"
+  ],
+  "526e1718718e6f8cdb2ea7ccacb9e88e74128d5c": [
+    "windows-apps-src\\controls-and-patterns\\images\\allapps.png"
+  ],
+  "dd3e4b4c62acfeb67a18dc490069ea02a23e224b": [
+    "windows-apps-src\\controls-and-patterns\\images\\attach.png"
+  ],
+  "b4e89c24a94c43a147c8a0e42e7d284386a175df": [
+    "windows-apps-src\\controls-and-patterns\\images\\attachcamera.png"
+  ],
+  "f1489168dccb2d637d04649d742aaa98722532bd": [
+    "windows-apps-src\\controls-and-patterns\\images\\audio.png"
+  ],
+  "5e505f5d293f7a26d9711092e9d0ad7a8a75f1a8": [
+    "windows-apps-src\\controls-and-patterns\\images\\back.png"
+  ],
+  "c343bb7b87e3dfb7b82762f209760230c7400c15": [
+    "windows-apps-src\\controls-and-patterns\\images\\backtowindow.png"
+  ],
+  "fa8a56cb775cddfa4b2e88bdef2e81e978ac7adc": [
+    "windows-apps-src\\controls-and-patterns\\images\\blockcontact.png"
+  ],
+  "d311acde65d156bec8dd88ed47ac01e2d907a121": [
+    "windows-apps-src\\controls-and-patterns\\images\\blockedlegacy.png"
+  ],
+  "fa7a371c8edc8bdd7e7eebdc871e8cd8ac63c307": [
+    "windows-apps-src\\controls-and-patterns\\images\\bold.png"
+  ],
+  "34a2b17a33fb5de81221c61ae3aa219e6042d8aa": [
+    "windows-apps-src\\controls-and-patterns\\images\\bookmarks.png"
+  ],
+  "4f8648b550e543c29578cbc113ff1121aaefed9e": [
+    "windows-apps-src\\controls-and-patterns\\images\\browsephotos.png"
+  ],
+  "1b2eb90ef1cb5397bfc22aae8c0abb6ffe11ebfa": [
+    "windows-apps-src\\controls-and-patterns\\images\\bulletedlist.png"
+  ],
+  "a340e8e15b9e619c144d2f0c2d832ba326a3c9b9": [
+    "windows-apps-src\\controls-and-patterns\\images\\calculator.png"
+  ],
+  "d077d5f492d29e1b8a2196db7673b8e7623e3e3d": [
+    "windows-apps-src\\controls-and-patterns\\images\\calendar.png"
+  ],
+  "eb6011f51bfedf5fda89433346509dbc62831ca0": [
+    "windows-apps-src\\controls-and-patterns\\images\\calendarday.png"
+  ],
+  "f6f3c0469cb88bd4c1d8d9c9924d68cab1973f36": [
+    "windows-apps-src\\controls-and-patterns\\images\\calendarreply.png"
+  ],
+  "83101a11b31797c7c456d54a36e8dc05ac28338f": [
+    "windows-apps-src\\controls-and-patterns\\images\\calendarweek.png"
+  ],
+  "de3c6f749e10c14fbb9fa072a5c55ada93f5e9c5": [
+    "windows-apps-src\\controls-and-patterns\\images\\camera.png"
+  ],
+  "2dfbab10787512d815bd1d4c58aea9f78c54f40c": [
+    "windows-apps-src\\controls-and-patterns\\images\\cancel.png"
+  ],
+  "cb80cb308a99628462e76cbedcd93d8cdfd3d8a9": [
+    "windows-apps-src\\controls-and-patterns\\images\\caption.png"
+  ],
+  "c8d96f09f756b660864a83d381a261964b3fbb6c": [
+    "windows-apps-src\\controls-and-patterns\\images\\cc.png"
+  ],
+  "7dc5c622b1206f6e8c5f363e94402e576f55290a": [
+    "windows-apps-src\\controls-and-patterns\\images\\cellphone.png"
+  ],
+  "28b8f92967d19c0cc638ff3580bb8e2bfcdffbe3": [
+    "windows-apps-src\\controls-and-patterns\\images\\characters.png"
+  ],
+  "e87d4b232bca4e43d54d82efce7d9e5a7b355a75": [
+    "windows-apps-src\\controls-and-patterns\\images\\clear.png"
+  ],
+  "aee1f2f323173f14d51d351c613128285d68fecd": [
+    "windows-apps-src\\controls-and-patterns\\images\\clearselection.png"
+  ],
+  "d62df03404c48ef7137dd581d70e288578c43e7e": [
+    "windows-apps-src\\controls-and-patterns\\images\\closepane.png"
+  ],
+  "adfa07574f357ebda7f3ac7d3c4616d1984c60ce": [
+    "windows-apps-src\\controls-and-patterns\\images\\cloud.png"
+  ],
+  "68d9b91b7d73ea84dbd518f0be1d4923bb670d35": [
+    "windows-apps-src\\controls-and-patterns\\images\\comment.png"
+  ],
+  "87daf9ab5bffd2171de366817357eee13bd82862": [
+    "windows-apps-src\\controls-and-patterns\\images\\commentlegacy.png"
+  ],
+  "d18b54f2f174582febf31e1c2b0b71d0e374a43e": [
+    "windows-apps-src\\controls-and-patterns\\images\\contact.png"
+  ],
+  "3254e2688f672d614221984a7d1b049f36b291ac": [
+    "windows-apps-src\\controls-and-patterns\\images\\contact2.png"
+  ],
+  "ac89c6c36e55c9276770c415167c98376439be8b": [
+    "windows-apps-src\\controls-and-patterns\\images\\contactinfo.png"
+  ],
+  "0e169471d2806c12f35a2cc35711d38f6bf083e3": [
+    "windows-apps-src\\controls-and-patterns\\images\\contactpresence.png"
+  ],
+  "84425f5f5e8143a5d89f6696f5db5f2efe0ce688": [
+    "windows-apps-src\\controls-and-patterns\\images\\copy.png"
+  ],
+  "1f47cb6dfcf0cefca52e76678e5ba1ef3a42b756": [
+    "windows-apps-src\\controls-and-patterns\\images\\crop.png"
+  ],
+  "61af1b3ddc090f080b41bffcbade21a03b05675a": [
+    "windows-apps-src\\controls-and-patterns\\images\\cut.png"
+  ],
+  "5957184320f76ae38b744239eea6e92a9531684f": [
+    "windows-apps-src\\controls-and-patterns\\images\\delete.png"
+  ],
+  "018bd07c7cfe3c2c9af8446e21dd257316bfef03": [
+    "windows-apps-src\\controls-and-patterns\\images\\directions.png"
+  ],
+  "969440a959e1f0d5bd04cc24d1109335517d3c9c": [
+    "windows-apps-src\\controls-and-patterns\\images\\disableupdates.png"
+  ],
+  "4b4c03621c043df837e0aee0fc884e35c58eba91": [
+    "windows-apps-src\\controls-and-patterns\\images\\disconnectdrive.png"
+  ],
+  "56c1294132e88c1be5e4470eb73e8dbe629c1b2a": [
+    "windows-apps-src\\controls-and-patterns\\images\\dislike.png"
+  ],
+  "36c133af2053495abf3f1a7d31e7d82051bf0c88": [
+    "windows-apps-src\\controls-and-patterns\\images\\dislikelegacy.png"
+  ],
+  "995e824382c54dc40c3f88be5ffc5ed20436c464": [
+    "windows-apps-src\\controls-and-patterns\\images\\dockbottom.png"
+  ],
+  "50f39e8fb46e5614fca1a626acfe6ae1a9d81ab6": [
+    "windows-apps-src\\controls-and-patterns\\images\\dockleft.png"
+  ],
+  "5cafe01dc63e66ab0f1424eafbd064a85ed50b19": [
+    "windows-apps-src\\controls-and-patterns\\images\\dockright.png"
+  ],
+  "c0c6d04d4786d7cf97d9630c026d9b341f96ff95": [
+    "windows-apps-src\\controls-and-patterns\\images\\document.png"
+  ],
+  "ad67c0ad94545d0fd710b86c6787d4fa2f89b1d3": [
+    "windows-apps-src\\controls-and-patterns\\images\\download.png"
+  ],
+  "94d11033c298777d21c227bdd8344a0fde783093": [
+    "windows-apps-src\\controls-and-patterns\\images\\edit.png"
+  ],
+  "7ea055d2097510ff6daf51054cfb32436efd8742": [
+    "windows-apps-src\\controls-and-patterns\\images\\emoji.png"
+  ],
+  "6de6404732c4a19e36e8107a32c131c1e77ab1ee": [
+    "windows-apps-src\\controls-and-patterns\\images\\emoji2.png"
+  ],
+  "3ace3e2109417f0872652eb795b2cb26d615b5cd": [
+    "windows-apps-src\\controls-and-patterns\\images\\favorite2legacy.png",
+    "windows-apps-src\\controls-and-patterns\\images\\favoritelegacy.png",
+    "windows-apps-src\\controls-and-patterns\\images\\ratingstarfilllegacy.png",
+    "windows-apps-src\\controls-and-patterns\\images\\ratingstarfillreducedpaddinghtmllegacy.png",
+    "windows-apps-src\\controls-and-patterns\\images\\ratingstarfillsmalllegacy.png",
+    "windows-apps-src\\controls-and-patterns\\images\\ratingstarfillzerowidthlegacy.png"
+  ],
+  "e38c9e5da86f09ad10abd98e3eee4d5860010fb1": [
+    "windows-apps-src\\controls-and-patterns\\images\\favoritelist.png"
+  ],
+  "f2cc3ae04bc35ef1628b649c80f1b29b31ae7595": [
+    "windows-apps-src\\controls-and-patterns\\images\\favoritestar.png",
+    "windows-apps-src\\controls-and-patterns\\images\\outlinestarlegacy.png"
+  ],
+  "7d371223fe2c3141fa853d83fd1ec8faddb066d8": [
+    "windows-apps-src\\controls-and-patterns\\images\\favoritestarfill.png",
+    "windows-apps-src\\controls-and-patterns\\images\\solidstarlegacy.png"
+  ],
+  "439ac512a3e61a6c0de58a1e0ae7be05a4707b86": [
+    "windows-apps-src\\controls-and-patterns\\images\\filter.png"
+  ],
+  "b5d9ec45ce99c29900a0ec2c231aca7086bcc14a": [
+    "windows-apps-src\\controls-and-patterns\\images\\findlegacy.png"
+  ],
+  "edbfc9f6da4d31c6992ab0de728cbec84a2672d7": [
+    "windows-apps-src\\controls-and-patterns\\images\\flag.png"
+  ],
+  "1848f8dfd6fa78db0f5dc2469200d73d7aae66ba": [
+    "windows-apps-src\\controls-and-patterns\\images\\folder.png"
+  ],
+  "50927f9e36f2ec3bfa3aaad8d0d7c7abb2330a4d": [
+    "windows-apps-src\\controls-and-patterns\\images\\font.png"
+  ],
+  "563c86bc8e3e462f928a0b71ee23f7f345594120": [
+    "windows-apps-src\\controls-and-patterns\\images\\fontcolor.png"
+  ],
+  "33156394ebe981b799ca4718dbe3934a37297de7": [
+    "windows-apps-src\\controls-and-patterns\\images\\fontdecrease.png"
+  ],
+  "404cd15ffb61237c50857339fd07fc8317fdc94e": [
+    "windows-apps-src\\controls-and-patterns\\images\\fontincrease.png"
+  ],
+  "732e37932feed39f412c37db1376a113c9908071": [
+    "windows-apps-src\\controls-and-patterns\\images\\fontsize.png"
+  ],
+  "5efb43623e9133e2bc7bd1b9618cb00a35493601": [
+    "windows-apps-src\\controls-and-patterns\\images\\forward.png"
+  ],
+  "deaa95fb7ad4cc3b2bb213c6325e1cf881cecb4c": [
+    "windows-apps-src\\controls-and-patterns\\images\\fourbars.png"
+  ],
+  "1834b85819923649ea8f3eaf4603b58c5366ac01": [
+    "windows-apps-src\\controls-and-patterns\\images\\fullscreen.png"
+  ],
+  "cc5a91ac16f6856776aa2edf190ff17c55e2df41": [
+    "windows-apps-src\\controls-and-patterns\\images\\globe.png"
+  ],
+  "888182e6126e56ddc46adae9c0ae46f42c93ed67": [
+    "windows-apps-src\\controls-and-patterns\\images\\go.png"
+  ],
+  "2555c8e3cff3b424fa609fcbc659c2cea79534f4": [
+    "windows-apps-src\\controls-and-patterns\\images\\gotostart.png"
+  ],
+  "51f3469b238f9eea8927d8be16273128d2a3b2ae": [
+    "windows-apps-src\\controls-and-patterns\\images\\gototoday.png"
+  ],
+  "2a45097b5bf4972e38c31249f834a5fcd6f4e10d": [
+    "windows-apps-src\\controls-and-patterns\\images\\halfstarleft.png"
+  ],
+  "9ef7f0be37a57c74539676085c349c6c49aeb39c": [
+    "windows-apps-src\\controls-and-patterns\\images\\halfstarright.png"
+  ],
+  "ef26a459c24b83bed18b88ead1b2f702f7b855bf": [
+    "windows-apps-src\\controls-and-patterns\\images\\hangup.png"
+  ],
+  "a752963ed672be31bc1e360985c8ec0847bdd8fd": [
+    "windows-apps-src\\controls-and-patterns\\images\\heartbrokenlegacy.png",
+    "windows-apps-src\\controls-and-patterns\\images\\heartbrokenzerowidthlegacy.png"
+  ],
+  "efcd56191de19ee4426874a1b1b1511e33da97c8": [
+    "windows-apps-src\\controls-and-patterns\\images\\heartfilllegacy.png",
+    "windows-apps-src\\controls-and-patterns\\images\\heartfillzerowidthlegacy.png"
+  ],
+  "79a24c8ec02b9d56efcacb3711aa008d51cc6776": [
+    "windows-apps-src\\controls-and-patterns\\images\\heartlegacy.png"
+  ],
+  "fe0694adec9f6346e6ca4648de6f238613137a83": [
+    "windows-apps-src\\controls-and-patterns\\images\\help.png"
+  ],
+  "8baef0bf3daf05f17000a9e4a54ddef900f200d2": [
+    "windows-apps-src\\controls-and-patterns\\images\\hidebcc.png"
+  ],
+  "d2cbf34e021ab84a5336f1dfc40294c1505f91e8": [
+    "windows-apps-src\\controls-and-patterns\\images\\highlight.png"
+  ],
+  "a56678215b52faa16404c4096a0604b6bcb3bf7c": [
+    "windows-apps-src\\controls-and-patterns\\images\\home.png"
+  ],
+  "76e37616b8984adc822961243faa172ad19d2c1b": [
+    "windows-apps-src\\controls-and-patterns\\images\\import.png"
+  ],
+  "72b9dfb5a539ce665c44dd27b8ec1aad3aa8fd3f": [
+    "windows-apps-src\\controls-and-patterns\\images\\importall.png"
+  ],
+  "eadebbe6ecc0452335bac562f138bf9ccbee2d14": [
+    "windows-apps-src\\controls-and-patterns\\images\\important.png"
+  ],
+  "6f715a11c8968f8d9ebd578d24f6c06be6ee82af": [
+    "windows-apps-src\\controls-and-patterns\\images\\italic.png"
+  ],
+  "509ae0a9c44a9674188df5e56316ce068f8fb275": [
+    "windows-apps-src\\controls-and-patterns\\images\\keyboardclassic.png"
+  ],
+  "704e62b8b8b5b6b75cb6be609dac548c3f02941b": [
+    "windows-apps-src\\controls-and-patterns\\images\\leavechat.png"
+  ],
+  "11a8f746c266ff61279186ef72bd73385813d390": [
+    "windows-apps-src\\controls-and-patterns\\images\\library.png"
+  ],
+  "f67acf1ebe45b643b2c1525dab6b123b1bf0c348": [
+    "windows-apps-src\\controls-and-patterns\\images\\like.png"
+  ],
+  "93b429d4a7d4ceb9ccad9a05a0b8e8854386585b": [
+    "windows-apps-src\\controls-and-patterns\\images\\likedislike.png"
+  ],
+  "9e2c48781c3888d2cfbd8b2509df0d50cdd37bd6": [
+    "windows-apps-src\\controls-and-patterns\\images\\likedislikelegacy.png"
+  ],
+  "6ca2d209ad3b74d27d5c44c9d179e8ecae0cc8d0": [
+    "windows-apps-src\\controls-and-patterns\\images\\likelegacy.png"
+  ],
+  "86fe6e3c165921294edabe96b190b83be90aec7d": [
+    "windows-apps-src\\controls-and-patterns\\images\\link.png"
+  ],
+  "7d57d5dec5ed82812c318ef18aa9b1801aab8fb9": [
+    "windows-apps-src\\controls-and-patterns\\images\\list.png"
+  ],
+  "dfaaf3b0677ee76130c516b54b49fa790b8860dc": [
+    "windows-apps-src\\controls-and-patterns\\images\\location.png"
+  ],
+  "508358f8ffbe266e3f957f84d61ec69ef1802998": [
+    "windows-apps-src\\controls-and-patterns\\images\\mail.png"
+  ],
+  "8da91ce5d5281c5c89e80b91ef7b74ce7c4a9f39": [
+    "windows-apps-src\\controls-and-patterns\\images\\mailfill.png"
+  ],
+  "bd8b82d7bfa6049827b0304f11a5330e64875620": [
+    "windows-apps-src\\controls-and-patterns\\images\\mailforward.png"
+  ],
+  "ca26cf0a0aba6d82b62749e221bcfde627b9f57c": [
+    "windows-apps-src\\controls-and-patterns\\images\\mailmessagelegacy.png"
+  ],
+  "8d50392a83d0b18eabaf8aa8b0c4a2228300b782": [
+    "windows-apps-src\\controls-and-patterns\\images\\mailreply.png"
+  ],
+  "07bcff14279154230bd03a6447578981868ac254": [
+    "windows-apps-src\\controls-and-patterns\\images\\mailreplyall.png"
+  ],
+  "78306d817568b4376fc365d2cb6df07bec614e39": [
+    "windows-apps-src\\controls-and-patterns\\images\\manage.png"
+  ],
+  "b6349518fada06a26c08263c42120e83d0acf163": [
+    "windows-apps-src\\controls-and-patterns\\images\\mapdrive.png"
+  ],
+  "95b3ca44e1b8fab666b376a2a5f7502efab8b25b": [
+    "windows-apps-src\\controls-and-patterns\\images\\mappin.png"
+  ],
+  "e293d61c2a7287f813caff1208d5956c57aeb9fd": [
+    "windows-apps-src\\controls-and-patterns\\images\\memo.png"
+  ],
+  "2636d29a2203343fbb74d74bc3e2fe46125a9f55": [
+    "windows-apps-src\\controls-and-patterns\\images\\message.png"
+  ],
+  "eece826f9fec82c78a9249babcb0da4d0357f189": [
+    "windows-apps-src\\controls-and-patterns\\images\\microphone.png"
+  ],
+  "3792b2832a7860515f665813e595b60e112cb2c6": [
+    "windows-apps-src\\controls-and-patterns\\images\\mobilecontactlegacy.png"
+  ],
+  "0e643082c2f22d70c607fff6263bff7edcb41f62": [
+    "windows-apps-src\\controls-and-patterns\\images\\more.png"
+  ],
+  "4e27bc2dcd1d3c0f5d091aafdf32af74606b2f1e": [
+    "windows-apps-src\\controls-and-patterns\\images\\movetofolder.png"
+  ],
+  "573efedc4dfb7442553644bde164e4ee9d24be1d": [
+    "windows-apps-src\\controls-and-patterns\\images\\musicinfo.png"
+  ],
+  "8de8fd45ce3055582ec596478c336b392b7f14c5": [
+    "windows-apps-src\\controls-and-patterns\\images\\mute.png"
+  ],
+  "8e9a2b30578d73050ae979ff74c6dc092b350a8f": [
+    "windows-apps-src\\controls-and-patterns\\images\\newfolder.png"
+  ],
+  "8a41ac3121504a425cd5656c6229d03564080061": [
+    "windows-apps-src\\controls-and-patterns\\images\\newwindow.png"
+  ],
+  "e42a0e8b2aee08bd23300d168f6b1d80d265558d": [
+    "windows-apps-src\\controls-and-patterns\\images\\next.png"
+  ],
+  "bddc5a4bade0804479b4a40d744279767c889846": [
+    "windows-apps-src\\controls-and-patterns\\images\\onebar.png"
+  ],
+  "0fa6700c9da591362a8d62243f1a6b7c8f6fd171": [
+    "windows-apps-src\\controls-and-patterns\\images\\openfile.png"
+  ],
+  "50f6622e570eeec9092efa3c0b675c4e9ea4e4ee": [
+    "windows-apps-src\\controls-and-patterns\\images\\openlocal.png"
+  ],
+  "8ecd883dce0cae3e4bc86e07be823766cc8d788f": [
+    "windows-apps-src\\controls-and-patterns\\images\\openpane.png"
+  ],
+  "0aee8e3fa57c24aa840e9b4a374e853ebd2fe37c": [
+    "windows-apps-src\\controls-and-patterns\\images\\openwith.png"
+  ],
+  "408255f9b6779117f4a973a168c94612cee3cdac": [
+    "windows-apps-src\\controls-and-patterns\\images\\orientation.png"
+  ],
+  "f799b616ddfaf03d0f6ba03700ec013dc325fd94": [
+    "windows-apps-src\\controls-and-patterns\\images\\otheruser.png"
+  ],
+  "f2aeb6a9512487460da95c1e31b28d08cbed395a": [
+    "windows-apps-src\\controls-and-patterns\\images\\page.png"
+  ],
+  "00a65d641bfb59d1e62176a9c893cc851cdc1ca3": [
+    "windows-apps-src\\controls-and-patterns\\images\\paste.png"
+  ],
+  "77cc8ab61667eb79ac2f417d4b4c4d825d159a3e": [
+    "windows-apps-src\\controls-and-patterns\\images\\pause.png"
+  ],
+  "ef2324706279e800291e108799be15e326e85bd2": [
+    "windows-apps-src\\controls-and-patterns\\images\\people.png"
+  ],
+  "f72a85fab1345f20976711a929fc42ed7700d1b1": [
+    "windows-apps-src\\controls-and-patterns\\images\\permissions.png"
+  ],
+  "f656155ae0565b143d4921c9dbd77429e6359ac6": [
+    "windows-apps-src\\controls-and-patterns\\images\\phone.png"
+  ],
+  "dc119ff8885d0ba8390670bd6d9df868ad0a78a8": [
+    "windows-apps-src\\controls-and-patterns\\images\\phonebook.png"
+  ],
+  "866c9ea4f70d7ea4a41b6cb152ad7735580151f9": [
+    "windows-apps-src\\controls-and-patterns\\images\\pin.png"
+  ],
+  "1c8e7db7328c17da7769b5c6b2fad4108f497894": [
+    "windows-apps-src\\controls-and-patterns\\images\\play.png"
+  ],
+  "d66094f27c5cce0f9126deef6585cae86d6f5caa": [
+    "windows-apps-src\\controls-and-patterns\\images\\postupdate.png"
+  ],
+  "9d1007fcb9db4dbd8aefaab1552778bcaed77182": [
+    "windows-apps-src\\controls-and-patterns\\images\\presencechickletvideolegacy.png"
+  ],
+  "5e89362d2e205aafd1d564e1995f40d88b19ae21": [
+    "windows-apps-src\\controls-and-patterns\\images\\preview.png"
+  ],
+  "cbe65d83f3c9724babc348d25ccc32edd5366f64": [
+    "windows-apps-src\\controls-and-patterns\\images\\previewlink.png"
+  ],
+  "d80c37a3f06964d9788cbb794852821712ec5552": [
+    "windows-apps-src\\controls-and-patterns\\images\\previous.png"
+  ],
+  "c5937b965c53c51c8ccf9d9818541d47c41987bd": [
+    "windows-apps-src\\controls-and-patterns\\images\\priority.png"
+  ],
+  "5edc64aa6caf7b7da109d34b11171cbc0b21000c": [
+    "windows-apps-src\\controls-and-patterns\\images\\protecteddocument.png"
+  ],
+  "e2a08e01c105ea64e6e271a086ac67cb60a601ba": [
+    "windows-apps-src\\controls-and-patterns\\images\\ratingstarlegacy.png",
+    "windows-apps-src\\controls-and-patterns\\images\\unfavorite2legacy.png"
+  ],
+  "5398c43de3f8e37e7b6ed9af921edca53e8f51f5": [
+    "windows-apps-src\\controls-and-patterns\\images\\read.png"
+  ],
+  "95a7a73a2a33207a93b4b7bc3f44ed2b51c89fbb": [
+    "windows-apps-src\\controls-and-patterns\\images\\redo.png"
+  ],
+  "414c38ae0fde49b45e9d4b68a34283b6c28c36a3": [
+    "windows-apps-src\\controls-and-patterns\\images\\refresh.png",
+    "windows-apps-src\\controls-and-patterns\\images\\repeatall.png"
+  ],
+  "c516793fcc697d73edb5341204d7974cc1072975": [
+    "windows-apps-src\\controls-and-patterns\\images\\remote.png"
+  ],
+  "ca6eecf29e94950c082a398f1042ee49a16eb39f": [
+    "windows-apps-src\\controls-and-patterns\\images\\remove.png"
+  ],
+  "4c69a8d88abb1e769503ab5997fc99bdd6bb3451": [
+    "windows-apps-src\\controls-and-patterns\\images\\rename.png"
+  ],
+  "0ecb6608c8826b29008cbefa84e52ec2b01d2820": [
+    "windows-apps-src\\controls-and-patterns\\images\\repair.png"
+  ],
+  "a99acde989622ac7735dcb88811f4382c7d4ac95": [
+    "windows-apps-src\\controls-and-patterns\\images\\repeatone.png"
+  ],
+  "c13a527e34b02c28e6b3de89cdeb871b2bb27b90": [
+    "windows-apps-src\\controls-and-patterns\\images\\replylegacy.png"
+  ],
+  "2e45863f0b698491a1beb84484c45dcb006e0963": [
+    "windows-apps-src\\controls-and-patterns\\images\\reporthacked.png"
+  ],
+  "874ac739b5e8f5825ad1bc42af3053fed17276d2": [
+    "windows-apps-src\\controls-and-patterns\\images\\reshare.png"
+  ],
+  "abfd36d670cb8561e8d34270759509e6674bc824": [
+    "windows-apps-src\\controls-and-patterns\\images\\rotate.png"
+  ],
+  "08f16e51611b1856a50fe55f4a0d1613dfc689b7": [
+    "windows-apps-src\\controls-and-patterns\\images\\rotatecamera.png"
+  ],
+  "e2b537362967a11ec83a396b891215e59d218069": [
+    "windows-apps-src\\controls-and-patterns\\images\\save.png"
+  ],
+  "e1877f59e0232c15c6bec9d3ac8f512f95cfe568": [
+    "windows-apps-src\\controls-and-patterns\\images\\savelocal.png"
+  ],
+  "65c2b943a61c5d0d764540c25225af3d643cbe35": [
+    "windows-apps-src\\controls-and-patterns\\images\\scan.png"
+  ],
+  "72e58527b2f6af8d16dcdeded01e64a41c8ac5e7": [
+    "windows-apps-src\\controls-and-patterns\\images\\selectall.png"
+  ],
+  "bfdcdd9042ecadbdb14cf55ee6bdd48a9015c774": [
+    "windows-apps-src\\controls-and-patterns\\images\\send.png"
+  ],
+  "ffef693aeacf5a70f58f86bc1ad61b08c01b3468": [
+    "windows-apps-src\\controls-and-patterns\\images\\setlockscreen.png"
+  ],
+  "e2e3eea8cdcc00d259b7eded43c2d15c6fbc0a44": [
+    "windows-apps-src\\controls-and-patterns\\images\\settile.png"
+  ],
+  "67f73660a48dd3ebdd785b96c537cf6c3fd6c32e": [
+    "windows-apps-src\\controls-and-patterns\\images\\settings.png"
+  ],
+  "f7c439070afa71f913cfae03104fb70a636cefb3": [
+    "windows-apps-src\\controls-and-patterns\\images\\share.png"
+  ],
+  "e74df809dad468fb5378b03580b3364c0ae0080c": [
+    "windows-apps-src\\controls-and-patterns\\images\\shop.png"
+  ],
+  "a3e2194512f1fb5484c4b171327347b5c48a7fe8": [
+    "windows-apps-src\\controls-and-patterns\\images\\showbcc.png"
+  ],
+  "a7b5830020002e15b8f4e73c404b3328d751b9d5": [
+    "windows-apps-src\\controls-and-patterns\\images\\showresults.png"
+  ],
+  "9378ef922e06e4258d29c1989dd3c9e75290ed46": [
+    "windows-apps-src\\controls-and-patterns\\images\\shuffle.png"
+  ],
+  "afedd9297d818ab98546db2264168b9a911fd7f6": [
+    "windows-apps-src\\controls-and-patterns\\images\\slideshow.png"
+  ],
+  "75e5a997063763ad9c64d1fd41c2ad6e5458b23e": [
+    "windows-apps-src\\controls-and-patterns\\images\\sort.png"
+  ],
+  "e2c56d0883a682e6761104fa2c4f0fef4587e074": [
+    "windows-apps-src\\controls-and-patterns\\images\\stop.png"
+  ],
+  "96029d5279cb626755ca1e8e6a27524cf7ef6862": [
+    "windows-apps-src\\controls-and-patterns\\images\\street.png"
+  ],
+  "de7742c3efb5e62e8ea2133b41bbeff6ab00aad3": [
+    "windows-apps-src\\controls-and-patterns\\images\\switch.png"
+  ],
+  "5c3537df179adbc5e352d150faed46e2e0eb329e": [
+    "windows-apps-src\\controls-and-patterns\\images\\switchapps.png"
+  ],
+  "18e7468e79a53b74f3bedcfd6208190196878f34": [
+    "windows-apps-src\\controls-and-patterns\\images\\sync.png"
+  ],
+  "61aca5de0d3f52b4330f340938608e05ab7a161a": [
+    "windows-apps-src\\controls-and-patterns\\images\\syncfolder.png"
+  ],
+  "357f5b2afe294cf57c69caf0cb9a2fc6b5dd2626": [
+    "windows-apps-src\\controls-and-patterns\\images\\tag.png"
+  ],
+  "a365a2b6ba52d25572694ba704c8d74f2b1c35ed": [
+    "windows-apps-src\\controls-and-patterns\\images\\threebars.png"
+  ],
+  "29198c939aee6267566d6c74aa910c7d18502728": [
+    "windows-apps-src\\controls-and-patterns\\images\\tile-and-live-tile.png"
+  ],
+  "24061bd85eac332f9618616577d30af1a04709a4": [
+    "windows-apps-src\\controls-and-patterns\\images\\touchpointer.png"
+  ],
+  "7c6501b8e57e56cdc19b9e5f8875fa0dcc70a5e1": [
+    "windows-apps-src\\controls-and-patterns\\images\\trim.png"
+  ],
+  "a865c2e3713c5d04531e7c487a05753158a2032e": [
+    "windows-apps-src\\controls-and-patterns\\images\\twobars.png"
+  ],
+  "dd5386124d2d285dcbd8995377cbd74287e369da": [
+    "windows-apps-src\\controls-and-patterns\\images\\twopage.png"
+  ],
+  "7000423a067ec4bde65385f6f861edbdf1e73fd8": [
+    "windows-apps-src\\controls-and-patterns\\images\\typingindicatorlegacy.png"
+  ],
+  "ee5005901d95c9897c866be734807eedbfeab16d": [
+    "windows-apps-src\\controls-and-patterns\\images\\underline.png"
+  ],
+  "68711c1cc04d04a44da679ace6eae2b6ea04930f": [
+    "windows-apps-src\\controls-and-patterns\\images\\undo.png"
+  ],
+  "6b87b0b65a826574ca4c3e8d880f3df8f96721a6": [
+    "windows-apps-src\\controls-and-patterns\\images\\unfavorite.png"
+  ],
+  "c56b5f2631415d9a3f300791b3872d9ef82a5cbc": [
+    "windows-apps-src\\controls-and-patterns\\images\\unfavoritelegacy.png"
+  ],
+  "89b3371d7318dd333629a18c08556cb47f227f9c": [
+    "windows-apps-src\\controls-and-patterns\\images\\unpin.png"
+  ],
+  "d2dfadec5e6d0b543858577c305bdbf2c6b04195": [
+    "windows-apps-src\\controls-and-patterns\\images\\unsyncfolder.png"
+  ],
+  "53d0a239682c39294afb1ae3e89599c139a9483c": [
+    "windows-apps-src\\controls-and-patterns\\images\\up.png"
+  ],
+  "c107d0ebe41ff6c4781c778f8a86f8950f673312": [
+    "windows-apps-src\\controls-and-patterns\\images\\upload.png"
+  ],
+  "3857a9c61e7c1b0ff68e6aeda7c98f54129366a2": [
+    "windows-apps-src\\controls-and-patterns\\images\\video.png",
+    "windows-apps-src\\controls-and-patterns\\images\\videolegacy.png"
+  ],
+  "86893d94ad97117b881eab2d7f07cc8302982ddc": [
+    "windows-apps-src\\controls-and-patterns\\images\\videochat.png"
+  ],
+  "f0dbd42ffef884fb08fb6c1bf1d91b2c7ac8ebda": [
+    "windows-apps-src\\controls-and-patterns\\images\\view.png"
+  ],
+  "24e3907e9ea6520e246636015aa7ae1807857f75": [
+    "windows-apps-src\\controls-and-patterns\\images\\viewall.png"
+  ],
+  "b82ef050c533897dca00f3ba32dc246d910dd089": [
+    "windows-apps-src\\controls-and-patterns\\images\\volume.png"
+  ],
+  "a48ff7a95e36847b065ebee15042d9794c49e6b5": [
+    "windows-apps-src\\controls-and-patterns\\images\\webcam.png"
+  ],
+  "3c1e45dd75cb71bc17d9c5b5fbe975a0529d6c31": [
+    "windows-apps-src\\controls-and-patterns\\images\\world.png"
+  ],
+  "95f9c8dc5866b0107492c8b5e0532d1f764179d5": [
+    "windows-apps-src\\controls-and-patterns\\images\\zerobars.png"
+  ],
+  "bbf8fb980b617de95ddb9a8ef7995e2023ed8254": [
+    "windows-apps-src\\controls-and-patterns\\images\\zoom.png"
+  ],
+  "1f51b418666450fb832bdfd52bb79153e7f1b6b4": [
+    "windows-apps-src\\controls-and-patterns\\images\\zoomin.png"
+  ],
+  "10964baff2bb53bf96ce2b220239d2322ac7a594": [
+    "windows-apps-src\\controls-and-patterns\\images\\zoomout.png"
+  ],
+  "aaae43cf6752fd7b6786eefb6aeba3b7a239ac0f": [
+    "windows-apps-src\\get-started\\images\\relativepanel-narrowview.png"
+  ],
+  "c108bbe550780394f509d318cfe685658f6fecc4": [
+    "windows-apps-src\\get-started\\images\\relativepanel-wideview.png"
+  ],
+  "9954dd4c9067a2b38dc054d629dc12f4032d4952": [
+    "windows-apps-src\\input-and-devices\\images\\adjust-selection.png"
+  ],
+  "e3be99d702a431a89a71b07c8fca6da5949e4aab": [
+    "windows-apps-src\\input-and-devices\\images\\feedback-keyboard-cursor.png"
+  ],
+  "45d8701e5d5f886c238b43a8d99be830a4bc69b2": [
+    "windows-apps-src\\input-and-devices\\images\\feedback-mouse-cursor2.png"
+  ],
+  "1b8c4b81386339b568b1e8f3ff80785d20cc64ee": [
+    "windows-apps-src\\input-and-devices\\images\\feedback-pen-cursor3.png"
+  ],
+  "d2ee872217e55ef01d3d74188a1adf7a36329b3c": [
+    "windows-apps-src\\input-and-devices\\images\\feedback-touch-cursor.png"
+  ],
+  "c48f2223245a47ac9182da40512a2bae97a870e0": [
+    "windows-apps-src\\input-and-devices\\images\\ink_basic_1_small.png"
+  ],
+  "c4e5ea0da2354a246e293d495b5e0d09bb30efa4": [
+    "windows-apps-src\\input-and-devices\\images\\ink_basic_2_small.png"
+  ],
+  "8a46ded5ec8448144e359a97729fb2b2d66707aa": [
+    "windows-apps-src\\input-and-devices\\images\\ink_basic_3_small.png"
+  ],
+  "3642fa878c9561c87b1f63efb452c4f88147ff18": [
+    "windows-apps-src\\input-and-devices\\images\\textselection-place-caret.png"
+  ],
+  "ac1a8cd5058b4f64f10bc424bc3d84b109f90e0c": [
+    "windows-apps-src\\launch-resume\\images\\checkboxopenwithdialog.png"
+  ],
+  "82965d6f953e6d8caae7e2981e05cd06665068bb": [
+    "windows-apps-src\\launch-resume\\images\\howdoyouwanttoopen.png"
+  ],
+  "f258d3ef967f90bc62ff9adbe56db643969e19e3": [
+    "windows-apps-src\\launch-resume\\images\\seviewofimages.png"
+  ],
+  "597a58215d41746dcf15f29670788f29f47a9189": [
+    "windows-apps-src\\launch-resume\\images\\warningdialog.png"
+  ],
+  "23e52213d4ea7b64fd0293fa173d7c8bc050d0f5": [
+    "windows-apps-src\\layout\\images\\1895065-hig-anatomyofanapp-02.png"
+  ],
+  "fc0f873a936803098a948a4885f41e076af27854": [
+    "windows-apps-src\\layout\\images\\back-transui.png"
+  ],
+  "79d7e1757ae2a0a1d780b1ca75413804725af843": [
+    "windows-apps-src\\layout\\images\\commands-appcanvas-example.png"
+  ],
+  "267db9ed3e319d0fca12229de1e22e9b30cf7ed7": [
+    "windows-apps-src\\layout\\images\\content-area.png"
+  ],
+  "4f3985c69ab3571dc3af6df2c2298fb006a37b8c": [
+    "windows-apps-src\\layout\\images\\controls-appbar-icons-200.png"
+  ],
+  "c878e95ee38c3e208f1a9d59df4a0fade2238ee6": [
+    "windows-apps-src\\layout\\images\\controls-dialog-twobutton-200.png"
+  ],
+  "8dc6c435177b05372c336b7b62590fcd1a6f785b": [
+    "windows-apps-src\\layout\\images\\controls-flyout-default-200.png"
+  ],
+  "145bc0f03f81b5fd99f378afa52d666deb807f7d": [
+    "windows-apps-src\\layout\\images\\food-truck-finder\\uap-foodtruck-tabletphone-sbs-sm-400.png"
+  ],
+  "d6d539ac20b3dd8600a3226856e65137498d7587": [
+    "windows-apps-src\\layout\\images\\higsecone-hub-thumb.png"
+  ],
+  "3ad8c341837b374843701a7adce9c9c613529ced": [
+    "windows-apps-src\\layout\\images\\higsecone-masterdetail-thumb.png"
+  ],
+  "575923684b7639305715b41eb49ba452428d9ded": [
+    "windows-apps-src\\layout\\images\\nav\\nav-back-surfacehub.png"
+  ],
+  "5790e1689c17a696a06f0d63bf80dbe0496a7e55": [
+    "windows-apps-src\\layout\\images\\nav\\nav-enumerate.png"
+  ],
+  "ef888c1df6d53300712fd9e5bb08d6c0ac1a4893": [
+    "windows-apps-src\\layout\\images\\nav\\nav-navpane-4page-thumb.png"
+  ],
+  "c463f7e04691ef45a6e8c85a8269256142156204": [
+    "windows-apps-src\\layout\\images\\nav\\nav-pages-hiearchy.png"
+  ],
+  "5903624a93256fd2eaa863618244d94d5501544b": [
+    "windows-apps-src\\layout\\images\\nav\\nav-pages-peer.png"
+  ],
+  "fcc320acdf07056d9faed03e1e2e466c9ce31e15": [
+    "windows-apps-src\\layout\\images\\nav\\nav-pagetopage-diffpeers-imageonly1.png"
+  ],
+  "6f350c556c80848b840a9265d5473dd47c27ec63": [
+    "windows-apps-src\\layout\\images\\nav\\nav-pagetopage-diffpeers-imageonly2.png"
+  ],
+  "06f40e01a5892e2cf3074672107cbe96e8cff727": [
+    "windows-apps-src\\layout\\images\\nav\\nav-pagetopage-samepeer-noosnavelement.png"
+  ],
+  "1d1d45459e41d9d0d4321c537bcae0cbb3a4d99a": [
+    "windows-apps-src\\layout\\images\\nav\\nav-pagetopage-samepeer-yesosnavelement.png"
+  ],
+  "d2cd1e35faa9fd697bdb2f13610f329b07e57e1f": [
+    "windows-apps-src\\layout\\images\\nav\\nav-tabs-sm-300.png"
+  ],
+  "8884cc7d32a41171fdac92ca0586de66d4d5ab50": [
+    "windows-apps-src\\layout\\images\\smart-home\\uap-smarthome-tabletphone-sbs-sm-400.png"
+  ],
+  "d1655bb11cadeaf9dd6b0320542cbe1beaea61a3": [
+    "windows-apps-src\\layout\\images\\stock-tracker\\uap-finance-tabletphone-sbs-sm.png"
+  ],
+  "19b8650149f0640b7b0bc48e7a8825b2b567c146": [
+    "windows-apps-src\\layout\\images\\subway\\uap-subway-ak-8in-dashboard-200.png"
+  ],
+  "6a38bff23a7abd94814d548696731a7ad9186bf2": [
+    "windows-apps-src\\monetize\\images\\13-0f11f562-0624-40d6-9720-400420f0a486.jpg"
+  ],
+  "5ae6be08abafa30dc6cf71d861d21943f76bfc07": [
+    "windows-apps-src\\monetize\\images\\13-2bf69508-7c98-422d-9837-ed8bdca33c5a.jpg"
+  ],
+  "83676e71d6424aabf6ad9925c0c3b402380c1302": [
+    "windows-apps-src\\monetize\\images\\13-3071078f-228b-4336-97d3-5b783b163f9a.jpg"
+  ],
+  "0fa2c0d4d3dced6cc7113f880b79a4fc60382cd6": [
+    "windows-apps-src\\monetize\\images\\13-826a12c0-f3ee-4ea4-a9f9-aa5ed0e87490.jpg"
+  ],
+  "183fc52679a26bd710c1557841254f16fc8f9548": [
+    "windows-apps-src\\monetize\\images\\13-ab104187-3ba9-4c13-a510-6fa4c9bd8330.jpg"
+  ],
+  "1cf0b6402e10ca09a3776a684e029290ac75e7f4": [
+    "windows-apps-src\\monetize\\images\\13-ce34c5cf-3e7d-4dd4-a094-4fad5e95d5cf.jpg"
+  ],
+  "2d3d7910f371dc6c6dad0629a852574d42ac63d5": [
+    "windows-apps-src\\monetize\\images\\13-dff5785a-5355-47db-bb46-e2f41564b87c.jpg"
+  ],
+  "0666c21570e001796bb9619599b0e179b3ab1f28": [
+    "windows-apps-src\\monetize\\images\\13-f6f413da-ddde-4424-9364-41d8ba536d21.jpg"
+  ],
+  "8df06a57d466b94458ec32e795f572c196075b7a": [
+    "windows-apps-src\\style\\images\\alignment.png"
+  ],
+  "fabaf1ff9aae8ad83ceaf41583608bd0dd2fa364": [
+    "windows-apps-src\\style\\images\\icons-common-shapes-examples-1.png"
+  ],
+  "5047fe652fbed5f71aa80005af76129aa73e5be1": [
+    "windows-apps-src\\style\\images\\icons-common-shapes-examples-2.png"
+  ],
+  "c101585afd508a1a2b40e06d983f0f6f7a9d03b0": [
+    "windows-apps-src\\style\\images\\icons-common-shapes-examples-3.png"
+  ],
+  "79ca1dd0ebba10da9d529036830894fd1399d363": [
+    "windows-apps-src\\style\\images\\icons-common-shapes-examples-4.png"
+  ],
+  "b19fd4fd9ccb6fcd5ab93aec2f1da582423e790e": [
+    "windows-apps-src\\style\\images\\icons-common-shapes-examples-5.png"
+  ],
+  "f6364083ca38eb6e52f0c6bd7bc5a8a122f1dbd1": [
+    "windows-apps-src\\style\\images\\kerning-tracking.png"
+  ],
+  "424d1a549885446e2243310e68ed0e56965d62d2": [
+    "windows-apps-src\\style\\images\\line-endings.png"
+  ],
+  "6720b36055947a93ce7e4a3ba8a24e4bf033b3cd": [
+    "windows-apps-src\\style\\images\\type-ramp.png"
+  ],
+  "c662d56ede98396783a8fcd82794c417b7e4dbbf": [
+    "windows-apps-src\\style\\images\\weights.png"
+  ],
+  "3e4ea7aad183ebf768d8c6ab7fd94b8d5835c470": [
+    "windows-apps-src\\style\\images\\word-letter.png"
+  ],
+  "243fda09590d286a4aa38717654b312ea5408cda": [
+    "windows-apps-src\\xbox-apps\\images\\automate-uwp-apps-2.png"
   ]
 }
