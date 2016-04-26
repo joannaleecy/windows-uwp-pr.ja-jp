@@ -356,6 +356,9 @@
   "f547df0f9fc4531fabdfccbb0584a2a3808db669": [
     "windows-apps-src\\audio-video-camera\\capture-device-controls-for-video-capture.md"
   ],
+  "a98edd0b4c52271fad4255af5ab0a005b0c66d68": [
+    "windows-apps-src\\audio-video-camera\\capture-photos-and-video-with-cameracaptureui.md"
+  ],
   "ba82a349bca0d7c175c0968fc6e94f33bbdc72c6": [
     "windows-apps-src\\audio-video-camera\\capture-photos-and-video-with-cameracaptureui.md"
   ],
@@ -490,6 +493,9 @@
   ],
   "66739a9e94aab0b070b09ce8e924853a1b0d8c13": [
     "windows-apps-src\\audio-video-camera\\set-media-encoding-properties.md"
+  ],
+  "05e752925c07b0e3720fbdd42d785381aa08b99c": [
+    "windows-apps-src\\audio-video-camera\\simple-camera-preview-access.md"
   ],
   "9669ef0c140f918738b57daa56349bc2f331e62c": [
     "windows-apps-src\\audio-video-camera\\simple-camera-preview-access.md"
@@ -5761,6 +5767,9 @@
   "7af6d2fec91e26163ee54eb266d20c16ec1fd09d": [
     "windows-apps-src\\packaging\\images\\packaging-screen7.jpg"
   ],
+  "c6d0d0f4aee60a9371dacb4d8a0701b827944780": [
+    "windows-apps-src\\porting\\android-ios-uwp-map.md"
+  ],
   "fa448bc9f44011c11b42462a628edf3fcf7654fb": [
     "windows-apps-src\\porting\\android-ios-uwp-map.md"
   ],
@@ -6204,6 +6213,9 @@
   ],
   "b232b8175c163251c114b9de729ed53753b11e52": [
     "windows-apps-src\\publish\\age-ratings.md"
+  ],
+  "8922a53da8b1bc97bef7faf49d0e412a26127188": [
+    "windows-apps-src\\publish\\analytics.md"
   ],
   "8bd2f6cfcfa36961740dde5738eee7d9b969d706": [
     "windows-apps-src\\publish\\analytics.md"
@@ -7690,18 +7702,6 @@
   ],
   "05b48d1e98a80fc56f8b96e6b838154408e91343": [
     "windows-apps-src\\input-and-devices\\use-input-scope-to-change-the-touch-keyboard.md"
-  ],
-  "c10028eb7d8d3e3ba55d633aefff83ceaa614cbc": [
-    "windows-apps-src\\layout\\assets\\grid\\grid.png"
-  ],
-  "4af08fe09866b3054cc93f2f6bdf43e53c520c96": [
-    "windows-apps-src\\layout\\assets\\grid\\touch-target.png"
-  ],
-  "c124d3e85d88d59f613befe1688e3226e0b89411": [
-    "windows-apps-src\\layout\\grid.md"
-  ],
-  "4c0021799ae22353cc57d4de4607a136751abecc": [
-    "windows-apps-src\\layout\\grid.md"
   ],
   "06eb73607f80a7eacef23cd75a3982ab352c5379": [
     "windows-apps-src\\style\\sound.md"
