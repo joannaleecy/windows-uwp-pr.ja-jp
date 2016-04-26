@@ -61,7 +61,7 @@ XAML ページでソフトウェア ビットマップを使用するには、[*
 
 まず、ビデオ コンポジションを表示する [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) コントロールを XAML ページに追加します。
 
-[!code-cs[MediaElement](./code/CameraCaptureUIWin10/cs/MainPage.xaml#SnippetMediaElement)]
+[!code-xml[MediaElement](./code/CameraCaptureUIWin10/cs/MainPage.xaml#SnippetMediaElement)]
 
 [
             **Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) 名前空間と [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962) 名前空間をプロジェクトに追加します。
