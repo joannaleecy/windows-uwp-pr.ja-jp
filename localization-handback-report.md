@@ -1,11 +1,41 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 0
+ Total Files | 2
 
 ## File List
+ Source File | Status | Details 
+ ----------- | ------ | ------- 
+ [windows-apps-src\layout\assets\grid\grid.png](https://github.com/Microsoft/windows-apps/blob/8603569e780b9804d116f7e3151a72b2c4d627a8/windows-apps-src/layout/assets/grid/grid.png) | InSyncHandedBackSuccess | [Details](#c10028eb7d8d3e3ba55d633aefff83ceaa614cbc2949)
+ [windows-apps-src\layout\assets\grid\touch-target.png](https://github.com/Microsoft/windows-apps/blob/8603569e780b9804d116f7e3151a72b2c4d627a8/windows-apps-src/layout/assets/grid/touch-target.png) | InSyncHandedBackSuccess | [Details](#4af08fe09866b3054cc93f2f6bdf43e53c520c962950)
 
 ## Item Details
+##### <a name='c10028eb7d8d3e3ba55d633aefff83ceaa614cbc2949'></a> Source: [windows-apps-src\layout\assets\grid\grid.png](https://github.com/Microsoft/windows-apps/blob/8603569e780b9804d116f7e3151a72b2c4d627a8/windows-apps-src/layout/assets/grid/grid.png)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\layout\assets\grid\grid.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/e29a917ed81318fbba0728a0dfb4f6502007cb9b/windows-apps-src/layout/assets/grid/grid.png)
+* Handoff File: [c10028eb7d8d3e3ba55d633aefff83ceaa614cbc.png](https://github.com/Microsoft/WDG.handoff/blob/0a1b9cb59791f66060f5f4d00ac2923a1e548566/ol-handoff/Microsoft/windows-apps.ja-jp/master/c10028eb7d8d3e3ba55d633aefff83ceaa614cbc.png)
+* Handoff Datetime: 2016-03-24 01:10:47
+* Handoff Reason: IsDependency
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [c10028eb7d8d3e3ba55d633aefff83ceaa614cbc.png](https://github.com/Microsoft/WDG.handback/blob/fa905df4c3c1516391b98715d8ace31e2aee8df7/ol-handback/Microsoft/windows-apps.ja-jp/master/c10028eb7d8d3e3ba55d633aefff83ceaa614cbc.png)
+* Handback Datetime: 2016-04-26 21:29:41
+* Dependency From: windows-apps-src\layout\grid.md
+* [Back to Top](#report-top)
+
+##### <a name='4af08fe09866b3054cc93f2f6bdf43e53c520c962950'></a> Source: [windows-apps-src\layout\assets\grid\touch-target.png](https://github.com/Microsoft/windows-apps/blob/8603569e780b9804d116f7e3151a72b2c4d627a8/windows-apps-src/layout/assets/grid/touch-target.png)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\layout\assets\grid\touch-target.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/e29a917ed81318fbba0728a0dfb4f6502007cb9b/windows-apps-src/layout/assets/grid/touch-target.png)
+* Handoff File: [4af08fe09866b3054cc93f2f6bdf43e53c520c96.png](https://github.com/Microsoft/WDG.handoff/blob/0a1b9cb59791f66060f5f4d00ac2923a1e548566/ol-handoff/Microsoft/windows-apps.ja-jp/master/4af08fe09866b3054cc93f2f6bdf43e53c520c96.png)
+* Handoff Datetime: 2016-03-24 01:10:47
+* Handoff Reason: IsDependency
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [4af08fe09866b3054cc93f2f6bdf43e53c520c96.png](https://github.com/Microsoft/WDG.handback/blob/fa905df4c3c1516391b98715d8ace31e2aee8df7/ol-handback/Microsoft/windows-apps.ja-jp/master/4af08fe09866b3054cc93f2f6bdf43e53c520c96.png)
+* Handback Datetime: 2016-04-26 21:29:41
+* Dependency From: windows-apps-src\layout\grid.md
+* [Back to Top](#report-top)
+
 
 ## Error Details
 
