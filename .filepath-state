@@ -5234,11 +5234,17 @@
   "add9550f6651d21d4099fa3eee9a2164a88c1c30": [
     "windows-apps-src\\monetize\\report-consumable-products-as-fulfilled.md"
   ],
+  "49c9b8e60da9239c948265fb22563013019da259": [
+    "windows-apps-src\\monetize\\select-and-manage-your-ad-networks.md"
+  ],
   "6143f51536703ef9955f53c6bd0fb624e352c26f": [
     "windows-apps-src\\monetize\\select-and-manage-your-ad-networks.md"
   ],
   "554992e0b497f1ff32948683e18db966eaaf793e": [
     "windows-apps-src\\monetize\\select-and-manage-your-ad-networks.md"
+  ],
+  "13dd6a9c38d85ead29a43f470b7c0f63d025d612": [
+    "windows-apps-src\\monetize\\submit-your-app-and-configure-ad-mediation.md"
   ],
   "85e0121ea373a4743230544293a2a3d4826a020a": [
     "windows-apps-src\\monetize\\submit-your-app-and-configure-ad-mediation.md"
@@ -5246,11 +5252,17 @@
   "cf1b13d58fc0b5c113b582ce66040f45daa02e22": [
     "windows-apps-src\\monetize\\submit-your-app-and-configure-ad-mediation.md"
   ],
+  "0805ed5462a4b100b837ed9c11ec2d9e7caabc34": [
+    "windows-apps-src\\monetize\\test-your-ad-mediation-implementation.md"
+  ],
   "3643b7f15a0011577e743f5fac0a12dfdd48cf7d": [
     "windows-apps-src\\monetize\\test-your-ad-mediation-implementation.md"
   ],
   "8fd7e26f3851ff5f0e86fe8e51a67988be84b1e5": [
     "windows-apps-src\\monetize\\test-your-ad-mediation-implementation.md"
+  ],
+  "39d8e9ebbbf1f2b6d95a8700261ce068b10cb327": [
+    "windows-apps-src\\monetize\\troubleshoot-ad-mediation.md"
   ],
   "63f9e52d9795e8d98bcee0983f34e81f2b170d71": [
     "windows-apps-src\\monetize\\troubleshoot-ad-mediation.md"
