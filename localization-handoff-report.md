@@ -1,27 +1,40 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\organizational-licensing.md](https://github.com/Microsoft/windows-apps/blob/4d1bbd11e85cb4169761ee2fdb32214a715e023b/windows-apps-src/publish/organizational-licensing.md) | OutofSyncHandedBackSuccess | [Details](#9458475b8e8445b3ec36b790822641ea9a574a983507)
+ [windows-apps-src\debug-test-perf\test-with-the-emulator.md](https://github.com/Microsoft/windows-apps/blob/0c84afb738291fbd4fed6789de1f244bf69b1183/windows-apps-src/debug-test-perf/test-with-the-emulator.md) | OutofSyncHandedBackSuccess | [Details](#1706d4b016d1c796fdc51d050ebd35dd8a2f54651974)
+ [windows-apps-src\layout\test.md](https://github.com/Microsoft/windows-apps/blob/ceb84c7a05b4505a440b46567fac8c145aa93423/windows-apps-src/layout/test.md) | HandedOffSuccess | [Details](#8907584e67e82daf74a39accc937d0bbfa3b81fe3201)
 
 ## Item Details
-##### <a name='9458475b8e8445b3ec36b790822641ea9a574a983507'></a> Source: [windows-apps-src\publish\organizational-licensing.md](https://github.com/Microsoft/windows-apps/blob/4d1bbd11e85cb4169761ee2fdb32214a715e023b/windows-apps-src/publish/organizational-licensing.md)
+##### <a name='1706d4b016d1c796fdc51d050ebd35dd8a2f54651974'></a> Source: [windows-apps-src\debug-test-perf\test-with-the-emulator.md](https://github.com/Microsoft/windows-apps/blob/0c84afb738291fbd4fed6789de1f244bf69b1183/windows-apps-src/debug-test-perf/test-with-the-emulator.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [organizational-licensing.0c29f420ae9657fb30f0ccdc5c23237b41a4611d.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/6fe0ddb31de274e1f96f7ab2642de2a85da3ad29/ol-handoff/Microsoft/windows-apps.ja-jp/master/organizational-licensing.0c29f420ae9657fb30f0ccdc5c23237b41a4611d.ja-jp.xlf)
-* Handoff Datetime: 2016-04-27 02:39:18
+* Handoff File: [test-with-the-emulator.4b51b8e4f7e15661b30d8f267fb7a8330b45ae3b.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/5d6a9815d3fa938d5442b88682c8ce8baf6ecf18/ol-handoff/Microsoft/windows-apps.ja-jp/master/test-with-the-emulator.4b51b8e4f7e15661b30d8f267fb7a8330b45ae3b.ja-jp.xlf)
+* Handoff Datetime: 2016-04-27 22:42:11
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\publish\organizational-licensing.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/ede73b1a80d40d88b22b4a79f571f892d6d3809b/windows-apps-src/publish/organizational-licensing.md)
-* Current Handback File: [organizational-licensing.0c29f420ae9657fb30f0ccdc5c23237b41a4611d.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/a5742cb2d83625361cba5b5a0ead558fec4ff91c/ol-handback/Microsoft/windows-apps.ja-jp/master/organizational-licensing.0c29f420ae9657fb30f0ccdc5c23237b41a4611d.ja-jp.xlf)
+* Current Target File: [windows-apps-src\debug-test-perf\test-with-the-emulator.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/ede73b1a80d40d88b22b4a79f571f892d6d3809b/windows-apps-src/debug-test-perf/test-with-the-emulator.md)
+* Current Handback File: [test-with-the-emulator.4b51b8e4f7e15661b30d8f267fb7a8330b45ae3b.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/a5742cb2d83625361cba5b5a0ead558fec4ff91c/ol-handback/Microsoft/windows-apps.ja-jp/master/test-with-the-emulator.4b51b8e4f7e15661b30d8f267fb7a8330b45ae3b.ja-jp.xlf)
 * Current Handback Datetime: 2016-04-13 14:10:35
+* [Back to Top](#report-top)
+
+##### <a name='8907584e67e82daf74a39accc937d0bbfa3b81fe3201'></a> Source: [windows-apps-src\layout\test.md](https://github.com/Microsoft/windows-apps/blob/ceb84c7a05b4505a440b46567fac8c145aa93423/windows-apps-src/layout/test.md)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [test.cdcf91b592fe1e9eb688524669174320f25c7f54.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/5d6a9815d3fa938d5442b88682c8ce8baf6ecf18/ol-handoff/Microsoft/windows-apps.ja-jp/master/test.cdcf91b592fe1e9eb688524669174320f25c7f54.ja-jp.xlf)
+* Handoff Datetime: 2016-04-27 22:42:11
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
 

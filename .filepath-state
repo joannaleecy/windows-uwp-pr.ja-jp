@@ -2474,6 +2474,9 @@
   "540b6d68ed9b9f32a6a0ee3211621c896441aaf2": [
     "windows-apps-src\\debug-test-perf\\planning-and-measuring-performance.md"
   ],
+  "1706d4b016d1c796fdc51d050ebd35dd8a2f5465": [
+    "windows-apps-src\\debug-test-perf\\test-with-the-emulator.md"
+  ],
   "a47a00042725bcc0826e1371f1c35560b6e3db55": [
     "windows-apps-src\\debug-test-perf\\test-with-the-emulator.md"
   ],
@@ -4019,19 +4022,19 @@
     "windows-apps-src\\in-app-help\\instructional-ui.md"
   ],
   "d0e39b0c0ebc8433fe25cb8755074bc60e5f6d3c": [
-    "windows-apps-src\\in-app-help\\images\\in-game-controls-3.png"
+    "windows-apps-src\\app-help-guidelines\\images\\in-game-controls-3.png"
   ],
   "12350faf3048b52f30d54bafab392e2ece93db32": [
-    "windows-apps-src\\in-app-help\\images\\instructional-ui-movie.png"
+    "windows-apps-src\\app-help-guidelines\\images\\instructional-ui-movie.png"
   ],
   "616c418d06f1f082272bc60570b8f960ff47242f": [
-    "windows-apps-src\\in-app-help\\images\\instructional-ui-mail-inbox.png"
+    "windows-apps-src\\app-help-guidelines\\images\\instructional-ui-mail-inbox.png"
   ],
   "15ddd990dbce3fa1e34d96a29ef700f45bd9a23a": [
-    "windows-apps-src\\in-app-help\\images\\instructional-ui-mail.png"
+    "windows-apps-src\\app-help-guidelines\\images\\instructional-ui-mail.png"
   ],
   "0b5665bcfae3e9a96859a5c1cb92fda686804ec5": [
-    "windows-apps-src\\in-app-help\\images\\instructional-ui-mail-flyout.png"
+    "windows-apps-src\\app-help-guidelines\\images\\instructional-ui-mail-flyout.png"
   ],
   "97e016047c864026fe0c72e4b7cb819f0fc80748": [
     "windows-apps-src\\index.md"
@@ -8568,6 +8571,9 @@
   ],
   "6e2bdc86eecfbba5858faa451f0f603ed7074a6d": [
     "windows-apps-src\\debug-test-perf\\device-portal-desktop.md"
+  ],
+  "8907584e67e82daf74a39accc937d0bbfa3b81fe": [
+    "windows-apps-src\\layout\\test.md"
   ],
   "f14347012d412c87329ff71da33113863ffd00e9": [
     "windows-apps-src\\layout\\test.md"
