@@ -3070,6 +3070,9 @@
   "a3fe5511da03533b19bfb1abeb2222ff9a92f6fa": [
     "windows-apps-src\\gaming\\draw-to-the-screen.md"
   ],
+  "87952c226d1461631f50b96a8c3956e0a7dfe987": [
+    "windows-apps-src\\gaming\\e2e.md"
+  ],
   "d35d838f56fe48527cb398126fb4155ab891113a": [
     "windows-apps-src\\gaming\\e2e.md"
   ],
@@ -3878,6 +3881,9 @@
   "2c93f2a215aa9b5e0a5b880a0cafaa790fb9b141": [
     "windows-apps-src\\graphics\\images\\animation-child-rectangles.gif"
   ],
+  "fa2ec8e05d92e1f667dec947348f29ff883968b1": [
+    "windows-apps-src\\graphics\\composition-animation.md"
+  ],
   "e37ecb982c8e1ef80bc26bfa4af40f8c873cf02d": [
     "windows-apps-src\\graphics\\composition-animation.md"
   ],
@@ -3886,6 +3892,9 @@
   ],
   "c9abe8937b77fc9bd9d9c3b426c7adec7816fb75": [
     "windows-apps-src\\graphics\\composition-animation.md"
+  ],
+  "7f466607e48bb0d553892e09c6616f0dd0539d8e": [
+    "windows-apps-src\\graphics\\composition-brushes.md"
   ],
   "39abb7e5b6ce1a59591deace04f3296841fe033b": [
     "windows-apps-src\\graphics\\composition-brushes.md"
@@ -3898,6 +3907,9 @@
   ],
   "26b4cb6834188153b9ab7a5569aca02e3f34bdd8": [
     "windows-apps-src\\graphics\\images\\composition-compositionsurfacebrush.png"
+  ],
+  "10c3b6d0f56d0e8670cc202ac8d8a3f7538eb5a7": [
+    "windows-apps-src\\graphics\\composition-effects.md"
   ],
   "56ec0579da15b54fd582aba5fbfd75ea6889bf6b": [
     "windows-apps-src\\graphics\\composition-effects.md"
@@ -3914,11 +3926,17 @@
   "c650c22eec9ba6b1cd607a9b207bae43f3d0f1f0": [
     "windows-apps-src\\graphics\\images\\composition-cat-desaturated.png"
   ],
+  "b5308c8023990996a93277dd1bcfb8298c0bbf4f": [
+    "windows-apps-src\\graphics\\composition-native-interop.md"
+  ],
   "99e4135cd9d86726a7bbade805199df081b625d9": [
     "windows-apps-src\\graphics\\composition-native-interop.md"
   ],
   "aa06fa4d0dda5524ace7a2278cd49729c7a14c2e": [
     "windows-apps-src\\graphics\\composition-native-interop.md"
+  ],
+  "e31d3b23871bd37cde26fb3e9414e8cfae340d3d": [
+    "windows-apps-src\\graphics\\composition-visual-tree.md"
   ],
   "781c487935b319b656ea71d38e10d9d37ed2061f": [
     "windows-apps-src\\graphics\\composition-visual-tree.md"
@@ -3991,6 +4009,9 @@
   ],
   "2100f38a6a7e314a8e59b7d266b54459f07ca0ff": [
     "windows-apps-src\\graphics\\images\\brushes-imagebrush.jpg"
+  ],
+  "164c01737d27451adcb685f9cda544cc00634af4": [
+    "windows-apps-src\\graphics\\visual-layer.md"
   ],
   "77ddc205b02c384d77ac10b1450be9b6d89578d0": [
     "windows-apps-src\\graphics\\visual-layer.md"
