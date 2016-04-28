@@ -1,5 +1,5 @@
 ---
-title: チュートリアル-- DirectX 11 とユニバーサル Windows プラットフォーム (UWP) への簡単な Direct3D 9 アプリの移植
+title: チュートリアル -- DirectX 11 とユニバーサル Windows プラットフォームへの簡単な Direct3D 9 アプリの移植
 description: この移植作業では、Direct3D 9 から Direct3D 11 とユニバーサル Windows プラットフォーム (UWP) に簡単なレンダリング フレームワークを移植する方法について説明します。
 ms.assetid: d4467e1f-929b-a4b8-b233-e142a8714c96
 ---

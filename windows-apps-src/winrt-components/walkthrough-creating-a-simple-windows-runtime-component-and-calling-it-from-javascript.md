@@ -1,6 +1,6 @@
 ---
 title: 単純な Windows ランタイム コンポーネントの作成と JavaScript からの呼び出し
-description: このチュートリアルでは、Visual Basic または C# で .NET Framework を使って、Windows ランタイム コンポーネントにパッケージ化される独自の Windows ランタイム型を作成する方法と、JavaScript を使って Windows 用にビルドされたユニバーサル Windows アプリからコンポーネントを呼び出す方法について説明します。
+description: Visual Basic または C# で .NET Framework を使い Windows ランタイム コンポーネントにパッケージ化される独自の Windows ランタイム型を作成する方法と、JavaScript で Windows 用にビルドされた UWP アプリからコンポーネントを呼び出す方法を説明します。
 ms.assetid: 1565D86C-BF89-4EF3-81FE-35367DB8D671
 ---
 
