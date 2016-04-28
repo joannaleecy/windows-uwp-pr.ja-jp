@@ -5722,6 +5722,9 @@
   "00de660fa7d41a6b9b0698d0857864d25036ace3": [
     "windows-apps-src\\networking\\which-networking-technology.md"
   ],
+  "9d0749aac4cdcad282b2082b351962d3cd0b0ec8": [
+    "windows-apps-src\\packaging\\app-capability-declarations.md"
+  ],
   "c1819ddc1e6335b225fcc0e38a40dcb4c9eaf720": [
     "windows-apps-src\\packaging\\app-capability-declarations.md"
   ],
@@ -8766,6 +8769,9 @@
   ],
   "c5c6fbef39f5ecc0bb34643b669ab9d1b6052b78": [
     "windows-apps-src\\monetize\\interstitial-ad-sample-code-in-javascript.md"
+  ],
+  "cfaa108cc93b6bae903e86ad141656bf613f185d": [
+    "windows-apps-src\\monetize\\known-issues-for-the-advertising-libraries.md"
   ],
   "96fba981388085101ef1b96de71fd7d9f90329fa": [
     "windows-apps-src\\monetize\\known-issues-for-the-advertising-libraries.md"
