@@ -1,11 +1,29 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 0
+ Total Files | 1
 
 ## File List
+ Source File | Status | Details 
+ ----------- | ------ | ------- 
+ [windows-apps-src\contacts-and-calendar\selecting-contacts.md](https://github.com/Microsoft/windows-apps/blob/0d62e3026af9f71940bd05d4e072d46cda51bbc0/windows-apps-src/contacts-and-calendar/selecting-contacts.md) | OutofSyncHandedBackSuccess | [Details](#12bf9361bb5fc2fb2dc7f28860a79cb67d661a5c495)
 
 ## Item Details
+##### <a name='12bf9361bb5fc2fb2dc7f28860a79cb67d661a5c495'></a> Source: [windows-apps-src\contacts-and-calendar\selecting-contacts.md](https://github.com/Microsoft/windows-apps/blob/0d62e3026af9f71940bd05d4e072d46cda51bbc0/windows-apps-src/contacts-and-calendar/selecting-contacts.md)
+* Status: OutofSyncHandedBackSuccess
+* Target File: 
+* Handoff File: [selecting-contacts.fb343ef783918a9d7b2af7fc00617fbe85321b7a.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/caf67ae6b411575e1e05b1309b728bae69be0dc0/ol-handoff/Microsoft/windows-apps.ja-jp/master/selecting-contacts.fb343ef783918a9d7b2af7fc00617fbe85321b7a.ja-jp.xlf)
+* Handoff Datetime: 2016-04-28 21:10:22
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\contacts-and-calendar\selecting-contacts.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/e90d9e5003395213a4a16c0fe1bdc224eb12f64e/windows-apps-src/contacts-and-calendar/selecting-contacts.md)
+* Current Handback File: [selecting-contacts.fb343ef783918a9d7b2af7fc00617fbe85321b7a.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/3aeb3fd0ce054730da8d004f337c44232ec91a70/ol-handback/Microsoft/windows-apps.ja-jp/master/selecting-contacts.fb343ef783918a9d7b2af7fc00617fbe85321b7a.ja-jp.xlf)
+* Current Handback Datetime: 2016-04-28 16:10:42
+* [Back to Top](#report-top)
+
 
 ## Error Details
 
