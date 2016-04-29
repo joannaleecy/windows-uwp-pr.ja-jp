@@ -7351,11 +7351,17 @@
   "67beb04cc87765a4c2edb249a61ba300cd9a7544": [
     "windows-apps-src\\xaml-platform\\xaml-namescopes.md"
   ],
+  "fe24a66836d85e8d102ebc6b23b42c32a687c593": [
+    "windows-apps-src\\xaml-platform\\xaml-namespaces-and-namespace-mapping.md"
+  ],
   "0b4e101b595e8a7fa858a658a186073e3b37f4a4": [
     "windows-apps-src\\xaml-platform\\xaml-namespaces-and-namespace-mapping.md"
   ],
   "da96a206b884ecaef59730e9864883f9edfa5afa": [
     "windows-apps-src\\xaml-platform\\xaml-namespaces-and-namespace-mapping.md"
+  ],
+  "9ddb584efe7c6406f78b5a0cf0bdc73a974afd18": [
+    "windows-apps-src\\xaml-platform\\xaml-overview.md"
   ],
   "87526e08e693cc79e47f6485ad8c292f4735e267": [
     "windows-apps-src\\xaml-platform\\xaml-overview.md"
