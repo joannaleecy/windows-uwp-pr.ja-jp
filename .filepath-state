@@ -2619,6 +2619,9 @@
   "164d63f97a88838b8f43ad501c7bde9f1c60bde6": [
     "windows-apps-src\\devices-sensors\\device-information-properties.md"
   ],
+  "01ccd8dea8b19a52867ce89ba2eb9a1fb2d2a72f": [
+    "windows-apps-src\\devices-sensors\\enable-device-capabilities.md"
+  ],
   "e2ab2250acb130089fa1801d4109d055f9448adf": [
     "windows-apps-src\\devices-sensors\\enable-device-capabilities.md"
   ],
@@ -2688,6 +2691,9 @@
   ],
   "d0ca1c2b792d95199b7c692d4be7852a6413440d": [
     "windows-apps-src\\devices-sensors\\images\\nfc-settings.png"
+  ],
+  "ae6ab11963ed06083e581ce42f39ce483d53e0d6": [
+    "windows-apps-src\\devices-sensors\\index.md"
   ],
   "8aaef0c1d696b8a1fd3c469ffe553d12b769f1cd": [
     "windows-apps-src\\devices-sensors\\index.md"
@@ -6997,6 +7003,9 @@
   "cbfd24134820acbb570a5b81c2b04b99b0eb1543": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "79534f842990f06c2e6e31f3f1924e82c53b4269": [
+    "windows-apps-src\\TOC.md"
+  ],
   "8e3b2ad27e97a3ea745af1e534d2791e1dd1d8de": [
     "windows-apps-src\\TOC.md"
   ],
@@ -7654,6 +7663,9 @@
   ],
   "6ac30be914c46cf953a3f1c344fa0441bed2f8d9": [
     "windows-apps-src\\devices-sensors\\generate-3mf.md"
+  ],
+  "a93b3c07a42ffb9dc45d3ad3b296700470af6d2f": [
+    "windows-apps-src\\devices-sensors\\out-of-band-pairing.md"
   ],
   "ac8413a55c315313a22131f9c971a4be9940f193": [
     "windows-apps-src\\devices-sensors\\out-of-band-pairing.md"
@@ -9753,5 +9765,20 @@
   ],
   "13a21c18d523af79ae363790aadb18886defeae4": [
     "windows-apps-src\\style\\images\\action_center_redline_zoom.png"
+  ],
+  "6fd95a8afe8dc9e130a6724d8b6d6c21bf7f701b": [
+    "windows-apps-src\\devices-sensors\\enable-usermode-access.md"
+  ],
+  "146ccff6aba6b629b2af317b4f400dcf8c1c0131": [
+    "windows-apps-src\\devices-sensors\\images\\usermode-access-diagram-1.png"
+  ],
+  "9e2d6c78b8465c624e8cb899059554f611897197": [
+    "windows-apps-src\\devices-sensors\\images\\usermode-access-diagram-2.png"
+  ],
+  "aa05be506ac474ca6f29386cbe59f4dd9f7a8436": [
+    "windows-apps-src\\devices-sensors\\images\\usermode-hlk-1.png"
+  ],
+  "ab9f2a1a63fef543f4e019f82dc3496d99fb9bde": [
+    "windows-apps-src\\devices-sensors\\images\\usermode-hlk-2.png"
   ]
 }
