@@ -44,6 +44,9 @@
   "b366d8b183c6234ad472aaed58c6aafa8f13cedb": [
     "windows-apps-src\\accessibility\\accessibility-overview.md"
   ],
+  "67eebdb618602152d907aa538cebc5a8db2b6005": [
+    "windows-apps-src\\accessibility\\accessibility-testing.md"
+  ],
   "2a713586aa8fb6bf8e7f58d804b897123b9bbf0c": [
     "windows-apps-src\\accessibility\\accessibility-testing.md"
   ],
@@ -86,6 +89,9 @@
   "4aac60e92317fab8f6fd6646ea21bada37fd4b80": [
     "windows-apps-src\\accessibility\\accessibility.md"
   ],
+  "7fdbaa5e434b98ae23cd30094595dd47961ea8fc": [
+    "windows-apps-src\\accessibility\\accessible-text-requirements.md"
+  ],
   "87a5ff770790f59b86aac422bea986aaa9fcff5e": [
     "windows-apps-src\\accessibility\\accessible-text-requirements.md"
   ],
@@ -106,6 +112,9 @@
   ],
   "92337741c76ec75eaf62d70566435d86403e2d70": [
     "windows-apps-src\\accessibility\\accessible-text-requirements.md"
+  ],
+  "805df1de93fe62088cbfc6a9603505694ff5555f": [
+    "windows-apps-src\\accessibility\\basic-accessibility-information.md"
   ],
   "b3eba291a1c3084b38b764828cb474426c3e87e5": [
     "windows-apps-src\\accessibility\\basic-accessibility-information.md"
@@ -128,6 +137,9 @@
   "9e9a59ca8e78b9ce37c83ea078133474741ceca2": [
     "windows-apps-src\\accessibility\\basic-accessibility-information.md"
   ],
+  "17b10c9a3ce888fa9c7cfdc217d38a9650d26d01": [
+    "windows-apps-src\\accessibility\\control-patterns-and-interfaces.md"
+  ],
   "612883a304e974a278b337178b9b65938801cb03": [
     "windows-apps-src\\accessibility\\control-patterns-and-interfaces.md"
   ],
@@ -145,6 +157,9 @@
   ],
   "892c142ac16f2ad78ac54737ed14246b894cd875": [
     "windows-apps-src\\accessibility\\control-patterns-and-interfaces.md"
+  ],
+  "70bf93ad18a4a2c0efa53473007f295885063cd8": [
+    "windows-apps-src\\accessibility\\custom-automation-peers.md"
   ],
   "f1d4ce04697741efcb290e1d181b6334b32bd0b9": [
     "windows-apps-src\\accessibility\\custom-automation-peers.md"
@@ -184,6 +199,9 @@
   ],
   "13a7bb3c54b9a4c42a776170f0eca4613d75ad9f": [
     "windows-apps-src\\accessibility\\high-contrast-themes.md"
+  ],
+  "20907ebf2add0144d2578375fbf76b7b47e60c4e": [
+    "windows-apps-src\\accessibility\\keyboard-accessibility.md"
   ],
   "acbfd2f375615025e5a5d5c82ca0c587d0b186d7": [
     "windows-apps-src\\accessibility\\keyboard-accessibility.md"
