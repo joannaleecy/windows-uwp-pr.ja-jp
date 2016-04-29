@@ -4593,6 +4593,9 @@
   "e2a1ebee8f3c1a487640878a14433fb77b83d571": [
     "windows-apps-src\\input-and-devices\\launch-a-background-app-with-voice-commands-in-cortana.md"
   ],
+  "d9b0d5a1e776d81f4b384c75808b3d7a49dd5df1": [
+    "windows-apps-src\\input-and-devices\\launch-a-foreground-app-with-voice-commands-in-cortana.md"
+  ],
   "6fe1c2325b0aef337b193293f1367e41088869f6": [
     "windows-apps-src\\input-and-devices\\launch-a-foreground-app-with-voice-commands-in-cortana.md"
   ],
@@ -7886,6 +7889,9 @@
   "40df2f4ef7b188f55666f22650bc99cfb5862c46": [
     "windows-apps-src\\debug-test-perf\\device-portal.md"
   ],
+  "d79419eb43dd98638c3133666f810c321edd87bd": [
+    "windows-apps-src\\debug-test-perf\\device-portal-api-core.md"
+  ],
   "f9427be224d88becb8ea74416dc272d738991771": [
     "windows-apps-src\\debug-test-perf\\device-portal-api-core.md"
   ],
@@ -8659,6 +8665,9 @@
   "432353da052ac7e9e4f304cf03536a8d738e5202": [
     "windows-apps-src\\style\\images\\icons-grid-1-4.png"
   ],
+  "5cbf001030666b91bc8b265f3def227f1cfe0ab0": [
+    "windows-apps-src\\porting\\desktop-to-uwp-deploy-and-debug.md"
+  ],
   "b9f8fe8b5cce5836e2e89fdbbbc6f02315ce6f6e": [
     "windows-apps-src\\porting\\desktop-to-uwp-deploy-and-debug.md"
   ],
@@ -8671,6 +8680,9 @@
   "d006e4eab8e536db1d7f315a60af2ad16eeb5347": [
     "windows-apps-src\\porting\\desktop-to-uwp-deploy-and-debug.md"
   ],
+  "24e0fc3e3734fceed3af20acd7f84862ffcdc314": [
+    "windows-apps-src\\porting\\desktop-to-uwp-root.md"
+  ],
   "e37cf539fe313402a86d28146e04e975d6b8aa69": [
     "windows-apps-src\\porting\\desktop-to-uwp-root.md"
   ],
@@ -8682,6 +8694,9 @@
   ],
   "c59957f2627efd0e0c6a3b2046c074820481aae4": [
     "windows-apps-src\\porting\\desktop-to-uwp-root.md"
+  ],
+  "40e8dc2432f7d1fe738141b8935df718d2166c78": [
+    "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
   ],
   "aa562b98862c8517f02243e2007fb071a9c7efb3": [
     "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
