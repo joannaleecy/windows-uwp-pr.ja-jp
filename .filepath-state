@@ -4081,6 +4081,9 @@
   "8279af980f0022382bf47036028f7da8ab14c539": [
     "windows-apps-src\\input-and-devices\\convert-ink-to-text.md"
   ],
+  "a028feebfb69573db27eb33cb72791023df1938f": [
+    "windows-apps-src\\input-and-devices\\cortana-design-guidelines.md"
+  ],
   "be6747587dbeac7cc3ad07bb9006005b69737083": [
     "windows-apps-src\\input-and-devices\\cortana-design-guidelines.md"
   ],
@@ -4170,6 +4173,9 @@
   ],
   "362395ba3a10d79c6f4db991f18a22c3b39ed32e": [
     "windows-apps-src\\input-and-devices\\images\\coretext\\stream-8.png"
+  ],
+  "a8d74246a6f56b3e42f092b707c3e94f1333d13e": [
+    "windows-apps-src\\input-and-devices\\deep-link-into-your-app-from-cortana.md"
   ],
   "75885497c3e234709986102e8e54e6ef8c8798a5": [
     "windows-apps-src\\input-and-devices\\deep-link-into-your-app-from-cortana.md"
@@ -4539,6 +4545,9 @@
   "94dbf523e0d4e1e31d02d5a09adf9bbccca963af": [
     "windows-apps-src\\input-and-devices\\images\\input-patterns\\notepad.png"
   ],
+  "72f5883883d49005697d2c478205c6695c95afff": [
+    "windows-apps-src\\input-and-devices\\launch-a-background-app-with-voice-commands-in-cortana.md"
+  ],
   "af008ab2d0ff44ff5381b27b1c8a6ffb55848bd9": [
     "windows-apps-src\\input-and-devices\\launch-a-background-app-with-voice-commands-in-cortana.md"
   ],
@@ -4550,6 +4559,9 @@
   ],
   "e2a1ebee8f3c1a487640878a14433fb77b83d571": [
     "windows-apps-src\\input-and-devices\\launch-a-background-app-with-voice-commands-in-cortana.md"
+  ],
+  "6fe1c2325b0aef337b193293f1367e41088869f6": [
+    "windows-apps-src\\input-and-devices\\launch-a-foreground-app-with-voice-commands-in-cortana.md"
   ],
   "278ead5a07c1787383d8964295bb2727ddeedf34": [
     "windows-apps-src\\input-and-devices\\launch-a-foreground-app-with-voice-commands-in-cortana.md"
