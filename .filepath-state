@@ -2561,6 +2561,9 @@
   "e619f11107c41b4fe6fe191d96ed719c80a8b84b": [
     "windows-apps-src\\debug-test-perf\\tools-for-profiling-and-performance.md"
   ],
+  "816b147c91a340505348aa579c8b1540962a1df5": [
+    "windows-apps-src\\debug-test-perf\\windows-app-certification-kit-tests.md"
+  ],
   "cf4332bfcf9c892d18d7d81e203e320f92d76850": [
     "windows-apps-src\\debug-test-perf\\windows-app-certification-kit-tests.md"
   ],
@@ -3868,6 +3871,9 @@
   ],
   "c97888f154097f4f862cf19af8d9145869d2372c": [
     "windows-apps-src\\globalizing\\use-patterns-to-format-dates-and-times.md"
+  ],
+  "4141d23c5102df4970ef7c4fb3659bf3ba561ccf": [
+    "windows-apps-src\\graphics\\3-d-perspective-effects.md"
   ],
   "75d33b175bc474ee474892ba37f110f00fba1571": [
     "windows-apps-src\\graphics\\3-d-perspective-effects.md"
@@ -7541,6 +7547,9 @@
   "6feae624441c686128bb5af6b8980435f1e6f7c4": [
     "windows-apps-src\\monetize\\get-app-failures.md"
   ],
+  "eac185d4c45aacb4960086e12825a804465f5da4": [
+    "windows-apps-src\\accessibility\\designing-inclusive-software.md"
+  ],
   "c7c168c98bec40d4d3e6f5d73268ad222b21ccb6": [
     "windows-apps-src\\accessibility\\designing-inclusive-software.md"
   ],
@@ -7552,6 +7561,9 @@
   ],
   "4f472617f767a2e5a69d16825dc26ad8c13cbc42": [
     "windows-apps-src\\accessibility\\designing-inclusive-software.md"
+  ],
+  "826c6984962ecbe3b49ba3753e9cc795344f5057": [
+    "windows-apps-src\\accessibility\\developing-inclusive-windows-apps.md"
   ],
   "77c401fd9686cb260e7b2d9e4bdf47a91d76802e": [
     "windows-apps-src\\accessibility\\developing-inclusive-windows-apps.md"
@@ -7570,6 +7582,9 @@
   ],
   "18926811ddf7746b1698c3e2a4ca630b4a9d94ce": [
     "windows-apps-src\\accessibility\\developing-inclusive-windows-apps.md"
+  ],
+  "bef4ec85e214e014ff9c3168c3345b4bf78e6b9e": [
+    "windows-apps-src\\style\\color.md"
   ],
   "abf0018a36d42ff59294b81a39700cd7cb268154": [
     "windows-apps-src\\style\\color.md"
@@ -7664,6 +7679,9 @@
   "e483bb9408d4e99c5b72413fc6780b1bdc81737c": [
     "windows-apps-src\\style\\motion-reposition.md"
   ],
+  "7ec2c80fd571de98060282d2b321d1895e2b3dc8": [
+    "windows-apps-src\\style\\typography.md"
+  ],
   "02d5149f945bb631e385e45a295fdfe08bd98fb0": [
     "windows-apps-src\\style\\typography.md"
   ],
@@ -7679,6 +7697,9 @@
   "89ebd15f0da89013e867d8ad9d54325f8b49c4fc": [
     "windows-apps-src\\style\\images\\accentcolorswatch.png"
   ],
+  "fd85530d27a157bd65a6feec8a20cca8cadfb88f": [
+    "windows-apps-src\\devices-sensors\\generate-3mf.md"
+  ],
   "99b00c855cc723dfca0aa8c4a70e31379bca8838": [
     "windows-apps-src\\devices-sensors\\generate-3mf.md"
   ],
@@ -7690,6 +7711,9 @@
   ],
   "6ac30be914c46cf953a3f1c344fa0441bed2f8d9": [
     "windows-apps-src\\devices-sensors\\generate-3mf.md"
+  ],
+  "d8d37b779a0f9a4bec36d73fcd2d35272c587b11": [
+    "windows-apps-src\\devices-sensors\\out-of-band-pairing.md"
   ],
   "a93b3c07a42ffb9dc45d3ad3b296700470af6d2f": [
     "windows-apps-src\\devices-sensors\\out-of-band-pairing.md"
@@ -7723,6 +7747,9 @@
   ],
   "3afc5890653e57db71a982dc84922b14a33c9021": [
     "windows-apps-src\\controls-and-patterns\\images\\control-examples\\command-bar-photos.png"
+  ],
+  "2558933ba133d61830c196054a456e37e300f10c": [
+    "windows-apps-src\\input-and-devices\\designing-for-tv.md"
   ],
   "daa1df78409bd10ee1d5c24e8874e011d4005a82": [
     "windows-apps-src\\input-and-devices\\designing-for-tv.md"
@@ -7844,6 +7871,9 @@
   "390c5083a3f9b257512a3d7c483d16f8a1bb5138": [
     "windows-apps-src\\style\\images\\themes-light-list.png"
   ],
+  "e2e0f159e739b5501932e7913c35e1e49726cc47": [
+    "windows-apps-src\\debug-test-perf\\device-portal.md"
+  ],
   "b379c49c2f99033f370a2725989dc3103820536c": [
     "windows-apps-src\\debug-test-perf\\device-portal.md"
   ],
@@ -7928,6 +7958,9 @@
   "2cac002f459ce70b64e92ed67d1486dc1470aad2": [
     "windows-apps-src\\debug-test-perf\\images\\vs-simulator-resolutions.png"
   ],
+  "655dffb5f1948724c894de291e119be1322f6e77": [
+    "windows-apps-src\\debug-test-perf\\test-surface-hub-apps-using-visual-studio.md"
+  ],
   "135794b4ade9c5ae360b159e24a65e0ecf1b448c": [
     "windows-apps-src\\debug-test-perf\\test-surface-hub-apps-using-visual-studio.md"
   ],
@@ -7992,6 +8025,9 @@
   ],
   "586b601969c28d6a25ed64ae30d78f0575c015c2": [
     "windows-apps-src\\monetize\\images\\feedback_settings_placement.png"
+  ],
+  "138916b9261e72f7a512e3dad015b316cb1f9f2d": [
+    "windows-apps-src\\monetize\\launch-feedback-hub-from-your-app.md"
   ],
   "3ac3cbd4d23353d84a0b66a78563a84340e618b7": [
     "windows-apps-src\\monetize\\launch-feedback-hub-from-your-app.md"
@@ -8065,6 +8101,9 @@
   "6e0ec4247a46572274cf7d355ff19f8f020aac60": [
     "windows-apps-src\\publish\\customer-groups.md"
   ],
+  "9ad3025f7890de3677801b309b6714b1b46a0607": [
+    "windows-apps-src\\publish\\feedback-report.md"
+  ],
   "38ede2808f662400f77e01ec802815cb25c2a22d": [
     "windows-apps-src\\publish\\feedback-report.md"
   ],
@@ -8079,6 +8118,9 @@
   ],
   "32d8bda5bf7b7f3e384dd9ecf0742740fa62754b": [
     "windows-apps-src\\publish\\package-flights.md"
+  ],
+  "b61879c0e65e2220c9856a3e3082f53ddd445c69": [
+    "windows-apps-src\\security\\companion-device-unlock.md"
   ],
   "a262c06fec086ab6a37e7033f4d6b19607722b44": [
     "windows-apps-src\\security\\companion-device-unlock.md"
