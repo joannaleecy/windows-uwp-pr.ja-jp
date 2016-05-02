@@ -2450,6 +2450,9 @@
   "102150a2d4aeddb2832cd462ef26e1e96223f689": [
     "windows-apps-src\\debug-test-perf\\optimize-file-access.md"
   ],
+  "e8ae83964d3ee157974f0e4e8763cc2eaacc7231": [
+    "windows-apps-src\\debug-test-perf\\optimize-gridview-and-listview.md"
+  ],
   "8b25fa909b32d2fff04f24f28218e8d472436fba": [
     "windows-apps-src\\debug-test-perf\\optimize-gridview-and-listview.md"
   ],
