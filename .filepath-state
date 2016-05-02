@@ -2288,6 +2288,9 @@
   "0ae162e394fd21f54da5997ff177877db1c82b16": [
     "windows-apps-src\\data-access\\images\\property-pages.png"
   ],
+  "790f998bd1f6dc5861711dd285e82c18c0bdec5e": [
+    "windows-apps-src\\data-binding\\data-binding-in-depth.md"
+  ],
   "386cdcd95f10116518539cff22ff4280a6bf97f9": [
     "windows-apps-src\\data-binding\\data-binding-in-depth.md"
   ],
@@ -2392,6 +2395,9 @@
   ],
   "be67298c637f11a63d6f7973c658b7d7258fbc96": [
     "windows-apps-src\\debug-test-perf\\images\\debug-property-pages.png"
+  ],
+  "4e849fa9e5c00cec592cadefb995e0d2aa7f9fba": [
+    "windows-apps-src\\debug-test-perf\\improve-garbage-collection-performance.md"
   ],
   "cdaa34b5b452b4da75d315c6604a3e2fc737e0cf": [
     "windows-apps-src\\debug-test-perf\\improve-garbage-collection-performance.md"
