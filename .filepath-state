@@ -6946,6 +6946,9 @@
   "3e888fe14fa9928cf16d1f5f5e617b7b9eef1fdb": [
     "windows-apps-src\\security\\images\\passport-auth-5.png"
   ],
+  "d28f0b9ea08d35a220cdb58367f03af95966e282": [
+    "windows-apps-src\\security\\microsoft-passport-login.md"
+  ],
   "a010f909eeabc8b76140e25d18c2010a3431e8e5": [
     "windows-apps-src\\security\\microsoft-passport-login.md"
   ],
