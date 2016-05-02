@@ -4111,6 +4111,9 @@
   "97e016047c864026fe0c72e4b7cb819f0fc80748": [
     "windows-apps-src\\index.md"
   ],
+  "db28e6ce31cb403b3c79025fbf2f042fab2103f3": [
+    "windows-apps-src\\input-and-devices\\convert-ink-to-text.md"
+  ],
   "2a71ab6231e1d8715c1e9fb54f1cf8eabcdcb154": [
     "windows-apps-src\\input-and-devices\\convert-ink-to-text.md"
   ],
@@ -4125,6 +4128,9 @@
   ],
   "8279af980f0022382bf47036028f7da8ab14c539": [
     "windows-apps-src\\input-and-devices\\convert-ink-to-text.md"
+  ],
+  "a305096f4532cc6c6aaff98f6ad9e8a45f321cf2": [
+    "windows-apps-src\\input-and-devices\\cortana-design-guidelines.md"
   ],
   "a028feebfb69573db27eb33cb72791023df1938f": [
     "windows-apps-src\\input-and-devices\\cortana-design-guidelines.md"
@@ -4330,6 +4336,9 @@
   "569bbe71899f7a4140698b689e1dd25b837c9645": [
     "windows-apps-src\\input-and-devices\\images\\crossslide-selfreveal3.png"
   ],
+  "de5ee75460767f59de499a6f1393ec26d9d0da38": [
+    "windows-apps-src\\input-and-devices\\guidelines-for-optical-zoom.md"
+  ],
   "08c1cbdc8ffc05ab93ddcd006118750555fb5a78": [
     "windows-apps-src\\input-and-devices\\guidelines-for-optical-zoom.md"
   ],
@@ -4344,6 +4353,9 @@
   ],
   "bd9fe767561c0d5e468cf7459c08088b3d688ae5": [
     "windows-apps-src\\input-and-devices\\images\\objectresize.png"
+  ],
+  "e82ee9f599991bd02f24d34ff2f3891928676846": [
+    "windows-apps-src\\input-and-devices\\guidelines-for-panning.md"
   ],
   "9434e514ab3b4a5589f4c4357d179a8b62e57f26": [
     "windows-apps-src\\input-and-devices\\guidelines-for-panning.md"
@@ -4378,6 +4390,9 @@
   "cf8d08a61d97431ecc4cccb8fa193b61172994e5": [
     "windows-apps-src\\input-and-devices\\images\\ux-panning-embedded-wrong.png"
   ],
+  "908e16dfc099554c18beb3336508549f20c162e8": [
+    "windows-apps-src\\input-and-devices\\guidelines-for-rotation.md"
+  ],
   "50673edc7953003a09a975be548342fdb13c8326": [
     "windows-apps-src\\input-and-devices\\guidelines-for-rotation.md"
   ],
@@ -4402,6 +4417,9 @@
   "4af74336fee65eada199824e6a11ff3728725f78": [
     "windows-apps-src\\input-and-devices\\images\\ux-rotate-points4.png"
   ],
+  "7531e29c330b449ba3aa8d07ded0f142dee7a16f": [
+    "windows-apps-src\\input-and-devices\\guidelines-for-targeting.md"
+  ],
   "420b129fbc7cf0fed652ec9d3f76764bd35d3639": [
     "windows-apps-src\\input-and-devices\\guidelines-for-targeting.md"
   ],
@@ -4413,6 +4431,9 @@
   ],
   "fd589d7f39c162c2ef19cab55c89b83d5617d982": [
     "windows-apps-src\\input-and-devices\\images\\targeting-size.png"
+  ],
+  "5d76c4ad56eb8a886224367990c9f0d970d79a19": [
+    "windows-apps-src\\input-and-devices\\guidelines-for-textselection.md"
   ],
   "322f70fa1a5cc1175f654499c4b950c56bc4d4c9": [
     "windows-apps-src\\input-and-devices\\guidelines-for-textselection.md"
@@ -4447,6 +4468,9 @@
   "243073efd6a5caf6af8ac14f60fd08533ed4bdd4": [
     "windows-apps-src\\input-and-devices\\guidelines-for-user-interaction.md"
   ],
+  "c5a77d91f98a5c69291cb8dcc19f2b9901efb643": [
+    "windows-apps-src\\input-and-devices\\guidelines-for-visualfeedback.md"
+  ],
   "cc5ee1a31536eca9f07a19996209b45f531c63cc": [
     "windows-apps-src\\input-and-devices\\guidelines-for-visualfeedback.md"
   ],
@@ -4462,6 +4486,9 @@
   "06e437a91bf2846bf2a4ad9fe96b0ba49446a883": [
     "windows-apps-src\\input-and-devices\\images\\flyout.png"
   ],
+  "a7530c4fc5aad7b20b1f4aeacf0a73f1a71a4a49": [
+    "windows-apps-src\\input-and-devices\\handle-pointer-input.md"
+  ],
   "b029884d3ddc7ac4202ea4bf96cbd260074b99ec": [
     "windows-apps-src\\input-and-devices\\handle-pointer-input.md"
   ],
@@ -4473,6 +4500,9 @@
   ],
   "b7641b7512e08759ed175bd71b2eddd3803274c8": [
     "windows-apps-src\\input-and-devices\\handle-pointer-input.md"
+  ],
+  "0971600f98b04d94646035b88029b087d19eefce": [
+    "windows-apps-src\\input-and-devices\\identify-input-devices.md"
   ],
   "9200efce8d2c87e9910f73174ce447cdf39b0321": [
     "windows-apps-src\\input-and-devices\\identify-input-devices.md"
@@ -4590,6 +4620,9 @@
   "94dbf523e0d4e1e31d02d5a09adf9bbccca963af": [
     "windows-apps-src\\input-and-devices\\images\\input-patterns\\notepad.png"
   ],
+  "51c266cf3a038af57505287f39cf5a2801cdf84e": [
+    "windows-apps-src\\input-and-devices\\launch-a-background-app-with-voice-commands-in-cortana.md"
+  ],
   "72f5883883d49005697d2c478205c6695c95afff": [
     "windows-apps-src\\input-and-devices\\launch-a-background-app-with-voice-commands-in-cortana.md"
   ],
@@ -4604,6 +4637,9 @@
   ],
   "e2a1ebee8f3c1a487640878a14433fb77b83d571": [
     "windows-apps-src\\input-and-devices\\launch-a-background-app-with-voice-commands-in-cortana.md"
+  ],
+  "dad62e54e8e66ce0fe2631b8e53db3c8a8099f79": [
+    "windows-apps-src\\input-and-devices\\launch-a-foreground-app-with-voice-commands-in-cortana.md"
   ],
   "d9b0d5a1e776d81f4b384c75808b3d7a49dd5df1": [
     "windows-apps-src\\input-and-devices\\launch-a-foreground-app-with-voice-commands-in-cortana.md"
@@ -7766,10 +7802,10 @@
   "3afc5890653e57db71a982dc84922b14a33c9021": [
     "windows-apps-src\\controls-and-patterns\\images\\control-examples\\command-bar-photos.png"
   ],
-  "2558933ba133d61830c196054a456e37e300f10c": [
+  "daa1df78409bd10ee1d5c24e8874e011d4005a82": [
     "windows-apps-src\\input-and-devices\\designing-for-tv.md"
   ],
-  "daa1df78409bd10ee1d5c24e8874e011d4005a82": [
+  "2558933ba133d61830c196054a456e37e300f10c": [
     "windows-apps-src\\input-and-devices\\designing-for-tv.md"
   ],
   "bdd174527463aa009b503513ab17e35809b793ae": [
