@@ -8716,6 +8716,9 @@
   "432353da052ac7e9e4f304cf03536a8d738e5202": [
     "windows-apps-src\\style\\images\\icons-grid-1-4.png"
   ],
+  "5294f0e3286c9eaa0060dfaa933f1a2c57f75e26": [
+    "windows-apps-src\\porting\\desktop-to-uwp-deploy-and-debug.md"
+  ],
   "5cbf001030666b91bc8b265f3def227f1cfe0ab0": [
     "windows-apps-src\\porting\\desktop-to-uwp-deploy-and-debug.md"
   ],
