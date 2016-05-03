@@ -4965,6 +4965,9 @@
   "df5223d6522566ec6a757ce6a0a18bbb6bf0dd28": [
     "windows-apps-src\\launch-resume\\images\\event-viewer.png"
   ],
+  "4300c6eba40e8f3c38f464818d00a605a4805e0f": [
+    "windows-apps-src\\launch-resume\\declare-background-tasks-in-the-application-manifest.md"
+  ],
   "e4fbb74b5eea06a404fa90f22ba515d06991adec": [
     "windows-apps-src\\launch-resume\\declare-background-tasks-in-the-application-manifest.md"
   ],
@@ -5136,6 +5139,9 @@
   ],
   "3cb3160a07cc850b34abcea6ca1cbfdc2bb1ea32": [
     "windows-apps-src\\launch-resume\\run-a-background-task-on-a-timer-.md"
+  ],
+  "583c7e57d8680bff2ae2227ca1db36d911bcc17a": [
+    "windows-apps-src\\launch-resume\\set-conditions-for-running-a-background-task.md"
   ],
   "820e96bfca8090d5c032f8551948930a3ed29ac0": [
     "windows-apps-src\\launch-resume\\set-conditions-for-running-a-background-task.md"
