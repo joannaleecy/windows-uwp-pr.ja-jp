@@ -2324,6 +2324,9 @@
   "1620d0e73f9711b52769af3f2c81468badda85cc": [
     "windows-apps-src\\data-binding\\images\\xaml-databinding5.png"
   ],
+  "2f7ac4b269a167c3b521fa94d77e27091fa490a8": [
+    "windows-apps-src\\data-binding\\displaying-data-in-the-designer.md"
+  ],
   "bbc1557f7c73eca75774b50e159f5f6591abafd1": [
     "windows-apps-src\\data-binding\\displaying-data-in-the-designer.md"
   ],
@@ -5199,6 +5202,9 @@
   ],
   "17e150899ea6384307712c5c97b8d8722f1bb027": [
     "windows-apps-src\\layout\\boxpanel-example-custom-panel.md"
+  ],
+  "f9328b210e9185b987aa3776fcbc9ea2a61df7ca": [
+    "windows-apps-src\\layout\\commanding-basics.md"
   ],
   "34989702553ef1dee1b57af79a5a24a5b25df077": [
     "windows-apps-src\\layout\\commanding-basics.md"
