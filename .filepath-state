@@ -7495,6 +7495,9 @@
   "be6fb5fc439de3213ef0815ea205ac51112bb202": [
     "windows-apps-src\\winrt-components\\walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md"
   ],
+  "c4312a1193827ec7454ae2cb7c752b6a7f133baf": [
+    "windows-apps-src\\winrt-components\\walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md"
+  ],
   "d75face371a87d3acd7322e172b5a92dfaaa40e5": [
     "windows-apps-src\\winrt-components\\walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md"
   ],
