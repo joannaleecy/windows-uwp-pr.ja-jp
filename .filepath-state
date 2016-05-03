@@ -6835,6 +6835,9 @@
   "7ac4433f4acda4543a3d38f2487cbdbb15423f23": [
     "windows-apps-src\\publish\\write-a-great-app-description.md"
   ],
+  "e748b319cdeda82aadaf8516e41883a3e32dc10c": [
+    "windows-apps-src\\security\\authentication-and-user-identity.md"
+  ],
   "9b32f768e9a5d6f3c2261ccf24c6fadb798140a7": [
     "windows-apps-src\\security\\authentication-and-user-identity.md"
   ],
@@ -6888,6 +6891,9 @@
   ],
   "d7ae61cae68b34cb9a3b536d63b53677797a140e": [
     "windows-apps-src\\security\\fingerprint-biometrics.md"
+  ],
+  "2f0657129e8ae104867887c8dde3c5197fdcd6d7": [
+    "windows-apps-src\\security\\index.md"
   ],
   "75f8ebf555d03b3a5def28eb1da8af30d5b037b1": [
     "windows-apps-src\\security\\index.md"
@@ -7086,6 +7092,9 @@
   ],
   "cbfd24134820acbb570a5b81c2b04b99b0eb1543": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
+  ],
+  "9d3b0ba9cb8d3372c9afa6807af97ce459a606f0": [
+    "windows-apps-src\\TOC.md"
   ],
   "79534f842990f06c2e6e31f3f1924e82c53b4269": [
     "windows-apps-src\\TOC.md"
@@ -9924,5 +9933,20 @@
   ],
   "ab9f2a1a63fef543f4e019f82dc3496d99fb9bde": [
     "windows-apps-src\\devices-sensors\\images\\usermode-hlk-2.png"
+  ],
+  "738d459625a42c716e5ecddd1bdcc218e8e76b7b": [
+    "windows-apps-src\\security\\images\\tb-1.png"
+  ],
+  "73841ebbc219655e50fa23cc9f37ed77ec398f8f": [
+    "windows-apps-src\\security\\images\\tb-2.png"
+  ],
+  "3fcec4777c6b333552a6e9653c2e161fca7f0b56": [
+    "windows-apps-src\\security\\images\\tb-3.png"
+  ],
+  "9b7d1f72ae25ead9d34f3271b62ab180808b8a57": [
+    "windows-apps-src\\security\\images\\tb-4.png"
+  ],
+  "6ab12d6da9c4858cf6ab16d4143cf073bb0cb275": [
+    "windows-apps-src\\security\\web-account-manager.md"
   ]
 }
