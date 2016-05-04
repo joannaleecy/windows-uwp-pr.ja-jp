@@ -4827,6 +4827,9 @@
   "94dbf523e0d4e1e31d02d5a09adf9bbccca963af": [
     "windows-apps-src\\input-and-devices\\images\\input-patterns\\notepad.png"
   ],
+  "0ca01b7102a664b6164f779bb8b520b1890086d1": [
+    "windows-apps-src\\input-and-devices\\launch-a-background-app-with-voice-commands-in-cortana.md"
+  ],
   "c6231276331dfdde3554df183e584105199ae495": [
     "windows-apps-src\\input-and-devices\\launch-a-background-app-with-voice-commands-in-cortana.md"
   ],
@@ -4847,6 +4850,9 @@
   ],
   "e2a1ebee8f3c1a487640878a14433fb77b83d571": [
     "windows-apps-src\\input-and-devices\\launch-a-background-app-with-voice-commands-in-cortana.md"
+  ],
+  "aa4d71525d4a41382b8bbe123ca1fa830a4fc720": [
+    "windows-apps-src\\input-and-devices\\launch-a-foreground-app-with-voice-commands-in-cortana.md"
   ],
   "75c35a9f1a3a442259af03e5c90cc786056b9599": [
     "windows-apps-src\\input-and-devices\\launch-a-foreground-app-with-voice-commands-in-cortana.md"
@@ -5042,6 +5048,9 @@
   ],
   "5662f80bf6dd0c81228c8164ad2081aef4573bee": [
     "windows-apps-src\\input-and-devices\\specify-the-speech-recognizer-language.md"
+  ],
+  "4036e3679ce553bf1108d70ade6745087c28e835": [
+    "windows-apps-src\\input-and-devices\\speech-interactions.md"
   ],
   "fec8ab85d09788f5dddc8d88c4323885d79d221f": [
     "windows-apps-src\\input-and-devices\\speech-interactions.md"
