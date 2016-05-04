@@ -2774,6 +2774,9 @@
   "49d5c6b9b25d3dee65e09aeb7726c3695132bc60": [
     "windows-apps-src\\debug-test-perf\\images\\em-frameratecounters.PNG"
   ],
+  "f7f9821be7d1423b2f89367bd20c09981eca24eb": [
+    "windows-apps-src\\debug-test-perf\\tools-for-profiling-and-performance.md"
+  ],
   "fc68834e7ddef92c41852875159cb85151d799bc": [
     "windows-apps-src\\debug-test-perf\\tools-for-profiling-and-performance.md"
   ],
@@ -2794,6 +2797,9 @@
   ],
   "393f3a9bd0d8060a440137b8461fb89f68cdb4f5": [
     "windows-apps-src\\debug-test-perf\\windows-app-certification-kit.md"
+  ],
+  "b9300b3feb1e5229951f3e1ebe454b61ba8065ae": [
+    "windows-apps-src\\debug-test-perf\\windows-runtime-components-and-optimizing-interop.md"
   ],
   "63e140ab7b5f95e90bae9c05404cb4d47d4648c5": [
     "windows-apps-src\\debug-test-perf\\windows-runtime-components-and-optimizing-interop.md"
