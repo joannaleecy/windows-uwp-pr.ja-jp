@@ -2537,6 +2537,9 @@
   "4f8e75bf60dbeb8d6e7e15fced438ecd946a3f1a": [
     "windows-apps-src\\data-binding\\images\\displaying-data-in-the-designer-04.png"
   ],
+  "2ff66a1d6a80bb085f54dec8e35371ba0c9e6b27": [
+    "windows-apps-src\\data-binding\\how-to-bind-to-hierarchical-data-and-create-a-master-details-view.md"
+  ],
   "cffab6190a9bce43a5988142d288dbaf610a93df": [
     "windows-apps-src\\data-binding\\how-to-bind-to-hierarchical-data-and-create-a-master-details-view.md"
   ],
@@ -2609,6 +2612,9 @@
   "125b694a151ed478671c5749b86a8c1e252716f7": [
     "windows-apps-src\\debug-test-perf\\index.md"
   ],
+  "d17791928c377e219a7f5e29d3382c86ac44a11c": [
+    "windows-apps-src\\debug-test-perf\\keep-the-ui-thread-responsive.md"
+  ],
   "03f7212856c677e76e65f7f0d921712de043a04b": [
     "windows-apps-src\\debug-test-perf\\keep-the-ui-thread-responsive.md"
   ],
@@ -2633,6 +2639,9 @@
   "fe8c385a9f94116e69011245b666c706a07ec806": [
     "windows-apps-src\\debug-test-perf\\mvvm-performance-tips.md"
   ],
+  "ff8ddd0853af92252ca0511d9deb829e87d1fdd7": [
+    "windows-apps-src\\debug-test-perf\\optimize-animations-and-media.md"
+  ],
   "29fed9e597dbac9b14f168f0f56738d7170843da": [
     "windows-apps-src\\debug-test-perf\\optimize-animations-and-media.md"
   ],
@@ -2648,6 +2657,9 @@
   "6d1a9a148c0284c7eb58787e97562dad238d89e8": [
     "windows-apps-src\\debug-test-perf\\images\\videowithneighbors.png"
   ],
+  "63c273a78e8210ea33bb50e478ff7f0b166f29b2": [
+    "windows-apps-src\\debug-test-perf\\optimize-file-access.md"
+  ],
   "2d24daf2bad75f5eb9adc92a49f4ff4912afd1a6": [
     "windows-apps-src\\debug-test-perf\\optimize-file-access.md"
   ],
@@ -2656,6 +2668,9 @@
   ],
   "102150a2d4aeddb2832cd462ef26e1e96223f689": [
     "windows-apps-src\\debug-test-perf\\optimize-file-access.md"
+  ],
+  "362fbb6b733e855a2126196f12c650bdf2a7665d": [
+    "windows-apps-src\\debug-test-perf\\optimize-gridview-and-listview.md"
   ],
   "e8ae83964d3ee157974f0e4e8763cc2eaacc7231": [
     "windows-apps-src\\debug-test-perf\\optimize-gridview-and-listview.md"
@@ -2687,6 +2702,9 @@
   "294384ee98e324679fafb2b71b289a893394c8b9": [
     "windows-apps-src\\debug-test-perf\\images\\translucentvenn.png"
   ],
+  "dbec176310896164ebc99c20aefca4c5b2b29ee9": [
+    "windows-apps-src\\debug-test-perf\\optimize-your-xaml-layout.md"
+  ],
   "2b74c7b029ef690cc92f9cd01881e67eb3c0a49f": [
     "windows-apps-src\\debug-test-perf\\optimize-your-xaml-layout.md"
   ],
@@ -2710,6 +2728,9 @@
   ],
   "93096acf7e39a74921f1e1424f9efce1c14c830a": [
     "windows-apps-src\\debug-test-perf\\performance-and-xaml-ui.md"
+  ],
+  "39d57811a07b4c404da4b7e369e3bf5441fa99c0": [
+    "windows-apps-src\\debug-test-perf\\planning-and-measuring-performance.md"
   ],
   "dea1e37ca0403e858d3c40c966cd9ef9720bb00f": [
     "windows-apps-src\\debug-test-perf\\planning-and-measuring-performance.md"
