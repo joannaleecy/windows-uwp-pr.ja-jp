@@ -2471,6 +2471,9 @@
   "0ae162e394fd21f54da5997ff177877db1c82b16": [
     "windows-apps-src\\data-access\\images\\property-pages.png"
   ],
+  "c371ca1804d76a0ffdf812cfb933b03916654bad": [
+    "windows-apps-src\\data-binding\\data-binding-in-depth.md"
+  ],
   "457941c7f52309fc749b90d9bc8299ab5777fa3c": [
     "windows-apps-src\\data-binding\\data-binding-in-depth.md"
   ],
@@ -2485,6 +2488,9 @@
   ],
   "443792c0a836f5f922314351dc29340bfb6cbe70": [
     "windows-apps-src\\data-binding\\images\\sezo.png"
+  ],
+  "c30e048f450c062c6e0148e5040a58bfa47193bb": [
+    "windows-apps-src\\data-binding\\data-binding-quickstart.md"
   ],
   "fc67a418d6374576076e4b649fd3c864ca26d983": [
     "windows-apps-src\\data-binding\\data-binding-quickstart.md"
@@ -2611,6 +2617,9 @@
   ],
   "0e21365309de233d86b811cdad9e4790c4114268": [
     "windows-apps-src\\debug-test-perf\\keep-the-ui-thread-responsive.md"
+  ],
+  "26faa92e98547844af2be1720c458d793ac2f3ac": [
+    "windows-apps-src\\debug-test-perf\\listview-and-gridview-data-optimization.md"
   ],
   "9da7d732f38cfbfef81574ec796c1a57c34cb280": [
     "windows-apps-src\\debug-test-perf\\listview-and-gridview-data-optimization.md"
@@ -7510,6 +7519,9 @@
   "cbfd24134820acbb570a5b81c2b04b99b0eb1543": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "4e7556f41d914182308ce0c8e99cb3b124438fe0": [
+    "windows-apps-src\\TOC.md"
+  ],
   "6db9a90a8746ab4df214638cac509aee736552fb": [
     "windows-apps-src\\TOC.md"
   ],
@@ -10428,5 +10440,8 @@
   ],
   "c6c51d936fa3cb14c26f7d5742b5db3cf0b170bc": [
     "windows-apps-src\\style\\images\\accentcolorswatch_xbox.png"
+  ],
+  "1d1f3bd9d391d6c83a3e32bcac5eb60d39aa5283": [
+    "windows-apps-src\\publish\\dev-center-insider-program.md"
   ]
 }
