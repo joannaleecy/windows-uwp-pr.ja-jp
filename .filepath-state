@@ -3337,6 +3337,9 @@
   "a3fe5511da03533b19bfb1abeb2222ff9a92f6fa": [
     "windows-apps-src\\gaming\\draw-to-the-screen.md"
   ],
+  "7d2e70a79e6f542616a97be236c80fd8c680ef48": [
+    "windows-apps-src\\gaming\\e2e.md"
+  ],
   "87952c226d1461631f50b96a8c3956e0a7dfe987": [
     "windows-apps-src\\gaming\\e2e.md"
   ],
@@ -7092,6 +7095,9 @@
   ],
   "49e393930aa18c2d46db51b4764d00d4e79744c4": [
     "windows-apps-src\\publish\\package-version-numbering.md"
+  ],
+  "f9f5f43dbca8b1f675459ac524263fbc168c4f92": [
+    "windows-apps-src\\publish\\payout-summary.md"
   ],
   "38301798c6d9b68be228a2902bb292caa9af211d": [
     "windows-apps-src\\publish\\payout-summary.md"
