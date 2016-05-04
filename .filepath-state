@@ -1,4 +1,7 @@
 {
+  "9580ccc0716b7e9f4ee32ce241b0ac3ee9bf319d": [
+    "windows-apps-src\\accessibility\\accessibility-checklist.md"
+  ],
   "1a6407a23b7af6dc3517c1ff0d10860ff4cdc593": [
     "windows-apps-src\\accessibility\\accessibility-checklist.md"
   ],
@@ -11,6 +14,9 @@
   "570860edd5e479238749968324c50259343b5bed": [
     "windows-apps-src\\accessibility\\accessibility-checklist.md"
   ],
+  "46dfe4fba383861c704b2ba9070bdd8102b10562": [
+    "windows-apps-src\\accessibility\\accessibility-in-the-store.md"
+  ],
   "72ce5f78603b5afc70f3d2c03fb964f2c4bacbfd": [
     "windows-apps-src\\accessibility\\accessibility-in-the-store.md"
   ],
@@ -22,6 +28,9 @@
   ],
   "6c6bca587394f2fc16048d1d112f95d55b47c99e": [
     "windows-apps-src\\accessibility\\accessibility-in-the-store.md"
+  ],
+  "430484a9243abc644de75d35c03bb11cf47960c0": [
+    "windows-apps-src\\accessibility\\accessibility-overview.md"
   ],
   "329b8472c027c725fdbfe45070aced20df564d22": [
     "windows-apps-src\\accessibility\\accessibility-overview.md"
@@ -43,6 +52,9 @@
   ],
   "b366d8b183c6234ad472aaed58c6aafa8f13cedb": [
     "windows-apps-src\\accessibility\\accessibility-overview.md"
+  ],
+  "5ca4df0608adcba8824e2196c3f82cc025f5e70a": [
+    "windows-apps-src\\accessibility\\accessibility-testing.md"
   ],
   "67eebdb618602152d907aa538cebc5a8db2b6005": [
     "windows-apps-src\\accessibility\\accessibility-testing.md"
@@ -68,6 +80,9 @@
   "8f3ec44999f8dcc62af1bd7ee0b058db077f24ac": [
     "windows-apps-src\\accessibility\\images\\inspect.png"
   ],
+  "3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3": [
+    "windows-apps-src\\accessibility\\accessibility.md"
+  ],
   "a60b72b52af2dfea9a4a0ece69da31f8b58a30e4": [
     "windows-apps-src\\accessibility\\accessibility.md"
   ],
@@ -88,6 +103,9 @@
   ],
   "4aac60e92317fab8f6fd6646ea21bada37fd4b80": [
     "windows-apps-src\\accessibility\\accessibility.md"
+  ],
+  "b8316a5f1e869ea19f9f228f3b41b4abf46b4edd": [
+    "windows-apps-src\\accessibility\\accessible-text-requirements.md"
   ],
   "f251f32272605d0cd723fa044eea586181bebb94": [
     "windows-apps-src\\accessibility\\accessible-text-requirements.md"
@@ -116,6 +134,9 @@
   "92337741c76ec75eaf62d70566435d86403e2d70": [
     "windows-apps-src\\accessibility\\accessible-text-requirements.md"
   ],
+  "5bf13f4efc571dd449e7557e7b347f909e1cffa4": [
+    "windows-apps-src\\accessibility\\basic-accessibility-information.md"
+  ],
   "805df1de93fe62088cbfc6a9603505694ff5555f": [
     "windows-apps-src\\accessibility\\basic-accessibility-information.md"
   ],
@@ -140,6 +161,9 @@
   "9e9a59ca8e78b9ce37c83ea078133474741ceca2": [
     "windows-apps-src\\accessibility\\basic-accessibility-information.md"
   ],
+  "71071c989ca4aaa727d18d3ec25d8642517c4b26": [
+    "windows-apps-src\\accessibility\\control-patterns-and-interfaces.md"
+  ],
   "17b10c9a3ce888fa9c7cfdc217d38a9650d26d01": [
     "windows-apps-src\\accessibility\\control-patterns-and-interfaces.md"
   ],
@@ -160,6 +184,9 @@
   ],
   "892c142ac16f2ad78ac54737ed14246b894cd875": [
     "windows-apps-src\\accessibility\\control-patterns-and-interfaces.md"
+  ],
+  "893e17205783bfb787ae5597a48abcb09fb6631f": [
+    "windows-apps-src\\accessibility\\custom-automation-peers.md"
   ],
   "70bf93ad18a4a2c0efa53473007f295885063cd8": [
     "windows-apps-src\\accessibility\\custom-automation-peers.md"
@@ -185,6 +212,9 @@
   "e70851c5854ae44edf3156ceba368be1f6ac7e88": [
     "windows-apps-src\\accessibility\\custom-automation-peers.md"
   ],
+  "3569d82c5b5ac0e947828caf5376de840fbc2830": [
+    "windows-apps-src\\accessibility\\high-contrast-themes.md"
+  ],
   "3291067b83db7e70187e8766619864e687e124d0": [
     "windows-apps-src\\accessibility\\high-contrast-themes.md"
   ],
@@ -202,6 +232,9 @@
   ],
   "13a7bb3c54b9a4c42a776170f0eca4613d75ad9f": [
     "windows-apps-src\\accessibility\\high-contrast-themes.md"
+  ],
+  "433f1fb4ccb92f262b33ecea97f1bf8fe335cb48": [
+    "windows-apps-src\\accessibility\\keyboard-accessibility.md"
   ],
   "20907ebf2add0144d2578375fbf76b7b47e60c4e": [
     "windows-apps-src\\accessibility\\keyboard-accessibility.md"
@@ -227,6 +260,9 @@
   "b6dc41d865e9c0960a8cf0acc164babcb8d4d12f": [
     "windows-apps-src\\accessibility\\keyboard-accessibility.md"
   ],
+  "b5f5f220d5ff70d70dd797c0bf26a355bd447563": [
+    "windows-apps-src\\accessibility\\practices-to-avoid.md"
+  ],
   "b1382801d18795598f901f6dd8d622e89a5e62a3": [
     "windows-apps-src\\accessibility\\practices-to-avoid.md"
   ],
@@ -245,6 +281,9 @@
   "6fea9292bbdd3024d4bc09a195efeae5aef58731": [
     "windows-apps-src\\accessibility\\practices-to-avoid.md"
   ],
+  "4d6f57dcc9dbfe9c2e031a5fe73f24668f0dc462": [
+    "windows-apps-src\\app-settings\\app-settings-and-data.md"
+  ],
   "db35062191806336b1a430d2aa8fb295f11326bb": [
     "windows-apps-src\\app-settings\\app-settings-and-data.md"
   ],
@@ -253,6 +292,9 @@
   ],
   "7ba1605136bdf940bfd481f488fccb35feeebc9c": [
     "windows-apps-src\\app-settings\\app-settings-and-data.md"
+  ],
+  "aeccd755c5fe5df8f2ff5549950ce2d6cb74e8e4": [
+    "windows-apps-src\\app-settings\\guidelines-for-app-settings.md"
   ],
   "e33ddeea674cc50ecdfd0256752292670aef0523": [
     "windows-apps-src\\app-settings\\guidelines-for-app-settings.md"
@@ -280,6 +322,9 @@
   ],
   "012c9abb1b7a791fcadb117e647a8aa1178196fb": [
     "windows-apps-src\\app-settings\\images\\appsettings-about.png"
+  ],
+  "433cda6432d1e695bacb338e68012bcc9c837eb6": [
+    "windows-apps-src\\app-settings\\store-and-retrieve-app-data.md"
   ],
   "bcbdad0a534dba368530fdf0192b37c6e4925fbc": [
     "windows-apps-src\\app-settings\\store-and-retrieve-app-data.md"
@@ -3959,6 +4004,9 @@
   "4adc00dd1386fb0505e21823fce9a0fa4cf223ba": [
     "windows-apps-src\\get-started\\your-first-app.md"
   ],
+  "989d810724c925a5bcbebf5f7fb301636905fff9": [
+    "windows-apps-src\\globalizing\\adjust-layout-and-fonts--and-support-rtl.md"
+  ],
   "605fd4931f29fdb20b220dc99b86001f84c8c752": [
     "windows-apps-src\\globalizing\\adjust-layout-and-fonts--and-support-rtl.md"
   ],
@@ -3968,11 +4016,17 @@
   "a767ca9a377ffdf9ae8f34d6316097f4eaec0dd4": [
     "windows-apps-src\\globalizing\\adjust-layout-and-fonts--and-support-rtl.md"
   ],
+  "1fc82ff462a5c0af6b10e7dc8455adc215558b4e": [
+    "windows-apps-src\\globalizing\\globalizing-portal.md"
+  ],
   "1cfd58b423c7ab7b75bd1d634672018f76cd150c": [
     "windows-apps-src\\globalizing\\globalizing-portal.md"
   ],
   "f219d96fbba4cfe1079959ea6467d6384565ee4b": [
     "windows-apps-src\\globalizing\\globalizing-portal.md"
+  ],
+  "bdbe6b3e319aa90a78660c664f1603bac93399ca": [
+    "windows-apps-src\\globalizing\\guidelines-and-checklist-for-globalizing-your-app.md"
   ],
   "e5cc885f4507b9e7b02944574888d031c97b91b7": [
     "windows-apps-src\\globalizing\\guidelines-and-checklist-for-globalizing-your-app.md"
@@ -3980,11 +4034,17 @@
   "35c8357ce558df9eb0e16eceae0fd0baadf2f527": [
     "windows-apps-src\\globalizing\\guidelines-and-checklist-for-globalizing-your-app.md"
   ],
+  "294f087fffeefda67ddacd09636915144bf18ff4": [
+    "windows-apps-src\\globalizing\\manage-language-and-region.md"
+  ],
   "614150cba4cc31b585ce49afe766c0f683d72732": [
     "windows-apps-src\\globalizing\\manage-language-and-region.md"
   ],
   "ddf148fddc7268fa9918ccba2cd2bf173c48255d": [
     "windows-apps-src\\globalizing\\manage-language-and-region.md"
+  ],
+  "e52a5322767677859e32ccbecf4951745c49f36f": [
+    "windows-apps-src\\globalizing\\prepare-your-app-for-localization.md"
   ],
   "4440b33d1e3c4acf185ffcb9382d55f22fa4cf87": [
     "windows-apps-src\\globalizing\\prepare-your-app-for-localization.md"
@@ -3994,6 +4054,9 @@
   ],
   "1c173d383941f7f81ea8c0e41d7812ea17ce5bf2": [
     "windows-apps-src\\globalizing\\prepare-your-app-for-localization.md"
+  ],
+  "b44d9235e34b8d4c75f663029d1dde3f87bd0eb7": [
+    "windows-apps-src\\globalizing\\put-ui-strings-into-resources.md"
   ],
   "a8ce013b76dad08f46fb9f881854084f11d1f27e": [
     "windows-apps-src\\globalizing\\put-ui-strings-into-resources.md"
@@ -4016,6 +4079,9 @@
   "b31f3782c500960ff4dd4e59dd64173218f62985": [
     "windows-apps-src\\globalizing\\images\\addresource-fr-fr.png"
   ],
+  "77b5e7bd412936dd5d8c4bc252771631d6b884cf": [
+    "windows-apps-src\\globalizing\\use-global-ready-formats.md"
+  ],
   "274ed300af3817f85495c203c2a00590c56c8be5": [
     "windows-apps-src\\globalizing\\use-global-ready-formats.md"
   ],
@@ -4024,6 +4090,9 @@
   ],
   "7c9ec3e3367e704665f5b5d719a0a25f8047ed90": [
     "windows-apps-src\\globalizing\\use-global-ready-formats.md"
+  ],
+  "17cd1619a13adced643b4c8983dbf874bebaa740": [
+    "windows-apps-src\\globalizing\\use-patterns-to-format-dates-and-times.md"
   ],
   "457529af7e01009542ab5ee03520b7b72998fa1e": [
     "windows-apps-src\\globalizing\\use-patterns-to-format-dates-and-times.md"
@@ -7928,10 +7997,10 @@
   "6feae624441c686128bb5af6b8980435f1e6f7c4": [
     "windows-apps-src\\monetize\\get-app-failures.md"
   ],
-  "eac185d4c45aacb4960086e12825a804465f5da4": [
+  "c7c168c98bec40d4d3e6f5d73268ad222b21ccb6": [
     "windows-apps-src\\accessibility\\designing-inclusive-software.md"
   ],
-  "c7c168c98bec40d4d3e6f5d73268ad222b21ccb6": [
+  "eac185d4c45aacb4960086e12825a804465f5da4": [
     "windows-apps-src\\accessibility\\designing-inclusive-software.md"
   ],
   "c614f52e5eaf54983635472d14e57e3e1dc0c2b5": [
@@ -7943,10 +8012,10 @@
   "4f472617f767a2e5a69d16825dc26ad8c13cbc42": [
     "windows-apps-src\\accessibility\\designing-inclusive-software.md"
   ],
-  "826c6984962ecbe3b49ba3753e9cc795344f5057": [
+  "77c401fd9686cb260e7b2d9e4bdf47a91d76802e": [
     "windows-apps-src\\accessibility\\developing-inclusive-windows-apps.md"
   ],
-  "77c401fd9686cb260e7b2d9e4bdf47a91d76802e": [
+  "826c6984962ecbe3b49ba3753e9cc795344f5057": [
     "windows-apps-src\\accessibility\\developing-inclusive-windows-apps.md"
   ],
   "b6cbb39d619d1cebab0983688dcd4d84617fcb39": [
@@ -9129,6 +9198,15 @@
   ],
   "6e2bdc86eecfbba5858faa451f0f603ed7074a6d": [
     "windows-apps-src\\debug-test-perf\\device-portal-desktop.md"
+  ],
+  "03ef3fc34d2018c0ec712977065377a9c52cd8b2": [
+    "windows-apps-src\\app-help-guidelines\\external-help.md"
+  ],
+  "1e1e5e118eb44f6b491669dbd274fae05d92685b": [
+    "windows-apps-src\\app-help-guidelines\\guidelines-for-app-help.md"
+  ],
+  "1c8ab97a5625243a50fa3b40ae93f5928dc7d851": [
+    "windows-apps-src\\app-help-guidelines\\instructional-ui.md"
   ],
   "02f9a27f5b6bd58cbf406b2cf8bd5a0524ca7f77": [
     "windows-apps-src\\input-and-devices\\images\\cortana\\voicecommandcontenttiletype_titleonly_small.png"
