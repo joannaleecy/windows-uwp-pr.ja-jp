@@ -2603,6 +2603,9 @@
   "125b694a151ed478671c5749b86a8c1e252716f7": [
     "windows-apps-src\\debug-test-perf\\index.md"
   ],
+  "03f7212856c677e76e65f7f0d921712de043a04b": [
+    "windows-apps-src\\debug-test-perf\\keep-the-ui-thread-responsive.md"
+  ],
   "af935c01d0aa2653ade336a74ff7cae0e8fd3fa1": [
     "windows-apps-src\\debug-test-perf\\keep-the-ui-thread-responsive.md"
   ],
@@ -2636,6 +2639,9 @@
   "6d1a9a148c0284c7eb58787e97562dad238d89e8": [
     "windows-apps-src\\debug-test-perf\\images\\videowithneighbors.png"
   ],
+  "2d24daf2bad75f5eb9adc92a49f4ff4912afd1a6": [
+    "windows-apps-src\\debug-test-perf\\optimize-file-access.md"
+  ],
   "bdd8ce7f9daa198955841caa8c4085000617d2ae": [
     "windows-apps-src\\debug-test-perf\\optimize-file-access.md"
   ],
@@ -2650,6 +2656,9 @@
   ],
   "3db786e318c21cd2b0256d7b33f9b5c0a08c6398": [
     "windows-apps-src\\debug-test-perf\\optimize-gridview-and-listview.md"
+  ],
+  "9fee4ab9c55c1243c04c2ed5f007412751528037": [
+    "windows-apps-src\\debug-test-perf\\optimize-suspend-resume.md"
   ],
   "eed9e1432cf067fa52d781ba62785baa080b2edd": [
     "windows-apps-src\\debug-test-perf\\optimize-suspend-resume.md"
@@ -2693,6 +2702,9 @@
   "93096acf7e39a74921f1e1424f9efce1c14c830a": [
     "windows-apps-src\\debug-test-perf\\performance-and-xaml-ui.md"
   ],
+  "dea1e37ca0403e858d3c40c966cd9ef9720bb00f": [
+    "windows-apps-src\\debug-test-perf\\planning-and-measuring-performance.md"
+  ],
   "aa33ee3c71517291da92bbbf86a8aec0a7d25828": [
     "windows-apps-src\\debug-test-perf\\planning-and-measuring-performance.md"
   ],
@@ -2701,6 +2713,9 @@
   ],
   "540b6d68ed9b9f32a6a0ee3211621c896441aaf2": [
     "windows-apps-src\\debug-test-perf\\planning-and-measuring-performance.md"
+  ],
+  "c53bda2329cd984e3a03d4a166e7353097e62cef": [
+    "windows-apps-src\\debug-test-perf\\test-with-the-emulator.md"
   ],
   "1706d4b016d1c796fdc51d050ebd35dd8a2f5465": [
     "windows-apps-src\\debug-test-perf\\test-with-the-emulator.md"
@@ -3235,17 +3250,26 @@
   "dbb5b7c4ba80579c8322a0f7662c51a86d2cbc86": [
     "windows-apps-src\\gaming\\compare-opengl-es-2-0-api-design-to-directx.md"
   ],
+  "355e5a65a16e5e2df9bb039383f68dda16ff23a2": [
+    "windows-apps-src\\gaming\\complete-code-for-basicloader.md"
+  ],
   "fa41cb5b23cde48a8c42dee3e3c16824cb430d2a": [
     "windows-apps-src\\gaming\\complete-code-for-basicloader.md"
   ],
   "a1802d8834557572be472bd0bcc2e3196f429190": [
     "windows-apps-src\\gaming\\complete-code-for-basicloader.md"
   ],
+  "46762d7b7234be9ff7b4c288a09162d4f942a707": [
+    "windows-apps-src\\gaming\\complete-code-for-basicreaderwriter.md"
+  ],
   "b5e5c76ddadad1eba700a54af6d4fe5b10e78205": [
     "windows-apps-src\\gaming\\complete-code-for-basicreaderwriter.md"
   ],
   "132ee01518a6e917b87d3e467445985889bee2cc": [
     "windows-apps-src\\gaming\\complete-code-for-basicreaderwriter.md"
+  ],
+  "9a842c773ce16e1093a158426b89caf239858f05": [
+    "windows-apps-src\\gaming\\complete-code-for-ddstextureloader.md"
   ],
   "cbb5d0d146285b73c665a8a77f2f7be616936dd1": [
     "windows-apps-src\\gaming\\complete-code-for-ddstextureloader.md"
