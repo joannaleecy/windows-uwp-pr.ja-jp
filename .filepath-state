@@ -2549,6 +2549,9 @@
   "32372bdef6cf58479527e149c2917e6dec556009": [
     "windows-apps-src\\data-binding\\index.md"
   ],
+  "55228bca09d4458483f4ec76495c9ea6c74ff064": [
+    "windows-apps-src\\debug-test-perf\\best-practices-for-your-app-s-startup-performance.md"
+  ],
   "e2865205f47930a3edde39cade9f137f5fadae57": [
     "windows-apps-src\\debug-test-perf\\best-practices-for-your-app-s-startup-performance.md"
   ],
