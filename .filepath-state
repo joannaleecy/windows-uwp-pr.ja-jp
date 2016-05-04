@@ -8608,6 +8608,9 @@
   "32d8bda5bf7b7f3e384dd9ecf0742740fa62754b": [
     "windows-apps-src\\publish\\package-flights.md"
   ],
+  "8b14f1f92837d560924ebd1540a56c67ad9d33b5": [
+    "windows-apps-src\\security\\companion-device-unlock.md"
+  ],
   "b61879c0e65e2220c9856a3e3082f53ddd445c69": [
     "windows-apps-src\\security\\companion-device-unlock.md"
   ],
