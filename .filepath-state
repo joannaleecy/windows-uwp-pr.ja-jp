@@ -7738,6 +7738,9 @@
   "89492fb1fb74e7edc43b50a23cf316956a70c5b3": [
     "windows-apps-src\\xaml-platform\\templatebinding-markup-extension.md"
   ],
+  "246c991bbdbc95e73ea8d4884cd4d617592bfc51": [
+    "windows-apps-src\\xaml-platform\\themeresource-markup-extension.md"
+  ],
   "b9c29af23d71c923af157b9c11a29eb427d01035": [
     "windows-apps-src\\xaml-platform\\themeresource-markup-extension.md"
   ],
