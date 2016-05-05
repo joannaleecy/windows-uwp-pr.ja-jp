@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\affiliates-performance-report.md](https://github.com/Microsoft/windows-apps/blob/577b238875b2d0edd47d9ad0e5e73ca79a6acf75/windows-apps-src/publish/affiliates-performance-report.md) | HandedOffSuccess | [Details](#8c200c4f4b743aeaae71d6a6179fc15db0e7ec5e3462)
+ [windows-apps-src\layout\layouts-with-xaml.md](https://github.com/Microsoft/windows-apps/blob/50205b35b1448fd6700624b627624cb03eede72b/windows-apps-src/layout/layouts-with-xaml.md) | HandedOffSuccess | [Details](#525f9940b90b5c5e7cb5c197d1c2f9e5f991844a3201)
 
 ## Item Details
-##### <a name='8c200c4f4b743aeaae71d6a6179fc15db0e7ec5e3462'></a> Source: [windows-apps-src\publish\affiliates-performance-report.md](https://github.com/Microsoft/windows-apps/blob/577b238875b2d0edd47d9ad0e5e73ca79a6acf75/windows-apps-src/publish/affiliates-performance-report.md)
+##### <a name='525f9940b90b5c5e7cb5c197d1c2f9e5f991844a3201'></a> Source: [windows-apps-src\layout\layouts-with-xaml.md](https://github.com/Microsoft/windows-apps/blob/50205b35b1448fd6700624b627624cb03eede72b/windows-apps-src/layout/layouts-with-xaml.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [affiliates-performance-report.7f08304ede76a2f8a487483ad6c187b58448153f.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/7cd326f1977d80829afc3621ff95dd705686b9ed/ol-handoff/Microsoft/windows-apps.ja-jp/master/affiliates-performance-report.7f08304ede76a2f8a487483ad6c187b58448153f.ja-jp.xlf)
-* Handoff Datetime: 2016-05-05 16:20:10
+* Handoff File: [layouts-with-xaml.0d71a498eae13a3e3615deaaab7d81147302480d.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/06d4e03b1d205a65b53977f02d853557441fba65/ol-handoff/Microsoft/windows-apps.ja-jp/master/layouts-with-xaml.0d71a498eae13a3e3615deaaab7d81147302480d.ja-jp.xlf)
+* Handoff Datetime: 2016-05-05 17:48:18
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
