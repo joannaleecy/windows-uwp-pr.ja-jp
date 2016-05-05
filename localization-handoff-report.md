@@ -1,19 +1,45 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 3
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\get-started\create-a-hello-world-app-js-universal.md](https://github.com/Microsoft/windows-apps/blob/5d2e9c3969746ee9a96eff3e76dd84de3c8555d3/windows-apps-src/get-started/create-a-hello-world-app-js-universal.md) | HandedOffSuccess | [Details](#3c514c400dc41f4ee2d192fbcfd9a323d6fc94162199)
+ [windows-apps-src\get-started\create-a-hello-world-app-js-universal.md](https://github.com/Microsoft/windows-apps/blob/f3cb50e5b0b0baa73431392a1f6854a62f3655de/windows-apps-src/get-started/create-a-hello-world-app-js-universal.md) | HandedOffSuccess | [Details](#5f534169117da94cb2249c897603f567c007299b2199)
+ [windows-apps-src\layout\layouts-with-xaml.md](https://github.com/Microsoft/windows-apps/blob/681023be35b01eac84272a73d1ae3e7a459351db/windows-apps-src/layout/layouts-with-xaml.md) | HandedOffSuccess | [Details](#0cc466ccdc4d214539fb4258f95fda72e08ac9db3201)
+ [windows-apps-src\publish\package-flights.md](https://github.com/Microsoft/windows-apps/blob/57d0637da61e9cc9c04f0ebf3d65f78e7125f858/windows-apps-src/publish/package-flights.md) | HandedOffSuccess | [Details](#dbc445db596b30dc216deeab11d996da84b6cdc13514)
 
 ## Item Details
-##### <a name='3c514c400dc41f4ee2d192fbcfd9a323d6fc94162199'></a> Source: [windows-apps-src\get-started\create-a-hello-world-app-js-universal.md](https://github.com/Microsoft/windows-apps/blob/5d2e9c3969746ee9a96eff3e76dd84de3c8555d3/windows-apps-src/get-started/create-a-hello-world-app-js-universal.md)
+##### <a name='5f534169117da94cb2249c897603f567c007299b2199'></a> Source: [windows-apps-src\get-started\create-a-hello-world-app-js-universal.md](https://github.com/Microsoft/windows-apps/blob/f3cb50e5b0b0baa73431392a1f6854a62f3655de/windows-apps-src/get-started/create-a-hello-world-app-js-universal.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [create-a-hello-world-app-js-universal.2d56a0012bf9cca72899334ef9aa7ec422ac9663.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/a3b0f1b403179bbb40fff0b0e7c93738062ea7db/ol-handoff/Microsoft/windows-apps.ja-jp/master/create-a-hello-world-app-js-universal.2d56a0012bf9cca72899334ef9aa7ec422ac9663.ja-jp.xlf)
-* Handoff Datetime: 2016-05-05 18:18:07
+* Handoff File: [create-a-hello-world-app-js-universal.2d56a0012bf9cca72899334ef9aa7ec422ac9663.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/2f13eb7bd19942812d0f6e4dc0b8746499a7c285/ol-handoff/Microsoft/windows-apps.ja-jp/master/create-a-hello-world-app-js-universal.2d56a0012bf9cca72899334ef9aa7ec422ac9663.ja-jp.xlf)
+* Handoff Datetime: 2016-05-05 18:47:48
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* [Back to Top](#report-top)
+
+##### <a name='0cc466ccdc4d214539fb4258f95fda72e08ac9db3201'></a> Source: [windows-apps-src\layout\layouts-with-xaml.md](https://github.com/Microsoft/windows-apps/blob/681023be35b01eac84272a73d1ae3e7a459351db/windows-apps-src/layout/layouts-with-xaml.md)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [layouts-with-xaml.0d71a498eae13a3e3615deaaab7d81147302480d.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/2f13eb7bd19942812d0f6e4dc0b8746499a7c285/ol-handoff/Microsoft/windows-apps.ja-jp/master/layouts-with-xaml.0d71a498eae13a3e3615deaaab7d81147302480d.ja-jp.xlf)
+* Handoff Datetime: 2016-05-05 18:47:48
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* [Back to Top](#report-top)
+
+##### <a name='dbc445db596b30dc216deeab11d996da84b6cdc13514'></a> Source: [windows-apps-src\publish\package-flights.md](https://github.com/Microsoft/windows-apps/blob/57d0637da61e9cc9c04f0ebf3d65f78e7125f858/windows-apps-src/publish/package-flights.md)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [package-flights.01f17a418d82f23d1aa9d2df8fc583f11c6c61bf.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/2f13eb7bd19942812d0f6e4dc0b8746499a7c285/ol-handoff/Microsoft/windows-apps.ja-jp/master/package-flights.01f17a418d82f23d1aa9d2df8fc583f11c6c61bf.ja-jp.xlf)
+* Handoff Datetime: 2016-05-05 18:47:48
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00

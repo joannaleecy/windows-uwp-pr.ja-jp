@@ -3101,6 +3101,9 @@
   "e39752f9f13eaf93d23412252483093e704b1668": [
     "windows-apps-src\\get-started\\create-a-basic-windows-10-app-in-cpp.md"
   ],
+  "5f534169117da94cb2249c897603f567c007299b": [
+    "windows-apps-src\\get-started\\create-a-hello-world-app-js-universal.md"
+  ],
   "3c514c400dc41f4ee2d192fbcfd9a323d6fc9416": [
     "windows-apps-src\\get-started\\create-a-hello-world-app-js-universal.md"
   ],
@@ -4436,6 +4439,9 @@
   "70bb6e1f01fa89c7a504e0299e89153efc30de1e": [
     "windows-apps-src\\layout\\layout-panels.md"
   ],
+  "0cc466ccdc4d214539fb4258f95fda72e08ac9db": [
+    "windows-apps-src\\layout\\layouts-with-xaml.md"
+  ],
   "525f9940b90b5c5e7cb5c197d1c2f9e5f991844a": [
     "windows-apps-src\\layout\\layouts-with-xaml.md"
   ],
@@ -5323,6 +5329,9 @@
   ],
   "9458475b8e8445b3ec36b790822641ea9a574a98": [
     "windows-apps-src\\publish\\organizational-licensing.md"
+  ],
+  "dbc445db596b30dc216deeab11d996da84b6cdc1": [
+    "windows-apps-src\\publish\\package-flights.md"
   ],
   "25961d021cf052f9a81ad997b33b1f0d28c2b208": [
     "windows-apps-src\\publish\\package-flights.md"
