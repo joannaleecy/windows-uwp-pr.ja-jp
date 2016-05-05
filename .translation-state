@@ -1,5 +1,5 @@
 {
-  "LastProcessedCommit": "50205b35b1448fd6700624b627624cb03eede72b",
+  "LastProcessedCommit": "5d2e9c3969746ee9a96eff3e76dd84de3c8555d3",
   "LastTranslatedCommit": null,
   "Items": {
     "3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3": {
@@ -61196,6 +61196,35 @@
       "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\layouts-with-xaml.0d71a498eae13a3e3615deaaab7d81147302480d.ja-jp.xlf",
       "HandoffFileCommit": "06d4e03b1d205a65b53977f02d853557441fba65",
       "HandoffDateTime": "2016-05-05T17:48:18.8340395Z",
+      "HandoffPriority": "",
+      "HandoffException": null,
+      "HandoffFailureTimes": 0,
+      "TargetFileCommit": null,
+      "TargetFilePath": null,
+      "HandbackFilePath": null,
+      "HandbackFileCommit": null,
+      "HandbackDateTime": "0001-01-01T00:00:00",
+      "HandbackException": null,
+      "HandbackFailureTimes": 0,
+      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": null,
+      "ArchiveFileCommit": null,
+      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveException": null
+    },
+    "3c514c400dc41f4ee2d192fbcfd9a323d6fc9416": {
+      "FileHash": "3c514c400dc41f4ee2d192fbcfd9a323d6fc9416",
+      "SourceFileCommit": "5d2e9c3969746ee9a96eff3e76dd84de3c8555d3",
+      "SourceFilePath": "windows-apps-src\\get-started\\create-a-hello-world-app-js-universal.md",
+      "HandoffReason": 1,
+      "DependencyFrom": null,
+      "TokenReference": null,
+      "FilePathList": [
+        "windows-apps-src\\get-started\\create-a-hello-world-app-js-universal.md"
+      ],
+      "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\create-a-hello-world-app-js-universal.2d56a0012bf9cca72899334ef9aa7ec422ac9663.ja-jp.xlf",
+      "HandoffFileCommit": "a3b0f1b403179bbb40fff0b0e7c93738062ea7db",
+      "HandoffDateTime": "2016-05-05T18:18:07.8301779Z",
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,

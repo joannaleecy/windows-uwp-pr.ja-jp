@@ -3101,6 +3101,9 @@
   "e39752f9f13eaf93d23412252483093e704b1668": [
     "windows-apps-src\\get-started\\create-a-basic-windows-10-app-in-cpp.md"
   ],
+  "3c514c400dc41f4ee2d192fbcfd9a323d6fc9416": [
+    "windows-apps-src\\get-started\\create-a-hello-world-app-js-universal.md"
+  ],
   "8f8ac6d931183c80c37d0f3578702127852408f1": [
     "windows-apps-src\\get-started\\create-a-hello-world-app-js-universal.md"
   ],
