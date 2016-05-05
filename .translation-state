@@ -1,5 +1,5 @@
 {
-  "LastProcessedCommit": "a8f96ad0af15272fa12edffa698bd3c998fd0867",
+  "LastProcessedCommit": "577b238875b2d0edd47d9ad0e5e73ca79a6acf75",
   "LastTranslatedCommit": null,
   "Items": {
     "3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3": {
@@ -508,7 +508,8 @@
       ],
       "TokenReference": null,
       "FilePathList": [
-        "windows-apps-src\\app-help-guidelines\\images\\in-game-controls-3.png"
+        "windows-apps-src\\app-help-guidelines\\images\\in-game-controls-3.png",
+        "windows-apps-src\\in-app-help\\images\\in-game-controls-3.png"
       ],
       "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\d0e39b0c0ebc8433fe25cb8755074bc60e5f6d3c.png",
       "HandoffFileCommit": "034e9c637f0fd60b9d604401b10b1c6e2264af18",
@@ -540,7 +541,8 @@
       ],
       "TokenReference": null,
       "FilePathList": [
-        "windows-apps-src\\app-help-guidelines\\images\\instructional-ui-mail.png"
+        "windows-apps-src\\app-help-guidelines\\images\\instructional-ui-mail.png",
+        "windows-apps-src\\in-app-help\\images\\instructional-ui-mail.png"
       ],
       "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\15ddd990dbce3fa1e34d96a29ef700f45bd9a23a.png",
       "HandoffFileCommit": "034e9c637f0fd60b9d604401b10b1c6e2264af18",
@@ -572,7 +574,8 @@
       ],
       "TokenReference": null,
       "FilePathList": [
-        "windows-apps-src\\app-help-guidelines\\images\\instructional-ui-mail-flyout.png"
+        "windows-apps-src\\app-help-guidelines\\images\\instructional-ui-mail-flyout.png",
+        "windows-apps-src\\in-app-help\\images\\instructional-ui-mail-flyout.png"
       ],
       "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\0b5665bcfae3e9a96859a5c1cb92fda686804ec5.png",
       "HandoffFileCommit": "034e9c637f0fd60b9d604401b10b1c6e2264af18",
@@ -604,7 +607,8 @@
       ],
       "TokenReference": null,
       "FilePathList": [
-        "windows-apps-src\\app-help-guidelines\\images\\instructional-ui-mail-inbox.png"
+        "windows-apps-src\\app-help-guidelines\\images\\instructional-ui-mail-inbox.png",
+        "windows-apps-src\\in-app-help\\images\\instructional-ui-mail-inbox.png"
       ],
       "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\616c418d06f1f082272bc60570b8f960ff47242f.png",
       "HandoffFileCommit": "034e9c637f0fd60b9d604401b10b1c6e2264af18",
@@ -636,7 +640,8 @@
       ],
       "TokenReference": null,
       "FilePathList": [
-        "windows-apps-src\\app-help-guidelines\\images\\instructional-ui-movie.png"
+        "windows-apps-src\\app-help-guidelines\\images\\instructional-ui-movie.png",
+        "windows-apps-src\\in-app-help\\images\\instructional-ui-movie.png"
       ],
       "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\12350faf3048b52f30d54bafab392e2ece93db32.png",
       "HandoffFileCommit": "034e9c637f0fd60b9d604401b10b1c6e2264af18",
@@ -61133,6 +61138,35 @@
       "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\system-resource-allocation.23bb0673103f44453efc5ced6ac17f166c8f30c4.ja-jp.xlf",
       "HandoffFileCommit": "034e9c637f0fd60b9d604401b10b1c6e2264af18",
       "HandoffDateTime": "2016-05-05T02:26:38.0890252Z",
+      "HandoffPriority": "",
+      "HandoffException": null,
+      "HandoffFailureTimes": 0,
+      "TargetFileCommit": null,
+      "TargetFilePath": null,
+      "HandbackFilePath": null,
+      "HandbackFileCommit": null,
+      "HandbackDateTime": "0001-01-01T00:00:00",
+      "HandbackException": null,
+      "HandbackFailureTimes": 0,
+      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": null,
+      "ArchiveFileCommit": null,
+      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveException": null
+    },
+    "8c200c4f4b743aeaae71d6a6179fc15db0e7ec5e": {
+      "FileHash": "8c200c4f4b743aeaae71d6a6179fc15db0e7ec5e",
+      "SourceFileCommit": "577b238875b2d0edd47d9ad0e5e73ca79a6acf75",
+      "SourceFilePath": "windows-apps-src\\publish\\affiliates-performance-report.md",
+      "HandoffReason": 1,
+      "DependencyFrom": null,
+      "TokenReference": null,
+      "FilePathList": [
+        "windows-apps-src\\publish\\affiliates-performance-report.md"
+      ],
+      "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\affiliates-performance-report.7f08304ede76a2f8a487483ad6c187b58448153f.ja-jp.xlf",
+      "HandoffFileCommit": "7cd326f1977d80829afc3621ff95dd705686b9ed",
+      "HandoffDateTime": "2016-05-05T16:20:10.2587971Z",
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,

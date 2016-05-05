@@ -51,19 +51,24 @@
     "windows-apps-src\\app-help-guidelines\\guidelines-for-app-help.md"
   ],
   "d0e39b0c0ebc8433fe25cb8755074bc60e5f6d3c": [
-    "windows-apps-src\\app-help-guidelines\\images\\in-game-controls-3.png"
+    "windows-apps-src\\app-help-guidelines\\images\\in-game-controls-3.png",
+    "windows-apps-src\\in-app-help\\images\\in-game-controls-3.png"
   ],
   "15ddd990dbce3fa1e34d96a29ef700f45bd9a23a": [
-    "windows-apps-src\\app-help-guidelines\\images\\instructional-ui-mail.png"
+    "windows-apps-src\\app-help-guidelines\\images\\instructional-ui-mail.png",
+    "windows-apps-src\\in-app-help\\images\\instructional-ui-mail.png"
   ],
   "0b5665bcfae3e9a96859a5c1cb92fda686804ec5": [
-    "windows-apps-src\\app-help-guidelines\\images\\instructional-ui-mail-flyout.png"
+    "windows-apps-src\\app-help-guidelines\\images\\instructional-ui-mail-flyout.png",
+    "windows-apps-src\\in-app-help\\images\\instructional-ui-mail-flyout.png"
   ],
   "616c418d06f1f082272bc60570b8f960ff47242f": [
-    "windows-apps-src\\app-help-guidelines\\images\\instructional-ui-mail-inbox.png"
+    "windows-apps-src\\app-help-guidelines\\images\\instructional-ui-mail-inbox.png",
+    "windows-apps-src\\in-app-help\\images\\instructional-ui-mail-inbox.png"
   ],
   "12350faf3048b52f30d54bafab392e2ece93db32": [
-    "windows-apps-src\\app-help-guidelines\\images\\instructional-ui-movie.png"
+    "windows-apps-src\\app-help-guidelines\\images\\instructional-ui-movie.png",
+    "windows-apps-src\\in-app-help\\images\\instructional-ui-movie.png"
   ],
   "7edad75b1639768023eb8add1e23fe0aafb0b674": [
     "windows-apps-src\\app-help-guidelines\\in-app-help.md",
@@ -5153,6 +5158,9 @@
   ],
   "1617005cff264a89eb66e326e2bedf9f6641a3da": [
     "windows-apps-src\\publish\\advertising-performance-report.md"
+  ],
+  "8c200c4f4b743aeaae71d6a6179fc15db0e7ec5e": [
+    "windows-apps-src\\publish\\affiliates-performance-report.md"
   ],
   "e9a10565461b9f585a70f03bfdb30883bcb25af9": [
     "windows-apps-src\\publish\\affiliates-performance-report.md"
