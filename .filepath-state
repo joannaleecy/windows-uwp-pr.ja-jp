@@ -2337,11 +2337,17 @@
   "5ed8ffe0a409569777fbf4e56a90ab3b80cd395c": [
     "windows-apps-src\\debug-test-perf\\device-portal-api-hololens.md"
   ],
+  "9021ca85f188d8f41fd297a873915709c9b2708c": [
+    "windows-apps-src\\debug-test-perf\\device-portal-desktop.md"
+  ],
   "08f7e5060f85f2130ef80d3f500182bd1407581c": [
     "windows-apps-src\\debug-test-perf\\device-portal-desktop.md"
   ],
   "bd1ae8ccdd81f319fc36ca04b8b839cb313b2854": [
     "windows-apps-src\\debug-test-perf\\device-portal-hololens.md"
+  ],
+  "eeeb8f98d97468544cc30e3d9884cce15cb913a9": [
+    "windows-apps-src\\debug-test-perf\\device-portal-mobile.md"
   ],
   "6e64d0f24e038d6b842897f11e74b0f8624be144": [
     "windows-apps-src\\debug-test-perf\\device-portal-mobile.md"
