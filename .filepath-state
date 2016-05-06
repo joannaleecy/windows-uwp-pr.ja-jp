@@ -4913,6 +4913,9 @@
   "a77e441cbd1b6826e06064dbd4be449813754b25": [
     "windows-apps-src\\packaging\\packaging-uwp-apps.md"
   ],
+  "8e10b13f87a6b4b04b0bc8a8bbf221b08ad00911": [
+    "windows-apps-src\\porting\\android-ios-uwp-map.md"
+  ],
   "c6d0d0f4aee60a9371dacb4d8a0701b827944780": [
     "windows-apps-src\\porting\\android-ios-uwp-map.md"
   ],

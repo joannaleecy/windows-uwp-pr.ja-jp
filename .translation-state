@@ -1,5 +1,5 @@
 {
-  "LastProcessedCommit": "9321e975c455ff61f7977e9972aee7c5d92a7add",
+  "LastProcessedCommit": "a869ae056d29f45fb60597cf8ce49cc150e1af01",
   "LastTranslatedCommit": null,
   "Items": {
     "3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3": {
@@ -61631,6 +61631,35 @@
       "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\device-portal-mobile.76f623a0ea272ed3257cb79b0212a5e2e1bcefa1.ja-jp.xlf",
       "HandoffFileCommit": "fc4794aa865fd5dfe7497226354bb8b128bf6635",
       "HandoffDateTime": "2016-05-06T14:49:39.9464405Z",
+      "HandoffPriority": "",
+      "HandoffException": null,
+      "HandoffFailureTimes": 0,
+      "TargetFileCommit": null,
+      "TargetFilePath": null,
+      "HandbackFilePath": null,
+      "HandbackFileCommit": null,
+      "HandbackDateTime": "0001-01-01T00:00:00",
+      "HandbackException": null,
+      "HandbackFailureTimes": 0,
+      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": null,
+      "ArchiveFileCommit": null,
+      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveException": null
+    },
+    "8e10b13f87a6b4b04b0bc8a8bbf221b08ad00911": {
+      "FileHash": "8e10b13f87a6b4b04b0bc8a8bbf221b08ad00911",
+      "SourceFileCommit": "a869ae056d29f45fb60597cf8ce49cc150e1af01",
+      "SourceFilePath": "windows-apps-src\\porting\\android-ios-uwp-map.md",
+      "HandoffReason": 1,
+      "DependencyFrom": null,
+      "TokenReference": null,
+      "FilePathList": [
+        "windows-apps-src\\porting\\android-ios-uwp-map.md"
+      ],
+      "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\android-ios-uwp-map.6676821c86614bdd62f0f709cefaaa98367a24a7.ja-jp.xlf",
+      "HandoffFileCommit": "9f7f676a192eeeb2530cca5f6faccd65d96ad3e9",
+      "HandoffDateTime": "2016-05-06T21:19:09.318766Z",
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
