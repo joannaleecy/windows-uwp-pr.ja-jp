@@ -3452,8 +3452,14 @@
   "97e016047c864026fe0c72e4b7cb819f0fc80748": [
     "windows-apps-src\\index.md"
   ],
+  "bdc431d15742261d96b88b97d256b14156f2088c": [
+    "windows-apps-src\\input-and-devices\\convert-ink-to-text.md"
+  ],
   "3cb03e68a067102c186bf93d20ce875c0ea558fa": [
     "windows-apps-src\\input-and-devices\\convert-ink-to-text.md"
+  ],
+  "31442ed17b9b463cbf10cecb564278b86086bbf2": [
+    "windows-apps-src\\input-and-devices\\cortana-design-guidelines.md"
   ],
   "71eb9fe099813534429f3ed434107fb0e34387f2": [
     "windows-apps-src\\input-and-devices\\cortana-design-guidelines.md"
@@ -3479,6 +3485,9 @@
   "623243b94cf8ef6b276f8f2971af7bbdbdece81c": [
     "windows-apps-src\\input-and-devices\\dynamically-modify-voice-command-definition--vcd--phrase-lists.md"
   ],
+  "a142592f878fa539d6c40ea2abfcbf834b2de34d": [
+    "windows-apps-src\\input-and-devices\\enable-continuous-dictation.md"
+  ],
   "01c30dfa61eaa364cc0150d7697213ee05b02623": [
     "windows-apps-src\\input-and-devices\\enable-continuous-dictation.md"
   ],
@@ -3500,11 +3509,17 @@
   "c8244e1a103a1c57df92e54ceeaa02e9c363faa9": [
     "windows-apps-src\\input-and-devices\\guidelines-for-targeting.md"
   ],
+  "a47b48f9315c51505b2c487c140011e053105556": [
+    "windows-apps-src\\input-and-devices\\guidelines-for-textselection.md"
+  ],
   "adab0d6ed04c5707fe6d7c8ed3de4e971da2e647": [
     "windows-apps-src\\input-and-devices\\guidelines-for-textselection.md"
   ],
   "67b851ce854c803934c2b97dbe7519e2916383a3": [
     "windows-apps-src\\input-and-devices\\guidelines-for-user-interaction.md"
+  ],
+  "287ec24dbc60be39c0f944c6d4a86205961fb770": [
+    "windows-apps-src\\input-and-devices\\guidelines-for-visualfeedback.md"
   ],
   "cacb5b49334c9a9ebe385be0beb2cdf64ae2ca34": [
     "windows-apps-src\\input-and-devices\\guidelines-for-visualfeedback.md"
@@ -4054,11 +4069,17 @@
   "20af1cbfd4d390a1128b96b24c687fd481db1f5c": [
     "windows-apps-src\\input-and-devices\\multiple-input-design-guidelines.md"
   ],
+  "218fae32f8b63c8fe5499af7d3fe6c1f0404334c": [
+    "windows-apps-src\\input-and-devices\\pen-and-stylus-interactions.md"
+  ],
   "43d4060ddab7cb22bdfb6050161144d3a0df7c8a": [
     "windows-apps-src\\input-and-devices\\pen-and-stylus-interactions.md"
   ],
   "5f4f9553a54dc902c7c6a50d6a1b4cf6251fd72c": [
     "windows-apps-src\\input-and-devices\\respond-to-the-presence-of-the-touch-keyboard.md"
+  ],
+  "0f2e95146281fb992af1201c408ed62705c77741": [
+    "windows-apps-src\\input-and-devices\\save-and-load-ink.md"
   ],
   "144fea9597d75614cc1faedc61432195a34d9466": [
     "windows-apps-src\\input-and-devices\\save-and-load-ink.md"
@@ -4074,6 +4095,9 @@
   ],
   "6d1449ede6912add8b8f7e60760d4547c035ed60": [
     "windows-apps-src\\input-and-devices\\speech-recognition.md"
+  ],
+  "c9cd6894c61f3d6cfe770d197317a97a804b4119": [
+    "windows-apps-src\\input-and-devices\\support-natural-language-voice-commands-in-cortana.md"
   ],
   "0119d91b54c49d318e6741ac80047a2393ddbb1a": [
     "windows-apps-src\\input-and-devices\\support-natural-language-voice-commands-in-cortana.md"
