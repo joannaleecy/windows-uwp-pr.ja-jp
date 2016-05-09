@@ -2331,8 +2331,14 @@
   "eb639e78bf144572dfbfd2d65514bb4eff7c7be1": [
     "windows-apps-src\\debug-test-perf\\deploying-and-debugging-uwp-apps.md"
   ],
+  "ec3c972fb4c2f7e8f9317ac0031039786515a940": [
+    "windows-apps-src\\debug-test-perf\\device-portal.md"
+  ],
   "e2e0f159e739b5501932e7913c35e1e49726cc47": [
     "windows-apps-src\\debug-test-perf\\device-portal.md"
+  ],
+  "ac7fec36584292fdc3a549057e97d03d01748c6d": [
+    "windows-apps-src\\debug-test-perf\\device-portal-api-core.md"
   ],
   "d79419eb43dd98638c3133666f810c321edd87bd": [
     "windows-apps-src\\debug-test-perf\\device-portal-api-core.md"
@@ -2340,11 +2346,17 @@
   "5ed8ffe0a409569777fbf4e56a90ab3b80cd395c": [
     "windows-apps-src\\debug-test-perf\\device-portal-api-hololens.md"
   ],
-  "9021ca85f188d8f41fd297a873915709c9b2708c": [
-    "windows-apps-src\\debug-test-perf\\device-portal-desktop.md"
-  ],
   "08f7e5060f85f2130ef80d3f500182bd1407581c": [
-    "windows-apps-src\\debug-test-perf\\device-portal-desktop.md"
+    "windows-apps-src\\debug-test-perf\\device-portal-desktop.md",
+    "windows-apps-src\\debug-test-perf\\device-portal-desktop_BASE_11900.md"
+  ],
+  "9021ca85f188d8f41fd297a873915709c9b2708c": [
+    "windows-apps-src\\debug-test-perf\\device-portal-desktop.md",
+    "windows-apps-src\\debug-test-perf\\device-portal-desktop_LOCAL_11900.md"
+  ],
+  "6aed8aa1f396d3a031feda0fa7650cb1b01ec25b": [
+    "windows-apps-src\\debug-test-perf\\device-portal-desktop.md",
+    "windows-apps-src\\debug-test-perf\\device-portal-desktop_BACKUP_11900.md"
   ],
   "bd1ae8ccdd81f319fc36ca04b8b839cb313b2854": [
     "windows-apps-src\\debug-test-perf\\device-portal-hololens.md"
@@ -6175,5 +6187,8 @@
   ],
   "6b5ef763c41af65aecf02aaa550b84a3d524d25f": [
     "windows-apps-src\\xbox-apps\\system-resource-allocation.md"
+  ],
+  "f5fb0d2d70a50aa3b993b0dab56ce60e7e5b2711": [
+    "windows-apps-src\\debug-test-perf\\device-portal-desktop_REMOTE_11900.md"
   ]
 }
