@@ -2319,6 +2319,9 @@
   "d1fbc7376b3505d39e757a1b65ae0f0890948078": [
     "windows-apps-src\\data-binding\\index.md"
   ],
+  "6530b8788fc59d4d08b5f7bc65c73a8f05d75004": [
+    "windows-apps-src\\debug-test-perf\\best-practices-for-your-app-s-startup-performance.md"
+  ],
   "55228bca09d4458483f4ec76495c9ea6c74ff064": [
     "windows-apps-src\\debug-test-perf\\best-practices-for-your-app-s-startup-performance.md"
   ],
@@ -2482,11 +2485,17 @@
   "2cac002f459ce70b64e92ed67d1486dc1470aad2": [
     "windows-apps-src\\debug-test-perf\\images\\vs-simulator-resolutions.png"
   ],
+  "3fb6a0469a0e7488c40fc03bce8c90780b524656": [
+    "windows-apps-src\\debug-test-perf\\improve-garbage-collection-performance.md"
+  ],
   "4e849fa9e5c00cec592cadefb995e0d2aa7f9fba": [
     "windows-apps-src\\debug-test-perf\\improve-garbage-collection-performance.md"
   ],
   "1d6187470e8e1578af833221089a76261ebad1e4": [
     "windows-apps-src\\debug-test-perf\\index.md"
+  ],
+  "6144b5b60a0092efd1056dd5de166a64733356ec": [
+    "windows-apps-src\\debug-test-perf\\keep-the-ui-thread-responsive.md"
   ],
   "d17791928c377e219a7f5e29d3382c86ac44a11c": [
     "windows-apps-src\\debug-test-perf\\keep-the-ui-thread-responsive.md"
@@ -2497,8 +2506,14 @@
   "77a162076e14b4726e1fb29673b14be65be37a16": [
     "windows-apps-src\\debug-test-perf\\mvvm-performance-tips.md"
   ],
+  "d3ddc07b214dcfe767d27bf24a36fe19d3534e6e": [
+    "windows-apps-src\\debug-test-perf\\optimize-animations-and-media.md"
+  ],
   "ff8ddd0853af92252ca0511d9deb829e87d1fdd7": [
     "windows-apps-src\\debug-test-perf\\optimize-animations-and-media.md"
+  ],
+  "354a11fefd7164fd6ba5b21ec871ecbe7916ad25": [
+    "windows-apps-src\\debug-test-perf\\optimize-file-access.md"
   ],
   "63c273a78e8210ea33bb50e478ff7f0b166f29b2": [
     "windows-apps-src\\debug-test-perf\\optimize-file-access.md"
