@@ -2350,19 +2350,16 @@
     "windows-apps-src\\debug-test-perf\\device-portal-api-hololens.md"
   ],
   "6aed8aa1f396d3a031feda0fa7650cb1b01ec25b": [
-    "windows-apps-src\\debug-test-perf\\device-portal-desktop.md",
-    "windows-apps-src\\debug-test-perf\\device-portal-desktop_BACKUP_11900.md"
+    "windows-apps-src\\debug-test-perf\\device-portal-desktop.md"
   ],
   "59aa576e8e1a0562e71db4204af8c9a81ce0e8c8": [
     "windows-apps-src\\debug-test-perf\\device-portal-desktop.md"
   ],
   "08f7e5060f85f2130ef80d3f500182bd1407581c": [
-    "windows-apps-src\\debug-test-perf\\device-portal-desktop.md",
-    "windows-apps-src\\debug-test-perf\\device-portal-desktop_BASE_11900.md"
+    "windows-apps-src\\debug-test-perf\\device-portal-desktop.md"
   ],
   "9021ca85f188d8f41fd297a873915709c9b2708c": [
-    "windows-apps-src\\debug-test-perf\\device-portal-desktop.md",
-    "windows-apps-src\\debug-test-perf\\device-portal-desktop_LOCAL_11900.md"
+    "windows-apps-src\\debug-test-perf\\device-portal-desktop.md"
   ],
   "bd1ae8ccdd81f319fc36ca04b8b839cb313b2854": [
     "windows-apps-src\\debug-test-perf\\device-portal-hololens.md"
@@ -6193,8 +6190,5 @@
   ],
   "6b5ef763c41af65aecf02aaa550b84a3d524d25f": [
     "windows-apps-src\\xbox-apps\\system-resource-allocation.md"
-  ],
-  "f5fb0d2d70a50aa3b993b0dab56ce60e7e5b2711": [
-    "windows-apps-src\\debug-test-perf\\device-portal-desktop_REMOTE_11900.md"
   ]
 }
