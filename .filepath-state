@@ -5456,6 +5456,9 @@
   "38d0af2cdbf4137cbd0e005fcb750ed2f0b2c87c": [
     "windows-apps-src\\security\\common-cryptography-tasks.md"
   ],
+  "18102d6277ff1c66ebd147b5c1fd2f2d6c91edd1": [
+    "windows-apps-src\\security\\companion-device-unlock.md"
+  ],
   "8b14f1f92837d560924ebd1540a56c67ad9d33b5": [
     "windows-apps-src\\security\\companion-device-unlock.md"
   ],
