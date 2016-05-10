@@ -1,44 +1,43 @@
 ---
+author: scottmill
 ms.assetid: 03dd256f-78c0-e1b1-3d9f-7b3afab29b2f
-title: コンポジションのブラシ
-description: ブラシは、その出力で Visual の領域を塗りつぶします。 さまざまなブラシで、出力の種類もさまざまです。
+title: Composition brushes
+description: A brush paints the area of a Visual with its output. Different brushes have different types of output.
 ---
-# コンポジションのブラシ
+# Composition brushes
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-ブラシは、その出力で [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) の領域を塗りつぶします。 さまざまなブラシで、出力の種類もさまざまです。 コンポジション API には、次の 3 種類のブラシが用意されています。
+A brush paints the area of a [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) with its output. Different brushes have different types of output. The Composition API provides three brush types:
 
--   [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399) はビジュアルを単色で塗りつぶします。
--   [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) はビジュアルをコンポジション サーフェスの内容で塗りつぶします。
--   [**CompositionEffectBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589406) はビジュアルをコンポジション効果の内容で塗りつぶします。
+-   [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399) paints a visual with a solid color
+-   [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) paints a visual with the contents of a composition surface
+-   [**CompositionEffectBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589406) paints a visual with the contents of a composition effect
 
-すべてのブラシは [**CompositionBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589398) を継承します。ブラシは、[**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) によって直接的または間接的に作成され、デバイスに依存しないリソースです。 ブラシはデバイスに依存しませんが、[**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) と [**CompositionEffectBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589406) は、デバイスに依存するコンポジション サーフェスの内容で [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) を塗りつぶします。
+All brushes inherit from [**CompositionBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589398); they are created directly or indirectly by the [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) and are device-independent resources. Although brushes are device-independent, [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) and [**CompositionEffectBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589406) paint a [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) with contents from a composition surface which are device-dependent.
 
--   [必要条件](./composition-brushes.md#prerequisites)
--   [色の基本](./composition-brushes.md#color-basics)
-    -   [アルファ モード](./composition-brushes.md#alpha-modes)
--   [色ブラシの使用](./composition-brushes.md#using-color-brush)
--   [サーフェス ブラシの使用](./composition-brushes.md#using-surface-brush)
--   [ストレッチと整列の構成](./composition-brushes.md#configuring-stretch-and-alignment)
+-   [Prerequisites](./composition-brushes.md#prerequisites)
+-   [Color Basics](./composition-brushes.md#color-basics)
+    -   [Alpha Modes](./composition-brushes.md#alpha-modes)
+-   [Using Color Brush](./composition-brushes.md#using-color-brush)
+-   [Using Surface Brush](./composition-brushes.md#using-surface-brush)
+-   [Configuring Stretch and Alignment](./composition-brushes.md#configuring-stretch-and-alignment)
 
-## 必要条件
+## Prerequisites
 
-この概要では、「[コンポジション UI](visual-layer.md)」で説明されているように、基本的なコンポジション アプリケーションの構造を理解していることを前提としています。
+This overview assumes that you are familiar with the structure of a basic Composition application, as described in [Composition UI](visual-layer.md).
 
-## 色の基本
+## Color Basics
 
-[
-            **CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399) を使って塗りつぶす前に、色を選択する必要があります。 コンポジション API では、Windows ランタイムの構造体 Color を使って色を表します。 Color 構造体では、sRGB エンコーディングを使用します。 sRGB エンコードは、色をアルファ、赤、緑、青の 4 つのチャンネルに分割します。 各コンポーネントは、浮動小数点値の、通常は 0.0 ～ 1.0 の範囲で表されます。 値が 0.0 の場合はその色がまったく含まれないことを意味し、値が 1.0 の場合はその色が完全に表示されていることを意味します。 アルファ コンポーネントの場合、0.0 は完全に透明な色を表し、1.0 は完全に不透明な色を表します。
+Before you paint with a [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399), you need to choose colors. The Composition API uses the Windows Runtime structure, Color, to represent a color. The Color structure uses sRGB encoding. sRGB encoding divides colors into four channels: alpha, red, green, and blue. Each component is represented by a floating point value with a normal range of 0.0 to 1.0. A value of 0.0 indicates the complete absence of that color, while a value of 1.0 indicates that the color is fully present. For the alpha component, 0.0 represents a fully transparent color and 1.0 represents a fully opaque color.
 
-### アルファ モード
+### Alpha Modes
 
-[
-            **CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399) の色の値は、常にストレート アルファとして解釈されます。
+Color values in [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399) are always interpreted as straight alpha.
 
-## 色ブラシの使用
+## Using Color Brush
 
-色ブラシを作成するには、Compositor.[**CreateColorBrush**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositor.createcolorbrush.aspx) メソッドを呼び出します。このメソッドは [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399) を返します。 **CompositionColorBrush** の既定の色は \#00000000 です。 次の図とコードは、黒の色ブラシで描かれた四角形を、色の値が 0x9ACD32 である単色ブラシで塗りつぶす小規模なビジュアル ツリーを示しています。
+To create a color brush, call the Compositor.[**CreateColorBrush**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositor.createcolorbrush.aspx) method, which returns a [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399). The default color for **CompositionColorBrush** is \#00000000. The following illustration and code shows a small visual tree to create a rectangle that is stroked with a black color brush and painted with a solid color brush that has the color value of 0x9ACD32.
 
 ![CompositionColorBrush](images/composition-compositioncolorbrush.png)
 ```cs
@@ -63,22 +62,21 @@ Visual2.Size = new Vector2(150, 150);
 Visual2.Offset = new Vector3(3, 3, 0);
 ```
 
-他のブラシとは異なり、[**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399) の作成は比較的安価な操作です。 毎回ほとんどまたはまったくパフォーマンスに影響を与えずに、**CompositionColorBrush** オブジェクトを作成できます。
+Unlike other brushes, creating a [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399) is a relatively inexpensive operation. You may create **CompositionColorBrush** objects each time you render with little to no performance impact.
 
-## サーフェス ブラシの使用
+## Using Surface Brush
 
-[
-            **CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) は、コンポジション サーフェス ([**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) オブジェクトで表される) を使ってビジュアルを塗りつぶします。 次の図は、D2D を使って **ICompositionSurface** にレンダリングされたリコリスのビットマップで塗りつぶされた正方形のビジュアルを示しています。
+A [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) paints a visual with a composition surface (represented by a [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) object). The following illustration shows a square visual painted with a bitmap of licorice rendered onto a **ICompositionSurface** using D2D.
 
 ![CompositionSurfaceBrush](images/composition-compositionsurfacebrush.png)
-最初の例では、ブラシで使用するためのコンポジション サーフェスを初期化します。 コンポジション サーフェスは、[**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) と Url を文字列として受け取るヘルパー メソッド LoadImage を使って作成されます。 このヘルパー メソッドは、Url から画像を読み込み、画像を [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) にレンダリングして、そのサーフェスを **CompositionSurfaceBrush** の内容として設定します。 **ICompositionSurface** はネイティブ コードでのみ公開されるため、LoadImage メソッドはネイティブ コードで実装されていることに注意してください。
+The first example initializes a composition surface for use with the brush. The composition surface is created using a helper method, LoadImage that takes in a [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) and a Url as a string. It loads the image from the Url, renders the image onto a [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) and sets the surface as content of the **CompositionSurfaceBrush**. Note, **ICompositionSurface** is exposed in Native code only, hence LoadImage method is implemented in native code.
 
 ```cs
 LoadImage(Brush,
           "ms-appx:///Assets/liqorice.png");
 ```
 
-サーフェス ブラシを作成するには、Compositor.[**CreateSurfaceBrush**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositor.createsurfacebrush.aspx) メソッドを呼び出します。 このメソッドは、[**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) オブジェクトを返します。 次のコードは、**CompositionSurfaceBrush** の内容を使ってビジュアルを塗りつぶすために使用できるコードを示しています。
+To create the surface brush, call the Compositor.[**CreateSurfaceBrush**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositor.createsurfacebrush.aspx) method. The method returns a [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) object. The code below illustrates the code that can be used to paint a visual with contents of a **CompositionSurfaceBrush**.
 
 ```cs
 Compositor _compositor;
@@ -91,31 +89,24 @@ LoadImage(_surfaceBrush, "ms-appx:///Assets/liqorice.png");
 visual.Brush = _surfaceBrush;
 ```
 
-## ストレッチと整列の構成
+## Configuring Stretch and Alignment
 
-[
-            **CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) 用の [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) の内容が、描画されるビジュアルの領域を満たさない場合があります。 この場合、コンポジション API はブラシの [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx)、[**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio)、および [**Stretch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.stretch) モードの設定を使って、残りの領域を塗りつぶす方法を決定します。
+Sometimes, the contents of the [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) for a [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) doesn’t completely fill the areas of the visual that is being painted. When this happens, the Composition API uses the brush’s [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx), [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) and [**Stretch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.stretch) mode settings to determine how to fill the remaining area.
 
--   [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx) と [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) は float 型であり、ビジュアルの境界内でのブラシの配置を制御するために使用できます。
-    -   値 0.0 は、ブラシの左上隅をビジュアルの左上隅に整列します。
-    -   値 0.5 は、ブラシの中央をビジュアルの中央に整列します。
-    -   値 1.0 は、ブラシの右下隅をビジュアルの右下隅に整列します。
--   [
-            **Stretch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.stretch) プロパティには、[**CompositionStretch**](https://msdn.microsoft.com/library/windows/apps/Dn706786) 列挙体で定義されている次の値を指定します。
-    -   None: ブラシは拡大されず、ビジュアルの領域全体が塗りつぶされません。 この Stretch の設定には注意してください。ブラシがビジュアルの領域よりも大きい場合、ブラシの内容はクリップされます。 ビジュアルの領域を塗りつぶすために使用するブラシの部分は、[**HorizontalAlignmentRatio**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx) プロパティと [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) プロパティを使って制御できます。
-    -   Uniform: ブラシはビジュアルの領域に合わせて拡大縮小されます。ブラシの縦横比は維持されます。 これは既定値です。
-    -   UniformToFill: ブラシはビジュアルの領域が完全に塗りつぶされるように拡大縮小されます。ブラシの縦横比は維持されます。
-    -   Fill: ブラシはビジュアルの領域に合わせて拡大縮小されます。 ブラシの高さと幅は個々に拡大縮小されるため、ブラシの元の縦横比は維持されません。 つまり、ビジュアルの領域を完全に塗りつぶすために、ブラシがゆがむことがあります。
+-   [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx) and [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) are of type float and can be used to control the positioning of the brush inside the visual bounds.
+    -   Value 0.0 aligns the left/top corner of the brush with the left/top corner of the visual
+    -   Value of 0.5 aligns the center of the brush with the center of the visual
+    -   Value of 1.0 aligns the right/bottom corner of the brush with the right/bottom corner of the visual
+-   The [**Stretch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.stretch) property accepts these values, which the [**CompositionStretch**](https://msdn.microsoft.com/library/windows/apps/Dn706786) enumeration defines:
+    -   None: The brush doesn't stretch to fill the visual bounds. Be careful with this Stretch setting: if the brush is larger than the visual bounds, the contents of the brush will be clipped. The portion of brush used to paint the visual bounds can be controlled by using the [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx) and [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) properties.
+    -   Uniform: The brush is scaled to fit the visual bounds; the aspect ratio of the brush is preserved. This is the default value.
+    -   UniformToFill: The brush is scaled so that it completely fills the visual bounds; the aspect ratio of the brush is preserved.
+    -   Fill: The brush is scaled to fit the visual bounds. Because the brush’s height and width are scaled independently, the original aspect ratio of the brush might not be preserved. That is, the brush might be distorted to completely fill the visual bounds.
 
- 
+ 
 
- 
+ 
 
 
-
-
-
-
-<!--HONumber=Mar16_HO1-->
 
 

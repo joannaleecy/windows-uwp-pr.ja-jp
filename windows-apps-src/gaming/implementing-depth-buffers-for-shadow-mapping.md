@@ -1,15 +1,16 @@
 ---
-title: チュートリアル: Direct3D 11 の深度バッファーを使ったシャドウ ボリュームの実装
-description: このチュートリアルでは、すべての Direct3D 機能レベルのデバイスで Direct3D 11 を使い、深度マップを利用してシャドウ ボリュームをレンダリングする方法について説明します。
+author: mtoepke
+title: Walkthrough-- Implement shadow volumes using depth buffers in Direct3D 11
+description: This walkthrough demonstrates how to render shadow volumes using depth maps, using Direct3D 11 on devices of all Direct3D feature levels.
 ms.assetid: d15e6501-1a1d-d99c-d1d8-ad79b849db90
 ---
 
-# チュートリアル: Direct3D 11 の深度バッファーを使ったシャドウ ボリュームの実装
+# Walkthrough: Implement shadow volumes using depth buffers in Direct3D 11
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-このチュートリアルでは、すべての Direct3D 機能レベルのデバイスで Direct3D 11 を使い、深度マップを利用してシャドウ ボリュームをレンダリングする方法について説明します。
+This walkthrough demonstrates how to render shadow volumes using depth maps, using Direct3D 11 on devices of all Direct3D feature levels.
 ## 
 <table>
 <colgroup>
@@ -18,72 +19,67 @@ ms.assetid: d15e6501-1a1d-d99c-d1d8-ad79b849db90
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">トピック</th>
-<th align="left">説明</th>
+<th align="left">Topic</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>[Create depth buffer device resources](create-depth-buffer-resource--view--and-sampler-state.md)</p></td>
-<td align="left"><p>シャドウ ボリュームの深度のテストをサポートするために必要な Direct3D デバイス リソースを作成する方法について説明します。</p></td>
+<td align="left"><p>Learn how to create the Direct3D device resources necessary to support depth testing for shadow volumes.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Render the shadow map to the depth buffer](render-the-shadow-map-to-the-depth-buffer.md)</p></td>
-<td align="left"><p>ライトの視点からレンダリングして、シャドウ ボリュームを表す 2 次元の深度マップを作成します。</p></td>
+<td align="left"><p>Render from the point of view of the light to create a two-dimensional depth map representing the shadow volume.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[Render the scene with depth testing](render-the-scene-with-depth-testing.md)</p></td>
-<td align="left"><p>シャドウ効果を作成するには、頂点 (またはジオメトリ) シェーダーとピクセル シェーダーに深度のテストを追加します。</p></td>
+<td align="left"><p>Create a shadow effect by adding depth testing to your vertex (or geometry) shader and your pixel shader.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Support shadow maps on a range of hardware](target-a-range-of-hardware.md)</p></td>
-<td align="left"><p>より高速なデバイスでは高品質なシャドウを、性能が低いデバイスではよりすばやいシャドウをレンダリングします。</p></td>
+<td align="left"><p>Render higher-fidelity shadows on faster devices and faster shadows on less powerful devices.</p></td>
 </tr>
 </tbody>
 </table>
 
- 
+ 
 
-## Direct3D 9 デスクトップに対するシャドウ マップの適用の移植
-
-
-Windows 8 で、機能レベル 9\_1 と 9\_3 に深度の比較機能が追加されました。 シャドウ ボリュームを含むレンダリング コードを DirectX 11 に移行できるようになりました。Direct3D 11 レンダラーは機能レベル 9 のデバイスと下位互換性を持ちます。 このチュートリアルでは、Direct3D 11 のアプリやゲームで深度のテストを使って従来のシャドウ ボリュームを実装する方法を説明します。 コードは次のプロセスに対応しています。
-
-1.  シャドウ マッピング用の Direct3D デバイス リソースを作成する。
-2.  レンダリング パスを追加して深度マップを作成する。
-3.  深度のテストをメイン レンダリング パスに渡す。
-4.  必要なシェーダー コードを実行する。
-5.  下位レベル ハードウェアでのレンダリングを高速化するためのオプション。
-
-このチュートリアルを終了すると、機能レベル 9\_1 以上と互換性のある Direct3D 11 で互換性のある基本的なシャドウ ボリュームの手法を実装する方法を理解できます。
-
-## 前提条件
+## Shadow mapping application to Direct3D 9 desktop porting
 
 
-[ユニバーサル Windows プラットフォーム (UWP) DirectX ゲームの開発環境を準備する](prepare-your-dev-environment-for-windows-store-directx-game-development.md)必要があります。 テンプレートはまだ必要ありませんが、このチュートリアルのコード サンプルをビルドするために Microsoft Visual Studio 2015 が必要です。
+Windows 8 adde d depth comparison functionality to feature level 9\_1 and 9\_3. Now you can migrate rendering code with shadow volumes to DirectX 11, and the Direct3D 11 renderer will be downlevel compatible with feature level 9 devices. This walkthrough shows how any Direct3D 11 app or game can implement traditional shadow volumes using depth testing. The code covers the following process:
 
-## 関連トピック
+1.  Creating Direct3D device resources for shadow mapping.
+2.  Adding a rendering pass to create the depth map.
+3.  Adding depth testing to the main rendering pass.
+4.  Implementing the necessary shader code.
+5.  Options for fast rendering on downlevel hardware.
+
+Upon completing this walkthrough, you should be familiar with how to implement a basic compatible shadow volume technique in Direct3D 11 that's compatible with feature level 9\_1 and above.
+
+## Prerequisites
+
+
+You should [Prepare your dev environment for Universal Windows Platform (UWP) DirectX game development](prepare-your-dev-environment-for-windows-store-directx-game-development.md). You don't need a template yet, but you'll need Microsoft Visual Studio 2015 to build the code sample for this walkthrough.
+
+## Related topics
 
 
 **Direct3D**
 
-* [Direct3D 9 での HLSL シェーダーの記述](https://msdn.microsoft.com/library/windows/desktop/bb944006)
-* [テンプレートからの DirectX ゲーム プロジェクトの作成](user-interface.md)
+* [Writing HLSL Shaders in Direct3D 9](https://msdn.microsoft.com/library/windows/desktop/bb944006)
+* [Create a new DirectX 11 project for UWP](user-interface.md)
 
-**シャドウ マッピングに関する技術記事**
+**Shadow mapping technical articles**
 
-* [シャドウ深度マップを向上させるための一般的な方法](https://msdn.microsoft.com/library/windows/desktop/ee416324)
-* [カスケードされたシャドウ マップ](https://msdn.microsoft.com/library/windows/desktop/ee416307)
+* [Common Techniques to Improve Shadow Depth Maps](https://msdn.microsoft.com/library/windows/desktop/ee416324)
+* [Cascaded Shadow Maps](https://msdn.microsoft.com/library/windows/desktop/ee416307)
 
- 
+ 
 
- 
-
-
+ 
 
 
-
-
-<!--HONumber=Mar16_HO1-->
 
 

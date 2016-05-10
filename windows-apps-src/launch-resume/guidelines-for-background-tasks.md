@@ -1,98 +1,93 @@
 ---
-title: バックグラウンド タスクのガイドライン
-description: アプリがバック グラウンド タスクを実行するための要件を満たしていることを確認します。
+author: mcleblanc
+title: Guidelines for background tasks
+description: Ensure your app meets the requirements for running background tasks.
 ms.assetid: 18FF1104-1F73-47E1-9C7B-E2AA036C18ED
 ---
 
-# バックグラウンド タスクのガイドライン
+# Guidelines for background tasks
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください。\]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-アプリがバック グラウンド タスクを実行するための要件を満たしていることを確認します。
+Ensure your app meets the requirements for running background tasks.
 
-## バックグラウンド タスクのガイダンス
-
-
-バックグラウンド タスクの開発時とアプリの公開前に、次のガイダンスについて検討します。
-
-**CPU の割り当て:  ** バックグラウンド タスクは、トリガーの種類に基づいて取得するウォールクロック時間の長さによって使用が制限されます。 ほとんどのトリガーは、使用時間がウォールクロック時間で 30 秒に制限されますが、負荷の高いタスクを完了するために最大 10 分実行できるトリガーもあります。 バッテリの寿命を長くし、フォアグラウンド アプリのユーザー エクスペリエンスを高めるため、バックグラウンド タスクは軽量にしてください。 バックグラウンド タスクに適用されるリソースの制約については、「[バックグラウンド タスクによるアプリのサポート](support-your-app-with-background-tasks.md)」をご覧ください。
-
-** バックグラウンド タスクを管理する:  ** アプリでは、登録済みのバックグラウンド タスクの一覧を取得し、進行状況ハンドラーと完了ハンドラーを登録して、各イベントを適切に処理する必要があります。 バックグラウンド タスク クラスでは、進行状況、キャンセル、完了を報告する必要があります。 詳しくは、「[取り消されたバックグラウンド タスクの処理](handle-a-cancelled-background-task.md)」と「[バックグラウンド タスクの進捗状況と完了の監視](monitor-background-task-progress-and-completion.md)」をご覧ください。
-
-**[**BackgroundTaskDeferral**](https://msdn.microsoft.com/library/windows/apps/hh700499) を使用する:  ** バックグラウンド タスク クラスで非同期コードを実行する場合は、保留を使ってください。 保留を使わない場合、[Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx) メソッドが完了したときに、バックグラウンド タスクが途中で終了する可能性があります。 詳しくは、「[バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)」をご覧ください。
-
-別の方法として、保留を 1 回要求し、**async/await** を使って、非同期メソッドの呼び出しを完了させることもできます。 **await** メソッドを呼び出した後、保留を閉じます。
-
-** アプリケーション マニフェストを更新する:  ** アプリケーション マニフェストで、各バックグラウンド タスクと共に、バックグラウンド タスクで使うトリガーの種類を宣言します。 この宣言がないと、アプリでは実行時にバックグラウンド タスクを登録できません。 詳しくは、「[アプリケーション マニフェストでのバックグラウンド タスクの宣言](declare-background-tasks-in-the-application-manifest.md)」をご覧ください。
-
-** アプリの更新を準備する:  ** アプリを更新する場合は、フォアグラウンドでの実行以外のコンテキストで必要となるアプリの更新を実行できるように **ServicingComplete** バックグラウンド タスクを作り、登録します (「[**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839)」をご覧ください)。
-
-** バックグラウンド タスクを実行する要求:  **
-
-> **重要** Windows 10 以降、バック グラウンド タスクを実行するために、アプリをロック画面に配置する必要はなくなりました。
-
-ユニバーサル Windows プラットフォーム (UWP) アプリは、ロック画面にピン留めしなくても、サポートされているすべての種類のタスクを実行できます。 ただし、どの種類のバックグラウンド タスクを登録する場合でも、その前にアプリが [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) を呼び出す必要があります。 ユーザーがデバイス設定でバックグラウンド タスクに対するアプリのアクセス許可を明示的に拒否した場合、このメソッドは [**BackgroundAccessStatus.Denied**](https://msdn.microsoft.com/library/windows/apps/hh700439) を返します。
-## バックグラウンド タスクのチェック リスト
+## Background task guidance
 
 
-すべてのバックグラウンド タスクに次のチェック リストが適用されます。
+Consider the following guidance when developing your background task, and before publishing your app.
 
--   バックグラウンド タスクを適切なトリガーに関連付けます。
--   条件を追加して、バックグラウンド タスクが適切に実行されるようにします。
--   バックグラウンド タスクの進行、完了、取り消しを処理します。
--   バックグラウンド タスクでは、トースト、タイル、バッジの更新以外の UI は表示しません。
--   [Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx) メソッドでは、各非同期メソッド呼び出しに対して保留を要求し、メソッドが終了した時点で閉じます。 または、**async/await** で保留を 1 回使用します。
--   固定ストレージを使って、バックグラウンド タスクとアプリ間でデータを共有します。
--   アプリケーション マニフェストで、各バックグラウンド タスクと共に、バックグラウンド タスクで使うトリガーの種類を宣言します。 エントリ ポイントとトリガーの種類が正しいことを確認します。
--   バックグラウンド タスクの存続期間は短くします。 バックグラウンド タスクに使用できる時間は、ウォールクロック時間で 30 秒間に制限されています。
--   バックグラウンド タスクでのユーザー操作に依存することはできません。
--   アプリ起動時にバックグラウンド タスクを再登録します。 これにより、初めてアプリを起動したときにそれらが登録されるようになります。 また、ユーザーがバックグラウンド タスク実行機能を無効にしたかどうかを検出する方法も提供されます (登録に失敗した場合)。
--   アプリと同じコンテキストで実行する必要があるトリガー ([**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) など) を使う場合を除き、マニフェストでは Executable 要素を指定しないでください。
--   バックグラウンド タスクの登録エラーを確認します。 必要に応じて、別のパラメーター値でバックグラウンド タスクをもう一度登録してみます。
--   デスクトップ以外のすべてのデバイス ファミリでは、デバイスのメモリが少なくなった場合、バックグラウンド タスクが終了することがあります。 メモリ不足の例外が検出されないか、検出されてもアプリによって処理されない場合、バックグラウンド タスクは、警告や OnCanceled イベントの発生なしに終了します。 こうすることで、フォアグラウンドのアプリのユーザー エクスペリエンスが保証されます。 バックグラウンド タスクは、このシナリオを処理できるように設計する必要があります。
+**CPU quotas:  **Background tasks are limited by the amount of wall-clock usage time they get based on trigger type. Most triggers are limited to 30 seconds of wall-clock usage, while some have the ability to run up to 10 minutes in order to complete intensive tasks. Background tasks should be lightweight to save battery life and provide a better user experience for foreground apps. See [Support your app with background tasks](support-your-app-with-background-tasks.md) for the resource constraints applied to background tasks.
 
-## Windows: ロック画面対応アプリのバックグラウンド タスクのチェック リスト
+**Manage background tasks:  **Your app should get a list of registered background tasks, register for progress and completion handlers, and handle those events appropriately. Your background task classes should report progress, cancellation, and completion. For more info see [Handle a cancelled background task](handle-a-cancelled-background-task.md), and [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md).
 
+**Use [**BackgroundTaskDeferral**](https://msdn.microsoft.com/library/windows/apps/hh700499):  **If your background task class runs asynchronous code, make sure to use deferrals. Otherwise your background task may be terminated prematurely when the [Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx) method completes. For more information, see [Create and register a background task](create-and-register-a-background-task.md).
 
-ロック画面に配置できるアプリのバックグラウンド タスクを開発する際は、このガイダンスに従ってください。 また、「[ロック画面のタイルのガイドラインとチェック リスト](https://msdn.microsoft.com/library/windows/apps/hh465403)」のガイダンスにも従ってください。
+Alternatively, request one deferral, and use **async/await** to complete asynchronous method calls. Close the deferral after the **await** method calls.
 
--   ロック画面対応として開発する前に、アプリをロック画面に配置する必要があるかどうかを確認します。 詳しくは、「[ロック画面の概要](https://msdn.microsoft.com/library/windows/apps/hh779720)」を参照してください。
+**Update the app manifest:  **Declare each background task in the application manifest, along with the type of triggers it is used with. Otherwise your app will not be able to register the background task at runtime. For more information, see [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md).
 
--   ロック画面に配置しなくてもアプリが動作することを確認します。
+**Prepare for app updates:  **If your app will be updated, create and register a **ServicingComplete** background task (see [**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839)) to help perform app updates that may be necessary outside the context of running in the foreground.
 
--   [
-            **PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543)、[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)、または [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) で登録されたバックグラウンド タスクを組み込み、このタスクをアプリ マニフェストで宣言します。 エントリ ポイントとトリガーの種類が正しいことを確認します。 これは、認定の際に必要になります。これにより、ユーザーはロック画面にアプリを配置することができます。
+**Request to execute background tasks:  **
 
-**注:**  
-この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
+> **Important**  Starting in Windows 10, apps are no longer required to be on the lock screen in order to run background tasks.
 
- 
-
-## 関連トピック
-
-* [バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)
-* [アプリケーション マニフェストでのバックグラウンド タスクの宣言](declare-background-tasks-in-the-application-manifest.md)
-* [取り消されたバックグラウンド タスクの処理](handle-a-cancelled-background-task.md)
-* [バックグラウンド タスクの進捗状況と完了の監視](monitor-background-task-progress-and-completion.md)
-* [バックグラウンド タスクの登録](register-a-background-task.md)
-* [バックグラウンド タスクによるシステム イベントへの応答](respond-to-system-events-with-background-tasks.md)
-* [バックグラウンド タスクを実行するための条件の設定](set-conditions-for-running-a-background-task.md)
-* [バックグラウンド タスクのライブ タイルの更新](update-a-live-tile-from-a-background-task.md)
-* [メンテナンス トリガーの使用](use-a-maintenance-trigger.md)
-* [タイマーでのバックグラウンド タスクの実行](run-a-background-task-on-a-timer-.md)
-* [バックグラウンド タスクのデバッグ](debug-a-background-task.md)
-* [Windows ストア アプリで一時停止イベント、再開イベント、バックグラウンド イベントをトリガーする方法 (デバッグ時)](http://go.microsoft.com/fwlink/p/?linkid=254345)
-
- 
-
- 
+Universal Windows Platform (UWP) apps can run all supported task types without being pinned to the lock screen. However, apps must call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) before registering any type of background task. This method will return [**BackgroundAccessStatus.Denied**](https://msdn.microsoft.com/library/windows/apps/hh700439) if the user has explicitly denied background task permissions for your app in the device's settings.
+## Background task checklist
 
 
+The following checklist applies to all background tasks.
+
+-   Associate your background task with the correct trigger.
+-   Add conditions to help ensure your background task runs successfully.
+-   Handle background task progress, completion, and cancellation.
+-   Do not display UI other than toasts, tiles, and badge updates from the background task.
+-   In the [Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx) method, request deferrals for each asynchronous method call, and close them when the method is done. Or, use one deferral with **async/await**.
+-   Use persistent storage to share data between the background task and the app.
+-   Declare each background task in the application manifest, along with the type of triggers it is used with. Make sure the entry point and trigger types are correct.
+-   Write background tasks that are short-lived. Background tasks are limited to 30 seconds of wall-clock usage.
+-   Do not rely on user interaction in background tasks.
+-   Re-register your background tasks during app launch. This ensures that they are registered the first time the app is launched. It also provides a way to detect whether the user has disabled your app's background execution capabilities (in the event registration fails).
+-   Do not specify an Executable element in the manifest unless you are using a trigger that should be run in the same context as the app (such as the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)).
+-   Check for background task registration errors. If appropriate, attempt to register the background task again with different parameter values.
+-   For all device families except desktop, if the device becomes low on memory, background tasks may be terminated. If an out of memory exception is not surfaced, or the app does not handle it, then the background task will be terminated without warning and without raising the OnCanceled event. This helps to ensure the user experience of the app in the foreground. Your background task should be designed to handle this scenario.
+
+## Windows: Background task checklist for lock screen-capable apps
 
 
+Follow this guidance when developing background tasks for apps that are capable of being on the lock screen. Follow the guidance in [Guidelines and checklist for lock screen tiles](https://msdn.microsoft.com/library/windows/apps/hh465403).
 
-<!--HONumber=Mar16_HO1-->
+-   Make sure your app needs to be on the lock screen before developing it as lock screen-capable. For more info see [Lock screen overview](https://msdn.microsoft.com/library/windows/apps/hh779720).
+
+-   Make sure your app will still work without being on the lock screen.
+
+-   Include a background task registered with [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543), [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032), or [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) and declare it in the app manifest. Make sure the entry point and trigger types are correct. This is required for certification, and enables the user to place the app on the lock screen.
+
+**Note**  
+This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
+
+ 
+
+## Related topics
+
+* [Create and register a background task](create-and-register-a-background-task.md)
+* [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md)
+* [Handle a cancelled background task](handle-a-cancelled-background-task.md)
+* [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)
+* [Register a background task](register-a-background-task.md)
+* [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md)
+* [Set conditions for running a background task](set-conditions-for-running-a-background-task.md)
+* [Update a live tile from a background task](update-a-live-tile-from-a-background-task.md)
+* [Use a maintenance trigger](use-a-maintenance-trigger.md)
+* [Run a background task on a timer](run-a-background-task-on-a-timer-.md)
+* [Debug a background task](debug-a-background-task.md)
+* [How to trigger suspend, resume, and background events in Windows Store apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+
+ 
+
+ 
+
 
 

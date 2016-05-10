@@ -1,56 +1,53 @@
 ---
-title: 地図へのルートとルート案内の表示
-description: ルートとルート案内を要求し、アプリで表示します。
+author: PatrickFarley
+title: Display routes and directions on a map
+description: Request routes and directions, and display them in your app.
 ms.assetid: BBB4C23A-8F10-41D1-81EA-271BE01AED81
 ---
 
-# 地図へのルートとルート案内の表示
+# Display routes and directions on a map
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-ルートとルート案内を要求し、アプリで表示します。
+Request routes and directions, and display them in your app.
 
-**ヒント** アプリで地図を使う方法について詳しくは、GitHub の [Windows-universal-samples リポジトリ](http://go.microsoft.com/fwlink/p/?LinkId=619979)から次のサンプルをダウンロードしてください。
+**Tip** To learn more about using maps in your app, download the following sample from the [Windows-universal-samples repo](http://go.microsoft.com/fwlink/p/?LinkId=619979) on GitHub.
 
--   [ユニバーサル Windows プラットフォーム (UWP) の地図サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [Universal Windows Platform (UWP) map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 
-**ヒント**  地図表示がアプリの主要機能ではない場合は、代わりに Windows マップ アプリを起動することを検討します。 `bingmaps:`、`ms-drive-to:`、`ms-walk-to:` の各 UI スキームを使って、Windows マップ アプリを起動し、特定の地図やターン バイ ターン方式のルート案内を表示することができます。 詳しくは、「[Windows マップ アプリの起動](https://msdn.microsoft.com/library/windows/apps/mt228341)」をご覧ください。
+**Tip**  If mapping isn't a core feature of your app, consider launching the Windows Maps app instead. You can use the `bingmaps:`, `ms-drive-to:`, and `ms-walk-to:` URI schemes to launch the Windows Maps app to specific maps and turn-by-turn directions. For more info, see [Launch the Windows Maps app](https://msdn.microsoft.com/library/windows/apps/mt228341).
 
- 
+ 
 
-## MapRouteFinder 結果の概要
-
-
-ルートとルート案内のクラスがどのように関連するかを次に示します。
-
--   [
-            **MapRouteFinder**](https://msdn.microsoft.com/library/windows/apps/dn636938) クラスには、ルートとルート案内を取得するメソッドがあります。
--   これらのメソッドは、[**MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939) を返します。
--   [
-            **MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939) には [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) オブジェクトが含まれています。 **MapRouteFinderResult** の [**Route**](https://msdn.microsoft.com/library/windows/apps/dn636940) プロパティを通じてこのオブジェクトにアクセスします。
--   [
-            **MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) には、[**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955) オブジェクトのコレクションが含まれています。 **MapRoute** の [**Legs**](https://msdn.microsoft.com/library/windows/apps/dn636973) プロパティを通じてこのコレクションにアクセスします。
--   各 [**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955) には、[**MapRouteManeuver**](https://msdn.microsoft.com/library/windows/apps/dn636961) オブジェクトのコレクションが含まれています。 **MapRouteLeg** の [**Maneuvers**](https://msdn.microsoft.com/library/windows/apps/dn636959) プロパティを通じてこのコレクションにアクセスします。
-
-## ルート案内の表示
+## An intro to MapRouteFinder results
 
 
-自動車ルートや徒歩ルート、ルート案内を取得するには、[**MapRouteFinder**](https://msdn.microsoft.com/library/windows/apps/dn636938) クラスのメソッド ([**GetDrivingRouteAsync**](https://msdn.microsoft.com/library/windows/apps/dn636943)、[**GetWalkingRouteAsync**](https://msdn.microsoft.com/library/windows/apps/dn636953) など) を呼び出します。 [
-            **MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939) オブジェクトには [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) オブジェクトが含まれており、[**Route**](https://msdn.microsoft.com/library/windows/apps/dn636940) プロパティを使ってアクセスできます。
+Here's how the classes for routes and directions are related:
 
-ルートを要求する場合は、次の指定を行うことができます。
+-   The [**MapRouteFinder**](https://msdn.microsoft.com/library/windows/apps/dn636938) class has methods that get routes and directions.
+-   These methods return a [**MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939).
+-   The [**MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939) contains a [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) object. Access this object through the [**Route**](https://msdn.microsoft.com/library/windows/apps/dn636940) property of the **MapRouteFinderResult**.
+-   The [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) contains a collection of [**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955) objects. Access this collection through the [**Legs**](https://msdn.microsoft.com/library/windows/apps/dn636973) property of the **MapRoute**.
+-   Each [**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955) contains a collection of [**MapRouteManeuver**](https://msdn.microsoft.com/library/windows/apps/dn636961) objects. Access this collection through the [**Maneuvers**](https://msdn.microsoft.com/library/windows/apps/dn636959) property of the **MapRouteLeg**.
 
--   始点と終点のみを指定するか、ルートを計算する一連の中間点を指定できます。
--   最適化を指定できます。たとえば、距離を最小にします。
--   制限を指定できます。たとえば、高速道路を回避できます。
+## Display directions
 
-計算された [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) には、ルートの移動にかかる時間、ルートの距離、およびルートの区間を含む [**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955) オブジェクトのコレクションを提供するプロパティがあります。 各 **MapRouteLeg** オブジェクトには、[**MapRouteManeuver**](https://msdn.microsoft.com/library/windows/apps/dn636961) オブジェクトのコレクションが含まれています。 **MapRouteManeuver** オブジェクトにはルート案内が含まれており、[**InstructionText**](https://msdn.microsoft.com/library/windows/apps/dn636964) プロパティを使ってアクセスできます。
 
-**重要**  マップ サービスを使用する前に、マップ認証キーを指定する必要があります。 詳しくは、「[マップ認証キーの要求](authentication-key.md)」をご覧ください。
+Get a driving or walking route and directions by calling the methods of the [**MapRouteFinder**](https://msdn.microsoft.com/library/windows/apps/dn636938) class—for example, [**GetDrivingRouteAsync**](https://msdn.microsoft.com/library/windows/apps/dn636943) or [**GetWalkingRouteAsync**](https://msdn.microsoft.com/library/windows/apps/dn636953). The [**MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939) object contains a [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) object that you can access through its [**Route**](https://msdn.microsoft.com/library/windows/apps/dn636940) property.
 
- 
+When you request a route, you can specify the following things:
+
+-   You can provide a start point and end point only, or you can provide a series of waypoints to compute the route.
+-   You can specify optimizations - for example, minimize the distance.
+-   You can specify restrictions - for example, avoid highways.
+
+The computed [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) has properties that provide the time to traverse the route, the length of the route, and the collection of [**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955) objects that contain the legs of the route. Each **MapRouteLeg** object contains a collection of [**MapRouteManeuver**](https://msdn.microsoft.com/library/windows/apps/dn636961) objects. The **MapRouteManeuver** object contains directions that you can access through its [**InstructionText**](https://msdn.microsoft.com/library/windows/apps/dn636964) property.
+
+**Important**  You must specify a maps authentication key before you can use map services. For more info, see [Request a maps authentication key](authentication-key.md).
+
+ 
 
 ```csharp
 using System;
@@ -107,7 +104,7 @@ private async void button_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-この例では、`tbOutputText` テキスト ボックスに次の結果が表示されます。
+This example displays the following results to the `tbOutputText` text box.
 
 ``` syntax
 Total estimated time (minutes) = 18.4833333333333
@@ -125,15 +122,14 @@ Turn right onto James St.
 You have reached your destination.
 ```
 
-## ルートの表示
+## Display routes
 
 
-[
-            **MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) に [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) を表示するには、**MapRoute** を使って [**MapRouteView**](https://msdn.microsoft.com/library/windows/apps/dn637122) を構成します。 次に、**MapControl** の [**Routes**](https://msdn.microsoft.com/library/windows/apps/dn637047) コレクションに **MapRouteView** を追加します。
+To display a [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) on a [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004), construct a [**MapRouteView**](https://msdn.microsoft.com/library/windows/apps/dn637122) with the **MapRoute**. Then, add the **MapRouteView** to the [**Routes**](https://msdn.microsoft.com/library/windows/apps/dn637047) collection of the **MapControl**.
 
-**重要**  マップ サービスまたはマップ コントロールを使用する前に、マップ認証キーを指定する必要があります。 詳しくは、「[マップ認証キーの要求](authentication-key.md)」をご覧ください。
+**Important**  You must specify a maps authentication key before you can use map services or the map control. For more info, see [Request a maps authentication key](authentication-key.md).
 
- 
+ 
 
 ```csharp
 using System;
@@ -180,20 +176,15 @@ private async void ShowRouteOnMap()
 }
 ```
 
-この例では、**MapWithRoute** という名前の [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) に次のルートが表示されます。
+This example displays the following on a [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) named **MapWithRoute**.
 
-![ルートが表示されたマップ コントロール。](images/routeonmap.png)
+![map control with route displayed.](images/routeonmap.png)
 
-## 関連トピック
+## Related topics
 
 * [Bing Maps Developer Center](https://www.bingmapsportal.com/)
-* [UWP の地図サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [地図の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [Build 2015 のビデオ: Windows アプリでの電話、タブレット、PC で使用できるマップと位置情報の活用](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP の交通情報アプリのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=619982)
-
-
-
-<!--HONumber=Mar16_HO1-->
-
+* [UWP map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [Design guidelines for maps](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Build 2015 video: Leveraging Maps and Location Across Phone, Tablet, and PC in Your Windows Apps](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [UWP traffic app sample](http://go.microsoft.com/fwlink/p/?LinkId=619982)
 

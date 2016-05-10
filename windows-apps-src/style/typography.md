@@ -1,6 +1,7 @@
 ---
-Description: 言語の視覚的な表現として、文字体裁の主な役割は明確であることです。 スタイルによってその目的が邪魔されてはなりません。 ただし、文字体裁にはレイアウト コンポーネントとしての重要な役割もあり、そのデザインの密度と複雑さに強い影響を与え、そのデザインのユーザー エクスペリエンスにも影響します。 
-title: 文字体裁
+author: mijacobs
+Description: As the visual representation of language, typography’s main task is to be clear. Its style should never get in the way of that goal. But typography also has an important role as a layout component—with a powerful effect on the density and complexity of the design—and on the user’s experience of that design.
+title: Typography
 ms.assetid: ca35f78a-e4da-423d-9f5b-75896e0b8f82
 label: Typography
 template: detail.hbs
@@ -8,33 +9,33 @@ extraBodyClass: style-typography
 brief: As the visual representation of language, typography’s main task is to be clear. Its style should never get in the way of that goal. But typography also has an important role as a layout component—with a powerful effect on the density and complexity of the design—and on the user’s experience of that design.
 ---
 
-# UWP アプリの文字体裁
+# Typography for UWP apps
 
-言語の視覚的な表現として、文字体裁の主な役割は明確であることです。 スタイルによってその目的が邪魔されてはなりません。 ただし、文字体裁にはレイアウト コンポーネントとしての重要な役割もあり、そのデザインの密度と複雑さに強い影響を与え、そのデザインのユーザー エクスペリエンスにも影響します。
+As the visual representation of language, typography’s main task is to be clear. Its style should never get in the way of that goal. But typography also has an important role as a layout component—with a powerful effect on the density and complexity of the design—and on the user’s experience of that design.
 
-## 書体
+## Typeface
 
-すべての Microsoft デジタル デザインで使う書体として Segoe UI が選択されました。 Segoe UI には多くの文字が用意されており、さまざまなサイズとピクセル密度で最適な読みやすさが維持されるように設計されています。 システムのコンテンツを補完する、きれいで明るくオープンな美しさを備えています。
+We’ve selected Segoe UI for use on all Microsoft digital designs. Segoe UI provides a wide range of characters and is designed to maintain optimal legibility across sizes and pixel densities. It offers a clean, light, and open aesthetic that complements the content of the system.
 
-![Segoe UI フォントのサンプル テキスト](images/segoe-sample.png)
+![Sample text of Segoe UI font](images/segoe-sample.png)
 
-## 太さ
+## Weights
 
-Microsoft では、シンプルさと効率性を考慮に入れて文字体裁に取り組んでいます。 1 つの書体、最小限の太さとサイズ、明確な階層構造を使うことを選択しました。 配置と位置合わせは、各言語の既定のスタイルに従います。 英語では、文字が左から右、上から下へと進みます。 テキストと画像の関係は、明確で直接的です。
+We approach typography with an eye to simplicity and efficiency. We choose to use one typeface, a minimum of weights and sizes, and a clear hierarchy. Positioning and alignment follow the default style for the given language. In English the sequence runs left to right, top to bottom. Relationships between text and images are clear and straightforward.
 
-![サポートされるフォントの太さを示します。 ライト、セミ ライト、レギュラー、セミ ボールド、ボールド](images/weights.png)
+![Shows supported font weights. Light, semilight, regular, semibold, and bold](images/weights.png)
 
-## 行間
+## Line spacing
 
-![行間 125% の例](images/line-spacing.png)
+![Example of line spacing at 125%](images/line-spacing.png)
 
-行間はフォント サイズの 125% で計算し、必要に応じて 4 の倍数の近似値に丸めてください。 たとえば 15 ピクセルの Segoe UI の場合、15 ピクセルの 125% は 18.75 ピクセルです。 4 ピクセル グリッドが維持されるように、行の高さを 20 ピクセルに切り上げて設定することをお勧めします。 これにより、読みやすくなり、発音区分符のスペースが十分確保されます。 具体的な例については、以下の「書体見本」をご覧ください。
+Line spacing should be calculated at 125% of the font size, rounding to the closest multiple of four when necessary. For example with 15px Segoe UI, 125% of 15px is 18.75px. We recommend rounding up and setting line height to 20px to stay on the 4px grid. This ensures a good reading experience and adequate space for diacritical marks. See the Type ramp section below for specific examples.
 
-小さい書体の上に大きい書体を重ねる場合、大きい書体の最後のベースラインから小さい書体の最初のベースラインまでの距離が、大きい書体の行の高さと等しくなるようにしてください。
+When stacking larger type on top of smaller type, the distance from the last baseline of the larger type to the first baseline of the smaller type should be equal to the larger type's line height.
 
-![大きい書体を小さい書体に重ねる方法を示します。](images/line-height-stacking.png)
+![Shows how large type stacks on small type](images/line-height-stacking.png)
 
-XAML では、これは 2 つの [TextBlocks](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) を重ね、適切な余白を設定することで実現できます。
+In XAML, this is accomplished by stacking two [TextBlocks](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) and setting the appropriate margin.
 
 ```xaml
 <StackPanel Width="200">
@@ -56,25 +57,23 @@ XAML では、これは 2 つの [TextBlocks](https://msdn.microsoft.com/en-us/l
 </StackPanel>
 ```
 
-
 <!-- OP version -->
 
-## カーニングとトラッキング
+## Kerning and tracking
 
-Segoe は、ソフトでわかりやすい外観をした人間的な書体であり、手書き文字に基づく自然でオープンな形をしています。 できるだけ読みやすくし、人間的な一貫性を保つため、カーニングとトラッキングの設定を特定の値にする必要があります。
+Segoe is a humanist typeface, with a soft, friendly appearance, it has organic, open forms based on handwritten text. To ensure optimum legibility and maintain it’s humanist integrity, the kerning and tracking settings must have specific values.
 
-カーニングを "メトリック" に設定し、トラッキングを "0" に設定してください。
+Kerning should be set to “metrics” and tracking should be set to “0”.
 
 <img src="images/kerning-tracking.png" alt="Shows the difference between kerning and tracking" />
 
-## 単語や文字の間隔
+## Word and letter spacing
 
-カーニングやトラッキングと同様、できるだけ読みやすくし、人間的な一貫性を保つため、単語の間隔と文字間隔でも特定の設定を使います。
+Similar to kerning and tracking, word spacing and letter spacing use specific settings to ensure optimum legibility and humanist integrity.
 
-既定では、単語の間隔は常に 100% であり、文字間隔は "0" に設定する必要があります。
+Word spacing by default is always 100% and letter spacing should be set to “0”.
 
 <img src="images/word-letter.png" alt="Shows the difference between word and letter spacing" />
-
 
 <aside class="aside-dev">
     <div class="aside-dev-title">
@@ -85,43 +84,42 @@ Segoe は、ソフトでわかりやすい外観をした人間的な書体で�
 </aside>
 
 
-
 <!-- OP version -->
-## 配置
+## Alignment
 
-通常は、ビジュアル要素と書体の列を左揃えにすることをお勧めします。 ほとんどの場合、このような左揃えおよび右不揃いのアプローチによって、コンテンツが一貫したアンカー設定となり、均一なレイアウトになります。
+Generally, we recommend that visual elements and columns of type be left-aligned. In most instances, this flush-left and ragged-right approach provides consistent anchoring of the content and a uniform layout.
 
 <img src="images/alignment.png" alt="Shows flush-left text" />
 
-## 行の末尾
+## Line endings
 
-文字体裁が左揃えおよび右不揃いで配置されていない場合、行の末尾が均等になるようにし、ハイフンを使わないでください。
+When typography is not positioned as flush left and ragged right, try to ensure even line endings and avoid hyphenation.
 
 <img src="images/line-endings.png" alt="Shows even line endings" />
 
-## 段落
+## Paragraphs
 
-列の端を揃えるため、インデントなしの行をスキップすることで段落を示してください。
+To provide aligned column edges, paragraphs should be indicated by skipping a line without indentation.
 
-![段落間のスペースの行全体を示します。](images/paragraphs.png)
+![Shows a full line of space between paragraphs](images/paragraphs.png)
 
-## 文字カウント
+## Character count
 
-行が短すぎると、目を左から右へと頻繁に動かさなければならなくなり、読者のリズムが崩れます。 可能であれば、1 行あたり 50 ~ 60 文字にすると最も読みやすくなります。
+If a line is too short, the eye will have to travel left and right too often, breaking the reader’s rhythm. If possible, 50–60 letters per line is best for ease of reading.
 
-Segoe UI には多くの文字が用意されており、サイズが小さくても大きくても、またはピクセル密度が低くても高くても最適な読みやすさが維持されるように設計されています。 テキスト列の行の文字数を最適にすると、アプリケーションでの読みやすさが確保されます。
+Segoe provides a wide range of characters and is designed to maintain optimal legibility in both small and large sizes as well as low and high pixel densities. Using the optimal number of letters in a text column line ensures good legibility in an application.
 
-行が長すぎると目に負担がかかり、ユーザーが混乱する可能性があります。 行が短すぎると読者が目を頻繁に動かさなければならず、疲れる可能性があります。
+Lines that are too long will strain the eye and may disorient the user. Lines that are too short force the reader’s eye to travel too much and can cause fatigue.
 
-![行の長さが異なる 3 つの段落を示します。](images/character-count.png)
+![Shows 3 paragraphs with different line lengths](images/character-count.png)
 
-## ぶら下げテキストの配置
+## Hanging text alignment
 
-横方向に配置されたテキスト付きアイコンは、アイコンのサイズとテキストの量に応じてさまざまな方法で処理することができます。 1 行であっても複数行であってもテキストがアイコンの高さに収まる場合、テキストを上下に中央揃えにしてください。
+The horizontal alignment of icons with text can be handled in a number of ways depending on the size of the icon and the amount of text. When the text, either single or multiple lines, fits within the height of the icon, the text should be vertically centered.
 
-テキストの高さがアイコンの高さより高い場合、テキストの先頭行を縦方向に揃え、残りのテキストが自然に下に流れるようにしてください。 より大きい大文字、高さが上昇または下降する文字を使うときは、同じ配置ガイダンスが守られるように注意してください。
+Once the height of the text extends beyond the height of the icon, the first line of text should align vertically and the additional text should flow on naturally below. When using characters with larger cap, ascender and descender heights, care should be taken to observe the same alignment guidance.
 
-![いくつかのアイコンとテキストの組み合わせを示します。](images/hanging-text-alignment.png)
+![Shows several icon and text pairings](images/hanging-text-alignment.png)
 
 <aside class="aside-dev">
     <div class="aside-dev-title">
@@ -131,21 +129,21 @@ Segoe UI には多くの文字が用意されており、サイズが小さく�
     </div>
 </aside>
 
-## クリッピングと省略記号
+## Clipping and ellipses
 
-既定でクリップ - 赤線により指定されている場合除き、テキストが折り返されることを前提とします。 折り返しのないテキストを使う場合、省略記号ではなくクリッピングをお勧めします。 クリッピングは、コンテナーの端、デバイスの端、スクロール バーの端などで行われます。
+Clip by default—assume that text will wrap unless the redline specifies otherwise. When using non-wrapping text, we recommend clipping rather than using ellipses. Clipping can occur at the edge of the container, at the edge of the device, at the edge of a scrollbar, etc.
 
-例外: 明確に定義されていないコンテナーの場合 (はっきりした背景色がないなど)、折り返しのないテキストに赤線を付けて省略記号 "..." を使うことができます。
+Exceptions—for containers which are not well-defined (e.g. no differentiating background color), then non-wrapping text can be redlined to use the ellipse ”…”.
 
-![いくつかのテキスト クリッピングがあるデバイス フレームを示します。](images/clipping.png)
+![Shows a device frame with some text clipping](images/clipping.png)
 
-# 書体見本
+# Type ramp
 
-書体見本の階層を作成するため、さまざまなサイズの Segoe UI を使ってください。 この階層により、ユーザーが書面によるコミュニケーションを通じて簡単にナビゲートできる構造が作成されます。
+Different sizes of Segoe UI should be used to create hierarchy in a type ramp. This hierarchy builds a structure which enables users to easily navigate through written communication.
 
 <figure class="figure-img" >
     <img src="images/type-ramp.png" alt="Shows the type ramp"  />
-        <figcaption>すべてのサイズは有効ピクセル単位です。 詳しくは、「TODO: link」をご覧ください。</figcaption>
+        <figcaption>All sizes are in effective pixels. For more details, see the TODO: link</figcaption>
 </figure>
 
 <aside class="aside-dev">
@@ -157,30 +155,26 @@ Segoe UI には多くの文字が用意されており、サイズが小さく�
 </aside>
 
 
-## プライマリ テキストとセカンダリ テキスト
+## Primary and secondary text
 
-書体見本を超えて追加の階層を作成するには、セカンダリ テキストの不透明度を 60% に設定します。 [テーマ カラー パレット](color.md#color-themes) で、BaseMedium を使います。 プライマリ テキストは、常に不透明度を 100% にするか、BaseHigh にしてください。
-
-## すべて大文字のタイトル
-
-特定のページ タイトルでは、階層に新たな次元を加えるため、すべて大文字にしてください。 これらのタイトルでは、BaseAlt を使い、文字間隔を em の 1,000 分の 75 にしてください。 この処理は、アプリのナビゲーションに使っても役立つことがあります。
-
-ただし、言語によっては大文字にすると固有名詞の意味が変わるため、名前やユーザー入力に基づくページ タイトルはすべて大文字に変換*しない*でください。
+To create additional hierarchy beyond the type ramp, set secondary text to 60% opacity. In the [theming color palette](color.md#color-themes), you would use BaseMedium. Primary text should always be at 100% opacity, or BaseHigh.
 
 
-## 推奨と非推奨
-* ほとんどのテキストには Body を使う
-* スペースに制約がある場合はタイトルに Base を使う
-* 最上位レベルのコンテンツを強調することで、SubtitleAlt を組み込んでコントラストと階層を作る
-* 長い文字列やプライマリ操作には Caption を使わない
-* テキストを折り返す必要がある場合は Header や Subheader を使わない
-* 同じページで Subtitle と SubtitleAlt を組み合わせない
+## All caps titles
 
-## 関連記事
+Certain page titles should be in ALL CAPS to add yet another dimension of hierarchy. These titles should use BaseAlt with the character spacing set to 75 thousandths of an em. This treatment may also be used to help with app navigation.
 
-* [テキスト コントロール](../controls-and-patterns/text-controls.md)
+However, proper names change their meaning when capitalized in certain languages, so any page titles based on names or user input should *not* be converted to all caps.
 
 
-<!--HONumber=Mar16_HO5-->
+## Do's and don'ts
+* Use Body for most text
+* Use Base for titles when space is constrained
+* Incorporate SubtitleAlt to create contrast and hierarchy by emphasizing top level content
+* Don't use Caption for long strings or any primary action
+* Don't use Header or Subheader if text needs to wrap
+* Don't combine Subtitle and SubtitleAlt on the same page
 
+## Related articles
 
+* [Text controls](../controls-and-patterns/text-controls.md)

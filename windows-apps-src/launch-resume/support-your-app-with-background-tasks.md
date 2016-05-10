@@ -1,193 +1,188 @@
 ---
-title: バックグラウンド タスクによるアプリのサポート
-description: このセクションのトピックでは、バックグラウンド タスクでトリガーに応答することによって、ユーザー独自の軽量コードをバックグラウンドで実行する方法について説明します。
+author: mcleblanc
+title: Support your app with background tasks
+description: The topics in this section show how to run your own lightweight code in the background by responding to triggers with background tasks.
 ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
 ---
 
-# バックグラウンド タスクによるアプリのサポート
+# Support your app with background tasks
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-このセクションのトピックでは、バックグラウンド タスクでトリガーに応答することによって、ユーザー独自の軽量コードをバックグラウンドで実行する方法について説明します。 バックグラウンド タスクは、OS がバックグラウンドで実行する軽量のクラスです。 バックグラウンド タスクを使えば、アプリが中断されている、または実行されていないときに機能を提供できます。 また、VOIP、メール、IM などのリアルタイム通信アプリにバックグラウンド タスクを使うこともできます。
+The topics in this section show how to run your own lightweight code in the background by responding to triggers with background tasks. Background tasks are lightweight classes that the OS runs in the background. You can use background tasks to provide functionality when your app is suspended or not running. You can also use background tasks for real-time communication apps like VOIP, mail, and IM.
 
-バックグラウンド タスクは、[**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) インターフェイスを実装する独立したクラスです。 [
-            **BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) クラスを使ってバックグラウンド タスクを登録します。 このクラス名は、バックグラウンド タスクの登録時にエントリ ポイントとして指定するために使われます。
+Background tasks are separate classes that implement the [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) interface. You register a background task by using the [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) class. The class name is used to specify the entry point when you registering the background task.
 
-バックグラウンド タスクを直ちに構築する場合は、「[バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)」をご覧ください。
+To get started quickly with a background task, see [Create and register a background task](create-and-register-a-background-task.md).
 
-**ヒント**  Windows 10 以降、バック グラウンド タスクを登録するために、アプリをロック画面に配置する必要はなくなりました。
+**Tip**  Starting with Windows 10, you no longer need to place an app on the lock screen in order to register background tasks.
 
- 
+ 
 
-## システム イベントに対するバックグラウンド タスク
+## Background tasks for system events
 
 
-アプリでは、[**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) クラスを使ってバックグラウンド タスクを登録することにより、システムで生成されたイベントに応答することができます。 アプリは、次のシステム イベント トリガー ([**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839) で定義されている) を使うことができます。
+Your app can respond to system-generated events by registering a background task with the [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) class. An app can use any of the following system event triggers (defined in [**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839))
 
-| トリガー名                     | 説明                                                                                                    |
+| Trigger name                     | Description                                                                                                    |
 |----------------------------------|----------------------------------------------------------------------------------------------------------------|
-| **InternetAvailable**            | インターネットが利用可能になります。                                                                                |
-| **NetworkStateChange**           | コストや接続の変更などネットワークの変更が行われます。                                              |
-| **OnlineIdConnectedStateChange** | アカウントに関連付けられたオンライン ID が変更されます。                                                                 |
-| **SmsReceived**                  | インストールされたモバイル ブロードバンド デバイスにより、新しい SMS メッセージが受け取られます。                                         |
-| **TimeZoneChange**               | デバイスでタイム ゾーンが変更されます (たとえば、システムが夏時間に合わせて時刻を調整したとき)。 |
+| **InternetAvailable**            | The Internet becomes available.                                                                                |
+| **NetworkStateChange**           | A network change such as a change in cost or connectivity occurs.                                              |
+| **OnlineIdConnectedStateChange** | Online ID associated with the account changes.                                                                 |
+| **SmsReceived**                  | A new SMS message is received by an installed mobile broadband device.                                         |
+| **TimeZoneChange**               | The time zone changes on the device (for example, when the system adjusts the clock for daylight saving time). |
 
- 
+ 
 
-詳しくは、「[バックグラウンド タスクによるシステム イベントへの応答](respond-to-system-events-with-background-tasks.md)」をご覧ください。
+For more info see [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md).
 
-## バックグラウンド タスクの条件
+## Conditions for background tasks
 
 
-条件を追加すると、バックグラウンド タスクがトリガーされた後でも、バックグラウンド タスクを実行するタイミングを制御することができます。 バックグラウンド タスクは、トリガーされても、条件がすべて満たされるまで実行されません。 次の条件 ([**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) 列挙型で表されます) を使うことができます。
+You can control when the background task runs, even after it is triggered, by adding a condition. Once triggered, a background task will not run until all of its conditions are met. The following conditions (represented by the [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) enumeration) can be used.
 
-| 条件名           | 説明                       |
+| Condition name           | Description                       |
 |--------------------------|-----------------------------------|
-| **InternetAvailable**    | インターネットが利用可能である必要があります。   |
-| **InternetNotAvailable** | インターネットが利用不可である必要があります。 |
-| **SessionConnected**     | セッションが接続されている必要があります。    |
-| **SessionDisconnected**  | セッションが切断されている必要があります。 |
-| **UserNotPresent**       | ユーザーが不在である必要があります。            |
-| **UserPresent**          | ユーザーが在席している必要があります。         |
+| **InternetAvailable**    | The Internet must be available.   |
+| **InternetNotAvailable** | The Internet must be unavailable. |
+| **SessionConnected**     | The session must be connected.    |
+| **SessionDisconnected**  | The session must be disconnected. |
+| **UserNotPresent**       | The user must be away.            |
+| **UserPresent**          | The user must be present.         |
 
- 
+ 
 
-詳しくは、「[バックグラウンド タスクを実行するための条件の設定](set-conditions-for-running-a-background-task.md)」をご覧ください。
+For more info see [Set conditions for running a background task](set-conditions-for-running-a-background-task.md).
 
-## アプリケーション マニフェストの要件
-
-
-アプリでバックグラウンド タスクが正常に登録されるには、アプリケーション マニフェストでバックグラウンド タスクを宣言する必要があります。 詳しくは、「[アプリケーション マニフェストでのバックグラウンド タスクの宣言](declare-background-tasks-in-the-application-manifest.md)」をご覧ください。
-
-## バックグラウンド タスク
+## Application manifest requirements
 
 
-次のリアルタイム トリガーを使うと、バックグラウンドで軽量なカスタム コードを実行できます。
+Before your app can successfully register a background task, it must be declared in the application manifest. For more info see [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md).
 
-**コントロール チャネル:  **バックグラウンド タスクでは、[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) を使って接続が有効な状態を維持し、コントロール チャネルでメッセージを受け取ることができます。 アプリがソケットをリッスンしている場合は、**ControlChannelTrigger** の代わりにソケット ブローカーを使うことができます。 ソケット ブローカーの使用について詳しくは、「[SocketActivityTrigger](https://msdn.microsoft.com/library/windows/apps/dn806009)」をご覧ください。 **ControlChannelTrigger** は、Windows Phone ではサポートされていません。
-
-**タイマー:  **バックグラウンド タスクは、15 分おきに実行できます。また、[**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) を使って特定の時刻に実行するように設定することもできます。 詳しくは、「[タイマーでのバックグラウンド タスクの実行](run-a-background-task-on-a-timer-.md)」をご覧ください。
-
-**プッシュ通知:  **バックグラウンド タスクは、[**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) に応答して、直接プッシュ通知を受け取ります。
-
-**注**  
-
-ユニバーサル Windows アプリは、どの種類のバックグラウンド トリガーを登録する場合でも、先に [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) を呼び出す必要があります。
-
-更新プログラムのリリース後にユニバーサル Windows アプリが引き続き適切に実行されるようにするには、更新後にアプリが起動する際に、[**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471)、[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) の順に呼び出す必要があります。 詳しくは、「[バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)」をご覧ください。
-
-## システム イベント トリガー
+## Background tasks
 
 
-> **注**  [**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839) 列挙体には、次のシステム イベント トリガーが含まれています。
+The following real-time triggers can be used to run lightweight custom code in the background:
 
-| トリガー名            | 説明                                                       |
+**Control Channel:  **Background tasks can keep a connection alive, and receive messages on the control channel, by using the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032). If your app is listening to a socket, you can use the Socket Broker instead of the **ControlChannelTrigger**. For more details on using the Socket Broker, see [SocketActivityTrigger](https://msdn.microsoft.com/library/windows/apps/dn806009). The **ControlChannelTrigger** is not supported on Windows Phone.
+
+**Timer:  **Background tasks can run as frequently as every 15 minutes, and they can be set to run at a certain time by using the [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843). For more info see [Run a background task on a timer](run-a-background-task-on-a-timer-.md).
+
+**Push Notification:  **Background tasks respond to the [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) to receive raw push notifications.
+
+**Note**  
+
+Universal Windows apps must call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) before registering any of the background trigger types.
+
+To ensure that your Universal Windows app continues to run properly after you release an update, you must call [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471) and then call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) when your app launches after being updated. For more information, see [Guidelines for background tasks](guidelines-for-background-tasks.md).
+
+## System event triggers
+
+
+> **Note**  The [**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839) enumeration includes the following system event triggers.
+
+| Trigger name            | Description                                                       |
 |-------------------------|-------------------------------------------------------------------|
-| **UserPresent**         | ユーザーが在席になったら、バックグラウンド タスクがトリガーされます。   |
-| **UserAway**            | ユーザーが不在になったら、バックグラウンド タスクがトリガーされます。    |
-| **ControlChannelReset** | コントロール チャネルがリセットされたら、バックグラウンド タスクがトリガーされます。 |
-| **SessionConnected**    | セッションが接続されたら、バックグラウンド タスクがトリガーされます。   |
+| **UserPresent**         | The background task is triggered when the user becomes present.   |
+| **UserAway**            | The background task is triggered when the user becomes absent.    |
+| **ControlChannelReset** | The background task is triggered when a control channel is reset. |
+| **SessionConnected**    | The background task is triggered when the session is connected.   |
 
- 
+ 
 
-以下のシステム イベント トリガーにより、ユーザーがいつアプリをロック画面に配置したか、またアプリをロック画面から削除したか認識できるようになります。
+The following system event triggers make it possible to recognize when the user has moved an app on or off the lock screen.
 
-| トリガー名                     | 説明                                  |
+| Trigger name                     | Description                                  |
 |----------------------------------|----------------------------------------------|
-| **LockScreenApplicationAdded**   | アプリのタイルがロック画面に追加されます。     |
-| **LockScreenApplicationRemoved** | アプリのタイルがロック画面から削除されます。 |
+| **LockScreenApplicationAdded**   | An app tile is added to the lock screen.     |
+| **LockScreenApplicationRemoved** | An app tile is removed from the lock screen. |
 
- 
-## バックグラウンド タスク リソースの制限
-
-
-バックグラウンド タスクは軽量です。 バックグラウンドの実行を最小限に抑えることにより、フォアグラウンド アプリでの最適なユーザー エクスペリエンスとバッテリ寿命が保証されます。 この設定は、リソース制約をバックグラウンド タスクに適用することにより、強制的に適用されます。
-
--   バックグラウンド タスクに使用できる時間は、ウォールクロック時間で 30 秒間に制限されています。
-
-## その他のバックグラウンド タスク リソースの制限
+ 
+## Background task resource constraints
 
 
-### メモリの制限
+Background tasks are lightweight. Keeping background execution to a minimum ensures the best user experience with foreground apps and battery life. This is enforced by applying resource constraints to background tasks:
 
-リソースには制約があるため (特にメモリの少ないデバイスの場合)、バックグラウンド タスクにはメモリの制限が存在する場合があり、これによってバックグラウンド タスクが使うことができるメモリの最大容量が決まります。 バック グラウンド タスクがこの制限を超過する操作を試行すると、操作は失敗し、タスクで処理できるメモリ不足例外が生成されることがあります。 メモリ不足例外がタスクで処理されない場合や、試行された操作がメモリ不足例外を生じさせる性質のものではなかった場合は、タスクが直ちに終了されます。 上限 (あれば) を検出し、進行中のバック グラウンド タスクのメモリ使用量を監視するには、[**MemoryManager**](https://msdn.microsoft.com/library/windows/apps/dn633831) API を使って、現在のメモリ使用量と制限を問い合わせることができます。
+-   Background tasks are limited to 30 seconds of wall-clock usage.
 
-### メモリの少ないデバイスにおけるバックグラウンド タスクのあるアプリのデバイスごとの制限
-
-メモリに制約のあるデバイスでは、デバイスにインストールでき、いつでもバックグラウンド タスクを使うことができるアプリの数に制限があります。 この数を超えると、すべてのバックグラウンド タスクを登録するのに必要な [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) の呼び出しが失敗します。
-
-### バッテリー セーバー
-
-バッテリー セーバー機能が有効であってもバックグラウンド タスクを実行しプッシュ通知を受信するようにアプリを設定していない限り、デバイスが外部電源に接続されていない状態でバッテリー残量が指定量を下回ると、バッテリー セーバー機能 (有効な場合) によりバックグラウンド タスクが実行されなくなります。 これによりバックグラウンド タスクを登録できなくなることはありません。
-
-## リアルタイム通信に対するバックグラウンド タスク リソース保証
+## Additional background task resource constraints
 
 
-リソース クォータがリアルタイム通信機能に干渉することがないように、[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) と [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) を使ったバックグラウンド タスクごとに CPU リソース保証クォータが確保されます。 リソース クォータは、先ほど説明したように、これらのバックグラウンド タスクに対して一定のままです。
+### Memory constraints
 
-アプリでは、特に何も行わなくても、[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) と [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) を使ったバックグラウンド タスクごとにリソース保証クォータが確保されます。 システムは、これらのタスクを常に重要なバックグラウンド タスクとして扱います。
+Due to the resource constraints for low-memory devices, background tasks may have a memory limit that determines the maximum amount of memory the background task can use. If your background task attempts an operation that would exceed this limit, the operation will fail and may generate an out-of-memory exception that the task can handle. If the task does not handle the out-of-memory exception, or the nature of the attempted operation is such that an out-of-memory exception was not generated, then the task will be terminated immediately. You can use the [**MemoryManager**](https://msdn.microsoft.com/library/windows/apps/dn633831) APIs to query your current memory usage and limit in order to discover your cap (if any), and to monitor your background task's ongoing memory usage.
 
-## メンテナンス トリガー
+### Per-device limit for apps with background tasks for low-memory devices
 
+On memory-constrained devices, there is a limit to the number of apps that can be installed on a device and use background tasks at any given time. If this number is exceeded, the call to [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485), which is required to register all background tasks, will fail.
 
-メンテナンス タスクは、デバイスが AC 電源に接続されているときにだけ実行されます。 詳しくは、「[メンテナンス トリガーの使用](use-a-maintenance-trigger.md)」をご覧ください。
+### Battery Saver
 
-## センサーとデバイスのバックグラウンド タスク
+Unless you exempt your app so that it can still run background tasks and receive push notifications when Battery Saver is on, the Battery Saver feature, when enabled, will prevent background tasks from running when the device is not connected to external power and the battery goes below a specified amount of power remaining. This will not prevent you from registering background tasks.
 
-
-アプリでは、[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) クラスによりバックグラウンド タスクからセンサーと周辺デバイスにアクセスできます。 このトリガーは、データの同期や監視など長期間にわたる操作に使用できます。 システム イベントのタスクとは異なり、**DeviceUseTrigger** タスクは、アプリがフォアグラウンドで実行されており条件が設定されていない場合にのみトリガーできます。
-
-時間がかかるファームウェア更新など、一部の重要なデバイス操作は、[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) では実行できません。 このような操作は PC でのみ、[**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315) を使う特権アプリによってのみ実行できます。 *特権アプリ*とは、これらの操作を実行する権限をデバイス製造元から与えられているアプリです。 デバイス メタデータを使って、どのアプリがデバイスの特権アプリであるか (存在する場合) を指定します。 詳しくは、「[Windows ストア デバイス アプリによるデバイスの同期と更新](http://go.microsoft.com/fwlink/p/?LinkId=306619)」をご覧ください。
-
-## バックグラウンド タスクの管理
+## Background task resource guarantees for real-time communication
 
 
-バックグラウンド タスクは、イベントとローカル ストレージを使って進行状況、完了、キャンセルをアプリに報告できます。 アプリは、バックグラウンド タスクがスローした例外をキャッチしたり、アプリの更新中にバックグラウンド タスクの登録を行うこともできます。 詳しくは、次のトピックをご覧ください。
+To prevent resource quotas from interfering with real-time communication functionality, background tasks using the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) and [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) receive guaranteed CPU resource quotas for every running task. The resource quotas are as mentioned above, and remain constant for these background tasks.
 
-[取り消されたバックグラウンド タスクの処理](handle-a-cancelled-background-task.md)
+Your app doesn't have to do anything differently to get the guaranteed resource quotas for [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) and [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) background tasks. The system always treats these as critical background tasks.
 
-[バックグラウンド タスクの進捗状況と完了の監視](monitor-background-task-progress-and-completion.md)
-
-**注**  
-この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
-
- 
-
-## 関連トピック
+## Maintenance trigger
 
 
-**Windows 10 におけるマルチタスクの概念的ガイダンス**
+Maintenance tasks only run when the device is plugged in to AC power. For more info see [Use a maintenance trigger](use-a-maintenance-trigger.md).
 
-* [起動、再開、マルチタスク](index.md)
-
-**関連するバックグラウンド タスクのガイダンス**
-
-* [バックグラウンド タスクからのセンサーやデバイスへのアクセス](access-sensors-and-devices-from-a-background-task.md)
-* [バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)
-* [バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)
-* [バックグラウンド タスクのデバッグ](debug-a-background-task.md)
-* [アプリケーション マニフェストでのバックグラウンド タスクの宣言](declare-background-tasks-in-the-application-manifest.md)
-* [取り消されたバックグラウンド タスクの処理](handle-a-cancelled-background-task.md)
-* [バックグラウンド タスクの進捗状況と完了の監視](monitor-background-task-progress-and-completion.md)
-* [バックグラウンド タスクの登録](register-a-background-task.md)
-* [バックグラウンド タスクによるシステム イベントへの応答](respond-to-system-events-with-background-tasks.md)
-* [タイマーでのバックグラウンド タスクの実行](run-a-background-task-on-a-timer-.md)
-* [バックグラウンド タスクを実行するための条件の設定](set-conditions-for-running-a-background-task.md)
-* [バックグラウンド タスクのライブ タイルの更新](update-a-live-tile-from-a-background-task.md)
-* [メンテナンス トリガーの使用](use-a-maintenance-trigger.md)
-* [Windows ストア アプリで一時停止イベント、再開イベント、バックグラウンド イベントをトリガーする方法 (デバッグ時)](http://go.microsoft.com/fwlink/p/?linkid=254345)
-* [Windows ストア デバイス アプリによるデバイスの同期と更新](http://go.microsoft.com/fwlink/p/?LinkId=306619)
-
- 
-
- 
+## Background task for sensors and devices
 
 
+Your app can access sensors and peripheral devices from a background task with the [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) class. You can use this trigger for long-running operations such as data synchronization or monitoring. Unlike tasks for system events, a **DeviceUseTrigger** task can only be triggered while your app is running in the foreground and no conditions can be set on it.
+
+Some critical device operations, such as long running firmware updates, cannot be performed with the [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337). Such operations can be performed only on the PC, and only by a privileged app that uses the [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315). A *privileged app* is an app that the device's manufacturer has authorized to perform those operations. Device metadata is used to specify which app, if any, has been designated as the privileged app for a device. For more info, see [Device sync and update for Windows Store device apps](http://go.microsoft.com/fwlink/p/?LinkId=306619)
+
+## Managing background tasks
 
 
+Background tasks can report progress, completion, and cancellation to your app using events and local storage. Your app can also catch exceptions thrown by a background task, and manage background task registration during app updates. For more info see:
 
-<!--HONumber=Mar16_HO1-->
+[Handle a cancelled background task](handle-a-cancelled-background-task.md)
+
+[Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)
+
+**Note**  
+This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
+
+ 
+
+## Related topics
+
+
+**Conceptual guidance for multitasking in Windows 10**
+
+* [Launching, resuming, and multitasking](index.md)
+
+**Related background task guidance**
+
+* [Access sensors and devices from a background task](access-sensors-and-devices-from-a-background-task.md)
+* [Guidelines for background tasks](guidelines-for-background-tasks.md)
+* [Create and register a background task](create-and-register-a-background-task.md)
+* [Debug a background task](debug-a-background-task.md)
+* [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md)
+* [Handle a cancelled background task](handle-a-cancelled-background-task.md)
+* [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)
+* [Register a background task](register-a-background-task.md)
+* [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md)
+* [Run a background task on a timer](run-a-background-task-on-a-timer-.md)
+* [Set conditions for running a background task](set-conditions-for-running-a-background-task.md)
+* [Update a live tile from a background task](update-a-live-tile-from-a-background-task.md)
+* [Use a maintenance trigger](use-a-maintenance-trigger.md)
+* [How to trigger suspend, resume, and background events in Windows Store apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Device sync and update for Windows Store device apps](http://go.microsoft.com/fwlink/p/?LinkId=306619)
+
+ 
+
+ 
+
 
 

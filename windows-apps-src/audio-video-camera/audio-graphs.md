@@ -1,229 +1,205 @@
 ---
+author: drewbatgit
 ms.assetid: CB924E17-C726-48E7-A445-364781F4CCA1
-description: この記事では、Windows.Media.Audio 名前空間の API を使ってオーディオのルーティング、ミキシング、処理のシナリオでオーディオ グラフを作成する方法について説明します。
-title: オーディオ グラフ
+description: This article shows how to use the APIs in the Windows.Media.Audio namespace to create audio graphs for audio routing, mixing, and processing scenarios.
+title: Audio Graphs
 ---
 
-# オーディオ グラフ
+# Audio Graphs
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-この記事では、[**Windows.Media.Audio**](https://msdn.microsoft.com/library/windows/apps/dn914341) 名前空間の API を使ってオーディオのルーティング、ミキシング、処理のシナリオでオーディオ グラフを作成する方法について説明します。
+This article shows how to use the APIs in the [**Windows.Media.Audio**](https://msdn.microsoft.com/library/windows/apps/dn914341) namespace to create audio graphs for audio routing, mixing, and processing scenarios.
 
-オーディオ グラフは、相互接続されたオーディオ ノードのセットです。オーディオ データは、ここを通って流れます。 オーディオ入力ノードは、オーディオ入力デバイス、オーディオ ファイル、またはカスタム コードから、オーディオ データをグラフに提供します。 オーディオ出力ノードは、グラフで処理されたオーディオの目的地です。 オーディオは、グラフからオーディオ出力デバイス、オーディオ ファイル、またはカスタム コードにルーティングできます。 最後のノードの種類は、サブミックス ノードです。このノードでは、1 つまたは複数のノードからのオーディオを結合して 1 つの出力にします。この出力は、グラフ内の他のノードにルーティングすることができます。 すべてのノードが作成され、ノード間の接続が設定された後、オーディオ グラフを開始すると、オーディオ データが入力ノードからサブミックス ノードを通って出力ノードまで流れます。 このモデルでは、デバイスのマイクからオーディオ ファイルへの録音、ファイルからデバイスのスピーカーへのオーディオ再生、複数ソースからのオーディオ ミキシングなどのシナリオが、すばやく簡単に実装できるようになります。
+An audio graph is a set of interconnected audio nodes through which audio data flows. Audio input nodes supply audio data to the graph from audio input devices, audio files, or from custom code. Audio output nodes are the destination for audio processed by the graph. Audio can be routed out of the graph to audio output devices, audio files, or custom code. The last type of node is a submix node which takes audio from one or more nodes and combines them into a single output that can be routed to other nodes in the graph. After all of the nodes have been created and the connections between them set up, you simply start the audio graph and the audio data flows from the input nodes, through any submix nodes, to the output nodes. This model makes scenarios like recording from a device's microphone to an audio file, playing audio from a file to a device's speaker, or mixing audio from multiple sources quick and easy to implement.
 
-オーディオ エフェクトをオーディオ グラフに追加することで、その他のシナリオも有効になります。 オーディオ グラフ内の各ノードには、ノードを通過するオーディオに対してオーディオ処理を実行するオーディオ エフェクトを 0 個以上設定できます。 エコー、イコライザー、リミッティング、リバーブなど、いくつかの組み込みエフェクトがあり、これらはわずか数行のコードでオーディオ ノードにアタッチできます。 組み込みエフェクトとまったく同様に動作するカスタム オーディオ エフェクトを独自に作成することもできます。
+Additional scenarios are enabled with the addition of audio effects to the audio graph. Every node in an audio graph can be populated with zero or more audio effects that perform audio processing on the audio passing through the node. There are several built-in effects such as echo, equalizer, limiting, and reverb that can be attached to an audio node with just a few lines of code. You can also create your own custom audio effects that work exactly the same as the built-in effects.
 
-**注**  
-[AudioGraph UWP サンプル](http://go.microsoft.com/fwlink/?LinkId=619481) は、この概要で説明するコードを実装します。 サンプルをダウンロードすると、コンテキスト内のコードを確認できます。独自のアプリの出発点として使うこともできます。
+**Note**  
+The [AudioGraph UWP sample](http://go.microsoft.com/fwlink/?LinkId=619481) implements the code discussed in this overview. You can download the sample to see the code in context or to use as a starting point for your own app.
 
-## Windows ランタイム AudioGraph または XAudio2 の選択
+## Choosing Windows Runtime AudioGraph or XAudio2
 
-Windows ランタイム オーディオ グラフ API で提供される機能は、COM ベースの [XAudio2 API](https://msdn.microsoft.com/library/windows/desktop/hh405049) を使って実装することもできます。 XAudio2 とは異なる Windows ランタイム オーディオ グラフ フレームワークの特徴を次に示します。
+The Windows Runtime audio graph APIs offer functionality that can also be implemented using the COM-based [XAudio2 APIs](https://msdn.microsoft.com/library/windows/desktop/hh405049). The following are features of the Windows Runtime audio graph framework that differ from XAudio2.
 
--   Windows ランタイム オーディオ グラフ API の使用は、XAudio2 よりずっと簡単です。
--   Windows ランタイム オーディオ グラフ API は、C++ 用にサポートされていますが、C# からも使用できます。
--   Windows ランタイム オーディオ グラフ API では、圧縮ファイル形式などのオーディオ ファイルを直接使用できます。 XAudio2 はオーディオ バッファーのみで動作します。ファイル I/O 機能はありません。
--   Windows ランタイム オーディオ グラフ API では、Windows 10 の低待機時間オーディオ パイプラインを使用できます。
--   Windows ランタイム オーディオ グラフ API では、既定のエンドポイント パラメーターの使用時にエンドポイントの自動切り替えがサポートされます。 たとえば、ユーザーがデバイスのスピーカーからヘッドホンに切り替えると、オーディオが自動的に新しい入力にリダイレクトされます。
+-   The Windows Runtime audio graph APIs are significantly easier to use than XAudio2.
+-   The Windows Runtime audio graph APIs can be used from C# - in addition to being supported for C++.
+-   The Windows Runtime audio graph APIs can use audio files, including compressed file formats, directly. XAudio2 only operates on audio buffers and does not provide any file I/O capabilities.
+-   The Windows Runtime audio graph APIs can use the low-latency audio pipeline in Windows 10.
+-   The Windows Runtime audio graph APIs supports automatic endpoint switching when default endpoint parameters are used. For example, if the user switches from a device's speaker to a headset, the audio is automatically redirected to the new input.
 
-## AudioGraph クラス
+## AudioGraph class
 
-[
-            **AudioGraph**](https://msdn.microsoft.com/library/windows/apps/dn914176) クラスは、グラフを構成するすべてのノードの親です。 すべての種類のオーディオ ノードのインスタンス作成に、このオブジェクトを使います。 **AudioGraph** クラスのインスタンスを作成するには、[**AudioGraphSettings**](https://msdn.microsoft.com/library/windows/apps/dn914185) オブジェクトを初期化し、グラフの構成設定を含めて、[**AudioGraph.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn914216) を呼び出します。 返された [**CreateAudioGraphResult**](https://msdn.microsoft.com/library/windows/apps/dn914273) により、作成されたオーディオ グラフへのアクセスが可能になります。オーディオ グラフの作成に失敗すると、エラー値が返されます。
+The [**AudioGraph**](https://msdn.microsoft.com/library/windows/apps/dn914176) class is the parent of all nodes that make up the graph. Use this object to create instances of all of the audio node types. Create an instance of the **AudioGraph** class by initializing an [**AudioGraphSettings**](https://msdn.microsoft.com/library/windows/apps/dn914185) object, containing configuration settings for the graph, and then calling [**AudioGraph.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn914216). The returned [**CreateAudioGraphResult**](https://msdn.microsoft.com/library/windows/apps/dn914273) gives access to the created audio graph or provides an error value if audio graph creation fails.
 
 [!code-cs[DeclareAudioGraph](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareAudioGraph)]
 
 [!code-cs[InitAudioGraph](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetInitAudioGraph)]
 
--   オーディオ ノードのすべての種類は、**AudioGraph** クラスの Create\* メソッドで作成します。
--   [
-            **AudioGraph.Start**](https://msdn.microsoft.com/library/windows/apps/dn914244) メソッドを呼び出すと、オーディオ グラフによってオーディオ データの処理が開始されます。 [
-            **AudioGraph.Stop**](https://msdn.microsoft.com/library/windows/apps/dn914245) メソッドは、オーディオ処理を停止します。 グラフの実行中、グラフ内の各ノードは個別に開始および停止できますが、グラフが停止すると、すべてのノードが非アクティブになります。 [**ResetAllNodes**](https://msdn.microsoft.com/library/windows/apps/dn914242) を呼び出すと、グラフ内のすべてのノードで、現在のオーディオ バッファー内にあるすべてのデータが破棄されます。
--   グラフで、オーディオ データの新しいクォンタムの処理が開始されると、[**QuantumStarted**](https://msdn.microsoft.com/library/windows/apps/dn914241) イベントが発生します。 クォンタムの処理が完了すると、[**QuantumProcessed**](https://msdn.microsoft.com/library/windows/apps/dn914240) イベントが発生します。
+-   All audio node types are created by using the Create\* methods of the **AudioGraph** class.
+-   The [**AudioGraph.Start**](https://msdn.microsoft.com/library/windows/apps/dn914244) method causes the audio graph to start processing audio data. The [**AudioGraph.Stop**](https://msdn.microsoft.com/library/windows/apps/dn914245) method stops audio processing. Each node in the graph can be started and stopped independently while the graph is running, but no nodes are active when the graph is stopped. [**ResetAllNodes**](https://msdn.microsoft.com/library/windows/apps/dn914242) causes all nodes in the graph to discard any data currently in their audio buffers.
+-   The [**QuantumStarted**](https://msdn.microsoft.com/library/windows/apps/dn914241) event occurs when the graph is starting the processing of a new quantum of audio data. The [**QuantumProcessed**](https://msdn.microsoft.com/library/windows/apps/dn914240) event occurs when the processing of a quantum is completed.
 
--   [
-            **AudioGraphSettings**](https://msdn.microsoft.com/library/windows/apps/dn914185) プロパティのうち、必須であるのは [**AudioRenderCategory**](https://msdn.microsoft.com/library/windows/apps/dn297724) のみです。 この値を指定することにより、システムは指定されたカテゴリについてオーディオ パイプラインを最適化します。
--   オーディオ グラフのクォンタム サイズにより、同時に処理されるサンプルの数が決定します。 既定では、既定のサンプル レートのクォンタム サイズは 10 ミリ秒ベースです。 [
-            **DesiredSamplesPerQuantum**](https://msdn.microsoft.com/library/windows/apps/dn914205) プロパティを設定することでカスタムのクォンタム サイズを指定する場合は、[**QuantumSizeSelectionMode**](https://msdn.microsoft.com/library/windows/apps/dn914208) プロパティを **ClosestToDesired** に設定しないと、指定した値が無視されます。 この値を使うと、指定した値にできる限り近いクォンタム サイズがシステムによって選択されます。 実際のクォンタム サイズを確認するには、**AudioGraph** の [**SamplesPerQuantum**](https://msdn.microsoft.com/library/windows/apps/dn914243) を作成後にチェックします。
--   オーディオ グラフの使用対象がファイルのみであり、オーディオ デバイスに出力する予定がない場合は、[**DesiredSamplesPerQuantum**](https://msdn.microsoft.com/library/windows/apps/dn914205) プロパティを設定せずに、既定のクォンタム サイズを使うことをお勧めします。
--   [
-            **DesiredRenderDeviceAudioProcessing**](https://msdn.microsoft.com/library/windows/apps/dn958522) プロパティは、オーディオ グラフの出力に対してプライマリ レンダリング デバイスで実行される処理の量を決定します。 **Default** 設定を使うと、指定されたオーディオ レンダリング カテゴリに対してシステムが既定のオーディオ処理を使用できるようになります。 この処理により、一部のデバイス (特に、小型スピーカーが搭載されているモバイル デバイス) ではオーディオのサウンドが大幅に改善される場合があります。 **Raw** 設定を使うと、実行する信号処理の量を最小化してパフォーマンスを向上できることがありますが、一部のデバイスでは音質が低下する場合があります。
--   [
-            **QuantumSizeSelectionMode**](https://msdn.microsoft.com/library/windows/apps/dn914208) が **LowestLatency** に設定されていると、オーディオ グラフは [**DesiredRenderDeviceAudioProcessing**](https://msdn.microsoft.com/library/windows/apps/dn958522) に対して自動的に **Raw** を使います。
--   [
-            **EncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn958523) は、グラフで使用されるオーディオ形式を決定します。 サポートされているのは 32 ビットの浮動小数点形式のみです。
--   [
-            **PrimaryRenderDevice**](https://msdn.microsoft.com/library/windows/apps/dn958524) は、オーディオ グラフのプライマリ レンダリング デバイスを設定します。 このプロパティを設定しなかった場合は、既定のシステム デバイスが使われます。 プライマリ レンダリング デバイスは、グラフの他のノードのクォンタム サイズの計算に使われます。 システムにオーディオ レンダリング デバイスが存在しない場合、オーディオ グラフの作成は失敗します。
+-   The only [**AudioGraphSettings**](https://msdn.microsoft.com/library/windows/apps/dn914185) property that is required is [**AudioRenderCategory**](https://msdn.microsoft.com/library/windows/apps/dn297724). Specifying this value allows the system to optimize the audio pipeline for the specified category.
+-   The quantum size of the audio graph determines the number of samples that are processed at one time. By default, the quantum size is 10 ms based at the default sample rate. If you specify a custom quantum size by setting the [**DesiredSamplesPerQuantum**](https://msdn.microsoft.com/library/windows/apps/dn914205) property, you must also set the [**QuantumSizeSelectionMode**](https://msdn.microsoft.com/library/windows/apps/dn914208) property to **ClosestToDesired** or the supplied value is ignored. If this value is used, the system will choose a quantum size as close as possible to the one you specify. To determine the actual quantum size, check the [**SamplesPerQuantum**](https://msdn.microsoft.com/library/windows/apps/dn914243) of the **AudioGraph** after it has been created.
+-   If you only plan to use the audio graph with files and don't plan to output to an audio device, it is recommended that you use the default quantum size by not setting the [**DesiredSamplesPerQuantum**](https://msdn.microsoft.com/library/windows/apps/dn914205) property.
+-   The [**DesiredRenderDeviceAudioProcessing**](https://msdn.microsoft.com/library/windows/apps/dn958522) property determines the amount of processing the primary render device performs on the output of the audio graph. The **Default** setting allows the system to use the default audio processing for the specified audio render category. This processing can significantly improve the sound of audio on some devices, particularly mobile devices with small speakers. The **Raw** setting can improve performance by minimizing the amount of signal processing performed, but can result in inferior sound quality on some devices.
+-   If the [**QuantumSizeSelectionMode**](https://msdn.microsoft.com/library/windows/apps/dn914208) is set to **LowestLatency**, the audio graph will automatically use **Raw** for [**DesiredRenderDeviceAudioProcessing**](https://msdn.microsoft.com/library/windows/apps/dn958522).
+-   The [**EncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn958523) determines the audio format used by the graph. Only 32-bit float formats are supported.
+-   The [**PrimaryRenderDevice**](https://msdn.microsoft.com/library/windows/apps/dn958524) sets the primary render device for the audio graph. If you don't set this, the default system device is used. The primary render device is used to calculate the quantum sizes for other nodes in the graph. If there are no audio render devices present on the system, audio graph creation will fail.
 
-オーディオ グラフでは、既定のオーディオ レンダリング デバイスを使うことも、[**Windows.Devices.Enumeration.DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) クラスを使ってシステムで利用可能なオーディオ レンダリング デバイスの一覧を取得することもできます。これには、[**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) を呼び出して、[**Windows.Media.Devices.MediaDevice.GetAudioRenderSelector**](https://msdn.microsoft.com/library/windows/apps/br226817) から返されるオーディオ レンダリング デバイス セレクターを渡します。 返された **DeviceInformation** オブジェクトのうちいずれかをプログラムで選択するか、ユーザーがデバイスを選択できるように UI を表示して、選択されたデバイスを [**PrimaryRenderDevice**](https://msdn.microsoft.com/library/windows/apps/dn958524) プロパティに設定します。
+You can let the audio graph use the default audio render device or use the [**Windows.Devices.Enumeration.DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) class to get a list of the system's available audio render devices by calling [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) and passing in the audio render device selector returned by [**Windows.Media.Devices.MediaDevice.GetAudioRenderSelector**](https://msdn.microsoft.com/library/windows/apps/br226817). You can choose one of the returned **DeviceInformation** objects programatically or show UI to allow the user to select a device and then use it to set the [**PrimaryRenderDevice**](https://msdn.microsoft.com/library/windows/apps/dn958524) property.
 
 [!code-cs[EnumerateAudioRenderDevices](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetEnumerateAudioRenderDevices)]
 
-##  デバイス入力ノード
+##  Device input node
 
-デバイス入力ノードは、システムに接続されているオーディオ キャプチャ デバイス (マイクなど) からオーディオを取得し、グラフに渡します。 システムの既定オーディオ キャプチャ デバイスを使う [**DeviceInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914082) オブジェクトを作成するには、[**CreateDeviceInputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914218) を呼び出します。 [
-            **AudioRenderCategory**](https://msdn.microsoft.com/library/windows/apps/dn297724) を指定すると、指定されたカテゴリのオーディオ パイプラインがシステムによって最適化されます。
+A device input node feeds audio into the graph from an audio capture device connected to the system, such as a microphone. Create a [**DeviceInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914082) object that uses the system's default audio capture device by calling [**CreateDeviceInputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914218). Provide an [**AudioRenderCategory**](https://msdn.microsoft.com/library/windows/apps/dn297724) to allow the system to optimize the audio pipeline for the specified category.
 
 [!code-cs[DeclareDeviceInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareDeviceInputNode)]
 
 
 [!code-cs[CreateDeviceInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateDeviceInputNode)]
 
-デバイス入力ノードに特定のオーディオ キャプチャ デバイスを指定する場合は、[**Windows.Devices.Enumeration.DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) クラスを使ってシステムで利用可能なオーディオ キャプチャ デバイスの一覧を取得することもできます。これには、[**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) を呼び出して、[**Windows.Media.Devices.MediaDevice.GetAudioRenderSelector**](https://msdn.microsoft.com/library/windows/apps/br226817) から返されるオーディオ レンダリング デバイス セレクターを渡します。 返された **DeviceInformation** オブジェクトのうちいずれかをプログラムで選択するか、ユーザーがデバイスを選択できるように UI を表示して、選択されたデバイスを [**CreateDeviceInputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914218) に渡します。
+If you want to specify a specific audio capture device for the device input node, you can use the [**Windows.Devices.Enumeration.DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) class to get a list of the system's available audio capture devices by calling [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) and passing in the audio render device selector returned by [**Windows.Media.Devices.MediaDevice.GetAudioRenderSelector**](https://msdn.microsoft.com/library/windows/apps/br226817). You can choose one of the returned **DeviceInformation** objects programmatically or show UI to allow the user to select a device and then pass it into [**CreateDeviceInputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914218).
 
 [!code-cs[EnumerateAudioCaptureDevices](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetEnumerateAudioCaptureDevices)]
 
-##  デバイス出力ノード
+##  Device output node
 
-デバイス出力ノードは、オーディオをグラフからスピーカーやヘッドセットなどのオーディオ レンダリング デバイスにプッシュします。 [
-            **DeviceOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914098) を作成するには、[**CreateDeviceOutputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn958525) を呼び出します。 出力ノードでは、オーディオ グラフの [**PrimaryRenderDevice**](https://msdn.microsoft.com/library/windows/apps/dn958524) が使用されます。
+A device output node pushes audio from the graph to an audio render device, such as speakers or a headset. Create a [**DeviceOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914098) by calling [**CreateDeviceOutputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn958525). The output node uses the [**PrimaryRenderDevice**](https://msdn.microsoft.com/library/windows/apps/dn958524) of the audio graph.
 
 [!code-cs[DeclareDeviceOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareDeviceOutputNode)]
 
 [!code-cs[CreateDeviceOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateDeviceOutputNode)]
 
-##  ファイル入力ノード
+##  File input node
 
-ファイル入力ノードを使用すると、データをオーディオ ファイルからグラフに渡すことができます。 [
-            **AudioFileInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914108) を作成するには、[**CreateFileInputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914226) を呼び出します。
+A file input node allows you to feed data from an audio file into the graph. Create an [**AudioFileInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914108) by calling [**CreateFileInputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914226).
 
 [!code-cs[DeclareFileInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareFileInputNode)]
 
 
 [!code-cs[CreateFileInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateFileInputNode)]
 
--   ファイル入力ノードでは、ファイル形式として mp3、wav、wma、m4a がサポートされています。
--   ファイル内の再生開始位置にタイム オフセットを指定するには、[**StartTime**](https://msdn.microsoft.com/library/windows/apps/dn914130) プロパティを設定します。 このプロパティが null の場合は、ファイルの先頭が使用されます。 ファイル内の再生終了位置にタイム オフセットを指定するには、[**EndTime**](https://msdn.microsoft.com/library/windows/apps/dn914118) プロパティを設定します。 このプロパティが null の場合は、ファイルの末尾が使用されます。 開始時刻の値は、終了時刻の値より小さくする必要があります。また、終了時刻の値はオーディオ ファイルの長さを超えないように設定する必要があります。オーディオ ファイルの長さを確認するには、[**Duration**](https://msdn.microsoft.com/library/windows/apps/dn914116) プロパティの値をチェックします。
--   オーディオ ファイル内の位置をシークするには、[**Seek**](https://msdn.microsoft.com/library/windows/apps/dn914127) を呼び出し、ファイル内の再生位置の移動先にタイム オフセットを指定します。 指定された値は、[**StartTime**](https://msdn.microsoft.com/library/windows/apps/dn914130) から [**EndTime**](https://msdn.microsoft.com/library/windows/apps/dn914118) の範囲内である必要があります。 ノードの現在の再生位置を取得するには、読み取り専用の [**Position**](https://msdn.microsoft.com/library/windows/apps/dn914124) プロパティを使います。
--   オーディオ ファイルのループ処理を有効にするには、[**LoopCount**](https://msdn.microsoft.com/library/windows/apps/dn914120) プロパティを設定します。 この値は、null 以外であれば、初回の再生後にファイルが再生される回数を示します。 たとえば、**LoopCount** を 1 に設定すると、このファイルは合計 2 回再生されます。値を 5 に設定すると、ファイルは合計 6 回再生されます。 **LoopCount** を null に設定すると、ファイルが無限にループされます。 ループを停止するには、値を 0 に設定します。
--   オーディオ ファイルの再生速度を調整するには、[**PlaybackSpeedFactor**](https://msdn.microsoft.com/library/windows/apps/dn914123) を設定します。 値 1 は、ファイルの元の速度を示します、0.5 は半分の速度、2 は 2 倍の速度を示します。
+-   File input nodes support the following file formats: mp3, wav, wma, m4a
+-   Set the [**StartTime**](https://msdn.microsoft.com/library/windows/apps/dn914130) property to specify the time offset into the file where playback should begin. If this property is null, the beginning of the file is used. Set the [**EndTime**](https://msdn.microsoft.com/library/windows/apps/dn914118) property to specify the time offset into the file where playback should end. If this property is null, the end of the file is used. The start time value must be lower than the end time value, and the end time value must be less than or equal to the duration of the audio file, which can be determined by checking the [**Duration**](https://msdn.microsoft.com/library/windows/apps/dn914116) property value.
+-   Seek to a position in the audio file by calling [**Seek**](https://msdn.microsoft.com/library/windows/apps/dn914127) and specifying the time offset into the file to which the playback position should be moved. The specified value must be within the [**StartTime**](https://msdn.microsoft.com/library/windows/apps/dn914130) and [**EndTime**](https://msdn.microsoft.com/library/windows/apps/dn914118) range. Get the current playback position of the node with the read-only [**Position**](https://msdn.microsoft.com/library/windows/apps/dn914124) property.
+-   Enable looping of the audio file by setting the [**LoopCount**](https://msdn.microsoft.com/library/windows/apps/dn914120) property. When non-null, this value indicates the number of times the file will be played in after the initial playback. So, for example, setting **LoopCount** to 1 will cause the file to be played 2 times in total, and setting it to 5 will cause the file to be played 6 times in total. Setting **LoopCount** to null causes the file to be looped indefinitely. To stop looping, set the value to 0.
+-   Adjust the speed at which the audio file is played back by setting the [**PlaybackSpeedFactor**](https://msdn.microsoft.com/library/windows/apps/dn914123). A value of 1 indicates the original speed of the file, .5 is half-speed, and 2 is double speed.
 
-##  ファイル出力ノード
+##  File output node
 
-ファイル出力ノードを使用すると、オーディオ データをグラフからオーディオ ファイルに渡すことができます。 [
-            **AudioFileOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914133) を作成するには、[**CreateFileOutputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914227) を呼び出します。
+A file output node lets you direct audio data from the graph into an audio file. Create an [**AudioFileOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914133) by calling [**CreateFileOutputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914227).
 
 [!code-cs[DeclareFileOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareFileOutputNode)]
 
 
 [!code-cs[CreateFileOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateFileOutputNode)]
 
--   ファイル出力ノードでは、ファイル形式として mp3、wav、wma、m4a がサポートされています。
--   [
-            **AudioFileOutputNode.FinalizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914140) を呼び出す前に、[**AudioFileOutputNode.Stop**](https://msdn.microsoft.com/library/windows/apps/dn914144) を呼び出して、ノードの処理を停止する必要があります。そうしないと例外がスローされます。
+-   File output nodes support the following file formats: mp3, wav, wma, m4a
+-   You must call [**AudioFileOutputNode.Stop**](https://msdn.microsoft.com/library/windows/apps/dn914144) to stop the node's processing before calling [**AudioFileOutputNode.FinalizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914140) or an exception will be thrown.
 
-##  オーディオ フレーム入力ノード
+##  Audio frame input node
 
-オーディオ フレーム入力ノードでは、独自のコードで生成したオーディオ データをオーディオ グラフにプッシュすることができます。 これにより、カスタムのソフトウェア シンセサイザーを作成するなどのシナリオが可能になります。 [
-            **AudioFrameInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914147) を作成するには、[**CreateFrameInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914230) を呼び出します。
+An audio frame input node allows you to push audio data that you generate in your own code into the audio graph. This enables scenarios like creating a custom software synthesizer. Create an [**AudioFrameInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914147) by calling [**CreateFrameInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914230).
 
 [!code-cs[DeclareFrameInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareFrameInputNode)]
 
 
 [!code-cs[CreateFrameInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateFrameInputNode)]
 
-オーディオ グラフでオーディオ データの次のクォンタムの処理を開始する準備ができると、[**FrameInputNode.QuantumStarted**](https://msdn.microsoft.com/library/windows/apps/dn958507) イベントが発生します。 カスタム生成したオーディオ データは、このイベントに対するハンドラー内で指定します。
+The [**FrameInputNode.QuantumStarted**](https://msdn.microsoft.com/library/windows/apps/dn958507) event is raised when the audio graph is ready to begin processing the next quantum of audio data. You supply your custom generated audio data from within the handler to this event.
 
 [!code-cs[QuantumStarted](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetQuantumStarted)]
 
--   **QuantumStarted** イベント ハンドラーに渡された [**FrameInputNodeQuantumStartedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn958533) オブジェクトには [**RequiredSamples**](https://msdn.microsoft.com/library/windows/apps/dn958534) プロパティがあります。このプロパティは、クォンタムを処理するためにオーディオ グラフが必要とするサンプル数を示します。
--   オーディオ データを設定した [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) オブジェクトをグラフに渡すには、[**AudioFrameInputNode.AddFrame**](https://msdn.microsoft.com/library/windows/apps/dn914148) を呼び出します。
--   **GenerateAudioData** ヘルパー メソッドの実装例を下に示します。
+-   The [**FrameInputNodeQuantumStartedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn958533) object passed into the **QuantumStarted** event handler exposes the [**RequiredSamples**](https://msdn.microsoft.com/library/windows/apps/dn958534) property that indicates how many samples the audio graph needs to fill up the quantum to be processed.
+-   Call [**AudioFrameInputNode.AddFrame**](https://msdn.microsoft.com/library/windows/apps/dn914148) to pass an [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) object filled with audio data into the graph.
+-   An example implementation of the **GenerateAudioData** helper method is shown below.
 
-[
-            **AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) にオーディオ データを設定するには、オーディオ フレームの基になるメモリ バッファーにアクセスできる必要があります。 これには、該当する名前空間に以下のコードを追加して、COM インターフェイス **IMemoryBufferByteAccess** を初期化する必要があります。
+To populate an [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) with audio data, you must get access to the underlying memory buffer of the audio frame. To do this you must initialize the **IMemoryBufferByteAccess** COM interface by adding the following code within your namespace.
 
 [!code-cs[ComImportIMemoryBufferByteAccess](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetComImportIMemoryBufferByteAccess)]
 
-次のコードは、[**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) を作成し、オーディオ データを設定する **GenerateAudioData** ヘルパー メソッドの実装例を示しています。
+The following code shows an example implementation of a **GenerateAudioData** helper method that creates an [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) and populates it with audio data.
 
 [!code-cs[GenerateAudioData](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetGenerateAudioData)]
 
--   このメソッドは、Windows ランタイム型よりも低いレベルの RAW バッファーにアクセスするため、**unsafe** キーワードを使って宣言する必要があります。 また、Microsoft Visual Studio でアンセーフ コードのコンパイルを許可するようにプロジェクトを構成する必要があります。プロジェクトの **[プロパティ]** ページを開き、**[ビルド]** プロパティ ページをクリックして、**[アンセーフ コードの許可]** チェック ボックスをオンにしてください。
--   **Windows.Media** 名前空間で [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) の新しいインスタンスを初期化するには、必要なバッファー サイズをコンストラクターに渡します。 バッファー サイズとは、サンプル数に各サンプルのサイズを掛けた値です。
--   オーディオ フレームの [**AudioBuffer**](https://msdn.microsoft.com/library/windows/apps/dn958454) を取得するには、[**LockBuffer**](https://msdn.microsoft.com/library/windows/apps/dn930878) を呼び出します。
--   オーディオ バッファーから [**IMemoryBufferByteAccess**](https://msdn.microsoft.com/library/windows/desktop/mt297505) COM インターフェイスのインスタンスを取得するには、[**CreateReference**](https://msdn.microsoft.com/library/windows/apps/dn958457) を呼び出します。
--   生のオーディオ バッファー データへのポインターを取得するには、[**IMemoryBufferByteAccess.GetBuffer**](https://msdn.microsoft.com/library/windows/desktop/mt297506) を呼び出してオーディオ データのサンプル データ型にキャストします。
--   オーディオ グラフへの提出用に、バッファーにデータを設定して [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) を返します。
+-   Because this method accesses the raw buffer underlying the Windows Runtime types, it must be declared using the **unsafe** keyword. You must also configure your project in Microsoft Visual Studio to allow the compilation of unsafe code by opening the project's **Properties** page, clicking the **Build** property page, and selecting the **Allow Unsafe Code** checkbox.
+-   Initialize a new instance of [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871), in the **Windows.Media** namespace, by passing in the desired buffer size to the constructor. The buffer size is the number of samples multiplied by the size of each sample.
+-   Get the [**AudioBuffer**](https://msdn.microsoft.com/library/windows/apps/dn958454) of the audio frame by calling [**LockBuffer**](https://msdn.microsoft.com/library/windows/apps/dn930878).
+-   Get an instance of the [**IMemoryBufferByteAccess**](https://msdn.microsoft.com/library/windows/desktop/mt297505) COM interface from the audio buffer by calling [**CreateReference**](https://msdn.microsoft.com/library/windows/apps/dn958457).
+-   Get a pointer to raw audio buffer data by calling [**IMemoryBufferByteAccess.GetBuffer**](https://msdn.microsoft.com/library/windows/desktop/mt297506) and cast it to the sample data type of the audio data.
+-   Fill the buffer with data and return the [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) for submission into the audio graph.
 
-##  オーディオ フレーム出力ノード
+##  Audio frame output node
 
-オーディオ フレーム出力ノードでは、独自に作成したカスタム コードを使い、オーディオ グラフからオーディオ データ出力を受信し、処理することができます。 サンプル シナリオでは、オーディオ出力に対して信号分析を実行します。 [
-            **AudioFrameOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914166) を作成するには、[**CreateFrameOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914233) を呼び出します。
+An audio frame output node allows you to receive and process audio data output from the audio graph with custom code that you create. An example scenario for this is performing signal analysis on the audio output. Create an [**AudioFrameOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914166) by calling [**CreateFrameOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914233).
 
 [!code-cs[DeclareFrameOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareFrameOutputNode)]
 
 [!code-cs[CreateFrameOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateFrameOutputNode)]
 
-オーディオ グラフでオーディオ データのクォンタムの処理が完了すると、[**AudioGraph.QuantumProcessed**](https://msdn.microsoft.com/library/windows/apps/dn914240) イベントが発生します。 オーディオ データには、このイベントのハンドラー内からアクセスすることができます。
+The [**AudioGraph.QuantumProcessed**](https://msdn.microsoft.com/library/windows/apps/dn914240) event is raised when the audio graph has completed processing a quantum of audio data. You can access the audio data from within the handler for this event.
 
 [!code-cs[QuantumProcessed](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetQuantumProcessed)]
 
--   オーディオ データを設定した [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) オブジェクトをグラフから取得するには、[**GetFrame**](https://msdn.microsoft.com/library/windows/apps/dn914171) を呼び出します。
--   **ProcessFrameOutput** ヘルパー メソッドの実装例を下に示します。
+-   Call [**GetFrame**](https://msdn.microsoft.com/library/windows/apps/dn914171) to get an [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) object filled with audio data from the graph.
+-   An example implementation of the **ProcessFrameOutput** helper method is shown below.
 
 [!code-cs[ProcessFrameOutput](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetProcessFrameOutput)]
 
--   上に示したオーディオ フレーム入力ノードの例と同様、基になっているオーディオ バッファーにアクセスするために、**IMemoryBufferByteAccess** COM インターフェイスを宣言して、アンセーフ コードが許可されるようにプロジェクトを構成する必要があります。
--   オーディオ フレームの [**AudioBuffer**](https://msdn.microsoft.com/library/windows/apps/dn958454) を取得するには、[**LockBuffer**](https://msdn.microsoft.com/library/windows/apps/dn930878) を呼び出します。
--   オーディオ バッファーから **IMemoryBufferByteAccess** COM インターフェイスのインスタンスを取得するには、[**CreateReference**](https://msdn.microsoft.com/library/windows/apps/dn958457) を呼び出します。
--   生のオーディオ バッファー データへのポインターを取得するには、**IMemoryBufferByteAccess.GetBuffer** を呼び出してオーディオ データのサンプル データ型にキャストします。
+-   Like the audio frame input node example above, you will need to declare the **IMemoryBufferByteAccess** COM interface and configure your project to allow unsafe code in order to access the underlying audio buffer.
+-   Get the [**AudioBuffer**](https://msdn.microsoft.com/library/windows/apps/dn958454) of the audio frame by calling [**LockBuffer**](https://msdn.microsoft.com/library/windows/apps/dn930878).
+-   Get an instance of the **IMemoryBufferByteAccess** COM interface from the audio buffer by calling [**CreateReference**](https://msdn.microsoft.com/library/windows/apps/dn958457).
+-   Get a pointer to raw audio buffer data by calling **IMemoryBufferByteAccess.GetBuffer** and cast it to the sample data type of the audio data.
 
-## ノード接続とサブミックス ノード
+## Node connections and submix nodes
 
-すべての種類の入力ノードには **AddOutgoingConnection** メソッドがあります。このメソッドでは、そのノードで生成されたオーディオをメソッドに渡されたノードにルーティングします。 次の例では、[**AudioFileInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914108) を [**AudioDeviceOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914098) に接続します。これは、デバイスのスピーカーでオーディオ ファイルを再生するための単純な設定です。
+All input nodes types expose the **AddOutgoingConnection** method that routes the audio produced by the node to the node that is passed into the method. The following example connects an [**AudioFileInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914108) to an [**AudioDeviceOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914098), which is a simple setup for playing an audio file on the device's speaker.
 
 [!code-cs[AddOutgoingConnection1](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetAddOutgoingConnection1)]
 
-入力ノードから別ノードへは、複数の接続を作成できます。 次の例では、[**AudioFileInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914108) から [**AudioFileOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914133) への接続を追加しています。 ここで、オーディオ ファイルからのオーディオがデバイスのスピーカーで再生され、オーディオ ファイルにも出力されます。
+You can create more than one connection from an input node to other nodes. The following example adds another connection from the [**AudioFileInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914108) to an [**AudioFileOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914133). Now, the audio from the audio file is played to the device's speaker and is also written out to an audio file.
 
 [!code-cs[AddOutgoingConnection2](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetAddOutgoingConnection2)]
 
-出力ノードでも、他のノードから複数の接続を受け取ることができます。 次の例では、[**AudioDeviceInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914082) から [**AudioDeviceOutput**](https://msdn.microsoft.com/library/windows/apps/dn914098) ノードへの接続が作成されています。 この出力ノードには、ファイル入力ノードとデバイス入力ノードからの接続があるため、出力には両方のソースからのオーディオのミックスが含まれます。 **AddOutgoingConnection** には、接続を通過する信号のゲイン値を指定するためのオーバーロードが用意されています。
+Output nodes can also receive more than one connection from other nodes. In the following example a connection is made from a [**AudioDeviceInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914082) to the [**AudioDeviceOutput**](https://msdn.microsoft.com/library/windows/apps/dn914098) node. Because the output node has connections from the file input node and the device input node, the output will contain a mix of audio from both sources. **AddOutgoingConnection** provides an overload that lets you specify a gain value for the signal passing through the connection.
 
 [!code-cs[AddOutgoingConnection3](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetAddOutgoingConnection3)]
 
-出力ノードでは複数ノードからの接続を許容できますが、ミックスを出力に渡す前に、1 つ以上のノードからの信号の中間ミックスを作成することも検討してください。 たとえば、グラフ内のオーディオ信号のサブセットに対し、レベルの設定やエフェクトの適用を行うことができます。 そのためには、[**AudioSubmixNode**](https://msdn.microsoft.com/library/windows/apps/dn914247) を使用します。 サブミックス ノードには、1 つ以上の入力ノードまたは他のサブミックス ノードから接続することができます。 次の例では、[**AudioGraph.CreateSubmixNode**](https://msdn.microsoft.com/library/windows/apps/dn914236) で新しいサブミックス ノードを作成しています。 次に、ファイル入力ノードとフレーム出力ノードからサブミックス ノードへの接続が追加されています。 最後に、サブミックス ノードがファイル出力ノードに接続されています。
+Although output nodes can accept connections from multiple nodes, you may want to create an intermediate mix of signals from one or more nodes before passing the mix to an output. For example, you may want to set the level or apply effects to a subset of the audio signals in a graph. To do this, use the [**AudioSubmixNode**](https://msdn.microsoft.com/library/windows/apps/dn914247). You can connect to a submix node from one or more input nodes or other submix nodes. In the following example, a new submix node is created with [**AudioGraph.CreateSubmixNode**](https://msdn.microsoft.com/library/windows/apps/dn914236). Then, connections are added from a file input node and a frame output node to the submix node. Finally, the submix node is connected to a file output node.
 
 [!code-cs[CreateSubmixNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateSubmixNode)]
 
-## オーディオ グラフ ノードの開始と停止
+## Starting and stopping audio graph nodes
 
-[
-            **AudioGraph.Start**](https://msdn.microsoft.com/library/windows/apps/dn914244) が呼び出されると、オーディオ グラフはオーディオ データの処理を開始します。 すべてのノードの種類に、個々のノードでデータの処理を開始または停止する **Start** メソッドと **Stop** メソッドが用意されています。 [
-            **AudioGraph.Stop**](https://msdn.microsoft.com/library/windows/apps/dn914245) が呼び出されると、個々のノードの状態に関係なく、すべてのノードでのすべてのオーディオ処理が停止しますが、オーディオ グラフが停止している間も各ノードの状態が設定されることは考えられます。 たとえば、グラフの停止中に各ノードで **Stop** を呼び出してから **AudioGraph.Start** を呼び出した場合、個々のノードは停止状態のままです。
+When [**AudioGraph.Start**](https://msdn.microsoft.com/library/windows/apps/dn914244) is called, the audio graph begins processing audio data. Every node type provides **Start** and **Stop** methods that cause the individual node to start or stop processing data. When [**AudioGraph.Stop**](https://msdn.microsoft.com/library/windows/apps/dn914245) is called, all audio processing in the all nodes is stopped regardless of the state of individual nodes, but the state of each node can be set while the audio graph is stopped. For example, you could call **Stop** on an individual node while the graph is stopped and then call **AudioGraph.Start**, and the individual node will remain in the stopped state.
 
-すべてのノードの種類には **ConsumeInput** プロパティが用意されています。これが false に設定されると、ノードではオーディオ処理を続行できますが、他のノードから入力されているオーディオ データの使用が停止されます。
+All node types expose the **ConsumeInput** property that, when set to false, allows the node to continue audio processing but stops it from consuming any audio data being input from other nodes.
 
-すべてのノードの種類には **Reset** メソッドが用意されています。このメソッドが呼び出されると、ノードのバッファーにある現在のオーディオ データがすべて破棄されます。
+All node types expose the **Reset** method that causes the node to discard any audio data currently in its buffer.
 
-## オーディオ エフェクトの追加
+## Adding audio effects
 
-オーディオ グラフ API を使うと、グラフ内のすべての種類のノードに、オーディオ エフェクトを追加することができます。 個々の出力ノード、入力ノード、およびサブミックス ノードに追加できるオーディオ エフェクトの数に制限はありません (ハードウェア性能によってのみ制限されます)。次の例では、組み込みのエコー エフェクトをサブミックス ノードに追加する方法を示しています。
+The audio graph API allows you to add audio effects to every type of node in a graph. Output nodes, input nodes, and submix nodes can each have an unlimited number of audio effects, limited only by the capabilities of the hardware.The following example demonstrates adding the built-in echo effect to a submix node.
 
 [!code-cs[AddEffect](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetAddEffect)]
 
--   すべてのオーディオ エフェクトには、[**IAudioEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608044) が実装されています。 すべてのノードには、そのノードに適用されたエフェクトの一覧を表す **EffectDefinitions** プロパティが用意されています。 エフェクトを追加するには、エフェクトの定義オブジェクトをこの一覧に追加します。
--   **Windows.Media.Audio** 名前空間には、複数のエフェクト定義クラスがあります。 次のようなクラスがあります。
+-   All audio effects implement [**IAudioEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608044). Every node exposes an **EffectDefinitions** property representing the list of effects applied to that node. Add an effect by adding it's definition object to the list.
+-   There are several effect definition classes that are provided in the **Windows.Media.Audio** namespace. These include:
     -   [**EchoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn914276)
     -   [**EqualizerEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn914287)
     -   [**LimiterEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn914306)
     -   [**ReverbEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn914313)
--   [
-            **IAudioEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608044) を実装する独自のオーディオ エフェクトを作成し、オーディオ グラフ内の任意のノードに適用することができます。
--   すべてのノードの種類には、**DisableEffectsByDefinition** メソッドが用意されています。このメソッドは、ノードの **EffectDefinitions** リストに含まれる、指定の定義を使って追加されたすべてのエフェクトを無効にします。 **EnableEffectsByDefinition** は、指定の定義を持つエフェクトを有効にします。
+-   You can create your own audio effects that implement [**IAudioEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608044) and apply them to any node in an audio graph.
+-   Every node type exposes a **DisableEffectsByDefinition** method that disables all effects in the node's **EffectDefinitions** list that were added using the specified definition. **EnableEffectsByDefinition** enables the effects with the specified definition.
 
- 
+ 
 
- 
-
+ 
 
 
-
-
-
-<!--HONumber=Mar16_HO1-->
 
 

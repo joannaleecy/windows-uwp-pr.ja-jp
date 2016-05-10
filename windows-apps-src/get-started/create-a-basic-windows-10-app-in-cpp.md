@@ -1,113 +1,114 @@
 ---
+author: martinekuan
 ms.assetid: DC235C16-8DAF-4078-9365-6612A10F3EC3
-title: C++ を使った Hello World アプリの作成 (Windows 10)
-description: Microsoft Visual Studio 2015 では、C++ を使って、Windows 10 (Windows 10 を実行する電話も含む) で実行されるアプリを開発できます。 これらのアプリでは、Extensible Application Markup Language (XAML) で定義された UI が使われます。
+title: Create a Hello World app in C++ (Windows 10)
+description: With Microsoft Visual Studio 2015, you can use C++ to develop an app that runs on Windows 10, including on phones running Windows 10. These apps have a UI that's defined in Extensible Application Markup Language (XAML).
 ---
 
-# C++ を使った "hello world" アプリの作成 (Windows 10)
+# Create a "hello world" app in C++ (Windows 10)
 
-Microsoft Visual Studio 2015 では、C++ を使って、Windows 10 (Windows 10 を実行する電話も含む) で実行されるアプリを開発できます。 これらのアプリでは、Extensible Application Markup Language (XAML) で定義された UI が使われます。
+With Microsoft Visual Studio 2015, you can use C++ to develop an app that runs on Windows 10, including on phones running Windows 10. These apps have a UI that's defined in Extensible Application Markup Language (XAML).
 
-Windows 8.1 と Windows Phone 8.1 で実行するアプリを開発するには、Microsoft Visual Studio 2013 Update 3 以降を使い、[こちら](https://msdn.microsoft.com/library/windows/apps/Dn263168)の手順に従います。 最も重要な相違点は、Windows 8.1 と Windows Phone 8.1 向けの開発では、3 つのプロジェクト (デスクトップ (またはタブレット デバイス) 用、電話用、および共有コード用) を含んだソリューションを使い、 Windows 10 向けの開発では、すべてのコードが同じプロジェクトを共有するという点です。
+To develop an app that runs on Windows 8.1 and Windows Phone 8.1, use Microsoft Visual Studio 2013 Update 3 or later and follow the steps [here](https://msdn.microsoft.com/library/windows/apps/Dn263168). The most significant difference is that for Windows 8.1 and Windows Phone 8.1, you use a solution with three projects, one for the desktop (or tablet device), one for the phone, and one for shared code. For Windows 10 development, all code shares the same project.
 
-他のプログラミング言語のチュートリアルについては、次のトピックをご覧ください。
+For tutorials in other programming languages, see:
 
--   [JavaScript を使った初めての Windows ストア アプリの作成](https://msdn.microsoft.com/library/windows/apps/BR211385)
+-   [Create your first Windows Store app using JavaScript](https://msdn.microsoft.com/library/windows/apps/BR211385)
 
--   [C# または Visual Basic を使った初めての Windows ストア アプリの作成](https://msdn.microsoft.com/library/windows/apps/Hh974581)
+-   [Create your first Windows Store app using C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/Hh974581)
 
-## はじめに...
+## Before you start...
 
--   このチュートリアルでは、Windows 10 または Windows 8.1 が実行されているコンピューターで、Visual Studio 2015 Community 以降、または Community バージョン以外のいずれかの Visual Studio 2015 を使います。 ツールをダウンロードするには、[ツールの入手に関するページ](http://go.microsoft.com/fwlink/p/?LinkId=532666)をご覧ください。
--   Windows ユニバーサル プラットフォームの開発に適した [SDK](http://go.microsoft.com/fwlink/?LinkId=533049) をインストールします。
--   このほか、開発者用ライセンスが必要になります。 詳しくは、「[開発者用ライセンスの取得](https://msdn.microsoft.com/library/windows/apps/Hh974578)」をご覧ください。
--   このトピックは、標準 C++、XAML、「[XAML の概要](https://msdn.microsoft.com/library/windows/apps/Mt185595)」で説明されている概念のいずれについても基本的な知識があることを前提としています。
--   Visual Studio の既定のウィンドウ レイアウトを使用することを前提としています。 既定のレイアウトに戻すには、メニュー バーで **[ウィンドウ]**、**[ウィンドウ レイアウトのリセット]** の順にクリックします。
--   Visual Studio 2015 には、XAML デザイナーを読み込むときに NullReferenceException の原因となる可能性がある既知の問題があることに注意してください。 回避策を適用しない場合、この問題によってこのチュートリアルの手順の一部がブロックされます。 この問題と回避策について詳しくは、[この MSDN フォーラムの投稿](http://go.microsoft.com/fwlink/p/?LinkId=624036)をご覧ください。
+-   To complete this tutorial, you must use Visual Studio 2015 Community or later, or one of the non-Community versions of Visual Studio 2015, on a computer that's running Windows 10 or Windows 8.1. To download, see [Get the tools](http://go.microsoft.com/fwlink/p/?LinkId=532666).
+-   Install the appropriate [SDK](http://go.microsoft.com/fwlink/?LinkId=533049) for Windows Universal Platform development.
+-   You also must have a developer license. For instructions, see [Get a developer license](https://msdn.microsoft.com/library/windows/apps/Hh974578).
+-   We assume you have a basic understanding of standard C++, XAML, and the concepts in the [XAML overview](https://msdn.microsoft.com/library/windows/apps/Mt185595).
+-   We assume you're using the default window layout in Visual Studio. To reset to the default layout, on the menu bar, choose **Window** > **Reset Window Layout**.
+-   Note that there is a known issue with Visual Studio 2015 that can result in a NullReferenceException when loading the XAML designer. This issue blocks some of the steps of this tutorial, unless you apply the workaround. For details about this issue and the workaround, see [this MSDN forum post](http://go.microsoft.com/fwlink/p/?LinkId=624036) .
 
-## C++ デスクトップ アプリと Windows アプリの比較
+## Comparing C++ desktop apps to Windows apps
 
-C++ を使った Windows デスクトップのプログラミングに関する経験がある方は、Windows ストア アプリと Windows Phone アプリのプログラミングにもよく似た点があることや、新しい知識が必要な点があることに気が付くと思います。
+If you're coming from a background in Windows desktop programming in C++, you'll probably find that some aspects of Windows Store app and Windows Phone app programming are familiar, but other aspects require some learning.
 
-### これまでと同じ点
+### What's the same?
 
--   Windows ランタイム環境からアクセスできない Windows 関数をコードから呼び出さない限り、STL と CRT (一部例外あり)、さらに他のあらゆる C++ ライブラリを使うことができます。
+-   You can use the STL, the CRT (with some exceptions), and any other C++ library as long as the code does not attempt to call Windows functions that are not accessible from the Windows Runtime environment.
 
--   使い慣れたビジュアル デザイナーがある場合は、Microsoft Visual Studio に組み込まれたデザイナーを引き続き使うことができます。また、より多機能な Blend for Visual Studio を使うこともできます。 手動で UI のコーディングを行うことに慣れている場合は、XAML を手動で記述できます。
+-   If you're accustomed to visual designers, you can still use the designer built into Microsoft Visual Studio, or you can use the more full-featured Blend for Visual Studio. If you're accustomed to coding UI by hand, you can hand-code your XAML.
 
--   Windows オペレーティング システムの型と独自のカスタム型を使うアプリをこれまでどおり作成します。
+-   You're still creating apps that use Windows operating system types and your own custom types.
 
--   Visual Studio のデバッガー、プロファイラー、その他開発ツールをこれまでどおり使います。
+-   You're still using the Visual Studio debugger, profiler, and other development tools.
 
--   Visual C++ コンパイラでネイティブ マシン コードにコンパイルされるアプリを引き続き作成します。 C++ で作成された Windows ストア アプリは、マネージ ランタイム環境では実行されません。
+-   You're still creating apps that are compiled to native machine code by the Visual C++ compiler. Windows Store apps in C++ don't execute in a managed runtime environment.
 
-### これまでと異なる点
+### What's new?
 
--   Windows ストア アプリとユニバーサル Windows アプリの設計原則は、デスクトップ アプリの設計原則とは大きく異なります。 ウィンドウの境界線、ラベル、ダイアログ ボックスなどの強調は解除され、 コンテンツが最も目立つように表示されます。 優れたユニバーサル Windows アプリには、こうした原則が計画段階の初期から活かされています。
+-   The design principles for Windows Store apps and Universal Windows apps are very different from those for desktop apps. Window borders, labels, dialog boxes, and so on, are de-emphasized. Content is foremost. Great Universal Windows apps incorporate these principles from the very beginning of the planning stage.
 
--   XAML を使って UI 全体を定義します。 Windows ユニバーサル アプリでは、MFC アプリや Win32 アプリよりもはるかに明確に UI と基本的なプログラム ロジックが分離されます。 XAML を使った UI の見た目の調整と、コード ファイルでの動作のプログラミングを、異なる担当者が並行して行うことができます。
+-   You're using XAML to define the entire UI. The separation between UI and core program logic is much clearer in a Windows Universal app than in an MFC or Win32 app. Other people can work on the appearance of the UI in the XAML file while you're working on the behavior in the code file.
 
--   プログラミングの対象は主に Windows ランタイム (操作しやすい、オブジェクト指向の新しい API) ですが、Windows デバイス上で一部の機能にこれまでどおり Win32 を使うこともできます。
+-   You're primarily programming against a new, easy-to-navigate, object-oriented API, the Windows Runtime, although on Windows devices Win32 is still available for some functionality.
 
--   Windows ランタイムのオブジェクトを利用したり作成したりするには C++/CX を使います。 C++/CX は、C++ の例外処理、デリゲート、イベントのほか、動的に作成されるオブジェクトの自動参照カウントに対応しています。 C++/CX を使うとき、ベースの COM と Windows アーキテクチャの詳細は、アプリ コードからは見えません。 詳しくは、「[C++/CX 言語のリファレンス](https://msdn.microsoft.com/en-us/library/windows/apps/hh699871.aspx)」をご覧ください。
+-   You use C++/CX to consume and create Windows Runtime objects. C++/CX enables C++ exception handling, delegates, events, and automatic reference counting of dynamically created objects. When you use C++/CX, the details of the underlying COM and Windows architecture are hidden from your app code. For more information, see [C++/CX Language Reference](https://msdn.microsoft.com/en-us/library/windows/apps/hh699871.aspx).
 
--   アプリは、そのアプリ自体に含まれる型、アプリで使うリソース、必要な機能 (ファイル アクセス、インターネット アクセス、カメラ アクセスなど) に関するメタデータも含むパッケージにコンパイルされます。
+-   Your app is compiled into a package that also contains metadata about the types that your app contains, the resources that it uses, and the capabilities that it requires (file access, internet access, camera access, and so forth).
 
--   Windows ストアと Windows Phone ストアでは、認定プロセスを通じてアプリの安全性が検証され、何百万ものユーザーに公開されます。
+-   In the Windows Store and Windows Phone Store your app is verified as safe by a certification process and made discoverable to millions of potential customers.
 
-## C++ を使った Hello World ストア アプリ
+## Hello World Store app in C++
 
-初めてのアプリは "Hello World" という名前です。このアプリでは、インタラクティビティ、レイアウト、スタイルに関する基本的な機能の使い方を学びます。 アプリは、Windows ユニバーサル アプリ プロジェクト テンプレートを使って作成します。 Windows 8.1 や Windows Phone 8.1 用のアプリを開発したことがあれば、Visual Studio で 3 つのプロジェクト (Windows アプリ用、Windows Phone アプリ用、共有コード用) を使った経験があるでしょう。 Windows 10 ユニバーサル Windows プラットフォーム (UWP) を使うと、1 つのプロジェクトだけで開発できます。このプロジェクトは、すべてのデバイス (Windows 10 が実行されているデスクトップ コンピューターやノート PC、タブレットや携帯電話などのデバイス) で動作します。
+Our first app is a "Hello World" that demonstrates some basic features of interactivity, layout, and styles. We'll create an app from the Windows Universal app project template. If you've developed apps for Windows 8.1 and Windows Phone 8.1 before, you might remember that you had to have three projects in Visual Studio, one for the Windows app, one for the phone app, and another with shared code. The Windows 10 Universal Windows Platform (UWP) makes it possible to have just one project, which runs on all devices, including desktop and laptop computers running Windows 10, devices such as tablets, mobile phones, and so on.
 
-最初に、次の基本操作について説明します。
+We'll start with the basics:
 
--   Visual Studio 2015 RC 以降でユニバーサル Windows プロジェクトを作成する方法。
+-   How to create a Universal Windows project in Visual Studio 2015 or later.
 
--   作成されるプロジェクトとファイルを把握する方法。
+-   How to understand the projects and files that are created.
 
--   Visual C++ コンポーネント拡張機能 (C++/CX) の拡張機能を把握する方法と、それを使うタイミング。
+-   How to understand the extensions in Visual C++ component extensions (C++/CX), and when to use them.
 
-**まず Visual Studio でソリューションを作成する**
+**First, create a solution in Visual Studio**
 
-1.  Visual Studio のメニュー バーから **[ファイル]**、**[新規作成]**、**[プロジェクト]** の順にクリックします。
+1.  In Visual Studio, on the menu bar, choose **File** > **New** > **Project**.
 
-2.  **[新しいプロジェクト]** ダイアログ ボックスの左側のウィンドウで、**[インストール済み]**、**[Visual C++]**、**[Windows]**、**[ユニバーサル]** の順に展開します。
+2.  In the **New Project** dialog box, in the left pane, expand **Installed** > **Visual C++** > **Windows** > **Universal**.
 
-3.  中央のウィンドウで、**[空のアプリ (Windows ユニバーサル)]** テンプレートを選びます。
+3.  In the center pane, select **Blank App (Universal Windows)**.
 
-4.  プロジェクトの名前を入力します。 ここでは、名前を "HelloWorld" とします。
+4.  Enter a name for the project. We'll name it HelloWorld.
 
- ![[新しいプロジェクト] ダイアログ ボックスの C++ プロジェクト テンプレート ](images/vs2015-newuniversalproject-cpp.png)
+ ![C++ project templates in the New Project dialog box ](images/vs2015-newuniversalproject-cpp.png)
 
-5.  **[OK]** をクリックします。
+5.  Choose the **OK** button.
 
-   これが初めて作成した UWP プロジェクトであり、コンピューターで開発者モードを有効にしていない場合は、[開発者モードを有効にする] ダイアログ ボックスが表示されます。 リンクをクリックすると、開発者モードを設定できる [設定] ページが開きます。 開発者モードでは、アプリをローカルで展開して実行できます。
+   If this is the first UWP project you've created, and you haven't enabled Developer Mode on your computer, the Enable Developer mode dialog box appears. Click on the link to bring up the Settings page that lets you set Developer Mode. Developer Mode allows your apps to be deployed and run locally.
 
-   プロジェクト ファイルが作られます。
+   Your project files are created.
 
-先に進む前に、ソリューションの構成内容を調べてみましょう。
+Before we go on, let’s look at what's in the solution.
 
-![ユニバーサル アプリ ソリューション (ノードを折りたたんだところ)](images/vs2015-solutionexploreruniversal-0-cpp.png)
+![Univeral app solution with nodes collapsed](images/vs2015-solutionexploreruniversal-0-cpp.png)
 
-### プロジェクト ファイルについて
+### About the project files
 
-プロジェクト フォルダー内のすべての .xaml ファイルには、対応する .xaml.h ファイルと .xaml.cpp ファイルが同じフォルダーに、.g ファイルと .g.hpp ファイルが [生成されたファイル] フォルダーにそれぞれ存在します。このフォルダーはプロジェクト内ではなく、ディスク上にあります。 UI 要素を作成してデータ ソースに接続 (DataBinding) するには、XAML ファイルに変更を加えます。 イベント ハンドラーにカスタム ロジックを追加するには、.h ファイルと .cpp ファイルに変更を加えます。 自動生成ファイルは、XAML マークアップから C++ への変換を表します。 これらのファイルは変更しないでください。ただし、ファイルを観察すると、分離コードの働きをより深く理解できます。 基本的に、生成されたファイルには、XAML ルート要素の部分クラスの定義が記述されています。これは、\*.xaml.h ファイルや .cpp ファイルで変更するクラスと同じです。 生成されたファイルには、XAML UI の子要素がクラスのメンバーとして宣言されており、開発者がコードの中で参照することができます。 ビルド時には、生成されたコードと自分で記述したコードとがマージされてクラス定義が完成し、コンパイルされます。
+Every .xaml file in a project folder has a corresponding .xaml.h file and .xaml.cpp file in the same folder and a .g file and a .g.hpp file in the Generated Files folder, which is on disk but not part of the project. You modify the XAML files to create UI elements and connect them to data sources (DataBinding). You modify the .h and .cpp files to add custom logic for event handlers. The auto-generated files represent the transformation of the XAML markup into C++. Don't modify these files, but you can study them to better understand how the code-behind works. Basically, the generated file contains a partial class definition for a XAML root element; this class is the same class that you modify in the \*.xaml.h and .cpp files. The generated files declare the XAML UI child elements as class members so that you can reference them in the code you write. At build time, the generated code and your code are merged into a complete class definition and then compiled.
 
-まずプロジェクト ファイルを見てみましょう。
+Let's look first at the project files.
 
--   **App.xaml、App.xaml.h、App.xaml.cpp:** アプリのエントリ ポイントとなる Application オブジェクトを表します。 App.xaml に、ページ固有の UI マークアップは含まれませんが、UI のスタイルなどの要素を追加して任意のページからアクセスすることができます。 分離コード ファイルには、**OnLaunched** イベントと **OnSuspending** イベントのハンドラーが含まれます。 通常、ここには、起動時にアプリを初期化したり、中断または終了時にクリーンアップ処理を実行したりするためのカスタム コードを追加します。
--   **MainPage.xaml、MainPage.xaml.h、MainPage.xaml.cpp:** アプリの既定の "スタート" ページに使う XAML マークアップと分離コードが記述されます。 ナビゲーション サポートやビルトイン コントロールはありません。
--   **pch.h、pch.cpp:** プリコンパイル済みヘッダー ファイルと、それをプロジェクトにインクルードするファイルです。 pch.h には、変更頻度が低く、ソリューション内の他のファイルにインクルードされるヘッダーを含めることができます。
--   **Package.appxmanifest:** アプリが必要とするデバイスの機能や、アプリのバージョン情報などのメタデータを表す XML ファイルです。 このファイルをダブルクリックすると、**マニフェスト デザイナー**で開くことができます。
--   **HelloWorld\_TemporaryKey.pfx:** Visual Studio から対象のコンピューター上にアプリを展開するためのキーです。
+-   **App.xaml, App.xaml.h, App.xaml.cpp:** Represent the Application object, which is an app's entry point. App.xaml contains no page-specific UI markup, but you can add UI styles and other elements that you want to be accessible from any page. The code-behind files contain handlers for the **OnLaunched** and **OnSuspending** events. Typically, you add custom code here to initialize your app when it starts and perform cleanup when it's suspended or terminated.
+-   **MainPage.xaml, MainPage.xaml.h, MainPage.xaml.cpp:**Contain the XAML markup and code-behind for the default "start" page in an app. It has no navigation support or built-in controls.
+-   **pch.h, pch.cpp:** A precompiled header file and the file that includes it in your project. In pch.h, you can include any headers that do not change often and are included in other files in the solution.
+-   **Package.appxmanifest:** An XML file that describes the device capabilities that your app requires, and the app version info and other metadata. To open this file in the **Manifest Designer**, just double-click it.
+-   **HelloWorld\_TemporaryKey.pfx:**A key that enables deployment of the app on this machine, from Visual Studio.
 
-## 初めてのコード
+## A first look at the code
 
-共有プロジェクト内の App.xaml.h と App.xaml.cpp のコードをよく見ると、ほとんどが、見覚えのある ISO C++ コードであることがわかります。 ただし、Windows ランタイム アプリの開発が初めての場合や、これまで C++/CLI で作業を行ってきた場合は、あまり馴染みのない構文要素も中には存在します。 C++/CX でよく使われる標準的ではない構文要素を以下に示します。
+If you examine the code in App.xaml.h, App.xaml.cpp in the shared project, you'll notice that it's mostly C++ code that looks familiar. However, some syntax elements might not be as familiar if you are new to Windows Runtime apps, or you've worked with C++/CLI. Here are the most common non-standard syntax elements you'll see in C++/CX:
 
--   **ref クラス**
+-   **Ref classes**
 
-Windows ランタイムのほぼすべてのクラスは、Windows API のすべての型 (XAML コントロール、アプリ内のページ、App クラス自体、すべてのデバイス オブジェクトとネットワーク オブジェクト、すべてのコンテナー型) を含んでおり、**ref クラス** として宣言されます (**value class** または **value struct** の Windows 型もわずかに存在します)。 ref クラスはすべての言語から利用できます。 C++ では、これらの型の有効期間が (ガベージ コレクションではなく) 自動参照カウントによって制御されるため、それらのオブジェクトを明示的に削除することはできません。 ref クラスは独自に作成することもできます。
+Almost all Windows Runtime classes, which includes all the types in the Windows API--XAML controls, the pages in your app, the App class itself, all device and network objects, all container types--are declared as a **ref class**. (A few Windows types are **value class** or **value struct**). A ref class is consumable from any language. In C++, the lifetime of these types is governed by automatic reference counting (not garbage collection) so that you never explicitly delete these objects. You can create your own ref classes as well.
 
 ```cpp
     namespace HelloWorld
@@ -124,13 +125,13 @@ Windows ランタイムのほぼすべてのクラスは、Windows API のすべ
     }
 ```    
 
-Windows ランタイムのすべての型は名前空間内で宣言する必要があり、ISO C++ の場合は異なり、型そのものがアクセシビリティ修飾子を持ちます。 **public** 修飾子を持つクラスは、その名前空間の外の Windows ランタイム コンポーネントから参照することができます。 **sealed** キーワードは、基底クラスとして使うことができないことを意味します。 ほとんどの ref クラスは sealed です。クラスの継承は、JavaScript が認識しないため、あまり広くは使われません。
+All Windows Runtime types must be declared within a namespace and unlike in ISO C++ the types themselves have an accessibility modifier. The **public** modifier makes the class visible to Windows Runtime components outside the namespace. The **sealed** keyword means the class cannot serve as a base class. Almost all ref classes are sealed; class inheritance is not broadly used because Javascript does not understand it.
 
--   **ref new** と **^ (ハット)**
+-   **ref new** and **^ (hats)**
 
- ref クラスの変数は ^ (ハット) 演算子を使って宣言します。ref new キーワードでオブジェクトをインスタンス化することができます。 それ以降、オブジェクトのインスタンス メソッドにアクセスする際は、C++ のポインターと同様の -> 演算子を使います。 静的メソッドにアクセスする場合は、ISO C++ と同様、:: 演算子を使います。
+ You declare a variable of a ref class by using the ^ (hat) operator, and you instantiate the object with the ref new keyword. Thereafter you access the object's instance methods with the -> operator just like a C++ pointer. Static methods are accessed with the :: operator just as in ISO C++.
 
- 次のコードは、完全修飾名を使ってオブジェクトをインスタンス化し、-> 演算子を使ってインスタンス メソッドを呼び出しています。
+ In the following code, we use the fully qualified name to instantiate an object, and use the -> operator to call an instance method.
 
  ```cpp
     Windows::UI::Xaml::Media::Imaging::BitmapImage^ bitmapImage =
@@ -146,9 +147,9 @@ Windows ランタイムのすべての型は名前空間内で宣言する必要
     bitmapImage->SetSource(fileStream);
 ```
 
--   **プロパティ**
+-   **Properties**
 
-   ref クラスにはプロパティを与えることができます。プロパティは、マネージ言語のプロパティと同様、それを利用する側のコードからはフィールドとして見える特殊なメンバー関数です。
+   A ref class can have properties, which, just as in managed languages, are special member functions that appear as fields to consuming code.
 
 ```cpp
     public ref class SaveStateEventArgs sealed
@@ -174,9 +175,9 @@ Windows ランタイムのすべての型は名前空間内で宣言する必要
     }
 ```
 
--   **デリゲート**
+-   **Delegates**
 
-   マネージ言語と同様、デリゲートは、特定のシグニチャの関数をカプセル化する参照型です。 ほとんどの場合、イベントとそのハンドラーに使われます。
+   Just as in managed languages, a delegate is a reference type that encapsulates a function with a specific signature. They are most often used with events and event handlers
 
 ```cpp
     // Delegate declaration (within namespace scope)
@@ -197,14 +198,14 @@ Windows ランタイムのすべての型は名前空間内で宣言する必要
     }
 ```
 
-## アプリへのコンテンツの追加
+## Adding content to the app
 
-それでは、アプリにコンテンツを追加しましょう。
+Let's add some content to the app.
 
-**手順 1: スタート ページの変更**
+**Step 1: Modify your start page**
 
-1.  **ソリューション エクスプローラー**で、MainPage.xaml を開きます。
-2.  ルート [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) の終了タグの直前に次の XAML を追加して、UI に使うコントロールを作成します。 この XAML には、ユーザーの名前をたずねる [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652)、ユーザーの名前を受け取る [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) 要素、[**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265)、別の **TextBlock** 要素を持つ [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635) が含まれます。
+1.  In **Solution Explorer**, open MainPage.xaml.
+2.  Create controls for the UI by adding the following XAML to the root [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704), immediately before its closing tag. It contains a [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635) that has a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) that asks the user's name, a [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) element that accepts the user's name, a [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265), and another **TextBlock** element.
 
 ```xml
     <StackPanel x:Name="contentPanel" Margin="120,30,0,0">
@@ -218,85 +219,84 @@ Windows ランタイムのすべての型は名前空間内で宣言する必要
     </StackPanel>
 ```
 
-XAML レイアウトについて詳しくは、「[ナビゲーション、レイアウト、ビュー](https://msdn.microsoft.com/library/windows/apps/Dn263172)」で説明します。
+We talk more about XAML layout in the [Navigation, layout, and views](https://msdn.microsoft.com/library/windows/apps/Dn263172) article.
 
-3.  ここまでの作業で、ごく基本的なユニバーサル Windows アプリが作成されました。 UWP アプリの動作や外観を確かめるには、F5 キーを押してデバッグ モードでアプリをビルド、展開、起動します。
+3.  At this point, you have created a very basic Universal Windows app. To see what the UWP app looks like, press F5 to build, deploy, and run the app in debugging mode.
 
-最初に、既定のスプラッシュ画面が表示されます。 この画面には、アプリのマニフェスト ファイルに指定された画像 (Assets\\SplashScreen.scale-100.png) と背景色があります。 スプラッシュ画面をカスタマイズする方法については、「[スプラッシュ画面の追加](https://msdn.microsoft.com/library/windows/apps/Hh465332)」をご覧ください。
+The default splash screen appears first. It has an image—Assets\\SplashScreen.scale-100.png—and a background color that are specified in the app's manifest file. To learn how to customize the splash screen, see [Adding a splash screen](https://msdn.microsoft.com/library/windows/apps/Hh465332).
 
-スプラッシュ画面が消えると、アプリが表示されます。 アプリのメインページが表示されます。
+When the splash screen disappears, your app appears. It displays the main page of the App.
 
-Windows キーを押すか [スタート] ボタンをクリックして、[スタート] メニューに移動します。展開したアプリが [スタート] メニューにあるインストール済みアプリの一覧に追加されています。 また、[すべてのアプリ] ボタンの横にある [新規作成] リンクをクリックしても表示されます。 次にアプリを実行するときは、そのタイルをタップまたはクリックするか、いつものように Visual Studio で F5 キーまたは Ctrl + F5 キーを押します。
+Press the Windows key or click the Start button to go to the Start menu, and notice that deploying the app adds it to the Start menu's list of installed apps. It also appears when you click on the the New link next to the All Apps button. To run the app again, just tap or click its tile, press F5 or Ctrl+F5 in Visual Studio as usual.
 
- ![コントロールを追加した Windows ストア アプリ](images/xaml-hw-app2.png)
+ ![Windows Store app screen, with controls](images/xaml-hw-app2.png)
 
-   特別な機能はありませんが、ともかくこれで、初めてのユニバーサル Windows プラットフォーム アプリの作成は完了です。
+   It doesn't do much—yet—but congratulations, you've built your first Universal Windows Platform app!
 
-   アプリのデバッグを停止して閉じるには、Visual Studio に戻り、Shift キーを押しながら F5 キーを押します。
+   To stop debugging and close the app, return to Visual Studio and press Shift+F5.
 
-   詳しくは、「[Visual Studio からのストア アプリの実行](http://go.microsoft.com/fwlink/p/?LinkId=619619)」をご覧ください。
+   For more information, see [Run a Store app from Visual Studio](http://go.microsoft.com/fwlink/p/?LinkId=619619).
 
-   アプリの [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) に文字を入力することはできますが、この時点では [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) をクリックしても何も起こりません。 この後の手順で、ユーザーに合わせたあいさつを表示する、ボタンの [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) イベント用のイベント ハンドラーを作成します。
+   In the app, you can type in the [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683), but clicking the [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) doesn't do anything. In later steps, you create an event handler for the button's [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) event, which displays a personalized greeting.
 
-## モバイル デバイス エミュレーターでアプリを起動する
+## Start the app on a mobile device emulator
 
 
-アプリは、すべての Windows 10 デバイスで実行できます。Windows Phone ではどのようになるかを見てみましょう。 このセクションでは、Windows 10 を実行している Windows Phone か、Windows Phone エミュレーターへのアクセスが必要です。また、Visual Studio が仮想マシンではなく物理コンピューターで実行されていて、HyperV のサポートが有効になっている必要もあります。
+Your app runs on any Windows 10 device, so let’s see how it looks on a Windows Phone. This section requires a Windows Phone running Windows 10, or access to a Windows Phone emulator and it requires that Visual Studio be running on a physical computer (not a virtual machine) with HyperV supported and enabled.
 
-Visual Studio では、デスクトップ デバイスでデバッグするオプションに加えて、コンピューターに接続された物理的なモバイル デバイスにアプリをデプロイしてデバッグするか、モバイル デバイス エミュレーターでアプリをデプロイしてデバッグするオプションが用意されています。 メモリとディスプレイの構成がさまざまなデバイスのエミュレーターの中から選ぶことができます。
+In addition to the options to debug on a desktop device, Visual Studio provides options for deploying and debugging your app on a physical mobile device connected to the computer, or on a mobile device emulator. You can choose among emulators for devices with different memory and display configurations.
 
--   **デバイス**
+-   **Device**
 -   **Emulator 10.0.0.0 WVGA 4 inch 512MB**
--   他の構成のさまざまなエミュレーター
+-   Various emulators in other configurations
 
-画面が小さくメモリが限られているデバイスでアプリをテストすることをお勧めします。そのためには、**[Emulator 10.0.0.0 WVGA 4 inch 512MB]** オプションを使用します。
-**ヒント:** 電話エミュレーターの使用方法について詳しくは、「[エミュレーターにおける Windows Phone アプリの実行](http://go.microsoft.com/fwlink/p/?LinkId=394233)」をご覧ください。
+It's a good idea to test your app on a device with a small screen and limited memory, so use the **Emulator 10.0.0.0 WVGA 4 inch 512MB** option.
+**Tip**  For more info about using the phone emulator, see [Run Windows Phone apps in the emulator](http://go.microsoft.com/fwlink/p/?LinkId=394233).
 
- 
+ 
 
-物理デバイスでアプリをデバッグするには、開発用に登録されているデバイスが必要です。 詳しくは、「[Windows Phone の登録](https://msdn.microsoft.com/library/windows/apps/Dn614128)」をご覧ください。
+To debug your app on a physical device, you must have a device that’s registered for development. For more info, see [Register your Windows Phone](https://msdn.microsoft.com/library/windows/apps/Dn614128).
 
-**モバイル デバイス エミュレーターでデバッグを開始するには**
+**To start debugging on a mobile device emulator**
 
-1.  **[標準]** ツール バーの [ターゲット デバイス] メニュー (![[デバッグの開始] メニュー](images/startdebug-full.png)) で、**[Emulator 10.0.0.0 WVGA 4 inch 512MB]** を選びます。
-2.  ツール バーの **[デバッグの開始]** ボタン (![[デバッグの開始] ボタン](images/startdebug-sm.png)) をクリックします。
+1.  In the target device menu (![Start debugging menu](images/startdebug-full.png)) on the **Standard** toolbar, pick **Emulator 10.0.0.0 WVGA 4 inch 512MB**.
+2.  Click the **Start Debugging** button (![Start debugging button](images/startdebug-sm.png)) in the toolbar.
 
-   または
+   –or–
 
-   **[デバッグ]** メニューの **[デバッグの開始]** をクリックします。
+   From the **Debug** menu, click **Start Debugging**.
 
-   または
+   –or–
 
-   F5 キーを押します。
+   Press F5.
 
-モバイル デバイス エミュレーターでは、アプリは次のように表示されます。
+On the mobile device emulator, the app looks like this.
 
-![モバイル デバイスでのアプリの初期画面](images/hw10-screen1-mob.png)
+![Initial app screen on mobile device](images/hw10-screen1-mob.png)
 
-Visual Studio で、選択したエミュレーターが起動し、アプリがデプロイされて起動されます。 最初に気付くことは、ローカル コンピューターでは適切に見える 120 ピクセルの左余白によって、モバイル デバイスの小さい画面からコンテンツがはみ出していることです。 このチュートリアルの後半では、アプリを常に適切に表示するために、UI をさまざまな画面サイズに合わせて調整する方法を説明します。
+Visual Studio starts the selected emulator and then deploys and starts your app. The first thing you'll notice is that the 120-pixel left margin that looks good on the local machine pushes your content off the smaller screen of a mobile device. Later in this tutorial, you'll learn how to adapt the UI to different screen sizes so your app always looks good.
 
-## 手順 2: イベント ハンドラーの作成
+## Step 2: Create an event handler
 
-1.  MainPage.xaml (XAML ビューまたはデザイン ビュー) で、先に追加した [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635) の "Say Hello" [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) を選びます。
-2.  Alt + Enter キーを押して**プロパティ ウィンドウ**を開き、[イベント] ボタン (![[イベント] ボタン](IMAGES/EVENTSBUTTON.png)) を選択します。
-3.  [
-            **Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) イベントを探します。 このテキスト ボックスに、**Click** イベントを処理する関数の名前を入力します。 この例では、「Button\_Click」と入力します。
+1.  In MainPage.xaml, in either XAML or design view, select the "Say Hello" [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) in the [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635) you added earlier.
+2.  Open the **Properties Window** by pressing Alt+Enter, and then choose the Events button (![Events button](images/eventsbutton.png)).
+3.  Find the [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) event. In its text box, type the name of the function that handles the **Click** event. For this example, type "Button\_Click".
 
-![プロパティ ウィンドウのイベント ビュー](images/xaml-hw-event.png)
+![Properties window, Events view](images/xaml-hw-event.png)
 
-4.  Enter キーを押します。 MainPage.xaml.cpp にイベント ハンドラー メソッドが作成され、イベントの発生時に実行されるコードを追加できるように開きます。
+4.  Press Enter. The event handler method is created in MainPage.xaml.cpp and opened so that you can add the code that's executed when the event occurs.
 
-   同時に、MainPage.xaml で、[**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) の XAML が更新されて、次のように [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) イベント ハンドラーが宣言されます。
+   At the same time, in MainPage.xaml, the XAML for the [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) is updated to declare the [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) event handler, like this:
 
 ```xml
     <Button Content="Say \"Hello\"" Click="Button_Click"/>
 ```
 
-これを XAML コードに手動で入力することもできます。これは、デザイナーが読み込みに失敗する場合に役立つことがあります。 手動で入力する場合は、「Click」と入力すると、IntelliSense によって新しいイベント ハンドラーを追加するオプションがポップアップされます。 このように、Visual Studio によって必要なメソッド宣言とスタブが作成されます。
+You could also have simply added this to the xaml code manually, which can be helpful if the designer doesn't load. If you enter this manually, type "Click" and then let IntelliSense pop up the option to add a new event handler. That way, Visual Studio creates the necessary method declaration and stub.
 
-デザイナーは、レンダリング中にハンドルされない例外が発生すると、読み込みに失敗します。 デザイナーでのレンダリングでは、ページの設計時のバージョンが実行されます。 これは、ユーザー コードの実行を無効にする場合に便利です。 そのためには、**[ツール]、[オプション]** の順にクリックして、開いたダイアログ ボックスで設定を変更します。 **[XAML デザイナー]** で、**[プロジェクト コードを XAML デザイナーで実行する (サポートされている場合)]** チェック ボックスをオフにします。
+The designer fails to load if an unhandled exception occurs during rendering. Rendering in the designer involves running a design-time version of the page. It can be helpful to disable running user code. You can do this by changing the setting in the **Tools, Options** dialog box. Under **XAML Designer**, uncheck **Run project code in XAML designer (if supported)**.
 
-5.  MainPage.xaml.cpp で、作成した **Button\_Click** イベント ハンドラーに次のコードを追加します。 このコードは、`nameInput` [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) コントロールからユーザー名を取得し、それを使ってあいさつを作ります。 結果は、`greetingOutput` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) に表示されます。
+5.  In MainPage.xaml.cpp, add the following code to the **Button\_Click** event handler that you just created. This code retrieves the user's name from the `nameInput` [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) control and uses it to create a greeting. The `greetingOutput` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) displays the result.
 
 ```cpp
     void HelloWorld::MainPage::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
@@ -305,26 +305,26 @@ Visual Studio で、選択したエミュレーターが起動し、アプリが
     }
 ```
 
-6.  プロジェクトをスタートアップ プロジェクトとして設定し、F5 キーを押してアプリをビルド、実行します。 テキスト ボックスに名前を入力してボタンをクリックすると、ユーザーに合わせたあいさつが表示されます。
+6.  Set the project as the startup, and then press F5 to build and run the app. When you type a name in the text box and click the button, the app displays a personalized greeting.
 
-![メッセージが表示されたアプリ画面](images/xaml-hw-app4.png)
+![App screen with message display](images/xaml-hw-app4.png)
 
-## 手順 3: スタート ページのスタイルを設定する
+## Step 3: Style the start page
 
-### テーマを選ぶ
+### Choosing a theme
 
-アプリの外観は簡単にカスタマイズできます。 既定では、アプリは淡色スタイルのリソースを使います。 システム リソースには、淡色テーマも含まれています。 試しにそれを使って、どのように表示されるか見てみましょう。
+It's easy to customize the look and feel of your app. By default, your app uses resources that have a light style. The system resources also include a light theme. Let's try it out and see what it looks like.
 
-**濃色テーマに切り替えるには**
+**To switch to the dark theme**
 
-1.  App.xaml を開きます。
-2.  開始 [**Application**](https://msdn.microsoft.com/library/windows/apps/BR242324) タグで、[**RequestedTheme**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.requestedtheme) プロパティを編集し、その値を **Dark** に設定します。
+1.  Open App.xaml.
+2.  In the opening [**Application**](https://msdn.microsoft.com/library/windows/apps/BR242324) tag, edit the [**RequestedTheme**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.requestedtheme) property and set its value to **Dark**:
 
 ```xml
    RequestedTheme="Light"
 ```
 
-濃色テーマを追加した [**Application**](https://msdn.microsoft.com/library/windows/apps/BR242324) タグ全体を次に示します。
+Here's the full [**Application**](https://msdn.microsoft.com/library/windows/apps/BR242324) tag with the dark theme :
 
 ```xml 
         <Application
@@ -335,42 +335,42 @@ Visual Studio で、選択したエミュレーターが起動し、アプリが
         RequestedTheme="Dark">
 ```
 
-3.  F5 キーを押して、アプリをビルドし、実行します。 濃色テーマが使われていることに注目してください。
+3.  Press F5 to build and run it. Notice that it uses the dark theme.
 
-![濃色テーマのアプリ画面](images/xaml-hw-app3.png)
+![App screen with dark theme](images/xaml-hw-app3.png)
 
-どちらを使えばいいでしょうか。 どちらでも好きなほうを使用できます。 お勧めするとすれば、主に画像やビデオを表示するアプリには濃色テーマ、テキストが大量に含まれるアプリには淡色テーマです。 カスタム配色を使う場合は、アプリの外観に最もよく合ったテーマを使ってください。 このチュートリアルの残りの部分では、スクリーンショットで淡色テーマを使います。
+Which theme should you use? Whichever one you want. Here's our take: for apps that mostly display images or video, we recommend the dark theme; for apps that contain a lot of text, we recommend the light theme. If you're using a custom color scheme, use the theme that goes best with your app's look and feel. In the rest of this tutorial, we use the Light theme in screenshots.
 
-**注:** テーマは、アプリの起動時に適用されます。アプリの実行中にテーマを変更することはできません。
+**Note**  The theme is applied when the app is started and can't be changed while the app is running.
 
-### システム スタイルの使用
+### Using system styles
 
-現時点では、Windows アプリ内のテキストが小さすぎて判読困難です。 システム スタイルを適用してこの点を修正してみましょう。
+Right now, in the Windows app the text is very small and difficult to read. Let's fix that by applying a system style.
 
-**要素のスタイルを変更するには**
+**To change the style of an element**
 
-1.  Windows プロジェクトで、MainPage.xaml を開きます。
-2.  XAML ビューまたはデザイン ビューで、前に追加した "What's your name?"[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) を選びます。
-3.  **[プロパティ]** ウィンドウ (**F4**) の右上にある [プロパティ] ボタン (![Properties button](IMAGES/PROPERTIESBUTTON.png)) をクリックします。
-4.  **[Text]** グループを展開し、フォント サイズを 18px に設定します。
-5.  **[その他]** グループを展開し、**Style** プロパティを探します。
-6.  プロパティ マーカー (**Style** プロパティの右にある緑色のボックス) をクリックし、メニューから **[システム リソース]**、**[BaseTextBlockStyle]** の順にクリックします。
+1.  In the Windows project, open MainPage.xaml.
+2.  In either XAML or design view, select the "What's your name?"[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) that you added earlier.
+3.  In the **Properties** window (**F4**), choose the Properties button (![Properties button](images/propertiesbutton.png)) in the upper right.
+4.  Expand the **Text** group and set the font size to 18 px.
+5.  Expand the **Miscellaneous** group and find the **Style** property.
+6.  Click the property marker (the green box to the right of the **Style** property), and then, on the menu, choose **System Resource** > **BaseTextBlockStyle**.
 
- **BaseTextBlockStyle** は、[**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794) ( <root>\\Program Files\\Windows Kits\\10\\Include\\winrt\\xaml\\design\\generic.xaml 内) で定義されるリソースです。
+ **BaseTextBlockStyle** is a resource that's defined in the [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794) in <root>\\Program Files\\Windows Kits\\10\\Include\\winrt\\xaml\\design\\generic.xaml.
 
-![プロパティ ウィンドウのプロパティ ビュー](images/xaml-hw-style-cpp.png)
+![Properties window, Properties view](images/xaml-hw-style-cpp.png)
 
- XAML デザイン サーフェイスで、テキストの外観が変化します。 XAML エディターで、[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) の XAML が更新されます。
+ On the XAML design surface, the appearance of the text changes. In the XAML editor, the XAML for the [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) is updated:
 
 ```xml
    <TextBlock Text="What's your name?" Style="{StaticResource BasicTextStyle}"/><
 ```
 
-7.  このプロセスを繰り返してフォント サイズを設定し、**BaseTextBlockStyle** を `greetingOutput` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 要素に割り当てます。
+7.  Repeat the process to set the font size and assign the **BaseTextBlockStyle** to the `greetingOutput`[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) element.
 
-  **ヒント:** この [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) にはテキストはありませんが、マウス ポインターを XAML デザイン サーフェイスの上に移動すると、対応する位置に青色の輪郭が表示されて、選択できます。  
+  **Tip**  Although there's no text in this [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652), when you move the pointer over the XAML design surface, a blue outline shows where it is so that you can select it.  
 
-  XAML は次のようになります。
+  Your XAML now looks like this:
 
 ```xml
     <StackPanel x:Name="contentPanel" Margin="120,30,0,0">
@@ -383,17 +383,17 @@ Visual Studio で、選択したエミュレーターが起動し、アプリが
     </StackPanel>
 ```
 
-8.  F5 キーを押して、アプリをビルドし、実行します。 次のように表示されます。
+8.  Press F5 to build and run the app. It now looks like this:
 
- ![アプリ画面のテキストが大きくなった](images/xaml-hw-app5.png)
+ ![App screen with larger text](images/xaml-hw-app5.png)
 
-### 手順 4: 異なるウィンドウ サイズに合わせて UI を調整する
+### Step 4: Adapt the UI to different window sizes
 
-次に、モバイル デバイスで適切に表示されるように、さまざまな画面サイズに合わせて UI を調整します。 これを行うには、[**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) を追加して、さまざまな表示状態に適用されるプロパティを設定します。
+Now we'll make the UI adapt to different screen sizes so it looks good on mobile devices. To do this, you add a [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) and set properties that are applied for different visual states.
 
-**UI レイアウトを調整するには**
+**To adjust the UI layout**
 
-1.  XAML エディターで、ルートの [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) 要素の開始タグの後に、この XAML ブロックを追加します。
+1.  In the XAML editor, add this block of XAML after the opening tag of the root [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) element.
 
 ```xml
     <VisualStateManager.VisualStateGroups>
@@ -417,33 +417,28 @@ Visual Studio で、選択したエミュレーターが起動し、アプリが
     </VisualStateManager.VisualStateGroups>
 ```
 
-2.  ローカル コンピューターでアプリをデバッグします。 UI は、ウィンドウが 641 DIP (デバイスに依存しないピクセル) より狭くならない限り、前と同じように表示されることに注意してください。
-3.  モバイル デバイス エミュレーターでアプリをデバッグします。 `narrowState` で定義したプロパティが UI に使用され、小さい画面で適切に表示されていることに注意してください。
+2.  Debug the app on the local machine. Notice that the UI looks the same as before unless the window gets narrower than 641 device-independent pixels (DIPs).
+3.  Debug the app on the mobile device emulator. Notice that the UI uses the properties you defined in the `narrowState` and appears correctly on the small screen.
 
-![スタイル付きテキストを表示するモバイル アプリ画面](images/hw10-screen2-mob.png)
+![Mobile app screen with styled text](images/hw10-screen2-mob.png)
 
-以前のバージョンの XAML で [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) を使ったことがある場合は、この XAML では簡素化された構文が使用されていることに気付くかもしれません。
+If you've used a [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) in previous versions of XAML, you might notice that the XAML here uses a simplified syntax.
 
-`wideState` という名前の [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) で、[**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn890382) の [**MinWindowWidth**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.adaptivetrigger.minwindowwidth) プロパティが 641 に設定されています。 これは、ウィンドウの幅が 641 DIP という最小値以上である場合に限って、状態が適用されることを意味します。 この状態には [**Setter**](https://msdn.microsoft.com/library/windows/apps/BR208817) オブジェクトを定義していないため、XAML でページのコンテンツに対して定義したレイアウト プロパティが使用されます。
+The [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) named `wideState` has an [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn890382) with its [**MinWindowWidth**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.adaptivetrigger.minwindowwidth) property set to 641. This means that the state is to be applied only when the window width is not less than the minimum of 641 DIPs. You don't define any [**Setter**](https://msdn.microsoft.com/library/windows/apps/BR208817) objects for this state, so it uses the layout properties you defined in the XAML for the page content.
 
-2 つ目の [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) である `narrowState` で、[**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn890382) の [**MinWindowWidth**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.adaptivetrigger.minwindowwidth) プロパティが 0 に設定されています。 この状態は、ウィンドウの幅が 0 より大きく 641 DIP より小さい場合に適用されます (641 DIP では、`wideState` が適用されます)。この状態では、いくつかの [**Setter**](https://msdn.microsoft.com/library/windows/apps/BR208817) オブジェクトを設定して、UI のコントロールのレイアウト プロパティを変更します。
+The second [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007), `narrowState`, has an [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn890382) with its [**MinWindowWidth**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.adaptivetrigger.minwindowwidth) property set to 0. This state is applied when the window width is greater than 0, but less than 641 DIPs. (At 641 DIPs, the `wideState` is applied.) In this state, you do define some [**Setter**](https://msdn.microsoft.com/library/windows/apps/BR208817) objects to change the layout properties of controls in the UI:
 
--   `contentPanel` の左側の余白を 120 から 20 に減らします。
--   `inputPanel` 要素の [**Orientation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.stackpanel.orientation) を **Horizontal** から **Vertical** に変更します。
--   4 DIP の上余白を `inputButton` 要素に追加します。
+-   You reduce the left margin of the `contentPanel` element from 120 to 20.
+-   You change the [**Orientation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.stackpanel.orientation) of the `inputPanel` element from **Horizontal** to **Vertical**.
+-   You add a top margin of 4 DIPs to the `inputButton` element.
 
-### 要約
+### Summary
 
-これで、最初のチュートリアルは終わりです。 このチュートリアルでは、Windows ユニバーサル アプリにコンテンツを追加する方法、そのコンテンツで対話式操作を実現する方法、見た目を変更する方法の 3 点について説明しました。
+Congratulations, you've completed the first tutorial! It taught how to add content to Windows Universal apps, how to add interactivity to them, and how to change their appearance.
 
-## 次の手順
+## Next steps
 
-Windows 8.1 や Windows Phone 8.1 を対象とする Windows ユニバーサル アプリ プロジェクトがある場合は、そのプロジェクトを Windows 10 に移植できます。 この移植を自動的に行うプロセスはありませんが、手動で実行することができます。必要となる作業もわずかです。 新しい Windows ユニバーサル プロジェクトを使って開発を始めることで、最新のプロジェクト システム構造を入手し、お使いのコード ファイルをプロジェクトのディレクトリ構造にコピーしたり、項目をプロジェクトに追加したりすることができます。また、このトピックのガイダンスに従い、[**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) を使って XAML を書き換えることもできます。 詳しくは、「[Windows ランタイム 8 プロジェクトのユニバーサル Windows プラットフォーム (UWP) プロジェクトへの移植](https://msdn.microsoft.com/library/windows/apps/Mt188203)」と「[ユニバーサル Windows プラットフォームへの移植 (C++)](http://go.microsoft.com/fwlink/p/?LinkId=619525)」をご覧ください。
+If you have a Windows Universal app project that targets Windows 8.1 and/or Windows Phone 8.1, you can port it to Windows 10. There is no automatic process for this, but you can do it manually with a little effort. Start with a new Windows Universal project to get the latest project system structure and manifest files, copy your code files into the project's directory structure, add the items to your project, and rewrite your XAML using the [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) according to the guidance in this topic. For more information, see [Porting a Windows Runtime 8 project to a Universal Windows Platform (UWP) project](https://msdn.microsoft.com/library/windows/apps/Mt188203) and [Porting to the Universal Windows Platform (C++)](http://go.microsoft.com/fwlink/p/?LinkId=619525).
 
-UWP アプリと統合する既存の C++ コードがある場合、たとえば、既存のアプリケーションに新しい UWP UI を作成する場合は、「[方法: ユニバーサル Windows プロジェクトで既存の C++ コードを使う](http://go.microsoft.com/fwlink/p/?LinkId=619623)」をご覧ください。
-
-
-
-<!--HONumber=Mar16_HO1-->
-
+If you have existing C++ code that you want to integrate with a UWP app, such as to create a new UWP UI for an existing application, see [How to: Use existing C++ code in a Universal Windows project](http://go.microsoft.com/fwlink/p/?LinkId=619623).
 

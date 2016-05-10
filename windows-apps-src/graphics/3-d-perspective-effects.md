@@ -1,27 +1,28 @@
 ---
+author: Jwmsft
 ms.assetid: 90F07341-01F4-4205-8161-92DD2EB49860
-title: XAML UI 用の 3-D 遠近効果
-description: 視点の変換を使って、3D 効果を Windows ランタイム アプリのコンテンツに適用することができます。 たとえば、次に示すように、オブジェクトが回転してユーザーに近づいたり離れたりするように見せることができます。
+title: 3-D perspective effects for XAML UI
+description: You can apply 3-D effects to content in your Windows Runtime apps using perspective transforms. For example, you can create the illusion that an object is rotated toward or away from you, as shown here.
 ---
-# XAML UI 用の 3-D 遠近効果
+# 3-D perspective effects for XAML UI
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-視点の変換を使って、3D 効果を Windows ランタイム アプリのコンテンツに適用することができます。 たとえば、次に示すように、オブジェクトが回転してユーザーに近づいたり離れたりするように見せることができます。
+You can apply 3-D effects to content in your Windows Runtime apps using perspective transforms. For example, you can create the illusion that an object is rotated toward or away from you, as shown here.
 
-![視点の変換を使った画像](images/3dsimple.png)
+![Image with Perspective Transform](images/3dsimple.png)
 
-また、次に示すように、複数のオブジェクトを互いに相対的に配置して 3D 効果を作成することも、視点の変換の一般的な使い方の 1 つです。
+Another common usage for perspective transforms is to arrange objects in relation to one another to create a 3-D effect, as here.
 
-![オブジェクトを重ねて 3D 効果を作成](images/3dstacking.png)
+![Stacking objects to create a 3-D effect](images/3dstacking.png)
 
-静的な 3D 効果の作成だけでなく、視点の変換のプロパティにアニメーションを適用すると、動く 3D 効果を作成できます。 [このサンプルを実行](http://go.microsoft.com/fwlink/p/?linkid=236111) すると、その例を見ることができます。
+Besides creating static 3-D effects, you can animate the perspective transform properties to create moving 3-D effects. [Run this sample](http://go.microsoft.com/fwlink/p/?linkid=236111) to see an example of this.
 
-ここまでは、視点の変換を画像に適用する例を見ましたが、これらの効果は、コントロールなどすべての [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) に適用できます。 たとえば、次のようなコントロールのコンテナー全体に 3D 効果を適用できます。
+You just saw perspective transforms applied to images, but you can apply these effects to any [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911), including controls. For example, you can apply a 3-D effect to an entire container of controls like this:
 
-![要素のコンテナーに適用された 3D 効果](images/skewedstackpanel.png)
+![3-D effect applied to a container of elements](images/skewedstackpanel.png)
 
-このサンプルの作成に使った XAML コードを次に示します。
+Here is the XAML code used to create this sample:
 
 ```xml
 <StackPanel Margin="35" Background="Gray">    
@@ -34,14 +35,13 @@ description: 視点の変換を使って、3D 効果を Windows ランタイム 
 </StackPanel>
 ```
 
-ここでは、3D 空間でのオブジェクトの回転と移動に使われる [**PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/BR210192) のプロパティに注目してください。 次のサンプルでは、これらのプロパティの動作を実際に試し、オブジェクトへの影響を調べることができます。
+Here we focus on the properties of [**PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/BR210192) which is used to rotate and move objects in 3-D space. The next sample allows you to experiment with these properties and see their effect on an object.
 
-[このサンプルを実行する](http://go.microsoft.com/fwlink/p/?linkid=236112)
+[Run this sample](http://go.microsoft.com/fwlink/p/?linkid=236112)
 
-## PlaneProjection クラス
+## PlaneProjection class
 
-[
-            **PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/BR210192) を使って [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) の [**Projection**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.uielement.projection.aspx) プロパティを設定することで、UIElement に 3D 効果を適用できます。 **PlaneProjection** は、変換を空間内でどのようにレンダリングするかを定義します。 単純な場合の例を次に示します。
+You can apply 3D effects can to any [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911), by setting the UIElement's [**Projection**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.projection) property using a [**PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/BR210192). The **PlaneProjection** defines how the transform is rendered in space. The next example shows a simple case.
 
 ```xml
 <Image Source="kid.png">
@@ -51,12 +51,11 @@ description: 視点の変換を使って、3D 効果を Windows ランタイム 
 </Image>
 ```
 
-次の図は、画像のレンダリング結果を示しています。 X 軸、Y 軸、Z 軸が赤い線で示されています。 この画像は、[**RotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationx) プロパティを使って、X 軸の周りに 35°後方に回転しています。
+This figure shows what the image renders as. The x-axis, y-axis, and z-axis are shown as red lines. The image is rotated backward 35 degrees around the x-axis using the [**RotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationx) property.
 
-![-35°の X 回転](images/3drotatexminus35.png)
+![RotateX minus 35 degrees](images/3drotatexminus35.png)
 
-[
-            **RotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationy) プロパティは、回転中心の Y 軸の周りに画像を回転させます。
+The [**RotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationy) property rotates around the y-axis of the center of rotation.
 
 ```xml
 <Image Source="kid.png">
@@ -66,27 +65,25 @@ description: 視点の変換を使って、3D 効果を Windows ランタイム 
 </Image>
 ```
 
-![-35°の Y 回転](images/3drotateyminus35.png)
+![RotateY minus 35 degrees](images/3drotateyminus35.png)
 
-[
-            **RotationZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationz) プロパティは、回転中心の Z 軸 (オブジェクトの平面に垂直な直線) の周りに画像を回転させます。
+The [**RotationZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationz) property rotates around the z-axis of the center of rotation (a line that is perpendicular to the plane of the object).
 
 ```xml
 <Image Source="kid.png">
     <Image.Projection>
-        <PlaneProjection RotationZ="-45"   />
+        <PlaneProjection RotationZ="-45"/>
     </Image.Projection>
 </Image>
 ```
 
-![-45°の Z 回転](images/3drotatezminus35.png)
+![RotateZ minus 45 degrees](images/3drotatezminus35.png)
 
-回転プロパティでは、正または負の値を指定することで、どちらの方向にも回転させることができます。 絶対値が 360 を超える値も指定でき、その場合、オブジェクトは 1 回転よりも大きく回転します。 [このサンプルを実行](http://go.microsoft.com/fwlink/p/?linkid=236112) すると、[**RotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationx)、[**RotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationy)、[**RotationZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationz) の各プロパティに異なる値を試して、効果を確認することができます。
+The rotation properties can specify a positive or negative value to rotate in either direction. The absolute number can be greater than 360, which rotates the object more than one full rotation. [Run this sample](http://go.microsoft.com/fwlink/p/?linkid=236112) to experiment with different values for the [**RotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationx), [**RotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationy), and [**RotationZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationz) properties to see the effect.
 
-[
-            **CenterOfRotationX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationx.aspx)、[**CenterOfRotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationy)、[**CenterOfRotationZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationz) の各プロパティを使うと、回転の中心を移動できます。 既定では、各回転軸がオブジェクトの中心を通っているため、オブジェクトは中心の周りを回転します。 ただし、回転の中心をオブジェクトの外側の端に移動すると、オブジェクトはその端の周りを回転します。 **CenterOfRotationX** と **CenterOfRotationY** の既定値は 0.5 であり、**CenterOfRotationZ** の既定値は 0 です。 **CenterOfRotationX** と **CenterOfRotationY** では、0 ～ 1 の値を指定すると、回転の中心がオブジェクト内部の点に設定されます。 値 0 はオブジェクトの一方の端を示し、値 1 はもう一方の端を示します。 この範囲外の値も指定でき、回転の中心は対応する位置に移動します。 回転の中心の Z 軸はオブジェクトの平面と交差しているため、負の値を指定すると回転の中心をオブジェクトの後ろに移動でき、正の値を指定するとオブジェクトの手前へ移動できます。
+You can move the center of rotation by using the [**CenterOfRotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationx), [**CenterOfRotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationy), and [**CenterOfRotationZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationz) properties. By default, the axes of rotation run directly through the center of the object, causing the object to rotate around its center. But if you move the center of rotation to the outer edge of the object, it will rotate around that edge. The default values for **CenterOfRotationX** and **CenterOfRotationY** are 0.5, and the default value for **CenterOfRotationZ** is 0. For **CenterOfRotationX** and **CenterOfRotationY**, values between 0 and 1 set the pivot point at some location within the object. A value of 0 denotes one object edge and 1 denotes the opposite edge. Values outside of this range are allowed and will move the center of rotation accordingly. Because the z-axis of the center of rotation is drawn through the plane of the object, you can move the center of rotation behind the object using a negative number and in front of the object (toward you) using a positive number.
 
-[**CenterOfRotationX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationx.aspx) は回転の中心をオブジェクトと平行に X 軸に沿って移動し、[**CenterOfRotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationy) は回転の中心をオブジェクトの Y 軸に沿って移動します。 **CenterOfRotationY** にさまざまな値を指定した例を以降の図に示します。
+[**CenterOfRotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationx) moves the center of rotation along the x-axis parallel to the object while [**CenterOfRotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationy) moves the center or rotation along the y-axis of the object. The next illustrations demonstrate using different values for **CenterOfRotationY**.
 
 ```xml
 <Image Source="kid.png">
@@ -96,24 +93,22 @@ description: 視点の変換を使って、3D 効果を Windows ランタイム 
 </Image>
 ```
 
-**CenterOfRotationY = "0.5" (既定)**
+**CenterOfRotationY = "0.5" (default)**
 
-![CenterOfRotationY が 0.5](images/3drotatexminus35.png)
+![CenterOfRotationY equals 0.5](images/3drotatexminus35.png)
 ```xml
 <Image Source="kid.png">
     <Image.Projection>
-        <PlaneProjection RotationX="-35" CenterOfRotationY="0.1" />
+        <PlaneProjection RotationX="-35" CenterOfRotationY="0.1"/>
     </Image.Projection>
 </Image>
 ```
 
 **CenterOfRotationY = "0.1"**
 
-![CenterOfRotationY が 0.1](images/3dcenterofrotationy0point1.png)
+![CenterOfRotationY equals 0.1](images/3dcenterofrotationy0point1.png)
 
-[
-            **CenterOfRotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationy) プロパティを既定値の 0.5 に設定すると画像が中心の周りを回転し、0.1 に設定するとほぼ上端の周りを回転することがわかります。 [
-            **CenterOfRotationX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationx.aspx) プロパティを変更することで、[**RotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationy) プロパティによってオブジェクトが回転する位置を移動した場合も、同様な結果が得られます。
+Notice how the image rotates around the center when the [**CenterOfRotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationy) property is set to the default value of 0.5 and rotates near the upper edge when set to 0.1. You see similar behavior when changing the [**CenterOfRotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationx) property to move where the [**RotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationy) property rotates the object.
 
 ```xml
 <Image Source="kid.png">
@@ -123,9 +118,9 @@ description: 視点の変換を使って、3D 効果を Windows ランタイム 
 </Image>
 ```
 
-**CenterOfRotationX = "0.5" (既定)**
+**CenterOfRotationX = "0.5" (default)**
 
-![CenterOfRotationX が 0.5](images/3drotateyminus35.png)
+![CenterOfRotationX equals 0.5](images/3drotateyminus35.png)
 ```xml
 <Image Source="kid.png">
     <Image.Projection>
@@ -134,69 +129,53 @@ description: 視点の変換を使って、3D 効果を Windows ランタイム 
 </Image>
 ```
 
-**CenterOfRotationX = "0.9" (右端)**
+**CenterOfRotationX = "0.9" (right-hand edge)**
 
-![CenterOfRotationX が 0.9](images/3dcenterofrotationx0point9.png)
+![CenterOfRotationX equals 0.9](images/3dcenterofrotationx0point9.png)
 
-オブジェクトの平面よりも上側または下側に回転の中心を配置するには、[**CenterOfRotationZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationz) を使用します。 これにより、恒星の周りを周回する惑星のように、その点を中心にオブジェクトを回転させることができます。
+Use the [**CenterOfRotationZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.centerofrotationz) to place the center of rotation above or below the plane of the object. This way, you can rotate the object around the point analogous to a planet orbiting around a star.
 
-[このスライダー サンプルを実行](http://go.microsoft.com/fwlink/p/?linkid=236112) すると、回転の中心の位置をさまざまに変えながらオブジェクトの回転を試すことができます。
+[Run this slider sample](http://go.microsoft.com/fwlink/p/?linkid=236112) to experiment with rotating the object around different locations for the center of rotation.
 
-## オブジェクトの配置
+## Positioning an object
 
-ここまで、空間内でオブジェクトを回転させる方法について説明しました。 以下のプロパティを使うと、空間内でこれらの回転したオブジェクトを互いに相対的に配置できます。
+So far, you learned how to rotate an object in space. You can position these rotated objects in space relative to one another by using these properties:
 
--   [**LocalOffsetX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsetx) は、回転したオブジェクトの平面の X 軸に沿ってオブジェクトを移動します。
--   [**LocalOffsetY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsety) は、回転したオブジェクトの平面の Y 軸に沿ってオブジェクトを移動します。
--   [**LocalOffsetZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsetz) は、回転したオブジェクトの平面の Z 軸に沿ってオブジェクトを移動します。
--   [**GlobalOffsetX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.globaloffsetx) は、画面の X 軸に沿ってオブジェクトを移動します。
--   [**GlobalOffsetY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.globaloffsety) は、画面の Y 軸に沿ってオブジェクトを移動します。
--   [**GlobalOffsetZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.globaloffsetz) は、画面の Z 軸に沿ってオブジェクトを移動します。
+-   [**LocalOffsetX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsetx) moves an object along the x-axis of the plane of a rotated object.
+-   [**LocalOffsetY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsety) moves an object along the y-axis of the plane of a rotated object.
+-   [**LocalOffsetZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsetz) moves an object along the z-axis of the plane of a rotated object.
+-   [**GlobalOffsetX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.globaloffsetx) moves an object along the screen-aligned x-axis.
+-   [**GlobalOffsetY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.globaloffsety) moves an object along the screen-aligned y-axis.
+-   [**GlobalOffsetZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.globaloffsetz) moves an object along the screen-aligned z-axis.
 
-**ローカル オフセット**
+**Local offset**
 
-[
-            **LocalOffsetX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsetx)、[**LocalOffsetY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsety)、[**LocalOffsetZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsetz) の各プロパティは、オブジェクトを回転させた後で、オブジェクトの平面の該当する軸に沿ってオブジェクトを移動します。 したがって、オブジェクトの回転によって、オブジェクトが移動する方向が決まります。 この考え方を示すために、次のサンプルでは、**LocalOffsetX** を 0 から 400 まで、[**RotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationy) を 0 から 65°まで変化させてアニメーションを表示します。
+The [**LocalOffsetX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsetx), [**LocalOffsetY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsety), and [**LocalOffsetZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsetz) properties translate an object along the respective axis of the plane of the object after it has been rotated. Therefore, the rotation of the object determines the direction that the object is translated. To demonstrate this concept, the next sample animates **LocalOffsetX** from 0 to 400 and [**RotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationy) from 0 to 65 degrees.
 
-[このサンプルを実行する](http://go.microsoft.com/fwlink/p/?linkid=236209)
+[Run this sample](http://go.microsoft.com/fwlink/p/?linkid=236209)
 
-このサンプルでは、オブジェクトが自身の X 軸に沿って移動していることがわかります。 アニメーションの冒頭で [**RotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationy) の値が 0 (画面に平行) に近いときには、オブジェクトは画面に沿って X 方向に移動しますが、オブジェクトが前方に回転するにつれて、オブジェクトは自身の平面の X 軸に沿って前方に移動するようになります。 一方、**RotationY** プロパティを -65°に設定した場合は、オブジェクトが後方に離れていきます。
+Notice in the preceding sample that the object is moving along its own x-axis. At the very beginning of the animation, when the [**RotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationy) value is near zero (parallel to the screen), the object moves along the screen in the x direction, but as the object rotates toward you, the object moves along the x-axis of the plane of the object toward you. On the other hand, if you animated the **RotationY** property to -65 degrees, the object would curve away from you.
 
-[**LocalOffsetY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsety) も [**LocalOffsetX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsetx) と同様に機能しますが、オブジェクトは Y 軸に沿って移動します。[**RotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationx) を変更すると、**LocalOffsetY** でオブジェクトが移動する方向が変化します。 次のサンプルでは、**LocalOffsetY** を 0 から 400 まで、**RotationX** を 0 から 65°まで変化させてアニメーションを表示します。
+[**LocalOffsetY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsety) works similarly to [**LocalOffsetX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsetx), except that it moves along the vertical axis, so changing [**RotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationx) affects the direction **LocalOffsetY** moves the object. In the next sample, **LocalOffsetY** is animated from 0 to 400 and **RotationX** from 0 to 65 degrees.
 
-[このサンプルを実行する](http://go.microsoft.com/fwlink/p/?linkid=236210)
+[Run this sample](http://go.microsoft.com/fwlink/p/?linkid=236210)
 
-[**LocalOffsetZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsetz) は、オブジェクトの平面に垂直な方向にオブジェクトを移動し、これは、オブジェクトの後ろから直接中心を通って手前へ抜けるベクターを描画したような結果となります。 **LocalOffsetZ** の機能を示すために、次のサンプルでは、**LocalOffsetZ** を 0 から 400 まで、[**RotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationx) を 0 から 65°まで変化させてアニメーションを表示します。
+[**LocalOffsetZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.localoffsetz) translates the object perpendicular to the plane of the object as though a vector was drawn directly through the center from behind the object out toward you. To demonstrate how **LocalOffsetZ** works, the next sample animates **LocalOffsetZ** from 0 to 400 and [**RotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationx) from 0 to 65 degrees.
 
-[このサンプルを実行する](http://go.microsoft.com/fwlink/p/?linkid=236211)
+[Run this sample](http://go.microsoft.com/fwlink/p/?linkid=236211)
 
-アニメーションの冒頭で [**RotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationx) の値が 0 (画面に平行) に近いときには、オブジェクトはまっすぐ手前へ向かって移動しますが、オブジェクトの平面が下側に回転するにつれて、オブジェクトは下に向かって移動するようになります。
+At the beginning of the animation, when the [**RotationX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationx) value is near zero (parallel to the screen), the object moves directly out toward you, but as the face of the object rotates down, the object moves down instead.
 
-**グローバル オフセット**
+**Global offset**
 
-[
-            **GlobalOffsetX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.globaloffsetx)、[**GlobalOffsetY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.globaloffsety)、[**GlobalOffsetZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.globaloffsetz) の各プロパティは、画面を基準とした軸に沿ってオブジェクトを移動します。 つまり、ローカル オフセット プロパティとは異なり、オブジェクトが移動する軸は、オブジェクトに適用される回転に依存しません。 これらのプロパティは、オブジェクトに適用される回転に関係なく、単に画面の X 軸、Y 軸、Z 軸に沿ってオブジェクトを移動する場合に便利です。
+The [**GlobalOffsetX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.globaloffsetx), [**GlobalOffsetY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.globaloffsety), and [**GlobalOffsetZ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.globaloffsetz) properties translate the object along axes relative to the screen. That is, unlike the local offset properties, the axis the object moves along is independent of any rotation applied to the object. These properties are useful when you want to simply move the object along the x-, y-, or z-axis of the screen without worrying about the rotation applied to the object.
 
-次のサンプルでは、[**GlobalOffsetX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.globaloffsetx) を 0 から 400 まで、[**RotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationy) を 0 から 65°まで変化させてアニメーションを表示します。
+The next sample animates [**GlobalOffsetX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.globaloffsetx) from 0 to 400 and [**RotationY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.planeprojection.rotationy) from 0 to 65 degrees.
 
-[このサンプルを実行する](http://go.microsoft.com/fwlink/p/?linkid=236213)
+[Run this sample](http://go.microsoft.com/fwlink/p/?linkid=236213)
 
-このサンプルでは、オブジェクトが回転しても移動方向が変わらないことがわかります。 これは、オブジェクトが回転に関係なく画面の X 軸に沿って移動しているためです。
+Notice in this sample that the object does not change course as it rotates. That is because the object is being moved along the x-axis of the screen without regard to its rotation.
 
-## オブジェクトの配置
+## Positioning an object
 
-[
-            **PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/BR210192) を使って対応できる場合よりもさらに複雑な疑似 3D のシナリオに対しては、[**Matrix3DProjection**](https://msdn.microsoft.com/library/windows/apps/BR210128) 型および [**Matrix3D**](https://msdn.microsoft.com/library/windows/apps/BR243266) 型を使うことができます。 **Matrix3DProjection** には、どの [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) にも適用できる完全な 3D 変換マトリックスが備えられているため、任意のモデル変換マトリックスおよび視点マトリックスを要素に適用できます。 これらの API は最小限のものであるため、使用する場合は、3D 変換マトリックスを正しく作成するコードを記述する必要があります。 そのため、単純な 3D シナリオには、**PlaneProjection** を使う方が簡単です。
-
- 
-
- 
-
-
-
-
-
-
-<!--HONumber=Mar16_HO1-->
-
-
+You can use the [**Matrix3DProjection**](https://msdn.microsoft.com/library/windows/apps/BR210128) and [**Matrix3D**](https://msdn.microsoft.com/library/windows/apps/BR243266) types for more complex semi-3D scenarios than are possible with the [**PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/BR210192). **Matrix3DProjection** provides you with a complete 3D transform matrix to apply to any [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911), so that you can apply arbitrary model transformation matrices and perspective matrices to elements. Keep in mind that these API are minimal and therefore if you use them, you will need to write the code that correctly creates the 3D transform matrices. Because of this, it is easier to use **PlaneProjection** for simple 3D scenarios.

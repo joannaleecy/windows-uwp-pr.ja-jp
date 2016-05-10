@@ -1,209 +1,198 @@
 ---
-title: アプリのライフサイクル
-description: このトピックでは、ユニバーサル Windows プラットフォーム (UWP) アプリのライフサイクル (アプリがアクティブ化されたときから、アプリが閉じられるまで) について説明します。
+author: mcleblanc
+title: App lifecycle
+description: This topic describes the lifecycle of a Universal Windows Platform (UWP) app, from the time it is activated until it is closed.
 ms.assetid: 6C469E77-F1E3-4859-A27B-C326F9616D10
 ---
 
-# アプリのライフサイクル
+# App lifecycle
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**重要な API**
+**Important APIs**
 
--   [**Windows.UI.Xaml.Application クラス**](https://msdn.microsoft.com/library/windows/apps/br242324)
--   [**Windows.ApplicationModel.Activation 名前空間**](https://msdn.microsoft.com/library/windows/apps/br224766)
+-   [**Windows.UI.Xaml.Application class**](https://msdn.microsoft.com/library/windows/apps/br242324)
+-   [**Windows.ApplicationModel.Activation namespace**](https://msdn.microsoft.com/library/windows/apps/br224766)
 
-このトピックでは、ユニバーサル Windows プラットフォーム (UWP) アプリのライフサイクル (アプリがアクティブ化されたときから、アプリが閉じられるまで) について説明します。 多くのユーザーは複数のデバイスやアプリを使って作業や操作を行います。 ユーザーは、デバイスでマルチタスクを実行しているとき、アプリがその状態を記憶していることを望んでいます。 たとえば、中断したときと同じ位置までページがスクロールし、すべてのコントロールが中断前と同じ状態になっていることが求められています。 起動、中断、再開というアプリのライフサイクルを理解することによって、このようなシームレスな動作を提供できます。
+This topic describes the lifecycle of a Universal Windows Platform (UWP) app, from the time it is activated until it is closed. Many users spread their work and play across multiple devices and apps. Users now expect your app to remember its state as they multitask on their device. For example, they expect the page to be scrolled to the same position and all of the controls to be in the same state as before. By understanding the application lifecycle of launching, suspending, and resuming, you can provide this kind of seamless behavior.
 
-## アプリの実行状態
-
-
-次の図は、アプリの実行状態が切り替わるようすを示したものです。 このページの以降のセクションで、これらの状態とイベントについて説明します。 各状態に切り替わる状況とその際のアプリの処理について詳しくは、[**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 列挙体に関するリファレンスをご覧ください。
-
-![アプリの実行状態が切り替わるようすを示す状態図](images/state-diagram.png)
-
-## 展開
+## App execution state
 
 
-アプリをアクティブ化するには、まずアプリを展開する必要があります。 アプリが展開されるのは、ユーザーがアプリをインストールするとき、または開発時やテスト時に Visual Studio を使ってアプリをビルドして実行するときです。 基本的な展開や高度な展開のシナリオについて詳しくは、「[アプリ パッケージと展開](https://msdn.microsoft.com/library/windows/apps/hh464929)」をご覧ください。
+This illustration represents the transitions between app execution states. We describe these states and events in the next several sections. For more info about each state transition and what your app should do in response, see the reference for the [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) enumeration.
 
-## アプリの起動
+![state diagram showing transitions between app execution states](images/state-diagram.png)
 
-
-アプリは、**NotRunning** 状態であるときに、ユーザーがスタート画面またはアプリケーション リストでアプリのタイルをタップすると起動します。 使用頻度の高いアプリは事前起動して応答性を最適化することもできます (「[アプリの事前起動の処理](handle-app-prelaunch.md)」を参照)。 アプリが **NotRunning** 状態である理由としては、アプリがまだ起動されていないこと、アプリが実行中にクラッシュしたこと、またはアプリは中断されたがメモリに残すことができずにシステムによって終了されたことなどが考えられます。 起動はアクティブ化とは異なります。 アクティブ化は、アプリが検索コントラクトなどのコントラクトまたは拡張機能によってアクティブになることです。
-
-アプリが起動されたときには、アプリが現在メモリ内で中断されているときを含め、[**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) メソッドが呼び出されます。 [
-            **LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224731) パラメーターには、アプリの以前の状態とアクティブ化引数が含まれています。
-
-ユーザーが終了したアプリに切り替えると、システムは [**LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224731) 引数を送信します。このとき、[**Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) は **Launch** に設定され、[**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) は **Terminated** または **ClosedByUser** に設定されます。 アプリでは、保存されているアプリ データを読み込み、表示されているコンテンツを更新する必要があります。
-
-[
-            **PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) の値が **NotRunning** である場合は、初めて起動するときのように最初からアプリをやり直す必要があります。
-
-アプリの起動時には、アプリのスプラッシュ画面が表示されます。 スプラッシュ画面を構成するには、「[スプラッシュ画面の追加](https://msdn.microsoft.com/library/windows/apps/xaml/hh465331)」をご覧ください。
-
-スプラッシュ画面の表示中に、アプリはユーザー インターフェイスを準備する必要があります。 アプリの主なタスクに、イベント ハンドラーを登録して、初期ページの読み込みに必要なカスタム UI を設定するタスクがあります。 これらのタスクは数秒で完了する必要があります。 ネットワーク経由でデータを要求したり、ディスクから大量のデータを取得したりする必要がある場合、こうしたアクティビティはアクティブ化とは別に実行してください。 このような実行に時間がかかる操作が完了するまでの間、アプリでは、アプリ独自のカスタム読み込み UI や追加のスプラッシュ画面を使うことができます。 詳しくは、「[スプラッシュ画面の表示時間の延長](create-a-customized-splash-screen.md)」や「[スプラッシュ画面のサンプル](http://go.microsoft.com/fwlink/p/?linkid=234889)」をご覧ください。 アプリのアクティブ化が完了すると、アプリが **Running** 状態になり、スプラッシュ画面は消えます (スプラッシュ画面のすべてのリソースとオブジェクトは消去されます)。
-
-## アプリのアクティブ化
+## Deployment
 
 
-アプリは、さまざまな拡張機能や、共有コントラクトなどのコントラクトによってアクティブ化されます。 アプリをアクティブ化する方法の一覧については、「[**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693)」をご覧ください。
+In order for an app to be activated it must first be deployed. You app is deployed when a user installs your app or when you use Visual Studio to build and run your app during development and testing. For more info on this and on advanced deployment scenarios, see [App packages and deployment](https://msdn.microsoft.com/library/windows/apps/hh464929).
 
-[
-            **Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324) クラスで定義されているメソッドを上書きして、さまざまなアクティブ化の種類に対応することができます。 一部のアクティブ化の種類には、[**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331)、[**OnSearchActivated**](https://msdn.microsoft.com/library/windows/apps/br242336) など、上書きできる専用のメソッドがあります。それ以外のアクティブ化の種類では、[**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) メソッドをオーバーライドします。
+## App launch
 
-アプリのアクティブ化コードを使うと、アクティブ化された理由を確認したり、既に **Running** 状態になっているかどうかを確認したりすることができます。
 
-オペレーティング システムがアプリを終了させた後でユーザーが再びアプリを起動した場合は、アクティブ化するときに、保存されていたデータを復元することができます。 Windows では、アプリの中断後、さまざまな理由でアプリを終了することがあります。 たとえば、ユーザーが手動でアプリを閉じたときやサインアウトしたとき、システムのリソースが足りないときなどです。 Windows がアプリを終了させた後でユーザーがアプリを起動した場合、アプリは [**Application.OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) コールバックを受け取ります。ユーザーには、アプリがアクティブ化されるまで、アプリのスプラッシュ画面が表示されます。 このイベントを使って、前回中断されたときに保存されていたデータを復元する必要があるかどうか、アプリの既定のデータを読み込む必要があるかどうかを判断できます。 スプラッシュ画面が表示されているため、アプリのコードでは、ユーザーが気になるような遅延を発生させずに、ある程度の処理時間を費やしてこのイベントの処理を実行できます。ただし、アプリの再起動や継続を行うときには、前に説明した実行に時間がかかる操作に関する対応方法も考慮してください。
+An app is launched when it is in the **NotRunning** state and the user taps the app tile on the start screen or on the application list. Frequently used apps may also be prelaunched to optimize responsiveness (see [Handle app prelaunch](handle-app-prelaunch.md)). An app could be in the **NotRunning** state because it has never been launched, because it was running but then crashed, or because it was suspended but then couldn't be kept in memory and was terminated by the system. Launching is different then activation. Activation is when your app is activated via a contract or extension such as the Search contract.
 
-[
-            **OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) イベント データには [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) プロパティが含まれており、アプリがアクティブ化される前の状態を確認することができます。 このプロパティの値は、[**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 列挙体のいずれかの値になります。
+The [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) method is called when an app is launched— including when the app is currently suspended in memory. The [**LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224731) parameter contains the previous state of your app and the activation arguments.
 
-| 終了した理由                                                        | [
-            **PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) プロパティの値 | 実行する処理          |
+When the user switches to your terminated app, the system sends the [**LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224731) args with [**Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) set to **Launch** and [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) set to **Terminated** or **ClosedByUser**. The app should load its saved application data and refresh its displayed content.
+
+If the value of [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) is **NotRunning**, the app should start over as if it were being initially launched.
+
+When an app is launched, Windows displays a splash screen for the app. To configure the splash screen, see [Adding a splash screen](https://msdn.microsoft.com/library/windows/apps/xaml/hh465331).
+
+While the splash screen is displayed, your app should ready its user interface. The primary tasks for the app are to register event handlers and set up any custom UI it needs for loading the initial page. These tasks should only take a few seconds. If an app needs to request data from the network or needs to retrieve large amounts of data from disk, these activities should be completed outside of activation. An app can use its own custom loading UI or an extended splash screen while it waits for these long running operations to finish. See [Display a splash screen for more time](create-a-customized-splash-screen.md) and the [Splash screen sample](http://go.microsoft.com/fwlink/p/?linkid=234889) for more info. After the app completes activation, it enters the **Running** state and the splash screen disappears (and all its resources and objects are cleared).
+
+## App activation
+
+
+An app can be activated by the user through a variety of extensions and contracts such as the Share contract. For a list of ways your app can be activated, see [**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693).
+
+The [**Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324) class defines methods you can override to handle the various activation types. Several of the activation types have a specific method that you can override such as such as [**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331), [**OnSearchActivated**](https://msdn.microsoft.com/library/windows/apps/br242336), etc. For the other activation types, override the [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) method.
+
+Your app's activation code can test to see why it was activated and whether it was already in the **Running** state.
+
+Your app can restore previously saved data during activation in the event that the operating system terminated your app, and the user subsequently re-launched it. Windows may terminate your app after it has been suspended for a number of reasons. The user may manually close your app, or sign out, or the system may be running low on resources. If the user launches your app after Windows has terminated it, the app receives an [**Application.OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) callback and the user sees your app's splash screen until the app is activated. You can use this event to determine whether your app needs to restore the data which it had saved when it was last suspended, or whether you must load your app’s default data. Because the splash screen is up, your app code can invest some processing time to get this done without there being any apparent delay to the user although previously-mentioned concerns about long-running operations also apply if you're restarting or continuing.
+
+The [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) event data includes a [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) property that tells you which state your app was in before it was activated. This property is one of the values from the [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) enumeration:
+
+| Reason for termination                                                        | Value of [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) property | Action to take          |
 |-------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|-------------------------|
-| システムによる終了 (リソースの制約などによる)       | **Terminated**                                                                                          | セッション データを復元する    |
-| ユーザーによる終了 (ユーザーによるプロセスの終了)                             | **ClosedByUser**                                                                                        | 既定のデータで起動する |
-| 予期しない終了 (*現在のユーザー セッション*の間にアプリが実行されていない) | **NotRunning**                                                                                          | 既定のデータで起動する |
+| Terminated by the system (for example, because of resource constraints)       | **Terminated**                                                                                          | Restore session data    |
+| Closed by the user, or process-terminated by user                             | **ClosedByUser**                                                                                        | Start with default data |
+| Unexpectedly terminated, or app has not run during the *current user session* | **NotRunning**                                                                                          | Start with default data |
 
- 
+ 
 
-**注**  *現在のユーザー セッション*は、Windows ログオンに基づきます。 現在のユーザーが明示的にログオフやシャットダウンを行っていない、または他の理由で Windows が再起動していない限り、現在のユーザー セッションは、ロック画面認証やユーザーの切り替えなどのイベント間で保持されます。
+**Note**  *Current user session* is based on Windows logon. So long as the current user hasn't explicitly logged off, shut down, or Windows hasn't restarted for other reasons, the current user session persists across events such as lock screen authentication, switch-user and so on.
 
- 
+ 
 
-[**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) の値が **Running** または **Suspended** になる場合もありますが、その場合、アプリは終了されておらず、データはすべてメモリ内にあるため、データを復元する必要はありません。
+[**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) could also have a value of **Running** or **Suspended**, but in these cases your app was not previously terminated and therefore you don’t have to restore any data because everything is already in memory.
 
-**注**  
+**Note**  
 
-コンピューターの管理者アカウントを使ってログオンしている場合は、UWP アプリをアクティブ化できません。
+If you log on using the computer's Administrator account, you can't activate any UWP apps.
 
-詳しくは、「[アプリの拡張機能](https://msdn.microsoft.com/library/windows/apps/hh464906)」をご覧ください。
+For more info, see [App extensions](https://msdn.microsoft.com/library/windows/apps/hh464906).
 
-### **OnActivated** と特定のアクティブ化との比較
+### **OnActivated** versus specific activations
 
-[
-            **OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) メソッドは、発生する可能性があるすべてのアクティブ化の種類を処理するための方法となります。 ただし、最も一般的なアクティブ化の種類を処理する場合は別のメソッドを使い、あまり一般的ではないアクティブ化の種類を処理する際の代替手段としてのみ **OnActivated** を使うことが多くあります。 たとえば、[**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) には、[**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693) が **Launch** である場合にコールバックとして呼び出される [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) メソッドがあります。このメソッドが、ほとんどのアプリで使われる一般的なアクティブ化の方法です。 特定のアクティブ化については、さらに 6 つの **On\*** メソッドがあります。それらは、[**OnCachedFileUpdaterActivated**](https://msdn.microsoft.com/library/windows/apps/hh701797)、[**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331)、[**OnFileOpenPickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701799)、[**OnFileSavePickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701801)、[**OnSearchActivated**](https://msdn.microsoft.com/library/windows/apps/br242336)、[**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/hh701806) です。 XAML アプリの開始テンプレートは、**OnLaunched** の実装と [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) のハンドラーを備えています。
+The [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) method is the means to handle all possible activation types. However, it's more common to use different methods to handle the most common activation types, and use **OnActivated** only as the fallback method for the less common activation types. For example, [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) has an [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) method that's invoked as a callback whenever [**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693) is **Launch**, and this is the typical activation for most apps. There are 6 more **On\*** methods for specific activations: [**OnCachedFileUpdaterActivated**](https://msdn.microsoft.com/library/windows/apps/hh701797), [**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331), [**OnFileOpenPickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701799), [**OnFileSavePickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701801), [**OnSearchActivated**](https://msdn.microsoft.com/library/windows/apps/br242336), [**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/hh701806). Starting templates for a XAML app have an implementation for **OnLaunched** and a handler for [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341).
 
-## アプリの中断
+## App suspend
 
 
-ユーザーが別のアプリや、デスクトップまたはスタート画面に切り替えると、システムはアプリを中断します。 デバイスが低電力状態になったときに、アプリが中断される場合もあります。 ユーザーが元のアプリに戻すと、システムはアプリを再開します。 システムがアプリを再開した時点で、変数とデータ構造の内容は、システムがアプリを一時停止する前の状態と同じです。 システムはアプリを厳密に中断前の状態に復元するので、ユーザーからはアプリがバックグラウンドで実行していたように見えます。
+The system suspends your app whenever the user switches to another app or to the desktop or Start screen. You app may also be suspended when the device enters a low power state. The system resumes your app whenever the user switches back to it. When the system resumes your app, the content of your variables and data structures is the same as it was before the system suspended the app. The system restores the app exactly where it left off, so that it appears to the user as if it's been running in the background.
 
-ユーザーがアプリをバックグラウンドに移行すると、Windows は、ユーザーがすぐにこのアプリに戻るかどうかを確かめるために数秒待機します。これにより、元のアプリに戻る場合、切り替えはすばやく行われます。 この時間枠内にアプリに戻らなかった場合、アプリは中断されます。
+When the user moves an app to the background, Windows waits a few seconds to see whether the user will immediately switch back to the app so that the transition will be fast if they do. If the user does not switch back within this time window, Windows suspends the app.
 
-アプリの中断が進められているときに非同期作業が必要になった場合には、その作業が完了するまで中断の完了を遅らせる必要があります。 返された [**SuspendingDeferral**](https://msdn.microsoft.com/library/windows/apps/br224684) オブジェクトに [**Complete**](https://msdn.microsoft.com/library/windows/apps/br224685) メソッドを呼び出すまで中断の完了を遅らせるには、[**SuspendingOperation**](https://msdn.microsoft.com/library/windows/apps/br224688) オブジェクト (イベント引数経由で利用可能) に対して [**GetDeferral**](https://msdn.microsoft.com/library/windows/apps/br224690) メソッドを使います。
+If you need to do asynchronous work when your app is being suspended you will need to defer completion of suspend until after your work completes. You can use the [**GetDeferral**](https://msdn.microsoft.com/library/windows/apps/br224690) method on the [**SuspendingOperation**](https://msdn.microsoft.com/library/windows/apps/br224688) object (available via the event args) to delay completion of suspend until after you call the [**Complete**](https://msdn.microsoft.com/library/windows/apps/br224685) method on the returned [**SuspendingDeferral**](https://msdn.microsoft.com/library/windows/apps/br224684) object.
 
-システムは、アプリの一時停止中、アプリとそのデータをメモリに保持するよう試みます。 ただし、アプリをメモリに保持するためのリソースがシステムにない場合、システムはアプリを終了します。 アプリは終了通知を受け取らないため、アプリが中断されるタイミングがアプリのデータを保存する唯一のチャンスとなります。 終了後にアプリをアクティブ化するとき、アプリが中断する前と同じ状態になるように、中断時に保存したアプリのデータがアプリに読み込まれます。 中断されてから終了されたアプリにユーザーが戻るとき、アプリは [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) メソッドでアプリケーション データを復元する必要があります。 アプリが終了されるときは、システムはアプリに通知を送らないので、アプリは中断されたときにアプリケーション データを保存し、排他リソースとファイル ハンドルを解放して、アプリが終了後アクティブ化されるときにそれらを復元する必要があります。
+The system attempts to keep your app and its data in memory while it's suspended. However, if the system does not have the resources to keep your app in memory, the system will terminate your app. Apps don't receive a notification that they are being terminated, so the only opportunity you have to save your app's data is during suspension. When an app determines that it has been activated after being terminated, it should load the application data that it saved during suspend so that the app is in the same state as if was before it was suspended. When the user switches back to a suspended app that has been terminated, the app should restore its application data in its [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) method. The system doesn't notify an app when it's terminated, so your app must save its application data and release exclusive resources and file handles when it's suspended, and restore them when the app is activated after termination.
 
-アプリに [**Application.Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) イベントのイベント ハンドラーが登録されている場合は、アプリが中断される直前にこのイベント ハンドラーが呼び出されます。 このイベント ハンドラーを使って、アプリ データとユーザー データを保存できます。 この場合は、アプリ データ API を使うことをお勧めします。アプリ データ API は、アプリが **Suspended** 状態になる前に必ず完了するためです。 詳しくは、「[設定と他のアプリ データを保存して取得する](https://msdn.microsoft.com/library/windows/apps/mt299098)」をご覧ください。
+If an app has registered an event handler for the [**Application.Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) event, this code is called immediately before the app is suspended. You can use the event handler to save app and user data. We recommended that you use the application data APIs for this purpose because they are guaranteed to complete before the app enters the **Suspended** state. For more info, see [Store and retrieve settings and other app data](https://msdn.microsoft.com/library/windows/apps/mt299098).
 
-また、排他リソースとファイル ハンドルを、自分のアプリが使っていないときに他のアプリがアクセスできるように解放することをお勧めします。 排他リソースには、カメラ、I/O デバイス、外部デバイス、ネットワーク リソースなどがあります。 排他リソースとファイル ハンドルを明示的に解放すると、自分のアプリが使っていないときに他のアプリが排他リソースとファイル ハンドルにアクセスできるようになります。 アプリが終了後にアクティブ化されるときに、排他リソースとファイル ハンドルを再び開く必要があります。
+You should also release exclusive resources and file handles so that other apps can access them while your app isn't using them. Examples of exclusive resources include cameras, I/O devices, external devices, and network resources. Explicitly releasing exclusive resources and file handles helps to ensure that other apps can access them while your app isn't using them. When the app is activated after termination, it should reopen its exclusive resources and file handles.
 
-一般に、アプリは中断イベントを処理するとすぐに、その状態を保存し、リソースとファイル ハンドルを解放します。コードでは、この処理を 1 秒以内で完了させる必要があります。 アプリが中断イベントから数秒以内に復帰しなかった場合、Windows はアプリが応答を停止したと判断してアプリを終了します。
+Generally, your app should save its state and release its resources and file handles immediately when handling the suspending event, and the code should not take more than a second to complete. If an app does not return from the suspending event within a few seconds, Windows assumes that the app has stopped responding and terminates it.
 
-アプリのシナリオによっては、バックグラウンド タスクを完了するためにアプリの実行を継続する必要があります。 たとえば、アプリではオーディオの再生をバックグラウンドで継続できます。詳しくは、「[バックグラウンド オーディオ](https://msdn.microsoft.com/library/windows/apps/mt282140)」をご覧ください。 また、バックグラウンドの転送処理は、アプリが中断または終了した場合でも引き続き実行されます。詳しくは、「[ファイルのダウンロード方法](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj152726.aspx#downloading_a_file_using_background_transfer)」をご覧ください。
+There are some app scenarios where the app must continue to run to complete background tasks. For example, your app can continue to play audio in the background; for more info, see [Background Audio](https://msdn.microsoft.com/library/windows/apps/mt282140)). Also, background transfer operations continue even if your app is suspended or even terminated; for more info, see [How to download a file](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj152726.aspx#downloading_a_file_using_background_transfer)).
 
-ガイドラインについては、「[アプリの中断と再開のガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465088)」をご覧ください。
+For guidelines, see [Guidelines for app suspend and resume](https://msdn.microsoft.com/library/windows/apps/hh465088).
 
-**Visual Studio によるデバッグに関する注意事項:  **Visual Studio は、Visual Studio デバッガーにアタッチされているアプリを Windows が中断するのを防ぎます。 これは、アプリが実行されている間、ユーザーが Visual Studio デバッグの UI を確認できるようにするためです。 アプリのデバッグ中は、Visual Studio を使ってそのアプリに中断イベントを送信できます。 **[デバッグの場所]** ツール バーが表示されていることを確認し、**[中断]** アイコンをクリックします。
+**A note about debugging using Visual Studio:  **Visual Studio prevents Windows from suspending an app that is attached to the debugger. This is to allow the user to view the Visual Studio debug UI while the app is running. When you're debugging an app, you can send it a suspend event using Visual Studio. Make sure the **Debug Location** toolbar is being shown, then click the **Suspend** icon.
 
-## アプリの表示
+## App visibility
 
 
-ユーザーがアプリを別のアプリに切り替えると、元のアプリは表示されなくなりますが、Windows によって中断されるまでは **Running** 状態が維持されます。 ユーザーがアプリを切り替えても、中断される前にそのアプリをアクティブ化したり再びそのアプリに切り替えた場合は、アプリは **Running** 状態のままになります。
+When the user switches from your app to another app, your app is no longer visible but remains in the **Running** state until Windows suspends it. If the user switches away from your app but activates or switches back to it before it can suspended, the app remains in the **Running** state.
 
-アプリの表示が切り替わったときは、アプリは実行状態のままであるため、アクティブ化イベントを受け取りません。 必要に応じて、Windows でアプリの切り替えだけが行われます。 ユーザーがアプリを切り替えたときになんらかの処理を行う必要がある場合は、[**Window.VisibilityChanged**](https://msdn.microsoft.com/library/windows/apps/hh702458) イベントを処理します。
+Your app doesn't receive an activation event when its visibility changes because the app is still running. Windows simply switches to and from the app as necessary. If your app needs to do something when the user switches away and back, handle the [**Window.VisibilityChanged**](https://msdn.microsoft.com/library/windows/apps/hh702458) event.
 
-これらのイベントの特定の順序に依存しないでください。
+Do not rely on a specific ordering of these events.
 
-## アプリの再開
+## App resume
 
 
-中断中のアプリは、ユーザーがそのアプリに切り替えた場合、またはデバイスが低電力状態から復帰してアクティブなアプリになった場合に再開されます。
+A suspended app is resumed when the user switches to it or when it is the active app when the device comes out of a low power state.
 
-アプリが再開されたときのアプリの状態については、[**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 列挙体を確認してください。 アプリが **Suspended** 状態から再開されると、**Running** 状態になり、中断された時点から再開されます。 メモリに格納されているアプリのデータは失われません。 したがって、ほとんどのアプリでは、再開時に処理を行う必要はありません。 ただし、アプリは長時間中断されていた可能性があります。 そのため、アプリのコンテンツやネットワーク接続が無効になっていると考えられる場合は、アプリの再開時にコンテンツやネットワーク接続を更新する必要があります。 アプリに [**Application.Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) イベントのイベント ハンドラーが登録されている場合は、アプリが **Suspended** 状態から再開されるとこのイベント ハンドラーが呼び出されます。 このイベント ハンドラーを使ってアプリのコンテンツやデータを更新できます。
+For an enumeration of the states that your app can be in when your app is resumed, see [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694). When an app is resumed from the **Suspended** state, it enters the **Running** state and continues from where it was when it was suspended. No app data stored in memory is lost. Therefore, most apps don't need to do anything when they are resumed. However, the app could have been suspended for hours or even days. If your app has content or network connections that may have gone stale, these should be refreshed when the app resumes. If an app registered an event handler for the [**Application.Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) event, it is called when the app is resumed from the **Suspended** state. You can refresh your app content and data using this event handler.
 
-中断中のアプリがアクティブ化されてアプリ コントラクトまたは拡張機能に参加する場合は、まず **Resuming** イベントを受け取り、次に **Activated** イベントを受け取ります。
+If a suspended app is activated to participate in an app contract or extension, it receives the **Resuming** event first, then the **Activated** event.
 
-中断中、アプリは受信登録したネットワーク イベント項目を受け取りません。 これらのネットワーク イベントはキューに入れられず、受け取ることができません。 そのため、再開時にアプリでネットワーク ステータスをテストする必要があります。
+While en an app is suspended, it does not receive any of the network events that it registered to receive. These network events are not queued, they are simply missed. Therefore, your app should test the network status when it is resumed.
 
-**注**  [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) イベントは UI とは異なるスレッドで発生するため、再開ハンドラーが UI とやり取りする場合はディスパッチャーを使う必要があります。
+**Note**  Because the [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) event is not raised from the UI thread, a dispatcher must be used if the code in your resume handler communicates with your UI.
 
- 
+ 
 
-ガイドラインについては、「[アプリの中断と再開のガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465088)」をご覧ください。
+For guidelines, see [Guidelines for app suspend and resume](https://msdn.microsoft.com/library/windows/apps/hh465088).
 
-## アプリを閉じる
+## App close
 
 
-一般に、アプリを閉じる処理はユーザーが行う必要はなく、Windows で管理されます。 ただし、ユーザーはジェスチャを使うか、Windows で Alt + F4 キーを押すか、Windows Phone でタスク スイッチャーを使って、アプリを閉じることができます。
+Generally, users don't need to close apps, they can let Windows manage them. However, users can choose to close an app using the close gesture or by pressing Alt+F4 on Windows or by using the task switcher on Windows Phone.
 
-ユーザーがアプリを閉じたことを示す専用のイベントはありません。
+There's no special event to indicate that the user closed the app.
 
-ユーザーがアプリを閉じると、中断された後に終了され、**NotRunning** 状態になります。
+After an app has been closed by the user, it's first suspended and then terminated, and enters the **NotRunning** state.
 
-Windows 8.1 以降では、ユーザーがアプリを閉じても、アプリは明示的に終了されるのではなく、画面と切り替えリストから消えるだけです。
+In Windows 8.1 and later, after an app has been closed by the user, the app is removed from the screen and switch list but not explicitly terminated.
 
-アプリに **Suspending** イベントのイベント ハンドラーが登録されている場合は、アプリが中断されるとこのイベント ハンドラーが呼び出されます。 このイベント ハンドラーを使って、関連するアプリ データとユーザー データを固定ストレージに保存できます。
+If an app has registered an event handler for the **Suspending** event, it is called when the app is suspended. You can use this event handler to save relevant application and user data to persistent storage.
 
-**ユーザーが閉じた場合の動作:  **ユーザーがアプリを閉じたときに、Windows によって閉じられたときとは異なる動作にする必要がある場合は、アクティブ化イベント ハンドラーを使って、アプリをユーザーが終了したか、または Windows によって終了されたかを特定できます。 [
-            **ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 列挙体に関するリファレンスの **ClosedByUser** 状態と **Terminated** 状態の説明をご覧ください。
+**Closed-by-user behavior:  **If your app needs to do something different when it is closed by the user than when it is closed by Windows, you can use the activation event handler to determine whether the app was terminated by the user or by Windows. See the descriptions of **ClosedByUser** and **Terminated** states in the reference for the [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) enumeration.
 
-必要でない限り、アプリをプログラムで閉じないことをお勧めします。 たとえば、メモリ リークが検出された場合などは、ユーザーの個人データのセキュリティを確保するためにアプリ自体で閉じてもかまいません。 アプリをプログラムで閉じると、システムではアプリのクラッシュとして処理されます。
+We recommend that apps not close themselves programmatically unless absolutely necessary. For example, if an app detects a memory leak, it can close itself to ensure the security of the user's personal data. When you close an app programmatically, the system treats it as an app crash.
 
-## アプリのクラッシュ
+## App crash
 
 
-システム クラッシュのエクスペリエンスは、ユーザーがそれまで行っていた作業にできるだけ迅速に戻れるようにすることを目的としています。 ユーザーを待たせることがないように、警告ダイアログなどによる通知は行わないでください。
+The system crash experience is designed to get users back to what they were doing as quickly as possible. You shouldn't provide a warning dialog or other notification because that will delay the user.
 
-アプリがクラッシュしたり、応答しなくなったり、例外が生成されたりすると、ユーザーの [フィードバックと診断の設定](http://go.microsoft.com/fwlink/p/?LinkID=614828) に従って、マイクロソフトに問題レポートが送られます。 Microsoft は、アプリの改善に役立つように、問題レポートに含まれるエラー データの一部を提供しています。 このデータは、ダッシュボードに表示されるアプリの [品質] ページで確認できます。
+If your app crashes, stops responding, or generates an exception, a problem report is sent to Microsoft per the user's [feedback and diagnostics settings](http://go.microsoft.com/fwlink/p/?LinkID=614828). Microsoft provides a subset of the error data in the problem report to you so that you can use it to improve your app. You'll be able to see this data in your app's Quality page in your Dashboard.
 
-アプリがクラッシュした後にユーザーがアプリをアクティブ化すると、アクティブ化イベント ハンドラーは [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) の値として **NotRunning** を受け取り、アプリの最初の UI とデータを表示します。 クラッシュの後、**Suspended** に基づく **Resuming** で使ったアプリ データはそのまま使わないでください。これは、そのデータが破損している可能性があるためです。「[アプリの中断と再開のガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465088)」をご覧ください。
+When the user activates an app after it crashes, its activation event handler receives an [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) value of **NotRunning**, and should display its initial UI and data. After a crash, don't routinely use the app data you would have used for **Resuming** with **Suspended** because that data could be corrupt; see [Guidelines for app suspend and resume](https://msdn.microsoft.com/library/windows/apps/hh465088).
 
-## アプリの削除
+## App removal
 
 
-ユーザーがアプリを削除すると、アプリはすべてのローカル データと共に削除されます。 アプリの削除は、一般的な場所 (ドキュメント ライブラリやピクチャ ライブラリ内など) に格納されているユーザーのデータには影響しません。
+When a user deletes your app, the app is removed, along with all its local data. Removing an app doesn't affect the user's data that was stored in common locations such as the Documents or Pictures libraries.
 
-## アプリのライフサイクルと Visual Studio のプロジェクト テンプレート
+## App lifecycle and the Visual Studio project templates
 
 
-アプリのライフサイクルに関連する基本的なコードは、Visual Studio の開始プロジェクト テンプレートに用意されています。 基本的なアプリでは、起動アクティブ化を処理し、アプリ データを復元するための場所を提供して、独自のコードを追加する前であってもプライマリ UI を表示します。 詳しくは、「[アプリ用の C#、VB、C++ プロジェクト テンプレート](https://msdn.microsoft.com/library/windows/apps/hh768232)」をご覧ください。
+The basic code that is relevant to the app lifecycle is provided in the starting Visual Studio project templates. The basic app handles launch activation, provides a place for you to restore your app data, and displays the primary UI even before you've added any of your own code. For more info, see [C#, VB, and C++ project templates for apps](https://msdn.microsoft.com/library/windows/apps/hh768232).
 
-## アプリケーションのライフサイクルに関する主要な API
+## Application lifecycle key APIs
 
 
--   [**Windows.ApplicationModel**](https://msdn.microsoft.com/library/windows/apps/br224691) 名前空間
--   [**Windows.ApplicationModel.Activation**](https://msdn.microsoft.com/library/windows/apps/br224766) 名前空間
--   [**Windows.ApplicationModel.Core**](https://msdn.microsoft.com/library/windows/apps/br205865) 名前空間
--   [**Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324) クラス (XAML)
--   [**Windows.UI.Xaml.Window**](https://msdn.microsoft.com/library/windows/apps/br209041) クラス (XAML)
+-   [**Windows.ApplicationModel**](https://msdn.microsoft.com/library/windows/apps/br224691) namespace
+-   [**Windows.ApplicationModel.Activation**](https://msdn.microsoft.com/library/windows/apps/br224766) namespace
+-   [**Windows.ApplicationModel.Core**](https://msdn.microsoft.com/library/windows/apps/br205865) namespace
+-   [**Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324) class (XAML)
+-   [**Windows.UI.Xaml.Window**](https://msdn.microsoft.com/library/windows/apps/br209041) class (XAML)
 
-**注:**  
-この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください。
+**Note**  
+This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
- 
+ 
 
-## 関連トピック
+## Related topics
 
 
-* [アプリの中断と再開のガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465088)
-* [アプリの事前起動の処理](handle-app-prelaunch.md)
-* [アプリのアクティブ化の処理](activate-an-app.md)
-* [アプリの中断の処理](suspend-an-app.md)
-* [アプリの再開の処理](resume-an-app.md)
+* [Guidelines for app suspend and resume](https://msdn.microsoft.com/library/windows/apps/hh465088)
+* [Handle app prelaunch](handle-app-prelaunch.md)
+* [Handle app activation](activate-an-app.md)
+* [Handle app suspend](suspend-an-app.md)
+* [Handle app resume](resume-an-app.md)
 
- 
+ 
 
- 
+ 
 
-
-
-
-
-<!--HONumber=Mar16_HO1-->
 
 

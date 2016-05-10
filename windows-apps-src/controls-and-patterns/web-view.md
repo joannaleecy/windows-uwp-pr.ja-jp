@@ -1,52 +1,51 @@
 ---
-Description: Web ビュー コントロールは、Microsoft Edge レンダリング エンジンを使って、Web コンテンツをレンダリングするアプリにビューを埋め込みます。 また、Web ビュー コントロールでは、ハイパーリンクの表示と動作が可能です。
-title: Web ビュー
+author: Jwmsft
+Description: A web view control embeds a view into your app that renders web content using the Microsoft Edge rendering engine. Hyperlinks can also appear and function in a web view control.
+title: Web view
 ms.assetid: D3CFD438-F9D6-4B72-AF1D-16EF2DFC1BB1
-label: Web ビュー
+label: Web view
 template: detail.hbs
 ---
 
-# Web ビュー
+# Web view
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-Web ビュー コントロールは、Microsoft Edge レンダリング エンジンを使って、Web コンテンツをレンダリングするアプリにビューを埋め込みます。 また、Web ビュー コントロールでは、ハイパーリンクの表示と動作が可能です。
 
-**重要な API**
+A web view control embeds a view into your app that renders web content using the Microsoft Edge rendering engine. Hyperlinks can also appear and function in a web view control.
 
--   [**WebView クラス**](https://msdn.microsoft.com/library/windows/apps/br227702)
+**Important APIs**
 
-## 適切なコントロールの選択
+-   [**WebView class**](https://msdn.microsoft.com/library/windows/apps/br227702)
 
-リモート Web サーバー、動的に生成されたコード、またはアプリ パッケージのコンテンツ ファイルの、書式がリッチな HTML コンテンツを表示するには、Web ビュー コントロールを使います。 また、リッチ コンテンツは、スクリプト コードを含めることができ、さらに、スクリプトとアプリのコード間で通信を行うこともできます。
+## Is this the right control?
 
-## Web ビューを作成する
+Use a web view control to display richly formatted HTML content from a remote web server, dynamically generated code, or content files in your app package. Rich content can also contain script code and communicate between the script and your app's code.
 
-**Web ビューの外観を変更する**
+## Create a web view
 
-[**WebView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx) は、[**Control**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.aspx) サブクラスではないため、コントロール テンプレートがありません。 ただし、さまざまなプロパティを設定して、Web ビューのビジュアル要素の一部を制御することはできます。
-- 表示領域を制限するには、[**Width**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.width.aspx) プロパティと [**Height**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.height.aspx) プロパティを設定します。 
-- Web ビューの変換、拡大縮小、傾斜、そして回転には、[**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.rendertransform.aspx) プロパティを使います。
-- Web ビューの不透明度を調整するには、[**Opacity**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.opacity.aspx) プロパティを使います。
-- HTML コンテンツが色を指定していないときに、Web ページの背景として色を指定するには、[**DefaultBackgroundColor**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.defaultbackgroundcolor.aspx) プロパティを設定します。 
+**Modify the appearance of a web view**
 
-**Web ページのタイトルを取得する**
+[**WebView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx) is not a [**Control**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.aspx) subclass, so it doesn't have a control template. However, you can set various properties to control some visual aspects of the web view.
+- To constrain the display area, set the [**Width**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.width.aspx) and [**Height**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.height.aspx) properties. 
+- To translate, scale, skew, and rotate a web view, use the [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.rendertransform.aspx) property.
+- To control the opacity of the web view, set the [**Opacity**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.opacity.aspx) property.
+- To specify a color to use as the web page background when the HTML content does not specify a color, set the [**DefaultBackgroundColor**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.defaultbackgroundcolor.aspx) property. 
 
-[
-            **DocumentTitle**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.documenttitle.aspx) プロパティを使うと、現在 Web ビューに表示されている HTML ドキュメントのタイトルを取得することができます。 
+**Get the web page title**
 
-**入力イベントとタブ オーダー**
+You can get the title of the HTML document currently displayed in the web view by using the [**DocumentTitle**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.documenttitle.aspx) property. 
 
-WebView は Control サブクラスではありませんが、キーボードの入力フォーカスを受け取って、タブ順に関与します。 ただし、[**Focus**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.focus.aspx) メソッド、そして [**GotFocus**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.gotfocus.aspx) イベントと [**LostFocus**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.lostfocus.aspx) イベントを提供しますが、タブ関連のプロパティはありません。 タブ順での位置は、XAML ドキュメントの順序での位置と同じです。 タブ順には、入力フォーカスを受け取ることができる Web ビューのコンテンツの要素がすべて含まれています。 
+**Input events and tab order**
 
-[
-            **WebView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx) クラスのページの「Event」表からも分かるとおり、Web ビューは、[**KeyDown**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.keydown.aspx) や [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.keyup.aspx)、[**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.pointerpressed.aspx) といった [**UIElement**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.aspx) から継承したユーザー入力イベントのほとんどをサポートしていません。 その代わり、[**InvokeScriptAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.invokescriptasync.aspx) を JavaScript の **eval** 関数と使って、HTML イベント ハンドラーを利用したり、HTML イベント ハンドラーの **window.external.notify** を通じて [**WebView.ScriptNotify**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.scriptnotify.aspx) に対応するアプリに通知したりできます。
+Although WebView is not a Control subclass, it will receive keyboard input focus and participate in the tab sequence. It provides a [**Focus**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.focus.aspx) method, and [**GotFocus**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.gotfocus.aspx) and [**LostFocus**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.lostfocus.aspx) events, but it has no tab-related properties. Its position in the tab sequence is the same as its position in the XAML document order. The tab sequence includes all elements in the web view content that can receive input focus. 
 
-### コンテンツに移動する
+As indicated in the Events table on the [**WebView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx) class page, web view doesn’t support most of the user input events inherited from [**UIElement**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.aspx), such as [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.keydown.aspx), [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.keyup.aspx), and [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.pointerpressed.aspx). Instead, you can use [**InvokeScriptAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.invokescriptasync.aspx) with the JavaScript **eval** function to use the HTML event handlers, and to use **window.external.notify** from the HTML event handler to notify the application using [**WebView.ScriptNotify**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.scriptnotify.aspx).
 
-Web ビューには、[**GoBack**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.goback.aspx)、[**GoForward**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.goforward.aspx)、[**Stop**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.stop.aspx)、[**Refresh**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.refresh.aspx)、[**CanGoBack**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cangoback.aspx)、そして [**CanGoForward**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cangoforward.aspx) という基本的な操作用の API が用意されています。 これらの API を使うと、一般的な Web 閲覧機能をアプリに追加できます。 
+### Navigating to content
 
-Web ビューの初期コンテンツを設定するには、XAML の [**Source**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.source.aspx) プロパティを使います。 XAML パーサーは文字列を [**Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.foundation.uri.aspx) に自動的に変換します。 
+Web view provides several APIs for basic navigation: [**GoBack**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.goback.aspx), [**GoForward**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.goforward.aspx), [**Stop**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.stop.aspx), [**Refresh**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.refresh.aspx), [**CanGoBack**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cangoback.aspx), and [**CanGoForward**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cangoforward.aspx). You can use these to add typical web browsing capabilities to your app. 
+
+To set the initial content of the web view, set the [**Source**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.source.aspx) property in XAML. The XAML parser automatically converts the string to a [**Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.foundation.uri.aspx). 
 
 ```xaml
 <!-- Source file is on the web. -->
@@ -59,39 +58,38 @@ Web ビューの初期コンテンツを設定するには、XAML の [**Source*
 <WebView x:Name="webView3" Source="ms-appx-web:///help/about.html"/>
 ```
 
-Source プロパティはコードで設定できますが、それよりも **Navigate** メソッドの 1 つを使ってコンテンツを読み込むほうがよいでしょう。 
+The Source property can be set in code, but rather than doing so, you typically use one of the **Navigate** methods to load content in code. 
 
-Web コンテンツを読み込むには、[**Navigate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigate.aspx) メソッドを http または https スキームを使う **Uri ** と用います。 
+To load web content, use the [**Navigate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigate.aspx) method with a **Uri** that uses the http or https scheme. 
 
 ```csharp
 webView1.Navigate("http://www.contoso.com");
 ```
 
-POST 要求と HTTP ヘッダーを有する URI へと移動するには、[**NavigateWithHttpRequestMessage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatewithhttprequestmessage.aspx) メソッドを使います。 このメソッドは、[**HttpRequestMessage.Method**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httprequestmessage.method.aspx) プロパティの値として [**HttpMethod.Post**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httpmethod.post.aspx) と [**HttpMethod.Get**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httpmethod.get.aspx) のみをサポートします。 
+To navigate to a URI with a POST request and HTTP headers, use the [**NavigateWithHttpRequestMessage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatewithhttprequestmessage.aspx) method. This method supports only [**HttpMethod.Post**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httpmethod.post.aspx) and [**HttpMethod.Get**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httpmethod.get.aspx) for the [**HttpRequestMessage.Method**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httprequestmessage.method.aspx) property value. 
 
-圧縮されておらず、暗号化もされていないコンテンツをアプリの [**LocalFolder**]() データストアまたは [**TemporaryFolder**]() データストアから読み込むには、**Navigate** を [ms-appdata]() スキームを使う **Uri ** と用います。 このスキームを Web ビューがサポートするには、ローカル フォルダーまたは一時フォルダーの下にサブフォルダーを設け、そこにコンテンツを配置する必要があります。 これにより、「ms-appdata:///local/*フォルダー*/*ファイル*.html」や「ms-appdata:///temp/*フォルダー*/*ファイル*.html」といった URI への移動が可能になります (圧縮され、暗号化されたファイルを読み込む場合は、[**NavigateToLocalStreamUri**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetolocalstreamuri.aspx) に関するページをご覧ください)。 
+To load uncompressed and unencrypted content from your app’s [**LocalFolder**]() or [**TemporaryFolder**]() data stores, use the **Navigate** method with a **Uri** that uses the [ms-appdata scheme](). The web view support for this scheme requires you to place your content in a subfolder under the local or temporary folder. This enables navigation to URIs such as ms-appdata:///local/*folder*/*file*.html and ms-appdata:///temp/*folder*/*file*.html . (To load compressed or encrypted files, see [**NavigateToLocalStreamUri**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetolocalstreamuri.aspx).) 
 
-これらの第 1 レベルのサブフォルダーは、他の第 1 レベルのサブフォルダー内のコンテンツから分離されます。 たとえば「ms-appdata:///temp/folder1/file.html」に移動はできますが、そのファイル内のリンクに「ms-appdata:///temp/folder2/file.html」は指定できません。 ただし、**ms-appx-web** スキームを使ってアプリ パッケージの HTML コンテンツにリンクしたり、**http** または **https** の URI スキームを使って Web コンテンツにリンクしたりはできます。
+Each of these first-level subfolders is isolated from the content in other first-level subfolders. For example, you can navigate to ms-appdata:///temp/folder1/file.html, but you can’t have a link in this file to ms-appdata:///temp/folder2/file.html. However, you can still link to HTML content in the app package using the **ms-appx-web scheme**, and to web content using the **http** and **https** URI schemes.
 
 ```csharp
 webView1.Navigate("ms-appdata:///local/intro/welcome.html");
 ```
 
-アプリ パッケージからコンテンツを読み込むには、**Navigate** メソッドを [**ms-appx-web **](https://msdn.microsoft.com/library/windows/apps/xaml/jj655406.aspx#ms_appx_web) スキームを使った **Uri** と用います。 
+To load content from the your app package, use the **Navigate** method with a **Uri** that uses the [**ms-appx-web scheme**](https://msdn.microsoft.com/library/windows/apps/xaml/jj655406.aspx#ms_appx_web). 
 
 ```csharp
 webView1.Navigate("ms-appx-web:///help/about.html");
 ```
 
-[
-            **NavigateToLocalStreamUri**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetolocalstreamuri.aspx) メソッドを使えば、カスタム リゾルバーを通じてローカルのコンテンツも読み込めます。 これにより、Web ベースのコンテンツをオフライン用にダウンロードないしキャッシングしたり、圧縮ファイルからコンテンツを抽出したりといった高度なシナリオも可能です。
+You can load local content through a custom resolver using the [**NavigateToLocalStreamUri**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetolocalstreamuri.aspx) method. This enables advanced scenarios such as downloading and caching web-based content for offline use, or extracting content from a compressed file.
 
-### ナビゲーション イベントを処理する
+### Responding to navigation events
 
-Web ビュー コントロールでは、ナビゲーションやコンテンツの読み込みの状態に対する処理に使うことができるイベントがいくつか用意されています。 ルートとなる Web ビューコンテンツについて、イベントは次の順番で発生します。[**NavigationStarting**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigationstarting.aspx)、[**ContentLoading**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.contentloading.aspx)、[**DOMContentLoaded**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.domcontentloaded.aspx)、[**NavigationCompleted**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigationcompleted.aspx)
+The web view control provides several events that you can use to respond to navigation and content loading states. The events occur in the following order for the root web view content: [**NavigationStarting**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigationstarting.aspx), [**ContentLoading**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.contentloading.aspx), [**DOMContentLoaded**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.domcontentloaded.aspx), [**NavigationCompleted**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigationcompleted.aspx)
 
 
-**NavigationStarting** - Web ビューが新しいコンテンツに移動する際に発生します。 WebViewNavigationStartingEventArgs.Cancel プロパティを "true" に設定することで、このイベントのハンドラーで移動をキャンセルできます。 
+**NavigationStarting** - Occurs before the web view navigates to new content. You can cancel navigation in a handler for this event by setting the WebViewNavigationStartingEventArgs.Cancel property to true. 
 
 ```csharp
 webView1.NavigationStarting += webView1_NavigationStarting;
@@ -104,7 +102,7 @@ private void webView1_NavigationStarting(object sender, WebViewNavigationStartin
 }
 ```
 
-**ContentLoading** - Web ビューが新しいコンテンツを読み込み始めると発生します。 
+**ContentLoading** - Occurs when the web view has started loading new content. 
 
 ```csharp
 webView1.ContentLoading += webView1_ContentLoading;
@@ -119,7 +117,7 @@ private void webView1_ContentLoading(WebView sender, WebViewContentLoadingEventA
 }
 ```
 
-**DOMContentLoaded** - Web ビューが現在の HTML のコンテンツの解析を完了すると発生します。 
+**DOMContentLoaded** - Occurs when the web view has finished parsing the current HTML content. 
 
 ```csharp
 webView1.DOMContentLoaded += webView1_DOMContentLoaded;
@@ -134,7 +132,7 @@ private void webView1_DOMContentLoaded(WebView sender, WebViewDOMContentLoadedEv
 }
 ```
 
-**NavigationCompleted** - Web view が現在のコンテンツの読み込みを完了したとき、またはナビゲーションに失敗したときに発生します。 ナビゲーションが失敗したかを判断するには、[**WebViewNavigationCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.aspx) の [**IsSuccess**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.issuccess.aspx) プロパティと [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.weberrorstatus.aspx) プロパティを確認します。 
+**NavigationCompleted** - Occurs when the web view has finished loading the current content or if navigation has failed. To determine whether navigation has failed, check the [**IsSuccess**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.issuccess.aspx) and [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.weberrorstatus.aspx) properties of the [**WebViewNavigationCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.aspx) class. 
 
 ```csharp
 webView1.NavigationCompleted += webView1_NavigationCompleted;
@@ -153,28 +151,27 @@ private void webView1_NavigationCompleted(WebView sender, WebViewNavigationCompl
 }
 ```
 
-Web ビューのコンテンツの各 **iframe** についても、同様のイベントが同じ順序で発生します。 
-- [**FrameNavigationStarting**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framenavigationstarting.aspx) - Web ビューのフレームが新しいコンテンツに移動する際に発生します。 
-- [**FrameContentLoading**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framecontentloading.aspx) - Web view のフレームが新しいコンテンツを読み込み始めると発生します。 
-- [**FrameDOMContentLoaded**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framedomcontentloaded.aspx) - Web ビューのフレームが現在の HTML のコンテンツの解析を完了すると発生します。 
-- [**FrameNavigationCompleted**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framenavigationcompleted.aspx) - Web ビューのフレームがコンテンツの読み込みを完了すると発生します。 
+Similar events occur in the same order for each **iframe** in the web view content: 
+- [**FrameNavigationStarting**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framenavigationstarting.aspx) - Occurs before a frame in the web view navigates to new content. 
+- [**FrameContentLoading**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framecontentloading.aspx) - Occurs when a frame in the web view has started loading new content. 
+- [**FrameDOMContentLoaded**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framedomcontentloaded.aspx) - Occurs when a frame in the web view has finished parsing its current HTML content. 
+- [**FrameNavigationCompleted**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framenavigationcompleted.aspx) - Occurs when a frame in the web view has finished loading its content. 
 
-### 潜在的な問題に対処する
+### Responding to potential problems
 
-長時間実行されているスクリプトや、Web ビューが読み込めないコンテンツ、安全でないコンテンツに関する警告など潜在的な問題があれば、それに対処することができます。 
+You can respond to potential problems with the content such as long running scripts, content that web view can't load, and warnings of unsafe content. 
 
-スクリプトを実行中にアプリが応答しないような場合があったとします。 すると、Web ビューが JavaScript 実行中に [**LongRunningScriptDetected**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.longrunningscriptdetected.aspx) イベントが発生し、スクリプトを中断する機会を提供します。 スクリプトがどれくらいの時間、実行されているのかを見るには、[**WebViewLongRunningScriptDetectedEventArgs**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.aspx) の [**ExecutionTime**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.executiontime.aspx) プロパティを確認します。 スクリプトを停止するには、イベント引数の [**StopPageScriptExecution**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.stoppagescriptexecution.aspx) プロパティを **true** に設定します。 停止されたスクリプトは、以降の Web ビューのナビゲーションでもう一度読み込まれるまで、実行されません。 
+Your app might appear unresponsive while scripts are running. The [**LongRunningScriptDetected**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.longrunningscriptdetected.aspx) event occurs periodically while the web view executes JavaScript and provides an opportunity to interrupt the script. To determine how long the script has been running, check the [**ExecutionTime**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.executiontime.aspx) property of the [**WebViewLongRunningScriptDetectedEventArgs**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.aspx). To halt the script, set the event args [**StopPageScriptExecution**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.stoppagescriptexecution.aspx) property to **true**. The halted script will not execute again unless it is reloaded during a subsequent web view navigation. 
 
-Web ビュー コントロールは、任意のファイルの種類をホストすることができません。 Web ビューがホストできないコンテンツを読み込もうすると、[**UnviewableContentIdentified**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.unviewablecontentidentified.aspx) イベントが発生します。 このイベントを処理してユーザーに通知することも、[**Launcher**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.system.launcher.aspx) クラスを使ってファイルを外部のブラウザーまたは別のアプリにリダイレクトすることもできます。
+The web view control cannot host arbitrary file types. When an attempt is made to load content that the web view can't host, the [**UnviewableContentIdentified**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.unviewablecontentidentified.aspx) event occurs. You can handle this event and notify the user, or use the [**Launcher**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.system.launcher.aspx) class to redirect the file to an external browser or another app.
 
-同様に、fbconnect:// や mailto:// といったサポートされていない URI スキームが Web コンテンツで呼び出されると、[**UnsupportedUriSchemeIdentified**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.unsupportedurischemeidentified.aspx) イベントが発生します。 既定のシステム起動プログラムに URI を起動させるのではなく、このイベントを処理してカスタム動作を定義してもよいでしょう。
+Similarly, the [**UnsupportedUriSchemeIdentified**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.unsupportedurischemeidentified.aspx) event occurs when a URI scheme that's not supported is invoked in the web content, such as fbconnect:// or mailto://. You can handle this event to provide custom behavior instead of allowing the default system launcher to launch the URI.
 
-Web ビューが、SmartScreen フィルターにより安全でないと報告されているコンテンツの警告ページを表示すると、[**UnsafeContentWarningDisplayingevent**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.unsafecontentwarningdisplaying.aspx) イベントが発生します。 ユーザーがナビゲーションの続行を選んだ場合は、そのページへの移動では以降、警告が表示されたり、イベントが発されたりすることはありません。
+The [**UnsafeContentWarningDisplayingevent**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.unsafecontentwarningdisplaying.aspx) occurs when the web view shows a warning page for content that was reported as unsafe by the SmartScreen Filter. If the user chooses to continue the navigation, subsequent navigation to the page will not display the warning nor fire the event.
 
-### Web ビューのコンテンツの特殊ケースを処理する
+### Handling special cases for web view content
 
-[
-            **ContainsFullScreenElement**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.containsfullscreenelement.aspx) プロパティと [**ContainsFullScreenElementChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.containsfullscreenelementchanged.aspx) イベントを使うと、全画面での動画の再生といった、全画面表示を可能にしたり、検出したり、または処理したりすることができます。 たとえば、ContainsFullScreenElementChanged イベントを使えば、Web ビューのサイズを変更して、アプリ ビュー全体を占有することができます。もしくは、次の例で示すとおり、全画面表示が望ましいときは、ウィンドウ内のアプリを全画面表示にすることもできます。
+You can use the [**ContainsFullScreenElement**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.containsfullscreenelement.aspx) property and [**ContainsFullScreenElementChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.containsfullscreenelementchanged.aspx) event to detect, respond to, and enable full-screen experiences in web content, such as full-screen video playback. For example, you may use the ContainsFullScreenElementChanged event to resize the web view to occupy the entirety of your app view, or, as the following example illustrates, put a windowed app in full screen mode when a full screen web experience is desired.
 
 ```csharp
 // Assume webView is defined in XAML
@@ -195,10 +192,9 @@ private void webView_ContainsFullScreenElementChanged(WebView sender, object arg
 }
 ```
 
-[
-            **NewWindowRequested**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.newwindowrequested.aspx) イベントを使えば、たとえばポップアップ ウィンドウのように、ホストされている Web コンテンツが新しいウィンドウを表示するよう要求しているようなケースに対処できます。 別の WebView コントロールで、要求されたウィンドウのコンテンツを表示することもできます。
+You can use the [**NewWindowRequested**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.newwindowrequested.aspx) event to handle cases where hosted web content requests a new window to be displayed, such as a popup window. You can use another WebView control to display the contents of the requested window.
 
-特別な機能を必要とする Web オプションを有効にするには、[**PermissionRequested**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.permissionrequested.aspx) イベントを使います。 そういった特別な機能には、位置情報、IndexedDB ストレージ、ユーザーのオーディオやビデオ (たとえば、マイクまたは Web カメラからの入力) が含まれます。 アプリがユーザーの位置情報またはユーザーのメディアにアクセスする場合も、アプリのマニフェストでそうした機能を宣言する必要があります。 たとえば、位置情報を使うアプリでは少なくとも Package.appxmanifest で次の機能の宣言が必要です。
+Use [**PermissionRequested**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.permissionrequested.aspx) event to enable web features that require special capabilities. These currently include geolocation, IndexedDB storage, and user audio and video (for example, from a microphone or webcam). If your app accesses user location or user media, you still are required to declare this capability in the app manifest. For example, an app that uses geolocation needs the following capability declarations at minimum in Package.appxmanifest:
 
 ```xml
   <Capabilities>
@@ -207,9 +203,9 @@ private void webView_ContainsFullScreenElementChanged(WebView sender, object arg
   </Capabilities>
 ```
 
-アプリによる [**PermissionRequested**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.permissionrequested.aspx) イベントの処理に加えて、Web オプションを有効にするには、位置情報やメディアの機能を要求するアプリに関する、標準的なシステム ダイアログをユーザーが承認する必要があります。
+In addition to the app handling the [**PermissionRequested**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.permissionrequested.aspx) event, the user will have to approve standard system dialogs for apps requesting location or media capabilities in order for these features to be enabled.
 
-次の例は、アプリが Bing のマップで位置情報を有効にする方法を示しています。
+Here is an example of how an app would enable geolocation in a map from Bing:
 
 ```csharp
 // Assume webView is defined in XAML
@@ -225,19 +221,17 @@ private void webView_PermissionRequested(WebView sender, WebViewPermissionReques
 }
 ```
 
-アプリが許可の要求に応答するにあたってユーザーの入力をはじめ非同期の操作を要求する場合は、[**WebViewPermissionRequest**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.aspx) の [**Defer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.defer.aspx) メソッドを使い、後で処理できる [**WebViewDeferredPermissionRequest**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewdeferredpermissionrequest.aspx) を作成します。 [
-            **WebViewPermissionRequest.Defer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.defer.aspx) に関するページをご覧ください。 
+If your app requires user input or other asynchronous operations to respond to a permission request, use the [**Defer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.defer.aspx) method of [**WebViewPermissionRequest**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.aspx) to create a [**WebViewDeferredPermissionRequest**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewdeferredpermissionrequest.aspx) that can be acted upon at a later time. See [**WebViewPermissionRequest.Defer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.defer.aspx). 
 
-Web ビューでホストされている Web サイトからユーザーが安全にログアウトしなければならない場合や、セキュリティが重要であるような場合は、静的メソッドである [**ClearTemporaryWebDataAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cleartemporarywebdataasync.aspx) を呼び出し、当該の Web ビュー セッションでローカルにキャッシュされたコンテンツを消去します。 これにより、悪意あるユーザーが重要なデータにアクセスするのを防ぎます。 
+If users must securely log out of a website hosted in a web view, or in other cases when security is important, call the static method [**ClearTemporaryWebDataAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cleartemporarywebdataasync.aspx) to clear out all locally cached content from a web view session. This prevents malicious users from accessing sensitive data. 
 
-### Web ビューのコンテンツとインタラクトする
+### Interacting with web view content
 
-[
-            **InvokeScriptAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.invokescriptasync.aspx) メソッドで Web ビューのコンテンツにスクリプトを呼び出し、または挿入し、そして [**ScriptNotify**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.scriptnotify.aspx) イベントで Web ビューのコンテンツから情報を反対に取得することで、Web ビューのコンテンツとインタラクトできます。
+You can interact with the content of the web view by using the [**InvokeScriptAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.invokescriptasync.aspx) method to invoke or inject script into the web view content, and the [**ScriptNotify**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.scriptnotify.aspx) event to get information back from the web view content.
 
-Web ビューのコンテンツ内で JavaScript を呼び出すには、[**InvokeScriptAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.invokescriptasync.aspx) メソッドを使います。 呼び出されたスクリプトは、文字列型の値のみを返すことができます。 
+To invoke JavaScript inside the web view content, use the [**InvokeScriptAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.invokescriptasync.aspx) method. The invoked script can return only string values. 
 
-たとえば、`webView1` という名前の Web ビューのコンテンツに、3 つのパラメーターを要する `setDate` という名前の関数が含まれている場合は、このように呼び出すことができます。 
+For example, if the content of a web view named `webView1` contains a function named `setDate` that takes 3 parameters, you can invoke it like this. 
 
 ```csharp
 string[] args = {"January", "1", "2000"};
@@ -245,9 +239,9 @@ string returnValue = await webView1.InvokeScriptAsync("setDate", args);
 ```
 
 
-**InvokeScriptAsync** を JavaScript の **eval** 関数と使って、Web ページにコンテンツを挿入します。
+You can use **InvokeScriptAsync** with the JavaScript **eval** function to inject content into the web page.
 
-ここでは、XAML のテキストボックス (`nameTextBox.Text`) のテキストは、`webView1` でホストされている HTML ページの div に書き込まれます。 
+Here, the text of a XAML text box (`nameTextBox.Text`) is written to a div in an HTML page hosted in `webView1`. 
 
 ```csharp
 private async void Button_Click(object sender, RoutedEventArgs e)
@@ -257,16 +251,15 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Web ビューのコンテンツのスクリプトは、文字列型パラメーターの **window.external.notify** を使えば、情報をアプリに戻せます。 これらのメッセージを受け取るには、[**ScriptNotify**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.scriptnotify.aspx) イベントを処理します。 
+Scripts in the web view content can use **window.external.notify** with a string parameter to send information back to your app. To receive these messages, handle the [**ScriptNotify**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.scriptnotify.aspx) event. 
 
-外部の Web ページを有効にして、window.external.notify を呼び出した際に **ScriptNotify** イベントを発するには、当該のページの URI をアプリの宣言の **ApplicationContentUriRules** セクションに含める必要があります (これは、Package.appxmanifest デザイナーの [コンテンツ URI] タブにある Microsoft Visual Studio で可能です)。この一覧にある URI は HTTPS を使う必要があります。また、サブドメインのワイルドカード (たとえば、`https://*.microsoft.com`) を含めることはできますが、ドメインのワイルドカード (たとえば、`https://*.com` や `https://*.*`) を含めることはできません。 マニフェスト要件は、アプリ パッケージから生成されたコンテンツには適用されず、ms-local-stream:// URI を使うか、[**NavigateToString**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetostring.aspx) で読み込まれます。 
+To enable an external web page to fire the **ScriptNotify** event when calling window.external.notify, you must include the page's URI in the **ApplicationContentUriRules** section of the app manifest. (You can do this in Microsoft Visual Studio on the Content URIs tab of the Package.appxmanifest designer.) The URIs in this list must use HTTPS, and may contain subdomain wildcards (for example, `https://*.microsoft.com`) but they cannot contain domain wildcards (for example, `https://*.com` and `https://*.*`). The manifest requirement does not apply to content that originates from the app package, uses an ms-local-stream:// URI, or is loaded using [**NavigateToString**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetostring.aspx). 
 
-### Web ビューの Windows ランタイムにアクセスする
+### Accessing the Windows Runtime in a web view
 
-[
-            **AddWebAllowedObject**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.addweballowedobject.aspx) メソッドを使うと、Windows ランタイム コンポーネントから Web ビューの JavaScript コンテンツにネイティブ クラスのインスタンスを挿入できます。 それにより、その Web ビューの JavaScript コンテンツにあるオブジェクトの、ネイティブのメソッドやプロパティ、イベントにフルにアクセスできるようになります。 クラスは、[**AllowForWeb**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.foundation.metadata.allowforwebattribute.aspx) 属性で修飾する必要があります。 
+You can use the [**AddWebAllowedObject**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.addweballowedobject.aspx) method to inject an instance of a native class from a Windows Runtime component into the JavaScript context of the web view. This allows full access to the native methods, properties, and events of that object in the JavaScript content of that web view. The class must be decorated with the [**AllowForWeb**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.foundation.metadata.allowforwebattribute.aspx) attribute. 
 
-たとえば、このコードは、Windows ランタイム コンポーネントから Web ビューにインポートされた `MyClass` のインスタンスを挿入します。
+For example, this code injects an instance of `MyClass` imported from a Windows Runtime component into a web view.
 
 ```csharp
 private void webView_NavigationStarting(WebView sender, WebViewNavigationStartingEventArgs args) 
@@ -278,11 +271,11 @@ private void webView_NavigationStarting(WebView sender, WebViewNavigationStartin
 }
 ```
 
-詳しくは、[**WebView.AddWebAllowedObject**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.addweballowedobject.aspx) に関するページをご覧ください。 
+For more info, see [**WebView.AddWebAllowedObject**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.addweballowedobject.aspx). 
 
-さらに、Web ビューの信頼できる JavaScript コンテンツは、Windows ランタイム API に直接アクセスも許されています。 これにより、Web ビューでホストされている Web アプリの強力なネイティブ機能が利用できます。 この機能を有効にするには、WindowsRuntimeAccess を "all" に設定して、信頼できるコンテンツの URI が Package.appxmanifest のアプリの ApplicationContentUriRules でホワイトリスト化される必要があります。 
+In addition, trusted JavaScript content in a web view can be allowed to directly access Windows Runtime APIs. This provides powerful native capabilities for web apps hosted in a web view. To enable this feature, the URI for trusted content must be whitelisted in the ApplicationContentUriRules of the app in Package.appxmanifest, with WindowsRuntimeAccess specifically set to "all". 
 
-この例は、アプリ マニフェストのセクションを示しています。 ここでは、ローカル URI が Windows ランタイムへのアクセスを与えられます。 
+This example shows a section of the app manifest. Here, a local URI is given access to the Windows Runtime. 
 
 ```csharp
   <Applications>
@@ -296,47 +289,40 @@ private void webView_NavigationStarting(WebView sender, WebViewNavigationStartin
   </Applications>
 ```
 
-### Web コンテンツのホスティングのオプション
+### Options for web content hosting
 
-[
-            **WebView.Settings**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.settings.aspx) プロパティ  ([**WebViewSettings**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewsettings.aspx) 型のプロパティ) を使うと、JavaScript と IndexedDB のオン/ オフをコントロールできます。 たとえば、Web ビューで完全に静的なコンテンツを表示するような場合は、JavaScript を無効にすることでパフォーマンスを高められます。
+You can use the [**WebView.Settings**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.settings.aspx) property (of type [**WebViewSettings**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewsettings.aspx)) to control whether JavaScript and IndexedDB are enabled. For example, if you use a web view to display strictly static content, you might want to disable JavaScript for best performance.
 
-### Web ビューのコンテンツをキャプチャする
+### Capturing web view content
 
-Web ビューのコンテンツを他のアプリと共有できるようにするには、[**CaptureSelectedContentToDataPackageAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.captureselectedcontenttodatapackageasync.aspx) メソッドを使います。このメソッドは、[**DataPackage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.datatransfer.datapackage.aspx) として選択したコンテンツを返します。 このメソッドは非同期ですから、[**DataRequested**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.datatransfer.datatransfermanager.datarequested.aspx) イベント ハンドラーが、非同期呼び出しが完了する前に戻されてしまうのを防ぐために、遅延を適用する必要があります。 
+To enable sharing web view content with other apps, use the [**CaptureSelectedContentToDataPackageAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.captureselectedcontenttodatapackageasync.aspx) method, which returns the selected content as a [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.datatransfer.datapackage.aspx). This method is asynchronous, so you must use a deferral to prevent your [**DataRequested**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.datatransfer.datatransfermanager.datarequested.aspx) event handler from returning before the asynchronous call is complete. 
 
-Web ビューの現在のコンテンツに関するプレビュー イメージを取得するには、[**CapturePreviewToStreamAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.capturepreviewtostreamasync.aspx) メソッドを使います。 このメソッドは、現在のコンテンツのイメージを作成し、指定のストリームに書き込みます。 
+To get a preview image of the web view's current content, use the [**CapturePreviewToStreamAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.capturepreviewtostreamasync.aspx) method. This method creates an image of the current content and writes it to the specified stream. 
 
-### スレッド処理の動作
+### Threading behavior
 
-既定では、Web ビューのコンテンツは、デスクトップ デバイス ファミリのデバイス上の UI スレッドにホストされており、その他のデバイス上の UI スレッドからは分離されています。 [
-            **WebView.DefaultExecutionMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.defaultexecutionmode.aspx) 静的プロパティを使うと、現在のクライアントに対する既定のスレッド処理動作を照会できます。 必要であれば、[**WebView(WebViewExecutionMode)**](https://msdn.microsoft.com/library/windows/apps/xaml/dn932036.aspx) コンス トラクターでその動作を上書きすることもできます。 
+By default, web view content is hosted on the UI thread on devices in the desktop device family, and off the UI thread on all other devices. You can use the [**WebView.DefaultExecutionMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.defaultexecutionmode.aspx) static property to query the default threading behavior for the current client. If necessary, you can use the [**WebView(WebViewExecutionMode)**](https://msdn.microsoft.com/library/windows/apps/xaml/dn932036.aspx) constructor to override this behavior. 
 
-> **注**&nbsp;&nbsp;モバイル デバイスの UI スレッドでコンテンツをホストしている場合は、パフォーマンス上の問題があるおそれがあります。DefaultExecutionMode を変更する際は対象となるデバイスすべてを必ずテストしましょう。
+> **Note**&nbsp;&nbsp;There might be performance issues when hosting content on the UI thread on mobile devices, so be sure to test on all target devices when you change DefaultExecutionMode.
 
-UI スレッドから外れてコンテンツをホストしている Web ビューは、[**FlipView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flipview.aspx), [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.aspx) といった、Web ビューのコントロールから親へと伝達するジェスチャを必要とする親コントロールや、その他の関連コントロールと互換性がありません。 そうしたコントロールは、オフ スレッドの Web ビューで開始されるジェスチャを受け取ることができません。 さらに、オフ スレッドの Web コンテンツの出力は、直接サポートされていません。つまり、要素は [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.aspx) フィルで代わりに出力することになります。
+A web view that hosts content off the UI thread is not compatible with parent controls that require gestures to propagate up from the web view control to the parent, such as [**FlipView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flipview.aspx), [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.aspx), and other related controls. These controls will not be able to receive gestures initiated in the off-thread web view. In addition, printing off-thread web content is not directly supported – you should print an element with [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.aspx) fill instead.
 
-## <span id="Recommendations"></span><span id="recommendations"></span><span id="RECOMMENDATIONS"></span>推奨事項
+## <span id="Recommendations"></span><span id="recommendations"></span><span id="RECOMMENDATIONS"></span>Recommendations
 
 
--   読み込まれた Web サイトがデバイスに応じて正しく書式設定されており、アプリの他の部分と一貫性のある色、文字体裁、ナビゲーションが使われていることを確認します。
--   入力フィールドのサイズを適切に調整する必要があります。 テキストを入力する際にズームインできることにユーザーが気付かない場合があります。
--   Web ビューがアプリの他の部分とは異なって見える場合は、関連タスクを実行するための代替のコントロールまたは手段を検討します。 Web ビューがアプリの他の部分にマッチしていると、すべてが 1 つのシームレスなエクスペリエンスとしてユーザーに認識してもらえます。
-
-\[この記事には、ユニバーサル Windows プラットフォーム (UWP) アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
-
-## <span id="related_topics"></span>関連トピック
-
-* [**WebView クラス**](https://msdn.microsoft.com/library/windows/apps/br227702)
- 
-
- 
+-   Make sure that the website loaded is formatted correctly for the device and uses colors, typography, and navigation that are consistent with the rest of your app.
+-   Input fields should be appropriately sized. Users may not realize that they can zoom in to enter text.
+-   If a web view doesn't look like the rest of your app, consider alternative controls or ways to accomplish relevant tasks. If your web view matches the rest of your app, users will see it all as one seamless experience.
 
 
 
+## <span id="related_topics"></span>Related topics
+
+* [**WebView class**](https://msdn.microsoft.com/library/windows/apps/br227702)
+ 
+
+ 
 
 
-
-<!--HONumber=Mar16_HO1-->
 
 

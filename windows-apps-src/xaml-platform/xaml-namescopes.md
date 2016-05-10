@@ -1,59 +1,56 @@
 ---
-description: XAML 名前スコープには、XAML で定義されたオブジェクトの名前とそれに対応するインスタンスとの関係が格納されます。 この概念は、他のプログラミング言語やテクノロジで使われている用語 "名前スコープ" と広い意味で似ています。
-title: XAML 名前スコープ
+author: jwmsft
+description: A XAML namescope stores relationships between the XAML-defined names of objects and their instance equivalents. This concept is similar to the wider meaning of the term namescope in other programming languages and technologies.
+title: XAML namescopes
 ms.assetid: EB060CBD-A589-475E-B83D-B24068B54C21
 ---
 
-# XAML 名前スコープ
+# XAML namescopes
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-*XAML 名前スコープ* には、XAML で定義されたオブジェクトの名前とそれに対応するインスタンスとの関係が格納されます。 この概念は、他のプログラミング言語やテクノロジで使われている用語 "*名前スコープ*" と広い意味で似ています。
+A *XAML namescope* stores relationships between the XAML-defined names of objects and their instance equivalents. This concept is similar to the wider meaning of the term *namescope* in other programming languages and technologies.
 
-## XAML 名前スコープの定義方法
+## How XAML namescopes are defined
 
-XAML 名前スコープ内で名前を使うと、最初に XAML で定義されたオブジェクトをユーザー コードで参照できます。 XAML を解析すると、内部的に、XAML 宣言で保持していた一部またはすべての関係を維持する一連のオブジェクトが作成されます。 これらの関係が、作成されたオブジェクトの特定のオブジェクト プロパティとして保持されるか、プログラミング モデル API のユーティリティ メソッドとして公開されます。
+Names in XAML namescopes enable user code to reference the objects that were initially declared in XAML. The internal result of parsing XAML is that the runtime creates a set of objects that retain some or all of the relationships these objects had in the XAML declarations. These relationships are maintained as specific object properties of the created objects, or are exposed to utility methods in the programming model APIs.
 
-XAML 名前スコープ内の名前の最も一般的な用途は、オブジェクト インスタンスに対する直接参照です。これは、マークアップ コンパイル パスを部分クラス テンプレートに生成された **InitializeComponent** メソッドと組み合わせてプロジェクト ビルド アクションとして使うことで、有効化されます。
+The most typical use of a name in a XAML namescope is as a direct reference to an object instance, which is enabled by the markup compile pass as a project build action, combined with a generated **InitializeComponent** method in the partial class templates.
 
-[
-            **FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) ユーティリティ メソッドを実行時に使って、XAML マークアップで名前を定義されているオブジェクトへの参照を返すこともできます。
+You can also use the utility method [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) yourself at run time to return a reference to objects that were defined with a name in the XAML markup.
 
-### ビルド アクションと XAML の詳細
+### More about build actions and XAML
 
-技術的には、XAML 自体はマークアップ コンパイラ パスを使います。この際、XAML と、コード ビハインド用に定義した部分クラスがまとめてコンパイルされます。 マークアップで定義された **Name** 属性または [x:Name](x-name-attribute.md) 属性を持つ各オブジェクト要素が、XAML と同名の内部フィールドを生成します。 初期状態では、このフィールドは空です。 続いて、クラスが **InitializeComponent** メソッドを生成します。このメソッドは、すべての XAML が読み込まれた後にのみ呼び出されます。 **InitializeComponent** ロジックにおいて、各内部フィールドには、名前文字列が等しいかどうかを評価した結果を表す [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) の戻り値が設定されます。 このインフラストラクチャは、コンパイル後に Windows ランタイム アプリ プロジェクトの /obj サブフォルダーに XAML ページごとに作成される ".g" (生成) ファイルで確認できます。 リフレクションを実行した場合は、結果として作成されるアセンブリのメンバーとしてのフィールドや **InitializeComponent** メソッドの存在を確認することもできます。それ以外の場合は、インターフェイス言語の内容を調べます。
+What happens technically is that the XAML itself undergoes a markup compiler pass at the same time that the XAML and the partial class it defines for code-behind are compiled together. Each object element with a **Name** or [x:Name attribute](x-name-attribute.md) defined in the markup generates an internal field with a name that matches the XAML name. This field is initially empty. Then the class generates an **InitializeComponent** method that is called only after all the XAML is loaded. Within the **InitializeComponent** logic, each internal field is then populated with the [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) return value for the equivalent name string. You can observe this infrastructure for yourself by looking at the ".g" (generated) files that are created for each XAML page in the /obj subfolder of a Windows Runtime app project after compilation. You can also see the fields and **InitializeComponent** method as members of your resulting assemblies if you reflect over them or otherwise examine their interface language contents.
 
-**注**  特に Visual C++ コンポーネント拡張機能 (C++/CX) アプリの場合、**x:Name** 参照のバッキング フィールドが、XAML ファイルのルート要素に対して作成されません。 C++/CX のコード ビハインドからルート オブジェクトを参照する必要がある場合は、他の API またはツリー走査を使ってください。 たとえば、既知の名前付き子要素に対して [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) を呼び出した後、[**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739) を呼び出します。
+**Note**  Specifically for Visual C++ component extensions (C++/CX) apps, a backing field for an **x:Name** reference is not created for the root element of a XAML file. If you need to reference the root object from C++/CX code-behind, use other APIs or tree traversal. For example you can call [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) for a known named child element and then call [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739).
 
-## XamlReader.Load を使った実行時におけるオブジェクトの作成
+## Creating objects at run time with XamlReader.Load
 
-XAML は、初期の XAML ソース解析操作に対して同じように動作する [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) メソッドの文字列入力としても使用できます。 **XamlReader.Load** は、実行時にオブジェクトの切断されたツリーを新規作成します。 この切断されたツリーは、メイン オブジェクト ツリーのいずれかのポイントにアタッチできます。 作成したオブジェクト ツリーは、**Children** などのコンテンツ プロパティ コレクションに追加するか、オブジェクト値を受け取る他のプロパティを設定する (たとえば、[**Fill**](https://msdn.microsoft.com/library/windows/apps/br243378) プロパティの値に新しい [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/br210101) を読み込む) ことで、明示的に接続する必要があります。
+XAML can be also be used as the string input for the [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) method, which acts analogously to the initial XAML source parse operation. **XamlReader.Load** creates a new disconnected tree of objects at run time. The disconnected tree can then be attached to some point on the main object tree. You must explicitly connect your created object tree, either by adding it to a content property collection such as **Children**, or by setting some other property that takes an object value (for example, loading a new [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/br210101) for a [**Fill**](https://msdn.microsoft.com/library/windows/apps/br243378) property value).
 
-### XamlReader.Load が XAML 名前スコープに与える影響
+### XAML namescope implications of XamlReader.Load
 
-[
-            **XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) によって作成された新しいオブジェクト ツリーで定義される暫定的な XAML 名前スコープは、指定された XAML で定義名が一意であるかどうかを評価します。 指定された XAML 内の名前がこの時点で内部的に一意でない場合、**XamlReader.Load** によって例外がスローされます。 切断されたオブジェクト ツリーがメインのアプリ オブジェクト ツリーに接続されている場合、切断されたオブジェクト ツリーの XAML 名前スコープは、メインのアプリ XAML 名前スコープには結合されません。 ツリーの接続後、アプリのオブジェクト ツリーは結合されていますが、そのツリーの XAML 名前スコープは分離されています。 オブジェクト間の接続ポイントでは、分岐が発生します。ここで、**XamlReader.Load** の呼び出しによって返される値をプロパティに設定します。
+The preliminary XAML namescope defined by the new object tree created by [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) evaluates any defined names in the provided XAML for uniqueness. If names in the provided XAML are not internally unique at this point, **XamlReader.Load** throws an exception. The disconnected object tree does not attempt to merge its XAML namescope with the main application XAML namescope, if or when it is connected to the main application object tree. After you connect the trees, your app has a unified object tree, but that tree has discrete XAML namescopes within it. The divisions occur at the connection points between objects, where you set some property to be the value returned from a **XamlReader.Load** call.
 
-切断された異なる XAML 名前スコープを持つことに伴う問題は、マネージ オブジェクトの直接参照と同様に、[**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) メソッドの呼び出しが、結合された XAML 名前スコープでは動作しなくなることです。 代わりに、**FindName** の呼び出しの対象となった特定のオブジェクトがスコープを意味し、そのスコープは呼び出し元オブジェクトが存在する XAML 名前スコープになります。 マネージ オブジェクトの直接参照では、スコープは、コードが存在するクラスによって暗黙的に指定されます。 一般に、アプリ コンテンツの "ページ" における実行時の対話に使うコード ビハインドは、ルート "ページ" をサポートする部分クラスに存在するため、XAML 名前スコープはルート XAML 名前スコープになります。
+The complication of having discrete and disconnected XAML namescopes is that calls to the [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) method as well as direct managed object references no longer operate against a unified XAML namescope. Instead, the particular object that **FindName** is called on implies the scope, with the scope being the XAML namescope that the calling object is within. In the direct managed object reference case, the scope is implied by the class where the code exists. Typically, the code-behind for run-time interaction of a "page" of app content exists in the partial class that backs the root "page", and therefore the XAML namescope is the root XAML namescope.
 
-ルート XAML 名前スコープで指定したオブジェクトを取得するために [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) を呼び出した場合、[**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) によって作成された、異なる XAML 名前スコープのオブジェクトは検索されません。 逆に、異なる XAML 名前スコープの外部で取得したオブジェクトから **FindName** を呼び出した場合は、ルート XAML 名前スコープで指定したオブジェクトは検索されません。
+If you call [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) to get a named object in the root XAML namescope, the method will not find the objects from a discrete XAML namescope created by [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048). Conversely, if you call **FindName** from an object obtained from out of the discrete XAML namescope, the method will not find named objects in the root XAML namescope.
 
-異なる XAML 名前スコープの問題によって影響を受けるのは、[**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) 呼び出しを使って XAML 名前スコープで名前に基づいてオブジェクトを検索する処理だけです。
+This discrete XAML namescope issue only affects finding objects by name in XAML namescopes when using the [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) call.
 
-異なる XAML 名前スコープに定義されているオブジェクトを参照するには、次のような手法を使用できます。
+To get references to objects that are defined in a different XAML namescope, you can use several techniques:
 
--   [
-            **Parent**](https://msdn.microsoft.com/library/windows/apps/br208739) や、オブジェクト ツリー構造内に存在することが判明しているコレクション プロパティ ([**Panel.Children**](https://msdn.microsoft.com/library/windows/apps/br227514) によって返されるコレクションなど) を使って、分離されたステップでツリー全体を移動します。
--   異なる XAML 名前スコープから呼び出していて、ルート XAML 名前スコープを対象とする必要がある場合は、現在表示されているメイン ウィンドウへの参照を取得すると簡単です。 `Window.Current.Content`を呼び出す 1 行のコードを使って、現在のアプリ ウィンドウからの表示ルート (ルート XAML 要素、"コンテンツ ソース" とも呼ばれます) を取得できます。 次に [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) にキャストし、このスコープから [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) を呼び出すことができます。
--   ルート XAML 名前スコープから呼び出していて、異なる XAML 名前スコープ内のオブジェクトを対象とする必要がある場合は、[**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) から返されてメイン オブジェクト ツリーに追加されたオブジェクトへの参照を、あらかじめコードに記述して保持しておくことをお勧めします。 これにより、このオブジェクトが、異なる XAML 名前スコープ内で [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) を呼び出すための有効なオブジェクトになります。 このオブジェクトはグローバル変数として保持できるほか、メソッドのパラメーターを使って渡すこともできます。
--   ビジュアル ツリーを走査することにより、名前と XAML 名前スコープの考慮事項を完全に回避できます。 [
-            **VisualTreeHelper**](https://msdn.microsoft.com/library/windows/apps/br243038) API を使うと、位置とインデックスだけを基に、親オブジェクトと子コレクションの観点からビジュアル ツリーを走査できます。
+-   Walk the entire tree in discrete steps with [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739) and/or collection properties that are known to exist in your object tree structure (such as the collection returned by [**Panel.Children**](https://msdn.microsoft.com/library/windows/apps/br227514)).
+-   If you are calling from a discrete XAML namescope and want the root XAML namescope, it is always easy to get a reference to the main window currently displayed. You can get the visual root (the root XAML element, also known as the content source) from the current application window in one line of code with the call `Window.Current.Content`. You can then cast to [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) and call [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) from this scope.
+-   If you are calling from the root XAML namescope and want an object within a discrete XAML namescope, the best thing to do is to plan ahead in your code and retain a reference to the object that was returned by [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) and then added to the main object tree. This object is now a valid object for calling [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) within the discrete XAML namescope. You could keep this object available as a global variable or otherwise pass it by using method parameters.
+-   You can avoid names and XAML namescope considerations entirely by examining the visual tree. The [**VisualTreeHelper**](https://msdn.microsoft.com/library/windows/apps/br243038) API enables you to traverse the visual tree in terms of parent objects and child collections, based purely on position and index.
 
-## テンプレートにおける XAML 名前スコープ
+## XAML namescopes in templates
 
-XAML のテンプレートを使うと、コンテンツを簡単に再利用および再適用できます。ただし、テンプレートには、テンプレート レベルで定義された名前を持つ要素も含まれている可能性があります。 同一のテンプレートが、ページ内で複数回使われる可能性があります。 このため、テンプレートに、適用先のページに依存しない独自の XAML 名前スコープを定義します。 次に例を示します。
+Templates in XAML provide the ability to reuse and reapply content in a straightforward way, but templates might also include elements with names defined at the template level. That same template might be used multiple times in a page. For this reason, templates define their own XAML namescopes, independent of the containing page where the style or template is applied. Consider this example:
 
-```xaml
+```xml
 <Page
   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  >
@@ -70,21 +67,16 @@ XAML のテンプレートを使うと、コンテンツを簡単に再利用お
 </Page>
 ```
 
-ここでは、同一のテンプレートを 2 つの異なるコントロールに適用しています。 これらのテンプレートがそれぞれ異なる XAML 名前スコープを持たなければ、テンプレート内で使われている "MyTextBlock" という名前により、名前の競合が発生することになります。 テンプレートの各インスタンスは独自の XAML 名前スコープを持つため、この例の場合、インスタンス化された各テンプレートの XAML 名前スコープに、名前が必ず 1 つずつ含まれます。 ただし、ルート XAML 名前スコープには、どちらのテンプレートの名前も含まれていません。
+Here, the same template is applied to two different controls. If templates did not have discrete XAML namescopes, the "MyTextBlock" name used in the template would cause a name collision. Each instantiation of the template has its own XAML namescope, so in this example each instantiated template's XAML namescope would contain exactly one name. However, the root XAML namescope does not contain the name from either template.
 
-XAML 名前スコープが複数存在するため、テンプレートが適用されるページのスコープからテンプレート内の指定要素を検索するには、別の手法が必要になります。 オブジェクト ツリー内のオブジェクトに対して [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) を呼び出すのではなく、まずテンプレートが適用されているオブジェクトを取得し、その後で [**GetTemplateChild**](https://msdn.microsoft.com/library/windows/apps/br209416) を呼び出します。 コントロールの作成者が生成している規則で、適用されたテンプレートの特定の指定要素を、コントロール自体によって定義される動作の対象とする場合は、コントロール実装コードから **GetTemplateChild** メソッドを使用できます。 **GetTemplateChild** メソッドはプロテクトされているため、コントロールの作成者のみがアクセスできます。 また、パーツやテンプレート パーツに名前を付け、これらをコントロール クラスに適用される属性値として報告するために、コントロールの作成者が従う規則があります。 この方法を使うと、異なるテンプレートを適用しようとしているコントロール ユーザーは重要なパーツ名を検出できるようになります。コントロールの機能を維持するには、名前付きパーツをそのテンプレートに置き換える必要があります。
+Because of the separate XAML namescopes, finding named elements within a template from the scope of the page where the template is applied requires a different technique. Rather than calling [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) on some object in the object tree, you first obtain the object that has the template applied, and then call [**GetTemplateChild**](https://msdn.microsoft.com/library/windows/apps/br209416). If you are a control author and you are generating a convention where a particular named element in an applied template is the target for a behavior that is defined by the control itself, you can use the **GetTemplateChild** method from your control implementation code. The **GetTemplateChild** method is protected, so only the control author has access to it. Also, there are conventions that control authors should follow in order to name parts and template parts and report these as attribute values applied to the control class. This technique makes the names of important parts discoverable to control users who might wish to apply a different template, which would need to replace the named parts in order to maintain control functionality.
 
-## 関連トピック
+## Related topics
 
-* [XAML の概要](xaml-overview.md)
-* [x:Name 属性](x-name-attribute.md)
-* [クイック スタート: コントロール テンプレート](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
+* [XAML overview](xaml-overview.md)
+* [x:Name attribute](x-name-attribute.md)
+* [Quickstart: Control templates](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
 * [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048)
 * [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715)
- 
-
-
-
-<!--HONumber=Mar16_HO1-->
-
+ 
 

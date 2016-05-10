@@ -1,43 +1,43 @@
 ---
-title: '関心のあるポイント (POI) の地図への表示'
-description: プッシュピン、画像、図形、XAML UI 要素を使って、関心のあるポイント (POI) を地図に追加します。
+author: PatrickFarley
+title: 'Display points of interest (POI) on a map'
+description: Add points of interest (POI) to a map using pushpins, images, shapes, and XAML UI elements.
 ms.assetid: CA00D8EB-6C1B-4536-8921-5EAEB9B04FCA
 ---
 
-# 関心のあるポイント (POI) の地図への表示
+# Display points of interest (POI) on a map
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-プッシュピン、画像、図形、XAML UI 要素を使って、関心のあるポイント (POI) を地図に追加します。 POI は、地図上の特定のポイントであり、関心のあるものを表します。 たとえば、企業、市区町村、友人の所在地を示すことができます。
+Add points of interest (POI) to a map using pushpins, images, shapes, and XAML UI elements. A POI is a specific point on the map that represents something of interest. For example, the location of a business, city, or friend.
 
-**ヒント** アプリで POI を表示する方法について詳しくは、GitHub の [Windows-universal-samples リポジトリ](http://go.microsoft.com/fwlink/p/?LinkId=619979) から次のサンプルをダウンロードしてください。
+**Tip** To learn more about displaying POI on your app, download the following sample from the [Windows-universal-samples repo](http://go.microsoft.com/fwlink/p/?LinkId=619979) on GitHub.
 
--   [ユニバーサル Windows プラットフォーム (UWP) の地図サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [Universal Windows Platform (UWP) map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 
-地図にプッシュピン、画像、図形を表示するには、[**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) オブジェクト、[**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103) オブジェクト、[**MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114) オブジェクトをマップ コントロールの [**MapElements**](https://msdn.microsoft.com/library/windows/apps/dn637033) コレクションに追加します。 プログラムでデータ バインディングを使うか、項目を追加します。XAML マークアップで宣言を使って **MapElements** コレクションにバインドすることはできません。
+Display pushpins, images, and shapes on the map by adding [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077), [**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103), and [**MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114) objects to the [**MapElements**](https://msdn.microsoft.com/library/windows/apps/dn637033) collection of the map control. Use data binding or add items programmatically; you can't bind to the **MapElements** collection declaratively in your XAML markup.
 
-XAML ユーザー インターフェイス要素 ([**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)、[**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739)、[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) など) を地図に表示するには、それらの要素を [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) の [**Children**](https://msdn.microsoft.com/library/windows/apps/dn637008) として追加します。 また、それらの要素を [**MapItemsControl**](https://msdn.microsoft.com/library/windows/apps/dn637094) に追加したり、**MapItemsControl** を項目や項目のコレクションにバインドしたりすることもできます。
+Display XAML user interface elements such as a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265), a [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739), or a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) on the map by adding them as [**Children**](https://msdn.microsoft.com/library/windows/apps/dn637008) of the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004). You can also add them to the [**MapItemsControl**](https://msdn.microsoft.com/library/windows/apps/dn637094), or bind the **MapItemsControl** to a collection of items.
 
-以上の説明をまとめると次のようになります。
+In summary:
 
--   プッシュピンなどの画像をオプションのテキストと共に表示するには、[MapIcon を地図に追加](#mapicon)します。
--   マルチポイント図形を表示するには、[MapPolygon を地図に追加](#mappolygon)します。
--   地図に線を表示するには、[MapPolyline を地図に追加](#mappolyline)します。
--   カスタム UI 要素を表示するには、[XAML を地図に追加](#mapxaml)します。
+-   [Add a MapIcon to the map](#mapicon) to display an image such as a pushpin with optional text.
+-   [Add a MapPolygon to the map](#mappolygon) to display a multi-point shape.
+-   [Add a MapPolyline to the map](#mappolyline) to display lines on the map.
+-   [Add XAML to the map](#mapxaml) to display custom UI elements.
 
-地図に配置する要素の数が多い場合、[地図にタイル画像をオーバーレイする](overlay-tiled-images.md)ことを検討します。 地図に道路情報を表示するには、「[ルートとルート案内の表示](routes-and-directions.md)」をご覧ください。
+If you have a large number of elements to place on the map, consider [overlaying tiled images on the map](overlay-tiled-images.md). To display roads on the map, see [Display routes and directions](routes-and-directions.md).
 
-## MapIcon の追加
+## Add a MapIcon
 
 
-[
-            **MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) クラスを使って、プッシュピンなどの画像をオプションのテキストと共に地図に表示します。 既定の画像をそのまま使うか、[**Image**](https://msdn.microsoft.com/library/windows/apps/dn637078) プロパティを使ってカスタム画像を指定できます。 次の画像はそれぞれ、[**Title**](https://msdn.microsoft.com/library/windows/apps/dn637088) プロパティに値を指定しない、短いタイトル、長いタイトル、非常に長いタイトルを指定した場合の **MapIcon** の既定の画像です。
+Display an image such a pushpin, with optional text, on the map by using the [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) class. You can accept the default image or provide a custom image by using the [**Image**](https://msdn.microsoft.com/library/windows/apps/dn637078) property. The following image displays the default image for a **MapIcon** with no value specified for the [**Title**](https://msdn.microsoft.com/library/windows/apps/dn637088) property, with a short title, with a long title, and with a very long title.
 
-![さまざまな長さのタイトルを含むサンプルの MapIcon。](images/mapctrl-mapicons.png)
+![sample mapicon with titles of different lengths.](images/mapctrl-mapicons.png)
 
-次の例では、シアトル市の地図を表示して、既定の画像とオプションのタイトルを使って [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) を追加し、スペース ニードルの場所を示しています。 また、アイコンを地図の中央に配置し、拡大しています。 マップ コントロールを使用する方法に関する一般的な情報については、「[2D、3D、Streetside ビューでの地図の表示](display-maps.md)」をご覧ください。
+The following example shows a map of the city of Seattle and adds a [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) with the default image and an optional title to indicate the location of the Space Needle. It also centers the map over the icon and zooms in. For general info about using the map control, see [Display maps with 2D, 3D, and Streetside views](display-maps.md).
 
 ```csharp
       private void displayPOIButton_Click(object sender, RoutedEventArgs e)
@@ -62,34 +62,30 @@ XAML ユーザー インターフェイス要素 ([**Button**](https://msdn.micr
       }
 ```
 
-この例では、次の POI (中央の既定の画像) が地図に表示されます。
+This example displays the following POI on the map (the default image in the center).
 
-![MapIcon を使った地図](images/displaypoidefault.png)
+![map with mapicon](images/displaypoidefault.png)
 
-次のコード行では、プロジェクトの Assets フォルダーに保存されているカスタム イメージを使って [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) が表示されます。 **MapIcon** の [**Image**](https://msdn.microsoft.com/library/windows/apps/dn637078) プロパティでは、[**RandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701813) 型の値が想定されています。 この型では、[**Windows.Storage.Streams**](https://msdn.microsoft.com/library/windows/apps/br241791) 名前空間用に **using** ステートメントが必要になります。
+The following line of code displays the [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) with a custom image saved in the Assets folder of the project. The [**Image**](https://msdn.microsoft.com/library/windows/apps/dn637078) property of the **MapIcon** expects a value of type [**RandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701813). This type requires a **using** statement for the [**Windows.Storage.Streams**](https://msdn.microsoft.com/library/windows/apps/br241791) namespace.
 
-**ヒント** 複数の地図アイコンに同じ画像を使う場合は、パフォーマンスが最大限に高まるように、ページ レベルまたはアプリ レベルで [**RandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701813) を宣言します。
+**Tip** If you use the same image for multiple map icons, declare the [**RandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701813) at the page or app level for the best performance.
 
 ```csharp
     MapIcon1.Image =
         RandomAccessStreamReference.CreateFromUri(new Uri("ms-appx:///Assets/customicon.png"));
 ```
 
-[
-            **MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) クラスを使うときは、次の考慮事項を念頭に置いてください。
+Keep these considerations in mind when working with the [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) class:
 
--   [
-            **Image**](https://msdn.microsoft.com/library/windows/apps/dn637078) プロパティがサポートしている最大画像サイズは 2048 × 2048 ピクセルです。
--   既定では、地図アイコンの画像は必ず表示されるとは限りません。 このクラスが地図上の他の要素やラベルを覆い隠す場合には、このクラスは非表示になることがあります。 地図アイコンを表示したままにするには、このアイコンの [**CollisionBehaviorDesired**](https://msdn.microsoft.com/library/windows/apps/dn974327) プロパティを [**MapElementCollisionBehavior.RemainVisible**](https://msdn.microsoft.com/library/windows/apps/dn974314) に設定します。
--   [
-            **MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) のオプションの [**Title**](https://msdn.microsoft.com/library/windows/apps/dn637088) は、必ず表示されるとは限りません。 テキストが表示されない場合は、[**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) の [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068) プロパティの値を減らして、地図を縮小してください。
--   地図上の特定の場所を指す [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) 画像 (たとえば、プッシュピンや矢印など) を表示する場合は、[**NormalizedAnchorPoint**](https://msdn.microsoft.com/library/windows/apps/dn637082) プロパティの値を画像上にあるポインターのおおよその位置に設定することを検討してください。 **NormalizedAnchorPoint** の値を、画像の左上隅を示す既定値 (0, 0) のままにした場合、地図の [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068) を変更すると、画像が別の場所を示した状態になる可能性があります。
+-   The [**Image**](https://msdn.microsoft.com/library/windows/apps/dn637078) property supports a maximum image size of 2048×2048 pixels.
+-   By default, the map icon's image is not guaranteed to be shown. It may be hidden when it obscures other elements or labels on the map. To keep it visible, set the map icon's [**CollisionBehaviorDesired**](https://msdn.microsoft.com/library/windows/apps/dn974327) property to [**MapElementCollisionBehavior.RemainVisible**](https://msdn.microsoft.com/library/windows/apps/dn974314).
+-   The optional [**Title**](https://msdn.microsoft.com/library/windows/apps/dn637088) of the [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) is not guaranteed to be shown. If you don't see the text, zoom out by decreasing the value of the [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068) property of the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
+-   When you display a [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) image that points to a specific location on the map - for example, a pushpin or an arrow - consider setting the value of the [**NormalizedAnchorPoint**](https://msdn.microsoft.com/library/windows/apps/dn637082) property to the approximate location of the pointer on the image. If you leave the value of **NormalizedAnchorPoint** at its default value of (0, 0), which represents the upper left corner of the image, changes in the [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068) of the map may leave the image pointing to a different location.
 
-## MapPolygon の追加
+## Add a MapPolygon
 
 
-[
-            **MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103) クラスを使って、マルチポイント図形を地図に表示します。 次の例は、[UWP の地図サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619977)から抜粋したもので、地図に赤色のボックス (境界線は青色) を表示します。
+Display a multi-point shape on the map by using the [**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103) class. The following example, from the [UWP map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977), displays a red box with blue border on the map.
 
 ```csharp
 private void mapPolygonAddButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
@@ -114,11 +110,10 @@ private void mapPolygonAddButton_Click(object sender, Windows.UI.Xaml.RoutedEven
 }
 ```
 
-## MapPolyline の追加
+## Add a MapPolyline
 
 
-[
-            **MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114) クラスを使って、線を地図に表示します。 次の例は、[UWP の地図サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619977)から抜粋したもので、地図に破線を表示します。
+Display a line on the map by using the [**MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114) class. The following example, from the [UWP map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977), displays a dashed line on the map.
 
 ```csharp
 private void mapPolylineAddButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
@@ -138,17 +133,15 @@ private void mapPolylineAddButton_Click(object sender, Windows.UI.Xaml.RoutedEve
 }
 ```
 
-## XAML の追加
+## Add XAML
 
 
-XAML を使って、カスタム UI 要素を地図に表示します。 XAML を地図に配置するには、XAML の位置と正規化されたアンカー ポイントを指定します。
+Display custom UI elements on the map using XAML. Position XAML on the map by specifying the location and normalized anchor point of the XAML.
 
--   [
-            **SetLocation**](https://msdn.microsoft.com/library/windows/desktop/ms704369) を呼び出して、XAML を地図に配置する位置を設定します。
--   [
-            **SetNormalizedAnchorPoint**](https://msdn.microsoft.com/library/windows/apps/dn637050) を呼び出して、指定した位置に対応する XAML 上の相対位置を設定します。
+-   Set the location on the map where the XAML is placed by calling [**SetLocation**](https://msdn.microsoft.com/library/windows/desktop/ms704369).
+-   Set the relative location on the XAML that corresponds to the specified location by calling [**SetNormalizedAnchorPoint**](https://msdn.microsoft.com/library/windows/apps/dn637050).
 
-次の例では、シアトル市の地図を表示して、XAML の [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) コントロールを追加し、スペース ニードルの場所を示しています。 また、そのエリアを地図の中央に配置し、拡大しています。 マップ コントロールを使用する方法に関する一般的な情報については、「[2D、3D、Streetside ビューでの地図の表示](display-maps.md)」をご覧ください。
+The following example shows a map of the city of Seattle and adds a XAML [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) control to indicate the location of the Space Needle. It also centers the map over the area and zooms in. For general info about using the map control, see [Display maps with 2D, 3D, and Streetside views](display-maps.md).
 
 ```csharp
 private void displayXAMLButton_Click(object sender, RoutedEventArgs e)
@@ -177,24 +170,24 @@ private void displayXAMLButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-この例では、地図に青色の境界線が表示されます。
+This example displays a blue border on the map.
 
 ![](images/displaypoixaml.png)
 
-次の例では、データ バインディングを使って、ページの XAML マークアップで XAML UI 要素を直接追加する方法を示しています。 コンテンツを表示する他の XAML 要素と同様に、[**Children**](https://msdn.microsoft.com/library/windows/apps/dn637008) は [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) の既定のコンテンツ プロパティであり、XAML マークアップで明示的に指定する必要はありません。
+The next examples show how to add XAML UI elements directly in the XAML markup of the page using data binding. As with other XAML elements that display content, [**Children**](https://msdn.microsoft.com/library/windows/apps/dn637008) is the default content property of the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) and does not have to be specified explicitly in XAML markup.
 
-次の例では、2 つの XAML コントロールを [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) の暗黙的な子として表示する方法を示しています。
+This example shows how to display two XAML controls as implicit children of the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
 
-```xaml
+```xml
 <maps:MapControl>
     <TextBox Text="Seattle" maps:MapControl.Location="{Binding SeattleLocation}"/>
     <TextBox Text="Bellevue" maps:MapControl.Location="{Binding BellevueLocation}"/>
 </maps:MapControl>
 ```
 
-次の例では、[**MapItemsControl**](https://msdn.microsoft.com/library/windows/apps/dn637094) に含まれている 2 つの XAML コントロールを表示する方法を示しています。
+This example shows how to display two XAML controls contained within a [**MapItemsControl**](https://msdn.microsoft.com/library/windows/apps/dn637094).
 
-```xaml
+```xml
 <maps:MapControl>
   <maps:MapItemsControl>
     <TextBox Text="Seattle" maps:MapControl.Location="{Binding SeattleLocation}"/>
@@ -203,9 +196,9 @@ private void displayXAMLButton_Click(object sender, RoutedEventArgs e)
 </maps:MapControl>
 ```
 
-次の例では、[**MapItemsControl**](https://msdn.microsoft.com/library/windows/apps/dn637094) にバインドされている XAML 要素のコレクションが表示されます。
+This example displays a collection of XAML elements bound to a [**MapItemsControl**](https://msdn.microsoft.com/library/windows/apps/dn637094).
 
-```xaml
+```xml
 <maps:MapControl x:Name="MapControl" MapTapped="MapTapped" MapDoubleTapped="MapTapped" MapHolding="MapTapped">
   <maps:MapItemsControl ItemsSource="{Binding StateOverlays}">
     <maps:MapItemsControl.ItemTemplate>
@@ -219,20 +212,15 @@ private void displayXAMLButton_Click(object sender, RoutedEventArgs e)
 </maps:MapControl>
 ```
 
-## 関連トピック
+## Related topics
 
 * [Bing Maps Developer Center](https://www.bingmapsportal.com/)
-* [UWP の地図サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [地図の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [Build 2015 のビデオ: Windows アプリでの電話、タブレット、PC で使用できるマップと位置情報の活用](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP の交通情報アプリのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [UWP map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [Design guidelines for maps](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Build 2015 video: Leveraging Maps and Location Across Phone, Tablet, and PC in Your Windows Apps](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [UWP traffic app sample](http://go.microsoft.com/fwlink/p/?LinkId=619982)
 * [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077)
 * [**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103)
 * [**MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114)
-
-
-
-
-<!--HONumber=Mar16_HO1-->
 
 

@@ -1,335 +1,317 @@
 ---
+author: drewbatgit
 ms.assetid: 1361E82A-202F-40F7-9239-56F00DFCA54B
-description: この記事では、MediaCapture API を使用して写真とビデオをキャプチャする手順について説明します。これには、MediaCapture の初期化とシャットダウン、デバイスの向きに変化が生じた場合の処理などが含まれます。
-title: MediaCapture を使った写真とビデオのキャプチャ
+description: This article describes the steps for capturing photos and video using the MediaCapture API, including initializing and shutting down the MediaCapture and handling changes in device orientation.
+title: Capture photos and video with MediaCapture
 ---
 
-# MediaCapture を使った写真とビデオのキャプチャ
+# Capture photos and video with MediaCapture
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-この記事では、[**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) API を使用して写真とビデオをキャプチャする手順について説明します。これには、**MediaCapture** の初期化とシャットダウン、デバイスの向きに変化が生じた場合の処理などが含まれます。
+This article describes the steps for capturing photos and video using the [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) API, including initializing and shutting down the **MediaCapture** and handling changes in device orientation.
 
-**MediaCapture** は、メディア キャプチャ プロセスに対する低レベルの制御を必要とするアプリや、高度なキャプチャ機能を要するシナリオを実装するアプリのサポートを目的としています。 **MediaCapture** を使用するには、独自のキャプチャ UI を用意する必要があります。 アプリで写真またはビデオをキャプチャできれば良く、高度なキャプチャ技術を必要としない場合は、[**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030) を使用すると、わずか数行のコードで写真やビデオを簡単にキャプチャできるようになります。 詳しくは、「[CameraCaptureUI を使った写真とビデオのキャプチャ](capture-photos-and-video-with-cameracaptureui.md)」をご覧ください。
+**MediaCapture** is provided to support apps that require low-level control of the media capture process and that implement scenarios that require advanced capture capabilities. Using **MediaCapture** also requires you to provide your own capture UI. If your app only needs to capture a photo or video and is unconcerned with advanced capture techniques, the [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030) makes it easy to capture a photo or video with only a few lines of code. For more information, see [Capture photos and video with CameraCaptureUI](capture-photos-and-video-with-cameracaptureui.md).
 
-この記事のコードは、[CameraStarterKit サンプル](http://go.microsoft.com/fwlink/?LinkId=619479) を基にしています。 このサンプルをダウンロードし、該当するコンテキストで使用されているコードを確認することも、サンプルを独自のアプリの開始点として使用することもできます。
+The code in this article was adapted from the [CameraStarterKit sample](http://go.microsoft.com/fwlink/?LinkId=619479). You can download the sample to see the code used in context or to use the sample as a starting point for your own app.
 
-## プロジェクトを構成する
+## Configure your project
 
-### アプリ マニフェストに機能宣言を追加する
+### Add capability declarations to the app manifest
 
-アプリからデバイスのカメラにアクセスするには、アプリでデバイス機能 (*webcam* と *microphone*) の使用を宣言する必要があります。 キャプチャした写真とビデオをユーザーの画像ライブラリまたはビデオ ライブラリに保存する場合は、*picturesLibrary* 機能と *videosLibrary* 機能も宣言する必要があります。
+In order for your app to access a device's camera, you must declare that your app uses the *webcam* and *microphone* device capabilities. If you want to save captured photos and videos to the users's Pictures or Videos library, you must also declare the *picturesLibrary* and *videosLibrary* capability.
 
-**アプリ マニフェストに機能を追加する**
+**Add capabilities to the app manifest**
 
-1.  Microsoft Visual Studio では、**ソリューション エクスプローラー**で **package.appxmanifest** 項目をダブルクリックし、アプリケーション マニフェストのデザイナーを開きます。
-2.  **[機能]** タブをクリックします。
-3.  **[Web カメラ]** のボックスと **[マイク]** のボックスをオンにします。
-4.  画像ライブラリとビデオ ライブラリにアクセスするには、**画像ライブラリ**のボックスと**ビデオ ライブラリ**のボックスをオンにします。
+1.  In Microsoft Visual Studio, in **Solution Explorer**, open the designer for the application manifest by double-clicking the **package.appxmanifest** item.
+2.  Select the **Capabilities** tab.
+3.  Check the box for **Webcam** and the box for **Microphone**.
+4.  For access to the Pictures and Videos library check the boxes for **Pictures Library** and the box for **Videos Library**.
 
-### メディア キャプチャ関連の API について using ディレクティブを追加する
+### Add using directives for media capture-related APIs
 
-次のコードでは、この記事のサンプル コードで参照されている名前空間を示し、各名前空間の機能を説明しています。
+The following code listing shows the namespaces that are referenced by the sample code in this article and describes what functionality each namespace provides.
 
 [!code-cs[Using](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUsing)]
 
-## MediaCapture オブジェクトを初期化する
+## Initialize the MediaCapture object
 
-[
-            **Windows.Media.Capture**](https://msdn.microsoft.com/library/windows/apps/br226738) 名前空間の [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) クラスは、すべてのメディア キャプチャ操作で使用される基本的なインターフェイスです。 アプリでは一般的に、単一ページでの使用を対象としてこの型の変数を宣言します。 アプリでは、**MediaCapture** の現在の状態を追跡する必要があるため、このオブジェクトの初期化状態、プレビュー状態、録画状態用にブール変数を宣言します。
+The [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) class in the [**Windows.Media.Capture**](https://msdn.microsoft.com/library/windows/apps/br226738) namespace is the fundamental interface for all media capture operations. Apps typically declare a variable of this type scoped to a single page. Your app needs to track the current state of the **MediaCapture**, so you should declare boolean variables for the initialization, previewing, and recording state of the object.
 
 [!code-cs[MediaCaptureVariables](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetMediaCaptureVariables)]
 
-プレビュー ビデオを正しい向きで表示するには、外付けカメラかどうか、アプリでプレビュー ストリームを左右反転処理中かどうかを追跡するメンバー変数を作成します。 ビデオ フィードがユーザーをキャプチャしていると判断した場合は、ユーザーから見て自然に感じられるように、アプリでプレビュー ストリームを左右反転処理する必要があります。
+To help orient the preview video correctly, create member variables to track whether the camera is external and whether the app is currently mirroring the preview stream. Your app should mirror the preview stream when you think the video feed is capturing the user because that is a more natural user experience.
 
 [!code-cs[PreviewVariables](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPreviewVariables)]
 
-次の例のメソッドでは、メディア キャプチャ オブジェクトを初期化しています。 最初に、メディア キャプチャに使用できるビデオ キャプチャ デバイスを検索します。 見つかったら、**MediaCapture** オブジェクトを初期化し、イベントのハンドラーを登録します。 次に、ビデオ キャプチャ デバイスの ID を使用して [**MediaCaptureInitializationSettings**](https://msdn.microsoft.com/library/windows/desktop/hh802710) オブジェクトを作成します。 さらに、[**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) を呼び出すことで、**MediaCapture** を初期化します。
+The following example method initializes the media capture object. First, the code searches for a video capture device that can be used for media capture. Once found, the **MediaCapture** object is initialized and handlers for its events are registered. Next a [**MediaCaptureInitializationSettings**](https://msdn.microsoft.com/library/windows/desktop/hh802710) object is created using the ID of the video capture device. The **MediaCapture** is then initialized with a call to [**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598).
 
 [!code-cs[InitializeCameraAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetInitializeCameraAsync)]
 
--   指定された種類のすべてのデバイスを検索するには、[**DeviceInformation.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) メソッドを使用できます。 この例では、ビデオ キャプチャ デバイスのみを返すことを示すために、**DeviceClass.VideoCapture** 列挙値が渡されています。 ビデオ キャプチャ デバイスは、写真とビデオの両方のキャプチャに使用されます。
+-   The [**DeviceInformation.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) method can be used to find all devices of a specified type. In this example, the **DeviceClass.VideoCapture** enumeration value is passed in to indicate that only video capture devices should be returned. Note that a video capture device is used for capturing both photos and videos.
 
--   **FindAllAsync** は、[**DeviceInformationCollection**](https://msdn.microsoft.com/library/windows/apps/br225395) オブジェクトを返します。このオブジェクトには、要求された種類の各デバイスに対応する [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) オブジェクトが含まれます。 **System.Linq** 名前空間の **FirstOrDefault** 拡張メソッドは、指定された条件に基づいて一覧から項目を選択するための簡単な構文を提供します。 最初の呼び出しでは、[**EnclosureLocation.Panel**](https://msdn.microsoft.com/library/windows/apps/br229906) の値が **Panel.Back** である (カメラがデバイス エンクロージャの背面にあることを示す) 最初の **DeviceInformation** を一覧から選択しようとしています。 デバイスの背面にカメラがない場合は、最初の利用可能なカメラが使用されます。
+-   **FindAllAsync** returns a [**DeviceInformationCollection**](https://msdn.microsoft.com/library/windows/apps/br225395) object that contains a [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) object for each found device of the requested type. The **FirstOrDefault** extension method from the **System.Linq** namespace provides an easy syntax for selecting an item from a list based on specified conditions. The first call attempts to select the first **DeviceInformation** in the list that has an [**EnclosureLocation.Panel**](https://msdn.microsoft.com/library/windows/apps/br229906) value of **Panel.Back**, indicating that the camera is on the back panel of the device's enclosure. If the device does not have a camera on the back panel, the first available camera is used.
 
--   [
-            **MediaCaptureInitializationSettings**](https://msdn.microsoft.com/library/windows/apps/br226573) の初期化時にデバイス ID を指定しなかった場合、デバイスの内部リストから最初のデバイスがシステムによって選択されます。
+-   If you do not specify a device ID when you initialize the [**MediaCaptureInitializationSettings**](https://msdn.microsoft.com/library/windows/apps/br226573), the system will choose the first device in its internal list of devices.
 
--   [
-            **MediaCapture.InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) を呼び出すと、指定されたキャプチャ デバイスを使用できるようにオブジェクトが初期化されます。 この呼び出しは、**try** ブロックの内部で行われ、呼び出し元アプリからカメラへのアクセスをユーザーが拒否した場合は、**UnauthorizedAccessException** がスローされます。 呼び出しに成功した場合は、**\_isInitialized** 変数が true に設定されます。これにより、キャプチャ デバイスが初期化されているかどうかを以降のメソッド呼び出しで判断できるようになります。
+-   The call to [**MediaCapture.InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) initializes the object to use the specified capture device. This call is made inside a **try** block because it will throw an **UnauthorizedAccessException** if the user has denied the calling app access to the camera. If the call succeeds, the **\_isInitialized** variable is set to true so that subsequent method calls can determine if the capture device has been initialized.
 
-- **重要** 一部のデバイス ファミリでは、アプリがデバイスのカメラへのアクセスを付与される前に、ユーザー同意のプロンプトがユーザーに表示されます。 このため、[**MediaCapture.InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) のみをメイン UI スレッドから呼び出す必要があります。 別のスレッドからカメラを初期化しようとすると、初期化エラーになる可能性があります。
+- **Important** On some device families, a user consent prompt is displayed to the user before your app is granted access to the device's camera. For this reason, you must only call [**MediaCapture.InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) from the main UI thread. Attempting to initialize the camera from another thread may result in initialization failure.
 
--   キャプチャ デバイスの初期化に成功した場合は、キャプチャ デバイスが外付けかどうか、デバイスのフロント パネルにあるかどうかを反映して、各変数が設定されます。 これらの値は、キャプチャ プレビューがユーザーから見て正しい向きで表示されるように使用されます。 最後に、キャプチャが利用可能であり、プレビュー ストリームがキャプチャ デバイスから開始されたことを反映して、UI が更新されます。 これらのタスクはすべて、この記事で説明するヘルパー メソッドで実行されます。
+-   If the initialization of the capture device is successful, variables are set to reflect whether the capture device is external, or if it is on the front panel of the device. These values will be used to orient the capture preview correctly for the user. Finally, the UI is updated to reflect that capture is available and the preview stream from the capture device is started. All of these tasks are performed in helper methods that will be described later in this article.
 
-## キャプチャ プレビューを開始する
+## Start the capture preview
 
-キャプチャ結果がどうなるかをユーザーが確認できるようにするには、ビデオ キャプチャ デバイスによる現在のプレビューを UI に渡す必要があります。
+For the user to be able to see what they are capturing, you need to provide a preview of what the video capture device is currently seeing in your UI.
 
-**重要:** キャプチャ デバイスでオート フォーカス、自動露出、オート ホワイト バランスを有効にするには、キャプチャ プレビューを開始する必要があります。
+**Important** You must start the capture preview in order for the capture device to enable auto focus, auto exposure, and auto white balance.
 
-キャプチャ プレビューを有効にするには、[**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) コントロールを使います。 次の例では、キャプチャ要素を定義する XAML コードを示します。
+The [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) control is provided to enable capture preview. The following shows example XAML code that defines the capture element.
 
 [!code-xml[CaptureElement](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetCaptureElement)]
 
-ユーザーは、ビデオ キャプチャ画面のプレビュー中は、非アクティブな状態になっても画面がオフにならずオンのままであると考えます。 これを可能にするには、[**DisplayRequest**](https://msdn.microsoft.com/library/windows/apps/br241816) オブジェクトを作成する必要があります。 キャプチャ セッションの間ずっと保持されるように、ページ スコープでこの変数を宣言します。
+Users expect that the screen will stay on while they are previewing the video capture screen and not turn off due to inactivity. To enable this, you must create a [**DisplayRequest**](https://msdn.microsoft.com/library/windows/apps/br241816) object. Declare this variable with page scope so that it persists throughout the capture session.
 
 [!code-cs[DisplayRequest](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDisplayRequest)]
 
-次のメソッドは、メディア キャプチャ プレビューを開始しています。 まず、[**DisplayRequest**](https://msdn.microsoft.com/library/windows/apps/br241816) の [**RequestActive**](https://msdn.microsoft.com/library/windows/apps/br241818) を呼び出すことによって、画面がアクティブな状態で維持されるよう求めます。 次に、[**StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226613) を呼び出してプレビューを開始します。
+The following method starts up the media capture preview. First, it requests that the display remain active by calling [**RequestActive**](https://msdn.microsoft.com/library/windows/apps/br241818) on the [**DisplayRequest**](https://msdn.microsoft.com/library/windows/apps/br241816). Next, the preview is started by calling [**StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226613).
 
 [!code-cs[StartPreviewAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetStartPreviewAsync)]
 
--   **DisplayRequest** オブジェクトの [**RequestActive**](https://msdn.microsoft.com/library/windows/apps/br241818) メソッドが呼び出され、画面をオンにしておくようにシステムに求めています。
+-   The [**RequestActive**](https://msdn.microsoft.com/library/windows/apps/br241818) method is called on the **DisplayRequest** object to request that the system leave the screen on.
 
--   プレビューのソースを定義するために、**CaptureElement** の [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) プロパティがアプリの **MediaCapture** オブジェクトに設定されています。
+-   The [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) property of the **CaptureElement** is set to the app's **MediaCapture** object to define the source of the preview.
 
--   双方向対応のユーザー インターフェイスをサポートするために、XAML フレームワークによって [**FlowDirection**](https://msdn.microsoft.com/library/windows/apps/br208716) プロパティが提供されています。 **CaptureElement** のテキストの方向を [**FlowDirection.RightToLeft**](https://msdn.microsoft.com/library/windows/apps/br242397) に設定すると、プレビュー ビデオが水平方向に反転されます。 この処理は、キャプチャ デバイスがデバイスのフロント パネルにある場合に、プレビューがユーザーの視点から適切な向きになるように使用します。
+-   The [**FlowDirection**](https://msdn.microsoft.com/library/windows/apps/br208716) property is provided by the XAML framework to support bi-directional user interfaces. Setting the flow direction of the **CaptureElement** to [**FlowDirection.RightToLeft**](https://msdn.microsoft.com/library/windows/apps/br242397) causes the preview video to be flipped horizontally. This is used when the capture device is on the front panel of the device so that the preview in the correct direction from the user's perspective.
 
--   [
-            **StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226613) メソッドは、**CaptureElement** 内でプレビュー ストリームの表示を開始します。 プレビューが正常に開始されると、アプリが現在プレビュー中であることがアプリの他の部分にわかるように、**\_isPreviewing** 変数が設定され、プレビューの回転を設定するためのヘルパー メソッドが呼び出されます。 このメソッドについては、次のセクションで説明します。
+-   The [**StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226613) method starts the display of the preview stream within the **CaptureElement**. If the preview is started successfully, the **\_isPreviewing** variable is set to allow other parts of the app to know that the app is currently previewing, and the helper method for setting the preview rotation is called. This method is defined in the next section.
 
-## 画面とデバイスの向きを検出する
+## Detect screen and device orientation
 
-メディア キャプチャ アプリが電話やタブレットなどのモバイル デバイスで実行されている場合、デバイスの現在の向きがアプリの複数の分野に影響します。 このような分野としては、カメラからのプレビュー ストリームを正しい向きにする処理や、ユーザーから見て適切な向きになるように、キャプチャした画像やビデオを正しくエンコードする処理などがあります。
+There are several areas of a media capture app that, when running on a mobile device like a phone or a tablet, are impacted by the current orientation of the device. These areas include properly rotating the preview stream from the camera and properly encoding captured images and videos so that, when viewed by the user, they are correctly oriented.
 
-"表示の向き" という用語は、ユーザーに対して正しい向きになるように、デバイス上でシステムが XAML ページをどのように回転するかを指します。 "デバイスの向き" は、物理空間におけるデバイスの向きを表しているため、物理空間におけるカメラ デバイスの向きを指します。 メディア キャプチャ アプリでは、どちらの種類の向きも使用します。 表示の向きを処理するには、[**DisplayInformation**](https://msdn.microsoft.com/library/windows/apps/dn264258) クラス用にページ スコープの変数を宣言し、初期化します。 ディスプレイの現在の向きを追跡するには、[**DisplayOrientations**](https://msdn.microsoft.com/library/windows/apps/br226142) 型の変数をもう 1 つ宣言します。 デバイスの向きを追跡するには、[**SimpleOrientationSensor**](https://msdn.microsoft.com/library/windows/apps/br206400) 変数と [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/br206399) 変数を宣言します。
+The term "display orientation" refers to the way the system rotates the XAML page on the device to keep it upright for the user. "Device orientation" refers to the orientation of the device in world space and, therefore, the orientation of the physical camera device in world space. Both kinds of orientation a relevant to a media capture app. To handle display orientation, declare and initialize a page-scoped variable for the [**DisplayInformation**](https://msdn.microsoft.com/library/windows/apps/dn264258) class. Declare another variable of type [**DisplayOrientations**](https://msdn.microsoft.com/library/windows/apps/br226142) to track the current orientation of the display. Declare a [**SimpleOrientationSensor**](https://msdn.microsoft.com/library/windows/apps/br206400) variable and a [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/br206399) variable to track device orientation.
 
 [!code-cs[DisplayInformationAndOrientation](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDisplayInformationAndOrientation)]
 
-次に示す各ヘルパー メソッドでは、[**DisplayInformation.OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) イベントと [**SimpleOrientationSensor.OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/br206407) イベントのイベント ハンドラーを登録または登録解除し、追跡用の変数を現在の向きで初期化しています。 [
-            **SimpleOrientationSensor**](https://msdn.microsoft.com/library/windows/apps/br206400) がないデバイスもあるため、ハンドラーの登録や現在の向きの取得を行う前に、チェックが必要です。
+The following helper methods register and unregister event handlers for the [**DisplayInformation.OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) and [**SimpleOrientationSensor.OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/br206407) events and initialize the tracking variables with the current orientation. Note that not all devices have a [**SimpleOrientationSensor**](https://msdn.microsoft.com/library/windows/apps/br206400), so you should check before registering the handler or attempting to get the current orientation.
 
 [!code-cs[RegisterOrientationEventHandlers](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRegisterOrientationEventHandlers)]
 
 [!code-cs[UnregisterOrientationEventHandlers](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUnregisterOrientationEventHandlers)]
 
-**SimpleOrientationSensor.OrientationChanged** イベントのイベント ハンドラーでは、デバイスの向きを示す変数を現在の向きで更新しています。 デバイスの面が上向きまたは下向きであれば、向きを更新しないようにします。
+In the event handler for the **SimpleOrientationSensor.OrientationChanged** event, update the device orientation variable with the current orientation. You should not update the orientation if the device is facing up or down.
 
 [!code-cs[SimpleOrientationChanged](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSimpleOrientationChanged)]
 
-**DisplayInformation.OrientationChanged** イベントのイベント ハンドラーでは、表示の向きの変数を現在の向きで更新しています。 キャプチャ デバイスのビデオ プレビューが表示中であれば、プレビュー ビデオ ストリームの回転状態を更新します。 **SetPreviewRotationAsync** ヘルパー メソッドについては、次のセクションで説明します。
+In the event handler for the **DisplayInformation.OrientationChanged** event, update the display orientation variable with the current orientation. If the video preview of the capture device is currently being displayed, update the rotation of the preview video stream. The **SetPreviewRotationAsync** helper method is described in the following section.
 
 [!code-cs[DisplayOrientationChanged](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDisplayOrientationChanged)]
 
-## メディア キャプチャ プレビューの回転を設定する
+## Set the media capture preview rotation
 
-ユーザーは、モバイル デバイスの向きが変わると UI コントロールが回転し、UI のテキストが垂直方向に読みやすく揃うと考えます。 ただし **CaptureElement** コントロールについては、デバイスが回転しても、ビデオ プレビューの向きが回転してほしいとは考えないのが普通です。 期待どおりのユーザー エクスペリエンスを提供するには、デバイスの向きに合わせて、プレビュー ストリームを回転する必要があります。
+Users expect for UI controls to rotate when the orientation of their mobile device changes, so that the text in the UI is vertically aligned and readable. For the **CaptureElement** control, however, users typically do not want the orientation of the video preview to rotate when the device does. In order to provide the expected user experience, you should rotate the preview stream to match the orientation of the device.
 
-プレビュー ストリームの向きは、角度で表す必要があります。 次に示すヘルパー メソッドは、[**DisplayOrientations**](https://msdn.microsoft.com/library/windows/apps/br226142) 列挙値を角度に変換します。
+The preview stream orientation must be expressed in degrees. The following helper method to converts the [**DisplayOrientations**](https://msdn.microsoft.com/library/windows/apps/br226142) enumeration values into degrees.
 
 [!code-cs[ConvertDisplayOrientationToDegrees](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetConvertDisplayOrientationToDegrees)]
 
-このヘルパー メソッドは、デバイスの回転を表すために [**SimpleOrientationSensor**](https://msdn.microsoft.com/library/windows/apps/br206400) によって使用される [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/br206399) 列挙値を角度に変換します。
+And this helper method converts a [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/br206399) enumeration value, which is used by the [**SimpleOrientationSensor**](https://msdn.microsoft.com/library/windows/apps/br206400) to express the rotation of the device, into degrees.
 
 [!code-cs[ConvertDeviceOrientationToDegrees](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetConvertDeviceOrientationToDegrees)]
 
-低レベルでは、ストリームの回転を実際に行っているのは Microsoft メディア ファンデーション フレームワークです。 回転は、[MF\_MT\_VIDEO\_ROTATION](https://msdn.microsoft.com/library/windows/desktop/hh162880) 属性を使用して指定されます。 これは、Windows ランタイム アプリであるため、回転は属性名ではなく、属性の GUID を使用して指定されます。 ビデオの回転属性を識別するために、次の GUID を定義します。
+At a low-level, the rotation of a stream is actually performed by the Microsoft Media Foundation framework. The rotation is specified using the [MF\_MT\_VIDEO\_ROTATION](https://msdn.microsoft.com/library/windows/desktop/hh162880) attribute. Since this is a Windows Runtime app, the rotation is specified using the GUID for the attribute, rather than the attribute name. Define the following GUID to identify the video rotation attribute.
 
 [!code-cs[RotationKey](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRotationKey)]
 
-次に示すメソッドは、プレビュー ストリームの回転を設定します。 メディア キャプチャの [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) の [**GetMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211995) メソッドは、キー/値のペアから成るプロパティ セットを返します。 [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640) を指定して、ビデオ録音ストリームやオーディオ ストリームではなく、ビデオ プレビュー ストリームのプロパティが必要であることを示します。 プロパティ セットは、ストリームのプロパティを設定するための汎用目的のインターフェイスですが、このタスクでは、上で定義したビデオ回転の GUID をプロパティ キーとして追加し、ビデオ ストリームの必要な向き (角度) を値として指定します。 [**SetEncodingPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/dn297781) は、エンコード プロパティを新しい値で更新します。 設定しているプロパティがビデオ プレビュー ストリーム用であることを示す **MediaStreamType.VideoPreview** が指定されています。
+The following method sets the rotation of the preview stream. The [**GetMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211995) method of the media capture's [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) returns a property set made up of key/value pairs. [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640) is specified to indicate that we want the properties for the video preview stream, as opposed to the video recording stream or the audio stream. The property set is a general purpose interface for setting stream properties, but for this task the video rotation GUID defined above is added as the property key and the desired orientation of the video stream, in degrees, is specified as the value. [**SetEncodingPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/dn297781) updates the encoding properties with the new values. Once again, **MediaStreamType.VideoPreview** is specified to indicate that the properies being set are for the video preview stream.
 
 [!code-cs[SetPreviewRotation](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSetPreviewRotation)]
 
--   外付けカメラを搭載したデバイスの場合、ユーザーは、デバイスが回転してもカメラ ストリームが回転するとは考えていません。
+-   For devices with external cameras, the user does not expect for the camera stream to be rotated when the device rotates.
 
--   フロント パネルのカメラ用にプレビューを左右反転する場合、デバイスの回転に一致するように回転方向を反転させる必要があります。
+-   If the preview is being mirrored for a camera on the front panel, the rotation direction must be inverted to match the rotation of the device.
 
--   電話など一部のデバイスでは、[**DisplayInformation.AutoRotationPreferences**](https://msdn.microsoft.com/library/windows/apps/dn264259) を向きの値 ([**DisplayOrientations.Landscape**](https://msdn.microsoft.com/library/windows/apps/br226142) など) に設定し、ディスプレイをデバイスと共に回転させることができます。 サポートされているデバイスでは快適なエクスペリエンスを提供するため、この値を設定する必要がありますが、自動回転の基本設定がサポートされていないデバイスをサポートするアプリでは、上に示したパターンの実装が必要になります。
+-   Some devices, typically phones, support setting [**DisplayInformation.AutoRotationPreferences**](https://msdn.microsoft.com/library/windows/apps/dn264259) to an orientation value such as [**DisplayOrientations.Landscape**](https://msdn.microsoft.com/library/windows/apps/br226142) to force the display to rotate with the device. You should set this value because it provides a good experience on devices that support it, but you should still implement the above pattern in your app to support devices that don't support auto-rotation preferences.
 
--   以前のリリースでは、プレビュー ストリームを回転させるための唯一の方法は [**SetPreviewRotation**](https://msdn.microsoft.com/library/windows/apps/br226611) メソッドでした。 このメソッドは、既存のアプリをサポートするために API サーフェスに存在していますが、このメソッドは非効率的であるため、新しいアプリでは使用しないでください。
+-   In previous releases, the [**SetPreviewRotation**](https://msdn.microsoft.com/library/windows/apps/br226611) method was the only way to rotate the preview stream. This method is still present in the API surface to support existing apps, but this method inefficient and should not be used for new apps.
 
-## 写真をキャプチャする
+## Capture a photo
 
-次に示すメソッドでは、写真をキャプチャします。[**CapturePhotoToStreamAsync**](https://msdn.microsoft.com/library/windows/apps/hh700840) メソッドを使い、要求されたエンコード プロパティと、キャプチャ操作の結果を格納するための [**InMemoryRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241720) オブジェクトを渡します。 [
-            **ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) クラスは、メディア キャプチャでサポートされているファイルの種類に応じてエンコード プロパティを生成するために、[**CreateJpeg**](https://msdn.microsoft.com/library/windows/apps/hh700994) などのヘルパー メソッドを提供します。
+The following method captures a photo using the [**CapturePhotoToStreamAsync**](https://msdn.microsoft.com/library/windows/apps/hh700840) method and passing in the requested encoding properties and an [**InMemoryRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241720) object that will contain the output of the capture operation. The [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) class provides helper methods, like [**CreateJpeg**](https://msdn.microsoft.com/library/windows/apps/hh700994), to generate encoding properties for the file types supported by media capture.
 
 [!code-cs[TakePhotoAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetTakePhotoAsync)]
 
-写真をファイルを保存する前に、写真の正しい向きを判断する必要があります。 **MediaCapture** オブジェクトはデバイスの向きを認識できないため、キャプチャ デバイスが既定の向きであると想定して、キャプチャした写真データをエンコードします。 この場合は、キャプチャした写真をユーザーが確認する際に表示される写真の向きが必ずしも正しくないため、結果として否定的なユーザー エクスペリエンスにつながります。 次に示すヘルパー メソッドは写真の向きを正しく判断し、正しい向きでファイルを保存します。
+Before saving the photo to a file, you need to determine the correct orientation of the photo. The **MediaCapture** object doesn't know about the device's orientation and so it encodes the captured photo data as if the capture device is in its default orientation. This can result in a negative user experience when the user is viewing the captured photo, as the photo will be oriented incorrectly. The following helper methods determine the correct photo orientation and then save the file with the correct orientation.
 
-**GetCameraOrientation** ヘルパー メソッドは現在のデバイスの向きから開始し、デバイスのネイティブの向きとデバイスのカメラの位置によって、値を回転させます。 この例の **\_mirroringPreview** 変数で示されているように、カメラがデバイスのフロント パネルに取り付けられている場合は、カメラの向きが反転されます。
+The **GetCameraOrientation** helper method starts with the current device orientation and then rotates that value depending on the native orientation of the device and the location of the camera on the device. If the camera is mounted on the front panel of the device, as indicated in this example by the **\_mirroringPreview** variable, then the camera orientation should be inverted.
 
 [!code-cs[GetCameraOrientation](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetCameraOrientation)]
 
-次に示すヘルパー メソッドでは、方位センサーで使用される [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/br206399) 列挙値からの値を、ビットマップ エンコーダーで使用される等価の [**PhotoOrientation**](https://msdn.microsoft.com/library/windows/apps/hh965476) 値に、単純に変換します。この値は、ファイルを保存する際に使用されます。
+The following helper method simply converts values from the [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/br206399) enumeration values used by the orientation sensor to the equivalent [**PhotoOrientation**](https://msdn.microsoft.com/library/windows/apps/hh965476) value used by the bitmap encoder that will be used to save the file.
 
 [!code-cs[ConvertOrientationToPhotoOrientation](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetConvertOrientationToPhotoOrientation)]
 
-最後に、キャプチャした写真をエンコードして保存できます。 キャプチャされた写真データが含まれる入力ストリームから、[**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) オブジェクトを作成します。 新しい [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) を作成し、読み取り/書き込み用に開きます。 出力ファイルと、画像データを格納するデコーダーを渡して、[**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) オブジェクトを作成します。 新しい [**BitmapPropertySet**](https://msdn.microsoft.com/library/windows/apps/hh974338) を作成して、新しいプロパティを追加します。 プロパティのキーである "System.Photo.Orientation" は、写真の向きを表すプロパティを指定します。 値は、あらかじめ計算済みの [**PhotoOrientation**](https://msdn.microsoft.com/library/windows/apps/hh965476) 値です。 [
-            **SetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226252) を呼び出してエンコーダーのプロパティを更新し、[**FlushAsync**](https://msdn.microsoft.com/library/dn237883) を呼び出して写真をストレージ ファイルに書き込みます。
+Finally, the captured photo can be encoded and saved. Create a [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) object from the input stream containing the captured photo data. Create a new [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) and open it for reading and writing. Create a [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) object, passing in the output file and the decoder containing the image data. Create a new [**BitmapPropertySet**](https://msdn.microsoft.com/library/windows/apps/hh974338) and add a new property. The key for the property, "System.Photo.Orientation" specifies that the property represents the orientation of the photo. The value is the [**PhotoOrientation**](https://msdn.microsoft.com/library/windows/apps/hh965476) value that was previously calculated. Call [**SetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226252) to update the properties on the encoder and then call [**FlushAsync**](https://msdn.microsoft.com/library/dn237883) to write the photo to the storage file.
 
 [!code-cs[ReencodeAndSavePhotoAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetReencodeAndSavePhotoAsync)]
 
--   "System.Photo.Orientation" ビットマップ プロパティを設定すると、写真の向きがファイルのメタデータにエンコードされます。 実際の画像データが別途エンコードされることはありません。 メタデータを画像ファイルに埋め込む方法について詳しくは、「[画像のメタデータ](image-metadata.md)」をご覧ください。
+-   Setting the "System.Photo.Orientation" bitmap property encodes the orientation of the photo into the metadata of the file. It does not cause the actual image data to be encoded differently. For more information about embedding metadata into image files, see [Image metadata](image-metadata.md).
 
--   画像のエンコードやデコードど、画像の操作について詳しくは、「[イメージング](imaging.md)」をご覧ください。
+-   For more information about working with images, including encoding and decoding images, see [Imaging](imaging.md).
 
-## ビデオをキャプチャする
+## Capture a video
 
-ビデオのキャプチャを開始するには、まず、ビデオを録画するためのストレージ ファイルを作成します。 次に、ビデオをファイルにエンコードするために **MediaCapture** で使用される [**MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/hh701026) を作成します。 **MediaEncodingProfile** クラスには、[**CreateMp4**](https://msdn.microsoft.com/library/windows/apps/hh701078) などのメソッドが用意されています。このメソッドでは、サポートされているビデオ形式に対応するエンコード プロファイルを作成します。 前に説明したヘルパー メソッドを使用して、ビデオの正しい回転 (角度) を取得します。 写真の場合とは異なり、ビデオの回転情報は、**MediaCapture** によってストリームにエンコードされます。 回転情報を [**VideoEncodingProperties.Properties**](https://msdn.microsoft.com/library/windows/apps/hh701254) コレクションに追加することにより、エンコード プロファイルに追加します。 ビデオの回転の定義済み GUID がキーとして使用され、回転 (角度) が値になります。 最後に、エンコードのプロパティと出力ファイルを指定して [**MediaCapture.StartRecordToStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh700863) を呼び出し、録画を開始します。
+To start capturing video, first create a storage file to which the video will be recorded. Next create the [**MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/hh701026) that the **MediaCapture** will use to encode the video to the file. The **MediaEncodingProfile** class provides methods, like [**CreateMp4**](https://msdn.microsoft.com/library/windows/apps/hh701078), that create encoding profiles for the supported video formats. Use the helper methods discussed previously to get the correct rotation for the video, in degrees. Unlike the photo scenario, the video rotation information is encoded into the stream by the **MediaCapture**. Add the rotation information to the encoding profile by adding it to the [**VideoEncodingProperties.Properties**](https://msdn.microsoft.com/library/windows/apps/hh701254) collection. The previously defined GUID for video rotation is used as the key and the rotation, in degrees, is the value. Finally, call [**MediaCapture.StartRecordToStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh700863), specifying the encoding properties and the output file to begin recording.
 
 [!code-cs[StartRecordingAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetStartRecordingAsync)]
 
-録画を停止するには、[**MediaCapture.StopRecordAsync**](https://msdn.microsoft.com/library/windows/apps/br226623) を呼び出します。
+To stop recording, simply call [**MediaCapture.StopRecordAsync**](https://msdn.microsoft.com/library/windows/apps/br226623).
 
 [!code-cs[StopRecordingAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetStopRecordingAsync)]
 
-[
-            **MediaCapture.RecordLimitationExceeded**](https://msdn.microsoft.com/library/windows/apps/hh973312) イベントのハンドラーは、**MediaCapture** を初期化するときに登録されています。 ビデオの録画を停止するには、このイベント ハンドラーで **StopRecordingAsync** メソッドを呼び出します。
+A handler for the [**MediaCapture.RecordLimitationExceeded**](https://msdn.microsoft.com/library/windows/apps/hh973312) event was registered when the **MediaCapture** was initialized. In the handler, call the **StopRecordingAsync** method to stop video recording.
 
 [!code-cs[RecordLimitationExceeded](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRecordLimitationExceeded)]
 
-## ビデオ キャプチャを一時停止して再開する
+## Pause and resume video capture
 
-シナリオによっては、進行中のビデオ キャプチャを停止して新しいキャプチャを開始するのではなく、一時停止と再開が必要になることがあります。 録画を一時停止するには、[**PauseRecordAsync**](https://msdn.microsoft.com/library/windows/apps/dn858102) を呼び出します。 [
-            **MediaCapturePauseBehavior.RetainHardwareResources**](https://msdn.microsoft.com/library/windows/apps/dn926686) を指定した場合、ビデオと写真の同時キャプチャをサポートしていないデバイスでは、ビデオの一時停止中にアプリが写真をキャプチャすることはできません。 デバイスで写真とビデオの同時キャプチャがサポートされているかどうかを確認する方法については、「[カメラ プロファイル](camera-profiles.md)」をご覧ください。
+For some scenarios you may want to pause and resume an ongoing video capture rather than stopping the capture and starting a new one. To pause recording call [**PauseRecordAsync**](https://msdn.microsoft.com/library/windows/apps/dn858102). If you specify [**MediaCapturePauseBehavior.RetainHardwareResources**](https://msdn.microsoft.com/library/windows/apps/dn926686), then on devices that don't support simultaneous video and photo capture, the app will be unable to capture photos while the video is paused. For information on determining if a device supports simultaneous photo and video capture, see [Camera profiles](camera-profiles.md).
 
 [!code-cs[PauseRecordingAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPauseRecordingAsync)]
 
-一時停止したビデオ キャプチャを再開するには、[**ResumeRecordAsync**](https://msdn.microsoft.com/library/windows/apps/dn858103) を呼び出します。
+To resume a previously paused video capture, call [**ResumeRecordAsync**](https://msdn.microsoft.com/library/windows/apps/dn858103).
 
 [!code-cs[ResumeRecordingAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetResumeRecordingAsync)]
 
-## キャプチャ リソースをクリーンアップする
+## Clean up capture resources
 
-メディア キャプチャを適切にシャットダウンしてリソースを解放することは、非常に重要です。 これを怠ると、アプリを閉じた後にカメラで予期しない動作が生じ、その結果アプリのユーザー エクスペリエンスに悪影響を及ぼす可能性があります。 以下のセクションでは、カメラをシャットダウンするために必要な各種の手順について説明します。
+It is very important that you shut down and release the media capture resources properly. Failure to do so can cause unexpected camera behavior after your app closes, which results in a negative user experience for your app. The following sections walk through the different steps you should take to shut down the camera.
 
-### キャプチャ プレビューをシャットダウンする
+### Shut down the capture preview
 
-キャプチャ プレビューをシャットダウンするには、まず [**MediaCapture.StopPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226622) を呼び出します。 [
-            **MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) の [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) プロパティを null にします。 次に、必要に応じてシステムがディスプレイをオフにできるように、[**DisplayRequest**](https://msdn.microsoft.com/library/windows/apps/br241816) 変数に対して [**RequestRelease**](https://msdn.microsoft.com/library/windows/apps/br241819) を呼び出します。
+To shut down the capture preview, first call [**MediaCapture.StopPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226622). Set the [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) property of your [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) to null. Then, call the [**RequestRelease**](https://msdn.microsoft.com/library/windows/apps/br241819) on your [**DisplayRequest**](https://msdn.microsoft.com/library/windows/apps/br241816) variable to allow the system to turn off the display when needed.
 
 [!code-cs[StopPreviewAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetStopPreviewAsync)]
 
--   非 UI スレッドから UI にアクセスすることはできないため、**MediaElement.Source** プロパティの設定と **RequestRelease** の呼び出しには、[**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) メソッドを使用する必要があります。これにより、UI スレッドに対して呼び出しが行われます。
+-   You can't access the UI from a non-UI thread, so the setting the **MediaElement.Source** property and calling **RequestRelease** must be made using the [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) method so that the calls execute on the UI thread.
 
-### MediaCapture オブジェクトをシャットダウンして破棄する
+### Shut down and dispose of the MediaCapture object
 
-**MediaCapture** オブジェクトを破棄する前に、定義済みのヘルパー メソッドを呼び出すことによって、進行中の録画をすべて停止し、プレビュー ストリームを停止する必要があります。 この処理が完了したら、**MediaCapture** に登録されているイベント ハンドラーをすべて削除します。次に、[**Dispose**](https://msdn.microsoft.com/library/windows/apps/dn278858) を呼び出して、このオブジェクトに関連するリソースをすべて解放し、**MediaCapture** 変数を null に設定します。
+Before disposing of the **MediaCapture** object, stop any recording that is ongoing and stop the preview stream by calling the helper methods defined previously. Once this has been done, remove any event handlers registered with the **MediaCapture**, then call [**Dispose**](https://msdn.microsoft.com/library/windows/apps/dn278858) to free any resources associated with the object and set the **MediaCapture** variable to null
 
 [!code-cs[CleanupCameraAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanupCameraAsync)]
 
-[
-            **MediaCapture.Failed**](https://msdn.microsoft.com/library/windows/apps/br226593) イベントのハンドラーの内部で **MediaCapture** オブジェクトをシャットダウンし、破棄するには、このメソッドを呼び出す必要があります。
+You should call this method to shut down and dispose of the **MediaCapture** object from inside the handler for the [**MediaCapture.Failed**](https://msdn.microsoft.com/library/windows/apps/br226593) event.
 
 [!code-cs[CaptureFailed](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCaptureFailed)]
 
-### アプリの有効期間とページ ナビゲーション イベントを処理する
+### Handle app lifetime and page navigation events
 
-アプリの有効期間イベントは、アプリでリソースの初期化と解放を行う機会を作ります。 **Application.Suspending** イベントでは特に、アプリでメディア キャプチャ リソースを正しく破棄することが不可欠であるため、この処理が重要になります。
+The app lifetime events give your app an opportunity to initialize and release resources. This is especially important with the **Application.Suspending** event, where it is essential that your app properly disposes of media capture resources.
 
-アプリケーションの有効期間イベントのハンドラーは、ページのコンストラクターで登録できます。
+You can register handlers for the application lifetime events in your page's constructor.
 
 [!code-cs[RegisterAppLifetimeEvents](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRegisterAppLifetimeEvents)]
 
-**Application.Suspending** イベントのハンドラーでは、ディスプレイとデバイスの向きに関するイベントのハンドラーを登録解除し、**MediaCapture** オブジェクトをシャットダウンする必要があります。 ここで登録を解除した [**SystemMediaTransportControls.PropertyChanged**](https://msdn.microsoft.com/library/windows/apps/dn278720) イベントは、他のアプリケーション有効期間関連タスクに必要になります。これについては、後で説明します。
+In the handler for the **Application.Suspending** event, you should unregister the handlers for the display and device orientation events and shut down the **MediaCapture** object. The [**SystemMediaTransportControls.PropertyChanged**](https://msdn.microsoft.com/library/windows/apps/dn278720) event unregistered here is needed for another application lifecycle-related task that is described later in this article.
 
-**注意** 
-中断イベント ハンドラーの先頭で [**SuspendingOperation.GetDeferral**](https://msdn.microsoft.com/library/windows/apps/br224690) を呼び出すことにより、中断の遅延を要求する必要があります。 これにより、アプリを停止する前に、操作が完了したことを伝えるユーザーからの通知を待機するようシステムに要求されます。 **MediaCapture** のシャットダウン処理は非同期であり、カメラが正しくシャットダウンされる前に **Application.Suspending** イベント ハンドラーが完了する可能性があるため、この動作が必要になります。 非同期呼び出しの完了を待機した後、[**SuspendingDeferral.Complete**](https://msdn.microsoft.com/library/windows/apps/br224685) を呼び出すことによって遅延状態を解放する必要があります。
+**Caution** 
+You must request a suspending deferral by calling [**SuspendingOperation.GetDeferral**](https://msdn.microsoft.com/library/windows/apps/br224690) at the beginning of your suspending event handler. This requests that the system wait for you to signal that the operation is complete before tearing down your app. This is necessary because the **MediaCapture** shutdown operations are asynchronous, so the **Application.Suspending** event handler may complete before the camera is properly shut down. After your awaited asynchronous calls complete, you should release the deferral by calling [**SuspendingDeferral.Complete**](https://msdn.microsoft.com/library/windows/apps/br224685).
 
 [!code-cs[Suspending](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSuspending)]
 
-**Application.Resuming** イベントのハンドラーでは、ディスプレイとデバイスの向きに関するイベントのハンドラーを登録し、**SystemMediaTransportControls.PropertyChanged** イベントを登録して、**MediaCapture** オブジェクトを初期化する必要があります。
+In the handler for the **Application.Resuming** event, you should register handlers for the display and device orientation events, register the **SystemMediaTransportControls.PropertyChanged** event, and initialize the **MediaCapture** object.
 
 [!code-cs[Resuming](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetResuming)]
 
-[
-            **OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) イベントは、ディスプレイとデバイスの向きに関するイベントのハンドラーを最初に登録し、**MediaCapture** オブジェクトを初期化する機会を作ります。
+The [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) event gives an opportunity to initially register handlers for the display and device orientation events and initialize the **MediaCapture** object.
 
 [!code-cs[OnNavigatedTo](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOnNavigatedTo)]
 
-アプリに複数のページがある場合は、[**OnNavigatingFrom**](https://msdn.microsoft.com/library/windows/apps/br227509) イベント ハンドラーでメディア キャプチャ オブジェクトをクリーンアップする必要があります。
+If your app has multiple pages, you should clean up your media capture objects in the [**OnNavigatingFrom**](https://msdn.microsoft.com/library/windows/apps/br227509) event handler.
 
 [!code-cs[OnNavigatingFrom](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOnNavigatingFrom)]
 
-同時に複数のウィンドウをサポートするデバイスでアプリを正しく動作させるには、アプリの最小化や復元が発生したときに応答する必要があります。 これには、[**SystemMediaTransportControls.PropertyChanged**](https://msdn.microsoft.com/library/windows/apps/dn278720) イベントを処理する必要があります。 アプリの [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) オブジェクトへの参照を格納するためのメンバー変数を初期化します。
+For your app to behave properly on devices that support multiple simultaneous windows, you must respond when your app is minimized or restored. To do this, you must handle the [**SystemMediaTransportControls.PropertyChanged**](https://msdn.microsoft.com/library/windows/apps/dn278720) event. Initialize a member variable to store a reference to the [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) object for your app.
 
 [!code-cs[DeclareSystemMediaTransportControls](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDeclareSystemMediaTransportControls)]
 
-**PropertyChanged** イベントの登録と登録解除を行うコードは、上の例で示されているように、アプリの有効期間イベントに追加する必要があります。 このイベントのハンドラーでは、イベントをトリガーしたプロパティの変化が [**SystemMediaTransportControlsProperty.SoundLevel**](https://msdn.microsoft.com/library/windows/apps/dn278721) プロパティで生じたものかどうかを確認します。 変更を生じたのがこのプロパティであれば、プロパティの値を確認します。 値が [**SoundLevel.Muted**](https://msdn.microsoft.com/library/windows/apps/hh700852) であれば、アプリが最小化されているため、メディア キャプチャ リソースを正しくクリーンアップする必要があります。 それ以外の場合は、アプリ ウィンドウの復元がイベントによって通知されるので、メディア キャプチャ リソースを初期化する必要があります。 **SoundLevel** プロパティには UI スレッドでアクセスする必要があるため、このメソッドのコードは [**Dispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) への呼び出しでラップされています。
+The code to register and unregister the **PropertyChanged** event should be added to the app life cycle events as shown in the examples above. In the handler for the event, check to see if the property change that triggered the event was the [**SystemMediaTransportControlsProperty.SoundLevel**](https://msdn.microsoft.com/library/windows/apps/dn278721) property. If this was the property that changed, check the value of the property. If the value is [**SoundLevel.Muted**](https://msdn.microsoft.com/library/windows/apps/hh700852), then your app was minimized and you should clean up your media capture resources appropriately. Otherwise, the event signals that your app window was restored and you should reinitialize you media capture resources. The **SoundLevel** property must be accessed on the UI thread, so the code in this method is wrapped in a call to [**Dispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317).
 
 [!code-cs[SystemMediaControlsPropertyChanged](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSystemMediaControlsPropertyChanged)]
 
-## メディア キャプチャに関するその他の考慮事項
+## Additional UI considerations for media capture
 
-### 自動回転の基本設定
+### Set auto-rotation preferences
 
-プレビュー ストリームの回転に関する前のセクションで説明したように、一部のデバイスでは、[**DisplayInformation.AutoRotationPreferences**](https://msdn.microsoft.com/library/windows/apps/dn264259) を設定することによって、デバイスの回転に伴うページ (プレビューを表示する [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) を含む) の回転を回避できます。 この動作がサポートされているデバイスでは、このように設定すると優れたユーザー エクスペリエンスを確保できます。 この値は、アプリの起動時や、プレビュー表示の開始時に設定します。 自動回転の基本設定がサポートされていないデバイスについては、プレビューの回転処理を実装する必要があります。
+As mentioned in the previous section on rotating the preview stream, some devices support setting [**DisplayInformation.AutoRotationPreferences**](https://msdn.microsoft.com/library/windows/apps/dn264259) to prevent the page, including the [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) that displays the preview, from rotating as the device is rotating. This provides a good user experience on devices that support it. Set this value when your app launches or when you begin displaying the preview. Note that you should still implement preview rotation handling for devices that don't support auto-rotation preferences.
 
 [!code-cs[SetAutoRotationPreferences](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSetAutoRotationPreferences)]
 
-### UI 要素の向きを処理する
+### Handle UI element orientation
 
-ユーザーは通常、カメラ アプリの UI 要素 (写真やビデオのキャプチャを開始するボタンなど) が、ビデオ プレビューと共に回転すると考えます。 次のメソッドは、向きに関する定義済みのヘルパー メソッドを使用して、カメラ UI のボタンを正しい向きにする方法を示しています。 このメソッドは、アプリが初めて起動する際に、[**DisplayInformation.OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) イベント ハンドラーと [**SimpleOrientationSensor.OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/br206407) イベント ハンドラーから呼び出す必要があります。 実装内容は、アプリの UI によって異なる場合があります。
+Users typically expect for the UI elements in a camera app, such as the buttons for initiating photo or video capture, to rotate along with the video preview. The following method illustrates the use of the previously defined orientation helper methods to properly orient the buttons in the camera UI. You should call this method from the [**DisplayInformation.OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) and [**SimpleOrientationSensor.OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/br206407) event handlers and when your app first launches. Your implementation my vary depending on your app's UI.
 
 [!code-cs[UpdateButtonOrientation](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUpdateButtonOrientation)]
 
-アプリをシャットダウンするときや、メディア キャプチャに関係のないページに移動するときは、UI が通常どおりに回転されるように、自動回転設定を [**None**](https://msdn.microsoft.com/library/windows/apps/br226142) に設定します。
+When your app is shutting down or if you navigate to a page that is unrelated to media capture, set the auto-rotation preference to [**None**](https://msdn.microsoft.com/library/windows/apps/br226142) to allow the UI to rotate normally.
 
 [!code-cs[RevertAutoRotationPreferences](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRevertAutoRotationPreferences)]
 
-### 写真とビデオの同時キャプチャをサポートする
+### Support simultaneous photo and video capture
 
-[
-            **Windows.Media.Capture**](https://msdn.microsoft.com/library/windows/apps/br226738) API を使用すると、写真とビデオを同時にキャプチャできます (デバイスで、この機能がサポートされている必要があります)。 簡潔にするため、この例では [**ConcurrentRecordAndPhotoSupported**](https://msdn.microsoft.com/library/windows/apps/dn278843) プロパティを使ってビデオと写真の同時キャプチャがサポートされているかどうかを調べますが、カメラ プロファイルを使ってこれを行う方が堅牢なため、推奨されます。 詳しくは、「[カメラ プロファイル](camera-profiles.md)」をご覧ください。
+The [**Windows.Media.Capture**](https://msdn.microsoft.com/library/windows/apps/br226738) API allows you to capture photos and videos simultaneously on devices that support it. For brevity, this example uses the [**ConcurrentRecordAndPhotoSupported**](https://msdn.microsoft.com/library/windows/apps/dn278843) property to determine if simultaneous video and photo capture is supported, but a more robust and recommended way to do this is to use camera profiles. For more information, see [Camera profiles](camera-profiles.md).
 
-次に示すヘルパー メソッドは、アプリの現在のキャプチャ状態に一致するように、アプリのコントロールを更新します。 このメソッドは、ビデオ キャプチャが開始または停止したときなど、アプリのキャプチャ状態が変化するたびに呼び出します。
+The following helper method updates the app's controls to match the current capture state of the app. Call this method whenever the capture state of your app changes, such as when video capture is started or stopped.
 
 [!code-cs[UpdateCaptureControls](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUpdateCaptureControls)]
 
-### モバイル固有の UI 機能をサポートする
+### Support mobile-specific UI features
 
-この記事で示すコードはすべて、ユニバーサル Windows アプリで動作します。 わずか数行のコードを追加するだけで、モバイル デバイスだけに存在する特別な UI 機能を活用できます。 これらの機能を使用するには、ユニバーサル アプリ プラットフォーム用 Microsoft Mobile Extension SDK への参照をプロジェクトに追加する必要があります。
+All of the code shown in this article will work in a Universal Windows app. With a few additional lines of code, you can take advantage of special UI features that are only present on mobile devices. To use these features, you must add a reference to the Microsoft Mobile Extension SDK for Universal App Platform to your project.
 
-**ハードウェア カメラ ボタンのサポート用にモバイル拡張 SDK への参照を追加するには**
+**To add a reference to the mobile extension SDK for hardware camera button support**
 
-1.  **ソリューション エクスプローラー**で、**[参照設定]** を右クリックし、**[参照の追加]** を選択します。
+1.  In **Solution Explorer**, right-click **References** and select **Add Reference...**
 
-2.  **[Windows ユニバーサル]** ノードを展開し、**[拡張機能]** を選択します。
+2.  Expand the **Windows Universal** node and select **Extensions**.
 
-3.  **[Microsoft Mobile Extension SDK for Universal App Platform]** の横にあるチェック ボックスをオンにします。
+3.  Click the checkbox next to **Microsoft Mobile Extension SDK for Universal App Platform**.
 
-モバイル デバイスには、デバイスに関する状態情報をユーザーに通知する [**StatusBar**](https://msdn.microsoft.com/library/windows/apps/dn633864) コントロールがあります。 このコントロールが表示される領域は、画面上でメディア キャプチャ UI の表示に干渉する可能性があります。 [
-            **HideAsync**](https://msdn.microsoft.com/library/windows/apps/dn610339) を呼び出すことでステータス バーを非表示にできますが、呼び出しは、この API が利用可能かどうかを [**ApiInformation.IsTypePresent**](https://msdn.microsoft.com/library/windows/apps/dn949016) メソッドで確認する条件ブロック内で行う必要があります。 このメソッドは、ステータス バーをサポートするモバイル デバイスでのみ true を返します。 アプリの起動時や、またはカメラからプレビューを開始するときには、ステータス バーを非表示にする必要があります。
+Mobile devices have a [**StatusBar**](https://msdn.microsoft.com/library/windows/apps/dn633864) control that provides the user with status information about the device. This control takes up space on the screen that can interfere with the media capture UI. You can hide the status bar by calling [**HideAsync**](https://msdn.microsoft.com/library/windows/apps/dn610339), but you must make this call from within a conditional block where you use the [**ApiInformation.IsTypePresent**](https://msdn.microsoft.com/library/windows/apps/dn949016) method to determine if the API is available. This method will only return true on mobile devices that support the status bar. You should hide the status bar when your app launches or when you begin previewing from the camera.
 
 [!code-cs[HideStatusBar](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetHideStatusBar)]
 
-アプリをシャットダウンするときや、ユーザーがアプリのメディア キャプチャ ページから移動するときは、コントロールを再び表示します。
+When your app is shutting down or when the user navigates away from the media capture page of your app, you make the control visible again.
 
 [!code-cs[ShowStatusBar](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetShowStatusBar)]
 
-一部のモバイル デバイスには、専用のハードウェア カメラ ボタンが用意されていることがあります。この仕様は、ユーザーによっては画面上のコントロールより好まれます。 このハードウェア カメラ ボタンが押されたときに通知を受け取るには、[**HardwareButtons.CameraPressed**](https://msdn.microsoft.com/library/windows/apps/dn653805) イベントのハンドラーを登録します。 この API を利用できるのはモバイル デバイスのみであるため、この場合も **IsTypePresent** を使用して、この API が現在のデバイスでサポートされているかどうかをアクセス前に確認する必要があります。
+Some mobile devices have a dedicated hardware camera button that some users prefer over an on-screen control. To be notified when the hardware camera button is pressed, register a handler for the [**HardwareButtons.CameraPressed**](https://msdn.microsoft.com/library/windows/apps/dn653805) event. Because this API is available on mobile devices only, you must again use the **IsTypePresent** to make sure the API is supported on the current device before attempting to access it.
 
 [!code-cs[PhoneUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPhoneUsing)]
 
 [!code-cs[RegisterCameraButtonHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRegisterCameraButtonHandler)]
 
-**CameraPressed** イベントのハンドラーで、写真のキャプチャを開始できます。
+In the handler for the **CameraPressed** event, you can initiate a photo capture.
 
 [!code-cs[CameraPressed](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCameraPressed)]
 
-アプリをシャットダウンするときや、ユーザーがアプリのメディア キャプチャ ページから移動するときは、ハードウェア ボタンのハンドラーを登録解除します。
+When your app is shutting down or the user moves away from the media capture page of your app, unregister the hardware button handler.
 
 [!code-cs[UnregisterCameraButtonHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUnregisterCameraButtonHandler)]
 
-**注:** この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください。
+**Note** This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you're developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
-## 関連トピック
+## Related topics
 
-* [カメラ プロファイル](camera-profiles.md)
-* [ハイ ダイナミック レンジ (HDR) 写真のキャプチャ](high-dynamic-range-hdr-photo-capture.md)
-* [写真とビデオのキャプチャのためのキャプチャ デバイス コントロール](capture-device-controls-for-photo-and-video-capture.md)
-* [ビデオ キャプチャのためのキャプチャ デバイス コントロール](capture-device-controls-for-video-capture.md)
-* [ビデオ キャプチャの効果](effects-for-video-capture.md)
-* [メディア キャプチャのシーン分析](scene-analysis-for-media-capture.md)
-* [可変の写真シーケンス](variable-photo-sequence.md)
-* [プレビュー フレームの取得](get-a-preview-frame.md)
-* [CameraStarterKit サンプル](http://go.microsoft.com/fwlink/?LinkId=619479)
-
-
-<!--HONumber=Mar16_HO5-->
-
-
+* [Camera profiles](camera-profiles.md)
+* [High Dynamic Range (HDR) photo capture](high-dynamic-range-hdr-photo-capture.md)
+* [Capture device controls for photo and video capture](capture-device-controls-for-photo-and-video-capture.md)
+* [Capture device controls for video capture](capture-device-controls-for-video-capture.md)
+* [Effects for video capture](effects-for-video-capture.md)
+* [Scene analysis for media capture](scene-analysis-for-media-capture.md)
+* [Variable photo sequence](variable-photo-sequence.md)
+* [Get a preview frame](get-a-preview-frame.md)
+* [CameraStarterKit sample](http://go.microsoft.com/fwlink/?LinkId=619479)

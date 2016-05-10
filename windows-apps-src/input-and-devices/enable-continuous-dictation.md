@@ -1,196 +1,131 @@
 ---
-Description: 長い形式の継続的なディクテーション音声入力をキャプチャし、認識する方法について説明します。
-title: 継続的なディクテーションの有効化
+author: Karl-Bridge-Microsoft
+Description: Learn how to capture and recognize long-form, continuous dictation speech input.
+title: Enable continuous dictation
 ms.assetid: 383B3E23-1678-4FBB-B36E-6DE2DA9CA9DC
-label: 継続的なディクテーションの有効化
+label: Continuous dictation
 template: detail.hbs
 ---
 
-# 継続的なディクテーション
+# Continuous dictation
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-長い形式の継続的なディクテーション音声入力をキャプチャし、認識する方法について説明します。
 
-**重要な API**
+Learn how to capture and recognize long-form, continuous dictation speech input.
+
+**Important APIs**
 
 -   [**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896)
 -   [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913)
 
 
-「[音声認識](speech-recognition.md)」では、[**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) オブジェクトの [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653244) メソッドまたは [**RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245) メソッドを使って、比較的短い音声入力をキャプチャし、認識する方法について説明しました。たとえば、ショート メッセージ サービス (SMS) のメッセージを作成したり、質問したりする場合です。
+In [Speech recognition](speech-recognition.md), you learned how to capture and recognize relatively short speech input using the [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653244) or [**RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245) methods of a [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) object, for example, when composing a short message service (SMS) message or when asking a question.
 
-ディクテーションまたはメールなど、より長い継続的な音声認識セッションの場合は、[**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) の [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913) プロパティを使って [**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896) オブジェクトを取得します。
-
-
-
-## <span id="Set_up"></span><span id="set_up"></span><span id="SET_UP"></span>設定
+For longer, continuous speech recognition sessions, such as dictation or email, use the [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913) property of a [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) to obtain a [**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896) object.
 
 
-アプリには、継続的なディクテーション セッションを管理するためのオブジェクトがいくつか必要です。
 
--   1 インスタンスの [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) オブジェクト。
--   ディクテーション中の UI を更新するための UI ディスパッチャーへの参照。
--   ユーザーが発声し、蓄積された単語を追跡する方法。
+## <span id="Set_up"></span><span id="set_up"></span><span id="SET_UP"></span>Set up
 
-ここでは、[**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) インスタンスを、コード ビハインド クラスのプライベート フィールドとして宣言します。 継続的なディクテーションが、1 つの XAML (Extensible Application Markup Language) ページを超えて持続する場合、アプリは、参照を別の場所に格納する必要があります。
+
+Your app needs a few objects to manage a continuous dictation session:
+
+-   An instance of a [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) object.
+-   A reference to a UI dispatcher to update the UI during dictation.
+-   A way to track the accumulated words spoken by the user.
+
+Here, we declare a [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) instance as a private field of the code-behind class. Your app needs to store a reference elsewhere if you want continuous dictation to persist beyond a single Extensible Application Markup Language (XAML) page.
 
 ```CSharp
-private SpeechRecognizer speechRecognizer;</code></pre></td>
-</tr>
-</tbody>
-</table>
+private SpeechRecognizer speechRecognizer;
 ```
 
-ディクテーション中に認識エンジンは、バックグラウンド スレッドからイベントを生成します。 バックグラウンド スレッドは、XAML の UI を直接更新できないため、アプリはディスパッチャーを使って、認識イベントに応答して UI を更新する必要があります。
+During dictation, the recognizer raises events from a background thread. Because a background thread cannot directly update the UI in XAML, your app must use a dispatcher to update the UI in response to recognition events.
 
-ここでは、プライベート フィールドを宣言し、それが後で UI ディスパッチャーで初期化されます。
+Here, we declare a private field that will be initialized later with the UI dispatcher.
 
-<span codelanguage="CSharp"></span>
 ```CSharp
-<colgroup>
-<col width="100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">C#</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
 // Speech events may originate from a thread other than the UI thread.
 // Keep track of the UI thread dispatcher so that we can update the
 // UI in a thread-safe manner.
 private CoreDispatcher dispatcher;
 ```
 
-ユーザーが発声した内容を追跡するには、音声認識エンジンによって生成された認識イベントを処理する必要があります。 これらのイベントは、ユーザーの発声のチャンクを認識した結果を提供します。
+To track what the user is saying, you need to handle recognition events raised by the speech recognizer. These events provide the recognition results for chunks of user utterances.
 
-ここでは、[**StringBuilder**](https://msdn.microsoft.com/library/system.text.stringbuilder.aspx) オブジェクトを使って、セッション中に取得したすべての認識結果を保持します。 新しい検索結果は、処理されるに従って **StringBuilder** に追加されます。
+Here, we use a [**StringBuilder**](https://msdn.microsoft.com/library/system.text.stringbuilder.aspx) object to hold all the recognition results obtained during the session. New results are appended to the **StringBuilder** as they are processed.
 
 ```CSharp
-private StringBuilder dictatedTextBuilder;</code></pre></td>
-</tr>
-</tbody>
-</table>
+private StringBuilder dictatedTextBuilder;
 ```
 
-## <span id="Initialization"></span><span id="initialization"></span><span id="INITIALIZATION"></span>初期化
+## <span id="Initialization"></span><span id="initialization"></span><span id="INITIALIZATION"></span>Initialization
 
 
-継続的な音声認識の初期化時には、次の操作を行う必要があります。
+During the initialization of continuous speech recognition, you must:
 
--   連続的な認識のイベント ハンドラーでアプリの UI を更新する場合は、UI スレッドのディスパッチャーを取得します。
--   音声認識エンジンを初期化します。
--   組み込みのディクテーション文法をコンパイルします。
-    **注**   音声認識では、少なくとも 1 つの制約を使って、認識できるボキャブラリを定義する必要があります。 制約が指定されていない場合は、定義済みのディクテーション文法が使われます。 「[音声認識](speech-recognition.md)」をご覧ください。
+-   Fetch the dispatcher for the UI thread if you update the UI of your app in the continuous recognition event handlers.
+-   Initialize the speech recognizer.
+-   Compile the built-in dictation grammar.
+    **Note**   Speech recognition requires at least one constraint to define a recognizable vocabulary. If no constraint is specified, a predefined dictation grammar is used. See [Speech recognition](speech-recognition.md).
+-   Set up the event listeners for recognition events.
 
-     
+In this example, we initialize speech recognition in the [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) page event.
 
--   認識イベントのイベント リスナーをセットアップします。
+1.  Because events raised by the speech recognizer occur on a background thread, create a reference to the dispatcher for updates to the UI thread. [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) is always invoked on the UI thread.
+```    CSharp
+this.dispatcher = CoreWindow.GetForCurrentThread().Dispatcher;
+```
 
-[
-            **OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) ページ イベントで音声認識を初期化します。
+2.  We then initialize the [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) instance.
+```    CSharp
+this.speechRecognizer = new SpeechRecognizer();
+```
 
-1.  音声認識エンジンが生成するイベントはバックグラウンド スレッドで発生するため、UI スレッドを更新するためのディスパッチャーへの参照を作成します。 [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) は、常に UI スレッド上で呼び出されます。
+3.  We then add and compile the grammar that defines all of the words and phrases that can be recognized by the [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226).
+
+    If you don't specify a grammar explicitly, a predefined dictation grammar is used by default. Typically, the default grammar is best for general dictation.
+
+    Here, we call [**CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) immediately without adding a grammar.
 
     <span codelanguage="CSharp"></span>
 ```    CSharp
-    <colgroup>
-    <col width="100%" />
-    </colgroup>
-    <thead>
-    <tr class="header">
-    <th align="left">C#</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr class="odd">
-this.dispatcher = CoreWindow.GetForCurrentThread().Dispatcher;</code></pre></td>
-    </tr>
-    </tbody>
-    </table>
-```
-
-2.  その後、[**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) インスタンスを初期化します。
-
-    <span codelanguage="CSharp"></span>
-```    CSharp
-    <colgroup>
-    <col width="100%" />
-    </colgroup>
-    <thead>
-    <tr class="header">
-    <th align="left">C#</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr class="odd">
-this.speechRecognizer = new SpeechRecognizer();</code></pre></td>
-    </tr>
-    </tbody>
-    </table>
-```
-
-3.  そして、[**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) によって認識される語句と単語をすべて定義する文法を追加し、コンパイルします。
-
-    文法を明示的に指定しない場合は、既定で定義済みのディクテーション文法が使われます。 通常、一般的なディクテーションには、既定の文法が最適です。
-
-    ここでは、文法を追加せずに、すぐに [**CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) を呼び出します。
-
-    <span codelanguage="CSharp"></span>
-```    CSharp
-    <colgroup>
-    <col width="100%" />
-    </colgroup>
-    <thead>
-    <tr class="header">
-    <th align="left">C#</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr class="odd">
 SpeechRecognitionCompilationResult result =
       await speechRecognizer.CompileConstraintsAsync();
 ```
 
-## <span id="Handle_recognition_events"></span><span id="handle_recognition_events"></span><span id="HANDLE_RECOGNITION_EVENTS"></span>認識イベントの処理
+## <span id="Handle_recognition_events"></span><span id="handle_recognition_events"></span><span id="HANDLE_RECOGNITION_EVENTS"></span>Handle recognition events
 
 
-ここでは、[**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653244) または [**RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245) を呼び出して、1 つの短い発声または語句をキャプチャできます。 ただし、このトピックの目的は、より長い継続的な認識セッションをキャプチャすることです。
+You can capture a single, brief utterance or phrase by calling [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653244) or [**RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245). 
 
-これを行うために、ユーザーが話す間にバックグラウンドで動作するイベント リスナーを指定し、ディクテーション文字列を作成するためのハンドラーを定義します。
+However, to capture a longer, continuous recognition session, we specify event listeners to run in the background as the user speaks and define handlers to build the dictation string.
 
-そして、認識エンジンの [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913) プロパティを使って、継続的な認識セッションを管理するためのメソッドとイベントを提供する [**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896) オブジェクトを取得します。
+We then use the [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913) property of our recognizer to obtain a [**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896) object that provides methods and events for managing a continuous recognition session.
 
-特に、次の 2 つのイベントが重要です。
+Two events in particular are critical:
 
--   [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900)。これは、認識エンジンがいくつかの結果を生成したときに発生します。
--   [**Completed**](https://msdn.microsoft.com/library/windows/apps/dn913899)。継続的な認識セッションが終了したときに発生します。
+-   [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900), which occurs when the recognizer has generated some results.
+-   [**Completed**](https://msdn.microsoft.com/library/windows/apps/dn913899), which occurs when the continuous recognition session has ended.
 
-[
-            **ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) イベントは、ユーザーが発声すると発生します。 認識エンジンは、ユーザーの発声を聞き続け、音声入力のチャンクを渡すイベントを定期的に生成します。 音声入力は、イベントの引数の [**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) プロパティを使って確認し、イベント ハンドラーで適切な処置を行う必要があります。たとえば、StringBuilder オブジェクトにテキストを追加します。
+The [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) event is raised as the user speaks. The recognizer continuously listens to the user and periodically raises an event that passes a chunk of speech input. You must examine the speech input, using the [**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) property of the event argument, and take appropriate action in the event handler, such as appending the text to a StringBuilder object.
 
-[
-            **SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432) のインスタンスである [**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) プロパティは、音声入力を受け入れるかどうかを決定するために役立ちます。
+As an instance of [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432), the [**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) property is useful for determining whether you want to accept the speech input. A [**SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432) provides two properties for this:
+-   [**Status**](https://msdn.microsoft.com/library/windows/apps/dn631440) indicates whether the recognition was successful. Recognition can fail for a variety of reasons.
+-   [**Confidence**](https://msdn.microsoft.com/library/windows/apps/dn631434) indicates the relative confidence that the recognizer understood the correct words.
 
--   [**Status**](https://msdn.microsoft.com/library/windows/apps/dn631440) は、正常に認識できたかどうかを示します。 さまざまな原因により、認識できない場合もあります。
--   [**Confidence**](https://msdn.microsoft.com/library/windows/apps/dn631434) は、認識エンジンが、正しい単語を理解したことを比較的確信していることを示します。
+Here are the basic steps for supporting continuous recognition:  
 
-1.  ここでは、[**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 継続的認識イベントのハンドラーを [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) ページ イベントに登録します。
-
+1.  Here, we register the handler for the [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) continuous recognition event in the [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) page event.
 ```    CSharp
 speechRecognizer.ContinuousRecognitionSession.ResultGenerated +=
         ContinuousRecognitionSession_ResultGenerated;
 ```
 
-2.  そして、[**Confidence**](https://msdn.microsoft.com/library/windows/apps/dn631434) プロパティを確認します。 Confidence の値が [**Medium**](https://msdn.microsoft.com/library/windows/apps/dn631409) 以上である場合は、StringBuilder にテキストを追加します。 入力の収集時に UI も更新します。
+2.  We then check the [**Confidence**](https://msdn.microsoft.com/library/windows/apps/dn631434) property. If the value of Confidence is [**Medium**](https://msdn.microsoft.com/library/windows/apps/dn631409) or better, we append the text to the StringBuilder. We also update the UI as we collect input.
 
-    **注**  [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) イベントは、UI を直接更新できないバックグラウンド スレッドで発生します。 (「音声と TTS のサンプル」のように) ハンドラーが UI を更新する必要がある場合は、ディスパッチャーの [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) メソッドで更新を UI スレッドにディスパッチする必要があります。
-
-     
-
+    **Note**  the [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) event is raised on a background thread that cannot update the UI directly. If a handler needs to update the UI (as the \[Speech and TTS sample\] does), you must dispatch the updates to the UI thread through the [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) method of the dispatcher.
 ```    CSharp
 private async void ContinuousRecognitionSession_ResultGenerated(
       SpeechContinuousRecognitionSession sender,
@@ -218,23 +153,19 @@ private async void ContinuousRecognitionSession_ResultGenerated(
       }
 ```
 
-3.  その後、[**Completed**](https://msdn.microsoft.com/library/windows/apps/dn913899) イベントを処理します。これが、継続的なディクテーションの終了を示します。
+3.  We then handle the [**Completed**](https://msdn.microsoft.com/library/windows/apps/dn913899) event, which indicates the end of continuous dictation.
 
-    セッションは、[**StopAsync**](https://msdn.microsoft.com/library/windows/apps/dn913908) メソッドまたは [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) メソッド (次のセクションを参照) を呼び出すと終了します。 セッションは、エラーが発生したときや、ユーザーが発声を停止したときに終了することもあります。 イベントの引数の [**Status**](https://msdn.microsoft.com/library/windows/apps/dn631440) プロパティを確認して、セッションが終了した理由を特定してください ([**SpeechRecognitionResultStatus**](https://msdn.microsoft.com/library/windows/apps/dn631433))。
+    The session ends when you call the [**StopAsync**](https://msdn.microsoft.com/library/windows/apps/dn913908) or [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) methods (described the next section). The session can also end when an error occurs, or when the user has stopped speaking. Check the [**Status**](https://msdn.microsoft.com/library/windows/apps/dn631440) property of the event argument to determine why the session ended ([**SpeechRecognitionResultStatus**](https://msdn.microsoft.com/library/windows/apps/dn631433)).
 
-    ここでは、[**Completed**](https://msdn.microsoft.com/library/windows/apps/dn913899) 継続的認識イベントのハンドラーを [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) ページ イベントに登録します。
-
+    Here, we register the handler for the [**Completed**](https://msdn.microsoft.com/library/windows/apps/dn913899) continuous recognition event in the [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) page event.
 ```    CSharp
 speechRecognizer.ContinuousRecognitionSession.Completed +=
       ContinuousRecognitionSession_Completed;
 ```
 
-4.  イベント ハンドラーは Status プロパティを確認して、正常に認識できたかどうかを判断します。 また、ユーザーが発声を停止した場合の処理も行います。 多くの場合、[**TimeoutExceeded**](https://msdn.microsoft.com/library/windows/apps/dn631433) によって、正常に認識されたと見なされます。これは、ユーザーの発声が終了したことを意味するためです。 快適に使えるように、このケースをコード内で処理する必要があります。
+4.  The event handler checks the Status property to determine whether the recognition was successful. It also handles the case where the user has stopped speaking. Often, a [**TimeoutExceeded**](https://msdn.microsoft.com/library/windows/apps/dn631433) is considered successful recognition as it means the user has finished speaking. You should handle this case in your code for a good experience.
 
-    **注**  [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) イベントは、UI を直接更新できないバックグラウンド スレッドで発生します。 (「音声と TTS のサンプル」のように) ハンドラーが UI を更新する必要がある場合は、ディスパッチャーの [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) メソッドで更新を UI スレッドにディスパッチする必要があります。
-
-     
-
+    **Note**  the [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) event is raised on a background thread that cannot update the UI directly. If a handler needs to update the UI (as the \[Speech and TTS sample\] does), you must dispatch the updates to the UI thread through the [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) method of the dispatcher.
 ```    CSharp
 private async void ContinuousRecognitionSession_Completed(
       SpeechContinuousRecognitionSession sender,
@@ -269,16 +200,16 @@ private async void ContinuousRecognitionSession_Completed(
       }
 ```
 
-## <span id="Provide_ongoing_recognition_feedback"></span><span id="provide_ongoing_recognition_feedback"></span><span id="PROVIDE_ONGOING_RECOGNITION_FEEDBACK"></span>実行中の認識に対するフィードバックの提供
+## <span id="Provide_ongoing_recognition_feedback"></span><span id="provide_ongoing_recognition_feedback"></span><span id="PROVIDE_ONGOING_RECOGNITION_FEEDBACK"></span>Provide ongoing recognition feedback
 
 
-人が会話する場合は、話の内容を完全に理解するためにコンテキストが必要であることがよくあります。 同様に、信頼性の高い認識結果を提供するために音声認識エンジンにコンテキストが必要である場合がよくあります。 たとえば、"weight" および "wait" という単語は、それ自体だけでは区別できないため、周囲の単語からコンテキストをさらに探り出す必要があります。 認識エンジンは、単語や語句を正しく認識したことを、ある程度確信するまでは、[**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) イベントを生成しません。
+When people converse, they often rely on context to fully understand what is being said. Similarly, the speech recognizer often needs context to provide high-confidence recognition results. For example, by themselves, the words "weight" and "wait" are indistinguishable until more context can be gleaned from surrounding words. Until the recognizer has some confidence that a word, or words, have been recognized correctly, it will not raise the [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) event.
 
-したがって、ユーザーが話し続けても、認識エンジンが [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) イベントを生成できると確信するまでは結果が表示されないため、ユーザーにとって快適とはいえない結果になる場合があります。
+This can result in a less than ideal experience for the user as they continue speaking and no results are provided until the recognizer has high enough confidence to raise the [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) event.
 
-この不十分な応答性を改善するには、[**HypothesisGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913914) イベントを処理します。 このイベントは、処理中の単語と一致すると思われる新しいセットを認識エンジンが生成するたびに発生します。 イベント引数は、現在一致している内容を含む [**Hypothesis**](https://msdn.microsoft.com/library/windows/apps/dn913911) プロパティを提供します。 話し続けるユーザーに、これらを表示して、処理がまだ続行されていることを知らせます。 認識エンジンが十分に確信し、認識結果が確定されたら、暫定の **Hypothesis** 結果を、[**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) イベントで提供される最終的な [**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) に置き換えます。
+Handle the [**HypothesisGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913914) event to improve this apparent lack of responsiveness. This event is raised whenever the recognizer generates a new set of potential matches for the word being processed. The event argument provides an [**Hypothesis**](https://msdn.microsoft.com/library/windows/apps/dn913911) property that contains the current matches. Show these to the user as they continue speaking and reassure them that processing is still active. Once confidence is high and a recognition result has been determined, replace the interim **Hypothesis** results with the final [**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) provided in the [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) event.
 
-ここでは、仮のテキストと省略記号 ("…") を、出力 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) の現在の値に追加します。 テキスト ボックスの内容は、新しい仮の結果が生成されるたびに更新され、最後に、最終的な結果が [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) イベントから取得されます。
+Here, we append the hypothetical text and an ellipsis ("…") to the current value of the output [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683). The contents of the text box are updated as new hypotheses are generated and until the final results are obtained from the [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) event.
 
 ```CSharp
 private async void SpeechRecognizer_HypothesisGenerated(
@@ -297,12 +228,12 @@ private async void SpeechRecognizer_HypothesisGenerated(
   }
 ```
 
-## <span id="Start_and_stop_recognition"></span><span id="start_and_stop_recognition"></span><span id="START_AND_STOP_RECOGNITION"></span>認識の開始と停止
+## <span id="Start_and_stop_recognition"></span><span id="start_and_stop_recognition"></span><span id="START_AND_STOP_RECOGNITION"></span>Start and stop recognition
 
 
-認識セッションを開始する前に、音声認識エンジンの [**State**](https://msdn.microsoft.com/library/windows/apps/dn913915) プロパティの値を確認します。 音声認識エンジンは、[**Idle**](https://msdn.microsoft.com/library/windows/apps/dn653227) 状態である必要があります。
+Before starting a recognition session, check the value of the speech recognizer [**State**](https://msdn.microsoft.com/library/windows/apps/dn913915) property. The speech recognizer must be in an [**Idle**](https://msdn.microsoft.com/library/windows/apps/dn653227) state.
 
-音声認識エンジンの状態を確認した後、音声認識エンジンの [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913) プロパティの [**StartAsync**](https://msdn.microsoft.com/library/windows/apps/dn913901) メソッドを呼び出してセッションを開始します。
+After checking the state of the speech recognizer, we start the session by calling the [**StartAsync**](https://msdn.microsoft.com/library/windows/apps/dn913901) method of the speech recognizer's [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913) property.
 
 ```CSharp
 if (speechRecognizer.State == SpeechRecognizerState.Idle)
@@ -311,12 +242,12 @@ if (speechRecognizer.State == SpeechRecognizerState.Idle)
 }
 ```
 
-認識を停止するには、次の 2 つの方法があります。
+Recognition can be stopped in two ways:
 
--   [**StopAsync**](https://msdn.microsoft.com/library/windows/apps/dn913908) を使うと、保留中のすべての認識イベントが完了します ([**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) は、保留中のすべての操作が完了するまで、引き続き発生します)。
--   [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) を使うと、すぐに認識セッションが終了し、保留中の結果はすべて破棄されます。
+-   [**StopAsync**](https://msdn.microsoft.com/library/windows/apps/dn913908) lets any pending recognition events complete ([**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) continues to be raised until all pending recognition operations are complete).
+-   [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) terminates the recognition session immediately and discards any pending results.
 
-音声認識エンジンの状態を確認したら、音声認識エンジンの [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913) プロパティの [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) メソッドを呼び出してセッションを停止します。
+After checking the state of the speech recognizer, we stop the session by calling the [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) method of the speech recognizer's [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913) property.
 
 ```CSharp
 if (speechRecognizer.State != SpeechRecognizerState.Idle)
@@ -325,32 +256,24 @@ if (speechRecognizer.State != SpeechRecognizerState.Idle)
 }
 ```
 
-**注**  
-[
-            **CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) を呼び出した後に [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) イベントが発生する場合があります。
+[!NOTE]  
+A [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) event can occur after a call to [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898).  
+Because of multithreading, a [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) event might still remain on the stack when [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) is called. If so, the **ResultGenerated** event still fires.  
+If you set any private fields when canceling the recognition session, always confirm their values in the [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) handler. For example, don't assume a field is initialized in your handler if you set them to null when you cancel the session.
 
-マルチスレッドであるために、[**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) を呼び出したときに [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) イベントがスタックに残っている可能性があります。 その場合は、**ResultGenerated** イベントも発生します。
+ 
 
-プライベート フィールドを設定しているときに認識セッションをキャンセルした場合は、その値を常に [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) ハンドラーで確認してください。 たとえば、セッションをキャンセルしたときにプライベート フィールドを null に設定している場合はハンドラー内でフィールドが初期化されると想定しないでください。
-
- 
-
-## <span id="related_topics"></span>関連記事
+## <span id="related_topics"></span>Related articles
 
 
-* [音声操作](speech-interactions.md)
+* [Speech interactions](speech-interactions.md)
 
-**サンプル**
-* [音声認識と音声合成のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619897)
- 
+**Samples**
+* [Speech recognition and speech synthesis sample](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+ 
 
- 
-
-
+ 
 
 
-
-
-<!--HONumber=Mar16_HO1-->
 
 

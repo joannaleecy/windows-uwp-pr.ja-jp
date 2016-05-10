@@ -1,39 +1,39 @@
 ---
+author: TylerMSFT
 ms.assetid: 27914C0A-2A02-473F-BDD5-C931E3943AA0
-title: ファイルの作成、書き込み、および読み取り
-description: StorageFile オブジェクトを使ってファイルの読み取りと書き込みを行います。
+title: Create, write, and read a file
+description: Read and write a file using a StorageFile object.
 ---
 
-# ファイルの作成、書き込み、および読み取り
+# Create, write, and read a file
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**重要な API**
+**Important APIs**
 
--   [**StorageFolder クラス**](https://msdn.microsoft.com/library/windows/apps/br227230)
--   [**StorageFile クラス**](https://msdn.microsoft.com/library/windows/apps/br227171)
--   [**FileIO クラス**](https://msdn.microsoft.com/library/windows/apps/hh701440)
+-   [**StorageFolder class**](https://msdn.microsoft.com/library/windows/apps/br227230)
+-   [**StorageFile class**](https://msdn.microsoft.com/library/windows/apps/br227171)
+-   [**FileIO class**](https://msdn.microsoft.com/library/windows/apps/hh701440)
 
-[
-            **StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトを使ってファイルの読み取りと書き込みを行います。
+Read and write a file using a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) object.
 
-> **注** [ファイル アクセスのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619995) に関するページも参照してください。
+> **Note**  Also see the [File access sample](http://go.microsoft.com/fwlink/p/?linkid=619995).
 
-## 前提条件
+## Prerequisites
 
--   **ユニバーサル Windows プラットフォーム (UWP) アプリの非同期プログラミングについての理解**
+-   **Understand async programming for Universal Windows Platform (UWP) apps**
 
-    C# や Visual Basic での非同期アプリの作成方法については、「[C# または Visual Basic での非同期 API の呼び出し](https://msdn.microsoft.com/library/windows/apps/mt187337)」をご覧ください。 C++ での非同期アプリの作成方法については、「[C++ での非同期プログラミング](https://msdn.microsoft.com/library/windows/apps/mt187334)」をご覧ください。
+    You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
 
--   **読み取り、書き込み、またはその両方の対象となるファイルを取得する方法についての知識**
+-   **Know how to get the file that you want to read from, write to, or both**
 
-    ファイル ピッカーを使ってファイルを取得する方法については、「[ピッカーでファイルやフォルダーを開く](quickstart-using-file-and-folder-pickers.md)」をご覧ください。
+    You can learn how to get a file by using a file picker in [Open files and folders with a picker](quickstart-using-file-and-folder-pickers.md).
 
-## ファイルの作成
+## Creating a file
 
-アプリのローカル フォルダーにファイルを作成する方法について説明します。 既に存在する場合は置き換えます。
+Here's how to create a file in the app's local folder. If it already exists, we replace it.
 > [!div class="tabbedCodeSnippets"]
 ```cs
 // Create sample file; replace if exists.
@@ -49,11 +49,10 @@ Dim storageFolder As StorageFolder = Windows.Storage.ApplicationData.Current.Loc
 Dim sampleFile As StorageFile = Await storageFolder.CreateFileAsync("sample.txt", CreationCollisionOption.ReplaceExisting)
 ```
 
-## ファイルへの書き込み
+## Writing to a file
 
 
-[
-            **StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) クラスを使ってディスク上の書き込み可能ファイルに書き込む方法について説明します。 いずれの方法でファイルに書き込む場合でも (ファイルの作成直後に書き込むのでない限り)、まずは [**StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) でファイルを取得します。
+Here's how to write to a writable file on disk using the [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) class. The common first step for each of the ways of writing to a file (unless you're writing to the file immediately after creating it) is to get the file with [**StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272).
 > [!div class="tabbedCodeSnippets"]
 ```cs
 Windows.Storage.StorageFolder storageFolder =
@@ -66,10 +65,9 @@ Dim storageFolder As StorageFolder = Windows.Storage.ApplicationData.Current.Loc
 Dim sampleFile As StorageFile = Await storageFolder.GetFileAsync("sample.txt")
 ```
 
-**ファイルへのテキストの書き込み**
+**Writing text to a file**
 
-[
-            **FileIO**](https://msdn.microsoft.com/library/windows/apps/hh701440) クラスの [**WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505) メソッドを呼び出してファイルにテキストを書き込みます。
+Write text to your file by calling the [**WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505) method of the [**FileIO**](https://msdn.microsoft.com/library/windows/apps/hh701440) class.
 > [!div class="tabbedCodeSnippets"]
 ```cs
 await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow");
@@ -78,9 +76,9 @@ await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow");
 Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
 ```
 
-**バッファーを使ったファイルへのバイトの書き込み (2 ステップ)**
+**Writing bytes to a file by using a buffer (2 steps)**
 
-1.  まず、[**ConvertStringToBinary**](https://msdn.microsoft.com/library/windows/apps/br241385) を呼び出してファイルに書き込む任意の文字列に基づくバイトのバッファーを取得します。
+1.  First, call [**ConvertStringToBinary**](https://msdn.microsoft.com/library/windows/apps/br241385) to get a buffer of the bytes (based on an arbitrary string) that you want to write to your file.
 > [!div class="tabbedCodeSnippets"]
 ```cs
 var buffer = Windows.Security.Cryptography.CryptographicBuffer.ConvertStringToBinary(
@@ -92,7 +90,7 @@ Dim buffer = Windows.Security.Cryptography.CryptographicBuffer.ConvertStringToBi
                     Windows.Security.Cryptography.BinaryStringEncoding.Utf8)
 ```
 
-2.  次に、[**FileIO**](https://msdn.microsoft.com/library/windows/apps/hh701440) クラスの [**WriteBufferAsync**](https://msdn.microsoft.com/library/windows/apps/hh701490) メソッドを呼び出してファイルにバッファーからのバイトを書き込みます。
+2.  Then write the bytes from your buffer to your file by calling the [**WriteBufferAsync**](https://msdn.microsoft.com/library/windows/apps/hh701490) method of the [**FileIO**](https://msdn.microsoft.com/library/windows/apps/hh701440) class.
 > [!div class="tabbedCodeSnippets"]
 ```cs
 await Windows.Storage.FileIO.WriteBufferAsync(sampleFile, buffer);
@@ -101,9 +99,9 @@ await Windows.Storage.FileIO.WriteBufferAsync(sampleFile, buffer);
 Await Windows.Storage.FileIO.WriteBufferAsync(sampleFile, buffer)
 ```
 
-**ストリームを使ったファイルへのテキストの書き込み (4 ステップ)**
+**Writing text to a file by using a stream (4 steps)**
 
-1.  まず、[**StorageFile.OpenAsync**](https://msdn.microsoft.com/library/windows/apps/dn889851) メソッドを呼び出してファイルを開きます。 このメソッドは、オープン操作が完了したときにファイルのコンテンツのストリームを返します。
+1.  First, open the file by calling the [**StorageFile.OpenAsync**](https://msdn.microsoft.com/library/windows/apps/dn889851) method. It returns a stream of the file's content when the open operation completes.
 > [!div class="tabbedCodeSnippets"]
 ```cs
 var stream = await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite);
@@ -112,7 +110,7 @@ var stream = await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite
 Dim stream = Await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite)
 ```
 
-2.  次に、`stream` の [**GetOutputStreamAt**](https://msdn.microsoft.com/library/windows/apps/br241738) メソッドを呼び出して出力ストリームを取得します。 これを **using** ステートメントに入れて、出力ストリームの有効期間を管理します。
+2.  Next, get an output stream by calling the [**GetOutputStreamAt**](https://msdn.microsoft.com/library/windows/apps/br241738) method from the `stream`. Put this in a **using** statement to manage the output stream's lifetime.
 > [!div class="tabbedCodeSnippets"]
 ```cs
 using (var outputStream = stream.GetOutputStreamAt(0))
@@ -127,7 +125,7 @@ Using outputStream = stream.GetOutputStreamAt(0)
 End Using
 ```
 
-3.  さらに、新しい [**DataWriter**](https://msdn.microsoft.com/library/windows/apps/br208154) オブジェクトを作って [**DataWriter.WriteString**](https://msdn.microsoft.com/library/windows/apps/br241642) メソッドを呼び出し、既存の **using** ステートメントにこのコードを追加して出力ストリームに書き込みます。
+3.  Now add this code within the existing **using** statement to write to the output stream by creating a new [**DataWriter**](https://msdn.microsoft.com/library/windows/apps/br208154) object and calling the [**DataWriter.WriteString**](https://msdn.microsoft.com/library/windows/apps/br241642) method.
 > [!div class="tabbedCodeSnippets"]
 ```cs
 using (var dataWriter = new Windows.Storage.Streams.DataWriter(outputStream))
@@ -141,7 +139,7 @@ using (var dataWriter = new Windows.Storage.Streams.DataWriter(outputStream))
     dataWriter.WriteString("DataWriter has methods to write to various types, such as DataTimeOffset.")
 ```
 
-4.  最後に、(内部 **using** ステートメント内の) このコードを追加し、[**StoreAsync**](https://msdn.microsoft.com/library/windows/apps/br208171) でファイルにテキストを保存して、[**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/br241729) でストリームを閉じます。
+4.  Lastly, add this code (within the inner **using** statement) to save the text to your file with [**StoreAsync**](https://msdn.microsoft.com/library/windows/apps/br208171) and close the stream with [**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/br241729).
 > [!div class="tabbedCodeSnippets"]
 ```cs
     await dataWriter.StoreAsync();
@@ -152,11 +150,10 @@ using (var dataWriter = new Windows.Storage.Streams.DataWriter(outputStream))
         Await outputStream.FlushAsync()
 ```
 
-## ファイルからの読み取り
+## Reading from a file
 
 
-[
-            **StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) クラスを使ってディスク上のファイルから読み取る方法について説明します。 いずれの方法でファイルから読み取る場合でも、まずは [**StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) を使ってファイルを取得します。
+Here's how to read from a file on disk using the [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) class. The common first step for each of the ways of reading from a file is to get the file with [**StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272).
 > [!div class="tabbedCodeSnippets"]
 ```cs
 Windows.Storage.StorageFolder storageFolder =
@@ -169,10 +166,9 @@ Dim storageFolder As StorageFolder = Windows.Storage.ApplicationData.Current.Loc
 Dim sampleFile As StorageFile = Await storageFolder.GetFileAsync("sample.txt")
 ```
 
-**ファイルからのテキストの読み取り**
+**Reading text from a file**
 
-[
-            **FileIO**](https://msdn.microsoft.com/library/windows/apps/hh701440) クラスの [**ReadTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701482) メソッドを呼び出してファイルのテキストを読み取ります。
+Read text from your file by calling the [**ReadTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701482) method of the [**FileIO**](https://msdn.microsoft.com/library/windows/apps/hh701440) class.
 > [!div class="tabbedCodeSnippets"]
 ```cs
 string text = await Windows.Storage.FileIO.ReadTextAsync(sampleFile);
@@ -181,9 +177,9 @@ string text = await Windows.Storage.FileIO.ReadTextAsync(sampleFile);
 Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
 ```
 
-**バッファーを使ったファイルからのバイトの読み取り (2 ステップ)**
+**Reading bytes from a file by using a buffer (2 steps)**
 
-1.  まず、[**FileIO**](https://msdn.microsoft.com/library/windows/apps/hh701440) クラスの [**ReadBufferAsync**](https://msdn.microsoft.com/library/windows/apps/hh701468) メソッドを呼び出してファイルのバッファーからバイトを読み取ります。
+1.  First, read bytes from your buffer to your file by calling the [**ReadBufferAsync**](https://msdn.microsoft.com/library/windows/apps/hh701468) method of the [**FileIO**](https://msdn.microsoft.com/library/windows/apps/hh701440) class.
 > [!div class="tabbedCodeSnippets"]
 ```cs
 var buffer = await Windows.Storage.FileIO.ReadBufferAsync(sampleFile);
@@ -192,7 +188,7 @@ var buffer = await Windows.Storage.FileIO.ReadBufferAsync(sampleFile);
 Dim buffer = Await Windows.Storage.FileIO.ReadBufferAsync(sampleFile)
 ```
 
-2.  次に、[**DataReader**](https://msdn.microsoft.com/library/windows/apps/br208119) オブジェクトを使ってバッファーの長さを読み取り、次にバッファーのコンテンツを読み取ります。
+2.  Then use a [**DataReader**](https://msdn.microsoft.com/library/windows/apps/br208119) object to read first the length of the buffer and then its contents.
 > [!div class="tabbedCodeSnippets"]
 ```cs
 using (var dataReader = Windows.Storage.Streams.DataReader.FromBuffer(buffer))
@@ -205,10 +201,9 @@ Dim dataReader As DataReader = Windows.Storage.Streams.DataReader.FromBuffer(buf
     Dim text As String = dataReader.ReadString(buffer.Length)
 ```
 
-**ストリームを使ったファイルからのテキストの読み取り (4 ステップ)**
+**Reading text from a file by using a stream (4 steps)**
 
-1.  [
-            **StorageFile.OpenAsync**](https://msdn.microsoft.com/library/windows/apps/dn889851) メソッドを呼び出してファイルに対するストリームを開きます。 このメソッドは、操作が完了したときにファイルのコンテンツのストリームを返します。
+1.  Open a stream for your file by calling the [**StorageFile.OpenAsync**](https://msdn.microsoft.com/library/windows/apps/dn889851) method. It returns a stream of the file's content when the operation completes.
 > [!div class="tabbedCodeSnippets"]
 ```cs
 var stream = await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite);
@@ -217,7 +212,7 @@ var stream = await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite
 Dim stream = Await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite)
 ```
 
-2.  後で使うためにストリームのサイズを取得します。
+2.  Get the size of the stream to use later.
 > [!div class="tabbedCodeSnippets"]
 ```cs
 ulong size = stream.Size;
@@ -226,8 +221,7 @@ ulong size = stream.Size;
 Dim size = stream.Size
 ```
 
-3.  [
-            **GetInputStreamAt**](https://msdn.microsoft.com/library/windows/apps/br241737) メソッドを呼び出して入力ストリームを取得します。 これを **using** ステートメントに入れて、ストリームの有効期間を管理します。 **GetInputStreamAt** を呼び出すときに 0 を指定して、位置をストリームの先頭に設定します。
+3.  Get an input stream by calling the [**GetInputStreamAt**](https://msdn.microsoft.com/library/windows/apps/br241737) method. Put this in a **using** statement to manage the stream's lifetime. Specify 0 when you call **GetInputStreamAt** to set the position to the beginning of the stream.
 > [!div class="tabbedCodeSnippets"]
 ```cs
 using (var inputStream = stream.GetInputStreamAt(0))
@@ -241,7 +235,7 @@ Using inputStream = stream.GetInputStreamAt(0)
 End Using
 ```
 
-4.  最後に、このコードを既存の **using** ステートメントに追加してストリーム上の [**DataReader**](https://msdn.microsoft.com/library/windows/apps/br208119) オブジェクトを取得し、[**DataReader.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/br208135) と [**DataReader.ReadString**](https://msdn.microsoft.com/library/windows/apps/br208147) を呼び出してテキストを読み取ります。
+4.  Lastly, add this code within the existing **using** statement to get a [**DataReader**](https://msdn.microsoft.com/library/windows/apps/br208119) object on the stream then read the text by calling [**DataReader.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/br208135) and [**DataReader.ReadString**](https://msdn.microsoft.com/library/windows/apps/br208147).
 > [!div class="tabbedCodeSnippets"]
 ```cs
 using (var dataReader = new Windows.Storage.Streams.DataReader(inputStream))
@@ -256,15 +250,10 @@ Dim dataReader As New DataReader(inputStream)
     Dim text As String = dataReader.ReadString(numBytesLoaded)
 ```
 
- 
+ 
 
- 
-
-
+ 
 
 
-
-
-<!--HONumber=Mar16_HO1-->
 
 

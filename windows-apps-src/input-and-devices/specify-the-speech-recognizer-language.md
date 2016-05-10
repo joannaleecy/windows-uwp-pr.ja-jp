@@ -1,50 +1,50 @@
 ---
-Description: 音声認識に使われるインストール済みの言語を選ぶ方法について説明します。
-title: 音声認識エンジンの言語の指定
+author: Karl-Bridge-Microsoft
+Description: Learn how to select an installed language to use for speech recognition.
+title: Specify the speech recognizer language
 ms.assetid: 4C463A1B-AF6A-46FD-A839-5D6724955B38
-label: 音声認識エンジンの言語の指定
+label: Specify the speech recognizer language
 template: detail.hbs
 ---
 
-# 音声認識エンジンの言語の指定
+# Specify the speech recognizer language
 
 
-音声認識に使われるインストール済みの言語を選ぶ方法について説明します。
-
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+Learn how to select an installed language to use for speech recognition.
 
 
-**重要な API**
+
+
+**Important APIs**
 
 -   [**SupportedTopicLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653251)
 -   [**SupportedGrammarLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653250)
--   [**言語**](https://msdn.microsoft.com/library/windows/apps/br206804)
+-   [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804)
 
 
-ここでは、システムにインストールされている言語を列挙し、どの言語が既定の言語であるかを指定します。また、音声認識用に別の言語を選びます。
+Here, we enumerate the languages installed on a system, identify which is the default language, and select a different language for recognition.
 
-**前提条件:  **
+**Prerequisites:  **
 
-このトピックは、「[音声認識](speech-recognition.md)」に基づいています。
+This topic builds on [Speech recognition](speech-recognition.md).
 
-音声認識と認識の制約についての基本的な知識が必要です。
+You should have a basic understanding of speech recognition and recognition constraints.
 
-ユニバーサル Windows プラットフォーム (UWP) アプリを開発するのが初めての場合は、以下のトピックに目を通して、ここで説明されているテクノロジをよく理解できるようにしてください。
+If you're new to developing Universal Windows Platform (UWP) apps, have a look through these topics to get familiar with the technologies discussed here.
 
--   [初めてのアプリ作成](https://msdn.microsoft.com/library/windows/apps/bg124288)
--   「[イベントとルーティング イベントの概要](https://msdn.microsoft.com/library/windows/apps/mt185584)」でイベントについて学習します。
+-   [Create your first app](https://msdn.microsoft.com/library/windows/apps/bg124288)
+-   Learn about events with [Events and routed events overview](https://msdn.microsoft.com/library/windows/apps/mt185584)
 
-**ユーザー エクスペリエンス ガイドライン:  **
+**User experience guidelines:  **
 
-魅力的な音声認識対応アプリの設計に役立つ便利なヒントについては、「[音声機能の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596121)」をご覧ください。
+For helpful tips about designing a useful and engaging speech-enabled app, see [Speech design guidelines](https://msdn.microsoft.com/library/windows/apps/dn596121) .
 
-## <span id="Identify_the_default_language"></span><span id="identify_the_default_language"></span><span id="IDENTIFY_THE_DEFAULT_LANGUAGE"></span>既定の言語を指定する
+## <span id="Identify_the_default_language"></span><span id="identify_the_default_language"></span><span id="IDENTIFY_THE_DEFAULT_LANGUAGE"></span>Identify the default language
 
 
-音声認識エンジンでは、システムの音声認識の言語を既定の認識言語として使います。 この言語は、デバイスで [設定]、[システム]、[音声認識]、[音声認識の言語] の順に移動し、画面上でユーザーが設定します。
+A speech recognizer uses the system speech language as its default recognition language. This language is set by the user on the device Settings &gt; System &gt; Speech &gt; Speech Language screen.
 
-[
-            **SystemSpeechLanguage**](https://msdn.microsoft.com/library/windows/apps/dn653252) 静的プロパティを調べて、既定の言語を特定します。
+We identify the default language by checking the [**SystemSpeechLanguage**](https://msdn.microsoft.com/library/windows/apps/dn653252) static property.
 
 ```CSharp
 var language = SpeechRecognizer.SystemSpeechLanguage; </code></pre></td>
@@ -53,28 +53,27 @@ var language = SpeechRecognizer.SystemSpeechLanguage; </code></pre></td>
 </table>
 ```
 
-## <span id="Confirm_an_installed_language"></span><span id="confirm_an_installed_language"></span><span id="CONFIRM_AN_INSTALLED_LANGUAGE"></span>インストールされている言語を確認する
+## <span id="Confirm_an_installed_language"></span><span id="confirm_an_installed_language"></span><span id="CONFIRM_AN_INSTALLED_LANGUAGE"></span>Confirm an installed language
 
 
-インストールされている言語はデバイスによって異なる場合があります。 特定の制約を使う際にある言語に依存する場合は、その言語が存在するかどうかを確認してください。
+Installed languages can vary between devices. You should verify the existence of a language if you depend on it for a particular constraint.
 
-**注**  新しい言語パックをインストールした場合は、再起動が必要です。 指定の言語がサポートされていない場合や、指定の言語のインストールが完了していない場合は、エラー コード SPERR\_NOT\_FOUND (0x8004503a) の例外が発生します。
+**Note**  A reboot is required after a new language pack is installed. An exception with error code SPERR\_NOT\_FOUND (0x8004503a) is raised if the specified language is not supported or has not finished installing.
 
- 
+ 
 
-[
-            **SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) クラスの 2 つの静的プロパティのいずれかを調べて、デバイスでサポートされる言語を特定します。
+Determine the supported languages on a device by checking one of two static properties of the [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) class:
 
--   [**SupportedTopicLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653251): 定義済みのディクテーション文法および Web 検索文法と共に使われる [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) オブジェクトのコレクションです。
+-   [**SupportedTopicLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653251)—The collection of [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) objects used with predefined dictation and web search grammars.
 
--   [**SupportedGrammarLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653250): 一覧の制約または Speech Recognition Grammar Specification (SRGS) ファイルと共に使われる [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) オブジェクトのコレクションです。
+-   [**SupportedGrammarLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653250)—The collection of [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) objects used with a list constraint or a Speech Recognition Grammar Specification (SRGS) file.
 
-## <span id="Specify_a_language"></span><span id="specify_a_language"></span><span id="SPECIFY_A_LANGUAGE"></span>言語を指定する
+## <span id="Specify_a_language"></span><span id="specify_a_language"></span><span id="SPECIFY_A_LANGUAGE"></span>Specify a language
 
 
-言語を指定するには、[**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) コンストラクターで [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) オブジェクトを渡します。
+To specify a language, pass a [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) object in the [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) constructor.
 
-ここでは、認識言語として "en-US" を指定します。
+Here, we specify "en-US" as the recognition language.
 
 <span codelanguage="CSharp"></span>
 ```CSharp
@@ -92,33 +91,28 @@ var language = new Windows.Globalization.Language(“en-US”);
 var recognizer = new SpeechRecognizer(language); 
 ```
 
-## <span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>注釈
+## <span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>Remarks
 
 
-トピック制約を構成するには、[**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446) を [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) の [**Constraints**](https://msdn.microsoft.com/library/windows/apps/dn653241) コレクションに追加して、[**CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) を呼び出します。 サポートされているトピックの言語で認識エンジンが初期化されていない場合は、**TopicLanguageNotSupported** の [**SpeechRecognitionResultStatus**](https://msdn.microsoft.com/library/windows/apps/dn631433) が返されます。
+A topic constraint can be configured by adding a [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446) to the [**Constraints**](https://msdn.microsoft.com/library/windows/apps/dn653241) collection of the [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) and then calling [**CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240). A [**SpeechRecognitionResultStatus**](https://msdn.microsoft.com/library/windows/apps/dn631433) of **TopicLanguageNotSupported** is returned if the recognizer is not initialized with a supported topic language.
 
-一覧の制約を構成するには、[**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421) を [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) の [**Constraints**](https://msdn.microsoft.com/library/windows/apps/dn653241) コレクションに追加して、[**CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) を呼び出します。 カスタム一覧の言語を直接指定することはできません。 代わりに、認識エンジンの言語を使って一覧が処理されます。
+A list constraint is configured by adding a [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421) to the [**Constraints**](https://msdn.microsoft.com/library/windows/apps/dn653241) collection of the [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) and then calling [**CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240). You cannot specify the language of a custom list directly. Instead, the list will be processed using the language of the recognizer.
 
-SRGS 文法は、[**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412) クラスによって表されるオープン スタンダードの XML 形式です。 カスタム一覧とは異なり、SRGS マークアップで文法の言語を指定できます。 認識エンジンが SRGS マークアップと同じ言語に初期化されていない場合は、**TopicLanguageNotSupported** の [**SpeechRecognitionResultStatus**](https://msdn.microsoft.com/library/windows/apps/dn631433) に基づいて [**CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) が失敗します。
+An SRGS grammar is an open-standard XML format represented by the [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412) class. Unlike custom lists, you can specify the language of the grammar in the SRGS markup. [**CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) fails with a [**SpeechRecognitionResultStatus**](https://msdn.microsoft.com/library/windows/apps/dn631433) of **TopicLanguageNotSupported** if the recognizer is not initialized to the same language as the SRGS markup.
 
-## <span id="related_topics"></span>関連記事
-
-
-**開発者向け**
-* [音声操作](speech-interactions.md)
-**デザイナー向け**
-* [音声認識の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596121)
-**サンプル**
-* [音声認識と音声合成のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619897)
- 
-
- 
+## <span id="related_topics"></span>Related articles
 
 
+**Developers**
+* [Speech interactions](speech-interactions.md)
+**Designers**
+* [Speech design guidelines](https://msdn.microsoft.com/library/windows/apps/dn596121)
+**Samples**
+* [Speech recognition and speech synthesis sample](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+ 
+
+ 
 
 
-
-
-<!--HONumber=Mar16_HO1-->
 
 

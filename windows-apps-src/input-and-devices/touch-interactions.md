@@ -1,21 +1,20 @@
 ---
-Description: タッチ向けに最適化される一方で、さまざまな入力デバイスで一貫した機能を提供する、直観的で独特なユーザー操作エクスペリエンスを備えたユニバーサル Windows プラットフォーム (UWP) アプリを作成します。
-title: タッチ操作
+author: Karl-Bridge-Microsoft
+Description: Create Universal Windows Platform (UWP) apps with intuitive and distinctive user interaction experiences that are optimized for touch but are functionally consistent across input devices.
+title: Touch interactions
 ms.assetid: DA6EBC88-EB18-4418-A98A-457EA1DEA88A
-label: タッチ操作
+label: Touch interactions
 template: detail.hbs
 ---
 
-# タッチ操作
+# Touch interactions
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+Design your app with the expectation that touch will be the primary input method of your users. If you use UWP controls, support for touchpad, mouse, and pen/stylus requires no additional programming, because UWP apps provide this for free.
 
-タッチがユーザーの主な入力方法になるという想定でアプリを設計します。 UWP コントロールを使う場合は、タッチパッド、マウス、ペン/スタイラスをサポートするために追加のプログラミングを行う必要はありません。UWP アプリでは、それらが無料で提供されます。
+However, keep in mind that a UI optimized for touch is not always superior to a traditional UI. Both provide advantages and disadvantages that are unique to a technology and application. In the move to a touch-first UI, it is important to understand the core differences between touch (including touchpad), pen/stylus, mouse, and keyboard input.
 
-ただし、タッチ用に最適化された UI が従来の UI よりも常に優れているとは限らないことに留意してください。 どちらの UI にも、テクノロジとアプリに固有の長所と短所があります。 タッチ操作主体の UI に移行する際に、タッチ (タッチパッドを含む)、ペン/スタイラス、マウス、キーボードの各入力の主な違いを理解することが重要です。
-
-**重要な API**
+**Important APIs**
 
 -   [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
 -   [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)
@@ -23,225 +22,221 @@ template: detail.hbs
 
 
 
-多くのデバイスに、1 本または複数の指 (つまりタッチ接触) を入力として使うことをサポートするマルチタッチ画面が搭載されています。 タッチ接触とその移動は、さまざまなユーザー操作をサポートするタッチ ジェスチャや操作として解釈されます。
+Many devices have multi-touch screens that support using one or more fingers (or touch contacts) as input. The touch contacts, and their movement, are interpreted as touch gestures and manipulations to support various user interactions.
 
-ユニバーサル Windows プラットフォーム (UWP) にはタッチ入力を処理するためのさまざまなメカニズムがあり、ユーザーが安心して操作できるイマーシブ エクスペリエンスを実現できます。 ここでは、UWP アプリでタッチ入力を使用する場合の基本事項について説明します。
+The Universal Windows Platform (UWP) includes a number of different mechanisms for handling touch input, enabling you to create an immersive experience that your users can explore with confidence. Here, we cover the basics of using touch input in a UWP app.
 
-タッチ操作には、次の 3 つが必要です。
+Touch interactions require three things:
 
--   タッチ パネル ディスプレイ。
--   1 本以上の指による、そのディスプレイへの直接的な (ディスプレイに近接センサーがあり、ホバー検知がサポートされている場合は近接的な) 接触
--   タッチ接触の動き (または、時間のしきい値に基づく動きの欠落)。
+-   A touch-sensitive display.
+-   The direct contact (or proximity to, if the display has proximity sensors and supports hover detection) of one or more fingers on that display.
+-   Movement of the touch contacts (or lack thereof, based on a time threshold).
 
-タッチ センサーから提供される入力データは、次のように使うことができます。
+The input data provided by the touch sensor can be:
 
--   1 つ以上の UI 要素に直接的な操作 (パン、回転、サイズ変更、移動など) を行う物理的なジェスチャとして解釈する。 プロパティ ウィンドウ、ダイアログ ボックス、その他の UI アフォーダンスを通じた要素との対話的操作は、間接的な操作と見なされます。
--   マウス、ペンなどの代替の入力方式として見なす。
--   他の入力方法の外観を補完するために使う (ペンで描画したインク ストロークをこするなど)。
+-   Interpreted as a physical gesture for direct manipulation of one or more UI elements (such as panning, rotating, resizing, or moving). In contrast, interacting with an element through its properties window, dialog box, or other UI affordance is considered indirect manipulation.
+-   Recognized as an alternative input method, such as mouse or pen.
+-   Used to complement or modify aspects of other input methods, such as smudging an ink stroke drawn with a pen.
 
-タッチ入力では、通常、画面上の要素を直接操作します。 要素は、そのヒット テスト領域内でのタッチ接触をすぐに応答し、削除など、タッチ接触の後続の動きに適切に反応します。
+Touch input typically involves the direct manipulation of an element on the screen. The element responds immediately to any touch contact within its hit test area, and reacts appropriately to any subsequent movement of the touch contacts, including removal.
 
-カスタム タッチ ジェスチャと操作は、慎重に設計する必要があります。 直感的で、応答性が高く、見つけやすい必要があり、ユーザーが安心してアプリを操作できる必要があります。
+Custom touch gestures and interactions should be designed carefully. They should be intuitive, responsive, and discoverable, and they should let users explore your app with confidence.
 
-アプリの機能がサポートされているすべての入力デバイスの種類で一貫して公開されていることを確認します。 必要に応じて、キーボード操作に対応するテキスト入力、またはマウスやペンの UI アフォーダンスなど、なんらかの形で間接的な入力モードを用意します。
+Ensure that app functionality is exposed consistently across every supported input device type. If necessary, use some form of indirect input mode, such as text input for keyboard interactions, or UI affordances for mouse and pen.
 
-多くのユーザーにとって従来型入力デバイス (マウスやキーボードなど) が親しみやすく魅力的であることを念頭に置いてください。 従来型入力デバイスは、速度、正確さ、触覚的なフィードバックという点で、タッチ操作より優れている場合があります。
+Remember that traditional input devices (such as mouse and keyboard), are familiar and appealing to many users. They can offer speed, accuracy, and tactile feedback that touch might not.
 
-すべての入力デバイスに固有なそれぞれの対話式操作のエクスペリエンスにより、多様な機能や基本設定をサポートし、できるだけ幅広い対象者の関心を引くことで、アプリのユーザーを増やすことができます。
+Providing unique and distinctive interaction experiences for all input devices will support the widest range of capabilities and preferences, appeal to the broadest possible audience, and attract more customers to your app.
 
-## タッチ操作の要件の比較
+## Compare touch interaction requirements
 
-次の表に、タッチ操作に最適な UWP アプリの設計時に考慮する必要がある、入力デバイス間の違いをいくつか示します。
+The following table shows some of the differences between input devices that you should consider when you design touch-optimized UWP apps.
 
 <table>
-<tbody><tr><th>要因</th><th>タッチ操作</th><th>マウス、キーボード、ペン/スタイラス操作</th><th>タッチパッド</th></tr>
-<tr><td rowspan="3">正確性</td><td>指先が接触する領域は単一の XY 座標よりも広いので、意図していないコマンドがアクティブ化される可能性が高くなります。</td><td>マウスとペン/スタイラスを使うと正確な XY 座標を指定できます。</td><td>マウスと同じです。</td></tr>
-<tr><td>接触する領域の形は移動を通じて変化します。  </td><td>マウスの移動とペン/スタイラスのストロークによって正確な XY 座標を指定できます。 キーボード フォーカスは明示的です。</td><td>マウスと同じです。</td></tr>
-<tr><td>ターゲット設定に役立つマウス カーソルはありません。</td><td>マウス カーソル、ペン/スタイラス カーソル、キーボード フォーカスはすべてターゲット設定に役立ちます。</td><td>マウスと同じです。</td></tr>
-<tr><td rowspan="3">人体構造</td><td>1 本または複数の指で直線移動を行うのは困難なので、指先の動きは正確さに欠けます。 これは、手関節が曲がることや動きに関係する関節の数が原因です。</td><td>マウスまたはペン/スタイラスを制御する手の物理的な移動距離は、画面上のカーソルの移動距離よりも短いので、マウスまたはペン/スタイラスで直線移動を行う方が簡単です。</td><td>マウスと同じです。</td></tr>
-<tr><td>ディスプレイ デバイスのタッチ画面には、指の位置とユーザーのデバイスの持ち方が原因で届きにくくなる領域もあります。</td><td>マウスとペン/スタイラスは画面のどの部分にも届き、キーボードではタブ オーダーによってどのコントロールにもアクセスできます。 </td><td>指の位置と持ち方が問題になることがあります。</td></tr>
-<tr><td>オブジェクトは、1 本以上の指先またはユーザーの手で隠れる場合があります。 これをオクルージョンと呼びます。</td><td>間接的な入力デバイスでは、オクルージョンは発生しません。</td><td>マウスと同じです。</td></tr>
-<tr><td>オブジェクトの状態</td><td>タッチでは、ディスプレイ デバイスのタッチ画面がタッチされているか (オン) タッチされていないか (オフ) の 2 状態モデルが使われます。 追加の視覚的なフィードバックをトリガーできるホバー状態はありません。</td><td>
-<p>マウス、ペン/スタイラス、キーボードはすべて、離した状態 (オフ)、押した状態 (オン)、ホバー状態 (フォーカス) の 3 状態モデルを公開します。</p>
-<p>ホバーすると、UI 要素に関連付けられたヒントを調べて参考にすることができます。 ホバーまたはフォーカスを合わせたときの効果によって操作可能なオブジェクトがわかり、ターゲット設定にも役立ちます。 
+<tbody><tr><th>Factor</th><th>Touch interactions</th><th>Mouse, keyboard, pen/stylus interactions</th><th>Touchpad</th></tr>
+<tr><td rowspan="3">Precision</td><td>The contact area of a fingertip is greater than a single x-y coordinate, which increases the chances of unintended command activations.</td><td>The mouse and pen/stylus supply a precise x-y coordinate.</td><td>Same as mouse.</td></tr>
+<tr><td>The shape  of the contact area changes throughout the movement.  </td><td>Mouse movements and pen/stylus strokes supply precise x-y coordinates. Keyboard focus is explicit.</td><td>Same as mouse.</td></tr>
+<tr><td>There is no mouse cursor to assist with targeting.</td><td>The mouse cursor, pen/stylus cursor, and keyboard focus all assist with targeting.</td><td>Same as mouse.</td></tr>
+<tr><td rowspan="3">Human anatomy</td><td>Fingertip movements are imprecise, because a straight-line motion with one or more fingers is difficult. This is due to the curvature of hand joints and the number of joints involved in the motion.</td><td>It's easier to perform a straight-line motion with the mouse or pen/stylus because the hand that controls them travels a shorter physical distance than the cursor on the screen.</td><td>Same as mouse.</td></tr>
+<tr><td>Some areas on the touch surface of a display device can be difficult to reach due to finger posture and the user's grip on the device.</td><td>The mouse and pen/stylus can reach any part of the screen while any control should be accessible by the keyboard through tab order. </td><td>Finger posture and grip can be an issue.</td></tr>
+<tr><td>Objects might be obscured by one or more fingertips or the user's hand. This is known as occlusion.</td><td>Indirect input devices do not cause  occlusion.</td><td>Same as mouse.</td></tr>
+<tr><td>Object state</td><td>Touch uses a two-state model: the touch surface of a display device  is either touched (on) or not (off). There is no hover state that can trigger additional visual feedback.</td><td>
+<p>A mouse, pen/stylus, and keyboard all expose a three-state model: up (off), down (on), and hover (focus).</p>
+<p>Hover lets users explore and learn through tooltips  associated with UI elements. Hover and focus effects  can relay which objects are interactive and also help with targeting. 
 </p>
-</td><td>マウスと同じです。</td></tr>
-<tr><td rowspan="2">豊富な操作</td><td>タッチ画面において複数の入力ポイント (指先) で操作できるマルチタッチをサポートします。</td><td>単一の入力ポイントをサポートします。</td><td>タッチと同じです。</td></tr>
-<tr><td>タップ、ドラッグ、スライド、ピンチ、回転などのジェスチャによるオブジェクトの直接操作をサポートします。</td><td>マウス、ペン/スタイラス、キーボードは間接的な入力デバイスなので、直接操作はサポートされません。</td><td>マウスと同じです。</td></tr>
+</td><td>Same as mouse.</td></tr>
+<tr><td rowspan="2">Rich interaction</td><td>Supports multi-touch: multiple input points (fingertips) on a touch surface.</td><td>Supports a single input point.</td><td>Same as touch.</td></tr>
+<tr><td>Supports direct manipulation of objects through gestures such as tapping, dragging, sliding, pinching, and rotating.</td><td>No support for direct manipulation as mouse, pen/stylus, and keyboard are indirect input devices.</td><td>Same as mouse.</td></tr>
 </tbody></table>
 
 
 
-**注:**  
-間接的な入力には、25 年以上の改良を経ているという利点があります。 ホバーすると表示されるヒントなどの機能は、タッチパッド、マウス、ペン/スタイラス、キーボード入力での UI の操作を解決するために特別に設計されています。 このような UI 機能は、他のデバイスのユーザー エクスペリエンスを損なうことなく、タッチ入力で充実したエクスペリエンスを提供するために再設計されました。
+**Note**  
+Indirect input has had the benefit of more than 25 years of refinement. Features such as hover-triggered tooltips have been designed to solve UI exploration specifically for touchpad, mouse, pen/stylus, and keyboard input. UI features like this have been re-designed for the rich experience provided by touch input, without compromising the user experience for these other devices.
 
- 
+ 
 
-## タッチのフィードバックの使用
+## Use touch feedback
 
-アプリの対話的操作中に視覚的なフィードバックが適切に表示されると、その対話的操作がアプリと Windows 8 の両方でどのように解釈されるかに関する認識、学習、適応に役立ちます。 視覚的なフィードバックの用途は、対話的操作の成功の表示、システム状態の中継、コントロール感の向上、エラーの低減、システムと入力デバイスに関するユーザーの理解の支援、対話的操作の促進などです。
+Appropriate visual feedback during interactions with your app helps users recognize, learn, and adapt to how their interactions are interpreted by both the app and Windows 8. Visual feedback can indicate successful interactions, relay system status, improve the sense of control, reduce errors, help users understand the system and input device, and encourage interaction.
 
-位置に基づく正確性が求められる操作をタッチ入力で行う場合は、視覚的なフィードバックが重要です。 タッチ入力が検出された場所に必ずフィードバックを表示して、アプリとそのコントロールで定義されたカスタム ターゲット設定規則をユーザーが把握できるようにします。
-
-
-## ターゲット設定
-
-ターゲット設定は、次の要素によって最適化します。
-
--   タッチ ターゲットのサイズ
-
-    明確なサイズのガイドラインによって、ターゲット設定しやすいオブジェクトとコントロールが含まれる快適な UI を備えたアプリになるようにします。
-
--   接触形状
-
-    指が接触する領域全体によって、意図された可能性が最も高いターゲット オブジェクトを特定します。
-
--   スクラブ
-
-    グループ内の項目 (ラジオ ボタンなど) 間で指をドラッグすると、それらの項目を簡単にターゲット設定し直すことができます。 指を離すと現在の項目がアクティブ化されます。
-
--   揺らす
-
-    密集した複数の項目 (ハイパーリンクなど) を指で押してスライドせずに前後に揺らすと、それらの項目を簡単にターゲット設定し直すことができます。 オクルージョンが原因で、現在の項目はヒントまたはステータス バーで特定され、指を離すとアクティブ化されます。
-
-## 正確性
-
-以下を使って、対話的操作が雑な場合に備えて設計します。
-
--   コンテンツの操作時に目的の位置で簡単に停止できるようにするスナップ位置。
--   手をわずかに曲げて動かした場合でも垂直方向または水平方向のパンを実行できる方向 "レール"。 詳しくは、「[パンのガイドライン](guidelines-for-panning.md)」をご覧ください。
-
-## オクルージョン
-
-指と手のオクルージョンは、次の要素によって回避します。
-
--   UI のサイズと配置
-
-    UI 要素を十分に大きくして、指先が接触する領域で完全にふさぐことができないようにします。
-
-    メニューとポップアップは、できる限り接触する領域の上に配置します。
-
--   ヒント
-
-    指がオブジェクトに接触し続けているときは、ヒントを表示します。 オブジェクトの機能について説明する場合に便利です。 ヒントが呼び出されないようにするには、ユーザーは指先をオブジェクトの外にドラッグします。
-
-    小さいオブジェクトの場合は、ヒントをずらして、指先が接触する領域でふさがれないようにします。 これはターゲット設定に役立ちます。
-
--   正確さを確保するためのハンドル
-
-    正確さが要求される場合 (テキスト選択など)、正確さを向上させるためにオフセットされる選択ハンドルを用意します。 詳しくは、「[テキストと画像の選択のガイドライン (Windows ランタイム アプリ)](guidelines-for-textselection.md)」をご覧ください。
-
-## タイミング
-
-直接操作を行うために、時間制限のあるモードの変更を避けます。 直接操作は、オブジェクトに対するリアルタイムで物理的な直接処理をシミュレートします。 オブジェクトは指の動きに合わせて反応します。
-
-一方、時間制限のある操作は、タッチ操作の後に発生します。 通常、時間制限のある操作では、時間、距離、速度などの見えないしきい値に基づいて実行するコマンドが決定されます。 システムで操作が実行されるまで、時間制限のある操作では視覚的なフィードバックは返されません。
-
-直接操作には、時間制限のある対話式操作と比べて、いくつかの利点があります。
-
--   対話式操作中に視覚的なフィードバックがすばやく返されるので、ユーザーはより集中して、すべてを制御しているという安心感を持って操作できます。
--   直接操作は元に戻すことができるので、安心してシステムを使うことができます。ユーザーは、論理的かつ直観的な方法で操作を簡単にさかのぼることができます。
--   オブジェクトに直接影響して実際の対話式操作を模倣する操作は、より直観的で見つけやすく覚えやすい対話式操作です。 わかりにくい抽象的な対話式操作には依存しません。
--   時間制限のある対話式操作は、任意の見えないしきい値に達する必要があるので、実行が難しい場合があります。
-
-また、次の点を考慮することを強くお勧めします。
-
--   操作は、使う指の数で区別しないでください。
--   複合操作をサポートしてください。 たとえば、ピンチによるズームを行いながら指をドラッグしてパンできるようにします。
--   対話式操作を時間で区別しないでください。 実行にかかる時間に関係なく、同じ対話式操作を行うと同じ結果が得られるようにします。 時間ベースのアクティブ化では、ユーザーは遅延を強いられるので、直接操作のイマーシブの特性が損なわれ、システムの応答性が低く感じられるようになります。
-
-    **注:**  ただし、特定の時間制限のある対話式操作を使って学習や調査に役立てる場合は例外です (長押しなど)。
-
-     
-
--   適切な説明と視覚的な合図を使うと、高度な対話式操作を非常に効果的に使用できます。
+Visual feedback is critical when the user relies on touch input for activities that require accuracy and precision based on location. Display feedback whenever and wherever touch input is detected, to help the user understand any custom targeting rules that are defined by your app and its controls.
 
 
-## <span id="App_views"></span><span id="app_views"></span><span id="APP_VIEWS"></span>アプリ ビュー
+## Targeting
+
+Targeting is optimized through:
+
+-   Touch target sizes
+
+    Clear size guidelines ensure that applications provide a comfortable UI that contains objects and controls that are easy and safe to target.
+
+-   Contact geometry
+
+    The entire contact area of the finger determines the most likely target object.
+
+-   Scrubbing
+
+    Items within a group are easily re-targeted by dragging the finger between them (for example, radio buttons). The current item is activated when the touch is released.
+
+-   Rocking
+
+    Densely packed items (for example, hyperlinks) are easily re-targeted by pressing the finger down and, without sliding, rocking it back and forth over the items. Due to occlusion, the current item is identified through a tooltip or the status bar and is activated when the touch is released.
+
+## Accuracy
+
+Design for sloppy interactions by using:
+
+-   Snap-points that can make it easier to stop at desired locations when users interact with content.
+-   Directional "rails" that can assist with vertical or horizontal panning, even when the hand moves in a slight arc. For more information, see [Guidelines for panning](guidelines-for-panning.md).
+
+## Occlusion
+
+Finger and hand occlusion is avoided through:
+
+-   Size and positioning of UI
+
+    Make UI elements big enough so that they cannot be completely covered by a fingertip contact area.
+
+    Position menus and pop-ups above the contact area whenever possible.
+
+-   Tooltips
+
+    Show tooltips when a user maintains finger contact on an object. This is useful for describing object functionality. The user can drag the fingertip off the object to avoid invoking the tooltip.
+
+    For small objects, offset tooltips so they are not covered by the fingertip contact area. This is helpful for targeting.
+
+-   Handles for precision
+
+    Where precision is required (for example, text selection), provide selection handles that are offset to improve accuracy. For more information, see [Guidelines for selecting text and images (Windows Runtime apps)](guidelines-for-textselection.md).
+
+## Timing
+
+Avoid timed mode changes in favor of direct manipulation. Direct manipulation simulates the direct, real-time physical handling of an object. The object responds as the fingers are moved.
+
+A timed interaction, on the other hand, occurs after a touch interaction. Timed interactions typically depend on invisible thresholds like time, distance, or speed to determine what command to perform. Timed interactions have no visual feedback until the system performs the action.
+
+Direct manipulation provides a number of benefits over timed interactions:
+
+-   Instant visual feedback during interactions make users feel more engaged, confident, and in control.
+-   Direct manipulations make it safer to explore a system because they are reversible—users can easily step back through their actions in a logical and intuitive manner.
+-   Interactions that directly affect objects and mimic real world interactions are more intuitive, discoverable, and memorable. They don't rely on obscure or abstract interactions.
+-   Timed interactions can be difficult to perform, as users must reach arbitrary and invisible thresholds.
+
+In addition, the following are strongly recommended:
+
+-   Manipulations should not be distinguished by the number of fingers used.
+-   Interactions should support compound manipulations. For example, pinch to zoom while dragging the fingers to pan.
+-   Interactions should not be distinguished by time. The same interaction should have the same outcome regardless of the time taken to perform it. Time-based activations introduce mandatory delays for users and detract from both the immersive nature of direct manipulation and the perception of system responsiveness.
+
+    **Note**  An exception to this is where you use specific timed interactions to assist in learning and exploration (for example, press and hold).
+
+     
+
+-   Appropriate descriptions and visual cues have a great effect on the use of advanced interactions.
 
 
-アプリのビューのパン/スクロールとズームの設定を使って、ユーザー操作エクスペリエンスを調整します。 アプリ ビューによって、ユーザーがアプリとそのコンテンツにアクセスして操作する方法が決まります。 ビューは、慣性、コンテンツ境界の跳ね返り、スナップ位置などの動作も提供します。
-
-[
-            **ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) コントロールのパンとスクロールの設定により、ビューのコンテンツがビューポートに収まらない場合に、単一のビュー内でユーザーがどのように移動するかが決まります。 単一のビューは、たとえば雑誌や本のページ、コンピューターのフォルダー構造、ドキュメントのライブラリ、フォト アルバムなどです。
-
-ズームの設定は、光学式ズーム ([**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) コントロールによってサポートされる) と [**Semantic Zoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) コントロールの両方に適用されます。 セマンティック ズームは、タッチに最適化された手法の 1 つであり、関連する大量のデータやコンテンツを 1 つのビュー内に表示してナビゲートします。 この機能では、2 つの分類モード (ズーム レベル) が使われます。 これは、1 つのビュー内でのパンとスクロールに似ています。 パンとスクロールは、セマンティック ズームと組み合わせて使うことができます。
-
-パン/スクロールとズーム動作を変更するには、アプリのビューとイベントを使います。 こうすることで、ポインターとジェスチャ イベントを処理する場合よりもスムーズな操作エクスペリエンスを提供できます。
-
-アプリ ビューについて詳しくは、「[コントロール、レイアウト、テキスト](https://msdn.microsoft.com/library/windows/apps/mt228348)」をご覧ください。
-
-## <span id="intro_to_touch_input"></span><span id="INTRO_TO_TOUCH_INPUT"></span>カスタム タッチ操作
+## <span id="App_views"></span><span id="app_views"></span><span id="APP_VIEWS"></span>App views
 
 
-独自の対話式操作サポートを実装する場合は、ユーザーはアプリの UI 要素を直接操作できる直感的なエクスペリエンスを期待しているということを心に留めておいてください。 プラットフォーム コントロール ライブラリでカスタムの対話式操作をモデル化し、一貫性と見つけやすさを維持することをお勧めします。 これらのライブラリのコントロールでは、標準的な対話式操作、アニメーション化された物理的効果、視覚的フィードバック、アクセシビリティなど、完全なユーザー操作エクスペリエンスが提供されます。 はっきりとした明確に定義されている要件があり、基本的な対話式操作ではシナリオがサポートされない場合のみ、カスタムの対話式操作を作ってください。
+Tweak the user interaction experience through the pan/scroll and zoom settings of your app views. An app view dictates how a user accesses and manipulates your app and its content. Views also provide behaviors such as inertia, content boundary bounce, and snap points.
 
-カスタマイズされたタッチ サポートを提供するために、さまざまな [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) イベントを処理できます。 これらのイベントは、次の 3 つのレベルのアブストラクションにグループ化されます。
+Pan and scroll settings of the [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) control dictate how users navigate within a single view, when the content of the view doesn't fit within the viewport. A single view can be, for example, a page of a magazine or book, the folder structure of a computer, a library of documents, or a photo album.
 
--   静的ジェスチャ イベントは、対話式操作が完了した後に発生します。 ジェスチャ イベントには、[**Tapped**](https://msdn.microsoft.com/library/windows/apps/br208985)、[**DoubleTapped**](https://msdn.microsoft.com/library/windows/apps/br208922)、[**RightTapped**](https://msdn.microsoft.com/library/windows/apps/br208984)、[**Holding**](https://msdn.microsoft.com/library/windows/apps/br208928) があります。
+Zoom settings apply to both optical zoom (supported by the [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) control) and the [**Semantic Zoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) control. Semantic Zoom is a touch-optimized technique for presenting and navigating large sets of related data or content within a single view. It works by using two distinct modes of classification, or zoom levels. This is analogous to panning and scrolling within a single view. Panning and scrolling can be used in conjunction with Semantic Zoom.
 
-    [
-            **IsTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208939)、[**IsDoubleTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208931)、[**IsRightTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208937)、[**IsHoldingEnabled**](https://msdn.microsoft.com/library/windows/apps/br208935) を **false** に設定して、これらのジェスチャ イベントを無効にすることもできます。
+Use app views and events to modify the pan/scroll and zoom behaviors. This can provide a smoother interaction experience than is possible through the handling of pointer and gesture events.
 
--   [
-            **PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) や [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970) などのポインター イベントは、ポインター モーションや、押すイベントと離すイベントの識別機能などの下位レベルの詳細を提供します。
+For more info about app views, see [Controls, layouts, and text](https://msdn.microsoft.com/library/windows/apps/mt228348).
 
-    ポインターは、統合イベント メカニズムを持つ一般的な入力の種類です。 アクティブな入力ソース (タッチ、タッチパッド、マウス、またはペン) についての画面位置などの基本的な情報を公開します。
+## <span id="intro_to_touch_input"></span><span id="INTRO_TO_TOUCH_INPUT"></span>Custom touch interactions
 
--   [
-            **ManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/br208950) などの操作ジェスチャ イベントは継続的な対話式操作を示します。 操作ジェスチャ イベントはユーザーが要素にタッチしたときに発生し、ユーザーが指を離すか操作が取り消されるまで続きます。
 
-    操作イベントには、ズーム、パン、回転などのマルチタッチ操作や、ドラッグなどの慣性と速度データを使った操作の場合は、操作イベントを使います。 操作イベントで提供される情報は、実行された操作のフォームを識別するのではなく、位置、変換デルタ、速度などのタッチ データを含みます。 このタッチ データを使って、実行された操作の種類を確認できます。
+If you implement your own interaction support, keep in mind that users expect an intuitive experience involving direct interaction with the UI elements in your app. We recommend that you model your custom interactions on the platform control libraries to keep things consistent and discoverable. The controls in these libraries provide the full user interaction experience, including standard interactions, animated physics effects, visual feedback, and accessibility. Create custom interactions only if there is a clear, well-defined requirement and basic interactions don't support your scenario.
 
-UWP でサポートされている基本的なタッチ ジェスチャのセットを以下に示します。
+To provide customized touch support, you can handle various [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) events. These events are grouped into three levels of abstraction.
 
-| 名前           | 種類                 | 説明                                                                            |
+-   Static gesture events are triggered after an interaction is complete. Gesture events include [**Tapped**](https://msdn.microsoft.com/library/windows/apps/br208985), [**DoubleTapped**](https://msdn.microsoft.com/library/windows/apps/br208922), [**RightTapped**](https://msdn.microsoft.com/library/windows/apps/br208984), and [**Holding**](https://msdn.microsoft.com/library/windows/apps/br208928).
+
+    You can disable gesture events on specific elements by setting [**IsTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208939), [**IsDoubleTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208931), [**IsRightTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208937), and [**IsHoldingEnabled**](https://msdn.microsoft.com/library/windows/apps/br208935) to **false**.
+
+-   Pointer events such as [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) and [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970) provide low-level details for each touch contact, including pointer motion and the ability to distinguish press and release events.
+
+    A pointer is a generic input type with a unified event mechanism. It exposes basic info, such as screen position, on the active input source, which can be touch, touchpad, mouse, or pen.
+
+-   Manipulation gesture events, such as [**ManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/br208950), indicate an ongoing interaction. They start firing when the user touches an element and continue until the user lifts their finger(s), or the manipulation is canceled.
+
+    Manipulation events include multi-touch interactions such as zooming, panning, or rotating, and interactions that use inertia and velocity data such as dragging. The information provided by the manipulation events doesn't identify the form of the interaction that was performed, but rather includes data such as position, translation delta, and velocity. You can use this touch data to determine the type of interaction that should be performed.
+
+Here is the basic set of touch gestures supported by the UWP.
+
+| Name           | Type                 | Description                                                                            |
 |----------------|----------------------|----------------------------------------------------------------------------------------|
-| タップ            | 静的ジェスチャ       | 1 本の指で画面をタッチし、その指を上げます。                                            |
-| 長押し | 静的ジェスチャ       | 1 本の指で画面をタッチし、そのまま押し続けます。                                      |
-| スライド          | 操作ジェスチャ | 1 本または複数の指で画面をタッチし、同じ方向に動かします。                   |
-| スワイプ          | 操作ジェスチャ | 1 本または複数の指で画面をタッチし、同じ方向に少しだけ動かします。  |
-| 回転           | 操作ジェスチャ | 2 本以上の指で画面をタッチし、時計回りまたは反時計回りに動かします。 |
-| ピンチ          | 操作ジェスチャ | 2 本以上の指で画面をタッチし、それらの指を近づけていきます。                         |
-| ストレッチ        | 操作ジェスチャ | 2 本以上の指で画面をタッチし、それらの指を離していきます。                           |
+| Tap            | Static gesture       | One finger touches the screen and lifts up.                                            |
+| Press and hold | Static gesture       | One finger touches the screen and stays in place.                                      |
+| Slide          | Manipulation gesture | One or more fingers touch the screen and move in the same direction.                   |
+| Swipe          | Manipulation gesture | One or more fingers touch the screen and move a short distance in the same direction.  |
+| Turn           | Manipulation gesture | Two or more fingers touch the screen and move in a clockwise or counter-clockwise arc. |
+| Pinch          | Manipulation gesture | Two or more fingers touch the screen and move closer together.                         |
+| Stretch        | Manipulation gesture | Two or more fingers touch the screen and move farther apart.                           |
 
- 
+ 
 
 <!-- mijacobs: Removing for now. We don't have a real page to link to yet. 
 For more info about gestures, manipulations, and interactions, see [Custom user interactions](custom-user-input-portal.md).
 -->
 
-## <span id="gestures"></span><span id="GESTURES"></span>ジェスチャ イベント
+## <span id="gestures"></span><span id="GESTURES"></span>Gesture events
 
 
-個々のコントロールについて詳しくは、「[コントロールの一覧](https://msdn.microsoft.com/library/windows/apps/mt185406)」をご覧ください。
+For details about individual controls, see [Controls list](https://msdn.microsoft.com/library/windows/apps/mt185406).
 
-## <span id="using_pointer_events"></span><span id="USING_POINTER_EVENTS"></span>ポインター イベント
+## <span id="using_pointer_events"></span><span id="USING_POINTER_EVENTS"></span>Pointer events
 
 
-ポインター イベントは、タッチ、タッチパッド、ペン、マウスなど、さまざまなアクティブな入力ソースによって生成されます (従来のマウス イベントに代わるものです)。
+Pointer events are raised by a variety of active input sources, including touch, touchpad, pen, and mouse (they replace traditional mouse events.)
 
-ポインター イベントは、単一の入力ポイント (指、ペンの先端、マウス カーソル) に基づき、速度ベースの操作をサポートしません。
+Pointer events are based on a single input point (finger, pen tip, mouse cursor) and do not support velocity-based interactions.
 
-ポインター イベントと、関連するイベント引数の一覧を示します。
+Here is a list of pointer events and their related event argument.
 
-| イベント/クラス                                                       | 説明                                                   |
+| Event or class                                                       | Description                                                   |
 |----------------------------------------------------------------------|---------------------------------------------------------------|
-| [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971)             | 1 本の指で画面をタッチしたときに発生します。               |
-| [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972)           | その同じタッチによる接触が離れたときに発生します。                |
-| [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970)                 | 画面上でポインターがドラッグされたときに発生します。         |
-| [**PointerEntered**](https://msdn.microsoft.com/library/windows/apps/br208968)             | ポインターが要素のヒット テスト領域内に入ったときに発生します。 |
-| [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969)               | ポインターが要素のヒット テスト領域から出たときに発生します。  |
-| [**PointerCanceled**](https://msdn.microsoft.com/library/windows/apps/br208964)           | タッチによる接触が異常に失われたときに発生します。               |
-| [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965)     | 別の要素でポインター キャプチャが行われたときに発生します。    |
-| [**PointerWheelChanged**](https://msdn.microsoft.com/library/windows/apps/br208973)   | マウス ホイールのデルタ値が変化すると発生します。         |
-| [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) | すべてのポインター イベントのデータを提供します。                         |
+| [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971)             | Occurs when a single finger touches the screen.               |
+| [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972)           | Occurs when that same touch contact is lifted.                |
+| [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970)                 | Occurs when the pointer is dragged across the screen.         |
+| [**PointerEntered**](https://msdn.microsoft.com/library/windows/apps/br208968)             | Occurs when a pointer enters the hit test area of an element. |
+| [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969)               | Occurs when a pointer exits the hit test area of an element.  |
+| [**PointerCanceled**](https://msdn.microsoft.com/library/windows/apps/br208964)           | Occurs when a touch contact is abnormally lost.               |
+| [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965)     | Occurs when a pointer capture is taken by another element.    |
+| [**PointerWheelChanged**](https://msdn.microsoft.com/library/windows/apps/br208973)   | Occurs when the delta value of a mouse wheel changes.         |
+| [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) | Provides data for all pointer events.                         |
 
- 
+ 
 
-次の例に、[**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971)、[**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972)、[**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) の各イベントを使って [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) オブジェクトに対するタップ操作を処理する方法を示します。
+The following example shows how to use the [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971), [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972), and [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) events to handle a tap interaction on a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) object.
 
-最初に、XAML (Extensible Application Markup Language) で、`touchRectangle` という名前の [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) コントロールが作成されます。
+First, a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) named `touchRectangle` is created in Extensible Application Markup Language (XAML).
 
 ```XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -264,7 +259,7 @@ For more info about gestures, manipulations, and interactions, see [Custom user 
 </Grid>
 ```
 
-次に、[**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971)、[**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972)、[**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) の各イベントのリスナーが指定されます。
+Next, listeners for the [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971), [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972), and [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) events are specified.
 
 ```ManagedCPlusPlus
 MainPage::MainPage()
@@ -304,7 +299,7 @@ Public Sub New()
 End Sub
 ```
 
-最後に、[**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) イベント ハンドラーが [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) の [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) と [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) を大きくし、[**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) と [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) の各イベント ハンドラーは **Height** と **Width** を開始値に戻します。
+Finally, the [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) event handler increases the [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) and [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) of the [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371), while the [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) and [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) event handlers set the **Height** and **Width** back to their starting values.
 
 ```ManagedCPlusPlus
 // Handler for pointer exited event.
@@ -425,48 +420,42 @@ Private Sub touchRectangle_PointerPressed(sender As Object, e As PointerRoutedEv
 End Sub
 ```
 
-## <span id="using_manipulation_events"></span><span id="USING_MANIPULATION_EVENTS"></span>操作イベント
+## <span id="using_manipulation_events"></span><span id="USING_MANIPULATION_EVENTS"></span>Manipulation events
 
 
-アプリで複数の指を使った操作や速度データを必要とする操作をサポートする必要がある場合は、操作イベントを使います。
+Use manipulation events if you need to support multiple finger interactions in your app, or interactions that require velocity data.
 
-操作イベントを使うと、ドラッグ、ズーム、長押しなどの操作を検出できます。
+You can use manipulation events to detect interactions such as drag, zoom, and hold.
 
-操作イベントと、関連するイベント引数の一覧を示します。
+Here is a list of manipulation events and related event arguments.
 
-| イベント/クラス                                                                                               | 説明                                                                                                                               |
+| Event or class                                                                                               | Description                                                                                                                               |
 |--------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| [**ManipulationStarting イベント**](https://msdn.microsoft.com/library/windows/apps/br208951)                                   | 操作プロセッサが最初に作成されると発生します。                                                                                  |
-| [**ManipulationStarted イベント**](https://msdn.microsoft.com/library/windows/apps/br208950)                                     | 入力デバイスが [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) に対する操作を開始すると発生します。                                            |
-| [**ManipulationDelta イベント**](https://msdn.microsoft.com/library/windows/apps/br208946)                                         | 入力デバイスが操作中に位置を変更すると発生します。                                                                      |
-| [**ManipulationInertiaStarting イベント**](https://msdn.microsoft.com/library/windows/apps/hh702425)                | 操作中に入力デバイスが [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) オブジェクトとのコンタクトを失ったときと慣性が開始したときに発生します。 |
-| [**ManipulationCompleted イベント**](https://msdn.microsoft.com/library/windows/apps/br208945)                                 | [
-            **UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) に対する操作と慣性が完了すると発生します。                                          |
-| [**ManipulationStartingRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702132)               | [
-            **ManipulationStarting**](https://msdn.microsoft.com/library/windows/apps/br208951) イベントのデータを指定します。                                         |
-| [**ManipulationStartedRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702101)                 | [
-            **ManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/br208950) イベントのデータを指定します。                                           |
-| [**ManipulationDeltaRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702051)                     | [
-            **ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) イベントのデータを指定します。                                               |
-| [**ManipulationInertiaStartingRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702074) | [
-            **ManipulationInertiaStarting**](https://msdn.microsoft.com/library/windows/apps/br208947) イベントのデータを指定します。                           |
-| [**ManipulationVelocities**](https://msdn.microsoft.com/library/windows/apps/br242032)                                              | 操作の実行速度を指定します。                                                                                         |
-| [**ManipulationCompletedRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702035)             | [
-            **ManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/br208945) イベントのデータを指定します。                                       |
+| [**ManipulationStarting event**](https://msdn.microsoft.com/library/windows/apps/br208951)                                   | Occurs when the manipulation processor is first created.                                                                                  |
+| [**ManipulationStarted event**](https://msdn.microsoft.com/library/windows/apps/br208950)                                     | Occurs when an input device begins a manipulation on the [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911).                                            |
+| [**ManipulationDelta event**](https://msdn.microsoft.com/library/windows/apps/br208946)                                         | Occurs when the input device changes position during a manipulation.                                                                      |
+| [**ManipulationInertiaStarting event**](https://msdn.microsoft.com/library/windows/apps/hh702425)                | Occurs when the input device loses contact with the [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) object during a manipulation and inertia begins. |
+| [**ManipulationCompleted event**](https://msdn.microsoft.com/library/windows/apps/br208945)                                 | Occurs when a manipulation and inertia on the [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) are complete.                                          |
+| [**ManipulationStartingRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702132)               | Provides data for the [**ManipulationStarting**](https://msdn.microsoft.com/library/windows/apps/br208951) event.                                         |
+| [**ManipulationStartedRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702101)                 | Provides data for the [**ManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/br208950) event.                                           |
+| [**ManipulationDeltaRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702051)                     | Provides data for the [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) event.                                               |
+| [**ManipulationInertiaStartingRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702074) | Provides data for the [**ManipulationInertiaStarting**](https://msdn.microsoft.com/library/windows/apps/br208947) event.                           |
+| [**ManipulationVelocities**](https://msdn.microsoft.com/library/windows/apps/br242032)                                              | Describes the speed at which manipulations occur.                                                                                         |
+| [**ManipulationCompletedRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702035)             | Provides data for the [**ManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/br208945) event.                                       |
 
- 
+ 
 
-ジェスチャは、一連の操作イベントで構成されます。 ユーザーが画面をタッチしたときなど、各ジェスチャは [**ManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/br208950) イベントから始まります。
+A gesture consists of a series of manipulation events. Each gesture starts with a [**ManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/br208950) event, such as when a user touches the screen.
 
-次に、1 つ以上の [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) イベントが発生します。 たとえば、画面をタッチして画面上で指をドラッグした場合です。 最後に、対話的操作が完了すると [**ManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/br208945) イベントが発生します。
+Next, one or more [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) events are fired. For example, if you touch the screen and then drag your finger across the screen. Finally, a [**ManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/br208945) event is raised when the interaction finishes.
 
-**注**  タッチ画面モニターがない場合は、シミュレーターでマウスとマウス ホイール インターフェイスを使って操作イベント コードをテストできます。
+**Note**  If you don't have a touch-screen monitor, you can test your manipulation event code in the simulator using a mouse and mouse wheel interface.
 
- 
+ 
 
-次の例に、[**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) イベントを使って、[**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) に対するスライド操作を処理し、画面上でオブジェクトを移動する方法を示します。
+The following example shows how to use the [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) events to handle a slide interaction on a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) and move it across the screen.
 
-まず、XAML で [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) と [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) が 200 の `touchRectangle` という名前の [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) を作成します。
+First, a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) named `touchRectangle` is created in XAML with a [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) and [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) of 200.
 
 ```XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -492,8 +481,7 @@ End Sub
 </Grid>
 ```
 
-次に、[**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) を移動するための `dragTranslation` という名前のグローバルな [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/br243027) を作成します。 [
-            **Rectangle** で **ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) イベント リスナーが指定され、`dragTranslation` が [**Rectangle** の **RenderTransform**](https://msdn.microsoft.com/library/windows/apps/br208980) に追加されます。
+Next, a global [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/br243027) named `dragTranslation` is created for translating the [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371). A [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) event listener is specified on the **Rectangle**, and `dragTranslation` is added to the [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/br208980) of the **Rectangle**.
 
 ```ManagedCPlusPlus
 // Global translation transform used for changing the position of 
@@ -564,7 +552,7 @@ Public Sub New()
 End Sub
 ```
 
-最後に、[**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) イベント ハンドラーで、[**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/br243027) を [**Delta**](https://msdn.microsoft.com/library/windows/apps/hh702058) プロパティで使って [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) の位置を更新します。
+Finally, in the [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) event handler, the position of the [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) is updated by using the [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/br243027) on the [**Delta**](https://msdn.microsoft.com/library/windows/apps/hh702058) property.
 
 ```ManagedCPlusPlus
 // Handler for the ManipulationDelta event.
@@ -608,47 +596,41 @@ Private Sub testRectangle_ManipulationDelta(
 End Sub
 ```
 
-## <span id="Routed_events"></span><span id="routed_events"></span><span id="ROUTED_EVENTS"></span>ルーティング イベント
+## <span id="Routed_events"></span><span id="routed_events"></span><span id="ROUTED_EVENTS"></span>Routed events
 
 
-ここに記載されたポインター イベント、ジェスチャ イベント、操作イベントはすべて、*ルーティング イベント*として実装されます。 つまりこのイベントは、最初にイベントを発生したオブジェクト以外のオブジェクトによって処理される可能性があります。 [
-            **UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) の親コンテナーや、アプリのルート [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) などのオブジェクト ツリーの一連の親は、元の要素が存在しなくても、これらのイベントを処理することを選択できます。 逆に、イベントを処理するどのオブジェクトも、親要素に達しないように、処理済みイベントをマークできます。 ルーティング イベントの概念について、およびそれがルーティング イベントのハンドラーの記述方法にどのように影響するかについて詳しくは、「[イベントとルーティング イベントの概要](https://msdn.microsoft.com/library/windows/apps/hh758286)」をご覧ください。
+All of the pointer events, gesture events and manipulation events mentioned here are implemented as *routed events*. This means that the event can potentially be handled by objects other than the one that originally raised the event. Successive parents in an object tree, such as the parent containers of a [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) or the root [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) of your app, can choose to handle these events even if the original element does not. Conversely, any object that does handle the event can mark the event handled so that it no longer reaches any parent element. For more info about the routed event concept and how it affects how you write handlers for routed events, see [Events and routed events overview](https://msdn.microsoft.com/library/windows/apps/hh758286).
 
-## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>推奨と非推奨
-
-
--   期待される主な入力方法としてタッチ操作を使うアプリを設計します。
--   あらゆる種類 (タッチ、ペン、スタイラス、マウスなど) の操作に対する視覚的なフィードバックを提供します。
--   タッチ ターゲットのサイズ、接触形状、スクラブ、揺らす操作を調整してターゲット設定を最適化します。
--   スナップ位置と方向 "レール" を使って精度を最適化します。
--   密集した UI 項目のタッチの精度を高めるためにヒントとハンドルを用意します。
--   できるだけ時間制限のある操作を使わないようにします (適切な使用例: 長押し)。
--   できる限り、操作の区別に使われた数の指は使わないようにします。
+## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>Dos and don'ts
 
 
-## <span id="related_topics"></span>関連記事
-
-* [ポインター入力の処理](handle-pointer-input.md)
-* [入力デバイスの識別](identify-input-devices.md)
-**サンプル**
-* [基本的な入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [待機時間が短い入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [ユーザー操作モードのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [フォーカスの視覚効果のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619895)
-**サンプルのアーカイブ**
-* [入力: デバイス機能のサンプル](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [入力: XAML ユーザー入力イベントのサンプル](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [XAML のスクロール、パン、ズームのサンプル](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [入力: GestureRecognizer によるジェスチャと操作](http://go.microsoft.com/fwlink/p/?LinkID=231605)
- 
-
- 
+-   Design applications with touch interaction as the primary expected input method.
+-   Provide visual feedback for interactions of all types (touch, pen, stylus, mouse, etc.)
+-   Optimize targeting by adjusting touch target size, contact geometry, scrubbing and rocking.
+-   Optimize accuracy through the use of snap points and directional "rails".
+-   Provide tooltips and handles to help improve touch accuracy for tightly packed UI items.
+-   Don't use timed interactions whenever possible (example of appropriate use: touch and hold).
+-   Don't use the number of fingers used to distinguish the manipulation whenever possible.
 
 
+## <span id="related_topics"></span>Related articles
+
+* [Handle pointer input](handle-pointer-input.md)
+* [Identify input devices](identify-input-devices.md)
+**Samples**
+* [Basic input sample](http://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [Low latency input sample](http://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [User interaction mode sample](http://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [Focus visuals sample](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+**Archive Samples**
+* [Input: Device capabilities sample](http://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Input: XAML user input events sample](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [XAML scrolling, panning, and zooming sample](http://go.microsoft.com/fwlink/p/?linkid=251717)
+* [Input: Gestures and manipulations with GestureRecognizer](http://go.microsoft.com/fwlink/p/?LinkID=231605)
+ 
+
+ 
 
 
-
-
-<!--HONumber=Mar16_HO1-->
 
 

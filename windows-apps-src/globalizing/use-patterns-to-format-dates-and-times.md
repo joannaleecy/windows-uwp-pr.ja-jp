@@ -1,41 +1,41 @@
 ---
-Description: Windows.Globalization.DateTimeFormatting API でカスタム パターンを使うと、日付と時刻を必要な形式で表示することができます。
-title: パターンを使った日付と時刻の書式設定
+author: DelfCo
+Description: Use the Windows.Globalization.DateTimeFormatting API with custom patterns to display dates and times in exactly the format you wish.
+title: Use patterns to format dates and times
 ms.assetid: 012028B3-9DA2-4E72-8C0E-3E06BEC3B3FE
-label: パターンを使った日付と時刻の書式設定
+label: Use patterns to format dates and times
 template: detail.hbs
 ---
 
-# パターンを使った日付と時刻の書式設定
+# Use patterns to format dates and times
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-**重要な API**
+
+**Important APIs**
 
 -   [**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)
 -   [**DateTimeFormatter**](https://msdn.microsoft.com/library/windows/apps/br206828)
 -   [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576)
 
-[
-            **Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859) API でカスタム パターンを使うと、日付と時刻を必要な形式で表示することができます。
+Use the [**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859) API with custom patterns to display dates and times in exactly the format you wish.
 
-## <span id="Introduction"></span><span id="introduction"></span><span id="INTRODUCTION"></span>概要
-
-
-[**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859) では、世界中の言語と地域に対応するように、日付と時刻をさまざまな方法で適切に書式設定できます。 年、月、日などの標準的な形式を使うことも、"longdate" や "month day" などの標準の文字列テンプレートを使うこともできます。
-
-ただし、表示する [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576) 文字列の構成要素の順序や形式をより細かく制御する場合は、"パターン" と呼ばれる文字列テンプレート パラメーター用の特別な構文を使うことができます。 パターン構文を使うと、任意に選んだカスタム形式で表示するために、**DateTime** オブジェクトの個々の構成要素を取得できます (たとえば、月の名称のみを取得したり、年の値のみを取得したりすることができます)。 さらに、パターンをローカライズして、他の言語や地域に対応させることができます。
-
-**注**  ここで説明しているのは、書式パターンの概要です。 書式テンプレートと書式パターンについて詳しくは、[**DateTimeFormatter**](https://msdn.microsoft.com/library/windows/apps/br206828) クラスの「解説」セクションをご覧ください。
-
- 
-
-## <span id="What_you_need_to_know"></span><span id="what_you_need_to_know"></span><span id="WHAT_YOU_NEED_TO_KNOW"></span>理解しておく必要があること
+## <span id="Introduction"></span><span id="introduction"></span><span id="INTRODUCTION"></span>Introduction
 
 
-パターンを使うときは、すべてのカルチャに対して有効であるとは限らないカスタム形式を構築するという点に注意してください。 たとえば、"month day" テンプレートについて考えてみます。
+[**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859) provides various ways to properly format dates and times for languages and regions around the world. You can use standard formats for year, month, day, and so on, or you can use standard string templates, such as "longdate" or "month day".
+
+But when you want more control over the order and format of the constituents of the [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576) string you wish to display, you can use a special syntax for the string template parameter, called a "pattern". The pattern syntax allows you to obtain individual constituents of a **DateTime** object—just the month name, or just the year value, for example—in order to display them in whatever custom format you choose. Furthermore, the pattern can be localized to adapt to other languages and regions.
+
+**Note**  This is an overview of format patterns. For a more complete discussion of format templates and format patterns see the Remarks section of the [**DateTimeFormatter**](https://msdn.microsoft.com/library/windows/apps/br206828) class.
+
+ 
+
+## <span id="What_you_need_to_know"></span><span id="what_you_need_to_know"></span><span id="WHAT_YOU_NEED_TO_KNOW"></span>What you need to know
+
+
+It's important to note that when you use patterns, you are building a custom format that is not guaranteed to be valid across cultures. For example, consider the "month day" template:
 
 **C#**
 ```CSharp
@@ -46,7 +46,7 @@ var datefmt = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("mo
 var datefmt = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("month day");
 ```
 
-これにより、現在のコンテキストの言語や地域の値に基づいてフォーマッタが作成されます。 そのために、常に、適切なグローバル形式で月と日が一緒に表示されます。 たとえば、英語 (米国) の場合は "January 1"、フランス語 (フランス) の場合は "1 janvier"、日本語の場合は "1 月 1 日" と表示されます。 これは、テンプレートがパターン プロパティを使ってアクセスできるカルチャ固有のパターン文字列に基づいているためです。
+This creates a formatter based on the language and region value of the current context. Therefore, it always displays the month and day together in an appropriate global format. For example, it displays "January 1" for English (US), but "1 janvier" for French (France) and "1月1日" for Japanese. That is because the template is based on a culture-specific pattern string, which can be accessed via the pattern property:
 
 **C#**
 ```CSharp
@@ -57,7 +57,7 @@ var monthdaypattern = datefmt.Patterns;
 var monthdaypattern = datefmt.patterns;
 ```
 
-これにより、フォーマッタの言語と地域に応じて異なる結果が返されます。 さまざまな地域で、順序の違いや文字とスペースの追加の有無など、それぞれ異なる構成要素が使われる場合があります。
+This yields different results depending on the language and region of the formatter. Note that different regions may use different constituents, in different orders, with or without additional characters and spacing:
 
 ``` syntax
 En-US: "{month.full} {day.integer}"
@@ -65,7 +65,7 @@ Fr-FR: "{day.integer} {month.full}"
 Ja-JP: "{month.integer}月{day.integer}日"
 ```
 
-パターンを使ってカスタムの [**DateTimeFormatter**](https://msdn.microsoft.com/library/windows/apps/br206828) を構築することができます。たとえば、この例は米国英語のパターンに基づいています。
+You can use patterns to construct a custom [**DateTimeFormatter**](https://msdn.microsoft.com/library/windows/apps/br206828), for instance this one based on the US English pattern:
 
 **C#**
 ```CSharp
@@ -76,7 +76,7 @@ var datefmt = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("{m
 var datefmt = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("{month.full} {day.integer}");
 ```
 
-Windows では、中かっこ {{}} 内の個々の構成要素についてカルチャ固有の値が返されます。 ただし、パターン構文を使った場合、構成要素の順序は不変です。 要求どおりのものが得られても、それがカルチャに適していない場合があります。
+Windows returns culture-specific values for the individual constituents inside the brackets {}. But with the pattern syntax, the constituent order is invariant. You get precisely what you ask for, which may not be culturally appropriate:
 
 ``` syntax
 En-US: January 1
@@ -84,41 +84,41 @@ Fr-FR: janvier 1 (inappropriate for France; non-standard order)
 Ja-JP: 1月1 (inappropriate for Japan; the day symbol is missing)
 ```
 
-さらに、パターンは時間が経過しても一貫性が維持されるとは限りません。 国や地域で暦体系が変更されると、それに伴い書式テンプレートが変わる場合があります。 Windows では、このような変更に合わせてフォーマッタの出力を更新します。 したがって、次のような場合、[**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576) を書式設定するために必要な操作は、パターン構文を使うことだけです。
+Furthermore, patterns are not guaranteed to remain consistent over time. Countries or regions may change their calendar systems, which alters a format template. Windows updates the output of the formatters to accommodate such changes. Therefore, you should only use the pattern syntax for formatting [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576)s when:
 
--   書式設定の特定の出力に依存していない。
--   カルチャ固有の標準に従うための書式設定を必要としない。
--   すべてのカルチャにわたってパターンが不変であることを特に意図している。
--   パターンのローカライズを意図している。
+-   You are not dependent on a particular output for a format.
+-   You do not need the format to follow some culture-specific standard.
+-   You specifically intend the pattern to be invariant across cultures.
+-   You intend to localize the pattern.
 
-標準の文字列テンプレートと標準以外の文字列パターンとの間の相違のまとめ
+To summarize the differences between the standard string templates and non-standard string patterns:
 
-**"month day" などの文字列テンプレート:**
+**String templates, such as "month day":**
 
--   月と日の値を含み、ある一定の順序を備えた [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576) 形式の抽象化された表現です。
--   Windows でサポートされているすべての言語と地域にわたって有効な標準の形式を必ず返します。
--   特定の言語と地域のカルチャに適するように書式設定された文字列を必ず提供します。
--   構成要素のすべての組み合わせが有効であるとは限りません。 たとえば、"dayofweek day" に対応する文字列テンプレートはありません。
+-   Abstracted representation of a [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576) format that includes values for the month and the day, in some order.
+-   Guaranteed to return a valid standard format across all language-region values supported by Windows.
+-   Guaranteed to give you a culturally-appropriate formatted string for the given language-region.
+-   Not all combinations of constituents are valid. For example, there is no string template for "dayofweek day".
 
-**"{{month.full}} {{day.integer}}" などの文字列パターン:**
+**String patterns, such as "{month.full} {day.integer}":**
 
--   月の完全な名前の後にスペースが挿入され、その後に日付の整数が続く、特定の順序の明示的に指定された文字列です。
--   任意の言語と地域のペアについて有効な標準の形式に対応しない場合があります。
--   カルチャに適するとは限りません。
--   任意の順序の構成要素のあらゆる組み合わせを指定できます。
+-   Explicitly ordered string that expresses the full month name, followed by a space, followed by the day integer, in that order.
+-   May not correspond to a valid standard format for any language-region pair.
+-   Not guaranteed to be culturally appropriate.
+-   Any combination of constituents may be specified, in any order.
 
-## <span id="Tasks"></span><span id="tasks"></span><span id="TASKS"></span>処理手順
+## <span id="Tasks"></span><span id="tasks"></span><span id="TASKS"></span>Tasks
 
 
-現在の月と日を特定の形式で現在時刻と一緒に表示するとします。 たとえば、米国英語のユーザーに次のように表示する必要があるとします。
+Suppose you wish to display the current month and day together with the current time, in a specific format. For example, you would like US English users to see something like this:
 
 ``` syntax
 June 25 | 1:38 PM
 ```
 
-日付の部分は "month day" テンプレートに対応し、時刻の部分は "hour minute" テンプレートに対応します。 そのため、これらのテンプレートを構成するパターンを連結したカスタム形式を作ることができます。
+The date part corresponds to the "month day" template, and the time part corresponds to the "hour minute" template. So, you can create a custom format that concatenates the patterns which make up those templates.
 
-まず、関連する日付のテンプレートと時刻のテンプレートのフォーマッタを取得してから、これらのテンプレートのパターンを取得します。
+First, get the formatters for the relevant date and time templates, and then get the patterns of those templates:
 
 **C#**
 ```CSharp
@@ -142,7 +142,7 @@ var mydatepattern = mydate.patterns[0];
 var mytimepattern = mytime.patterns[0];
 ```
 
-カスタム形式は、ローカライズ可能なリソース文字列として保存する必要があります。 たとえば、英語 (米国) の場合の文字列は "{{date}} | {{time}}" となります。 ローカライズ担当者は、必要に応じてこの文字列を調整することができます。 たとえば、時刻を日付より前に配置する方が一部の言語や地域では自然であると思われる場合は、構成要素の順序を変更できます。 また、"|" を別の区切り文字に置き換えることもできます。 実行時に、該当するパターンを使って文字列の {{date}} 部分と {{time}} 部分を置き換えます。
+You should store your custom format as a localizable resource string. For example, the string for English (United States) would be "{date} | {time}". Localizers can adjust this string as needed. For example, they can change the order of the constituents, if it seems more natural in some language or region to have the time precede the date. Or, they can replace "|" with some other separator character. At runtime you replace the {date} and {time} portions of the string with the relevant pattern:
 
 **C#**
 ```CSharp
@@ -160,7 +160,7 @@ mydateplustime = mydateplustime.replace("{date}", mydatepattern);
 mydateplustime = mydateplustime.replace("{time}", mytimepattern);
 ```
 
-これで、カスタム パターンに基づいて新しいフォーマッタを構築できるようになりました。
+Then you can construct a new formatter based on the custom pattern:
 
 **C#**
 ```CSharp
@@ -173,20 +173,15 @@ var mydateplustimefmt = new Windows.Globalization.DateTimeFormatting.DateTimeFor
 var mydateplustimefmt = new dtf.DateTimeFormatter(mydateplustime);
 ```
 
-## <span id="related_topics"></span>関連トピック
+## <span id="related_topics"></span>Related topics
 
 
-* [日付と時刻の書式設定のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?LinkId=231618)
+* [Date and time formatting sample](http://go.microsoft.com/fwlink/p/?LinkId=231618)
 * [**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)
 * [**Windows.Foundation.DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576)
- 
+ 
 
- 
+ 
 
-
-
-
-
-<!--HONumber=Mar16_HO1-->
 
 
