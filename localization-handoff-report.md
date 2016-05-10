@@ -1,58 +1,19 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 4
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\monetize\index.md](https://github.com/Microsoft/windows-apps/blob/de85956c7c1d2a0ba509d61ee8928b412f057f8a/windows-apps-src/monetize/index.md) | HandedOffSuccess | [Details](#6d5f483b44ae4516f4969431e31f70388a66c5d93304)
- [windows-apps-src\monetize\launch-feedback-hub-from-your-app.md](https://github.com/Microsoft/windows-apps/blob/de85956c7c1d2a0ba509d61ee8928b412f057f8a/windows-apps-src/monetize/launch-feedback-hub-from-your-app.md) | HandedOffSuccess | [Details](#ccda01d9bfa4ffdff2bbce5d6c60c78e026270e53311)
- [windows-apps-src\monetize\monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md](https://github.com/Microsoft/windows-apps/blob/de85956c7c1d2a0ba509d61ee8928b412f057f8a/windows-apps-src/monetize/monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md) | HandedOffSuccess | [Details](#481cf2aab806a1f9ce368256a9df8930cbc756c13314)
- [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/de85956c7c1d2a0ba509d61ee8928b412f057f8a/windows-apps-src/TOC.md) | HandedOffSuccess | [Details](#292588e8f953a9b1da0f817a4e00d746cfa6ca4a3764)
+ [windows-apps-src\publish\account-types-locations-and-fees.md](https://github.com/Microsoft/windows-apps/blob/93b6d952e42949917a0fff5b39f3f194f49531d5/windows-apps-src/publish/account-types-locations-and-fees.md) | HandedOffSuccess | [Details](#b4707f53aa1a1bd7bd7c03c74f2d18a0f9f55b103466)
 
 ## Item Details
-##### <a name='6d5f483b44ae4516f4969431e31f70388a66c5d93304'></a> Source: [windows-apps-src\monetize\index.md](https://github.com/Microsoft/windows-apps/blob/de85956c7c1d2a0ba509d61ee8928b412f057f8a/windows-apps-src/monetize/index.md)
+##### <a name='b4707f53aa1a1bd7bd7c03c74f2d18a0f9f55b103466'></a> Source: [windows-apps-src\publish\account-types-locations-and-fees.md](https://github.com/Microsoft/windows-apps/blob/93b6d952e42949917a0fff5b39f3f194f49531d5/windows-apps-src/publish/account-types-locations-and-fees.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [index.c1fc2f38380d9502f131cb5ecba670a6a30949ea.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/0465382510e6f277d5c24d6736e220de2af3079b/ol-handoff/Microsoft/windows-apps.ja-jp/master/index.c1fc2f38380d9502f131cb5ecba670a6a30949ea.ja-jp.xlf)
-* Handoff Datetime: 2016-05-10 17:52:38
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='ccda01d9bfa4ffdff2bbce5d6c60c78e026270e53311'></a> Source: [windows-apps-src\monetize\launch-feedback-hub-from-your-app.md](https://github.com/Microsoft/windows-apps/blob/de85956c7c1d2a0ba509d61ee8928b412f057f8a/windows-apps-src/monetize/launch-feedback-hub-from-your-app.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [launch-feedback-hub-from-your-app.adb9d4633668667defe2db33668d7915b1b359a9.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/0465382510e6f277d5c24d6736e220de2af3079b/ol-handoff/Microsoft/windows-apps.ja-jp/master/launch-feedback-hub-from-your-app.adb9d4633668667defe2db33668d7915b1b359a9.ja-jp.xlf)
-* Handoff Datetime: 2016-05-10 17:52:38
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='481cf2aab806a1f9ce368256a9df8930cbc756c13314'></a> Source: [windows-apps-src\monetize\monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md](https://github.com/Microsoft/windows-apps/blob/de85956c7c1d2a0ba509d61ee8928b412f057f8a/windows-apps-src/monetize/monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.2e54bdb9ba46bf08c636e3eb29a79a2507edbaa7.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/0465382510e6f277d5c24d6736e220de2af3079b/ol-handoff/Microsoft/windows-apps.ja-jp/master/monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.2e54bdb9ba46bf08c636e3eb29a79a2507edbaa7.ja-jp.xlf)
-* Handoff Datetime: 2016-05-10 17:52:38
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='292588e8f953a9b1da0f817a4e00d746cfa6ca4a3764'></a> Source: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/de85956c7c1d2a0ba509d61ee8928b412f057f8a/windows-apps-src/TOC.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/0465382510e6f277d5c24d6736e220de2af3079b/ol-handoff/Microsoft/windows-apps.ja-jp/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf)
-* Handoff Datetime: 2016-05-10 17:52:38
+* Handoff File: [account-types-locations-and-fees.1277ace499431ce58b5194ea113c822f7292b462.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/df79fc05694884cfb91ef0e2eb20d4af690088a5/ol-handoff/Microsoft/windows-apps.ja-jp/master/account-types-locations-and-fees.1277ace499431ce58b5194ea113c822f7292b462.ja-jp.xlf)
+* Handoff Datetime: 2016-05-10 19:25:09
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
