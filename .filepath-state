@@ -4952,6 +4952,9 @@
   "c6d0d0f4aee60a9371dacb4d8a0701b827944780": [
     "windows-apps-src\\porting\\android-ios-uwp-map.md"
   ],
+  "7214aaae43a2fd597bccfebab2a361c561b06e30": [
+    "windows-apps-src\\porting\\desktop-to-uwp-deploy-and-debug.md"
+  ],
   "5294f0e3286c9eaa0060dfaa933f1a2c57f75e26": [
     "windows-apps-src\\porting\\desktop-to-uwp-deploy-and-debug.md"
   ],
@@ -6193,5 +6196,29 @@
   ],
   "6b5ef763c41af65aecf02aaa550b84a3d524d25f": [
     "windows-apps-src\\xbox-apps\\system-resource-allocation.md"
+  ],
+  "b2a63478e64ebbee04d5490fe6578ada2a164c8d": [
+    "windows-apps-src\\porting\\images\\desktop-to-uwp\\debug-1.png"
+  ],
+  "32de88b003f79272ccbf7fb40c7ceef7b6a72a16": [
+    "windows-apps-src\\porting\\images\\desktop-to-uwp\\debug-2.png"
+  ],
+  "0d7a35e72af471cd43765bc6d2b1c4092de2b6a9": [
+    "windows-apps-src\\porting\\images\\desktop-to-uwp\\debug-3.png"
+  ],
+  "4032816759c4ac170737a5e5a1ef9ddbfe71844a": [
+    "windows-apps-src\\porting\\images\\desktop-to-uwp\\debug-4.png"
+  ],
+  "2091378ed9bf7179c77c10314bb6add7e8ee0951": [
+    "windows-apps-src\\porting\\images\\desktop-to-uwp\\debug-5.png"
+  ],
+  "501701dfa182c57093ddd048c4a3223f08e50c9d": [
+    "windows-apps-src\\porting\\images\\desktop-to-uwp\\debug-6.png"
+  ],
+  "c83c4719035ae5972c180564b88c16f14e3d4d39": [
+    "windows-apps-src\\porting\\images\\desktop-to-uwp\\debug-7.png"
+  ],
+  "c66bdb89dbc4bcbbceefedc07af7620fc6497f2e": [
+    "windows-apps-src\\porting\\images\\desktop-to-uwp\\debug-8.png"
   ]
 }
