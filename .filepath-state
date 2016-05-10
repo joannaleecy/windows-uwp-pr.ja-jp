@@ -4778,6 +4778,9 @@
   "89af54f5b8cf52366100b4751ed37ddd7a7bacb7": [
     "windows-apps-src\\monetize\\important-notice-eula.md"
   ],
+  "6d5f483b44ae4516f4969431e31f70388a66c5d9": [
+    "windows-apps-src\\monetize\\index.md"
+  ],
   "ac5b1f06ef6b57044c0561f0ccfa40c6db42ac27": [
     "windows-apps-src\\monetize\\index.md"
   ],
@@ -4799,6 +4802,9 @@
   "cfaa108cc93b6bae903e86ad141656bf613f185d": [
     "windows-apps-src\\monetize\\known-issues-for-the-advertising-libraries.md"
   ],
+  "ccda01d9bfa4ffdff2bbce5d6c60c78e026270e5": [
+    "windows-apps-src\\monetize\\launch-feedback-hub-from-your-app.md"
+  ],
   "d1069234ce1a40028dc69d6fad7e960827a8bd46": [
     "windows-apps-src\\monetize\\launch-feedback-hub-from-your-app.md"
   ],
@@ -4807,6 +4813,9 @@
   ],
   "24ca106cc83c4495657972f463c556585cdfcb45": [
     "windows-apps-src\\monetize\\manage-your-experiment.md"
+  ],
+  "481cf2aab806a1f9ce368256a9df8930cbc756c1": [
+    "windows-apps-src\\monetize\\monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md"
   ],
   "bf900aac732fb012a39d2e2e6c5312ccb5a65cee": [
     "windows-apps-src\\monetize\\monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md"
@@ -5911,6 +5920,9 @@
   ],
   "033669a781aa85cc2c90fa11816e385ffefa997d": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
+  ],
+  "292588e8f953a9b1da0f817a4e00d746cfa6ca4a": [
+    "windows-apps-src\\TOC.md"
   ],
   "4e7556f41d914182308ce0c8e99cb3b124438fe0": [
     "windows-apps-src\\TOC.md"
