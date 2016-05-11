@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\distribute-lob-apps-to-enterprises.md](https://github.com/Microsoft/windows-apps/blob/980b48243ecae468ffdba4a92bc62e39706c8a2d/windows-apps-src/publish/distribute-lob-apps-to-enterprises.md) | HandedOffSuccess | [Details](#281c544f4c432ea36cad0f31d2d3567e4bee9da63495)
+ [windows-apps-src\publish\manage-account-users.md](https://github.com/Microsoft/windows-apps/blob/3cfc50e56f3fa65a9dfa2c8b4582c1a53c2b13d1/windows-apps-src/publish/manage-account-users.md) | HandedOffSuccess | [Details](#18e25d0064652089d450eec811a7a5d24b8dc3e83513)
 
 ## Item Details
-##### <a name='281c544f4c432ea36cad0f31d2d3567e4bee9da63495'></a> Source: [windows-apps-src\publish\distribute-lob-apps-to-enterprises.md](https://github.com/Microsoft/windows-apps/blob/980b48243ecae468ffdba4a92bc62e39706c8a2d/windows-apps-src/publish/distribute-lob-apps-to-enterprises.md)
+##### <a name='18e25d0064652089d450eec811a7a5d24b8dc3e83513'></a> Source: [windows-apps-src\publish\manage-account-users.md](https://github.com/Microsoft/windows-apps/blob/3cfc50e56f3fa65a9dfa2c8b4582c1a53c2b13d1/windows-apps-src/publish/manage-account-users.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [distribute-lob-apps-to-enterprises.0b587ccf3d72dde21acfcdb2eded5841e0f9ffea.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/6020e002d4080e5276e529129e1f3e396a86eefa/ol-handoff/Microsoft/windows-apps.ja-jp/master/distribute-lob-apps-to-enterprises.0b587ccf3d72dde21acfcdb2eded5841e0f9ffea.ja-jp.xlf)
-* Handoff Datetime: 2016-05-11 16:48:13
+* Handoff File: [manage-account-users.b7052883acae7cf5a19d5cd03e6c2038ce41f0c3.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/2023117dcf74b4d34f312aee01f89c08fdcc14cd/ol-handoff/Microsoft/windows-apps.ja-jp/master/manage-account-users.b7052883acae7cf5a19d5cd03e6c2038ce41f0c3.ja-jp.xlf)
+* Handoff Datetime: 2016-05-11 17:19:52
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
