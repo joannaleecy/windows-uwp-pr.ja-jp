@@ -5,13 +5,13 @@
  -------- | ----- 
  Total Files | 3869
 [ Handoff Failed Files ](#handoff-failed-list)| 0
-[ Handoff Success Files ](#handoff-success-list)| 2288
+[ Handoff Success Files ](#handoff-success-list)| 2287
 [ Archive Failed Files ](#archive-failed-list)| 0
 [ Archive Success Files ](#archive-success-list)| 0
 [ Handback Failed Files ](#handback-failed-list)| 0
 [ Out Of Sync Handback Files ](#outofsync-handback-success-list)| 0
 [ In Sync Handback Files ](#insync-handback-success-list)| 0
-[ Ignored Files ](#ignored-list)| 1581
+[ Ignored Files ](#ignored-list)| 1582
 
 ## <a name='handoff-failed-list'></a> Handoff Failed File List
 
@@ -2052,7 +2052,6 @@
  [windows-apps-src\publish\use-map-services.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/publish/use-map-services.md) | HandedOffSuccess | [Details](#0d775c67492fd6afe9f65f3e5dede865f90373423543)
  [windows-apps-src\publish\using-the-windows-dev-center-dashboard.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/publish/using-the-windows-dev-center-dashboard.md) | HandedOffSuccess | [Details](#7478a832cea6114c7a6e7f6be5cc3e908981a64c3544)
  [windows-apps-src\publish\vat-info.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/publish/vat-info.md) | HandedOffSuccess | [Details](#4dd91c901ade83e482061bed781e3fdcd9dde1413545)
- [windows-apps-src\publish\view-app-identity-details.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/publish/view-app-identity-details.md) | HandedOffSuccess | [Details](#f097be23fecd720e08db294f41e70b8ff0b0c4673546)
  [windows-apps-src\publish\write-a-great-app-description.md](https://github.com/Microsoft/windows-apps/blob/17e7724eaa8a33f17360eb6e24fcc22068c5d477/windows-apps-src/publish/write-a-great-app-description.md) | HandedOffSuccess | [Details](#56b8492fea59c9a744c948d27e728e2305388cf83547)
  [windows-apps-src\security\authentication-and-user-identity.md](https://github.com/Microsoft/windows-apps/blob/3c890ac8d8363982d9f014c36b6cba59bee39f20/windows-apps-src/security/authentication-and-user-identity.md) | HandedOffSuccess | [Details](#e748b319cdeda82aadaf8516e41883a3e32dc10c3548)
  [windows-apps-src\security\certificates.md](https://github.com/Microsoft/windows-apps/blob/b41fc8994412490e37053d454929d2f7cc73b6ac/windows-apps-src/security/certificates.md) | HandedOffSuccess | [Details](#84596f70a5deee6cebb5f4bac442a6aaca8210cd3549)
@@ -3832,6 +3831,7 @@
  [windows-apps-src\networking\code\backgroundtransfer\upload_quickstart\js\main.js](https://github.com/Microsoft/windows-apps/blob/3cfc50e56f3fa65a9dfa2c8b4582c1a53c2b13d1/windows-apps-src/networking/code/backgroundtransfer/upload_quickstart/js/main.js) | Ignored | [Details](#1af01b63e3a1c6178ab3c6f62ae57ea1b9fdb81e3343)
  [windows-apps-src\porting\images\ios-to-uwp\mixedup.png](https://github.com/Microsoft/windows-apps/blob/3cfc50e56f3fa65a9dfa2c8b4582c1a53c2b13d1/windows-apps-src/porting/images/ios-to-uwp/mixedup.png) | Ignored | [Details](#a8df73e0add1a2764f3786b6288bfbea53849b623394)
  [windows-apps-src\porting\images\ios-to-uwp\porting-your-android-or-ios-app-video-thumbnail.png](https://github.com/Microsoft/windows-apps/blob/3cfc50e56f3fa65a9dfa2c8b4582c1a53c2b13d1/windows-apps-src/porting/images/ios-to-uwp/porting-your-android-or-ios-app-video-thumbnail.png) | Ignored | [Details](#cfee271c3f827566bb7691296cc82b7bd8ea42ae3395)
+ [windows-apps-src\publish\view-app-identity-details.md](https://github.com/Microsoft/windows-apps/blob/3cfc50e56f3fa65a9dfa2c8b4582c1a53c2b13d1/windows-apps-src/publish/view-app-identity-details.md) | Ignored | [Details](#f00d817616d473ef220ebc1817c2bf9207a7aea03546)
  [windows-apps-src\security\code\token-broker\.gitignore](https://github.com/Microsoft/windows-apps/blob/3cfc50e56f3fa65a9dfa2c8b4582c1a53c2b13d1/windows-apps-src/security/code/token-broker/.gitignore) | Ignored | [Details](#83a972d27edf7993c23b62ba6ba4bd0afe5418f33550)
  [windows-apps-src\security\code\token-broker\App.xaml](https://github.com/Microsoft/windows-apps/blob/3cfc50e56f3fa65a9dfa2c8b4582c1a53c2b13d1/windows-apps-src/security/code/token-broker/App.xaml) | Ignored | [Details](#8a18dd7c790c15f884f03f0a10ec77ec4e1e55a13551)
  [windows-apps-src\security\code\token-broker\App.xaml.cs](https://github.com/Microsoft/windows-apps/blob/3cfc50e56f3fa65a9dfa2c8b4582c1a53c2b13d1/windows-apps-src/security/code/token-broker/App.xaml.cs) | Ignored | [Details](#a40ea9c206c7195c957b9065e5a95d19cddbdb223552)
@@ -47851,12 +47851,12 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='f097be23fecd720e08db294f41e70b8ff0b0c4673546'></a> Source: [windows-apps-src\publish\view-app-identity-details.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/publish/view-app-identity-details.md)
-* Status: HandedOffSuccess
+##### <a name='f00d817616d473ef220ebc1817c2bf9207a7aea03546'></a> Source: [windows-apps-src\publish\view-app-identity-details.md](https://github.com/Microsoft/windows-apps/blob/3cfc50e56f3fa65a9dfa2c8b4582c1a53c2b13d1/windows-apps-src/publish/view-app-identity-details.md)
+* Status: Ignored
 * Target File: 
-* Handoff File: [view-app-identity-details.28e38a0d58b50b2c3f2749a9cb230e57494911dc.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/034e9c637f0fd60b9d604401b10b1c6e2264af18/ol-handoff/Microsoft/windows-apps.ja-jp/master/view-app-identity-details.28e38a0d58b50b2c3f2749a9cb230e57494911dc.ja-jp.xlf)
-* Handoff Datetime: 2016-05-05 02:26:38
-* Handoff Reason: Include
+* Handoff File: 
+* Handoff Datetime: 0001-01-01 00:00:00
+* Handoff Reason: Ignored
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
