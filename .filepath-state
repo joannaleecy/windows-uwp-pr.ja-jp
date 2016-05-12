@@ -5330,8 +5330,14 @@
   "f1cd4158864e6be251da6ccecf211152489eaf61": [
     "windows-apps-src\\publish\\create-an-ad-campaign-for-your-app.md"
   ],
+  "ca85f55e12713903dbbee0a4e247cfb1a51c17d3": [
+    "windows-apps-src\\publish\\create-app-descriptions.md"
+  ],
   "962498fdd76bb338a47824edffc855bf66074857": [
     "windows-apps-src\\publish\\create-app-descriptions.md"
+  ],
+  "418907894d3fc9349ca113ff04c575bcb0140347": [
+    "windows-apps-src\\publish\\create-iap-descriptions.md"
   ],
   "d6fe7303a319d76d416d893b52010016ba2da546": [
     "windows-apps-src\\publish\\create-iap-descriptions.md"
@@ -5491,6 +5497,9 @@
   ],
   "509ef3b8b9ec06907fccc2dbbe29fa3c72cb8e5d": [
     "windows-apps-src\\publish\\set-app-pricing-and-availability.md"
+  ],
+  "0e6c58f2d892f213d2de53c3cb9b97b1e8152137": [
+    "windows-apps-src\\publish\\set-iap-pricing-and-availability.md"
   ],
   "75996b33579dc8953de434a09d082d5138c7510b": [
     "windows-apps-src\\publish\\set-iap-pricing-and-availability.md"

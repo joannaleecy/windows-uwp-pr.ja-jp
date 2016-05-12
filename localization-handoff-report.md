@@ -1,20 +1,21 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 3
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\enter-iap-properties.md](https://github.com/Microsoft/windows-apps/blob/a752bdb149763e0a4648bbe3abae975e263cdcc9/windows-apps-src/publish/enter-iap-properties.md) | HandedOffSuccess | [Details](#ff1ff3d735578b15d0140e7ffcf7bbe2fd38582f3500)
- [windows-apps-src\publish\iap-submissions.md](https://github.com/Microsoft/windows-apps/blob/97f4aee47cab9064ac053e7a6e16441d6960d41f/windows-apps-src/publish/iap-submissions.md) | HandedOffSuccess | [Details](#4a1764dfb8f94409aba973a28ba29998541791963509)
+ [windows-apps-src\publish\create-app-descriptions.md](https://github.com/Microsoft/windows-apps/blob/447beeae917b03dea2538e74fd9cd8ef48b0f41f/windows-apps-src/publish/create-app-descriptions.md) | HandedOffSuccess | [Details](#ca85f55e12713903dbbee0a4e247cfb1a51c17d33490)
+ [windows-apps-src\publish\create-iap-descriptions.md](https://github.com/Microsoft/windows-apps/blob/be199d045feadb352b914bb11dbe2cf3dd5ddbf0/windows-apps-src/publish/create-iap-descriptions.md) | HandedOffSuccess | [Details](#418907894d3fc9349ca113ff04c575bcb01403473491)
+ [windows-apps-src\publish\set-iap-pricing-and-availability.md](https://github.com/Microsoft/windows-apps/blob/52816584a9afbd6c8e213a182bae18732f082aef/windows-apps-src/publish/set-iap-pricing-and-availability.md) | HandedOffSuccess | [Details](#0e6c58f2d892f213d2de53c3cb9b97b1e81521373536)
 
 ## Item Details
-##### <a name='ff1ff3d735578b15d0140e7ffcf7bbe2fd38582f3500'></a> Source: [windows-apps-src\publish\enter-iap-properties.md](https://github.com/Microsoft/windows-apps/blob/a752bdb149763e0a4648bbe3abae975e263cdcc9/windows-apps-src/publish/enter-iap-properties.md)
+##### <a name='ca85f55e12713903dbbee0a4e247cfb1a51c17d33490'></a> Source: [windows-apps-src\publish\create-app-descriptions.md](https://github.com/Microsoft/windows-apps/blob/447beeae917b03dea2538e74fd9cd8ef48b0f41f/windows-apps-src/publish/create-app-descriptions.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [enter-iap-properties.1d1427a4c394ed66d9e4c6609a4c81c403ca6375.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/b37646a95f577ff100afe5adb4aa21f2e4f79d12/ol-handoff/Microsoft/windows-apps.ja-jp/master/enter-iap-properties.1d1427a4c394ed66d9e4c6609a4c81c403ca6375.ja-jp.xlf)
-* Handoff Datetime: 2016-05-12 22:48:44
+* Handoff File: [create-app-descriptions.242ecb1953f0e70d44ab6177552a1db70ce3b29f.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83a1658b5f0c56d095b8ceeb5470a4edc4fcd991/ol-handoff/Microsoft/windows-apps.ja-jp/master/create-app-descriptions.242ecb1953f0e70d44ab6177552a1db70ce3b29f.ja-jp.xlf)
+* Handoff Datetime: 2016-05-12 23:20:10
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -22,11 +23,23 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='4a1764dfb8f94409aba973a28ba29998541791963509'></a> Source: [windows-apps-src\publish\iap-submissions.md](https://github.com/Microsoft/windows-apps/blob/97f4aee47cab9064ac053e7a6e16441d6960d41f/windows-apps-src/publish/iap-submissions.md)
+##### <a name='418907894d3fc9349ca113ff04c575bcb01403473491'></a> Source: [windows-apps-src\publish\create-iap-descriptions.md](https://github.com/Microsoft/windows-apps/blob/be199d045feadb352b914bb11dbe2cf3dd5ddbf0/windows-apps-src/publish/create-iap-descriptions.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [iap-submissions.4390f9a7f4735787093413e410c6fabc886278df.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/b37646a95f577ff100afe5adb4aa21f2e4f79d12/ol-handoff/Microsoft/windows-apps.ja-jp/master/iap-submissions.4390f9a7f4735787093413e410c6fabc886278df.ja-jp.xlf)
-* Handoff Datetime: 2016-05-12 22:48:44
+* Handoff File: [create-iap-descriptions.35d13dd8b47a97b3502b0751035ad29a96e80f98.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83a1658b5f0c56d095b8ceeb5470a4edc4fcd991/ol-handoff/Microsoft/windows-apps.ja-jp/master/create-iap-descriptions.35d13dd8b47a97b3502b0751035ad29a96e80f98.ja-jp.xlf)
+* Handoff Datetime: 2016-05-12 23:20:10
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* [Back to Top](#report-top)
+
+##### <a name='0e6c58f2d892f213d2de53c3cb9b97b1e81521373536'></a> Source: [windows-apps-src\publish\set-iap-pricing-and-availability.md](https://github.com/Microsoft/windows-apps/blob/52816584a9afbd6c8e213a182bae18732f082aef/windows-apps-src/publish/set-iap-pricing-and-availability.md)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [set-iap-pricing-and-availability.9ff898976e4e00d9b7424204ab81c6f3106132c6.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83a1658b5f0c56d095b8ceeb5470a4edc4fcd991/ol-handoff/Microsoft/windows-apps.ja-jp/master/set-iap-pricing-and-availability.9ff898976e4e00d9b7424204ab81c6f3106132c6.ja-jp.xlf)
+* Handoff Datetime: 2016-05-12 23:20:10
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
