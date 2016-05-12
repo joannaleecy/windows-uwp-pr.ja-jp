@@ -1,21 +1,20 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 3
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\audio-video-camera\hardware-drm.md](https://github.com/Microsoft/windows-apps/blob/553e79f399e4042a7d359b69c3fb0af33f049195/windows-apps-src/audio-video-camera/hardware-drm.md) | HandedOffSuccess | [Details](#4eb903edbdd5638c67da4abe0cbf045c8dc517bc472)
- [windows-apps-src\audio-video-camera\playready-client-sdk.md](https://github.com/Microsoft/windows-apps/blob/553e79f399e4042a7d359b69c3fb0af33f049195/windows-apps-src/audio-video-camera/playready-client-sdk.md) | HandedOffSuccess | [Details](#525084632a66d206361ce28070c873a836081c52484)
- [windows-apps-src\porting\desktop-to-uwp-run-desktop-app-converter.md](https://github.com/Microsoft/windows-apps/blob/fc3ee3bf9b5a8aa1c625c7c928c5d7507efa9c87/windows-apps-src/porting/desktop-to-uwp-run-desktop-app-converter.md) | HandedOffSuccess | [Details](#1751cc6307fc7581d383c70a9114e46bd7fe54513369)
+ [windows-apps-src\audio-video-camera\hardware-drm.md](https://github.com/Microsoft/windows-apps/blob/3e66cad67a2bf9b3c0f8894a1e6f1a70ab1c1ef9/windows-apps-src/audio-video-camera/hardware-drm.md) | HandedOffSuccess | [Details](#3d446d690981bee048b58a00e01cda35808ed1c3472)
+ [windows-apps-src\audio-video-camera\playready-client-sdk.md](https://github.com/Microsoft/windows-apps/blob/3e66cad67a2bf9b3c0f8894a1e6f1a70ab1c1ef9/windows-apps-src/audio-video-camera/playready-client-sdk.md) | HandedOffSuccess | [Details](#c38f9d94f0658151c1206cc7a2044c5ce97fdafb484)
 
 ## Item Details
-##### <a name='4eb903edbdd5638c67da4abe0cbf045c8dc517bc472'></a> Source: [windows-apps-src\audio-video-camera\hardware-drm.md](https://github.com/Microsoft/windows-apps/blob/553e79f399e4042a7d359b69c3fb0af33f049195/windows-apps-src/audio-video-camera/hardware-drm.md)
+##### <a name='3d446d690981bee048b58a00e01cda35808ed1c3472'></a> Source: [windows-apps-src\audio-video-camera\hardware-drm.md](https://github.com/Microsoft/windows-apps/blob/3e66cad67a2bf9b3c0f8894a1e6f1a70ab1c1ef9/windows-apps-src/audio-video-camera/hardware-drm.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [hardware-drm.5fb8fda243b613ca726a5d1db43f5767da669e0e.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/ea66a0e236bb8e8841e11073275d5cd9758bffa1/ol-handoff/Microsoft/windows-apps.ja-jp/master/hardware-drm.5fb8fda243b613ca726a5d1db43f5767da669e0e.ja-jp.xlf)
-* Handoff Datetime: 2016-05-12 21:20:36
+* Handoff File: [hardware-drm.5fb8fda243b613ca726a5d1db43f5767da669e0e.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/82c7081686ffc501e3eacac2a1fef7322e9fd547/ol-handoff/Microsoft/windows-apps.ja-jp/master/hardware-drm.5fb8fda243b613ca726a5d1db43f5767da669e0e.ja-jp.xlf)
+* Handoff Datetime: 2016-05-12 21:49:02
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -23,23 +22,11 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='525084632a66d206361ce28070c873a836081c52484'></a> Source: [windows-apps-src\audio-video-camera\playready-client-sdk.md](https://github.com/Microsoft/windows-apps/blob/553e79f399e4042a7d359b69c3fb0af33f049195/windows-apps-src/audio-video-camera/playready-client-sdk.md)
+##### <a name='c38f9d94f0658151c1206cc7a2044c5ce97fdafb484'></a> Source: [windows-apps-src\audio-video-camera\playready-client-sdk.md](https://github.com/Microsoft/windows-apps/blob/3e66cad67a2bf9b3c0f8894a1e6f1a70ab1c1ef9/windows-apps-src/audio-video-camera/playready-client-sdk.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [playready-client-sdk.02c7a03e7a4fdbef5841fe4bca523065a993408e.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/ea66a0e236bb8e8841e11073275d5cd9758bffa1/ol-handoff/Microsoft/windows-apps.ja-jp/master/playready-client-sdk.02c7a03e7a4fdbef5841fe4bca523065a993408e.ja-jp.xlf)
-* Handoff Datetime: 2016-05-12 21:20:36
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='1751cc6307fc7581d383c70a9114e46bd7fe54513369'></a> Source: [windows-apps-src\porting\desktop-to-uwp-run-desktop-app-converter.md](https://github.com/Microsoft/windows-apps/blob/fc3ee3bf9b5a8aa1c625c7c928c5d7507efa9c87/windows-apps-src/porting/desktop-to-uwp-run-desktop-app-converter.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/ea66a0e236bb8e8841e11073275d5cd9758bffa1/ol-handoff/Microsoft/windows-apps.ja-jp/master/desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.ja-jp.xlf)
-* Handoff Datetime: 2016-05-12 21:20:36
+* Handoff File: [playready-client-sdk.02c7a03e7a4fdbef5841fe4bca523065a993408e.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/82c7081686ffc501e3eacac2a1fef7322e9fd547/ol-handoff/Microsoft/windows-apps.ja-jp/master/playready-client-sdk.02c7a03e7a4fdbef5841fe4bca523065a993408e.ja-jp.xlf)
+* Handoff Datetime: 2016-05-12 21:49:02
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
