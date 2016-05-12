@@ -4967,8 +4967,14 @@
   "5294f0e3286c9eaa0060dfaa933f1a2c57f75e26": [
     "windows-apps-src\\porting\\desktop-to-uwp-deploy-and-debug.md"
   ],
+  "140932b3253aaab2045327fd8cb2defe0ec6a9c0": [
+    "windows-apps-src\\porting\\desktop-to-uwp-root.md"
+  ],
   "24e0fc3e3734fceed3af20acd7f84862ffcdc314": [
     "windows-apps-src\\porting\\desktop-to-uwp-root.md"
+  ],
+  "fb86faf941d707be8d38e89cf2edc5190bcd946c": [
+    "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
   ],
   "40e8dc2432f7d1fe738141b8935df718d2166c78": [
     "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
@@ -5942,6 +5948,9 @@
   "033669a781aa85cc2c90fa11816e385ffefa997d": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "a47066e1e79b124505aff8ffd1f6eb2990a488a6": [
+    "windows-apps-src\\TOC.md"
+  ],
   "292588e8f953a9b1da0f817a4e00d746cfa6ca4a": [
     "windows-apps-src\\TOC.md"
   ],
@@ -6253,5 +6262,8 @@
   ],
   "c66bdb89dbc4bcbbceefedc07af7620fc6497f2e": [
     "windows-apps-src\\porting\\images\\desktop-to-uwp\\debug-8.png"
+  ],
+  "bc05ce3ca612a360f40b2a249c694ee40f3e28dd": [
+    "windows-apps-src\\porting\\desktop-to-uwp-manual-conversion.md"
   ]
 }
