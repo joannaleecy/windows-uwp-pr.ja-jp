@@ -1,5 +1,5 @@
 {
-  "LastProcessedCommit": "447beeae917b03dea2538e74fd9cd8ef48b0f41f",
+  "LastProcessedCommit": "13603b66bd6168073b855bbe37ea92763e14a5a0",
   "LastTranslatedCommit": null,
   "Items": {
     "3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3": {
@@ -63071,6 +63071,35 @@
       "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\set-iap-pricing-and-availability.9ff898976e4e00d9b7424204ab81c6f3106132c6.ja-jp.xlf",
       "HandoffFileCommit": "83a1658b5f0c56d095b8ceeb5470a4edc4fcd991",
       "HandoffDateTime": "2016-05-12T23:20:10.2263272Z",
+      "HandoffPriority": "",
+      "HandoffException": null,
+      "HandoffFailureTimes": 0,
+      "TargetFileCommit": null,
+      "TargetFilePath": null,
+      "HandbackFilePath": null,
+      "HandbackFileCommit": null,
+      "HandbackDateTime": "0001-01-01T00:00:00",
+      "HandbackException": null,
+      "HandbackFailureTimes": 0,
+      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": null,
+      "ArchiveFileCommit": null,
+      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveException": null
+    },
+    "e4adbc66b4b4a88ca3787737e9bbddf0d937b604": {
+      "FileHash": "e4adbc66b4b4a88ca3787737e9bbddf0d937b604",
+      "SourceFileCommit": "13603b66bd6168073b855bbe37ea92763e14a5a0",
+      "SourceFilePath": "windows-apps-src\\publish\\organizational-licensing.md",
+      "HandoffReason": 1,
+      "DependencyFrom": null,
+      "TokenReference": null,
+      "FilePathList": [
+        "windows-apps-src\\publish\\organizational-licensing.md"
+      ],
+      "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\organizational-licensing.0c29f420ae9657fb30f0ccdc5c23237b41a4611d.ja-jp.xlf",
+      "HandoffFileCommit": "ea73edf9e343dec388437e6f1e317e3340d9bc74",
+      "HandoffDateTime": "2016-05-12T23:49:03.545757Z",
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
