@@ -5363,6 +5363,9 @@
   "8861c13478adbe2010a164126c56f555375e0472": [
     "windows-apps-src\\publish\\enter-app-properties.md"
   ],
+  "ff1ff3d735578b15d0140e7ffcf7bbe2fd38582f": [
+    "windows-apps-src\\publish\\enter-iap-properties.md"
+  ],
   "ade85bb0ce12e7369b74763df6b57912771ceb23": [
     "windows-apps-src\\publish\\enter-iap-properties.md"
   ],
@@ -5389,6 +5392,9 @@
   ],
   "3191df12ca5b59f545cf250c3e669b30192af6bc": [
     "windows-apps-src\\publish\\iap-acquisitions-report.md"
+  ],
+  "4a1764dfb8f94409aba973a28ba2999854179196": [
+    "windows-apps-src\\publish\\iap-submissions.md"
   ],
   "577c2acfb8704114e633e40546cc9fa9c6f7f2b1": [
     "windows-apps-src\\publish\\iap-submissions.md"
