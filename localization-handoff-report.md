@@ -1,32 +1,19 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\audio-video-camera\hardware-drm.md](https://github.com/Microsoft/windows-apps/blob/3e66cad67a2bf9b3c0f8894a1e6f1a70ab1c1ef9/windows-apps-src/audio-video-camera/hardware-drm.md) | HandedOffSuccess | [Details](#3d446d690981bee048b58a00e01cda35808ed1c3472)
- [windows-apps-src\audio-video-camera\playready-client-sdk.md](https://github.com/Microsoft/windows-apps/blob/3e66cad67a2bf9b3c0f8894a1e6f1a70ab1c1ef9/windows-apps-src/audio-video-camera/playready-client-sdk.md) | HandedOffSuccess | [Details](#c38f9d94f0658151c1206cc7a2044c5ce97fdafb484)
+ [windows-apps-src\publish\set-your-iap-product-id.md](https://github.com/Microsoft/windows-apps/blob/ae4727974af632a275c102a6328734597cee3e9b/windows-apps-src/publish/set-your-iap-product-id.md) | HandedOffSuccess | [Details](#9faee009cd907cd8ccdeded019e23713cbc058f03537)
 
 ## Item Details
-##### <a name='3d446d690981bee048b58a00e01cda35808ed1c3472'></a> Source: [windows-apps-src\audio-video-camera\hardware-drm.md](https://github.com/Microsoft/windows-apps/blob/3e66cad67a2bf9b3c0f8894a1e6f1a70ab1c1ef9/windows-apps-src/audio-video-camera/hardware-drm.md)
+##### <a name='9faee009cd907cd8ccdeded019e23713cbc058f03537'></a> Source: [windows-apps-src\publish\set-your-iap-product-id.md](https://github.com/Microsoft/windows-apps/blob/ae4727974af632a275c102a6328734597cee3e9b/windows-apps-src/publish/set-your-iap-product-id.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [hardware-drm.5fb8fda243b613ca726a5d1db43f5767da669e0e.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/82c7081686ffc501e3eacac2a1fef7322e9fd547/ol-handoff/Microsoft/windows-apps.ja-jp/master/hardware-drm.5fb8fda243b613ca726a5d1db43f5767da669e0e.ja-jp.xlf)
-* Handoff Datetime: 2016-05-12 21:49:02
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='c38f9d94f0658151c1206cc7a2044c5ce97fdafb484'></a> Source: [windows-apps-src\audio-video-camera\playready-client-sdk.md](https://github.com/Microsoft/windows-apps/blob/3e66cad67a2bf9b3c0f8894a1e6f1a70ab1c1ef9/windows-apps-src/audio-video-camera/playready-client-sdk.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [playready-client-sdk.02c7a03e7a4fdbef5841fe4bca523065a993408e.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/82c7081686ffc501e3eacac2a1fef7322e9fd547/ol-handoff/Microsoft/windows-apps.ja-jp/master/playready-client-sdk.02c7a03e7a4fdbef5841fe4bca523065a993408e.ja-jp.xlf)
-* Handoff Datetime: 2016-05-12 21:49:02
+* Handoff File: [set-your-iap-product-id.bba35dbe88a01f5c55fab26d4a35e1ed570a5e11.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/24dfa319823e243c825dc750f0bbe3b431153698/ol-handoff/Microsoft/windows-apps.ja-jp/master/set-your-iap-product-id.bba35dbe88a01f5c55fab26d4a35e1ed570a5e11.ja-jp.xlf)
+* Handoff Datetime: 2016-05-12 22:20:25
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
