@@ -1,22 +1,21 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 4
+ Total Files | 3
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\porting\desktop-to-uwp-manual-conversion.md](https://github.com/Microsoft/windows-apps/blob/609068980b98db007021bf8c543e52510aceefb8/windows-apps-src/porting/desktop-to-uwp-manual-conversion.md) | HandedOffSuccess | [Details](#bc05ce3ca612a360f40b2a249c694ee40f3e28dd3367)
- [windows-apps-src\porting\desktop-to-uwp-root.md](https://github.com/Microsoft/windows-apps/blob/467bbf1f6082bfef3af97591e12ef47a9e42b970/windows-apps-src/porting/desktop-to-uwp-root.md) | HandedOffSuccess | [Details](#140932b3253aaab2045327fd8cb2defe0ec6a9c03368)
- [windows-apps-src\porting\desktop-to-uwp-run-desktop-app-converter.md](https://github.com/Microsoft/windows-apps/blob/fbadd1cb8bc0500c4b46b1cf3d43f714356d937a/windows-apps-src/porting/desktop-to-uwp-run-desktop-app-converter.md) | HandedOffSuccess | [Details](#fb86faf941d707be8d38e89cf2edc5190bcd946c3369)
- [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/3ef113742d1b8e0de51d9ba6c67360820d0637d2/windows-apps-src/TOC.md) | HandedOffSuccess | [Details](#a47066e1e79b124505aff8ffd1f6eb2990a488a63766)
+ [windows-apps-src\audio-video-camera\hardware-drm.md](https://github.com/Microsoft/windows-apps/blob/553e79f399e4042a7d359b69c3fb0af33f049195/windows-apps-src/audio-video-camera/hardware-drm.md) | HandedOffSuccess | [Details](#4eb903edbdd5638c67da4abe0cbf045c8dc517bc472)
+ [windows-apps-src\audio-video-camera\playready-client-sdk.md](https://github.com/Microsoft/windows-apps/blob/553e79f399e4042a7d359b69c3fb0af33f049195/windows-apps-src/audio-video-camera/playready-client-sdk.md) | HandedOffSuccess | [Details](#525084632a66d206361ce28070c873a836081c52484)
+ [windows-apps-src\porting\desktop-to-uwp-run-desktop-app-converter.md](https://github.com/Microsoft/windows-apps/blob/fc3ee3bf9b5a8aa1c625c7c928c5d7507efa9c87/windows-apps-src/porting/desktop-to-uwp-run-desktop-app-converter.md) | HandedOffSuccess | [Details](#1751cc6307fc7581d383c70a9114e46bd7fe54513369)
 
 ## Item Details
-##### <a name='bc05ce3ca612a360f40b2a249c694ee40f3e28dd3367'></a> Source: [windows-apps-src\porting\desktop-to-uwp-manual-conversion.md](https://github.com/Microsoft/windows-apps/blob/609068980b98db007021bf8c543e52510aceefb8/windows-apps-src/porting/desktop-to-uwp-manual-conversion.md)
+##### <a name='4eb903edbdd5638c67da4abe0cbf045c8dc517bc472'></a> Source: [windows-apps-src\audio-video-camera\hardware-drm.md](https://github.com/Microsoft/windows-apps/blob/553e79f399e4042a7d359b69c3fb0af33f049195/windows-apps-src/audio-video-camera/hardware-drm.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [desktop-to-uwp-manual-conversion.d3c7e2c80eddb954160086916bb876bd94a732bd.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/fdd07074736b682ea64e0cbd871dea4f78b52f21/ol-handoff/Microsoft/windows-apps.ja-jp/master/desktop-to-uwp-manual-conversion.d3c7e2c80eddb954160086916bb876bd94a732bd.ja-jp.xlf)
-* Handoff Datetime: 2016-05-12 16:49:04
+* Handoff File: [hardware-drm.5fb8fda243b613ca726a5d1db43f5767da669e0e.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/ea66a0e236bb8e8841e11073275d5cd9758bffa1/ol-handoff/Microsoft/windows-apps.ja-jp/master/hardware-drm.5fb8fda243b613ca726a5d1db43f5767da669e0e.ja-jp.xlf)
+* Handoff Datetime: 2016-05-12 21:20:36
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -24,11 +23,11 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='140932b3253aaab2045327fd8cb2defe0ec6a9c03368'></a> Source: [windows-apps-src\porting\desktop-to-uwp-root.md](https://github.com/Microsoft/windows-apps/blob/467bbf1f6082bfef3af97591e12ef47a9e42b970/windows-apps-src/porting/desktop-to-uwp-root.md)
+##### <a name='525084632a66d206361ce28070c873a836081c52484'></a> Source: [windows-apps-src\audio-video-camera\playready-client-sdk.md](https://github.com/Microsoft/windows-apps/blob/553e79f399e4042a7d359b69c3fb0af33f049195/windows-apps-src/audio-video-camera/playready-client-sdk.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [desktop-to-uwp-root.7513f52e089e9b95deeb36130fca887605ce1b3a.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/fdd07074736b682ea64e0cbd871dea4f78b52f21/ol-handoff/Microsoft/windows-apps.ja-jp/master/desktop-to-uwp-root.7513f52e089e9b95deeb36130fca887605ce1b3a.ja-jp.xlf)
-* Handoff Datetime: 2016-05-12 16:49:04
+* Handoff File: [playready-client-sdk.02c7a03e7a4fdbef5841fe4bca523065a993408e.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/ea66a0e236bb8e8841e11073275d5cd9758bffa1/ol-handoff/Microsoft/windows-apps.ja-jp/master/playready-client-sdk.02c7a03e7a4fdbef5841fe4bca523065a993408e.ja-jp.xlf)
+* Handoff Datetime: 2016-05-12 21:20:36
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -36,23 +35,11 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='fb86faf941d707be8d38e89cf2edc5190bcd946c3369'></a> Source: [windows-apps-src\porting\desktop-to-uwp-run-desktop-app-converter.md](https://github.com/Microsoft/windows-apps/blob/fbadd1cb8bc0500c4b46b1cf3d43f714356d937a/windows-apps-src/porting/desktop-to-uwp-run-desktop-app-converter.md)
+##### <a name='1751cc6307fc7581d383c70a9114e46bd7fe54513369'></a> Source: [windows-apps-src\porting\desktop-to-uwp-run-desktop-app-converter.md](https://github.com/Microsoft/windows-apps/blob/fc3ee3bf9b5a8aa1c625c7c928c5d7507efa9c87/windows-apps-src/porting/desktop-to-uwp-run-desktop-app-converter.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/fdd07074736b682ea64e0cbd871dea4f78b52f21/ol-handoff/Microsoft/windows-apps.ja-jp/master/desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.ja-jp.xlf)
-* Handoff Datetime: 2016-05-12 16:49:04
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='a47066e1e79b124505aff8ffd1f6eb2990a488a63766'></a> Source: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/3ef113742d1b8e0de51d9ba6c67360820d0637d2/windows-apps-src/TOC.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/fdd07074736b682ea64e0cbd871dea4f78b52f21/ol-handoff/Microsoft/windows-apps.ja-jp/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf)
-* Handoff Datetime: 2016-05-12 16:49:04
+* Handoff File: [desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/ea66a0e236bb8e8841e11073275d5cd9758bffa1/ol-handoff/Microsoft/windows-apps.ja-jp/master/desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.ja-jp.xlf)
+* Handoff Datetime: 2016-05-12 21:20:36
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00

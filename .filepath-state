@@ -170,6 +170,9 @@
   "c512ec92272ab03cfd8e91602018f09ef8225652": [
     "windows-apps-src\\audio-video-camera\\get-a-preview-frame.md"
   ],
+  "4eb903edbdd5638c67da4abe0cbf045c8dc517bc": [
+    "windows-apps-src\\audio-video-camera\\hardware-drm.md"
+  ],
   "4be7f2bbedad694ad412324b369aacba522f44a4": [
     "windows-apps-src\\audio-video-camera\\hardware-drm.md"
   ],
@@ -205,6 +208,9 @@
   ],
   "a67b859cc2bd42abc13bcba0d405783b99a0ca5c": [
     "windows-apps-src\\audio-video-camera\\midi.md"
+  ],
+  "525084632a66d206361ce28070c873a836081c52": [
+    "windows-apps-src\\audio-video-camera\\playready-client-sdk.md"
   ],
   "3be7289f9b4ffa3a12f60dfb1a3b501273b93db1": [
     "windows-apps-src\\audio-video-camera\\playready-client-sdk.md"
@@ -4972,6 +4978,9 @@
   ],
   "24e0fc3e3734fceed3af20acd7f84862ffcdc314": [
     "windows-apps-src\\porting\\desktop-to-uwp-root.md"
+  ],
+  "1751cc6307fc7581d383c70a9114e46bd7fe5451": [
+    "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
   ],
   "fb86faf941d707be8d38e89cf2edc5190bcd946c": [
     "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
