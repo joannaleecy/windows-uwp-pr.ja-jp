@@ -1,19 +1,45 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 3
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\audio-video-camera\playready-client-sdk.md](https://github.com/Microsoft/windows-apps/blob/ea746685b1d2903c9fdc45f2df004ed909a309b1/windows-apps-src/audio-video-camera/playready-client-sdk.md) | HandedOffSuccess | [Details](#99702a50a2653fbc58428ed6d8003dcfddef07bb484)
+ [windows-apps-src\graphics\animations-overview.md](https://github.com/Microsoft/windows-apps/blob/f2f91ae7e55f4ee02abf0139784cfae69b1bbd10/windows-apps-src/graphics/animations-overview.md) | HandedOffSuccess | [Details](#c2b77b2c9f6d3cc06bb05d4a79387196fa3586f42576)
+ [windows-apps-src\graphics\drawing-shapes.md](https://github.com/Microsoft/windows-apps/blob/04a3c2dabc4b115faf4b06aa3d3a59c5c38ab95f/windows-apps-src/graphics/drawing-shapes.md) | HandedOffSuccess | [Details](#42514e5119b646d196e0a1c7d3099ebed2225c692582)
+ [windows-apps-src\xaml-platform\relativesource-markup-extension.md](https://github.com/Microsoft/windows-apps/blob/ec4c9b87655425e82a1cb792d0acc6bee265e9d2/windows-apps-src/xaml-platform/relativesource-markup-extension.md) | HandedOffSuccess | [Details](#9f0bb49e701806f8635d93fa495cdab6486a4ea33794)
 
 ## Item Details
-##### <a name='99702a50a2653fbc58428ed6d8003dcfddef07bb484'></a> Source: [windows-apps-src\audio-video-camera\playready-client-sdk.md](https://github.com/Microsoft/windows-apps/blob/ea746685b1d2903c9fdc45f2df004ed909a309b1/windows-apps-src/audio-video-camera/playready-client-sdk.md)
+##### <a name='c2b77b2c9f6d3cc06bb05d4a79387196fa3586f42576'></a> Source: [windows-apps-src\graphics\animations-overview.md](https://github.com/Microsoft/windows-apps/blob/f2f91ae7e55f4ee02abf0139784cfae69b1bbd10/windows-apps-src/graphics/animations-overview.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [playready-client-sdk.02c7a03e7a4fdbef5841fe4bca523065a993408e.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/0cf98cea73852e2bb3f4fa5555e18c0eec3df0ef/ol-handoff/Microsoft/windows-apps.ja-jp/master/playready-client-sdk.02c7a03e7a4fdbef5841fe4bca523065a993408e.ja-jp.xlf)
-* Handoff Datetime: 2016-05-13 16:49:12
+* Handoff File: [animations-overview.8197a9a05a89d0ee53785570dab956f1fd01116a.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/77bb8ffb70959c5862072f451379f83024d752f4/ol-handoff/Microsoft/windows-apps.ja-jp/master/animations-overview.8197a9a05a89d0ee53785570dab956f1fd01116a.ja-jp.xlf)
+* Handoff Datetime: 2016-05-13 21:20:34
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* [Back to Top](#report-top)
+
+##### <a name='42514e5119b646d196e0a1c7d3099ebed2225c692582'></a> Source: [windows-apps-src\graphics\drawing-shapes.md](https://github.com/Microsoft/windows-apps/blob/04a3c2dabc4b115faf4b06aa3d3a59c5c38ab95f/windows-apps-src/graphics/drawing-shapes.md)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [drawing-shapes.c9bedab7d2fbf65afcc4ef7c20e72e9c7eefefd6.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/77bb8ffb70959c5862072f451379f83024d752f4/ol-handoff/Microsoft/windows-apps.ja-jp/master/drawing-shapes.c9bedab7d2fbf65afcc4ef7c20e72e9c7eefefd6.ja-jp.xlf)
+* Handoff Datetime: 2016-05-13 21:20:34
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* [Back to Top](#report-top)
+
+##### <a name='9f0bb49e701806f8635d93fa495cdab6486a4ea33794'></a> Source: [windows-apps-src\xaml-platform\relativesource-markup-extension.md](https://github.com/Microsoft/windows-apps/blob/ec4c9b87655425e82a1cb792d0acc6bee265e9d2/windows-apps-src/xaml-platform/relativesource-markup-extension.md)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [relativesource-markup-extension.7f62d69bc40c0e00f8d40cabec0bdda39d3e90a3.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/77bb8ffb70959c5862072f451379f83024d752f4/ol-handoff/Microsoft/windows-apps.ja-jp/master/relativesource-markup-extension.7f62d69bc40c0e00f8d40cabec0bdda39d3e90a3.ja-jp.xlf)
+* Handoff Datetime: 2016-05-13 21:20:34
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00

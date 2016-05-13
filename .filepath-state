@@ -3377,6 +3377,9 @@
   "4141d23c5102df4970ef7c4fb3659bf3ba561ccf": [
     "windows-apps-src\\graphics\\3-d-perspective-effects.md"
   ],
+  "c2b77b2c9f6d3cc06bb05d4a79387196fa3586f4": [
+    "windows-apps-src\\graphics\\animations-overview.md"
+  ],
   "1e44eb849b9a99e387916c931aeb619291c3591c": [
     "windows-apps-src\\graphics\\animations-overview.md"
   ],
@@ -3394,6 +3397,9 @@
   ],
   "e31d3b23871bd37cde26fb3e9414e8cfae340d3d": [
     "windows-apps-src\\graphics\\composition-visual-tree.md"
+  ],
+  "42514e5119b646d196e0a1c7d3099ebed2225c69": [
+    "windows-apps-src\\graphics\\drawing-shapes.md"
   ],
   "46fdc41415b98eb37eed091d78a31eacc86d7729": [
     "windows-apps-src\\graphics\\drawing-shapes.md"
@@ -6073,6 +6079,9 @@
   ],
   "0b1851bc9d19de5b678f8c6c3a255c0ba3057a85": [
     "windows-apps-src\\xaml-platform\\property-path-syntax.md"
+  ],
+  "9f0bb49e701806f8635d93fa495cdab6486a4ea3": [
+    "windows-apps-src\\xaml-platform\\relativesource-markup-extension.md"
   ],
   "8323a27a0e3d158bc5b06f30664614cef5fa3958": [
     "windows-apps-src\\xaml-platform\\relativesource-markup-extension.md"
