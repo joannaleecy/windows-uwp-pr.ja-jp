@@ -1,5 +1,5 @@
 {
-  "LastProcessedCommit": "3dd6f31b0e50340b6772128612ea07305742622e",
+  "LastProcessedCommit": "c9a78733aedf3a35c8eaea5e9443a75247f67e8f",
   "LastTranslatedCommit": null,
   "Items": {
     "3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3": {
@@ -63216,6 +63216,35 @@
       "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\relativesource-markup-extension.7f62d69bc40c0e00f8d40cabec0bdda39d3e90a3.ja-jp.xlf",
       "HandoffFileCommit": "77bb8ffb70959c5862072f451379f83024d752f4",
       "HandoffDateTime": "2016-05-13T21:20:34.3653841Z",
+      "HandoffPriority": "",
+      "HandoffException": null,
+      "HandoffFailureTimes": 0,
+      "TargetFileCommit": null,
+      "TargetFilePath": null,
+      "HandbackFilePath": null,
+      "HandbackFileCommit": null,
+      "HandbackDateTime": "0001-01-01T00:00:00",
+      "HandbackException": null,
+      "HandbackFailureTimes": 0,
+      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": null,
+      "ArchiveFileCommit": null,
+      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveException": null
+    },
+    "f23a8db80f037b240468533913e0fdb1dfab25f2": {
+      "FileHash": "f23a8db80f037b240468533913e0fdb1dfab25f2",
+      "SourceFileCommit": "c9a78733aedf3a35c8eaea5e9443a75247f67e8f",
+      "SourceFilePath": "windows-apps-src\\publish\\enter-iap-properties.md",
+      "HandoffReason": 1,
+      "DependencyFrom": null,
+      "TokenReference": null,
+      "FilePathList": [
+        "windows-apps-src\\publish\\enter-iap-properties.md"
+      ],
+      "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\enter-iap-properties.1d1427a4c394ed66d9e4c6609a4c81c403ca6375.ja-jp.xlf",
+      "HandoffFileCommit": "0b2fd635831985787b802e85cac4c050215e6cd9",
+      "HandoffDateTime": "2016-05-13T22:49:20.8826717Z",
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,

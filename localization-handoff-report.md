@@ -1,45 +1,19 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 3
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\graphics\animations-overview.md](https://github.com/Microsoft/windows-apps/blob/f2f91ae7e55f4ee02abf0139784cfae69b1bbd10/windows-apps-src/graphics/animations-overview.md) | HandedOffSuccess | [Details](#c2b77b2c9f6d3cc06bb05d4a79387196fa3586f42576)
- [windows-apps-src\graphics\drawing-shapes.md](https://github.com/Microsoft/windows-apps/blob/04a3c2dabc4b115faf4b06aa3d3a59c5c38ab95f/windows-apps-src/graphics/drawing-shapes.md) | HandedOffSuccess | [Details](#42514e5119b646d196e0a1c7d3099ebed2225c692582)
- [windows-apps-src\xaml-platform\relativesource-markup-extension.md](https://github.com/Microsoft/windows-apps/blob/ec4c9b87655425e82a1cb792d0acc6bee265e9d2/windows-apps-src/xaml-platform/relativesource-markup-extension.md) | HandedOffSuccess | [Details](#9f0bb49e701806f8635d93fa495cdab6486a4ea33794)
+ [windows-apps-src\publish\enter-iap-properties.md](https://github.com/Microsoft/windows-apps/blob/c9a78733aedf3a35c8eaea5e9443a75247f67e8f/windows-apps-src/publish/enter-iap-properties.md) | HandedOffSuccess | [Details](#f23a8db80f037b240468533913e0fdb1dfab25f23500)
 
 ## Item Details
-##### <a name='c2b77b2c9f6d3cc06bb05d4a79387196fa3586f42576'></a> Source: [windows-apps-src\graphics\animations-overview.md](https://github.com/Microsoft/windows-apps/blob/f2f91ae7e55f4ee02abf0139784cfae69b1bbd10/windows-apps-src/graphics/animations-overview.md)
+##### <a name='f23a8db80f037b240468533913e0fdb1dfab25f23500'></a> Source: [windows-apps-src\publish\enter-iap-properties.md](https://github.com/Microsoft/windows-apps/blob/c9a78733aedf3a35c8eaea5e9443a75247f67e8f/windows-apps-src/publish/enter-iap-properties.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [animations-overview.8197a9a05a89d0ee53785570dab956f1fd01116a.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/77bb8ffb70959c5862072f451379f83024d752f4/ol-handoff/Microsoft/windows-apps.ja-jp/master/animations-overview.8197a9a05a89d0ee53785570dab956f1fd01116a.ja-jp.xlf)
-* Handoff Datetime: 2016-05-13 21:20:34
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='42514e5119b646d196e0a1c7d3099ebed2225c692582'></a> Source: [windows-apps-src\graphics\drawing-shapes.md](https://github.com/Microsoft/windows-apps/blob/04a3c2dabc4b115faf4b06aa3d3a59c5c38ab95f/windows-apps-src/graphics/drawing-shapes.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [drawing-shapes.c9bedab7d2fbf65afcc4ef7c20e72e9c7eefefd6.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/77bb8ffb70959c5862072f451379f83024d752f4/ol-handoff/Microsoft/windows-apps.ja-jp/master/drawing-shapes.c9bedab7d2fbf65afcc4ef7c20e72e9c7eefefd6.ja-jp.xlf)
-* Handoff Datetime: 2016-05-13 21:20:34
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='9f0bb49e701806f8635d93fa495cdab6486a4ea33794'></a> Source: [windows-apps-src\xaml-platform\relativesource-markup-extension.md](https://github.com/Microsoft/windows-apps/blob/ec4c9b87655425e82a1cb792d0acc6bee265e9d2/windows-apps-src/xaml-platform/relativesource-markup-extension.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [relativesource-markup-extension.7f62d69bc40c0e00f8d40cabec0bdda39d3e90a3.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/77bb8ffb70959c5862072f451379f83024d752f4/ol-handoff/Microsoft/windows-apps.ja-jp/master/relativesource-markup-extension.7f62d69bc40c0e00f8d40cabec0bdda39d3e90a3.ja-jp.xlf)
-* Handoff Datetime: 2016-05-13 21:20:34
+* Handoff File: [enter-iap-properties.1d1427a4c394ed66d9e4c6609a4c81c403ca6375.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/0b2fd635831985787b802e85cac4c050215e6cd9/ol-handoff/Microsoft/windows-apps.ja-jp/master/enter-iap-properties.1d1427a4c394ed66d9e4c6609a4c81c403ca6375.ja-jp.xlf)
+* Handoff Datetime: 2016-05-13 22:49:20
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
