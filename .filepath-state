@@ -6014,17 +6014,32 @@
   "bf610a2653635a6d6fc4d651a369f4ffed56b34e": [
     "windows-apps-src\\whats-new\\windows-10-version-1511-november-2015.md"
   ],
+  "1497175723738cc23ec21b280c9639b216a33ddd": [
+    "windows-apps-src\\winrt-components\\creating-windows-runtime-components-in-cpp.md"
+  ],
   "9683a4cde3b7a8d02beaedd97f6d95ff27103b0b": [
     "windows-apps-src\\winrt-components\\creating-windows-runtime-components-in-cpp.md"
+  ],
+  "e8fd48b99d6a05af57e67e503c7bd3058b07569c": [
+    "windows-apps-src\\winrt-components\\creating-windows-runtime-components-in-csharp-and-visual-basic.md"
   ],
   "bb69e7a485c9f3997399577d9a437720fd4454bc": [
     "windows-apps-src\\winrt-components\\creating-windows-runtime-components-in-csharp-and-visual-basic.md"
   ],
+  "1308989c8d1c6959560458dd4d87119b4bfa74b0": [
+    "windows-apps-src\\winrt-components\\custom-events-and-event-accessors-in-windows-runtime-components.md"
+  ],
   "830a0dfd585373da8dc68711739159fc2f8fe48e": [
     "windows-apps-src\\winrt-components\\custom-events-and-event-accessors-in-windows-runtime-components.md"
   ],
+  "29199b7c94c4fecd173fb96f0d8fb43692d72464": [
+    "windows-apps-src\\winrt-components\\diagnosing-windows-runtime-component-error-conditions.md"
+  ],
   "038f563143d7690c6d4893a523c6bd2b2fb324b0": [
     "windows-apps-src\\winrt-components\\diagnosing-windows-runtime-component-error-conditions.md"
+  ],
+  "3d7a51ed13f63ca9d6070fbbe860c653c4deaf07": [
+    "windows-apps-src\\winrt-components\\distributing-a-managed-windows-runtime-component.md"
   ],
   "14e94acc3f521a63adce944698346a1caa8bc367": [
     "windows-apps-src\\winrt-components\\distributing-a-managed-windows-runtime-component.md"
@@ -6035,20 +6050,38 @@
   "1be774c2dbb7027fefb8ca573845aee224723b20": [
     "windows-apps-src\\winrt-components\\images\\guidgeneratortool.png"
   ],
+  "7239a44b01d2fa2fe6383bc3b61b5ffd243a97d3": [
+    "windows-apps-src\\winrt-components\\index.md"
+  ],
   "7a64e7b6df79c89f392e41a5c42d04a6b587992d": [
     "windows-apps-src\\winrt-components\\index.md"
+  ],
+  "286f479c86c06c9d08b4e36cf9776b590a13cc5f": [
+    "windows-apps-src\\winrt-components\\net-framework-mappings-of-windows-runtime-types.md"
   ],
   "56614461bf6188a268df6346c132b5edd0783be5": [
     "windows-apps-src\\winrt-components\\net-framework-mappings-of-windows-runtime-types.md"
   ],
+  "21e4b504b4adc6e2cb9b16d377781aaaab6a4aac": [
+    "windows-apps-src\\winrt-components\\passing-arrays-to-a-windows-runtime-component.md"
+  ],
   "2b019d9f4c36de451eb1ebb6174f6e09d3e29dba": [
     "windows-apps-src\\winrt-components\\passing-arrays-to-a-windows-runtime-component.md"
+  ],
+  "54934cba0e26da547e09b95a63d2c63363eaf85d": [
+    "windows-apps-src\\winrt-components\\raising-events-in-windows-runtime-components.md"
   ],
   "dabca702f07e0fe131624a6033fd644155640d62": [
     "windows-apps-src\\winrt-components\\raising-events-in-windows-runtime-components.md"
   ],
+  "860333e3239198cd54eea061195e2a51d786821b": [
+    "windows-apps-src\\winrt-components\\walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md"
+  ],
   "519f7517a5189a31befb0f2e8c35a05874159a4b": [
     "windows-apps-src\\winrt-components\\walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md"
+  ],
+  "c521061d9fdd3eb2c25e3072182fb1d7823f13ba": [
+    "windows-apps-src\\winrt-components\\walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md"
   ],
   "c4312a1193827ec7454ae2cb7c752b6a7f133baf": [
     "windows-apps-src\\winrt-components\\walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md"
@@ -6316,5 +6349,8 @@
   ],
   "bc05ce3ca612a360f40b2a249c694ee40f3e28dd": [
     "windows-apps-src\\porting\\desktop-to-uwp-manual-conversion.md"
+  ],
+  "73597c689abe7946a4896c6a123c8d8fa513dbe0": [
+    "windows-apps-src\\winrt-components\\images\\buildevents.png"
   ]
 }
