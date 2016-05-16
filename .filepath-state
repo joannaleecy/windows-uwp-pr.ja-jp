@@ -4216,6 +4216,9 @@
   "4300c6eba40e8f3c38f464818d00a605a4805e0f": [
     "windows-apps-src\\launch-resume\\declare-background-tasks-in-the-application-manifest.md"
   ],
+  "35b008aef077ed7bfd0c82ffdbb6cd4c7cfbae5a": [
+    "windows-apps-src\\launch-resume\\guidelines-for-background-tasks.md"
+  ],
   "f2bb26ae86727648a3c97308021e0b0b894f1712": [
     "windows-apps-src\\launch-resume\\guidelines-for-background-tasks.md"
   ],
