@@ -5,13 +5,13 @@
  -------- | ----- 
  Total Files | 3871
 [ Handoff Failed Files ](#handoff-failed-list)| 0
-[ Handoff Success Files ](#handoff-success-list)| 2290
+[ Handoff Success Files ](#handoff-success-list)| 2289
 [ Archive Failed Files ](#archive-failed-list)| 0
 [ Archive Success Files ](#archive-success-list)| 0
 [ Handback Failed Files ](#handback-failed-list)| 0
 [ Out Of Sync Handback Files ](#outofsync-handback-success-list)| 0
 [ In Sync Handback Files ](#insync-handback-success-list)| 0
-[ Ignored Files ](#ignored-list)| 1581
+[ Ignored Files ](#ignored-list)| 1582
 
 ## <a name='handoff-failed-list'></a> Handoff Failed File List
 
@@ -1586,7 +1586,6 @@
  [windows-apps-src\launch-resume\create-and-register-a-background-task.md](https://github.com/Microsoft/windows-apps/blob/36bc5dcbefa6b288bf39aea3df42f1031f0b43df/windows-apps-src/launch-resume/create-and-register-a-background-task.md) | HandedOffSuccess | [Details](#0094bbe109cc4ae132766aee51d477d5af9e36832910)
  [windows-apps-src\launch-resume\debug-a-background-task.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/launch-resume/debug-a-background-task.md) | HandedOffSuccess | [Details](#1af8301989f10260f219c612697a7e6c814a54602911)
  [windows-apps-src\launch-resume\declare-background-tasks-in-the-application-manifest.md](https://github.com/Microsoft/windows-apps/blob/fb7456f44095a0ef7b9a98f08f1be996d5c52aad/windows-apps-src/launch-resume/declare-background-tasks-in-the-application-manifest.md) | HandedOffSuccess | [Details](#4300c6eba40e8f3c38f464818d00a605a4805e0f2912)
- [windows-apps-src\launch-resume\guidelines-for-background-tasks.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/launch-resume/guidelines-for-background-tasks.md) | HandedOffSuccess | [Details](#f2bb26ae86727648a3c97308021e0b0b894f17122913)
  [windows-apps-src\launch-resume\handle-a-cancelled-background-task.md](https://github.com/Microsoft/windows-apps/blob/36bc5dcbefa6b288bf39aea3df42f1031f0b43df/windows-apps-src/launch-resume/handle-a-cancelled-background-task.md) | HandedOffSuccess | [Details](#bf35793768419f7d5fd6cf0984ea071068d250e92914)
  [windows-apps-src\launch-resume\handle-app-prelaunch.md](https://github.com/Microsoft/windows-apps/blob/36bc5dcbefa6b288bf39aea3df42f1031f0b43df/windows-apps-src/launch-resume/handle-app-prelaunch.md) | HandedOffSuccess | [Details](#c3a70f81fa7624a75efd3ef6393716bcc92ff5202915)
  [windows-apps-src\launch-resume\handle-file-activation.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/launch-resume/handle-file-activation.md) | HandedOffSuccess | [Details](#870866bbe5d190e67bd9dccb99d9777b502e1e8f2916)
@@ -3667,6 +3666,7 @@
  [windows-apps-src\input-and-devices\images\input-patterns\touch-keyboard-thumb.png](https://github.com/Microsoft/windows-apps/blob/43fa23e194a216df482f895ec93042204b41824e/windows-apps-src/input-and-devices/images/input-patterns/touch-keyboard-thumb.png) | Ignored | [Details](#2b80f84225315f97005adf2ebb91e7eb7f0f3cb62801)
  [windows-apps-src\input-and-devices\images\input-patterns\touchpad-hero.jpg](https://github.com/Microsoft/windows-apps/blob/43fa23e194a216df482f895ec93042204b41824e/windows-apps-src/input-and-devices/images/input-patterns/touchpad-hero.jpg) | Ignored | [Details](#3ef96e41398113897f11c398bc24ebb547d35eea2806)
  [windows-apps-src\input-and-devices\images\penandink1-small.png](https://github.com/Microsoft/windows-apps/blob/43fa23e194a216df482f895ec93042204b41824e/windows-apps-src/input-and-devices/images/penandink1-small.png) | Ignored | [Details](#4dd42ae878568b5e99e5fe8f94b8541d6a8562882829)
+ [windows-apps-src\launch-resume\guidelines-for-background-tasks.md](https://github.com/Microsoft/windows-apps/blob/43fa23e194a216df482f895ec93042204b41824e/windows-apps-src/launch-resume/guidelines-for-background-tasks.md) | Ignored | [Details](#35b008aef077ed7bfd0c82ffdbb6cd4c7cfbae5a2913)
  [windows-apps-src\layout\assets\grid\epx.mp4](https://github.com/Microsoft/windows-apps/blob/43fa23e194a216df482f895ec93042204b41824e/windows-apps-src/layout/assets/grid/epx.mp4) | Ignored | [Details](#47b728f12044cc77bfb6a9f64fc5031381423cb92954)
  [windows-apps-src\layout\assets\grid\feature.png](https://github.com/Microsoft/windows-apps/blob/43fa23e194a216df482f895ec93042204b41824e/windows-apps-src/layout/assets/grid/feature.png) | Ignored | [Details](#6da4d13a5efa354532aec31cf7172bc8d384f7e52955)
  [windows-apps-src\layout\assets\grid\grid.png](https://github.com/Microsoft/windows-apps/blob/43fa23e194a216df482f895ec93042204b41824e/windows-apps-src/layout/assets/grid/grid.png) | Ignored | [Details](#c10028eb7d8d3e3ba55d633aefff83ceaa614cbc2956)
@@ -40041,12 +40041,12 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='f2bb26ae86727648a3c97308021e0b0b894f17122913'></a> Source: [windows-apps-src\launch-resume\guidelines-for-background-tasks.md](https://github.com/Microsoft/windows-apps/blob/6530fa257ea3735453a97eb5d916524e750e62fc/windows-apps-src/launch-resume/guidelines-for-background-tasks.md)
-* Status: HandedOffSuccess
+##### <a name='35b008aef077ed7bfd0c82ffdbb6cd4c7cfbae5a2913'></a> Source: [windows-apps-src\launch-resume\guidelines-for-background-tasks.md](https://github.com/Microsoft/windows-apps/blob/43fa23e194a216df482f895ec93042204b41824e/windows-apps-src/launch-resume/guidelines-for-background-tasks.md)
+* Status: Ignored
 * Target File: 
-* Handoff File: [guidelines-for-background-tasks.72ec693c93a90692a20431e58b0ea291aeda6927.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/9f4730e20ee8954411f1987d143045b3fa3ab94a/ol-handoff/Microsoft/windows-apps.ja-jp/master/guidelines-for-background-tasks.72ec693c93a90692a20431e58b0ea291aeda6927.ja-jp.xlf)
-* Handoff Datetime: 2016-05-12 14:52:12
-* Handoff Reason: Include
+* Handoff File: 
+* Handoff Datetime: 0001-01-01 00:00:00
+* Handoff Reason: Ignored
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
