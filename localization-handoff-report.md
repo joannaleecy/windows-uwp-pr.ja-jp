@@ -1,30 +1,26 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 12
+ Total Files | 8
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\winrt-components\creating-windows-runtime-components-in-cpp.md](https://github.com/Microsoft/windows-apps/blob/4c32b134c704fa0e4534bc4ba8d045e671c89442/windows-apps-src/winrt-components/creating-windows-runtime-components-in-cpp.md) | HandedOffSuccess | [Details](#1497175723738cc23ec21b280c9639b216a33ddd3770)
- [windows-apps-src\winrt-components\creating-windows-runtime-components-in-csharp-and-visual-basic.md](https://github.com/Microsoft/windows-apps/blob/4c32b134c704fa0e4534bc4ba8d045e671c89442/windows-apps-src/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md) | HandedOffSuccess | [Details](#e8fd48b99d6a05af57e67e503c7bd3058b07569c3771)
- [windows-apps-src\winrt-components\custom-events-and-event-accessors-in-windows-runtime-components.md](https://github.com/Microsoft/windows-apps/blob/4c32b134c704fa0e4534bc4ba8d045e671c89442/windows-apps-src/winrt-components/custom-events-and-event-accessors-in-windows-runtime-components.md) | HandedOffSuccess | [Details](#1308989c8d1c6959560458dd4d87119b4bfa74b03772)
- [windows-apps-src\winrt-components\diagnosing-windows-runtime-component-error-conditions.md](https://github.com/Microsoft/windows-apps/blob/4c32b134c704fa0e4534bc4ba8d045e671c89442/windows-apps-src/winrt-components/diagnosing-windows-runtime-component-error-conditions.md) | HandedOffSuccess | [Details](#29199b7c94c4fecd173fb96f0d8fb43692d724643773)
- [windows-apps-src\winrt-components\distributing-a-managed-windows-runtime-component.md](https://github.com/Microsoft/windows-apps/blob/4c32b134c704fa0e4534bc4ba8d045e671c89442/windows-apps-src/winrt-components/distributing-a-managed-windows-runtime-component.md) | HandedOffSuccess | [Details](#3d7a51ed13f63ca9d6070fbbe860c653c4deaf073774)
- [windows-apps-src\winrt-components\images\buildevents.png](https://github.com/Microsoft/windows-apps/blob/7248c63af3985aeabbc1c5471ca301c36e3d1c45/windows-apps-src/winrt-components/images/buildevents.png) | HandedOffSuccess | [Details](#73597c689abe7946a4896c6a123c8d8fa513dbe03775)
- [windows-apps-src\winrt-components\index.md](https://github.com/Microsoft/windows-apps/blob/4c32b134c704fa0e4534bc4ba8d045e671c89442/windows-apps-src/winrt-components/index.md) | HandedOffSuccess | [Details](#7239a44b01d2fa2fe6383bc3b61b5ffd243a97d33778)
- [windows-apps-src\winrt-components\net-framework-mappings-of-windows-runtime-types.md](https://github.com/Microsoft/windows-apps/blob/4c32b134c704fa0e4534bc4ba8d045e671c89442/windows-apps-src/winrt-components/net-framework-mappings-of-windows-runtime-types.md) | HandedOffSuccess | [Details](#286f479c86c06c9d08b4e36cf9776b590a13cc5f3779)
- [windows-apps-src\winrt-components\passing-arrays-to-a-windows-runtime-component.md](https://github.com/Microsoft/windows-apps/blob/4c32b134c704fa0e4534bc4ba8d045e671c89442/windows-apps-src/winrt-components/passing-arrays-to-a-windows-runtime-component.md) | HandedOffSuccess | [Details](#21e4b504b4adc6e2cb9b16d377781aaaab6a4aac3780)
- [windows-apps-src\winrt-components\raising-events-in-windows-runtime-components.md](https://github.com/Microsoft/windows-apps/blob/4c32b134c704fa0e4534bc4ba8d045e671c89442/windows-apps-src/winrt-components/raising-events-in-windows-runtime-components.md) | HandedOffSuccess | [Details](#54934cba0e26da547e09b95a63d2c63363eaf85d3781)
- [windows-apps-src\winrt-components\walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md](https://github.com/Microsoft/windows-apps/blob/4c32b134c704fa0e4534bc4ba8d045e671c89442/windows-apps-src/winrt-components/walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md) | HandedOffSuccess | [Details](#860333e3239198cd54eea061195e2a51d786821b3782)
- [windows-apps-src\winrt-components\walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md](https://github.com/Microsoft/windows-apps/blob/4c32b134c704fa0e4534bc4ba8d045e671c89442/windows-apps-src/winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md) | HandedOffSuccess | [Details](#c521061d9fdd3eb2c25e3072182fb1d7823f13ba3783)
+ [windows-apps-src\monetize\access-analytics-data-using-windows-store-services.md](https://github.com/Microsoft/windows-apps/blob/02131e641cdaa76256845b38bcc50aa42d718601/windows-apps-src/monetize/access-analytics-data-using-windows-store-services.md) | HandedOffSuccess | [Details](#7053226f8f4321d7d7be3a43de2fbf45c3c543a13243)
+ [windows-apps-src\monetize\get-app-acquisitions.md](https://github.com/Microsoft/windows-apps/blob/02131e641cdaa76256845b38bcc50aa42d718601/windows-apps-src/monetize/get-app-acquisitions.md) | HandedOffSuccess | [Details](#7f87f931c92eca1f64fbd23b4fcba3359293f94a3269)
+ [windows-apps-src\monetize\get-app-ratings.md](https://github.com/Microsoft/windows-apps/blob/02131e641cdaa76256845b38bcc50aa42d718601/windows-apps-src/monetize/get-app-ratings.md) | HandedOffSuccess | [Details](#cf585c8a54f479eb91d7b9a5261dae4a83f0b6753271)
+ [windows-apps-src\monetize\get-app-reviews.md](https://github.com/Microsoft/windows-apps/blob/02131e641cdaa76256845b38bcc50aa42d718601/windows-apps-src/monetize/get-app-reviews.md) | HandedOffSuccess | [Details](#bb0f912bd3380e21e04fa44f2c75244c6585f03a3272)
+ [windows-apps-src\monetize\get-error-reporting-data.md](https://github.com/Microsoft/windows-apps/blob/02131e641cdaa76256845b38bcc50aa42d718601/windows-apps-src/monetize/get-error-reporting-data.md) | HandedOffSuccess | [Details](#5b2421daf9df4ca417d5089166c0927e2b2f74363273)
+ [windows-apps-src\monetize\get-in-app-acquisitions.md](https://github.com/Microsoft/windows-apps/blob/02131e641cdaa76256845b38bcc50aa42d718601/windows-apps-src/monetize/get-in-app-acquisitions.md) | HandedOffSuccess | [Details](#21e634b1d5ab6c3ba7762c1b83c94d076d094af53274)
+ [windows-apps-src\monetize\grant-free-products.md](https://github.com/Microsoft/windows-apps/blob/02131e641cdaa76256845b38bcc50aa42d718601/windows-apps-src/monetize/grant-free-products.md) | HandedOffSuccess | [Details](#b013cc5695793465e4f0b7d005a15e5a3c000c893276)
+ [windows-apps-src\monetize\query-for-products.md](https://github.com/Microsoft/windows-apps/blob/02131e641cdaa76256845b38bcc50aa42d718601/windows-apps-src/monetize/query-for-products.md) | HandedOffSuccess | [Details](#6fc6205a7819dc7f28382035c389091b5d47a9083316)
 
 ## Item Details
-##### <a name='1497175723738cc23ec21b280c9639b216a33ddd3770'></a> Source: [windows-apps-src\winrt-components\creating-windows-runtime-components-in-cpp.md](https://github.com/Microsoft/windows-apps/blob/4c32b134c704fa0e4534bc4ba8d045e671c89442/windows-apps-src/winrt-components/creating-windows-runtime-components-in-cpp.md)
+##### <a name='7053226f8f4321d7d7be3a43de2fbf45c3c543a13243'></a> Source: [windows-apps-src\monetize\access-analytics-data-using-windows-store-services.md](https://github.com/Microsoft/windows-apps/blob/02131e641cdaa76256845b38bcc50aa42d718601/windows-apps-src/monetize/access-analytics-data-using-windows-store-services.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [creating-windows-runtime-components-in-cpp.4d1bc42cd23d25a1c437e879d0a95eab953200a5.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/6788f4a8f1225b79e90fb113aca9eb4a181bb2fd/ol-handoff/Microsoft/windows-apps.ja-jp/master/creating-windows-runtime-components-in-cpp.4d1bc42cd23d25a1c437e879d0a95eab953200a5.ja-jp.xlf)
-* Handoff Datetime: 2016-05-14 03:20:21
+* Handoff File: [access-analytics-data-using-windows-store-services.828b860af9092ad75eb025c00b3645739b166f59.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/253df90f1f626527e4aa3699f0d38f5b476fe575/ol-handoff/Microsoft/windows-apps.ja-jp/master/access-analytics-data-using-windows-store-services.828b860af9092ad75eb025c00b3645739b166f59.ja-jp.xlf)
+* Handoff Datetime: 2016-05-16 18:00:05
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -32,11 +28,11 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='e8fd48b99d6a05af57e67e503c7bd3058b07569c3771'></a> Source: [windows-apps-src\winrt-components\creating-windows-runtime-components-in-csharp-and-visual-basic.md](https://github.com/Microsoft/windows-apps/blob/4c32b134c704fa0e4534bc4ba8d045e671c89442/windows-apps-src/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+##### <a name='7f87f931c92eca1f64fbd23b4fcba3359293f94a3269'></a> Source: [windows-apps-src\monetize\get-app-acquisitions.md](https://github.com/Microsoft/windows-apps/blob/02131e641cdaa76256845b38bcc50aa42d718601/windows-apps-src/monetize/get-app-acquisitions.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [creating-windows-runtime-components-in-csharp-and-visual-basic.06a96ce103137024969843d1e8e0c65f01d2b9e9.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/6788f4a8f1225b79e90fb113aca9eb4a181bb2fd/ol-handoff/Microsoft/windows-apps.ja-jp/master/creating-windows-runtime-components-in-csharp-and-visual-basic.06a96ce103137024969843d1e8e0c65f01d2b9e9.ja-jp.xlf)
-* Handoff Datetime: 2016-05-14 03:20:21
+* Handoff File: [get-app-acquisitions.f14b6d2a411a11089761ab93454ca2bd46c9fee7.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/253df90f1f626527e4aa3699f0d38f5b476fe575/ol-handoff/Microsoft/windows-apps.ja-jp/master/get-app-acquisitions.f14b6d2a411a11089761ab93454ca2bd46c9fee7.ja-jp.xlf)
+* Handoff Datetime: 2016-05-16 18:00:05
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -44,11 +40,11 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='1308989c8d1c6959560458dd4d87119b4bfa74b03772'></a> Source: [windows-apps-src\winrt-components\custom-events-and-event-accessors-in-windows-runtime-components.md](https://github.com/Microsoft/windows-apps/blob/4c32b134c704fa0e4534bc4ba8d045e671c89442/windows-apps-src/winrt-components/custom-events-and-event-accessors-in-windows-runtime-components.md)
+##### <a name='cf585c8a54f479eb91d7b9a5261dae4a83f0b6753271'></a> Source: [windows-apps-src\monetize\get-app-ratings.md](https://github.com/Microsoft/windows-apps/blob/02131e641cdaa76256845b38bcc50aa42d718601/windows-apps-src/monetize/get-app-ratings.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [custom-events-and-event-accessors-in-windows-runtime-components.efbc06325c5d11af1ee0812e6056e3c99da3d023.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/6788f4a8f1225b79e90fb113aca9eb4a181bb2fd/ol-handoff/Microsoft/windows-apps.ja-jp/master/custom-events-and-event-accessors-in-windows-runtime-components.efbc06325c5d11af1ee0812e6056e3c99da3d023.ja-jp.xlf)
-* Handoff Datetime: 2016-05-14 03:20:21
+* Handoff File: [get-app-ratings.6d54049db0a56dc7967b6a7d76fb6de1ca1034a1.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/253df90f1f626527e4aa3699f0d38f5b476fe575/ol-handoff/Microsoft/windows-apps.ja-jp/master/get-app-ratings.6d54049db0a56dc7967b6a7d76fb6de1ca1034a1.ja-jp.xlf)
+* Handoff Datetime: 2016-05-16 18:00:05
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -56,11 +52,11 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='29199b7c94c4fecd173fb96f0d8fb43692d724643773'></a> Source: [windows-apps-src\winrt-components\diagnosing-windows-runtime-component-error-conditions.md](https://github.com/Microsoft/windows-apps/blob/4c32b134c704fa0e4534bc4ba8d045e671c89442/windows-apps-src/winrt-components/diagnosing-windows-runtime-component-error-conditions.md)
+##### <a name='bb0f912bd3380e21e04fa44f2c75244c6585f03a3272'></a> Source: [windows-apps-src\monetize\get-app-reviews.md](https://github.com/Microsoft/windows-apps/blob/02131e641cdaa76256845b38bcc50aa42d718601/windows-apps-src/monetize/get-app-reviews.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [diagnosing-windows-runtime-component-error-conditions.fa24e84a507cfc0e2be9e7bc610f1f4a22090bf2.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/6788f4a8f1225b79e90fb113aca9eb4a181bb2fd/ol-handoff/Microsoft/windows-apps.ja-jp/master/diagnosing-windows-runtime-component-error-conditions.fa24e84a507cfc0e2be9e7bc610f1f4a22090bf2.ja-jp.xlf)
-* Handoff Datetime: 2016-05-14 03:20:21
+* Handoff File: [get-app-reviews.aa07f186e9d0e663a6f8e9963ebc5a00c31a4b37.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/253df90f1f626527e4aa3699f0d38f5b476fe575/ol-handoff/Microsoft/windows-apps.ja-jp/master/get-app-reviews.aa07f186e9d0e663a6f8e9963ebc5a00c31a4b37.ja-jp.xlf)
+* Handoff Datetime: 2016-05-16 18:00:05
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -68,11 +64,11 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='3d7a51ed13f63ca9d6070fbbe860c653c4deaf073774'></a> Source: [windows-apps-src\winrt-components\distributing-a-managed-windows-runtime-component.md](https://github.com/Microsoft/windows-apps/blob/4c32b134c704fa0e4534bc4ba8d045e671c89442/windows-apps-src/winrt-components/distributing-a-managed-windows-runtime-component.md)
+##### <a name='5b2421daf9df4ca417d5089166c0927e2b2f74363273'></a> Source: [windows-apps-src\monetize\get-error-reporting-data.md](https://github.com/Microsoft/windows-apps/blob/02131e641cdaa76256845b38bcc50aa42d718601/windows-apps-src/monetize/get-error-reporting-data.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [distributing-a-managed-windows-runtime-component.418af7f4c4006b9743bdc616b25d978a52bd19e3.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/6788f4a8f1225b79e90fb113aca9eb4a181bb2fd/ol-handoff/Microsoft/windows-apps.ja-jp/master/distributing-a-managed-windows-runtime-component.418af7f4c4006b9743bdc616b25d978a52bd19e3.ja-jp.xlf)
-* Handoff Datetime: 2016-05-14 03:20:21
+* Handoff File: [get-error-reporting-data.63a456478a0dce2251d9adb48f2372706ef3aaeb.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/253df90f1f626527e4aa3699f0d38f5b476fe575/ol-handoff/Microsoft/windows-apps.ja-jp/master/get-error-reporting-data.63a456478a0dce2251d9adb48f2372706ef3aaeb.ja-jp.xlf)
+* Handoff Datetime: 2016-05-16 18:00:05
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -80,24 +76,11 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='73597c689abe7946a4896c6a123c8d8fa513dbe03775'></a> Source: [windows-apps-src\winrt-components\images\buildevents.png](https://github.com/Microsoft/windows-apps/blob/7248c63af3985aeabbc1c5471ca301c36e3d1c45/windows-apps-src/winrt-components/images/buildevents.png)
+##### <a name='21e634b1d5ab6c3ba7762c1b83c94d076d094af53274'></a> Source: [windows-apps-src\monetize\get-in-app-acquisitions.md](https://github.com/Microsoft/windows-apps/blob/02131e641cdaa76256845b38bcc50aa42d718601/windows-apps-src/monetize/get-in-app-acquisitions.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [73597c689abe7946a4896c6a123c8d8fa513dbe0.png](https://github.com/Microsoft/WDG.handoff/blob/6788f4a8f1225b79e90fb113aca9eb4a181bb2fd/ol-handoff/Microsoft/windows-apps.ja-jp/master/73597c689abe7946a4896c6a123c8d8fa513dbe0.png)
-* Handoff Datetime: 2016-05-14 03:20:21
-* Handoff Reason: IsDependency
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Dependency From: windows-apps-src\winrt-components\raising-events-in-windows-runtime-components.md
-* [Back to Top](#report-top)
-
-##### <a name='7239a44b01d2fa2fe6383bc3b61b5ffd243a97d33778'></a> Source: [windows-apps-src\winrt-components\index.md](https://github.com/Microsoft/windows-apps/blob/4c32b134c704fa0e4534bc4ba8d045e671c89442/windows-apps-src/winrt-components/index.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [index.f4a11554ece92280450147aa65b4bafff4b454c0.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/6788f4a8f1225b79e90fb113aca9eb4a181bb2fd/ol-handoff/Microsoft/windows-apps.ja-jp/master/index.f4a11554ece92280450147aa65b4bafff4b454c0.ja-jp.xlf)
-* Handoff Datetime: 2016-05-14 03:20:21
+* Handoff File: [get-in-app-acquisitions.fcb7e186f3708c32617a611f4226f5a83e6f41a5.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/253df90f1f626527e4aa3699f0d38f5b476fe575/ol-handoff/Microsoft/windows-apps.ja-jp/master/get-in-app-acquisitions.fcb7e186f3708c32617a611f4226f5a83e6f41a5.ja-jp.xlf)
+* Handoff Datetime: 2016-05-16 18:00:05
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -105,11 +88,11 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='286f479c86c06c9d08b4e36cf9776b590a13cc5f3779'></a> Source: [windows-apps-src\winrt-components\net-framework-mappings-of-windows-runtime-types.md](https://github.com/Microsoft/windows-apps/blob/4c32b134c704fa0e4534bc4ba8d045e671c89442/windows-apps-src/winrt-components/net-framework-mappings-of-windows-runtime-types.md)
+##### <a name='b013cc5695793465e4f0b7d005a15e5a3c000c893276'></a> Source: [windows-apps-src\monetize\grant-free-products.md](https://github.com/Microsoft/windows-apps/blob/02131e641cdaa76256845b38bcc50aa42d718601/windows-apps-src/monetize/grant-free-products.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [net-framework-mappings-of-windows-runtime-types.50b2da5c9d379cfd2cdb7e8b30e2fd3e31143e12.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/6788f4a8f1225b79e90fb113aca9eb4a181bb2fd/ol-handoff/Microsoft/windows-apps.ja-jp/master/net-framework-mappings-of-windows-runtime-types.50b2da5c9d379cfd2cdb7e8b30e2fd3e31143e12.ja-jp.xlf)
-* Handoff Datetime: 2016-05-14 03:20:21
+* Handoff File: [grant-free-products.9ce5dd681b14e8792e182d1e6176971dd69c3220.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/253df90f1f626527e4aa3699f0d38f5b476fe575/ol-handoff/Microsoft/windows-apps.ja-jp/master/grant-free-products.9ce5dd681b14e8792e182d1e6176971dd69c3220.ja-jp.xlf)
+* Handoff Datetime: 2016-05-16 18:00:05
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -117,47 +100,11 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='21e4b504b4adc6e2cb9b16d377781aaaab6a4aac3780'></a> Source: [windows-apps-src\winrt-components\passing-arrays-to-a-windows-runtime-component.md](https://github.com/Microsoft/windows-apps/blob/4c32b134c704fa0e4534bc4ba8d045e671c89442/windows-apps-src/winrt-components/passing-arrays-to-a-windows-runtime-component.md)
+##### <a name='6fc6205a7819dc7f28382035c389091b5d47a9083316'></a> Source: [windows-apps-src\monetize\query-for-products.md](https://github.com/Microsoft/windows-apps/blob/02131e641cdaa76256845b38bcc50aa42d718601/windows-apps-src/monetize/query-for-products.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [passing-arrays-to-a-windows-runtime-component.a97864e444036971aab7cd3f3a0e229ee2479e63.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/6788f4a8f1225b79e90fb113aca9eb4a181bb2fd/ol-handoff/Microsoft/windows-apps.ja-jp/master/passing-arrays-to-a-windows-runtime-component.a97864e444036971aab7cd3f3a0e229ee2479e63.ja-jp.xlf)
-* Handoff Datetime: 2016-05-14 03:20:21
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='54934cba0e26da547e09b95a63d2c63363eaf85d3781'></a> Source: [windows-apps-src\winrt-components\raising-events-in-windows-runtime-components.md](https://github.com/Microsoft/windows-apps/blob/4c32b134c704fa0e4534bc4ba8d045e671c89442/windows-apps-src/winrt-components/raising-events-in-windows-runtime-components.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [raising-events-in-windows-runtime-components.9dcd42380e6831c2c348811df4df77e42cbda6ae.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/6788f4a8f1225b79e90fb113aca9eb4a181bb2fd/ol-handoff/Microsoft/windows-apps.ja-jp/master/raising-events-in-windows-runtime-components.9dcd42380e6831c2c348811df4df77e42cbda6ae.ja-jp.xlf)
-* Handoff Datetime: 2016-05-14 03:20:21
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='860333e3239198cd54eea061195e2a51d786821b3782'></a> Source: [windows-apps-src\winrt-components\walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md](https://github.com/Microsoft/windows-apps/blob/4c32b134c704fa0e4534bc4ba8d045e671c89442/windows-apps-src/winrt-components/walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.e1358ff7f33bff9b1517bc1736cf99dc7fb552fe.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/6788f4a8f1225b79e90fb113aca9eb4a181bb2fd/ol-handoff/Microsoft/windows-apps.ja-jp/master/walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.e1358ff7f33bff9b1517bc1736cf99dc7fb552fe.ja-jp.xlf)
-* Handoff Datetime: 2016-05-14 03:20:21
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='c521061d9fdd3eb2c25e3072182fb1d7823f13ba3783'></a> Source: [windows-apps-src\winrt-components\walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md](https://github.com/Microsoft/windows-apps/blob/4c32b134c704fa0e4534bc4ba8d045e671c89442/windows-apps-src/winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.132cae49fe9966ed29cd9cf5d3c778bdf6569f3f.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/6788f4a8f1225b79e90fb113aca9eb4a181bb2fd/ol-handoff/Microsoft/windows-apps.ja-jp/master/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.132cae49fe9966ed29cd9cf5d3c778bdf6569f3f.ja-jp.xlf)
-* Handoff Datetime: 2016-05-14 03:20:21
+* Handoff File: [query-for-products.cad9cebcc3ee323150842b236699b8fc91d4b02a.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/253df90f1f626527e4aa3699f0d38f5b476fe575/ol-handoff/Microsoft/windows-apps.ja-jp/master/query-for-products.cad9cebcc3ee323150842b236699b8fc91d4b02a.ja-jp.xlf)
+* Handoff Datetime: 2016-05-16 18:00:05
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00

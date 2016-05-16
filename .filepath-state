@@ -4631,6 +4631,9 @@
   "e161e478b1b306f5d8d77b7649aeecd80e21b5be": [
     "windows-apps-src\\maps-and-location\\set-up-a-geofence.md"
   ],
+  "7053226f8f4321d7d7be3a43de2fbf45c3c543a1": [
+    "windows-apps-src\\monetize\\access-analytics-data-using-windows-store-services.md"
+  ],
   "1710d8afd59cc5558b3b69c9e29da45228d67241": [
     "windows-apps-src\\monetize\\access-analytics-data-using-windows-store-services.md"
   ],
@@ -4706,26 +4709,44 @@
   "9c38784325f4dc51052f70a819012508f2a0bdbb": [
     "windows-apps-src\\monetize\\exclude-or-limit-features-in-a-trial-version-of-your-app.md"
   ],
+  "7f87f931c92eca1f64fbd23b4fcba3359293f94a": [
+    "windows-apps-src\\monetize\\get-app-acquisitions.md"
+  ],
   "3d78ec578af6beed1bba7410e8e1f7f9179088cb": [
     "windows-apps-src\\monetize\\get-app-acquisitions.md"
   ],
   "3d885322181fa8b932dd248c8c71e7d6d747bb06": [
     "windows-apps-src\\monetize\\get-app-failures.md"
   ],
+  "cf585c8a54f479eb91d7b9a5261dae4a83f0b675": [
+    "windows-apps-src\\monetize\\get-app-ratings.md"
+  ],
   "1224cf0aa49006bb31ff95e0c6f7649d30b8eef0": [
     "windows-apps-src\\monetize\\get-app-ratings.md"
+  ],
+  "bb0f912bd3380e21e04fa44f2c75244c6585f03a": [
+    "windows-apps-src\\monetize\\get-app-reviews.md"
   ],
   "036d8189e816331a8074f7e2d7ac8f2d960622aa": [
     "windows-apps-src\\monetize\\get-app-reviews.md"
   ],
+  "5b2421daf9df4ca417d5089166c0927e2b2f7436": [
+    "windows-apps-src\\monetize\\get-error-reporting-data.md"
+  ],
   "d129d7b66b42978633f89a5f838920b9165afba6": [
     "windows-apps-src\\monetize\\get-error-reporting-data.md"
+  ],
+  "21e634b1d5ab6c3ba7762c1b83c94d076d094af5": [
+    "windows-apps-src\\monetize\\get-in-app-acquisitions.md"
   ],
   "67788096656d1ec6e3cbf764bbde4b8e973119a2": [
     "windows-apps-src\\monetize\\get-in-app-acquisitions.md"
   ],
   "08168dc15b33d99a044eedd7864848ed7a858991": [
     "windows-apps-src\\monetize\\get-started-with-microsoft-advertising-libraries.md"
+  ],
+  "b013cc5695793465e4f0b7d005a15e5a3c000c89": [
+    "windows-apps-src\\monetize\\grant-free-products.md"
   ],
   "9e6ba1c0b20da5eccee9108e30a6a84b2f76c38b": [
     "windows-apps-src\\monetize\\grant-free-products.md"
@@ -4840,6 +4861,9 @@
   ],
   "bf900aac732fb012a39d2e2e6c5312ccb5a65cee": [
     "windows-apps-src\\monetize\\monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md"
+  ],
+  "6fc6205a7819dc7f28382035c389091b5d47a908": [
+    "windows-apps-src\\monetize\\query-for-products.md"
   ],
   "074794b7e9ae0eccbc5e1170dd4b7e4d1f4ce308": [
     "windows-apps-src\\monetize\\query-for-products.md"
