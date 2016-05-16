@@ -104,8 +104,14 @@
   "433cda6432d1e695bacb338e68012bcc9c837eb6": [
     "windows-apps-src\\app-settings\\store-and-retrieve-app-data.md"
   ],
+  "7001b3f5719b1deab22044b822466c9b358d52c0": [
+    "windows-apps-src\\app-to-app\\copy-and-paste.md"
+  ],
   "1d98623371655bc177cca661417d38c175ce9963": [
     "windows-apps-src\\app-to-app\\copy-and-paste.md"
+  ],
+  "acf6fa35c2620de9fc11a83cb5c5ec3916067ad4": [
+    "windows-apps-src\\app-to-app\\drag-and-drop.md"
   ],
   "fc6d3193f95b7dcadaa2d4ebf2952deffc3bcdc0": [
     "windows-apps-src\\app-to-app\\drag-and-drop.md"
@@ -113,8 +119,14 @@
   "63550064b6f31b85cd3b6fa2a09bac4b7cfcf895": [
     "windows-apps-src\\app-to-app\\index.md"
   ],
+  "7be3d9b9d24419e9238f6de56f17d4cd1732a897": [
+    "windows-apps-src\\app-to-app\\receive-data.md"
+  ],
   "250826fd8f8c4490e62220df0398a7272d4b7b68": [
     "windows-apps-src\\app-to-app\\receive-data.md"
+  ],
+  "2df3ad6ef692c3834cb6d2fc5fbc43bd6d876f4c": [
+    "windows-apps-src\\app-to-app\\share-data.md"
   ],
   "c56c12a25bba4536472686df0c75e83a8d7f5822": [
     "windows-apps-src\\app-to-app\\share-data.md"

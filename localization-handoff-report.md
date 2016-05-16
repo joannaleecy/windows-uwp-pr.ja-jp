@@ -1,19 +1,58 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 4
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\launch-resume\app-lifecycle.md](https://github.com/Microsoft/windows-apps/blob/05bb1fb0ceca315f83ffcf785c6310a9b8b2eb40/windows-apps-src/launch-resume/app-lifecycle.md) | HandedOffSuccess | [Details](#8842f1fa2ec5f6b4c9eb579552ccbead2d20493a2907)
+ [windows-apps-src\app-to-app\copy-and-paste.md](https://github.com/Microsoft/windows-apps/blob/d9a25bcc889ebc7e55e484f2202a8f42c38bfb21/windows-apps-src/app-to-app/copy-and-paste.md) | HandedOffSuccess | [Details](#7001b3f5719b1deab22044b822466c9b358d52c0128)
+ [windows-apps-src\app-to-app\drag-and-drop.md](https://github.com/Microsoft/windows-apps/blob/d9a25bcc889ebc7e55e484f2202a8f42c38bfb21/windows-apps-src/app-to-app/drag-and-drop.md) | HandedOffSuccess | [Details](#acf6fa35c2620de9fc11a83cb5c5ec3916067ad4129)
+ [windows-apps-src\app-to-app\receive-data.md](https://github.com/Microsoft/windows-apps/blob/d9a25bcc889ebc7e55e484f2202a8f42c38bfb21/windows-apps-src/app-to-app/receive-data.md) | HandedOffSuccess | [Details](#7be3d9b9d24419e9238f6de56f17d4cd1732a897131)
+ [windows-apps-src\app-to-app\share-data.md](https://github.com/Microsoft/windows-apps/blob/d9a25bcc889ebc7e55e484f2202a8f42c38bfb21/windows-apps-src/app-to-app/share-data.md) | HandedOffSuccess | [Details](#2df3ad6ef692c3834cb6d2fc5fbc43bd6d876f4c132)
 
 ## Item Details
-##### <a name='8842f1fa2ec5f6b4c9eb579552ccbead2d20493a2907'></a> Source: [windows-apps-src\launch-resume\app-lifecycle.md](https://github.com/Microsoft/windows-apps/blob/05bb1fb0ceca315f83ffcf785c6310a9b8b2eb40/windows-apps-src/launch-resume/app-lifecycle.md)
+##### <a name='7001b3f5719b1deab22044b822466c9b358d52c0128'></a> Source: [windows-apps-src\app-to-app\copy-and-paste.md](https://github.com/Microsoft/windows-apps/blob/d9a25bcc889ebc7e55e484f2202a8f42c38bfb21/windows-apps-src/app-to-app/copy-and-paste.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [app-lifecycle.ccef52258bdc75288e41f9726d49569048ea6c50.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/b150d089eb86b2bb52a01d515c25e61310f02fde/ol-handoff/Microsoft/windows-apps.ja-jp/master/app-lifecycle.ccef52258bdc75288e41f9726d49569048ea6c50.ja-jp.xlf)
-* Handoff Datetime: 2016-05-16 20:30:38
+* Handoff File: [copy-and-paste.09a42c146ca62f211b673e6729a19fb8952dc83f.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/6ac3e7f7a05d51188691cd45cfcd9e50757689b6/ol-handoff/Microsoft/windows-apps.ja-jp/master/copy-and-paste.09a42c146ca62f211b673e6729a19fb8952dc83f.ja-jp.xlf)
+* Handoff Datetime: 2016-05-16 21:28:14
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* [Back to Top](#report-top)
+
+##### <a name='acf6fa35c2620de9fc11a83cb5c5ec3916067ad4129'></a> Source: [windows-apps-src\app-to-app\drag-and-drop.md](https://github.com/Microsoft/windows-apps/blob/d9a25bcc889ebc7e55e484f2202a8f42c38bfb21/windows-apps-src/app-to-app/drag-and-drop.md)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [drag-and-drop.691a174bd4bab63c05fbd6093e6a7ed72f7b0a97.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/6ac3e7f7a05d51188691cd45cfcd9e50757689b6/ol-handoff/Microsoft/windows-apps.ja-jp/master/drag-and-drop.691a174bd4bab63c05fbd6093e6a7ed72f7b0a97.ja-jp.xlf)
+* Handoff Datetime: 2016-05-16 21:28:14
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* [Back to Top](#report-top)
+
+##### <a name='7be3d9b9d24419e9238f6de56f17d4cd1732a897131'></a> Source: [windows-apps-src\app-to-app\receive-data.md](https://github.com/Microsoft/windows-apps/blob/d9a25bcc889ebc7e55e484f2202a8f42c38bfb21/windows-apps-src/app-to-app/receive-data.md)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [receive-data.f19df9b3eaaa5031aaff9466ca58c05d88244e16.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/6ac3e7f7a05d51188691cd45cfcd9e50757689b6/ol-handoff/Microsoft/windows-apps.ja-jp/master/receive-data.f19df9b3eaaa5031aaff9466ca58c05d88244e16.ja-jp.xlf)
+* Handoff Datetime: 2016-05-16 21:28:14
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* [Back to Top](#report-top)
+
+##### <a name='2df3ad6ef692c3834cb6d2fc5fbc43bd6d876f4c132'></a> Source: [windows-apps-src\app-to-app\share-data.md](https://github.com/Microsoft/windows-apps/blob/d9a25bcc889ebc7e55e484f2202a8f42c38bfb21/windows-apps-src/app-to-app/share-data.md)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [share-data.3ba4e53db66d4053e5d3aa87a62f6a200831a1c4.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/6ac3e7f7a05d51188691cd45cfcd9e50757689b6/ol-handoff/Microsoft/windows-apps.ja-jp/master/share-data.3ba4e53db66d4053e5d3aa87a62f6a200831a1c4.ja-jp.xlf)
+* Handoff Datetime: 2016-05-16 21:28:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
