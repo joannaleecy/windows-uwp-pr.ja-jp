@@ -3338,6 +3338,9 @@
   "53d23b3f8502e1f182c728b9f787fbbc4b694d42": [
     "windows-apps-src\\get-started\\sign-up.md"
   ],
+  "191a7aef1a027747379c991e17afc1580a9ec549": [
+    "windows-apps-src\\get-started\\universal-application-platform-guide.md"
+  ],
   "26de4e1b5a2fdee8abd9cc6199c92160e33f692c": [
     "windows-apps-src\\get-started\\universal-application-platform-guide.md"
   ],
@@ -4177,11 +4180,17 @@
   "016969dfc0a98b978e43ea0751cc6896c2919ff8": [
     "windows-apps-src\\launch-resume\\access-sensors-and-devices-from-a-background-task.md"
   ],
+  "4647b17e565f8e2e667e2e06d913f7dec496ef93": [
+    "windows-apps-src\\launch-resume\\activate-an-app.md"
+  ],
   "26c900fcb53b679be6f7a3a2a7d861e07db454b4": [
     "windows-apps-src\\launch-resume\\activate-an-app.md"
   ],
   "56dc94d30046b0b6d1ff57155d5738bf66736981": [
     "windows-apps-src\\launch-resume\\add-a-splash-screen.md"
+  ],
+  "8451942c05d5d44cafba243f7cbebceedbe86fc0": [
+    "windows-apps-src\\launch-resume\\app-lifecycle.md"
   ],
   "8842f1fa2ec5f6b4c9eb579552ccbead2d20493a": [
     "windows-apps-src\\launch-resume\\app-lifecycle.md"
@@ -4213,6 +4222,9 @@
   "bf35793768419f7d5fd6cf0984ea071068d250e9": [
     "windows-apps-src\\launch-resume\\handle-a-cancelled-background-task.md"
   ],
+  "d9d3bdf86d858367008a32d9d6a06ec9fc13787d": [
+    "windows-apps-src\\launch-resume\\handle-app-prelaunch.md"
+  ],
   "c3a70f81fa7624a75efd3ef6393716bcc92ff520": [
     "windows-apps-src\\launch-resume\\handle-app-prelaunch.md"
   ],
@@ -4224,6 +4236,9 @@
   ],
   "370e74b822ba3f8e025df21b804ca77b65270123": [
     "windows-apps-src\\launch-resume\\how-to-create-and-consume-an-app-service.md"
+  ],
+  "5826b370df3dccd1590e3f67c15126b4e78c2c32": [
+    "windows-apps-src\\launch-resume\\how-to-launch-an-app-for-results.md"
   ],
   "1ee59984629599bef116da6cdf66a294aa7399b1": [
     "windows-apps-src\\launch-resume\\how-to-launch-an-app-for-results.md"
