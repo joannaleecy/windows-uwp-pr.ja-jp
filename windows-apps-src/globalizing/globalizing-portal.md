@@ -1,38 +1,38 @@
 ---
 author: DelfCo
-Description: Globalization is the process of designing and developing your app to act appropriately for different global markets without any changes or customization.
+Description: グローバリゼーションとは、変更やカスタマイズを加えなくてもさまざまなグローバル市場で適切に動作するようにアプリを設計および開発するプロセスです。
 Search.SourceType: Video
-title: Globalization and localization
+title: グローバリゼーションとローカライズ
 ms.assetid: c0791eec-5bb8-4a13-8977-61d7d98e35ce
 label: Intro
 template: detail.hbs
 ---
 
-# Globalization and localization
+# グローバリゼーションとローカライズ
 
 
 
 
-Windows is used worldwide, by audiences that vary in culture, region, and language. A user may speak any language, or even multiple languages. A user may be located anywhere in the world, and may speak any language in any location. You can increase the potential market for your app by designing it to be readily adaptable using *globalization* and *localization*.
+Windows は世界中で利用されており、文化、地域、言語の異なるユーザーがいます。 ユーザーは、自分の使用言語としてどの言語でも指定でき、複数の言語を指定することもできます。 住んでいる地域として世界中のどの場所を指定することもでき、地域を問わずどの言語でも指定できます。 *グローバリゼーション*と*ローカライズ*によってアプリの適応性を高めることにより、潜在的な市場を拡大することができます
 
-**Globalization** is the process of designing and developing your app to act appropriately for different global markets without any changes or customization.
+**グローバリゼーション**とは、変更やカスタマイズを加えなくてもさまざまなグローバル市場で適切に動作するようにアプリを設計および開発するプロセスです。
 
-For example, you can:
+たとえば次のようなことが可能です。
 
--   Design the layout of your app to accommodate the different text lengths and font sizes of other languages in labels and text strings.
--   Retrieve text and culture-dependent images from resources that can be adapted to different local markets, instead of hard-coding them into your app's code or markup.
--   Use globalization APIs to display data that are formatted differently in different regions, such as numeric values, dates, times, and currencies.
+-   言語が変更されてテキストの長さやフォント サイズが変わってもラベルやテキスト文字列が正しく表示されるようにアプリのレイアウトを設計する。
+-   テキストや文化に依存するイメージを、アプリのコードやマークアップにハードコーディングする代わりに、さまざまな地域市場に適応できるリソースから取得する。
+-   Globalization API を使って、地域ごとに形式の異なるデータ (数値、日付、時刻、通貨など) を表示する。
 
-**Localization** is the process of adapting your app to meet the language, cultural, and political requirements of a specific local market.
+**ローカライズ**とは、特定の地域市場の言語、文化、政治の要件にアプリを適応させるプロセスです。
 
-For example:
+次に例を示します。
 
--   Translate the text and labels of the app for the new market, and create separate resources for its language.
--   Modify any culture-dependent images as necessary, and place in separate resources.
+-   新しい市場のためにアプリのテキストとラベルを翻訳して、その言語のための独立したリソースを作成する。
+-   文化に依存するイメージを必要に応じて変更し、個別のリソースに配置する。
 
-Watch this video for a brief introduction on how to prepare your app for the world: [Introduction to globalization and localization](https://channel9.msdn.com/Blogs/One-Dev-Minute/Introduction-to-globalization-and-localization).
+世界に向けてアプリを準備する方法の概略については、ビデオ「[アプリのグローバリゼーションとローカライズの概略](https://channel9.msdn.com/Blogs/One-Dev-Minute/Introduction-to-globalization-and-localization)」をご覧ください
 
-## Articles
+## 記事
 <table>
 <colgroup>
 <col width="50%" />
@@ -40,55 +40,60 @@ Watch this video for a brief introduction on how to prepare your app for the wor
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Article</th>
-<th align="left">Description</th>
+<th align="left">記事</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Do's and don'ts](guidelines-and-checklist-for-globalizing-your-app.md)</p></td>
-<td align="left"><p>Follow these best practices when globalizing your apps for a wider audience and when localizing your apps for a specific market.</p></td>
+<td align="left"><p>[推奨と非推奨](guidelines-and-checklist-for-globalizing-your-app.md)</p></td>
+<td align="left"><p>広範なユーザー向けにアプリをグローバル化したり、特定の市場を対象にアプリをローカライズするときは、次のベスト プラクティスに従ってください。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Use global-ready formats](use-global-ready-formats.md)</p></td>
-<td align="left"><p>Develop a global-ready app by appropriately formatting dates, times, numbers, and currencies.</p></td>
+<td align="left"><p>[グローバル対応の形式の使用](use-global-ready-formats.md)</p></td>
+<td align="left"><p>日付、時刻、数字、通貨を適切に書式設定することで、グローバル対応のアプリを開発します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Manage language and region](manage-language-and-region.md)</p></td>
-<td align="left"><p>Control how Windows selects UI resources and formats the UI elements of the app, by using the various language and region settings provided by Windows.</p></td>
+<td align="left"><p>[言語と地域の管理](manage-language-and-region.md)</p></td>
+<td align="left"><p>Windows で提供される言語と地域についてのさまざまな設定を使って、Windows がアプリの UI リソースをどのように選び、UI 要素のフォーマットをどのように決定するかを制御します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Use patterns to format dates and times](use-patterns-to-format-dates-and-times.md)</p></td>
-<td align="left"><p>Use the [<strong>Windows.Globalization.DateTimeFormatting</strong>](https://msdn.microsoft.com/library/windows/apps/br206859) API with custom patterns to display dates and times in exactly the format you wish.</p></td>
+<td align="left"><p>[パターンを使った日付と時刻の書式設定](use-patterns-to-format-dates-and-times.md)</p></td>
+<td align="left"><p>希望するどおりの形式で日付と時刻を表示するには、[<strong>Windows.Globalization.DateTimeFormatting</strong>](https://msdn.microsoft.com/library/windows/apps/br206859) API をカスタム パターンとともに使用します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Adjust layout and fonts, and support RTL](adjust-layout-and-fonts--and-support-rtl.md)</p></td>
-<td align="left"><p>Develop your app to support the layouts and fonts of multiple languages, including RTL (right-to-left) flow direction.</p></td>
+<td align="left"><p>[レイアウトやフォントの調整と RTL のサポート](adjust-layout-and-fonts--and-support-rtl.md)</p></td>
+<td align="left"><p>RTL (右から左) のテキストの方向を含め、複数の言語のレイアウトやフォントをサポートするアプリを開発します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Prepare your app for localization](prepare-your-app-for-localization.md)</p></td>
-<td align="left"><p>Prepare your app for localization to other markets, languages, or regions.</p></td>
+<td align="left"><p>[ローカライズのためにアプリの準備をする](prepare-your-app-for-localization.md)</p></td>
+<td align="left"><p>他の市場、言語、または地域に向けたローカライズのためにアプリを準備します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Put UI strings into resources](put-ui-strings-into-resources.md)</p></td>
-<td align="left"><p>Put string resources for your UI into resource files. You can then reference those strings from your code or markup.</p></td>
+<td align="left"><p>[UI 文字列をリソースに格納する](put-ui-strings-into-resources.md)</p></td>
+<td align="left"><p>UI の文字列リソースをリソース ファイルに格納します。 その後、これらの文字列をコードやマークアップから参照できます。</p></td>
 </tr>
 </tbody>
 </table>
 
- 
+ 
 
-See also the documentation originally created for Windows 8.x, which still applies to Universal Windows Platform (UWP) apps and Windows 10.
+当初は Windows 8.x 用に作成されたドキュメントもご覧ください。このドキュメントは、ユニバーサル Windows プラットフォーム (UWP) のアプリや Windows 10 にも適用されます。
 
--   [Globalizing your app](https://msdn.microsoft.com/library/windows/apps/xaml/hh965328)
--   [Language matching](https://msdn.microsoft.com/library/windows/apps/xaml/jj673578.aspx)
--   [NumeralSystem values](https://msdn.microsoft.com/library/windows/apps/xaml/jj236471.aspx)
--   [International fonts](https://msdn.microsoft.com/library/windows/apps/xaml/dn263115.aspx)
--   [App resources and localization](https://msdn.microsoft.com/library/windows/apps/xaml/hh710212.aspx)
+-   [アプリのグローバル化](https://msdn.microsoft.com/library/windows/apps/xaml/hh965328)
+-   [言語の対応付け](https://msdn.microsoft.com/library/windows/apps/xaml/jj673578.aspx)
+-   [NumeralSystem 値](https://msdn.microsoft.com/library/windows/apps/xaml/jj236471.aspx)
+-   [国際フォント](https://msdn.microsoft.com/library/windows/apps/xaml/dn263115.aspx)
+-   [アプリ リソースとローカライズ](https://msdn.microsoft.com/library/windows/apps/xaml/hh710212.aspx)
 
- 
+ 
 
- 
+ 
 
+
+
+
+
+<!--HONumber=May16_HO2-->
 
 

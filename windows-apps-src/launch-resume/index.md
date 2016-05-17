@@ -1,101 +1,109 @@
 ---
 author: mcleblanc
-title: Launching, resuming, and background tasks
-description: This section describes what happens when a Universal Windows Platform (UWP) app is started, suspended, resumed, and terminated.
+title: 起動、再開、バックグラウンド タスク
+description: このセクションでは、ユニバーサル Windows プラットフォーム (UWP) アプリが起動、中断、再開、および終了されたときの動作について説明します。
 ms.assetid: 75011D52-1511-4ECF-9DF6-52CBBDB15BD7
 ---
 
-# Launching, resuming, and background tasks
+# 起動、再開、バックグラウンド タスク
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-This section describes what happens when a Universal Windows Platform (UWP) app is started, suspended, resumed, and terminated. It covers how to activate apps by using a contract or extension, and how to use background tasks which allow a UWP app to do work even when the app is not in the foreground. Finally, it covers how to add a splash screen to your app.
+このセクションでは、ユニバーサル Windows プラットフォーム (UWP) アプリが起動、中断、再開、および終了されたときの動作について説明します。 また、コントラクトや拡張機能を使ってアプリをアクティブ化する方法、バックグラウンド タスクを使って UWP アプリがフォアグラウンドにない場合でも処理を実行できるようにする方法について説明します。 最後に、アプリにスプラッシュ画面を追加する方法について説明します。
 
-## The app lifecycle
+## アプリのライフサイクル
 
-| Topic                                            | Description                                                                                                     |
+| トピック                                            | 説明                                                                                                     |
 |--------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
-| [App lifecycle](app-lifecycle.md)               | Learn about the life cycle of a UWP app and what happens when Windows launches, suspends, and resumes your app. |
-| [Handle app prelaunch](handle-app-prelaunch.md) | Learn how to handle app prelaunch.                                                                              |
-| [Handle app activation](activate-an-app.md)     | Learn how to handle app activation.                                                                             |
-| [Handle app suspend](suspend-an-app.md)         | Learn how to save important application data when the system suspends your app.                                 |
-| [Handle app resume](resume-an-app.md)           | Learn how to refresh displayed content when the system resumes your app.                                        |
+| [アプリのライフサイクル](app-lifecycle.md)               | UWP アプリのライフ サイクルと、Windows がアプリを起動、中断、再開したときの動作について説明します。 |
+| [アプリの事前起動の処理](handle-app-prelaunch.md) | アプリの事前起動を処理する方法について説明します。                                                                              |
+| [アプリのアクティブ化の処理](activate-an-app.md)     | アプリのアクティブ化を処理する方法について説明します。                                                                             |
+| [アプリの中断の処理](suspend-an-app.md)         | システムがアプリを一時停止するときに重要なアプリケーション データを保存する方法を説明します。                                 |
+| [アプリの再開の処理](resume-an-app.md)           | システムがアプリを再開するときに表示されるコンテンツを更新する方法について説明します。                                        |
 
- 
+ 
 
-## Launch apps
+## アプリの起動
 
 
-| URI and File activation                                                                         | Description                                                                                                                                                                |
+| URI とファイルのアクティブ化                                                                         | 説明                                                                                                                                                                |
 |-------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Launch an app for results](how-to-launch-an-app-for-results.md)                               | Learn how to launch an app from another app and exchange data between the two.                                                                                             |
-| [Launch the default app for a URI](launch-default-app.md)                                      | Learn how to launch the default app for a Uniform Resource Identifier (URI).                                                                                               |
-| [Handle URI activation](handle-uri-activation.md)                                              | Learn how to register an app to become the default handler for a URI scheme name.                                                                                          |
-| [Launch the default app for a file](launch-the-default-app-for-a-file.md)                      | Learn how to launch the default app for a file type.                                                                                                                       |
-| [Handle file activation](handle-file-activation.md)                                            | Learn how to register your app to be the default handler for a file type.                                                                                                  |
-| [Guidelines for file types and URIs](https://msdn.microsoft.com/library/windows/apps/hh700321) | By understanding the relationship between UWP apps and the file types and protocols they support, you can provide a more consistent and elegant experience for your users. |
-| [Reserved file and URI scheme names](reserved-uri-scheme-names.md)                             | This topic lists the reserved file and URI scheme names that are not available to your app.                                                                                |
-| Activate built-in apps                                                                          | Description                                                                                                                                                                |
-| [Launch the Windows Settings app](launch-settings-app.md)                                      | Learn how to launch the Windows Settings app.                                                                                                                              |
-| [Launch the Windows Store app](launch-store-app.md)                                            | Learn how to launch the Windows Store app.                                                                                                                                 |
-| [Launch the Windows Maps app](launch-maps-app.md)                                              | Learn how to launch the Windows Maps app.                                                                                                                                  |
+| [結果を取得するためのアプリの起動](how-to-launch-an-app-for-results.md)                               | 別のアプリからアプリを起動し、2 つのアプリの間でデータを交換する方法について説明します。                                                                                             |
+| [URI に応じた既定のアプリの起動](launch-default-app.md)                                      | URI (Uniform Resource Identifier) に応じて既定のアプリを起動する方法について説明します。                                                                                               |
+| [URI のアクティブ化の処理](handle-uri-activation.md)                                              | アプリを登録して URI スキーム名の既定のハンドラーにする方法について説明します。                                                                                          |
+| [ファイルに応じた既定のアプリの起動](launch-the-default-app-for-a-file.md)                      | ファイルの種類に応じて既定のアプリを起動する方法について説明します。                                                                                                                       |
+| [ファイルのアクティブ化の処理](handle-file-activation.md)                                            | アプリを登録してファイルの種類の既定のハンドラーにする方法について説明します。                                                                                                  |
+| [ファイルの種類と URI のガイドライン](https://msdn.microsoft.com/library/windows/apps/hh700321) | UWP アプリと、アプリがサポートするファイルの種類やプロトコルの間の関係を理解すると、より一貫性があり、洗練されたエクスペリエンスをユーザーに提供できます。 |
+| [予約済みのファイルと URI スキーム名](reserved-uri-scheme-names.md)                             | ここでは、アプリで利用できない予約済みのファイルと予約済みの URI スキーム名の一覧を示します。                                                                                |
+| 組み込みのアプリのアクティブ化                                                                          | 説明                                                                                                                                                                |
+| [Windows 設定アプリの起動](launch-settings-app.md)                                      | Windows 設定アプリを起動する方法について説明します。                                                                                                                              |
+| [Windows ストア アプリの起動](launch-store-app.md)                                            | Windows ストア アプリを起動する方法について説明します。                                                                                                                                 |
+| [Windows マップ アプリの起動](launch-maps-app.md)                                              | Windows マップ アプリを起動する方法について説明します。                                                                                                                                  |
 
- 
+ 
 
-## Background tasks and services
+## バックグラウンド タスクとサービス
 
 
 
-| Topic                                                                                                            | Description                                                                                                                                                                                   |
+| トピック                                                                                                            | 説明                                                                                                                                                                                   |
 |------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Support your app with background tasks](support-your-app-with-background-tasks.md)                             | The topics in this section show how to run your own lightweight code in the background by responding to triggers with background tasks.                                                       |
-| [Access sensors and devices from a background task](access-sensors-and-devices-from-a-background-task.md)       | [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) lets your Universal Windows app access sensors and peripheral devices in the background, even when your foreground app is suspended. |
-| [Guidelines for background tasks](guidelines-for-background-tasks.md)                                           | Ensure your app meets the requirements for running background tasks.                                                                                                                          |
-| [Create and consume an app service](how-to-create-and-consume-an-app-service.md)                                | Learn how to write a UWP app that can provide services to other UWP apps, and how to consume those services.                                                                                  |
-| [Create and register a background task](create-and-register-a-background-task.md)                               | Create a background task class and register it to run when your app is not in the foreground.                                                                                                 |
-| [Debug a background task](debug-a-background-task.md)                                                           | Learn how to debug a background task, including background task activation and debug tracing in the Windows event log.                                                                        |
-| [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md) | Enable the use of background tasks by declaring them as extensions in the app manifest.                                                                                                       |
-| [Handle a cancelled background task](handle-a-cancelled-background-task.md)                                     | Learn how to make a background task that recognizes cancellation requests and stops work, reporting the cancellation to the app using persistent storage.                                     |
-| [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)           | Learn how your app can recognize background task progress and completion.                                                                                                                     |
-| [Register a background task](register-a-background-task.md)                                                     | Learn how to create a function that can be re-used to safely register most background tasks.                                                                                                  |
-| [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md)             | Learn how to create a background task that responds to [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839) events.                                                                         |
-| [Run a background task on a timer](run-a-background-task-on-a-timer-.md)                                        | Learn how to schedule a one-time background task, or run a periodic background task.                                                                                                          |
-| [Set conditions for running a background task](set-conditions-for-running-a-background-task.md)                 | Learn how to set conditions that control when your background task will run.                                                                                                                  |
-| [Transfer data in the background](https://msdn.microsoft.com/library/windows/apps/mt280377)                                           | Use the background transfer API to copy files in the background.                                                                                                                              |
-| [Update a live tile from a background task](update-a-live-tile-from-a-background-task.md)                       | Use a background task to update your app's live tile with fresh content.                                                                                                                      |
-| [Use a maintenance trigger](use-a-maintenance-trigger.md)                                                       | Learn how to use the [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) class to run lightweight code in the background while the device is plugged in.                             |
+| [バックグラウンド タスクによるアプリのサポート](support-your-app-with-background-tasks.md)                             | このセクションのトピックでは、バックグラウンド タスクでトリガーに応答することによって、ユーザー独自の軽量コードをバックグラウンドで実行する方法について説明します。                                                       |
+| [バックグラウンド タスクからのセンサーやデバイスへのアクセス](access-sensors-and-devices-from-a-background-task.md)       | [
+              **DeviceUseTrigger**
+            ](https://msdn.microsoft.com/library/windows/apps/dn297337) を使うと、フォアグラウンド アプリが中断しているときにも、バックグラウンドでユニバーサル Windows アプリからセンサーや周辺機器にアクセスできます。 |
+| [バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)                                           | アプリがバック グラウンド タスクを実行するための要件を満たしていることを確認します。                                                                                                                          |
+| [アプリ サービスの作成と利用](how-to-create-and-consume-an-app-service.md)                                | 他の UWP アプリにサービスを提供できる UWP アプリを作成する方法と、それらのサービスを利用する方法について説明します。                                                                                  |
+| [バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)                               | バックグラウンド タスク クラスを作り、アプリがフォアグラウンドにない場合にも実行されるように登録します。                                                                                                 |
+| [バックグラウンド タスクのデバッグ](debug-a-background-task.md)                                                           | バックグラウンド タスクをデバッグする方法について説明します。バックグラウンド タスクのアクティブ化のほか、Windows イベント ログでのデバッグ トレースなどについて取り上げます。                                                                        |
+| [アプリケーション マニフェストでのバックグラウンド タスクの宣言](declare-background-tasks-in-the-application-manifest.md) | アプリ マニフェストでバックグラウンド タスクを拡張機能として宣言し、バックグラウンド タスクを使うことができるようにします。                                                                                                       |
+| [取り消されたバックグラウンド タスクの処理](handle-a-cancelled-background-task.md)                                     | 取り消し要求を認識し、作業を停止して、固定ストレージを使っているアプリの取り消しを報告するバックグラウンド タスクの作成方法について説明します。                                     |
+| [バックグラウンド タスクの進捗状況と完了の監視](monitor-background-task-progress-and-completion.md)           | バックグラウンド タスクの進行状況と完了をアプリから認識する方法について説明します。                                                                                                                     |
+| [バックグラウンド タスクの登録](register-a-background-task.md)                                                     | ほとんどのバックグラウンド タスクを安全に登録できる再利用可能な関数の作成方法について説明します。                                                                                                  |
+| [バックグラウンド タスクによるシステム イベントへの応答](respond-to-system-events-with-background-tasks.md)             | [
+            **SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839) イベントに応答するバックグラウンド タスクを作成する方法について説明します。                                                                         |
+| [タイマーでのバックグラウンド タスクの実行](run-a-background-task-on-a-timer-.md)                                        | 1 回限りのバックグラウンド タスクをスケジュールする方法、または定期的なバックグラウンド タスクを実行する方法について説明します。                                                                                                          |
+| [バックグラウンド タスクを実行するための条件の設定](set-conditions-for-running-a-background-task.md)                 | バックグラウンド タスクをいつ実行するかを制御する条件の設定方法について説明します。                                                                                                                  |
+| [バックグラウンドでのデータの転送](https://msdn.microsoft.com/library/windows/apps/mt280377)                                           | バックグラウンド転送 API を使って、バックグラウンドでファイルをコピーします。                                                                                                                              |
+| [バックグラウンド タスクのライブ タイルの更新](update-a-live-tile-from-a-background-task.md)                       | アプリのライブ タイルを新しいコンテンツで更新するためにバックグラウンド タスクを使います。                                                                                                                      |
+| [メンテナンス トリガーの使用](use-a-maintenance-trigger.md)                                                       | デバイスが接続されているときに、[**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) クラスを使って軽量のコードをバックグラウンドで実行する方法について説明します。                             |
 
- 
+ 
 
-## Add a splash screen
+## スプラッシュ画面の追加
 
 
-All UWP apps must have a splash screen, which is a composite of a splash screen image and a background color, both of which can be customized.
+すべての UWP アプリにはスプラッシュ画面が必要です。スプラッシュ画面は、スプラッシュ画面画像と背景色を合成したもので、どちらもカスタマイズすることができます。
 
-Your splash screen is displayed immediately when the user launches your app. This provides immediate feedback to users while app resources are initialized. As soon as your app is ready for interaction, the splash screen is dismissed.
+スプラッシュ画面は、ユーザーがアプリを起動するとすぐに表示されます。 これによって、アプリ リソースの初期化中であることがユーザーに示されます。 アプリが操作できる状態になると、スプラッシュ画面が閉じます。
 
-A well-designed splash screen can make your app more inviting. Here's a simple, understated splash screen:
+スプラッシュ画面が適切にデザインされていると、アプリがより魅力的なものになります。 装飾の少ないシンプルなスプラッシュ画面の例を以下に示します。
 
-![a 75% scaled screen capture of the splash screen from the splash screen sample.](images/regularsplashscreen.png)
+![スプラッシュ画面のサンプルから取り込んだ 75% 縮小のスプラッシュ画面のスクリーン キャプチャ](images/regularsplashscreen.png)
 
-This splash screen is created by combining a green background color with a transparent PNG.
+このスプラッシュ画面は、緑の背景色と透過的な PNG を組み合わせて作成されています。
 
-Putting an image and background color together to form the splash screen helps the splash screen look good, regardless of the device your app is installed on. When the splash screen is displayed, only the size of the background changes to compensate for a variety of screen sizes. Your image always remains intact.
+画像と背景色を組み合わせてスプラッシュ画面を作ると、アプリがインストールされているデバイスに関係なく、スプラッシュ画面が適切に表示されます。 スプラッシュ画面が表示されるとき、背景のサイズだけがさまざまな画面サイズに合わせて変更されます。 画像のサイズは常に変わりません。
 
-Additionally, you can use the [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) class to customize your app's launch experience. You can position an extended splash screen, which you create, to give your app more time to complete additional tasks like preparing app UI or completing networking operations. You can also use the **SplashScreen** class to notify you when the splash screen is dismissed, so that you can begin entrance animations.
+また、[**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) クラスを使うと、アプリの起動エクスペリエンスをカスタマイズできます。 アプリ UI の準備やネットワーク操作の完了などの追加のタスクをアプリが実行する時間を作るために、追加のスプラッシュ画面を作成して配置できます。 さらに、**SplashScreen** クラスを使うと、スプラッシュ画面が消えるときに通知を受け取って、導入アニメーションを開始できます。
 
-| Topic                                                                          | Description                                                                                                                                                                                       |
+| トピック                                                                          | 説明                                                                                                                                                                                       |
 |--------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Add a splash screen](add-a-splash-screen.md)                                 | Set your app's splash screen image and background color.                                                                                                                                          |
-| [Display a splash screen for more time](create-a-customized-splash-screen.md) | Display a splash screen for more time by creating an extended splash screen for your app. This extended screen imitates the splash screen shown when your app is launched, and can be customized. |
+| [スプラッシュ画面の追加](add-a-splash-screen.md)                                 | アプリのスプラッシュ画面の画像と背景色を設定します。                                                                                                                                          |
+| [スプラッシュ画面の表示時間の延長](create-a-customized-splash-screen.md) | アプリに追加スプラッシュ画面を作成すれば、より長い時間、スプラッシュ画面を表示することができます。 この追加画面は、アプリを起動したときに表示されるスプラッシュ画面に似ていますが、カスタマイズできます。 |
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
+
+
+
+
+<!--HONumber=May16_HO2-->
 
 

@@ -1,58 +1,63 @@
 ---
 author: mijacobs
-Description: Learn how to store and retrieve local, roaming, and temporary app data.
-title: Store and retrieve settings and other app data
+Description: ローカル アプリ データ、ローミング アプリ データ、一時アプリ データの保存方法と取得方法について説明します。
+title: 設定と他のアプリ データを保存して取得する
 ms.assetid: 41676A02-325A-455E-8565-C9EC0BC3A8FE
 label: App settings and data
 template: detail.hbs
 ---
 
-# Store and retrieve settings and other app data
+# 設定と他のアプリ データを保存して取得する
 
 
 
 
 
-*App data* is mutable data that is specific to a particular app. It includes runtime state, user preferences, and other settings. App data is different from *user data*, data that the user creates and manages when using an app. User data includes document or media files, email or communication transcripts, or database records holding content created by the user. User data may be useful or meaningful to more than one app. Often, this is data that the user wants to manipulate or transmit as an entity independent of the app itself, such as a document.
+*アプリ データ*とは、特定のアプリに固有の実行可能データです。 ランタイム状態、ユーザー設定、その他の設定などがあります。 アプリ データは*ユーザー データ*とは異なり、アプリを使用しているときに、ユーザーが作成、管理するデータです。 ユーザー データには、ドキュメント ファイル、メディア ファイル、メール トランスクリプト、通信トランスクリプト、ユーザーが作成したコンテンツを保持するデータベース レコードなどがあります。 ユーザー データは複数のアプリで有効な場合があります。 多くの場合、ユーザー データは、ユーザーがアプリ自体とは無関係にエンティティとして操作または転送するデータ (ドキュメントなど) です。
 
-**Important note about app data:  **The lifetime of the app data is tied to the lifetime of the app. If the app is removed, all of the app data will be lost as a consequence. Don't use app data to store user data or anything that users might perceive as valuable and irreplaceable. We recommend that the user's libraries and Microsoft OneDrive be used to store this sort of information. App data is ideal for storing app-specific user preferences, settings, and favorites.
+**アプリ データに関する重要な注意: **アプリ データの有効期間は、アプリの有効期間に依存します。 アプリが削除されると、すべてのアプリ データが失われます。 ユーザー データや、ユーザーにとって欠かすことができない重要なデータの保存には、アプリ データを使用しないでください。 そのような情報の保存には、ユーザーのライブラリや Microsoft OneDrive を使用することをお勧めします。 アプリ データは、アプリ固有のユーザー設定、設定、お気に入りを保存するのに適しています。
 
-## <span id="Types_of_app_data"></span><span id="types_of_app_data"></span><span id="TYPES_OF_APP_DATA"></span>Types of app data
+## <span id="Types_of_app_data"></span><span id="types_of_app_data"></span><span id="TYPES_OF_APP_DATA"></span>アプリ データの種類
 
 
-There are two types of app data: settings and files.
+アプリ データには、設定とファイルの 2 種類があります。
 
--   **Settings**
+-   **設定**
 
-    Use settings to store user preferences and application state info. The app data API enables you to easily create and retrieve settings (we'll show you some examples later in this article).
+    設定を使用して、ユーザー設定やとアプリケーションの状態情報を保存します。 アプリ データ API を使用して、設定をを簡単に作成して取得できます (この記事の後半でいくつかの例を紹介します)。
 
-    Here are data types you can use for app settings:
+    アプリの設定に使用できるデータ型を次に示します。
 
-    -   **UInt8**, **Int16**, **UInt16**, **Int32**, **UInt32**, **Int64**, **UInt64**, **Single**, **Double**
+    -   **UInt8**、**Int16**、**UInt16**、**Int32**、**UInt32**、**Int64**、**UInt64**、**Single**、**Double**
     -   **Boolean**
-    -   **Char16**, **String**
-    -   [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576), [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/br225996)
-    -   **GUID**, [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870), [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995), [**Rect**](https://msdn.microsoft.com/library/windows/apps/br225994)
-    -   [**ApplicationDataCompositeValue**](https://msdn.microsoft.com/library/windows/apps/br241588): A set of related app settings that must be serialized and deserialized atomically. Use composite settings to easily handle atomic updates of interdependent settings. The system ensures the integrity of composite settings during concurrent access and roaming. Composite settings are optimized for small amounts of data, and performance can be poor if you use them for large data sets.
--   **Files**
+    -   **Char16**、**String**
+    -   [
+              **DateTime**
+            ](https://msdn.microsoft.com/library/windows/apps/br206576)、[**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/br225996)
+    -   **GUID**、[**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)、[**Size**](https://msdn.microsoft.com/library/windows/apps/br225995)、[**Rect**](https://msdn.microsoft.com/library/windows/apps/br225994)
+    -   [
+              **ApplicationDataCompositeValue**
+            ](https://msdn.microsoft.com/library/windows/apps/br241588): 自動的にシリアル化および逆シリアル化する必要がある一連のアプリの設定。 コンポジット設定を使うと、相互に依存する設定のアトミックな更新が簡単になります。 同時アクセスとローミング時は、システムによってコンポジット設定の整合性が保たれます。 コンポジット設定は少量のデータに適しており、大きなデータ セットに使うとパフォーマンスが低下する場合があります。
+-   **ファイル**
 
-    Use files to store binary data or to enable your own, customized serialized types.
+    ファイルを使うと、バイナリ データを保存したり、独自にカスタマイズされ、シリアル化された型を有効にできます。
 
-## <span id="Storing_app_data_in_the_app_data_stores"></span><span id="storing_app_data_in_the_app_data_stores"></span><span id="STORING_APP_DATA_IN_THE_APP_DATA_STORES"></span>Storing app data in the app data stores
-
-
-When an app is installed, the system gives it its own per-user data stores for settings and files. You don't need to know where or how this data exists, because the system is responsible for managing the physical storage, ensuring that the data is kept isolated from other apps and other users. The system also preserves the contents of these data stores when the user installs an update to your app and removes the contents of these data stores completely and cleanly when your app is uninstalled.
-
-Within its app data store, each app has system-defined root directories: one for local files, one for roaming files, and one for temporary files. Your app can add new files and new containers to each of these root directories.
-
-## <span id="Local_app_data"></span><span id="local_app_data"></span><span id="LOCAL_APP_DATA"></span>Local app data
+## <span id="Storing_app_data_in_the_app_data_stores"></span><span id="storing_app_data_in_the_app_data_stores"></span><span id="STORING_APP_DATA_IN_THE_APP_DATA_STORES"></span>アプリのデータ ストアにアプリ データを保存する
 
 
-Local app data should be used for any information that needs to be preserved between app sessions and is not suitable for roaming app data. Data that is not applicable on other devices should be stored here as well. There is no general size restriction on local data stored. Use the local app data store for data that it does not make sense to roam and for large data sets.
+アプリのインストール時には、設定やファイル用に、ユーザーごとの固有のデータ ストアが設定されます。 物理的ストレージはシステムによって管理されるため、このデータの場所や形式を意識することなく、データは他のアプリやユーザーから確実に分離されます。 また、アプリに更新プログラムをインストールするときはデータ ストアの内容が保持され、アプリのアンインストール時にはデータ ストアの内容が完全に削除されます。
 
-### <span id="Retrieve_the_local_app_data_store"></span><span id="retrieve_the_local_app_data_store"></span><span id="RETRIEVE_THE_LOCAL_APP_DATA_STORE"></span>Retrieve the local app data store
+各アプリのデータ ストア内には、ローカル ファイル用、ローミング ファイル用、一時ファイル用に 1 つずつ、システム定義のルート ディレクトリがあります。 それぞれのルート ディレクトリに新しいファイルや新しいコンテナーをアプリで追加できます。
 
-Before you can read or write local app data, you must retrieve the local app data store. To retrieve the local app data store, use the [**ApplicationData.LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) property to get the app's local settings as an [**ApplicationDataContainer**](https://msdn.microsoft.com/library/windows/apps/br241599) object. Use the [**ApplicationData.LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621) property to get the files in a [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) object. Use the [**ApplicationData.LocalCacheFolder**](https://msdn.microsoft.com/library/windows/apps/dn633825) property to get the folder in the local app data store where you can save files that are not included in backup and restore.
+## <span id="Local_app_data"></span><span id="local_app_data"></span><span id="LOCAL_APP_DATA"></span>ローカル アプリ データ
+
+
+ローカル アプリ データは、アプリ セッション間で保持する必要がある情報のうち、ローミング アプリ データには適していないものに使用されます。 また、他のデバイスには適さないデータもここに格納します。 ローカルに格納されるデータには、一般的なサイズの制限はありません。 ローカル アプリ データ ストアは、ローミングに適さないデータや、大きなデータ セットに使用してください。
+
+### <span id="Retrieve_the_local_app_data_store"></span><span id="retrieve_the_local_app_data_store"></span><span id="RETRIEVE_THE_LOCAL_APP_DATA_STORE"></span>ローカル アプリ データ ストアを取得する
+
+ローカル アプリ データを読み書きする前に、ローカル アプリ データ ストアを取得する必要があります。 ローカル アプリ データ ストアを取得するには、[**ApplicationData.LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) プロパティを使用して、アプリのローカル設定を [**ApplicationDataContainer**](https://msdn.microsoft.com/library/windows/apps/br241599) オブジェクトとして取得します。 [
+            **StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) オブジェクト内のファイルを取得するには、[**ApplicationData.LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621) プロパティを使用します。 バックアップや復元に含まれていないファイルを保存できるローカル アプリ データ ストア内のフォルダーを取得するには、[**ApplicationData.LocalCacheFolder**](https://msdn.microsoft.com/library/windows/apps/dn633825) プロパティを使用します。
 
 ```CSharp
 Windows.Storage.ApplicationDataContainer localSettings = 
@@ -61,9 +66,9 @@ Windows.Storage.StorageFolder localFolder =
     Windows.Storage.ApplicationData.Current.LocalFolder;
 ```
 
-### <span id="Create_and_retrieve_a_simple_local_setting"></span><span id="create_and_retrieve_a_simple_local_setting"></span><span id="CREATE_AND_RETRIEVE_A_SIMPLE_LOCAL_SETTING"></span>Create and retrieve a simple local setting
+### <span id="Create_and_retrieve_a_simple_local_setting"></span><span id="create_and_retrieve_a_simple_local_setting"></span><span id="CREATE_AND_RETRIEVE_A_SIMPLE_LOCAL_SETTING"></span>簡易ローカル設定を作成して取得する
 
-To create or write a setting, use the [**ApplicationDataContainer.Values**](https://msdn.microsoft.com/library/windows/apps/br241615) property to access the settings in the `localSettings` container we got in the previous step. This example creates a setting named `exampleSetting`.
+設定を作成または書き込むには、[**ApplicationDataContainer.Values**](https://msdn.microsoft.com/library/windows/apps/br241615) プロパティを使用して、前の手順で取得した `localSettings` コンテナー内の設定にアクセスします。 次の例では、以下の名前の設定を作成します:
 
 ```CSharp
 // Simple setting
@@ -71,16 +76,16 @@ To create or write a setting, use the [**ApplicationDataContainer.Values**](http
 localSettings.Values["exampleSetting"] = "Hello Windows";
 ```
 
-To retrieve the setting, you use the same [**ApplicationDataContainer.Values**](https://msdn.microsoft.com/library/windows/apps/br241615) property that you used to create the setting. This example shows how to retrieve the setting we just created.
+設定を取得するには、設定を作成したときに使ったものと同じ [**ApplicationDataContainer.Values**](https://msdn.microsoft.com/library/windows/apps/br241615) プロパティを使います。 この例では作成した設定を取得する方法を示しています。
 
 ```CSharp
 // Simple setting
 Object value = localSettings.Values["exampleSetting"];
 ```
 
-### <span id="Create_and_retrieve_a_local_composite_value"></span><span id="create_and_retrieve_a_local_composite_value"></span><span id="CREATE_AND_RETRIEVE_A_LOCAL_COMPOSITE_VALUE"></span>Create and retrieve a local composite value
+### <span id="Create_and_retrieve_a_local_composite_value"></span><span id="create_and_retrieve_a_local_composite_value"></span><span id="CREATE_AND_RETRIEVE_A_LOCAL_COMPOSITE_VALUE"></span>ローカル コンポジット値を作成して取得する
 
-To create or write a composite value, create an [**ApplicationDataCompositeValue**](https://msdn.microsoft.com/library/windows/apps/br241588) object. This example creates a composite setting named `exampleCompositeSetting` and adds it to the `localSettings` container.
+コンポジット値を作成または書き込むには、[**ApplicationDataCompositeValue**](https://msdn.microsoft.com/library/windows/apps/br241588) オブジェクトを作成します。 次の例では、`exampleCompositeSetting` という名前のコンポジット設定を作成し、`localSettings` コンテナーに追加します。
 
 ```CSharp
 // Composite setting
@@ -93,7 +98,7 @@ composite["strVal"] = "string";
 localSettings.Values["exampleCompositeSetting"] = composite;
 ```
 
-This example shows how to retrieve the composite value we just created.
+この例では作成したコンポジット値を取得する方法を示しています。
 
 ```CSharp
 // Composite setting
@@ -111,9 +116,10 @@ else
 }
 ```
 
-### <span id="Create_and_read_a_local_file"></span><span id="create_and_read_a_local_file"></span><span id="CREATE_AND_READ_A_LOCAL_FILE"></span>Create and read a local file
+### <span id="Create_and_read_a_local_file"></span><span id="create_and_read_a_local_file"></span><span id="CREATE_AND_READ_A_LOCAL_FILE"></span>ローカル ファイルを作成して読み取る
 
-To create and update a file in the local app data store, use the file APIs, such as [**Windows.Storage.StorageFolder.CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227249) and [**Windows.Storage.FileIO.WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505). This example creates a file named `dataFile.txt` in the `localFolder` container and writes the current date and time to the file. The **ReplaceExisting** value from the [**CreationCollisionOption**](https://msdn.microsoft.com/library/windows/apps/br241631) enumeration indicates to replace the file if it already exists.
+ローカル アプリ データ ストアにファイルを作成して更新するには、[**Windows.Storage.StorageFolder.CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227249) や [**Windows.Storage.FileIO.WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505) などのファイル API を使用します。 次の例では、`localFolder` コンテナーに `dataFile.txt` という名前のファイルを作成し、現在の日付と時刻をファイルに書き込みます。 [
+            **CreationCollisionOption**](https://msdn.microsoft.com/library/windows/apps/br241631) 列挙体の **ReplaceExisting** 値は、ファイルが既にある場合にファイルを置き換えることを示します。
 
 ```CSharp
 async void WriteTimestamp()
@@ -127,7 +133,7 @@ async void WriteTimestamp()
 }
 ```
 
-To open and read a file in the local app data store, use the file APIs, such as [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272), [**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741), and [**Windows.Storage.FileIO.ReadTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701482). This example opens the `dataFile.txt` file created in the previous step and reads the date from the file. For details on loading file resources from various locations, see [How to load file resources](https://msdn.microsoft.com/library/windows/apps/xaml/hh965322).
+ローカル アプリ データ ストアのファイルを開いて読み取るには、[**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272)、[**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741)、[**Windows.Storage.FileIO.ReadTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701482) などのファイル API を使用します。 この例では、前の手順で作成した `dataFile.txt` ファイルを開き、ファイルから日付を読み取ります。 さまざまな場所からファイル リソースを読み込む方法について詳しくは、「[ファイル リソースを読み込む方法](https://msdn.microsoft.com/library/windows/apps/xaml/hh965322)」をご覧ください。
 
 ```CSharp
 async void ReadTimestamp()
@@ -145,67 +151,69 @@ async void ReadTimestamp()
 }
 ```
 
-## <span id="Roaming_data"></span><span id="roaming_data"></span><span id="ROAMING_DATA"></span>Roaming data
+## <span id="Roaming_data"></span><span id="roaming_data"></span><span id="ROAMING_DATA"></span>ローミング データ
 
 
-If you use roaming data in your app, your users can easily keep your app's app data in sync across multiple devices. If a user installs your app on multiple devices, the OS keeps the app data in sync, reducing the amount of setup work that the user needs to do for your app on their second device. Roaming also enables your users to continue a task, such as composing a list, right where they left off even on a different device. The OS replicates roaming data to the cloud when it is updated, and synchronizes the data to the other devices on which the app is installed.
+アプリでローミング データを使用すると、複数のデバイス間でアプリ データを簡単に同期することができます。 アプリを複数のデバイス上にインストールすると、OS によってアプリ データの同期が維持されるため、2 つ目のデバイス上でユーザーが行うアプリのセットアップ作業が軽減されます。 またローミングを使うと、異なるデバイス上でも、一覧の作成などの作業を中断したときの状態から再開することができます。 ローミング データが更新されると、OS によってクラウドにレプリケートされ、アプリがインストールされている別のデバイスに同期されます。
 
-The OS limits the size of the app data that each app may roam. See [**ApplicationData.RoamingStorageQuota**](https://msdn.microsoft.com/library/windows/apps/br241625). If the app hits this limit, none of the app's app data will be replicated to the cloud until the app's total roamed app data is less than the limit again. For this reason, it is a best practice to use roaming data only for user preferences, links, and small data files.
+各アプリでローミングできるアプリ データのサイズには OS による制限があります。 「[**ApplicationData.RoamingStorageQuota**](https://msdn.microsoft.com/library/windows/apps/br241625)」をご覧ください。 この制限に達した場合、アプリでローミングされたアプリ データの合計が制限値未満に戻るまで、そのアプリのアプリ データはクラウドにまったくレプリケートされません。 このため、ローミング データは、ユーザー設定、リンク、小さなデータ ファイルのみに使うことをお勧めします。
 
-Roaming data for an app is available in the cloud as long as it is accessed by the user from some device within the required time interval. If the user does not run an app for longer than this time interval, its roaming data is removed from the cloud. If a user uninstalls an app, its roaming data isn't automatically removed from the cloud, it's preserved. If the user reinstalls the app within the time interval, the roaming data is synchronized from the cloud.
+アプリのローミング データは、一定の時間間隔内にユーザーがいずれかのデバイスからアクセスしている限り、クラウドに保持されます。 この時間間隔内にアプリが実行されないと、そのローミング データはクラウドから削除されます。 ユーザーがアプリをアンインストールしても、そのローミング データがクラウドから自動的に削除されることはなく、保持されます。 時間間隔内にユーザーがアプリを再インストールすると、ローミング データがクラウドから同期されます。
 
-### Roaming data do's and don'ts
+### データのローミングの推奨事項と非推奨事項
 
--   Use roaming for user preferences and customizations, links, and small data files. For example, use roaming to preserve a user's background color preference across all devices.
--   Use roaming to let users continue a task across devices. For example, roam app data like the contents of an drafted email or the most recently viewed page in a reader app.
--   Handle the [**DataChanged**](https://msdn.microsoft.com/library/windows/apps/br241620) event by updating app data. This event occurs when app data has just finished syncing from the cloud.
--   Roam references to content rather than raw data. For example, roam a URL rather than the content of an online article.
--   For important, time critical settings, use the *HighPriority* setting associated with [**RoamingSettings**](https://msdn.microsoft.com/library/windows/apps/br241624).
--   Don't roam app data that is specific to a device. Some info is only pertinent locally, such as a path name to a local file resource. If you do decide to roam local information, make sure that the app can recover if the info isn't valid on the secondary device.
--   Don't roam large sets of app data. There's a limit to the amount of app data an app may roam; use [**RoamingStorageQuota**](https://msdn.microsoft.com/library/windows/apps/br241625) property to get this maximum. If an app hits this limit, no data can roam until the size of the app data store no longer exceeds the limit. When you design your app, consider how to put a bound on larger data so as to not exceed the limit. For example, if saving a game state requires 10KB each, the app might only allow the user store up to 10 games.
--   Don't use roaming for data that relies on instant syncing. Windows doesn't guarantee an instant sync; roaming could be significantly delayed if a user is offline or on a high latency network. Ensure that your UI doesn't depend on instant syncing.
--   Don't use roam frequently changing data. For example, if your app tracks frequently changing info, such as the position in a song by second, don't store this as roaming app data. Instead, pick a less frequent representation that still provides a good user experience, like the currently playing song.
+-   ユーザーの基本設定やカスタマイズ、リンク、小さなデータ ファイルにローミングを使います。 たとえば、ローミングを使って、ユーザーの背景色の基本設定をすべてのデバイスで保持します。
+-   ユーザーがデバイス間で作業を続けられるようにローミングを使います。 たとえば、下書きしたメールの内容やリーダー アプリで最近表示したページなどのアプリ データをローミングします。
+-   アプリ データを更新して、[**DataChanged**](https://msdn.microsoft.com/library/windows/apps/br241620) イベントを処理します。 このイベントは、クラウドからのアプリ データの同期が完了したときに発生します。
+-   生データではなくコンテンツへの参照をローミングします。 たとえば、オンライン記事のコンテンツではなく URL をローミングします。
+-   タイム クリティカルな重要な設定に対しては、[**RoamingSettings**](https://msdn.microsoft.com/library/windows/apps/br241624) に関連付けられた *HighPriority* 設定を使います。
+-   デバイス固有のアプリ データをローミングしないでください。 ローカルにあるファイル リソースのパス名など、ローカルのみに関連した情報もあります。 ローカル情報をローミングする場合は、その情報が別のデバイスで無効なときにアプリを回復できることを確認してください。
+-   大量のアプリ データをローミングしないでください。 アプリでローミングできるアプリ データの量には制限があります。この最大値を取得するには、[**RoamingStorageQuota**](https://msdn.microsoft.com/library/windows/apps/br241625) プロパティを使ってください。 この制限に達した場合、アプリ データのサイズが制限を下回るまで、データはローミングできません。 アプリを設計する際は、この制限を超えないようにサイズの大きいデータをどのように制限するかを検討してください。 たとえば、ゲームの状態を保存するのにそれぞれ 10 KB 必要になる場合は、ユーザーによる保存を 10 ゲームまでに制限したりすると効果的です。
+-   即時同期に依存するデータにローミングを使わないでください。 Windows では即時同期が保証されません。ユーザーがオフラインであったり、待ち時間の長いネットワークを使っている場合、ローミングはかなり遅れる可能性があります。 UI が即時同期に依存しないことを確認してください。
+-   頻繁に変更されるデータにローミングを使わないでください。 たとえば、再生中の曲の秒刻みの位置など、頻繁に変更される情報を追跡する場合は、この情報をローミング アプリ データとして保存しないでください。 代わりに、現在再生中の曲など、変更の頻度が少なく、ユーザー エクスペリエンスも損なわないような情報を利用します。
 
-### <span id="Roaming_pre-requisites"></span><span id="roaming_pre-requisites"></span><span id="ROAMING_PRE-REQUISITES"></span>Roaming pre-requisites
+### <span id="Roaming_pre-requisites"></span><span id="roaming_pre-requisites"></span><span id="ROAMING_PRE-REQUISITES"></span>ローミングの前提条件
 
-Any user can benefit from roaming app data if they use a Microsoft account to log on to their device. However, users and group policy administrators can switch off roaming app data on a device at any time. If a user chooses not to use a Microsoft account or disables roaming data capabilities, she will still be able to use your app, but app data be local to each device.
+アプリ データのローミングは、Microsoft アカウントを使ってデバイスにログインするすべてのユーザーに利点をもたらします。 ただし、いつでもデバイスでアプリ データのローミングを切り替えることができるのは、ユーザーとグループ ポリシーの管理者です。 ユーザーが Microsoft アカウントを使わない場合やデータのローミング機能を無効にする場合、ユーザーは引き続きアプリを使用できますが、アプリ データは各デバイスに対してローカルのままになります。
 
-Data stored in the [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) will only transition if a user has made a device “trusted”. If a device isn't trusted, data secured in this vault will not roam.
+[
+            **PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) に格納されているデータは、ユーザーが "信頼" しているデバイスにしか移行されません。 デバイスが信頼されていない場合、この資格情報コンテナーのセキュリティで確保されているデータはローミングされません。
 
-### <span id="Conflict_resolution"></span><span id="conflict_resolution"></span><span id="CONFLICT_RESOLUTION"></span>Conflict resolution
+### <span id="Conflict_resolution"></span><span id="conflict_resolution"></span><span id="CONFLICT_RESOLUTION"></span>競合の解決
 
-Roaming app data is not intended for simultaneous use on more than one device at a time. If a conflict arises during synchronization because a particular data unit was changed on two devices, the system will always favor the value that was written last. This ensures that the app utilizes the most up-to-date information. If the data unit is a setting composite, conflict resolution will still occur on the level of the setting unit, which means that the composite with the latest change will be synchronized.
+アプリ データのローミングは、複数のデバイスでの同時使用を想定していません。 2 台のデバイスで特定のデータ単位が変更されたことが原因で同期中に競合が発生した場合、最後に書き込まれた値が常に優先されます。 これにより、アプリで最新の情報が利用されます。 データ単位が設定コンポジットの場合、競合の解決は設定の単位で行われ、最新の変更を含むコンポジットが同期されます。
 
-### <span id="When_to_write_data"></span><span id="when_to_write_data"></span><span id="WHEN_TO_WRITE_DATA"></span>When to write data
+### <span id="When_to_write_data"></span><span id="when_to_write_data"></span><span id="WHEN_TO_WRITE_DATA"></span>データを書き込むタイミング
 
-Depending on the expected lifetime of the setting, data should be written at different times. Infrequently or slowly changing app data should be written immediately. However, app data that changes frequently should only be written periodically at regular intervals (such as once every 5 minutes), as well as when the app is suspended. For example, a music app might write the “current song” settings whenever a new song starts to play, however, the actual position in the song should only be written on suspend.
+想定される設定の有効期間に応じて、データを書き込むタイミングを変える必要があります。 変更の頻度が低いアプリ データや変更間隔の長いアプリ データは、変更されたらすぐに書き込むようにします。 ただし、頻繁に変更されるアプリ データは、アプリが中断されたとき以外は、一定の間隔 (5 分に 1 回など) でのみ書き込むようにします。 たとえば、音楽アプリでは、"現在の曲" の設定は新しい曲の再生が始まるたびに書き込みますが、曲の途中の実際の位置は中断したときにのみ書き込みます。
 
-### <span id="Excessive_usage_protection"></span><span id="excessive_usage_protection"></span><span id="EXCESSIVE_USAGE_PROTECTION"></span>Excessive usage protection
+### <span id="Excessive_usage_protection"></span><span id="excessive_usage_protection"></span><span id="EXCESSIVE_USAGE_PROTECTION"></span>使いすぎに対する保護
 
-The system has various protection mechanisms in place to avoid inappropriate use of resources. If app data does not transition as expected, it is likely that the device has been temporarily restricted. Waiting for some time will usually resolve this situation automatically and no action is required.
+リソースの不適切な使用を防止するために、システムにはさまざまな保護メカニズムが備わっています。 アプリ データが想定どおりに移行されない場合は、デバイスが一時的に制限されていることが考えられます。 通常、この状況はしばらくすると自動的に解決されるため、操作は必要ありません。
 
-### <span id="Versioning"></span><span id="versioning"></span><span id="VERSIONING"></span>Versioning
+### <span id="Versioning"></span><span id="versioning"></span><span id="VERSIONING"></span>バージョン
 
-App data can utilize versioning to upgrade from one data structure to another. The version number is different from the app version and can be set at will. Although not enforced, it is highly recommended that you use increasing version numbers, since undesirable complications (including data loss)could occur if you try to transition to a lower data version number that represents newer data.
+アプリ データは、バージョンに基づいてデータ構造をアップグレードできます。 バージョン番号は、アプリのバージョンとは別の番号で、自由に設定することができます。 強制ではありませんが、バージョン番号は新しいデータほど大きくすることを強くお勧めします。新しいデータを表すバージョン番号が小さくなると、データ損失などの望ましくない問題が発生する可能性があります。
 
-App data only roams between installed apps with the same version number. For example, devices on version 2 will transition data between each other and devices on version 3 will do the same, but no roaming will occur between a device running version 2 and a device running version 3. If you install a new app that utilized various version numbers on other devices, the newly installed app will sync the app data associated with the highest version number.
+アプリ データのローミングは、バージョン番号が同じインストールされたアプリの間でしか行われません。 たとえば、どちらもバージョン 2 のデバイスの間やどちらもバージョン 3 のデバイスの間ではデータが移行されますが、バージョン 2 を実行中のデバイスとバージョン 3 を実行中のデバイスの間ではローミングは行われません。 他のデバイスでさまざまなバージョン番号を利用していたアプリを新たにインストールする場合、新たにインストールしたアプリは、最も大きいバージョン番号と関連付けられているアプリ データを同期します。
 
-### <span id="Testing_and_tools"></span><span id="testing_and_tools"></span><span id="TESTING_AND_TOOLS"></span>Testing and tools
+### <span id="Testing_and_tools"></span><span id="testing_and_tools"></span><span id="TESTING_AND_TOOLS"></span>テストとツール
 
-Developers can lock their device in order to trigger a synchronization of roaming app data. If it seems that the app data does not transition within a certain time frame, please check the following items and make sure that:
+開発者は、ローミング アプリ データの同期をトリガーするためにデバイスをロックできます。 一定の期間にわたってアプリ データが移行されていない場合は、次の点を確認してください。
 
--   Your roaming data does not exceed the maximum size (see [**RoamingStorageQuota**](https://msdn.microsoft.com/library/windows/apps/br241625) for details).
--   Your files are closed and released properly.
--   There are at least two devices running the same version of the app.
+-   ローミング データが最大サイズを超えていないこと (詳しくは、「[**RoamingStorageQuota**](https://msdn.microsoft.com/library/windows/apps/br241625)」をご覧ください)。
+-   ファイルが閉じていて、適切に解放されていること。
+-   同じバージョンのアプリを実行しているデバイスが 2 台以上あること。
 
 
-### <span id="Register_to_receive_notification_when_roaming_data_changes"></span><span id="register_to_receive_notification_when_roaming_data_changes"></span><span id="REGISTER_TO_RECEIVE_NOTIFICATION_WHEN_ROAMING_DATA_CHANGES"></span>Register to receive notification when roaming data changes
+### <span id="Register_to_receive_notification_when_roaming_data_changes"></span><span id="register_to_receive_notification_when_roaming_data_changes"></span><span id="REGISTER_TO_RECEIVE_NOTIFICATION_WHEN_ROAMING_DATA_CHANGES"></span>ローミング データが変更された場合に通知を受け取るように登録する
 
-To use roaming app data, you need to register for roaming data changes and retrieve the roaming data containers so you can read and write settings.
+アプリのローミング データを使用するには、ローミング データの変更に備えて登録し、設定を読み書きできるように、ローミング データのコンテナーを取得する必要があります。
 
-1.  Register to receive notification when roaming data changes.
+1.  ローミング データが変更されたときに通知を受け取るように登録します。
 
-    The [**DataChanged**](https://msdn.microsoft.com/library/windows/apps/br241620) event notifies you when roaming data changes. This example sets `DataChangeHandler` as the handler for roaming data changes.
+    [
+            **DataChanged**](https://msdn.microsoft.com/library/windows/apps/br241620) イベントで、ローミング データが変更されたときに通知します。 この例では、ローミング データの変更のハンドラーとして `DataChangeHandler` を設定します。
 
 ```    CSharp
 void InitHandlers()
@@ -220,9 +228,9 @@ void InitHandlers()
     }
 ```
 
-2.  Get the containers for the app's settings and files.
+2.  アプリの設定とファイルのコンテナーを取得します。
 
-    Use the [**ApplicationData.RoamingSettings**](https://msdn.microsoft.com/library/windows/apps/br241624) property to get the settings and the [**ApplicationData.RoamingFolder**](https://msdn.microsoft.com/library/windows/apps/br241623) property to get the files.
+    設定を取得するには [**ApplicationData.RoamingSettings**](https://msdn.microsoft.com/library/windows/apps/br241624) プロパティを、ファイルを取得するには [**ApplicationData.RoamingFolder**](https://msdn.microsoft.com/library/windows/apps/br241623) プロパティを使用します。
 
 ```    CSharp
 Windows.Storage.ApplicationDataContainer roamingSettings = 
@@ -231,9 +239,9 @@ Windows.Storage.ApplicationDataContainer roamingSettings =
         Windows.Storage.ApplicationData.Current.RoamingFolder;
 ```
 
-### <span id="Create_and_retrieve_roaming_settings"></span><span id="create_and_retrieve_roaming_settings"></span><span id="CREATE_AND_RETRIEVE_ROAMING_SETTINGS"></span>Create and retrieve roaming settings
+### <span id="Create_and_retrieve_roaming_settings"></span><span id="create_and_retrieve_roaming_settings"></span><span id="CREATE_AND_RETRIEVE_ROAMING_SETTINGS"></span>ローミング設定を作成して取得する
 
-Use the [**ApplicationDataContainer.Values**](https://msdn.microsoft.com/library/windows/apps/br241615) property to access the settings in the `roamingSettings` container we got in the previous section. This example creates a simple setting named `exampleSetting` and a composite value named `composite`.
+前のセクションで取得した `roamingSettings` コンテナー内の設定にアクセスするには、[**ApplicationDataContainer.Values**](https://msdn.microsoft.com/library/windows/apps/br241615) プロパティを使用します。 次の例では、`exampleSetting` という名前の簡易設定と、以下の名前のコンポジット値を作成します:
 
 ```CSharp
 // Simple setting
@@ -253,7 +261,7 @@ roamingSettings.Values["exampleCompositeSetting"] = composite;
 
 ```
 
-This example retrieves the settings we just created.
+この例では作成した設定を取得します。
 
 ```CSharp
 // Simple setting
@@ -275,9 +283,10 @@ else
 }
 ```
 
-### <span id="Create_and_retrieve_roaming_files"></span><span id="create_and_retrieve_roaming_files"></span><span id="CREATE_AND_RETRIEVE_ROAMING_FILES"></span>Create and retrieve roaming files
+### <span id="Create_and_retrieve_roaming_files"></span><span id="create_and_retrieve_roaming_files"></span><span id="CREATE_AND_RETRIEVE_ROAMING_FILES"></span>ローミング ファイルを作成して取得する
 
-To create and update a file in the roaming app data store, use the file APIs, such as [**Windows.Storage.StorageFolder.CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227249) and [**Windows.Storage.FileIO.WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505). This example creates a file named `dataFile.txt` in the `roamingFolder` container and writes the current date and time to the file. The **ReplaceExisting** value from the [**CreationCollisionOption**](https://msdn.microsoft.com/library/windows/apps/br241631) enumeration indicates to replace the file if it already exists.
+ローミング アプリ データ ストアでファイルを作成して更新するには、[**Windows.Storage.StorageFolder.CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227249) や [**Windows.Storage.FileIO.WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505) などのファイル API を使用します。 次の例では、`roamingFolder` コンテナーに `dataFile.txt` という名前のファイルを作成し、現在の日付と時刻をファイルに書き込みます。 [
+            **CreationCollisionOption**](https://msdn.microsoft.com/library/windows/apps/br241631) 列挙体の **ReplaceExisting** 値は、ファイルが既にある場合にファイルを置き換えることを示します。
 
 ```CSharp
 async void WriteTimestamp()
@@ -291,7 +300,7 @@ async void WriteTimestamp()
 }
 ```
 
-To open and read a file in the roaming app data store, use the file APIs, such as [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272), [**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741), and [**Windows.Storage.FileIO.ReadTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701482). This example opens the `dataFile.txt` file created in the previous section and reads the date from the file. For details on loading file resources from various locations, see [How to load file resources](https://msdn.microsoft.com/library/windows/apps/xaml/hh965322).
+ローミング アプリ データ ストアのファイルを開いて読み取るには、[**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272)、[**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741)、[**Windows.Storage.FileIO.ReadTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701482) などのファイル API を使用します。 この例では、前のセクションで作成した `dataFile.txt` ファイルを開き、ファイルから日付を読み取ります。 さまざまな場所からファイル リソースを読み込む方法について詳しくは、「[ファイル リソースを読み込む方法](https://msdn.microsoft.com/library/windows/apps/xaml/hh965322)」をご覧ください。
 
 ```CSharp
 async void ReadTimestamp()
@@ -310,14 +319,14 @@ async void ReadTimestamp()
 ```
 
 
-## <span id="Temporary_app_data"></span><span id="temporary_app_data"></span><span id="TEMPORARY_APP_DATA"></span>Temporary app data
+## <span id="Temporary_app_data"></span><span id="temporary_app_data"></span><span id="TEMPORARY_APP_DATA"></span>一時アプリ データ
 
 
-The temporary app data store works like a cache. Its files do not roam and could be removed at any time. The System Maintenance task can automatically delete data stored at this location at any time. The user can also clear files from the temporary data store using Disk Cleanup. Temporary app data can be used for storing temporary information during an app session. There is no guarantee that this data will persist beyond the end of the app session as the system might reclaim the used space if needed. The location is available via the [**temporaryFolder**](https://msdn.microsoft.com/library/windows/apps/br241629) property.
+一時アプリ データ ストアは、キャッシュのような働きをします。 ファイルはローミングされず、任意の時点で削除されます。 システム メンテナンス タスクを使うと、この場所に格納されているデータをいつでも自動的に削除できます。 ディスク クリーンアップを使って、一時データ ストアからファイルを削除することもできます。 一時アプリ データは、アプリ セッションの一時的な情報の格納に使うことができます。 このデータは、アプリ セッションの終了後に保持されるという保証はありません。必要に応じて使用領域が再利用されます。 この場所には、[**temporaryFolder**](https://msdn.microsoft.com/library/windows/apps/br241629) プロパティを使ってアクセスできます。
 
-### <span id="Retrieve_the_temporary_data_container"></span><span id="retrieve_the_temporary_data_container"></span><span id="RETRIEVE_THE_TEMPORARY_DATA_CONTAINER"></span>Retrieve the temporary data container
+### <span id="Retrieve_the_temporary_data_container"></span><span id="retrieve_the_temporary_data_container"></span><span id="RETRIEVE_THE_TEMPORARY_DATA_CONTAINER"></span>一時データコンテナーを取得する
 
-Use the [**ApplicationData.TemporaryFolder**](https://msdn.microsoft.com/library/windows/apps/br241629) property to get the files. The next steps use the `temporaryFolder` variable from this step.
+ファイルを取得するには [**ApplicationData.TemporaryFolder**](https://msdn.microsoft.com/library/windows/apps/br241629) プロパティを使用します。 以降の手順では、この手順の `temporaryFolder` 変数を使用します。
 
 ```CSharp
 Windows.Storage.StorageFolder temporaryFolder = ApplicationData.Current.TemporaryFolder;</code></pre></td>
@@ -326,9 +335,10 @@ Windows.Storage.StorageFolder temporaryFolder = ApplicationData.Current.Temporar
 </table>
 ```
 
-### <span id="Create_and_read_temporary_files"></span><span id="create_and_read_temporary_files"></span><span id="CREATE_AND_READ_TEMPORARY_FILES"></span>Create and read temporary files
+### <span id="Create_and_read_temporary_files"></span><span id="create_and_read_temporary_files"></span><span id="CREATE_AND_READ_TEMPORARY_FILES"></span>一時ファイルを作成して読み取る
 
-To create and update a file in the temporary app data store, use the file APIs, such as [**Windows.Storage.StorageFolder.CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227249) and [**Windows.Storage.FileIO.WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505). This example creates a file named `dataFile.txt` in the `temporaryFolder` container and writes the current date and time to the file. The **ReplaceExisting** value from the [**CreationCollisionOption**](https://msdn.microsoft.com/library/windows/apps/br241631) enumeration indicates to replace the file if it already exists.
+一時アプリ データ ストアにファイルを作成して更新するには、[**Windows.Storage.StorageFolder.CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227249) や [**Windows.Storage.FileIO.WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505) などのファイル API を使用します。 次の例では、`temporaryFolder` コンテナーに `dataFile.txt` という名前のファイルを作成し、現在の日付と時刻をファイルに書き込みます。 [
+            **CreationCollisionOption**](https://msdn.microsoft.com/library/windows/apps/br241631) 列挙体の **ReplaceExisting** 値は、ファイルが既にある場合にファイルを置き換えることを示します。
 
 <span codelanguage="CSharp"></span>
 ```CSharp
@@ -353,7 +363,7 @@ async void WriteTimestamp()
 }
 ```
 
-To open and read a file in the temporary app data store, use the file APIs, such as [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272), [**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741), and [**Windows.Storage.FileIO.ReadTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701482). This example opens the `dataFile.txt` file created in the previous step and reads the date from the file. For details on loading file resources from various locations, see [How to load file resources](https://msdn.microsoft.com/library/windows/apps/xaml/hh965322).
+一時アプリ データ ストアのファイルを開いて読み取るには、[**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272)、[**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741)、[**Windows.Storage.FileIO.ReadTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701482) などのファイル API を使用します。 この例では、前の手順で作成した `dataFile.txt` ファイルを開き、ファイルから日付を読み取ります。 さまざまな場所からファイル リソースを読み込む方法について詳しくは、「[ファイル リソースを読み込む方法](https://msdn.microsoft.com/library/windows/apps/xaml/hh965322)」をご覧ください。
 
 ```CSharp
 async void ReadTimestamp()
@@ -371,12 +381,13 @@ async void ReadTimestamp()
 }
 ```
 
-## <span id="Organize_app_data_with_containers"></span><span id="organize_app_data_with_containers"></span><span id="ORGANIZE_APP_DATA_WITH_CONTAINERS"></span>Organize app data with containers
+## <span id="Organize_app_data_with_containers"></span><span id="organize_app_data_with_containers"></span><span id="ORGANIZE_APP_DATA_WITH_CONTAINERS"></span>コンテナーでアプリ データを整理する
 
 
-To help you organize your app data settings and files, you create containers (represented by [**ApplicationDataContainer**](https://msdn.microsoft.com/library/windows/apps/br241599) objects) instead of working directly with directories. You can add containers to the local, roaming, and temporary app data stores. Containers can be nested up to 32 levels deep.
+アプリ データの設定とファイルを整理するには、ディレクトリで直接作業するのではなく、コンテナー ([**ApplicationDataContainer**](https://msdn.microsoft.com/library/windows/apps/br241599) オブジェクトで表されます) を作成します。 コンテナーは、ローカル アプリ データ ストア、ローミング アプリ データ ストア、一時アプリ データ ストアに追加できます。 コンテナーは 32 階層まで入れ子にすることができます。
 
-To create a settings container, call the [**ApplicationDataContainer.CreateContainer**](https://msdn.microsoft.com/library/windows/apps/br241611) method. This example creates a local settings container named `exampleContainer` and adds a setting named `exampleSetting`. The **Always** value from the [**ApplicationDataCreateDisposition**](https://msdn.microsoft.com/library/windows/apps/br241616) enumeration indicates that the container is created if it doesn't already exist.
+設定コンテナーを作成するには、[**ApplicationDataContainer.CreateContainer**](https://msdn.microsoft.com/library/windows/apps/br241611) メソッドを呼び出します。 次の例では、`exampleContainer` という名前のローカル設定コンテナーを作成し、`exampleSetting` という名前の設定を追加します。 [
+            **ApplicationDataCreateDisposition**](https://msdn.microsoft.com/library/windows/apps/br241616) 列挙体の **Always** 値は、コンテナーがまだない場合に作成されることを示します。
 
 ```CSharp
 Windows.Storage.ApplicationDataContainer localSettings = 
@@ -394,10 +405,10 @@ if (localSettings.Containers.ContainsKey("exampleContainer"))
 }
 ```
 
-## <span id="Delete_app_settings_and_containers"></span><span id="delete_app_settings_and_containers"></span><span id="DELETE_APP_SETTINGS_AND_CONTAINERS"></span>Delete app settings and containers
+## <span id="Delete_app_settings_and_containers"></span><span id="delete_app_settings_and_containers"></span><span id="DELETE_APP_SETTINGS_AND_CONTAINERS"></span>アプリの設定とコンテナーを削除する
 
 
-To delete a simple setting that your app no longer needs, use the [**ApplicationDataContainerSettings.Remove**](https://msdn.microsoft.com/library/windows/apps/br241608) method. This example deletesthe `exampleSetting` local setting that we created earlier.
+アプリでもう必要のない簡易設定を削除するには、[**ApplicationDataContainerSettings.Remove**](https://msdn.microsoft.com/library/windows/apps/br241608) メソッドを使用します。 この例では、前の手順で作成した `exampleSetting` ローカル設定を削除します。
 
 ```CSharp
 Windows.Storage.ApplicationDataContainer localSettings = 
@@ -410,7 +421,7 @@ Windows.Storage.StorageFolder localFolder =
 localSettings.Values.Remove("exampleSetting");
 ```
 
-To delete a composite setting, use the [**ApplicationDataCompositeValue.Remove**](https://msdn.microsoft.com/library/windows/apps/br241597) method. This example deletes the local `exampleCompositeSetting` composite setting we created in an earlier example.
+コンポジット設定を削除するには、[**ApplicationDataCompositeValue.Remove**](https://msdn.microsoft.com/library/windows/apps/br241597) メソッドを使用します。 この例では、前の例で作成したローカルの `exampleCompositeSetting` コンポジット設定を削除します。
 
 ```CSharp
 Windows.Storage.ApplicationDataContainer localSettings = 
@@ -423,7 +434,7 @@ Windows.Storage.StorageFolder localFolder =
 localSettings.Values.Remove("exampleCompositeSetting");
 ```
 
-To delete a container, call the [**ApplicationDataContainer.DeleteContainer**](https://msdn.microsoft.com/library/windows/apps/br241612) method. This example deletes the local `exampleContainer` settings container we created earlier.
+コンテナーを削除するには、[**ApplicationDataContainer.DeleteContainer**](https://msdn.microsoft.com/library/windows/apps/br241612) メソッドを呼び出します。 この例では、前の手順で作成したローカルの `exampleContainer` 設定コンテナーを削除します。
 
 ```CSharp
 Windows.Storage.ApplicationDataContainer localSettings = 
@@ -436,17 +447,22 @@ Windows.Storage.StorageFolder localFolder =
 localSettings.DeleteContainer("exampleContainer");
 ```
 
-## <span id="Versioning_your_app_data"></span><span id="versioning_your_app_data"></span><span id="VERSIONING_YOUR_APP_DATA"></span>Versioning your app data
+## <span id="Versioning_your_app_data"></span><span id="versioning_your_app_data"></span><span id="VERSIONING_YOUR_APP_DATA"></span>アプリ データのバージョン管理
 
 
-You can optionally version the app data for your app. This would enable you to create a future version of your app that changes the format of its app data without causing compatibility problems with the previous version of your app. The app checks the version of the app data in the data store, and if the version is less than the version the app expects, the app should update the app data to the new format and update the version. For more info, see the[**Application.Version**](https://msdn.microsoft.com/library/windows/apps/br241630) property and the [**ApplicationData.SetVersionAsync**](https://msdn.microsoft.com/library/windows/apps/hh701429) method.
+必要に応じて、アプリのアプリ データをバージョン管理することもできます。 これにより、将来作成するアプリのバージョンでアプリ データの形式を変更しても、以前のバージョンとの互換性に問題が起こりません。 データ ストア内のアプリ データのバージョンをアプリが確認し、以前のバージョンであった場合、アプリ データは新しい形式に更新され、バージョンも更新されます。 詳しくは、「[** Application.Version**](https://msdn.microsoft.com/library/windows/apps/br241630) プロパティ」と「[**ApplicationData.SetVersionAsync**](https://msdn.microsoft.com/library/windows/apps/hh701429) メソッド」をご覧ください。
 
-## Related articles
+## 関連記事
 
 * [**Windows.Storage.ApplicationData**](https://msdn.microsoft.com/library/windows/apps/br241587)
 * [**Windows.Storage.ApplicationData.RoamingSettings**](https://msdn.microsoft.com/library/windows/apps/br241624)
 * [**Windows.Storage.ApplicationData.RoamingFolder**](https://msdn.microsoft.com/library/windows/apps/br241623)
 * [**Windows.Storage.ApplicationData.RoamingStorageQuota**](https://msdn.microsoft.com/library/windows/apps/br241625)
 * [**Windows.Storage.ApplicationDataCompositeValue**](https://msdn.microsoft.com/library/windows/apps/br241588)
+
+
+
+
+<!--HONumber=May16_HO2-->
 
 

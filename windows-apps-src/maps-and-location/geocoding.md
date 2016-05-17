@@ -1,41 +1,47 @@
 ---
 author: PatrickFarley
-title: Perform geocoding and reverse geocoding
-description: Convert addresses to geographic locations (geocoding) and convert geographic locations to addresses (reverse geocoding) by calling the methods of the MapLocationFinder class in the Windows.Services.Maps namespace.
+title: ジオコーディングと逆ジオコーディングの実行
+description: 住所から地理的な位置への変換 (ジオコーディング) や地理的な位置から住所への変換 (逆ジオコーディング) を行うには、Windows.Services.Maps 名前空間の MapLocationFinder クラスのメソッドを呼び出します。
 ms.assetid: B912BE80-3E1D-43BB-918F-7A43327597D2
 ---
 
-# Perform geocoding and reverse geocoding
+# ジオコーディングと逆ジオコーディングの実行
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-Convert addresses to geographic locations (geocoding) and convert geographic locations to addresses (reverse geocoding) by calling the methods of the [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) class in the [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) namespace.
+住所から地理的な位置への変換 (ジオコーディング) や地理的な位置から住所への変換 (逆ジオコーディング) を行うには、[**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 名前空間の [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) クラスのメソッドを呼び出します。
 
-**Tip** To learn more about using maps in your app, download the following sample from the [Windows-universal-samples repo](http://go.microsoft.com/fwlink/p/?LinkId=619979) on GitHub.
+**ヒント** アプリで地図を使う方法について詳しくは、GitHub の [Windows-universal-samples リポジトリ](http://go.microsoft.com/fwlink/p/?LinkId=619979)から次のサンプルをダウンロードしてください。
 
--   [Universal Windows Platform (UWP) map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [ユニバーサル Windows プラットフォーム (UWP) の地図サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 
-Here's how the classes for geocoding and reverse geocoding are related:
+ジオコーディングや逆ジオコーディング用のクラスがどのように関連するかを次に示します。
 
--   The [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) class has methods that do geocoding ([**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925)) and reverse geocoding ([**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928)).
--   These methods return a [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551).
--   The [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) contains a collection of [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) objects. Access this collection through the [**Locations**](https://msdn.microsoft.com/library/windows/apps/dn627552) property of the **MapLocationFinderResult**.
--   Each [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) object contains a [**MapAddress**](https://msdn.microsoft.com/library/windows/apps/dn627533) object. Access this object through the [**Address**](https://msdn.microsoft.com/library/windows/apps/dn636929) property of each **MapLocation**.
+-   [
+            **MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) クラスには、ジオコーディング ([**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925)) と逆ジオコーディング ([**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928)) を実行するメソッドがあります
+-   これらのメソッドは、[**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) を返します
+-   [
+            **MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) には、[**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) オブジェクトのコレクションが含まれています。 [
+            **MapLocationFinderResult** の **Locations**](https://msdn.microsoft.com/library/windows/apps/dn627552) プロパティを通じてこのコレクションにアクセスします
+-   各 [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) オブジェクトには [**MapAddress**](https://msdn.microsoft.com/library/windows/apps/dn627533) オブジェクトが含まれています。 各 [**MapLocation** の **Address**](https://msdn.microsoft.com/library/windows/apps/dn636929) プロパティを通じてこのオブジェクトにアクセスします
 
-**Important**  You must specify a maps authentication key before you can use map services. For more info, see [Request a maps authentication key](authentication-key.md).
+**重要**  マップ サービスを使用する前に、マップ認証キーを指定する必要があります。 詳しくは、「[マップ認証キーの要求](authentication-key.md)」をご覧ください。
 
- 
+ 
 
-## Get a location (Geocode)
+## 位置情報の取得 (ジオコーディング)
 
 
-Convert an address or a place name to a geographic location (geocoding) by performing the following steps.
+住所や地名を地理的な位置に変換する (ジオコーディング) には、次に示している手順を実行します。
 
-1.  Call one of the overloads of the [**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925) method of the [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) class.
-2.  The [**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925) method returns a [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) object that contains a collection of matching [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) objects.
-3.  Access this collection through the [**Locations**](https://msdn.microsoft.com/library/windows/apps/dn627552) property of the [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551).
+1.  [
+            **MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) クラスの [**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925) メソッドのいずれかのオーバーロードを呼び出します。
+2.  [
+            **FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925) メソッドは、一致する [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) オブジェクトのコレクションを含む [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) オブジェクトを返します。
+3.  [
+            **MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) の [**Locations**](https://msdn.microsoft.com/library/windows/apps/dn627552) プロパティを通じてこのコレクションにアクセスします
 
 ```csharp
 using Windows.Services.Maps;
@@ -71,21 +77,24 @@ private async void geocodeButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-This code displays the following results to the `tbOutputText` textbox.
+このコードでは、`tbOutputText` テキスト ボックスに次の結果が表示されます。
 
 ``` syntax
 result = (47.6406099647284,-122.129339994863)
 ```
 
-## Get an address (reverse geocode)
+## 住所の取得 (逆ジオコーディング)
 
 
-Convert a geographic location to an address (reverse geocoding) by performing the following steps.
+地理的な位置を住所に変換する (逆ジオコーディング) には、次に示している手順を実行します。
 
-1.  Call the [**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928) method of the [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) class.
-2.  The [**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928) method returns a [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) object that contains a collection of matching [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) objects.
-3.  Access this collection through the [**Locations**](https://msdn.microsoft.com/library/windows/apps/dn627552) property of the [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551).
-4.  Access the [**MapAddress**](https://msdn.microsoft.com/library/windows/apps/dn627533) object through the [**Address**](https://msdn.microsoft.com/library/windows/apps/dn636929) property of each [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549).
+1.  [
+            **MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) クラスの [**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928) メソッドを呼び出します。
+2.  [
+            **FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928) メソッドは、一致する [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) オブジェクトのコレクションを含む [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) オブジェクトを返します。
+3.  [
+            **MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) の [**Locations**](https://msdn.microsoft.com/library/windows/apps/dn627552) プロパティを通じてこのコレクションにアクセスします
+4.  各 [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) の [**Address**](https://msdn.microsoft.com/library/windows/apps/dn636929) プロパティを通じて [**MapAddress**](https://msdn.microsoft.com/library/windows/apps/dn627533) オブジェクトにアクセスします
 
 ```csharp
 using Windows.Services.Maps;
@@ -113,21 +122,26 @@ private async void reverseGeocodeButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-This code displays the following results to the `tbOutputText` textbox.
+このコードでは、`tbOutputText` テキスト ボックスに次の結果が表示されます。
 
 ``` syntax
 town = Redmond
 ```
 
-## Related topics
+## 関連トピック
 
 * [Bing Maps Developer Center](https://www.bingmapsportal.com/)
-* [UWP map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [Design guidelines for maps](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [Build 2015 video: Leveraging Maps and Location Across Phone, Tablet, and PC in Your Windows Apps](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [UWP traffic app sample](http://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [UWP の地図サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [地図の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Build 2015 のビデオ: Windows アプリでの電話、タブレット、PC で使用できるマップと位置情報の活用](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [UWP の交通情報アプリのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=619982)
 * [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550)
 * [**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925)
 * [**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928)
+
+
+
+
+<!--HONumber=May16_HO2-->
 
 

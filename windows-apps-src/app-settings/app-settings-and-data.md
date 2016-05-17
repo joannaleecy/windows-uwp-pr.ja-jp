@@ -1,23 +1,23 @@
 ---
 author: mijacobs
-Description: This section contains user experience guidelines for presenting app settings and storing those settings as app data.
-title: App settings and data
+Description: このセクションでは、アプリ設定を示し、その設定をアプリ データとして格納するためのユーザー エクスペリエンス ガイドラインを取り上げます。
+title: アプリの設定とデータ
 ms.assetid: E7F312F7-54D8-411F-8D92-92FBB95C2463
 label: App settings and data
 template: detail.hbs
 ---
 
-# App settings and data
+# アプリの設定とデータ
 
 
 
 
-This section contains user experience guidelines for presenting app settings and storing those settings as app data.
+このセクションでは、アプリ設定を示し、その設定をアプリ データとして格納するためのユーザー エクスペリエンス ガイドラインを取り上げます。
 
-App settings are the user-customizable portions of your Universal Windows Platform (UWP) app. For example, a news reader app might let the user specify which news sources to display or how many columns to display on the screen.
+アプリ設定は、ユニバーサル Windows プラットフォーム (UWP) アプリの中で、ユーザーによるカスタマイズが可能な部分です。 たとえば、ニュース リーダー アプリで、表示するニュース ソースや画面に表示する記事の数をユーザーが指定できるようにすることが考えられます。
 
-App data is data that the app itself creates and manages. It includes runtime state, app settings, reference content (such as the dictionary definitions in a dictionary app), and other settings. App data is tied to the existence of the app and is only meaningful to that app.
-## In this section
+アプリ データは、アプリ自体が作成して管理するデータです。 アプリ データには、ランタイム状態、アプリ設定、参照コンテンツ (たとえば、辞書アプリの辞書定義)、その他の設定が含まれます。 アプリ データはアプリの存在に関連付けられ、そのアプリに対して意味を持ちます。
+## このセクションの内容
 <table>
 <colgroup>
 <col width="50%" />
@@ -25,21 +25,26 @@ App data is data that the app itself creates and manages. It includes runtime st
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Article</th>
-<th align="left">Description</th>
+<th align="left">記事</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Guidelines](guidelines-for-app-settings.md)</p></td>
-<td align="left"><p>Best practices for creating and displaying app settings.</p></td>
+<td align="left"><p>[ガイドライン](guidelines-for-app-settings.md)</p></td>
+<td align="left"><p>アプリ設定を作成し表示する際のベスト プラクティス。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Store and retrieve app data](store-and-retrieve-app-data.md)</p></td>
-<td align="left"><p>How to store and retrieve local, roaming, and temporary app data.</p></td>
+<td align="left"><p>[アプリ データの保存と取得](store-and-retrieve-app-data.md)</p></td>
+<td align="left"><p>ローカル アプリ データ、ローミング アプリ データ、一時アプリ データの保存方法と取得方法。</p></td>
 </tr>
 </tbody>
 </table>
 
+
+
+
+
+<!--HONumber=May16_HO2-->
 
 

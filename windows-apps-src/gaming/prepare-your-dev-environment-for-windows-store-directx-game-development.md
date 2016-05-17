@@ -1,24 +1,24 @@
 ---
 author: mtoepke
-title: Project templates and tools for games
-description: Shows you what you need to start programming DirectX games for the Universal Windows Platform (UWP).
+title: ゲームのプロジェクト テンプレートとツール
+description: ユニバーサル Windows プラットフォーム (UWP) 用の DirectX ゲームのプログラミングを開始するために必要な手順について説明します。
 ms.assetid: d5afd5d3-ad01-0f16-3ddf-2c4eb86b68a7
 ---
 
-# Project templates and tools for games
+# ゲームのプロジェクト テンプレートとツール
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-This topic shows you what you need to start programming DirectX games for the Universal Windows Platform (UWP).
+このトピックでは、ユニバーサル Windows プラットフォーム (UWP) 用の DirectX ゲームのプログラミングを開始するために必要な手順について説明します。
 
-First, you need Visual Studio.
+まず、Visual Studio が必要です。
 
-## Get Visual Studio
+## Visual Studio の入手
 
 
-[Download and install Microsoft Visual Studio 2015](https://www.visualstudio.com/vs-2015-product-editions).
+Microsoft Visual Studio 2015 をダウンロードしてインストールします。
 
 <table>
 <colgroup>
@@ -27,50 +27,55 @@ First, you need Visual Studio.
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Topic</th>
-<th align="left">Description</th>
+<th align="left">トピック</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[DirectX game project templates](user-interface.md)</p></td>
-<td align="left"><p>Learn about the templates for creating a UWP and DirectX game.</p></td>
+<td align="left"><p>[DirectX ゲーム プロジェクト テンプレート](user-interface.md)</p></td>
+<td align="left"><p>UWP と DirectX ゲームを作成するためのテンプレートについて説明します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Visual Studio tools for game programming](set-up-visual-studio-for-game-development.md)</p></td>
-<td align="left"><p>An overview of DirectX specific tools available in Visual Studio.</p></td>
+<td align="left"><p>[ゲーム プログラミング用の Visual Studio ツール](set-up-visual-studio-for-game-development.md)</p></td>
+<td align="left"><p>Visual Studio で利用できる DirectX 固有のツールの概要。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Graphics diagnostics tools](use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md)</p></td>
-<td align="left"><p>Learn how to get and use the graphics diagnostics features including Graphics Debugging, Graphics Frame Analysis, and GPU Usage in Visual Studio.</p></td>
+<td align="left"><p>[グラフィックス診断ツール](use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md)</p></td>
+<td align="left"><p>Visual Studio でグラフィックス デバッグ、グラフィックス フレーム分析、GPU 使用率などのグラフィックス診断機能を取得して使用する方法について説明します。</p></td>
 </tr>
 </tbody>
 </table>
 
- 
+ 
 
-## Next steps
-
-
-If you are porting an existing game, see the following topics.
-
--   [Port from OpenGL ES 2.0 to DirectX 11](port-from-opengl-es-2-0-to-directx-11-1.md)
--   [Port from DirectX 9 to UWP](porting-your-directx-9-game-to-windows-store.md)
-
-If you are creating a new DirectX game, see the following topics.
-
--   [Create a simple UWP game with DirectX](tutorial--create-your-first-metro-style-directx-game.md)
--   [Developing Marble Maze, a Universal Windows Platform game in C++ and DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
-
-> **Note**  
-This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
-
- 
-
- 
-
- 
+## 次の手順
 
 
+既にあるゲームを移植する場合は、次のトピックをご覧ください。
+
+-   [OpenGL ES 2.0 から DirectX 11 への移植](port-from-opengl-es-2-0-to-directx-11-1.md)
+-   [DirectX 9 から UWP への移植](porting-your-directx-9-game-to-windows-store.md)
+
+新しい DirectX ゲームを作成する場合は、次のトピックをご覧ください。
+
+-   [DirectX によるシンプルな UWP ゲームの作成](tutorial--create-your-first-metro-style-directx-game.md)
+-   [Marble Maze、C++ と DirectX でのユニバーサル Windows プラットフォーム ゲームの開発](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+
+> **注**  
+この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブ ドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
+
+ 
+
+ 
+
+ 
+
+
+
+
+
+
+<!--HONumber=May16_HO2-->
 
 

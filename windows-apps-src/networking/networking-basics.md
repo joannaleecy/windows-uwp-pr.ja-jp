@@ -1,92 +1,108 @@
 ---
 author: DelfCo
-description: Things you must do for any network-enabled app.
-title: Networking basics
+description: ネットワーク対応アプリで実行する必要がある事柄について説明します。
+title: ネットワークの基本
 ms.assetid: 1F47D33B-6F00-4F74-A52D-538851FD38BE
 ---
 
-# Networking basics
+# ネットワークの基本
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-Things you must do for any network-enabled app.
+ネットワーク対応アプリで実行する必要がある事柄について説明します。
 
-## Capabilities
+## 機能
 
-In order to use networking, you must add appropriate capability elements to your app manifest. If no network capability is specified in your app's manifest, your app will have no networking capability, and any attempt to connect to the network will fail.
+ネットワークを使うには、アプリ マニフェストに適切な機能要素を追加する必要があります。 アプリ マニフェストにネットワーク機能が指定されていない場合、アプリはネットワーク機能を持たないため、ネットワークへの接続は失敗します。
 
-The following are the most-used networking capabilities.
+最もよく使われるネットワーク機能を次に示します。
 
-| Capability | Description |
+| 機能 | 説明 |
 |------------|-------------|
-| **internetClient** | Provides outbound access to the Internet and networks in public places, like airports and coffee shop. Most apps that require Internet access should use this capability. |
-| **internetClientServer** | Gives the app inbound and outbound network access from the Internet and networks in public places like airports and coffee shops. |
-| **privateNetworkClientServer** | Gives the app inbound and outbound network access at the user's trusted places, like home and work. |
+| **internetClient** | インターネットや、公共の場所のネットワーク (空港、喫茶店など) への出力方向のアクセスを提供します。 インターネットにアクセスする必要があるほとんどのアプリは、この機能を使います。 |
+| **internetClientServer** | インターネットや、公共の場所のネットワーク (空港、喫茶店など) からの入力方向と出力方向のネットワーク アクセスをアプリに提供します。 |
+| **privateNetworkClientServer** | ユーザーの信頼する場所 (自宅、職場など) において、入力方向と出力方向のネットワーク アクセスをアプリに提供します。 |
 
-There are other capabilities that might be necessary for your app, in certain circumstances.
+特定の状況では、上記以外の機能がアプリで必要になることがあります。
 
-| Capability | Description |
+| 機能 | 説明 |
 |------------|-------------|
-| **pushNotifications** | If your app uses socket activity triggers, you must specify this capability in the app manifest. |
-| **enterpriseAuthentication** | Allows an app to connect to network resources that require domain credentials. This capability will require a domain administrator to enable the functionality for all apps. An example would be an app that retrieves data from SharePoint servers on a private Intranet. <br/> With this capability your credentials can be used to access network resources on a network that requires credentials. An app with this capability can impersonate you on the network. <br/> This capability is not required to allow an app to access the Internet via an authenticating proxy. |
-| **proximity** | Required for near-field proximity communication with devices in close proximity to the computer. Near-field proximity may be used to send or connect with an application on a nearby device. <br/> This capability allows an app to access the network to connect to a device in close proximity, with user consent to send an invite or accept an invite. |
-| **sharedUserCertificates** | This capability allows an app to access software and hardware certificates, such as smart card certificates. When this capability is invoked at runtime, the user must take action, such as inserting a card or selecting a certificate. <br/> With this capability, your software and hardware certificates or a smart card are used for identification in the app. This capability may be used by your employer, bank, or government services for identification. |
+| **pushNotifications** | アプリでソケット アクティビティ トリガーを使う場合は、この機能をアプリ マニフェストに指定する必要があります。 |
+| **enterpriseAuthentication** | ドメイン資格情報を必要とするネットワーク リソースにアプリが接続できるようにします。 この機能を使う場合、すべてのアプリの機能をドメイン管理者が有効にする必要があります。 たとえば、プライベート イントラネットの SharePoint サーバーからデータを取得するアプリが該当します。 <br/> この機能を使うと、資格情報を必要とするネットワーク上のリソースに、自分の資格情報を使ってアクセスすることができます。 この機能を持ったアプリは、ネットワーク上でユーザーを偽装することができます。 <br/> この機能を使う場合、認証プロキシ経由でのインターネットへのアクセスをアプリに許可する必要はありません。 |
+| **proximity** | コンピューターときわめて近い場所にあるデバイスとの近距離近接通信で必要となります。 近距離近接通信は、近くのデバイス上のアプリケーションに接続したりデータを送ったりするときに使われます。 <br/> この機能を有効にすると、アプリは、ユーザーの同意に基づいて相手を招待したり招待に応じたりしながら、ネットワークにアクセスし、きわめて近い場所にあるデバイスに接続することができます。 |
+| **sharedUserCertificates** | ソフトウェア証明書とハードウェア証明書 (スマート カード証明書など) にアプリがアクセスできるようにします。 この機能が実行時に呼び出されると、ユーザーは、カードの挿入や証明書の選択などの行動をとる必要があります。 <br/> この機能では、ソフトウェア証明書やハードウェア証明書、スマート カードが、アプリでの身分証明に使われます。 この機能は、企業や銀行、行政サービスで身分証明に使うことができます。 |
 
-## Communicating when your app is not in the foreground
+## アプリがフォア グラウンドにないときの通信
 
-[Support your app with background tasks](https://msdn.microsoft.com/library/windows/apps/mt299103) contains general information about using background tasks to do work when your app is not in the foreground. More specifically, your code must take special steps to be notified when it is not the current foreground app and data arrives over the network for it. You used Control Channel Triggers for this purpose in Windows 8, and they are still supported in Windows 10. Full information about using Control Channel Triggers is available [**here**](https://msdn.microsoft.com/library/windows/apps/hh701032). A new technology in Windows 10 provides better functionality with lower overhead for some scenarios, such as push-enabled stream sockets: the socket broker and socket activity triggers.
+「[バックグラウンド タスクによるアプリのサポート](https://msdn.microsoft.com/library/windows/apps/mt299103)」には、アプリがフォアグラウンドでないときにバックグラウンド タスクを使って処理を実行する方法に関する一般的な情報が含まれています。 具体的には、アプリがフォアグラウンド アプリでないときにネットワーク経由でそのアプリのデータが到着した場合は、到着通知を受け取るための特別な手順のコードを実行する必要があります。 Windows 8 では、このためにコントロール チャネル トリガーを使っていました。これらのトリガーは、Windows 10 でも引き続きサポートされます。 コントロール チャネル トリガーの使い方について詳しくは[**ここ**](https://msdn.microsoft.com/library/windows/apps/hh701032)をご覧ください。 Windows 10 の新しいテクノロジでは、プッシュ対応ストリーム ソケットなどのいくつかのシナリオでオーバーヘッドが小さい優れた機能であるソケット ブローカーとソケット アクティビティ トリガーを利用できます。
 
-If your app uses [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319), [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882), or [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906), then your app can transfer ownership of an open socket to a socket broker provided by the system, and then leave the foreground, or even terminate. When a connection is made on the transferred socket, or traffic arrives on that socket, then your app or its designated background task are activated. If your app is not running, it is started. The socket broker then notifies your app using a [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) that new traffic has arrived. Your app reclaims the socket from the socket broker and process the traffic on the socket. This means that your app consumes far less system resources when it is not actively processing network traffic.
+アプリで [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)、または [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) を使っている場合は、開いているソケットの所有権をシステムが提供するソケット ブローカーに移譲した後、フォアグラウンドから離れるか、アプリを終了できます。 移譲されたソケットで接続が行われるか、そのソケットでトラフィックが到着すると、アプリまたは指定されたバックグラウンド タスクがアクティブ化します。 アプリが実行されていない場合は、開始されます。 その後、ソケット ブローカーは、[**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) を使って、新しいトラフィックが到着していることをアプリに通知します。 アプリは、ソケット ブローカーからソケットを取り戻し、そのソケットのトラフィックを処理します。 つまり、アプリがネットワーク トラフィックをアクティブに処理していないときに消費するシステム リソースが非常に少なくなります。
 
-The socket broker is intended to replace Control Channel Triggers where it is applicable, because it provides the same functionality, but with fewer restrictions and a smaller memory footprint. Socket broker can be used by apps that are not lock screen apps, and it is used the same way on phones as on other devices. Apps need not be running when traffic arrives in order to be activated by the socket broker. And the socket broker supports listening on TCP sockets, which Control Channel Triggers do not support.
+ソケット ブローカーはコントロール チャネル トリガーと同じ機能を少ない制限と小さなメモリ使用量で提供するため、ソケット ブローカーの目的は、適切な場所でコントロール チャネル トリガーと交代することです。 ソケット ブローカーは、ロック画面に表示するアプリ以外のアプリで使うことができ、電話でも他のデバイスと同じように使うことができます。 ソケット ブローカーによってアクティブ化するために、トラフィックの到着時にアプリが実行されている必要はありません。 さらに、ソケット ブローカーは、TCP ソケットでのリッスンをサポートします。これはコントロール チャネル トリガーではサポートされていません。
 
-If your app uses socket activity triggers, you must specify the **pushNotifications** capability in the app manifest.
+アプリでソケット アクティビティ トリガーを使う場合は、**pushNotifications** 機能をアプリ マニフェストに指定する必要があります。
 
-### Choosing a network trigger
+### ネットワーク トリガーの選択
 
-There are some scenarios where either kind of trigger would be suitable. When you are choosing which kind of trigger to use in your app, consider the following advice.
+どちらの種類のトリガーが適しているかを判断するいくつかのシナリオがあります。 アプリで使うトリガーの種類を選択するときは、次のアドバイスを検討してください。
 
--   If you are using [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151), [**System.Net.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) or [System.Net.Http.HttpClientHandler](http://go.microsoft.com/fwlink/p/?linkid=241638), you must use [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).
--   If you are using push-enabled **StreamSockets**, you can use control channel triggers, but should prefer [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009). The latter choice allows the system to free up memory and reduce power requirements when the connection is not being actively used.
--   If you want to minimize the memory footprint of your app when it is not actively servicing network requests, prefer [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) when possible.
--   If you want your app to be able to receive data while the system is in Connected Standby mode, use [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009).
+-   [
+            **IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151)、[**System.Net.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639)、または [System.Net.Http.HttpClientHandler](http://go.microsoft.com/fwlink/p/?linkid=241638) を使う場合は、[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) を使う必要があります。
+-   プッシュ対応 **StreamSockets** を使っている場合は、コントロール チャネル トリガーも使うことができますが、[**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) を使うことをお勧めします。 後者を選ぶと、接続がアクティブに使われていない場合は、システムによってメモリが解放され、電力要件が低減されます。
+-   アプリがネットワーク要求をアクティブに処理していないときのメモリ使用量をできる限り少なくする場合は、可能な限り [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) をお勧めします。
+-   システムがコネクト スタンバイ モードにあるときにアプリがデータを受信できるようにするには、[**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) を使います。
 
-For details and examples of how to use the socket broker, see [Network communications in the background](network-communications-in-the-background.md).
+ソケット ブローカーの使い方の説明と例については、「[バックグラウンドでのネットワーク通信](network-communications-in-the-background.md)」をご覧ください。
 
-## Secured connections
+## セキュリティ保護された接続
 
-Secure Sockets Layer (SSL) and the more recent Transport Layer Security (TLS) are cryptographic protocols designed to provide authentication and encryption for network communication. These protocols are designed to prevent eavesdropping and tampering when sending and receiving network data. These protocols use a client-server model for the protocol exchanges. These protocols also use digital certificates and certificate authorities to verify that the server is who it claims to be.
+Secure Sockets Layer (SSL) とより新しいトランスポート層セキュリティ (TLS) は、ネットワーク通信の認証と暗号化を実現するように設計された暗号化プロトコルです。 これらのプロトコルは、ネットワーク データの送受信時に傍受や改ざんを防ぐように設計されています。 これらのプロトコルでは、クライアント/サーバー モデルを使ってプロトコル交換が行われます。 また、デジタル証明書と証明機関を使って、サーバーが本物であることが確認されます。
 
-### Creating secure socket connections
+### セキュリティが確保されたソケット接続の作成
 
-A [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) object can be configured to use SSL/TLS for communications between the client and the server. This support for SSL/TLS is limited to using the **StreamSocket** object as the client in the SSL/TLS negotiation. You cannot use SSL/TLS with the **StreamSocket** created by a [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) when incoming communications are received, because SSL/TLS negotiation as a server is not implemented by the **StreamSocket** class.
+[
+            **StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) オブジェクトは、クライアントとサーバー間の通信に SSL/TLS を使うように構成できます。 この SSL/TLS のサポートは、SSL/TLS ネゴシエーションで **StreamSocket** オブジェクトをクライアントとして使うことに制限されます。 サーバーとしての SSL/TLS ネゴシエーションは **StreamSocket** クラスで実装されていないため、着信接続を受信したときに [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) によって作成された **StreamSocket** と共に SSL/TLS を使うことはできません。
 
-There are two ways to secure a [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) connection with SSL/TLS:
+[
+            **StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) 接続のセキュリティを確保するには 2 つの方法があります。
 
--   [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) - Make the initial connection to a network service and negotiate immediately to use SSL/TLS for all communications.
--   [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) - Connect initially to a network service without encryption. The app may send or receive data. Then, upgrade the connection to use SSL/TLS for all further communications.
+-   [
+              **ConnectAsync**
+            ](https://msdn.microsoft.com/library/windows/apps/hh701504) - ネットワーク サービスへの最初の接続を確立してすぐに、すべての通信で SSL/TLS を使うようにネゴシエートします。
+-   [
+              **UpgradeToSslAsync**
+            ](https://msdn.microsoft.com/library/windows/apps/br226922) - 最初に暗号化なしでネットワーク サービスに接続します。 アプリでデータが送受信される場合があります。 その後、以降のすべての通信で SSL/TLS を使うように接続をアップグレードします。
 
-The SocketProtectionLevel value that you provide sets the minimum protection level you are willing to allow. However, the eventual protection level of the established connection is determined in a negotiation process between both endpoints of the connection. The result can be a more-secure protection level than the one you specified, if the other endpoint requires a higher level. The SSL strength actually negotiated using [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) or [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) can be determined by getting the [**StreamSocketinformation.ProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/hh967868) property after the async operation has completed successfully.
+SocketProtectionLevel 値には、許可する最低限の保護レベルを設定します。 ただし、確立される接続の最終的な保護レベルは接続の両方のエンドポイント間のネゴシエーション プロセスで決まります。 指定した保護レベルは、相手のエンドポイントでより高いレベルが必要であれば、より高くなることがあります。 [
+            **ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) または [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) を使って実際にネゴシエートされる SSL の強度は、非同期操作の成功後に取得される [**StreamSocketinformation.ProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/hh967868) プロパティによって決まります。
 
-> **Note**  Your code should never implicitly depend on using a particular protection level, or on the assumption that a given security level is used by default. The security landscape changes constantly, and protocols and default protection levels will be changed over time in order to avoid the use of protocols with known weaknesses. Defaults can vary depending on individual machine configuration, or on which software is installed and which patches have been applied. If your app depends on the use of a particular security level, you must explicitly specify that level and then check to be sure that it is actually in use on the established connection.
+> **注**  コードでは、特定の保護レベルの使用に暗黙的に依存しないように、つまり特定のセキュリティ レベルの既定での使用を前提にしないようにしてください。 セキュリティ環境は変わり続けており、プロトコルと既定の保護レベルは、既知の弱点のあるプロトコルの使用を避けるように、刻々と変更されています。 既定値は、個々のコンピューターの構成、つまりインストールされているソフトウェアや適用されているパッチによって異なることがあります。 アプリが特定のセキュリティ レベルの使用に依存する場合は、明示的にそのレベルを指定したうえで、実際にそのレベルを使って接続が確立されたことを確認する必要があります。
 
-### Use ConnectAsync
+### ConnectAsync の使用
 
-[**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) can be used to establish the initial connection with a network service and then negotiate immediately to use SSL/TLS for all communications. There are two **ConnectAsync** methods that support passing a *protectionLevel* parameter:
+[
+              **ConnectAsync**
+            ](https://msdn.microsoft.com/library/windows/apps/hh701504)ネットワーク サービスへの最初の接続を確立してすぐに、すべての通信で SSL/TLS を使うようにネゴシエートするのに使えます。 *protectionLevel* パラメーターを渡すことができる **ConnectAsync** メソッドは 2 つあります。
 
--   [**ConnectAsync(EndpointPair, SocketProtectionLevel)**](https://msdn.microsoft.com/library/windows/apps/hh701511) - Starts an asynchronous operation on a [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) object to connect to a remote network destination specified as an [**EndpointPair**](https://msdn.microsoft.com/library/windows/apps/hh700953) object and a [**SocketProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/br226880).
--   [**ConnectAsync(HostName, String, SocketProtectionLevel)**](https://msdn.microsoft.com/library/windows/apps/br226916) - Starts an asynchronous operation on a [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) object to connect to a remote destination specified by a remote hostname, a remote service name, and a [**SocketProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/br226880).
+-   [
+              **ConnectAsync(EndpointPair, SocketProtectionLevel)**
+            ](https://msdn.microsoft.com/library/windows/apps/hh701511) - [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) オブジェクトで、[**EndpointPair**](https://msdn.microsoft.com/library/windows/apps/hh700953) オブジェクトと [**SocketProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/br226880) で指定したリモート ネットワークの宛先に接続する非同期操作を開始します。
+-   [
+              **ConnectAsync(HostName, String, SocketProtectionLevel)**
+            ](https://msdn.microsoft.com/library/windows/apps/br226916) - [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) オブジェクトで、リモート ホスト名、リモート サービス名、[**SocketProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/br226880) で指定したリモートの宛先に接続する非同期操作を開始します。
 
-If the *protectionLevel* parameter is set to **Windows.Networking.Sockets.SocketProtectionLevel.Ssl** when calling either of the above [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) methods, the [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) must will be established to use SSL/TLS for encryption. This value requires encryption and never allows a NULL cipher to be used.
+先ほどのいずれかの [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) メソッドを呼び出すときに *protectionLevel* パラメーターが **Windows.Networking.Sockets.SocketProtectionLevel.Ssl** に設定されていると、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) による通信の暗号化に SSL/TLS を使う必要があります。 この値を指定すると暗号化が必要になり、NULL 暗号を使うことはできません。
 
-The normal sequence to use with one of these [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) methods is the same.
+これらの [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) メソッドで使う一般的な手順は同じです。
 
--   Create a [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882).
--   If an advanced option on the socket is needed, use the [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226917) property to get the [**StreamSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226893) instance associated with a [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) object. Set a property on the **StreamSocketControl**.
--   Call one of the above [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) methods to start an operation to connect to a remote destination and immediately negotiate the use of SSL/TLS.
--   The SSL strength actually negotiated using [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) can be determined by getting the [**StreamSocketinformation.ProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/hh967868) property after the async operation has completed successfully.
+-   [
+            **StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) を作成します。
+-   ソケットの詳細オプションが必要な場合は、[**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226917) プロパティを使って、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) オブジェクトに関連付けられている [**StreamSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226893) インスタンスを取得します。 **StreamSocketControl** のプロパティを設定します。
+-   上記のいずれかの [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) メソッドを呼び出し、リモートの宛先に接続する操作を開始してすぐに、SSL/TLS の使用をネゴシエートします。
+-   [
+            **ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) を使って実際にネゴシエートされる SSL の強度は、非同期操作の成功後に取得される [**StreamSocketinformation.ProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/hh967868) プロパティによって決まります。
 
-The following example creates a [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) and tries to establish a connection to the network service and negotiate immediately to use SSL/TLS. If the negotiation is successful, all network communication using the **StreamSocket** between the client the network server will be encrypted.
+次の例では、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) を作り、ネットワーク サービスへの接続を確立してすぐに、SSL/TLS を使うようにネゴシエートします。 ネゴシエーションに成功すると、クライアントとネットワーク サーバー間で **StreamSocket** を使うすべてのネットワーク通信が暗号化されます。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -160,21 +176,26 @@ using Windows::Networking::Sockets;
     // Then close the clientSocket when done
 ```
 
-### Use UpgradeToSslAsync
+### UpgradeToSslAsync の使用
 
-When your code uses [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922), it first establishes a connection to a network service without encryption. The app may send or receive some data, then upgrade the connection to use SSL/TLS for all further communications.
+コードで [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) を使うときは、ネットワーク サービスへの最初の接続を暗号化なしで確立します。 アプリでデータが送受信される可能性があるため、以降のすべての通信で SSL/TLS を使うように接続をアップグレードします。
 
-The [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) method takes two parameters. The *protectionLevel* parameter indicates the protection level desired. The *validationHostName* parameter is the hostname of the remote network destination that is used for validation when upgrading to SSL. Normally the *validationHostName* would be the same hostname that the app used to initially establish the connection. If the *protectionLevel* parameter is set to **Windows.System.Socket.SocketProtectionLevel.Ssl** when calling **UpgradeToSslAsync**, the [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) must use the SSL/TLS for encryption on further communications over the socket. This value requires encryption and never allows a NULL cipher to be used.
+[
+            **UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) メソッドは 2 つのパラメーターを受け取ります。 *protectionLevel* パラメーターは、目的の保護レベルを示します。 *validationHostName* パラメーターは、SSL へのアップグレード時の検証に使われるリモート ネットワークの宛先のホスト名です。 通常、*validationHostName* は、アプリが最初に接続を確立するときに使ったホスト名と同じです。 **UpgradeToSslAsync** を呼び出すときに *protectionLevel* パラメーターが **Windows.System.Socket.SocketProtectionLevel.Ssl** に設定されていると、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) による以降の通信の暗号化に SSL/TLS を使う必要があります。 この値を指定すると暗号化が必要になり、NULL 暗号を使うことはできません。
 
-The normal sequence to use with the [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) method is as follows:
+[
+            **UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) メソッドで使う一般的な手順は次のとおりです。
 
--   Create a [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882).
--   If an advanced option on the socket is needed, use the [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226917) property to get the [**StreamSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226893) instance associated with a [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) object. Set a property on the **StreamSocketControl**.
--   If any data needs to be sent and received unencrypted, send it now.
--   Call the [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) method to start an operation to upgrade the connection to use SSL/TLS.
--   The SSL strength actually negotiated using [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) can be determined by getting the [**StreamSocketinformation.ProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/hh967868) property after the async operation completes successfully.
+-   [
+            **StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) を作成します。
+-   ソケットの詳細オプションが必要な場合は、[**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226917) プロパティを使って、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) オブジェクトに関連付けられている [**StreamSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226893) インスタンスを取得します。 **StreamSocketControl** のプロパティを設定します。
+-   データを暗号化せずに送受信する必要がある場合は、ここで送信します。
+-   [
+            **UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) メソッドを呼び出して、SSL/TLS を使うように接続をアップグレードする操作を開始します。
+-   [
+            **UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) を使って実際にネゴシエートされる SSL の強度は、非同期操作の成功後に取得される [**StreamSocketinformation.ProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/hh967868) プロパティによって決まります。
 
-The following example creates a [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882), tries to establish a connection to the network service, sends some initial data, and then negotiates to use SSL/TLS. If the negotiation is successful, all network communication using the **StreamSocket** between the client and the network server will be encrypted.
+次の例では、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) を作り、ネットワーク サービスへの接続を確立して最初のデータを送って、SSL/TLS を使うようにネゴシエートします。 ネゴシエーションに成功すると、クライアントとネットワーク サーバー間で **StreamSocket** を使うすべてのネットワーク通信が暗号化されます。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -349,25 +370,26 @@ using Windows::Storage::Streams;
     });
 ```
 
-### Creating secure WebSocket connections
+### セキュリティが確保された WebSocket 接続の作成
 
-Like traditional socket connections, WebSocket connections can also be encrypted with Transport Layer Security (TLS)/Secure Sockets Layer (SSL) when using the [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) and [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) features in Windows 8 for a Windows Store app. In most cases you'll want to use a secure WebSocket connection. This will increase the chances that your connection will succeed, as many proxies will reject unencrypted WebSocket connections.
+従来のソケット接続と同様に、Windows 8 の [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) と [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) の機能を Windows ストア アプリで使う際に、トランスポート層セキュリティ (TLS)/Secure Sockets Layer (SSL) を使って WebSocket 接続を暗号化することもできます。 ほとんどの場合、WebSocket 接続にはセキュリティを確保する必要があります。 多くのプロキシは、暗号化されていない WebSocket 接続を拒否するため、接続の成功率が高くなります。
 
-For examples of how to create, or upgrade to, a secure socket connection to a network service, see [How to secure WebSocket connections with TLS/SSL](https://msdn.microsoft.com/library/windows/apps/xaml/hh994399).
+セキュリティが確保されたソケット接続を作成したりネットワーク サービスへとアップグレードする方法の例については、「[TLS/SSL を使って WebSocket 接続のセキュリティを確保する方法](https://msdn.microsoft.com/library/windows/apps/xaml/hh994399)」をご覧ください。
 
-In addition to TLS/SSL encryption, a server may require a **Sec-WebSocket-Protocol** header value to complete the initial handshake. This value, represented by the [**StreamWebSocketInformation.Protocol**](https://msdn.microsoft.com/library/windows/apps/hh701514) and [**MessageWebSocketInformation.Protocol**](https://msdn.microsoft.com/library/windows/apps/hh701358) properties, indicate the protocol version of the connection and enables the server to correctly interpret the opening handshake and the data being exchanged afterwards. Using this protocol information, if at any point if the server cannot interpret the incoming data in a safe manner the connection can be closed.
+最初のハンドシェークを完了するために、サーバーでは TLS/SSL 暗号化だけでなく **Sec-WebSocket-Protocol** ヘッダー値を要求することもあります。 この値は [**StreamWebSocketInformation.Protocol**](https://msdn.microsoft.com/library/windows/apps/hh701514) プロパティと [**MessageWebSocketInformation.Protocol**](https://msdn.microsoft.com/library/windows/apps/hh701358) プロパティで表され、接続のプロトコル バージョンを示し、開いているハンドシェークとその後に交換されるデータをサーバーが正しく解釈できるようにします。 このプロトコル情報を使うと、サーバーが着信するデータを安全な方法で解釈できないような状況になったときに、接続を閉じることができます。
 
-If the initial request from the client either does not contain this value, or provides a value that doesn't match what the server expects, the expected value is sent from the server to the client on WebSocket handshake error.
+クライアントからの最初の要求にこの値が含まれていない場合、または含まれている値がサーバーで想定されるものと一致しない場合は、WebSocket ハンドシェーク エラーでサーバーから想定される値がクライアントに送信されます。
 
-## Authentication
+## 認証
 
-How to provide authentication credentials when connecting over the network.
+ネットワーク経由で接続するときに、認証資格情報を提供する方法。
 
-### Providing a client certificate with the StreamSocket class
+### StreamSocket クラスによるクライアント証明書の提供
 
-The [**Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) class supports using SSL/TLS to authenticate the server the app is talking to. In certain cases, the app also needs to authenticate itself to the server using a TLS client certificate. In Windows 10, you can provide a client certificate on the [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893) object (this must be set before the TLS handshake is started). If the server requests the client certificate, Windows will respond with the certificate provided.
+[
+            **Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) クラスは、SSL/TLS を使ったアプリの接続先サーバーの認証をサポートします。 場合によっては、アプリは、TLS クライアント証明書を使って自身をサーバーに対して認証する必要があります。 Windows 10 では、クライアント証明書を [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893) オブジェクトに提供できます (これは TLS ハンドシェイクが開始される前に設定する必要があります)。 サーバーがクライアント証明書を要求した場合、Windows が提供された証明書を使って応答します。
 
-Here is a code snippet showing how to implement this:
+これを実装する方法を示すコード スニペットを次に示します。
 
 ```csharp
 var socket = new StreamSocket();
@@ -376,44 +398,49 @@ socket.Control.ClientCertificate = certificate;
 await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 ```
 
-### Providing authentication credentials to a web service
+### Web サービスへの認証資格情報の提供
 
-The networking APIs that enable apps to interact with secure web services each provide their own methods to either initialize a client or set a request header with server and proxy authentication credentials. Each method is set with a [**PasswordCredential**](https://msdn.microsoft.com/library/windows/apps/br227061) object that indicates a user name, password, and the resource for which these credentials are used. The following table provides a mapping of these APIs:
+Networking API は、セキュリティが確保された Web サービスとアプリが連携できるようにします。この API のそれぞれが、サーバーとプロキシの認証資格情報を使ってクライアントの初期化または要求ヘッダーの設定を行う独自のメソッドを提供します。 各メソッドは、[**PasswordCredential**](https://msdn.microsoft.com/library/windows/apps/br227061) オブジェクトを使って設定されます。このオブジェクトは、ユーザー名、パスワード、それぞれの資格情報が使われるリソースを示します。 次の表では、これらの API のマッピングについて説明します。
 
-| **WebSockets** | [**MessageWebSocketControl.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br226848) |
+| **WebSocket** | [**MessageWebSocketControl.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br226848) |
 |-------------------------|----------------------------------------------------------------------------------------------------------|
 |  | [**MessageWebSocketControl.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/br226847) |
 |  | [**StreamWebSocketControl.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br226928) |
 |  | [**StreamWebSocketControl.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/br226927) |
 |  |  |
-| **Background Transfer** | [**BackgroundDownloader.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/hh701076) |
+| **バックグラウンド転送** | [**BackgroundDownloader.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/hh701076) |
 |  | [**BackgroundDownloader.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/hh701068) |
 |  | [**BackgroundUploader.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/hh701184) |
 |  | [**BackgroundUploader.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/hh701178) |
 |  |  |
-| **Syndication** | [**SyndicationClient(PasswordCredential)**](https://msdn.microsoft.com/library/windows/apps/hh702355) |
+| **配信** | [**SyndicationClient(PasswordCredential)**](https://msdn.microsoft.com/library/windows/apps/hh702355) |
 |  | [**SyndicationClient.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br243461) |
 |  | [**SyndicationClient.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/br243459) |
 |  |  |
 | **AtomPub** | [**AtomPubClient(PasswordCredential)**](https://msdn.microsoft.com/library/windows/apps/hh702262) |
 |  | [**AtomPubClient.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br243428) |
 |  | [**AtomPubClient.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/br243423) |
- 
-## Handling network exceptions
+ 
+## ネットワーク例外を処理する
 
-In most areas of programming, an exception indicates a significant problem or failure, caused by some flaw in the program. In network programming, there is an additional source for exceptions: the network itself, and the nature of network communications. Network communications are inherently unreliable and prone to unexpected failure. For each of the ways your app uses networking, you must maintain some state information; and your app code must handle network exceptions by updating that state information and initiating appropriate logic for your app to re-establish or retry communication failures.
+ほとんどのプログラミング領域では、例外は、プログラムの不具合によって発生した重大な問題やエラーを示します。 ネットワーク プログラミングでは、さらに、ネットワークそのものとネットワーク通信の特性という、例外の発生源があります。 ネットワーク通信は、本質的に信頼性が低く、予期しない障害が発生する傾向があります。 アプリでネットワークを使う方法のそれぞれについて、状態情報を維持する必要があります。アプリのコードは、その状態情報を更新し、通信エラーが発生したときに接続を再び確立するか再試行する適切なロジックを開始することで、ネットワーク例外を処理する必要があります。
 
-When Universal Windows apps throw an exception, your exception handler can retrieve more detailed information on the cause of the exception to better understand the failure and make appropriate decisions.
+ユニバーサル Windows アプリで例外がスローされると、例外ハンドラーは例外の原因についての詳しい情報を取得することでエラーの内容を理解して適切な判断を下すことができます。
 
-Each language projection supports a method to access this more detailed information. An exception projects as an **HRESULT** value in Universal Windows apps. The *Winerror.h* include file contains a very large list of possible **HRESULT** values that includes network errors.
+各言語のプロジェクションは、この詳しい情報にアクセスするためのメソッドをサポートしています。 例外は、ユニバーサル Windows アプリの **HRESULT** 値としてプロジェクションされます。 *Winerror.h* インクルード ファイルには、ネットワーク エラーを含む、出力される可能性がある **HRESULT** 値の大きなリストが格納されています。
 
-The networking APIs support different methods for retrieving this detailed information on the cause of an exception.
+Networking API は、例外の原因についての詳しい情報を取得するために、他のメソッドをサポートしています。
 
--   Some APIs provide a helper method that converts the **HRESULT** value from the exception to an enumeration value.
--   Other APIs provide a method to retrieve the actual **HRESULT** value.
+-   一部の API には、例外の **HRESULT** 値を列挙値に変換するヘルパー メソッドがあります。
+-   その他の API には、実際の **HRESULT** 値を取得するメソッドがあります。
 
-## Related topics
+## 関連トピック
 
-* [Networking API Improvements in Windows 10](http://blogs.windows.com/buildingapps/2015/07/02/networking-api-improvements-in-windows-10/)
- 
+* [Windows 10 での Networking API の機能強化](http://blogs.windows.com/buildingapps/2015/07/02/networking-api-improvements-in-windows-10/)
+ 
+
+
+
+<!--HONumber=May16_HO2-->
+
 

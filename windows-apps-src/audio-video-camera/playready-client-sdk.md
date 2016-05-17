@@ -1,112 +1,126 @@
 ---
 author: eliotcowley
 ms.assetid: DD8FFA8C-DFF0-41E3-8F7A-345C5A248FC2
-description: This topic describes how to add PlayReady protected media content to your Universal Windows Platform (UWP) app.
+description: このトピックでは、ユニバーサル Windows プラットフォーム (UWP) アプリに PlayReady で保護されたメディア コンテンツを追加する方法について説明します。
 title: PlayReady DRM
 ---
 
 # PlayReady DRM
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-This topic describes how to add PlayReady protected media content to your Universal Windows Platform (UWP) app.
+このトピックでは、ユニバーサル Windows プラットフォーム (UWP) アプリに PlayReady で保護されたメディア コンテンツを追加する方法について説明します。
 
-PlayReady DRM enables developers to create UWP apps capable of providing PlayReady content to the user while enforcing the access rules defined by the content provider. This section describes changes made to Microsoft PlayReady DRM for Windows 10 and how to modify your PlayReady UWP app to support the changes made from the previous Windows 8.1 version to the Windows 10 version.
+PlayReady DRM を使うと、開発者はコンテンツ プロバイダーが定義したアクセス ルールを適用しながら、ユーザーに PlayReady コンテンツを提供することができる UWP アプリを作成できます。 ここでは、Windows 10 用の Microsoft PlayReady DRM に加えられた変更と、PlayReady UWP アプリを変更して、以前の Windows 8.1 バージョンから Windows 10 バージョンに加えられた変更をサポートする方法について説明します。
  
-| Topic                                                                     | Description                                                                                                                                                                                                                                                                             |
+| トピック                                                                     | 説明                                                                                                                                                                                                                                                                             |
 |---------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Hardware DRM](hardware-drm.md)                                           | This topic provides an overview of how to add PlayReady hardware-based digital rights management (DRM) to your UWP app.                                                                                                                                                                 |
-| [Adaptive Streaming with PlayReady](adaptive-streaming-with-playready.md) | This article describes how to add adaptive streaming of multimedia content with Microsoft PlayReady content protection to a Universal Windows Platform (UWP) app. This feature currently supports playback of Http Live Streaming (HLS) and Dynamic Streaming over HTTP (DASH) content. |
+| [ハードウェア DRM](hardware-drm.md)                                           | このトピックでは、PlayReady ハードウェア ベースのデジタル著作権管理 (DRM) を UWP アプリに追加する方法の概要を示します。                                                                                                                                                                 |
+| [PlayReady を使ったアダプティブ ストリーミング](adaptive-streaming-with-playready.md) | この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリに、Microsoft PlayReady コンテンツ保護を使ったマルチメディア コンテンツのアダプティブ ストリーミングを追加する方法について説明します。 現在、この機能では、HTTP ライブ ストリーミング (HLS) と Dynamic Adaptive Streaming over HTTP (DASH) コンテンツの再生がサポートされています。 |
 
-## What's New in PlayReady DRM
+## PlayReady DRM の新機能
 
-The following list describes the new features and changes made to PlayReady DRM for Windows 10.
+次に、Windows 10 用の PlayReady DRM に関する新機能や変更点について説明します。
 
--   Added hardware digital rights management (DRM).
+-   追加されたハードウェア デジタル著作権管理 (DRM)。
 
-    Hardware-based content protection support enables secure playback of high definition (HD) and ultra-high definition (UHD) content on multiple device platforms. Key material (including private keys, content keys, and any other key material used to derive or unlock said keys), and decrypted compressed and uncompressed video samples are protected by leveraging hardware security. When Hardware DRM is being used, neither unknown enabler (play to unknown / play to unknown with downres) has meaning as the HWDRM pipeline always knows the output being used. For more information, see [Hardware DRM](hardware-drm.md).
+    ハードウェア ベースのコンテンツ保護により、複数のデバイス プラットフォーム上で、高解像度 (HD) と超高解像度 (UHD) のコンテンツを安全に再生できます。 キー マテリアル (秘密キー、コンテンツ キー、これらのキーを派生またはロック解除するために使われるその他のキー マテリアルを含みます)、および暗号化解除された圧縮および非圧縮ビデオ サンプルは、ハードウェア セキュリティを利用して保護されます。 ハードウェア DRM の使用中は、HWDRM パイプラインは使用中の出力を判別できるため、不明な有効機能 (不明な再生/低解像度の不明な再生) は意味を持ちません。 詳しくは、「[ハードウェア DRM](hardware-drm.md)」をご覧ください。
 
--   PlayReady is no longer an appX framework component, but instead is an in-box operating system component. The namespace was changed from **Microsoft.Media.PlayReadyClient** to [**Windows.Media.Protection.PlayReady**](https://msdn.microsoft.com/library/windows/apps/dn986454).
--   The following headers defining the PlayReady error codes are now part of the Windows Software Development Kit (SDK): Windows.Media.Protection.PlayReadyErrors.h and Windows.Media.Protection.PlayReadyResults.h.
--   Provides proactive acquisition of non-persistent licenses.
+-   PlayReady は AppX フレームワーク コンポーネントではなく、インボックス オペレーティング システム コンポーネントになりました。 名前空間は、**Microsoft.Media.PlayReadyClient** から [**Windows.Media.Protection.PlayReady**](https://msdn.microsoft.com/library/windows/apps/dn986454) に変更されました。
+-   PlayReady のエラー コードを定義する Windows.Media.Protection.PlayReadyErrors.h と Windows.Media.Protection.PlayReadyResults.h ヘッダーは、Windows ソフトウェア開発キット (Windows SDK) の一部になりました。
+-   永続的でないライセンスの事前の取得を提供します。
 
-    Previous versions of PlayReady DRM did not support proactive acquisition of non-persistent licenses. This capability has been added to this version. This can decrease the time to first frame. For more information, see [Proactively Acquire a Non-Persistent License Before Playback](#proactively_acquire_a_non_persistent_license_before_playback).
+    以前のバージョンの PlayReady DRM は、永続的でないライセンスの事前取得をサポートしませんでした。 この機能は、このバージョンに追加されました。 これにより、最初のフレームまでの時間を減らすことができます。 詳しくは、「[再生する前に永続的でないライセンスを事前に取得する](#proactively_acquire_a_non_persistent_license_before_playback)」をご覧ください。
 
--   Provides acquisition of multiple licenses in one message.
+-   1 つのメッセージで複数のライセンスを取得できるようにします。
 
-    Allows the client app to acquire multiple non-persistent licenses in one license acquisition message. This can decrease the time to first frame by acquiring licenses for multiple pieces of content while the user is still browsing your content library; this prevents a delay for license acquisition when the user selects the content to play. In addition, it allows audio and video streams to be encrypted to separate keys by enabling a content header that includes multiple key identifiers (KIDs); this enables a single license acquisition to acquire all licenses for all streams within a content file instead of having to use custom logic and multiple license acquisition requests to achieve the same result.
+    クライアント アプリが、1 つのライセンス取得メッセージで複数の永続的でないライセンスを取得できるようにします。 これにより、ユーザーがコンテンツ ライブラリを閲覧中に、複数のコンテンツのライセンスを取得して、最初のフレームまでの時間を短縮することができます。この結果、ユーザーが再生するコンテンツを選択したときに、ライセンス取得の遅延を回避できます。 さらに、複数のキー識別子 (KID) を含むコンテンツ ヘッダーを有効にして、オーディオとビデオのストリームを個別のキーに暗号化できます。これにより、カスタム ロジックと複数のライセンス取得要求を使って同じ結果を得る代わりに、単一ライセンスの取得で、コンテンツ ファイル内のすべてのストリームのすべてのライセンスを取得できます。
 
--   Added real time expiration support, or limited duration license (LDL).
+-   リアルタイムの有効期限のサポートや期間限定ライセンス (LDL) が追加されました。
 
-    Provides the ability to set real-time expiration on licenses and smoothly transition from an expiring license to another (valid) license in the middle of playback. When combined with acquisition of multiple licenses in one message, this allows an app to acquire several LDLs asynchronously while the user is still browsing the content library and only acquire a longer duration license once the user has selected content to playback. Playback will then start more quickly (because a license is already available) and, since the app will have acquired a longer duration license by the time the LDL expires, smoothly continue playback to the end of the content without interruption.
+    ライセンスにリアルタイムの有効期限を設定し、再生中に、有効期限が切れるライセンスから別の (有効な) ライセンスにスムーズに移行することができます。 1 つのメッセージで複数のライセンスの取得と組み合わせることにより、アプリは、ユーザーがコンテンツ ライブラリを閲覧中に、いくつかの LDL を非同期的に取得することができ、ユーザーが再生するコンテンツを選ぶと、期間の長いライセンスのみを取得することができます。 次に、再生はより迅速に開始し (ライセンスが既に利用できるため)、LDL の有効期限が切れるまでに、アプリはより長い期間のライセンスを取得するため、中断なく、コンテンツの最後までスムーズに再生を続行します。
 
--   Added non-persistent license chains.
--   Added support for time-based restrictions (including expiration, expire after first play, and real time expiration) on non-persistent licenses.
--   Added HDCP Type 1 (version 2.2) policy support.
+-   永続的でないライセンス チェーンを追加しました。
+-   永続的でないライセンスで、時間ベースの制限 (有効期限、最初のプレイ後の有効期限切れ、リアルタイムの有効期限を含む) のサポートを追加しました。
+-   HDCP Type 1 (バージョン 2.2) ポリシーのサポートを追加しました。
 
-    See [Things to Consider](#things_to_consider) for more information.
+    詳しくは、「[考慮事項](#things_to_consider)」をご覧ください。
 
--   Miracast is now implicit as an output.
--   Added secure stop.
+-   Miracast が暗黙的な出力となりました。
+-   セキュア ストップが追加されました。
 
-    Secure stop provides the means for a PlayReady device to confidently assert to a media streaming service that media playback has stopped for any given piece of content. This capability ensures your media streaming services provide accurate enforcement and reporting of usage limitations on different devices for a given account.
+    セキュア ストップによって、特定のコンテンツについてのメディア再生が停止したメディア ストリーミング サービスに対して、PlayReady デバイスが確実にアサートするための手段が提供されます。 この機能により、メディア ストリーミング サービスは、特定のアカウントのさまざまなデバイスに対する使用制限を正しく適用し報告することができるようになります。
 
--   Added audio and video license separation.
+-   オーディオとビデオに関するライセンスの分離が追加されました。
 
-    Separate tracks prevent video from being decoded as audio; enabling more robust content protection. Emerging standards are requiring separate keys for audio and visual tracks.
+    トラックを分離することによって、ビデオがオーディオにデコードされるのを防ぐことができます。これにより、さらに強力なコンテンツ保護が可能になります。 最新の標準では、オーディオ トラックと映像トラックに対して別々のキーが必要になります。
 
--   Added MaxResDecode.
+-   MaxResDecode が追加されました。
 
-    This feature was added to limit playback of content to a maximum resolution even when in possession of a more capable key (but not a license). It supports cases where multiple stream sizes are encoded with a single key.
+    この機能は、コンテンツの再生を最大解像度に制限するために追加されました (ライセンスではなく、より強力なキーを所有している場合にも制限を受けます)。 これは、複数のストリーム サイズが 1 つのキーでエンコードされる状況をサポートします。
 
-The following new interfaces, classes, and enumerations were added to PlayReady DRM:
+PlayReady DRM に、次の新しいインターフェイス、クラス、列挙子が追加されました。
 
--   [**IPlayReadyLicenseAcquisitionServiceRequest**](https://msdn.microsoft.com/library/windows/apps/dn986077) interface
--   [**IPlayReadyLicenseSession**](https://msdn.microsoft.com/library/windows/apps/dn986080) interface
--   [**IPlayReadySecureStopServiceRequest**](https://msdn.microsoft.com/library/windows/apps/dn986090) interface
--   [**PlayReadyLicenseSession**](https://msdn.microsoft.com/library/windows/apps/dn986309) class
--   [**PlayReadySecureStopIterable**](https://msdn.microsoft.com/library/windows/apps/dn986371) class
--   [**PlayReadySecureStopIterator**](https://msdn.microsoft.com/library/windows/apps/dn986375) class
--   [**PlayReadyHardwareDRMFeatures**](https://msdn.microsoft.com/library/windows/apps/dn986265) enumerator
+-   [
+              **IPlayReadyLicenseAcquisitionServiceRequest**
+            ](https://msdn.microsoft.com/library/windows/apps/dn986077) インターフェイス
+-   [
+              **IPlayReadyLicenseSession**
+            ](https://msdn.microsoft.com/library/windows/apps/dn986080) インターフェイス
+-   [
+              **IPlayReadySecureStopServiceRequest**
+            ](https://msdn.microsoft.com/library/windows/apps/dn986090) インターフェイス
+-   [
+              **PlayReadyLicenseSession**
+            ](https://msdn.microsoft.com/library/windows/apps/dn986309) クラス
+-   [
+              **PlayReadySecureStopIterable**
+            ](https://msdn.microsoft.com/library/windows/apps/dn986371) クラス
+-   [
+              **PlayReadySecureStopIterator**
+            ](https://msdn.microsoft.com/library/windows/apps/dn986375) クラス
+-   [
+              **PlayReadyHardwareDRMFeatures**
+            ](https://msdn.microsoft.com/library/windows/apps/dn986265) 列挙子
 
-A new sample has been created to demonstrate how to use the new features of PlayReady DRM. The sample can be downloaded from [http://go.microsoft.com/fwlink/p/?linkid=331670&clcid=0x409](http://go.microsoft.com/fwlink/p/?linkid=331670).
+PlayReady DRM の新機能を利用する方法を示すために、新しいサンプルが作成されました。 このサンプルは、[http://go.microsoft.com/fwlink/p/?linkid=331670&clcid=0x409](http://go.microsoft.com/fwlink/p/?linkid=331670) からダウンロードできます。
 
-## Things to Consider
+## 考慮事項
 
--   PlayReady DRM now supports HDCP Type 1 (version 2.2 or later). PlayReady carries the policy in the license for the device to enforce. This feature can be enabled in your PlayReady Server v3.0 SDK license (the server controls this policy in the license using the play enabler **GUID**). For more information, see the [PlayReady Compliance and Robustness Rules](http://www.microsoft.com/playready/licensing/compliance/).
--   Windows Media Video (also known as VC-1) is not supported in hardware DRM (see [Override Hardware DRM](hardware-drm.md#override-hardware-drm)).
--   PlayReady DRM now supports the High Efficiency Video Coding (HEVC /H.265) video compression standard. To support HEVC, your app must use Common Encryption Scheme (CENC) version 2 content which includes leaving the content's slice headers in the clear. Refer to ISO/IEC 23001-7 Information technology -- MPEG systems technologies -- Part 7: Common encryption in ISO base media file format files (Spec version ISO/IEC 23001-7:2015 or higher is required.) for more information. Microsoft also recommends using CENC version 2 for all HWDRM content. In addition, some hardware DRM will support HEVC and some will not (see [Override Hardware DRM](hardware-drm.md#override-hardware-drm)).
--   To take advantage of certain new PlayReady 3.0 features (including, but not limited to, SL3000 for hardware-based clients, acquiring multiple non-persistent licenses in one license acquisition message, and time-based restrictions on non-persistent licenses), the PlayReady server is required to be the Microsoft PlayReady Server Software Development Kit v3.0.2769 Release version or later.
--   Depending on the Output Protection Policy specified in the content license, media playback may fail for end users if their connected output does not support those requirements. The following table lists the set of common errors that occur as a result. For more information, see the [PlayReady Compliance and Robustness Rules](http://www.microsoft.com/playready/licensing/compliance/).
+-   PlayReady DRM は、HDCP Type 1 (バージョン 2.2 以降) をサポートするようになりました。 PlayReady は、デバイスが適用するライセンスでポリシーを持っています。 この機能は、PlayReady Server v3.0 SDK ライセンスで有効にできます (サーバーは、再生の有効機能 **GUID** を使って、ライセンスでこのポリシーを管理します)。 詳しくは、「[PlayReady の適合性と信頼性規則](http://www.microsoft.com/playready/licensing/compliance/)」をご覧ください。
+-   Windows Media Video (VC-1 とも呼ばれます) はハードウェア DRM ではサポートされません (「[ハードウェア DRM のオーバーライド](hardware-drm.md#override-hardware-drm)」をご覧ください)。
+-   PlayReady DRM は、高効率ビデオ コーディング (HEVC/H.265) ビデオ圧縮規格をサポートしています。 アプリは、HEVC をサポートするには、コンテンツのスライス ヘッダーがクリア テキストのままになる、Common Encryption Scheme (CENC) バージョン 2 のコンテンツを使う必要があります。 詳しくは、「ISO/IEC 23001-7 情報テクノロジ -- MPEG システム テクノロジ -- パート 7: ISO ベース メディア ファイル形式ファイルの一般的な暗号化」をご覧ください。(仕様バージョン ISO/IEC 23001-7:2015 以降が必要です)。 また、すべて HWDRM のコンテンツで、CENC バージョン 2 を使うことをお勧めします。 さらに、ハードウェア DRM によって、HEVC をサポートするものとそうでないものがあります (「[ハードウェア DRM のオーバーライド](hardware-drm.md#override-hardware-drm)」をご覧ください)。
+-   新しい PlayReady 3.0 機能 (ハードウェア ベースのクライアント用の SL3000、1 つのライセンス取得メッセージでの永続的でない複数のライセンスの取得、永続的でないライセンスでの時間ベースの制限を含みますが、これらに限定されません) を活用するには、PlayReady サーバーが、Microsoft PlayReady サーバー ソフトウェア開発キット v3.0.2769 リリース バージョン以降である必要があります。
+-   コンテンツ ライセンスで指定された、出力保護ポリシーによっては、接続されている出力がこれらの要件をサポートしていない場合、メディアの再生はエンド ユーザーに対して失敗する可能性があります。 次の表は、結果として発生する一般的なエラーを示しています。 詳しくは、「[PlayReady の適合性と信頼性規則](http://www.microsoft.com/playready/licensing/compliance/)」をご覧ください。
 
-| Error                                                   | Value      | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| エラー                                                   | 値      | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |---------------------------------------------------------|------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ERROR\_GRAPHICS\_OPM\_OUTPUT\_DOES\_NOT\_SUPPORT\_HDCP  | 0xC0262513 | The license's Output Protection Policy requires the monitor to engage HDCP, but HDCP was unable to be engaged.                                                                                                                                                                                                                                                                                                                                                                                              |
-| MF\_E\_POLICY\_UNSUPPORTED                              | 0xC00D7159 | The license's Output Protection Policy requires the monitor to engage HDCP Type 1, but HDCP Type 1 was unable to be engaged.                                                                                                                                                                                                                                                                                                                                                                                |
-| DRM\_E\_TEE\_OUTPUT\_PROTECTION\_REQUIREMENTS\_NOT\_MET | 0x8004CD22 | This error code only occurs when running under hardware DRM. The license's Output Protection Policy requires the monitor to engage HDCP or to reduce the content's effective resolution, but HDCP was unable to be engaged and the content's effective resolution could not be reduced because hardware DRM does not support reducing the content's resolution. Under software DRM, the content plays. See [Considerations for Using Hardware DRM](hardware-drm.md#considerations-for-using-hardware-drm). |
-| ERROR\_GRAPHICS\_OPM\_NOT\_SUPPORTED                    | 0xc0262500 | The graphics driver does not support Output Protection. For example, the monitor is connected through VGA or an appropriate graphics driver for the digital output is not installed. In the latter case, the typical driver that is installed is the Microsoft Basic Display Adapter and installing an appropriate graphics driver will resolve the issue.                                                                                                                                                  |
+| ERROR\_GRAPHICS\_OPM\_OUTPUT\_DOES\_NOT\_SUPPORT\_HDCP  | 0xC0262513 | ライセンスの出力保護ポリシーでは、モニターが HDCP をエンゲージする必要がありますが、HDCP をエンゲージできませんでした。                                                                                                                                                                                                                                                                                                                                                                                              |
+| MF\_E\_POLICY\_UNSUPPORTED                              | 0xC00D7159 | ライセンスの出力保護ポリシーでは、モニターが HDCP Type 1 をエンゲージする必要がありますが、HDCP Type 1 をエンゲージできませんでした。                                                                                                                                                                                                                                                                                                                                                                                |
+| DRM\_E\_TEE\_OUTPUT\_PROTECTION\_REQUIREMENTS\_NOT\_MET | 0x8004CD22 | このエラー コードは、ハードウェア DRM で実行されている場合にのみ発生します。 ライセンスの出力保護ポリシーでは、モニターが HDCP をエンゲージするか、コンテンツの実質的な解像度を減らす必要がありますが、ハードウェア DRM はコンテンツの解像度の減少をサポートしていないため、HDCP をエンゲージできず、コンテンツの実質的な解像度を減らすことができませんでした。 ソフトウェア DRM で、コンテンツは再生されます。 「[ハードウェア DRM を使うための考慮事項](hardware-drm.md#considerations-for-using-hardware-drm)」をご覧ください。 |
+| ERROR\_GRAPHICS\_OPM\_NOT\_SUPPORTED                    | 0xc0262500 | グラフィックス ドライバーは、出力保護をサポートしていません。 たとえば、モニターが VGA 経由で接続されているか、デジタル出力用の適切なグラフィックス ドライバーがインストールされていません。 後者の場合、インストールされている一般的なドライバーは Microsoft ベーシック ディスプレイ アダプターであり、適切なグラフィックス ドライバーをインストールすることで、問題が解決されます。                                                                                                                                                  |
 
-## Prerequisites
+## 前提条件
 
-Before you begin creating your PlayReady-protected UWP app, the following software needs to be installed on your system:
+PlayReady で保護された UWP アプリの作成を開始する前に、次のソフトウェアがシステムにインストールされている必要があります。
 
--   Windows 10.
--   If you are compiling any of the samples for PlayReady DRM for UWP apps, you must use Microsoft Visual Studio 2015 or later to compile the samples. You can still use Microsoft Visual Studio 2013 to compile any of the samples from PlayReady DRM for Windows 8.1 Store Apps.
+-   Windows 10。
+-   UWP アプリ用の PlayReady DRM のサンプルをコンパイルする場合、サンプルをコンパイルするには Microsoft Visual Studio 2015 以降を使う必要があります。 引き続き、Microsoft Visual Studio 2013 を使って、Windows 8.1 ストア アプリ用の PlayReady DRM の任意のサンプルをコンパイルできます。
 
-If you are planning to play back MPEG-2/H.262 content on your app, you must also download and install [Windows 8.1 Media Center Pack](http://go.microsoft.com/fwlink/p/?LinkId=626876).
+アプリで MPEG-2/H.262 コンテンツの再生を計画している場合は、[Windows 8.1 Media Center Pack](http://go.microsoft.com/fwlink/p/?LinkId=626876) をダウンロードしてインストールする必要もあります。
 
-## PlayReady Windows Store App Migration Guide
+## PlayReady Windows ストア アプリの移行ガイド
 
-This section includes information on how to migrate your existing PlayReady Windows 8.x Store apps to Windows 10.
+このセクションには、既にある PlayReady Windows 8.x ストア アプリを Windows 10 に移行する方法についての情報が含まれています。
 
-The namespace for PlayReady UWP apps on Windows 10 was changed from **Microsoft.Media.PlayReadyClient** to [**Windows.Media.Protection.PlayReady**](https://msdn.microsoft.com/library/windows/apps/dn986454). This means that you will need to search and replace the old namespace with the new one in your code. You will still be referencing a winmd file. It is part of windows.media.winmd on the Windows 10 operating system. It is in windows.winmd as part of the TH’s Windows SDK. For UWP, it’s referenced in windows.foundation.univeralappcontract.winmd.
+Windows 10 の PlayReady UWP アプリの名前空間は、**Microsoft.Media.PlayReadyClient** から [**Windows.Media.Protection.PlayReady**](https://msdn.microsoft.com/library/windows/apps/dn986454) に変更されました。 つまり、コード内で以前の名前空間を探し、新しい名前空間に置き換える必要があります。 winmd ファイルは、引き続き参照されます。 このファイルは、Windows 10 オペレーティング システムの windows.media.winmd の 1 つであり、 TH の Windows SDK の一部として、windows.winmd に含まれています。 winmd ファイルは、UWP では、windows.foundation.univeralappcontract.winmd で参照されます。
 
-To play back PlayReady-protected high definition (HD) content (1080p) and ultra-high definition (UHD) content, you will need to implement PlayReady hardware DRM. For information on how to implement PlayReady hardware DRM, see [Hardware DRM](hardware-drm.md).
+PlayReady で保護された高解像度 (HD) コンテンツ (1080p) および超高解像度 (UHD) コンテンツを再生するには、PlayReady ハードウェア DRM を実装する必要があります。 PlayReady ハードウェア DRM を実装する方法について詳しくは、「[ハードウェア DRM](hardware-drm.md)」をご覧ください。
 
-Some content is not supported in hardware DRM. For information on disabling hardware DRM and enabling software DRM, see [Override Hardware DRM](hardware-drm.md#override-hardware-drm).
+一部のコンテンツは、ハードウェア DRM ではサポートされません。 ハードウェア DRM の無効化とソフトウェア DRM の有効化について詳しくは、「[ハードウェア DRM のオーバーライド](hardware-drm.md#override-hardware-drm)」をご覧ください。
 
-Regarding the media protection manager, make sure your code has the following settings if it doesn’t already:
+メディア保護マネージャーについては、コードに次の設定を必ず含めてください (まだ含まれていない場合)。
 
 ```cs
 var mediaProtectionManager = new Windows.Media.Protection.MediaProtectionManager();
@@ -122,13 +136,13 @@ mediaProtectionManager.properties["Windows.Media.Protection.MediaProtectionConta
                 "{9A04F079-9840-4286-AB92-E65BE0885F95}";
 ```
 
-## Proactively Acquire a Non-Persistent License Before Playback
+## 再生する前に永続的でないライセンスを事前に取得する
 
-This section describes how to acquire non-persistent licenses proactively before playback begins.
+このセクションでは、再生を開始する前に、永続的でないライセンスを事前に取得する方法について説明します。
 
-In previous versions of PlayReady DRM, non-persistent licenses could only be acquired reactively during playback. In this version, you can acquire non-persistent licenses proactively before playback begins.
+以前のバージョンの PlayReady DRM では、永続的でないライセンスは、再生中のみ反応的に取得できました。 このバージョンでは、再生を開始する前に、永続的でないライセンスを事前に取得することができます。
 
-1.  Proactively create a playback session where the non-persistent license can be stored. For example:
+1.  永続的でないライセンスを格納できる再生セッションを事前に作成します。 例:
 
     ```cs
     var cpsystems = new Windows.Foundation.Collections.PropertySet();       
@@ -140,7 +154,7 @@ In previous versions of PlayReady DRM, non-persistent licenses could only be acq
     var pmpServer = new Windows.Media.Protection.MediaProtectionPMPServer( pmpSystemInfo );
     ```
 
-2.  Tie that playback session to the license acquisition class. For example:
+2.  その再生セッションをライセンス取得クラスに結び付けます。 例:
 
     ```cs
     var licenseSessionProperties = new Windows.Foundation.Collections.PropertySet();
@@ -148,37 +162,42 @@ In previous versions of PlayReady DRM, non-persistent licenses could only be acq
     var licenseSession = new Windows.Media.Protection.PlayReady.PlayReadyLicenseSession( licenseSessionProperties );
     ```
 
-3.  Create a license service request. For example:
+3.  ライセンス サービス要求を作成します。 例:
 
     ```cs
     var laSR = licenseSession.CreateLAServiceRequest();
     ```
 
-4.  Perform the license acquisition using the service request created from step 3. The license will be stored in the playback session.
-5.  Tie the playback session to the media source for playback. For example:
+4.  手順 3. で作成したサービスの要求を使ってライセンスの取得を実行します。 ライセンスは、再生セッションに格納されます。
+5.  再生のメディア ソースに再生セッションに結び付けます。 例:
 
     ```cs
     licenseSession.configureMediaProtectionManager( mediaProtectionManager );
     videoPlayer.msSetMediaProtectionManager( mediaProtectionManager );
     ```
     
-## Add Secure Stop
+## セキュア ストップの追加
 
-This section describes how to add secure stop to your UWP app.
+このセクションでは、UWP アプリにセキュア ストップを追加する方法を説明します。
 
-Secure stop provides the means for a PlayReady device to confidently assert to a media streaming service that media playback has stopped for any given piece of content. This capability ensures your media streaming services provide accurate enforcement and reporting of usage limitations on different devices for a given account.
+セキュア ストップによって、特定のコンテンツについてのメディア再生が停止したメディア ストリーミング サービスに対して、PlayReady デバイスが確実にアサートするための手段が提供されます。 この機能により、メディア ストリーミング サービスは、特定のアカウントのさまざまなデバイスに対する使用制限を正しく適用し報告することができるようになります。
 
-There are two primary scenarios for sending a secure stop challenge:
+セキュア ストップのチャレンジを送信する主なシナリオが 2 つあります。
 
--   When the media presentation stops because end of content was reached or when the user stopped the media presentation somewhere in the middle.
--   When the previous session ends unexpectedly (for example, due to a system or app crash). The app will need to query, either at startup or shutdown, for any outstanding secure stop sessions and send challenge(s) separate from any other media playback.
+-   コンテンツの最後に達したか、ユーザーがメディア プレゼンテーションを途中で停止したため、メディア プレゼンテーションが停止した場合。
+-   (システムまたはアプリのクラッシュなどにより) 前回のセッションが予期せずに終了した場合。 アプリは、起動時またはシャットダウン時に、未処理のセキュア ストップ セッションについて照会し、その他のメディア再生とは別にチャレンジを送信する必要があります。
 
-For a sample implementation of secure stop, see the securestop.cs file in the PlayReady sample located at [http://go.microsoft.com/fwlink/p/?linkid=331670&clcid=0x409](http://go.microsoft.com/fwlink/p/?linkid=331670).
+セキュア ストップのサンプル実装については、[http://go.microsoft.com/fwlink/p/?linkid=331670&clcid=0x409](http://go.microsoft.com/fwlink/p/?linkid=331670) にある PlayReady サンプルの securestop.cs ファイルをご覧ください。
 
- 
+ 
 
- 
+ 
 
 
+
+
+
+
+<!--HONumber=May16_HO2-->
 
 

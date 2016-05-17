@@ -1,109 +1,110 @@
 ---
 author: Xansky
-Description: Describes the concept of automation peers for Microsoft UI Automation, and how you can provide automation support for your own custom UI class.
+Description: Microsoft UI オートメーションに対するオートメーション ピアの概念について説明します。また、独自のカスタム UI クラスに対してオートメーションのサポートを提供する方法についても説明します。
 ms.assetid: AA8DA53B-FE6E-40AC-9F0A-CB09637C87B4
-title: Custom automation peers
+title: カスタム オートメーション ピア
 label: Custom automation peers
 template: detail.hbs
 ---
 
-# Custom automation peers  
+# カスタム オートメーション ピア  
 
 
 
-Describes the concept of automation peers for Microsoft UI Automation, and how you can provide automation support for your own custom UI class.
+Microsoft UI オートメーションに対するオートメーション ピアの概念について説明します。また、独自のカスタム UI クラスに対してオートメーションのサポートを提供する方法についても説明します。
 
-UI Automation provides a framework that automation clients can use to examine or operate the user interfaces of a variety of UI platforms and frameworks. If you are writing a Universal Windows Platform (UWP) app, the classes that you use for your UI already provide UI Automation support. You can derive from existing, non-sealed classes to define a new kind of UI control or support class. In the process of doing so, your class might add behavior that should have accessibility support but that the default UI Automation support does not cover. In this case, you should extend the existing UI Automation support by deriving from the [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) class that the base implementation used, adding any necessary support to your peer implementation, and informing the Universal Windows Platform (UWP) control infrastructure that it should create your new peer.
+UI オートメーションにより、オートメーション クライアントが多様な UI プラットフォームやフレームワークのユーザー インターフェイスを検証、または操作するときに利用できるフレームワークが提供されます。 ユニバーサル Windows プラットフォーム (UWP) アプリを作っている場合は、UI で使うクラスによって既に UI オートメーション サポートが提供されています。 既にある非シール クラスから派生させて、新しい種類の UI コントロールやサポート クラスを定義することもできます。 これを行う手順の間に、既定の UI オートメーション サポートでは対応していないがアクセシビリティ サポートを必要とする動作が、クラスによって追加されることがあります。 この場合は、まず基本実装で使った [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) クラスを派生させ、ピアの実装に必要なサポートを追加した後、ユニバーサル Windows プラットフォーム (UWP) コントロールのインフラストラクチャに対し、新しいピアを作る必要があることを通知することにより、既存の UI オートメーション サポートを拡張する必要があります。
 
-UI Automation enables not only accessibility applications and assistive technologies, such as screen readers, but also quality-assurance (test) code. In either scenario, UI Automation clients can examine user-interface elements and simulate user interaction with your app from other code outside your app. For info about UI Automation across all platforms and in its wider meaning, see [UI Automation Overview](https://msdn.microsoft.com/library/windows/desktop/Ee684076).
+UI オートメーションにより、スクリーン リーダーなどのアクセシビリティ アプリや支援技術だけでなく、品質保証 (テスト) コードも有効になります。 いずれのシナリオについても、UI オートメーション クライアントでは、ユーザー インターフェイス要素を検証し、アプリの外部の他のコードからアプリに対するユーザー操作のシミュレーションを行うことができます。 すべてのプラットフォームを対象とした UI オートメーション、およびその広範な意味については、「[UI オートメーションの概要](https://msdn.microsoft.com/library/windows/desktop/Ee684076)」をご覧ください。
 
-There are two distinct audiences who use the UI Automation framework.
+UI オートメーション フレームワークは次の 2 種類のオーディエンスによって使われます。
 
-* UI Automation *clients* call UI Automation APIs to learn about all of the UI that is currently displayed to the user. For example, an assistive technology such as a screen reader acts as a UI Automation client. The UI is presented as a tree of automation elements that are related. The UI Automation client might be interested in just one app at a time, or in the entire tree. The UI Automation client can use UI Automation APIs to navigate the tree and to read or change information in the automation elements.
-* UI Automation *providers* contribute information to the UI Automation tree, by implementing APIs that expose the elements in the UI that they introduced as part of their app. When you create a new control, you should now act as a participant in the UI Automation provider scenario. As a provider, you should ensure that all UI Automation clients can use the UI Automation framework to interact with your control for both accessibility and testing purposes.
+* UI オートメーション *クライアント*: 現在ユーザーに表示されているすべての UI に関する情報を取得するために UI オートメーション API を呼び出します。 たとえば、スクリーン リーダーなどの支援技術は UI オートメーション クライアントとして機能します。 UI は、関連するオートメーション要素のツリーとして提示されます。 UI オートメーション クライアントの関心の対象は、一度に 1 つのアプリに限定される場合もあれば、ツリー全体である場合もあります。 UI オートメーション クライアントは、UI オートメーション API を使ってツリーを操作して、オートメーション要素の情報を読み上げたり変更したりできます。
+* UI オートメーション *プロバイダー*: アプリの一部として導入された UI の要素を公開する API を実装して、UI オートメーション ツリーに情報を提供します。 新しいコントロールを作るときには、UI オートメーション プロバイダーのシナリオの参加者としての役割を果たしてください。 プロバイダーとして配慮する点は、アクセシビリティ目的とテスト目的の両方で、すべての UI オートメーション クライアントが UI オートメーション フレームワークを使ってコントロールを操作できるようにすることです。
 
-Typically there are parallel APIs in the UI Automation framework: one API for UI Automation clients and another, similarly named API for UI Automation providers. For the most part, this topic covers the APIs for the UI Automation provider, and specifically the classes and interfaces that enable provider extensibility in that UI framework. Occasionally we mention UI Automation APIs that the UI Automation clients use, to provide some perspective, or provide a lookup table that correlates the client and provider APIs. For more info about the client perspective, see [UI Automation Client Programmer's Guide](https://msdn.microsoft.com/library/windows/desktop/Ee684021).
+UI オートメーション フレームワークには、通常、対応する 2 つの API があります。1 つは UI オートメーション クライアント用の API、もう 1 つは、似た名前を持つ UI オートメーション プロバイダー用の API です。 このトピックでは主に、UI オートメーション プロバイダー用の API、特にこの UI フレームワークでプロバイダーの拡張性を可能にするクラスとインターフェイスについて説明します。 全体像を示すために、UI オートメーション クライアント用の UI オートメーション API に触れる場合もあります。また、クライアントとプロバイダー API の相関関係を示す表も含まれています。 クライアント側から見た説明については、「[UI オートメーション クライアントのプログラマ ガイド](https://msdn.microsoft.com/library/windows/desktop/Ee684021)」をご覧ください。
 
 > [!NOTE]
-> UI Automation clients don't typically use managed code and aren't typically implemented as a UWP app (they are usually desktop apps). UI Automation is based on a standard and not a specific implementation or framework. Many existing UI Automation clients, including assistive technology products such as screen readers, use Component Object Model (COM) interfaces to interact with UI Automation, the system, and the apps that run in child windows. For more info on the COM interfaces and how to write a UI Automation client using COM, see [UI Automation Fundamentals](https://msdn.microsoft.com/library/windows/desktop/Ee684007).
+> UI オートメーション クライアントは通常、マネージ コードを使用せず、UWP アプリ (一般にはデスクトップ アプリ) としては実装されません。 UI オートメーションは、特定の実装またはフレームワークではなく、標準に基づいています。 スクリーン リーダーなどの支援技術製品を含め、多くの既存の UI オートメーション クライアントは、コンポーネント オブジェクト モデル (COM) インターフェイスを使って UI オートメーション、システム、子ウィンドウで実行するアプリを操作します。 COM インターフェイスの情報と COM を使った UI オートメーション クライアントの作成方法について詳しくは、「[UI オートメーションの基礎](https://msdn.microsoft.com/library/windows/desktop/Ee684007)」をご覧ください。
 
 <span id="Determining_the_existing_state_of_UI_Automation_support_for_your_custom_UI_class"/>
 <span id="determining_the_existing_state_of_ui_automation_support_for_your_custom_ui_class"/>
 <span id="DETERMINING_THE_EXISTING_STATE_OF_UI_AUTOMATION_SUPPORT_FOR_YOUR_CUSTOM_UI_CLASS"/>
-## Determining the existing state of UI Automation support for your custom UI class  
-Before you attempt to implement an automation peer for a custom control, you should test whether the base class and its automation peer already provides the accessibility or automation support that you need. In many cases, the combination of the [**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472) implementations, specific peers, and the patterns they implement can provide a basic but satisfactory accessibility experience. Whether this is true depends on how many changes you made to the object model exposure to your control versus its base class. Also, this depends on whether your additions to base class functionality correlate to new UI elements in the template contract or to the visual appearance of the control. In some cases your changes might introduce new aspects of user experience that require additional accessibility support.
+## カスタム UI クラスに対する UI オートメーション サポートの既存状態の特定  
+カスタム コントロールに対するオートメーション ピアを実装する前にまず、基底クラスとそのオートメーション ピアによって、必要なアクセシビリティやオートメーションのサポートが既に提供されているかどうかをテストする必要があります。 多くの場合、[**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472) の実装、特定のピア、および実装するパターンを組み合わせれば、基本的だが十分なアクセシビリティ エクスペリエンスが確保されます。 これが当てはまるかどうかは、コントロールと対応する基底クラスに対するオブジェクト モデルの公開に対し、どの程度変更を加えたかによって異なります。 また、基底クラス機能に対する追加がテンプレート コントラクト中の新しい UI 要素、またはコントロールの外観のどちらに対応しているかにも依存します。 状況によっては、それらの変更により、追加的なアクセシビリティ サポートが必要になる新しい側面を伴うユーザー エクスペリエンスが導入される可能性があります。
 
-Even if using the existing base peer class provides the basic accessibility support, it is still a best practice to define a peer so that you can report precise **ClassName** information to UI Automation for automated testing scenarios. This consideration is especially important if you are writing a control that is intended for third-party consumption.
+既にある基本ピア クラスを使って基本的なアクセシビリティ サポートを確保できる場合でも、自動テストのシナリオで UI オートメーションに正確な **ClassName** 情報を報告できるように、ピアを定義することをお勧めします。 これは、第三者が使うコントロールを作る場合には特に重要になります。
 
 <span id="Automation_peer_classes__"/>
 <span id="automation_peer_classes__"/>
 <span id="AUTOMATION_PEER_CLASSES__"/>
-## Automation peer classes  
-The UWP builds on existing UI Automation techniques and conventions used by previous managed-code UI frameworks such as Windows Forms, Windows Presentation Foundation (WPF) and Microsoft Silverlight. Many of the control classes and their function and purpose also have their origin in a previous UI framework.
+## オートメーション ピア クラス  
+UWP は、Windows フォーム、Windows Presentation Foundation (WPF)、Microsoft Silverlight などの従来のマネージ コードによる UI フレームワークで使われていた既存の UI オートメーションに伴う手法と慣例に基づいて構築されています。 コントロール クラス、各関数、およびその用途の多くが、従来の UI フレームワークを起源としています。
 
-By convention, peer class names begin with the control class name and end with "AutomationPeer". For example, [**ButtonAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242458) is the peer class for the [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) control class.
+ピア クラスの名前は、慣例に従い、コントロール クラス名から始まり、"AutomationPeer" で終わります。 たとえば、[**ButtonAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242458) は、[**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) コントロール クラスのピア クラスです。
 
 > [!NOTE]
-> For purposes of this topic, we treat the properties that are related to accessibility as being more important when you implement a control peer. But for a more general concept of UI Automation support, you should implement a peer in accordance with recommendations as documented by the [UI Automation Provider Programmer's Guide](https://msdn.microsoft.com/library/windows/desktop/Ee671596) and [UI Automation Fundamentals](https://msdn.microsoft.com/library/windows/desktop/Ee684007). Those topics don't cover the specific [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) APIs that you would use to provide the information in the UWP framework for UI Automation, but they do describe the properties that identify your class or provide other information or interaction.
+> ここでは、このトピックの目的に合わせて、アクセシビリティに関連するプロパティを、コントロール ピアを実装するときの重要な要素として扱っています。 UI オートメーション サポートのより一般的な概念と、ピアを実装する際の推奨事項については、「[UI オートメーション プロバイダーのプログラマ ガイド](https://msdn.microsoft.com/library/windows/desktop/Ee671596)」と「[UI オートメーションの基礎](https://msdn.microsoft.com/library/windows/desktop/Ee684007)」をご覧ください。 これらのトピックには、UWP フレームワークの情報を UI オートメーションに提供するために使う個々の [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) API の情報は含まれていませんが、クラスを識別したりその他の情報や対話式操作を提供したりするプロパティの情報が含まれています。
 
 <span id="Peers__patterns_and_control_types"/>
 <span id="peers__patterns_and_control_types"/>
 <span id="PEERS__PATTERNS_AND_CONTROL_TYPES"/>
-## Peers, patterns and control types  
-A *control pattern* is an interface implementation that exposes a particular aspect of a control's functionality to a UI Automation client. UI Automation clients use the properties and methods exposed through a control pattern to retrieve information about capabilities of the control, or to manipulate the control's behavior at run time.
+## ピア、パターン、コントロール型  
+*コントロール パターン*は、コントロールの機能に関する特定の側面を UI オートメーション クライアントに公開するインターフェイス実装です。 UI オートメーション クライアントでは、コントロール パターンによって公開されたプロパティやメソッドを使って、コントロールの機能に関する情報を取得したり、実行時にコントロールの動作を操作したりします。
 
-Control patterns provide a way to categorize and expose a control's functionality independent of the control type or the appearance of the control. For example, a control that presents a tabular interface uses the **Grid** control pattern to expose the number of rows and columns in the table, and to enable a UI Automation client to retrieve items from the table. As other examples, the UI Automation client can use the **Invoke** control pattern for controls that can be invoked, such as buttons, and the **Scroll** control pattern for controls that have scroll bars, such as list boxes, list views, or combo boxes. Each control pattern represents a separate type of functionality, and control patterns can be combined to describe the full set of functionality supported by a particular control.
+コントロール パターンは、コントロール型やコントロールの外観に関係なくコントロールの機能を分類したり公開したりするための方法を提供します。 たとえば、表形式のインターフェイスを表示するコントロールでは、**Grid** コントロール パターンを使って、表中の行と列の数を公開します。これにより UI オートメーション クライアント側では、表中の項目を取得できるようになります。 ほかにもさまざまなコントロール パターンがあります。たとえば、**Invoke** コントロール パターンは、UI オートメーション クライアントでボタンなどの起動可能なコントロールに使います。また **Scroll** コントロール パターンは、リスト ボックス、リスト ビュー、コンボ ボックスなどのスクロール バーを含むコントロールに使います。 各コントロール パターンは、それぞれ個別の機能に対応します。複数のコントロール パターンを組み合わせることにより、特定のコントロールでサポートする全体的な機能セットを記述することもできます。
 
-Control patterns relate to UI as interfaces relate to COM objects. In COM, you can query an object to ask what interfaces it supports and then use those interfaces to access functionality. In UI Automation, UI Automation clients can query a UI Automation element to find out which control patterns it supports, and then interact with the element and its peered control through the properties, methods, events, and structures exposed by the supported control patterns.
+コントロール パターンと UI の関係は、インターフェイスと COM オブジェクトの関係に似ています。 COM では、サポートしているインターフェイスをオブジェクトに問い合わせて、それらのインターフェイスを使って機能にアクセスできます。 UI オートメーションでは、UI オートメーション クライアントが UI オートメーション要素にどのコントロール パターンがサポートされているかを照会し、サポートされているコントロール パターンによって公開されるプロパティ、メソッド、イベント、構造体を使って、要素とそのピア対象のコントロールを操作できます。
 
-One of the main purposes of an automation peer is to report to a UI Automation client which control patterns the UI element can support through its peer. To do this, UI Automation providers implement new peers that change the [**GetPattern**](https://msdn.microsoft.com/library/windows/apps/BR209185_getpattern) method behavior by overriding the [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getpatterncore) method. UI Automation clients make calls that the UI Automation provider maps to calling **GetPattern**. UI Automation clients query for each specific pattern that they want to interact with. If the peer supports the pattern, it returns an object reference to itself; otherwise it returns **null**. If the return is not **null**, the UI Automation client expects that it can call APIs of the pattern interface as a client, in order to interact with that control pattern.
+オートメーション ピアの主な目的の 1 つは、UI 要素がそのピアを通じてどのコントロール パターンをサポートできるのかを UI オートメーション クライアントに伝えることです。 そのために、UI オートメーション プロバイダーは、[**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getpatterncore) メソッドを上書きして [**GetPattern**](https://msdn.microsoft.com/library/windows/apps/BR209185_getpattern) メソッドの動作を変更する新しいピアを実装しています。 UI オートメーション クライアントは、UI オートメーション プロバイダーを呼び出し元の **GetPattern** にマップする呼び出しを実行します。 UI オートメーション クライアントは、操作する個々の具体的なパターンを照会します。 ピアでパターンがサポートされる場合は、パターンへのオブジェクト参照が返されます。サポートされない場合は、**null** が返されます。 **null** 以外が返された場合、UI オートメーション クライアントでは、そのコントロール パターンとやり取りするために、クライアントとしてパターン インターフェイスの API を呼び出すことができると想定します。
 
-A *control type* is a way to broadly define the functionality of a control that the peer represents. This is a different concept than a control pattern because while a pattern informs UI Automation what info it can get or what actions it can perform through a particular interface, the control type exists one level above that. Each control type has guidance about these aspects of UI Automation:
+*コントロール型*は、ピアによって表されるコントロールの機能を広く定義する手段です。 これはコントロール パターンとは異なる概念です。パターンでは、特定のインターフェイスを通じて取得できる情報や実行できる操作を UI オートメーションに通知しますが、コントロール型は、それよりも 1 つ上のレベルに位置するものです。 各コントロール型には、UI オートメーションの次の側面に関するガイダンスが含まれています。
 
-* UI Automation control patterns: A control type might support more than one pattern, each of which represents a different classification of info or interaction. Each control type has a set of control patterns that the control must support, a set that is optional, and a set that the control must not support.
-* UI Automation property values: Each control type has a set of properties that the control must support. These are the general properties, as described in [UI Automation Properties Overview](https://msdn.microsoft.com/library/windows/desktop/Ee671594), not the ones that are pattern-specific.
-* UI Automation events: Each control type has a set of events that the control must support. Again these are general, not pattern-specific, as described in [UI Automation Events Overview](https://msdn.microsoft.com/library/windows/desktop/Ee671221).
-* UI Automation tree structure: Each control type defines how the control must appear in the UI Automation tree structure.
+* UI オートメーション コントロール パターン: コントロール型によっては、異なる分類の情報や操作を表す複数のパターンをサポートしている場合があります。 各コントロール型には、そのコントロールでサポートする必要のあるコントロール パターンのセット、省略可能なセット、コントロールでサポートしてはいけないセットがあります。
+* UI オートメーション プロパティ値: 各コントロール型には、そのコントロールでサポートする必要のあるプロパティのセットがあります。 これらは、「[UI オートメーション プロパティの概要](https://msdn.microsoft.com/library/windows/desktop/Ee671594)」で説明されている全般的なプロパティであり、パターン固有のプロパティではありません。
+* UI オートメーション イベント: 各コントロール型には、そのコントロールでサポートする必要のあるイベントのセットがあります。 これらも、「[UI オートメーション イベントの概要](https://msdn.microsoft.com/library/windows/desktop/Ee671221)」で説明されている全般的なイベントであり、パターン固有のものではありません。
+* UI オートメーション ツリー構造: 各コントロール型は、そのコントロールが UI コントロール ツリー構造にどのように現れるかを定義します。
 
-Regardless of how automation peers for the framework are implemented, UI Automation client functionality isn't tied to the UWP, and in fact it's likely that existing UI Automation clients such as assistive technologies will use other programming models, such as COM. In COM, clients can **QueryInterface** for the COM control pattern interface that implements the requested pattern or the general UI Automation framework for properties, events or tree examination. For the patterns, the UI Automation framework marshals that interface code across into UWP code running against the app's UI Automation provider and the relevant peer.
+フレームワークのオートメーション ピアの実装方法にかかわらず、UI オートメーション クライアントの機能は、UWP に縛られるものではありません。実際、支援技術などの既にある UI オートメーション クライアントでは、COM などの他のプログラミング モデルが使われていることがよくあります。 COM では、クライアントから **QueryInterface** を呼び出すことで、必要なパターンや、プロパティ、イベント、またはツリーの検査のための一般的な UI オートメーション フレームワークを実装する COM コントロール パターン インターフェイスを取得できます。 パターンの場合は、そのインターフェイス コードが、UI オートメーション フレームワークにより、アプリの UI オートメーション プロバイダーとその関連ピアに対して実行されている UWP コードにマーシャリングされます。
 
-When you implement control patterns for a managed-code framework such as a Windows Store app using C\# or Microsoft Visual Basic, you can use .NET Framework interfaces to represent these patterns instead of using the COM interface representation. For example, the UI Automation pattern interface for a Microsoft .NET provider implementation of the **Invoke** pattern is [**IInvokeProvider**](https://msdn.microsoft.com/library/windows/apps/BR242582).
+C\# または Microsoft Visual Basic を使った Windows ストア アプリなど、マネージ コードのフレームワークに対するコントロール パターンを実装すると、COM インターフェイスの表現ではなく、.NET Framework インターフェイスを使って、各パターンを表すことができます。 たとえば、**Invoke** というパターンの Microsoft .NET プロバイダーによる実装に対応した UI オートメーション パターン インターフェイスは、[**IInvokeProvider**](https://msdn.microsoft.com/library/windows/apps/BR242582) となります。
 
-For a list of control patterns, provider interfaces, and their purpose, see [Control patterns and interfaces](control-patterns-and-interfaces.md). For the list of the control types, see [UI Automation Control Types Overview](https://msdn.microsoft.com/library/windows/desktop/Ee671197).
+コントロール パターン、プロバイダー インターフェイス、それらの目的の一覧については、「[コントロール パターンとインターフェイス](control-patterns-and-interfaces.md)」をご覧ください。 コントロール型の一覧については、「[UI オートメーション コントロール型の概要](https://msdn.microsoft.com/library/windows/desktop/Ee671197)」を参照してください。
 
 <span id="Guidance_for_how_to_implement_control_patterns"/>
 <span id="guidance_for_how_to_implement_control_patterns"/>
 <span id="GUIDANCE_FOR_HOW_TO_IMPLEMENT_CONTROL_PATTERNS"/>
-### Guidance for how to implement control patterns  
-The control patterns and what they're intended for are part of a larger definition of the UI Automation framework, and don't just apply to the accessibility support for a Windows Store app. When you implement a control pattern you should make sure you're implementing it in a way that matches the guidance as documented on MSDN and also in the UI Automation specification. If you're looking for guidance, you can generally use the MSDN topics and won't need to refer to the specification. Guidance for each pattern is documented here: [Implementing UI Automation Control Patterns](https://msdn.microsoft.com/library/windows/desktop/Ee671292). You'll notice that each topic under this area has an "Implementation Guidelines and Conventions" section and "Required Members" section. The guidance usually refers to specific APIs of the relevant control pattern interface in the [Control Pattern Interfaces for Providers](https://msdn.microsoft.com/library/windows/desktop/Ee671201) reference. Those interfaces are the native/COM interfaces (and their APIs use COM-style syntax). But everything you see there has an equivalent in the [**Windows.UI.Xaml.Automation.Provider**](https://msdn.microsoft.com/library/windows/apps/BR209225) namespace.
+### コントロール パターンの実装方法に関するガイダンス  
+コントロール パターンとその用途は、より広範囲にわたる UI オートメーション フレームワークの定義の一部であり、Windows ストア アプリのアクセシビリティ サポートに適用されるだけにとどまりません。 コントロール パターンを実装するときは、MSDN に説明されているガイダンスに従っていることを確かめる必要があります。このガイダンスは UI オートメーション仕様にも含まれています。 通常、ガイダンスが必要な場合は MSDN のトピックを使うことができ、仕様を参照する必要はありません。 各パターンのガイダンスは、「[UI オートメーション コントロール パターンの実装](https://msdn.microsoft.com/library/windows/desktop/Ee671292)」で説明されています。 この分野の各トピックには、「実装のガイドラインと規則」と「必須メンバー」というセクションが含まれています。 ガイダンスは、通常、「[プロバイダー向けコントロール パターン インターフェイス](https://msdn.microsoft.com/library/windows/desktop/Ee671201)」リファレンスにある関連するコントロール パターン インターフェイスの特定の API を参照しています。 これらのインターフェイスはネイティブ/COM インターフェイスです (API では COM 形式の構文が使われます)。 ただし、いずれも [**Windows.UI.Xaml.Automation.Provider**](https://msdn.microsoft.com/library/windows/apps/BR209225) 名前空間に同等のものが用意されています。
 
-If you're using the default automation peers and expanding on their behavior, those peers have already been written in conformance to UI Automation guidelines. If they support control patterns, you can rely on that pattern support conforming with guidance at [Implementing UI Automation Control Patterns](https://msdn.microsoft.com/library/windows/desktop/Ee671292). If a control peer reports that it's representative of a control type defined by UI Automation, then the guidance documented at [Supporting UI Automation Control Types](https://msdn.microsoft.com/library/windows/desktop/Ee671633) has been followed by that peer.
+既定のオートメーション ピアを使ってその動作を拡張している場合、それらのピアは、既に UI オートメーション ガイドラインに準拠するように記述されています。 それらのピアがコントロール パターンをサポートしている場合は、そのパターン サポートを使えば、「[UI オートメーション コントロール パターンの実装](https://msdn.microsoft.com/library/windows/desktop/Ee671292)」のガイダンスに従うことができます。 コントロール ピアが自身を UI オートメーションで定義されるコントロール型の表現として報告する場合、そのピアは「[UI オートメーション コントロール型](https://msdn.microsoft.com/library/windows/desktop/Ee671633)」のガイダンスに従っていることになります。
 
-Nevertheless you might need additional guidance for control patterns or control types in order to follow the UI Automation recommendations in your peer implementation. That would be particularly true if you're implementing pattern or control type support that doesn't yet exist as a default implementation in a UWP control. For example, the pattern for annotations isn't implemented in any of the default XAML controls. But you might have an app that uses annotations extensively and therefore you want to surface that functionality to be accessible. For this scenario, your peer should implement [**IAnnotationProvider**](https://msdn.microsoft.com/library/windows/apps/Hh738493) and should probably report itself as the **Document** control type with appropriate properties to indicate that your documents support annotation.
+ただし、UI オートメーションの推奨事項に従ってピアを実装するためには、コントロール パターンやコントロール型に関する追加のガイダンスが必要になることもあります。 これは特に、まだ UWP コントロールに既定の実装として含まれていないパターンやコントロール型のサポートを実装する場合に当てはまります。 たとえば、既定の XAML コントロールには、いずれも注釈のパターンは実装されていません。 しかし、注釈を広く利用するアプリを作っている場合は、この機能を表面に押し出してアクセスしやすくすると便利です。 このようなシナリオでは、ピアで [**IAnnotationProvider**](https://msdn.microsoft.com/library/windows/apps/Hh738493) を実装し、適切なプロパティを持つ **Document** コントロール型として自身を報告して、ドキュメントが注釈をサポートしていることを示します。
 
-We recommend that you use the guidance that you see for the patterns under [Implementing UI Automation Control Patterns](https://msdn.microsoft.com/library/windows/desktop/Ee671292) or control types under [Supporting UI Automation Control Types](https://msdn.microsoft.com/library/windows/desktop/Ee671633) as orientation and general guidance. You might even try following some of the API links for descriptions and remarks as to the purpose of the APIs. But for syntax specifics that are needed for UWP app programming, find the equivalent API within the [**Windows.UI.Xaml.Automation.Provider**](https://msdn.microsoft.com/library/windows/apps/BR209225) namespace and use those reference pages for more info.
+「[UI オートメーション コントロール パターンの実装](https://msdn.microsoft.com/library/windows/desktop/Ee671292)」で説明されているパターンに関するガイダンス、または「[UI オートメーション コントロール型のサポート](https://msdn.microsoft.com/library/windows/desktop/Ee671633)」で説明されているコントロール型に関するガイダンスを、方向性を示す全般的なガイダンスとして使うことをお勧めします。 各 API の目的に関する説明や注意事項については、その API のリンク先をご覧ください。 ただし、UWP アプリのプログラミングに必要な構文について詳しくは、[**Windows.UI.Xaml.Automation.Provider**](https://msdn.microsoft.com/library/windows/apps/BR209225) 名前空間にある同等の API を検索して、そのリファレンス ページをご覧ください。
 
 <span id="Built-in_automation_peer_classes"/>
 <span id="built-in_automation_peer_classes"/>
 <span id="BUILT-IN_AUTOMATION_PEER_CLASSES"/>
-## Built-in automation peer classes  
-In general, elements implement an automation peer class if they accept UI activity from the user, or if they contain information needed by users of assistive technologies that represent the interactive or meaningful UI of apps. Not all UWP visual elements have automation peers. Examples of classes that implement automation peers are [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) and [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683). Examples of classes that do not implement automation peers are [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) and classes based on [**Panel**](https://msdn.microsoft.com/library/windows/apps/BR227511), such as [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) and [**Canvas**](https://msdn.microsoft.com/library/windows/apps/BR209267). A **Panel** has no peer because it is providing a layout behavior that is visual only. There is no accessibility-relevant way for the user to interact with a **Panel**. Whatever child elements a **Panel** contains are instead reported to UI Automation trees as child elements of the next available parent in the tree that has a peer or element representation.
+## ビルトイン オートメーション ピア クラス  
+通常、UI 要素でユーザーからの UI アクティビティを受け入れる場合や、アプリの対話型の UI や意味のある UI を表す支援技術のユーザーが必要とする情報が要素の中に存在する場合は、要素によってオートメーション ピア クラスを実装します。 UWP のすべてのビジュアル要素にオートメーション ピアがあるわけではありません。 オートメーション ピアを実装するクラスの例として、[**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) や [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) があります。 一方、オートメーション ピアを実装しないクラスの例として、[**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) のほか、[**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) や [**Canvas**](https://msdn.microsoft.com/library/windows/apps/BR209267) など [**Panel**](https://msdn.microsoft.com/library/windows/apps/BR227511) ベースのクラスがあります。 **Panel** にはピアはありません。これは、ビジュアル専用のレイアウト動作が提供され、 ユーザーが **Panel** とやり取りするためのアクセシビリティに関連する方法がないためです。 代わりに、**Panel** に含まれる子要素はいずれも UI オートメーション ツリーに対し、ピアまたは要素の表現が存在するツリー中で次に利用できる親の子要素として報告されます。
 
 <span id="UI_Automation_and_UWP_process_boundaries"/>
 <span id="ui_automation_and_uwp_process_boundaries"/>
 <span id="UI_AUTOMATION_AND_UWP_PROCESS_BOUNDARIES"/>
-## UI Automation and UWP process boundaries  
-Typically, UI Automation client code that accesses a UWP app runs out-of-process. The UI Automation framework infrastructure enables information to get across the process boundary. This concept is explained in more detail in [UI Automation Fundamentals](https://msdn.microsoft.com/library/windows/desktop/Ee684007).
+## UI オートメーションと UWP のプロセス境界  
+UWP アプリにアクセスする UI オートメーション クライアントのコードは、通常はアウトプロセスで実行されます。 UI オートメーション フレームワークのインフラストラクチャを使うと、プロセス境界を越えて情報をやり取りできます。 この概念について詳しくは、「[UI オートメーションの基礎](https://msdn.microsoft.com/library/windows/desktop/Ee684007)」をご覧ください。
 
 <span id="OnCreateAutomationPeer"/>
 <span id="oncreateautomationpeer"/>
 <span id="ONCREATEAUTOMATIONPEER"/>
 ## OnCreateAutomationPeer  
-All classes that derive from [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) contain the protected virtual method [**OnCreateAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR208911_oncreateautomationpeer). The object initialization sequence for automation peers calls **OnCreateAutomationPeer** to get the automation peer object for each control and thus to construct a UI Automation tree for run-time use. UI Automation code can use the peer to get information about a control’s characteristics and features and to simulate interactive use by means of its control patterns. A custom control that supports automation must override **OnCreateAutomationPeer** and return an instance of a class that derives from [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185). For example, if a custom control derives from the [**ButtonBase**](https://msdn.microsoft.com/library/windows/apps/BR227736) class, the object returned by **OnCreateAutomationPeer** should derive from [**ButtonBaseAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242460).
+[
+            **UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) から派生されたクラスにはいずれも、保護された仮想メソッド [**OnCreateAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR208911_oncreateautomationpeer) が含まれます。 オートメーション ピアに対するオブジェクト初期化シーケンスでは、**OnCreateAutomationPeer** を呼び出すことにより、個々のコントロールに対するオートメーション ピア オブジェクトを取得します。これにより、UI オートメーション ツリーを構築して実行時に使うことができるようにします。 UI オートメーション コードでは、ピアを使ってコントロールの特性と機能に関する情報を取得し、そのコントロール パターンに基づいて対話型の使用方法をシミュレートできます。 オートメーションをサポートするカスタム コントロールでは、**OnCreateAutomationPeer** を上書きし、[**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) から派生するクラスのインスタンスを返す必要があります。 たとえば、あるカスタム コントロールを [**ButtonBase**](https://msdn.microsoft.com/library/windows/apps/BR227736) クラスから派生させる場合、**OnCreateAutomationPeer** が返すオブジェクトは、[**ButtonBaseAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242460) から派生させる必要があります。
 
-If you're writing a custom control class and intend to also supply a new automation peer, you should override the [**OnCreateAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR208911_oncreateautomationpeer) method for your custom control so that it returns a new instance of your peer. Your peer class must derive directly or indirectly from [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185).
+カスタム コントロール クラスを作成し、新しいオートメーション ピアも指定する場合には、ピアの新しいインスタンスが返されるようにするために、カスタム コントロールに関して [**OnCreateAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR208911_oncreateautomationpeer) メソッドをオーバーライドする必要があります。 ピア クラスは [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) から直接的または間接的に派生していることが必要です。
 
-For example, the following code declares that the custom control `NumericUpDown` should use the peer `NumericUpDownPeer` for UI Automation purposes.
+たとえば、次のコードでは、カスタム コントロール `NumericUpDown` により UI オートメーション用としてピア `NumericUpDownPeer` を使うことを宣言しています。
 
 C#
 ```csharp
@@ -149,30 +150,33 @@ protected:
 ```
 
 > [!NOTE]
-> The [**OnCreateAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR208911_oncreateautomationpeer) implementation should do nothing more than initialize a new instance of your custom automation peer, passing the calling control as owner, and return that instance. Do not attempt additional logic in this method. In particular, any logic that could potentially lead to destruction of the [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) within the same call may result in unexpected runtime behavior.
+> [
+            **OnCreateAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR208911_oncreateautomationpeer) の実装では、カスタム オートメーション ピアの新しいインスタンスを初期化して呼び出し元のコントロールを所有者として渡し、そのインスタンスを返すだけにします。 このメソッドで追加のロジックを実行しないでください。 特に、[**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) のデストラクションにつながる可能性のあるロジックが同じ呼び出し内にあると、ランタイムで予期しない動作が発生する場合があります。
 
-In typical implementations of [**OnCreateAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR208911_oncreateautomationpeer), the *owner* is specified as **this** or **Me** because the method override is in the same scope as the rest of the control class definition.
+[
+            **OnCreateAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR208911_oncreateautomationpeer) の典型的な実装の場合、メソッドの上書きは、残りのコントロール クラス定義と同じスコープで行われるため、*owner* は、**this** または **Me** として指定されます。
 
-The actual peer class definition can be done in the same code file as the control or in a separate code file. The peer definitions all exist in the [**Windows.UI.Xaml.Automation.Peers**](https://msdn.microsoft.com/library/windows/apps/BR242563) namespace that is a separate namespace from the controls that they provide peers for. You can choose to declare your peers in separate namespaces also, as long as you reference the necessary namespaces for the [**OnCreateAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR208911_oncreateautomationpeer) method call.
+実際のピア クラスは、コントロールと同じコード ファイル、または別個のコード ファイルで定義できます。 ピア定義はいずれも、ピアを提供するコントロールとは別の [**Windows.UI.Xaml.Automation.Peers**](https://msdn.microsoft.com/library/windows/apps/BR242563) という名前空間に存在します。 独自のピアも、[**OnCreateAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR208911_oncreateautomationpeer) メソッドの呼び出しに必要な名前空間を参照している限り、別個の名前空間に宣言できます。
 
 <span id="Choosing_the_correct_peer_base_class"/>
 <span id="choosing_the_correct_peer_base_class"/>
 <span id="CHOOSING_THE_CORRECT_PEER_BASE_CLASS"/>
-### Choosing the correct peer base class  
-Make sure that your [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) is derived from a base class that gives you the best match for the existing peer logic of the control class you are deriving from. In the case of the previous example, because `NumericUpDown` derives from [**RangeBase**](https://msdn.microsoft.com/library/windows/apps/BR227863), there is a [**RangeBaseAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242506) class available that you should base your peer on. By using the closest matching peer class in parallel to how you derive the control itself, you can avoid overriding at least some of the [**IRangeValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242590) functionality because the base peer class already implements it.
+### 正しいピアの基底クラスの選択  
+派生元となるコントロール クラスの既存のピア ロジックに合致する基底クラスから [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) を派生させる必要があります。 前の例の場合、[**RangeBase**](https://msdn.microsoft.com/library/windows/apps/BR227863) から `NumericUpDown` が派生されるため、ピアのベースにする必要がある [**RangeBaseAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242506) クラスが使用できます。 コントロール自体の派生方法に最も合致するピア クラスを使うことにより、[**IRangeValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242590) は既に基本ピア クラスで実装されているため、少なくともその機能の一部は上書きせずに済みます。
 
-The base [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) class does not have a corresponding peer class. If you need a peer class to correspond to a custom control that derives from **Control**, derive the custom peer class from [**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472).
+基底クラス [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) には、対応するピア クラスがありません。 **Control** から派生させたカスタム コントロールにピア クラスを対応させる場合は、[**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472) からカスタム ピア クラスを派生させます。
 
-If you derive from [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/BR209365) directly, that class has no default automation peer behavior because there is no [**OnCreateAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR208911_oncreateautomationpeer) implementation that references a peer class. So make sure either to implement **OnCreateAutomationPeer** to use your own peer, or to use [**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472) as the peer if that level of accessibility support is adequate for your control.
+[
+            **ContentControl**](https://msdn.microsoft.com/library/windows/apps/BR209365) からクラスを直接派生させる場合、そのクラスには、ピア クラスを参照する [**OnCreateAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR208911_oncreateautomationpeer) の実装がないため、既定のオートメーション ピア動作は伴いません。 したがって、**OnCreateAutomationPeer** を実装して独自のピアを使うか、[**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472) をピアとして使います (コントロールにとってこのレベルのアクセシビリティ サポートで十分である場合)。
 
 > [!NOTE]
-> You don't typically derive from [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) rather than [**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472). If you did derive directly from **AutomationPeer** you'll need to duplicate a lot of basic accessibility support that would otherwise come from **FrameworkElementAutomationPeer**.
+> 通常、[**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472) ではなく [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) からは派生しません。 **AutomationPeer** から直接派生する場合、それ以外の場合に **FrameworkElementAutomationPeer** から得られる多くの基本的なアクセシビリティ サポートを複製する必要があります。
 
 <span id="Initialization_of_a_custom_peer_class"/>
 <span id="initialization_of_a_custom_peer_class"/>
 <span id="INITIALIZATION_OF_A_CUSTOM_PEER_CLASS"/>
-## Initialization of a custom peer class  
-The automation peer should define a type-safe constructor that uses an instance of the owner control for base initialization. In the next example, the implementation passes the *owner* value on to the [**RangeBaseAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242506) base, and ultimately it is the [**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472) that actually uses *owner* to set [**FrameworkElementAutomationPeer.Owner**](https://msdn.microsoft.com/library/windows/apps/BR242472_owner).
+## カスタム ピア クラスの初期化  
+オートメーション ピアでは、基底クラスの初期化に所有者コントロールのインスタンスを使うタイプ セーフなコンストラクターを定義する必要があります。 次の例では、実装により *owner* の値が基本 [**RangeBaseAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242506) に渡されます。最終的に *owner* を使って [**FrameworkElementAutomationPeer.Owner**](https://msdn.microsoft.com/library/windows/apps/BR242472_owner) を設定するのは [**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472) です。
 
 C#
 ```csharp
@@ -198,12 +202,12 @@ public:    NumericUpDownAutomationPeer(NumericUpDown^ owner);
 <span id="Core_methods_of_AutomationPeer"/>
 <span id="core_methods_of_automationpeer"/>
 <span id="CORE_METHODS_OF_AUTOMATIONPEER"/>
-## Core methods of AutomationPeer  
-For UWP infrastructure reasons, the overridable methods of an automation peer are part of a pair of methods: the public access method that the UI Automation provider uses as a forwarding point for UI Automation clients, and the protected "Core" customization method that a UWP class can override to influence the behavior. The method pair is wired together by default in such a way that the call to the access method always invokes the parallel "Core" method that has the provider implementation, or as a fallback, invokes a default implementation from the base classes.
+## AutomationPeer のコア メソッド  
+UWP のインフラストラクチャ上の理由から、オートメーション ピアの上書き可能メソッドは、次の 2 つのメソッドのペアで構成されます。UI オートメーション プロバイダーが UI オートメーション クライアントの転送ポイントとして使用するパブリック アクセス メソッドと、UWP クラスが動作に影響を与えるために上書きできる保護された "Core" カスタマイズ メソッドの 2 つです。 既定では、メソッドのペアは互いに結合されており、アクセス メソッドが呼び出されるたびに、対応するプロバイダーの実装を含む "Core" メソッドが (または、フォールバックとして基底クラスの既定の実装が) 呼び出されます。
 
-When implementing a peer for a custom control, override any of the "Core" methods from the base automation peer class where you want to expose behavior that is unique to your custom control. UI Automation code gets information about your control by calling public methods of the peer class. To provide information about your control, override each method with a name that ends with "Core" when your control implementation and design creates accessibility scenarios or other UI Automation scenarios that differ from what's supported by the base automation peer class.
+カスタム コントロールのピアを実装するときは、そのカスタム コントロールに固有の動作を公開するオートメーション ピア基底クラスから、すべての "Core" メソッドを上書きします。 UI オートメーション コードは、ピア クラスのパブリック メソッドを呼び出すことにより、コントロールに関する情報を取得します。 コントロールに関する情報を提供するにあたり、コントロールの実装と設計によって作るアクセシビリティまたはその他の UI オートメーションのシナリオが、オートメーション ピアの基底クラスによってサポートされているものとは異なる場合は、名前の末尾が "Core" というメソッドをすべて上書きする必要があります。
 
-At a minimum, whenever you define a new peer class, implement the [**GetClassNameCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getclassnamecore) method, as shown in the next example.
+少なくとも、新規のピア クラスを定義するときは必ず、次の例に示すように、[**GetClassNameCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getclassnamecore) メソッドを実装します。
 
 C#
 ```csharp
@@ -214,15 +218,18 @@ protected override string GetClassNameCore()
 ```
 
 > [!NOTE]
-> You might want to store the strings as constants rather than directly in the method body, but that is up to you. For [**GetClassNameCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getclassnamecore), you won't need to localize this string. The **LocalizedControlType** property is used any time a localized string is needed by a UI Automation client, not **ClassName**.
+> 文字列をメソッドの本文に直接格納する代わりに、定数として格納することもできます。 [
+            **GetClassNameCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getclassnamecore) では、この文字列をローカライズする必要はありません。 UI オートメーション クライアントで、**ClassName** ではなくローカライズした文字列が必要とされる場合はいつも **LocalizedControlType** プロパティが使用されます。
 
 ### <span id="GetAutomationControlType"/>
 <span id="getautomationcontroltype"/>
 <span id="GETAUTOMATIONCONTROLTYPE"/>GetAutomationControlType
 
-Some assistive technologies use the [**GetAutomationControlType**](https://msdn.microsoft.com/library/windows/apps/BR209185_getautomationcontroltype) value directly when reporting characteristics of the items in a UI Automation tree, as additional information beyond the UI Automation **Name**. If your control is significantly different from the control you are deriving from and you want to report a different control type from what is reported by the base peer class used by the control, you must implement a peer and override [**GetAutomationControlTypeCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getautomationcontroltypecore) in your peer implementation. This is particularly important if you derive from a generalized base class such as [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) or [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/BR209365), where the base peer doesn't provide precise information about control type.
+一部の支援技術では、UI オートメーション ツリー中の項目に関する特性を報告するときに、UI オートメーションの **Name** 以外の追加情報として、[**GetAutomationControlType**](https://msdn.microsoft.com/library/windows/apps/BR209185_getautomationcontroltype) の値を直接使っている場合があります。 派生元のコントロールと大幅に異なるコントロールで、基本ピア クラスで報告されるものとは異なるコントロール型を報告する場合は、ピアを実装して [**GetAutomationControlTypeCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getautomationcontroltypecore) をオーバーライドする必要があります。 [
+            **ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803)、[**ContentControl**](https://msdn.microsoft.com/library/windows/apps/BR209365) などの汎用の基底クラスを派生元として使う場合は、コントロール型に関する正確な情報が基本ピアから提供されないため、このことが特に重要になります。
 
-Your implementation of [**GetAutomationControlTypeCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getautomationcontroltypecore) describes your control by returning an [**AutomationControlType**](https://msdn.microsoft.com/library/windows/apps/BR209182) value. Although you can return **AutomationControlType.Custom**, you should return one of the more specific control types if it accurately describes your control's main scenarios. Here's an example.
+[
+            **GetAutomationControlTypeCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getautomationcontroltypecore) の実装で、[**AutomationControlType**](https://msdn.microsoft.com/library/windows/apps/BR209182) 値を返すことにより、コントロールを記述します。 **AutomationControlType.Custom** を返すこともできますが、コントロールのメイン シナリオを正確に記述している場合は、より具体的なコントロール タイプのいずれかを返す必要があります。 次に例を示します。
 
 C#
 ```csharp
@@ -233,19 +240,21 @@ protected override AutomationControlType GetAutomationControlTypeCore()
 ```
 
 > [!NOTE]
-> Unless you specify [**AutomationControlType.Custom**](https://msdn.microsoft.com/library/windows/apps/BR209182), you don't have to implement [**GetLocalizedControlTypeCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getlocalizedcontroltypecore) to provide a **LocalizedControlType** property value to clients. UI Automation common infrastructure provides translated strings for every possible **AutomationControlType** value other than **AutomationControlType.Custom**.
+> [
+            **AutomationControlType.Custom**](https://msdn.microsoft.com/library/windows/apps/BR209182) を指定する場合以外は、[**GetLocalizedControlTypeCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getlocalizedcontroltypecore) を実装して **LocalizedControlType** プロパティ値をクライアントに提供する必要はありません。 **AutomationControlType.Custom** 以外のすべての **AutomationControlType** 値では、UI オートメーションの共通インフラストラクチャによって翻訳済みの文字列が提供されます。
 
 <span id="GetPattern_and_GetPatternCore"/>
 <span id="getpattern_and_getpatterncore"/>
 <span id="GETPATTERN_AND_GETPATTERNCORE"/>
-### GetPattern and GetPatternCore  
-A peer's implementation of [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getpatterncore) returns the object that supports the pattern that is requested in the input parameter. Specifically, a UI Automation client calls a method that is forwarded to the provider's [**GetPattern**](https://msdn.microsoft.com/library/windows/apps/BR209185_getpattern) method, and specifies a [**PatternInterface**](https://msdn.microsoft.com/library/windows/apps/BR242496) enumeration value that names the requested pattern. Your override of **GetPatternCore** should return the object that implements the specified pattern. That object is the peer itself, because the peer should implement the corresponding pattern interface any time that it reports that it supports a pattern. If your peer does not have a custom implementation of a pattern, but you know that the peer's base does implement the pattern, you can call the base type's implementation of **GetPatternCore** from your **GetPatternCore**. A peer's **GetPatternCore** should return **null** if a pattern is not supported by the peer. However, instead of returning **null** directly from your implementation, you would usually rely on the call to the base implementation to return **null** for any unsupported pattern.
+### GetPattern と GetPatternCore  
+[
+            **GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getpatterncore) をピアで実装することにより、入力パラメーターで要求したパターンをサポートするオブジェクトが返されます。 具体的には、UI オートメーション クライアントで、プロバイダーの [**GetPattern**](https://msdn.microsoft.com/library/windows/apps/BR209185_getpattern) メソッドに転送されるメソッドを呼び出して、要求されたパターンを示す [**PatternInterface**](https://msdn.microsoft.com/library/windows/apps/BR242496) 列挙値を指定します。 **GetPatternCore** を上書きすると、指定されたパターンを実装するオブジェクトが返されます。 ピアは、パターンのサポートを報告する対象である、対応するパターン インターフェイスを実装している必要があるため、そのオブジェクトはピア自身です。 ピアにパターンのカスタム実装が含まれていないが、ピアの基本型にそのパターンが実装されていることがわかっている場合は、基本型の **GetPatternCore** の実装を **GetPatternCore** から呼び出すことができます。 ピアでパターンがサポートされていない場合は、ピアの **GetPatternCore** で **null** を返す必要があります。 ただし、通常は、独自の実装から直接 **null** を返すのではなく、基本実装の呼び出しを利用して **null** を返すようにします。
 
-When a pattern is supported, the [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getpatterncore) implementation can return **this** or **Me**. The expectation is that the UI Automation client will cast the [**GetPattern**](https://msdn.microsoft.com/library/windows/apps/BR209185_getpattern) return value to the requested pattern interface whenever it is not **null**.
+パターンがサポートされている場合、[**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getpatterncore) 実装では **this** または **Me** を返すことができます。 ここでは、[**GetPattern**](https://msdn.microsoft.com/library/windows/apps/BR209185_getpattern) の戻り値を、**null** 以外の場合は UI オートメーション クライアントが要求されたパターン インターフェイスにキャストすることが前提とされています。
 
-If a peer class inherits from another peer, and all necessary support and pattern reporting is already handled by the base class, implementing [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getpatterncore) isn't necessary. For example, if you are implementing a range control that derives from [**RangeBase**](https://msdn.microsoft.com/library/windows/apps/BR227863), and your peer derives from [**RangeBaseAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242506), that peer returns itself for [**PatternInterface.RangeValue**](https://msdn.microsoft.com/library/windows/apps/BR242496) and has working implementations of the [**IRangeValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242590) interface that supports the pattern.
+あるピア クラスが別のピアから継承された場合、必要なサポートとパターン報告がすべて基底クラスによって既に処理されていれば、[**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getpatterncore) の実装は必要ありません。 たとえば、[**RangeBase**](https://msdn.microsoft.com/library/windows/apps/BR227863) から派生させた範囲コントロールを実装する場合、ピアが [**RangeBaseAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242506) から派生されていれば、このピアは、[**PatternInterface.RangeValue**](https://msdn.microsoft.com/library/windows/apps/BR242496) に対して自身を返し、パターンをサポートする [**IRangeValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242590) インターフェイスの現行の実装を使います。
 
-Although it is not the literal code, this example approximates the implementation of [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getpatterncore) already present in [**RangeBaseAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242506).
+次の例は、実際のコードそのものではありませんが、[**RangeBaseAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242506) 中に既に存在している [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getpatterncore) の実装の概要を示しています。
 
 C#
 ```csharp
@@ -259,13 +268,14 @@ protected override object GetPatternCore(PatternInterface patternInterface)
 }
 ```
 
-If you are implementing a peer where you don't have all the support you need from a base peer class, or you want to change or add to the set of base-inherited patterns that your peer can support, then you should override [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getpatterncore) to enable UI Automation clients to use the patterns.
+ピアの実装時に、必要なすべてのサポートが基本ピア クラスから得られない場合、またはピアがサポートできる基本継承パターンのセットに変更や追加が必要な場合は、[**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getpatterncore) を上書きして、UI オートメーション クライアントがパターンを使うことができるようにする必要があります。
 
-For a list of the provider patterns that are available in the UWP implementation of UI Automation support, see [**Windows.UI.Xaml.Automation.Provider**](https://msdn.microsoft.com/library/windows/apps/BR209225). Each such pattern has a corresponding value of the [**PatternInterface**](https://msdn.microsoft.com/library/windows/apps/BR242496) enumeration, which is how UI Automation clients request the pattern in a [**GetPattern**](https://msdn.microsoft.com/library/windows/apps/BR209185_getpattern) call.
+UI オートメーションに対応した UWP 実装で利用可能なプロバイダー パターンの一覧については、「[**Windows.UI.Xaml.Automation.Provider**](https://msdn.microsoft.com/library/windows/apps/BR209225)」をご覧ください。 このような個々のパターンにはそれぞれ、[**PatternInterface**](https://msdn.microsoft.com/library/windows/apps/BR242496) 列挙に対応する値があります。この値により、UI オートメーション クライアントが [**GetPattern**](https://msdn.microsoft.com/library/windows/apps/BR209185_getpattern) の呼び出しでパターンを要求します。
 
-A peer can report that it supports more than one pattern. If so, the override should include return path logic for each supported [**PatternInterface**](https://msdn.microsoft.com/library/windows/apps/BR242496) value and return the peer in each matching case. It is expected that the caller will request only one interface at a time, and it is up to the caller to cast to the expected interface.
+ピアでは、複数のパターンをサポートしていることを伝えることができます。 この場合、上書きのときに、サポートされる個々の [**PatternInterface**](https://msdn.microsoft.com/library/windows/apps/BR242496) 値に対するリターン パス ロジックを指定して、一致するケースごとにペアが返されるようにする必要があります。 このとき、呼び出し元では 1 回に 1 個ずつインターフェイスを要求すること、さらに予期されるインターフェイスへのキャストは呼び出し元が行うことが前提となります。
 
-Here's an example of a [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getpatterncore) override for a custom peer. It reports the support for two patterns, [**IRangeValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242590) and [**IToggleProvider**](https://msdn.microsoft.com/library/windows/apps/BR242653). The control here is a media display control that can display as full-screen (the toggle mode) and that has a progress bar within which users can select a position (the range control). This code came from the [XAML accessibility sample](http://go.microsoft.com/fwlink/p/?linkid=238570).
+次にカスタム ピアに対する [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getpatterncore) の上書きの例を示します。 [
+            **IRangeValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242590) と [**IToggleProvider**](https://msdn.microsoft.com/library/windows/apps/BR242653) の 2 つのパターンに対するサポートが報告されます。 このコントロールは、全画面表示として表示できるメディア表示コントロール (トグル モード) です。進行状況バーの表示位置は変更可能 (範囲コントロール) です。 このコードは、[XAML アクセシビリティ サンプル](http://go.microsoft.com/fwlink/p/?linkid=238570)の抜粋です。
 
 C#
 ```csharp
@@ -286,8 +296,9 @@ protected override object GetPatternCore(PatternInterface patternInterface)
 <span id="Forwarding_patterns_from_subelements"/>
 <span id="forwarding_patterns_from_subelements"/>
 <span id="FORWARDING_PATTERNS_FROM_SUBELEMENTS"/>
-### Forwarding patterns from subelements  
-A [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getpatterncore) method implementation can also specify a subelement or part as a pattern provider for its host. This example mimics how [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) transfers scroll-pattern handling to the peer of its internal [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/BR209527) control. To specify a subelement for pattern handling, this code gets the subelement object, creates a peer for the subelement by using the [**FrameworkElement.CreatePeerForElement**](https://msdn.microsoft.com/library/windows/apps/BR242472_createpeerforelement) method, and returns the new peer.
+### 子要素からのパターンの転送  
+[
+            **GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getpatterncore) メソッドの実装では、ホストのパターン プロバイダーとして子要素や一部分を指定できます。 この例は、[**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) が内部の [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/BR209527) コントロールのピアに向けてスクロール パターン処理を転送する方法を模したものです。 パターン処理の子要素を指定するために、このコードではまず子要素オブジェクトを取得して、[**FrameworkElement.CreatePeerForElement**](https://msdn.microsoft.com/library/windows/apps/BR242472_createpeerforelement) メソッドにより子要素のピアを作り、新しいピアを返します。
 
 C#
 ```csharp
@@ -323,59 +334,89 @@ protected override object GetPatternCore(PatternInterface patternInterface)
 <span id="Other_Core_methods"/>
 <span id="other_core_methods"/>
 <span id="OTHER_CORE_METHODS"/>
-### Other Core methods  
-Your control may need to support keyboard equivalents for primary scenarios; for more info about why this might be necessary, see [Keyboard accessibility](keyboard-accessibility.md). Implementing the key support is necessarily part of the control code and not the peer code because that is part of a control's logic, but your peer class should override the [**GetAcceleratorKeyCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getacceleratorkeycore) and [**GetAccessKeyCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getaccesskeycore) methods to report to UI Automation clients which keys are used. Consider that the strings that report key information might need to be localized, and should therefore come from resources, not hard-coded strings.
+### その他の Core メソッド  
+コントロールで、主要なシナリオに対してキーボードの同等機能のサポートが必要になる場合があります。これが必要になる理由について詳しくは、「[キーボードのアクセシビリティ](keyboard-accessibility.md)」をご覧ください。 キー サポートの実装は、コントロールのロジックの一部であるため、ピア コードではなくコントロール コードの一部になりますが、ピア クラスでは、[**GetAcceleratorKeyCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getacceleratorkeycore) と [**GetAccessKeyCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getaccesskeycore) のメソッドを上書きすることにより、現在どのキーが使われているかを UI オートメーション クライアントに報告する必要があります。 キーの情報を報告する文字列はローカライズされる可能性があるため、リソースから取得し、ハードコードした文字列は使いません。
 
-If you are providing a peer for a class that supports a collection, it's best to derive from both functional classes and peer classes that already have that kind of collection support. If you can't do so, peers for controls that maintain child collections may have to override the collection-related peer method [**GetChildrenCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getchildrencore) to properly report the parent-child relationships to the UI Automation tree.
+コレクションをサポートするクラスのピアを提供する場合は、同じ種類のコレクション サポートが既に存在する機能クラスとピア クラスの両方から派生させるのが最もよい方法です。 これができない場合は、子コレクションを維持しているコントロールのピアでコレクションに関連するピア メソッド、[**GetChildrenCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getchildrencore) を上書きして、UI オートメーション ツリーに親子の関係を正しく報告する必要があります。
 
-Implement the [**IsContentElementCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_iscontentelementcore) and [**IsControlElementCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_iscontrolelementcore) methods to indicate whether your control contains data content or fulfills an interactive role in the user interface (or both). By default, both methods return **true**. These settings improve the usability of assistive technologies such as screen readers, which may use these methods to filter the automation tree. If your [**GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getpatterncore) method transfers pattern handling to a subelement peer, the subelement peer's **IsControlElementCore** method can return **false** to hide the subelement peer from the automation tree.
+[
+            **IsContentElementCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_iscontentelementcore) メソッドと [**IsControlElementCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_iscontrolelementcore) メソッドを実装して、コントロールにデータ コンテンツが含まれているのか、またはユーザー インターフェイスで対話型の役割を果たすのか (あるいはその両方なのか) を指示します。 既定では、両方のメソッドで **true** が返されます。 これらの設定により、各メソッドを使ってオートメーション ツリーをフィルターするスクリーン リーダーなどの支援技術の操作性が改善されます。 [
+            **GetPatternCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getpatterncore) メソッドで、子要素ピアにパターン処理を転送すると、子要素ピアの **IsControlElementCore** メソッドが、子要素ピアをオートメーション ツリーから隠すために、**false** を返すことがあります。
 
-Some controls may support labeling scenarios, where a text label part supplies information for a non-text part, or a control is intended to be in a known labeling relationship with another control in the UI. If it's possible to provide a useful class-based behavior, you can override [**GetLabeledByCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getlabeledbycore) to provide this behavior.
+コントロールの中には、テキスト ラベルの部分がテキスト以外の部分の情報を提供したり、コントロールと UI の別のコントロールとの間にラベル付けの関係が確立されたりする、ラベル付けのシナリオをサポートするものもあります。 クラス ベースの有用な動作を提供できる場合は、[**GetLabeledByCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getlabeledbycore) をオーバーライドしてこの動作を提供できます。
 
-[**GetBoundingRectangleCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getboundingrectanglecore) and [**GetClickablePointCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getclickablepointcore) are used mainly for automated testing scenarios. If you want to support automated testing for your control, you might want to override these methods. This might be desired for range-type controls, where you can't suggest just a single point because where the user clicks in coordinate space has a different effect on a range. For example, the default [**ScrollBar**](https://msdn.microsoft.com/library/windows/apps/BR209745) automation peer overrides **GetClickablePointCore** to return a "not a number" [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) value.
+[
+              **GetBoundingRectangleCore**
+            ](https://msdn.microsoft.com/library/windows/apps/BR209185_getboundingrectanglecore) と [**GetClickablePointCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getclickablepointcore) は、主に自動テストのシナリオに使われます。 コントロールの自動テストをサポートする場合は、これらのメソッドを上書きする必要があることがあります。 範囲型のコントロールでは、座標空間でユーザーがクリックした場所によって範囲への効果が異なり、1 つのポイントのみを提案できないため、これが必要な場合があります。 たとえば、既定の [**ScrollBar**](https://msdn.microsoft.com/library/windows/apps/BR209745) オートメーション ピアは **GetClickablePointCore** を上書きして、"数字ではない" [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 値を返します。
 
-[**GetLiveSettingCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getlivesettingcore) influences the control default for the **LiveSetting** value for UI Automation. You might want to override this if you want your control to return a value other than [**AutomationLiveSetting.Off**](https://msdn.microsoft.com/library/windows/apps/JJ191519). For more info on what **LiveSetting** represents, see [**AutomationProperties.LiveSetting**](https://msdn.microsoft.com/library/windows/apps/JJ191516).
+[
+              **GetLiveSettingCore**
+            ](https://msdn.microsoft.com/library/windows/apps/BR209185_getlivesettingcore) は、UI オートメーションの **LiveSetting** 値のコントロール既定値に影響します。 これをオーバーライドして、コントロールが [**AutomationLiveSetting.Off**](https://msdn.microsoft.com/library/windows/apps/JJ191519) 以外の値を返すようにすることができます。 **LiveSetting** が何を表すかについて詳しくは、「[**AutomationProperties.LiveSetting**](https://msdn.microsoft.com/library/windows/apps/JJ191516)」をご覧ください。
 
-You might override [**GetOrientationCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getorientationcore) if your control has a settable orientation property that can map to [**AutomationOrientation**](https://msdn.microsoft.com/library/windows/apps/BR209184). The [**ScrollBarAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242522) and [**SliderAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242546) classes do this.
+コントロールが、[**AutomationOrientation**](https://msdn.microsoft.com/library/windows/apps/BR209184) にマップできる設定可能な向きのプロパティを持っている場合は、[**GetOrientationCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getorientationcore) を上書きできます。 [
+            **ScrollBarAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242522) クラスと [**SliderAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242546) クラスがこれを行います。
 
 <span id="Base_implementation_in_FrameworkElementAutomationPeer"/>
 <span id="base_implementation_in_frameworkelementautomationpeer"/>
 <span id="BASE_IMPLEMENTATION_IN_FRAMEWORKELEMENTAUTOMATIONPEER"/>
-### Base implementation in FrameworkElementAutomationPeer  
-The base implementation of [**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472) provides some UI Automation information that can be interpreted from various layout and behavior properties that are defined at the framework level.
+### FrameworkElementAutomationPeer の基本実装  
+[
+            **FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472) の基本実装は、フレームワーク レベルで定義されるレイアウトや動作のさまざまなプロパティから解釈できる UI オートメーションの情報を提供します。
 
-* [**GetBoundingRectangleCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getboundingrectanglecore): Returns a [**Rect**](https://msdn.microsoft.com/library/windows/apps/BR225994) structure based on the known layout characteristics. Returns a 0-value **Rect** if [**IsOffscreen**](https://msdn.microsoft.com/library/windows/apps/BR209185_isoffscreen) is **true**.
-* [**GetClickablePointCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getclickablepointcore): Returns a [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) structure based on the known layout characteristics, as long as there is a nonzero **BoundingRectangle**.
-* [**GetNameCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getnamecore): More extensive behavior than can be summarized here; see [**GetNameCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getnamecore). Basically, it attempts a string conversion on any known content of a [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/BR209365) or related classes that have content. Also, if there is a value for [**LabeledBy**](https://msdn.microsoft.com/library/windows/apps/Hh759769), that item's **Name** value is used as the **Name**.
-* [**HasKeyboardFocusCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_haskeyboardfocuscore): Evaluated based on the owner's [**FocusState**](https://msdn.microsoft.com/library/windows/apps/BR209390_focusstate) and [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/BR209390_isenabled) properties. Elements that aren't controls always return **false**.
-* [**IsEnabledCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_isenabledcore): Evaluated based on the owner's [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/BR209390_isenabled) property if it is a [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390). Elements that aren't controls always return **true**. This doesn't mean that the owner is enabled in the conventional interaction sense; it means that the peer is enabled despite the owner not having an **IsEnabled** property.
-* [**IsKeyboardFocusableCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_iskeyboardfocusablecore): Returns **true** if owner is a [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390); otherwise it is **false**.
-* [**IsOffscreenCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_isoffscreencore): A [**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208911_visibility) of [**Hidden**](https://msdn.microsoft.com/library/windows/apps/BR209006) on the owner element or any of its parents equates to a **true** value for [**IsOffscreen**](https://msdn.microsoft.com/library/windows/apps/BR209185_isoffscreen). Exception: a [**Popup**](https://msdn.microsoft.com/library/windows/apps/BR227842) object can be visible even if its owner's parents are not.
-* [**SetFocusCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_setfocuscore): Calls [**Focus**](https://msdn.microsoft.com/library/windows/apps/BR209390_focus).
-* [**GetParent**](https://msdn.microsoft.com/library/windows/apps/BR209185_getparent): Calls [**FrameworkElement.Parent**](https://msdn.microsoft.com/library/windows/apps/BR208739) from the owner, and looks up the appropriate peer. This isn't an override pair with a "Core" method, so you can't change this behavior.
+* [
+              **GetBoundingRectangleCore**
+            ](https://msdn.microsoft.com/library/windows/apps/BR209185_getboundingrectanglecore): 既知のレイアウト特性に基づいて [**Rect**](https://msdn.microsoft.com/library/windows/apps/BR225994) 構造体を返します。 [
+            **IsOffscreen**](https://msdn.microsoft.com/library/windows/apps/BR209185_isoffscreen) が **true** の場合は、値が 0 の **Rect** を返します。
+* [
+              **GetClickablePointCore**
+            ](https://msdn.microsoft.com/library/windows/apps/BR209185_getclickablepointcore): 既知のレイアウト特性に基づいて [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 構造体を返します (値が 0 でない **BoundingRectangle** がある場合)。
+* [
+              **GetNameCore**
+            ](https://msdn.microsoft.com/library/windows/apps/BR209185_getnamecore): このメソッドの動作は多岐にわたるため、ここでは紹介しきれません。詳しくは、「[**GetNameCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getnamecore)」をご覧ください。 基本的には、[**ContentControl**](https://msdn.microsoft.com/library/windows/apps/BR209365) やコンテンツを持つ関連クラスの既知のコンテンツの文字列変換を試行します。 また、[**LabeledBy**](https://msdn.microsoft.com/library/windows/apps/Hh759769) の値がある場合は、その項目の **Name** の値が **Name** として使われます。
+* [
+              **HasKeyboardFocusCore**
+            ](https://msdn.microsoft.com/library/windows/apps/BR209185_haskeyboardfocuscore): 所有者の [**FocusState**](https://msdn.microsoft.com/library/windows/apps/BR209390_focusstate) プロパティと [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/BR209390_isenabled) プロパティに基づいて評価されます。 コントロールではない要素は常に **false** を返します。
+* [
+              **IsEnabledCore**
+            ](https://msdn.microsoft.com/library/windows/apps/BR209185_isenabledcore): 所有者の [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/BR209390_isenabled) プロパティに基づいて評価されます (所有者が [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) の場合)。 コントロールではない要素は常に **true** を返します。 これは、従来の対話式操作の意味で所有者が有効であることを示すのではなく、所有者に **IsEnabled** プロパティがなくてもピアは有効であることを示します。
+* [
+              **IsKeyboardFocusableCore**
+            ](https://msdn.microsoft.com/library/windows/apps/BR209185_iskeyboardfocusablecore): 所有者が [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) の場合は **true**、それ以外の場合は **false** を返します。
+* [
+              **IsOffscreenCore**
+            ](https://msdn.microsoft.com/library/windows/apps/BR209185_isoffscreencore): 所有者要素またはそのいずれかの親の [**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208911_visibility) が [**Hidden**](https://msdn.microsoft.com/library/windows/apps/BR209006) の場合に [**IsOffscreen**](https://msdn.microsoft.com/library/windows/apps/BR209185_isoffscreen) の値が **true** になります。 [
+            **Popup**](https://msdn.microsoft.com/library/windows/apps/BR227842) オブジェクトは例外で、所有者の親が表示されていなくても表示される可能性があります。
+* [
+              **SetFocusCore**
+            ](https://msdn.microsoft.com/library/windows/apps/BR209185_setfocuscore): [**Focus**](https://msdn.microsoft.com/library/windows/apps/BR209390_focus) を呼び出します。
+* [
+              **GetParent**
+            ](https://msdn.microsoft.com/library/windows/apps/BR209185_getparent): 所有者から [**FrameworkElement.Parent**](https://msdn.microsoft.com/library/windows/apps/BR208739) を呼び出して適切なピアを検索します。 これは、"Core" メソッドを含む上書きペアではないため、この動作を変更することはできません。
 
 > [!NOTE]
-> Default UWP peers implement a behavior by using internal native code that implements the UWP, not necessarily by using actual UWP code. You won't be able to see the code or logic of the implementation through common language runtime (CLR) reflection or other techniques. You also won't see distinct reference pages for subclass-specific overrides of base peer behavior. For example, there might be additional behavior for [**GetNameCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getnamecore) of a [**TextBoxAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242550), which won't be described on the **AutomationPeer.GetNameCore** reference page, and there is no reference page for **TextBoxAutomationPeer.GetNameCore**. There isn't even a **TextBoxAutomationPeer.GetNameCore** reference page. Instead, read the reference topic for the most immediate peer class, and look for implementation notes in the Remarks section.
+> UWP の既定のピアは、UWP を実装する内部のネイティブ コードを使って動作を実装します。実際の UWP コードが使われるとは限りません。 共通言語ランタイム (CLR) のリフレクションやその他の手法を使って実装のコードやロジックを見ることはできません。 また、基本ピアの動作のサブクラス固有のオーバーライドに対応する個別のリファレンス ページはありません。 たとえば、[**TextBoxAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242550) の [**GetNameCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getnamecore) には、**AutomationPeer.GetNameCore** のリファレンス ページでは説明されていない追加の動作がある可能性がありますが、**TextBoxAutomationPeer.GetNameCore** にはリファレンス ページがありません。 そもそも、**TextBoxAutomationPeer.GetNameCore** のリファレンス ページは存在しません。 代わりに、最も近いピア クラスのリファレンス トピックを参照して、「注釈」セクションで実装の注釈を探してください。
 
 <span id="Peers_and_AutomationProperties"/>
 <span id="peers_and_automationproperties"/>
 <span id="PEERS_AND_AUTOMATIONPROPERTIES"/>
-## Peers and AutomationProperties  
-Your automation peer should provide appropriate default values for your control's accessibility-related information. Note that any app code that uses the control can override some of that behavior by including [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/BR209081) attached-property values on control instances. Callers can do this either for the default controls or for custom controls. For example, the following XAML creates a button that has two customized UI Automation properties: `<Button AutomationProperties.Name="Special"      AutomationProperties.HelpText="This is a special button."/>`
+## ピアと AutomationProperties  
+オートメーション ピアでは、コントロールのアクセシビリティに関連する情報に対して適切な既定値を提供する必要があります。 コントロールを使うアプリ コードでは、添付プロパティ [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/BR209081) の値をコントロール インスタンスに取り込むことにより、その動作の一部をオーバーライドできます。 呼び出し元では、既定コントロールまたはカスタム コントロールのいずれにも、この操作を行うことができます。 たとえば、次の XAML では、カスタマイズした 2 つの UI オートメーション プロパティを使うボタンを作ります。 `<Button AutomationProperties.Name="Special"      AutomationProperties.HelpText="This is a special button."/>`
 
-For more info about [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/BR209081) attached properties, see [Basic accessibility information](basic-accessibility-information.md).
+[
+            **AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/BR209081) 添付プロパティについて詳しくは、「[基本的なアクセシビリティ情報](basic-accessibility-information.md)」をご覧ください。
 
-Some of the [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) methods exist because of the general contract of how UI Automation providers are expected to report information, but these methods are not typically implemented in control peers. This is because that info is expected to be provided by [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/BR209081) values applied to the app code that uses the controls in a specific UI. For example, most apps would define the labeling relationship between two different controls in the UI by applying a [**AutomationProperties.LabeledBy**](https://msdn.microsoft.com/library/windows/apps/Hh759769) value. However, [**LabeledByCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getlabeledbycore) is implemented in certain peers that represent data or item relationships in a control, such as using a header part to label a data-field part, labeling items with their containers, or similar scenarios.
+[
+            **AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) メソッドの一部は、UI オートメーション プロバイダーがどのように情報を報告するかを定める一般的なコントラクトのために存在しています。ただし、通常これらのメソッドはコントロール ピアでは実装されません。 理由は、この情報が、特定の UI にあるコントロールを使ったアプリ コードに適用する [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/BR209081) 値から提供されることを前提としているためです。 たとえば、大半のアプリでは、[**AutomationProperties.LabeledBy**](https://msdn.microsoft.com/library/windows/apps/Hh759769) 値を適用することにより、UI 内の異なる 2 つのコントロール間でラベル付けの関係を定義します。 ただし、コントロール中のデータや項目の関係を表す特定のピアでは [**LabeledByCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getlabeledbycore) が実装されています。たとえば、ヘッダー部分を使ってデータ フィールドの部分にラベルを付けたり、項目にコンテナーのラベルを付けたりする場合です。
 
 <span id="Implementing_patterns"/>
 <span id="implementing_patterns"/>
 <span id="IMPLEMENTING_PATTERNS"/>
-## Implementing patterns  
-Let's look at how to write a peer for a control that implements an expand-collapse behavior by implementing the control pattern interface for expand-collapse. The peer should enable the accessibility for the expand-collapse behavior by returning itself whenever [**GetPattern**](https://msdn.microsoft.com/library/windows/apps/BR209185_getpattern) is called with a value of [**PatternInterface.ExpandCollapse**](https://msdn.microsoft.com/library/windows/apps/BR242496). The peer should then inherit the provider interface for that pattern ([**IExpandCollapseProvider**](https://msdn.microsoft.com/library/windows/desktop/Ee671242)) and provide implementations for each of the members of that provider interface. In this case the interface has three members to override: [**Expand**](https://msdn.microsoft.com/library/windows/apps/BR242570), [**Collapse**](https://msdn.microsoft.com/library/windows/apps/BR242569), [**ExpandCollapseState**](https://msdn.microsoft.com/library/windows/apps/BR242570collapsestate).
+## パターンの実装  
+展開/折りたたみのコントロール パターン インターフェイスを実装することによって展開/折りたたみの動作を実装するコントロールに対するピアを作る方法を見てみます。 ピアでは、[**PatternInterface.ExpandCollapse**](https://msdn.microsoft.com/library/windows/apps/BR242496) の値で [**GetPattern**](https://msdn.microsoft.com/library/windows/apps/BR209185_getpattern) が呼び出されたら必ず自身を返して、展開/折りたたみの動作のアクセシビリティを有効にする必要があります。 次に、そのパターンに対するプロバイダー インターフェイスを継承 ([**IExpandCollapseProvider**](https://msdn.microsoft.com/library/windows/desktop/Ee671242)) して、そのプロバイダー インターフェイスの各メンバーに対し実装を提供する必要があります。 この例の場合、インターフェイスで 3 つのメンバー [**Expand**](https://msdn.microsoft.com/library/windows/apps/BR242570)、[**Collapse**](https://msdn.microsoft.com/library/windows/apps/BR242569)、[**ExpandCollapseState**](https://msdn.microsoft.com/library/windows/apps/BR242570collapsestate) を上書きします。
 
-It's helpful to plan ahead for accessibility in the API design of the class itself. Whenever you have a behavior that is potentially requested either as a result of typical interactions with a user who is working in the UI or through an automation provider pattern, provide a single method that either the UI response or the automation pattern can call. For example, if your control has button parts that have wired event handlers that can expand or collapse the control, and has keyboard equivalents for those actions, have these event handlers call the same method that you call from within the body of the [**Expand**](https://msdn.microsoft.com/library/windows/apps/BR242570) or [**Collapse**](https://msdn.microsoft.com/library/windows/apps/BR242569) implementations for [**IExpandCollapseProvider**](https://msdn.microsoft.com/library/windows/desktop/Ee671242) in the peer. Using a common logic method can also be a useful way to make sure that your control's visual states are updated to show logical state in a uniform way, regardless of how the behavior was invoked.
+クラスの API 設計自体にアクセシビリティについて事前に考慮しておくと効果的です。 UI を使って作業をするユーザーとの典型的な対話式操作、またはオートメーション プロバイダー パターンのどちらかを介して要求する動作が想定される場合は必ず、UI の応答、またはオートメーション パターンのどちらからでも呼び出し可能な単一のメソッドを用意しておきます。 たとえば、コントロールに、展開/折りたたみ可能なイベント ハンドラーを結合したボタン部分と、各操作に対応するキーボードの同等機能を持たせる場合は、ピア中で使う [**IExpandCollapseProvider**](https://msdn.microsoft.com/library/windows/desktop/Ee671242) の [**Expand**](https://msdn.microsoft.com/library/windows/apps/BR242570) または [**Collapse**](https://msdn.microsoft.com/library/windows/apps/BR242569) の実装本体から呼び出すのと同じメソッドを、個々のイベント ハンドラーから呼び出す必要があります。 共通のロジック メソッドを使うことにより、コントロールの表示状態が更新されるため、動作の起動方法に依存することなく、ロジックの状態が一貫した方法で表示されるようになります。
 
-A typical implementation is that the provider APIs first call [**Owner**](https://msdn.microsoft.com/library/windows/apps/BR242472_owner) for access to the control instance at run time. Then the necessary behavior methods can be called on that object.
+典型的な実装として、まずプロバイダー API から実行時にコントロール インスタンスにアクセスするために [**Owner**](https://msdn.microsoft.com/library/windows/apps/BR242472_owner) を呼び出し、 次にこのオブジェクトに対して必要な動作メソッドを呼び出すという方法が考えられます。
 
 C#
 ```csharp
@@ -388,35 +429,36 @@ public class IndexCardAutomationPeer : FrameworkElementAutomationPeer, IExpandCo
 }
 ```
 
-An alternate implementation is that the control itself can reference its peer. This is a common pattern if you are raising automation events from the control, because the [**RaiseAutomationEvent**](https://msdn.microsoft.com/library/windows/apps/BR209185_raiseautomationevent) method is a peer method.
+別の実装は、コントロール自体がピアを参照する方法です。 [
+            **RaiseAutomationEvent**](https://msdn.microsoft.com/library/windows/apps/BR209185_raiseautomationevent) メソッドがピア メソッドであるため、これはコントロールからオートメーション イベントを生成する場合の一般的なパターンです。
 
 <span id="UI_Automation_events"/>
 <span id="ui_automation_events"/>
 <span id="UI_AUTOMATION_EVENTS"/>
-## UI Automation events  
+## UI オートメーションのイベント  
 
-UI Automation events fall into the following categories.
+UI オートメーションのイベントは、次のカテゴリに分類されます。
 
-| Event | Description |
+| イベント | 説明 |
 |-------|-------------|
-| Property change | Fires when a property on a UI Automation element or control pattern changes. For example, if a client needs to monitor an app's check box control, it can register to listen for a property change event on the [**ToggleState**](https://msdn.microsoft.com/library/windows/apps/BR242653_togglestate) property. When the check box control is checked or unchecked, the provider fires the event and the client can act as necessary. |
-| Element action | Fires when a change in the UI results from user or programmatic activity; for example, when a button is clicked or invoked through the **Invoke** pattern. |
-| Structure change | Fires when the structure of the UI Automation tree changes. The structure changes when new UI items become visible, hidden, or removed on the desktop. |
-| Global change | Fires when actions of global interest to the client occur, such as when the focus shifts from one element to another, or when a child window closes. Some events do not necessarily mean that the state of the UI has changed. For example, if the user tabs to a text-entry field and then clicks a button to update the field, a [**TextChanged**](https://msdn.microsoft.com/library/windows/apps/BR209683_textchanged) event fires even if the user did not actually change the text. When processing an event, it may be necessary for a client application to check whether anything has actually changed before taking action. |
+| プロパティの変更 | UI オートメーション要素またはコントロール パターンのプロパティが変更されたときに発生します。 たとえば、クライアントでアプリのチェック ボックス コントロールを監視する必要がある場合は、[**ToggleState**](https://msdn.microsoft.com/library/windows/apps/BR242653_togglestate) プロパティのプロパティ変更イベントをリッスンするように登録します。 チェック ボックス コントロールがオンまたはオフになると、プロバイダーがこのイベントを発生させるため、クライアントで必要に応じて対処できます。 |
+| 要素の操作 | ユーザーまたはプログラムによる操作の結果として UI が変更された場合に発生します (ボタンがクリックされた場合、**Invoke** パターンによって呼び出された場合など)。 |
+| 構造の変更 | UI オートメーション ツリーの構造が変更された場合に発生します。 構造は、新しい UI 項目が表示された場合、非表示になった場合、またはデスクトップから削除された場合に変更されます。 |
+| グローバルな変更 | クライアントのグローバルな関心の対象となる操作が行われた場合に発生します (要素のフォーカスが別の要素に移動した場合、子ウィンドウが閉じられた場合など)。 一部のイベントは、必ずしも UI の状態の変化を表すとは限りません。 たとえば、ユーザーが Tab キーを押してテキスト入力フィールドに移動し、ボタンをクリックしてフィールドを更新した場合、[**TextChanged**](https://msdn.microsoft.com/library/windows/apps/BR209683_textchanged) イベントが発生しますが、実際にはテキストは変更されていません。 クライアント アプリでイベントを処理するときには、処理を開始する前に、実際に何か変更されているかどうかを確認する必要があります。 |
 
 <span id="AutomationEvents_identifiers"/>
 <span id="automationevents_identifiers"/>
 <span id="AUTOMATIONEVENTS_IDENTIFIERS"/>
-### AutomationEvents identifiers  
-UI Automation events are identified by [**AutomationEvents**](https://msdn.microsoft.com/library/windows/apps/BR209183) values. The values of the enumeration uniquely identify the kind of event.
+### AutomationEvents の識別子  
+UI オートメーションのイベントは、[**AutomationEvents**](https://msdn.microsoft.com/library/windows/apps/BR209183) の値によって識別されます。 この列挙体の値は、イベントの種類を一意に識別します。
 
 <span id="Raising_events"/>
 <span id="raising_events"/>
 <span id="RAISING_EVENTS"/>
-### Raising events  
-UI Automation clients can subscribe to automation events. In the automation peer model, peers for custom controls must report changes to control state that are relevant to accessibility by calling the [**RaiseAutomationEvent**](https://msdn.microsoft.com/library/windows/apps/BR209185_raiseautomationevent) method. Similarly, when a key UI Automation property value changes, custom control peers should call the [**RaisePropertyChangedEvent**](https://msdn.microsoft.com/library/windows/apps/BR209185_raisepropertychangedevent) method.
+### イベントの発生  
+UI オートメーション クライアントでは、オートメーション イベントを受信登録することができます。 オートメーション ピア モデルの場合、カスタム コントロールのピアでは [**RaiseAutomationEvent**](https://msdn.microsoft.com/library/windows/apps/BR209185_raiseautomationevent) メソッドを呼び出すことによって、アクセシビリティに関連するコントロール状態に生じた変化を報告しなければなりません。 同様に、キー UI オートメーション プロパティ値に変更があった場合は、カスタム コントロール ピアから、[**RaisePropertyChangedEvent**](https://msdn.microsoft.com/library/windows/apps/BR209185_raisepropertychangedevent) メソッドを呼び出す必要があります。
 
-The next code example shows how to get the peer object from within the control definition code and call a method to fire an event from that peer. As an optimization, the code determines whether there are any listeners for this event type. Firing the event and creating the peer object only when there are listeners avoids unnecessary overhead and helps the control remain responsive.
+次のコード例は、コントロール定義コードの内部からピア オブジェクトを取得し、そのピアからイベントを発生させるメソッドを呼び出す方法を示しています。 最適化のために、コードではこのイベント タイプのリスナーがいるかどうかを確認します。 リスナーがいるときにのみイベントを発生させてピア オブジェクトを作ることにより、不要なオーバーヘッドがなくなり、コントロールが応答性を維持できるようになります。
 
 C#
 ```csharp
@@ -437,43 +479,50 @@ if (AutomationPeer.ListenerExists(AutomationEvents.PropertyChanged))
 <span id="Peer_navigation"/>
 <span id="peer_navigation"/>
 <span id="PEER_NAVIGATION"/>
-## Peer navigation  
-After locating an automation peer, a UI Automation client can navigate the peer structure of an app by calling the peer object's [**GetChildren**](https://msdn.microsoft.com/library/windows/apps/BR209185_getchildren) and [**GetParent**](https://msdn.microsoft.com/library/windows/apps/BR209185_getparent) methods. Navigation among UI elements within a control is supported by the peer's implementation of the [**GetChildrenCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getchildrencore) method. The UI Automation system calls this method to build up a tree of subelements contained within a control; for example, list items in a list box. The default **GetChildrenCore** method in [**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472) traverses the visual tree of elements to build the tree of automation peers. Custom controls can override this method to expose a different representation of child elements to automation clients, returning the automation peers of elements that convey information or allow user interaction.
+## ピアのナビゲーション  
+オートメーション ピアが特定された後、UI オートメーション クライアントではピア オブジェクトの [**GetChildren**](https://msdn.microsoft.com/library/windows/apps/BR209185_getchildren) と [**GetParent**](https://msdn.microsoft.com/library/windows/apps/BR209185_getparent) のメソッドを呼び出すことにより、アプリのピア構造をナビゲートすることができます。 コントロール内部での UI 要素間のナビゲーションは、[**GetChildrenCore**](https://msdn.microsoft.com/library/windows/apps/BR209185_getchildrencore) メソッドをピアで実装することにより、サポートされます。 UI オートメーション システムでは、このメソッドを呼び出して、コントロールに含まれる子要素 (たとえば、リスト ボックス中のリスト項目) のツリーを構築します。 [
+            **FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472) に含まれる既定の **GetChildrenCore** メソッドでは、要素のビジュアル ツリーを走査してオートメーション ピアのツリーを構築します。 カスタム コントロールでは、このメソッドを上書きして、子要素を表す別の表示をオートメーション クライアントに公開することにより、情報の伝達やユーザー操作の許可を行う各要素のオートメーション ピアを返すことができます。
 
 <span id="Native_automation_support_for_text_patterns"/>
 <span id="native_automation_support_for_text_patterns"/>
 <span id="NATIVE_AUTOMATION_SUPPORT_FOR_TEXT_PATTERNS"/>
-## Native automation support for text patterns  
-Some of the default UWP app automation peers provide control pattern support for the text pattern ([**PatternInterface.Text**](https://msdn.microsoft.com/library/windows/apps/BR242496)). But they provide this support through native methods, and the peers involved won't note the [**ITextProvider**](https://msdn.microsoft.com/library/windows/apps/BR242627) interface in the (managed) inheritance. Still, if a managed or non-managed UI Automation client queries the peer for patterns, it will report support for the text pattern, and provide behavior for parts of the pattern when client APIs are called.
+## テキスト パターンのネイティブ オートメーション サポート  
+既定の UWP アプリのオートメーション ピアの一部は、テキスト パターンに対するコントロール パターンのサポートを提供します ([**PatternInterface.Text**](https://msdn.microsoft.com/library/windows/apps/BR242496))。 ただし、このサポートはネイティブな方法で提供され、関係するピアは (管理された) 継承の [**ITextProvider**](https://msdn.microsoft.com/library/windows/apps/BR242627) インターフェイスに注目しません。 それでも、管理されている、または管理されていない UI オートメーション クライアントがピアでパターンを照会すると、テキスト パターンに対するサポートが報告され、クライアント API が呼び出されたときにパターンの一部の動作が提供されます。
 
-If you intend to derive from one of the UWP app text controls and also create a custom peer that derives from one of the text-related peers, check the Remarks sections for the peer to learn more about any native-level support for patterns. You can access the native base behavior in your custom peer if you call the base implementation from your managed provider interface implementations, but it's difficult to modify what the base implementation does because the native interfaces on both the peer and its owner control aren't exposed. Generally you should either use the base implementations as-is (call base only) or completely replace the functionality with your own managed code and don't call the base implementation. The latter is an advanced scenario, you'll need good familiarity with the text services framework being used by your control in order to support the accessibility requirements when using that framework.
+UWP アプリのテキスト コントロールの 1 つから派生させ、テキスト関連ピアの 1 つから派生するカスタム ピアを作る場合は、ピアの「注釈」セクションをご覧になることで、パターンのネイティブ レベル サポートについて詳しく知ることができます。 管理されているプロバイダー インターフェイスの実装から基本実装を呼び出すと、カスタム ピアのネイティブ ベースの動作にアクセスできますが、ピアのネイティブ インターフェイスとその所有者のコントロールは両方とも公開されるため、基本実装で行われる動作を変更するのは困難です。 一般的に、基本実装をそのまま使うか (基本実装のみを呼び出す)、基本実装を呼び出さないで機能を独自のマネージ コードで完全に置き換えます。 後者は高度なシナリオであり、コントロールでテキスト サービス フレームワークを使う場合は、アクセシビリティ要件をサポートするためにフレームワークに関する詳しい知識が必要となります。
 
 <span id="AutomationProperties.AccessibilityView"/>
 <span id="automationproperties.accessibilityview"/>
 <span id="AUTOMATIONPROPERTIES.ACCESSIBILITYVIEW"/>
 ## AutomationProperties.AccessibilityView  
-In addition to providing a custom peer, you can also adjust the tree view representation for any control instance, by setting [**AutomationProperties.AccessibilityView**](https://msdn.microsoft.com/library/windows/apps/BR209081_accessibilityview) in XAML. This isn't implemented as part of a peer class, but we'll mention it here because it's germane to overall accessibility support either for custom controls or for templates you customize.
+カスタム ピアの提供に加えて、XAML で [**AutomationProperties.AccessibilityView**](https://msdn.microsoft.com/library/windows/apps/BR209081_accessibilityview) を設定することにより、コントロール インスタンスのツリー ビュー表現を調整することもできます。 これはピア クラスの一部としては実装されませんが、カスタム コントロールまたはカスタマイズしたテンプレートでの全体的なアクセシビリティのサポートに密接な関係があるため、ここで触れておきます。
 
-The main scenario for using [**AutomationProperties.AccessibilityView**](https://msdn.microsoft.com/library/windows/apps/BR209081_accessibilityview) is to deliberately omit certain controls in a template from the UI Automation views, because they don't meaningfully contribute to the accessibility view of the entire control. To prevent this, set **AutomationProperties.AccessibilityView** to "Raw". For more info, see [**AutomationProperties.AccessibilityView**](https://msdn.microsoft.com/library/windows/apps/BR209081_accessibilityview).
+[
+            **AutomationProperties.AccessibilityView**](https://msdn.microsoft.com/library/windows/apps/BR209081_accessibilityview) を使う主なシナリオでは、コントロール全体のアクセシビリティ ビューに対して有意に貢献しないので、UI オートメーション ビューから意図的にテンプレート内の特定のコントロールを省略します。 これを避けるために、**AutomationProperties.AccessibilityView** を "Raw" に設定します。 詳しくは、「[**AutomationProperties.AccessibilityView**](https://msdn.microsoft.com/library/windows/apps/BR209081_accessibilityview)」をご覧ください。
 
 <span id="Throwing_exceptions_from_automation_peers"/>
 <span id="throwing_exceptions_from_automation_peers"/>
 <span id="THROWING_EXCEPTIONS_FROM_AUTOMATION_PEERS"/>
-## Throwing exceptions from automation peers  
-The APIs that you are implementing for your automation peer support are permitted to throw exceptions. It's expected any UI Automation clients that are listening are robust enough to continue on after most exceptions are thrown. In all likelihood that listener is looking at an all-up automation tree that includes apps other than your own, and it's an unacceptable client design to bring down the entire client just because one area of the tree threw a peer-based exception when the client called its APIs.
+## オートメーション ピアからの例外のスロー  
+オートメーション ピア サポートのために実装する API では、例外をスローすることが許されています。 リッスンしている UI オートメーション クライアントはいずれも堅牢に作られていると想定され、例外がスローされても、ほとんどの場合は続行できることが求められています。 リスナーが対象としているのは自分自身だけでなく他のアプリを含めたオートメーション ツリー全体であり、クライアントが API を呼び出したときにツリーの一部でピア ベースの例外がスローされたからといって、クライアント全体が停止するような設計は望ましくありません。
 
-For parameters that are passed in to your peer, it's acceptable to validate the input, and for example throw [**ArgumentNullException**](T:System.ArgumentNullException) if it was passed **null** and that's not a valid value for your implementation. However, if there are subsequent operations performed by your peer, remember that the peer's interactions with the hosting control have something of an asynchronous character to them. Anything a peer does won't necessarily block the UI thread in the control (and it probably shouldn't). So you could have situations where an object was available or had certain properties when the peer was created or when an automation peer method was first called, but in the meantime the control state has changed. For these cases, there are two dedicated exceptions that a provider can throw:
+ピアに渡されたパラメーターについて入力を検証することは許容されます。たとえば、**null** が渡された場合、それを有効な値として扱わない実装では [**ArgumentNullException**](T:System.ArgumentNullException) をスローすることができます。 ただし、ピアで実行される後続の操作がある場合、ホストしているコントロールとピアとのやり取りには非同期的な性質があることに注意が必要です。 ピアで実行した操作によって、必ずしもコントロールの UI スレッドがブロックされるとは限りません (そのような動作になることはほとんどありません)。 したがって、ピアの作成時やオートメーション ピア メソッドの初回の呼び出し時に、あるオブジェクトが使用可能であったり、特定のプロパティが設定されていたりしても、処理を行っている間にコントロールの状態が変わる可能性があります。 このような場合にスローできる専用の例外が 2 つあります。
 
-* Throw [**ElementNotAvailableException**](https://msdn.microsoft.com/library/windows/apps/Hh673741) if you're unable to access either the peer's owner or a related peer element based on the original info your API was passed. For example, you might have a peer that's trying to run its methods but the owner has since been removed from the UI, such as a modal dialog that's been closed. For a non-.NET client, this maps to [**UIA\_E\_ELEMENTNOTAVAILABLE**](https://msdn.microsoft.com/library/windows/desktop/Ee671218).
-* Throw [**ElementNotEnabledException**](https://msdn.microsoft.com/library/windows/apps/Hh673748) if there still is an owner, but that owner is in a mode such as [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/BR209390_isenabled)`=`**false** that's blocking some of the specific programmatic changes that your peer is trying to accomplish. For a non-.NET client, this maps to [**UIA\_E\_ELEMENTNOTENABLED**](https://msdn.microsoft.com/library/windows/desktop/Ee671218).
+* 自身の API に渡された元の情報に基づいてピアの所有者または関連するピア要素にアクセスできない場合は、[**ElementNotAvailableException**](https://msdn.microsoft.com/library/windows/apps/Hh673741) をスローします。 たとえば、ピアでメソッドを実行しようとしているときに、モーダル ダイアログが閉じられたなどの理由で、UI から所有者が削除された場合が当てはまります。 .NET 以外のクライアントでは、これは [**UIA\_E\_ELEMENTNOTAVAILABLE**](https://msdn.microsoft.com/library/windows/desktop/Ee671218) にマップされます。
+* 所有者はまだ存在するものの、その所有者が [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/BR209390_isenabled)`=`**false** などのモードになっていて、ピアで実行しようとしている特定の変更をプログラムで実現することができない場合は、[**ElementNotEnabledException**](https://msdn.microsoft.com/library/windows/apps/Hh673748) をスローします。 .NET 以外のクライアントでは、これは [**UIA\_E\_ELEMENTNOTENABLED**](https://msdn.microsoft.com/library/windows/desktop/Ee671218) にマップされます。
 
-Beyond this, peers should be relatively conservative regarding exceptions that they throw from their peer support. Most clients won't be able to handle exceptions from peers and turn these into actionable choices that their users can make when interacting with the client. So sometimes a no-op, and catching exceptions without rethrowing within your peer implementations, is a better strategy than is throwing exceptions every time something the peer tries to do doesn't work. Consider also that most UI Automation clients aren't written in managed code. Most are written in COM and are just checking for **S\_OK** in an **HRESULT** whenever they call a UI Automation client method that ends up accessing your peer.
+他にも、ピア サポートからの例外のスローに関して、ピアでは比較的保守的な対応をとる必要があります。 ほとんどのクライアントでは、ピアからの例外を処理することができないため、発生した例外は、ユーザーに選択を求める対話操作に変換されます。 このため、ピアでの操作が失敗するたびに例外をスローするよりは、ピアの実装内で例外をキャッチし、再スローもせずに何もしない戦略の方が適している場合があります。 また、多くの UI オートメーション クライアントはマネージ コードで作られているわけではない点にも考慮する必要があります。 ほとんどは COM で記述されているため、ピアにアクセスする UI オートメーション クライアント メソッドを呼び出すときは、**HRESULT** が **S\_OK** かどうかをチェックするだけになります。
 
 <span id="related_topics"/>
-## Related topics  
-* [Accessibility](accessibility.md)
-* [XAML accessibility sample](http://go.microsoft.com/fwlink/p/?linkid=238570)
+## 関連トピック  
+* [アクセシビリティ](accessibility.md)
+* [XAML アクセシビリティ サンプル](http://go.microsoft.com/fwlink/p/?linkid=238570)
 * [**FrameworkElementAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242472)
 * [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185)
 * [**OnCreateAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR208911_oncreateautomationpeer)
-* [Control patterns and interfaces](control-patterns-and-interfaces.md)
+* [コントロール パターンとインターフェイス](control-patterns-and-interfaces.md)
+
+
+<!--HONumber=May16_HO2-->
+
+

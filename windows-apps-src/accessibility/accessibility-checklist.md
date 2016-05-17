@@ -1,63 +1,70 @@
 ---
 author: Xansky
-Description: Provides a checklist to help you ensure that your Universal Windows Platform (UWP) app is accessible.
+Description: ユニバーサル Windows プラットフォーム (UWP) アプリをアクセシビリティ対応にするために役立つチェック リストを示します。
 ms.assetid: BB8399E2-7013-4F77-AF2C-C1A0E5412856
-title: Accessibility checklist
+title: アクセシビリティのチェック リスト
 label: Accessibility checklist
 template: detail.hbs
 ---
 
-# Accessibility checklist
+# アクセシビリティのチェック リスト
 
 
 
-Provides a checklist to help you ensure that your Universal Windows Platform (UWP) app is accessible.
+ユニバーサル Windows プラットフォーム (UWP) アプリをアクセシビリティ対応にするために役立つチェック リストを示します。
 
-Here we provide a checklist you can use to ensure that your app is accessible.
+ここでは、アプリをアクセシビリティ対応にするときに使用できるチェック リストを示します。
 
-1.  Set the accessible name (required) and description (optional) for content and interactive UI elements in your app.
+1.  コンテンツやアプリの対話型の UI 要素にアクセシビリティ対応の名前 (必須) と説明 (省略可能) を設定します。
 
-    An accessible name is a short, descriptive text string that a screen reader uses to announce a UI element. Some UI elements such as [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) and [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) promote their text content as the default accessible name; see [Basic accessibility information](basic-accessibility-information.md#name_from_inner_text).
+    アクセシビリティ対応の名前とは、スクリーン リーダーが UI 要素を読み上げるときに使う短い説明の文字列です。 [
+            **TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) や [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) などの一部の UI 要素では、既定のアクセシビリティ対応の名前としてテキスト コンテンツを昇格させるものがあります。「[基本的なアクセシビリティ情報](basic-accessibility-information.md#name_from_inner_text)」をご覧ください。
 
-    You should set the accessible name explicitly for images or other controls that do not promote inner text content as an implicit accessible name. You should use labels for form elements so that the label text can be used as a [**LabeledBy**](https://msdn.microsoft.com/library/windows/apps/Hh759769) target in the Microsoft UI Automation model for correlating labels and inputs. If you want to provide more UI guidance for users than is typically included in the accessible name, accessible descriptions and tooltips help users understand the UI.
+    暗黙的なアクセシビリティ対応の名前として内部テキスト コンテンツを昇格させない画像などのコントロールに対し、明示的にアクセシビリティ対応の名前を設定する必要があります。 フォーム要素のラベルのテキストは、ラベルと入力を関連付けるために、Microsoft UI オートメーション モデルの [**LabeledBy**](https://msdn.microsoft.com/library/windows/apps/Hh759769) ターゲットとして使うことができるようにする必要があります。 ユーザーに、通常アクセシビリティ対応の名前に含まれているものよりも詳しい UI のガイダンスを提供する場合は、アクセシビリティ対応の説明やヒントを用意すると、UI の内容がわかりやすくなります。
 
-    For more info, see [Accessible name](basic-accessibility-information.md#accessible_name) and [Accessible description](basic-accessibility-information.md).
+    詳しくは、「[アクセシビリティ対応の名前](basic-accessibility-information.md#accessible_name)」と「[アクセシビリティ対応の説明](basic-accessibility-information.md)」をご覧ください。
 
-2.  Implement keyboard accessibility:
+2.  キーボード アクセシビリティを実装します。
 
-    * Test the default tab index order for a UI. Adjust the tab index order if necessary, which may require enabling or disabling certain controls, or changing the default values of [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) on some of the UI elements.
-    * Use controls that support arrow-key navigation for composite elements. For default controls, the arrow-key navigation is typically already implemented.
-    * Use controls that support keyboard activation. For default controls, particularly those that support the UI Automation [**Invoke**](https://msdn.microsoft.com/library/windows/apps/BR242582) pattern, keyboard activation is typically available; check the documentation for that control.
-    * Set access keys or implement accelerator keys for specific parts of the UI that support interaction.
-    * For any custom controls that you use in your UI, verify that you have implemented these controls with correct [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) support for activation, and defined overrides for key handling as needed to support activation, traversal and access or accelerator keys.
+    * UI 用の既定のタブ インデックスの順序をテストします。 必要に応じてタブ インデックスの順序を調整します。このとき、特定のコントロールの有効化または無効化、一部の UI 要素の [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) の既定値の変更が必要になる場合があります。
+    * コンポジット要素に方向キーのナビゲーションをサポートするコントロールを使います。 既定のコントロールの場合、通常、方向キーのナビゲーションは既に実装されています。
+    * キーボードのアクティブ化をサポートするコントロールを使います。 既定のコントロール、特に UI オートメーションの [**Invoke**](https://msdn.microsoft.com/library/windows/apps/BR242582) パターンをサポートするものの場合は、基本的にキーボードのアクティブ化が利用できます。該当するコントロールの説明書をご覧ください。
+    * 対話式操作をサポートする UI の一部に対するアクセス キーを設定するか、ショートカット キーを実装します。
+    * UI で使うカスタム コントロールで、アクティブ化用に適切な [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) サポートを設定した状態でコントロールが実装され、アクティブ化キー、トラバーサル キー、アクセス キーまたはショートカット キーのサポートに必要なキー処理の上書きが定義されていることを確認します。
 
-    For more info, see [Keyboard interactions](https://msdn.microsoft.com/library/windows/apps/Mt185607).
+    詳しくは、「[キーボード操作](https://msdn.microsoft.com/library/windows/apps/Mt185607)」をご覧ください。
 
-3.  Visually verify your UI to ensure that the text contrast is adequate, elements render correctly in the high-contrast themes, and colors are used correctly.
+3.  テキスト コントラストが適切であること、ハイ コントラスト テーマで要素が正しくレンダリングされること、色が正しく使われていることを確認するため、UI を表示して検証します。
 
-    * Use the system display options that adjust the display's dots per inch (dpi) value, and ensure that your app UI scales correctly when the dpi value changes. (Some users change dpi values as an accessibility option, it's available from **Ease of Access**.)
-    * Use a color analyzer tool to verify that the visual text contrast ratio is at least 4.5:1.
-    * Switch to a high contrast theme and verify that the UI for your app is readable and usable.
-    * Ensure that your UI doesn’t use color as the only way to convey information.
+    * ディスプレイの 1 インチあたりのドット数 (dpi) の値を調整するシステム ディスプレイ オプションを使い、DPI の値の変更に合わせてアプリの UI が正常に拡大縮小されることを確認します (一部のユーザーはアクセシビリティ対応オプションとして DPI の値を変更します。これは、**[コンピューターの簡単操作]** から設定できます)。
+    * 色分析ツールを使って、視覚的なテキストのコントラスト比が 4.5:1 以上であることを検証します。
+    * ハイ コントラスト テーマに切り替え、アプリの UI が読みやすく使いやすいことを確認します。
+    * UI が情報を伝える唯一の手段として色を使っていないことを確認します。
 
-    For more info, see [High-contrast themes](high-contrast-themes.md) and [Accessible text requirements](accessible-text-requirements.md).
+    詳しくは、「[ハイ コントラスト テーマ](high-contrast-themes.md)」と「[アクセシビリティに対応したテキストの要件](accessible-text-requirements.md)」をご覧ください。
 
-4.  Run accessibility tools, address reported issues, and verify the screen reading experience.
+4.  アクセシビリティ ツールを実行し、報告された問題に対処して、画面の読み上げを確認します。
 
-    Use tools such as [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) to verify programmatic access, run diagnostic tools such as [**AccChecker**](https://msdn.microsoft.com/library/windows/desktop/Hh920985) to discover common errors, and verify the screen reading experience with Narrator.
+    [
+            **Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) などのツールを使ってプログラムによるアクセスを検証し、[**AccChecker**](https://msdn.microsoft.com/library/windows/desktop/Hh920985) などの診断ツールを実行して一般的なエラーを見つけます。画面の読み上げの確認には、ナレーターを使います。
 
-    For more info, see [Accessibility testing](accessibility-testing.md).
+    詳しくは、「[アクセシビリティ テスト](accessibility-testing.md)」をご覧ください。
 
-5.  Make sure your app manifest settings follow accessibility guidelines.
+5.  アプリ マニフェストの設定がアクセシビリティ ガイドラインに準拠しているかどうかを確認します。
 
-6.  Declare your app as accessible in the Windows Store.
+6.  Windows ストアでアプリがアクセシビリティ対応であることを宣言します。
 
-    If you implemented the baseline accessibility support, declaring your app as accessible in the Windows Store can help reach more customers and get some additional good ratings.
+    アクセシビリティ サポートの基準を実装したら、Windows ストアでアプリがアクセシビリティ対応であることを宣言することで、より多くのユーザーにアプリを提供し、さらに良い評価を得ることができます。
 
-    For more info, see [Accessibility in the Store](accessibility-in-the-store.md).
+    詳しくは、「[ストア内のアクセシビリティ](accessibility-in-the-store.md)」をご覧ください。
 
 <span id="related_topics"/>
-## Related topics  
-* [Accessibility](accessibility.md)
-* [Design for accessibility](https://msdn.microsoft.com/library/windows/apps/Hh700407)
-* [Practices to avoid](practices-to-avoid.md)
+## 関連トピック  
+* [アクセシビリティ](accessibility.md)
+* [アクセシビリティのための設計](https://msdn.microsoft.com/library/windows/apps/Hh700407)
+* [避ける事項](practices-to-avoid.md)
+
+
+<!--HONumber=May16_HO2-->
+
+

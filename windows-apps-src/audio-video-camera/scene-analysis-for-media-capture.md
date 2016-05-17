@@ -1,118 +1,133 @@
 ---
 author: drewbatgit
 ms.assetid: B5D915E4-4280-422C-BA0E-D574C534410B
-description: This article describes how to use the SceneAnalysisEffect and the FaceDetectionEffect to analyze the content of the media capture preview stream.
-title: Scene analysis for media capture
+description: この記事では、SceneAnalysisEffect と FaceDetectionEffect を使ってメディア キャプチャのプレビュー ストリームの内容を分析する方法について説明します。
+title: メディア キャプチャのシーン分析
 ---
 
-# Scene analysis for media capture
+# メディア キャプチャのシーン分析
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-This article describes how to use the [**SceneAnalysisEffect**](https://msdn.microsoft.com/library/windows/apps/dn948902) and the [**FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776) to analyze the content of the media capture preview stream.
+この記事では、[**SceneAnalysisEffect**](https://msdn.microsoft.com/library/windows/apps/dn948902) と [**FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776) を使ってメディア キャプチャのプレビュー ストリームの内容を分析する方法について説明します。
 
-## Scene analysis effect
+## シーン分析効果
 
-The [**SceneAnalysisEffect**](https://msdn.microsoft.com/library/windows/apps/dn948902) analyzes the video frames in the media capture preview stream and recommends processing options to improve the capture result. Currently, the effect supports detecting whether the capture would be improved by using High Dynamic Range (HDR) processing.
+[
+            **SceneAnalysisEffect**](https://msdn.microsoft.com/library/windows/apps/dn948902) は、メディア キャプチャのプレビュー ストリームに含まれるビデオ フレームを分析し、キャプチャ結果を向上させるための処理オプションを推奨します。 現時点では、ハイ ダイナミック レンジ (HDR) 処理を使用してキャプチャを向上できるかどうかの検出がサポートされています。
 
-If the effect recommends using HDR, you can do this in the following ways:
+HDR の使用が推奨された場合は、次の方法で実行できます。
 
--   Use the [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) class to capture photos using the Windows built-in HDR processing algorithm. For more information, see [High Dynamic Range (HDR) photo capture](high-dynamic-range-hdr-photo-capture.md).
+-   [
+            **AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) クラスで、Windows に組み込まれている HDR 処理アルゴリズムを使って写真をキャプチャします。 詳しくは、「[ハイ ダイナミック レンジ (HDR) 写真のキャプチャ](high-dynamic-range-hdr-photo-capture.md)」をご覧ください。
 
--   Use the [**HdrVideoControl**](https://msdn.microsoft.com/library/windows/apps/dn926680) to capture video using the Windows built-in HDR processing algorithm. For more information, see [Capture device controls for video capture](capture-device-controls-for-video-capture.md).
+-   [
+            **HdrVideoControl**](https://msdn.microsoft.com/library/windows/apps/dn926680) で、Windows に組み込まれている HDR 処理アルゴリズムを使ってビデオをキャプチャします。 詳しくは、「[ビデオ キャプチャのためのキャプチャ デバイス コントロール](capture-device-controls-for-video-capture.md)」をご覧ください。
 
--   Use the [**VariablePhotoSequenceControl**](https://msdn.microsoft.com/library/windows/apps/dn640573) to capture a sequence of frames that you can then composite using a custom HDR implementation. For more information, see [Variable photo sequence](variable-photo-sequence.md).
+-   [
+            **VariablePhotoSequenceControl**](https://msdn.microsoft.com/library/windows/apps/dn640573) でフレームのシーケンスをキャプチャし、カスタム HDR 実装を使って合成します。 詳しくは、「[可変の写真シーケンス](variable-photo-sequence.md)」をご覧ください。
 
-### Scene analysis namespaces
+### シーン分析の名前空間
 
-To use scene analysis, your app must include the following namespaces in addition to the namespaces required for basic media capture.
+シーン分析を使うには、基本的なメディア キャプチャに必要な名前空間に加え、次の名前空間をアプリに追加する必要があります。
 
 [!code-cs[SceneAnalysisUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSceneAnalysisUsing)]
 
-### Initialize the scene analysis effect and add it to the preview stream
+### シーン分析効果を初期化してプレビュー ストリームに追加する
 
-Video effects are implemented using two APIs, an effect definition, which provides settings that the capture device needs to initialize the effect, and an effect instance, which can be used to control the effect. Since you may want to access the effect instance from multiple places within your code, you should typically declare a member variable to hold the object.
+ビデオ効果は、2 つの API を使って実装されます。1 つは効果の定義であり、キャプチャ デバイスで効果を初期化するために必要となる設定を提供します。もう 1 つは効果のインスタンスであり、効果を制御するために使用できます。 効果のインスタンスには、コードのいたるところからアクセスする必要があるので、通常はそのオブジェクトを保持するメンバー変数を宣言する必要があります。
 
 [!code-cs[DeclareSceneAnalysisEffect](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDeclareSceneAnalysisEffect)]
 
-In your app, after you have initialized the **MediaCapture** object, create a new instance of [**SceneAnalysisEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn948903).
+アプリで、**MediaCapture** オブジェクトを初期化した後、[**SceneAnalysisEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn948903) の新しいインスタンスを作成します。
 
-Register the effect with the capture device by calling [**AddVideoEffectAsync**](https://msdn.microsoft.com/library/windows/apps/dn878035) on your **MediaCapture** object, providing the **SceneAnalysisEffectDefinition** and specifying [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640) to indicate that the effect should be applied to the video preview stream, as opposed to the capture stream. **AddVideoEffectAsync** returns an instance of the added effect. Because this method can be used with multiple effect types, you must cast the returned instance to a [**SceneAnalysisEffect**](https://msdn.microsoft.com/library/windows/apps/dn948902) object.
+**MediaCapture** オブジェクトに対して [**AddVideoEffectAsync**](https://msdn.microsoft.com/library/windows/apps/dn878035) を呼び出すことで、効果をキャプチャ デバイスに登録します。このとき、**SceneAnalysisEffectDefinition** を指定し、さらに [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640) を指定することで、効果をキャプチャ ストリームではなくビデオ プレビュー ストリームに適用することを示します。 **AddVideoEffectAsync** は追加されたエフェクトのインスタンスを返します。 このメソッドは複数の種類の効果について使用できるため、返されたインスタンスは [**SceneAnalysisEffect**](https://msdn.microsoft.com/library/windows/apps/dn948902) オブジェクトにキャストする必要があります。
 
-To receive the results of the scene analysis, you must register a handler for the [**SceneAnalyzed**](https://msdn.microsoft.com/library/windows/apps/dn948920) event.
+シーン分析の結果を受け取るには、[**SceneAnalyzed**](https://msdn.microsoft.com/library/windows/apps/dn948920) イベントのハンドラーを登録する必要があります。
 
-Currently, the scene analysis effect only includes the high dynamic range analyzer. Enable HDR analysis by setting the effect's [**HighDynamicRangeControl.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn948827) to true.
+現時点では、シーン分析効果にはハイ ダイナミック レンジ アナライザーのみが含まれます。 効果の [**HighDynamicRangeControl.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn948827) を true に設定して、HDR 分析を有効にします。
 
 [!code-cs[CreateSceneAnalysisEffectAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCreateSceneAnalysisEffectAsync)]
 
-### Implement the SceneAnalyzed event handler
+### SceneAnalyzed イベント ハンドラーを実装する
 
-The results of the scene analysis are returned in the **SceneAnalyzed** event handler. The [**SceneAnalyzedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948922) object passed into the handler has a [**SceneAnalysisEffectFrame**](https://msdn.microsoft.com/library/windows/apps/dn948907) object which has a [**HighDynamicRangeOutput**](https://msdn.microsoft.com/library/windows/apps/dn948830) object. The [**Certainty**](https://msdn.microsoft.com/library/windows/apps/dn948833) property of the high dynamic range output provides a value between 0 and 1.0 where 0 indicates that HDR processing would not help improve the capture result and 1.0 indicates that HDR processing would help. Your can decide the threshold point at which you want to use HDR or show the results to the user and let the user decide.
+シーン分析の結果は、**SceneAnalyzed** イベント ハンドラーに返されます。 ハンドラーに渡された [**SceneAnalyzedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948922) オブジェクトには、[**SceneAnalysisEffectFrame**](https://msdn.microsoft.com/library/windows/apps/dn948907) オブジェクトが含まれ、これには [**HighDynamicRangeOutput**](https://msdn.microsoft.com/library/windows/apps/dn948830) オブジェクトが含まれています。 ハイ ダイナミック レンジ出力の [**Certainty**](https://msdn.microsoft.com/library/windows/apps/dn948833) プロパティの値は、0 ～ 1.0 となります。0 は、HDR 処理によってキャプチャの結果が向上しないことを示します。1.0 は、HDR 処理によって結果が向上することを示します。 HDR を使うかどうかのしきい値を決めておく、またはユーザーに結果を表示してユーザーが決めるようにすることもできます。
 
 [!code-cs[SceneAnalyzed](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSceneAnalyzed)]
 
-The [**HighDynamicRangeOutput**](https://msdn.microsoft.com/library/windows/apps/dn948830) object passed into the handler also has a [**FrameControllers**](https://msdn.microsoft.com/library/windows/apps/dn948834) property which contains suggested frame controllers for capturing a variable photo sequence for HDR processing. For more information, see [Variable photo sequence](variable-photo-sequence.md).
+ハンドラーに渡された [**HighDynamicRangeOutput**](https://msdn.microsoft.com/library/windows/apps/dn948830) オブジェクトには、[**FrameControllers**](https://msdn.microsoft.com/library/windows/apps/dn948834) プロパティもあります。このプロパティは、HDR 処理用の可変の写真シーケンスをキャプチャするために推奨されるフレーム コントローラーを指定します。 詳しくは、「[可変の写真シーケンス](variable-photo-sequence.md)」をご覧ください。
 
-### Clean up the scene analysis effect
+### シーン分析効果をクリーンアップする
 
-When your app is done capturing, before disposing of the **MediaCapture** object, you should disable the scene analysis effect by setting the effect's [**HighDynamicRangeAnalyzer.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn948827) property to false and unregister your [**SceneAnalyzed**](https://msdn.microsoft.com/library/windows/apps/dn948920) event handler. Call [**MediaCapture.ClearEffectsAsync**](https://msdn.microsoft.com/library/windows/apps/br226592), specifying the video preview stream since that was the stream to which the effect was added. Finally, set your member variable to null.
+キャプチャが終了したら、**MediaCapture** オブジェクトを破棄する前に、効果の [**HighDynamicRangeAnalyzer.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn948827) プロパティを false に設定してシーン分析効果を無効にし、[**SceneAnalyzed**](https://msdn.microsoft.com/library/windows/apps/dn948920) イベント ハンドラーの登録を解除する必要があります。 効果が追加されたのはビデオ プレビュー ストリームであるため、ビデオ プレビュー ストリームを指定して [**MediaCapture.ClearEffectsAsync**](https://msdn.microsoft.com/library/windows/apps/br226592) を呼び出します。 最後に、メンバー変数を null に設定します。
 
 [!code-cs[CleanUpSceneAnalysisEffectAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpSceneAnalysisEffectAsync)]
 
-## Face detection effect
+## 顔検出効果
 
-The [**FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776) identifies the location of faces within the media capture preview stream. The effect allows you to receive a notification whenever a face is detected in the preview stream and provides the bounding box for each detected face within the preview frame. On supported devices, the face detection effect also provides enhanced exposure and focus on the most important face in the scene.
+[
+            **FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776) は、メディア キャプチャのプレビュー ストリーム内で顔の位置を特定します。 この効果によって、プレビュー ストリーム内で顔が検出されたときに通知を受け取ることができ、プレビュー フレーム内で検出された顔ごとに境界ボックスが表示されます。 サポートされているデバイスでは、シーン内の最も重要な顔に対して露出の強化やフォーカスが行われます。
 
-### Face detection namespaces
+### 顔検出の名前空間
 
-To use face detection, your app must include the following namespaces in addition to the namespaces required for basic media capture.
+顔検出を使うには、基本的なメディア キャプチャに必要な名前空間に加え、次の名前空間をアプリに追加する必要があります。
 
 [!code-cs[FaceDetectionUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFaceDetectionUsing)]
 
-### Initialize the face detection effect and add it to the preview stream
+### 顔検出効果を初期化してプレビュー ストリームに追加する
 
-Video effects are implemented using two APIs, an effect definition, which provides settings that the capture device needs to initialize the effect, and an effect instance, which can be used to control the effect. Since you may want to access the effect instance from multiple places within your code, you should typically declare a member variable to hold the object.
+ビデオ効果は、2 つの API を使って実装されます。1 つは効果の定義であり、キャプチャ デバイスで効果を初期化するために必要となる設定を提供します。もう 1 つは効果のインスタンスであり、効果を制御するために使用できます。 効果のインスタンスには、コードのいたるところからアクセスする必要があるので、通常はそのオブジェクトを保持するメンバー変数を宣言する必要があります。
 
 [!code-cs[DeclareFaceDetectionEffect](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDeclareFaceDetectionEffect)]
 
-In your app, after you have initialized the **MediaCapture** object, create a new instance of [**FaceDetectionEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn948778). Set the [**DetectionMode**](https://msdn.microsoft.com/library/windows/apps/dn948781) property to prioritize faster face detection or more accurate face detection. Set [**SynchronousDetectionEnabled**](https://msdn.microsoft.com/library/windows/apps/dn948786) to specify that incoming frames are not delayed waiting for face detection to complete as this can result in a choppy preview experience.
+アプリで、**MediaCapture** オブジェクトを初期化した後、[**FaceDetectionEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn948778) の新しいインスタンスを作成します。 [
+            **DetectionMode**](https://msdn.microsoft.com/library/windows/apps/dn948781) プロパティを設定して、より高速な顔検出とより正確な顔検出のどちらを優先するかを決めます。 顔検出が完了するまで待機して着信フレームが遅延すると、プレビューがぎくしゃくした感じになる場合があるため、[**SynchronousDetectionEnabled**](https://msdn.microsoft.com/library/windows/apps/dn948786) を設定して、顔検出を待機しないよう指定します。
 
-Register the effect with the capture device by calling [**AddVideoEffectAsync**](https://msdn.microsoft.com/library/windows/apps/dn878035) on your **MediaCapture** object, providing the **FaceDetectionEffectDefinition** and specifying [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640) to indicate that the effect should be applied to the video preview stream, as opposed to the capture stream. **AddVideoEffectAsync** returns an instance of the added effect. Because this method can be used with multiple effect types, you must cast the returned instance to a [**FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776) object.
+**MediaCapture** オブジェクトに対して [**AddVideoEffectAsync**](https://msdn.microsoft.com/library/windows/apps/dn878035) を呼び出すことで、効果をキャプチャ デバイスに登録します。このとき、**FaceDetectionEffectDefinition** を指定し、さらに [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640) を指定することで、効果をキャプチャ ストリームではなくビデオ プレビュー ストリームに適用することを示します。 **AddVideoEffectAsync** は追加されたエフェクトのインスタンスを返します。 このメソッドは複数の種類の効果について使用できるため、返されたインスタンスは [**FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776) オブジェクトにキャストする必要があります。
 
-Enable or disable the effect by setting the [**FaceDetectionEffect.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn948818) property. Adjust how often the effect analyzes frames by setting the [**FaceDetectionEffect.DesiredDetectionInterval**](https://msdn.microsoft.com/library/windows/apps/dn948814) property. Both of these properties can be adjusted while media capture is ongoing.
+[
+            **FaceDetectionEffect.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn948818) プロパティを設定して、効果を有効または無効にします。 [
+            **FaceDetectionEffect.DesiredDetectionInterval**](https://msdn.microsoft.com/library/windows/apps/dn948814) プロパティを設定して、フレームを分析する頻度を調整します。 これらのプロパティはいずれも、メディア キャプチャの進行中に調整できます。
 
 [!code-cs[CreateFaceDetectionEffectAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCreateFaceDetectionEffectAsync)]
 
-### Receive notifications when faces are detected
+### 顔が検出されたときに通知を受け取る
 
-If you want to perform some action when faces are detected, such as drawing a box around detected faces in the video preview, you can register for the [**FaceDetected**](https://msdn.microsoft.com/library/windows/apps/dn948820) event.
+顔が検出されたときに、ビデオ プレビュー内で検出された顔の周りにボックスを描画するなど、特定の操作を実行するには、[**FaceDetected**](https://msdn.microsoft.com/library/windows/apps/dn948820) イベントに登録します。
 
 [!code-cs[RegisterFaceDetectionHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRegisterFaceDetectionHandler)]
 
-In the handler for the event, you can get a list of all faces detected in a frame by accessing the [**FaceDetectionEffectFrame.DetectedFaces**](https://msdn.microsoft.com/library/windows/apps/dn948792) property of the [**FaceDetectedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948774). The [**FaceBox**](https://msdn.microsoft.com/library/windows/apps/dn974126) property is a [**BitmapBounds**](https://msdn.microsoft.com/library/windows/apps/br226169) structure that describes the rectangle containing the detected face in units relative to the preview stream dimensions. To view sample code that transforms the preview stream coordinates into screen coordinates, see the [face detection UWP sample](http://go.microsoft.com/fwlink/?LinkId=619486).
+イベントのハンドラーで、[**FaceDetectedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948774) の [**FaceDetectionEffectFrame.DetectedFaces**](https://msdn.microsoft.com/library/windows/apps/dn948792) プロパティにアクセスすることにより、フレームで検出されたすべての顔の一覧を取得できます。 [
+            **FaceBox**](https://msdn.microsoft.com/library/windows/apps/dn974126) プロパティは、プレビュー ストリームのサイズを基準とした単位で検出された顔を含む四角形を描画する [**BitmapBounds**](https://msdn.microsoft.com/library/windows/apps/br226169) 構造体です。 プレビュー ストリームの座標を画面座標に変換するサンプル コードについては、「[顔検出 UWP のサンプル](http://go.microsoft.com/fwlink/?LinkId=619486)」をご覧ください。
 
 [!code-cs[FaceDetected](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFaceDetected)]
 
-### Clean up the face detection effect
+### 顔検出効果をクリーンアップする
 
-When your app is done capturing, before disposing of the **MediaCapture** object, you should disable the face detection effect with [**FaceDetectionEffect.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn948818) and unregister your [**FaceDetected**](https://msdn.microsoft.com/library/windows/apps/dn948820) event handler if you previously registered one. Call [**MediaCapture.ClearEffectsAsync**](https://msdn.microsoft.com/library/windows/apps/br226592), specifying the video preview stream since that was the stream to which the effect was added. Finally, set your member variable to null.
+キャプチャが終了したら、**MediaCapture** オブジェクトを破棄する前に、[**FaceDetectionEffect.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn948818) で顔検出効果を無効にし、[**FaceDetected**](https://msdn.microsoft.com/library/windows/apps/dn948820) イベント ハンドラーを登録していた場合は登録を解除する必要があります。 効果が追加されたのはビデオ プレビュー ストリームであるため、ビデオ プレビュー ストリームを指定して [**MediaCapture.ClearEffectsAsync**](https://msdn.microsoft.com/library/windows/apps/br226592) を呼び出します。 最後に、メンバー変数を null に設定します。
 
 [!code-cs[CleanUpFaceDetectionEffectAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpFaceDetectionEffectAsync)]
 
-### Check for focus and exposure support for detected faces
+### 検出された顔に対するフォーカスや露出のサポートを確認する
 
-Not all devices have a capture device that can adjust its focus and exposure based on detected faces. Because face detection consumes device resources, you may only want to enable face detection on devices that can use the feature to enhance capture. To see if face-based capture optimization is available, get the [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) for your initialized [MediaCapture](capture-photos-and-video-with-mediacapture.md) and then get the video device controller's [**RegionsOfInterestControl**](https://msdn.microsoft.com/library/windows/apps/dn279064). Check to see if the [**MaxRegions**](https://msdn.microsoft.com/library/windows/apps/dn279069) supports at least one region. Then check to see if either [**AutoExposureSupported**](https://msdn.microsoft.com/library/windows/apps/dn279065) or [**AutoFocusSupported**](https://msdn.microsoft.com/library/windows/apps/dn279066) are true. If these conditions are met, then the device can take advantage of face detection to enhance capture.
+すべてのデバイスに、検出された顔に基づいてフォーカスや露出を調整できるキャプチャ デバイスが搭載されているとは限りません。 顔検出はデバイス リソースを消費するため、キャプチャを強化する機能を使用できるデバイスでのみ顔検出を有効にすることもできます。 顔に基づくキャプチャの最適化が利用可能かどうかを確認するには、初期化された [MediaCapture](capture-photos-and-video-with-mediacapture.md) に対する [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) を取得してから、ビデオ デバイス コントローラーの [**RegionsOfInterestControl**](https://msdn.microsoft.com/library/windows/apps/dn279064) を取得します。 [
+            **MaxRegions**](https://msdn.microsoft.com/library/windows/apps/dn279069) で少なくとも 1 つの領域がサポートされているかどうかを確認します。 次に、[**AutoExposureSupported**](https://msdn.microsoft.com/library/windows/apps/dn279065) または [**AutoFocusSupported**](https://msdn.microsoft.com/library/windows/apps/dn279066) のいずれかが true であるかどうかを確認します。 これらの条件が満たされている場合は、デバイスで顔検出を利用してキャプチャを強化できます。
 
 [!code-cs[AreFaceFocusAndExposureSupported](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetAreFaceFocusAndExposureSupported)]
 
-## Related topics
+## 関連トピック
 
-* [Capture photos and video with MediaCapture](capture-photos-and-video-with-mediacapture.md)
- 
+* [MediaCapture を使った写真とビデオのキャプチャ](capture-photos-and-video-with-mediacapture.md)
+ 
 
- 
+ 
 
 
+
+
+
+
+<!--HONumber=May16_HO2-->
 
 

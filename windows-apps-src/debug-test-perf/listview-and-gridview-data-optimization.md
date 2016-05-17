@@ -1,78 +1,90 @@
 ---
 author: mcleblanc
 ms.assetid: 3A477380-EAC5-44E7-8E0F-18346CC0C92F
-title: ListView and GridView data virtualization
-description: Improve ListView and GridView performance and startup time through data virtualization.
+title: ListView と GridView のデータ仮想化
+description: データ仮想化によって ListView と GridView のパフォーマンスと起動時間を向上させます。
 ---
-# ListView and GridView data virtualization
+# ListView と GridView のデータ仮想化
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-**Note**  For more details, see the //build/ session [Dramatically Increase Performance when Users Interact with Large Amounts of Data in GridView and ListView](https://channel9.msdn.com/Events/Build/2013/3-158).
+**注**  詳しくは、//build/ セッション「[Dramatically Increase Performance when Users Interact with Large Amounts of Data in GridView and ListView (ユーザーが GridView と ListView で大量のデータを操作するときのパフォーマンスを大幅に向上させる)](https://channel9.msdn.com/Events/Build/2013/3-158)」をご覧ください。
 
-Improve [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) and [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) performance and startup time through data virtualization. For UI virtualization, element reduction, and progressive updating of items, see [ListView and GridView UI optimization](optimize-gridview-and-listview.md).
+データ仮想化によって [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) と [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) のパフォーマンスと起動時間を向上させます。 UI の仮想化、要素の削減、項目の段階的な更新については、「[ListView と GridView の UI の最適化](optimize-gridview-and-listview.md)」をご覧ください
 
-A method of data virtualization is needed for a data set that is so large that it cannot or should not all be stored in memory at one time. You load an initial portion into memory (from local disk, network, or cloud) and apply UI virtualization to this partial data set. You can later load data incrementally, or from arbitrary points in the master data set (random access), on demand. Whether data virtualization is appropriate for you depends on many factors.
+データ仮想化のメソッドは、大きすぎてメモリに一度に格納できないか、すべてを格納する必要がないデータ セットで必要です。 最初の部分を (ローカル ディスク、ネットワーク、またはクラウドから) メモリに読み込んで、その部分的なデータ セットに UI の仮想化を適用します。 データは、後から段階的に読み込むことも、マスター データ セット内の任意の位置からオンデマンドで読み込むこともできます (ランダム アクセス)。 データ仮想化が適しているかどうかは、多数の要因によって決まります。
 
--   The size of your data set
--   The size of each item
--   The source of the data set (local disk, network, or cloud)
--   The overall memory consumption of your app
+-   データ セットのサイズ
+-   各項目のサイズ
+-   データ セットのソース (ローカル ディスク、ネットワーク、またはクラウド)
+-   アプリの総合的なメモリ消費量
 
-**Note**  Be aware that a feature is enabled by default for ListView and GridView that displays temporary placeholder visuals while the user is panning/scrolling quickly. As data is loaded, these placeholder visuals are replaced with your item template. You can turn the feature off by setting [**ListViewBase.ShowsScrollingPlaceholders**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) to false, but if you do so then we recommend that you use the x:Phase attribute to progressively render the elements in your item template. See [Update ListView and GridView items progressively](optimize-gridview-and-listview.md#update-items-incrementally).
+**注**  ListView と GridView では、ユーザーがパンやスクロールの操作をすばやく行った場合に一時的なプレースホルダーの視覚効果を表示する機能が既定で有効になることに注意してください。 これらのプレース ホルダーの視覚効果は、データが読み込まれると項目テンプレートに置き換えられます。 この機能は、[**ListViewBase.ShowsScrollingPlaceholders**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) を false に設定することによって無効にできますが、その場合は、x:Phase 属性を使って項目テンプレートの要素を段階的にレンダリングすることをお勧めします。 詳しくは、「[GridView と ListView の項目を段階的に更新する](optimize-gridview-and-listview.md#update-items-incrementally)」をご覧ください
 
-Here are more details about the incremental and random-access data virtualization techniques.
+以降では、段階的なデータ仮想化とランダム アクセスのデータ仮想化の手法について詳しく説明します。
 
-## Incremental data virtualization
+## 段階的なデータ仮想化
 
-Incremental data virtualization loads data sequentially. A [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) that uses incremental data virtualization may be used to view a collection of a million items, but only 50 items are loaded initially. As the user pans/scrolls, the next 50 are loaded. As items are loaded, the scroll bar's thumb decreases in size. For this type of data virtualization you write a data source class that implements these interfaces.
+段階的なデータ仮想化では、データを連続的にダウンロードします。 段階的なデータ仮想化を実行する [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) を使って、数百万の項目のコレクションを表示できますが、最初は 50 個の項目だけが読み込まれます。 ユーザーがパン/スクロールすると、次の 50 個の項目が読み込まれます。 項目が読み込まれると、スクロール バーのサムはサイズが小さくなります。 この種のデータ仮想化では、次のインターフェイスを実装するデータ ソース クラスを記述します。
 
 -   [**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ilist.aspx)
--   [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) (C#/VB) or [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) (C++/CX)
+-   [
+              **INotifyCollectionChanged**
+            ](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) (C#/VB) または [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) (C++/CX)
 -   [**ISupportIncrementalLoading**](https://msdn.microsoft.com/library/windows/apps/Hh701916)
 
-A data source like this is an in-memory list that can be continually extended. The items control will ask for items using the standard [**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ilist.aspx) indexer and count properties. The count should represent the number of items locally, not the true size of the dataset.
+このようなデータ ソースは、継続的に拡張できるメモリ内リストです。 項目コントロールは、標準的な [**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ilist.aspx) インデクサーとカウント プロパティを使って項目を要求します。 カウントは、データセットの実際のサイズではなく、ローカルでの項目の数を表す必要があります。
 
-When the items control gets close to the end of the existing data, it will call [**ISupportIncrementalLoading.HasMoreItems**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.isupportincrementalloading.hasmoreitems). If you return **true**, then it will call [**ISupportIncrementalLoading.LoadMoreItemsAsync**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.isupportincrementalloading.loadmoreitemsasync) passing an advised number of items to load. Depending on where you're loading data from (local disk, network, or cloud), you may choose to load a different number of items than that advised. For example, if your service supports batches of 50 items but the items control only asks for 10 then you can load 50. Load the data from your back end, add it to your list, and raise a change notification via [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) or [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) so that the items control knows about the new items. Also return a count of the items you actually loaded. If you load fewer items than advised, or the items control has been panned/scrolled even further in the interim, then your data source will be called again for more items and the cycle will continue. You can learn more by downloading the [XAML data binding sample](https://code.msdn.microsoft.com/windowsapps/Data-Binding-7b1d67b5) for Windows 8.1 and re-using its source code in your Windows 10 app.
+項目コントロールは、既存のデータの終わりに近づいたときに [**ISupportIncrementalLoading.HasMoreItems**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.isupportincrementalloading.hasmoreitems) を呼び出します。 **true** が返された場合は、アドバタイズされた読み込む項目数を渡す [**ISupportIncrementalLoading.LoadMoreItemsAsync**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.isupportincrementalloading.loadmoreitemsasync) を呼び出します。 データの読み込み元 (ローカル ディスク、ネットワーク、またはクラウド) に応じて、アドバタイズされた項目数とは異なる数の項目を読み込むことができます。 たとえば、サービスは 50 項目のバッチをサポートしているが、項目コントロールは 10 項目のみを要求している場合、50 項目を読み込むことができます。 バックエンドからデータを読み込んでリストに追加した後、[**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) または [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) 経由で変更通知を発行して、項目コントロールが新しい項目を認識できるようにします。 さらに、実際に読み込んだ項目の数を返します。 アドバタイズされた数よりも少ない項目を読み込むか、項目コントロールが途中でさらにパン/スクロールされた場合は、データ ソースをもう一度呼び出して、さらに項目を読み込むサイクルが続けられます。 詳しくは、Windows 8.1 の [XAML データ バインディングのサンプル](https://code.msdn.microsoft.com/windowsapps/Data-Binding-7b1d67b5)をダウンロードしてご覧ください。また、Windows 10 アプリでソース コードを再利用することもできます。
 
-## Random access data virtualization
+## ランダム アクセスのデータ仮想化
 
-Random access data virtualization allows loading from an arbitrary point in the data set. A [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) that uses random access data virtualization, used to view a collection of a million items, can load the items 100,000 – 100,050. If the user then moves to the beginning of the list, the control loads items 1 – 50. At all times, the scroll bar's thumb indicates that the **ListView** contains a million items. The position of the scroll bar's thumb is relative to where the visible items are located in the collection's entire data set. This type of data virtualization can significantly reduce the memory requirements and load times for the collection. To enable it you need to write a data source class that fetches data on demand and manages a local cache and implements these interfaces.
+ランダム アクセスのデータ仮想化を使うと、データ セット内の任意の位置からデータを読み込むことができます。 ランダム アクセスのデータ仮想化を実行する [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) を、100 万の項目があるコレクションを表示するために使うと、100,000 番目から 100,050 番目の項目を読み込むことができます。 ユーザーが一覧の先頭に移動すると、コントロールは 1 番目から 50 番目の項目を読み込みます。 スクロール バーのサムは、常に **ListView** に 100 万の項目が含まれていることを示します。 スクロール バーのサムの位置は、表示されている項目がコレクションのデータ セット全体で相対的にどこに位置しているかを示します。 この種のデータ仮想化は、必要なメモリを大幅に減らし、コレクションの読み込み時間を大きく短縮します。 これを有効にするには、データをオンデマンドで取得し、ローカル キャッシュを管理し、次のインターフェイスを実装するデータ ソース クラスを記述する必要があります。
 
 -   [**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ilist.aspx)
--   [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) (C#/VB) or [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) (C++/CX)
--   (Optionally) [**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070)
--   (Optionally) [**ISelectionInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877074)
+-   [
+              **INotifyCollectionChanged**
+            ](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) (C#/VB) または [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) (C++/CX)
+-   (必要に応じて) [**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070)
+-   (必要に応じて) [**ISelectionInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877074)
 
-[**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070) provides information on which items the control is actively using. The items control will call this method whenever its view is changing, and will include these two sets of ranges.
+[
+              **IItemsRangeInfo**
+            ](https://msdn.microsoft.com/library/windows/apps/Dn877070) は、コントロールが実際に使っている項目の情報を提供します。 項目コントロールはビューが変更されるたびにこのメソッドを呼び出し、その中には 次の 2 つの範囲のセットが含まれます。
 
--   The set of items that are in the viewport.
--   A set of non-virtualized items that the control is using that may not be in the viewport.
-    -   A buffer of items around the viewport that the items control keeps so that touch panning is smooth.
-    -   The focused item.
-    -   The first item.
+-   ビューポート内の項目のセット。
+-   項目コントロールが使う項目で、ビューポートに表示されない可能性がある、仮想化されていない項目のセット。
+    -   タッチ パンをスムーズに行えるようにするために項目コントロールが保持している、ビューポートの周囲の項目のバッファー。
+    -   フォーカスが置かれている項目。
+    -   先頭の項目。
 
-By implementing [**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070) your data source knows what items need to be fetched and cached, and when to prune from the cache data that is no longer needed. **IItemsRangeInfo** uses [**ItemIndexRange**](https://msdn.microsoft.com/library/windows/apps/Dn877081) objects to describe a set of items based on their index in the collection. This is so that it doesn't use item pointers, which may not be correct or stable. **IItemsRangeInfo** is designed to be used by only a single instance of an items control because it relies on state information for that items control. If multiple items controls need access to the same data then you will need a separate instance of the data source for each. They can share a common cache, but the logic to purge from the cache will be more complicated.
+[
+            **IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070) を実装することで、データ ソースは、どの項目をフェッチしてキャッシュする必要があり、不要になったキャッシュ データをいつ除去するかがわかります。 **IItemsRangeInfo** は、[**ItemIndexRange**](https://msdn.microsoft.com/library/windows/apps/Dn877081) オブジェクトを使って、コレクション内のインデックスに基づいてオブジェクトのセットを記述します。 これは、正しくないか安定していない可能性がある項目ポインターを使わないようにするためです。 **IItemsRangeInfo** は、項目コントロールの状態情報に頼っているため、項目コントロールの 1 つのインスタンスでのみ使われるように設計されています。 複数の項目コントロールが同じデータにアクセスする必要がある場合は、それぞれに対してデータ ソースの個別のインスタンスが必要です。 それらは共通のキャッシュを共有できますが、キャッシュから消去するためのロジックはもっと複雑です。
 
-Here's the basic strategy for your random access data virtualization data source.
+ランダム アクセスのデータ仮想化データ ソースのための基本的な戦略を次に示します。
 
--   When asked for an item
-    -   If you have it available in memory, then return it.
-    -   If you don’t have it, then return either null or a placeholder item.
-    -   Use the request for an item (or the range information from [**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070)) to know which items are needed, and to fetch data for items from your back end asynchronously. After retrieving the data, raise a change notification via [**INotifyCollectionChanged**]((https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) or [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) so that the items control knows about the new item.
--   (Optionally) as the items control's viewport changes, identify what items are needed from your data source via your implementation of [**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070).
+-   項目を要求されたとき
+    -   メモリ内の項目を利用できる場合はその項目を返します。
+    -   利用できない場合は、null またはプレースホルダー項目を返します。
+    -   項目に対する要求 (または [**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070) からの範囲要求) を使って、どの項目が必要であるかを調べ、バックエンドから項目のデータを非同期的に取得します。 データを取得した後、[**INotifyCollectionChanged**]((https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) または [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) 経由で変更通知を発行して、項目コントロールが新しい項目を認識できるようにします。
+-   (必要に応じて) 項目コントロールのビューポートが変更されるときに、[**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070) の実装を通してどの項目がデータ ソースから必要であるかを識別します
 
-Beyond that, the strategy for when to load data items, how many to load, and which items to keep in memory is up to your application. Some general considerations to keep in mind:
+その他のいつデータ項目を読み込むか、いくつ読み込むか、そしてどの項目をメモリに保持するかは、アプリケーションにまかされます。 いくつかの一般的な考慮事項を次に示します。
 
--   Make asynchronous requests for data; don't block the UI thread.
--   Find the sweet spot in the size of the batches you fetch items in. Prefer chunky to chatty. Not so small that you make too many small requests; not too large that they take too long to retrieve.
--   Consider how many requests you want to have pending at the same time. Performing one at a time is easier, but it may be too slow if turnaround time is high.
--   Can you cancel requests for data?
--   If using a hosted service, is there a cost per transaction?
--   What kind of notifications are provided by the service when the results of a query are changed? Will you know if an item is inserted at index 33? If your service supports queries based on a key-plus-offset, that may be better than just using an index.
--   How smart do you want to be in pre-fetching items? Are you going to try and track the direction and velocity of scrolling to predict which items are needed?
--   How aggressive do you want to be in purging the cache? This is a tradeoff of memory versus experience.
+-   データは非同期に要求します。UI スレッドをブロックしないでください。
+-   項目を取得するバッチのサイズのスイート スポットを探します。 ブロックで処理するようにします。 小さな要求を何度も繰り返すほど小さくなく、取得するまで時間がかかりすぎるほど大きくないサイズにします。
+-   同時に保留中にする要求の数を検討します。 簡単なのは一度に 1 つずつ実行することですが、完了までの時間がかかる場合は遅くなりすぎる可能性があります。
+-   データの要求を取り消すことができるかどうか。
+-   ホストされるサービスを使っている場合は、トランザクションごとにコストが発生するかどうか。
+-   クエリの結果が変更されるときにサービスによって提供される通知の種類は何か。 項目がンデックス 33 に挿入されたことがわかるか。 サービスがキーとオフセットに基づくクエリをサポートする場合は、インデックスだけを使うよりも適している可能性があります。
+-   項目のプリフェッチをいかにスマートに実行するか。 必要な項目を予測するためにスクロールの方向と速度を追跡する予定ですか。
+-   キャッシュの消去をどの程度積極的に行うか。 これはメモリとエクスペリエンスのトレードオフです。
 
 
+
+
+
+
+<!--HONumber=May16_HO2-->
 
 

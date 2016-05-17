@@ -1,16 +1,16 @@
 ---
 author: mtoepke
-title: Moving from DirectX 9 to DirectX 11 and Universal Windows Platform (UWP)
-description: This section has guidance on porting your DirectX 9 desktop game to DirectX 11 and Universal Windows Platform (UWP).
+title: DirectX 9 から DirectX 11 とユニバーサル Windows プラットフォーム (UWP) への移行
+description: このセクションでは、DirectX 9 のデスクトップ ゲームを DirectX 11 とユニバーサル Windows プラットフォーム (UWP) に移植する方法について説明します。
 ms.assetid: 7a3f8ddf-d5b2-1c05-b532-70459befda4e
 ---
 
-# Moving from DirectX 9 to DirectX 11 and Universal Windows Platform (UWP)
+# DirectX 9 から DirectX 11 とユニバーサル Windows プラットフォーム (UWP) への移行
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-This section has guidance on porting your DirectX 9 desktop game to DirectX 11 and Universal Windows Platform (UWP).
+このセクションでは、DirectX 9 のデスクトップ ゲームを DirectX 11 とユニバーサル Windows プラットフォーム (UWP) に移植する方法について説明します。
 
 <table>
 <colgroup>
@@ -19,32 +19,37 @@ This section has guidance on porting your DirectX 9 desktop game to DirectX 11 a
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Topic</th>
-<th align="left">Description</th>
+<th align="left">トピック</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Plan your DirectX port](plan-your-directx-port.md)</p></td>
-<td align="left"><p>Plan your game porting project from DirectX 9 to DirectX 11 and UWP: upgrade your graphics code, and put your game in the Windows Runtime environment.</p></td>
+<td align="left"><p>[DirectX の移植の計画](plan-your-directx-port.md)</p></td>
+<td align="left"><p>DirectX 9 から DirectX 11 と UWP へ、ゲーム移植プロジェクトを計画しましょう。グラフィックス コードをアップグレードして、ゲームを Windows ランタイム環境に置くことが必要になります。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Important changes from Direct3D 9 to Direct3D 11.1](understand-direct3d-11-1-concepts.md)</p></td>
-<td align="left"><p>This topic explains the high-level differences between DirectX 9 and DirectX 11.</p></td>
+<td align="left"><p>[Direct3D 9 と Direct3D 11.1 の間の重要な変更点](understand-direct3d-11-1-concepts.md)</p></td>
+<td align="left"><p>このトピックでは、DirectX 9 と DirectX 11 の大まかな違いについて説明します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Map DirectX 9 features to DirectX 11.1 APIs](feature-mapping.md)</p></td>
-<td align="left"><p>Understand how the features your Direct3D 9 game uses will translate to Direct3D 11 and the UWP.</p></td>
+<td align="left"><p>[DirectX 11.1 API への DirectX 9 の機能のマッピング](feature-mapping.md)</p></td>
+<td align="left"><p>Direct3D 9 ゲームで使う機能が Direct3D 11 と UWP にどのように変換されるかについて説明します。</p></td>
 </tr>
 </tbody>
 </table>
 
- 
+ 
 
- 
+ 
 
- 
+ 
 
 
+
+
+
+
+<!--HONumber=May16_HO2-->
 
 

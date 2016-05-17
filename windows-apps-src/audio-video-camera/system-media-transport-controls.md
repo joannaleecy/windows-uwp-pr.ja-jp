@@ -1,123 +1,140 @@
 ---
 author: drewbatgit
 ms.assetid: EFCF84D0-2F4C-454D-97DA-249E9EAA806C
-description: The SystemMediaTransportControls class enables your app to use the system media transport controls that are built into Windows and to update the metadata that the controls display about the media your app is currently playing.
-title: System Media Transport Controls
+description: SystemMediaTransportControls クラスを使うと、Windows に組み込まれているシステム メディア トランスポート コントロールをアプリで使って、現在アプリで再生中のメディアに関してコントロールに表示されるメタデータを更新できるようになります。
+title: システム メディア トランスポート コントロール
 ---
 
-# System Media Transport Controls
+# システム メディア トランスポート コントロール
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-The [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) class enables your app to use the system media transport controls that are built into Windows and to update the metadata that the controls display about the media your app is currently playing.
+[
+            **SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) クラスを使うと、Windows に組み込まれているシステム メディア トランスポート コントロールをアプリで使って、現在アプリで再生中のメディアに関してコントロールに表示されるメタデータを更新できるようになります。
 
-The system transport controls are different than the transport controls on the [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) object. The system transport controls are the controls that pop up when hardware media keys are pressed, such as the volume control on a pair of headphones or the media buttons on keyboards. If the user presses the pause key on a keyboard and your app supports the [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677), your app is notified and you can take the appropriate action.
+システム トランスポート コントロールは、[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) オブジェクトのトランスポート コントロールとは異なります。 システム トランスポート コントロールは、ヘッドホンのボリューム コントロールやキーボードのメディア ボタンなどのハードウェア メディア キーを押すとポップアップするコントロールです。 ユーザーがキーボードの一時停止キーを押し、アプリが [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) をサポートしている場合、アプリは通知を受け取り、ユーザーは適切なアクションを実行できます。
 
-Your app can also update the media info, such as the song title and thumbnail image that the [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) displays.
+アプリでは、[**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) に表示される曲のタイトル、サムネイル画像などのメディア情報も更新できます。
 
-**Note**  
-The [System Media Transport Controls UWP sample](http://go.microsoft.com/fwlink/?LinkId=619488) implements the code discussed in this overview. You can download the sample to see the code in context or to use as a starting point for your own app.
+**注**  
+[システム メディア トランスポート コントロール UWP サンプル](http://go.microsoft.com/fwlink/?LinkId=619488)は、この概要で説明するコードを実装します。 サンプルをダウンロードすると、コンテキスト内のコードを確認できます。独自のアプリの出発点として使うこともできます。
 
-## Set up transport controls
+## トランスポート コントロールをセットアップする
 
-In the page's XAML file, define a [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) that will be controlled by the system media transport controls. The [**CurrentStateChanged**](https://msdn.microsoft.com/library/windows/apps/br227375) and [**MediaOpened**](https://msdn.microsoft.com/library/windows/apps/br227394) events are used to update the system media transport controls and will be discussed later in this article.
+ページの XAML ファイルで、システム メディア トランスポート コントロールによって制御する [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) を定義します。 [
+            **CurrentStateChanged**](https://msdn.microsoft.com/library/windows/apps/br227375) イベントと [**MediaOpened**](https://msdn.microsoft.com/library/windows/apps/br227394) イベントは、システム メディア トランスポート コントロールを更新するために使われ、この記事の後半で説明します。
 
 [!code-xml[MediaElementSystemMediaTransportControls](./code/SMTCWin10/cs/MainPage.xaml#SnippetMediaElementSystemMediaTransportControls)]
 
-Add a button to the XAML file that allows the user to select a file to play.
+再生するファイルをユーザーが選ぶことができるようにするボタンを XAML ファイルに追加します。
 
 [!code-xml[OpenButton](./code/SMTCWin10/cs/MainPage.xaml#SnippetOpenButton)]
 
-In your code behind page, add using directives for the following namespaces.
+分離コード ページで、次の名前空間の using ディレクティブを追加します。
 
-[!code-cs[Namespace](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetNamespace)]
+[!code-cs[名前空間](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetNamespace)]
 
-Add a button click handler that uses a [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) to allow the user to select a file, then call [**SetSource**](https://msdn.microsoft.com/library/windows/apps/br244338) to make it the active file for the **MediaElement**.
+ユーザーがファイルを選ぶことができるように、[**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) を使ったボタン クリック ハンドラーを追加します。次に、ファイルを **MediaElement** のアクティブ ファイルにするために、[**SetSource**](https://msdn.microsoft.com/library/windows/apps/br244338) を呼び出します。
 
 [!code-cs[OpenMediaFile](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetOpenMediaFile)]
 
-Get an instance of the [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) by calling [**GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/dn278708).
+[
+            **GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/dn278708) を呼び出して、[**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) のインスタンスを取得します。
 
-Enable the buttons that your app will use by setting the corresponding "is enabled" property of the **SystemMediaTransportControls** object, such as [**IsPlayEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278714), [**IsPauseEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278713), [**IsNextEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278712), and [**IsPreviousEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278715). See the **SystemMediaTransportControls** reference documentation for a complete list of available controls.
+**SystemMediaTransportControls** オブジェクトの対応する "is enabled" プロパティ ([**IsPlayEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278714)、[**IsPauseEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278713)、[**IsNextEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278712)、[**IsPreviousEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278715) など) を設定することで、アプリで使うボタンを有効にします。 利用可能なすべてのコントロールの一覧については、**SystemMediaTransportControls** のリファレンス ドキュメントをご覧ください。
 
-Register a handler for the [**ButtonPressed**](https://msdn.microsoft.com/library/windows/apps/dn278706) event to receive notifications when the user presses a button.
+ユーザーがボタンを押したときに通知を受信するために、[**ButtonPressed**](https://msdn.microsoft.com/library/windows/apps/dn278706) イベントのハンドラーを登録します。
 
 [!code-cs[SystemMediaTransportControlsSetup](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetSystemMediaTransportControlsSetup)]
 
-## Handle system media transport controls button presses
+## システム メディア トランスポート コントロールの押されたボタンを処理する
 
-The [**ButtonPressed**](https://msdn.microsoft.com/library/windows/apps/dn278706) event is raised by the system transport controls when one of the enabled buttons is pressed. The [**Button**](https://msdn.microsoft.com/library/windows/apps/dn278685) property of the [**SystemMediaTransportControlsButtonPressedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn278683) passed into the event handler is a member of the [**SystemMediaTransportControlsButton**](https://msdn.microsoft.com/library/windows/apps/dn278681) enumeration that indicates which of the enabled buttons was pressed.
+[
+            **ButtonPressed**](https://msdn.microsoft.com/library/windows/apps/dn278706) イベントは、有効なボタンの 1 つが押されたときにシステム トランスポート コントロールで発生します。 イベント ハンドラーに渡される [**SystemMediaTransportControlsButtonPressedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn278683) の [**Button**](https://msdn.microsoft.com/library/windows/apps/dn278685) プロパティは、有効なボタンのうちどれが押されたかを示す [**SystemMediaTransportControlsButton**](https://msdn.microsoft.com/library/windows/apps/dn278681) 列挙体のメンバーです。
 
-In order to update objects on the UI thread from the [**ButtonPressed**](https://msdn.microsoft.com/library/windows/apps/dn278706) event handler, such as a [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) object, you must marshal the calls through the [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211). This is because the **ButtonPressed** event handler is not called from the UI thread and therefore an exception will be thrown if you attempt to modify the UI directly.
+[
+            **ButtonPressed**](https://msdn.microsoft.com/library/windows/apps/dn278706) イベント ハンドラーから UI スレッド上のオブジェクト ([**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) オブジェクトなど) を更新するには、[**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) を介して呼び出しをマーシャリングする必要があります。 これは、**ButtonPressed** イベント ハンドラーが UI スレッドから呼び出されず、UI を直接変更しようとすると例外が発生するためです。
 
 [!code-cs[SystemMediaTransportControlsButtonPressed](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetSystemMediaTransportControlsButtonPressed)]
 
-## Update the system media transport controls with the current media status
+## 現在のメディアの状態でシステム メディア トランスポート コントロールを更新する
 
-You should notify the [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) when the state of the media has changed so that the system can update the controls to reflect the current state. To do this, set the [**PlaybackStatus**](https://msdn.microsoft.com/library/windows/apps/dn278719) property to the appropriate [**MediaPlaybackStatus**](https://msdn.microsoft.com/library/windows/apps/dn278665) value from within the [**CurrentStateChanged**](https://msdn.microsoft.com/library/windows/apps/br227375) event of the [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926), which is raised when the media state changes.
+システムで現在の状態を反映してコントロールを更新できるように、メディアの状態が変更されたときには、それを [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) に通知する必要があります。 そのためには、メディアの状態が変更されたときに発生する [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) の [**CurrentStateChanged**](https://msdn.microsoft.com/library/windows/apps/br227375) イベント内から、[**PlaybackStatus**](https://msdn.microsoft.com/library/windows/apps/dn278719) プロパティを適切な [**MediaPlaybackStatus**](https://msdn.microsoft.com/library/windows/apps/dn278665) 値に設定します。
 
 [!code-cs[SystemMediaTransportControlsStateChange](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetSystemMediaTransportControlsStateChange)]
 
-## Update the system media transport controls with media info and thumbnails
+## メディアの情報と縮小表示でシステム メディア トランスポート コントロールを更新する
 
-Use the [**SystemMediaTransportControlsDisplayUpdater**](https://msdn.microsoft.com/library/windows/apps/dn278686) class to update the media info that is displayed by the transport controls, such as the song title or the album art for the currently playing media item. Get an instance of this class with the [**SystemMediaTransportControls.DisplayUpdater**](https://msdn.microsoft.com/library/windows/apps/dn278707) property. For typical scenarios, the recommended way to pass the metadata is to call [**CopyFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn278694), passing in the currently playing media file. The display updater will automatically extract the metadata and thumbnail image from the file.
+[
+            **SystemMediaTransportControlsDisplayUpdater**](https://msdn.microsoft.com/library/windows/apps/dn278686) クラスを使って、現在再生されているメディア項目の曲のタイトルやアルバム アートなど、トランスポート コントロールに表示されるメディア情報を更新します。 [
+            **SystemMediaTransportControls.DisplayUpdater**](https://msdn.microsoft.com/library/windows/apps/dn278707) プロパティを使って、このクラスのインスタンスを取得します。 一般的なシナリオの場合、メタデータを渡すための推奨される方法は、現在再生中のメディア ファイルを渡して [**CopyFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn278694) を呼び出すことです。 表示アップデーターによって、ファイルからメタデータと縮小表示画像が自動的に抽出されます。
 
-Call the [**Update**](https://msdn.microsoft.com/library/windows/apps/dn278701) to cause the system media transport controls to update its UI with the new metadata and thumbnail.
+[
+            **Update**](https://msdn.microsoft.com/library/windows/apps/dn278701) を呼び出すことで、システム メディア トランスポート コントロールの UI が新しいメタデータと縮小表示によって更新されます。
 
 [!code-cs[SystemMediaTransportControlsUpdater](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetSystemMediaTransportControlsUpdater)]
 
-If your scenario requires it, you can update the metadata displayed by the system media transport controls manually by setting the values of the [**MusicProperties**](https://msdn.microsoft.com/library/windows/apps/dn278696), [**ImageProperties**](https://msdn.microsoft.com/library/windows/apps/dn278695), or [**VideoProperties**](https://msdn.microsoft.com/library/windows/apps/dn278702) objects exposed by the [**DisplayUpdater**](https://msdn.microsoft.com/library/windows/apps/dn278707) class.
+必要に応じて、[**DisplayUpdater**](https://msdn.microsoft.com/library/windows/apps/dn278707) クラスによって公開される [**MusicProperties**](https://msdn.microsoft.com/library/windows/apps/dn278696)、[**ImageProperties**](https://msdn.microsoft.com/library/windows/apps/dn278695)、または [**VideoProperties**](https://msdn.microsoft.com/library/windows/apps/dn278702) オブジェクトの値を設定することにより、システム メディア トランスポート コントロールに表示されるメタデータを手動で更新できます。
 
 [!code-cs[SystemMediaTransportControlsUpdaterManual](./code/SMTCWin10/cs/MainPage.xaml.cs#SystemMediaTransportControlsUpdaterManual)]
 
-## Update the system media transport controls timeline properties
+## システム メディア トランスポート コントロールのタイムライン プロパティを更新する
 
-The system transport controls display information about the timeline of the currently playing media item, including the current playback position, the start time, and the end time of the media item. To update the system transport controls timeline properties, create a new [**SystemMediaTransportControlsTimelineProperties**](https://msdn.microsoft.com/library/windows/apps/mt218746) object. Set the properties of the object to reflect the current state of the playing media item. Call [**SystemMediaTransportControls.UpdateTimelineProperties**](https://msdn.microsoft.com/library/windows/apps/mt218760) to cause the controls to update the timeline.
+システム トランスポート コントロールには、メディア項目の現在の再生位置、開始時刻、終了時刻など、現在再生中のメディア項目のタイムラインに関する情報が表示されます。 システム メディア トランスポート コントロールのタイムライン プロパティを更新するには、新しい [**SystemMediaTransportControlsTimelineProperties**](https://msdn.microsoft.com/library/windows/apps/mt218746) オブジェクトを作成します。 再生中のメディア項目の現在の状態を反映するように、オブジェクトのプロパティを設定します。 [
+            **SystemMediaTransportControls.UpdateTimelineProperties**](https://msdn.microsoft.com/library/windows/apps/mt218760) を呼び出して、コントロールのタイムラインを更新します。
 
 [!code-cs[UpdateTimelineProperties](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetUpdateTimelineProperties)]
 
--   You must provide a value for the [**StartTime**](https://msdn.microsoft.com/library/windows/apps/mt218751), [**EndTime**](https://msdn.microsoft.com/library/windows/apps/mt218747) and [**Position**](https://msdn.microsoft.com/library/windows/apps/mt218755) in order for the system controls to display a timeline for your playing item.
+-   再生中の項目のタイムラインをシステム コントロールに表示するには、[**StartTime**](https://msdn.microsoft.com/library/windows/apps/mt218751)、[**EndTime**](https://msdn.microsoft.com/library/windows/apps/mt218747)、および [**Position**](https://msdn.microsoft.com/library/windows/apps/mt218755) の値を指定する必要があります。
 
--   [**MinSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218749) and [**MaxSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218748) allow you to specify the range within the timeline that the user can seek. A typical scenario for this is to allow content providers to include advertisement breaks in their media.
+-   [
+              **MinSeekTime**
+            ](https://msdn.microsoft.com/library/windows/apps/mt218749) と [**MaxSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218748) を使うと、ユーザーがシークできるタイムライン内の範囲を指定できます。 一般的なシナリオとしては、コンテンツ プロバイダーがメディアに広告を含める場合などがあります。
 
-    You must set [**MinSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218749) and [**MaxSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218748) in order for the [**PositionChangeRequest**](https://msdn.microsoft.com/library/windows/apps/mt218755) to be raised.
+    [
+            **PositionChangeRequest**](https://msdn.microsoft.com/library/windows/apps/mt218755) を発生させるには、[**MinSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218749) と [**MaxSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218748) を設定する必要があります。
 
--   It is recommended that you keep the system controls in sync with your media playback by updating these properties approximately every 5 seconds during playback and again whenever the state of playback changes, such as pausing or seeking to a new position.
+-   システム コントロールは、メディアの再生と同期させておくことをお勧めします。そのためには、再生中にこれらのプロパティを約 5 秒ごとに更新し、一時停止や新しい位置へのシークなど、再生に変更が加えられたときには、再度更新します。
 
-## Respond to player property changes
+## プレーヤーのプロパティの変更に応答する
 
-There is a set of system transport controls properties that relate to the current state of the media player itself, rather than the state of the playing media item. Each of these properties is matched with an event that is raised when the user adjusts the associated control. These properties and events include:
+再生中のメディア項目の状態ではなく、メディア プレーヤー自体の現在の状態に関連した、一連のシステム トランスポート コントロール プロパティがあります。 これらの各プロパティは、ユーザーが関連するコントロールを調整したときに発生するイベントと対応しています。 これらのプロパティとイベントを次に示します。
 
-| Property                                                                  | Event                                                                                                   |
+| プロパティ                                                                  | イベント                                                                                                   |
 |---------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
 | [**AutoRepeatMode**](https://msdn.microsoft.com/library/windows/apps/mt218753) | [**AutoRepeatModeChangeRequested**](https://msdn.microsoft.com/library/windows/apps/mt218754) |
 | [**PlaybackRate**](https://msdn.microsoft.com/library/windows/apps/mt218756)     | [**PlaybackRateChangeRequested**](https://msdn.microsoft.com/library/windows/apps/mt218757)     |
 | [**ShuffleEnabled**](https://msdn.microsoft.com/library/windows/apps/mt218758) | [**ShuffleEnabledChangeRequested**](https://msdn.microsoft.com/library/windows/apps/mt218759) |
 
- 
-To handle user interaction with one of these controls, first register a handler for the associated event.
+ 
+これらのコントロールの 1 つに対するユーザーの操作を処理するには、最初に、関連付けられているイベントのハンドラーを登録します。
 
 [!code-cs[RegisterPlaybackChangedHandler](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetRegisterPlaybackChangedHandler)]
 
-In the handler for the event, first make sure that the requested value is within a valid and expected range. If it is, set the corresponding property on [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) and then set the corresponding property on the [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) object.
+まず、イベントのハンドラーで、要求された値が有効な予想される範囲内にあることを確認します。 範囲内の場合は、[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) の対応するプロパティを設定してから、[**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) オブジェクトの対応するプロパティを設定します。
 
 [!code-cs[PlaybackChangedHandler](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetPlaybackChangedHandler)]
 
--   In order for one of these player property events to be raised, you must set an initial value for the property. For example, [**PlaybackRateChangeRequested**](https://msdn.microsoft.com/library/windows/apps/mt218757) will not be raised until after you have set a value for the [**PlaybackRate**](https://msdn.microsoft.com/library/windows/apps/mt218756) property at least one time.
+-   これらのプレーヤー プロパティ イベントの 1 つが発生するためには、プロパティの初期値を設定する必要があります。 たとえば、[**PlaybackRateChangeRequested**](https://msdn.microsoft.com/library/windows/apps/mt218757) は、[**PlaybackRate**](https://msdn.microsoft.com/library/windows/apps/mt218756) プロパティの値を少なくとも 1 回設定するまでは発生しません。
 
-## Use the system media transport controls for background audio
+## バックグラウンド オーディオに対してシステム メディア トランスポート コントロールを使う
 
-To use the system media transport controls for background audio, you must enable the play and pause buttons by setting [**IsPlayEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278714) and [**IsPauseEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278713) to true. Your app must also handle the [**ButtonPressed**](https://msdn.microsoft.com/library/windows/apps/dn278706) event.
+バックグラウンド オーディオに対してシステム メディア トランスポート コントロールを使うには、[**IsPlayEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278714) と [**IsPauseEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278713) を true に設定して、再生ボタンと一時停止ボタンを有効にする必要があります。 アプリは、[**ButtonPressed**](https://msdn.microsoft.com/library/windows/apps/dn278706) イベントも処理する必要があります。
 
-To get an instance of [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) from within your app's background task, you must use [**BackgroundMediaPlayer.Current.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn926635) instead of [**GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/dn278708), which can only be used from within your foreground app.
+アプリのバック グラウンド タスク内から [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) のインスタンスを取得するには、フォアグラウンド アプリからしか使えない [**GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/dn278708) の代わりに、[**BackgroundMediaPlayer.Current.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn926635) を使う必要があります。
 
-For more information on playing audio in the background, see [Background audio](background-audio.md).
+バックグラウンドでのオーディオ再生について詳しくは、「[バックグラウンド オーディオ](background-audio.md)」をご覧ください。
 
- 
+ 
 
- 
+ 
 
 
+
+
+
+
+<!--HONumber=May16_HO2-->
 
 

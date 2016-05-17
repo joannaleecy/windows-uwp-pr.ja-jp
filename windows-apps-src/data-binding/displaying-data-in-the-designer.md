@@ -1,23 +1,23 @@
 ---
 author: mcleblanc
 ms.assetid: 089660A2-7CAE-4911-9994-F619C5D22287
-title: Sample data on the design surface, and for prototyping
-description: It may be impossible or undesirable (perhaps for reasons of privacy or performance) for your app to display live data on the design surface in Microsoft Visual Studio or Blend for Visual Studio.
+title: デザイン サーフェイス上のサンプル データとプロトタイプを作るためのサンプル データ
+description: アプリで Microsoft Visual Studio や Blend for Visual Studio のデザイン サーフェイスにライブ データを表示できない場合や、プライバシーやパフォーマンスなどの理由で表示するのが望ましくない場合があります。
 ---
-Sample data on the design surface, and for prototyping
+デザイン サーフェイス上のサンプル データとプロトタイプを作るためのサンプル データ
 =============================================================================================
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-**Note**  The degree to which you need sample data—and how much it will help you—depends on whether your bindings use the [{Binding} markup extension](https://msdn.microsoft.com/library/windows/apps/Mt204782) or the [{x:Bind} markup extension](https://msdn.microsoft.com/library/windows/apps/Mt204783). The techniques described in this topic are based on the use of a [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713), so they're only appropriate for **{Binding}**. But if you're using **{x:Bind}** then your bindings at least show placeholder values on the design surface (even for items controls), so you don't have quite the same need for sample data.
+**注**  サンプル データの必要性 (および有用性) は、バインドで [{Binding} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204782)と [{x:Bind} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204783)のどちらを使うかによって決まります。 ここで説明する手法は [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) の使用に基づいているため、この手法が適しているのは **{Binding}** のみですが、 **{x:Bind}** を使う場合は、バインドで少なくともプレースホルダー値がデザイン サーフェイスに表示されるため (項目コントロールの場合でも)、サンプル データの必要性は比較的低くなります。
 
-It may be impossible or undesirable (perhaps for reasons of privacy or performance) for your app to display live data on the design surface in Microsoft Visual Studio or Blend for Visual Studio. In order to have your controls populated with data (so that you can work on your app's layout, templates, and other visual properties), there are various ways in which you can use design-time sample data. Sample data can also be really useful and time-saving if you're building a sketch (or prototype) app. You can use sample data in your sketch or prototype at run-time to illustrate your ideas without going as far as connecting to real, live data.
+アプリで Microsoft Visual Studio や Blend for Visual Studio のデザイン サーフェイスにライブ データを表示できない場合や、プライバシーやパフォーマンスなどの理由で表示するのが望ましくない場合に、 アプリのレイアウト、テンプレート、その他の視覚的なプロパティを操作するためにコントロールにデータを設定するには、さまざまな方法で設計時のサンプル データを使うことができます。 サンプル データは、スケッチ (プロトタイプ) アプリを開発する場合にも便利で、時間の節約になります。 スケッチやプロトタイプで実行時にサンプル データを使うと、実際のライブ データに接続しなくてもアイデアを実証できます。
 
-Setting DataContext in markup
+マークアップでの DataContext の設定
 -----------------------------
 
-It's a fairly common developer practice to use imperative code (in code-behind) to set a page or user control's [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) to a view model instance.
+命令型コードを (分離コードで) 使ってページやユーザー コントロールの [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) をビュー モデル インスタンスに設定するのはごく一般的な開発手法です。
 
 ``` csharp
 public MainPage()
@@ -27,15 +27,15 @@ public MainPage()
 }
 ```
 
-But if you do that then your page isn't as "designable" as it could be. The reason is that when your XAML page is opened in Visual Studio or Blend for Visual Studio, the imperative code that assigns the **DataContext** value is never run (in fact, none of your code-behind is executed). The XAML tools do of course parse your markup and instantiate any objects declared in it, but they don't actually instantiate your page's type itself. The result is that you won't see any data in your controls or in the **Create Data Binding** dialog, and your page will be more challenging to style and to lay out.
+しかし、この方法を使うとページの "デザイン性" が低下します。 これは、XAML ページを Visual Studio や Blend for Visual Studio で開いても、**DataContext** の値を割り当てる命令型コードは実行されないからです (分離コードは一切実行されません)。 もちろん、XAML ツールによってマークアップが解析され、宣言されているオブジェクトがインスタンス化されますが、ページの型そのものはインスタンス化されません。 その結果、コントロールや **[データ バインディングの作成]** ダイアログにデータが表示されず、ページのスタイルやレイアウトの設定が困難になります。
 
-![Sparse design UI.](images/displaying-data-in-the-designer-01.png)
+![デザイン性の乏しい UI。](images/displaying-data-in-the-designer-01.png)
 
-The first remedy to try is to comment out that **DataContext** assignment and set the **DataContext** in your page markup instead. That way, your live data shows up at design-time as well as at run-time. To do this, first open your XAML page. Then, in the **Document Outline** window, click the root designable element (usually with the label **\[Page\]**) to select it. In the **Properties** window, find the **DataContext** property (inside the Common category), and then click **New**. Click your view model type from the **Select Object** dialog box, and then click **OK**.
+この問題を解決するための最初の方法では、その **DataContext** の割り当てをコメント アウトして、代わりにページのマークアップで **DataContext** を設定します。 これにより、実行時だけでなく設計時にもライブ データが表示されるようになります。 これを行うには、まず、XAML ページを開きます。 次に、**[ドキュメント アウトライン]** ウィンドウでルート デザイン要素 (通常は **\[Page\]** というラベルが付いています) をクリックして選択します。 **[プロパティ]** ウィンドウで **[DataContext]** プロパティを見つけて ([共通] カテゴリにあります)、**[新規]** をクリックします。 **[オブジェクトの選択]** ダイアログ ボックスで目的のビュー モデルの種類をクリックし、**[OK]** をクリックします
 
-![UI for setting DataContext.](images/displaying-data-in-the-designer-02.png)
+![DataContext を設定するための UI。](images/displaying-data-in-the-designer-02.png)
 
-Here's what the resulting markup looks like.
+結果のマークアップは次のようになります。
 
 ``` xaml
 <Page ... >
@@ -44,11 +44,11 @@ Here's what the resulting markup looks like.
     </Page.DataContext>
 ```
 
-And here’s what the design surface looks like now that your bindings can resolve. Notice that the **Path** picker in the **Create Data Binding** dialog is now populated, based on the **DataContext** type and the properties that you can bind to.
+これでバインドが解決されるようになったため、デザイン サーフェイスが次のようになります。 **[データ バインディングの作成]** ダイアログの **[パス]** ボックスに値が設定されています。これらは、**DataContext** 型と、バインドできるプロパティに基づいています。
 
-![Designable UI.](images/displaying-data-in-the-designer-03.png)
+![デザイン性の高い UI。](images/displaying-data-in-the-designer-03.png)
 
-The **Create Data Binding** dialog only needs a type to work from, but the bindings need the properties to be initialized with values. If you don't want to reach out to your cloud service at design-time (due to performance, paying for data transfer, privacy issues, that kind of thing) then your initialization code can check to see whether your app is running in a design tool (such as Visual Studio or Blend for Visual Studio) and in that case load sample data for use at design-time only.
+**[データ バインディングの作成]** ダイアログに必要なのは基になる型だけですが、バインドではプロパティの値を初期化する必要があります。 パフォーマンス、データ転送費用、プライバシーなどの問題で設計時にクラウド サービスにアクセスしたくない場合は、アプリがデザイン ツール (Visual Studio、Blend for Visual Studio など) で実行されているかを初期化コードでチェックして、実行されている場合は設計時専用のサンプル データを読み込みます。
 
 ``` csharp
 if (Windows.ApplicationModel.DesignMode.DesignModeEnabled)
@@ -61,14 +61,14 @@ else
 }
 ```
 
-You could use a view model locator if you need to pass parameters to your initialization code. A view model locator is a class that you can put into app resources. It has a property that exposes the view model, and your page's **DataContext** binds to that property. Another pattern that the locator or the view model can use is dependency injection, which can construct a design-time or a run-time data provider (each of which implements a common interface), as applicable.
+初期化コードにパラメーターを渡す必要がある場合は、ビュー モデル ロケーターを使うことができます。 ビュー モデル ロケーターとは、アプリ リソースに配置することができるクラスです。 このクラスにはビュー モデルを公開するプロパティがあるので、そのプロパティにページの **DataContext** をバインドします。 ロケーターやビュー モデルで使うことができるもう 1 つのパターンは依存関係挿入です。依存関係挿入では、設計時または実行時のデータ プロバイダーを必要に応じて作成できます (それぞれ共通のインターフェイスを実装します)。
 
-"Sample data from class", and design-time attributes
+"クラスからのサンプル データ" と設計時属性
 ---------------------------------------------------------------------------------------
 
-If for whatever reason none of the options in the previous section work for you then you still have plenty of design-time data options available via XAML tools features and design-time attributes. One good option is the **Create Sample Data from Class** feature in Blend for Visual Studio. You can find that command on one of the buttons at the top of the **Data** panel.
+なんらかの理由で前のセクションのいずれの方法でも問題を解決できない場合でも、XAML ツールの機能と設計時属性を使ってさまざまな方法で設計時のデータを利用できます。 その 1 つが、Blend for Visual Studio の **[クラスからのサンプル データの作成]** 機能です。 このコマンドのボタンは **[データ]** パネルの上部にあります。
 
-All you need to do is to specify a class for the command to use. The command then does two important things for you. First, it generates a XAML file that contains sample data suitable for hydrating an instance of your chosen class and all of its members, recursively (in fact, the tooling works equally well with XAML or JSON files). Second, it populates the **Data** panel with the schema of your chosen class. You can then drag members from the **Data** panel onto the design surface to perform various tasks. Depending on what you drag and where you drop it, you can add bindings to existing controls (using **{Binding}**), or create new controls and bind them at the same time. In either case, the operation also sets a design-time data context (**d:DataContext**) for you (if one is not already set) on the layout root of your page. That design-time data context uses the **d:DesignData** attribute to get its sample data from the XAML file that was generated (which, by the way, you are free to find in your project and edit so that it contains the sample data you want).
+必要な作業は、このコマンドで使うクラスを指定することだけです。 クラスを指定すると、重要なことが 2 つ行われます。 まず、選んだクラスのインスタンスとそのすべてのメンバーを再帰的にハイドレートするために適したサンプル データを含む XAML ファイルが生成されます (このツールは、XAML ファイルでも JSON ファイルでも適切に機能します)。 次に、選んだクラスのスキーマが **[データ]** パネルに設定されます。 これにより、**[データ]** パネルからデザイン サーフェイスにメンバーをドラッグしてさまざまなタスクを実行できるようになります。 何をどこにドラッグするかによって、既にあるコントロールにバインドを追加することも (**{Binding}** を使用)、新しいコントロールの作成とバインドを同時に行うこともできます。 どちらの場合も、ページのレイアウト ルートに設計時のデータ コンテキスト (**d:DataContext**) も設定されます (まだ設定されていない場合)。 その設計時のデータ コンテキストが、**d:DesignData** 属性を使って、生成された XAML ファイルからサンプル データを取得します (なお、その XAML ファイルをプロジェクト内で見つけて、必要なサンプル データを含むように編集することもできます)。
 
 ``` xaml
 <Page ...
@@ -82,11 +82,13 @@ All you need to do is to specify a class for the command to use. The command the
 </Page>
 ```
 
-The various xmlns declarations mean that attributes with the **d:** prefix are interpreted only at design-time and are ignored at run-time. So the **d:DataContext** attribute only affects the value of the [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) property at design-time; it has no effect at run-time. You can even set both **d:DataContext** and **DataContext** in markup if you like. **d:DataContext** will override at design-time, and **DataContext** will override at run-time. These same override rules apply to all design-time and run-time attributes.
+さまざまな xmlns 宣言がありますが、これらは、**d:** プレフィックスの付いた属性は設計時にのみ解釈され、実行時には無視されることを表しています。 したがって、**d:DataContext** 属性が [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) プロパティの値に影響するのは設計時のみで、実行時には影響しません。 必要であれば、**d:DataContext** と **DataContext** の両方をマークアップで設定することもできます。 その場合、設計時には **d:DataContext** が優先され、実行時には **DataContext** が優先されます。 この規則は、すべての設計時属性と実行時属性に適用されます。
 
-The **d:DataContext** attribute, and all other design-time attributes, are documented in the [Design-Time Attributes](http://go.microsoft.com/fwlink/p/?LinkId=272504) topic, which is still valid for Universal Windows Platform (UWP) apps.
+**d:DataContext** 属性およびその他のすべての設計時属性について詳しくは、[設計時の属性に関するページ](http://go.microsoft.com/fwlink/p/?LinkId=272504)をご覧ください。このページは、ユニバーサル Windows プラットフォーム (UWP) アプリに対しても有効です。
 
-[**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) doesn't have a **DataContext** property, but it does have a **Source** property. Consequently, there's a **d:Source** property that you can use to set design-time-only sample data on a **CollectionViewSource**.
+[
+              **CollectionViewSource**
+            ](https://msdn.microsoft.com/library/windows/apps/BR209833) には **DataContext** プロパティはありませんが、**Source** プロパティがあります。 そのため、**CollectionViewSource** に設計時専用のサンプル データを設定するために使うことができる **d:Source** プロパティがあります
 
 ``` xaml
     <Page.Resources>
@@ -100,7 +102,7 @@ The **d:DataContext** attribute, and all other design-time attributes, are docum
     ...
 ```
 
-For this to work, you would have a class named `Recordings : ObservableCollection<Recording>`, and you would edit the sample data XAML file so that it contains only a **Recordings** object (with **Recording** objects inside that), as shown here.
+このコードが機能するためには、`Recordings : ObservableCollection<Recording>` というクラスが必要です。また、サンプル データの XAML ファイルを編集して、**Recordings** オブジェクト (**Recording** オブジェクトを含む) のみが含まれるようにする必要があります。次に例を示します。
 
 ``` xml
 <Quickstart:Recordings xmlns:Quickstart="using:Quickstart">
@@ -113,28 +115,33 @@ For this to work, you would have a class named `Recordings : ObservableCollectio
 </Quickstart:Recordings>
 ```
 
-If you use a JSON sample data file instead of XAML, you must set the **Type** property.
+XAML ではなく JSON のサンプル データ ファイルを使う場合は、**Type** プロパティを設定する必要があります。
 
 ``` xaml
     d:Source="{d:DesignData /SampleData/RecordingsSampleData.json, Type=local:Recordings}"
 ```
 
-So far, we've been using **d:DesignData** to load design-time sample data from a XAML or JSON file. An alternative to that is the **d:DesignInstance** markup extension, which indicates that the design-time source is based on the class specified by the **Type** property. Here's an example.
+これまでは、**d:DesignData** を使って設計時のサンプル データを XAML ファイルや JSON ファイルから読み込む方法を説明しました。 そのほかに、**d:DesignInstance** マークアップ拡張を使う方法もあります。このマークアップ拡張は、設計時ソースが **Type** プロパティによって指定されるクラスに基づくことを示します。 次に例を示します。
 
 ``` xaml
     <CollectionViewSource x:Name="RecordingsCollection" Source="{Binding Recordings}"
         d:Source="{d:DesignInstance Type=local:Recordings, IsDesignTimeCreatable=True}"/>
 ```
 
-The **IsDesignTimeCreatable** property indicates that the design tool should actually create an instance of the class, which implies that the class has a public default constructor, and that it populates itself with data (either real or sample). If you don't set **IsDesignTimeCreatable** (or if you set it to **False**) then you won't get sample data displayed on the design surface. All the design tool does in that case is to parse the class for its bindable properties and display these in the the **Data** panel and in the **Create Data Binding** dialog.
+**IsDesignTimeCreatable** プロパティは、デザイン ツールがこのクラスのインタンスを実際に作成する必要があることを示します。したがって、このクラスにはパブリックの既定のコンストラクターがあり、そのコンストラクターにデータ (実際のデータかサンプル データ) が設定されることがわかります。 **IsDesignTimeCreatable** を設定しない場合 (または **False** に設定した場合) は、デザイン サーフェイスに表示されるサンプル データは取得されません。 その場合、デザイン ツールは、クラスを解析してバインド可能なプロパティを特定し、それらを **[データ]** パネルと **[データ バインディングの作成]** ダイアログに表示するだけです。
 
-Sample data for prototyping
+プロトタイプを作るためのサンプル データ
 --------------------------------------------------------
 
-For prototyping, you want sample data at both design-time and at run-time. For that use case, Blend for Visual Studio has the **New Sample Data** feature. You can find that command on one of the buttons at the top of the **Data** panel.
+プロトタイプを作るには、設計時と実行時の両方でサンプル データが必要です。 そのような場合のために、Blend for Visual Studio には **[新しいサンプル データ]** 機能が用意されています。 このコマンドのボタンは **[データ]** パネルの上部にあります。
 
-Instead of specifying a class, you can actually design the schema of your sample data source right in the **Data** panel. You can also edit sample data values in the **Data** panel: there's no need to open and edit a file (although, you can still do that if you prefer).
+クラスを指定する代わりに、**[データ]** パネルで直接サンプル データ ソースのスキーマを設計できます。 **[データ]** パネルでサンプル データの値を編集することもできます。ファイルを開いて編集する必要はありません (必要であればそうすることもできます)。
 
-The **New Sample Data** feature uses [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713), and not **d:DataContext**, so that the sample data is available when you run your sketch or prototype as well as while you're designing it. And the **Data** panel really speeds up your designing and binding tasks. For example, simply dragging a collection property from the **Data** panel onto the design surface generates a data-bound items control and the necessary templates, all ready to build and run.
+**[新しいサンプル データ]** 機能は、**d:DataContext** ではなく [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) を使うため、スケッチやプロトタイプの設計時だけでなく実行時にもサンプル データを使うことができます。 また、**[データ]** パネルにより、設計とバインドの作業が大幅に高速化されます。 たとえば、コレクション プロパティを **[データ]** パネルからデザイン サーフェイスにドラッグするだけで、データがバインドされた項目コントロールと必要なテンプレートが生成されて、すぐにビルドして実行できるようになります。
 
-![Sample data for prototyping.](images/displaying-data-in-the-designer-04.png)
+![プロトタイプを作るためのサンプル データ。](images/displaying-data-in-the-designer-04.png)
+
+
+<!--HONumber=May16_HO2-->
+
+

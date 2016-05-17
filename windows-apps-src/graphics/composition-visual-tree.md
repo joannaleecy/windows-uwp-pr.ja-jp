@@ -1,67 +1,84 @@
 ---
 author: scottmill
 ms.assetid: f1297b7d-1a10-52ae-dd84-6d1ad2ae2fe6
-title: Composition visual tree
-description: Composition Visuals make up the visual tree structure which all other features of the composition API use and build on. The API allows developers to define and create one or many visual objects each representing a single node in a visual tree.
+title: コンポジションのビジュアル ツリー
+description: コンポジションのビジュアル オブジェクト ツリー構造は、コンポジション API の他のすべての機能でベースとして使われます。 この API により、開発者は 1 つまたは複数のビジュアル オブジェクトを作成して定義できます。それぞれがビジュアル オブジェクト ツリーの 1 つのノードを表します。
 ---
-# Composition visual tree
+# コンポジションのビジュアル ツリー
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
-Composition Visuals make up the visual tree structure which all other features of the composition API use and build on. The API allows developers to define and create one or many visual objects each representing a single node in a visual tree.
+コンポジションのビジュアル オブジェクト ツリー構造は、コンポジション API の他のすべての機能でベースとして使われます。 この API により、開発者は 1 つまたは複数のビジュアル オブジェクトを作成して定義できます。それぞれがビジュアル オブジェクト ツリーの 1 つのノードを表します。
 
-## Visuals
+## ビジュアル オブジェクト
 
-There are three visual types that make up the visual tree structure plus a base brush class with multiple subclasses that affect the content of a visual:
+ビジュアル オブジェクト ツリー構造には、3 種類のビジュアル オブジェクトが含まれ、加えて、ビジュアル オブジェクトの内容に影響を与える基本ブラシ クラスと複数のサブクラスがあります。
 
--   [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) – base object, the majority of the properties are here, and inherited by the other Visual objects.
--   [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) – derives from [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858), and adds the ability to create children.
--   [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) – Derives from [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) and adds the ability to associate a brush so that the Visual can render pixels including images, effects or a solid color.
--   [**CompositionBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589398) – Allows the application of an effect on the content of a Visual. There are a number of subclasses of CompositionBrush.
+-   [
+              **Visual**
+            ](https://msdn.microsoft.com/library/windows/apps/Dn706858) – ベース オブジェクト。プロパティの大半はここにあり、他のビジュアル オブジェクトによって継承されます。
+-   [
+              **ContainerVisual**
+            ](https://msdn.microsoft.com/library/windows/apps/Dn706810) – [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) から派生し、子ビジュアル オブジェクトを作成できます。
+-   [
+              **SpriteVisual**
+            ](https://msdn.microsoft.com/library/windows/apps/Mt589433) – [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) から派生し、ブラシを関連付けることができます。それにより、ビジュアル オブジェクトは画像、効果、単色などのピクセルをレンダリングできるようになります。
+-   [
+              **CompositionBrush**
+            ](https://msdn.microsoft.com/library/windows/apps/Mt589398) – ビジュアル オブジェクトの内容に効果を適用できます。 CompositionBrush には多数のサブクラスがあります。
 
-## The CompositionVisual Sample
+## CompositionVisual のサンプル
 
-In the sample there are a number of solid color squares that can be clicked on and dragged about the screen. When a square is clicked on, it will come to the front, rotate 45 degrees, and become opaque when dragged about.
+このサンプルでは、画面にクリックしてドラッグできる複数の単色の正方形を使います。 正方形がクリックされると、前面に移動して 45 度回転し、ドラッグされると不透明になります。
 
-This shows a number of basic concepts for working with the API including:
+ここでは、次のように API の操作について多数の基本的な概念を示します。
 
--   Creating a compositor
--   Creating a SpriteVisual with a ColorBrush
--   Clipping a Visual
--   Rotating a Visual
--   Setting Opacity
--   Changing the Visual’s position in the collection.
+-   コンポジターの作成
+-   SpriteVisual と ColorBrush の作成
+-   ビジュアル オブジェクトのクリップ
+-   ビジュアル オブジェクトの回転
+-   不透明度の設定
+-   コレクション内のビジュアル オブジェクトの位置変更
 
-In the sample there are also three different Visuals at work:
+このサンプルでは、次の 3 つの異なるビジュアル オブジェクトも使います。
 
--   [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) – base object, the majority of the properties are here, and inherited by the other Visual objects.
--   [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) – derives from Visual, and adds the ability to create children.
--   [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) – Derives from Visual and adds the ability to associate a brush so that the Visual can render pixels including images, effects or a solid color.
+-   [
+              **Visual**
+            ](https://msdn.microsoft.com/library/windows/apps/Dn706858) – ベース オブジェクト。プロパティの大半はここにあり、他のビジュアル オブジェクトによって継承されます。
+-   [
+              **ContainerVisual**
+            ](https://msdn.microsoft.com/library/windows/apps/Dn706810) – Visual から派生し、子ビジュアル オブジェクトを作成できます。
+-   [
+              **SpriteVisual**
+            ](https://msdn.microsoft.com/library/windows/apps/Mt589433) – Visual から派生し、ブラシを関連付けることができます。それにより、ビジュアル オブジェクトは画像、効果、単色などのピクセルをレンダリングできるようになります。
 
-While this sample doesn’t cover concepts like Animations or more complex effects, it contains the building blocks that all of those systems use.
+このサンプルでは、アニメーションや複雑な効果のような概念は取り上げていませんが、それらのシステムで使われるビルディング ブロックは含まれています。
 
-## Creating a Compositor
+## コンポジターの作成
 
-Creating a [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) and storing it for use as a factory in a variable is a simple task. The following snippet shows creating a new **Compositor**:
+[
+            **Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) を作成し、ファクトリ用に変数に格納するのは簡単です。 次のスニペットでは、新しい **Compositor** の作成方法を示しています。
 
 ```cs
 _compositor = new Compositor();
 ```
 
-## Creating a SpriteVisual and ColorBrush
+## SpriteVisual と ColorBrush の作成
 
-Using the [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) it's easy to create objects whenever you need them, such as a [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) and a [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399):
+[
+            **Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) を使って、必要なときにオブジェクト、たとえば [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) や [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399) を作成するのは簡単です。
 
 ```cs
 var visual = _compositor.CreateSpriteVisual();
 visual.Brush = _compositor.CreateColorBrush(Color.FromArgb(0xFF, 0xFF, 0xFF, 0xFF));
 ```
 
-While this is only a few lines of code it demonstrates a powerful concept, [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) objects are the heart of the effects system. The **SpriteVisual** allows for great flexibility and interplay in color, image and effect creation. The **SpriteVisual** is a single visual type that can fill a 2D rectangle with a brush, in this case a solid color.
+これはわずか数行のコードですが、強力な概念を示しており、[**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) オブジェクトは効果システムの中核となります。 **SpriteVisual** を使うと、色、画像、効果の作成で高い柔軟性と関係性を得られます。 **SpriteVisual** は、ブラシで (この例では単色) で 2D 四角形を塗りつぶすことのできるビジュアル オブジェクトの一種です。
 
-## Clipping a Visual
+## ビジュアル オブジェクトのクリップ
 
-The [**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) can also be used to create clips to a [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858). Below is an example from the sample of using the [**InsetClip**](https://msdn.microsoft.com/library/windows/apps/Dn706825) to trim each side of the visual:
+[
+            **Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) は、[**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) に対するクリップを作成するためにも使えます。 次に示しているのは、ビジュアル オブジェクトの両側をトリミングする [**InsetClip**](https://msdn.microsoft.com/library/windows/apps/Dn706825) を使ったサンプルからの例です。
 
 ```cs
 var clip = _compositor.CreateInsetClip();
@@ -72,41 +89,43 @@ clip.BottomInset = 1.0f;
 _currentVisual.Clip = clip;
 ```
 
-Note: Like other objects in the API [**InsetClip**](https://msdn.microsoft.com/library/windows/apps/Dn706825) can have animations applied to its properties.
+注: API の他のオブジェクトと同様、[**InsetClip**](https://msdn.microsoft.com/library/windows/apps/Dn706825) のプロパティにもアニメーションを適用できます。
 
-## <span id="Rotating_a_Clip"></span><span id="rotating_a_clip"></span><span id="ROTATING_A_CLIP"></span>Rotating a Clip
+## <span id="Rotating_a_Clip"></span><span id="rotating_a_clip"></span><span id="ROTATING_A_CLIP"></span>クリップの回転
 
-A [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) can be transformed with a rotation. Note that [**RotationAngle**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.rotationangle) supports both radians and degrees. It defaults to radians, but it’s easy to specify degrees as shown in the following snippet:
+[
+            **Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) は回転により変換できます。 [
+            **RotationAngle**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.rotationangle) では、ラジアンと度の両方がサポートされています。 既定ではラジアンになりますが、次のコードに示しているように、度を指定するのは簡単です。
 
 ```cs
 child.RotationAngleInDegrees = 45.0f;
 ```
 
-Rotation is just one example of a set of transform components provided by the API to make these tasks easier. Others include Offset, Scale, Orientation, RotationAxis and a 4x4 TransformMatrix.
+Rotation は、変換が簡単になるように API に用意された一連の変換コンポーネントのほんの一例です。 そのほかにも Offset、Scale、Orientation、RotationAxis、4x4 TransformMatrix などがあります。
 
-## Setting Opacity
+## 不透明度の設定
 
-Setting the opacity of a visual is a simple operation using a float value. For example, in the sample all the squares start at .8 opacity:
+ビジュアル オブジェクトの不透明度の設定も簡単で、浮動小数値を使って指定するだけです。 たとえば、このサンプルでは、すべての正方形の不透明度は .8 から始めています。
 
 ```cs
 visual.Opacity = 0.8f;
 ```
 
-Like rotation, the [**Opacity**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.opacity) property can be animated.
+Rotation と同様、[**Opacity**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.opacity) のプロパティにもアニメーションを適用できます。
 
-## Changing the Visual's position in the collection
+## コレクション内のビジュアル オブジェクトの位置変更
 
-The Composition API allows for a Visual's position in a [**VisualCollection**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection) to be changed in a number of ways, it can be placed above another Visual with [**InsertAbove**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertabove), placed below with [**InsertBelow**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertbelow), move to the top with [**InsertAtTop**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertattop) or the bottom with [**InsertAtBottom**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertatbottom).
+コンポジション API を使うと、[**VisualCollection**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection) でのビジュアル オブジェクトの位置を多数の方法で変更できます。たとえば、[**InsertAbove**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertabove) を使うと、別のビジュアル オブジェクトの上に、[**InsertBelow**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertbelow) を使うと、下に配置できます。[**InsertAtTop**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertattop) を使うと、先頭に、[**InsertAtBottom**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertatbottom) を使うと、末尾に移動できます。
 
-In the sample a [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) that has been clicked on is sorted to the top:
+このサンプルでは、クリックされた [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) は先頭に並べ替えられています。
 
 ```cs
 parent.Children.InsertAtTop(_currentVisual);
 ```
 
-## Full Example
+## 完全な例
 
-In the full sample, all of the concepts above are used together to construct and walk a simple tree of [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) objects to change opacity without using XAML, WWA, or DirectX. This sample shows how child **Visual** objects are created and added and how properties are changed.
+完全なサンプルでは、これまで説明した概念のすべてを一緒に使って、[**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) オブジェクトの単純なツリーを作成してたどり、XAML、WWA、または DirectX を使わずに不透明度を変更しています。 このサンプルでは、どのように子 **Visual** オブジェクトが作成されて追加され、プロパティが変更されるかを示しています。
 
 ```cs
 using System;
@@ -494,10 +513,15 @@ namespace compositionvisual
 }
 ```
 
- 
+ 
 
- 
+ 
 
 
+
+
+
+
+<!--HONumber=May16_HO2-->
 
 

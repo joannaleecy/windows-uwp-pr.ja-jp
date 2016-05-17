@@ -1,44 +1,44 @@
 ---
 author: mtoepke
-title: How to-- port a simple OpenGL ES 2.0 renderer to Direct3D 11
-description: For the first porting exercise, we'll start with the basics-- bringing a simple renderer for a spinning, vertex-shaded cube from OpenGL ES 2.0 into Direct3D, such that it matches the DirectX 11 App (Universal Windows) template from Visual Studio 2015.
+title: 簡単な OpenGL ES 2.0 レンダラーを Direct3D 11 に移植する方法
+description: 最初の移植作業では、基本から始めます。Visual Studio 2015 の DirectX 11 アプリ (ユニバーサル Windows) テンプレートに対応するように、頂点シェーディングされた回転する立方体の簡単なレンダラーを OpenGL ES 2.0 から Direct3D に移植します。
 ms.assetid: e7f6fa41-ab05-8a1e-a154-704834e72e6d
 ---
 
-# How to: port a simple OpenGL ES 2.0 renderer to Direct3D 11
+# 簡単な OpenGL ES 2.0 レンダラーを Direct3D 11 に移植する方法
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-For the first porting exercise, we'll start with the basics: bringing a simple renderer for a spinning, vertex-shaded cube from OpenGL ES 2.0 into Direct3D, such that it matches the DirectX 11 App (Universal Windows) template from Visual Studio 2015. As we walk through this port process, you will learn the following:
+最初の移植作業では、基本から始めます。Visual Studio 2015 の DirectX 11 アプリ (ユニバーサル Windows) テンプレートに対応するように、頂点シェーディングされた回転する立方体の簡単なレンダラーを OpenGL ES 2.0 から Direct3D に移植します。 この移植プロセスでは、次について説明します。
 
--   How to port a simple set of vertex buffers to Direct3D input buffers
--   How to port uniforms and attributes to constant buffers
--   How to configure Direct3D shader objects
--   How basic HLSL semantics are used in Direct3D shader development
--   How to port very simple GLSL to HLSL
+-   一連の簡単な頂点バッファーを Direct3D の入力バッファーに移植する方法
+-   uniform と attribute を定数バッファーに移植する方法
+-   Direct3D のシェーダー オブジェクトを構成する方法
+-   Direct3D のシェーダー開発で基本的な HLSL セマンティクスを使う方法
+-   非常に簡単な GLSL を HLSL に移植する方法
 
-This topic starts after you have created a new DirectX 11 project. To learn how to create a new DirectX 11 project, read [Create a new DirectX 11 project for Universal Windows Platform (UWP)](user-interface.md).
+このトピックは、新しい DirectX 11 プロジェクトを作成したところから始まります。 新しい DirectX 11 プロジェクトを作成する方法については、「[テンプレートからの DirectX ゲーム プロジェクトの作成](user-interface.md)」をご覧ください。
 
-The project created from either of these links has all the code for the [Direct3D](https://msdn.microsoft.com/library/windows/desktop/ff476345) infrastructure prepared, and you can immediately start into the process of porting your renderer from Open GL ES 2.0 to Direct3D 11.
+これらのリンクのどちらかから作成されたプロジェクトには [Direct3D](https://msdn.microsoft.com/library/windows/desktop/ff476345) インフラストラクチャ用のコードがすべて用意されているため、OpenGL ES 2.0 から Direct3D 11 にレンダラーを移植するプロセスをすぐに始めることができます。
 
-This topic walks two code paths that perform the same basic graphics task: display a rotating vertex-shaded cube in a window. In both cases, the code covers the following process:
+このトピックでは、2 つのコード パスについて説明します。どちらも同じ基本的なグラフィックス タスクを実行します。頂点シェーディングされた回転する立方体をウィンドウに表示するというものです。 どちらの場合も、コードは次のプロセスに対応しています。
 
-1.  Creating a cube mesh from hardcoded data. This mesh is represented as a list of vertices, with each vertex possessing a position, a normal vector, and a color vector. This mesh is put into a vertex buffer for the shading pipeline to process.
-2.  Creating shader objects to process the cube mesh. There are two shaders: a vertex shader that processes the vertices for rasterization, and a fragment (pixel) shader that colors the individual pixels of the cube after rasterization. These pixels are written into a render target for display.
-3.  Forming the shading language that is used for vertex and pixel processing in the vertex and fragment shaders, respectively.
-4.  Displaying the rendered cube on the screen.
+1.  ハードコードされたデータから立方体のメッシュを作成する。 このメッシュは頂点の一覧として表され、各頂点では位置、法線ベクトル、色ベクトルを処理します。 シェーディング パイプラインで処理するためにこのメッシュを頂点バッファーに配置します。
+2.  立方体のメッシュを処理するシェーダー オブジェクトを作成する。 シェーダーは 2 つあります。1 つはラスタライズのために頂点を処理する頂点シェーダーで、もう 1 つはラスタライズ後に立方体の個々のピクセルに色を設定するフラグメント (ピクセル) シェーダーです。 これらのピクセルは、表示のためにレンダー ターゲットに書き込まれます。
+3.  頂点シェーダーとフラグメント シェーダーでそれぞれ処理する頂点とピクセルに使われるシェーダー言語を構成する。
+4.  レンダリングされた立方体を画面に表示する。
 
-![simple opengl cube](images/simple-opengl-cube.png)
+![OpenGL の単純な立方体](images/simple-opengl-cube.png)
 
-Upon completing this walkthrough, you should be familiar with the following basic differences between Open GL ES 2.0 and Direct3D 11:
+このチュートリアルを終了すると、OpenGL ES 2.0 と Direct3D 11 の次の基本的な違いを理解できます。
 
--   The representation of vertex buffers and vertex data.
--   The process of creating and configuring shaders.
--   Shading languages, and the inputs and outputs to shader objects.
--   Screen drawing behaviors.
+-   頂点バッファーと頂点データの表現。
+-   シェーダーを作成して構成するプロセス。
+-   シェーダー言語と、シェーダー オブジェクトに対する入力と出力。
+-   画面の描画動作。
 
-In this walkthrough, we refer to an simple and generic OpenGL renderer structure, which is defined like this:
+このチュートリアルでは、次のように定義される簡単で一般的な OpenGL レンダラーの構造体を参照します。
 
 ``` syntax
 typedef struct 
@@ -71,25 +71,25 @@ typedef struct
 } Renderer;
 ```
 
-This structure has one instance and contains all the necessary components for rendering a very simple vertex-shaded mesh.
+この構造体には、インスタンスが 1 つあり、頂点シェーディングされた非常に簡単なメッシュをレンダリングするために必要なコンポーネントがすべて含まれています。
 
-> **Note**  Any OpenGL ES 2.0 code in this topic is based on the Windows API implementation provided by the Khronos Group, and uses Windows C programming syntax.
+> **注:** このトピックの OpenGL ES 2.0 コードはすべて Khronos Group が提供する Windows API の実装に基づいており、Windows C プログラミング構文を使っています。
 
- 
+ 
 
-## What you need to know
+## 理解しておく必要があること
 
 
-### Technologies
+### テクノロジ
 
 -   [Microsoft Visual C++](http://msdn.microsoft.com/library/vstudio/60k1461a.aspx)
 -   OpenGL ES 2.0
 
-### Prerequisites
+### 前提条件
 
--   Optional. Review [Port EGL code to DXGI and Direct3D](moving-from-egl-to-dxgi.md). Read this topic to better understand the graphics interface provided by DirectX.
+-   省略可能です。 「[DXGI と Direct3D の EGL コードの比較](moving-from-egl-to-dxgi.md)」をご覧ください。 このトピックを読むと、DirectX によって提供されるグラフィックス インターフェイスについて理解を深めることができます。
 
-## <span id="keylinks_steps_heading"></span>Steps
+## <span id="keylinks_steps_heading"></span>ステップ
 
 
 <table>
@@ -99,43 +99,48 @@ This structure has one instance and contains all the necessary components for re
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Topic</th>
-<th align="left">Description</th>
+<th align="left">トピック</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Port the shader objects](port-the-shader-config.md)</p></td>
-<td align="left"><p>When porting the simple renderer from OpenGL ES 2.0, the first step is to set up the equivalent vertex and fragment shader objects in Direct3D 11, and to make sure that the main program can communicate with the shader objects after they are compiled.</p></td>
+<td align="left"><p>[シェーダー オブジェクトの移植](port-the-shader-config.md)</p></td>
+<td align="left"><p>OpenGL ES 2.0 から簡単なレンダラーを移植する場合、最初の手順では、Direct3D 11 の対応する頂点シェーダー オブジェクトとフラグメント シェーダー オブジェクトを設定し、コンパイル後にメイン プログラムがシェーダー オブジェクトと通信できるようにします。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Port the vertex buffers and data](port-the-vertex-buffers-and-data-config.md)</p></td>
-<td align="left"><p>In this step, you'll define the vertex buffers that will contain your meshes and the index buffers that allow the shaders to traverse the vertices in a specified order.</p></td>
+<td align="left"><p>[頂点バッファーと頂点データの移植](port-the-vertex-buffers-and-data-config.md)</p></td>
+<td align="left"><p>この手順では、シェーダーが指定された順番で頂点を走査できるようにするインデックス バッファーとメッシュを格納する頂点バッファーを定義します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Port the GLSL](port-the-glsl.md)</p></td>
-<td align="left"><p>Once you've moved over the code that creates and configures your buffers and shader objects, it's time to port the code inside those shaders from OpenGL ES 2.0's GL Shader Language (GLSL) to Direct3D 11's High-level Shader Language (HLSL).</p></td>
+<td align="left"><p>[GLSL の移植](port-the-glsl.md)</p></td>
+<td align="left"><p>バッファーとシェーダー オブジェクトを作成して構成するコードが完成したら、それらのシェーダー内のコードを OpenGL ES 2.0 の GL シェーダー言語 (GLSL) から Direct3D 11 の上位レベル シェーダー言語 (HLSL) に移植します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Draw to the screen](draw-to-the-screen.md)</p></td>
-<td align="left"><p>Finally, we port the code that draws the spinning cube to the screen.</p></td>
+<td align="left"><p>[画面への描画](draw-to-the-screen.md)</p></td>
+<td align="left"><p>最後に、回転する立方体を画面に描画するコードを移植します。</p></td>
 </tr>
 </tbody>
 </table>
 
- 
+ 
 
-## <span id="additional_resources"></span>Additional resources
-
-
--   [Prepare your dev environment for UWP DirectX game development](prepare-your-dev-environment-for-windows-store-directx-game-development.md)
--   [Create a new DirectX 11 project for UWP](user-interface.md)
--   [Map OpenGL ES 2.0 concepts and infrastructure to Direct3D 11](map-concepts-and-infrastructure.md)
-
- 
-
- 
+## <span id="additional_resources"></span>その他の情報
 
 
+-   [UWP DirectX ゲーム プログラミング環境の準備](prepare-your-dev-environment-for-windows-store-directx-game-development.md)
+-   [テンプレートからの DirectX ゲーム プロジェクトの作成](user-interface.md)
+-   [Direct3D 11 への OpenGL ES 2.0 のマッピング](map-concepts-and-infrastructure.md)
+
+ 
+
+ 
+
+
+
+
+
+
+<!--HONumber=May16_HO2-->
 
 

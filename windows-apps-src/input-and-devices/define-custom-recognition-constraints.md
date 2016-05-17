@@ -1,50 +1,57 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Learn how to define and use custom constraints for speech recognition.
-title: Define custom recognition constraints
+Description: 音声認識のカスタム制約を定義して使う方法について説明します。
+title: カスタム認識の制約の定義
 ms.assetid: 26289DE5-6AC9-42C3-A160-E522AE62D2FC
 label: Define custom recognition constraints
 template: detail.hbs
 ---
 
-# Define custom recognition constraints
+# カスタム認識の制約の定義
 
-Learn how to define and use custom constraints for speech recognition.
+音声認識のカスタム制約を定義して使う方法について説明します。
 
-**Important APIs**
+**重要な API**
 
 -   [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)
 -   [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)
 -   [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)
 
 
-Speech recognition requires at least one constraint to define a recognizable vocabulary. If no constraint is specified, the predefined dictation grammar of Universal Windows apps is used. See [Speech recognition](speech-recognition.md).
+音声認識では、少なくとも 1 つの制約を使って、認識できるボキャブラリを定義する必要があります。 制約が指定されていない場合、ユニバーサル Windows アプリで定義済みのディクテーション文法が使われます。 「[音声認識](speech-recognition.md)」をご覧ください
 
 
-## <span id="Add_constraints"></span><span id="add_constraints"></span><span id="ADD_CONSTRAINTS"></span>Add constraints
+## <span id="Add_constraints"></span><span id="add_constraints"></span><span id="ADD_CONSTRAINTS"></span>制約の追加
 
 
-Use the [**SpeechRecognizer.Constraints**](https://msdn.microsoft.com/library/windows/apps/dn653241) property to add constraints to a speech recognizer.
+[
+            **SpeechRecognizer.Constraints**](https://msdn.microsoft.com/library/windows/apps/dn653241) プロパティを使って、音声認識エンジンに制約を追加します。
 
-Here, we cover the three kinds of speech recognition constraints used from within an app. (For voice command constraints, see [Launch a foreground app with voice commands in Cortana](launch-a-foreground-app-with-voice-commands-in-cortana.md).)
+ここでは、アプリ内から使われる 3 種類の音声認識制約について取り上げます。 (音声コマンドの制約については、「[Cortana の音声コマンドを使ったフォアグラウンド アプリの起動](launch-a-foreground-app-with-voice-commands-in-cortana.md)」をご覧ください)
 
--   [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)—A constraint based on a predefined grammar (dictation or web search).
--   [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)—A constraint based on a list of words or phrases.
--   [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)—A constraint defined in a Speech Recognition Grammar Specification (SRGS) file.
+-   [
+              **SpeechRecognitionTopicConstraint**
+            ](https://msdn.microsoft.com/library/windows/apps/dn631446)—定義済みの文法に基づく制約 (ディクテーションまたは Web 検索)。
+-   [
+              **SpeechRecognitionListConstraint**
+              ](https://msdn.microsoft.com/library/windows/apps/dn631421)—単語や語句の一覧に基づく制約。
+-   [
+              **SpeechRecognitionGrammarFileConstraint**
+            ](https://msdn.microsoft.com/library/windows/apps/dn631412)—音声認識文法仕様 (SRGS) ファイルで定義された制約。
 
-Each speech recognizer can have one constraint collection. Only these combinations of constraints are valid:
+音声認識エンジンはそれぞれ 1 つの制約コレクションを保持できます。 制約は次の組み合わせのみが有効です。
 
--   A single-topic constraint, or predefined grammar (dictation or web search). No other constraints are allowed.
--   A combination of list constraints and/or grammar-file constraints.
+-   単一トピック制約、または定義済みの文法 (ディクテーションまたは Web 検索)。 他の制約は許されません。
+-   一覧の制約または文法ファイルの制約の組み合わせ。
 
-**Remember:  **Call the [**SpeechRecognizer.CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) method to compile the constraints before starting the recognition process.
+**注意:  **認識プロセスを開始する前に制約をコンパイルするには、[**SpeechRecognizer.CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) メソッドを呼び出します。
 
-## <span id="Specify_a_web-search_grammar__SpeechRecognitionTopicConstraint_"></span><span id="specify_a_web-search_grammar__speechrecognitiontopicconstraint_"></span><span id="SPECIFY_A_WEB-SEARCH_GRAMMAR__SPEECHRECOGNITIONTOPICCONSTRAINT_"></span>Specify a web-search grammar (SpeechRecognitionTopicConstraint)
+## <span id="Specify_a_web-search_grammar__SpeechRecognitionTopicConstraint_"></span><span id="specify_a_web-search_grammar__speechrecognitiontopicconstraint_"></span><span id="SPECIFY_A_WEB-SEARCH_GRAMMAR__SPEECHRECOGNITIONTOPICCONSTRAINT_"></span>Web 検索文法の指定 (SpeechRecognitionTopicConstraint)
 
 
-Topic constraints (dictation or web-search grammar) must be added to the constraints collection of a speech recognizer.
+トピック制約 (ディクテーションまたは Web 検索文法) は音声認識エンジンの制約コレクションに追加する必要があります。
 
-Here, we add a web-search grammar to the constraints collection.
+以下では、制約コレクションに Web 検索文法を追加しています。
 
 ```CSharp
 private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
@@ -76,17 +83,17 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## <span id="Specify_a_programmatic_list_constraint__SpeechRecognitionListConstraint_"></span><span id="specify_a_programmatic_list_constraint__speechrecognitionlistconstraint_"></span><span id="SPECIFY_A_PROGRAMMATIC_LIST_CONSTRAINT__SPEECHRECOGNITIONLISTCONSTRAINT_"></span>Specify a programmatic list constraint (SpeechRecognitionListConstraint)
+## <span id="Specify_a_programmatic_list_constraint__SpeechRecognitionListConstraint_"></span><span id="specify_a_programmatic_list_constraint__speechrecognitionlistconstraint_"></span><span id="SPECIFY_A_PROGRAMMATIC_LIST_CONSTRAINT__SPEECHRECOGNITIONLISTCONSTRAINT_"></span>プログラムによる一覧の制約の指定 (SpeechRecognitionListConstraint)
 
 
-List constraints must be added to the constraints collection of a speech recognizer.
+一覧の制約は音声認識エンジンの制約コレクションに追加する必要があります。
 
-Keep the following points in mind:
+次の点に留意してください。
 
--   You can add multiple list constraints to a constraints collection.
--   You can use any collection that implements **IIterable&lt;String&gt;** for the string values.
+-   制約コレクションには、複数の一覧の制約を追加できます。
+-   **IIterable&lt;String&gt;** を実装する任意のコレクションを文字列値に使用できます。
 
-Here, we programmatically specify an array of words as a list constraint and add it to the constraints collection of a speech recognizer.
+以下では、プログラムによって一覧の制約として単語の配列を指定し、それを音声認識エンジンの制約コレクションに追加しています。
 
 ```CSharp
 private async void YesOrNo_Click(object sender, RoutedEventArgs e)
@@ -116,32 +123,32 @@ private async void YesOrNo_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## <span id="Specify_an_SRGS_grammar_constraint__SpeechRecognitionGrammarFileConstraint_"></span><span id="specify_an_srgs_grammar_constraint__speechrecognitiongrammarfileconstraint_"></span><span id="SPECIFY_AN_SRGS_GRAMMAR_CONSTRAINT__SPEECHRECOGNITIONGRAMMARFILECONSTRAINT_"></span>Specify an SRGS grammar constraint (SpeechRecognitionGrammarFileConstraint)
+## <span id="Specify_an_SRGS_grammar_constraint__SpeechRecognitionGrammarFileConstraint_"></span><span id="specify_an_srgs_grammar_constraint__speechrecognitiongrammarfileconstraint_"></span><span id="SPECIFY_AN_SRGS_GRAMMAR_CONSTRAINT__SPEECHRECOGNITIONGRAMMARFILECONSTRAINT_"></span>SRGS 文法の制約の指定 (SpeechRecognitionGrammarFileConstraint)
 
 
-SRGS grammar files must be added to the constraints collection of a speech recognizer.
+SRGS 文法ファイルは音声認識エンジンの制約コレクションに追加する必要があります。
 
-The SRGS Version 1.0 is the industry-standard markup language for creating XML-format grammars for speech recognition. Although Universal Windows apps provide alternatives to using SRGS for creating speech-recognition grammars, you might find that using SRGS to create grammars produces the best results, particularly for more involved speech recognition scenarios.
+SRGS Version 1.0 は、音声認識用に XML 形式の文法を作るための業界標準のマークアップ言語です。 ユニバーサル Windows アプリでは、SRGS 以外にも音声認識文法を作るための手段が用意されていますが、SRGS を使って文法を作ると、複雑な音声認識シナリオの場合は、特に優れた結果が得られます。
 
-SRGS grammars provide a full set of features to help you architect complex voice interaction for your apps. For example, with SRGS grammars you can:
+SRGS 文法は、アプリの複雑な音声操作を構築するときに役立つ機能をすべて備えています。 たとえば、SRGS 文法を使って以下を実行できます。
 
--   Specify the order in which words and phrases must be spoken to be recognized.
--   Combine words from multiple lists and phrases to be recognized.
--   Link to other grammars.
--   Assign a weight to an alternative word or phrase to increase or decrease the likelihood that it will be used to match speech input.
--   Include optional words or phrases.
--   Use special rules that help filter out unspecified or unanticipated input, such as random speech that doesn't match the grammar, or background noise.
--   Use semantics to define what speech recognition means to your app.
--   Specify pronunciations, either inline in a grammar or via a link to a lexicon.
+-   認識する単語と語句の発声順序を指定します。
+-   認識される複数のリストと語句から単語を組み合わせる
+-   他の文法にリンクする
+-   音声入力に一致させるために使用される可能性を高くするか低くするために、別の単語または語句に重みを割り当てる
+-   オプションの単語または語句を含める
+-   文法に一致しない不規則な音声や背景の雑音など、指定していない入力や予期していない入力を除外する特別な規則を使う。
+-   セマンティクスを使って、音声認識がアプリにもたらす意味を定義します。
+-   文法内で、または用語集へのリンクを通じて発音を指定する
 
-For more info about SRGS elements and attributes, see the [SRGS Grammar XML Reference](http://go.microsoft.com/fwlink/p/?LinkID=269886) . To get started creating an SRGS grammar, see [How to Create a Basic XML Grammar](http://go.microsoft.com/fwlink/p/?LinkID=269887).
+SRGS の要素と属性について詳しくは、[XML 文法の SRGS リファレンス](http://go.microsoft.com/fwlink/p/?LinkID=269886)に関するページをご覧ください。 SRGS 文法の作成を開始するには、[基本的な XML 文法の作成方法](http://go.microsoft.com/fwlink/p/?LinkID=269887)に関するページをご覧ください
 
-Keep the following points in mind:
+次の点に留意してください。
 
--   You can add multiple grammar-file constraints to a constraints collection.
--   Use the .grxml file extension for XML-based grammar documents that conform to SRGS rules.
+-   制約コレクションには、複数の文法ファイルの制約を追加できます。
+-   SRGS 規則に準拠した XML ベースの文法ドキュメントには .grxml ファイル拡張子を使います。
 
-This example uses an SRGS grammar defined in a file named srgs.grxml (described later). In the file properties, the **Package Action** is set to **Content** with **Copy to Output Directory** set to **Copy always**:
+この例では、srgs.grxml という名前のファイル (後述) に定義された SRGS 文法を使います。 ファイルのプロパティで、**[パッケージ アクション]** が **[コンテンツ]** に設定され、**[出力ディレクトリにコピー]** が **[常にコピーする]** に設定されています。
 
 ```CSharp
 private async void Colors_Click(object sender, RoutedEventArgs e)
@@ -168,9 +175,9 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-This SRGS file (srgs.grxml) includes semantic interpretation tags. These tags provide a mechanism for returning grammar match data to your app. Grammars must conform to the World Wide Web Consortium (W3C) [Semantic Interpretation for Speech Recognition (SISR) 1.0](http://go.microsoft.com/fwlink/p/?LinkID=201765) specification.
+この SRGS ファイル (srgs.grxml) は、解釈タグを含みます。 これらのタグは、文法に合致するデータをアプリに返すしくみです。 文法は、World Wide Web コンソーシアム (W3C) の[音声認識のための意味解釈 (SISR) 1.0](http://go.microsoft.com/fwlink/p/?LinkID=201765) 仕様に準拠している必要があります。
 
-Here, we listen for variants of "yes" and "no".
+以下では、"yes" と "no" のバリエーションをリッスンします。
 
 ```CSharp
 <grammar xml:lang="en-US" 
@@ -207,30 +214,35 @@ Here, we listen for variants of "yes" and "no".
 </grammar>
 ```
 
-## <span id="Manage_constraints"></span><span id="manage_constraints"></span><span id="MANAGE_CONSTRAINTS"></span>Manage constraints
+## <span id="Manage_constraints"></span><span id="manage_constraints"></span><span id="MANAGE_CONSTRAINTS"></span>制約の管理
 
 
-After a constraint collection is loaded for recognition, your app can manage which constraints are enabled for recognition operations by setting the [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn631402) property of a constraint to **true** or **false**. The default setting is **true**.
+制約コレクションが認識のために読み込まれると、アプリでは制約の [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn631402) プロパティを **true** または **false** に設定して、認識操作でどの制約を有効にするかを管理できます。 既定の設定は **true** です
 
-It's usually more efficient to load constraints once, enabling and disabling them as needed, rather than to load, unload, and compile constraints for each recognition operation. Use the [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn631402) property, as required.
+通常は、認識操作ごとに制約を読み込んでアンロードしコンパイルするよりも、いったん読み込んでから必要に応じて有効または無効にする方が効率的です。 必要に応じて [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn631402) プロパティを使います。
 
-Restricting the number of constraints serves to limit the amount of data that the speech recognizer needs to search and match against the speech input. This can improve both the performance and the accuracy of speech recognition.
+制約の数を制限すると、音声認識エンジンが音声入力の一致を探すときに必要となるデータ量を制限できます。 これにより、音声認識のパフォーマンスと精度の両方が向上します。
 
-Decide which constraints are enabled based on the phrases that your app can expect in the context of the current recognition operation. For example, if the current app context is to display a color, you probably don't need to enable a constraint that recognizes the names of animals.
+現在の認識操作のコンテキストでアプリが想定できる語句に基づいて、有効にする制約を決定します。 たとえば、現在のアプリのコンテキストが色を表示することである場合、おそらく動物の名前を認識する制約を有効にする必要はありません。
 
-To prompt the user for what can be spoken, use the [**SpeechRecognizerUIOptions.AudiblePrompt**](https://msdn.microsoft.com/library/windows/apps/dn653235) and [**SpeechRecognizerUIOptions.ExampleText**](https://msdn.microsoft.com/library/windows/apps/dn653236) properties, which are set by means of the [**SpeechRecognizer.UIOptions**](https://msdn.microsoft.com/library/windows/apps/dn653254) property. Preparing users for what they can say during the recognition operation increases the likelihood that they will speak a phrase that can be matched to an active constraint.
+発声できる内容をユーザーに伝えるには、[**SpeechRecognizer.UIOptions**](https://msdn.microsoft.com/library/windows/apps/dn653254) プロパティを使って設定できる、[**SpeechRecognizerUIOptions.AudiblePrompt**](https://msdn.microsoft.com/library/windows/apps/dn653235) プロパティと [**SpeechRecognizerUIOptions.ExampleText**](https://msdn.microsoft.com/library/windows/apps/dn653236) プロパティを使います。 音声認識の操作時に何を発声できるか準備しておくことによって、アクティブな制約に一致する語句をユーザーが発声する可能性が高まります。
 
-## <span id="related_topics"></span>Related articles
-
-
-* [Speech interactions](speech-interactions.md)
-
-**Samples**
-* [Speech recognition and speech synthesis sample](http://go.microsoft.com/fwlink/p/?LinkID=619897)
- 
-
- 
+## <span id="related_topics"></span>関連記事
 
 
+* [音声操作](speech-interactions.md)
+
+**サンプル**
+* [音声認識と音声合成のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+ 
+
+ 
+
+
+
+
+
+
+<!--HONumber=May16_HO2-->
 
 

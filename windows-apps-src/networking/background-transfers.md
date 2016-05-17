@@ -1,88 +1,92 @@
 ---
 author: DelfCo
-description: Use the background transfer API to copy files reliably over the network.
-title: Background transfers
+description: ネットワーク経由でファイルを確実にコピーするには、バックグラウンド転送 API を使います。
+title: バックグラウンド転送
 ms.assetid: 1207B089-BC16-4BF0-BBD4-FD99950C764B
 ---
 
-# Background transfers
+# バックグラウンド転送
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 
-**Important APIs**
+**重要な API**
 
 -   [**Windows.Networking.backgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242)
 -   [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998)
 -   [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960)
 
-Use the background transfer API to copy files reliably over the network. The background transfer API provides advanced upload and download features that run in the background during app suspension and persist beyond app termination. The API monitors network status and automatically suspends and resumes transfers when connectivity is lost, and transfers are also Data Sense-aware and Battery Sense-aware, meaning that download activity adjusts based on your current connectivity and device battery status. The API is ideal for uploading and downloading large files using HTTP(S). FTP is also supported, but only for downloads.
+ネットワーク経由でファイルを確実にコピーするには、バックグラウンド転送 API を使います。 バックグラウンド転送 API には、アプリの一時停止中はバックグラウンドで実行され、アプリの終了後も実行が続行される高度なアップロード機能とダウンロード機能があります。 この API は、ネットワークの状態を監視し、接続が失われたときに転送の中断と再開を自動的に実行します。転送ではデータ センサーとバッテリー セーバーにも対応し、ダウンロード アクティビティは現在の接続とデバイスのバッテリー状態に基づいて調整されます。 この API は、アップロード HTTP(S) を使った大きなファイルのアップロードとダウンロードに適しています。 FTP もサポートされますが、その対象はダウンロードのみです。
 
-Background Transfer runs separately from the calling app and is primarily designed for long-term transfer operations for resources like video, music, and large images. For these scenarios, using Background Transfer is essential because downloads continue to progress even when the app is suspended.
+バックグラウンド転送はアプリの呼び出しとは別に実行され、主にビデオ、音楽、サイズの大きい画像などのリソースの長期の転送操作を目的としています。 これらのシナリオでは、アプリが一時停止状態でもダウンロードが続行されるため、バックグラウンド転送の使用が不可欠です。
 
-If you are downloading small resources that are likely to complete quickly, you should use [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) APIs instead of Background Transfer.
+すぐに完了する可能性がある小さいリソースをダウンロードする場合は、バックグラウンド転送ではなく [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) API を使ってください。
 
-## Using Windows.Networking.BackgroundTransfer
+## Windows.Networking.BackgroundTransfer を使う
 
 
-### How does the Background Transfer feature work?
+### バックグラウンド転送機能はどのように動作するか
 
-When an app uses Background Transfer to initiate a transfer, the request is configured and initialized using [**BackgroundDownloader**](https://msdn.microsoft.com/library/windows/apps/br207126) or [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) class objects. Each transfer operation is handled individually by the system and separate from the calling app. Progress information is available if you want to give status to the user in your app's UI, and your app can pause, resume, cancel, or even read from the data while the transfer is occurring. The way transfers are handled by the system promotes smart power usage and prevents problems that can arise when a connected app encounters events such as app suspension, termination, or sudden network status changes.
+アプリがバックグラウンド転送を使って転送を開始するときは、[**BackgroundDownloader**](https://msdn.microsoft.com/library/windows/apps/br207126) または [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) クラス オブジェクトを使って要求が構成され初期化されます。 それぞれの転送操作は、呼び出し元アプリとは別にシステムによって個別に処理されます。 進行情報はアプリの UI でユーザーに状況を示す場合に利用することができ、アプリで一時停止、再開、キャンセルしたり、転送中にデータを読み取ったりすることができます。 システムによって転送が処理される方法により、スマートな電力消費が実現し、アプリの中断や終了、突然のネットワーク ステータス変化などのイベントが接続アプリで発生したときに起こる可能性のある問題を回避できます。
 
-### Performing authenticated file requests with Background Transfer
+### バックグラウンド転送での認証されたファイル要求の実行
 
-Background Transfer provides methods that support basic server and proxy credentials, cookies, and the use of custom HTTP headers (via [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br207146)) for each transfer operation.
+バックグラウンド転送では、基本サーバーとプロキシの資格情報、Cookie をサポートするメソッドが用意されており、それぞれの転送操作で ([**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br207146) を介して) カスタム HTTP ヘッダーを使うこともできます。
 
-### How does this feature adapt to network status changes or unexpected shutdowns?
+### この機能ではネットワーク ステータスの変化や予期しないシャットダウンにどのように対応するか
 
-The Background Transfer feature maintains a consistent experience for each transfer operation when network status changes occur, by intelligently leveraging connectivity and carrier data-plan status information provided by the [Connectivity](https://msdn.microsoft.com/library/windows/apps/hh452990) feature. To define behavior for different network scenarios, an app sets a cost policy for each operation using values defined by [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138).
+バックグラウンド転送機能により、ネットワークの状態が変化したときに各転送操作に対して一貫性のあるエクスペリエンスが保たれます。これは、[接続](https://msdn.microsoft.com/library/windows/apps/hh452990) 機能によって提供される接続とキャリアのデータ プラン ステータスの情報をインテリジェントに利用しています。 さまざまなネットワーク シナリオでの動作を定義するために、アプリは、[**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) によって定義された値を使って、各転送操作のコスト ポリシーを設定します。
 
-For example, the cost policy defined for an operation can indicate that the operation should be paused automatically when the device is using a metered network. The transfer is then automatically resumed (or restarted) when a connection to an "unrestricted" network has been established. For more information on how networks are defined by cost, see [**NetworkCostType**](https://msdn.microsoft.com/library/windows/apps/br207292).
+たとえば、操作に対して定義されたコスト ポリシーで、デバイスが従量制課金接続を使っているときに操作を自動的に一時停止する必要があることを示すことができます。 "制限のない" ネットワークへの接続が確立されたときには、転送が自動的に再開されます。 コストによってネットワークがどのように定義されるかについては、「[**NetworkCostType**](https://msdn.microsoft.com/library/windows/apps/br207292)」をご覧ください。
 
-While the Background Transfer feature has its own mechanisms for handling network status changes, there are other general connectivity considerations for network-connected apps. Read [Leveraging available network connection information](https://msdn.microsoft.com/library/windows/apps/hh452983) for additional info.
+バックグラウンド転送機能にはネットワーク ステータスの変化に対応する独自のメカニズムがありますが、ネットワーク接続されたアプリには他にも一般的な接続の考慮事項があります。 詳しくは、「[利用できるネットワーク接続情報の活用](https://msdn.microsoft.com/library/windows/apps/hh452983)」をご覧ください。
 
-> **Note**  For apps running on mobile devices, there are features that allow the user to monitor and restrict the amount of data that is transferred based on the type of connection, roaming status, and the user's data plan. Because of this, background transfers may be paused on the phone even when the [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) indicates that the transfer should proceed.
+> **注:** モバイル デバイスで実行されるアプリでは、接続の種類、ローミング ステータス、ユーザーのデータ通信プランに基づいて転送されるデータの量を、ユーザーが監視および制限できる機能が用意されています。 このため、[**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) が転送が継続中であることを示す場合でも、電話でバックグラウンド転送が一時停止される可能性があります。
 
-The following table indicates when background transfers are allowed on the phone for each [**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) value, given the current state of the phone. You can use the [**ConnectionCost**](https://msdn.microsoft.com/library/windows/apps/br207244) class to determine the phone's current state.
+次の表に、電話の現在の状態に応じて、[**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) の各値に対して、電話でバックグラウンド転送が許可されるかどうかを示します。 [
+            **ConnectionCost**](https://msdn.microsoft.com/library/windows/apps/br207244) クラスを使って、電話の現在の状態を判断できます。
 
-| Device State                                                                                                                      | UnrestrictedOnly | Default | Always |
+| デバイスの状態                                                                                                                      | UnrestrictedOnly | Default (既定) | Always |
 |-----------------------------------------------------------------------------------------------------------------------------------|------------------|---------|--------|
-| Connected to WiFi                                                                                                                 | Allow            | Allow   | Allow  |
-| Metered Connection, not roaming, under data limit, on track to stay under limit                                                   | Deny             | Allow   | Allow  |
-| Metered Connection, not roaming, under data limit, on track to exceed limit                                                       | Deny             | Deny    | Allow  |
-| Metered Connection, roaming, under data limit                                                                                     | Deny             | Deny    | Allow  |
-| Metered Connection, over data limit. This state only occurs when the user enables "Restrict background data in the Data Sense UI. | Deny             | Deny    | Deny   |
+| WiFi 接続                                                                                                                 | 許可            | 許可   | 許可  |
+| 従量制課金接続、ローミング時以外、データ制限未満、制限内にとどまる見込み                                                   | 拒否             | 許可   | 許可  |
+| 従量制課金接続、ローミング時以外、データ制限未満、制限を超過する見込み                                                       | 拒否             | 拒否    | 許可  |
+| 従量制課金接続、ローミング時、データ制限未満                                                                                     | 拒否             | 拒否    | 許可  |
+| 従量制課金接続、データ制限超過 この状態は、ユーザーが Data Sense UI で [バックグラウンドでのデータ通信を制限する] を有効にしている場合にのみ発生します。 | 拒否             | 拒否    | 拒否   |
 
- 
+ 
 
-## Uploading files
+## ファイルのアップロード
 
 
-When using Background Transfer an upload exists as an [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) that exposes a number of control methods that are used to restart or cancel the operation. App events (e.g. suspension or termination) and connectivity changes are handled automatically by the system per **UploadOperation**; uploads will continue during app suspension periods or pause and persist beyond app termination. Additionally, setting the [**CostPolicy**](https://msdn.microsoft.com/library/windows/apps/hh701018) property will indicate whether or not your app will start uploads while a metered network is being used for Internet connectivity.
+バックグラウンド転送を使う場合、アップロードは [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) として存在し、操作の再起動や取り消しに使われる多くの制御メソッドを公開します。 アプリのイベント (一時停止、終了など) や接続の変更は、**UploadOperation** を通じてシステムによって自動的に処理されます。アップロードは、アプリの一時停止中も続行し、アプリの終了以降は一時停止して保持されます。 また、[**CostPolicy**](https://msdn.microsoft.com/library/windows/apps/hh701018) プロパティを設定することで、従量制課金接続がインターネット接続のために使われている間もアプリがアップロードを開始するかどうかを指定します。
 
-The following examples will walk you through the creation and initialization of a basic upload and how to enumerate and reintroduce operations persisted from a previous app session.
+以下に、基本的なアップロードを作成および初期化する例と、前のアプリ セッションから続いている操作を列挙および再び取り込む例を示します。
 
-### Uploading a single file
+### 1 つのファイルのアップロード
 
-The creation of an upload begins with [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140). This class is used to provide the methods that enable your app to configure the upload before creating the resultant [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224). The following example shows how to do this with the required [**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) and [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) objects.
+アップロードの作成は、[**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) から始めます。 このクラスは、アプリで [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) を作成する前に、そのアップロードを構成できるようにするメソッドを提供するために使われます。 次の例は、必要な [**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) オブジェクトと [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトを使ってこれを行う方法を示しています。
 
-**Identify the file and destination for the upload**
+**アップロードするファイルと送信先の特定**
 
-Before we can begin with the creation of an [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224), we first need to identify the URI of the location to upload to, and the file that will be uploaded. In the following example, the *uriString* value is populated using a string from UI input, and the *file* value using the [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) object returned by a [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) operation.
+[
+            **UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) の作成を始める前に、アップロード先となる場所の URI とアップロードされるファイルを識別する必要があります。 次の例では、UI 入力からの文字列を使って *uriString* の値が設定され、[**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) 操作で返される [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトを使って *file* の値が設定されます。
 
-[!code-js[uploadFile](./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_B "Identify the file and destination for the upload")]
+[!code-js[uploadFile]
+            (./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_B "アップロードするファイルと送信先の特定")]
 
-**Create and initialize the upload operation**
+**アップロード操作の作成と初期化**
 
-In the previous step the *uriString* and *file* values are passed to an instance of our next example, UploadOp, where they are used to configure and start the new upload operation. First, *uriString* is parsed to create the required [**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) object.
+前の手順では、*uriString* と *file* の値が次に示す例の UploadOp のインスタンスに渡されました。これらの値は、新しいアップロード操作を構成し開始するために使われます。 まず、*uriString* が解析されて、要求された [**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) オブジェクトが作成されます。
 
-Next, the properties of the provided [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) (*file*) are used by [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) to populate the request header and set the *SourceFile* property with the **StorageFile** object. The [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br207146) method is then called to insert the file name, provided as a string, and the [**StorageFile.Name**](https://msdn.microsoft.com/library/windows/apps/br227220) property.
+そして、与えられた [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) (*file*) のプロパティが [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) で使われて要求ヘッダーが設定され、*SourceFile* プロパティに **StorageFile** オブジェクトが設定されます。 次に、[**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br207146) メソッドが呼び出され、文字列として提供されたファイル名と [**StorageFile.Name**](https://msdn.microsoft.com/library/windows/apps/br227220) プロパティが挿入されます。
 
-Finally, [**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) creates the [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) (*upload*).
+最後に、[**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) によって [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) (*upload*) が作成されます。
 
-[!code-js[uploadFile](./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_A "Create and initialize the upload operation")]
+[!code-js[uploadFile]
+            (./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_A "アップロード操作の作成と初期化")]
 
-Note the asynchronous method calls defined using JavaScript promises. Looking at a line from the last example:
+JavaScript の promise を使って定義した非同期メソッドの呼び出しに注意してください。 最後の例には次の行があります。
 
 ```javascript
 promise = upload.startAsync().then(complete, error, progress);
@@ -90,9 +94,9 @@ promise = upload.startAsync().then(complete, error, progress);
 
     The async method call is followed by a then statement which indicates methods, defined by the app, that are called when a result from the async method call is returned. For more information on this programming pattern, see [Asynchronous programming in JavaScript using promises](http://msdn.microsoft.com/library/windows/apps/hh464930.aspx).
 
-### Uploading multiple files
+### 複数のファイルのアップロード
 
-**Identify the files and destination for the upload**
+**アップロードするファイルと送信先の特定**
 
     In a scenario involving multiple files transferred with a single [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224), the process begins as it usually does by first providing the required destination URI and local file information. Similar to the example in the previous section, the URI is provided as a string by the end-user and [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) can be used to provide the ability to indicate files through the user interface as well. However, in this scenario the app should instead call the [**PickMultipleFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br207851) method to enable the selection of multiple files through the UI.
 
@@ -117,7 +121,7 @@ function uploadFiles() {
     }
 ```
 
-**Create objects for the provided parameters**
+**指定されたパラメーターに基づくオブジェクトの作成**
 
     The next two examples use code contained in a single example method, **startMultipart**, which was called at the end of the last step. For the purpose of instruction the code in the method that creates an array of [**BackgroundTransferContentPart**](https://msdn.microsoft.com/library/windows/apps/hh923029) objects has been split from the code that creates the resultant [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224).
 
@@ -137,7 +141,7 @@ upload.startMultipart = function (uriString, files) {
             });
 ```
 
-**Create and initialize the multi-part upload operation**
+**マルチパート アップロード操作の作成と初期化**
 
     With our contentParts array populated with all of the [**BackgroundTransferContentPart**](https://msdn.microsoft.com/library/windows/apps/hh923029) objects representing each [**IStorageFile**](https://msdn.microsoft.com/library/windows/apps/br227102) for upload, we are ready to call [**CreateUploadAsync**](https://msdn.microsoft.com/library/windows/apps/hh923973) using the [**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) to indicate where the request will be sent.
 
@@ -156,71 +160,78 @@ upload.startMultipart = function (uriString, files) {
      };
 ```
 
-### Restarting interrupted upload operations
+### 中断されたアップロード操作の再開
 
-On completion or cancellation of an [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224), any associated system resources are released. However, if your app is terminated before either of these things can occur, any active operations are paused and the resources associated with each remain occupied. If these operations are not enumerated and re-introduced to the next app session, they will not be completed and will continue to occupy device resources.
+[
+            **UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) が完了するか取り消されると、関連するシステム リソースがすべて解放されます。 ただし、これらのイベントのどちらかが発生する前にアプリが終了した場合、アクティブな操作は一時停止され、それぞれに関連付けられているリソースは占有されたままになります。 これらの操作が列挙されずに次のアプリ セッションに再び取り込まれると、それらの操作は完了せず、デバイス リソースを占有したままとなります。
 
-1.  Before defining the function that enumerates persisted operations, we need to create an array that will contain the [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) objects that it will return:
+1.  持続している操作を列挙する関数を定義する前に、返される [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) オブジェクトを格納する配列を作成する必要があります。
 
-[!code-js[uploadFile](./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_C "Restart interrupted upload operation")]
+[!code-js[uploadFile]
+            (./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_C "中断されたアップロード操作の再開")]
 
-2.  Next we define the function that enumerates persisted operations and stores them in our array. Note that the **load** method called to re-assign callbacks to the [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224), should it persist through app termination, is in the UploadOp class we define later in this section.
+2.  次に、持続している操作を列挙してそれらを配列に格納する関数を定義します。 [
+            **UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) に対するコールバックを再び割り当てるために呼び出される **load** メソッドは、アプリの終了後も持続する場合、このセクションでこの後定義する UploadOp クラス内にあることに注意してください。
 
-[!code-js[uploadFile](./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_D "Enumerate persisted operations")]
+[!code-js[uploadFile]
+            (./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_D "持続している操作を列挙する")]
 
-## Downloading files
+## ファイルのダウンロード
 
-When using Background Transfer, each download exists as a [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) that exposes a number of control methods used to pause, resume, restart, and cancel the operation. App events (e.g. suspension or termination) and connectivity changes are handled automatically by the system per **DownloadOperation**; downloads will continue during app suspension periods or pause and persist beyond app termination. For mobile network scenarios, setting the [**CostPolicy**](https://msdn.microsoft.com/library/windows/apps/hh701018) property will indicate whether or not your app will begin or continue downloads while a metered network is being used for Internet connectivity.
+バックグラウンド転送を使う場合、各ダウンロードは [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) として存在し、操作の一時停止、再開、再起動、取り消しに使われる多くの制御メソッドを公開します。 アプリのイベント (一時停止、終了など) や接続の変更は、**DownloadOperation** を通じてシステムによって自動的に処理されます。ダウンロードは、アプリの一時停止中も続行し、アプリの終了以降は一時停止して保持されます。 モバイル ネットワーク シナリオの場合、[**CostPolicy**](https://msdn.microsoft.com/library/windows/apps/hh701018) プロパティを設定することで、従量制課金接続がインターネット接続のために使われている間もアプリがダウンロードを開始または続行するかどうかを指定します。
 
-If you are downloading small resources that are likely to complete quickly, you should use [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) APIs instead of Background Transfer.
+すぐに完了する可能性がある小さいリソースをダウンロードする場合は、バックグラウンド転送ではなく [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) API を使ってください。
 
-The following examples will walk you through the creation and initialization of a basic download, and how to enumerate and reintroduce operations persisted from a previous app session.
+以下に、基本的なダウンロードを作成および初期化する例と、前のアプリ セッションから続いている操作を列挙および再び取り込む例を示します。
 
-### Configure and start a Background Transfer file download
+### バックグラウンド転送によるファイルのダウンロードを構成して開始する
 
-The following example demonstrates how strings representing a URI and a file name can be used to create a [**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) object and the [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) that will contain the requested file. In this example, the new file is automatically placed in a pre-defined location. Alternatively, [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) can be used allow users to indicate where to save the file on the device. Note that the **load** method called to re-assign callbacks to the [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154), should it persist through app termination, is in the DownloadOp class defined later in this section.
+URI とファイル名を表す文字列を使って、[**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) オブジェクトと要求されたファイルを格納する [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) とを作成する方法を次の例で示します。 この例では、新しいファイルが定義済みの場所に自動的に配置されます。 または、[**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) を使ってユーザーがファイルを保存するデバイスの場所を指定できるようになります。 [
+            **DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) に対するコールバックを再び割り当てるために呼び出される **load** メソッドは、アプリの終了以降も持続する場合、このセクションでこの後定義する DownloadOp クラス内にあることに注意してください。
 
 [!code-js[uploadFile](./code/backgroundtransfer/download_quickstart/js/main.js#Snippetdownload_quickstart_A)]
 
-Note the asynchronous method calls defined using JavaScript promises. Looking at line 17 from the previous code example:
+JavaScript の promise を使って定義した非同期メソッドの呼び出しに注意してください。 前のコード例の 17 行目には次のコードがあります。
 
 ```javascript
 promise = download.startAsync().then(complete, error, progress);
 ```
 
-The async method call is followed by a then statement which indicates methods, defined by the app, that are called when a result from the async method call is returned. For more information on this programming pattern, see [Asynchronous programming in JavaScript using promises](http://msdn.microsoft.com/library/windows/apps/hh464930.aspx).
+非同期メソッドの後に then ステートメントが続いています。このステートメントでは、非同期メソッドの呼び出しの結果が返されたときに呼び出される、アプリで定義されたメソッドを指定しています。 このプログラミング パターンについて詳しくは、「[promise を使った JavaScript での非同期プログラミング](http://msdn.microsoft.com/library/windows/apps/hh464930.aspx)」をご覧ください。
 
-### Adding additional operation control methods
+### その他の操作制御メソッドの追加
 
-The level of control can be increased by implementing additional [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) methods. For example, adding the following code to the example above will introduce the ability to cancel the download.
+追加の [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) メソッドを実装することによって、制御のレベルを高めることができます。 上の例に次のコードを追加すると、ダウンロードをキャンセルすることができるようになります。
 
 [!code-js[uploadFile](./code/backgroundtransfer/download_quickstart/js/main.js#Snippetdownload_quickstart_B)]
 
-### Enumerating persisted operations at start-up
+### 持続している操作の起動時の列挙
 
-On completion or cancellation of a [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154), any associated system resources are released. However, if your app is terminated before either of these events occur, downloads will pause and persist in the background. The following examples demonstrate how to re-introduce persisted downloads into a new app session.
+[
+            **DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) が完了するか取り消されると、関連するシステム リソースがすべて解放されます。 ただし、これらのイベントのどちらかが発生する前にアプリが終了した場合、ダウンロードは一時停止され、バックグラウンドで保持されます。 以下の例は、持続しているダウンロードを新しいアプリ セッションに再び取り込む方法を示しています。
 
-1.  Before defining the function that enumerates persisted operations, we need to create an array that will contain the [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) objects that it will return:
+1.  持続している操作を列挙する関数を定義する前に、返される [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) オブジェクトを格納する配列を作成する必要があります。
 
 [!code-js[uploadFile](./code/backgroundtransfer/download_quickstart/js/main.js#Snippetdownload_quickstart_D)]
 
-2.  Next we define the function that enumerates persisted operations and stores them in our array. Note that the **load** method called to re-assign callbacks for a persisted [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) is in the DownloadOp example we define later in this section.
+2.  次に、持続している操作を列挙してそれらを配列に格納する関数を定義します。 持続している [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) に対するコールバックを再び割り当てるために呼び出される **load** メソッドは、このセクションでこの後定義する DownloadOp の例に含まれていることに注意してください。
 
 [!code-js[uploadFile](./code/backgroundtransfer/download_quickstart/js/main.js#Snippetdownload_quickstart_E)]
 
-3.  You can now use the populated list to restart pending operations.
+3.  これで、返された値の一覧を使って、保留中の操作を再開できます。
 
-## Post-processing
+## 後処理
 
-A new feature in Windows 10 is the ability to run application code at the completion of a background transfer even when the app is not running. For example, your app might want to update a list of available movies after a movie has finished downloading, rather than have your app scan for new movies every time it starts. Or your app might want to handle a failed file transfer by trying again using a different server or port. Post-processing is invoked for both successful and failed transfers, so you can use it to implement custom error-handling and retry logic.
+Windows 10 の新機能は、アプリが実行されていない場合でも、バックグラウンド転送の完了時にアプリケーション コードを実行できる機能です。 たとえば、アプリが開始されるたびに新しいムービーをスキャンするのではなく、ムービーのダウンロードが完了した後で利用可能な映画の一覧を更新できます。 または、アプリでファイル転送が失敗した場合に、別のサーバーまたはポートを使ってもう一度転送し直すことができます。 後処理は成功した転送と失敗した転送の両方で呼び出されるため、これを使って、カスタム エラー処理と再試行ロジックを実装できます。
 
-Postprocessing uses the existing background task infrastructure. You create a background task and associate it with your transfers before you start the transfers. The transfers are then executed in the background, and when they are complete, your background task is called to perform post-processing.
+後処理では、既存のバックグラウンド タスク インフラストラクチャを使います。 転送を開始する前に、バックグラウンド タスクを作成して転送に関連付けます。 転送はバックグラウンドで実行され、完了時にバックグラウンド タスクが呼び出されて後処理が実行されます。
 
-Post-processing uses a new class, [**BackgroundTransferCompletionGroup**](https://msdn.microsoft.com/library/windows/apps/dn804209). This class is similar to the existing [**BackgroundTransferGroup**](https://msdn.microsoft.com/library/windows/apps/dn279030) in that it allows you to group background transfers together, but **BackgroundTransferCompletionGroup** adds the ability to designate a background task to be run when the transfer is complete.
+後処理では、[**BackgroundTransferCompletionGroup**](https://msdn.microsoft.com/library/windows/apps/dn804209) という新しいクラスを使います。 このクラスは、バックグラウンド タスクをグループ化できるという点で既存の [**BackgroundTransferGroup**](https://msdn.microsoft.com/library/windows/apps/dn279030) に似ていますが、**BackgroundTransferCompletionGroup** には、転送の完了時に実行するバックグラウンド タスクを指定できる機能が追加されています。
 
-You initiate a background transfer with post-processing as follows.
+後処理があるバックグラウンド転送は、次のように開始します。
 
-1.  Create a [**BackgroundTransferCompletionGroup**](https://msdn.microsoft.com/library/windows/apps/dn804209) object. Then, create a [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) object. Set the **Trigger** property of the builder object to the completion group object, and the **TaskEngtyPoint** property of the builder to the entry point of the background task that should execute on transfer completion. Finally, call the [**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772) method to register your background task. Note that many completion groups can share one background task entry point, but you can have only one completion group per background task registration.
+1.  [
+            **BackgroundTransferCompletionGroup**](https://msdn.microsoft.com/library/windows/apps/dn804209) オブジェクトを作成します。 続けて、[**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) オブジェクトを作成します。 ビルダー オブジェクトの **Trigger** プロパティを完了グループ オブジェクトに設定し、ビルダーの **TaskEngtyPoint** プロパティを、転送完了時に実行する必要があるバックグラウンド タスクのエントリ ポイントに設定します。 最後に、[**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772) メソッドを呼び出してバックグラウンド タスクを登録します。 複数の完了グループで 1 つのバックグラウンド タスクのエントリ ポイントを共有できますが、バックグラウンド タスクの登録では 1 つの完了グループのみ指定できることに注意してください。
 
    ```csharp
     var completionGroup = new BackgroundTransferCompletionGroup();
@@ -233,7 +244,7 @@ You initiate a background transfer with post-processing as follows.
     BackgroundTaskRegistration downloadProcessingTask = builder.Register();
     ```
 
-2.  Next you associate background transfers with the completion group. Once all transfers are created, enable the completion group.
+2.  次に、バックグラウンド転送を完了グループに関連付けます。 すべての転送を作成したら、完了グループを有効にします。
 
    ```csharp
     BackgroundDownloader downloader = new BackgroundDownloader(completionGroup);
@@ -247,7 +258,7 @@ You initiate a background transfer with post-processing as follows.
     downloader.CompletinGroup.Enable();
     ```
 
-3.  The code in the background task extracts the list of operations from the trigger details, and your code can then inspect the details for each operation and perform appropriate post-processing for each operation.
+3.  バックグラウンド タスク内のコードで、トリガーの詳細情報から操作の一覧を抽出した後、各操作の詳細を検査し、操作ごとに適切な後処理を実行できます。
 
    ```csharp
     public class BackgroundDownloadProcessingTask : IBackgroundTask
@@ -262,51 +273,59 @@ You initiate a background transfer with post-processing as follows.
     }
     ```
 
-The post-processing task is a regular background task. It is part of the pool of all background tasks, and it is subject to the same resource management policy as all background tasks.
+後処理タスクは、通常のバックグラウンド タスクです。 それはすべてのバックグラウンド タスクのプールの一部であり、すべてのバックグラウンド タスクと同じリソース管理ポリシーが適用されます。
 
-Also, note that post-processing does not replace foreground completion handlers. If your app defines a foreground completion handler, and your app is running when the file transfer completes, then both your foreground completion handler and your background completion handler will be called. The order in which foreground and background tasks are called is not guaranteed. If you define both, you should ensure that the two tasks will work properly and not interfere with each other if they are running concurrently.
+後処理はフォアグラウンド完了ハンドラーに代わるものではないことにも注意してください。 アプリにフォアグラウンド完了ハンドラーが定義されているときに、ファイル転送の完了時にアプリが実行されている場合は、フォアグラウンド完了ハンドラーとバックグラウンド完了ハンドラーの両方が呼び出されます。 フォアグラウンド タスクとバックグラウンド タスクが呼び出される順序は保証されません。 両方を定義する場合は、2 つのタスクが正常に動作し、同時に実行されても相互に干渉しないことを確認する必要があります。
 
-## Request timeouts
+## 要求のタイムアウト
 
-There are two primary connection timeout scenarios to take into consideration:
+次の 2 つの主要接続タイムアウト シナリオを考慮する必要があります。
 
--   When establishing a new connection for a transfer, the connection request is aborted if it is not established within five minutes.
+-   転送のために新しい接続を確立する場合、5 分以内に接続が確立しないと、接続要求は中止されます。
 
--   After a connection has been established, an HTTP request message that has not received a response within two minutes is aborted.
+-   接続が確立された後、2 分以内で応答を受け取らなかった HTTP 要求メッセージは中止されます。
 
-> **Note**  In either scenario, assuming there is Internet connectivity, Background Transfer will retry a request up to three times automatically. In the event Internet connectivity is not detected, additional requests will wait until it is.
+> **注:** どちらのシナリオにおいても、バックグラウンド転送はインターネット接続があることを前提に、最高 3 回まで自動的に要求を再試行します。 インターネット接続が検出されないと、検出されるまで別の要求は待機します。
 
-## Debugging guidance
+## デバッグのガイダンス
 
-Stopping a debugging session in Microsoft Visual Studio is comparable to closing your app; PUT uploads are paused and POST uploads are terminated. Even while debugging, your app should enumerate and then restart or cancel any persisted uploads. For example, you can have your app cancel enumerated persisted upload operations at app startup if there is no interest in previous operations for that debug session.
+Microsoft Visual Studio でデバッグ セッションを停止することは、アプリを閉じることに相当します。PUT によるアップロードは一時停止され、POST によるアップロードは終了されます。 デバッグ時であっても、アプリでは、持続しているアップロードを列挙し、再実行や取り消しを行うことができる必要があります。 たとえば、そのデバッグ セッションで以前の操作が重要ではない場合、アプリの起動時に、列挙された持続しているアップロード操作をアプリで取り消すことができます。
 
-While enumerating downloads/uploads on app startup during a debug session, you can have your app cancel them if there is no interest in previous operations for that debug session. Note that if there are Visual Studio project updates, like changes to the app manifest, and the app is uninstalled and re-deployed, [**GetCurrentUploadsAsync**](https://msdn.microsoft.com/library/windows/apps/hh701149) cannot enumerate operations created using the previous app deployment.
+デバッグ セッションでアプリの起動時にダウンロードやアップロードを列挙する際、そのデバッグ セッションで以前の操作が重要ではない場合、列挙された操作をアプリで取り消すことができます。 アプリ マニフェストの変更など、Visual Studio プロジェクトの更新があり、アプリがアンインストールされ、もう一度展開された場合、[**GetCurrentUploadsAsync**](https://msdn.microsoft.com/library/windows/apps/hh701149) は、前のアプリの展開を使って作成された操作を列挙できないことに注意してください。
 
-When using Background Transfer during development, you may get into a situation where the internal caches of active and completed transfer operations can get out of sync. This may result in the inability to start new transfer operations or interact with existing operations and [**BackgroundTransferGroup**](https://msdn.microsoft.com/library/windows/apps/dn279030) objects. In some cases, attempting to interact with existing operations may trigger a crash. This result can occur if the [**TransferBehavior**](https://msdn.microsoft.com/library/windows/apps/dn279033) property is set to **Parallel**. This issue occurs only in certain scenarios during development and is not applicable to end users of your app.
+開発時にバックグラウンド転送を使うと、完了したアクティブな転送操作の内部キャッシュが同期しなくなる状況が発生する可能性があります。 このため、新しい転送操作を開始できない場合や、既存の操作や [**BackgroundTransferGroup**](https://msdn.microsoft.com/library/windows/apps/dn279030) オブジェクトを処理できない場合があります。 状況によっては、既存の操作を処理しようとすると、クラッシュの原因となる可能性があります。 これは、[**TransferBehavior**](https://msdn.microsoft.com/library/windows/apps/dn279033) プロパティが **Parallel** に設定されている場合に発生する可能性があります。 この問題は、開発中に特定のシナリオでのみ発生し、アプリのエンド ユーザーには適用されません。
 
-Four scenarios using Visual Studio can cause this issue.
+Visual Studio を使う 4 つのシナリオで、この問題が発生する可能性があります。
 
--   You create a new project with the same app name as an existing project, but a different language (from C++ to C#, for example).
--   You change the target architecture (from x86 to x64, for example) in an existing project.
--   You change the culture (from neutral to en-US, for example) in an existing project.
--   You add or remove a capability in the package manifest (adding **Enterprise Authentication**, for example) in an existing project.
+-   既にあるプロジェクトと同じアプリ名を持つ新しいプロジェクトを、別の言語で作成する (C++ から C# など)。
+-   既にあるプロジェクトのターゲット アーキテクチャを変更する (x86 から x64 など)。
+-   既にあるプロジェクトのカルチャを変更する (ニュートラルから en-US など)。
+-   既にあるプロジェクトのパッケージ マニフェストで機能を追加または削除する (**エンタープライズ認証**を追加するなど)。
 
-Regular app servicing, including manifest updates which add or remove capabilities, do not trigger this issue on end user deployments of your app.
-To work around this issue, completely uninstall all versions of the app and re-deploy with the new language, architecture, culture, or capability. This can be done via the **Start** screen or using PowerShell and the **Remove-AppxPackage** cmdlet.
+機能を追加または削除するマニフェストの更新など、通常のアプリのサービスでは、アプリのエンド ユーザーに対する展開でこの問題は発生しません。
+この問題を回避するには、アプリのすべてのバージョンを完全にアンインストールし、新しい言語、アーキテクチャ、カルチャ、または機能をもう一度展開します。 この操作は、**スタート**画面で行うか、PowerShell と **Remove-AppxPackage** コマンドレットを使って行うことができます。
 
-## Exceptions in Windows.Networking.BackgroundTransfer
+## Windows.Networking.BackgroundTransfer の例外
 
-An exception is thrown when an invalid string for a the Uniform Resource Identifier (URI) is passed to the constructor for the [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) object.
+Uniform Resource Identifier (URI) として無効な文字列が、[**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) オブジェクトのコンストラクターに渡されると、例外がスローされます。
 
-**.NET:  **The [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) type appears as [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) in C# and VB.
+**.NET: **[**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) 型は、C# や VB では [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) と表示されます。
 
-In C# and Visual Basic, this error can be avoided by using the [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) class in the .NET 4.5 and one of the [**System.Uri.TryCreate**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.trycreate.aspx) methods to test the string received from the app user before the URI is constructed.
+C# と Visual Basic では、.NET 4.5 の [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) クラスと、いずれかの [**System.Uri.TryCreate**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.trycreate.aspx) メソッドを使って、URI が作成される前にアプリのユーザーから受け取った文字列をテストすることによって、このエラーを回避できます。
 
-In C++, there is no method to try and parse a string to a URI. If an app gets input from the user for the [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998), the constructor should be in a try/catch block. If an exception is thrown, the app can notify the user and request a new hostname.
+C++ では、URI として渡される文字列を試行して解析するメソッドはありません。 アプリがユーザーから [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) の入力を取得する場合、このコンストラクターを try/catch ブロックに配置する必要があります。 例外がスローされた場合、アプリは、ユーザーに通知し、新しいホスト名を要求することができます。
 
-The [**Windows.Networking.backgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242) namespace has convenient helper methods and uses enumerations in the [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) namespace for handling errors. This can be useful for handling specific network exceptions differently in your app.
+[
+            **Windows.Networking.backgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242) 名前空間には便利なヘルパー メソッドがあり、[**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 名前空間の列挙値を使ってエラーを処理します。 これは、アプリで特定のネットワーク例外を異なる方法で処理する場合に役立つことがあります。
 
-An error encountered on an asynchronous method in the [**Windows.Networking.backgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242) namespace is returned as an **HRESULT** value. The [**BackgroundTransferError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701093) method is used to convert a network error from a background transfer operation to a [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh747818) enumeration value. Most of the **WebErrorStatus** enumeration values correspond to an error returned by the native HTTP or FTP client operation. An app can filter on specific **WebErrorStatus** enumeration values to modify app behavior depending on the cause of the exception.
+[
+            **Windows.Networking.backgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242) 名前空間の非同期メソッドで発生したエラーは、**HRESULT** 値として返されます。 [
+            **BackgroundTransferError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701093) メソッドは、バックグラウンド転送操作からのネットワーク エラーを [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh747818) 列挙値に変換するために使われます。 **WebErrorStatus** 列挙値のほとんどは、ネイティブ HTTP または FTP クライアント操作から返されるエラーに対応しています。 アプリは特定の **WebErrorStatus** 列挙値に対するフィルター処理を行い、例外の原因に応じてアプリの動作を変更できます。
 
-For parameter validation errors, an app can also use the **HRESULT** from the exception to learn more detailed information on the error that caused the exception. Possible **HRESULT** values are listed in the *Winerror.h* header file. For most parameter validation errors, the **HRESULT** returned is **E\_INVALIDARG**.
+パラメーター検証エラーの場合は、例外の **HRESULT** を使って、その例外の原因となったエラーの詳細情報を確認することもできます。 使うことができる **HRESULT** 値は、*Winerror.h* ヘッダー ファイルに記載されています。 パラメーター検証エラーではほとんどの場合、返される **HRESULT** は **E\_INVALIDARG** です。
+
+
+
+<!--HONumber=May16_HO2-->
+
 
