@@ -1,5 +1,5 @@
 {
-  "LastProcessedCommit": "37fcfd4c367e3b06053929c0dc0cd3c8f4896fc6",
+  "LastProcessedCommit": "bb28828463b14130deede9f7cf796c6e32fcb48b",
   "LastTranslatedCommit": "2e89625a383b9db92484ab299e247edd8cb017a3",
   "Items": {
     "3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3": {
@@ -66295,6 +66295,36 @@
       "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\known-issues.83c75815621268c5c51534a658527cef71ffe8bd.ja-jp.xlf",
       "HandoffFileCommit": "6ffc34793001e1dddeb4c86145b182df30a53c49",
       "HandoffDateTime": "2016-05-18T19:32:09.7094884Z",
+      "HandoffPriority": "",
+      "HandoffException": null,
+      "HandoffFailureTimes": 0,
+      "TargetFileCommit": null,
+      "TargetFilePath": null,
+      "HandbackFilePath": null,
+      "HandbackFileCommit": null,
+      "HandbackDateTime": "0001-01-01T00:00:00",
+      "HandbackException": null,
+      "HandbackFailureTimes": 0,
+      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": null,
+      "ArchiveFileCommit": null,
+      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveException": null
+    },
+    "2e9a011a248e4c7e1d3f06064a7f82e308f07131": {
+      "FileHash": "2e9a011a248e4c7e1d3f06064a7f82e308f07131",
+      "SourceFileCommit": "bb28828463b14130deede9f7cf796c6e32fcb48b",
+      "SourceFilePath": "windows-apps-src\\monetize\\enable-in-app-product-purchases.md",
+      "HandoffReason": 1,
+      "DependencyFrom": null,
+      "TokenReference": null,
+      "FilePathList": [
+        "windows-apps-src\\monetize\\enable-in-app-product-purchases.md"
+      ],
+      "HasMetadata": false,
+      "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\enable-in-app-product-purchases.7bad7209343cc71c5d54d406fd12edf5d103ee01.ja-jp.xlf",
+      "HandoffFileCommit": "853f823f69fa98265c49c66fbd27063cc53dae87",
+      "HandoffDateTime": "2016-05-18T21:33:26.0884722Z",
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
