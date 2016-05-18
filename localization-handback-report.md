@@ -1,11 +1,41 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 0
+ Total Files | 2
 
 ## File List
+ Source File | Status | Details 
+ ----------- | ------ | ------- 
+ [windows-apps-src\debug-test-perf\images\em-frameratecounters.PNG](https://github.com/Microsoft/windows-apps/blob/2a3e2a27c01d7b290a33bced9f75925b400c09f6/windows-apps-src/debug-test-perf/images/em-frameratecounters.PNG) | InSyncHandedBackSuccess | [Details](#49d5c6b9b25d3dee65e09aeb7726c3695132bc601940)
+ [windows-apps-src\monetize\images\feedback_icon.PNG](https://github.com/Microsoft/windows-apps/blob/44f9a2d6e45645e7fc0b60ec5fe9c1a465e41508/windows-apps-src/monetize/images/feedback_icon.PNG) | InSyncHandedBackSuccess | [Details](#17324ec7248a681bfd744ca4fb8a3d48be2aad253302)
 
 ## Item Details
+##### <a name='49d5c6b9b25d3dee65e09aeb7726c3695132bc601940'></a> Source: [windows-apps-src\debug-test-perf\images\em-frameratecounters.PNG](https://github.com/Microsoft/windows-apps/blob/2a3e2a27c01d7b290a33bced9f75925b400c09f6/windows-apps-src/debug-test-perf/images/em-frameratecounters.PNG)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\debug-test-perf\images\em-frameratecounters.PNG](https://github.com/Microsoft/windows-apps.ja-jp/blob/2e89625a383b9db92484ab299e247edd8cb017a3/windows-apps-src/debug-test-perf/images/em-frameratecounters.PNG)
+* Handoff File: [49d5c6b9b25d3dee65e09aeb7726c3695132bc60.PNG](https://github.com/Microsoft/WDG.handoff/blob/9f4730e20ee8954411f1987d143045b3fa3ab94a/ol-handoff/Microsoft/windows-apps.ja-jp/master/49d5c6b9b25d3dee65e09aeb7726c3695132bc60.PNG)
+* Handoff Datetime: 2016-05-12 14:52:12
+* Handoff Reason: IsDependency
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [49d5c6b9b25d3dee65e09aeb7726c3695132bc60.PNG](https://github.com/Microsoft/WDG.handback/blob/d45fdad5883fb395b7ffc85da3334853e58a6043/ol-handback/Microsoft/windows-apps.ja-jp/master/49d5c6b9b25d3dee65e09aeb7726c3695132bc60.PNG)
+* Handback Datetime: 2016-05-18 10:35:10
+* Dependency From: windows-apps-src\debug-test-perf\test-with-the-emulator.md
+* [Back to Top](#report-top)
+
+##### <a name='17324ec7248a681bfd744ca4fb8a3d48be2aad253302'></a> Source: [windows-apps-src\monetize\images\feedback_icon.PNG](https://github.com/Microsoft/windows-apps/blob/44f9a2d6e45645e7fc0b60ec5fe9c1a465e41508/windows-apps-src/monetize/images/feedback_icon.PNG)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\monetize\images\feedback_icon.PNG](https://github.com/Microsoft/windows-apps.ja-jp/blob/2e89625a383b9db92484ab299e247edd8cb017a3/windows-apps-src/monetize/images/feedback_icon.PNG)
+* Handoff File: [17324ec7248a681bfd744ca4fb8a3d48be2aad25.PNG](https://github.com/Microsoft/WDG.handoff/blob/9f4730e20ee8954411f1987d143045b3fa3ab94a/ol-handoff/Microsoft/windows-apps.ja-jp/master/17324ec7248a681bfd744ca4fb8a3d48be2aad25.PNG)
+* Handoff Datetime: 2016-05-12 14:52:12
+* Handoff Reason: IsDependency
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [17324ec7248a681bfd744ca4fb8a3d48be2aad25.PNG](https://github.com/Microsoft/WDG.handback/blob/d45fdad5883fb395b7ffc85da3334853e58a6043/ol-handback/Microsoft/windows-apps.ja-jp/master/17324ec7248a681bfd744ca4fb8a3d48be2aad25.PNG)
+* Handback Datetime: 2016-05-18 10:35:10
+* Dependency From: windows-apps-src\monetize\launch-feedback-hub-from-your-app.md
+* [Back to Top](#report-top)
+
 
 ## Error Details
 
