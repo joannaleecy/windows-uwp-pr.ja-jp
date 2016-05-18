@@ -685,8 +685,3 @@
 ### [Windows ストア ポリシー](https://msdn.microsoft.com/en-us/library/windows/apps/dn764944.aspx)
 #### [変更履歴](https://msdn.microsoft.com/en-us/library/windows/apps/dn764945.aspx)
 ### [開発者倫理規定](https://msdn.microsoft.com/en-us/library/windows/apps/dn764941.aspx)
-
-
-<!--HONumber=Mar16_HO5-->
-
-
