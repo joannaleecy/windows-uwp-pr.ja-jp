@@ -2358,11 +2358,17 @@
   "eb639e78bf144572dfbfd2d65514bb4eff7c7be1": [
     "windows-apps-src\\debug-test-perf\\deploying-and-debugging-uwp-apps.md"
   ],
+  "07d4cbfbe343a505b10751ba7ea9e8c1162b2bb7": [
+    "windows-apps-src\\debug-test-perf\\device-portal.md"
+  ],
   "ec3c972fb4c2f7e8f9317ac0031039786515a940": [
     "windows-apps-src\\debug-test-perf\\device-portal.md"
   ],
   "e2e0f159e739b5501932e7913c35e1e49726cc47": [
     "windows-apps-src\\debug-test-perf\\device-portal.md"
+  ],
+  "9961a77b434908ee1915f018b92a53f2e5f25061": [
+    "windows-apps-src\\debug-test-perf\\device-portal-api-core.md"
   ],
   "f79501f7852ba276d472efcaa25803a1b8af93ec": [
     "windows-apps-src\\debug-test-perf\\device-portal-api-core.md"
