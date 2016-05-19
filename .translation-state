@@ -1,5 +1,5 @@
 {
-  "LastProcessedCommit": "f4be0775cdccf98ecad9a2c7ff8395d9a5a250e7",
+  "LastProcessedCommit": "f17132514a42c50d6bfe716f6be706748c287043",
   "LastTranslatedCommit": "2e89625a383b9db92484ab299e247edd8cb017a3",
   "Items": {
     "3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3": {
@@ -66355,6 +66355,36 @@
       "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.ja-jp.xlf",
       "HandoffFileCommit": "1bff2559d5a4baa504f2ac20556c77e9ce4bebf1",
       "HandoffDateTime": "2016-05-19T05:33:03.0736929Z",
+      "HandoffPriority": "",
+      "HandoffException": null,
+      "HandoffFailureTimes": 0,
+      "TargetFileCommit": null,
+      "TargetFilePath": null,
+      "HandbackFilePath": null,
+      "HandbackFileCommit": null,
+      "HandbackDateTime": "0001-01-01T00:00:00",
+      "HandbackException": null,
+      "HandbackFailureTimes": 0,
+      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": null,
+      "ArchiveFileCommit": null,
+      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveException": null
+    },
+    "45cb4e8b65f1aeb75c049a88c143a23350d47b64": {
+      "FileHash": "45cb4e8b65f1aeb75c049a88c143a23350d47b64",
+      "SourceFileCommit": "f17132514a42c50d6bfe716f6be706748c287043",
+      "SourceFilePath": "windows-apps-src\\publish\\setting-up-your-payout-account-and-tax-forms.md",
+      "HandoffReason": 1,
+      "DependencyFrom": null,
+      "TokenReference": null,
+      "FilePathList": [
+        "windows-apps-src\\publish\\setting-up-your-payout-account-and-tax-forms.md"
+      ],
+      "HasMetadata": true,
+      "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\setting-up-your-payout-account-and-tax-forms.713eef0ce6c8021be69a291d8f7972e14807c5ae.ja-jp.xlf",
+      "HandoffFileCommit": "bee045ff67787ac5dcdec109a49fadee3e314131",
+      "HandoffDateTime": "2016-05-19T18:04:29.3149999Z",
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
