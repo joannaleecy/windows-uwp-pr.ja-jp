@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\monetize\enable-in-app-product-purchases.md](https://github.com/Microsoft/windows-apps/blob/bb28828463b14130deede9f7cf796c6e32fcb48b/windows-apps-src/monetize/enable-in-app-product-purchases.md) | HandedOffSuccess | [Details](#2e9a011a248e4c7e1d3f06064a7f82e308f071313264)
+ [windows-apps-src\porting\desktop-to-uwp-run-desktop-app-converter.md](https://github.com/Microsoft/windows-apps/blob/f4be0775cdccf98ecad9a2c7ff8395d9a5a250e7/windows-apps-src/porting/desktop-to-uwp-run-desktop-app-converter.md) | HandedOffSuccess | [Details](#da4fe234efd615615a670be914e24e423f4813083369)
 
 ## Item Details
-##### <a name='2e9a011a248e4c7e1d3f06064a7f82e308f071313264'></a> Source: [windows-apps-src\monetize\enable-in-app-product-purchases.md](https://github.com/Microsoft/windows-apps/blob/bb28828463b14130deede9f7cf796c6e32fcb48b/windows-apps-src/monetize/enable-in-app-product-purchases.md)
+##### <a name='da4fe234efd615615a670be914e24e423f4813083369'></a> Source: [windows-apps-src\porting\desktop-to-uwp-run-desktop-app-converter.md](https://github.com/Microsoft/windows-apps/blob/f4be0775cdccf98ecad9a2c7ff8395d9a5a250e7/windows-apps-src/porting/desktop-to-uwp-run-desktop-app-converter.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [enable-in-app-product-purchases.7bad7209343cc71c5d54d406fd12edf5d103ee01.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/853f823f69fa98265c49c66fbd27063cc53dae87/ol-handoff/Microsoft/windows-apps.ja-jp/master/enable-in-app-product-purchases.7bad7209343cc71c5d54d406fd12edf5d103ee01.ja-jp.xlf)
-* Handoff Datetime: 2016-05-18 21:33:26
+* Handoff File: [desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/1bff2559d5a4baa504f2ac20556c77e9ce4bebf1/ol-handoff/Microsoft/windows-apps.ja-jp/master/desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.ja-jp.xlf)
+* Handoff Datetime: 2016-05-19 05:33:03
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
