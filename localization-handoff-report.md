@@ -6,15 +6,15 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\audio-video-camera\hardware-drm.md](https://github.com/Microsoft/windows-apps/blob/019662f49bd91a9fff0ef7e7e0963c9ad70017f5/windows-apps-src/audio-video-camera/hardware-drm.md) | HandedOffSuccess | [Details](#0f2d757b94e66ecfa1fa04bbc1b3b0e956184272472)
- [windows-apps-src\audio-video-camera\playready-client-sdk.md](https://github.com/Microsoft/windows-apps/blob/019662f49bd91a9fff0ef7e7e0963c9ad70017f5/windows-apps-src/audio-video-camera/playready-client-sdk.md) | OutofSyncHandedBackSuccess | [Details](#4db0016803b41149452d6c1fc74be5fa54056c6e484)
+ [windows-apps-src\audio-video-camera\background-audio.md](https://github.com/Microsoft/windows-apps/blob/99d1ffa637fd8beca5d1e829cc7cacc18a9c21e9/windows-apps-src/audio-video-camera/background-audio.md) | HandedOffSuccess | [Details](#9275a194017f08692adee6de1c4d1f6deb680613138)
+ [windows-apps-src\graphics\animations-overview.md](https://github.com/Microsoft/windows-apps/blob/c8ba7f6303a05b8de03aa29199aaa444abf75827/windows-apps-src/graphics/animations-overview.md) | HandedOffSuccess | [Details](#2a70d73a5e714aaf1096fed5d08ec4844edd66a62576)
 
 ## Item Details
-##### <a name='0f2d757b94e66ecfa1fa04bbc1b3b0e956184272472'></a> Source: [windows-apps-src\audio-video-camera\hardware-drm.md](https://github.com/Microsoft/windows-apps/blob/019662f49bd91a9fff0ef7e7e0963c9ad70017f5/windows-apps-src/audio-video-camera/hardware-drm.md)
+##### <a name='9275a194017f08692adee6de1c4d1f6deb680613138'></a> Source: [windows-apps-src\audio-video-camera\background-audio.md](https://github.com/Microsoft/windows-apps/blob/99d1ffa637fd8beca5d1e829cc7cacc18a9c21e9/windows-apps-src/audio-video-camera/background-audio.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [hardware-drm.5fb8fda243b613ca726a5d1db43f5767da669e0e.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/f1afebe724dcb45d3110bdd527d2ec200d76aa89/ol-handoff/Microsoft/windows-apps.ja-jp/master/hardware-drm.5fb8fda243b613ca726a5d1db43f5767da669e0e.ja-jp.xlf)
-* Handoff Datetime: 2016-05-20 18:32:48
+* Handoff File: [background-audio.7b1349a8c74aa8ba5aae5f29abd931f1752577ec.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/ea65bed7f525e847cd418a43dcb20efbed1f64f3/ol-handoff/Microsoft/windows-apps.ja-jp/master/background-audio.7b1349a8c74aa8ba5aae5f29abd931f1752577ec.ja-jp.xlf)
+* Handoff Datetime: 2016-05-20 19:31:57
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -22,19 +22,16 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='4db0016803b41149452d6c1fc74be5fa54056c6e484'></a> Source: [windows-apps-src\audio-video-camera\playready-client-sdk.md](https://github.com/Microsoft/windows-apps/blob/019662f49bd91a9fff0ef7e7e0963c9ad70017f5/windows-apps-src/audio-video-camera/playready-client-sdk.md)
-* Status: OutofSyncHandedBackSuccess
+##### <a name='2a70d73a5e714aaf1096fed5d08ec4844edd66a62576'></a> Source: [windows-apps-src\graphics\animations-overview.md](https://github.com/Microsoft/windows-apps/blob/c8ba7f6303a05b8de03aa29199aaa444abf75827/windows-apps-src/graphics/animations-overview.md)
+* Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [playready-client-sdk.02c7a03e7a4fdbef5841fe4bca523065a993408e.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/f1afebe724dcb45d3110bdd527d2ec200d76aa89/ol-handoff/Microsoft/windows-apps.ja-jp/master/playready-client-sdk.02c7a03e7a4fdbef5841fe4bca523065a993408e.ja-jp.xlf)
-* Handoff Datetime: 2016-05-20 18:32:48
+* Handoff File: [animations-overview.8197a9a05a89d0ee53785570dab956f1fd01116a.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/ea65bed7f525e847cd418a43dcb20efbed1f64f3/ol-handoff/Microsoft/windows-apps.ja-jp/master/animations-overview.8197a9a05a89d0ee53785570dab956f1fd01116a.ja-jp.xlf)
+* Handoff Datetime: 2016-05-20 19:31:57
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\audio-video-camera\playready-client-sdk.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/7de5def00ddc942844e8946e3a04f42648d0ed0f/windows-apps-src/audio-video-camera/playready-client-sdk.md)
-* Current Handback File: [playready-client-sdk.02c7a03e7a4fdbef5841fe4bca523065a993408e.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/playready-client-sdk.02c7a03e7a4fdbef5841fe4bca523065a993408e.ja-jp.xlf)
-* Current Handback Datetime: 2016-05-17 13:03:36
 * [Back to Top](#report-top)
 
 

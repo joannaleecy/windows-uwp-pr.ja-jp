@@ -146,6 +146,9 @@
   "7e8df66a1fc4c95cb8b0b4be9eded8ef58b6803a": [
     "windows-apps-src\\audio-video-camera\\audio-graphs.md"
   ],
+  "9275a194017f08692adee6de1c4d1f6deb680613": [
+    "windows-apps-src\\audio-video-camera\\background-audio.md"
+  ],
   "982f824f7df431509f89a27d5be067ec4858b11e": [
     "windows-apps-src\\audio-video-camera\\background-audio.md"
   ],
@@ -3397,6 +3400,9 @@
   ],
   "4141d23c5102df4970ef7c4fb3659bf3ba561ccf": [
     "windows-apps-src\\graphics\\3-d-perspective-effects.md"
+  ],
+  "2a70d73a5e714aaf1096fed5d08ec4844edd66a6": [
+    "windows-apps-src\\graphics\\animations-overview.md"
   ],
   "c2b77b2c9f6d3cc06bb05d4a79387196fa3586f4": [
     "windows-apps-src\\graphics\\animations-overview.md"
