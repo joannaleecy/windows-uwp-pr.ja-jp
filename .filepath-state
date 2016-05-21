@@ -6424,5 +6424,8 @@
   ],
   "73597c689abe7946a4896c6a123c8d8fa513dbe0": [
     "windows-apps-src\\winrt-components\\images\\buildevents.png"
+  ],
+  "8bbc426a626200f70150869166673a4a409a3cfd": [
+    "windows-apps-src\\xbox-apps\\cpusets-games.md"
   ]
 }
