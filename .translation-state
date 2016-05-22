@@ -1,5 +1,5 @@
 {
-  "LastProcessedCommit": "3cefaf4e527d2a0da412dab474a348b55ad409c9",
+  "LastProcessedCommit": "1221928ebea4a2a926154ed1148e49bdb1e0834c",
   "LastTranslatedCommit": "2e89625a383b9db92484ab299e247edd8cb017a3",
   "Items": {
     "3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3": {
@@ -66845,6 +66845,36 @@
       "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\40067c66cbc577f0e3f48fb474e1c1bcf1c4fed4.png",
       "HandoffFileCommit": "900dc2668cfbbbe400b6b9ed86d80a2d223079b7",
       "HandoffDateTime": "2016-05-22T00:04:30.7478129Z",
+      "HandoffPriority": "",
+      "HandoffException": null,
+      "HandoffFailureTimes": 0,
+      "TargetFileCommit": null,
+      "TargetFilePath": null,
+      "HandbackFilePath": null,
+      "HandbackFileCommit": null,
+      "HandbackDateTime": "0001-01-01T00:00:00",
+      "HandbackException": null,
+      "HandbackFailureTimes": 0,
+      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": null,
+      "ArchiveFileCommit": null,
+      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveException": null
+    },
+    "7c2d3bd1ab2d2f4923cf84834a73fd1c58113212": {
+      "FileHash": "7c2d3bd1ab2d2f4923cf84834a73fd1c58113212",
+      "SourceFileCommit": "1221928ebea4a2a926154ed1148e49bdb1e0834c",
+      "SourceFilePath": "windows-apps-src\\input-and-devices\\input-primer.md",
+      "HandoffReason": 1,
+      "DependencyFrom": null,
+      "TokenReference": null,
+      "FilePathList": [
+        "windows-apps-src\\input-and-devices\\input-primer.md"
+      ],
+      "HasMetadata": true,
+      "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\input-primer.5342c7c3046580ba53971943f93ff8467cc4bd6e.ja-jp.xlf",
+      "HandoffFileCommit": "334a6b61688d07de2a88497f2d4b5cb5649bd74b",
+      "HandoffDateTime": "2016-05-22T21:33:38.7412026Z",
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
