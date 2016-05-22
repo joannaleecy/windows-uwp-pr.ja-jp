@@ -6425,11 +6425,17 @@
   "73597c689abe7946a4896c6a123c8d8fa513dbe0": [
     "windows-apps-src\\winrt-components\\images\\buildevents.png"
   ],
+  "f125ae7e268a8d35b477a1557c498762869f859b": [
+    "windows-apps-src\\xbox-apps\\cpusets-games.md"
+  ],
   "73fef7eac1932a9b338499844b22a38fbc81b811": [
     "windows-apps-src\\xbox-apps\\cpusets-games.md"
   ],
   "8bbc426a626200f70150869166673a4a409a3cfd": [
     "windows-apps-src\\xbox-apps\\cpusets-games.md"
+  ],
+  "40067c66cbc577f0e3f48fb474e1c1bcf1c4fed4": [
+    "windows-apps-src\\xbox-apps\\images\\cpusets-lumia950cache.png"
   ],
   "404bdc0ccc088dec61b9a077bcff54a78d0d1512": [
     "windows-apps-src\\xbox-apps\\images\\cpusets-lumia950cache.png"

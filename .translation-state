@@ -1,5 +1,5 @@
 {
-  "LastProcessedCommit": "be95626fedd29edd68571daca2b37d25d4c135f2",
+  "LastProcessedCommit": "3cefaf4e527d2a0da412dab474a348b55ad409c9",
   "LastTranslatedCommit": "2e89625a383b9db92484ab299e247edd8cb017a3",
   "Items": {
     "3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3": {
@@ -66783,6 +66783,68 @@
       "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\06cd7d578f0d33f403fa67caadc3559f3af4a83e.png",
       "HandoffFileCommit": "4d8ca436b7cd73464e34779af11a3405a60944ef",
       "HandoffDateTime": "2016-05-21T23:32:56.0568101Z",
+      "HandoffPriority": "",
+      "HandoffException": null,
+      "HandoffFailureTimes": 0,
+      "TargetFileCommit": null,
+      "TargetFilePath": null,
+      "HandbackFilePath": null,
+      "HandbackFileCommit": null,
+      "HandbackDateTime": "0001-01-01T00:00:00",
+      "HandbackException": null,
+      "HandbackFailureTimes": 0,
+      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": null,
+      "ArchiveFileCommit": null,
+      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveException": null
+    },
+    "f125ae7e268a8d35b477a1557c498762869f859b": {
+      "FileHash": "f125ae7e268a8d35b477a1557c498762869f859b",
+      "SourceFileCommit": "3cefaf4e527d2a0da412dab474a348b55ad409c9",
+      "SourceFilePath": "windows-apps-src\\xbox-apps\\cpusets-games.md",
+      "HandoffReason": 1,
+      "DependencyFrom": null,
+      "TokenReference": null,
+      "FilePathList": [
+        "windows-apps-src\\xbox-apps\\cpusets-games.md"
+      ],
+      "HasMetadata": true,
+      "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\cpusets-games.de1f770e7a453fa82efd07e80f4f4380b7d5530a.ja-jp.xlf",
+      "HandoffFileCommit": "900dc2668cfbbbe400b6b9ed86d80a2d223079b7",
+      "HandoffDateTime": "2016-05-22T00:04:30.7478129Z",
+      "HandoffPriority": "",
+      "HandoffException": null,
+      "HandoffFailureTimes": 0,
+      "TargetFileCommit": null,
+      "TargetFilePath": null,
+      "HandbackFilePath": null,
+      "HandbackFileCommit": null,
+      "HandbackDateTime": "0001-01-01T00:00:00",
+      "HandbackException": null,
+      "HandbackFailureTimes": 0,
+      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": null,
+      "ArchiveFileCommit": null,
+      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveException": null
+    },
+    "40067c66cbc577f0e3f48fb474e1c1bcf1c4fed4": {
+      "FileHash": "40067c66cbc577f0e3f48fb474e1c1bcf1c4fed4",
+      "SourceFileCommit": "f07627f632d0294f6daf7e08a29a2f28aa84cb05",
+      "SourceFilePath": "windows-apps-src\\xbox-apps\\images\\cpusets-lumia950cache.png",
+      "HandoffReason": 2,
+      "DependencyFrom": [
+        "windows-apps-src\\xbox-apps\\cpusets-games.md"
+      ],
+      "TokenReference": null,
+      "FilePathList": [
+        "windows-apps-src\\xbox-apps\\images\\cpusets-lumia950cache.png"
+      ],
+      "HasMetadata": false,
+      "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\40067c66cbc577f0e3f48fb474e1c1bcf1c4fed4.png",
+      "HandoffFileCommit": "900dc2668cfbbbe400b6b9ed86d80a2d223079b7",
+      "HandoffDateTime": "2016-05-22T00:04:30.7478129Z",
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
