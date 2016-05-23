@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\dev-center-insider-program.md](https://github.com/Microsoft/windows-apps/blob/0b248c2ad832cfaafabd85034269784ca1cdc475/windows-apps-src/publish/dev-center-insider-program.md) | HandedOffSuccess | [Details](#8b0ce4f76679fb4bd6d27579f20270cafbfbc5bd3496)
+ [windows-apps-src\publish\the-app-certification-process.md](https://github.com/Microsoft/windows-apps/blob/4ea19e85d1e151dd1e03d5acf085c186613be35f/windows-apps-src/publish/the-app-certification-process.md) | HandedOffSuccess | [Details](#579d1ef306123f765e19fc9ab3b02c064b690aee3541)
 
 ## Item Details
-##### <a name='8b0ce4f76679fb4bd6d27579f20270cafbfbc5bd3496'></a> Source: [windows-apps-src\publish\dev-center-insider-program.md](https://github.com/Microsoft/windows-apps/blob/0b248c2ad832cfaafabd85034269784ca1cdc475/windows-apps-src/publish/dev-center-insider-program.md)
+##### <a name='579d1ef306123f765e19fc9ab3b02c064b690aee3541'></a> Source: [windows-apps-src\publish\the-app-certification-process.md](https://github.com/Microsoft/windows-apps/blob/4ea19e85d1e151dd1e03d5acf085c186613be35f/windows-apps-src/publish/the-app-certification-process.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [dev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/e98251bc735c7f78766bf12da28848badcee6485/ol-handoff/Microsoft/windows-apps.ja-jp/master/dev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.ja-jp.xlf)
-* Handoff Datetime: 2016-05-23 17:49:03
+* Handoff File: [the-app-certification-process.4048325d389849d9ef4fac70cf8ced1a5f98b319.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/56c1a9c62c3ae54e6a859b7b57e05b835e2dfbd2/ol-handoff/Microsoft/windows-apps.ja-jp/master/the-app-certification-process.4048325d389849d9ef4fac70cf8ced1a5f98b319.ja-jp.xlf)
+* Handoff Datetime: 2016-05-23 18:20:46
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00

@@ -1,5 +1,5 @@
 {
-  "LastProcessedCommit": "0b248c2ad832cfaafabd85034269784ca1cdc475",
+  "LastProcessedCommit": "4ea19e85d1e151dd1e03d5acf085c186613be35f",
   "LastTranslatedCommit": "2e89625a383b9db92484ab299e247edd8cb017a3",
   "Items": {
     "3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3": {
@@ -66935,6 +66935,36 @@
       "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\dev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.ja-jp.xlf",
       "HandoffFileCommit": "e98251bc735c7f78766bf12da28848badcee6485",
       "HandoffDateTime": "2016-05-23T17:49:03.7335394Z",
+      "HandoffPriority": "",
+      "HandoffException": null,
+      "HandoffFailureTimes": 0,
+      "TargetFileCommit": null,
+      "TargetFilePath": null,
+      "HandbackFilePath": null,
+      "HandbackFileCommit": null,
+      "HandbackDateTime": "0001-01-01T00:00:00",
+      "HandbackException": null,
+      "HandbackFailureTimes": 0,
+      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": null,
+      "ArchiveFileCommit": null,
+      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveException": null
+    },
+    "579d1ef306123f765e19fc9ab3b02c064b690aee": {
+      "FileHash": "579d1ef306123f765e19fc9ab3b02c064b690aee",
+      "SourceFileCommit": "4ea19e85d1e151dd1e03d5acf085c186613be35f",
+      "SourceFilePath": "windows-apps-src\\publish\\the-app-certification-process.md",
+      "HandoffReason": 1,
+      "DependencyFrom": null,
+      "TokenReference": null,
+      "FilePathList": [
+        "windows-apps-src\\publish\\the-app-certification-process.md"
+      ],
+      "HasMetadata": true,
+      "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\the-app-certification-process.4048325d389849d9ef4fac70cf8ced1a5f98b319.ja-jp.xlf",
+      "HandoffFileCommit": "56c1a9c62c3ae54e6a859b7b57e05b835e2dfbd2",
+      "HandoffDateTime": "2016-05-23T18:20:46.1072431Z",
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
