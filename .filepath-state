@@ -4216,6 +4216,9 @@
   "016969dfc0a98b978e43ea0751cc6896c2919ff8": [
     "windows-apps-src\\launch-resume\\access-sensors-and-devices-from-a-background-task.md"
   ],
+  "f47a3b7fcb4bec4138e11a079c3d10e918c1eb95": [
+    "windows-apps-src\\launch-resume\\activate-an-app.md"
+  ],
   "4647b17e565f8e2e667e2e06d913f7dec496ef93": [
     "windows-apps-src\\launch-resume\\activate-an-app.md"
   ],
@@ -4266,6 +4269,9 @@
   ],
   "870866bbe5d190e67bd9dccb99d9777b502e1e8f": [
     "windows-apps-src\\launch-resume\\handle-file-activation.md"
+  ],
+  "ac65b46ea06e64b3b431326db365ce23505c1096": [
+    "windows-apps-src\\launch-resume\\handle-uri-activation.md"
   ],
   "6957d745c761f5592b7e6f91145d8598ab441527": [
     "windows-apps-src\\launch-resume\\handle-uri-activation.md"
@@ -4355,6 +4361,9 @@
   "7dd0a6e299a383ab651dd021f4484e0295d41c3c": [
     "windows-apps-src\\launch-resume\\respond-to-system-events-with-background-tasks.md"
   ],
+  "bb9d4394acad11d12b21cdce16b0d59ceafd1a2a": [
+    "windows-apps-src\\launch-resume\\resume-an-app.md"
+  ],
   "4bf113c2a453abf460ede341b5ebc8814801890f": [
     "windows-apps-src\\launch-resume\\resume-an-app.md"
   ],
@@ -4366,6 +4375,9 @@
   ],
   "416fa23abf42cc308a0bca95003605a7a6c2d874": [
     "windows-apps-src\\launch-resume\\support-your-app-with-background-tasks.md"
+  ],
+  "3ad58dc20a660d89622d215c46d263adf27a0542": [
+    "windows-apps-src\\launch-resume\\suspend-an-app.md"
   ],
   "746487688419369bb73251327e7c67496b6c2b90": [
     "windows-apps-src\\launch-resume\\suspend-an-app.md"
