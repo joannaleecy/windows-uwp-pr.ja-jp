@@ -5054,6 +5054,9 @@
   "5294f0e3286c9eaa0060dfaa933f1a2c57f75e26": [
     "windows-apps-src\\porting\\desktop-to-uwp-deploy-and-debug.md"
   ],
+  "85a9fba8c0e016d39d3ab25cd5681988f6c5db68": [
+    "windows-apps-src\\porting\\desktop-to-uwp-root.md"
+  ],
   "140932b3253aaab2045327fd8cb2defe0ec6a9c0": [
     "windows-apps-src\\porting\\desktop-to-uwp-root.md"
   ],
