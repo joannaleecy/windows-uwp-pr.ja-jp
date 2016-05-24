@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\the-app-certification-process.md](https://github.com/Microsoft/windows-apps/blob/4ea19e85d1e151dd1e03d5acf085c186613be35f/windows-apps-src/publish/the-app-certification-process.md) | HandedOffSuccess | [Details](#579d1ef306123f765e19fc9ab3b02c064b690aee3541)
+ [windows-apps-src\publish\common-questions.md](https://github.com/Microsoft/windows-apps/blob/3f0664e0387e206c432ce92aa221bb5c604bb675/windows-apps-src/publish/common-questions.md) | HandedOffSuccess | [Details](#c61866aa6fb71d41d4c6150cfe6af449da21a1da3487)
 
 ## Item Details
-##### <a name='579d1ef306123f765e19fc9ab3b02c064b690aee3541'></a> Source: [windows-apps-src\publish\the-app-certification-process.md](https://github.com/Microsoft/windows-apps/blob/4ea19e85d1e151dd1e03d5acf085c186613be35f/windows-apps-src/publish/the-app-certification-process.md)
+##### <a name='c61866aa6fb71d41d4c6150cfe6af449da21a1da3487'></a> Source: [windows-apps-src\publish\common-questions.md](https://github.com/Microsoft/windows-apps/blob/3f0664e0387e206c432ce92aa221bb5c604bb675/windows-apps-src/publish/common-questions.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [the-app-certification-process.4048325d389849d9ef4fac70cf8ced1a5f98b319.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/56c1a9c62c3ae54e6a859b7b57e05b835e2dfbd2/ol-handoff/Microsoft/windows-apps.ja-jp/master/the-app-certification-process.4048325d389849d9ef4fac70cf8ced1a5f98b319.ja-jp.xlf)
-* Handoff Datetime: 2016-05-23 18:20:46
+* Handoff File: [common-questions.32c773e8b8055ddff0f36421bca3cf9bfe6ff40b.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/a1f1775985c96560a4d3865a5f612453d40906a6/ol-handoff/Microsoft/windows-apps.ja-jp/master/common-questions.32c773e8b8055ddff0f36421bca3cf9bfe6ff40b.ja-jp.xlf)
+* Handoff Datetime: 2016-05-24 17:21:31
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
