@@ -3560,6 +3560,9 @@
   "fc2dadfbca30fc74362d7665022b1f41f23c3304": [
     "windows-apps-src\\input-and-devices\\custom-text-input.md"
   ],
+  "b89aa43dffa69d092615e1b408feac77d0caa87c": [
+    "windows-apps-src\\input-and-devices\\deep-link-into-your-app-from-cortana.md"
+  ],
   "c336c17cf6c0fcf5455fc23942bd26849f0d6543": [
     "windows-apps-src\\input-and-devices\\deep-link-into-your-app-from-cortana.md"
   ],
@@ -4138,11 +4141,17 @@
   "003fe5ff5eb5935f6e569abda1c16f60cefacbf1": [
     "windows-apps-src\\input-and-devices\\input-primer.md"
   ],
+  "675553f5c3954597982360900e965b2a756d7f63": [
+    "windows-apps-src\\input-and-devices\\interact-with-a-background-app-in-cortana.md"
+  ],
   "23105104d86bc56aef9eafcb2078c4f0e2320fbb": [
     "windows-apps-src\\input-and-devices\\interact-with-a-background-app-in-cortana.md"
   ],
   "74370def0cd44075b408e3f083593194494b16d8": [
     "windows-apps-src\\input-and-devices\\keyboard-interactions.md"
+  ],
+  "c65abdda905a390567d3c2b199a891c0c3067df1": [
+    "windows-apps-src\\input-and-devices\\launch-a-background-app-with-voice-commands-in-cortana.md"
   ],
   "0ca01b7102a664b6164f779bb8b520b1890086d1": [
     "windows-apps-src\\input-and-devices\\launch-a-background-app-with-voice-commands-in-cortana.md"
@@ -5053,6 +5062,9 @@
   ],
   "5294f0e3286c9eaa0060dfaa933f1a2c57f75e26": [
     "windows-apps-src\\porting\\desktop-to-uwp-deploy-and-debug.md"
+  ],
+  "969ff91b020b7a1c8149dcb0d8efc69e98c0bb31": [
+    "windows-apps-src\\porting\\desktop-to-uwp-root.md"
   ],
   "85a9fba8c0e016d39d3ab25cd5681988f6c5db68": [
     "windows-apps-src\\porting\\desktop-to-uwp-root.md"
