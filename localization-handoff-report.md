@@ -1,39 +1,11 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 0
 
 ## File List
- Source File | Status | Details 
- ----------- | ------ | ------- 
- [windows-apps-src\xbox-apps\frequently-asked-questions.md](https://github.com/Microsoft/windows-apps/blob/09a219dcfc74fd26ae05aae0003fec99191fd753/windows-apps-src/xbox-apps/frequently-asked-questions.md) | HandedOffSuccess | [Details](#3d05a5d4bc863daa0e136305ddd2c55606d7eebc3820)
- [windows-apps-src\xbox-apps\known-issues.md](https://github.com/Microsoft/windows-apps/blob/09a219dcfc74fd26ae05aae0003fec99191fd753/windows-apps-src/xbox-apps/known-issues.md) | HandedOffSuccess | [Details](#1dbff521a6b28ca04fc4ec364b906be856237a5b3871)
 
 ## Item Details
-##### <a name='3d05a5d4bc863daa0e136305ddd2c55606d7eebc3820'></a> Source: [windows-apps-src\xbox-apps\frequently-asked-questions.md](https://github.com/Microsoft/windows-apps/blob/09a219dcfc74fd26ae05aae0003fec99191fd753/windows-apps-src/xbox-apps/frequently-asked-questions.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [frequently-asked-questions.49aa0704cf8127dd0b088146bf6643b88aa0ce3c.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/13267196cfbfe33e30683d0b736537fcc83262f6/ol-handoff/Microsoft/windows-apps.ja-jp/master/frequently-asked-questions.49aa0704cf8127dd0b088146bf6643b88aa0ce3c.ja-jp.xlf)
-* Handoff Datetime: 2016-05-25 22:54:15
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='1dbff521a6b28ca04fc4ec364b906be856237a5b3871'></a> Source: [windows-apps-src\xbox-apps\known-issues.md](https://github.com/Microsoft/windows-apps/blob/09a219dcfc74fd26ae05aae0003fec99191fd753/windows-apps-src/xbox-apps/known-issues.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [known-issues.83c75815621268c5c51534a658527cef71ffe8bd.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/13267196cfbfe33e30683d0b736537fcc83262f6/ol-handoff/Microsoft/windows-apps.ja-jp/master/known-issues.83c75815621268c5c51534a658527cef71ffe8bd.ja-jp.xlf)
-* Handoff Datetime: 2016-05-25 22:54:15
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
 
 ## Error Details
 
