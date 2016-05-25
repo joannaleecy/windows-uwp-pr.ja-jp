@@ -4367,6 +4367,9 @@
   "7dd0a6e299a383ab651dd021f4484e0295d41c3c": [
     "windows-apps-src\\launch-resume\\respond-to-system-events-with-background-tasks.md"
   ],
+  "dd3d75c7f3dfe325324e1fe31c039cd207b68d0b": [
+    "windows-apps-src\\launch-resume\\resume-an-app.md"
+  ],
   "bb9d4394acad11d12b21cdce16b0d59ceafd1a2a": [
     "windows-apps-src\\launch-resume\\resume-an-app.md"
   ],
@@ -4616,14 +4619,26 @@
   "23e999f86fb0552b96cddbd3b9d11803106bf6c2": [
     "windows-apps-src\\layout\\show-multiple-views.md"
   ],
+  "b7c981e071f70ab0a76d73333a94580b3c497b0e": [
+    "windows-apps-src\\maps-and-location\\authentication-key.md"
+  ],
   "c390ca4153e8f848764e365dccb92c6a71deaa2b": [
     "windows-apps-src\\maps-and-location\\authentication-key.md"
+  ],
+  "3c1d37a119eca88ee443772292f8cfe97cb3c1ac": [
+    "windows-apps-src\\maps-and-location\\controls-map.md"
   ],
   "8e2f0a3556aa011e7d75adad4c757d9e3a4f487c": [
     "windows-apps-src\\maps-and-location\\controls-map.md"
   ],
+  "249503f6a43ef8c38e76ed29aed4a1bfdb26e9fb": [
+    "windows-apps-src\\maps-and-location\\display-maps.md"
+  ],
   "36e16b6bfe9f90499247fce1b83bd586ce3233a3": [
     "windows-apps-src\\maps-and-location\\display-maps.md"
+  ],
+  "6f21f9bf9c909d0f89a663cdda05934ad9b4011b": [
+    "windows-apps-src\\maps-and-location\\display-poi.md"
   ],
   "2a23368aa044fc6619d8245a70e9b8c0b83ed68e": [
     "windows-apps-src\\maps-and-location\\display-poi.md"
@@ -4633,6 +4648,9 @@
   ],
   "d35bf3ef13e2b36dfed6613a00f65d19b9013464": [
     "windows-apps-src\\maps-and-location\\get-location.md"
+  ],
+  "6a5451d449719d979bce7e83f5a2949661dd7834": [
+    "windows-apps-src\\maps-and-location\\guidelines-and-checklist-for-detecting-location.md"
   ],
   "0fa4b588f41442f3ae59b3c74f8dfc89a3a91864": [
     "windows-apps-src\\maps-and-location\\guidelines-and-checklist-for-detecting-location.md"
@@ -4688,11 +4706,20 @@
   "2aea2a69f1f93fb18d13eceb785d63d2e1b56f18": [
     "windows-apps-src\\maps-and-location\\images\\win10fa\\controls-maps-streetside.jpg"
   ],
+  "829a8d7eb4da810e2353593c03cd5aa4e047173a": [
+    "windows-apps-src\\maps-and-location\\index.md"
+  ],
   "095bea6a32ca4278c8d32d5b1546381387720bc3": [
     "windows-apps-src\\maps-and-location\\index.md"
   ],
+  "71d044eb19e71786da39ca71d4f4fbd2d87645be": [
+    "windows-apps-src\\maps-and-location\\overlay-tiled-images.md"
+  ],
   "984ab8c2735d6769f8cb13a13965bf8401b6944d": [
     "windows-apps-src\\maps-and-location\\overlay-tiled-images.md"
+  ],
+  "2132b0c76a78dac5250ea85f08abd0b1edbd6ed7": [
+    "windows-apps-src\\maps-and-location\\routes-and-directions.md"
   ],
   "6273b9563382dd49eb0fa7b1480ca128f4215973": [
     "windows-apps-src\\maps-and-location\\routes-and-directions.md"
@@ -6133,6 +6160,9 @@
   ],
   "033669a781aa85cc2c90fa11816e385ffefa997d": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
+  ],
+  "222d0a886b9690891f6d8d272ea1f72fa6fa7bfb": [
+    "windows-apps-src\\TOC.md"
   ],
   "a47066e1e79b124505aff8ffd1f6eb2990a488a6": [
     "windows-apps-src\\TOC.md"
