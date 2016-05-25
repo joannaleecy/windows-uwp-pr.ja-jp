@@ -6553,5 +6553,8 @@
   ],
   "06cd7d578f0d33f403fa67caadc3559f3af4a83e": [
     "windows-apps-src\\xbox-apps\\images\\cpusets-table4.png"
+  ],
+  "cc4e5c49dcc36193d4d8b1bc835e2caceeaff695": [
+    "windows-apps-src\\debug-test-perf\\getting-started-debugging-uwp-apps.md"
   ]
 }
