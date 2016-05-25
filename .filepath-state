@@ -6362,6 +6362,9 @@
   "0751598ba50d69e1667b20ddc03f30d65ce08002": [
     "windows-apps-src\\xbox-apps\\devkit-deactivation.md"
   ],
+  "3d05a5d4bc863daa0e136305ddd2c55606d7eebc": [
+    "windows-apps-src\\xbox-apps\\frequently-asked-questions.md"
+  ],
   "0ed5465bf5e7c1dbc3aec17769c428a5a8d7d9fc": [
     "windows-apps-src\\xbox-apps\\frequently-asked-questions.md"
   ],
@@ -6478,6 +6481,9 @@
   ],
   "ad714bfbb9b095e98c242d6203888f712c9bea20": [
     "windows-apps-src\\xbox-apps\\introduction-to-xbox-tools.md"
+  ],
+  "1dbff521a6b28ca04fc4ec364b906be856237a5b": [
+    "windows-apps-src\\xbox-apps\\known-issues.md"
   ],
   "7b19864f4781521952adc1c6f94655579fdbc22a": [
     "windows-apps-src\\xbox-apps\\known-issues.md"
