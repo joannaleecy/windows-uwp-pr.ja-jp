@@ -230,6 +230,9 @@
   "a67b859cc2bd42abc13bcba0d405783b99a0ca5c": [
     "windows-apps-src\\audio-video-camera\\midi.md"
   ],
+  "d0bb8dac611b8a641ed07f2b7c8363d587616950": [
+    "windows-apps-src\\audio-video-camera\\playready-client-sdk.md"
+  ],
   "4bbe78597eb79c3f002c6a3de8f05d1f092dd482": [
     "windows-apps-src\\audio-video-camera\\playready-client-sdk.md"
   ],
@@ -4814,6 +4817,9 @@
   "08168dc15b33d99a044eedd7864848ed7a858991": [
     "windows-apps-src\\monetize\\get-started-with-microsoft-advertising-libraries.md"
   ],
+  "9bce5649fc1a9400371e1f9bb67809f1c6288ec6": [
+    "windows-apps-src\\monetize\\grant-free-products.md"
+  ],
   "b013cc5695793465e4f0b7d005a15e5a3c000c89": [
     "windows-apps-src\\monetize\\grant-free-products.md"
   ],
@@ -4931,6 +4937,9 @@
   "bf900aac732fb012a39d2e2e6c5312ccb5a65cee": [
     "windows-apps-src\\monetize\\monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md"
   ],
+  "b8661d73487dde61b207159d11a0583700fa22bc": [
+    "windows-apps-src\\monetize\\query-for-products.md"
+  ],
   "6fc6205a7819dc7f28382035c389091b5d47a908": [
     "windows-apps-src\\monetize\\query-for-products.md"
   ],
@@ -4940,8 +4949,14 @@
   "8e2114e969b27d579f62195f026cfcfd9672a94a": [
     "windows-apps-src\\monetize\\release-notes-for-the-advertising-libraries.md"
   ],
+  "6255346c568ed24e17c795834ab182f73707c4de": [
+    "windows-apps-src\\monetize\\renew-a-windows-store-id-key.md"
+  ],
   "b28627126995d9529335f353c2db69d664478b19": [
     "windows-apps-src\\monetize\\renew-a-windows-store-id-key.md"
+  ],
+  "b099bdc26565ef218eaf1f73c5bb3ec9c24065c3": [
+    "windows-apps-src\\monetize\\report-consumable-products-as-fulfilled.md"
   ],
   "d9e8971f9ee4881c552647f6771c089fa3e9f691": [
     "windows-apps-src\\monetize\\report-consumable-products-as-fulfilled.md"
@@ -4990,6 +5005,9 @@
   ],
   "43e3155315a9132daa36f592b54af3e943ea3e21": [
     "windows-apps-src\\monetize\\using-windows-store-services.md"
+  ],
+  "92b62f36a519b49bd8f380b7f22920f38fe195b5": [
+    "windows-apps-src\\monetize\\view-and-grant-products-from-a-service.md"
   ],
   "694c19ef97aa456628270ace39359158c98024f9": [
     "windows-apps-src\\monetize\\view-and-grant-products-from-a-service.md"
