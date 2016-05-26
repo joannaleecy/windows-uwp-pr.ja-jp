@@ -1,11 +1,26 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 0
+ Total Files | 1
 
 ## File List
+ Source File | Status | Details 
+ ----------- | ------ | ------- 
+ [windows-apps-src\xbox-apps\index.md](https://github.com/Microsoft/windows-apps/blob/84090d73ea9373736723a9bd69d11166ab8645bc/windows-apps-src/xbox-apps/index.md) | HandedOffSuccess | [Details](#1d0ea4c67b996b2e8bc7280a25dfdca7189c7e503872)
 
 ## Item Details
+##### <a name='1d0ea4c67b996b2e8bc7280a25dfdca7189c7e503872'></a> Source: [windows-apps-src\xbox-apps\index.md](https://github.com/Microsoft/windows-apps/blob/84090d73ea9373736723a9bd69d11166ab8645bc/windows-apps-src/xbox-apps/index.md)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [index.d16e2a2199b17d4f07cbc6956844a04c9911bc85.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/6234ca564860768ddaca12173f07c387c34f21dc/ol-handoff/Microsoft/windows-apps.ja-jp/master/index.d16e2a2199b17d4f07cbc6956844a04c9911bc85.ja-jp.xlf)
+* Handoff Datetime: 2016-05-26 14:53:43
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* [Back to Top](#report-top)
+
 
 ## Error Details
 
