@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\create-an-ad-campaign-for-your-app.md](https://github.com/Microsoft/windows-apps/blob/6fc1885c5663d7daadbd67a66cb740df40dbf47f/windows-apps-src/publish/create-an-ad-campaign-for-your-app.md) | HandedOffSuccess | [Details](#7660cc04dbee27b523144e5d03b6b2dbd4dd37553493)
+ [windows-apps-src\publish\opening-a-developer-account.md](https://github.com/Microsoft/windows-apps/blob/c4a753b7642354c4fe42cff721fb21337b14528f/windows-apps-src/publish/opening-a-developer-account.md) | HandedOffSuccess | [Details](#979df6390fef01a32fb1728956622fbfe38bafa93526)
 
 ## Item Details
-##### <a name='7660cc04dbee27b523144e5d03b6b2dbd4dd37553493'></a> Source: [windows-apps-src\publish\create-an-ad-campaign-for-your-app.md](https://github.com/Microsoft/windows-apps/blob/6fc1885c5663d7daadbd67a66cb740df40dbf47f/windows-apps-src/publish/create-an-ad-campaign-for-your-app.md)
+##### <a name='979df6390fef01a32fb1728956622fbfe38bafa93526'></a> Source: [windows-apps-src\publish\opening-a-developer-account.md](https://github.com/Microsoft/windows-apps/blob/c4a753b7642354c4fe42cff721fb21337b14528f/windows-apps-src/publish/opening-a-developer-account.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [create-an-ad-campaign-for-your-app.0957a5069637642985320cbb8e8277b9391121e3.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/5bf1472c8fc1d58fd58fcfcf7ec9a9e8f2971016/ol-handoff/Microsoft/windows-apps.ja-jp/master/create-an-ad-campaign-for-your-app.0957a5069637642985320cbb8e8277b9391121e3.ja-jp.xlf)
-* Handoff Datetime: 2016-05-26 17:52:29
+* Handoff File: [opening-a-developer-account.e6ad57f5ecc4903fa66445564d8d99a243bd1db7.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/fb7faa0848c953705e03931d1cb56556ad591b6e/ol-handoff/Microsoft/windows-apps.ja-jp/master/opening-a-developer-account.e6ad57f5ecc4903fa66445564d8d99a243bd1db7.ja-jp.xlf)
+* Handoff Datetime: 2016-05-26 19:24:51
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
