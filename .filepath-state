@@ -2379,6 +2379,9 @@
   "eb639e78bf144572dfbfd2d65514bb4eff7c7be1": [
     "windows-apps-src\\debug-test-perf\\deploying-and-debugging-uwp-apps.md"
   ],
+  "6fe6205b21835f29216c159c83aa4c9a48bee4f1": [
+    "windows-apps-src\\debug-test-perf\\device-portal.md"
+  ],
   "07d4cbfbe343a505b10751ba7ea9e8c1162b2bb7": [
     "windows-apps-src\\debug-test-perf\\device-portal.md"
   ],
@@ -3532,6 +3535,9 @@
   ],
   "83e361fd736ce46893517c7a5cccc9c5efc9a889": [
     "windows-apps-src\\graphics\\storyboarded-animations.md"
+  ],
+  "fa5e8964ab35cb33a1ff59a8a52aa384b9d115b4": [
+    "windows-apps-src\\graphics\\transforms-overview.md"
   ],
   "e2d1c1745147eee6ba60d43cdc18d6a0567bf35f": [
     "windows-apps-src\\graphics\\transforms-overview.md"
