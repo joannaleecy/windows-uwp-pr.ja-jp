@@ -1,19 +1,45 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 3
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\accessibility\designing-inclusive-software.md](https://github.com/Microsoft/windows-apps/blob/ea4d413e0b2ade1429d255afbc6a1a73ea308051/windows-apps-src/accessibility/designing-inclusive-software.md) | HandedOffSuccess | [Details](#6f1c0663034f81bb0ddfe42c04fbe60562b45c1c15)
+ [windows-apps-src\in-app-help\external-help.md](https://github.com/Microsoft/windows-apps/blob/9da639dedf46068fb1f555f90b39ab979114ebf3/windows-apps-src/in-app-help/external-help.md) | HandedOffSuccess | [Details](#0e21737e33f33d7239162ddcf9d4cdf39db176552618)
+ [windows-apps-src\in-app-help\in-app-help.md](https://github.com/Microsoft/windows-apps/blob/0d13ca6850df1b575eddebdb36b345423392664f/windows-apps-src/in-app-help/in-app-help.md) | HandedOffSuccess | [Details](#57aeaf5962bbd95f3462f3a2736f66e733834b812626)
+ [windows-apps-src\in-app-help\in-app-help-and-instructions.md](https://github.com/Microsoft/windows-apps/blob/1e836d61ac242bbd366457cdf7c8acec9ad29ace/windows-apps-src/in-app-help/in-app-help-and-instructions.md) | HandedOffSuccess | [Details](#ff3d49e098b0b9b0e7a58a7985c77ab8022eb6612625)
 
 ## Item Details
-##### <a name='6f1c0663034f81bb0ddfe42c04fbe60562b45c1c15'></a> Source: [windows-apps-src\accessibility\designing-inclusive-software.md](https://github.com/Microsoft/windows-apps/blob/ea4d413e0b2ade1429d255afbc6a1a73ea308051/windows-apps-src/accessibility/designing-inclusive-software.md)
+##### <a name='0e21737e33f33d7239162ddcf9d4cdf39db176552618'></a> Source: [windows-apps-src\in-app-help\external-help.md](https://github.com/Microsoft/windows-apps/blob/9da639dedf46068fb1f555f90b39ab979114ebf3/windows-apps-src/in-app-help/external-help.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [designing-inclusive-software.cace2c94cd90e8f06f4407c372de9ef7748f95e7.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/d4d091489d9faa32f4346efe9684b0567fec5f55/ol-handoff/Microsoft/windows-apps.ja-jp/master/designing-inclusive-software.cace2c94cd90e8f06f4407c372de9ef7748f95e7.ja-jp.xlf)
-* Handoff Datetime: 2016-05-27 18:24:34
+* Handoff File: [external-help.05bc21c82b46719c9cafd64a72e126c0a97d309f.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/f57a4582abbc6b3fa090b81fa788e9553aaccfa2/ol-handoff/Microsoft/windows-apps.ja-jp/master/external-help.05bc21c82b46719c9cafd64a72e126c0a97d309f.ja-jp.xlf)
+* Handoff Datetime: 2016-05-27 18:53:41
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* [Back to Top](#report-top)
+
+##### <a name='57aeaf5962bbd95f3462f3a2736f66e733834b812626'></a> Source: [windows-apps-src\in-app-help\in-app-help.md](https://github.com/Microsoft/windows-apps/blob/0d13ca6850df1b575eddebdb36b345423392664f/windows-apps-src/in-app-help/in-app-help.md)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [in-app-help.e20b45c0c271de64edec937cbca6fbb3674e66eb.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/f57a4582abbc6b3fa090b81fa788e9553aaccfa2/ol-handoff/Microsoft/windows-apps.ja-jp/master/in-app-help.e20b45c0c271de64edec937cbca6fbb3674e66eb.ja-jp.xlf)
+* Handoff Datetime: 2016-05-27 18:53:41
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* [Back to Top](#report-top)
+
+##### <a name='ff3d49e098b0b9b0e7a58a7985c77ab8022eb6612625'></a> Source: [windows-apps-src\in-app-help\in-app-help-and-instructions.md](https://github.com/Microsoft/windows-apps/blob/1e836d61ac242bbd366457cdf7c8acec9ad29ace/windows-apps-src/in-app-help/in-app-help-and-instructions.md)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [in-app-help-and-instructions.fa0fcdf3eea75432de5030bb26c908eb6812ee74.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/f57a4582abbc6b3fa090b81fa788e9553aaccfa2/ol-handoff/Microsoft/windows-apps.ja-jp/master/in-app-help-and-instructions.fa0fcdf3eea75432de5030bb26c908eb6812ee74.ja-jp.xlf)
+* Handoff Datetime: 2016-05-27 18:53:41
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00

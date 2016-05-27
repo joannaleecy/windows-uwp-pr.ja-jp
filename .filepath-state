@@ -77,6 +77,9 @@
     "windows-apps-src\\app-help-guidelines\\in-app-help.md",
     "windows-apps-src\\in-app-help\\in-app-help.md"
   ],
+  "57aeaf5962bbd95f3462f3a2736f66e733834b81": [
+    "windows-apps-src\\in-app-help\\in-app-help.md"
+  ],
   "1c8ab97a5625243a50fa3b40ae93f5928dc7d851": [
     "windows-apps-src\\app-help-guidelines\\instructional-ui.md"
   ],
@@ -3542,11 +3545,17 @@
   "5d0cca643c26458165c388215d34eec76dfe8cf6": [
     "windows-apps-src\\home.md"
   ],
+  "0e21737e33f33d7239162ddcf9d4cdf39db17655": [
+    "windows-apps-src\\in-app-help\\external-help.md"
+  ],
   "87d43ffb1edd141e884d8cacc47ca0322f3ee6ca": [
     "windows-apps-src\\in-app-help\\external-help.md"
   ],
   "35011081981ce9bb5c8408329c9be627f60ee841": [
     "windows-apps-src\\in-app-help\\guidelines-for-app-help.md"
+  ],
+  "ff3d49e098b0b9b0e7a58a7985c77ab8022eb661": [
+    "windows-apps-src\\in-app-help\\in-app-help-and-instructions.md"
   ],
   "afedc21a9a7da9db0cdd5be0037a4a434dfe5ee5": [
     "windows-apps-src\\in-app-help\\in-app-help-and-instructions.md"
