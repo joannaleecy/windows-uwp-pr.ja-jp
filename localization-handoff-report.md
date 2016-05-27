@@ -1,45 +1,19 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 3
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\in-app-help\external-help.md](https://github.com/Microsoft/windows-apps/blob/9da639dedf46068fb1f555f90b39ab979114ebf3/windows-apps-src/in-app-help/external-help.md) | HandedOffSuccess | [Details](#0e21737e33f33d7239162ddcf9d4cdf39db176552618)
- [windows-apps-src\in-app-help\in-app-help.md](https://github.com/Microsoft/windows-apps/blob/0d13ca6850df1b575eddebdb36b345423392664f/windows-apps-src/in-app-help/in-app-help.md) | HandedOffSuccess | [Details](#57aeaf5962bbd95f3462f3a2736f66e733834b812626)
- [windows-apps-src\in-app-help\in-app-help-and-instructions.md](https://github.com/Microsoft/windows-apps/blob/1e836d61ac242bbd366457cdf7c8acec9ad29ace/windows-apps-src/in-app-help/in-app-help-and-instructions.md) | HandedOffSuccess | [Details](#ff3d49e098b0b9b0e7a58a7985c77ab8022eb6612625)
+ [windows-apps-src\in-app-help\instructional-ui.md](https://github.com/Microsoft/windows-apps/blob/08b0b88e8ef17c2a8f264df5db4f971c8c49ab2e/windows-apps-src/in-app-help/instructional-ui.md) | HandedOffSuccess | [Details](#f9f1f34bb02cda89d31caa9453b6e3eb056e7bc92627)
 
 ## Item Details
-##### <a name='0e21737e33f33d7239162ddcf9d4cdf39db176552618'></a> Source: [windows-apps-src\in-app-help\external-help.md](https://github.com/Microsoft/windows-apps/blob/9da639dedf46068fb1f555f90b39ab979114ebf3/windows-apps-src/in-app-help/external-help.md)
+##### <a name='f9f1f34bb02cda89d31caa9453b6e3eb056e7bc92627'></a> Source: [windows-apps-src\in-app-help\instructional-ui.md](https://github.com/Microsoft/windows-apps/blob/08b0b88e8ef17c2a8f264df5db4f971c8c49ab2e/windows-apps-src/in-app-help/instructional-ui.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [external-help.05bc21c82b46719c9cafd64a72e126c0a97d309f.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/f57a4582abbc6b3fa090b81fa788e9553aaccfa2/ol-handoff/Microsoft/windows-apps.ja-jp/master/external-help.05bc21c82b46719c9cafd64a72e126c0a97d309f.ja-jp.xlf)
-* Handoff Datetime: 2016-05-27 18:53:41
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='57aeaf5962bbd95f3462f3a2736f66e733834b812626'></a> Source: [windows-apps-src\in-app-help\in-app-help.md](https://github.com/Microsoft/windows-apps/blob/0d13ca6850df1b575eddebdb36b345423392664f/windows-apps-src/in-app-help/in-app-help.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [in-app-help.e20b45c0c271de64edec937cbca6fbb3674e66eb.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/f57a4582abbc6b3fa090b81fa788e9553aaccfa2/ol-handoff/Microsoft/windows-apps.ja-jp/master/in-app-help.e20b45c0c271de64edec937cbca6fbb3674e66eb.ja-jp.xlf)
-* Handoff Datetime: 2016-05-27 18:53:41
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='ff3d49e098b0b9b0e7a58a7985c77ab8022eb6612625'></a> Source: [windows-apps-src\in-app-help\in-app-help-and-instructions.md](https://github.com/Microsoft/windows-apps/blob/1e836d61ac242bbd366457cdf7c8acec9ad29ace/windows-apps-src/in-app-help/in-app-help-and-instructions.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [in-app-help-and-instructions.fa0fcdf3eea75432de5030bb26c908eb6812ee74.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/f57a4582abbc6b3fa090b81fa788e9553aaccfa2/ol-handoff/Microsoft/windows-apps.ja-jp/master/in-app-help-and-instructions.fa0fcdf3eea75432de5030bb26c908eb6812ee74.ja-jp.xlf)
-* Handoff Datetime: 2016-05-27 18:53:41
+* Handoff File: [instructional-ui.11ebd3bea6c19314f4e66ad89ce162b74f37d2ab.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/74b547c59d791eb63200a691d388b2c89d0df6f8/ol-handoff/Microsoft/windows-apps.ja-jp/master/instructional-ui.11ebd3bea6c19314f4e66ad89ce162b74f37d2ab.ja-jp.xlf)
+* Handoff Datetime: 2016-05-27 19:23:07
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
