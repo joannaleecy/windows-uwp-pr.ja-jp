@@ -6245,6 +6245,9 @@
   "408c9c7f79f5db81bdf7810a6c71cf25c1c8ec51": [
     "windows-apps-src\\xaml-platform\\xaml-and-whitespace.md"
   ],
+  "479b900ca14497712f25a7825fde6775a3c1ab60": [
+    "windows-apps-src\\xaml-platform\\xaml-intrinsic-data-types.md"
+  ],
   "93dd9df9cbb74b805b9f1cdbda4eda2a6cd313b7": [
     "windows-apps-src\\xaml-platform\\xaml-intrinsic-data-types.md"
   ],
