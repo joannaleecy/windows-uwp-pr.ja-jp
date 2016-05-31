@@ -4,7 +4,7 @@
       [
         {
           "files": ["**/**.md"],
-          "exclude": ["**/obj/**", "**/.filepath-state", "**/..translation-state", "**/.localization-handback-report.md", "**/.localization-handoff-report.md", "**/.localization-report.md"]
+          "exclude": ["**/obj/**", "**/.filepath-state", "**/.translation-state", "**/.localization-handback-report.md", "**/.localization-handoff-report.md", "**/.localization-report.md"]
         }
       ],
     "resource": [
