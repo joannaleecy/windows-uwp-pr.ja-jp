@@ -3539,6 +3539,9 @@
   "97e016047c864026fe0c72e4b7cb819f0fc80748": [
     "windows-apps-src\\index.md"
   ],
+  "c2c43052a1a4a96d7c0a95578b7b3fa3a2fd8a74": [
+    "windows-apps-src\\input-and-devices\\convert-ink-to-text.md"
+  ],
   "bdc431d15742261d96b88b97d256b14156f2088c": [
     "windows-apps-src\\input-and-devices\\convert-ink-to-text.md"
   ],
@@ -4131,6 +4134,9 @@
   ],
   "23105104d86bc56aef9eafcb2078c4f0e2320fbb": [
     "windows-apps-src\\input-and-devices\\interact-with-a-background-app-in-cortana.md"
+  ],
+  "9de90236d94522f1b80309c3fec51ce59aee0319": [
+    "windows-apps-src\\input-and-devices\\keyboard-interactions.md"
   ],
   "74370def0cd44075b408e3f083593194494b16d8": [
     "windows-apps-src\\input-and-devices\\keyboard-interactions.md"
