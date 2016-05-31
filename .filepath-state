@@ -5123,6 +5123,9 @@
   "24e0fc3e3734fceed3af20acd7f84862ffcdc314": [
     "windows-apps-src\\porting\\desktop-to-uwp-root.md"
   ],
+  "8ab8f1dd641741c149a1ea8605d39bb0d8d4c353": [
+    "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
+  ],
   "da4fe234efd615615a670be914e24e423f481308": [
     "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
   ],
@@ -5857,6 +5860,9 @@
   ],
   "975ff6acff2568af82366f7e8c2738385c4b4fd3": [
     "windows-apps-src\\security\\images\\x509certificateversions.png"
+  ],
+  "cc81ca4f88b237f144c995b85639eeaed9045f32": [
+    "windows-apps-src\\security\\index.md"
   ],
   "074c4f23e5912ece050d0b44621ab78015f2ce7b": [
     "windows-apps-src\\security\\index.md"
