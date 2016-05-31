@@ -475,9 +475,7 @@
 ###### [C の AdControl イベント#](monetize/adcontrol-events-in-c.md)
 ###### [AdControl エラー処理](monetize/adcontrol-error-handling.md)
 ####### [XAML/C# ウォークスルーでのエラー処理](monetize/error-handling-in-xamlc-walkthrough.md)
-            
-####### 
-            [JavaScript ウォークスルーでのエラー処理](monetize/error-handling-in-javascript-walkthrough.md)
+####### [JavaScript ウォークスルーでのエラー処理](monetize/error-handling-in-javascript-walkthrough.md)
 ###### [C# を使ったスポット広告のサンプル コード#](monetize/interstitial-ad-sample-code-in-c.md)
 ###### [JavaScript を使ったスポット広告のサンプル コード](monetize/interstitial-ad-sample-code-in-javascript.md)
 ##### [トラブルシューティング ガイド](monetize/troubleshooting-guides.md)
@@ -732,8 +730,3 @@
 #### [変更履歴](https://msdn.microsoft.com/en-us/library/windows/apps/dn764945.aspx)
 ### [アプリの被検索性に関する基準](https://msdn.microsoft.com/en-us/library/windows/apps/mt652261.aspx)
 ### [開発者倫理規定](https://msdn.microsoft.com/en-us/library/windows/apps/dn764941.aspx)
-
-
-<!--HONumber=May16_HO2-->
-
-
