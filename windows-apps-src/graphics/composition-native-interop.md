@@ -1,4 +1,5 @@
 ---
+author: scottmill
 ms.assetid: 16ad97eb-23f1-0264-23a9-a1791b4a5b95
 title: BeginDraw と EndDraw によるコンポジションでの DirectX と Direct2D のネイティブ相互運用
 description: Windows.UI.Composition API には、コンテンツをコンポジターに直接移行できるようにするネイティブの相互運用インターフェイスが用意されています。
@@ -265,6 +266,6 @@ private:
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

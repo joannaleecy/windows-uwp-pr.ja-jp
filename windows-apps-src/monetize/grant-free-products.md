@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 ms.assetid: FA55C65C-584A-4B9B-8451-E9C659882EDE
 description: Windows ストア購入 API 内のこのメソッドを使用して、無料の製品またはアプリ内製品 (IAP) を特定のユーザーに対して付与します。
 title: 無料の製品の付与
@@ -36,7 +37,7 @@ Windows ストア購入 API 内のこのメソッドを使用して、無料の�
 
 | ヘッダー         | タイプ   | 説明                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
-| Authorization  | string | 必須。 **Bearer** &lt;*token*&gt; という形式の Azure AD アクセス トークン。                           |
+| Authorization  | string | 必須。 **Bearer**&lt;*token*&gt; という形式の Azure AD アクセス トークン。                           |
 | Host           | string | 値 **collections.mp.microsoft.com** に設定する必要があります。                                            |
 | Content-Length | number | 要求の本文の長さ。                                                                       |
 | Content-Type   | string | 要求と応答の種類を指定します。 現時点では、サポートされている唯一の値は **application/json** です。 |
@@ -61,7 +62,7 @@ Windows ストア購入 API 内のこのメソッドを使用して、無料の�
 
 ### 要求の例
 
-```
+```syntax
 POST https://purchase.mp.microsoft.com/v6.0/purchases/grant HTTP/1.1
 Authorization: Bearer eyJ0eXAiOiJK……
 Content-Length: 1863
@@ -156,7 +157,7 @@ IdentityV6 オブジェクトには以下のパラメーターが含まれてい
 
 ### 応答の例
 
-```
+```syntax
 Content-Length: 1203
 Content-Type: application/json
 MS-CorrelationId: fb2e69bc-f26a-4aab-a823-7586c19f5762
@@ -242,6 +243,6 @@ Date: Tue, 13 Oct 2015 21:21:51 GMT
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

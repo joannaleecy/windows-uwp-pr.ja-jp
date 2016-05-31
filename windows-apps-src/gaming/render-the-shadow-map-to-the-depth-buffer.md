@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 深度バッファーへのシャドウ マップのレンダリング
 description: ライトの視点からレンダリングして、シャドウ ボリュームを表す 2 次元の深度マップを作成します。
 ms.assetid: 7f3d0208-c379-8871-cc48-027047c6c2d0
@@ -151,6 +152,6 @@ PixelShaderInput main(VertexShaderInput input)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

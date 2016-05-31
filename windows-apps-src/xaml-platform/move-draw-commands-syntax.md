@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: ここでは、パスの形状を XAML 属性値として指定するために使うことのできる、移動と描画のコマンド (ミニ言語) について説明します。
 title: 移動と描画のコマンド構文
 ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
@@ -18,12 +19,14 @@ ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
 
 Windows ランタイムには、移動と描画のコマンドを表す文字列を使うことのできるプロパティとして、[**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) と [**PathIcon.Data**](https://msdn.microsoft.com/library/windows/apps/dn252723) の 2 つがあります。 通常、これらのプロパティに移動と描画のコマンドを指定するときは、その要素に必要な他の属性と共に、コマンドを XAML 属性値として設定します。 単純な例としては次のようになります。
 
-```xaml
+```xml
 <Path x:Name="Arrow" Fill="White" Height="11" Width="9.67"
   Data="M4.12,0 L9.67,5.47 L4.12,10.94 L0,10.88 L5.56,5.47 L0,0.06" />
 ```
 
-[**PathGeometry.Figures**](https://msdn.microsoft.com/library/windows/apps/br210169) でも移動と描画のコマンドを使うことができます。 移動と描画のコマンドを使う [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) オブジェクトは、[**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/br210057) オブジェクトに含まれる他の [**Geometry**](https://msdn.microsoft.com/library/windows/apps/br210041) 型と結合して、[**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) の値として使うこともできます。 ただし、この使い方は、属性定義のデータで移動と描画のコマンドを使う方法ほど一般的ではありません。
+[
+              **PathGeometry.Figures**
+            ](https://msdn.microsoft.com/library/windows/apps/br210169) でも移動と描画のコマンドを使うことができます。 移動と描画のコマンドを使う [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) オブジェクトは、[**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/br210057) オブジェクトに含まれる他の [**Geometry**](https://msdn.microsoft.com/library/windows/apps/br210041) 型と結合して、[**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) の値として使うこともできます。 ただし、この使い方は、属性定義のデータで移動と描画のコマンドを使う方法ほど一般的ではありません。
 
 ## 移動と描画のコマンドの使用と **PathGeometry** の使用
 
@@ -45,7 +48,17 @@ Windows ランタイム XAML では、移動と描画のコマンドにより、
 -   通常、終了コマンド以外の各コマンドには 1 つ以上の数値が続きます。
 -   1 つのコマンドに複数の数値を指定する場合は、コンマまたはスペースで区切ります。
 
-**\[**_fillRule_**\]** _moveCommand_ _drawCommand_ **\[**_drawCommand_**\*\]** **\[**_closeCommand_**\]**
+**\[**
+            _fillRule_
+            **\]**
+            _moveCommand_
+            _drawCommand_
+            **\[**
+            _drawCommand_
+            **\*\]**
+            **\[**
+            _closeCommand_
+            **\]**
 
 描画コマンドの多くでは点が使われますが、これは _x,y_ 値として指定します。 \*_points_ というプレースホルダーで示されている部分には、点の _x,y_ 値として 2 つの 10 進数値を指定できます。
 
@@ -85,7 +98,7 @@ Windows ランタイム XAML では、移動と描画のコマンドにより、
 
 **直線コマンド**
 
-現在の点と指定した終点の間に直線を作成します。 たとえば、`l 20 30` や `L 20,30` は有効な直線コマンドです。 [
+現在の点と指定した終点の間に直線を作成します。 `l 20 30` や `L 20,30` は有効な直線コマンドの例です。 [
             **LineGeometry**](https://msdn.microsoft.com/library/windows/apps/br210117) オブジェクトと同等の結果が定義されます。
 
 | 構文 |
@@ -98,7 +111,7 @@ Windows ランタイム XAML では、移動と描画のコマンドにより、
 
 **水平線コマンド**
 
-現在の点と指定した x 座標の間に水平線を作成します。 たとえば、`H 90` は有効な水平線コマンドです。
+現在の点と指定した x 座標の間に水平線を作成します。 `H 90` は有効な水平線コマンドの例です。
 
 | 構文 |
 |--------|
@@ -110,7 +123,7 @@ Windows ランタイム XAML では、移動と描画のコマンドにより、
 
 **垂直線コマンド**
 
-現在の点と指定した y 座標の間に垂直線を作成します。 たとえば、`v 90` は有効な垂直線コマンドです。
+現在の点と指定した y 座標の間に垂直線を作成します。 `v 90` は有効な垂直線コマンドの例です。
 
 | 構文 |
 |--------|
@@ -122,12 +135,16 @@ Windows ランタイム XAML では、移動と描画のコマンドにより、
 
 **三次ベジエ曲線コマンド**
 
-指定した 2 つの制御点 (*controlPoint1* と *controlPoint2*) を使って、現在の点と指定した終点の間に三次ベジエ曲線を作成します。 たとえば、`C 100,200 200,400 300,200` は有効な曲線コマンドです。 [
+指定した 2 つの制御点 (*controlPoint1* と *controlPoint2*) を使って、現在の点と指定した終点の間に三次ベジエ曲線を作成します。 `C 100,200 200,400 300,200` は有効な曲線コマンドの例です。 [
             **BezierSegment**](https://msdn.microsoft.com/library/windows/apps/br228068) オブジェクトを持つ [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) オブジェクトと同等の結果が定義されます。
 
 | 構文 |
 |--------|
-| `C ` *controlPoint1* *controlPoint2* *endPoint* <br/> - または - <br/> `c ` *controlPoint1* *controlPoint2* *endPoint* |
+| `C ` *controlPoint1*
+            *controlPoint2*
+            *endPoint* <br/> - または - <br/> `c ` *controlPoint1*
+            *controlPoint2*
+            *endPoint* |
 
 | 用語 | 説明 |
 |------|-------------|
@@ -137,7 +154,7 @@ Windows ランタイム XAML では、移動と描画のコマンドにより、
 
 **二次ベジエ曲線コマンド**
 
-指定した制御点 (*controlPoint*) を使って、現在の点と指定した終点の間に二次ベジエ曲線を作成します。 たとえば、`q 100,200 300,200` は有効な二次ベジエ曲線コマンドです。 [
+指定した制御点 (*controlPoint*) を使って、現在の点と指定した終点の間に二次ベジエ曲線を作成します。 `q 100,200 300,200` は有効な二次ベジエ曲線コマンドの例です。 [
             **QuadraticBezierSegment**](https://msdn.microsoft.com/library/windows/apps/br210249) を持つ [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) と同等の結果が定義されます。
 
 | 構文 |
@@ -155,7 +172,8 @@ Windows ランタイム XAML では、移動と描画のコマンドにより、
 
 | 構文 |
 |--------|
-| `S` *controlPoint2* *endPoint* <br/> - または - <br/>`s` *controlPoint2 endPoint* |
+| `S` *controlPoint2*
+            *endPoint* <br/> - または - <br/>`s` *controlPoint2 endPoint* |
 
 | 用語 | 説明 |
 |------|-------------|
@@ -168,7 +186,9 @@ Windows ランタイム XAML では、移動と描画のコマンドにより、
 
 | 構文 |
 |--------|
-| `T` *controlPoint* *endPoint* <br/> - または - <br/> `t` *controlPoint* *endPoint* |
+| `T` *controlPoint*
+            *endPoint* <br/> - または - <br/> `t` *controlPoint*
+            *endPoint* |
 
 | 用語 | 説明 |
 |------|-------------|
@@ -182,7 +202,11 @@ Windows ランタイム XAML では、移動と描画のコマンドにより、
 
 | 構文 |
 |--------|
-| `A ` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endPoint* <br/> - または - <br/>`a ` *sizerotationAngleisLargeArcFlagsweepDirectionFlagendPoint* |
+| `A ` *size*
+            *rotationAngle*
+            *isLargeArcFlag*
+            *sweepDirectionFlag*
+            *endPoint* <br/> - または - <br/>`a ` *sizerotationAngleisLargeArcFlagsweepDirectionFlagendPoint* |
 
 | 用語 | 説明 |
 |------|-------------|
@@ -207,7 +231,8 @@ Windows ランタイム XAML では、移動と描画のコマンドにより、
 
 | 構文 |
 |--------|
-| *x*,*y*<br/> - または - <br/>*x* *y* |
+| *x*,*y*<br/> - または - <br/>*x*
+            *y* |
 
 | 用語 | 説明 |
 |------|-------------|
@@ -241,6 +266,6 @@ Windows ランタイムのコントロール用の既定の XAML テンプレー
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

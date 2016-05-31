@@ -1,4 +1,5 @@
 ---
+author: TylerMSFT
 ms.assetid: 12ECEA89-59D2-4BCE-B24C-5A4DD525E0C7
 title: ホームグループ コンテンツへのアクセス
 description: ユーザーのホームグループ フォルダーに格納されているコンテンツ (画像、音楽、ビデオなど) にアクセスします。
@@ -187,7 +188,10 @@ description: ユーザーのホームグループ フォルダーに格納され
     Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();   
     ```
 
-3.  **ユーザーが選んだファイルを読み取りアクセスで開き、ファイル ストリームを** [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) のソースとして設定して、ファイルを再生します。
+3.  **ユーザーが選んだファイルを読み取りアクセスで開き、ファイル ストリームを**
+            [
+              **MediaElement**
+            ](https://msdn.microsoft.com/library/windows/apps/br242926) のソースとして設定して、ファイルを再生します。
     ```csharp
     if (file != null)
     {
@@ -211,6 +215,6 @@ description: ユーザーのホームグループ フォルダーに格納され
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

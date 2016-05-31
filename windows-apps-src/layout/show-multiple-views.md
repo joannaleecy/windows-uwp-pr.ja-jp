@@ -1,16 +1,13 @@
 ---
+author: Jwmsft
 Description: アプリの複数の独立した部分を別々のウィンドウで表示できるようにすることは、ユーザーが生産性を高めるために役立ちます。
 title: アプリの複数のビューの表示
 ms.assetid: BAF9956F-FAAF-47FB-A7DB-8557D2548D88
-label: アプリの複数のビューの表示
+label: Show multiple views for an app
 template: detail.hbs
 ---
 
 # アプリの複数のビューの表示
-
-
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
-
 
 アプリの複数の独立した部分を別々のウィンドウで表示できるようにすることは、ユーザーが生産性を高めるために役立ちます。 そのわかりやすい例が、メイン UI に電子メールの一覧と選んだ電子メールのプレビューが表示される電子メールアプリです。 しかし、ユーザーはメッセージを別々のウィンドウで開き、並べて表示します。
 
@@ -189,6 +186,6 @@ await ApplicationViewSwitcher.SwitchAsync(viewIdToShow);</code></pre></td>
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

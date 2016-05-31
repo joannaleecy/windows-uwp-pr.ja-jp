@@ -1,4 +1,5 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: Cortana でバックグラウンド アプリのサービスからのディープ リンクを提供し、フォアグラウンドに特定の状態やコンテキストでアプリを起動します。
 title: Cortana からバックグラウンド アプリへのディープ リンク
 ms.assetid: BE811A87-8821-476A-90E4-2E20D37E4043
@@ -7,9 +8,6 @@ template: detail.hbs
 ---
 
 # Cortana からバックグラウンド アプリへのディープ リンク
-
-
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
 **重要な API**
@@ -33,7 +31,7 @@ template: detail.hbs
 ユニバーサル Windows プラットフォーム (UWP) アプリを開発するのが初めての場合は、以下のトピックに目を通して、ここで説明されているテクノロジをよく理解できるようにしてください。
 
 -   [初めてのアプリ作成](https://msdn.microsoft.com/library/windows/apps/bg124288)
--   「[イベントとルーティング イベントの概要](https://msdn.microsoft.com/library/windows/apps/mt185584)」でイベントについて学習します。
+-   「[イベントとルーティング イベントの概要](https://msdn.microsoft.com/library/windows/apps/mt185584)」に記載されているイベントの説明
 
 **ユーザー エクスペリエンス ガイドライン:  **
 
@@ -58,7 +56,7 @@ template: detail.hbs
 -   さまざまな **Cortana** 画面のコンテンツ タイルに埋め込まれているリンク。
 -   プログラムによるバックグラウンド アプリ サービスからのフォアグラウンド アプリの起動。
 
-## <span id="Go_to__app__deep_link"></span><span id="go_to__app__deep_link"></span><span id="GO_TO__APP__DEEP_LINK"></span>"&lt;アプリ&gt; に移動" ディープ リンク
+## <span id="Go_to__app__deep_link"></span><span id="go_to__app__deep_link"></span><span id="GO_TO__APP__DEEP_LINK"></span>"&lt;アプリ&gt; に移動" のディープ リンク
 
 
 **Cortana** では、ほとんどの画面のコンテンツ カードの下に "&lt;アプリ&gt; に移動" ディープ リンクが表示されます。
@@ -69,9 +67,9 @@ template: detail.hbs
 
 この例では、指定した目的地をサンプルの **AdventureWorks** の AdventureWorksVoiceCommandService.cs から SendCompletionMessageForDestination メソッドに渡します。このメソッドは、一致するすべての旅行を受け取り、アプリへのディープ リンクを提供します。
 
-最初に、**Cortana** に話させ、**Cortana** キャンバスに表示する [**VoiceCommandUserMessage**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandusermessage.aspx) (```userMessage```) を作成します。 結果のカード コレクションをキャンバスに表示するための [**VoiceCommandContentTile**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandcontenttile.aspx) リスト オブジェクトが作成されます。 
+最初に、**Cortana** に話させ、**Cortana** キャンバスに表示する [**VoiceCommandUserMessage**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandusermessage.aspx) (```userMessage```) を作成します。 結果のカード コレクションをキャンバスに表示するための [**VoiceCommandContentTile**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandcontenttile.aspx) リスト オブジェクトが作成されます。 
 
-これら 2 つのオブジェクトが [**VoiceCommandResponse**](https://msdn.microsoft.com/library/windows/apps/dn974182) オブジェクトの [CreateResponse](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandresponse.createresponse.aspx)メソッド (```response```) に渡されます。 次に、[**AppLaunchArgument**](https://msdn.microsoft.com/library/windows/apps/dn974183) プロパティの値を音声コマンドの目的地の値に設定します。
+これら 2 つのオブジェクトが [**VoiceCommandResponse**](https://msdn.microsoft.com/library/windows/apps/dn974182) オブジェクトの [CreateResponse](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandresponse.createresponse.aspx)メソッド (```response```) に渡されます。 次に、[**AppLaunchArgument**](https://msdn.microsoft.com/library/windows/apps/dn974183) プロパティの値を音声コマンドの目的地の値に設定します。
 
 最後に、[**VoiceCommandServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn974204) の [**ReportSuccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn706580) メソッドを呼び出します。
 
@@ -108,13 +106,13 @@ private async Task SendCompletionMessageForDestination(string destination)
 
 ![Cortana のバックグラウンド アプリのハンドオフ画面 ](images/cortana-backgroundapp-progress-result.png)
 
-"&lt;アプリ&gt; に移動" リンクと同様に、アプリ サービスと同様のコンテキストでアプリを開くために、起動引数を指定できます。 起動引数を指定しない場合、コンテンツ タイルはアプリにリンクされません。
+"&lt;アプリ&gt; に移動" のリンクと同様に、アプリ サービスと同様のコンテキストでアプリを開くために、起動引数を指定できます。 起動引数を指定しない場合、コンテンツ タイルはアプリにリンクされません。
 
 この例では、指定した目的地をサンプルの **AdventureWorks** の AdventureWorksVoiceCommandService.cs から SendCompletionMessageForDestination メソッドに渡します。このメソッドは、一致するすべての旅行を受け取り、アプリへのディープ リンクをコンテンツ カードに提供します。
 
-最初に、**Cortana** に話させ、**Cortana** キャンバスに表示する [**VoiceCommandUserMessage**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandusermessage.aspx) (```userMessage```) を作成します。 結果のカード コレクションをキャンバスに表示するための [**VoiceCommandContentTile**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandcontenttile.aspx) リスト オブジェクトが作成されます。 
+最初に、**Cortana** に話させ、**Cortana** キャンバスに表示する [**VoiceCommandUserMessage**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandusermessage.aspx) (```userMessage```) を作成します。 結果のカード コレクションをキャンバスに表示するための [**VoiceCommandContentTile**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandcontenttile.aspx) リスト オブジェクトが作成されます。 
 
-これら 2 つのオブジェクトが [**VoiceCommandResponse**](https://msdn.microsoft.com/library/windows/apps/dn974182) オブジェクトの [CreateResponse](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandresponse.createresponse.aspx)メソッド (```response```) に渡されます。 次に、[**AppLaunchArgument**](https://msdn.microsoft.com/library/windows/apps/dn974183) プロパティの値を音声コマンドの目的地の値に設定します。
+これら 2 つのオブジェクトが [**VoiceCommandResponse**](https://msdn.microsoft.com/library/windows/apps/dn974182) オブジェクトの [CreateResponse](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandresponse.createresponse.aspx)メソッド (```response```) に渡されます。 次に、[**AppLaunchArgument**](https://msdn.microsoft.com/library/windows/apps/dn974183) プロパティの値を音声コマンドの目的地の値に設定します。
 
 最後に、[**VoiceCommandServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn974204) の [**ReportSuccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn706580) メソッドを呼び出します。
 ここでは、[**VoiceCommandServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn974204) オブジェクトの [**ReportSuccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn706580) の呼び出しで使用される [**VoiceCommandContentTile**](https://msdn.microsoft.com/library/windows/apps/dn974168) リストに、異なる [**AppLaunchArgument**](https://msdn.microsoft.com/library/windows/apps/dn974183) パラメーター値を持つ 2 つのコンテンツ タイルを追加します。
@@ -290,6 +288,6 @@ if (args.Kind == ActivationKind.Protocol)
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

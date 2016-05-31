@@ -1,4 +1,5 @@
 ---
+author: mijacobs
 Description: Notifications Visualizer は、ストアの新しいユニバーサル Windows プラットフォーム (UWP) アプリで、Windows 10 のアダプティブ ライブ タイルをデザインする際に役立ちます。
 title: Notifications Visualizer
 ms.assetid: FCBB7BB1-2C79-484B-8FFC-26FE1934EC1C
@@ -9,7 +10,7 @@ template: detail.hbs
 # Notifications Visualizer
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+
 
 
 Notifications Visualizer は、[ストア](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)の新しいユニバーサル Windows プラットフォーム (UWP) アプリで、Windows 10 のアダプティブ ライブ タイルをデザインする際に役立ちます。
@@ -63,6 +64,6 @@ Notifications Visualizer にはさまざまなサンプル ペイロードが付
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

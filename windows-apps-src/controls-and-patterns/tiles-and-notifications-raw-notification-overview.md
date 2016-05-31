@@ -1,4 +1,5 @@
 ---
+author: mijacobs
 Description: 直接通知は、短い汎用のプッシュ通知です。
 title: 直接通知の概要
 ms.assetid: A867C75D-D16E-4AB5-8B44-614EEB9179C7
@@ -9,7 +10,7 @@ template: detail.hbs
 # 直接通知の概要
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+
 
 
 直接通知は、短い汎用のプッシュ通知です。 説明のみを目的としており、UI コンポーネントは含まれません。 他のプッシュ通知と同様に、Windows プッシュ通知サービス (WNS) 機能は、クラウド サービスからアプリに直接通知を配信します。
@@ -126,6 +127,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

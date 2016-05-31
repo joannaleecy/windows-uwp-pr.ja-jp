@@ -1,4 +1,5 @@
 ---
+author: QuinnRadich
 Description: Windows 10 と新しい開発者ツールを使うと、新しいユニバーサル Windows プラットフォーム (UWP) によって強化されたツール、機能、そしてエクスペリエンスが利用できます。
 title: Windows 10 の開発者向け新着情報 (RTM - 2015 年 7 月)
 ---
@@ -65,7 +66,7 @@ Windows 10 と新しい開発者ツールを使うと、新しいユニバーサ
 </tr>
 <tr class="even">
 <td align="left">SplitView</td>
-<td align="left">新しい [<strong>SplitView</strong>](https://msdn.microsoft.com/library/windows/apps/dn864360) コントロールを使うことで、表示と非表示を簡単に切り替えることができます。 このコントロールは一般的に、トップレベルのナビゲーションに使われます。たとえば、「ハンバーガーのメニュー」でナビゲーション コンテンツを非表示にしておき、ユーザーの操作の結果、必要であればメニューをフェード インさせるといった具合です。</td>
+<td align="left">新しい [<strong>SplitView</strong>](https://msdn.microsoft.com/library/windows/apps/dn864360) コントロールを使うことで、表示と非表示を簡単に切り替えることができます。 一般的な使い方として、トップレベルのナビゲーションが挙げられます。たとえば、&quot;ハンバーガーのメニュー&quot; で、ナビゲーション コンテンツを非表示にしておき、ユーザーの操作の結果、必要であればメニューをフェード インさせることができます。</td>
 </tr>
 <tr class="odd">
 <td align="left">RelativePanel</td>
@@ -73,7 +74,7 @@ Windows 10 と新しい開発者ツールを使うと、新しいユニバーサ
 </tr>
 <tr class="even">
 <td align="left">CalendarView</td>
-<td align="left">[<strong>CalendarView</strong>](https://msdn.microsoft.com/library/windows/apps/dn890052) は、カスタマイズ可能な月単位のビューで日付や日付範囲を簡単に表示および選択できるコントロールです。 <strong>CalendarView</strong> は最小日付、最大日付、ブラックアウト日などの機能をサポートし、選択できる日付を制限します。 特定の日におけるスケジュールのおおよその「埋まり具合」を示すカスタムの予約状況バーを設定することもできます。</td>
+<td align="left">[<strong>CalendarView</strong>](https://msdn.microsoft.com/library/windows/apps/dn890052) は、カスタマイズ可能な月単位のビューで日付や日付範囲を簡単に表示および選択できるコントロールです。 <strong>CalendarView</strong> は最小日付、最大日付、ブラックアウト日などの機能をサポートし、選択できる日付を制限します。 特定の日におけるスケジュールのおおよその &quot;埋まり具合&quot; を示すカスタムの予約状況バーを設定することもできます。</td>
 </tr>
 <tr class="odd">
 <td align="left">CalendarDatePicker</td>
@@ -95,7 +96,7 @@ Windows 10 と新しい開発者ツールを使うと、新しいユニバーサ
 <li>[<strong>Windows.UI.Xaml.Controls.Maps</strong>](https://msdn.microsoft.com/library/windows/apps/dn610751) 名前空間 - マップを表示します。</li>
 <li>[<strong>Windows.Services.Maps</strong>](https://msdn.microsoft.com/library/windows/apps/dn636979) 名前空間 - 場所とルートを検索します。</li>
 </ul>
-<p>ユニバーサル Windows アプリでこれらの API をすぐにでも使うには、まず [Bing Maps Developer Center](https://www.bingmapsportal.com/) からキーを取得します。 詳しくは、「マップ アプリを認証する方法 ([How to authenticate a Maps app](https://msdn.microsoft.com/library/windows/apps/xaml/dn741528))」をご覧ください。 また、Windows 10 の新機能として、PC ユーザーと携帯電話ユーザーが設定アプリからオフライン マップをダウンロードできるようになりました。 インターネットにアクセスできないとき、オフライン マップが利用可能な場合は、[<strong>MapControl</strong>](https://msdn.microsoft.com/library/windows/apps/dn637004) はオフライン マップを使います。</p></td>
+<p>現在のユニバーサル Windows アプリでこれらの API を使うには、最初に [Bing Maps Developer Center](https://www.bingmapsportal.com/) からキーを取得します。 詳しくは、[マップ アプリを認証する方法](https://msdn.microsoft.com/library/windows/apps/xaml/dn741528)に関するページをご覧ください。 また、Windows 10 の新機能として、PC ユーザーと携帯電話ユーザーが設定アプリからオフライン マップをダウンロードできるようになりました。 インターネットにアクセスできないとき、オフライン マップが利用可能な場合は、[<strong>MapControl</strong>](https://msdn.microsoft.com/library/windows/apps/dn637004) はオフライン マップを使います。</p></td>
 </tr>
 <tr class="odd">
 <td align="left">入力ボタンのマッピング</td>
@@ -107,7 +108,7 @@ Windows 10 と新しい開発者ツールを使うと、新しいユニバーサ
 <p>The [<strong>InkCanvas</strong>](https://msdn.microsoft.com/library/windows/apps/dn858535) コントロールは、インク ストロークの描画とレンダリングのためのオーバーレイ領域を定義します。 このコントロールの機能 (入力、処理、レンダリング) は、[<strong>InkPresenter</strong>](https://msdn.microsoft.com/library/windows/apps/dn922011)、[<strong>InkStroke</strong>](https://msdn.microsoft.com/library/windows/apps/br208485)、[<strong>InkRecognizer</strong>](https://msdn.microsoft.com/library/windows/apps/br208478)、そして [<strong>InkSynchronizer</strong>](https://msdn.microsoft.com/library/windows/apps/dn903979) の各クラスから提供されます。</p>
 <p></p>
 <div class="alert">
-<strong>重要</strong>  これらのクラスは、JavaScript を使っている Windows アプリではサポートされていません。
+<strong>重要:</strong> これらのクラスは、JavaScript を使っている Windows アプリではサポートされていません。
 </div>
 <div>
  
@@ -159,7 +160,7 @@ Windows 10 と新しい開発者ツールを使うと、新しいユニバーサ
 <tr class="odd">
 <td align="left">リストのスクロールの仮想化</td>
 <td align="left"><p>XAML の [<strong>ListView</strong>](https://msdn.microsoft.com/library/windows/apps/br242878) コントロールと [<strong>GridView</strong>](https://msdn.microsoft.com/library/windows/apps/br242705) コントロールに用意されている新しい [<strong>ListViewBase.ChoosingItemContainer</strong>](https://msdn.microsoft.com/library/windows/apps/dn903989) イベントは、データ コレクションに変更が生じた際にコントロールのパフォーマンスを改善します。</p>
-<p>リストを完全にリセットして開始アニメーションを再生するのではなく、現在表示されている項目をフォーカスや選択状態も含めて維持します。ビューポート内の新しい項目と削除された項目は、アニメーション化されてスムーズに表示されたり消えたりします。 コンテナーが破棄されないデータ コレクションへの変更の後、アプリは「古い」項目を以前のコンテナーとすばやく比較し、コンテナー ライフサイクルをオーバーライドするメソッドの以降の処理をスキップします。 そうして「新しい」項目のみが処理され、リサイクルされたコンテナーまたは新しいコンテナーに関連付けられます。</p></td>
+<p>リストを完全にリセットして開始アニメーションを再生するのではなく、現在表示されている項目をフォーカスや選択状態も含めて維持します。ビューポート内の新しい項目と削除された項目は、アニメーション化されてスムーズに表示されたり消えたりします。 コンテナーが破棄されないデータ コレクション内の変更の後、アプリは &quot;古い&quot; 項目を以前のコンテナーとすばやく比較し、コンテナー ライフサイクルをオーバーライドするメソッドの以降の処理をスキップできます。 &quot;新しい&quot; 項目のみが処理され、リサイクルされたコンテナーまたは新しいコンテナーに関連付けられます。</p></td>
 </tr>
 <tr class="even">
 <td align="left">SelectRange メソッドと SelectedRanges プロパティ</td>
@@ -172,7 +173,7 @@ Windows 10 と新しい開発者ツールを使うと、新しいユニバーサ
 <tr class="even">
 <td align="left">SemanticZoom の更新</td>
 <td align="left"><p>[<strong>SemanticZoom</strong>](https://msdn.microsoft.com/library/windows/apps/hh702601) コントロールは、UWP アプリでは、すべてのデバイス ファミリにおいて動作が一貫しています。</p>
-<p>拡大表示ビューと縮小表示ビューを切り替える既定のアクションは、拡大表示ビューでグループ ヘッダーをタップすることです。 これは Windows Phone 8.1 での動作と同じですが、ズームにピンチ ジェスチャを使っていた Windows 8.1 でのそれとは異なります。 ピンチによるズームを使ってビューを変更するには、[<strong>SemanticZoom</strong>](https://msdn.microsoft.com/library/windows/apps/hh702601) の内部 [<strong>ScrollViewer</strong>](https://msdn.microsoft.com/library/windows/apps/br209527) で [<strong>ScrollViewer.ZoomMode</strong>](https://msdn.microsoft.com/library/windows/apps/br209601) を "Enabled" に設定します。</p>
+<p>拡大表示ビューと縮小表示ビューを切り替える既定のアクションは、拡大表示ビューでグループ ヘッダーをタップすることです。 これは Windows Phone 8.1 での動作と同じですが、ズームにピンチ ジェスチャを使っていた Windows 8.1 でのそれとは異なります。 ピンチによるズームを使ってビューを変更するには、[<strong>SemanticZoom</strong>](https://msdn.microsoft.com/library/windows/apps/hh702601) の内部 [<strong>ScrollViewer</strong>](https://msdn.microsoft.com/library/windows/apps/br209527) で [<strong>ScrollViewer.ZoomMode</strong>](https://msdn.microsoft.com/library/windows/apps/br209601) を &quot;Enabled&quot; に設定します。</p>
 <p>ユニバーサル Windows アプリでは、拡大表示ビューが縮小表示ビューに置き換えられます。この縮小表示ビューのサイズは、置き換える前のビューと同じです。 これは Windows 8.1 での動作と同じですが、縮小表示ビューが画面全体を占有し、他のすべてのコンテンツの上にレンダリングされていた Windows Phone 8.1 でのそれとは異なります。</p></td>
 </tr>
 <tr class="odd">
@@ -197,14 +198,14 @@ Windows 10 と新しい開発者ツールを使うと、新しいユニバーサ
 </tr>
 <tr class="even">
 <td align="left">システムのフォーカスのビジュアル</td>
-<td align="left">XAML コントロールのフォーカスのビジュアルは、コントロール テンプレートの XAML 要素として宣言するのではなく、システムによって作成されるようになりました。 フォーカスのビジュアルは通常、モバイル デバイスでは必要ないため、必要に応じてシステムで作成および管理するようにすれば、アプリのパフォーマンスが向上します。 フォーカスのビジュアルをさらに制御する場合は、システムの動作を上書きし、フォーカスのビジュアルを定義するカスタム コントロール テンプレートを使います。 詳しくは、[<strong>UseSystemFocusVisuals</strong>](https://msdn.microsoft.com/library/windows/apps/dn899076) および [<strong>IsTemplateFocusTarget</strong>](https://msdn.microsoft.com/library/windows/apps/dn899074) に関するページをご覧ください。</td>
+<td align="left">XAML コントロールのフォーカスのビジュアルは、コントロール テンプレートの XAML 要素として宣言するのではなく、システムによって作成されるようになりました。 フォーカスの視覚効果は通常、モバイル デバイスでは必要ないため、必要に応じてシステムで作成および管理されるようにすれば、アプリのパフォーマンスが向上します。 フォーカスのビジュアルをさらに制御する場合は、システムの動作を上書きし、フォーカスのビジュアルを定義するカスタム コントロール テンプレートを使います。 詳しくは、[<strong>UseSystemFocusVisuals</strong>](https://msdn.microsoft.com/library/windows/apps/dn899076) および [<strong>IsTemplateFocusTarget</strong>](https://msdn.microsoft.com/library/windows/apps/dn899074) に関するページをご覧ください。</td>
 </tr>
 <tr class="odd">
 <td align="left">PasswordBox.PasswordRevealMode</td>
 <td align="left"><p>ユニバーサル Windows アプリでは、[<strong>IsPasswordRevealButtonEnabled</strong>](https://msdn.microsoft.com/library/windows/apps/hh702579) に代わって [<strong>PasswordRevealMode</strong>](https://msdn.microsoft.com/library/windows/apps/dn890867) プロパティが導入され、デバイス ファミリにまたがる一貫した動作を実現します。</p>
 <p></p>
 <div class="alert">
-<strong>注</strong>  Windows 10 より前のバージョンでは、パスワードを表示するボタンは既定では表示されませんでしたが、ユニバーサル Windows アプリでは既定で表示されます。 アプリのセキュリティ上の理由によりパスワードを常に非表示にする必要がある場合は、[<strong>PasswordRevealMode</strong>](https://msdn.microsoft.com/library/windows/apps/dn890867) を "Hidden" に設定します。
+<strong>注:</strong> Windows 10 より前のバージョンでは、パスワードを表示するボタンは既定では表示されませんでしたが、ユニバーサル Windows アプリでは既定で表示されます。 アプリのセキュリティ上の理由によりパスワードを常に非表示にする必要がある場合は、[<strong>PasswordRevealMode</strong>](https://msdn.microsoft.com/library/windows/apps/dn890867) を "Hidden" に設定します。
 </div>
 <div>
  
@@ -284,8 +285,8 @@ Windows 10 と新しい開発者ツールを使うと、新しいユニバーサ
 <tr class="odd">
 <td align="left">Cortana</td>
 <td align="left"><p>音声コマンドが <strong>Cortana</strong> の基本機能を拡張し、外部アプリケーションで単一の操作を起動して実行します。</p>
-<p>アプリの基本的な機能を統合して、ユーザーが直接アプリを開かずにほとんどのタスクを実行できる中心的エントリ ポイントを提供することで、<strong>Cortana</strong> は、アプリとユーザーの仲介役となります。 多くの場合、これによってユーザーの時間と労力を大幅に軽減することができます。</p>
-<p>アプリをコルタナのキャンバスに統合する方法については、「Cortana の操作 (XAML) ([integrate your app into the Cortana canvas](https://msdn.microsoft.com/library/windows/apps/xaml/dn974230))」をご覧ください。 アイデアが必要な場合は、「ユニバーサル Windows アプリのデザインの基礎 ([Design basics for Universal Windows apps](https://dev.windows.com/design/design-basics))」にて、<strong>Cortana </strong> 特有の推奨されるデザインとユーザー エクスペリエンスのガイドラインをご参照ください。</p></td>
+<p>アプリの基本的な機能を統合して、ユーザーが直接アプリを開かずにほとんどのタスクを実行できる中心的エントリ ポイントを提供することで、<strong>Cortana</strong> は、アプリとユーザーの仲介役となります。 多くの場合、これによってユーザーの時間と労力を大幅に減らすことができます。</p>
+<p>[Cortana のキャンバスにアプリを統合](https://msdn.microsoft.com/library/windows/apps/xaml/dn974230)する方法について説明します。 アイデアが必要な場合は、「[ユニバーサル Windows アプリの設計の基本](https://dev.windows.com/design/design-basics)」で、<strong>Cortana</strong> に固有の設計に関する推奨事項とユーザー エクスペリエンスのガイドラインをご確認いただけます。</p></td>
 </tr>
 <tr class="even">
 <td align="left">エクスプローラー</td>
@@ -299,21 +300,21 @@ Windows 10 と新しい開発者ツールを使うと、新しいユニバーサ
 <td align="left">設定</td>
 <td align="left"><p>ms-settings プロトコルと [<strong>LaunchUriAsync</strong>](https://msdn.microsoft.com/library/windows/apps/hh701476) メソッドを使うと、組み込みの設定ページを表示できます。 たとえば、次のコードは Wi-Fi の設定ページを表示します。</p>
 <p><code>bool result = await Launcher.LaunchUriAsync(new Uri(&quot;ms-settings://network/wifi&quot;));</code></p>
-<p>表示できる設定ページのリストについては、「Windows Phone 8 の起動、再開、マルチタスク ([How to display built-in settings pages by using the ms-settings protocol](https://msdn.microsoft.com/library/windows/apps/jj207014.aspx))」をご覧ください。</p></td>
+<p>表示できる設定ページの一覧については、「[ms-settings プロトコルを使って組み込みの設定ページを表示する方法](https://msdn.microsoft.com/library/windows/apps/jj207014.aspx)」を参照してください。</p></td>
 </tr>
 <tr class="odd">
 <td align="left">アプリ間通信</td>
-<td align="left"><p>Windows 10 の新しい [アプリ間通信app-to-app communication](https://msdn.microsoft.com/library/windows/apps/xaml/dn997827) API により、Windows アプリケーション (および Windows Web アプリケーション) 間での相互起動やデータとファイルの交換が可能になります。</p>
+<td align="left"><p>Windows 10 の新しい[アプリ間通信](https://msdn.microsoft.com/library/windows/apps/xaml/dn997827) API により、Windows アプリケーション (および Windows Web アプリケーション) 間での相互起動やデータとファイルの交換が可能になります。</p>
 <p>これらの新しい API を使うと、複数のアプリケーションを使う必要のあった複雑な作業をシームレスに処理できるようになります。 たとえば、アプリでソーシャル ネットワー キング アプリを起動して連絡先を選択したり、チェックアウト アプリケーションを起動して支払処理を完了したりできます。</p></td>
 </tr>
 <tr class="even">
 <td align="left">アプリ サービス</td>
-<td align="left">アプリ サービスは、Windows 10 でアプリが他のアプリにサービスを提供する方法の 1 つです。 アプリ サービスは、バックグラウンド タスクの形式を取ります。 フォアグラウンド アプリは、別のアプリでアプリ サービスを呼び出してバックグラウンドでタスクを実行できます。 アプリ サービス API のリファレンス情報については、[<strong>Windows.ApplicationModel.AppService</strong>](https://msdn.microsoft.com/library/windows/apps/dn921731) に関するページをご覧ください。</td>
+<td align="left">アプリ サービスは、Windows 10 でアプリが他のアプリにサービスを提供する方法の 1 つです。 アプリ サービスは、バックグラウンド タスクの形式を取ります。 フォアグラウンド アプリは、別のアプリでアプリ サービスを呼び出してバックグラウンドでタスクを実行できます。 アプリ サービス API のリファレンス情報については、「[<strong>Windows.ApplicationModel.AppService</strong>](https://msdn.microsoft.com/library/windows/apps/dn921731)」をご覧ください。</td>
 </tr>
 <tr class="odd">
 <td align="left">アプリ パッケージ マニフェスト</td>
-<td align="left"><p>Windows 10 の[パッケージ マニフェスト スキーマpackage manifest schema](https://msdn.microsoft.com/library/windows/apps/br211474)のリファレンスに対する更新には、追加、削除、変更された要素が含まれています。</p>
-<p>このスキーマのすべての要素、属性、タイプに関するリファレンス情報については、要素の階層 ([Element Hierarchy](https://msdn.microsoft.com/library/windows/apps/dn934819)) に関するページをご覧ください。</p></td>
+<td align="left"><p>Windows 10 の[パッケージ マニフェスト スキーマ](https://msdn.microsoft.com/library/windows/apps/br211474)のリファレンスへの更新には、追加、削除、変更された要素が含まれています。</p>
+<p>このスキーマのすべての要素、属性、タイプに関するリファレンス情報については、「[要素の階層](https://msdn.microsoft.com/library/windows/apps/dn934819)」をご覧ください。</p></td>
 </tr>
 </tbody>
 </table>
@@ -333,13 +334,13 @@ Windows 10 と新しい開発者ツールを使うと、新しいユニバーサ
 <td align="left">Microsoft Surface Hub</td>
 <td align="left"><p>Microsoft Surface Hub は、高性能な共同作業デバイスであり、Surface Hub または接続されているデバイスからネイティブに実行されるユニバーサル Windows アプリに対応する大画面プラットフォームです。</p>
 <p>ビジネス向けの独自アプリを作成し、大画面、タッチ入力、手描き入力、広範なオンボード ハードウェア (カメラ、センサーなど) を活用しましょう。</p>
-<p>[ユニバーサル Windows アプリのデザインの基礎Design basics for Universal Windows apps](https://dev.windows.com/design/design-basics)に関するページで、Surface ハブ特有の推奨デザインとユーザー エクスペリエンスのガイドラインをご参照ください。 次のドキュメントでは、ユニバーサル Windows アプリのレスポンシブ デザイン手法を説明しています。</p>
+<p>[ユニバーサル Windows アプリの設計の基本](https://dev.windows.com/design/design-basics)に関するページで、Surface Hub に固有の設計に関する推奨事項とユーザー エクスペリエンスのガイドラインをご確認いただけます。 次のドキュメントでは、ユニバーサル Windows アプリのレスポンシブ デザイン手法を説明しています。</p>
 <p>共同の共有アプリのサポートについては、[<strong>SharedModeSettings</strong>](https://msdn.microsoft.com/library/windows/apps/dn949019) に関するページをご覧ください。</p>
-<p>新しい [<strong>InkCanvas</strong>](https://msdn.microsoft.com/library/windows/apps/dn858535) コントロールでのマルチポイント手描き入力のサポートについて詳しくは、[<strong>Windows.UI.Input.Inking</strong>](https://msdn.microsoft.com/library/windows/apps/br208524) と [<strong>Windows.UI.Input.Inking.Core</strong>](https://msdn.microsoft.com/library/windows/apps/dn958452) に関するページをご覧ください。</p>
-<p>センサー入力の処理については、「デバイス、プリンター、センサーの統合 (XAML) ([Integrating devices, printers, and sensors](https://msdn.microsoft.com/library/windows/apps/br229563))」をご覧ください。</p></td>
+<p>新しい [<strong>InkCanvas</strong>](https://msdn.microsoft.com/library/windows/apps/dn858535) コントロールでのマルチポイント手描き入力のサポートについて詳しくは、「[<strong>Windows.UI.Input.Inking</strong>](https://msdn.microsoft.com/library/windows/apps/br208524)」と「[<strong>Windows.UI.Input.Inking.Core</strong>](https://msdn.microsoft.com/library/windows/apps/dn958452)」をご覧ください。</p>
+<p>センサー入力の処理については、「[デバイス、プリンター、センサーの統合](https://msdn.microsoft.com/library/windows/apps/br229563)」をご覧ください。</p></td>
 </tr>
 <tr class="even">
-<td align="left">場所</td>
+<td align="left">位置情報</td>
 <td align="left"><p>Windows 10 では、位置情報へのアクセス許可をユーザーに求める画面を表示する新しいメソッド、[<strong>RequestAccessAsync</strong>](https://msdn.microsoft.com/library/windows/apps/dn859152) が導入されています。</p>
 <p>ユーザーが<strong>設定</strong>アプリの<strong>位置情報に関するプライバシー設定</strong>で位置情報に関するプライバシーを設定します。 次の場合にのみ、アプリでユーザーの位置情報にアクセスできます。</p>
 <ul>
@@ -351,10 +352,10 @@ Windows 10 と新しい開発者ツールを使うと、新しいユニバーサ
 </tr>
 <tr class="odd">
 <td align="left">AllJoyn</td>
-<td align="left"><p>[<strong>Windows.Devices.AllJoyn</strong>](https://msdn.microsoft.com/library/windows/apps/dn894971) Windows ランタイム名前空間には、AllJoyn オープン ソース ソフトウェア フレームワークとサービスのマイクロソフトによる実装が導入されています。 これらの API により、Windows デバイス用のユニバーサル アプリは、AllJoyn に基づくモノのインターネット (IoT) のシナリオに他のデバイスと共に参加できるようになります。 AllJoyn C API について詳しくは、[The AllSeen Alliance](https://allseenalliance.org/) からドキュメントをダウンロードして、ご確認ください。</p>
-<p>デバイス アプリで AllJoyn シナリオの実現させるための Windows コンポーネントを生成するには、このリリースに含まれている [AllJoynCodeGen tool](https://msdn.microsoft.com/library/windows/apps/dn913809) ツールを使います。</p>
+<td align="left"><p>[<strong>Windows.Devices.AllJoyn</strong>](https://msdn.microsoft.com/library/windows/apps/dn894971) Windows ランタイム名前空間には、AllJoyn オープン ソース ソフトウェア フレームワークとサービスのマイクロソフトによる実装が導入されています。 これらの API により、Windows デバイス用のユニバーサル アプリは、AllJoyn に基づくモノのインターネット (IoT) のシナリオに他のデバイスと共に参加できるようになります。 AllJoyn C API について詳しくは、[AllSeen Alliance](https://allseenalliance.org/) でドキュメントをダウンロードしてください。</p>
+<p>デバイス アプリでの AllJoyn シナリオの実現に使うことができる Windows コンポーネントを生成するには、このリリースに含まれている [AllJoynCodeGen ツール](https://msdn.microsoft.com/library/windows/apps/dn913809)を使います。</p>
 <div class="alert">
-<strong>注</strong>  小型デバイス向け Windows 10 IoT Core がリリースされました。これにより、Windows と Visual Studio を使っていわゆる「モノのインターネット (IoT)」のデバイスが開発できます。 Windows IoT について詳しくは、[WindowsOnDevices.com](http://www.windowsondevices.com/) をご覧ください。
+<strong>注:</strong> 小型デバイス向け Windows 10 IoT Core がリリースされました。これにより、Windows と Visual Studio を使っていわゆる「モノのインターネット (IoT)」のデバイスが開発できます。 Windows IoT について詳しくは、[WindowsOnDevices.com](http://www.windowsondevices.com/) をご覧ください。
 </div>
 <div>
  
@@ -420,8 +421,8 @@ Windows 10 と新しい開発者ツールを使うと、新しいユニバーサ
 </tr>
 <tr class="even">
 <td align="left">メディア ファンデーションの Transcode Video Processor (XVP) によるメディア ファンデーション トランスフォーム (MFT) のサポート</td>
-<td align="left"><p>メディア ファンデーション トランスフォーム (MFT) を利用する Windows アプリでは、<strong>メディア ファンデーションのトランスコード ビデオ プロセッサー</strong> (XVP) を使って、生のビデオ データを変換、拡大縮小、変形することができます。</p>
-<p>新しい [MF_XVP_CALLER_ALLOCATES_OUTPUT](https://msdn.microsoft.com/library/windows/desktop/dn803919) 属性で、Microsoft DirectX ビデオ アクセラレーション (DXVA) モードであっても、呼び出し元によって割り当てられたテクスチャへの出力が可能です。</p>
+<td align="left"><p>メディア ファンデーション トランスフォーム (MFT) を利用する Windows アプリでは、<strong>メディア ファンデーションの Transcode Video Processor</strong> (XVP) を使って、生のビデオ データを変換、拡大縮小、変形することができます。</p>
+<p>新しい [MF_XVP_CALLER_ALLOCATES_OUTPUT](https://msdn.microsoft.com/library/windows/desktop/dn803919) 属性では、Microsoft DirectX ビデオ アクセラレーション (DXVA) モードであっても、呼び出し元によって割り当てられたテクスチャへの出力ができます。</p>
 <p>新しい [<strong>IMFVideoProcessorControl2</strong>](https://msdn.microsoft.com/library/windows/desktop/dn800741) インターフェイスにより、アプリでハードウェア効果を有効にし、サポートされているハードウェア効果を照会してビデオ プロセッサによって実行される回転操作をオーバーライドすることができます。</p></td>
 </tr>
 <tr class="odd">
@@ -474,8 +475,8 @@ Windows 10 と新しい開発者ツールを使うと、新しいユニバーサ
 <td align="left">ソケット</td>
 <td align="left"><p>ソケットの更新内容には、次の項目が含まれます。</p>
 <ul>
-<li><strong>ソケット ブローカー: </strong> ソケット ブローカーは、アプリのライフサイクルのすべての状態において、アプリに代わってソケット接続を確立し、閉じることができます。 これにより、アプリとアプリの提供するサービスが、より見つけやすくなります。 ソケット ブローカーを経由すると、たとえば Win32 サービスは、実行中でないときでも受信ソケット接続を受け付けることができます。</li>
-<li><strong>スループットの向上: </strong> ソケットのスループットが、[<strong>Windows.Networking.Sockets</strong>](https://msdn.microsoft.com/library/windows/apps/br226960) 名前空間を使うアプリ向けに最適化されています。</li>
+<li><strong>ソケット ブローカー:</strong> ソケット ブローカーは、アプリのライフサイクルのすべての状態において、アプリに代わってソケット接続を確立し、閉じることができます。 これにより、アプリとアプリの提供するサービスが、より見つけやすくなります。 ソケット ブローカーを経由すると、たとえば Win32 サービスは、実行中でないときでも受信ソケット接続を受け付けることができます。</li>
+<li><strong>スループットの向上:</strong> ソケットのスループットが、[<strong>Windows.Networking.Sockets</strong>](https://msdn.microsoft.com/library/windows/apps/br226960) 名前空間を使うアプリ向けに最適化されています。</li>
 </ul></td>
 </tr>
 <tr class="even">
@@ -490,7 +491,7 @@ Windows 10 と新しい開発者ツールを使うと、新しいユニバーサ
 <td align="left">Wi-Fi Direct API の更新内容</td>
 <td align="left"><p>デバイス ブローカーが更新され、アプリから離れることなくデバイスのペアリングができるようになりました。 [<strong>Windows.Devices.WiFiDirect</strong>](https://msdn.microsoft.com/library/windows/apps/dn297687) 名前空間が更新され、デバイスを他のデバイスから検出できるようにしたり、デバイスで着信接続の通知をリッスンしたりできるようになりました。</p>
 <div class="alert">
-<strong>注</strong>  このリリースでは、Wi-Fi Direct の機能強化は UX に組み込まれておらず、プッシュ ボタンによるペアリングのみがサポートされています。 また、このリリースでは、サポートされるアクティブな接続は 1 つだけです。
+<strong>注:</strong> このリリースでは、Wi-Fi Direct の機能強化は UX に組み込まれておらず、プッシュ ボタンによるペアリングのみがサポートされています。 また、このリリースでは、サポートされるアクティブな接続は 1 つだけです。
 </div>
 <div>
  
@@ -536,9 +537,9 @@ Windows 10 と新しい開発者ツールを使うと、新しいユニバーサ
 </tr>
 <tr class="even">
 <td align="left">バージョン</td>
-<td align="left"><p>バージョン ヘルパー関数 ([Version Helper functions](https://msdn.microsoft.com/library/windows/desktop/dn424972)) を使うと、オペレーティング システムのバージョンを調べることができます。 Windows 10 では、これらのヘルパー関数に新しい関数である [<strong>IsWindows10OrGreater</strong>](https://msdn.microsoft.com/library/windows/desktop/dn905474) が追加されました。 オペレーティング システムのバージョンを調べる場合は、非推奨の [<strong>GetVersionEx</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724451) 関数や [<strong>GetVersion</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724439) 関数ではなく、ヘルパー関数を使いましょう。 詳しくは、[システムのバージョンを取得する方法Getting the System Version](https://msdn.microsoft.com/library/windows/desktop/ms724429)に関するページをご覧ください。</p>
-<p>非推奨の [<strong>GetVersionEx</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724451) 関数または [<strong>GetVersion</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724439) 関数を使って、[<strong>OSVERSIONINFOEX</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724833) 構造体または [<strong>OSVERSIONINFO</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724834) 構造体からバージョン情報を取得する場合は、これらの構造体に含まれるバージョン番号が、Windows 8.1 と Windows Server 2012 R2 のバージョン番号である 6.3 から、Windows 10 のバージョン番号である 10.0 に増加する点に注意してください。 詳しくは、オペレーティング システムのバージョン番号 ([Operating System Version](https://msdn.microsoft.com/library/windows/desktop/ms724832)) に関するページをご覧ください。</p>
-<p>また、[<strong>GetVersionEx</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724451) 関数または [<strong>GetVersion</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724439) 関数でこれらのバージョンの正しいバージョン情報を取得するには、アプリで Windows 8.1 または Windows 10 を明示的に指定する必要があります。 詳しくは、Windows をアプリで指定する方法 ([Targeting your application for Windows](https://msdn.microsoft.com/library/windows/desktop/dn481241)) に関するページをご覧ください。</p></td>
+<td align="left"><p>[Version Helper 関数](https://msdn.microsoft.com/library/windows/desktop/dn424972)を使ってオペレーティング システムのバージョンを調べることができます。 Windows 10 では、これらのヘルパー関数に新しい関数である [<strong>IsWindows10OrGreater</strong>](https://msdn.microsoft.com/library/windows/desktop/dn905474) が追加されました。 オペレーティング システムのバージョンを調べる場合は、非推奨の [<strong>GetVersionEx</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724451) 関数や [<strong>GetVersion</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724439) 関数ではなく、ヘルパー関数を使いましょう。 システム バージョンを取得する方法の詳細については、「[システム バージョンの取得](https://msdn.microsoft.com/library/windows/desktop/ms724429)」を参照してください。</p>
+<p>非推奨の [<strong>GetVersionEx</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724451) 関数または [<strong>GetVersion</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724439) 関数を使って、[<strong>OSVERSIONINFOEX</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724833) 構造体または [<strong>OSVERSIONINFO</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724834) 構造体からバージョン情報を取得する場合は、これらの構造体に含まれるバージョン番号が、Windows 8.1 と Windows Server 2012 R2 のバージョン番号である 6.3 から、Windows 10 のバージョン番号である 10.0 に増加する点に注意してください。 オペレーティング システムのバージョン番号の詳細については、「[オペレーティング システムのバージョン](https://msdn.microsoft.com/library/windows/desktop/ms724832)」を参照してください。</p>
+<p>また、[<strong>GetVersionEx</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724451) 関数または [<strong>GetVersion</strong>](https://msdn.microsoft.com/library/windows/desktop/ms724439) 関数でこれらのバージョンの正しいバージョン情報を取得するには、アプリケーションで Windows 8.1 または Windows 10 を明示的に指定する必要があります。 これらのバージョンの Windows をアプリケーションで指定する方法について詳しくは、「[アプリケーションで Windows を指定する方法](https://msdn.microsoft.com/library/windows/desktop/dn481241)」をご覧ください。</p></td>
 </tr>
 <tr class="odd">
 <td align="left">ユーザー情報</td>
@@ -587,7 +588,7 @@ Windows 10 と新しい開発者ツールを使うと、新しいユニバーサ
 </tr>
 <tr class="even">
 <td align="left">トレース ログ</td>
-<td align="left"><p>[TraceLogging](https://msdn.microsoft.com/library/windows/desktop/dn904636) は、ユーザー モード アプリとカーネル モード ドライバー用の新しいイベント トレース API です。[Event Tracing for Windows](https://msdn.microsoft.com/library/windows/desktop/bb968803) (ETW) を基に構築されています。 この API は、インストルメンテーション マニフェストの XML ファイルを別に用意する必要なく、コードを実装して構造化データをイベントに含めるためのシンプルな方法を提供します。</p>
+<td align="left"><p>[TraceLogging](https://msdn.microsoft.com/library/windows/desktop/dn904636) は、ユーザー モード アプリとカーネル モード ドライバー用の新しいイベント トレース API です。[Windows イベント トレーシング](https://msdn.microsoft.com/library/windows/desktop/bb968803) (ETW) を基にして構築されています。 この API は、インストルメンテーション マニフェストの XML ファイルを別に用意する必要なく、コードを実装して構造化データをイベントに含めるための簡単な方法を提供します。</p>
 <p>対象となるさまざまな開発者に対応するために、WinRT、.NET、C/C++ の TraceLogging API が用意されています。</p></td>
 </tr>
 </tbody>
@@ -622,7 +623,7 @@ Windows 10 と新しい開発者ツールを使うと、新しいユニバーサ
 </tr>
 <tr class="odd">
 <td align="left">カスタム ウィンドウ タイトル バー</td>
-<td align="left">デスクトップ デバイス ファミリの UWP アプリで、[<strong>ApplicationViewTitleBar</strong>](https://msdn.microsoft.com/library/windows/apps/dn906115) クラスと、[<strong>ApplicationView.TitleBar</strong>](https://msdn.microsoft.com/library/windows/apps/dn906131) プロパティおよび [<strong>Window.SetTitleBar</strong>](https://msdn.microsoft.com/library/windows/apps/dn965560) メソッドを組み合わせることで、タイトル バーの既定のコンテンツを独自のカスタム XAML コンテンツに置き換えることができるようになりました。 カスタム XAML はシステム クロムとして扱われるため、入力イベントはアプリではなく Windows によって処理されます。 そのため、カスタム タイトル バーのコンテンツをクリックした場合でも、ユーザーはウィンドウをドラッグしたり、サイズを変更したりできます。</td>
+<td align="left">デスクトップ デバイス ファミリの UWP アプリで、[<strong>ApplicationViewTitleBar</strong>](https://msdn.microsoft.com/library/windows/apps/dn906115) クラスと、[<strong>ApplicationView.TitleBar</strong>](https://msdn.microsoft.com/library/windows/apps/dn906131) プロパティおよび [<strong>Window.SetTitleBar</strong>](https://msdn.microsoft.com/library/windows/apps/dn965560) メソッドを組み合わせることで、Windows タイトル バーの既定のコンテンツを独自のカスタム XAML コンテンツに置き換えることができるようになりました。 カスタム XAML は &quot;システム クロム&quot; として扱われるため、入力イベントはアプリではなく Windows によって処理されます。 そのため、カスタム タイトル バーのコンテンツをクリックした場合でも、ユーザーはウィンドウをドラッグしたり、サイズを変更したりできます。</td>
 </tr>
 </tbody>
 </table>
@@ -640,10 +641,10 @@ Windows 10 と新しい開発者ツールを使うと、新しいユニバーサ
 <tbody>
 <tr class="odd">
 <td align="left">Internet Explorer</td>
-<td align="left"><p>Internet Explorer にエッジ モードが導入されました。エッジ モードは、他の最新のブラウザーや現代的な Web コンテンツとの相互運用性を最大限に高めることを目的とした、新しい「生きた」ドキュメント モードです。 試験的なこのモードは、ランダムに選ばれた Windows 10 ユーザーに対して段階的に提供されます。 エッジ モードは、IE の新しい <strong>about:flags</strong> メカニズムを通じて手動で有効または無効にすることができます。 詳しくは、次をご覧ください。</p>
+<td align="left"><p>Internet Explorer にエッジ モードが導入されました。エッジ モードは、他の最新のブラウザーや現代的な Web コンテンツとの相互運用性を最大限に高めることを目的とした新しい &quot;生きた&quot; ドキュメント モードです。 試験的なこのモードは、ランダムに選ばれた Windows 10 ユーザーに対して段階的に提供されます。 エッジ モードは、IE の新しい <strong>about:flags</strong> メカニズムをとおして手動で有効または無効にすることができます。 詳しくは、次のトピックをご覧ください。</p>
 <ul>
-<li>「[Living on the Edge – our next step in helping the web just work](http://blogs.msdn.com/b/ie/archive/2014/11/11/living-on-the-edge-our-next-step-in-interoperability.aspx)」</li>
-<li>「[The Internet Explorer for Windows 10 Developer Guide](https://dev.windows.com/microsoft-edge/)」</li>
+<li>[Living on the Edge – our next step in helping the web just work](http://blogs.msdn.com/b/ie/archive/2014/11/11/living-on-the-edge-our-next-step-in-interoperability.aspx).</li>
+<li>[Internet Explorer for Windows 10 開発者向けガイド](https://dev.windows.com/microsoft-edge/)。</li>
 </ul></td>
 </tr>
 <tr class="even">
@@ -688,6 +689,6 @@ Windows 10 と新しい開発者ツールを使うと、新しいユニバーサ
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 description: Windows アプリは、PC、モバイル デバイス、その他の多くの種類のデバイスで同じ外観を共有します。 ユーザー インターフェイス、入力パターン、操作パターンは非常に類似しており、デバイス間を移行するユーザーには使い慣れたエクスペリエンスは歓迎されるはずです。
 title: Windows Phone Silverlight から UWP へのフォーム ファクターと UX の移植
 ms.assetid: 96244516-dd2c-494d-ab5a-14b7dcd2edbd
@@ -66,6 +67,6 @@ Windows Phone Silverlight インターフェイスは、タッチ操作に特化
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

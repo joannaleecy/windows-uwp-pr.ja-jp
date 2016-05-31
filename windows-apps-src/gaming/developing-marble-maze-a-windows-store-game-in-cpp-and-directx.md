@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: Marble Maze、C++ と DirectX での UWP ゲームの開発
 description: ドキュメントのこのセクションでは、DirectX と Visual C++ を使って 3-D のユニバーサル Windows プラットフォーム (UWP) ゲームを作成する方法について説明します。
 ms.assetid: 43f1977a-7e1d-614c-696e-7669dd8a9cc7
@@ -7,12 +8,12 @@ ms.assetid: 43f1977a-7e1d-614c-696e-7669dd8a9cc7
 # Marble Maze、C++ と DirectX での UWP ゲームの開発
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
 ドキュメントのこのセクションでは、DirectX と Visual C++ を使って 3-D のユニバーサル Windows プラットフォーム (UWP) ゲームを作成する方法について説明します。 このドキュメントでは、タブレットなどの新しいフォーム ファクターに対応し、従来のデスクトップやノート PC でも動作する、Marble Maze という名前の 3-D ゲームを作成する方法を示します。
 
-> **Note**   Marble Maze のソース コードをダウンロードするには、[DirectX Marble Maze ゲーム サンプルに関するページ](http://go.microsoft.com/fwlink/?LinkId=624011)をご覧ください。
+> **注:** Marble Maze のソース コードをダウンロードするには、「[DirectX Marble Maze ゲーム サンプル](http://go.microsoft.com/fwlink/?LinkId=624011)」をご覧ください。
 
  
 
@@ -100,6 +101,6 @@ Marble Maze には再利用可能なコンポーネントがたくさん用意�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

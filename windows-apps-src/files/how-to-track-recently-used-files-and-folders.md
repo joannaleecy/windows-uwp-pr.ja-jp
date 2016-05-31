@@ -1,11 +1,12 @@
 ---
+author: TylerMSFT
 ms.assetid: BF929A68-9C82-4866-BC13-A32B3A550005
 title: 最近使ったファイルやフォルダーの追跡
 description: ユーザーが頻繁にアクセスするファイルを追跡するには、そのファイルを最近使ったアプリの一覧 (MRU) に追加します。
 ---
 # 最近使ったファイルやフォルダーの追跡
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
 ** 重要な API **
@@ -17,7 +18,7 @@ description: ユーザーが頻繁にアクセスするファイルを追跡す�
 
 お使いのアプリの MRU は、静的な [**StorageApplicationPermissions.MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458) プロパティから取得する [**StorageItemMostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207475) クラスによって表されます。 MRU の項目は [**IStorageItem**](https://msdn.microsoft.com/library/windows/apps/br227129) オブジェクトとして格納されます。つまり、[**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクト (ファイルを表すオブジェクト) と [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) オブジェクト (フォルダーを表すオブジェクト) は、どちらも MRU に追加できます。
 
-**注**  また、[ファイル ピッカーのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619994) と[ファイル アクセスのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619995) もご覧ください。
+**注**  また、[ファイル ピッカーのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619994)と[ファイル アクセスのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619995)もご覧ください。
 
  
 
@@ -48,7 +49,9 @@ description: ユーザーが頻繁にアクセスするファイルを追跡す�
     string mruToken = mru.Add(file, "profile pic");
     ```
     
-    [**StorageItemMostRecentlyUsedList.Add**](https://msdn.microsoft.com/library/windows/apps/br207476) がオーバーロードされます。 この例では [**Add(IStorageItem, String)**](https://msdn.microsoft.com/library/windows/apps/br207481) を使って、メタデータをファイルに関連付けられるようにしています。 メタデータを設定すると、その項目の目的 ("プロファイル画像" など) を記録できます。 メタデータなしで MRU にファイルを追加するには、[**Add(IStorageItem)**](https://msdn.microsoft.com/library/windows/apps/br207480) を呼び出します。 MRU に項目を追加すると、項目を取得するときに使われる一意に識別するための文字列であるトークンが返されます。
+    [
+              **StorageItemMostRecentlyUsedList.Add**
+            ](https://msdn.microsoft.com/library/windows/apps/br207476) がオーバーロードされます。 この例では [**Add(IStorageItem, String)**](https://msdn.microsoft.com/library/windows/apps/br207481) を使って、メタデータをファイルに関連付けられるようにしています。 メタデータを設定すると、その項目の目的 ("プロファイル画像" など) を記録できます。 メタデータなしで MRU にファイルを追加するには、[**Add(IStorageItem)**](https://msdn.microsoft.com/library/windows/apps/br207480) を呼び出します。 MRU に項目を追加すると、項目を取得するときに使われる一意に識別するための文字列であるトークンが返されます。
 
     **ヒント**   項目を MRU から取得するにはそのトークンが必要であるため、どこかに保存しておいてください。 アプリ データの詳細については、「[アプリケーション データの管理](https://msdn.microsoft.com/library/windows/apps/hh465109)」を参照してください。
 
@@ -106,6 +109,6 @@ MRU の上限である 25 項目に達している場合、新しい項目を追
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

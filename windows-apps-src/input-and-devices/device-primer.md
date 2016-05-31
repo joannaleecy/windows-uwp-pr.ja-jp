@@ -1,4 +1,5 @@
 ---
+author: mijacobs
 Description: ユニバーサル Windows プラットフォーム (UWP) アプリをサポートするデバイスを理解すると、各フォーム ファクター向けの最適なユーザー エクスペリエンスを提供するために役立ちます。
 title: ユニバーサル Windows プラットフォーム (UWP) アプリ用デバイスの基本情報
 ms.assetid: 7665044E-F007-495D-8D56-CE7C2361CDC4
@@ -9,7 +10,7 @@ template: detail.hbs
 #  ユニバーサル Windows プラットフォーム (UWP) アプリ用デバイスの基本情報
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+
 
 
 ![Windows デバイス](images/device-primer/1894834-hig-device-primer-01-500.png)
@@ -186,13 +187,13 @@ UI に関する考慮事項
 
  
 
-\[この記事には、UWP アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
+
 
  
 
  
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

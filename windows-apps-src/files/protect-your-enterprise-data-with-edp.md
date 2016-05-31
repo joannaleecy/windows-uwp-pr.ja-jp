@@ -1,4 +1,5 @@
 ---
+author: TylerMSFT
 Description: 'このトピックでは、ファイルに関連する最も一般的なエンタープライズ データ保護 (EDP) シナリオのいくつかを実現するために必要なコード作成タスクの例を示します。'
 MS-HAID: 'dev\_files.protect\_your\_enterprise\_data\_with\_edp'
 MSHAttr: 'PreferredLib:/library/windows/apps'
@@ -12,9 +13,9 @@ __注__ Windows 10 バージョン 1511 (ビルド 10586) またはそれ以前�
 
 このトピックでは、ファイルに関連する最も一般的なエンタープライズ データ保護 (EDP) シナリオのいくつかを実現するために必要なコード作成タスクの例を示します。 EDP とファイル、ストリーム、クリップボード、ネットワーク、バックグラウンド タスク、ロックの背後でのデータ保護との関係についての開発者向けの詳しい情報については、「[エンタープライズ データ保護 (EDP)](../enterprise/edp-hub.md)」をご覧ください。
 
-**注:** このトピックで取り上げるファイルのシナリオの多くは、[企業のデータ保護 (EDP)](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409) のサンプルにも含まれています。
+**注**  このトピックで説明されているシナリオの多くは、[エンタープライズ データ保護 (EDP) のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)にも含まれています。
 
-## 必要条件
+## 前提条件
 
 -   **EDP の設定を行う**
 
@@ -109,7 +110,7 @@ private async void SaveEnterpriseDataToFile(string enterpriseData, string identi
         await FileProtectionManager.CreateProtectedAndOpenAsync(storageFolder,
             "sample.txt", identity, CreationCollisionOption.ReplaceExisting);
 
-    // It&#39;s important to successfully protect a file *before* writing enterprise data to it.
+    // It's important to successfully protect a file *before* writing enterprise data to it.
     if (protectedFileCreateResult.ProtectionInfo.Identity == identity &&
         protectedFileCreateResult.ProtectionInfo.Status == FileProtectionStatus.Protected)
     {
@@ -252,7 +253,7 @@ private async void EnableUIPolicyFromFile(StorageFile storageFile)
 ## 関連トピック
 
 
-[企業のデータ保護 (EDP) のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)
+[エンタープライズ データ保護 (EDP) のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)
 
 [**Windows.Security.EnterpriseData 名前空間**](https://msdn.microsoft.com/library/windows/apps/dn279153)
 
@@ -264,6 +265,6 @@ private async void EnableUIPolicyFromFile(StorageFile storageFile)
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

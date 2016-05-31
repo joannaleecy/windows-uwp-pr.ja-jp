@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 description: UI の背後には、ビジネス レイヤーとデータ レイヤーがあります。
 title: Windows Phone Silverlight ビジネス レイヤーとデータ レイヤーから UWP への移植
 ms.assetid: 27c66759-2b35-41f5-9f7a-ceb97f4a0e3f
@@ -136,6 +137,6 @@ UWP アプリでの写真、音楽、ビデオ ファイルへのアクセスに
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

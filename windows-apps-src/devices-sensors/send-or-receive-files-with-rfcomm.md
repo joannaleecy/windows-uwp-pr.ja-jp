@@ -1,7 +1,8 @@
 ---
+author: DBirtolo
 ms.assetid: 5B3A6326-15EE-4618-AA8C-F1C7FB5232FB
 title: Bluetooth RFCOMM
-この記事では、ファイルの送受信方法に関するコード例と一緒に、ユニバーサル Windows プラットフォーム (UWP) アプリでの Bluetooth RFCOMM の概要を説明します。
+description: この記事では、ファイルの送受信方法に関するコード例と一緒に、ユニバーサル Windows プラットフォーム (UWP) アプリでの Bluetooth RFCOMM の概要を説明します。
 ---
 # Bluetooth RFCOMM
 
@@ -17,12 +18,13 @@ title: Bluetooth RFCOMM
 ## 概要
 
 [
-            **Windows.Devices.Bluetooth.Rfcomm**](https://msdn.microsoft.com/library/windows/apps/Dn263529) 名前空間の API は、[**enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) や [**instantiation**](https://msdn.microsoft.com/library/windows/apps/BR225654) など、既にある Windows.Devices のパターンに基づいて作成されています。 データの読み取りと書き込みは、[**established data stream patterns**](https://msdn.microsoft.com/library/windows/apps/BR208119) と [**Windows.Storage.Streams**](https://msdn.microsoft.com/library/windows/apps/BR241791) 内のオブジェクトを有効に活用できるように設計されています。 セッション記述プロトコル (SDP) の属性は、値のほかに、想定されている型を持ちます。 ところが、広く普及しているデバイスの中には、SDP の属性の実装に不備のあるものが存在し、値の型が、想定されている型とは異なる場合があります。 加えて、RFCOMM の多くの用法は、SDP の拡張属性を必要としません。 そのため、この API は、未解析の SDP データへのアクセスを提供し、開発者が必要に応じて情報を取得できるようになっています。
+            **Windows.Devices.Bluetooth.Rfcomm**](https://msdn.microsoft.com/library/windows/apps/Dn263529) 名前空間の API は、[**enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) や [**instantiation**](https://msdn.microsoft.com/library/windows/apps/BR225654) など、既にある Windows.Devices のパターンに基づいて作成されています。 データの読み取りと書き込みは、[**定型的なデータ ストリーム パターン**](https://msdn.microsoft.com/library/windows/apps/BR208119)と [**Windows.Storage.Streams**](https://msdn.microsoft.com/library/windows/apps/BR241791) 内のオブジェクトを有効に活用できるように設計されています。 Service Discovery Protocol (SDP) の属性は、値のほかに、想定されている型を持ちます。 ところが、広く普及しているデバイスの中には、SDP の属性の実装に不備のあるものが存在し、値の型が、想定されている型とは異なる場合があります。 加えて、RFCOMM の多くの用法は、SDP の拡張属性を必要としません。 そのため、この API は、未解析の SDP データへのアクセスを提供し、開発者が必要に応じて情報を取得できるようになっています。
 
 RFCOMM API にはサービス識別子の概念が使われています。 サービス識別子は単なる 128 ビットの GUID ですが、16 ビットまたは 32 ビットの整数として指定されることも少なくありません。 RFCOMM API には、サービス識別子を 128 ビットの GUID としてだけでなく、32 ビットの整数として指定したり利用したりするためのラッパーが用意されていますが、16 ビット整数用のラッパーはありません。 API にとってこの点は問題ではありません。言語が自動的に 32 ビット整数に拡大し、識別子は正しく生成されるためです。
 
 アプリは、複数のステップから成るデバイス操作をバックグラウンド タスクで実行できます。アプリがバックグラウンドへ移動してサスペンド状態となった場合でも処理が続行されるので、 信頼性の高いデバイス サービス (ファームウェアの更新、永続的な設定の変更など) やデータ同期を実行できます。ユーザーは PC の前で進捗バーを監視している必要がありません。 デバイス操作を実行するときは [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn297315) を使用し、データを同期するときは [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn297337) を使用します。 これらのバックグラウンド タスクはバックグラウンドでのアプリ実行時間を制御するものであり、無制限な操作や無限の同期を目的としていません。
 
+RFCOMM 操作の詳細を示す完全なコード サンプルについては、Github の [**Bluetooth Rfcomm チャット サンプル**](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BluetoothRfcommChat)をご覧ください。  
 ## クライアントとしてファイルを送信する
 
 ファイルを送信する際の基本的なアプリのシナリオは、必要なサービスに基づいてペアリングされたデバイスに接続することです。 これには、次の手順に従う必要があります。
@@ -49,8 +51,8 @@ async void Initialize()
         // Initialize the target Bluetooth BR device
         auto service = await RfcommDeviceService.FromIdAsync(services[0].Id);
 
-        // Check that the service meets this App’s minimum requirement
-        if (SupportsProtection(service) &amp;&amp; IsCompatibleVersion(service))
+        // Check that the service meets this App's minimum requirement
+        if (SupportsProtection(service) && IsCompatibleVersion(service))
         {
             _service = service;
 
@@ -92,7 +94,7 @@ bool SupportsProtection(RfcommDeviceService service)
         else
         {
             // The connection cannot be upgraded so an App may offer UI here
-            // to explain why a connection won’t be made.
+            // to explain why a connection won't be made.
             return false;
         }
     case SocketProtectionLevel.BluetoothEncryptionWithAuthentication:
@@ -144,10 +146,10 @@ void Initialize()
             create_task(RfcommDeviceService::FromIdAsync(services[0]->Id))
             .then([](RfcommDeviceService^ service)
             {
-                // Check that the service meets this App’s minimum
+                // Check that the service meets this App's minimum
                 // requirement
                 if (SupportsProtection(service)
-                    &amp;&amp; IsCompatibleVersion(service))
+                    && IsCompatibleVersion(service))
                 {
                     _service = service;
 
@@ -194,7 +196,7 @@ bool SupportsProtection(RfcommDeviceService^ service)
         else
         {
             // The connection cannot be upgraded so an App may offer UI here
-            // to explain why a connection won’t be made.
+            // to explain why a connection won't be made.
             return false;
         }
     case SocketProtectionLevel::BluetoothEncryptionWithAuthentication:
@@ -238,6 +240,8 @@ RFCOMM アプリのシナリオとしては、サービスを PC でホストし
 -   接続を受信したら、接続済みのソケットを後続の処理のために保存します。
 -   定型的なデータ ストリーム パターンに従って、ソケットの InputStream からデータのチャンクを読み取り、ファイルに保存します。
 
+バックグラウンドで RFCOMM サービスを保持するために、[**RfcommConnectionTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.rfcommconnectiontrigger.aspx) を使います。 サービスに接続されたら、バックグラウンド タスクがトリガーされます。 開発者は、バックグラウンド タスクでソケットへのハンドルを受け取ります。 バックグラウンド タスクは実行に時間がかかり、ソケットが使用中である限り保持されます。    
+
 ```csharp
 Windows.Devices.Bluetooth.RfcommServiceProvider _provider;
 
@@ -280,7 +284,7 @@ void OnConnectionReceived(
     StreamSocketListener listener,
     StreamSocketListenerConnectionReceivedEventArgs args)
 {
-    // Stop advertising/listening so that we’re only serving one client
+    // Stop advertising/listening so that we're only serving one client
     _provider.StopAdvertising();
     await listener.Close();
     _socket = args.Socket;
@@ -311,7 +315,7 @@ void Initialize()
         listener->ConnectionReceived += ref new TypedEventHandler<
                 StreamSocketListener^,
                 StreamSocketListenerConnectionReceivedEventArgs^>
-           (&amp;OnConnectionReceived);
+           (&OnConnectionReceived);
         return create_task(listener->BindServiceNameAsync(
             _provider->ServiceId->AsString(),
             SocketProtectionLevel
@@ -343,7 +347,7 @@ void OnConnectionReceived(
     StreamSocketListener^ listener,
     StreamSocketListenerConnectionReceivedEventArgs^ args)
 {
-    // Stop advertising/listening so that we’re only serving one client
+    // Stop advertising/listening so that we're only serving one client
     _provider->StopAdvertising();
     create_task(listener->Close())
     .then([args](void) {
@@ -361,6 +365,6 @@ void OnConnectionReceived(
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: DirectX ゲーム プロジェクト テンプレート
 description: ユニバーサル Windows プラットフォーム (UWP) および DirectX ゲームを作成するためのテンプレートについて説明します。
 ms.assetid: 41b6cd76-5c9a-e2b7-ef6f-bfbf6ef7331d
@@ -70,7 +71,7 @@ DirectX ユニバーサル Windows テンプレートには、次のファイル
 -   [DirectX によるシンプルな UWP ゲームの作成](tutorial--create-your-first-metro-style-directx-game.md)
 -   [Marble Maze、C++ と DirectX でのユニバーサル Windows プラットフォーム ゲームの開発](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
-> **注:**  
+> **注**  
 この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
  
@@ -84,6 +85,6 @@ DirectX ユニバーサル Windows テンプレートには、次のファイル
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

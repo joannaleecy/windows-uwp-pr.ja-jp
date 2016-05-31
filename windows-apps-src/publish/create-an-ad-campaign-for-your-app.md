@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: アプリの販促活動を行ったり、アプリのユーザー数を増やすために、デベロッパー センター ダッシュボードを使って広告キャンペーンを作成できます。
 title: アプリ向けの広告キャンペーンの作成
 ms.assetid: 10D94929-92C4-4379-AA5F-6FEF879F2463
@@ -25,7 +26,6 @@ ms.assetid: 10D94929-92C4-4379-AA5F-6FEF879F2463
         -   **[有料広告]**: これらの広告は、アプリのデバイスとカテゴリに一致するすべてのアプリで表示されます。
         -   **[Free house ads]** (無料の自社広告): これらの広告は、自分のアプリ (宣伝されているアプリのデバイスと一致するアプリ) でのみ表示されます。 自社広告は無料です。 詳しくは、「[自社広告について](about-house-ads.md)」をご覧ください。
         -   **[Free community ads]** (無料のコミュニティ広告): これらの広告は、コミュニティ広告キャンペーンも作成している他の開発者によって発行されるアプリで表示されます。 このオプションを選択する前に、ダッシュボードの **[広告による収益獲得]** ページで **[Show community ads in my app]** (アプリにコミュニティ広告を表示する) チェック ボックスをオンにする必要があります。 詳しくは、「[コミュニティ広告について](about-community-ads.md)」をご覧ください。
-    - **[キャンペーンの開始日]** と **[キャンペーンの終了日]** で、新しいキャンペーンの開始日と終了日を選択します。
 
     > **注:** アプリがまだ公開されていない場合は、**[新しいキャンペーン]** ページにエラー メッセージが表示されます。 アプリが公開されるまで待機してから、アプリの広告キャンペーンを作成する必要があります。
 
@@ -57,13 +57,13 @@ ms.assetid: 10D94929-92C4-4379-AA5F-6FEF879F2463
 6.  ここで、**[予算と支払い] ** セクションで広告キャンペーンの財務設定を選びます。
    > **注:** 自社広告キャンペーンを作成する場合、自社広告は無料であるため、**[予算と支払い]** セクションは表示されません。
 
-    -   Under **Budget**, use the slider to set the amount of money you want to spend each month to run this ad.
+    -   **[予算]** で、スライダーを使って、この広告を表示するために毎月使う金額を設定します。
 
-        The monthly budget is prorated for the month in which the ad campaign is created. In other words, if you create an ad campaign halfway through a calendar month, you will be charged for half of your monthly budget for that month.
+        広告キャンペーンの作成月については、月額予算が日割りで計算されます。 つまり、月の半ばで広告キャンペーンを作成した場合、その月の予算の半分が請求されます。
 
-    -   Set a payment instrument for your ad campaign by clicking **Add new payment instrument** and fill in your account details.
-        > **Important**  The country/region of your payment instrument's billing address must match the country/region associated with your Dev Center account.
-    -   If you have received a coupon from a Microsoft representative to pay for an ad campaign, click **Use a coupon**, enter the coupon code, and click **Apply** to apply the coupon to the campaign.
+    -   **[Add new payment instrument] (新しい支払い方法の追加)** をクリックして広告キャンペーンの支払い方法を設定し、アカウントの詳細を入力します。
+        > **重要:** 支払い方法の請求先住所の国/地域は、デベロッパー センター アカウントに関連付けられている国/地域と一致する必要があります。
+    -   Microsoft の担当者から受け取った広告キャンペーンの支払いに使えるクーポンがある場合は、**[Use a coupon]** (クーポンを使う) をクリックし、クーポン コードを入力します。**[適用]** をクリックすると、キャンペーンにクーポンが適用されます。
 
 7.  最後に、**[Review] (レビュー)** をクリックして広告キャンペーンの設定を確認し、有料の広告キャンペーンの場合は、予算と支払い情報を確認します。 **[確認]** をクリックすると、通常は数時間以内に Windows または Windows Phone デバイスに広告の表示が開始されます。
 
@@ -78,6 +78,6 @@ ms.assetid: 10D94929-92C4-4379-AA5F-6FEF879F2463
  
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

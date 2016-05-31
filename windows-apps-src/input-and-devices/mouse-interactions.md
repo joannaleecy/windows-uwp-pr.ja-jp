@@ -1,17 +1,16 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: アプリでマウス入力に応答するには、タッチ入力やペン入力で使うのと同じ基本的なポインター イベントを処理します。
 title: マウス操作
 ms.assetid: C8A158EF-70A9-4BA2-A270-7D08125700AC
-label: マウス
+label: Mouse
 template: detail.hbs
 ---
 
 # マウス操作
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
-
-ユニバーサル Windows プラットフォーム (UWP) アプリの設計はタッチ入力用に最適化し、既定の基本的なマウスのサポートを利用します。
+ユニバーサル Windows プラットフォーム (UWP) アプリの設計をタッチ入力用に最適化し、既定の基本的なマウスのサポートを利用します。
 
  
 
@@ -58,7 +57,7 @@ template: detail.hbs
 <td align="left"><p><span id="Right-click_to_select_and_command"></span><span id="right-click_to_select_and_command"></span><span id="RIGHT-CLICK_TO_SELECT_AND_COMMAND"></span>右クリックによる選択とコマンド</p></td>
 <td align="left"><p>右クリックして、ナビゲーション バー (使用できる場合) と、グローバル コマンドを含むアプリ バーを表示します。 要素を右クリックして選択し、その要素に対応する状況依存のコマンドを備えたアプリ バーを表示します。</p>
 <div class="alert">
-<strong>注</strong>  選択またはアプリ バーのコマンドが適切な UI 動作ではない場合は、右クリックでショートカット メニューを表示します。 ただし、すべてのコマンド動作にアプリ バーを使うことを強くお勧めします。
+<strong>注</strong> 選択やアプリ バーのコマンドが適切な UI 動作ではない場合は、右クリックでショートカット メニューを表示します。 ただし、すべてのコマンド動作にアプリ バーを使うことを強くお勧めします。
 </div>
 <div>
  
@@ -90,10 +89,10 @@ template: detail.hbs
 [
             **UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) イベントを使うと、ポインター入力デバイスごとに別々のコードを記述しなくても、基本的な入力機能を実装できます。 ただし、このオブジェクトのポインター イベント、ジェスチャ イベント、操作イベントを使って、各デバイスの特別な機能 (マウス ホイール イベントなど) を利用することもできます。
 
-**サンプル:  **[アプリのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=264996)で、この機能の動作を実際に確かめることができます。
+**サンプル: **[アプリのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=264996)で、この機能の動作を実際に確かめることができます。
 
 
-- [入力: デバイス機能のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=231530)
+- [入力: デバイス機能のサンプル](http://go.microsoft.com/fwlink/p/?linkid=231530)
 
 - [入力サンプル](http://go.microsoft.com/fwlink/p/?linkid=226855)
 
@@ -153,6 +152,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

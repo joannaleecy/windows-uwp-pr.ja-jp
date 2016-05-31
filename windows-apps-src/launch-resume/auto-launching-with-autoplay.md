@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: 自動再生による自動起動
 description: 自動再生を使って、コンピューターにデバイスが接続されたときのオプションとしてアプリを提供できます。 これには、カメラやメディア プレーヤーなどのボリューム デバイス以外のデバイス、または USB サム ドライブ、SD カード、DVD などのボリューム デバイスが含まれます。
 ms.assetid: AD4439EA-00B0-4543-887F-2C1D47408EA7
@@ -7,12 +8,12 @@ ms.assetid: AD4439EA-00B0-4543-887F-2C1D47408EA7
 # <span id="dev_launch_resume.auto-launching_with_autoplay"></span>自動再生による自動起動
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 
 **自動再生**を使って、コンピューターにデバイスが接続されたときのオプションとしてアプリを提供できます。 これには、カメラやメディア プレーヤーなどのボリューム デバイス以外のデバイス、または USB サム ドライブ、SD カード、DVD などのボリューム デバイスが含まれます。 また**自動再生**では、近接通信 (タップ) を使って 2 台の PC 間でユーザーがファイルを共有するときにアプリをオプションとして提供することもできます。
 
-> **注:** デバイスの製造元がデバイスの**自動再生**ハンドラーとして [Windows ストア デバイス アプリ](http://go.microsoft.com/fwlink/p/?LinkID=301381) を関連付ける場合は、デバイス メタデータでアプリを識別することができます。 詳しくは、「[Windows ストア デバイス アプリの自動再生](http://go.microsoft.com/fwlink/p/?LinkId=306684)」をご覧ください。
+> **注:** デバイスの製造元がデバイスの**自動再生**ハンドラーとして [Windows ストア デバイス アプリ](http://go.microsoft.com/fwlink/p/?LinkID=301381)を関連付ける場合は、デバイス メタデータでアプリを識別することができます。 詳しくは、「[Windows ストア デバイス アプリの自動再生](http://go.microsoft.com/fwlink/p/?LinkId=306684)」をご覧ください。
 
 ## 自動再生コンテンツに登録する
 
@@ -63,7 +64,7 @@ ms.assetid: AD4439EA-00B0-4543-887F-2C1D47408EA7
 
 MainPage.xaml ファイルを開き、次の XAML を既定の &lt;Grid&gt; セクションに追加します。
 
-```xaml
+```xml
 <TextBlock FontSize="18">File List</TextBlock>
 <TextBlock x:Name="FilesBlock" HorizontalAlignment="Left" TextWrapping="Wrap" 
            VerticalAlignment="Top" Margin="0,20,0,0" Height="280" Width="240" />
@@ -223,7 +224,7 @@ async internal void CopyImage(Windows.Storage.IStorageItem file,
 
 ここでは、PC にカメラが接続されたときに**自動再生**オプションとしてアプリを識別する方法を示します。 アプリは、**WPD\\ImageSourceAutoPlay** イベントのハンドラーとして登録されます。 これは、カメラなどのイメージング デバイスが MTP を使う ImageSource であることを通知するときに Windows ポータブル デバイス (WPD) システムによって生成される一般的なイベントです。 詳しくは、「[Windows ポータブル デバイス](https://msdn.microsoft.com/library/windows/hardware/ff597729)」をご覧ください。
 
-**重要:** [**Windows.Devices.Portable.StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) API は [デスクトップ デバイス ファミリ](https://msdn.microsoft.com/library/windows/apps/dn894631) の一部です。 アプリでは、デスクトップ デバイス ファミリの Windows 10 デバイス (PC など) でのみこれらの API を使えます。
+**重要:** [**Windows.Devices.Portable.StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) API は[デスクトップ デバイス ファミリ](https://msdn.microsoft.com/library/windows/apps/dn894631)の一部です。 アプリでは、デスクトップ デバイス ファミリの Windows 10 デバイス (PC など) でのみこれらの API を使えます。
 
  
 
@@ -256,7 +257,7 @@ Windows ポータブル デバイス上の記憶域にアクセスするため�
 
 MainPage.xaml ファイルを開き、次の XAML を既定の &lt;Grid&gt; セクションに追加します。
 
-```xaml
+```xml
 <StackPanel Orientation="Vertical" Margin="10,0,-10,0">
     <TextBlock FontSize="24">Device Information</TextBlock>
     <StackPanel Orientation="Horizontal">
@@ -451,7 +452,7 @@ CustomEvent=AutoPlayCustomEventQuickstart
 
 MainPage.xaml ファイルを開き、次の XAML を既定の &lt;Grid&gt; セクションに追加します。
 
-```xaml
+```xml
 <StackPanel Orientation="Vertical">
     <TextBlock FontSize="28" Margin="10,0,800,0">Files</TextBlock>
     <TextBlock x:Name="FilesBlock" FontSize="22" Height="600" Margin="10,0,800,0" />
@@ -577,6 +578,6 @@ internal async System.Threading.Tasks.Task<IReadOnlyList<Windows.Storage.Storage
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

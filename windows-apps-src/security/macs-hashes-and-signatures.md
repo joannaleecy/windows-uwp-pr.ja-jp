@@ -194,6 +194,6 @@ public void SampleReusableHash()
             **AsymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241478) オブジェクトを使って、利用できる署名アルゴリズムを列挙したり、キー ペアを生成またはインポートしたりできます。 [
             **CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) クラスの静的メソッドを使って、メッセージに署名したり、署名を検証したりできます。
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

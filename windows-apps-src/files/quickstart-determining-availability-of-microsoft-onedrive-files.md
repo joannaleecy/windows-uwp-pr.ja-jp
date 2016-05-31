@@ -1,4 +1,5 @@
 ---
+author: TylerMSFT
 ms.assetid: 3604524F-112A-474F-B0CA-0726DC8DB885
 title: Microsoft OneDrive ファイルが利用可能かどうかの確認
 description: StorageFile.IsAvailable プロパティを使って、Microsoft OneDrive ファイルが利用可能かどうかを確認します。
@@ -31,7 +32,9 @@ description: StorageFile.IsAvailable プロパティを使って、Microsoft One
 
 ユーザーは、OneDrive ファイルを "オフラインで利用可能" (既定) または "オンラインのみ" とマークできます。 この機能を使うと、大容量のファイル (写真やビデオなど) を自分の OneDrive に移動し、オンラインのみとマークすることで、ディスク領域を節約できます (ローカルに保存されるのはメタデータ ファイルのみです)。
 
-[**StorageFile.IsAvailable**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.storagefile.isavailable.aspx) は、ファイルが現在利用可能であるかどうかを判別するために使われます。 次の表に、さまざまなシナリオでの **StorageFile.IsAvailable** プロパティの値を示します。
+[
+              **StorageFile.IsAvailable**
+            ](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.storagefile.isavailable.aspx) は、ファイルが現在利用可能であるかどうかを判別するために使われます。 次の表に、さまざまなシナリオでの **StorageFile.IsAvailable** プロパティの値を示します。
 
 | ファイルの種類                              | オンライン | 従量制課金接続        | オフライン |
 |-------------------------------------------|--------|------------------------|---------|
@@ -92,6 +95,6 @@ private async void CheckAvailabilityOfFilesInPicturesLibrary()
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 頂点バッファーと頂点データの移植
 description: この手順では、シェーダーが指定された順番で頂点を走査できるようにするインデックス バッファーとメッシュを格納する頂点バッファーを定義します。
 ms.assetid: 9a8138a5-0797-8532-6c00-58b907197a25
@@ -313,6 +314,6 @@ Direct3D を構築する場合は、[**ID3D11Device**](https://msdn.microsoft.co
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

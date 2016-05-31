@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: Direct3D 11 への OpenGL ES 2.0 のマッピング
 description: OpenGL ES 2.0 から Direct3D へのグラフィックス アーキテクチャの移植プロセスを初めて開始する場合は、API 間の主要な違いについて把握しておいてください。
 ms.assetid: 7f9b136c-aa22-04b3-d385-6e9e1f38b948
@@ -7,7 +8,7 @@ ms.assetid: 7f9b136c-aa22-04b3-d385-6e9e1f38b948
 # Direct3D 11 への OpenGL ES 2.0 のマッピング
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 OpenGL ES 2.0 から Direct3D へのグラフィックス アーキテクチャの移植プロセスを初めて開始する場合は、API 間の主要な違いについて把握しておいてください。 このセクションのトピックは、グラフィックスの処理を Direct3D に移行する際に必ず必要な API の変更と移植戦略を計画するのに役立ちます。
 ## 
@@ -24,19 +25,19 @@ OpenGL ES 2.0 から Direct3D へのグラフィックス アーキテクチャ�
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Plan your port from OpenGL ES 2.0 to Direct3D](compare-opengl-es-2-0-api-design-to-directx.md)</p></td>
+<td align="left"><p>[OpenGL ES 2.0 から Direct3D への移植の計画](compare-opengl-es-2-0-api-design-to-directx.md)</p></td>
 <td align="left"><p>iOS または Android プラットフォームからゲームを移植している場合、OpenGL ES 2.0 に多大な投資を行ってこられたものと思われます。 グラフィックス パイプラインのコードベースを Direct3D 11 と Windows ランタイムに移す準備をしているときは、開始する前に何点か注意してください。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Compare EGL code to DXGI and Direct3D](moving-from-egl-to-dxgi.md)</p></td>
+<td align="left"><p>[EGL コードと DXGI および Direct3D の比較](moving-from-egl-to-dxgi.md)</p></td>
 <td align="left"><p>DirectX Graphics Interface (DXGI) といくつかの Direct3D API は EGL と同じ役割を果たします。 このトピックは EGL の観点から DXGI と Direct3D 11 を理解するのに役立ちます。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Compare OpenGL ES 2.0 buffers, uniforms, and vertex attributes to Direct3D](porting-uniforms-and-attributes.md)</p></td>
+<td align="left"><p>[OpenGL ES 2.0 のバッファー、uniform、頂点属性と Direct3D の比較](porting-uniforms-and-attributes.md)</p></td>
 <td align="left"><p>OpenGL ES 2.0 から Direct3D 11 に移植するプロセスでは、アプリとシェーダー プログラムの間でデータを受け渡すための構文と API の動作を変更する必要があります。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Compare the OpenGL ES 2.0 shader pipeline to Direct3D](change-your-shader-loading-code.md)</p></td>
+<td align="left"><p>[OpenGL ES 2.0 と Direct3D のシェーダー パイプラインの比較](change-your-shader-loading-code.md)</p></td>
 <td align="left"><p>概念的には、Direct3D 11 のシェーダー パイプラインは OpenGL ES 2.0 のそれとよく似ています。 ただし、API の設計という点では、シェーダー ステージを作成、管理するための主要コンポーネントは、[<strong>ID3D11Device1</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404575) と [<strong>ID3D11DeviceContext1</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404598) という 2 つのプライマリ インターフェイスに含まれています。 このトピックでは、OpenGL ES 2.0 の一般的なシェーダー パイプライン API パターンが、Direct3D 11 におけるこれらのインターフェイスの何に対応するかを説明します。</p></td>
 </tr>
 </tbody>
@@ -58,6 +59,6 @@ OpenGL ES 2.0 から Direct3D へのグラフィックス アーキテクチャ�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: PatrickFarley
 Description: マップ コントロールでは、地図および上空からの写真、方向、検索結果、トラフィックを表示できます。
 title: マップのガイドライン
 ms.assetid: 7B5B6BC9-D1EC-4978-8876-20B78EF44797
@@ -7,7 +8,7 @@ ms.assetid: 7B5B6BC9-D1EC-4978-8876-20B78EF44797
 # マップのガイドライン
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
 マップ コントロールでは、地図、航空写真 3D ビュー、方向、検索結果、トラフィックを表示できます。 マップ上には、現在地、ルート、関心のあるポイントを表示できます。 また、航空写真 3D ビュー、Streetside ビュー、交通情報、乗り換え情報、周辺情報を表示することもできます。
@@ -68,6 +69,6 @@ ms.assetid: 7B5B6BC9-D1EC-4978-8876-20B78EF44797
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

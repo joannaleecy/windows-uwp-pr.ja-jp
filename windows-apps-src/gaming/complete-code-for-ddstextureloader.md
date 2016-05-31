@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: DDSTextureLoader のコード一式
 description: メモリから DDS テクスチャを読み込むクラスとメソッドのコード一式です。
 ms.assetid: ebaf4111-6235-0316-46cf-bc8643851493
@@ -7,7 +8,7 @@ ms.assetid: ebaf4111-6235-0316-46cf-bc8643851493
 # DDSTextureLoader のコード一式
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 メモリから DDS テクスチャを読み込むクラスとメソッドのコード一式です。
 
@@ -25,17 +26,14 @@ ms.assetid: ebaf4111-6235-0316-46cf-bc8643851493
 
 ## テクノロジ
 
-|                       |                 |
-|-----------------------|-----------------|
-| プログラミング言語 | C++             |
-| プログラミング モデル    | Windows ランタイム |
+**プログラミング言語** - C++    
+**プログラミング モデル** - Windows ランタイム
 
-## 必要条件
+## 要件
 
-| サポートされている最小のクライアント | Windows 10                            |
-|--------------------------|---------------------------------------|
-| サポートされている最小のサーバー | Windows Server 2016 Technical Preview |
-| 最低限必要な SDK     |                                       |
+**サポートされている最小のクライアント** - Windows 10                               
+**サポートされている最小のサーバー** - Windows Server 2016 Technical Preview
+
 
 
 ## コードの表示 (C++)
@@ -1223,6 +1221,6 @@ void CreateDDSTextureFromMemory(
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

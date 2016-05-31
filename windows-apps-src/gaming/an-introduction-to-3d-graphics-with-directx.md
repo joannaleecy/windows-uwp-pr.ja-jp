@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: DirectX ゲームの基本的な 3D グラフィックス
 description: DirectX プログラミングを使って、3D グラフィックスの基本的な概念を実装する方法について説明します。
 ms.assetid: 2989c91f-7b45-7377-4e83-9daa0325e92e
@@ -7,7 +8,7 @@ ms.assetid: 2989c91f-7b45-7377-4e83-9daa0325e92e
 # DirectX ゲームの基本的な 3D グラフィックス
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
 
 DirectX プログラミングを使って、3D グラフィックスの基本的な概念を実装する方法について説明します。
 
@@ -62,6 +63,6 @@ C++ に習熟していることを前提としています。 また、グラフ
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

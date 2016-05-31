@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 ms.assetid: 79CF3927-25DE-43DD-B41A-87E6768D5C35
 title: XAML レイアウトの最適化
 description: レイアウトは、CPU 使用率とメモリ オーバーヘッドの両方で、XAML アプリの負荷の高い部分です。 ここでは、XAML アプリのレイアウトのパフォーマンスを向上させるための簡単な手順を示します。
@@ -66,7 +67,7 @@ description: レイアウトは、CPU 使用率とメモリ オーバーヘッ�
 [
             **Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) は多少複雑になりますが、1 つのパネル要素のみを使用します。
 
-```
+```xml
   <Grid>
   <Grid.RowDefinitions>
       <RowDefinition Height="Auto" />
@@ -83,7 +84,7 @@ description: レイアウトは、CPU 使用率とメモリ オーバーヘッ�
   </Grid.ColumnDefinitions>
   <TextBlock Text="Options:" Grid.ColumnSpan="2" />
   <CheckBox Content="Power User" Grid.Row="1" Grid.ColumnSpan="2" />
-  <CheckBox Content="Admin" Margin="150,0,0,0” Grid.Row="1" Grid.ColumnSpan="2" />
+  <CheckBox Content="Admin" Margin="150,0,0,0" Grid.Row="1" Grid.ColumnSpan="2" />
   <TextBlock Text="Basic information:" Grid.Row="2" Grid.ColumnSpan="2" />
   <TextBlock Text="Name:" Width="75" Grid.Row="3" />
   <TextBox Width="200" Grid.Row="3" Grid.Column="1" />
@@ -126,8 +127,8 @@ description: レイアウトは、CPU 使用率とメモリ オーバーヘッ�
 
 一般的な UI 要件として、要素が互いに重なり合ったレイアウトがあります。 通常、この方法で要素を配置するために、パディング、余白、整列、変換が使用されます。 XAML [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) コントロールは、重なり合った要素のレイアウトのパフォーマンスを向上させるために最適化されています。
 
-**重要:** パフォーマンスの向上を確認するために、単一セルのl [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) を使用します。 [
-            **RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/BR242704-rowdefinitions) や [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/BR242704-columndefinitions) は定義しないでください。
+**重要**  パフォーマンスの向上を確認するために、単一セルの [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) を使用します。 [
+            **RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.rowdefinitions) や [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.columndefinitions) は定義しないでください。
 
 ### 例
 
@@ -153,7 +154,9 @@ description: レイアウトは、CPU 使用率とメモリ オーバーヘッ�
 
 ## パネルの組み込みの境界線プロパティを使う
 
-[**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)、[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635)、[**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546)、[**ContentPresenter**](https://msdn.microsoft.com/library/windows/apps/BR209378) の各コントロールには組み込みの境界線プロパティがあり、XAML に [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) 要素を追加せずに周囲に境界線を描画できます。 組み込みの境界線をサポートする新しいプロパティは、**BorderBrush**、**BorderThickness**、**CornerRadius**、**Padding** です。 これらはそれぞれ [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/BR242362) であり、バインディングやアニメーションで使用することができます。 これらは、個別の **Border** 要素を完全に置き換えるように設計されています。
+[
+              **Grid**
+            ](https://msdn.microsoft.com/library/windows/apps/BR242704)、[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635)、[**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546)、[**ContentPresenter**](https://msdn.microsoft.com/library/windows/apps/BR209378) の各コントロールには組み込みの境界線プロパティがあり、XAML に [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) 要素を追加せずに周囲に境界線を描画できます。 組み込みの境界線をサポートする新しいプロパティは、**BorderBrush**、**BorderThickness**、**CornerRadius**、**Padding** です。 これらはそれぞれ [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/BR242362) であり、バインディングやアニメーションで使用することができます。 これらは、個別の **Border** 要素を完全に置き換えるように設計されています。
 
 UI でこれらのパネルの周囲に [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) 要素を使っている場合は、代わりに組み込みの境界線を使うことによって、アプリのレイアウト構造内で余分な要素を削減できます。 既に説明したように、特に繰り返される UI の場合は、大幅に要素を削減できます。
 
@@ -169,11 +172,13 @@ UI でこれらのパネルの周囲に [**Border**](https://msdn.microsoft.com/
 ## **SizeChanged** イベントを使ってレイアウトの変更に応答する
 
 [
-            **FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) クラスは、レイアウト変更に応答するための 2 つの類似したイベント [**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/BR208706-layoutupdated) と [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/BR208706-sizechanged) を公開します。 レイアウト時に、要素のサイズが変更された場合、これらのイベントのいずれかを使用して通知を受信していることがあります。 2 つのイベントのセマンティクスは異なり、どちらを選択するかは、パフォーマンスに関する重要な考慮事項です。
+            **FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) クラスは、レイアウト変更に応答するための 2 つの類似したイベント [**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.layoutupdated) と [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.sizechanged) を公開します。 レイアウト時に、要素のサイズが変更された場合、これらのイベントのいずれかを使用して通知を受信していることがあります。 2 つのイベントのセマンティクスは異なり、どちらを選択するかは、パフォーマンスに関する重要な考慮事項です。
 
-パフォーマンスを向上させるには、ほとんどの場合 [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/BR208706-sizechanged) が適切な選択肢です。 **SizeChanged** のセマンティクスは直感的です。 このイベントは、レイアウト中に [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) のサイズが更新されたときに発生します。
+パフォーマンスを向上させるには、ほとんどの場合 [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.sizechanged) が適切な選択肢です。 **SizeChanged** のセマンティクスは直感的です。 このイベントは、レイアウト中に [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) のサイズが更新されたときに発生します。
 
-[**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/BR208706-layoutupdated) もレイアウト時に発生しますが、そのセマンティクスはグローバルです。任意の要素が更新されるたびにすべての要素について発生します。 イベント ハンドラーではローカルな処理のみを行うことが一般的であり、この場合、コードは必要以上に頻繁に実行されます。 **LayoutUpdated** は、サイズを変更せずに要素が再配置されたことを知る必要がある場合 (一般的ではありません) にのみ使用します。
+[
+              **LayoutUpdated**
+            ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.layoutupdated) もレイアウト時に発生しますが、そのセマンティクスはグローバルです。任意の要素が更新されるたびにすべての要素について発生します。 イベント ハンドラーではローカルな処理のみを行うことが一般的であり、この場合、コードは必要以上に頻繁に実行されます。 **LayoutUpdated** は、サイズを変更せずに要素が再配置されたことを知る必要がある場合 (一般的ではありません) にのみ使用します。
 
 ## パネルの選択
 
@@ -183,6 +188,6 @@ UI でこれらのパネルの周囲に [**Border**](https://msdn.microsoft.com/
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

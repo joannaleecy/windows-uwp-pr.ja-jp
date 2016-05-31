@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: IAP は Windows デベロッパー センター ダッシュボードを使って公開します。
 title: IAP の申請
 ms.assetid: E175AF9E-A1D4-45DF-B353-5E24E573AE67
@@ -62,6 +63,6 @@ IAP の申請プロセスは、[その製品 ID を定義](set-your-iap-product-
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

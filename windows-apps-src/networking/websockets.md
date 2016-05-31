@@ -1,4 +1,5 @@
 ---
+author: DelfCo
 description: WebSocket は、クライアントとサーバー間の高速で安全な双方向通信を、HTTP(S) を使った Web 経由で実現するメカニズムを提供します。
 title: WebSocket
 ms.assetid: EAA9CB3E-6A3A-4C13-9636-CCD3DE46E7E2
@@ -175,7 +176,7 @@ WebSocket 接続を初期化した後、コードは、データを適切に送�
 接続が確立されたら、WebSocket クライアントはサーバーにデータを送信できます。 [
             **DataWriter.StoreAsync**](https://msdn.microsoft.com/library/windows/apps/br208171) メソッドは、符号なし整数にマッピングされるパラメーターを返します。 これにより、メッセージを送信するタスクの定義方法と、接続を行うタスクの定義方法とは異なるものになります。
 
-**注**   MessageWebSocket の OutputStream を使って新しい DataWriter オブジェクトを作成すると、OutputStream の所有権が DataWriter に移り、DataWriter がスコープを外れると Outputstream の割り当てが解除されます。 このため、その後 OutputStream を使おうとすると、HRESULT 値 0x80000013 のエラーが発生します。 次のコードでは、OutputStream の割り当てが解除されないようにするため、DataWriter の DetachStream メソッドを呼び出し、ストリームの所有権を WebSocket オブジェクトに返しています。
+**注:** MessageWebSocket の OutputStream を使って新しい DataWriter オブジェクトを作成すると、OutputStream の所有権が DataWriter に移り、DataWriter がスコープを外れると Outputstream の割り当てが解除されます。 このため、その後 OutputStream を使おうとすると、HRESULT 値 0x80000013 のエラーが発生します。 次のコードでは、OutputStream の割り当てが解除されないようにするため、DataWriter の DetachStream メソッドを呼び出し、ストリームの所有権を WebSocket オブジェクトに返しています。
 
 次の例に示す関数は、接続された WebSocket サーバーに文字列を送信し、確認メッセージをデバッガーの出力ウィンドウに表示します。
 
@@ -225,10 +226,16 @@ WebSocket 接続を初期化した後、コードは、データを適切に送�
 
 ## WebSocket で高度なコントロールを使用する
 
-[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) と [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) では、高度なコントロールの使い方に関して同じモデルが採用されています。 上記の主要なクラスには、それぞれに高度なコントロールにアクセスするための関連クラスがあります。
+[
+              **MessageWebSocket**
+            ](https://msdn.microsoft.com/library/windows/apps/br226842) と [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) では、高度なコントロールの使い方に関して同じモデルが採用されています。 上記の主要なクラスには、それぞれに高度なコントロールにアクセスするための関連クラスがあります。
 
-[**MessageWebSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226843) [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) オブジェクトに関するソケット制御データを提供します。
-[**StreamWebSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226924) [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) オブジェクトに関するソケット制御データを提供します。
+[
+              **MessageWebSocketControl**
+            ](https://msdn.microsoft.com/library/windows/apps/br226843) は、[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) オブジェクトに関するソケット制御データを提供します。
+[
+              **StreamWebSocketControl**
+            ](https://msdn.microsoft.com/library/windows/apps/br226924) は、[**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) オブジェクトに関するソケット制御データを提供します。
 どちらのタイプの WebSocket も、高度なコントロールを行うための基本的なモデルは同じです。 以降の説明では [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) を例として使っていますが、[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) でもプロセスは同じです。
 
 1.  [
@@ -248,11 +255,17 @@ WebSocket 接続を初期化した後、コードは、データを適切に送�
 
 ## WebSocket の情報クラス
 
-[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) と [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) には、WebSocket インスタンスについての追加情報を提供するクラスがそれぞれあります。
+[
+              **MessageWebSocket**
+            ](https://msdn.microsoft.com/library/windows/apps/br226842) と [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) には、WebSocket インスタンスについての追加情報を提供するクラスがそれぞれあります。
 
-[**MessageWebSocketInformation**](https://msdn.microsoft.com/library/windows/apps/br226849) は、[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) についての情報を提供します。情報クラスのインスタンスは、[**MessageWebSocket.Information**](https://msdn.microsoft.com/library/windows/apps/br226861) プロパティを使って取得します。
+[
+              **MessageWebSocketInformation**
+            ](https://msdn.microsoft.com/library/windows/apps/br226849) は、[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) についての情報を提供します。情報クラスのインスタンスは、[**MessageWebSocket.Information**](https://msdn.microsoft.com/library/windows/apps/br226861) プロパティを使って取得します。
 
-[**StreamWebSocketInformation**](https://msdn.microsoft.com/library/windows/apps/br226929) は、[**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) についての情報を提供します。情報クラスのインスタンスは、[**StreamWebSocket.Information**](https://msdn.microsoft.com/library/windows/apps/br226935) プロパティを使って取得します。
+[
+              **StreamWebSocketInformation**
+            ](https://msdn.microsoft.com/library/windows/apps/br226929) は、[**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) についての情報を提供します。情報クラスのインスタンスは、[**StreamWebSocket.Information**](https://msdn.microsoft.com/library/windows/apps/br226935) プロパティを使って取得します。
 
 どちらの情報クラスについても、すべてのプロパティは読み取り専用であり、また WebSocket オブジェクトの有効期間中はいつでも現在の情報を取得できます。
 
@@ -350,6 +363,6 @@ MessageWebSocket クラスと StreamWebSocket クラスは、内部システム 
 
 
 
-<!--HONumber=Mar16_HO3-->
+<!--HONumber=May16_HO2-->
 
 

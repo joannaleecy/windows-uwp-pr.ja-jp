@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: XAML での添付プロパティの概念を説明し、例をいくつか紹介します。
 title: 添付プロパティの概要
 ms.assetid: 098C1DE0-D640-48B1-9961-D0ADF33266E2
@@ -6,7 +7,7 @@ ms.assetid: 098C1DE0-D640-48B1-9961-D0ADF33266E2
 
 # 添付プロパティの概要
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 *添付プロパティ*は、XAML の概念です。 添付プロパティは、概念としてはグローバル プロパティに近く、XAML のどのオブジェクト要素にも設定することができます。 添付プロパティは、一般に、所有者型のオブジェクト モデルで従来のプロパティ ラッパーを持たない特殊な形式の依存関係プロパティとして定義されます。
 
@@ -18,7 +19,7 @@ ms.assetid: 098C1DE0-D640-48B1-9961-D0ADF33266E2
 
 添付プロパティはほとんどの場合、XAML 構文を有効にしたために存在します。 XAML では、_AttachedPropertyProvider.PropertyName_ 構文を使って添付プロパティを設定します。 XAML で [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) を設定する例を次に示します。
 
-```XAML
+```XML
 <Canvas>
   <Button Canvas.Left="50">Hello</Button>
 </Canvas>
@@ -118,6 +119,6 @@ XAML をオブジェクト ツリーに解析するときは、XAML プロセッ
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

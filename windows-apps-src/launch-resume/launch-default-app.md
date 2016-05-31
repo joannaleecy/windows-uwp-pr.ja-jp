@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: URI に応じた既定のアプリの起動
 description: URI (Uniform Resource Identifier) に応じて既定のアプリを起動する方法について説明します。 URI を使うと、別のアプリを起動して特定の作業を実行できます。 また、Windows に組み込まれている多くの URI スキームの概要についても説明します。
 ms.assetid: 7B0D0AF5-D89E-4DB0-9B79-90201D79974F
@@ -225,6 +226,6 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

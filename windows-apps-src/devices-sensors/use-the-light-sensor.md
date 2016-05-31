@@ -1,4 +1,5 @@
 ---
+author: DBirtolo
 ms.assetid: 15BAB25C-DA8C-4F13-9B8F-EA9E4270BCE9
 title: 光センサーの使用
 description: 環境光センサーを使って環境光の変化を検出する方法を説明します。
@@ -166,6 +167,6 @@ LightSensorReadingChangedEventArgs>(ReadingChanged);
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

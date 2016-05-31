@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 画面の向きのサポート (DirectX と C++)
 description: ここでは、UWP DirectX アプリで、Windows 10 デバイスのグラフィックス ハードウェアを効率的、効果的に使って画面の回転を処理するためのベスト プラクティスについて説明します。
 ms.assetid: f23818a6-e372-735d-912b-89cabeddb6d4
@@ -559,6 +560,6 @@ m_constantBufferData.projection = mul(m_constantBufferData.projection, m_rotatio
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

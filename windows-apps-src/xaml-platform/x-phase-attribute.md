@@ -1,6 +1,7 @@
 ---
+author: jwmsft
 title: xPhase 属性
-description: ListView 項目と GridView 項目を段階的にレンダリングし、パン エクスペリエンスを向上させるには、xPhase を xBind マークアップ拡張と共に使用します。
+description: ListView 項目と GridView 項目を段階的にレンダリングし、パン エクスペリエンスを向上させるには、xPhase を xBind マークアップ拡張と共に使います。
 ms.assetid: BD17780E-6A34-4A38-8D11-9703107E247E
 ---
 
@@ -9,7 +10,7 @@ ms.assetid: BD17780E-6A34-4A38-8D11-9703107E247E
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 [
-            **ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 項目と [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) 項目を段階的にレンダリングし、パン エクスペリエンスを向上させるには、**x:Phase** を [{x:Bind} マークアップ拡張](x-bind-markup-extension.md)と共に使用します。 **x:Phase** では、宣言的な方法により、[**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/dn298914) イベントを使用してリスト項目のレンダリングを手動で制御するのと同じ結果を得ることができます。 「[GridView と ListView の項目を段階的に更新する](../debug-test-perf/optimize-gridview-and-listview.md#update-items-incrementally)」もご覧ください。
+            **ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) 項目と [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) 項目を段階的にレンダリングし、パン エクスペリエンスを向上させるには、**x:Phase** を [{x:Bind} マークアップ拡張](x-bind-markup-extension.md)と共に使用します。 **x:Phase** では、宣言的な方法により、[**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/dn298914) イベントを使ってリスト項目のレンダリングを手動で制御するのと同じ結果を得ることができます。 「[GridView と ListView の項目を段階的に更新する](../debug-test-perf/optimize-gridview-and-listview.md#update-items-incrementally)」もご覧ください。
 
 ## XAML 属性の使用方法
 
@@ -33,7 +34,7 @@ ms.assetid: BD17780E-6A34-4A38-8D11-9703107E247E
 
 ## 例
 
-```xaml
+```xml
 <DataTemplate x:Key="PhasedFileTemplate" x:DataType="model:FileItem">
     <Grid Width="200" Height="80">
         <Grid.ColumnDefinitions>
@@ -78,6 +79,6 @@ ms.assetid: BD17780E-6A34-4A38-8D11-9703107E247E
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: ユニバーサル Windows プラットフォーム (UWP) アプリで、タッチ、マウス、ペン/スタイラス、タッチパッドなどのポインティング デバイスからの入力データを受信、処理、管理します。
 title: ポインター入力の処理
 ms.assetid: BDBC9E33-4037-4671-9596-471DCF855C82
@@ -7,10 +8,6 @@ template: detail.hbs
 ---
 
 # ポインター入力の処理
-
-
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
-
 
 ユニバーサル Windows プラットフォーム (UWP) アプリで、タッチ、マウス、ペン/スタイラス、タッチパッドなどのポインティング デバイスからの入力データを受信、処理、管理します。
 
@@ -249,7 +246,10 @@ UWP アプリでは、次のポインター イベントをリッスンするこ
 
 -   このハンドラーは、[**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) イベントを管理します。 イベント ログにイベントを追加し、関心のあるポインターを追跡するために使われるポインター配列にポインターを追加し、ポインターの詳細を表示します。
 
-    **注**  [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) イベントと [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) イベントは常に対で発生するわけではありません。 アプリでは、ポインター ダウン アクションを終了させる可能性のあるすべてのイベント ([**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969)、[**PointerCanceled**](https://msdn.microsoft.com/library/windows/apps/br208964)、[**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965) など) をリッスンして処理する必要があります。
+    **注**
+            [
+              **PointerPressed**
+            ](https://msdn.microsoft.com/library/windows/apps/br208971) イベントと [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) イベントは常に対で発生するわけではありません。 アプリでは、ポインター ダウン アクションを終了させる可能性のあるすべてのイベント ([**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969)、[**PointerCanceled**](https://msdn.microsoft.com/library/windows/apps/br208964)、[**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965) など) をリッスンして処理する必要があります。
 
      
 
@@ -520,7 +520,10 @@ private void Target_PointerExited(object sender, PointerRoutedEventArgs e)
 
 -   このハンドラーは、[**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965) イベントを管理します。 イベント ログにイベントを追加し、ポインター配列からポインターを削除して、ポインターの詳細を更新します。
 
-    **注**  [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965) が [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) の代わりに発生することがあります。 ポインターのキャプチャは、さまざまな理由で失われることがあります。
+    **注**
+            [
+              **PointerCaptureLost**
+            ](https://msdn.microsoft.com/library/windows/apps/br208965) が [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) の代わりに発生することがあります。 ポインターのキャプチャは、さまざまな理由で失われることがあります。
 
      
 
@@ -1088,6 +1091,7 @@ namespace PointerInput
 * [待機時間が短い入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [ユーザー操作モードのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619894)
 * [フォーカスの視覚効果のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+
 **サンプルのアーカイブ**
 * [入力: XAML ユーザー入力イベントのサンプル](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [入力: デバイス機能のサンプル](http://go.microsoft.com/fwlink/p/?linkid=231530)
@@ -1104,6 +1108,6 @@ namespace PointerInput
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

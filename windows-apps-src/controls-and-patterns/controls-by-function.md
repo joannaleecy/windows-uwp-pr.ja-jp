@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: アプリで使うことができる一部のコントロールの機能別の一覧を示します。
 title: 機能別コントロール
 ms.assetid: 8DB4347B-91D6-4659-91F2-80ECF7BBB596
-label: 機能別コントロール
+label: Controls by function
 template: detail.hbs
 ---
 # 機能別コントロール
@@ -844,6 +845,6 @@ Web コンテンツをホストするコンテナー コントロール。
 デザインと使い方: [トグル コントロールのガイド](toggles.md) 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

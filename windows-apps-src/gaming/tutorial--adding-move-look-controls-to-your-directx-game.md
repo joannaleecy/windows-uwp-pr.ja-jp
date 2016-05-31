@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: ゲームのムーブ/ルック コントロール
 description: ここでは、マウスとキーボードの従来のムーブ/ルック コントロール (マウスルック コントロールとも呼ばれます) を DirectX ゲームに追加する方法について説明します。
 ms.assetid: 4b4d967c-3de9-8a97-ae68-0327f00cc933
@@ -569,7 +570,7 @@ myFirstPersonCamera->SetViewParameters(
 
 これで、 タッチ スクリーン用とキーボード/マウス用の入力タッチ コントロールの両方の基本的なムーブ/ルック コントロールがゲームで実装されました。
 
-> **注:**  
+> **注**  
 この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
  
@@ -583,6 +584,6 @@ myFirstPersonCamera->SetViewParameters(
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: TylerMSFT
 ms.assetid: 8BDDE64A-77D2-4F9D-A1A0-E4C634BCD890
 title: ピッカーによるファイルの保存
 description: FileSavePicker を使って、ユーザーがアプリで保存するファイルの名前とその保存場所を指定できるようにします。
@@ -55,7 +56,10 @@ savePicker.SuggestedFileName = "New Document";
 
 この例では、3 つのプロパティ [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207880)、[**FileTypeChoices**](https://msdn.microsoft.com/library/windows/apps/br207875)、および [**SuggestedFileName**](https://msdn.microsoft.com/library/windows/apps/br207878) を設定します。
 
-> **注** [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) オブジェクトは、[**PickerViewMode.List**](https://msdn.microsoft.com/library/windows/apps/br207891) を使ってファイル ピッカーを表示します。
+> **注**
+            [
+              **FileSavePicker**
+            ](https://msdn.microsoft.com/library/windows/apps/br207871) オブジェクトは、[**PickerViewMode.List**](https://msdn.microsoft.com/library/windows/apps/br207891) を使ってファイル ピッカーを表示します。
 
      
 - このサンプルでは [**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621) を使って、ドキュメントまたはテキスト ファイルを保存する場所として [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207880) をアプリのローカル フォルダーに設定しています。 [
@@ -115,6 +119,6 @@ Windows.Storage.StorageFile file = await savePicker.PickSaveFileAsync();
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

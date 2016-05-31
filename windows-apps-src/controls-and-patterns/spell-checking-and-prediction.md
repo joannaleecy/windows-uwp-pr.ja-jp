@@ -1,14 +1,13 @@
 ---
+author: Jwmsft
 Description: テキストの入力と編集を行っているときに、スペル チェックは単語を赤い波線で強調表示してユーザーに単語のスペルの間違いを知らせ、それを修正する方法を提供します。
 title: スペル チェックと予測入力
 ms.assetid: B867C956-5AB2-4207-A8DE-179CE7871180
-label: スペル チェックと予測入力
+label: Spell checking and text prediction
 template: detail.hbs
 ---
 
 # スペル チェックのガイドライン
-
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 テキストの入力と編集を行っているときに、スペル チェックは単語を赤い波線で強調表示してユーザーに単語のスペルの間違いを知らせ、それを修正する方法を提供します。
 
@@ -47,14 +46,16 @@ JavaScript コントロールの場合、複数行テキスト入力コントロ
 
 XAML TextBox コントロールの場合、スペル チェックが既定で無効になっています。 **IsSpellCheckEnabled** プロパティを **true** に設定することによって有効にできます。
 
-\[この記事には、ユニバーサル Windows プラットフォーム (UWP) アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
+
 
 ## <span id="related_topics"></span>関連記事
 
 * [テキストとテキスト コントロール](text-controls.md)
 * [テキスト入力のガイドライン](https://msdn.microsoft.com/library/windows/apps/hh750315)
 * [テキストとタイポグラフィのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh700394)
-**開発者向け (XAML)**
+            
+          
+            **開発者向け (XAML)**
 * [**TextBox.IsSpellCheckEnabled プロパティ**](https://msdn.microsoft.com/library/windows/apps/br209688)
 * [**TextBox クラス**](https://msdn.microsoft.com/library/windows/apps/br209683)
 
@@ -65,6 +66,6 @@ XAML TextBox コントロールの場合、スペル チェックが既定で無
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

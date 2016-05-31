@@ -1,4 +1,5 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: 実行時に音声認識の結果を使って、音声コマンド定義 (VCD) ファイルのサポート対象語句の一覧 (PhraseList 要素) にアクセスして更新する方法を説明します。
 title: 音声コマンド定義 (VCD) の語句一覧の動的変更
 ms.assetid: 98024EAC-EC0E-44AA-AEC5-A611BA7C5884
@@ -9,7 +10,7 @@ template: detail.hbs
 # 音声コマンド定義 (VCD) の語句一覧の動的変更
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+
 
 
 **重要な API**
@@ -21,24 +22,24 @@ template: detail.hbs
 
 音声コマンドから実行されるタスクにユーザー定義のアプリ データや一時的なアプリ データが関係する場合は、実行時に動的に語句一覧を変更できると便利です。 
 
-たとえば、ユーザーが目的地を入力できる旅行アプリがあり、ユーザーがアプリ名の後に「Show trip to &lt;destination&gt;」 (&lt;目的地&gt; 旅行を表示) と発声するだけでアプリを起動できるようにするとします。 この場合、**ListenFor** 要素自体は `<ListenFor> Show trip to {destination}  </ListenFor>` のように指定します。ここで、"destination" は **PhraseList** の **Label** 属性の値です。
+たとえば、ユーザーが目的地を入力できる旅行アプリがあり、ユーザーがアプリ名の後に「&lt;目的地&gt; 旅行を表示」と発声するだけでアプリを起動できるようにするとします。 この場合、**ListenFor** 要素自体は `<ListenFor> Show trip to {destination}  </ListenFor>` のように指定します。ここで、"destination" は **PhraseList** の **Label** 属性の値です。
 
 実行時に語句一覧を更新すれば、考えられる目的地ごとに別々の **ListenFor** 要素を作成する必要がなくなります。 代わりに、ユーザーが旅程の入力時に指定した目的地を動的に **PhraseList** に設定できます。 
 
-**PhraseList** とその他の VCD 要素について詳しくは、[**VCD 要素および属性 v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593) のリファレンスをご覧ください。
+**PhraseList** とその他の VCD 要素について詳しくは、「[**VCD 要素および属性 v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)」のリファレンスをご覧ください。
 
-**前提条件: **
+**前提条件:  **
 
 このトピックは、「[Cortana の音声コマンドを使ったフォアグラウンド アプリの起動](launch-a-foreground-app-with-voice-commands-in-cortana.md)」に基づいています。 ここでは、引き続き **Adventure Works** という旅行の計画および管理アプリを使って機能について説明します。
 
 ユニバーサル Windows プラットフォーム (UWP) アプリを開発するのが初めての場合は、以下のトピックに目を通して、ここで説明されているテクノロジをよく理解できるようにしてください。
 
 -   [初めてのアプリ作成](https://msdn.microsoft.com/library/windows/apps/bg124288)
--   「[イベントとルーティング イベントの概要](https://msdn.microsoft.com/library/windows/apps/mt185584)」でイベントについて学習します。
+-   「[イベントとルーティング イベントの概要](https://msdn.microsoft.com/library/windows/apps/mt185584)」に記載されているイベントの説明
 
 **ユーザー エクスペリエンス ガイドライン:  **
 
-アプリと **Cortana** を統合する方法については「[Cortana の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn974233)」を、便利で魅力的な音声認識対応アプリの設計に役立つヒントについては「[音声機能の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596121)」をご覧ください。
+アプリと **Cortana** を統合する方法については「[Cortana の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn974233)」を、魅力的な音声認識対応アプリの設計に役立つ便利なヒントについては「[音声機能の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596121)」をご覧ください。
 
 ## <span id="Identify_the_command"></span><span id="identify_the_command"></span><span id="IDENTIFY_THE_COMMAND"></span>コマンドの識別と語句一覧の更新
 
@@ -76,7 +77,7 @@ VCD ファイルの **PhraseList** 要素を更新するには、語句一覧を
 
 コマンド セットを識別したら、変更する語句一覧への参照を取得し、[**SetPhraseListAsync**](https://msdn.microsoft.com/library/windows/apps/dn653261) メソッドを呼び出します。このとき、**PhraseList** 要素の **Label** 属性と、語句一覧の新しいコンテンツとなる文字列の配列を指定します。
 
-**注**  語句一覧は、変更すると語句一覧全体が置き換えられます。 語句一覧に新しい項目を追加する場合は、既にある項目と新しい項目の両方を指定して [**SetPhraseListAsync**](https://msdn.microsoft.com/library/windows/apps/dn653261) を呼び出す必要があります。
+**注:** 語句一覧は、変更すると語句一覧全体が置き換えられます。 語句一覧に新しい項目を追加する場合は、既にある項目と新しい項目の両方を指定して [**SetPhraseListAsync**](https://msdn.microsoft.com/library/windows/apps/dn653261) を呼び出す必要があります。
 
 次の例では、前の例で示した **PhraseList** を更新して、Phoenix という目的地を追加する方法を示します。
 
@@ -150,6 +151,6 @@ if (Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager.
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

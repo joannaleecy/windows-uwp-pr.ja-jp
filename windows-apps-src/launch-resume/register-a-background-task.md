@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: バックグラウンド タスクの登録
 description: ほとんどのバックグラウンド タスクを安全に登録できる再利用可能な関数の作成方法について説明します。
 ms.assetid: 8B1CADC5-F630-48B8-B3CE-5AB62E3DFB0D
@@ -42,7 +43,7 @@ ms.assetid: 8B1CADC5-F630-48B8-B3CE-5AB62E3DFB0D
 >                                                 IBackgroundCondition condition)
 > {
 >     
->     // We’ll add code to this function in subsequent steps.
+>     // We'll add code to this function in subsequent steps.
 > 
 > }
 > ```
@@ -54,7 +55,7 @@ ms.assetid: 8B1CADC5-F630-48B8-B3CE-5AB62E3DFB0D
 >                                              IBackgroundCondition ^ condition)
 > {
 >     
->     // We’ll add code to this function in subsequent steps.
+>     // We'll add code to this function in subsequent steps.
 > 
 > }
 > ```
@@ -95,7 +96,7 @@ ms.assetid: 8B1CADC5-F630-48B8-B3CE-5AB62E3DFB0D
 >         }
 >     }
 >     
->     // We’ll register the task in the next step.
+>     // We'll register the task in the next step.
 > }
 > ```
 > ```cpp
@@ -128,7 +129,7 @@ ms.assetid: 8B1CADC5-F630-48B8-B3CE-5AB62E3DFB0D
 >         hascur = iter->MoveNext();
 >     }
 >     
->     // We’ll register the task in the next step.
+>     // We'll register the task in the next step.
 > }
 > ```
 
@@ -361,7 +362,7 @@ ms.assetid: 8B1CADC5-F630-48B8-B3CE-5AB62E3DFB0D
 > }
 > ```
 
-> **注**  この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
+> **注:** この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
  
 ## 関連トピック
@@ -393,6 +394,6 @@ ms.assetid: 8B1CADC5-F630-48B8-B3CE-5AB62E3DFB0D
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

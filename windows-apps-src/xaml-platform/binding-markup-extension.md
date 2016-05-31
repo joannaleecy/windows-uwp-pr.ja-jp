@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: Binding マークアップ拡張は、XAML の読み込み時に Binding クラスのインスタンスに変換されます。
 title: Binding マークアップ拡張
 ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
@@ -6,7 +7,7 @@ ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
 
 # {Binding} マークアップ拡張
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 **注:** 新しいバインド メカニズムは、パフォーマンスと開発者の生産性向上のために最適化されている Windows 10 で利用できます。 「[{x:Bind} マークアップ拡張](x-bind-markup-extension.md)」をご覧ください。
 
@@ -37,7 +38,9 @@ ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
 | 用語 | 説明 |
 |------|-------------|
 | *propertyPath* | バインドのプロパティ パスを指定する文字列。 詳しくは、以下の「[プロパティ パス](#property-path)」をご覧ください。 |
-| *bindingProperties* | *propName*=*value*\[, *propName*=*value*\]*<br/>名前と値のペアの構文を使って指定する、1 つ以上のバインド プロパティ。 |
+| *bindingProperties* | *propName*
+            =
+            *value*\[, *propName*=*value*\]*<br/>名前と値のペアの構文を使って指定する、1 つ以上のバインド プロパティ。 |
 | *propName* | [
             **Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) オブジェクトで設定するプロパティの文字列名。 たとえば、"Converter" です。 | 
 | *value* | プロパティに設定する値。 引数の構文は、下記の「[{Binding} で設定できる Binding クラスのプロパティ](#properties-of-binding)」セクションで示しているプロパティによって異なります。 |
@@ -74,21 +77,25 @@ ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
 | [**FallbackValue**](https://msdn.microsoft.com/library/windows/apps/dn279345) | ソースまたはパスを解決できない場合に表示する値を指定します。 | 
 | [**Mode**](https://msdn.microsoft.com/library/windows/apps/br209829) | "OneTime"、"OneWay"、"TwoWay" のいずれかの文字列として、バインド モードを指定します。 これらは、[**BindingMode**](https://msdn.microsoft.com/library/windows/apps/br209822) 列挙体の定数名に対応します。 既定値は、バインディング ターゲットに応じて異なりますが、ほとんどの場合は "OneWay" です。 これは、**{x:Bind}** の既定値 (OneTime) とは異なる点に注意してください。 | 
 | [**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831) | バインディング ターゲットの位置に対するバインド ソースの位置を記述することで、データ ソースを指定します。 これは、オブジェクトの親を指定する場合など、ランタイム オブジェクト グラフの観点で表されます。 [{RelativeSource} マークアップ拡張](relativesource-markup-extension.md) を設定します。 |
-| [**Source**](https://msdn.microsoft.com/library/windows/apps/br209832) | オブジェクトのデータ ソースを指定します。 **Binding** マークアップ拡張については、「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」をご覧ください。 |
+| [**Source**](https://msdn.microsoft.com/library/windows/apps/br209832) | オブジェクトのデータ ソースを指定します。 **Binding** マークアップ拡張では、[**Source**](https://msdn.microsoft.com/library/windows/apps/br209832) プロパティに [{StaticResource} マークアップ拡張](staticresource-markup-extension.md)参照などのオブジェクト参照を指定する必要があります。 このプロパティを指定しない場合、実行中のデータ コンテキストによりソースが指定されます。 個々のバインドで Source 値を指定する代わりに、複数のバインドで共有 **DataContext** を利用する方が一般的です。 詳しくは、「[**DataContext**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.datacontext.aspx)」または「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」を参照してください。 |
 | [**TargetNullValue**](https://msdn.microsoft.com/library/windows/apps/dn279347) | ソース値が解決されるが、明示的に **null** である場合に表示する値を設定します。 |
 | [**UpdateSourceTrigger**](https://msdn.microsoft.com/library/windows/apps/dn279350) | バインド ソースの更新のタイミングを指定します。 指定されていない場合は、既定値は **Default** です。 |
 
 **注:** マークアップを **{x:Bind}** から **{Binding}** に変換する場合は、**Mode** プロパティの既定値の違いに注意してください。
 
-[**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826)、[**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880)、**ConverterLanguage** はいずれも、バインド ソースの値または型を、バインディング ターゲットのプロパティと互換性のある型または値に変換するシナリオに関係があります。 例や詳しい情報については、「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」の「データの変換」をご覧ください。
+[
+              **Converter**
+            ](https://msdn.microsoft.com/library/windows/apps/br209826)、[**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880)、**ConverterLanguage** はいずれも、バインド ソースの値または型を、バインディング ターゲットのプロパティと互換性のある型または値に変換するシナリオに関係があります。 例や詳しい情報については、「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」の「データの変換」をご覧ください。
 
-[**Source**](https://msdn.microsoft.com/library/windows/apps/br209832)、[**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831)、および [**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828) では、バインド ソースを指定します。そのため、これらは相互に排他的です。
+[
+              **Source**
+            ](https://msdn.microsoft.com/library/windows/apps/br209832)、[**RelativeSource**](https://msdn.microsoft.com/library/windows/apps/br209831)、および [**ElementName**](https://msdn.microsoft.com/library/windows/apps/br209828) では、バインド ソースを指定します。そのため、これらは相互に排他的です。
 
 **ヒント:** [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) や [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827) のように、値に 1 つの中かっこを指定する必要がある場合は、`\{` のように円記号 (バックスラッシュ) を中かっこの前に付けます。 別の方法として、エスケープする必要がある中かっこを含む文字列全体を `ConverterParameter='{Mix}'` のように別の種類の引用符で囲みます。
 
 ## 例
 
-```XAML
+```XML
 <!-- binding a UI element to a view model -->    
 <Page ... >
     <Page.DataContext>
@@ -99,7 +106,7 @@ ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
 </Page>
 ```
 
-```XAML
+```XML
 <!-- binding a UI element to another UI element -->
 <Page ... >
     <Page.Resources>
@@ -126,6 +133,6 @@ Microsoft Visual Studio の Microsoft IntelliSense では、XAML マークアッ
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

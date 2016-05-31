@@ -1,4 +1,5 @@
 ---
+author: martinekuan
 ms.assetid: 16AB1111-4BA8-4352-B796-E97AA9243E31
 title: サインアップの準備はできましたか。
 description: 今すぐ開発者アカウントにご登録ください。Windows ストアでアプリを公開し、他の Microsoft プログラムに参加できます。
@@ -19,6 +20,6 @@ Microsoft では、[世界各地で個人のアカウントと会社のアカウ
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

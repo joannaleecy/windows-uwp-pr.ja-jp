@@ -1,15 +1,14 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: タッチパッド向けに最適化される一方で、さまざまな入力デバイスで一貫した機能を提供する、直観的で独特なユーザー操作エクスペリエンスを備えたユニバーサル Windows プラットフォーム (UWP) アプリを作成します。
 title: タッチパッド操作
 ms.assetid: CEDEA30A-FE94-4553-A7FB-6C1FA44F06AB
-label: タッチパッド操作
+label: Touchpad interactions
 template: detail.hbs
 ---
 
 # タッチパッドの設計ガイドライン
 
-
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 ユーザーがタッチパッドで操作できるようにアプリを設計します。 タッチパッドは、間接的なマルチタッチ入力と、マウスのようなポインティング デバイスの精密入力を組み合わせたものです。 この組み合わせにより、タッチパッドはタッチに最適化された UI にも、生産性アプリのより小さいターゲットにも適しています。
 
@@ -48,11 +47,11 @@ template: detail.hbs
 
 ![標準のタッチパッドの設定](images/mouse-touchpad-settings-standard.png)
 
-<sup>標準の\\タッチパッド\\の設定</sup>
+<sup>標準の\\タッチパッドの\\設定</sup>
 
 ![Windows 高精度タッチパッドの設定](images/mouse-touchpad-settings-ptp.png)
 
-<sup>Windows\\ 高精度\\タッチパッド\\の設定</sup>
+<sup>Windows\\ 高精度\\タッチパッドの\\設定</sup>
 
 以下に、一般的なタスクを実行するためのタッチパッドに最適化されたジェスチャの例を示します。
 
@@ -147,12 +146,16 @@ template: detail.hbs
 
 * [ポインター入力の処理](handle-pointer-input.md)
 * [入力デバイスの識別](identify-input-devices.md)
-**サンプル**
+            
+          
+            **サンプル**
 * [基本的な入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620302)
 * [待機時間が短い入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [ユーザー操作モードのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619894)
 * [フォーカスの視覚効果のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619895)
-**サンプルのアーカイブ**
+            
+          
+            **サンプルのアーカイブ**
 * [入力: デバイス機能のサンプル](http://go.microsoft.com/fwlink/p/?linkid=231530)
 * [入力: XAML ユーザー入力イベントのサンプル](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [XAML のスクロール、パン、ズームのサンプル](http://go.microsoft.com/fwlink/p/?linkid=251717)
@@ -163,6 +166,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

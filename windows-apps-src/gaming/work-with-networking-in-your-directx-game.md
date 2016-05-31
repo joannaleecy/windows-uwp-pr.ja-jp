@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: ゲームのネットワーク
 description: ネットワーク機能を開発し、DirectX ゲームに組み込む方法について説明します。
 ms.assetid: 212eee15-045c-8ba1-e274-4532b2120c55
@@ -397,6 +398,6 @@ using namespace Windows::Web::Http;
 * [StreamSocket のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=243037)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

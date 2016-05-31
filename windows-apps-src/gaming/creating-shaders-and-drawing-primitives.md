@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: シェーダーの作成とプリミティブの描画
 description: ここでは、HLSL ソース ファイルを使い、シェーダーをコンパイルして作成する方法について説明します。作成したシェーダーを使って、ディスプレイ上にプリミティブを描画することができます。
 ms.assetid: 91113bbe-96c9-4ef9-6482-39f1ff1a70f4
@@ -293,6 +294,6 @@ SimpleVertexShader.cso ファイルからデータを読み取り、そのデー
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

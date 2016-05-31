@@ -1,15 +1,16 @@
 ---
+author: DelfCo
 Description: 日付、時刻、数字、通貨を適切に書式設定することで、グローバル対応のアプリを開発します。
 title: グローバル対応の形式の使用
 ms.assetid: 6ECE8BA4-9A7D-49A6-81EE-AB2BE7F0254F
-label: グローバル対応の形式の使用
+label: Use global-ready formats
 template: detail.hbs
 ---
 
 # <span id="dev_globalizing.use_global-ready_formats"></span>グローバル対応の形式の使用
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+
 
 
 **重要な API**
@@ -118,7 +119,7 @@ template: detail.hbs
 
     // Results for display.
     var results = "Fixed number (" + fractionalNumber + ")\n" +
-                  "With user&#39;s default currency: " + currencyDefault + "\n" +
+                  "With user's default currency: " + currencyDefault + "\n" +
                   "Formatted US Dollar: " + currencyUSD + "\n" +
                   "Formatted Euro (fr-FR defaults): " + currencyEuroFR;
     ```
@@ -150,7 +151,7 @@ template: detail.hbs
 
     // Results for display.
     var results = "Fixed number (" + fractionalNumber + ")\n" +
-                  "With user&#39;s default currency: " + currencyDefault + "\n" +
+                  "With user's default currency: " + currencyDefault + "\n" +
                   "Formatted US Dollar: " + currencyUSD + "\n" +
                   "Formatted Euro (fr-FR defaults): " + currencyEuroFR;
     ```
@@ -190,6 +191,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

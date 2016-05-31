@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: シェーダー オブジェクトの移植
 description: OpenGL ES 2.0 から簡単なレンダラーを移植する場合、最初の手順では、Direct3D 11 の対応する頂点シェーダー オブジェクトとフラグメント シェーダー オブジェクトを設定し、コンパイル後にメイン プログラムがシェーダー オブジェクトと通信できるようにします。
 ms.assetid: 0383b774-bc1b-910e-8eb6-cc969b3dcc08
@@ -317,6 +318,6 @@ m_d3dContext->UpdateSubresource(
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

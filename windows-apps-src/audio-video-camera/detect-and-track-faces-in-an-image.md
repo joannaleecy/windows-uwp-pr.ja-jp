@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: 84729E44-10E9-4D7D-8575-6A9D97467ECD
 description: このトピックでは、FaceDetector を使って画像内の顔を検出する方法について説明します。 FaceTracker は、ビデオ フレームのシーケンスで顔を経時的に追跡するように最適化されています。
 title: 画像やビデオでの顔の検出
@@ -9,7 +10,7 @@ title: 画像やビデオでの顔の検出
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-\[一部の情報はリリース前の製品に関することであり、正式版がリリースされるまでに大幅に変更される可能性があります。 ここに記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。\]
+\[一部の情報はリリース前の製品に関することであり、正式版がリリースされるまでに大幅に変更される可能性があります。 ここに記載された情報について、マイクロソフトは明示または黙示を問わずいかなる保証をするものでもありません。\]
 
 このトピックでは、[**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) を使って画像内の顔を検出する方法について説明します。 [
             **FaceTracker**](https://msdn.microsoft.com/library/windows/apps/dn974150) は、ビデオ フレームのシーケンスで顔を経時的に追跡するように最適化されています。
@@ -35,29 +36,29 @@ title: 画像やビデオでの顔の検出
 
 顔検出は、さまざまな方法で作成できる [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) オブジェクトに対して可能です。 この例では、[**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) を使って、顔が検出される画像ファイルをユーザーが選べるようにしています。 ソフトウェア ビットマップの操作について詳しくは、「[イメージング](imaging.md)」をご覧ください。
 
-[!code-cs[Picker](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetPicker)]
+[!code-cs[ピッカー](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetPicker)]
 
 [
-            **BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) クラスを使って、**SoftwareBitmap** に画像ファイルをデコードします。 顔検出処理は、画像が小さいほど高速になるため、ソース画像の縮小が必要になる場合があります。 そのためには、[**BitmapTransform**](https://msdn.microsoft.com/library/windows/apps/br226254) オブジェクトを作成し、[**ScaledWidth**](https://msdn.microsoft.com/library/windows/apps/br226261) および [**ScaledHeight**](https://msdn.microsoft.com/library/windows/apps/br226260) プロパティを設定して、そのオブジェクトを [**GetSoftwareBitmapAsync**](https://msdn.microsoft.com/library/windows/apps/dn887332) の呼び出しに渡します。これにより、デコードされて縮小された **SoftwareBitmap** が返されます。
+            **BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) クラスを使って、**SoftwareBitmap** に画像ファイルをデコードします。 顔検出処理は、画像が小さいほど高速になるため、ソース画像の縮小が必要になる場合があります。 デコード中にこれを行うには、[**BitmapTransform**](https://msdn.microsoft.com/library/windows/apps/br226254) オブジェクトを作成し、[**ScaledWidth**](https://msdn.microsoft.com/library/windows/apps/br226261) および [**ScaledHeight**](https://msdn.microsoft.com/library/windows/apps/br226260) プロパティを設定して、そのオブジェクトを [**GetSoftwareBitmapAsync**](https://msdn.microsoft.com/library/windows/apps/dn887332) の呼び出しに渡します。これにより、デコードされて縮小された **SoftwareBitmap** が返されます。
 
-[!code-cs[Decode](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetDecode)]
+[!code-cs[デコード](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetDecode)]
 
 現在のバージョンでは、**FaceDetector** クラスでのみ Gray8 または Nv12 の画像がサポートされています。 **SoftwareBitmap** クラスには、ビットマップの形式を変換する [**Convert**](https://msdn.microsoft.com/library/windows/apps/dn887362) メソッドが用意されています。 この例では、ソース画像を Gray8 ピクセル形式に変換しています (まだその形式になっていない場合)。 必要に応じて、[**GetSupportedBitmapPixelFormats**](https://msdn.microsoft.com/library/windows/apps/dn974140) および [**IsBitmapPixelFormatSupported**](https://msdn.microsoft.com/library/windows/apps/dn974142) メソッドを使って、ピクセル形式がサポートされているかどうかを実行時に調べることができます。これにより、サポートされている一連の形式が今後のバージョンで拡張される場合に備えることができます。
 
-[!code-cs[Format](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetFormat)]
+[!code-cs[形式](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetFormat)]
 
 [
             **CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn974132) を呼び出すことで **FaceDetector** オブジェクトをインスタンス化したら、[**DetectFacesAsync**](https://msdn.microsoft.com/library/windows/apps/dn974134) を呼び出して、適切なサイズに拡大縮小済み、サポートされているピクセル形式に変換済みのビットマップを渡します。 このメソッドは [**DetectedFace**](https://msdn.microsoft.com/library/windows/apps/dn974123) オブジェクトの一覧を返します。 **ShowDetectedFaces** はヘルパー メソッドであり、次に示しているように、画像内の顔の周りに四角形を描画します。
 
-[!code-cs[Detect](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetDetect)]
+[!code-cs[検出](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetDetect)]
 
 顔検出処理の実行中に作成されたオブジェクトは必ず破棄してください。
 
-[!code-cs[Dispose](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetDispose)]
+[!code-cs[破棄](./code/FaceDetection_Win10/cs/MainPage.xaml.cs#SnippetDispose)]
 
 画像を表示し、検出された顔の周りに四角形を描画するには、XAML ページに [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 要素を追加します。
 
-[!code-xml[Canvas](./code/FaceDetection_Win10/cs/MainPage.xaml#SnippetCanvas)]
+[!code-xml[キャンバス](./code/FaceDetection_Win10/cs/MainPage.xaml#SnippetCanvas)]
 
 描画される四角形のスタイルの設定用に、いくつかのメンバー変数を定義します。
 
@@ -103,6 +104,6 @@ title: 画像やビデオでの顔の検出
 * [MediaCapture を使った写真とビデオのキャプチャ](capture-photos-and-video-with-mediacapture.md)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

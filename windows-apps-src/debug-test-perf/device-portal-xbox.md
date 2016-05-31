@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 ms.assetid: bf0a8b01-79f1-4944-9d78-9741e235dbe9
 title: Xbox 用 Device Portal
 description: Xbox One 向けの Device Portal を有効にする方法について説明します。
@@ -14,8 +15,7 @@ description: Xbox One 向けの Device Portal を有効にする方法につい�
 
 1. ホーム画面で [Dev Home] タイルを選択します (画像を参照)。  
 ![Device Portal の DevHome](images/device-portal/xbox-dev-home-tile.png)
-2. Dev Home 内で、**[Remote Management]** (リモート管理) ツールに移動します。 
-![Device Portal のリモート管理ツール](images/device-portal/xbox-remote-management-tool.png)
+2. [Dev Home] 内の **[Remote Management]** ツールに移動します ![Device Portal RemoteManagement ツール](images/device-portal/xbox-remote-management-tool.png)
 3. **[Manage Windows Device Portal** (Windows Device Portal の管理]) を選択し、**[A]** を押します。
 4. **[Enable Windows Device Portal]** (Windows Device Portal を有効にする) 設定をオンにします。
 5. ブラウザーから devkit へのアクセスを認証するために使うユーザー名とパスワードを入力し、保存します。
@@ -26,16 +26,13 @@ description: Xbox One 向けの Device Portal を有効にする方法につい�
 
 ## Device Portal のページ
 
-XBox の Device Portal では、標準のページのセットが提供されます。 詳しい説明については、「[Windows Device Portal の概要](device-portal.md)」をご覧ください。
+Xbox の Device Portal では、一連の標準ページが提供されます。 詳しい説明については、「[Windows Device Portal の概要](device-portal.md)」をご覧ください。
 
-- Apps (アプリ)
-- Processes (プロセス)
-- Performance (パフォーマンス)
-- Event Tracing for Windows (ETW) (Windows イベント トレーシング (ETW))
-- Performance tracing (パフォーマンス トレース)
-- Devices (デバイス)
-- Networking (ネットワーク)
+- アプリ
+- パフォーマンス
+- ネットワーク
 
-<!--HONumber=Mar16_HO5-->
+
+<!--HONumber=May16_HO2-->
 
 

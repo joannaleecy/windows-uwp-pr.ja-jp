@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: マークアップ要素の一意の識別子を提供します。 ユニバーサル Windows プラットフォーム (UWP) XAML では、.resw リソース ファイルのリソースを使うときなど、XAML のローカライズのプロセスとツールでこの一意の識別子が使われます。
 title: xUid ディレクティブ
 ms.assetid: 9FD6B62E-D345-44C6-B739-17ED1A187D69
@@ -30,7 +31,9 @@ XAML でオブジェクト要素を識別するには **x:Uid** を使います�
 <Button x:Uid="GoButton" Content="Go"/>
 ```
 
-**Go** という表示テキストを置き換えるコンテンツを指定するには、リソース ファイルの新しいリソースを指定する必要があります。 リソース ファイルには "GoButton.Content" という名前のリソースのエントリを含める必要があります。 この場合、[**Content**](https://msdn.microsoft.com/library/windows/apps/br209366) が [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) クラスに継承される特定のプロパティです。 "GoButton.FlowDirection" にリソースに基づく値を指定するなど、このボタンの他のプロパティにローカライズ値を指定することがあります。 **x:Uid** とリソース ファイルを組み合わせて使う方法について詳しくは、「[クイック スタート: UI リソースの翻訳](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)」をご覧ください。
+**Go** という表示テキストを置き換えるコンテンツを指定するには、リソース ファイルの新しいリソースを指定する必要があります。 リソース ファイルには "GoButton.Content" という名前のリソースのエントリを含める必要があります。 この場合、[
+              **Content**
+            ](https://msdn.microsoft.com/library/windows/apps/br209366) が [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) クラスに継承される特定のプロパティです。 "GoButton.FlowDirection" にリソースに基づく値を指定するなど、このボタンの他のプロパティにローカライズ値を指定することがあります。 **x:Uid** とリソース ファイルを組み合わせて使う方法について詳しくは、「[クイック スタート: UI リソースの翻訳](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)」をご覧ください。
 
 **x:Uid** 値に使用可能な文字列の正当性は、リソース ファイル内の識別子やリソース パスとして正当な文字列はどれかという実質的な意味合いにおいて制御されます。
 
@@ -44,6 +47,6 @@ Windows ランタイム XAML では、プロパティ要素に **x:Uid** を含�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

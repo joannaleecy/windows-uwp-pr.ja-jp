@@ -1,6 +1,7 @@
 ---
+author: mtoepke
 title: ゲーム サンプルの紹介
-description: お疲れさまでした。 基本的なユニバーサル Windows プラットフォーム (UWP) DirectX 3D ゲームの主なコンポーネントについては理解できました。
+description: これで、 基本的なユニバーサル Windows プラットフォーム (UWP) DirectX 3D ゲームの主なコンポーネントについては理解できました。
 ms.assetid: a1432c45-569e-7ecd-4098-f5ad6da9327e
 keywords: ["DirectX, XAML"]
 ---
@@ -30,7 +31,7 @@ keywords: ["DirectX, XAML"]
 
 **SwapChainBackgroundPanel** の XAML は **Main.app.xaml** ファイルで次のように宣言します。
 
-```xaml
+```xml
 <Page
     x:Name="DXMainPage"
     x:Class="Simple3DGameXaml.MainPage"
@@ -863,7 +864,7 @@ void App::ResetGame()
 
 MainPage.xaml
 
-```xaml
+```xml
 <SwapChainBackgroundPanel
     x:Name="DXSwapChainPanel"
     x:Class="Simple3DGameXaml.MainPage"
@@ -1514,6 +1515,6 @@ void MainPage::OnResetButtonClicked(Object^ sender, RoutedEventArgs^ args)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

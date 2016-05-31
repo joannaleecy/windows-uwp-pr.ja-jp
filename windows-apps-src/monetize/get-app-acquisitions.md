@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 ms.assetid: C1E42E8B-B97D-4B09-9326-25E968680A0F
 description: 特定の日付範囲などのオプション フィルターを使ってアプリケーションの集計入手データを取得するには、Windows ストア分析 API でこのメソッドを使います。
 title: アプリの入手数の取得
@@ -37,7 +38,7 @@ title: アプリの入手数の取得
 
 | ヘッダー        | 型   | 説明                                                                 |
 |---------------|--------|-----------------------------------------------------------------------------|
-| Authorization | string | 必須。 **ベアラー** &lt;*トークン*&gt; 形式の Azure AD アクセス トークンです。 |
+| Authorization | string | 必須。 **Bearer**&lt;*token*&gt; という形式の Azure AD アクセス トークン。 |
 
  
 
@@ -55,14 +56,14 @@ title: アプリの入手数の取得
 <th align="left">パラメーター</th>
 <th align="left">型</th>
 <th align="left">説明</th>
-<th align="left">必須</th>
+<th align="left">必須かどうか</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">applicationId</td>
 <td align="left">string</td>
-<td align="left">入手データを取得するアプリの製品 ID です。 製品 ID は、デベロッパー センター ダッシュボードの [App identity page](https://msdn.microsoft.com/library/windows/apps/mt148561)に表示されるアプリの内容へのリンクに埋め込まれています。 製品 ID の例は 9WZDNCRFJ3Q8 です。</td>
+<td align="left">入手データを取得するアプリの製品 ID です。 製品 ID は、デベロッパー センター ダッシュボードの [[アプリ ID] ページ](https://msdn.microsoft.com/library/windows/apps/mt148561)に表示されるアプリの内容へのリンクに埋め込まれています。 製品 ID の例は 9WZDNCRFJ3Q8 です。</td>
 <td align="left">○</td>
 </tr>
 <tr class="even">
@@ -92,8 +93,8 @@ title: アプリの入手数の取得
 <tr class="even">
 <td align="left">filter</td>
 <td align="left">string</td>
-<td align="left">応答内の行をフィルター処理する 1 つまたは複数のステートメントです。 詳しくは、次の「[filter fields](#filter-fields)」セクションをご覧ください。</td>
-<td align="left">×</td>
+<td align="left">応答内の行をフィルター処理する 1 つまたは複数のステートメントです。 詳しくは、次の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。</td>
+<td align="left">いいえ</td>
 </tr>
 <tr class="odd">
 <td align="left">aggregationLevel</td>
@@ -235,7 +236,7 @@ title: アプリの入手数の取得
 
 アプリの入手データを取得するためのいくつかの要求の例を次に示します。 *applicationId* 値を、目的のアプリの製品 ID に置き換えてください。
 
-```
+```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/appacquisitions?applicationId=9NBLGGGZ5QDR&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0  HTTP/1.1
 Authorization: Bearer <your access token>
 
@@ -298,7 +299,7 @@ Authorization: Bearer <your access token>
       "acquisitionQuantity": 1
     }
   ],
-  "@nextLink": "appacquisitions?applicationId=9NBLGGGZ5QDR&amp;aggregationLevel=day&startDate=2015/01/01&endDate=2016/02/01&top=1&amp;skip=1&orderby=date desc",
+  "@nextLink": "appacquisitions?applicationId=9NBLGGGZ5QDR&aggregationLevel=day&startDate=2015/01/01&endDate=2016/02/01&top=1&skip=1&orderby=date desc",
   "TotalCount": 466766
 }
 ```
@@ -314,6 +315,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Mar16_HO2-->
+<!--HONumber=May16_HO2-->
 
 

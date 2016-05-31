@@ -1,4 +1,5 @@
 ---
+author: TylerMSFT
 ms.assetid: AC96F645-1BDE-4316-85E0-2FBDE0A0A62A
 title: ファイルのプロパティの取得
 description: StorageFile オブジェクトで表されるファイルのプロパティ (最上位、基本、拡張) を取得します。
@@ -17,12 +18,12 @@ description: StorageFile オブジェクトで表されるファイルのプロ�
 [
             **StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトで表されるファイルのプロパティ (最上位、基本、拡張) を取得します。
 
-**注:** [ファイル アクセスのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619995)に関するページも参照してください。
+**注** [ファイル アクセスのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619995) に関するページも参照してください。
 
  
 
 
-## 必要条件
+## 前提条件
 
 -   **ユニバーサル Windows プラットフォーム (UWP) アプリの非同期プログラミングについての理解**
 
@@ -136,6 +137,6 @@ foreach (Windows.Storage.StorageFile file in files)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

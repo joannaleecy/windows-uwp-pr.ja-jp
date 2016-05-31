@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: Windows デベロッパー センター ダッシュボードで各アプリに関連する詳細を管理および表示し、プッシュ通知やマップなどのサービスを構成できます。
 title: アプリの管理とサービス
 ms.assetid: 99DA2BC1-9B5D-4746-8BC0-EC723D516EEF
@@ -34,7 +35,7 @@ Windows デベロッパー センター ダッシュボードで各アプリに�
 
 Windows Phone 8.1 以前を対象としたアプリでマップ サービスを使うには、アプリのコードに含めるマップ サービス アプリケーション ID とトークンが必要です。 **[マップ]** ページの **[サービス]** セクションでこのトークンを取得できます。
 
-> **注**  他のオペレーティング システムを対象としたアプリでマップ サービスを使うには、[Bing Maps デベロッパー センター](http://go.microsoft.com/fwlink/p/?LinkId=614880) にアクセスしてください。 詳しくは、「[マップ認証キーの要求](https://msdn.microsoft.com/library/windows/apps/mt219694)」をご覧ください。
+> **注**  他のオペレーティング システムを対象としたアプリでマップ サービスを使うには、[Bing Maps デベロッパー センター](http://go.microsoft.com/fwlink/p/?LinkId=614880)にアクセスしてください。 詳しくは、「[マップ認証キーの要求](https://msdn.microsoft.com/library/windows/apps/mt219694)」をご覧ください。
 
 詳しくは、「[マップ サービスの使用](use-map-services.md)」をご覧ください。
 
@@ -77,6 +78,6 @@ OEM アクセス許可を持つ開発者は、**[現在のパッケージ]** ペ
  
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: PatrickFarley
 Description: アプリのジオフェンスについては、次のベスト プラクティスに従ってください。
 title: ジオフェンス アプリのガイドライン
 ms.assetid: F817FA55-325F-4302-81BE-37E6C7ADC281
@@ -7,7 +8,7 @@ ms.assetid: F817FA55-325F-4302-81BE-37E6C7ADC281
 # ジオフェンス アプリのガイドライン
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください \]
 
 
 **重要な API**
@@ -123,7 +124,7 @@ GPS を使うと最も正確な位置情報が得られますが、ジオフェ�
 * [ジオフェンスのセットアップ](https://msdn.microsoft.com/library/windows/apps/mt219702)
 * [現在の位置情報の取得](https://msdn.microsoft.com/library/windows/apps/mt219698)
 <!--* [Design guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md)-->
-* [UWP location sample (geolocation)](http://go.microsoft.com/fwlink/p/?linkid=533278)
+* [UWP の位置情報サンプル (Geolocation)](http://go.microsoft.com/fwlink/p/?linkid=533278)
  
 
  
@@ -133,6 +134,6 @@ GPS を使うと最も正確な位置情報が得られますが、ジオフェ�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

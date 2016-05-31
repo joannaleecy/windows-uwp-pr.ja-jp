@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: Direct3D 9 と Direct3D 11 の間の重要な変更点
 description: このトピックでは、DirectX 9 と DirectX 11 の大まかな違いについて説明します。
 ms.assetid: 35a9e388-b25e-2aac-0534-577b15dae364
@@ -112,6 +113,6 @@ Direct3D 9 では、共有配列と一緒に SetVertexShaderConstant と SetPixe
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

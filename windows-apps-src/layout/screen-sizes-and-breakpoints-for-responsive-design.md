@@ -1,4 +1,5 @@
 ---
+author: mijacobs
 title: '画面のサイズとレスポンシブ デザインのブレークポイント'
 description: .
 ms.assetid: BF42E810-CDC8-47D2-9C30-BAA19DCBE2DA
@@ -7,11 +8,6 @@ template: detail.hbs
 ---
 
 #  画面のサイズとレスポンシブ デザインのブレークポイント
-
-
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
-
-
 
 対象デバイスと、Windows 10 エコシステム全体での画面サイズの数はあまりに多いため、そのそれぞれのために UI を最適化しても意味がありません。 その代わり、360、640、1024、および 1366 epx という 4 種類の主要なキー幅 ("ブレークポイント" とも呼ばれます) を設計することをお勧めします。
 
@@ -40,9 +36,9 @@ template: detail.hbs
 <tbody>
 <tr class="odd">
 <td align="left">一般的な画面サイズ (対角線)</td>
-<td align="left">4&quot; ～ 6&quot;</td>
-<td align="left">7&quot; ～ 12&quot;、またはテレビ</td>
-<td align="left">13&quot; 以上</td>
+<td align="left">4" ～ 6"&quot;</td>
+<td align="left">7" ～ 12"、またはテレビ</td>
+<td align="left">13" 以上</td>
 </tr>
 <tr class="even">
 <td align="left">一般的なデバイス</td>
@@ -67,28 +63,28 @@ template: detail.hbs
 <td align="left" valign="top"><ul>
 <li>タブ要素を中央に配置します。</li>
 <li>ウィンドウの左右の余白を 12 ピクセルに設定して、アプリ ウィンドウの左右の端の間で視覚的な区切りを作成します。</li>
-<li>手に届きやすいようにアプリ バー ([app bars](../controls-and-patterns/app-bars.md)) をウィンドウの下部にドッキングします。</li>
+<li>手に届きやすいように[アプリ バー](../controls-and-patterns/app-bars.md)をウィンドウの下部にドッキングします。</li>
 <li>一度に 1 列/地域を使います。</li>
 <li>検索を表すアイコンを使います (検索ボックスを表示しない)。</li>
-<li>ナビゲーション ウィンドウ ([navigation pane](../controls-and-patterns/nav-pane.md)) をオーバーレイ モードにして画面領域を節約します。</li>
-<li>マスター/詳細パターン ([master details pattern](../controls-and-patterns/master-details.md)) を使用している場合は、上下に並べる表示モードを使用して画面領域を節約します。</li>
+<li>[ナビゲーション ウィンドウ](../controls-and-patterns/nav-pane.md)をオーバーレイ モードにして画面領域を節約します。</li>
+<li>[マスター/詳細要素](../controls-and-patterns/master-details.md)を使用している場合は、上下に並べる表示モードを使用して画面領域を節約します。</li>
 </ul></td>
 <td align="left" valign="top"><ul>
 <li>タブ要素を左揃えにします。</li>
 <li>ウィンドウの左右の余白を 24 ピクセルに設定して、アプリ ウィンドウの左右の端の間で視覚的な区切りを作成します。</li>
-<li>アプリ バー ([app bars](../controls-and-patterns/app-bars.md)) などのコマンド要素をアプリ ウィンドウの上部に配置します。</li>
+<li>[アプリ バー](../controls-and-patterns/app-bars.md)などのコマンド要素をアプリ ウィンドウの上部に配置します。</li>
 <li>最大 2 列/領域</li>
 <li>検索ボックスを表示します。</li>
-<li>アイコンの幅の狭いストリップが常に表示されるようにナビゲーション ウィンドウ ([navigation pane](../controls-and-patterns/nav-pane.md)) を小片モードにします。</li>
-
+<li>アイコンの幅の狭いストリップが常に表示されるように[ナビゲーション ウィンドウ](../controls-and-patterns/nav-pane.md)を小片モードにします。</li>
+<li>[テレビのエクスペリエンス](http://go.microsoft.com/fwlink/?LinkId=760736)の調整を検討します。</li>
 </ul></td>
 <td align="left" valign="top"><ul>
 <li>タブ要素を左揃えにします。</li>
 <li>ウィンドウの左右の余白を 24 ピクセルに設定して、アプリ ウィンドウの左右の端の間で視覚的な区切りを作成します。</li>
-<li>アプリ バー ([app bars](../controls-and-patterns/app-bars.md)) などのコマンド要素をアプリ ウィンドウの上部に配置します。</li>
+<li>[アプリ バー](../controls-and-patterns/app-bars.md)などのコマンド要素をアプリ ウィンドウの上部に配置します。</li>
 <li>最大 3 列/領域</li>
 <li>検索ボックスを表示します。</li>
-<li>常に表示されるようにナビゲーション ウィンドウ ([navigation pane](../controls-and-patterns/nav-pane.md)) を固定モードにします。</li>
+<li>常に表示されるように[ナビゲーション ウィンドウ](../controls-and-patterns/nav-pane.md)を固定モードにします。</li>
 </ul></td>
 </tr>
 </tbody>
@@ -98,6 +94,6 @@ template: detail.hbs
  
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

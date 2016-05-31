@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: XAML 添付プロパティを依存関係プロパティとして実装する方法と、添付プロパティを XAML で使うために必要なアクセサー変換を定義する方法を説明します。
 title: カスタム添付プロパティ
 ms.assetid: E9C0C57E-6098-4875-AA3E-9D7B36E160E0
@@ -25,7 +26,7 @@ ms.assetid: E9C0C57E-6098-4875-AA3E-9D7B36E160E0
 他の種類で使う添付プロパティを厳密に定義する場合、プロパティが登録されているクラスが [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) から派生する必要はありません。 ただし、添付プロパティが依存関係プロパティでもある標準モデルに従う場合は、バッキング プロパティ ストアを使うことができるように、アクセサーのターゲット パラメーターで **DependencyObject** を使う必要があります。
 
 [
-            **DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 型の **public** **static** **readonly** プロパティを宣言することで、添付プロパティを依存関係プロパティとして定義します。 このプロパティは、[**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833) メソッドの戻り値を使って定義します。 プロパティ名は、**RegisterAttached** *name* パラメーターとして指定した添付プロパティ名の終わりに "Property" という文字列を追加した名前と一致する必要があります。 これは、依存関係プロパティが表すプロパティとの関連で依存関係プロパティの識別子に名前を付ける場合の確立された規則です。
+            **DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 型の **public****static****readonly** プロパティを宣言することで、添付プロパティを依存関係プロパティとして定義します。 このプロパティは、[**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833) メソッドの戻り値を使って定義します。 プロパティ名は、**RegisterAttached***name* パラメーターとして指定した添付プロパティ名の終わりに "Property" という文字列を追加した名前と一致する必要があります。 これは、依存関係プロパティが表すプロパティとの関連で依存関係プロパティの識別子に名前を付ける場合の確立された規則です。
 
 カスタム添付プロパティを定義する主要領域は、アクセサーまたはラッパーを定義する方法の点でカスタム依存関係プロパティとは異なります。 「[カスタム依存関係プロパティ](custom-dependency-properties.md)」で説明しているラッパー手法を使う代わりに、静的な **Get***PropertyName* メソッドと **Set***PropertyName* メソッドを添付プロパティのアクセサーとして提供する必要もあります。 アクセサーは主に XAML パーサーで使われますが、XAML 以外のシナリオでは他の任意の呼び出し元もこれらを使って値を設定できます。
 
@@ -35,25 +36,35 @@ ms.assetid: E9C0C57E-6098-4875-AA3E-9D7B36E160E0
 
 **Get**_PropertyName_ アクセサーのシグネチャは次のようにする必要があります。
 
-`public static` _valueType_ **Get**_PropertyName_ `(DependencyObject target)`
+`public static` _valueType_
+            **Get**
+            _PropertyName_ `(DependencyObject target)`
 
 Microsoft Visual Basic の場合は、次のようになります。
 
-` Public Shared Function Get`_PropertyName_`(ByVal target As DependencyObject) As `_valueType_`)`
+` Public Shared Function Get`_PropertyName_
+            `(ByVal target As DependencyObject) As `
+            _valueType_`)`
 
 *target* オブジェクトは実装でより具体的な型にすることができますが、[**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) から派生する必要があります。 *valueType* 戻り値も、実装でより具体的な型にすることができます。 基本的な **Object** 型が受け入れられますが、多くの場合、添付プロパティにタイプ セーフを適用します。 タイプ セーフ手法として、getter シグネチャと setter シグネチャで型指定を使うことをお勧めします。
 
 **Set***PropertyName* アクセサーのシグネチャは次のようにする必要があります。
 
-`  public static void Set`_PropertyName_` (DependencyObject target , `_valueType_` value)`
+`  public static void Set`_PropertyName_
+            ` (DependencyObject target , `
+            _valueType_` value)`
 
 Visual Basic の場合は、次のようになります。
 
-`Public Shared Sub Set`_PropertyName_` (ByVal target As DependencyObject, ByVal value As `_valueType_`)`
+`Public Shared Sub Set`_PropertyName_
+            ` (ByVal target As DependencyObject, ByVal value As `
+            _valueType_`)`
 
 *target* オブジェクトは実装でより具体的な型にすることができますが、[**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) から派生する必要があります。 *value* オブジェクトとその *valueType* は、実装でより具体的な型にすることができます。 添付プロパティがマークアップに検出された場合、このメソッドの値は XAML プロセッサからの入力であることに注意してください。 属性値 (最終的には単なる文字列) から適切な型を作成できるように、使う型の型変換または既存のマークアップ拡張サポートが必要です。 基本的な **Object** 型が受け入れられますが、多くの場合、さらにタイプ セーフにします。 これを実現するには、アクセサーに型を適用します。
 
-**注:** プロパティ要素構文で使うことを意図した添付プロパティを定義することもできます。 その場合、値の型変換は必要ではありませんが、意図した値を XAML で確実に作成できるようにする必要があります。 [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) は、プロパティ要素の使用だけをサポートする既存の添付プロパティの例です。
+**注:** プロパティ要素構文で使うことを意図した添付プロパティを定義することもできます。 その場合、値の型変換は必要ではありませんが、意図した値を XAML で確実に作成できるようにする必要があります。 [
+              **VisualStateManager.VisualStateGroups**
+            ](https://msdn.microsoft.com/library/windows/apps/hh738505) は、プロパティ要素の使用だけをサポートする既存の添付プロパティの例です。
 
 ## コードの例
 
@@ -175,7 +186,7 @@ GameService::RegisterDependencyProperties() {
 
 XAML の XML 名前空間マッピングは、通常は XAML ページのルート要素に配置されます。 たとえば、前のスニペットで示した添付プロパティ定義を含む名前空間 `UserAndCustomControls` に `GameService` という名前のクラスがある場合、マッピングは次のようになります。
 
-```XAML
+```XML
 <UserControl
   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
   xmlns:uc="using:UserAndCustomControls"
@@ -185,30 +196,14 @@ XAML の XML 名前空間マッピングは、通常は XAML ページのルー�
 
 マッピングを使うと、Windows ランタイムで定義された既にある型も含め、ターゲット定義に一致する任意の要素に `GameService.IsMovable` 添付プロパティを設定できます。
 
-```XAML
-<Image uc:GameService.IsMovable="true" .../></code></pre></td>
-</tr>
-</tbody>
-</table>
+```XML
+<Image uc:GameService.IsMovable="true" .../>
 ```
 
 同じマップされた XML 名前空間内にもある要素にプロパティを設定する場合でも、添付プロパティ名にプレフィックスを含める必要があります。 これは、プレフィックスによって所有者型が修飾されるためです。 標準 XML 規則により属性が要素から名前空間を継承できる場合でも、添付プロパティの属性がその属性を含む要素と同じ XML 名前空間にあることは想定できません。 たとえば、`GameService.IsMovable` を `ImageWithLabelControl` のカスタム型 (定義は示しません) に設定する場合、その両方が同じプレフィックスにマップされる同じコード名前空間に定義されていても、XAML は依然として次のようになります。
 
-```XAML
-<colgroup>
-<col width="100%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">XAML</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<uc:ImageWithLabelControl uc:GameService.IsMovable="true" .../></code></pre></td>
-</tr>
-</tbody>
-</table>
+```XML
+<uc:ImageWithLabelControl uc:GameService.IsMovable="true" .../>
 ```
 
 **注:** XAML UI を C++ で作る場合は、XAML ページが添付プロパティを定義するカスタム型を使うたびに、そのカスタム型のヘッダーを含める必要があります。 各 XAML ページには、.xaml.h コード ビハインド ヘッダーが関連付けられています。 ここに、添付プロパティの所有者型の定義のヘッダーを (**\#include** を使って) 含める必要があります。
@@ -259,6 +254,6 @@ XAML の XML 名前空間マッピングは、通常は XAML ページのルー�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

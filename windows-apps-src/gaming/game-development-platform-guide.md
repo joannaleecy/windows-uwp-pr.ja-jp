@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: ユニバーサル Windows プラットフォーム (UWP) アプリのゲーム テクノロジ
 description: このガイドでは、ユニバーサル Windows プラットフォーム UWP ゲームの開発に利用できるテクノロジについて説明します。
 ms.assetid: bc4d4648-0d6e-efbb-7608-80bd09decd6e
@@ -340,7 +341,7 @@ Windows ゲーム開発 API を使って独自のゲーム エンジンを作成
 
 ゲームを公開する準備ができたら、開発者アカウントを作成して、ゲームを Windows ストアに提出する必要があります。
 
-Windows ストアにゲームを提出する方法について詳しくは、<https://dev.windows.com/publish> をご覧ください。
+Windows ストアへのゲームの提出については、<https://dev.windows.com/publish> をご覧ください。
 
  
 
@@ -351,6 +352,6 @@ Windows ストアにゲームを提出する方法について詳しくは、<ht
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

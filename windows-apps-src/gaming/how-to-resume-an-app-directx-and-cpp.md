@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: アプリを再開する方法 (DirectX と C++)
 description: このトピックでは、ユニバーサル Windows プラットフォーム (UWP) DirectX アプリをシステムが再開するときに重要なアプリケーション データを復元する方法について説明します。
 ms.assetid: 5e6bb673-6874-ace5-05eb-f88c045f2178
@@ -7,7 +8,7 @@ ms.assetid: 5e6bb673-6874-ace5-05eb-f88c045f2178
 # アプリを再開する方法 (DirectX と C++)
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 このトピックでは、ユニバーサル Windows プラットフォーム (UWP) DirectX アプリをシステムが再開するときに重要なアプリケーション データを復元する方法について説明します。
 
@@ -96,6 +97,6 @@ void App::Run()
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

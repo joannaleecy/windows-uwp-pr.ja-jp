@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 ms.assetid: 5DAC89B2-08AF-45E4-B558-3F2903F014E1
 description: Microsoft Advertising を使ってビデオやバナー広告を組み込むと、Windows アプリでより多くの収益を得ることができます。 広告は、PC、タブレット、電話用の Windows アプリに表示されます。 Windows デベロッパー センター ダッシュボードを使って、広告のパフォーマンスをリアルタイムで監視できます。
 title: Microsoft Advertising によるアプリへの広告の追加
@@ -8,6 +9,6 @@ redirect_url: https://msdn.microsoft.com/windows/uwp/monetize/display-ads-in-you
  
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

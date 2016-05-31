@@ -1,6 +1,7 @@
 ---
+author: martinekuan
 title: Windows ランタイム コンポーネント
-description: Windows ランタイム コンポーネントは自己完結型オブジェクトで、C#、Visual Basic、JavaScript、C++ など、すべての言語からインスタンス化して使うことができます。
+description: Windows ランタイム コンポーネントは自己完結型オブジェクトで、C#、Visual Basic、JavaScript、C++ など、すべての言語からインスタンス化して使用することができます。
 ms.assetid: 55887622-828b-4318-87f2-25592268f7c1
 ---
 
@@ -30,6 +31,6 @@ Visual Studio と C#、Visual Basic、または C++ を使って、ユニバー�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

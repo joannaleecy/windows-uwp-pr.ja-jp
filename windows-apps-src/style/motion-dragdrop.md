@@ -1,4 +1,5 @@
 ---
+author: mijacobs
 Description: ドラッグ アンド ドロップ アニメーションは、リスト内で項目を移動するときや、特定の項目を別の項目上にドロップするときなど、オブジェクトを移動する際に使います。
 title: UWP アプリでのドラッグ アニメーション
 ms.assetid: 6064755F-6E24-4901-A4FF-263F05F0DFD6
@@ -9,7 +10,7 @@ template: detail.hbs
 # ドラッグ アニメーション
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+
 
 ドラッグ アンド ドロップ アニメーションは、リスト内で項目を移動するときや、特定の項目を別の項目上にドロップするときなど、オブジェクトを移動する際に使います。
 
@@ -65,6 +66,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO3-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: mijacobs
 Description: 優れたアイコンは、文字の体裁やその他のデザイン言語と調和するものです。 アイコンは比喩と混用しないようにします。優れたアイコンは、できるだけすばやくシンプルに、必要なことのみを伝えます。 
 title: アイコン
 ms.assetid: b90ac02d-5467-4304-99bd-292d6272a014
@@ -82,7 +83,7 @@ template: detail.hbs
     </tr>  
 </table>
 
-### 例
+<p>例をいくつか紹介します。</p>
 
 <table>
     <tr>
@@ -152,9 +153,7 @@ template: detail.hbs
 
 <table>
 <tr><td>緑 - #128B44</td><td>青 - #2C71B9</td><td>黄 - #FDC214</td></tr>
-<tr><td>ポジティブ: 終了、 
-完了 </td><td>中立: ヘルプ、 
-通知 </td><td>注意: 警報、警告 </td></tr>
+<tr><td>ポジティブ: 終了、完了 </td><td>中立: ヘルプ、通知 </td><td>注意: 警報、警告 </td></tr>
 <tr><td>![Green status](images/icons-color-inbadging-1.png)</td><td>![Blue status](images/icons-color-inbadging-2.png)</td>
 <td>![Yellow status](images/icons-color-inbadging-3.png)</td></tr>
 </table>
@@ -172,6 +171,7 @@ template: detail.hbs
 
 * [タイルとアイコン アセットのガイドライン](../controls-and-patterns/tiles-and-notifications-app-assets.md)
 
-<!--HONumber=Mar16_HO5-->
+
+<!--HONumber=May16_HO2-->
 
 

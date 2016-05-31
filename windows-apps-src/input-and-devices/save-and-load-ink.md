@@ -1,15 +1,17 @@
 ---
-Description: 埋め込みの Ink Serialized Format (ISF) メタデータを使って、インク ストローク データをグラフィックス交換形式 (GIF) ファイルに保存します。
-title: インク ストロークの保存と取得
+author: Karl-Bridge-Microsoft
+Description: Windows Ink をサポートしている UWP アプリでは、インク ストロークを Ink Serialized Format (ISF) ファイルにシリアル化および逆シリアル化することができます。 ISF ファイルは、すべてのインク ストロークのプロパティと動作に関する追加のメタデータを含む GIF 画像です。 インク対応ではないアプリでは、アルファ チャンネルの背景色の透明度を含めて、静的な GIF 画像を表示できます。
+title: Windows Ink ストローク データの保存と取得
 ms.assetid: C96C9D2F-DB69-4883-9809-4A0DF7CEC506
-label: Store and retrieve ink strokes
+label: Store and retrieve Windows Ink stroke data
 template: detail.hbs
+keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, ISF, Ink Serialized Format
 ---
 
-# インク ストロークの保存と取得
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+# Windows Ink ストローク データの保存と取得
 
-インク入力をサポートしているアプリでは、インクのメタデータを完全な再現性でシリアル化および逆シリアル化でき、すべてのプロパティと動作を維持できます。 インク対応ではないアプリでは、アルファ チャンネルの背景色の透明度を含めて、静的な GIF 画像を表示できます。
+
+Windows Ink をサポートしている UWP アプリでは、インク ストロークを Ink Serialized Format (ISF) ファイルにシリアル化および逆シリアル化することができます。 ISF ファイルは、すべてのインク ストロークのプロパティと動作に関する追加のメタデータを含む GIF 画像です。 インク対応ではないアプリでは、アルファ チャンネルの背景色の透明度を含めて、静的な GIF 画像を表示できます。
 
 
 **重要な API**
@@ -32,7 +34,6 @@ ISF は、最もコンパクトなインクの永続表現です。 バイナリ
 1.  まず、UI を設定します。
 
     UI には [Save]、[Load]、[Clear] の各ボタンと、[**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) が含まれています。
-
 ```    XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -64,7 +65,6 @@ ISF は、最もコンパクトなインクの永続表現です。 バイナリ
 
     [
             **InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) は、ペンとマウスのいずれからの入力データもインク ストローク ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)) として解釈するように構成します。各ボタンのイベントに対するリスナーも宣言します。
-
 ```    CSharp
 public MainPage()
     {
@@ -92,7 +92,6 @@ public MainPage()
     ファイルが選択されたら、[**ReadWrite**](https://msdn.microsoft.com/library/windows/apps/br241635) に設定された [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) ストリームを開きます。
 
     次に [**SaveAsync**](https://msdn.microsoft.com/library/windows/apps/br242114) を呼び出して、[**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) によって管理されているインク ストロークをストリームにシリアル化します。
-
 ```    CSharp
 // Save ink data to a file.
     private async void btnSave_Click(object sender, RoutedEventArgs e)
@@ -156,7 +155,7 @@ public MainPage()
     }
 ```
 
-**注**  
+[!NOTE]  
 インク データの保存用にサポートされる形式は GIF のみです。 ただし、[**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) メソッド (次のセクションで説明します) では、下位互換性のためにその他の形式もサポートされています。
 
  
@@ -169,7 +168,6 @@ public MainPage()
 1.  まず、UI を設定します。
 
     UI には [Save]、[Load]、[Clear] の各ボタンと、[**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) が含まれています。
-
 ```    XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -201,7 +199,6 @@ public MainPage()
 
     [
             **InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) は、ペンとマウスのいずれからの入力データもインク ストローク ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)) として解釈するように構成します。各ボタンのイベントに対するリスナーも宣言します。
-
 ```    CSharp
 public MainPage()
     {
@@ -229,7 +226,6 @@ public MainPage()
     ファイルが選択されたら、[**Read**](https://msdn.microsoft.com/library/windows/apps/br241635) に設定された [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) ストリームを開きます。
 
     次に [**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) を呼び出して、保存済みのインク ストロークの読み取りと逆シリアル化を行い、[**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) に読み込みます。 ストロークを **InkStrokeContainer** に読み込むと、[**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) は直ちにストロークを [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) にレンダリングします。
-
 ``` csharp
 // Load ink data from a file.
 private async void btnLoad_Click(object sender, RoutedEventArgs e)
@@ -266,16 +262,12 @@ private async void btnLoad_Click(object sender, RoutedEventArgs e)
 **注**  
 インク データの保存用にサポートされる形式は GIF のみです。 ただし、[**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) メソッドでは、下位互換性のために次の形式もサポートされています。
 
-| 形式                    | 説明                                                                                                                                                                                                                                                                                                                                                                                           |
+| 形式                    | 説明 |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | InkSerializedFormat       | ISF で永続化されたインクを指定します。 これは最もコンパクトなインクの永続表現です。 バイナリ ドキュメント形式への埋め込みまたはクリップボードへの直接配置を実行できます。                                                                                                                                                                                                         |
 | Base64InkSerializedFormat | base64 ストリームとして ISF をエンコードすることで永続化されたインクを指定します。 この形式を指定すると、インクを XML ファイルや HTML ファイルで直接エンコードできます。                                                                                                                                                                                                                                                |
 | Gif                       | ファイル内に ISF がメタデータとして埋め込まれた GIF ファイルで永続化されたインクを指定します。 この形式では、インクに対応していないアプリケーションでインクを表示でき、インク対応のアプリケーションに返されたときもまったく同じように再現できます。 この形式は、HTML ファイル内のインクのコンテンツを転送して、インク アプリとインク対応でないアプリで使えるようにする場合に適しています。 |
-| Base64Gif                 | base64 エンコードの拡張 GIF で永続化されたインクを指定します。 この形式は、後で画像に変換するために、インクを XML ファイルや HTML ファイルで直接エンコードする場合に指定します。 すべてのインク情報を格納するために生成された XML 形式で、Extensible Stylesheet Language Transformations (XSLT) を介して HTML を生成するために使うことができます。                           |
-
- 
-
- 
+| Base64Gif                 | base64 エンコードの拡張 GIF で永続化されたインクを指定します。 この形式は、後で画像に変換するために、インクを XML ファイルや HTML ファイルで直接エンコードする場合に指定します。 すべてのインク情報を格納するために生成された XML 形式で、Extensible Stylesheet Language Transformations (XSLT) を介して HTML を生成するために使うことができます。 
 
 ## <span id="Copy_and_paste_ink_strokes_with_the_clipboard"></span><span id="copy_and_paste_ink_strokes_with_the_clipboard"></span><span id="COPY_AND_PASTE_INK_STROKES_WITH_THE_CLIPBOARD"></span>クリップボードを使ってインク ストロークのコピーと貼り付けを行う
 
@@ -289,7 +281,6 @@ private async void btnLoad_Click(object sender, RoutedEventArgs e)
 1.  まず、UI を設定します。
 
     UI には、[Cut]、[Copy]、[Paste]、[Clear] の各ボタン、[**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)、選択キャンバスが含まれています。
-
 ```    XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
@@ -329,7 +320,6 @@ private async void btnLoad_Click(object sender, RoutedEventArgs e)
             **InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) は、ペンとマウスのいずれからの入力データもインク ストローク ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)) として解釈するように構成します。 ここでは、ボタンのクリック イベント、選択機能のポインター イベントおよびストローク イベントに対するリスナーも宣言されています。
 
     ストローク選択の実装方法を示す詳しい例については、「[ペン操作とスタイラス操作](pen-and-stylus-interactions.md)」の「[高度な処理のための入力のパススルー](pen-and-stylus-interactions.md#passthrough)」をご覧ください。
-
 ```    CSharp
 public MainPage()
     {
@@ -382,7 +372,6 @@ public MainPage()
     次に [**DeleteSelected**](https://msdn.microsoft.com/library/windows/apps/br244233) を呼び出して、インク キャンバスからストロークを削除します。
 
     最後に、選択キャンバスからすべてのストローク選択を削除します。
-
 ```    CSharp
 private void btnCut_Click(object sender, RoutedEventArgs e)
     {
@@ -391,7 +380,6 @@ private void btnCut_Click(object sender, RoutedEventArgs e)
         ClearSelection();
     }
 ```
-
 ```    CSharp
 // Clean up selection UI.
     private void ClearSelection()
@@ -415,7 +403,6 @@ private void btnCut_Click(object sender, RoutedEventArgs e)
 ```
 
     For copy, we simply call [**CopySelectedToClipboard**](https://msdn.microsoft.com/library/windows/apps/br244232) on the [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) of the [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011).
-
 ```    CSharp
 private void btnCopy_Click(object sender, RoutedEventArgs e)
     {
@@ -426,7 +413,6 @@ private void btnCopy_Click(object sender, RoutedEventArgs e)
     For paste, we call [**CanPasteFromClipboard**](https://msdn.microsoft.com/library/windows/apps/br208495) to ensure that the content on the clipboard can be pasted to the ink canvas.
 
     If so, we call [**PasteFromClipboard**](https://msdn.microsoft.com/library/windows/apps/br208503) to insert the clipboard ink strokes into the [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) of the [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011), which then renders the strokes to the ink canvas.
-
 ```    CSharp
 private void btnPaste_Click(object sender, RoutedEventArgs e)
     {
@@ -444,8 +430,8 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
 
 ## <span id="related_topics"></span>関連記事
 
-
 * [ペン操作とスタイラス操作](pen-and-stylus-interactions.md)
+
 **サンプル**
 * [インクのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620308)
 * [単純なインクのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620312)
@@ -459,6 +445,6 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

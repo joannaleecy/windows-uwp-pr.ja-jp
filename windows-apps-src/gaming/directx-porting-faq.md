@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: DirectX 11 の移植に関する FAQ
 description: ユニバーサル Windows プラットフォーム (UWP) へのゲームの移植についてよく寄せられる質問に対してお答えします。
 ms.assetid: 79c3b4c0-86eb-5019-97bb-5feee5667a2d
@@ -25,7 +26,9 @@ Direct3D デバイスは、ビデオ メモリにリソースを作成するた�
 ##  UWP 向けのゲーム タイマーを更新する必要はありますか。
 
 
-[**QueryPerformanceCounter**](https://msdn.microsoft.com/library/windows/desktop/ms644904) と [**QueryPerformanceFrequency**](https://msdn.microsoft.com/library/windows/desktop/ms644905) は、引き続き UWP アプリのゲーム タイマーを実装する最適な手段です。
+[
+              **QueryPerformanceCounter**
+            ](https://msdn.microsoft.com/library/windows/desktop/ms644904) と [**QueryPerformanceFrequency**](https://msdn.microsoft.com/library/windows/desktop/ms644905) は、引き続き UWP アプリのゲーム タイマーを実装する最適な手段です。
 
 タイマーと UWP アプリのライフサイクルのニュアンスに注意する必要があります。 中断と再開は、プレーヤーによるデスクトップ ゲームの再起動とは異なります。ゲームでは、最後にプレイされていた時点のスナップショットを再開します。 数週間など、長時間経過した場合は、ゲーム タイマーの実装は適切に動作しない可能性があります。 ゲームの再開時にアプリのライフサイクル イベントを使ってタイマーをリセットできます。
 
@@ -135,6 +138,6 @@ Microsoft Visual Studio 2015 には、DirectX グラフィックスの診断ツ�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

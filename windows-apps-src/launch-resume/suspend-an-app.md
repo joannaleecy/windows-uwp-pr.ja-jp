@@ -1,6 +1,7 @@
 ---
+author: mcleblanc
 title: アプリの中断の処理
-description: システムがアプリを一時停止するときに重要なアプリケーション データを保存する方法を説明します。
+description: システムがアプリを中断するときに重要なアプリケーション データを保存する方法を説明します。
 ms.assetid: F84F1512-24B9-45EC-BF23-A09E0AC985B0
 ---
 
@@ -59,7 +60,7 @@ MainPage::MainPage()
 {
    InitializeComponent();
    Application::Current->Suspending += 
-       ref new SuspendingEventHandler(this, &amp;MainPage::App_Suspending);
+       ref new SuspendingEventHandler(this, &MainPage::App_Suspending);
 }
 ```
 
@@ -130,6 +131,6 @@ void MainPage::App_Suspending(Object^ sender, SuspendingEventArgs^ e)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

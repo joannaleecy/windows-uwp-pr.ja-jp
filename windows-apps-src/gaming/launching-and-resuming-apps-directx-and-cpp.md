@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: アプリの起動と再開 (DirectX と C++)
 description: ユニバーサル Windows プラットフォーム (UWP) DirectX アプリを起動、一時停止、再開する方法について説明します。
 ms.assetid: c35025f8-0450-2f61-fe84-070fd7379622
@@ -27,6 +28,6 @@ ms.assetid: c35025f8-0450-2f61-fe84-070fd7379622
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

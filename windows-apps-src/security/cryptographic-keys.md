@@ -76,6 +76,6 @@ CBC などの一部のモードでは、最初の暗号テキスト ブロック
  
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: アプリのアクティブ化の処理
 description: OnLaunched メソッドをオーバーライドすることで、アプリのアクティブ化を処理する方法について説明します。
 ms.assetid: DA9A6A43-F09D-4512-A2AB-9B6132431007
@@ -7,7 +8,7 @@ ms.assetid: DA9A6A43-F09D-4512-A2AB-9B6132431007
 # アプリのアクティブ化の処理
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
 
 
 **重要な API**
@@ -26,7 +27,7 @@ ms.assetid: DA9A6A43-F09D-4512-A2AB-9B6132431007
 
 アプリのクラスを定義します。
 
-```xaml
+```xml
 <Application xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
              x:Class="AppName.App" >
@@ -186,6 +187,6 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

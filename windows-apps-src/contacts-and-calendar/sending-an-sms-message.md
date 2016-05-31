@@ -1,8 +1,9 @@
 ---
+author: Xansky
 description: このトピックでは、SMS の作成ダイアログを起動して、ユーザーが SMS メッセージを送信できるようにする方法について説明します。 ダイアログを表示する前に、SMS の各フィールドにデータを設定することができます。 メッセージは、ユーザーが送信ボタンをタップするまで送信されません。
 title: SMS メッセージの送信
 ms.assetid: 4D7B509B-1CF0-4852-9691-E96D8352A4D6
-keywords: 連絡先、SMS、送信
+keywords: contacts, SMS, send
 ---
 
 # SMS メッセージの送信
@@ -14,12 +15,12 @@ keywords: 連絡先、SMS、送信
 
 ## SMS の作成ダイアログの起動
 
-新しい [**ChatMessage**](https://msdn.microsoft.com/library/windows/apps/Dn642160) オブジェクトを作成し、メールの作成ダイアログに事前に入力するデータを設定します。 ダイアログを表示するには、[**ShowComposeSmsMessageAsync**](https://msdn.microsoft.com/library/windows/apps/Dn642160manager-showcomposesmsmessageasync) を呼び出します。
+新しい [**ChatMessage**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.chat.chatmessage) オブジェクトを作成し、メールの作成ダイアログに事前に入力するデータを設定します。 ダイアログを表示するには、[**ShowComposeSmsMessageAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.chat.chatmessagemanager.showcomposesmsmessageasync) を呼び出します。
 
 ```cs
-private async void ComposeSms(Windows.ApplicationModel.Contacts.Contact recipient, 
-    string messageBody, 
-    StorageFile attachmentFile, 
+private async void ComposeSms(Windows.ApplicationModel.Contacts.Contact recipient,
+    string messageBody,
+    StorageFile attachmentFile,
     string mimeType)
 {
     var chatMessage = new Windows.ApplicationModel.Chat.ChatMessage();
@@ -36,7 +37,7 @@ private async void ComposeSms(Windows.ApplicationModel.Contacts.Contact recipien
         chatMessage.Attachments.Add(attachment);
     }
 
-    var phone = recipient.Phones.FirstOrDefault&lt;Windows.ApplicationModel.Contacts.ContactPhone&gt;();
+    var phone = recipient.Phones.FirstOrDefault<Windows.ApplicationModel.Contacts.ContactPhone>();
     if (phone != null)
     {
         chatMessage.Recipients.Add(phone.Number);
@@ -54,8 +55,6 @@ private async void ComposeSms(Windows.ApplicationModel.Contacts.Contact recipien
 * [連絡先の選択](selecting-contacts.md)
 
 
-
-
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

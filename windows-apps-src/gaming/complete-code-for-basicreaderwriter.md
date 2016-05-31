@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: BasicReaderWriter のコード一式
 description: バイナリ データ ファイル全般の読み書きを行うクラスとメソッドのコード一式です。
 ms.assetid: af968edd-df5c-b8e6-479e-bfa9689380fc
@@ -7,7 +8,7 @@ ms.assetid: af968edd-df5c-b8e6-479e-bfa9689380fc
 # BasicReaderWriter のコード一式
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 バイナリ データ ファイル全般の読み書きを行うクラスとメソッドのコード一式です。 [BasicLoader](complete-code-for-basicloader.md) クラスで使われます。
 
@@ -25,19 +26,14 @@ ms.assetid: af968edd-df5c-b8e6-479e-bfa9689380fc
 
 ## テクノロジ
 
-|                       |                 |
-|-----------------------|-----------------|
-| プログラミング言語 | C++             |
-| プログラミング モデル    | Windows ランタイム |
+**プログラミング言語** - C++  
+**プログラミング モデル** - Windows ランタイム
 
 
-## 必要条件
+## 要件
 
-| サポートされている最小のクライアント | Windows 10                            |
-|--------------------------|---------------------------------------|
-| サポートされている最小のサーバー | Windows Server 2016 Technical Preview |
-| 最低限必要な SDK     |                                       |
-
+ **サポートされている最小のクライアント** - Windows 10       
+ **サポートされている最小のサーバー** - Windows Server 2016 Technical Preview 
 
 ## コードの表示 (C++)
 
@@ -265,6 +261,6 @@ task<void> BasicReaderWriter::WriteDataAsync(
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: DelfCo
 Description: RTL (右から左) のテキストの方向を含め、複数の言語のレイアウトやフォントをサポートするアプリを開発します。
 title: レイアウトやフォントの調整と RTL のサポート
 ms.assetid: F2522B07-017D-40F1-B3C8-C4D0DFD03AC3
@@ -9,7 +10,7 @@ template: detail.hbs
 # レイアウトやフォントの調整と RTL のサポート
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
+
 
 
 RTL (右から左) のテキストの方向を含め、複数の言語のレイアウトやフォントをサポートするアプリを開発します。
@@ -25,7 +26,7 @@ RTL (右から左) のテキストの方向を含め、複数の言語のレイ�
 
 要素に **Uid** を指定します。
 
-```XAML
+```XML
 <TextBlock x:Uid="Block1">
 ```
 
@@ -38,7 +39,7 @@ C++、C\#、または Visual Basic を使った Windows ストア アプリの�
 
 アプリのメイン ページには **Uid** を指定します。
 
-```XAML
+```XML
 <Page x:Uid="MainPage">
 ```
 
@@ -77,7 +78,7 @@ CSS での垂直テキスト レイアウトのサポートには、[**writing-m
 
 RTL に対応するために左右反転が必要な画像がアプリに含まれる (つまり、同じ画像を反転できる) 場合は、次のように [**FlowDirection**](https://msdn.microsoft.com/library/windows/apps/br208716) プロパティを適用できます。
 
-```XAML
+```XML
 <!-- en-US\localized.xaml -->
 <Image ... FlowDirection="LeftToRight" />
 
@@ -93,7 +94,7 @@ RTL に対応するため左右反転が必要な画像がアプリに含まれ�
 .mirrorable { transform: scaleX(-1); }
 ```
 
-**XAML と HTML の両方:** 画像を正しく反転させるためにアプリで別の画像が必要な場合は、[layoutdir 修飾子](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324) を指定してリソース管理システムを使うことができます。 [アプリケーション言語](manage-language-and-region.md) が RTL 言語に設定されている場合、システムは file.layoutdir-rtl.png という名前が付いた画像を選びます。 画像の一部を反転させ、他の部分は反転させないという場合には、この方法が必要になることもあります。
+**XAML と HTML の両方:** 画像を正しく反転させるためにアプリで別の画像が必要な場合は、[layoutdir 修飾子](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)を指定してリソース管理システムを使うことができます。 [アプリケーション言語](manage-language-and-region.md) が RTL 言語に設定されている場合、システムは file.layoutdir-rtl.png という名前が付いた画像を選びます。 画像の一部を反転させ、他の部分は反転させないという場合には、この方法が必要になることもあります。
 
 ## <span id="Fonts"></span><span id="fonts"></span><span id="FONTS"></span>フォント
 
@@ -115,6 +116,6 @@ JavaScript を使った Windows ストア アプリで ui-light.css または ui
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: DelfCo
 Description: 'このトピックでは、エンタープライズ データ保護 (EDP) のシナリオでネットワーク接続を作成する前に、保護されたスレッド コンテキストを作成する方法を説明します。'
 MS-HAID: 'dev\_networking.tagging\_network\_connections\_with\_edp\_identity'
 MSHAttr: 'PreferredLib:/library/windows/apps'
@@ -36,7 +37,9 @@ __注__ Windows 10 バージョン 1511 (ビルド 10586) またはそれ以前�
 
 このシナリオでは、先進的なメール アプリで、企業と個人の両方のメールボックスが混在している一連のメールボックスを同期しています。 このアプリは、ユーザーの ID を [**ProtectionPolicyManager.CreateCurrentThreadNetworkContext**](https://msdn.microsoft.com/library/windows/apps/dn706025) の呼び出しに渡して、保護されたスレッド コンテキストを作成します。 これにより、同じスレッドでそれ以降作成されるすべてのネットワーク接続にその ID のタグが付けられ、企業のポリシーでのアクセス制御されている企業ネットワークのリソースへのアクセスが許可されます。
 
-ここでの "企業" は、ユーザー ID が属している企業を指します。 [**CreateCurrentThreadNetworkContext**](https://msdn.microsoft.com/library/windows/apps/dn706025) は、ポリシーの実施とは関係なく、[**ThreadNetworkContext**](https://msdn.microsoft.com/library/windows/apps/dn706029) オブジェクトを返します。 一般的に、アプリで混在リソースを処理することが予想される場合、すべての ID について **CreateCurrentThreadNetworkContext** を呼び出すことができます。 ネットワーク リソースを取得した後、アプリは **ThreadNetworkContext** の **Dispose** を呼び出して、現在のスレッドからすべての ID タグを消去します。 コンテキスト オブジェクトを破棄するためのパターンは、プログラミング言語によって異なります。
+ここでの "企業" は、ユーザー ID が属している企業を指します。 [
+              **CreateCurrentThreadNetworkContext**
+            ](https://msdn.microsoft.com/library/windows/apps/dn706025) は、ポリシーの実施とは関係なく、[**ThreadNetworkContext**](https://msdn.microsoft.com/library/windows/apps/dn706029) オブジェクトを返します。 一般的に、アプリで混在リソースを処理することが予想される場合、すべての ID について **CreateCurrentThreadNetworkContext** を呼び出すことができます。 ネットワーク リソースを取得した後、アプリは **ThreadNetworkContext** の **Dispose** を呼び出して、現在のスレッドからすべての ID タグを消去します。 コンテキスト オブジェクトを破棄するためのパターンは、プログラミング言語によって異なります。
 
 ID が不明な場合は、アプリで [**ProtectionPolicyManager.GetPrimaryManagedIdentityForNetworkEndpointAsync**](https://msdn.microsoft.com/library/windows/apps/dn706027) API を使って、リソースのネットワーク アドレスからエンタープライズ ポリシーで管理される ID を照会できます。
 
@@ -105,14 +108,14 @@ public static async void SyncMailbox(string identity)
 }
 ```
 
-**注**  この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
+**注:** この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
 
 
 ## 関連トピック
 
 
-[企業のデータ保護 (EDP) のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)
+[エンタープライズ データ保護 (EDP) のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)
 
 [**Windows.Security.EnterpriseData 名前空間**](https://msdn.microsoft.com/library/windows/apps/dn279153)
 
@@ -124,6 +127,6 @@ public static async void SyncMailbox(string identity)
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

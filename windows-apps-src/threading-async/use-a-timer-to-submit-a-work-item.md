@@ -1,4 +1,5 @@
 ---
+author: TylerMSFT
 ms.assetid: AAE467F9-B3C7-4366-99A2-8A880E5692BE
 title: タイマーを使った作業項目の送信
 description: タイマーが終了した後に実行される作業項目の作成方法を説明します。
@@ -19,7 +20,7 @@ description: タイマーが終了した後に実行される作業項目の作�
 [
             **CreateTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967921) メソッドを使って、作業項目に対応するタイマーを作成します。 作業を実行するラムダを指定し、*delay* パラメーターを使って、利用可能なスレッドに作業項目を割り当てることができるようになるまでスレッド プールが待機する時間を指定します。 delay パラメーターは [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/BR225996) 構造体を使って指定します。
 
-> **注**  [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) を使って UI にアクセスしたり、作業項目の進捗状況を表示したりすることができます。
+> **注:** [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) を使って UI にアクセスしたり、作業項目の進捗状況を表示したりすることができます。
 
 次の例では、3 分間実行される作業項目を作成します。
 
@@ -70,7 +71,7 @@ description: タイマーが終了した後に実行される作業項目の作�
 >                     // UI components can be accessed within this scope.
 >                     // 
 > 
->                     ExampleUIUpdateMethod(&quot;Timer completed.&quot;);
+>                     ExampleUIUpdateMethod("Timer completed.");
 > 
 >                 }));
 > 
@@ -149,7 +150,7 @@ description: タイマーが終了した後に実行される作業項目の作�
 > completed = false;
 > 
 > ThreadPoolTimer ^ DelayTimer = ThreadPoolTimer::CreateTimer(
->         ref new TimerElapsedHandler([&amp;](ThreadPoolTimer ^ source)
+>         ref new TimerElapsedHandler([&](ThreadPoolTimer ^ source)
 >         {
 >             // 
 >             // TODO: Work
@@ -159,7 +160,7 @@ description: タイマーが終了した後に実行される作業項目の作�
 >             // Update the UI thread by using the UI core dispatcher.
 >             // 
 >             Dispatcher->RunAsync(CoreDispatcherPriority::High,
->                 ref new DispatchedHandler([&amp;]()
+>                 ref new DispatchedHandler([&]()
 >                 {
 >                     // 
 >                     // UI components can be accessed within this scope.
@@ -171,14 +172,14 @@ description: タイマーが終了した後に実行される作業項目の作�
 > 
 >         }),
 >         delay,
->         ref new TimerDestroyedHandler([&amp;](ThreadPoolTimer ^ source)
+>         ref new TimerDestroyedHandler([&](ThreadPoolTimer ^ source)
 >         {
 >             // 
 >             // TODO: Handle work cancellation/completion.
 >             // 
 > 
 >             Dispatcher->RunAsync(CoreDispatcherPriority::High,
->                 ref new DispatchedHandler([&amp;]()
+>                 ref new DispatchedHandler([&]()
 >                 {
 >                     // 
 >                     // Update the UI thread by using the UI core dispatcher.
@@ -228,6 +229,6 @@ description: タイマーが終了した後に実行される作業項目の作�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

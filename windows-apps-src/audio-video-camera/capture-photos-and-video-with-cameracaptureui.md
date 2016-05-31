@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: CC0D6E9B-128D-488B-912F-318F5EE2B8D3
 description: この記事では、CameraCaptureUI クラスを使用して、Windows に組み込まれているカメラ UI で写真またはビデオをキャプチャする方法を説明します。
 title: CameraCaptureUI を使った写真とビデオのキャプチャ
@@ -90,7 +91,7 @@ XAML ページでソフトウェア ビットマップを使用するには、[*
 
 ビデオ クリップのキャプチャを続行して、コンポジションに追加することもできます。 メディア コンポジションについて詳しくは、「[メディア コンポジションと編集](media-compositions-and-editing.md)」をご覧ください。
 
-**注**  
+**注:**  
 この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください。
 
  
@@ -108,6 +109,6 @@ XAML ページでソフトウェア ビットマップを使用するには、[*
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

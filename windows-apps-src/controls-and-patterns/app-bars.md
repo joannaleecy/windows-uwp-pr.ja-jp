@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 label: App bars/command bars
 template: detail.hbs
 ---
@@ -46,7 +47,9 @@ Windows Phone の Outlook カレンダーのコマンド バーです。
 ![閉じたコマンド バー](images/commandbar_anatomy_open.png)
 
 コマンド バーは、4 つの主な領域に分かれています。
-- [その他] (\[•••\]) ボタンはバーの右側に表示されます。 [その他] (\[•••\]) ボタンを押すと 2 つの効果があり、プライマリ コマンド ボタンのラベルが表示され、セカンダリ コマンドが存在する場合はオーバーフロー メニューが開きます。 
+- [その他] (\[•••\]) ボタンはバーの右側に表示されます。 [その他] (\[•••\]) ボタンを押すと 2 つの効果があり、プライマリ コマンド ボタンのラベルが表示され、セカンダリ コマンドが存在する場合はオーバーフロー メニューが開きます。 このボタンは、セカンダリ コマンドも非表示のラベルもない場合には表示されません。 [
+              `OverflowButtonVisibility`
+            ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.overflowbuttonvisibility.aspx) プロパティを使うと、この自動的に非表示になる既定の動作を変更することができます。
 - コンテンツ領域はバーの左側に配置されます。 `Content` プロパティが入力されている場合に表示されます。
 - 基本コマンド領域はバーの右側の [その他] (\[•••\]) ボタンの横に配置されます。 `PrimaryCommands` プロパティが入力されている場合に表示されます。  
 - オーバーフロー メニューは、コマンド バーが開き、`SecondaryCommands` プロパティが入力されている場合にのみ表示されます。 
@@ -98,6 +101,17 @@ PrimaryCommands と SecondaryCommands はどちらも、[**AppBarButton**](https
 アプリ バーのボタン コントロールは、アイコンとアイコンに関連付けられたラベルによって特徴付けられます。 標準とコンパクトの 2 つのサイズがあります。 既定では、テキスト ラベルが表示されます。 [
             **IsCompact**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.iscompact.aspx) プロパティを **true** に設定すると、テキスト ラベルが非表示になります。 CommandBar コントロールで使う場合、コマンド バーの開閉に応じてコマンド バーがボタンの IsCompact プロパティを自動的に上書きします。
 
+CommandBar の新しいプロパティである [`DefaultLabelPosition`](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.defaultlabelposition.aspx) を使うと、アプリ バー ボタンのラベルをアイコンの右に配置することができます。 個々のアプリ バー ボタンのラベルの位置を移動することはできません。この操作は、コマンド バー全体で行う必要があります。
+```xaml
+<CommandBar DefaultLabelPosition="Right">
+    <AppBarToggleButton Icon="Shuffle" Label="Shuffle"/>
+    <AppBarToggleButton Icon="RepeatAll" Label="Repeat"/>
+</CommandBar>
+```
+
+上のコード スニペットがアプリで描画されると、次のようになります。
+
+![ラベルが右に配置されたコマンド バー](images/app-bar-labels-on-right.png)
 
 アプリ バーのボタンをオーバーフロー メニュー (SecondaryCommands) に配置すると、テキストとしてのみ表示されます。 以下に、同じアプリ バーのトグル ボタンがプライマリ コマンドとしてアクション領域に表示された状態 (上) と、セカンダリ コマンドとしてオーバーフロー領域に表示された状態 (下) を示します。
 
@@ -126,8 +140,6 @@ XAML 要素をコンテンツ領域に追加するには、**Content** プロパ
 
 [
             **ClosedDisplayMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closeddisplaymode.aspx) が **Compact** の場合、コンテンツがコンパクトなサイズのコマンド バーよりも大きいと、コンテンツがクリップされる可能性があります。 UI の一部がクリップされないようにするには、コンテンツ領域で UI の各部分を表示または非表示にするように [**Opening**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.opening.aspx) と [**Closed**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closed.aspx) の各イベントを処理する必要があります。 詳しくは、「[開いた状態と閉じた状態](#open-and-closed-states)」をご覧ください。
-
-
 
 ## 開いた状態と閉じた状態
 
@@ -199,7 +211,8 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 }
 ```
 
->**注**&nbsp;&nbsp;この例では編集コマンドの実装については取り上げません。 詳しくは、「[RichEditBox](rich-edit-box.md)」をご覧ください。
+>**注**
+            &nbsp;&nbsp;この例では編集コマンドの実装については取り上げません。 詳しくは、「[RichEditBox](rich-edit-box.md)」をご覧ください。
 
 Minimal モードと Hidden モードが役に立つ場合もありますが、すべてのアクションを非表示にするとユーザーが混乱する可能性があることに注意してください。
 
@@ -219,7 +232,7 @@ ClosedDisplayMode を変更してユーザーにヒントを表示すると、�
 
 -   小型の携帯デバイスでは、コマンド バーを画面の下部に配置して、操作しやすくことをお勧めします。
 -   大きな画面を持つデバイスでは、コマンド バーを 1 つだけ配置する場合、ウィンドウの上辺近くに配置することをお勧めします。
-物理的な画面サイズを調べるには、[**DiagonalSizeInInches**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.display.displayinformation.diagonalsizeininches.aspx) API を使います。
+物理的な画面サイズを調べるには、[**DiagonalSizeInInches**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.display.displayinformation.diagonalsizeininches.aspx) API を使います。
 
 コマンド バーは、単一ビュー画面 (左側の例) と複数ビュー画面 (右側の例) の次の画面領域に配置できます。 インラインのコマンド バーは、アクション領域の任意の場所に配置できます。
 
@@ -241,7 +254,7 @@ ClosedDisplayMode を変更してユーザーにヒントを表示すると、�
 
 ### コマンド バーのポップアップ
 
-コマンドは論理的にグループ化することを検討します。たとえば、[返信]、[全員に返信]、[転送] を [応答] メニューに配置します。 通常、アプリ バー ボタンは単一のコマンドをアクティブ化しますが、アプリ バー ボタンを使用して、カスタム コンテンツを持つ [**MenuFlyout**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.menuflyout.aspx) または [**Flyout**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.flyout.aspx) を表示できます。
+コマンドは論理的にグループ化することを検討します。たとえば、[返信]、[全員に返信]、[転送] を [応答] メニューに配置します。 通常、アプリ バー ボタンは単一のコマンドをアクティブ化しますが、アプリ バー ボタンを使用して、カスタム コンテンツを持つ [**MenuFlyout**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.menuflyout.aspx) または [**Flyout**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flyout.aspx) を表示できます。
 
 ![コマンド バーでのポップアップの例](images/AppbarGuidelines_Flyouts.png)
 
@@ -261,16 +274,23 @@ ClosedDisplayMode を変更してユーザーにヒントを表示すると、�
 -   大きな画面では、アプリ バーは、ウィンドウの上端近くに配置して、気付きやすくします。
 -   ブレークポイントをターゲットにすると、ウィンドウのサイズの変化に応じてアクションをメニューの内外に移動できます。
 -   画面の対角線をターゲットにすると、デバイスの画面サイズに応じてアプリ バーの配置を変更できます。
+-   ラベルを見やすくするためにアプリ バーのボタン アイコンの右に移動することを検討します。 ラベルを下に配置すると、コマンド バーを開かないとラベルが見えませんが、ラベルを右に配置すると、コマンド バーが閉じていてもラベルが見えます。 この最適化は、比較的大きなウィンドウに適しています。
 
 ## 関連記事
 
 **デザイナー向け**
-[UWP アプリのコマンド設計の基本](https://msdn.microsoft.com/library/windows/apps/dn958433)
+            
+          
+            [UWP アプリのコマンド設計の基本](https://msdn.microsoft.com/library/windows/apps/dn958433)
 
 **開発者向け (XAML)**
-[**CommandBar**](https://msdn.microsoft.com/library/windows/apps/dn279427)
+            
+          
+            [
+              **CommandBar**
+            ](https://msdn.microsoft.com/library/windows/apps/dn279427)
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

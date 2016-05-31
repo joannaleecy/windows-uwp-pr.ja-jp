@@ -50,7 +50,7 @@ Clipboard.SetContent(dataPackage);
 ```
 ## 貼り付け
 
-クリップボードの内容を取得するには、静的な **Clipboard.GetContent**[GetContent] メソッドを呼び出します。 このメソッドは、コンテンツを含む [**DataPackageView**][DataPackageView] を返します。 このオブジェクトは、コンテンツが読み取り専用であることを除いて [**DataPackage**][DataPackage] オブジェクトとほぼ同じです。 このオブジェクトがあれば、[**AvailableFormats**][AvailableFormats] または [**Contains**][Contains] のメソッドを使って使用可能な形式を特定できます。 その後、対応する **DataPackageView** メソッドを呼び出してデータを取得できます。
+クリップボードの内容を取得するには、静的な [**Clipboard.GetContent**][GetContent] メソッドを呼び出します。 このメソッドは、コンテンツを含む [**DataPackageView**][DataPackageView] を返します。 このオブジェクトは、コンテンツが読み取り専用であることを除いて [**DataPackage**][DataPackage] オブジェクトとほぼ同じです。 このオブジェクトがあれば、[**AvailableFormats**][AvailableFormats] または [**Contains**][Contains] のメソッドを使って使用可能な形式を特定できます。 その後、対応する **DataPackageView** メソッドを呼び出してデータを取得できます。
 
 ```cs
 DataPackageView dataPackageView = Clipboard.GetContent();
@@ -98,6 +98,6 @@ Clipboard.ContentChanged += (s, e) =>
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

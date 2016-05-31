@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 description: Visual Studio の操作方法
 title: Visual Studio の操作方法
 ms.assetid: 7FBB50A2-6D22-4082-B333-5153DADDDE9A
@@ -86,7 +87,7 @@ Visual Studio では、これは常に実行されるため、コントロール
 1.  MainPage.xaml ファイルのタブをタップします。
 2.  **[デザイン]** ウィンドウで、**TextBlock** コントロールをタップします。
 3.  **[プロパティ]** ウィンドウで、レンチ ボタンをタップしてプロパティを表示します。
-4.  **[名前]** ボックスで、"&lt;名前なし&gt;" を "myLabel" に変更します。
+4.  **[名前]** ボックスで、"&lt;No Name&gt;" を "myLabel" に変更します。
 
 ![Visual Studio の [ラベルのプロパティ] ウィンドウ](images/ios-to-uwp/vs-label-properties.png)
 
@@ -120,6 +121,6 @@ private void myButton_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

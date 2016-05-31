@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: 40B97E0C-EB1B-40C2-A022-1AB95DFB085E
 description: この記事では、ユニバーサル Windows アプリからリモート デバイスにメディアをキャストする方法について説明します。
 title: メディアのキャスト
@@ -6,7 +7,7 @@ title: メディアのキャスト
 
 # メディアのキャスト
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
 この記事では、ユニバーサル Windows アプリからリモート デバイスにメディアをキャストする方法について説明します。
@@ -155,6 +156,6 @@ StateChanged ハンドラーで実行する操作は、キャスト接続の新�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

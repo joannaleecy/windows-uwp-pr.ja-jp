@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: Windows ランタイム 8.x から UWP へのケース スタディ: Bookstore1
 ms.assetid: e4582717-afb5-4cde-86bb-31fb1c5fc8f3
 description: このトピックでは、シンプルなユニバーサル 8.1 アプリを Windows 10 ユニバーサル Windows プラットフォーム (UWP) アプリへ移植するケース スタディについて説明します。
@@ -123,6 +124,6 @@ Bookstore1\_81 アプリでは、Windows 8.1 と Windows Phone 8.1 のオペレ�
 次のケース スタディは「[Bookstore2](w8x-to-uwp-case-study-bookstore2.md)」です。ここでは、グループ化されたデータへのアクセスと表示について説明します。
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

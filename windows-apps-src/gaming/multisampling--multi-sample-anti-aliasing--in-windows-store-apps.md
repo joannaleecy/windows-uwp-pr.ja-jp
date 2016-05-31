@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: ユニバーサル Windows プラットフォーム (UWP) アプリのマルチサンプリング
 description: Direct3D を使って構築されたユニバーサル Windows プラットフォーム (UWP) アプリでマルチサンプリングを使う方法について説明します。
 ms.assetid: 1cd482b8-32ff-1eb0-4c91-83eb52f08484
@@ -205,6 +206,6 @@ Direct3D 機能レベルは、特定の最小サンプル数機能のサポー�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

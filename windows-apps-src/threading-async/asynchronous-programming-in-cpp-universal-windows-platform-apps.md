@@ -1,4 +1,5 @@
 ---
+author: TylerMSFT
 ms.assetid: 34C00F9F-2196-46A3-A32F-0067AB48291B
 description: ここでは、ppltasks.h の concurrency 名前空間で定義された task クラスを使って Visual C++ コンポーネント拡張機能 (C++/CX) の非同期メソッドを実装する際に推奨される方法について説明します。
 title: C++ での非同期プログラミング
@@ -14,7 +15,7 @@ title: C++ での非同期プログラミング
 
 ユニバーサル Windows プラットフォーム (UWP) には、非同期メソッドを呼び出すためのモデルが明確に定義されており、非同期メソッドを使う必要がある型があります。 UWP の非同期モデルについて詳しくない場合は、この記事の前に「[非同期プログラミング][AsyncProgramming]」をご覧ください。
 
-非同期 UWP API は C++ で直接使うこともできますが、[**task クラス**][task-class] とそれに関連する型と関数を使うことをお勧めします。これは [**concurrency**][concurrencyNamespace] 名前空間のクラスで、`<ppltasks.h>` で定義されています。 **concurrency::task** は汎用型のクラスですが、**/ZW** コンパイラ スイッチ (ユニバーサル Windows プラットフォーム (UWP) アプリとそのコンポーネントには必須) を使うと、task クラスで UWP の非同期型をカプセル化して次の処理を簡単に行うことができます。
+非同期 UWP API は C++ で直接使うこともできますが、[**task クラス**][task-class]とそれに関連する型と関数を使うことをお勧めします。これは [**concurrency**][concurrencyNamespace] 名前空間のクラスで、`<ppltasks.h>` で定義されています。 **concurrency::task** は汎用型のクラスですが、**/ZW** コンパイラ スイッチ (ユニバーサル Windows プラットフォーム (UWP) アプリとそのコンポーネントには必須) を使うと、task クラスで UWP の非同期型をカプセル化して次の処理を簡単に行うことができます。
 
 -   複数の非同期操作や同期操作を 1 つのチェーンで連結する
 
@@ -53,7 +54,7 @@ void App::TestAsync()
     // Recommended:
     auto deviceEnumTask = create_task(deviceOp);
 
-    // Call the task’s .then member function, and provide
+    // Call the task's .then member function, and provide
     // the lambda to be invoked when the async operation completes.
     deviceEnumTask.then( [this] (DeviceInformationCollection^ devices ) 
     {       
@@ -67,15 +68,18 @@ void App::TestAsync()
 }
 ```
 
-[**task::then**][taskThen] 関数で作成されて返されるタスクのことを*継続*と呼びます。 ユーザーが指定するラムダの入力引数は (この例の場合)、タスク操作の完了時に生成される結果です。 この値は、**IAsyncOperation** インターフェイスを直接使う場合に [**IAsyncOperation::GetResults**](https://msdn.microsoft.com/library/windows/apps/br206600) を呼び出して取得する値と同じになります。
+[
+            **task::then**][taskThen] 関数で作成されて返されるタスクのことを*継続*と呼びます。 ユーザーが指定するラムダの入力引数は (この例の場合)、タスク操作の完了時に生成される結果です。 この値は、**IAsyncOperation** インターフェイスを直接使う場合に [**IAsyncOperation::GetResults**](https://msdn.microsoft.com/library/windows/apps/br206600) を呼び出して取得する値と同じになります。
 
-[**task::then**][taskThen] メソッドからは直ちに制御が返され、そのデリゲートは非同期作業が正常に完了するまで実行されません。 この例では、非同期操作で例外がスローされるか、取り消し要求によって非同期操作が取り消された状態で終わると、継続は実行されません。 前のタスクが取り消されるか失敗しても実行される継続を記述する方法については後で説明します。
+[
+            **task::then**][taskThen] メソッドからは直ちに制御が返され、そのデリゲートは非同期作業が正常に完了するまで実行されません。 この例では、非同期操作で例外がスローされるか、取り消し要求によって非同期操作が取り消された状態で終わると、継続は実行されません。 前のタスクが取り消されるか失敗しても実行される継続を記述する方法については後で説明します。
 
 タスクの変数はローカル スタックで宣言しますが、その有効期間は、操作が完了する前にメソッドから制御が返されても、すべての操作が完了してすべての参照がスコープ外になるまで削除されないように管理されます。
 
 ## タスクのチェーンの作成
 
-非同期プログラミングでは、前のタスクが完了した場合にのみ継続が実行されるように、操作のシーケンス (*タスク チェーン*) を定義するのが一般的です。 場合によっては、前のタスク (*先行タスク*) で生成された値を継続が入力として受け取ることもあります。 [**task::then**][taskThen] メソッドを使うと、直観的な方法で簡単にタスク チェーンを作成できます。このメソッドは、**task<T>** (**T** はラムダ関数の戻り値の型) を返します。 複数の継続を含めて 1 つのタスク チェーンを構成することができます。`myTask.then(…).then(…).then(…);`
+非同期プログラミングでは、前のタスクが完了した場合にのみ継続が実行されるように、操作のシーケンス (*タスク チェーン*) を定義するのが一般的です。 場合によっては、前のタスク (*先行タスク*) で生成された値を継続が入力として受け取ることもあります。 [
+            **task::then**][taskThen] メソッドを使うと、直観的な方法で簡単にタスク チェーンを作成できます。このメソッドは、**task<T>** (**T** はラムダ関数の戻り値の型) を返します。 複数の継続を含めて 1 つのタスク チェーンを構成することができます。 `myTask.then(…).then(…).then(…);`
 
 タスク チェーンは、継続で新しい非同期操作を作成する場合に特に便利です。このようなタスクのことを非同期タスクと呼びます。 次の例は、2 つの継続を含むタスク チェーンを示しています。 既存のファイルへのハンドルを取得する最初のタスクの操作が完了すると、1 つ目の継続でそのファイルを削除する新しい非同期操作が始まります。 その操作が完了すると、2 つ目の継続が実行され、確認メッセージが出力されます。
 
@@ -153,7 +157,7 @@ auto getFileTask2 = create_task(documentsFolder->GetFileAsync(fileName),
 
 先行タスクの取り消しや例外のスローが行われても継続を実行する場合は、継続のラムダ関数への入力を **task<TResult>** または **task<void>** (先行タスクのラムダが [**IAsyncAction^**][IAsyncAction] を返す場合) として指定して、継続をタスクベースにします。
 
-タスク チェーンでエラーや取り消しを処理するために、すべての継続をタスクベースにしたり、スローする可能性があるすべての操作を `try…catch` ブロック内に含めたりする必要はありません。 代わりに、タスクベースの継続をチェーンの最後に追加し、その継続ですべてのエラーを処理します。 例外 ([**task\_canceled**][taskCanceled] 例外も含む) はタスク チェーンを通じて伝達され、値ベースの継続はバイパスされるため、エラー処理を行うタスクベースの継続で例外を処理できます。 エラー処理を行うタスクベースの継続を使うように前の例を書き換えると次のようになります。
+タスク チェーンでエラーや取り消しを処理するために、すべての継続をタスクベースにしたり、スローする可能性があるすべての操作を `try…catch` ブロック内に含めたりする必要はありません。 代わりに、タスクベースの継続をチェーンの最後に追加し、その継続ですべてのエラーを処理します。 例外 ([**task\_canceled**][taskCanceled] 例外も含む) はタスク チェーンを通じて伝達され、値ベースの継続はバイパスされるため、エラー処理を行うタスクベースの継続で例外を処理できます。 エラー処理を行うタスクベースの後続タスクを使うように前の例を書き換えると次のようになります。
 
 ``` cpp
 #include <ppltasks.h>
@@ -216,7 +220,8 @@ void App::SetFeedText()
 }
 ```
 
-[**IAsyncAction**][IAsyncAction] または [**IAsyncOperation**][IAsyncOperation] を返さないタスクは、アパートメントを認識しません。これらのタスクの継続は、既定では、利用可能な最初のバックグラウンド スレッドで実行されます。
+[
+            **IAsyncAction**][IAsyncAction] または [**IAsyncOperation**][IAsyncOperation] を返さないタスクは、アパートメントを認識しません。これらのタスクの継続は、既定では、利用可能な最初のバックグラウンド スレッドで実行されます。
 
 既定のスレッド コンテキストは、どちらの種類のタスクについても、[**task\_continuation\_context**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh749968.aspx) を受け取る [**task::then**][taskThen] のオーバーロードを使って上書きできます。 たとえば、状況によっては、アパートメントを認識するタスクの継続をバックグラウンド スレッドでスケジュールする方が適している場合もあります。 このような場合は、[**task\_continuation\_context::use\_arbitrary**][useArbitrary] を渡して、マルチスレッド アパートメント内の次に利用可能なスレッドでタスクの処理をスケジュールできます。 これにより、継続の作業を UI スレッドで発生する他の作業と同期する必要がないため、継続のパフォーマンスが向上します。
 
@@ -235,7 +240,7 @@ void App::InitDataSource(Vector<Object^>^ feedList, vector<wstring> urls)
     {
         // Create the async operation. feedOp is an 
         // IAsyncOperationWithProgress<SyndicationFeed^, RetrievalProgress>^
-        // but we don’t handle progress in this example.
+        // but we don't handle progress in this example.
 
         auto feedUri = ref new Uri(ref new String(url.c_str()));
         auto feedOp = client->RetrieveFeedAsync(feedUri);
@@ -316,6 +321,6 @@ void App::InitDataSource(Vector<Object^>^ feedList, vector<wstring> urls)
 [useArbitrary]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750036.aspx> "UseArbitrary"
 
 
-<!--HONumber=Mar16_HO2-->
+<!--HONumber=May16_HO2-->
 
 

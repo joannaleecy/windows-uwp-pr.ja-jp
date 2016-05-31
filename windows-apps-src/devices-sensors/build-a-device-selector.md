@@ -1,11 +1,12 @@
 ---
+author: DBirtolo
 ms.assetid: D06AA3F5-CED6-446E-94E8-713D98B13CAA
 title: デバイス セレクターのビルド
 description: デバイス セレクターを作成すると、デバイスを列挙するときに、検索するデバイスを絞り込むことができるようになります。
 ---
 # デバイス セレクターのビルド
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\ ]
 
 
 ** 重要な API **
@@ -63,32 +64,41 @@ description: デバイス セレクターを作成すると、デバイスを列
 
 ここで示している例では、AQS 構文を使って、列挙するデバイスを制限する方法を説明しています。 以下のフィルター文字列はすべて、[**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) とペアリングされており、完全なフィルターを作成できます。 どの種類も指定しない場合、既定の種類は **DeviceInterface** になります。
 
-このフィルターを **DeviceInterface** の [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) とペアリングすると、オーディオ キャプチャ インターフェイス クラスを含むオブジェクトと、現在有効なオブジェクトがすべて列挙されます。 **=** は **COP\_EQUALS** に変換されます。
+このフィルターを **DeviceInterface** の [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) とペアリングすると、オーディオ キャプチャ インターフェイス クラスを含むオブジェクトと、現在有効なオブジェクトがすべて列挙されます。 **
+              =
+            ** は **COP\_EQUALS** に変換されます。
 
 ``` syntax
 System.Devices.InterfaceClassGuid:="{2eef81be-33fa-4800-9670-1cd474972c3f}" AND 
 System.Devices.InterfaceEnabled:=System.StructuredQueryType.Boolean#True
 ```
 
-このフィルターを **Device** の [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) とペアリングすると、GenCdRom のハードウェア ID を 1 つ以上持つオブジェクトがすべて列挙されます。 **~~** は **COP\_VALUE\_CONTAINS** に変換されます。
+このフィルターを **Device** の [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) とペアリングすると、GenCdRom のハードウェア ID を 1 つ以上持つオブジェクトがすべて列挙されます。 **
+              ~~
+            ** は **COP\_VALUE\_CONTAINS** に変換されます。
 
 ``` syntax
 System.Devices.HardwareIds:~~"GenCdRom"
 ```
 
-このフィルターを **DeviceContainer** の [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) とペアリングすると、部分文字列として Microsoft を含むモデル名を持つオブジェクトがすべて列挙されます。 **~~** は **COP\_VALUE\_CONTAINS** に変換されます。
+このフィルターを **DeviceContainer** の [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) とペアリングすると、部分文字列として Microsoft を含むモデル名を持つオブジェクトがすべて列挙されます。 **
+              ~~
+            ** は **COP\_VALUE\_CONTAINS** に変換されます。
 
 ``` syntax
 System.Devices.ModelName:~~"Microsoft"
 ```
 
-このフィルターを **DeviceInterface** の [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) とペアリングすると、部分文字列の Microsoft から始まる名前を持つオブジェクトがすべて列挙されます。 **~&lt;** は **COP\_STARTSWITH** に変換されます。
+このフィルターを **DeviceInterface** の [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) とペアリングすると、部分文字列の Microsoft から始まる名前を持つオブジェクトがすべて列挙されます。 **
+              ~&lt;
+            ** は **COP\_STARTSWITH** に変換されます。
 
 ``` syntax
 System.ItemNameDisplay:~<"Microsoft"
 ```
 
-このフィルターを **Device** の [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) とペアリングすると、**System.Devices.IpAddress** プロパティ セットを持つオブジェクトがすべて列挙されます。 **&lt;&gt;\[\]** は、**NULL** 値を組み合わせた **COP\_NOTEQUALS** に変換されます。
+このフィルターを **Device** の [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) とペアリングすると、**System.Devices.IpAddress** プロパティ セットを持つオブジェクトがすべて列挙されます。 **
+              &lt;&gt;\[\]** は、**NULL** 値を組み合わせた **COP\_NOTEQUALS** に変換されます。
 
 ``` syntax
 System.Devices.IpAddress:<>[]
@@ -109,6 +119,6 @@ System.Devices.IpAddress:=[]
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

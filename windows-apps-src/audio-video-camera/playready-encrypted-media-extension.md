@@ -1,4 +1,5 @@
 ---
+author: eliotcowley
 ms.assetid: 79C284CA-C53A-4C24-807E-6D4CE1A29BFA
 description: このセクションでは、以前の Windows 8.1 から、Windows 10 バージョンに加えられた変更をサポートするために、PlayReady Web アプリを変更する方法について説明します。
 title: PlayReady の Encrypted Media Extension
@@ -97,7 +98,7 @@ PlayReady ハードウェア DRM を使うには、JavaScript Web アプリは�
 
 次の例は、Web アプリでのセキュア ストップの使い方を示しています。
 
-``` syntax
+```JavaScript
 // JavaScript source code
 
 var g_prkey = null;
@@ -299,6 +300,6 @@ function foo() {
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

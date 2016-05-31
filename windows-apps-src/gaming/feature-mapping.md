@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: DirectX 11 API への DirectX 9 の機能のマッピング
 description: Direct3D 9 ゲームで使う機能が Direct3D 11 とユニバーサル Windows プラットフォーム (UWP) にどのように変換されるかについて説明します。
 ms.assetid: 3aa8a114-4e47-ae0a-9447-88ba324377b8
@@ -7,7 +8,7 @@ ms.assetid: 3aa8a114-4e47-ae0a-9447-88ba324377b8
 # DirectX 11 API への DirectX 9 の機能のマッピング
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 **要約**
 
@@ -129,7 +130,7 @@ Direct3D 9 から Direct3D 11 にコードの変換を行う場合は、次の�
 <td align="left"><p>[<strong>IDirect3DDevice9</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174336)</p></td>
 <td align="left"><p>[<strong>ID3D11Device2</strong>](https://msdn.microsoft.com/library/windows/desktop/dn280493)</p>
 <p>[<strong>ID3D11DeviceContext2</strong>](https://msdn.microsoft.com/library/windows/desktop/dn280498)</p>
-<p>グラフィックス パイプラインのステージについては、「[Graphics Pipeline](https://msdn.microsoft.com/library/windows/desktop/ff476882)」で説明されています。</p></td>
+<p>グラフィックス パイプラインのステージについては、「[グラフィックス パイプライン](https://msdn.microsoft.com/library/windows/desktop/ff476882)」で説明されています。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[<strong>IDirect3D9</strong>](https://msdn.microsoft.com/library/windows/desktop/bb174300)</p></td>
@@ -334,7 +335,7 @@ Direct3D 9 形式から DXGI 形式への変換を行う場合は、次の表を
 <td align="left"><p>D3DFMT_L8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8_UNORM</p>
 <div class="alert">
-<strong>注</strong>   Direct3D 9 の動作を得るには、シェーダーで .r スウィズルを使って赤を他の成分に複製します。
+<strong>注:</strong> Direct3D 9 の動作を得るには、シェーダーで .r スウィズルを使って赤を他の成分に複製します。
 </div>
 <div>
  
@@ -344,7 +345,7 @@ Direct3D 9 形式から DXGI 形式への変換を行う場合は、次の表を
 <td align="left"><p>D3DFMT_A8L8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8_UNORM</p>
 <div class="alert">
-<strong>注</strong>   Direct3D 9 の動作を得るには、シェーダーでスウィズル .rrrg を使ってアルファ成分に赤を複製し、緑を移動します。
+<strong>注:</strong> Direct3D 9 の動作を得るには、シェーダーでスウィズル .rrrg を使ってアルファ成分に赤を複製し、緑を移動します。
 </div>
 <div>
  
@@ -390,7 +391,7 @@ Direct3D 9 形式から DXGI 形式への変換を行う場合は、次の表を
 <td align="left"><p>D3DFMT_R8G8_B8G8</p></td>
 <td align="left"><p>DXGI_FORMAT_G8R8_G8B8_UNORM</p>
 <div class="alert">
-<strong>注</strong>   Direct3D 9 ではデータは 255.0f だけスケールアップされましたが、これはシェーダーで処理できます。
+<strong>注:</strong> Direct3D 9 ではデータは 255.0f だけスケールアップされましたが、これはシェーダーで処理できます。
 </div>
 <div>
  
@@ -404,7 +405,7 @@ Direct3D 9 形式から DXGI 形式への変換を行う場合は、次の表を
 <td align="left"><p>D3DFMT_G8R8_G8B8</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8_B8G8_UNORM</p>
 <div class="alert">
-<strong>注</strong>   Direct3D 9 ではデータは 255.0f だけスケールアップされましたが、これはシェーダーで処理できます。
+<strong>注:</strong> Direct3D 9 ではデータは 255.0f だけスケールアップされましたが、これはシェーダーで処理できます。
 </div>
 <div>
  
@@ -418,7 +419,7 @@ Direct3D 9 形式から DXGI 形式への変換を行う場合は、次の表を
 <td align="left"><p>D3DFMT_DXT2</p></td>
 <td align="left"><p>DXGI_FORMAT_BC1_UNORM と DXGI_FORMAT_BC1_UNORM_SRGB</p>
 <div class="alert">
-<strong>注</strong>   API とハードウェアの観点からは、DXT1 と DXT2 は同じです。 唯一の違いは、プリマルチプライ済みアルファが使われるかどうかです。これはアプリケーションで追跡でき、別の形式は必要ありません。
+<strong>注:</strong> API とハードウェアの観点からは、DXT1 と DXT2 は同じです。 唯一の違いは、プリマルチプライ済みアルファが使われるかどうかです。これはアプリケーションで追跡でき、別の形式は必要ありません。
 </div>
 <div>
  
@@ -432,7 +433,7 @@ Direct3D 9 形式から DXGI 形式への変換を行う場合は、次の表を
 <td align="left"><p>D3DFMT_DXT4</p></td>
 <td align="left"><p>DXGI_FORMAT_BC2_UNORM と DXGI_FORMAT_BC2_UNORM_SRGB</p>
 <div class="alert">
-<strong>注</strong>   API とハードウェアの観点からは、DXT3 と DXT4 は同じです。 唯一の違いは、プリマルチプライ済みアルファが使われるかどうかです。これはアプリケーションで追跡でき、別の形式は必要ありません。
+<strong>注:</strong> API とハードウェアの観点からは、DXT3 と DXT4 は同じです。 唯一の違いは、プリマルチプライ済みアルファが使われるかどうかです。これはアプリケーションで追跡でき、別の形式は必要ありません。
 </div>
 <div>
  
@@ -498,7 +499,7 @@ Direct3D 9 形式から DXGI 形式への変換を行う場合は、次の表を
 <td align="left"><p>D3DFMT_L16</p></td>
 <td align="left"><p>DXGI_FORMAT_R16_UNORM</p>
 <div class="alert">
-<strong>注</strong>   D3D9 の動作を得るには、シェーダーで .r スウィズルを使って赤を他の成分に複製します。
+<strong>注:</strong> D3D9 の動作を得るには、シェーダーで .r スウィズルを使って赤を他の成分に複製します。
 </div>
 <div>
  
@@ -572,7 +573,7 @@ Direct3D 9 形式から DXGI 形式への変換を行う場合は、次の表を
 <td align="left"><p>D3DDECLTYPE_UBYTE4</p></td>
 <td align="left"><p>DXGI_FORMAT_R8G8B8A8_UINT</p>
 <div class="alert">
-<strong>注</strong>   シェーダーは UINT 値を取得しますが、Direct3D 9 スタイルの integral float (0.0f、1.0f... 255.f) が必要な場合、UINT をシェーダーで float32 に変換できます。
+<strong>注:</strong> シェーダーは UINT 値を取得しますが、Direct3D 9 スタイルの integral float (0.0f、1.0f... 255.f) が必要な場合、UINT をシェーダーで float32 に変換できます。
 </div>
 <div>
  
@@ -582,7 +583,7 @@ Direct3D 9 形式から DXGI 形式への変換を行う場合は、次の表を
 <td align="left"><p>D3DDECLTYPE_SHORT2</p></td>
 <td align="left"><p>DXGI_FORMAT_R16G16_SINT</p>
 <div class="alert">
-<strong>注</strong>   シェーダーは SINT 値を取得しますが、Direct3D 9 スタイルの integral float が必要な場合、SINT をシェーダーで float32 に変換できます。
+<strong>注:</strong> シェーダーは SINT 値を取得しますが、Direct3D 9 スタイルの integral float が必要な場合、SINT をシェーダーで float32 に変換できます。
 </div>
 <div>
  
@@ -592,7 +593,7 @@ Direct3D 9 形式から DXGI 形式への変換を行う場合は、次の表を
 <td align="left"><p>D3DDECLTYPE_SHORT4</p></td>
 <td align="left"><p>DXGI_FORMAT_R16G16B16A16_SINT</p>
 <div class="alert">
-<strong>注</strong>   シェーダーは SINT 値を取得しますが、Direct3D 9 スタイルの integral float が必要な場合、SINT をシェーダーで float32 に変換できます。
+<strong>注:</strong> シェーダーは SINT 値を取得しますが、Direct3D 9 スタイルの integral float が必要な場合、SINT をシェーダーで float32 に変換できます。
 </div>
 <div>
  
@@ -638,7 +639,7 @@ Direct3D 9 形式から DXGI 形式への変換を行う場合は、次の表を
 <td align="left"><p>FourCC 'ATI1'</p></td>
 <td align="left"><p>DXGI_FORMAT_BC4_UNORM</p>
 <div class="alert">
-<strong>注</strong>   機能レベル 10.0 以降が必要です。
+<strong>注:</strong> 機能レベル 10.0 以降が必要です。
 </div>
 <div>
  
@@ -648,7 +649,7 @@ Direct3D 9 形式から DXGI 形式への変換を行う場合は、次の表を
 <td align="left"><p>FourCC 'ATI2'</p></td>
 <td align="left"><p>DXGI_FORMAT_BC5_UNORM</p>
 <div class="alert">
-<strong>注</strong>   機能レベル 10.0 以降が必要です。
+<strong>注:</strong> 機能レベル 10.0 以降が必要です。
 </div>
 <div>
  
@@ -668,6 +669,6 @@ Direct3D 9 形式から DXGI 形式への変換を行う場合は、次の表を
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,11 +1,11 @@
 ---
+author: Jwmsft
 Description: ビデオ、オーディオ、および画像を表示したり聴いたりするには、メディア プレーヤーを使います。
 title: メディア プレーヤー
 ms.assetid: 9AABB5DE-1D81-4791-AB47-7F058F64C491
 dev.assetid: AF2F2008-9B53-430C-BBC3-8888F631B0B0
 label: Media player
 template: detail.hbs
-author: mijacobs
 ---
 # メディア プレーヤー
 
@@ -274,7 +274,9 @@ private void MediaElement_CurrentStateChanged(object sender, RoutedEventArgs e)
     ```
 
 ### プログラムでメディア プレーヤーを制御する
-[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) には、オーディオやビデオの再生を制御するプロパティ、メソッド、イベントが多数用意されています。 プロパティ、メソッド、イベントの完全な一覧については、[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) のリファレンス ページをご覧ください。
+[
+              **MediaElement**
+            ](https://msdn.microsoft.com/library/windows/apps/br242926) には、オーディオやビデオの再生を制御するプロパティ、メソッド、イベントが多数用意されています。 プロパティ、メソッド、イベントの完全な一覧については、[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) のリファレンス ページをご覧ください。
     
 
 ### さまざまな言語のオーディオ トラックを選ぶ
@@ -348,13 +350,20 @@ private void FullWindow_Click(object sender, object e)
 [
             **Stretch**](https://msdn.microsoft.com/library/windows/apps/br227422) プロパティを使って、コンテナー内でのビデオ コンテンツのサイズを変更します。 この要素は、[**Stretch**](https://msdn.microsoft.com/library/windows/apps/br242968) の値に応じてビデオのサイズ変更と拡大を行います。 **Stretch** 状態は、多くのテレビ セットの画像サイズの設定に似ています。 ボタンにフックしてユーザーが好みの設定を選ぶことができるようにします。
 
--   [**None**](https://msdn.microsoft.com/library/windows/apps/br242968) は、元のサイズでコンテンツのネイティブの解像度を表示します。
--   [**Uniform**](https://msdn.microsoft.com/library/windows/apps/br242968) は、縦横比、画像コンテンツを維持したままスペースを最大限に使用します。 これにより、ビデオの端に水平方向または垂直方向の黒いバーが表示されることがあります。 これはワイドスクリーン モードに似ています。
--   [**UniformToFill**](https://msdn.microsoft.com/library/windows/apps/br242968) は、縦横比を維持したままスペース全体を使用します。 これにより、画像の一部がトリミングされることがあります。 これは全画面モードに似ています。
--   [**Fill**](https://msdn.microsoft.com/library/windows/apps/br242968) は、縦横比を維持せずに、スペース全体を使用します。 画像はトリミングされませんが、拡大されることがあります。 これはストレッチ モードに似ています。
+-   [
+              **None**
+            ](https://msdn.microsoft.com/library/windows/apps/br242968) は、元のサイズでコンテンツのネイティブの解像度を表示します。
+-   [
+              **Uniform**
+            ](https://msdn.microsoft.com/library/windows/apps/br242968) は、縦横比、画像コンテンツを維持したままスペースを最大限に使用します。 これにより、ビデオの端に水平方向または垂直方向の黒いバーが表示されることがあります。 これはワイドスクリーン モードに似ています。
+-   [
+              **UniformToFill**
+            ](https://msdn.microsoft.com/library/windows/apps/br242968) は、縦横比を維持したままスペース全体を使用します。 これにより、画像の一部がトリミングされることがあります。 これは全画面モードに似ています。
+-   [
+              **Fill**
+            ](https://msdn.microsoft.com/library/windows/apps/br242968) は、縦横比を維持せずに、スペース全体を使用します。 画像はトリミングされませんが、拡大されることがあります。 これはストレッチ モードに似ています。
 
-![Stretch 列挙値](images/Image_Stretch.jpg)
-ここでは、[**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/dn279244) を使って、[**Stretch**](https://msdn.microsoft.com/library/windows/apps/br242968) オプションを順に切り替えます。 **switch** ステートメントは、[**Stretch**](https://msdn.microsoft.com/library/windows/apps/br227422) プロパティの現在の状態をチェックし、**Stretch** 列挙で次の値を設定します。 これにより、ユーザーはさまざまな拡大の状態を順番に表示することができます。
+![Stretch 列挙値](images/Image_Stretch.jpg) ここでは、[**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/dn279244) を使って、[**Stretch**](https://msdn.microsoft.com/library/windows/apps/br242968) オプションを順に切り替えます。 **switch** ステートメントは、[**Stretch**](https://msdn.microsoft.com/library/windows/apps/br227422) プロパティの現在の状態をチェックし、**Stretch** 列挙で次の値を設定します。 これにより、ユーザーはさまざまな拡大の状態を順番に表示することができます。
 
 ```xaml
 <AppBarButton Icon="Switch" 
@@ -416,14 +425,12 @@ mediaPlayer.RealTimePlayback = true;
 -   多数のオプションを含むコントロール バーをオーバーロードしないでください。
 -   メディアのタイムラインを既定の最小サイズよりも縮小しないでください。この操作を行うと、タイムラインの効果が大きく制限されます。
 
-\[この記事には、ユニバーサル Windows プラットフォーム (UWP) アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
-
 ## 関連記事
 
 - [UWP アプリのコマンド設計の基本](https://msdn.microsoft.com/library/windows/apps/dn958433)
 - [UWP アプリのコンテンツ デザインの基本](https://msdn.microsoft.com/library/windows/apps/dn958434)
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

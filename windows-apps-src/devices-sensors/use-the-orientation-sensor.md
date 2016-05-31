@@ -1,4 +1,5 @@
 ---
+author: DBirtolo
 ms.assetid: 1889AC3A-A472-4294-89B8-A642668A8A6E
 title: 方位センサーの使用
 description: 方位センサーを使ってデバイスの向きを判断する方法について説明します。
@@ -350,6 +351,6 @@ SimpleOrientationSensorOrientationChangedEventArgs>(OrientationChanged);
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

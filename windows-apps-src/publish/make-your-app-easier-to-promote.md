@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: アプリが人の目に留まるようにしましょう。 アプリの品質を高めることのほかにも、Windows ストアやその他のサイトで注目を集めるためにできることがあります。
 title: アプリの販売促進を容易にする
 ms.assetid: 375A73EB-A010-4319-AEFF-3DC3E3691220
@@ -43,6 +44,6 @@ Windows ストアでは、さまざまなアプリをカテゴリ別またはテ
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

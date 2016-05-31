@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: バックグラウンド タスクの進捗状況と完了の監視
 description: バックグラウンド タスクから報告される進行状況と完了をアプリから認識する方法について説明します。
 ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
@@ -7,7 +8,7 @@ ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
 # バックグラウンド タスクの進捗状況と完了の監視
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
 **重要な API**
@@ -45,8 +46,7 @@ ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
 
     たとえば、[バックグラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)は UI を更新します。
 
-    > [!div class="tabbedCodeSnippets"]
-    >     ```cs
+    > [!div class="tabbedCodeSnippets"] ```cs
     >     private void OnCompleted(IBackgroundTaskRegistration task, BackgroundTaskCompletedEventArgs args)
     >     {
     >         UpdateUI();
@@ -66,8 +66,7 @@ ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
 
     OnProgress バックグラウンド タスク イベント ハンドラー メソッドには次のフットプリントを使います。
 
-    > [!div class="tabbedCodeSnippets"]
-    >     ```cs
+    > [!div class="tabbedCodeSnippets"] ```cs
     >     private void OnProgress(IBackgroundTaskRegistration task, BackgroundTaskProgressEventArgs args)
     >     {
     >         // TODO: Add code that deals with background task progress.
@@ -84,12 +83,7 @@ ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
 
     たとえば、[バックグラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)では、*args* パラメーターで渡された進行状態により、UI が更新されます。
 
-    > [!div class="tabbedCodeSnippets"]
-    >     ```cs
-    >     private void OnProgress(IBackgroundTaskRegistration task, BackgroundTaskProgressEventArgs args)
-    >     {
-    >         var progress = "Progress: " + args.Progress + "%";
-    >         BackgroundTaskSample.SampleBackgroundTaskProgress = progress;
+    > [!div class="tabbedCodeSnippets"]     ```cs     private void OnProgress(IBackgroundTaskRegistration task, BackgroundTaskProgressEventArgs args)     {         var progress = "Progress: " + args.Progress + "%";         BackgroundTaskSample.SampleBackgroundTaskProgress = progress;
     > 
     >         UpdateUI();
     >     }
@@ -111,23 +105,15 @@ ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
 
     たとえば、[バックグラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)では、登録するバックグラウンド タスクごとに次の関数を呼び出します。
 
-    > [!div class="tabbedCodeSnippets"]
-    >     ```cs
+    > [!div class="tabbedCodeSnippets"] ```cs
     >     private void AttachProgressAndCompletedHandlers(IBackgroundTaskRegistration task)
     >     {
     >         task.Progress += new BackgroundTaskProgressEventHandler(OnProgress);
     >         task.Completed += new BackgroundTaskCompletedEventHandler(OnCompleted);
     >     }
     >     ```
-    >     ```cpp
-    >     void SampleBackgroundTask::AttachProgressAndCompletedHandlers(IBackgroundTaskRegistration^ task)
-    >     {
-    >         auto progress = [this](BackgroundTaskRegistration^ task, BackgroundTaskProgressEventArgs^ args)
-    >         {
-    >             auto progress = "Progress: " + args->Progress + "%";
-    >             BackgroundTaskSample::SampleBackgroundTaskProgress = progress;
-    >             UpdateUI();
-    >         };
+    >     ```cpp     void SampleBackgroundTask::AttachProgressAndCompletedHandlers(IBackgroundTaskRegistration^ task)     {         auto progress = [this](BackgroundTaskRegistration^ task, BackgroundTaskProgressEventArgs^ args)
+    >                   {             auto progress = "Progress: " + args->Progress + "%";             BackgroundTaskSample::SampleBackgroundTaskProgress = progress;             UpdateUI();         };
     > 
     >         task->Progress += ref new BackgroundTaskProgressEventHandler(progress);
     >         
@@ -145,18 +131,7 @@ ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
 
     たとえば、[バックグラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)では、次のコードを使って SampleBackgroundTask ページの移動時にイベント ハンドラーをアタッチします。
 
-    > [!div class="tabbedCodeSnippets"]
-    >     ```cs
-    >     protected override void OnNavigatedTo(NavigationEventArgs e)
-    >     {
-    >         foreach (var task in BackgroundTaskRegistration.AllTasks)
-    >         {
-    >             if (task.Value.Name == BackgroundTaskSample.SampleBackgroundTaskName)
-    >             {
-    >                 AttachProgressAndCompletedHandlers(task.Value);
-    >                 BackgroundTaskSample.UpdateBackgroundTaskStatus(BackgroundTaskSample.SampleBackgroundTaskName, true);
-    >             }
-    >         }
+    > [!div class="tabbedCodeSnippets"]     ```cs     protected override void OnNavigatedTo(NavigationEventArgs e)     {         foreach (var task in BackgroundTaskRegistration.AllTasks)         {             if (task.Value.Name == BackgroundTaskSample.SampleBackgroundTaskName)             {                 AttachProgressAndCompletedHandlers(task.Value);                 BackgroundTaskSample.UpdateBackgroundTaskStatus(BackgroundTaskSample.SampleBackgroundTaskName, true);             }         }
     > 
     >         UpdateUI();
     >     }
@@ -219,6 +194,6 @@ ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

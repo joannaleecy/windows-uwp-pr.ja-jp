@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: バックグラウンド タスクの作成と登録
 description: バックグラウンド タスク クラスを作り、アプリがフォアグラウンドにない場合にも実行されるように登録します。
 ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
@@ -231,8 +232,7 @@ ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
 
     バックグラウンド タスクを登録し、その結果を保存するコードを次に示します。
 
-> [!div class="tabbedCodeSnippets"]
->     ```cs
+> [!div class="tabbedCodeSnippets"] ```cs
 >     BackgroundTaskRegistration task = builder.Register();
 >     ```
 >     ```cpp
@@ -252,8 +252,7 @@ ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
 
     次のサンプル コードは、バックグラウンド タスクの完了を認識し、メッセージ文字列を使う UI 更新メソッドの例を呼び出します。
 
-> [!div class="tabbedCodeSnippets"]
->     ```cs
+> [!div class="tabbedCodeSnippets"] ```cs
 >     private void OnCompleted(IBackgroundTaskRegistration task, BackgroundTaskCompletedEventArgs args)
 >     {
 >         var settings = Windows.Storage.ApplicationData.Current.LocalSettings;
@@ -280,12 +279,11 @@ ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
 
     次のサンプル コードにより、[**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786) に [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781) が追加されます。
 
-> [!div class="tabbedCodeSnippets"]
->     ```cs
+> [!div class="tabbedCodeSnippets"] ```cs
 >     task.Completed += new BackgroundTaskCompletedEventHandler(OnCompleted);
 >     ```
 >     ```cpp
->     task->Completed += ref new BackgroundTaskCompletedEventHandler(this, &amp;ExampleBackgroundTask::OnCompleted);
+>     task->Completed += ref new BackgroundTaskCompletedEventHandler(this, &ExampleBackgroundTask::OnCompleted);
 >     ```
 
 ## アプリがバックグラウンド タスクを使うことをアプリ マニフェストで宣言する
@@ -302,7 +300,7 @@ ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
 
     バック グラウンド タスクを登録するために、次の Extensions 要素が Package.appxmanifest ファイルに追加されます。
 
-    ```xaml
+    ```xml
     <Extensions>
       <Extension Category="windows.backgroundTasks" EntryPoint="RuntimeComponent1.ExampleBackgroundTask">
         <BackgroundTasks>
@@ -358,6 +356,6 @@ API リファレンス、バックグラウンド タスクの概念的ガイダ
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

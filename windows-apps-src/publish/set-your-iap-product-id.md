@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: この手順から Windows デベロッパー センター ダッシュボードでの IAP (アプリ内製品) の申請は始まります。
 title: IAP の製品 ID の設定
 ms.assetid: 59497B0F-82F0-4CEE-B628-040EF9ED8D3D
@@ -31,6 +32,6 @@ IAP は、ダッシュボードで作成済みのアプリと関連付けてい�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

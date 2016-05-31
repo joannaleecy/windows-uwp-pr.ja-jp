@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 title: xDeferLoadStrategy 属性
 description: xDeferLoadStrategy は、要素とその子の作成を遅延させます。起動時間は短くなりますが、メモリ使用量は若干増加します。 影響を受けるそれぞれの要素によって、メモリ使用量が約 600 バイト増加します。
 ms.assetid: E763898E-13FF-4412-B502-B54DBFE2D4E4
@@ -59,7 +60,7 @@ ms.assetid: E763898E-13FF-4412-B502-B54DBFE2D4E4
 
 ## 例
 
-```xaml
+```xml
 <Grid x:Name="DeferredGrid" x:DeferLoadStrategy="Lazy">
     <Grid.RowDefinitions>
         <RowDefinition Height="Auto" />
@@ -87,6 +88,6 @@ private void RealizeElements_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,5 +1,6 @@
 ---
-description: Windows.Web.Syndication 名前空間の機能により、RSS や Atom に従って生成される概要フィードを使って、最新かつ人気の高い Web コンテンツを取得または作成します。
+author: DelfCo
+description: Windows.Web.Syndication 名前空間の機能を利用し、RSS や Atom の標準に従って生成される概要フィードを使って、最新の人気の高い Web コンテンツを取得または作成します。
 title: RSS/Atom フィード
 ms.assetid: B196E19B-4610-4EFA-8FDF-AF9B10D78843
 ---
@@ -89,7 +90,7 @@ var uri = null;
 try {
     uri = new Windows.Foundation.Uri(uriString);
 } catch (error) {
-    WinJS.log &amp;&amp; WinJS.log("Error: Invalid URI");
+    WinJS.log && WinJS.log("Error: Invalid URI");
     return;
 }
 ```
@@ -130,7 +131,7 @@ catch (Exception ex)
 ```
 ```javascript
 function onError(err) {
-    WinJS.log &amp;&amp; WinJS.log(err, "sample", "error");
+    WinJS.log && WinJS.log(err, "sample", "error");
 
     // Match error number with a ErrorStatus value.
     // Use Windows.Web.WebErrorStatus.getStatus() to retrieve HTTP error status codes.
@@ -151,7 +152,7 @@ function retreiveFeed(uri) {
     client.retrieveFeedAsync(uri).done(function (feed) {
         currentFeed = feed;
 
-        WinJS.log &amp;&amp; WinJS.log("Feed download complete.", "sample", "status");
+        WinJS.log && WinJS.log("Feed download complete.", "sample", "status");
 
         var title = "(no title)";
         if (currentFeed.title) {
@@ -260,6 +261,6 @@ function displayCurrentItem() {
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

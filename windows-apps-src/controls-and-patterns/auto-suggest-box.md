@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 Description: ユーザーが入力するときに、検索候補を表示するテキスト入力ボックスです。
 title: 自動提案ボックスのガイドライン
 ms.assetid: 1F608477-F795-4F33-92FA-F200CC243B6B
@@ -151,6 +152,6 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 - [String.Length プロパティ](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

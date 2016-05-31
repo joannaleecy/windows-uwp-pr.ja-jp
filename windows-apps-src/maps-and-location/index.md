@@ -1,4 +1,5 @@
 ---
+author: PatrickFarley
 title: 地図と位置情報の概要
 description: このセクションでは、アプリで地図の表示、マップ サービスの使用、位置情報の検索、ジオフェンスのセットアップを行う方法について説明します。 また、Windows マップ アプリを起動し、特定の地図やルート、ターン バイ ターン方式のルート案内を表示する方法についても説明します。
 ms.assetid: F4C1F094-CF46-4B15-9D80-C1A26A314521
@@ -26,12 +27,14 @@ ms.assetid: F4C1F094-CF46-4B15-9D80-C1A26A314521
 
 | トピック | 説明 |
 |-------|-------------|
-| [マップ認証キーの要求](authentication-key.md) | [MapControl](https://msdn.microsoft.com/library/windows/apps/dn637004) や [Windows.Services.Maps](https://msdn.microsoft.com/library/windows/apps/dn636979) 名前空間のマップ サービスをアプリで使うには、アプリを認証する必要があります。 アプリを認証するには、マップ認証キーを指定する必要があります。 この記事では、[Bing Maps Developer Center](https://www.bingmapsportal.com/) にマップ認証キーを要求し、アプリに追加する方法について説明します。 |
-| [2D、3D、Streetside ビューでの地図の表示](display-maps.md) | [MapControl](https://msdn.microsoft.com/library/windows/apps/dn637004) クラスを使って、アプリにカスタマイズできる地図を表示します。 このトピックでは、航空写真 3D ビューと Streetside ビューについても紹介します。 |
+| [マップ認証キーの要求](authentication-key.md) | [
+            **MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) や [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 名前空間のマップ サービスをアプリで使うには、アプリを認証する必要があります。 アプリを認証するには、マップ認証キーを指定する必要があります。 この記事では、[Bing Maps Developer Center](https://www.bingmapsportal.com/) にマップ認証キーを要求し、アプリに追加する方法について説明します。 |
+| [地図の設計ガイドライン](controls-map.md) | マップ コントロールでは、地図および上空からの写真、方向、検索結果、トラフィックを表示できます。 |
+| [2D、3D、Streetside ビューでの地図の表示](display-maps.md) | [
+            **MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) クラスを使って、アプリにカスタマイズできる地図を表示します。 このトピックでは、航空写真 3D ビューと Streetside ビューについても紹介します。 |
 | [関心のあるポイント (POI) の地図への表示](display-poi.md) | プッシュピン、画像、図形、XAML UI 要素を使って、関心のあるポイント (POI) を地図に追加します。 |
 | [地図へのタイル画像のオーバーレイ](overlay-tiled-images.md) | タイル ソースを使って、地図上にサード パーティ製タイルまたはカスタム タイル画像をオーバーレイします。 タイル ソースを使って、気象データ、人口データ、地質データなどの特殊な情報をオーバーレイすることや、既定の地図を完全に置き換えることができます。 |
-| [地図の設計ガイドライン](controls-map.md) | マップ コントロールでは、地図および上空からの写真、方向、検索結果、トラフィックを表示できます。 |
-| [位置認識アプリの設計ガイドライン](guidelines-and-checklist-for-detecting-location.md) | ユーザーの位置情報にアクセスする必要があるアプリを構築するためのパフォーマンス ガイドラインです。 |
+
 
 
 ## マップ サービスへのアクセス
@@ -41,8 +44,11 @@ ms.assetid: F4C1F094-CF46-4B15-9D80-C1A26A314521
 
 | トピック | 説明 |
 |-----------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [マップ認証キーの要求](authentication-key.md) | [
+            **MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) や [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 名前空間のマップ サービスをアプリで使うには、アプリを認証する必要があります。 アプリを認証するには、マップ認証キーを指定する必要があります。 この記事では、[Bing Maps Developer Center](https://www.bingmapsportal.com/) にマップ認証キーを要求し、アプリに追加する方法について説明します。 |
+| [関心のあるポイント (POI) の地図への表示](display-poi.md) | プッシュピン、画像、図形、XAML UI 要素を使って、関心のあるポイント (POI) を地図に追加します。 |
 | [ルートとルート案内の表示](routes-and-directions.md) | ルートとルート案内を要求し、アプリで表示します。 |
-| [ジオコーディングと逆ジオコーディングの実行](geocoding.md) | 住所から地理的な位置への変換 (ジオコーディング) や地理的な位置から住所への変換 (逆ジオコーディング) を行うには、[Windows.Services.Maps](https://msdn.microsoft.com/library/windows/apps/dn636979) 名前空間の [MapLocationFinder](https://msdn.microsoft.com/library/windows/apps/dn627550) クラスのメソッドを呼び出します。 |
+| [ジオコーディングと逆ジオコーディングの実行](geocoding.md) | 住所から地理的な位置への変換 (ジオコーディング) や地理的な位置から住所への変換 (逆ジオコーディング) を行うには、[**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 名前空間の [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) クラスのメソッドを呼び出します。 |
 
 
 ## ユーザーの位置情報の取得
@@ -53,12 +59,11 @@ ms.assetid: F4C1F094-CF46-4B15-9D80-C1A26A314521
 
 | トピック | 説明 |
 |-------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [マップ認証キーの要求](authentication-key.md) | [MapControl](https://msdn.microsoft.com/library/windows/apps/dn637004) や [Windows.Services.Maps](https://msdn.microsoft.com/library/windows/apps/dn636979) 名前空間のマップ サービスをアプリで使うには、アプリを認証する必要があります。 アプリを認証するには、マップ認証キーを指定する必要があります。 この記事では、[Bing Maps Developer Center](https://www.bingmapsportal.com/) にマップ認証キーを要求し、アプリに追加する方法について説明します。 |
-| [ジオコーディングと逆ジオコーディングの実行](geocoding.md) | 住所から地理的な位置への変換 (ジオコーディング) や地理的な位置から住所への変換 (逆ジオコーディング) を行うには、MapLocationFinder クラスのメソッドを呼び出します。 |
-| [2D、3D、Streetside ビューでの地図の表示](display-maps.md) | [MapControl](https://msdn.microsoft.com/library/windows/apps/dn637004) クラスを使って、アプリにカスタマイズできる地図を表示します。 このトピックでは、航空写真 3D ビューと Streetside ビューについても紹介します。 |
-| [マップ](controls-map.md) | マップ コントロールでは、地図および上空からの写真、方向、検索結果、トラフィックを表示できます。 |
-| [関心のあるポイント (POI) の地図への表示](display-poi.md) | プッシュピン、画像、図形、XAML UI 要素を使って、関心のあるポイント (POI) を地図に追加します。 |
-| [地図へのタイル画像のオーバーレイ](overlay-tiled-images.md) | タイル ソースを使って、地図上にサード パーティ製タイルまたはカスタム タイル画像をオーバーレイします。 タイル ソースを使って、気象データ、人口データ、地質データなどの特殊な情報をオーバーレイすることや、既定の地図を完全に置き換えることができます。 |
+| [マップ認証キーの要求](authentication-key.md) | [
+            **MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) や [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 名前空間のマップ サービスをアプリで使うには、アプリを認証する必要があります。 アプリを認証するには、マップ認証キーを指定する必要があります。 この記事では、[Bing Maps Developer Center](https://www.bingmapsportal.com/) にマップ認証キーを要求し、アプリに追加する方法について説明します。 |
+| [位置認識アプリの設計ガイドライン](guidelines-and-checklist-for-detecting-location.md) | ユーザーの位置情報にアクセスする必要があるアプリを構築するためのパフォーマンス ガイドラインです。 |
+| [ユーザーの位置情報の取得](get-location.md) | ユーザーの位置情報にアクセスして取得します。 |
+| [ジオフェンスの設計ガイドライン](guidelines-for-geofencing.md) | ジオフェンス機能を利用するアプリのパフォーマンス ガイドラインです。 |
 | [ジオフェンスのセットアップ](set-up-a-geofence.md) | アプリでジオフェンスをセットアップし、フォアグラウンドとバックグラウンドで通知を処理する方法について説明します。 |
 
 ## Windows マップ アプリの起動
@@ -83,6 +88,6 @@ ms.assetid: F4C1F094-CF46-4B15-9D80-C1A26A314521
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: OpenGL ES 2.0 のバッファー、uniform、頂点 attribute と Direct3D の比較
 description: OpenGL ES 2.0 から Direct3D 11 に移植するプロセスでは、アプリとシェーダー プログラムの間でデータを受け渡すための構文と API の動作を変更する必要があります。
 ms.assetid: 9b215874-6549-80c5-cc70-c97b571c74fe
@@ -296,6 +297,6 @@ struct VertexShaderInput
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

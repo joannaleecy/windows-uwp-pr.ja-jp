@@ -1,4 +1,5 @@
 ---
+author: DelfCo
 ms.assetid: 7bb9fd81-8ab5-4f8d-a854-ce285b0669a4
 description: ネットワークと Web サービスにアクセスするためのテクノロジ。
 title: ネットワークと Web サービス
@@ -22,6 +23,7 @@ title: ネットワークと Web サービス
 | [バックグラウンド転送](background-transfers.md)                                         | ネットワーク経由でファイルを確実にコピーするには、バックグラウンド転送 API を使います。           |
 | [EDP ID を使ったネットワーク接続のタグ付け](tagging_network_connections_with_edp_identity.md) | このトピックでは、エンタープライズ データ保護 (EDP) のシナリオでネットワーク接続を作成する前に、保護されたスレッド コンテキストを作成する方法を説明します。 |
 
-<!--HONumber=Mar16_HO5-->
+
+<!--HONumber=May16_HO2-->
 
 

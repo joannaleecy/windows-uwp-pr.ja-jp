@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: アプリケーション マニフェストでのバックグラウンド タスクの宣言
 description: アプリ マニフェストでバックグラウンド タスクを拡張機能として宣言し、バックグラウンド タスクを使うことができるようにします。
 ms.assetid: 6B4DD3F8-3C24-4692-9084-40999A37A200
@@ -7,7 +8,7 @@ ms.assetid: 6B4DD3F8-3C24-4692-9084-40999A37A200
 # アプリケーション マニフェストでのバックグラウンド タスクの宣言
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
 **重要な API**
@@ -80,7 +81,7 @@ ms.assetid: 6B4DD3F8-3C24-4692-9084-40999A37A200
 
 2.  Task Type 属性のリストを、このバックグラウンド タスクで使われるタスク登録の種類を示すように変更します。 バックグラウンド タスクを複数の種類のトリガーで登録する場合は、必要な Task 要素と Type 属性を個々に追加します。
 
-    **Note**  使っているトリガーの各種類を確実に列記してください。そうしないと、バックグラウンド タスクは宣言されていない種類のトリガーには登録されません ([**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) メソッドが失敗し、例外がスローされます)。
+    **注:** 使っているトリガーの各種類を確実に列記してください。そうしないと、バックグラウンド タスクは宣言されていない種類のトリガーには登録されません ([**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) メソッドが失敗し、例外がスローされます)。
 
     次の抜粋例は、システム イベント トリガーとプッシュ通知の使用法を示します。
 
@@ -91,16 +92,16 @@ ms.assetid: 6B4DD3F8-3C24-4692-9084-40999A37A200
                     <Task Type="pushNotification" />
                   </BackgroundTasks>
                 </Extension>
-                ```
+    ```
 
-    > **Note**  Normally, an app will run in a special process called "BackgroundTaskHost.exe". It is possible to add an Executable element to the Extension element, allowing the background task to run in the context of the app. Only use the Executable element with background tasks that require it, such as the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).    
+    > **注:** 通常、アプリは "BackgroundTaskHost.exe" という特殊なプロセスを実行します。 Extension 要素に Executable 要素を追加して、バックグラウンド タスクをアプリのコンテキストで実行することもできます。 Executable 要素は、[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) など、Executable 要素を必要とするバックグラウンド タスクと共に使ってください。    
 
-## Add Additional Background Task Extensions
+## バックグラウンド タスク拡張機能の追加
 
 
-Repeat step 2 for each additional background task class registered by your app.
+アプリで登録する追加のバックグラウンド タスク クラスごとに、手順 2. を繰り返します。
 
-The following example is the complete Application element from the [background task sample]( http://go.microsoft.com/fwlink/p/?linkid=227509). This shows the use of 2 background task classes with a total of 3 trigger types. Copy the Extensions section of this example, and modify it as needed, to declare background tasks in your application manifest.
+次に、[バックグラウンド タスク サンプル]( http://go.microsoft.com/fwlink/p/?linkid=227509)の完全な Application 要素の例を示します。 これは、計 3 種類のトリガーで 2 つのバックグラウンド タスク クラスを使う例を示します。 この例の Extensions セクションをコピーし、必要に応じて変更して、アプリケーション マニフェストでバックグラウンド タスクを宣言します。
 
 ```xml
 <Applications>
@@ -112,7 +113,7 @@ The following example is the complete Application element from the [background t
           Square150x150Logo="Assets\StoreLogo-sdk.png"
           Square44x44Logo="Assets\SmallTile-sdk.png"
           Description="BackgroundTask"
-          
+
           BackgroundColor="#00b2f0">
           <uap:LockScreen Notification="badgeAndTileText" BadgeLogo="Assets\smalltile-Windows-sdk.png" />
             <uap:SplashScreen Image="Assets\Splash-sdk.png" />
@@ -147,14 +148,7 @@ The following example is the complete Application element from the [background t
 * [バックグラウンド タスクの登録](register-a-background-task.md)
 * [バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)
 
- 
 
- 
-
-
-
-
-
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

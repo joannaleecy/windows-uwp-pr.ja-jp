@@ -1,6 +1,7 @@
 ---
+author: mcleblanc
 description: iOS から UWP への移行
-Search.SourceType: ビデオ
+Search.SourceType: Video
 title: iOS から UWP への移行
 ms.assetid: 7a05751d-02df-4240-9ba5-d95f65a7a9c5
 ---
@@ -9,23 +10,16 @@ ms.assetid: 7a05751d-02df-4240-9ba5-d95f65a7a9c5
 
 \[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-**iOS 用 Windows ブリッジによる Objective-C コードの再利用**
 
--   このガイドの目的は、Windows 10 に iOS アプリを手動で移植できるようにすることです。 アプリ全体が Objective-C で作成されている場合は、iOS 用 Windows ブリッジを使うと、既存のコードの大半を再利用しながら、アプリを Windows 10 にすばやく移行できます。 iOS 用 Windows ブリッジにより、Objective-C のコードと iOS の API ライブラリを使って、Visual Studio 2015 でユニバーサル Windows プラットフォーム (UWP) アプリをビルドできます。 また、Cortana やライブ タイルなどの Windows 10 独自の機能を使って、Objective-C コードを拡張することもできます。
--   [iOS 用 Windows ブリッジについて詳しく知る](https://dev.windows.com/bridges/ios)
+ユーザー ベースを Windows 10 とユニバーサル Windows プラットフォーム (UWP) にまで拡大する方法に悩んでいる iOS 開発者向けに、便利なツールが提供されています。そしてその数は日々増え続けています。 どの方法を使うかは、対象のアプリの種類 (ゲーム、ライフ スタイル、エンタープライズなど) と、開発プロセスにどれだけ関与できるかに応じて異なります。 たとえば、OpenGL または Cocos2D に大きく依存している完成済みのゲームまたはほぼ完成しているゲームの場合は、[iOS 用 Windows ブリッジ](https://dev.windows.com/bridges/ios)が有力な候補になります。また、スモール ビジネス用のクロスプラットフォーム アプリを計画している場合は、[Xamarin.Forms](https://www.xamarin.com/forms) の使用を検討する必要があります。 Unity などのクロスプラットフォーム ツールでアプリを記述している場合は、[Windows に公開](http://blogs.unity3d.com/2015/09/09/windows-10-universal-apps-in-unity-5-2/)するのが簡単です。
 
 ## Windows を選ぶ理由
 
-iOS 向けに開発したアプリを Windows 10 と UWP に移行するにはどうすればよいでしょうか。 これは思っているほど難しくはありません。 iOS デバイスと同様に Windows でも (おそらくより快適に) 動作する優れたアプリの作成に必要なツール、手法、情報が用意されています。<iframe src="https://hubs-video.ssl.catalog.video.msn.com/embed/019d3337-80cf-4817-b50a-58f9463a4d27/IA?csid=ux-en-us&MsnPlayerLeadsWith=html&PlaybackMode=Inline&MsnPlayerDisplayShareBar=false&MsnPlayerDisplayInfoButton=false&iframe=true&QualityOverride=HD" width="720" height="405" allowFullScreen="true" frameBorder="0" scrolling="no">Windows と Windows Phone への Android アプリまたは iOS アプリの移植</iframe>
+今日は、Windows は膨大な数のデバイスで実行されています。 UWP は、デスクトップ コンピューター、ゲーム コンソール、ホログラフィック ディスプレイなどのさまざまなデバイス間で美しく応答性に優れたユーザー インターフェイスを作るように設計された最新の API のセットを開発者に提供します。 1 つの Visual Studio ソリューションと、複数のプラットフォームに自動的に最適化されるスマートなユーザー インターフェイス コントロールにより、より少ないコードで記述したアプリをより多くのハードウェア上で実行できます。
 
-アプリの移行や、Windows 10 用の新しいアプリの開発を検討している場合は、役立つものがあります。 このセクションでは、iOS 開発者にとって有益な、Visual Studio とサンプル コードの使い方について紹介します。 Windows 10 用アプリの作成を楽しんでください。必ずできます。
+<iframe src="https://hubs-video.ssl.catalog.video.msn.com/embed/019d3337-80cf-4817-b50a-58f9463a4d27/IA?csid=ux-en-us&MsnPlayerLeadsWith=html&PlaybackMode=Inline&MsnPlayerDisplayShareBar=false&MsnPlayerDisplayInfoButton=false&iframe=true&QualityOverride=HD" width="720" height="405" allowFullScreen="true" frameBorder="0" scrolling="no">Windows と Windows Phone への Android アプリまたは iOS アプリの移植</iframe>
 
-コードを一度作成すると、デスクトップ、ノート PC、電話、ゲーム コンソール、埋め込みデバイス、ホログラフィック ディスプレイ上でも実行される世界を思い浮かべてみてください。 Windows 10 と UWP へようこそ。
 
-![知られざる一面を訪れる](images/ios-to-uwp/mixedup.png)
-
-既に Windows をご存知で、iOS も理解しようとするのであれば、Microsoft Visual Studio 2015 を見てみましょう。 Xamarin に基づいたモバイル アプリケーションの開発の統合サポートで、ペアリング済みの Mac コンピューターを使ってコードをコンパイルして実行し、Visual Studio 内から iOS デバイス向けのアプリを作成できるようになりました。 Visual Studio は、Windows、Android、iOS の間でコードと開発ツールを共有しながら、モバイル開発の世界の中心になることができます。
- 
 
 | トピック | 説明 |
 |-------|-------------|
@@ -41,7 +35,6 @@ iOS 向けに開発したアプリを Windows 10 と UWP に移行するには�
  
 
 
-
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

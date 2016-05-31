@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 description: iOS 開発者のための UWP の概要
 title: iOS 開発者のための UWP の概要
 ms.assetid: 9F67068B-E578-4C70-B3E0-DFF150FA9BDD
@@ -27,6 +28,7 @@ Windows 10 では、デスクトップ、ノート PC、タブレット、電話
 | [はじめに: ナビゲーション](getting-started-navigation.md) | Windows 10 アプリでこのナビゲーションを管理する方法の 1 つに、[Frame](https://msdn.microsoft.com/library/windows/apps/br242682) クラスを使う方法があります。 以下のチュートリアルでは実際に試す方法を示しています。 |
 | [はじめに: アニメーション](getting-started-animation.md) | Windows アプリでのアニメーションもプログラムで作成できますが、Extensible Application Markup Language (XAML) を使った宣言で定義することもできます。 |
 | [はじめに: 次の手順](getting-started-what-next.md) | この基本情報を使って、もっと興味深いユニバーサル Windows プラットフォーム (UWP) アプリの作成を今すぐ開始できます。 次の手順として、次のトピックを読んでから Visual Studio を起動し、コードの作成を始めます。 |
+| [Windows アプリの概念マッピング](https://msdn.microsoft.com//windows/uwp/porting/android-ios-uwp-map) | Windows (および Android) 機能の観点からの iOS の概念の考え方 |
 
  
 
@@ -35,10 +37,6 @@ Windows 10 では、デスクトップ、ノート PC、タブレット、電話
  
 
 
-
-
-
-
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

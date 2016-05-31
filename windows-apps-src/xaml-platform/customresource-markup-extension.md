@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: カスタム リソース検索の実装から取得されたリソースの参照を評価して、任意の XAML 属性の値を提供します。 リソース検索は、CustomXamlResourceLoader クラスの実装によって実行されます。
 title: CustomResource マークアップ拡張
 ms.assetid: 3A59A8DE-E805-4F04-B9D9-A91E053F3642
@@ -6,7 +7,7 @@ ms.assetid: 3A59A8DE-E805-4F04-B9D9-A91E053F3642
 
 # {CustomResource} マークアップ拡張
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 カスタム リソース検索の実装から取得されたリソースの参照を評価して、任意の XAML 属性の値を提供します。 リソース検索は、[**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327) クラスの実装によって実行されます。
 
@@ -48,6 +49,6 @@ ms.assetid: 3A59A8DE-E805-4F04-B9D9-A91E053F3642
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

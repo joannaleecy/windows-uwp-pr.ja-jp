@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 ms.assetid: 9899F6A0-7EDD-4988-A76E-79D7C0C58126
 title: ユニバーサル Windows プラットフォーム コンポーネントと相互運用性の最適化
 description: 相互運用性のパフォーマンス上の問題を回避しながら、ネイティブ型とマネージ型の間で UWP コンポーネントと相互運用機能を使うユニバーサル Windows プラットフォーム (UWP) アプリを作成します。
@@ -21,7 +22,7 @@ UWP には、UWP アプリの作成に使用できるすべての言語からア
 
 UWP アプリを C# または Visual Basic で開発する際、最もよく使用される API は、UWP API と UWP アプリ用 .NET API の 2 つです。 一般に、UWP で定義される型は "Windows." で始まる名前空間にあります。 また、.NET 型は "System." で始まる名前空間にあります。 ただし、例外もあります。 UWP アプリ用 .NET に含まれる型は、使う際に相互運用性を必要としません。 UWP を使っている領域のパフォーマンスが低い場合は、代わりに UWP アプリ用 .NET を使うことで良好なパフォーマンスを得られることがあります。
 
-**注**  
+**注:**  
 Windows 10 と共に提供される UWP コンポーネントの大部分は C++ で実装されているため、これらを C# または Visual Basic から使う場合は、相互運用性の境界を越える必要があります。 通常の場合と同様に、アプリのパフォーマンスに UWP コンポーネントが影響を与えているかどうかを調査した後で、コードの変更に注力してください。
 
 このトピックでは、"UWP コンポーネント" とは、C# または Visual Basic 以外の言語で記述されたコンポーネントを指すものとします。
@@ -38,7 +39,7 @@ UWP コンポーネントのプロパティにアクセスする、またはメ�
 
 ### UWP アプリ用 .NET の使用を検討する
 
-あるタスクを、UWP または UWP アプリ用 .NET のどちらを使っても達成できる場合があります。 こうした場合、.NET の型と UWP の型を組み合わせず、 どちらか一方に揃えることをお勧めします。 たとえば、xml のストリームを解析するには、[**Windows.Data.Xml.Dom.XmlDocument**](https://msdn.microsoft.com/library/windows/apps/BR206173) 型 (UWP の型) または [**System.Xml.XmlReader**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.xml.xmlreader.aspx) 型 (.NET の型) のどちらも使えます。 同じテクノロジの API をストリームとして使いましょう。 たとえば、[**MemoryStream**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.io.memorystream.aspx) から xml を読み取る場合は両方が同じ .NET の型になるので、**System.Xml.XmlReader** 型を使います。 ファイルから読み取る場合は、**Windows.Data.Xml.Dom.XmlDocument** 型を使います。これはファイル API と **XmlDocument** が UWP コンポーネントであるためです。
+あるタスクを、UWP または UWP アプリ用 .NET のどちらを使っても達成できる場合があります。 こうした場合、.NET の型と UWP の型を組み合わせず、 どちらか一方に揃えることをお勧めします。 たとえば、xml のストリームを解析するには、[**Windows.Data.Xml.Dom.XmlDocument**](https://msdn.microsoft.com/library/windows/apps/BR206173) 型 (UWP の型) または [**System.Xml.XmlReader**](https://msdn.microsoft.com/library/windows/apps/xaml/system.xml.xmlreader.aspx) 型 (.NET の型) のどちらも使えます。 同じテクノロジの API をストリームとして使いましょう。 たとえば、[**MemoryStream**](https://msdn.microsoft.com/library/windows/apps/xaml/system.io.memorystream.aspx) から xml を読み取る場合は両方が同じ .NET の型になるので、**System.Xml.XmlReader** 型を使います。 ファイルから読み取る場合は、**Windows.Data.Xml.Dom.XmlDocument** 型を使います。これはファイル API と **XmlDocument** が UWP コンポーネントであるためです。
 
 ### Windows ランタイム オブジェクトを .NET 型にコピーする
 
@@ -68,11 +69,11 @@ UWP では、各言語に UWP API のプロジェクションが用意されて�
 
 ![相互運用に伴う移行がプログラムの実行時間を圧迫することは避けます。](images/interop-transitions.png)
 
-「[**Windows アプリ用 .NET**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/br230232.aspx)」に一覧の型では、C# または Visual Basic から使ったときにこの相互運用性コストの問題は発生しません。 一般に、"Windows." で始まる名前空間の型は UWP に属し、"System." で始まる名前空間の型は .NET 型に属します。 UWP の型に対する単純な操作 (メモリの割り当て、プロパティへのアクセスなど) でも、相互運用性のコストが発生する点に注意してください。
+「[**Windows アプリ用 .NET**](https://msdn.microsoft.com/library/windows/apps/xaml/br230232.aspx)」に一覧の型では、C# または Visual Basic から使ったときにこの相互運用性コストの問題は発生しません。 一般に、"Windows." で始まる名前空間の型は UWP に属し、"System." で始まる名前空間の型は .NET 型に属します。 UWP の型に対する単純な操作 (メモリの割り当て、プロパティへのアクセスなど) でも、相互運用性のコストが発生する点に注意してください。
 
 相互運用性のコストを最適化するためには、アプリの実行時間の大部分が相互運用に費やされているかどうかの評価と判断が必要です。 Visual Studio でアプリのパフォーマンスを分析する際は、**[関数]** ビューを使い、UWP のメソッド呼び出しに費やされている包括時間を調べることで、相互運用性コストの上限を簡単に把握できます。
 
-相互運用性のオーバーヘッドによってアプリが低速になる場合は、実行頻度の高いコード パスでの UWP API の呼び出しを減らすことで、パフォーマンスを向上できます。 たとえば、[**UIElements**](https://msdn.microsoft.com/library/windows/apps/BR208911) の位置とサイズを継続的に照会することで大量の物理的計算を実行しているゲーム エンジンは、**UIElements** から必要な情報をローカル変数に格納し、それらのキャッシュされた値に対して計算を行い、計算実行後に最終結果を **UIElements** にもう一度割り当てることによって、多くの時間を節約できます。 別の例として、C# または Visual Basic のコードから頻繁にアクセスされるコレクションがある場合は、[**System.Collections**](https://msdn.microsoft.com/library/windows/apps/BR206657) 名前空間からのコレクションではなく、[**Windows.Foundation.Collections**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.collections.aspx) 名前空間からのコレクションを使ったほうが、より効率的です。 UWP コンポーネントの呼び出しを結合することも検討に値します。これは、たとえば、[**Windows.Storage.BulkAccess**](https://msdn.microsoft.com/library/windows/apps/BR207676) API で実現できます。
+相互運用性のオーバーヘッドによってアプリが低速になる場合は、実行頻度の高いコード パスでの UWP API の呼び出しを減らすことで、パフォーマンスを向上できます。 たとえば、[**UIElements**](https://msdn.microsoft.com/library/windows/apps/BR208911) の位置とサイズを継続的に照会することで大量の物理的計算を実行しているゲーム エンジンは、**UIElements** から必要な情報をローカル変数に格納し、それらのキャッシュされた値に対して計算を行い、計算実行後に最終結果を **UIElements** にもう一度割り当てることによって、多くの時間を節約できます。 別の例として、C# または Visual Basic のコードから頻繁にアクセスされるコレクションがある場合は、[**System.Collections**](https://msdn.microsoft.com/library/windows/apps/BR206657) 名前空間からのコレクションではなく、[**Windows.Foundation.Collections**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.aspx) 名前空間からのコレクションを使ったほうが、より効率的です。 UWP コンポーネントの呼び出しを結合することも検討に値します。これは、たとえば、[**Windows.Storage.BulkAccess**](https://msdn.microsoft.com/library/windows/apps/BR207676) API で実現できます。
 
 ### UWP コンポーネントを構築する
 
@@ -84,6 +85,6 @@ C++ または JavaScript で記述されたアプリに使う UWP コンポー�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

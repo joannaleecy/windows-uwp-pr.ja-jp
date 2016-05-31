@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: Marble Maze サンプルへの入力と対話機能の追加
 description: ユニバーサル Windows プラットフォーム (UWP) アプリ ゲームは、デスクトップ コンピューター、ノート PC、タブレットなど、さまざまなデバイスで実行されます。
 ms.assetid: b946bf62-c0ca-f9ec-1a87-8195b89a5ab4
@@ -7,12 +8,12 @@ ms.assetid: b946bf62-c0ca-f9ec-1a87-8195b89a5ab4
 # Marble Maze サンプルへの入力と対話機能の追加
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
 
 
 ユニバーサル Windows プラットフォーム (UWP) アプリ ゲームは、デスクトップ コンピューター、ノート PC、タブレットなど、さまざまなデバイスで実行されます。 デバイスに備わっている入力機構と制御機構も多岐にわたります。 多様な入力デバイスをサポートすることによって、ゲーム ユーザーの好みや技量に幅広く対応することができます。 このドキュメントでは、入力デバイスを扱う際に考慮する必要のある主な手法について説明すると共に、それらが Marble Maze でどのように適用されているかを紹介します。
 
-> **注**   このドキュメントに対応するサンプル コードは、[DirectX Marble Maze ゲームのサンプルに関するページ](http://go.microsoft.com/fwlink/?LinkId=624011) にあります。
+> **注**  このドキュメントに対応するサンプル コードは、 [DirectX Marble Maze ゲームのサンプルに関するページ](http://go.microsoft.com/fwlink/?LinkId=624011)にあります。
 
  
 このドキュメントでは、ゲームで入力を扱う際に重要となるいくつかの事柄について説明します。取り上げる内容は次のとおりです。
@@ -521,6 +522,6 @@ if (marblePosition.z >= resetDepth)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

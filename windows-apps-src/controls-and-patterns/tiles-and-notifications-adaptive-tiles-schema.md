@@ -1,16 +1,13 @@
 ---
+author: mijacobs
 Description: アダプティブ タイルの作成に使う要素と属性を次に示します。
 title: アダプティブ タイル スキーマとテンプレート
 ms.assetid: 858FB05E-87A2-49CF-BE48-570980AD36C8
-label: アダプティブ タイル スキーマとテンプレート
+label: Adaptive tile schema and templates
 template: detail.hbs
 ---
 
 # アダプティブ タイル テンプレート: スキーマとガイダンス
-
-
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
-
 
 アダプティブ タイルの作成に使う要素と属性を次に示します。 手順と例については、「[アダプティブ タイルの作成](tiles-and-notifications-create-adaptive-tiles.md)」をご覧ください。
 
@@ -131,11 +128,6 @@ textStyle の値: caption captionSubtle body bodySubtle base baseSubtle subtitle
 </subgroup>
 ```
 
-**注**  
-この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
-
- 
-
 ## <span id="related_topics"></span>関連トピック
 
 
@@ -149,6 +141,6 @@ textStyle の値: caption captionSubtle body bodySubtle base baseSubtle subtitle
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

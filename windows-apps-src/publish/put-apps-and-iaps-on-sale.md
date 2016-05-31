@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 期間限定で特売することにより Windows ストアでアプリやアプリ内製品 (IAP) の販促活動をすることができます。
 title: アプリと IAP の販売
 ms.assetid: 71ABA960-0CDC-4E35-A1C8-1D34B6673817
@@ -64,6 +65,6 @@ ms.assetid: 71ABA960-0CDC-4E35-A1C8-1D34B6673817
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

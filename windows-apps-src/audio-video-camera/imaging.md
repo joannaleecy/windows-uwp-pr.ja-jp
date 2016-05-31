@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: 3FD2AA71-EF67-47B2-9332-3FFA5D3703EA
 description: この記事では、BitmapDecoder と BitmapEncoder を使って画像ファイルを読み込んだり保存したりする方法のほか、SoftwareBitmap オブジェクトを使ってビットマップ画像を表現する方法について説明します。
 title: イメージング
@@ -6,22 +7,28 @@ title: イメージング
 
 # イメージング
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
 この記事では、[**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) と [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) を使って画像ファイルを読み込んだり保存したりする方法のほか、[**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) オブジェクトを使ってビットマップ画像を表現する方法について説明します。
 
 **SoftwareBitmap** クラスは、さまざまなソースから作成できる多用途の API です。画像ファイルや [**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/br243259) オブジェクト、Direct3D サーフェスから作成できるほか、コードから作成することもできます。 **SoftwareBitmap** を使うと、異なるピクセル形式間やアルファ モード間の変換、ピクセル データへの低レベル アクセスを簡単に行うことができます。 Windows のさまざまな機能のインターフェイスとしても、**SoftwareBitmap** は広く使われています。その例を以下に挙げます。
 
--   [**CapturedFrame**](https://msdn.microsoft.com/library/windows/apps/dn278725) では、カメラによってキャプチャされたフレームを **SoftwareBitmap** として取得できます。
+-   [
+              **CapturedFrame**
+            ](https://msdn.microsoft.com/library/windows/apps/dn278725) では、カメラによってキャプチャされたフレームを **SoftwareBitmap** として取得できます。
 
--   [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) では、**VideoFrame** の **SoftwareBitmap**表現を取得することができます。
+-   [
+              **VideoFrame**
+            ](https://msdn.microsoft.com/library/windows/apps/dn930917) では、**VideoFrame** の **SoftwareBitmap** 表現を取得することができます。
 
--   [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) では、**SoftwareBitmap** のフェイスを検出することができます。
+-   [
+              **FaceDetector**
+            ](https://msdn.microsoft.com/library/windows/apps/dn974129) では、**SoftwareBitmap** のフェイスを検出することができます。
 
 この記事のサンプル コードには、以下の名前空間の API が使われています。
 
-[!code-cs[Namespaces](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetNamespaces)]
+[!code-cs[名前空間](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetNamespaces)]
 
 ## BitmapDecoder で画像ファイルから SoftwareBitmap を作成する
 
@@ -133,6 +140,6 @@ Direct3D サーフェスから **SoftwareBitmap** オブジェクトを作成す
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: アプリの申請の作成が完了し、[ストアに提出] をクリックすると、認定手順に入ります。
 title: アプリの認定プロセス
 ms.assetid: 0DCB4344-224D-4E5A-899F-FF7A89F23DBC
@@ -50,6 +51,6 @@ ms.assetid: 0DCB4344-224D-4E5A-899F-FF7A89F23DBC
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: PropertyPath クラスと文字列構文を使うと、PropertyPath 値を XAML またはコードでインスタンス化できます。
 title: プロパティ パス構文'
 ms.assetid: FF3ECF47-D81F-46E3-BE01-C839E0398025
@@ -102,7 +103,9 @@ XAML でアニメーションを定義する方法について詳しくは、「
 
 ほとんどの場合、コードをまったく使わずに [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) を XAML で適用できます。 しかし、場合によっては、コードを使って **PropertyPath** オブジェクトを定義し、実行時にプロパティに割り当てることができます。
 
-[**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) は [**PropertyPath(String)**](https://msdn.microsoft.com/library/windows/apps/br244261) コンストラクターを持ちますが、既定のコンストラクターはありません。 このコンストラクターには、前に説明したプロパティ パス構文を使って定義した文字列を渡します。 これは、パスを [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 属性として割り当てるために使うのと同じ文字列でもあります。 **PropertyPath** クラスの唯一の他の API は [**Path**](https://msdn.microsoft.com/library/windows/apps/br244260) プロパティで、これは読み取り専用です。 このプロパティは、他の **PropertyPath** インスタンスの構成文字列として使うことができます。
+[
+              **PropertyPath**
+            ](https://msdn.microsoft.com/library/windows/apps/br244259) は [**PropertyPath(String)**](https://msdn.microsoft.com/library/windows/apps/br244261) コンストラクターを持ちますが、既定のコンストラクターはありません。 このコンストラクターには、前に説明したプロパティ パス構文を使って定義した文字列を渡します。 これは、パスを [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) 属性として割り当てるために使うのと同じ文字列でもあります。 **PropertyPath** クラスの唯一の他の API は [**Path**](https://msdn.microsoft.com/library/windows/apps/br244260) プロパティで、これは読み取り専用です。 このプロパティは、他の **PropertyPath** インスタンスの構成文字列として使うことができます。
 
 ## 関連トピック
 
@@ -116,6 +119,6 @@ XAML でアニメーションを定義する方法について詳しくは、「
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

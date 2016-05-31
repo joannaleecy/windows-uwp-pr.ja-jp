@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: ここでは、ほとんどの XAML ファイルのルート要素で行われる XML/XAML 名前空間 (xmlns) マッピングについて説明します。 また、カスタム型やカスタム アセンブリに対して同様のマッピングを行う方法についても説明します。
 title: XAML 名前空間と名前空間マッピング
 ms.assetid: A19DFF78-E692-47AE-8221-AB5EA9470E8B
@@ -45,19 +46,19 @@ XAML 言語では、特定の言語要素を指定します。これらの各要
 
 既定の名前空間と XAML 言語の XAML 名前空間である "x:" に加えて、Microsoft Visual Studio で生成されるアプリで使う初期の既定の XAML では、その他の XAML 名前空間がマップされる場合もあります。
 
-### **d: (http://schemas.microsoft.com/expression/blend/2008)**
+### **d: (`http://schemas.microsoft.com/expression/blend/2008`)**
 
 "d:" は、デザイナー サポート (特に、Microsoft Visual Studio の XAML デザイン サーフェイスにおけるデザイナー サポート) を対象とした XAML 名前空間です。 "d:" XAML 名前空間を使うと、XAML 要素でデザイナー (設計時) 属性が有効になります。 このようなデザイナー属性は、XAML の動作の設計面にのみ影響します。 アプリの実行時に同じ XAML が Windows ランタイム XAML パーサーによって読み込まれると、デザイナー属性は無視されます。 一般に、デザイナー属性はすべての XAML 要素で有効ですが、実際のところ、デザイナー属性の適用が適しているのは特定のシナリオのみです。 特に、デザイナー属性の多くは、XAML とデータ バインディングを使うコードの開発時にデータ コンテキストやデータ ソースを操作しやすくすることを目的としています。
 
 -   **d:DesignHeight 属性と d:DesignWidth 属性:** この 2 つの属性は、Visual Studio または別の XAML デザイナー サーフェイスが作成する XAML ファイルのルートに適用されることがあります。 この 2 つの属性は、たとえば、アプリ プロジェクトに新しく [**UserControl**](https://msdn.microsoft.com/library/windows/apps/br227647) を追加した場合に、作成される XAML の **UserControl** ルートに設定されます。 この属性はいずれも、XAML コンテンツの構成を設計しやすくするものであり、XAML コンテンツがコントロール インスタンスや、それより大きな UI ページの一部に使われた場合に生じるレイアウト面の制約がある程度予測できるようになります。
 
-   **注**  Microsoft Silverlight から XAML を移行する場合に、UI のページ全体を代表するルート要素にこの属性が存在することがあります。 この場合、この属性の削除が必要になります。 シミュレーターなどの XAML デザイナーの方が、拡大縮小やビュー状態の処理に優れた機能が備わっており、**d:DesignHeight** と **d:DesignWidth** を使った固定サイズのページ レイアウトよりも、ページのレイアウトを設計するうえで便利であると考えられます。
+   **注:** Microsoft Silverlight から XAML を移行する場合に、UI のページ全体を代表するルート要素にこの属性が存在することがあります。 この場合、この属性の削除が必要になります。 シミュレーターなどの XAML デザイナーの方が、拡大縮小やビュー状態の処理に優れた機能が備わっており、**d:DesignHeight** と **d:DesignWidth** を使った固定サイズのページ レイアウトよりも、ページのレイアウトを設計するうえで便利であると考えられます。
 
 -   **d:DataContext 属性:** ページ ルートまたはコントロールでこの属性を設定すると、そうでない場合にはオブジェクトに含まれる明示的または継承された [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) を上書きします。
 -   **d:DesignSource 属性:** 設計時の [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833) のデータ ソースを指定して、[**Source**](https://msdn.microsoft.com/library/windows/apps/br209835) を上書きします。
 -   **d:DesignInstance マークアップ拡張と d:DesignData マークアップ拡張:** この 2 つのマークアップ拡張は、**d:DataContext** または **d:DesignSource** の設計時のデータ リソースを提供するために使われます。 設計時のデータ リソースの使い方は、ここで説明した内容がすべてではありません。 詳しくは、「[デザイン時属性](http://go.microsoft.com/fwlink/p/?LinkId=272504)」をご覧ください。 使用例については、「[デザイン サーフェイス上のサンプル データとプロトタイプを作るためのサンプル データ](https://msdn.microsoft.com/library/windows/apps/mt517866)」をご覧ください。
 
-### **mc: (http://schemas.openxmlformats.org/markup-compatibility/2006) **
+### **mc: (`http://schemas.openxmlformats.org/markup-compatibility/2006`)**
 
 " mc:" は、XAML を読み取るためのマークアップ互換モードを示し、このモードをサポートします。 通常、"d:" プレフィックスは属性 **mc:Ignorable** に関連付けられます。 この手法により、ランタイムの XAML パーサーで "d:" のデザイナー属性を無視することができます。
 
@@ -108,6 +109,6 @@ XAML で使うコードを定義するときに入れ子になった型を使わ
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

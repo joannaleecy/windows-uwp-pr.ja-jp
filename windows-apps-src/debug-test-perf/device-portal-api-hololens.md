@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 ms.assetid: 41ac0142-4d86-4bb3-b580-36d0d6956091
 title: HoloLens 用 Device Portal API リファレンス
 description: HoloLens 用の Windows Device Portal REST API について説明します。これらの API を使うと、プログラムからデータにアクセスしてデバイスを制御できます。
@@ -1409,6 +1410,6 @@ loopback   | (**省略可能**) アプリケーション オーディオをキ�
 - 標準の状態コード。
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

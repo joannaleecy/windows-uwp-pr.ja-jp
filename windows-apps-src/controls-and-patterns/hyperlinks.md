@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: ハイパーリンクはユーザーを、アプリの別の部分、別のアプリ、または別のブラウザー アプリを使って呼び出した URI (Uniform Resource Identifier) に誘導します。
 title: ハイパーリンク
 ms.assetid: 74302FF0-65FC-4820-B59A-718A765EF7F0
-label: ハイパーリンク
+label: Hyperlinks
 template: detail.hbs
 ---
 # ハイパーリンク
@@ -49,7 +50,8 @@ template: detail.hbs
 
 ![テキスト要素としてのハイパーリンクの例](images/controls_hyperlink-element.png) 
 
-> **ヒント** テキスト コントロールでハイパーリンクを XAML のその他のテキスト要素と一緒に使用する場合、[スパン](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx) コンテナーにコンテンツを配置してスパンに `xml:space="preserve"` 属性を適用すると、ハイパーリンクとその他の要素間に空白を保持します。
+> **ヒント**
+            &nbsp;&nbsp;テキスト コントロールでハイパーリンクを XAML のその他のテキスト要素と一緒に使用する場合、[スパン](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx) コンテナーにコンテンツを配置してスパンに `xml:space="preserve"` 属性を適用すると、ハイパーリンクとその他の要素間に空白を保持します。
 
 ## HyperlinkButton を作成する
 
@@ -80,7 +82,8 @@ template: detail.hbs
 
 ハイパーリンクを使用して URI に移動するには、NavigateUri プロパティを設定します。 ユーザーがハイパーリンクをクリックしてまたはタップすると、指定された URI が既定のブラウザーで開きます。 既定のブラウザーは、アプリと別のプロセスで実行されます。
 
-> **注**  http: または https: スキームを使用する必要はありません。 ブラウザーに読み込むのに適したリソース コンテンツがこれらの場所にある場合は、ms-appx:、ms-appdata: または ms リソース: などのスキームを使うことができます。 ただし、file: スキームは明確に禁止されます。 詳しくは、「[URI スキーム](https://msdn.microsoft.com/library/windows/apps/jj655406.aspx)」 をご覧ください。
+> **注**
+            &nbsp;&nbsp;http: または https: スキームを使用する必要はありません。 ブラウザーに読み込むのに適したリソース コンテンツがこれらの場所にある場合は、ms-appx:、ms-appdata: または ms リソース: などのスキームを使うことができます。 ただし、file: スキームは明確に禁止されます。 詳しくは、「[URI スキーム](https://msdn.microsoft.com/library/windows/apps/jj655406.aspx)」 をご覧ください。
 
 > ユーザーがハイパーリンクをクリックすると、URI の種類とスキームのシステムのハンドラーに NavigateUri プロパティの値が渡されます。 システムは、NavigateUri の指定された URI のスキームに対して登録されているアプリを起動します。
 
@@ -138,13 +141,11 @@ template: detail.hbs
 -   個々のハイパーリンクの間には十分な間隔を空けます。これにより、それぞれのハイパーリンクを区別することができ、ハイパーリンクを間違えずに選ぶことができます。
 -   ユーザーの移動先を示すヒントをハイパーリンクに追加します。 ユーザーが外部サイトに移動する場合は、ヒント内にトップレベルのドメイン名を入れ、補助的なフォント色を使ってそのテキストのスタイルを指定します。
 
-\[この記事には、ユニバーサル Windows プラットフォーム (UWP) アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
+
 
 ## 関連記事
 
-[テキスト コントロール](text-controls.md)
-
-**デザイナー向け**
+- [テキスト コントロール](text-controls.md)
 - [ヒントのガイドライン](tooltips.md)
 
 **開発者向け (XAML)**
@@ -152,6 +153,6 @@ template: detail.hbs
 - [**Windows.UI.Xaml.Controls.HyperlinkButton クラス**](https://msdn.microsoft.com/library/windows/apps/br242739)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

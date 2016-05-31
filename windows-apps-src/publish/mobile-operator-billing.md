@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: Windows ストアでは、支払方法として携帯電話会社による課金を、この機能をサポートしている携帯電話会社に提供しています。
 title: 携帯電話会社による課金
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
@@ -43,7 +44,7 @@ Windows 10 での携帯電話会社による課金の実装は、現在、次の
 | オーストラリア            | Telstra                                                            |
 | オーストリア              | A1 Telekom、T-Mobile                                               |
 | バーレーン              | Zain、VIVA                                                         |
-| ベルギー              | BASE、Mobistar                                                     |
+| ベルギー              | BASE、Mobistar、Proximus                                                     |
 | ブラジル               | Claro                                                              |
 | ブルガリア             | Telenor                                                            |
 | カナダ               | Fido、Rogers、Telus                                                |
@@ -64,7 +65,7 @@ Windows 10 での携帯電話会社による課金の実装は、現在、次の
 | ハンガリー              | Telenor、T-Mobile                                                  |
 | インド                | Idea                                                               |
 | インドネシア            | Indosat、Telkomsel、XL Axiata、AXIS                                |
-| アイルランド              | O2、Vodafone                                                       |
+| アイルランド              | O2、Vodafone、Three                                                      |
 | イタリア                | Telecom Italia、Vodafone、Wind、3 Italia                           |
 | ヨルダン               | Zain、Umniah                                                       |
 | ケニア                | Safaricom                                                          |
@@ -82,10 +83,10 @@ Windows 10 での携帯電話会社による課金の実装は、現在、次の
 | ポーランド               | T-Mobile、Orange、Polkomtel (Plus)                                 |
 | プエルトリコ          | Claro                                                              |
 | ルーマニア              | Orange、Vodafone                                                   |
-| ロシア               | Beeline                                                            |
+| ロシア               | Beeline、MTS                                                          |
 | サウジアラビア         | Zain                                                               |
 | シンガポール            | M1、SingTel、StarHub                                               |
-| スロバキア共和国             | T-Mobile                                                           |
+| スロバキア             | T-Mobile                                                           |
 | スロベニア             | Si.mobil                                                           |
 | 南アフリカ         | Vodacom                                                            |
 | スペイン                | Movistar、Vodafone、Orange                                         |
@@ -110,6 +111,6 @@ Windows 10 での携帯電話会社による課金の実装は、現在、次の
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

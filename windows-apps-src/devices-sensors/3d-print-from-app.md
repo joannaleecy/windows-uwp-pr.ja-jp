@@ -1,4 +1,5 @@
 ---
+author: PatrickFarley
 title: アプリからの 3D 印刷
 description: ユニバーサル Windows アプリに 3D 印刷機能を追加する方法について説明します。 このトピックでは、3D モデルが印刷可能であり、正しい形式になっていることを確認した後で 3D 印刷ダイアログを起動する方法について説明します。
 ms.assetid: D78C4867-4B44-4B58-A82F-EDA59822119C
@@ -14,7 +15,7 @@ ms.assetid: D78C4867-4B44-4B58-A82F-EDA59822119C
 
 -   [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/library/windows/apps/dn998169)
 
-ユニバーサル Windows アプリに 3D 印刷機能を追加する方法について説明します。 このトピックでは、3D モデルが印刷可能であり、正しい形式になっていることを確認した後で 3D 印刷ダイアログを起動する方法について説明します。
+ユニバーサル Windows アプリに 3D 印刷機能を追加する方法について説明します。 このトピックでは、アプリに 3D 形状データを読み込んだ後、その 3D モデルが印刷可能であり、正しい形式になっていることを確認してから 3D 印刷ダイアログを起動する方法について説明します。 以下の手順の実例については、[3D 印刷の UWP サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)をご覧ください。
 
 ## クラス セットアップ
 
@@ -55,7 +56,7 @@ UI フィードバック用に **TextBlock** を追加します。
 
 これで、3D データ ファイルをアプリのメモリに読み込むことができます。 ただし、3D 形状データには、さまざまな形式がありますが、すべてが 3D 印刷に効率的であるわけではありません。 Windows 10 では、すべての 3D 印刷タスクについて 3D Manufacturing Format (.3mf) というファイル形式を使います。
 
-> **注**  3MF ファイル形式には、このチュートリアルでは扱っていない多くの機能が用意されています。 3MF と 3D 製品のプロデューサーおよびコンシューマー向けに用意されたその機能について詳しくは、[3MF の仕様](http://3mf.io/what-is-3mf/3mf-specification/) をご覧ください。
+> **注**  3MF ファイル形式には、このチュートリアルでは扱っていない多くの機能が用意されています。 3MF と 3D 製品のプロデューサーおよびコンシューマー向けに用意されたその機能について詳しくは、[3MF の仕様](http://3mf.io/what-is-3mf/3mf-specification/)をご覧ください。 Windows 10 API を使ってこれらの機能を利用する方法については、「[3MF パッケージの生成](https://msdn.microsoft.com/windows/uwp/devices-sensors/generate-3mf)」チュートリアルをご覧ください。
 
 幸いなことに、[3D Builder](https://www.microsoft.com/store/apps/3d-builder/9wzdncrfj3t6) アプリでは、一般的なほとんどの 3D 形式のファイルを開くことができ、それらを .3mf ファイル形式で保存することができます。 この例では、ファイルの種類が異なる場合に、簡単な解決策として、3D Builder を開き、インポートしたデータを .3mf ファイルとして保存し再度読み込むようユーザーに求めます。
 
@@ -113,10 +114,13 @@ UI フィードバック用に **TextBlock** を追加します。
 
 [!code-cs[ShowDialog](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetShowDialog)]
 
-最後に、アプリにコントロールが戻ったら、イベント ハンドラーの登録を解除することをお勧めします。
-[!code-cs[DeregisterMyTaskRequested](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetDeregisterMyTaskRequested)]
+最後に、アプリにコントロールが戻ったら、イベント ハンドラーの登録を解除することをお勧めします。[!code-cs[DeregisterMyTaskRequested](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetDeregisterMyTaskRequested)]
 
+## 関連トピック
 
+[3MF パッケージの生成](https://msdn.microsoft.com/windows/uwp/devices-sensors/generate-3mf)
+
+[3D 印刷の UWP サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/3DPrinting)
  
 
  
@@ -126,6 +130,6 @@ UI フィードバック用に **TextBlock** を追加します。
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

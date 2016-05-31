@@ -1,11 +1,12 @@
 ---
+author: TylerMSFT
 ms.assetid: 1B077801-0A58-4A34-887C-F1E85E9A37B0
 title: 定期的な作業項目の作成
 description: 定期的に実行される作業項目の作成方法を説明します。
 ---
 # 定期的な作業項目の作成
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\ ]
 
 ** 重要な API **
 
@@ -18,7 +19,9 @@ description: 定期的に実行される作業項目の作成方法を説明し�
 
 定期的な作業項目を作成するには、[**CreatePeriodicTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967915) メソッドを使います。 作業を実行するラムダを指定し、*period* パラメーターを使って送信の間隔を指定します。 period パラメーターは [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/BR225996) 構造体を使って指定します。 この期間が経過するたびに作業項目が再送信されるため、作業を完了できる十分な長さを確保してください。
 
-[**CreateTimer**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.threading.threadpooltimer.createtimer.aspx) は [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587) オブジェクトを返します。 タイマーを取り消す必要が生じた場合は、このオブジェクトを格納します。
+[
+              **CreateTimer**
+            ](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.threading.threadpooltimer.createtimer.aspx) は [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587) オブジェクトを返します。 タイマーを取り消す必要が生じた場合は、このオブジェクトを格納します。
 
 > **注:** 間隔の値を 0 にする (または 1 ミリ秒未満の値にする) ことは避けてください。 この場合、定期タイマーは 1 回限りのタイマーとして動作します。
 
@@ -156,14 +159,14 @@ description: 定期的に実行される作業項目の作成方法を説明し�
 > 
 >         }),
 >         period,
->         ref new TimerDestroyedHandler([&amp;](ThreadPoolTimer ^ source)
+>         ref new TimerDestroyedHandler([&](ThreadPoolTimer ^ source)
 >         {
 >             // 
 >             // TODO: Handle periodic timer cancellation.
 >             // 
 > 
 >             Dispatcher->RunAsync(CoreDispatcherPriority::High,
->                 ref new DispatchedHandler([&amp;]()
+>                 ref new DispatchedHandler([&]()
 >                 {
 >                     // 
 >                     // UI components can be accessed within this scope.
@@ -200,6 +203,6 @@ description: 定期的に実行される作業項目の作成方法を説明し�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

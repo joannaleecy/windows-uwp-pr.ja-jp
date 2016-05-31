@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: スプラッシュ画面の追加
 description: Microsoft Visual Studio 2015 を使ってアプリのスプラッシュ画面の画像と背景色を設定します。
 ms.assetid: 41F53046-8AB7-4782-9E90-964D744B7D66
@@ -7,7 +8,7 @@ ms.assetid: 41F53046-8AB7-4782-9E90-964D744B7D66
 # スプラッシュ画面の追加
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
 Microsoft Visual Studio 2015 を使ってアプリのスプラッシュ画面の画像と背景色を設定します。
@@ -18,7 +19,7 @@ Microsoft Visual Studio 2015 を使ってアプリのスプラッシュ画面�
 Visual Studio 2015 テンプレートを使ってアプリを作成すると、既定の画像がプロジェクトに追加され、スプラッシュ画面の画像として設定されます。 スプラッシュ画面の既定の背景色は既定で薄い灰色に設定されます。 アプリのスプラッシュ画面の既定の画像や色を変更する場合は、次の手順を実行します。
 
 1.  Visual Studio 2015 で既にあるユニバーサル Windows プラットフォーム (UWP) アプリ プロジェクトを開きます。
-2.  **ソリューション エクスプ ローラー**から "Package.appxmanifest" ファイルを開きます。 メニュー バーから **[プロジェクト]** &gt; **[ストア]** &gt; **[アプリケーション マニフェストの編集]** の順に選んで、このファイルを開くこともできます。
+2.  **ソリューション エクスプ ローラー**から "Package.appxmanifest" ファイルを開きます。 メニュー バーから **[プロジェクト]**&gt;**[ストア]**&gt;**[アプリケーション マニフェストの編集]** を選んで、このファイルを開くこともできます。
 3.  **[ビジュアル資産]** タブを開き、[Package.appxmanifest] ウィンドウの左側にある **[すべてのイメージ資産]** ウィンドウから **[スプラッシュ画面]** を選びます。 初めてスプラッシュ画面を変更する場合は、**[スプラッシュ画面]** に "Assets\\SplashScreen.png" というパスが表示されます。
 
     次のスクリーン ショットは、Visual Studio 2015 での [Package.appxmanifest] ウィンドウを示しています。 プロジェクトの種類に応じて、表示されるビジュアル資産が若干異なります。
@@ -27,7 +28,7 @@ Visual Studio 2015 テンプレートを使ってアプリを作成すると、
 
     テキスト エディターで "Package.appxmanifest" を開くと、[**VisualElements 要素**](https://msdn.microsoft.com/library/windows/apps/br211471) の子として [**SplashScreen 要素**](https://msdn.microsoft.com/library/windows/apps/br211467) が表示されます。 マニフェスト ファイル内の既定のスプラッシュ画面のマークアップはテキスト エディターで次のようになります。
 
-    ```xaml
+    ```xml
     <uap:SplashScreen Image="Assets\SplashScreen.png" />
     ```
 
@@ -74,6 +75,6 @@ Visual Studio 2015 テンプレートを使ってアプリを作成すると、
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

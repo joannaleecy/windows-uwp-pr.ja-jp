@@ -1,15 +1,13 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: このトピックでは、タッチ補正のための接触形状の使用について説明し、Windows ランタイム アプリでのターゲット設定のベスト プラクティスを紹介します。
 title: ターゲット設定
 ms.assetid: 93ad2232-97f3-42f5-9e45-3fc2143ac4d2
-label: ターゲット設定
+label: Targeting
 template: detail.hbs
 ---
 
-# ターゲットの設定のガイドライン
-
-
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください \]
+# ターゲット設定のガイドライン
 
 Windows のタッチ補正では、タッチ デジタイザーで検出されるそれぞれの指が接触する領域全体を使います。 デジタイザーから伝えられる、より広く複雑なこの入力データのセットを使うと、ユーザーが意図した (または意図した可能性が高い) ターゲットをより正確に特定できます。
 
@@ -81,8 +79,8 @@ Windows のタッチ補正では、タッチ デジタイザーで検出され�
 </tr>
 <tr class="even">
 <td align="left">外観上のターゲット サイズ</td>
-<td align="left">実際のサイズの 60% 未満</td>
-<td align="left">実際のサイズの 90 から 100%
+<td align="left">&lt; 実際のサイズの 60%</td>
+<td align="left">実際のサイズの 90 ～ 100%
 <p>ほとんどのユーザーは一辺 4.2 mm の正方形 (7 mm の推奨の最小ターゲットのサイズの 60%) よりも小さい場合、外観上のターゲットがタッチ可能であると実感しません。</p></td>
 </tr>
 <tr class="odd">
@@ -153,6 +151,7 @@ Windows では、ここで示した最小サイズや推奨する余白サイズ
 * [待機時間が短い入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [ユーザー操作モードのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619894)
 * [フォーカスの視覚効果のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+
 **サンプルのアーカイブ**
 * [入力: XAML ユーザー入力イベントのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [入力: デバイス機能のサンプル](http://go.microsoft.com/fwlink/p/?linkid=231530)
@@ -171,6 +170,6 @@ Windows では、ここで示した最小サイズや推奨する余白サイズ
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

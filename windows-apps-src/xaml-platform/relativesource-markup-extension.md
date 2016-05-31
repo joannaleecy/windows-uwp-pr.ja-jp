@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: ランタイム オブジェクト グラフの相対関係に関するバインドのソースを指定する手段を提供します。
 title: RelativeSource マークアップ拡張
 ms.assetid: B87DEF36-BE1F-4C16-B32E-7A896BD09272
@@ -28,9 +29,7 @@ ms.assetid: B87DEF36-BE1F-4C16-B32E-7A896BD09272
 
 ## XAML 値
 
-| 用語 | 説明 |
-| {RelativeSource Self} | [<strong>モード</strong>](https://msdn.microsoft.com/library/windows/apps/br209915)値の生成は <strong>Self</strong> です。 ターゲット要素をこのバインドのソースとして使う必要があります。 要素の 1 つのプロパティを同じ要素の別のプロパティにバインドする場合に便利です。 |
-| {RelativeSource TemplatedParent} | [<strong>ControlTemplate</strong>](https://msdn.microsoft.com/library/windows/apps/br209391)の生成が適用されるは、このバインドのソースです。 ランタイム情報をテンプレート レベルでバインドに適用する場合に便利です。 | 
+| 用語 | 説明 | | {RelativeSource Self} | [<strong>Mode</strong>](https://msdn.microsoft.com/library/windows/apps/br209915) 値 <strong>Self</strong> を生成します。 ターゲット要素をこのバインドのソースとして使う必要があります。 要素の 1 つのプロパティを同じ要素の別のプロパティにバインドする場合に便利です。 | | {RelativeSource TemplatedParent} | このバインドのソースとして適用される [<strong>ControlTemplate</strong>](https://msdn.microsoft.com/library/windows/apps/br209391) を生成します。 ランタイム情報をテンプレート レベルでバインドに適用する場合に便利です。 | 
 
 ## 注釈
 
@@ -43,7 +42,7 @@ ms.assetid: B87DEF36-BE1F-4C16-B32E-7A896BD09272
 
 次に例を示します。 この [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) は [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) と [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) が常に等しく、正方形として表示されるように [{Binding} マークアップ拡張](binding-markup-extension.md) を使います。 Height のみが固定値として設定されます。 この **Rectangle** の既定の[**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) は**これ**ではなく **null** です。 そこで、データ コンテキストのソースをオブジェクト自体にするために (そして他のプロパティにバインドできるようにするために)、{Binding} マークアップ拡張の使用時に `RelativeSource={RelativeSource Self}` 引数を使います。
 
-```XAML
+```XML
 <Rectangle
   Fill="Orange" Width="200"
   Height="{Binding RelativeSource={RelativeSource Self}, Path=Width}"
@@ -64,6 +63,6 @@ ms.assetid: B87DEF36-BE1F-4C16-B32E-7A896BD09272
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

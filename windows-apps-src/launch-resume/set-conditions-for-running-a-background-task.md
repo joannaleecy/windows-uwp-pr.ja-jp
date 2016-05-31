@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: バックグラウンド タスクを実行するための条件の設定
 description: バックグラウンド タスクをいつ実行するかを制御する条件の設定方法について説明します。
 ms.assetid: 10ABAC9F-AA8C-41AC-A29D-871CD9AD9471
@@ -90,102 +91,99 @@ ms.assetid: 10ABAC9F-AA8C-41AC-A29D-871CD9AD9471
 
 > [!div class="tabbedCodeSnippets"]
 ```cs
-> // 
+> //
 > // Set up the background task.
-> // 
-> 
+> //
+>
 > TimeTrigger hourlyTrigger = new TimeTrigger(60, false);
-> 
+>
 > var recurringTaskBuilder = new BackgroundTaskBuilder();
-> 
+>
 > recurringTaskBuilder.Name           = "Hourly background task";
 > recurringTaskBuilder.TaskEntryPoint = "Tasks.ExampleBackgroundTaskClass";
 > recurringTaskBuilder.SetTrigger(hourlyTrigger);
-> 
-> // 
+>
+> //
 > // Begin adding conditions.
-> // 
-> 
+> //
+>
 > SystemCondition userCondition     = new SystemCondition(SystemConditionType.UserPresent);
 > SystemCondition internetCondition = new SystemCondition(SystemConditionType.InternetAvailable);
-> 
+>
 > recurringTaskBuilder.AddCondition(userCondition);
 > recurringTaskBuilder.AddCondition(internetCondition);
-> 
-> // 
+>
+> //
 > // Done adding conditions, now register the background task.
-> // 
-> 
+> //
+>
 > BackgroundTaskRegistration task = recurringTaskBuilder.Register();
-> ```
-> ```cpp
-> // 
+```
+```cpp
+> //
 > // Set up the background task.
-> // 
-> 
+> //
+>
 > TimeTrigger ^ hourlyTrigger = ref new TimeTrigger(60, false);
-> 
+>
 > auto recurringTaskBuilder = ref new BackgroundTaskBuilder();
-> 
+>
 > recurringTaskBuilder->Name           = "Hourly background task";
 > recurringTaskBuilder->TaskEntryPoint = "Tasks.ExampleBackgroundTaskClass";
 > recurringTaskBuilder->SetTrigger(hourlyTrigger);
-> 
-> // 
+>
+> //
 > // Begin adding conditions.
-> // 
-> 
+> //
+>
 > SystemCondition ^ userCondition     = ref new SystemCondition(SystemConditionType::UserPresent);
 > SystemCondition ^ internetCondition = ref new SystemCondition(SystemConditionType::InternetAvailable);
-> 
+>
 > recurringTaskBuilder->AddCondition(userCondition);
 > recurringTaskBuilder->AddCondition(internetCondition);
-> 
-> // 
+>
+> //
 > // Done adding conditions, now register the background task.
-> // 
-> 
+> //
+>
 > BackgroundTaskRegistration ^ task = recurringTaskBuilder->Register();
-> ```
+```
 
-## Remarks
+## 注釈
 
 
-> **Note**  Chose the right conditions for your background task so that it only runs when it's needed, and doesn't run when it won't work. See [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) for descriptions of the different background task conditions.
+> **注**  バックグラウンド タスクが必要なときに実行され、機能しない場合には実行されないようにするために、バックグラウンド タスクには正しい条件を選んでください。 バックグラウンド タスクの各条件については、「[**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)」をご覧ください。
 
-> **Note**  This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **注:** この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
  
 
-## Related topics
+## 関連トピック
 
 
 ****
 
-* [Create and register a background task](create-and-register-a-background-task.md)
-* [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md)
-* [Handle a cancelled background task](handle-a-cancelled-background-task.md)
-* [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)
-* [Register a background task](register-a-background-task.md)
-* [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md)
-* [Update a live tile from a background task](update-a-live-tile-from-a-background-task.md)
-* [Use a maintenance trigger](use-a-maintenance-trigger.md)
-* [Run a background task on a timer](run-a-background-task-on-a-timer-.md)
-* [Guidelines for background tasks](guidelines-for-background-tasks.md)
+* [バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)
+* [アプリケーション マニフェストでのバックグラウンド タスクの宣言](declare-background-tasks-in-the-application-manifest.md)
+* [取り消されたバックグラウンド タスクの処理](handle-a-cancelled-background-task.md)
+* [バックグラウンド タスクの進捗状況と完了の監視](monitor-background-task-progress-and-completion.md)
+* [バックグラウンド タスクの登録](register-a-background-task.md)
+* [バックグラウンド タスクによるシステム イベントへの応答](respond-to-system-events-with-background-tasks.md)
+* [バックグラウンド タスクのライブ タイルの更新](update-a-live-tile-from-a-background-task.md)
+* [メンテナンス トリガーの使用](use-a-maintenance-trigger.md)
+* [タイマーでのバックグラウンド タスクの実行](run-a-background-task-on-a-timer-.md)
+* [バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)
 
 ****
 
-* [Debug a background task](debug-a-background-task.md)
-* [How to trigger suspend, resume, and background events in Windows Store apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [バックグラウンド タスクのデバッグ](debug-a-background-task.md)
+* [Windows ストア アプリで一時停止イベント、再開イベント、バックグラウンド イベントをトリガーする方法 (デバッグ時)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
  
 
  
 
 
-
-
-
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

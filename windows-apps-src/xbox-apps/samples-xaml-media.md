@@ -1,7 +1,6 @@
-#メディア アプリの XAML サンプル
-このトピックでは、Xbox One のメディア アプリの XAML サンプルを一覧表示します。
+author: Mtoepke #メディア アプリの XAML サンプル このトピックでは、Xbox One のメディア アプリの XAML サンプルを一覧表示します。
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

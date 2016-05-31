@@ -1,4 +1,5 @@
 ---
+author: DelfCo
 ms.assetid: 2CC2E526-DACB-4008-9539-DA3D0C190290
 description: UWP 開発者が利用できるネットワーク テクノロジの概要と、アプリに適したテクノロジを選ぶヒントを説明します。
 title: アプリに適したネットワーク テクノロジ
@@ -144,6 +145,6 @@ Windows 10 では、これまではデバイスの製造元と携帯電話会社
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

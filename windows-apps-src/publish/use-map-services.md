@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: Windows Phone 8.1 以前を対象としたアプリでマップ サービスを使うには、アプリのコードに含めるマップ サービス アプリケーション ID とトークンが必要です。 デベロッパー センター ダッシュボードで、[マップ] ページの [サービス] セクションでこのトークンを取得できます。
 title: マップ サービスの使用
 ms.assetid: E5EE6B56-B86F-4D62-B16A-F023FE98EFAB
@@ -26,6 +27,6 @@ Windows Phone 8.1 以前を対象としたアプリでマップ サービスを�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

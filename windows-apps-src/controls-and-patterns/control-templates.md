@@ -1,17 +1,18 @@
 ---
+author: Jwmsft
 Description: XAML フレームワークで、コントロール テンプレートを作ることによって、コントロールの視覚的構造や視覚的動作をカスタマイズすることができます。
 MS-HAID: 'dev\_ctrl\_layout\_txt.control\_templates'
 MSHAttr: 'PreferredLib:/library/windows/apps'
 Search.Product: eADQiWindows 10XVcnh
 title: コントロール テンプレート
 ms.assetid: 6E642626-A1D6-482F-9F7E-DBBA7A071DAD
-label: コントロール テンプレート
+label: Control templates
 template: detail.hbs
 ---
 
 # コントロール テンプレート
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
+
 
 **重要な API**
 
@@ -106,7 +107,10 @@ XAML フレームワークで、コントロール テンプレートを作る�
 [
             **VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) オブジェクトを使って、コントロールが特定の状態にあるときの外観を指定します。 **VisualState** には、[**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 内の要素の外観を変更する [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) または [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br243053) が含まれています。 コントロールが [**VisualState.Name**](https://msdn.microsoft.com/library/windows/apps/br209031) プロパティで指定された状態になると、**Setter** または [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490) 内のプロパティの変更が適用されます。 コントロールがこの状態でなくなると、変更は削除されます。 **VisualState** オブジェクトは [**VisualStateGroup**](https://msdn.microsoft.com/library/windows/apps/br209014) オブジェクトに追加します。 **ControlTemplate** のルート [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) に設定する [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) 添付プロパティに、**VisualStateGroup** オブジェクトを追加します。
 
-次の XAML は、`Checked`、`Unchecked`、`Indeterminate` の各状態に対する [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) オブジェクトを示しています。 この例では、[**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) のルート要素である [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) に対して [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) 添付プロパティを設定します。 `Checked` **VisualState** は、(前の例で示した) `CheckGlyph` という名前の [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) の [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) が 1 であることを指定します。 `Indeterminate` **VisualState** は、`IndeterminateGlyph` という名前の [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/br243343) の **Opacity** が 1 であることを指定します。 `Unchecked` **VisualState** には [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) または [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490) がないため、[**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) は既定の外観に戻ります。
+次の XAML は、`Checked`、`Unchecked`、`Indeterminate` の各状態に対する [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) オブジェクトを示しています。 この例では、[**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) のルート要素である [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) に対して [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) 添付プロパティを設定します。 `Checked`
+            **VisualState** は、(前の例で示した) `CheckGlyph` という名前の [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) の [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) が 1 であることを指定します。 `Indeterminate`
+            **VisualState** は、`IndeterminateGlyph` という名前の [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/br243343) の **Opacity** が 1 であることを指定します。 `Unchecked`
+            **VisualState** には [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) または [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490) がないため、[**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) は既定の外観に戻ります。
 
 ```XAML
 <ControlTemplate x:Key="CheckBoxTemplate1" TargetType="CheckBox">
@@ -175,9 +179,16 @@ XAML フレームワークで、コントロール テンプレートを作る�
 |                                      |                                                                                                                                                                                                                                                                                                                                                |                                                   |
 |--------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------|
 | 状態の遷移                     | 動作                                                                                                                                                                                                                                                                                                                                   | 遷移完了時の CheckBox の外観 |
-| `Unchecked` から `Checked`。       | `Checked` [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) の [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 値が適用され、`CheckGlyph` の [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) が 1 となる。                                                                                                                                                         | X が表示される。                                |
-| `Checked` から `Indeterminate`。   | `Indeterminate` [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) の [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 値が適用され、`IndeterminateGlyph` の [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) が 1 となる。 `Checked` **VisualState** の **Setter** 値が削除され、`CheckGlyph` の [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br228078) が 0 となる。 | 円が表示される。                            |
-| `Indeterminate` から `Unchecked`。 | `Indeterminate` [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) の [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 値が削除され、`IndeterminateGlyph` の [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) が 0 となる。                                                                                                                                           | 何も表示されない。                             |
+| `Unchecked` から `Checked`。       | `Checked`
+            [
+            **VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) の [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 値が適用され、`CheckGlyph` の [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) が 1 となる。                                                                                                                                                         | X が表示される。                                |
+| `Checked` から `Indeterminate`。   | `Indeterminate`
+            [
+            **VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) の [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 値が適用され、`IndeterminateGlyph` の [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) が 1 となる。 `Checked`
+            **VisualState** の **Setter** 値が削除され、`CheckGlyph` の [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br228078) が 0 となる。 | 円が表示される。                            |
+| `Indeterminate` から `Unchecked`。 | `Indeterminate`
+            [
+            **VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) の [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 値が削除され、`IndeterminateGlyph` の [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) が 0 となる。                                                                                                                                           | 何も表示されない。                             |
 
  
 コントロールの表示状態の作成方法、特に、[**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490) クラスとアニメーション タイプの使い方について詳しくは、「[表示状態用にストーリーボードに設定されたアニメーション](https://msdn.microsoft.com/library/windows/apps/xaml/jj819808)」をご覧ください。
@@ -202,7 +213,7 @@ XAML コントロールのスタイルとテンプレートについて説明す
 
 XAML の例を見ると、一部の属性について [{ThemeResource} マークアップ拡張機能](../xaml-platform/themeresource-markup-extension.md) を使うリソース参照があることがわかるでしょう。 この手法では、現在アクティブであるテーマに応じて値が変わるリソースを 1 つのコントロール テンプレートで使用できます。 この点はブラシと色に特に重要です。システム全体に暗い、明るい、またはハイコントラストのいずれのテーマを適用するかをユーザーが選択できるようにすることが、テーマの主な目的であるためです。 XAML リソース システムを使うアプリはそのテーマに適切な一連のリソースを使用できます。そのため、アプリの UI のテーマの選択にはユーザーのシステム全体のテーマの選択が反映されます。
 
-**注**  
+**注:**  
 この記事は、UWP アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください。
 
  
@@ -215,6 +226,6 @@ XAML の例を見ると、一部の属性について [{ThemeResource} マーク
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

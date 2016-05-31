@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: マークアップとコード ビハインドの間で部分クラスを結合するための XAML コンパイルを設定します。 コードの部分クラスは、個別のコード ファイルで定義され、マークアップ部分クラスは XAML コンパイル時のコード生成によって作成されます。
 title: xClass 属性
 ms.assetid: 40A7C036-133A-44DF-9D11-0D39232C948F
@@ -40,6 +41,6 @@ ms.assetid: 40A7C036-133A-44DF-9D11-0D39232C948F
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

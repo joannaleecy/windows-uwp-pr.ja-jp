@@ -1,8 +1,9 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: このトピックでは、テキスト、画像、コントロールを選んだり操作したりするための新しい Windows UI について説明します。また、Windows ストア アプリでこの新しい選択と操作のメカニズムを使うときに考慮する必要のあるユーザー エクスペリエンスに関するガイドラインを示します。
 title: テキストと画像の選択
 ms.assetid: d973ffd8-602e-47b5-ab0b-4b2a964ec53d
-label: テキストと画像の選択
+label: Selecting text and images
 template: detail.hbs
 ---
 
@@ -10,7 +11,7 @@ template: detail.hbs
 
 この記事では、テキスト、画像、コントロールの選択と操作について説明し、アプリでこれらのメカニズムを使うときに考慮する必要があるユーザー エクスペリエンスのガイドラインを示します。
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください \]
+
 
 
 **重要な API**
@@ -73,7 +74,7 @@ Windows では、選択操作のために "編集可能" と "編集不可" の
 
 ![選択範囲内またはグリッパー上でタップ (または長押し) してコンテキスト メニューを呼び出します。](images/textselection-show-context.png)
 
-**注:**  これらの対話的操作は、綴りに間違いのある単語の場合は若干異なります。 綴りに誤りがあるとしてマークされている単語をタップすると、単語全体が強調表示されて、スペル候補のコンテキスト メニューが呼び出されます。
+**注:**  これらの対話式操作は、綴りに間違いのある単語の場合は若干異なります。 綴りに誤りがあるとしてマークされている単語をタップすると、単語全体が強調表示されて、スペル候補のコンテキスト メニューが呼び出されます。
 
  
 
@@ -104,12 +105,14 @@ UWP アプリでカスタム オブジェクト操作を実装する場合は、
 
 
 **開発者向け**
-* [カスタム ユーザー操作](https://msdn.microsoft.com/library/windows/apps/mt185599)
+* [カスタム ユーザー対話式操作](https://msdn.microsoft.com/library/windows/apps/mt185599)
+
 **サンプル**
 * [基本的な入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620302)
 * [待機時間が短い入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [ユーザー操作モードのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619894)
 * [フォーカスの視覚効果のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+
 **サンプルのアーカイブ**
 * [入力: XAML ユーザー入力イベントのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [入力: デバイス機能のサンプル](http://go.microsoft.com/fwlink/p/?linkid=231530)
@@ -128,6 +131,6 @@ UWP アプリでカスタム オブジェクト操作を実装する場合は、
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

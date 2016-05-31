@@ -1,4 +1,5 @@
 ---
+author: TylerMSFT
 ms.assetid: E2A1200C-9583-40FA-AE4D-C9E6F6C32BCF
 title: スレッド プールへの作業項目の送信
 description: スレッド プールに作業項目を送信することで独立したスレッドで作業を実行する方法について説明します。
@@ -33,7 +34,7 @@ const unsigned int n = 9999;
 // A shared pointer to the result.
 // We use a shared pointer to keep the result alive until the 
 // thread is done.
-std::shared_ptr&lt;unsigned long&gt; nthPrime = make_shared&lt;unsigned long int&gt;(0);
+std::shared_ptr<unsigned long> nthPrime = make_shared<unsigned long int>(0);
 
 // Simulates work by searching for the nth prime number. Uses a
 // naive algorithm and counts 2 as the first prime number.
@@ -44,15 +45,15 @@ auto workItem = ref new WorkItemHandler(
     unsigned int primes = 0;   // Number of primes found so far.
     unsigned long int i = 2;   // Number iterator.
 
-    if ((n &gt;= 0) &amp;&amp; (n &lt;= 2))
+    if ((n >= 0) && (n <= 2))
     {
         *nthPrime = n;
         return;
     }
 
-    while (primes &lt; (n - 1))
+    while (primes < (n - 1))
     {
-        if (workItem-&gt;Status == AsyncStatus::Canceled)
+        if (workItem->Status == AsyncStatus::Canceled)
         {
             break;
         }
@@ -62,7 +63,7 @@ auto workItem = ref new WorkItemHandler(
 
         // Check for prime.
         bool prime = true;
-        for (unsigned int j = 2; j &lt; i; ++j)
+        for (unsigned int j = 2; j < i; ++j)
         {
             if ((i % j) == 0)
             {
@@ -78,7 +79,7 @@ auto workItem = ref new WorkItemHandler(
 
             // Report progress at every 10 percent.
             unsigned int temp = progress;
-            progress = static_cast&lt;unsigned int&gt;(10.f*primes / n);
+            progress = static_cast<unsigned int>(10.f*primes / n);
 
             if (progress != temp)
             {
@@ -87,7 +88,7 @@ auto workItem = ref new WorkItemHandler(
                     + (10 * progress).ToString() + "%\n";
 
                 // Update the UI thread with the CoreDispatcher.
-                CoreApplication::MainView-&gt;CoreWindow-&gt;Dispatcher-&gt;RunAsync(
+                CoreApplication::MainView->CoreWindow->Dispatcher->RunAsync(
                     CoreDispatcherPriority::High,
                     ref new DispatchedHandler([this, updateString]()
                 {
@@ -119,19 +120,19 @@ ulong nthPrime = 0;
 // Simulates work by searching for the nth prime number. Uses a
 // naive algorithm and counts 2 as the first prime number.
 IAsyncAction asyncAction = Windows.System.Threading.ThreadPool.RunAsync(
-    (workItem) =&gt;
+    (workItem) =>
 {
     uint  progress = 0; // For progress reporting.
     uint  primes = 0;   // Number of primes found so far.
     ulong i = 2;        // Number iterator.
 
-    if ((n &gt;= 0) &amp;&amp; (n &lt;= 2))
+    if ((n >= 0) && (n <= 2))
     {
         nthPrime = n;
         return;
     }
 
-    while (primes &lt; (n - 1))
+    while (primes < (n - 1))
     {
         if (workItem.Status == AsyncStatus.Canceled)
         {
@@ -143,7 +144,7 @@ IAsyncAction asyncAction = Windows.System.Threading.ThreadPool.RunAsync(
 
         // Check for prime.
         bool prime = true;
-        for (uint j = 2; j &lt; i; ++j)
+        for (uint j = 2; j < i; ++j)
         {
             if ((i % j) == 0)
             {
@@ -170,7 +171,7 @@ IAsyncAction asyncAction = Windows.System.Threading.ThreadPool.RunAsync(
                 // Update the UI thread with the CoreDispatcher.
                 CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(
                     CoreDispatcherPriority.High,
-                    new DispatchedHandler(() =&gt;
+                    new DispatchedHandler(() =>
                 {
                     UpdateUI(updateString);
                 }));
@@ -200,7 +201,7 @@ m_workItem = asyncAction;
 
 > [!div class="tabbedCodeSnippets"]
 ``` cpp
-asyncAction-&gt;Completed = ref new AsyncActionCompletedHandler(
+asyncAction->Completed = ref new AsyncActionCompletedHandler(
     \[this, n, nthPrime](IAsyncAction^ asyncInfo, AsyncStatus asyncStatus)
 {
     if (asyncStatus == AsyncStatus::Canceled)
@@ -213,7 +214,7 @@ asyncAction-&gt;Completed = ref new AsyncActionCompletedHandler(
         + (*nthPrime).ToString() + ".\n";
 
     // Update the UI thread with the CoreDispatcher.
-    CoreApplication::MainView-&gt;CoreWindow-&gt;Dispatcher-&gt;RunAsync(
+    CoreApplication::MainView->CoreWindow->Dispatcher->RunAsync(
         CoreDispatcherPriority::High,
         ref new DispatchedHandler([this, updateString]()
     {
@@ -223,7 +224,7 @@ asyncAction-&gt;Completed = ref new AsyncActionCompletedHandler(
 ```
 ``` csharp
 asyncAction.Completed = new AsyncActionCompletedHandler(
-    (IAsyncAction asyncInfo, AsyncStatus asyncStatus) =&gt;
+    (IAsyncAction asyncInfo, AsyncStatus asyncStatus) =>
 {
     if (asyncStatus == AsyncStatus.Canceled)
     {
@@ -237,7 +238,7 @@ asyncAction.Completed = new AsyncActionCompletedHandler(
     // Update the UI thread with the CoreDispatcher.
     CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(
         CoreDispatcherPriority.High,
-        new DispatchedHandler(()=&gt;
+        new DispatchedHandler(()=>
     {
         UpdateUI(updateString);
     }));
@@ -259,6 +260,6 @@ asyncAction.Completed = new AsyncActionCompletedHandler(
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

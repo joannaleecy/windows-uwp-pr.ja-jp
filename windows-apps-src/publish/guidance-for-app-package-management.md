@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: アプリのパッケージをユーザーが使用できるようになるしくみと、特定のパッケージ シナリオを管理する方法について説明します。
 title: アプリ パッケージ管理のガイダンス
 ms.assetid: 55405D0B-5C1E-43C8-91A1-4BFDD336E6AB
@@ -133,6 +134,6 @@ Windows Phone 8.1 用に以前公開されていたアプリを更新する場�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

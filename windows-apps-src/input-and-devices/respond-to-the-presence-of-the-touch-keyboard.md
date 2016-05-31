@@ -1,15 +1,15 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: タッチ キーボードを表示または非表示にするときにアプリの UI を調整する方法について説明します。
 title: タッチ キーボードの表示への応答
 ms.assetid: 70C6130E-23A2-4F9D-88E7-7060062DA988
-label: タッチ キーボードの表示への応答
+label: Respond to the presence of the touch keyboard
 template: detail.hbs
 ---
 
 # タッチ キーボードの表示への応答
 
-
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+タッチ キーボードを表示または非表示にするときにアプリの UI を調整する方法について説明します。
 
 
 **重要な API**
@@ -17,11 +17,11 @@ template: detail.hbs
 -   [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/br209185)
 -   [**InputPane**](https://msdn.microsoft.com/library/windows/apps/br242255)
 
-タッチ キーボードを表示または非表示にするときにアプリの UI を調整する方法について説明します。
+
 
 ![既定のレイアウト モードのタッチ キーボード](images/touchkeyboard-standard.png)
 
-<sup>The\\ touch\\ keyboard\\ in\\ default\\ layout\\ mode</sup>
+<sup>既定\\の\\レイアウト\\ モード\\の\\タッチ\\ キーボード</sup>
 
 タッチ キーボードによって、タッチをサポートするデバイスのテキスト入力が有効になります。 ユニバーサル Windows プラットフォーム (UWP) のテキスト入力コントロールでは、ユーザーが編集可能な入力フィールドをタップしたときに、既定でタッチ キーボードが表示されます。 タッチ キーボードは、通常、ユーザーがフォーム内のコントロール間を移動している間は表示されますが、この動作はフォーム内の他のコントロールの種類に基づいて異なります。
 
@@ -38,7 +38,7 @@ template: detail.hbs
 ユニバーサル Windows プラットフォーム (UWP) アプリを開発するのが初めての場合は、以下のトピックに目を通して、ここで説明されているテクノロジをよく理解できるようにしてください。
 
 -   [初めてのアプリ作成](https://msdn.microsoft.com/library/windows/apps/bg124288)
--   「[イベントとルーティング イベントの概要](https://msdn.microsoft.com/library/windows/apps/mt185584)」でイベントについて学習します。
+-   「[イベントとルーティング イベントの概要](https://msdn.microsoft.com/library/windows/apps/mt185584)」に記載されているイベントの説明
 
 **ユーザー エクスペリエンス ガイドライン:  **
 
@@ -122,8 +122,6 @@ public class MyApplication
 
 ## <span id="related_topics"></span>関連記事
 
-
-
 * [キーボード操作](keyboard-interactions.md)
 * [キーボードのアクセシビリティ](https://msdn.microsoft.com/library/windows/apps/mt244347)
 * [カスタム オートメーション ピア](https://msdn.microsoft.com/library/windows/apps/mt297667)
@@ -143,6 +141,6 @@ public class MyApplication
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

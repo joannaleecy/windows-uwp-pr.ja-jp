@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 Description: コレクション内の画像 (アルバム内の写真や製品の詳細ページ内の項目など) を一度に 1 つずつ表示します。
 title: FlipView コントロールのガイドライン
 ms.assetid: A4E05D92-1A0E-4CDD-84B9-92199FF8A8A3
@@ -102,7 +103,8 @@ ItemsSource が `itemsViewSource` という名前の [**CollectionViewSource**](
           ItemsSource="{Binding Source={StaticResource itemsViewSource}}"/>
 ```
 
->**注**&nbsp;&nbsp;フリップ ビューのデータを設定するには、その Items コレクションに項目を追加するか ItemsSource プロパティを設定しますが、同時に両方の方法で設定することはできません。 ItemsSource プロパティを設定して XAML で項目を追加した場合、追加された項目は無視されます。 ItemsSource プロパティを設定してコードで Items コレクションに項目を追加した場合、例外がスローされます。
+>**注**
+            &nbsp;&nbsp;フリップ ビューのデータを設定するには、その Items コレクションに項目を追加するか ItemsSource プロパティを設定しますが、同時に両方の方法で設定することはできません。 ItemsSource プロパティを設定して XAML で項目を追加した場合、追加された項目は無視されます。 ItemsSource プロパティを設定してコードで Items コレクションに項目を追加した場合、例外がスローされます。
 
 ### 項目の表示方法の指定
 
@@ -202,11 +204,11 @@ ItemsSource が `itemsViewSource` という名前の [**CollectionViewSource**](
 
 ## 関連記事
 
-[リストのガイドライン](https://msdn.microsoft.com/library/windows/apps/mt186889)
+- [リストのガイドライン](https://msdn.microsoft.com/library/windows/apps/mt186889)
 - [**FlipView クラス (XAML)**](https://msdn.microsoft.com/library/windows/apps/br242678)
 - [**CarouselPanel クラス (XAML)**](https://msdn.microsoft.com/library/windows/apps/hh967950)
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

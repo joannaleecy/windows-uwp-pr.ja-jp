@@ -1,24 +1,20 @@
 ---
-Description: このトピックでは、Windows のズームと要素のサイズ変更について説明し、アプリでこのような新しい操作のメカニズムを使うときのユーザー エクスペリエンスのガイドラインを示します。
+author: Karl-Bridge-Microsoft
+Description: このトピックでは、Windows のズームと要素のサイズ変更について説明し、アプリでこのような新しい対話式操作のメカニズムを使うときのユーザー エクスペリエンスのガイドラインを示します。
 title: 光学式ズームとサイズ変更のガイドライン
 ms.assetid: 51a0007c-8a5d-4c44-ac9f-bbbf092b8a00
-label: 光学式ズームとサイズ変更
+label: Optical zoom and resizing
 template: detail.hbs
 ---
 
 # 光学式ズームとサイズ変更
 
-
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください \]
-
+この記事では、Windows のズームと要素のサイズ変更について説明し、アプリでこのような新しい対話式操作のメカニズムを使うときのユーザー エクスペリエンスのガイドラインを示します。
 
 **重要な API**
 
 -   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
--   [**入力 (XAML)**](https://msdn.microsoft.com/library/windows/apps/br227994)
-
-この記事では、Windows のズームと要素のサイズ変更について説明し、アプリでこのような新しい操作のメカニズムを使うときのユーザー エクスペリエンスのガイドラインを示します。
-
+-   [**Input (XAML)**](https://msdn.microsoft.com/library/windows/apps/br227994)
 
 
 光学式ズームを使うと、ユーザーはコンテンツの表示を拡大できます (コンテンツ領域自体に対して実行されます)。一方、サイズ変更を使うと、コンテンツ領域の表示は変更せずに、1 つまたは複数のオブジェクトの相対的なサイズをユーザーが変更できます (コンテンツ領域内のオブジェクトに対して実行されます)。
@@ -77,6 +73,7 @@ template: detail.hbs
 * [待機時間が短い入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [ユーザー操作モードのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619894)
 * [フォーカスの視覚効果のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+
 **サンプルのアーカイブ**
 * [入力: XAML ユーザー入力イベントのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [入力: デバイス機能のサンプル](http://go.microsoft.com/fwlink/p/?linkid=231530)
@@ -95,6 +92,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

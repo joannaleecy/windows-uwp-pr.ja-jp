@@ -1,16 +1,13 @@
 ---
+author: mijacobs
 Description: どのようなアプリでも、主な目的はコンテンツへのアクセスを提供することです。 たとえば、写真編集アプリでは写真がコンテンツであり、旅行アプリでは地図と旅行の目的地に関する情報がコンテンツです。
 title: ユニバーサル Windows プラットフォーム (UWP) アプリのコンテンツ デザインの基本
 ms.assetid: 3102530A-E0D1-4C55-AEFF-99443D39D567
-label: コンテンツ デザインの基本
+label: Content design basics
 template: detail.hbs
 ---
 
 #  UWP アプリのコンテンツ デザインの基本
-
-
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
-
 
 どのようなアプリでも、主な目的はコンテンツへのアクセスを提供することです。たとえば、写真編集アプリでは写真がコンテンツであり、旅行アプリでは地図と旅行の目的地に関する情報がコンテンツです。 ナビゲーション要素はコンテンツへのアクセスを提供します。コマンド要素はユーザーがコンテンツを操作できるようにし、コンテンツ要素は実際のコンテンツを表示します。
 
@@ -49,7 +46,7 @@ template: detail.hbs
 作成に重点を置いたアプリに関する一般的な推奨事項:
 
 -   [ナビゲーション](navigation-basics.md) 要素の使用を最小限に抑えます。
--   [コマンド](commanding-basics.md) 要素は、作成に重点を置いたアプリで特に重要です。 ユーザーは多くのコマンドを実行するため、コマンド履歴/元に戻す機能を提供することをお勧めします。
+-   [コマンド](commanding-basics.md)要素は、作成に重点を置いたアプリで特に重要です。 ユーザーは多くのコマンドを実行するため、コマンド履歴/元に戻す機能を提供することをお勧めします。
 
 ## <span id="Apps_with_interactive_content"></span><span id="apps_with_interactive_content"></span><span id="APPS_WITH_INTERACTIVE_CONTENT"></span>対話型コンテンツを含むアプリ
 
@@ -60,8 +57,8 @@ template: detail.hbs
 
 これらの種類のアプリでは、次の 3 つすべての UI 要素のバランスを取る必要があります。
 
--   [ナビゲーション](navigation-basics.md) 要素を使用すると、ユーザーがコンテンツを見つけて表示しやすくなります。 コンテンツの表示と検索が最も重要なシナリオである場合は、ナビゲーション要素、フィルター処理と並べ替え、検索を優先します。
--   [コマンド](commanding-basics.md) 要素により、ユーザーはコンテンツを作成、編集、操作することができます。
+-   [ナビゲーション](navigation-basics.md)要素を使用すると、ユーザーがコンテンツを見つけて表示しやすくなります。 コンテンツの表示と検索が最も重要なシナリオである場合は、ナビゲーション要素、フィルター処理と並べ替え、検索を優先します。
+-   [コマンド](commanding-basics.md)要素により、ユーザーはコンテンツを作成、編集、操作することができます。
 
 対話型コンテンツを使ったアプリに関する一般的な推奨事項:
 
@@ -88,41 +85,39 @@ template: detail.hbs
 <tbody>
 <tr class="odd">
 <td align="left">オーディオとビデオ</td>
-<td align="left">[Media playback and transport controls](../controls-and-patterns/media-playback.md)</td>
+<td align="left">[メディア再生コントロールとメディア トランスポート コントロール](../controls-and-patterns/media-playback.md)</td>
 <td align="left">オーディオとビデオを再生します。</td>
 </tr>
 <tr class="even">
 <td align="left">画像ビューアー</td>
-<td align="left">[Flip view](../controls-and-patterns/flipview.md)、[image](../controls-and-patterns/images-imagebrushes.md)</td>
+<td align="left">[フリップ ビュー](../controls-and-patterns/flipview.md)、[画像](../controls-and-patterns/images-imagebrushes.md)</td>
 <td align="left">画像を表示します。 FlipView は、コレクション内の画像 (アルバム内の写真や製品の詳細ページ内の項目など) を一度に 1 つずつ表示します。</td>
 </tr>
 <tr class="odd">
 <td align="left">リスト</td>
-<td align="left">[drop-down list, list box, list view and grid view](../controls-and-patterns/lists.md)</td>
+<td align="left">[ドロップダウン リスト、リスト ボックス、リスト ビューとグリッド ビュー](../controls-and-patterns/lists.md)</td>
 <td align="left">対話型のリストまたはグリッド内に項目を表示します。 これらの要素を使うと、ユーザーは新着の一覧からムービーを選んだり、在庫を管理したりすることができます。</td>
 </tr>
 <tr class="even">
 <td align="left">テキストとテキスト入力</td>
-<td align="left"><p>[Text block](../controls-and-patterns/text-block.md)、[text box](../controls-and-patterns/text-box.md)、[rich edit box](../controls-and-patterns/rich-edit-box.md)</p>
+<td align="left"><p>[テキスト ブロック](../controls-and-patterns/text-block.md)、[テキスト ボックス](../controls-and-patterns/text-box.md)、[リッチ エディット ボックス](../controls-and-patterns/rich-edit-box.md)</p>
 </td>
-<td align="left">テキストを表示します。 一部の要素を使うと、ユーザーがテキストを編集することができます。 詳しくは、「[Text controls](../controls-and-patterns/text-controls.md)」をご覧ください。</td>
+<td align="left">テキストを表示します。 一部の要素を使うと、ユーザーがテキストを編集することができます。 詳しくは、「[テキスト コントロール](../controls-and-patterns/text-controls.md)」をご覧ください。</td>
 </tr>
 </tbody>
 </table>
 
- 
 
-\[この記事には、ユニバーサル Windows プラットフォーム (UWP) アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
-
- 
 
  
 
+ 
 
 
 
 
 
-<!--HONumber=Mar16_HO1-->
+
+<!--HONumber=May16_HO2-->
 
 

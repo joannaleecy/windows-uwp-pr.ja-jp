@@ -1,4 +1,5 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: 音声認識を使って、入力を行ったり、操作やコマンドを指定したり、タスクを実行したりできます。
 title: 音声認識
 ms.assetid: 553C0FB7-35BC-4894-9EF1-906139E17552
@@ -8,8 +9,6 @@ template: detail.hbs
 
 # 音声認識
 
-
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 音声認識を使って、入力を行ったり、操作やコマンドを指定したり、タスクを実行したりできます。
 
@@ -38,7 +37,7 @@ template: detail.hbs
 
 音声認識の実行時には、さまざまな種類の制約を使うことができます。
 
-1.  **定義済みの文法**([**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446))。
+1.  **定義済みの文法** ([**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446))。
 
     定義済みのディクテーション文法と Web 検索文法を使うと、文法を作らずにアプリに音声認識を実装できます。 これらの文法を使った場合、音声認識がリモート Web サービスで実行され、結果がデバイスに返されます。
 
@@ -51,13 +50,13 @@ template: detail.hbs
 
      
 
-    These predefined grammars can be used to recognize up to 10 seconds of speech input and require no authoring effort on your part. However, they do require a connection to a network.
+    このような定義済みの文法は、10 秒までの長さの音声入力を認識でき、開発者による作成作業は必要ありません。 ただし、ネットワークへの接続が必要になります。
 
-    To use web-service constraints, speech input and dictation support must be enabled in **Settings** by turning on the "Get to know me" option in the Settings -&gt; Privacy -&gt; Speech, inking, and typing page.
+    Web サービスの制約を使用するには、[設定] の [プライバシー] の [音声認識、手書き入力、タイピング] ページで [自分を知ってもらう] をオンにして、**[設定]** で音声入力とディクテーションのサポートを有効にする必要があります。
 
-    Here, we show how to test whether speech input is enabled and open the Settings -&gt; Privacy -&gt; Speech, inking, and typing page, if not.
+    ここでは、音声入力が有効になっているかどうかをテストし、有効になっていない場合は [設定]、[プライバシー] の [音声認識、手書き入力、タイピング] ページを開く方法を示します。
 
-    First, we initialize a global variable (HResultPrivacyStatementDeclined) to the HResult value of 0x80045509. See [Exception handling for in C\# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/dn532194).
+    まず、グローバル変数 (HResultPrivacyStatementDeclined) を HResult 値 0x80045509 に初期化します。 「[C\# または Visual Basic での例外処理](https://msdn.microsoft.com/library/windows/apps/dn532194)」をご覧ください。
 
 ```    CSharp
 private static uint HResultPrivacyStatementDeclined = 0x80045509;</code></pre></td>
@@ -110,7 +109,7 @@ catch (Exception exception)
 
     Speech Recognition Grammar Specification (SRGS) 文法は静的ドキュメントで、プログラムによる一覧の制約とは異なり、[SRGS Version 1.0](http://go.microsoft.com/fwlink/p/?LinkID=262302) で定義された XML 形式を使います。 SRGS 文法では、1 回の認識で複数の意味をキャプチャすることができるため、音声認識エクスペリエンスを最大限に制御することができます。
 
-4.  **音声コマンドの制約**([**SpeechRecognitionVoiceCommandDefinitionConstraint**](https://msdn.microsoft.com/library/windows/apps/dn653220))
+4.  **音声コマンドの制約** ([**SpeechRecognitionVoiceCommandDefinitionConstraint**](https://msdn.microsoft.com/library/windows/apps/dn653220))
 
     音声コマンド定義 (VCD) XML ファイルを使って、アプリをアクティブ化して操作を開始するためにユーザーが発声できる音声コマンドを定義します。 詳しくは、「[Cortana の音声コマンドを使ったフォアグラウンド アプリの起動](launch-a-foreground-app-with-voice-commands-in-cortana.md)」をご覧ください。
 
@@ -208,9 +207,13 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 
 **開発者向け**
 * [音声操作](speech-interactions.md)
-**デザイナー向け**
+            
+          
+            **デザイナー向け**
 * [音声認識の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596121)
-**サンプル**
+            
+          
+            **サンプル**
 * [音声認識と音声合成のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
@@ -221,6 +224,6 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

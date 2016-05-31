@@ -1,17 +1,13 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: 音声コマンドを使い、アプリに用意されている機能を利用して Cortana を拡張します。
 title: Cortana の設計ガイドライン
 ms.assetid: A92C084B-9913-4718-9A04-569D51ACE55D
-label: ガイドライン
+label: Guidelines
 template: detail.hbs
 ---
 
 # Cortana の設計ガイドライン
-
-
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
-
-
 
 
 このガイドラインおよび推奨事項では、アプリがユーザーとやり取りしてタスクを実行し、どのように行われているかがすべて明らかになるように **Cortana** を有効に活用する方法について説明します。
@@ -70,7 +66,7 @@ template: detail.hbs
 <dd><p>あいまいさを回避します。 専門的な用語ではなく、日常的な言葉を使います。</p>
 </dd>
 </dl></td>
-<td align="left"><p>クエリ「ラスベガス旅行」の結果はありません。</p></td>
+<td align="left"><p>クエリ「&quot;ラスベガス旅行&quot;」の結果はありません。</p></td>
 <td align="left"><p>ラスベガス旅行が見つかりませんでした。</p></td>
 </tr>
 <tr class="even">
@@ -133,17 +129,35 @@ template: detail.hbs
 **重要**  
 Cortana キャンバスのタイトル領域で使用するアプリ アイコンは、Square44x44Logo アイコンで "Package.appxmanifest" ファイルで指定されます。 
 
-Cortana のキャンバスのコンテンツ領域に表示されるクエリからそれぞれの結果に対してアイコンを指定することもできます。 結果のアイコンに対して有効な画像のサイズは次のとおりです。
+ユーザー クエリの結果タイルごとにアイコンを指定することもできます。 結果のアイコンに対して有効な画像のサイズは次のとおりです。
 
 -   幅 68 x 高さ 68
 -   幅 68 x 高さ 92
 -   幅 280 x 高さ 140
 
+## <span id="Result_tile_templates"></span><span id="result_tile_templates"></span><span id="RESULT_TILE_TEMPLATES"></span>結果タイルのテンプレート
+
+Cortana のキャンバスに表示される結果タイル用の一連のテンプレートが用意されています。 これらのテンプレートを使って、タイルのタイトルを指定し、タイルにテキストや結果のアイコンの画像を含めるかどうかを指定します。 各タイルには、指定したテンプレートに応じて、最大 3 行のテキストと 1 つの画像を含めることができます。
+
+サポートされているテンプレートとその例を次に示します。
+
+| 名前 | 例 |
+| --- | --- |
+| タイトルのみ  | ![タイトルのみ](images/cortana/voicecommandcontenttiletype_titleonly_small.png) |
+| タイトルとテキスト   | ![タイトルとテキスト](images/cortana/voicecommandcontenttiletype_titlewithtext_small.png) |
+| 68x68 アイコン付きのタイトル   | 画像なし |
+| 68x68 アイコン付きのタイトルとテキスト   | ![68x68 アイコン付きのタイトルとテキスト](images/cortana/voicecommandcontenttiletype_titlewith68x68iconandtext_small.png) |
+| 68x92 アイコン付きのタイトル   | 画像なし |
+| 68x92 アイコン付きのタイトルとテキスト    | ![68x92 アイコン付きのタイトルとテキスト](images/cortana/voicecommandcontenttiletype_titlewith68x92iconandtext_small.png) |
+| 280x140 アイコン付きのタイトル   | 画像なし |
+| 280x140 アイコン付きのタイトルとテキスト    | ![280x140 アイコン付きのタイトルとテキスト](images/cortana/voicecommandcontenttiletype_titlewith280x140iconandtext_small.png) |
+
+Cortana のテンプレートについて詳しくは、「[VoiceCommandContentTileType](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandcontenttiletype.aspx)」をご覧ください。
 
 ## <span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>例
 
 
-この例では、**Cortana** のバックグラウンド アプリのエンド ツー エンドのタスク フローを示します。 **Adventure Works** アプリは、ラスベガスへの旅行をキャンセルするために使います。
+この例では、**Cortana** のバックグラウンド アプリのエンド ツー エンドのタスク フローを示します。 **Adventure Works** アプリは、ラスベガスへの旅行をキャンセルするために使います。 この例で使っているテンプレートは "68x68 アイコン付きのタイトルとテキスト" です。
 
 ![エンド ツー エンドの Cortana バックグラウンド アプリのフロー](images/speech/e2e-canceltrip.png)
 
@@ -162,14 +176,13 @@ Cortana のキャンバスのコンテンツ領域に表示されるクエリか
 
 ### <span id="Handoff"></span><span id="handoff"></span><span id="HANDOFF"></span>ハンドオフ
 
-|                                                                                                          |
-|----------------------------------------------------------------------------------------------------------|
-| ![エンド ツー エンド: 旅行の検索 (ハンドオフ画面なし) ](images/speech/cortana-backgroundapp-result.png)              |
-| 旅行の検索 (ハンドオフ画面なし)                                                                              |
-| ![エンド ツー エンド: 旅行のキャンセル (ハンドオフ画面あり) ](images/speech/cortana-backgroundapp-progress-result.png) |
-| 旅行のキャンセル (ハンドオフ画面あり)                                                                          |
+| ![エンド ツー エンド: 旅行の検索 (ハンドオフ画面なし) ](images/speech/cortana-backgroundapp-result.png) |
+|--- |
+| 旅行の検索 (ハンドオフ画面なし) |
 
- 
+| ![エンド ツー エンド: 旅行のキャンセル (ハンドオフ画面あり) ](images/speech/cortana-backgroundapp-progress-result.png) |
+|--- |
+| 旅行のキャンセル (ハンドオフ画面あり) | 
 
 アプリが応答するまでの時間が 500 ミリ秒未満で、ユーザーからの追加の情報が必要ないタスクは、完了画面の表示を除いて、**Cortana** からのそれ以上の参加を必要とすることなく完了できます。
 
@@ -198,12 +211,9 @@ GUI 文字列と TTS の文字列は同じにすることができますが、�
 
 ### <span id="Progress"></span><span id="progress"></span><span id="PROGRESS"></span>進行状況
 
-|                                                                                             |
-|---------------------------------------------------------------------------------------------|
 | ![エンド ツー エンド: 旅行のキャンセル (進行状況画面あり) ](images/speech/e2e-canceltrip-progress.png) |
-| 旅行のキャンセル (進行状況画面あり)                                                            |
-
- 
+| --- |
+| 旅行のキャンセル (進行状況画面あり) |  
 
 タスクのステップで時間がかかっている場合、アプリは何が起こっているのかを進行状況画面でユーザーに伝える必要があります。 アプリ アイコンが表示されます。タスクが進行中であることを示すため、GUI と TTS の両方の進行状況文字列を提供する必要があります。
 
@@ -238,12 +248,9 @@ GUI 文字列と TTS の文字列は同じにすることができますが、�
 
 ### <span id="Confirmation"></span><span id="confirmation"></span><span id="CONFIRMATION"></span>確認
 
-|                                                                                                     |
-|-----------------------------------------------------------------------------------------------------|
 | ![エンド ツー エンド: 旅行のキャンセル (確認画面あり) ](images/speech/e2e-canceltrip-confirmation.png) |
-| 旅行のキャンセル (確認画面あり)                                                                |
-
- 
+| --- |
+| 旅行のキャンセル (確認画面あり) | 
 
 一部のタスクは、ユーザーのコマンドの性質によって暗黙的に確認できます。その他のタスクはより重要である可能性があり、明示的な確認が必要です。 明示的な確認と暗黙的な確認を使う場合のいくつかのガイドラインを次に示します。
 
@@ -289,12 +296,9 @@ GUI 文字列と TTS の文字列は同じにすることができますが、�
 
 ### <span id="Disambiguation"></span><span id="disambiguation"></span><span id="DISAMBIGUATION"></span>不明瞭解消
 
-|                                                                                                        |
-|--------------------------------------------------------------------------------------------------------|
 | ![エンド ツー エンド: 旅行のキャンセル (不明瞭解消画面あり)](images/speech/cortana-disambiguation-screen.png) |
-| 旅行のキャンセル (不明瞭解消画面あり)                                                                 |
-
- 
+| --- |
+| 旅行のキャンセル (不明瞭解消画面あり) | 
 
 一部のタスクでは、タスクを完了するには、ユーザーがエンティティの一覧からエンティティを選択する必要があります。
 
@@ -328,10 +332,9 @@ GUI 文字列と TTS の文字列は同じにすることができますが、�
 
 ### <span id="Completion"></span><span id="completion"></span><span id="COMPLETION"></span>完了
 
-|                                                                                                 |
-|-------------------------------------------------------------------------------------------------|
 | ![エンド ツー エンド: 旅行のキャンセル (完了画面あり) ](images/speech/e2e-canceltrip-completion.png) |
-| 旅行のキャンセル (完了画面あり)                                                              |
+| --- |
+| 旅行のキャンセル (完了画面あり) |
 
  
 
@@ -358,10 +361,9 @@ GUI 文字列と TTS の文字列は同じにすることができますが、�
 
 ### <span id="Error"></span><span id="error"></span><span id="ERROR"></span>エラー
 
-|                                                                                      |
-|--------------------------------------------------------------------------------------|
 | ![エンド ツー エンド: 旅行のキャンセル (エラー画面あり)](images/speech/e2e-canceltrip-error.png) |
-| 旅行のキャンセル (エラー画面あり)                                                        |
+| --- |
+| 旅行のキャンセル (エラー画面あり) |
 
  
 
@@ -374,7 +376,8 @@ GUI 文字列と TTS の文字列は同じにすることができますが、�
 ## <span id="related_topics"></span>関連記事
 
 
-* [音声操作](speech-interactions.md)
+* [音声操作](speech-interactions.md)  
+
 **開発者向け**
 * [Cortana の操作](https://msdn.microsoft.com/library/windows/apps/mt185598)
 * [音声操作](https://msdn.microsoft.com/library/windows/apps/mt185614)
@@ -387,6 +390,6 @@ GUI 文字列と TTS の文字列は同じにすることができますが、�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

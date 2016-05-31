@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 description: デバイス自体とそのセンサーに統合するコードには、ユーザーに対する入力と出力が含まれます。
 title: I/O、デバイス、アプリ モデルの Windows Phone Silverlight から UWP への移植
 ms.assetid: bf9f2c03-12c1-49e4-934b-e3fa98919c53
@@ -63,12 +64,22 @@ Windows Phone Silverlight アプリでは、アプリが実行中のデバイス
 
 | Windows Phone Silverlight                                                               | UWP                                                                                                                                                                                                                                                                                                                                |
 |-----------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **ApplicationCurrentMemoryUsage** プロパティと **ApplicationCurrentMemoryUsageLimit** プロパティ | [**MemoryManager.AppMemoryUsage**](https://msdn.microsoft.com/library/windows/apps/dn633832) プロパティと [**AppMemoryUsageLimit**](https://msdn.microsoft.com/library/windows/apps/dn633836) プロパティ                                                                                                                                    |
+| **ApplicationCurrentMemoryUsage** プロパティと **ApplicationCurrentMemoryUsageLimit** プロパティ | [
+              **MemoryManager.AppMemoryUsage**
+            ](https://msdn.microsoft.com/library/windows/apps/dn633832) プロパティと [**AppMemoryUsageLimit**](https://msdn.microsoft.com/library/windows/apps/dn633836) プロパティ                                                                                                                                    |
 | **ApplicationPeakMemoryUsage** プロパティ                                                 | Visual Studio のメモリ プロファイル ツールを使います。 詳しくは、「[メモリ使用率の分析](http://msdn.microsoft.com/library/windows/apps/dn645469.aspx)」をご覧ください。                                                                                                                                                                          |
-| **DeviceFirmwareVersion** プロパティ                                                      | [**EasClientDeviceInformation.SystemFirmwareVersion**](https://msdn.microsoft.com/library/windows/apps/dn608144) プロパティ (デスクトップ デバイス ファミリのみ)                                                                                                                                                                             |
-| **DeviceHardwareVersion** プロパティ                                                      | [**EasClientDeviceInformation.SystemHardwareVersion**](https://msdn.microsoft.com/library/windows/apps/dn608145) プロパティ (デスクトップ デバイス ファミリのみ)                                                                                                                                                                             |
-| **DeviceManufacturer** プロパティ                                                         | [**EasClientDeviceInformation.SystemManufacturer**](https://msdn.microsoft.com/library/windows/apps/hh701398) プロパティ (デスクトップ デバイス ファミリのみ)                                                                                                                                                                                |
-| **DeviceName** プロパティ                                                                 | [**EasClientDeviceInformation.SystemProductName**](https://msdn.microsoft.com/library/windows/apps/hh701401) プロパティ (デスクトップ デバイス ファミリのみ)                                                                                                                                                                                 |
+| **DeviceFirmwareVersion** プロパティ                                                      | [
+              **EasClientDeviceInformation.SystemFirmwareVersion**
+            ](https://msdn.microsoft.com/library/windows/apps/dn608144) プロパティ (デスクトップ デバイス ファミリのみ)                                                                                                                                                                             |
+| **DeviceHardwareVersion** プロパティ                                                      | [
+              **EasClientDeviceInformation.SystemHardwareVersion**
+            ](https://msdn.microsoft.com/library/windows/apps/dn608145) プロパティ (デスクトップ デバイス ファミリのみ)                                                                                                                                                                             |
+| **DeviceManufacturer** プロパティ                                                         | [
+              **EasClientDeviceInformation.SystemManufacturer**
+            ](https://msdn.microsoft.com/library/windows/apps/hh701398) プロパティ (デスクトップ デバイス ファミリのみ)                                                                                                                                                                                |
+| **DeviceName** プロパティ                                                                 | [
+              **EasClientDeviceInformation.SystemProductName**
+            ](https://msdn.microsoft.com/library/windows/apps/hh701401) プロパティ (デスクトップ デバイス ファミリのみ)                                                                                                                                                                                 |
 | **DeviceTotalMemory** プロパティ                                                          | 相当する要素なし                                                                                                                                                                                                                                                                                                                      |
 | **IsKeyboardDeployed** プロパティ                                                         | 相当する要素なし。 このプロパティは、モバイル デバイスのハードウェア キーボードに関する情報を提供します。                                                                                                                                                                                                        |
 | **IsKeyboardPresent** プロパティ                                                          | 相当する要素なし。 このプロパティは、モバイル デバイスのハードウェア キーボードに関する情報を提供します。                                                                                                                                                                                                        |
@@ -91,6 +102,6 @@ UWP アプリで **PhoneApplicationPage.SupportedOrientations** プロパティ�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

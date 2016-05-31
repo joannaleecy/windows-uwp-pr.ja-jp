@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: Direct3D 11 の初期化
 description: Direct3D デバイスとデバイス コンテキストへのハンドルを取得する方法や、DXGI を使ってスワップ チェーンを設定する方法など、Direct3D 9 の初期化コードを Direct3D 11 に変換する方法について説明します。
 ms.assetid: 1bd5e8b7-fd9d-065c-9ff3-1a9b1c90da29
@@ -225,6 +226,6 @@ m_d3dContext->RSSetViewports(1, &viewport);
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

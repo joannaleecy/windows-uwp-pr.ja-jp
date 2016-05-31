@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: ハブ コントロールは、階層型ナビゲーション パターンを使って、リレーショナル情報アーキテクチャを使ったアプリをサポートします。
 title: ハブ コントロール
 ms.assetid: F1319960-63C6-4A8B-8DA1-451D59A01AC2
-label: ハブ
+label: Hub
 template: detail.hbs
 ---
 # ハブ コントロール/パターン
@@ -99,21 +100,16 @@ template: detail.hbs
     -   ヘッダーとコンテンツのテキストのスタイルとサイズ
     -   背景、セクション、セクション ヘッダー、セクション コンテンツの色
 
-\[この記事には、UWP アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
+
 
 ## 関連記事
------------------------------------------------
 
-**デザイナー向け**
 - [ナビゲーションの基本](https://msdn.microsoft.com/library/windows/apps/dn958438)
-
-**開発者向け (XAML)**
-- [階層型のナビゲーションの概要](https://msdn.microsoft.com/library/windows/apps/xaml/dn440585)
 - [**Windows.UI.Xaml.Controls Hub クラス**](https://msdn.microsoft.com/library/windows/apps/dn251843)
 - [XAML ハブ コントロールのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=310072)
 - [ハブの使用](https://msdn.microsoft.com/library/windows/apps/xaml/dn308518)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

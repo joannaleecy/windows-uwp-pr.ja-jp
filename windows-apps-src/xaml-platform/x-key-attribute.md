@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: リソースとして作成、参照され、ResourceDictionary 内に存在する要素を一意に識別します。
 title: xKey 属性
 ms.assetid: 141FC5AF-80EE-4401-8A1B-17CB22C2277A
@@ -41,7 +42,7 @@ ms.assetid: 141FC5AF-80EE-4401-8A1B-17CB22C2277A
 XamlName ::= NameStartChar (NameChar)*
 NameStartChar ::= LetterCharacter | '_'
 NameChar ::= NameStartChar | DecimalDigit
-LetterCharacter ::= ('a'-'z') | ('A'–'Z')
+LetterCharacter ::= ('a'-'z') | ('A'-'Z')
 DecimalDigit ::= '0'-'9'
 CombiningCharacter::= none
 ```
@@ -64,6 +65,6 @@ CombiningCharacter::= none
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

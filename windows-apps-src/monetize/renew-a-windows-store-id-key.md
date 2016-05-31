@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 ms.assetid: 3569C505-8D8C-4D85-B383-4839F13B2466
 description: このメソッドを使って、Windows ストアのキーを更新します。
 title: Windows ストア ID キーの更新
@@ -55,7 +56,7 @@ title: Windows ストア ID キーの更新
 
 ### 要求の例
 
-```
+```syntax
 POST https://collections.mp.microsoft.com/v6.0/b2b/keys/renew HTTP/1.1
 Content-Length: 2774
 Content-Type: application/json
@@ -80,7 +81,7 @@ Host: collections.mp.microsoft.com
 
 ### 応答の例
 
-```
+```syntax
 HTTP/1.1 200 OK
 Content-Length: 1646
 Content-Type: application/json
@@ -115,6 +116,6 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

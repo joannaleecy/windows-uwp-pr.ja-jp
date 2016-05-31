@@ -1,16 +1,13 @@
 ---
+author: mijacobs
 Description: この記事では、デザインの観点からユニバーサル Windows プラットフォーム (UWP) の機能、利点、要件について説明します。 無料で提供されるプラットフォーム、自由に使うことができるツールを紹介します。
 title: ユニバーサル Windows プラットフォーム (UWP) アプリ設計の概要
 ms.assetid: 50A5605E-3A91-41DB-800A-9180717C1E86
-label: UWP アプリ設計の概要
+label: Intro to UWP app design
 template: detail.hbs
 ---
 
 #  UWP アプリ設計の概要 
-
-
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
-
 
 ユニバーサル Windows プラットフォーム (UWP) アプリは、電話からタブレット、PC まで、任意の Windows ベース デバイスで実行できます。
 
@@ -103,14 +100,14 @@ UWP には、複数のデバイス ファミリに対応したアプリを簡単
 <td align="left"><p><img src="images/1895065-hig-anatomyofanapp-02.png" alt="Navigation, command, and content areas of an address book app" /></p>
 <p></p></td>
 <td align="left"><strong>ナビゲーション要素</strong>
-          <p>ナビゲーション要素は、表示するコンテンツをユーザーが選択できるようにします。 ナビゲーション要素の例には、[tabs and pivots](../controls-and-patterns/tabs-pivot.md)、[hyperlinks](../controls-and-patterns/hyperlinks.md)、[nav panes](../controls-and-patterns/nav-pane.md)などがあります。</p>
-<p>ナビゲーション要素について詳しくは、「[Navigation design basics](navigation-basics.md)」をご覧ください。</p>
+<p>ナビゲーション要素は、表示するコンテンツをユーザーが選択できるようにします。 ナビゲーション要素の例には、[タブとピボット](../controls-and-patterns/tabs-pivot.md)、[ハイパーリンク](../controls-and-patterns/hyperlinks.md)、[ナビゲーション ウィンドウ](../controls-and-patterns/nav-pane.md)などがあります。</p>
+<p>ナビゲーション要素の詳細については、「[ナビゲーション デザインの基本](navigation-basics.md)」をご覧ください。</p>
 <strong>コマンド要素</strong>
-          <p>コマンド要素は、操作、保存、コンテンツの共有などの操作を開始します。 コマンド要素の例には、[button](../controls-and-patterns/buttons.md)や[command bar](../controls-and-patterns/app-bars.md)があります。 コマンド要素には、実際には画面に表示されないキーボード ショートカットも含めることができます。</p>
-<p>コマンド要素について詳しくは、「[Command design basics](commanding-basics.md)」をご覧ください。</p>
+<p>コマンド要素は、操作、保存、コンテンツの共有などの操作を開始します。 コマンド要素の例には、[ボタン](../controls-and-patterns/buttons.md)や[コマンド バー](../controls-and-patterns/app-bars.md)があります。 コマンド要素には、実際には画面に表示されないキーボード ショートカットも含めることができます。</p>
+<p>コマンド要素の詳細については、「[コマンド設計の基本](commanding-basics.md)」をご覧ください。</p>
 <strong>コンテンツ要素</strong>
-          <p>コンテンツ要素は、アプリのコンテンツを表示します。 ペイント アプリでは、コンテンツは描画になり、ニュース アプリでは、コンテンツはニュース記事になります。</p>
-<p>コンテンツ要素について詳しくは、「[Content design basics](content-basics.md)」をご覧ください。</p></td>
+<p>コンテンツ要素は、アプリのコンテンツを表示します。 ペイント アプリでは、コンテンツは描画になり、ニュース アプリでは、コンテンツはニュース記事になります。</p>
+<p>コンテンツ要素の詳細については、「[コンテンツ デザインの基本](content-basics.md)」をご覧ください。</p></td>
 </tr>
 </tbody>
 </table>
@@ -121,12 +118,12 @@ UWP には、複数のデバイス ファミリに対応したアプリを簡単
 
 アプリに適切な UI 要素を決めるときには、アプリが実行されるデバイスや画面サイズも考慮に入れるかもしれません。
 
-## <span id="Why_tailor_your_app_for_specific_device_families_and_screen_sizes_"></span><span id="why_tailor_your_app_for_specific_device_families_and_screen_sizes_"></span><span id="WHY_TAILOR_YOUR_APP_FOR_SPECIFIC_DEVICE_FAMILIES_AND_SCREEN_SIZES_"></span>特定のデバイス ファミリーと画面サイズに合わせたアプリの調整
+## <span id="Why_tailor_your_app_for_specific_device_families_and_screen_sizes_"></span><span id="why_tailor_your_app_for_specific_device_families_and_screen_sizes_"></span><span id="WHY_TAILOR_YOUR_APP_FOR_SPECIFIC_DEVICE_FAMILIES_AND_SCREEN_SIZES_"></span>特定のデバイスと画面サイズに合わせたアプリの調整
 
 
 UWP アプリでは、すべての Windows デバイスで、デザイン要素が見やすく操作しやすい効果的なピクセルが使用されます。 このため、特定のデバイス ファミリー向けにアプリの UI をカスタマイズする理由がありません。
 
-**注:**  
+**注**  
 先に進む前に知っておくべきですが、アプリが実行されている特定のデバイスをアプリが検出する手段は、Windows では提供されていません。 アプリが実行されているデバイス ファミリー (モバイル、デスクトップなど)、効果的な解像度、およびアプリが利用できる画面領域の量 (アプリのウィンドウのサイズ) は伝えることができます。
 
  
@@ -218,6 +215,6 @@ UI は、画面領域に基づいて表示したり、デバイスが追加機�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

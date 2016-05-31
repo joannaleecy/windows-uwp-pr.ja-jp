@@ -1,4 +1,5 @@
 ---
+author: DelfCo
 Description: 広範なユーザー向けにアプリをグローバル化したり、特定の市場を対象にアプリをローカライズするときは、次のベスト プラクティスに従ってください。
 Search.Refinement.TopicID: 180
 title: グローバリゼーションとローカライズのガイドライン
@@ -10,12 +11,12 @@ template: detail.hbs
 # グローバリゼーションとローカライズの推奨と非推奨
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください。\]
+
 
 
 **重要な API**
 
--   [**グローバリゼーション**](https://msdn.microsoft.com/library/windows/apps/br206813)
+-   [**Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813)
 -   [**Globalization.NumberFormatting**](https://msdn.microsoft.com/library/windows/apps/br226136)
 -   [**Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)
 -   [**リソース**](https://msdn.microsoft.com/library/windows/apps/br206022)
@@ -187,6 +188,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

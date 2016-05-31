@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 ms.assetid: ba2ac5f5-1e0d-4f1d-a6f8-6a65b4cff501
 description: ここでは、既存のアプリをユニバーサル Windows プラットフォーム (UWP) に移行する方法について説明します。UWP で 1 つの Windows 10 アプリ パッケージを作成するだけで、ユーザーはすべての種類のデバイスにそのアプリをインストールすることができます。 アプリは、魅力的な新しいハードウェア、大きな収益を得るチャンス、最新の API セット、アダプティブ UI コントロール、およびマウス、キーボード、タッチ、音声などの幅広い入力形式を活用できます。
 title: Windows 10 にアプリを移植する
@@ -21,6 +22,7 @@ Windows ランタイム (WinRT) は、ユニバーサル Windows プラットフ
 | [UWP Microsoft Visual Studio 2015 RC プロジェクトを RTM に更新する](update-your-visual-studio-2015-rc-project-to-rtm.md) | Microsoft Visual Studio 2015 RC で作成した Windows 10 プロジェクトがある場合、プロジェクト ファイルを Visual Studio 2015 RTM に適した形式に更新するには 2 つの方法があります。 推奨される方法は、Visual Studio 2015 RTM で新しい Windows 10 プロジェクトを作成し、お使いのファイルをそのプロジェクトにコピーする方法です。 代わりに、詳細なドキュメントに従って、既存のプロジェクト ファイルを編集し、新しい形式に移行することもできます。 |
 | [Android や iOS 開発者向けの Windows アプリの概念マッピング](android-ios-uwp-map.md) | このリソースには、Android や iOS のスキルとコードを持つ開発者が Windows 10 とユニバーサル Windows プラットフォームに移行する場合に、それら 3 つのプラットフォーム間でプラットフォームの機能と知識を関連付けるために必要なすべての情報が含まれています。 |
 | [iOS から UWP への移行](ios-to-uwp-root.md) | iOS 向けに開発したアプリを Windows 10 と UWP に移行するにはどうすればよいでしょうか。 これは思っているほど難しくはありません。 iOS デバイスと同様に Windows でも (おそらくより快適に) 動作する優れたアプリの作成に必要なツール、手法、情報が用意されています。 |
+| [デスクトップから UWP への移行](desktop-to-uwp-root.md) | Win32 および .NET 4.6.1 デスクトップ アプリケーションをユニバーサル Windows プラットフォーム (UWP) アプリに変換します。 |
  
 ## 関連トピック
 
@@ -29,6 +31,6 @@ Windows ランタイム (WinRT) は、ユニバーサル Windows プラットフ
 * [Web から WinRT への移行](https://msdn.microsoft.com/library/windows/apps/hh465151)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

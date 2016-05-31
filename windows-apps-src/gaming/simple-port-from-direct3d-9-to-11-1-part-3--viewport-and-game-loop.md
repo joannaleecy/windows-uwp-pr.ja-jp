@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: ゲーム ループの移植
 description: IFrameworkView を作成して、全画面表示の CoreWindow を制御する方法など、ユニバーサル Windows プラットフォーム (UWP) ゲームのウィンドウを実装する方法とゲーム ループを移植する方法について説明します。
 ms.assetid: 070dd802-cb27-4672-12ba-a7f036ff495c
@@ -139,6 +140,6 @@ Windows ストア ゲームの開発に関する次の詳しい記事をご覧�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

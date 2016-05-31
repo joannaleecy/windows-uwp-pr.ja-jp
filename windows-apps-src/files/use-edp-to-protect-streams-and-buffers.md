@@ -1,4 +1,5 @@
 ---
+author: TylerMSFT
 Description: 'このトピックでは、ストリームとバッファーに関連する最も一般的なエンタープライズ データ保護 (EDP) シナリオのいくつかを実現するために必要なコード作成タスクの例を示します。'
 MS-HAID: 'dev\_files.use\_edp\_to\_protect\_streams\_and\_buffers'
 MSHAttr: 'PreferredLib:/library/windows/apps'
@@ -279,7 +280,7 @@ private async void EnableUIPolicyFromProtectedBuffer(IBuffer buffer)
     {
         // In this case, the app has lost access to the buffer
         // (ProtectedToOtherIdentity, Revoked). This must be handled.
-        // &#39;Unprotected&#39; is never returned for GetProtectionInfoAsync().
+        // 'Unprotected' is never returned for GetProtectionInfoAsync().
         return;
     }
 
@@ -288,7 +289,7 @@ private async void EnableUIPolicyFromProtectedBuffer(IBuffer buffer)
 
 ```
 
-**注**  この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
+**注:** この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
  
 
@@ -307,6 +308,6 @@ private async void EnableUIPolicyFromProtectedBuffer(IBuffer buffer)
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

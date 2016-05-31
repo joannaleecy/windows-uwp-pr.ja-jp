@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: 結果を取得するためのアプリの起動
 description: 別のアプリからアプリを起動し、2 つのアプリの間でデータを交換する方法について説明します。 これは、"結果を取得するためのアプリの起動" と呼ばれます。
 ms.assetid: AFC53D75-B3DD-4FF6-9FC0-9335242EE327
@@ -7,7 +8,7 @@ ms.assetid: AFC53D75-B3DD-4FF6-9FC0-9335242EE327
 # 結果を取得するためのアプリの起動
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
 **重要な API**
@@ -34,7 +35,7 @@ Windows 10 での新しいアプリ間通信 API により、各 Windows アプ�
 
 次のプロトコル拡張機能の例では、アプリは結果を取得するためにのみ起動することができます。 以下で説明するように、この例では、**OnActivated** メソッド内部のロジックが簡素化されます。これは、"結果を取得するために起動する" ケースのみを処理し、アプリをアクティブ化する他の方法を処理する必要がないためです。
 
-```xaml
+```xml
 <Applications>
    <Application ...>
 
@@ -156,8 +157,8 @@ async Task<string> LaunchAppForResults()
 
     string theResult = "";
     LaunchUriResult result = await Windows.System.Launcher.LaunchUriForResultsAsync(testAppUri, options, inputData);
-    if (result.Status == LaunchUriStatus.Success &amp;&amp;
-        result.Result != null &amp;&amp;
+    if (result.Status == LaunchUriStatus.Success &&
+        result.Result != null &&
         result.Result.ContainsKey("ReturnedData"))
     {
         ValueSet theValues = result.Result;
@@ -204,6 +205,6 @@ inputData["ImageFileToken"] = SharedStorageAccessManager.AddFile(myFile);
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

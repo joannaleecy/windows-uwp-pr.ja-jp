@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 自分の他のアプリで、自分のアプリの 1 つを宣伝する広告を無料で作成することができます。 これを「自社広告」と呼びます。
 title: 自社広告について
 ms.assetid: C6507C8B-351B-49E7-A194-35AB05BC3358
@@ -31,6 +32,6 @@ ms.assetid: C6507C8B-351B-49E7-A194-35AB05BC3358
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

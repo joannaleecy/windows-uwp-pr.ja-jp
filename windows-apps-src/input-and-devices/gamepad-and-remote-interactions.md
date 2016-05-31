@@ -1,4 +1,5 @@
 ---
+author: mijacobs
 Description: TODO
 title: ゲームパッドとリモコンの操作
 ms.assetid: 784a08dc-2736-4bd3-bea0-08da16b1bd47
@@ -17,16 +18,19 @@ PC 上の UWP アプリで、ゲームパッドをプラグインして使用で
 
 UWP アプリでのゲームパッドやリモコンを使ったユーザー エクスペリエンスが十分に満足の行くものであることを確認するには、次のことを考慮します。
 
-* [ハードウェア ボタン](designing-for-tv.md#hardware-buttons) -
+* [ハードウェア ボタン](designing-for-tv.md#hardware-buttons)
+             -
 ゲームパッドとリモコンは異なるボタンと構成を提供します。
 
-* [XY フォーカス ナビゲーションと操作](designing-for-tv.md#xy-focus-navigation-and-interaction) -
-ユーザーは XY フォーカス ナビゲーションを使用して、アプリの UI を移動できます。
+* [XY フォーカス ナビゲーションと操作](designing-for-tv.md#xy-focus-navigation-and-interaction)
+             -
+ユーザーは XY フォーカス ナビゲーションを使うことで、アプリの UI を移動できます。
 
-* [マウス モード](designing-for-tv.md#mouse-mode) -
+* [マウス モード](designing-for-tv.md#mouse-mode)
+             -
 マウス モードは、XY フォーカス ナビゲーションでは十分でないときに、アプリでマウスのエクスペリエンスをエミュレートします。
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

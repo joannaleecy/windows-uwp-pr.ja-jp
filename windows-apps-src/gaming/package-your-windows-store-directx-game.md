@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: ユニバーサル Windows プラットフォーム (UWP) DirectX ゲームのパッケージ化
 description: 規模の大きいユニバーサル Windows プラットフォーム (UWP) ゲーム (特に、地域固有のアセットや機能オプションによる高解像度アセットを伴って複数言語をサポートするゲーム) は、サイズが容易に膨張する可能性があります。
 ms.assetid: 68254203-c43c-684f-010a-9cfa13a32a77
@@ -223,6 +224,6 @@ DirectX の機能レベルは、以前のバージョンと現在のバージョ
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

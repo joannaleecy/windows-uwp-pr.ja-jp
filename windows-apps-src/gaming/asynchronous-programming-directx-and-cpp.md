@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 非同期プログラミング (DirectX と C++)
 description: このトピックでは、DirectX で非同期プログラミングやスレッディングを使う際のさまざまな考慮事項について取り上げます。
 ms.assetid: 17613cd3-1d9d-8d2f-1b8d-9f8d31faaa6b
@@ -7,7 +8,7 @@ ms.assetid: 17613cd3-1d9d-8d2f-1b8d-9f8d31faaa6b
 # 非同期プログラミング (DirectX と C++)
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
 
 このトピックでは、DirectX で非同期プログラミングやスレッディングを使う際のさまざまな考慮事項について取り上げます。
 
@@ -62,6 +63,6 @@ DirectX の学習経験や使用経験にかかわらず、グラフィックス
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,6 +1,7 @@
 ---
+author: mcleanbyron
 ms.assetid: B071F6BC-49D3-4E74-98EA-0461A1A55EFB
-description: アプリおよびアプリ内製品 (IAP) のカタログがある場合は、Windows ストア コレクション API と Windows ストア購入 API を使用して、サービスからこれらの製品の所有権情報にアクセスできます。
+description: アプリおよびアプリ内製品 (IAP) のカタログがある場合は、Windows ストア コレクション API と Windows ストア購入 API を使って、サービスからこれらの製品の所有権情報にアクセスできます。
 title: サービスからの製品の表示と許可
 ---
 
@@ -55,7 +56,7 @@ Windows ストア コレクション API と Windows ストア購入 API では�
 Windows ストア コレクション API および Windows ストア購入 API は、Azure AD クライアント ID に関連付けられているアプリや IAP に対するユーザーの所有権情報へのアクセスのみを提供します。
 
 1.  [Windows デベロッパー センター ダッシュボード](https://dev.windows.com/overview)にサインインし、アプリを選びます。
-2.  **[サービス]**、**[製品のコレクションと購入]** ページの順に移動して、利用可能なフィールドの 1 つに Azure AD のクライアント ID を入力します。
+2.  **[サービス]**、**[製品のコレクションと購入]** ページの順に移動し、利用可能なフィールドの 1 つに Azure AD のクライアント ID を入力します。
 
 ### 手順 3: Azure AD からアクセス トークンを取得する
 
@@ -89,8 +90,12 @@ Windows ストア コレクション API または Windows ストア購入 API �
 
 2.  アプリ コードで、次の [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) クラスのメソッドのいずれかを呼び出して Windows ストア ID キーを取得します。
 
-    -   [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674): Windows ストア コレクション API を使用する場合は、このメソッドを呼び出します。
-    -   [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675): Windows ストア購入 API を使用する場合は、このメソッドを呼び出します。
+    -   [
+              **GetCustomerCollectionsIdAsync**
+            ](https://msdn.microsoft.com/library/windows/apps/mt608674): Windows ストア コレクション API を使用する場合は、このメソッドを呼び出します。
+    -   [
+              **GetCustomerPurchaseIdAsync**
+            ](https://msdn.microsoft.com/library/windows/apps/mt608675): Windows ストア購入 API を使用する場合は、このメソッドを呼び出します。
 
     いずれのメソッドの場合でも、Azure AD アクセス トークンを *serviceTicket* パラメーターに渡します。 必要に応じて、サービスのコンテキストで現在のユーザーを識別する *publisherUserId* パラメーターに、ID を渡すことができます。 サービス用のユーザー ID を保持している場合は、このパラメーターを使用して、Windows ストア コレクション API または Windows ストア購入 API に対する呼び出しにこれらのユーザー ID を関連付けます。
 
@@ -134,7 +139,7 @@ Windows ストア ID キーは、ユーザーの製品所有権情報にアク�
 
 デコードされた Windows ストア ID キー ヘッダーの例を次に示します。
 
-```
+```json
 { 
     "typ":"JWT", 
     "alg":"RS256", 
@@ -144,7 +149,7 @@ Windows ストア ID キーは、ユーザーの製品所有権情報にアク�
 
 デコードされた Windows ストア ID キー要求セットの例を次に示します。
 
-```
+```json
 { 
     "http://schemas.microsoft.com/marketplace/2015/08/claims/key/clientId": "1d5773695a3b44928227393bfef1e13d", 
     "http://schemas.microsoft.com/marketplace/2015/08/claims/key/payload": "ZdcOq0/N2rjytCRzCHSqnfczv3f0343wfSydx7hghfu0snWzMqyoAGy5DSJ5rMSsKoQFAccs1iNlwlGrX+/eIwh/VlUhLrncyP8c18mNAzAGK+lTAd2oiMQWRRAZxPwGrJrwiq2fTq5NOVDnQS9Za6/GdRjeiQrv6c0x+WNKxSQ7LV/uH1x+IEhYVtDu53GiXIwekltwaV6EkQGphYy7tbNsW2GqxgcoLLMUVOsQjI+FYBA3MdQpalV/aFN4UrJDkMWJBnmz3vrxBNGEApLWTS4Bd3cMswXsV9m+VhOEfnv+6PrL2jq8OZFoF3FUUpY8Fet2DfFr6xjZs3CBS1095J2yyNFWKBZxAXXNjn+zkvqqiVRjjkjNajhuaNKJk4MGHfk2rZiMy/aosyaEpCyncdisHVSx/S4JwIuxTnfnlY24vS0OXy7mFiZjjB8qL03cLsBXM4utCyXSIggb90GAx0+EFlVoJD7+ZKlm1M90xO/QSMDlrzFyuqcXXDBOnt7rPynPTrOZLVF+ODI5HhWEqArkVnc5MYnrZD06YEwClmTDkHQcxCvU+XUEvTbEk69qR2sfnuXV4cJRRWseUTfYoGyuxkQ2eWAAI1BXGxYECIaAnWF0W6ThweL5ZZDdadW9Ug5U3fZd4WxiDlB/EZ3aTy8kYXTW4Uo0adTkCmdLibw=", 
@@ -175,6 +180,6 @@ Windows ストア ID キーは、ユーザーの製品所有権情報にアク�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

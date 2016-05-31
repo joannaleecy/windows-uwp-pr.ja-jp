@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: DirectX の移植の計画
 description: DirectX 9 から DirectX 11 とユニバーサル Windows プラットフォーム (UWP) へのゲーム移植プロジェクトを計画してください。グラフィックス コードのアップグレードと、Windows ランタイム環境へのゲームの配置が必要です。
 ms.assetid: 3c0c33ca-5d15-ae12-33f8-9b5d8da08155
@@ -62,6 +63,6 @@ Microsoft のテンプレートとコード サンプルでは新しい C++ 機�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

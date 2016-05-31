@@ -1,15 +1,16 @@
 ---
+author: DelfCo
 Description: UI の文字列リソースをリソース ファイルに格納します。 その後、これらの文字列をコードやマークアップから参照できます。
 title: UI 文字列をリソースに格納する
 ms.assetid: E420B9BB-C0F6-4EC0-BA3A-BA2875B69722
-label: UI 文字列をリソースに格納する
+label: Put UI strings into resources
 template: detail.hbs
 ---
 
 # UI 文字列をリソースに格納する
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+
 
 
 **重要な API**
@@ -45,9 +46,7 @@ UI の文字列リソースをリソース ファイルに格納します。 そ
 
         **XAML:**
 
-        Strings/en-US/Resources.resw
-        ![リソースの追加 (英語)](images/addresource-en-us.png)
-        この例では、"Greeting.Text" と "Farewell" が、表示される文字列を特定しています。 "Greeting.Width" は "Greeting" 文字列の Width プロパティを特定しています。 コメントは、文字列を他の言語にローカライズする翻訳者に特別な指示を伝えるのに便利です。
+        Strings/en-US/Resources.resw ![リソースの追加 (英語)](images/addresource-en-us.png) この例では、"Greeting.Text" と "Farewell" が、表示される文字列を特定しています。 "Greeting.Width" は "Greeting" 文字列の Width プロパティを特定しています。 コメントは、文字列を他の言語にローカライズする翻訳者に特別な指示を伝えるのに便利です。
 
         **HTML:**
 
@@ -74,7 +73,7 @@ UI の文字列リソースをリソース ファイルに格納します。 そ
 
 ローカライズされたテキストを必要とするすべてのコントロールを .resw ファイルに関連付ける必要があります。 これを行うには、次に示すように XAML 要素の **x:Uid** 属性を使います。
 
-```XAML
+```XML
 <TextBlock x:Uid="Greeting" Text="" />
 ```
 
@@ -82,7 +81,7 @@ UI の文字列リソースをリソース ファイルに格納します。 そ
 
 AutomationPeer.Name などのアタッチされたプロパティは、resw ファイルでは異なる方法で処理されます。 次のように名前空間を明示的に書き出す必要があります。
 
-```XAML
+```XML
 MediumButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name</code></pre></td>
 ```
 
@@ -100,7 +99,7 @@ var str = loader.GetString("Farewell");
 ```
 
 **C++**
-```ManagedCPlusPlus
+```cpp
 auto loader = ref new Windows::ApplicationModel::Resources::ResourceLoader();
 auto str = loader->GetString("Farewell");
 ```
@@ -198,8 +197,7 @@ auto str = loader->GetString("Farewell");
 
     **XAML:**
 
-    strings/fr-FR/Resources.resw
-    ![リソースを追加する (フランス語)](images/addresource-fr-fr.png)
+    strings/fr-FR/Resources.resw![リソースを追加する (フランス語)](images/addresource-fr-fr.png)
     **HTML:**
 
     strings/fr-FR/resources.resjson
@@ -246,6 +244,6 @@ auto str = loader->GetString("Farewell");
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

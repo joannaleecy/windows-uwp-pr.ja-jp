@@ -1,11 +1,6 @@
 ---
-Description: ユーザーがアプリを無料で使うことができる試用期間を設け、その期間中は一部の機能を除外または制限することで、アプリを通常版にアップグレードするようユーザーに促すことができます。
-title: 試用版での機能の除外または制限
-ms.assetid: 1B62318F-9EF5-432A-8593-F3E095CA7056
-keywords: 無料試用版
-keywords: 無料のお試し期間
-keywords: 無料試用版のコード例
-keywords: 無料試用版のコード サンプル
+author: mcleanbyron Description: ユーザーがアプリを無料で使うことができる試用期間を設け、その期間中は一部の機能を除外または制限することで、アプリを通常版にアップグレードするようユーザーに促すことができます。
+title: 試用版での機能の除外または制限 ms.assetid: 1B62318F-9EF5-432A-8593-F3E095CA7056 keywords: 無料試用版 keywords: 無料の試用期間 keywords: 無料試用版のコード例 keywords: 無料試用版のコード サンプル
 ---
 
 # 試用版での機能の除外または制限
@@ -167,7 +162,9 @@ void DisplayTrialVersionExpirationTime()
 
 シミュレートされたライセンス サーバー呼び出しを使って、アプリをテストしてみましょう。 JavaScript、C#、Visual Basic、または Visual C++ で、アプリの初期化コード内の [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) への参照を [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) への参照に置き換えます。
 
-[**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) は、%userprofile%\\AppData\\local\\packages\\&lt;package name&gt;\\LocalState\\Microsoft\\Windows Store\\ApiData にある "WindowsStoreProxy.xml" という XML ファイルから、テスト専用のライセンス情報を取得します。 このパスとファイルがない場合は、インストール時か実行時にそれらを作る必要があります。 WindowsStoreProxy.xml が所定の場所にない状態で [**CurrentAppSimulator.LicenseInformation**](https://msdn.microsoft.com/library/windows/apps/hh779768) プロパティにアクセスしようとすると、エラーになります。
+[
+              **CurrentAppSimulator**
+            ](https://msdn.microsoft.com/library/windows/apps/hh779766) は、%userprofile%\\AppData\\local\\packages\\&lt;package name&gt;\\LocalState\\Microsoft\\Windows Store\\ApiData にある "WindowsStoreProxy.xml" という XML ファイルから、テスト専用のライセンス情報を取得します。 このパスとファイルがない場合は、インストール時か実行時にそれらを作る必要があります。 WindowsStoreProxy.xml が所定の場所にない状態で [**CurrentAppSimulator.LicenseInformation**](https://msdn.microsoft.com/library/windows/apps/hh779768) プロパティにアクセスしようとすると、エラーになります。
 
 この例は、異なるライセンス状態のもとでアプリをテストするときのコードを追加する方法を示します。
 
@@ -234,6 +231,6 @@ void appInit()
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

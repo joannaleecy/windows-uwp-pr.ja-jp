@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: [パッケージ] ページは、提出するアプリのすべてのパッケージ ファイル (.xap、.appx、.appxupload、.appxbundle) をアップロードする場所です。 この手順では、アプリがターゲットとしているすべてのオペレーティング システムのパッケージをアップロードできます。
 title: アプリ パッケージのアップロード
 ms.assetid: B1BB810D-3EAA-4FB5-B03C-1F01AFB2DE36
@@ -54,6 +55,6 @@ ms.assetid: B1BB810D-3EAA-4FB5-B03C-1F01AFB2DE36
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: ラジオ ボタンでは、ユーザーは 2 つ以上の選択肢から 1 つのオプションを選ぶことができます。
 title: ラジオ ボタンのガイドライン
 ms.assetid: 41E3F928-AA55-42A2-9281-EC3907C4F898
-label: ラジオ ボタン
+label: Radio buttons
 template: detail.hbs
 ---
 # ラジオ ボタン
@@ -53,7 +54,8 @@ Microsoft Edge ブラウザーでのラジオ ボタンの設定です。
 - 同じ親コンテナー内に追加します。
 - 各オプション ボタンの [**GroupName**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.radiobutton.groupname.aspx) プロパティを同じ値に設定します。
 
-> **注** &nbsp;&nbsp; キーボード経由でアクセスした場合、ラジオ ボタンのグループは、1 つのコントロールのように動作します。 Tab キーを使うと選んだオプションにのみアクセスできますが、方向キーを使ってグループを切り替えることができます。
+> **注**
+            &nbsp;&nbsp;キーボード経由でアクセスした場合、ラジオ ボタンのグループは、1 つのコントロールのように動作します。 Tab キーを使うと選んだオプションにのみアクセスできますが、方向キーを使ってグループを切り替えることができます。
 
 この例では、スタック パネルを同じにすることでラジオ ボタンの最初のグループが暗黙的にグループ化されます。 2 つ目のグループは、2 つのスタック パネルの間で分割されているので、GroupName で明示的にグループ化されます。
 
@@ -179,6 +181,6 @@ private void BorderRadioButton_Checked(object sender, RoutedEventArgs e)
 - [**Windows.UI.Xaml.Controls RadioButton クラス**](https://msdn.microsoft.com/library/windows/apps/br227544)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

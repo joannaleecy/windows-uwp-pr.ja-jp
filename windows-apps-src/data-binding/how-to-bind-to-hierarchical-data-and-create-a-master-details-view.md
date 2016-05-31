@@ -1,7 +1,8 @@
 ---
+author: mcleblanc
 ms.assetid: 0C69521B-47E0-421F-857B-851B0E9605F2
 title: 階層データをバインドしてマスター/詳細ビューを作る方法
-description: チェーン内でバインドされた CollectionViewSource インスタンスに項目コントロールをバインドすることによって、階層データの複数レベルのマスター/詳細 (リスト/詳細とも呼ばれる) ビューを作成することができます。
+description: チェーン内でバインドされた CollectionViewSource インスタンスに項目コントロールをバインドすると、階層データの複数レベルのマスター/詳細 (リスト/詳細とも呼ばれる) ビューを作成することができます。
 ---
 # 階層データをバインドしてマスター/詳細ビューを作る方法
 
@@ -50,48 +51,48 @@ namespace MasterDetailsBinding
     public class Division
     {
         public string Name { get; set; }
-        public IEnumerable&lt;Team&gt; Teams { get; set; }
+        public IEnumerable<Team> Teams { get; set; }
     }
 
     public class League
     {
         public string Name { get; set; }
-        public IEnumerable&lt;Division&gt; Divisions { get; set; }
+        public IEnumerable<Division> Divisions { get; set; }
     }
 
-    public class LeagueList : List&lt;League&gt;
+    public class LeagueList : List<League>
     {
         public LeagueList()
         {
             this.AddRange(GetLeague().ToList());
         }
 
-        public IEnumerable&lt;League&gt; GetLeague()
+        public IEnumerable<League> GetLeague()
         {
             return from x in Enumerable.Range(1, 2)
                    select new League
                    {
-                       Name = &quot;League &quot; + x,
+                       Name = "League " + x,
                        Divisions = GetDivisions(x).ToList()
                    };
         }
 
-        public IEnumerable&lt;Division&gt; GetDivisions(int x)
+        public IEnumerable<Division> GetDivisions(int x)
         {
             return from y in Enumerable.Range(1, 3)
                    select new Division
                    {
-                       Name = String.Format(&quot;Division {0}-{1}&quot;, x, y),
+                       Name = String.Format("Division {0}-{1}", x, y),
                        Teams = GetTeams(x, y).ToList()
                    };
         }
 
-        public IEnumerable&lt;Team&gt; GetTeams(int x, int y)
+        public IEnumerable<Team> GetTeams(int x, int y)
         {
             return from z in Enumerable.Range(1, 4)
                    select new Team
                    {
-                       Name = String.Format(&quot;Team {0}-{1}-{2}&quot;, x, y, z),
+                       Name = String.Format("Team {0}-{1}-{2}", x, y, z),
                        Wins = 25 - (x * y * z),
                        Losses = x * y * z
                    };
@@ -107,9 +108,9 @@ namespace MasterDetailsBinding
 ```cs
 namespace MasterDetailsBinding
 {
-    /// &lt;summary&gt;
+    /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
-    /// &lt;/summary&gt;
+    /// </summary>
     public sealed partial class MainPage : Page
     {
         public MainPage()
@@ -124,82 +125,82 @@ namespace MasterDetailsBinding
 
 最後に、MainPage.xaml ファイルの内容を次のマークアップに置き換えます。このマークアップでは、3 つの [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) インスタンスを宣言し、チェーンで一緒にバインドします。 これにより、階層内のレベルに応じて、後続するコントロールを適切な **CollectionViewSource** にバインドできるようになります。
 
-```xaml
+```xml
 <Page
-    x:Class=&quot;MasterDetailsBinding.MainPage&quot;
-    xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
-    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
-    xmlns:local=&quot;using:MasterDetailsBinding&quot;
-    xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;
-    xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
-    mc:Ignorable=&quot;d&quot;>
+    x:Class="MasterDetailsBinding.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MasterDetailsBinding"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
 
     <Page.Resources>
-        <CollectionViewSource x:Name=&quot;Leagues&quot;
-            Source=&quot;{x:Bind ViewModel}&quot;/>
-        <CollectionViewSource x:Name=&quot;Divisions&quot;
-            Source=&quot;{Binding Divisions, Source={StaticResource Leagues}}&quot;/>
-        <CollectionViewSource x:Name=&quot;Teams&quot;
-            Source=&quot;{Binding Teams, Source={StaticResource Divisions}}&quot;/>
+        <CollectionViewSource x:Name="Leagues"
+            Source="{x:Bind ViewModel}"/>
+        <CollectionViewSource x:Name="Divisions"
+            Source="{Binding Divisions, Source={StaticResource Leagues}}"/>
+        <CollectionViewSource x:Name="Teams"
+            Source="{Binding Teams, Source={StaticResource Divisions}}"/>
 
-        <Style TargetType=&quot;TextBlock&quot;>
-            <Setter Property=&quot;FontSize&quot; Value=&quot;15&quot;/>
-            <Setter Property=&quot;FontWeight&quot; Value=&quot;Bold&quot;/>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontWeight" Value="Bold"/>
         </Style>
 
-        <Style TargetType=&quot;ListBox&quot;>
-            <Setter Property=&quot;FontSize&quot; Value=&quot;15&quot;/>
+        <Style TargetType="ListBox">
+            <Setter Property="FontSize" Value="15"/>
         </Style>
 
-        <Style TargetType=&quot;ContentControl&quot;>
-            <Setter Property=&quot;FontSize&quot; Value=&quot;15&quot;/>
+        <Style TargetType="ContentControl">
+            <Setter Property="FontSize" Value="15"/>
         </Style>
 
     </Page.Resources>
 
-    <Grid Background=&quot;{ThemeResource ApplicationPageBackgroundThemeBrush}&quot;>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-        <StackPanel Orientation=&quot;Horizontal&quot;>
+        <StackPanel Orientation="Horizontal">
 
             <!-- All Leagues view -->
 
-            <StackPanel Margin=&quot;5&quot;>
-                <TextBlock Text=&quot;All Leagues&quot;/>
-                <ListBox ItemsSource=&quot;{Binding Source={StaticResource Leagues}}&quot; 
-                    DisplayMemberPath=&quot;Name&quot;/>
+            <StackPanel Margin="5">
+                <TextBlock Text="All Leagues"/>
+                <ListBox ItemsSource="{Binding Source={StaticResource Leagues}}" 
+                    DisplayMemberPath="Name"/>
             </StackPanel>
 
             <!-- League/Divisions view -->
 
-            <StackPanel Margin=&quot;5&quot;>
-                <TextBlock Text=&quot;{Binding Name, Source={StaticResource Leagues}}&quot;/>
-                <ListBox ItemsSource=&quot;{Binding Source={StaticResource Divisions}}&quot; 
-                    DisplayMemberPath=&quot;Name&quot;/>
+            <StackPanel Margin="5">
+                <TextBlock Text="{Binding Name, Source={StaticResource Leagues}}"/>
+                <ListBox ItemsSource="{Binding Source={StaticResource Divisions}}" 
+                    DisplayMemberPath="Name"/>
             </StackPanel>
 
             <!-- Division/Teams view -->
 
-            <StackPanel Margin=&quot;5&quot;>
-                <TextBlock Text=&quot;{Binding Name, Source={StaticResource Divisions}}&quot;/>
-                <ListBox ItemsSource=&quot;{Binding Source={StaticResource Teams}}&quot; 
-                    DisplayMemberPath=&quot;Name&quot;/>
+            <StackPanel Margin="5">
+                <TextBlock Text="{Binding Name, Source={StaticResource Divisions}}"/>
+                <ListBox ItemsSource="{Binding Source={StaticResource Teams}}" 
+                    DisplayMemberPath="Name"/>
             </StackPanel>
 
             <!-- Team view -->
 
-            <ContentControl Content=&quot;{Binding Source={StaticResource Teams}}&quot;>
+            <ContentControl Content="{Binding Source={StaticResource Teams}}">
                 <ContentControl.ContentTemplate>
                     <DataTemplate>
-                        <StackPanel Margin=&quot;5&quot;>
-                            <TextBlock Text=&quot;{Binding Name}&quot; 
-                                FontSize=&quot;15&quot; FontWeight=&quot;Bold&quot;/>
-                            <StackPanel Orientation=&quot;Horizontal&quot; Margin=&quot;10,10&quot;>
-                                <TextBlock Text=&quot;Wins:&quot; Margin=&quot;0,0,5,0&quot;/>
-                                <TextBlock Text=&quot;{Binding Wins}&quot;/>
+                        <StackPanel Margin="5">
+                            <TextBlock Text="{Binding Name}" 
+                                FontSize="15" FontWeight="Bold"/>
+                            <StackPanel Orientation="Horizontal" Margin="10,10">
+                                <TextBlock Text="Wins:" Margin="0,0,5,0"/>
+                                <TextBlock Text="{Binding Wins}"/>
                             </StackPanel>
-                            <StackPanel Orientation=&quot;Horizontal&quot; Margin=&quot;10,0&quot;>
-                                <TextBlock Text=&quot;Losses:&quot; Margin=&quot;0,0,5,0&quot;/>
-                                <TextBlock Text=&quot;{Binding Losses}&quot;/>
+                            <StackPanel Orientation="Horizontal" Margin="10,0">
+                                <TextBlock Text="Losses:" Margin="0,0,5,0"/>
+                                <TextBlock Text="{Binding Losses}"/>
                             </StackPanel>
                         </StackPanel>
                     </DataTemplate>
@@ -213,7 +214,7 @@ namespace MasterDetailsBinding
 ```
 
 [
-            **CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) に直接バインドすることによって、コレクション自体ではパスが見つからない、バインディング内の現在の項目にバインドすることを意味します。 バインディングのパスとして **CurrentItem** プロパティを指定する必要はありませんが、あいまいさがある場合は指定することもできます。 たとえば、チーム ビューを表す [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/BR209365) で、[**Content**](https://msdn.microsoft.com/library/windows/apps/BR209365-content) プロパティが `Teams`**CollectionViewSource** にバインドされているとします。 しかし、**CollectionViewSource** が必要に応じてチームの一覧から現在選択されているチームを自動的に示すため、[**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348) 内のコントロールは `Team` クラスのプロパティにバインドされます。
+            **CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) に直接バインドすることによって、コレクション自体ではパスが見つからない、バインディング内の現在の項目にバインドすることを意味します。 バインディングのパスとして **CurrentItem** プロパティを指定する必要はありませんが、あいまいさがある場合は指定することもできます。 たとえば、チーム ビューを表す [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/BR209365) で、[**Content**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content) プロパティが `Teams`**CollectionViewSource** にバインドされているとします。 しかし、**CollectionViewSource** が必要に応じてチームの一覧から現在選択されているチームを自動的に示すため、[**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348) 内のコントロールは `Team` クラスのプロパティにバインドされます。
 
  
 
@@ -221,6 +222,6 @@ namespace MasterDetailsBinding
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

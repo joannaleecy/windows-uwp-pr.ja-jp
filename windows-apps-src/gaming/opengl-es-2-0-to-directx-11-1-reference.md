@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: OpenGL ES 2.0 から Direct3D 11 への移行のためのリファレンス
 description: OpenGL ES 2.0 から Direct3D 11 への移植の際に API マッピングや簡単なコード サンプルを探す場合は、これらのリファレンス トピックをご覧ください。
 ms.assetid: fe18c8a9-b113-8f5d-9c31-c294dede8560
@@ -7,7 +8,7 @@ ms.assetid: fe18c8a9-b113-8f5d-9c31-c294dede8560
 # OpenGL ES 2.0 から Direct3D 11 への移行のためのリファレンス
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 OpenGL ES 2.0 から Direct3D 11 への移植の際に API マッピングや簡単なコード サンプルを探す場合は、これらのリファレンス トピックをご覧ください。
 ## 
@@ -24,9 +25,8 @@ OpenGL ES 2.0 から Direct3D 11 への移植の際に API マッピングや簡
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[GLSL-to-HLSL reference](glsl-to-hlsl-reference.md)</p></td>
-<td align="left"><p>[
-            port your graphics architecture from OpenGL ES 2.0 to Direct3D 11](port-from-opengl-es-2-0-to-directx-11-1.md)ユニバーサル Windows プラットフォーム (UWP) 向けのゲームを作成する際は、OpenGL シェーダー言語 (GLSL) コードを Microsoft 上位レベル シェーダー言語 (HLSL) コードに移植します。</p></td>
+<td align="left"><p>[GLSL と HLSL の対応を示すリファレンス](glsl-to-hlsl-reference.md)</p></td>
+<td align="left"><p>[グラフィックス アーキテクチャを OpenGL ES 2.0 から Direct3D 11 に移植して](port-from-opengl-es-2-0-to-directx-11-1.md)ユニバーサル Windows プラットフォーム (UWP) 向けのゲームを作成する際は、OpenGL シェーダー言語 (GLSL) コードを Microsoft 上位レベル シェーダー言語 (HLSL) コードに移植します。</p></td>
 </tr>
 </tbody>
 </table>
@@ -42,6 +42,6 @@ OpenGL ES 2.0 から Direct3D 11 への移植の際に API マッピングや簡
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

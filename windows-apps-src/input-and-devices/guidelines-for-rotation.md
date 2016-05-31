@@ -1,17 +1,15 @@
 ---
-Description: このトピックでは、新しい Windows UI の回転について説明し、Windows ストア アプリでこの新しい操作のメカニズムを使うときに考慮する必要があるユーザー エクスペリエンスのガイドラインを示します。
+author: Karl-Bridge-Microsoft
+Description: このトピックでは、新しい Windows UI の回転について説明し、Windows ストア アプリでこの新しい対話式操作のメカニズムを使うときに考慮する必要があるユーザー エクスペリエンスのガイドラインを示します。
 title: 回転
 ms.assetid: f098bc05-35b3-46b2-9e9b-9ff292d067ca
-label: 回転
+label: Rotation
 template: detail.hbs
 ---
 
 # 回転
 
-
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください \]
-
-この記事では、新しい Windows UI の回転について説明し、UWP アプリでこの新しい操作のメカニズムを使うときに考慮する必要があるユーザー エクスペリエンスのガイドラインを示します。
+この記事では、新しい Windows UI の回転について説明し、UWP アプリでこの新しい対話式操作のメカニズムを使うときに考慮する必要があるユーザー エクスペリエンスのガイドラインを示します。
 
 **重要な API**
 
@@ -85,9 +83,9 @@ Windows 8 では、自由、制約付き、複合の 3 種類の回転をサポ
 </tr>
 <tr class="odd">
 <td align="left">複合回転</td>
-<td align="left"><p>複合回転は自由回転をサポートしますが、([Guidelines for panning](guidelines-for-panning.md)におけるレールのように) 90° 単位のスナップ位置のゾーンでは制約付き回転によって強制されます。 ユーザーが各 90° のゾーンの外でオブジェクトを離した場合にはオブジェクトはその位置にとどまりますが、それ以外の場合にはオブジェクトは自動的にスナップ位置まで回転します。</p>
+<td align="left"><p>複合回転は自由回転をサポートしますが、([パン](guidelines-for-panning.md)におけるレールのように) 90°単位のスナップ位置のゾーンでは制約付き回転によって強制されます。 ユーザーが各 90° のゾーンの外でオブジェクトを離した場合にはオブジェクトはその位置にとどまりますが、それ以外の場合にはオブジェクトは自動的にスナップ位置まで回転します。</p>
 <div class="alert">
-<strong>注:</strong>  ユーザー インターフェイスのレールは、ターゲットの周辺の領域において、特定の値または位置に向けて動きが制約され選択に影響を与える機能です。
+<strong>注:</strong> ユーザー インターフェイスのレールは、ターゲットの周辺の領域において、特定の値または位置に向けて動きが制約され選択に影響を与える機能です。
 </div>
 <div>
  
@@ -106,6 +104,7 @@ Windows 8 では、自由、制約付き、複合の 3 種類の回転をサポ
 * [待機時間が短い入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620304)
 * [ユーザー操作モードのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619894)
 * [フォーカスの視覚効果のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+
 **サンプルのアーカイブ**
 * [入力: XAML ユーザー入力イベントのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=226855)
 * [入力: デバイス機能のサンプル](http://go.microsoft.com/fwlink/p/?linkid=231530)
@@ -124,6 +123,6 @@ Windows 8 では、自由、制約付き、複合の 3 種類の回転をサポ
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

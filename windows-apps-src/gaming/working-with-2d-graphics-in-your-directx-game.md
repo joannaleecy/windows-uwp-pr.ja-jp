@@ -1,6 +1,7 @@
 ---
+author: mtoepke
 title: DirectX ゲームの 2D グラフィックス
-description: ここでは 2D ビットマップ グラフィックスおよびエフェクトの用途と、これらを実際のゲームで使用する方法について説明します。
+description: ここでは 2D ビットマップ グラフィックスおよびエフェクトの用途と、これらを実際のゲームで使う方法について説明します。
 ms.assetid: ad69e680-d709-83d7-4a4c-7bbfe0766bc7
 ---
 
@@ -53,8 +54,8 @@ DirectX では、2D グラフィックスは 3D パイプラインの一部と�
 -   [Direct2D クイック スタート](https://msdn.microsoft.com/library/windows/desktop/dd535473)
 -   [Direct2D と Direct3D の相互運用性に関する概要](https://msdn.microsoft.com/library/windows/desktop/dd370966)
 
-> **注**  
-この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブ ドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
+> **注:**  
+この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
  
 
@@ -67,6 +68,6 @@ DirectX では、2D グラフィックスは 3D パイプラインの一部と�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

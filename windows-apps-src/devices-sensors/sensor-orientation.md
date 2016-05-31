@@ -1,4 +1,5 @@
 ---
+author: DBirtolo
 ms.assetid: B4A550E7-1639-4C9A-A229-31E22B1415E7
 title: センサーの向き
 description: Accelerometer、Gyrometer、Compass、Inclinometer、および OrientationSensor の各クラスのセンサー データは、基準軸によって定義されます。 これらの軸はデバイスの横長の向きで定義され、ユーザーがデバイスの向きを変えると、デバイスと共に回転します。
@@ -154,11 +155,9 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
 [
             **OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) データは別の方法で変更する必要があります。 複数の向きとして Z 軸に対する反時計回りの回転を考えてみます。この場合、ユーザーの向きを元に戻すには、回転を逆にする必要があります。 四元数データの場合、オイラーの公式を使って、基準四元数により回転を定義できます。また、基準回転マトリックスを使うこともできます。
 
-![オイラーの公式](images/eulers-formula.png)
-必要な相対的な向きを得るには、基準オブジェクトと絶対オブジェクトを乗算します。 この演算は非可換であることに注意してください。
+![オイラーの公式](images/eulers-formula.png) 必要な相対的な向きを得るには、基準オブジェクトと絶対オブジェクトを乗算します。 この演算は非可換であることに注意してください。
 
-![基準オブジェクトと絶対オブジェクトの乗算](images/orientation-formula.png)
-前の式では、センサー データによって絶対オブジェクトが返されます。
+![基準オブジェクトと絶対オブジェクトの乗算](images/orientation-formula.png) 前の式では、絶対オブジェクトが、センサー データによって返されます。
 
 | 表示の向き  | Z 軸を中心とする反時計回りの回転 | 基準四元数 (逆回転) | 基準回転マトリックス (逆回転) | 
 |----------------------|------------------------------------|-----------------------------------------|----------------------------------------------|
@@ -169,6 +168,6 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -56,7 +56,7 @@ author: awkoren
 4.  **インターネット インフォメーション サービス (IIS) マネージャー**で、IIS サーバーを選んで **[サーバー証明書]** をダブルクリックします。 **[操作]** セクションで、**[自己署名入り証明書の作成]** を選びます。 証明書のフレンドリ名として "ContosoBank" と入力し、**[OK]** をクリックします。 これにより、IIS サーバーで使われる新しい証明書が "&lt;サーバー名&gt;.&lt;ドメイン名&gt;" の形式で作成されます。
 5.  **インターネット インフォメーション サービス (IIS) マネージャー**で、既定の Web サイトを選びます。 **[操作]** セクションで **[バインド]** を選び、**[追加]** をクリックします。 種類として "https" を選び、ポートを "443" に設定して、IIS サーバーの完全なホスト名 ("&lt;サーバー名&gt;.&lt;ドメイン名&gt;") を入力します。 SSL 証明書を "ContosoBank" に設定します。 **[OK]** をクリックします。 **[サイト バインド]** ウィンドウの **[閉じる]** をクリックします。
 6.  **インターネット インフォメーション サービス (IIS) マネージャー**で、"FirstContosoBank" Web サービスを選びます。 **[SSL 設定]** をダブルクリックします。 **[SSL が必要]** をオンにします。 **[クライアント証明書]** で **[必要]** を選びます。 **[操作]** セクションで、**[適用]** をクリックします。
-7.  Web サービスが正しく構成されたことを確認するには、Web ブラウザーを開き、Web アドレスとして "https://&lt;サーバー名&gt;.&lt;ドメイン名&gt;/FirstContosoBank/Service1.asmx" を入力します。 たとえば、"https://myserver.example.com/FirstContosoBank/Service1.asmx" のように指定します。 Web サービスが正しく構成されていれば、Web サービスにアクセスするためのクライアント証明書を選ぶように求められます。
+7.  Web サービスが正しく構成されたことを確認するには、Web ブラウザーを開き、Web アドレスとして「https://&lt;サーバー名&gt;.&lt;ドメイン名&gt;/FirstContosoBank/Service1.asmx」を入力します。 たとえば、"https://myserver.example.com/FirstContosoBank/Service1.asmx" のように指定します。 Web サービスが正しく構成されていれば、Web サービスにアクセスするためのクライアント証明書を選ぶように求められます。
 
 前の手順を繰り返すことで、同じクライアント証明書を使ってアクセスできる複数の Web サービスを作成できます。
 
@@ -74,7 +74,7 @@ author: awkoren
 
 1.  Visual Studio を開き、スタート ページで新しいプロジェクトを作成します。 新しいプロジェクトに "FirstContosoBankApp" という名前を付けます。 **[OK]** をクリックして新しいプロジェクトを作成します。
 2.  MainPage.xaml ファイルで、次の XAML を既定の **Grid** 要素に追加します。 この XAML には、インポートする PFX ファイルを参照するボタン、PFX ファイルがパスワードで保護されている場合にパスワードを入力するテキスト ボックス、選んだ PFX ファイルをインポートするボタン、セキュリティで保護された Web サービスにログインするボタン、現在の操作の状態を表示するテキスト ブロックが含まれています。
-    ```xaml
+    ```xml
     <Button x:Name="Import" Content="Import Certificate (PFX file)" HorizontalAlignment="Left" Margin="352,305,0,0" VerticalAlignment="Top" Height="77" Width="260" Click="Import_Click" FontSize="16"/>
     <Button x:Name="Login" Content="Login" HorizontalAlignment="Left" Margin="611,305,0,0" VerticalAlignment="Top" Height="75" Width="240" Click="Login_Click" FontSize="16"/>
     <TextBlock x:Name="Result" HorizontalAlignment="Left" Margin="355,398,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="153" Width="560"/>
@@ -95,9 +95,9 @@ author: awkoren
     using Windows.Storage.Streams;
     ```
 
-5.  MainPage.xaml.cs ファイルで、次の変数を **MainPage** クラスに追加します。 ここでは、"FirstContosoBank" Web サービスのセキュリティで保護された "Login" メソッドのアドレスと、証明書ストアにインポートする PFX 証明書を保持するグローバル変数を指定しています。 &lt;server-name&gt; は Microsoft Internet Information (IIS) サーバーの完全修飾名に更新してください。
+5.  MainPage.xaml.cs ファイルで、次の変数を **MainPage** クラスに追加します。 ここでは、"FirstContosoBank" Web サービスのセキュリティで保護された "Login" メソッドのアドレスと、証明書ストアにインポートする PFX 証明書を保持するグローバル変数を指定しています。 &lt;サーバー名&gt; は Microsoft Internet Information (IIS) サーバーの完全修飾名に更新してください。
     ```cs
-    private Uri requestUri = new Uri("https://&lt;server-name&gt;/FirstContosoBank/Service1.asmx?op=Login");
+    private Uri requestUri = new Uri("https://<server-name>/FirstContosoBank/Service1.asmx?op=Login");
     private string pfxCert = null;
     ```
 
@@ -201,6 +201,6 @@ author: awkoren
 
 これらの手順を繰り返すことで、同じユーザー証明書を使ってセキュリティで保護された同じ Web サービスや別の Web サービスにアクセスする複数のアプリを作成できます。
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

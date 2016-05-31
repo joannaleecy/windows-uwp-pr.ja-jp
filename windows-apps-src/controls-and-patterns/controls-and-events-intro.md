@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: ボタン、テキスト ボックス、コンボ ボックスなどのコントロールを使って、データを表示し、ユーザー入力を取得するためのアプリの UI を作ります。 ここでは、アプリにコントロールを追加する方法について説明します。
 title: コントロールの追加とイベントの処理
 ms.assetid: 64740BF2-CAA1-419E-85D1-42EE7E15F1A5
-label: コントロールとイベントの概要
+label: Intro to controls and events
 template: detail.hbs
 ---
 # コントロールとイベントの概要
@@ -123,7 +124,7 @@ private void Button_Click(object sender, RoutedEventArgs e)
 Button1.Click += new RoutedEventHandler(Button_Click);
 ```
 
-\[この記事には、ユニバーサル Windows プラットフォーム (UWP) アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
+
 
 ## 関連トピック
 
@@ -132,6 +133,6 @@ Button1.Click += new RoutedEventHandler(Button_Click);
 -   [ポップアップ](dialogs-popups-menus.md)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

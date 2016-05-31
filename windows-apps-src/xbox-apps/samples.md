@@ -1,4 +1,5 @@
 ---
+author: Mtoepke
 title: Xbox One サンプルの UWP
 description: Xbox One とテレビの優れたエクスペリエンスの構築をサポートするサンプルとライブラリです。
 area: Xbox
@@ -15,6 +16,6 @@ TVHelpers は、JavaScript と XAML/C# のサンプルとライブラリです�
 - [Xbox One の UWP](index.md)
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

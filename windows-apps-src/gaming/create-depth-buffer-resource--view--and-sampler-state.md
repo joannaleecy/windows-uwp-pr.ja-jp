@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: 深度バッファーのデバイス リソースの作成
 description: シャドウ ボリュームの深度のテストをサポートするために必要な Direct3D デバイス リソースを作成する方法について説明します。
 ms.assetid: 86d5791b-1faa-17e4-44a8-bbba07062756
@@ -259,6 +260,6 @@ m_shadowViewport.MaxDepth = 1.f;
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

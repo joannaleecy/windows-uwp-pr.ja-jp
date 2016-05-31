@@ -14,7 +14,7 @@ author: awkoren
 この記事では、OpenID や OAuth などの認証プロトコルを使うオンライン ID プロバイダー (Facebook、Twitter、Flickr、Instagram など) にユニバーサル Windows プラットフォーム (UWP) アプリを接続する方法について説明します。 [
             **AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) メソッドは、要求をオンライン ID プロバイダーに送信し、アプリがアクセスできるプロバイダー リソースを示すアクセス トークンを返します。
 
-**注**  動作する完全なコード例が必要な場合は、[GitHub の WebAuthenticationBroker レポジトリ](http://go.microsoft.com/fwlink/p/?LinkId=620622)をコピーしてください。
+**注:** 動作する完全なコード サンプルが必要な場合は、[GitHub の WebAuthenticationBroker レポジトリ](http://go.microsoft.com/fwlink/p/?LinkId=620622)をコピーしてください。
 
  
 
@@ -33,7 +33,7 @@ author: awkoren
 次の例は、要求の URI を作成する方法を示しています。
 
 ```cs
-string startURL = "https://<providerendpoint>?client_id=<clientid>&amp;scope=<scopes>&amp;response_type=token";
+string startURL = "https://<providerendpoint>?client_id=<clientid>&scope=<scopes>&response_type=token";
 string endURL = "http://<appendpoint>";
 
 System.Uri startURI = new System.Uri(startURL);
@@ -151,7 +151,21 @@ Fiddler Web デバッガーはアプリに対して使うことができます�
 
 1.  AuthHost はプライベート ネットワーク機能を実現するために専用のアプリ コンテナー内で実行されるため、Windows Registry Editor Version 5.00 というレジストリ キーを設定する必要があります。
 
-    **HKEY\_LOCAL\_MACHINE**\\**SOFTWARE**\\**Microsoft**\\**Windows NT**\\**CurrentVersion**\\**Image File Execution Options**\\**authhost.exe**\\**EnablePrivateNetwork** = 00000001
+    **HKEY\_LOCAL\_MACHINE**
+            \\
+            **SOFTWARE**
+            \\
+            **Microsoft**
+            \\
+            **Windows NT**
+            \\
+            **CurrentVersion**
+            \\
+            **Image File Execution Options**
+            \\
+            **authhost.exe**
+            \\
+            **EnablePrivateNetwork** = 00000001
 
                          Data type  
                          DWORD
@@ -176,6 +190,6 @@ Fiddler Web デバッガーはアプリに対して使うことができます�
 
 3.  Fiddler への受信トラフィック用のファイアウォール規則を追加します。
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

@@ -15,12 +15,12 @@ author: awkoren
 
 ユーザーが共有を呼び出したときに呼び出される [**DataRequested**][DataRequested] イベント ハンドラーを追加します。 このイベントは、ユーザーがアプリ内のコントロール (ボタンやアプリ バー コマンドなど) をタップした場合に発生します。ユーザーがあるレベルをクリアしてハイ スコアを獲得した場合など、特定のシナリオで自動的に発生することもあります。
 
-[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetPrepareToShare)]
+[!code-cs[メイン](./code/share_data/cs/MainPage.xaml.cs#SnippetPrepareToShare)]
 
 [
             **DataRequested**][DataRequested] イベントが発生すると、アプリは [**DataRequest**][DataRequest] オブジェクトを受け取ります。 このオブジェクトに含まれている [**DataPackage**][DataPackage] を使って、ユーザーが共有するコンテンツを提供することができます。 共有するデータとタイトルを指定する必要があります。 説明は省略することもできますが、指定することをお勧めします。
 
-[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetCreateRequest)]
+[!code-cs[メイン](./code/share_data/cs/MainPage.xaml.cs#SnippetCreateRequest)]
 
 ## データの選択
 
@@ -38,7 +38,7 @@ author: awkoren
 [
             **DataPackage**][DataPackage] オブジェクトには、これらの 1 つ以上の形式を任意に組み合わせて格納することができます。 次の例は、テキストの共有を示しています。
 
-[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetSetContent)]
+[!code-cs[メイン](./code/share_data/cs/MainPage.xaml.cs#SnippetSetContent)]
 
 ## プロパティの設定
 
@@ -46,13 +46,13 @@ author: awkoren
 
 タイトルを除くすべてのプロパティは任意です。 タイトルのプロパティは必須です。必ず設定してください。
 
-[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetSetProperties)]
+[!code-cs[メイン](./code/share_data/cs/MainPage.xaml.cs#SnippetSetProperties)]
 
 ## 共有 UI の起動
 
 共有用の UI は、システムによって提供されます。 起動するには、[**ShowShareUI**][ShowShareUi] メソッドを呼び出します。
 
-[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetShowUI)]
+[!code-cs[メイン](./code/share_data/cs/MainPage.xaml.cs#SnippetShowUI)]
 
 ## エラーの処理
 
@@ -104,6 +104,6 @@ async void OnDeferredImageRequestedHandler(DataProviderRequest request)
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

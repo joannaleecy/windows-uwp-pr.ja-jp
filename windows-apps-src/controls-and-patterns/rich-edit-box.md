@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: 書式付きテキスト、ハイパーリンク、イメージなどを含んだリッチ テキスト ドキュメントの入力と編集には、RichEditBox コントロールを使うことができます。 このコントロールの IsReadOnly プロパティを true に設定すると、RichEditBox を読み取り専用にできます。
 title: RichEditBox
 ms.assetid: 4AFC0DFA-3B89-434D-9F86-4309CCFF7839
-label: リッチ エディット ボックス
+label: Rich edit box
 template: detail.hbs
 ---
 # リッチ エディット ボックス
@@ -17,7 +18,7 @@ template: detail.hbs
 
 ## 適切なコントロールの選択
 
-**RichEditBox** を使用して、テキスト ファイルを表示および編集します。 その他の標準的なテキスト入力ボックスを使用するように、アプリへユーザー入力を行うために RichEditBox を使用しません。 むしろ、アプリとは別のテキスト ファイルで行うために RichEditBox を使用します。 通常は、RichEditBox に入力されたテキストを .rtf ファイルに保存します。
+**RichEditBox** を使用して、テキスト ファイルを表示および編集します。 その他の標準的なテキスト入力ボックスを使用するように、アプリへユーザー入力を行うために RichEditBox を使用しません。 代わりに、アプリとは別のテキスト ファイルを操作するために使用します。 通常は、RichEditBox に入力されたテキストを .rtf ファイルに保存します。
 -   複数行テキスト ボックスの主な目的がドキュメントの作成 (ブログのエントリ、メール メッセージのコンテンツなど) であり、ドキュメントでリッチ テキストが必要な場合は、リッチ テキスト ボックスを使います。
 -   ユーザーがテキストを書式設定できるようにする場合は、リッチ テキスト ボックスを使います。
 -   内部的に使うだけで、ユーザーに再表示しないテキストを取得する場合は、プレーンテキスト入力コントロールを使います。
@@ -193,7 +194,7 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 
 
 
-\[この記事には、ユニバーサル Windows プラットフォーム (UWP) アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
+
 
 ## 関連記事
 
@@ -209,10 +210,7 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 - [**Windows.UI.Xaml.Controls PasswordBox クラス**](https://msdn.microsoft.com/library/windows/apps/br227519)
 
 
-**開発者向け (その他)**
-- [String.Length プロパティ](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
 
-
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

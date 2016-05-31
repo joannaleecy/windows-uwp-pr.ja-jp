@@ -1,6 +1,7 @@
 ---
+author: jwmsft
 description: 定義済みリソースへの参照を評価することで、任意の XAML 属性の値を提供します。 リソースは ResourceDictionary で定義されており、StaticResource の使用では ResourceDictionary 内のそのリソースのキーを参照します。
-title: {StaticResource} マークアップ拡張
+title: StaticResource マークアップ拡張
 ms.assetid: D50349B5-4588-4EBD-9458-75F629CCC395
 ---
 
@@ -45,7 +46,7 @@ Windows ランタイム XAML プロセッサの実装では、**StaticResource**
 
 この XAML 例は、[XAML データ バインディング サンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=226854)から抜粋したものです。
 
-```xaml
+```xml
 <StackPanel Margin="5">
     <!-- Add converter as a resource to reference it from a Binding. --> 
     <StackPanel.Resources>
@@ -81,6 +82,6 @@ Microsoft Visual Studio 2013 では、XAML ページで **{StaticResource}** 
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

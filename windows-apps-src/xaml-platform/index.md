@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 ms.assetid: b632a6cc-3503-4ab8-bfd1-dde731bd89ab
 description: このセクションのトピックでは、作成するアプリ全般に当てはまるプログラミングの概念について説明します。
 title: XAML プラットフォーム
@@ -22,6 +23,6 @@ title: XAML プラットフォーム
  
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

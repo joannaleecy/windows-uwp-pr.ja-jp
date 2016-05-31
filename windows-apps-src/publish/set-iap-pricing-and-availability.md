@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: IAP を申請するときに、[価格と使用可能状況] ページのオプションで、IAP の料金やユーザーに提供する方法を指定します。
 title: IAP の価格と使用可能状況の設定
 ms.assetid: B3D4B753-716B-460B-A3B1-ED5712ECD694
@@ -50,6 +51,6 @@ IAP をユーザーが購入できるようにするかどうかを指定でき�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

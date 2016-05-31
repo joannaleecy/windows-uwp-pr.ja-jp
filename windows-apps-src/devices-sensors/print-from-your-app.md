@@ -1,4 +1,5 @@
 ---
+author: DBirtolo
 ms.assetid: 9A0F1852-A76B-4F43-ACFC-2CC56AAD1C03
 title: アプリからの印刷
 description: ユニバーサル Windows アプリからドキュメントを印刷する方法について説明します。 また、このトピックでは特定のページを印刷する方法も示します。
@@ -174,7 +175,7 @@ protected virtual void CreatePrintPreviewPages(object sender, PaginateEventArgs 
 
    // We know there are more pages to be added as long as the last RichTextBoxOverflow added to a print preview
    // page has extra content
-   while (lastRTBOOnPage.HasOverflowContent &amp;&amp; lastRTBOOnPage.Visibility == Windows.UI.Xaml.Visibility.Visible)
+   while (lastRTBOOnPage.HasOverflowContent && lastRTBOOnPage.Visibility == Windows.UI.Xaml.Visibility.Visible)
    {
          lastRTBOOnPage = AddOnePrintPreviewPage(lastRTBOOnPage, pageDescription);
    }
@@ -383,6 +384,6 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

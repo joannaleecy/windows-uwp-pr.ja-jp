@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 label: Buttons
 template: detail.hbs
 ---
@@ -155,15 +156,12 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 
 システムの戻るボタンの UI は、デバイスや入力の種類ごとに最適化されますが、ナビゲーション エクスペリエンスはグローバルであり、デバイスやユニバーサル Windows プラットフォーム (UWP) アプリで一貫しています。 これらの異なるエクスペリエンスには次のものがあります。
 
-デバイス
-電話
-![電話でのシステムの戻るボタン](images/nav-back-phone.png)
+デバイス 電話 ![電話でのシステムの戻るボタン](images/nav-back-phone.png)
 -   常に表示されます。
 -   デバイスの下部にあるソフトウェアまたはハードウェア ボタン。
 -   アプリ内部やアプリ間で、グローバルな戻るナビゲーションを実現します。
 
-<span id="Tablet"></span><span id="tablet"></span><span id="TABLET"></span>タブレット
-![タブレットでのシステムの戻るボタン (タブレット モード)](images/nav-back-tablet.png)
+<span id="Tablet"></span><span id="tablet"></span><span id="TABLET"></span>タブレット ![タブレットでのシステムの戻るボタン (タブレット モード)](images/nav-back-tablet.png)
 -   タブレット モードでは、常に表示されます。
 
     デスクトップ モードでは利用できません。 代わりに、タイトル バーの戻るボタンを有効にすることができます。 「[PC、ノート PC、タブレット](#PC)」をご覧ください。
@@ -173,8 +171,7 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 -   デバイスの下部のナビゲーション バーにあるソフトウェア ボタン。
 -   アプリ内部やアプリ間で、グローバルな戻るナビゲーションを実現します。
 
-<span id="PC"></span><span id="pc"></span>PC、ノート PC、タブレット
-![PC やノート PC でのシステムの戻るボタン](images/nav-back-pc.png)
+<span id="PC"></span><span id="pc"></span>PC、ノート PC、タブレット ![PC やノート PC でのシステムの戻るボタン](images/nav-back-pc.png)
 -   デスクトップ モードではオプションです。
 
     タブレット モードでは利用できません。 「[タブレット](#Tablet)」をご覧ください。
@@ -186,8 +183,7 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 -   アプリのタイトル バーにあるソフトウェア ボタン。
 -   アプリ内部のみでの戻るナビゲーション。 アプリ間のナビゲーションはサポートされません。
 
-Surface Hub
-![Surface Hub でのシステムの戻るボタン](images/nav-back-surfacehub.png)
+Surface Hub ![Surface Hub でのシステムの戻るボタン](images/nav-back-surfacehub.png)
 -   常に表示されます。
 -   デバイスの下部にあるソフトウェア ボタン。
 -   アプリ内部やアプリ間での戻るナビゲーション。
@@ -229,6 +225,6 @@ Surface Hub
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: ゲームと DirectX
 description: ユニバーサル Windows プラットフォーム (UWP) は、ゲームを作り、配布し、収益を得るための新たな機会を提供します。 新しいゲームの開始または既存のゲームの移植について説明します。
 ms.assetid: 4073b835-c900-4ff2-9fc5-da52f9432a1f
@@ -41,7 +42,7 @@ ms.assetid: 4073b835-c900-4ff2-9fc5-da52f9432a1f
 
  
 
-> **注:**  
+> **注**  
 この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
  
@@ -62,6 +63,6 @@ ms.assetid: 4073b835-c900-4ff2-9fc5-da52f9432a1f
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

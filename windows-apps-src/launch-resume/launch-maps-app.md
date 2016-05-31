@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: Windows マップ アプリの起動
 description: アプリから Windows マップ アプリを起動する方法について説明します。
 ms.assetid: E363490A-C886-4D92-9A64-52E3C24F1D98
@@ -285,7 +286,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <td align="left"><p>ss = "ss=" BIT</p>
 <p>例:</p>
 <p>ss=1</p></td>
-<td align="left"><p>ss=1 の場合は、ストリート レベルの画像が表示されることを示します。 <code>ss=1</code>. **ss** パラメーターを省略すると、ss=0 と同じ結果が表示されます。 <code>ss=0</code>. **cp** パラメーターと組み合わせて使うと、ストリート レベル ビューの場所を指定できます。</p>
+<td align="left"><p>次の場合は、ストリート レベルの画像が表示されることを示します: <code>ss=1</code>。 **ss** パラメーターを省略すると、次と同じ結果が表示されます <code>ss=0</code>。 **cp** パラメーターと組み合わせて使うと、ストリート レベル ビューの場所を指定できます。</p>
 <div class="alert">
 > **注**  ストリート レベルの画像は、すべての地域で利用できるわけではありません。
 </div>
@@ -299,7 +300,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <td align="left"><p>trfc = "trfc=" BIT</p>
 <p>例:</p>
 <p>trfc=1</p></td>
-<td align="left"><p>交通情報を地図に含めるかどうかを指定します。 trfc パラメーターを省略すると、trfc=0 と同じ結果が表示されます。 <code>trfc=0</code>.</p>
+<td align="left"><p>交通情報を地図に含めるかどうかを指定します。 trfc パラメーターを省略すると、次と同じ結果が表示されます: <code>trfc=0</code>。</p>
 <div class="alert">
 > **注**  交通情報のデータは、すべての地域で利用できるわけではありません。
 </div>
@@ -324,8 +325,8 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>rtp=adr.Mountain%20View,%20CA~adr.SFO</p>
 <p>rtp=adr.One%20Microsoft%20Way,%20Redmond,%20WA~pos.45.23423_-122.1232 _My%20Picnic%20Spot</p></td>
 <td align="left"><p>地図上に表示するルートの開始地点と終了地点を、チルダ (**~**) で区切って定義します。 各中間点は、緯度、経度、オプションのタイトルを使った位置、または住所の識別情報を使って定義します。</p>
-<p>完全なルートとは、中間点が 2 つだけ含まれるルートです。 たとえば、2 つの中間点を持つルートは、rtp="A"~"B" のように定義されます。 <code>rtp="A"~"B"</code>.</p>
-<p>不完全なルートを指定することもできます。 たとえば、ルートの開始地点だけを定義する場合は、rtp="A"~ のように指定できます。 <code>rtp="A"~</code>. この場合、ルート案内の入力が表示されると、**[出発地]** フィールドには指定された中間点が表示され、**[目的地]** フィールドにフォーカスが設定されます。</p>
+<p>完全なルートとは、中間点が 2 つだけ含まれるルートです。 たとえば、2 つの中間点を持つルートは、次のように定義されます: <code>rtp="A"~"B"</code>。</p>
+<p>不完全なルートを指定することもできます。 たとえば、ルートの開始地点だけを定義する場合は、次のように指定できます: <code>rtp="A"~</code>。 この場合、ルート案内の入力が表示されると、**[出発地]** フィールドには指定された中間点が表示され、**[目的地]** フィールドにフォーカスが設定されます。</p>
 <p>また、ルートの終了地点だけを定義する場合は、rtp=~"B" のように指定できます。 <code>rtp=~"B"</code>ルート案内のパネルが表示されると、**[目的地]** フィールドには指定された中間点が表示されます。 現在の正確な位置情報にアクセスできる場合、**[出発地]** フィールドに現在の場所があらかじめ入力され、フォーカスが設定されます。</p>
 <p>不完全なルートが指定されている場合は、ルートの線は表示されません。</p>
 <p>**mode** パラメーターと組み合わせて使うと、交通手段のモード (自動車、公共交通機関、徒歩) を指定できます。 **mode** が指定されていない場合、ルート案内は、ユーザーの交通手段の設定のモードを使って提供されます。</p>
@@ -368,7 +369,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 <p>collection=name.My%20Trip%20Stops~point.36.116584_-115.176753_Las%20Vegas~point.37.8268_-122.4798_Golden%20Gate%20Bridge</p></td>
 <td align="left"><p>地図と一覧に追加されるポイントのコレクションです。 name パラメーターを使用して、ポイントのコレクションに名前を付けることができます。 ポイントは、緯度、経度、およびオプションのタイトルを使用して指定されます。</p>
 <p>名前と複数のポイントをチルダ (**~**) で区切ります。</p>
-<p>指定した項目にチルダが含まれている場合は、そのチルダを %7E としてエンコードしてください。 <code>%7E</code>. 中心点のパラメーターやズーム レベルのパラメーターと共に使わない場合、コレクションによって、最適な地図ビューが表示されます。</p>
+<p>指定した項目にチルダが含まれている場合は、そのチルダを %7E としてエンコードしてください <code>%7E</code>。 中心点のパラメーターやズーム レベルのパラメーターと共に使わない場合、コレクションによって、最適な地図ビューが表示されます。</p>
 
 <p>**重要** 指定した項目にアンダースコアが含まれている場合は、そのアンダースコアを %255F としてダブル エンコードしてください。</p>
 
@@ -390,9 +391,9 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 
 | パラメーター | 定義 | 例 | 詳細 |
 |------------|-----------|---------|---------|
-| **destination.latitude** | 目的地の緯度 | 例: destination.latitude=47.6451413797194 | 目的地の緯度です。 有効な緯度の値の範囲は -90 ～ +90 です (両端の値を含む)。 |
-| **destination.longitude** | 目的地の経度 | 例: destination.longitude=-122.141964733601 | 目的地の経度です。 有効な経度の値の範囲は -180 ～ +180 です (両端の値を含む)。 |
-| **destination.name** | 目的地の名前 | 例: destination.name=Redmond, WA | 目的地の名前です。 **destination.name** 値をエンコードする必要はありません。 |
+| **destination.latitude** | 目的地の緯度 | 例:destination.latitude=47.6451413797194 | 目的地の緯度です。 有効な緯度の値の範囲は -90 ～ +90 です (両端の値を含む)。 |
+| **destination.longitude** | 目的地の経度 | 例:destination.longitude=-122.141964733601 | 目的地の経度です。 有効な経度の値の範囲は -180 ～ +180 です (両端の値を含む)。 |
+| **destination.name** | 目的地の名前 | 例:destination.name=Redmond, WA | 目的地の名前です。 **destination.name** 値をエンコードする必要はありません。 |
 
  
 
@@ -407,26 +408,26 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherO
 
 | パラメーター | 定義 | 例 | 詳細 |
 |-----------|------------|---------|----------|
-| **destination.latitude** | 目的地の緯度 | 例: destination.latitude=47.6451413797194 | 目的地の緯度です。 有効な緯度の値の範囲は -90 ～ +90 です (両端の値を含む)。 |
-| **destination.longitude** | 目的地の経度 | 例: destination.longitude=-122.141964733601 | 目的地の経度です。 有効な経度の値の範囲は -180 ～ +180 です (両端の値を含む)。 |
-| **destination.name** | 目的地の名前 | 例: destination.name=Redmond, WA | 目的地の名前です。 **destination.name** 値をエンコードする必要はありません。 |
+| **destination.latitude** | 目的地の緯度 | 例:destination.latitude=47.6451413797194 | 目的地の緯度です。 有効な緯度の値の範囲は -90 ～ +90 です (両端の値を含む)。 |
+| **destination.longitude** | 目的地の経度 | 例:destination.longitude=-122.141964733601 | 目的地の経度です。 有効な経度の値の範囲は -180 ～ +180 です (両端の値を含む)。 |
+| **destination.name** | 目的地の名前 | 例:destination.name=Redmond, WA | 目的地の名前です。 **destination.name** 値をエンコードする必要はありません。 |
 
  
 ## ms-settings: のパラメーター リファレンス
 
 
-**ms-settings:** URI スキームのマップ アプリ固有のパラメーターの構文は、次のように定義されます。 **maps-downloadmaps** は、**ms-settings:** URI と共に **ms-settings:maps-downloadmaps?** の形式で指定され、 オフライン マップの設定ページを示します。
+**ms-settings:** URI スキームのマップ アプリ固有のパラメーターの構文は、次のように定義されます。 **maps-downloadmaps** は、**ms-settings:** URI と共に **ms-settings:maps-downloadmaps?** の形式で指定され、オフライン マップの設定ページを示します。
 
  
 
 | パラメーター | 定義 | 例 | 詳細 |
 |-----------|------------|---------|----------|
-| **latlong** | オフライン マップの地域を定義するポイント。 | 例: latlong=47.6,-122.3 | GeoPoint は、コンマ区切りの緯度と経度で指定されます。 有効な緯度の値の範囲は -90 ～ +90 です (両端の値を含む)。 有効な経度の値の範囲は -180 ～ +180 です (両端の値を含む)。 |
+| **latlong** | オフライン マップの地域を定義するポイント。 | 例:latlong=47.6,-122.3 | GeoPoint は、コンマ区切りの緯度と経度で指定されます。 有効な緯度の値の範囲は -90 ～ +90 です (両端の値を含む)。 有効な経度の値の範囲は -180 ～ +180 です (両端の値を含む)。 |
  
 
  
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

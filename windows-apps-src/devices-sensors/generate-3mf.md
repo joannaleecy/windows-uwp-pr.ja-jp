@@ -1,4 +1,5 @@
 ---
+author: PatrickFarley
 Description: '3D Manufacturing Format (3MF) のファイルの種類の構造について説明し、その作成方法と Windows.Graphics.Printing3D API による操作について説明します。'
 MS-HAID: 'dev\_devices\_sensors.generate\_3mf'
 MSHAttr: 'PreferredLib:/library/windows/apps'
@@ -14,24 +15,24 @@ title: 3MF パッケージの生成
 
 **重要な API**
 
--   [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.printing3d.aspx)
+-   [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx)
 
 \[一部の情報はリリース前の製品に関することであり、正式版がリリースされるまでに大幅に変更される可能性があります。 ここに記載された情報について、マイクロソフトは明示または黙示を問わずいかなる保証をするものでもありません。\]
 
-3D Manufacturing Format (3MF) ドキュメントの構造について説明し、その作成方法と [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.printing3d.aspx) API による操作について説明します。
+3D Manufacturing Format (3MF) ドキュメントの構造について説明し、その作成方法と [**Windows.Graphics.Printing3D**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.aspx) API による操作について説明します。
 
 ## 3MF の概要
 
-3D Manufacturing Format (3MF) は、製造 (3D 印刷) 目的のために、XML を使って 3D モデルの外観と構造を記述するための規則のセットです。 3MF ではパーツ (必須なパーツとオプションのパーツがあります) のセットとそのリレーションシップを定義しています。そのねらいは 3D 製造デバイスのために必要なすべての情報を提供することです。 3MF に準拠したデータセットは .3mf 拡張子を持つファイルとして保存できます。 
+3D Manufacturing Format (3MF) は、製造 (3D 印刷) 目的のために、XML を使って 3D モデルの外観と構造を記述するための規則のセットです。 3MF ではパーツ (必須なパーツとオプションのパーツがあります) のセットとそのリレーションシップを定義しています。そのねらいは 3D 製造デバイスのために必要なすべての情報を提供することです。 3MF に準拠したデータセットは .3mf 拡張子を持つファイルとして保存できます。
 
-Windows 10 では、**Windows.Graphics.Printing3D** 名前空間の [**Printing3D3MFPackage**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.printing3d.printing3d3mfpackage.aspx) クラスが 1 つの .3mf ファイルに相当し、他のクラスはファイル内の特定の XML 要素にマップされます。 このガイドでは、3MF ドキュメントの主なパーツのそれぞれの作成方法とプログラムによる設定方法、3MF の素材の拡張の利用方法、最後に C# の **Printing3D3MFPackage** オブジェクトを変換して .3mf ファイルとして保存する方法について説明します。 3MF および 3MF 素材の拡張の標準について詳しくは、「[3MF の仕様](http://3mf.io/what-is-3mf/3mf-specification/)」をご覧ください。
+Windows 10 では、**Windows.Graphics.Printing3D** 名前空間の [**Printing3D3MFPackage**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3d3mfpackage.aspx) クラスが 1 つの .3mf ファイルに相当し、他のクラスはファイル内の特定の XML 要素にマップされます。 このガイドでは、3MF ドキュメントの主なパーツのそれぞれの作成方法とプログラムによる設定方法、3MF の素材の拡張の利用方法、最後に C# の **Printing3D3MFPackage** オブジェクトを変換して .3mf ファイルとして保存する方法について説明します。 3MF および 3MF 素材の拡張の標準について詳しくは、「[3MF の仕様](http://3mf.io/what-is-3mf/3mf-specification/)」をご覧ください。
 
 <!-- >**Note** This guide describes how to construct a 3MF document from scratch. If you wish to make changes to an already existing 3MF document provided in the form of a .3mf file, you simply need to convert it to a **Printing3D3MFPackage** and alter the contained classes/properties in the same way (see [link]) below). -->
 
 
 ## 3MF 構造体の主なクラス
 
-**Printing3D3MFPackage** クラスは完全な 3MF ドキュメントを表します。3MF ドキュメントの中心となるのは、[**Printing3DModel**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.printing3d.printing3dmodel.aspx) クラスで表される、モデル パーツです。 3D モデルを指定する情報のほとんどは **Printing3DModel** クラスのプロパティおよびその基になるクラスのプロパティを設定して保存されます。
+**Printing3D3MFPackage** クラスは完全な 3MF ドキュメントを表します。3MF ドキュメントの中心となるのは、[**Printing3DModel**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dmodel.aspx) クラスで表される、モデル パーツです。 3D モデルを指定する情報のほとんどは **Printing3DModel** クラスのプロパティおよびその基になるクラスのプロパティを設定して保存されます。
 
 [!code-cs[InitClasses](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetInitClasses)]
 
@@ -45,17 +46,17 @@ Windows 10 では、**Windows.Graphics.Printing3D** 名前空間の [**Printing3
 
 ## メッシュ データ
 
-このガイドにおいては、メッシュとは、頂点のセットから作成される 3 次元形状のボディを意味します (必ずしも 1 つの立体として見えるとは限りません)。 メッシュ パーツは [**Printing3DMesh**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.printing3d.printing3dmesh.aspx) クラスで表されます。 有効なメッシュ オブジェクトは、すべての頂点の位置、およびいくつかの頂点のセットの間に存在する三角形の表面についての情報を含む必要があります。 
+このガイドにおいては、メッシュとは、頂点のセットから作成される 3 次元形状のボディを意味します (必ずしも 1 つの立体として見えるとは限りません)。 メッシュ パーツは [**Printing3DMesh**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dmesh.aspx) クラスで表されます。 有効なメッシュ オブジェクトは、すべての頂点の位置、およびいくつかの頂点のセットの間に存在する三角形の表面についての情報を含む必要があります。
 
 次のメソッドは、メッシュに頂点を追加して、3D 空間での位置を与えます。
 
-[!code-cs[Vertices](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetVertices)]
+[!code-cs[頂点](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetVertices)]
 
 次のメソッドは、頂点間で描画されるすべての三角形を定義します。
 
 [!code-cs[TriangleIndices](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetTriangleIndices)]
 
-> **注** すべての三角形では、(三角形をメッシュ オブジェクトの外側から見て) 反時計回りでインデックスを定義する必要があります。これにより、表面の法線ベクトルが外側に向きます。
+> **注:** すべての三角形では、(三角形をメッシュ オブジェクトの外側から見て) 反時計回りでインデックスを定義する必要があります。これにより、表面の法線ベクトルが外側に向きます。
 
 Printing3DMesh オブジェクトが頂点と三角形の有効なセットを含む場合、それはモデルの **Meshes** プロパティに追加される必要があります。 パッケージに含まれるすべての **Printing3DMesh** オブジェクトは、**Printing3DModel** クラスの **Meshes** プロパティの下に保存される必要があります。
 
@@ -65,7 +66,7 @@ Printing3DMesh オブジェクトが頂点と三角形の有効なセットを�
 ## 素材の作成
 
 
-3D モデルは複数の素材のデータを保持できます。 この規則は、1 回の印刷ジョブで複数の素材を使用できる 3D 製造デバイスを活用するためのものです。 また複数の*種類*の素材グループがあり、それぞれがさまざまな個々の素材をサポートできます。 各素材グループは一意の参照 ID 番号を持つ必要があります。グループ内の各素材も一意の ID を持つ必要があります。 
+3D モデルは複数の素材のデータを保持できます。 この規則は、1 回の印刷ジョブで複数の素材を使用できる 3D 製造デバイスを活用するためのものです。 また複数の*種類*の素材グループがあり、それぞれがさまざまな個々の素材をサポートできます。 各素材グループは一意の参照 ID 番号を持つ必要があります。グループ内の各素材も一意の ID を持つ必要があります。
 
 これにより、モデル内の別のメッシュ オブジェクトがこれらの素材を参照できます。 さらに、各メッシュの個々の三角形は、別の素材を指定できます。 また、1 つの三角形内で別の素材が表され、三角形の各頂点が別の素材に割り当てられて、表面の素材はそれらのグラデーションとして計算されることさえも可能です。
 
@@ -73,19 +74,19 @@ Printing3DMesh オブジェクトが頂点と三角形の有効なセットを�
 
 ### Base materials
 
-既定の素材の種類は **Base Material** です。これは **Color Material** 値 (下記を参照) と名前属性を持ちます。これは使用する素材の*種類*を指定するために使用します。
+既定の素材の種類は **Base Material** です。これは **Color Material** 値 (下記を参照) と名前属性を持ちます。これは使う素材の*種類*を指定するために使います。
 
 [!code-cs[BaseMaterialGroup](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetBaseMaterialGroup)]
 
-**注** 3D 製造デバイスは、利用可能な物理素材と、3MF に保存されている仮想素材要素のマップを決定します。 素材のマッピングは 1:1 とは限りません。3D プリンターが 1 つの素材のみを使用できる場合、オブジェクトや表面が別の素材に割り当てられている場合でも、全モデルをその素材で印刷します。
+**注:** 3D 製造デバイスは、利用可能な物理素材と、3MF に保存されている仮想素材要素のマップを決定します。 素材のマッピングは 1:1 とは限りません。3D プリンターが 1 つの素材のみを使用できる場合、オブジェクトや表面が別の素材に割り当てられている場合でも、全モデルをその素材で印刷します。
 
 ### Color Materials
 
-**Color Materials** は **Base Materials** に似ていますが、名前は含まれません。 そのため、マシンが使用する素材の種類を指定できません。 色のデータのみを保持し、マシンが素材の種類を選択します (マシンがユーザーに選択を求める場合もあります)。 次のコードでは、以前のメソッドからの `colrMat` オブジェクトが使用されています。
+**Color Materials** は **Base Materials** に似ていますが、名前は含まれません。 そのため、マシンが使用する素材の種類を指定できません。 色のデータのみを保持し、マシンが素材の種類を選択します (マシンがユーザーに選択を求める場合もあります)。 次のコードでは、以前のメソッドからの `colrMat` オブジェクトが使われています。
 
 [!code-cs[ColorMaterialGroup](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetColorMaterialGroup)]
 
-### Composite Materials
+### 複合素材
 
 **Composite Materials** は製造デバイスに、さまざまな **Base Materials** を一定の組み合わせで使用するように指示します。 各 **Composite Material Group** は材料を使う 1 つの **Base Material Group** のみを参照する必要があります。 さらに、このグループ内で利用できる **Base Materials** は **Material Indices** の一覧にリストされている必要があります。これは比率を指定する際に各 **Composite Material** によって参照されます (すべての **Composite Material** は単に **Base Materials** の比率です)。
 
@@ -93,13 +94,13 @@ Printing3DMesh オブジェクトが頂点と三角形の有効なセットを�
 
 ### テクスチャ座標の素材
 
-3MF は 2D 画像を使って 3D モデルの表面に色を付けることをサポートします。 これによりモデルは、三角形の表面ごとに、より多くの色データを伝えることができます (三角形の頂点ごとに 1 つの色の値を持つ場合と比べて)。 **Color Materials** と同様に、テクスチャ座標の素材は色データのみを伝えます。 2D テクスチャを使用するには、まずテクスチャ リソースを宣言する必要があります。
+3MF は 2D 画像を使って 3D モデルの表面に色を付けることをサポートします。 これによりモデルは、三角形の表面ごとに、より多くの色データを伝えることができます (三角形の頂点ごとに 1 つの色の値を持つ場合と比べて)。 **Color Materials** と同様に、テクスチャ座標の素材は色データのみを伝えます。 2D テクスチャを使うには、まずテクスチャ リソースを宣言する必要があります。
 
 [!code-cs[TextureResource](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetTextureResource)]
 
-**注** テクスチャ データは、パッケージ内のモデル パーツでなく、3MF パッケージ自体に属しています。 
+**注:** テクスチャ データは、パッケージ内のモデル パーツでなく、3MF パッケージ自体に属しています。
 
-次に **Texture3Coord Materials** を記入する必要があります。 これらはそれぞれテクスチャ リソースを参照し、画像の特定の点を (UV 座標で) 指定します。 
+次に **Texture3Coord Materials** を記入する必要があります。 これらはそれぞれテクスチャ リソースを参照し、画像の特定の点を (UV 座標で) 指定します。
 
 [!code-cs[Texture2CoordMaterialGroup](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetTexture2CoordMaterialGroup)]
 
@@ -112,37 +113,34 @@ Printing3DMesh オブジェクトが頂点と三角形の有効なセットを�
 ## Component とビルド
 
 Component 構造体により、ユーザーは印刷可能な 3D モデルに複数のメッシュ オブジェクトを配置できます。 [
-            **Printing3DComponent**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.printing3d.printing3dcomponent.aspx) オブジェクトには、1 つのメッシュと他のコンポーネントへの参照のリストが含まれています。 これは実際には、[**Printing3DComponentWithMatrix**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.printing3d.printing3dcomponentwithmatrix.aspx) オブジェクトのリストです。 各 **Printing3DComponentWithMatrix** オブジェクトには **Printing3DComponent** が含まれ、また重要なことに、メッシュと **Printing3DComponent** に含まれるコンポーネントに適用される変換マトリックスが含まれます。 
+            **Printing3DComponent**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dcomponent.aspx) オブジェクトには、1 つのメッシュと他のコンポーネントへの参照のリストが含まれています。 これは実際には、[**Printing3DComponentWithMatrix**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing3d.printing3dcomponentwithmatrix.aspx) オブジェクトのリストです。 各 **Printing3DComponentWithMatrix** オブジェクトには **Printing3DComponent** が含まれ、また重要なことに、メッシュと **Printing3DComponent** に含まれるコンポーネントに適用される変換マトリックスが含まれます。
 
 たとえば、自動車のモデルは、車のボディのメッシュを保持する、1 つの "ボディ" **Printing3DComponent** から構成されることができます。 この場合、"ボディ" コンポーネントには、4 つの異なる **Printing3DComponentWithMatrix** オブジェクトへの参照が含まれ、そのすべてが、"車輪" メッシュを持つ、同じ **Printing3DComponent** を参照し、4 つの異なる変換マトリックスを含みます (これにより、車輪を車のボディの 4 つの異なる位置にマッピングします)。 このシナリオでは、最終製品には合計 5 つのメッシュが含まれる場合でも、"ボディ" メッシュと "車輪" メッシュはそれぞれ 1 度だけ保存される必要があります。
 
 すべての **Printing3DComponent** オブジェクトはモデルの **Components** プロパティで直接参照される必要があります。 印刷ジョブで使用される 1 つの特定のコンポーネントは **Build** プロパティに保存されています。
 
-[!code-cs[Components](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetComponents)]
+[!code-cs[コンポーネント](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetComponents)]
 
 ## パッケージの保存
-素材とコンポーネントを定義したモデルが完成したので、それをパッケージに保存します。 
+素材とコンポーネントを定義したモデルが完成したので、それをパッケージに保存します。
 
 [!code-cs[SavePackage](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetSavePackage)]
 
-ここでは、アプリ内から印刷ジョブを開始するか (「[アプリからの 3D 印刷](https://msdn.microsoft.com/en-us/library/windows/apps/mt204541.aspx)」をご覧ください)、またはこの **Printing3D3MFPackage** を .3mf ファイルとして保存します。
+ここでは、アプリ内から印刷ジョブを開始するか (「[アプリからの 3D 印刷](https://msdn.microsoft.com/library/windows/apps/mt204541.aspx)」をご覧ください)、またはこの **Printing3D3MFPackage** を .3mf ファイルとして保存します。
 
-次のメソッドは、完成した **Printing3D3MFPackage** を取得して、そのデータを .3mf ファイルに保存します。 
+次のメソッドは、完成した **Printing3D3MFPackage** を取得して、そのデータを .3mf ファイルに保存します。
 
 [!code-cs[SaveTo3mf](./code/3dprinthowto/cs/Generate3MFMethods.cs#SnippetSaveTo3mf)]
 
 ## 関連トピック
 
-[アプリからの 3D 印刷](https://msdn.microsoft.com/en-us/library/windows/apps/mt204541.aspx)
+[アプリからの 3D 印刷](https://msdn.microsoft.com/windows/uwp/devices-sensors/3d-print-from-app)
 
  
 
  
 
 
-
-
-
-<!--HONumber=Mar16_HO3-->
+<!--HONumber=May16_HO2-->
 
 

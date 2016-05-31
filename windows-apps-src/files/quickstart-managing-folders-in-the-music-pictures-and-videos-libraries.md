@@ -1,4 +1,5 @@
 ---
+author: TylerMSFT
 ms.assetid: 1AE29512-7A7D-4179-ADAC-F02819AC2C39
 title: ミュージック、画像、およびビデオ ライブラリのファイルとフォルダー
 description: 音楽、画像、またはビデオの既存のフォルダーを対応するライブラリに追加できます。 ライブラリからフォルダーを削除したり、ライブラリ内のフォルダーの一覧を取得したり、保存した写真、音楽、ビデオにアクセスしたりすることもできます。
@@ -324,6 +325,6 @@ using (var sourceStream = await sourceFile.OpenReadAsync())
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

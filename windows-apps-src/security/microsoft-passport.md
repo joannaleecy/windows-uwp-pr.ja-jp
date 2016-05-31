@@ -119,7 +119,7 @@ Microsoft Passport を使った実装については、さまざまなシナリ�
 var keyCredentialAvailable = await KeyCredentialManager.IsSupportedAsync();
 if (!keyCredentialAvailable)
 {
-   // User didn&#39;t set up PIN yet
+   // User didn't set up PIN yet
    return;
 }
 ```
@@ -167,7 +167,7 @@ static async void RegisterUser(string AccountId)
     var keyCredentialAvailable = await KeyCredentialManager.IsSupportedAsync();
     if (!keyCredentialAvailable)
     {
-        // The user didn&#39;t set up a PIN yet
+        // The user didn't set up a PIN yet
         return;
     }
 
@@ -454,6 +454,6 @@ Windows 10 には、簡単に実現できる、高いレベルのセキュリテ
 * [Microsoft Passport ログイン アプリ](microsoft-passport-login.md)
 * [Microsoft Passport ログイン サービス](microsoft-passport-login-auth-service.md)
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

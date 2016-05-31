@@ -43,6 +43,6 @@ redirect_url: https://developer.microsoft.com/en-us/windows/develop
 | [XAML プラットフォーム](xaml-platform/index.md) | XAML プログラミング言語の基本的な概念を説明します。 または、XAML に既に慣れている場合は、XAML で Visual Studio を使って Windows ランタイム機能を実装し、優れたユニバーサル Windows アプリを作成する方法に関する説明に進んでもかまいません。 |
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

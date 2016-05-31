@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: ユーザー インターフェイスの追加
 description: これまでは、サンプル ゲームでメイン ゲーム オブジェクトと基本的なレンダリング フレームワークを実装する方法について確認してきました。
 ms.assetid: fa40173e-6cde-b71b-e307-db90f0388485
@@ -1487,6 +1488,6 @@ void GameInfoOverlay::SetAction(GameInfoOverlayCommand action)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

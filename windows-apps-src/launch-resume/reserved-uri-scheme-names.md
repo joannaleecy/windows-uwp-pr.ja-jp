@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: 予約済みのファイルと URI スキーム名
 description: URI の関連付けを使用すると、別のアプリで特定の URI スキームを起動したときに自分のアプリを自動的に起動できます。
 ms.assetid: 7428C4A2-1380-4EBB-9C2A-7DF7B5C468AE
@@ -125,6 +126,6 @@ URI の関連付けを使用すると、別のアプリで特定の URI スキ�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

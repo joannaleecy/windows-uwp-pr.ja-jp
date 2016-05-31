@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: 831123A7-1F40-4B74-AE9F-69AC9883B4AD
 description: この記事では、光学式手ブレ補正やスムーズ ズームなど、写真とビデオのキャプチャに関する拡張シナリオを可能にするために、ビデオ デバイスを制御する方法について説明します。
 title: 写真とビデオのキャプチャのためのキャプチャ デバイス コントロール
@@ -166,9 +167,22 @@ title: 写真とビデオのキャプチャのためのキャプチャ デバイ
 
 **重要:** タップによるフォーカスを実装する場合、操作の順序が重要になります。 これらの API は、次の順序で呼び出す必要があります。
 
-**1.**[**FocusControl.Configure**](https://msdn.microsoft.com/library/windows/apps/dn608067)
-**2.**[**RegionsOfInterestControl.SetRegionsAsync**](https://msdn.microsoft.com/library/windows/apps/dn279070)
-**3.**[**FocusControl.FocusAsync**](https://msdn.microsoft.com/library/windows/apps/dn297794)
+**1.**
+            [
+              **FocusControl.Configure**
+            ](https://msdn.microsoft.com/library/windows/apps/dn608067)
+            
+          
+            **2.**
+            [
+              **RegionsOfInterestControl.SetRegionsAsync**
+            ](https://msdn.microsoft.com/library/windows/apps/dn279070)
+            
+          
+            **3.**
+            [
+              **FocusControl.FocusAsync**
+            ](https://msdn.microsoft.com/library/windows/apps/dn297794)
 
 [!code-cs[TapToFocus](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTapToFocus)]
 
@@ -336,6 +350,7 @@ OIS を有効または無効にするには、[**OpticalImageStabilizationContro
 
 * [MediaCapture を使った写真とビデオのキャプチャ](capture-photos-and-video-with-mediacapture.md)
 
-<!--HONumber=Mar16_HO2-->
+
+<!--HONumber=May16_HO2-->
 
 

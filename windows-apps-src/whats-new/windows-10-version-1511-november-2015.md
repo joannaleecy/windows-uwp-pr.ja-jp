@@ -1,5 +1,5 @@
 ---
-Description: Windows 10 バージョン 1511 と開発者ツールの更新プログラムでは、引き続きユニバーサル Windows プラットフォームによって強化されたツール、機能、およびエクスペリエンスを提供しています。
+author: QuinnRadich Description: Windows 10 バージョン 1511 と開発者ツールの更新プログラムでは、引き続きユニバーサル Windows プラットフォームによって強化されたツール、機能、およびエクスペリエンスを提供しています。
 title: Windows 10 の開発者向け新着情報 (バージョン 1511: 2015 年 11 月)
 ---
 
@@ -15,7 +15,7 @@ Windows 10 バージョン 1511 と開発者ツールの更新プログラムで
 
 ## 入力
                                         
-* <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.input.keyboarddeliveryinterceptor.aspx">デリバリー インターセプター</a>
+* <a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.input.keyboarddeliveryinterceptor.aspx">キーボード デリバリー インターセプター</a>
                                         
     アプリでショートカット キーやアクセス キー (またはホット キー)、アクセラレータ キー、アプリケーション キーなどの、キーボードからの生の入力のシステム プロセスを上書きします。ただし、Secure Attention Sequence (SAS) キーの組み合わせは除きます。
 
@@ -78,11 +78,11 @@ Windows アプリ認定キットが更新され、テストも改善されまし
                                     
 ## デザインに関するダウンロード ## 
 
-Adobe Photoshop 用の新しい UWP アプリ デザイン テンプレートをご覧ください。 Microsoft PowerPoint と Adobe Illustrator のテンプレートも更新され、ガイドラインの PDF 版も利用可能になりました。 <a href="/design/assets">デザインに関するダウンロード</a>のページをご覧ください。    
+Adobe Photoshop 用の新しい UWP アプリ デザイン テンプレートをご覧ください。 Microsoft PowerPoint と Adobe Illustrator のテンプレートも更新され、ガイドラインの PDF 版も利用可能になりました。 <a href="/design/assets">デザインに関するダウンロードのページをご覧ください</a>。    
 
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

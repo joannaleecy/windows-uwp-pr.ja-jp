@@ -1,15 +1,16 @@
 ---
+author: mijacobs
 Description: タイルとは、[スタート] メニュー上でアプリを表すものです。 すべてのアプリにはタイルがあります。 Microsoft Visual Studio で作成した新しいユニバーサル Windows プラットフォーム (UWP) アプリ プロジェクトには、アプリの名前とロゴを表示する既定のタイルが含まれます。
 title: タイル
 ms.assetid: 09C7E1B1-F78D-4659-8086-2E428E797653
-label: タイル
+label: Tiles
 template: detail.hbs
 ---
 
 # UWP アプリのタイル
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+
 
 
 *タイル*とは、[スタート] メニュー上でアプリを表すものです。 すべてのアプリにはタイルがあります。 Microsoft Visual Studio で作成した新しいユニバーサル Windows プラットフォーム (UWP) アプリ プロジェクトには、アプリの名前とロゴを表示する既定のタイルが含まれます。 このタイルは、アプリを初めてインストールしたときに Windows に表示されます。 アプリをインストールしたら、新しい情報 (ニュース ヘッドライン、最新の未読メッセージの件名など) をユーザーに伝えるようにタイルを変更するなど、通知を通じてタイルの内容を変更できます。
@@ -46,14 +47,15 @@ Visual Studio で新しいプロジェクトを作成すると、アプリの名
 
     拡大/縮小された画像の名前付け規則は次のとおりです。
     
-    *&lt;画像名&gt;*.scale-*&lt;倍率&gt;*.*&lt;画像ファイルの拡張子&gt;* 
+    *
+              &lt;画像名&gt;*.scale-*&lt;倍率&gt;*.*&lt;画像ファイルの拡張子&gt;* 
 
 
      
 
-    For example: SmallLogo.scale-100.png
+    例: SmallLogo.scale-100.png
 
-    When you refer to the image, you refer to it as *&lt;image name&gt;*.*&lt;image file extension&gt;* ("SmallLogo.png" in this example). The system will automatically select the appropriate scaled image for the device from the images you've provided.
+    画像を参照するときには、*&lt;画像名&gt;*.*&lt;画像ファイルの拡張子&gt;* という形式で参照します (この例では "SmallLogo.png")。 指定した画像からデバイスに合わせて拡大/縮小された画像が自動的に選択されます。
 
 -   強制ではありませんが、幅広で大きいタイル サイズに合ったロゴを用意して、ユーザーの側でアプリのタイルをそのサイズに変更できるようにすることを強くお勧めします。 追加の画像を指定するには、`DefaultTile` 要素を作成し、`Wide310x150Logo` および `Square310x310Logo` 属性を使って、その画像を指定します。
 ```    XML
@@ -106,6 +108,6 @@ Visual Studio で新しいプロジェクトを作成すると、アプリの名
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

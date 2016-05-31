@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: このトピックでは、Windows ランタイム アプリで、プログラミング言語に C#、Visual Basic、または Visual C++ コンポーネント拡張機能 (C++/CX)、UI 定義に XAML を使う場合のイベントのプログラミングの概念について説明します。
 title: イベントとルーティング イベントの概要
 ms.assetid: 34C219E8-3EFB-45BC-8BBD-6FD937698832
@@ -6,7 +7,7 @@ ms.assetid: 34C219E8-3EFB-45BC-8BBD-6FD937698832
 
 # イベントとルーティング イベントの概要
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 **重要な API**
 -   [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911)
@@ -20,7 +21,7 @@ ms.assetid: 34C219E8-3EFB-45BC-8BBD-6FD937698832
 
 プログラミング言語として C#、Visual Basic、または C++/CX を使用する場合、UI はマークアップ (XAML) で定義されます。 XAML マークアップの構文で、マークアップ要素とランタイム コード エンティティの間でイベントを関連付けるときの原則の一部は、他の Web テクノロジ (ASP.NET、HTML5 など) と似ています。
 
-**注**  XAML で定義された UI のランタイム ロジックを提供するコードは、多くの場合、*コード ビハインド*またはコード ビハインド ファイルと呼ばれます。 Microsoft Visual Studio のソリューション ビューでは、コード ビハインド ファイルが参照先の XAML ページに対して依存する入れ子のファイルとして表示されて、この関係がグラフィカルに示されます。
+**注:** XAML で定義された UI のランタイム ロジックを提供するコードは、多くの場合、*コード ビハインド*またはコード ビハインド ファイルと呼ばれます。 Microsoft Visual Studio のソリューション ビューでは、コード ビハインド ファイルが参照先の XAML ページに対して依存する入れ子のファイルとして表示されて、この関係がグラフィカルに示されます。
 
 ## Button.Click: イベントと XAML の概要
 
@@ -30,13 +31,14 @@ Windows ランタイム アプリの UI を定義するには、XAML を生成�
 
 XAML でイベントを記述する場合は、コード ビハインドで既に定義してあるものも、これから定義するものも含め、ハンドラー メソッドの文字列形式の名前を指定します。 たとえば、この XAML は、他のプロパティ ([x:Name 属性](x-name-attribute.md)、[**コンテンツ**](https://msdn.microsoft.com/library/windows/apps/br209366)) を属性として割り当てたうえで[**ボタン**](https://msdn.microsoft.com/library/windows/apps/br209265) オブジェクトを定義し、`showUpdatesButton_Click` というメソッドを参照してボタンの[**クリック**](https://msdn.microsoft.com/library/windows/apps/br227737) イベントのハンドラーを関連付けます。
 
-```XAML
+```XML
 <Button x:Name="showUpdatesButton"
   Content="{Binding ShowUpdatesText}"
   Click="showUpdatesButton_Click"/>
 ```
 
-**ヒント:** *イベントの関連付け*は、プログラミング用語です。 これは、イベントが発生して名前付けされたハンドラー メソッドを呼び出すことを示すプロセスやコードのことを指します。 ほとんどの手続き型コード モデルで、イベントの関連付けはイベントとメソッドの両方の名前を付ける暗黙的または明示的な "AddHandler" コードで、通常ターゲット オブジェクト インスタンスが関係しています。 XAML では、「AddHandler」は暗黙的であり、イベントの関連付けは、すべてオブジェクト要素の属性名としてのイベントの名前付けと、属性値としてのハンドラーの名前付けで構成されています。
+**ヒント:**
+            *イベントの関連付け*は、プログラミング用語です。 これは、イベントが発生して名前付けされたハンドラー メソッドを呼び出すことを示すプロセスやコードのことを指します。 ほとんどの手続き型コード モデルで、イベントの関連付けはイベントとメソッドの両方の名前を付ける暗黙的または明示的な "AddHandler" コードで、通常ターゲット オブジェクト インスタンスが関係しています。 XAML では、「AddHandler」は暗黙的であり、イベントの関連付けは、すべてオブジェクト要素の属性名としてのイベントの名前付けと、属性値としてのハンドラーの名前付けで構成されています。
 
 実際のハンドラーは、アプリのすべてのコードとコード ビハインドで使っているプログラミング言語で記述します。 ここでは、`Click="showUpdatesButton_Click"` という属性を使ってコントラクトを作成しています。このコントラクトにより、XAML のマークアップ コンパイルと解析の際に、IDE のビルド アクションの XAML マークアップ コンパイル ステップと、アプリの読み込み時の最終的な XAML の解析で、`showUpdatesButton_Click` という名前のメソッドをアプリのコードの中から検出できます。 `showUpdatesButton_Click` は、[**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) イベントのすべてのハンドラーに対応したメソッド シグネチャを (デリゲートに基づいて) 実装するメソッドであることが必要です。 たとえば、このコードは `showUpdatesButton_Click` ハンドラーを定義します。
 
@@ -62,13 +64,13 @@ void MyNamespace::BlankPage::showUpdatesButton_Click(Platform::Object^ sender, W
 
 この例では、`showUpdatesButton_Click` メソッドは [**RoutedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br208812) デリゲートに基づいています。 MSDN のリファレンス ページで、[**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) メソッドの構文にこのデリゲートが指定されているため、このデリゲートを使います。
 
-**ヒント:** Visual Studio では、XAML の編集中に、簡単にイベント ハンドラーに名前を付けたり、ハンドラー メソッドを定義したりできます。 XAML テキスト エディターでイベントの属性名を入力する際には、Microsoft IntelliSense リストが表示されるまで少し待ってください。 リストの [**&lt;新しいイベント ハンドラー&gt;**] をクリックすると、要素の **x:Name** (または型名) に基づいて、メソッド名、イベント名、数値サフィックスの候補が表示されます。 その後、選択したイベント ハンドラー名を右クリックし、**[イベント ハンドラーへ移動]** をクリックできます。 そうすると、新たに挿入されたイベント ハンドラー定義に直接移動します。これは、XAML ページのコード ビハインド ファイルのコード エディター ビューで確認できます。 イベント ハンドラーには既に正しいシグネチャが設定されています (*sender* パラメーターや、イベントが使う特定のイベント データ クラスなど)。 また、正しいシグネチャを持つハンドラー メソッドが既にコード ビハインド内に存在する場合は、メソッドの名前が **[&lt;新しいイベント ハンドラー&gt;]** オプションと共にオート コンプリート ドロップダウンに表示されます。 また、IntelliSense のリスト項目をクリックする代わりに、ショートカットとして Tab キーを押すこともできます。
+**ヒント:** Visual Studio では、XAML の編集中に、簡単にイベント ハンドラーに名前を付けたり、ハンドラー メソッドを定義したりできます。 XAML テキスト エディターでイベントの属性名を入力する際には、Microsoft IntelliSense リストが表示されるまで少し待ってください。 リストの **[&lt;新しいイベント ハンドラー&gt;]** をクリックすると、要素の **x:Name** (または型名) に基づいて、メソッド名、イベント名、数値サフィックスの候補が表示されます。 その後、選択したイベント ハンドラー名を右クリックし、**[イベント ハンドラーへ移動]** をクリックできます。 そうすると、新たに挿入されたイベント ハンドラー定義に直接移動します。これは、XAML ページのコード ビハインド ファイルのコード エディター ビューで確認できます。 イベント ハンドラーには既に正しいシグネチャが設定されています (*sender* パラメーターや、イベントが使う特定のイベント データ クラスなど)。 また、正しいシグネチャを持つハンドラー メソッドが既にコード ビハインド内に存在する場合は、メソッドの名前が **[&lt;新しいイベント ハンドラー&gt;]** オプションと共にオート コンプリート ドロップダウンに表示されます。 また、IntelliSense のリスト項目をクリックする代わりに、ショートカットとして Tab キーを押すこともできます。
 
 ## イベント ハンドラーの定義
 
 オブジェクトが UI 要素であり、XAML で宣言される場合、イベント ハンドラー コードは、XAML ページのコード ビハインドとなる部分クラスに定義します。 イベント ハンドラーは、XAML に関連付けられた部分クラスの一部として記述するメソッドです。 これらのイベント ハンドラーは、特定のイベントが使用するデリゲートに基づきます。 イベント ハンドラー メソッドは、public と private のどちらでもかまいません。 アクセス レベルを private に設定できるのは、XAML によって作成されるハンドラーとインスタンスが最終的にコード生成によって結合されるためです。 通常は、イベント ハンドラー メソッドをクラス内で private にすることをお勧めします。
 
-**注**  C++ のイベント ハンドラーは、部分クラスで定義するのではなく、private のクラス メンバーとしてヘッダーで宣言します。 C++ プロジェクトのビルド アクションでは、XAML の型システムと C++ のコード ビハインド モデルをサポートするコードが生成されます。
+**注:** C++ のイベント ハンドラーは、部分クラスで定義するのではなく、private のクラス メンバーとしてヘッダーで宣言します。 C++ プロジェクトのビルド アクションでは、XAML の型システムと C++ のコード ビハインド モデルをサポートするコードが生成されます。
 
 ### *sender* パラメーターとイベント データ
 
@@ -80,7 +82,7 @@ void MyNamespace::BlankPage::showUpdatesButton_Click(Platform::Object^ sender, W
 
 ### **async** パターンを使うイベント ハンドラー
 
-ときには、イベント ハンドラー内で **async** パターンを使う API を使う必要が生じることもあります。 たとえば、ファイル ピッカーを表示して操作するには、[**AppBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) で [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) を使います。 ただし、ファイル ピッカー API の多くは非同期です。 それらの API は **async**/awaitable スコープ内で呼び出す必要があります。これはコンパイラの要件になります。 そのため、**async** キーワードをイベント ハンドラーに追加して、そのハンドラーを **async** **void** にする必要があります。 これで、イベント ハンドラーは **async**/awaitable での呼び出しが可能になります。
+ときには、イベント ハンドラー内で **async** パターンを使う API を使う必要が生じることもあります。 たとえば、ファイル ピッカーを表示して操作するには、[**AppBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) で [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) を使います。 ただし、ファイル ピッカー API の多くは非同期です。 それらの API は **async**/awaitable スコープ内で呼び出す必要があります。これはコンパイラの要件になります。 そのため、**async** キーワードをイベント ハンドラーに追加して、そのハンドラーを **async****void** にする必要があります。 これで、イベント ハンドラーは **async**/awaitable での呼び出しが可能になります。
 
 **async** パターンを使ったユーザー操作イベントの処理の例については、「[ファイル アクセスとファイル ピッカー](https://msdn.microsoft.com/library/windows/apps/jj655411)」(「[C# または Visual Basic を使った初めての Windows ランタイム アプリの作成](https://msdn.microsoft.com/library/windows/apps/hh974581)」シリーズの一部) をご覧ください。 「C での非同期 API の呼び出し」もご覧ください。
 
@@ -92,7 +94,7 @@ C# の構文では、`+=` 演算子を使用します。 演算子の右側で�
 
 ランタイム UI に表示されるオブジェクトにイベント ハンドラーをコードで追加する場合、[**Loaded**](https://msdn.microsoft.com/library/windows/apps/br208723) や [**OnApplyTemplate**](https://msdn.microsoft.com/library/windows/apps/br208737) など、オブジェクトの有効期間イベントまたはコールバックに応じてハンドラーを追加するのが一般的です。これにより、該当するオブジェクトのイベント ハンドラーは、実行時にユーザーが発生させるイベントに対応できるようになります。 次の例は、ページ構造の XAML の概略と、イベント ハンドラーをオブジェクトに追加するための C# 言語の構文を示しています。
 
-```xaml
+```xml
 <Grid x:Name="LayoutRoot" Loaded="LayoutRoot_Loaded">
   <StackPanel>
     <TextBlock Name="textBlock1">Put the pointer over this text</TextBlock>
@@ -109,7 +111,7 @@ void LayoutRoot_Loaded(object sender, RoutedEventArgs e)
 }
 ```
 
-**注**  これには、より冗長な形式の構文もあります。 2005 年に、コンパイラで新しいデリゲート インスタンスを推論できるようにするデリゲートの推論という機能が C# に追加されて、上のより単純な形式の構文を使えるようになりました。 冗長な構文は、機能的には上の例と同じですが、新しいデリゲート インスタンスを登録する前に明示的に作成します。したがって、デリゲートの推論は使用されません。 この明示的な構文は、あまり一般的ではありませんが、コード例で使わることがあります。
+**注:** これには、より冗長な形式の構文もあります。 2005 年に、コンパイラで新しいデリゲート インスタンスを推論できるようにするデリゲートの推論という機能が C# に追加されて、上のより単純な形式の構文を使えるようになりました。 冗長な構文は、機能的には上の例と同じですが、新しいデリゲート インスタンスを登録する前に明示的に作成します。したがって、デリゲートの推論は使用されません。 この明示的な構文は、あまり一般的ではありませんが、コード例で使わることがあります。
 
 ```csharp
 void LayoutRoot_Loaded(object sender, RoutedEventArgs e)
@@ -121,7 +123,7 @@ void LayoutRoot_Loaded(object sender, RoutedEventArgs e)
 
 Visual Basic 構文の場合は 2 とおりの方法があります。 1 つは、C# 構文と同じように記述し、ハンドラーを直接インスタンスにアタッチする方法です。 この場合は、**AddHandler** キーワードに加え、ハンドラー メソッド名を逆参照する **AddressOf** 演算子が必要です。
 
-もう 1 つは、イベント ハンドラーに **Handles** キーワードを指定するという方法です。 この方法は、読み込みの時点からオブジェクトの有効期間を通じてオブジェクト上にハンドラーが存在している必要がある場合に適しています。 XAML に定義されたオブジェクトで **Handles** を使用するには、**Name**/**x:Name** を指定する必要があります。 この名前は、**Handles** 構文の *Instance.Event* 部分に必要なインスタンス修飾子となります。 この場合は、他のイベント ハンドラーのアタッチを開始する、オブジェクトの有効期間に基づくイベント ハンドラーは不要です。**Handles** の関連付けは、XAML ページのコンパイル時に作成されます。
+もう 1 つは、イベント ハンドラーに **Handles** キーワードを指定するという方法です。 この方法は、読み込みの時点からオブジェクトの有効期間を通じてオブジェクト上にハンドラーが存在している必要がある場合に適しています。 XAML に定義されたオブジェクトで **Handles** を使うには、**Name** / **x:Name** を指定する必要があります。 この名前は、**Handles** 構文の *Instance.Event* 部分に必要なインスタンス修飾子となります。 この場合は、他のイベント ハンドラーのアタッチを開始する、オブジェクトの有効期間に基づくイベント ハンドラーは不要です。**Handles** の関連付けは、XAML ページのコンパイル時に作成されます。
 
 ```vb
 Private Sub textBlock1_PointerEntered(ByVal sender As Object, ByVal e As PointerRoutedEventArgs) Handles textBlock1.PointerEntered
@@ -129,9 +131,9 @@ Private Sub textBlock1_PointerEntered(ByVal sender As Object, ByVal e As Pointer
 End Sub
 ```
 
-**注**  Visual Studio とその XAML デザイン サーフェイスでは、一般に、**Handles** キーワードの代わりにインスタンス処理の手法が推奨されます。 その理由は、XAML でのイベント ハンドラーの関連付けがデザイナーと開発者が対処する一般的なワークフローに含まれるだけでなく、**Handles** キーワードを使用する手法に XAML でのイベント ハンドラーの関連付けとの互換性がないためです。
+**注:** Visual Studio とその XAML デザイン サーフェイスでは、一般に、**Handles** キーワードの代わりにインスタンス処理の手法が推奨されます。 その理由は、XAML でのイベント ハンドラーの関連付けがデザイナーと開発者が対処する一般的なワークフローに含まれるだけでなく、**Handles** キーワードを使う手法に XAML でのイベント ハンドラーの関連付けとの互換性がないためです。
 
-C++ でも **+=** 構文が使用されますが、C# の基本的な形式とは次のような違いがあります。
+C++ でも **+=** 構文が使われますが、C# の基本的な形式とは次のような違いがあります。
 
 -   デリゲートの推論は行われないため、**ref new** でデリゲート インスタンスを作成する必要があります。
 -   デリゲート コンストラクターにパラメーターが 2 つあり、最初のパラメーターでターゲット オブジェクトを指定する必要があります。 通常は **this** を指定します。
@@ -139,7 +141,7 @@ C++ でも **+=** 構文が使用されますが、C# の基本的な形式と�
 
 ```cpp
 textBlock1->PointerEntered += 
-ref new PointerEventHandler(this,&amp;BlankPage::textBlock1_PointerExited);
+ref new PointerEventHandler(this,&BlankPage::textBlock1_PointerExited);
 ```
 
 ### コードでのイベント ハンドラーの削除
@@ -154,8 +156,10 @@ ref new PointerEventHandler(this,&amp;BlankPage::textBlock1_PointerExited);
 -   カスタム静的イベント。
 -   ページ ナビゲーションのハンドラー。
 
-他のイベントのハンドラーを削除するために使用できるよう、状態管理とオブジェクトの有効期間の適切な位置に配置できるイベント トリガーは、
-						[**FrameworkElement.Unloaded**](https://msdn.microsoft.com/library/windows/apps/br208748) と [**Page.NavigatedFrom**](https://msdn.microsoft.com/library/windows/apps/br227507) are possible event triggers that have appropriate positions in のいずれかです。
+他のイベントのハンドラーを削除するために使うことができるように、状態管理とオブジェクトの有効期間の適切な位置に配置できるイベント トリガーは、
+            [
+              **FrameworkElement.Unloaded**
+            ](https://msdn.microsoft.com/library/windows/apps/br208748) または [**Page.NavigatedFrom**](https://msdn.microsoft.com/library/windows/apps/br227507) のいずれかです。
 
 たとえば、このコードを使うと、ターゲット オブジェクト **textBlock1** から **textBlock1\_PointerEntered** という名前のイベント ハンドラーを削除できます。
 
@@ -243,15 +247,20 @@ Windows ランタイムと C#、Microsoft Visual Basic、または C++/CX では
 ある要素が、UI でマウス入力、タッチ入力、スタイラス入力の対象として表示されるかどうかと場所を確認することを、*ヒット テスト*と呼びます。 タッチ操作や、タッチ操作の結果に発生する対話/操作イベントについては、ヒット テストで要素が表示されない場合、イベント ソースとして使用したり、操作に関連付けられたイベントを起動することはできません。 それ以外の場合、操作はその要素を通過し、その入力を操作する基になる要素またはビジュアル ツリー内の親要素へと渡されます。 ヒット テストに影響を与える要因はいくつかありますが、指定された要素の [**IsHitTestVisible**](https://msdn.microsoft.com/library/windows/apps/br208933) プロパティを確認すると、その要素が入力イベントを発生できるかどうかを判別できます。 このプロパティは、要素が次の条件を満たす場合にのみ、**true** を返します。
 
 -   要素の [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) プロパティの値が [**Visible**](https://msdn.microsoft.com/library/windows/apps/br209006) である。
--   要素の **Background** または **Fill** プロパティの値が **null** ではない。 **null** [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) 値は、要素は透明で、ヒット テストで不可視になります (要素を透明にしつつ、ヒット テストも可能にするには、**null** ではなく [**Transparent**](https://msdn.microsoft.com/library/windows/apps/hh748061) を使います)。
+-   要素の **Background** または **Fill** プロパティの値が **null** ではない。 **null**[**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) 値は、要素は透明で、ヒット テストで不可視になります (要素を透明にしつつ、ヒット テストも可能にするには、**null** ではなく [**Transparent**](https://msdn.microsoft.com/library/windows/apps/hh748061) を使います)。
 
-**注**  **Background** と **Fill** は [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) では定義されません。[**Control**](https://msdn.microsoft.com/library/windows/apps/br209390) や [**Shape**](https://msdn.microsoft.com/library/windows/apps/br243377) などの別の派生クラスによって定義されます。 ただし、フォアグラウンドやバックグラウンド プロパティに使用するブラシの影響は、それらのプロパティをどのサブクラスが実装するかに関係なく、ヒット テストや入力イベントに対して同様です。
+**注**
+            **Background** と **Fill** は [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) では定義されません。[**Control**](https://msdn.microsoft.com/library/windows/apps/br209390) や [**Shape**](https://msdn.microsoft.com/library/windows/apps/br243377) などの別の派生クラスによって定義されます。 ただし、フォアグラウンドやバックグラウンド プロパティに使用するブラシの影響は、それらのプロパティをどのサブクラスが実装するかに関係なく、ヒット テストや入力イベントに対して同様です。
 
 -   要素がコントロールの場合、[**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/br209419) プロパティの値は **true** である必要がある。
 -   要素はレイアウトで実際のサイズを持ったものである必要がある。 [
             **ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) と [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) のいずれかが 0 である要素は、入力イベントを発生させません。
 
-一部のコントロールでは、ヒット テストに特別な規則があります。 たとえば、[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) には **Background** プロパティがありませんが、そのサイズの領域全体の中ではヒット テストできます。 [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752) コントロールと [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) コントロールは、透明なコンテンツ (表示されているメディア ソース ファイル内のアルファ チャネルなど) の存在に関係なく、定義された四角形の上でヒット テストできます。 [**WebView**](https://msdn.microsoft.com/library/windows/apps/br227702) コントロールには特別なヒット テストの動作があります。ホストされる HTML で入力が処理されて、スクリプト イベントが発生する場合があるためです。
+一部のコントロールでは、ヒット テストに特別な規則があります。 たとえば、[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) には **Background** プロパティがありませんが、そのサイズの領域全体の中ではヒット テストできます。 [
+              **Image**
+            ](https://msdn.microsoft.com/library/windows/apps/br242752) コントロールと [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) コントロールは、透明なコンテンツ (表示されているメディア ソース ファイル内のアルファ チャネルなど) の存在に関係なく、定義された四角形の上でヒット テストできます。 [
+              **WebView**
+            ](https://msdn.microsoft.com/library/windows/apps/br227702) コントロールには特別なヒット テストの動作があります。ホストされる HTML で入力が処理されて、スクリプト イベントが発生する場合があるためです。
 
 ほとんどの [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) クラスと [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) は、自身のバックグラウンド内ではヒット テストできませんが、含んでいる要素からルーティングされたユーザー入力イベントを処理することはできます。
 
@@ -265,7 +274,7 @@ Windows ランタイムと C#、Microsoft Visual Basic、または C++/CX では
 
 カスタム イベントを定義するにあたっては、使われるプログラミング言語に応じて、イベントの追加方法や、それがクラスの設計でどのような意味を帯びるのかが大きく異なります。
 
--   C# と Visual Basic では、CLR のイベントを定義します。 カスタム アクセサー (**add**/**remove**) を使っていない限り、標準の .NET イベントのパターンを使用できます。 次の点にも注意してください。
+-   C# と Visual Basic では、CLR のイベントを定義します。 カスタム アクセサー (**add**/**remove**) を使っていない限り、標準の .NET イベントのパターンを使うことができます。 次の点にも注意してください。
     -   イベント ハンドラーには、Windows ランタイムの汎用イベント デリゲート [**EventHandler<T>**](https://msdn.microsoft.com/library/windows/apps/br206577) への組み込みの変換がある [**System.EventHandler<TEventArgs>**](https://msdn.microsoft.com/library/windows/apps/xaml/db0etb8x.aspx) を使うことをお勧めします。
     -   Windows ランタイムに変換されないため、イベント データ クラスが [**System.EventArgs**](https://msdn.microsoft.com/library/windows/apps/xaml/system.eventargs.aspx) に基づくことのないようにしてください。 既にあるイベント データ クラスを使うか、基底クラスをまったく使わないかのいずれかにします。
     -   カスタム アクセサーを使う場合は、「[Windows ランタイム コンポーネントのカスタム イベントとイベント アクセサー](https://msdn.microsoft.com/library/windows/apps/xaml/hh972883.aspx)」をご覧ください。
@@ -289,6 +298,6 @@ Windows ランタイムでカスタム ルーティング イベントは宣言�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

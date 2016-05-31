@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 Description: DatePicker は、ユーザーがタッチ、マウス、またはキーボード入力を使ってローカライズされた日付値を選択できる標準化された方法です。 
 title: 日付の選択コントロール
 ms.assetid: d4a01425-4dee-4de3-9a05-3e85c3fc03cb
@@ -44,7 +45,8 @@ birthDatePicker.Header = "Date of birth";
 
 ![日付の選択コントロールの例](images/date-picker-closed.png)
 
-> **注:**&nbsp;日付値の重要な情報については、「日付と時刻コントロール」の「[DateTime と Calendar の値](date-and-time.md#datetime-and-calendar-values)」をご覧ください。
+> **注:**
+            &nbsp;&nbsp;日付値の重要な情報については、「日付と時刻コントロール」の「[DateTime と Calendar の値](date-and-time.md#datetime-and-calendar-values)」をご覧ください。
 
 
 
@@ -56,6 +58,6 @@ birthDatePicker.Header = "Date of birth";
 - [時刻の選択コントロール](time-picker.md)
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

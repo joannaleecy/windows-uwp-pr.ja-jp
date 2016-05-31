@@ -1,4 +1,5 @@
 ---
+author: martinekuan
 title: Windows ランタイム コンポーネントのカスタム イベントおよびイベント アクセサー
 description: .NET Framework が Windows ランタイム コンポーネントをサポートすることにより、ユニバーサル Windows プラットフォーム (UWP) のイベント パターンと .NET Framework のイベント パターンの違いを意識することなく、イベント コンポーネントを簡単に宣言することができます。
 ms.assetid: 6A66D80A-5481-47F8-9499-42AC8FDA0EB4
@@ -7,7 +8,7 @@ ms.assetid: 6A66D80A-5481-47F8-9499-42AC8FDA0EB4
 # Windows ランタイム コンポーネントのカスタム イベントおよびイベント アクセサー
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
 \[一部の情報はリリース前の製品に関することであり、正式版がリリースされるまでに大幅に変更される可能性があります。 ここに記載された情報について、マイクロソフトは明示または黙示を問わずいかなる保証をするものでもありません。\]
@@ -26,7 +27,7 @@ Visual Basic と C# コンパイラはこのプロセスを簡略化します。
 
 NumberChanged イベントの次のコードは、UWP イベントの基本パターンを示しています。 この例では、イベント引数オブジェクトのコンストラクターである NumberChangedEventArgs は、変更された数値を表す単一の整数パラメーターを受け取ります。
 
-> **注**  これは、Windows ランタイム コンポーネントで宣言する通常のイベントでコンパイラが使うものと同じパターンです。
+> **注:** これは、Windows ランタイム コンポーネントで宣言する通常のイベントでコンパイラが使うものと同じパターンです。
 
  
 > [!div class="tabbedCodeSnippets"]
@@ -94,7 +95,7 @@ NumberChanged イベントの次のコードは、UWP イベントの基本パ�
 
 static (Visual Basic では Shared) GetOrCreateEventRegistrationTokenTable メソッドは、イベントの EventRegistrationTokenTable&lt;T&gt; オブジェクトのインスタンスを限定的に作成します。 トークン テーブルのインスタンスを保持するクラス レベルのフィールドを、このメソッドに渡します。 フィールドが空の場合、メソッドはテーブルを作成し、テーブルへの参照をフィールドに格納し、テーブルへの参照を返します。 フィールドにトークン テーブルへの参照が既に含まれている場合、このメソッドはその参照を返します。
 
-> **重要**  スレッド セーフを確保するには、イベントの EventRegistrationTokenTable&lt;T&gt; のインスタンスを保持するフィールドは、クラス レベルのフィールドである必要があります。 クラス レベルのフィールドである場合、GetOrCreateEventRegistrationTokenTable メソッドでは、複数のスレッドがトークン テーブルの作成を試みるときに、すべてのスレッドでテーブルの同じインスタンスが取得されます。 特定のイベントでは、GetOrCreateEventRegistrationTokenTable メソッドのすべての呼び出しは、同じクラス レベルのフィールドを使う必要があります。
+> **重要:** スレッド セーフを確保するには、イベントの EventRegistrationTokenTable&lt;T&gt; のインスタンスを保持するフィールドは、クラス レベルのフィールドである必要があります。 クラス レベルのフィールドである場合、GetOrCreateEventRegistrationTokenTable メソッドでは、複数のスレッドがトークン テーブルの作成を試みるときに、すべてのスレッドでテーブルの同じインスタンスが取得されます。 特定のイベントでは、GetOrCreateEventRegistrationTokenTable メソッドのすべての呼び出しは、同じクラス レベルのフィールドを使う必要があります。
 
 remove アクセサーや [RaiseEvent](https://msdn.microsoft.com/library/fwd3bwed.aspx) メソッド (C# では OnRaiseEvent メソッド) で GetOrCreateEventRegistrationTokenTable メソッドを呼び出すことによって、イベント ハンドラー デリゲートが追加される前にこれらのメソッドを呼び出した場合、例外は発生しません。
 
@@ -103,11 +104,11 @@ UWP イベント パターンで使われる EventRegistrationTokenTable&lt;T&gt
 -   [AddEventHandler](https://msdn.microsoft.com/library/hh138458.aspx) メソッドは、イベント ハンドラー デリゲートのトークンを生成し、デリゲートをテーブルに保存し、デリゲートを呼び出しリストに追加して、トークンを返します。
 -   [RemoveEventHandler(EventRegistrationToken)](https://msdn.microsoft.com/library/hh138425.aspx) メソッド オーバーロードは、テーブルと呼び出しリストからデリゲートを削除します。
 
-    >**注**  AddEventHandler と RemoveEventHandler(EventRegistrationToken) メソッドは、スレッド セーフを確保するためにテーブルをロックします。
+    >**注:** AddEventHandler と RemoveEventHandler(EventRegistrationToken) メソッドは、スレッド セーフを確保するためにテーブルをロックします。
 
 -   [InvocationList](https://msdn.microsoft.com/library/hh138465.aspx) プロパティは、イベントを処理するために現在登録されているすべてのイベント ハンドラーを含むデリゲートを返します。 このデリゲートを使ってイベントを発生させるか、Delegate クラスのメソッドを使ってハンドラーを個別に呼び出します。
 
-    >**注**  この記事の前半で説明した例のパターンに従い、デリゲートを呼び出す前に一時変数にコピーすることをお勧めします。 これにより、あるスレッドが最後のハンドラーを削除して、別のスレッドがデリゲートを呼び出す直前にデリゲートが null となる競合状態を回避できます。 デリゲートは変更できないため、コピーは引き続き有効です。
+    >**注:** この記事の前半で説明した例のパターンに従い、デリゲートを呼び出す前に一時変数にコピーすることをお勧めします。 これにより、あるスレッドが最後のハンドラーを削除して、別のスレッドがデリゲートを呼び出す直前にデリゲートが null となる競合状態を回避できます。 デリゲートは変更できないため、コピーは引き続き有効です。
 
 必要に応じて、独自のコードをアクセサーに配置します。 スレッド セーフが問題の場合、独自のロックをコードに提供する必要があります。
 
@@ -125,6 +126,6 @@ Visual Basic ユーザー: .NET Framework では、イベントは登録され�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

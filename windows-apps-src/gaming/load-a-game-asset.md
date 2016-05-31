@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: DirectX ゲームでのリソースの読み込み
 description: ほとんどのゲームは、ある時点で、ローカル ストレージまたは他のデータ ストリームからリソースとアセット (シェーダー、テクスチャ、定義済みメッシュ、その他のグラフィックス データなど) を読み込みます。
 ms.assetid: e45186fa-57a3-dc70-2b59-408bff0c0b41
@@ -47,16 +48,15 @@ ms.assetid: e45186fa-57a3-dc70-2b59-408bff0c0b41
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Complete code for BasicLoader](complete-code-for-basicloader.md)</p></td>
+<td align="left"><p>[BasicLoader のコード一式](complete-code-for-basicloader.md)</p></td>
 <td align="left"><p>グラフィックス メッシュ オブジェクトを変換してメモリに読み込むクラスとメソッドのコード一式です。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Complete code for BasicReaderWriter](complete-code-for-basicreaderwriter.md)</p></td>
-<td align="left"><p>バイナリ データ ファイル全般の読み書きを行うクラスとメソッドのコード一式です。 [
-            BasicLoader](complete-code-for-basicloader.md) クラスで使われます。</p></td>
+<td align="left"><p>[BasicReaderWriter のコード一式](complete-code-for-basicreaderwriter.md)</p></td>
+<td align="left"><p>バイナリ データ ファイル全般の読み書きを行うクラスとメソッドのコード一式です。 [BasicLoader](complete-code-for-basicloader.md) クラスで使われます。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Complete code for DDSTextureLoader](complete-code-for-ddstextureloader.md)</p></td>
+<td align="left"><p>[DDSTextureLoader のコード一式](complete-code-for-ddstextureloader.md)</p></td>
 <td align="left"><p>メモリから DDS テクスチャを読み込むクラスとメソッドのコード一式です。</p></td>
 </tr>
 </tbody>
@@ -68,9 +68,9 @@ ms.assetid: e45186fa-57a3-dc70-2b59-408bff0c0b41
 
 ### 非同期読み込み
 
-非同期読み込みは、並列パターン ライブラリ (PPL) の **task** テンプレートを使って処理します。 **task** にはメソッド呼び出しが含まれています。その後に、非同期呼び出しの完了後にその結果を処理するラムダが続きます。通常の形式は次のとおりです。
+非同期読み込みは、並列パターン ライブラリ (PPL) の **task** テンプレートを使って処理します。 **task** にはメソッド呼び出しが含まれています。その後に、非同期呼び出しの完了後にその結果を処理するラムダが続きます。通常の形式は次のとおりです:
 
-`task<generic return type>(async code to execute).then((parameters for lambda){ lambda code contents });`
+`task<generic return type>(async code to execute).then((parameters for lambda){ lambda code contents });`。
 
 タスクは、**.then()** 構文を使って連結できます。したがって、ある操作の完了後、その操作の結果に依存する別の非同期操作を実行できます。 このように、プレイヤーにはほぼ見えない方法で、個別のスレッドで複雑なアセットの読み込み、変換、管理を行うことができます。
 
@@ -706,6 +706,6 @@ task<void> BasicLoader::LoadShaderAsync(
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

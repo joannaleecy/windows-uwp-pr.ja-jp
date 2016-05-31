@@ -1,4 +1,5 @@
 ---
+author: Mtoepke
 title: Xbox One の UWP
 description: Xbox One でユニバーサル Windows プラットフォーム (UWP) アプリを構築する方法。
 area: Xbox
@@ -21,18 +22,19 @@ Xbox One でユニバーサル Windows プラットフォーム (UWP) 向けの�
 |[Xbox One 開発者モードのライセンス認証](devkit-activation.md)| Xbox One で開発者モードを有効にする方法について説明します。 |
 |[Xbox One ツールの概要](introduction-to-xbox-tools.md)| Xbox One 固有のツールである _Dev Home_ について、Windows Device Portal の使い方、開発用の Visual Studio の設定、最初の Xbox UWP アプリケーションによる新しい開発のガイドなどを説明します。 |
 |[Xbox の開発環境に UWP を設定する](development-environment-setup.md)| Xbox One の開発環境を設定してテストする手順について説明します。 |
-|[UWP アプリと Xbox One でゲームのシステム リソース](system-resource-allocation.md)| アプリケーションが Xbox One で実行されている場合に利用できるリソースについて説明します。 | 
-|[10 フィートの設計に関するガイドライン](..\input-and-devices\designing-for-tv.md)| テレビに表示して、コントローラーを使って入力するアプリを設計するための、ベスト プラクティスについて説明します。 |  
+|[Xbox One 上の UWP アプリとゲームのシステム リソース](system-resource-allocation.md)| アプリケーションが Xbox One で実行されている場合に利用できるリソースについて説明します。 | 
+|[Xbox およびテレビ向け設計](http://go.microsoft.com/fwlink/?LinkID=760736)| テレビに表示して、コントローラーを使って入力するアプリを設計するための、ベスト プラクティスについて説明します。 |  
 |[複数ユーザーのアプリケーションの概要](multi-user-applications.md)| Xbox One での複数ユーザーのアプリケーション (MUA) について説明します。 |
 |[サンプル](samples.md)| GitHub の場所 (TVHelpers) へのポインターです。TVHelpers には Xbox の開発を始めるのに役立つ、XAML と JavaScript のサンプルが掲載されています。 サンプルには、完全なメディア アプリの XAML テンプレート、コントローラーの自動ナビゲーション、リッチ メディアの再生、Web ベース テクノロジの検索などが含まれています。 |
 |[Xbox One で開発者モードを無効にする](devkit-deactivation.md)| Xbox One で開発者モードを無効にする方法について説明します。 |
 |[Xbox One でまだサポートされていない UWP 機能](http://go.microsoft.com/fwlink/?LinkId=760755)|  Xbox One でまだ完全に機能していない UWP 機能について説明します。|  
 
 ## 参照
-- [Xbox One の UWP アプリの概要](http://go.microsoft.com/fwlink/?LinkId=780786)  
+- [Xbox One の UWP アプリの概要](http://go.microsoft.com/fwlink/?LinkId=780786) 
+- [Automate launching Windows 10 UWP apps (Windows 10 UWP アプリの自動起動)](automate-launching-uwp-apps.md)
   
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

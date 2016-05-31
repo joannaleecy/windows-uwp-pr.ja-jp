@@ -1,12 +1,13 @@
 ---
-description: アプリの申請プロセスの [年齢区分] ページでは、アプリに関する情報を提供して、International Age Ratings Coalition (IARC) から適切な年齢区分を受け取ることができるようにすることができます。
+author: jnHs
+Description: アプリの申請プロセスの [年齢区分] ページでは、アプリに関する情報を提供して、International Age Ratings Coalition (IARC) から適切な年齢区分を受け取ることができるようにすることができます。
 title: 年齢区分
 ms.assetid: B501A773-517B-4158-8364-C1BE630DC512
 ---
 
 # 年齢区分
 
-[アプリの申請プロセス](app-submissions.md) の **[年齢区分]** ページでは、アプリに関する情報を提供して、[International Age Ratings Coalition (IARC)](http://go.microsoft.com/fwlink/p/?LinkId=716854) から適切な年齢区分を受け取ることができるようにすることができます。 これらの区分は、アプリの対象ユーザーの年齢ではなく、アプリのコンテンツとメタデータの適合性に関連します。
+[アプリの申請プロセス](app-submissions.md)の **[年齢区分]** ページでは、アプリに関する情報を提供して、[International Age Ratings Coalition (IARC)](http://go.microsoft.com/fwlink/p/?LinkId=716854) から適切な年齢区分を受け取ることができるようにすることができます。 これらの区分は、アプリの対象ユーザーの年齢ではなく、アプリのコンテンツとメタデータの適合性に関連します。
 
 ## 年齢区分についての質問表への回答
 
@@ -44,6 +45,6 @@ ms.assetid: B501A773-517B-4158-8364-C1BE630DC512
 | 18+ (成人対象)            | この年齢区分のゲームには、成人利用者のみを対象にした、激しい、不快な、または具体的な暴力表現、血液や流血の表現を含めることができます。 すべてのコンテンツは、[コンテンツ ポリシー](https://msdn.microsoft.com/library/windows/apps/dn764944) の基準を満たしている必要があります。                                                                                                                                                            |
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

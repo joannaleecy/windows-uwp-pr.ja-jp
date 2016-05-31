@@ -1,15 +1,13 @@
 ---
+author: Jwmsft
 Description: 基本的な 2 ページのピア ツー ピア ユニバーサル Windows プラットフォーム (UWP) アプリでのナビゲーションの方法について説明します。
 title: 2 ページ間でのピア ツー ピアのナビゲーション
 ms.assetid: 0A364C8B-715F-4407-9426-92267E8FB525
-label: 2 ページ間でのピア ツー ピアのナビゲーション
+label: Peer-to-peer navigation between two pages
 template: detail.hbs
 ---
 
 # <span id="dev_navigation.peer-to-peer_navigation_between_two_pages"></span>2 ページ間でのピア ツー ピアのナビゲーション
-
-
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 基本的な 2 ページのピア ツー ピア ユニバーサル Windows プラットフォーム (UWP) アプリでのナビゲーションの方法について説明します。
 
@@ -26,7 +24,7 @@ template: detail.hbs
 ## <span id="Create_the_blank_app"></span><span id="create_the_blank_app"></span><span id="CREATE_THE_BLANK_APP"></span>空のアプリの作成
 
 
-1.  Microsoft Visual Studio の **[ファイル]** メニューで、[新しいプロジェクト] をクリックします。
+1.  Microsoft Visual Studio の **[ファイル] メニューで、[新しいプロジェクト]** をクリックします。
 2.  **[新しいプロジェクト]** ダイアログ ボックスの左側のウィンドウで、**[Visual C#]、[Windows]、[ユニバーサル]** ノードまたは **[Visual C++]、[Windows]、[ユニバーサル]** ノードの順にクリックします。
 3.  中央のウィンドウで、**[空のアプリケーション]** をクリックします。
 4.  **[名前]** ボックスに「**NavApp1**」と入力し、**[OK]** をクリックします。
@@ -84,8 +82,8 @@ NavApp1 プロジェクトの一部としてこれらのファイルが表示さ
 <li>Page2.xaml.cpp</li>
 <li>Page2.xaml.h
 <div class="alert">
-<strong>注</strong>
-          <p>関数はヘッダー (.h) ファイルで宣言し、分離コード ファイル (.cpp) で実装します。</p>
+<strong>注:</strong>  
+<p>関数はヘッダー (.h) ファイルで宣言し、分離コード ファイル (.cpp) で実装します。</p>
 </div>
 <div>
  
@@ -109,7 +107,7 @@ Page1.xaml の UI に次のコンテンツを追加します。
     </table>
 ```
 
--   次の [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) 要素を、ルートの [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) の子要素として、`pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 要素の後に追加します。
+-   次の [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) 要素を、ルートの [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) の子要素として、`pageTitle`[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 要素の後に追加します。
 
     <span codelanguage="XAML"></span>
 ```    XAML
@@ -168,7 +166,7 @@ Page2.xaml の UI を次のように変更します。
     </table>
 ```
 
--   次の [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) 要素を、ルートの [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) の子要素として、`pageTitle` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 要素の後に追加します。
+-   次の [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739) 要素を、ルートの [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) の子要素として、`pageTitle`[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 要素の後に追加します。
 
     <span codelanguage="XAML"></span>
 ```    XAML
@@ -358,7 +356,7 @@ Page1.xaml で、前に追加した [**HyperlinkButton**](https://msdn.microsoft
 </StackPanel>
 ```
 
-Page1.xaml 分離コード ファイルの `HyperlinkButton_Click` イベント ハンドラーで、`name` [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) の `Text` プロパティを参照するパラメーターを `Navigate` メソッドに追加します。
+Page1.xaml 分離コード ファイルの `HyperlinkButton_Click` イベント ハンドラーで、`name`[**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) の `Text` プロパティを参照するパラメーターを `Navigate` メソッドに追加します。
 
 ```ManagedCPlusPlus
 void Page1::HyperlinkButton_Click(Platform::Object^ sender, RoutedEventArgs^ e)
@@ -454,6 +452,6 @@ public Page1()
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

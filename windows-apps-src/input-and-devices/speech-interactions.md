@@ -1,13 +1,14 @@
 ---
-Description: Cortana の音声コマンド、音声認識、音声合成を使って、アプリに音声操作を組み込むことができます。
+author: Karl-Bridge-Microsoft
+description: Cortana の音声コマンド、音声認識、音声合成を使って、アプリに音声操作を組み込むことができます。
 title: 音声操作
 ms.assetid: 646DB3CE-FA81-4727-8C21-936C81079439
-label: 音声操作
+label: Speech interactions
 template: detail.hbs
 ---
 
 # 音声操作
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+
 
 音声認識や音声合成 (TTS: text-to-speech) をアプリのユーザー エクスペリエンスに直接統合します。
 
@@ -21,10 +22,9 @@ template: detail.hbs
 
 **TTS: **音声合成エンジン (声) を使って、テキスト文字列を音声に変換します。 入力文字列は、基本的でシンプルなテキスト、またはより複雑な Speech Synthesis Markup Language (SSML) のいずれかになります。 SSML は、発音、音量、ピッチ、速度、強調など、音声出力の特性を制御する標準的な方法です。
 
-**注**  **Cortana** とカスタマイズした音声コマンドを使うと、アプリをフォアグラウンドで起動したり ([スタート] メニューから起動した場合と同様にアプリがフォーカスを取得します)、バック グラウンド サービスとしてアクティブ化したりすることができます (**Cortana** がフォーカスを維持しますが、アプリからの結果を表示します)。 追加のコンテキストやユーザー入力 (特定の連絡先へのメッセージの送信など) が必要なコマンドはフォアグラウンド アプリで処理するのが最適ですが、基本的なコマンドはバックグラウンド アプリを介して **Cortana** で処理できます。
-**Cortana** UI の音声コマンドを使って、機能をバック グラウンド サービスとして公開する場合は、「[Cortana の設計ガイドライン](cortana-design-guidelines.md)」をご覧ください。
-
- 
+> [!NOTE] **Cortana** とカスタマイズした音声コマンドを使うと、アプリをフォアグラウンドで起動したり ([スタート] メニューから起動した場合と同様にアプリがフォーカスを取得します)、バック グラウンド サービスとしてアクティブ化したりすることができます (**Cortana** がフォーカスを維持しますが、アプリからの結果を表示します)。 
+> 追加のコンテキストやユーザー入力 (特定の連絡先へのメッセージの送信など) が必要なコマンドはフォアグラウンド アプリで処理するのが最適ですが、基本的なコマンドはバックグラウンド アプリを介して **Cortana** で処理できます。
+> **Cortana** UI の音声コマンドを使って、機能をバック グラウンド サービスとして公開する場合は、「[Cortana の設計ガイドライン](cortana-design-guidelines.md)」をご覧ください。
 
 音声機能が適切に設計され、実装されていると、ユーザーがアプリを楽しく確実に操作できる手段になります。音声機能によって、キーボード、マウス、タッチ、ジェスチャを補完することも、場合によってはこれらの代替として使うこともできます。
 
@@ -154,9 +154,7 @@ SRGS で定義された制約を使う音声認識エンジンにおける組み
 -   既定のフリーテキストのディクテーション文法では、ユーザーが特定の言語で話すほとんどの単語と語句を認識できます。これは短い語句の認識に最適化されています。 フリーテキストのディクテーションは、ユーザーが話す内容を限定しない場合に便利です。 一般的な用途としては、メモの作成やメッセージ内容の口述などがあります。
 -   Web 検索文法は、ユーザーが話す可能性のある多数の単語と語句を含んでいる点でディクテーション文法と似ています ただし、ユーザーが Web 検索で一般的に使う用語の認識に最適化されています。
 
-**注**  定義済みのディクテーション文法と Web 検索文法は容量が大きく、(デバイス上ではなく) オンライン上に存在するため、カスタム文法をデバイスにインストールした場合に比べるとパフォーマンスが劣る可能性があります。
-
- 
+> [!NOTE] 定義済みのディクテーション文法と Web 検索文法は容量が大きく、(デバイス上ではなく) オンライン上に存在するため、カスタム文法をデバイスにインストールした場合に比べるとパフォーマンスが劣る可能性があります。
 
 このような定義済みの文法は、10 秒までの長さの音声入力を認識でき、開発者による作成作業は必要ありません。 ただし、ネットワークへの接続が必要になります。
 
@@ -176,9 +174,8 @@ SRGS で定義された制約を使う音声認識エンジンにおける組み
     -   音節が 1 つしかない語句は、文法に定義しないようにしてください。 音節が 2 つ以上ある語句の方が、正確に認識されやすくなります。
     -   同じように聞こえる語句を使わないようにしてください。 たとえば、"hello"、"bellow"、"fellow" などの語句を使うと音声認識エンジンが混乱し、認識精度が低くなる可能性があります。
 
-**注**  どの種類の制約を使うかは、作成する認識エクスペリエンスの複雑さによって決まります。 どの種類の制約も特定の認識タスクに最適な選択肢となる可能性があり、アプリですべての種類の制約を使う場合もあります。
-
- 
+> [!NOTE]
+> どの種類の制約を使うかは、作成する認識エクスペリエンスの複雑さによって決まります。 どの種類の制約も特定の認識タスクに最適な選択肢となる可能性があり、アプリですべての種類の制約を使う場合もあります。
 
 ### <span id="Custom_pronunciations"></span><span id="custom_pronunciations"></span><span id="CUSTOM_PRONUNCIATIONS"></span>カスタムの発音
 
@@ -195,7 +192,7 @@ SRGS で定義された制約を使う音声認識エンジンにおける組み
 
 このような場合は、該当する語句をサポートするように文法を変更したり、サポートされている語句の一覧をユーザーに提供したりします。 サポートされている語句の一覧を既に提供している場合は、その一覧を簡単に見つけることができるかどうかを確認してください。
 
-## <span id="Text-to-speech__TTS_"></span><span id="text-to-speech__tts_"></span><span id="TEXT-TO-SPEECH__TTS_"></span>Text-to-speech (TTS)
+## <span id="Text-to-speech__TTS_"></span><span id="text-to-speech__tts_"></span><span id="TEXT-TO-SPEECH__TTS_"></span>音声合成 (TTS)
 
 
 TTS では、プレーンテキストまたは SSML から音声出力が生成されます。
@@ -213,55 +210,23 @@ TTS では、プレーンテキストまたは SSML から音声出力が生成�
 
 どちらの問題も、スピーチ シンセサイザーへの入力にプレーンテキストではなく SSML を使うことで対処できます。 SSML について詳しくは、「[SSML による合成音声の制御](http://msdn.microsoft.com/library/windowsphone/design/hh378454.aspx)」と「[Speech Synthesis Markup Language (SSML) のリファレンス](http://msdn.microsoft.com/library/windowsphone/design/hh378377.aspx)」をご覧ください。
 
-## このセクションの他の記事 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">トピック</th>
-<th align="left">説明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><p>[Speech recognition](speech-recognition.md)</p></td>
-<td align="left"><p>音声認識を使って、入力を行ったり、操作やコマンドを指定したり、タスクを実行したりできます。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>[Specify the speech recognizer language](specify-the-speech-recognizer-language.md)</p></td>
-<td align="left"><p>音声認識に使われるインストール済みの言語を選ぶ方法について説明します。</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>[Define custom recognition constraints](define-custom-recognition-constraints.md)</p></td>
-<td align="left"><p>音声認識のカスタム制約を定義して使う方法について説明します。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>[Enable continuous dictation](enable-continuous-dictation.md)</p></td>
-<td align="left"><p>長い形式の継続的なディクテーション音声入力をキャプチャし、認識する方法について説明します。</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>[Manage issues with audio input](manage-issues-with-audio-input.md)</p></td>
-<td align="left"><p>オーディオ入力の品質が原因で発生する音声認識の精度の問題を管理する方法について説明します。</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>[Set speech recognition timeouts](set-speech-recognition-timeouts.md)</p></td>
-<td align="left"><p>音声認識エンジンが無音または認識できないサウンド (雑音) を無視し、音声入力を待機する時間の長さを設定します。</p></td>
-</tr>
-</tbody>
-</table>
-
- 
-
+## <span id="Other_articles"></span><span id="other_articles"></span><span id="OTHER_ARTICLES"></span>このセクションの他の記事 
+| トピック | 説明 |
+| --- | --- |
+| [音声認識](speech-recognition.md) | 音声認識を使って、入力を行ったり、操作やコマンドを指定したり、タスクを実行したりできます。 |
+| [音声認識エンジンの言語の指定](specify-the-speech-recognizer-language.md) | 音声認識に使われるインストール済みの言語を選ぶ方法について説明します。 |
+| [カスタム認識の制約の定義](define-custom-recognition-constraints.md) | 音声認識のカスタム制約を定義して使う方法について説明します。 |
+| [継続的なディクテーションの有効化](enable-continuous-dictation.md) |長い形式の継続的なディクテーション音声入力をキャプチャし、認識する方法について説明します。 |
+| [音声入力の問題の管理](manage-issues-with-audio-input.md) | オーディオ入力の品質が原因で発生する音声認識の精度の問題を管理する方法について説明します。 |
+| [音声認識のタイムアウトの設定](set-speech-recognition-timeouts.md) | 音声認識エンジンが無音または認識できないサウンド (雑音) を無視し、音声入力を待機する時間の長さを設定します。 |
 
 ## <span id="related_topics"></span>関連記事
 
-
 * [音声操作](https://msdn.microsoft.com/library/windows/apps/mt185614)
-* [Cortana の操作 (HTML)](https://msdn.microsoft.com/library/windows/apps/mt185598)
- **サンプル**
+* [Cortana の操作](https://msdn.microsoft.com/library/windows/apps/mt185598)
+             
+          
+            **サンプル**
 * [音声認識と音声合成のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
@@ -271,6 +236,6 @@ TTS では、プレーンテキストまたは SSML から音声出力が生成�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

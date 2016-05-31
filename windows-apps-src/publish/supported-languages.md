@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: アプリは、100 以上の言語で Windows ストアに提出できます。
 title: サポートされている言語
 ms.assetid: FCA66311-4145-46AC-8B20-1E736F940976
@@ -133,6 +134,6 @@ Windows ストアでサポートされている言語を次に示します。 �
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

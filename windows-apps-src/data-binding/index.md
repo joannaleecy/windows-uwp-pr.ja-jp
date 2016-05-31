@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 ms.assetid: 83b4be37-6613-4d00-a48a-0451a24a30fb
 title: データ バインディング
 description: データ バインディングは、アプリの UI でデータを表示し、必要に応じてそのデータとの同期を保つ方法です。
@@ -19,6 +20,6 @@ description: データ バインディングは、アプリの UI でデータ�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

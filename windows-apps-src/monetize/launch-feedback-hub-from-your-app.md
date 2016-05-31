@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 Description: アプリからフィードバック Hub を起動してフィードバックを送信することをユーザーにお勧めできます。
 title: アプリからのフィードバック Hub の起動
 ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
@@ -6,11 +7,13 @@ ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
 
 # アプリからのフィードバック Hub の起動
 
-フィードバック Hub を起動するユニバーサル Windows プラットフォーム (UWP) アプリにコントロール (ボタンなど) を追加してフィードバックを送信することをユーザーにお勧めできます。 フィードバック Hub は、Windows およびインストール済みアプリでフィードバックを 1 か所で収集できるようにするプレインストール アプリです。 フィードバック Hub を介してアプリに送信されたすべてのユーザー フィードバックは、Windows デベロッパー センター ダッシュ ボードの[フィードバック レポート](../publish/feedback-report.md)で収集および表示されるため、ユーザーが送信した問題、提案、賛成票を 1 つのレポートで確認できます。
+フィードバック Hub を起動するユニバーサル Windows プラットフォーム (UWP) アプリにコントロール (ボタンなど) を追加してフィードバックを送信することをユーザーにお勧めできます。 フィードバック Hub は、Windows およびインストール済みアプリでフィードバックを 1 か所で収集できるようにするプレインストール アプリです。 フィードバック Hub を介してアプリに送信されたすべてのユーザー フィードバックは、Windows デベロッパー センター ダッシュボードの[フィードバック レポート](../publish/feedback-report.md)で収集および表示されるため、ユーザーが送信した問題、提案、賛成票を 1 つのレポートで確認できます。
+
+>**注**  **フィードバック** レポートは、現在、[デベロッパー センター Insider Program](../publish/dev-center-insider-program.md) に参加している開発者アカウントのみが利用できます。 
 
 アプリからフィードバック Hub を起動するには、[Microsoft Store Engagement and Monetization SDK](http://aka.ms/store-em-sdk) が提供する API を使用します。 この API を使用して、設計ガイドラインに準拠したアプリの UI 要素からフィードバック Hub を起動することをお勧めします。
 
->**注** フィードバック Hub は、Windows 10 バージョン 10.0.14271 以降を実行しているデバイスのみで利用できます。 フィードバック Hub がユーザーのデバイスで利用できる場合にのみ、アプリにフィードバック コントロールを表示することをお勧めします。 このトピックのコードは、これを実行する方法を示しています。
+>**注**  フィードバック Hub は、Windows 10 バージョン 10.0.14271 以降を実行しているデバイスのみで利用できます。 フィードバック Hub がユーザーのデバイスで利用できる場合にのみ、アプリにフィードバック コントロールを表示することをお勧めします。 このトピックのコードは、これを実行する方法を示しています。
 
 ## アプリからフィードバック Hub を起動する方法
 
@@ -29,18 +32,18 @@ ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
     > **注**  フィードバック Hub は、Windows 10 バージョン 10.0.14271 以降を実行しているデバイスのみで利用できます。 フィードバック Hub がユーザーのデバイスで利用できる場合、既定でフィードバック コントロールを非表示にし、初期化コードのみにフィードバック コントロールを表示することをお勧めします。 次の手順は、この処理を実行する方法を示しています。
 
   次のコードは、上記のように構成されている[ボタン](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)の XAML 定義を示しています。
-  ```
+  ```xml
   <Button x:Name="feedbackButton" FontFamily="Segoe MDL2 Assets" Content="&#xE939;" HorizontalAlignment="Left" Margin="138,352,0,0" VerticalAlignment="Top" Visibility="Collapsed"  Click="feedbackButton_Click"/>
   ```
 7. フィードバック コントロールをホストするアプリのページの初期化コードで、[Feedback](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.feedback.aspx) クラスの [IsSupported](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.feedback.issupported.aspx) プロパティを使用して、フィードバック Hub がユーザーのデバイスで利用できるかどうかを指定します。 このプロパティが **true** を返す場合、コントロールを表示にします。 次のコードは、[ボタン](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)に対してこの処理を実行する方法を示しています。
-```
+```CSharp
 if (Microsoft.Services.Store.Engagement.Feedback.IsSupported)
 {
         this.feedbackButton.Visibility = Visibility.Visible;
 }
 ```
-8. ユーザーがコントロールをクリックすると実行されるイベント ハンドラーで、[Feedback](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.feedback.aspx) クラスの静的な [LaunchFeedbackAsync](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.feedback.launchfeedbackasync.aspx) メソッドを呼び出し、フィードバック Hub アプリを起動します。 このメソッドには 2 つのオーバーロードがあります。1 つは、パラメーターのないオーバーロードで、もう 1 つは、フィードバックを関連付けるメタデータが含まれる、キーと値のペアのディクショナリを受け取るオーバーロードです。 次の例は、[ボタン](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)の [Click](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) イベント ハンドラーでフィードバック Hub を起動する方法を示しています。
-```
+8. ユーザーがコントロールをクリックすると実行されるイベント ハンドラーで、[Feedback](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.feedback.aspx) クラスの静的な [LaunchFeedbackAsync](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.feedback.launchfeedbackasync.aspx) メソッドを呼び出し、フィードバック Hub アプリを起動します。 このメソッドには 2 つのオーバーロードがあります。1 つは、パラメーターのないオーバーロードで、もう 1 つは、フィードバックを関連付けるメタデータが含まれる、キーと値のペアのディクショナリを受け取るオーバーロードです。 次の例は、[ボタン](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)の [Click](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) イベント ハンドラーでフィードバック Hub を起動する方法を示しています。
+```CSharp
 private async void feedbackButton_Click(object sender, RoutedEventArgs e)
 {
         await Microsoft.Services.Store.Engagement.Feedback.LaunchFeedbackAsync();
@@ -51,7 +54,7 @@ private async void feedbackButton_Click(object sender, RoutedEventArgs e)
 
 フィードバック Hub を起動するために、Segoe MDL2 Assets フォントと文字コード E939 から次の標準のフィードバック アイコンを表示する UI 要素 (ボタンなど) をアプリに追加することをお勧めします。
 
-![]Feedback icon](images/feedback_icon.png)
+![]Feedback icon](images/feedback_icon.PNG)
 
 また、アプリでフィードバック Hub にリンクするための次の配置オプションを 1 つ以上使用することをお勧めします。
 * **アプリ バー内で直接**。 実装に応じて、アイコンのみを使用するか、テキストを追加できます (以下に示すように)。
@@ -70,6 +73,6 @@ private async void feedbackButton_Click(object sender, RoutedEventArgs e)
 * [フィードバック レポート](../publish/feedback-report.md)
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

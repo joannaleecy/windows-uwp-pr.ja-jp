@@ -1,16 +1,15 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: オーディオ入力の品質が原因で発生する音声認識の精度の問題を管理する方法について説明します。
 title: 音声入力の問題の管理
 ms.assetid: 3E36C683-C96A-4FEE-AD52-FDB87E0CC299
-label: 音声入力の問題の管理
+label: Manage audio input issues
 template: detail.hbs
 ---
 
 # 音声入力の問題の管理
 
-
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
-
+オーディオ入力の品質が原因で発生する音声認識の精度の問題を管理する方法について説明します。
 
 **重要な API**
 
@@ -18,7 +17,7 @@ template: detail.hbs
 -   [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243)
 -   [**SpeechRecognitionAudioProblem**](https://msdn.microsoft.com/library/windows/apps/dn631406)
 
-オーディオ入力の品質が原因で発生する音声認識の精度の問題を管理する方法について説明します。
+
 
 
 ## <span id="Assess_audio-input_quality"></span><span id="assess_audio-input_quality"></span><span id="ASSESS_AUDIO-INPUT_QUALITY"></span>オーディオ入力の品質を評価する
@@ -117,6 +116,6 @@ private async void speechRecognizer_RecognitionQualityDegrading(
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

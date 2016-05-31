@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: 名前付きオブジェクトの参照のフィールドがプライベートの既定の動作ではなくパブリックのアクセスで定義されるように、XAML コンパイルの動作を変更します。
 title: xFieldModifier 属性
 ms.assetid: 6FBCC00B-848D-4454-8B1F-287CA8406DDF
@@ -28,10 +29,10 @@ ms.assetid: 6FBCC00B-848D-4454-8B1F-287CA8406DDF
 
 **x:FieldModifier** は、[x:Name 属性](x-name-attribute.md)を含む要素にのみ関係します。なぜなら、この名前はパブリックであるときにのみフィールドを参照するために使われるためです。
 
-**注**  Windows ランタイム XAML では、**x:ClassModifier** または **x:Subclass** はサポートされていません。
+**注:** Windows ランタイム XAML では、**x:ClassModifier** または **x:Subclass** はサポートされていません。
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

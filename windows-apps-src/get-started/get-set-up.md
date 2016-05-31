@@ -1,4 +1,5 @@
 ---
+author: martinekuan
 ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
 title: 準備
 description: 準備は、思っているよりも簡単です。 次の手順に従って、Windows 10 用のユニバーサル Windows プラットフォーム (UWP) アプリの作成を開始してください。
@@ -50,6 +51,6 @@ UWP アプリのテストは実際の PC と電話で行うことが重要です
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

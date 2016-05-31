@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 description: クロスプラットフォーム アプリを開発するときの選択肢
 title: iOS と UWP のアプリ開発方法の選択
 ms.assetid: 5CDAB313-07B7-4A32-A49B-026361DCC853
@@ -90,6 +91,6 @@ Windows と iOS はまったく違うものに見えるかもしれませんが�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

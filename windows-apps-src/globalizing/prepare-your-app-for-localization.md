@@ -1,4 +1,5 @@
 ---
+author: DelfCo
 Description: 他の市場、言語、または地域に向けたローカライズのためにアプリを準備します。
 title: ローカライズのためにアプリの準備をする
 ms.assetid: 06E1D4BB-59EA-4D71-99AC-7CB93D2A58A7
@@ -9,7 +10,7 @@ template: detail.hbs
 # ローカライズのためにアプリの準備をする
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+
 
 
 他の市場、言語、または地域に向けたローカライズのためにアプリを準備します。 作業を始める前に、[推奨事項と非推奨事項](guidelines-and-checklist-for-globalizing-your-app.md)に必ず目を通してください。
@@ -28,7 +29,7 @@ template: detail.hbs
 
 **XAML:** Resw ファイル (XAML を使ったアプリ用に Visual Studio で作成したリソース) にはコメント要素があります。 たとえば、次のようにします。
 
-```XAML
+```XML
 <data name="String1">
     <value>Hello World</value>
     <comment>A greeting (This is a comment to the localizer)</comment>
@@ -129,7 +130,7 @@ template: detail.hbs
 ## <span id="keep_access_keys_and_labels_consistent."></span><span id="KEEP_ACCESS_KEYS_AND_LABELS_CONSISTENT."></span>アクセス キーとラベルの一貫性を維持する
 
 
-アクセシビリティで使われるアクセス キーとローカライズされたアクセス キーは、2 つの個別のセクションに分類されます。このため、この 2 つの文字列リソースの表示の "同期" は難問です。 ラベル文字列に `Make sure that the emphasized shortcut key  is synchronized with the access key.` のようなコメントを必ず入れてください。
+アクセシビリティで使われるアクセス キーとローカライズされたアクセス キーは、2 つの個別のセクションに分類されます。このため、この 2 つの文字列リソースの表示の "同期" は難問です。 ラベル文字列に  のようなコメントを必ず入れてください。 `Make sure that the emphasized shortcut key  is synchronized with the access key.`
 
 **HTML:**
 
@@ -186,6 +187,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

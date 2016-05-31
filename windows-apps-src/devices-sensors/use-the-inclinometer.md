@@ -1,4 +1,5 @@
 ---
+author: DBirtolo
 ms.assetid: 16AD53CA-1252-456C-8567-2263D3EC95F3
 title: 傾斜計の使用
 description: 傾斜計を使ってピッチ、ロール、ヨーを検出する方法を説明します。
@@ -149,7 +150,7 @@ _inclinometer.ReportInterval = reportInterval;
 
 **ReadingChanged** メソッドで、新しい傾斜計のデータをキャプチャしています。 センサーのドライバーは、センサーから新しいデータを受け取るたびに、このイベント ハンドラーを使ってアプリに値を渡します。 このアプリの場合、このイベント ハンドラーが次の行で登録されています。
 
-```
+```csharp
 _inclinometer.ReadingChanged += new TypedEventHandler<Inclinometer, 
 InclinometerReadingChangedEventArgs>(ReadingChanged);
 ```
@@ -171,6 +172,6 @@ InclinometerReadingChangedEventArgs>(ReadingChanged);
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

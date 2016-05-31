@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 ms.assetid: 26DF15E8-2C05-4174-A714-7DF2E8273D32
 title: ListView と GridView の UI の最適化
 description: ListView と GridView のパフォーマンスと起動時間を、UI の仮想化や要素の削減、項目の段階的な更新を通して向上させます。
@@ -25,8 +26,8 @@ description: ListView と GridView のパフォーマンスと起動時間を、
 
 UI の仮想化は、実行できる最も重要な改善策です。 これは、項目を表す UI 要素がオンデマンドで作成されることを意味します。 1,000 項目のコレクションにバインドされている項目コントロールでは、すべての項目の UI を同時に作成しても、同時に全部を表示することはできないため、リソースを無駄に使うことになります。 UI の仮想化は、[**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) と [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) (およびその他の [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) から派生した標準コントロール) によって実行されます。 数ページ先にある項目がスクロールされて表示されそうになると、フレームワークがその項目用の UI を生成してキャッシュします。 項目がもう一度表示される可能性が低い場合、フレームワークはメモリを解放します。
 
-カスタム項目パネル テンプレート ([**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/BR242803-itemspanel) をご覧ください) を用意する場合は、[**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/Dn298849) や [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/Dn298795) などの仮想パネルを必ず使用してください。 [
-            **VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/BR227651)、[**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/BR227717)、または [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635) を使用した場合、仮想化は得られません。
+カスタム項目パネル テンプレート ([**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx) をご覧ください) を用意する場合は、[**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/Dn298849) や [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/Dn298795) などの仮想パネルを必ず使用してください。 [
+            **VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/BR227651)、[**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/BR227717)、または [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635) を使用した場合、仮想化は得られません。 また、[**ChoosingGroupHeaderContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosinggroupheadercontainer)、[**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosingitemcontainer)、[**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.containercontentchanging) の各 [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) イベントは、[**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/Dn298849) または [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/Dn298795) を使用したときにのみ発生します。
 
 表示される可能性のある要素の作成はフレームワークが行う必要があるため、ビューポートの概念は UI の仮想化にとって非常に重要です。 一般的に、[**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) のビューポートは論理コントロールの範囲を指します。 たとえば、[**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) のビューポートは **ListView** 要素の幅と高さです。 一部のパネルでは子要素に制限のない空間を与えることができます。たとえば [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/BR209527) や [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) では、行または列のサイズが自動的に調整されます。 このようなパネルに仮想化された **ItemsControl** を配置すると、すべての項目を表示できるスペースが用意され、仮想化の意味がなくなります。 仮想化を復元するには、**ItemsControl** に幅と高さを設定します。
 
@@ -34,12 +35,12 @@ UI の仮想化は、実行できる最も重要な改善策です。 これは�
 
 項目をレンダリングするために使う UI 要素の数を、妥当と思われる最小限の数に抑えます。
 
-項目コントロールが初めて表示されるとき、すべての項目を含むビューポートをレンダリングするために必要なすべての要素が作成されます。 さらに、項目がビューポートに近づくにつれて、キャッシュされている項目テンプレート内の UI 要素が、フレームワークによって、バインドされたデータ オブジェクトで更新されます。 テンプレート内のマークアップの複雑さを最小限に抑えると、メモリと UI スレッドで費やされる時間の減少という効果が生まれ、特にパン/スクロール中の応答性が向上します。 問題のテンプレートは、項目テンプレート ([**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242803-itemtemplate) をご覧ください) と、[**ListViewItem**](https://msdn.microsoft.com/library/windows/apps/BR242878item) または [**GridViewItem**](https://msdn.microsoft.com/library/windows/apps/BR242705item) のコントロール テンプレート (項目コントロール テンプレート、つまり [**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/BR242803-itemcontainerstyle)) です。 要素の数を少し減らすだけでも、その効果は、表示される項目の数と比例して大きくなります。
+項目コントロールが初めて表示されるとき、すべての項目を含むビューポートをレンダリングするために必要なすべての要素が作成されます。 さらに、項目がビューポートに近づくにつれて、キャッシュされている項目テンプレート内の UI 要素が、フレームワークによって、バインドされたデータ オブジェクトで更新されます。 テンプレート内のマークアップの複雑さを最小限に抑えると、メモリと UI スレッドで費やされる時間の減少という効果が生まれ、特にパン/スクロール中の応答性が向上します。 問題のテンプレートは、項目テンプレート ([**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) をご覧ください) と、[**ListViewItem**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewitem.aspx) または [**GridViewItem**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridviewitem.aspx) のコントロール テンプレート (項目コントロール テンプレート、つまり [**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle)) です。 要素の数を少し減らすだけでも、その効果は、表示される項目の数と比例して大きくなります。
 
 要素の削減の例については、「[XAML マークアップの最適化](optimize-xaml-loading.md)」をご覧ください。
 
 [
-            **ListViewItem**](https://msdn.microsoft.com/library/windows/apps/BR242878item) と [**GridViewItem**](https://msdn.microsoft.com/library/windows/apps/BR242705item) 用の既定のコントロール テンプレートには、それぞれ [**ListViewItemPresenter**](https://msdn.microsoft.com/library/windows/apps/Dn298500) 要素と [**GridViewItemPresenter**](https://msdn.microsoft.com/library/windows/apps/Dn279298) 要素が含まれています。 これらのプレゼンターは、フォーカス状態や選択状態などの複雑な視覚効果を表示する、1 つの最適化された要素です。 カスタム項目コントロール テンプレート ([**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/BR242803-itemcontainerstyle)) が既に存在する場合、または今後項目コントロール テンプレートのコピーを編集する場合は、**ListViewItemPresenter** または **GridViewItemPresenter** を使用することをお勧めします。これらの要素を使うと、ほとんどの場合、パフォーマンスとカスタム可能性の最適バランスを得ることができます。 これらのプレゼンターは、プロパティを設定することによってカスタマイズできます。 例として、項目が選ばれたときに既定で表示されるチェック マークを削除し、選ばれた項目の背景色をオレンジ色に変更するマークアップを次に示します。
+            **ListViewItem**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewitem.aspx) と [**GridViewItem**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridviewitem.aspx) 用の既定のコントロール テンプレートには、[**ListViewItemPresenter**](https://msdn.microsoft.com/library/windows/apps/Dn298500) 要素が含まれています。 このプレゼンターは、フォーカス状態や選択状態などの複雑な視覚効果を表示する、1 つの最適化された要素です。 カスタム項目コントロール テンプレート ([**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle)) が既に存在する場合、または今後項目コントロール テンプレートのコピーを編集する場合は、**ListViewItemPresenter** を使うことをお勧めします。この要素を使うと、ほとんどの場合、パフォーマンスとカスタム可能性の最適バランスを得ることができます。 このプレゼンターは、プロパティを設定することによってカスタマイズできます。 例として、項目が選ばれたときに既定で表示されるチェック マークを削除し、選ばれた項目の背景色をオレンジ色に変更するマークアップを次に示します。
 
 ```xml
 ...
@@ -61,7 +62,7 @@ UI の仮想化は、実行できる最も重要な改善策です。 これは�
 ```
 
 [
-            **SelectionCheckMarkVisualEnabled**](https://msdn.microsoft.com/library/windows/apps/Dn298500-selectioncheckmarkvisualenabled) と [**SelectedBackground**](https://msdn.microsoft.com/library/windows/apps/Dn298500-selectedbackground) に似た 25 個のわかりやすい名前のプロパティがあります。 これらのプレゼンターを使用目的に合うように十分にカスタマイズできないことがわかった場合は、`ListViewItemExpanded` または `GridViewItemExpanded` コントロール テンプレートのコピーを代わりに編集できます。 これらは、`\Program Files (x86)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\<version>\Generic\generic.xaml` の中にあります。 ただし、これらのテンプレートの使用は、パフォーマンスを多少低下させる代償としてカスタマイズの可能性を大きくする意味があることに注意してください。
+            **SelectionCheckMarkVisualEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.selectioncheckmarkvisualenabled.aspx) と [**SelectedBackground**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.selectedbackground.aspx) に似た 25 個のわかりやすい名前のプロパティがあります。 これらのプレゼンターを使用目的に合うように十分にカスタマイズできないことがわかった場合は、`ListViewItemExpanded` または `GridViewItemExpanded` コントロール テンプレートのコピーを代わりに編集できます。 これらは、`\Program Files (x86)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\<version>\Generic\generic.xaml` の中にあります。 ただし、これらのテンプレートの使用は、パフォーマンスを多少低下させる代償としてカスタマイズの可能性を大きくする意味があることに注意してください。
 
 ## GridView と ListView の項目を段階的に更新する
 
@@ -73,7 +74,7 @@ UI の仮想化は、実行できる最も重要な改善策です。 これは�
 
 ### プレースホルダー
 
-一時的なプレースホルダーの視覚効果機能は、既定でオンになっています。それは [**ShowsScrollingPlaceholders**](https://msdn.microsoft.com/library/windows/apps/BR242878base-showsscrollingplaceholders) プロパティによって制御されます。 高速なパン/スクロールが行われている間、この機能は、滑らかな動きを維持したまま、完全に表示されていない項目が存在することを示す視覚的なヒントをユーザーに与えます。 次のいずれかの手法を使う場合は、必要に応じて **ShowsScrollingPlaceholders** を false に設定して、プレースホルダーが表示されないようにすることができます。
+一時的なプレースホルダーの視覚効果機能は、既定でオンになっています。それは [**ShowsScrollingPlaceholders**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) プロパティによって制御されます。 高速なパン/スクロールが行われている間、この機能は、滑らかな動きを維持したまま、完全に表示されていない項目が存在することを示す視覚的なヒントをユーザーに与えます。 次のいずれかの手法を使う場合は、必要に応じて **ShowsScrollingPlaceholders** を false に設定して、プレースホルダーが表示されないようにすることができます。
 
 **x:Phase を使った段階的なデータ テンプレートの更新**
 
@@ -137,16 +138,16 @@ namespace LotsOfItems
     </Page>
     ```
 
-3.  今すぐアプリを実行し、グリッド ビューですばやくパン/スクロールすると、新しい項目が画面に表示されるとき、項目は最初は濃い灰色の四角形としてレンダリングされ ([**ShowsScrollingPlaceholders**](https://msdn.microsoft.com/library/windows/apps/BR242878base-showsscrollingplaceholders) プロパティが既定で **true** に設定されているためです)、次にタイトルが表示され、その後にサブタイトルと説明が表示されることがわかります。
+3.  今すぐアプリを実行し、グリッド ビューですばやくパン/スクロールすると、新しい項目が画面に表示されるとき、項目は最初は濃い灰色の四角形としてレンダリングされ ([**ShowsScrollingPlaceholders**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) プロパティが既定で **true** に設定されているためです)、次にタイトルが表示され、その後にサブタイトルと説明が表示されることがわかります。
 
 **ContainerContentChanging を使った段階的なデータ テンプレートの更新**
 
 [
-            **ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/BR242878base-containercontentchanging) の一般的な戦略は、**Opacity** を使ってすぐに表示する必要がない要素を非表示にすることです。 要素をリサイクルすると以前の値が保持されるため、新しいデータ項目の値で更新するまで、要素を非表示にします。 イベント引数で **Phase** プロパティを使って、どの要素を更新して表示するかを決めます。 追加のフェーズが必要な場合は、コールバックを登録します。
+            **ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.containercontentchanging) の一般的な戦略は、**Opacity** を使ってすぐに表示する必要がない要素を非表示にすることです。 要素をリサイクルすると以前の値が保持されるため、新しいデータ項目の値で更新するまで、要素を非表示にします。 イベント引数で **Phase** プロパティを使って、どの要素を更新して表示するかを決めます。 追加のフェーズが必要な場合は、コールバックを登録します。
 
 1.  **x:Phase** と同じバインド ソースを使用します。
 
-2.  これは、`MainPage.xaml` に含まれるマークアップです。 グリッド ビューは、その [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/BR242878base-containercontentchanging) イベントに対してハンドラーを宣言します。その中には、**MyItem** クラスの **Title** プロパティ、**Subtitle** プロパティ、**Description** プロパティを表示するために使われる要素を持つ項目テンプレートが含まれます。 **ContainerContentChanging** を使ったパフォーマンス上の最大のメリットを得るため、マークアップではバインドを使わず、代わりに値をプログラムを使って割り当てます。 ここでの例外は、フェーズ 0 とみなしているタイトルを表示する要素です。
+2.  これは、`MainPage.xaml` に含まれるマークアップです。 グリッド ビューは、その [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.containercontentchanging) イベントに対してハンドラーを宣言します。その中には、**MyItem** クラスの **Title** プロパティ、**Subtitle** プロパティ、**Description** プロパティを表示するために使われる要素を持つ項目テンプレートが含まれます。 **ContainerContentChanging** を使ったパフォーマンス上の最大のメリットを得るため、マークアップではバインドを使わず、代わりに値をプログラムを使って割り当てます。 ここでの例外は、フェーズ 0 とみなしているタイトルを表示する要素です。
     ```xml
     <Page
         x:Class="LotsOfItems.MainPage"
@@ -172,7 +173,7 @@ namespace LotsOfItems
         </Grid>
     </Page>
     ```
-3.  最後に、[**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/BR242878base-containercontentchanging) イベント ハンドラーの実装を示します。 このコードは、**RecordingViewModel** 型のプロパティを **MainPage** に追加して、マークアップのページを表すクラスからバインディング ソース クラスを公開する方法も示しています。 データ テンプレート内に [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) バインドが含まれていない限り、イベント引数オブジェクトをハンドラーの最初のフェーズで処理するようにマークして、データ コンテキストを設定する必要はないことを項目に通知します。
+3.  最後に、[**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.containercontentchanging) イベント ハンドラーの実装を示します。 このコードは、**RecordingViewModel** 型のプロパティを **MainPage** に追加して、マークアップのページを表すクラスからバインディング ソース クラスを公開する方法も示しています。 データ テンプレート内に [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) バインドが含まれていない限り、イベント引数オブジェクトをハンドラーの最初のフェーズで処理するようにマークして、データ コンテキストを設定する必要はないことを項目に通知します。
     ```csharp
     namespace LotsOfItems
     {
@@ -241,11 +242,15 @@ namespace LotsOfItems
 
 ## 異種コレクションでのコンテナー リサイクル
 
-一部のアプリケーションでは、コレクション内のさまざまな種類の項目に合わせて異なる UI を用意する必要があります。 これにより、仮想化されるパネルで、項目を表示するために使用される視覚要素を再利用またはリサイクルすることができない状況が発生する場合があります。 パンした時に項目の視覚要素を再作成すると、仮想化によって得られた多くのパフォーマンスのメリットが取り消されます。 ただし、少し計画することで、仮想化されるパネルで要素を再利用できるようになります。 開発者には、シナリオに応じて、[**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/BR242878base-choosingitemcontainer) イベントまたは項目テンプレート セレクターの 2 つのオプションがあります。 **ChoosingItemContainer** イベントは最も効率的な方法です。
+一部のアプリケーションでは、コレクション内のさまざまな種類の項目に合わせて異なる UI を用意する必要があります。 これにより、仮想化されるパネルで、項目を表示するために使用される視覚要素を再利用またはリサイクルすることができない状況が発生する場合があります。 パンした時に項目の視覚要素を再作成すると、仮想化によって得られた多くのパフォーマンスのメリットが取り消されます。 ただし、少し計画することで、仮想化されるパネルで要素を再利用できるようになります。 開発者には、シナリオに応じて、[**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosingitemcontainer) イベントまたは項目テンプレート セレクターの 2 つのオプションがあります。 **ChoosingItemContainer** アプローチでは、パフォーマンスが向上します。
 
 **ChoosingItemContainer イベント**
 
-[**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/BR242878base-choosingitemcontainer) イベントは、起動時やリサイクル時に新しい項目が必要になったときに、[**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878)/[**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) に項目 ([**ListViewItem**](https://msdn.microsoft.com/library/windows/apps/BR242878item)/[**GridViewItem**](https://msdn.microsoft.com/library/windows/apps/BR242705item)) を提供できるようにするイベントです。 コンテナーが表示するデータ項目の種類に基づいてコンテナーを作成できます (次の例で示します)。 **ChoosingItemContainer** は、異なる項目に異なるデータ テンプレートを使用するための最も効率的な方法です。 **ChoosingItemContainer** を使って実現できるものとして、コンテナーのキャッシュがあります。 たとえば、5 種類のテンプレートがあり、そのうちの 1 つのテンプレートが、他と比べて 1 桁多く発生している場合、ChoosingItemContainer を使うと、必要な比率で項目を作成できるだけでなく、キャッシュされた要素とリサイクルに利用できる要素も適切な数に維持されます。 [**ChoosingGroupHeaderContainer**](https://msdn.microsoft.com/library/windows/apps/BR242878base-choosinggroupheadercontainer) はグループ ヘッダーと同じ機能を提供します。
+[
+              **ChoosingItemContainer**
+            ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosingitemcontainer) イベントは、起動時やリサイクル時に新しい項目が必要になったときに、[**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878)/[**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) に項目 (**ListViewItem**/**GridViewItem**) を提供できるようにするイベントです。 コンテナーが表示するデータ項目の種類に基づいてコンテナーを作成できます (次の例で示します)。 **ChoosingItemContainer** は、より効率よく、異なる項目に異なるデータ テンプレートを使用するための方法です。 **ChoosingItemContainer** を使って実現できるものとして、コンテナーのキャッシュがあります。 たとえば、5 種類のテンプレートがあり、そのうちの 1 つのテンプレートが、他と比べて 1 桁多く発生している場合、ChoosingItemContainer を使うと、必要な比率で項目を作成できるだけでなく、キャッシュされた要素とリサイクルに利用できる要素も適切な数に維持されます。 [
+              **ChoosingGroupHeaderContainer**
+            ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosinggroupheadercontainer) は、グループ ヘッダーと同じ機能を提供します。
 
 ```csharp
 // Example shows how to use ChoosingItemContainer to return the correct
@@ -311,14 +316,14 @@ private void lst-ChoosingItemContainer
 
 項目テンプレート セレクター ([**DataTemplateSelector**](https://msdn.microsoft.com/library/windows/apps/BR209469)) により、アプリで、表示されるデータ項目の種類に基づいて、実行時に異なる項目テンプレートを返すことができます。 これにより、開発の生産性は向上しますが、すべてのデータ項目について、すべての項目テンプレートを再利用できるわけではないため、UI の仮想化はより難しくなります。
 
-項目 ([**ListViewItem**](https://msdn.microsoft.com/library/windows/apps/BR242878item)/[**GridViewItem**](https://msdn.microsoft.com/library/windows/apps/BR242705item)) をリサイクルする場合、リサイクル キュー (リサイクル キューは現在データを表示するために使用されていない項目のキャッシュです) で使用できる項目の項目テンプレートが、現在のデータ項目で求められるテンプレートと一致するかどうかを、フレームワークが判断する必要があります。 リサイクル キューに適切な項目テンプレートを持つ項目がない場合、新しい項目が作成され、適切な項目テンプレートがインスタンス化されます。 一方、リサイクル キューに、適切な項目テンプレートを持つ項目が含まれている場合、その項目はリサイクル キューから削除され、現在のデータ項目のために使用されます。 項目テンプレート セレクターは、使用されている項目テンプレートの数が少なく、異なる項目テンプレートを使用する項目のコレクション全体にわたって項目がフラットに分布しているような状況に適しています。
+項目 (**ListViewItem**/**GridViewItem**) をリサイクルする場合、リサイクル キュー (リサイクル キューは現在データを表示するために使用されていない項目のキャッシュです) で使用できる項目の項目テンプレートが、現在のデータ項目で求められるテンプレートと一致するかどうかを、フレームワークが判断する必要があります。 リサイクル キューに適切な項目テンプレートを持つ項目がない場合、新しい項目が作成され、適切な項目テンプレートがインスタンス化されます。 一方、リサイクル キューに、適切な項目テンプレートを持つ項目が含まれている場合、その項目はリサイクル キューから削除され、現在のデータ項目のために使用されます。 項目テンプレート セレクターは、使用されている項目テンプレートの数が少なく、異なる項目テンプレートを使用する項目のコレクション全体にわたって項目がフラットに分布しているような状況に適しています。
 
-異なる項目テンプレートを使う項目が均一に分布していない場合、パン中に新しい項目テンプレートを作成することが必要になる可能性が高く、仮想化によって提供される利点の多くが打ち消されます。 さらに、項目テンプレート セレクターでは、特定のコンテナーが現在のデータ項目用に再利用できるかどうかを評価する際に、対象として検討される候補は 5 つだけです。 このため、アプリで項目テンプレート セレクターを使用する前に、データが項目テンプレート セレクターでの使用に適しているかどうかを慎重に検討する必要があります。 コレクションがほぼ同種の項目で構成される場合、セレクターはほとんど毎回 (状況によっては常に) 同じ種類を返すことになります。 ほぼ同種の中のまれな例外を処理するためにかかるコストに注意し、[**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/BR242878base-choosingitemcontainer) (または 2 つの項目コントロール) の使用が妥当であるかどうかを検討します。
+異なる項目テンプレートを使う項目が均一に分布していない場合、パン中に新しい項目テンプレートを作成することが必要になる可能性が高く、仮想化によって提供される利点の多くが打ち消されます。 さらに、項目テンプレート セレクターでは、特定のコンテナーが現在のデータ項目用に再利用できるかどうかを評価する際に、対象として検討される候補は 5 つだけです。 このため、アプリで項目テンプレート セレクターを使用する前に、データが項目テンプレート セレクターでの使用に適しているかどうかを慎重に検討する必要があります。 コレクションがほぼ同種の項目で構成される場合、セレクターはほとんど毎回 (状況によっては常に) 同じ種類を返すことになります。 ほぼ同種の中のまれな例外を処理するためにかかるコストに注意し、[**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.choosingitemcontainer) (または 2 つの項目コントロール) の使用が妥当であるかどうかを検討します。
 
  
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

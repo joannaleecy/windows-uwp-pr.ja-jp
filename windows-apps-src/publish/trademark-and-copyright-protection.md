@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 別のアプリが知的財産権を侵害していると考えられる場合の対処方法について説明します。
 title: 商標と著作権の保護
 ms.assetid: 61C4EEC0-AD4D-4828-ADEC-F18E99DD4FFC
@@ -63,6 +64,6 @@ Microsoft からの通知を注意深く読み、指示に従ってください�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

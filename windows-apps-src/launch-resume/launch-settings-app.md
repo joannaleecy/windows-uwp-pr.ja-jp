@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: Windows 設定アプリの起動
 description: アプリから Windows 設定アプリを起動する方法について説明します。 ここでは、ms-settings URI スキームについて説明します。 Windows 設定アプリを起動して特定の設定ページを表示するには、この URI スキームを使います。
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
@@ -29,7 +30,7 @@ ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
 
 この例では、ハイパーリンク XAML コントロールで `ms-settings:privacy-microphone` URI を使って、マイクのプライバシー設定ページを起動します。
 
-```xaml
+```xml
 <!--Set Visibility to Visible when access to the microphone is denied -->  
 <TextBlock x:Name="LocationDisabledMessage" FontStyle="Italic" 
                  Visibility="Collapsed" Margin="0,15,0,0" TextWrapping="Wrap" >
@@ -125,6 +126,6 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

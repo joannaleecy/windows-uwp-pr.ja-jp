@@ -1,4 +1,5 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: 音声コマンドが Cortana の基本機能を拡張し、外部アプリケーションで単一の操作を起動して実行します。
 title: Cortana の操作
 ms.assetid: 4C11A7CF-DA26-4CA1-A9B9-FE52670101F5
@@ -9,7 +10,7 @@ template: detail.hbs
 # UWP アプリでの Cortana の操作
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+
 
 音声コマンドが **Cortana** の基本機能を拡張し、外部アプリケーションで単一の操作を起動して実行します。 
 
@@ -46,31 +47,31 @@ template: detail.hbs
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Design guidelines](cortana-design-guidelines.md)</p></td>
+<td align="left"><p>[設計ガイドライン](cortana-design-guidelines.md)</p></td>
 <td align="left"><p>このガイドラインおよび推奨事項では、アプリがユーザーとやり取りしてタスクを実行し、どのように行われているかがすべて明らかになるように **Cortana** を有効に活用する方法について説明します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Launch a foreground app with voice commands](launch-a-foreground-app-with-voice-commands-in-cortana.md)</p></td>
+<td align="left"><p>[音声コマンドを使ったフォアグラウンド アプリの起動](launch-a-foreground-app-with-voice-commands-in-cortana.md)</p></td>
 <td align="left"><p><strong>Cortana</strong> 内で音声コマンドを使ってシステム機能にアクセスするだけでなく、<strong>Cortana</strong> を通じて音声コマンドを使ってフォアグラウンド アプリを起動し、アプリ内で実行するアクションやコマンドを指定することもできます。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Dynamically modify VCD phrase lists](dynamically-modify-voice-command-definition--vcd--phrase-lists.md)</p></td>
+<td align="left"><p>[音声コマンド定義 (VCD) の語句一覧の動的変更](dynamically-modify-voice-command-definition--vcd--phrase-lists.md)</p></td>
 <td align="left"><p>実行時に音声認識結果を使って、VCD ファイルのサポート対象語句の一覧 (<strong>PhraseList</strong> 要素) にアクセスして更新する方法を説明します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Launch a background app with voice commands](launch-a-background-app-with-voice-commands-in-cortana.md)</p></td>
+<td align="left"><p>[音声コマンドを使ったバックグラウンド アプリの起動](launch-a-background-app-with-voice-commands-in-cortana.md)</p></td>
 <td align="left"><p><strong>Cortana</strong> 内で音声コマンドを使ってシステム機能にアクセスするだけでなく、アプリ内で実行するアクションやコマンドを指定する音声コマンドを使うバックグラウンド アプリの機能によって <strong>Cortana</strong> を拡張することもできます。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Interact with a background app](interact-with-a-background-app-in-cortana.md)</p></td>
+<td align="left"><p>[バックグラウンド アプリの操作](interact-with-a-background-app-in-cortana.md)</p></td>
 <td align="left"><p>音声コマンドの実行時に <strong>Cortana</strong> の音声とキャンバスを通じてバックグラウンド アプリを操作する方法について説明します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Deep link to a background app](deep-link-into-your-app-from-cortana.md)</p></td>
+<td align="left"><p>[バックグラウンド アプリへのディープ リンク](deep-link-into-your-app-from-cortana.md)</p></td>
 <td align="left"><p><strong>Cortana</strong> でバックグラウンド アプリのサービスからのディープ リンクを提供し、フォアグラウンドに特定の状態やコンテキストでアプリを起動します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Support natural language voice commands](support-natural-language-voice-commands-in-cortana.md)</p></td>
+<td align="left"><p>[自然言語音声コマンドのサポート](support-natural-language-voice-commands-in-cortana.md)</p></td>
 <td align="left"><p>ユーザーがコマンド内の任意の場所にアプリ名を含めることができるように、柔軟で自然な音声コマンドで <strong>Cortana</strong> を拡張する方法について説明します。</p></td>
 </tr>
 </tbody>
@@ -98,6 +99,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

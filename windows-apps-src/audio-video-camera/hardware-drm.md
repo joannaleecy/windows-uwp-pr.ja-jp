@@ -1,4 +1,5 @@
 ---
+author: eliotcowley
 ms.assetid: A7E0DA1E-535A-459E-9A35-68A4150EE9F5
 description: このトピックでは、PlayReady ハードウェア ベースのデジタル著作権管理 (DRM) をユニバーサル Windows プラットフォーム (UWP) アプリに追加する方法の概要を示します。
 title: ハードウェア DRM
@@ -53,21 +54,21 @@ Windows TEE 実装の詳細については、このドキュメントでは説�
 
 次の例は、ハードウェア DRM の除外方法を示しています。 この操作は、切り替えの前にのみ行う必要があります。 また、メモリ内に PlayReady オブジェクトが存在していないことも確認してください。存在する場合は、動作が未定義になります。
 
-``` syntax
+```js
 var applicationData = Windows.Storage.ApplicationData.current;
-var localSettings = applicationData.localSettings.createContainer(“PlayReady”, Windows.Storage.ApplicationDataCreateDisposition.always);
-localSettings.values[“SoftwareOverride”] = 1;
+var localSettings = applicationData.localSettings.createContainer("PlayReady", Windows.Storage.ApplicationDataCreateDisposition.always);
+localSettings.values["SoftwareOverride"] = 1;
 ```
 
 ハードウェア DRM に切り替えるには、**SoftwareOverride** の値を **0** に設定します。
 
 すべてのメディア再生で、**MediaProtectionManager** を次のように設定する必要があります。
 
-``` syntax
-mediaProtectionManager.properties[“Windows.Media.Protection.UseSoftwareProtectionLayer”] = true;
+```js
+mediaProtectionManager.properties["Windows.Media.Protection.UseSoftwareProtectionLayer"] = true;
 ```
 
-ハードウェア DRM またはソフトウェア DRM のどちらであるかを確認する最適な方法は、C:\\Users\\&lt;username&gt;\\AppData\\Local\\Packages\\&lt;application name&gt;\\LocalState\\PlayReady\\\* を調べることです。
+ハードウェア DRM であるか、ソフトウェア DRM であるかを確認する最適な方法は、C:\\Users\\&lt;ユーザー名&gt;\\AppData\\Local\\Packages\\&lt;アプリケーション名&gt;\\LocalState\\PlayReady\\\* を調べることです。
 
 -   mspr.hds ファイルがある場合は、ソフトウェア DRM を使っています。
 -   他の \*.hds ファイルがある場合は、ハードウェア DRM を使っています。
@@ -80,7 +81,7 @@ mediaProtectionManager.properties[“Windows.Media.Protection.UseSoftwareProtect
 [
             **PlayReadyStatics.CheckSupportedHardware**](https://msdn.microsoft.com/library/windows/apps/dn986441) メソッドを使って、システムが特定のハードウェア デジタル権利管理 (DRM) 機能をサポートしているかどうかを判断できます。 次に例を示します。
 
-``` syntax
+```cpp
 boolean PlayReadyStatics->CheckSupportedHardware(PlayReadyHardwareDRMFeatures enum);
 ```
 
@@ -92,6 +93,6 @@ boolean PlayReadyStatics->CheckSupportedHardware(PlayReadyHardwareDRMFeatures en
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

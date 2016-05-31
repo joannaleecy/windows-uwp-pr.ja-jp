@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: ハードウェアの範囲でのシャドウ マップのサポート
 description: より高速なデバイスでは高品質なシャドウを、性能が低いデバイスではよりすばやいシャドウをレンダリングします。
 ms.assetid: d97c0544-44f2-4e29-5e02-54c45e0dff4e
@@ -114,7 +115,7 @@ return float4(input.color * (light + shadow), 1.f);
 
 リニア フィルター処理を行ったバージョンのシェーダーのプロジェクト ファイル エントリでは、次のように、LINEAR を定義します。
 
-```
+```xml
 <FxCompile Include="Content\ShadowPixelShader.hlsl">
   <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">Pixel</ShaderType>
   <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">Pixel</ShaderType>
@@ -143,7 +144,7 @@ return float4(input.color * (light + shadow), 1.f);
 
 リニア フィルター処理を行ったバージョンのシェーダーのプロジェクト ファイル エントリには、次のように、プリプロセッサの定義を含めません。
 
-```
+```xml
 <FxCompile Include="Content\ShadowPixelShader.hlsl">
   <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">Pixel</ShaderType>
   <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">Pixel</ShaderType>
@@ -173,6 +174,6 @@ return float4(input.color * (light + shadow), 1.f);
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

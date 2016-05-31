@@ -1,4 +1,5 @@
 ---
+author: eliotcowley
 ms.assetid: BF877F23-1238-4586-9C16-246F3F25AE35
 description: この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリに、Microsoft PlayReady コンテンツ保護を使ったマルチメディア コンテンツのアダプティブ ストリーミングを追加する方法について説明します。
 title: PlayReady を使ったアダプティブ ストリーミング
@@ -6,13 +7,19 @@ title: PlayReady を使ったアダプティブ ストリーミング
 
 # PlayReady を使ったアダプティブ ストリーミング
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-\[一部の情報はリリース前の製品に関することであり、正式版がリリースされるまでに大幅に変更される可能性があります。 ここに記載された情報について、マイクロソフトは明示または黙示を問わずいかなる保証をするものでもありません。\]
+この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリに、Microsoft PlayReady コンテンツ保護を使ったマルチメディア コンテンツのアダプティブ ストリーミングを追加する方法について説明します。 
 
-この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリに、Microsoft PlayReady コンテンツ保護を使ったマルチメディア コンテンツのアダプティブ ストリーミングを追加する方法について説明します。 現在、この機能では、HTTP ライブ ストリーミング (HLS) と Dynamic Adaptive Streaming over HTTP (DASH) コンテンツの再生がサポートされています。
+現在、この機能では、Dynamic Adaptive Streaming over HTTP (DASH) コンテンツの再生がサポートされています。
+
+HLS (Apple の HTTP ライブ ストリーミング) は、PlayReady ではサポートされていません。
+
+Smooth Streaming も、現在、ネイティブではサポートされていません。ただし、PlayReady は拡張可能であるため、追加のコードまたはライブラリを使うことで、PlayReady で保護された Smooth Streaming をサポートして、ソフトウェアまたはハードウェアの DRM (デジタル著作権管理) を活用できます。
 
 この記事では、アダプティブ ストリーミングの PlayReady 固有の側面についてのみ扱います。 アダプティブ ストリーミングの実装に関する全般的な情報については、「[アダプティブ ストリーミング](adaptive-streaming.md)」をご覧ください。
+
+この記事では、GitHub の Microsoft の **Windows-universal-samples** リポジトリにある[アダプティブ ストリーミングのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AdaptiveStreaming)のコードを使っています。 PlayReady を使ったアダプティブ ストリーミングはシナリオ 4 で取り上げられています。 リポジトリを含む ZIP ファイルをダウンロードするには、リポジトリのルート レベルに移動して、**[Download ZIP]** (ZIP をダウンロード) ボタンをクリックします。
 
 次の using ステートメントが必要です。
 
@@ -44,7 +51,7 @@ private string playReadyChallengeCustomData = "";
 次の定数を宣言することもできます。
 
 ```csharp
-private const int MSPR_E_CONTENT_ENABLING_ACTION_REQUIRED = -2147174251;
+private const uint MSPR_E_CONTENT_ENABLING_ACTION_REQUIRED = 0x8004B895;
 ```
 
 ## MediaProtectionManager の設定
@@ -154,7 +161,7 @@ async Task<bool> ReactiveIndivRequest(
         else
         {
             COMException comException = exception as COMException;
-            if (comException != null &amp;&amp; comException.HResult == MSPR_E_CONTENT_ENABLING_ACTION_REQUIRED)
+            if (comException != null && comException.HResult == MSPR_E_CONTENT_ENABLING_ACTION_REQUIRED)
             {
                 IndivRequest.NextServiceRequest();
             }
@@ -290,6 +297,6 @@ async private void InitializeAdaptiveMediaSource(System.Uri uri, MediaElement m)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

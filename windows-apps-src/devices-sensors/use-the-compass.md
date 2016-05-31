@@ -1,4 +1,5 @@
 ---
+author: DBirtolo
 ms.assetid: 5B30E32F-27E0-4656-A834-391A559AC8BC
 title: コンパスの使用
 description: コンパスを使って現在の方位を検出する方法を説明します。
@@ -175,6 +176,6 @@ CompassReadingChangedEventArgs>(ReadingChanged);
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

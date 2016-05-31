@@ -1,11 +1,12 @@
 ---
+author: DBirtolo
 ms.assetid: 70667353-152B-4B18-92C1-0178298052D4
 title: 書式設定における Epson ESC/POS
 description: POS プリンターで、ESC/POS コマンド言語を使用して、太字、倍角文字など、テキストの書式を設定する方法について説明します。
 ---
 # 書式設定における Epson ESC/POS
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 ** 重要な API **
 
@@ -31,22 +32,22 @@ ESC/POS は、Epson が開発したコマンド システムで、広範囲の P
 
 ```csharp
 // … prior plumbing code removed for brevity
-// this code assumed you’ve already created a receipt print job (printJob)
-// and also that you’ve already checked the PosPrinter Capabilities to 
+// this code assumed you've already created a receipt print job (printJob)
+// and also that you've already checked the PosPrinter Capabilities to 
 // verify that the printer supports Bold and DoubleHighDoubleWide print modes
 
-const string ESC = “\u001B”;
-const string GS = “\u001D”;
-const string InitializePrinter = ESC + “@”;
-const string BoldOn = ESC + “E” + “\u0001”;
-const string BoldOff = ESC + “E” + “\0”;
-const string DoubleOn = GS + “!” + “\u0011”;  // 2x sized text (double-high + double-wide)
-const string DoubleOff = GS + “!” + “\0”;
+const string ESC = "\u001B";
+const string GS = "\u001D";
+const string InitializePrinter = ESC + "@";
+const string BoldOn = ESC + "E" + "\u0001";
+const string BoldOff = ESC + "E" + "\0";
+const string DoubleOn = GS + "!" + "\u0011";  // 2x sized text (double-high + double-wide)
+const string DoubleOff = GS + "!" + "\0";
 
 printJob.Print(InitializePrinter);
-printJob.PrintLine(“Here is some normal text.”);
-printJob.PrintLine(BoldOn + “Here is some bold text.” + BoldOff);
-printJob.PrintLine(DoubleOn + “Here is some large text.” + DoubleOff);
+printJob.PrintLine("Here is some normal text.");
+printJob.PrintLine(BoldOn + "Here is some bold text." + BoldOff);
+printJob.PrintLine(DoubleOn + "Here is some large text." + DoubleOff);
 
 printJob.ExecuteAsync();
 ```
@@ -57,6 +58,6 @@ printJob.ExecuteAsync();
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

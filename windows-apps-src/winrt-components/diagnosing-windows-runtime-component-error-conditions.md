@@ -1,4 +1,5 @@
 ---
+author: martinekuan
 title: Windows ランタイム コンポーネントでのエラー状態の診断
 description: この記事では、マネージ コードで記述された Windows ランタイム コンポーネントでの制限に関する追加情報について説明します。
 ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
@@ -18,7 +19,7 @@ ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
 ## 非同期インターフェイスの実装に関するエラー メッセージで示される型が正しくない
 
 
-Windows ランタイム マネージ コンポーネントは、非同期処理や非同期操作を表すユニバーサル Windows プラットフォーム (UWP) インターフェイス ([IAsyncAction](https://msdn.microsoft.com/library/br205781.aspx)、[IAsyncActionWithProgress&lt;TProgress&gt;](https://msdn.microsoft.com/library/br205784.aspx)、[IAsyncOperation&lt;TResult&gt;](https://msdn.microsoft.com/library/windows/apps/br206598.aspx)、[IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/br206594.aspx)) を実装することはできません。 代わりに、.NET Framework には、Windows ランタイム コンポーネントの非同期操作を生成するための [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) クラスが用意されています。 非同期インターフェイスを実装しようとしたときに Winmdexp.exe により表示されるエラー メッセージでは、このクラスが誤って以前の名前の AsyncInfoFactory として示されます。 .NET Framework では、AsyncInfoFactory クラスが使われなくなりました。
+マネージ型の Windows ランタイム コンポーネントは、非同期処理や非同期操作を表すユニバーサル Windows プラットフォーム (UWP) インターフェイス ([IAsyncAction](https://msdn.microsoft.com/library/br205781.aspx)、[IAsyncActionWithProgress&lt;TProgress&gt;](https://msdn.microsoft.com/library/br205784.aspx)、[IAsyncOperation&lt;TResult&gt;](https://msdn.microsoft.com/library/windows/apps/br206598.aspx)、[IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/br206594.aspx)) を実装することはできません。 代わりに、.NET Framework には、Windows ランタイム コンポーネントの非同期操作を生成するための [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) クラスが用意されています。 非同期インターフェイスを実装しようとしたときに Winmdexp.exe により表示されるエラー メッセージでは、このクラスが誤って以前の名前の AsyncInfoFactory として示されます。 .NET Framework では、AsyncInfoFactory クラスが使われなくなりました。
 
 | エラー番号 | メッセージ テキスト                                                                                                                                                                                                                                                          |
 |--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -26,14 +27,14 @@ Windows ランタイム マネージ コンポーネントは、非同期処理�
 
  
 
-> **注** Windows ランタイムについて言及したエラー メッセージでは、以前の用語が使われています。 現在では、Windows ランタイムはユニバーサル Windows プラットフォーム (UWP) と呼ばれます。 たとえば、Windows ランタイム型は UWP 型と呼ばれています。
+> **注:** Windows ランタイムについて言及したエラー メッセージでは、以前の用語が使われています。 現在では、Windows ランタイムはユニバーサル Windows プラットフォーム (UWP) と呼ばれます。 たとえば、Windows ランタイム型は UWP 型と呼ばれています。
 
  
 
 ## mscorlib.dll または System.Runtime.dll への参照が指定されていない
 
 
-この問題は、コマンド ラインから Winmdexp.exe を使う場合にのみ発生します。 .NET Framework のコア参照アセンブリから mscorlib.dll と System.Runtime.dll の両方への参照を含めるには、/reference オプションを使うことをお勧めします。コア参照アセンブリは、"%ProgramFiles(x86)%\\Reference Assemblies\\Microsoft\\Framework\\.NETCore\\v4.5" (32 ビット コンピューターの場合は "%ProgramFiles%\\...") にあります)。
+この問題は、コマンド ラインから Winmdexp.exe を使う場合にのみ発生します。 .NET Framework のコア参照アセンブリから mscorlib.dll と System.Runtime.dll の両方への参照を含めるには、/reference オプションを使うことをお勧めします。コア参照アセンブリは、"%ProgramFiles(x86)%\\Reference Assemblies\\Microsoft\\Framework\\.NETCore\\v4.5" (32 ビット コンピューターの場合は、"%ProgramFiles%\\...") にあります。
 
 | エラー番号 | メッセージ テキスト                                                                                                                                     |
 |--------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -47,7 +48,7 @@ Windows ランタイム マネージ コンポーネントは、非同期処理�
 
 マネージ コードで記述された Windows ランタイム コンポーネントでは、パブリック型のオーバーロードされた演算子を公開することはできません。
 
-> **注** エラー メッセージでは、演算子は op\_Addition、op\_Multiply、op\_ExclusiveOr、op\_Implicit (暗黙の変換) などのメタデータ名によって識別されます。
+> **注:** エラー メッセージでは、演算子は op\_Addition、op\_Multiply、op\_ExclusiveOr、op\_Implicit (暗黙の変換) などのメタデータ名によって識別されます。
 
  
 
@@ -85,7 +86,7 @@ UWP では、オーバーロードされたメソッドの 1 つが既定のオ�
 
 ユニバーサル Windows プラットフォームでは、Windows メタデータ (.winmd) ファイルに含まれるすべてのパブリック型は、.winmd ファイルの名前を共有する名前空間、またはそのファイル名のサブ名前空間に含まれている必要があります。 たとえば、Visual Studio プロジェクトの名前が A.B (つまり、Windows ランタイム コンポーネントが A.B.winmd) の場合、パブリック クラス A.B.Class1 と A.B.C.Class2 を含めることができますが、A.Class3 (WME0006) または D.Class4 (WME1044) を含めることはできません。
 
-> **注** これらの制限はパブリック型だけに適用され、実装で使われるプライベート型には適用されません。
+> **注:** これらの制限はパブリック型だけに適用され、実装で使われるプライベート型には適用されません。
 
  
 
@@ -119,11 +120,11 @@ Windows ランタイム コンポーネントの型には、名前空間と同�
 
 コンポーネントのパブリック インターフェイスは UWP 型のみを公開する必要があります。 ただし、.NET Framework には、.NET Framework や UWP とはわずかに異なる多数の一般的な型に対応したマッピングが用意されています。 これにより、.NET Framework の開発者は、新しい型を習得せずに、使い慣れた型を使うことができます。 マップされた .NET Framework 型は、コンポーネントのパブリック インターフェイスで使うことができます。 [「C# および Visual Basic での Windows ランタイム コンポーネントの作成」](creating-windows-runtime-components-in-csharp-and-visual-basic.md)の「Windows ランタイム コンポーネントの宣言型」と「ユニバーサル Windows プラットフォーム型のマネージ コードへの引き渡し」、および「 [.NET Framework での Windows ランタイム型の対応付け](net-framework-mappings-of-windows-runtime-types.md)」をご覧ください。
 
-これらのマッピングの多くはインターフェイスです。 たとえば、[IList&lt;T&gt;](https://msdn.microsoft.com/library/5y536ey6.aspx) は、UWP インターフェイス [IVector&lt;T&gt;](https://msdn.microsoft.com/library/windows/apps/br206631.aspx)にマップされます。 パラメーター型として IList&lt;string&gt; の代わりに List&lt;string&gt; (Visual Basic の `List(Of String)`) を使うと、Winmdexp.exe によって代替のインターフェイスのリストが提供されます。このリストには、List&lt;T&gt; によって実装されたマップ済みのインターフェイスがすべて含まれています。 List&lt;Dictionary&lt;int, string&gt;&gt; (Visual Basic の List(Of Dictionary(Of Integer, String))) など、入れ子になったジェネリック型を使う場合、Winmdexp.exe によって入れ子のレベルごとに選択肢のリストが提供されます。 これらのリストはかなり長くなる場合があります。
+これらのマッピングの多くはインターフェイスです。 たとえば、[IList&lt;T&gt;](https://msdn.microsoft.com/library/5y536ey6.aspx) は、UWP インターフェイス [IVector&lt;T&gt;](https://msdn.microsoft.com/library/windows/apps/br206631.aspx) にマップされます。 パラメーター型として IList&lt;string&gt; の代わりに List&lt;string&gt; (Visual Basic の `List(Of String)`) を使うと、Winmdexp.exe によって代替のインターフェイスのリストが提供されます。このリストには、List&lt;T&gt; によって実装されたマップ済みのインターフェイスがすべて含まれています。 List&lt;Dictionary&lt;int, string&gt;&gt; (Visual Basic の List(Of Dictionary(Of Integer, String))) など、入れ子になったジェネリック型を使う場合、Winmdexp.exe によって入れ子のレベルごとに選択肢のリストが提供されます。 これらのリストはかなり長くなる場合があります。
 
 一般に、最適なのは型に最も近いインターフェイスです。 たとえば、Dictionary&lt;int, string&gt; の場合、IDictionary&lt;int, string&gt; が最適と考えられます。
 
-> **重要** JavaScript では、マネージ型が実装するインターフェイスのリストに最初に現れるインターフェイスが使われます。 たとえば、JavaScript コードに Dictionary&lt;int, string&gt; を返した場合は、戻り値の型としてどのインターフェイスを指定しても、IDictionary&lt;int, string&gt; として表されます。 つまり、後のインターフェイスにメンバーが最初のインターフェイスに含まれていない場合、そのメンバーは JavaScript では認識されません。
+> **重要** JavaScript では、マネージ型が実装するインターフェイスのリストに最初に現れるインターフェイスが使われます。 たとえば、Dictionary&lt;int, string&gt; を JavaScript コードに返した場合、戻り値の型としてどのインターフェイスを指定しても、IDictionary&lt;int, string&gt; として表示されます。 これは、後のインターフェイスで表示されるメンバーが最初のインターフェイスに含まれていない場合、そのメンバーは JavaScript に認識されないことを意味します。
 
 > **注意** JavaScript で利用されるコンポーネントでは、非ジェネリックな [IList](https://msdn.microsoft.com/library/system.collections.ilist.aspx) インターフェイスと [IEnumerable](https://msdn.microsoft.com/library/system.collections.ienumerable.aspx) インターフェイスを使わないでください。 これらのインターフェイスは、それぞれ [IBindableVector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindablevector.aspx) と [IBindableIterator](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindableiterator.aspx) にマップされます。 これらは、XAML コントロールのバインドをサポートし、JavaScript には参照されません。 JavaScript では、実行時エラー ("関数 'X' に無効なシグネチャがあるため、呼び出せません") が発生します。
 
@@ -152,7 +153,7 @@ Windows ランタイム コンポーネントの型には、名前空間と同�
 <tr class="odd">
 <td align="left">WME1039</td>
 <td align="left"><p>メソッド '{0}' は、そのシグネチャに型 '{1}' のパラメーターを指定しています。 このジェネリック型は有効な Windows ランタイム型ではありませんが、この型またはそのジェネリック パラメーターは、有効な Windows ランタイム型であるインターフェイスを実装します。 {2}</p>
-> **注** {2} には、Winmdexp.exe によって代替のインターフェイスのリストが付加されます。たとえば、"メソッド シグネチャの型 'System.Collections.Generic.List&lt;T&gt;' を次のいずれかの型に変更することを検討してください: 'System.Collections.Generic.IList&lt;T&gt;、System.Collections.Generic.IReadOnlyList&lt;T&gt;、System.Collections.Generic.IEnumerable&lt;T&gt;'。" のように表示されます。
+> **注:** {2} には、Winmdexp.exe によって代替のインターフェイスのリストが付加されます。たとえば、"メソッド シグネチャの型 'System.Collections.Generic.List&lt;T&gt;' を次のいずれかの型に変更することを検討してください: 'System.Collections.Generic.IList&lt;T&gt;、System.Collections.Generic.IReadOnlyList&lt;T&gt;、System.Collections.Generic.IEnumerable&lt;T&gt;'。" のように示されます。
 </td>
 </tr>
 <tr class="even">
@@ -180,7 +181,7 @@ UWP では、構造体にはフィールドのみを含めることができ、�
 
 UWP では、メンバーのシグネチャ内の配列は 1 次元で、下限を 0 (ゼロ) に指定する必要があります。 `myArray[][]` (Visual Basic の `myArray()()`) など、入れ子になった配列型を使うことはできません。
 
-> **注** この制限は、実装で内部的に使う配列には適用されません。
+> **注:** この制限は、実装で内部的に使う配列には適用されません。
 
  
 
@@ -231,14 +232,14 @@ UWP では、戻り値は出力パラメーターであると見なされ、パ�
     > <Out> ByRef highValue As Integer) As <ReturnValueName("average")> String
     > ``` 
 
-> **注** 戻り値の名前を変更する場合、新しい名前が別のパラメーターの名前と競合すると、エラー WME1091 が発生します。
+> **注:** 戻り値の名前を変更する場合、新しい名前が別のパラメーターの名前と競合すると、エラー WME1091 が発生します。
 
 JavaScript コードは、戻り値も含め、メソッドの出力パラメーターに名前でアクセスできます。 例については、[ReturnValueNameAttribute](https://msdn.microsoft.com/library/windows/apps/system.runtime.interopservices.windowsruntime.returnvaluenameattribute.aspx) 属性に関するトピックをご覧ください。
 
 | エラー番号 | メッセージ テキスト |
 |---------------|------------|
 | WME1091 | メソッド '\{0}' には、パラメーター名と同じ '\{1}' という名前の戻り値があります。 Windows ランタイム メソッドのパラメーターと戻り値には一意の名前を指定する必要があります。 |
-| WME1092 | メソッド '\{0}' には、既定の戻り値の名前と同じ '\{1}' という名前のパラメーターが指定されています。 このパラメーターに別の名前を使用するか、System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute を使用して、戻り値の名前を明示的に指定してください。<br/>**注** 既定の名前は、プロパティ アクセサーでは "returnValue"、その他のすべてのメソッドでは "value" となります。 |
+| WME1092 | メソッド '\{0}' には、既定の戻り値の名前と同じ '\{1}' という名前のパラメーターが指定されています。 このパラメーターに別の名前を使用するか、System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute を使用して、戻り値の名前を明示的に指定してください。<br/>**注:** 既定の名前は、プロパティ アクセサーでは "returnValue"、その他のすべてのメソッドでは "value" となります。 |
  
 
 ## 関連トピック
@@ -247,6 +248,6 @@ JavaScript コードは、戻り値も含め、メソッドの出力パラメー
 * [Winmdexp.exe (Windows ランタイム メタデータ エクスポート ツール)](https://msdn.microsoft.com/library/hh925576.aspx)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: トグル スイッチは、ユーザーが項目をオンまたはオフに切り替えることができる物理的なスイッチを表します。
 title: トグル スイッチ コントロールのガイドライン
 ms.assetid: 753CFEA4-80D3-474C-B4A9-555F872A3DEF
-label: トグル スイッチ
+label: Toggle switches
 template: detail.hbs
 ---
 # トグル スイッチ
@@ -158,6 +159,6 @@ private void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
 - [**ToggleSwitch クラス**](https://msdn.microsoft.com/library/windows/apps/br209712)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

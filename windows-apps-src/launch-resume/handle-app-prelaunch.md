@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: アプリの事前起動の処理
 description: OnLaunched メソッドをオーバーライドすることで、アプリの事前起動を処理する方法について説明します。
 ms.assetid: A4838AC2-22D7-46BA-9EB2-F3C248E22F52
@@ -59,7 +60,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
             // TODO: This is not a prelaunch activation. Perform operations which
             // assume that the user explicitly launched the app such as updating
             // the online presence of the user on a social network, updating a 
-            // what&#39;s new feed, etc.
+            // what's new feed, etc.
         }
 
         // Place the frame in the current Window
@@ -68,7 +69,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 
     if (rootFrame.Content == null)
     {
-        // When the navigation stack isn&#39;t restored navigate to the first page,
+        // When the navigation stack isn't restored navigate to the first page,
         // configuring the new page by passing required information as a navigation parameter
         rootFrame.Navigate(typeof(MainPage), e.Arguments);
     }
@@ -99,7 +100,7 @@ public sealed partial class MainPage : Page
     void WindowVisibilityChangedEventHandler(System.Object sender, Windows.UI.Core.VisibilityChangedEventArgs e)
     {
         // Perform operations that should take place when the application becomes visible rather than 
-        // when it is prelaunched, such as building a what&#39;s new feed 
+        // when it is prelaunched, such as building a what's new feed 
     }
 }
 ```
@@ -115,7 +116,7 @@ public sealed partial class MainPage : Page
     -   パフォーマンスの配慮の一例は、アプリの事前起動時に最新の気象情報を読み込む場合です。ユーザーがアプリに切り替えるまでその読み込みを遅らせて、アプリが表示されたら最新の情報を読み込む必要があります。
 -   アプリが事前起動時にライブ タイルをクリアする場合、表示の変更イベントが発生するまでこの操作を遅らせてください。
 -   アプリの利用統計情報をタイルの通常のアクティブ化と起動前のアクティブ化で区別して、問題が発生するシナリオを特定できるようにしてください。
--   Microsoft Visual Studio 2015 Update 1 および Windows 10, Version 1511 がインストールされている場合、**[デバッグ]** &gt; **[その他のデバッグ ターゲット]** &gt; **[Debug Windows Universal App PreLaunch](Windows ユニバーサル アプリの事前起動のデバッグ)** の順に選ぶことで、Visual Studio 2015 でアプリの事前起動をシミュレートできます。
+-   Microsoft Visual Studio 2015 Update 1 および Windows 10 Version 1511 がインストールされている場合、**[デバッグ]** &gt; **[その他のデバッグ ターゲット]** &gt; **[Debug Windows Universal App PreLaunch]** の順に選ぶことで、Microsoft Visual Studio 2015 でアプリの事前起動をシミュレートできます。
 
 ## 関連トピック
 
@@ -129,6 +130,6 @@ public sealed partial class MainPage : Page
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

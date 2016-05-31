@@ -1,4 +1,5 @@
 ---
+author: TylerMSFT
 ms.assetid: beac6333-655a-4bcf-9caf-bba15f715ea5
 title: スレッド化と非同期プログラミング
 description: スレッド化と非同期プログラミングによって、アプリは並列スレッドで作業を非同期的に実行できます。
@@ -24,7 +25,7 @@ description: スレッド化と非同期プログラミングによって、ア�
 | トピック                                                                                                          | 説明                         |
 |----------------------------------------------------------------------------------------------------------------|-------------------------------------|
 | [非同期プログラミング (UWP アプリ)](asynchronous-programming-universal-windows-platform-apps.md)              | このトピックでは、ユニバーサル Windows プラットフォーム (UWP) での非同期プログラミングと、C#、Microsoft Visual Basic .NET、Visual C++ コンポーネント拡張機能 (C++/CX)、および JavaScript における非同期プログラミングの表現について説明します。 |
-| [C++ での非同期プログラミング (UWP アプリ)](asynchronous-programming-in-cpp-universal-windows-platform-apps.md)| ここでは、ppltasks.h の <code>concurrency</code> 名前空間で定義された <code>task</code> クラスを使って C++/CX の非同期メソッドを実装する際に推奨される方法について説明します。 |
+| [C++ での非同期プログラミング (UWP アプリ)](asynchronous-programming-in-cpp-universal-windows-platform-apps.md)| ここでは、ppltasks.h の <code>task</code> 名前空間で定義された <code>concurrency</code> クラスを使って C++/CX の非同期メソッドを実装する際に推奨される方法について説明します。 |
 | [スレッド プールを使うためのベスト プラクティス](best-practices-for-using-the-thread-pool.md)                         | このトピックでは、スレッド プールを使った操作のベスト プラクティスについて説明します。 |
 | [C# または Visual Basic での非同期 API の呼び出し](call-asynchronous-apis-in-csharp-or-visual-basic.md)             | ユニバーサル Windows プラットフォーム (UWP) には、時間がかかる可能性がある操作を実行しているときでも、アプリの応答性を保つために、さまざまな非同期 API が用意されています。 このトピックでは、C# または Microsoft Visual Basic で UWP の非同期メソッドを使う方法について説明します。 |
 | [定期的な作業項目の作成](create-a-periodic-work-item.md)                                                   | 定期的に実行される作業項目の作成方法を説明します。 |
@@ -36,6 +37,6 @@ description: スレッド化と非同期プログラミングによって、ア�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

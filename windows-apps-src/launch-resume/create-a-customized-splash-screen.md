@@ -1,6 +1,7 @@
 ---
+author: mcleblanc
 title: スプラッシュ画面の表示時間の延長
-description: アプリに追加スプラッシュ画面を作成すれば、より長い時間、スプラッシュ画面を表示することができます。 この追加画面は、アプリを起動したときに表示されるスプラッシュ画面に似ていますが、カスタマイズできます。
+description: アプリに追加スプラッシュ画面を作成すると、より長い時間、スプラッシュ画面を表示することができます。 この追加画面は、アプリを起動したときに表示されるスプラッシュ画面に似ていますが、カスタマイズできます。
 ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
 ---
 
@@ -16,7 +17,7 @@ ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
 -   [**Window.SizeChanged イベント**](https://msdn.microsoft.com/library/windows/apps/br209055)
 -   [**Application.OnLaunched メソッド**](https://msdn.microsoft.com/library/windows/apps/br242335)
 
-アプリに追加スプラッシュ画面を作成すれば、より長い時間、スプラッシュ画面を表示することができます。 この追加この画面は、アプリを起動したときに表示されるスプラッシュ画面に似ていますが、カスタマイズできます。 読み込み状況をリアルタイムにユーザーに表示する場合や、アプリの最初の UI の準備に時間がかかる場合、追加スプラッシュ画面を使って起動時のエクスペリエンスを定義できます。
+アプリに追加スプラッシュ画面を作成すれば、より長い時間、スプラッシュ画面を表示することができます。 この追加画面は、アプリを起動したときに表示されるスプラッシュ画面に似ていますが、カスタマイズできます。 読み込み状況をリアルタイムにユーザーに表示する場合や、アプリの最初の UI の準備に時間がかかる場合、追加スプラッシュ画面を使って起動時のエクスペリエンスを定義できます。
 
 > **注:** このトピックで "追加スプラッシュ画面" という用語は、表示される時間が延長されたスプラッシュ画面を指します。 [
             **SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) クラスを拡張するサブクラスやこのクラスから派生したサブクラスという意味ではありません。
@@ -59,7 +60,7 @@ ExtendedSplash.xaml ファイルで次の操作を行います。
 
 次のコードを追加して、[**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 要素、[**Image**](https://msdn.microsoft.com/library/windows/apps/br242752) 要素、[**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) コントロールを ExtendedSplash.xaml に定義します。
 
-```xaml
+```xml
     <Grid Background="#464646">
         <Canvas>
             <Image x:Name="extendedSplashImage" Source="Assets/SplashScreen.png"/>
@@ -123,7 +124,7 @@ ExtendedSplash.xaml ファイルで次の操作を行います。
         if (splash != null)
         {
             // Register an event handler to be executed when the splash screen has been dismissed.
-            splash.Dismissed += new TypedEventHandler&lt;SplashScreen, Object&gt;(DismissedEventHandler);
+            splash.Dismissed += new TypedEventHandler<SplashScreen, Object>(DismissedEventHandler);
 
             // Retrieve the window coordinates of the splash screen image.
             splashImageRect = splash.ImageLocation;
@@ -172,7 +173,7 @@ ExtendedSplash.xaml ファイルで次の操作を行います。
     ExtendedSplash.xaml.cs で、`dismissed` クラス変数を true に設定することで、[**SplashScreen.Dismissed**](https://msdn.microsoft.com/library/windows/apps/br224764) イベントが発生したときに応答するようにします。 アプリにセットアップ操作がある場合は、それらの操作をこのイベント ハンドラーに追加します。
 
     ```cs
-    // Include code to be executed when the system has transitioned from the splash screen to the extended splash screen (application&#39;s first view).
+    // Include code to be executed when the system has transitioned from the splash screen to the extended splash screen (application's first view).
     void DismissedEventHandler(SplashScreen sender, object e)
     {
         dismissed = true;
@@ -226,7 +227,7 @@ ExtendedSplash.xaml ファイルで次の操作を行います。
     {
         if (loadState)
         {
-             // code to load your app&#39;s state here 
+             // code to load your app's state here 
         }
     }
     ```
@@ -265,7 +266,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
 
 ExtendedSplash.xaml: この例には `DismissSplash` ボタンが含まれています。読み込むアプリのリソースがないためです。 アプリでは、リソースの読み込みまたはその最初の UI の準備の完了時に追加スプラッシュ画面が自動的に閉じられます。
 
-```xaml
+```xml
 <Page
     x:Class="SplashScreenExample.ExtendedSplash"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -389,7 +390,7 @@ namespace SplashScreenExample
             }
         }
 
-        // Include code to be executed when the system has transitioned from the splash screen to the extended splash screen (application&#39;s first view).
+        // Include code to be executed when the system has transitioned from the splash screen to the extended splash screen (application's first view).
         void DismissedEventHandler(SplashScreen sender, object e)
         {
             dismissed = true;
@@ -496,7 +497,7 @@ namespace SplashScreenExample
 
             if (rootFrame.Content == null)
             {
-                // When the navigation stack isn&#39;t restored navigate to the first page,
+                // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigation
                 // parameter
                 rootFrame.Navigate(typeof(MainPage), e.Arguments);
@@ -552,6 +553,6 @@ namespace SplashScreenExample
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 ms.assetid: 02141F86-355E-4046-86EA-2A89D615B7DB
 title: ブラシの使用
 description: Brush オブジェクトは、コントロールの領域、テキスト、図形の内側または輪郭を塗りつぶすことで、その対象領域を UI 上で視覚的に確認できるようにする目的で使います。
@@ -12,7 +13,9 @@ description: Brush オブジェクトは、コントロールの領域、テキ�
 
 -   [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076)
 
-[**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) オブジェクトは、コントロールの領域、テキスト、図形の内側または輪郭を塗りつぶすことで、その対象領域を UI 上で視覚的に確認できるようにする目的で使います。 ここでは、利用可能なブラシとそれらの使い方について説明します。
+[
+              **Brush**
+            ](https://msdn.microsoft.com/library/windows/apps/BR228076) オブジェクトは、コントロールの領域、テキスト、図形の内側または輪郭を塗りつぶすことで、その対象領域を UI 上で視覚的に確認できるようにする目的で使います。 ここでは、利用可能なブラシとそれらの使い方について説明します。
 
 ## ブラシ入門
 
@@ -100,8 +103,7 @@ XAML ではなくコードを使って [**SolidColorBrush**](https://msdn.micros
 
 グラデーション境界間の各点の色は、境界となる 2 つのグラデーション境界によって指定された色の組み合わせとして、直線的に補間されます。 この例の各グラデーション境界を次の図に示しています。 グラデーション境界の位置が円で示され、グラデーション軸が破線で示されています。
 
-![グラデーション境界](images/linear-gradients-stops.png)
-グラデーション境界が配置される直線は、[**StartPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.startpoint.aspx) プロパティと [**EndPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.endpoint.aspx) プロパティを、既定値である `(0,0)` と `(1,1)` 以外の値に設定することで変更できます。 **StartPoint** と **EndPoint** の座標値を変更すると、水平方向や垂直方向のグラデーションを作成したり、グラデーション方向を反転したりできるほか、塗りつぶす領域全体よりも小さくなるようにグラデーションの適用範囲を狭めることができます。 グラデーションの領域を狭めるには、**StartPoint** または **EndPoint** (あるいはその両方) の値を 0 ～ 1 の範囲で変更します。 たとえば、フェード効果がブラシの左半分で完結し、右半分は、直近の [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) に基づく単色であるような水平方向のグラデーションが必要な場合、**StartPoint** を `(0,0)` に、**EndPoint** を `(0.5,0)` に設定します。
+![グラデーション境界](images/linear-gradients-stops.png) グラデーション境界が配置される直線は、[**StartPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.startpoint.aspx) プロパティと [**EndPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.endpoint.aspx) プロパティを、既定値である `(0,0)` と `(1,1)` 以外の値に設定することで変更できます。 **StartPoint** と **EndPoint** の座標値を変更すると、水平方向や垂直方向のグラデーションを作成したり、グラデーション方向を反転したりできるほか、塗りつぶす領域全体よりも小さくなるようにグラデーションの適用範囲を狭めることができます。 グラデーションの領域を狭めるには、**StartPoint** または **EndPoint** (あるいはその両方) の値を 0 ～ 1 の範囲で変更します。 たとえば、フェード効果がブラシの左半分で完結し、右半分は、直近の [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) に基づく単色であるような水平方向のグラデーションが必要な場合、**StartPoint** を `(0,0)` に、**EndPoint** を `(0.5,0)` に設定します。
 
 ### <span id="Use_tools_to_make_gradients"></span><span id="use_tools_to_make_gradients"></span><span id="USE_TOOLS_TO_MAKE_GRADIENTS"></span>ツールによるグラデーションの作成
 
@@ -136,7 +138,9 @@ XAML ではなくコードを使って [**SolidColorBrush**](https://msdn.micros
 
 ![レンダリングされた ImageBrush。](images/brushes-imagebrush.jpg)
 
-[**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) と [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) は、どちらも Uniform Resource Identifier (URI) でイメージ ソース ファイルを参照します。また、イメージ ソース ファイルに使うことができる画像形式には、さまざまなものがあります。 これらのイメージ ソース ファイルは、URI として指定されます。 イメージ ソースの指定、使用できる画像形式、アプリへのパッケージ化について詳しくは、「[Image と ImageBrush](https://msdn.microsoft.com/library/windows/apps/Mt280382)」をご覧ください。
+[
+              **ImageBrush**
+            ](https://msdn.microsoft.com/library/windows/apps/BR210101) と [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) は、どちらも Uniform Resource Identifier (URI) でイメージ ソース ファイルを参照します。また、イメージ ソース ファイルに使うことができる画像形式には、さまざまなものがあります。 これらのイメージ ソース ファイルは、URI として指定されます。 イメージ ソースの指定、使用できる画像形式、アプリへのパッケージ化について詳しくは、「[Image と ImageBrush](https://msdn.microsoft.com/library/windows/apps/Mt280382)」をご覧ください。
 
 ## ブラシとテキスト
 
@@ -174,7 +178,9 @@ blueBrush = ref new SolidColorBrush(Windows::UI::Colors::Blue);
 [
             **WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) と [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) を UI プロパティに使う場合、その前に既定のコンストラクターを使って他の API を呼び出してください。
 
--   コードを使って [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) を定義する場合、[**ImageSource**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.imagebrush.imagesourceproperty.aspx) では [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/BR243235) (URI ではない) が必要です。 ソースがストリームである場合は、[**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522) メソッドを使って値を初期化します。 ソースが、**ms-appx**  スキームまたは **ms-resource** スキームを使うアプリ内のコンテンツを含む URI である場合は、URI を受け取る [**BitmapImage**](https://msdn.microsoft.com/en-us/library/windows/apps/br243238.aspx) コンストラクターを使います。 イメージ ソースが使えるようになるまで代替コンテンツを表示することが必要となる場合など、イメージ ソースの取得やデコードについてタイミングの問題がある場合は、[**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imageopened.aspx) イベントを処理することも検討してください。
+-   コードを使って [
+              **ImageBrush**
+            ](https://msdn.microsoft.com/library/windows/apps/BR210101) を定義する場合、[**ImageSource**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.imagebrush.imagesourceproperty.aspx) では [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/BR243235) (URI ではない) が必要です。 ソースがストリームである場合は、[**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522) メソッドを使って値を初期化します。 ソースが、**ms-appx**  スキームまたは **ms-resource** スキームを使うアプリ内のコンテンツを含む URI である場合は、URI を受け取る [**BitmapImage**](https://msdn.microsoft.com/en-us/library/windows/apps/br243238.aspx) コンストラクターを使います。 イメージ ソースが使えるようになるまで代替コンテンツを表示することが必要となる場合など、イメージ ソースの取得やデコードについてタイミングの問題がある場合は、[**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imageopened.aspx) イベントを処理することも検討してください。
 -   [
             **WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) については、[**SourceName**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.sourcename.aspx) プロパティを最近リセットした場合、または [**WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702) のコンテンツをコードを使って変更した場合に、[**Redraw**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.redraw.aspx) を呼び出す必要があります。
 
@@ -188,6 +194,6 @@ blueBrush = ref new SolidColorBrush(Windows::UI::Colors::Blue);
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

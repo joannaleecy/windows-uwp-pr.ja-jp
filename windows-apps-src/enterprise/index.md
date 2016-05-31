@@ -12,7 +12,7 @@ author: awkoren
 
 このロードマップでは、Windows 10 ユニバーサル Windows プラットフォーム (UWP) の主要なエンタープライズ機能の概要について説明します。 Windows 10 では、アプリを 1 回記述するだけで、すべてのデバイスに展開できます。つまり、すべてのデバイスに対応した 1 つのアプリを作成できます。 これにより、企業が必要とするセキュリティ、管理、構成をコントロールしながら、ユーザーが求めるすばらしいエクスペリエンスを構築できます。
 
-**注** この記事は、エンタープライズ UWP アプリを作成する開発者を対象としています。 一般的な UWP 開発については、「[Windows 10 アプリに関するハウツー ガイド](https://msdn.microsoft.com/library/windows/apps/mt244352)」をご覧ください。 WPF、Windows フォーム、Win32 開発については、[デスクトップのデベロッパー センター](https://dev.windows.com/en-us/desktop)をご覧ください。 IT 担当者向けのリソース (Windows 10 の展開やエンタープライズ セキュリティ機能の管理など) については、TechNet の「[Windows 10](https://msdn.microsoft.com/library/dn986868)」をご覧ください。
+**注**  この記事は、エンタープライズ UWP アプリを作成する開発者を対象としています。 一般的な UWP 開発については、「[Windows 10 アプリに関するハウツー ガイド](https://msdn.microsoft.com/library/windows/apps/mt244352)」をご覧ください。 WPF、Windows フォーム、Win32 開発については、[デスクトップのデベロッパー センター](https://dev.windows.com/en-us/desktop)をご覧ください。 IT 担当者向けのリソース (Windows 10 の展開やエンタープライズ セキュリティ機能の管理など) については、TechNet の「[Windows 10](https://msdn.microsoft.com/library/dn986868)」をご覧ください。
 
  
 
@@ -111,6 +111,6 @@ Prism について詳しくは、[GitHub リポジトリ](https://github.com/Pri
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

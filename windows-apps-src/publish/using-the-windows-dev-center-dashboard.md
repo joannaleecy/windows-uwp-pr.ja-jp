@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: Windows デベロッパー センター ダッシュボードを利用すると、Windows デバイス向けのすべてのアプリの管理と申請を 1 か所で行うことができます。
 title: Windows デベロッパー センター ダッシュボードの使用
 ms.assetid: FB63F773-71AC-464E-BDE1-21C429FB2B0B
@@ -32,6 +33,6 @@ Windows 8.1、Windows Phone 8.1、またはそれ以前の OS バージョン向
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

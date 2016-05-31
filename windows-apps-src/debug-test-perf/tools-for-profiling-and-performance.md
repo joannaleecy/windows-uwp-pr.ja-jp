@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 ms.assetid: EAC34672-5C12-402D-920B-6F2835EA5ACE
 title: プロファイリングとパフォーマンスに関するツール
 description: Microsoft には、ユニバーサル Windows プラットフォーム (UWP) アプリのパフォーマンスを改善する際に役立つツールがいくつか用意されています。
@@ -15,15 +16,15 @@ Microsoft には、ユニバーサル Windows プラットフォーム (UWP) ア
 
 |           |             |
 |-----------|-------------|
-| [Visual Studio 診断ツールを使った Windows ストア アプリのパフォーマンスの分析](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh696636.aspx) | Visual Studio プロファイラーには、プログラムの実行時に時間がかかっているアプリのコードの場所が表示されるため、アプリ、関数、アルゴリズムのパフォーマンスのボトルネックを見つけることができます。 |
+| [Visual Studio 診断ツールを使った Windows ストア アプリのパフォーマンスの分析](https://msdn.microsoft.com/library/windows/apps/xaml/hh696636.aspx) | Visual Studio プロファイラーには、プログラムの実行時に時間がかかっているアプリのコードの場所が表示されるため、アプリ、関数、アルゴリズムのパフォーマンスのボトルネックを見つけることができます。 |
 | [XAML パフォーマンス: XAML を使って構築されたユニバーサル Windows アプリのエクスペリエンスを最大化する手法](https://channel9.msdn.com/Events/Build/2015/3-698) | この //build セッションでは、新しいプラットフォーム機能、新しいツール機能、XAML ベースのユニバーサル Windows アプリのパフォーマンスを大幅に高める新しい手法について説明します。 |
 | [Visual Studio 2015 の新しい XAML ツール](https://channel9.msdn.com/Events/Build/2015/2-697) | この //build セッションでは、再設計された Blend のエクスペリエンス、UI デバッグ ツール、XAML エディターの拡張機能など、Visual Studio 2015 のいくつかの新機能について説明します。 |
-| [Windows Performance Analyzer](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh448170.aspx) | Windows アセスメント & デプロイメント キット (Windows ADK) に付属する Windows Performance Analyzer (WPA) は、Windows Performance Recorder (WPR)、Xperf、または Assessment Platform で実行される評価により記録される Windows イベント トレーシング (ETW) イベントのグラフとデータ テーブルを作成するツールです。 WPA は、分析のためにどのイベント トレース ログ (ETL) ファイルでも開くことができます。 |
+| [Windows Performance Analyzer](https://msdn.microsoft.com/library/windows/apps/xaml/hh448170.aspx) | Windows アセスメント & デプロイメント キット (Windows ADK) に付属する Windows Performance Analyzer (WPA) は、Windows Performance Recorder (WPR)、Xperf、または Assessment Platform で実行される評価により記録される Windows イベント トレーシング (ETW) イベントのグラフとデータ テーブルを作成するツールです。 WPA は、分析のためにどのイベント トレース ログ (ETL) ファイルでも開くことができます。 |
 
  
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

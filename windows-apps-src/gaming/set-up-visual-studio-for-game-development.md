@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: ゲーム プログラミング用の Visual Studio ツール
 description: Visual Studio で利用できる DirectX 固有のツールの概要。
 ms.assetid: 43137bfc-7876-70e0-515c-4722f68bd064
@@ -133,7 +134,7 @@ Visual Studio には、グラフィックス固有のデバッグ ツールが�
 
 詳しくは、「[DirectX グラフィックスのデバッグ](https://msdn.microsoft.com/library/windows/apps/hh315751.aspx)」をご覧ください。
 
-> **注**  この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
+> **注:** この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
  
 
@@ -146,6 +147,6 @@ Visual Studio には、グラフィックス固有のデバッグ ツールが�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

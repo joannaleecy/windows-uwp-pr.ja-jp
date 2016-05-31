@@ -1,16 +1,13 @@
 ---
+author: mijacobs
 Description: ユニバーサル Windows プラットフォーム (UWP) アプリのナビゲーションは、ナビゲーション構造、ナビゲーション要素、システム レベルの機能から成る柔軟なモデルに基づいています。
 title: ユニバーサル Windows プラットフォーム (UWP) アプリのナビゲーション デザインの基本
 ms.assetid: B65D33BA-AAFE-434D-B6D5-1A0C49F59664
-label: ナビゲーション デザインの基本
+label: Navigation design basics
 template: detail.hbs
 ---
 
 #  UWP アプリのナビゲーション デザインの基本
-
-
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
-
 
 ユニバーサル Windows プラットフォーム (UWP) アプリのナビゲーションは、ナビゲーション構造、ナビゲーション要素、システム レベルの機能から成る柔軟なモデルに基づいています。 これら全体で、アプリ、ページ、コンテンツ間での移動の際にさまざまな直感的なユーザー エクスペリエンスを実現します。
 
@@ -119,7 +116,7 @@ UWP アプリにおいて効果的で便利なマルチページ ナビゲーシ
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Tabs and pivot](../controls-and-patterns/tabs-pivot.md)</p>
+<td align="left"><p>[タブとピボット](../controls-and-patterns/tabs-pivot.md)</p>
 <p><img src="images/nav/nav-tabs-sm-300.png" alt="Tab-based navigation" /></p></td>
 <td align="left">同じレベルにあるページへのリンクの永続的な一覧を表示します。
 <p>タブ/ピボットを使う場合</p>
@@ -132,7 +129,7 @@ UWP アプリにおいて効果的で便利なマルチページ ナビゲーシ
 <p><img src="images/food-truck-finder/uap-foodtruck-tabletphone-sbs-sm-400.png" alt="Example of an app using tabs/pivots pattern" /></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Nav pane](../controls-and-patterns/nav-pane.md)</p>
+<td align="left"><p>[ナビゲーション ウィンドウ](../controls-and-patterns/nav-pane.md)</p>
 <p><img src="images/nav/nav-navpane-4page-thumb.png" alt="A navigation pane" /></p></td>
 <td align="left">トップレベルのページへのリンクの一覧を表示します。
 <p>ナビゲーション ウィンドウを使う場合</p>
@@ -177,7 +174,7 @@ UWP アプリにおいて効果的で便利なマルチページ ナビゲーシ
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Hub](../controls-and-patterns/hub.md)</p>
+<td align="left"><p>[ハブ](../controls-and-patterns/hub.md)</p>
 <p><img src="images/higsecone-hub-thumb.png" alt="Hub" /></p></td>
 <td align="left">ハブは、子ページのプレビュー/概要を提供する特殊な種類のナビゲーション コントロールです。 ナビゲーション ウィンドウやタブとは異なり、ページ自体に埋め込まれているリンクやセクション ヘッダーを使って、子ページへのナビゲーションを実現します。
 <p>ハブを使う場合</p>
@@ -188,7 +185,7 @@ UWP アプリにおいて効果的で便利なマルチページ ナビゲーシ
 <p></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Master/details](../controls-and-patterns/master-details.md)</p>
+<td align="left"><p>[マスター/詳細](../controls-and-patterns/master-details.md)</p>
 <p><img src="images/higsecone-masterdetail-thumb.png" alt="Master/details" /></p></td>
 <td align="left">項目の概要の一覧 (マスター ビュー) が表示されます。 項目を選ぶと、対応する項目ページが詳細セクションに表示されます。
 <p>マスター/詳細要素を使う場合</p>
@@ -221,7 +218,7 @@ UWP アプリにおいて効果的で便利なマルチページ ナビゲーシ
 <tbody>
 <tr class="odd">
 <td align="left">戻る</td>
-<td align="left"><p>ユーザーは、アプリ内のナビゲーション履歴や、デバイスによってはアプリ間を移動できます。 詳細については、この後の「[Make your app work well with system-level navigation features](#backnavigation)」セクションをご覧ください。</p></td>
+<td align="left"><p>ユーザーは、アプリ内のナビゲーション履歴や、デバイスによってはアプリ間を移動できます。 詳細については、この後の「[システム レベルのナビゲーション機能がアプリで正しく動作するようにする」](#backnavigation)セクションをご覧ください。</p></td>
 </tr>
 </tbody>
 </table>
@@ -256,7 +253,7 @@ UWP アプリにおいて効果的で便利なマルチページ ナビゲーシ
 ナビゲーション要素を連結してアプリに最適なナビゲーション エクスペリエンスを作成することができます。 たとえば、アプリでトップ レベルのページへのアクセスにはナビゲーション ウィンドウを、第 2 レベルのページへのアクセスにはタブを使用することができます。
 
 
-\[この記事には、UWP アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
+
 
 
 
@@ -267,6 +264,6 @@ UWP アプリにおいて効果的で便利なマルチページ ナビゲーシ
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

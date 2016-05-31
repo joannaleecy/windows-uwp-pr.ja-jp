@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: アプリを一時停止する方法 (DirectX と C++)
 description: このトピックでは、ユニバーサル Windows プラットフォーム (UWP) DirectX アプリをシステムが一時停止するときに重要なシステム状態とアプリ データを保存する方法について説明します。
 ms.assetid: 5dd435e5-ec7e-9445-fed4-9c0d872a239e
@@ -7,7 +8,7 @@ ms.assetid: 5dd435e5-ec7e-9445-fed4-9c0d872a239e
 # アプリを一時停止する方法 (DirectX と C++)
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 このトピックでは、ユニバーサル Windows プラットフォーム (UWP) DirectX アプリをシステムが一時停止するときに重要なシステム状態とアプリ データを保存する方法について説明します。
 
@@ -149,6 +150,6 @@ void DX::DeviceResources::Trim()
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

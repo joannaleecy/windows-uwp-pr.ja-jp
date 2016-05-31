@@ -1,4 +1,5 @@
 ---
+author: TylerMSFT
 ms.assetid: 066711E0-D5C4-467E-8683-3CC64EDBCC83
 title: C# または Visual Basic での非同期 API の呼び出し
 description: ユニバーサル Windows プラットフォーム (UWP) には、時間がかかる可能性がある操作を実行しているときでも、アプリの応答性を保つために、さまざまな非同期 API が用意されています。
@@ -23,9 +24,8 @@ description: ユニバーサル Windows プラットフォーム (UWP) には、
 
 この例では、非同期メソッド [**SyndicationClient.RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460) を呼び出して、その結果を待機し、ブログから記事の一覧を取得します。
 
-> [!div class="tabbedCodeSnippets" data-resources="OutlookServices.Calendar"]
-[!code-csharp[Main](./AsyncSnippets/csharp/MainPage.xaml.cs#SnippetDownloadRSS)]
-[!code-vb[Main](./AsyncSnippets/vbnet/MainPage.xaml.vb#SnippetDownloadRSS)]
+> [!div class="tabbedCodeSnippets" data-resources="OutlookServices.Calendar"] [!code-csharp[Main](./AsyncSnippets/csharp/MainPage.xaml.cs#SnippetDownloadRSS)]
+          [!code-vb[Main](./AsyncSnippets/vbnet/MainPage.xaml.vb#SnippetDownloadRSS)]
 
 この例には、いくつかの重要なポイントがあります。 まず、`SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)` の行では、非同期メソッド [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460) を呼び出す際に、**await** 演算子が使われています。 **await** 演算子は、非同期メソッドを呼び出していることをコンパイラに伝えていると考えることができます。これにより、コンパイラが追加作業を行うようになります。 もう 1 つは、イベント ハンドラーの宣言に **async** というキーワードが含まれている点です。 **await** 演算子を使うメソッドのメソッド宣言には、このキーワードを含める必要があります。
 
@@ -59,7 +59,9 @@ description: ユニバーサル Windows プラットフォーム (UWP) には、
 | [**FileOpenPicker.PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/JJ635275) | [**IAsyncOperation&lt;StorageFile&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206598)                                                                                | [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171)          |
 | [**XmlDocument.SaveToFileAsync**](https://msdn.microsoft.com/library/windows/apps/BR206284)                 | [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580)                                                                                                           | **void**                                          |
 | [**InkStrokeContainer.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/Hh701757)               | [**IAsyncActionWithProgress&lt;UInt64&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206580withprogress_1)                                                                   | **void**                                          |
-| [**DataReader.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/BR208135)                            | [**DataReaderLoadOperation**](https://msdn.microsoft.com/library/windows/apps/BR208120)、**IAsyncOperation&lt;UInt32&gt;** を実装するカスタムの結果クラス | [**UInt32**](T:System.UInt32)                     |
+| [**DataReader.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/BR208135)                            | [
+              **DataReaderLoadOperation**
+            ](https://msdn.microsoft.com/library/windows/apps/BR208120)、**IAsyncOperation&lt;UInt32&gt;** を実装するカスタムの結果クラス | [**UInt32**](T:System.UInt32)                     |
 
  
 
@@ -109,6 +111,6 @@ Windows 7 themes: the distinctive artwork of Cheng Ling, 7/20/2011 9:53:07 AM -0
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

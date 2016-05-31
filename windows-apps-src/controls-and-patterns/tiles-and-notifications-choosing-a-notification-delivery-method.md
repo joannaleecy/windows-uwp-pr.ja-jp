@@ -1,15 +1,16 @@
 ---
+author: mijacobs
 Description: この記事では、タイルとバッジの更新およびトースト通知のコンテンツを配信するための 4 つの通知オプション (ローカル、スケジュール、定期的、プッシュ) について説明します。
 title: 通知配信方法の選択
 ms.assetid: FDB43EDE-C5F2-493F-952C-55401EC5172B
-label: 通知配信方法の選択
+label: Choose a notification delivery method
 template: detail.hbs
 ---
 
 # 通知配信方法の選択
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+
 
 
 この記事では、タイルとバッジの更新およびトースト通知のコンテンツを配信するための 4 つの通知オプション (ローカル、スケジュール、定期的、プッシュ) について説明します。 タイルやトースト通知では、ユーザーがアプリを直接利用していないときでもユーザーに情報を伝えることができます。 アプリおよび配信する情報の性質と内容から、シナリオに最適な通知方法を決めることができます。
@@ -146,10 +147,6 @@ API 呼び出しはローカルですが、通知では Web 画像を参照で�
 -   [プッシュ通知のガイドライン](https://msdn.microsoft.com/library/windows/apps/hh761462)
 -   [ユニバーサル Windows プラットフォーム (UWP) の通知コード サンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
-**注**  
-この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
-
- 
 
 ## <span id="related_topics"></span>関連トピック
 
@@ -170,6 +167,6 @@ API 呼び出しはローカルですが、通知では Web 画像を参照で�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

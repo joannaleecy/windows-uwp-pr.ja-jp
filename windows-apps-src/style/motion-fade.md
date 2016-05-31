@@ -1,4 +1,5 @@
 ---
+author: mijacobs
 Description: フェード アニメーションは、項目を画面に表示したり、項目を画面から非表示にするときに使います。 一般的なフェード アニメーションは、フェード インとフェード アウトの 2 つです。
 title: UWP アプリでのフェード アニメーション
 ms.assetid: 975E5EE3-EFBE-4159-8D10-3C94143DD07F
@@ -7,9 +8,6 @@ template: detail.hbs
 ---
 
 # フェード アニメーション
-
-
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 フェード アニメーションは、項目を画面に表示したり、項目を画面から非表示にするときに使います。 一般的なフェード アニメーションは、フェード インとフェード アウトの 2 つです。
 
@@ -45,6 +43,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO3-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: XAML で使われる空白処理規則について説明します。
 title: XAML と空白
 ms.assetid: 025F4A8E-9479-4668-8AFD-E20E7262DC24
@@ -48,6 +49,6 @@ XML と同じように、XAML での空白文字には、スペース、改行�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

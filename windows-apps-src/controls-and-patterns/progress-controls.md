@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: プログレス コントロールは、時間のかかる操作が進行中であることを示すフィードバックをユーザーに返します。
 title: プログレス コントロールのガイドライン
 ms.assetid: FD53B716-C43D-408D-8B07-522BC1F3DF9D
-label: プログレス コントロール
+label: Progress controls
 template: detail.hbs
 ---
 # プログレス コントロール
@@ -73,10 +74,18 @@ Windows Phone アプリ: ステータス バーの進行状況インジケータ
 進行状況確定バーには、アプリで実行された作業量が示されます。 作業の進行に合わせて、バーが塗りつぶされます。 時間単位、バイト単位、ファイル単位などの定量化できる測定単位で残りの作業量を推定できる場合は、進行状況確定バーを使います。
 
 進行状況バーには、進行状況の設定と判断のためのプロパティが複数あります。
-- [**IsIndeterminate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx): 進行状況バーが不定であるかどうかを指定します。 **false** に設定すると、進行状況確定バーが作成されます。
-- [**Minimum**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.rangebase.minimum.aspx): 値の範囲の開始点。 既定値は 0.0 です。
-- [**Maximum**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.rangebase.maximum.aspx): 値の範囲の終了点。 既定値は 1.0 です。 
-- [**Value**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.rangebase.value.aspx): 現在の進行状況を示す数値。 ファイルのダウンロードの進行状況を表示する場合、この値はダウンロード済みのバイト数になります (さらに、Maximum を、ダウンロードする全バイト数に設定します)。
+- [
+              **IsIndeterminate**
+            ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx): 進行状況バーが不定であるかどうかを指定します。 **false** に設定すると、進行状況確定バーが作成されます。
+- [
+              **Minimum**
+            ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.rangebase.minimum.aspx): 値の範囲の開始点。 既定値は 0.0 です。
+- [
+              **Maximum**
+            ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.rangebase.maximum.aspx): 値の範囲の終了点。 既定値は 1.0 です。 
+- [
+              **Value**
+            ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.rangebase.value.aspx): 現在の進行状況を示す数値。 ファイルのダウンロードの進行状況を表示する場合、この値はダウンロード済みのバイト数になります (さらに、Maximum を、ダウンロードする全バイト数に設定します)。
  
 次の例では、値ベースの進行状況確定バーを示しています。 
 
@@ -266,18 +275,24 @@ stackPanel1.Children.Add(progressRing1);
     必要がない場合は、プログレス コントロールを表示しません。
 
 -   **タスクの完了に要する時間に関する情報があるか?**
-    -   **ある場合:** **タスクを完了するまでに 2 秒より長くかかるか?**
+    -   **ある場合:**
+            **タスクを完了するまでに 2 秒より長くかかるか?**
         -   **かかる場合:** 進行状況確定バーを使います。 10 秒より長くかかるタスクの場合は、タスクを取り消す方法を用意します。
         -   **かからない場合:** プログレス コントロールを表示しません。
 
-    -   **ない場合:** **タスクが完了するまでユーザーは UI を操作できないか?**
-        -   **できない場合:** **このタスクは、操作の特定の詳細をユーザーが認識する必要がある複数手順の一部か?**
+    -   **ない場合:**
+            **タスクが完了するまでユーザーは UI を操作できないか?**
+        -   **できない場合:**
+            **このタスクは、操作の特定の詳細をユーザーが認識する必要がある複数手順の一部か?**
             -   **そうである場合:** 画面の中央に水平に配置された状態テキストがある進行状況不定リングを使います。
             -   **そうではない場合:** 画面の中央にテキストのない進行状況不定リングを使います。
-        -   **できる場合:** **これは主要アクティビティか?**
-            -   **そうである場合:** **進行状況は UI の特定の 1 つの要素に関連しているか?**
+        -   **できる場合:**
+            **これは主要アクティビティか?**
+            -   **そうである場合:**
+            **進行状況は UI の特定の 1 つの要素に関連しているか?**
                 -   **関連している場合:** その関連する UI 要素の横に状態テキストがあるインラインの進行状況不定リングを使います。
-                -   **関連していない場合:** **大量のデータが一覧に読み込まれているか?**
+                -   **関連していない場合:**
+            **大量のデータが一覧に読み込まれているか?**
                     -   **読み込まれている場合:** 受信したコンテンツを表すプレースホルダーの上部の進行状況不定バーを使います。
                     -   **読み込まれていない場合:** 画面またはサーフェイスの上部の進行状況不定バーを使います。
             -   **そうではない場合:** 画面の上隅の状態テキストを使います。
@@ -293,6 +308,6 @@ stackPanel1.Children.Add(progressRing1);
 - [Windows Phone 向けのカスタム進行状況不定バーを作成する方法](http://go.microsoft.com/fwlink/p/?LinkID=392426)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

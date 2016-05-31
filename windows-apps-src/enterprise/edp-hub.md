@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 Description: 'ここでは、エンタープライズ データ保護 (EDP) とファイル、バッファー、クリップボード、ネットワーク、バックグラウンド タスク、ロックの背後でのデータ保護との関係について、開発者向けに詳しく説明します。'
 MS-HAID: 'dev\_enterprise.edp\_hub'
 MSHAttr: 'PreferredLib:/library/windows/apps'
@@ -8,7 +9,7 @@ title: 'エンタープライズ データ保護 (EDP)'
 
 # エンタープライズ データ保護 (EDP)
 
-__注__ Windows 10 バージョン 1511 (ビルド 10586) またはそれ以前のバージョンでは、エンタープライズ データ保護 (EDP) ポリシーを適用できません。
+__注:__ Windows 10 バージョン 1511 (ビルド 10586) またはそれ以前のバージョンでは、エンタープライズ データ保護 (EDP) ポリシーを適用できません。
 
 ここでは、エンタープライズ データ保護 (EDP) とファイル、バッファー、クリップボード、ネットワーク、バックグラウンド タスク、ロックの背後でのデータ保護との関係について、開発者向けに詳しく説明します。
 
@@ -174,7 +175,11 @@ private void SwitchMailbox(Mailbox targetMailbox)
 
 このシナリオでは、エンタープライズ メールと個人用メールの両方を処理するように設計された対応型のメール アプリの例を取り上げます。 安全な "ロックの背後でのデータ保護" (DPL) ポリシーを管理している組織内でアプリが実行されている場合、そのアプリでは、デバイスがロックされている間、メモリからすべての機密データを削除する必要があります。 これを実行するには、(DPL が有効な場合に) デバイスがロックされたときとロックが解除されたときに通知を受け取るように、[**ProtectionPolicyManager.ProtectedAccessSuspending**](https://msdn.microsoft.com/library/windows/apps/dn705787) イベントと [**ProtectionPolicyManager.ProtectedAccessResumed**](https://msdn.microsoft.com/library/windows/apps/dn705786) イベントに登録します。
 
-[**ProtectedAccessSuspending**](https://msdn.microsoft.com/library/windows/apps/dn705787) は、デバイスにプロビジョニングされたデータ保護キーが一時的に削除される前に発生します。 デバイスがロックされたときにこれらのキーが削除される理由は、デバイスのロック中、場合によってはデバイスが所有者の手元から離れている間に、暗号化されたデータに対して未承認のアクセスが行われないようにするためです。 [**ProtectedAccessResumed**](https://msdn.microsoft.com/library/windows/apps/dn705786) は、デバイスのロックが解除され、キーが再び利用可能になったときに発生します。
+[
+              **ProtectedAccessSuspending**
+            ](https://msdn.microsoft.com/library/windows/apps/dn705787) は、デバイスにプロビジョニングされたデータ保護キーが一時的に削除される前に発生します。 デバイスがロックされたときにこれらのキーが削除される理由は、デバイスのロック中、場合によってはデバイスが所有者の手元から離れている間に、暗号化されたデータに対して未承認のアクセスが行われないようにするためです。 [
+              **ProtectedAccessResumed**
+            ](https://msdn.microsoft.com/library/windows/apps/dn705786) は、デバイスのロックが解除され、キーが再び利用可能になったときに発生します。
 
 アプリでこれらの 2 つのイベントを処理すれば、[**DataProtectionManager**](https://msdn.microsoft.com/library/windows/apps/dn706017) によって、メモリ内の機密性の高いコンテンツをすべて確実に保護できます。 また、システムが機密データをメモリ内にキャッシュしないように、保護されたファイルに対して開かれているファイル ストリームをすべて閉じる必要があります。 これはいくつかの方法で行うことができます。 **StorageFile** の Open メソッドから返されたファイル ストリームを閉じるには、ストリームの **Dispose** メソッドを呼び出します。 ストリームを使用するスコープは、using ステートメント (C\# または VB) で指定できます。 または、ストリームを **DataReader** オブジェクトか **DataWriter** オブジェクトでラップし、そのオブジェクトで **Dispose** メソッドまたは using ステートメントを使う方法もあります。
 
@@ -208,7 +213,7 @@ private DisplayedMail currentlyDisplayedMail = new DisplayedMail()
 // Gets the app's protected mail database file, then opens and stores a stream on it.
 private async void OpenMailDatabase()
 {
-    // Only attempt to open the database file stream if we know it&#39;s closed.
+    // Only attempt to open the database file stream if we know it's closed.
     if (this.mailDatabaseStream == null)
     {
         StorageFolder appDataStorageFolder = ApplicationData.Current.LocalFolder;
@@ -234,7 +239,7 @@ private void AppSetup()
 // Background work called when the app receives an email.
 private async void AppMailReceived(string fauxEmail)
 {
-    // Only attempt to write to the database file stream if we know it&#39;s open.
+    // Only attempt to write to the database file stream if we know it's open.
     if (this.mailDatabaseStream != null)
     {
         IBuffer emailAsBuffer = CryptographicBuffer.ConvertStringToBinary
@@ -340,7 +345,7 @@ private string mailIdentity = "contoso.com";
 void MailAppSetup()
 {
     ProtectionPolicyManager.ProtectedContentRevoked += ProtectionPolicyManager_ProtectedContentRevoked;
-    // Code goes here to set up mailbox for &#39;mailIdentity&#39;.
+    // Code goes here to set up mailbox for 'mailIdentity'.
 }
 
 private void ProtectionPolicyManager_ProtectedContentRevoked(object sender, ProtectedContentRevokedEventArgs e)
@@ -352,7 +357,7 @@ private void ProtectionPolicyManager_ProtectedContentRevoked(object sender, Prot
         return;
     }
 
-    // Code goes here to delete any metadata associated with &#39;mailIdentity&#39;.
+    // Code goes here to delete any metadata associated with 'mailIdentity'.
 }
 ```
 
@@ -373,6 +378,6 @@ Windows.Security.EnterpriseData.ProtectionPolicyManager.RevokeContent("contoso.c
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

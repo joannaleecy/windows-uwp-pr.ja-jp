@@ -1,6 +1,7 @@
 ---
+author: mcleblanc
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
-description: このケース スタディは、「Bookstore」で説明されている情報に基づいて作成されています。ここでは、最初に、グループ化されたデータを LongListSelector に表示する Windows Phone Silverlight アプリについて取り上げます。
+description: このケース スタディは、Bookstore で説明されている情報に基づいて作成されています。ここでは、最初に、グループ化されたデータを LongListSelector に表示する Windows Phone Silverlight アプリについて取り上げます。
 title: Windows Phone Silverlight から UWP へのケース スタディ: Bookstore2
 ---
 
@@ -14,9 +15,9 @@ title: Windows Phone Silverlight から UWP へのケース スタディ: Bookst
 
 ## ダウンロード
 
-[Bookstore2WPSL8 Windows Phone Silverlight アプリのダウンロード](http://go.microsoft.com/fwlink/p/?linkid=522601)。
+[Bookstore2WPSL8 Windows Phone Silverlight アプリをダウンロードします](http://go.microsoft.com/fwlink/p/?linkid=522601)。
 
-[Bookstore2Universal\_10 Windows 10 アプリのダウンロード](http://go.microsoft.com/fwlink/?linkid=532952)。
+[Bookstore2Universal\_10 Windows 10 アプリをダウンロードします](http://go.microsoft.com/fwlink/?linkid=532952)。
 
 ##  Windows Phone Silverlight アプリ
 
@@ -61,7 +62,7 @@ MainPage.xaml では、初期の移植作業のために次の変更を行う必
 
 **LongListSelector** を [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) コントロールに置き換えるには、いくつかの手順があります。この手順を始めましょう。 **LongListSelector** はグループ化されたデータ ソースに直接バインドされますが、**SemanticZoom** には [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) コントロールや [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) コントロールが含まれており、これらのコントロールは [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833) アダプターを経由してデータに間接的にバインドされます。 **CollectionViewSource** はマークアップ内にリソースとして含まれている必要があります。そのため、最初にこの項目を MainPage.xaml の `<Page.Resources>` 内にあるマークアップに追加します。
 
-```xaml
+```xml
     <CollectionViewSource
         x:Name="AuthorHasACollectionOfBookSku"
         Source="{Binding Authors}"
@@ -72,7 +73,7 @@ MainPage.xaml では、初期の移植作業のために次の変更を行う必
 
 次に、`phone:LongListSelector` をこのマークアップに置き換えます。これにより、暫定的な **SemanticZoom** が機能します。
 
-```xaml
+```xml
     <SemanticZoom>
         <SemanticZoom.ZoomedInView>
             <ListView
@@ -97,7 +98,7 @@ MainPage.xaml では、初期の移植作業のために次の変更を行う必
 
 `AuthorNameJumpListStyle` は不要になりました (ただしすべてが不要になったわけではありません)。 縮小表示ビューで必要となるのは、グループ (このアプリでは著者) のデータ テンプレートだけです。 ここでは、`AuthorNameJumpListStyle` スタイルを削除し、このスタイルを次のデータ テンプレートに置き換えます。
 
-```xaml
+```xml
    <DataTemplate x:Key="ZoomedOutAuthorTemplate">
         <Border Margin="9.6,0.8" Background="{Binding Converter={StaticResource JumpListItemBackgroundConverter}}">
             <TextBlock Margin="9.6,0,9.6,4.8" Text="{Binding Group.Name}" Style="{StaticResource SubtitleTextBlockStyle}"
@@ -140,7 +141,7 @@ Phone アプリを基にして作業を開始したため、この段階のプ�
 -   `AuthorGroupHeaderTemplateWide` の内容を `<TextBlock Style="{StaticResource SubheaderTextBlockStyle}" Text="{Binding Name}"/>` に置き換えます。
 -   `ZoomedOutAuthorTemplateWide` の内容を次のように置き換えます。
 
-```xaml
+```xml
     <Grid HorizontalAlignment="Left" Width="250" Height="250" >
         <Border Background="{StaticResource ListViewItemPlaceholderBackgroundThemeBrush}"/>
         <StackPanel VerticalAlignment="Bottom" Background="{StaticResource ListViewItemOverlayBackgroundThemeBrush}">
@@ -153,7 +154,7 @@ Phone アプリを基にして作業を開始したため、この段階のプ�
 
 -   `BookTemplateWide` の内容を次のように置き換えます。
 
-```xaml
+```xml
     <Grid HorizontalAlignment="Left" Width="250" Height="250">
         <Border Background="{StaticResource ListViewItemPlaceholderBackgroundThemeBrush}"/>
         <Image Source="{Binding CoverImage}" Stretch="UniformToFill"/>
@@ -171,7 +172,7 @@ Phone アプリを基にして作業を開始したため、この段階のプ�
 
 -   ワイド状態では、拡大表示のグループ間の垂直方向の間隔を大きくする必要があります。 項目パネル テンプレートを作成し参照することで、必要な結果を得ることができます。 マークアップは次のようになります。
 
-```xaml
+```xml
    <ItemsPanelTemplate x:Key="ZoomedInItemsPanelTemplate">
         <ItemsWrapGrid Orientation="Horizontal" GroupPadding="0,0,0,20"/>
     </ItemsPanelTemplate>
@@ -187,7 +188,7 @@ Phone アプリを基にして作業を開始したため、この段階のプ�
 
 -   最後に、適切な Visual State Manager のマークアップを `LayoutRoot` の最初の子として追加します。
 
-```xaml
+```xml
     <Grid x:Name="LayoutRoot" ... >
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
@@ -215,7 +216,7 @@ Phone アプリを基にして作業を開始したため、この段階のプ�
 -   `narrowSeZo`で、縮小表示ビューでのグループ ヘッダーと著者は、伸縮表示ではなく左揃えで表示されます。ここではその設定を行います。 [
             **HorizontalContentAlignment**](https://msdn.microsoft.com/library/windows/apps/br209417) を `Stretch` に設定して、拡大表示ビュー用の [**HeaderContainerStyle**](https://msdn.microsoft.com/library/windows/apps/dn251841) を作成します。 次に、同じ [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) を含む、縮小表示ビュー用の [**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/br242817) を作成します。 結果は次のようになります。
 
-```xaml
+```xml
    <Style x:Key="AuthorGroupHeaderContainerStyle" TargetType="ListViewHeaderItem">
         <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
     </Style>
@@ -246,8 +247,7 @@ Phone アプリを基にして作業を開始したため、この段階のプ�
 
 ![デスクトップ デバイスで動作中の、移植された Windows 10 アプリ (2 つのサイズのウィンドウによる拡大表示)](images/w8x-to-uwp-case-studies/c02-07-desk10-zi-ported.png)
 
-デスクトップ デバイスで動作中の、移植された Windows 10 アプリ (2 つのサイズのウィンドウによる拡大表示)
- 
+デスクトップ デバイスで動作中の、移植された Windows 10 アプリ (2 つのサイズのウィンドウによる縮小表示) 
 ![デスクトップ デバイスで動作中の、移植された Windows 10 アプリ (2 つのサイズのウィンドウによる縮小表示)](images/w8x-to-uwp-case-studies/c02-08-desk10-zo-ported.png)
 
 デスクトップ デバイスで動作中の、移植された Windows 10 アプリ (2 つのサイズのウィンドウによる縮小表示)
@@ -264,14 +264,14 @@ Phone アプリを基にして作業を開始したため、この段階のプ�
 
 このセクションでは、UWP を使うようにアプリを移行することによって利用可能になる機能の例を紹介します。 ここでは、**CollectionViewSource** を使ってアクセスするときにビュー モデルの柔軟性を向上させるために実行できるオプションの手順について説明します。 Windows Phone Silverlight アプリ Bookstore2WPSL8 から移植したビュー モデル (ViewModel\\BookstoreViewModel.cs 内のソース ファイル) には、Author という名前のクラスが含まれています。このクラスは **List&lt;T&gt;** から派生したクラスです (この **T** は BookSku になります)。 これは、Author クラスが BookSku の*グループである*ことを意味します。
 
-**CollectionViewSource.Source** を Authors にバインドするとき、Authors 内の各 Author が*何か*のグループであるということを伝える必要があります。 このケース スタディでは、**CollectionViewSource** に依存して、Author が BookSku のグループであることを特定しています。 この設定でも機能しますが、柔軟性はありません。 Author が BookSku のグループ*および*著者の住所のグループの*両方*を表す必要がある場合は、どうしたらよいでしょうか。 Author を、これらの両方のグループにすることは*できません*。 ただし、Author に任意の数のグループを*保持させる*ことはできます。 これが解決策となります。つまり、現在使っている "*グループである*" というパターンの代わりに、またはこのパターンに加えて、"*グループを保持する*" というパターンを使います。 手順は次のとおりです。
+**CollectionViewSource.Source** を Authors にバインドするとき、Authors 内の各 Author が*何か*のグループであるということを伝える必要があります。 このケース スタディでは、**CollectionViewSource** に依存して、Author が BookSku のグループであることを特定しています。 この設定でも機能しますが、柔軟性はありません。 Author が BookSku のグループ*および*著者の住所のグループの*両方*を表す必要がある場合は、どうしたらよいでしょうか。 Author を、これらの両方のグループにすることは*できません*。 ただし、Author に任意の数のグループを*保持させる*ことはできます。 これが解決策となります。つまり、現在使っている "*グループである*" というパターンの代わりに、またはこのパターンに加えて、"*グループを保持する*" というパターンを使います。 以下にその方法を示します。
 
 -   Author が **List&lt;T&gt;** から派生しないように変更します。
 -   次のフィールドを Author に追加します: `private ObservableCollection<BookSku> bookSkus = new ObservableCollection<BookSku>();`。
 -   次のプロパティを Author に追加します: `public ObservableCollection<BookSku> BookSkus { get { return this.bookSkus; } }`。
 -   当然ですが、上の 2 つの手順を繰り返して、必要な数のグループを Author に追加できます。
 -   AddBookSku メソッドの実装を `this.BookSkus.Add(bookSku);` に変更します。
--   これで、Author は少なくとも 1 つのグループを*保持する*ようになりました。また、**CollectionViewSource** に対して、どのグループを使うかを伝える必要があります。 そのためには、**CollectionViewSource** に `ItemsPath="BookSkus"` プロパティを追加します。
+-   これで、Author は少なくとも 1 つのグループを*保持する*ようになりました。また、**CollectionViewSource** に対して、どのグループを使うかを伝える必要があります。 そのためには、**CollectionViewSource** に次のプロパティを追加します。 `ItemsPath="BookSkus"`
 
 これらの変更を行っても、このアプリの機能は変更されません。ここでは、必要に応じて Author と **CollectionViewSource** を拡張する方法を理解してください。 Author に対して最後の変更を加えましょう。この変更により、**CollectionViewSource.ItemsPath** を指定*しないで* Author を使う場合に、選んだ既定のグループが使われるようになります。
 
@@ -298,6 +298,6 @@ Phone アプリを基にして作業を開始したため、この段階のプ�
 このケース スタディには、前のケース スタディよりも複雑なユーザー インターフェイスが関連しています。 Windows Phone Silverlight の  **LongListSelector** に関するすべての機能や概念などが、**SemanticZoom**、**ListView**、**GridView**、**CollectionViewSource** の形式を使って UWP アプリで利用できることを学習しました。 UWP アプリで命令型コードやマークアップの両方を再利用 (コピーと編集) して、最小および最大の Windows デバイスのフォーム ファクターや、その中間のあらゆるサイズに合わせて調整された機能、UI、および操作を実現する方法について説明しました。
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

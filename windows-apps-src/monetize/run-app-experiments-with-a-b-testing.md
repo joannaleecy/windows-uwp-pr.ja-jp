@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 Description: Windows デベロッパー センター ダッシュボードを使用して、ユニバーサル Windows プラットフォーム (UWP) アプリの A/B テストを実行することができます。
 title: A/B テストを使用してアプリの試験的機能を実行する
 ms.assetid: 790B4B37-C72D-4CEA-97AF-D226B2216DCC
@@ -49,6 +50,6 @@ A/B テストを実行する前に、開発用コンピューターを設定す�
 * [A/B テストを使用して最初の試験的機能を作成および実行する](create-and-run-your-first-experiment-with-a-b-testing.md)
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

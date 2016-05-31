@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: 708170E1-777A-4E4A-9F77-5AB28B88B107
 description: この記事では、ビデオ キャプチャの拡張シナリオ (HDR ビデオ、露出の優先順位など) がビデオ デバイス コントロールによってどのように有効になるかを示します。
 title: ビデオ キャプチャのためのキャプチャ デバイス コントロール
@@ -17,7 +18,7 @@ title: ビデオ キャプチャのためのキャプチャ デバイス コン�
 
 [!code-cs[VideoControllersUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoControllersUsing)]
 
-**注**  
+**注:**  
 この記事の内容は、写真やビデオの基本的なキャプチャ機能を実装するための手順を紹介した「[MediaCapture を使った写真とビデオのキャプチャ](capture-photos-and-video-with-mediacapture.md)」で取り上げた概念やコードに基づいています。 そちらの記事で基本的なメディア キャプチャのパターンを把握してから、高度なキャプチャ シナリオに進むことをお勧めします。 この記事で紹介しているコードは、MediaCapture のインスタンスが既に作成され、適切に初期化されていることを前提としています。
 
 ## HDR ビデオ
@@ -54,6 +55,6 @@ HDR ビデオ処理を有効または無効にするには、[**HdrVideoControl.
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

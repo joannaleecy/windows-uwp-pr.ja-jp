@@ -1,9 +1,10 @@
 ---
+author: Jwmsft
 Description: パスワード ボックスは、プライバシーの目的で入力文字が非表示になるテキスト入力ボックスです。
 title: パスワード ボックスのガイドライン
 ms.assetid: 332B04D6-4FFE-42A4-8B3D-ABE8266C7C18
 dev.assetid: 4BFDECC6-9BC5-4FF5-8C63-BB36F6DDF2EF
-label: パスワード ボックス
+label: Password box
 template: detail.hbs
 ---
 # パスワード ボックス
@@ -111,7 +112,8 @@ PasswordBox には、ユーザーが押すとパスワード テキストを表�
 
 [PasswordRevealMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordrevealmode.aspx) プロパティの値は、ユーザーにパスワード表示ボタンが表示されるかどうかを決定する唯一の要因ではありません。 その他の要因には、コントロールの表示幅が最小幅を上回っているか、PasswordBox にフォーカスがあるか、テキスト入力フィールドに文字が含まれているか、などがあります。 パスワード表示ボタンが表示されるのは、PasswordBox が初めてフォーカスを受け取り、文字が入力されたときだけです。 いったん PasswordBox からフォーカスが移動すると、その後にフォーカスが戻っても、パスワードをクリアして入力し直さない限り、パスワード表示ボタンは表示されません。
 
-> **注意:** Windows 10 より前のバージョンでは、パスワード表示ボタンは既定で表示されませんでした。 アプリのセキュリティにより、パスワードを必ず非表示にする必要がある場合は、PasswordRevealMode を Hidden に設定してください。
+> **注意:** 
+            &nbsp;&nbsp;Windows 10 より前のバージョンでは、パスワード表示ボタンは既定で表示されませんでした。 アプリのセキュリティにより、パスワードを必ず非表示にする必要がある場合は、PasswordRevealMode を Hidden に設定してください。
 
 ### 非表示モードと表示モード
 
@@ -166,7 +168,7 @@ private void CheckBox_Changed(object sender, RoutedEventArgs e)
 -   ログイン時は 1 つのパスワード ボックスのみを表示します。
 -   PIN の入力にパスワード ボックスを使う場合は、確認ボタンを使う代わりに、最後の数値が入力されたらすぐに応答を返すことを検討します。
 
-\[この記事には、ユニバーサル Windows プラットフォーム (UWP) アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
+
 
 ## 関連記事
 
@@ -186,6 +188,6 @@ private void CheckBox_Changed(object sender, RoutedEventArgs e)
 - [String.Length プロパティ](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

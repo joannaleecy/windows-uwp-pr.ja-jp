@@ -1,4 +1,5 @@
 ---
+author: mijacobs
 Description: サウンドは、アプリケーションのユーザー エクスペリエンスの完成をサポートし、オーディオを際立たせます。オーディオは、すべてのプラットフォームで Windows の使い勝手を一致させるために必要なものです。
 label: Sound
 title: サウンド
@@ -23,9 +24,11 @@ ElementSoundPlayer.State = ElementSoundPlayerState.On;
 **ElementSoundPlayer** には、3 つの異なる状態、**On**、**Off**、**Auto** があります。
 
 **Off** に設定すると、アプリの実行環境に関わらず、サウンドが再生されることはありません。 **On** に設定すると、すべてのプラットフォームで、アプリのサウンドが再生されます。
+
 ### テレビや Xbox のサウンド
-サウンドは 10 フィート エクスペリエンスの重要なパーツなので、既定では、**ElementSoundPlayer** の状態は **Auto**、つまり、アプリが Xbox で実行されているときにのみサウンドが再生されます。
-テレビや Xbox のサウンドのしくみの詳細については、「[テレビや Xbox の設計](http://go.microsoft.com/fwlink/?LinkId=760736)」の記事をご覧ください。
+
+サウンドは 10 フィート エクスペリエンスの重要なパーツであるため、既定では、**ElementSoundPlayer** の状態は **Auto**、つまり、アプリが Xbox で実行されているときにのみサウンドが再生されます。
+Xbox やテレビ向けの設計について詳しくは、「[Xbox およびテレビ向け設計](http://go.microsoft.com/fwlink/?LinkId=760736)」の記事をご覧ください。
 
 ## 音量設定のオーバーライド
 アプリ内のすべてのサウンドは、**Volume** コントロールで小さくすることができます。 しかし、アプリ内のサウンドを*システムの音量より大きく*することができません。
@@ -131,6 +134,6 @@ ElementSoundPlayer.Play(ElementSoundKind.Focus);
 * [Xbox およびテレビ向け設計](http://go.microsoft.com/fwlink/?LinkId=760736)
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

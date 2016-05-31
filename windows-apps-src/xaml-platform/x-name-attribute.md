@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: コード ビハインドまたは一般的なコードからインスタンス化されたオブジェクトにアクセスするために、オブジェクト要素を一意に識別します。
 title: xName 属性
 ms.assetid: 4FF1F3ED-903A-4305-B2BD-DCD29E0C9E6D
@@ -30,7 +31,7 @@ XAML 実装でキーとして使われる文字列の規範となる文法を次
 XamlName ::= NameStartChar (NameChar)*
 NameStartChar ::= LetterCharacter | '_'
 NameChar ::= NameStartChar | DecimalDigit
-LetterCharacter ::= ('a'-'z') | ('A'–'Z')
+LetterCharacter ::= ('a'-'z') | ('A'-'Z')
 DecimalDigit ::= '0'-'9'
 CombiningCharacter::= none
 ```
@@ -49,7 +50,7 @@ CombiningCharacter::= none
 
 **x:Name** は、XAML プロパティ要素構文で設定することも、[**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) を使うコードで設定することもできません。 **x:Name** は、要素の XAML 属性構文を使うことでのみ設定できます。
 
-**注** 特に C++/CX アプリの場合、**x:Name** 参照のバッキング フィールドが、XAML ファイルまたはページのルート要素に対して作成されません。 C++ のコード ビハインドからルート オブジェクトを参照する必要がある場合は、他の API またはツリー走査を使ってください。 たとえば、既知の名前付き子要素に対して [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) を呼び出した後、[**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739) を呼び出します。
+**注:** 特に C++/CX アプリの場合、**x:Name** 参照のバッキング フィールドが、XAML ファイルまたはページのルート要素に対して作成されません。 C++ のコード ビハインドからルート オブジェクトを参照する必要がある場合は、他の API またはツリー走査を使ってください。 たとえば、既知の名前付き子要素に対して [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) を呼び出した後、[**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739) を呼び出します。
 
 ### x:Name などの Name プロパティ
 
@@ -58,7 +59,10 @@ UWP XAML で使われる一部の型にも、**Name** という名前のプロ�
 
 要素で設定可能なプロパティとして **Name** が使用できる場合、XAML では **Name** と **x:Name** のどちらも使うことができますが、両方の属性を同じ要素で指定するとエラーが発生します。 また、**Name** プロパティがあるものの、読み取り専用であるという場合もあります ([**VisualState.Name**](https://msdn.microsoft.com/library/windows/apps/br209031) など)。 そのような場合には、XAML 内の要素に名前を付けるときには常に **x:Name** を使います。読み取り専用の **Name** は、それほど一般的ではないコードのシナリオのために存在します。
 
-**注**  [**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735) は通常、**x:Name** で設定された値を変更するときには使いませんが、この原則の例外となるシナリオもあります。 一般的なシナリオでは、XAML 名前スコープの作成と定義は XAML プロセッサの操作です。 **FrameworkElement.Name** を実行時に変更すると、XAML 名前スコープとプライベート フィールドの名前付けの調整の整合性が損なわれ、コード ビハインドで追跡するのが難しくなる可能性があります。
+**注:**
+            [
+              **FrameworkElement.Name**
+            ](https://msdn.microsoft.com/library/windows/apps/br208735) は通常、**x:Name** で設定された値を変更するときには使いませんが、この原則の例外となるシナリオもあります。 一般的なシナリオでは、XAML 名前スコープの作成と定義は XAML プロセッサの操作です。 **FrameworkElement.Name** を実行時に変更すると、XAML 名前スコープとプライベート フィールドの名前付けの調整の整合性が損なわれ、コード ビハインドで追跡するのが難しくなる可能性があります。
 
 ### x:Name と x:Key
 
@@ -66,6 +70,6 @@ UWP XAML で使われる一部の型にも、**Name** という名前のプロ�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

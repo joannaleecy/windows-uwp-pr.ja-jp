@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: Windows デベロッパー センターダッシュボードの利用状況レポートでは、お客様によるアプリの利用状況を確認できます。
 title: 利用状況レポート
 ms.assetid: 5F0E7F94-D121-4AD3-A6E5-9C0DEC437BD3
@@ -65,6 +66,6 @@ Windows デベロッパー センターダッシュボードの**利用状況**�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

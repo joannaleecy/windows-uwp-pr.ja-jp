@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: 9347AD7C-3A90-4073-BFF4-9E8237398343
 description: この記事では、UWP アプリ用のオーディオとビデオのコーデックおよび形式のサポートを示します。
 title: サポートされるコーデック
@@ -2691,6 +2692,6 @@ title: サポートされるコーデック
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: martinekuan
 ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
 title: "Hello, world" アプリを作成する (XAML)
 description: このチュートリアルでは、Windows 10 のユニバーサル Windows プラットフォーム (UWP) を対象にした単純な "Hello, world" アプリを Extensible Application Markup Language (XAML) を使って C# で作る方法について説明します。
@@ -33,7 +34,7 @@ description: このチュートリアルでは、Windows 10 のユニバーサ�
 
    Visual Studio 2015 のスタート画面が表示されます。 (以下、Visual Studio 2015 を単に Visual Studio と表記します。)
 
-2.  **[ファイル]** メニューの **[新規作成]**、**[プロジェクト]** の順にクリックします。
+2.  **[ファイル]** メニューの **[新規作成]** > **[プロジェクト]** の順にクリックします。
 
    **[新しいプロジェクト]** ダイアログ ボックスが表示されます。 ダイアログの左側のウィンドウで、表示するテンプレートの種類を選択できます。
 
@@ -138,7 +139,7 @@ namespace HelloWorld
         <TextBlock Text="What' s your name?"/>
         <StackPanel x:Name="inputPanel" Orientation="Horizontal" Margin="0,20,0,20">
             <TextBox x:Name="nameInput" Width="280" HorizontalAlignment="Left"/>
-            <Button x:Name="inputButton" Content="Say &amp;quot;Hello&amp;quot;"/>
+            <Button x:Name="inputButton" Content="Say &quot;Hello&quot;"/>
         </StackPanel>
         <TextBlock x:Name="greetingOutput"/>
     </StackPanel>
@@ -253,10 +254,10 @@ XAML 要素は、特定のイベントが発生したときにメッセージを
     XAML エディターでは、[**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) の XAML が更新されて、次のように [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) イベント ハンドラーが宣言されます。
 
 ```xml   
-   <Button x:Name="inputButton" Content="Say &amp;quot;Hello&amp;quot;" Click="Button_Click"/>
+   <Button x:Name="inputButton" Content="Say &quot;Hello&quot;" Click="Button_Click"/>
 ```    
 
-5.  コード ビハインド ページに作成したイベント ハンドラーにコードを追加します。 イベント ハンドラーで、`nameInput` [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) コントロールからユーザー名を取得し、それを使ってあいさつを作ります。 `greetingOutput`
+5.  コード ビハインド ページに作成したイベント ハンドラーにコードを追加します。 イベント ハンドラーで、`nameInput`[**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) コントロールからユーザー名を取得し、それを使ってあいさつを作ります。 `greetingOutput`
             [
             **TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) を使って結果を表示します。
     
@@ -319,6 +320,6 @@ XAML 要素は、特定のイベントが発生したときにメッセージを
 これで、Windows 10 と UWP 用の初めてのアプリを作成しました。
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

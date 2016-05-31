@@ -1,4 +1,5 @@
 ---
+author: martinekuan
 title: C# および Visual Basic での Windows ランタイム コンポーネントの作成
 description: .NET Framework 4.5 以降では、マネージ コードを使って独自の Windows ランタイム型を作成し、Windows ランタイム コンポーネントにパッケージ化することができます。
 ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
@@ -34,7 +35,7 @@ Visual Basic または C# を利用して UWP アプリでのみ使うコンポ�
     -   Windows ランタイムにない型 (System.Exception や System.EventArgs など) から派生させる。
 -   すべてのパブリック型にはアセンブリ名に一致するルート名前空間が必要になります。ただし、アセンブリ名の先頭には "Windows" を付けることはできません。
 
-    > **ヒント** 既定では、Visual Studio プロジェクトにはアセンブリ名に一致する名前空間名があります。 Visual Basic では、この既定の名前空間の Namespace ステートメントはコードに表示されません。
+    > **ヒント:** 既定では、Visual Studio プロジェクトにはアセンブリ名に一致する名前空間名があります。 Visual Basic では、この既定の名前空間の Namespace ステートメントはコードに表示されません。
 
 -   パブリック構造体はパブリック フィールド以外のメンバーを持つことができません。また、それらのフィールドは値型または文字列であることが必要です。
 -   パブリック クラスは **sealed** (Visual Basic では **NotInheritable**) であることが必要です。 プログラミング モデルでポリモーフィズムが必要となる場合は、パブリック インターフェイスを作成し、ポリモーフィックにする必要があるクラスにそのインターフェイスを実装できます。
@@ -98,7 +99,7 @@ C# や Visual Basic で、これらの型に対して言語キーワードが指
 
 型によって複数のインターフェイスが実装される場合、メンバーのパラメーターの型または戻り値の型として実装されるインターフェイスをすべて使うことができます。 たとえば、Dictionary&lt;int, string&gt; (Visual Basic では Dictionary(Of Integer, String)) を、IDictionary&lt;int, string&gt;、IReadOnlyDictionary&lt;int, string&gt;、または IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt;&gt; として渡すか返すことができます。
 
-**重要:** JavaScript では、マネージ型が実装するインターフェイスのリストに最初に現れるインターフェイスが使われます。 たとえば、JavaScript コードに Dictionary&lt;int, string&gt; を返した場合は、戻り値の型としてどのインターフェイスを指定しても、IDictionary&lt;int, string&gt; として表されます。 つまり、後のインターフェイスにメンバーが最初のインターフェイスに含まれていない場合、そのメンバーは JavaScript では認識されません。
+**重要:** JavaScript では、マネージ型が実装するインターフェイスのリストに最初に現れるインターフェイスが使われます。 たとえば、Dictionary&lt;int, string&gt; を JavaScript コードに返した場合、戻り値の型としてどのインターフェイスを指定しても、IDictionary&lt;int, string&gt; として表示されます。 これは、後のインターフェイスで表示されるメンバーが最初のインターフェイスに含まれていない場合、そのメンバーは JavaScript に認識されないことを意味します。
 
 Windows ランタイムでは、IMap&lt;K, V&gt; と IMapView&lt;K, V&gt; は IKeyValuePair を使って反復処理されます。 これらをマネージ コードに渡すと、IDictionary&lt;TKey, TValue&gt; および IReadOnlyDictionary&lt;TKey, TValue&gt; として表示されるため、これらを列挙するには必然的に System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt; を使います。
 
@@ -293,6 +294,6 @@ Visual Basic と C# の言語の機能、および Windows ランタイムに関
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

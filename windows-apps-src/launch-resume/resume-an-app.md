@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: アプリの再開の処理
 description: システムがアプリを再開するときに表示されるコンテンツを更新する方法について説明します。
 ms.assetid: DACCC556-B814-4600-A10A-90B82664EA15
@@ -52,7 +53,7 @@ MainPage::MainPage()
 {
     InitializeComponent();
     Application::Current->Resuming += 
-        ref new EventHandler<Platform::Object^>(this, &amp;MainPage::App_Resuming);
+        ref new EventHandler<Platform::Object^>(this, &MainPage::App_Resuming);
 }
 ```
 
@@ -112,6 +113,6 @@ void MainPage::App_Resuming(Object^ sender, Object^ e)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

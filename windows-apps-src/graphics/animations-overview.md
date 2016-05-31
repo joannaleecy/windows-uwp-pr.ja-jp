@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 ms.assetid: 0C8DEE75-FB7B-4E59-81E3-55F8D65CD982
 title: アニメーションの概要
 description: Windows ランタイム アニメーション ライブラリのアニメーションを使って、Windows の見た目や操作感を自分のアプリに取り入れることができます。
@@ -10,7 +11,7 @@ description: Windows ランタイム アニメーション ライブラリのア
 
 Windows ランタイムのアニメーションは、アプリに躍動感と双方向性を与えます。 Windows ランタイム アニメーション ライブラリのアニメーションを使って、Windows の見た目や操作感を自分のアプリに取り入れることができます。 ここでは、アニメーションの概要と、それぞれのアニメーションが適用される通常のシナリオ例について説明します。
 
-**ヒント**  XAML 用の Windows ランタイム コントロールには、特定の種類のアニメーションが、アニメーション ライブラリから取得される組み込みの動作として含まれています。 こうしたコントロールを利用することで、アニメーション化された見た目や操作感を自分でプログラミングしなくてもアプリに取り入れることができます。
+**ヒント**  XAML 用の Windows ランタイム コントロールには、アニメーション ライブラリから取得される特定の種類のアニメーションが、組み込みの動作として含まれています。 こうしたコントロールを利用することで、アニメーション化された見た目や操作感を自分でプログラミングしなくてもアプリに取り入れることができます。
 
 Windows ランタイム アニメーション ライブラリのアニメーションには次のような利点があります。
 
@@ -69,7 +70,9 @@ XAML アニメーション ライブラリには、ページが読み込まれ�
 ### ポップアップの表示/非表示
 
 [
-            **PopInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210383) と [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210391) を使って、[**Popup**](https://msdn.microsoft.com/library/windows/apps/BR227842) や類似のコンテキストに沿った UI を現在の画面に表示し、画面から消します。 [**PopupThemeTransition**](https://msdn.microsoft.com/library/windows/apps/Hh969172) は、ポップアップを簡易非表示にする場合、便利なフィードバックとなるテーマ切り替えです。
+            **PopInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210383) と [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210391) を使って、[**Popup**](https://msdn.microsoft.com/library/windows/apps/BR227842) や類似のコンテキストに沿った UI を現在の画面に表示し、画面から消します。 [
+              **PopupThemeTransition**
+            ](https://msdn.microsoft.com/library/windows/apps/Hh969172) は、ポップアップを簡易非表示にする場合、便利なフィードバックとなるテーマ切り替えです。
 
 ### エッジ (端) UI の表示/非表示
 
@@ -105,14 +108,24 @@ XAML アニメーション ライブラリには、ページが読み込まれ�
 
 | UI の種類 | 推奨されるアニメーション |
 |---------|-----------------------|
-| ダイアログ ボックス | [**FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210298) と [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
-| ポップアップ | [**PopInThemeAnimation**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation.aspx) と [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
-| ヒント | [**FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210298) と [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
-| ショートカット メニュー | [**PopInThemeAnimation**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation.aspx) と [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
+| ダイアログ ボックス | [
+              **FadeInThemeAnimation**
+            ](https://msdn.microsoft.com/library/windows/apps/BR210298) と [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
+| ポップアップ | [
+              **PopInThemeAnimation**
+            ](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation.aspx) と [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
+| ヒント | [
+              **FadeInThemeAnimation**
+            ](https://msdn.microsoft.com/library/windows/apps/BR210298) と [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
+| ショートカット メニュー | [
+              **PopInThemeAnimation**
+            ](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation.aspx) と [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
 | コマンド バー | [**EdgeUIThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.edgeuithemetransition.edgeuithemetransition) |
 | 作業ウィンドウまたは端に基づくパネル | [**PaneThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.panethemetransition.panethemetransition) |
 | 各種 UI コンテナーのコンテンツ | [**ContentThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.contentthemetransition.contentthemetransition) |
-| コントロールに対して (または他に該当するアニメーションがない場合に) 適用する | [**FadeInThemeAnimation**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.fadeinthemeanimation.fadeinthemeanimation.aspx) と [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
+| コントロールに対して (または他に該当するアニメーションがない場合に) 適用する | [
+              **FadeInThemeAnimation**
+            ](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.fadeinthemeanimation.fadeinthemeanimation.aspx) と [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
 
  
 
@@ -374,6 +387,6 @@ void BlankPage::Rectangle_Tapped(Object^ sender, PointerRoutedEventArgs^ e)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

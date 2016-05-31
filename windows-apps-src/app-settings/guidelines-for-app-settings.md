@@ -1,5 +1,6 @@
 ---
-Description: この記事では、アプリ設定を作成し表示する際のベスト プラクティスについて説明します。
+author: mijacobs
+Description: この記事では、アプリ設定を作成し、表示する際のベスト プラクティスについて説明します。
 title: アプリ設定のガイドライン
 ms.assetid: 2D765E90-3FA0-42F5-A5CB-BEDC14C3F60A
 label: Guidelines
@@ -10,7 +11,7 @@ template: detail.hbs
 # アプリ設定のガイドライン
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください。\]
+
 
 
 アプリ設定は、アプリの中でユーザーによるカスタマイズが可能な部分です。この設定は、アプリ設定のページに含まれています。 たとえば、ニュース リーダー アプリのアプリ設定では、表示するニュース ソースや画面に表示する記事の数を指定できる場合があります。また、天気予報アプリのアプリ設定では、温度の既定の計測単位として摂氏または華氏を選ぶことができます。 この記事では、アプリ設定を作成し表示する際のベスト プラクティスについて説明します。
@@ -79,7 +80,7 @@ template: detail.hbs
 
 ![電話におけるアプリ設定のページのレイアウト](images/appsettings-layout-navpane-mobile.png)
 
-## <span id="_About__section_and__Give_feedback__button"></span><span id="_about__section_and__give_feedback__button"></span><span id="_ABOUT__SECTION_AND__GIVE_FEEDBACK__BUTTON"></span>"バージョン情報” のセクションと "フィードバックを送信する" ためのボタン
+## <span id="_About__section_and__Give_feedback__button"></span><span id="_about__section_and__give_feedback__button"></span><span id="_ABOUT__SECTION_AND__GIVE_FEEDBACK__BUTTON"></span>"バージョン情報" のセクションと "フィードバックを送信する" ためのボタン
 
 
 "バージョン情報" のセクションがアプリで必要となる場合は、そのセクション専用のアプリ設定のページを作成します。 "フィードバックを送信する" ためのボタンが必要な場合は、そのボタンを "バージョン情報" を表示するページの下部に配置します。
@@ -129,14 +130,17 @@ template: detail.hbs
 
 * [コマンド設計の基本](https://msdn.microsoft.com/library/windows/apps/dn958433)
 * [プログレス コントロールのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465469)
-**開発者向け (XAML)**
+            
+          
+            **(開発者向け (XAML))**
 * [アプリ データの保存と取得](https://msdn.microsoft.com/library/windows/apps/mt299098)
-* [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br210288)
-�
+* [
+              **EntranceThemeTransition**
+            ](https://msdn.microsoft.com/library/windows/apps/br210288)
 
 �
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

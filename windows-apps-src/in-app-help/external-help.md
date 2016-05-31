@@ -1,4 +1,5 @@
 ---
+author: QuinnRadich
 Description: アプリに関する詳細な説明やアドバイスのための、外部ヘルプ ページを設計します。
 title: 外部ヘルプ ページを設計するためのガイドライン
 label: External help
@@ -37,6 +38,6 @@ template: detail.hbs
 * [アプリのヘルプのガイドライン](guidelines-for-app-help.md)
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

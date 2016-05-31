@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: バックグラウンド タスクからのセンサーやデバイスへのアクセス
 description: DeviceUseTrigger を使うと、フォアグラウンド アプリが中断しているときにも、バックグラウンドでユニバーサル Windows アプリからセンサーや周辺機器にアクセスできます。
 ms.assetid: B540200D-9FF2-49AF-A224-50877705156B
@@ -7,10 +8,12 @@ ms.assetid: B540200D-9FF2-49AF-A224-50877705156B
 # バックグラウンド タスクからのセンサーやデバイスへのアクセス
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
 
 
-[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) を使うと、フォアグラウンド アプリが中断しているときにも、バックグラウンドでユニバーサル Windows アプリからセンサーや周辺機器にアクセスできます。 たとえば、アプリが実行されている場所によっては、バックグラウンド タスクを使ってデバイスまたはモニターのセンサーとデータを同期することができます。 バッテリ残量を維持し、適切なユーザーの同意を得るために、[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) の使用にはこのトピックで説明するポリシーが適用されます。
+[
+              **DeviceUseTrigger**
+            ](https://msdn.microsoft.com/library/windows/apps/dn297337) を使うと、フォアグラウンド アプリが中断しているときにも、バックグラウンドでユニバーサル Windows アプリからセンサーや周辺機器にアクセスできます。 たとえば、アプリが実行されている場所によっては、バックグラウンド タスクを使ってデバイスまたはモニターのセンサーとデータを同期することができます。 バッテリ残量を維持し、適切なユーザーの同意を得るために、[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) の使用にはこのトピックで説明するポリシーが適用されます。
 
 バックグラウンドでセンサーまたは周辺機器にアクセスするには、[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) を使うバックグラウンド タスクを作成します。 PC でこれを実行する方法を示す例については、[カスタム USB デバイスのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?LinkId=301975 ) をご覧ください。 電話の例は、[バックグラウンド センサーのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=393307) に関するページをご覧ください。
 
@@ -41,7 +44,7 @@ ms.assetid: B540200D-9FF2-49AF-A224-50877705156B
 | ネットワーク (有線)    | ![このプロトコルはサポートされています。](images/ap-tools.png)                                                                                                                                            |
 | ネットワーク (Wi-Fi)    | ![このプロトコルはサポートされています。](images/ap-tools.png)                                                                                                                                            |
 | IDeviceIOControl | ![DeviceServicingTrigger でサポートされています。](images/ap-tools.png)                                                                                                                       |
-| センサー API      | ![DeviceServicingTrigger でサポートされています](images/ap-tools.png) ([ユニバーサル デバイス ファミリ](https://msdn.microsoft.com/library/windows/apps/dn894631) のセンサーのみ)。 |
+| センサー API      | ![DeviceServicingTrigger でサポートされています](images/ap-tools.png) ([ユニバーサル デバイス ファミリ](https://msdn.microsoft.com/library/windows/apps/dn894631)のセンサーのみ)。 |
 
  
 
@@ -94,7 +97,7 @@ ms.assetid: B540200D-9FF2-49AF-A224-50877705156B
 
  
 
-**ヒント**  サンプルをダウンロードして、これらのバックグラウンド タスクの動作を確認してくさい。 PC でこれを実行する方法を示す例については、[カスタム USB デバイスのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?LinkId=301975 ) をご覧ください。 電話の例は、[バックグラウンド センサーのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=393307) に関するページをご覧ください。
+**ヒント**  サンプルをダウンロードして、これらのバックグラウンド タスクの動作を確認してください。 PC でこれを実行する方法を示す例については、[カスタム USB デバイスのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?LinkId=301975 ) をご覧ください。 電話の例は、[バックグラウンド センサーのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=393307) に関するページをご覧ください。
 
  
 
@@ -202,6 +205,6 @@ ms.assetid: B540200D-9FF2-49AF-A224-50877705156B
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

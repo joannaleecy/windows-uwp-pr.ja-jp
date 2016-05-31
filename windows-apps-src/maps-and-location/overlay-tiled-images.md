@@ -1,4 +1,5 @@
 ---
+author: PatrickFarley
 title: 地図へのタイル画像のオーバーレイ
 description: タイル ソースを使って、地図上にサード パーティ製タイルまたはカスタム タイル画像をオーバーレイします。 タイル ソースを使って、気象データ、人口データ、地質データなどの特殊な情報をオーバーレイすることや、既定の地図を完全に置き換えることができます。
 ms.assetid: 066BD6E2-C22B-4F5B-AA94-5D6C86A09BDF
@@ -12,7 +13,7 @@ ms.assetid: 066BD6E2-C22B-4F5B-AA94-5D6C86A09BDF
 
 タイル ソースを使って、地図上にサード パーティ製タイルまたはカスタム タイル画像をオーバーレイします。 タイル ソースを使って、気象データ、人口データ、地質データなどの特殊な情報をオーバーレイすることや、既定の地図を完全に置き換えることができます。
 
-**ヒント:** アプリで地図を使う方法について詳しくは、GitHub の [Windows-universal-samples リポジトリ](http://go.microsoft.com/fwlink/p/?LinkId=619979)から次のサンプルをダウンロードしてください。
+**ヒント** アプリで地図を使う方法について詳しくは、GitHub の [Windows-universal-samples リポジトリ](http://go.microsoft.com/fwlink/p/?LinkId=619979)から次のサンプルをダウンロードしてください。
 
 -   [ユニバーサル Windows プラットフォーム (UWP) の地図サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 
@@ -55,7 +56,7 @@ X 座標と Y 座標は、指定された詳細レベルで世界地図内の個
 
     ```cs
         HttpMapTileDataSource dataSource = new HttpMapTileDataSource(
-          "http://www.<web service name>.com/z={zoomlevel}&amp;x={x}&amp;y={y}");
+          "http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}");
     ```
 
 2.  [
@@ -122,7 +123,7 @@ X 座標と Y 座標は、指定された詳細レベルで世界地図内の個
             // Create an HTTP data source.
             // This example retrieves tiles from a fictitious web service.
             HttpMapTileDataSource dataSource = new HttpMapTileDataSource(
-                "http://www.<web service name>.com/z={zoomlevel}&amp;x={x}&amp;y={y}");
+                "http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}");
 
             // Optionally, add custom HTTP headers if the web service requires them.
             dataSource.AdditionalRequestHeaders.Add("header name", "header value");
@@ -141,7 +142,7 @@ void MainPage::AddHttpMapTileSource()
        GeoboundingBox^ boundingBox = ref new GeoboundingBox(northWest, southEast);
 
        auto dataSource = ref new Windows::UI::Xaml::Controls::Maps::HttpMapTileDataSource(
-             "http://www.<web service name>.com/z={zoomlevel}&amp;x={x}&amp;y={y}");
+             "http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}");
 
        dataSource->AdditionalRequestHeaders->Insert("header name", "header value");
 
@@ -236,7 +237,7 @@ using System.Threading.Tasks;
             MapTileUriRequestedEventArgs args)
         {
             // Get a deferral to do something asynchronously.
-            // Omit this line if you don&#39;t have to do something asynchronously.
+            // Omit this line if you don't have to do something asynchronously.
             var deferral = args.Request.GetDeferral();
 
             // Get the custom Uri.
@@ -246,7 +247,7 @@ using System.Threading.Tasks;
             args.Request.Uri = uri;
 
             // Notify the app that the custom Uri is ready.
-            // Omit this line also if you don&#39;t have to do something asynchronously.
+            // Omit this line also if you don't have to do something asynchronously.
             deferral.Complete();
         }
 
@@ -329,7 +330,7 @@ using System.Threading.Tasks;
         }
 ```
 
-```ManagedCPlusPlus
+```cpp
 InMemoryRandomAccessStream^ TileSources::CustomRandomAccessSteram::get()
 {
        int pixelHeight = 256;
@@ -388,6 +389,6 @@ InMemoryRandomAccessStream^ TileSources::CustomRandomAccessSteram::get()
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

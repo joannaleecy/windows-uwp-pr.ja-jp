@@ -1,5 +1,6 @@
 ---
-title: チュートリアル -- DirectX 11 とユニバーサル Windows プラットフォームへの簡単な Direct3D 9 アプリの移植
+author: mtoepke
+title: チュートリアル -- DirectX 11 とユニバーサル Windows プラットフォーム (UWP) への簡単な Direct3D 9 アプリの移植
 description: この移植作業では、Direct3D 9 から Direct3D 11 とユニバーサル Windows プラットフォーム (UWP) に簡単なレンダリング フレームワークを移植する方法について説明します。
 ms.assetid: d4467e1f-929b-a4b8-b233-e142a8714c96
 ---
@@ -24,15 +25,15 @@ ms.assetid: d4467e1f-929b-a4b8-b233-e142a8714c96
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[Initialize Direct3D 11](simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md)</p></td>
+<td align="left"><p>[Direct3D 11 の初期化](simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md)</p></td>
 <td align="left"><p>Direct3D デバイスとデバイス コンテキストへのハンドルを取得する方法や、DXGI を使ってスワップ チェーンを設定する方法など、Direct3D 9 の初期化コードを Direct3D 11 に変換する方法について説明します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Convert the rendering framework](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md)</p></td>
+<td align="left"><p>[レンダリング フレームワークの変換](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md)</p></td>
 <td align="left"><p>ジオメトリ バッファーを移植する方法、HLSL シェーダー プログラムをコンパイルして読み込む方法、Direct3D 11 のレンダリング チェーンを実装する方法など、Direct3D 9 の簡単なレンダリング フレームワークを Direct3D 11 に変換する方法について説明します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>[Port the game loop](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)</p></td>
+<td align="left"><p>[ゲーム ループの移植](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)</p></td>
 <td align="left"><p>全画面の [<strong>CoreWindow</strong>](https://msdn.microsoft.com/library/windows/apps/br208225) を制御する [<strong>IFrameworkView</strong>](https://msdn.microsoft.com/library/windows/apps/hh700478) を構築する方法を含め、UWP ゲームのウィンドウを実装する方法とゲーム ループを移植する方法について説明します。</p></td>
 </tr>
 </tbody>
@@ -69,12 +70,18 @@ ms.assetid: d4467e1f-929b-a4b8-b233-e142a8714c96
 
 
 **Direct3D**
-[Direct3D 9 での HLSL シェーダーの記述](https://msdn.microsoft.com/library/windows/desktop/bb944006)
+            
+          
+            [Direct3D 9 での HLSL シェーダーの記述](https://msdn.microsoft.com/library/windows/desktop/bb944006)
 
 [テンプレートからの DirectX ゲーム プロジェクトの作成](user-interface.md)
 
 **Windows ストア**
-[**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)
+            
+          
+            [
+              **Microsoft::WRL::ComPtr**
+            ](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)
 
 [**オブジェクト演算子 (^) へのハンドル (^)**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx
 
@@ -87,6 +94,6 @@ ms.assetid: d4467e1f-929b-a4b8-b233-e142a8714c96
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

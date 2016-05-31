@@ -1,5 +1,6 @@
 ---
-description: 広告仲介レポートでは、有効なフィル レートと、使っている広告ネットワークの対応するフィル レートを確認できます。
+author: jnHs
+Description: 広告仲介レポートでは、有効なフィル レートと、使っている広告ネットワークの対応するフィル レートを確認できます。
 title: 広告仲介レポート
 ms.assetid: 18A33928-B9F2-4F76-9A9C-F01FEE42FEA1
 ---
@@ -9,7 +10,7 @@ ms.assetid: 18A33928-B9F2-4F76-9A9C-F01FEE42FEA1
 
 **広告仲介**レポートでは、有効なフィル レートと、使っている広告ネットワークの対応するフィル レートを確認できます。 さらに、メディエーション構成ごとの導入率や、広告ネットワークとメディエーターによって報告されたエラーも表示されます。 このデータは、ダッシュボードで表示することも、[レポートをダウンロード](download-analytic-reports.md) してオフラインで表示することもできます。
 
-**重要**  **広告仲介**レポートには、アプリの [Windows 広告仲介](https://msdn.microsoft.com/library/windows/apps/xaml/dn864359) を使っている場合のみデータが表示されます。
+**重要**  **広告仲介**レポートには、アプリで [Windows 広告仲介](https://msdn.microsoft.com/library/windows/apps/xaml/dn864359)を使っている場合のみデータが表示されます。
 
  
 
@@ -62,6 +63,6 @@ ms.assetid: 18A33928-B9F2-4F76-9A9C-F01FEE42FEA1
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

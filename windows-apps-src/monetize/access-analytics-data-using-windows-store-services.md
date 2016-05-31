@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
 description: Windows ストア分析 API を使って、自分または自分の組織の Windows デベロッパー センター アカウントに登録されたアプリの分析データをプログラムで取得することができます。
 title: Windows ストア サービスを使った分析データへのアクセス
@@ -49,13 +50,13 @@ Azure AD アプリケーションをデベロッパー センター アカウン
 
 アクセス トークンを取得するには、「[クライアント資格情報を使用したサービス間の呼び出し](https://msdn.microsoft.com/library/azure/dn645543.aspx)」の手順に従って、HTTP POST を次の Azure AD エンドポイントに送信します。
 
-```
+```syntax
 https://login.microsoftonline.com/<tenant id>/oauth2/token
 ```
 
 -   テナント ID を取得するには、[Azure 管理ポータル](http://manage.windowsazure.com/) にログインし、**Active Directory** に移動し、デベロッパー センター アカウントにリンクされているディレクトリをクリックします。 以下の例にある *your\_tenant\_ID* 文字列からわかるように、このディレクトリのテナント ID がこのページの URL に埋め込まれます。
 
-  ```
+  ```syntax
   https://manage.windowsazure.com/@<your_tenant_name>#Workspaces/ActiveDirectoryExtension/Directory/<your_tenant_ID>/directoryQuickStart
   ```
 
@@ -236,6 +237,6 @@ Windows ストア分析 API は、エラー コードとメッセージが含ま
  
 
 
-<!--HONumber=Mar16_HO3-->
+<!--HONumber=May16_HO2-->
 
 

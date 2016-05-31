@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 ms.assetid: 2b63a4c8-b1c0-4c77-95ab-0b9549ba3c0e
 description: このトピックでは、Windows 10 ユニバーサル Windows プラットフォーム (UWP) アプリに、非常にシンプルな Windows Phone Silverlight アプリを移植するケース スタディについて説明します。
 title: Windows Phone Silverlight から UWP へのケース スタディ: Bookstore1
@@ -131,6 +132,6 @@ Bookstore1Universal では、ms-appx [URI スキーム](https://msdn.microsoft.c
 次のケース スタディは「[Bookstore2](wpsl-to-uwp-case-study-bookstore2.md)」です。ここでは、グループ化されたデータへのアクセスと表示について説明します。
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

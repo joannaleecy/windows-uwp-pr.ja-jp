@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: Marble Maze サンプルへの視覚的なコンテンツの追加
 description: このドキュメントでは、Marble Maze ゲームがユニバーサル Windows プラットフォーム (UWP) アプリ環境で Direct3D と Direct2D をどのように使うかについて説明します。パターンを学習することにより、独自のゲーム コンテンツの開発に活用できます。
 ms.assetid: 6e43422e-e1a1-b79e-2c4b-7d5b4fa88647
@@ -7,7 +8,7 @@ ms.assetid: 6e43422e-e1a1-b79e-2c4b-7d5b4fa88647
 # Marble Maze サンプルへの視覚的なコンテンツの追加
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
 
 
 このドキュメントでは、Marble Maze ゲームがユニバーサル Windows プラットフォーム (UWP) アプリ環境で Direct3D と Direct2D をどのように使うかについて説明します。パターンを学習することにより、独自のゲーム コンテンツの開発に活用できます。 Marble Maze のアプリケーション構造全体で視覚的なゲーム コンポーネントがどのように使われているかについては、「[Marble Maze のアプリケーション構造](marble-maze-application-structure.md)」をご覧ください。
@@ -24,7 +25,7 @@ Marble Maze の視覚的側面は、次のような基本の手順に従って�
 
 また、開発プロセスでは、これらの手順の一部を何度も繰り返す必要がありました。 たとえば、メッシュや大理石のモデルを変更するときには、それらのモデルをサポートするシェーダー コードの一部も変更する必要がありました。
 
-> **注**   このドキュメントに対応するサンプル コードは、[DirectX Marble Maze ゲームのサンプルに関するページ](http://go.microsoft.com/fwlink/?LinkId=624011) にあります。
+> **注**  このドキュメントに対応するサンプル コードは、 [DirectX Marble Maze ゲームのサンプルに関するページ](http://go.microsoft.com/fwlink/?LinkId=624011)にあります。
 
  
 ここでは、DirectX や視覚的なゲーム コンテンツを扱うとき、つまり DirectX グラフィックス ライブラリの初期化、シーンのリソースの読み込み、シーンの更新やレンダリングを行う際の次の重要事項について説明します。
@@ -904,6 +905,6 @@ else
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

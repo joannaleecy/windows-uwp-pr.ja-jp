@@ -1,7 +1,8 @@
 ---
+author: TylerMSFT
 ms.assetid: CAC6A7C7-3348-4EC4-8327-D47EB6E0C238
 title: SD カードへのアクセス
-description: オプションの microSD カード上にある重要度の低いデータに保存およびアクセスできます (特に内部ストレージに制限がある低コストのモバイル デバイス)。
+description: オプションの microSD カードに重要度の低いデータを保存したり、これらのデータにアクセスしたりすることができます (特に内部ストレージに制限がある低コストのモバイル デバイスの場合)。
 ---
 # SD カードへのアクセス
 
@@ -151,6 +152,6 @@ using Windows.Storage;
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

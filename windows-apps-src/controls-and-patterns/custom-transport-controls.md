@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: メディア プレーヤーには、オーディオおよびビデオ コンテンツのコントロールを管理するためのカスタマイズ可能な XAML トランスポート コントロールがあります。
 title: カスタム メディア トランスポート コントロールを作成する
 ms.assetid: 6643A108-A6EB-42BC-B800-22EABD7B731B
-label: カスタム メディア トランスポート コントロールを作成する
+label: Create custom media transport controls
 template: detail.hbs
 ---
 # カスタム トランスポート コントロールを作成する
@@ -11,7 +12,8 @@ MediaElement には、ユニバーサル Windows プラットフォーム (UWP) 
 
 始める前に、MediaElement クラスと MediaTransportControls クラスについて理解している必要があります。 詳しくは、「MediaElement コントロール ガイド」をご覧ください。 
 
-> **ヒント**&nbsp;&nbsp;このトピックの例は、[メディア トランスポート コントロールのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620023)を基にしています。 サンプルをダウンロードし、詳細なコードを参照して実行することができます。
+> **ヒント:**
+            &nbsp;&nbsp;このトピックの例は、[メディア トランスポート コントロールのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620023)を基にしています。 サンプルをダウンロードし、詳細なコードを参照して実行することができます。
 
 <span class="sidebar_heading" style="font-weight: bold;">重要な API</span>
 
@@ -32,7 +34,8 @@ MediaElement には、ユニバーサル Windows プラットフォーム (UWP) 
 
 コントロールの外観をカスタマイズするには、既定のテンプレートを変更します。 コントロールの動作を変更したり、新しいコマンドを追加したりするには、MediaTransportControls から派生したカスタム コントロールを作成できます。
 
->**ヒント**&nbsp;&nbsp;カスタマイズ可能なコントロール テンプレートは XAML プラットフォームの強力な機能ですが、考慮すべき影響もあります。 テンプレートをカスタマイズすると、アプリの静的な部分となるため、Microsoft によって行われるプラットフォームの更新を受け取らなくなります。 Microsoft によってテンプレートの更新が加えられた場合、更新されたテンプレートを利用するには、新しいテンプレートを取得して再変更する必要があります。
+>**ヒント:**
+            &nbsp;&nbsp;カスタマイズ可能なコントロール テンプレートは XAML プラットフォームの強力な機能ですが、考慮すべき影響もあります。 テンプレートをカスタマイズすると、アプリの静的な部分となるため、Microsoft によって行われるプラットフォームの更新を受け取らなくなります。 Microsoft によってテンプレートの更新が加えられた場合、更新されたテンプレートを利用するには、新しいテンプレートを取得して再変更する必要があります。
 
 ## テンプレートの構造
 
@@ -42,11 +45,16 @@ MediaElement には、ユニバーサル Windows プラットフォーム (UWP) 
 - 2 番目のセクションでは、MediaTransportControls が使うさまざまな表示状態が定義されています。
 - 3 番目のセクションには、さまざまな MediaTransportControls 要素をまとめて保持し、コンポーネントのレイアウトを定義する [**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx) が含まれています。
 
-> **注**&nbsp;&nbsp;テンプレートの変更について詳しくは、「[コントロール テンプレート]()」をご覧ください。 テキスト エディターか、IDE の同様のエディターを使って、\(*Program Files*)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\\(*SDK version*)\Generic にある XAML ファイルを開くことができます。 各コントロールの既定のスタイルとテンプレートは、**generic.xaml** ファイルで定義されています。 MediaTransportControls テンプレートは、generic.xaml で "MediaTransportControls" を検索すると見つけることができます。
+> **注:**
+            &nbsp;&nbsp;テンプレートの変更について詳しくは、「[コントロール テンプレート]()」をご覧ください。 テキスト エディターか、IDE の同様のエディターを使って、\(*Program Files*)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\\(*SDK version*)\Generic にある XAML ファイルを開くことができます。 各コントロールの既定のスタイルとテンプレートは、**generic.xaml** ファイルで定義されています。 MediaTransportControls テンプレートは、generic.xaml で "MediaTransportControls" を検索すると見つけることができます。
 
 以下のセクションでは、トランスポート コントロールの主な要素のいくつかをカスタマイズする方法について説明します。 
-- [**Slider**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx): ユーザーがメディアをスクラブし、進行状況も表示できるようにします。
-- [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.aspx): すべてのボタンが含まれています。
+- [
+              **Slider**
+            ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx): ユーザーがメディアをスクラブし、進行状況も表示できるようにします。
+- [
+              **CommandBar**
+            ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.aspx): すべてのボタンが含まれています。
 詳しくは、MediaTransportControls リファレンス トピックの構造セクションをご覧ください。 
 
 ## トランスポート コントロールをカスタマイズする
@@ -169,7 +177,8 @@ MediaTransportControls テンプレートでは、コマンド ボタンは [**C
 </CommandBar.SecondaryCommands>
 ```
 
-> **重要**&nbsp;&nbsp;ボタンをオーバーフロー メニューで使用するには、ボタンを表示して有効にする必要があります。 この例では、IsPlaybackRateButtonVisible プロパティが true ではない場合、PlaybackRateButton 要素はオーバーフロー メニューに表示されません。 IsPlaybackRateEnabled プロパティが true ではない場合、この要素は有効ではありません。 これらのプロパティの設定は、前のセクションに示されています。
+> **重要:**
+            &nbsp;&nbsp;ボタンをオーバーフロー メニューで使用するには、ボタンを表示して有効にする必要があります。 この例では、IsPlaybackRateButtonVisible プロパティが true ではない場合、PlaybackRateButton 要素はオーバーフロー メニューに表示されません。 IsPlaybackRateEnabled プロパティが true ではない場合、この要素は有効ではありません。 これらのプロパティの設定は、前のセクションに示されています。
 
 ### カスタム ボタンの追加
 
@@ -258,13 +267,13 @@ private void MediaElement_MediaOpened(object sender, RoutedEventArgs e)
 }
 ```
 
-\[この記事には、ユニバーサル Windows プラットフォーム (UWP) アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
+
 
 ## 関連記事
 
 - [メディア再生](media-playback.md)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

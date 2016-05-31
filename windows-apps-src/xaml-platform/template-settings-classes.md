@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: Template settings (テンプレート設定) クラス
 title: Template settings (テンプレート設定) クラス
 ms.assetid: CAE933C6-EF13-465A-9831-AB003AF23907
@@ -18,14 +19,30 @@ UI にコントロールを追加し、コントロールのプロパティを�
 
 いくつかの **TemplateSettings** クラスがあります。 それらすべては [**Windows.UI.Xaml.Controls.Primitives**](https://msdn.microsoft.com/library/windows/apps/br209818) 名前空間に含まれています。 ここでは、クラスの一覧、および関連コントロールの **TemplateSettings** プロパティへのリンクを示します。 この **TemplateSettings** プロパティは、コントロールの **TemplateSettings** 値へのアクセス方法であり、プロパティへのテンプレート バインドを確立することができます。
 
--   [**ComboBoxTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227752): [**ComboBox.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209364) の値。
--   [**GridViewItemTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh738499): [**GridViewItem.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh738503) の値。
--   [**ListViewItemTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh701948): [**ListViewItem.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br242923) の値。
--   [**ProgressBarTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227856): [**ProgressBar.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227537) の値。
--   [**ProgressRingTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh702248): [**ProgressRing.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh702581) の値。
--   [**SettingsFlyoutTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/dn298721): [**SettingsFlyout.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/dn252826) の値。
--   [**ToggleSwitchTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209804): [**ToggleSwitch.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209731) の値。
--   [**ToolTipTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209813): [**ToolTip.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227629) の値。
+-   [
+              **ComboBoxTemplateSettings**
+            ](https://msdn.microsoft.com/library/windows/apps/br227752): [**ComboBox.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209364) の値。
+-   [
+              **GridViewItemTemplateSettings**
+            ](https://msdn.microsoft.com/library/windows/apps/hh738499): [**GridViewItem.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh738503) の値。
+-   [
+              **ListViewItemTemplateSettings**
+            ](https://msdn.microsoft.com/library/windows/apps/hh701948): [**ListViewItem.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br242923) の値。
+-   [
+              **ProgressBarTemplateSettings**
+            ](https://msdn.microsoft.com/library/windows/apps/br227856): [**ProgressBar.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227537) の値。
+-   [
+              **ProgressRingTemplateSettings**
+            ](https://msdn.microsoft.com/library/windows/apps/hh702248): [**ProgressRing.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh702581) の値。
+-   [
+              **SettingsFlyoutTemplateSettings**
+            ](https://msdn.microsoft.com/library/windows/apps/dn298721): [**SettingsFlyout.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/dn252826) の値。
+-   [
+              **ToggleSwitchTemplateSettings**
+            ](https://msdn.microsoft.com/library/windows/apps/br209804): [**ToggleSwitch.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209731) の値。
+-   [
+              **ToolTipTemplateSettings**
+            ](https://msdn.microsoft.com/library/windows/apps/br209813): [**ToolTip.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227629) の値。
 
 **TemplateSettings** プロパティは常に、コードではなく XAML で使うことを想定しています。 親コントロールの読み取り専用 **TemplateSettings** プロパティの読み取り専用サブプロパティです。 [
             **Control**](https://msdn.microsoft.com/library/windows/apps/br209390) ベースの新しいクラスを作成し、そのためコントロール ロジックに影響を与える可能性があるカスタム コントロールの高度なシナリオについては、コントロールから再度テンプレートを作成するユーザーに役立つ情報を伝えるために、コントロールにカスタムの **TemplateSettings** プロパティを定義することをお勧めします。 そのプロパティの読み取り専用の値として、テンプレートの測定値、アニメーションの配置などに関係する情報項目ごとに、読み取り専用プロパティを持つコントロールに関連した新しい **TemplateSettings** クラスを定義し、コントロール ロジックを使って初期化されたそのクラスのランタイム インスタンスを呼び出し元に渡します。 **TemplateSettings** クラスは [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) から派生し、プロパティでプロパティ変更コールバックに依存関係プロパティ システムを使用できるようにします。 ただし、プロパティの依存関係プロパティの識別子はパブリック API として公開されないため、**TemplateSettings** プロパティは、呼び出し元に対して読み取り専用にすることを意図したものです。
@@ -34,7 +51,7 @@ UI にコントロールを追加し、コントロールのプロパティを�
 
 次に示す例は、基盤になる既定の XAML コントロール テンプレートに含まれています。 この特定の例は、[**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) の既定のテンプレートを基にしています。
 
-```xaml
+```xml
 <Ellipse
     x:Name="E1"
     Style="{StaticResource ProgressRingEllipseStyle}"
@@ -50,7 +67,7 @@ UI にコントロールを追加し、コントロールのプロパティを�
 [
             **ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) テンプレートの完全な XAML は数百行あり、これは一部のみの抜粋です。 次の XAML は、進行状況不定の回転アニメーションを示す 6 つの [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/br243343) 要素の 1 つであるコントロール部を定義しています。 開発者は、アニメーションの進行状況を表す円が気に入らない場合は、別のグラフィック プリミティブや別の基本図形を使うことができます。 たとえば、正方形に配置した一連の [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) 要素を使った **ProgressRing** を作成できます。 その場合、新しいテンプレートの個別の各 **Rectangle** コンポーネントは次のようになります。
 
-```xaml
+```xml
 <Rectangle
     x:Name="R1"
     Width="{Binding RelativeSource={RelativeSource TemplatedParent}, 
@@ -66,7 +83,7 @@ UI にコントロールを追加し、コントロールのプロパティを�
 
 既定の XAML コントロール テンプレートから抜粋したもう 1 つの使用例を次に示します。ここでは、アニメーションの **From** と **To** であるプロパティ セットのいずれかを示します。 これは、[**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348) 既定テンプレートからの抜粋です。
 
-```xaml
+```xml
 <VisualStateGroup x:Name="DropDownStates">
     <VisualState x:Name="Opened">
         <Storyboard>
@@ -99,6 +116,6 @@ UI にコントロールを追加し、コントロールのプロパティを�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

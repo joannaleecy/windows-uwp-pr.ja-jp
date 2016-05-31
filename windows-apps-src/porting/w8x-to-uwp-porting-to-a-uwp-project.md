@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 description: 移植プロセスを開始するとき、2 つの方法から選ぶことができます。
 title: Windows ランタイム 8.x プロジェクトの UWP プロジェクトへの移植'
 ms.assetid: 2dee149f-d81e-45e0-99a4-209a178d415a
@@ -78,7 +79,7 @@ API を実装するデバイス ファミリがアプリのターゲットでは
 Windows 10 では、[**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) API に集約され、次のようにコードが簡略化されます。
 
 ```csharp
-    // Use Windows.Storage.Pickers.FileOpenPicker.PickSingleFileAsync</code></pre></td>
+    // Use Windows.Storage.Pickers.FileOpenPicker.PickSingleFileAsync
 ```
 
 次の例では、ハードウェアの "戻る" ボタンを処理しますが、Windows Phone のみが対象となります。
@@ -171,6 +172,6 @@ private void HardwareButtons_CameraPressed(object sender, Windows.Phone.UI.Input
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

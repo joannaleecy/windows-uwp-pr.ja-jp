@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: RichTextBlockOverflow 要素を持つ RichTextBlock を使って、高度なテキスト レイアウトを作成します。
 title: RichTextBlock
 ms.assetid: E4BE4B1B-418E-4075-88F1-22C09DDF8E45
-label: リッチ テキスト ブロック
+label: Rich text block
 template: detail.hbs
 ---
 # リッチ テキスト ブロック
@@ -128,7 +129,7 @@ RichTextBlock に格納されるのはプレーン テキストですが、各�
 
 文字体裁およびフォントのガイドラインに関するトピックをご覧ください。
 
-\[この記事には、ユニバーサル Windows プラットフォーム (UWP) アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
+
 
 ## 関連記事
 
@@ -148,6 +149,6 @@ RichTextBlock に格納されるのはプレーン テキストですが、各�
 - [String.Length プロパティ](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: QuinnRadich
 Description: このガイドラインは、アプリの効果的なヘルプ コンテンツの設計方法を説明しています。
 title: アプリのヘルプのガイドライン
 label: Guidelines for app help
@@ -60,6 +61,6 @@ template: detail.hbs
 \[この記事には、ユニバーサル Windows プラットフォーム (UWP) アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

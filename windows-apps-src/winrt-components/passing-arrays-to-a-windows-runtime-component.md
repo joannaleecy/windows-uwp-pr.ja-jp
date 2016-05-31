@@ -1,4 +1,5 @@
 ---
+author: martinekuan
 title: Windows ランタイム コンポーネントに配列を渡す
 description: Windows ユニバーサル プラットフォーム (UWP) では、パラメーターは入力または出力のどちらかに使用され、両方に使用されることはありません。 つまり、メソッドに渡される配列の内容および配列自体は、入力か出力のどちらかに使用されます。
 ms.assetid: 8DE695AC-CEF2-438C-8F94-FB783EE18EB9
@@ -62,6 +63,6 @@ ReadOnlyArrayAttribute 属性または WriteOnlyArrayAttribute 属性を持つ�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

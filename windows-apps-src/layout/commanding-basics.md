@@ -1,16 +1,13 @@
 ---
+author: mijacobs
 Description: ユニバーサル Windows プラットフォーム (UWP) アプリでは、コマンド要素は、ユーザーがメール送信、項目の削除、フォームの送信などのアクションを実行できる対話型の UI 要素です。
 title: ユニバーサル Windows プラットフォーム (UWP) アプリのコマンド設計の基本
 ms.assetid: 1DB48285-07B7-4952-80EF-02B57D4469F2
-label: コマンド設計の基本
+label: Command design basics
 template: detail.hbs
 ---
 
 #  UWP アプリのコマンド設計の基本
-
-
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
-
 
 ユニバーサル Windows プラットフォーム (UWP) アプリでは、*コマンド要素*は、ユーザーがメール送信、項目の削除、フォームの送信などのアクションを実行できる対話型の UI 要素です。 この記事では、ボタンやチェック ボックスなどのコマンド要素、それらの要素でサポートされる操作、それらの要素をホストするコマンド サーフェス (コマンド バーやショートカット メニューなど) について説明します。
 
@@ -36,9 +33,9 @@ template: detail.hbs
 
  
 
-(全一覧については、「[コントロールと UI 要素](https://dev.windows.com/design/controls-patterns)」をご覧ください)。
+全一覧については、「[コントロールと UI 要素](https://dev.windows.com/design/controls-patterns)」をご覧ください。
 
-## <span id="_________Place_commands_on_the_right_surface_______"></span><span id="_________place_commands_on_the_right_surface_______"></span><span id="_________PLACE_COMMANDS_ON_THE_RIGHT_SURFACE_______"></span>適切なサーフェスへのコマンドの配置
+## <span id="_________Place_commands_on_the_right_surface_______"></span><span id="_________place_commands_on_the_right_surface_______"></span><span id="_________PLACE_COMMANDS_ON_THE_RIGHT_SURFACE_______"></span> 適切なサーフェスへのコマンドの配置
 
 
 アプリのキャンバス (アプリのコンテンツ領域) や、コマンド バー、メニュー、ダイアログ、ポップアップなどコマンド コンテナーとして機能する特殊なコマンド要素を含む、アプリの多くのサーフェスにコマンド要素を配置できます。 コマンドを配置する際の一般的な推奨事項は次のとおりです。
@@ -71,15 +68,15 @@ Windows に用意されたコマンド サーフェスの一覧と、それら�
 <p>ただし、キャンバスに配置するコマンドは慎重に選んでください。 アプリのキャンバスにコマンドが多すぎると、貴重な画面のスペースがなくなり、ユーザーを困惑させる可能性があります。 それほど頻繁に使わないコマンドの場合、メニューやコマンド バーの [その他] 領域など、別のコマンド サーフェスに配置することを検討してください。</p></td>
 </tr>
 <tr class="even">
-<td align="left">[Command bar](https://msdn.microsoft.com/library/windows/apps/hh465302)
+<td align="left">[コマンド バー](https://msdn.microsoft.com/library/windows/apps/hh465302)
 <p><img src="images/controls-appbar-icons-200.png" alt="Example of a command bar with icons" /></p></td>
 <td align="left"><p>コマンド バーを使うと、ユーザーはアクションに簡単にアクセスできます。 コマンド バーは、ユーザーのコンテキストに固有のコマンドまたはオプション (写真の選択や描画モードなど) を表示するためにも使うことができます。</p>
 <p>コマンド バーは画面の上部または画面の下部、あるいは画面の上部と下部の両方に配置できます。 写真編集アプリのこの設計は、コンテンツ領域とコマンド バーを示しています。</p>
 <p><img src="images/commands-appcanvas-example.png" alt="A photo app" /></p>
-<p>コマンド バーについて詳しくは、「[ Guidelines for command bar](https://msdn.microsoft.com/library/windows/apps/hh465302)」をご覧ください。</p></td>
+<p>コマンド バーについて詳しくは、「[コマンド バーのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465302)」をご覧ください。</p></td>
 </tr>
 <tr class="odd">
-<td align="left">[Menus and context menus](../controls-and-patterns/dialogs-popups-menus.md)
+<td align="left">[メニューとショートカット メニュー](../controls-and-patterns/dialogs-popups-menus.md)
 <p><img src="images/controls-contextmenu-singlepane.png" alt="Example of a single-pane context menu" /></p></td>
 <td align="left"><p>複数のコマンドをコマンド メニューにグループ化することで効率性が高まる場合があります。 メニューを使うと、より狭い場所により多くのオプションを表示できます。 メニューには対話的なコントロールを含めることができます。</p>
 <p>ショートカット メニューは、よく使うアクションへのショートカットを提供し、特定のコンテキストにのみ関連するセカンダリ コマンドにアクセスできるようにします。</p>
@@ -92,16 +89,16 @@ Windows に用意されたコマンド サーフェスの一覧と、それら�
 </ul>
 <p>この例は、ショートカット メニューを使って経路の変更、経路のブックマーク登録、別の電車の選択を行う地下鉄アプリのデザインを示しています。</p>
 <p><img src="images/subway/uap-subway-ak-8in-dashboard-200.png" alt="A context menu in an subway app" /></p>
-<p>ショートカット メニューについて詳しくは、「[ Guidelines for context menu](https://msdn.microsoft.com/library/windows/apps/hh465308)」をご覧ください。</p></td>
+<p>ショートカット メニューについて詳しくは、「[ショートカット メニューのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465308)」をご覧ください。</p></td>
 </tr>
 <tr class="even">
-<td align="left">[Dialog controls](../controls-and-patterns/dialogs-popups-menus.md)
+<td align="left">[ダイアログ コントロール](../controls-and-patterns/dialogs-popups-menus.md)
 <p><img src="images/controls-dialog-twobutton-200.png" alt="Example of a simple two-button dialog" /></p></td>
 <td align="left"><p>ダイアログは、状況依存のアプリ情報を表示するモーダル UI オーバーレイです。 ほとんどの場合、ダイアログは明示的に閉じられまでアプリ ウィンドウの操作を妨げます。また、多くの場合、ユーザーに操作を要求します。</p>
-<p>ダイアログは、煩わしく感じることがあるため、特定の状況でのみ使用してください。 詳しくは、「[When to confirm or undo actions](#whentoconfirm)」セクションをご覧ください。</p></td>
+<p>ダイアログは、煩わしく感じることがあるため、特定の状況でのみ使用してください。 詳しくは、「[アクションを確認または元に戻すタイミング](#whentoconfirm)」をご覧ください。</p></td>
 </tr>
 <tr class="odd">
-<td align="left">[Flyout](../controls-and-patterns/dialogs-popups-menus.md)
+<td align="left">[ポップアップ](../controls-and-patterns/dialogs-popups-menus.md)
 <p><img src="images/controls-flyout-default-200.png" alt="Image of default flyout" /></p></td>
 <td align="left"><p>ユーザーが現在操作している内容に関係する UI を表示する軽量な状況依存のポップアップです。 ポップアップは、次の目的で使います。</p>
 <p></p>
@@ -110,7 +107,7 @@ Windows に用意されたコマンド サーフェスの一覧と、それら�
 <li>項目の詳細を表示する。</li>
 <li>アプリの操作をブロックしないでユーザーにアクションの確認を求める。</li>
 </ul>
-<p>ポップアップは、その外側をタップするかクリックすることで閉じることができます。 ポップアップ コントロールについて詳しくは、「[ Dialogs, menus, and popups](../controls-and-patterns/dialogs-popups-menus.md)」をご覧ください。</p></td>
+<p>ポップアップは、その外側をタップするかクリックすることで閉じることができます。 ポップアップ コントロールについて詳しくは、「[メニュー、ダイアログ、ポップアップ](../controls-and-patterns/dialogs-popups-menus.md)」をご覧ください。</p></td>
 </tr>
 </tbody>
 </table>
@@ -138,13 +135,13 @@ Windows に用意されたコマンド サーフェスの一覧と、それら�
 
  
 
-## <span id="_________Optimize_for_specific_input_types_______"></span><span id="_________optimize_for_specific_input_types_______"></span><span id="_________OPTIMIZE_FOR_SPECIFIC_INPUT_TYPES_______"></span>特定の入力タイプの最適化
+## <span id="_________Optimize_for_specific_input_types_______"></span><span id="_________optimize_for_specific_input_types_______"></span><span id="_________OPTIMIZE_FOR_SPECIFIC_INPUT_TYPES_______"></span> 特定の入力タイプの最適化
 
 
 特定の入力の種類やデバイスを中心としたユーザー エクスペリエンスの最適化について詳しくは、「[操作の基本情報](../input-and-devices/input-primer.md)」をご覧ください。
 
 
-\[この記事には、UWP アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
+
 
  
 
@@ -155,6 +152,6 @@ Windows に用意されたコマンド サーフェスの一覧と、それら�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

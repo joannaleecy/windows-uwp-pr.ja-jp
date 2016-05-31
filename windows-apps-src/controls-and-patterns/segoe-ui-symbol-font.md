@@ -1,24 +1,23 @@
 ---
+author: Jwmsft
 Description: この記事には、Segoe MDL2 Assets フォントに付属しているグリフの一覧と、その使い方のガイダンスが含まれています。
 Search.Refinement.TopicID: 184
 title: Segoe MDL2 アイコンのガイドライン
 ms.assetid: DFB215C2-8A61-4957-B662-3B1991AC9BE1
-label: Segoe MDL2 アイコン
+label: Segoe MDL2 icons
 template: detail.hbs
 ---
 
 # Segoe MDL2 アイコンのガイドライン
 
-
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
-
+この記事には、Segoe MDL2 Assets フォントに付属しているグリフの一覧と、その使い方のガイダンスが含まれています。 このフォントを入手するには Windows 10 をインストールする必要があります。
 
 **重要な API**
 
 -   [**Symbol 列挙値 (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn252842)
 -   [**AppBarIcon 列挙値 (HTML)**](https://msdn.microsoft.com/library/windows/apps/hh770557)
 
-この記事には、Segoe MDL2 Assets フォントに付属しているグリフの一覧と、その使い方のガイダンスが含まれています。 このフォントを入手するには Windows 10 をインストールする必要があります。
+
 
 ## <span id="Recommendations"></span><span id="recommendations"></span><span id="RECOMMENDATIONS"></span>推奨事項
 
@@ -1600,7 +1599,9 @@ C#/VB/C++ と XAML を使ってアプリを開発している場合は、Unicode
 **デザイナー向け**
 * [フォントのガイドライン](fonts.md)
 * [W3C: 右から左に書く (RTL) 言語](http://www.i18nguy.com/temp/rtl.mdl)
-**開発者向け (XAML)**
+            
+          
+            **開発者向け (XAML)**
 * [**Symbol 列挙値**](https://msdn.microsoft.com/library/windows/apps/dn252842)
 
 
@@ -1611,6 +1612,6 @@ C#/VB/C++ と XAML を使ってアプリを開発している場合は、Unicode
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

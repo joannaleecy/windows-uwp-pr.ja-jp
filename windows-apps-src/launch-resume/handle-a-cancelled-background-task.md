@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: 取り消されたバックグラウンド タスクの処理
 description: 取り消し要求を認識し、作業を停止して、固定ストレージを使っているアプリの取り消しを報告するバックグラウンド タスクの作成方法について説明します。
 ms.assetid: B7E23072-F7B0-4567-985B-737DD2A8728E
@@ -102,7 +103,7 @@ OnCanceled メソッドには、次のフットプリントがあることが条
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
->     if ((_cancelRequested == false) &amp;&amp; (_progress &lt; 100))
+>     if ((_cancelRequested == false) && (_progress < 100))
 >     {
 >         _progress += 10;
 >         _taskInstance.Progress = _progress;
@@ -115,7 +116,7 @@ OnCanceled メソッドには、次のフットプリントがあることが条
 >     }
 > ```
 > ```cpp
->     if ((CancelRequested == false) &amp;&amp; (Progress &lt; 100))
+>     if ((CancelRequested == false) && (Progress < 100))
 >     {
 >         Progress += 10;
 >         TaskInstance->Progress = Progress;
@@ -136,7 +137,7 @@ OnCanceled メソッドには、次のフットプリントがあることが条
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
->     if ((_cancelRequested == false) &amp;&amp; (_progress &lt; 100))
+>     if ((_cancelRequested == false) && (_progress < 100))
 >     {
 >         _progress += 10;
 >         _taskInstance.Progress = _progress;
@@ -171,7 +172,7 @@ OnCanceled メソッドには、次のフットプリントがあることが条
 >     }
 > ```
 > ```cpp
->     if ((CancelRequested == false) &amp;&amp; (Progress &lt; 100))
+>     if ((CancelRequested == false) && (Progress < 100))
 >     {
 >         Progress += 10;
 >         TaskInstance->Progress = Progress;
@@ -186,7 +187,7 @@ OnCanceled メソッドには、次のフットプリントがあることが条
 >         
 >         auto settings = ApplicationData::Current->LocalSettings;
 >         auto key = TaskInstance->Task->Name;
->         settings->Values->Insert(key, (Progress &lt; 100) ? "Canceled" : "Completed");
+>         settings->Values->Insert(key, (Progress < 100) ? "Canceled" : "Completed");
 >         
 >         //
 >         // Indicate that the background task has completed.
@@ -243,7 +244,7 @@ OnCanceled メソッドには、次のフットプリントがあることが条
 > //
 > private void PeriodicTimerCallback(ThreadPoolTimer timer)
 > {
->     if ((_cancelRequested == false) &amp;&amp; (_progress < 100))
+>     if ((_cancelRequested == false) && (_progress < 100))
 >     {
 >         _progress += 10;
 >         _taskInstance.Progress = _progress;
@@ -283,7 +284,7 @@ OnCanceled メソッドには、次のフットプリントがあることが条
 >     //
 >     // Associate a cancellation handler with the background task.
 >     //
->     taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &amp;SampleBackgroundTask::OnCanceled);
+>     taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &SampleBackgroundTask::OnCanceled);
 > 
 >     //
 >     // Get the deferral object from the task instance, and take a reference to the taskInstance.
@@ -293,7 +294,7 @@ OnCanceled メソッドには、次のフットプリントがあることが条
 > 
 >     auto timerDelegate = [this](ThreadPoolTimer^ timer)
 >     {
->         if ((CancelRequested == false) &amp;&amp;
+>         if ((CancelRequested == false) &&
 >             (Progress < 100))
 >         {
 >             Progress += 10;
@@ -323,7 +324,7 @@ OnCanceled メソッドには、次のフットプリントがあることが条
 > }
 > ```
 
-> **注**  この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
+> **注:** この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
 ## 関連トピック
 
@@ -345,6 +346,6 @@ OnCanceled メソッドには、次のフットプリントがあることが条
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

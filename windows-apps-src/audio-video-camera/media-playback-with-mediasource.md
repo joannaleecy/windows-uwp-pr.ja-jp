@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: C5623861-6280-4352-8F22-80EB009D662C
 description: MediaSource クラスは、ローカル ファイルやリモート ファイルなど、さまざまなソースのメディアを参照および再生するための一般的な方法を提供し、基になるメディア形式に関係なく、メディア データにアクセスするための一般的なモデルを公開します。
 title: MediaSource を使ったメディアの再生
@@ -13,7 +14,9 @@ title: MediaSource を使ったメディアの再生
 
 [
             **MediaSource**](https://msdn.microsoft.com/library/windows/apps/dn930905) クラスは、ローカル ファイルやリモート ファイルなど、さまざまなソースのメディアを参照および再生するための一般的な方法を提供し、基になるメディア形式に関係なく、メディア データにアクセスするための一般的なモデルを公開します。 [
-            **MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/dn930939) クラスは、メディア項目に含まれている複数のオーディオ、ビデオ、メタデータ トラックを管理および選択できるようにして、**MediaSource** の機能を拡張します。 [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) を使用すると、1 つまたは複数のメディア再生項目から再生リストを作成できます。
+            **MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/dn930939) クラスは、メディア項目に含まれている複数のオーディオ、ビデオ、メタデータ トラックを管理および選択できるようにして、**MediaSource** の機能を拡張します。 [
+              **MediaPlaybackList**
+            ](https://msdn.microsoft.com/library/windows/apps/dn930955) を使用すると、1 つまたは複数のメディア再生項目から再生リストを作成できます。
 
 この記事のコードは、[ビデオ再生 SDK](http://go.microsoft.com/fwlink/p/?LinkId=620020&clcid=0x409) のサンプルを基にしています。 このサンプルをダウンロードすると、コンテキスト内のコードを確認できます。独自のアプリの出発点として使うこともできます。
 
@@ -34,7 +37,7 @@ title: MediaSource を使ったメディアの再生
 
 このシナリオを実現するには、[**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962) および [**Windows.Media.Playback**](https://msdn.microsoft.com/library/windows/apps/dn640562) 名前空間を含める必要があります。
 
-[!code-cs[Using](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetUsing)]
+[!code-cs[使用](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetUsing)]
 
 **MediaSource** 型の変数を宣言します。 この記事の例では、複数の場所からアクセスできるように、メディア ソースはクラス メンバーとして宣言されています。
 
@@ -131,7 +134,7 @@ title: MediaSource を使ったメディアの再生
 
 [!code-cs[AddDataTrack](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetAddDataTrack)]
 
-**CueEntered** イベントは、関連付けられたトラックの表示モードが **ApplicationPresented**、**Hidden**、または **PlatformPresented** である限り、キューの開始時間になると発生します。トラックの表示モードが **Disabled** である場合、メタデータ トラックのキュー イベントは発生しません。 この例では、キューに関連付けられているカスタム データを、単にデバッグ ウィンドウに出力します。
+**CueEntered** イベントは、関連付けられたトラックの表示モードが **ApplicationPresented**、**Hidden**、または **PlatformPresented** である限り、キューの開始時間になると発生します。 トラックの表示モードが **Disabled** である場合、メタデータ トラックのキュー イベントは発生しません。 この例では、キューに関連付けられているカスタム データを、単にデバッグ ウィンドウに出力します。
 
 [!code-cs[DataCueEntered](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetDataCueEntered)]
 
@@ -186,6 +189,6 @@ title: MediaSource を使ったメディアの再生
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

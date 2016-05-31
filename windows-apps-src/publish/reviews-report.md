@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: Windows デベロッパー センター ダッシュボードの [レビュー] レポートでは、顧客がストアのアプリを評価するときに入力したコメントを確認できます。
 title: レビュー レポート
 ms.assetid: E50C3A4D-1D8A-4E5B-8182-3FAD049F2A2D
@@ -78,6 +79,6 @@ Windows ストア デベロッパー センター ダッシュボードを使っ
  
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

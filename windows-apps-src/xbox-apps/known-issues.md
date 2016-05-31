@@ -1,10 +1,16 @@
 ---
+author: Mtoepke
 title: Xbox One Developer Preview の UWP の既知の問題
 description: 
 area: Xbox
 ---
 
-# Xbox One Developer Preview の UWP の既知の問題
+# Xbox Developer Preview の UWP の既知の問題
+
+このトピックでは、Xbox Developer Preview の UWP の既知の問題について説明します。 
+この開発者プレビューについて詳しくは、「[Xbox One の UWP](index.md)」をご覧ください。 
+
+\[API リファレンス トピックのリンクからこのページを見つけた、ユニバーサル デバイス ファミリの API の情報を探している方は、「[Xbox でまだサポートされていない UWP 機能](http://go.microsoft.com/fwlink/?LinkID=760755)」をご覧ください。\]
 
 Xbox Developer Preview のシステム更新プログラムには、実験的な初期プレリリース版のソフトウェアが含まれています。 
 このため、一部の人気ゲームやアプリが想定どおりに動作しなかったり、クラッシュやデータの損失が発生する可能性があります。 
@@ -16,9 +22,9 @@ Xbox Developer Preview のシステム更新プログラムには、実験的な
 
 以降に、このリリースで発生する可能性のある既知の問題を示していますが、すべての問題は網羅されていません。 
 
-**お客様からのフィードバックは重要ですので**、問題が見つかりましたら「[ユニバーサル Windows アプリの開発](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop)」フォーラムでご報告ください。 
+**お客様からのフィードバックは重要ですので**、問題が見つかりましたら[ユニバーサル Windows アプリの開発](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop)フォーラムでご報告ください。 
 
-行き詰まった場合は、「[よく寄せられる質問](frequently-asked-questions.md)」をご覧になり、フォーラムに質問を投稿してください。
+行き詰まった場合は、このトピックの情報をお読みください。「[よく寄せられる質問](frequently-asked-questions.md)」を利用することも、フォーラムに質問を投稿することもできます。
 
 
 ## ゲームの開発
@@ -37,7 +43,11 @@ x86 を使用する場合、問題が見つかったらフォーラムでご報�
 
 いくつかの一般的なゲーム エンジンをテストしていますが、すべてのエンジンはテストしていません。このプレビューのテスト カバレッジは包括的なものではありません。 
 実際のメリットはケースによって異なります。 
-お客様からのフィードバックは重要です。 
+
+次のゲーム エンジンは動作が確認されています。
+* [Construct 2](https://www.scirra.com/)
+
+これ以外にも動作するエンジンがある可能性があります。 お客様からのフィードバックは重要です。 
 見つかった問題をフォーラムでご報告ください。
 
 ### DirectX 12 のサポート
@@ -47,6 +57,25 @@ Xbox One の UWP は、DirectX 11 の機能レベル 10 をサポートしてい
 Xbox One は、従来のすべてのゲーム コンソールと同じように、その潜在的な機能を最大限に利用するために特定の SDK を必要とする特殊なハードウェアです。 
 Xbox One のハードウェアの機能を最大限に利用する必要があるゲームを開発している場合、[ID@XBOX](http://www.xbox.com/en-us/Developers/id) プログラムに登録することで、DirectX 12 のサポートを含む SDK にアクセスできます。
 
+### Xbox One Developer Preview では Windows 10 にゲームをストリーム配信できない
+
+コンソールで Xbox One Developer Preview をアクティブ化すると、コンソールがリテール モードに設定されている場合でも、Xbox One から Windows 10 上の Xbox アプリにゲームをストリーム配信できなくなります。 ゲームのストリーム配信機能を復元するには、開発者プレビューから離れる必要があります。
+
+### テレビのセーフ エリアに関する既知の問題
+
+既定では、Xbox 上の UWP アプリの表示領域は、テレビのセーフ エリアによって挿入される必要があります。 ただし、Xbox One Developer Preview には、テレビのセーフ エリアが [_offset_, _offset_] ではなく [0, 0] で開始されるという既知のバグがあります。
+
+テレビのセーフ エリアについて詳しくは、[https://msdn.microsoft.com/windows/uwp/input-and-devices/designing-for-tv](https://msdn.microsoft.com/windows/uwp/input-and-devices/designing-for-tv) をご覧ください。 
+
+この問題に対処するための最も簡単な方法として、次の JavaScript の例に示すように、テレビのセーフ エリアを無効にします。
+
+    var applicationView = Windows.UI.ViewManagement.ApplicationView.getForCurrentView();
+
+    applicationView.setDesiredBoundsMode(Windows.UI.ViewManagement.ApplicationViewBoundsMode.useCoreWindow);
+
+### マウス モードがまだサポートされていない
+
+[https://msdn.microsoft.com/en-us/windows/uwp/input-and-devices/designing-for-tv] (https://msdn.microsoft.com/en-us/windows/uwp/input-and-devices/designing-for-tv?f=255&MSPPError=-2147217396#mouse-mode) トピックに説明されている_マウス モード_機能は Xbox One Developer Preview でサポートされていません。
 
 ## Xbox One 上の UWP アプリとゲームのシステム リソース
 
@@ -64,7 +93,7 @@ Xbox One で実行されている UWP アプリとゲームはシステムやそ
 ## UWP API カバレッジ
 
 このプレビューの Xbox では、すべての UWP API が意図したとおりに機能するわけではありません。 
-機能しない API の一覧については、「[Xbox での UWP デバイス ファミリ機能の地域制限](http://go.microsoft.com/fwlink/p/?LinkId=760755)」をご覧ください。 
+動作しないことが確認されている API の一覧については、「[Xbox でまだサポートされていない UWP 機能](http://go.microsoft.com/fwlink/p/?LinkId=760755)」をご覧ください。 
 他の API に問題が見つかった場合は、フォーラムでご報告ください。 
 
 ## XAML コントロールは Xbox One のシェルのコントロールに似ていない、または同じように機能しない
@@ -86,7 +115,8 @@ Xbox One で実行されている UWP アプリとゲームはシステムやそ
 
 この問題が発生した場合、通常、Xbox One のコレクション アプリからアプリをアンインストールすると問題が解決します。
 
-> **注**&nbsp;&nbsp;Windows Device Portal (WDP) からアプリをアンインストールしても、問題は解決されません。
+> **注**
+            &nbsp;&nbsp;Windows Device Portal (WDP) からアプリをアンインストールしても、問題は解決しません。
 
 問題が解決しない場合は、アプリやゲームをコレクション アプリからアンインストールして、開発者モードからリテール モードに切り替えて再起動し、さらに開発者モードに戻します。
 
@@ -118,9 +148,11 @@ Dev Home で WDP を無効にすると、WDP がオフになります。
 この問題を回避するには、**[Reset and keep my games & apps]** を使用して、Xbox One に保存されている状態を削除します。 
 [設定]、[システム]、[Console info & updates]、[Reset console] の順に選択し、**[Reset and keep my games & apps]** ボタンを選択します。
 
-> **注意**&nbsp;&nbsp;これにより、ワイヤレス設定、ユーザー アカウント、クラウド ストレージに保存されていないゲーム進行状況など、Xbox One に保存されたすべての設定が削除されます。
+> **注意**
+            &nbsp;&nbsp;これにより、ワイヤレス設定、ユーザー アカウント、クラウド ストレージに保存されていないゲーム進行状況など、Xbox One に保存されたすべての設定が削除されます。
 
-> **注意**&nbsp;&nbsp;**[Reset and remove everything]** ボタンを押さないでください。
+> **注意**
+            &nbsp;&nbsp;**[Reset and remove everything]** ボタンを押さないでください。
 これにより、ゲーム、アプリ、設定とコンテンツのすべてが削除され、開発者モードが非アクティブ化され、コンソールは Developer Preview グループから削除されます。
 
 ### [Running Apps] テーブルの列が予想どおりに更新されない 
@@ -134,13 +166,13 @@ WDP で Internet Explorer 11 の互換表示をオフにすると、この問題
 
 ### WDP に移動すると証明書の警告が表示される
 
-提供した証明書に関して、次のスクリーンショットに類似した警告が表示されます。 
-これは、Xbox One コンソールで署名されたセキュリティ証明書が既知の信頼できる発行元からの証明書であると見なされないためです。 
+提供された証明書についての、次のスクリーン ショットのような警告が表示されます。これは、Xbox One コンソールによって署名されたセキュリティ証明書が、既知の信頼された発行元とは見なされないためです。 
 [このサイトの閲覧を続行する] をクリックして、Windows Device Portal にアクセスします。
 
 ![Web サイトのセキュリティ証明書の警告](images/security_cert_warning.jpg)
 
 ## Dev Home
+
 場合によっては、Dev Home で [Manage Windows Device Portal] オプションを選択すると、Dev Home はメッセージを表示せずに [ホーム] 画面になります。 
 この問題は、コンソールの WDP インフラストラクチャのエラーによって発生します。コンソールを再起動すると、この問題を解決できます。
 
@@ -149,6 +181,6 @@ WDP で Internet Explorer 11 の互換表示をオフにすると、この問題
 - [Xbox One の UWP](index.md)
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

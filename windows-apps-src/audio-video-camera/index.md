@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: 0fc12d26-f1cf-4da7-b5a7-735a5074b74a
 description: このセクションでは、写真、ビデオ、オーディオをキャプチャ、再生、または編集するユニバーサル Windows アプリの作成について説明します。
 title: オーディオ、ビデオ、およびカメラ
@@ -15,10 +16,12 @@ title: オーディオ、ビデオ、およびカメラ
 | [CameraCaptureUI を使った写真とビデオのキャプチャ](capture-photos-and-video-with-cameracaptureui.md) | この記事では、[CameraCaptureUI](capture-photos-and-video-with-cameracaptureui.md) クラスを使用して、Windows に組み込まれているカメラ UI で写真またはビデオをキャプチャする方法を説明します。                                                                                                            |
 | [MediaCapture を使った写真とビデオのキャプチャ](capture-photos-and-video-with-mediacapture.md)       | この記事では、[MediaCapture](https://msdn.microsoft.com/library/windows/apps/br241124) API を使用して写真とビデオをキャプチャする手順について説明します。これには、MediaCapture の初期化とシャットダウン、デバイスの向きに変化が生じた場合の処理などが含まれます。                                  |
 | [画像やビデオでの顔の検出](detect-and-track-faces-in-an-image.md)                         | このトピックでは、ビデオ フレームのシーケンスで顔を経時的に追跡するように最適化されている [FaceTracker](https://msdn.microsoft.com/library/windows/apps/dn974150) の使用方法について説明します。                                                                                                               |
-| [メディア コンポジションと編集](media-compositions-and-editing.md)                               | [Microsoft メディア ファンデーション](https://msdn.microsoft.com/library/windows/desktop/ms694197) API 内の API。                                                                                                                                                                                 |
+| [メディア コンポジションと編集](media-compositions-and-editing.md)                               | この記事では、[**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) 名前空間の API を使って、オーディオとビデオのソース ファイルからメディア コンポジションを作成するアプリを開発する方法について説明します。                                    |
+                                                                                                                                        | [カスタムのビデオ特殊効果](custom-video-effects.md)                               | この記事では、ビデオ ストリームのカスタム効果を作成するための IBasicVideoEffect インターフェイスを実装する Windows ランタイム コンポーネントを作成する方法について説明します。                                                                                                                                |
 | [イメージング](imaging.md)                                                                             | この記事では、[SoftwareBitmap](https://msdn.microsoft.com/library/windows/apps/dn887358) オブジェクトを使って画像の読み込みと保存を行い、ビットマップ画像を表現する方法について説明します。                                                                                                                     |
+| [オーディオ デバイス情報プロパティ](audio-device-information-properties.md)                                                                             | この記事では、オーディオ デバイスに関連するデバイス情報プロパティを示します。                                                                                                                      |
 | [メディア ファイルのコード変換](transcode-media-files.md)                                                 | [Windows.Media.Transcoding](https://msdn.microsoft.com/library/windows/apps/br207105) API を使って、ビデオ ファイルをある形式から別の形式にコード変換できます。                                                                                                                                |
-| [バックグラウンドでのメディア ファイルの処理](process-media-files-in-the-background.md)                 | この記事では、[MediaProcessingTrigger](https://msdn.microsoft.com/library/windows/apps/dn806005) とバックグラウンド タスクを使って、バックグラウンドでメディア ファイルを処理する方法について説明します。                                                                                                       |
+| [バックグラウンドでのメディア ファイルの処理](process-media-files-in-the-background.md)                 | この記事では、[MediaProcessingTrigger](https://msdn.microsoft.com/library/windows/apps/dn806005) とバックグラウンド タスクを使って、バックグラウンドでメディア ファイルを処理する方法について説明します。                                                                                             |
 | [MediaSource を使ったメディアの再生](media-playback-with-mediasource.md)                             | [MediaSource](https://msdn.microsoft.com/library/windows/apps/dn930905) クラスは、ローカル ファイルやリモート ファイルなど、さまざまなソースのメディアを参照および再生するための一般的な方法を提供し、基になるメディア形式に関係なく、メディア データにアクセスするための一般的なモデルを公開します。  |
 | [アダプティブ ストリーミング](adaptive-streaming.md)                                                       | この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリにアダプティブ ストリーミング マルチメディア コンテンツの再生を追加する方法について説明します。 現在、この機能では、HTTP ライブ ストリーミング (HLS) と Dynamic Adaptive Streaming over HTTP (DASH) コンテンツの再生がサポートされています。                                          |
 | [バックグラウンド オーディオ](background-audio.md)                                                           | この記事では、バックグラウンドでオーディオを再生する UWP アプリを作成する方法について説明します。                                                                                                                                                                                                               |
@@ -42,6 +45,6 @@ title: オーディオ、ビデオ、およびカメラ
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: martinekuan
 title: C++ での基本的な Windows ランタイム コンポーネントの作成と JavaScript または C# からの呼び出し#
 description: このチュートリアルでは、JavaScript、C#、または Visual Basic から呼び出すことができる基本的な Windows ランタイム コンポーネント DLL を作成する方法について説明します。
 ms.assetid: 764CD9C6-3565-4DFF-88D7-D92185C7E452
@@ -115,6 +116,6 @@ C++ Windows ランタイム コンポーネント プロジェクトをソリュ
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

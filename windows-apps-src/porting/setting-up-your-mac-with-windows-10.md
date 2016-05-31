@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 description: 現在の Mac コンピューターを使用して、Windows 用アプリを開発します。
 title: Windows 10 を使用するための Mac のセットアップ
 ms.assetid: 6D520610-5DE0-476E-A792-AA57E002D309
@@ -38,6 +39,6 @@ VirtualBox は、お使いのコンピューター上で仮想マシンを実行
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

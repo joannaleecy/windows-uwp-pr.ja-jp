@@ -1,14 +1,6 @@
 ---
-Description: ストアの商取引プラットフォームを使ってコンシューマブルなアプリ内製品 (購入、使用、再購入が可能なアイテム) をサポートすると、堅牢かつ信頼性の高いアプリ内購入エクスペリエンスを顧客に提供できます。
-title: コンシューマブルなアプリ内製品購入を有効にする
-ms.assetid: F79EE369-ACFC-4156-AF6A-72D1C7D3BDA4
-keywords: アプリ内販売
-keywords: コンシューマブル
-keywords: アプリ内購入
-keywords: アプリ内製品
-keywords: アプリ内購入/販売をサポートする方法
-keywords: アプリ内購入コード サンプル
-keywords: アプリ内販売コード サンプル
+author: mcleanbyron Description: ストアの商取引プラットフォームを使ってコンシューマブルなアプリ内製品 (購入、使用、再購入が可能なアイテム) をサポートすると、堅牢かつ信頼性の高いアプリ内購入エクスペリエンスを顧客に提供できます。
+title: コンシューマブルなアプリ内製品購入の有効化 ms.assetid: F79EE369-ACFC-4156-AF6A-72D1C7D3BDA4 keywords: アプリ内販売 keywords: コンシューマブル keywords: アプリ内購入 keywords: アプリ内製品 keywords: アプリ内購入/販売をサポートする方法 keywords: アプリ内購入コード サンプル keywords: アプリ内販売コード サンプル
 ---
 
 # コンシューマブルなアプリ内製品購入の有効化
@@ -79,7 +71,7 @@ private void GrantFeatureLocally(string productId, Guid transactionId)
 ```CSharp
 private Boolean IsLocallyFulfilled(string productId, Guid transactionId)
 {
-    return grantedConsumableTransactionIds.ContainsKey(productId) &amp;&amp; grantedConsumableTransactionIds[productId].Contains(transactionId);
+    return grantedConsumableTransactionIds.ContainsKey(productId) && grantedConsumableTransactionIds[productId].Contains(transactionId);
 }
 ```
 
@@ -127,6 +119,6 @@ private async void GetUnfulfilledConsumables()
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

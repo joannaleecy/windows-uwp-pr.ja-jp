@@ -28,6 +28,6 @@ author: awkoren
 | [EDP を使ったアプリ間で転送されるエンタープライズ データの保護](use-edp-to-protect-enterprise-data-transferred-between-apps.md) | このトピックでは、データ転送に関連する最も一般的なエンタープライズ データ保護 (EDP) シナリオのいくつかを実現するために必要なコード作成タスクの例を示します。 |
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

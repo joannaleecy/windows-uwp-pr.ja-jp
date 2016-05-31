@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: アプリをアクティブ化する方法 (DirectX と C++)
 description: ここでは、ユニバーサル Windows プラットフォーム (UWP) DirectX アプリのアクティブ化エクスペリエンスを定義する方法について説明します。
 ms.assetid: b07c7da1-8a5e-5b57-6f77-6439bf653a53
@@ -7,7 +8,7 @@ ms.assetid: b07c7da1-8a5e-5b57-6f77-6439bf653a53
 # アプリをアクティブ化する方法 (DirectX と C++)
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 ここでは、ユニバーサル Windows プラットフォーム (UWP) DirectX アプリのアクティブ化エクスペリエンスを定義する方法について説明します。
 
@@ -89,6 +90,6 @@ void App::Run()
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

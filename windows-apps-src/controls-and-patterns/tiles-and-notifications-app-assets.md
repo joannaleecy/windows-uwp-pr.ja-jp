@@ -1,15 +1,16 @@
 ---
+author: mijacobs
 Description: Windows 10 オペレーティング システム全体でさまざまな形式で表示される、アプリ アイコン アセットは、ユニバーサル Windows プラットフォーム (UWP) アプリの名刺です。
 title: タイルとアイコン アセット
 ms.assetid: D6CE21E5-2CFA-404F-8679-36AA522206C7
-label: タイルとアイコン アセット
+label: Tile and icon assets
 template: detail.hbs
 ---
 
 # タイルとアイコン アセットのガイドライン
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+
 
 
 Windows 10 オペレーティング システム全体でさまざまな形式で表示される、アプリ アイコン アセットは、ユニバーサル Windows プラットフォーム (UWP) アプリの名刺です。 このガイドラインでは、システム内でアプリ アイコン アセットが表示される場所の詳細について説明し、最も洗練されたアイコンを作成する方法に関して詳細なデザインのヒントを提供します。
@@ -367,7 +368,7 @@ Windows 10 オペレーティング システム全体でさまざまな形式�
 -   用途:
     -   アイコン タイル
 
-\[この記事には、ユニバーサル Windows プラットフォーム (UWP) アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
+
 
 ## <span id="related_topics"></span>関連トピック
 
@@ -383,6 +384,6 @@ Windows 10 オペレーティング システム全体でさまざまな形式�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

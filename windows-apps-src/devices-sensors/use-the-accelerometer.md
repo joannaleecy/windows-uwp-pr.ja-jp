@@ -1,4 +1,5 @@
 ---
+author: DBirtolo
 ms.assetid: F90686F5-641A-42D9-BC44-EC6CA11B8A42
 title: 加速度計の使用
 description: 加速度計を使ってユーザーの動きに応答する方法を説明します。
@@ -169,6 +170,6 @@ AccelerometerReadingChangedEventArgs>(ReadingChanged);
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

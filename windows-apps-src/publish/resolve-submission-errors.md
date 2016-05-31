@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: ストアにアプリを提出した後にエラーが発生した場合、「認定プロセス」を続行するためにそれを解決する必要があります。
 title: 申請エラーの解決
 ms.assetid: 68199E09-0C66-4EB4-BFE8-D2EEB139C4F3
@@ -40,6 +41,6 @@ UWP アプリを提出する場合は、パッケージ ファイルがストア
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

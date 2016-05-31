@@ -1,8 +1,9 @@
 ---
+author: QuinnRadich
 Description: ユーザーにヘルプやトラブルシューティングのヒントを提供して、効果的にアプリの操作法を示す必要があります。 このセクションでは、アプリを使うユーザー向けの操作説明に関するベスト プラクティスを提供します。
 title: ヘルプと説明の UX ガイドライン
 ms.assetid: 87867BFE-35D1-466E-B1F6-9EDCA3E5EA92
-label: アプリ内ヘルプと説明 UI
+label: In-app help and instructional UI
 template: detail.hbs
 ---
 
@@ -26,11 +27,11 @@ template: detail.hbs
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[App help](guidelines-for-app-help.md)</p></td>
+<td align="left"><p>[アプリのヘルプ](guidelines-for-app-help.md)</p></td>
 <td align="left"><p>このガイドラインは、アプリの効果的なヘルプ コンテンツの設計方法を説明しています。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Instructional UI](instructional-ui.md)</p></td>
+<td align="left"><p>[説明 UI](instructional-ui.md)</p></td>
 <td align="left"><p>Windows ストア アプリを使う方法をユーザーに説明するユーザー インターフェイス (UI) をデザインします。</p></td>
 </tr>
 </tbody>
@@ -41,6 +42,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

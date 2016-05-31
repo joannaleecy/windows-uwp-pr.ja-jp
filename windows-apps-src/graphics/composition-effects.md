@@ -1,6 +1,7 @@
 ---
+author: scottmill
 ms.assetid: 6e9b9ff2-234b-6f63-0975-1afb2d86ba1a
-title: コンポジションの効果
+title: コンポジション効果
 description: 効果 API を使用すると、開発者は UI のレンダリング方法をカスタマイズできます。
 ---
 # コンポジションの効果
@@ -30,8 +31,8 @@ description: 効果 API を使用すると、開発者は UI のレンダリン�
 
 | 効果               | 説明                                                                                                                                                                                                                |
 |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 2D アフィン変換  | 画像に 2D アフィン変換マトリックスを適用します。 効果の [サンプル](https://github.com/Microsoft/composition/tree/master/SDK10240_WIN10_RTM/BasicCompositonEffects) では、アルファ マスクのアニメーション化にこの効果が使われています。       |
-| 算術コンポジット | 柔軟な方程式を使って 2 つの画像を組み合わせます。 [サンプル](https://github.com/Microsoft/composition/tree/master/SDK10240_WIN10_RTM/BasicCompositonEffects) では、クロスフェード効果の作成に算術コンポジットが使われています。 |
+| 2D アフィン変換  | 画像に 2D アフィン変換マトリックスを適用します。 効果の [サンプル](http://go.microsoft.com/fwlink/?LinkId=785341) では、アルファ マスクのアニメーション化にこの効果が使われています。       |
+| 算術コンポジット | 柔軟な方程式を使って 2 つの画像を組み合わせます。 [サンプル](http://go.microsoft.com/fwlink/?LinkId=785341) では、クロスフェード効果の作成に算術コンポジットが使われています。 |
 | ブレンド効果         | 2 つの画像を組み合わせるブレンド効果を作成します。 コンポジションでは、Win2D でサポートされている 26 個の [ブレンド モード](http://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_Effects_BlendEffectMode.md) のうち 21 個が用意されています。        |
 | カラー ソース         | 単色が含まれている画像を生成します。                                                                                                                                                                               |
 | コンポジット            | 2 つの画像を組み合わせます。 コンポジションでは、Win2D でサポートされている 13 個の [コンポジット モード](http://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_CanvasComposite.md) がすべて用意されています。                                              |
@@ -117,11 +118,11 @@ ScalarKeyFrameAnimation effectAnimation = _compositor.CreateScalarKeyFrameAnimat
 catEffect.Properties.StartAnimation("saturationEffect.Saturation", effectAnimation);
 ```
 
-キー フレームを使った効果プロパティのアニメーション化については、[彩度を下げるアニメーション サンプル](https://github.com/Microsoft/composition/tree/master/SDK10586_NOV_UPDATE_RTM/BasicCompositonEffects/Desaturation%20-%20Animation) を、効果や式の使用については、[AlphaMask サンプル](https://github.com/Microsoft/composition/tree/master/SDK10586_NOV_UPDATE_RTM/BasicCompositonEffects/AlphaMask) をご覧ください。
+キー フレームを使った効果プロパティのアニメーション化については、[彩度を下げるアニメーション サンプル](http://go.microsoft.com/fwlink/?LinkId=785342) を、効果や式の使用については、[AlphaMask サンプル](http://go.microsoft.com/fwlink/?LinkId=785343) をご覧ください。
 
 ### 独立したプロパティを持つ複数の効果インスタンス
 
-効果のコンパイル時にパラメーターが動的であることを指定することにより、パラメーターを効果インスタンスごとに変更できます。 これにより、2 つのビジュアルに同じ効果を使用しても、異なる効果プロパティを使って表示できます。 詳しくは、ColorSource と Blend の [サンプル](https://github.com/Microsoft/composition/tree/master/SDK10586_NOV_UPDATE_RTM/BasicCompositonEffects/ColorSource%20and%20Blend) をご覧ください。
+効果のコンパイル時にパラメーターが動的であることを指定することにより、パラメーターを効果インスタンスごとに変更できます。 これにより、2 つのビジュアルに同じ効果を使用しても、異なる効果プロパティを使って表示できます。 詳しくは、ColorSource と Blend の [サンプル](http://go.microsoft.com/fwlink/?LinkId=785344) をご覧ください。
 
 ## コンポジション効果の概要
 
@@ -162,7 +163,7 @@ Windows 10 用と Windows 8.1 用の 2 つのパッケージ バージョンが�
 ![ソース画像](images/composition-cat-source.png)
 ### コンポジション設定の基本
 
-Windows.UI.Composition コンポジターとルート ContainerVisual の設定方法、およびコア ウィンドウとの関連付け方法の例については、GitHub で [コンポジション ビジュアル ツリーのサンプル](https://github.com/Microsoft/composition/tree/master/SDK10586_NOV_UPDATE_RTM/CompositionVisual) をご覧ください。
+Windows.UI.Composition コンポジターとルート ContainerVisual の設定方法、およびコア ウィンドウとの関連付け方法の例については、GitHub で [コンポジション ビジュアル ツリーのサンプル](http://go.microsoft.com/fwlink/?LinkId=785345) をご覧ください。
 
 ```cs
 _compositor = new Compositor();
@@ -243,6 +244,6 @@ brush.Surface = imageSource.Surface;
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

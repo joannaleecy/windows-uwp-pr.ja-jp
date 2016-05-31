@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 ms.assetid: BC7E8130-A28A-443C-8D7E-353E7DA33AE3
 description: Entity Framework (EF) は、ドメイン固有のオブジェクトを使ってリレーショナル データを操作できる、オブジェクト リレーショナル マッパーです。
 title: C# アプリでの Entity framework 7 と SQLite
@@ -23,6 +24,6 @@ Entity Framework (EF) は、ドメイン固有のオブジェクトを使って�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

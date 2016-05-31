@@ -1,12 +1,6 @@
 ---
-Description: 名前を予約してアプリを作ったら、公開の作業を開始できます。 まず、申請を作成します。
-title: アプリの申請
-ms.assetid: 363BB9E4-4437-4238-A80F-ABDFC70D96E4
-keywords: アプリの申請
-keywords: 必須情報
-keywords: 必須フィールド
-keywords: 必須データ
-keywords: チェック リスト
+author: jnHs Description: 名前を予約してアプリを作ったら、公開の作業を開始できます。 まず、申請を作成します。
+title: アプリの申請 ms.assetid: 363BB9E4-4437-4238-A80F-ABDFC70D96E4 keywords: アプリの申請 keywords: 必須情報 keywords: 必須フィールド keywords: 必須データ keywords: チェック リスト
 ---
 
 # アプリの申請
@@ -98,6 +92,6 @@ keywords: チェック リスト
 **注**  基幹業務 (LOB) アプリを企業に直接公開する方法については、「[LOB アプリの企業への配布](distribute-lob-apps-to-enterprises.md)」をご覧ください。
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

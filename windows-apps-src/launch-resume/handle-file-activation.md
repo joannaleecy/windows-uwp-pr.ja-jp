@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: ファイルのアクティブ化の処理
 description: アプリは、特定のファイルの種類の既定のハンドラーとして登録することができます。
 ms.assetid: A0F914C5-62BC-4FF7-9236-E34C5277C363
@@ -38,8 +39,8 @@ ms.assetid: A0F914C5-62BC-4FF7-9236-E34C5277C363
 | **ロゴ** | デスクトップと**コントロール パネル**の [[既定のプログラムを設定する]](https://msdn.microsoft.com/library/windows/desktop/cc144154) でファイルの種類を識別するために使われるロゴを指定します。 ロゴを指定しない場合は、アプリケーションの小さいロゴが使われます。 |
 | **InfoTip** | ファイルの種類のグループの [InfoTip](https://msdn.microsoft.com/library/windows/desktop/cc144152) を指定します。 このヒントのテキストは、ユーザーがこの種類のファイルのアイコンの上にマウス ポインターを置くと表示されます。 |
 | **名前** | 同じ表示名、ロゴ、InfoTip、編集フラグを共有するファイルの種類のグループの名前を選びます。 このグループ名は、アプリの更新後も維持される名前にします。 **注**  名前はすべて小文字である必要があります。 |
-| **コンテンツの種類** | 特定のファイルの種類の MIME コンテンツの種類 (**image/jpeg** など) を指定します。 **許可されるコンテンツの種類に関する重要な注意:  **MIME コンテンツの種類のうち、**application/force-download**、**application/octet-stream**、**application/unknown**、**application/x-msdownload** は予約または禁止されているため、パッケージ マニフェストに入力できません。 |
-| **ファイルの種類** | 登録するファイルの種類を指定します。先頭にはピリオドを付けます (例: ".jpeg")。 **予約および禁止されているファイルの種類** 予約または禁止されいるため、UWP アプリを登録できない組み込みアプリ用のファイルの種類の一覧 (アルファベット順) については、「[予約済みの URI スキーム名とファイルの種類](reserved-uri-scheme-names.md)」をご覧ください。 |
+| **コンテンツの種類** | 特定のファイルの種類の MIME コンテンツの種類 (**image/jpeg** など) を指定します。 **許可されるコンテンツの種類に関する重要な注意:**  MIME コンテンツの種類のうち、**application/force-download**、**application/octet-stream**、**application/unknown**、**application/x-msdownload** は予約または禁止されているため、パッケージ マニフェストに入力できません。 |
+| **ファイルの種類** | 登録するファイルの種類を指定します。先頭にはピリオドを付けます (例: ".jpeg")。 **予約および禁止されているファイルの種類** 予約または禁止されているため、UWP アプリを登録できない組み込みアプリ用のファイルの種類の一覧 (アルファベット順) については、[予約済みの URI スキーム名とファイルの種類](reserved-uri-scheme-names.md)に関するページをご覧ください。 |
 
 2.  **[名前]** に `alsdk` と入力します。
 3.  **[ファイルの種類]** に `.alsdk` と入力します。
@@ -116,7 +117,7 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 
 受け取るファイルは、信頼できないソースからのファイルである可能性があります。 操作する前に、ファイルのコンテンツを検証することをお勧めします。 入力の検証について詳しくは、[安全なコードの記述](http://go.microsoft.com/fwlink/p/?LinkID=142053)をご覧ください。
 
-> **注**  この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
+> **注:** この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
  
 
@@ -152,6 +153,6 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

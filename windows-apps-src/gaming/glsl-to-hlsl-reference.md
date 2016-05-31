@@ -1,6 +1,7 @@
 ---
+author: mtoepke
 title: GLSL と HLSL の対応を示すリファレンス
-description: グラフィックス アーキテクチャを OpenGL ES 2.0 から Direct3D 11 に移植してユニバーサル Windows プラットフォーム向けのゲームを作成する際は、OpenGL シェーダー言語 (GLSL) コードを Microsoft 上位レベル シェーダー言語 (HLSL) コードに移植します。
+description: グラフィックス アーキテクチャを OpenGL ES 2.0 から Direct3D 11 に移植してユニバーサル Windows プラットフォーム (UWP) 向けのゲームを作成する際は、OpenGL シェーダー言語 (GLSL) コードを Microsoft 上位レベル シェーダー言語 (HLSL) コードに移植します。
 ms.assetid: 979d19f6-ef0c-64e4-89c2-a31e1c7b7692
 ---
 
@@ -55,20 +56,20 @@ GLSL と HLSL は一般に次の点で異なります。
 </tr>
 <tr class="even">
 <td align="left">グラフィックス API に統合されたシェーダー コンパイル</td>
-<td align="left">HLSL コンパイラが中間バイナリ表現に[シェーダーをコンパイルしcompiles the shader](https://msdn.microsoft.com/library/windows/desktop/bb509633)、その後で Direct3D がそれをドライバーに渡します。
+<td align="left">HLSL コンパイラが中間バイナリ表現に[シェーダーをコンパイルし](https://msdn.microsoft.com/library/windows/desktop/bb509633)、その後で Direct3D がそれをドライバーに渡します。
 <div class="alert">
-<strong>注</strong>  このバイナリ表現はハードウェアに依存していません。 通常はアプリの実行時ではなくアプリのビルド時にコンパイルされます。
+<strong>注:</strong> このバイナリ表現はハードウェアに依存していません。 通常はアプリの実行時ではなくアプリのビルド時にコンパイルされます。
 </div>
 <div>
  
 </div></td>
 </tr>
 <tr class="odd">
-<td align="left">[Variable](#variables) ストレージ修飾子</td>
+<td align="left">[変数](#variables)ストレージ修飾子</td>
 <td align="left">入力レイアウトの宣言による定数バッファーとデータ転送</td>
 </tr>
 <tr class="even">
-<td align="left"><p>[Types](#types)</p>
+<td align="left"><p>[型](#types)</p>
 <p>一般的なベクター型: vec2/3/4</p>
 <p>lowp、mediump、highp</p></td>
 <td align="left"><p>一般的なベクター型: float2/3/4</p>
@@ -86,7 +87,7 @@ GLSL と HLSL は一般に次の点で異なります。
 <td align="left">行優先マトリックス (既定)</td>
 <td align="left">列優先マトリックス (既定)
 <div class="alert">
-<strong>注</strong>   1 つの変数のレイアウトを変更するには、<strong>row_major</strong> 型修飾子を使います。 詳しくは、「[Variable Syntax](https://msdn.microsoft.com/library/windows/desktop/bb509706)」をご覧ください。 コンパイラ フラグまたはプラグマを指定してグローバルな既定値を変更することもできます。
+<strong>注:</strong> 1 つの変数のレイアウトを変更するには、<strong>row_major</strong> 型修飾子を使います。 詳しくは、「[変数の構文](https://msdn.microsoft.com/library/windows/desktop/bb509706)」をご覧ください。 コンパイラ フラグまたはプラグマを指定してグローバルな既定値を変更することもできます。
 </div>
 <div>
  
@@ -101,7 +102,7 @@ GLSL と HLSL は一般に次の点で異なります。
 
  
 
-> **注**  HLSL には、2 つの個別のオブジェクトとしてテクスチャとサンプラーがあります。 GLSL では、Direct3D 9 と同様に、テクスチャのバインドはサンプラーの状態の一部です。
+> **注:** HLSL には、2 つの個別のオブジェクトとしてテクスチャとサンプラーがあります。 GLSL では、Direct3D 9 と同様に、テクスチャのバインドはサンプラーの状態の一部です。
 
  
 
@@ -129,18 +130,18 @@ GLSL では、グローバル シェーダーの変数の宣言に修飾子を�
 <p>アプリ コードから uniform 変数を頂点シェーダーとフラグメント シェーダーのどちらか一方または両方に渡します。 これらのシェーダーを使って三角形を描画する前にすべての uniform の値を設定する必要があります。三角形のメッシュの描画中に値が変わらないようにするためです。 これらの値は変化しません。 フレーム全体に対して設定される uniform もあれば、特定の頂点ピクセル シェーダーのペアに対してのみ設定される uniform もあります。</p>
 <p>uniform 変数はポリゴン単位の変数です。</p></td>
 <td align="left"><p>定数バッファーを使います。</p>
-<p>「[How to: Create a Constant Buffer](https://msdn.microsoft.com/library/windows/desktop/ff476896)」と「[Shader Constants](https://msdn.microsoft.com/library/windows/desktop/bb509581)」をご覧ください。</p></td>
+<p>「[定数バッファーを作成する方法](https://msdn.microsoft.com/library/windows/desktop/ff476896)」と「[シェーダー定数](https://msdn.microsoft.com/library/windows/desktop/bb509581)」をご覧ください。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>可変</strong></p>
-<p>頂点シェーダー内で可変変数を初期化し、フラグメント シェーダーの同じ名前の可変変数に渡します。 頂点シェーダーは各頂点でのみさまざまな変数の値を設定するため、ラスタライザーはその値を (透視補正の方法で) 補間し、フラグメント単位の値を生成してフラグメント シェーダーに渡します。 これらの変数は各三角形で異なります。</p></td>
+<td align="left"><p><strong>varying</strong></p>
+<p>頂点シェーダー内で varying 変数を初期化し、フラグメント シェーダーの同じ名前の varying 変数に渡します。 頂点シェーダーは各頂点でのみさまざまな変数の値を設定するため、ラスタライザーはその値を (透視補正の方法で) 補間し、フラグメント単位の値を生成してフラグメント シェーダーに渡します。 これらの変数は各三角形で異なります。</p></td>
 <td align="left">頂点シェーダーから取得した構造をピクセル シェーダーへの入力として使います。 セマンティック値が一致することを確かめてください。</td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>属性</strong></p>
 <p>属性は、アプリ コードから頂点シェーダーだけに渡す頂点の記述の一部です。 uniform とは異なり、頂点ごとに各属性の値を設定します。それにより、各頂点が異なる値を持つことができるようになります。 属性変数は頂点単位の変数です。</p></td>
-<td align="left"><p>Direct3D アプリ コードで頂点バッファーを定義し、頂点シェーダーで定義されている頂点の入力と一致させます。 必要に応じてインデックス バッファーを定義します。 「[How to: Create a Vertex Buffer](https://msdn.microsoft.com/library/windows/desktop/ff476899)」と「[How to: Create an Index Buffer](https://msdn.microsoft.com/library/windows/desktop/ff476897)」をご覧ください。</p>
-<p>Direct3D アプリ コードで入力レイアウトを作成し、セマンティック値を頂点の入力の値と一致させます。 「[Create the input layout](https://msdn.microsoft.com/library/windows/desktop/bb205117#Create_the_Input_Layout)」をご覧ください。</p></td>
+<td align="left"><p>Direct3D アプリ コードで頂点バッファーを定義し、頂点シェーダーで定義されている頂点の入力と一致させます。 必要に応じてインデックス バッファーを定義します。 「[頂点バッファーを作成する方法](https://msdn.microsoft.com/library/windows/desktop/ff476899)」と「[インデックス バッファーを作成する方法](https://msdn.microsoft.com/library/windows/desktop/ff476897)」をご覧ください。</p>
+<p>Direct3D アプリ コードで入力レイアウトを作成し、セマンティック値を頂点の入力の値と一致させます。 「[入力レイアウトの作成](https://msdn.microsoft.com/library/windows/desktop/bb205117#Create_the_Input_Layout)」をご覧ください。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p><strong>const</strong></p>
@@ -177,7 +178,7 @@ HLSL に GLSL の型を移植する場合は、次の表を参考にしてくだ
 <td align="left">スカラー型: float、int、bool</td>
 <td align="left"><p>スカラー型: float、int、bool</p>
 <p>また、uint、double</p>
-<p>詳しくは、「[Scalar Types](https://msdn.microsoft.com/library/windows/desktop/bb509646)」をご覧ください。</p></td>
+<p>詳しくは、「[スカラー型](https://msdn.microsoft.com/library/windows/desktop/bb509646)」をご覧ください。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>ベクター型</p>
@@ -199,8 +200,8 @@ HLSL に GLSL の型を移植する場合は、次の表を参考にしてくだ
 <li>min16uint</li>
 </ul></li>
 </ul>
-<p>詳しくは、「[Vector Type](https://msdn.microsoft.com/library/windows/desktop/bb509707)」と「[Keywords](https://msdn.microsoft.com/library/windows/desktop/bb509568)」をご覧ください。</p>
-<p>vector は、float4 として定義される型でもあります (typedef vector &lt;float, 4&gt; vector;)。 詳しくは、「[User-Defined Type](https://msdn.microsoft.com/library/windows/desktop/bb509702)」をご覧ください。</p></td>
+<p>詳しくは、「[ベクター型](https://msdn.microsoft.com/library/windows/desktop/bb509707)」と「[キーワード](https://msdn.microsoft.com/library/windows/desktop/bb509568)」をご覧ください。</p>
+<p>vector は、float4 として定義される型でもあります (typedef vector &lt;float, 4&gt; vector;)。 詳しくは、「[ユーザー定義型](https://msdn.microsoft.com/library/windows/desktop/bb509702)」をご覧ください。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>マトリックス型</p>
@@ -223,9 +224,9 @@ HLSL に GLSL の型を移植する場合は、次の表を参考にしてくだ
 <li>min16uint</li>
 </ul></li>
 </ul>
-<p>また、マトリックスの定義に[matrix type](https://msdn.microsoft.com/library/windows/desktop/bb509623)を使うこともできます。</p>
+<p>また、マトリックスの定義に[マトリックス型](https://msdn.microsoft.com/library/windows/desktop/bb509623)を使うこともできます。</p>
 <p>例: matrix &lt;float, 2, 2&gt; fMatrix = {0.0f, 0.1, 2.1f, 2.2f};</p>
-<p>matrix は、float4x4 として定義される型でもあります (typedef matrix &lt;float, 4, 4&gt; matrix;)。 詳しくは、「[User-Defined Type](https://msdn.microsoft.com/library/windows/desktop/bb509702)」をご覧ください。</p></td>
+<p>matrix は、float4x4 として定義される型でもあります (typedef matrix &lt;float, 4, 4&gt; matrix;)。 詳しくは、「[ユーザー定義型](https://msdn.microsoft.com/library/windows/desktop/bb509702)」をご覧ください。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>float、int、sampler の有効桁数修飾子</p>
@@ -246,10 +247,10 @@ HLSL に GLSL の型を移植する場合は、次の表を参考にしてくだ
 <p>最小の符号付き固定小数点 2.8 ビット値 (整数部は 2 ビット、小数部は 8 ビット)。 8 ビットの小数部には 1 を含めることができます。また、-2 ～ 2 の範囲の両端を含めることができます。</p></li>
 <li>min16int: 16 ビットの最小符号付き整数</li>
 <li><p>min12int: 12 ビットの最小符号付き整数</p>
-<p>この型は 10Level9 ([9_x feature levels](https://msdn.microsoft.com/library/windows/desktop/ff476876)) 向けであり、整数は浮動小数点数で表されます。 これは、16 ビットの浮動小数点数で整数をエミュレートするときに取得できる有効桁数です。</p></li>
-<li>min16uint: 16 ビットの最小符号なし整数</li>
+<p>この型は 10Level9 ([9_x の機能レベル](https://msdn.microsoft.com/library/windows/desktop/ff476876)) 向けであり、整数は浮動小数点数で表されます。 これは、16 ビットの浮動小数点数で整数をエミュレートするときに取得できる有効桁数です。</p></li>
+<li>min16int: 16 ビットの最小符号なし整数</li>
 </ul>
-<p>詳しくは、「[Scalar Types](https://msdn.microsoft.com/library/windows/desktop/bb509646)」と「[Using HLSL minimum precision](https://msdn.microsoft.com/library/windows/desktop/hh968108)」をご覧ください。</p></td>
+<p>詳しくは、「[スカラー型](https://msdn.microsoft.com/library/windows/desktop/bb509646)」と「[HLSL の最小精度の使用](https://msdn.microsoft.com/library/windows/desktop/hh968108)」をご覧ください。</p></td>
 </tr>
 <tr class="odd">
 <td align="left">sampler2D</td>
@@ -544,7 +545,7 @@ m_d3dDeviceContext->PSSetShader(pixelShader.Get(),nullptr,0);
 m_d3dDeviceContext->IASetInputLayout(inputLayout.Get());
 m_d3dDeviceContext->IASetVertexBuffers(0, 1, vertexBuffer.GetAddressOf(), &stride, &offset);
 
-// Set the primitive’s topology.
+// Set the primitive's topology.
 m_d3dDeviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 
 // Draw a triangle with 3 vertices. triangleVertices is an array of 3 vertices.
@@ -565,6 +566,6 @@ m_d3dDeviceContext->Draw(ARRAYSIZE(triangleVertices),0);
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

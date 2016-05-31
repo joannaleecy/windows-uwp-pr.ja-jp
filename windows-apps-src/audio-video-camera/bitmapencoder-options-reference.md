@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: 98BD79B3-F420-43C5-98D3-52EBDDB479A0
 description: この記事では、BitmapEncoder で使用できるエンコーディング オプションを示します。
 title: BitmapEncoder オプション リファレンス
@@ -41,6 +42,6 @@ title: BitmapEncoder オプション リファレンス
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

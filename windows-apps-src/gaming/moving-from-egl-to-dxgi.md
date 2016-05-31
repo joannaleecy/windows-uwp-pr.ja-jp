@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: EGL コードと DXGI および Direct3D の比較
 description: DirectX Graphics Interface (DXGI) といくつかの Direct3D API は EGL と同じ役割を果たします。 このトピックは EGL の観点から DXGI と Direct3D 11 を理解するのに役立ちます。
 ms.assetid: 90f5ecf1-dd5d-fea3-bed8-57a228898d2a
@@ -20,7 +21,7 @@ DirectX Graphics Interface (DXGI) といくつかの Direct3D API は EGL と同
 
 DXGI と Direct3D は EGL に似ており、グラフィックス リソースを構成するためのメソッドや、シェーダーの描画先となり、ウィンドウに結果を表示するために使われるレンダリング コンテキストを取得するためのメソッドがあります。 ただし、DXGI と Direct3D にはかなりのオプションがあるため、EGL からの移植の際には、適切に設定するための余分な作業が必要です。
 
-> **注**   このガイダンスは、Khronos Group による EGL 1.4 のオープン仕様 ([Khronos Native Platform Graphics Interface (EGL Version 1.4 - 2011 年 4 月 6 日)](http://www.khronos.org/registry/egl/specs/eglspec.1.4.20110406.pdf)) に基づいています。 その他のプラットフォームと開発言語に固有の構文の違いは、このガイダンスでは説明していません。
+> **注**   このガイダンスは、Khronos Group による EGL 1.4 のオープン仕様 ([Khronos Native Platform Graphics Interface (EGL Version 1.4 - April 6, 2011) \[PDF\]](http://www.khronos.org/registry/egl/specs/eglspec.1.4.20110406.pdf)) に基づいています。 その他のプラットフォームと開発言語に固有の構文の違いは、このガイダンスでは説明していません。
 
  
 
@@ -419,6 +420,6 @@ UWP アプリでは、[**CoreWindow::Close**](https://msdn.microsoft.com/library
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

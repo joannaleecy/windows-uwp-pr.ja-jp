@@ -1,17 +1,18 @@
 ---
+author: Jwmsft
 Description: スタイルを使うと、コントロールのプロパティに値を設定し、その設定を再利用することで、複数のコントロールの外観を統一できます。
 MS-HAID: 'dev\_ctrl\_layout\_txt.styling\_controls'
 MSHAttr: 'PreferredLib:/library/windows/apps'
 Search.Product: eADQiWindows 10XVcnh
 title: コントロールのスタイル
 ms.assetid: AB469A46-FAF5-42D0-9340-948D0EDF4150
-label: コントロールのスタイル
+label: Styling controls
 template: detail.hbs
 ---
 
 # コントロールのスタイル
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+
 
 XAML フレームワークを使って、さまざまな方法でアプリの外観をカスタマイズできます。 スタイルを使うと、コントロールのプロパティに値を設定し、その設定を再利用することで、複数のコントロールの外観を統一できます。
 
@@ -147,10 +148,8 @@ XAML フレームワークを使って、さまざまな方法でアプリの外
 
 スタイル setter は、[**Control**](https://msdn.microsoft.com/library/windows/apps/br209390) の [**Template**](https://msdn.microsoft.com/library/windows/apps/br209465) プロパティに使うことができ、実際に、一般的な XAML スタイルとアプリの XAML リソースの主要な部分を構成しています。 詳しくは、「[コントロール テンプレート](control-templates.md)」をご覧ください。
 
-**注:**  
-この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

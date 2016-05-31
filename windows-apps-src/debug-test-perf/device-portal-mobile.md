@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: モバイル用 Device Portal
 description: Windows Device Portal で、モバイル デバイスの構成と管理をリモートから行う方法について説明します。
@@ -51,7 +52,7 @@ Windows Phone の開発者設定ページの [Device Portal] セクションを�
 
 ![Device Portal の設定](images/device-portal/mob-dev-mode-portal.png)
 
-テスト ラボなど、保護された環境で Device Portal を使っている場合、そのデバイス上に個人情報が保存されておらず、固有の要件もない場合は、認証を無効にできます。 これにより、暗号化されていない通信が有効化され、電話の IP アドレスを持つすべてのユーザーが制御できるようになります。
+テスト ラボなど、保護された環境で Device Portal を使っている場合、ローカル ネットワーク上のすべてのユーザーを信頼していて、デバイス上に個人情報が保存されておらず、固有の要件もない場合は、認証を無効にできます。 これにより、暗号化されていない通信が有効化され、電話の IP アドレスを持つすべてのユーザーが制御できるようになります。
 
 ## ツールに関する注意事項
 
@@ -71,6 +72,6 @@ Windows Mobile Device Portal には、任意のプロセスを強制終了する
 - Networking (ネットワーク)
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

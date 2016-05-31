@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: アプリが Windows ストアに掲載されたら、できるだけ多くのユーザーにアプリが表示されるようにします。
 title: アプリの宣伝と顧客エンゲージメントの獲得
 ms.assetid: 86DA61A2-1B84-4B2B-8697-85A75D39A686
@@ -27,6 +28,6 @@ ms.assetid: 86DA61A2-1B84-4B2B-8697-85A75D39A686
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

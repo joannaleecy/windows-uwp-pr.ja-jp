@@ -1,4 +1,5 @@
 ---
+author: TylerMSFT
 ms.assetid: 95CF7F3D-9E3A-40AC-A083-D8A375272181
 title: スレッド プールを使うためのベスト プラクティス
 description: このトピックでは、スレッド プールを使った操作のベスト プラクティスについて説明します。
@@ -52,6 +53,6 @@ description: このトピックでは、スレッド プールを使った操作
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

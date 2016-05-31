@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: xBind マークアップ拡張は Binding の代わりです。 xBind では、Binding の機能のいくつかが省略されていますが、Binding よりも短い時間および少ないメモリで動作し、より適切なデバッグをサポートしています。
 title: xBind マークアップ拡張
 ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
@@ -8,7 +9,7 @@ ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-**注** **{x:Bind}** によりアプリでデータ バインディングを使う方法に関する一般的な情報 (および **{x:Bind}** と **{Binding}** の全体的な比較) については、「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」をご覧ください。
+**注:** **{x:Bind}** によりアプリでデータ バインディングを使う方法に関する一般的な情報 (および **{x:Bind}** と **{Binding}** の全体的な比較) については、「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」をご覧ください。
 
 Windows 10 では、**{Binding}** に代わり、**{x:Bind}** マークアップ拡張が新たに提供されています。 **{x:Bind}** では、**{Binding}** の機能のいくつかが省略されていますが、**{Binding}** よりも短い時間および少ないメモリで動作し、より適切なデバッグをサポートしています。
 
@@ -36,7 +37,9 @@ XAML の読み込み時、**{x:Bind}** は、バインディング オブジェ�
 |------|-------------|
 | _propertyPath_ | バインドのプロパティ パスを指定する文字列。 詳しくは、以下の「[プロパティ パス](#property-path)」をご覧ください。 |
 | _bindingProperties_ |
-| _propName_=_value_\[, _propName_=_value_\]* | 名前と値のペアの構文を使って指定する、1 つ以上のバインド プロパティ。 |
+| _propName_
+            =
+            _value_\[, _propName_=_value_\]* | 名前と値のペアの構文を使って指定する、1 つ以上のバインド プロパティ。 |
 | _propName_ | Binding オブジェクトで設定するプロパティの文字列名。 たとえば、"Converter" です。 | 
 | _value_ | プロパティに設定する値。 引数の構文は、設定されているプロパティによって異なります。 値がそれ自体マークアップ拡張である _propName_=_value_ の使用例を示します: `Converter={StaticResource myConverterClass}`。 詳しくは、以下の「[{x:Bind} で設定できるプロパティ](#properties-you-can-set)」をご覧ください。 | 
 
@@ -44,7 +47,7 @@ XAML の読み込み時、**{x:Bind}** は、バインディング オブジェ�
 
 *PropertyPath* は **{x:Bind}** 式の **Path** です。 **Path** は、バインド先のプロパティ、サブプロパティ、フィールド、またはメソッドの値 (ソース) を指定するプロパティ パスです。 **Path** プロパティの名前は、`{Binding Path=...}` のように明示的に指定することができます。 または、`{Binding ...}` のように省略することもできます。
 
-**{x:Bind}** は、既定のソースとして **DataContext** を使用せず、代わりにページまたはユーザー コントロール自体を使用します。 したがって、ページまたはユーザー コントロールのコード ビハインドでプロパティ、フィールド、およびメソッドが検索されます。 通常、ビュー モデルを **{x:Bind}** に公開するには、ページまたはユーザー コントロールのコード ビハインドに新しいフィールドまたはプロパティを追加する必要があります。 プロパティ パスのステップは、ドット (.) で区切ります。複数の区切り記号を指定することで、連続するサブプロパティを走査できます。 バインドされているオブジェクトを実装するために使用するプログラミング言語に関係なく、ドット区切り記号を使います。
+**{x:Bind}** は、既定のソースとして **DataContext** を使わず、代わりにページまたはユーザー コントロール自体を使います。 したがって、ページまたはユーザー コントロールのコード ビハインドでプロパティ、フィールド、およびメソッドが検索されます。 通常、ビュー モデルを **{x:Bind}** に公開するには、ページまたはユーザー コントロールのコード ビハインドに新しいフィールドまたはプロパティを追加する必要があります。 プロパティ パスのステップは、ドット (.) で区切ります。複数の区切り記号を指定することで、連続するサブプロパティを走査できます。 バインドされているオブジェクトを実装するために使用するプログラミング言語に関係なく、ドット区切り記号を使います。
 
 たとえば、あるページで、**Text="{x:Bind Employee.FirstName}"** を指定すると、そのページの **Employee** メンバーが検索され、次に、**Employee** が返したオブジェクトの **FirstName** メンバーが検索されます。 従業員の扶養家族を含むプロパティに項目コントロールをバインドする場合、プロパティ パスは "Employee.Dependents" となり、"Dependents" の項目の表示には項目コントロールの項目テンプレートが使われます。
 
@@ -52,7 +55,7 @@ C++/CX の場合、**{x:Bind}** はページまたはデータ モデルのプ�
 
 データ ソースがコレクションである場合、プロパティ パスには、位置またはインデックスによりコレクション内の項目を指定できます。 たとえば "Teams\[0\].Players" の場合、"0" をリテラル "\[\]" で囲むことで、インデックス 0 で始まるコレクション内の最初の項目を要求します。
 
-インデクサーを使用するには、インデックス化されるプロパティの型に基づいて、モデルで **IList&lt;T&gt;** または **IVector&lt;T&gt;** を実装する必要があります。 インデックス付きプロパティの型が **INotifyCollectionChanged** または **IObservableVector** をサポートしており、バインディングが OneWay または TwoWay の場合、そのプロパティは登録され、それらのインターフェイスで変更通知をリッスンします。 変更検出ロジックは、特定のインデックス付きの値に影響を与えない場合でも、すべてのコレクションの変更に基づいて更新されます。 これは、リッスンしているロジックがコレクションのすべてのインスタンス間で共通であるためです。
+インデクサーを使うには、インデックス化されるプロパティの型に基づいて、モデルで **IList&lt;T&gt;** または **IVector&lt;T&gt;** を実装する必要があります。 インデックス付きプロパティの型が **INotifyCollectionChanged** または **IObservableVector** をサポートしており、バインディングが OneWay または TwoWay の場合、そのプロパティは登録され、それらのインターフェイスで変更通知をリッスンします。 変更検出ロジックは、特定のインデックス付きの値に影響を与えない場合でも、すべてのコレクションの変更に基づいて更新されます。 これは、リッスンしているロジックがコレクションのすべてのインスタンス間で共通であるためです。
 
 添付プロパティにバインドするには、クラスおよびプロパティ名をドットの後のかっこ内に含める必要があります。 たとえば、**Text="{x:Bind Button22.(Grid.Row)}"** などです。 プロパティが Xaml 名前空間で宣言されていない場合は、そのプロパティの前に xml 名前空間を付ける必要があります。これはドキュメントの先頭でコード名前空間にマップする必要があります。
 
@@ -101,17 +104,19 @@ C++/CX の場合、**{x:Bind}** はページまたはデータ モデルのプ�
 
 コンパイル済みバインドは、コード生成によって異なります。 そのため、リソース ディクショナリで **{x:Bind}** を使う場合、リソース ディクショナリにはコード ビハインド クラスが必要です。 コード例については、「[リソース ディクショナリと {x:Bind}](../data-binding/data-binding-in-depth.md#resource-dictionaries-with-x-bind)」をご覧ください。
 
-**重要** ローカル値を指定する **{x:Bind}** マークアップ拡張を持っていたプロパティに対してローカル値を設定すると、バインディングは完全に削除されます。
+**重要:** ローカル値を指定する **{x:Bind}** マークアップ拡張を持っていたプロパティに対してローカル値を設定すると、バインディングは完全に削除されます。
 
 **ヒント:** [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) や [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/br209827) のように、値に 1 つの中かっこを指定する必要がある場合は、`\{` のように円記号 (バックスラッシュ) を中かっこの前に付けます。 別の方法として、エスケープする必要がある中かっこを含む文字列全体を `ConverterParameter='{Mix}'` のように別の種類の引用符で囲みます。
 
-[**Converter**](https://msdn.microsoft.com/library/windows/apps/br209826)、[**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880)、**ConverterLanguage** はいずれも、バインド ソースの値または型を、バインディング ターゲットのプロパティと互換性のある型または値に変換するシナリオに関係があります。 例や詳しい情報については、「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」の「データの変換」をご覧ください。
+[
+              **Converter**
+            ](https://msdn.microsoft.com/library/windows/apps/br209826)、[**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/hh701880)、**ConverterLanguage** はいずれも、バインド ソースの値または型を、バインディング ターゲットのプロパティと互換性のある型または値に変換するシナリオに関係があります。 例や詳しい情報については、「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」の「データの変換」をご覧ください。
 
 **{x:Bind}** は、マークアップ拡張のみです。このようなバインディングをプログラムで作成したり操作したりする方法はありません。 マークアップ拡張について詳しくは、「[XAML の概要](xaml-overview.md)」をご覧ください。
 
 ## 例
 
-```XAML
+```XML
 <Page x:Class="QuizGame.View.HostView" ... >
     <Button Content="{x:Bind Path=ViewModel.NextButtonText, Mode=OneWay}" ... />
 </Page>
@@ -119,7 +124,7 @@ C++/CX の場合、**{x:Bind}** はページまたはデータ モデルのプ�
 
 この例の XAML では、**{x:Bind}** が **ListView.ItemTemplate** プロパティと共に使用されています。 **x:DataType** 値の宣言に注意してください。
 
-```XAML
+```XML
   <DataTemplate x:Key="SimpleItemTemplate" x:DataType="data:SampleDataGroup">
     <StackPanel Orientation="Vertical" Height="50">
       <TextBlock Text="{x:Bind Title}"/>
@@ -130,6 +135,6 @@ C++/CX の場合、**{x:Bind}** はページまたはデータ モデルのプ�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

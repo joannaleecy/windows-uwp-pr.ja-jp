@@ -1,8 +1,9 @@
 ---
-Description: ユーザーはタッチ、マウス、またはキーボードといった入力を使って時刻値を標準化された方法で選択出来ます。
+author: Jwmsft
+Description: TimePicker は、ユーザーがタッチ、マウス、またはキーボード入力を使って時刻値を選択できる標準化された方法です。
 title: 時刻の選択コントロール
 ms.assetid: 5124ecda-09e6-449e-9d4a-d969dca46aa3
-label: 時刻の選択コントロール
+label: Time picker
 template: detail.hbs
 ---
 
@@ -43,9 +44,10 @@ arrivalTimePicker.Header = "Arrival time";
 
 ![時刻の選択コントロールの例](images/time-picker-closed.png)
 
-> **注:**&nbsp;&nbsp;日付値と時刻値の重要な情報については、「*日付と時刻コントロール*」の「[DateTime と Calendar の値](date-and-time.md#datetime-and-calendar-values)」をご覧ください。
+> **注:**
+            &nbsp;&nbsp;日付値の重要な情報については、「*日付と時刻コントロール*」の「[DateTime と Calendar の値](date-and-time.md#datetime-and-calendar-values)」をご覧ください。
 
-\[この記事には、ユニバーサル Windows プラットフォーム (UWP) アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
+
 
 ## 関連トピック
 
@@ -55,6 +57,6 @@ arrivalTimePicker.Header = "Arrival time";
 - [日付の選択コントロール](date-picker.md)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

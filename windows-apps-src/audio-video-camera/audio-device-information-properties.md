@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: 3b75d881-bdcf-402b-a330-23cd29d68e53
 description: この記事では、オーディオ デバイスに関連する DeviceInformation プロパティを示します。
 title: オーディオ デバイス情報プロパティ
@@ -26,6 +27,6 @@ Windows でのデバイスの列挙に関する一般的な情報については
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

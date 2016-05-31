@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 Description: アクション項目の選択や選択解除を行うときに使います。 単一のリスト項目や複数のリスト項目に対して使うことができます。
 title: チェック ボックス
 ms.assetid: 6231A806-287D-43EE-BD8D-39D2FF761914
@@ -287,6 +288,6 @@ private void SetCheckedState()
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

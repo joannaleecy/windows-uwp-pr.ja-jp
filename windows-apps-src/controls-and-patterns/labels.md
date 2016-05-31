@@ -1,15 +1,13 @@
 ---
+author: Jwmsft
 Description: 隣接するコントロールに入力する必要がある内容をユーザーに説明するためにラベルを使います。 また、関連するコントロールのグループにラベルを付けることや、関連するコントロールのグループの近くに説明テキストを表示することができます。
 title: ラベル
 ms.assetid: CFACCCD4-749F-43FB-947E-2591AE673804
-label: ラベル
+label: Labels
 template: detail.hbs
 ---
 
 # ラベル
-
-
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 ラベルは、コントロールまたは関連するコントロールのグループの名前やタイトルです。
 
@@ -35,8 +33,6 @@ XAML では、多くのコントロールに組み込みの Header プロパテ�
 -   ラベルに説明テキストを入力するときは、テキスト文字列を長くすることができ、句読点も使うことができます。
 
 ## <span id="related_topics"></span>関連トピック
-
-
 * [テキスト コントロール](text-controls.md)
 
 **開発者向け**
@@ -59,6 +55,6 @@ XAML では、多くのコントロールに組み込みの Header プロパテ�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

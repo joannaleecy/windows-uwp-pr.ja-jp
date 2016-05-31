@@ -1,6 +1,7 @@
 ---
+author: mcleblanc
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
-description: このケース スタディは、「Bookstore1」で説明されている情報に基づいて作成されています。ここでは、最初に、グループ化されたデータを SemanticZoom コントロールに表示するユニバーサル 8.1 アプリについて取り上げます。
+description: このケース スタディは、「Bookstore1」で説明されている情報に基づいて作成されています。ここでは最初に、グループ化されたデータを SemanticZoom コントロールに表示するユニバーサル 8.1 アプリについて取り上げます。
 title: Windows ランタイム 8.x から UWP へのケース スタディ: Bookstore2
 ---
 
@@ -10,7 +11,7 @@ title: Windows ランタイム 8.x から UWP へのケース スタディ: Book
 
 このケース スタディは、「[Bookstore1](w8x-to-uwp-case-study-bookstore1.md)」で説明されている情報に基づいて作成されています。ここでは最初に、グループ化されたデータを [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) コントロールに表示するユニバーサル 8.1 アプリについて取り上げます。 ビュー モデルでは、**Author** クラスの各インスタンスが該当する著者によって書かれた書籍のグループを表します。**SemanticZoom** では、著者ごとにグループ化された書籍の一覧を表示したり、縮小して著者のジャンプ リストを表示したりすることができます。 ジャンプ リストを使うと、書籍の一覧をスクロールするよりもすばやく移動することができます。 ここでは、アプリを Windows 10 ユニバーサル Windows プラットフォーム (UWP) アプリに移植する手順について説明します。
 
-**注:**   Visual Studio で Bookstore2Universal\_10 を開くときに、"Visual Studio 更新プログラムが必要" というメッセージが表示されたら、「[TargetPlatformVersion](w8x-to-uwp-troubleshooting.md#targetplatformversion)」の手順を実行してください。
+**注:** Visual Studio で Bookstore2Universal\_10 を開くときに、"Visual Studio 更新プログラムが必要" というメッセージが表示されたら、「[TargetPlatformVersion](w8x-to-uwp-troubleshooting.md#targetplatformversion)」の手順を実行してください。
 
 ## ダウンロード
 
@@ -49,7 +50,7 @@ Bookstore2\_81 ソリューションは、8.1 ユニバーサル アプリ プ�
 
 **共有プロジェクトから**
 
--   ブック カバーの画像の PNG ファイルを含むフォルダー (フォルダーは \\Assets\\CoverImages) をコピーします。 コピーしたら、**ソリューション エクスプローラー**で **[すべてのファイルを表示]** がオンであることを確認します。 コピーしたフォルダーを右クリックし、**[プロジェクトに含める]** をクリックします。 このコマンドは、ファイルまたはフォルダーをプロジェクトに "含める" ことを意味します。 ファイルやフォルダーをコピーするたびに、**ソリューション エクスプ ローラー**で **[更新]** をクリックしてから、ファイルまたはフォルダーをプロジェクトに含めます。 コピー先で置き換えるファイルについては、この手順を実行する必要はありません。
+-   ブック カバーの画像の PNG ファイルを含むフォルダー (フォルダーは \\Assets\\CoverImages) をコピーします。 フォルダーをコピーしたら、**ソリューション エクスプローラー**で **[すべてのファイルを表示]** がオンであることを確認します。 コピーしたフォルダーを右クリックし、**[プロジェクトに含める]** をクリックします。 このコマンドは、ファイルまたはフォルダーをプロジェクトに "含める" ことを意味します。 ファイルやフォルダーをコピーするたびに、**ソリューション エクスプ ローラー**で **[更新]** をクリックしてから、ファイルまたはフォルダーをプロジェクトに含めます。 コピー先で置き換えるファイルについては、この手順を実行する必要はありません。
 -   ビュー モデル ソース ファイルを含むフォルダー (フォルダーは \\ViewModel) をコピーします。
 -   MainPage.xaml をコピーして、コピー先のファイルを置き換えます。
 
@@ -107,7 +108,7 @@ Windows 10 での [**SemanticZoom**](https://msdn.microsoft.com/library/windows/
 -   Bookstore2\_81.WindowsPhone プロジェクトで、BookstoreStyles.xaml を開きます。 このファイルから、上で説明したものと同じ 3 つのリソース、2 つのジャンプ リスト項目コンバーター、名前空間プレフィックスの宣言 Windows\_UI\_Xaml\_Controls\_Primitives をコピーし、それらすべてを新しいプロジェクトの BookstoreStyles.xaml に貼り付けます。
 -   最後に、新しいプロジェクトの SeZoUC.xaml で、適切な Visual State Manager のマークアップを上で追加した **Grid** に追加します。
 
-```xaml
+```xml
     <Grid>
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
@@ -169,6 +170,6 @@ Windows 10 での [**SemanticZoom**](https://msdn.microsoft.com/library/windows/
 次のケース スタディは「[QuizGame](w8x-to-uwp-case-study-quizgame.md)」です。ここでは、グループ化されたデータへのアクセスと表示について説明します。
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

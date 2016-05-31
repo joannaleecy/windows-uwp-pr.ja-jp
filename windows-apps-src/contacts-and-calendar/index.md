@@ -1,4 +1,5 @@
 ---
+author: Xansky
 description: UWP アプリで連絡先とカレンダーの情報を使う方法。
 title: 連絡先とカレンダー
 ms.assetid: b7e53ab5-2828-4fb7-8656-2bec70b3467f
@@ -34,6 +35,6 @@ ms.assetid: b7e53ab5-2828-4fb7-8656-2bec70b3467f
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

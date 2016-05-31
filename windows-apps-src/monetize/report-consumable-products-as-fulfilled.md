@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 ms.assetid: E9BEB2D2-155F-45F6-95F8-6B36C3E81649
 description: Windows ストア コレクション API 内のこのメソッドを使用して、コンシューマブルな製品を特定の顧客についてフルフィルメント完了として報告します。 ユーザーがコンシューマブルな製品を再購入するには、アプリまたはサービスがコンシューマブルな製品をそのユーザーについてフルフィルメント完了と報告する必要があります。
 title: コンシューマブルな製品をフルフィルメント完了として報告する
@@ -41,7 +42,7 @@ Windows ストア コレクション API 内のこのメソッドを使用して
 
 | ヘッダー         | タイプ   | 説明                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
-| Authorization  | string | 必須。 **Bearer** &lt;*token*&gt; という形式の Azure AD アクセス トークン。                           |
+| Authorization  | string | 必須。 **Bearer**&lt;*token*&gt; という形式の Azure AD アクセス トークン。                           |
 | Host           | string | 値 **collections.mp.microsoft.com** に設定する必要があります。                                            |
 | Content-Length | number | 要求の本文の長さ。                                                                       |
 | Content-Type   | string | 要求と応答の種類を指定します。 現時点では、サポートされている唯一の値は **application/json** です。 |
@@ -77,7 +78,7 @@ UserIdentity オブジェクトには以下のパラメーターが含まれて�
 
 次の例では、*itemId* と *trackingId* を使用します。
 
-```
+```syntax
 POST https://collections.mp.microsoft.com/v6.0/collections/consume HTTP/1.1
 Authorization: Bearer eyJ0eXAiOiJKV1…..
 Host: collections.mp.microsoft.com
@@ -97,7 +98,7 @@ Content-Type: application/json
 
 次の例では、*productId* と *transactionId* を使用します。
 
-```
+```syntax
 POST https://collections.mp.microsoft.com/v6.0/collections/consume HTTP/1.1
 Authorization: Bearer eyJ0eXAiOiJKV1……
 Content-Length: 1880
@@ -122,7 +123,7 @@ Host: collections.md.mp.microsoft.com
 
 ### 応答の例
 
-```
+```syntax
 HTTP/1.1 204 No Content
 Content-Length: 0
 MS-CorrelationId: 386f733d-bc66-4bf9-9b6f-a1ad417f97f0
@@ -157,6 +158,6 @@ Date: Tue, 22 Sep 2015 20:40:55 GMT
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

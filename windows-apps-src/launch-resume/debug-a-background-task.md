@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: バックグラウンド タスクのデバッグ
 description: バックグラウンド タスクをデバッグする方法について説明します。バックグラウンド タスクのアクティブ化のほか、Windows イベント ログでのデバッグ トレースなどについて取り上げます。
 ms.assetid: 24E5AC88-1FD3-46ED-9811-C7E102E01E9C
@@ -7,7 +8,7 @@ ms.assetid: 24E5AC88-1FD3-46ED-9811-C7E102E01E9C
 # バックグラウンド タスクのデバッグ
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
 **重要な API**
@@ -38,7 +39,7 @@ ms.assetid: 24E5AC88-1FD3-46ED-9811-C7E102E01E9C
 
     この機能を使うには、バックグラウンド タスクが既に登録されていて、トリガーを待機する状態になっていることが必要です。 たとえば、1 回限りの TimeTrigger に対してバックグラウンド タスクを登録した場合、そのトリガーが起動された後に Visual Studio からそのタスクを起動しても何も起こりません。
 
-    **注**  [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) (または [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543)) を使ったバックグラウンド タスクや、トリガーの種類が [**SmsReceived**](https://msdn.microsoft.com/library/windows/apps/br224839) である [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) を使ったバックグラウンド タスクをこの方法でアクティブ化することはできません。     
+    **注:** [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) (または [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543)) を使ったバックグラウンド タスクや、トリガーの種類が [**SmsReceived**](https://msdn.microsoft.com/library/windows/apps/br224839) である [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) を使ったバックグラウンド タスクをこの方法でアクティブ化することはできません。     
 
     ![バックグラウンド タスクのデバッグ](images/debugging-activation.png)
 
@@ -113,6 +114,6 @@ VS を使ってバックグラウンド タスクをデバッグする方法に�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

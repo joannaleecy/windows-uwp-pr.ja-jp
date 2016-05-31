@@ -1,4 +1,5 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: 音声コマンドの実行時に Cortana の音声とキャンバスを通じてバックグラウンド アプリを操作する方法について説明します。
 title: バックグラウンド アプリの操作
 ms.assetid: 6C60F03C-A242-435D-96BB-736892CC1CA6
@@ -8,8 +9,8 @@ template: detail.hbs
 
 # Cortana でのバックグラウンド アプリの操作
 
+音声コマンドの実行中に、**Cortana** キャンバスでの音声認識とテキストの入力により、バックグラウンド アプリへのユーザー操作が可能になります。
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
 **重要な API**
@@ -17,7 +18,6 @@ template: detail.hbs
 -   [**Windows.ApplicationModel.VoiceCommands**](https://msdn.microsoft.com/library/windows/apps/dn706594)
 -   [**音声コマンド定義 (VCD) の要素および属性 v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
 
-音声コマンドの実行中に、**Cortana** キャンバスでの音声認識とテキストの入力により、バック グラウンド アプリへのユーザー操作が可能になります。
 
 Cortana は、アプリでの完全なターン バイ ターン方式のワークフローをサポートします。 このワークフローはアプリによって定義され、次の機能をサポートできます。 
 
@@ -35,11 +35,11 @@ Cortana は、アプリでの完全なターン バイ ターン方式のワー�
 ユニバーサル Windows プラットフォーム (UWP) アプリを開発するのが初めての場合は、以下のトピックに目を通して、ここで説明されているテクノロジをよく理解できるようにしてください。
 
 -   [初めてのアプリ作成](https://msdn.microsoft.com/library/windows/apps/bg124288)
--   「[イベントとルーティング イベントの概要](https://msdn.microsoft.com/library/windows/apps/mt185584)」でイベントについて学習します。
+-   「[イベントとルーティング イベントの概要](https://msdn.microsoft.com/library/windows/apps/mt185584)」に記載されているイベントの説明
 
 **ユーザー エクスペリエンス ガイドライン:  **
 
-アプリと **Cortana** を統合する方法については「[Cortana の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn974233)」を、魅力的な音声認識対応アプリの設計に役立つ便利なヒントについては「[音声機能の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596121)」をご覧ください。
+アプリと **Cortana** を統合する方法については「[Cortana の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn974233)」を、魅力的な音声認識対応アプリの設計に役立つ便利なヒントについては[音声認識の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596121)をご覧ください。
 
 ## <span id="Feedback_strings"></span><span id="feedback_strings"></span><span id="FEEDBACK_STRINGS"></span>フィードバック文字列
 
@@ -473,6 +473,6 @@ var userMessage = new VoiceCommandUserMessage();
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

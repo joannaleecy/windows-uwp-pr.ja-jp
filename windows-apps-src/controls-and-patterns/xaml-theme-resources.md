@@ -1,17 +1,16 @@
 ---
+author: Jwmsft
 Description: XAML のテーマ リソースは、アクティブなシステム テーマに応じて異なる値を適用するリソースのセットです。
 MS-HAID: 'dev\_ctrl\_layout\_txt.xaml\_theme\_resources'
 MSHAttr: 'PreferredLib:/library/windows/apps'
 Search.Product: eADQiWindows 10XVcnh
 title: XAML テーマ リソース
 ms.assetid: 41B87DBF-E7A2-44E9-BEBA-AF6EEBABB81B
-label: XAML テーマ リソース
+label: XAML theme resources
 template: detail.hbs
 ---
 
 # XAML テーマ リソース
-
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 XAML のテーマ リソースは、アクティブなシステム テーマに応じて異なる値を適用するリソースのセットです。 XAML フレームワークがサポートするテーマは "Light"、"Dark"、"HighContrast" の 3 つです。
 
@@ -30,9 +29,10 @@ XAML のテーマ リソースは、アクティブなシステム テーマに�
 ## テーマ リソースとリソース ディクショナリ構造での適切な場所
 
 
-各テーマ リソースは、XAML ファイル themeresources.xaml の一部です。 設計の目的には、Windows ソフトウェア開発キット (Windows SDK) のインストール先の \\(Program Files)\\Windows Kits\\10\\DesignTime\\CommonConfiguration\\Neutral\\UAP\\&lt;SDK version&gt;\\Generic フォルダーにある themeresources.xaml を使用できます。 themeresources.xaml 内のリソース ディクショナリは、同じディレクトリの generic.xaml にも複製されています。
+各テーマ リソースは、XAML ファイル themeresources.xaml の一部です。 設計の目的には、Windows ソフトウェア開発キット (Windows SDK) のインストール先の \\(Program Files)\\Windows Kits\\10\\DesignTime\\CommonConfiguration\\Neutral\\UAP\\&lt;SDK version&gt;\\Generic フォルダーにある themeresources.xaml を使うことができます。 themeresources.xaml 内のリソース ディクショナリは、同じディレクトリの generic.xaml にも複製されています。
 
-> **注**&nbsp;&nbsp;これらの物理ファイルは Windows ランタイムでランタイム検索に使われません。 そのため、明示的に DesignTime フォルダー内にあり、既定ではアプリにコピーされません。 代わりに、これらのリソース ディクショナリは Windows ランタイム自体の一部としてメモリ内に存在し、テーマ リソース (またはシステム リソース) へのアプリの XAML リソース参照は実行時にメモリ内で解決されます。
+> **注:**
+            &nbsp;&nbsp;これらの物理ファイルは Windows ランタイムでランタイム検索に使われません。 そのため、明示的に DesignTime フォルダー内にあり、既定ではアプリにコピーされません。 代わりに、これらのリソース ディクショナリは Windows ランタイム自体の一部としてメモリ内に存在し、テーマ リソース (またはシステム リソース) へのアプリの XAML リソース参照は実行時にメモリ内で解決されます。
 
  ## テーマ リソースの使用のガイドライン
 
@@ -50,7 +50,7 @@ XAML のテーマ リソースは、アクティブなシステム テーマに�
 
     例外: [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807) 内のアプリ テーマに依存しないリソースを参照するために [{ThemeResource} マークアップ拡張](../xaml-platform/themeresource-markup-extension.md)を使うことは問題ありません。 このようなリソースの例として、`SystemAccentColor` などのアクセント カラー リソースや、通常は "SystemColor" というプレフィックスの付いた `SystemColorButtonFaceColor` などのシステム カラー リソースがあります。
 
-**注意**  これらのガイドラインに従わないと、テーマに関連する予期しない動作がアプリで発生することがあります。 詳しくは、「[テーマ リソースのトラブルシューティング](#troubleshooting_theme_resources)」セクションをご覧ください。
+**注意:** これらのガイドラインに従わないと、テーマに関連する予期しない動作がアプリで発生することがあります。 詳しくは、「[テーマ リソースのトラブルシューティング](#troubleshooting_theme_resources)」セクションをご覧ください。
  
 
 ## XAML 色見本とテーマ依存のブラシ
@@ -119,7 +119,8 @@ Windows には複数のハイ コントラスト テーマが用意されてい�
 
 システムのハイ コントラスト テーマの色に加えて、システムのアクセント カラーも、`SystemAccentColor` というキーを使う特別なカラー リソースとして用意されています。 このリソースは、ユーザーが Windows の個人設定でアクセント カラーとして指定した色を実行時に取得します。
 
-> **注**&nbsp;&nbsp;ハイ コントラスト カラーとアクセント カラーのシステム カラー リソースは、同じ名前を持つリソースを作成してオーバーライドすることもできますが、特にハイ コントラスト設定についてはユーザーによる色の選択を尊重することをお勧めします。
+> **注:**
+            &nbsp;&nbsp;ハイ コントラスト カラーとアクセント カラーのシステム カラー リソースは、同じ名前を持つリソースを作成してオーバーライドすることもできますが、特にハイ コントラスト設定についてはユーザーによる色の選択を尊重することをお勧めします。
 
 ### テーマ依存のブラシ
 
@@ -147,7 +148,8 @@ Windows には複数のハイ コントラスト テーマが用意されてい�
 For many examples of how the brushes are used in the XAML control templates, see the [Default control styles and templates](default-control-styles-and-templates.md).
 -->
 
-> **注**& nbsp; & nbsp;すべての組み合わせ \[*HighContrast 簡易名*\]\[*Light/Dark 簡易名*\] ブラシ リソースとして提供されます。
+> **注:**
+            &nbsp;&nbsp;\[*HighContrast 簡易名*\]\[*Light/Dark 簡易名*\] のすべての組み合わせがブラシ リソースとして提供されるわけではありません。
 
 ## XAML の書体見本
 
@@ -308,7 +310,8 @@ themeresources.xaml ファイルには、UI 上のテキスト コンテナー (
 </Style>
 ```
 
-> **注**&nbsp;&nbsp;  [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565) スタイルには、[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) に含まれているテキスト見本スタイルのすべては含まれていません。これは主に、**RichTextBlock** のブロック ベースのドキュメント オブジェクト モデルでは、個々のテキスト要素への属性の設定がより簡単になっているためです。 また、XAML コンテンツ プロパティを使って [**TextBlock.Text**](https://msdn.microsoft.com/library/windows/apps/br209676) を設定する方式では、スタイルを設定できるテキスト要素が存在しない状況になるため、コンテナーにスタイルを設定する必要があります。 これに対して **RichTextBlock** では、テキスト コンテンツは常に [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/br244503) などの固有のテキスト要素になり、そこにページ ヘッダーやページ サブヘッダー、類似のテキスト見本定義の XAML スタイルを適用できるため、この問題はありません。
+> **注:**
+            &nbsp;&nbsp; [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565) スタイルには、[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) に含まれているテキスト見本スタイルのすべては含まれていません。これは主に、**RichTextBlock** のブロック ベースのドキュメント オブジェクト モデルでは、個々のテキスト要素への属性の設定がより簡単になっているためです。 また、XAML コンテンツ プロパティを使って [**TextBlock.Text**](https://msdn.microsoft.com/library/windows/apps/br209676) を設定する方式では、スタイルを設定できるテキスト要素が存在しない状況になるため、コンテナーにスタイルを設定する必要があります。 これに対して **RichTextBlock** では、テキスト コンテンツは常に [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/br244503) などの固有のテキスト要素になり、そこにページ ヘッダーやページ サブヘッダー、類似のテキスト見本定義の XAML スタイルを適用できるため、この問題はありません。
 
 ## その他の名前付きスタイル
 
@@ -439,10 +442,9 @@ themeresources.xaml ファイルには、UI 上のテキスト コンテナー (
 
 "HighContrast" ディクショナリでは、[{StaticResource} マークアップ拡張](../xaml-platform/staticresource-markup-extension.md)ではなく [{ThemeResource} マークアップ拡張](../xaml-platform/themeresource-markup-extension.md)が引き続き使われていることに注意してください。 この状況は、ガイドラインで既に説明した例外に当てはまります。 "HighContrast" テーマに使われるブラシの値のほとんどは、システムによって全体的に制御される色から選択されますが、これらは特別な名前付きのリソース (名前に 'SystemColor' というプレフィックスが付いているもの) として XAML に公開されています。 ハイ コントラスト設定で使う特定の色は、コンピューターの簡単操作を通じてユーザーが設定できるようになっています。 これらの色の選択は、特別な名前付きのリソースに適用されます。 XAML フレームワークでは、システム レベルでの変更の検出時にこれらのブラシを更新する場合にも、同じテーマ変更イベントを使用します。 ここで {ThemeResource} マークアップ拡張が使われているのはこのためです。
 
-> **注**& nbsp; & nbsp;  
-この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
 
-<!--HONumber=Mar16_HO1-->
+
+<!--HONumber=May16_HO2-->
 
 

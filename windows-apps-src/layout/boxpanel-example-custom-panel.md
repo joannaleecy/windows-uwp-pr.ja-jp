@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 Description: 'カスタム Panel クラスのコードの記述、ArrangeOverride メソッドと MeasureOverride メソッドの実装、Children プロパティの使用について説明します。'
 MS-HAID: 'dev\_ctrl\_layout\_txt.boxpanel\_example\_custom\_panel'
 MSHAttr: 'PreferredLib:/library/windows/apps'
@@ -10,10 +11,6 @@ template: detail.hbs
 ---
 
 # BoxPanel、カスタム パネルの例
-
-
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
-
 
 **重要な API**
 
@@ -28,7 +25,6 @@ template: detail.hbs
 
 ## レイアウト シナリオ
 
-
 カスタム パネルを定義することは、レイアウト シナリオを定義することです。
 
 レイアウト シナリオは、次によって表現されます。
@@ -38,8 +34,8 @@ template: detail.hbs
 -   最終的に子要素の UI レイアウトとして描画される測定値、配置、サイズのすべてを、パネルのロジックが決定する方法
 
 この点を考慮して、特定のシナリオが使用する `BoxPanel` を次に示します。 この例でコードを最優先するために、ここではシナリオを詳しくは説明しません。その代わり、必要な手順とコーディング パターンについて重点的に説明します。 最初にシナリオについて詳しく知りたい場合は、この後にある「[`BoxPanel` のシナリオ](#scenario)」を参照した後、コードの説明に戻ってください。
-## **Panel** からの派生で開始する
 
+## **Panel** からの派生で開始する
 
 まず、[**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) からカスタム クラスを派生させます。 このために最も簡単と思われる方法は、このクラスのための別のコード ファイルを定義することです。これには、Microsoft Visual Studio の**ソリューション エクスプローラー**でプロジェクトに対してコンテキスト メニューの **[追加]** | **[新しい項目]** | **[クラス]** をクリックします。 このクラス (とファイル) に、`BoxPanel` という名前を付けます。
 
@@ -47,11 +43,11 @@ template: detail.hbs
 
 ```CSharp
 using System;
-using System.Collections.Generic; //if you need to cast IEnumerable for iteration, or define your own collection properties
-using Windows.Foundation; //Point Size and Rect
-using Windows.UI.Xaml; //DependencyObject UIElement and FrameworkElement
-using Windows.UI.Xaml.Controls; //Panel
-using Windows.UI.Xaml.Media; //if you need Brushes or other utilities
+using System.Collections.Generic; // if you need to cast IEnumerable for iteration, or define your own collection properties
+using Windows.Foundation; // Point, Size, and Rect
+using Windows.UI.Xaml; // DependencyObject, UIElement, and FrameworkElement
+using Windows.UI.Xaml.Controls; // Panel
+using Windows.UI.Xaml.Media; // if you need Brushes or other utilities
 ```
 
 これで [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) を解決できるので、これを `BoxPanel` の基底クラスにします。 また、`BoxPanel` を公開します。
@@ -124,15 +120,14 @@ protected override Size MeasureOverride(Size availableSize)
 [
             **MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) の実装に必要なパターンは、[**Panel.Children**](https://msdn.microsoft.com/library/windows/apps/br227514) の各要素のループ処理です。 これらの要素のそれぞれで、[**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) メソッドを必ず呼び出します。 **Measure** には、型 [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) のパラメーターがあります。 ここで渡しているのは、この特定の子要素が表示できるようにパネルがコミットしているサイズです。 したがって、ループ処理を行い、**Measure** の呼び出しを開始する前に、各セルが使用可能なスペースの量を知る必要があります。 **MeasureOverride** メソッド自体には、*availableSize* 値があります。 これは、最初に呼び出されたこの **MeasureOverride** のトリガーであった **Measure** を呼び出したときにパネルの親が使用したサイズです。 そのため、一般的なロジックは、各子要素がパネルの *availableSize* 全体のスペースを分割するためのスキームを作成することです。 そして、サイズの各部分を各子要素の **Measure** に渡します。
 
-`BoxPanel` でのサイズの分割方法は、非常に簡単です。多数のボックスにスペースを分割しますが、これは、主に項目の数で制御されます。 ボックスのサイズは、行と列の数、および使用可能なサイズに基づいて設定されます。 正方形の 1 行または 1 列は不要な場合があるため、破棄され、行と列の割合から見ると、パネルは正方形ではなく四角形になります。 このロジックに到達する過程の詳細については、この後の「[`BoxPanel` のシナリオ](#scenario)」をご覧ください。
+`BoxPanel` でのサイズの分割方法は、非常に簡単です。多数のボックスにスペースを分割しますが、これは、主に項目の数で制御されます。 ボックスのサイズは、行と列の数、および使用可能なサイズに基づいて設定されます。 正方形の 1 行または 1 列は不要な場合があるため、破棄され、行と列の割合から見ると、パネルは正方形ではなく四角形になります。 このロジックに到達する過程の詳細については、この後の[「BoxPanel のシナリオ」](#scenario)をご覧ください。
 
 それでは、測定パスでは何が行われるのでしょうか。 ここでは、[**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) が呼び出された各要素に読み取り専用の [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) プロパティの値が設定されます。 **DesiredSize** 値があることは、配置パスに到達した後に重要になる可能性があります。なぜなら、**DesiredSize** によって、配置の際や最終的な描画で可能または必要なサイズが伝えられるためです。 自分のロジックで **DesiredSize** を使用しない場合でも、システムでは必要になります。
 
 このパネルが、*availableSize* の高さコンポーネントが無限である場合に使われる可能性があります。 これに該当する場合、パネルには、分割するための既知の高さがありません。 この場合、測定パスのロジックは、有限の高さがまだないことを各子要素に知らせます。 知らせるには、[**Size.Height**](https://msdn.microsoft.com/library/windows/apps/hh763910) が無限である子の [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) 呼び出しに [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) を渡します。 これは適正な動作です。 **Measure** が呼び出されるときのロジックは、[**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) が、**Measure** に渡されたものの最小値、または、明示的に設定された [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) と [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) などの要因からのその要素の自然なサイズの最小値として設定されていることです。
 
-**注:** [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635) の内部ロジックにも、この動作があります。**StackPanel** は、子の [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) に無限サイズの値を渡します。これは、子には、向きのサイズの制約がないことを示します。 **StackPanel** は、通常、動的にサイズ設定され、そのサイズ内で拡大されるスタックにすべての子が配置されます。
-
-??
+**注:**
+            &nbsp;&nbsp;[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635) の内部ロジックにも、この動作があります。**StackPanel** は、子の [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) に無限サイズの値を渡します。これは、子には、向きのサイズの制約がないことを示します。 **StackPanel** は、通常、動的にサイズ設定され、そのサイズ内で拡大されるスタックにすべての子が配置されます。
 
 ただし、パネル自体は、[**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) から、無限値を持つ [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) を返すことができません。返すと、レイアウト時に例外がスローされます。 したがって、ロジックの一部は、子が要求する最大の高さを調べ、それが既にパネル自体のサイズ制約によるものでない場合は、その高さをセルの高さとして使うことです。 次に示すのは、前のコードで参照されるヘルパー関数 `LimitUnboundedSize` です。これは、このセルの最大の高さを受け取り、これを使って、返すことができる有限の高さをパネルに与えます。また、配置パスの開始前に `cellheight` が有限数であることを確認します。
 
@@ -154,7 +149,6 @@ Size LimitUnboundedSize(Size input)
 ```
 
 ## **ArrangeOverride**
-
 
 ```CSharp
 protected override Size ArrangeOverride(Size finalSize)
@@ -190,7 +184,6 @@ protected override Size ArrangeOverride(Size finalSize)
 
 ## 改良: 行と列の数の制御
 
-
 このパネルは、コンパイルして、そのまま使用できます。 ただし、もう 1 つ改良を加えます。 ここで示したコードで、ロジックは、縦横比で最も長い側に、追加の行または列を設定しています。 ただし、セルの形状をさらに制御するには、パネル自体の縦横比が "縦長" であっても、3×4 ではなく、4×3 のセル セットを選択する方が適切である場合があります。 そのため、その動作を制御するためにパネルのユーザーが設定できる、オプションの依存関係プロパティを追加します。 この依存関係プロパティ定義は、次に示すように、非常に基本的です。
 
 ```CSharp
@@ -210,8 +203,7 @@ public bool UseSquareCells
 if (UseOppositeRCRatio) { aspectratio = 1 / aspectratio;}
 ```
 
-## `BoxPanel` のシナリオ
-
+## BoxPanel のシナリオ
 
 `BoxPanel` の特定のシナリオは、子項目の数がわかっており、パネルで使用できるとわかっているスペースを分割することが、スペースの分割方法の主な決定要因の 1 つであるパネルです。 パネルの形状は本質的に四角形です。 多くのパネルは、その四角形のスペースをさらに四角形に分割して動作します。これは、セルに対する [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) の動作です。 **Grid** の場合は、セルのサイズが [**ColumnDefinition**](https://msdn.microsoft.com/library/windows/apps/br209324) と [**RowDefinition**](https://msdn.microsoft.com/library/windows/apps/br227606) の値によって設定され、これらの値が使用される正確なセルが要素によって、[**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795) 添付プロパティと [**Grid.Column**](https://msdn.microsoft.com/library/windows/apps/hh759774) 添付プロパティで宣言されます。 **Grid** から適切なレイアウトを取得するには、通常、子要素の数を事前に知っている必要があります。これは、セルの数が十分であり、各子要素がそのセル サイズに収まるように自身の添付プロパティを設定する必要があるためです。
 
@@ -219,19 +211,17 @@ if (UseOppositeRCRatio) { aspectratio = 1 / aspectratio;}
 
 ただし、アプリのすべてのシナリオがデータ バインディングに対応しているわけではありません。 場合によっては、新しい UI 要素を実行時に作成し、表示されるようにする必要があります。 `BoxPanel` は、このようなシナリオで役立ちます。 子項目の数が変わることは、`BoxPanel` では問題になりません。子の数を使って計算し、既存と新規の両方の子要素がすべて、新しいレイアウトに収まるように調整するためです。
 
-`BoxPanel` をさらに拡張する高度なシナリオ (ここでは示されていません) では、動的な子に対応すると同時に、より強力な要因として子の [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) を使って個々のセルのサイズを設定することができます。 そして、可変サイズの行または列、または非グリッド形状を使って、「無駄な」スペースを減らすことができます。 これには、黄金比と最小サイズの両方の場合に、さまざまなサイズと縦横比の複数の四角形をすべて、それらを含む四角形に収めるための方法が必要です。 `BoxPanel` では、このような方法ではなく、スペースを分割するための単純な手法を使用しています。 `BoxPanel` の手法は、子の数より多い、最小の正方形を決定することです。 たとえば、9 個の項目は、3×3 の正方形に収まります。 10 個の項目には、4×4 の正方形が必要です。 ただし、多くの場合、項目を収めると同時に、最初の正方形の 1 行または 1 列を削除して、スペースを節約できます。 10 個の項目の例では、4×3 または 3×4 の長方形に収まります。
+`BoxPanel` をさらに拡張する高度なシナリオ (ここでは示されていません) では、動的な子に対応すると同時に、より強力な要因として子の [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) を使って個々のセルのサイズを設定することができます。 そして、可変サイズの行または列、または非グリッド形状を使って、「無駄な」スペースを減らすことができます。 これには、黄金比と最小サイズの両方の場合に、さまざまなサイズと縦横比の複数の四角形をすべて、それらを含む四角形に収めるための方法が必要です。 `BoxPanel` では、このような方法ではなく、スペースを分割するための単純な手法を使用しています。 `BoxPanel`の手法は、子の数より多い、最小の正方形を決定することです。 たとえば、9 個の項目は、3×3 の正方形に収まります。 10 個の項目には、4×4 の正方形が必要です。 ただし、多くの場合、項目を収めると同時に、最初の正方形の 1 行または 1 列を削除して、スペースを節約できます。 10 個の項目の例では、4×3 または 3×4 の長方形に収まります。
 
 10 項目の場合にパネルが、ちょうど収まる 5×2 を選択しないのは不思議に思われます。 ただし、実際には、向きがはっきりした縦横比の四角形としてパネルがサイズ設定されることは稀です。 最小正方形の手法は、サイズ設定ロジックを偏らせて、一般的なレイアウトの図形を適切に処理し、セルの形状が極端な縦横比になるサイズ設定を防ぐための 1 つの方法です。
 
-**注**
-この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
-
-??
+**注:**
+            &nbsp;&nbsp;この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
 ## 関連トピック
 
-
 **リファレンス**
+
 [**FrameworkElement.ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711)
 
 [**FrameworkElement.MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730)
@@ -239,16 +229,10 @@ if (UseOppositeRCRatio) { aspectratio = 1 / aspectratio;}
 [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511)
 
 **概念**
+
 [配置、余白、およびパディング](alignment-margin-padding.md)
 
-??
 
-??
-
-
-
-
-
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

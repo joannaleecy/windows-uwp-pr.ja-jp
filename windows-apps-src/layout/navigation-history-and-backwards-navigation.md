@@ -1,17 +1,14 @@
 ---
+author: mijacobs
 Description: ユニバーサル Windows プラットフォーム (UWP) アプリのナビゲーションは、ナビゲーション構造、ナビゲーション要素、システム レベルの機能から成る柔軟なモデルに基づいています。
 title: ユニバーサル Windows プラットフォーム (UWP) アプリのナビゲーション デザインの基本
 ms.assetid: e9876b4c-242d-402d-a8ef-3487398ed9b3
 isNew: true
-label: 履歴と前に戻る移動
+label: History and backwards navigation
 template: detail.hbs
 ---
 
 #  ナビゲーション履歴と前に戻る移動
-
-
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
-
 
 Web の場合、個々の Web サイトには独自のナビゲーション システム (目次、ボタン、メニュー、リンクの簡単な一覧など) が用意されています。 ナビゲーション エクスペリエンスは、Web サイトによっては大幅に異なる場合があります。 ただし、一貫して同じナビゲーション エクスペリエンスが 1 つあります。それは "戻る" 操作です。 ほとんどのブラウザーには、Web サイトに関係なく同じように動作する戻るボタンがあります。
 
@@ -159,7 +156,7 @@ private void App_BackRequested(object sender,
 ## <span id="Enable_the_title_bar_back_button"></span><span id="enable_the_title_bar_back_button"></span><span id="ENABLE_THE_TITLE_BAR_BACK_BUTTON"></span>タイトル バーの戻るボタンを有効にする方法
 
 
-デスクトップ モードをサポートするデバイス (通常は PC とノート PC、一部のタブレットも含む) で、設定を有効にしている (**[設定]、[システム]、[タブレット モード]** の順に選択) 場合、システムの戻るボタンを備えたグローバルなナビゲーション バーは提供されません。
+デスクトップ モードをサポートするデバイス (通常は PC とノート PC、一部のタブレットも含む) で、設定を有効にしている (**[設定]、[システム]、[タブレット モード]** の順に選択) 場合、システムの戻るボタンを備えたグローバルなナビゲーションバーは提供されません。
 
 デスクトップ モードでは、すべてのアプリは、タイトル バーのあるウィンドウで実行されます。 このタイトル バーに表示される、代わりの戻るボタンをアプリに提供できます。
 
@@ -257,7 +254,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 <tr class="odd">
 <td align="left"><p><strong>ページ間、異なるピア グループ</strong></p></td>
 <td align="left"><strong>○</strong>
-          <p>この図では、ユーザーはピア グループを横断して、アプリのレベル 1 からレベル 2 に移動します。そのため、このナビゲーションはナビゲーション履歴に追加されます。</p>
+<p>この図では、ユーザーはピア グループを横断して、アプリのレベル 1 からレベル 2 に移動します。そのため、このナビゲーションはナビゲーション履歴に追加されます。</p>
 <p><img src="images/nav/nav-pagetopage-diffpeers-imageonly1.png" alt="Navigation across peer groups" /></p>
 <p>次の図では、ユーザーは同じレベルにある 2 つのピア グループの間を移動し、この場合もピア グループを横断します。そのため、このナビゲーションはナビゲーション履歴に追加されます。</p>
 <p><img src="images/nav/nav-pagetopage-diffpeers-imageonly2.png" alt="Navigation across peer groups" /></p></td>
@@ -266,28 +263,28 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 <td align="left"><p><strong>ページ間、同じピア グループ、ナビゲーション要素は画面上に表示されない</strong></p>
 <p>ユーザーは、同じピア グループでページ間を移動します。 両方のページを対象とした直接的なナビゲーションを実現するナビゲーション要素 (タブ/ピボットや、ドッキングされたナビゲーション ウィンドウなど) は画面に表示されません。</p></td>
 <td align="left"><strong>○</strong>
-          <p>次の図では、ユーザーは同じピア グループ内の 2 つのページ間を移動します。 ページでは、タブやドッキングされたナビゲーション ウィンドウは使われていません。そのため、このナビゲーションはナビゲーション履歴に追加されます。</p>
+<p>次の図では、ユーザーは同じピア グループ内の 2 つのページ間を移動します。 ページでは、タブやドッキングされたナビゲーション ウィンドウは使われていません。そのため、このナビゲーションはナビゲーション履歴に追加されます。</p>
 <p><img src="images/nav/nav-pagetopage-samepeer-noosnavelement.png" alt="Navigation within a peer group" /></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p><strong>ページ間、同じピア グループ、画面上に表示されるナビゲーション要素を使う</strong></p>
 <p>ユーザーは、同じピア グループ内のページ間を移動します。 両方のページは同じナビゲーション要素に表示されます。 たとえば、両方のページで同じタブ/ピボット要素を使っていたり、両方のページがドッキングされたナビゲーション ウィンドウに表示されるとします。</p></td>
 <td align="left"><strong>×</strong>
-          <p>ユーザーが戻るボタンを押すと、現在のピア グループに移動する前に表示していた最後のページに戻ります。</p>
+<p>ユーザーが戻るボタンを押すと、現在のピア グループに移動する前に表示していた最後のページに戻ります。</p>
 <p><img src="images/nav/nav-pagetopage-samepeer-yesosnavelement.png" alt="Navigation across peer groups when a navigation element is present" /></p></td>
 </tr>
 <tr class="even">
 <td align="left"><strong>一時的な UI の表示</strong>
-          <p>アプリは、ダイアログ、スプラッシュ画面、スクリーン キーボードなどのポップアップ ウィンドウや子ウィンドウを表示します。または、アプリが複数選択モードなどの特別なモードに移行します。</p></td>
+<p>アプリは、ダイアログ、スプラッシュ画面、スクリーン キーボードなどのポップアップ ウィンドウや子ウィンドウを表示します。または、アプリが複数選択モードなどの特別なモードに移行します。</p></td>
 <td align="left"><strong>×</strong>
-          <p>ユーザーが戻るボタンを押すと、一時的な UI が閉じられ (スクリーン キーボードが非表示になる、ダイアログがキャンセルされるなど)、一時的な UI を生成したページに戻ります。</p>
+<p>ユーザーが戻るボタンを押すと、一時的な UI が閉じられ (スクリーン キーボードが非表示になる、ダイアログがキャンセルされるなど)、一時的な UI を生成したページに戻ります。</p>
 <p><img src="images/back-transui.png" alt="Showing a transient UI" /></p></td>
 </tr>
 <tr class="odd">
 <td align="left"><strong>項目の列挙</strong>
-          <p>アプリが、マスター/詳細リストで選んだ項目の詳細など、画面上の項目のコンテンツを表示します。</p></td>
+<p>アプリが、マスター/詳細リストで選んだ項目の詳細など、画面上の項目のコンテンツを表示します。</p></td>
 <td align="left"><strong>×</strong>
-          <p>項目の列挙は、ピア グループ内の移動に似ています。 ユーザーが戻るボタンを押すと、項目の列挙が表示されている現在のページの前のページに移動されます。</p>
+<p>項目の列挙は、ピア グループ内の移動に似ています。 ユーザーが戻るボタンを押すと、項目の列挙が表示されている現在のページの前のページに移動されます。</p>
 <img src="images/nav/nav-enumerate.png" alt="Iterm enumeration" /></td>
 </tr>
 </tbody>
@@ -299,7 +296,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 ユーザーが別のアプリに切り替えた後で、元のアプリに戻った場合は、ナビゲーション履歴にある最後のページに戻すことをお勧めします。
 
 
-\[この記事には、UWP アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
+
 
 
 
@@ -310,6 +307,6 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

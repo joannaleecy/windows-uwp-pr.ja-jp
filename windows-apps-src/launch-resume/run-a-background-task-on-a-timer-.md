@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 title: タイマーでのバックグラウンド タスクの実行
 description: 1 回限りのバックグラウンド タスクをスケジュールする方法、または定期的なバックグラウンド タスクを実行する方法について説明します。
 ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
@@ -36,7 +37,7 @@ ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
 
      
 
-    For example, this trigger will cause a background task to run once an hour:
+    たとえば、次のトリガーではバックグラウンド タスクは 1 時間に 1 回実行されます。
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -84,14 +85,14 @@ ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
 
     > > [!div class="tabbedCodeSnippets"]
     > ```cs
-    > string entryPoint = “Tasks.ExampleBackgroundTaskClass”;
-    > string taskName   = “Example hourly background task”;
+    > string entryPoint = "Tasks.ExampleBackgroundTaskClass";
+    > string taskName   = "Example hourly background task";
     > 
     > BackgroundTaskRegistration task = RegisterBackgroundTask(entryPoint, taskName, hourlyTrigger, userCondition);
     > ```
     > ```cpp
-    > String ^ entryPoint = “Tasks.ExampleBackgroundTaskClass”;
-    > String ^ taskName   = “Example hourly background task”;
+    > String ^ entryPoint = "Tasks.ExampleBackgroundTaskClass";
+    > String ^ taskName   = "Example hourly background task";
     > 
     > BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName, hourlyTrigger, userCondition);
     > ```
@@ -103,7 +104,7 @@ ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
 
 > **注**  Windows 10 以降、ユーザーはバック グラウンド タスクを利用するために、アプリをロック画面に追加する必要はなくなりました。 このようなバックグラウンド タスクのトリガーについては、「[バックグラウンド タスクによるアプリのサポート](support-your-app-with-background-tasks.md)」をご覧ください。
 
-> **注**  この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
+> **注:** この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
 
 ## 関連トピック
@@ -131,6 +132,6 @@ ms.assetid: 0B7F0BFF-535A-471E-AC87-783C740A61E9
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

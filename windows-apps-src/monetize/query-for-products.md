@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 ms.assetid: D1F233EC-24B5-4F84-A92F-2030753E608E
 description: Azure AD クライアント ID に関連付けられているアプリでユーザーが所有しているすべての製品を取得するには、Windows ストア コレクション API のこのメソッドを使用します。 スコープを指定して特定の製品を照会することができ、また他のフィルターを使用することもできます。
 title: 製品の照会
@@ -60,9 +61,9 @@ Azure AD クライアント ID に関連付けられているアプリでユー�
 
 UserIdentity オブジェクトには以下のパラメーターが含まれています。
 
-| パラメーター            | タイプ   | 説明                                                                                                                                                                                                                  | 必須かどうか |
+| パラメーター            | タイプ   | Description                                                                                                                                                                                                                  | 必須かどうか |
 |----------------------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| identityType         | string | 文字列値 **b2b** を指定します。                                                                                                                                                                                            | 必須      |
+| identityType         | string | 文字列値 **b2b** を指定します。                                                                                                                                                                                            | あり      |
 | identityValue        | string | Windows ストア ID キーの文字列値。                                                                                                                                                                                    | 必須      |
 | localTicketReference | string | 返された製品で必要な識別子。 応答本文で返された項目には、一致する *localTicketReference* があります。 Windows ストア ID キーの *userId* 要求と同じ値を使用することをお勧めします。 | 必須      |
 
@@ -79,7 +80,7 @@ ProductSkuId オブジェクトには以下のパラメーターが含まれて�
 
 ### 要求の例
 
-```
+```syntax
 POST https://collections.mp.microsoft.com/v6.0/collections/query HTTP/1.1
 Authorization: Bearer eyJ0eXAiOiJKV1Q…….
 Host: collections.mp.microsoft.com
@@ -162,7 +163,7 @@ IdentityContractV6 オブジェクトには以下のパラメーターが含ま�
 
 ### 応答の例
 
-```
+```syntax
 HTTP/1.1 200 OK
 Content-Length: 7241
 Content-Type: application/json
@@ -210,6 +211,6 @@ Date: Tue, 22 Sep 2015 20:28:18 GMT
 * [Windows ストア ID キーの更新](renew-a-windows-store-id-key.md)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

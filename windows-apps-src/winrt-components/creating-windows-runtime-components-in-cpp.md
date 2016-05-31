@@ -1,4 +1,5 @@
 ---
+author: martinekuan
 title: C++ での Windows ランタイム コンポーネントの作成
 description: この記事では、C++ を使って Windows ランタイム コンポーネントを作成する方法を示します。このコンポーネントは、JavaScript (または C#、Visual Basic、C++) を使って構築したユニバーサル Windows アプリから呼び出すことができる DLL です。
 ms.assetid: F7E06AA2-DCEC-427E-BD5D-9CA2A0ED2612
@@ -596,6 +597,6 @@ C++ Windows ランタイム コンポーネント プロジェクトをソリュ
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

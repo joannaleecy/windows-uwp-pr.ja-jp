@@ -1,4 +1,5 @@
 ---
+author: Mtoepke
 title: Xbox の開発環境に UWP を設定する
 description: Xbox の開発環境に UWP を設定してテストする手順
 area: Xbox
@@ -22,9 +23,10 @@ Xbox の開発環境のユニバーサル Windows プラットフォーム (UWP)
 
 ## Windows 10 SDK のセットアップ
 
-Windows 10 SDK プレビュー ビルド 14295 をインストールします。 詳しくは、「[開発者向け Insider Preview 更新プログラムをダウンロード](http://go.microsoft.com/fwlink/p/?LinkId=780552)」をご覧ください。
+Windows 10 SDK プレビュー ビルド 14295 をインストールします。 インストールについて詳しくは、「[開発者向け Insider Preview 更新プログラムのダウンロード](http://go.microsoft.com/fwlink/p/?LinkId=780552)」をご覧ください。
 
-  > **重要**&nbsp;&nbsp;最新の SDK をインストールする必要があります。ただし、オペレーティング システムの Windows Insider Preview の最新リリースをインストールする必要は_ありません_。
+  > **重要**
+            &nbsp;&nbsp;最新の SDK をインストールする必要があります。ただし、オペレーティング システムの Windows Insider Preview の最新リリースをインストールする必要は_ありません_。
 
 ## 初めてのアプリケーションを作成する
 
@@ -49,7 +51,7 @@ Windows 10 SDK プレビュー ビルド 14295 をインストールします�
   1. **[リモート コンピューター]** で、システムの IP アドレスまたは Xbox One コンソールのホスト名を入力します。 IP アドレスまたはホスト名の取得について詳しくは、「[Xbox One ツールの概要](introduction-to-xbox-tools.md)」をご覧ください。
   1. **[認証モード]** ドロップダウン リストで、**[ユニバーサル (暗号化されていないプロトコル)]** をクリックします。
 
-    ![C# BlankApp Property Pages](images/vs_remote.jpg)
+    ![C# BlankApp プロパティ ページ](images/vs_remote.jpg)
 
 ### C++ プロジェクトの開始
 
@@ -77,11 +79,11 @@ Windows 10 SDK プレビュー ビルド 14295 をインストールします�
   1. PIN を取得するには、Xbox One コンソールのホーム画面から **[Dev Home]** を開きます。
   1. **[Pair with Visual Studio]** をクリックします。
 
-    ![Pair with Visual Studio dialog](images/devhome_visualstudio.png)
+    ![[Pair with Visual Studio] ダイアログ ボックス](images/devhome_visualstudio.png)
 
   1. **[Pair with Visual Studio]** ダイアログ ボックスに PIN を入力します。 次の PIN は単なる例であり、実際のものとは異なります。
 
-    ![Pair with Visual Studio PIN dialog](images/devhome_pin.png)
+    ![[Pair with Visual Studio PIN] ダイアログ ボックス](images/devhome_pin.png)
 
   1. 展開エラーが発生した場合、**[出力]** ウィンドウに表示されます。
 
@@ -99,6 +101,6 @@ Windows 10 SDK プレビュー ビルド 14295 をインストールします�
 ----
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

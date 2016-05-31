@@ -1,10 +1,11 @@
 ---
+author: mcleanbyron
 Description: Microsoft Store Engagement and Monetization SDK が提供するライブラリとツールを利用すると、収益とユーザーの獲得を図る機能をアプリに追加できます。
-title: Microsoft Store Engagement and Monetization SDK によるアプリ収益の獲得と顧客エンゲージメント
+title: Microsoft Store Engagement and Monetization SDK
 ms.assetid: 518516DB-70A7-49C4-B3B6-CD8A98320B9C
 ---
 
-# Microsoft Store Engagement and Monetization SDK によるアプリ収益の獲得と顧客エンゲージメント
+# Microsoft Store Engagement and Monetization SDK
 
 Microsoft Store Engagement and Monetization SDK が提供するライブラリとツールを利用すると、収益とユーザーの獲得を向上することができます。たとえば、アプリで広告を表示したり、A/B テストを行ったりできます。 この SDK は Microsoft Universal Ad Client SDK の後継であり、エンゲージメントと収益化に関する新しい機能が徐々に追加されます。
 
@@ -15,7 +16,7 @@ Microsoft Store Engagement and Monetization SDK は、以下の機能をサポ�
 
 ### UWP アプリの A/B テストの実行
 
-ユニバーサル Windows プラットフォーム (UWP) アプリで A/B テストを実施して、すべてのユーザー向けに機能を公開する前に、一部のユーザーに対して機能の有効性を測定することができます。 デベロッパー センター ダッシュボードで実験を定義したら、アプリで [ExperimentClient](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.engagementclient.aspx) クラスを使用して実験のバリエーションを取得し、そのデータを使って、テストする機能の動作を変更し、[Log](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomevents.log.aspx) メソッドを使って、デベロッパー センターにビュー イベントとコンバージョン イベントを送信します。 最後に、ダッシュボードで結果を表示し、実験を管理します。
+ユニバーサル Windows プラットフォーム (UWP) アプリで A/B テストを実施して、すべてのユーザー向けに機能を公開する前に、一部のユーザーに対して機能の有効性を測定することができます。 デベロッパー センター ダッシュボードで実験を定義したら、アプリで [ExperimentClient](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.experimentclient.aspx) クラスを使用して実験のバリエーションを取得し、そのデータを使って、テストする機能の動作を変更し、[Log](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.storeservicescustomevents.log.aspx) メソッドを使って、デベロッパー センターにビュー イベントとコンバージョン イベントを送信します。 最後に、ダッシュボードで結果を表示し、実験を管理します。
 
 詳しくは、「[A/B テストの実行](run-app-experiments-with-a-b-testing.md)」をご覧ください。
 
@@ -24,6 +25,8 @@ Microsoft Store Engagement and Monetization SDK は、以下の機能をサポ�
 UWP アプリで [Feedback](https://msdn.microsoft.com/library/windows/apps/microsoft.services.store.engagement.feedback.aspx) クラスを使用して、Windows 10 ユーザーをフィードバック Hub に誘導して、ユーザーが問題、提案、賛成票を送信できるようにします。 次に、デベロッパー センター ダッシュボードの[フィードバック レポート](../publish/feedback-report.md)でこのフィードバックを管理します。
 
 詳しくは、「[アプリからのフィードバック Hub の起動](launch-feedback-hub-from-your-app.md)」をご覧ください。
+
+>**注** **フィードバック** レポートは、現在、[デベロッパー センター Insider Program](../publish/dev-center-insider-program.md) に参加している開発者アカウントのみが利用できます。
 
 ### アプリでの広告の表示
 
@@ -72,6 +75,6 @@ Microsoft Store Monetization and Engagement SDK に含まれる次のライブ�
 * [アプリからのフィードバック Hub の起動](launch-feedback-hub-from-your-app.md)
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

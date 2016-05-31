@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: GLSL の移植
 description: バッファーとシェーダー オブジェクトを作成して構成するコードが完成したら、それらのシェーダー内のコードを OpenGL ES 2.0 の GL シェーダー言語 (GLSL) から Direct3D 11 の上位レベル シェーダー言語 (HLSL) に移植します。
 ms.assetid: 0de06c51-8a34-dc68-6768-ea9f75dc57ee
@@ -148,12 +149,10 @@ float4 main(PixelShaderInput input) : SV_TARGET
 ## 前の手順
 
 
-[頂点バッファーと頂点データの移植](port-the-vertex-buffers-and-data-config.md)
-次の手順
+[頂点バッファーと頂点データの移植](port-the-vertex-buffers-and-data-config.md) 次の手順
 ---------
 
-[画面への描画](draw-to-the-screen.md)
-注釈
+[画面への描画](draw-to-the-screen.md) 解説
 -------
 
 HLSL セマンティクスと定数バッファーのパッキングについて理解すると、デバッグの苦労がいくらか少なくなるだけでなく、最適化できるようにもなります。 機会があれば、「[変数の構文 (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509706)」、「[Direct3D 11 のバッファーについて](https://msdn.microsoft.com/library/windows/desktop/ff476898)」、「[定数バッファーを作成する方法](https://msdn.microsoft.com/library/windows/desktop/ff476896)」をご覧ください。 機会がない場合は、次のセマンティクスと定数バッファーについての基本的なヒントを心に留めておいてください。
@@ -185,6 +184,6 @@ HLSL セマンティクスと定数バッファーのパッキングについて
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

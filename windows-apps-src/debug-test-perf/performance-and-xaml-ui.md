@@ -1,4 +1,5 @@
 ---
+author: mcleblanc
 ms.assetid: 64F7FC51-E8AC-4098-9C5F-0172E4724B5C
 title: パフォーマンス
 description: ユーザーは、高い応答性と自然な使用感、そしてバッテリーが消耗しないことをアプリに期待しています。
@@ -31,6 +32,6 @@ description: ユーザーは、高い応答性と自然な使用感、そして�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

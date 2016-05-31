@@ -1,15 +1,16 @@
 ---
+author: mijacobs
 Description: アダプティブ トースト通知と対話型トースト通知を使うと、より多くのコンテンツやオプションのインライン画像を含み、オプションのユーザー操作を備えた柔軟性のあるポップアップ通知を作成できます。
 title: アダプティブ トースト通知と対話型トースト通知
 ms.assetid: 1FCE66AF-34B4-436A-9FC9-D0CF4BDA5A01
-label: アダプティブ トースト通知と対話型トースト通知
+label: Adaptive and interactive toast notifications
 template: detail.hbs
 ---
 
 # アダプティブ トースト通知と対話型トースト通知
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+
 
 
 アダプティブ トースト通知と対話型トースト通知を使うと、より多くのコンテンツやオプションのインライン画像を含み、オプションのユーザー操作を備えた柔軟性のあるポップアップ通知を作成できます。
@@ -101,8 +102,7 @@ visual セクションとその子要素でサポートされているすべて�
 
 -   リマインダーのトースト通知は、ユーザーが通知を閉じるか、操作を実行するまで画面上に表示されたままになります。 Windows Mobile では、リマインダーのトースト通知は既に展開された状態で表示されます。
 -   アラーム通知では、上記の動作をリマインダー通知と共有するだけでなく、ループするオーディオを自動的に再生します。
--   着信呼び出し通知は、Windows Mobile デバイスでは全画面で表示されます。 この動作は、トースト通知のルート要素 (&lt;toast&gt;) 内に scenario 属性を指定することによって実行されます。
-    &lt;toast scenario=" { default | alarm | reminder | incomingCall } " &gt;
+-   着信呼び出し通知は、Windows Mobile デバイスでは全画面で表示されます。 この動作は、トースト通知のルート要素 (&lt;toast&gt;) 内に scenario 属性を指定することによって実行されます。&lt;toast scenario=" { default | alarm | reminder | incomingCall } " &gt;
 
 ## <span id="xml_examples"></span><span id="XML_EXAMPLES"></span>XML の例
 
@@ -368,7 +368,7 @@ namespace ToastNotificationTask
 </toast>
 ```
 
-**&lt;toast&gt; 内の属性**
+**&lt;toast> 内の属性&gt;**
 
 launch?
 
@@ -400,7 +400,7 @@ scenario?
 -   シナリオがアラーム、リマインダー、着信呼び出しの表示以外の場合、この属性は必要ありません。
 -   通知を常に画面上に表示することのみを目的とする場合は、この属性を使わないでください。
 
-**&lt;visual&gt; 内の属性**
+**&lt;visual> 内の属性&gt;**
 
 version?
 
@@ -419,7 +419,7 @@ addImageQuery?
 
 -   この省略可能な属性について詳しくは、[要素のスキーマに関するこの記事](https://msdn.microsoft.com/library/windows/apps/br230847)をご覧ください。
 
-**&lt;binding&gt; 内の属性**
+**&lt;binding> 内の属性&gt;**
 
 template?
 
@@ -439,13 +439,13 @@ addImageQuery?
 
 -   この省略可能な属性について詳しくは、[要素のスキーマに関するこの記事](https://msdn.microsoft.com/library/windows/apps/br230847)をご覧ください。
 
-**&lt;text&gt; 内の属性**
+**&lt;text> 内の属性&gt;**
 
 lang?
 
 -   この省略可能な属性について詳しくは、[要素のスキーマに関するこの記事](https://msdn.microsoft.com/library/windows/apps/br230847)をご覧ください。
 
-**&lt;image&gt; 内の属性**
+**&lt;image> 内の属性&gt;**
 
 src
 
@@ -474,7 +474,7 @@ hint-crop?
 -   既定値は "none" であり、トリミングされないことを意味します。
 -   "circle" を指定すると、画像が円形にトリミングされます。 連絡先のプロフィール画像、人物の画像などにこの属性を使います。
 
-**&lt;audio&gt; 内の属性**
+**&lt;audio> 内の属性&gt;**
 
 src?
 
@@ -507,7 +507,7 @@ silent?
 </toast>
 ```
 
-**&lt;input&gt; 内の属性**
+**&lt;input> 内の属性&gt;**
 
 id
 
@@ -540,7 +540,7 @@ defaultInput?
 -   入力の種類が "text" である場合、この属性は文字列入力として処理されます。
 -   入力の種類が "selection" である場合、この属性は、入力の要素内で利用できるいずれかの選択項目の ID として処理されます。
 
-**&lt;selection&gt; 内の属性**
+**&lt;selection> 内の属性&gt;**
 
 id
 
@@ -550,7 +550,7 @@ content
 
 -   この属性は必須です。 この selection 要素に対して表示する文字列を指定します。
 
-**&lt;action&gt; 内の属性**
+**&lt;action> 内の属性&gt;**
 
 content
 
@@ -622,13 +622,13 @@ hint-inputId
 -   activationType = "system" を指定します。
 -   arguments = "snooze" または arguments = "dismiss" を指定します。
 -   content を指定します。
-    -   "snooze" や "dismiss" のローカライズされた文字列を操作に対して表示する場合は、content に空の文字列を指定します (&lt;action content = ""/&gt;)。
-    -   カスタマイズした文字列が必要な場合は、その値を指定します (&lt;action content="Remind me later" /&gt;)。
+    -   "snooze" や "dismiss" のローカライズされた文字列を操作に対して表示する場合は、content に空の文字列を指定します (&lt;action content = ""/>)。&gt;
+    -   カスタマイズした文字列が必要な場合は、その値を指定します (&lt;action content="Remind me later" />)。&gt;
 -   input を指定します。
     -   再通知の間隔をユーザーが選ぶのではなく、システム定義の時間間隔 (OS 全体で一貫しています) に応じて 1 回だけ再通知を行う場合は、&lt;input&gt; を指定しないでください。
     -   再通知の間隔に関する選択項目を指定する場合:
         -   再通知の操作内に、hint-inputId を指定します。
-        -   input の id に、再通知の操作の hint-inputId と同じ値を指定します (&lt;input id="snoozeTime"&gt;&lt;/input&gt;&lt;action hint-inputId="snoozeTime"/&gt;)。
+        -   input の id に、再通知の操作の hint-inputId と同じ値を指定します (&lt;input id="snoozeTime"&gt;&lt;/input&gt;&lt;action hint-inputId="snoozeTime"/>)。&gt;
         -   selection の id に、再通知の間隔を分単位で表す負以外の整数を指定します。&lt;selection id="240" /&gt; は、再通知の間隔が 4 時間であることを示します。
         -   &lt;input&gt; の defaultInput の値が、&lt;selection&gt; 子要素の id のいずれかと一致することを確認します。
         -   &lt;selection&gt; の値は、最大で 5 つまで指定できます。
@@ -642,6 +642,6 @@ hint-inputId
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

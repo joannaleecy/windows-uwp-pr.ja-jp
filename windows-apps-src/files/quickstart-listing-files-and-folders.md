@@ -1,4 +1,5 @@
 ---
+author: TylerMSFT
 ms.assetid: 4C59D5AC-58F7-4863-A884-E9E54228A5AD
 title: ファイルとフォルダーの列挙と照会
 description: フォルダー、ライブラリ、デバイス、またはネットワークの場所にあるファイルやフォルダーにアクセスします。 ファイルやフォルダーのクエリを作成することで、任意の場所にあるファイルやフォルダーを照会することもできます。
@@ -52,36 +53,36 @@ description: フォルダー、ライブラリ、デバイス、またはネッ�
 > // Get a read-only vector of the file objects
 > // and pass it to the continuation. 
 > create_task(picturesFolder->GetFilesAsync())        
->     // outputString is captured by value, which creates a copy 
->     // of the shared_ptr and increments its reference count.
->     .then ([outputString] (IVectorView\<StorageFile^>^ files)
-> {        
->     for ( unsigned int i = 0 ; i < files->Size; i++)
->     {
->         *outputString += files->GetAt(i)->Name->Data();
->         *outputString += L"\n";
->     }
-> })
->     // We need to explicitly state the return type 
->     // here: -> IAsyncOperation<...>
->     .then([picturesFolder]() -> IAsyncOperation\<IVectorView\<StorageFolder^>^>^ 
-> {
->     return picturesFolder->GetFoldersAsync();
-> })
->     // Capture "this" to access m_OutputTextBlock from within the lambda.
->     .then([this, outputString](IVectorView\<StorageFolder^>^ folders)
-> {        
->     *outputString += L"Folders:\n";
+>    // outputString is captured by value, which creates a copy 
+>    // of the shared_ptr and increments its reference count.
+>    .then ([outputString] (IVectorView\<StorageFile^>^ files)
+>    {        
+>        for ( unsigned int i = 0 ; i < files->Size; i++)
+>        {
+>            *outputString += files->GetAt(i)->Name->Data();
+>            *outputString += L"\n";
+>       }
+>    })
+>    // We need to explicitly state the return type 
+>    // here: -> IAsyncOperation<...>
+>    .then([picturesFolder]() -> IAsyncOperation\<IVectorView\<StorageFolder^>^>^ 
+>    {
+>        return picturesFolder->GetFoldersAsync();
+>    })
+>    // Capture "this" to access m_OutputTextBlock from within the lambda.
+>    .then([this, outputString](IVectorView\<StorageFolder^>^ folders)
+>    {        
+>        *outputString += L"Folders:\n";
 > 
->     for ( unsigned int i = 0; i < folders->Size; i++)
->     {
->         *outputString += folders->GetAt(i)->Name->Data();
->         *outputString += L"\n";
->     }
+>        for ( unsigned int i = 0; i < folders->Size; i++)
+>        {
+>           *outputString += folders->GetAt(i)->Name->Data();
+>           *outputString += L"\n";
+>        }
 > 
->     // Assume m_OutputTextBlock is a TextBlock defined in the XAML.
->     m_OutputTextBlock->Text = ref new String((*outputString).c_str());
-> });
+>        // Assume m_OutputTextBlock is a TextBlock defined in the XAML.
+>        m_OutputTextBlock->Text = ref new String((*outputString).c_str());
+>     });
 > ```
 > ```cs
 > StorageFolder picturesFolder = KnownFolders.PicturesLibrary;
@@ -319,6 +320,6 @@ July ‎2015 (2)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

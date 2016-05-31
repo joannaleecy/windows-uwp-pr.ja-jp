@@ -1,8 +1,9 @@
 ---
+author: Jwmsft
 Description: マスター/詳細パターンでは、マスター リストと、現在選択されている項目の詳細が表示されます。 このパターンは、メールや連絡先一覧/アドレス帳によく使用されます。
 title: マスター/詳細
 ms.assetid: 45C9FE8B-ECA6-44BF-8DDE-7D12ED34A7F7
-label: マスター/詳細
+label: Master/details
 template: detail.hbs
 ---
 # マスター/詳細パターン
@@ -71,7 +72,7 @@ template: detail.hbs
 
 ![マスター/詳細パターンを使ったアプリの例 (デスクトップ PC)](images/uap-finance-desktop700.png)
 
-\[この記事には、ユニバーサル Windows プラットフォーム (UWP) アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
+
 
 ## 関連記事
 
@@ -81,6 +82,6 @@ template: detail.hbs
 - [**ListView クラス (XAML)**](https://msdn.microsoft.com/library/windows/apps/br242878)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

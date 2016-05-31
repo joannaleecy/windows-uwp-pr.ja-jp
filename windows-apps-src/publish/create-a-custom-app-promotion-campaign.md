@@ -1,5 +1,6 @@
 ---
-Description: Windows アプリ内で実行されるアプリ向けの広告キャンペーンの作成に加えて、他のチャネルを使ってアプリを宣伝することもできます。
+author: jnHs
+Description: Windows アプリ内で実行されるアプリの広告キャンペーンの作成に加えて、他のチャネルを使ってアプリを宣伝することもできます。
 title: カスタム アプリ プロモーション キャンペーンの作成
 ms.assetid: 7C9BF73E-B811-4FC7-B1DD-4A0C2E17E95D
 ---
@@ -82,7 +83,7 @@ Facebook や Twitter のフォロワーがその URL をクリックすると、
 string campaignId = await CurrentApp.GetAppPurchaseCampaignIdAsync();
 ```
 
-``` ManagedCPlusPlus
+``` cpp
 HString campaignId;
 HRESULT hr = CurrentApp::GetAppPurchaseCampaignIdAsync(campaignId.GetAddressOf());
 ```
@@ -131,6 +132,6 @@ HRESULT hr = CurrentApp::GetAppPurchaseCampaignIdAsync(campaignId.GetAddressOf()
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

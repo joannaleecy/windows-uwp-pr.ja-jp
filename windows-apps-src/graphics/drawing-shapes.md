@@ -1,11 +1,12 @@
 ---
+author: Jwmsft
 ms.assetid: 54CC0BD4-1961-44D7-AB40-6E8B58E42D65
 title: 図形の描画
 description: 楕円形、長方形、多角形、パスなどの図形を描画する方法について説明します。 Path クラスは、きわめて複雑なベクター ベースの画像記述言語を XAML UI で視覚化するための手段です。たとえば、ベジエ曲線を描画することができます。
 ---
 # 図形の描画
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
 ** 重要な API **
@@ -54,7 +55,7 @@ XAML UI に空間領域を定義するクラスのセットには、[**Shape**](
 
 一連の 6 つの [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/BR243343) 要素は [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/BR227538) コントロールのコントロール テンプレートの一部であり、2 つの同心の **Ellipse** 要素は [**RadioButton**](https://msdn.microsoft.com/library/windows/apps/BR227544) の一部です。
 
-## <span id="Rectangle"></span><span id="rectangle"></span><span id="RECTANGLE"></span>長方形
+## <span id="Rectangle"></span><span id="rectangle"></span><span id="RECTANGLE"></span>四角形
 
 [
             **Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) は、向かい合った辺の長さがそれぞれ等しい四辺形です。 基本的な **Rectangle** を作成するには、[**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751)、[**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718)、[**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill) を指定します。
@@ -116,12 +117,12 @@ The next example creates a [**Polygon**](https://msdn.microsoft.com/library/wind
 [
             **Line**](https://msdn.microsoft.com/library/windows/apps/BR243345) 図形を指定する際、[**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 値は使いません。[**X1**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.line.x1.aspx)、[**Y1**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.line.y1.aspx)、[**X2**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.line.x2.aspx)、[**Y2**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.line.y2.aspx) のそれぞれに対して個別に [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) 値を指定します。 これで、水平方向または垂直方向の直線に対する最低限のマークアップは完成します。 たとえば、長さ 400 ピクセルの水平方向の直線を定義するには、`<Line Stroke="Red" X2="400"/>` とします。 その他の X,Y プロパティは既定で 0 に設定されるため、点で見た場合、この XAML は `(0,0)` から `(400,0)` に直線を描画していることになります。 (0,0) 以外の点から開始する必要がある場合は、[**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) を使って **Line** 全体を移動することができます。
 
-## <span id="_Polyline"></span><span id="_polyline"></span><span id="_POLYLINE"></span>ポリライン
+## <span id="_Polyline"></span><span id="_polyline"></span><span id="_POLYLINE"></span> ポリライン
 
 [
             **Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365) は、[**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359) と同様に、図形の境界線を点のセットによって定義しますが、**Polyline** では最後の点が最初の点に接続されません。
 
-**注**   [**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365) の始点と終点が等しくなるように明示的に [**Points**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) を設定することもできますが、その場合は、[**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359) を使うのが一般的です。
+**注:** [**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365) の始点と終点が等しくなるように明示的に [**Points**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) を設定することもできますが、その場合は、[**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359) を使うのが一般的です。
 
  
 
@@ -217,6 +218,6 @@ The next example shows a usage of the other technique we discussed: a [**Geometr
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

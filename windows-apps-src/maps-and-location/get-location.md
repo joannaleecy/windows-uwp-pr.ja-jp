@@ -1,4 +1,5 @@
 ---
+author: PatrickFarley
 title: ユーザーの位置情報の取得
 description: ユーザーの位置情報を検索し、位置の変更に対応します。 ユーザーの位置情報へのアクセスは、設定アプリのプライバシー設定で管理されています。 このトピックでは、アプリにユーザーの位置情報へのアクセス許可が与えられているかどうかを確認する方法についても説明します。
 ms.assetid: 24DC9A41-8CC1-48B0-BC6D-24BF571AFCC8
@@ -229,7 +230,7 @@ async private void OnPositionChanged(Geolocator sender, PositionChangedEventArgs
 
 位置情報のプライバシー設定でアプリにユーザーの位置情報へのアクセス許可を与えていない場合は、**設定**アプリの **[位置情報のプライバシー設定]** へのリンクを用意することをお勧めします。 この例では、ハイパーリンク コントロールを使って、`ms-settings:privacy-location` という URI に移動します。
 
-```xaml
+```xml
 <!--Set Visibility to Visible when access to location is denied -->  
 <TextBlock x:Name="LocationDisabledMessage" FontStyle="Italic" 
                  Visibility="Collapsed" Margin="0,15,0,0" TextWrapping="Wrap" >
@@ -254,7 +255,7 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 
 アプリがユーザーの位置情報にアクセスする前に、デバイスで **[位置情報]** を有効にする必要があります。 **設定**アプリで、次の**位置情報に関するプライバシー設定**がオンになっていることを確認します。
 
--   **[このデバイスの位置情報]** が **[オン]** になっている (Windows 10 Mobile には適用されません)
+-   **[このデバイスの位置情報]** が**オン**になっている (Windows 10 Mobile には適用されません)
 -   位置情報サービス設定の **[位置情報]** が **[オン]** になっている
 -   **[位置情報を使うことができるアプリを選ぶ]** で、アプリが **[オン]** になっている
 
@@ -267,6 +268,6 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

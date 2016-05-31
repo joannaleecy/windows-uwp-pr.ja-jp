@@ -1,13 +1,14 @@
 ---
+author: mtoepke
 title: OpenGL ES 2.0 から Direct3D への移植の計画
-description: iOS または Android プラットフォームからゲームを移植している場合、OpenGL ES 2.0 に多大な投資をなされてきたものと思われます。
+description: iOS または Android プラットフォームからゲームを移植している場合、OpenGL ES 2.0 に多大な投資を行ってこられたものと思われます。
 ms.assetid: a31b8c5a-5577-4142-fc60-53217302ec3a
 ---
 
 # OpenGL ES 2.0 から Direct3D への移植の計画
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 
 **重要な API**
@@ -15,7 +16,7 @@ ms.assetid: a31b8c5a-5577-4142-fc60-53217302ec3a
 -   [Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476080)
 -   [Visual C++](https://msdn.microsoft.com/en-us/library/windows/apps/60k1461a.aspx)
 
-iOS または Android プラットフォームからゲームを移植している場合、OpenGL ES 2.0 に多大な投資をなされてきたものと思われます。 グラフィックス パイプラインのコードベースを Direct3D 11 と Windows ランタイムに移す準備をしているときは、開始する前に何点か注意してください。
+iOS または Android プラットフォームからゲームを移植している場合、OpenGL ES 2.0 に多大な投資を行ってこられたものと思われます。 グラフィックス パイプラインのコードベースを Direct3D 11 と Windows ランタイムに移す準備をしているときは、開始する前に何点か注意してください。
 
 ほとんどの移植作業では、通常、最初にコードベースを調べて、2 つのモデル間で共通する API とパターンをマップします。 このトピックを読んで内容を確かめれば、このプロセスが少し楽になるはずです。
 
@@ -114,6 +115,6 @@ Windows ランタイム API は、UWP アプリの全体的なインフラスト
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

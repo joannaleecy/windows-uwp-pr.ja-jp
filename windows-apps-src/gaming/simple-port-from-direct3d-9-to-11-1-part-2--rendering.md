@@ -1,4 +1,5 @@
 ---
+author: mtoepke
 title: レンダリング フレームワークの変換
 description: ジオメトリ バッファーを移植する方法、HLSL シェーダー プログラムをコンパイルして読み込む方法、Direct3D 11 のレンダリング チェーンを実装する方法など、Direct3D 9 の簡単なレンダリング フレームワークを Direct3D 11 に変換する方法について説明します。
 ms.assetid: f6ca1147-9bb8-719a-9a2c-b7ee3e34bd18
@@ -240,7 +241,9 @@ m_d3dDevice->CreateVertexShader(
 
 頂点ごとのデータは互換性のある型でシステム メモリに格納する必要があります。 DirectXMath データ型は便利です。たとえば、DXGI\_FORMAT\_R32G32B32\_FLOAT は [**XMFLOAT3**](https://msdn.microsoft.com/library/windows/desktop/ee419475) に対応しています。
 
-> **注**   定数バッファーでは、一度に 4 つの浮動小数点数にアラインメントする固定レイアウト入力を使います。 定数バッファー データには [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608) (とその派生) をお勧めします。
+> **注**   定数バッファーでは、一度に 4 つの浮動小数点数にアラインメントする固定レイアウト入力を使います。 定数バッファー データには [
+              **XMFLOAT4**
+            ](https://msdn.microsoft.com/library/windows/desktop/ee419608) (とその派生) をお勧めします。
 
  
 
@@ -488,6 +491,6 @@ m_swapChain->Present(1, 0);
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

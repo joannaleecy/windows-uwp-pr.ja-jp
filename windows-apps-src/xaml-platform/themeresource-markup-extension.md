@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: 現在アクティブなテーマに応じて異なるリソースを取得する追加のシステム ロジックと共に、リソースへの参照を評価して任意の XAML 属性の値を提供します。
 title: ThemeResource マークアップ拡張
 ms.assetid: 8A1C79D2-9566-44AA-B8E1-CC7ADAD1BCC5
@@ -20,7 +21,7 @@ ms.assetid: 8A1C79D2-9566-44AA-B8E1-CC7ADAD1BCC5
 
 | 用語 | 説明 |
 |------|-------------|
-| key | 要求されたリソースのキー。 このキーは、[**ResourceDictionary**>](https://msdn.microsoft.com/library/windows/apps/br208794) によって最初に割当てられます。 リソース キーとしては、XamlName の文法で定義されている任意の文字列を使うことができます。 |
+| key | 要求されたリソースのキー。 このキーは、[**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) によって最初に割当てられます。 リソース キーとしては、XamlName の文法で定義されている任意の文字列を使うことができます。 |
  
 ## 注釈
 
@@ -61,7 +62,8 @@ Windows ランタイムには、特に **ThemeResource** から参照するた�
 
 **ThemeResource** は、一連の依存型の値で使われる場合があります。 たとえば、キーを持つリソースである [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) で使われる [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) で **ThemeResource** 参照を使うことがあります。 ただし、キーを持つ **SolidColorBrush** リソースを使う任意の UI プロパティで **ThemeResource** 参照を使うこともあります。この場合、テーマが変更されたときに動的な値の変更を可能にするのはそれぞれの [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) タイプのプロパティです。
 
-**注**  `{ThemeResource}` とテーマの切り替え時の実行時のリソース評価は Windows 8.1 XAML でサポートされますが、Windows 8 をターゲットとするアプリの XAML ではサポートされません。
+**注**
+            `{ThemeResource}` とテーマの切り替え時の実行時のリソース評価は Windows 8.1 XAML でサポートされますが、Windows 8 をターゲットとするアプリの XAML ではサポートされません。
 
 ### システム リソース
 
@@ -73,7 +75,7 @@ Windows ランタイムには、特に **ThemeResource** から参照するた�
 
 **ThemeResource** の使い方の例として、既定の generic.xaml ファイルと themeresources.xaml ファイルから抜粋した XAML の例を示します。 ここでは、1 つのテンプレート (既定の [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)) と、テーマの変更に対応するための 2 つのプロパティ ([**Background**](https://msdn.microsoft.com/library/windows/apps/br209395) と [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414)) の宣言方法について注目します。
 
-```xaml
+```xml
     <!-- Default style for Windows.UI.Xaml.Controls.Button -->
     <Style TargetType="Button">
         <Setter Property="Background" Value="{ThemeResource ButtonBackgroundThemeBrush}" />
@@ -85,7 +87,7 @@ Windows ランタイムには、特に **ThemeResource** から参照するた�
 
 これらの同じプロパティは、[**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) の表示状態のいくつかによっても調整されます。 特に、背景色は、ボタンをクリックしたときに変更されます。 同様に、表示状態のストーリーボードの [**Background**](https://msdn.microsoft.com/library/windows/apps/br209395) と [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414) のアニメーションでは、[**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/br243132) オブジェクトと共に、キー フレーム値として **ThemeResource** を含むブラシへの参照を使っています。
 
-```xaml
+```xml
 <VisualState x:Name="Pressed">
   <Storyboard>
     <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Border"
@@ -102,7 +104,7 @@ Windows ランタイムには、特に **ThemeResource** から参照するた�
 
 これらのブラシはそれぞれ generic.xaml で事前に定義されています。XAML の前方参照を避けるためには、これらのブラシは、これを使う任意のテンプレートに先だって定義されている必要があります。 "Default" テーマ ディクショナリのための定義を次に示します。
 
-```xaml
+```xml
     <ResourceDictionary.ThemeDictionaries>
         <ResourceDictionary x:Key="Default">
 ... 
@@ -116,7 +118,7 @@ Windows ランタイムには、特に **ThemeResource** から参照するた�
 
 他の各テーマ ディクショナリにも、次に示すようにこれらのブラシが定義されています。
 
-```xaml
+```xml
         <ResourceDictionary x:Key="HighContrast">
             <!-- High Contrast theme resources -->
 ...
@@ -150,6 +152,6 @@ Microsoft Visual Studio 2013 では、XAML ページで **{ThemeResource}** マ
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

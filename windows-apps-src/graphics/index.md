@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 ms.assetid: ad7a739c-fd70-4068-9007-da28028abea3
 title: グラフィックスとアニメーション
 description: このセクションのトピックでは、ストア アプリでのグラフィックスとアニメーションの使用の概要について説明します。
@@ -9,7 +10,7 @@ description: このセクションのトピックでは、ストア アプリで
 
 このセクションのトピックでは、ストア アプリでのグラフィックスとアニメーションの使用の概要について説明します。
 
-**注:**  
+**注**  
 グラフィックスとアニメーションは、XAML を使うアプリ開発者向けに設計されています。 Microsoft DirectX を使うゲームにグラフィックスとアニメーションを追加する場合は、「[ゲームと DirectX](https://msdn.microsoft.com/library/windows/apps/Mt228375)」をご覧ください。
 
  
@@ -33,6 +34,6 @@ description: このセクションのトピックでは、ストア アプリで
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

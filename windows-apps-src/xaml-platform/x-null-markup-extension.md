@@ -1,4 +1,5 @@
 ---
+author: jwmsft
 description: XAML マークアップで、プロパティに null 値を指定します。
 title: xNull マークアップ拡張
 ms.assetid: E6A4038E-4ADA-4E82-9824-582FC16AB037
@@ -32,6 +33,6 @@ XAML マークアップで、プロパティに **null** 値を指定します�
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

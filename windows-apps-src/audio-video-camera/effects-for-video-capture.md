@@ -1,4 +1,5 @@
 ---
+author: drewbatgit
 ms.assetid: E0189423-1DF3-4052-AB2E-846EA18254C4
 description: このトピックでは、ビデオ キャプチャに関連して使う効果の設計について説明します。 ここでは、ビデオの手ブレ補正効果を中心に説明しています。
 title: ビデオ キャプチャの効果
@@ -6,7 +7,7 @@ title: ビデオ キャプチャの効果
 
 # ビデオ キャプチャの効果
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 このトピックでは、ビデオ キャプチャに関連して使う効果の設計について説明します。 ここでは、ビデオの手ブレ補正効果を中心に説明しています。
 
@@ -87,6 +88,6 @@ VideoStabilizationEffect のインスタンスの [**GetRecommendedStreamConfigu
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

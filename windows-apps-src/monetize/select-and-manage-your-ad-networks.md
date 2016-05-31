@@ -1,4 +1,5 @@
 ---
+author: mcleanbyron
 ms.assetid: 86D9D3CF-8FDC-4B67-881B-DF33A1BEE8BF
 description: 広告の仲介を使うには、アプリで使う各広告ネットワークにアカウントを設定する必要があります。
 title: 広告ネットワークの選択と管理
@@ -101,7 +102,7 @@ C++ と XAML、JavaScript と HTML など、いくつかのプロジェクトの
 
 各広告ネットワークには、必須のパラメーターに加えて、アプリでのコードで追加設定できるオプション パラメーターもあります。 すべてのオプション パラメーターを網羅した一覧については、各広告ネットワークから提供されるドキュメントをご覧ください。 コードでこれらのオプション パラメーターを設定するには、**AdMediatorControl** オブジェクトの **AdSdkOptionalParameters** プロパティを使用します。
 
-次の例では、Microsoft advertising の **CountryOrRegion** パラメーターを設定する方法を示しています。
+次の例では、Microsoft Advertising の [CountryOrRegion](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.countryorregion.aspx) プロパティを、ユーザーの 2 文字の国または地域コードに設定する方法を示しています。
 
 ```CSharp
 myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.MicrosoftAdvertising]["CountryOrRegion"] = "IN";
@@ -125,6 +126,6 @@ myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.Smaato]["Height"] = 250;
  
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

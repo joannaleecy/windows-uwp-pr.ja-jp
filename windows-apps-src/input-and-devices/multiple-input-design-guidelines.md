@@ -1,16 +1,13 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: 人がお互いにコミュニケーションをとる際に音声とジェスチャを組み合わせて使うように、アプリの操作では、複数の種類とモードの入力を使うと便利な場合があります。
 title: 複数の入力の設計ガイドライン
 ms.assetid: 03EB5388-080F-467C-B272-C92BE00F2C69
-label: 複数の入力
+label: Multiple inputs
 template: detail.hbs
 ---
 
 # 複数の入力
-
-
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
-
 
 人がお互いにコミュニケーションをとる際に音声とジェスチャを組み合わせて使うように、アプリの操作では、複数の種類とモードの入力を使うと便利な場合があります。
 
@@ -43,6 +40,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

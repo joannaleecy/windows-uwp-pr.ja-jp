@@ -80,7 +80,7 @@ private async System.Threading.Tasks.Task<string> RequestConsent(string userMess
 
     try
     {
-        // Request the logged on user&#39;s consent via fingerprint swipe.
+        // Request the logged on user's consent via fingerprint swipe.
         var consentResult = await Windows.Security.Credentials.UI.UserConsentVerifier.RequestVerificationAsync(userMessage);
 
         switch (consentResult)
@@ -121,6 +121,6 @@ private async System.Threading.Tasks.Task<string> RequestConsent(string userMess
 }
 ```
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=May16_HO2-->
 
 

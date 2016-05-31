@@ -1,4 +1,5 @@
 ---
+author: martinekuan
 title: Windows ランタイム コンポーネントでイベントを生成する
 ms.assetid: 3F7744E8-8A3C-4203-A1CE-B18584E89000
 description: 
@@ -123,7 +124,7 @@ toastCompletedEventHandler: function (event) {
 
 このチュートリアルの内容は次のとおりです。
 
--   ここでは、2 つの基本的な Windows ランタイム クラスを作成します。 1 つのクラスでは、 [Windows.Foundation.TypedEventHandler&lt;TSender, TResult&gt;](https://msdn.microsoft.com/library/windows/apps/br225997.aspx) 型のイベントを公開し、もう 1 つのクラスは、TValue の引数として JavaScript に返される型です。 後の手順を完了するまで、これらのクラスは JavaScript と通信できません。
+-   ここでは、2 つの基本的な Windows ランタイム クラスを作成します。 1 つのクラスでは、[Windows.Foundation.TypedEventHandler&lt;TSender, TResult&gt;](https://msdn.microsoft.com/library/windows/apps/br225997.aspx) 型のイベントを公開し、もう 1 つのクラスは、TValue の引数として JavaScript に返される型です。 後の手順を完了するまで、これらのクラスは JavaScript と通信できません。
 -   このアプリは、メイン クラス オブジェクトをアクティブ化し、メソッドを呼び出して、Windows ランタイム コンポーネントで生成されたイベントを処理します。
 -   これらはプロキシおよびスタブのクラスを生成するツールで必要です。
 -   その後、IDL ファイルを使用して、プロキシおよびスタブの C ソース コードを生成します。
@@ -131,8 +132,8 @@ toastCompletedEventHandler: function (event) {
 
 ## Windows ランタイム コンポーネントを作成するには
 
-1.  Visual Studio のメニュー バーで、 **[ファイル]、[新しいプロジェクト]**の順にクリックします。 **[新しいプロジェクト]** ダイアログ ボックスで、 **[JavaScript]、[ユニバーサル Windows]** の順に展開し、 **[空のアプリケーション]**をクリックします。 プロジェクトに、「ToasterApplication」という名前を付け、 **[OK]** ボタンをクリックします。
-2.  ソリューションに C# Windows ランタイム コンポーネントを追加します。ソリューション エクスプ ローラーで、ソリューションのショートカット メニューを開き、 **[追加]、[新しいプロジェクト]**の順にクリックします。 **[Visual C#]、[Windows ストア]** の順に展開し、 **[Windows ランタイム コンポーネント]**をクリックします。 プロジェクトに、「ToasterComponent」という名前を付け、 **[OK]** ボタンをクリックします。 ToasterComponent は、後の手順で作成するコンポーネントのルート名前空間になります。
+1.  Visual Studio のメニュー バーで、**[ファイル]、[新しいプロジェクト]** の順にクリックします。 **[新しいプロジェクト]** ダイアログ ボックスで、**[JavaScript]、[ユニバーサル Windows]** の順に展開し、**[空のアプリケーション]** をクリックします。 プロジェクトに、「ToasterApplication」という名前を付け、**[OK]** ボタンをクリックします。
+2.  ソリューションに C# Windows ランタイム コンポーネントを追加します。ソリューション エクスプ ローラーで、ソリューションのショートカット メニューを開き、**[追加]、[新しいプロジェクト]** の順にクリックします。 **[Visual C#]、[Windows ストア]** の順に展開し、**[Windows ランタイム コンポーネント]** をクリックします。 プロジェクトに、「ToasterComponent」という名前を付け、**[OK]** ボタンをクリックします。 ToasterComponent は、後の手順で作成するコンポーネントのルート名前空間になります。
 
     ソリューション エクスプローラーでソリューションのショートカット メニューを開き、**[プロパティ]** をクリックします。 **[プロパティ ページ]** ダイアログ ボックスの左側のウィンドウで、**[構成プロパティ]** を選択して、ダイアログ ボックスの上部の **[構成]** を **[デバッグ]** に、**[プラットフォーム]** を [x86]、[x64]、または [ARM] に設定します。 **[OK]** をクリックします。
 
@@ -148,7 +149,7 @@ toastCompletedEventHandler: function (event) {
     public interface IToaster
         {
             void MakeToast(String message);
-            event TypedEventHandler&lt;Toaster, Toast> ToastCompletedEvent;
+            event TypedEventHandler<Toaster, Toast> ToastCompletedEvent;
 
         }
         public interface IToast
@@ -181,7 +182,7 @@ toastCompletedEventHandler: function (event) {
         }
         public sealed class Toaster : IToaster
         {
-            public event TypedEventHandler&lt;Toaster, Toast> ToastCompletedEvent;
+            public event TypedEventHandler<Toaster, Toast> ToastCompletedEvent;
 
             private void OnToastCompleted(Toast args)
             {
@@ -294,7 +295,7 @@ toastCompletedEventHandler: function (event) {
 2.  Paste the GUID just before the IToaster interface definition. After you paste, the GUID should resemble the following example. (Don't use the GUID in the example. Every unique interface should have its own GUID.)
 
     ```cpp 
-      <Extensions> <!—Use your own GUIDs!!!-->
+      <Extensions> <!--Use your own GUIDs!!!-->
         <Extension Category="windows.activatableClass.proxyStub">
           <ProxyStub ClassId="1ecafeff-1ee1-504a-9af5-a68c6fb2b47d">
             <Path>Proxies.dll</Path>
@@ -326,6 +327,6 @@ toastCompletedEventHandler: function (event) {
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

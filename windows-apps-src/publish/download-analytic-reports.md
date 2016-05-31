@@ -1,4 +1,5 @@
 ---
+author: jnHs
 Description: 統計データを含む .files をダウンロードすると、統計情報と情報をオフラインで確認できます。
 title: 分析レポートのダウンロード
 ms.assetid: BCA61ABF-16ED-42C3-9014-68629CB5A24F
@@ -22,6 +23,6 @@ ms.assetid: BCA61ABF-16ED-42C3-9014-68629CB5A24F
 4.  **[レポートのダウンロード]** をクリックし、.tsv ファイルを保存するか開きます。
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: Karl-Bridge-Microsoft
 Description: ユーザーがコマンド内の任意の場所にアプリ名を含めることができるように、柔軟で自然な音声コマンドで Cortana を拡張する方法について説明します。
 title: Cortana での自然言語音声コマンドのサポート
 ms.assetid: 281E068A-336A-4A8D-879A-D8715C817911
@@ -7,9 +8,6 @@ template: detail.hbs
 ---
 
 # Cortana での自然言語音声コマンドのサポート
-
-
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 ユーザーがコマンド内の任意の場所にアプリ名を含めることができる柔軟で自然な音声コマンドで **Cortana** を拡張します。
 
@@ -36,22 +34,21 @@ template: detail.hbs
 ユニバーサル Windows プラットフォーム (UWP) アプリを開発するのが初めての場合は、以下のトピックに目を通して、ここで説明されているテクノロジをよく理解できるようにしてください。
 
 -   [初めてのアプリ作成](https://msdn.microsoft.com/library/windows/apps/bg124288)
--   「[イベントとルーティング イベントの概要](https://msdn.microsoft.com/library/windows/apps/mt185584)」でイベントについて学習します。
+-   「[イベントとルーティング イベントの概要](https://msdn.microsoft.com/library/windows/apps/mt185584)」に記載されているイベントの説明
 
 **ユーザー エクスペリエンス ガイドライン:  **
 
-アプリと **Cortana** を統合する方法については「[Cortana の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn974233)」を、魅力的な音声認識対応アプリの設計に役立つ便利なヒントについては「[音声機能の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596121)」をご覧ください。
+アプリと **Cortana** を統合する方法については「[Cortana の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn974233)」を、便利で魅力的な音声認識対応アプリの設計に役立つヒントについては「[音声機能の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596121)」をご覧ください。
 
 ## <span id="Specify_an_AppName_element_in_the_VCD"></span><span id="specify_an_appname_element_in_the_vcd"></span><span id="SPECIFY_AN_APPNAME_ELEMENT_IN_THE_VCD"></span>VCD での **AppName** 要素の指定
 
 
 **AppName** 要素は、音声コマンドでアプリのわかりやすい名前を指定するために使います。
-
 ```XML
 <AppName>Adventure Works</AppName>
 ```
 
-## <span id="Specify_where_the_app_name_can_be_spoken_in_the_voice_command"></span><span id="specify_where_the_app_name_can_be_spoken_in_the_voice_command"></span><span id="SPECIFY_WHERE_THE_APP_NAME_CAN_BE_SPOKEN_IN_THE_VOICE_COMMAND"></span>音声コマンド内でアプリ名を言うことができる場所の指定
+## <span id="Specify_where_the_app_name_can_be_spoken_in_the_voice_command"></span><span id="specify_where_the_app_name_can_be_spoken_in_the_voice_command"></span><span id="SPECIFY_WHERE_THE_APP_NAME_CAN_BE_SPOKEN_IN_THE_VOICE_COMMAND"></span>アプリ名を言うことができる音声コマンド内の場所を指定します。
 
 
 **ListenFor** 要素には、アプリ名を言うことができる音声コマンド内の場所を指定する **RequireAppName** 属性があります。 この属性では、次の 4 つの値がサポートされます。
@@ -63,7 +60,6 @@ template: detail.hbs
     ユーザーがコマンド語句の前にアプリ名を言う必要があることを指定します。
 
     ここでは、Cortana は「Adventure Works、次のラスベガス旅行はいつですか」という内容を待機します。
-
 ```xml
 <ListenFor RequireAppName="BeforePhrase"> show [my] trip to {destination} </ListenFor>
 ```
@@ -75,7 +71,6 @@ template: detail.hbs
     前置詞付きの接続詞のローカライズされた語句一覧がシステムによって提供されます。 これには、"を使って"、"によって"、"で" などの語句が含まれます。
 
     ここでは、Cortana は「次のラスベガス旅行を Adventure Works で表示してください」や「次のラスベガス旅行を、Adventure Works を使って表示してください」などのコマンドを待機します。
-
 ```xml
 <ListenFor RequireAppName="AfterPhrase">show [my] next trip to {destination} </ListenFor>
 ```
@@ -87,7 +82,6 @@ template: detail.hbs
     サフィックスとして使われる場合については、前置詞付きの接続詞のローカライズされた語句一覧がシステムによって提供されます。 これには、"を使って"、"によって"、"で" などの語句が含まれます。
 
     ここでは、Cortana は「Adventure Works、次のラスベガス旅行を表示してください」や「次のラスベガス旅行を Adventure Works で表示してください」などのコマンドを待機します。
-
 ``` xml
 <ListenFor RequireAppName="BeforeOrAfterPhrase">show [my] next trip to {destination}</ListenFor>
 ```
@@ -99,7 +93,6 @@ template: detail.hbs
     **{builtin:AppName}** タグを使ってアプリ名を明示的に参照する必要があります。
 
     ここでは、Cortana は「Adventure Works、次のラスベガス旅行を表示してください」や「Adventure Works に登録されている次のラスベガス旅行を表示してください」などのコマンドを待機します。
-
 ```xml
 <ListenFor RequireAppName="ExplicitlySpecified">show [my] next {builtin:AppName} trip to {destination} </ListenFor>
 ```
@@ -117,7 +110,6 @@ template: detail.hbs
     これは、コマンドの言葉のどこかにアプリ名やその一部が含まれている場合に **Cortana** によりアプリが起動される可能性を最小限に抑えるのに役立ちます。
 
     ユーザーが「Kinect のアドベンチャー ワークスのレビューを表示してください」のような内容を声に出した場合に、**Cortana** によって **Adventure Works** アプリが起動される可能性がある無効な宣言の例を次に示します。
-
 ```xml
 <ListenFor RequireAppName="ExplicitlySpecified">{searchPhrase} {builtin:AppName}</ListenFor>
 ```
@@ -129,7 +121,6 @@ template: detail.hbs
     これは、ユーザーが「Kinect のアドベンチャー ワークスを検索します」などと言ったときにアプリケーションが間違って起動しないように、できる限り成功率の高い方法でアプリケーションを設定するのに役立ちます。
 
     ユーザーが「アドベンチャー ワークスさん」や「Kinect のアドベンチャー ワークスを検索します」のような内容を声に出した場合に、**Cortana** によって **Adventure Works** アプリが起動される可能性がある無効な宣言の例を次に示します。
-
 ```xml
 <ListenFor RequireAppName="ExplicitlySpecified">Hey {builtin:AppName}</ListenFor>
 <ListenFor RequireAppName="ExplicitlySpecified">Find {searchPhrase} {builtin:AppName}</ListenFor>
@@ -150,9 +141,7 @@ template: detail.hbs
 
 より自然な言語の音声コマンドを提供するさまざまな方法を示す VCD ファイルを次に示します。
 
-**注**  それぞれ異なる **RequireAppName** 属性値を持つ複数の **ListenFor** 要素を設定することは有効です。
-
- 
+**注**  それぞれ異なる **RequireAppName** 属性値を持つ複数の **ListenFor** 要素を設定することは有効です。 
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -220,6 +209,6 @@ template: detail.hbs
 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,4 +1,5 @@
 ---
+author: martinekuan
 ms.assetid: C9787269-B54F-4FFA-A884-D4A3BF28F80D
 title: ユニバーサル Windows プラットフォーム (UWP) アプリとは
 description: ユニバーサル Windows アプリと呼ばれるさまざまな種類のアプリ (Windows ストア アプリ、Windows Phone ストア アプリ、Windows ランタイム アプリ) について説明します。
@@ -89,6 +90,6 @@ UWP について詳しくは、[ユニバーサル Windows プラットフォー
 * [準備](get-set-up.md)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

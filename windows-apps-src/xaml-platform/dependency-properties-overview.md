@@ -1,14 +1,15 @@
 ---
-description: このトピックでは、C++、C#、または Visual Basic と UI の XAML 定義を使って Windows ランタイム アプリを作成するときに使うことができる依存関係プロパティについて説明します。
+author: jwmsft
+description: このトピックでは、C++、C#、または Visual Basic と UI の XAML 定義を使って Windows ランタイム アプリを作成するときに使うことができる依存関係プロパティ システムについて説明します。
 title: 依存関係プロパティの概要
 ms.assetid: AD649E66-F71C-4DAA-9994-617C886FDA7E
 ---
 
 # 依存関係プロパティの概要
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-このトピックでは、C++、C#、または Visual Basic と UI の XAML 定義を使って Windows ランタイム アプリを作成するときに使うことができる依存関係プロパティについて説明します。
+このトピックでは、C++、C#、または Visual Basic と UI の XAML 定義を使って Windows ランタイム アプリを作成するときに使うことができる依存関係プロパティ システムについて説明します。
 
 ## 依存関係プロパティとは
 
@@ -68,7 +69,7 @@ public bool IsSpinning
 }
 ```
 
-**注**  前の例の目的は、カスタム依存関係プロパティを作成する方法の完全な例を示すことではありません。 コードを使って概念を学習する方法によって、依存関係プロパティの概念を示すことです。 もっと完全な例については、「[カスタム依存関係プロパティ](custom-dependency-properties.md)」をご覧ください。
+**注:** 前の例の目的は、カスタム依存関係プロパティを作成する方法の完全な例を示すことではありません。 コードを使って概念を学習する方法によって、依存関係プロパティの概念を示すことです。 もっと完全な例については、「[カスタム依存関係プロパティ](custom-dependency-properties.md)」をご覧ください。
 
 ## 依存関係プロパティ値の優先順位
 
@@ -81,7 +82,7 @@ public bool IsSpinning
 依存関係プロパティのランタイム値を割り当てる際に、最終的にプロパティ システムで使用される順序を次に示します。 優先順位の高いものから順に示します。 このリストの直後に、詳しい説明があります。
 
 1.  **アニメーション化された値:** アクティブなアニメーション、表示状態のアニメーション、または [**HoldEnd**](https://msdn.microsoft.com/library/windows/apps/br210306) 動作を使ったアニメーションです。 実際的な効果を持たせるためには、プロパティに適用されるアニメーションは、値がローカルに設定されている場合でも、その基本値 (アニメーション化されていない値) よりも優先される必要があります。
-2.  **ローカル値:** ローカル値の場合は、プロパティ ラッパーを利用した簡便な設定方法が利用できます (XAML 内で属性またはプロパティ要素として設定することに相当)。また、特定のインスタンスのプロパティを使用して [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) メソッドを呼び出すことによって設定することもできます。 バインドまたは静的リソースを使用してローカル値を設定すると、優先順位に関してはローカル値を設定した場合と同じように扱われます。新しいローカル値が設定されると、バインドやリソース参照は削除されます。
+2.  **ローカル値:** ローカル値の場合は、プロパティ ラッパーを利用した簡便な設定方法が利用できます (XAML で属性またはプロパティ要素として設定することに相当)。また、特定のインスタンスのプロパティを使用して [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) メソッドを呼び出すことによって設定することもできます。 バインドまたは静的リソースを使用してローカル値を設定すると、優先順位に関してはローカル値を設定した場合と同じように扱われます。新しいローカル値が設定されると、バインドやリソース参照は削除されます。
 3.  **テンプレートが適用されたプロパティ:** [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) または [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) からテンプレートの一部として作成された要素は、このプロパティを持ちます。
 4.  **スタイル setter:** ページ リソースまたはアプリケーション リソースから得たスタイル内にある [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) から得た値。
 5.  **既定値:** 依存関係プロパティには、プロパティ メタデータの一部として既定値を定義できます。
@@ -92,7 +93,7 @@ public bool IsSpinning
 
 コントロール テンプレートから設定されているすべてのプロパティになんらかの値があります。 これらの値は、ほぼコントロールの既定値を拡張したものであり、多くの場合、プロパティ値を直接設定することで、後でリセットできる値に関連付けられています。 そのため、テンプレートで設定された値は、新しいローカル値で上書きできるように、本当のローカル値とは区別できる必要があります。
 
-**注:**  
+**注**  
 場合によっては、テンプレートがローカル値より優先されることもあります。それは、インスタンスに対して設定可能なプロパティの [{TemplateBinding} マークアップ拡張](templatebinding-markup-extension.md) 参照をテンプレートが公開しなかった場合です。 これは、通常、プロパティが実際にインスタンスで設定されないことを意図している場合にのみ行われます。たとえば、プロパティが視覚効果とテンプレートの動作だけに関係し、テンプレートを使うコントロールの目的の機能または実行時ロジックとは関係していない場合などです。
 
 ###  バインドと優先順位
@@ -135,7 +136,7 @@ public bool IsSpinning
 
 XAML でバインドを使用して、[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 要素の [**Text**](https://msdn.microsoft.com/library/windows/apps/br209676) 値を設定する例を次に示します。 バインドでは、継承されたデータ コンテキストおよびオブジェクト データ ソースが使用されます (この短い例ではどちらも示されていません。コンテキストとソースを含むより完全なサンプルについては、「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」をご覧ください)。
 
-```XAML
+```XML
 <Canvas>
   <TextBlock Text="{Binding Team.TeamName}"/>
 </Canvas>
@@ -143,7 +144,7 @@ XAML でバインドを使用して、[**TextBlock**](https://msdn.microsoft.com
 
 XAML ではなく、コードを使ってバインドを確立することもできます。 「[**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257)」をご覧ください。
 
-**注**  このようなバインドは、依存関係プロパティ値の優先順位を処理するために、ローカル値として扱われます。 もともと [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 値を保持していたプロパティに別のローカル値を設定すると、バインドの実行時の値だけでなく、バインド全体が上書きされます。
+**注:** このようなバインドは、依存関係プロパティ値の優先順位を処理するために、ローカル値として扱われます。 もともと [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) 値を保持していたプロパティに別のローカル値を設定すると、バインドの実行時の値だけでなく、バインド全体が上書きされます。
 
 ### バインディング ソース、バインディング ターゲット、FrameworkElement の役割
 
@@ -155,7 +156,7 @@ XAML ではなく、コードを使ってバインドを確立することもで
 
 ほとんどのデータ バインディング シナリオに必要なのは、バインドを作成することだけではありません。 一方向または双方向のバインドを有効にするためには、バインディング システム (とターゲット) への伝播をつかさどる変更通知が、ソース プロパティによってサポートされている必要があります。 つまり、カスタム バインディング ソースの場合、このプロパティは、[**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx) をサポートしている必要があります。 コレクションの場合は、[**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) をサポートしている必要があります。 一部のクラスは、データ バインディングのシナリオで基底クラスとして使用できるように、実装でこれらのインターフェイスをサポートしています。たとえば、[**ObservableCollection&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx) はそうしたクラスの 1 つです。 データ バインディングについての詳しい情報と、データ バインディングをプロパティ システムに関連付ける方法については、「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」をご覧ください。
 
-**注**  ここに挙げた型は、Microsoft .NET データ ソースをサポートします。 C++/CX データ ソースは、変更通知または監視可能な動作のために異なるインターフェイスを使います。「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」をご覧ください。
+**注:** ここに挙げた型は、Microsoft .NET データ ソースをサポートします。 C++/CX データ ソースは、変更通知または監視可能な動作のために異なるインターフェイスを使います。「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」をご覧ください。
 
 ### スタイルとテンプレート
 
@@ -199,13 +200,15 @@ XAML ではなく、コードを使ってバインドを確立することもで
 * [データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)
 * [ストーリーボードに設定されたアニメーション](https://msdn.microsoft.com/library/windows/apps/mt187354)
 * [Windows ランタイム コンポーネントの作成](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
-* [XAML ユーザーとカスタム コントロールのサンプル](http://go.microsoft.com/fwlink/p/?linkid=238581)
-**依存関係プロパティに関連する API**
+* [XAML ユーザー コントロールとカスタム コントロールのサンプル](http://go.microsoft.com/fwlink/p/?linkid=238581)
+            
+          
+            **依存関係プロパティに関連する API**
 * [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)
 * [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362)
 
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

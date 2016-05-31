@@ -1,4 +1,5 @@
 ---
+author: Jwmsft
 Description: カレンダーの日付の選択コントロールは、カレンダーの曜日や埋まり具合などのコンテキスト情報が必要となるカレンダー ビューから単一の日付を選ぶ用途に最適なドロップダウン コントロールです。
 title: カレンダーの日付の選択コントロール
 ms.assetid: 9e0213e0-046a-4906-ba86-0b49be51ca99
@@ -63,7 +64,8 @@ myCalendarDatePicker.Date = new DateTime(1977, 1, 5);
 
 Date 値が変化したときに通知を受け取るには、[**DateChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.datechanged.aspx) イベントを処理します。
 
-> **注:**&nbsp;日付値の重要な情報については、「日付と時刻コントロール」の「[DateTime と Calendar の値](date-and-time.md#datetime-and-calendar-values)」をご覧ください。
+> **注:**
+            &nbsp;&nbsp;日付値の重要な情報については、「日付と時刻コントロール」の「[DateTime と Calendar の値](date-and-time.md#datetime-and-calendar-values)」をご覧ください。
 
 ### ヘッダーとプレースホルダー テキストの設定
 
@@ -85,6 +87,6 @@ Date 値が変化したときに通知を受け取るには、[**DateChanged**](
 - [時刻の選択コントロール](time-picker.md)
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=May16_HO2-->
 
 
