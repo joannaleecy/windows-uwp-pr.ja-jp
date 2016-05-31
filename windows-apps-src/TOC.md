@@ -371,15 +371,9 @@
 ##### [OpenGL ES 2.0 からのチュートリアル サンプルの移植](gaming/walkthrough-sample-ports-from-opengl-es-2-0.md)
 ###### [簡単な OpenGL ES 2.0 レンダラーを Direct3D 11.1 に移植する方法](gaming/port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
 ####### [シェーダー オブジェクトの移植](gaming/port-the-shader-config.md)
-            
-####### 
-            [頂点バッファーと頂点データの移植](gaming/port-the-vertex-buffers-and-data-config.md)
-            
-####### 
-            [GLSL の移植](gaming/port-the-glsl.md)
-            
-####### 
-            [画面への描画](gaming/draw-to-the-screen.md)
+####### [頂点バッファーと頂点データの移植](gaming/port-the-vertex-buffers-and-data-config.md)
+####### [GLSL の移植](gaming/port-the-glsl.md)
+####### [画面への描画](gaming/draw-to-the-screen.md)
 ##### [OpenGL ES 2.0 から Direct3D 11.1 への移行のためのリファレンス](gaming/opengl-es-2-0-to-directx-11-1-reference.md)
 ###### [GLSL と HLSL の対応を示すリファレンス](gaming/glsl-to-hlsl-reference.md)
 ### [ゲーム プログラミング リソース](gaming/additional-directx-game-programming-resources.md)
