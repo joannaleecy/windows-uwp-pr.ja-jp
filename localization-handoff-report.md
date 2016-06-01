@@ -6,21 +6,21 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\audio-video-camera\hardware-drm.md](https://github.com/Microsoft/windows-apps/blob/b782d1e3d4f5c90e4cac9fbad3877c5457a27c45/windows-apps-src/audio-video-camera/hardware-drm.md) | OutofSyncHandedBackSuccess | [Details](#ec443d26652ba6c1ff5de2b96749825890d0228a472)
+ [windows-apps-src\publish\create-an-ad-campaign-for-your-app.md](https://github.com/Microsoft/windows-apps/blob/ba56cb495cf2318a1b9791f3e8a7504a28b5d531/windows-apps-src/publish/create-an-ad-campaign-for-your-app.md) | OutofSyncHandedBackSuccess | [Details](#b94a96bc51d72377f68b39332d22776a3b333b463493)
 
 ## Item Details
-##### <a name='ec443d26652ba6c1ff5de2b96749825890d0228a472'></a> Source: [windows-apps-src\audio-video-camera\hardware-drm.md](https://github.com/Microsoft/windows-apps/blob/b782d1e3d4f5c90e4cac9fbad3877c5457a27c45/windows-apps-src/audio-video-camera/hardware-drm.md)
+##### <a name='b94a96bc51d72377f68b39332d22776a3b333b463493'></a> Source: [windows-apps-src\publish\create-an-ad-campaign-for-your-app.md](https://github.com/Microsoft/windows-apps/blob/ba56cb495cf2318a1b9791f3e8a7504a28b5d531/windows-apps-src/publish/create-an-ad-campaign-for-your-app.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [hardware-drm.5fb8fda243b613ca726a5d1db43f5767da669e0e.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/681a3b0cbeb00f2003b95493fdd4417ae31d4093/ol-handoff/Microsoft/windows-apps.ja-jp/master/hardware-drm.5fb8fda243b613ca726a5d1db43f5767da669e0e.ja-jp.xlf)
-* Handoff Datetime: 2016-06-01 16:40:13
+* Handoff File: [create-an-ad-campaign-for-your-app.0957a5069637642985320cbb8e8277b9391121e3.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/eef6ceb33380ad9577d4129fc09d27ea409d2b9c/ol-handoff/Microsoft/windows-apps.ja-jp/master/create-an-ad-campaign-for-your-app.0957a5069637642985320cbb8e8277b9391121e3.ja-jp.xlf)
+* Handoff Datetime: 2016-06-01 17:36:27
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\audio-video-camera\hardware-drm.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/846e73c8aab5d5c623774cf374dd173574bd5761/windows-apps-src/audio-video-camera/hardware-drm.md)
-* Current Handback File: [hardware-drm.5fb8fda243b613ca726a5d1db43f5767da669e0e.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/hardware-drm.5fb8fda243b613ca726a5d1db43f5767da669e0e.ja-jp.xlf)
+* Current Target File: [windows-apps-src\publish\create-an-ad-campaign-for-your-app.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/846e73c8aab5d5c623774cf374dd173574bd5761/windows-apps-src/publish/create-an-ad-campaign-for-your-app.md)
+* Current Handback File: [create-an-ad-campaign-for-your-app.0957a5069637642985320cbb8e8277b9391121e3.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/create-an-ad-campaign-for-your-app.0957a5069637642985320cbb8e8277b9391121e3.ja-jp.xlf)
 * Current Handback Datetime: 2016-05-31 12:19:30
 * [Back to Top](#report-top)
 
