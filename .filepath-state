@@ -3413,6 +3413,9 @@
   "1e44eb849b9a99e387916c931aeb619291c3591c": [
     "windows-apps-src\\graphics\\animations-overview.md"
   ],
+  "9d0c05c6c75ce5ee42b56e3b94235a7cf3631f2c": [
+    "windows-apps-src\\graphics\\composition-animation.md"
+  ],
   "fa2ec8e05d92e1f667dec947348f29ff883968b1": [
     "windows-apps-src\\graphics\\composition-animation.md"
   ],
@@ -5108,11 +5111,17 @@
   "8e10b13f87a6b4b04b0bc8a8bbf221b08ad00911": [
     "windows-apps-src\\porting\\android-ios-uwp-map.md"
   ],
+  "14634c12435cd8d6d4471a65c0f8deb36e3b1c80": [
+    "windows-apps-src\\porting\\desktop-to-uwp-deploy-and-debug.md"
+  ],
   "d0699fcc2f55dc071fe7d36fce1595b73f0f5b7d": [
     "windows-apps-src\\porting\\desktop-to-uwp-deploy-and-debug.md"
   ],
   "7214aaae43a2fd597bccfebab2a361c561b06e30": [
     "windows-apps-src\\porting\\desktop-to-uwp-deploy-and-debug.md"
+  ],
+  "fac987817edabe67a231e0e00f56c04d868fa47c": [
+    "windows-apps-src\\porting\\desktop-to-uwp-root.md"
   ],
   "969ff91b020b7a1c8149dcb0d8efc69e98c0bb31": [
     "windows-apps-src\\porting\\desktop-to-uwp-root.md"
@@ -5125,6 +5134,9 @@
   ],
   "24e0fc3e3734fceed3af20acd7f84862ffcdc314": [
     "windows-apps-src\\porting\\desktop-to-uwp-root.md"
+  ],
+  "ccb7a7722a6cb71d632cd6e51765bc0c719d826a": [
+    "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
   ],
   "8ab8f1dd641741c149a1ea8605d39bb0d8d4c353": [
     "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
@@ -6506,6 +6518,9 @@
   "c66bdb89dbc4bcbbceefedc07af7620fc6497f2e": [
     "windows-apps-src\\porting\\images\\desktop-to-uwp\\debug-8.png"
   ],
+  "be7599403e78c8db7ba91fe5a7c25b1c1a1ab644": [
+    "windows-apps-src\\porting\\desktop-to-uwp-manual-conversion.md"
+  ],
   "bc05ce3ca612a360f40b2a249c694ee40f3e28dd": [
     "windows-apps-src\\porting\\desktop-to-uwp-manual-conversion.md"
   ],
@@ -6535,5 +6550,11 @@
   ],
   "06cd7d578f0d33f403fa67caadc3559f3af4a83e": [
     "windows-apps-src\\xbox-apps\\images\\cpusets-table4.png"
+  ],
+  "32d970c9a95073fa716893356ec1487d3085867e": [
+    "windows-apps-src\\graphics\\images\\composition-animation-types.png"
+  ],
+  "0a97fa3e180c545cd78ef0da45d83e1cdce65d9a": [
+    "windows-apps-src\\graphics\\images\\composition-scopedbatch.png"
   ]
 }
