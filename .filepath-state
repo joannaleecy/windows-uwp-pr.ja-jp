@@ -203,6 +203,9 @@
   "c512ec92272ab03cfd8e91602018f09ef8225652": [
     "windows-apps-src\\audio-video-camera\\get-a-preview-frame.md"
   ],
+  "ec443d26652ba6c1ff5de2b96749825890d0228a": [
+    "windows-apps-src\\audio-video-camera\\hardware-drm.md"
+  ],
   "0f2d757b94e66ecfa1fa04bbc1b3b0e956184272": [
     "windows-apps-src\\audio-video-camera\\hardware-drm.md"
   ],
