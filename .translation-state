@@ -1,5 +1,5 @@
 {
-  "LastProcessedCommit": "f51a2663ad2a7cf35d650c99e1219a60442131d0",
+  "LastProcessedCommit": "ed2a4ab4ae29e739d5048d5c928ae0d5878363dc",
   "LastTranslatedCommit": "846e73c8aab5d5c623774cf374dd173574bd5761",
   "Items": {
     "3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3": {
@@ -69009,6 +69009,36 @@
       "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.ja-jp.xlf",
       "HandoffFileCommit": "c8375fb389163a72faff0cebd92201859dcde9e5",
       "HandoffDateTime": "2016-06-01T21:00:37.2296108Z",
+      "HandoffPriority": "",
+      "HandoffException": null,
+      "HandoffFailureTimes": 0,
+      "TargetFileCommit": null,
+      "TargetFilePath": null,
+      "HandbackFilePath": null,
+      "HandbackFileCommit": null,
+      "HandbackDateTime": "0001-01-01T00:00:00",
+      "HandbackException": null,
+      "HandbackFailureTimes": 0,
+      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": null,
+      "ArchiveFileCommit": null,
+      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveException": null
+    },
+    "e6fdd7bbab07f16d13a4c6399273ac47c62e3030": {
+      "FileHash": "e6fdd7bbab07f16d13a4c6399273ac47c62e3030",
+      "SourceFileCommit": "ed2a4ab4ae29e739d5048d5c928ae0d5878363dc",
+      "SourceFilePath": "windows-apps-src\\xbox-apps\\development-environment-setup.md",
+      "HandoffReason": 1,
+      "DependencyFrom": null,
+      "TokenReference": null,
+      "FilePathList": [
+        "windows-apps-src\\xbox-apps\\development-environment-setup.md"
+      ],
+      "HasMetadata": true,
+      "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\development-environment-setup.065dfefbcdf7dc1b71606c49744ab389600f613c.ja-jp.xlf",
+      "HandoffFileCommit": "55b6efa22f0af70cd15fcbf754aa4ad3bf20329e",
+      "HandoffDateTime": "2016-06-01T21:55:29.7602761Z",
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
