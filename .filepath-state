@@ -5483,6 +5483,9 @@
   "b6fa63727ac636d37c52e2f3247c52efb1f8b763": [
     "windows-apps-src\\publish\\create-a-custom-app-promotion-campaign.md"
   ],
+  "9596dd4de0c05ee6f85189e529ad18e528e954df": [
+    "windows-apps-src\\publish\\create-an-ad-campaign-for-your-app.md"
+  ],
   "b94a96bc51d72377f68b39332d22776a3b333b46": [
     "windows-apps-src\\publish\\create-an-ad-campaign-for-your-app.md"
   ],
@@ -5599,6 +5602,9 @@
   ],
   "3d82caac353eb7cb63692469c5951be1f392ff52": [
     "windows-apps-src\\publish\\managing-your-profile.md"
+  ],
+  "d22d89523ff3089b3b56d1a85fa2c4b137389887": [
+    "windows-apps-src\\publish\\mobile-operator-billing.md"
   ],
   "8c990588efb117a2f67a6e752edb94017a0ee584": [
     "windows-apps-src\\publish\\mobile-operator-billing.md"
