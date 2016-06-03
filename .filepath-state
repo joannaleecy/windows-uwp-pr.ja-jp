@@ -3065,8 +3065,14 @@
   "929ad82ce057754ee04f1f27537e03520e95157a": [
     "windows-apps-src\\gaming\\plan-your-directx-port.md"
   ],
+  "f70d4ec46743d930f8cb45084e55cce2e60e2460": [
+    "windows-apps-src\\gaming\\port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md"
+  ],
   "dd52b497ae8293b60a95ffb7daf66a84df3357ae": [
     "windows-apps-src\\gaming\\port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md"
+  ],
+  "40380582a9210cb705a5e7e591d4a8f37c42f8dd": [
+    "windows-apps-src\\gaming\\port-from-opengl-es-2-0-to-directx-11-1.md"
   ],
   "bac545f3490b3af876d3e8b5fd459bd626505916": [
     "windows-apps-src\\gaming\\port-from-opengl-es-2-0-to-directx-11-1.md"
@@ -6157,6 +6163,9 @@
   ],
   "033669a781aa85cc2c90fa11816e385ffefa997d": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
+  ],
+  "e7c99f3ad891a1666b8a3de1f9572c92d1600a89": [
+    "windows-apps-src\\TOC.md"
   ],
   "222d0a886b9690891f6d8d272ea1f72fa6fa7bfb": [
     "windows-apps-src\\TOC.md"
