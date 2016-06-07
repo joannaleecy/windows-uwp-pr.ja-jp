@@ -6488,6 +6488,9 @@
   "ad714bfbb9b095e98c242d6203888f712c9bea20": [
     "windows-apps-src\\xbox-apps\\introduction-to-xbox-tools.md"
   ],
+  "742bd1bfa9e4fe50b37beeb02e1f29a2b02eb0d7": [
+    "windows-apps-src\\xbox-apps\\known-issues.md"
+  ],
   "1dbff521a6b28ca04fc4ec364b906be856237a5b": [
     "windows-apps-src\\xbox-apps\\known-issues.md"
   ],
@@ -6508,6 +6511,9 @@
   ],
   "b7c1817bfb375c42262bac8d8e3768e93b4c2635": [
     "windows-apps-src\\xbox-apps\\samples-xaml-media.md"
+  ],
+  "79c47bbcf33b1493a8a961b800932ce6be021453": [
+    "windows-apps-src\\xbox-apps\\system-resource-allocation.md"
   ],
   "6b5ef763c41af65aecf02aaa550b84a3d524d25f": [
     "windows-apps-src\\xbox-apps\\system-resource-allocation.md"
