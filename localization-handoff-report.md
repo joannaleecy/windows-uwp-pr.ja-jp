@@ -1,42 +1,26 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\xbox-apps\known-issues.md](https://github.com/Microsoft/windows-apps/blob/6a34b0f657fc787eaa3be691b69a591cfdb2a669/windows-apps-src/xbox-apps/known-issues.md) | OutofSyncHandedBackSuccess | [Details](#742bd1bfa9e4fe50b37beeb02e1f29a2b02eb0d73873)
- [windows-apps-src\xbox-apps\system-resource-allocation.md](https://github.com/Microsoft/windows-apps/blob/6a34b0f657fc787eaa3be691b69a591cfdb2a669/windows-apps-src/xbox-apps/system-resource-allocation.md) | OutofSyncHandedBackSuccess | [Details](#79c47bbcf33b1493a8a961b800932ce6be0214533878)
+ [windows-apps-src\monetize\access-analytics-data-using-windows-store-services.md](https://github.com/Microsoft/windows-apps/blob/9868aaabd9516932f08eca5c2c3745461530e41b/windows-apps-src/monetize/access-analytics-data-using-windows-store-services.md) | OutofSyncHandedBackSuccess | [Details](#ebb90b613f8df1b5bbd1f870fbdcbae69e5cbc063249)
 
 ## Item Details
-##### <a name='742bd1bfa9e4fe50b37beeb02e1f29a2b02eb0d73873'></a> Source: [windows-apps-src\xbox-apps\known-issues.md](https://github.com/Microsoft/windows-apps/blob/6a34b0f657fc787eaa3be691b69a591cfdb2a669/windows-apps-src/xbox-apps/known-issues.md)
+##### <a name='ebb90b613f8df1b5bbd1f870fbdcbae69e5cbc063249'></a> Source: [windows-apps-src\monetize\access-analytics-data-using-windows-store-services.md](https://github.com/Microsoft/windows-apps/blob/9868aaabd9516932f08eca5c2c3745461530e41b/windows-apps-src/monetize/access-analytics-data-using-windows-store-services.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [known-issues.83c75815621268c5c51534a658527cef71ffe8bd.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/73c63d101bc433099f758b018fdacdd787b032c7/ol-handoff/Microsoft/windows-apps.ja-jp/master/known-issues.83c75815621268c5c51534a658527cef71ffe8bd.ja-jp.xlf)
-* Handoff Datetime: 2016-06-07 20:23:29
+* Handoff File: [access-analytics-data-using-windows-store-services.828b860af9092ad75eb025c00b3645739b166f59.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/04b5d4839c31b39a78fa72fa6481d9343f38e95f/ol-handoff/Microsoft/windows-apps.ja-jp/master/access-analytics-data-using-windows-store-services.828b860af9092ad75eb025c00b3645739b166f59.ja-jp.xlf)
+* Handoff Datetime: 2016-06-07 22:11:38
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\xbox-apps\known-issues.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/846e73c8aab5d5c623774cf374dd173574bd5761/windows-apps-src/xbox-apps/known-issues.md)
-* Current Handback File: [known-issues.83c75815621268c5c51534a658527cef71ffe8bd.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/known-issues.83c75815621268c5c51534a658527cef71ffe8bd.ja-jp.xlf)
-* Current Handback Datetime: 2016-05-31 12:19:30
-* [Back to Top](#report-top)
-
-##### <a name='79c47bbcf33b1493a8a961b800932ce6be0214533878'></a> Source: [windows-apps-src\xbox-apps\system-resource-allocation.md](https://github.com/Microsoft/windows-apps/blob/6a34b0f657fc787eaa3be691b69a591cfdb2a669/windows-apps-src/xbox-apps/system-resource-allocation.md)
-* Status: OutofSyncHandedBackSuccess
-* Target File: 
-* Handoff File: [system-resource-allocation.23bb0673103f44453efc5ced6ac17f166c8f30c4.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/73c63d101bc433099f758b018fdacdd787b032c7/ol-handoff/Microsoft/windows-apps.ja-jp/master/system-resource-allocation.23bb0673103f44453efc5ced6ac17f166c8f30c4.ja-jp.xlf)
-* Handoff Datetime: 2016-06-07 20:23:29
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\xbox-apps\system-resource-allocation.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/846e73c8aab5d5c623774cf374dd173574bd5761/windows-apps-src/xbox-apps/system-resource-allocation.md)
-* Current Handback File: [system-resource-allocation.23bb0673103f44453efc5ced6ac17f166c8f30c4.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/system-resource-allocation.23bb0673103f44453efc5ced6ac17f166c8f30c4.ja-jp.xlf)
+* Current Target File: [windows-apps-src\monetize\access-analytics-data-using-windows-store-services.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/846e73c8aab5d5c623774cf374dd173574bd5761/windows-apps-src/monetize/access-analytics-data-using-windows-store-services.md)
+* Current Handback File: [access-analytics-data-using-windows-store-services.828b860af9092ad75eb025c00b3645739b166f59.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/access-analytics-data-using-windows-store-services.828b860af9092ad75eb025c00b3645739b166f59.ja-jp.xlf)
 * Current Handback Datetime: 2016-05-31 12:19:30
 * [Back to Top](#report-top)
 
