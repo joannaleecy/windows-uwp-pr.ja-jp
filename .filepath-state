@@ -4219,6 +4219,9 @@
   "02f06ee498b136f811b4b3b8080a9cb043693504": [
     "windows-apps-src\\input-and-devices\\use-input-scope-to-change-the-touch-keyboard.md"
   ],
+  "65471f26596f94fe550c92a10e01ca7f5cef64a1": [
+    "windows-apps-src\\launch-resume\\access-sensors-and-devices-from-a-background-task.md"
+  ],
   "016969dfc0a98b978e43ea0751cc6896c2919ff8": [
     "windows-apps-src\\launch-resume\\access-sensors-and-devices-from-a-background-task.md"
   ],
@@ -4230,6 +4233,9 @@
   ],
   "26c900fcb53b679be6f7a3a2a7d861e07db454b4": [
     "windows-apps-src\\launch-resume\\activate-an-app.md"
+  ],
+  "261b52d1835e992a784aa5fa356230fdd326b8c5": [
+    "windows-apps-src\\launch-resume\\add-a-splash-screen.md"
   ],
   "56dc94d30046b0b6d1ff57155d5738bf66736981": [
     "windows-apps-src\\launch-resume\\add-a-splash-screen.md"
@@ -4243,26 +4249,47 @@
   "b9005e68ec105753077d57a5e84a931386b98ba4": [
     "windows-apps-src\\launch-resume\\app-lifecycle.md"
   ],
+  "72e61f07c4b37488525d74ae28c9f605f20ca94c": [
+    "windows-apps-src\\launch-resume\\auto-launching-with-autoplay.md"
+  ],
   "bba809b71dae045893e9a404f0e268d410dad4a1": [
     "windows-apps-src\\launch-resume\\auto-launching-with-autoplay.md"
+  ],
+  "6ad43ec4fc865c5aae439693e0cd5b37a5d2c5dc": [
+    "windows-apps-src\\launch-resume\\create-a-customized-splash-screen.md"
   ],
   "eeb33aa0e92774a5dbc330b53189b7492f4f7063": [
     "windows-apps-src\\launch-resume\\create-a-customized-splash-screen.md"
   ],
+  "dd107f55e6dbeda6f48de27b3a84006954a46338": [
+    "windows-apps-src\\launch-resume\\create-and-register-a-background-task.md"
+  ],
   "0094bbe109cc4ae132766aee51d477d5af9e3683": [
     "windows-apps-src\\launch-resume\\create-and-register-a-background-task.md"
+  ],
+  "1b49c3f06456eef2f3e56227ecb5af5fc991fb13": [
+    "windows-apps-src\\launch-resume\\debug-a-background-task.md"
   ],
   "1af8301989f10260f219c612697a7e6c814a5460": [
     "windows-apps-src\\launch-resume\\debug-a-background-task.md"
   ],
+  "d7dbdab0e8d404e6607585045d49bb3dd1407de6": [
+    "windows-apps-src\\launch-resume\\declare-background-tasks-in-the-application-manifest.md"
+  ],
   "4300c6eba40e8f3c38f464818d00a605a4805e0f": [
     "windows-apps-src\\launch-resume\\declare-background-tasks-in-the-application-manifest.md"
+  ],
+  "3fb6884a968afb87e8de303bbd17feba4993c597": [
+    "windows-apps-src\\launch-resume\\guidelines-for-background-tasks.md"
   ],
   "35b008aef077ed7bfd0c82ffdbb6cd4c7cfbae5a": [
     "windows-apps-src\\launch-resume\\guidelines-for-background-tasks.md"
   ],
   "f2bb26ae86727648a3c97308021e0b0b894f1712": [
     "windows-apps-src\\launch-resume\\guidelines-for-background-tasks.md"
+  ],
+  "ab575415e5e6a091fb45dab49af21d0552834406": [
+    "windows-apps-src\\launch-resume\\handle-a-cancelled-background-task.md"
   ],
   "bf35793768419f7d5fd6cf0984ea071068d250e9": [
     "windows-apps-src\\launch-resume\\handle-a-cancelled-background-task.md"
@@ -4273,6 +4300,9 @@
   "c3a70f81fa7624a75efd3ef6393716bcc92ff520": [
     "windows-apps-src\\launch-resume\\handle-app-prelaunch.md"
   ],
+  "9c6358bccdea55a7c3749388c35aa770f4325960": [
+    "windows-apps-src\\launch-resume\\handle-file-activation.md"
+  ],
   "870866bbe5d190e67bd9dccb99d9777b502e1e8f": [
     "windows-apps-src\\launch-resume\\handle-file-activation.md"
   ],
@@ -4281,6 +4311,9 @@
   ],
   "6957d745c761f5592b7e6f91145d8598ab441527": [
     "windows-apps-src\\launch-resume\\handle-uri-activation.md"
+  ],
+  "ade51661fa6628c76b555316f645ec6622dd299a": [
+    "windows-apps-src\\launch-resume\\how-to-create-and-consume-an-app-service.md"
   ],
   "370e74b822ba3f8e025df21b804ca77b65270123": [
     "windows-apps-src\\launch-resume\\how-to-create-and-consume-an-app-service.md"
@@ -4334,11 +4367,20 @@
   "ee58b39005032eb689c4340103a6819f9f903b67": [
     "windows-apps-src\\launch-resume\\images\\windowsmapsappdirections.png"
   ],
+  "7b721057d5bb47a618bc229d6d03f6466af057ba": [
+    "windows-apps-src\\launch-resume\\index.md"
+  ],
   "e665ff769768969585e1f69c142797d2ac59f87c": [
     "windows-apps-src\\launch-resume\\index.md"
   ],
+  "b593a43bc5b95dd0880af972ca1514e657bbd9e3": [
+    "windows-apps-src\\launch-resume\\launch-default-app.md"
+  ],
   "975d45797ef1069b5c34bd239992be05ed96d56b": [
     "windows-apps-src\\launch-resume\\launch-default-app.md"
+  ],
+  "0dcd15c7d04ed452f69208ad1e68a8949baf40dd": [
+    "windows-apps-src\\launch-resume\\launch-maps-app.md"
   ],
   "c04307dbe76eb44bf9331d8beb7c0ccccef32420": [
     "windows-apps-src\\launch-resume\\launch-maps-app.md"
@@ -4349,6 +4391,9 @@
   "7d8064a5823dabbcbf2ec44b693fe8de6a3bb216": [
     "windows-apps-src\\launch-resume\\launch-maps-app.md"
   ],
+  "fd3c38dd0b6df2f430d7be4c40e7131d4ae98616": [
+    "windows-apps-src\\launch-resume\\launch-people-apps.md"
+  ],
   "41db663ea4cc65999d310e8f6f4fb6874ba60726": [
     "windows-apps-src\\launch-resume\\launch-people-apps.md"
   ],
@@ -4358,20 +4403,38 @@
   "db70d247e286447bd4812a1ddf00d4e203514dac": [
     "windows-apps-src\\launch-resume\\launch-settings-app.md"
   ],
+  "9b48aeddb5ddc912fccd07149980655a06535470": [
+    "windows-apps-src\\launch-resume\\launch-store-app.md"
+  ],
   "df4f518e9c2dec62ac39fe7e468b9c380e312043": [
     "windows-apps-src\\launch-resume\\launch-store-app.md"
+  ],
+  "b9b2d8ba6aeedea7d9db12565de191b1b6307fa6": [
+    "windows-apps-src\\launch-resume\\launch-the-default-app-for-a-file.md"
   ],
   "be5157ccf4d0864c6129a999dd2a26badc8bf796": [
     "windows-apps-src\\launch-resume\\launch-the-default-app-for-a-file.md"
   ],
+  "07d69b63b272153bc784ed19166e649f80a98297": [
+    "windows-apps-src\\launch-resume\\monitor-background-task-progress-and-completion.md"
+  ],
   "d2665d4af4765fb9458a6f31002ebe645696c97f": [
     "windows-apps-src\\launch-resume\\monitor-background-task-progress-and-completion.md"
+  ],
+  "acee438ae29b568bec20ff1225e8e801934e6c50": [
+    "windows-apps-src\\launch-resume\\register-a-background-task.md"
   ],
   "92845509d501fc505e592aa872bae266465e75f1": [
     "windows-apps-src\\launch-resume\\register-a-background-task.md"
   ],
+  "2736267bf72b1cadd2c635b15daf6975a70937df": [
+    "windows-apps-src\\launch-resume\\reserved-uri-scheme-names.md"
+  ],
   "e82c038bd39a76cf8a81cbd62e47b840dfda637d": [
     "windows-apps-src\\launch-resume\\reserved-uri-scheme-names.md"
+  ],
+  "f6845dce428f5e22ec68744293b1668da52002bf": [
+    "windows-apps-src\\launch-resume\\respond-to-system-events-with-background-tasks.md"
   ],
   "7dd0a6e299a383ab651dd021f4484e0295d41c3c": [
     "windows-apps-src\\launch-resume\\respond-to-system-events-with-background-tasks.md"
@@ -4385,14 +4448,23 @@
   "4bf113c2a453abf460ede341b5ebc8814801890f": [
     "windows-apps-src\\launch-resume\\resume-an-app.md"
   ],
+  "3fc1e3efa742ff8ab24f78856872fe322703f152": [
+    "windows-apps-src\\launch-resume\\run-a-background-task-on-a-timer-.md"
+  ],
   "998fbbe4fe558e556b3eb6bf132531af28c13c62": [
     "windows-apps-src\\launch-resume\\run-a-background-task-on-a-timer-.md"
   ],
   "3751868e629f688330e23c2f21ad550543695f99": [
     "windows-apps-src\\launch-resume\\run-a-background-task-on-a-timer-.md"
   ],
+  "0f95bdcb197f472b743f81c0d941196d5e53f60a": [
+    "windows-apps-src\\launch-resume\\set-conditions-for-running-a-background-task.md"
+  ],
   "583c7e57d8680bff2ae2227ca1db36d911bcc17a": [
     "windows-apps-src\\launch-resume\\set-conditions-for-running-a-background-task.md"
+  ],
+  "38942aa2a274828cc36677a93d0923beb03060dc": [
+    "windows-apps-src\\launch-resume\\support-your-app-with-background-tasks.md"
   ],
   "416fa23abf42cc308a0bca95003605a7a6c2d874": [
     "windows-apps-src\\launch-resume\\support-your-app-with-background-tasks.md"
@@ -4403,8 +4475,14 @@
   "746487688419369bb73251327e7c67496b6c2b90": [
     "windows-apps-src\\launch-resume\\suspend-an-app.md"
   ],
+  "5b11c3d4757d7da0c4c99d8f74a8988babfc26fd": [
+    "windows-apps-src\\launch-resume\\update-a-live-tile-from-a-background-task.md"
+  ],
   "b5f9cc361096463b8b51ef949aba7a6b1583f186": [
     "windows-apps-src\\launch-resume\\update-a-live-tile-from-a-background-task.md"
+  ],
+  "0da08ba5431f4d5c56d06657d3d6123a67ba5079": [
+    "windows-apps-src\\launch-resume\\use-a-maintenance-trigger.md"
   ],
   "9665b96cbadff1624c40a26f57d7f06cdd5dde62": [
     "windows-apps-src\\launch-resume\\use-a-maintenance-trigger.md"
