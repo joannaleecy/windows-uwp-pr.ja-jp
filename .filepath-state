@@ -6185,6 +6185,9 @@
   "033669a781aa85cc2c90fa11816e385ffefa997d": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "8db95e19c953e45a6bc1137c77ea8a557781868a": [
+    "windows-apps-src\\TOC.md"
+  ],
   "e7c99f3ad891a1666b8a3de1f9572c92d1600a89": [
     "windows-apps-src\\TOC.md"
   ],
@@ -6598,5 +6601,14 @@
   ],
   "0a97fa3e180c545cd78ef0da45d83e1cdce65d9a": [
     "windows-apps-src\\graphics\\images\\composition-scopedbatch.png"
+  ],
+  "dae01b2caa4b50a9690718c86be8f7760721521a": [
+    "windows-apps-src\\debug-test-perf\\images\\vs-target-sdk-1.png"
+  ],
+  "f7ce4e39480958f0a487f43a50f1d9e5cb4beef4": [
+    "windows-apps-src\\debug-test-perf\\images\\vs-target-sdk-2.png"
+  ],
+  "8ed92160837f6cd4e70f7a44791fdf6e67d35e20": [
+    "windows-apps-src\\debug-test-perf\\version-adaptive-code.md"
   ]
 }
