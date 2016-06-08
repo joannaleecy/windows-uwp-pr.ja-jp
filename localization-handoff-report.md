@@ -1,42 +1,26 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\monetize\access-analytics-data-using-windows-store-services.md](https://github.com/Microsoft/windows-apps/blob/204bace243fb082d3ca3b4259982d457f9c533da/windows-apps-src/monetize/access-analytics-data-using-windows-store-services.md) | OutofSyncHandedBackSuccess | [Details](#30388a975e9623c5511abe608aa1b21956e2c9743249)
- [windows-apps-src\monetize\view-and-grant-products-from-a-service.md](https://github.com/Microsoft/windows-apps/blob/204bace243fb082d3ca3b4259982d457f9c533da/windows-apps-src/monetize/view-and-grant-products-from-a-service.md) | OutofSyncHandedBackSuccess | [Details](#1e17703442ce539de941890a0616fc5e08391d703341)
+ [windows-apps-src\launch-resume\run-a-background-task-on-a-timer-.md](https://github.com/Microsoft/windows-apps/blob/bb0941fb42eb14204a1e74e2d7002691071adedf/windows-apps-src/launch-resume/run-a-background-task-on-a-timer-.md) | OutofSyncHandedBackSuccess | [Details](#998fbbe4fe558e556b3eb6bf132531af28c13c622953)
 
 ## Item Details
-##### <a name='30388a975e9623c5511abe608aa1b21956e2c9743249'></a> Source: [windows-apps-src\monetize\access-analytics-data-using-windows-store-services.md](https://github.com/Microsoft/windows-apps/blob/204bace243fb082d3ca3b4259982d457f9c533da/windows-apps-src/monetize/access-analytics-data-using-windows-store-services.md)
+##### <a name='998fbbe4fe558e556b3eb6bf132531af28c13c622953'></a> Source: [windows-apps-src\launch-resume\run-a-background-task-on-a-timer-.md](https://github.com/Microsoft/windows-apps/blob/bb0941fb42eb14204a1e74e2d7002691071adedf/windows-apps-src/launch-resume/run-a-background-task-on-a-timer-.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [access-analytics-data-using-windows-store-services.828b860af9092ad75eb025c00b3645739b166f59.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/ac11549b6b6ccdef2c5904dc1b27fd3a7ba66c9b/ol-handoff/Microsoft/windows-apps.ja-jp/master/access-analytics-data-using-windows-store-services.828b860af9092ad75eb025c00b3645739b166f59.ja-jp.xlf)
-* Handoff Datetime: 2016-06-08 18:00:06
+* Handoff File: [run-a-background-task-on-a-timer-.74793caebe05484a93ae5597485e677d9e6b1d5f.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/bdd3650f5fa3ce1dcb3cc0c9a4a14ee252bace34/ol-handoff/Microsoft/windows-apps.ja-jp/master/run-a-background-task-on-a-timer-.74793caebe05484a93ae5597485e677d9e6b1d5f.ja-jp.xlf)
+* Handoff Datetime: 2016-06-08 20:00:42
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\monetize\access-analytics-data-using-windows-store-services.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/846e73c8aab5d5c623774cf374dd173574bd5761/windows-apps-src/monetize/access-analytics-data-using-windows-store-services.md)
-* Current Handback File: [access-analytics-data-using-windows-store-services.828b860af9092ad75eb025c00b3645739b166f59.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/access-analytics-data-using-windows-store-services.828b860af9092ad75eb025c00b3645739b166f59.ja-jp.xlf)
-* Current Handback Datetime: 2016-05-31 12:19:30
-* [Back to Top](#report-top)
-
-##### <a name='1e17703442ce539de941890a0616fc5e08391d703341'></a> Source: [windows-apps-src\monetize\view-and-grant-products-from-a-service.md](https://github.com/Microsoft/windows-apps/blob/204bace243fb082d3ca3b4259982d457f9c533da/windows-apps-src/monetize/view-and-grant-products-from-a-service.md)
-* Status: OutofSyncHandedBackSuccess
-* Target File: 
-* Handoff File: [view-and-grant-products-from-a-service.883217ecb204993b55b77e29ab1e2d54b14705b7.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/ac11549b6b6ccdef2c5904dc1b27fd3a7ba66c9b/ol-handoff/Microsoft/windows-apps.ja-jp/master/view-and-grant-products-from-a-service.883217ecb204993b55b77e29ab1e2d54b14705b7.ja-jp.xlf)
-* Handoff Datetime: 2016-06-08 18:00:06
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\monetize\view-and-grant-products-from-a-service.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/846e73c8aab5d5c623774cf374dd173574bd5761/windows-apps-src/monetize/view-and-grant-products-from-a-service.md)
-* Current Handback File: [view-and-grant-products-from-a-service.883217ecb204993b55b77e29ab1e2d54b14705b7.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/view-and-grant-products-from-a-service.883217ecb204993b55b77e29ab1e2d54b14705b7.ja-jp.xlf)
+* Current Target File: [windows-apps-src\launch-resume\run-a-background-task-on-a-timer-.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/846e73c8aab5d5c623774cf374dd173574bd5761/windows-apps-src/launch-resume/run-a-background-task-on-a-timer-.md)
+* Current Handback File: [run-a-background-task-on-a-timer-.74793caebe05484a93ae5597485e677d9e6b1d5f.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/run-a-background-task-on-a-timer-.74793caebe05484a93ae5597485e677d9e6b1d5f.ja-jp.xlf)
 * Current Handback Datetime: 2016-05-31 12:19:30
 * [Back to Top](#report-top)
 
