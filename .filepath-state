@@ -4736,6 +4736,9 @@
   "e161e478b1b306f5d8d77b7649aeecd80e21b5be": [
     "windows-apps-src\\maps-and-location\\set-up-a-geofence.md"
   ],
+  "30388a975e9623c5511abe608aa1b21956e2c974": [
+    "windows-apps-src\\monetize\\access-analytics-data-using-windows-store-services.md"
+  ],
   "ebb90b613f8df1b5bbd1f870fbdcbae69e5cbc06": [
     "windows-apps-src\\monetize\\access-analytics-data-using-windows-store-services.md"
   ],
@@ -5035,6 +5038,9 @@
   ],
   "43e3155315a9132daa36f592b54af3e943ea3e21": [
     "windows-apps-src\\monetize\\using-windows-store-services.md"
+  ],
+  "1e17703442ce539de941890a0616fc5e08391d70": [
+    "windows-apps-src\\monetize\\view-and-grant-products-from-a-service.md"
   ],
   "627946bad868182f1a60e5a9a465b6827a91c85f": [
     "windows-apps-src\\monetize\\view-and-grant-products-from-a-service.md"

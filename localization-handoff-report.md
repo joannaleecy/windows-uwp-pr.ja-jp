@@ -1,26 +1,42 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\porting\desktop-to-uwp-run-desktop-app-converter.md](https://github.com/Microsoft/windows-apps/blob/6d1c6e836d666972641320c73896459490f45924/windows-apps-src/porting/desktop-to-uwp-run-desktop-app-converter.md) | OutofSyncHandedBackSuccess | [Details](#874b6452386526d66062a27a5b520cb1a232ae643375)
+ [windows-apps-src\monetize\access-analytics-data-using-windows-store-services.md](https://github.com/Microsoft/windows-apps/blob/204bace243fb082d3ca3b4259982d457f9c533da/windows-apps-src/monetize/access-analytics-data-using-windows-store-services.md) | OutofSyncHandedBackSuccess | [Details](#30388a975e9623c5511abe608aa1b21956e2c9743249)
+ [windows-apps-src\monetize\view-and-grant-products-from-a-service.md](https://github.com/Microsoft/windows-apps/blob/204bace243fb082d3ca3b4259982d457f9c533da/windows-apps-src/monetize/view-and-grant-products-from-a-service.md) | OutofSyncHandedBackSuccess | [Details](#1e17703442ce539de941890a0616fc5e08391d703341)
 
 ## Item Details
-##### <a name='874b6452386526d66062a27a5b520cb1a232ae643375'></a> Source: [windows-apps-src\porting\desktop-to-uwp-run-desktop-app-converter.md](https://github.com/Microsoft/windows-apps/blob/6d1c6e836d666972641320c73896459490f45924/windows-apps-src/porting/desktop-to-uwp-run-desktop-app-converter.md)
+##### <a name='30388a975e9623c5511abe608aa1b21956e2c9743249'></a> Source: [windows-apps-src\monetize\access-analytics-data-using-windows-store-services.md](https://github.com/Microsoft/windows-apps/blob/204bace243fb082d3ca3b4259982d457f9c533da/windows-apps-src/monetize/access-analytics-data-using-windows-store-services.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/3734dd2ecccb9b01e0b750561661e6a58af596e9/ol-handoff/Microsoft/windows-apps.ja-jp/master/desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.ja-jp.xlf)
-* Handoff Datetime: 2016-06-08 17:29:58
+* Handoff File: [access-analytics-data-using-windows-store-services.828b860af9092ad75eb025c00b3645739b166f59.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/ac11549b6b6ccdef2c5904dc1b27fd3a7ba66c9b/ol-handoff/Microsoft/windows-apps.ja-jp/master/access-analytics-data-using-windows-store-services.828b860af9092ad75eb025c00b3645739b166f59.ja-jp.xlf)
+* Handoff Datetime: 2016-06-08 18:00:06
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\porting\desktop-to-uwp-run-desktop-app-converter.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/846e73c8aab5d5c623774cf374dd173574bd5761/windows-apps-src/porting/desktop-to-uwp-run-desktop-app-converter.md)
-* Current Handback File: [desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.ja-jp.xlf)
+* Current Target File: [windows-apps-src\monetize\access-analytics-data-using-windows-store-services.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/846e73c8aab5d5c623774cf374dd173574bd5761/windows-apps-src/monetize/access-analytics-data-using-windows-store-services.md)
+* Current Handback File: [access-analytics-data-using-windows-store-services.828b860af9092ad75eb025c00b3645739b166f59.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/access-analytics-data-using-windows-store-services.828b860af9092ad75eb025c00b3645739b166f59.ja-jp.xlf)
+* Current Handback Datetime: 2016-05-31 12:19:30
+* [Back to Top](#report-top)
+
+##### <a name='1e17703442ce539de941890a0616fc5e08391d703341'></a> Source: [windows-apps-src\monetize\view-and-grant-products-from-a-service.md](https://github.com/Microsoft/windows-apps/blob/204bace243fb082d3ca3b4259982d457f9c533da/windows-apps-src/monetize/view-and-grant-products-from-a-service.md)
+* Status: OutofSyncHandedBackSuccess
+* Target File: 
+* Handoff File: [view-and-grant-products-from-a-service.883217ecb204993b55b77e29ab1e2d54b14705b7.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/ac11549b6b6ccdef2c5904dc1b27fd3a7ba66c9b/ol-handoff/Microsoft/windows-apps.ja-jp/master/view-and-grant-products-from-a-service.883217ecb204993b55b77e29ab1e2d54b14705b7.ja-jp.xlf)
+* Handoff Datetime: 2016-06-08 18:00:06
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\monetize\view-and-grant-products-from-a-service.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/846e73c8aab5d5c623774cf374dd173574bd5761/windows-apps-src/monetize/view-and-grant-products-from-a-service.md)
+* Current Handback File: [view-and-grant-products-from-a-service.883217ecb204993b55b77e29ab1e2d54b14705b7.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/view-and-grant-products-from-a-service.883217ecb204993b55b77e29ab1e2d54b14705b7.ja-jp.xlf)
 * Current Handback Datetime: 2016-05-31 12:19:30
 * [Back to Top](#report-top)
 
