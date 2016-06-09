@@ -1,22 +1,20 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 4
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\xbox-apps\disable-scaling.md](https://github.com/Microsoft/windows-apps/blob/2fcccb9a045aad268afde615d31f8faa002b8a87/windows-apps-src/xbox-apps/disable-scaling.md) | HandedOffSuccess | [Details](#65416dd2b6c8656078b63c316f3972cda9c792fc3825)
- [windows-apps-src\xbox-apps\how-to-disable-mouse-mode.md](https://github.com/Microsoft/windows-apps/blob/32a875348debac9aec9f5a26bc4e7e0af2a0a5b4/windows-apps-src/xbox-apps/how-to-disable-mouse-mode.md) | HandedOffSuccess | [Details](#ebe1cb10f1ac4c46bb099e05948d79ef45400f853828)
- [windows-apps-src\xbox-apps\tailoring-for-xbox.md](https://github.com/Microsoft/windows-apps/blob/ac633ad082c878a170a6b2fac1b33c87aea773b5/windows-apps-src/xbox-apps/tailoring-for-xbox.md) | HandedOffSuccess | [Details](#e613d86766c0caf999dff529f5d9f2f7b574348f3884)
- [windows-apps-src\xbox-apps\turn-off-overscan.md](https://github.com/Microsoft/windows-apps/blob/32a875348debac9aec9f5a26bc4e7e0af2a0a5b4/windows-apps-src/xbox-apps/turn-off-overscan.md) | HandedOffSuccess | [Details](#abd06e78364ff32cc10d733e33b153b854dbc4673885)
+ [windows-apps-src\debug-test-perf\version-adaptive-code.md](https://github.com/Microsoft/windows-apps/blob/61e82f9c1fc30620f94ec7efe906d6c2e9599412/windows-apps-src/debug-test-perf/version-adaptive-code.md) | HandedOffSuccess | [Details](#28f7e261c269250e496c4c850e4fc3c8547378431984)
+ [windows-apps-src\xbox-apps\index.md](https://github.com/Microsoft/windows-apps/blob/e8be88fc6a18b43fe94003fdb118bb28d1a2a367/windows-apps-src/xbox-apps/index.md) | OutofSyncHandedBackSuccess | [Details](#3ed797480e8e6435bf6358433365560ed101bdf43876)
 
 ## Item Details
-##### <a name='65416dd2b6c8656078b63c316f3972cda9c792fc3825'></a> Source: [windows-apps-src\xbox-apps\disable-scaling.md](https://github.com/Microsoft/windows-apps/blob/2fcccb9a045aad268afde615d31f8faa002b8a87/windows-apps-src/xbox-apps/disable-scaling.md)
+##### <a name='28f7e261c269250e496c4c850e4fc3c8547378431984'></a> Source: [windows-apps-src\debug-test-perf\version-adaptive-code.md](https://github.com/Microsoft/windows-apps/blob/61e82f9c1fc30620f94ec7efe906d6c2e9599412/windows-apps-src/debug-test-perf/version-adaptive-code.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [disable-scaling.e15cb47939c5d48140b46f21d46e37fd97a4bd35.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/01afeaf0f474f04073b1caa3491b658ef180810b/ol-handoff/Microsoft/windows-apps.ja-jp/master/disable-scaling.e15cb47939c5d48140b46f21d46e37fd97a4bd35.ja-jp.xlf)
-* Handoff Datetime: 2016-06-09 20:01:10
+* Handoff File: [version-adaptive-code.7aa9b4fd571dd33449d6b84315fa7a6b22580d76.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/ce57eb7823e5faa285653021cce49c99c95c8155/ol-handoff/Microsoft/windows-apps.ja-jp/master/version-adaptive-code.7aa9b4fd571dd33449d6b84315fa7a6b22580d76.ja-jp.xlf)
+* Handoff Datetime: 2016-06-09 20:31:17
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -24,40 +22,19 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='ebe1cb10f1ac4c46bb099e05948d79ef45400f853828'></a> Source: [windows-apps-src\xbox-apps\how-to-disable-mouse-mode.md](https://github.com/Microsoft/windows-apps/blob/32a875348debac9aec9f5a26bc4e7e0af2a0a5b4/windows-apps-src/xbox-apps/how-to-disable-mouse-mode.md)
-* Status: HandedOffSuccess
+##### <a name='3ed797480e8e6435bf6358433365560ed101bdf43876'></a> Source: [windows-apps-src\xbox-apps\index.md](https://github.com/Microsoft/windows-apps/blob/e8be88fc6a18b43fe94003fdb118bb28d1a2a367/windows-apps-src/xbox-apps/index.md)
+* Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [how-to-disable-mouse-mode.6c622ccf73f4b0c8c4dacc5395199bcf39c5d9f7.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/01afeaf0f474f04073b1caa3491b658ef180810b/ol-handoff/Microsoft/windows-apps.ja-jp/master/how-to-disable-mouse-mode.6c622ccf73f4b0c8c4dacc5395199bcf39c5d9f7.ja-jp.xlf)
-* Handoff Datetime: 2016-06-09 20:01:10
+* Handoff File: [index.d16e2a2199b17d4f07cbc6956844a04c9911bc85.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/ce57eb7823e5faa285653021cce49c99c95c8155/ol-handoff/Microsoft/windows-apps.ja-jp/master/index.d16e2a2199b17d4f07cbc6956844a04c9911bc85.ja-jp.xlf)
+* Handoff Datetime: 2016-06-09 20:31:17
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='e613d86766c0caf999dff529f5d9f2f7b574348f3884'></a> Source: [windows-apps-src\xbox-apps\tailoring-for-xbox.md](https://github.com/Microsoft/windows-apps/blob/ac633ad082c878a170a6b2fac1b33c87aea773b5/windows-apps-src/xbox-apps/tailoring-for-xbox.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [tailoring-for-xbox.bacdeb3e45dfd5c8fe0387ee2d4a2903bd006a24.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/01afeaf0f474f04073b1caa3491b658ef180810b/ol-handoff/Microsoft/windows-apps.ja-jp/master/tailoring-for-xbox.bacdeb3e45dfd5c8fe0387ee2d4a2903bd006a24.ja-jp.xlf)
-* Handoff Datetime: 2016-06-09 20:01:10
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='abd06e78364ff32cc10d733e33b153b854dbc4673885'></a> Source: [windows-apps-src\xbox-apps\turn-off-overscan.md](https://github.com/Microsoft/windows-apps/blob/32a875348debac9aec9f5a26bc4e7e0af2a0a5b4/windows-apps-src/xbox-apps/turn-off-overscan.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [turn-off-overscan.b7ee8858d72bbc74b9bef0ced64d354739491adc.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/01afeaf0f474f04073b1caa3491b658ef180810b/ol-handoff/Microsoft/windows-apps.ja-jp/master/turn-off-overscan.b7ee8858d72bbc74b9bef0ced64d354739491adc.ja-jp.xlf)
-* Handoff Datetime: 2016-06-09 20:01:10
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\xbox-apps\index.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/846e73c8aab5d5c623774cf374dd173574bd5761/windows-apps-src/xbox-apps/index.md)
+* Current Handback File: [index.d16e2a2199b17d4f07cbc6956844a04c9911bc85.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/index.d16e2a2199b17d4f07cbc6956844a04c9911bc85.ja-jp.xlf)
+* Current Handback Datetime: 2016-05-31 12:19:30
 * [Back to Top](#report-top)
 
 

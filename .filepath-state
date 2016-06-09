@@ -6581,6 +6581,9 @@
   "2d3d6ad9b3375350f6f2cb47d6fd170d39f8fec0": [
     "windows-apps-src\\xbox-apps\\images\\windowsdeviceportal_2.png"
   ],
+  "3ed797480e8e6435bf6358433365560ed101bdf4": [
+    "windows-apps-src\\xbox-apps\\index.md"
+  ],
   "1d0ea4c67b996b2e8bc7280a25dfdca7189c7e50": [
     "windows-apps-src\\xbox-apps\\index.md"
   ],
@@ -6691,6 +6694,9 @@
   ],
   "f7ce4e39480958f0a487f43a50f1d9e5cb4beef4": [
     "windows-apps-src\\debug-test-perf\\images\\vs-target-sdk-2.png"
+  ],
+  "28f7e261c269250e496c4c850e4fc3c854737843": [
+    "windows-apps-src\\debug-test-perf\\version-adaptive-code.md"
   ],
   "8ed92160837f6cd4e70f7a44791fdf6e67d35e20": [
     "windows-apps-src\\debug-test-perf\\version-adaptive-code.md"
