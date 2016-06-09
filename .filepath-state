@@ -6695,10 +6695,22 @@
   "8ed92160837f6cd4e70f7a44791fdf6e67d35e20": [
     "windows-apps-src\\debug-test-perf\\version-adaptive-code.md"
   ],
+  "ebe1cb10f1ac4c46bb099e05948d79ef45400f85": [
+    "windows-apps-src\\xbox-apps\\how-to-disable-mouse-mode.md"
+  ],
   "a5aad6cd31f6b0049d8e71524b79ba6782d6d06b": [
     "windows-apps-src\\xbox-apps\\how-to-disable-mouse-mode.md"
   ],
+  "abd06e78364ff32cc10d733e33b153b854dbc467": [
+    "windows-apps-src\\xbox-apps\\turn-off-overscan.md"
+  ],
   "f992cc084ee16f60a1a078ccdcc36cb5c0165a69": [
     "windows-apps-src\\xbox-apps\\turn-off-overscan.md"
+  ],
+  "65416dd2b6c8656078b63c316f3972cda9c792fc": [
+    "windows-apps-src\\xbox-apps\\disable-scaling.md"
+  ],
+  "e613d86766c0caf999dff529f5d9f2f7b574348f": [
+    "windows-apps-src\\xbox-apps\\tailoring-for-xbox.md"
   ]
 }
