@@ -6266,6 +6266,9 @@
   "033669a781aa85cc2c90fa11816e385ffefa997d": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "a26da6359778065ab4236f43f2a2a63d25f797bf": [
+    "windows-apps-src\\TOC.md"
+  ],
   "8db95e19c953e45a6bc1137c77ea8a557781868a": [
     "windows-apps-src\\TOC.md"
   ],
@@ -6695,6 +6698,9 @@
   "f7ce4e39480958f0a487f43a50f1d9e5cb4beef4": [
     "windows-apps-src\\debug-test-perf\\images\\vs-target-sdk-2.png"
   ],
+  "a46825ebbaed095989bda5516963027203126d95": [
+    "windows-apps-src\\debug-test-perf\\version-adaptive-code.md"
+  ],
   "28f7e261c269250e496c4c850e4fc3c854737843": [
     "windows-apps-src\\debug-test-perf\\version-adaptive-code.md"
   ],
@@ -6715,6 +6721,9 @@
   ],
   "65416dd2b6c8656078b63c316f3972cda9c792fc": [
     "windows-apps-src\\xbox-apps\\disable-scaling.md"
+  ],
+  "a0bdb3da21e091d7052628d4f9e2166dcc9e1864": [
+    "windows-apps-src\\xbox-apps\\tailoring-for-xbox.md"
   ],
   "e613d86766c0caf999dff529f5d9f2f7b574348f": [
     "windows-apps-src\\xbox-apps\\tailoring-for-xbox.md"
