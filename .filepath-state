@@ -5174,6 +5174,9 @@
   "d2f7a4a2bd0f94c4923b33fbd62a8b2ff6eddd65": [
     "windows-apps-src\\networking\\which-networking-technology.md"
   ],
+  "aaf120535e2ff4cefc133ede3983530e7c5f4d6f": [
+    "windows-apps-src\\packaging\\app-capability-declarations.md"
+  ],
   "9d0749aac4cdcad282b2082b351962d3cd0b0ec8": [
     "windows-apps-src\\packaging\\app-capability-declarations.md"
   ],
@@ -6599,6 +6602,9 @@
   "e097e9f902f712aeb3e7b5ff6d5bea708c40493e": [
     "windows-apps-src\\xbox-apps\\known-issues.md"
   ],
+  "20f84783131122343fd01e6cb1f5a60cf50158cd": [
+    "windows-apps-src\\xbox-apps\\multi-user-applications.md"
+  ],
   "ca464c64c620a3b36086289b62150ffc0a6aef1b": [
     "windows-apps-src\\xbox-apps\\multi-user-applications.md"
   ],
@@ -6688,5 +6694,11 @@
   ],
   "8ed92160837f6cd4e70f7a44791fdf6e67d35e20": [
     "windows-apps-src\\debug-test-perf\\version-adaptive-code.md"
+  ],
+  "a5aad6cd31f6b0049d8e71524b79ba6782d6d06b": [
+    "windows-apps-src\\xbox-apps\\how-to-disable-mouse-mode.md"
+  ],
+  "f992cc084ee16f60a1a078ccdcc36cb5c0165a69": [
+    "windows-apps-src\\xbox-apps\\turn-off-overscan.md"
   ]
 }
