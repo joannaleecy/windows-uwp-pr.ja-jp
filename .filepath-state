@@ -107,6 +107,9 @@
   "433cda6432d1e695bacb338e68012bcc9c837eb6": [
     "windows-apps-src\\app-settings\\store-and-retrieve-app-data.md"
   ],
+  "ed1dc1ca0f34f0efafd14aa1cfd1e4b75351882c": [
+    "windows-apps-src\\app-to-app\\copy-and-paste.md"
+  ],
   "ff4fc70743b329fca2cec564976b4b512eee61ef": [
     "windows-apps-src\\app-to-app\\copy-and-paste.md"
   ],
@@ -115,6 +118,9 @@
   ],
   "1d98623371655bc177cca661417d38c175ce9963": [
     "windows-apps-src\\app-to-app\\copy-and-paste.md"
+  ],
+  "ffa2f0f368a61ef4f3003c1fa03e143b26c6859b": [
+    "windows-apps-src\\app-to-app\\drag-and-drop.md"
   ],
   "b88f3ab7ed4fc5db2508235aaa310a0dd7b4cec4": [
     "windows-apps-src\\app-to-app\\drag-and-drop.md"
@@ -2378,6 +2384,9 @@
   ],
   "d1fbc7376b3505d39e757a1b65ae0f0890948078": [
     "windows-apps-src\\data-binding\\index.md"
+  ],
+  "46e78612c0f4391b9448ea9bd7a001722fb08a28": [
+    "windows-apps-src\\debug-test-perf\\best-practices-for-your-app-s-startup-performance.md"
   ],
   "6530b8788fc59d4d08b5f7bc65c73a8f05d75004": [
     "windows-apps-src\\debug-test-perf\\best-practices-for-your-app-s-startup-performance.md"
