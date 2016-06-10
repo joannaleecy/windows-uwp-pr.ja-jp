@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\debug-test-perf\version-adaptive-code.md](https://github.com/Microsoft/windows-apps/blob/cdf54de1f1b6b9d6b5e8be130586aa671004a2cf/windows-apps-src/debug-test-perf/version-adaptive-code.md) | HandedOffSuccess | [Details](#1696266e0bb7c3792dbd92f0a3e7790c866b2f251984)
+ [windows-apps-src\debug-test-perf\version-adaptive-code.md](https://github.com/Microsoft/windows-apps/blob/88e3b007d69cd9fe395c2fe4fbcdc6192eca146f/windows-apps-src/debug-test-perf/version-adaptive-code.md) | HandedOffSuccess | [Details](#485fdc19f8fc04c2f7fa01bb3aaf4eda6c8b0fd21984)
 
 ## Item Details
-##### <a name='1696266e0bb7c3792dbd92f0a3e7790c866b2f251984'></a> Source: [windows-apps-src\debug-test-perf\version-adaptive-code.md](https://github.com/Microsoft/windows-apps/blob/cdf54de1f1b6b9d6b5e8be130586aa671004a2cf/windows-apps-src/debug-test-perf/version-adaptive-code.md)
+##### <a name='485fdc19f8fc04c2f7fa01bb3aaf4eda6c8b0fd21984'></a> Source: [windows-apps-src\debug-test-perf\version-adaptive-code.md](https://github.com/Microsoft/windows-apps/blob/88e3b007d69cd9fe395c2fe4fbcdc6192eca146f/windows-apps-src/debug-test-perf/version-adaptive-code.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [version-adaptive-code.7aa9b4fd571dd33449d6b84315fa7a6b22580d76.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/4e69594efa4d5be7b61d234bc73dcc8007a2916b/ol-handoff/Microsoft/windows-apps.ja-jp/master/version-adaptive-code.7aa9b4fd571dd33449d6b84315fa7a6b22580d76.ja-jp.xlf)
-* Handoff Datetime: 2016-06-09 22:01:16
+* Handoff File: [version-adaptive-code.7aa9b4fd571dd33449d6b84315fa7a6b22580d76.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/1f048e57f5d9f4e7c8f49bf2b05cd8fcb3f4a999/ol-handoff/Microsoft/windows-apps.ja-jp/master/version-adaptive-code.7aa9b4fd571dd33449d6b84315fa7a6b22580d76.ja-jp.xlf)
+* Handoff Datetime: 2016-06-10 18:02:40
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
