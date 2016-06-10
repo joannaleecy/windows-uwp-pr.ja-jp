@@ -134,6 +134,9 @@
   "63550064b6f31b85cd3b6fa2a09bac4b7cfcf895": [
     "windows-apps-src\\app-to-app\\index.md"
   ],
+  "de61bdbbf22c6f397b4a10634e711f926f1c5904": [
+    "windows-apps-src\\app-to-app\\receive-data.md"
+  ],
   "3853ccd58cbf48c8d39431ca5f5398bb80923c41": [
     "windows-apps-src\\app-to-app\\receive-data.md"
   ],
@@ -142,6 +145,9 @@
   ],
   "250826fd8f8c4490e62220df0398a7272d4b7b68": [
     "windows-apps-src\\app-to-app\\receive-data.md"
+  ],
+  "de9d4e88cfc00d5e428b8ddb8a27cc4ffd619e85": [
+    "windows-apps-src\\app-to-app\\share-data.md"
   ],
   "6c41466b2104240137ca3b375a92ca1f7fde4301": [
     "windows-apps-src\\app-to-app\\share-data.md"
@@ -5185,6 +5191,9 @@
   ],
   "d2f7a4a2bd0f94c4923b33fbd62a8b2ff6eddd65": [
     "windows-apps-src\\networking\\which-networking-technology.md"
+  ],
+  "c3c70afbeab95fa967d5e7bb4b6dc9a9a66b6a39": [
+    "windows-apps-src\\packaging\\app-capability-declarations.md"
   ],
   "aaf120535e2ff4cefc133ede3983530e7c5f4d6f": [
     "windows-apps-src\\packaging\\app-capability-declarations.md"
