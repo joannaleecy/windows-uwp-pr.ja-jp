@@ -6647,6 +6647,9 @@
   "2d3d6ad9b3375350f6f2cb47d6fd170d39f8fec0": [
     "windows-apps-src\\xbox-apps\\images\\windowsdeviceportal_2.png"
   ],
+  "df4cfcab9456f8c8416cb13ed59e151d782eabe8": [
+    "windows-apps-src\\xbox-apps\\index.md"
+  ],
   "3ed797480e8e6435bf6358433365560ed101bdf4": [
     "windows-apps-src\\xbox-apps\\index.md"
   ],
@@ -6814,5 +6817,8 @@
   ],
   "918fc9f6acb579d368f8ca273f58d25482b49e34": [
     "windows-apps-src\\accessibility\\images\\high-contrast-settings.png"
+  ],
+  "27bf792b2fb3c72723ee5b3e1d8d28e63b6405e5": [
+    "windows-apps-src\\xbox-apps\\whats-new.md"
   ]
 }
