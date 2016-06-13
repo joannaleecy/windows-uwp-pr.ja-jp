@@ -2403,6 +2403,9 @@
   "eb639e78bf144572dfbfd2d65514bb4eff7c7be1": [
     "windows-apps-src\\debug-test-perf\\deploying-and-debugging-uwp-apps.md"
   ],
+  "fe4945bf3048a0c38e844a74fa6fc46706085d6d": [
+    "windows-apps-src\\debug-test-perf\\device-portal.md"
+  ],
   "6fe6205b21835f29216c159c83aa4c9a48bee4f1": [
     "windows-apps-src\\debug-test-perf\\device-portal.md"
   ],
@@ -2658,6 +2661,9 @@
   ],
   "01ccd8dea8b19a52867ce89ba2eb9a1fb2d2a72f": [
     "windows-apps-src\\devices-sensors\\enable-device-capabilities.md"
+  ],
+  "eedabee593400ff0260b6d3468ac922285a034f8": [
+    "windows-apps-src\\devices-sensors\\enable-usermode-access.md"
   ],
   "6fd95a8afe8dc9e130a6724d8b6d6c21bf7f701b": [
     "windows-apps-src\\devices-sensors\\enable-usermode-access.md"
@@ -3559,6 +3565,9 @@
   ],
   "87d43ffb1edd141e884d8cacc47ca0322f3ee6ca": [
     "windows-apps-src\\in-app-help\\external-help.md"
+  ],
+  "f2522afa91abe26303a85cbfbabd5ec5b3dba59c": [
+    "windows-apps-src\\in-app-help\\guidelines-for-app-help.md"
   ],
   "35011081981ce9bb5c8408329c9be627f60ee841": [
     "windows-apps-src\\in-app-help\\guidelines-for-app-help.md"
@@ -6403,6 +6412,9 @@
   ],
   "4deae037857312f891c8c4beae2b6a89adc152cd": [
     "windows-apps-src\\xaml-platform\\index.md"
+  ],
+  "54c080183104335f4b3920cda8bc396a34298a69": [
+    "windows-apps-src\\xaml-platform\\move-draw-commands-syntax.md"
   ],
   "ec0209da2df9fdcb18d3470c8597f66a80543e12": [
     "windows-apps-src\\xaml-platform\\move-draw-commands-syntax.md"
