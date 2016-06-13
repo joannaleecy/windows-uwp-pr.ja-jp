@@ -35,6 +35,9 @@
   "77c401fd9686cb260e7b2d9e4bdf47a91d76802e": [
     "windows-apps-src\\accessibility\\developing-inclusive-windows-apps.md"
   ],
+  "44562de02c52e4d44cc5559d8d74425a620477be": [
+    "windows-apps-src\\accessibility\\high-contrast-themes.md"
+  ],
   "3569d82c5b5ac0e947828caf5376de840fbc2830": [
     "windows-apps-src\\accessibility\\high-contrast-themes.md"
   ],
@@ -6802,5 +6805,14 @@
   ],
   "2da839b282015c39bd0046d6cf60ce4f79fc485c": [
     "windows-apps-src\\devices-sensors\\nfc.md"
+  ],
+  "fadcf03d057b6df66013a9c682ab6e765093ba11": [
+    "windows-apps-src\\accessibility\\images\\high-contrast-actions-content.png"
+  ],
+  "6b7b3e65b7373ec44f50af0e955eddfc45c1141b": [
+    "windows-apps-src\\accessibility\\images\\high-contrast-resources.png"
+  ],
+  "918fc9f6acb579d368f8ca273f58d25482b49e34": [
+    "windows-apps-src\\accessibility\\images\\high-contrast-settings.png"
   ]
 }
