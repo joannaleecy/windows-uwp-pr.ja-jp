@@ -5909,6 +5909,9 @@
   "ba3f4fc8584108fefe25de146ae7fc84ee7c9e2c": [
     "windows-apps-src\\security\\credential-locker.md"
   ],
+  "c23e0ba44a5013dca9ceec94ff434a34323d53bc": [
+    "windows-apps-src\\security\\cryptographic-keys.md"
+  ],
   "56cd7ed371bc119b7eebf64b85aea32c9317a7bf": [
     "windows-apps-src\\security\\cryptographic-keys.md"
   ],
@@ -6646,6 +6649,9 @@
   ],
   "7c5e5326340b2caf6ffe2add0dd25fcf1fcc65e0": [
     "windows-apps-src\\xbox-apps\\index.md"
+  ],
+  "c975cb07aa9b7f0d30a9905cbceba11e89c8f7df": [
+    "windows-apps-src\\xbox-apps\\introduction-to-xbox-tools.md"
   ],
   "ad714bfbb9b095e98c242d6203888f712c9bea20": [
     "windows-apps-src\\xbox-apps\\introduction-to-xbox-tools.md"
