@@ -1,42 +1,26 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\security\cryptographic-keys.md](https://github.com/Microsoft/windows-apps/blob/4c8f586f711b1a9e2d2f252cf28a5239d9d68122/windows-apps-src/security/cryptographic-keys.md) | OutofSyncHandedBackSuccess | [Details](#c23e0ba44a5013dca9ceec94ff434a34323d53bc3588)
- [windows-apps-src\xbox-apps\introduction-to-xbox-tools.md](https://github.com/Microsoft/windows-apps/blob/4872ac9587b3e2e14860cb152bf33536faccc48d/windows-apps-src/xbox-apps/introduction-to-xbox-tools.md) | OutofSyncHandedBackSuccess | [Details](#c975cb07aa9b7f0d30a9905cbceba11e89c8f7df3878)
+ [windows-apps-src\app-to-app\receive-data.md](https://github.com/Microsoft/windows-apps/blob/16cc170dbdab3f7691bf281d9e5a8c2ae4f82db7/windows-apps-src/app-to-app/receive-data.md) | OutofSyncHandedBackSuccess | [Details](#0f38a6864cf216bd9488b23ffad5a57a956616ee131)
 
 ## Item Details
-##### <a name='c23e0ba44a5013dca9ceec94ff434a34323d53bc3588'></a> Source: [windows-apps-src\security\cryptographic-keys.md](https://github.com/Microsoft/windows-apps/blob/4c8f586f711b1a9e2d2f252cf28a5239d9d68122/windows-apps-src/security/cryptographic-keys.md)
+##### <a name='0f38a6864cf216bd9488b23ffad5a57a956616ee131'></a> Source: [windows-apps-src\app-to-app\receive-data.md](https://github.com/Microsoft/windows-apps/blob/16cc170dbdab3f7691bf281d9e5a8c2ae4f82db7/windows-apps-src/app-to-app/receive-data.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [cryptographic-keys.3ee8361fc3a620e6542c32a4f3d3dc076be88730.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/d84ee30828d6439e204e0db327356911aa4ae414/ol-handoff/Microsoft/windows-apps.ja-jp/master/cryptographic-keys.3ee8361fc3a620e6542c32a4f3d3dc076be88730.ja-jp.xlf)
-* Handoff Datetime: 2016-06-13 19:02:33
+* Handoff File: [receive-data.f19df9b3eaaa5031aaff9466ca58c05d88244e16.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/b9856139aee44fcd6ab3a5808d8c3914186e09b2/ol-handoff/Microsoft/windows-apps.ja-jp/master/receive-data.f19df9b3eaaa5031aaff9466ca58c05d88244e16.ja-jp.xlf)
+* Handoff Datetime: 2016-06-13 19:30:05
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\security\cryptographic-keys.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/846e73c8aab5d5c623774cf374dd173574bd5761/windows-apps-src/security/cryptographic-keys.md)
-* Current Handback File: [cryptographic-keys.3ee8361fc3a620e6542c32a4f3d3dc076be88730.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/cryptographic-keys.3ee8361fc3a620e6542c32a4f3d3dc076be88730.ja-jp.xlf)
-* Current Handback Datetime: 2016-05-31 12:19:30
-* [Back to Top](#report-top)
-
-##### <a name='c975cb07aa9b7f0d30a9905cbceba11e89c8f7df3878'></a> Source: [windows-apps-src\xbox-apps\introduction-to-xbox-tools.md](https://github.com/Microsoft/windows-apps/blob/4872ac9587b3e2e14860cb152bf33536faccc48d/windows-apps-src/xbox-apps/introduction-to-xbox-tools.md)
-* Status: OutofSyncHandedBackSuccess
-* Target File: 
-* Handoff File: [introduction-to-xbox-tools.e6092d01461c66e8709cbe17d816b0e0c0ad42fc.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/d84ee30828d6439e204e0db327356911aa4ae414/ol-handoff/Microsoft/windows-apps.ja-jp/master/introduction-to-xbox-tools.e6092d01461c66e8709cbe17d816b0e0c0ad42fc.ja-jp.xlf)
-* Handoff Datetime: 2016-06-13 19:02:33
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\xbox-apps\introduction-to-xbox-tools.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/846e73c8aab5d5c623774cf374dd173574bd5761/windows-apps-src/xbox-apps/introduction-to-xbox-tools.md)
-* Current Handback File: [introduction-to-xbox-tools.e6092d01461c66e8709cbe17d816b0e0c0ad42fc.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/introduction-to-xbox-tools.e6092d01461c66e8709cbe17d816b0e0c0ad42fc.ja-jp.xlf)
+* Current Target File: [windows-apps-src\app-to-app\receive-data.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/846e73c8aab5d5c623774cf374dd173574bd5761/windows-apps-src/app-to-app/receive-data.md)
+* Current Handback File: [receive-data.f19df9b3eaaa5031aaff9466ca58c05d88244e16.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/receive-data.f19df9b3eaaa5031aaff9466ca58c05d88244e16.ja-jp.xlf)
 * Current Handback Datetime: 2016-05-31 12:19:30
 * [Back to Top](#report-top)
 
