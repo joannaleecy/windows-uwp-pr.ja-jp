@@ -2641,8 +2641,14 @@
   "f201293d1288c8a065723ee2c05a7da45e5e95ab": [
     "windows-apps-src\\devices-sensors\\aep-service-class-ids.md"
   ],
+  "a419ad04fe4f21867f2f1bd1664fbce39a7da792": [
+    "windows-apps-src\\devices-sensors\\ble-beacon.md"
+  ],
   "411731f22035c0e481edd62f17e524e9896cab7b": [
     "windows-apps-src\\devices-sensors\\ble-beacon.md"
+  ],
+  "f2266207eeb1ec4214ae62dbad2bf4a6437fd69b": [
+    "windows-apps-src\\devices-sensors\\bluetooth.md"
   ],
   "d95deaf557ddc929ce96f28878a518da30e2f5b0": [
     "windows-apps-src\\devices-sensors\\bluetooth.md"
@@ -2677,6 +2683,9 @@
   "33231abb1e573d837193daeee21713f09c7d8448": [
     "windows-apps-src\\devices-sensors\\epson-esc-pos-with-formatting.md"
   ],
+  "664f6ce7829c9e9a6674daa6cdc21e7561ff094b": [
+    "windows-apps-src\\devices-sensors\\gatt-scenarios.md"
+  ],
   "90669478166fc3fc244e0099a292b4f14741d3b5": [
     "windows-apps-src\\devices-sensors\\gatt-scenarios.md"
   ],
@@ -2685,6 +2694,9 @@
   ],
   "716123f7401350748c7eb81a2ca4208a74b6e4ac": [
     "windows-apps-src\\devices-sensors\\get-battery-info.md"
+  ],
+  "f47303826b9d2d2040a2bd2f2dbd5e2da3dd3cd0": [
+    "windows-apps-src\\devices-sensors\\host-card-emulation.md"
   ],
   "9fa2204447ae40d668fe3554766c6599cd4e900e": [
     "windows-apps-src\\devices-sensors\\host-card-emulation.md"
@@ -2788,6 +2800,9 @@
   ],
   "fe01ccf5b0b91ffcca7937842cf0152622d59f9e": [
     "windows-apps-src\\devices-sensors\\scan-from-your-app.md"
+  ],
+  "61e5844f18d09aa170498d261ca1a6fd60ef170c": [
+    "windows-apps-src\\devices-sensors\\send-or-receive-files-with-rfcomm.md"
   ],
   "2060f3a370c7d9ceab187ec45de96c4974009dce": [
     "windows-apps-src\\devices-sensors\\send-or-receive-files-with-rfcomm.md"
@@ -6296,6 +6311,9 @@
   "033669a781aa85cc2c90fa11816e385ffefa997d": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "a391a373acc025490cd86ef7d89db2342f975bb0": [
+    "windows-apps-src\\TOC.md"
+  ],
   "c3b4805e084c6db4960c79292efdca8af43d5b1f": [
     "windows-apps-src\\TOC.md"
   ],
@@ -6772,5 +6790,8 @@
   ],
   "e613d86766c0caf999dff529f5d9f2f7b574348f": [
     "windows-apps-src\\xbox-apps\\tailoring-for-xbox.md"
+  ],
+  "2da839b282015c39bd0046d6cf60ce4f79fc485c": [
+    "windows-apps-src\\devices-sensors\\nfc.md"
   ]
 }

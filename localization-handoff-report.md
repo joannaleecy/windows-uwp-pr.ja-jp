@@ -1,74 +1,119 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 4
+ Total Files | 7
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\debug-test-perf\device-portal.md](https://github.com/Microsoft/windows-apps/blob/c6f00006e656970e4a5bb11e3368faa92cbb8eca/windows-apps-src/debug-test-perf/device-portal.md) | OutofSyncHandedBackSuccess | [Details](#fe4945bf3048a0c38e844a74fa6fc46706085d6d1917)
- [windows-apps-src\devices-sensors\enable-usermode-access.md](https://github.com/Microsoft/windows-apps/blob/f7d7dac79154b1a19eb646e7d29d70b2f6a15e35/windows-apps-src/devices-sensors/enable-usermode-access.md) | OutofSyncHandedBackSuccess | [Details](#eedabee593400ff0260b6d3468ac922285a034f82022)
- [windows-apps-src\in-app-help\guidelines-for-app-help.md](https://github.com/Microsoft/windows-apps/blob/0aa2db498ab7ec25839da259dd0026b0a7cd2b13/windows-apps-src/in-app-help/guidelines-for-app-help.md) | OutofSyncHandedBackSuccess | [Details](#f2522afa91abe26303a85cbfbabd5ec5b3dba59c2624)
- [windows-apps-src\xaml-platform\move-draw-commands-syntax.md](https://github.com/Microsoft/windows-apps/blob/e1399a25b0455c9a79dcb217c5df1a397420d1f3/windows-apps-src/xaml-platform/move-draw-commands-syntax.md) | OutofSyncHandedBackSuccess | [Details](#54c080183104335f4b3920cda8bc396a34298a693798)
+ [windows-apps-src\devices-sensors\ble-beacon.md](https://github.com/Microsoft/windows-apps/blob/62e97bdb8feb78981244c54c76a00910a8442532/windows-apps-src/devices-sensors/ble-beacon.md) | OutofSyncHandedBackSuccess | [Details](#a419ad04fe4f21867f2f1bd1664fbce39a7da7921991)
+ [windows-apps-src\devices-sensors\bluetooth.md](https://github.com/Microsoft/windows-apps/blob/62e97bdb8feb78981244c54c76a00910a8442532/windows-apps-src/devices-sensors/bluetooth.md) | OutofSyncHandedBackSuccess | [Details](#f2266207eeb1ec4214ae62dbad2bf4a6437fd69b1992)
+ [windows-apps-src\devices-sensors\gatt-scenarios.md](https://github.com/Microsoft/windows-apps/blob/62e97bdb8feb78981244c54c76a00910a8442532/windows-apps-src/devices-sensors/gatt-scenarios.md) | OutofSyncHandedBackSuccess | [Details](#664f6ce7829c9e9a6674daa6cdc21e7561ff094b2026)
+ [windows-apps-src\devices-sensors\host-card-emulation.md](https://github.com/Microsoft/windows-apps/blob/62e97bdb8feb78981244c54c76a00910a8442532/windows-apps-src/devices-sensors/host-card-emulation.md) | OutofSyncHandedBackSuccess | [Details](#f47303826b9d2d2040a2bd2f2dbd5e2da3dd3cd02029)
+ [windows-apps-src\devices-sensors\nfc.md](https://github.com/Microsoft/windows-apps/blob/62e97bdb8feb78981244c54c76a00910a8442532/windows-apps-src/devices-sensors/nfc.md) | HandedOffSuccess | [Details](#2da839b282015c39bd0046d6cf60ce4f79fc485c2058)
+ [windows-apps-src\devices-sensors\send-or-receive-files-with-rfcomm.md](https://github.com/Microsoft/windows-apps/blob/62e97bdb8feb78981244c54c76a00910a8442532/windows-apps-src/devices-sensors/send-or-receive-files-with-rfcomm.md) | OutofSyncHandedBackSuccess | [Details](#61e5844f18d09aa170498d261ca1a6fd60ef170c2064)
+ [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/62e97bdb8feb78981244c54c76a00910a8442532/windows-apps-src/TOC.md) | OutofSyncHandedBackSuccess | [Details](#a391a373acc025490cd86ef7d89db2342f975bb03776)
 
 ## Item Details
-##### <a name='fe4945bf3048a0c38e844a74fa6fc46706085d6d1917'></a> Source: [windows-apps-src\debug-test-perf\device-portal.md](https://github.com/Microsoft/windows-apps/blob/c6f00006e656970e4a5bb11e3368faa92cbb8eca/windows-apps-src/debug-test-perf/device-portal.md)
+##### <a name='a419ad04fe4f21867f2f1bd1664fbce39a7da7921991'></a> Source: [windows-apps-src\devices-sensors\ble-beacon.md](https://github.com/Microsoft/windows-apps/blob/62e97bdb8feb78981244c54c76a00910a8442532/windows-apps-src/devices-sensors/ble-beacon.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [device-portal.42fc9b6666795a143b3fca2c18dcbbe09f5edd1d.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/b6894316fd2542525bc3da06b3b0f0675f562ef3/ol-handoff/Microsoft/windows-apps.ja-jp/master/device-portal.42fc9b6666795a143b3fca2c18dcbbe09f5edd1d.ja-jp.xlf)
-* Handoff Datetime: 2016-06-13 15:31:45
+* Handoff File: [ble-beacon.9de1fe094760626af1672cccc60fa5b8949105fd.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/df4c821ad24a39ff0e07e06d06f3d751d00d4137/ol-handoff/Microsoft/windows-apps.ja-jp/master/ble-beacon.9de1fe094760626af1672cccc60fa5b8949105fd.ja-jp.xlf)
+* Handoff Datetime: 2016-06-13 17:31:50
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\debug-test-perf\device-portal.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/846e73c8aab5d5c623774cf374dd173574bd5761/windows-apps-src/debug-test-perf/device-portal.md)
-* Current Handback File: [device-portal.42fc9b6666795a143b3fca2c18dcbbe09f5edd1d.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/device-portal.42fc9b6666795a143b3fca2c18dcbbe09f5edd1d.ja-jp.xlf)
+* Current Target File: [windows-apps-src\devices-sensors\ble-beacon.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/846e73c8aab5d5c623774cf374dd173574bd5761/windows-apps-src/devices-sensors/ble-beacon.md)
+* Current Handback File: [ble-beacon.9de1fe094760626af1672cccc60fa5b8949105fd.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/ble-beacon.9de1fe094760626af1672cccc60fa5b8949105fd.ja-jp.xlf)
 * Current Handback Datetime: 2016-05-31 12:19:30
 * [Back to Top](#report-top)
 
-##### <a name='eedabee593400ff0260b6d3468ac922285a034f82022'></a> Source: [windows-apps-src\devices-sensors\enable-usermode-access.md](https://github.com/Microsoft/windows-apps/blob/f7d7dac79154b1a19eb646e7d29d70b2f6a15e35/windows-apps-src/devices-sensors/enable-usermode-access.md)
+##### <a name='f2266207eeb1ec4214ae62dbad2bf4a6437fd69b1992'></a> Source: [windows-apps-src\devices-sensors\bluetooth.md](https://github.com/Microsoft/windows-apps/blob/62e97bdb8feb78981244c54c76a00910a8442532/windows-apps-src/devices-sensors/bluetooth.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [enable-usermode-access.03d2b42ceea545cfbb5a86cb77d17968d4a4b712.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/b6894316fd2542525bc3da06b3b0f0675f562ef3/ol-handoff/Microsoft/windows-apps.ja-jp/master/enable-usermode-access.03d2b42ceea545cfbb5a86cb77d17968d4a4b712.ja-jp.xlf)
-* Handoff Datetime: 2016-06-13 15:31:45
+* Handoff File: [bluetooth.309edfda5c51b0b2e0a503b2068683a876f60e7f.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/df4c821ad24a39ff0e07e06d06f3d751d00d4137/ol-handoff/Microsoft/windows-apps.ja-jp/master/bluetooth.309edfda5c51b0b2e0a503b2068683a876f60e7f.ja-jp.xlf)
+* Handoff Datetime: 2016-06-13 17:31:50
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\devices-sensors\enable-usermode-access.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/846e73c8aab5d5c623774cf374dd173574bd5761/windows-apps-src/devices-sensors/enable-usermode-access.md)
-* Current Handback File: [enable-usermode-access.03d2b42ceea545cfbb5a86cb77d17968d4a4b712.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/enable-usermode-access.03d2b42ceea545cfbb5a86cb77d17968d4a4b712.ja-jp.xlf)
+* Current Target File: [windows-apps-src\devices-sensors\bluetooth.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/846e73c8aab5d5c623774cf374dd173574bd5761/windows-apps-src/devices-sensors/bluetooth.md)
+* Current Handback File: [bluetooth.309edfda5c51b0b2e0a503b2068683a876f60e7f.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/bluetooth.309edfda5c51b0b2e0a503b2068683a876f60e7f.ja-jp.xlf)
 * Current Handback Datetime: 2016-05-31 12:19:30
 * [Back to Top](#report-top)
 
-##### <a name='f2522afa91abe26303a85cbfbabd5ec5b3dba59c2624'></a> Source: [windows-apps-src\in-app-help\guidelines-for-app-help.md](https://github.com/Microsoft/windows-apps/blob/0aa2db498ab7ec25839da259dd0026b0a7cd2b13/windows-apps-src/in-app-help/guidelines-for-app-help.md)
+##### <a name='664f6ce7829c9e9a6674daa6cdc21e7561ff094b2026'></a> Source: [windows-apps-src\devices-sensors\gatt-scenarios.md](https://github.com/Microsoft/windows-apps/blob/62e97bdb8feb78981244c54c76a00910a8442532/windows-apps-src/devices-sensors/gatt-scenarios.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [guidelines-for-app-help.aaa49aa381d556c0b965721ea6a7c1b8bc21ceaf.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/b6894316fd2542525bc3da06b3b0f0675f562ef3/ol-handoff/Microsoft/windows-apps.ja-jp/master/guidelines-for-app-help.aaa49aa381d556c0b965721ea6a7c1b8bc21ceaf.ja-jp.xlf)
-* Handoff Datetime: 2016-06-13 15:31:45
+* Handoff File: [gatt-scenarios.43ee032e59b4efecfbe97b233ed28385b59938cd.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/df4c821ad24a39ff0e07e06d06f3d751d00d4137/ol-handoff/Microsoft/windows-apps.ja-jp/master/gatt-scenarios.43ee032e59b4efecfbe97b233ed28385b59938cd.ja-jp.xlf)
+* Handoff Datetime: 2016-06-13 17:31:50
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\in-app-help\guidelines-for-app-help.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/846e73c8aab5d5c623774cf374dd173574bd5761/windows-apps-src/in-app-help/guidelines-for-app-help.md)
-* Current Handback File: [guidelines-for-app-help.aaa49aa381d556c0b965721ea6a7c1b8bc21ceaf.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/guidelines-for-app-help.aaa49aa381d556c0b965721ea6a7c1b8bc21ceaf.ja-jp.xlf)
+* Current Target File: [windows-apps-src\devices-sensors\gatt-scenarios.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/846e73c8aab5d5c623774cf374dd173574bd5761/windows-apps-src/devices-sensors/gatt-scenarios.md)
+* Current Handback File: [gatt-scenarios.43ee032e59b4efecfbe97b233ed28385b59938cd.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/gatt-scenarios.43ee032e59b4efecfbe97b233ed28385b59938cd.ja-jp.xlf)
 * Current Handback Datetime: 2016-05-31 12:19:30
 * [Back to Top](#report-top)
 
-##### <a name='54c080183104335f4b3920cda8bc396a34298a693798'></a> Source: [windows-apps-src\xaml-platform\move-draw-commands-syntax.md](https://github.com/Microsoft/windows-apps/blob/e1399a25b0455c9a79dcb217c5df1a397420d1f3/windows-apps-src/xaml-platform/move-draw-commands-syntax.md)
+##### <a name='f47303826b9d2d2040a2bd2f2dbd5e2da3dd3cd02029'></a> Source: [windows-apps-src\devices-sensors\host-card-emulation.md](https://github.com/Microsoft/windows-apps/blob/62e97bdb8feb78981244c54c76a00910a8442532/windows-apps-src/devices-sensors/host-card-emulation.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [move-draw-commands-syntax.d073ef49866bc8693351baace0550221cbdd8795.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/b6894316fd2542525bc3da06b3b0f0675f562ef3/ol-handoff/Microsoft/windows-apps.ja-jp/master/move-draw-commands-syntax.d073ef49866bc8693351baace0550221cbdd8795.ja-jp.xlf)
-* Handoff Datetime: 2016-06-13 15:31:45
+* Handoff File: [host-card-emulation.422b2491370a296d0cfee48dbff136c662e49b1f.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/df4c821ad24a39ff0e07e06d06f3d751d00d4137/ol-handoff/Microsoft/windows-apps.ja-jp/master/host-card-emulation.422b2491370a296d0cfee48dbff136c662e49b1f.ja-jp.xlf)
+* Handoff Datetime: 2016-06-13 17:31:50
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\xaml-platform\move-draw-commands-syntax.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/846e73c8aab5d5c623774cf374dd173574bd5761/windows-apps-src/xaml-platform/move-draw-commands-syntax.md)
-* Current Handback File: [move-draw-commands-syntax.d073ef49866bc8693351baace0550221cbdd8795.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/move-draw-commands-syntax.d073ef49866bc8693351baace0550221cbdd8795.ja-jp.xlf)
+* Current Target File: [windows-apps-src\devices-sensors\host-card-emulation.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/846e73c8aab5d5c623774cf374dd173574bd5761/windows-apps-src/devices-sensors/host-card-emulation.md)
+* Current Handback File: [host-card-emulation.422b2491370a296d0cfee48dbff136c662e49b1f.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/host-card-emulation.422b2491370a296d0cfee48dbff136c662e49b1f.ja-jp.xlf)
+* Current Handback Datetime: 2016-05-31 12:19:30
+* [Back to Top](#report-top)
+
+##### <a name='2da839b282015c39bd0046d6cf60ce4f79fc485c2058'></a> Source: [windows-apps-src\devices-sensors\nfc.md](https://github.com/Microsoft/windows-apps/blob/62e97bdb8feb78981244c54c76a00910a8442532/windows-apps-src/devices-sensors/nfc.md)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [nfc.ea52cf54801c51c66329700232ea82c3751e89a9.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/df4c821ad24a39ff0e07e06d06f3d751d00d4137/ol-handoff/Microsoft/windows-apps.ja-jp/master/nfc.ea52cf54801c51c66329700232ea82c3751e89a9.ja-jp.xlf)
+* Handoff Datetime: 2016-06-13 17:31:50
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* [Back to Top](#report-top)
+
+##### <a name='61e5844f18d09aa170498d261ca1a6fd60ef170c2064'></a> Source: [windows-apps-src\devices-sensors\send-or-receive-files-with-rfcomm.md](https://github.com/Microsoft/windows-apps/blob/62e97bdb8feb78981244c54c76a00910a8442532/windows-apps-src/devices-sensors/send-or-receive-files-with-rfcomm.md)
+* Status: OutofSyncHandedBackSuccess
+* Target File: 
+* Handoff File: [send-or-receive-files-with-rfcomm.bed8c0c84e4b9a5fe0c689ae8bef94f98c9d5dc6.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/df4c821ad24a39ff0e07e06d06f3d751d00d4137/ol-handoff/Microsoft/windows-apps.ja-jp/master/send-or-receive-files-with-rfcomm.bed8c0c84e4b9a5fe0c689ae8bef94f98c9d5dc6.ja-jp.xlf)
+* Handoff Datetime: 2016-06-13 17:31:50
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\devices-sensors\send-or-receive-files-with-rfcomm.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/846e73c8aab5d5c623774cf374dd173574bd5761/windows-apps-src/devices-sensors/send-or-receive-files-with-rfcomm.md)
+* Current Handback File: [send-or-receive-files-with-rfcomm.bed8c0c84e4b9a5fe0c689ae8bef94f98c9d5dc6.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/send-or-receive-files-with-rfcomm.bed8c0c84e4b9a5fe0c689ae8bef94f98c9d5dc6.ja-jp.xlf)
+* Current Handback Datetime: 2016-05-31 12:19:30
+* [Back to Top](#report-top)
+
+##### <a name='a391a373acc025490cd86ef7d89db2342f975bb03776'></a> Source: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/62e97bdb8feb78981244c54c76a00910a8442532/windows-apps-src/TOC.md)
+* Status: OutofSyncHandedBackSuccess
+* Target File: 
+* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/df4c821ad24a39ff0e07e06d06f3d751d00d4137/ol-handoff/Microsoft/windows-apps.ja-jp/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf)
+* Handoff Datetime: 2016-06-13 17:31:50
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/846e73c8aab5d5c623774cf374dd173574bd5761/windows-apps-src/TOC.md)
+* Current Handback File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf)
 * Current Handback Datetime: 2016-05-31 12:19:30
 * [Back to Top](#report-top)
 
