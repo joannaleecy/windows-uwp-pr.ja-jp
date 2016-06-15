@@ -287,6 +287,9 @@
   "3be7289f9b4ffa3a12f60dfb1a3b501273b93db1": [
     "windows-apps-src\\audio-video-camera\\playready-client-sdk.md"
   ],
+  "c575125f1d35f44b873fd3db46d62f89bb726b0b": [
+    "windows-apps-src\\audio-video-camera\\playready-encrypted-media-extension.md"
+  ],
   "79a96c4111926e63a70a31f6016d648ccb86e9fa": [
     "windows-apps-src\\audio-video-camera\\playready-encrypted-media-extension.md"
   ],
