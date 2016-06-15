@@ -6323,6 +6323,9 @@
   "033669a781aa85cc2c90fa11816e385ffefa997d": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "6c74e79fa9e6bb1fc92ff8e14ee3a75db84c5a25": [
+    "windows-apps-src\\TOC.md"
+  ],
   "622bd3a62fea5334ea71feab3817cdfb81cb3aad": [
     "windows-apps-src\\TOC.md"
   ],
@@ -6659,6 +6662,9 @@
   "2d3d6ad9b3375350f6f2cb47d6fd170d39f8fec0": [
     "windows-apps-src\\xbox-apps\\images\\windowsdeviceportal_2.png"
   ],
+  "d50602cf6ba7041d34200e8bc93a14188038b5ae": [
+    "windows-apps-src\\xbox-apps\\index.md"
+  ],
   "df4cfcab9456f8c8416cb13ed59e151d782eabe8": [
     "windows-apps-src\\xbox-apps\\index.md"
   ],
@@ -6850,6 +6856,9 @@
   ],
   "8329e72e84d3068305908141019aeb4cd0c93f09": [
     "windows-apps-src\\xbox-apps\\development-lanes-html.md"
+  ],
+  "3fa8248662a4ad08d46e89c6c5b14ace56212b62": [
+    "windows-apps-src\\xbox-apps\\development-lanes-landing.md"
   ],
   "0368e551c57c37614ff088790d3695d9bb5d0c5c": [
     "windows-apps-src\\xbox-apps\\development-lanes-landing.md"
