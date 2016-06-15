@@ -1,5 +1,5 @@
 {
-  "LastProcessedCommit": "bdf7a32d2f0673ab6c176a775b805eff2b7cf437",
+  "LastProcessedCommit": "807670bc737153b77d57441461b9ca7c83a77a44",
   "LastTranslatedCommit": "846e73c8aab5d5c623774cf374dd173574bd5761",
   "Items": {
     "3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3": {
@@ -81947,6 +81947,42 @@
       "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\tailoring-for-xbox.bacdeb3e45dfd5c8fe0387ee2d4a2903bd006a24.ja-jp.xlf",
       "HandoffFileCommit": "17aef72cf3ceed5704fbe27f7967894282a93edd",
       "HandoffDateTime": "2016-06-15T15:47:31.5696092Z",
+      "HandoffPriority": "",
+      "HandoffException": null,
+      "HandoffFailureTimes": 0,
+      "TargetFileCommit": null,
+      "TargetFilePath": null,
+      "HandbackFilePath": null,
+      "HandbackFileCommit": null,
+      "HandbackDateTime": "0001-01-01T00:00:00",
+      "HandbackException": null,
+      "HandbackFailureTimes": 0,
+      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": null,
+      "ArchiveFileCommit": null,
+      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveException": null,
+      "BilingualFilePath": null,
+      "BilingualFileCommit": null,
+      "BilingualDateTime": "0001-01-01T00:00:00",
+      "BilingualException": null
+    },
+    "766be26fa9692fb7d435e5b737eb73493659dead": {
+      "FileHash": "766be26fa9692fb7d435e5b737eb73493659dead",
+      "SourceFileCommit": "807670bc737153b77d57441461b9ca7c83a77a44",
+      "SourceFilePath": "windows-apps-src\\xbox-apps\\images\\windows-store-app-activation-error.jpg",
+      "HandoffReason": 2,
+      "DependencyFrom": [
+        "windows-apps-src\\xbox-apps\\known-issues.md"
+      ],
+      "TokenReference": null,
+      "FilePathList": [
+        "windows-apps-src\\xbox-apps\\images\\windows-store-app-activation-error.jpg"
+      ],
+      "HasMetadata": false,
+      "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\766be26fa9692fb7d435e5b737eb73493659dead.jpg",
+      "HandoffFileCommit": "a17e1f427f4057a67f4a715c41f8a5fcf18a5089",
+      "HandoffDateTime": "2016-06-15T18:51:53.6982696Z",
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,

@@ -6902,6 +6902,9 @@
   "33bba6de6fd82601f77bf393e80fe5ae4768e253": [
     "windows-apps-src\\xbox-apps\\images\\x64-build-platform.png"
   ],
+  "766be26fa9692fb7d435e5b737eb73493659dead": [
+    "windows-apps-src\\xbox-apps\\images\\windows-store-app-activation-error.jpg"
+  ],
   "45db2b325ab38da7d9b549a7a79698fdb64347d8": [
     "windows-apps-src\\xbox-apps\\images\\windows-store-app-activation-error.jpg"
   ]
