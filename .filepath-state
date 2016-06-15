@@ -6536,6 +6536,9 @@
   "ae2f80a915f4aed90c269c37a11d01a2f6c9849e": [
     "windows-apps-src\\xbox-apps\\automate-launching-uwp-apps.md"
   ],
+  "d56206f990e7885af4935401356bd3a2ce2cd292": [
+    "windows-apps-src\\xbox-apps\\development-environment-setup.md"
+  ],
   "e6fdd7bbab07f16d13a4c6399273ac47c62e3030": [
     "windows-apps-src\\xbox-apps\\development-environment-setup.md"
   ],
@@ -6548,6 +6551,9 @@
   "0751598ba50d69e1667b20ddc03f30d65ce08002": [
     "windows-apps-src\\xbox-apps\\devkit-deactivation.md"
   ],
+  "34e186049039d5a8366f34e985ad7250ef664f00": [
+    "windows-apps-src\\xbox-apps\\frequently-asked-questions.md"
+  ],
   "3d05a5d4bc863daa0e136305ddd2c55606d7eebc": [
     "windows-apps-src\\xbox-apps\\frequently-asked-questions.md"
   ],
@@ -6556,6 +6562,9 @@
   ],
   "d8bccfbc543f4c3be5c8c1c30fe851234c4d51b9": [
     "windows-apps-src\\xbox-apps\\frequently-asked-questions.md"
+  ],
+  "b070b6bec350c3c893f934e212b1de743b349861": [
+    "windows-apps-src\\xbox-apps\\getting-started.md"
   ],
   "b3509114cee233b451dbe769b945c354e713d555": [
     "windows-apps-src\\xbox-apps\\getting-started.md"
@@ -6686,6 +6695,9 @@
   "ad714bfbb9b095e98c242d6203888f712c9bea20": [
     "windows-apps-src\\xbox-apps\\introduction-to-xbox-tools.md"
   ],
+  "9a9180f8d6fcd51808310a7f8fbac986ca9c3817": [
+    "windows-apps-src\\xbox-apps\\known-issues.md"
+  ],
   "17be11b950a718374237c451b8b948bae1318dd7": [
     "windows-apps-src\\xbox-apps\\known-issues.md"
   ],
@@ -6809,6 +6821,9 @@
   "8ed92160837f6cd4e70f7a44791fdf6e67d35e20": [
     "windows-apps-src\\debug-test-perf\\version-adaptive-code.md"
   ],
+  "bd7780f105f86d7d292c5db2535ad40af07d6e4f": [
+    "windows-apps-src\\xbox-apps\\how-to-disable-mouse-mode.md"
+  ],
   "ebe1cb10f1ac4c46bb099e05948d79ef45400f85": [
     "windows-apps-src\\xbox-apps\\how-to-disable-mouse-mode.md"
   ],
@@ -6823,6 +6838,9 @@
   ],
   "65416dd2b6c8656078b63c316f3972cda9c792fc": [
     "windows-apps-src\\xbox-apps\\disable-scaling.md"
+  ],
+  "ef0fef1dd43444771add4ed6d9db1300f8d33210": [
+    "windows-apps-src\\xbox-apps\\tailoring-for-xbox.md"
   ],
   "a0bdb3da21e091d7052628d4f9e2166dcc9e1864": [
     "windows-apps-src\\xbox-apps\\tailoring-for-xbox.md"
@@ -6883,5 +6901,8 @@
   ],
   "33bba6de6fd82601f77bf393e80fe5ae4768e253": [
     "windows-apps-src\\xbox-apps\\images\\x64-build-platform.png"
+  ],
+  "45db2b325ab38da7d9b549a7a79698fdb64347d8": [
+    "windows-apps-src\\xbox-apps\\images\\windows-store-app-activation-error.jpg"
   ]
 }
