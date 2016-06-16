@@ -5297,6 +5297,9 @@
   "24e0fc3e3734fceed3af20acd7f84862ffcdc314": [
     "windows-apps-src\\porting\\desktop-to-uwp-root.md"
   ],
+  "cc413514d0e2b81a1c7654575742506531455521": [
+    "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
+  ],
   "874b6452386526d66062a27a5b520cb1a232ae64": [
     "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
   ],
@@ -6329,6 +6332,9 @@
   "033669a781aa85cc2c90fa11816e385ffefa997d": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "056877f8c36022ae314652a851acb1b78b72c8fe": [
+    "windows-apps-src\\TOC.md"
+  ],
   "f1230ffea3d7dffaf3073b7e60cf2c19978faa92": [
     "windows-apps-src\\TOC.md"
   ],
@@ -6925,5 +6931,17 @@
   ],
   "30efa290f3fbf169666e16247be8d116f23ab02d": [
     "windows-apps-src\\porting\\desktop-to-uwp-signing.md"
+  ],
+  "dc47f33127d9c5428ef56c6edac716fdeb7d6396": [
+    "windows-apps-src\\xbox-apps\\reference.md"
+  ],
+  "942ddc13b0deba382ad7758bc30bd9a5b0cceb11": [
+    "windows-apps-src\\xbox-apps\\wdp-folder-upload.md"
+  ],
+  "2e32c4d516a35b5f5bd8d57bce75ff8bdce6b461": [
+    "windows-apps-src\\xbox-apps\\wdp-media-capture-api.md"
+  ],
+  "a2cc311d09fe5e5bff4ba103bda264ef6b2e4f5d": [
+    "windows-apps-src\\xbox-apps\\wdp-user-management.md"
   ]
 }
