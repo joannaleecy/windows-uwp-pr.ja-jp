@@ -6338,6 +6338,9 @@
   "033669a781aa85cc2c90fa11816e385ffefa997d": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "338e2e8fa71e6e0802e019aad136e03d53fd929f": [
+    "windows-apps-src\\TOC.md"
+  ],
   "0c418f8a3341d2514dd03409d4a894586a08ab42": [
     "windows-apps-src\\TOC.md"
   ],
@@ -6716,6 +6719,9 @@
   "7c5e5326340b2caf6ffe2add0dd25fcf1fcc65e0": [
     "windows-apps-src\\xbox-apps\\index.md"
   ],
+  "e2f87cdeb8ce3371a34bb989e5fa29ef63d18621": [
+    "windows-apps-src\\xbox-apps\\introduction-to-xbox-tools.md"
+  ],
   "5e5e620e2c50eb5a5cf8948194555e836d4dd8a7": [
     "windows-apps-src\\xbox-apps\\introduction-to-xbox-tools.md"
   ],
@@ -6890,6 +6896,9 @@
   "918fc9f6acb579d368f8ca273f58d25482b49e34": [
     "windows-apps-src\\accessibility\\images\\high-contrast-settings.png"
   ],
+  "f205be45bc7b6f4cc2c36faa0c5bb3a4a9ab2f36": [
+    "windows-apps-src\\xbox-apps\\whats-new.md"
+  ],
   "c29c7cd89d5cba430d7a8891717e53019069f1fb": [
     "windows-apps-src\\xbox-apps\\whats-new.md"
   ],
@@ -6959,19 +6968,34 @@
   "2e32c4d516a35b5f5bd8d57bce75ff8bdce6b461": [
     "windows-apps-src\\xbox-apps\\wdp-media-capture-api.md"
   ],
+  "ad01d4daf089c61fc50c7927cfbf123d7d7ee4df": [
+    "windows-apps-src\\xbox-apps\\wdp-user-management.md"
+  ],
   "a2cc311d09fe5e5bff4ba103bda264ef6b2e4f5d": [
     "windows-apps-src\\xbox-apps\\wdp-user-management.md"
+  ],
+  "41e4cc67120b9e32fac34404ca918edcf58ba267": [
+    "windows-apps-src\\xbox-apps\\wdp-loose-folder-register-api.md"
   ],
   "cb26ea1d80e6d370f16785429a683159f2134ad1": [
     "windows-apps-src\\xbox-apps\\wdp-loose-folder-register-api.md"
   ],
+  "c1671db55dcb05ab7a126fad271a5e49146fe9ac": [
+    "windows-apps-src\\xbox-apps\\wdp-sandbox-api.md"
+  ],
   "1b9a0fc4b536b5091f489a9dc9b4d06c2902a887": [
     "windows-apps-src\\xbox-apps\\wdp-sandbox-api.md"
+  ],
+  "5efe2af3524d97e6014c4d6be2a8f1aef22f2e66": [
+    "windows-apps-src\\xbox-apps\\wdp-smb-api.md"
   ],
   "c7dd765c432a08653c2ff1abcbb2accab2993874": [
     "windows-apps-src\\xbox-apps\\wdp-smb-api.md"
   ],
   "52fb6e76bd7ad35127eeebeced8f6f8cc076fb7f": [
     "windows-apps-src\\xbox-apps\\wdp-xboxsettings-api.md"
+  ],
+  "38f2936d9b02305ff9a377a47bedfdac43314e75": [
+    "windows-apps-src\\xbox-apps\\images\\devhome_storage.png"
   ]
 }
