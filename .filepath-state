@@ -6698,6 +6698,9 @@
   "7c5e5326340b2caf6ffe2add0dd25fcf1fcc65e0": [
     "windows-apps-src\\xbox-apps\\index.md"
   ],
+  "5e5e620e2c50eb5a5cf8948194555e836d4dd8a7": [
+    "windows-apps-src\\xbox-apps\\introduction-to-xbox-tools.md"
+  ],
   "c975cb07aa9b7f0d30a9905cbceba11e89c8f7df": [
     "windows-apps-src\\xbox-apps\\introduction-to-xbox-tools.md"
   ],
@@ -6868,6 +6871,9 @@
   ],
   "918fc9f6acb579d368f8ca273f58d25482b49e34": [
     "windows-apps-src\\accessibility\\images\\high-contrast-settings.png"
+  ],
+  "bef6ee26876bdbb30799dd194279a493dbfa0a06": [
+    "windows-apps-src\\xbox-apps\\whats-new.md"
   ],
   "27bf792b2fb3c72723ee5b3e1d8d28e63b6405e5": [
     "windows-apps-src\\xbox-apps\\whats-new.md"
