@@ -1,32 +1,19 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\porting\desktop-to-uwp-signing.md](https://github.com/Microsoft/windows-apps/blob/b038886ff0dfe1e2f6d93e9393062faa253f5130/windows-apps-src/porting/desktop-to-uwp-signing.md) | HandedOffSuccess | [Details](#30efa290f3fbf169666e16247be8d116f23ab02d3383)
- [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/866b95bcf2faf48d279ca250d494ae0ae84206f0/windows-apps-src/TOC.md) | OutofSyncHandedBackSuccess | [Details](#a816f1e992c7e2731ba8d1779c26ff3d87b99cd03780)
+ [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/cea59b2c5a1c28f643fb22ddde97eb1e18a9fb23/windows-apps-src/TOC.md) | OutofSyncHandedBackSuccess | [Details](#f1230ffea3d7dffaf3073b7e60cf2c19978faa923780)
 
 ## Item Details
-##### <a name='30efa290f3fbf169666e16247be8d116f23ab02d3383'></a> Source: [windows-apps-src\porting\desktop-to-uwp-signing.md](https://github.com/Microsoft/windows-apps/blob/b038886ff0dfe1e2f6d93e9393062faa253f5130/windows-apps-src/porting/desktop-to-uwp-signing.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [desktop-to-uwp-signing.8d6b96e6fd97cf0e14ba93fd01681c522709a3b4.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/378b6be983cefc8876e61e092ae3a76e20f44e1a/ol-handoff/Microsoft/windows-apps.ja-jp/master/desktop-to-uwp-signing.8d6b96e6fd97cf0e14ba93fd01681c522709a3b4.ja-jp.xlf)
-* Handoff Datetime: 2016-06-15 22:10:52
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='a816f1e992c7e2731ba8d1779c26ff3d87b99cd03780'></a> Source: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/866b95bcf2faf48d279ca250d494ae0ae84206f0/windows-apps-src/TOC.md)
+##### <a name='f1230ffea3d7dffaf3073b7e60cf2c19978faa923780'></a> Source: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/cea59b2c5a1c28f643fb22ddde97eb1e18a9fb23/windows-apps-src/TOC.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/378b6be983cefc8876e61e092ae3a76e20f44e1a/ol-handoff/Microsoft/windows-apps.ja-jp/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf)
-* Handoff Datetime: 2016-06-15 22:10:52
+* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/df448d4541ae6b33ff22370e1b3ffcd37111d12a/ol-handoff/Microsoft/windows-apps.ja-jp/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf)
+* Handoff Datetime: 2016-06-16 18:21:07
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
