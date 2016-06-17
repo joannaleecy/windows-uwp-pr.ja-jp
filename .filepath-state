@@ -329,6 +329,9 @@
   "70dfce318d37d6790585b0fa5da50963f95495dc": [
     "windows-apps-src\\contacts-and-calendar\\sending-an-sms-message.md"
   ],
+  "ff0d2cd86f8ba422db7a26565c52293a3e21a018": [
+    "windows-apps-src\\contacts-and-calendar\\sending-email.md"
+  ],
   "b4b5b029c321256028993e283395a91bd0ed3d7c": [
     "windows-apps-src\\contacts-and-calendar\\sending-email.md"
   ],
@@ -3076,6 +3079,9 @@
   ],
   "4bb1f5c71d83b2dc3271b5b2ceaa9a1156b00004": [
     "windows-apps-src\\gaming\\implementing-depth-buffers-for-shadow-mapping.md"
+  ],
+  "e5447f6238ece768513d160579e1c7e89b04e509": [
+    "windows-apps-src\\gaming\\index.md"
   ],
   "faedddba64ec08d99b95da9e71521006ebcdfbd6": [
     "windows-apps-src\\gaming\\index.md"
@@ -6350,6 +6356,9 @@
   "033669a781aa85cc2c90fa11816e385ffefa997d": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "c0a71fa7546fd5f2c7b53b75590797045946ea7f": [
+    "windows-apps-src\\TOC.md"
+  ],
   "8d353f5d7134ebf846b363e830420baa71ffda40": [
     "windows-apps-src\\TOC.md"
   ],
@@ -6941,8 +6950,14 @@
   "81b78be1018323d0f0fa2d0a1bb31836e9f7c88f": [
     "windows-apps-src\\xbox-apps\\development-lanes-custom-cpp.md"
   ],
+  "a7b891cf8373e989a0a3bebb0f40be9026ce42b4": [
+    "windows-apps-src\\xbox-apps\\development-lanes-html.md"
+  ],
   "8329e72e84d3068305908141019aeb4cd0c93f09": [
     "windows-apps-src\\xbox-apps\\development-lanes-html.md"
+  ],
+  "54db2390b5df3b5c6bc7ca6f7d6e36454435c543": [
+    "windows-apps-src\\xbox-apps\\development-lanes-landing.md"
   ],
   "3fa8248662a4ad08d46e89c6c5b14ace56212b62": [
     "windows-apps-src\\xbox-apps\\development-lanes-landing.md"
@@ -7036,5 +7051,8 @@
   ],
   "d9b252783213f0c6a82944729f98c84e21d56535": [
     "windows-apps-src\\gaming\\cloud-for-games.md"
+  ],
+  "2b78d767a7ac75e27f759c0eb06953e6158fb88b": [
+    "windows-apps-src\\gaming\\accessibility-for-games.md"
   ]
 }
