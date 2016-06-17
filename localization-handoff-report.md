@@ -1,42 +1,55 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 3
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\controls-and-patterns\tiles-and-notifications-create-adaptive-tiles.md](https://github.com/Microsoft/windows-apps/blob/a6632c7b8fdee5320f35e316abd318193a254c51/windows-apps-src/controls-and-patterns/tiles-and-notifications-create-adaptive-tiles.md) | OutofSyncHandedBackSuccess | [Details](#6cd4519007d1241cb7c411dade1a092140b598c41874)
- [windows-apps-src\controls-and-patterns\tiles-and-notifications-creating-tiles.md](https://github.com/Microsoft/windows-apps/blob/d3fe62d4de00c42079d62d105acdbb21e296ba5f/windows-apps-src/controls-and-patterns/tiles-and-notifications-creating-tiles.md) | OutofSyncHandedBackSuccess | [Details](#a9f5d25dfd359364fa8e16666b03c7c105a867dd1875)
+ [windows-apps-src\gaming\cloud-for-games.md](https://github.com/Microsoft/windows-apps/blob/b25f02dc4ebcf960882e64f66f0306a8e584ebbd/windows-apps-src/gaming/cloud-for-games.md) | HandedOffSuccess | [Details](#d9b252783213f0c6a82944729f98c84e21d565352111)
+ [windows-apps-src\gaming\index.md](https://github.com/Microsoft/windows-apps/blob/d9e21a65801d9701fd65156d0cdba35670f6111e/windows-apps-src/gaming/index.md) | OutofSyncHandedBackSuccess | [Details](#faedddba64ec08d99b95da9e71521006ebcdfbd62158)
+ [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/57b8db3d403a1ccfeeea047e7c58197a1752dd78/windows-apps-src/TOC.md) | OutofSyncHandedBackSuccess | [Details](#8d353f5d7134ebf846b363e830420baa71ffda403796)
 
 ## Item Details
-##### <a name='6cd4519007d1241cb7c411dade1a092140b598c41874'></a> Source: [windows-apps-src\controls-and-patterns\tiles-and-notifications-create-adaptive-tiles.md](https://github.com/Microsoft/windows-apps/blob/a6632c7b8fdee5320f35e316abd318193a254c51/windows-apps-src/controls-and-patterns/tiles-and-notifications-create-adaptive-tiles.md)
-* Status: OutofSyncHandedBackSuccess
+##### <a name='d9b252783213f0c6a82944729f98c84e21d565352111'></a> Source: [windows-apps-src\gaming\cloud-for-games.md](https://github.com/Microsoft/windows-apps/blob/b25f02dc4ebcf960882e64f66f0306a8e584ebbd/windows-apps-src/gaming/cloud-for-games.md)
+* Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [tiles-and-notifications-create-adaptive-tiles.a3537ad1a37c0180318730d25d779ce32d83d8ae.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/097f6e0eb30bde1446d842cbfe84fee105f6045b/ol-handoff/Microsoft/windows-apps.ja-jp/master/tiles-and-notifications-create-adaptive-tiles.a3537ad1a37c0180318730d25d779ce32d83d8ae.ja-jp.xlf)
-* Handoff Datetime: 2016-06-17 21:19:57
+* Handoff File: [cloud-for-games.3663687797401afed76a6c0531ae5359fe2d96fe.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/00de48bd6d69d764583dc63009cd30d4ec90604c/ol-handoff/Microsoft/windows-apps.ja-jp/master/cloud-for-games.3663687797401afed76a6c0531ae5359fe2d96fe.ja-jp.xlf)
+* Handoff Datetime: 2016-06-17 22:22:56
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\controls-and-patterns\tiles-and-notifications-create-adaptive-tiles.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/846e73c8aab5d5c623774cf374dd173574bd5761/windows-apps-src/controls-and-patterns/tiles-and-notifications-create-adaptive-tiles.md)
-* Current Handback File: [tiles-and-notifications-create-adaptive-tiles.a3537ad1a37c0180318730d25d779ce32d83d8ae.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/tiles-and-notifications-create-adaptive-tiles.a3537ad1a37c0180318730d25d779ce32d83d8ae.ja-jp.xlf)
+* [Back to Top](#report-top)
+
+##### <a name='faedddba64ec08d99b95da9e71521006ebcdfbd62158'></a> Source: [windows-apps-src\gaming\index.md](https://github.com/Microsoft/windows-apps/blob/d9e21a65801d9701fd65156d0cdba35670f6111e/windows-apps-src/gaming/index.md)
+* Status: OutofSyncHandedBackSuccess
+* Target File: 
+* Handoff File: [index.2206b707c2a82ebad9f7cf1f06a7ad9bf16bee51.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/00de48bd6d69d764583dc63009cd30d4ec90604c/ol-handoff/Microsoft/windows-apps.ja-jp/master/index.2206b707c2a82ebad9f7cf1f06a7ad9bf16bee51.ja-jp.xlf)
+* Handoff Datetime: 2016-06-17 22:22:56
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\gaming\index.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/846e73c8aab5d5c623774cf374dd173574bd5761/windows-apps-src/gaming/index.md)
+* Current Handback File: [index.2206b707c2a82ebad9f7cf1f06a7ad9bf16bee51.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/index.2206b707c2a82ebad9f7cf1f06a7ad9bf16bee51.ja-jp.xlf)
 * Current Handback Datetime: 2016-05-31 12:19:30
 * [Back to Top](#report-top)
 
-##### <a name='a9f5d25dfd359364fa8e16666b03c7c105a867dd1875'></a> Source: [windows-apps-src\controls-and-patterns\tiles-and-notifications-creating-tiles.md](https://github.com/Microsoft/windows-apps/blob/d3fe62d4de00c42079d62d105acdbb21e296ba5f/windows-apps-src/controls-and-patterns/tiles-and-notifications-creating-tiles.md)
+##### <a name='8d353f5d7134ebf846b363e830420baa71ffda403796'></a> Source: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/57b8db3d403a1ccfeeea047e7c58197a1752dd78/windows-apps-src/TOC.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [tiles-and-notifications-creating-tiles.1548103e2b1dcbebe686bdf7595aef478570f55a.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/097f6e0eb30bde1446d842cbfe84fee105f6045b/ol-handoff/Microsoft/windows-apps.ja-jp/master/tiles-and-notifications-creating-tiles.1548103e2b1dcbebe686bdf7595aef478570f55a.ja-jp.xlf)
-* Handoff Datetime: 2016-06-17 21:19:57
+* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/00de48bd6d69d764583dc63009cd30d4ec90604c/ol-handoff/Microsoft/windows-apps.ja-jp/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf)
+* Handoff Datetime: 2016-06-17 22:22:56
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\controls-and-patterns\tiles-and-notifications-creating-tiles.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/846e73c8aab5d5c623774cf374dd173574bd5761/windows-apps-src/controls-and-patterns/tiles-and-notifications-creating-tiles.md)
-* Current Handback File: [tiles-and-notifications-creating-tiles.1548103e2b1dcbebe686bdf7595aef478570f55a.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/tiles-and-notifications-creating-tiles.1548103e2b1dcbebe686bdf7595aef478570f55a.ja-jp.xlf)
+* Current Target File: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/846e73c8aab5d5c623774cf374dd173574bd5761/windows-apps-src/TOC.md)
+* Current Handback File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf)
 * Current Handback Datetime: 2016-05-31 12:19:30
 * [Back to Top](#report-top)
 

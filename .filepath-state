@@ -3077,6 +3077,9 @@
   "4bb1f5c71d83b2dc3271b5b2ceaa9a1156b00004": [
     "windows-apps-src\\gaming\\implementing-depth-buffers-for-shadow-mapping.md"
   ],
+  "faedddba64ec08d99b95da9e71521006ebcdfbd6": [
+    "windows-apps-src\\gaming\\index.md"
+  ],
   "b690fa9a97898da49646e39c982465a4a41adb7a": [
     "windows-apps-src\\gaming\\index.md"
   ],
@@ -6347,6 +6350,9 @@
   "033669a781aa85cc2c90fa11816e385ffefa997d": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "8d353f5d7134ebf846b363e830420baa71ffda40": [
+    "windows-apps-src\\TOC.md"
+  ],
   "a88e5fd1900c798371eee0d454c1ca4ce8360bb3": [
     "windows-apps-src\\TOC.md"
   ],
@@ -7027,5 +7033,8 @@
   ],
   "8f58f3b26bf25473e66ce14ec084f1583695a894": [
     "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\pivot-underline.png"
+  ],
+  "d9b252783213f0c6a82944729f98c84e21d56535": [
+    "windows-apps-src\\gaming\\cloud-for-games.md"
   ]
 }
