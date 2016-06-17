@@ -2292,8 +2292,14 @@
   "b79a6f771afe63c9a42567875db5ef8107611afc": [
     "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-choosing-a-notification-delivery-method.md"
   ],
+  "6cd4519007d1241cb7c411dade1a092140b598c4": [
+    "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-create-adaptive-tiles.md"
+  ],
   "0bcdc9570365ca0dcacf4f9c0c1b99afaffcf157": [
     "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-create-adaptive-tiles.md"
+  ],
+  "a9f5d25dfd359364fa8e16666b03c7c105a867dd": [
+    "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-creating-tiles.md"
   ],
   "a440a9abaf150dac6ed95d881261b80521a734c0": [
     "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-creating-tiles.md"
