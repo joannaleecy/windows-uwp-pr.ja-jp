@@ -3638,6 +3638,9 @@
   "7d91cef0955dbf8544f658369ee488c47aaef787": [
     "windows-apps-src\\input-and-devices\\define-custom-recognition-constraints.md"
   ],
+  "f64ed435a285d6d0a8a6d9763b7f23d3a120ffa0": [
+    "windows-apps-src\\input-and-devices\\designing-for-tv.md"
+  ],
   "daa1df78409bd10ee1d5c24e8874e011d4005a82": [
     "windows-apps-src\\input-and-devices\\designing-for-tv.md"
   ],
@@ -7003,5 +7006,20 @@
   ],
   "38f2936d9b02305ff9a377a47bedfdac43314e75": [
     "windows-apps-src\\xbox-apps\\images\\devhome_storage.png"
+  ],
+  "b3bcf74f7d1910b245a2cb63d758e1abeee68fc8": [
+    "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\commandbar.png"
+  ],
+  "1b9e115fc6d14a6db74e4bbfa78a04606db634b5": [
+    "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\commandbar-overflow.png"
+  ],
+  "2992406884de7e5d9e2c93f54ba9b18c75f922ec": [
+    "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\pivot-headers-carousel.png"
+  ],
+  "2846ceab00f8b5ea9e9fe3bccd4bcccd5bdf2457": [
+    "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\pivot-headers-focus.png"
+  ],
+  "8f58f3b26bf25473e66ce14ec084f1583695a894": [
+    "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\pivot-underline.png"
   ]
 }
