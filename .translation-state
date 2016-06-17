@@ -1,5 +1,5 @@
 {
-  "LastProcessedCommit": "7b6e6f488bc53ea5c9f28ef07c08774ba6977893",
+  "LastProcessedCommit": "59019f209729b56e02ebdbdfd53a8fbf835c69f7",
   "LastTranslatedCommit": "846e73c8aab5d5c623774cf374dd173574bd5761",
   "Items": {
     "3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3": {
@@ -83007,6 +83007,40 @@
       "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\whats-new.b8d20ae2cec9ae573cc97899a792d28d9922e924.ja-jp.xlf",
       "HandoffFileCommit": "b4d66fcf9744af4d89c8786ecf0dfe524d5f4510",
       "HandoffDateTime": "2016-06-16T22:34:15.6534938Z",
+      "HandoffPriority": "",
+      "HandoffException": null,
+      "HandoffFailureTimes": 0,
+      "TargetFileCommit": null,
+      "TargetFilePath": null,
+      "HandbackFilePath": null,
+      "HandbackFileCommit": null,
+      "HandbackDateTime": "0001-01-01T00:00:00",
+      "HandbackException": null,
+      "HandbackFailureTimes": 0,
+      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": null,
+      "ArchiveFileCommit": null,
+      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveException": null,
+      "BilingualFilePath": null,
+      "BilingualFileCommit": null,
+      "BilingualDateTime": "0001-01-01T00:00:00",
+      "BilingualException": null
+    },
+    "dfa94ad42a79d0f6b3f72fbf2efe9ce043532c56": {
+      "FileHash": "dfa94ad42a79d0f6b3f72fbf2efe9ce043532c56",
+      "SourceFileCommit": "59019f209729b56e02ebdbdfd53a8fbf835c69f7",
+      "SourceFilePath": "windows-apps-src\\xbox-apps\\whats-new.md",
+      "HandoffReason": 1,
+      "DependencyFrom": null,
+      "TokenReference": null,
+      "FilePathList": [
+        "windows-apps-src\\xbox-apps\\whats-new.md"
+      ],
+      "HasMetadata": true,
+      "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\whats-new.b8d20ae2cec9ae573cc97899a792d28d9922e924.ja-jp.xlf",
+      "HandoffFileCommit": "3db900e1c192d38a6eca5fe377e49a70ecfeb9ef",
+      "HandoffDateTime": "2016-06-17T15:21:03.9169269Z",
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
