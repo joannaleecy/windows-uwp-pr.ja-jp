@@ -110,6 +110,9 @@
   "433cda6432d1e695bacb338e68012bcc9c837eb6": [
     "windows-apps-src\\app-settings\\store-and-retrieve-app-data.md"
   ],
+  "3e3ba8811f4fac283164143aad88913aaabbee49": [
+    "windows-apps-src\\app-to-app\\copy-and-paste.md"
+  ],
   "ed1dc1ca0f34f0efafd14aa1cfd1e4b75351882c": [
     "windows-apps-src\\app-to-app\\copy-and-paste.md"
   ],
@@ -151,6 +154,9 @@
   ],
   "250826fd8f8c4490e62220df0398a7272d4b7b68": [
     "windows-apps-src\\app-to-app\\receive-data.md"
+  ],
+  "a91f0eb8b62a860809f8ffb63278be1eff31a2f3": [
+    "windows-apps-src\\app-to-app\\share-data.md"
   ],
   "de9d4e88cfc00d5e428b8ddb8a27cc4ffd619e85": [
     "windows-apps-src\\app-to-app\\share-data.md"
