@@ -2463,6 +2463,9 @@
   "7404a90fc9efc05d4e2bb83321bb2ba80b8378ce": [
     "windows-apps-src\\debug-test-perf\\beta-testing.md"
   ],
+  "15eb48fd3e871b3a1a15d8fbbed526cf6d935c1f": [
+    "windows-apps-src\\debug-test-perf\\deploying-and-debugging-uwp-apps.md"
+  ],
   "eb639e78bf144572dfbfd2d65514bb4eff7c7be1": [
     "windows-apps-src\\debug-test-perf\\deploying-and-debugging-uwp-apps.md"
   ],
@@ -2637,6 +2640,9 @@
   ],
   "3fb6a0469a0e7488c40fc03bce8c90780b524656": [
     "windows-apps-src\\debug-test-perf\\improve-garbage-collection-performance.md"
+  ],
+  "c10c1443ac5a0f4cbf07cf0accc8361ad9100168": [
+    "windows-apps-src\\debug-test-perf\\index.md"
   ],
   "1d6187470e8e1578af833221089a76261ebad1e4": [
     "windows-apps-src\\debug-test-perf\\index.md"
@@ -6398,6 +6404,9 @@
   "033669a781aa85cc2c90fa11816e385ffefa997d": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "54326f7f29a053e2881f31e7b519332476bda33f": [
+    "windows-apps-src\\TOC.md"
+  ],
   "c0a71fa7546fd5f2c7b53b75590797045946ea7f": [
     "windows-apps-src\\TOC.md"
   ],
@@ -7111,5 +7120,20 @@
   ],
   "02d7f5ca1b73b1b300cd7e6608a9e939ae171b62": [
     "windows-apps-src\\controls-and-patterns\\images\\pivot_w_hand.png"
+  ],
+  "fd6637653162ccabf42cbbc518b75cf3dbdd385c": [
+    "windows-apps-src\\debug-test-perf\\images\\gs-debug-uwp-apps-001.png"
+  ],
+  "232002c893c203576bc41eb6e538b51eb3633ddb": [
+    "windows-apps-src\\debug-test-perf\\images\\gs-debug-uwp-apps-002.png"
+  ],
+  "45e3db136d093b9335e4bd18c334f58ec9845217": [
+    "windows-apps-src\\debug-test-perf\\images\\gs-debug-uwp-apps-003.png"
+  ],
+  "6713d5c1d7a28ff69bdea4c05aa98c9c27b2570c": [
+    "windows-apps-src\\debug-test-perf\\images\\gs-debug-uwp-apps-004.png"
+  ],
+  "739938464f7a440b38503a6d5c19a4c1a629515e": [
+    "windows-apps-src\\debug-test-perf\\testing-debugging-plm.md"
   ]
 }
