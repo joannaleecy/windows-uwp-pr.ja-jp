@@ -344,8 +344,14 @@
   "490c45fb8dc565e4ae0b890d26f28d698b58f255": [
     "windows-apps-src\\controls-and-patterns\\active-canvas.md"
   ],
+  "01cd10c72745ff4bd8204a9adaa8eebf5a892efe": [
+    "windows-apps-src\\controls-and-patterns\\app-bars.md"
+  ],
   "a7abca8712d2b02eac8bfd150a9476a955e2982a": [
     "windows-apps-src\\controls-and-patterns\\app-bars.md"
+  ],
+  "bc3337101f0f2e8449d052743f7b3ce8d2dac516": [
+    "windows-apps-src\\controls-and-patterns\\auto-suggest-box.md"
   ],
   "2900aa542a7986cac408051159f013e10dd3a5aa": [
     "windows-apps-src\\controls-and-patterns\\auto-suggest-box.md"
@@ -353,11 +359,20 @@
   "91399060e129df18acd38e18d98cad848667a5ad": [
     "windows-apps-src\\controls-and-patterns\\buttons.md"
   ],
+  "7ae444d9e096834daa2eef71c691b9bb8b86d7c4": [
+    "windows-apps-src\\controls-and-patterns\\calendar-date-picker.md"
+  ],
   "75f6bb925db63838e4985df15b50977b93805ffe": [
     "windows-apps-src\\controls-and-patterns\\calendar-date-picker.md"
   ],
+  "466d8fe25cb2dfe8ce3b4efef995d9e3cb682dc1": [
+    "windows-apps-src\\controls-and-patterns\\calendar-view.md"
+  ],
   "7b9d4773cba5c6ebb770e27dd20ba5c6fb40ff75": [
     "windows-apps-src\\controls-and-patterns\\calendar-view.md"
+  ],
+  "b1532ef10a284cbb6e28694ab1598c08b8619773": [
+    "windows-apps-src\\controls-and-patterns\\checkbox.md"
   ],
   "dcf9ca0757fdef78b71ae665772b980b08641d34": [
     "windows-apps-src\\controls-and-patterns\\checkbox.md"
@@ -383,14 +398,23 @@
   "e268a5facebbdb80d7cc5cdd52c1a6f944ef7d00": [
     "windows-apps-src\\controls-and-patterns\\dialogs-popups-menus.md"
   ],
+  "ecb46c0d42821d833e8232780b553754f8f097c5": [
+    "windows-apps-src\\controls-and-patterns\\flipview.md"
+  ],
   "7da18bd897248ecef7e1caaebff5b8bbab02e3fe": [
     "windows-apps-src\\controls-and-patterns\\flipview.md"
   ],
   "268884c011caa18f3afb6d8b0d9cfda1ec27f51e": [
     "windows-apps-src\\controls-and-patterns\\fonts.md"
   ],
+  "fdff043aa92842adb6ac2d572794bf02fdd5c6b3": [
+    "windows-apps-src\\controls-and-patterns\\hub.md"
+  ],
   "70ce2a58b45c8514aca6641ca034caa91fb88d18": [
     "windows-apps-src\\controls-and-patterns\\hub.md"
+  ],
+  "1d19cfa9c272ee511fbaf89ac0076697ede470b9": [
+    "windows-apps-src\\controls-and-patterns\\hyperlinks.md"
   ],
   "81cb45dd1f7887fef2d8851c839905117c048460": [
     "windows-apps-src\\controls-and-patterns\\hyperlinks.md"
@@ -1358,9 +1382,6 @@
   "b59fe4f60c0847bab3263bef9157ab7017239f82": [
     "windows-apps-src\\controls-and-patterns\\images\\HIGSecOne_MasterDetail.png"
   ],
-  "e4e99a32caac7ce101e0792033dfd8083d547787": [
-    "windows-apps-src\\controls-and-patterns\\images\\HIGSecOne_Tabs.png"
-  ],
   "53262be2c73dc8932bb4a4d5bfb97f144d9e6d12": [
     "windows-apps-src\\controls-and-patterns\\images\\hintoverlay.png"
   ],
@@ -1749,9 +1770,6 @@
   ],
   "866c9ea4f70d7ea4a41b6cb152ad7735580151f9": [
     "windows-apps-src\\controls-and-patterns\\images\\pin.png"
-  ],
-  "f2cb54956c7949478524341a9edfc3ffacd7f6b8": [
-    "windows-apps-src\\controls-and-patterns\\images\\pivot_cortana-reminders.png"
   ],
   "1c8e7db7328c17da7769b5c6b2fad4108f497894": [
     "windows-apps-src\\controls-and-patterns\\images\\play.png"
@@ -2211,11 +2229,17 @@
   "10964baff2bb53bf96ce2b220239d2322ac7a594": [
     "windows-apps-src\\controls-and-patterns\\images\\zoomout.png"
   ],
+  "f37f609d87b48a39b958a8e32470488689a3e68c": [
+    "windows-apps-src\\controls-and-patterns\\images-imagebrushes.md"
+  ],
   "972480aabb6f0db3b5091bd55323f9d1946086e6": [
     "windows-apps-src\\controls-and-patterns\\images-imagebrushes.md"
   ],
   "fbb186b6f8b7bfba47fb05155a227224a1bd595e": [
     "windows-apps-src\\controls-and-patterns\\labels.md"
+  ],
+  "adf8e449cff846caebff3a80b772f801430871e5": [
+    "windows-apps-src\\controls-and-patterns\\lists.md"
   ],
   "96fd7c2af74ec609a6cfbb41a14b6f4086747813": [
     "windows-apps-src\\controls-and-patterns\\lists.md"
@@ -2277,6 +2301,9 @@
   "02cd8f7777f169ad9fc4e5bfe854a8b6e0fe5060": [
     "windows-apps-src\\controls-and-patterns\\styling-controls.md"
   ],
+  "8737ce16d98952f24f9651d30d49ffa85b8d306b": [
+    "windows-apps-src\\controls-and-patterns\\tabs-pivot.md"
+  ],
   "6585a75f08a64b7bb8f27fd32a227fa49bb0f3f4": [
     "windows-apps-src\\controls-and-patterns\\tabs-pivot.md"
   ],
@@ -2285,6 +2312,9 @@
   ],
   "873ca8f869f4303f8fc4a9a7ff08f81df29d367d": [
     "windows-apps-src\\controls-and-patterns\\text-box.md"
+  ],
+  "b075820275d7b5e592cdae736ed92beef67a7b9a": [
+    "windows-apps-src\\controls-and-patterns\\text-controls.md"
   ],
   "1fec4bf13567507087eef08feea0a3ebc255b43f": [
     "windows-apps-src\\controls-and-patterns\\text-controls.md"
@@ -2367,8 +2397,14 @@
   "dd628d16b3ee230ddc0c56b47fd381a518b8af00": [
     "windows-apps-src\\data-access\\sqlite-databases.md"
   ],
+  "6bf88f67a3c8909ba65baa3e0c429a2bd1a809fa": [
+    "windows-apps-src\\data-binding\\data-binding-in-depth.md"
+  ],
   "c371ca1804d76a0ffdf812cfb933b03916654bad": [
     "windows-apps-src\\data-binding\\data-binding-in-depth.md"
+  ],
+  "4753c2fc52fa0227b3867685b793a3d6cfc05630": [
+    "windows-apps-src\\data-binding\\data-binding-quickstart.md"
   ],
   "c30e048f450c062c6e0148e5040a58bfa47193bb": [
     "windows-apps-src\\data-binding\\data-binding-quickstart.md"
@@ -7060,5 +7096,20 @@
   ],
   "2b78d767a7ac75e27f759c0eb06953e6158fb88b": [
     "windows-apps-src\\gaming\\accessibility-for-games.md"
+  ],
+  "70af88f24eeb84a34b83eb344e58df68f88829fc": [
+    "windows-apps-src\\controls-and-patterns\\images\\pivot_example.png"
+  ],
+  "d750603dc65c13a0d30c1e4bcdfee141fa55314e": [
+    "windows-apps-src\\controls-and-patterns\\images\\pivot_focus_headers.png"
+  ],
+  "79fa3aac1f462ec7765e37fc51fc311a722d8e9f": [
+    "windows-apps-src\\controls-and-patterns\\images\\pivot_focus_selectedHeader.png"
+  ],
+  "751bbd06dac8e0963c234a06653827a24ceffde2": [
+    "windows-apps-src\\controls-and-patterns\\images\\pivot_Hero_main.png"
+  ],
+  "02d7f5ca1b73b1b300cd7e6608a9e939ae171b62": [
+    "windows-apps-src\\controls-and-patterns\\images\\pivot_w_hand.png"
   ]
 }
