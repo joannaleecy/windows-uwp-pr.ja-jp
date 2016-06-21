@@ -1,16 +1,16 @@
 ---
-title: 文字列とバイナリ データの間の変換
-description: 次のコード例は、ユニバーサル Windows プラットフォーム (UWP) アプリでの文字列とバイナリ データ間での変換方法を示しています。
+title: Convert between strings and binary data
+description: This example code shows how to convert between strings and binary data in an Universal Windows Platform (UWP) app.
 ms.assetid: AED4C74F-E63B-4980-BB4D-28ACCC1AB58B
 author: awkoren
 ---
 
-# 文字列とバイナリ データの間の変換
+# Convert between strings and binary data
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-次のコード例は、ユニバーサル Windows プラットフォーム (UWP) アプリでの文字列とバイナリ データ間での変換方法を示しています。
+This example code shows how to convert between strings and binary data in an Universal Windows Platform (UWP) app.
 
 ```cs
 public void ConvertData()
@@ -29,6 +29,6 @@ public void ConvertData()
 }
 ```
 
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO3-->
 
 

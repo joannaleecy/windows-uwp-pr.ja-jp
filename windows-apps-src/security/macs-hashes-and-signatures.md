@@ -1,39 +1,37 @@
 ---
-title: MAC、ハッシュ、および署名
-description: この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリでメッセージ認証コード (MAC)、ハッシュ、署名を使ってメッセージの改ざんを検出する方法について説明します。
+title: MACs, hashes, and signatures
+description: This article discusses how message authentication codes (MACs), hashes, and signatures can be used in Universal Windows Platform (UWP) apps to detect message tampering.
 ms.assetid: E674312F-6678-44C5-91D9-B489F49C4D3C
 author: awkoren
 ---
 
-# MAC、ハッシュ、および署名
+# MACs, hashes, and signatures
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリでメッセージ認証コード (MAC)、ハッシュ、署名を使ってメッセージの改ざんを検出する方法について説明します。
+This article discusses how message authentication codes (MACs), hashes, and signatures can be used in Universal Windows Platform (UWP) apps to detect message tampering.
 
-## メッセージ認証コード (MAC)
+## Message authentication codes (MACs)
 
 
-暗号化は、承認されていない個人によるメッセージの読み取りを防止できますが、その個人によるメッセージの改ざんを防止することはできません。 メッセージが改ざんされたことにより、そのメッセージが無意味な内容にすぎない場合であっても、実際にコストが発生する場合があります。 メッセージ認証コード (MAC) は、メッセージの改ざんを防止します。 たとえば、次のシナリオについて考えてみます。
+Encryption helps prevent an unauthorized individual from reading a message, but it does not prevent that individual from tampering with the message. An altered message, even if the alteration results in nothing but nonsense, can have real costs. A message authentication code (MAC) helps prevent message tampering. For example, consider the following scenario:
 
--   ボブとアリスは秘密鍵を共有し、MAC 関数を使うことに同意しています。
--   ボブはメッセージを作成し、そのメッセージと秘密鍵を MAC 関数に入力して MAC 値を取得します。
--   ボブは \[暗号化されていない\] メッセージと MAC 値をネットワーク経由でアリスに送ります。
--   アリスは秘密鍵とメッセージを使って MAC 関数に入力します。 アリスは、生成された MAC 値とボブから受け取った MAC 値を比較します。 両者が同じものである場合、メッセージは転送中に変更されていません。
+-   Bob and Alice share a secret key and agree on a MAC function to use.
+-   Bob creates a message and inputs the message and the secret key into a MAC function to retrieve a MAC value.
+-   Bob sends the \[unencrypted\] message and the MAC value to Alice over a network.
+-   Alice uses the secret key and the message as input to the MAC function. She compares the generated MAC value to the MAC value sent by Bob. If they are the same, the message was not changed in transit.
 
-ボブとアリスの通信を傍受する第三者のイブは、メッセージを効果的に操作できません。 イブは秘密キーにアクセスできないため、アリスに対して改ざんされたメッセージが本物であるかのように見せる MAC 値を作成することができません。
+Note that Eve, a third party eavesdropping on the conversation between Bob and Alice, cannot effectively manipulate the message. Eve does not have access to the private key and cannot, therefore, create a MAC value which would make the tampered message appear legitimate to Alice.
 
-メッセージ認証コードの作成によって保証されるのは、元のメッセージが改ざんされていないことと、共有の秘密鍵を使ったことから、その秘密鍵にアクセスできる人物によってメッセージ ハッシュへの署名が行われたことのみです。
+Creating a message authentication code ensures only that the original message was not altered and, by using a shared secret key, that the message hash was signed by someone with access to that private key.
 
-[
-            **MacAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241530) を使って、利用可能な MAC アルゴリズムを列挙して対称キーを生成することができます。 [
-            **CryptographicEngine**](https://msdn.microsoft.com/library/windows/apps/br241490) クラスで静的メソッドを使って、MAC 値を作成する必要な暗号化を実行することができます。
+You can use the [**MacAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241530) to enumerate the available MAC algorithms and generate a symmetric key. You can use static methods on the [**CryptographicEngine**](https://msdn.microsoft.com/library/windows/apps/br241490) class to perform the necessary encryption that creates the MAC value.
 
-デジタル署名は、秘密キーによるメッセージ認証コード (MAC) と等価の公開キーのコードです。 MAC ではメッセージが転送中に改ざんされなかったことをメッセージの受信者が確認するのに秘密キーを使いますが、署名では秘密キーと公開キーのペアを使います。
+Digital signatures are the public key equivalent of private key message authentication codes (MACs). Although MACs use private keys to enable a message recipient to verify that a message has not been altered during transmission, signatures use a private/public key pair.
 
-次のコード例は、[**MacAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241530) クラスを使ってハッシュ メッセージ認証コード (HMAC) を作成する方法を示しています。
+This example code shows how to use the [**MacAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241530) class to create a hashed message authentication code (HMAC).
 
 ```cs
 using Windows.Security.Cryptography;
@@ -120,27 +118,23 @@ namespace SampleMacAlgorithmProvider
 }
 ```
 
-## ハッシュ
+## Hashes
 
 
-暗号化ハッシュ関数は任意の長さのデータ ブロックを受け取り、固定ビット サイズの文字列を返します。 通常、ハッシュ関数はデータへの署名時に使われます。 多くの公開キー署名操作は負荷が高いため、通常は元のメッセージに署名 (暗号化) するよりもメッセージのハッシュに署名する方が効率的です。 次の手順では、一般的なシナリオを簡略化して説明します。
+A cryptographic hash function takes an arbitrarily long block of data and returns a fixed-size bit string. Hash functions are typically used when signing data. Because most public key signature operations are computationally intensive, it is typically more efficient to sign (encrypt) a message hash than it is to sign the original message. The following procedure represents a common, albeit simplified, scenario:
 
--   ボブとアリスは秘密鍵を共有し、MAC 関数を使うことに同意しています。
--   ボブはメッセージを作成し、そのメッセージと秘密鍵を MAC 関数に入力して MAC 値を取得します。
--   ボブは \[暗号化されていない\] メッセージと MAC 値をネットワーク経由でアリスに送ります。
--   アリスは秘密鍵とメッセージを使って MAC 関数に入力します。 アリスは、生成された MAC 値とボブから受け取った MAC 値を比較します。 両者が同じものである場合、メッセージは転送中に変更されていません。
+-   Bob and Alice share a secret key and agree on a MAC function to use.
+-   Bob creates a message and inputs the message and the secret key into a MAC function to retrieve a MAC value.
+-   Bob sends the \[unencrypted\] message and the MAC value to Alice over a network.
+-   Alice uses the secret key and the message as input to the MAC function. She compares the generated MAC value to the MAC value sent by Bob. If they are the same, the message was not changed in transit.
 
-アリスは暗号化されていないメッセージを送信したことに注目してください。 ハッシュが暗号化されただけです。 この手順によって保証されるのは、元のメッセージが改変されていないことと、アリスの公開キーが使われていることから、アリスの秘密キーにアクセスできるだれか、おそらくアリス本人によってメッセージのハッシュが署名されたことだけです。
+Note that Alice sent an unencrypted message. Only the hash was encrypted. The procedure ensures only that the original message was not altered and, by using Alice's public key, that the message hash was signed by someone with access to Alice's private key, presumably Alice.
 
-[
-            **HashAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241511) クラスを使って利用できるハッシュ アルゴリズムを列挙し、[**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) 値を作成することができます。
+You can use the [**HashAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241511) class to enumerate the available hash algorithms and create a [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) value.
 
-デジタル署名は、秘密キーによるメッセージ認証コード (MAC) と等価の公開キーのコードです。 MAC ではメッセージが転送中に改変されなかったことをメッセージの受信者が確認するのに秘密キーを使いますが、署名では秘密キーと公開キーのペアを使います。
+Digital signatures are the public key equivalent of private key message authentication codes (MACs). Whereas MACs use private keys to enable a message recipient to verify that a message has not been altered during transmission, signatures use a private/public key pair.
 
-[
-            **CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) オブジェクトを使うと、その都度オブジェクトを作らなくても、異なるデータを繰り返しハッシュできます。 [
-            **Append**](https://msdn.microsoft.com/library/windows/apps/br241499) メソッドは、ハッシュ対象のバッファーに、新しいデータを追加します。 [
-            **GetValueAndReset**](https://msdn.microsoft.com/library/windows/apps/hh701376) メソッドは、データをハッシュし、次の使用のためにオブジェクトをリセットします。 この例を次に示します。
+The [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) object can be used to repeatedly hash different data without having to re-create the object for each use. The [**Append**](https://msdn.microsoft.com/library/windows/apps/br241499) method adds new data to a buffer to be hashed. The [**GetValueAndReset**](https://msdn.microsoft.com/library/windows/apps/hh701376) method hashes the data and resets the object for another use. This is shown by the following example.
 
 ```cs
 public void SampleReusableHash()
@@ -181,19 +175,17 @@ public void SampleReusableHash()
 
 ```
 
-## デジタル署名
+## Digital signatures
 
 
-デジタル署名は、秘密キーによるメッセージ認証コード (MAC) と等価の公開キーのコードです。 MAC ではメッセージが転送中に改変されなかったことをメッセージの受信者が確認するのに秘密キーを使いますが、署名では秘密キーと公開キーのペアを使います。
+Digital signatures are the public key equivalent of private key message authentication codes (MACs). Whereas MACs use private keys to enable a message recipient to verify that a message has not been altered during transmission, signatures use a private/public key pair.
 
-多くの公開キー署名操作は負荷が高いため、通常は元のメッセージに署名 (暗号化) するよりもメッセージのハッシュに署名する方が効率的です。 送信者はメッセージのハッシュを作成してそれに署名し、署名と (暗号化されていない) メッセージの両方を送ります。 受信者はメッセージのハッシュを計算し、署名の暗号化を解除し、暗号化を解除した署名を計算したハッシュ値と比較します。 これらが一致する場合、メッセージが本当に送信者からのものであり、転送中に改変されていないことを受信者は確信できます。
+Because most public key signature operations are computationally intensive, however, it is typically more efficient to sign (encrypt) a message hash than it is to sign the original message. The sender creates a message hash, signs it, and sends both the signature and the (unencrypted) message. The recipient calculates a hash over the message, decrypts the signature, and compares the decrypted signature to the hash value. If they match, the recipient can be fairly certain that the message did, in fact, come from the sender and was not altered during transmission.
 
-署名によって保証されるのは、元のメッセージが改変されていないことと、送信者の公開キーが使われていることから、秘密キーにアクセスできる人によってメッセージのハッシュが署名されたことだけです。
+Signing ensures only that the original message was not altered and, by using the sender's public key, that the message hash was signed by someone with access to the private key.
 
-[
-            **AsymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241478) オブジェクトを使って、利用できる署名アルゴリズムを列挙したり、キー ペアを生成またはインポートしたりできます。 [
-            **CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) クラスの静的メソッドを使って、メッセージに署名したり、署名を検証したりできます。
+You can use an [**AsymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241478) object to enumerate the available signature algorithms and generate or import a key pair. You can use static methods on the [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) class to sign a message or verify a signature.
 
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO3-->
 
 

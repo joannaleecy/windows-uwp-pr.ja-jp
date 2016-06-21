@@ -1,52 +1,49 @@
 ---
-description: この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリにドラッグ アンド ドロップを追加する方法について説明します。
-title: ドラッグ アンド ドロップ
+description: This article explains how to add dragging and dropping in your Universal Windows Platform (UWP) app.
+title: Drag and drop
 ms.assetid: A15ED2F5-1649-4601-A761-0F6C707A8B7E
 author: awkoren
 ---
-# ドラッグ アンド ドロップ
+# Drag and drop
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリにドラッグ アンド ドロップを追加する方法について説明します。 ドラッグ アンド ドロップは、画像やファイルなどのコンテンツを操作するための従来からある自然な方法です。 ドラッグ アンド ドロップを実装すると、アプリからアプリ、アプリからデスクトップ、デスクトップからアプリなど、あらゆる方向でシームレスに機能します。
+This article explains how to add dragging and dropping in your Universal Windows Platform (UWP) app. Drag and drop is a classic, natural way of interacting with content such as images and files. Once implemented, drag and drop works seamlessly in all directions, including app-to-app, app-to-desktop, and desktop-to app.
 
-## 有効な領域を設定する
+## Set valid areas
 
-[
-            **AllowDrop**][AllowDrop] プロパティと [**CanDrag**][CanDrag] プロパティを使うと、ドラッグ アンド ドロップの操作に有効なアプリ内の領域を指定できます。
+Use the [**AllowDrop**][AllowDrop] and [**CanDrag**][CanDrag] properties to designate the areas of your app valid for dragging and dropping.
 
-次のマークアップは、XAML で [**AllowDrop**][AllowDrop] を使って、アプリの特定の領域をドロップ操作に有効な領域として設定する方法を示しています。 ユーザーが他の場所へのドロップを試みても、ドロップすることはできません。 アプリ内のすべての領域でユーザーが項目をドロップできるようにする場合は、背景全体をドロップ先として設定します。
+The markup below shows how to set a specific area of the app as a valid for dropping using the [**AllowDrop**][AllowDrop] in XAML. If a user tries to drop somewhere else, the system won't let them. If you want users to be able to drop items anywhere on your app, set the entire background as a drop target.
 
-[!code-xml[メイン](./code/drag_drop/cs/MainPage.xaml#SnippetDropArea)]
+[!code-xml[[!code-xml[Main](./code/drag_drop/cs/MainPage.xaml#SnippetDropArea)]](./code/drag_drop/cs/MainPage.xaml#SnippetDropArea)]
 
-ドラッグ操作では通常、どの項目がドラッグ可能であるか指定しておく必要があります。 ユーザーがドラッグしようとするのは、アプリ内のすべてではなく、画像などの特定の項目です。 XAML を使って [**CanDrag**][CanDrag] を設定する方法を次に示します。
+With dragging, you'll usually want to be specific about what's draggable. Users will want to drag certain items, like pictures, not everything in your app. Here's how to set [**CanDrag**][CanDrag] using XAML.
 
-[!code-xml[メイン](./code/drag_drop/cs/MainPage.xaml#SnippetDragArea)]
+[!code-xml[[!code-xml[Main](./code/drag_drop/cs/MainPage.xaml#SnippetDragArea)]](./code/drag_drop/cs/MainPage.xaml#SnippetDragArea)]
 
-UI のカスタマイズを行う場合 (この記事で後述) を除き、他には何もしなくてもドラッグ操作を有効にできます。 ドロップ操作には、あといくつかの手順が必要です。
+You don't need to do any other work to allow dragging, unless you want to customize the UI (which is covered later in this article). Dropping requires a few more steps.
 
-## DragOver イベントを処理する
+## Handle the DragOver event
 
-[
-            **DragOver**][DragOver] イベントは、ユーザーがアプリに項目をドラッグし、まだドロップしていないときに発生します。 このハンドラーでは、[**DragEventArgs.AcceptedOperation**][AcceptedOperation] プロパティを使用して、アプリでどのような操作をサポートするかを指定する必要があります。 最も一般的な操作はコピーです。
+The [**DragOver**][DragOver] event fires when a user has dragged an item over your app, but not yet dropped it. In this handler, you need to specify what kind of operations your app supports using the [**DragEventArgs.AcceptedOperation**][AcceptedOperation] property. Copy is the most common.
 
-[!code-cs[メイン](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_DragOver)]
+[!code-cs[[!code-cs[Main](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_DragOver)]](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_DragOver)]
 
-## Drop イベントを処理する
+## Process the Drop event
 
-[
-            **Drop**][Drop] イベントは、有効なドロップ領域内でユーザーが項目を解放したときに発生します。 これらの処理には [**DragEventArgs.DataView**][DataView] プロパティを使います。
+The [**Drop**][Drop] event occurs when the user releases items in a valid drop area. Process them using the [**DragEventArgs.DataView**][DataView] property.
 
-次の例では、わかりやすくするために、ユーザーが単一の写真をドロップしたとします。 実際には、ユーザーがさまざまな形式の複数の項目を同時にドロップすることもあります。 アプリでは、このような可能性にも対応できるようにしておく必要があります。そのためには、ドロップされたファイルの種類をチェックし、種類に応じた処理を実行します。また、サポートしていない動作が行われた場合は、それをユーザーに通知します。
+For simplicity in the example below, we'll assume the user dropped a single photo and access. In reality, users can drop multiple items of varying formats simultaneously. Your app should handle this possibility by checking what types of files were dropped and processing them accordingly, and notifying the user if they're trying to do something your app don't support.
 
-[!code-cs[メイン](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_Drop)]
+[!code-cs[[!code-cs[Main](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_Drop)]](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_Drop)]
 
-## UI をカスタマイズする
+## Customize the UI
 
-システムでは、ドラッグ アンド ドロップ用に既定の UI が提供されています。 ただし、カスタムのキャプションやグリフを設定して UI のさまざまな部分をカスタマイズすることも、UI をまったく表示しないこともできます。 UI をカスタマイズするには、[**DragOver**][DragOver] イベント ハンドラーの [**DragUIOverride**][DragUiOverride] プロパティを使います。
+The system provides a default UI for dragging and dropping. However, you can also choose to customize various parts of the UI by setting custom captions and glyphs, or by opting not to show a UI at all. To customize the UI, use the [**DragUIOverride**][DragUiOverride] property in the [**DragOver**][DragOver] event handler.
 
-[!code-cs[メイン](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_DragOverCustom)]
+[!code-cs[[!code-cs[Main](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_DragOverCustom)]](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_DragOverCustom)]
 
  <!-- LINKS -->
 [AllowDrop]: https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.uielement.allowdrop.aspx

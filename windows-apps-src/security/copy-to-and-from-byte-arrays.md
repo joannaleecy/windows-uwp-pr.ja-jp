@@ -1,16 +1,16 @@
 ---
-title: バイト配列間のコピー
-description: 次のコード例は、ユニバーサル Windows プラットフォーム (UWP) アプリでバイト配列をコピーする方法を示しています。
+title: Copy to and from byte arrays
+description: This example code shows how to copy to and from byte arrays in an Universal Windows Platform (UWP) app.
 ms.assetid: C343B08C-1FA1-40FD-8CA5-7FC9B707C5E3
 author: awkoren
 ---
 
-# バイト配列間のコピー
+# Copy to and from byte arrays
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-次のコード例は、ユニバーサル Windows プラットフォーム (UWP) アプリでバイト配列をコピーする方法を示しています。
+This example code shows how to copy to and from byte arrays in an Universal Windows Platform (UWP) app.
 
 ```cs
 public void ByteArrayCopy()
@@ -30,6 +30,6 @@ public void ByteArrayCopy()
 }
 ```
 
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO3-->
 
 

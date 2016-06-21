@@ -1,16 +1,16 @@
 ---
-title: データのエンコードとデコード
-description: 次のコード例は、ユニバーサル Windows プラットフォーム (UWP) アプリで base64 データと 16 進データをエンコードおよびデコードする方法を示しています。
+title: Encode and decode data
+description: This example code shows how to encode and decode base64 and hexadecimal data in an Universal Windows Platform (UWP) app.
 ms.assetid: 2CC23863-E840-48F4-B087-0479045743AC
 author: awkoren
 ---
 
-# データのエンコードとデコード
+# Encode and decode data
 
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-次のコード例は、ユニバーサル Windows プラットフォーム (UWP) アプリで base64 データと 16 進データをエンコードおよびデコードする方法を示しています。
+This example code shows how to encode and decode base64 and hexadecimal data in an Universal Windows Platform (UWP) app.
 
 ```cs
 public void EncodeDecodeBase64()
@@ -39,6 +39,6 @@ public void EncodeDecodeHex()
 ```
 
 
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO3-->
 
 
