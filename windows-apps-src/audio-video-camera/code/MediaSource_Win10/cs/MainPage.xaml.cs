@@ -152,7 +152,7 @@ namespace MediaSource_Win10
                     ComboBoxItem item = new ComboBoxItem();
                     item.Content = String.IsNullOrEmpty(audioTrack.Label) ? "Track " + index : audioTrack.Label;
                     item.Tag = index;
-                    videoTracksComboBox.Items.Add(item);
+                    audioTracksComboBox.Items.Add(item);
                 }
             });
         }
