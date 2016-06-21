@@ -480,9 +480,7 @@
 ###### [C の AdControl イベント#](monetize/adcontrol-events-in-c.md)
 ###### [AdControl エラー処理](monetize/adcontrol-error-handling.md)
 ####### [XAML/C# ウォークスルーでのエラー処理](monetize/error-handling-in-xamlc-walkthrough.md)
-            
-####### 
-            [JavaScript ウォークスルーでのエラー処理](monetize/error-handling-in-javascript-walkthrough.md)
+####### [JavaScript ウォークスルーでのエラー処理](monetize/error-handling-in-javascript-walkthrough.md)
 ###### [C# を使ったスポット広告のサンプル コード#](monetize/interstitial-ad-sample-code-in-c.md)
 ###### [JavaScript を使ったスポット広告のサンプル コード](monetize/interstitial-ad-sample-code-in-javascript.md)
 ##### [トラブルシューティング ガイド](monetize/troubleshooting-guides.md)
