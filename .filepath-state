@@ -6428,6 +6428,9 @@
   "033669a781aa85cc2c90fa11816e385ffefa997d": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "aac17146ef510f2b268b1271c0a03a32865cba5a": [
+    "windows-apps-src\\TOC.md"
+  ],
   "54326f7f29a053e2881f31e7b519332476bda33f": [
     "windows-apps-src\\TOC.md"
   ],
@@ -7150,6 +7153,9 @@
   ],
   "0cf92a800c0923133a36723c5552ac0cd53aea57": [
     "windows-apps-src\\input-and-devices\\images\\TouchFeedback.png"
+  ],
+  "2a2a4696704ee1eb82a1255b7c6f6563abf830b5": [
+    "windows-apps-src\\publish\\manage-iaps-in-bulk.md"
   ],
   "81d00c0e2f0f797f07ed75ac3220a3fdfa29dbf6": [
     "windows-apps-src\\publish\\manage-iaps-in-bulk.md"
