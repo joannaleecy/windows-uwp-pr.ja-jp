@@ -140,6 +140,9 @@
   "63550064b6f31b85cd3b6fa2a09bac4b7cfcf895": [
     "windows-apps-src\\app-to-app\\index.md"
   ],
+  "806bcb591ec3b7c786f8aa98d854863539d723e2": [
+    "windows-apps-src\\app-to-app\\receive-data.md"
+  ],
   "0f38a6864cf216bd9488b23ffad5a57a956616ee": [
     "windows-apps-src\\app-to-app\\receive-data.md"
   ],
@@ -2397,6 +2400,9 @@
   "dd628d16b3ee230ddc0c56b47fd381a518b8af00": [
     "windows-apps-src\\data-access\\sqlite-databases.md"
   ],
+  "aef2bfe21c3267813dea90712b514539f1d70b59": [
+    "windows-apps-src\\data-binding\\data-binding-in-depth.md"
+  ],
   "6bf88f67a3c8909ba65baa3e0c429a2bd1a809fa": [
     "windows-apps-src\\data-binding\\data-binding-in-depth.md"
   ],
@@ -3521,6 +3527,9 @@
   "4141d23c5102df4970ef7c4fb3659bf3ba561ccf": [
     "windows-apps-src\\graphics\\3-d-perspective-effects.md"
   ],
+  "15fa3b33bf302633ef8cd51928e1af5ea726cc01": [
+    "windows-apps-src\\graphics\\animations-overview.md"
+  ],
   "2a70d73a5e714aaf1096fed5d08ec4844edd66a6": [
     "windows-apps-src\\graphics\\animations-overview.md"
   ],
@@ -3545,8 +3554,14 @@
   "b5308c8023990996a93277dd1bcfb8298c0bbf4f": [
     "windows-apps-src\\graphics\\composition-native-interop.md"
   ],
+  "61adc6a894c56c6cfd292d89d4cd5c4ba6b0d017": [
+    "windows-apps-src\\graphics\\composition-visual-tree.md"
+  ],
   "e31d3b23871bd37cde26fb3e9414e8cfae340d3d": [
     "windows-apps-src\\graphics\\composition-visual-tree.md"
+  ],
+  "20bac4421c2f307932bd5a8a4c462b1ef13fe09b": [
+    "windows-apps-src\\graphics\\drawing-shapes.md"
   ],
   "42514e5119b646d196e0a1c7d3099ebed2225c69": [
     "windows-apps-src\\graphics\\drawing-shapes.md"
@@ -3632,14 +3647,23 @@
   "f2c6d6c0e1d11fee40440cae06d68907313f62dc": [
     "windows-apps-src\\graphics\\key-frame-and-easing-function-animations.md"
   ],
+  "6c900ae6e1cfde8ec7261acfc57ea19b49f2ede1": [
+    "windows-apps-src\\graphics\\storyboarded-animations.md"
+  ],
   "83e361fd736ce46893517c7a5cccc9c5efc9a889": [
     "windows-apps-src\\graphics\\storyboarded-animations.md"
+  ],
+  "f6212143a83e7423550b6529ea62e25c00728f79": [
+    "windows-apps-src\\graphics\\transforms-overview.md"
   ],
   "fa5e8964ab35cb33a1ff59a8a52aa384b9d115b4": [
     "windows-apps-src\\graphics\\transforms-overview.md"
   ],
   "e2d1c1745147eee6ba60d43cdc18d6a0567bf35f": [
     "windows-apps-src\\graphics\\transforms-overview.md"
+  ],
+  "4846630eb72c5fc81e01cc46f5ad362b0851292e": [
+    "windows-apps-src\\graphics\\using-brushes.md"
   ],
   "a4063ee2372d69289fca74c81a4c7645909c7f37": [
     "windows-apps-src\\graphics\\using-brushes.md"
@@ -5825,6 +5849,9 @@
   "dba1c1f754b4200bd00395e0b71d18bee30e3a2d": [
     "windows-apps-src\\publish\\generate-preinstall-packages-for-oems.md"
   ],
+  "bfea802fb4a6efcfe34121802ce49f20a9b0305e": [
+    "windows-apps-src\\publish\\generate-promotional-codes.md"
+  ],
   "4001f374a80cd7c62df6230a9429dd5b5a19d2b2": [
     "windows-apps-src\\publish\\generate-promotional-codes.md"
   ],
@@ -6548,6 +6575,9 @@
   "cf6ca169623311e515f02a174224d57652afc753": [
     "windows-apps-src\\xaml-platform\\custom-attached-properties.md"
   ],
+  "80a42040887818a0c6a66ed32327144bed586dc2": [
+    "windows-apps-src\\xaml-platform\\custom-dependency-properties.md"
+  ],
   "63301870ab53f4061cac9b9ad87a5fb75e8c48da": [
     "windows-apps-src\\xaml-platform\\custom-dependency-properties.md"
   ],
@@ -6562,6 +6592,9 @@
   ],
   "4deae037857312f891c8c4beae2b6a89adc152cd": [
     "windows-apps-src\\xaml-platform\\index.md"
+  ],
+  "49c3a061c51c07677ffb43a230e0900220ba0299": [
+    "windows-apps-src\\xaml-platform\\move-draw-commands-syntax.md"
   ],
   "54c080183104335f4b3920cda8bc396a34298a69": [
     "windows-apps-src\\xaml-platform\\move-draw-commands-syntax.md"
