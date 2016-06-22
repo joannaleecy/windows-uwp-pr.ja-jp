@@ -7150,5 +7150,8 @@
   ],
   "0cf92a800c0923133a36723c5552ac0cd53aea57": [
     "windows-apps-src\\input-and-devices\\images\\TouchFeedback.png"
+  ],
+  "81d00c0e2f0f797f07ed75ac3220a3fdfa29dbf6": [
+    "windows-apps-src\\publish\\manage-iaps-in-bulk.md"
   ]
 }

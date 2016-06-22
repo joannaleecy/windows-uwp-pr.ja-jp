@@ -1,11 +1,26 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 0
+ Total Files | 1
 
 ## File List
+ Source File | Status | Details 
+ ----------- | ------ | ------- 
+ [windows-apps-src\publish\manage-iaps-in-bulk.md](https://github.com/Microsoft/windows-apps/blob/5b3c2ce50d4a71bc5813b6b3956bb36e25b7d7a7/windows-apps-src/publish/manage-iaps-in-bulk.md) | HandedOffSuccess | [Details](#81d00c0e2f0f797f07ed75ac3220a3fdfa29dbf63606)
 
 ## Item Details
+##### <a name='81d00c0e2f0f797f07ed75ac3220a3fdfa29dbf63606'></a> Source: [windows-apps-src\publish\manage-iaps-in-bulk.md](https://github.com/Microsoft/windows-apps/blob/5b3c2ce50d4a71bc5813b6b3956bb36e25b7d7a7/windows-apps-src/publish/manage-iaps-in-bulk.md)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [manage-iaps-in-bulk.07639d5ddc04eb3def8be5984def3a4ebb9bc3db.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/9c244344b5bf5eaba728e904577e766f7273077f/ol-handoff/Microsoft/windows-apps.ja-jp/master/manage-iaps-in-bulk.07639d5ddc04eb3def8be5984def3a4ebb9bc3db.ja-jp.xlf)
+* Handoff Datetime: 2016-06-22 02:15:48
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* [Back to Top](#report-top)
+
 
 ## Error Details
 
