@@ -4517,6 +4517,9 @@
   "e665ff769768969585e1f69c142797d2ac59f87c": [
     "windows-apps-src\\launch-resume\\index.md"
   ],
+  "d454317d135e2b2b952c16fb00685e34b489865c": [
+    "windows-apps-src\\launch-resume\\launch-default-app.md"
+  ],
   "b593a43bc5b95dd0880af972ca1514e657bbd9e3": [
     "windows-apps-src\\launch-resume\\launch-default-app.md"
   ],
@@ -6404,6 +6407,9 @@
   "02d5149f945bb631e385e45a295fdfe08bd98fb0": [
     "windows-apps-src\\style\\typography.md"
   ],
+  "c33c05c6ec7f36b8ba7db840613fbfb7eb394c3f": [
+    "windows-apps-src\\threading-async\\asynchronous-programming-in-cpp-universal-windows-platform-apps.md"
+  ],
   "560b51d5bb67f5f2611311cb78f59d189d4ea440": [
     "windows-apps-src\\threading-async\\asynchronous-programming-in-cpp-universal-windows-platform-apps.md"
   ],
@@ -6412,6 +6418,9 @@
   ],
   "53f7460be63fa9bd440ed6999ac9cca7cdca0174": [
     "windows-apps-src\\threading-async\\best-practices-for-using-the-thread-pool.md"
+  ],
+  "ba633e4d6f6f97f3ea1c78258f36b11b67b32964": [
+    "windows-apps-src\\threading-async\\call-asynchronous-apis-in-csharp-or-visual-basic.md"
   ],
   "b8ff3965503aa96d4ff595d140562c65e0a638c3": [
     "windows-apps-src\\threading-async\\call-asynchronous-apis-in-csharp-or-visual-basic.md"
