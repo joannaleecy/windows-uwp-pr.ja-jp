@@ -11,17 +11,32 @@
   "430484a9243abc644de75d35c03bb11cf47960c0": [
     "windows-apps-src\\accessibility\\accessibility-overview.md"
   ],
+  "ec436f939c672d6e6d852d3dd6713fd6ca20a53b": [
+    "windows-apps-src\\accessibility\\accessibility-testing.md"
+  ],
   "5ca4df0608adcba8824e2196c3f82cc025f5e70a": [
     "windows-apps-src\\accessibility\\accessibility-testing.md"
+  ],
+  "1307b4f70cf7ffed300f4254a7d92b67b5afd085": [
+    "windows-apps-src\\accessibility\\accessible-text-requirements.md"
   ],
   "b8316a5f1e869ea19f9f228f3b41b4abf46b4edd": [
     "windows-apps-src\\accessibility\\accessible-text-requirements.md"
   ],
+  "1c6bc8567b39357d414a46ef2b92197c78bca971": [
+    "windows-apps-src\\accessibility\\basic-accessibility-information.md"
+  ],
   "5bf13f4efc571dd449e7557e7b347f909e1cffa4": [
     "windows-apps-src\\accessibility\\basic-accessibility-information.md"
   ],
+  "9f38c3bd26ef7b409d4c743abf25a5b0a6455f20": [
+    "windows-apps-src\\accessibility\\control-patterns-and-interfaces.md"
+  ],
   "71071c989ca4aaa727d18d3ec25d8642517c4b26": [
     "windows-apps-src\\accessibility\\control-patterns-and-interfaces.md"
+  ],
+  "5d52365ab082f64cd08d64d49662342104ffd30e": [
+    "windows-apps-src\\accessibility\\custom-automation-peers.md"
   ],
   "893e17205783bfb787ae5597a48abcb09fb6631f": [
     "windows-apps-src\\accessibility\\custom-automation-peers.md"
@@ -35,6 +50,9 @@
   "77c401fd9686cb260e7b2d9e4bdf47a91d76802e": [
     "windows-apps-src\\accessibility\\developing-inclusive-windows-apps.md"
   ],
+  "4201f5a0b08f1fc8d691218da0803ee04ab2c86a": [
+    "windows-apps-src\\accessibility\\high-contrast-themes.md"
+  ],
   "44562de02c52e4d44cc5559d8d74425a620477be": [
     "windows-apps-src\\accessibility\\high-contrast-themes.md"
   ],
@@ -43,6 +61,9 @@
   ],
   "8f3ec44999f8dcc62af1bd7ee0b058db077f24ac": [
     "windows-apps-src\\accessibility\\images\\inspect.png"
+  ],
+  "c5b5ca247e3999850d7bf9b81347c201204db7e8": [
+    "windows-apps-src\\accessibility\\keyboard-accessibility.md"
   ],
   "433f1fb4ccb92f262b33ecea97f1bf8fe335cb48": [
     "windows-apps-src\\accessibility\\keyboard-accessibility.md"
@@ -329,8 +350,14 @@
   "4e40ac413e021aba26776053871a4c6f1a215b2a": [
     "windows-apps-src\\contacts-and-calendar\\index.md"
   ],
+  "020b020d90a52d45fa989e0f630320b4630b955e": [
+    "windows-apps-src\\contacts-and-calendar\\managing-appointments.md"
+  ],
   "d28ea9a1e3b4855e5e87ab34ca7d4ea10bb94dab": [
     "windows-apps-src\\contacts-and-calendar\\managing-appointments.md"
+  ],
+  "6f2c6a546ed3daa0ef0311bc54ca47f31d01f3d8": [
+    "windows-apps-src\\contacts-and-calendar\\selecting-contacts.md"
   ],
   "12bf9361bb5fc2fb2dc7f28860a79cb67d661a5c": [
     "windows-apps-src\\contacts-and-calendar\\selecting-contacts.md"
@@ -5974,6 +6001,9 @@
   ],
   "afd2a08ed637502827e3207702d7659ed70148a0": [
     "windows-apps-src\\publish\\resolve-package-upload-errors.md"
+  ],
+  "cd0e1011bd1f857d8c859428ae0ff7e755db842e": [
+    "windows-apps-src\\publish\\resolve-submission-errors.md"
   ],
   "9da5a0e2b7ba61a51fccfa933ba63b202d4f5f13": [
     "windows-apps-src\\publish\\resolve-submission-errors.md"
