@@ -6419,6 +6419,9 @@
   "3e4ea7aad183ebf768d8c6ab7fd94b8d5835c470": [
     "windows-apps-src\\style\\images\\word-letter.png"
   ],
+  "28f3f86ab074155e5ea3f8505ce0391220e83340": [
+    "windows-apps-src\\style\\motion.md"
+  ],
   "3022b0987196ce3d420810b6742c8f6f976dea7e": [
     "windows-apps-src\\style\\motion.md"
   ],
@@ -6445,6 +6448,9 @@
   ],
   "ba8679a5f06895cef52cbc229f4487997a17bf35": [
     "windows-apps-src\\style\\motion-reposition.md"
+  ],
+  "e6dab48935cd5345ee734e6fda7e6fd4d333bb90": [
+    "windows-apps-src\\style\\sound.md"
   ],
   "06eb73607f80a7eacef23cd75a3982ab352c5379": [
     "windows-apps-src\\style\\sound.md"
