@@ -2400,6 +2400,9 @@
   "dd628d16b3ee230ddc0c56b47fd381a518b8af00": [
     "windows-apps-src\\data-access\\sqlite-databases.md"
   ],
+  "d12f8d6bd44323cf1c19bff1ac080070ba0e8ed2": [
+    "windows-apps-src\\data-binding\\data-binding-in-depth.md"
+  ],
   "aef2bfe21c3267813dea90712b514539f1d70b59": [
     "windows-apps-src\\data-binding\\data-binding-in-depth.md"
   ],
@@ -2468,6 +2471,9 @@
   ],
   "7404a90fc9efc05d4e2bb83321bb2ba80b8378ce": [
     "windows-apps-src\\debug-test-perf\\beta-testing.md"
+  ],
+  "0aa24b6b78481949c1b913ddee121a5ecf30b26d": [
+    "windows-apps-src\\debug-test-perf\\deploying-and-debugging-uwp-apps.md"
   ],
   "15eb48fd3e871b3a1a15d8fbbed526cf6d935c1f": [
     "windows-apps-src\\debug-test-perf\\deploying-and-debugging-uwp-apps.md"
@@ -5384,6 +5390,9 @@
   "a77e441cbd1b6826e06064dbd4be449813754b25": [
     "windows-apps-src\\packaging\\packaging-uwp-apps.md"
   ],
+  "074a71bf3d037004ca376c11b58d17c906f804a5": [
+    "windows-apps-src\\porting\\android-ios-uwp-map.md"
+  ],
   "8e10b13f87a6b4b04b0bc8a8bbf221b08ad00911": [
     "windows-apps-src\\porting\\android-ios-uwp-map.md"
   ],
@@ -5686,6 +5695,9 @@
   ],
   "74cbd9789636383e6d04798435780dcda6b897d0": [
     "windows-apps-src\\porting\\wpsl-to-uwp-porting-to-a-uwp-project.md"
+  ],
+  "a34133b42872ce949644dc951255e6214164adad": [
+    "windows-apps-src\\porting\\wpsl-to-uwp-porting-xaml-and-ui.md"
   ],
   "1403a5d5fc4d33e6852a8caa4128d88e9f7b1e8b": [
     "windows-apps-src\\porting\\wpsl-to-uwp-porting-xaml-and-ui.md"
