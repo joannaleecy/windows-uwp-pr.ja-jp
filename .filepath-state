@@ -5792,6 +5792,9 @@
   "3511533f76294767ca409b09a718555a6194e451": [
     "windows-apps-src\\publish\\app-promotion-and-customer-engagement.md"
   ],
+  "9eac5658e2ac04b2abc1bf06abf5c73b16260bc7": [
+    "windows-apps-src\\publish\\app-screenshots-and-images.md"
+  ],
   "a4065a32fa7861b39295ca79325943028a8bcf34": [
     "windows-apps-src\\publish\\app-screenshots-and-images.md"
   ],
@@ -7261,6 +7264,9 @@
   ],
   "0cf92a800c0923133a36723c5552ac0cd53aea57": [
     "windows-apps-src\\input-and-devices\\images\\TouchFeedback.png"
+  ],
+  "ae4d4ed33b9bd10a2b01b336c942ad3212de6533": [
+    "windows-apps-src\\publish\\manage-iaps-in-bulk.md"
   ],
   "7c650f60b41756292cd6be64819af9e61a2829c8": [
     "windows-apps-src\\publish\\manage-iaps-in-bulk.md"
