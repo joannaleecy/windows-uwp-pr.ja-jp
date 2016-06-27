@@ -6,15 +6,15 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\index.md](https://github.com/Microsoft/windows-apps/blob/3f4a9182e206dbb809fe51350d756b3e94a4c94a/windows-apps-src/publish/index.md) | HandedOffSuccess | [Details](#b813935efef628d63df88e0645f42482d52df3743615)
- [windows-apps-src\security\index.md](https://github.com/Microsoft/windows-apps/blob/248e536f6f5ca677921784c5dc7b709a43ae4b47/windows-apps-src/security/index.md) | HandedBackFailed | [Details](#374714f41f92ce648ee79fc06d717bf8602a61143727)
+ [windows-apps-src\publish\index.md](https://github.com/Microsoft/windows-apps/blob/27e9112628f5da853008201995ee7fa01e362246/windows-apps-src/publish/index.md) | HandedOffSuccess | [Details](#78ad40d3b8964688277e84a1c29a61ffcffda7c13615)
+ [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/27e9112628f5da853008201995ee7fa01e362246/windows-apps-src/TOC.md) | OutofSyncHandedBackSuccess | [Details](#dd3710b1f9a399fa9d7b1dd953ecde35551585aa3872)
 
 ## Item Details
-##### <a name='b813935efef628d63df88e0645f42482d52df3743615'></a> Source: [windows-apps-src\publish\index.md](https://github.com/Microsoft/windows-apps/blob/3f4a9182e206dbb809fe51350d756b3e94a4c94a/windows-apps-src/publish/index.md)
+##### <a name='78ad40d3b8964688277e84a1c29a61ffcffda7c13615'></a> Source: [windows-apps-src\publish\index.md](https://github.com/Microsoft/windows-apps/blob/27e9112628f5da853008201995ee7fa01e362246/windows-apps-src/publish/index.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [index.e1a577c2fdf35ee5231fe28148fe028299e2d0b9.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/fd0cd6f06e936769f3c560e2bd1c22b8bc21cdc8/ol-handoff/Microsoft/windows-apps.ja-jp/master/index.e1a577c2fdf35ee5231fe28148fe028299e2d0b9.ja-jp.xlf)
-* Handoff Datetime: 2016-06-27 19:24:48
+* Handoff File: [index.e1a577c2fdf35ee5231fe28148fe028299e2d0b9.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/7b583077a0adba5e800a8be4137721911c297c5b/ol-handoff/Microsoft/windows-apps.ja-jp/master/index.e1a577c2fdf35ee5231fe28148fe028299e2d0b9.ja-jp.xlf)
+* Handoff Datetime: 2016-06-27 20:24:10
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -22,16 +22,19 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='374714f41f92ce648ee79fc06d717bf8602a61143727'></a> Source: [windows-apps-src\security\index.md](https://github.com/Microsoft/windows-apps/blob/248e536f6f5ca677921784c5dc7b709a43ae4b47/windows-apps-src/security/index.md)
-* Status: HandedBackFailed
+##### <a name='dd3710b1f9a399fa9d7b1dd953ecde35551585aa3872'></a> Source: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/27e9112628f5da853008201995ee7fa01e362246/windows-apps-src/TOC.md)
+* Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [index.36c19658e673067b86aba619b12635d8359c4091.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/fd0cd6f06e936769f3c560e2bd1c22b8bc21cdc8/ol-handoff/Microsoft/windows-apps.ja-jp/master/index.36c19658e673067b86aba619b12635d8359c4091.ja-jp.xlf)
-* Handoff Datetime: 2016-06-27 19:24:48
+* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/7b583077a0adba5e800a8be4137721911c297c5b/ol-handoff/Microsoft/windows-apps.ja-jp/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf)
+* Handoff Datetime: 2016-06-27 20:24:10
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/9863ec8e10ba79a4f08d03fbc70bb6a9be0856d5/windows-apps-src/TOC.md)
+* Current Handback File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/4a10ae00f717c3711cb911d775b04f6f078c1164/ol-handback/Microsoft/windows-apps.ja-jp/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf)
+* Current Handback Datetime: 2016-06-21 14:55:19
 * [Back to Top](#report-top)
 
 
