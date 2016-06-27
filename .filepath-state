@@ -6161,6 +6161,9 @@
   "975ff6acff2568af82366f7e8c2738385c4b4fd3": [
     "windows-apps-src\\security\\images\\x509certificateversions.png"
   ],
+  "374714f41f92ce648ee79fc06d717bf8602a6114": [
+    "windows-apps-src\\security\\index.md"
+  ],
   "cc81ca4f88b237f144c995b85639eeaed9045f32": [
     "windows-apps-src\\security\\index.md"
   ],
@@ -7234,5 +7237,8 @@
   ],
   "c153018fe32d0116ec7402a39e6d46bff986d4b1": [
     "windows-apps-src\\usability\\index.md"
+  ],
+  "b813935efef628d63df88e0645f42482d52df374": [
+    "windows-apps-src\\publish\\index.md"
   ]
 }
