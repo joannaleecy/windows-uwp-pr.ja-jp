@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 人がお互いにコミュニケーションをとる際に音声とジェスチャを組み合わせて使うように、アプリの操作では、複数の種類とモードの入力を使うと便利な場合があります。
-title: 複数の入力の設計ガイドライン
+Description: "人がお互いにコミュニケーションをとる際に音声とジェスチャを組み合わせて使うように、アプリの操作では、複数の種類とモードの入力を使うと便利な場合があります。"
+title: "複数の入力の設計ガイドライン"
 ms.assetid: 03EB5388-080F-467C-B272-C92BE00F2C69
 label: Multiple inputs
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 20af1cbfd4d390a1128b96b24c687fd481db1f5c
+
 ---
 
 # 複数の入力
@@ -40,6 +43,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

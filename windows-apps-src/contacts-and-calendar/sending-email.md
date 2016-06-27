@@ -1,9 +1,12 @@
 ---
 author: Xansky
-description: メールの作成ダイアログを起動して、ユーザーがメール メッセージを送信できるようにする方法について説明します。 ダイアログを表示する前に、メールの各フィールドにデータを設定することができます。 メッセージは、ユーザーが送信ボタンをタップするまで送信されません。
-title: メールの送信
+description: "メールの作成ダイアログを起動して、ユーザーがメール メッセージを送信できるようにする方法について説明します。 ダイアログを表示する前に、メールの各フィールドにデータを設定することができます。 メッセージは、ユーザーが送信ボタンをタップするまで送信されません。"
+title: "メールの送信"
 ms.assetid: 74511E90-9438-430E-B2DE-24E196A111E5
 keywords: contacts, email, send
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: b4b5b029c321256028993e283395a91bd0ed3d7c
+
 ---
 
 # メールの送信
@@ -71,6 +74,7 @@ private async void ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipi
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

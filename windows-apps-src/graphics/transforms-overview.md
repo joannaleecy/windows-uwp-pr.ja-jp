@@ -1,8 +1,11 @@
 ---
 author: Jwmsft
 ms.assetid: F46D5E18-10A3-4F7B-AD67-76437C77E4BC
-title: 変換の概要
-description: UI 要素の相対座標系を変更して、Windows ランタイム&\#160;API で変換を使う方法について説明します。
+title: "変換の概要"
+description: "UI 要素の相対座標系を変更して、Windows ランタイム&\\#160;API で変換を使う方法について説明します。"
+ms.sourcegitcommit: a429fa659caf6c8032ad615f1b850092545d4439
+ms.openlocfilehash: fa5e8964ab35cb33a1ff59a8a52aa384b9d115b4
+
 ---
 
 # 変換の概要
@@ -25,7 +28,7 @@ UI 要素の相対座標系を変更して、Windows ランタイム API で変�
               **ScaleTransform**
             ](https://msdn.microsoft.com/library/windows/apps/BR242940): [**CenterX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.scaletransform.centerx.aspx)、[**CenterY**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.scaletransform.centery.aspx)、[**ScaleX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.scaletransform.scalex.aspx)、および [**ScaleY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.scaletransform.scaleyproperty) の値を設定することで、中心点に基づいて変換をスケーリングします。
 -   [
-              **RotateTransform**
+             ** RotateTransform**
             ](https://msdn.microsoft.com/library/windows/apps/BR242932): [**Angle**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.rotatetransform.angle.aspx)、[**CenterX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.rotatetransform.centerx.aspx)、および [**CenterY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.rotatetransform.centery) の値を設定することで、x-y 空間内で回転させます。
 -   [
               **SkewTransform**
@@ -33,13 +36,13 @@ UI 要素の相対座標系を変更して、Windows ランタイム API で変�
 
 これらのうちで、UI のシナリオとして最もよく使うと思われるのは、[**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) と [**ScaleTransform**](https://msdn.microsoft.com/library/windows/apps/BR242940) です。
 
-変換は組み合わせることができ、その組み合わせをサポートする 2 つの Windows ランタイム クラスとして、[**CompositeTransform**](https://msdn.microsoft.com/library/windows/apps/BR228105) と [**TransformGroup**](https://msdn.microsoft.com/library/windows/apps/BR243022) があります。 **CompositeTransform** では、変換が、回転、スキュー、回転、平行移動の順に適用されます。 変換を別の順序で適用する場合は、**CompositeTransform** ではなく、**TransformGroup** を使います。 詳しくは、「[**CompositeTransform**](https://msdn.microsoft.com/library/windows/apps/BR228105)」をご覧ください。
+変換は組み合わせることができ、その組み合わせをサポートする 2 つの Windows ランタイム クラスとして、[**CompositeTransform**](https://msdn.microsoft.com/library/windows/apps/BR228105) と [**TransformGroup**](https://msdn.microsoft.com/library/windows/apps/BR243022) があります。 **CompositeTransform** では、変換が、回転、スキュー、回転、平行移動の順に適用されます。 変換を別の順序で適用する場合は、**CompositeTransform** ではなく、**TransformGroup** を使用します。 詳しくは、「[**CompositeTransform**](https://msdn.microsoft.com/library/windows/apps/BR228105)」をご覧ください。
 
 ## <span id="Transforms_and_layout"></span><span id="transforms_and_layout"></span><span id="TRANSFORMS_AND_LAYOUT"></span>変換とレイアウト
 
-XAML レイアウトでは、変換はレイアウト パスの完了後に適用されます。利用可能なスペースの計算や他のレイアウトに関する決定は、変換が適用される前に行われています。 レイアウトが最優先されるため、レイアウト時にスペースを割り当てる、[**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) セルなどのレイアウト コンテナー内にある要素を変換した場合に、予期しない結果になる可能性があります。 変換された要素は、途中で切れたり隠されたりことがあります。親コンテナー内のスペースを分割するとき、変換後のサイズを計算していなかったスペースに描画されるためです。 変換結果を試し、いくつかの設定の調整が必要になる場合があります。 たとえば、アダプティブ レイアウトやスター サイズ指定に頼るのではなく、**Center** プロパティを変更したり、レイアウト スペースの固定ピクセル値を宣言したりすることで、親が十分なスペースを確実に割り当てるようにすることが必要になる場合があります。
+XAML レイアウトでは、変換はレイアウト パスの完了後に適用されます。使用できるスペースの計算やその他のレイアウトは、変換が適用される前に決定されています。 レイアウトが最優先されるため、レイアウト時にスペースを割り当てる、[**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) セルなどのレイアウト コンテナー内にある要素を変換した場合に、予期しない結果になる可能性があります。 変換された要素は、途中で切れたり隠されたりことがあります。親コンテナー内のスペースを分割するとき、変換後のサイズを計算していなかったスペースに描画されるためです。 変換結果を試し、いくつかの設定の調整が必要になる場合があります。 たとえば、アダプティブ レイアウトやスター サイズ指定に頼るのではなく、**Center** プロパティを変更したり、レイアウト スペースの固定ピクセル値を宣言したりすることで、親が十分なスペースを確実に割り当てるようにすることが必要になる場合があります。
 
-**移行のメモ:  **Windows Presentation Foundation (WPF) には、レイアウト パスの前に変換を適用する **LayoutTransform** プロパティがありました。 ただし、Windows ランタイム XAML では **LayoutTransform** のプロパティがサポートされていません。 (Microsoft Silverlight にも、このプロパティはありませんでした。)
+**移行のメモ:** Windows Presentation Foundation (WPF) には、レイアウト パスの前に変換を適用する **LayoutTransform** プロパティがありました。 ただし、Windows ランタイム XAML では **LayoutTransform** のプロパティがサポートされていません。 (Microsoft Silverlight にも、このプロパティはありませんでした。)
 
 ## <span id="Applying_a_transform_to_a_UI_element"></span><span id="applying_a_transform_to_a_ui_element"></span><span id="APPLYING_A_TRANSFORM_TO_A_UI_ELEMENT"></span>UI 要素への変換の適用
 
@@ -55,7 +58,7 @@ XAML レイアウトでは、変換はレイアウト パスの完了後に適�
 
 -   [
               **Brush.Transform**
-            ](https://msdn.microsoft.com/library/windows/apps/BR228082)、[**Brush.RelativeTransform**](https://msdn.microsoft.com/library/windows/apps/BR228080): これらのプロパティは、**Brush** を適用して前景や背景などの視覚的なプロパティを設定する領域内で、[**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) による座標空間の使い方に影響を与えます。 これらの変換は、ほとんどの一般的なブラシ (通常は [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) で単色を設定する) には関連していませんが、[**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) や [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108) を使って領域を描画するときに役立つ場合があります。
+            ](https://msdn.microsoft.com/library/windows/apps/BR228082)、[**Brush.RelativeTransform**](https://msdn.microsoft.com/library/windows/apps/BR228080): これらのプロパティは、**Brush** を適用して前景や背景などの視覚的なプロパティを設定する領域内で、[**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) による座標空間の使い方に影響を与えます。 これらの変換は、ほとんどの一般的なブラシ (通常は [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) で単色を設定する) には関連していませんが、[**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) または [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108) で領域に描画するときには有用な場合があります。
 -   [
               **Geometry.Transform**
             ](https://msdn.microsoft.com/library/windows/apps/BR210066): このプロパティを使って、[**Path.Data**](https://msdn.microsoft.com/library/windows/apps/BR243356) プロパティ値にジオメトリを使う前に、そのジオメトリに変換を適用できます。
@@ -67,7 +70,7 @@ XAML レイアウトでは、変換はレイアウト パスの完了後に適�
             ](https://msdn.microsoft.com/library/windows/apps/BR243006) オブジェクトはアニメーション化できます。 **Transform** をアニメーション化するには、アニメーション化するプロパティに互換性のある種類のアニメーションを適用します。 これは、通常、[**DoubleAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243136) オブジェクトまたは [**DoubleAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR243136usingkeyframes) オブジェクトを使ってアニメーションを定義していることを意味します。なぜなら、すべての変換プロパティは、型 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) であるためです。 [
             **UIElement.RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980) 値に使われる変換に影響を与えるアニメーションは、再生時間が 0 以外であっても、依存型アニメーションとは見なされません。 依存型アニメーションについて詳しくは、「[ストーリーボードに設定されたアニメーション](storyboarded-animations.md)」をご覧ください。
 
-プロパティをアニメーション化して、最終的な外観という点で同様の効果を生み出す場合、たとえば、[**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) を適用する代わりに、[**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) の [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751) と [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) をアニメーション化する場合、このようなアニメーションのほとんどは、依存型アニメーションとして扱われます。 アニメーションを有効にする必要があるため、パフォーマンスに大きな問題が発生する可能性があります。特に、ユーザーの操作をサポートしながら、そのオブジェクトをアニメーション化する場合です。 そのため、望ましいのは、変換を使ってアニメーション化することです。この場合は、他のどのプロパティもアニメーション化されず、アニメーションが依存型アニメーションとして扱われることはありません。
+プロパティをアニメーション化して、最終的な外観という点で同様の効果を生み出す場合、たとえば、[**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) を適用する代わりに、[**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) の [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751) と [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) をアニメーション化する場合、このようなアニメーションは、ほとんど常に依存型アニメーションとして扱われます。 アニメーションを有効にする必要があるため、パフォーマンスに大きな問題が発生する可能性があります。特に、ユーザーの操作をサポートしながら、そのオブジェクトをアニメーション化する場合です。 そのため、望ましいのは、変換を使ってアニメーション化することです。この場合は、他のどのプロパティもアニメーション化されず、アニメーションが依存型アニメーションとして扱われることはありません。
 
 変換をターゲット設定するには、既にある [**Transform**](https://msdn.microsoft.com/library/windows/apps/BR243006) を [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980) の値にする必要があります。 通常は、適切な種類の変換の要素を、場合によってはその変換にプロパティを設定せずに、最初の XAML に配置します。
 
@@ -75,7 +78,7 @@ XAML レイアウトでは、変換はレイアウト パスの完了後に適�
 
 コントロールの既定のスタイルで、表示状態の動作の一部として変換のアニメーションを定義する場合があります。 たとえば、[**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/BR227538) の表示状態で、アニメーション化した [**RotateTransform**](https://msdn.microsoft.com/library/windows/apps/BR242932) 値を使って、リングのドットを "回転" させます。
 
-ここでは、変換をアニメーション化する方法の簡単な例を示します。 この例では、[**RotateTransform**](https://msdn.microsoft.com/library/windows/apps/BR242932) の [**Angle**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.rotatetransform.angle.aspx) をアニメーション化して、その視覚的な中心点の周りで [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) を回転させます。 また、この例では **RotateTransform** に名前を付けているため、間接的なアニメーションのターゲット設定は必要ありません。ただし、変換に名前を付けず、変換が適用される要素に名前を付けることで、次のような間接的なターゲット設定を使うことはできます。
+ここでは、変換をアニメーション化する方法の簡単な例を示します。 この例では、[**RotateTransform**](https://msdn.microsoft.com/library/windows/apps/BR242932) の [**Angle**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.rotatetransform.angle.aspx) をアニメーション化して、その視覚的な中心点の周りで [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) を回転させます。 また、この例では、**RotateTransform** に名前を付けません。間接的なアニメーションのターゲット設定には不要なためです。しかしその代わりに、変換には名前を付けませんが、変換が適用される要素に名前を付けることで、`(UIElement.RenderTransform).(RotateTransform.Angle)` などの間接的なターゲット設定を使うことができます。
 
 ```xml
 <StackPanel Margin="15">
@@ -116,34 +119,33 @@ void StartAnimation (object sender, RoutedEventArgs e) {
 変換は、変換マトリックスの観点から説明できます。 3×3 マトリックスは、2 次元の x-y 平面での変換を記述するために使われます。 アフィン変換マトリックスでは、平行移動前の任意の数の線形変換 (回転やスキュー (せん断) など) を 1 つのマトリックスの乗算にまとめることができます。 アフィン変換マトリックスの最後の列は (0, 0, 1) に等しいため、最初の 2 列のメンバーのみを数学的記述で指定する必要があります。
 
 変換の数学的記述が役立つことがあるのは、数学的な背景知識がある場合や、やはりマトリックスを使って座標空間の変換を記述するグラフィックス プログラミング手法に精通している場合です。 [
-            **Transform**](https://msdn.microsoft.com/library/windows/apps/BR243006) の派生クラスとして [**MatrixTransform**](https://msdn.microsoft.com/library/windows/apps/BR210137) があり、その 3×3 マトリックスで直接、変換を表すことができます。**MatrixTransform** には [**Matrix**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.matrixtransform.matrix.aspx) プロパティがあり、[**M11**](https://msdn.microsoft.com/library/windows/apps/Hh673847)、[**M12**](https://msdn.microsoft.com/library/windows/apps/Hh673853)、[**M21**](https://msdn.microsoft.com/library/windows/apps/Hh673851)、[**M22**](https://msdn.microsoft.com/library/windows/apps/Hh673849)、[**OffsetX**](https://msdn.microsoft.com/library/windows/apps/Hh673810)、[**OffsetY**](https://msdn.microsoft.com/library/windows/apps/Hh673816) という 6 つのプロパティから成る構造体が格納されます。 [
-            **Matrix**](https://msdn.microsoft.com/library/windows/apps/BR210127) プロパティには **Double** 値が使われ、各プロパティはアフィン変換マトリックスの 6 つの該当する値 (列 1 および 2) に対応します。 M11
+            **Transform**](https://msdn.microsoft.com/library/windows/apps/BR243006) の派生クラスとして [**MatrixTransform**](https://msdn.microsoft.com/library/windows/apps/BR210137) があり、その 3×3 マトリックスで直接、変換を表すことができます。 **MatrixTransform** には [**Matrix**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.matrixtransform.matrix.aspx) プロパティがあり、[**M11**](https://msdn.microsoft.com/library/windows/apps/Hh673847)、[**M12**](https://msdn.microsoft.com/library/windows/apps/Hh673853)、[**M21**](https://msdn.microsoft.com/library/windows/apps/Hh673851)、[**M22**](https://msdn.microsoft.com/library/windows/apps/Hh673849)、[**OffsetX**](https://msdn.microsoft.com/library/windows/apps/Hh673810)、[**OffsetY**](https://msdn.microsoft.com/library/windows/apps/Hh673816) という 6 つのプロパティから成る構造体が格納されます。 [
+            **Matrix**](https://msdn.microsoft.com/library/windows/apps/BR210127) プロパティには **Double** 値が使われ、各プロパティはアフィン変換マトリックスの 6 つの該当する値 (列 1 および 2) に対応します。
 
 |                                             |                                             |     |
 |---------------------------------------------|---------------------------------------------|-----|
-| [**M21**](https://msdn.microsoft.com/library/windows/apps/Hh673847)         | [**0**](https://msdn.microsoft.com/library/windows/apps/Hh673851)         | M12   |
-| [**M22**](https://msdn.microsoft.com/library/windows/apps/Hh673853)         | [**0**](https://msdn.microsoft.com/library/windows/apps/Hh673849)         | OffsetX   |
-| [**OffsetY**](https://msdn.microsoft.com/library/windows/apps/Hh673810) | [**1**](https://msdn.microsoft.com/library/windows/apps/Hh673816) | [
-            **TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027)、[**ScaleTransform**](https://msdn.microsoft.com/library/windows/apps/BR242940)、[**RotateTransform**](https://msdn.microsoft.com/library/windows/apps/BR242932)、または [**SkewTransform**](https://msdn.microsoft.com/library/windows/apps/BR242950) の各オブジェクトで記述できる変換は、[**MatrixTransform**](https://msdn.microsoft.com/library/windows/apps/BR210137) と [**Matrix**](https://msdn.microsoft.com/library/windows/apps/BR210127) 値で同様に記述できます。   |
+| [**M11**](https://msdn.microsoft.com/library/windows/apps/Hh673847)         | [**M21**](https://msdn.microsoft.com/library/windows/apps/Hh673851)         | 0   |
+| [**M12**](https://msdn.microsoft.com/library/windows/apps/Hh673853)         | [**M22**](https://msdn.microsoft.com/library/windows/apps/Hh673849)         | 0   |
+| [**OffsetX**](https://msdn.microsoft.com/library/windows/apps/Hh673810) | [**OffsetY**](https://msdn.microsoft.com/library/windows/apps/Hh673816) | 1   |
 
  
 
-ただし、一般的に使われるのは、**TranslateTransform** などです。それらの変換クラスのプロパティは、**Matrix** でベクター成分を設定するよりも、概念化が簡単なためです。 また、変換の個別のプロパティをアニメーション化することも簡単です。**Matrix** は実際には構造体であり、[**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/BR242356) ではありません。したがって、アニメーション化された個々の値をサポートすることはできません。 変換演算の適用を可能にする XAML 設計ツールには、結果を [**MatrixTransform**](https://msdn.microsoft.com/library/windows/apps/BR210137) としてシリアル化するものもあります。
+[
+            **TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027)、[**ScaleTransform**](https://msdn.microsoft.com/library/windows/apps/BR242940)、[**RotateTransform**](https://msdn.microsoft.com/library/windows/apps/BR242932)、または [**SkewTransform**](https://msdn.microsoft.com/library/windows/apps/BR242950) の各オブジェクトで記述できる変換は、[**MatrixTransform**](https://msdn.microsoft.com/library/windows/apps/BR210137) と [**Matrix**](https://msdn.microsoft.com/library/windows/apps/BR210127) 値で同様に記述できます。 ただし、一般的に使われるのは、**TranslateTransform** などです。それらの変換クラスのプロパティは、**Matrix** でベクター成分を設定するよりも、概念化が簡単なためです。 また、変換の個別のプロパティをアニメーション化することも簡単です。**Matrix** は実際には構造体であり、[**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/BR242356) ではありません。したがって、アニメーション化された個々の値をサポートすることはできません。
 
-この場合に最善と思われる方法は、[**Matrix**](https://msdn.microsoft.com/library/windows/apps/BR210127) の値を XAML で直接操作しようとすることではなく、もう一度同じ設計ツールを使って変換結果を変更し、もう一度 XAML でシリアル化することです。 3-D 変換
+変換演算の適用を可能にする XAML 設計ツールには、結果を [**MatrixTransform**](https://msdn.microsoft.com/library/windows/apps/BR210137) としてシリアル化するものもあります。 この場合に最善と思われる方法は、[**Matrix**](https://msdn.microsoft.com/library/windows/apps/BR210127) の値を XAML で直接操作しようとすることではなく、もう一度同じ設計ツールを使って変換結果を変更し、もう一度 XAML でシリアル化することです。
 
-## <span id="3-D_transforms"></span><span id="3-d_transforms"></span><span id="3-D_TRANSFORMS"></span>*遠近法変換*を使って、どの [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) にも 3-D 効果を適用できます。
+## <span id="3-D_transforms"></span><span id="3-d_transforms"></span><span id="3-D_TRANSFORMS"></span>3-D 変換
 
-たとえば、遠近平面でオブジェクトが回転してユーザーに近づいたり離れたりするように見せることができます。 これを行うには、**UIElement** オブジェクトの [**Projection**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.projection.aspx) プロパティを [**PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/BR210192) 値として設定します。 **PlaneProjection** クラスは、3-D シミュレーション空間内で変換がどのようにレンダリングされるかを定義します。 この種類の変換については、「[XAML UI 用の 3-D 遠近効果](3-d-perspective-effects.md)」でより詳しく説明しています。 **注**   [**Transform**](https://msdn.microsoft.com/library/windows/apps/BR243006) のクラスを組み合わせて使って同様の結果を得ることは技術的には可能ですが、[**PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/BR210192) 手法では通常、画像をブラシとして使うため見栄えが良く、プロパティの値を適切に取得しやすくなります。
+Windows 10 では、XAML に新しいプロパティである [**UIElement.Transform3D**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.transform3d.aspx) が導入されました。このプロパティを使用すると、UI で使用する 3D 効果を作成できます。 そのためには、[**PerspectiveTransform3D**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.media3d.perspectivetransform3d.aspx) を使用して共有 3D 視点、つまり "カメラ" をシーンに追加し、[**CompositeTransform**](https://msdn.microsoft.com/library/windows/apps/BR228105) を使用する場合のように、[**CompositeTransform3D**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.media3d.compositetransform3d.aspx) を使用して 3D 空間の要素を変換します。 3D 変換を実装する方法の説明については、[**UIElement.Transform3D**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.transform3d.aspx) のページをご覧ください。
 
-関連トピック
+ 1 つのオブジェクトにのみ適用されるもっと簡単な 3D 効果については、[**UIElement.Projection**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.uielement.projection) プロパティを使用できます。 このプロパティの値として [**PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/br210192) を使用することは、固定された視点の変換と 1 つ以上の 3D 変換を要素に適用することに相当します。 この種類の変換については、「[XAML UI 用の 3-D 遠近効果](3-d-perspective-effects.md)」でより詳しく説明しています。
 
- 
+## <span id="related_topics"></span>関連トピック
 
-## <span id="related_topics"></span>図形の描画
-
-* [XAML UI 用の 3-D 遠近効果](drawing-shapes.md)
-* [Transform](3-d-perspective-effects.md)
+* [図形の描画](drawing-shapes.md)
+* [**UIElement.Transform3D**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.transform3d.aspx)
+* [XAML UI 用の 3-D 遠近効果](3-d-perspective-effects.md)
 * [**Transform**](https://msdn.microsoft.com/library/windows/apps/BR243006)
  
 
@@ -154,6 +156,8 @@ void StartAnimation (object sender, RoutedEventArgs e) {
 
 
 
-<!--HONumber=May16_HO2-->
+
+
+<!--HONumber=Jun16_HO3-->
 
 

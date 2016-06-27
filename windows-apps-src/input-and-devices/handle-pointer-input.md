@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: ユニバーサル Windows プラットフォーム (UWP) アプリで、タッチ、マウス、ペン/スタイラス、タッチパッドなどのポインティング デバイスからの入力データを受信、処理、管理します。
-title: ポインター入力の処理
+Description: "ユニバーサル Windows プラットフォーム (UWP) アプリで、タッチ、マウス、ペン/スタイラス、タッチパッドなどのポインティング デバイスからの入力データを受信、処理、管理します。"
+title: "ポインター入力の処理"
 ms.assetid: BDBC9E33-4037-4671-9596-471DCF855C82
 label: Handle pointer input
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 8e3d0fdd97c72c2e7816fbc48738c651fb4f5bbd
+
 ---
 
 # ポインター入力の処理
@@ -1108,6 +1111,7 @@ namespace PointerInput
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

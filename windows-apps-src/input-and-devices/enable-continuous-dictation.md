@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 長い形式の継続的なディクテーション音声入力をキャプチャし、認識する方法について説明します。
-title: 継続的なディクテーションの有効化
+Description: "長い形式の継続的なディクテーション音声入力をキャプチャし、認識する方法について説明します。"
+title: "継続的なディクテーションの有効化"
 ms.assetid: 383B3E23-1678-4FBB-B36E-6DE2DA9CA9DC
 label: Continuous dictation
 template: detail.hbs
+ms.sourcegitcommit: 077fcc6ff462a771ed56f875d960e46e6f4420fc
+ms.openlocfilehash: a142592f878fa539d6c40ea2abfcbf834b2de34d
+
 ---
 
 # 継続的なディクテーション
@@ -68,7 +71,7 @@ private StringBuilder dictatedTextBuilder;
 -   連続的な認識のイベント ハンドラーでアプリの UI を更新する場合は、UI スレッドのディスパッチャーを取得します。
 -   音声認識エンジンを初期化します。
 -   組み込みのディクテーション文法をコンパイルします。
-    **注**   音声認識では、少なくとも 1 つの制約を使って、認識できるボキャブラリを定義する必要があります。 制約が指定されていない場合は、定義済みのディクテーション文法が使われます。 「[音声認識](speech-recognition.md)」をご覧ください
+    **注**   音声認識では、少なくとも 1 つの制約を使って、認識できるボキャブラリを定義する必要があります。 制約が指定されていない場合は、定義済みのディクテーション文法が使われます。 「[音声認識](speech-recognition.md)」をご覧ください。
 -   認識イベントのイベント リスナーをセットアップします。
 
 この例では、[**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) ページ イベントで音声認識を初期化します。
@@ -85,7 +88,7 @@ this.dispatcher = CoreWindow.GetForCurrentThread().Dispatcher;
 this.speechRecognizer = new SpeechRecognizer();
 ```
 
-3.  そして、[**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) によって認識される語句と単語をすべて定義する文法を追加し、コンパイルします
+3.  そして、[**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) によって認識される語句と単語をすべて定義する文法を追加し、コンパイルします。
 
     文法を明示的に指定しない場合は、既定で定義済みのディクテーション文法が使われます。 通常、一般的なディクテーションには、既定の文法が最適です。
 
@@ -168,7 +171,7 @@ private async void ContinuousRecognitionSession_ResultGenerated(
 
 3.  その後、[**Completed**](https://msdn.microsoft.com/library/windows/apps/dn913899) イベントを処理します。これが、継続的なディクテーションの終了を示します。
 
-    セッションは、[**StopAsync**](https://msdn.microsoft.com/library/windows/apps/dn913908) メソッドまたは [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) メソッド (次のセクションを参照) を呼び出すと終了します。 セッションは、エラーが発生したときや、ユーザーが発声を停止したときに終了することもあります。 イベントの引数の [**Status**](https://msdn.microsoft.com/library/windows/apps/dn631440) プロパティを確認して、セッションが終了した理由を特定してください ([**SpeechRecognitionResultStatus**](https://msdn.microsoft.com/library/windows/apps/dn631433))
+    セッションは、[**StopAsync**](https://msdn.microsoft.com/library/windows/apps/dn913908) メソッドまたは [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) メソッド (次のセクションを参照) を呼び出すと終了します。 セッションは、エラーが発生したときや、ユーザーが発声を停止したときに終了することもあります。 イベントの引数の [**Status**](https://msdn.microsoft.com/library/windows/apps/dn631440) プロパティを確認して、セッションが終了した理由を特定してください ([**SpeechRecognitionResultStatus**](https://msdn.microsoft.com/library/windows/apps/dn631433))。
 
     ここでは、[**Completed**](https://msdn.microsoft.com/library/windows/apps/dn913899) 継続的認識イベントのハンドラーを [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) ページ イベントに登録します。
 ```    CSharp
@@ -275,7 +278,7 @@ if (speechRecognizer.State != SpeechRecognizerState.Idle)
 
 [!NOTE]  
 [
-            **CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) を呼び出した後に [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) イベントが発生する場合があります  
+            **CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) を呼び出した後に [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) イベントが発生する場合があります。  
 マルチスレッドであるために、[**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) を呼び出したときに [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) イベントがスタックに残っている可能性があります。 その場合は、**ResultGenerated** イベントも発生します。  
 プライベート フィールドを設定しているときに認識セッションをキャンセルした場合は、その値を常に [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) ハンドラーで確認してください。 たとえば、セッションをキャンセルしたときにプライベート フィールドを null に設定している場合はハンドラー内でフィールドが初期化されると想定しないでください。
 
@@ -297,6 +300,7 @@ if (speechRecognizer.State != SpeechRecognizerState.Idle)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

@@ -1,10 +1,13 @@
 ---
 author: mijacobs
-Description: アダプティブ タイル テンプレートは Windows 10 の新機能であり、シンプルで柔軟なマークアップ言語を使って、さまざまな画面密度に合わせて変化する独自のタイル通知コンテンツをデザインできるようになります。
-title: アダプティブ タイルの作成
+Description: "アダプティブ タイル テンプレートは Windows 10 の新機能であり、シンプルで柔軟なマークアップ言語を使って、さまざまな画面密度に合わせて変化する独自のタイル通知コンテンツをデザインできるようになります。"
+title: "アダプティブ タイルの作成"
 ms.assetid: 1246B58E-D6E3-48C7-AD7F-475D113600F9
 label: Create adaptive tiles
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 0bcdc9570365ca0dcacf4f9c0c1b99afaffcf157
+
 ---
 
 # アダプティブ タイルの作成
@@ -1490,6 +1493,7 @@ TileWide = new TileBinding()
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

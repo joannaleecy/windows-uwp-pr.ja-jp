@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Cortana 内で音声コマンドを使ってシステム機能にアクセスするだけでなく、アプリ内で実行するアクションやコマンドを指定する音声コマンドを使うバックグラウンド アプリの機能によって Cortana を拡張することもできます。
-title: Cortana の音声コマンドを使ったバックグラウンド アプリの起動
+Description: "Cortana 内で音声コマンドを使ってシステム機能にアクセスするだけでなく、アプリ内で実行するアクションやコマンドを指定する音声コマンドを使うバックグラウンド アプリの機能によって Cortana を拡張することもできます。"
+title: "Cortana の音声コマンドを使ったバックグラウンド アプリの起動"
 ms.assetid: DF5B530C-57DD-4CA5-B3BE-1A0B3695C9C6
 label: Launch a background app
 template: detail.hbs
+ms.sourcegitcommit: 7d9f5eff0f6561b18024658fe99d1e11bbe3309f
+ms.openlocfilehash: c65abdda905a390567d3c2b199a891c0c3067df1
+
 ---
 
 # Cortana の音声コマンドを使ったバックグラウンド アプリのアクティブ化
@@ -37,7 +40,7 @@ template: detail.hbs
 
 **Cortana** を使わないで **Adventure Works** の旅行を表示するには、アプリを起動して **[Upcoming trips]** (今後の旅行) ページに移動します。
 
-**Cortana** の音声コマンドを使ってアプリをバックグラウンドで起動する場合、代わりに「Adventure Works に登録されている次のラスベガス旅行はいつですか」と言うことができます。 アプリによりコマンドが処理され、**Cortana** にアプリ アイコンや他のアプリ情報 (ある場合) と共に結果が表示されます。 基本的な旅行クエリと **Cortana** の結果画面の例を次に示します。どちらにも、「次のラスベガス旅行は 8 月 1 日です」という意味の内容が示されます。
+**Cortana** の音声コマンドを使ってアプリをバックグラウンドで起動する場合、代わりに「Adventure Works に登録されている次のラスベガス旅行はいつですか」と言うことができます。 アプリによりコマンドが処理され、**Cortana** にアプリ アイコンや他のアプリ情報 (ある場合) と共に結果が表示されます。 基本的な旅行クエリと **Cortana** の結果画面の例を次に示します。どちらにも、「次のラスベガス旅行は 2015 年 7 月 31 日、金曜日です」という意味の内容が示されます。
 
 ![Adventure Works アプリをバックグラウンドで使った場合の基本的なクエリと結果画面](images/cortana-backgroundapp-result.png)
 
@@ -54,7 +57,7 @@ template: detail.hbs
 ユニバーサル Windows プラットフォーム (UWP) アプリを開発するのが初めての場合は、以下のトピックに目を通して、ここで説明されているテクノロジをよく理解できるようにしてください。
 
 -   [初めてのアプリ作成](https://msdn.microsoft.com/library/windows/apps/bg124288)
--   「[イベントとルーティング イベントの概要](https://msdn.microsoft.com/library/windows/apps/mt185584)」でイベントについて学習します。
+-   「[イベントとルーティング イベントの概要](https://msdn.microsoft.com/library/windows/apps/mt185584)」に記載されているイベントの説明
 
 **ユーザー エクスペリエンス ガイドライン:  **
 
@@ -122,38 +125,37 @@ destinationTile.Image =
 
 <ol>
     <li>
-    ソリューションの名前を右クリックし、**[新規作成]、[プロジェクト]** の順にクリックします。
+ソリューションの名前を右クリックし、**[新規作成]、[プロジェクト]** の順にクリックします。
     </li>
     <li>
-    **[インストール済み]、[テンプレート]、[Visual C#]、[Windows]、[ユニバーサル]** の順にクリックし、**[Windows ランタイム コンポーネント]** をクリックします。 これは、アプリ サービス (**[Windows.ApplicationModel.AppService](https://msdn.microsoft.com/library/windows/apps/dn921731)**) を実装するコンポーネントです。
+**[インストール済み]、[テンプレート]、[Visual C#]、[Windows]、[ユニバーサル]** の順にクリックし、**[Windows ランタイム コンポーネント]** をクリックします。 これは、アプリ サービス (**[Windows.ApplicationModel.AppService](https://msdn.microsoft.com/library/windows/apps/dn921731)**) を実装するコンポーネントです。
     </li>
     <li>
-    プロジェクトの名前 (たとえば、"VoiceCommandService") を入力し、**[OK]** をクリックします。
+プロジェクトの名前 (たとえば、"VoiceCommandService") を入力し、**[OK]** をクリックします。
     </li>
     <li>
-    **ソリューション エクスプローラー**で、"VoiceCommandService" プロジェクトを選び、Visual Studio によって生成された "Class1.cs" ファイルの名前を変更します。 **Adventure Works** の例では、"AdventureWorksVoiceCommandService.cs" を使います。
+**ソリューション エクスプローラー**で、"VoiceCommandService" プロジェクトを選び、Visual Studio によって生成された "Class1.cs" ファイルの名前を変更します。 **Adventure Works** の例では、"AdventureWorksVoiceCommandService.cs" を使います。
     </li>
     <li>
-    "Class1.cs" のすべての出現箇所の名前を変更するかどうかをたずねるメッセージが表示されたら、**[はい]** をクリックします。 
+"Class1.cs" のすべての出現箇所の名前を変更するかどうかをたずねるメッセージが表示されたら、**[はい]** をクリックします。 
     </li>
     <li>
-    "AdventureWorksVoiceCommandService.cs" ファイルで、次の操作を行います。
-        <ol type="i">
+"AdventureWorksVoiceCommandService.cs" ファイルで、次の操作を行います。 <ol type="i">
  <li>
- 次の using ディレクティブを追加します。  
+次の using ディレクティブを追加します。  
  ```using Windows.ApplicationModel.Background;```
  </li>
  <li>
- 新しいプロジェクトを作成するときに、プロジェクト名は、すべてのファイルで既定のルート名前空間として使用されます。 プライマリ プロジェクトの下でアプリ サービスのコードを入れ子にするために、名前空間の名前を変更します。 たとえば、`namespace AdventureWorks.VoiceCommands` と記述します。 
+新しいプロジェクトを作成するときに、プロジェクト名は、すべてのファイルで既定のルート名前空間として使用されます。 プライマリ プロジェクトの下でアプリ サービスのコードを入れ子にするために、名前空間の名前を変更します。 たとえば、`namespace AdventureWorks.VoiceCommands` と記述します。 
  </li>
  <li>
- ソリューション エクスプローラーでアプリ サービスのプロジェクト名を右クリックし、**[プロパティ]** を選択します。 
+ソリューション エクスプローラーでアプリ サービスのプロジェクト名を右クリックし、**[プロパティ]** を選択します。 
  </li>
  <li>
- **[ライブラリ]** タブで、**"既定の名前空間"** フィールドをこの同じ値で更新します (たとえば、"AdventureWorks.VoiceCommands")。 
+**[ライブラリ]** タブで、**"既定の名前空間"** フィールドをこの同じ値で更新します (たとえば、"AdventureWorks.VoiceCommands")。 
  </li>
  <li>
- [
+[
             **IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) インターフェイスを実装する新しいクラスを作成します。 このクラスには、Cortana が音声コマンドを認識するときのエントリ ポイントである [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811) メソッドが必要です。 
  </li>
         </ol>
@@ -211,40 +213,40 @@ namespace AdventureWorks.VoiceCommands
 
 <ol start="7">
     <li>
-    アプリ マニフェストでバックグラウンド タスクを **AppService** として宣言します。
+アプリ マニフェストでバックグラウンド タスクを **AppService** として宣言します。
     <ol type="i">
         <li>
-        **ソリューション エクスプローラー**で、"Package.appxmanifest" ファイルを右クリックして **[コードの表示]** を選択します。 
+**ソリューション エクスプローラー**で、"Package.appxmanifest" ファイルを右クリックして **[コードの表示]** を選択します。 
         </li>
         <li>
-        [
+[
             **Application**](https://msdn.microsoft.com/library/windows/apps/dn934738) 要素を探します。
         </li>
         <li>
-        [
+[
             **Extensions**](https://msdn.microsoft.com/library/windows/apps/dn934720) 要素を [**Application**](https://msdn.microsoft.com/library/windows/apps/dn934738) 要素に追加します。
         </li>
         <li>
-        [
+[
             **uap:Extension**](https://msdn.microsoft.com/library/windows/apps/dn986788) 要素を [**Extensions**](https://msdn.microsoft.com/library/windows/apps/dn934720) 要素に追加します。
         </li>
         <li>**Category** 属性を **uap:Extension** 要素に追加し、**Category** 属性の値を "windows.appService" に設定します。
         </li>
         <li>
-        **EntryPoint** 属性を **uap:Extension** 要素に追加し、**EntryPoint** 属性の値を、[**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) を実装するクラスの名前 (この場合は "AdventureWorks.VoiceCommands.AdventureWorksVoiceCommandService") に設定します。
+**EntryPoint** 属性を **uap:Extension** 要素に追加し、**EntryPoint** 属性の値を、[**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) を実装するクラスの名前 (この場合は "AdventureWorks.VoiceCommands.AdventureWorksVoiceCommandService") に設定します。
         </li>
         <li>
-        [
+[
             **uap:AppService**](https://msdn.microsoft.com/library/windows/apps/dn934779) 要素を **uap:Extension** 要素に追加します。
         </li>
         <li>
-        **Name** 属性を [**uap:AppService**](https://msdn.microsoft.com/library/windows/apps/dn934779) 要素に追加し、**Name** 属性の値を、アプリ サービスの名前 (この場合は "AdventureWorksVoiceCommandService") に設定します。
+**Name** 属性を [**uap:AppService**](https://msdn.microsoft.com/library/windows/apps/dn934779) 要素に追加し、**Name** 属性の値を、アプリ サービスの名前 (この場合は "AdventureWorksVoiceCommandService") に設定します。
         </li>
         <li>
-        2 つ目の [**uap:Extension**](https://msdn.microsoft.com/library/windows/apps/dn986788) 要素を [**Extensions**](https://msdn.microsoft.com/library/windows/apps/dn934720) に追加します。
+2 つ目の [**uap:Extension**](https://msdn.microsoft.com/library/windows/apps/dn986788) 要素を [**Extensions**](https://msdn.microsoft.com/library/windows/apps/dn934720) に追加します。
         </li>
         <li>
-        **Category** 属性をこの [**uap:Extension**](https://msdn.microsoft.com/library/windows/apps/dn986788) 要素に追加し、**Category** 属性の値を "windows.personalAssistantLaunch" に設定します。
+**Category** 属性をこの [**uap:Extension**](https://msdn.microsoft.com/library/windows/apps/dn986788) 要素に追加し、**Category** 属性の値を "windows.personalAssistantLaunch" に設定します。
         </li>
     </li> 
     </ol>
@@ -272,19 +274,19 @@ Adventure Works アプリのマニフェストを次に示します。
 
 <ol start="8">
     <li>
-    このアプリ サービス プロジェクトをプライマリ プロジェクトの参照として追加します。 
+このアプリ サービス プロジェクトをプライマリ プロジェクトの参照として追加します。 
     <ol type="i">
         <li>
-        **[参照設定]** を右クリックします。 
+**[参照設定]** を右クリックします。 
         </li>
         <li>
-        **[参照の追加...]** をクリックします。 
+**[参照の追加...]** をクリックします。 
         </li>
         <li>
-        **[参照マネージャー]** ダイアログ ボックスで、**[プロジェクト]** を展開し、アプリ サービス プロジェクトを選択します。 
+**[参照マネージャー]** ダイアログ ボックスで、**[プロジェクト]** を展開し、アプリ サービス プロジェクトを選択します。 
         </li>
         <li>
-        [OK] をクリックします。 
+[OK] をクリックします。 
         </li>
     </ol>
     </li>
@@ -438,7 +440,7 @@ catch (Exception ex)
 
 3.  アプリで適切なアクションを実行します (希望するページに移動するなど)。
 
-この例では、手順 3. の「VCD ファイルの編集」の VCD について思い出す必要があります。
+この例では、手順 3 の「VCD ファイルの編集」の VCD について思い出す必要があります。
 
 音声コマンドの音声認識の結果を取得したら、[**RulePath**](https://msdn.microsoft.com/library/windows/apps/dn631438) 配列の最初の値からコマンド名を取得します。 VCD ファイルでは考えられる複数の音声コマンドが定義されたため、その値を VCD 内のコマンド名と比較し、適切なアクションを実行する必要があります。
 
@@ -782,6 +784,7 @@ public sealed class VoiceCommandService : IBackgroundTask
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

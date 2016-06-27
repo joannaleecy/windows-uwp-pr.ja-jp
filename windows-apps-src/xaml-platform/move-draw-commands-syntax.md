@@ -1,8 +1,11 @@
 ---
 author: jwmsft
-description: ここでは、パスの形状を XAML 属性値として指定するために使うことのできる、移動と描画のコマンド (ミニ言語) について説明します。
-title: 移動と描画のコマンド構文
+description: "ここでは、パスの形状を XAML 属性値として指定するために使うことのできる、移動と描画のコマンド (ミニ言語) について説明します。"
+title: "移動と描画のコマンド構文"
 ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
+ms.sourcegitcommit: e1399a25b0455c9a79dcb217c5df1a397420d1f3
+ms.openlocfilehash: 54c080183104335f4b3920cda8bc396a34298a69
+
 ---
 
 # 移動と描画のコマンド構文
@@ -251,11 +254,11 @@ Windows ランタイム XAML では、移動と描画のコマンドにより、
 
 ## 移動と描画のコマンドを生成するデザイン ツール
 
-Blend for Microsoft Visual Studio 2013 で**ペン** ツールやその他の描画ツールを使うと、通常、[**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) オブジェクトが移動と描画のコマンドと共に生成されます。
+Blend for Microsoft Visual Studio 2015 で**ペン** ツールやその他の描画ツールを使うと、通常、[**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) オブジェクトが移動と描画のコマンドと共に生成されます。
 
 Windows ランタイムのコントロール用の既定の XAML テンプレートを見ると、定義されているコントロールのパーツの一部に、移動と描画のコマンドのデータが含まれていることに気付くことがあります。 たとえば、一部のコントロールで使われる [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722) では、データが移動と描画のコマンドとして定義されています。
 
-その他のよく使われるベクター グラフィックス デザイン ツールにも、ベクターを XAML 形式で出力できるエクスポーターやプラグインがあります。 これらは通常、レイアウト コンテナーに [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) オブジェクトを作成し、[**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) に移動と描画のコマンドを設定します。 XAML には、別々のブラシを適用できるように複数の **Path** 要素が含まれている場合があります。 これらのエクスポーターやプラグインは、もともと Windows Presentation Foundation (WPF)の XAML 用に作られたものですが、この部分に関する XAML 構文は Windows ランタイム XAM と同じです。 多くの場合、エクスポーターの XAML の一部を使って、Windows ランタイムの XAML ページに直接貼り付けることができます (ただし、変換後の XAML に **RadialGradientBrush** が含まれている場合、このブラシは Windows ランタイム XAML でサポートされないため、使うことはできません)。
+その他のよく使われるベクター グラフィックス デザイン ツールにも、ベクターを XAML 形式で出力できるエクスポーターやプラグインがあります。 これらは通常、レイアウト コンテナーに [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) オブジェクトを作成し、[**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) に移動と描画のコマンドを設定します。 XAML には、別々のブラシを適用できるように複数の **Path** 要素が含まれている場合があります。 これらのエクスポーターやプラグインの多くは、本来は Windows Presentation Foundation (WPF) の XAML や Silverlight 用に作成されたものですが、XAML のパス構文は Windows ランタイム XAML と同じです。 通常、エクスポーターからの XAML の大部分を Windows ランタイムの XAML ページに直接貼り付けることができます (ただし、変換後の XAML に **RadialGradientBrush** が含まれている場合、このブラシは Windows ランタイム XAML でサポートされないため、使うことはできません)。
 
 ## 関連トピック
 
@@ -266,6 +269,7 @@ Windows ランタイムのコントロール用の既定の XAML テンプレー
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

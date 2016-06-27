@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: このトピックでは、新しい Windows UI の回転について説明し、Windows ストア アプリでこの新しい対話式操作のメカニズムを使うときに考慮する必要があるユーザー エクスペリエンスのガイドラインを示します。
-title: 回転
+Description: "このトピックでは、新しい Windows UI の回転について説明し、Windows ストア アプリでこの新しい対話式操作のメカニズムを使うときに考慮する必要があるユーザー エクスペリエンスのガイドラインを示します。"
+title: "回転"
 ms.assetid: f098bc05-35b3-46b2-9e9b-9ff292d067ca
 label: Rotation
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: d91a3cf5dc5ae2e1a68e32fc64848b869f229391
+
 ---
 
 # 回転
@@ -123,6 +126,7 @@ Windows 8 では、自由、制約付き、複合の 3 種類の回転をサポ
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

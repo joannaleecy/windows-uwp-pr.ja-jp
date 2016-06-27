@@ -1,8 +1,11 @@
 ---
 author: Jwmsft
 ms.assetid: 54CC0BD4-1961-44D7-AB40-6E8B58E42D65
-title: 図形の描画
-description: 楕円形、長方形、多角形、パスなどの図形を描画する方法について説明します。 Path クラスは、きわめて複雑なベクター ベースの画像記述言語を XAML UI で視覚化するための手段です。たとえば、ベジエ曲線を描画することができます。
+title: "図形の描画"
+description: "楕円形、長方形、多角形、パスなどの図形を描画する方法について説明します。 Path クラスは、きわめて複雑なベクター ベースの画像記述言語を XAML UI で視覚化するための手段です。たとえば、ベジエ曲線を描画することができます。"
+ms.sourcegitcommit: 04a3c2dabc4b115faf4b06aa3d3a59c5c38ab95f
+ms.openlocfilehash: 42514e5119b646d196e0a1c7d3099ebed2225c69
+
 ---
 # 図形の描画
 
@@ -206,8 +209,7 @@ The next example shows a usage of the other technique we discussed: a [**Geometr
 ```
 
 [
-            **PathGeometry**](https://msdn.microsoft.com/library/windows/apps/BR210168) とさまざまな構成要素を使う理由の 1 つとして、それぞれの構成要素に **Double** プロパティと **Point** プロパティがあり、UI アニメーションのターゲットになる可能性があることが挙げられます。 [
-            **Path.Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) のシリアル化形式を使ってこれを行うことはできません。 詳しくは、「[ストーリーボードに設定されたアニメーション](storyboarded-animations.md)」をご覧ください。
+            **PathGeometry**](https://msdn.microsoft.com/library/windows/apps/BR210168) を使うと、[**Path.Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) 文字列を設定した場合よりも読みやすくなることがあります。 また、[**Path.Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) では、スケーラブル ベクター グラフィックス (SVG) の画像パスの定義と互換性のある構文が使われます。これにより、SVG からグラフィックスを移植したり、Blend などのツールからの出力として移植したりする際に役立ちます。
 
  
 
@@ -218,6 +220,7 @@ The next example shows a usage of the other technique we discussed: a [**Geometr
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

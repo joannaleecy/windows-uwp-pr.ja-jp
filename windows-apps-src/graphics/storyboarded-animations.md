@@ -1,8 +1,11 @@
 ---
 author: Jwmsft
 ms.assetid: 0CBCEEA0-2B0E-44A1-A09A-F7A939632F3A
-title: ストーリーボードに設定されたアニメーション
-description: ストーリーボードに設定されたアニメーションは、単なる視覚なアニメーションではありません。
+title: "ストーリーボードに設定されたアニメーション"
+description: "ストーリーボードに設定されたアニメーションは、単なる視覚なアニメーションではありません。"
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 83e361fd736ce46893517c7a5cccc9c5efc9a889
+
 ---
 # ストーリーボードに設定されたアニメーション
 
@@ -61,7 +64,7 @@ Microsoft Silverlight または Windows Presentation Foundation (WPF) に慣れ�
 
 ターゲット オブジェクトの直接のプロパティではないプロパティをターゲットにする必要があることもありますが、オブジェクトとプロパティの関係の中でより深い入れ子の状態になります。 アニメーション化できるプロパティの型 ([**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)、[**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870)、[**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723)) を参照できるまで、関係する一連のオブジェクトとプロパティの値をドリルダウンするために、これが必要になることがよくあります。 この概念を *"間接的なターゲット設定"* と呼び、この方法でアニメーションの対象プロパティを設定する構文を *"プロパティ パス"* と呼びます。
 
-次に例を示します。 ストーリーボードに設定されたアニメーションの一般的なシナリオの 1 つに、コントロールが特定の状態にあることを表すためにアプリ UI やコントロールの一部の色を変更するというシナリオがあります。 たとえば、赤から緑に変化するように [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) の [**Foreground**](https://msdn.microsoft.com/library/windows/apps/BR209665) をアニメーション化するとします。 [
+次に例を示します。 ストーリーボードに設定されたアニメーションの一般的なシナリオの 1 つに、コントロールが特定の状態にあることを表すためにアプリ UI やコントロールの一部の色を変更するというものがあります。 たとえば、赤から緑に変化するように [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) の [**Foreground**](https://msdn.microsoft.com/library/windows/apps/BR209665) をアニメーション化するとします。 [
             **ColorAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243066) の呼び出しが必要と思われるでしょう。それは正しいものの、 オブジェクトの色に影響する UI 要素のプロパティは、実際には [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) 型ではなく、 [
             **Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) 型です。 そのため、アニメーションのターゲット設定に実際に必要なのは、[**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) クラスの [**Color**](https://msdn.microsoft.com/library/windows/apps/BR242963) プロパティです。これは、これらの色関連の UI プロパティに一般的に使われる **Brush** 派生型です。 アニメーションのプロパティのターゲット設定に使うプロパティ パスの作成という点に注目すると、次のようになります。
 
@@ -92,7 +95,7 @@ Microsoft Silverlight または Windows Presentation Foundation (WPF) に慣れ�
 
 XAML 添付プロパティをアニメーション化することもできます。 `(Canvas.Left)` のように、必ず完全な添付プロパティの名前をかっこで囲んでください。 詳しくは、「[XAML 添付プロパティのアニメーション化](./storyboarded-animations.md#animating-xaml-attached-properties)」をご覧ください。
 
-アニメーション化するプロパティの間接的なターゲット設定をプロパティ パスで行う方法について詳しくは、「[プロパティ パス構文](https://msdn.microsoft.com/library/windows/apps/Mt185586)」や「[**Storyboard.TargetProperty 添付プロパティ**](https://msdn.microsoft.com/library/windows/apps/Hh759824)」をご覧ください。
+アニメーション化するプロパティの間接的なターゲット設定をプロパティ パスで行う方法について詳しくは、「[プロパティ パス構文](https://msdn.microsoft.com/library/windows/apps/Mt185586)」または「[**Storyboard.TargetProperty 添付プロパティ**](https://msdn.microsoft.com/library/windows/apps/Hh759824)」をご覧ください。
 
 ### アニメーション型
 
@@ -197,7 +200,7 @@ Windows ランタイムのアニメーション システムには、ストー�
 [
             **Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) クラスには、実際にはアニメーション型と同様に多数の同じアニメーション プロパティがあります。どちらも [**Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517) 基底クラスを共有しているためです。 そのため、**Storyboard** には [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243211) か [**BeginTime**](https://msdn.microsoft.com/library/windows/apps/BR243204) を設定できます。 通常は、含まれるすべてのアニメーションにその動作を持たせる場合を除いて、これらを **Storyboard** に設定することはありません。 一般に、**Storyboard** に設定されている **Timeline** プロパティはそのすべての子アニメーションに適用されます。 非設定の場合、**Storyboard** には、含まれるアニメーションの最も長い [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377) 値から計算された暗黙的な継続時間が使われます。 子アニメーションのいずれかよりも短い [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) を **Storyboard** に明示的に設定すると、そのアニメーションは途中で途切れてしまいます。これは、通常は望ましくありません。
 
-ストーリーボードには、同じオブジェクトの同じプロパティをターゲットにしてアニメーション化する 2 つのアニメーションを含めることはできません。 これを試みると、ストーリーボードの実行を試みたときにランタイム エラーが発生します。 この制限は、[**BeginTime**](https://msdn.microsoft.com/library/windows/apps/BR243204) 値と継続時間が意図的に異なる設定になっているためにアニメーションが時間的に重ならない場合でも適用されます。 1 つのストーリーボードで、同じプロパティに対してより複雑なアニメーション タイムラインを実際に適用する場合は、キー フレーム アニメーションを使います。 「[キーフレームとイージング関数のアニメーション](key-frame-and-easing-function-animations.md)」をご覧ください。
+ストーリーボードには、同じオブジェクトの同じプロパティをターゲットにしてアニメーション化する 2 つのアニメーションを含めることはできません。 これを試みると、ストーリーボードの実行を試みたときにランタイム エラーが発生します。 この制限は、[**BeginTime**](https://msdn.microsoft.com/library/windows/apps/BR243204) 値と継続時間が意図的に異なる設定になっているためにアニメーションが時間的に重ならない場合でも適用されます。 実際に 1 つのストーリーボードで同じプロパティにより複雑なアニメーション タイムラインを適用する場合は、キー フレーム アニメーションを使います。 「[キーフレームとイージング関数のアニメーション](key-frame-and-easing-function-animations.md)」をご覧ください。
 
 アニメーション システムは、複数のアニメーションをプロパティの値に適用できます (それらが複数のストーリーボードからの入力である場合)。 意図的にこの動作を使って同時にストーリーボードを実行するのは一般的ではありません。 ただし、コントロールのプロパティに適用する、アプリで定義されたアニメーションによって、コントロールの表示状態モデルの一部として以前に実行されたアニメーションの **HoldEnd** 値が変更される可能性があります。
 
@@ -266,9 +269,9 @@ UI スレッドの処理を遅くする可能性があると判断された各�
 </Storyboard>
 ```
 
-アニメーションがこれらの条件を満たしていない場合は、おそらく依存型アニメーションです。 既定では、アニメーション システムは依存型アニメーションを実行しません。 そのため、開発とテストのプロセス中に、アニメーションの実行を確認できない可能性もあります。 このアニメーションを使うことはできるものの、こうした各依存型アニメーションを明示的に有効にする必要があります。 アニメーションを有効にするには、アニメーション オブジェクトの **EnableDependentAnimation** プロパティを **true** に設定します (アニメーションを表す [**Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517) サブクラスごとにプロパティの実装は異なりますが、いずれも名前は次の名前になります)。
+アニメーションがこれらの条件を満たしていない場合は、おそらく依存型アニメーションです。 既定では、アニメーション システムは依存型アニメーションを実行しません。 そのため、開発とテストのプロセス中に、アニメーションの実行を確認できない可能性もあります。 このアニメーションを使うことはできるものの、こうした各依存型アニメーションを明示的に有効にする必要があります。 アニメーションを有効にするには、アニメーション オブジェクトの **EnableDependentAnimation** プロパティを **true** に設定します (アニメーションを表す [**Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517) サブクラスごとにプロパティの実装は異なりますが、いずれも名前は `EnableDependentAnimation` です)。
 
-アプリ開発者には、依存型アニメーションを利用できるようにする能力が要求されます。これは、依存型アニメーションの利用がアニメーション システムを設計する際に重要な要素であり、開発経験としても重要な経験となるためです。 開発者は、アニメーションには UI の応答性の低下というパフォーマンス コストが存在することに注意しなければなりません。 パフォーマンスの低いアニメーションは、フルスケールのアプリでの分離とデバッグが困難です。 そのため、アプリの UI エクスペリエンスに実際に必要な依存型アニメーションだけを有効にする方が適切です。 多くのサイクルを使う装飾的なアニメーションによりアプリのパフォーマンスが低下しないように注意する必要があります。 アニメーションのパフォーマンスに関するヒントについて詳しくは、「[アニメーションとメディアの最適化](https://msdn.microsoft.com/library/windows/apps/Mt204774)」をご覧ください。
+アプリ開発者に課される依存型アニメーションを有効にするという要件は、開発経験を活かしたアニメーション システムにおける重要な設計の一側面です。 開発者は、アニメーションには UI の応答性の低下というパフォーマンス コストが存在することに注意しなければなりません。 パフォーマンスの低いアニメーションは、フルスケールのアプリでの分離とデバッグが困難です。 そのため、アプリの UI エクスペリエンスに実際に必要な依存型アニメーションだけを有効にする方が適切です。 多くのサイクルを使う装飾的なアニメーションによりアプリのパフォーマンスが低下しないように注意する必要があります。 アニメーションのパフォーマンスに関するヒントについて詳しくは、「[アニメーションとメディアの最適化](https://msdn.microsoft.com/library/windows/apps/Mt204774)」をご覧ください。
 
 アプリ開発者は、**EnableDependentAnimation** が **true** でも、依存型アニメーションを常に無効にするアプリ全体の設定を適用することもできます。 「[**Timeline.AllowDependentAnimations**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.allowdependentanimations)」をご覧ください。
 
@@ -321,7 +324,7 @@ myStoryBoard.Begin()
 
 ### **Storyboard** と **EventTrigger**
 
-XAML で完全に宣言できるアニメーションをある方法で開始できます。 しかし、この手法は幅広く使われていません。 これは、[**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209007manager) がサポートされる前の WPF と旧バージョンの Silverlight で使われていた構文です。 この [**EventTrigger**](https://msdn.microsoft.com/library/windows/apps/BR242390) 構文はインポートまたは互換性の理由から Windows ランタイム XAML でも機能しますが、[**FrameworkElement.Loaded**](https://msdn.microsoft.com/library/windows/apps/BR208723) イベントに基づくトリガー動作でのみ機能します。他のイベントのトリガーを試みると、例外がスローされるか、コンパイルに失敗します。 詳しくは、「[**EventTrigger**](https://msdn.microsoft.com/library/windows/apps/BR242390)」または「[**BeginStoryboard**](https://msdn.microsoft.com/library/windows/apps/BR243053)」をご覧ください。
+XAML で完全に宣言できるアニメーションをある方法で開始できます。 しかし、この手法は幅広く使われていません。 これは、[**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209007manager) がサポートされる前の WPF と旧バージョンの Silverlight で使われていた構文です。 この [**EventTrigger**](https://msdn.microsoft.com/library/windows/apps/BR242390) 構文はインポートまたは互換性の理由から Windows ランタイム XAML でも機能するものの、[**FrameworkElement.Loaded**](https://msdn.microsoft.com/library/windows/apps/BR208723) イベントに基づくトリガー動作でのみ機能します。他のイベントのトリガーを試みると、例外がスローされるか、コンパイルに失敗します。 詳しくは、「[**EventTrigger**](https://msdn.microsoft.com/library/windows/apps/BR242390)」または「[**BeginStoryboard**](https://msdn.microsoft.com/library/windows/apps/BR243053)」をご覧ください。
 
 ## XAML 添付プロパティのアニメーション化
 
@@ -349,6 +352,7 @@ XAML で完全に宣言できるアニメーションをある方法で開始で
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

@@ -1,11 +1,14 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: インク ストロークを手書き認識によりテキストに変換したり、カスタム認識により図形に変換したりします。
-title: Windows インク ストロークのテキスト認識
+Description: "インク ストロークを手書き認識によりテキストに変換したり、カスタム認識により図形に変換したりします。"
+title: "Windows インク ストロークのテキスト認識"
 ms.assetid: C2F3F3CE-737F-4652-98B7-5278A462F9D3
 label: Recognize Windows Ink strokes as text
 template: detail.hbs
 keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, handwriting recognition
+ms.sourcegitcommit: 1722fc00de000d07ed30cfb0ae12080708c30b76
+ms.openlocfilehash: c2c43052a1a4a96d7c0a95578b7b3fa3a2fd8a74
+
 ---
 
 # Windows インク ストロークのテキスト認識
@@ -38,15 +41,15 @@ keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, handwr
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <StackPanel x:Name="HeaderPanel" 
-                    Orientation="Horizontal" 
+        <StackPanel x:Name="HeaderPanel"
+                    Orientation="Horizontal"
                     Grid.Row="0">
-            <TextBlock x:Name="Header" 
-                       Text="Basic ink recognition sample" 
-                       Style="{ThemeResource HeaderTextBlockStyle}" 
+            <TextBlock x:Name="Header"
+                       Text="Basic ink recognition sample"
+                       Style="{ThemeResource HeaderTextBlockStyle}"
                        Margin="10,0,0,0" />
-            <Button x:Name="recognize" 
-                    Content="Recognize" 
+            <Button x:Name="recognize"
+                    Content="Recognize"
                     Margin="50,0,10,0"/>
         </StackPanel>
         <Grid Grid.Row="1">
@@ -54,10 +57,10 @@ keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, handwr
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <InkCanvas x:Name="inkCanvas" 
+            <InkCanvas x:Name="inkCanvas"
                        Grid.Row="0"/>
-            <TextBlock x:Name="recognitionResult" 
-                       Grid.Row="1" 
+            <TextBlock x:Name="recognitionResult"
+                       Grid.Row="1"
                        Margin="50,0,10,0"/>
         </Grid>
     </Grid>
@@ -100,9 +103,9 @@ public MainPage()
 
     An [**InkRecognizerContainer**](https://msdn.microsoft.com/library/windows/apps/br208479) is created to manage the handwriting recognition process.
 ```    CSharp
-// Create a manager for the InkRecognizer object 
+// Create a manager for the InkRecognizer object
     // used in handwriting recognition.
-    InkRecognizerContainer inkRecognizerContainer = 
+    InkRecognizerContainer inkRecognizerContainer =
         new InkRecognizerContainer();
 ```
 
@@ -111,9 +114,9 @@ public MainPage()
     Recognition results are produced for each word that is detected by an [**InkRecognizer**](https://msdn.microsoft.com/library/windows/apps/br208478).
 ```    CSharp
 // Recognize all ink strokes on the ink canvas.
-    IReadOnlyList<InkRecognitionResult> recognitionResults = 
+    IReadOnlyList<InkRecognitionResult> recognitionResults =
         await inkRecognizerContainer.RecognizeAsync(
-            inkCanvas.InkPresenter.StrokeContainer, 
+            inkCanvas.InkPresenter.StrokeContainer,
             InkRecognitionTarget.All);
 ```
 
@@ -150,18 +153,18 @@ string str = "Recognition result\n";
         // Ensure an ink stroke is present.
         if (currentStrokes.Count > 0)
         {
-            // Create a manager for the InkRecognizer object 
+            // Create a manager for the InkRecognizer object
             // used in handwriting recognition.
-            InkRecognizerContainer inkRecognizerContainer = 
+            InkRecognizerContainer inkRecognizerContainer =
                 new InkRecognizerContainer();
 
             // inkRecognizerContainer is null if a recognition engine is not available.
             if (!(inkRecognizerContainer == null))
             {
                 // Recognize all ink strokes on the ink canvas.
-                IReadOnlyList<InkRecognitionResult> recognitionResults = 
+                IReadOnlyList<InkRecognitionResult> recognitionResults =
                     await inkRecognizerContainer.RecognizeAsync(
-                        inkCanvas.InkPresenter.StrokeContainer, 
+                        inkCanvas.InkPresenter.StrokeContainer,
                         InkRecognitionTarget.All);
                 // Process and display the recognition results.
                 if (recognitionResults.Count > 0)
@@ -206,49 +209,13 @@ string str = "Recognition result\n";
 
 Windows でサポートされている包括的な言語のサブセットを手書き認識に使えます。
 
-次の表に示しているのは、[**InkRecognizer**](https://msdn.microsoft.com/library/windows/apps/br208478) でサポートされている言語です。 最初の列に示しているのは、[**Name**](https://msdn.microsoft.com/library/windows/apps/br208484) に使える値です。
-
-| 名前                                                            | IETF 言語タグ | 対象範囲                                                                      |
-|-----------------------------------------------------------------|-------------------|-------------------------------------------------------------------------------|
-| Microsoft English (US) Handwriting Recognizer                   | en-US             | 英語 (米国とフィリピン)                                       |
-| Microsoft English (UK) Handwriting Recognizer                   | en-GB             | 英語 (英国、およびこの表で指定されていないその他のすべての地域) |
-| Microsoft English (Canada) Handwriting Recognizer               | en-CA             | 英語 (カナダ)                                                             |
-| Microsoft English (Australia) Handwriting Recognizer            | en-AU             | 英語 (オーストラリア)                                                          |
-| Microsoft-Handschrifterkennung - Deutsch                        | de-DE             | ドイツ語 (ドイツ、オーストリア、ルクセンブルク、ナミビア)                           |
-| Microsoft-Handschrifterkennung - Deutsch (Schweiz)              | de-CH             | ドイツ語 (スイス、リヒテンシュタイン)                                       |
-| Reconocimiento de escritura a mano en español de Microsoft      | es-ES             | スペイン語 (スペイン、およびこの表で指定されていないその他のすべての地域)         |
-| Reconocedor de escritura en Español (México) de Microsoft       | es-MX             | スペイン語 (メキシコ、米国)                                       |
-| Reconocedor de escritura en Español (Argentina) de Microsoft    | es-AR             | スペイン語 (アルゼンチン、パラグアイ、ウルグアイ)                                   |
-| Reconnaissance d'écriture Microsoft - Français                  | fr                | フランス語 (フランス、カナダ、ベルギー、スイス、およびその他のすべての地域)       |
-| Microsoft 日本語手書き認識エンジン                              | ja                | 日本語 (すべての地域)                                                     |
-| Riconoscimento grafia italiana Microsoft                        | it                | イタリア語 (イタリア、スイス、およびその他のすべての地域)                        |
-| Microsoft Nederlandstalige handschriftherkenning                | nl-NL             | オランダ語 (オランダ、スリナム、アンティル諸島)                           |
-| Microsoft Nederlandstalige (België) handschriftherkenning       | nl-BE             | オランダ語 (フラマン) (ベルギー)                                                    |
-| Microsoft 中文(简体)手写识别器                                  | zh                | 簡体字中国語                                                  |
-| Microsoft 中文(繁體)手寫辨識器                                  | zh-Hant           | 繁体字中国語                                                 |
-| Microsoft система распознавания русского рукописного ввода      | ru                | ロシア語 (すべての地域)                                                      |
-| Reconhecedor de Manuscrito da Microsoft para Português (Brasil) | pt-BR             | ポルトガル語 (ブラジル)                                                          |
-| Reconhecedor de escrita manual da Microsoft para português      | pt-PT             | ポルトガル語 (ポルトガル、およびその他のすべての地域)                               |
-| Microsoft 한글 필기 인식기                                      | ko                | 韓国語 (すべての地域)                                                       |
-| System rozpoznawania polskiego pisma odręcznego firmy Microsoft | pl                | ポーランド語 (すべての地域)                                                       |
-| Microsoft Handskriftstolk för svenska                           | sv                | スウェーデン語 (すべての地域)                                                      |
-| Microsoft rozpoznávač rukopisu pro český jazyk                  | cs                | チェコ語 (すべての地域)                                                        |
-| Microsoft Genkendelse af dansk håndskrift                       | da                | デンマーク語 (すべての地域)                                                       |
-| Microsoft Håndskriftsgjenkjenner for norsk                      | nb                | ノルウェー語 (ブークモール) (すべての地域)                                           |
-| Microsoft Håndskriftsgjenkjenner for nynorsk                    | nn                | ノルウェー語 (ニーノシュク) (すべての地域)                                          |
-| Microsoftin suomenkielinen käsinkirjoituksen tunnistus          | fi                | フィンランド語 (すべての地域)                                                      |
-| Microsoft recunoaştere grafie - Română                          | ro                | ルーマニア語 (すべての地域)                                                     |
-| Microsoftov hrvatski rukopisni prepoznavač                      | hr                | クロアチア語 (すべての地域)                                                     |
-| Microsoft prepoznavač rukopisa za srpski (latinica)             | sr-Latn           | セルビア語 (ラテン) (すべての地域)                                           |
-| Microsoft препознавач рукописа за српски (ћирилица)             | sr                | セルビア語 (キリル) (すべての地域)                                        |
-| Reconeixedor d'escriptura manual en català de Microsoft         | ca                | カタロニア語 (すべての地域)                                                      |
-
- 
+[
+            **InkRecognizer**](https://msdn.microsoft.com/library/windows/apps/br208478) によってサポートされている言語の一覧については、[**InkRecognizer.Name**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.input.inking.inkrecognizer.name.aspx) プロパティに関するトピックをご覧ください。
 
 アプリでは、インストール済みの一連の手書き認識エンジンを照会し、それらのいずれかを使うか、ユーザーが好きな言語を選べるようにできます。
 
 **注:**  
-ユーザーは [設定]、[時刻と言語] の順に移動することで、インストール済みの言語の一覧を表示できます。 インストール済みの言語の一覧は [言語] に表示されます。
+ユーザーは **[設定]、[時刻と言語]** の順に移動することで、インストール済みの言語の一覧を表示できます。 インストール済みの言語の一覧は **[言語]** に表示されます。
 
 新しい言語パックをインストールし、その言語の手書き認識を有効にするには、次の手順に従ってください。
 
@@ -273,14 +240,14 @@ Windows でサポートされている包括的な言語のサブセットを手
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <StackPanel x:Name="HeaderPanel" 
-                    Orientation="Horizontal" 
+        <StackPanel x:Name="HeaderPanel"
+                    Orientation="Horizontal"
                     Grid.Row="0">
-            <TextBlock x:Name="Header" 
-                       Text="Advanced international ink recognition sample" 
-                       Style="{ThemeResource HeaderTextBlockStyle}" 
+            <TextBlock x:Name="Header"
+                       Text="Advanced international ink recognition sample"
+                       Style="{ThemeResource HeaderTextBlockStyle}"
                        Margin="10,0,0,0" />
-            <ComboBox x:Name="comboInstalledRecognizers" 
+            <ComboBox x:Name="comboInstalledRecognizers"
                      Margin="50,0,10,0">
                 <ComboBox.ItemTemplate>
                     <DataTemplate>
@@ -290,8 +257,8 @@ Windows でサポートされている包括的な言語のサブセットを手
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
-            <Button x:Name="buttonRecognize" 
-                    Content="Recognize" 
+            <Button x:Name="buttonRecognize"
+                    Content="Recognize"
                     IsEnabled="False"
                     Margin="50,0,10,0"/>
         </StackPanel>
@@ -300,10 +267,10 @@ Windows でサポートされている包括的な言語のサブセットを手
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <InkCanvas x:Name="inkCanvas" 
+            <InkCanvas x:Name="inkCanvas"
                        Grid.Row="0"/>
-            <TextBlock x:Name="recognitionResult" 
-                       Grid.Row="1" 
+            <TextBlock x:Name="recognitionResult"
+                       Grid.Row="1"
                        Margin="50,0,10,0"/>
         </Grid>
     </Grid>
@@ -338,7 +305,7 @@ Windows でサポートされている包括的な言語のサブセットを手
          InitializeRecognizerList();
 
          // Listen for combo box selection.
-         comboInstalledRecognizers.SelectionChanged += 
+         comboInstalledRecognizers.SelectionChanged +=
              comboInstalledRecognizers_SelectionChanged;
 
          // Listen for button click to initiate recognition.
@@ -356,7 +323,7 @@ Windows でサポートされている包括的な言語のサブセットを手
         // Create a manager for the handwriting recognition process.
         inkRecognizerContainer = new InkRecognizerContainer();
         // Retrieve the collection of installed handwriting recognizers.
-        IReadOnlyList<InkRecognizer> installedRecognizers = 
+        IReadOnlyList<InkRecognizer> installedRecognizers =
             inkRecognizerContainer.GetRecognizers();
         // inkRecognizerContainer is null if a recognition engine is not available.
         if (!(inkRecognizerContainer == null))
@@ -387,7 +354,7 @@ Windows でサポートされている包括的な言語のサブセットを手
             **InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) によってすべてのインク ストロークが [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) オブジェクトに格納されます。 インク ストロークを **InkPresenter** の [**StrokeContainer**](https://msdn.microsoft.com/library/windows/apps/dn948766) プロパティを介して公開し、[**GetStrokes**](https://msdn.microsoft.com/library/windows/apps/br208499) メソッドを使って取得します。
 ```    CSharp
 // Get all strokes on the InkCanvas.
-    IReadOnlyList<InkStroke> currentStrokes = 
+    IReadOnlyList<InkStroke> currentStrokes =
         inkCanvas.InkPresenter.StrokeContainer.GetStrokes();
 ```
 
@@ -411,7 +378,7 @@ string str = "Recognition result\n";
     foreach (InkRecognitionResult result in recognitionResults)
     {
         // Get all recognition candidates from each recognition result.
-        IReadOnlyList<string> candidates = 
+        IReadOnlyList<string> candidates =
             result.GetTextCandidates();
         str += "Candidates: " + candidates.Count.ToString() + "\n";
         foreach (string candidate in candidates)
@@ -431,7 +398,7 @@ string str = "Recognition result\n";
     private async void Recognize_Click(object sender, RoutedEventArgs e)
     {
         // Get all strokes on the InkCanvas.
-        IReadOnlyList<InkStroke> currentStrokes = 
+        IReadOnlyList<InkStroke> currentStrokes =
             inkCanvas.InkPresenter.StrokeContainer.GetStrokes();
 
         // Ensure an ink stroke is present.
@@ -453,7 +420,7 @@ string str = "Recognition result\n";
                     foreach (InkRecognitionResult result in recognitionResults)
                     {
                         // Get all recognition candidates from each recognition result.
-                        IReadOnlyList<string> candidates = 
+                        IReadOnlyList<string> candidates =
                             result.GetTextCandidates();
                         str += "Candidates: " + candidates.Count.ToString() + "\n";
                         foreach (string candidate in candidates)
@@ -473,7 +440,7 @@ string str = "Recognition result\n";
             }
             else
             {
-                Windows.UI.Popups.MessageDialog messageDialog = 
+                Windows.UI.Popups.MessageDialog messageDialog =
                     new Windows.UI.Popups.MessageDialog(
                         "You must install handwriting recognition engine.");
                 await messageDialog.ShowAsync();
@@ -517,17 +484,17 @@ public MainPage()
         InitializeRecognizerList();
 
         // Listen for combo box selection.
-        comboInstalledRecognizers.SelectionChanged += 
+        comboInstalledRecognizers.SelectionChanged +=
             comboInstalledRecognizers_SelectionChanged;
 
-        // Listen for stroke events on the InkPresenter to 
+        // Listen for stroke events on the InkPresenter to
         // enable dynamic recognition.
-        // StrokesCollected is fired when the user stops inking by 
+        // StrokesCollected is fired when the user stops inking by
         // lifting their pen or finger, or releasing the mouse button.
-        inkCanvas.InkPresenter.StrokesCollected += 
+        inkCanvas.InkPresenter.StrokesCollected +=
             inkCanvas_StrokesCollected;
         // StrokeStarted is fired when ink input is first detected.
-        inkCanvas.InkPresenter.StrokeInput.StrokeStarted += 
+        inkCanvas.InkPresenter.StrokeInput.StrokeStarted +=
             inkCanvas_StrokeStarted;
 
         // Timer to manage dynamic recognition.
@@ -552,7 +519,7 @@ public MainPage()
     }
 
     // Handler for the InkPresenter StrokesCollected event.
-    // Start the recognition timer when the user stops inking by 
+    // Start the recognition timer when the user stops inking by
     // lifting their pen or finger, or releasing the mouse button.
     // After one second of no ink input, recognition is initiated.
     private void inkCanvas_StrokesCollected(InkPresenter sender, InkStrokesCollectedEventArgs args)
@@ -588,7 +555,7 @@ public MainPage()
     }
 
     // Handler for the InkPresenter StrokesCollected event.
-    // Start the recognition timer when the user stops inking by 
+    // Start the recognition timer when the user stops inking by
     // lifting their pen or finger, or releasing the mouse button.
     // After one second of no ink input, recognition is initiated.
     private void inkCanvas_StrokesCollected(InkPresenter sender, InkStrokesCollectedEventArgs args)
@@ -713,9 +680,6 @@ string str = "Recognition result\n";
 
 
 
-
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO3-->
 
 

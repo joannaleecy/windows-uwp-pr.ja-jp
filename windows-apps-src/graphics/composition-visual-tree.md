@@ -1,8 +1,11 @@
 ---
 author: scottmill
 ms.assetid: f1297b7d-1a10-52ae-dd84-6d1ad2ae2fe6
-title: コンポジションのビジュアル ツリー
-description: コンポジションのビジュアル オブジェクト ツリー構造は、コンポジション API の他のすべての機能でベースとして使われます。 この API により、開発者は 1 つまたは複数のビジュアル オブジェクトを作成して定義できます。それぞれがビジュアル オブジェクト ツリーの 1 つのノードを表します。
+title: "コンポジションのビジュアル ツリー"
+description: "コンポジションのビジュアル オブジェクト ツリー構造は、コンポジション API の他のすべての機能でベースとして使われます。 この API により、開発者は 1 つまたは複数のビジュアル オブジェクトを作成して定義できます。それぞれがビジュアル オブジェクト ツリーの 1 つのノードを表します。"
+ms.sourcegitcommit: b3d198af0c46ec7a2041a7417bccd56c05af760e
+ms.openlocfilehash: e31d3b23871bd37cde26fb3e9414e8cfae340d3d
+
 ---
 # コンポジションのビジュアル ツリー
 
@@ -522,6 +525,7 @@ namespace compositionvisual
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

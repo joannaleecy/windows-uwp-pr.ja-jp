@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: タッチ キーボードを表示または非表示にするときにアプリの UI を調整する方法について説明します。
-title: タッチ キーボードの表示への応答
+Description: "タッチ キーボードを表示または非表示にするときにアプリの UI を調整する方法について説明します。"
+title: "タッチ キーボードの表示への応答"
 ms.assetid: 70C6130E-23A2-4F9D-88E7-7060062DA988
 label: Respond to the presence of the touch keyboard
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 5f4f9553a54dc902c7c6a50d6a1b4cf6251fd72c
+
 ---
 
 # タッチ キーボードの表示への応答
@@ -141,6 +144,7 @@ public class MyApplication
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

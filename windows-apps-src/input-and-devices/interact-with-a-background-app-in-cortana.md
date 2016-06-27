@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 音声コマンドの実行時に Cortana の音声とキャンバスを通じてバックグラウンド アプリを操作する方法について説明します。
-title: バックグラウンド アプリの操作
+Description: "音声コマンドの実行時に Cortana の音声とキャンバスを通じてバックグラウンド アプリを操作する方法について説明します。"
+title: "バックグラウンド アプリの操作"
 ms.assetid: 6C60F03C-A242-435D-96BB-736892CC1CA6
 label: Interact with a background app
 template: detail.hbs
+ms.sourcegitcommit: 7d9f5eff0f6561b18024658fe99d1e11bbe3309f
+ms.openlocfilehash: 675553f5c3954597982360900e965b2a756d7f63
+
 ---
 
 # Cortana でのバックグラウンド アプリの操作
@@ -180,7 +183,9 @@ private async Task SendCompletionMessageForDestination(string destination)
 
 アプリ サービスが ReportSuccessAsync を呼び出さないか、または他の VoiceCommandServiceConnection メソッドを呼び出さない場合、エラー メッセージが表示されてアプリ サービス呼び出しがキャンセルされます。
 
-**Adventure Works** アプリのハンドオフ画面の例を次に示します。 この例では、ユーザーは **Cortana** に旅行の予定を照会しました。 ハンドオフ画面には、アプリ サービス名を使ってカスタマイズされたメッセージ、アイコン、VCD ファイルで宣言された**フィードバック**文字列が表示されます。
+**Adventure Works** アプリのハンドオフ画面の例を次に示します。 この例では、ユーザーは **Cortana** に旅行の予定を照会しました。 ハンドオフ画面には、アプリ サービス名を使ってカスタマイズされたメッセージ、アイコン、**フィードバック**文字列が表示されます。 
+
+[!NOTE] **フィードバック**文字列は、VCD ファイル内で宣言できます。 この文字列は、Cortana のキャンバスに表示される UI テキストには影響しません。**Cortana** によって読み上げられるテキストにのみ影響します。
 
 ![Cortana のバックグラウンド アプリのハンドオフ画面](images/cortana-backgroundapp-progress-result.png)
 
@@ -473,6 +478,7 @@ var userMessage = new VoiceCommandUserMessage();
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

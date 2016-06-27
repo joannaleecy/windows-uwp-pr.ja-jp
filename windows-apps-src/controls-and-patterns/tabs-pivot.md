@@ -1,10 +1,13 @@
 ---
 author: Jwmsft
-Description: タブとピボットを使うと、アクセス頻度の高いコンテンツ間を移動できます。
-title: タブとピボット
+Description: "タブとピボットを使うと、アクセス頻度の高いコンテンツ間を移動できます。"
+title: "タブとピボット"
 ms.assetid: 556BC70D-CF5D-4295-A655-D58163CC1824
 label: Tabs and pivots
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 6585a75f08a64b7bb8f27fd32a227fa49bb0f3f4
+
 ---
 # ピボットとタブ
 
@@ -111,6 +114,7 @@ Pivot は [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/xam
 [ナビゲーション デザインの基本](https://msdn.microsoft.com/library/windows/apps/dn958438)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

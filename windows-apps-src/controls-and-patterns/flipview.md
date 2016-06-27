@@ -1,10 +1,13 @@
 ---
 author: Jwmsft
-Description: コレクション内の画像 (アルバム内の写真や製品の詳細ページ内の項目など) を一度に 1 つずつ表示します。
-title: FlipView コントロールのガイドライン
+Description: "コレクション内の画像 (アルバム内の写真や製品の詳細ページ内の項目など) を一度に 1 つずつ表示します。"
+title: "FlipView コントロールのガイドライン"
 ms.assetid: A4E05D92-1A0E-4CDD-84B9-92199FF8A8A3
 label: Flip view
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 7da18bd897248ecef7e1caaebff5b8bbab02e3fe
+
 ---
 # フリップ ビュー
 
@@ -209,6 +212,7 @@ ItemsSource が `itemsViewSource` という名前の [**CollectionViewSource**](
 - [**CarouselPanel クラス (XAML)**](https://msdn.microsoft.com/library/windows/apps/hh967950)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

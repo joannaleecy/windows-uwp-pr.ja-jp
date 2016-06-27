@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: このトピックでは、Windows のズームと要素のサイズ変更について説明し、アプリでこのような新しい対話式操作のメカニズムを使うときのユーザー エクスペリエンスのガイドラインを示します。
-title: 光学式ズームとサイズ変更のガイドライン
+Description: "このトピックでは、Windows のズームと要素のサイズ変更について説明し、アプリでこのような新しい対話式操作のメカニズムを使うときのユーザー エクスペリエンスのガイドラインを示します。"
+title: "光学式ズームとサイズ変更のガイドライン"
 ms.assetid: 51a0007c-8a5d-4c44-ac9f-bbbf092b8a00
 label: Optical zoom and resizing
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 07f9f2979a7a2c712b39bd4dc962e5991e1824ac
+
 ---
 
 # 光学式ズームとサイズ変更
@@ -92,6 +95,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

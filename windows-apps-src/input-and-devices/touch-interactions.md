@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: タッチ向けに最適化される一方で、さまざまな入力デバイスで一貫した機能を提供する、直観的で独特なユーザー操作エクスペリエンスを備えたユニバーサル Windows プラットフォーム (UWP) アプリを作成します。
-title: タッチ操作
+Description: "タッチ向けに最適化される一方で、さまざまな入力デバイスで一貫した機能を提供する、直観的で独特なユーザー操作エクスペリエンスを備えたユニバーサル Windows プラットフォーム (UWP) アプリを作成します。"
+title: "タッチ操作"
 ms.assetid: DA6EBC88-EB18-4418-A98A-457EA1DEA88A
 label: Touch interactions
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 23eac55de26563c68b401d8912264aebb86d0380
+
 ---
 
 # タッチ操作
@@ -173,14 +176,14 @@ template: detail.hbs
 ## <span id="intro_to_touch_input"></span><span id="INTRO_TO_TOUCH_INPUT"></span>カスタム タッチ操作
 
 
-独自の対話式操作のサポートを実装する場合、ユーザーはアプリの UI 要素を直接操作できる直感的なエクスペリエンスを期待しているということを考慮してください。 プラットフォーム コントロール ライブラリでカスタムの対話式操作をモデル化し、一貫性と見つけやすさを維持することをお勧めします。 これらのライブラリのコントロールでは、標準的な対話式操作、アニメーション化された物理的効果、視覚的フィードバック、アクセシビリティなど、完全なユーザー操作エクスペリエンスが提供されます。 はっきりとした明確に定義されている要件があり、基本的な対話式操作ではシナリオがサポートされない場合のみ、カスタムの対話式操作を作ってください。
+独自の対話式操作サポートを実装する場合は、ユーザーはアプリの UI 要素を直接操作できる直感的なエクスペリエンスを期待しているということを心に留めておいてください。 プラットフォーム コントロール ライブラリでカスタムの対話式操作をモデル化し、一貫性と見つけやすさを維持することをお勧めします。 これらのライブラリのコントロールでは、標準的な対話式操作、アニメーション化された物理的効果、視覚的フィードバック、アクセシビリティなど、完全なユーザー操作エクスペリエンスが提供されます。 はっきりとした明確に定義されている要件があり、基本的な対話式操作ではシナリオがサポートされない場合のみ、カスタムの対話式操作を作ってください。
 
 カスタマイズされたタッチ サポートを提供するために、さまざまな [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) イベントを処理できます。 これらのイベントは、次の 3 つのレベルのアブストラクションにグループ化されます。
 
 -   静的ジェスチャ イベントは、対話式操作が完了した後に発生します。 ジェスチャ イベントには、[**Tapped**](https://msdn.microsoft.com/library/windows/apps/br208985)、[**DoubleTapped**](https://msdn.microsoft.com/library/windows/apps/br208922)、[**RightTapped**](https://msdn.microsoft.com/library/windows/apps/br208984)、[**Holding**](https://msdn.microsoft.com/library/windows/apps/br208928) があります。
 
     [
-            **IsTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208939)、[**IsDoubleTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208931)、[**IsRightTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208937)、[**IsHoldingEnabled**](https://msdn.microsoft.com/library/windows/apps/br208935) を **false** に設定し、これらのジェスチャ イベントを特定の要素に対して無効にすることもできます。
+            **IsTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208939)、[**IsDoubleTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208931)、[**IsRightTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208937)、[**IsHoldingEnabled**](https://msdn.microsoft.com/library/windows/apps/br208935) を **false** に設定して、これらのジェスチャ イベントを無効にすることもできます。
 
 -   [
             **PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) や [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970) などのポインター イベントは、ポインター モーションや、押すイベントと離すイベントの識別機能などの下位レベルの詳細を提供します。
@@ -491,7 +494,8 @@ End Sub
 </Grid>
 ```
 
-次に、[**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) を移動するための `dragTranslation` という名前のグローバルな [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/br243027) を作成します。 **Rectangle** で [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) イベント リスナーが指定され、`dragTranslation` が **Rectangle** の [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/br208980) に追加されます。
+次に、[**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) を移動するための `dragTranslation` という名前のグローバルな [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/br243027) を作成します。 [
+            **Rectangle** で **ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) イベント リスナーが指定され、`dragTranslation` が [**Rectangle** の **RenderTransform**](https://msdn.microsoft.com/library/windows/apps/br208980) に追加されます。
 
 ```ManagedCPlusPlus
 // Global translation transform used for changing the position of 
@@ -615,7 +619,7 @@ End Sub
 ## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>推奨と非推奨
 
 
--   期待される主な入力方法としてタッチ操作を使うアプリケーションを設計します。
+-   期待される主な入力方法としてタッチ操作を使うアプリを設計します。
 -   あらゆる種類 (タッチ、ペン、スタイラス、マウスなど) の操作に対する視覚的なフィードバックを提供します。
 -   タッチ ターゲットのサイズ、接触形状、スクラブ、揺らす操作を調整してターゲット設定を最適化します。
 -   スナップ位置と方向 "レール" を使って精度を最適化します。
@@ -627,15 +631,21 @@ End Sub
 ## <span id="related_topics"></span>関連記事
 
 * [ポインター入力の処理](handle-pointer-input.md)
-* 入力デバイスの識別
-* [サンプル](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [基本的な入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [待機時間が短い入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* ユーザー操作モードのサンプル
-* [フォーカスの視覚効果のサンプル](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [サンプルのアーカイブ](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [入力: デバイス機能のサンプル](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [入力: XAML ユーザー入力イベントのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=231605)
+* [入力デバイスの識別](identify-input-devices.md)
+            
+          
+            **サンプル**
+* [基本的な入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [待機時間が短い入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [ユーザー操作モードのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [フォーカスの視覚効果のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+            
+          
+            **サンプルのアーカイブ**
+* [入力: デバイス機能のサンプル](http://go.microsoft.com/fwlink/p/?linkid=231530)
+* [入力: XAML ユーザー入力イベントのサンプル](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [XAML のスクロール、パン、ズームのサンプル](http://go.microsoft.com/fwlink/p/?linkid=251717)
+* [入力: GestureRecognizer によるジェスチャと操作](http://go.microsoft.com/fwlink/p/?LinkID=231605)
  
 
  
@@ -645,6 +655,7 @@ End Sub
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

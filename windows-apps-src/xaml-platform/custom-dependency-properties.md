@@ -1,8 +1,11 @@
 ---
 author: jwmsft
-description: C++、C#、または Visual Basic を使った Windows ランタイム アプリでカスタム依存関係プロパティを定義および実装する方法を説明します。
-title: カスタム依存関係プロパティ
+description: "C++、C#、または Visual Basic を使った Windows ランタイム アプリでカスタム依存関係プロパティを定義および実装する方法を説明します。"
+title: "カスタム依存関係プロパティ"
 ms.assetid: 5ADF7935-F2CF-4BB6-B1A5-F535C2ED8EF8
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 63301870ab53f4061cac9b9ad87a5fb75e8c48da
+
 ---
 
 # カスタム依存関係プロパティ
@@ -19,11 +22,9 @@ ms.assetid: 5ADF7935-F2CF-4BB6-B1A5-F535C2ED8EF8
 ## 依存関係プロパティとは
 
 
-依存関係プロパティは、[**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) メソッドを呼び出すことで Windows ランタイム プロパティ システムに登録され、定義クラスの [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 識別子メンバーによって識別されるプロパティです。 依存関係プロパティとして実装することで、共通言語ランタイム (CLR) または C++ プロパティでスタイル、データ バインディング、アニメーション、既定値をサポートできます。 依存関係プロパティは、[**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 型でのみ使うことができます。 ただし、**DependencyObject** はクラス階層のかなり上位にあるため、UI とプレゼンテーションのサポートを目的とするクラスの大半は、依存関係プロパティをサポートできます。 依存関係プロパティと、このドキュメントでそれらを説明するために使っている用語と表記規則の一部については、「[依存関係プロパティの概要](dependency-properties-overview.md)」をご覧ください。
+依存関係プロパティは、[**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) メソッドを呼び出すことで Windows ランタイム プロパティ システムに登録され、定義クラスの [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 識別子メンバーによって識別されるプロパティです。 依存関係プロパティとして実装することで、共通言語ランタイム (CLR) または C++ プロパティでスタイル、データ バインディング、アニメーション、既定値をサポートできます。 依存関係プロパティは、[**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 型でのみ使うことができます。 ただし、**DependencyObject** はクラス階層のかなり上位にあるため、UI とプレゼンテーションのサポートを目的とするクラスの大半は、依存関係プロパティをサポートできます。 依存関係プロパティと、このドキュメントでそれらを説明するために使っている用語と表記規則の一部については、「[依存関係プロパティの概要](dependency-properties-overview.md)」を参照してください。
 
-Windows ランタイムでの依存関係プロパティの例として、[**Control.Background**](https://msdn.microsoft.com/library/windows/apps/br209395)、[**FrameworkElement.Width**](https://msdn.microsoft.com/library/windows/apps/br208751)、および [**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/br209702) があります。 クラスで公開されている各依存関係プロパティには、同じクラスで公開され、依存関係プロパティの識別子となっている対応する [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 型の **public**
-          **static**
-          **readonly** プロパティがあります。 識別子の名前は、依存関係プロパティの名前の終わりに "Property" という文字列を追加した名前です。 たとえば、**Control.Background** プロパティに対応する **DependencyProperty** 識別子は [**Control.BackgroundProperty**](https://msdn.microsoft.com/library/windows/apps/br209396) です。 識別子を登録したときに依存関係プロパティに関する情報が格納され、後で [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) の呼び出しなど、依存関係プロパティに関係する他の操作でその識別子を使うことができます。
+Windows ランタイムでの依存関係プロパティの例として、[**Control.Background**](https://msdn.microsoft.com/library/windows/apps/br209395)、[**FrameworkElement.Width**](https://msdn.microsoft.com/library/windows/apps/br208751)、および [**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/br209702) があります。 クラスで公開されている各依存関係プロパティには、同じクラスで公開され、依存関係プロパティの識別子となっている対応する [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 型の **public****static****readonly** プロパティがあります。 識別子の名前は、依存関係プロパティの名前の終わりに "Property" という文字列を追加した名前です。 たとえば、**Control.Background** プロパティに対応する **DependencyProperty** 識別子は [**Control.BackgroundProperty**](https://msdn.microsoft.com/library/windows/apps/br209396) です。 識別子を登録したときに依存関係プロパティに関する情報が格納され、後で [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) の呼び出しなど、依存関係プロパティに関係する他の操作でその識別子を使うことができます。
 
 ##  プロパティ ラッパー
 
@@ -56,9 +57,7 @@ Windows ランタイムまたは Windows ランタイム アプリの次の機�
 -   プロパティ名をプロパティ システムに登録して ([**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) を呼び出す)、所有者型とプロパティ値の型を指定します。 [
             **Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) にはプロパティ メタデータを要求する必須パラメーターがあります。 これには **null** を指定するか、何かを宣言した場合は実際のプロパティ メタデータを指定します。
 -   [
-            **DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 識別子を所有者型の **public**
-          **static**
-          **readonly** プロパティ メンバーとして定義します。
+            **DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 識別子を所有者型の **public****static****readonly** プロパティ メンバーとして定義します。
 -   実装する言語で使うプロパティ アクセサー モデルに従ってラッパー プロパティを定義します。 ラッパー プロパティ名は、[**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) で使った *name* 文字列と一致する必要があります。 [
             **GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) と [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) を呼び出し、独自のプロパティの識別子をパラメーターとして渡すことで、**get** アクセサーと **set** アクセサーを実装して、ラップする依存関係プロパティにラッパーを関連付けます。
 -   (省略可能) ラッパーに [**ContentPropertyAttribute**](https://msdn.microsoft.com/library/windows/apps/br228011) などの属性を配置します。
@@ -69,9 +68,7 @@ Windows ランタイムまたは Windows ランタイム アプリの次の機�
 
 プロパティを依存関係プロパティにするには、Windows ランタイム プロパティ システムでメンテナンスされるプロパティ ストアにプロパティを登録する必要があります。 プロパティに、後でプロパティ システム操作で識別子として使う一意の識別子を付与する必要があります。 これらの操作は内部操作の場合、またはプロパティ システム API を呼び出す独自のコードの場合があります。 プロパティを登録するには、[**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) メソッドを呼び出します。
 
-Microsoft .NET 言語 (C# と Microsoft Visual Basic) では、クラスの本文 (クラス内だがメンバー定義の外部) で [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) を呼び出します。 識別子は、[**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) メソッド呼び出しで戻り値としても提供されます。 戻り値を使って [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 型の **public**
-          **static**
-          **readonly** プロパティをクラスの一部として割り当て、作るため、通常、[**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) は他のメンバー定義の外部で呼び出されます。 このプロパティは、依存関係プロパティの識別子になります。 [
+Microsoft .NET 言語 (C# と Microsoft Visual Basic) では、クラスの本文 (クラス内だがメンバー定義の外部) で [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) を呼び出します。 識別子は、[**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) メソッド呼び出しで戻り値としても提供されます。 戻り値を使って [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 型の **public****static****readonly** プロパティをクラスの一部として割り当て、作るため、通常、[**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) は他のメンバー定義の外部で呼び出されます。 このプロパティは、依存関係プロパティの識別子になります。 [
             **Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 呼び出しの例を次に示します。
 
 > [!div class="tabbedCodeSnippets"]
@@ -93,8 +90,7 @@ Public Shared ReadOnly LabelProperty As DependencyProperty =
 
 **注:** クラス本文に依存関係プロパティを登録するのが標準的な実装ですが、クラスの静的コンストラクターで依存関係プロパティを登録することもできます。 このアプローチは、依存関係プロパティの初期化に複数のコード行が必要な場合に意味を持つことがあります。
 
-C++ の場合は、ヘッダーとコード ファイル間で実装を分割する方法についてのオプションがあります。 一般的な分割では、**set** ではなく **get** 実装で、識別子自体をヘッダーで **public**
-          **static** プロパティとして宣言します。 **get** 実装は、初期化されていない [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) インスタンスであるプライベート フィールドを参照します。 ラッパー、およびラッパーの **get** 実装と **set** 実装を宣言することもできます。 この場合、ヘッダーにはいくつかの最小限の実装が含まれます。 ラッパーに Windows ランタイム属性が必要な場合は、ヘッダーにも属性が必要です。 コード ファイルの最初にアプリが初期化するときにのみ実行されるヘルパー関数内に [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) の呼び出しを配置します。 **Register** の戻り値を使って、ヘッダーで宣言した初期化されていない静的識別子を入力します。これは実装ファイルのルート スコープで当初は **nullptr** に設定します。
+C++ の場合は、ヘッダーとコード ファイル間で実装を分割する方法についてのオプションがあります。 一般的な分割では、**set** ではなく **get** 実装で、識別子自体をヘッダーで **public****static** プロパティとして宣言します。 **get** 実装は、初期化されていない [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) インスタンスであるプライベート フィールドを参照します。 ラッパー、およびラッパーの **get** 実装と **set** 実装を宣言することもできます。 この場合、ヘッダーにはいくつかの最小限の実装が含まれます。 ラッパーに Windows ランタイム属性が必要な場合は、ヘッダーにも属性が必要です。 コード ファイルの最初にアプリが初期化するときにのみ実行されるヘルパー関数内に [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) の呼び出しを配置します。 **Register** の戻り値を使って、ヘッダーで宣言した初期化されていない静的識別子を入力します。これは実装ファイルのルート スコープで当初は **nullptr** に設定します。
 
 ```cpp
 //.h file
@@ -388,6 +384,7 @@ C++/CX のプロパティ登録の実装は、C# より込み入っています�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

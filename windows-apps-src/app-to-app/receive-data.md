@@ -1,8 +1,11 @@
 ---
-description: この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリで、共有コントラクトを使用して別のアプリから共有されたコンテンツを受け取る方法について説明します。 共有コントラクトを使うと、ユーザーが共有機能を呼び出したときに、アプリをオプションとして提示できます。
-title: データの受信
+description: "この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリで、共有コントラクトを使用して別のアプリから共有されたコンテンツを受け取る方法について説明します。 共有コントラクトを使うと、ユーザーが共有機能を呼び出したときに、アプリをオプションとして提示できます。"
+title: "データの受信"
 ms.assetid: 0AFF9E0D-DFF4-4018-B393-A26B11AFDB41
 author: awkoren
+ms.sourcegitcommit: 16cc170dbdab3f7691bf281d9e5a8c2ae4f82db7
+ms.openlocfilehash: 0f38a6864cf216bd9488b23ffad5a57a956616ee
+
 ---
 
 # データの受信
@@ -40,7 +43,7 @@ author: awkoren
 
 ## 共有のアクティブ化の処理
 
-ユーザーが (通常は共有 UI の使用可能なターゲット アプリの一覧から) アプリを選ぶと、[**Application.OnShareTargetActivated**][OnShareTargetActivated] イベントが発生します。 アプリはこのイベントを処理して、ユーザーが共有するデータを処理する必要があります。
+ユーザーが (通常は共有 UI の使用可能なターゲット アプリの一覧から) アプリを選ぶと、[**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Application.OnShareTargetActivated(Windows.ApplicationModel.Activation.ShareTargetActivatedEventArgs)) イベントが発生します。 アプリはこのイベントを処理して、ユーザーが共有するデータを処理する必要があります。
 
 <!-- For some reason, the snippets in this file are all inline in the WDCML topic. Suggest moving to VS project with rest of snippets. -->
 ```cs
@@ -50,7 +53,7 @@ protected override async void OnShareTargetActivated(ShareTargetActivatedEventAr
 } 
 ```
 
-ユーザーが共有するデータは、ShareOperation オブジェクトに格納されています。 このオブジェクトを使うと、オブジェクトに格納されているデータの形式を調べることができます。
+ユーザーが共有するデータは、[**ShareOperation**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation) オブジェクトに格納されています。 このオブジェクトを使うと、オブジェクトに格納されているデータの形式を調べることができます。
 
 ```cs
 ShareOperation shareOperation = args.ShareOperation;
@@ -72,7 +75,8 @@ if (shareOperation.Data.Contains(StandardDataFormats.Text))
 shareOperation.ReportDataRetreived(); 
 ```
 
-[**ReportStarted**][ReportStarted] を呼び出した後、ユーザーはアプリをそれ以上操作できなくなります。 したがって、このオブジェクトの呼び出しは、ユーザーがアプリを閉じても問題がない状況でのみ行ってください。
+[
+            **ReportStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportStarted) を呼び出した後、ユーザーはアプリをそれ以上操作できなくなります。 したがって、このオブジェクトの呼び出しは、ユーザーがアプリを閉じても問題がない状況でのみ行ってください。
 
 長時間共有が行われている状況では、アプリが DataPackage オブジェクトからすべてのデータを取得する前に、ユーザーがソース アプリを閉じる可能性があります。 そのため、アプリが必要なデータを取得したタイミングをシステムに通知することをお勧めします。 こうすると、システムは必要に応じてソース アプリを中断または終了できます。
 
@@ -80,27 +84,27 @@ shareOperation.ReportDataRetreived();
 shareOperation.ReportSubmittedBackgroundTask(); 
 ```
 
-問題が発生した場合には、[**ReportError**][ReportError] を呼び出して、エラー メッセージをシステムに送信します。 ユーザーは、共有の状態を確認したときにこのメッセージを目にします。 その時点で、アプリがシャットダウンし、共有が終了します。 この場合、ユーザーはアプリでのコンテンツの共有をやり直す必要があります。 エラーの中にはそれほど重大ではないものも含まれ、シナリオによっては、共有操作を終了しなくても済む場合もあります。 その場合は、**ReportError** を呼び出さずに、共有を続けることができます。
+問題が発生した場合には、[**ReportError**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportError(System.String)) を呼び出して、エラー メッセージをシステムに送信します。 ユーザーは、共有の状態を確認したときにこのメッセージを目にします。 その時点で、アプリがシャットダウンし、共有が終了します。 この場合、ユーザーはアプリでのコンテンツの共有をやり直す必要があります。 エラーの中にはそれほど重大ではないものも含まれ、シナリオによっては、共有操作を終了しなくても済む場合もあります。 その場合は、**ReportError** を呼び出さずに、共有を続けることができます。
 
 ```cs
 shareOperation.ReportError("Could not reach the server! Try again later."); 
 ```
 
-最後に、アプリによる共有コンテンツの処理が正常に完了したときは、[**ReportCompleted**][ReportCompleted] を呼び出してシステムに通知する必要があります。
+最後に、アプリによる共有コンテンツの処理が正常に完了したときは、[**ReportCompleted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportCompleted) を呼び出してシステムに通知する必要があります。
 
 ```cs
 shareOperation.ReportCompleted();
 ```
 
-これらのメソッドを使う場合は、通常、前に説明した順序で呼び出し、2 回以上呼び出さないようにしてください。 ただし、ターゲット アプリは [**ReportStarted**][ReportStarted] の前に [**ReportDataRetrieved**][ReportDataRetrieved] を呼び出すことができる場合があります。 たとえば、アプリがアクティブ化ハンドラーのタスクの一部としてデータを受信できるが、ユーザーが [共有] ボタンをクリックするまで **ReportStarted** を呼び出さない場合です。
+これらのメソッドを使う場合は、通常、前に説明した順序で呼び出し、2 回以上呼び出さないようにしてください。 ただし、ターゲット アプリが [**ReportStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportStarted) の前に [**ReportDataRetrieved**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportDataRetrieved) を呼び出すことができる場合があります。 たとえば、アプリがアクティブ化ハンドラーのタスクの一部としてデータを受信できるが、ユーザーが [共有] ボタンをクリックするまで **ReportStarted** を呼び出さない場合です。
 
 ## 共有が成功した場合に QuickLink を返す
 
-ユーザーがアプリでコンテンツを受け取ることを選んだときは、[**QuickLink**][QuickLink] を作成することをお勧めします。 **QuickLink** は、情報をアプリと簡単に共有できるようにするショートカットのようなものです。 たとえば、あらかじめ友人のメール アドレスが構成された新しいメール メッセージを開く **QuickLink** を作成できます。
+ユーザーがアプリでコンテンツを受け取ることを選んだときは、[**QuickLink**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.QuickLink) を作成することをお勧めします。 **QuickLink** は、情報をアプリと簡単に共有できるようにするショートカットのようなものです。 たとえば、あらかじめ友人のメール アドレスが構成された新しいメール メッセージを開く **QuickLink** を作成できます。
 
-**QuickLink** には、タイトル、アイコン、ID が必要です。 タイトル ("母へのメール" など) とアイコンは、ユーザーが共有チャームをタップすると表示されます。 ID は、アプリがメール アドレスやログイン資格情報などのカスタム情報にアクセスするために使われます。 アプリは、**QuickLink** を作成すると、[**ReportCompleted**][ReportCompleted] を呼び出して **QuickLink** をシステムに返します。
+**QuickLink** には、タイトル、アイコン、ID が必要です。 タイトル ("母へのメール" など) とアイコンは、ユーザーが共有チャームをタップすると表示されます。 ID は、アプリがメール アドレスやログイン資格情報などのカスタム情報にアクセスするために使われます。 アプリは、**QuickLink** を作成すると、[**ReportCompleted**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.ReportCompleted) を呼び出して **QuickLink** をシステムに返します。
 
-**QuickLink** には、実際にデータが格納されているわけではなく、 識別子だけが含まれています。選択されたときにその識別子がアプリに送られます。 **QuickLink** の ID と対応するユーザー データは、アプリで格納する必要があります。 ユーザーが **QuickLink** をタップすると、[**ShareOperation.QuickLinkId**][QuickLInkId] プロパティを介してその ID を取得できます。
+**QuickLink** には、実際にデータが格納されているわけではなく、 識別子だけが含まれています。選択されたときにその識別子がアプリに送られます。 **QuickLink** の ID と対応するユーザー データは、アプリで格納する必要があります。 ユーザーが **QuickLink** をタップすると、[**QuickLinkId**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.ShareTarget.ShareOperation.QuickLinkId) プロパティを介してその ID を取得できます。
 
 ```cs
 async void ReportCompleted(ShareOperation shareOperation, string quickLinkId, string quickLinkTitle)
@@ -124,22 +128,19 @@ async void ReportCompleted(ShareOperation shareOperation, string quickLinkId, st
 }
 ```
 
-## 関連トピック
+## 参照 
+
 * [データの共有](share-data.md)
- 
-<!-- LINKS -->
-* [OnShareTargetActivated](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.application.onsharetargetactivated.aspx)
-* [ReportStarted](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.shareoperation.reportstarted.aspx)
-* [ReportError](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.shareoperation.reporterror.aspx)
-* [ReportCompleted](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.shareoperation.reportecompleted.aspx)
-* [ReportDataRetrieved](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.shareoperation.reportdataretrieved.aspx)
-* [ReportStarted](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.shareoperation.reportstarted.aspx)
-* [QuickLink](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.quicklink.aspx)
-* [QuickLInkId](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.quicklink.id.aspx)
+* [OnShareTargetActivated](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.onsharetargetactivated.aspx)
+* [ReportStarted](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.shareoperation.reportstarted.aspx)
+* [ReportError](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.shareoperation.reporterror.aspx)
+* [ReportCompleted](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.shareoperation.reportecompleted.aspx)
+* [ReportDataRetrieved](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.shareoperation.reportdataretrieved.aspx)
+* [ReportStarted](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.shareoperation.reportstarted.aspx)
+* [QuickLink](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.quicklink.aspx)
+* [QuickLInkId](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.quicklink.id.aspx)
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO3-->
 
 

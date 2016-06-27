@@ -1,10 +1,13 @@
 ---
 author: mijacobs
-Description: タイルとは、[スタート] メニュー上でアプリを表すものです。 すべてのアプリにはタイルがあります。 Microsoft Visual Studio で作成した新しいユニバーサル Windows プラットフォーム (UWP) アプリ プロジェクトには、アプリの名前とロゴを表示する既定のタイルが含まれます。
-title: タイル
+Description: "タイルとは、[スタート] メニュー上でアプリを表すものです。 すべてのアプリにはタイルがあります。 Microsoft Visual Studio で作成した新しいユニバーサル Windows プラットフォーム (UWP) アプリ プロジェクトには、アプリの名前とロゴを表示する既定のタイルが含まれます。"
+title: "タイル"
 ms.assetid: 09C7E1B1-F78D-4659-8086-2E428E797653
 label: Tiles
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: a440a9abaf150dac6ed95d881261b80521a734c0
+
 ---
 
 # UWP アプリのタイル
@@ -108,6 +111,7 @@ Visual Studio で新しいプロジェクトを作成すると、アプリの名
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

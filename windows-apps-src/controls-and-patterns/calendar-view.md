@@ -1,10 +1,13 @@
 ---
 author: Jwmsft
-Description: カレンダー ビューを使うと、ユーザーはカレンダーを表示し操作できます (カレンダーは、月、年、または 10 年単位で操作できます)。
-title: カレンダー ビュー
+Description: "カレンダー ビューを使うと、ユーザーはカレンダーを表示し操作できます (カレンダーは、月、年、または 10 年単位で操作できます)。"
+title: "カレンダー ビュー"
 ms.assetid: d8ec5ba8-7a9d-405d-a1a5-5a1b502b9e64
 label: Calendar view
 template: detail.hbs
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: 7b9d4773cba5c6ebb770e27dd20ba5c6fb40ff75
+
 ---
 
 # カレンダー ビュー
@@ -193,6 +196,7 @@ private void CalendarView_CalendarViewDayItemChanging(CalendarView sender,
 - [時刻の選択コントロール](time-picker.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

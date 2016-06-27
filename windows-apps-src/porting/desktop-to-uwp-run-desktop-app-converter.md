@@ -1,8 +1,11 @@
 ---
 author: awkoren
-Description: Desktop Converter App を実行して、Windows デスクトップ アプリケーション (Win32、WPF、Windows フォームなど) をユニバーサル Windows プラットフォーム (UWP) アプリに変換します。
+Description: "Desktop Converter App を実行して、Windows デスクトップ アプリケーション (Win32、WPF、Windows フォームなど) をユニバーサル Windows プラットフォーム (UWP) アプリに変換します。"
 Search.Product: eADQiWindows 10XVcnh
-title: Desktop App Converter プレビュー (Project Centennial)
+title: "Desktop App Converter プレビュー (Project Centennial)"
+ms.sourcegitcommit: 6d1c6e836d666972641320c73896459490f45924
+ms.openlocfilehash: 874b6452386526d66062a27a5b520cb1a232ae64
+
 ---
 
 # Desktop App Converter プレビュー (Project Centennial)
@@ -15,10 +18,35 @@ Desktop App Converter は、.NET 4.6.1 または Win32 向けに記述された�
 
 このコンバーターは、コンバーターのダウンロードに含まれるクリーンな状態の基本イメージを使って、分離された Windows 環境でデスクトップのインストーラーを実行します。 デスクトップ インストーラーが作成するすべてのレジストリとファイル システムの I/O をキャプチャし、出力の一部としてパッケージ化します。 パッケージ ID を持ち、多くの WinRT API を呼び出すことができる AppX を出力します。
 
+## 新着情報
+
+ここでは、Desktop App Converter のバージョン間での変更について概要を示します。 
+
+### 2016 年 6 月 8 日
+
+* コンバーターを実行している AMD64 ホスト コンピューター上で x86 appx パッケージを生成するためのサポートが追加されました。
+* 以前に展開された基本イメージを削除することによって、ディスク領域の使用量が削減されました。
+* 一時ファイルや不要な基本イメージのクリーンアップのサポートが追加されました。
+* ファイルの種類やプロトコルの関連付けを検出する機能のサポートが強化されました。
+* 大規模な一連のアプリの AppExecutable プロパティを検出するロジックが強化されました。
+* MSI ベースのインストーラー用に追加の -InstallerArguments を指定するためのサポートが追加されました。
+* 変換処理中に PathTooLongException エラーが出力されるバグが修正されました。
+
+### 2016 年 5 月 12 日
+
+- Pro エディションの Windows のサポートが復元されました。 
+- コンバーターの ```-Setup``` フラグによって、Windows コンテナー機能が有効になり、基本イメージの展開が処理されるようになりました。 1 回限りのセットアップを行うには、管理者特権の PowerShell プロンプトから次のコマンドを実行します。 ```PS C:\> .\DesktopAppConverter.ps1 -Setup -BaseImage BaseImage-12345.wim -Verbose```
+- 実行時に不要なファイル システムのリダイレクトを減らすために、アプリのインストール パスの自動検出機能と、VFS の外部にアプリケーション ルートを移動する機能が追加されました。
+- 変換プロセスの一部として展開された基本イメージの自動検出機能が追加されました。
+- ファイルの種類の関連付けとプロトコルの自動検出機能が追加されました。
+- [スタート] メニューのショートカットを検出するロジックが強化されました。
+- アプリがインストールした MUI ファイルを保持するために、ファイル システムのフィルタ リングが強化されました。
+- マニフェスト内で Project Centennial のサポートされる最小デスクトップ バージョン (10.0.14342.0) が更新されました。
+
 ## システム要件
 
 ### サポートされるオペレーティング システム
-+ Windows 10 Anniversary Update Enterprise edition preview (Build 10.0.14316.0 以上)
++ Windows 10 Anniversary Update Enterprise edition preview (Build 10.0.14342.0 以上)
 
 ### 必要なハードウェア構成
 
@@ -33,8 +61,8 @@ Desktop App Converter は、.NET 4.6.1 または Win32 向けに記述された�
 ## Desktop App Converter をセットアップする   
 Desktop App Converter は、Windows Insider Preview ビルドに含まれている Windows 10 の機能に依存しています。 このコンバーターを利用するには、最新ビルドであることを確認します。
 
-1. 最新の Windows 10 Insider Preview OS - Enterprise edition (Build 10.0.14316.0 以上) であることを確認します。
-2. DesktopAppConverter.zip と BaseImage 14316.wim をダウンロードします。
+1. 最新の Windows 10 Insider Preview OS の Enterprise または Pro edition (http://insider.windows.com) がインストールされていること。 
+2. 使用している Insider Preview ビルドに対応する DesktopAppConverter.zip と Insider Preview ビルドをダウンロードします (http://aka.ms/converter)。 
 3. ローカル フォルダーに DesktopAppConverter.zip を抽出します。
 4. 管理者 PowerShell ウィンドウの場合。  
 ```CMD
@@ -42,7 +70,7 @@ PS C:\> Set-ExecutionPolicy bypass
 ```
 5. 管理者 PowerShell ウィンドウから、次のコマンドを実行してコンバーターをセットアップします。
 ```CMD
-PS C:\> .\DesktopAppConverter.ps1 -Setup -BaseImage .\BaseImage-14316.wim
+PS C:\> .\DesktopAppConverter.ps1 -Setup -BaseImage .\BaseImage-1XXXX.wim -Verbose
 ```
 6. 上のコマンドを実行したときに再起動を求めるメッセージが表示されたら、コンピューターを再起動してコマンドをもう一度実行します。
 
@@ -52,12 +80,12 @@ Desktop App Converter のエントリ ポイントは、PowerShell とコマン�
 ### 用途
 ```CMD
 DesktopAppConverter.ps1
--ExpandedBaseImage <String>
 -Installer <String> [-InstallerArguments <String>] [-InstallerValidExitCodes <Int32>]
 -Destination <String>
 -PackageName <String>
 -Publisher <String>
 -Version <Version>
+[-ExpandedBaseImage <String>]
 [-AppExecutable <String>]
 [-AppFileTypes <String>]
 [-AppId <String>]
@@ -66,7 +94,6 @@ DesktopAppConverter.ps1
 [-PackageDisplayName <String>]
 [-PackagePublisherDisplayName <String>]
 [-MakeAppx]
-[-NatSubnetPrefix <String>]
 [-LogFile <String>]
 [<CommonParameters>]  
 ```
@@ -76,9 +103,9 @@ DesktopAppConverter.ps1
 
 + 管理者 PowerShell ウィンドウから次のコマンドを実行します。
 ```CMD
-PS C:\>.\DesktopAppConverter.ps1 -ExpandedBaseImage C:\ProgramData\Microsoft\Windows\Images\BaseImage-14316
--Installer C:\Installer\MyApp.exe -InstallerArguments "/S" -Destination C:\Output\MyApp
--PackageName "MyApp" -Publisher "CN=<publisher_name>" -Version 0.0.0.1 -MakeAppx -Verbose
+PS C:\>.\DesktopAppConverter.ps1 -Installer C:\Installer\MyApp.exe 
+-InstallerArguments "/S" -Destination C:\Output\MyApp -PackageName "MyApp" 
+-Publisher "CN=<publisher_name>" -Version 0.0.0.1 -MakeAppx -Verbose
 ```
 
 ## 変換済み AppX を展開する
@@ -111,6 +138,11 @@ C:\> signtool.exe sign -f <my.pfx> -fd SHA256 -v .\<outputAppX>.appx
   + レジストリ: `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\SideBySide\Winners`
   + ファイル システム: %windir%\\SideBySide
 
+## 既知の問題
+
++ 以前に Desktop App Converter Preview がインストールされていた開発用コンピューターで Windows Insider フライトを受信すると、新しい基本イメージをセットアップするときにエラー (`New-ContainerNetwork: The object already exists`) が表示される場合がありますします。 この問題を回避するには、管理者特権のコマンド プロンプトからコマンド `Netsh int ipv4 reset` を実行し、コンピューターを再起動します。 
++ "AnyCPU" ビルド オプションでコンパイルされた .NET アプリは、メインの実行可能ファイルまたはいずれかの依存関係が "Program Files" または "Windows\System32" に置かれていた場合、インストールに失敗します。 回避策として、アーキテクチャ固有デスクトップ インストーラー (32 ビットまたは 64 ビット) を使用して、AppX パッケージを正しく生成してください。
+
 ## Desktop App Converter の利用統計情報  
 Desktop App Converter は、ソフトウェアの使用者と使用方法に関する情報を収集して、この情報を Microsoft に送信することがあります。 Microsoft のデータ収集と製品ドキュメントでの使用の詳細については、「[マイクロソフトのプライバシーに関する声明](http://go.microsoft.com/fwlink/?LinkId=521839)」をご覧ください。 マイクロソフトのプライバシーに関する声明の該当するすべての条項に準拠することに同意します。
 
@@ -130,14 +162,15 @@ get-help .\DesktopAppConverter.ps1 -detailed
 ### セットアップ パラメーター  
 |パラメーター|説明|
 |---------|-----------|
-|```-Setup [<SwitchParameter>]``` | このフラグは、DesktopAppConverter をセットアップ モードで実行する場合に使います。 セットアップ モードでは、用意されている基本イメージの展開をサポートします。|
+|```-Setup [<SwitchParameter>]``` | セットアップ モードで DesktopAppConverter を実行します。 セットアップ モードでは、用意されている基本イメージの展開をサポートします。|
 |```-BaseImage <String>``` | 展開されていない基本イメージの完全パス。 このパラメーターは、-Setup を指定する場合に必要です。|
 |```-LogFile <String>``` (省略可能) | ログ ファイルを指定します。 省略すると、ログ ファイルの一時的な場所が作成されます。|
+|```-NatSubnetPrefix <String>``` (省略可能) | Nat インスタンスで使うプレフィックス値。 通常この値は、ホスト コンピューターがコンバーターの NetNat と同じサブネット範囲に割り当てられている場合にのみ変更します。 現在のコンバーターの NetNat 構成は **Get NetNat** コマンドレットを使って照会できます。 |
+|```-NoRestart [<SwitchParameter>]``` | セットアップの実行中に再起動を要求しません (コンテナー機能を有効にするには再起動が必要です)。 |
 
 ### 変換パラメーター  
 |パラメーター|説明|
 |---------|-----------|
-|```-ExpandedBaseImage <String>``` | 既に展開済みの基本イメージの完全パス。|
 |```-Installer <String>``` | アプリケーションのインストーラーのパス。無人/サイレント モードで実行できる必要があります。|
 |```-InstallerArguments <String>``` (省略可能) | インストーラーに無人/サイレント モードでの実行を強制する引数の文字列、またはコンマ区切り一覧。 インストーラーが msi の場合は、このパラメーターは省略可能です。 インストーラーからログを取得するには、ここで、インストーラーのログ記録の引数を指定し、パス ```<log_folder>``` (コンバーターが適切なパスに置換するトークン) を使います。 <br><br>**注: 無人/サイレント フラグとログの引数は、インストーラー テクノロジごとに異なります。** <br><br>このパラメーターの使用例:```-InstallerArguments "/silent /log <log_folder>\install.log"```。ログ ファイルを生成しない別の例: ```-InstallerArguments "/quiet", "/norestart"```。繰り返しになりますが、コンバーターでログをキャプチャし、最終的なログ フォルダーに格納する場合は、文字どおりすべてのログにトークン パス ```<log_folder>``` を指定する必要があります。|
 |```-InstallerValidExitCodes <Int32>``` (省略可能) | インストーラーの正常な実行を示す、コンマで区切った終了コードの一覧 (例: 0, 1234, 5678)。  既定では、非 msi は 0、msi は 0, 1641, 3010 です。|
@@ -164,10 +197,25 @@ get-help .\DesktopAppConverter.ps1 -detailed
 ### その他の変換パラメーター  
 |パラメーター|説明|
 |---------|-----------|
+|```-ExpandedBaseImage <String>``` (省略可能) | 既に展開済みの基本イメージの完全パス。|
 |```-MakeAppx [<SwitchParameter>]``` (省略可能) | このスクリプトに出力で MakeAppx を呼び出すように指示するスイッチ (存在する場合)。 |
-|```-NatSubnetPrefix <String>``` (省略可能) | Nat インスタンスで使うプレフィックス値。 通常この値は、ホスト コンピューターがコンバーターの NetNat と同じサブネット範囲に割り当てられている場合にのみ変更します。 現在のコンバーターの NetNat 構成は **Get NetNat** コマンドレットを使って照会できます。 |
 |```-LogFile <String>``` (省略可能) | ログ ファイルを指定します。 省略すると、ログ ファイルの一時的な場所が作成されます。 |
-|```<Common parameters>``` | このコマンドレットは、次の共通パラメーターをサポートします: *Verbose*、*Debug*、*ErrorAction*、*ErrorVariable*、*WarningAction*、*WarningVariable*、*OutBuffer*、*PipelineVariable*、および *OutVariable*。 詳細については、「[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)」をご覧ください。 |
+|```<Common parameters>``` | このコマンドレットは、次の共通パラメーターをサポートします。*Verbose*、*Debug*、*ErrorAction*、*ErrorVariable*、*WarningAction*、*WarningVariable*、*OutBuffer*、*PipelineVariable*、および *OutVariable*。 詳細については、「[about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216)」をご覧ください。 |
+
+### クリーンアップ パラメーター
+|パラメーター|説明|
+|---------|-----------|
+|```Cleanup [<Option>]``` | DesktopAppConverter の成果物のクリーンアップを実行します。 クリーンアップ モードには 3 つの有効なオプションがあります。 |
+|```Cleanup All``` | 展開済みのすべての基本イメージを削除し、コンバーターのすべての一時ファイルを削除します。コンテナーのネットワークを削除し、Windows のオプション機能、コンテナーを無効にします。 |
+|```Cleanup WorkDirectory``` | コンバーターのすべての一時ファイルを削除します。 |
+|```Cleanup ExpandedImages``` | ホスト コンピューターにインストールされているすべての展開済みの基本イメージを削除します。 |
+
+### x86 パッケージ パラメーター
+Desktop App Converter Preview では、x86 および amd64 の両方のコンピューターにインストールして実行できる x86 パッケージの作成がサポートされるようになりました。 適切な変換を実行するには、Desktop App Converter を AMD64 コンピューターで実行する必要があることに注意してください。
+
+|パラメーター|説明|
+|---------|-----------|
+|```-CreateX86Package[<SwitchParameter>]``` | 32 ビットと 64 ビットの両方のホスト OS にインストールして実行できる 32 ビットのパッケージを生成します。 既定では、コンバーターはアプリのメインの実行可能ファイルからパッケージのアーキテクチャを検出しようとします。exe が見つからない場合は、64 ビットを既定の設定にします。 |
 
 ## 参照
 + [Desktop App Converter を入手する](http://go.microsoft.com/fwlink/?LinkId=785437)
@@ -175,8 +223,10 @@ get-help .\DesktopAppConverter.ps1 -detailed
 + [Desktop App Converter を使う UWP へのデスクトップ アプリの移行](https://channel9.msdn.com/events/Build/2016/P504)
 + [Project Centennial: ユニバーサル Windows プラットフォームへの既存のデスクトップ アプリケーションの移行](https://channel9.msdn.com/events/Build/2016/B829)  
 + [デスクトップ ブリッジの UserVoice (Project Centennial)](http://aka.ms/UserVoiceDesktopToUwp)
++ [デスクトップ アプリから UWP へのブリッジのコード サンプル (GitHub)](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

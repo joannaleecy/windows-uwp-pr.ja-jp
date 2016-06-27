@@ -1,8 +1,11 @@
 ---
 author: mcleblanc
 ms.assetid: 41E1B4F1-6CAF-4128-A61A-4E400B149011
-title: データ バインディングの詳細
-description: データ バインディングは、アプリの UI でデータを表示し、必要に応じてそのデータとの同期を保つ方法です。
+title: "データ バインディングの詳細"
+description: "データ バインディングは、アプリの UI でデータを表示し、必要に応じてそのデータとの同期を保つ方法です。"
+ms.sourcegitcommit: d76ef6a87d6afad577f5f7bf5e8f18a8b0776094
+ms.openlocfilehash: c371ca1804d76a0ffdf812cfb933b03916654bad
+
 ---
 # データ バインディングの詳細
 
@@ -15,7 +18,7 @@ description: データ バインディングは、アプリの UI でデータ�
 -   [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713)
 -   [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899)
 
-**注**  このトピックでは、データ バインディングの機能について詳しく説明します。 簡潔で実用的な紹介については、「[データ バインディングの概要](data-binding-quickstart.md)」をご覧ください
+**注**  このトピックでは、データ バインディングの機能について詳しく説明します。 簡潔で実用的な紹介については、「[データ バインディングの概要](data-binding-quickstart.md)」をご覧ください。
 
  
 
@@ -31,9 +34,9 @@ description: データ バインディングは、アプリの UI でデータ�
 
 **{x:Bind} の使い方を示すサンプル アプリ**
 
--   {x:Bind} のサンプル
--   QuizGame
--   XAML UI の基本のサンプル
+-   [{x:Bind} のサンプル](http://go.microsoft.com/fwlink/p/?linkid=619989)。
+-   [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame)。
+-   [XAML UI の基本のサンプル](http://go.microsoft.com/fwlink/p/?linkid=619992)。
 
 **{Binding} の使い方を示すサンプル アプリ**
 
@@ -46,7 +49,7 @@ description: データ バインディングは、アプリの UI でデータ�
 -   *バインディング ターゲット*。 これは、データを表示する UI の [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) の [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/BR242362) です。
 -   *バインディング オブジェクト*。 これは、ソースからターゲットに、および必要に応じてターゲットからソースに、データ値を転送する要素です。 バインディング オブジェクトは、XAML の読み込み時に [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) または [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) マークアップ拡張から作成されます。
 
-次のセクションでは、バインディング ソース、バインディング ターゲット、バインド オブジェクトについて詳しく見てみます。 また、以下のセクションでは、**HostViewModel** という名前のクラスに属する **NextButtonText** という名前の文字列プロパティに、ボタンのコンテンツをバインドする例へのリンクも示します
+次のセクションでは、バインディング ソース、バインディング ターゲット、バインド オブジェクトについて詳しく見てみます。 また、以下のセクションでは、**HostViewModel** という名前のクラスに属する **NextButtonText** という名前の文字列プロパティに、ボタンのコンテンツをバインドする例へのリンクも示します。
 
 ### バインディング ソース
 
@@ -133,19 +136,19 @@ public class HostViewModel : BindableBase
 
 | シナリオ                                                        | C# と VB (CLR)                                                                                                                                                                                                                                                                                                                                                                                                                   | C++/CX                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 |-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| オブジェクトにバインドする。                                              | どのオブジェクトでもかまいません。                                                                                                                                                                                                                                                                                                                                                                                                                 | オブジェクトで [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) を指定するか、[**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878) を実装する必要があります                                                                                                                                                                                                                                                                                                             |
-| バインドされたオブジェクトからプロパティ変更の更新を取得する。                | オブジェクトで [**System.ComponentModel. INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx) を実装する必要があります                                                                                                                                                                                                                                                                                                         | オブジェクトで [**Windows.UI.Xaml.Data. INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899) を実装する必要があります                                                                                                                                                                                                                                                                                                                                                           |
+| オブジェクトにバインドする。                                              | どのオブジェクトでもかまいません。                                                                                                                                                                                                                                                                                                                                                                                                                 | オブジェクトで [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) を指定するか、[**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878) を実装する必要があります。                                                                                                                                                                                                                                                                                                             |
+| バインドされたオブジェクトからプロパティ変更の更新を取得する。                | オブジェクトで [**System.ComponentModel. INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.componentmodel.inotifypropertychanged.aspx) を実装する必要があります。                                                                                                                                                                                                                                                                                                         | オブジェクトで [**Windows.UI.Xaml.Data. INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899) を実装する必要があります。                                                                                                                                                                                                                                                                                                                                                           |
 | コレクションにバインドする。                                           | [**List(Of T)**](https://msdn.microsoft.com/library/windows/apps/xaml/6sh2ey19.aspx)                                                                                                                                                                                                                                                                                                                                                                            | [**Platform::Collections::Vector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/hh441570.aspx)                                                                                                                                                                                                                                                                                                                                                                                         |
 | バインドされたコレクションからコレクション変更の更新を取得する。          | [**ObservableCollection(Of T)**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx)                                                                                                                                                                                                                                                                                                                                        | [**Platform::Collections::Vector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/xaml/hh441570.aspx)                                                                                                                                                                                                                                                                                                                                                                                         |
 | バインドをサポートするコレクションを実装する。                   | [
             **List(Of T)**](https://msdn.microsoft.com/library/windows/apps/xaml/6sh2ey19.aspx) を拡張するか、[**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ilist.aspx)、[**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/5y536ey6.aspx)(Of [**Object**](https://msdn.microsoft.com/library/windows/apps/xaml/system.object.aspx))、[**IEnumerable**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ienumerable.aspx)、または [**IEnumerable**](https://msdn.microsoft.com/library/windows/apps/xaml/9eekhta0.aspx)(Of **Object**) を実装します。 汎用の **IList(Of T)** と **IEnumerable(Of T)** へのバインドはサポートされていません。 | [
             **IBindableVector**](https://msdn.microsoft.com/library/windows/apps/Hh701979)、[**IBindableIterable**](https://msdn.microsoft.com/library/windows/apps/Hh701957)、[**IVector**](https://msdn.microsoft.com/library/windows/apps/BR206631)&lt;[**Object**](https://msdn.microsoft.com/library/windows/apps/xaml/system.object.aspx)^&gt;、[**IIterable**](https://msdn.microsoft.com/library/windows/apps/BR226024)&lt;**Object**^&gt;、**IVector**&lt;[**IInspectable**](https://msdn.microsoft.com/library/BR205821)\*&gt;、または **IIterable**&lt;**IInspectable**\*&gt; を実装します。 汎用の **IVector&lt;T&gt;** と **IIterable&lt;T&gt;** へのバインドはサポートされていません。 |
 | コレクション変更の更新をサポートするコレクションを実装する。 | [
-            **ObservableCollection(Of T)**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx) を拡張するか、(汎用ではない) [**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ilist.aspx) と [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) を実装します                                                                                                                                                               | [
-            **IBindableVector**](https://msdn.microsoft.com/library/windows/apps/Hh701979) と [**IBindableObservableVector**](https://msdn.microsoft.com/library/windows/apps/Hh701974) を実装します                                                                                                                                                                                                                                                                                                                       |
+            **ObservableCollection(Of T)**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx) を拡張するか、(汎用ではない) [**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ilist.aspx) と [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) を実装します。                                                                                                                                                               | [
+            **IBindableVector**](https://msdn.microsoft.com/library/windows/apps/Hh701979) と [**IBindableObservableVector**](https://msdn.microsoft.com/library/windows/apps/Hh701974) を実装します。                                                                                                                                                                                                                                                                                                                       |
 | 段階的読み込みをサポートするコレクションを実装する。       | [
-            **ObservableCollection(Of T)**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx) を拡張するか、(汎用ではない) [**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ilist.aspx) と [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) を実装します。 さらに、[**ISupportIncrementalLoading**](https://msdn.microsoft.com/library/windows/apps/Hh701916) を実装します                                                          | [
-            **IBindableVector**](https://msdn.microsoft.com/library/windows/apps/Hh701979)、[**IBindableObservableVector**](https://msdn.microsoft.com/library/windows/apps/Hh701974)、[**ISupportIncrementalLoading**](https://msdn.microsoft.com/library/windows/apps/Hh701916) を実装します                                                                                                                                                                                                                                         |
+            **ObservableCollection(Of T)**](https://msdn.microsoft.com/library/windows/apps/xaml/ms668604.aspx) を拡張するか、(汎用ではない) [**IList**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.ilist.aspx) と [**INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) を実装します。 さらに、[**ISupportIncrementalLoading**](https://msdn.microsoft.com/library/windows/apps/Hh701916) を実装します。                                                          | [
+            **IBindableVector**](https://msdn.microsoft.com/library/windows/apps/Hh701979)、[**IBindableObservableVector**](https://msdn.microsoft.com/library/windows/apps/Hh701974)、[**ISupportIncrementalLoading**](https://msdn.microsoft.com/library/windows/apps/Hh701916) を実装します。                                                                                                                                                                                                                                         |
 
  
 段階的読み込みを使うと、任意の大きさのデータ ソースにリスト コントロールをバインドすると同時に、高パフォーマンスを実現できます。 たとえば、一度にすべての結果を読む込むことなく、Bing の画像クエリ結果にリスト コントロールをバインドすることができます。 この場合、すぐに読み込むのは一部の結果だけで、他の結果は必要に応じて読み込みます。 段階的読み込みをサポートするには、コレクション変更通知をサポートするデータ ソースに [**ISupportIncrementalLoading**](https://msdn.microsoft.com/library/windows/apps/Hh701916) を実装する必要があります。 データ バインディング エンジンがより多くのデータを要求する場合は、UI を更新するためにデータ ソースで適切な要求を行い、結果を統合して、適切な通知を送信する必要があります。
@@ -194,7 +197,7 @@ namespace QuizGame.View
 **Path** として指定している値に注意してください。 この値はページ自体のコンテキストで解釈され、この場合、パスは、先ほど **HostView** ページに追加した **ViewModel** プロパティを参照することによって開始されます。 このプロパティは **HostViewModel** インスタンスを返すため、そのオブジェクトにドットを付けて **HostViewModel.NextButtonText** プロパティにアクセスできます。 さらに、**Mode** を指定して、[{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) の既定値である 1 回限りのバインディングをオーバーライドします。
 
 [
-            **Path**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.path) プロパティは、入れ子になったプロパティ、添付プロパティ、整数と文字列のインデクサーにバインドするためのさまざまな構文オプションをサポートしています。 詳しくは、「[Property-path 構文](https://msdn.microsoft.com/library/windows/apps/Mt185586)」をご覧ください。 文字列のインデクサーにバインドすると、[**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878) を実装しなくても動的プロパティにバインドする効果を得られます。 その他の設定については、「[{x:Bind} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204783)」をご覧ください
+            **Path**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.path) プロパティは、入れ子になったプロパティ、添付プロパティ、整数と文字列のインデクサーにバインドするためのさまざまな構文オプションをサポートしています。 詳しくは、「[Property-path 構文](https://msdn.microsoft.com/library/windows/apps/Mt185586)」をご覧ください。 文字列のインデクサーにバインドすると、[**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878) を実装しなくても動的プロパティにバインドする効果を得られます。 その他の設定については、「[{x:Bind} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204783)」をご覧ください。
 
 **注**  [**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textbox.text) に対する変更は、ユーザーのキーストロークのたびにではなく、[**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) からフォーカスが移動したときに、双方向バインディング ソースに送信されます。
 
@@ -214,15 +217,15 @@ namespace QuizGame.View
 
 **Path 内の厳密に型指定されていないオブジェクト**
 
-たとえば、SampleDataGroup という名前の型があり、Title という名前の文字列プロパティを実装しているとします。 また、MainPage.SampleDataGroupAsObject プロパティがあり、これは型オブジェクトのプロパティですが、実際には SampleDataGroup のインスタンスを返すとします。 バインディング `<TextBlock Text="{x:Bind SampleDataGroupAsObject.Title}"/>` は、型オブジェクトで Title プロパティが見つからないため、コンパイル エラーとなります。 これを解決するには、Path 構文に `<TextBlock Text="{x:Bind SampleDataGroupAsObject.(data:SampleDataGroup.Title)}"/>` などのキャストを追加します。 Element がオブジェクトとして宣言されているが、実際には TextBlock である、`<TextBlock Text="{x:Bind Element.Text}"/>` という例を考えてみます。 この場合も、次のようにキャストによって問題が解決されます。
+たとえば、SampleDataGroup という名前の型があり、Title という名前の文字列プロパティを実装しているとします。 また、MainPage.SampleDataGroupAsObject プロパティがあり、これは型オブジェクトのプロパティですが、実際には SampleDataGroup のインスタンスを返すとします。 バインディング `<TextBlock Text="{x:Bind SampleDataGroupAsObject.Title}"/>` は、型オブジェクトで Title プロパティが見つからないため、コンパイル エラーとなります。 これを解決するには、Path 構文に `<TextBlock Text="{x:Bind SampleDataGroupAsObject.(data:SampleDataGroup.Title)}"/>` などのキャストを追加します。 Element がオブジェクトとして宣言されているが、実際には TextBlock である、`<TextBlock Text="{x:Bind Element.Text}"/>` という例を考えてみます。 この場合も、`<TextBlock Text="{x:Bind Element.(TextBlock.Text)}"/>` のようにキャストによって問題が解決されます。
 
 **データを非同期的に読み込む場合**
 
-ページの部分クラスに、**{x:Bind}** をサポートするコードがコンパイル時に生成されます。 これらのファイルは `obj` フォルダー内にあり、`<view name>.g.cs` (C# の場合) などの名前が付けられています。 生成されたコードには、ページの [**Loading**](https://msdn.microsoft.com/library/windows/apps/BR208706) イベントのハンドラーが含まれており、このハンドラーが、ページのバインディングを表す生成されたクラスで **Initialize** メソッドを呼び出します。 次に、**Initialize** が **Update** を呼び出して、バインディング ソースとターゲットの間のデータの移動を開始します。 **Loading** は、ページまたはユーザー コントロールの最初の測定パスの直前に発生します。 したがって、データが非同期的に読み込まれる場合、**Initialize** が呼び出された時点で準備ができていない可能性があります。 そのため、データを読み込んだ後、`this->Bindings->Update();` を呼び出すことによって、1 回限りのバインディングを強制的に実行できます。 非同期的に読み込まれたデータについて 1 回限りのバインディングのみが必要な場合は、この方法でバインディングを初期化する方が、一方向のバインドを使って変更をリッスンするよりもずっと低コストです。 データがきめ細かく変更されない場合や、特定のアクションの一部として更新される可能性が高い場合は、バインディングを 1 回限りにし、いつでも **Update** を呼び出すことによって、強制的に手動更新を実行できます
+ページの部分クラスに、**{x:Bind}** をサポートするコードがコンパイル時に生成されます。 これらのファイルは `obj` フォルダー内にあり、`<view name>.g.cs` (C# の場合) などの名前が付けられています。 生成されたコードには、ページの [**Loading**](https://msdn.microsoft.com/library/windows/apps/BR208706) イベントのハンドラーが含まれており、このハンドラーが、ページのバインディングを表す生成されたクラスで **Initialize** メソッドを呼び出します。 次に、**Initialize** が **Update** を呼び出して、バインディング ソースとターゲットの間のデータの移動を開始します。 **Loading** は、ページまたはユーザー コントロールの最初の測定パスの直前に発生します。 したがって、データが非同期的に読み込まれる場合、**Initialize** が呼び出された時点で準備ができていない可能性があります。 そのため、データを読み込んだ後、`this->Bindings->Update();` を呼び出すことによって、1 回限りのバインディングを強制的に実行できます。 非同期的に読み込まれたデータについて 1 回限りのバインディングのみが必要な場合は、この方法でバインディングを初期化する方が、一方向のバインドを使って変更をリッスンするよりもずっと低コストです。 データがきめ細かく変更されない場合や、特定のアクションの一部として更新される可能性が高い場合は、バインディングを 1 回限りにし、いつでも **Update** を呼び出すことによって、強制的に手動更新を実行できます。
 
 **制限事項**
 
-**{x:Bind}** は、JSON オブジェクトのディクショナリ構造内を移動する場合などの遅延バインディングのシナリオや、プロパティ名の語彙的な一致に基づく厳密ではない型指定であるダック タイピング ("アヒルのように歩き、泳ぎ、鳴くならば、それはアヒルである") には適していません。 ダック タイピングでは、Age プロパティへのバインディングは、Person オブジェクトでも Wine オブジェクトでも同様に満足されます。 このようなシナリオでは、**{Binding}** を使用します
+**{x:Bind}** は、JSON オブジェクトのディクショナリ構造内を移動する場合などの遅延バインディングのシナリオや、プロパティ名の語彙的な一致に基づく厳密ではない型指定であるダック タイピング ("アヒルのように歩き、泳ぎ、鳴くならば、それはアヒルである") には適していません。 ダック タイピングでは、Age プロパティへのバインディングは、Person オブジェクトでも Wine オブジェクトでも同様に満足されます。 このようなシナリオでは、**{Binding}** を使用します。
 
 ### {Binding} を使って宣言されたバインディング オブジェクト
 
@@ -268,7 +271,7 @@ UI 要素の [**DataContext**](https://msdn.microsoft.com/library/windows/apps/B
 ブール型プロパティの値に基づいて UI 要素の表示を制御する場合、数値の範囲や傾向に応じた色で UI 要素をレンダリングする場合、または文字列を想定している UI 要素のプロパティに日付や時刻の値を表示する場合は、値の型を別の型に変換する必要があります。 バインディング ソース クラスから適切な型の別のプロパティを公開し、変換ロジックをカプセル化し、その中でテストできるようにしておくことが、適切なソリューションである場合があります。 ただし、この方法はソースとターゲットのプロパティの数が多くなり、組み合わせが多くなると、柔軟性も拡張性もありません。 このような場合は、値コンバーターと呼ばれるものを使います。 ここでは、値コンバーターを実装して利用する方法について説明します。
 
 [
-            **DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx) 値を月を含む文字列値に変換する、1 回限りまたは一方向のバインディングに適した値コンバーターを以下に示します。 このクラスは、[**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/BR209903) を実装します
+            **DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx) 値を月を含む文字列値に変換する、1 回限りまたは一方向のバインディングに適した値コンバーターを以下に示します。 このクラスは、[**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/BR209903) を実装します。
 
 ``` csharp
 public class DateToStringConverter : IValueConverter
@@ -365,7 +368,7 @@ End Class
 
 バインドの [**Converter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.converter) パラメーターを定義した場合、[**Convert**](https://msdn.microsoft.com/library/windows/apps/hh701934) メソッドと [**ConvertBack**](https://msdn.microsoft.com/library/windows/apps/hh701938) メソッドがバインド エンジンによって呼び出されます。 ソースからデータが渡されると、バインド エンジンは、**Convert** を呼び出し、返すデータをターゲットに渡します。 ターゲットからデータが渡されると (双方向バインディングの場合)、バインド エンジンは、**ConvertBack** を呼び出し、返すデータをソースに渡します。
 
-コンバーターには省略可能なパラメーターもあります。変換で使う言語を指定できる [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.converterlanguage)、および変換ロジックに渡すパラメーターを指定できる [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.converterparameter) です。 コンバーター パラメーターの使用例については、「[**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/BR209903)」をご覧ください
+コンバーターには省略可能なパラメーターもあります。変換で使う言語を指定できる [**ConverterLanguage**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.converterlanguage)、および変換ロジックに渡すパラメーターを指定できる [**ConverterParameter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.binding.converterparameter) です。 コンバーター パラメーターの使用例については、「[**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/BR209903)」をご覧ください。
 
 **注**  変換でエラーが発生した場合は、例外をスローしないでください。 代わりに [**DependencyProperty.UnsetValue**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyproperty.unsetvalue) を返します。これにより、データ転送が中止されます。
 
@@ -440,7 +443,7 @@ MainPage.xaml
     }
 ```
 
-次のように、**RootFrame** プロパティによって返される **Frame** オブジェクトのメソッドに、ボタンの **Click** イベントをバインドできます。 また、ボタンの **IsEnabled** プロパティを、同じ **Frame** の別のメンバーにもバインドします
+次のように、**RootFrame** プロパティによって返される **Frame** オブジェクトのメソッドに、ボタンの **Click** イベントをバインドできます。 また、ボタンの **IsEnabled** プロパティを、同じ **Frame** の別のメンバーにもバインドします。
 
 ``` xml
     <AppBarButton Icon="Forward" IsCompact="True"
@@ -524,7 +527,7 @@ MainPage.xaml
 [
             **ItemsSource**](https://msdn.microsoft.com/library/windows/apps/BR242828) では、[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) を使う必要があります ([{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) ではありません)。これは、**Source** プロパティをリソースに設定する必要があるためです。 完成したアプリのコンテキストで上の例を確認するには、[Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952) サンプル アプリをダウンロードしてください。 上に示したマークアップとは異なり、[Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952) では {Binding} のみを使っています。
 
-"グループである" パターンは、2 つの方法のいずれかで実装できます。 1 つは、独自のグループ クラスを作成する方法です。 **List&lt;T&gt;** からクラスを派生させます (ここで *T* は項目の型です)。 たとえば、`public class Author : List<BookSku>` と記述します。 もう 1 つは、**BookSku** 項目の同様のプロパティ値から、動的にグループ オブジェクト (とグループ クラス) を動的に作成する [LINQ](http://msdn.microsoft.com/library/bb397926.aspx) 式を使う方法です。 このアプローチ (項目のフラットな一覧のみを保持し、必要に応じてグループ化する) は、クラウド サービスのデータにアクセスするアプリで一般的です。 著者やジャンルなどに基づいて書籍を柔軟にグループ化することができます。**Author** や **Genre** などの特別なグループ クラスは必要ありません
+"グループである" パターンは、2 つの方法のいずれかで実装できます。 1 つは、独自のグループ クラスを作成する方法です。 **List&lt;T&gt;** からクラスを派生させます (ここで *T* は項目の型です)。 たとえば、`public class Author : List<BookSku>` と記述します。 もう 1 つは、**BookSku** 項目の同様のプロパティ値から、動的にグループ オブジェクト (とグループ クラス) を動的に作成する [LINQ](http://msdn.microsoft.com/library/bb397926.aspx) 式を使う方法です。 このアプローチ (項目のフラットな一覧のみを保持し、必要に応じてグループ化する) は、クラウド サービスのデータにアクセスするアプリで一般的です。 著者やジャンルなどに基づいて書籍を柔軟にグループ化することができます。**Author** や **Genre** などの特別なグループ クラスは必要ありません。
 
 次の例は、[LINQ](http://msdn.microsoft.com/library/bb397926.aspx) を使用した "グループである" パターンを示しています。 今回は、書籍をジャンルでグループ化し、グループ ヘッダーにジャンル名と共に表示します。 これは、グループの [**Key**](https://msdn.microsoft.com/library/windows/apps/bb343251.aspx) の値に関連する "Key" プロパティ パスによって示されます。
 
@@ -577,11 +580,11 @@ MainPage.xaml
 ```
 
 [
-            **SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/Hh702601) コントロールは、ユーザーがグループ化されたデータを表示したり、データ間を移動したりするための優れた方法です。 [Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952) サンプル アプリは、**SemanticZoom** の使い方を示しています。 このアプリでは、著者別にグループ化された書籍の一覧を表示する (拡大表示ビュー) ことも、縮小して著者のジャンプ リストを表示する (縮小表示ビュー) こともできます。 ジャンプ リストを使うと、書籍の一覧をスクロールするよりもすばやく移動することができます。 拡大表示ビューと縮小表示ビューは、実際には、同じ **CollectionViewSource** にバインドされた **ListView** または **GridView** コントロールです
+            **SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/Hh702601) コントロールは、ユーザーがグループ化されたデータを表示したり、データ間を移動したりするための優れた方法です。 [Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952) サンプル アプリは、**SemanticZoom** の使い方を示しています。 このアプリでは、著者別にグループ化された書籍の一覧を表示する (拡大表示ビュー) ことも、縮小して著者のジャンプ リストを表示する (縮小表示ビュー) こともできます。 ジャンプ リストを使うと、書籍の一覧をスクロールするよりもすばやく移動することができます。 拡大表示ビューと縮小表示ビューは、実際には、同じ **CollectionViewSource** にバインドされた **ListView** または **GridView** コントロールです。
 
 ![SemanticZoom の図](images/sezo.png)
 
-階層データ (カテゴリ内のサブカテゴリなど) にバインドする場合、一連の項目コントロールを使って、UI に階層レベルを表示できます。 1 つの項目コントロールで項目を選ぶと、後続する項目コントロールの内容に反映されます。 各リストをそれぞれの [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) インスタンスにバインドし、**CollectionViewSource** インスタンスをチェーン形式でバインドすることで、これらのリストの同期を保つことができます。 これは、マスター/詳細 (またはリスト/詳細) ビューと呼ばれます。 詳しくは、「[階層データにバインドし、マスター/詳細ビューを作る方法](how-to-bind-to-hierarchical-data-and-create-a-master-details-view.md)」をご覧ください
+階層データ (カテゴリ内のサブカテゴリなど) にバインドする場合、一連の項目コントロールを使って、UI に階層レベルを表示できます。 1 つの項目コントロールで項目を選ぶと、後続する項目コントロールの内容に反映されます。 各リストをそれぞれの [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) インスタンスにバインドし、**CollectionViewSource** インスタンスをチェーン形式でバインドすることで、これらのリストの同期を保つことができます。 これは、マスター/詳細 (またはリスト/詳細) ビューと呼ばれます。 詳しくは、「[階層データにバインドし、マスター/詳細ビューを作る方法](how-to-bind-to-hierarchical-data-and-create-a-master-details-view.md)」をご覧ください。
 
 ## データ バインディングに関する問題の診断とデバッグ
 
@@ -595,7 +598,7 @@ MainPage.xaml
 
 **注**  このセクションは [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) にのみ適用されます。コードで [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) バインディングを作成することはできないためです。 ただし、{x:Bind} と同じメリットを、[**DependencyObject.RegisterPropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.dependencyobject.registerpropertychangedcallback.aspx) によって実現できます。これにより、すべての依存関係プロパティについての変更通知を登録できます。
 
-XAML の代わりに手続き型コードを使っても UI 要素をデータに接続できます。 そのためには、新しい [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR209820) オブジェクトを作成し、適切なプロパティを設定してから、[**FrameworkElement.SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257.aspx) または [**BindingOperations.SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244376.aspx) を呼び出します。 バインドをプログラムで作成すると、Binding プロパティの値を実行時に選択する場合や、複数のコントロール間で 1 つのバインドを共有する場合に便利です。 ただし、**SetBinding** の呼び出し後は Binding プロパティの値を変更できないことに注意してください
+XAML の代わりに手続き型コードを使っても UI 要素をデータに接続できます。 そのためには、新しい [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR209820) オブジェクトを作成し、適切なプロパティを設定してから、[**FrameworkElement.SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257.aspx) または [**BindingOperations.SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244376.aspx) を呼び出します。 バインドをプログラムで作成すると、Binding プロパティの値を実行時に選択する場合や、複数のコントロール間で 1 つのバインドを共有する場合に便利です。 ただし、**SetBinding** の呼び出し後は Binding プロパティの値を変更できないことに注意してください。
 
 次の例では、バインドをコードで実装する方法を示しています。
 
@@ -658,6 +661,7 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

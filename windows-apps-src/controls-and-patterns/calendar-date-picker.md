@@ -1,10 +1,13 @@
 ---
 author: Jwmsft
-Description: カレンダーの日付の選択コントロールは、カレンダーの曜日や埋まり具合などのコンテキスト情報が必要となるカレンダー ビューから単一の日付を選ぶ用途に最適なドロップダウン コントロールです。
-title: カレンダーの日付の選択コントロール
+Description: "カレンダーの日付の選択コントロールは、カレンダーの曜日や埋まり具合などのコンテキスト情報が必要となるカレンダー ビューから単一の日付を選ぶ用途に最適なドロップダウン コントロールです。"
+title: "カレンダーの日付の選択コントロール"
 ms.assetid: 9e0213e0-046a-4906-ba86-0b49be51ca99
 label: Calendar date picker
 template: detail.hbs
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: 75f6bb925db63838e4985df15b50977b93805ffe
+
 ---
 
 # カレンダーの日付の選択コントロール
@@ -87,6 +90,7 @@ Date 値が変化したときに通知を受け取るには、[**DateChanged**](
 - [時刻の選択コントロール](time-picker.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

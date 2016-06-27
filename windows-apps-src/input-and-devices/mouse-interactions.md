@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: アプリでマウス入力に応答するには、タッチ入力やペン入力で使うのと同じ基本的なポインター イベントを処理します。
-title: マウス操作
+Description: "アプリでマウス入力に応答するには、タッチ入力やペン入力で使うのと同じ基本的なポインター イベントを処理します。"
+title: "マウス操作"
 ms.assetid: C8A158EF-70A9-4BA2-A270-7D08125700AC
 label: Mouse
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: b381cdba2a20480bb8b4d7802d2ff490744e5f03
+
 ---
 
 # マウス操作
@@ -152,6 +155,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

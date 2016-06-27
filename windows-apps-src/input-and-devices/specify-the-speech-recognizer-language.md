@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 音声認識に使われるインストール済みの言語を選ぶ方法について説明します。
-title: 音声認識エンジンの言語の指定
+Description: "音声認識に使われるインストール済みの言語を選ぶ方法について説明します。"
+title: "音声認識エンジンの言語の指定"
 ms.assetid: 4C463A1B-AF6A-46FD-A839-5D6724955B38
 label: Specify the speech recognizer language
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 24393ef52d72aa08f9aab2d541e65ccb5f2aceed
+
 ---
 
 # 音声認識エンジンの言語の指定
@@ -24,7 +27,7 @@ template: detail.hbs
 
 ここでは、システムにインストールされている言語を列挙し、どの言語が既定の言語であるかを指定します。また、音声認識用に別の言語を選びます。
 
-**前提条件  **
+**前提条件:  **
 
 このトピックは、「[音声認識](speech-recognition.md)」に基づいています。
 
@@ -112,9 +115,15 @@ SRGS 文法は、[**SpeechRecognitionGrammarFileConstraint**](https://msdn.micro
 
 
 **開発者向け**
-* 音声操作
-* デザイナー向け
-* [音声認識の設計ガイドライン](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [音声操作](speech-interactions.md)
+            
+          
+            **デザイナー向け**
+* [音声認識の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596121)
+            
+          
+            **サンプル**
+* [音声認識と音声合成のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  
@@ -124,6 +133,7 @@ SRGS 文法は、[**SpeechRecognitionGrammarFileConstraint**](https://msdn.micro
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

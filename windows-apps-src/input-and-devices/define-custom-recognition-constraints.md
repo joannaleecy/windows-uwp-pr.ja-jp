@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 音声認識のカスタム制約を定義して使う方法について説明します。
-title: カスタム認識の制約の定義
+Description: "音声認識のカスタム制約を定義して使う方法について説明します。"
+title: "カスタム認識の制約の定義"
 ms.assetid: 26289DE5-6AC9-42C3-A160-E522AE62D2FC
 label: Define custom recognition constraints
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 7d91cef0955dbf8544f658369ee488c47aaef787
+
 ---
 
 # カスタム認識の制約の定義
@@ -18,7 +21,7 @@ template: detail.hbs
 -   [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)
 
 
-音声認識では、少なくとも 1 つの制約を使って、認識できるボキャブラリを定義する必要があります。 制約が指定されていない場合、ユニバーサル Windows アプリで定義済みのディクテーション文法が使われます。 「[音声認識](speech-recognition.md)」をご覧ください
+音声認識では、少なくとも 1 つの制約を使って、認識できるボキャブラリを定義する必要があります。 制約が指定されていない場合、ユニバーサル Windows アプリで定義済みのディクテーション文法が使われます。 「[音声認識](speech-recognition.md)」をご覧ください。
 
 
 ## <span id="Add_constraints"></span><span id="add_constraints"></span><span id="ADD_CONSTRAINTS"></span>制約の追加
@@ -27,7 +30,7 @@ template: detail.hbs
 [
             **SpeechRecognizer.Constraints**](https://msdn.microsoft.com/library/windows/apps/dn653241) プロパティを使って、音声認識エンジンに制約を追加します。
 
-ここでは、アプリ内から使われる 3 種類の音声認識制約について取り上げます。 (音声コマンドの制約については、「[Cortana の音声コマンドを使ったフォアグラウンド アプリの起動](launch-a-foreground-app-with-voice-commands-in-cortana.md)」をご覧ください)
+ここでは、アプリ内から使われる 3 種類の音声認識制約について取り上げます。 (音声コマンドの制約については、「[Cortana の音声コマンドを使ったフォアグラウンド アプリの起動](launch-a-foreground-app-with-voice-commands-in-cortana.md)」をご覧ください)。
 
 -   [
               **SpeechRecognitionTopicConstraint**
@@ -141,7 +144,7 @@ SRGS 文法は、アプリの複雑な音声操作を構築するときに役立
 -   セマンティクスを使って、音声認識がアプリにもたらす意味を定義します。
 -   文法内で、または用語集へのリンクを通じて発音を指定する
 
-SRGS の要素と属性について詳しくは、[XML 文法の SRGS リファレンス](http://go.microsoft.com/fwlink/p/?LinkID=269886)に関するページをご覧ください。 SRGS 文法の作成を開始するには、[基本的な XML 文法の作成方法](http://go.microsoft.com/fwlink/p/?LinkID=269887)に関するページをご覧ください
+SRGS の要素と属性について詳しくは、[XML 文法の SRGS リファレンス](http://go.microsoft.com/fwlink/p/?LinkID=269886)に関するページをご覧ください。 SRGS 文法の作成を開始するには、[基本的な XML 文法の作成方法](http://go.microsoft.com/fwlink/p/?LinkID=269887)に関するページをご覧ください。
 
 次の点に留意してください。
 
@@ -217,7 +220,7 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 ## <span id="Manage_constraints"></span><span id="manage_constraints"></span><span id="MANAGE_CONSTRAINTS"></span>制約の管理
 
 
-制約コレクションが認識のために読み込まれると、アプリでは制約の [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn631402) プロパティを **true** または **false** に設定して、認識操作でどの制約を有効にするかを管理できます。 既定の設定は **true** です
+制約コレクションが認識のために読み込まれると、アプリでは制約の [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn631402) プロパティを **true** または **false** に設定して、認識操作でどの制約を有効にするかを管理できます。 既定の設定は **true** です。
 
 通常は、認識操作ごとに制約を読み込んでアンロードしコンパイルするよりも、いったん読み込んでから必要に応じて有効または無効にする方が効率的です。 必要に応じて [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn631402) プロパティを使います。
 
@@ -243,6 +246,7 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

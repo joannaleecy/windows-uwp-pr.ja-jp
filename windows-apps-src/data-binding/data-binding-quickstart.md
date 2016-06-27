@@ -1,8 +1,11 @@
 ---
 author: mcleblanc
 ms.assetid: A9D54DEC-CD1B-4043-ADE4-32CD4977D1BF
-title: データ バインディングの概要
-description: このトピックでは、ユニバーサル Windows プラットフォーム (UWP) アプリで、コントロール (または他の UI 要素) を単一の項目にバインドする方法や、項目コントロールを項目のコレクションにバインドする方法を説明します。
+title: "データ バインディングの概要"
+description: "このトピックでは、ユニバーサル Windows プラットフォーム (UWP) アプリで、コントロール (または他の UI 要素) を単一の項目にバインドする方法や、項目コントロールを項目のコレクションにバインドする方法を説明します。"
+ms.sourcegitcommit: d76ef6a87d6afad577f5f7bf5e8f18a8b0776094
+ms.openlocfilehash: c30e048f450c062c6e0148e5040a58bfa47193bb
+
 ---
 データ バインディングの概要
 =====================
@@ -453,6 +456,7 @@ public class StringFormatter : Windows.UI.Xaml.Data.IValueConverter
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

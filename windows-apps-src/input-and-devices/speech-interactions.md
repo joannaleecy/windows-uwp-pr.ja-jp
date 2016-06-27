@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-description: Cortana の音声コマンド、音声認識、音声合成を使って、アプリに音声操作を組み込むことができます。
-title: 音声操作
+description: "Cortana の音声コマンド、音声認識、音声合成を使って、アプリに音声操作を組み込むことができます。"
+title: "音声操作"
 ms.assetid: 646DB3CE-FA81-4727-8C21-936C81079439
 label: Speech interactions
 template: detail.hbs
+ms.sourcegitcommit: bcc401c515cdba899fb2202ddddf5bd98b64aecd
+ms.openlocfilehash: bdcced680b69ce6ff9caf3ac860cb139fdfdaeff
+
 ---
 
 # 音声操作
@@ -236,6 +239,7 @@ TTS では、プレーンテキストまたは SSML から音声出力が生成�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

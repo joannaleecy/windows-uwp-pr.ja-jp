@@ -1,10 +1,13 @@
 ---
 author: Jwmsft
-Description: ハブ コントロールは、階層型ナビゲーション パターンを使って、リレーショナル情報アーキテクチャを使ったアプリをサポートします。
-title: ハブ コントロール
+Description: "ハブ コントロールは、階層型ナビゲーション パターンを使って、リレーショナル情報アーキテクチャを使ったアプリをサポートします。"
+title: "ハブ コントロール"
 ms.assetid: F1319960-63C6-4A8B-8DA1-451D59A01AC2
 label: Hub
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 70ce2a58b45c8514aca6641ca034caa91fb88d18
+
 ---
 # ハブ コントロール/パターン
 
@@ -110,6 +113,7 @@ template: detail.hbs
 - [ハブの使用](https://msdn.microsoft.com/library/windows/apps/xaml/dn308518)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

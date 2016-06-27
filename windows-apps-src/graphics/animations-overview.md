@@ -1,8 +1,11 @@
 ---
 author: Jwmsft
 ms.assetid: 0C8DEE75-FB7B-4E59-81E3-55F8D65CD982
-title: アニメーションの概要
-description: Windows ランタイム アニメーション ライブラリのアニメーションを使って、Windows の見た目や操作感を自分のアプリに取り入れることができます。
+title: "アニメーションの概要"
+description: "Windows ランタイム アニメーション ライブラリのアニメーションを使って、Windows の見た目や操作感を自分のアプリに取り入れることができます。"
+ms.sourcegitcommit: c8ba7f6303a05b8de03aa29199aaa444abf75827
+ms.openlocfilehash: 2a70d73a5e714aaf1096fed5d08ec4844edd66a6
+
 ---
 # アニメーションの概要
 
@@ -23,19 +26,22 @@ Windows ランタイム アニメーション ライブラリのアニメーシ�
 
 すべてのシナリオに対応するアニメーションがアニメーション ライブラリに用意されているわけではありません。 XAML でカスタム アニメーションを作ることが必要になる場合もあります。 詳しくは、「[ストーリーボードに設定されたアニメーション](storyboarded-animations.md)」をご覧ください。
 
+さらに、ScrollViewer のスクロール位置に基づいた項目のアニメーション化など、特定の高度なシナリオでは、開発者がビジュアル レイヤーの相互運用を使ってカスタム アニメーションを実装することが必要になる場合があります。 詳しくは、「[ビジュアル レイヤー](https://msdn.microsoft.com/en-us/windows/uwp/graphics/visual-layer)」をご覧ください。
+
 ## アニメーションの種類
 
 Windows ランタイム アニメーション システムとアニメーション ライブラリには、コントロールと UI のその他の部分が動作をアニメーション化できるようにするという、より大きな目的があります。 アニメーションには、いくつかの個別の種類があります。
 
 -   *テーマ切り替え*は、UI で特定の条件が変化したときに自動的に適用されます。定義済みの Windows ランタイム XAML UI 型のコントロールまたは要素が対象になります。 これらのアニメーションは、Windows の外観と操作性をサポートし、すべてのアプリが操作モードを切り替えるときに特定の UI シナリオに対して行うことを定義しているので、*テーマ切り替え*と呼ばれます。 テーマ切り替えは、アニメーション ライブラリの一部です。
 -   *テーマ アニメーション*は、定義済み Windows ランタイム XAML UI 型の 1 つ以上のプロパティに対するアニメーションです。 テーマ アニメーションは、特定の 1 要素を対象とし、コントロール内に特定の表示状態で存在するという点でテーマ切り替えとは異なります。一方、テーマ切り替えは、表示状態の外側に存在するコントロールのプロパティに割り当てられ、表示状態間の切り替えに影響を及ぼします。 Windows ランタイム XAML コントロールの多くは、コントロール テンプレートの一部であり、表示状態がアニメーションのきっかけとなるテーマ アニメーションをストーリーボード内に含んでいます。 テンプレートを変更しない限り、UI のコントロールでこの組み込みのテーマ アニメーションを使うことができます。 ただし、テンプレートを置き換えた場合は、組み込みのテーマ アニメーションも削除されます。 テーマ アニメーションを元に戻すには、コントロールの表示状態セット内にテーマ アニメーションを含むストーリーボードを定義する必要があります。 また、ストーリーボードから表示状態内にないテーマ アニメーションを実行し、[**Begin**](https://msdn.microsoft.com/library/windows/apps/BR210491) メソッドを使って開始することもできますが、これは一般的ではありません。 テーマ アニメーションはアニメーション ライブラリの一部です。
--   *視覚的な切り替え*は、コントロールが定義済みの 1 つの表示状態から別の状態に切り替えられたときに適用されます。 これらは、開発者が記述するカスタム アニメーションです。通常は、コントロールのために記述したカスタム テンプレートと、そのテンプレート内の表示状態の定義に関連しています。 アニメーションは状態間の切り替え中だけに実行され、通常は、最大でも数秒間のわずかな時間です。 詳しくは、「[表示状態用にストーリーボードに設定されたアニメーション](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808#VisualTransition)」の「視覚的な切り替え」のセクションをご覧ください。
--   *ストーリーボードに設定されたアニメーション*は、アプリのコードによって明確に開始されるか、読み込んだコントロールのようなコンポーネント内にあるコードによって開始されるときに適用されます。 ストーリーボードに設定されたアニメーションは、時間の経過と共に Windows ランタイム依存関係プロパティの値を変更することができます。 ストーリーボードに設定されたアニメーションは、UI シナリオに限定されません。実際、状態マシンという概念に慣れている場合、これは状態マシンの技法と考えると便利です。 ストーリーボードに設定されたアニメーションは、表示状態間の切り替え中だけに限定されません。コントロール状態の変化に関係なく、いつでも実行でき、アニメーションを連続して実行することもできます。 詳しくは、「[ストーリーボードに設定されたアニメーション](storyboarded-animations.md)」をご覧ください。 依存関係プロパティとその存在場所について詳しくは、「[依存関係プロパティの概要](https://msdn.microsoft.com/library/windows/apps/Mt185583)」をご覧ください。
+-   *視覚的な切り替え*は、コントロールが定義済みの 1 つの表示状態から別の状態に切り替えられたときに適用されます。 これらは、開発者が記述するカスタム アニメーションです。通常は、コントロールのために記述したカスタム テンプレートと、そのテンプレート内の表示状態の定義に関連しています。 アニメーションは状態間の切り替え中だけに実行され、通常は、最大でも数秒間のわずかな時間です。 詳しくは、「[表示状態用にストーリーボードに設定されたアニメーション](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808#VisualTransition)」の「VisualTransition」のセクションをご覧ください。
+-   *ストーリーボードに設定されたアニメーション*は、時間の経過と共に Windows ランタイム依存関係プロパティの値をアニメーション化します。 ストーリーボードは、視覚的切り替えの一部として定義することも、実行時にアプリケーションによってトリガーすることもできます。 詳しくは、「[ストーリーボードに設定されたアニメーション](storyboarded-animations.md)」をご覧ください。 依存関係プロパティとその存在場所について詳しくは、「[依存関係プロパティの概要](https://msdn.microsoft.com/library/windows/apps/Mt185583)」をご覧ください。
 
 ## ライブラリに用意されているアニメーション
 
 アニメーション ライブラリには、次のアニメーションが用意されています。 アニメーションの名前をクリックすると、主な使用シナリオ、その定義方法、アニメーション例の詳しい情報が表示されます。
 
+-   [ページ切り替え](./animations-overview.md#page-transition): [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) 内のページ切り替えをアニメーション化します。
 -   [コンテンツ切り替えと開始切り替え](./animations-overview.md#content-transition-and-entrance-transition): コンテンツの断片やまとまりをアニメーション化して画面に表示したり、画面から消したりします。
 -   [フェード イン/アウトとクロスフェード](./animations-overview.md#fade-in-out-and-crossfade): 一時的な要素またはコントロールを表示し、コンテンツ領域を更新します。
 -   [ポインター アップ/ダウン](./animations-overview.md#pointer-up-down): タイルでのタップまたはクリックの視覚的なフィードバックを提供します。
@@ -44,13 +50,24 @@ Windows ランタイム アニメーション システムとアニメーショ�
 -   [エッジ (端) UI の表示/非表示](./animations-overview.md#show-hide-edge-ui): パネルのように大きな UI も含めて、端に基づく UI をスライドして画面に表示したり、画面から消したりします。
 -   [リスト項目の変更](./animations-overview.md#list-item-changes): リストについて項目の追加、項目の削除、項目の並べ替えを行います。
 -   [ドラッグ/ドロップ](./animations-overview.md#drag-drop): ドラッグ アンド ドロップ操作中に視覚的なフィードバックを提供します。
--   [スワイプ ジェスチャ](./animations-overview.md#swipe-gestures): タイルがスワイプ操作をサポートしていることを示唆します。またはスワイプ選択状態を示します。
+
+### ページ切り替え
+
+アプリ内でのナビゲーションをアニメーション化するには、ページ切り替えを使います。 ほぼすべてのアプリで、ある種のナビゲーションが使用されるため、ページ切り替えアニメーションはアプリで使用される最も一般的な種類のテーマ アニメーションです。 ページ切り替えの API について詳しくは、「[**NavigationThemeTransition**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation. Therenavigationthemetransition)」をご覧ください。
+
+
 
 ### コンテンツ切り替えと開始切り替え
 
 コンテンツ切り替えアニメーション ([**ContentThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR243103)) を使って、コンテンツの断片やまとまりを移動して現在の画面に表示したり、画面から消したりします。 たとえば、コンテンツ切り替えアニメーションは、ページが最初に読み込まれたとき、またはページの 1 セクションのコンテンツを変更したときに表示できなかったコンテンツを表示する場合に使われます。
 
-XAML アニメーション ライブラリには、ページが読み込まれたときにページ全体に適用されるアニメーションという概念がありませんが、コンテンツを含むページが最初に読み込まれ、コンテンツ部分がレンダリングされるときにコンテンツに適用できる別の切り替え ([**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210288)) はあります。 したがって、最初にコンテンツを表示するときは、コンテンツ切り替え時とは異なるフィードバックとすることができます。
+[
+              **EntranceThemeTransition**
+            ](https://msdn.microsoft.com/library/windows/apps/BR210288) は、ページまたは UI の大きなセクションが最初に読み込まれたときに、コンテンツに適用できるモーションを表します。 したがって、最初にコンテンツを表示するときは、コンテンツ切り替え時とは異なるフィードバックとすることができます。 [
+              **EntranceThemeTransition**
+            ](https://msdn.microsoft.com/library/windows/apps/BR210288) は、既定のパラメーターを指定した場合の [**NavigationThemeTransition**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.navigationthemetransition) と同じですが、[**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) の外部で使用できます。
+ 
+ 
 
 ### フェード イン/アウトとクロスフェード
 
@@ -65,7 +82,7 @@ XAML アニメーション ライブラリには、ページが読み込まれ�
 
 ### 位置の変更
 
-位置変更アニメーション ([**RepositionThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210421) または [**RepositionThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210429)) を使って、要素を新しい位置に移動します。 たとえば、ヘッダー付き項目のコントロールでヘッダーを動かすと、位置変更アニメーションが適用されます。
+位置変更アニメーション ([**RepositionThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210421) または [**RepositionThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210429)) を使って、要素を新しい位置に移動します。 たとえば、項目のコントロールでヘッダーを動かすと、位置変更アニメーションが適用されます。
 
 ### ポップアップの表示/非表示
 
@@ -88,19 +105,13 @@ XAML アニメーション ライブラリには、ページが読み込まれ�
 
 項目のリスト内の位置が変わった場合に適用される別の [**ReorderThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210409) もあります。 これは、項目を削除してそれを新しい位置に追加するときに使われる関連する削除/追加アニメーションとは異なるアニメーションになります。
 
+これらのアニメーションは、既定の [**ListView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) テンプレートと [**GridView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx) テンプレートに含まれているため、これらのコントロールを既に使用している場合、これらのアニメーションを手動で追加する必要はありません。
+
 ### ドラッグ/ドロップ
 
 ドラッグ アニメーション ([**DragItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243173)、[**DragOverThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243177)) とドロップ アニメーション ([**DropTargetItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243185)) を使って、ユーザーが項目をドラッグまたはドロップするときに視覚的なフィードバックを提供します。
 
 有効にすると、リストにドロップした項目の前後の項目の位置が変更されることがアニメーションによってユーザーに示されます。 このアニメーションを使うと、ユーザーは項目を現在の位置にドロップしたときに、項目がリスト内のどの位置に配置されるかを把握できるため便利です。 アニメーションでは、ドラッグしている項目を、リストの他の 2 つの項目間にドロップできること、およびそれらの項目は移動することを視覚的なフィードバックで示します。
-
-### スワイプ ジェスチャ
-
-[
-            **SwipeHintThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/Hh702489) アニメーションを使って、タイルがスワイプ操作をサポートしていることを示唆します。 ユーザーは下にスワイプしてタイルを選ぶことができます。 ユーザーは、タイルでスワイプできるかどうかわからない場合、タイルで長押しジェスチャを行うと、スワイプ ヒント アニメーションが再生されて、スワイプでタイルを操作する必要があることが示唆されます。
-
-[
-            **SwipeBackThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/Hh702477) アニメーションは、タイルが選択されたことを示したり、タイルをその定位置に戻したりする際に使います。
 
 ## アニメーションとカスタム コントロールの使用
 
@@ -290,6 +301,8 @@ void BlankPage::RemoveButton_Click(Platform::Object^ sender, Windows::UI::Xaml::
 
 | API | 説明 |
 |-----|-------------|
+| [**NavigationThemeTransition**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.navigationthemetransition) | [
+            **Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) 内でのページ ナビゲーションに Windows パーソナリティ アニメーションを提供します。 |
 | [**AddDeleteThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR243047) | コントロールの子やコンテンツが追加されたり削除されたりしたときの切り替え動作のアニメーションです。 ここでいうコントロールは通常、項目コンテナーです。 |
 | [**ContentThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR243103) | コントロールのコンテンツが変化しているときの切り替え動作のアニメーションです。 このアニメーションは、[**AddDeleteThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR243047) に追加する形で適用することができます。 |
 | [**EdgeUIThemeTransition**](https://msdn.microsoft.com/library/windows/apps/Hh702324) | (小さい) エッジ UI の切り替え動作のアニメーションです。 |
@@ -363,10 +376,12 @@ void BlankPage::Rectangle_Tapped(Object^ sender, PointerRoutedEventArgs^ e)
 | [**PopInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210383) | コントロールのポップイン コンポーネントが表示されるときに適用される事前構成済みのアニメーションです。 このアニメーションには、不透明度と変換が組み合わされています。 |
 | [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210391) | コントロールのポップイン コンポーネントが閉じたり削除されたりするときに適用される事前構成済みのアニメーションです。 このアニメーションには、不透明度と変換が組み合わされています。 |
 | [**RepositionThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210421) | オブジェクトの位置が変更されたときに適用される事前構成済みのアニメーションです。 |
-| [**SplitCloseThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210454) | ターゲット UI をスプリット アニメーションで非表示にする事前構成済みのアニメーションです。 |
-| [**SplitOpenThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210472) | ターゲット UI をスプリット アニメーションで表示する事前構成済みのアニメーションです。 |
-| [**SwipeBackThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/Hh702477) | コントロールに適用される事前構成済みのアニメーションです。スワイプ操作の後に、要素がそのレイアウト スロットに戻るときに適用されます。 |
-| [**SwipeHintThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/Hh702489) | 現在スワイプ ジェスチャが可能であることを示す事前構成済みのアニメーションです。 |
+| [**SplitCloseThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210454) | [
+            **ComboBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.combobox.aspx) を開閉するときのスタイルのアニメーションでターゲット UI を非表示にする事前構成済みのアニメーションです。 |
+| [**SplitOpenThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210472) | [
+            **ComboBox**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.combobox.aspx) を開閉するときのスタイルのアニメーションでターゲット UI を表示する事前構成済みのアニメーションです。 |
+| [**DrillInThemeAnimation**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.drillinthemeanimation) | マスター ページから詳細ページのように、ユーザーが論理階層を順方向に移動するときに実行される事前構成済みのアニメーションを表します。 |
+| [**DrillOutThemeAnimation**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.drilloutthemeanimation.aspx) | 詳細ページからマスター ページのように、ユーザーが論理階層を逆方向に移動するときに実行される事前構成済みのアニメーションを表します。 |
 
  
 
@@ -376,7 +391,7 @@ void BlankPage::Rectangle_Tapped(Object^ sender, PointerRoutedEventArgs^ e)
 
 アニメーション化するためには、アニメーション化しているプロパティが*依存関係プロパティ*である必要があります。 依存関係プロパティについて詳しくは、「[依存関係プロパティの概要](https://msdn.microsoft.com/library/windows/apps/Mt185583)」をご覧ください。 ストーリーボードに設定されたカスタム アニメーションの作成について詳しくは、対象に選ぶ方法や制御方法も含め、「[ストーリーボードに設定されたアニメーション](storyboarded-animations.md)」をご覧ください。
 
-ストーリーボードに設定されたカスタム アニメーションを定義する際に XAML のアプリ UI 定義で最大となるのは、XAML でコントロールの表示状態を定義する場合です。 これを行うのは、新たにコントロール クラスを作成するか、既にあるコントロールのうち、コントロール テンプレートに表示状態があるものに対してもう一度テンプレートを作成する場合です。 詳しくは、「[表示状態用にストーリーボードに設定されたアニメーション](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)」をご覧ください。 ここに挙げたアニメーションは通常、時間の経過と共に切り替わるのではなく、即座に実行されるものであり、ある状態に対してプロパティの変更を定義する技術です。 必ずしもアニメーションによって視覚に訴える動作を UI に適用するわけではありません。ただし、コントロールの表示状態はしばしばライブラリ アニメーション自体を含みます。 その場合、テーマ アニメーションは時間の経過と共に変更を適用しますが、通常は短い時間で終了します。
+ストーリーボードに設定されたカスタム アニメーションを定義する際に XAML のアプリ UI 定義で最大となるのは、XAML でコントロールの表示状態を定義する場合です。 これを行うのは、新たにコントロール クラスを作成するか、既にあるコントロールのうち、コントロール テンプレートに表示状態があるものに対してもう一度テンプレートを作成する場合です。 詳しくは、「[表示状態用にストーリーボードに設定されたアニメーション](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)」をご覧ください。
 
  
 
@@ -387,6 +402,7 @@ void BlankPage::Rectangle_Tapped(Object^ sender, PointerRoutedEventArgs^ e)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

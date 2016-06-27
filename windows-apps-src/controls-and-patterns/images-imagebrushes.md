@@ -1,10 +1,13 @@
 ---
 author: Jwmsft
-Description: アプリに画像を統合する方法について説明します。Image と ImageBrush という主要な 2 つの XAML クラスの API の使い方について取り上げています。
-title: 画像とイメージ ブラシ
+Description: "アプリに画像を統合する方法について説明します。Image と ImageBrush という主要な 2 つの XAML クラスの API の使い方について取り上げています。"
+title: "画像とイメージ ブラシ"
 ms.assetid: CEA8780C-71A3-4168-A6E8-6361CDFB2FAF
 label: Images and image brushes
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 972480aabb6f0db3b5091bd55323f9d1946086e6
+
 ---
 # 画像とイメージ ブラシ
 
@@ -149,6 +152,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

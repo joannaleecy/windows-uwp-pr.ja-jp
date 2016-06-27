@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 視覚的なフィードバックは、Windows ストア アプリの対話式操作が検出、解釈、処理されていることをユーザーに示すために使います。
-title: 視覚的なフィードバック
+Description: "視覚的なフィードバックは、Windows ストア アプリの対話式操作が検出、解釈、処理されていることをユーザーに示すために使います。"
+title: "視覚的なフィードバック"
 ms.assetid: bf2f3672-95f0-4c8c-9a72-0934f2d3b767
 label: Visual feedback
 template: detail.hbs
+ms.sourcegitcommit: 077fcc6ff462a771ed56f875d960e46e6f4420fc
+ms.openlocfilehash: 287ec24dbc60be39c0f944c6d4a86205961fb770
+
 ---
 
 # 視覚的なフィードバックのガイドライン
@@ -182,6 +185,7 @@ Windows には、次のような接触の視覚エフェクトが組み込まれ
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

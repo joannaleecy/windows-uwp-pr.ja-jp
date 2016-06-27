@@ -1,10 +1,13 @@
 ---
 author: mijacobs
-Description: 目的がはっきりし、適切にデザインされたアニメーションは、アプリを生き生きとさせ、精巧で洗練された印象を与えます。 コンテキストの変化がわかりやすく、視覚的な切り替えがエクスペリエンスに結び付きます。
-title: UWP アプリでのモーションとアニメーション
+Description: "目的がはっきりし、適切にデザインされたアニメーションは、アプリを生き生きとさせ、精巧で洗練された印象を与えます。 コンテキストの変化がわかりやすく、視覚的な切り替えがエクスペリエンスに結び付きます。"
+title: "UWP アプリでのモーションとアニメーション"
 ms.assetid: 21AA1335-765E-433A-85D8-560B340AE966
 label: Motion
 template: detail.hbs
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: aa1283ed9dbb895854b8d7b2bb16eb485b377fce
+
 ---
 
 # UWP アプリのモーション
@@ -110,6 +113,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

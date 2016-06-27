@@ -1,8 +1,11 @@
 ---
 author: TylerMSFT
 ms.assetid: 066711E0-D5C4-467E-8683-3CC64EDBCC83
-title: C# または Visual Basic での非同期 API の呼び出し
-description: ユニバーサル Windows プラットフォーム (UWP) には、時間がかかる可能性がある操作を実行しているときでも、アプリの応答性を保つために、さまざまな非同期 API が用意されています。
+title: "C# または Visual Basic での非同期 API の呼び出し"
+description: "ユニバーサル Windows プラットフォーム (UWP) には、時間がかかる可能性がある操作を実行しているときでも、アプリの応答性を保つために、さまざまな非同期 API が用意されています。"
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: b8ff3965503aa96d4ff595d140562c65e0a638c3
+
 ---
 # C# または Visual Basic での非同期 API の呼び出し
 
@@ -111,6 +114,7 @@ Windows 7 themes: the distinctive artwork of Cheng Ling, 7/20/2011 9:53:07 AM -0
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

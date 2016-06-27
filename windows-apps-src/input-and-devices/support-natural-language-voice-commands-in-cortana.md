@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: ユーザーがコマンド内の任意の場所にアプリ名を含めることができるように、柔軟で自然な音声コマンドで Cortana を拡張する方法について説明します。
-title: Cortana での自然言語音声コマンドのサポート
+Description: "ユーザーがコマンド内の任意の場所にアプリ名を含めることができるように、柔軟で自然な音声コマンドで Cortana を拡張する方法について説明します。"
+title: "Cortana での自然言語音声コマンドのサポート"
 ms.assetid: 281E068A-336A-4A8D-879A-D8715C817911
 label: Support natural language voice commands
 template: detail.hbs
+ms.sourcegitcommit: 077fcc6ff462a771ed56f875d960e46e6f4420fc
+ms.openlocfilehash: c9cd6894c61f3d6cfe770d197317a97a804b4119
+
 ---
 
 # Cortana での自然言語音声コマンドのサポート
@@ -209,6 +212,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

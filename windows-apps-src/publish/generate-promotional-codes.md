@@ -1,8 +1,11 @@
 ---
 author: jnHs
-Description: Windows ストアで公開しているアプリまたはアプリ内製品 (IAP) のプロモーション コードを生成できます。
-title: プロモーション コードを生成する
+Description: "Windows ストアで公開しているアプリまたはアプリ内製品 (IAP) のプロモーション コードを生成できます。"
+title: "プロモーション コードを生成する"
 ms.assetid: 9B632266-64EC-4D62-A4C4-55B6643D8750
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 4001f374a80cd7c62df6230a9429dd5b5a19d2b2
+
 ---
 
 # プロモーション コードを生成する
@@ -130,6 +133,7 @@ Windows ストアに公開したアプリまたは IAP のプロモーション 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

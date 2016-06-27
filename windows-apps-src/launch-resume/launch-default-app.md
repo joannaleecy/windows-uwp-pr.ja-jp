@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: URI に応じた既定のアプリの起動
-description: URI (Uniform Resource Identifier) に応じて既定のアプリを起動する方法について説明します。 URI を使うと、別のアプリを起動して特定の作業を実行できます。 また、Windows に組み込まれている多くの URI スキームの概要についても説明します。
+author: TylerMSFT
+title: "URI に応じた既定のアプリの起動"
+description: "URI (Uniform Resource Identifier) に応じて既定のアプリを起動する方法について説明します。 URI を使うと、別のアプリを起動して特定の作業を実行できます。 また、Windows に組み込まれている多くの URI スキームの概要についても説明します。"
 ms.assetid: 7B0D0AF5-D89E-4DB0-9B79-90201D79974F
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: b593a43bc5b95dd0880af972ca1514e657bbd9e3
+
 ---
 
 # URI に応じた既定のアプリの起動
@@ -96,7 +99,7 @@ var options = new Windows.System.LauncherOptions();
 options.PreferredApplicationPackageFamilyName = "Contoso.URIApp_8wknc82po1e";
 options.PreferredApplicationDisplayName = "Contoso URI Ap";
 
-// Launch the URI and pass in the recommended app 
+// Launch the URI and pass in the recommended app
 // in case the user has no apps installed to handle the URI
 var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 ```
@@ -116,7 +119,7 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 var options = new Windows.System.LauncherOptions();
 options.DesiredRemainingView = Windows.UI.ViewManagement.ViewSizePreference.UseLess;
 
-// Launch the URI 
+// Launch the URI
 var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 ```
 
@@ -224,8 +227,6 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO3-->
 
 

@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 音声認識エンジンが無音または認識できないサウンド (雑音) を無視し、音声入力を待機する時間の長さを設定します。
-title: 音声認識のタイムアウトの設定
+Description: "音声認識エンジンが無音または認識できないサウンド (雑音) を無視し、音声入力を待機する時間の長さを設定します。"
+title: "音声認識のタイムアウトの設定"
 ms.assetid: 58F446AC-4A56-454D-8125-62A2C4DBFCC8
 label: Speech recognition timeouts
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: e0dbc43cba4556674a4d96013b65837d95044622
+
 ---
 
 # 音声認識のタイムアウトの設定
@@ -53,6 +56,7 @@ recognizer.Timeouts.EndSilenceTimeout = TimeSpan.FromSeconds(1.2);
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

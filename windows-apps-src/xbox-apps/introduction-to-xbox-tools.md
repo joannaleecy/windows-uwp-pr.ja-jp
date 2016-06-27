@@ -1,8 +1,11 @@
 ---
 author: Mtoepke
-title: Xbox One ツールの概要
-description: Windows Device Portal を使った、Xbox One 固有のツールである Dev Home
+title: "Xbox One ツールの概要"
+description: "Windows Device Portal を使った、Xbox One 固有のツールである Dev Home"
 area: Xbox
+ms.sourcegitcommit: 4872ac9587b3e2e14860cb152bf33536faccc48d
+ms.openlocfilehash: c975cb07aa9b7f0d30a9905cbceba11e89c8f7df
+
 ---
 
 # Xbox One ツールの概要
@@ -87,14 +90,9 @@ Dev Home またはいずれかのツールのプロセスでフィードバッ�
 ## Windows Device Portal
 Windows Device Portal (WDP) は、ブラウザー ベースのデバイス管理エクスペリエンスを実現する、OneCore デバイス管理ツールです。
 
-> **注**
-            &nbsp;&nbsp;この Developer Preview では、Dev Home で WDP を開始し、ユーザー名とパスワードを入力して **[保存]** をクリックすると、Dev Home はクラッシュします。
-資格情報は保存されますが、WDP は開始されません。
-Xbox One を再起動すると、WDP を開始できます。
-
 Xbox One コンソールで WDP を有効にするには、次を実行します。
 
-1. ホーム画面で、Dev Home タイルを選択します。
+1. ホーム画面で、Dev Home タイルを選びます。
 
   ![Dev Home タイルの選択](images/windowsdeviceportal_1.png)
 
@@ -120,6 +118,7 @@ Xbox One コンソールで WDP を有効にするには、次を実行します
 ----
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

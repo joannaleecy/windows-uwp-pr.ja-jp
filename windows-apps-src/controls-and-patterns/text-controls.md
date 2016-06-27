@@ -1,10 +1,13 @@
 ---
 author: Jwmsft
-Description: メール、本、道路標識、メニューに書かれた価格、タイヤの空気圧のマーキング、道路脇のポールに掲示されたポスターなど、日常生活の中で文字を目にする機会はたくさんあります。
-title: テキスト コントロール
+Description: "メール、本、道路標識、メニューに書かれた価格、タイヤの空気圧のマーキング、道路脇のポールに掲示されたポスターなど、日常生活の中で文字を目にする機会はたくさんあります。"
+title: "テキスト コントロール"
 ms.assetid: 43DC68BF-FA86-43D2-8807-70A359453048
 label: Text controls
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 1fec4bf13567507087eef08feea0a3ebc255b43f
+
 ---
 # テキスト コントロール
 テキスト コントロールは、テキスト入力ボックス、パスワード ボックス、自動提案ボックス、テキスト ブロックで構成されています。 XAML フレームワークには、テキストのレンダリング、入力、編集用のいくつかのコントロールと、テキストの書式設定用のプロパティのセットが用意されています。
@@ -160,6 +163,7 @@ Windows には、フォントに各グリフの複数の色付きレイヤーを
 - [String.Length プロパティ](https://msdn.microsoft.com/library/system.string.length.aspx)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

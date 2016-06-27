@@ -1,8 +1,11 @@
 ---
 author: mcleblanc
 ms.assetid: 16976d00-1564-49fe-81ad-2568e25e9e41
-title: デバッグ、テスト、パフォーマンス
-description: Microsoft Visual Studio を使って、アプリのデバッグとテストを行います。 Windows ストアの認定プロセスに向けてアプリを準備するには、Windows アプリ認定キットを使います。
+title: "デバッグ、テスト、パフォーマンス"
+description: "Microsoft Visual Studio を使って、アプリのデバッグとテストを行います。 Windows ストアの認定プロセスに向けてアプリを準備するには、Windows アプリ認定キットを使います。"
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 1d6187470e8e1578af833221089a76261ebad1e4
+
 ---
 # デバッグ、テスト、パフォーマンス
 
@@ -22,6 +25,7 @@ Microsoft Visual Studio を使って、アプリのデバッグとテストを�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

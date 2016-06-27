@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Cortana 内で音声コマンドを使ってシステム機能にアクセスするだけでなく、Cortana を通じて音声コマンドを使ってフォアグラウンド アプリを起動し、アプリ内で実行するアクションやコマンドを指定することもできます。
-title: Cortana の音声コマンドを使ったフォアグラウンド アプリの起動
+Description: "Cortana 内で音声コマンドを使ってシステム機能にアクセスするだけでなく、Cortana を通じて音声コマンドを使ってフォアグラウンド アプリを起動し、アプリ内で実行するアクションやコマンドを指定することもできます。"
+title: "Cortana の音声コマンドを使ったフォアグラウンド アプリの起動"
 ms.assetid: 8D3D1F66-7D17-4DD1-B426-DCCBD534EF00
 label: Cortana-Launch a foreground app
 template: detail.hbs
+ms.sourcegitcommit: 7cbea3c4e784fe024aef953e3ea757dad6c5e3b8
+ms.openlocfilehash: aa4d71525d4a41382b8bbe123ca1fa830a4fc720
+
 ---
 
 # Cortana の音声コマンドを使ったフォアグラウンド アプリのアクティブ化
@@ -21,16 +24,16 @@ template: detail.hbs
 
 追加のコンテキストやユーザー入力 (特定の連絡先へのメッセージの送信など) が必要な音声コマンドはフォアグラウンド アプリで処理するのが最適ですが、基本的なコマンド (旅行の予定の一覧表示など) はバックグラウンド アプリを介して **Cortana** で処理できます。
 
-音声コマンドを使用してバックグラウンドでアプリをアクティブ化する場合は、「[Cortana の音声コマンドを使ったバックグラウンド アプリのアクティブ化](launch-a-background-app-with-voice-commands-in-cortana.md)」をご覧ください
+音声コマンドを使用してバックグラウンドでアプリをアクティブ化する場合は、「[Cortana の音声コマンドを使ったバックグラウンド アプリのアクティブ化](launch-a-background-app-with-voice-commands-in-cortana.md)」をご覧ください。
 
 > **注**  
-> 音声コマンドは、具体的な目的を持って 1 つの言葉を声に出すことであり、音声コマンド定義 (VCD) ファイルで定義されています。**Cortana** を通じてインストール済みアプリに指示が伝えられます
+> 音声コマンドは、具体的な目的を持って 1 つの言葉を声に出すことであり、音声コマンド定義 (VCD) ファイルで定義されています。**Cortana** を通じてインストール済みアプリに指示が伝えられます。
 
 > VCD ファイルでは、1 つ以上の音声コマンドが定義されており、各音声コマンドは固有の目的を持っています。
 
 > 音声コマンド定義にはさまざまなものがあり、定義が複雑になる場合があります。 音声コマンド定義では、制限された 1 つの言葉の発声から、より柔軟性の高い自然言語の発声のコレクションまで、あらゆる発声をサポートできます。ただし、これらの発声はすべて、同じ目的を示している必要があります。
 
-フォアグラウンド アプリの機能を示すために、[Cortana 音声コマンドのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619899)の **Adventure Works** という旅行の計画および管理アプリを使用します
+フォアグラウンド アプリの機能を示すために、[Cortana 音声コマンドのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619899)の **Adventure Works** という旅行の計画および管理アプリを使用します。
 
 **Cortana** を使わないで新しい **Adventure Works** の旅行を作るには、アプリを起動して **[New trip]** (新しい旅行) ページに移動します。 既存の旅行を表示するには、**[Upcoming trips]** (今後の旅行) ページに移動して旅行を選びます。
 
@@ -40,7 +43,7 @@ template: detail.hbs
 
 以下は、音声コマンド機能を追加し、音声またはキーボード入力を使うアプリに Cortana を統合する基本的な手順です。
 
-1.  VCD ファイルを作ります。 これは、アプリをアクティブ化して操作を開始するかコマンドを呼び出すためにユーザーが発声できる音声コマンドをすべて定義する XML ドキュメントです。 「[**VCD 要素および属性 v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)」をご覧ください
+1.  VCD ファイルを作ります。 これは、アプリをアクティブ化して操作を開始するかコマンドを呼び出すためにユーザーが発声できる音声コマンドをすべて定義する XML ドキュメントです。 「[**VCD 要素および属性 v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)」をご覧ください。
 2.  アプリが起動したら、VCD ファイル内のコマンド セットを登録します。
 3.  音声コマンドによるアクティブ化、アプリ内でのナビゲーション、コマンドの実行を処理します。
 
@@ -62,7 +65,7 @@ template: detail.hbs
 
     Visual Studio 2015 のスタート画面が表示されます。
 
-2.  **[ファイル]** メニューの **[新規作成]** > **[プロジェクト]** の順にクリックします
+2.  **[ファイル]** メニューの **[新規作成]** > **[プロジェクト]** の順にクリックします。
 
     **[新しいプロジェクト]** ダイアログ ボックスが表示されます。 ダイアログの左側のウィンドウで、表示するテンプレートの種類を選択できます。
 
@@ -74,17 +77,17 @@ template: detail.hbs
 5.  **[名前]** ボックスで、プロジェクト名を入力します。 この例では、"AdventureWorks" を使用します。
 6.  **[OK]** をクリックしてプロジェクトを作ります。
 
-    Microsoft Visual Studio によってプロジェクトが作られ、**ソリューション エクスプローラー**に表示されます
+    Microsoft Visual Studio によってプロジェクトが作られ、**ソリューション エクスプローラー**に表示されます。
 
 ## <span id="Add_image_assets_to_project_and_specify_them_in_the_app_manifest"></span><span id="add_image_assets_to_project_and_specify_them_in_the_app_manifest"></span><span id="ADD_IMAGE_ASSETS_TO_PROJECT_AND_SPECIFY_THEM_IN_THE_APP_MANIFEST"></span>画像アセットをプロジェクトに追加してアプリ マニフェストで指定する
       
 UWP アプリでは、特定の設定とデバイス機能 (ハイ コントラスト、有効ピクセル、ロケールなど) に基づいて最適な画像を自動的に選択できます。 必要な作業は、画像を提供し、リソースのバージョンごとに、アプリ プロジェクト内で適切な名前付け規則とフォルダー構造を使用していることを確認することだけです。 推奨されるリソースのバージョンが提供されない場合、ユーザーの基本設定、身体能力、デバイスの種類、場所によって、アクセシビリティ、ローカライズ、画像の品質が影響を受ける可能性があります。
 
-ハイ コントラストとスケール ファクター用の画像リソースについて詳しくは、「[タイルとアイコン アセットのガイドライン](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets)」をご覧ください
+ハイ コントラストとスケール ファクター用の画像リソースについて詳しくは、「[タイルとアイコン アセットのガイドライン](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/tiles-and-notifications-app-assets)」をご覧ください。
 
 修飾子を使ってリソースに名前を付けます。 リソース修飾子は、リソースの特定のバージョンが使われるコンテキストを識別するフォルダーとファイル名の修飾子です。
 
-標準の命名規則は、`foldername/qualifiername-value[_qualifiername-value]/filename.qualifiername-value[_qualifiername-value].ext` です。 たとえば、`images/en-US/logo.scale-100_contrast-white.png` は、コード内ではルート フォルダーとファイル名を使用して単に `images/logo.png` と参照されます。 「[修飾子を使ってリソースに名前を付ける方法](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324.aspx)」をご覧ください
+標準の命名規則は、`foldername/qualifiername-value[_qualifiername-value]/filename.qualifiername-value[_qualifiername-value].ext` です。 たとえば、`images/en-US/logo.scale-100_contrast-white.png` は、コード内ではルート フォルダーとファイル名を使用して単に `images/logo.png` と参照されます。 「[修飾子を使ってリソースに名前を付ける方法](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324.aspx)」をご覧ください。
 
 ローカライズされたリソースや複数の解像度のリソースの提供を現在計画していない場合でも、文字列リソース ファイルに既定の言語をマークし (`en-US\resources.resw` など)、画像に既定のスケール ファクターをマークする (`logo.scale-100.png` など) ことをお勧めします。 ただし、100、200、400 の倍率のアセットを提供することをお勧めします。
 
@@ -94,23 +97,23 @@ UWP アプリでは、特定の設定とデバイス機能 (ハイ コントラ�
     
 ## <span id="Create_a_VCD_file"></span><span id="create_a_vcd_file"></span><span id="CREATE_A_VCD_FILE"></span>VCD ファイルの作成
 
-1. Visual Studio で、プライマリ プロジェクト名を右クリックし、**[追加]、[新しい項目]** の順にクリックします。 **XML ファイル**を追加します
+1. Visual Studio で、プライマリ プロジェクト名を右クリックし、**[追加]、[新しい項目]** の順にクリックします。 **XML ファイル**を追加します。
 2. [
             **VCD**](https://msdn.microsoft.com/library/windows/apps/dn706593) ファイルの名前 (この例では、"AdventureWorksCommands.xml") を入力し、[追加] をクリックします。 
 3. **ソリューション エクスプローラー**で、[**VCD**](https://msdn.microsoft.com/library/windows/apps/dn706593) ファイルを選びます。
-4.  **[プロパティ]** ウィンドウで、**[ビルド アクション]** を **[コンテンツ]** に設定し、**[出力ディレクトリにコピー]** を **[常にコピーする]** に設定します
+4.  **[プロパティ]** ウィンドウで、**[ビルド アクション]** を **[コンテンツ]** に設定し、**[出力ディレクトリにコピー]** を **[常にコピーする]** に設定します。
 
 ## <span id="Edit_the_VCD_file"></span><span id="edit_the_vcd_file"></span><span id="EDIT_THE_VCD_FILE"></span>VCD ファイルの編集
 
 
-以下を指す **xmlns** 属性を持つ **VoiceCommands** 要素を追加します:
+`http://schemas.microsoft.com/voicecommands/1.2` を指す **xmlns** 属性を持つ **VoiceCommands** 要素を追加します。
 
 2. アプリがサポートする各言語に対して、アプリがサポートする音声コマンドを含む [**CommandSet**](https://msdn.microsoft.com/library/windows/apps/dn722331) 要素を作成します。
 
   複数の [**CommandSet**](https://msdn.microsoft.com/library/windows/apps/dn722331) 要素を宣言し、それぞれに異なる [**xml:lang**](https://msdn.microsoft.com/library/windows/apps/dn722331) 属性を指定することで、アプリをさまざまな市場で使うことができるようにします。 たとえば、米国用のアプリに、英語の [**CommandSet**](https://msdn.microsoft.com/library/windows/apps/dn722331) とスペイン語の [**CommandSet**](https://msdn.microsoft.com/library/windows/apps/dn722331) を含めることができます。
 
   >  **注意**  
-  音声コマンドを使ってアプリをアクティブ化して操作を開始するには、ユーザーがデバイスで選んだ音声の言語に一致する言語を含む [**CommandSet**](https://msdn.microsoft.com/library/windows/apps/dn722331) を格納している VCD ファイルをアプリで登録する必要があります。 音声の言語は、**[設定] > [システム] > [音声認識] > [音声認識の言語]** にあります
+  音声コマンドを使ってアプリをアクティブ化して操作を開始するには、ユーザーがデバイスで選んだ音声の言語に一致する言語を含む [**CommandSet**](https://msdn.microsoft.com/library/windows/apps/dn722331) を格納している VCD ファイルをアプリで登録する必要があります。 音声の言語は、**[設定]、[システム]、[音声認識]、[音声認識の言語]** にあります。
 
 3. サポートする各コマンドの **Command** 要素を追加します。
 
@@ -118,10 +121,10 @@ UWP アプリでは、特定の設定とデバイス機能 (ハイ コントラ�
             **VCD**](https://msdn.microsoft.com/library/windows/apps/dn706593) ファイルで宣言された各 **Command** は、次の情報を含む必要があります。
 
   - アプリが実行時に音声コマンドを識別するために使用する **Name** 属性。 
-  - ユーザーがコマンドを呼び出す方法を説明する語句を含む **Example** 要素。 ユーザーが「何と言ったらよいですか」、「ヘルプ」と言ったり、**[もっと見る]** をタップしたときに、**Cortana** にこの例が表示されます    
+  - ユーザーがコマンドを呼び出す方法を説明する語句を含む **Example** 要素。 ユーザーが「何と言ったらよいですか」、「ヘルプ」と言ったり、**[もっと見る]** をタップしたときに、**Cortana** にこの例が表示されます。    
   -   アプリがコマンドとして認識する単語または語句を含む **ListenFor** 要素。 各 **ListenFor** 要素には、コマンドに関連する特定の単語を含む 1 つまたは複数の **PhraseList** 要素への参照を格納できます。
   > **注**  
-  **ListenFor** 要素はプログラムで変更できません。 ただし、**ListenFor** 要素に関連付けられた **PhraseList** 要素はプログラムで変更できます。 アプリケーションは、ユーザーがアプリを使うときに生成されたデータ セットに基づいて実行時に **PhraseList** の内容を変更する必要があります。 「[音声コマンド定義 (VCD) の語句一覧の動的な変更](dynamically-modify-voice-command-definition--vcd--phrase-lists.md)」をご覧ください
+  **ListenFor** 要素はプログラムで変更できません。 ただし、**ListenFor** 要素に関連付けられた **PhraseList** 要素はプログラムで変更できます。 アプリケーションは、ユーザーがアプリを使うときに生成されたデータ セットに基づいて実行時に **PhraseList** の内容を変更する必要があります。 「[音声コマンド定義 (VCD) の語句一覧の動的な変更](dynamically-modify-voice-command-definition--vcd--phrase-lists.md)」をご覧ください。
 
   -   アプリケーションが起動したときに **Cortana** に表示されて読み上げられるテキストを含む **Feedback** 要素。
 
@@ -198,7 +201,7 @@ protected async override void OnLaunched(LaunchActivatedEventArgs e)
 
   次に、[**GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) を呼び出し、"AdventureWorksCommands.xml" ファイルを使って初期化します。
 
-  次に、この [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトが [**InstallCommandDefinitionsFromStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn708205) に渡されます    
+  次に、この [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトが [**InstallCommandDefinitionsFromStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn708205) に渡されます。    
 ```csharp
 try
 {
@@ -230,7 +233,7 @@ catch (Exception ex)
 1.  アプリが音声コマンドによってアクティブになったことを確認します。
 
     [
-            **Application.OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) イベントをオーバーライドし、[**IActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224727).[**Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) が [**VoiceCommand**](https://msdn.microsoft.com/library/windows/apps/br224693) かどうかを確認します
+            **Application.OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) イベントをオーバーライドし、[**IActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224727).[**Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) が [**VoiceCommand**](https://msdn.microsoft.com/library/windows/apps/br224693) かどうかを確認します。
 
 2.  コマンドの名前と内容を判断します。
 
@@ -401,6 +404,7 @@ private string SemanticInterpretation(string interpretationKey, SpeechRecognitio
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

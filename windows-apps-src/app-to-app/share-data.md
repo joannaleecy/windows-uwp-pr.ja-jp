@@ -1,8 +1,11 @@
 ---
-description: この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリで、共有コントラクトをサポートする方法について説明します。
-title: データの共有
+description: "この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリで、共有コントラクトをサポートする方法について説明します。"
+title: "データの共有"
 ms.assetid: 32287F5E-EB86-4B98-97FF-8F6228D06782
 author: awkoren
+ms.sourcegitcommit: 03b9943d9bf76343bfbbe714f681a2b398d1a9ad
+ms.openlocfilehash: de9d4e88cfc00d5e428b8ddb8a27cc4ffd619e85
+
 ---
 
 # データの共有
@@ -13,12 +16,12 @@ author: awkoren
 
 ## イベント ハンドラーのセットアップ
 
-ユーザーが共有を呼び出したときに呼び出される [**DataRequested**][DataRequested] イベント ハンドラーを追加します。 このイベントは、ユーザーがアプリ内のコントロール (ボタンやアプリ バー コマンドなど) をタップした場合に発生します。ユーザーがあるレベルをクリアしてハイ スコアを獲得した場合など、特定のシナリオで自動的に発生することもあります。
+ユーザーが共有を呼び出したときに呼び出される [**DataRequested**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataTransferManager.DataRequested) イベント ハンドラーを追加します。 このイベントは、ユーザーがアプリ内のコントロール (ボタンやアプリ バー コマンドなど) をタップした場合に発生します。ユーザーがあるレベルをクリアしてハイ スコアを獲得した場合など、特定のシナリオで自動的に発生することもあります。
 
 [!code-cs[メイン](./code/share_data/cs/MainPage.xaml.cs#SnippetPrepareToShare)]
 
 [
-            **DataRequested**][DataRequested] イベントが発生すると、アプリは [**DataRequest**][DataRequest] オブジェクトを受け取ります。 このオブジェクトに含まれている [**DataPackage**][DataPackage] を使って、ユーザーが共有するコンテンツを提供することができます。 共有するデータとタイトルを指定する必要があります。 説明は省略することもできますが、指定することをお勧めします。
+            **DataRequested**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataTransferManager.DataRequested) イベントが発生すると、アプリは [**DataRequest**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataRequest) オブジェクトを受け取ります。 このオブジェクトに含まれている [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage) を使って、ユーザーが共有するコンテンツを提供することができます。 共有するデータとタイトルを指定する必要があります。 説明は省略することもできますが、指定することをお勧めします。
 
 [!code-cs[メイン](./code/share_data/cs/MainPage.xaml.cs#SnippetCreateRequest)]
 
@@ -36,13 +39,13 @@ author: awkoren
 -   開発者が定義したカスタム データ
 
 [
-            **DataPackage**][DataPackage] オブジェクトには、これらの 1 つ以上の形式を任意に組み合わせて格納することができます。 次の例は、テキストの共有を示しています。
+            **DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage) オブジェクトには、これらの 1 つ以上の形式を任意に組み合わせて格納することができます。 次の例は、テキストの共有を示しています。
 
 [!code-cs[メイン](./code/share_data/cs/MainPage.xaml.cs#SnippetSetContent)]
 
 ## プロパティの設定
 
-共有用にデータをパッケージ化するときに、共有されるコンテンツの情報を追加で提供するさまざまなプロパティを指定できます。 これらのプロパティは、ターゲット アプリでのユーザー エクスペリエンスを高めるために役立ちます。 たとえば、ユーザーが複数のアプリでコンテンツを共有している場合に、説明があると便利です。 画像や Web ページへのリンクを共有する場合にサムネイルを追加すると、ユーザーが視覚的に確認できます。 詳しくは、「[**DataPackage.DataPackagePropertySet**][DataPackagePropertySet]」を参照してください。
+共有用にデータをパッケージ化するときに、共有されるコンテンツの情報を追加で提供するさまざまなプロパティを指定できます。 これらのプロパティは、ターゲット アプリでのユーザー エクスペリエンスを高めるために役立ちます。 たとえば、ユーザーが複数のアプリでコンテンツを共有している場合に、説明があると便利です。 画像や Web ページへのリンクを共有する場合にサムネイルを追加すると、ユーザーが視覚的に確認できます。 詳しくは、「[**DataPackagePropertySet**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackagePropertySet)」を参照してください。
 
 タイトルを除くすべてのプロパティは任意です。 タイトルのプロパティは必須です。必ず設定してください。
 
@@ -56,13 +59,13 @@ author: awkoren
 
 ## エラーの処理
 
-ほとんどの場合、コンテンツの共有は難しいプロセスではありません。 しかし、どのような場合であっても、予期しない問題が発生することは必ずあります。 たとえば、共有するコンテンツをユーザーが選ぶ必要がある状況で、ユーザーが選んでいない場合などです。 このような状況を処理するには、[**FailWithDisplayText**][FailWithDisplayText] メソッドを使います。このメソッドでは、問題が発生すると、ユーザーにメッセージが表示されます。
+ほとんどの場合、コンテンツの共有は難しいプロセスではありません。 しかし、どのような場合であっても、予期しない問題が発生することは必ずあります。 たとえば、共有するコンテンツをユーザーが選ぶ必要がある状況で、ユーザーが選んでいない場合などです。 このような状況を処理するには、[**FailWithDisplayText**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataRequest.FailWithDisplayText(System.String) メソッドを使います。このメソッドでは、問題が発生すると、ユーザーにメッセージが表示されます。
 
 ## デリゲートによる共有の遅延
 
 場合によっては、ユーザーが共有するデータをすぐに準備しても効果的でないことがあります。 たとえば、複数の異なる形式の大きな画像ファイルの送信をサポートしているアプリの場合、ユーザーが選択する前にこれらの画像をすべて作成することは非効率的です。
 
-この問題を解決するために、[**DataPackage**][DataPackage] にはデリゲートも格納できます。デリゲートとは、受け取る側のアプリでデータを要求するときに呼び出される関数です。 リソースを大量に消費するデータを共有する場合はデリゲートを使うことをお勧めします。
+この問題を解決するために、[**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage) にはデリゲートも格納できます。デリゲートとは、受け取る側のアプリでデータを要求するときに呼び出される関数です。 リソースを大量に消費するデータを共有する場合はデリゲートを使うことをお勧めします。
 
 <!-- For some reason, this snippet was inline in the WDCML topic. Suggest moving to VS project with rest of snippets. -->
 ```cs
@@ -89,21 +92,20 @@ async void OnDeferredImageRequestedHandler(DataProviderRequest request)
 }
 ```
 
-## 関連トピック
+## 参照 
+
 * [データの受信](receive-data.md)
-
-
-<!-- LINKS -->
-* [DataPackage]: https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.datapackage.aspx 
-* [DataPackagePropertySet]: https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.datapackagepropertyset.aspx 
-* [DataRequest]: https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.datarequest.aspx 
-* [DataRequested]: https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.datatransfermanager.datarequested.aspx 
-* [FailWithDisplayText]: https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.datarequest.failwithdisplaytext.aspx
-* [ShowShareUi]: https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.datatransfermanager.showshareui.aspx
+* [DataPackage](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datapackage.aspx)
+* [DataPackagePropertySet](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datapackagepropertyset.aspx)
+* [DataRequest](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datarequest.aspx)
+* [DataRequested](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datatransfermanager.datarequested.aspx)
+* [FailWithDisplayText](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datarequest.failwithdisplaytext.aspx)
+* [ShowShareUi](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.datatransfermanager.showshareui.aspx)
  
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

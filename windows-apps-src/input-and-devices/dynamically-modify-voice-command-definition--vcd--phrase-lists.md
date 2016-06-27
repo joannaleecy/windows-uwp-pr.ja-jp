@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: 実行時に音声認識の結果を使って、音声コマンド定義 (VCD) ファイルのサポート対象語句の一覧 (PhraseList 要素) にアクセスして更新する方法を説明します。
-title: 音声コマンド定義 (VCD) の語句一覧の動的変更
+Description: "実行時に音声認識の結果を使って、音声コマンド定義 (VCD) ファイルのサポート対象語句の一覧 (PhraseList 要素) にアクセスして更新する方法を説明します。"
+title: "音声コマンド定義 (VCD) の語句一覧の動的変更"
 ms.assetid: 98024EAC-EC0E-44AA-AEC5-A611BA7C5884
 label: Modify VCD phrase lists
 template: detail.hbs
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 623243b94cf8ef6b276f8f2971af7bbdbdece81c
+
 ---
 
 # 音声コマンド定義 (VCD) の語句一覧の動的変更
@@ -151,6 +154,7 @@ if (Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager.
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

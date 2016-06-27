@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: このトピックでは、テキスト、画像、コントロールを選んだり操作したりするための新しい Windows UI について説明します。また、Windows ストア アプリでこの新しい選択と操作のメカニズムを使うときに考慮する必要のあるユーザー エクスペリエンスに関するガイドラインを示します。
-title: テキストと画像の選択
+Description: "このトピックでは、テキスト、画像、コントロールを選んだり操作したりするための新しい Windows UI について説明します。また、Windows ストア アプリでこの新しい選択と操作のメカニズムを使うときに考慮する必要のあるユーザー エクスペリエンスに関するガイドラインを示します。"
+title: "テキストと画像の選択"
 ms.assetid: d973ffd8-602e-47b5-ab0b-4b2a964ec53d
 label: Selecting text and images
 template: detail.hbs
+ms.sourcegitcommit: 077fcc6ff462a771ed56f875d960e46e6f4420fc
+ms.openlocfilehash: a47b48f9315c51505b2c487c140011e053105556
+
 ---
 
 # テキストと画像の選択
@@ -131,6 +134,7 @@ UWP アプリでカスタム オブジェクト操作を実装する場合は、
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 

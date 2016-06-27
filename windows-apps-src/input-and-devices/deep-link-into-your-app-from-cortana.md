@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: Cortana でバックグラウンド アプリのサービスからのディープ リンクを提供し、フォアグラウンドに特定の状態やコンテキストでアプリを起動します。
-title: Cortana からバックグラウンド アプリへのディープ リンク
+Description: "Cortana でバックグラウンド アプリのサービスからのディープ リンクを提供し、フォアグラウンドに特定の状態やコンテキストでアプリを起動します。"
+title: "Cortana からバックグラウンド アプリへのディープ リンク"
 ms.assetid: BE811A87-8821-476A-90E4-2E20D37E4043
 label: Deep link to a background app
 template: detail.hbs
+ms.sourcegitcommit: 7d9f5eff0f6561b18024658fe99d1e11bbe3309f
+ms.openlocfilehash: b89aa43dffa69d092615e1b408feac77d0caa87c
+
 ---
 
 # Cortana からバックグラウンド アプリへのディープ リンク
@@ -65,11 +68,11 @@ template: detail.hbs
 
 このリンクに、アプリ サービスと同様のコンテキストでアプリを開く起動引数を指定できます。 起動引数を指定しない場合、アプリはメイン画面で起動されます。
 
-この例では、指定した目的地をサンプルの **AdventureWorks** の AdventureWorksVoiceCommandService.cs から SendCompletionMessageForDestination メソッドに渡します。このメソッドは、一致するすべての旅行を受け取り、アプリへのディープ リンクを提供します。
+この例では、指定した目的地 (`destination`) の文字列をサンプルの **AdventureWorks** の AdventureWorksVoiceCommandService.cs から SendCompletionMessageForDestination メソッドに渡します。このメソッドは、一致するすべての旅行を受け取り、アプリへのディープ リンクを提供します。
 
 最初に、**Cortana** に話させ、**Cortana** キャンバスに表示する [**VoiceCommandUserMessage**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandusermessage.aspx) (```userMessage```) を作成します。 結果のカード コレクションをキャンバスに表示するための [**VoiceCommandContentTile**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandcontenttile.aspx) リスト オブジェクトが作成されます。 
 
-これら 2 つのオブジェクトが [**VoiceCommandResponse**](https://msdn.microsoft.com/library/windows/apps/dn974182) オブジェクトの [CreateResponse](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandresponse.createresponse.aspx)メソッド (```response```) に渡されます。 次に、[**AppLaunchArgument**](https://msdn.microsoft.com/library/windows/apps/dn974183) プロパティの値を音声コマンドの目的地の値に設定します。
+これら 2 つのオブジェクトが [**VoiceCommandResponse**](https://msdn.microsoft.com/library/windows/apps/dn974182) オブジェクトの [CreateResponse](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandresponse.createresponse.aspx) メソッド (`response`) に渡されます。 次に、応答オブジェクトの [**AppLaunchArgument**](https://msdn.microsoft.com/library/windows/apps/dn974183) プロパティの値を、この関数に渡された `destination` の値に設定します。 ユーザーが Cortana のキャンバス上のコンテンツ タイルをタップすると、パラメーターの値は応答オブジェクトを介してアプリに渡されます。
 
 最後に、[**VoiceCommandServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn974204) の [**ReportSuccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn706580) メソッドを呼び出します。
 
@@ -288,6 +291,7 @@ if (args.Kind == ActivationKind.Protocol)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO3-->
 
 
