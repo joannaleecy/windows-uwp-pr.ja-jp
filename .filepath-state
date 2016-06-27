@@ -2469,6 +2469,9 @@
   "7404a90fc9efc05d4e2bb83321bb2ba80b8378ce": [
     "windows-apps-src\\debug-test-perf\\beta-testing.md"
   ],
+  "e2209e90080c7346bb363304b1a28f6446300332": [
+    "windows-apps-src\\debug-test-perf\\deploying-and-debugging-uwp-apps.md"
+  ],
   "0aa24b6b78481949c1b913ddee121a5ecf30b26d": [
     "windows-apps-src\\debug-test-perf\\deploying-and-debugging-uwp-apps.md"
   ],
@@ -6446,6 +6449,9 @@
   "033669a781aa85cc2c90fa11816e385ffefa997d": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "a9e782791ebf3faf75cc4c6300c06173f0f7b2de": [
+    "windows-apps-src\\TOC.md"
+  ],
   "dd3710b1f9a399fa9d7b1dd953ecde35551585aa": [
     "windows-apps-src\\TOC.md"
   ],
@@ -7151,6 +7157,9 @@
   "6713d5c1d7a28ff69bdea4c05aa98c9c27b2570c": [
     "windows-apps-src\\debug-test-perf\\images\\gs-debug-uwp-apps-004.png"
   ],
+  "0fde4fa22dc6876807e7f7e1c10e7606eee3786d": [
+    "windows-apps-src\\debug-test-perf\\testing-debugging-plm.md"
+  ],
   "739938464f7a440b38503a6d5c19a4c1a629515e": [
     "windows-apps-src\\debug-test-perf\\testing-debugging-plm.md"
   ],
@@ -7196,6 +7205,9 @@
   "fa7e7404a9a3ab5d75d47b3a5271bd1fd84b5569": [
     "windows-apps-src\\winrt-components\\brokered-windows-runtime-components-for-side-loaded-windows-store-apps.md"
   ],
+  "0562e3df0c2abbb0808df5f75ff4fe0b96eb6d7e": [
+    "windows-apps-src\\controls-and-patterns\\index.md"
+  ],
   "bd36c5a0e702e85d651f0740a7a9ae56831dfa04": [
     "windows-apps-src\\controls-and-patterns\\index.md"
   ],
@@ -7220,8 +7232,14 @@
   "0e2a716f7f1dfca38b91852ea487d00ffb7dba25": [
     "windows-apps-src\\design-downloads\\images\\tile-icon-generator.png"
   ],
+  "4101b60c0f640fd54d67a8e57f0a06622c6ec85c": [
+    "windows-apps-src\\design-downloads\\index.md"
+  ],
   "68da532b013d10c1967720b3b8e904013ed60d7e": [
     "windows-apps-src\\design-downloads\\index.md"
+  ],
+  "f2055318fe67a0af2bcc009c6f9782029f9032f1": [
+    "windows-apps-src\\input-and-devices\\index.md"
   ],
   "d41adafecf2aa1313c605b084fc41e58f4f0433f": [
     "windows-apps-src\\input-and-devices\\index.md"
@@ -7229,17 +7247,29 @@
   "33c4fde752217c24e114e05881a86fb941280fd1": [
     "windows-apps-src\\layout\\images\\rspd-reposition-type1-sm.png"
   ],
+  "35a8f78420256cb2da02d7fd4720939a16676600": [
+    "windows-apps-src\\layout\\index.md"
+  ],
   "1c1f7eda47165a17d2e012281c127aaa015cd229": [
     "windows-apps-src\\layout\\index.md"
   ],
   "7db8534ae4c49fc3b93f9d192048d5193d5f7491": [
     "windows-apps-src\\style\\images\\style-header-v2.png"
   ],
+  "3948b1ea3b108d613fe1e3a0351903d2d2f8ffe9": [
+    "windows-apps-src\\style\\index.md"
+  ],
   "2547b5de76571eecf309be9255f707997f0168ff": [
     "windows-apps-src\\style\\index.md"
   ],
+  "f02713dfee278866af53c6dd529d2faa3e9f625c": [
+    "windows-apps-src\\usability\\index.md"
+  ],
   "c153018fe32d0116ec7402a39e6d46bff986d4b1": [
     "windows-apps-src\\usability\\index.md"
+  ],
+  "8c8534dc544f51b2cbfed0640accc3c0c9ce5742": [
+    "windows-apps-src\\publish\\index.md"
   ],
   "78ad40d3b8964688277e84a1c29a61ffcffda7c1": [
     "windows-apps-src\\publish\\index.md"
