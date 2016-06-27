@@ -1,32 +1,19 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\debug-test-perf\version-adaptive-code.md](https://github.com/Microsoft/windows-apps/blob/3f81d80cef0fef6d24cad1b42ce9726b03857b5a/windows-apps-src/debug-test-perf/version-adaptive-code.md) | HandedBackFailed | [Details](#db6b9c83d36ac876661197dce81e5724e44bb6402046)
- [windows-apps-src\publish\index.md](https://github.com/Microsoft/windows-apps/blob/ac60bb4b9aa2dbd3d602eceffa64311b546367ea/windows-apps-src/publish/index.md) | HandedOffSuccess | [Details](#6b260dd6258d520233f6861217230adf493173203615)
+ [windows-apps-src\security\index.md](https://github.com/Microsoft/windows-apps/blob/a178f992ddd39b5609ce6d15b7e3560e157b9afb/windows-apps-src/security/index.md) | HandedBackFailed | [Details](#23897e7e78f3391fbee60a5f7cdf93615401247d3727)
 
 ## Item Details
-##### <a name='db6b9c83d36ac876661197dce81e5724e44bb6402046'></a> Source: [windows-apps-src\debug-test-perf\version-adaptive-code.md](https://github.com/Microsoft/windows-apps/blob/3f81d80cef0fef6d24cad1b42ce9726b03857b5a/windows-apps-src/debug-test-perf/version-adaptive-code.md)
+##### <a name='23897e7e78f3391fbee60a5f7cdf93615401247d3727'></a> Source: [windows-apps-src\security\index.md](https://github.com/Microsoft/windows-apps/blob/a178f992ddd39b5609ce6d15b7e3560e157b9afb/windows-apps-src/security/index.md)
 * Status: HandedBackFailed
 * Target File: 
-* Handoff File: [version-adaptive-code.7aa9b4fd571dd33449d6b84315fa7a6b22580d76.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/b085ef99ba7bd6af43467af0f237bd18ccdf7d53/ol-handoff/Microsoft/windows-apps.ja-jp/master/version-adaptive-code.7aa9b4fd571dd33449d6b84315fa7a6b22580d76.ja-jp.xlf)
-* Handoff Datetime: 2016-06-27 22:42:24
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='6b260dd6258d520233f6861217230adf493173203615'></a> Source: [windows-apps-src\publish\index.md](https://github.com/Microsoft/windows-apps/blob/ac60bb4b9aa2dbd3d602eceffa64311b546367ea/windows-apps-src/publish/index.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [index.e1a577c2fdf35ee5231fe28148fe028299e2d0b9.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/b085ef99ba7bd6af43467af0f237bd18ccdf7d53/ol-handoff/Microsoft/windows-apps.ja-jp/master/index.e1a577c2fdf35ee5231fe28148fe028299e2d0b9.ja-jp.xlf)
-* Handoff Datetime: 2016-06-27 22:42:24
+* Handoff File: [index.36c19658e673067b86aba619b12635d8359c4091.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/9416176ce121b60b6efd365b0f64f7c3a44d5e7a/ol-handoff/Microsoft/windows-apps.ja-jp/master/index.36c19658e673067b86aba619b12635d8359c4091.ja-jp.xlf)
+* Handoff Datetime: 2016-06-27 23:36:20
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
