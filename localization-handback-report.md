@@ -696,7 +696,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [accessibility.c5af33aaf4b5c1afcbdc516d45cbba0978a332da.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/accessibility.c5af33aaf4b5c1afcbdc516d45cbba0978a332da.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b310handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -709,7 +709,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [accessibility-checklist.b3ba1e9753349591160bcb946245cd9130964c3c.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/accessibility-checklist.b3ba1e9753349591160bcb946245cd9130964c3c.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#9580ccc0716b7e9f4ee32ce241b0ac3ee9bf319d6handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -722,7 +722,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [accessibility-in-the-store.0f78b379874a5abbc10691c92c2a6953e0b7985c.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/accessibility-in-the-store.0f78b379874a5abbc10691c92c2a6953e0b7985c.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#46dfe4fba383861c704b2ba9070bdd8102b105627handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -735,7 +735,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [accessibility-overview.a0627fed9b350af20599e3d7658af567be224667.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/accessibility-overview.a0627fed9b350af20599e3d7658af567be224667.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#430484a9243abc644de75d35c03bb11cf47960c08handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -821,7 +821,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [developing-inclusive-windows-apps.beba11e2cada78ec18c4a0ad550feb430438a92b.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/developing-inclusive-windows-apps.beba11e2cada78ec18c4a0ad550feb430438a92b.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#77c401fd9686cb260e7b2d9e4bdf47a91d76802e16handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -858,7 +858,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [practices-to-avoid.8ed8037e895cde1a19d30fd6ae1ecbf8ae679566.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/practices-to-avoid.8ed8037e895cde1a19d30fd6ae1ecbf8ae679566.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#b5f5f220d5ff70d70dd797c0bf26a355bd44756323handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -871,7 +871,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [external-help.9f191d5eaabd8eb9029f9b2e22f457bb90ece96f.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/external-help.9f191d5eaabd8eb9029f9b2e22f457bb90ece96f.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#03ef3fc34d2018c0ec712977065377a9c52cd8b224handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -884,7 +884,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [guidelines-for-app-help.8c364c541c3d628f0515388f33923bad1ffcf641.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/guidelines-for-app-help.8c364c541c3d628f0515388f33923bad1ffcf641.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#1e1e5e118eb44f6b491669dbd274fae05d92685b25handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -897,7 +897,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [in-app-help.9a3412ab7140ccedb1722a6b7416f70d74f0203a.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/in-app-help.9a3412ab7140ccedb1722a6b7416f70d74f0203a.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#7edad75b1639768023eb8add1e23fe0aafb0b67431handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -910,7 +910,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [instructional-ui.2bd15555dde091498048f73d2e4996897c215b06.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/instructional-ui.2bd15555dde091498048f73d2e4996897c215b06.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#1c8ab97a5625243a50fa3b40ae93f5928dc7d85132handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -923,7 +923,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [app-settings-and-data.9232794ed41c2439c7db748b385db44334159f35.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/app-settings-and-data.9232794ed41c2439c7db748b385db44334159f35.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#4d6f57dcc9dbfe9c2e031a5fe73f24668f0dc46233handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -936,7 +936,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [guidelines-for-app-settings.1eb3014d8ebbc319fbe1eed647ec2258ff1eaf7b.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/guidelines-for-app-settings.1eb3014d8ebbc319fbe1eed647ec2258ff1eaf7b.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#aeccd755c5fe5df8f2ff5549950ce2d6cb74e8e434handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -949,7 +949,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [store-and-retrieve-app-data.5da8a763047d281092870b7268f4d599223c086e.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/store-and-retrieve-app-data.5da8a763047d281092870b7268f4d599223c086e.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#433cda6432d1e695bacb338e68012bcc9c837eb665handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -975,7 +975,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [index.41a30c2304522206dc610cca50cfa8c5d9af32f3.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/4a10ae00f717c3711cb911d775b04f6f078c1164/ol-handback/Microsoft/windows-apps.ja-jp/master/index.41a30c2304522206dc610cca50cfa8c5d9af32f3.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#63550064b6f31b85cd3b6fa2a09bac4b7cfcf895133handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -988,7 +988,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [use-edp-to-protect-enterprise-data-transferred-between-apps.c30e365776d4ad19cc90b4cc29c6bdfa79fd00eb.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/use-edp-to-protect-enterprise-data-transferred-between-apps.c30e365776d4ad19cc90b4cc29c6bdfa79fd00eb.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#77533d4aca3cc84e0a021a0faac57f5afbbefdd7136handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1001,7 +1001,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [adaptive-streaming.6b8a318536e369608bb8552a3b26e2c9c8284266.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/adaptive-streaming.6b8a318536e369608bb8552a3b26e2c9c8284266.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#8ebf90b02fcfbb4349ba2b303d9c91727b731ad7138handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1014,7 +1014,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [adaptive-streaming-with-playready.fc985ed1b1d3c9fa50b477f463313823801d7872.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/adaptive-streaming-with-playready.fc985ed1b1d3c9fa50b477f463313823801d7872.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#d76f50e97f16699f34f138fcd25af8a90696085a137handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1027,7 +1027,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [audio-device-information-properties.5291144110f2e5094827d1a9264cec8a890df448.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/audio-device-information-properties.5291144110f2e5094827d1a9264cec8a890df448.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#b1bcb5b005e82303884c2e096356d5a0f542b1e1139handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1040,7 +1040,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [audio-graphs.1c22caea26c2814f38de39f27007b9ce0e5bf073.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/audio-graphs.1c22caea26c2814f38de39f27007b9ce0e5bf073.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#7e8df66a1fc4c95cb8b0b4be9eded8ef58b6803a140handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1066,7 +1066,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [bitmapencoder-options-reference.11630e5ba87c622c7add5dc5c34d83ac5474d33c.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/bitmapencoder-options-reference.11630e5ba87c622c7add5dc5c34d83ac5474d33c.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#510cb363b258d20688ea212856af4b7ac0311e61142handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1079,7 +1079,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [camera-independent-flashlight.d594be642add79d1e55db24ab556f0364a0dbc56.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/camera-independent-flashlight.d594be642add79d1e55db24ab556f0364a0dbc56.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#022ca2848c575f545402b13e19c0854a9e3ec74a143handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1092,7 +1092,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [camera-profiles.116577fa56f676ccd06832171b650d9499851c47.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/camera-profiles.116577fa56f676ccd06832171b650d9499851c47.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#755b2747b2250c4ad19970095aed220551389471144handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1105,7 +1105,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [capture-device-controls-for-photo-and-video-capture.b82ba2adf368a6a80f591d0840b970a4c68a333f.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/capture-device-controls-for-photo-and-video-capture.b82ba2adf368a6a80f591d0840b970a4c68a333f.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775145handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1118,7 +1118,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [capture-device-controls-for-video-capture.f49bb6514eeca0e936ee07fc1f7e3511f8b03edd.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/capture-device-controls-for-video-capture.f49bb6514eeca0e936ee07fc1f7e3511f8b03edd.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#65883f1be1a014b6c7e211e2e060ae97fbd9eb0d146handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1131,7 +1131,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [capture-photos-and-video-with-cameracaptureui.4f71d01201f482dcdd17f5ac916ad18ff39d8546.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/capture-photos-and-video-with-cameracaptureui.4f71d01201f482dcdd17f5ac916ad18ff39d8546.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#a98edd0b4c52271fad4255af5ab0a005b0c66d68147handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1144,7 +1144,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [capture-photos-and-video-with-mediacapture.d8e382ecfb63a19bedd8f76740ef7f04d2b0173e.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/capture-photos-and-video-with-mediacapture.d8e382ecfb63a19bedd8f76740ef7f04d2b0173e.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#c20c735d38e6baabe2f8bc0c7c682706d3946ed9148handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1157,7 +1157,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [custom-video-effects.1bd057b1f63255f934b8823c25bdcbf98a602221.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/custom-video-effects.1bd057b1f63255f934b8823c25bdcbf98a602221.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#d6ad5b2488f79787c07b4057b34fcbfd3a4df3c3471handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1170,7 +1170,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [detect-and-track-faces-in-an-image.092234b9af7dbc92fe7b078616898775b3463d1f.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/detect-and-track-faces-in-an-image.092234b9af7dbc92fe7b078616898775b3463d1f.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#66730fcbaad2e3e059f2972475625d278d235002472handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1183,7 +1183,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [effects-for-video-capture.b2be0238f47a7681db93c21f9ddb0150e6e894a4.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/effects-for-video-capture.b2be0238f47a7681db93c21f9ddb0150e6e894a4.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#3af5ed7146f2420c2a6d3035c26290cbeaff8375473handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1196,7 +1196,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [get-a-preview-frame.7c5f94d9a58fa28aa872c96f54821fc6ec601cc4.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/get-a-preview-frame.7c5f94d9a58fa28aa872c96f54821fc6ec601cc4.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#c512ec92272ab03cfd8e91602018f09ef8225652474handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1222,7 +1222,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [high-dynamic-range-hdr-photo-capture.d9915a949483b2b16ea0f80edb4661ca32cb5e81.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/high-dynamic-range-hdr-photo-capture.d9915a949483b2b16ea0f80edb4661ca32cb5e81.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#3015aa4338ddb0c0a006eb631026261a4453f376476handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1235,7 +1235,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [image-metadata.36996dce323e596780c32fc5306c41f69aa51cb4.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/image-metadata.36996dce323e596780c32fc5306c41f69aa51cb4.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#571d71d52931392a36c3c11030749f6ecb3cc961477handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1248,7 +1248,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [imaging.869beb1ae137fbf2081d00909eb60319630ecd6e.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/imaging.869beb1ae137fbf2081d00909eb60319630ecd6e.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#8da8c78a848c4eea565d432bdf62d3d1528c5a85481handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1261,7 +1261,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [index.1af33ca226923082600a63b53881b7dd68963b62.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/index.1af33ca226923082600a63b53881b7dd68963b62.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#8480eb181b6af26eae5950a1f1bf040d0cb5db99482handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1274,7 +1274,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [media-casting.0c7f4edb755dd030e35e1133657e6154b41aaee4.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/media-casting.0c7f4edb755dd030e35e1133657e6154b41aaee4.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#9c8d549c9b770af351894f2a19dd035a43d70264483handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1287,7 +1287,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [media-compositions-and-editing.634d3a683419176c6b6873fdbf7db29031c50d15.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/media-compositions-and-editing.634d3a683419176c6b6873fdbf7db29031c50d15.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#226ee9212f6688c48c4d4d7b3195ec5c27a3afdd484handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1300,7 +1300,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [media-playback-with-mediasource.94662fa9799ba564cb9365c51437eed265fb9453.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/media-playback-with-mediasource.94662fa9799ba564cb9365c51437eed265fb9453.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#d64f4484566d80eaf2a353b1aba954c15079343c485handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1313,7 +1313,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [midi.ea90da0ed7be0e0a24e515a916b12e74f5adce06.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/midi.ea90da0ed7be0e0a24e515a916b12e74f5adce06.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#a67b859cc2bd42abc13bcba0d405783b99a0ca5c486handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1352,7 +1352,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [process-media-files-in-the-background.451791f5164916b3ac3f06ad2388c61096194c65.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/process-media-files-in-the-background.451791f5164916b3ac3f06ad2388c61096194c65.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#dcf655ff80c4463a567ade0b6d1cc784b60c18be489handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1365,7 +1365,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [scene-analysis-for-media-capture.b77d4197a99dc78d72743286497f74e09460d1aa.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/scene-analysis-for-media-capture.b77d4197a99dc78d72743286497f74e09460d1aa.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#891c0d274c2d3fb82f855011158ecd3ccdcd87b3490handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1378,7 +1378,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [set-media-encoding-properties.67e80924e9a878a8760ed131f1eb0bd8fc875898.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/set-media-encoding-properties.67e80924e9a878a8760ed131f1eb0bd8fc875898.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#d7b44ce9db2e3d540036525c4b43e155a9500010491handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1391,7 +1391,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [simple-camera-preview-access.d4463226833217e13f4feeb4eae3b9442bcb8846.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/simple-camera-preview-access.d4463226833217e13f4feeb4eae3b9442bcb8846.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#05e752925c07b0e3720fbdd42d785381aa08b99c492handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1404,7 +1404,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [supported-codecs.16577143160d1b763576aad920583945b1e7e0c1.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/supported-codecs.16577143160d1b763576aad920583945b1e7e0c1.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#1481f8bbb2c53f667d253e23af1422297e19c63d493handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1417,7 +1417,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [system-media-transport-controls.da184c9818af948688567799d8d0601b9f9edd94.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/system-media-transport-controls.da184c9818af948688567799d8d0601b9f9edd94.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#5a94ce4112f7662d3fe9bf3c8a7d3f60b1569931494handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1430,7 +1430,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [transcode-media-files.64297209e50a2ac88a6769a615c6fe62c72191a4.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/transcode-media-files.64297209e50a2ac88a6769a615c6fe62c72191a4.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#06c452291f10acd35dde9659c08a386ea38fa90a495handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1443,7 +1443,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [variable-photo-sequence.a67d245da390a2fc83e8528122606230ec7de7ba.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/variable-photo-sequence.a67d245da390a2fc83e8528122606230ec7de7ba.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#c6be6c0ea255c38bba65550ae44c7f88c140ca0f496handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1456,7 +1456,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [index.5d0ffa7bd75066bfaee54db1f51c0dcc87971c4f.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/index.5d0ffa7bd75066bfaee54db1f51c0dcc87971c4f.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#4e40ac413e021aba26776053871a4c6f1a215b2a497handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1493,7 +1493,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [sending-an-sms-message.6e59626f54f56878997988e7bb5d2435a825e060.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/sending-an-sms-message.6e59626f54f56878997988e7bb5d2435a825e060.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#70dfce318d37d6790585b0fa5da50963f95495dc500handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1506,7 +1506,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [active-canvas.dce5bd8c40f9c54a37e0a4e7a3b8c96240eba7c1.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/active-canvas.dce5bd8c40f9c54a37e0a4e7a3b8c96240eba7c1.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#490c45fb8dc565e4ae0b890d26f28d698b58f255502handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1519,7 +1519,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [buttons.31112261824f51e327866163a363c3880c81536e.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/buttons.31112261824f51e327866163a363c3880c81536e.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#91399060e129df18acd38e18d98cad848667a5ad505handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1532,7 +1532,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [controls-and-events-intro.811e4f7fdeb5004dbda5408200d74088bc3e2644.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/controls-and-events-intro.811e4f7fdeb5004dbda5408200d74088bc3e2644.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#709771424daba7c034dc6f19d6998469705a24da510handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1545,7 +1545,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [controls-by-function.4013116434d127ddec2f5e378e116c5d446842c7.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/controls-by-function.4013116434d127ddec2f5e378e116c5d446842c7.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#5d6548a4b72144e3a9bf5d759809720c79472afb511handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1558,7 +1558,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [control-templates.fac4945407517fcb7ef4e78a8f57f348a832dc69.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/control-templates.fac4945407517fcb7ef4e78a8f57f348a832dc69.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#071ba59af02b860e9fe58133eb5f1c2a7207ed2b509handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1571,7 +1571,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [custom-transport-controls.89087c247f7e51b65a8675fef6665055d3e0abad.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/custom-transport-controls.89087c247f7e51b65a8675fef6665055d3e0abad.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#5500f41b254b32b8d293181fba3acebbfffa90e7512handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1584,7 +1584,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [date-and-time.51f03a1f7915c663aa5977d11293bc0952f15d38.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/date-and-time.51f03a1f7915c663aa5977d11293bc0952f15d38.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#e9d8d73c35e2e600e89330fbd54aea57a815aebf513handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1597,7 +1597,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [date-picker.cbfc09495a5762b3fc0cce86ccee788b9e0ee967.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/date-picker.cbfc09495a5762b3fc0cce86ccee788b9e0ee967.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#c237d4bc013ad0a1d0d16f695f4332a6aac7efdc514handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1610,7 +1610,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [dialogs-popups-menus.d73a7fb1d50512060b0044c9198098e31518db59.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/dialogs-popups-menus.d73a7fb1d50512060b0044c9198098e31518db59.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#e268a5facebbdb80d7cc5cdd52c1a6f944ef7d00515handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1623,7 +1623,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [fonts.6e5b7795bebe82f42722325e2cb6b6ffa9c9ec16.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/fonts.6e5b7795bebe82f42722325e2cb6b6ffa9c9ec16.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#268884c011caa18f3afb6d8b0d9cfda1ec27f51e517handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1636,7 +1636,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [labels.b8fa4546c89eaaa88a86f3dfc6212de113b6aca3.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/labels.b8fa4546c89eaaa88a86f3dfc6212de113b6aca3.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#fbb186b6f8b7bfba47fb05155a227224a1bd595e1903handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1649,7 +1649,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [listview-and-gridview.7757d74397dd2eae577ac2003eeb27120b54f483.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/listview-and-gridview.7757d74397dd2eae577ac2003eeb27120b54f483.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#e878b11bbecd4a1007f8b5f56bde5741da18c1e11905handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1662,7 +1662,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [master-details.908925f22132a419f82562028d3f4d07a5202d85.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/master-details.908925f22132a419f82562028d3f4d07a5202d85.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#5845aaf69bbcf561164c519f76f93578bf0da6db1906handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1675,7 +1675,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [media-playback.3001f92351099634b42aa54598e15a2f9957d9dd.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/media-playback.3001f92351099634b42aa54598e15a2f9957d9dd.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#2dbc4e7fa227de3f37b8a337eded0004496dbe361907handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1688,7 +1688,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [nav-pane.d6c3b77138be76c3243ad01a275a61809f6018b6.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/nav-pane.d6c3b77138be76c3243ad01a275a61809f6018b6.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#eb5600a78d7e8cfcad98509afc4de2d117066f7e1908handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1701,7 +1701,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [password-box.45ecee5f9e50f1e24fa8cd5370232f7b5da29d0d.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/password-box.45ecee5f9e50f1e24fa8cd5370232f7b5da29d0d.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#1a2d5efbeacd5ce8a71f5261aa52f09400c75c971909handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1714,7 +1714,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [progress-controls.3d934e5b5df904df43522fcce97167827ad3cd74.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/progress-controls.3d934e5b5df904df43522fcce97167827ad3cd74.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#8a03ca36f6e306a03e8aec7b46e51bfff0079bf51910handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1727,7 +1727,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [radio-button.d26b73ceac2804d4da2e6a8c5213af47d7a5baa4.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/radio-button.d26b73ceac2804d4da2e6a8c5213af47d7a5baa4.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#317df548e72f9aff475ba0959668b6441ac29d3d1911handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1740,7 +1740,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [resourcedictionary-and-xaml-resource-references.59d7cf05b0e0cb70227a7c3bc4367426566e6df6.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/resourcedictionary-and-xaml-resource-references.59d7cf05b0e0cb70227a7c3bc4367426566e6df6.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#fddd345507aace54aca66fe1caa2d9f89a74a2991912handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1753,7 +1753,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [rich-edit-box.a258e9caba166e24c5e899de73a2c77e5cfa0b3f.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/rich-edit-box.a258e9caba166e24c5e899de73a2c77e5cfa0b3f.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#fc685b952db7292a9eea4d8a54bd6e2685cb13c01913handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1766,7 +1766,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [rich-text-block.df1746a36d12f35625b088ad876da595af785a8d.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/rich-text-block.df1746a36d12f35625b088ad876da595af785a8d.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#28c78b39bad4c66457ec5aba8cf0b4ce0de4f00a1914handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1779,7 +1779,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [scroll-controls.5447580fc2eb2862fe428709f3952b704cddcf0d.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/scroll-controls.5447580fc2eb2862fe428709f3952b704cddcf0d.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#b390f8a2cbabf243bd4d73c16122648e3d4a05861915handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1792,7 +1792,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [search.aeb554295611021edb04e9a4e9bfac816b8a698d.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/search.aeb554295611021edb04e9a4e9bfac816b8a698d.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#cd746f81e8cca27c5111f3d15342d1def0f874dc1916handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1805,7 +1805,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [segoe-ui-symbol-font.725e04d7ce5390567e99c30a1ff910ac1a06bff3.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/segoe-ui-symbol-font.725e04d7ce5390567e99c30a1ff910ac1a06bff3.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#9071c7dfddba15738d7bad482fd14f7cbffaa1f71917handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1818,7 +1818,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [semantic-zoom.8acffe32ae4633f73ffb9347492e9a0a99b4c6b9.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/semantic-zoom.8acffe32ae4633f73ffb9347492e9a0a99b4c6b9.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#47e39290a63408fc66783617ad2f12345eab2fa31918handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1831,7 +1831,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [slider.870a7d05aa3c283b88ff39e0c822267ec2207da7.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/slider.870a7d05aa3c283b88ff39e0c822267ec2207da7.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#64ae11c8c7e46d973c13cacb69482fd957e0488d1919handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1857,7 +1857,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [split-view.3bd078dd81aa16337481c8010078f9107646ea2e.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/split-view.3bd078dd81aa16337481c8010078f9107646ea2e.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#391bfdbbf09474ad707dbbf306d4997825fa83861921handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1870,7 +1870,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [styling-controls.744e2b3a2390d4d728a2d78abffbbc40f72f54da.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/styling-controls.744e2b3a2390d4d728a2d78abffbbc40f72f54da.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#02cd8f7777f169ad9fc4e5bfe854a8b6e0fe50601922handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1883,7 +1883,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [text-block.b07b25edfceded1b954ec17c0169a711436f035f.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/text-block.b07b25edfceded1b954ec17c0169a711436f035f.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#7666c7a82b2959aa1329bbfe2532dccdc7fb38a51924handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1896,7 +1896,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [text-box.ef07191427e45074dffd9f0b2628dd462f15df1d.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/text-box.ef07191427e45074dffd9f0b2628dd462f15df1d.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#873ca8f869f4303f8fc4a9a7ff08f81df29d367d1925handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1909,7 +1909,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [tiles-and-notifications-adaptive-interactive-toasts.754babe558bdbd1c80d4acd94c1873c54d9426c8.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/tiles-and-notifications-adaptive-interactive-toasts.754babe558bdbd1c80d4acd94c1873c54d9426c8.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#17faf0ccb0207b318963e00655d7ac91b97e066b1927handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1922,7 +1922,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [tiles-and-notifications-adaptive-tiles-schema.608254f9907dbb7d57e8b5ac6239d9be649d40d8.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/tiles-and-notifications-adaptive-tiles-schema.608254f9907dbb7d57e8b5ac6239d9be649d40d8.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#a5d061515eee1ab64f17e4f5aab8846adbd1c8f11928handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1935,7 +1935,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [tiles-and-notifications-app-assets.7f32a0e47e1e73e62603a50980e5b5889e730e57.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/tiles-and-notifications-app-assets.7f32a0e47e1e73e62603a50980e5b5889e730e57.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#98eebc4fbf18aa2fbe4586958f666b41580cf6d91929handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1948,7 +1948,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [tiles-and-notifications-choosing-a-notification-delivery-method.087bf28814b074329ef4fa7fc571a3352a06ff38.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/tiles-and-notifications-choosing-a-notification-delivery-method.087bf28814b074329ef4fa7fc571a3352a06ff38.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#b79a6f771afe63c9a42567875db5ef8107611afc1930handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1961,7 +1961,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [tiles-and-notifications-notifications-visualizer.98f8545037ba516cd5c9a436ea878e9b44f929eb.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/tiles-and-notifications-notifications-visualizer.98f8545037ba516cd5c9a436ea878e9b44f929eb.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#dcbf05669093047bd76dc01c217daf353d8fb9da1933handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1974,7 +1974,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [tiles-and-notifications-periodic-notification-overview.e8bbdadd9a0b3f3db4e274f204d4d877763138ab.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/tiles-and-notifications-periodic-notification-overview.e8bbdadd9a0b3f3db4e274f204d4d877763138ab.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#55932595e0d5592003456a28d00ffd70c5e05eba1934handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -1987,7 +1987,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [tiles-and-notifications-raw-notification-overview.bfb9b356ff6c0fe0a1243975dace7c2f760bdef7.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/tiles-and-notifications-raw-notification-overview.bfb9b356ff6c0fe0a1243975dace7c2f760bdef7.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#4b487e44c7acd882a86c0b24dd9994092d976b061935handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2000,7 +2000,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [tiles-and-notifications-sending-a-local-tile-notification.6061ff352f087b3c2c8f9fc80cffddfa62efeeb1.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/tiles-and-notifications-sending-a-local-tile-notification.6061ff352f087b3c2c8f9fc80cffddfa62efeeb1.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#cc2f86f2a56aae5ee9e3019dafa3417a25e7d6101936handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2013,7 +2013,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [tiles-and-notifications-special-tile-templates-catalog.d73be8d9c8f9437e1e32e0e277105bd748f29edc.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/tiles-and-notifications-special-tile-templates-catalog.d73be8d9c8f9437e1e32e0e277105bd748f29edc.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#ab7366b8b3cbf75f1f7e9fe35ca83077ac21d0811937handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2026,7 +2026,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [tiles-and-notifications-the-code-generated-by-the-push-notification-wizard.fb0596a3f28aec129835f5500180113486d443b4.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/tiles-and-notifications-the-code-generated-by-the-push-notification-wizard.fb0596a3f28aec129835f5500180113486d443b4.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#6b7bf3c8019e6c3e92fd07b114cdc688fe7ad8de1938handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2039,7 +2039,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [tiles-and-notifications-windows-push-notification-services--wns--overview.d8115ff8c0bddfa3b76993fbae0b67459084bd7c.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/tiles-and-notifications-windows-push-notification-services--wns--overview.d8115ff8c0bddfa3b76993fbae0b67459084bd7c.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#32471f23bf10a8430db6c6bd1376f1f7aa6c784c1939handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2052,7 +2052,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [tiles-badges-notifications.b350788c8ae48f6e99891cb084fc6ffe64eeea7d.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/tiles-badges-notifications.b350788c8ae48f6e99891cb084fc6ffe64eeea7d.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#32b1c3ec674a84ca4ed08d98119fe21f77e155541940handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2065,7 +2065,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [time-picker.55cf7c8e357ac2d007befcfda29a245cd72eb8e8.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/time-picker.55cf7c8e357ac2d007befcfda29a245cd72eb8e8.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#5056a9f304ca21c977b9cc65b8ead007eccd42881941handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2078,7 +2078,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [toggles.b18f65a6d80dea8ca39438aceceb710c40a6bbe6.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/toggles.b18f65a6d80dea8ca39438aceceb710c40a6bbe6.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#e90760c6894ee5d32ba1063993a703023d23c1521942handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2091,7 +2091,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [tooltips.07ed84b939e053578f0181b56bcf010307d8a736.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/tooltips.07ed84b939e053578f0181b56bcf010307d8a736.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#0529f212e9fac290bb58925e992518ab0e803bfa1943handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2104,7 +2104,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [web-view.fe722393fe097ca27e81b2dfcc9f30a11736e713.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/web-view.fe722393fe097ca27e81b2dfcc9f30a11736e713.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#dd947d0b55dad56fdd6c684ae236f1c31ac8da861944handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2117,7 +2117,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [xaml-theme-resources.44ab71091ba985b4a3127b7f58980eecf9a95090.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/xaml-theme-resources.44ab71091ba985b4a3127b7f58980eecf9a95090.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#fa0d0881eee0f87b549a7d053e75882ffd2afa6e1945handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2130,7 +2130,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [entity-framework-7-with-sqlite-for-csharp-apps.34dd6b3a2e763696267c5bd1ba05fe4b8a216b82.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/entity-framework-7-with-sqlite-for-csharp-apps.34dd6b3a2e763696267c5bd1ba05fe4b8a216b82.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#4c9b674445e901a370f9822f8f11acdeba6061b61946handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2143,7 +2143,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [index.c0aaa8e5db778e8986e94720948552900bdf3c54.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/index.c0aaa8e5db778e8986e94720948552900bdf3c54.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#007e07d05f4f89771f6a0b93fb4279783ca170f61949handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2156,7 +2156,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [sqlite-databases.f4387e213ddb4a29512c35ee365fe2025795d608.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/sqlite-databases.f4387e213ddb4a29512c35ee365fe2025795d608.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#dd628d16b3ee230ddc0c56b47fd381a518b8af001950handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2169,7 +2169,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [displaying-data-in-the-designer.08b121067441dc61742c439084e315d6f3e19211.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/displaying-data-in-the-designer.08b121067441dc61742c439084e315d6f3e19211.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#2f7ac4b269a167c3b521fa94d77e27091fa490a81953handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2182,7 +2182,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [how-to-bind-to-hierarchical-data-and-create-a-master-details-view.f72f7fc32bd32acf8d2e2fc784c764b96454475d.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/how-to-bind-to-hierarchical-data-and-create-a-master-details-view.f72f7fc32bd32acf8d2e2fc784c764b96454475d.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#2ff66a1d6a80bb085f54dec8e35371ba0c9e6b271954handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2195,7 +2195,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [index.5c7f2ec5be2c5d4a783d419e10da21690db0a581.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/index.5c7f2ec5be2c5d4a783d419e10da21690db0a581.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#d1fbc7376b3505d39e757a1b65ae0f08909480781967handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2221,7 +2221,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [beta-testing.b26c5b6d5050f6e3c7e6fed2ee6a2b0c4ba6c77c.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/beta-testing.b26c5b6d5050f6e3c7e6fed2ee6a2b0c4ba6c77c.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#7404a90fc9efc05d4e2bb83321bb2ba80b8378ce1969handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2260,7 +2260,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [device-portal-api-hololens.d4e30af85eeb4fa25856ba41cc17399bc9c80438.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/device-portal-api-hololens.d4e30af85eeb4fa25856ba41cc17399bc9c80438.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#5ed8ffe0a409569777fbf4e56a90ab3b80cd395c1972handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2286,7 +2286,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [device-portal-hololens.4694175cebeab92444b4971284b0f59ddc9e6fa4.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/device-portal-hololens.4694175cebeab92444b4971284b0f59ddc9e6fa4.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#bd1ae8ccdd81f319fc36ca04b8b839cb313b28541974handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2299,7 +2299,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [device-portal-mobile.76f623a0ea272ed3257cb79b0212a5e2e1bcefa1.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/device-portal-mobile.76f623a0ea272ed3257cb79b0212a5e2e1bcefa1.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#eeeb8f98d97468544cc30e3d9884cce15cb913a91975handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2312,7 +2312,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [device-portal-xbox.99bf4955fdefdf6b9c5dfab22556e4df4c7dd8b6.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/device-portal-xbox.99bf4955fdefdf6b9c5dfab22556e4df4c7dd8b6.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#e1bfdf8e4ee4ed1f88c514acb9ef555c07fd07461976handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2325,7 +2325,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [improve-garbage-collection-performance.fdd828e59372c7f49d2851254f234d8efe2fc7b4.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/improve-garbage-collection-performance.fdd828e59372c7f49d2851254f234d8efe2fc7b4.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#3fb6a0469a0e7488c40fc03bce8c90780b5246562028handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2338,7 +2338,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [keep-the-ui-thread-responsive.dc0033c895cca11c6539cb418552a2ad9fbe92d3.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/keep-the-ui-thread-responsive.dc0033c895cca11c6539cb418552a2ad9fbe92d3.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#6144b5b60a0092efd1056dd5de166a64733356ec2030handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2351,7 +2351,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [listview-and-gridview-data-optimization.930d2dd4f169293f1f100ae2b8215463bd0ec15f.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/listview-and-gridview-data-optimization.930d2dd4f169293f1f100ae2b8215463bd0ec15f.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#26faa92e98547844af2be1720c458d793ac2f3ac2031handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2364,7 +2364,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [mvvm-performance-tips.e023dadd6b9abbf8ead9a58c048cf563fdf0457f.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/mvvm-performance-tips.e023dadd6b9abbf8ead9a58c048cf563fdf0457f.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#77a162076e14b4726e1fb29673b14be65be37a162032handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2390,7 +2390,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [optimize-file-access.f33d0a1b722c07af1622282a7f77c0d4c4c176ee.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/optimize-file-access.f33d0a1b722c07af1622282a7f77c0d4c4c176ee.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#354a11fefd7164fd6ba5b21ec871ecbe7916ad252034handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2403,7 +2403,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [optimize-gridview-and-listview.19e7310a7160264d74416602b0f81975d63f8ed1.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/optimize-gridview-and-listview.19e7310a7160264d74416602b0f81975d63f8ed1.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#362fbb6b733e855a2126196f12c650bdf2a7665d2035handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2416,7 +2416,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [optimize-suspend-resume.fbcfff66322f69eff9226338d387f94a550c6add.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/optimize-suspend-resume.fbcfff66322f69eff9226338d387f94a550c6add.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#9fee4ab9c55c1243c04c2ed5f0074127515280372036handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2429,7 +2429,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [optimize-xaml-loading.6d1b39e4f5619179bbcb85c4daf8dfdf616efdf3.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/optimize-xaml-loading.6d1b39e4f5619179bbcb85c4daf8dfdf616efdf3.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#c2131b084d8bb989f1f7767f54db697e1cdd8dcf2037handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2442,7 +2442,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [optimize-your-xaml-layout.c97c689b06bd8077d8f469b33f993bb7e82a1ea8.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/optimize-your-xaml-layout.c97c689b06bd8077d8f469b33f993bb7e82a1ea8.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#dbec176310896164ebc99c20aefca4c5b2b29ee92038handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2455,7 +2455,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [performance-and-xaml-ui.e5246d77f6e2ed57dd4c7e003dd8ff0511075591.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/performance-and-xaml-ui.e5246d77f6e2ed57dd4c7e003dd8ff0511075591.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#68f9080cedcc2840fb1e92b81e2fb6bc0b53bee82039handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2468,7 +2468,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [planning-and-measuring-performance.46f773d9165bef76483e23f19791627d2b48f8c9.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/planning-and-measuring-performance.46f773d9165bef76483e23f19791627d2b48f8c9.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#39d57811a07b4c404da4b7e369e3bf5441fa99c02040handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2481,7 +2481,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [test-surface-hub-apps-using-visual-studio.22886920267d53051101082df99a549307b5f8fa.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/test-surface-hub-apps-using-visual-studio.22886920267d53051101082df99a549307b5f8fa.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#655dffb5f1948724c894de291e119be1322f6e772041handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2494,7 +2494,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [test-with-the-emulator.4b51b8e4f7e15661b30d8f267fb7a8330b45ae3b.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/test-with-the-emulator.4b51b8e4f7e15661b30d8f267fb7a8330b45ae3b.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#c53bda2329cd984e3a03d4a166e7353097e62cef2042handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2507,7 +2507,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [tools-for-profiling-and-performance.bcfd5494bc17ab2ac8612e5434cdc737f2a45781.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/tools-for-profiling-and-performance.bcfd5494bc17ab2ac8612e5434cdc737f2a45781.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#f7f9821be7d1423b2f89367bd20c09981eca24eb2044handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2533,7 +2533,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [windows-app-certification-kit.4ce6b63e7179d1fc1af8d23ed6761f9cf1fcdbcb.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/windows-app-certification-kit.4ce6b63e7179d1fc1af8d23ed6761f9cf1fcdbcb.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#16e116c2a92a6ad751b0e4fe58fc7b41de0455cb2047handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2546,7 +2546,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [windows-app-certification-kit-tests.7e5543d84500f12274c89cafd5f8ef49e29cb2a8.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/windows-app-certification-kit-tests.7e5543d84500f12274c89cafd5f8ef49e29cb2a8.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#816b147c91a340505348aa579c8b1540962a1df52046handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2559,7 +2559,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [windows-runtime-components-and-optimizing-interop.163b9b5eb45f5d53051455cc368ccf16da8de7d0.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/windows-runtime-components-and-optimizing-interop.163b9b5eb45f5d53051455cc368ccf16da8de7d0.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#b9300b3feb1e5229951f3e1ebe454b61ba8065ae2048handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2572,7 +2572,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [3d-print-from-app.3c68c96e21ffee31044cc9de50bec735320b7269.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/3d-print-from-app.3c68c96e21ffee31044cc9de50bec735320b7269.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#e68a9c681974152bc0d4dfa58e824f80e77dc51f2049handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2585,7 +2585,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [3d-printing.adf86954646feee9da323de5646d5946f8e3fd72.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/3d-printing.adf86954646feee9da323de5646d5946f8e3fd72.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#a56adc5c7bc3f2d5ec4976e4e5394ff26ea983dc2050handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2598,7 +2598,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [aep-service-class-ids.3ad6227a35f7df860ad74edc56dde08fe39e1694.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/aep-service-class-ids.3ad6227a35f7df860ad74edc56dde08fe39e1694.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#f201293d1288c8a065723ee2c05a7da45e5e95ab2051handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2637,7 +2637,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [build-a-device-selector.2cc31c0569b4300a5d95ed33390193d7798612d9.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/build-a-device-selector.2cc31c0569b4300a5d95ed33390193d7798612d9.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#67bf2795a7d555dc5cd236eeafb07009511fe5d32054handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2650,7 +2650,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [calibrate-sensors.d0ada72b441970501e874f44e347367f561bd51b.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/calibrate-sensors.d0ada72b441970501e874f44e347367f561bd51b.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#4652d20b8dd0d04932dcbda330efa8e9367f53d12055handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2663,7 +2663,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [customize-the-print-preview-ui.c6187ca209f0d3b163a3090c88faa47674d0a0a2.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/customize-the-print-preview-ui.c6187ca209f0d3b163a3090c88faa47674d0a0a2.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#36c1499b51aa5b8b5ab4b0b354197c67dc89801f2080handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2676,7 +2676,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [device-information-properties.e3cde548e83a9b31b0ea72e5c2b652f6f4235eec.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/device-information-properties.e3cde548e83a9b31b0ea72e5c2b652f6f4235eec.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#c3464cac3ecd63e27538cda526a6957343867d9c2081handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2689,7 +2689,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [enable-device-capabilities.4753e0ba2a43d235bcb50e81b2e0c6cbeba53484.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/enable-device-capabilities.4753e0ba2a43d235bcb50e81b2e0c6cbeba53484.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#01ccd8dea8b19a52867ce89ba2eb9a1fb2d2a72f2082handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2715,7 +2715,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [enumerate-devices.9c4c7cefcb78d1f10e70f203d0303dc95dc11158.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/enumerate-devices.9c4c7cefcb78d1f10e70f203d0303dc95dc11158.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#82475031f28015140b8c81014baaa4c844b257ac2085handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2728,7 +2728,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [enumerate-devices-over-a-network.389d6d6a3fd86f8097e453e300c1ae4c6a425044.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/enumerate-devices-over-a-network.389d6d6a3fd86f8097e453e300c1ae4c6a425044.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#9d2d58f2423688f895da1de56eef6448bb42692d2084handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2741,7 +2741,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [epson-esc-pos-with-formatting.f67b1846ac8af304adf2717f49f4350848180436.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/epson-esc-pos-with-formatting.f67b1846ac8af304adf2717f49f4350848180436.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#33231abb1e573d837193daeee21713f09c7d84482086handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2767,7 +2767,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [generate-3mf.ee80cfeb81494e7843cb5a102ffb0c17b6f3e40f.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/generate-3mf.ee80cfeb81494e7843cb5a102ffb0c17b6f3e40f.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#fd85530d27a157bd65a6feec8a20cca8cadfb88f2088handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2780,7 +2780,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [get-battery-info.f1525a3f129f65113a604adf5710e65d67c36e34.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/get-battery-info.f1525a3f129f65113a604adf5710e65d67c36e34.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#716123f7401350748c7eb81a2ca4208a74b6e4ac2089handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2806,7 +2806,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [index.fc3d81ed1a3f85413621f4e68363314faff3fb09.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/index.fc3d81ed1a3f85413621f4e68363314faff3fb09.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#ae6ab11963ed06083e581ce42f39ce483d53e0d62118handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2832,7 +2832,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [out-of-band-pairing.cfc62289b905dcdab61b435e55cffcd598972abd.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/out-of-band-pairing.cfc62289b905dcdab61b435e55cffcd598972abd.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#d8d37b779a0f9a4bec36d73fcd2d35272c587b112120handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2845,7 +2845,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [pair-devices.e3fd6607e7f26599dda6f53e7f01fdccd02a8332.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/pair-devices.e3fd6607e7f26599dda6f53e7f01fdccd02a8332.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#bd068680ada24cfdfb7e5db1733c06412fb6522f2121handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2858,7 +2858,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [print-from-your-app.0fc27cfd90b9c9f4294e468cdc048a1d768c3473.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/print-from-your-app.0fc27cfd90b9c9f4294e468cdc048a1d768c3473.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#3a200b774bc5f4a57f6bca51936007560ddac5c12122handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2871,7 +2871,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [printing-and-scanning.df48b9faca93acf8b99d4cb38e143895475be8fe.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/printing-and-scanning.df48b9faca93acf8b99d4cb38e143895475be8fe.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#81a96c4c519a112551cab83425caf782b13ea9be2123handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2884,7 +2884,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [scan-from-your-app.ed8ec14d431814c90d34fef62f22a95c645acbe1.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/scan-from-your-app.ed8ec14d431814c90d34fef62f22a95c645acbe1.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#fe01ccf5b0b91ffcca7937842cf0152622d59f9e2124handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2910,7 +2910,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [sensor-orientation.da58788b9c9ff1436bbe01d838afed1b1c497254.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/sensor-orientation.da58788b9c9ff1436bbe01d838afed1b1c497254.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#3da7957bf9b162f1ac1533ccff90c8764f34890a2126handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2923,7 +2923,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [sensors.3a843dd22a9a73eccbfb59b0717bec5035c94c4a.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/sensors.3a843dd22a9a73eccbfb59b0717bec5035c94c4a.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#716f4d36d6b11621b28694821f0c607eb3a6afb22127handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2936,7 +2936,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [use-the-accelerometer.00515ecbc9df44833fa064f53b35fe018ea10eec.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/use-the-accelerometer.00515ecbc9df44833fa064f53b35fe018ea10eec.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#f1ec749d7bec245632f1998ac5cc94b9bfcad5332128handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2949,7 +2949,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [use-the-compass.1882b41bc1e65c47c2ac287783ac04c933911812.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/use-the-compass.1882b41bc1e65c47c2ac287783ac04c933911812.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#2c2135867586909328b8d1080c413b35243222462129handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2962,7 +2962,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [use-the-gyrometer.9454c977813db33a3c738ba0862021f8cad82167.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/use-the-gyrometer.9454c977813db33a3c738ba0862021f8cad82167.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#ad76837574b8887bceb135db156e2744542259b02130handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2975,7 +2975,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [use-the-inclinometer.2cc0262b3b8ec0a3b5fc00e956792be8fd7d6929.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/use-the-inclinometer.2cc0262b3b8ec0a3b5fc00e956792be8fd7d6929.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#f8b56e0ef13e471d99519256b5a6d124b569102d2131handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -2988,7 +2988,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [use-the-light-sensor.5d53f6ec6d650962978d64ffc5b60470475b8810.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/use-the-light-sensor.5d53f6ec6d650962978d64ffc5b60470475b8810.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#289d50ff4f45147c46bd66c526cf109d8fdf6d322132handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3001,7 +3001,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [use-the-orientation-sensor.8933b360952e357137a95b5a72dbbb525b664797.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/use-the-orientation-sensor.8933b360952e357137a95b5a72dbbb525b664797.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#67c23795be54207c54c1e871dad045e6c0cd7c772133handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3014,7 +3014,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [edp-hub.809f979752a339134e41bb6e576dbcd42ee0762e.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/edp-hub.809f979752a339134e41bb6e576dbcd42ee0762e.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#97bdbce8360fabad63f9fe7e85e5172ccd83f4032135handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3027,7 +3027,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [enterprise-shared-storage.9f2cb23bf38eae776ba549b6885921ce61b8a54c.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/enterprise-shared-storage.9f2cb23bf38eae776ba549b6885921ce61b8a54c.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#6f0e479081c361d69ab0c9e8cf4c531627304d322136handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3040,7 +3040,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [index.de142d6354f8b01275f69cff0f6e3a678b0be895.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/4a10ae00f717c3711cb911d775b04f6f078c1164/ol-handback/Microsoft/windows-apps.ja-jp/master/index.de142d6354f8b01275f69cff0f6e3a678b0be895.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#c2cfcc270d6b1380f065e7ada275c1c60ae05b042141handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3053,7 +3053,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [access-the-sd-card.3d5a671aca7d69a5e5391049e99993f38156acc2.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/access-the-sd-card.3d5a671aca7d69a5e5391049e99993f38156acc2.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#c515d36c76a8363861a72cb58229ff857e1bb2b82142handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3066,7 +3066,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [file-access-permissions.91945535f7ae65936b154a1b5949cd4f7a05f221.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/file-access-permissions.91945535f7ae65936b154a1b5949cd4f7a05f221.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#91f97f1ba245b0cf6cac1cff7971cace5ca3b5a02143handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3079,7 +3079,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [how-to-track-recently-used-files-and-folders.bb5a475f69e9ee53c00884c94e1a5d60030c096f.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/how-to-track-recently-used-files-and-folders.bb5a475f69e9ee53c00884c94e1a5d60030c096f.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#83100d1246dd18324104a63c9cd950e2ff1fce0b2144handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3092,7 +3092,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [index.431969561eb32d95199c680fa87b3b5695d04f8b.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/index.431969561eb32d95199c680fa87b3b5695d04f8b.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#2056a5adee0ce6e65962eeba21fccbfe976c811a2149handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3105,7 +3105,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [protect-your-enterprise-data-with-edp.0a16989a781f4ad444ec6db4473975c962861962.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/protect-your-enterprise-data-with-edp.0a16989a781f4ad444ec6db4473975c962861962.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#2d9b1ec4e39e5c8a100030184ee9287a0d97ea242150handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3118,7 +3118,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [quickstart-accessing-homegroup-content.258ee9ebff52b5b12fefef47162bcdd82e938c68.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/quickstart-accessing-homegroup-content.258ee9ebff52b5b12fefef47162bcdd82e938c68.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#c4853e2ed73f11637b45729bc04b1c089cd1f86e2151handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3131,7 +3131,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [quickstart-determining-availability-of-microsoft-onedrive-files.dd09fbe745c4340f2b68e0c06ff9ab9aaaf740d8.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/quickstart-determining-availability-of-microsoft-onedrive-files.dd09fbe745c4340f2b68e0c06ff9ab9aaaf740d8.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#17893ac17a741f2a6220b1826547c700af0f0f332152handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3144,7 +3144,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [quickstart-getting-file-properties.d50d44a9598e36149d8b58d01fd3074ead786d08.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/quickstart-getting-file-properties.d50d44a9598e36149d8b58d01fd3074ead786d08.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#56b83d2f05189b4cbb5bbc015987a4ffce8d86fd2153handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3157,7 +3157,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [quickstart-listing-files-and-folders.8e017a17f24a62b887486336251317a846ccb099.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/quickstart-listing-files-and-folders.8e017a17f24a62b887486336251317a846ccb099.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#6ecad1bbd3c08dcd7aa1d3b82739931f20fc4ee22154handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3170,7 +3170,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.456abf07716609290d85d95f1289d7ef25751fe4.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.456abf07716609290d85d95f1289d7ef25751fe4.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#332f89f53a55d5783f7497ca5c6cd601dcee52172155handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3183,7 +3183,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [quickstart-reading-and-writing-files.8226c9ae94f2d3f8af610f97340af97397b7b584.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/quickstart-reading-and-writing-files.8226c9ae94f2d3f8af610f97340af97397b7b584.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#067a9fb20c393e6486206a230b882a835264303a2156handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3196,7 +3196,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [quickstart-save-a-file-with-a-picker.176d59ce86e272a2cc319bb793af56a4e1249459.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/quickstart-save-a-file-with-a-picker.176d59ce86e272a2cc319bb793af56a4e1249459.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#68c7fcedbea40541632aa0a7ae65aa77db2062802157handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3209,7 +3209,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [quickstart-using-file-and-folder-pickers.c6c934bf5fac51d6383c450ecec9eb5a9ec5b56e.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/quickstart-using-file-and-folder-pickers.c6c934bf5fac51d6383c450ecec9eb5a9ec5b56e.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#efb0b106c779820b2dee48eff6f09b54ae9ef2c42158handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3222,7 +3222,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [use-edp-to-protect-streams-and-buffers.1daf0b43318d71b099562a386c0f88519af71c77.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/use-edp-to-protect-streams-and-buffers.1daf0b43318d71b099562a386c0f88519af71c77.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#fdde4f7d2ab46b6349273f7c1c9d91cf27aa341a2159handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3235,7 +3235,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [about-the-metro-style-user-interface-and-directx.5b30ca19b12a3bbca7c554d144e5876cac2c1153.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/about-the-metro-style-user-interface-and-directx.5b30ca19b12a3bbca7c554d144e5876cac2c1153.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#a8c8cb8fa8ccec54af4c824d23bc26cb91db7cf72160handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3248,7 +3248,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [adding-audio-to-the-marble-maze-sample.2b5bbbffd9ec7ed93b59eb6d3daa9598b7d4b5d4.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/adding-audio-to-the-marble-maze-sample.2b5bbbffd9ec7ed93b59eb6d3daa9598b7d4b5d4.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#0b2a0cb240431a49ef2bdb82a188f3dcb0294fc52162handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3261,7 +3261,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [adding-input-and-interactivity-to-the-marble-maze-sample.118f60dd0d55f9f3209139a53f722473e669347e.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/adding-input-and-interactivity-to-the-marble-maze-sample.118f60dd0d55f9f3209139a53f722473e669347e.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#563ee292ec7189b0c365ae5ee0d1c41fd6fd1a092163handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3274,7 +3274,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [adding-visual-content-to-the-marble-maze-sample.c7349a6b4b7e965bce879fdc65b386e44458d5b7.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/adding-visual-content-to-the-marble-maze-sample.c7349a6b4b7e965bce879fdc65b386e44458d5b7.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#16eb493595bbac4f15ed0e755258104693dfba052164handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3287,7 +3287,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [additional-directx-game-programming-resources.b8ab104bb13433218873113025e095029cdf5646.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/additional-directx-game-programming-resources.b8ab104bb13433218873113025e095029cdf5646.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#598d5d1afffd394b66aa7af23f22e7a13af482082165handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3300,7 +3300,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [an-introduction-to-3d-graphics-with-directx.1e13c560df4eba2c01f4dc75deec68e4d7a5c2ca.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/an-introduction-to-3d-graphics-with-directx.1e13c560df4eba2c01f4dc75deec68e4d7a5c2ca.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#8f27c5060ffdc566c596168e54d51730c349d4012166handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3313,7 +3313,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [applying-textures-to-primitives.e4056528eba3f2ff8ea808c4d34cc3d58a402573.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/applying-textures-to-primitives.e4056528eba3f2ff8ea808c4d34cc3d58a402573.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#56e8bf524537526d639f4d732ab228f3c0ea75da2167handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3326,7 +3326,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [asynchronous-programming-directx-and-cpp.ea2716c8974123cbe98d7c0953d4ff60ebf5dc43.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/asynchronous-programming-directx-and-cpp.ea2716c8974123cbe98d7c0953d4ff60ebf5dc43.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#67a75e9d1324e7ac50e0575bfd7bda870a87efb22168handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3339,7 +3339,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [change-your-shader-loading-code.426d25da8dd3de887f20c8e7f6e7a88cffa7c579.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/change-your-shader-loading-code.426d25da8dd3de887f20c8e7f6e7a88cffa7c579.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#bc13df5e7f2648897be31b5cda634d23ffae8b6b2169handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3352,7 +3352,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [compare-opengl-es-2-0-api-design-to-directx.dacc90867cd9fbff685cf4d4da3babab7aa63944.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/compare-opengl-es-2-0-api-design-to-directx.dacc90867cd9fbff685cf4d4da3babab7aa63944.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#804faad3db94bda9d1d67ad899a6ba048a4bfd262171handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3365,7 +3365,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [complete-code-for-basicloader.b431c17461caa01eb7fa3a393f16bb2b82ba7b5d.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/complete-code-for-basicloader.b431c17461caa01eb7fa3a393f16bb2b82ba7b5d.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#355e5a65a16e5e2df9bb039383f68dda16ff23a22172handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3378,7 +3378,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [complete-code-for-basicreaderwriter.c122f005d5d3802e3fee448b9be5d4e7822f0345.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/complete-code-for-basicreaderwriter.c122f005d5d3802e3fee448b9be5d4e7822f0345.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#46762d7b7234be9ff7b4c288a09162d4f942a7072173handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3391,7 +3391,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [complete-code-for-ddstextureloader.2f4f1fa5687e89862d92c4a50f87c16b63d6fd6a.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/complete-code-for-ddstextureloader.2f4f1fa5687e89862d92c4a50f87c16b63d6fd6a.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#9a842c773ce16e1093a158426b89caf239858f052174handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3404,7 +3404,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [create-a-basic-mesh.1c01548c800464c76491cecea7d4617214b428f5.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/create-a-basic-mesh.1c01548c800464c76491cecea7d4617214b428f5.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#c082456d5eb0cf1c5c697a6af5bc1d4de1f5ada22175handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3417,7 +3417,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [create-depth-buffer-resource--view--and-sampler-state.37bf792d6c135fd452f73068438efdfb9c1f56e7.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/create-depth-buffer-resource--view--and-sampler-state.37bf792d6c135fd452f73068438efdfb9c1f56e7.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#f0aedb99832ecd10da547cf73a074070008a43442176handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3430,7 +3430,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [creating-shaders-and-drawing-primitives.4be23b03d00aeea5ebfa8751c0cb85ccfaf6be60.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/creating-shaders-and-drawing-primitives.4be23b03d00aeea5ebfa8751c0cb85ccfaf6be60.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#15b5f83b45b928baaa484c10dc6e7bfe9c27a9242177handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3443,7 +3443,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [developing-marble-maze-a-windows-store-game-in-cpp-and-directx.ddbc79ee4a3094a99b03a5b1b90e8c81c2fb8e8b.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/developing-marble-maze-a-windows-store-game-in-cpp-and-directx.ddbc79ee4a3094a99b03a5b1b90e8c81c2fb8e8b.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#c74a455f84618cb57147c8f0c9baf343b41b02be2178handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3456,7 +3456,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [directx-and-xaml-interop.b0eb8efed053e1dcc3f3ee7effb8a1d6f30b455e.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/directx-and-xaml-interop.b0eb8efed053e1dcc3f3ee7effb8a1d6f30b455e.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#97e694ae2fb8af30a35aa9ebdb714db50a506e6c2179handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3469,7 +3469,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [directx-porting-faq.d18e5d8f3b5ac212694229f8ea3d1f89ae7c292e.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/directx-porting-faq.d18e5d8f3b5ac212694229f8ea3d1f89ae7c292e.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#dc98f15d80fb70fb6e106555659d699c41fbfa0b2180handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3482,7 +3482,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [draw-to-the-screen.c48cce10e5f7315b0dbea951098a0f7b581710c4.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/draw-to-the-screen.c48cce10e5f7315b0dbea951098a0f7b581710c4.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#1b7431c20e25173a0aa3f8d6ee0d407be869d60a2181handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3507,7 +3507,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [feature-mapping.92e103d1fd32587b400b67b5f0664eb09edaa638.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/feature-mapping.92e103d1fd32587b400b67b5f0664eb09edaa638.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#3a9e9c32ed2d892674592f32d0f067fed668d9d12183handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3520,7 +3520,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [game-development-platform-guide.6cb10f2ab62012e5c3d288612ea0d81b6f521622.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/game-development-platform-guide.6cb10f2ab62012e5c3d288612ea0d81b6f521622.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#3c7807d0b46a32bfe90c79b7eee3111039ca94ab2184handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3533,7 +3533,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [glsl-to-hlsl-reference.373f393e9f588b4fa6bda3e1de77a13273eea9a4.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/glsl-to-hlsl-reference.373f393e9f588b4fa6bda3e1de77a13273eea9a4.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#02a3ba1768b6fa7b09b6c9f637a72d88c0cef6042185handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3546,7 +3546,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [handling-device-lost-scenarios.8f9af80df9b93fbbe49916bd6b2c3092e16d01b5.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/handling-device-lost-scenarios.8f9af80df9b93fbbe49916bd6b2c3092e16d01b5.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#8d522a309386b06f97bc63b9eead1ca4cecf165c2186handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3559,7 +3559,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [how-to-activate-an-app-directx-and-cpp.8957ce9a95a2b59613583434350333da69e90c8b.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/how-to-activate-an-app-directx-and-cpp.8957ce9a95a2b59613583434350333da69e90c8b.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#14859d03c7af45a17772c76f8c79b3c1bc56272c2187handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3572,7 +3572,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [how-to-resume-an-app-directx-and-cpp.13b59365d7659e64ad86b0bb09a4426773350ecb.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/how-to-resume-an-app-directx-and-cpp.13b59365d7659e64ad86b0bb09a4426773350ecb.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#d5383da7332c80d4337f0e0b3eef0a6851fcd5272188handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3585,7 +3585,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [how-to-suspend-an-app-directx-and-cpp.aec0994ce57a2b97e1e8d5342ee9daf7e10e605a.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/how-to-suspend-an-app-directx-and-cpp.aec0994ce57a2b97e1e8d5342ee9daf7e10e605a.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#38e03a4a6312c5a0521c7263944897260624aa382189handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3598,7 +3598,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [implementing-depth-buffers-for-shadow-mapping.c62cea61cf31bae11bfd3140c323e4e2f8789972.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/implementing-depth-buffers-for-shadow-mapping.c62cea61cf31bae11bfd3140c323e4e2f8789972.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#4bb1f5c71d83b2dc3271b5b2ceaa9a1156b000042216handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3611,7 +3611,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [launching-and-resuming-apps-directx-and-cpp.984290b08b57a05f42b9991c2d45caaf54fc556d.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/launching-and-resuming-apps-directx-and-cpp.984290b08b57a05f42b9991c2d45caaf54fc556d.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#cc9468e278d651729740147cb21c70d53b43800f2218handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3624,7 +3624,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [load-a-game-asset.ccf3bbd77e1c42a67e7d542ffc4861b98768818a.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/load-a-game-asset.ccf3bbd77e1c42a67e7d542ffc4861b98768818a.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#fd4d2162e9a0007df34b465f570820843b326d722219handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3637,7 +3637,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [map-concepts-and-infrastructure.f056a157e43f2ea14b7899a160a8411cb681f693.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/map-concepts-and-infrastructure.f056a157e43f2ea14b7899a160a8411cb681f693.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#a058c5f669704695cc3a2ae5385feccbf6cb4bc32220handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3650,7 +3650,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [marble-maze-application-structure.0502d6b2d7ac920f7528db90468417425870e098.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/marble-maze-application-structure.0502d6b2d7ac920f7528db90468417425870e098.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#e9cc290fa77471f315daf7f29f605412d2ec45cc2221handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3663,7 +3663,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [marble-maze-sample-fundamentals.daaef2f8754d2f4de30c1f369b3c2d67983a7589.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/marble-maze-sample-fundamentals.daaef2f8754d2f4de30c1f369b3c2d67983a7589.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#5a9df995078763df73542a4101e73e147517b1eb2222handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3676,7 +3676,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [moving-from-egl-to-dxgi.adfddd17f4ea926cdcc9b9e4ae5506e97501e1cd.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/moving-from-egl-to-dxgi.adfddd17f4ea926cdcc9b9e4ae5506e97501e1cd.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#461983b646148c21aba7da2adb703510d95b03432223handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3689,7 +3689,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [multisampling--multi-sample-anti-aliasing--in-windows-store-apps.68e5db00a4d30b9b6d469c08d0d24e5588af210e.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/multisampling--multi-sample-anti-aliasing--in-windows-store-apps.68e5db00a4d30b9b6d469c08d0d24e5588af210e.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#7b240de9ab3c7b53877d38eb9097dde25b2a40be2224handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3702,7 +3702,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [multisampling--scaling--and-overlay-swap-chains.fa804b0b4acda02a61ba0d6e332bb6f684ce2ac8.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/multisampling--scaling--and-overlay-swap-chains.fa804b0b4acda02a61ba0d6e332bb6f684ce2ac8.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#3380c5156072a9853261ec6b706a612b42e7ba102225handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3715,7 +3715,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [opengl-es-2-0-to-directx-11-1-reference.2180bdd88eb01667a210044e632ca707d87f59c4.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/opengl-es-2-0-to-directx-11-1-reference.2180bdd88eb01667a210044e632ca707d87f59c4.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#ad6da83773bf5b791f4b2921b8ea55345aae999b2226handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3728,7 +3728,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [optimize-performance-for-windows-store-direct3d-11-apps-with-coredispatcher.58d0d05e53aeeb0f40a97e2f00adfed3356f99ef.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/optimize-performance-for-windows-store-direct3d-11-apps-with-coredispatcher.58d0d05e53aeeb0f40a97e2f00adfed3356f99ef.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#19bcf043f3fc8c729f5f9fbbeee237bd1749443d2227handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3741,7 +3741,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [package-your-windows-store-directx-game.32a4d0ec100533a9b610c2ae9a6d192686e4c1d8.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/package-your-windows-store-directx-game.32a4d0ec100533a9b610c2ae9a6d192686e4c1d8.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#14043fffc22849ca8d31f85e1035c38c07f1cdd42228handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3754,7 +3754,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [plan-your-directx-port.a4eca0df1e81d68bf007196d3ad2507770109c09.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/plan-your-directx-port.a4eca0df1e81d68bf007196d3ad2507770109c09.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#929ad82ce057754ee04f1f27537e03520e95157a2229handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3793,7 +3793,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [porting-considerations.2a461f27264a12eaa07d3695bef9db0441332974.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/porting-considerations.2a461f27264a12eaa07d3695bef9db0441332974.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#0f27f9e9219fca10798a09e6f934b72ad7b1b5a82235handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3806,7 +3806,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [porting-guides.6228d615f920b60cb638ef95c8336634c19fbc76.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/porting-guides.6228d615f920b60cb638ef95c8336634c19fbc76.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#0cf7f4e6679d362691cea8ccbd45786176715cad2236handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3819,7 +3819,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [porting-uniforms-and-attributes.f230565dff22ac62f9c58e8e02d2ac71126b4015.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/porting-uniforms-and-attributes.f230565dff22ac62f9c58e8e02d2ac71126b4015.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#a588ba010ddf21a07d493774cff7f6ab5dbfdf472237handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3832,7 +3832,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [porting-your-directx-9-game-to-windows-store.379cd58f4e2797dfbc169de303e1e2a92eb0a167.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/porting-your-directx-9-game-to-windows-store.379cd58f4e2797dfbc169de303e1e2a92eb0a167.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#1cb77db78fe368c567990c9521122b42ef10ec652238handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3845,7 +3845,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [port-the-glsl.4e1b24f1cda917f89bbd5720c263757724a98d2d.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/port-the-glsl.4e1b24f1cda917f89bbd5720c263757724a98d2d.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#d1d203fa74bd80fe26401e64d4e15bb11e5c10502232handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3858,7 +3858,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [port-the-shader-config.29046fbfc39941f5989e074a72aafb0b84472003.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/port-the-shader-config.29046fbfc39941f5989e074a72aafb0b84472003.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#17d66e217e40eca0653078820746746eb23185e12233handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3871,7 +3871,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [port-the-vertex-buffers-and-data-config.9d47c755c80eb746d428dc52d8d476316cae5752.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/port-the-vertex-buffers-and-data-config.9d47c755c80eb746d428dc52d8d476316cae5752.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#9692b33303099f9d1193b93ab458a19a5d95abe32234handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3884,7 +3884,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [prepare-your-dev-environment-for-windows-store-directx-game-development.750b63e8ce1653e29676368f58ac40aa1651ff3a.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/prepare-your-dev-environment-for-windows-store-directx-game-development.750b63e8ce1653e29676368f58ac40aa1651ff3a.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#b7b4cba0c88a914c3d0da4cf79adb51bcad2307f2239handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3897,7 +3897,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [reduce-latency-with-dxgi-1-3-swap-chains.18585808e34f27c3be0bdb00d4901a48c500a615.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/reduce-latency-with-dxgi-1-3-swap-chains.18585808e34f27c3be0bdb00d4901a48c500a615.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#174e2918d54a2b03124752d009f43f0cb0c800ca2240handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3910,7 +3910,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [render-the-scene-with-depth-testing.d44fdf38297e8d78dfbd6679569c6b665634cea7.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/render-the-scene-with-depth-testing.d44fdf38297e8d78dfbd6679569c6b665634cea7.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#2bac8e8337a10a8411b02eeed53d772dbb5abad62241handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3923,7 +3923,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [render-the-shadow-map-to-the-depth-buffer.8158899bdae53d035155670128930bdd25478e18.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/render-the-shadow-map-to-the-depth-buffer.8158899bdae53d035155670128930bdd25478e18.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#644e2084baa750965a5283208fde1cea24ecfdea2242handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3936,7 +3936,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [setting-up-directx-resources.612041e3f9e9f32666d536347035cb2b56d55e26.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/setting-up-directx-resources.612041e3f9e9f32666d536347035cb2b56d55e26.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#f60d7c5b526fcdea8552256a6ebe4b92d57362642244handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3949,7 +3949,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [set-up-visual-studio-for-game-development.adbf4101159b01fe52868b1d91ce27385233fa3f.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/set-up-visual-studio-for-game-development.adbf4101159b01fe52868b1d91ce27385233fa3f.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#2202474f24e93aab32ec9f4e85e765616cbae0562243handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3962,7 +3962,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.c318817575f91422f39184ba8cd76bf90e3f84a9.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.c318817575f91422f39184ba8cd76bf90e3f84a9.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#f0e25e43633d895673d640f139af338f6f0713f22245handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3975,7 +3975,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [simple-port-from-direct3d-9-to-11-1-part-2--rendering.d3ce209c7c729fe9f7e1569d37ffebb0ce265cb3.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/simple-port-from-direct3d-9-to-11-1-part-2--rendering.d3ce209c7c729fe9f7e1569d37ffebb0ce265cb3.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#5cfdce2a62f6b5761ebf820418762a307dd051bb2246handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -3988,7 +3988,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.297c896f29b3ce14fc184d288d08f88de342a446.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.297c896f29b3ce14fc184d288d08f88de342a446.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#3c2369a2fdc48aed14f7ad363df8792e0ed5d7952247handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4001,7 +4001,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [supporting-screen-rotation-directx-and-cpp.3816d9dd00afb23179d34cdac45c17cb6547be84.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/supporting-screen-rotation-directx-and-cpp.3816d9dd00afb23179d34cdac45c17cb6547be84.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#8da32494e0bb0bd48d485c946df1c9a5baec7fbe2248handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4014,7 +4014,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [target-a-range-of-hardware.c0f9c52351a9e044a4b333df4cada1262339d2f3.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/target-a-range-of-hardware.c0f9c52351a9e044a4b333df4cada1262339d2f3.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#0cdc31f07560e7f1747806d1436bccbc1e50f8b92249handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4027,7 +4027,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [tutorial--adding-a-user-interface.6f5f3418ecb90986c2c5f51e47f482e96470eb6c.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/tutorial--adding-a-user-interface.6f5f3418ecb90986c2c5f51e47f482e96470eb6c.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#d7af6683ab2def1af62e73be008e9189190cde952250handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4040,7 +4040,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [tutorial--adding-controls.ecbdb2a6622df2fd94551208545d8d9d986fd784.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/tutorial--adding-controls.ecbdb2a6622df2fd94551208545d8d9d986fd784.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#b3297ffd92d9a61d73c574def7e8101dc9196a692251handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4053,7 +4053,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [tutorial--adding-move-look-controls-to-your-directx-game.0c1971be6d010ce0ab7092bea7ad921153148862.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/tutorial--adding-move-look-controls-to-your-directx-game.0c1971be6d010ce0ab7092bea7ad921153148862.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#7adbfdb77af6992be9448969f635bdebac58344b2252handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4066,7 +4066,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [tutorial--adding-sound.a53ff11fabaa87d456108a38425f27b3a487df70.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/tutorial--adding-sound.a53ff11fabaa87d456108a38425f27b3a487df70.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#f9e536e71dd7b5c94d587a8bb66df3b41cc9a4ae2253handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4079,7 +4079,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [tutorial--adding-touch-controls-to-your-directx-game.b905bd307f6aa014c90ab7c72f5b9584384e3909.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/tutorial--adding-touch-controls-to-your-directx-game.b905bd307f6aa014c90ab7c72f5b9584384e3909.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#a2460ba2ffcf191fe87132180b2cca7519e871412254handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4092,7 +4092,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [tutorial--assembling-the-rendering-pipeline.7ab4dfb132ca858c8bbc686ec82cbc851b55b4fa.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/tutorial--assembling-the-rendering-pipeline.7ab4dfb132ca858c8bbc686ec82cbc851b55b4fa.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#5eb6ea7ad1a30f020c155007396383b88d10c0a82255handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4105,7 +4105,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [tutorial--building-the-games-metro-style-app-framework.b81ff65d00b1c6356386084d70d5c17cd4688754.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/tutorial--building-the-games-metro-style-app-framework.b81ff65d00b1c6356386084d70d5c17cd4688754.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#2ebc7bca06454f78ab375058e49f012cacb00cc82256handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4118,7 +4118,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [tutorial--create-your-first-metro-style-directx-game.212eefa220f0924cef5c82954c28b7234ea8f617.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/tutorial--create-your-first-metro-style-directx-game.212eefa220f0924cef5c82954c28b7234ea8f617.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#9f62e2a42dc0a1b70e37194cd5755e51699ddc382257handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4131,7 +4131,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [tutorial--defining-the-main-game-loop.7e4b2843440863172bd32ca37808819df19c2b1d.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/tutorial--defining-the-main-game-loop.7e4b2843440863172bd32ca37808819df19c2b1d.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#66e40c150b5eb4f57c9cddfaf472c56601b3fa0b2258handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4144,7 +4144,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [tutorial-resources.d087cd5684309a45ff77f42c99341a24184197f3.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/tutorial-resources.d087cd5684309a45ff77f42c99341a24184197f3.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#02b8681c45c84e1cdd5b97dfc717a68015df12522260handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4157,7 +4157,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [tutorial--setting-up-the-games-infrastructure.170ff2ef53d3a976d2f94094a846e73180cbe4b8.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/tutorial--setting-up-the-games-infrastructure.170ff2ef53d3a976d2f94094a846e73180cbe4b8.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#d4d7864f9689df0919b53ee70b8e18f8d812b2b02259handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4170,7 +4170,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [understand-direct3d-11-1-concepts.9bd75fda0115d54adc1a764df27a3dc32c3354b6.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/understand-direct3d-11-1-concepts.9bd75fda0115d54adc1a764df27a3dc32c3354b6.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#8d63aebaf656b62481675eebf7c0bf9ea51784a82261handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4183,7 +4183,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [user-interface.52f4b3fa86085e9883b6b650a81ff67f50dbd093.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/user-interface.52f4b3fa86085e9883b6b650a81ff67f50dbd093.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#b7d01fda0bc8dbafebb7485ec01acb5c7431a8152263handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4196,7 +4196,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.32991bbdf51ecc4e0a37f7d65fafe1f5448ca610.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.32991bbdf51ecc4e0a37f7d65fafe1f5448ca610.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#f266cb50893fd37162f21be169d6daf6e37c6bb92262handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4209,7 +4209,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [using-depth-and-effects-on-primitives.cdf17f58b81f29ec368300a2838059c57d82db03.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/using-depth-and-effects-on-primitives.cdf17f58b81f29ec368300a2838059c57d82db03.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#47547a226a69b2631313972ed67b39b1f29de4022264handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4222,7 +4222,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [walkthrough-sample-ports-from-opengl-es-2-0.e3210586adcb7dedb3c577506ecd90b3fd9f89b2.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/walkthrough-sample-ports-from-opengl-es-2-0.e3210586adcb7dedb3c577506ecd90b3fd9f89b2.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#c7fcbcdfc1b0776ac53728fc4f2dc58b6887ab562266handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4235,7 +4235,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [walkthrough--simple-port-from-direct3d-9-to-11-1.2f646e01d0929d0a6e0a1f20964c3225228f6610.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/walkthrough--simple-port-from-direct3d-9-to-11-1.2f646e01d0929d0a6e0a1f20964c3225228f6610.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#27c6f82e97e9eb24dedcc5d83a18e6aba69611942265handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4248,7 +4248,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [working-with-2d-graphics-in-your-directx-game.385d1b76d039e561eeae2c0dec1c9bd7878c4b49.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/working-with-2d-graphics-in-your-directx-game.385d1b76d039e561eeae2c0dec1c9bd7878c4b49.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#50782c5923f9c811f5d8e91aa9aee897876e6c242268handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4261,7 +4261,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [working-with-audio-in-your-directx-game.e556b77a6a20cc9e15f0072bc2ec35abd2781c57.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/working-with-audio-in-your-directx-game.e556b77a6a20cc9e15f0072bc2ec35abd2781c57.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#98896d4966ee2adb3bf494dcba22656fc8bb64142269handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4274,7 +4274,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [work-with-networking-in-your-directx-game.6503f26f5fe6ff23aa8836c749b168ca76941ad9.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/work-with-networking-in-your-directx-game.6503f26f5fe6ff23aa8836c749b168ca76941ad9.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#63a40f5853740d1053449e1b1839f5b0232ce28e2267handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4287,7 +4287,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [create-a-basic-windows-10-app-in-cpp.d466310b61c18b0f5f397440292f7327c0926725.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/create-a-basic-windows-10-app-in-cpp.d466310b61c18b0f5f397440292f7327c0926725.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#e39752f9f13eaf93d23412252483093e704b16682270handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4300,7 +4300,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [create-a-hello-world-app-js-universal.2d56a0012bf9cca72899334ef9aa7ec422ac9663.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/create-a-hello-world-app-js-universal.2d56a0012bf9cca72899334ef9aa7ec422ac9663.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#5f534169117da94cb2249c897603f567c007299b2271handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4313,7 +4313,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [create-a-hello-world-app-xaml-universal.0ff2b4f45789a6f10860e075fbcf61c857c43034.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/create-a-hello-world-app-xaml-universal.0ff2b4f45789a6f10860e075fbcf61c857c43034.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#0d6b6421b4f5ebc01c865e80db96d1158b9bd8252272handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4326,7 +4326,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [enable-your-device-for-development.e920a727ccc1fc364c6c44e8138c1a619fa0b67d.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/enable-your-device-for-development.e920a727ccc1fc364c6c44e8138c1a619fa0b67d.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#4c890d6202a3151e8fc0cf03b3ff33b98cd6a8632273handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4339,7 +4339,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [get-set-up.89608c408c7faac67f7e4228f8651faa15edffae.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/get-set-up.89608c408c7faac67f7e4228f8651faa15edffae.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#8c5dfb692d647a25eea13036cd320366f3c5a09c2274handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4352,7 +4352,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#cb77a32f99bc6e27cfe87af16d6cd4e08855d7b62629handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4365,7 +4365,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [plan-your-app.96433e3c23cb6ab47cd852804f47526706d28e0c.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/plan-your-app.96433e3c23cb6ab47cd852804f47526706d28e0c.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#9a3058aabdc6f710149a14d8f125b66efd0760072630handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4378,7 +4378,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [sign-up.fefeb297a3ebea5ac1ee0627e1761cd0abb00f62.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/sign-up.fefeb297a3ebea5ac1ee0627e1761cd0abb00f62.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#53d23b3f8502e1f182c728b9f787fbbc4b694d422631handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4404,7 +4404,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [whats-a-uwp.2407afdd4d00b61c6f3405995b6e0e11a0507a9d.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/whats-a-uwp.2407afdd4d00b61c6f3405995b6e0e11a0507a9d.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#f02851d848a82af7104a6038c5d8850d5362c8322633handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4417,7 +4417,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [your-first-app.19ca9c0c35670e18229e0b580d71fcd038654594.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/your-first-app.19ca9c0c35670e18229e0b580d71fcd038654594.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#e2ed4b9587927a2a6a765b47ff69b9cedfd9b92d2634handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4430,7 +4430,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [adjust-layout-and-fonts--and-support-rtl.609ba81a9a208b2f6fbe4d568a234611c655674e.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/adjust-layout-and-fonts--and-support-rtl.609ba81a9a208b2f6fbe4d568a234611c655674e.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#989d810724c925a5bcbebf5f7fb301636905fff92635handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4443,7 +4443,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [globalizing-portal.874f3fe148b59fd6b1d10a5c8502ac6f6b00bd81.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/globalizing-portal.874f3fe148b59fd6b1d10a5c8502ac6f6b00bd81.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#1fc82ff462a5c0af6b10e7dc8455adc215558b4e2636handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4456,7 +4456,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [guidelines-and-checklist-for-globalizing-your-app.4996c64b61a2aa2f5441521d37efb1713fcd5ca1.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/guidelines-and-checklist-for-globalizing-your-app.4996c64b61a2aa2f5441521d37efb1713fcd5ca1.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#bdbe6b3e319aa90a78660c664f1603bac93399ca2637handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4469,7 +4469,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [manage-language-and-region.80962d85510a5d98c6e516a03aa94d9e143eddce.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/manage-language-and-region.80962d85510a5d98c6e516a03aa94d9e143eddce.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#294f087fffeefda67ddacd09636915144bf18ff42641handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4482,7 +4482,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [prepare-your-app-for-localization.e740fdad1d79cfb1f480208491e780d3edc75427.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/prepare-your-app-for-localization.e740fdad1d79cfb1f480208491e780d3edc75427.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#e52a5322767677859e32ccbecf4951745c49f36f2642handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4495,7 +4495,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [put-ui-strings-into-resources.89bd8b7b1f026196161eb9af87410dcedb962a0d.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/put-ui-strings-into-resources.89bd8b7b1f026196161eb9af87410dcedb962a0d.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#b44d9235e34b8d4c75f663029d1dde3f87bd0eb72643handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4508,7 +4508,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [use-global-ready-formats.6531e2d9b18b1925558c73b7c79c23f77cbb862a.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/use-global-ready-formats.6531e2d9b18b1925558c73b7c79c23f77cbb862a.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#77b5e7bd412936dd5d8c4bc252771631d6b884cf2644handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4521,7 +4521,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [use-patterns-to-format-dates-and-times.92c4045b4b0a65721301455eaa6a0dde5a42bd99.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/use-patterns-to-format-dates-and-times.92c4045b4b0a65721301455eaa6a0dde5a42bd99.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#17cd1619a13adced643b4c8983dbf874bebaa7402645handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4534,7 +4534,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [3-d-perspective-effects.ad577c08ad36c377dfcc5d116e94ac1f9b0fc395.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/3-d-perspective-effects.ad577c08ad36c377dfcc5d116e94ac1f9b0fc395.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#4141d23c5102df4970ef7c4fb3659bf3ba561ccf2646handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4559,7 +4559,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [composition-brushes.745658206c0e73b3f9e610729c06b50a01ddfce4.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/composition-brushes.745658206c0e73b3f9e610729c06b50a01ddfce4.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#7f466607e48bb0d553892e09c6616f0dd0539d8e2649handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4572,7 +4572,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [composition-effects.edede44d930f977b680649c1d498ceca2c092923.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/composition-effects.edede44d930f977b680649c1d498ceca2c092923.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#10c3b6d0f56d0e8670cc202ac8d8a3f7538eb5a72650handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4585,7 +4585,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [composition-native-interop.32233771dfa81909d413c0e4eaea2a3cd23faa37.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/composition-native-interop.32233771dfa81909d413c0e4eaea2a3cd23faa37.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#b5308c8023990996a93277dd1bcfb8298c0bbf4f2651handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4598,7 +4598,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [index.f06140b7412f92706eab63b2b9567e65268c3d9d.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/index.f06140b7412f92706eab63b2b9567e65268c3d9d.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#d46498e6e584d85cfce0be237878aff68dee9c502680handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4611,7 +4611,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [key-frame-and-easing-function-animations.ee692c3bbe40d1610b1708fdf7d29cdf6aa81401.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/key-frame-and-easing-function-animations.ee692c3bbe40d1610b1708fdf7d29cdf6aa81401.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#f2c6d6c0e1d11fee40440cae06d68907313f62dc2681handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4624,7 +4624,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [visual-layer.a2f2c9e67ecfb717da6cd6d4151969c5de739247.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/visual-layer.a2f2c9e67ecfb717da6cd6d4151969c5de739247.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#164c01737d27451adcb685f9cda544cc00634af42685handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4637,7 +4637,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [home.c2e75b5d0f1c7d5d476b0f47240addd323d5103c.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/4a10ae00f717c3711cb911d775b04f6f078c1164/ol-handback/Microsoft/windows-apps.ja-jp/master/home.c2e75b5d0f1c7d5d476b0f47240addd323d5103c.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#5d0cca643c26458165c388215d34eec76dfe8cf62686handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4714,7 +4714,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [index.fbb2a0e1c7a82fa0a97bb1e07bc6c801fcd891f4.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/4a10ae00f717c3711cb911d775b04f6f078c1164/ol-handback/Microsoft/windows-apps.ja-jp/master/index.fbb2a0e1c7a82fa0a97bb1e07bc6c801fcd891f4.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#97e016047c864026fe0c72e4b7cb819f0fc807482697handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4727,7 +4727,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [device-primer.e0210854b543f7c3c8aa3ee6e2ac53f36ad21769.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/device-primer.e0210854b543f7c3c8aa3ee6e2ac53f36ad21769.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#bb23e8cc85544d4b5f0717b0c2d2ebad1447cb8b2705handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4740,7 +4740,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [gamepad-and-remote-interactions.a0bafcc8d65c35c7abb6ed4d40ae814e0eb6e949.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/gamepad-and-remote-interactions.a0bafcc8d65c35c7abb6ed4d40ae814e0eb6e949.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#463da46dc1f4e2ed5125a26b058075e7fe1faafd2708handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4753,7 +4753,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [guidelines-for-cross-slide.937faf14a3737966c3cbd6e0b55f743193a58a16.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/guidelines-for-cross-slide.937faf14a3737966c3cbd6e0b55f743193a58a16.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#47a16acc4025541b1cc19582c2c7d59755fd25942709handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4766,7 +4766,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [guidelines-for-user-interaction.395cdfb430259ebca5bb7b1465d331028054c35f.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/guidelines-for-user-interaction.395cdfb430259ebca5bb7b1465d331028054c35f.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#67b851ce854c803934c2b97dbe7519e2916383a32715handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4792,7 +4792,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [surface-hub.f34743c6fdd658f544b929dc1f546a1ef67e3246.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/surface-hub.f34743c6fdd658f544b929dc1f546a1ef67e3246.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#171d313a668ad4242d2e77b7ba055019d143a1762988handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -4805,7 +4805,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [use-input-scope-to-change-the-touch-keyboard.2c1979e3224aa6536164678fc62f388552fd645b.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/use-input-scope-to-change-the-touch-keyboard.2c1979e3224aa6536164678fc62f388552fd645b.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#02f06ee498b136f811b4b3b8080a9cb0436935042991handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -5247,7 +5247,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [alignment-margin-padding.c99242a43914e11540caebc8c4ed2be69e4db146.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/alignment-margin-padding.c99242a43914e11540caebc8c4ed2be69e4db146.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#86635255fbdae83fb2749e2aea7011a8b989e83f3041handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -5260,7 +5260,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [boxpanel-example-custom-panel.c6816343707c2ace8d4ca2f7dee85ede4dd6628b.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/boxpanel-example-custom-panel.c6816343707c2ace8d4ca2f7dee85ede4dd6628b.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#e03a4c9d2116d779545cb1fb8e87fa86a632bca83046handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -5273,7 +5273,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [commanding-basics.02d933c2b318ea86400f40fabd0802a2e8a2e423.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/commanding-basics.02d933c2b318ea86400f40fabd0802a2e8a2e423.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#be7ff187df9800a8c2c47c4315f3f9b021e265f83047handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -5286,7 +5286,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [content-basics.b66078fdb5ff0589c73728766695e1b9c69a8901.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/content-basics.b66078fdb5ff0589c73728766695e1b9c69a8901.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#c8328150601bf132c28e569c4db21095cb77f88c3048handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -5299,7 +5299,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [custom-panels-overview.423abd174e674623fd68be188279782ddf319cd8.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/custom-panels-overview.423abd174e674623fd68be188279782ddf319cd8.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#8fba13d28f885d89d5b115eebf1a2e75abb8c8903049handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -5312,7 +5312,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [design-and-ui-intro.69590183aeb47276461357ed3cb5d56a7dd874a1.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/design-and-ui-intro.69590183aeb47276461357ed3cb5d56a7dd874a1.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#ec154ec64ba18badb5f81b59e76fc04e539de1a83050handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -5325,7 +5325,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [layout-panels.a4c0dfbf3a81830fae0cd7e9485515246942dd92.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/layout-panels.a4c0dfbf3a81830fae0cd7e9485515246942dd92.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#70bb6e1f01fa89c7a504e0299e89153efc30de1e3289handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -5338,7 +5338,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [layouts-with-xaml.0d71a498eae13a3e3615deaaab7d81147302480d.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/layouts-with-xaml.0d71a498eae13a3e3615deaaab7d81147302480d.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#0cc466ccdc4d214539fb4258f95fda72e08ac9db3290handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -5351,7 +5351,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [navigation-basics.7c4a46b210ca48bfb5649445cc7eeddd5c9ef38c.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/navigation-basics.7c4a46b210ca48bfb5649445cc7eeddd5c9ef38c.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#6926d70c7140b1545a8b5492981d6d0b61af37843291handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -5364,7 +5364,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [navigation-history-and-backwards-navigation.18c6a8c6525734e4fe756b34cb34297e51093e89.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/navigation-history-and-backwards-navigation.18c6a8c6525734e4fe756b34cb34297e51093e89.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#a35b76f04d450aeafcc50c307dc058c52f6aebe43292handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -5377,7 +5377,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [peer-to-peer-navigation-between-two-pages.0300cf8a0fd1a68b83b643544575fdeec289c144.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/peer-to-peer-navigation-between-two-pages.0300cf8a0fd1a68b83b643544575fdeec289c144.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#ec1c0339017fb60ed37f45dfa6f809a5eba6fbb13293handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -5390,7 +5390,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [screen-sizes-and-breakpoints-for-responsive-design.7735c54c4866f17e2c67dfcc642b19cf85485c8a.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/screen-sizes-and-breakpoints-for-responsive-design.7735c54c4866f17e2c67dfcc642b19cf85485c8a.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#153652c9fcc9745bdee087033d65eec2bc860e533294handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -5403,7 +5403,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [show-multiple-views.2d939f4f8c3043c2ce07e4630f0ed1e36ca6d908.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/show-multiple-views.2d939f4f8c3043c2ce07e4630f0ed1e36ca6d908.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#23e999f86fb0552b96cddbd3b9d11803106bf6c23295handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -5468,7 +5468,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [geocoding.3370386a80d026bb676dcac91d69bfd8bffbffcc.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/geocoding.3370386a80d026bb676dcac91d69bfd8bffbffcc.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#caf3ad6fecd6ed90c65f85477643fb42ab4787d33300handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -5481,7 +5481,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [get-location.0207e7bc18a4623b2c1141391e7792506f51e45b.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/get-location.0207e7bc18a4623b2c1141391e7792506f51e45b.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#d35bf3ef13e2b36dfed6613a00f65d19b90134643301handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -5507,7 +5507,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [guidelines-for-geofencing.34e1970cfcb024f200e86ae0b1f0f9c518f79830.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/guidelines-for-geofencing.34e1970cfcb024f200e86ae0b1f0f9c518f79830.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#d631885eced58d360d3e0442cbb49ede7b9b86c33303handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -5559,7 +5559,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [set-up-a-geofence.cc5b7319d8a5cc8923e8941683f7cdfc10c09f0e.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/set-up-a-geofence.cc5b7319d8a5cc8923e8941683f7cdfc10c09f0e.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#e161e478b1b306f5d8d77b7649aeecd80e21b5be3330handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -5585,7 +5585,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [adcontrol-error-handling.f89c48cf624ad1d29625fd2987fe1f3865a50da2.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/adcontrol-error-handling.f89c48cf624ad1d29625fd2987fe1f3865a50da2.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#a335b4b6548e910076b5a984cc6078aa6c18dc323332handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -5598,7 +5598,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [adcontrol-events-in-c.59a441e75bb0a9982159971a9a7ca2632846a268.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/adcontrol-events-in-c.59a441e75bb0a9982159971a9a7ca2632846a268.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#cc5dfbfacefb4be32153f3266878be41a3b923f83333handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -5611,7 +5611,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [adcontrol-events-in-javascript.21290430b15aa9f23b1974bb4adb3bc5b6eca150.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/adcontrol-events-in-javascript.21290430b15aa9f23b1974bb4adb3bc5b6eca150.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#5a47915b0dd2792ed50cc5d556b1181ee2c259e13334handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -5624,7 +5624,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [adcontrol-in-html-5-and-javascript.de3b76a82ab817c8c48818e679f9e646303c0409.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/adcontrol-in-html-5-and-javascript.de3b76a82ab817c8c48818e679f9e646303c0409.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#6e96b085132126a2c3e7b0b0b86124aba4cd651e3335handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -5637,7 +5637,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [adcontrol-in-windows-phone-silverlight.0a3b805624318d2a0e02ed82adc6f6da6cdcdb1e.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/adcontrol-in-windows-phone-silverlight.0a3b805624318d2a0e02ed82adc6f6da6cdcdb1e.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#5a12badfb11cfd43c0833522d996da7df73b3d553336handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -5650,7 +5650,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [adcontrol-in-xaml-and--net.67ecc7fcc4ffdfcd2fd957c21d0268dca73f4f40.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/adcontrol-in-xaml-and--net.67ecc7fcc4ffdfcd2fd957c21d0268dca73f4f40.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#d17d8a39f31bfcbf3172b4592e918f0be4a6bf923337handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -5663,7 +5663,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [add-ads-to-apps-with-microsoft-advertising.dab39601f0a58db14fd24274192ccc918456f467.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/add-ads-to-apps-with-microsoft-advertising.dab39601f0a58db14fd24274192ccc918456f467.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#4b8f71249f9358fcc6127b83a7ade10895f5c64e3338handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -5676,7 +5676,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [add-and-use-the-ad-mediator-control.3a0b013d8b7742f4712c5997a37b72442f2c28d2.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/add-and-use-the-ad-mediator-control.3a0b013d8b7742f4712c5997a37b72442f2c28d2.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#a0d73b50207d251c079714265845a816f4ac23da3339handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -5689,7 +5689,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [additional-help.cb699b281b92ea4939fbfdd84cf3ccecd3e70055.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/additional-help.cb699b281b92ea4939fbfdd84cf3ccecd3e70055.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#5229cf7ebb4133052c3e960fe1c81d6edeef8e573340handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -5702,7 +5702,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [code-samples.2cb34f8855abaaca1035b6c4a0fb377a967492cd.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/code-samples.2cb34f8855abaaca1035b6c4a0fb377a967492cd.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#1a7bf9ed90ed2dadf6de7a141fa03972b06ef1443341handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -5715,7 +5715,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [code-your-experiment-in-your-app.ecef6b7f13ebf77fb7057ec2b2c647f02eb5c098.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/code-your-experiment-in-your-app.ecef6b7f13ebf77fb7057ec2b2c647f02eb5c098.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#4e6706624e71c6d448a3d457c27d11c9f6ecc1563342handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -5728,7 +5728,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [create-an-adcontrol-in-javascript.941a971a20af7c9c5da835f14d0edb4c4e25ac63.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/create-an-adcontrol-in-javascript.941a971a20af7c9c5da835f14d0edb4c4e25ac63.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#481f9d785181ca197debdb807bb0b0c7b41686323343handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -5741,7 +5741,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [create-and-run-your-first-experiment-with-a-b-testing.8b39dd5321e7b83486bcfd31970accb68eca1c33.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/create-and-run-your-first-experiment-with-a-b-testing.8b39dd5321e7b83486bcfd31970accb68eca1c33.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#0f889c22b8999408341f4c12387602b344f494393344handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -5754,7 +5754,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [define-your-experiment-in-the-dev-center-dashboard.f8531319c141ba0616b6774b54e9c4c657e45c68.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/define-your-experiment-in-the-dev-center-dashboard.f8531319c141ba0616b6774b54e9c4c657e45c68.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#7462c23de58b44f897a1737d0d54913144b14f753345handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -5767,7 +5767,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [developer-information.fc4dc9b236904411a8095de9ff5d79bcaab5fc56.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/developer-information.fc4dc9b236904411a8095de9ff5d79bcaab5fc56.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#ec3b1d5c33a24da4ad2a4c5c8e4e11c71ece48283346handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -5780,7 +5780,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [developer-walkthroughs.650a0d717c9738613072eae0a19deae5bf1efc2c.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/developer-walkthroughs.650a0d717c9738613072eae0a19deae5bf1efc2c.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#b36b5d5ba747fbb71c988033ddd0cdb4cee0ed8b3347handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -5793,7 +5793,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [display-ads-in-your-app.7a65d6ad9fcc9b8be3d959f4d47f1d74ae47975c.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/display-ads-in-your-app.7a65d6ad9fcc9b8be3d959f4d47f1d74ae47975c.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#c79ba96908cc7b52afefbe44c3f56ce009c87f163348handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -5806,7 +5806,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [display-ads-using-the-microsoft-advertising-libraries.941760fc8c292c01a73d4b137c62b879c70cd373.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/display-ads-using-the-microsoft-advertising-libraries.941760fc8c292c01a73d4b137c62b879c70cd373.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#ab96dac3af382d334c767ad42a563c0dbc67a8f53350handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -5819,7 +5819,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [enable-consumable-in-app-product-purchases.edb01dfe981f7ee2caf08efabd114e3d834bcb8a.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/enable-consumable-in-app-product-purchases.edb01dfe981f7ee2caf08efabd114e3d834bcb8a.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#25f09e043d61f1705f9f0a4fa34114fd06166fa43351handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -5845,7 +5845,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [error-handling-in-javascript-walkthrough.6f0b12b12a1e9078011a0587dd2c04b88ab2e344.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/error-handling-in-javascript-walkthrough.6f0b12b12a1e9078011a0587dd2c04b88ab2e344.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#d26a8efeb253c6c793d8edd21d7452bbf15da2613353handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -5858,7 +5858,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [error-handling-in-xamlc-walkthrough.bfba959a6439d4930d75b495a0bff908dcb26af2.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/error-handling-in-xamlc-walkthrough.bfba959a6439d4930d75b495a0bff908dcb26af2.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#7cb827b4269afb55f0326eec0a0ee25b93119eb03354handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -5871,7 +5871,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [error-handling-with-advertising-libraries.14265145fdb8832fcd59ac344ca87f8dc58a6ccc.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/error-handling-with-advertising-libraries.14265145fdb8832fcd59ac344ca87f8dc58a6ccc.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#5e0c7e6328247e5f686b14b10c80d8aafc13e0e43355handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -5884,7 +5884,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [exclude-or-limit-features-in-a-trial-version-of-your-app.b46a34293bb95068c4598af040920875bf2d25c8.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/exclude-or-limit-features-in-a-trial-version-of-your-app.b46a34293bb95068c4598af040920875bf2d25c8.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#9c38784325f4dc51052f70a819012508f2a0bdbb3356handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -5910,7 +5910,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [get-app-failures.1914b191a789d2a0e67a0205c9c1bb84ccc4bab8.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/get-app-failures.1914b191a789d2a0e67a0205c9c1bb84ccc4bab8.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#3d885322181fa8b932dd248c8c71e7d6d747bb063358handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -5975,7 +5975,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [get-started-with-microsoft-advertising-libraries.8704167140e41e1eeb4a0cb013803196f630550c.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/get-started-with-microsoft-advertising-libraries.8704167140e41e1eeb4a0cb013803196f630550c.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#08168dc15b33d99a044eedd7864848ed7a8589913363handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6001,7 +6001,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [html-and-javascript-troubleshooting-guide.8391d965c9155978d9d36f379996d51334ed035b.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/html-and-javascript-troubleshooting-guide.8391d965c9155978d9d36f379996d51334ed035b.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#af4ea6f3360ea85d1c70ec9b757db65ec23c88af3365handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6014,7 +6014,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [html-properties-example.29fde226ca1b5ffd5ccb300a5b91b814df06139c.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/html-properties-example.29fde226ca1b5ffd5ccb300a5b91b814df06139c.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#53b9afdcdc697e3ed508ef6e5ed5d684bdf5aa693366handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6027,7 +6027,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [important-notice-eula.04fdb9464e2f1d1d572b7ffb7502309634267009.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/important-notice-eula.04fdb9464e2f1d1d572b7ffb7502309634267009.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#89af54f5b8cf52366100b4751ed37ddd7a7bacb73392handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6040,7 +6040,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [index.c1fc2f38380d9502f131cb5ecba670a6a30949ea.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/index.c1fc2f38380d9502f131cb5ecba670a6a30949ea.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#6d5f483b44ae4516f4969431e31f70388a66c5d93393handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6053,7 +6053,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [install-the-microsoft-advertising-libraries.e2b3966eb5bd304c6ce6efe9d2cd79b084c72616.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/install-the-microsoft-advertising-libraries.e2b3966eb5bd304c6ce6efe9d2cd79b084c72616.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#0951818ceaf3d96543f9f97ec6993d08fdaab2b83394handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6066,7 +6066,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [install-the-microsoft-universal-ad-client-sdk.d7e08512bff7aa0fa1dbb0425b4014b3f80ace3c.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/install-the-microsoft-universal-ad-client-sdk.d7e08512bff7aa0fa1dbb0425b4014b3f80ace3c.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#87eb36d7a77bfb6a283a3e668781ee9c99d6947f3395handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6079,7 +6079,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [interstitial-ads.f65c2dbd211201be96d357d5eb3692d1bcc91c0a.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/interstitial-ads.f65c2dbd211201be96d357d5eb3692d1bcc91c0a.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#0f159409bb584aacaf66550efe8d147cd8fddd503398handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6092,7 +6092,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [interstitial-ad-sample-code-in-c.70f7766d94daa8ac655721fd354a27f214602f41.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/interstitial-ad-sample-code-in-c.70f7766d94daa8ac655721fd354a27f214602f41.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#e83730c60eada273aee4f3bca4ff28cf6feccbf83396handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6105,7 +6105,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [interstitial-ad-sample-code-in-javascript.67d4d65d545dde89c37899b180fe4d57421c8f22.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/interstitial-ad-sample-code-in-javascript.67d4d65d545dde89c37899b180fe4d57421c8f22.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#d6a561aaff834cd782118abb72b4770985176bf03397handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6118,7 +6118,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [known-issues-for-the-advertising-libraries.95fb3aae98a2ed5a87fc9750b5095965fabf5cb8.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/known-issues-for-the-advertising-libraries.95fb3aae98a2ed5a87fc9750b5095965fabf5cb8.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#cfaa108cc93b6bae903e86ad141656bf613f185d3399handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6131,7 +6131,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [launch-feedback-hub-from-your-app.adb9d4633668667defe2db33668d7915b1b359a9.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/launch-feedback-hub-from-your-app.adb9d4633668667defe2db33668d7915b1b359a9.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#ccda01d9bfa4ffdff2bbce5d6c60c78e026270e53400handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6144,7 +6144,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [manage-a-large-catalog-of-in-app-products.5dd541af4c58b62685bdfd4d1f1d545132e33e4d.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/manage-a-large-catalog-of-in-app-products.5dd541af4c58b62685bdfd4d1f1d545132e33e4d.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#0927df3cd696e5a6fbd3a235d2b87074f1d639293401handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6157,7 +6157,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [manage-your-experiment.bf04c15762ccb0b30f4711939844018736814d88.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/manage-your-experiment.bf04c15762ccb0b30f4711939844018736814d88.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#24ca106cc83c4495657972f463c556585cdfcb453402handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6170,7 +6170,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.2e54bdb9ba46bf08c636e3eb29a79a2507edbaa7.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.2e54bdb9ba46bf08c636e3eb29a79a2507edbaa7.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#481cf2aab806a1f9ce368256a9df8930cbc756c13403handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6196,7 +6196,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [release-notes-for-the-advertising-libraries.f454a23a8df2cfa06804f68ac5f84900eae575c8.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/release-notes-for-the-advertising-libraries.f454a23a8df2cfa06804f68ac5f84900eae575c8.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#8e2114e969b27d579f62195f026cfcfd9672a94a3405handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6235,7 +6235,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [run-app-experiments-with-a-b-testing.4cb001447ccf39d2caa97811d3905ae10cf01c7d.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/run-app-experiments-with-a-b-testing.4cb001447ccf39d2caa97811d3905ae10cf01c7d.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#88fd0516e3c10b657884b93377480b62c17589923408handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6248,7 +6248,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [select-and-manage-your-ad-networks.982177b3e83790340b3b8fd5a9e270779f76b670.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/select-and-manage-your-ad-networks.982177b3e83790340b3b8fd5a9e270779f76b670.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#49c9b8e60da9239c948265fb22563013019da2593409handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6261,7 +6261,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [set-up-ad-units-in-your-app.677ef430f1c7b02ed93ecfec616f3f47de54b944.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/set-up-ad-units-in-your-app.677ef430f1c7b02ed93ecfec616f3f47de54b944.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#96c09de9321f67dc26cc3538f2655bd598f134f93410handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6274,7 +6274,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [submit-an-app-with-ads-to-the-windows-store.0d69fbfe35dae22f8ffe8d7d0290a5c42030b4e9.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/submit-an-app-with-ads-to-the-windows-store.0d69fbfe35dae22f8ffe8d7d0290a5c42030b4e9.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#d2e6f9873b2539f9c0558abdc9ee936b938a03b13411handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6287,7 +6287,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [submit-your-app-and-configure-ad-mediation.990983e488fec0db24f094bf655441d5d0454731.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/submit-your-app-and-configure-ad-mediation.990983e488fec0db24f094bf655441d5d0454731.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#13dd6a9c38d85ead29a43f470b7c0f63d025d6123412handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6300,7 +6300,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [supported-ad-sizes-for-banner-ads.d6965242c28a6d19b2d69303e0fcb8c07020e2cc.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/supported-ad-sizes-for-banner-ads.d6965242c28a6d19b2d69303e0fcb8c07020e2cc.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#f83febcb6c96ad85329633e652978f5c7724e7433413handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6313,7 +6313,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [supported-markets-for-microsoft-advertising.20ece372177f643edec2fe32b787caadbc50caf1.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/supported-markets-for-microsoft-advertising.20ece372177f643edec2fe32b787caadbc50caf1.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#2d17a3936a4932b0aa30c80a38bb492f3f21fb373414handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6326,7 +6326,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [test-mode-values.558c5bd0412388e4a3221ef436d374cc47f10338.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/test-mode-values.558c5bd0412388e4a3221ef436d374cc47f10338.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#93b20954ba82b613bde96db30a000902dec3b8443415handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6339,7 +6339,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [test-your-ad-mediation-implementation.fcc73189f8b6ce18519250d555033549959f5f2d.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/test-your-ad-mediation-implementation.fcc73189f8b6ce18519250d555033549959f5f2d.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#0805ed5462a4b100b837ed9c11ec2d9e7caabc343416handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6352,7 +6352,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [troubleshoot-ad-mediation.597b8b3549bcf2234c187a1e36f7a3ba47e6bb45.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/troubleshoot-ad-mediation.597b8b3549bcf2234c187a1e36f7a3ba47e6bb45.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#f32dc28c9b199c11a1932639f49ab4c29d3e1e8f3417handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6365,7 +6365,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [troubleshooting-guides.5f97f667adeacf709035ce88d3334930b436db1c.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/troubleshooting-guides.5f97f667adeacf709035ce88d3334930b436db1c.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#4a006cbd1a1f38e2410098d074a35df4a24689633418handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6378,7 +6378,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [ui-and-user-experience-guidelines.600d817be1f5d0a7af7d2a83c06a9c3454c1c7f9.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/ui-and-user-experience-guidelines.600d817be1f5d0a7af7d2a83c06a9c3454c1c7f9.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#87be9f0f0a19094085d5c4ecbcfb8d40ceb20d2a3419handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6391,7 +6391,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [use-ad-mediation-to-maximize-revenue.95569188b3cf0856748a880597100794398add9e.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/use-ad-mediation-to-maximize-revenue.95569188b3cf0856748a880597100794398add9e.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#c0669e35b285ee7dfeda0c039d8455a4237960f53420handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6404,7 +6404,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [use-receipts-to-verify-product-purchases.cc6b7dd3bbb51b74e7c4d1f715e91e6bbc2c21d4.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/use-receipts-to-verify-product-purchases.cc6b7dd3bbb51b74e7c4d1f715e91e6bbc2c21d4.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#b1322b74bf1038f05cd1cba275e432e279ed362d3421handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6417,7 +6417,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [using-windows-store-services.9679faf28fd53235374b8a389379d16ecb3445f9.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/using-windows-store-services.9679faf28fd53235374b8a389379d16ecb3445f9.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#43e3155315a9132daa36f592b54af3e943ea3e213422handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6443,7 +6443,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [what-is-the-difference-admediatorcontrol-or-adcontrol.15723f876b4b2e469800049102cc729ac7bee54d.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/what-is-the-difference-admediatorcontrol-or-adcontrol.15723f876b4b2e469800049102cc729ac7bee54d.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#291e1c4d707e8987d29ae5840248918543d7d12a3424handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6456,7 +6456,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [workflows-for-creating-apps-with-ads.babf02769eae22094dae6f3cb584bdb1834245eb.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/workflows-for-creating-apps-with-ads.babf02769eae22094dae6f3cb584bdb1834245eb.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#69dd1a17290b7ffbc14dbc58404868119403f7c03425handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6469,7 +6469,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [xaml-and-c-troubleshooting-guide.2e422f45e1164d120daa3b2de25dc3d1d9b4fa17.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/xaml-and-c-troubleshooting-guide.2e422f45e1164d120daa3b2de25dc3d1d9b4fa17.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#ef9ad8f8056b17793d7ad8230e410e014edf2c953426handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6482,7 +6482,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [xaml-properties-example.1cdd06a72272daeae0d7fc916bb1265d2e074fa8.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/xaml-properties-example.1cdd06a72272daeae0d7fc916bb1265d2e074fa8.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#43d579d2d0a92a8f03f17efa2ec42707357e99f93427handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6495,7 +6495,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [background-transfers.8f132649565224b7b83365be03e3ebfe42dc6211.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/background-transfers.8f132649565224b7b83365be03e3ebfe42dc6211.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#02e01be9cf726731697eb5934cb86b398431b5323428handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6508,7 +6508,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [httpclient.867054ddec9831bd5204625d2ef107b8478276b4.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/httpclient.867054ddec9831bd5204625d2ef107b8478276b4.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#b1908e83ffcab562c12c82cfcf7b5fe281d7ada13433handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6521,7 +6521,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [index.6d08851d304e7ceee3e49eb65f0a60d7c6ef4302.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/index.6d08851d304e7ceee3e49eb65f0a60d7c6ef4302.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#df62edbf63777a8fcec4ab08c1fb56ab76ea66243434handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6534,7 +6534,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [network-communications-in-the-background.392e988ada0e7db55009da5cb3fcaf902abcb446.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/network-communications-in-the-background.392e988ada0e7db55009da5cb3fcaf902abcb446.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#4ab9ca2a1cd337bd0af8fbbfcf44d8fc6e6dda3e3435handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6547,7 +6547,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [networking-basics.1ef0558ddfd03583f74afa064763b4b28e0dad43.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/networking-basics.1ef0558ddfd03583f74afa064763b4b28e0dad43.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#96c6617595b49c48ee77bec87b6aa87ae1634ed93436handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6560,7 +6560,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [sockets.1d46eeae959ead85cf0827c0322c9176e8740a93.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/sockets.1d46eeae959ead85cf0827c0322c9176e8740a93.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#432d9849335c537836fd23a4cd95c79c51bc881d3437handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6573,7 +6573,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [tagging_network_connections_with_edp_identity.02012dd69c1ca59401c6ecf14a60151f9a41a979.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/tagging_network_connections_with_edp_identity.02012dd69c1ca59401c6ecf14a60151f9a41a979.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#2b960bbb5cf58991778e5c20bb915a202ecf6e043438handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6586,7 +6586,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [web-feeds.e2cccce4e3e0e7a28161cea77d8850ae5888f82c.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/web-feeds.e2cccce4e3e0e7a28161cea77d8850ae5888f82c.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#625a18203bd2d60acc97a6243d4f3e1e0cf2b2973439handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6599,7 +6599,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [websockets.db78d3487abb889cd595e917ef5a96f0484317ac.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/websockets.db78d3487abb889cd595e917ef5a96f0484317ac.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#7e9ee140914718ce71357ba8ecaf10116949b87b3440handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6612,7 +6612,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [which-networking-technology.bee564cf29cf0c4ee0b51e6199c54cb19addb93d.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/which-networking-technology.bee564cf29cf0c4ee0b51e6199c54cb19addb93d.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#d2f7a4a2bd0f94c4923b33fbd62a8b2ff6eddd653441handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6638,7 +6638,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [index.4eb3a86427b760af0fe03321faacbb40d33523b8.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/index.4eb3a86427b760af0fe03321faacbb40d33523b8.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#6f50874ceb5e133f2b1b764bfc6fcff6422172db3450handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6651,7 +6651,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [install-universal-windows-apps-with-the-winappdeploycmd-tool.35efc75d02349fa7a3de1cc06d8eeca7b5ad10e2.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/install-universal-windows-apps-with-the-winappdeploycmd-tool.35efc75d02349fa7a3de1cc06d8eeca7b5ad10e2.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#d3135724e092495e8f937e6d53bdfbaa9e7cf4503451handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6664,7 +6664,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [packaging-uwp-apps.9882a5c7945644f3b49e175219fa2d2976ceaa51.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/packaging-uwp-apps.9882a5c7945644f3b49e175219fa2d2976ceaa51.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#a77e441cbd1b6826e06064dbd4be449813754b253452handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6741,7 +6741,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [getting-started-animation.ae37358fddf5696334e3895e8b42d87d65cd0de3.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/getting-started-animation.ae37358fddf5696334e3895e8b42d87d65cd0de3.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#6e0b92af1d3c5f61aa2341d43ca40330fcc359f43459handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6754,7 +6754,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [getting-started-choosing-a-programming-language.1e9625b2af9e598aca2d55dc7c4153047fdfcc0e.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/getting-started-choosing-a-programming-language.1e9625b2af9e598aca2d55dc7c4153047fdfcc0e.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#10fa4a349621c8e7b248c7daf4d7cdf967e252553460handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6767,7 +6767,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [getting-started-common-controls.750c05b6fdb7f4c55c460918fadd9aaee0358d4e.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/getting-started-common-controls.750c05b6fdb7f4c55c460918fadd9aaee0358d4e.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#9d67cf02f80b5aa9d49fe3a0c5eb47a89419991a3461handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6780,7 +6780,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [getting-started-creating-a-project.e30ff7f8da2e17d37bb700e98bb864d5db3d4001.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/getting-started-creating-a-project.e30ff7f8da2e17d37bb700e98bb864d5db3d4001.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#23d9ed066e2909a15b3106fd19bf6ce5ab09e7a93462handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6793,7 +6793,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [getting-started-getting-around-in-visual-studio.8f56a24bbab0fdbb335113638cecdf4ccd3afc56.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/getting-started-getting-around-in-visual-studio.8f56a24bbab0fdbb335113638cecdf4ccd3afc56.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#d31e6e940f0b03667f1e19abec17804f6f3e16a63463handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6806,7 +6806,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [getting-started-navigation.335a2183e0538872e32c79b3290ea03af14a74ad.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/getting-started-navigation.335a2183e0538872e32c79b3290ea03af14a74ad.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#c542faa6365c8558988162bee12f266d674744613464handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6819,7 +6819,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [getting-started-what-next.ecd0afbdc8655298b5947469bb7c882adb3b3a4a.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/getting-started-what-next.ecd0afbdc8655298b5947469bb7c882adb3b3a4a.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#2b11133fda76fb42f3a850848c426cbb33fb83663465handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6832,7 +6832,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [getting-started-with-uwp-for-ios-developers.232ccd678509802266c1b48e1aec04371c9f4ae4.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/getting-started-with-uwp-for-ios-developers.232ccd678509802266c1b48e1aec04371c9f4ae4.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#3fef53e5d6c9259bf5157b1221643d07e1d8be5e3466handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6845,7 +6845,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [index.d5da9aa90b0fcd64d9464aecc6cc0883b00ae0c2.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/index.d5da9aa90b0fcd64d9464aecc6cc0883b00ae0c2.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#88ebc2984ce856dd3fb10b8a61de4a32dc7115003531handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6858,7 +6858,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [ios-to-uwp-root.87a35694c4f6e0feb66756c0d37df4fcf851e01d.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/ios-to-uwp-root.87a35694c4f6e0feb66756c0d37df4fcf851e01d.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#7f6160d651a4264d81ac1a1c9a011e32f53778b03532handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6871,7 +6871,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [selecting-an-approach-to-ios-and-uwp-app-development.ad7ad0febe79d0c801a7c965ca54c6c940d89c10.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/selecting-an-approach-to-ios-and-uwp-app-development.ad7ad0febe79d0c801a7c965ca54c6c940d89c10.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#2703a0c919b08331cc7ab55fe78b868555312ac03533handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6884,7 +6884,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [setting-up-your-mac-with-windows-10.621c2836b85f9a50e353ad8c79476b7b3f88053e.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/setting-up-your-mac-with-windows-10.621c2836b85f9a50e353ad8c79476b7b3f88053e.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#10ebdb0a534d8f2931d15481c1bee4705268b0bb3534handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6897,7 +6897,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [update-your-visual-studio-2015-rc-project-to-rtm.de1fbaf6fdfabe7b74d2f570b335e7d21b884a06.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/update-your-visual-studio-2015-rc-project-to-rtm.de1fbaf6fdfabe7b74d2f570b335e7d21b884a06.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#9c2b9f164b6578a9e1d269295b3fa0d7a863a6a03535handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6910,7 +6910,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [w8x-to-uwp-case-study-bookstore1.1b233633dd89418b29824ed2a8815f42db06c353.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/w8x-to-uwp-case-study-bookstore1.1b233633dd89418b29824ed2a8815f42db06c353.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#43536aacb37a79b3e8507896474be67423a0b9fe3536handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6923,7 +6923,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [w8x-to-uwp-case-study-bookstore2.ad050c1b7b22a96b4466221147699cf2260c98cc.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/w8x-to-uwp-case-study-bookstore2.ad050c1b7b22a96b4466221147699cf2260c98cc.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#97682b2b914707874dcac998f7db5f2029ad433e3537handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6936,7 +6936,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [w8x-to-uwp-case-study-quizgame.ee7bf79e60457837f1f1ef8bbdc006cd97a0f8fd.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/w8x-to-uwp-case-study-quizgame.ee7bf79e60457837f1f1ef8bbdc006cd97a0f8fd.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#cd05c3edbc254cceb00c55caba698d21998f55943538handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6949,7 +6949,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [w8x-to-uwp-input-and-sensors.9fc63a98dfa6ad6eeddf379d4cb14271f8964d9e.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/w8x-to-uwp-input-and-sensors.9fc63a98dfa6ad6eeddf379d4cb14271f8964d9e.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#e5e560ca4f40496edf9d11c3eef546fdc4c3b0793539handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6962,7 +6962,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [w8x-to-uwp-porting-to-a-uwp-project.351cdf4bfdce8333548b50244a13ce6c9a7cff2a.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/w8x-to-uwp-porting-to-a-uwp-project.351cdf4bfdce8333548b50244a13ce6c9a7cff2a.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#60f59c58aedc56da58350a050acd184a376b80673540handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6975,7 +6975,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [w8x-to-uwp-porting-xaml-and-ui.f1e8f521222339d8cb465e5fa21505c90027b1f8.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/w8x-to-uwp-porting-xaml-and-ui.f1e8f521222339d8cb465e5fa21505c90027b1f8.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#eb543a5ef1da7c9b39438349757c1b394a3be9b53541handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -6988,7 +6988,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [w8x-to-uwp-root.6a8ed32754c47e4f2c828c0ccfff0dfcc2db48fb.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/w8x-to-uwp-root.6a8ed32754c47e4f2c828c0ccfff0dfcc2db48fb.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#3aa24e61482054dadd9b798063d46abf36623e9b3542handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7001,7 +7001,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [w8x-to-uwp-troubleshooting.1b840b76bab291ca3edcc36c7df806dd2313f34b.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/w8x-to-uwp-troubleshooting.1b840b76bab291ca3edcc36c7df806dd2313f34b.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#e5758472d303f4baaf80d45d6b23b54f2a21e0023543handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7014,7 +7014,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [wpsl-to-uwp-business-and-data.536d942263eb398f3fdf739eba68e231bd5f4b06.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/wpsl-to-uwp-business-and-data.536d942263eb398f3fdf739eba68e231bd5f4b06.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#24e94e91adc0e5ef0b7a076d54299eab8c4ba5273544handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7027,7 +7027,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [wpsl-to-uwp-case-study-bookstore1.19497291442d80478e61fcd92c5c00207526b390.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/wpsl-to-uwp-case-study-bookstore1.19497291442d80478e61fcd92c5c00207526b390.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#dbffb4245efece2d39b4eba8979e323fd71626d03545handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7040,7 +7040,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [wpsl-to-uwp-case-study-bookstore2.f536923cc67633de1edb1fb8d3b8bde4b029fb0e.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/wpsl-to-uwp-case-study-bookstore2.f536923cc67633de1edb1fb8d3b8bde4b029fb0e.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#019f9ae1fc226c9aa1d921ce58cd2e5fa2424a2b3546handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7053,7 +7053,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [wpsl-to-uwp-form-factors-and-ux.25161d32ebc1d5ab08bcbd893c6a9fc6b8a1e433.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/wpsl-to-uwp-form-factors-and-ux.25161d32ebc1d5ab08bcbd893c6a9fc6b8a1e433.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#7d5f1fa969e4ddf4a695a3ca77072a0f9c21316f3547handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7066,7 +7066,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [wpsl-to-uwp-input-and-sensors.4eb085ba7226c628e7fbf287850103e3c9469153.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/wpsl-to-uwp-input-and-sensors.4eb085ba7226c628e7fbf287850103e3c9469153.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#6b29e741c9cad68083502b25445b965fc266ef6e3548handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7079,7 +7079,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [wpsl-to-uwp-namespace-and-class-mappings.fce290826379913fb0e7a47808f5b925af2f56ed.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/wpsl-to-uwp-namespace-and-class-mappings.fce290826379913fb0e7a47808f5b925af2f56ed.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#164e5303c48b6c65807984e4afcaf81ac12f64313549handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7092,7 +7092,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [wpsl-to-uwp-porting-to-a-uwp-project.bc515e4029e9ca79486388a63cfe376c952e5605.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/wpsl-to-uwp-porting-to-a-uwp-project.bc515e4029e9ca79486388a63cfe376c952e5605.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#74cbd9789636383e6d04798435780dcda6b897d03550handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7117,7 +7117,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [wpsl-to-uwp-root.0ebfc5b22ad738fd39a19638fdcf6cdefce13819.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/wpsl-to-uwp-root.0ebfc5b22ad738fd39a19638fdcf6cdefce13819.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#19dde1c9b0df3b2a5e464feb15e43af9dd2836613552handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7130,7 +7130,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [wpsl-to-uwp-troubleshooting.139e3a380f89fc3786ab3b8c91a0be7b3781feb2.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/wpsl-to-uwp-troubleshooting.139e3a380f89fc3786ab3b8c91a0be7b3781feb2.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#0e7c4ba00ab513c1ea9da94f1a3f69b5921c2dc13553handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7143,7 +7143,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [about-affiliate-ads.57fb89f5b0908c2b6f71032b0dd30a68037727f0.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/about-affiliate-ads.57fb89f5b0908c2b6f71032b0dd30a68037727f0.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#0ac051d5774dadde48e2692683a6bcfae8264d1c3554handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7169,7 +7169,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [about-house-ads.143592ce7eb1919892d2b9cc9cbd53dfc79ebf82.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/about-house-ads.143592ce7eb1919892d2b9cc9cbd53dfc79ebf82.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#c9b73bb1963839640243fce4caaa7f3701b1eb453556handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7182,7 +7182,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [account-types-locations-and-fees.1277ace499431ce58b5194ea113c822f7292b462.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/account-types-locations-and-fees.1277ace499431ce58b5194ea113c822f7292b462.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#b4707f53aa1a1bd7bd7c03c74f2d18a0f9f55b103557handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7195,7 +7195,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [acquisitions-report.776393c824a6784057e29e1653166146bc4fd900.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/acquisitions-report.776393c824a6784057e29e1653166146bc4fd900.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#bfdf4f9f2d94a31a1c159e947615c10abf556aad3558handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7208,7 +7208,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [ad-mediation-report.cbb4c6174cd6894353f2a715977560b73f82caac.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/ad-mediation-report.cbb4c6174cd6894353f2a715977560b73f82caac.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#1597e21414dbb5d1b540a2dd67478fbcc83d574e3559handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7221,7 +7221,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [advertising-performance-report.75409146593b9429ae80d6cc434a432f2eba948b.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/advertising-performance-report.75409146593b9429ae80d6cc434a432f2eba948b.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#1617005cff264a89eb66e326e2bedf9f6641a3da3560handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7234,7 +7234,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [affiliates-performance-report.7f08304ede76a2f8a487483ad6c187b58448153f.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/affiliates-performance-report.7f08304ede76a2f8a487483ad6c187b58448153f.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#8c200c4f4b743aeaae71d6a6179fc15db0e7ec5e3561handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7247,7 +7247,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [age-ratings.ecb2b1dbe0651c83264f75138c1647942580c362.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/age-ratings.ecb2b1dbe0651c83264f75138c1647942580c362.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#559842fb6740236780756018d01036b8356603093562handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7260,7 +7260,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [analytics.af2b800449cbe8bf6986c66ce2822732c6490965.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/analytics.af2b800449cbe8bf6986c66ce2822732c6490965.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#8922a53da8b1bc97bef7faf49d0e412a261271883563handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7273,7 +7273,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [app-declarations.67763b1e0b11d99f13cf11bf8cf81542dfde0d17.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/app-declarations.67763b1e0b11d99f13cf11bf8cf81542dfde0d17.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#ee2e54494a868fbec8c4a8bd7bbb9bdcd6cbf9ae3564handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7286,7 +7286,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [app-install-ads-reports.a98c4194da25ef6df5de9534821122190964e9a7.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/app-install-ads-reports.a98c4194da25ef6df5de9534821122190964e9a7.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#acd91c578d7222e5fb115a4784f3360333f2a0633565handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7299,7 +7299,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [app-management-and-services.b0c3ca5f50e4a0a78cd617e3ebf34e7abb400b02.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/app-management-and-services.b0c3ca5f50e4a0a78cd617e3ebf34e7abb400b02.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#71077ac3f64e10734021e5fb655168f7273e3cb63566handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7312,7 +7312,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [app-marketing-guidelines.74e631686ac75287a4dcb6fdbfb87d1b32862703.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/app-marketing-guidelines.74e631686ac75287a4dcb6fdbfb87d1b32862703.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#64c6dd45053070096ff7d7e932bac1c5601945183567handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7325,7 +7325,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [app-package-requirements.2c72b211b146b4e2996ae297ddcc49c171b63fec.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/app-package-requirements.2c72b211b146b4e2996ae297ddcc49c171b63fec.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#951c00f9fd2c945ac44d47bfae701049e937b98f3568handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7338,7 +7338,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [app-promotion-and-customer-engagement.bb2e8fe7bfc0e8818668ac417dbad32b802ebb11.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/app-promotion-and-customer-engagement.bb2e8fe7bfc0e8818668ac417dbad32b802ebb11.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#3511533f76294767ca409b09a718555a6194e4513569handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7363,7 +7363,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [app-submissions.01ef0c6838d8f6d7b4585792d66896ef38e79d7b.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/app-submissions.01ef0c6838d8f6d7b4585792d66896ef38e79d7b.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#59f41b74ca264606b4668addf44a07c82e1735793571handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7376,7 +7376,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [avoid-common-certification-failures.0207d6f7031b4e20ebb453732ff893e3220fa304.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/avoid-common-certification-failures.0207d6f7031b4e20ebb453732ff893e3220fa304.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#6af2842eeb5eeebfc9ffc5a7a3ec98fdcebddb743572handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7389,7 +7389,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [beta-testing-and-targeted-distribution.c67e1e6f8bc384fde280a22078ae75eedc4d25c5.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/beta-testing-and-targeted-distribution.c67e1e6f8bc384fde280a22078ae75eedc4d25c5.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#a544565bf7bb82f2be1ded3e60836d5d191c6e933573handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7402,7 +7402,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [category-and-subcategory-table.0c9dec759c39644f8cd3fc7639e01c356d358493.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/category-and-subcategory-table.0c9dec759c39644f8cd3fc7639e01c356d358493.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#9f9f5da100109af5dc38f7ffbc3cadca842b12143574handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7415,7 +7415,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [channels-and-conversions-report.ca5160bc5a452c1550efe898bd329417bb7c51c6.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/channels-and-conversions-report.ca5160bc5a452c1550efe898bd329417bb7c51c6.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#e82299f156a7e4f82e9219dc9b0ef6171e72c74e3575handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7441,7 +7441,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [create-a-custom-app-promotion-campaign.220d97eaa84a1e4742a64b01094a0451e54772a7.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/create-a-custom-app-promotion-campaign.220d97eaa84a1e4742a64b01094a0451e54772a7.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#b6fa63727ac636d37c52e2f3247c52efb1f8b7633577handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7493,7 +7493,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [create-platform-specific-descriptions.d294c5a8fe1dc94d6103e730e51f0cddbb089590.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/create-platform-specific-descriptions.d294c5a8fe1dc94d6103e730e51f0cddbb089590.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#00be0238af7969a84abe79f9aee3bec485fbb3e33581handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7506,7 +7506,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [create-your-app-by-reserving-a-name.7e01dc9d2c9ba68a62c4962ef74bc447ce075b6e.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/create-your-app-by-reserving-a-name.7e01dc9d2c9ba68a62c4962ef74bc447ce075b6e.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#5e4933be456bc76eb5923f5c081e8376c43c118b3582handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7519,7 +7519,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [customer-groups.ecd31c89b142ed6f2ac4be6b4002cf453eeda14d.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/customer-groups.ecd31c89b142ed6f2ac4be6b4002cf453eeda14d.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#858b777c62ffaf6e0ea8c6811e5051cc20474ba03583handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7532,7 +7532,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [define-pricing-and-market-selection.5284baaa44b9bdb8f41fa244fd63cb75573a31dc.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/define-pricing-and-market-selection.5284baaa44b9bdb8f41fa244fd63cb75573a31dc.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#9a1d8b8fb57989091fe7b82ad34066240f62cb8b3584handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7558,7 +7558,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [download-analytic-reports.3afd09d6ecb0a6507f58fd24bcefaad996b08537.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/download-analytic-reports.3afd09d6ecb0a6507f58fd24bcefaad996b08537.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#959007d6d7c4e4c768f196fe04c2fa4a8ac6fc2e3587handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7571,7 +7571,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [enter-app-properties.f0634ec6277d670c541a3d2bdfcbdb84d3809c0e.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/enter-app-properties.f0634ec6277d670c541a3d2bdfcbdb84d3809c0e.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#8861c13478adbe2010a164126c56f555375e04723588handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7597,7 +7597,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [feedback-report.5499a4a1ccb82642d7b4f42d639f318bb8c5a6ce.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/feedback-report.5499a4a1ccb82642d7b4f42d639f318bb8c5a6ce.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#9ad3025f7890de3677801b309b6714b1b46a06073590handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7610,7 +7610,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [generate-preinstall-packages-for-oems.863207aa8a716c0a2927435d6e5e0a97381866ed.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/generate-preinstall-packages-for-oems.863207aa8a716c0a2927435d6e5e0a97381866ed.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#dba1c1f754b4200bd00395e0b71d18bee30e3a2d3591handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7623,7 +7623,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [getting-paid-apps.d1adbc5dc579a8356322cdcb02282a5b09f3dbb1.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/getting-paid-apps.d1adbc5dc579a8356322cdcb02282a5b09f3dbb1.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#b7c9bcf36aaee0344c6916fcc81aca189ef0f4813593handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7636,7 +7636,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [guidance-for-app-package-management.14d986d05c846f0fa95d91e9efb885638cef5d5e.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/guidance-for-app-package-management.14d986d05c846f0fa95d91e9efb885638cef5d5e.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#ac8d150f426c7d32e8a3b61b7f08cc0b84feedb83594handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7649,7 +7649,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [health-report.6a4da39c2a55739dd1ddd200f8558b0f5c3bb3c3.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/health-report.6a4da39c2a55739dd1ddd200f8558b0f5c3bb3c3.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#78bedc3e0551feef8efe61b3b664145e292817143595handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7662,7 +7662,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [how-your-app-appears-in-the-store-for-windows-10-customers.b56bbb91cad0ef9f89171127e2105add78b23d38.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/how-your-app-appears-in-the-store-for-windows-10-customers.b56bbb91cad0ef9f89171127e2105add78b23d38.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#5e8d25264a17307c61f4e8b1295ded3f920ee2cf3596handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7675,7 +7675,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [iap-acquisitions-report.99d7978a79327bcfc5e381863f9170253c28b07c.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/iap-acquisitions-report.99d7978a79327bcfc5e381863f9170253c28b07c.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#3191df12ca5b59f545cf250c3e669b30192af6bc3597handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7701,7 +7701,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [link-to-your-app.258affb37b4b82fa419eab4e1167dcb730638941.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/link-to-your-app.258affb37b4b82fa419eab4e1167dcb730638941.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#891b99b52f7e3b347c0e2f9d298f144313cc7b2d3602handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7714,7 +7714,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [make-your-app-easier-to-promote.c61227bb993240ae662adc06d240cdd01207e9e4.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/make-your-app-easier-to-promote.c61227bb993240ae662adc06d240cdd01207e9e4.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#e0f993d703ccd3a4509de4350f07d505648937633603handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7727,7 +7727,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [manage-account-users.b7052883acae7cf5a19d5cd03e6c2038ce41f0c3.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/manage-account-users.b7052883acae7cf5a19d5cd03e6c2038ce41f0c3.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#18e25d0064652089d450eec811a7a5d24b8dc3e83604handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7740,7 +7740,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [manage-app-names.0f3b592f24bb2975cdbb3aad17495d9d6e942b93.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/manage-app-names.0f3b592f24bb2975cdbb3aad17495d9d6e942b93.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#e03e99b5de2142c2bcf46ee2aad4a76bb87ee4e53605handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7753,7 +7753,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [managing-your-ad-campaign.6be784ba5844d5d00a4fb5b0b477afdf9afd442f.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/managing-your-ad-campaign.6be784ba5844d5d00a4fb5b0b477afdf9afd442f.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#8e6305f3e6904833245013ef7eb63809c97ec4233607handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7766,7 +7766,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [managing-your-profile.f3a7df74ed9253782e6c19996129d2978404e992.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/managing-your-profile.f3a7df74ed9253782e6c19996129d2978404e992.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#3d82caac353eb7cb63692469c5951be1f392ff523608handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7792,7 +7792,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [monetize-with-ads.f772e82217dbd21448da2a05253270cef4089e6b.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/monetize-with-ads.f772e82217dbd21448da2a05253270cef4089e6b.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#97eeeedb9e73b6c67abe6e2ff8cadbc744a6a7c43610handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7805,7 +7805,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [notes-for-certification.671d52f49e0510f904670d4ceb9b020ef6591b8e.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/notes-for-certification.671d52f49e0510f904670d4ceb9b020ef6591b8e.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#02a0f17fef730da305f5dfb24c834b53045e3eb83611handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7857,7 +7857,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [package-version-numbering.d96c46cce07bde4de60c6fdd94923f98f423e4cd.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/package-version-numbering.d96c46cce07bde4de60c6fdd94923f98f423e4cd.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#9910ca5b5a3fd5d24643a1dfc6da3644d561c6173615handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7883,7 +7883,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [pubcenter-dev-center-integration.2fbdc0127a3badf8294e0fe159809d48b2bf9fbc.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/pubcenter-dev-center-integration.2fbdc0127a3badf8294e0fe159809d48b2bf9fbc.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#d6bf60e1dae7ec62e3cdbba8098a24c093d5deb13617handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7896,7 +7896,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [pubcenter-devcenter-payout-account-and-tax-profile-consolidation.f640d4baee811687fb33824d7d8ea2d611b135fd.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/pubcenter-devcenter-payout-account-and-tax-profile-consolidation.f640d4baee811687fb33824d7d8ea2d611b135fd.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#8973b1def46c7ada8b73337cb20d01ae1e5b97d83618handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7909,7 +7909,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [put-apps-and-iaps-on-sale.b0787d48e63e124da4f7babe09b539067e0a8d75.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/put-apps-and-iaps-on-sale.b0787d48e63e124da4f7babe09b539067e0a8d75.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#b53d8d4ddcf3f75ffe039203377d12fd02e52f073619handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7922,7 +7922,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [ratings-report.05a41a616a7fc2cebe2bae47e1e3bc3cb77184a8.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/ratings-report.05a41a616a7fc2cebe2bae47e1e3bc3cb77184a8.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#e0258bc9402772d0a036b32563348d11acd0fdb73620handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7935,7 +7935,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [resolve-package-upload-errors.feff838cf5ab6d62bcb3e3ccb7a29783eb186656.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/resolve-package-upload-errors.feff838cf5ab6d62bcb3e3ccb7a29783eb186656.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#afd2a08ed637502827e3207702d7659ed70148a03621handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7960,7 +7960,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [respond-to-customer-reviews.8b15e11c210d9bb5ead696d30c383e78922f29c8.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/respond-to-customer-reviews.8b15e11c210d9bb5ead696d30c383e78922f29c8.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#06228d7816f371f669ad4e6db7310e903f5f06833623handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7973,7 +7973,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [reviews-report.7493e17e8075c13b891d25e50c46f207729835fc.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/reviews-report.7493e17e8075c13b891d25e50c46f207729835fc.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#7d1a768ce558718b43a4d124f7c88868e999fb933624handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -7986,7 +7986,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [set-app-pricing-and-availability.3ec1f87db875e425961116b86bf130e63e81412d.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/set-app-pricing-and-availability.3ec1f87db875e425961116b86bf130e63e81412d.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#509ef3b8b9ec06907fccc2dbbe29fa3c72cb8e5d3625handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8038,7 +8038,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [supported-languages.ff584526c7f4610c7729350e63d11d091637d7dd.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/supported-languages.ff584526c7f4610c7729350e63d11d091637d7dd.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#17a5a106e24305afd3041f434d2e0890d21fd7ec3629handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8077,7 +8077,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [trademark-and-copyright-protection.39407375e7999d35aa42a23530e093f4cfc3baed.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/trademark-and-copyright-protection.39407375e7999d35aa42a23530e093f4cfc3baed.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#2c3f35ee5fb3f04e9f2fc389162793caa9ce5f1a3632handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8090,7 +8090,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [upload-app-packages.1fcac0810d4be7ba7a71b9a407f69f6f47c18472.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/upload-app-packages.1fcac0810d4be7ba7a71b9a407f69f6f47c18472.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#bb89968c261cc0c14f82375d0d708bbce5da98693633handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8103,7 +8103,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [usage-report.a8db07f7d604dc3af9d06cd2b1cd055c4486237e.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/usage-report.a8db07f7d604dc3af9d06cd2b1cd055c4486237e.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#f1c009c3d3cbd5c9a0e8064da11fc9fccbe420d43634handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8116,7 +8116,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [use-map-services.1d8e44740d1a5b23d9e274d85b0fc88d60b1341a.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/use-map-services.1d8e44740d1a5b23d9e274d85b0fc88d60b1341a.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#0d775c67492fd6afe9f65f3e5dede865f90373423635handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8129,7 +8129,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [using-the-windows-dev-center-dashboard.04d4297db2be035c6d1b037e7e4b03cd3545f3a3.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/using-the-windows-dev-center-dashboard.04d4297db2be035c6d1b037e7e4b03cd3545f3a3.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#7478a832cea6114c7a6e7f6be5cc3e908981a64c3636handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8142,7 +8142,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [vat-info.be53966b78ddbe1a5146c0634d5cf5151467082f.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/vat-info.be53966b78ddbe1a5146c0634d5cf5151467082f.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#4dd91c901ade83e482061bed781e3fdcd9dde1413637handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8155,7 +8155,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [view-app-identity-details.28e38a0d58b50b2c3f2749a9cb230e57494911dc.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/view-app-identity-details.28e38a0d58b50b2c3f2749a9cb230e57494911dc.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#f00d817616d473ef220ebc1817c2bf9207a7aea03638handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8168,7 +8168,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [write-a-great-app-description.27f1f776da5e53910fa05336c61bc310ac688da6.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/write-a-great-app-description.27f1f776da5e53910fa05336c61bc310ac688da6.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#56b8492fea59c9a744c948d27e728e2305388cf83639handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8181,7 +8181,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [authentication-and-user-identity.894a02c993d2340deb31b4fbcae4c980ddb23fdb.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/authentication-and-user-identity.894a02c993d2340deb31b4fbcae4c980ddb23fdb.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#e748b319cdeda82aadaf8516e41883a3e32dc10c3640handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8194,7 +8194,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [certificates.8acca31652cd53e9fe7e0b2082070c252aa2be12.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/4a10ae00f717c3711cb911d775b04f6f078c1164/ol-handback/Microsoft/windows-apps.ja-jp/master/certificates.8acca31652cd53e9fe7e0b2082070c252aa2be12.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#84596f70a5deee6cebb5f4bac442a6aaca8210cd3641handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8207,7 +8207,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [common-cryptography-tasks.a55603f4f693ba37bd49fc5962ff003532ac2fc0.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/4a10ae00f717c3711cb911d775b04f6f078c1164/ol-handback/Microsoft/windows-apps.ja-jp/master/common-cryptography-tasks.a55603f4f693ba37bd49fc5962ff003532ac2fc0.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#38d0af2cdbf4137cbd0e005fcb750ed2f0b2c87c3661handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8220,7 +8220,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [companion-device-unlock.01334c661f175cfd14017b7b4662584b9b11224d.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/companion-device-unlock.01334c661f175cfd14017b7b4662584b9b11224d.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#18102d6277ff1c66ebd147b5c1fd2f2d6c91edd13662handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8233,7 +8233,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [compare-buffers.fa4edab31adaf2c84fd4aa3515aa755445231460.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/4a10ae00f717c3711cb911d775b04f6f078c1164/ol-handback/Microsoft/windows-apps.ja-jp/master/compare-buffers.fa4edab31adaf2c84fd4aa3515aa755445231460.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#fcbc3c8a3f70613635201732f3ca5053d58325c73663handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8246,7 +8246,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [convert-between-strings-and-binary-data.76b3b1cd4f6a3518a63c4d2adde81742a4ce26f1.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/4a10ae00f717c3711cb911d775b04f6f078c1164/ol-handback/Microsoft/windows-apps.ja-jp/master/convert-between-strings-and-binary-data.76b3b1cd4f6a3518a63c4d2adde81742a4ce26f1.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#667338ed3808f79b75230bc0c3ea00cc7e274d5a3664handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8259,7 +8259,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [copy-to-and-from-byte-arrays.519d698ab28c720e9c3742e05e73981dc6b345ba.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/4a10ae00f717c3711cb911d775b04f6f078c1164/ol-handback/Microsoft/windows-apps.ja-jp/master/copy-to-and-from-byte-arrays.519d698ab28c720e9c3742e05e73981dc6b345ba.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#db1691421cf4e540c9593efb4bbf2a608426c0ed3665handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8272,7 +8272,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [create-random-numbers.b66f4bced72fc43ab4845d70be35b6965c430c1e.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/create-random-numbers.b66f4bced72fc43ab4845d70be35b6965c430c1e.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#1faa3477acd0cf1a5a2acc7c6c0a62910299254b3666handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8285,7 +8285,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [credential-locker.e4a4e8dd3e8268a52d2d325871deb3f9caacf338.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/credential-locker.e4a4e8dd3e8268a52d2d325871deb3f9caacf338.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#ba3f4fc8584108fefe25de146ae7fc84ee7c9e2c3667handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8311,7 +8311,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [cryptography.6c1dadfad60402677e4f6786a60d41a68c000316.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/cryptography.6c1dadfad60402677e4f6786a60d41a68c000316.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#b8cccf54e414de084c5b3fd080007b225b9a9b123669handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8324,7 +8324,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [data-protection.2259141d40b000403a38c259757eacf08a9f049d.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/data-protection.2259141d40b000403a38c259757eacf08a9f049d.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#958d5dd1c5f61078a0b288d53debe93875d65f063670handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8337,7 +8337,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [encode-and-decode-data.23f6beb6ef2b3359cd8b79dd7c967d2e22e2d4a5.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/4a10ae00f717c3711cb911d775b04f6f078c1164/ol-handback/Microsoft/windows-apps.ja-jp/master/encode-and-decode-data.23f6beb6ef2b3359cd8b79dd7c967d2e22e2d4a5.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#cd70a84e498c390684a59b33ec8a34375e1eb8633671handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8350,7 +8350,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [export-restrictions-on-cryptography.5712d38bb9e79ccc2a369f2ad16d67aaf37b9e45.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/4a10ae00f717c3711cb911d775b04f6f078c1164/ol-handback/Microsoft/windows-apps.ja-jp/master/export-restrictions-on-cryptography.5712d38bb9e79ccc2a369f2ad16d67aaf37b9e45.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#37d6131891e93d73021c860df45d1b5fdd7cfa533672handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8363,7 +8363,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [fingerprint-biometrics.c7435c030c485657a242980ea73567320d70e645.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/fingerprint-biometrics.c7435c030c485657a242980ea73567320d70e645.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#093924b51c48c3bed71e0a47b10fc80f966b34ac3673handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8389,7 +8389,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [intro-to-secure-windows-app-development.2fe2c6dd4ed60ea75b1c7cbdf2040625baa52ddc.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/intro-to-secure-windows-app-development.2fe2c6dd4ed60ea75b1c7cbdf2040625baa52ddc.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#c09170042841dcff6625d1d236cf708c717301c53714handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8402,7 +8402,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [macs-hashes-and-signatures.2fcc3bb013eeb2889e7ae639f4894e913b4624a9.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/4a10ae00f717c3711cb911d775b04f6f078c1164/ol-handback/Microsoft/windows-apps.ja-jp/master/macs-hashes-and-signatures.2fcc3bb013eeb2889e7ae639f4894e913b4624a9.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#d7c66d9ead6e3dbf750f1d058e311ef3c84a204f3715handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8415,7 +8415,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [microsoft-passport.257be93302c43b692f56f979a660a412d6add2b9.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/microsoft-passport.257be93302c43b692f56f979a660a412d6add2b9.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#781866bbbef755815422d1aa5bf71010bb08630d3718handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8428,7 +8428,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [microsoft-passport-login.733abcc9ee42ef0128d2a993800f9c127a181017.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/microsoft-passport-login.733abcc9ee42ef0128d2a993800f9c127a181017.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#d28f0b9ea08d35a220cdb58367f03af95966e2823717handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8441,7 +8441,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [microsoft-passport-login-auth-service.4868d33f5776e21e4fe8a0a98a5e2ec2ee22d669.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/microsoft-passport-login-auth-service.4868d33f5776e21e4fe8a0a98a5e2ec2ee22d669.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#6fe013a69bad964dafa788efb4e26ba521b3d6213716handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8454,7 +8454,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [share-certificates.9edf03748110c1e42ff4dc3e511170c2322f9a7a.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/share-certificates.9edf03748110c1e42ff4dc3e511170c2322f9a7a.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#2bb1b601e1ab35115c88692f6c36dccc708365413719handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8467,7 +8467,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [smart-cards.8c9d30555fd7c8c9d02a8b190b67d88f915c78bd.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/smart-cards.8c9d30555fd7c8c9d02a8b190b67d88f915c78bd.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#6e673ce75ee7f178332da6fc9ae68dbf01a9d7ce3720handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8480,7 +8480,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [web-account-manager.c4ec00c73877e67804733bb8c124a804cf1f1c55.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/web-account-manager.c4ec00c73877e67804733bb8c124a804cf1f1c55.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#6ab12d6da9c4858cf6ab16d4143cf073bb0cb2753721handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8493,7 +8493,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [web-authentication-broker.6abed143f0cd9aef072a3d4443bef4c92464e271.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/web-authentication-broker.6abed143f0cd9aef072a3d4443bef4c92464e271.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#96ca8d019fe6cbf742c98edf0b8bf04b35f71dfd3722handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8506,7 +8506,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [color.0395eb0e5ede1939b9b46492efe596c9853dcace.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/color.0395eb0e5ede1939b9b46492efe596c9853dcace.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#878470a7cbf44862c47a1428a1d25d332db32fdc3754handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8519,7 +8519,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [content-transition-animations.a119c8ab24c8d4e54ba030b43c7d7fcc52acbb2c.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/content-transition-animations.a119c8ab24c8d4e54ba030b43c7d7fcc52acbb2c.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#dc233ef821259701eb93c09d1bdefcfa3d9bb69f3755handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8532,7 +8532,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [icons.f711f436ec3c18998a4aa24fef8aa8c3c38449df.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/icons.f711f436ec3c18998a4aa24fef8aa8c3c38449df.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#e5e601bf3ff9d0b1518c86130a5b0fefbb86a7733756handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8545,7 +8545,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [motion-dragdrop.9ed5ee1c94116c5b7cc1743bf3a4d302150e8ad1.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/motion-dragdrop.9ed5ee1c94116c5b7cc1743bf3a4d302150e8ad1.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#c975ba3d03c06009710f4f57edf8a4cc517ad90c3818handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8558,7 +8558,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [motion-edgebased.58575b2fcb2e9ca2062b2bfc8d8b3bc8fb37df3d.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/motion-edgebased.58575b2fcb2e9ca2062b2bfc8d8b3bc8fb37df3d.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#1be51a8ff4a63f32834c7eb04b70d17dc41de13b3819handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8571,7 +8571,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [motion-fade.041165d2d4f83f3f29ba95726fbc4a61c1f47bb9.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/motion-fade.041165d2d4f83f3f29ba95726fbc4a61c1f47bb9.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#028e3462a0bf34af0486864508b1ac049fdf60ed3820handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8584,7 +8584,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [motion-list.86de443c88799942d0d440f4b3426e42ca88a5bd.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/motion-list.86de443c88799942d0d440f4b3426e42ca88a5bd.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#a795cf52c3d062d2131832ac3bc765f45097e8493821handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8597,7 +8597,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [motion-pointer.ac03415da186b0d80184ae6016ead555525217a7.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/motion-pointer.ac03415da186b0d80184ae6016ead555525217a7.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#24175bb7c822ceb53af5e1ec70bf83f701fd1cce3822handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8610,7 +8610,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [motion-popup-animations.45d0afd66aa62751b261f8f1cfbd6461d048a69f.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/motion-popup-animations.45d0afd66aa62751b261f8f1cfbd6461d048a69f.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#2b135fb62d871c559892e6b1e968767b7be716bd3823handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8623,7 +8623,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [motion-reposition.087d44ede122ef925347a00c3184ce8ecb83da05.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/motion-reposition.087d44ede122ef925347a00c3184ce8ecb83da05.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#ba8679a5f06895cef52cbc229f4487997a17bf353824handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8648,7 +8648,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [typography.4206d1eaa813ffdc0f1da4c7d33d63c3a5d928d3.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/typography.4206d1eaa813ffdc0f1da4c7d33d63c3a5d928d3.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#02d5149f945bb631e385e45a295fdfe08bd98fb03827handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8661,7 +8661,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [asynchronous-programming-universal-windows-platform-apps.582ea1d0d0d2e4fd53cc7d7d94d406aa222095f5.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/asynchronous-programming-universal-windows-platform-apps.582ea1d0d0d2e4fd53cc7d7d94d406aa222095f5.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#8d9a17beb9c637e0a780020ef1cbb7b0b0bddf383829handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8674,7 +8674,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [best-practices-for-using-the-thread-pool.fb5fe93783daae95e5a5a90f4604ccfb80571182.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/best-practices-for-using-the-thread-pool.fb5fe93783daae95e5a5a90f4604ccfb80571182.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#53f7460be63fa9bd440ed6999ac9cca7cdca01743850handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8687,7 +8687,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [create-a-periodic-work-item.88bf2e4724fd375630a2c9cb780eeed45f757bf6.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/create-a-periodic-work-item.88bf2e4724fd375630a2c9cb780eeed45f757bf6.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#f5b16c62b591481c52cfa4bb7e1ddb162bf18f423852handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8700,7 +8700,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [index.4c6a614664eadbf4c7f44cab0482059b8ee8c8dd.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/index.4c6a614664eadbf4c7f44cab0482059b8ee8c8dd.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#d69259d449ffb7d4dfc1824c77c16eb9e1cdb0263853handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8713,7 +8713,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [submit-a-work-item-to-the-thread-pool.545c8296a55b5243a1a30cdac516692044dcc5cb.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/submit-a-work-item-to-the-thread-pool.545c8296a55b5243a1a30cdac516692044dcc5cb.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#afb6d8b1b1ee5eeb99ba68e8b842436bd58619d03854handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8726,7 +8726,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [use-a-timer-to-submit-a-work-item.dd90df05d9a7403e12ffc029a8e0f1a9d452de18.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/use-a-timer-to-submit-a-work-item.dd90df05d9a7403e12ffc029a8e0f1a9d452de18.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#033669a781aa85cc2c90fa11816e385ffefa997d3855handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8881,7 +8881,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [attached-properties-overview.00e3dadaa435d466139dbc4949bb88139c5712ad.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/attached-properties-overview.00e3dadaa435d466139dbc4949bb88139c5712ad.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#b676110274bacc8aeacb2527099534cf0e26fa6b3875handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8894,7 +8894,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [binding-markup-extension.904b37b26579ee352288d9a458f8d78a4e9dcf54.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/binding-markup-extension.904b37b26579ee352288d9a458f8d78a4e9dcf54.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#740110809845220d919c6ba3c90b1393dbc8ae943876handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8907,7 +8907,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [custom-attached-properties.759ee7480bbd45925923920651b0568c4bc71b08.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/custom-attached-properties.759ee7480bbd45925923920651b0568c4bc71b08.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#cf6ca169623311e515f02a174224d57652afc7533877handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8920,7 +8920,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [customresource-markup-extension.7312429039e5d3574e5e24a2a99a120d8ae08a7b.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/customresource-markup-extension.7312429039e5d3574e5e24a2a99a120d8ae08a7b.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#4758f67c7bcbc58fda47faf1e872998302086c103879handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8933,7 +8933,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [dependency-properties-overview.4e153595dc332630d6475407ba029128b8c8447d.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/dependency-properties-overview.4e153595dc332630d6475407ba029128b8c8447d.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#6c431b5dd0d95159c108eb3c542509b5946f29443880handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8946,7 +8946,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [events-and-routed-events-overview.e3d8cecd3f587201313eff0fa65a4685c8adad86.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/events-and-routed-events-overview.e3d8cecd3f587201313eff0fa65a4685c8adad86.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#4e4e21789dd76ad691f3828d23c73adcfc31efdf3881handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8959,7 +8959,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [index.04d4d27fd67c4406f7b136597d8e1139c28c42d0.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/index.04d4d27fd67c4406f7b136597d8e1139c28c42d0.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#4deae037857312f891c8c4beae2b6a89adc152cd3882handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8972,7 +8972,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [property-path-syntax.86cb6f42ce5dbf771c1e3f0b026d0e8b0e7a8ffe.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/property-path-syntax.86cb6f42ce5dbf771c1e3f0b026d0e8b0e7a8ffe.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#0b1851bc9d19de5b678f8c6c3a255c0ba3057a853884handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -8998,7 +8998,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [staticresource-markup-extension.c4661d2f9eb296a7d7da1c02959e4e021f04f1e5.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/staticresource-markup-extension.c4661d2f9eb296a7d7da1c02959e4e021f04f1e5.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#3f486a8ac56e37a7401b9a87a4d560cac6b68f6f3886handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -9011,7 +9011,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [templatebinding-markup-extension.9ae35749cba19c66124610958fdf2fb25769b258.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/templatebinding-markup-extension.9ae35749cba19c66124610958fdf2fb25769b258.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#1a8006e58391c41568731810d9b1901474e8d18f3888handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -9024,7 +9024,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [template-settings-classes.6ae5926b528c6bb8c70cee8f1176977d431fcab5.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/template-settings-classes.6ae5926b528c6bb8c70cee8f1176977d431fcab5.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#1ae6ca45808eae8943f471cceaf78fc5e8d814103887handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -9037,7 +9037,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [themeresource-markup-extension.1a19518a0f3da2f625793df3668c17ad6d82afc4.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/themeresource-markup-extension.1a19518a0f3da2f625793df3668c17ad6d82afc4.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#246c991bbdbc95e73ea8d4884cd4d617592bfc513889handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -9050,7 +9050,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [xaml-and-whitespace.0aa7a92581b5fcb6dad05740b2f2056b434b1760.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/xaml-and-whitespace.0aa7a92581b5fcb6dad05740b2f2056b434b1760.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#408c9c7f79f5db81bdf7810a6c71cf25c1c8ec513899handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -9076,7 +9076,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [xaml-namescopes.ac41c456fc4a2cfa52ecf54d1ebe92c7b27a930e.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/xaml-namescopes.ac41c456fc4a2cfa52ecf54d1ebe92c7b27a930e.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#b8b833f40bc38799acc8813d38ddea63426f05b33901handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -9089,7 +9089,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [xaml-namespaces-and-namespace-mapping.2b41bb7b010fee3938088edbb2b56cc7f5ae1d20.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/xaml-namespaces-and-namespace-mapping.2b41bb7b010fee3938088edbb2b56cc7f5ae1d20.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#fe24a66836d85e8d102ebc6b23b42c32a687c5933902handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -9102,7 +9102,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [xaml-overview.93c2d62c37e86d7feff8ae5033c23a12fdc3b4c6.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/935783c612bc749e2ff543429272ea5748297168/ol-handback/Microsoft/windows-apps.ja-jp/master/xaml-overview.93c2d62c37e86d7feff8ae5033c23a12fdc3b4c6.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#9ddb584efe7c6406f78b5a0cf0bdc73a974afd183903handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -9115,7 +9115,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [xaml-syntax-guide.c9a8b5d06ca0b6b2d786a2525ebfbc18e7fb6360.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/xaml-syntax-guide.c9a8b5d06ca0b6b2d786a2525ebfbc18e7fb6360.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#8e7819b02d7a22a16cf16091d08bef0aabc8d36e3904handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -9128,7 +9128,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [x-bind-markup-extension.e15da429bdcc720c5886b429cf5b14aafd611830.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/x-bind-markup-extension.e15da429bdcc720c5886b429cf5b14aafd611830.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#ceb5562ae08d7cc966f80fdb7e23f12afe0404303890handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -9141,7 +9141,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [x-class-attribute.53e5d3745617ce6cf90eb922527fb79f723d66f6.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/x-class-attribute.53e5d3745617ce6cf90eb922527fb79f723d66f6.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#83267df025baeb802bfdd0ec03ecd3bf7b01db763891handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -9154,7 +9154,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [x-deferloadstrategy-attribute.c43f026c410265fc6c49a920ed9b970f1f9807bc.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/x-deferloadstrategy-attribute.c43f026c410265fc6c49a920ed9b970f1f9807bc.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#b989a31439444f06dacb86adb186f853d1637f6c3892handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -9167,7 +9167,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [x-fieldmodifier-attribute.7716de02fef8d993a4400f6fb64c2550d4d8da87.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/x-fieldmodifier-attribute.7716de02fef8d993a4400f6fb64c2550d4d8da87.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#3f6c759d582d92aa33df5874186aeaa3a7c37b013893handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -9180,7 +9180,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [x-key-attribute.085c1ff19a58e956f1060e970c080b871dccf2ac.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/x-key-attribute.085c1ff19a58e956f1060e970c080b871dccf2ac.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#00d801dc3ebb8894f8e21ba0c1b9f3aecc981f303894handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -9193,7 +9193,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [x-name-attribute.bcb28d5a5579023c15a3001ef5e8743355e1b831.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/x-name-attribute.bcb28d5a5579023c15a3001ef5e8743355e1b831.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#442c2fa103e1e968ef47ea990bfe8e166daec88b3895handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -9206,7 +9206,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [x-null-markup-extension.481dbae6c6257c6022c49eb4441ca0da034f7af6.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/x-null-markup-extension.481dbae6c6257c6022c49eb4441ca0da034f7af6.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#96ec27fa36d5a30d6bcf3b3c4ad4a330bf799a093896handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -9219,7 +9219,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [x-phase-attribute.01a768bfd86405da2aabb530bd2ce9535b45f4e8.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/x-phase-attribute.01a768bfd86405da2aabb530bd2ce9535b45f4e8.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#dfa12909d19a44ed38939c612712c8fe90f3f5843897handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -9232,7 +9232,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [x-uid-directive.98148749f4ac1e90764998cc5371534cadfea313.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/x-uid-directive.98148749f4ac1e90764998cc5371534cadfea313.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#4f8aa553c99b6071cedc4f9d93cf8258b75eca493898handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -9245,7 +9245,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [automate-launching-uwp-apps.d3a8973266c7d7241b819fad336d4645f47c154b.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/automate-launching-uwp-apps.d3a8973266c7d7241b819fad336d4645f47c154b.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#ae2f80a915f4aed90c269c37a11d01a2f6c9849e3905handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -9310,7 +9310,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [devkit-activation.22024c3019b2f91b62bafe755f4aefb6138eab84.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/devkit-activation.22024c3019b2f91b62bafe755f4aefb6138eab84.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#9ad9904150acb00982c96eebeaf010f7023d33203912handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -9323,7 +9323,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [devkit-deactivation.803081fa0e1b79fb529f2a31e9460932158677ef.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/devkit-deactivation.803081fa0e1b79fb529f2a31e9460932158677ef.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#0751598ba50d69e1667b20ddc03f30d65ce080023913handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -9427,7 +9427,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [samples.056115dee4683cc17215f8c28c7e85077378007e.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/samples.056115dee4683cc17215f8c28c7e85077378007e.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#6f38f5aabb6a409fab894bf7127ad4011162f7c63979handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -9440,7 +9440,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [samples-xaml-dev.2fc54a6cdb962bcd0775c02c293d8cefe012291d.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/samples-xaml-dev.2fc54a6cdb962bcd0775c02c293d8cefe012291d.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#68e330dbc17557447bef8ddec76f71442e47594d3977handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
@@ -9453,7 +9453,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [samples-xaml-media.dc79cf8379f13a1916181cb9dae07c5ba487720c.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/samples-xaml-media.dc79cf8379f13a1916181cb9dae07c5ba487720c.ja-jp.xlf)
-* Handback Datetime: 2016-06-27 16:44:45
+* Handback Datetime: 2016-06-27 17:16:44
 * Handback Error: [handback_transformer_version_mismatch_with_handoff_transformer_version](#b7c1817bfb375c42262bac8d8e3768e93b4c26353978handback_transformer_version_mismatch_with_handoff_transformer_version)
 * [Back to Top](#report-top)
 
