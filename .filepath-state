@@ -6443,6 +6443,9 @@
   "033669a781aa85cc2c90fa11816e385ffefa997d": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "86c002ac094500f2fa7b9ac18ba6a2b41bb9be09": [
+    "windows-apps-src\\TOC.md"
+  ],
   "c732a5a217fb006aff1e814005cfa1ff0c09b048": [
     "windows-apps-src\\TOC.md"
   ],
@@ -7186,5 +7189,50 @@
   ],
   "fa7e7404a9a3ab5d75d47b3a5271bd1fd84b5569": [
     "windows-apps-src\\winrt-components\\brokered-windows-runtime-components-for-side-loaded-windows-store-apps.md"
+  ],
+  "bd36c5a0e702e85d651f0740a7a9ae56831dfa04": [
+    "windows-apps-src\\controls-and-patterns\\index.md"
+  ],
+  "ea59f995cb984adc2b5907a668cc60ec0dd6811f": [
+    "windows-apps-src\\design-downloads\\images\\hue-lights.png"
+  ],
+  "297ff9b0c94126dc5bb41b0317ba565de98665df": [
+    "windows-apps-src\\design-downloads\\images\\illustrator.jpg"
+  ],
+  "7733f3bdbf62f0fe4187d0b21097cd7a6c40735a": [
+    "windows-apps-src\\design-downloads\\images\\photo-sharing.png"
+  ],
+  "2519d471118a7628effc13648eb45e8a6fbfa099": [
+    "windows-apps-src\\design-downloads\\images\\photoshop.jpg"
+  ],
+  "5ee90436ad1fd5e02fc3445953ed06417b076dee": [
+    "windows-apps-src\\design-downloads\\images\\powerpoint.jpg"
+  ],
+  "06431d88f70aea9173f10f19244fa23062e534d4": [
+    "windows-apps-src\\design-downloads\\images\\redliner-tool.png"
+  ],
+  "0e2a716f7f1dfca38b91852ea487d00ffb7dba25": [
+    "windows-apps-src\\design-downloads\\images\\tile-icon-generator.png"
+  ],
+  "68da532b013d10c1967720b3b8e904013ed60d7e": [
+    "windows-apps-src\\design-downloads\\index.md"
+  ],
+  "d41adafecf2aa1313c605b084fc41e58f4f0433f": [
+    "windows-apps-src\\input-and-devices\\index.md"
+  ],
+  "33c4fde752217c24e114e05881a86fb941280fd1": [
+    "windows-apps-src\\layout\\images\\rspd-reposition-type1-sm.png"
+  ],
+  "1c1f7eda47165a17d2e012281c127aaa015cd229": [
+    "windows-apps-src\\layout\\index.md"
+  ],
+  "7db8534ae4c49fc3b93f9d192048d5193d5f7491": [
+    "windows-apps-src\\style\\images\\style-header-v2.png"
+  ],
+  "2547b5de76571eecf309be9255f707997f0168ff": [
+    "windows-apps-src\\style\\index.md"
+  ],
+  "c153018fe32d0116ec7402a39e6d46bff986d4b1": [
+    "windows-apps-src\\usability\\index.md"
   ]
 }
