@@ -6944,6 +6944,9 @@
   "f7ce4e39480958f0a487f43a50f1d9e5cb4beef4": [
     "windows-apps-src\\debug-test-perf\\images\\vs-target-sdk-2.png"
   ],
+  "db6b9c83d36ac876661197dce81e5724e44bb640": [
+    "windows-apps-src\\debug-test-perf\\version-adaptive-code.md"
+  ],
   "4f6ed019df2aaacf4f796e04143692a3f93b0597": [
     "windows-apps-src\\debug-test-perf\\version-adaptive-code.md"
   ],
@@ -7267,6 +7270,9 @@
   ],
   "c153018fe32d0116ec7402a39e6d46bff986d4b1": [
     "windows-apps-src\\usability\\index.md"
+  ],
+  "6b260dd6258d520233f6861217230adf49317320": [
+    "windows-apps-src\\publish\\index.md"
   ],
   "8c8534dc544f51b2cbfed0640accc3c0c9ce5742": [
     "windows-apps-src\\publish\\index.md"
