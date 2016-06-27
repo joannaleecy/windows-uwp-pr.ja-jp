@@ -137,15 +137,6 @@
   "ed1dc1ca0f34f0efafd14aa1cfd1e4b75351882c": [
     "windows-apps-src\\app-to-app\\copy-and-paste.md"
   ],
-  "ff4fc70743b329fca2cec564976b4b512eee61ef": [
-    "windows-apps-src\\app-to-app\\copy-and-paste.md"
-  ],
-  "7001b3f5719b1deab22044b822466c9b358d52c0": [
-    "windows-apps-src\\app-to-app\\copy-and-paste.md"
-  ],
-  "1d98623371655bc177cca661417d38c175ce9963": [
-    "windows-apps-src\\app-to-app\\copy-and-paste.md"
-  ],
   "ffa2f0f368a61ef4f3003c1fa03e143b26c6859b": [
     "windows-apps-src\\app-to-app\\drag-and-drop.md"
   ],
@@ -167,31 +158,10 @@
   "0f38a6864cf216bd9488b23ffad5a57a956616ee": [
     "windows-apps-src\\app-to-app\\receive-data.md"
   ],
-  "de61bdbbf22c6f397b4a10634e711f926f1c5904": [
-    "windows-apps-src\\app-to-app\\receive-data.md"
-  ],
-  "3853ccd58cbf48c8d39431ca5f5398bb80923c41": [
-    "windows-apps-src\\app-to-app\\receive-data.md"
-  ],
-  "7be3d9b9d24419e9238f6de56f17d4cd1732a897": [
-    "windows-apps-src\\app-to-app\\receive-data.md"
-  ],
-  "250826fd8f8c4490e62220df0398a7272d4b7b68": [
-    "windows-apps-src\\app-to-app\\receive-data.md"
-  ],
   "a91f0eb8b62a860809f8ffb63278be1eff31a2f3": [
     "windows-apps-src\\app-to-app\\share-data.md"
   ],
   "de9d4e88cfc00d5e428b8ddb8a27cc4ffd619e85": [
-    "windows-apps-src\\app-to-app\\share-data.md"
-  ],
-  "6c41466b2104240137ca3b375a92ca1f7fde4301": [
-    "windows-apps-src\\app-to-app\\share-data.md"
-  ],
-  "2df3ad6ef692c3834cb6d2fc5fbc43bd6d876f4c": [
-    "windows-apps-src\\app-to-app\\share-data.md"
-  ],
-  "c56c12a25bba4536472686df0c75e83a8d7f5822": [
     "windows-apps-src\\app-to-app\\share-data.md"
   ],
   "77533d4aca3cc84e0a021a0faac57f5afbbefdd7": [
@@ -3569,12 +3539,6 @@
   "2a70d73a5e714aaf1096fed5d08ec4844edd66a6": [
     "windows-apps-src\\graphics\\animations-overview.md"
   ],
-  "c2b77b2c9f6d3cc06bb05d4a79387196fa3586f4": [
-    "windows-apps-src\\graphics\\animations-overview.md"
-  ],
-  "1e44eb849b9a99e387916c931aeb619291c3591c": [
-    "windows-apps-src\\graphics\\animations-overview.md"
-  ],
   "e0088692b9de10c188f15b85b1f20b98cc113517": [
     "windows-apps-src\\graphics\\composition-animation.md"
   ],
@@ -3603,9 +3567,6 @@
     "windows-apps-src\\graphics\\drawing-shapes.md"
   ],
   "42514e5119b646d196e0a1c7d3099ebed2225c69": [
-    "windows-apps-src\\graphics\\drawing-shapes.md"
-  ],
-  "46fdc41415b98eb37eed091d78a31eacc86d7729": [
     "windows-apps-src\\graphics\\drawing-shapes.md"
   ],
   "ae478779a171a01eaccc8ee76373d33133ae7f09": [
@@ -3698,9 +3659,6 @@
   "fa5e8964ab35cb33a1ff59a8a52aa384b9d115b4": [
     "windows-apps-src\\graphics\\transforms-overview.md"
   ],
-  "e2d1c1745147eee6ba60d43cdc18d6a0567bf35f": [
-    "windows-apps-src\\graphics\\transforms-overview.md"
-  ],
   "4846630eb72c5fc81e01cc46f5ad362b0851292e": [
     "windows-apps-src\\graphics\\using-brushes.md"
   ],
@@ -3746,9 +3704,6 @@
   "c2c43052a1a4a96d7c0a95578b7b3fa3a2fd8a74": [
     "windows-apps-src\\input-and-devices\\convert-ink-to-text.md"
   ],
-  "bdc431d15742261d96b88b97d256b14156f2088c": [
-    "windows-apps-src\\input-and-devices\\convert-ink-to-text.md"
-  ],
   "83bf462659b28df49bf40beabd253acd039d67b6": [
     "windows-apps-src\\input-and-devices\\cortana-design-guidelines.md"
   ],
@@ -3771,9 +3726,6 @@
     "windows-apps-src\\input-and-devices\\deep-link-into-your-app-from-cortana.md"
   ],
   "b89aa43dffa69d092615e1b408feac77d0caa87c": [
-    "windows-apps-src\\input-and-devices\\deep-link-into-your-app-from-cortana.md"
-  ],
-  "c336c17cf6c0fcf5455fc23942bd26849f0d6543": [
     "windows-apps-src\\input-and-devices\\deep-link-into-your-app-from-cortana.md"
   ],
   "75e7367ee13357d3463213ca7d8f1ff37c4f0b77": [
@@ -4306,16 +4258,10 @@
   "7c2d3bd1ab2d2f4923cf84834a73fd1c58113212": [
     "windows-apps-src\\input-and-devices\\input-primer.md"
   ],
-  "003fe5ff5eb5935f6e569abda1c16f60cefacbf1": [
-    "windows-apps-src\\input-and-devices\\input-primer.md"
-  ],
   "5f8490c06e1803bed8efadb936d64b41e7f1e328": [
     "windows-apps-src\\input-and-devices\\interact-with-a-background-app-in-cortana.md"
   ],
   "675553f5c3954597982360900e965b2a756d7f63": [
-    "windows-apps-src\\input-and-devices\\interact-with-a-background-app-in-cortana.md"
-  ],
-  "23105104d86bc56aef9eafcb2078c4f0e2320fbb": [
     "windows-apps-src\\input-and-devices\\interact-with-a-background-app-in-cortana.md"
   ],
   "9de90236d94522f1b80309c3fec51ce59aee0319": [
@@ -4328,9 +4274,6 @@
     "windows-apps-src\\input-and-devices\\launch-a-background-app-with-voice-commands-in-cortana.md"
   ],
   "c65abdda905a390567d3c2b199a891c0c3067df1": [
-    "windows-apps-src\\input-and-devices\\launch-a-background-app-with-voice-commands-in-cortana.md"
-  ],
-  "0ca01b7102a664b6164f779bb8b520b1890086d1": [
     "windows-apps-src\\input-and-devices\\launch-a-background-app-with-voice-commands-in-cortana.md"
   ],
   "4e29d8c72e5230a5c4f16947f1163b5bfab66c41": [
@@ -4584,9 +4527,6 @@
     "windows-apps-src\\launch-resume\\launch-default-app.md"
   ],
   "b593a43bc5b95dd0880af972ca1514e657bbd9e3": [
-    "windows-apps-src\\launch-resume\\launch-default-app.md"
-  ],
-  "975d45797ef1069b5c34bd239992be05ed96d56b": [
     "windows-apps-src\\launch-resume\\launch-default-app.md"
   ],
   "0dcd15c7d04ed452f69208ad1e68a8949baf40dd": [
@@ -5465,24 +5405,6 @@
   "874b6452386526d66062a27a5b520cb1a232ae64": [
     "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
   ],
-  "ccb7a7722a6cb71d632cd6e51765bc0c719d826a": [
-    "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
-  ],
-  "8ab8f1dd641741c149a1ea8605d39bb0d8d4c353": [
-    "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
-  ],
-  "da4fe234efd615615a670be914e24e423f481308": [
-    "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
-  ],
-  "1751cc6307fc7581d383c70a9114e46bd7fe5451": [
-    "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
-  ],
-  "fb86faf941d707be8d38e89cf2edc5190bcd946c": [
-    "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
-  ],
-  "40e8dc2432f7d1fe738141b8935df718d2166c78": [
-    "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
-  ],
   "6e0b92af1d3c5f61aa2341d43ca40330fcc359f4": [
     "windows-apps-src\\porting\\getting-started-animation.md"
   ],
@@ -5865,12 +5787,6 @@
     "windows-apps-src\\publish\\dev-center-insider-program.md"
   ],
   "64b9327258d6116922d3e4cc097ed3dda08b541b": [
-    "windows-apps-src\\publish\\dev-center-insider-program.md"
-  ],
-  "8b0ce4f76679fb4bd6d27579f20270cafbfbc5bd": [
-    "windows-apps-src\\publish\\dev-center-insider-program.md"
-  ],
-  "1d1f3bd9d391d6c83a3e32bcac5eb60d39aa5283": [
     "windows-apps-src\\publish\\dev-center-insider-program.md"
   ],
   "d7551e0456ce0e59dbbfa92690ddd5ba2ebaf8b4": [
@@ -6668,9 +6584,6 @@
   "54c080183104335f4b3920cda8bc396a34298a69": [
     "windows-apps-src\\xaml-platform\\move-draw-commands-syntax.md"
   ],
-  "ec0209da2df9fdcb18d3470c8597f66a80543e12": [
-    "windows-apps-src\\xaml-platform\\move-draw-commands-syntax.md"
-  ],
   "0b1851bc9d19de5b678f8c6c3a255c0ba3057a85": [
     "windows-apps-src\\xaml-platform\\property-path-syntax.md"
   ],
@@ -6908,9 +6821,6 @@
   "c975cb07aa9b7f0d30a9905cbceba11e89c8f7df": [
     "windows-apps-src\\xbox-apps\\introduction-to-xbox-tools.md"
   ],
-  "ad714bfbb9b095e98c242d6203888f712c9bea20": [
-    "windows-apps-src\\xbox-apps\\introduction-to-xbox-tools.md"
-  ],
   "9a9180f8d6fcd51808310a7f8fbac986ca9c3817": [
     "windows-apps-src\\xbox-apps\\known-issues.md"
   ],
@@ -7113,9 +7023,6 @@
     "windows-apps-src\\xbox-apps\\development-lanes-landing.md"
   ],
   "3fa8248662a4ad08d46e89c6c5b14ace56212b62": [
-    "windows-apps-src\\xbox-apps\\development-lanes-landing.md"
-  ],
-  "0368e551c57c37614ff088790d3695d9bb5d0c5c": [
     "windows-apps-src\\xbox-apps\\development-lanes-landing.md"
   ],
   "cc854bc707a9c08687d3c6d92a704f5099d52d5b": [
