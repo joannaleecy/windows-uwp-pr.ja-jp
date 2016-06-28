@@ -6587,6 +6587,9 @@
   "4758f67c7bcbc58fda47faf1e872998302086c10": [
     "windows-apps-src\\xaml-platform\\customresource-markup-extension.md"
   ],
+  "5c61d4ff2f1efc6d4ce0ed292f2f856b23e53c91": [
+    "windows-apps-src\\xaml-platform\\dependency-properties-overview.md"
+  ],
   "6c431b5dd0d95159c108eb3c542509b5946f2944": [
     "windows-apps-src\\xaml-platform\\dependency-properties-overview.md"
   ],
