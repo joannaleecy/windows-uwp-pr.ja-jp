@@ -35,6 +35,9 @@
   "71071c989ca4aaa727d18d3ec25d8642517c4b26": [
     "windows-apps-src\\accessibility\\control-patterns-and-interfaces.md"
   ],
+  "3f3d5854114b1289257368f8e0fa618bd7d58c90": [
+    "windows-apps-src\\accessibility\\custom-automation-peers.md"
+  ],
   "5d52365ab082f64cd08d64d49662342104ffd30e": [
     "windows-apps-src\\accessibility\\custom-automation-peers.md"
   ],
@@ -2743,6 +2746,9 @@
   "36c1499b51aa5b8b5ab4b0b354197c67dc89801f": [
     "windows-apps-src\\devices-sensors\\customize-the-print-preview-ui.md"
   ],
+  "7127b84ebcddc82f33e8284a7abdf26e4436e160": [
+    "windows-apps-src\\devices-sensors\\device-information-properties.md"
+  ],
   "c3464cac3ecd63e27538cda526a6957343867d9c": [
     "windows-apps-src\\devices-sensors\\device-information-properties.md"
   ],
@@ -2754,6 +2760,9 @@
   ],
   "6fd95a8afe8dc9e130a6724d8b6d6c21bf7f701b": [
     "windows-apps-src\\devices-sensors\\enable-usermode-access.md"
+  ],
+  "536a3e8f72b9c68ffc7e0cf63e7601fd21242428": [
+    "windows-apps-src\\devices-sensors\\enumerate-devices.md"
   ],
   "82475031f28015140b8c81014baaa4c844b257ac": [
     "windows-apps-src\\devices-sensors\\enumerate-devices.md"
@@ -2870,8 +2879,14 @@
   "d8d37b779a0f9a4bec36d73fcd2d35272c587b11": [
     "windows-apps-src\\devices-sensors\\out-of-band-pairing.md"
   ],
+  "fa736c200185192cfd40a1c09f2da02cae67c05c": [
+    "windows-apps-src\\devices-sensors\\pair-devices.md"
+  ],
   "bd068680ada24cfdfb7e5db1733c06412fb6522f": [
     "windows-apps-src\\devices-sensors\\pair-devices.md"
+  ],
+  "363c19cfc15a883c4b6d951c59c63187f4239dec": [
+    "windows-apps-src\\devices-sensors\\print-from-your-app.md"
   ],
   "3a200b774bc5f4a57f6bca51936007560ddac5c1": [
     "windows-apps-src\\devices-sensors\\print-from-your-app.md"
@@ -2890,6 +2905,9 @@
   ],
   "3da7957bf9b162f1ac1533ccff90c8764f34890a": [
     "windows-apps-src\\devices-sensors\\sensor-orientation.md"
+  ],
+  "dff6228524396c5d6662313ecc808b33e9dd1998": [
+    "windows-apps-src\\devices-sensors\\sensors.md"
   ],
   "716f4d36d6b11621b28694821f0c607eb3a6afb2": [
     "windows-apps-src\\devices-sensors\\sensors.md"
