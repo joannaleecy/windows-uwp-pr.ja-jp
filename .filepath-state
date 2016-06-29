@@ -2238,6 +2238,9 @@
   "10964baff2bb53bf96ce2b220239d2322ac7a594": [
     "windows-apps-src\\controls-and-patterns\\images\\zoomout.png"
   ],
+  "36dd0614e9b552d9fa56a6c68479f9578fcada13": [
+    "windows-apps-src\\controls-and-patterns\\images-imagebrushes.md"
+  ],
   "f37f609d87b48a39b958a8e32470488689a3e68c": [
     "windows-apps-src\\controls-and-patterns\\images-imagebrushes.md"
   ],
@@ -2676,6 +2679,9 @@
   ],
   "77a162076e14b4726e1fb29673b14be65be37a16": [
     "windows-apps-src\\debug-test-perf\\mvvm-performance-tips.md"
+  ],
+  "8fd9ce5f43159ae00414d05ddb757c507aaa370d": [
+    "windows-apps-src\\debug-test-perf\\optimize-animations-and-media.md"
   ],
   "d3ddc07b214dcfe767d27bf24a36fe19d3534e6e": [
     "windows-apps-src\\debug-test-perf\\optimize-animations-and-media.md"
