@@ -269,6 +269,9 @@
   "a67b859cc2bd42abc13bcba0d405783b99a0ca5c": [
     "windows-apps-src\\audio-video-camera\\midi.md"
   ],
+  "eef128afc0da6f55a76b8c664f9049dc1ec48da1": [
+    "windows-apps-src\\audio-video-camera\\playready-client-sdk.md"
+  ],
   "d0bb8dac611b8a641ed07f2b7c8363d587616950": [
     "windows-apps-src\\audio-video-camera\\playready-client-sdk.md"
   ],
