@@ -2493,6 +2493,9 @@
   "eb639e78bf144572dfbfd2d65514bb4eff7c7be1": [
     "windows-apps-src\\debug-test-perf\\deploying-and-debugging-uwp-apps.md"
   ],
+  "8833dccd7e9440ff6374e2e5f000f9b77f5baa9d": [
+    "windows-apps-src\\debug-test-perf\\device-portal.md"
+  ],
   "fe4945bf3048a0c38e844a74fa6fc46706085d6d": [
     "windows-apps-src\\debug-test-perf\\device-portal.md"
   ],
@@ -2504,6 +2507,9 @@
   ],
   "ec3c972fb4c2f7e8f9317ac0031039786515a940": [
     "windows-apps-src\\debug-test-perf\\device-portal.md"
+  ],
+  "fda1b797c40691e7661218dfec9ef05f51ab4dea": [
+    "windows-apps-src\\debug-test-perf\\device-portal-api-core.md"
   ],
   "364e19c723c6cf48a25104b5719735a533ae54a7": [
     "windows-apps-src\\debug-test-perf\\device-portal-api-core.md"
@@ -3565,6 +3571,9 @@
   ],
   "4141d23c5102df4970ef7c4fb3659bf3ba561ccf": [
     "windows-apps-src\\graphics\\3-d-perspective-effects.md"
+  ],
+  "c51c3fadcce9451545737a08e30132cbbf59e0a1": [
+    "windows-apps-src\\graphics\\animations-overview.md"
   ],
   "15fa3b33bf302633ef8cd51928e1af5ea726cc01": [
     "windows-apps-src\\graphics\\animations-overview.md"
@@ -5906,6 +5915,9 @@
   "3d82caac353eb7cb63692469c5951be1f392ff52": [
     "windows-apps-src\\publish\\managing-your-profile.md"
   ],
+  "bd70a3c5990909351f04ca4200f4ea522989d1e9": [
+    "windows-apps-src\\publish\\mobile-operator-billing.md"
+  ],
   "d22d89523ff3089b3b56d1a85fa2c4b137389887": [
     "windows-apps-src\\publish\\mobile-operator-billing.md"
   ],
@@ -7333,6 +7345,9 @@
   ],
   "b813935efef628d63df88e0645f42482d52df374": [
     "windows-apps-src\\publish\\index.md"
+  ],
+  "ebd18f0afdd633a5e9cfc8bfa8db37f9c2a12d69": [
+    "windows-apps-src\\publish\\microsoft-advertising-payment-process.md"
   ],
   "7916d14e58e751dc33e2d46e7e151b7943952b9d": [
     "windows-apps-src\\publish\\microsoft-advertising-payment-process.md"
