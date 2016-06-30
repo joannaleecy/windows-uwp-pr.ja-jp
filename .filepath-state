@@ -5996,6 +5996,9 @@
   "033669a781aa85cc2c90fa11816e385ffefa997d": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "ae76e4a537cb63aa3c686a09c14db816748e8c98": [
+    "windows-apps-src\\TOC.md"
+  ],
   "6a7cc6d96969e6c5899d4aa209a6456e7b786981": [
     "windows-apps-src\\TOC.md"
   ],
@@ -6700,6 +6703,9 @@
   ],
   "b813935efef628d63df88e0645f42482d52df374": [
     "windows-apps-src\\publish\\index.md"
+  ],
+  "2f1502e6499c535149be32725624a11b5f3484cd": [
+    "windows-apps-src\\publish\\microsoft-advertising-payment-process.md"
   ],
   "ebd18f0afdd633a5e9cfc8bfa8db37f9c2a12d69": [
     "windows-apps-src\\publish\\microsoft-advertising-payment-process.md"
