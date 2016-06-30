@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\dev-center-insider-program.md](https://github.com/Microsoft/windows-apps/blob/7da709182c223810ac8cab203cea17f59615f2aa/windows-apps-src/publish/dev-center-insider-program.md) | OutofSyncHandedBackSuccess | [Details](#6aec19a0ec9cb401bccbafaf7df45e989a4292d43598)
+ [windows-apps-src\publish\dev-center-insider-program.md](https://github.com/Microsoft/windows-apps/blob/d2ae82dddf2b7a2f9fd44355e9cc4f8777f42fb7/windows-apps-src/publish/dev-center-insider-program.md) | OutofSyncHandedBackSuccess | [Details](#790f87e2f6c915a2d6e27b15b3e3da37356ab7023598)
 
 ## Item Details
-##### <a name='6aec19a0ec9cb401bccbafaf7df45e989a4292d43598'></a> Source: [windows-apps-src\publish\dev-center-insider-program.md](https://github.com/Microsoft/windows-apps/blob/7da709182c223810ac8cab203cea17f59615f2aa/windows-apps-src/publish/dev-center-insider-program.md)
+##### <a name='790f87e2f6c915a2d6e27b15b3e3da37356ab7023598'></a> Source: [windows-apps-src\publish\dev-center-insider-program.md](https://github.com/Microsoft/windows-apps/blob/d2ae82dddf2b7a2f9fd44355e9cc4f8777f42fb7/windows-apps-src/publish/dev-center-insider-program.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [dev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/33dec682e8a6906bcd87439874e0f797151b8387/ol-handoff/Microsoft/windows-apps.ja-jp/master/dev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.ja-jp.xlf)
-* Handoff Datetime: 2016-06-30 00:44:32
+* Handoff File: [dev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/cd403c5073086b45bf99aaea7461d03ffdd740eb/ol-handoff/Microsoft/windows-apps.ja-jp/master/dev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.ja-jp.xlf)
+* Handoff Datetime: 2016-06-30 01:40:39
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
