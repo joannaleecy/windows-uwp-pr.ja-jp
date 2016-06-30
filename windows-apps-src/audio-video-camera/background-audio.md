@@ -1,8 +1,11 @@
 ---
 author: drewbatgit
 ms.assetid: 923D8156-81D3-4A1E-9D02-DB219F600FDB
-description: この記事では、バックグラウンドでオーディオを再生するユニバーサル Windows プラットフォーム (UWP) アプリを作成する方法について説明します。
-title: バックグラウンド オーディオ
+description: "この記事では、バックグラウンドでオーディオを再生するユニバーサル Windows プラットフォーム (UWP) アプリを作成する方法について説明します。"
+title: "バックグラウンド オーディオ"
+ms.sourcegitcommit: 99d1ffa637fd8beca5d1e829cc7cacc18a9c21e9
+ms.openlocfilehash: 9275a194017f08692adee6de1c4d1f6deb680613
+
 ---
 
 # バックグラウンド オーディオ
@@ -66,6 +69,9 @@ title: バックグラウンド オーディオ
             **MessageReceivedFromBackground**](https://msdn.microsoft.com/library/windows/apps/dn652530) イベントと [**MessageReceivedFromForeground**](https://msdn.microsoft.com/library/windows/apps/dn652531) イベントの受信登録を行うことで、メッセージを受信することができます。
 
 データは引数としてメッセージ送信メソッドに渡され、次にメッセージ受信イベント ハンドラーに渡されます。 データを渡すには、[**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) クラスを使います。 このクラスは、文字列をキーとして格納し、その他の値の型を値として格納するディクショナリです。 渡すことができるのは、整数型、文字列型、ブール型など、単純型の値です。
+
+**注**  
+アプリは、フォアグラウンド アプリが実行されている場合にのみ、[**SendMessageToForeground**](https://msdn.microsoft.com/library/windows/apps/dn652533) を呼び出す必要があります。 フォアグラウンド アプリが実行されていないときにこのメソッドを呼び出そうとすると、例外がスローされます。 アプリは、フォアグラウンド アプリの状態をバックグラウンド プロセスに通知する必要があります。 この処理はアプリのライフサイクル イベントを使って実行され、状態の値はローカル記憶域と、プロセス間のメッセージで保持されます。 
 
 ## バックグラウンド タスクの有効期間
 
@@ -139,6 +145,7 @@ title: バックグラウンド オーディオ
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

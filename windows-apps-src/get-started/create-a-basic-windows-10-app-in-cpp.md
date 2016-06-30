@@ -1,8 +1,12 @@
 ---
 author: martinekuan
 ms.assetid: DC235C16-8DAF-4078-9365-6612A10F3EC3
-title: C++ を使った Hello World アプリの作成 (Windows 10)
-description: Microsoft Visual Studio 2015 では、C++ を使って、Windows 10 (Windows 10 を実行する電話も含む) で実行されるアプリを開発できます。 これらのアプリでは、Extensible Application Markup Language (XAML) で定義された UI が使われます。
+title: "C++ を使った Hello World アプリの作成 (Windows 10)"
+description: "Microsoft Visual Studio 2015 では、C++ を使って、Windows 10 (Windows 10 を実行する電話も含む) で実行されるアプリを開発できます。 これらのアプリでは、Extensible Application Markup Language (XAML) で定義された UI が使われます。"
+translationtype: Human Translation
+ms.sourcegitcommit: c26054867741934f87f189cc2c115dea9cf8daba
+ms.openlocfilehash: e39752f9f13eaf93d23412252483093e704b1668
+
 ---
 
 # C++ を使った "hello world" アプリの作成 (Windows 10)
@@ -279,7 +283,7 @@ Visual Studio で、選択したエミュレーターが起動し、アプリが
 ## 手順 2: イベント ハンドラーの作成
 
 1.  MainPage.xaml (XAML ビューまたはデザイン ビュー) で、先に追加した [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635) の "Say Hello" [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) を選びます。
-2.  Alt + Enter キーを押して**プロパティ ウィンドウ**を開き、[イベント] ボタン (![[イベント] ボタン) を選びます。
+2.  Alt + Enter キーを押して**プロパティ ウィンドウ**を開き、[イベント] ボタン (![[イベント] ボタン](images/eventsbutton.png)) を選択します。
 3.  [
             **Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) イベントを探します。 このテキスト ボックスに、**Click** イベントを処理する関数の名前を入力します。 この例では、「Button\_Click」と入力します。
 
@@ -297,7 +301,7 @@ Visual Studio で、選択したエミュレーターが起動し、アプリが
 
 デザイナーは、レンダリング中にハンドルされない例外が発生すると、読み込みに失敗します。 デザイナーでのレンダリングでは、ページの設計時のバージョンが実行されます。 これは、ユーザー コードの実行を無効にする場合に便利です。 そのためには、**[ツール]、[オプション]** の順にクリックして、開いたダイアログ ボックスで設定を変更します。 **[XAML デザイナー]** で、**[プロジェクト コードを XAML デザイナーで実行する (サポートされている場合)]** チェック ボックスをオフにします。
 
-5.  MainPage.xaml.cpp で、作成した **Button\_Click** イベント ハンドラーに次のコードを追加します。 このコードは、`nameInput` [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) コントロールからユーザー名を取得し、それを使ってあいさつを作ります。 結果は、`greetingOutput` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) に表示されます。
+5.  MainPage.xaml.cpp で、作成した **Button\_Click** イベント ハンドラーに次のコードを追加します。 このコードは、`nameInput`[**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) コントロールからユーザー名を取得し、それを使ってあいさつを作ります。 結果は、`greetingOutput`[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) に表示されます。
 
 ```cpp
     void HelloWorld::MainPage::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
@@ -357,7 +361,7 @@ Visual Studio で、選択したエミュレーターが起動し、アプリが
 5.  **[その他]** グループを展開し、**Style** プロパティを探します。
 6.  プロパティ マーカー (**Style** プロパティの右にある緑色のボックス) をクリックし、メニューから **[システム リソース]**、**[BaseTextBlockStyle]** の順にクリックします。
 
- **BaseTextBlockStyle** は、[**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794) ( <root>\\Program Files\\Windows Kits\\10\\Include\\winrt\\xaml\\design\\generic.xaml 内) で定義されるリソースです。
+ **BaseTextBlockStyle** は、<root>\\Program Files\\Windows Kits\\10\\Include\\winrt\\xaml\\design\\generic.xaml の [**ResourceDictionary** ](https://msdn.microsoft.com/library/windows/apps/BR208794) で定義されているリソースです。
 
 ![プロパティ ウィンドウのプロパティ ビュー](images/xaml-hw-style-cpp.png)
 
@@ -445,6 +449,7 @@ UWP アプリと統合する既存の C++ コードがある場合、たとえ�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: 0186EA01-8446-45BA-A109-C5EB4B80F368
-description: ハイ ダイナミック レンジ (HDR) の写真は、AdvancedPhotoCapture クラスを使ってキャプチャできます。
-title: ハイ ダイナミック レンジ (HDR) 写真のキャプチャ
+description: "ハイ ダイナミック レンジ (HDR) の写真は、AdvancedPhotoCapture クラスを使ってキャプチャできます。"
+title: "ハイ ダイナミック レンジ (HDR) 写真のキャプチャ"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 3015aa4338ddb0c0a006eb631026261a4453f376
+
 ---
 
 # ハイ ダイナミック レンジ (HDR) 写真のキャプチャ
@@ -15,7 +19,7 @@ title: ハイ ダイナミック レンジ (HDR) 写真のキャプチャ
 HDR キャプチャに関連したその他の記事を以下に示します。
 
 -   [
-            **SceneAnalysisEffect**](https://msdn.microsoft.com/library/windows/apps/dn948902) でメディア キャプチャのプレビュー ストリームの内容をシステムで評価し、HDR 処理によるキャプチャ結果の向上が期待できるかどうかを判断できます。 詳しくは、「[メディア キャプチャのシーン分析](scene-analysis-for-media-capture.md)」をご覧ください
+            **SceneAnalysisEffect**](https://msdn.microsoft.com/library/windows/apps/dn948902) でメディア キャプチャのプレビュー ストリームの内容をシステムで評価し、HDR 処理によるキャプチャ結果の向上が期待できるかどうかを判断できます。 詳しくは、「[メディア キャプチャのシーン分析](scene-analysis-for-media-capture.md)」をご覧ください。
 
 -   [
             **HdrVideoControl**](https://msdn.microsoft.com/library/windows/apps/dn926680) で、Windows に組み込まれている HDR 処理アルゴリズムを使ってビデオをキャプチャします。 詳しくは、「[ビデオ キャプチャのためのキャプチャ デバイス コントロール](capture-device-controls-for-video-capture.md)」をご覧ください。
@@ -52,7 +56,7 @@ HDR 写真キャプチャを使うには、基本的なメディア キャプチ
 
 アプリのコードで、**MediaCapture** オブジェクトを初期化した後、[**AdvancedPhotoCaptureSettings**](https://msdn.microsoft.com/library/windows/apps/mt147837) オブジェクトを作成し、そのモードを [**AdvancedPhotoMode.Hdr**](https://msdn.microsoft.com/library/windows/apps/mt147845) に設定します。 作成した **AdvancedPhotoCaptureSettings** オブジェクトを [**AdvancedPhotoControl**](https://msdn.microsoft.com/library/windows/apps/mt147840) オブジェクトの [**Configure**](https://msdn.microsoft.com/library/windows/apps/mt147841) メソッドに渡して呼び出します。
 
-**MediaCapture** オブジェクトの [**PrepareAdvancedPhotoCaptureAsync**](https://msdn.microsoft.com/library/windows/apps/mt181403) を呼び出す際に [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) オブジェクトを渡し、キャプチャで使うエンコードの種類を指定します。 **ImageEncodingProperties** には、**MediaCapture** でサポートされる画像エンコードを作成するための静的メソッドがあります
+**MediaCapture** オブジェクトの [**PrepareAdvancedPhotoCaptureAsync**](https://msdn.microsoft.com/library/windows/apps/mt181403) を呼び出す際に [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) オブジェクトを渡し、キャプチャで使うエンコードの種類を指定します。 **ImageEncodingProperties** には、**MediaCapture** でサポートされる画像エンコードを作成するための静的メソッドがあります。
 
 **PrepareAdvancedPhotoCaptureAsync** からは [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) オブジェクトが返されます。写真キャプチャの初期化にはこのオブジェクトを使うことになります。 後ほど説明する [**OptionalReferencePhotoCaptured**](https://msdn.microsoft.com/library/windows/apps/mt181392) と [**AllPhotosCaptured**](https://msdn.microsoft.com/library/windows/apps/mt181387) のハンドラーは、このオブジェクトを使って登録することができます。
 
@@ -64,18 +68,16 @@ HDR 写真をキャプチャするには、[**AdvancedPhotoCapture**](https://ms
 
 [!code-cs[CaptureHdrPhotoAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCaptureHdrPhotoAsync)]
 
-**ConvertOrientationToPhotoOrientation** と **ReencodeAndSavePhotoAsync** は、ヘルパー メソッドです。「[MediaCapture を使った写真とビデオのキャプチャ](capture-photos-and-video-with-mediacapture.md)」の記事で紹介した基本的なメディア キャプチャのシナリオの中で取り上げました。
+**ConvertOrientationToPhotoOrientation** と **ReencodeAndSavePhotoAsync** は、ヘルパー メソッドです。このメソッドについては、「[MediaCapture を使った写真とビデオのキャプチャ](capture-photos-and-video-with-mediacapture.md)」の記事で紹介した基本的なメディア キャプチャのシナリオ内で説明されています。
 
 ## 必要に応じて参照フレームを取得する
 
 HDR プロセスは複数のフレームをキャプチャします。そのすべてのフレームがキャプチャされると、それらが単一の画像として合成されます。 フレームがキャプチャされた後、HDR プロセス全体が完了する前に、[**OptionalReferencePhotoCaptured**](https://msdn.microsoft.com/library/windows/apps/mt181392) イベントを処理することでそのフレームにアクセスすることができます。 HDR 写真の最終的な結果だけが目的であれば、この処理は不要です。
 
 **重要**
-            
-          
-            ハードウェア HDR をサポートしていて参照フレームを生成しないデバイスでは、[
+            [
               **OptionalReferencePhotoCaptured**
-            ](https://msdn.microsoft.com/library/windows/apps/mt181392) は発生しません。 アプリ側で、このイベントが生成されないケースに対処する必要があります。
+            ](https://msdn.microsoft.com/library/windows/apps/mt181392) は、ハードウェア HDR をサポートしていて参照フレームを生成しないデバイスでは発生しません。 アプリ側で、このイベントが生成されないケースに対処する必要があります。
 
 参照フレームは **CaptureAsync** 呼び出しのコンテキストから離れて届くため、**OptionalReferencePhotoCaptured** ハンドラーにコンテキスト情報を渡すためのしくみが用意されています。 まず、コンテキスト情報を保持するオブジェクトが必要です。 このオブジェクトの名前と内容は自由に設定してください。 この例のオブジェクトには、キャプチャのファイル名とカメラの向きを追跡するためのメンバーが定義されています。
 
@@ -107,6 +109,7 @@ HDR 写真のキャプチャには、2 つのステップがあります。 複�
 * [MediaCapture を使った写真とビデオのキャプチャ](capture-photos-and-video-with-mediacapture.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

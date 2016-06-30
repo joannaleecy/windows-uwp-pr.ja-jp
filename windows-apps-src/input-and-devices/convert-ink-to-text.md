@@ -6,8 +6,8 @@ ms.assetid: C2F3F3CE-737F-4652-98B7-5278A462F9D3
 label: Recognize Windows Ink strokes as text
 template: detail.hbs
 keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, handwriting recognition
-ms.sourcegitcommit: 1722fc00de000d07ed30cfb0ae12080708c30b76
-ms.openlocfilehash: c2c43052a1a4a96d7c0a95578b7b3fa3a2fd8a74
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: ac07ca76df874c670e7e38698e89de6620f73cc4
 
 ---
 
@@ -25,7 +25,7 @@ ms.openlocfilehash: c2c43052a1a4a96d7c0a95578b7b3fa3a2fd8a74
 
 ここで示しているすべての例では、インク入力機能に必要な名前空間の参照を追加しています。 "Windows.UI.Input.Inking" などです。
 
-## <span id="Basic_handwriting_recognition"></span><span id="basic_handwriting_recognition"></span><span id="BASIC_HANDWRITING_RECOGNITION"></span>基本的な手書き認識
+## 基本的な手書き認識
 
 
 ここでは、既定のインストール言語パックに関連付けられた手書き認識エンジンを使って、[**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) での一連のインク ストロークを解釈する方法を示します。
@@ -204,7 +204,7 @@ string str = "Recognition result\n";
     }
 ```
 
-## <span id="International_recognition"></span><span id="international_recognition"></span><span id="INTERNATIONAL_RECOGNITION"></span>地域と言語の認識
+## 地域と言語の認識
 
 
 Windows でサポートされている包括的な言語のサブセットを手書き認識に使えます。
@@ -453,7 +453,7 @@ string str = "Recognition result\n";
     }
 ```
 
-## <span id="Dynamic_handwriting_recognition"></span><span id="dynamic_handwriting_recognition"></span><span id="DYNAMIC_HANDWRITING_RECOGNITION"></span>動的な手書き認識
+## 動的な手書き認識
 
 
 前の 2 つの例では、認識を開始するには、ユーザーがボタンを押す必要があります。 アプリでは、インク ストローク入力と基本的なタイミング機能を組み合わせて使うことで、動的な認識を実行することもできます。
@@ -530,13 +530,13 @@ public MainPage()
 
 2.  ここで示しているのは、最初の手順で追加した 3 つのイベントのハンドラーです。
 
-    <span id="StrokesCollected"></span><span id="strokescollected"></span><span id="STROKESCOLLECTED"></span>[**StrokesCollected**](https://msdn.microsoft.com/library/windows/apps/dn922024)  
+    [**StrokesCollected**](https://msdn.microsoft.com/library/windows/apps/dn922024)  
     ユーザーがペンを持ち上げるか、マウス ボタンから指を離すことで、インク入力を止めると、認識タイマーを開始します。 インク入力がなくなってから 1 秒後に、認識を開始します。
 
-    <span id="StrokeStarted"></span><span id="strokestarted"></span><span id="STROKESTARTED"></span>[**StrokeStarted**](https://msdn.microsoft.com/library/windows/apps/dn914702)  
+    [**StrokeStarted**](https://msdn.microsoft.com/library/windows/apps/dn914702)  
     新しいインク ストロークが次のタイマー ティック イベントの前に始まった場合、新しいインク ストロークが同じ手書き入力の続きである可能性が高いため、タイマーを停止します。
 
-    <span id="Tick"></span><span id="tick"></span><span id="TICK"></span>[**Tick**](https://msdn.microsoft.com/library/windows/apps/br244256)  
+    [**Tick**](https://msdn.microsoft.com/library/windows/apps/br244256)  
     インク入力がなくなってから 1 秒後に、認識関数を呼び出します。
 ```    CSharp
 // Handler for the timer tick event calls the recognition function.
@@ -666,7 +666,7 @@ string str = "Recognition result\n";
     }
 ```
 
-## <span id="related_topics"></span>関連記事
+## 関連記事
 
 * [ペン操作とスタイラス操作](pen-and-stylus-interactions.md)
 
@@ -680,6 +680,6 @@ string str = "Recognition result\n";
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

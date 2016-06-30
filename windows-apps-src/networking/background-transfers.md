@@ -1,8 +1,12 @@
 ---
 author: DelfCo
-description: ネットワーク経由でファイルを確実にコピーするには、バックグラウンド転送 API を使います。
-title: バックグラウンド転送
+description: "ネットワーク経由でファイルを確実にコピーするには、バックグラウンド転送 API を使います。"
+title: "バックグラウンド転送"
 ms.assetid: 1207B089-BC16-4BF0-BBD4-FD99950C764B
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 02e01be9cf726731697eb5934cb86b398431b532
+
 ---
 
 # バックグラウンド転送
@@ -197,7 +201,7 @@ JavaScript の promise を使って定義した非同期メソッドの呼び出
 promise = download.startAsync().then(complete, error, progress);
 ```
 
-非同期メソッドの後に then ステートメントが続いています。このステートメントでは、非同期メソッドの呼び出しの結果が返されたときに呼び出される、アプリで定義されたメソッドを指定しています。 このプログラミング パターンについて詳しくは、「[promise を使った JavaScript での非同期プログラミング](http://msdn.microsoft.com/library/windows/apps/hh464930.aspx)」をご覧ください。
+非同期メソッドの後に then ステートメントが続いています。このステートメントでは、非同期メソッドの呼び出しの結果が返されたときに呼び出される、アプリで定義されたメソッドを指定しています。 このプログラミング パターンについて詳しくは、「[プロミスを使った JavaScript での非同期プログラミング](http://msdn.microsoft.com/library/windows/apps/hh464930.aspx)」をご覧ください。
 
 ### その他の操作制御メソッドの追加
 
@@ -326,6 +330,7 @@ C++ では、URI として渡される文字列を試行して解析するメソ
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

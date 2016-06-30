@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: pubCenter の Microsoft Advertising は、Windows デベロッパー センターに統合されました。
-title: PubCenter とデベロッパー センターの統合
+Description: "pubCenter の Microsoft Advertising は、Windows デベロッパー センターに統合されました。"
+title: "PubCenter とデベロッパー センターの統合"
 ms.assetid: C1EB51DF-7850-45F4-B565-FF5A690EBD8D
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: d6bf60e1dae7ec62e3cdbba8098a24c093d5deb1
+
 ---
 
 # PubCenter とデベロッパー センターの統合
@@ -181,6 +185,7 @@ PubCenter とデベロッパー センターの統合の一環として、デベ
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: フィードバックを確認していることを顧客に伝えるために、アプリのレビューに直接返信できます。
-title: 顧客のレビューに返信する
+Description: "フィードバックを確認していることを顧客に伝えるために、アプリのレビューに直接返信できます。"
+title: "顧客のレビューに返信する"
 ms.assetid: 96AA2108-E793-4DD0-8CDA-0D115423C68D
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 06228d7816f371f669ad4e6db7310e903f5f0683
+
 ---
 
 # 顧客のレビューに返信する
@@ -47,6 +51,7 @@ Microsoft は、返信が不適切であるという報告が非常に多い場�
 顧客の声を聞いて返信するのは第一歩に過ぎません。 彼らのフィードバックに対応することも重要です。 大幅な改善を行う場合は、アプリを更新するための[新しい申請を作成](app-submissions.md)して、ストアで自信を持ってお知らせしてください。
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

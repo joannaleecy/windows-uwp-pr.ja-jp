@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: この記事では、デザインの観点からユニバーサル Windows プラットフォーム (UWP) の機能、利点、要件について説明します。 無料で提供されるプラットフォーム、自由に使うことができるツールを紹介します。
-title: ユニバーサル Windows プラットフォーム (UWP) アプリ設計の概要
+Description: "この記事では、デザインの観点からユニバーサル Windows プラットフォーム (UWP) の機能、利点、要件について説明します。 無料で提供されるプラットフォーム、自由に使うことができるツールを紹介します。"
+title: "ユニバーサル Windows プラットフォーム (UWP) アプリ設計の概要"
 ms.assetid: 50A5605E-3A91-41DB-800A-9180717C1E86
 label: Intro to UWP app design
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: ec154ec64ba18badb5f81b59e76fc04e539de1a8
+
 ---
 
 #  UWP アプリ設計の概要 
@@ -215,6 +219,7 @@ UI は、画面領域に基づいて表示したり、デバイスが追加機�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

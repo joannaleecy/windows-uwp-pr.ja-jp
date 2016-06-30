@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: この記事では、アプリ設定を作成し、表示する際のベスト プラクティスについて説明します。
-title: アプリ設定のガイドライン
+Description: "この記事では、アプリ設定を作成し、表示する際のベスト プラクティスについて説明します。"
+title: "アプリ設定のガイドライン"
 ms.assetid: 2D765E90-3FA0-42F5-A5CB-BEDC14C3F60A
 label: Guidelines
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: aeccd755c5fe5df8f2ff5549950ce2d6cb74e8e4
+
 ---
 
 
@@ -141,6 +145,7 @@ template: detail.hbs
 �
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

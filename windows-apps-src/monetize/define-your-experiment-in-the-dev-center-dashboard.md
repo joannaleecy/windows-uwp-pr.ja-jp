@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
-Description: ユニバーサル Windows プラットフォーム (UWP) アプリで A/B テストを実施する前に、デベロッパー センター ダッシュボードで試験的機能を定義する必要があります。
-title: デベロッパー センター ダッシュボードで試験的機能を定義する
+Description: "ユニバーサル Windows プラットフォーム (UWP) アプリで A/B テストを実施する前に、デベロッパー センター ダッシュボードで試験的機能を定義する必要があります。"
+title: "デベロッパー センター ダッシュボードで試験的機能を定義する"
 ms.assetid: 675F2ADE-0D4B-41EB-AA4E-56B9C8F32C41
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 7462c23de58b44f897a1737d0d54913144b14f75
+
 ---
 
 # デベロッパー センター ダッシュボードで試験的機能を定義する
@@ -80,6 +84,7 @@ API キーは、アプリをデベロッパー センターアカウントの試
   * [A/B テストを使用してアプリの試験的機能を実行する](run-app-experiments-with-a-b-testing.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

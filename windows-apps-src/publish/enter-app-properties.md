@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: アプリの申請プロセスの [アプリケーションのプロパティ] ページでは、アプリのカテゴリを定義し、ハードウェアの基本設定や他の宣言を指定できます。
-title: アプリのプロパティの入力
+Description: "アプリの申請プロセスの [アプリケーションのプロパティ] ページでは、アプリのカテゴリを定義し、ハードウェアの基本設定や他の宣言を指定できます。"
+title: "アプリのプロパティの入力"
 ms.assetid: CDE4AF96-95A0-4635-9D07-A27B810CAE26
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 8861c13478adbe2010a164126c56f555375e0472
+
 ---
 
 # アプリのプロパティの入力
@@ -40,6 +44,7 @@ ms.assetid: CDE4AF96-95A0-4635-9D07-A27B810CAE26
 詳しくは、「[アプリの宣言](app-declarations.md)」をご覧ください。
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
-title: モバイル用 Device Portal
-description: Windows Device Portal で、モバイル デバイスの構成と管理をリモートから行う方法について説明します。
+title: "モバイル用 Device Portal"
+description: "Windows Device Portal で、モバイル デバイスの構成と管理をリモートから行う方法について説明します。"
+translationtype: Human Translation
+ms.sourcegitcommit: df6d42d6a91b8721e905fe9bc3a339dc33408459
+ms.openlocfilehash: eeeb8f98d97468544cc30e3d9884cce15cb913a9
+
 ---
 # モバイル用 Device Portal
 
@@ -72,6 +76,7 @@ Windows Mobile Device Portal には、任意のプロセスを強制終了する
 - Networking (ネットワーク)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

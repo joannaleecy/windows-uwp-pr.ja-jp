@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: ゲームのタッチ コントロール
-description: ここでは、DirectX を使って基本的なタッチ コントロールをユニバーサル Windows プラットフォーム (UWP) C++ ゲームに追加する方法について説明します。
+title: "ゲームのタッチ コントロール"
+description: "ここでは、DirectX を使って基本的なタッチ コントロールをユニバーサル Windows プラットフォーム (UWP) C++ ゲームに追加する方法について説明します。"
 ms.assetid: 9d40e6e4-46a9-97e9-b848-522d61e8e109
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: a2460ba2ffcf191fe87132180b2cca7519e87141
+
 ---
 
 # ゲームのタッチ コントロール
@@ -348,6 +352,7 @@ void CameraPanController::Update( CoreWindow ^window )
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

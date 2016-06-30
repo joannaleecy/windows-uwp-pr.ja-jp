@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
-description: この移植ガイドを最後まで読み進むことを強くお勧めしますが、まず先に進み、プロジェクトの構築と実行の段階に到達することを非常に望まれていることも理解できます。
-title: Windows ランタイム 8.x から UWP への移植のトラブルシューティング'
+description: "この移植ガイドを最後まで読み進むことを強くお勧めしますが、まず先に進み、プロジェクトの構築と実行の段階に到達することを非常に望まれていることも理解できます。"
+title: "Windows ランタイム 8.x から UWP への移植のトラブルシューティング'"
 ms.assetid: 1882b477-bb5d-4f29-ba99-b61096f45e50
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: e5758472d303f4baaf80d45d6b23b54f2a21e002
+
 ---
 
 # Windows ランタイム 8.x から UWP への移植のトラブルシューティング
@@ -23,7 +27,7 @@ XAML 解析例外は診断が難しい場合があります。特に、わかり
 
 ## TargetPlatformVersion
 
-このセクションでは、Visual Studio で Windows 10 プロジェクトを開いたとき、"Visual Studio 更新プログラムが必要。 1 つ以上のプロジェクトでは、 <version> インストールされていないか、Visual Studio に対する今後の更新の一部として含まれるプラットフォーム SDK が必要です。" というメッセージが表示された場合に行う作業について説明します。
+このセクションでは、Visual Studio で Windows 10 プロジェクトを開いたとき、"Visual Studio 更新プログラムが必要。 1 つ以上のプロジェクトでは、インストールされていないか、Visual Studio に対する今後の更新の一部として含まれるプラットフォーム SDK <version> が必要です。"
 
 -   まず、インストールされている SDK for Windows 10 のバージョン番号を確認します。 **C:\\Program Files (x86)\\Windows Kits\\10\\Include\\<versionfoldername>** に移動し、*<versionfoldername>* をメモしてください。これは、4 つの部分 "メジャー.マイナー.ビルド.リビジョン" から成るバージョン文字列です。
 -   編集用のプロジェクト ファイルを開き、`TargetPlatformVersion` 要素と `TargetPlatformMinVersion` 要素を探します。 これらの要素を次のように編集します。*<versionfoldername>* は、ディスク上で見つけた 4 つの部分から成るバージョン文字列に置き換えてください。
@@ -49,6 +53,7 @@ XAML 解析例外は診断が難しい場合があります。特に、わかり
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: Windows 設定アプリの起動
-description: アプリから Windows 設定アプリを起動する方法について説明します。 ここでは、ms-settings URI スキームについて説明します。 Windows 設定アプリを起動して特定の設定ページを表示するには、この URI スキームを使います。
+author: TylerMSFT
+title: "Windows 設定アプリの起動"
+description: "アプリから Windows 設定アプリを起動する方法について説明します。 ここでは、ms-settings URI スキームについて説明します。 Windows 設定アプリを起動して特定の設定ページを表示するには、この URI スキームを使います。"
 ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
+ms.sourcegitcommit: 3cf9dd4ab83139a2b4b0f44a36c2e57a92900903
+ms.openlocfilehash: e52a4245e8697a68bfc5c5605dc54e5ea510c662
+
 ---
 
 # Windows 設定アプリの起動
@@ -32,7 +35,7 @@ ms.assetid: C84D4BEE-1FEE-4648-AD7D-8321EAC70290
 
 ```xml
 <!--Set Visibility to Visible when access to the microphone is denied -->  
-<TextBlock x:Name="LocationDisabledMessage" FontStyle="Italic" 
+<TextBlock x:Name="LocationDisabledMessage" FontStyle="Italic"
                  Visibility="Collapsed" Margin="0,15,0,0" TextWrapping="Wrap" >
           <Run Text="This app is not able to access the microphone. Go to " />
               <Hyperlink NavigateUri="ms-settings:privacy-microphone">
@@ -68,9 +71,9 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 |                    | 通知とアクション                | 両方           | ms-settings:notifications                 |
 |                    | 電話                                  | モバイルのみ    | ms-settings:phone                         |
 |                    | メッセージング                              | モバイルのみ    | ms-settings:messaging                     |
-|                    | バッテリー セーバー                          | 両方           | ms-settings:batterysaver                  |
-|                    | バッテリー セーバー/バッテリー セーバーの設定 | 両方           | ms-settings:batterysaver-settings         |
-|                    | バッテリー セーバー/バッテリーの使用状況            | 両方           | ms-settings:batterysaver-usagedetails     |
+|                    | バッテリー節約機能                          | タブレットなどのバッテリを備えたデバイス上のモバイルおよびデスクトップ    | ms-settings:batterysaver                  |
+|                    | バッテリー節約機能/バッテリー節約機能の設定 | タブレットなどのバッテリを備えたデバイス上のモバイルおよびデスクトップ | ms-settings:batterysaver-settings         |
+|                    | バッテリー節約機能/バッテリーの使用状況            | タブレットなどのバッテリを備えたデバイス上のモバイルおよびデスクトップ    | ms-settings:batterysaver-usagedetails     |
 |                    | 電源とスリープ                          | デスクトップのみ   | ms-settings:powersleep                    |
 |                    | デスクトップ: バージョン情報                         | 両方           | ms-settings:deviceencryption              |
 |                    |                                        |                |                                           |
@@ -124,8 +127,6 @@ URI の起動について詳しくは、「[URI に応じた既定のアプリ�
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

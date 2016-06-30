@@ -1,8 +1,11 @@
 ---
-author: PatrickFarley
-Description: このトピックでは、ユーザーの位置にアクセスする必要があるアプリを構築する際のパフォーマンス ガイドラインを説明します。
-title: 位置認識アプリのガイドライン
+author: msatranjr
+Description: "このトピックでは、ユーザーの位置にアクセスする必要があるアプリを構築する際のパフォーマンス ガイドラインを説明します。"
+title: "位置認識アプリのガイドライン"
 ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
+ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
+ms.openlocfilehash: 6a5451d449719d979bce7e83f5a2949661dd7834
+
 ---
 
 # 位置認識アプリのガイドライン
@@ -51,7 +54,7 @@ ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
 
 **パフォーマンス**
 
--   アプリで位置情報の更新を受け取る必要がない場合は、位置情報の要求を 1 回だけ使います。 たとえば、写真に位置情報タグを追加するアプリでは、位置情報更新イベントを受け取る必要はありません。 このようなアプリでは、[**getGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) を使って位置情報を要求します。詳しくは、「[現在の位置情報の取得](https://msdn.microsoft.com/library/windows/apps/mt219698)」をご覧ください
+-   アプリで位置情報の更新を受け取る必要がない場合は、位置情報の要求を 1 回だけ使います。 たとえば、写真に位置情報タグを追加するアプリでは、位置情報更新イベントを受け取る必要はありません。 このようなアプリでは、[**getGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) を使って位置情報を要求します。詳しくは、「[現在の位置情報の取得](https://msdn.microsoft.com/library/windows/apps/mt219698)」をご覧ください。
 
     1 回限りの位置情報の要求を行う場合は、次の値を設定する必要があります。
 
@@ -62,7 +65,7 @@ ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
     -   [ **GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) のタイムアウト パラメーターを設定します。 これが、アプリが返される位置またはエラーを待機することができる長さです。 ユーザーへの応答性とアプリが必要とする精度のバランスを理解する必要があります。
 -   頻繁に位置を更新する必要がある場合は、連続的な位置情報のセッションを使います。 特定のしきい値を超えた移動を検出する場合、または発生時に絶えず位置情報の更新を取得する場合は、[**positionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) イベントと [**statusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) イベントを使います。
 
-    位置情報の更新を要求すると、[**DesiredAccuracy**](https://msdn.microsoft.com/library/windows/apps/br225535) または [**DesiredAccuracyInMeters**](https://msdn.microsoft.com/library/windows/apps/jj635271) を設定して、アプリから要求される精度を指定できます。 また、[**MovementThreshold**](https://msdn.microsoft.com/library/windows/apps/br225539) または [**ReportInterval**](https://msdn.microsoft.com/library/windows/apps/br225541) を使って、位置情報の更新が必要な頻度を設定する必要があります
+    位置情報の更新を要求すると、[**DesiredAccuracy**](https://msdn.microsoft.com/library/windows/apps/br225535) または [**DesiredAccuracyInMeters**](https://msdn.microsoft.com/library/windows/apps/jj635271) を設定して、アプリから要求される精度を指定できます。 また、[**MovementThreshold**](https://msdn.microsoft.com/library/windows/apps/br225539)  または [**ReportInterval**](https://msdn.microsoft.com/library/windows/apps/br225541) を使って、位置情報の更新が必要な頻度を設定する必要があります。
 
     -   移動しきい値を指定します。 アプリによっては、ユーザーの移動距離が大きいときにだけ位置情報を更新すれば済むものがあります。 たとえば、地域のニュースや天気予報の更新情報を提供するアプリでは、ユーザーの位置が別の都市に変わらない限り位置情報を更新する必要はありません。 このような場合は、[**MovementThreshold**](https://msdn.microsoft.com/library/windows/apps/br225539) プロパティを設定して、位置情報更新イベントの発生条件となる最小の移動距離を調整します。 このプロパティには [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) イベントをフィルター処理する効果があります。 これらのイベントは、位置の変化が移動しきい値を超えたときにのみ発生します。
 
@@ -89,16 +92,16 @@ ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
         -   ユーザーが自身の位置を共有しようとしている場合は、アプリには約 10 m の精度が必要です。
     -   アプリに特定の精度の要件がある場合は [**Geocoordinate.accuracy**](https://msdn.microsoft.com/library/windows/apps/br225526) プロパティを使います。 たとえば、ナビゲーション アプリでは、**Geocoordinate.accuracy** プロパティを使って、利用可能な位置情報データがアプリの要件を満たしているかどうかを調べます。
 
--   起動時の待ち時間を考慮します。 アプリで初めて位置データを要求したとき、位置情報取得機能が起動するまでに 1 ～ 2 秒の待ち時間が発生することがあります。 アプリの UI を設計するときは、この点に注意してください。 たとえば、[**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) の呼び出しを保留している他のタスクがブロックされないようにしてください
+-   起動時の待ち時間を考慮します。 アプリで初めて位置データを要求したとき、位置情報取得機能が起動するまでに 1 ～ 2 秒の待ち時間が発生することがあります。 アプリの UI を設計するときは、この点に注意してください。 たとえば、[**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) の呼び出しを保留している他のタスクがブロックされないようにしてください。
 
 -   バックグラウンドの動作を考慮します。 アプリにフォーカスがない場合、バックグラウンドで中断されている間は位置情報更新イベントを受け取りません。 位置情報の更新をログに記録して追跡する場合は、この点に注意してください。 アプリにフォーカスが戻った後は、新しいイベントだけを受け取ります。 アプリが非アクティブだったときに発生した更新は取得されません。
 
--   ロー センサーとフュージョン センサーを効率的に使います。 センサーには、*ロー センサー*と*フュージョン センサー*の 2 種類があります
+-   ロー センサーとフュージョン センサーを効率的に使います。 センサーには、*ロー センサー*と*フュージョン センサー*の 2 種類があります。
 
     -   ロー センサーには、加速度計、ジャイロメーター、磁力計が含まれます。
     -   フュージョン センサーには、向き、傾斜計、コンパスが含まれます。 フュージョン センサーは、ロー センサーの組み合わせからデータを取得します。
 
-    Windows ランタイム API は磁力計以外のすべてのセンサーにアクセスできます。 フュージョン センサーの方がロー センサーよりも正確で安定していますが、より多くの電力を使います。 用途に適したセンサーを使う必要があります。 詳しくは、「[センサー](https://msdn.microsoft.com/library/windows/apps/mt187358)」をご覧ください
+    Windows ランタイム API は磁力計以外のすべてのセンサーにアクセスできます。 フュージョン センサーの方がロー センサーよりも正確で安定していますが、より多くの電力を使います。 用途に適したセンサーを使う必要があります。 詳しくは、「[センサー](https://msdn.microsoft.com/library/windows/apps/mt187358)」をご覧ください。
 
 **コネクト スタンバイ:  **PC がコネクト スタンバイ状態にある場合、[**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) オブジェクトはいつでもインスタンス化できます。 しかし、**Geolocator** オブジェクトは集約する対象のセンサーを見つけることができず、[**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) の呼び出しは 7 秒後にタイムアウトします。[**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) イベント リスナーの呼び出しは行われず、[**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) イベント リスナーは 1 回呼び出され、そのステータスは **NoData** となります。
 
@@ -113,7 +116,7 @@ ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
     -   [
             **StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) イベントを処理します。 **StatusChanged** イベントの引数である [**Status**](https://msdn.microsoft.com/library/windows/apps/br225601) プロパティの値は、ユーザーが位置情報サービスを無効にすると **Disabled** になります。
     -   [
-            **GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) から返るエラー コードをチェックします。 ユーザーによって位置情報サービスが無効にされている場合、**GetGeopositionAsync** の呼び出しは **ACCESS\_DENIED** エラーで失敗し、[**LocationStatus**](https://msdn.microsoft.com/library/windows/apps/br225538) プロパティの値は **Disabled** になっています
+            **GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) から返るエラー コードをチェックします。 ユーザーによって位置情報サービスが無効にされている場合、**GetGeopositionAsync** の呼び出しは **ACCESS\_DENIED** エラーで失敗し、[**LocationStatus**](https://msdn.microsoft.com/library/windows/apps/br225538) プロパティの値は **Disabled** になっています。
 -   地図アプリのような、位置情報データが必須のアプリの場合は、必ず次の操作を実行してください。
     -   ユーザーの位置情報が変わったときに更新情報を取得できるように、[**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) イベントを処理します。
     -   前の説明に従って [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) イベントを処理し、位置設定の変化を検出します。
@@ -122,7 +125,7 @@ ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
 
 ### 位置情報のグラフィック表示
 
-アプリでは、[**Geocoordinate.accuracy**](https://msdn.microsoft.com/library/windows/apps/br225526) を使って、ユーザーの現在の位置情報を地図に明確に示すようにします。 精度の幅は、主に、誤差の範囲が半径約 10 m、半径約 100 m、半径 1 km 超、という 3 種類があります。 精度情報を使うことにより、アプリでは、利用可能なデータの状況に応じて位置情報を正確に表示することができるようになります。 マップ コントロールを使用する方法に関する一般的な情報については、「[2D、3D、Streetside ビューでの地図の表示](https://msdn.microsoft.com/library/windows/apps/mt219695)」をご覧ください
+アプリでは、[**Geocoordinate.accuracy**](https://msdn.microsoft.com/library/windows/apps/br225526) を使って、ユーザーの現在の位置情報を地図に明確に示すようにします。 精度の幅は、主に、誤差の範囲が半径約 10 m、半径約 100 m、半径 1 km 超、という 3 種類があります。 精度情報を使うことにより、アプリでは、利用可能なデータの状況に応じて位置情報を正確に表示することができるようになります。 マップ コントロールを使用する方法に関する一般的な情報については、「[2D、3D、Streetside ビューでの地図の表示](https://msdn.microsoft.com/library/windows/apps/mt219695)」をご覧ください。
 
 -   約 10 m 相当の精度 (GPS の解像度) の場合、位置情報は点またはピンで地図上に示すことができます。 この精度では、経度と緯度の座標、住所の番地も表示できます。
 
@@ -173,6 +176,7 @@ ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

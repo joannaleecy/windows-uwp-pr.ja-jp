@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: adb2fa45-e18f-4254-bd8b-a749a386e3b4
-description: Windows 10 (UWP) 用、Windows 8.1 用、Windows Phone 8.1 用の JavaScript/HTML アプリで AdControl クラスを使ってバナー広告を表示する方法について説明します。
-title: HTML 5 および Javascript の AdControl
+description: "Windows 10 (UWP) 用、Windows 8.1 用、Windows Phone 8.1 用の JavaScript/HTML アプリで AdControl クラスを使ってバナー広告を表示する方法について説明します。"
+title: "HTML 5 および Javascript の AdControl"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 6e96b085132126a2c3e7b0b0b86124aba4cd651e
+
 ---
 
 # HTML 5 および Javascript の AdControl
@@ -129,6 +133,7 @@ JavaScript/HTML アプリにバナー広告を追加する方法を示す完全�
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: scottmill
 ms.assetid: 6e9b9ff2-234b-6f63-0975-1afb2d86ba1a
-title: コンポジション効果
-description: 効果 API を使用すると、開発者は UI のレンダリング方法をカスタマイズできます。
+title: "コンポジション効果"
+description: "効果 API を使用すると、開発者は UI のレンダリング方法をカスタマイズできます。"
+translationtype: Human Translation
+ms.sourcegitcommit: b3d198af0c46ec7a2041a7417bccd56c05af760e
+ms.openlocfilehash: 10c3b6d0f56d0e8670cc202ac8d8a3f7538eb5a7
+
 ---
 # コンポジションの効果
 
@@ -244,6 +248,7 @@ brush.Surface = imageSource.Surface;
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

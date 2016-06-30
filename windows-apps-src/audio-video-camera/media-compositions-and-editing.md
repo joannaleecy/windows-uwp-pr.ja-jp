@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: C4DB495D-1F91-40EF-A55C-5CABBF3269A2
-description: Windows.Media.Editing 名前空間の API を使うと、オーディオやビデオのソース ファイルからメディア コンポジションを作成するアプリを簡単に開発できます。
-title: メディア コンポジションと編集
+description: "Windows.Media.Editing 名前空間の API を使うと、オーディオやビデオのソース ファイルからメディア コンポジションを作成するアプリを簡単に開発できます。"
+title: "メディア コンポジションと編集"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 226ee9212f6688c48c4d4d7b3195ec5c27a3afdd
+
 ---
 
 # メディア コンポジションと編集
@@ -57,7 +61,7 @@ title: メディア コンポジションと編集
 [!code-xml[MediaElement](./code/MediaEditing/cs/MainPage.xaml#SnippetMediaElement)]
 
 [
-            **MediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn282716) 型のメンバー変数を宣言する
+            **MediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn282716) 型のメンバー変数を宣言します。
 
 
 [!code-cs[DeclareMediaStreamSource](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetDeclareMediaStreamSource)]
@@ -83,7 +87,7 @@ title: メディア コンポジションと編集
 [!code-cs[Namespace2](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetNamespace2)]
 
 [
-            **FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) でユーザーが出力ファイルを選べるようにしたら、**MediaComposition** オブジェクトの [**RenderToFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652690) を呼び出し、選択されたファイルにコンポジションをレンダリングします。 次のコード例の残りの部分は、単に [**AsyncOperationWithProgress**](https://msdn.microsoft.com/library/windows/desktop/br205807) の処理パターンを踏襲しています。
+            **FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) でユーザーが出力ファイルを選べるようにしたら、**MediaComposition** オブジェクトの [**RenderToFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652690) を呼び出し、選択されたファイルにコンポジションをレンダリングします。 以下のコード例の残りの部分は、[**AsyncOperationWithProgress**](https://msdn.microsoft.com/library/windows/desktop/br205807) の処理パターンを踏襲しているだけです。
 
 [!code-cs[RenderCompositionToFile](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetRenderCompositionToFile)]
 
@@ -156,6 +160,7 @@ title: メディア コンポジションと編集
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

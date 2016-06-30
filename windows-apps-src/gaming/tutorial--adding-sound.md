@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: サウンドの追加
-description: この手順では、シューティング ゲームのサンプルで XAudio2 API を使ってサウンド再生用のオブジェクトを作る方法について説明します。
+title: "サウンドの追加"
+description: "この手順では、シューティング ゲームのサンプルで XAudio2 API を使ってサウンド再生用のオブジェクトを作る方法について説明します。"
 ms.assetid: aa05efe2-2baa-8b9f-7418-23f5b6cd2266
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: f9e536e71dd7b5c94d587a8bb66df3b41cc9a4ae
+
 ---
 
 # サウンドの追加
@@ -15,7 +19,7 @@ ms.assetid: aa05efe2-2baa-8b9f-7418-23f5b6cd2266
 ## 目標
 
 
--   [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813) を使ってサウンド出力を追加する
+-   [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813) を使ってサウンド出力を追加する。
 
 このゲーム サンプルでは、オーディオのオブジェクトと動作は次の 3 つのファイルに定義されています。
 
@@ -206,9 +210,9 @@ Platform::Array<byte>^  MediaReader::LoadMedia(_In_ Platform::String^ filename)
 1.  [
             **MFCreateSourceReaderFromURL**](https://msdn.microsoft.com/library/windows/desktop/dd388110) を呼び出して、メディア ソース リーダー ([**IMFSourceReader**](https://msdn.microsoft.com/library/windows/desktop/dd374655)) オブジェクトを作ります。
 2.  [
-            **MFCreateMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms693861) を呼び出して、オーディオ ファイルのデコードで必要となるメディアの種類 ([**IMFMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms704850)) を作ります。 このメソッドは、デコードされた出力の種類として PCM オーディオを指定します。これは、XAudio2 が使うことができるオーディオの種類です。
+            **MFCreateMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms693861) を呼び出して、オーディオ ファイルのデコードのメディアの種類 ([**IMFMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms704850)) を作ります。 このメソッドは、デコードされた出力の種類として PCM オーディオを指定します。これは、XAudio2 が使うことができるオーディオの種類です。
 3.  [
-            **IMFSourceReader::SetCurrentMediaType**](https://msdn.microsoft.com/library/windows/desktop/bb970432) を呼び出して、リーダー用にデコードされる出力メディアの種類を設定します。
+            **IMFSourceReader::SetCurrentMediaType**](https://msdn.microsoft.com/library/windows/desktop/bb970432) を呼び出して、リーダー用のデコードされた出力のメディアの種類を設定します。
 4.  [
             **WAVEFORMATEX**](https://msdn.microsoft.com/library/windows/hardware/ff538799) バッファーを作り、[**IMFMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms704850) オブジェクトの [**IMFMediaType::MFCreateWaveFormatExFromMFMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms702177) を呼び出した結果をコピーします。 これで、読み込んだオーディオ ファイルを保持するバッファーがフォーマットされます。
 5.  [
@@ -313,7 +317,7 @@ void SoundEffect::PlaySound(_In_ float volume)
 
 これで、ユニバーサル Windows プラットフォーム (UWP) DirectX ゲーム開発のクイック ツアーは終了です。 今までの説明から、Windows 8 用に作成するゲームで快適なエクスペリエンスを実現するためには何をする必要があるかをご理解いただけたと思います。 作成するゲームは、さまざまな Windows 8 デバイスとプラットフォームで実行される可能性があるため、グラフィックス、コントロール、ユーザー インターフェイス、オーディオなどのコンポーネントは、できる限り幅広い構成に対応するように設計してください。
 
-今までの説明で使ったゲーム サンプルを変更する方法について詳しくは、「[ゲーム サンプルの紹介](tutorial-resources.md)」をご覧ください。
+今までの説明で使ったゲーム サンプルを変更する方法について詳しくは、「[ゲーム サンプルの拡張](tutorial-resources.md)」をご覧ください。
 
 ## このセクションのサンプル コード一式
 
@@ -565,6 +569,7 @@ void SoundEffect::PlaySound(_In_ float volume)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

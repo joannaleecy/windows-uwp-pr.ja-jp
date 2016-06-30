@@ -5,8 +5,8 @@ title: "複数の入力の設計ガイドライン"
 ms.assetid: 03EB5388-080F-467C-B272-C92BE00F2C69
 label: Multiple inputs
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 20af1cbfd4d390a1128b96b24c687fd481db1f5c
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: 71c5994e1a308993aef6603ba77ab5e695bde293
 
 ---
 
@@ -23,20 +23,20 @@ ms.openlocfilehash: 20af1cbfd4d390a1128b96b24c687fd481db1f5c
 -   すべての入力方法が常にサポートされていますか? 特定のコントロールでサポートされていますか? 特定の時間や環境でサポートされていますか?
 -   1 つの入力方法が優先されますか?
 
-## <span id="Single__or_exclusive_-mode_interactions_"></span><span id="single__or_exclusive_-mode_interactions_"></span><span id="SINGLE__OR_EXCLUSIVE_-MODE_INTERACTIONS_"></span>単一 (排他) モードの操作
+## 単一 (排他) モードの操作
 
 
 単一モードの操作では、複数の入力の種類がサポートされますが、1 つのアクションで使用できるのは、1 つのみです。 たとえば、コマンドに音声認識、ナビゲーションにジェスチャなどです。または近接度に応じて、タッチかジェスチャを使用してテキストを入力します。
 
-## <span id="Multimodal_interactions"></span><span id="multimodal_interactions"></span><span id="MULTIMODAL_INTERACTIONS"></span>マルチモーダル操作
+## マルチモーダル操作
 
 
 マルチモーダル操作では、1 つのアクションを完了するために複数の入力方法が順番に使われます。
 
-<span id="Speech___gesture"></span><span id="speech___gesture"></span><span id="SPEECH___GESTURE"></span>音声認識 + ジェスチャ  
+音声認識 + ジェスチャ  
 ユーザーは製品をポイントし、「カートに追加」と言います。
 
-<span id="Speech___touch"></span><span id="speech___touch"></span><span id="SPEECH___TOUCH"></span>音声認識 + タッチ  
+音声認識 + タッチ  
 ユーザーは長押しを使用して写真を選択し、「写真の送信」と言います。
 
 
@@ -44,6 +44,6 @@ ms.openlocfilehash: 20af1cbfd4d390a1128b96b24c687fd481db1f5c
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

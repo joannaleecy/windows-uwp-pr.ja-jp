@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
-title: アニメーションを始める
+title: "アニメーションを始める"
 ms.assetid: C1C3F5EA-B775-4700-9C45-695E78C16205
-description: このプロジェクトでは、四角形を移動し、フェード効果を適用した後でもう一度表示します。
+description: "このプロジェクトでは、四角形を移動し、フェード効果を適用した後でもう一度表示します。"
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: 6e0b92af1d3c5f61aa2341d43ca40330fcc359f4
+
 ---
 
 # Getting started: アニメーション
@@ -126,6 +130,7 @@ MainPage.xaml ファイルを **XAML** ビューで開くと、デザイナー�
 [はじめに: 次の手順](getting-started-what-next.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

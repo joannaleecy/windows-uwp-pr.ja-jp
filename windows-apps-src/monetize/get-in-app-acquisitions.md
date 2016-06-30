@@ -1,8 +1,11 @@
 ---
 author: mcleanbyron
 ms.assetid: 1599605B-4243-4081-8D14-40F6F7734E25
-description: 特定の日付範囲などのオプション フィルターを使って、アプリ内製品 (IAP) の集計入手データを取得するには、Windows ストア分析 API でこのメソッドを使います。
-title: IAP の入手数の取得
+description: "特定の日付範囲などのオプション フィルターを使って、アプリ内製品 (IAP) の集計入手データを取得するには、Windows ストア分析 API でこのメソッドを使います。"
+title: "IAP の入手数の取得"
+ms.sourcegitcommit: 02131e641cdaa76256845b38bcc50aa42d718601
+ms.openlocfilehash: 21e634b1d5ab6c3ba7762c1b83c94d076d094af5
+
 ---
 
 # IAP の入手数の取得
@@ -65,7 +68,7 @@ title: IAP の入手数の取得
 <tr class="odd">
 <td align="left">applicationId</td>
 <td align="left">string</td>
-<td align="left">IAP 入手データを取得するアプリの製品 ID です。 製品 ID は、デベロッパー センター ダッシュボードの [[アプリ ID] ページ](https://msdn.microsoft.com/library/windows/apps/mt148561)に表示されるアプリの内容へのリンクに埋め込まれています。 製品 ID の例は 9WZDNCRFJ3Q8 です。</td>
+<td align="left">IAP 入手データを取得するアプリのストア ID です。 ストア ID は、デベロッパー センター ダッシュボードの[アプリ ID ページ](../publish/view-app-identity-details.md)で確認できます。 ストア ID の例は 9WZDNCRFJ3Q8 です。</td>
 <td align="left">○</td>
 </tr>
 <tr class="even">
@@ -243,7 +246,7 @@ title: IAP の入手数の取得
 
 ### 要求の例
 
-IAP の入手データを取得するためのいくつかの要求の例を次に示します。 *inAppProductId* または *applicationId* の値を、アプリまたは IAP の適切な製品 ID に置き換えてください。
+IAP の入手データを取得するためのいくつかの要求の例を次に示します。 *inAppProductId* と *applicationId* の値を、IAP の適切な製品 ID とアプリのストア ID に置き換えてください。
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/inappacquisitions?inAppProductId=9NBLGGGZ5QDR&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0 HTTP/1.1
@@ -277,7 +280,7 @@ Authorization: Bearer <your access token>
 | date                | string  | 入手データの日付範囲の最初の日付です。 要求に日付を指定した場合、この値はその日付になります。 要求に週、月、またはその他の日付範囲を指定した場合、この値はその日付範囲の最初の日付になります。 |
 | inAppProductId      | string  | 入手データを取得する IAP の製品 ID です。                                                                                                                                                                 |
 | inAppProductName    | string  | IAP の表示名です。                                                                                                                                                                                                             |
-| applicationId       | string  | IAP 入手データを取得するアプリの製品 ID です。                                                                                                                                                           |
+| applicationId       | string  | IAP 入手データを取得するアプリのストア ID です。                                                                                                                                                           |
 | applicationName     | string  | アプリの表示名です。                                                                                                                                                                                                             |
 | deviceType          | string  | 入手を完了したデバイスの種類です。 サポートされる文字列の一覧については、前の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。                                                                                                  |
 | orderName           | string  | 注文の名前。                                                                                                                                                                                                                   |
@@ -333,6 +336,7 @@ Authorization: Bearer <your access token>
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

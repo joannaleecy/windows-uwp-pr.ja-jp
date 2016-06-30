@@ -1,11 +1,15 @@
 ---
 author: Jwmsft
-Description: この記事には、Segoe MDL2 Assets フォントに付属しているグリフの一覧と、その使い方のガイダンスが含まれています。
+Description: "この記事には、Segoe MDL2 Assets フォントに付属しているグリフの一覧と、その使い方のガイダンスが含まれています。"
 Search.Refinement.TopicID: 184
-title: Segoe MDL2 アイコンのガイドライン
+title: "Segoe MDL2 アイコンのガイドライン"
 ms.assetid: DFB215C2-8A61-4957-B662-3B1991AC9BE1
 label: Segoe MDL2 icons
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 9071c7dfddba15738d7bad482fd14f7cbffaa1f7
+
 ---
 
 # Segoe MDL2 アイコンのガイドライン
@@ -178,7 +182,7 @@ C#/VB/C++ と XAML を使ってアプリを開発している場合は、Unicode
 
 |        |                                                                                |                                 |                         |
 |--------|--------------------------------------------------------------------------------|---------------------------------|-------------------------|
-| コード   | 記号                                                                         | Enum                            | Description             |
+| コード   | 記号                                                                         | Enum                            | 説明             |
 | U+E001 | ![checkmarklegacy](images/checkmarklegacy.png)                                 | CheckMarkLegacy                 | チェック マーク              |
 | U+E002 | ![checkboxfilllegacy](images/checkboxfilllegacy.png)                           | CheckboxFillLegacy              | 塗りつぶされたチェック ボックス         |
 | U+E003 | ![checkboxlegacy](images/checkboxlegacy.png)                                   | CheckboxLegacy                  | チェック ボックス                |
@@ -211,7 +215,7 @@ C#/VB/C++ と XAML を使ってアプリを開発している場合は、Unicode
 <th align="left">コード</th>
 <th align="left">記号</th>
 <th align="left">Enum</th>
-<th align="left">Description</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
@@ -361,7 +365,7 @@ C#/VB/C++ と XAML を使ってアプリを開発している場合は、Unicode
 
 従来の戻るボタンのグリフは 2 つの異なるサイズのものを使うことができるため、20 ポイントと 42 ポイントの両方で外側の輪の太さの一貫性を確保できます。 2 つの新しいプロポーショナル クロムの戻るボタンも使用できます。 これらのグリフは重ねることができます。
 
-| コード   | 記号                                                                     | Enum                          | Description                               |
+| コード   | 記号                                                                     | Enum                          | 説明                               |
 |--------|----------------------------------------------------------------------------|-------------------------------|-------------------------------------------|
 | U+E0C4 | ![backbttnarrow20legacy](images/backbttnarrow20legacy.png)                 | BackBttnArrow20Legacy         | 戻るボタンの矢印、20pt                   |
 | U+E0A6 | ![backbttnarrow42legacy](images/backbttnarrow42legacy.png)                 | BackBttnArrow42Legacy         | 戻るボタンの矢印、42pt                   |
@@ -377,7 +381,7 @@ C#/VB/C++ と XAML を使ってアプリを開発している場合は、Unicode
 
 これらのグリフの周囲に円を作成するには別のコードを追加します。
 
-| コード   | 記号                                                         | Enum                    | Description                |
+| コード   | 記号                                                         | Enum                    | 説明                |
 |--------|----------------------------------------------------------------|-------------------------|----------------------------|
 | U+E0D5 | ![arrowhtmllegacy](images/arrowhtmllegacy.png)                 | ArrowHTMLLegacy         | HTML 用の矢印         |
 | U+E0AE | ![arrowhtmlmirroredlegacy](images/arrowhtmlmirroredlegacy.png) | ArrowHTMLMirroredLegacy | U+E0D5 の左右が反転したバージョン |
@@ -1612,6 +1616,7 @@ C#/VB/C++ と XAML を使ってアプリを開発している場合は、Unicode
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

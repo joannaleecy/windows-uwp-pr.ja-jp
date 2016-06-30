@@ -1,8 +1,12 @@
 ---
-title: 暗号化
-description: この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリで利用できる暗号化の機能の概要を説明します。 特定のタスクについて詳しくは、この記事の最後にある表をご覧ください。
+title: "暗号化"
+description: "この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリで利用できる暗号化の機能の概要を説明します。 特定のタスクについて詳しくは、この記事の最後にある表をご覧ください。"
 ms.assetid: 9C213036-47FD-4AA4-99E0-84006BE63F47
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
+ms.openlocfilehash: b8cccf54e414de084c5b3fd080007b225b9a9b12
+
 ---
 
 # 暗号化
@@ -143,6 +147,7 @@ SDK では、パスワードベースのデータ保護を行うのための簡�
 
  
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

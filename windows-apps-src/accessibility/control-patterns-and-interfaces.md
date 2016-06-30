@@ -1,10 +1,13 @@
 ---
 author: Xansky
-Description: Microsoft UI オートメーションのコントロール パターン、それらにアクセスするためにクライアントが使うクラス、それらを実装するためにプロバイダーが使うインターフェイスを示します。
+Description: "Microsoft UI オートメーションのコントロール パターン、それらにアクセスするためにクライアントが使うクラス、それらを実装するためにプロバイダーが使うインターフェイスを示します。"
 ms.assetid: 2091883C-5D0C-44ED-936A-709022926A42
-title: コントロール パターンとインターフェイス
+title: "コントロール パターンとインターフェイス"
 label: Control patterns and interfaces
 template: detail.hbs
+ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
+ms.openlocfilehash: 9f38c3bd26ef7b409d4c743abf25a5b0a6455f20
+
 ---
 
 # コントロール パターンとインターフェイス  
@@ -43,12 +46,12 @@ Microsoft UI オートメーションのコントロール パターン、それ
 | **SynchronizedInput** | [**ISynchronizedInputProvider**](https://msdn.microsoft.com/library/windows/apps/Dn279198) | UI オートメーション クライアント アプリでマウスまたはキーボード入力を特定の UI 要素に転送することを可能にします。 |
 | **Table** | [**ITableProvider**](https://msdn.microsoft.com/library/windows/apps/BR242623) | グリッドとヘッダー情報を持つコントロールに使われます (表形式のカレンダー コントロールなど)。 |
 | **TableItem** | [**ITableItemProvider**](https://msdn.microsoft.com/library/windows/apps/BR242620) | 表の項目に使われます。 |
-| **Text** | [**ITextProvider**](https://msdn.microsoft.com/library/windows/apps/BR242627) | 編集コントロールやテキスト情報を表示するドキュメントに使われます。 また、「[**ITextRangeProvider**](https://msdn.microsoft.com/library/windows/apps/BR242634)」および「[**ITextProvider2**](https://msdn.microsoft.com/library/windows/apps/BR2426272)」もご覧ください。 |
-| **TextChild** | [**ITextChildProvider**](https://msdn.microsoft.com/library/windows/apps/Hh701839) | **Text** コントロール パターンをサポートする、要素に最も近い祖先にアクセスするために使われます。 |
+| **Text** | [**ITextProvider**](https://msdn.microsoft.com/library/windows/apps/BR242627) | 編集コントロールやテキスト情報を表示するドキュメントに使われます。 また、「[**ITextRangeProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextrangeprovider)」および「[**ITextProvider2**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextprovider2)」もご覧ください。 |
+| **TextChild** | [**ITextChildProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextchildprovider) | **Text** コントロール パターンをサポートする、要素に最も近い祖先にアクセスするために使われます。 |
 | **TextEdit** | 使用できるマネージ クラスがありません | テキストを変更するコントロール (たとえば、自動修正の実行、入力方式エディター (IME) を通じた入力合成の有効化を行うコントロールなど) へのアクセスを提供します。 |
-| **TextRange** | [**ITextRangeProvider**](https://msdn.microsoft.com/library/windows/apps/BR242634) | [
-            **ITextProvider**](https://msdn.microsoft.com/library/windows/apps/BR242627) を実装するテキスト コンテナー内の一続きのテキストへのアクセスを提供します。 [
-            **ITextRangeProvider2**](https://msdn.microsoft.com/library/windows/apps/BR2426342) もご覧ください。 |
+| **TextRange** | [**ITextRangeProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextrangeprovider) | [
+            **ITextProvider**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextprovider) を実装するテキスト コンテナー内の一続きのテキストへのアクセスを提供します。 [
+            **ITextRangeProvider2**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.automation.provider.itextrangeprovider2) もご覧ください。 |
 | **Toggle** | [**IToggleProvider**](https://msdn.microsoft.com/library/windows/apps/BR242653) | 状態を切り替えることができるコントロールに使われます ([**CheckBox**](https://msdn.microsoft.com/library/windows/apps/BR209316)、オン/オフを切り替えることのできるメニュー項目など)。 |
 | **Transform** | [**ITransformProvider**](https://msdn.microsoft.com/library/windows/apps/BR242656) | サイズ変更、移動、回転が可能なコントロールに使われます。 デザイナー、フォーム、グラフィカル エディター、描画アプリなどでよく使われます。 |
 | **Value** | [**IValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242663) | 値の範囲をサポートしないコントロールの値をクライアントが取得または設定できるようにします。 |
@@ -67,6 +70,7 @@ Microsoft UI オートメーションのコントロール パターン、それ
 * [アクセシビリティ](accessibility.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

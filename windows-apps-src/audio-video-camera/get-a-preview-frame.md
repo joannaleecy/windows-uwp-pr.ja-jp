@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: 05E418B4-5A62-42BD-BF66-A0762216D033
-description: このトピックでは、メディア キャプチャのプレビュー ストリームからプレビュー フレームを取得する方法について説明します。
-title: プレビュー フレームの取得
+description: "このトピックでは、メディア キャプチャのプレビュー ストリームからプレビュー フレームを取得する方法について説明します。"
+title: "プレビュー フレームの取得"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: c512ec92272ab03cfd8e91602018f09ef8225652
+
 ---
 
 # プレビュー フレームの取得
@@ -60,6 +64,7 @@ Direct3D API で画像を扱う場合は、プレビュー フレームの [**ID
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,37 +1,41 @@
 ---
-title: Intro to certificates
-description: This article discusses the use of certificates in Universal Windows Platform (UWP) apps.
+title: "証明書の概要"
+description: "この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリでの証明書の使用について説明します。"
 ms.assetid: 4EA2A9DF-BA6B-45FC-AC46-2C8FC085F90D
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
+ms.openlocfilehash: 84596f70a5deee6cebb5f4bac442a6aaca8210cd
+
 ---
 
-# Intro to certificates
+# 証明書の概要
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 
-This article discusses the use of certificates in Universal Windows Platform (UWP) apps. Digital certificates are used in public key cryptography to bind a public key to a person, computer, or organization. The bound identities are most often used to authenticate one entity to another. For example, certificates are often used to authenticate a web server to a user and a user to a web server. You can create certificate requests and install or import issued certificates. You can also enroll a certificate in a certificate hierarchy.
+この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリでの証明書の使用について説明します。 デジタル証明書は、公開キーを個人、コンピューター、組織にバインドするために、公開キーの暗号化で使われます。 バインドされた識別情報は、あるエンティティを別のエンティティに対して認証する際に最も頻繁に使われます。 たとえば、証明書は、Web サーバーをユーザーに対して、また、ユーザーを Web サーバーに対して認証するためによく使われます。 証明書要求を作成し、発行された証明書をインストールまたはインポートすることができます。 また、証明書階層で証明書を登録することもできます。
 
-### Shared certificate stores
+### 共有証明書ストア
 
-UWP apps use the new isolationist application model introduced in Windows 8. In this model, apps run in low-level operating system construct, called an app container, that prohibits the app from accessing resources or files outside of itself unless explicitly permitted to do so. The following sections describe the implications this has on public key infrastructure (PKI).
+UWP アプリは、Windows 8 で導入された新しい分離アプリケーション モデルを使います。 この分離モデルでは、アプリ コンテナーと呼ばれる低レベルのオペレーティング システム構造内で実行し、明示的に許可されない限り、アプリの外にあるリソースやファイルにアクセスすることは禁止されます。 次のセクションでは、これが公開キー基盤 (PKI) に与える影響について説明します。
 
-### Certificate storage per app container
+### アプリ コンテナーごとの証明書ストレージ
 
-Certificates that are intended for use in a specific app container are stored in per user, per app container locations. An app running in an app container has write access to only its own certificate storage. If the application adds certificates to any of its stores, these certificates cannot be read by other apps. If an app is uninstalled, any certificates specific to it are also removed. An app also has read access to local machine certificate stores other than the MY and REQUEST store.
+特定のアプリ コンテナー内での使用を目的とした証明書は、ユーザーごと、アプリ コンテナーの場所ごとに格納されます。 アプリ コンテナー内で実行されるアプリは、そのアプリが持つ証明書ストレージにだけ書き込みアクセスが許可されます。 アプリが自分のストアのどこかに証明書を追加した場合には、その証明書は他のアプリから読み取られることはありません。 アプリがアンインストールされると、そのアプリに固有の証明書もすべて削除されます。 アプリは、MY ストアや REQUEST ストア以外にローカル コンピューターの証明書ストアにも読み取りアクセスが許可されます。
 
-### Cache
+### キャッシュ
 
-Each app container has an isolated cache in which it can store issuer certificates needed for validation, certificate revocation lists (CRL), and online certificate status protocol (OCSP) responses.
+各アプリ コンテナーは分離されたキャッシュを持ち、その中に検証に必要な発行者証明書、証明書失効リスト (CRL)、オンライン証明書ステータス プロトコル (OCSP) の応答を格納できます。
 
-### Shared certificates and keys
+### 共有証明書とキー
 
-When a smart card is inserted into a reader, the certificates and keys contained on the card are propagated to the user MY store where they can be shared by any full-trust application the user is running. By default, however, app containers do not have access to the per user MY store.
+スマート カードがリーダーに入れられると、カードに含まれている証明書とキーが MY ストアに伝えられ、ユーザーが実行している完全信頼アプリで共有されます。 しかし、既定ではアプリ コンテナーはユーザーごとの MY ストアにはアクセスできません。
 
-To address this issue and enable groups of principals to access groups of resources, the app container isolation model supports the capabilities concept. A capability allows an app container process to access a specific resource. The sharedUserCertificates capability grants an app container read access to the certificates and keys contained in the user MY store and the Smart Card Trusted Roots store. The capability does not grant read access to the user REQUEST store.
+この問題に対応し、プリンシパル グループがリソース グループにアクセスできるように、アプリ コンテナー分離モデルは使う機能の概念をサポートしています。 使う機能を指定すると、アプリ コンテナーのプロセスによる特定のリソースへのアクセスが許可されます。 sharedUserCertificates 機能は、MY ストアとスマート カードの信頼されたルート ストア内にある証明書とキーへの読み取りアクセス許可を、アプリ コンテナーに与えます。 この機能によってユーザーの REQUEST ストアへの読み取りアクセス許可が与えられることはありません。
 
-You specify the sharedUserCertificates capability in the manifest as shown in the following example.
+次の例に示すようにマニフェスト内で sharedUserCertificates 機能を指定します。
 
 ```xml
 <Capabilities>
@@ -39,62 +43,63 @@ You specify the sharedUserCertificates capability in the manifest as shown in th
 </Capabilities>
 ```
 
-## Certificate fields
+## 証明書フィールド
 
 
-The X.509 public key certificate standard has been revised over time. Each successive version of the data structure has retained the fields that existed in the previous versions and added more, as shown in the following illustration.
+X.509 公開キー証明書標準は、長い間に改定されてきました。 データ構造の継続的な各バージョンでは、次の図に示すように、以前のバージョンで存在していたフィールドを維持し、さらにフィールドを追加してきました。
 
-![x.509 certificate versions 1, 2, and 3](images/x509certificateversions.png)
+![x.509 証明書バージョン 1、2、3](images/x509certificateversions.png)
 
-Some of these fields and extensions can be specified directly when you use the [**CertificateRequestProperties**](https://msdn.microsoft.com/library/windows/apps/br212079) class to create a certificate request. Most cannot. These fields can be filled by the issuing authority or they can be left blank. For more information about the fields, see the following sections:
+これらのフィールドと拡張機能の一部は、[**CertificateRequestProperties**](https://msdn.microsoft.com/library/windows/apps/br212079) クラスを使って証明書要求を作成するときに直接指定できます。 ほとんどはできません。 それらのフィールドは、発行元の機関によって入力される場合や、空欄のままにしておける場合があります。 フィールドについて詳しくは、次のセクションをご覧ください。
 
-### Version 1 fields
+### バージョン 1 のフィールド
 
-| Field               | Description                                                                                                                                                                                                                                                                 |
+| フィールド               | 説明                                                                                                                                                                                                                                                                 |
 |---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Version             | Specifies the version number of the encoded certificate. Currently, the possible values of this field are 0, 1, or 2.                                                                                                                                                       |
-| Serial Number       | Contains a positive, unique integer assigned by the certification authority (CA) to the certificate.                                                                                                                                                                        |
-| Signature Algorithm | Contains an object identifier (OID) that specifies the algorithm used by the CA to sign the certificate. For example, 1.2.840.113549.1.1.5 specifies a SHA-1 hashing algorithm combined with the RSA encryption algorithm from RSA Laboratories.                            |
-| Issuer              | Contains the X.500 distinguished name (DN) of the CA that created and signed the certificate.                                                                                                                                                                               |
-| Validity            | Specifies the time interval during which the certificate is valid. Dates through the end of 2049 use the Coordinated Universal Time (Greenwich Mean Time) format (yymmddhhmmssz). Dates beginning with January 1st, 2050 use the generalized time format (yyyymmddhhmmssz). |
-| Subject             | Contains an X.500 distinguished name of the entity associated with the public key contained in the certificate.                                                                                                                                                             |
-| Public Key          | Contains the public key and associated algorithm information.                                                                                                                                                                                                               |
+| バージョン             | エンコードされた証明書のバージョン番号を指定します。 現在、このフィールドに指定可能な値は、0、1、または 2 です。                                                                                                                                                       |
+| シリアル番号       | 証明機関 (CA) によって証明書に割り当てられる、正の一意な整数を格納します。                                                                                                                                                                        |
+| 署名アルゴリズム | 証明書への署名に CA が使うアルゴリズムを指定するオブジェクト識別子 (OID) を格納します。 たとえば、1.2.840.113549.1.1.5 は、SHA-1 ハッシュ アルゴリズムと、RSA Laboratories による RSA 暗号化アルゴリズムの組み合わせを示します。                            |
+| 発行者              | 証明書を作成し署名した CA の X.500 識別名 (DN) を格納します。                                                                                                                                                                               |
+| 有効期間            | 証明書が有効である時間間隔を指定します。 2049 年末までの日付には、協定世界時 (グリニッジ標準時) 形式 (yymmddhhmmssz) を使います。 2050 年 1 月 1 日以降の日付には、一般化された時刻形式 (yyyymmddhhmmssz) を使います。 |
+| サブジェクト             | 証明書に含まれる公開キーに関連付けられているエンティティの X.500 識別名を格納します。                                                                                                                                                             |
+| 公開キー          | 公開キーと関連するアルゴリズム情報を格納します。                                                                                                                                                                                                               |
 
  
 
-### Version 2 fields
+### バージョン 2 のフィールド
 
-An X.509 version 2 certificate contains the basic fields defined in version 1 and adds the following fields.
+X.509 バージョン 2 の証明書には、バージョン 1 で定義された基本フィールドが含まれており、さらに次のフィールドが追加されています。
 
-| Field                     | Description                                                                                                                                         |
+| フィールド                     | 説明                                                                                                                                         |
 |---------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-| Issuer Unique Identifier  | Contains a unique value that can be used to make the X.500 name of the CA unambiguous when reused by different entities over time.                  |
-| Subject Unique Identifier | Contains a unique value that can be used to make the X.500 name of the certificate subject unambiguous when reused by different entities over time. |
+| 発行者の一意な ID  | 時間を経て別のエンティティによって再利用されたときに、CA の X.500 名を明白にするために使うことができる一意な値を格納します。                  |
+| サブジェクトの一意な ID | 時間を経て別のエンティティによって再利用されたときに、証明書のサブジェクトの X.500 名を明白にするために使うことができる一意な値を格納します。 |
  
 
-### Version 3 extensions
+### バージョン 3 の拡張機能
 
-An X.509 version 3 certificate contains the fields defined in version 1 and version 2 and adds certificate extensions.
+X.509 バージョン 3 の証明書には、バージョン 1 とバージョン 2 で定義されたフィールドが含まれており、さらに証明書の拡張機能が追加されています。
 
-| Field                        | Description                                                                                                                                                                                              |
+| フィールド                        | 説明                                                                                                                                                                                              |
 |------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Authority Key Identifier     | Identifies the certification authority (CA) public key that corresponds to the CA private key used to sign the certificate.                                                                              |
-| Basic Constraints            | Specifies whether the entity can be used as a CA and, if so, the number of subordinate CAs that can exist beneath it in the certificate chain.                                                           |
-| Certificate Policies         | Specifies the policies under which the certificate has been issued and the purposes for which it can be used.                                                                                            |
-| CRL Distribution Points      | Contains the URI of the base certificate revocation list (CRL).                                                                                                                                          |
-| Enhanced Key Usage           | Specifies the manner in which the public key contained in the certificate can be used.                                                                                                                   |
-| Issuer Alternative Name      | Specifies one or more alternative name forms for the issuer of the certificate request.                                                                                                                  |
-| Key Usage                    | Specifies restrictions on the operations that can be performed by the public key contained in the certificate.                                                                                           |
-| Name Constraints             | Specifies the namespace within which all subject names in a certificate hierarchy must be located. The extension is used only in a CA certificate.                                                       |
-| Policy Constraints           | Constrains path validation by prohibiting policy mapping or by requiring that each certificate in the hierarchy contain an acceptable policy identifier. The extension is used only in a CA certificate. |
-| Policy Mappings              | Specifies the policies in a subordinate CA that correspond to policies in the issuing CA.                                                                                                                |
-| Private Key Usage Period     | Specifies a different validity period for the private key than for the certificate with which the private key is associated.                                                                             |
-| Subject Alternative Name     | Specifies one or more alternative name forms for the subject of the certificate request. Example alternative forms include email addresses, DNS names, IP addresses, and URIs.                           |
-| Subject Directory Attributes | Conveys identification attributes such as the nationality of the certificate subject. The extension value is a sequence of OID-value pairs.                                                              |
-| Subject Key Identifier       | Differentiates between multiple public keys held by the certificate subject. The extension value is typically a SHA-1 hash of the key.                                                                   |
+| 機関キー識別子     | 証明書への署名に使われる証明機関 (CA) 秘密キーに対応する CA 公開キーを識別します。                                                                              |
+| 基本制限            | エンティティを CA として利用できるかどうか、またできる場合は、証明書チェーンにおいてその下位に存在できる下位 CA の数を指定します。                                                           |
+| 証明書ポリシー         | 証明書が発行されたポリシーと、許可されている使用目的を指定します。                                                                                            |
+| CRL 配布ポイント      | 基本の証明書失効リスト (CRL) の URI を格納します。                                                                                                                                          |
+| 拡張キー使用法           | 証明書に含まれる公開キーを使うことができる方法を指定します。                                                                                                                   |
+| 発行者の別名      | 証明書要求の発行者に対する 1 つ以上の別名形式を指定します。                                                                                                                  |
+| キー使用法                    | 証明書に含まれる公開キーによって実行可能な操作に関する制限を指定します。                                                                                           |
+| 名前の制限             | 証明書階層内のすべてのサブジェクト名が存在している必要がある名前空間を指定します。 この拡張機能は CA 証明書でのみ使われます。                                                       |
+| ポリシーの制限           | ポリシー マッピングを禁止するか、階層内の各証明書に許容可能なポリシー識別子を含めることを要求することによって、パス検証を制限します。 この拡張機能は CA 証明書でのみ使われます。 |
+| ポリシー マッピング              | 発行元の CA のポリシーに対応する、下位 CA のポリシーを指定します。                                                                                                                |
+| 秘密キーの使用期間     | 秘密キーが関連付けられている証明書の有効期間と異なる場合に、秘密キーに別の有効期間を指定します。                                                                             |
+| サブジェクト代替名     | 証明書要求のサブジェクトに対する 1 つ以上の別名形式を指定します。 別名形式の例として、メール アドレス、DNS 名、IP アドレス、URI などがあります。                           |
+| Subject Directory Attributes (サブジェクト ディレクトリ属性) | 証明書サブジェクトの国籍など、識別属性を指定します。 この拡張機能の値は、OID と値のペアが連続する形になります。                                                              |
+| サブジェクト キー識別子       | 証明書サブジェクトが保持する複数の公開キーを区別します。 この拡張機能の値は、通常は、キーの SHA-1 ハッシュです。                                                                   |
 
 
 
-<!--HONumber=Jun16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

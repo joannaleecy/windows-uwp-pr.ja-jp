@@ -3,8 +3,8 @@ author: Jwmsft
 ms.assetid: 54CC0BD4-1961-44D7-AB40-6E8B58E42D65
 title: "図形の描画"
 description: "楕円形、長方形、多角形、パスなどの図形を描画する方法について説明します。 Path クラスは、きわめて複雑なベクター ベースの画像記述言語を XAML UI で視覚化するための手段です。たとえば、ベジエ曲線を描画することができます。"
-ms.sourcegitcommit: 04a3c2dabc4b115faf4b06aa3d3a59c5c38ab95f
-ms.openlocfilehash: 42514e5119b646d196e0a1c7d3099ebed2225c69
+ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
+ms.openlocfilehash: 20bac4421c2f307932bd5a8a4c462b1ef13fe09b
 
 ---
 # 図形の描画
@@ -159,7 +159,7 @@ The next example creates a [**Polygon**](https://msdn.microsoft.com/library/wind
 -   [
             **Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) には、XAML で文字列値を設定することができます。 この場合、**Path.Data** の値には、グラフィックスのシリアル化形式が使われます。 一般に、いったん構築されたこの値をテキストとして (文字列形式として) 編集することはしません。 サーフェス上のデザインや図面のメタファーを扱うことのできるデザイン ツールを使います。 その出力結果を保存 (またはエクスポート) すると、**Path.Data** 情報を含んだ XAML ファイルまたは XAML 文字列フラグメントが得られます。
 -   [
-            **Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) プロパティは、単一の [**Geometry**](https://msdn.microsoft.com/library/windows/apps/BR210041) オブジェクトに設定できます。 この設定は、コードまたは XAML で行うことができます。 この単一の **Geometry** は通常、[**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/BR210041group) です。オブジェクト モデルの趣旨に沿って、複数のジオメトリ定義を 1 つのオブジェクトに合成できるコンテナーとして機能します。 これは主に、[**PathFigure**](https://msdn.microsoft.com/library/windows/apps/BR210143) の [**Segments**](https://msdn.microsoft.com/library/windows/apps/BR210164) 値として定義される曲線と複雑な図形を、場合によっては複数組み合わせて使う必要があるとき ([**BezierSegment**](https://msdn.microsoft.com/library/windows/apps/BR228068) など) に用いる方法です。
+            **Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) プロパティは、単一の [**Geometry**](https://msdn.microsoft.com/library/windows/apps/BR210041) オブジェクトに設定できます。 この設定は、コードまたは XAML で行うことができます。 この単一の **Geometry** は通常、[**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.geometrygroup) です。オブジェクト モデルの趣旨に沿って、複数のジオメトリ定義を 1 つのオブジェクトに合成できるコンテナーとして機能します。 これは主に、[**PathFigure**](https://msdn.microsoft.com/library/windows/apps/BR210143) の [**Segments**](https://msdn.microsoft.com/library/windows/apps/BR210164) 値として定義される曲線と複雑な図形を、場合によっては複数組み合わせて使う必要があるとき ([**BezierSegment**](https://msdn.microsoft.com/library/windows/apps/BR228068) など) に用いる方法です。
 
 この例に示す [**Path**](https://msdn.microsoft.com/library/windows/apps/BR243355) は、Blend for Visual Studio を使っていくつかのベクター図形を生成し、その結果を XAML として保存したものです。 **Path** 全体は、ベジエ曲線セグメントと直線セグメントから成ります。 この例の目的は、[**Path.Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) のシリアル化形式にどのような要素が存在し、各数値が何を表しているかをわかりやすく紹介することです。
 
@@ -179,7 +179,7 @@ Here's the rendered [**Path**](https://msdn.microsoft.com/library/windows/apps/B
 
 ![A rendered Path.](images/shapes-path.jpg)
 
-The next example shows a usage of the other technique we discussed: a [**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/BR210041group) with a [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/BR210168). This example exercises some of the contributing geometry types that can be used as part of a **PathGeometry**: [**PathFigure**](https://msdn.microsoft.com/library/windows/apps/BR210143) and the various elements that can be a segment in [**PathFigure.Segments**](https://msdn.microsoft.com/library/windows/apps/BR210164).
+The next example shows a usage of the other technique we discussed: a [**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.geometrygroup) with a [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/BR210168). This example exercises some of the contributing geometry types that can be used as part of a **PathGeometry**: [**PathFigure**](https://msdn.microsoft.com/library/windows/apps/BR210143) and the various elements that can be a segment in [**PathFigure.Segments**](https://msdn.microsoft.com/library/windows/apps/BR210164).
 
 ```xml
 <Path Stroke="Black" StrokeThickness="1" Fill="#CCCCFF">
@@ -221,6 +221,6 @@ The next example shows a usage of the other technique we discussed: a [**Geometr
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

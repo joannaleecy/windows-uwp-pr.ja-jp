@@ -1,12 +1,16 @@
 ---
 author: mijacobs
-Description: 言語の視覚的な表現として、文字体裁の主な役割は明確であることです。 スタイルによってその目的が邪魔されてはなりません。 ただし、文字体裁にはレイアウト コンポーネントとしての重要な役割もあり、そのデザインの密度と複雑さに強い影響を与え、そのデザインのユーザー エクスペリエンスにも影響します。
-title: 文字体裁
+Description: "言語の視覚的な表現として、文字体裁の主な役割は明確であることです。 スタイルによってその目的が邪魔されてはなりません。 ただし、文字体裁にはレイアウト コンポーネントとしての重要な役割もあり、そのデザインの密度と複雑さに強い影響を与え、そのデザインのユーザー エクスペリエンスにも影響します。"
+title: "文字体裁"
 ms.assetid: ca35f78a-e4da-423d-9f5b-75896e0b8f82
 label: Typography
 template: detail.hbs
 extraBodyClass: style-typography
-brief: As the visual representation of language, typography’s main task is to be clear. Its style should never get in the way of that goal. But typography also has an important role as a layout component—with a powerful effect on the density and complexity of the design—and on the user’s experience of that design.
+brief: "As the visual representation of language, typography’s main task is to be clear. Its style should never get in the way of that goal. But typography also has an important role as a layout component—with a powerful effect on the density and complexity of the design—and on the user’s experience of that design."
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 02d5149f945bb631e385e45a295fdfe08bd98fb0
+
 ---
 
 # UWP アプリの文字体裁
@@ -79,7 +83,7 @@ Segoe は、ソフトでわかりやすい外観をした人間的な書体で�
     <div class="aside-dev-title">
     </div>
     <div class="aside-dev-content">
-            XAML テキスト コントロールでは、[Typogrphy.Kerning](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) を使ってカーニングを制御し、[FontStretch](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.control.fontstretch.aspx) を使ってトラッキングを制御します。 既定では、Typography.Kerning は "true" に設定され、FontStretch は推奨値である" Normal" に設定されます。
+XAML テキスト コントロールでは、[Typogrphy.Kerning](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.documents.typography.kerning.aspx) を使ってカーニングを制御し、[FontStretch](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.control.fontstretch.aspx) を使ってトラッキングを制御します。 既定では、Typography.Kerning は "true" に設定され、FontStretch は推奨値である" Normal" に設定されます。
     </div>
 </aside>
 
@@ -125,7 +129,7 @@ Segoe UI には多くの文字が用意されており、サイズが小さく�
     <div class="aside-dev-title">
     </div>
     <div class="aside-dev-content">
-            XAML の [TextBlock.TextLineBounds](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) プロパティを使うと、大文字の高さやベースライン フォントのメトリックにアクセスできます。 このプロパティは、書体を視覚的に上下中央に配置したり、上揃えに配置する場合に利用できます。
+XAML の [TextBlock.TextLineBounds](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.textlinebounds.aspx) プロパティを使うと、大文字の高さやベースライン フォントのメトリックにアクセスできます。 このプロパティは、書体を視覚的に上下中央に配置したり、上揃えに配置する場合に利用できます。
     </div>
 </aside>
 
@@ -150,7 +154,7 @@ Segoe UI には多くの文字が用意されており、サイズが小さく�
     <div class="aside-dev-title">
     </div>
     <div class="aside-dev-content">
-            書体見本のほとんどのレベルは XAML の[静的リソース](https://msdn.microsoft.com/en-us/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp) として利用できます。このリソースは `*TextBlockStyle` 名前付け規則に従っている必要があります。例を次に示します。 
+書体見本のほとんどのレベルは XAML の[静的リソース](https://msdn.microsoft.com/en-us/library/windows/apps/Mt187274.aspx#the_xaml_type_ramp)として利用できます。このリソースは `*TextBlockStyle` 名前付け規則に従っている必要があります (例: `HeaderTextBlockStyle`)。 
     </div>
 </aside>
 
@@ -180,6 +184,7 @@ Segoe UI には多くの文字が用意されており、サイズが小さく�
 * [テキスト コントロール](../controls-and-patterns/text-controls.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

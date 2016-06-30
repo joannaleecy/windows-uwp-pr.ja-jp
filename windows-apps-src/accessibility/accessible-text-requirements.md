@@ -1,10 +1,13 @@
 ---
 author: Xansky
-Description: このトピックでは、色と背景のコントラスト比を適切な値にすることで、アプリのテキストをアクセシビリティ対応にするためのベスト プラクティスについて説明します。
+Description: "このトピックでは、色と背景のコントラスト比を適切な値にすることで、アプリのテキストをアクセシビリティ対応にするためのベスト プラクティスについて説明します。"
 ms.assetid: BA689C76-FE68-4B5B-9E8D-1E7697F737E6
-title: アクセシビリティに対応したテキストの要件
+title: "アクセシビリティに対応したテキストの要件"
 label: Accessible text requirements
 template: detail.hbs
+ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
+ms.openlocfilehash: 1307b4f70cf7ffed300f4254a7d92b67b5afd085
+
 ---
 
 # アクセシビリティに対応したテキストの要件  
@@ -44,7 +47,7 @@ UWP アプリでは、次の既定の要素 (一般に*テキスト要素*また
             ](https://msdn.microsoft.com/library/windows/apps/BR209683): 役割は [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182)
 * [
               **RichTextBlock**
-            ](https://msdn.microsoft.com/library/windows/apps/BR227565) (とオーバーフロー クラス [**RichTextBlockOverflow**](https://msdn.microsoft.com/library/windows/apps/BR227565overflow)): 役割は [**Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
+            ](https://msdn.microsoft.com/library/windows/apps/BR227565) (とオーバーフロー クラス [**RichTextBlockOverflow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.richtextblockoverflow)): 役割は [**Text**](https://msdn.microsoft.com/library/windows/apps/BR209182)
 * [
               **RichEditBox**
             ](https://msdn.microsoft.com/library/windows/apps/BR227548): 役割は [**Edit**](https://msdn.microsoft.com/library/windows/apps/BR209182)
@@ -72,7 +75,7 @@ XAML のテキスト モデルでは、静的なテキスト、[**TextBlock**](h
 <span id="text_scale_factor"/>
 <span id="TEXT_SCALE_FACTOR"/>
 ## テキストの倍率  
-さまざまなテキスト要素とコントロールには [**IsTextScaleFactorEnabled**](https://msdn.microsoft.com/library/windows/apps/BR209652_istextscalefactorenabled) プロパティがあります。 このプロパティの既定値は **true** です。 値が **true** の場合、電話の **[テキストの拡大縮小]** 設定 (**[設定] &gt; [コンピューターの簡単操作]**) に応じて、対象要素のテキストのサイズが拡大されます。 拡大縮小は、**FontSize** が大きいテキストよりも、**FontSize** が小さいテキストにより大きな影響を及ぼします。 ただし、要素の **IsTextScaleFactorEnabled** プロパティを **false** に設定することで自動拡大を無効にすることができます。 次のマークアップを使って電話の **[テキスト サイズ]** 設定を調整し、**TextBlock** がどうなるのかを確認してください。
+さまざまなテキスト要素とコントロールには [**IsTextScaleFactorEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.istextscalefactorenabled) プロパティがあります。 このプロパティの既定値は **true** です。 値が **true** の場合、電話の **[テキストの拡大縮小]** 設定 (**[設定] &gt; [コンピューターの簡単操作]**) に応じて、対象要素のテキストのサイズが拡大されます。 拡大縮小は、**FontSize** が大きいテキストよりも、**FontSize** が小さいテキストにより大きな影響を及ぼします。 ただし、要素の **IsTextScaleFactorEnabled** プロパティを **false** に設定することで自動拡大を無効にすることができます。 次のマークアップを使って電話の **[テキスト サイズ]** 設定を調整し、**TextBlock** がどうなるのかを確認してください。
 
 XAML
 ```xml
@@ -127,6 +130,7 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 * [XAML アクセシビリティ サンプル](http://go.microsoft.com/fwlink/p/?linkid=238570)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

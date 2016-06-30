@@ -1,48 +1,53 @@
 ---
-Description: Here’s the info you need to create a Universal Windows app that can run on any Windows 10-based device, including phones, tablets, and PCs.
-title: How-to guides for Windows 10 apps - Windows app development
+Description: "電話、タブレット、PC など、Windows 10 ベースのデバイスで実行できるユニバーサル Windows アプリを作成する際に必要となる情報について説明します。"
+title: "Windows 10 アプリに関するハウツー ガイド - Windows アプリの開発"
 ms.assetid: 2A39F3D8-85AD-4315-A69B-2B79242780E3
 redirect_url: https://developer.microsoft.com/en-us/windows/develop
+translationtype: Human Translation
+ms.sourcegitcommit: 9be74892a98765a8a45482ce3f5cc5151ab772b1
+ms.openlocfilehash: 5d0cca643c26458165c388215d34eec76dfe8cf6
+
 ---
 
 
-# How-to guides for Windows 10 apps
+# Windows 10 アプリに関するハウツー ガイド
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください\]
 
-Here’s the info you need to create a Universal Windows app that can run on any Windows 10-based device, including phones, tablets, and PCs. This section offers both instructions and code examples organized by the kind of task you want to accomplish.
+電話、タブレット、PC など、Windows 10 ベースのデバイスで実行できるユニバーサル Windows アプリを作成する際に必要となる情報について説明します。 このセクションには、目的のタスクの種類別にまとめられた手順とコード例を掲載します。
 
-If you'd like an introduction to the Universal Windows Platform (UWP) and how it lets you use the same code to deliver appropriately tailored experiences to multiple Windows device types, see these articles:
+ユニバーサル Windows プラットフォーム (UWP) の概要、またこれによって、同じコードを使って複数の Windows デバイスの種類に合わせたエクスペリエンスを提供する方法については、次の記事をご覧ください。
 
--   Create your first Universal Windows app
--   Guide to Universal Windows Platform (UWP) apps
--   What's a Universal Windows app?
+-   初めてのユニバーサル Windows アプリの作成
+-   ユニバーサル Windows プラットフォーム (UWP) アプリのガイド
+-   ユニバーサル Windows アプリとは?
 
-| Topic | Description |
+| トピック | 説明 |
 |-------|-------------|
-| [App-to-app communication](app-to-app/index.md) | Learn how Universal Windows apps (including Windows web apps) can launch other apps and exchange data and files. Complex tasks that would normally require a user to manage multiple apps can now be handled seamlessly. |
-| [Audio, video, and camera](audio-video-camera/index.md) | Capture photos and videos from a capture device, such as a webcam, and render audio streams in an app. |
-| [Contacts and calendar](contacts-and-calendar/index.md) | Let your users access their Windows contacts and calendar appointments from your app, so they can share content, email, and calendar info, or send messages without having to switch between Windows apps.|
-| [Data access](data-access/index.md) | Learn about storing data on the device in a private database and using object relational mapping in Universal Windows Platform (UWP) apps. |
-| [Data binding](data-binding/index.md) | Synchronize the UI elements of your Universal Windows app with different sources of data, including databases, files, and internal objects, to provide a data-driven user experience. |
-| [Debugging, testing, and performance](debug-test-perf/index.md) | Learn about the testing and debugging cycle and how to use the related tools provided with Microsoft Visual Studio or as separate downloads. Make sure your Universal Windows app delivers the experience you intend and is ready for publication to the Windows Store. |
-| [Devices, sensors, and power](devices-sensors\index.md) | Integrate different devices like printers, cameras, and sensors into your Universal Windows app to provide a robust and flexible connected-device experience for your users. | 
-| [Enterprise](enterprise/index.md) | Learn about the key enterprise features for Windows 10 Universal Windows Platform (UWP) apps. |
-| [Files, folders, and libraries](files/index.md) | Learn how to read and write text and other data formats in files, and manage files and folders. Also find info about reading and writing app settings, about file and folder pickers, and about special, "sandboxed" locations such as the Video/Music library. |
-| [Games and DirectX](https://msdn.microsoft.com/en-us/library/windows/apps/mt228375.aspx) | Understand the basics of creating games on the new Universal Windows Platform (UWP). |
-| [Graphics and animation](graphics/index.md) | Enhance your Universal Windows app with UI graphics and animations that keep users visually engaged and interested in the user experience. |
-| [Launching, resuming, and background tasks](launch-resume/index.md) | Create background tasks and register for system-generated events to provide functionality even when your Universal Windows app is suspended or not running. |
-| [Maps and location](maps-and-location/index.md) | Learn how your Universal Windows app can tap into the Bing Maps service and produce accurate map visuals that now include aerial 3D imagery and street-level views. |
-| [Monetize your app](monetize\index.md) | Create free apps, trials (both time-based and feature-based), paid apps, and in-app products, to give your customers the option to try your app for free and make purchase decisions during their experience with your app. |
-| [Networking and web services](networking\index.md) | Create a connected, or network-aware, Universal Windows app that can use available network connections to do things like fetch RSS feeds, engage in multiplayer games, or interact with nearby devices. |
-| [Packaging apps](packaging\index.md) | Understand the app package that contains the files that constitute your Universal Windows app, and how you work with it to deploy, manage, and update your app through the Windows Store. Also learn about app capabilities, which must be declared in the app package manifest for access to specific resources. |
-| [Porting apps to Windows 10](porting\index.md) | Bring an existing app to the UWP where you can create a single app package that not only targets the Windows-based devices of your choosing, but also capitalizes on features and user experiences unique to each device type. |
-| [Security](security/index.md) | Manage sensitive user info and help secure app data and resources while keeping the user experience intact. Features like basic password protection, roaming credentials, single sign-on, Microsoft account authentication, and cryptography are all at your disposal. |
-| [Threading and async programming](threading-async/index.md) | Use asynchronous programming to help your app stay responsive by allowing it to continue to run and respond to the UI while it completes other work that might take an extended amount of time. |
-| [Windows Runtime components](winrt-components/index.md) | Learn more about these self-contained objects that you can initialize and use from any language, including C#, Visual Basic, JavaScript, and C++. For example, you could create a Windows Runtime component in C++ that uses a third-party library to perform a computationally expensive operation, or simply reuse some Visual Basic or C# code in your Universal Windows app. 
-| [XAML platform](xaml-platform/index.md) | Get started with the basic concepts of the XAML programming language. Or, if you're already familiar with XAML, jump ahead and learn how to implement Windows Runtime features in XAML using Visual Studio to create a great Universal Windows app. |
+| [アプリ間通信](app-to-app/index.md) | ユニバーサル Windows アプリ (Windows Web アプリを含む) でどのように他のアプリが起動され、データやファイルが交換されるかについて説明します。 複数のアプリを管理する必要のあった複雑な作業をシームレスに処理できるようになります。 |
+| [オーディオ、ビデオ、およびカメラ](audio-video-camera/index.md) | Web カメラなどのキャプチャ デバイスから写真やビデオをキャプチャし、アプリでオーディオ ストリームをレンダリングします。 |
+| [連絡先とカレンダー](contacts-and-calendar/index.md) | ユーザーどうしがコンテンツ、電子メール、カレンダー情報を共有したり、Windows アプリ間での切り替えなしでメッセージを送信したりできるように、アプリから Windows アドレス帳やカレンダーの予定にアクセスできるようにします。|
+| [データ アクセス](data-access/index.md) | デバイス上のデータをプライベート データベースに保存する方法と、ユニバーサル Windows プラットフォーム (UWP) アプリでオブジェクト リレーショナル マッピングを使う方法について説明します。 |
+| [データ バインディング](data-binding/index.md) | ユニバーサル Windows アプリの UI 要素をさまざまなデータ ソース (データベース、ファイル、内部オブジェクトなど) と同期し、データ駆動型のユーザー エクスペリエンスを実現します。 |
+| [デバッグ、テスト、パフォーマンス](debug-test-perf/index.md) | テストとデバッグのサイクルについて説明します。また、Microsoft Visual Studio に付属の関連ツールや個別にダウンロードできる関連ツールの使用方法についても説明します。 ユニバーサル Windows アプリで意図したエクスペリエンスが確実に実現されるようにし、Windows ストアに公開できるようにします。 |
+| [デバイス、センサーの使用](devices-sensors\index.md) | さまざまなデバイス (プリンター、カメラ、センサーなど) をユニバーサル Windows アプリに統合して、接続されたデバイスの堅牢かつ柔軟なエクスペリエンスをユーザーに提供します。 | 
+| [エンタープライズ](enterprise/index.md) | Windows 10 ユニバーサル Windows プラットフォーム (UWP) アプリの主要なエンタープライズ機能について説明します。 |
+| [ファイル、フォルダー、およびライブラリ](files/index.md) | ファイル内のテキストやその他のデータ形式を読み取り/書き込みする方法、およびファイルやフォルダーの管理方法について説明します。 また、アプリの設定の読み取りと書き込み、ファイルやフォルダーのピッカー、ビデオ ライブラリやミュージック ライブラリなどのセキュリティで保護された特別な場所についても説明します。 |
+| [ゲームと DirectX](https://msdn.microsoft.com/en-us/library/windows/apps/mt228375.aspx) | 新しいユニバーサル Windows プラットフォーム (UWP) でゲームを作成する基本的な方法について説明します。 |
+| [グラフィックスとアニメーション](graphics/index.md) | ユーザー エクスペリエンスに対して視覚的な興味を持たせ、ユーザーの関心を集めるような UI グラフィックやアニメーションを使って、ユニバーサル Windows アプリを強化します。 |
+| [起動、再開、バックグラウンド タスク](launch-resume/index.md) | バックグラウンド タスクを作成し、システムで生成されたイベントに登録して、ユニバーサル Windows アプリが一時停止したり、実行されていない場合でも機能を提供します。 |
+| [マップと位置情報](maps-and-location/index.md) | ユニバーサル Windows アプリで Bing Maps サービスを活用して、航空写真の 3D ビューやストリート レベルのビューを含む正確なマップ視覚効果を生成する方法を説明します。 |
+| [アプリの収益の獲得](monetize\index.md) | 無料のアプリ、試用版 (時間ベースと機能ベースの両方)、有料版のアプリ、アプリ内製品を作成して、ユーザーに、アプリを無料で実際に試しながら製品の購入を決定する機会を提供することができます。 |
+| [ネットワークと Web サービス](networking\index.md) | 利用可能なネットワーク接続を使って、RSS フィードのフェッチ、マルチプレイヤー ゲームでのプレイ、近くのデバイスの操作などを実行できる接続型 (ネットワーク認識型) のユニバーサル Windows アプリを作成します。 |
+| [アプリのパッケージ化](packaging\index.md) | ユニバーサル Windows アプリを構成するファイルを含むアプリ パッケージについて、およびこのパッケージを使い Windows ストアを介してアプリを展開、管理、および更新する方法について説明します。 また、特定のリソースにアクセスするためにアプリ パッケージ マニフェストで宣言する必要がある、アプリの機能についても説明します。 |
+| [Windows 10 にアプリを移植する](porting\index.md) | 任意の Windows ベース デバイスをターゲットとするだけでなく、各デバイスの種類に固有の機能やユーザー エクスペリエンスも活用する単一のアプリ パッケージを作成できる UWP に既存のアプリを移植します。 |
+| [セキュリティ](security/index.md) | 機密性の高いユーザー情報を管理し、ユーザー エクスペリエンスをそのまま維持しながら、アプリのデータとリソースを保護できます。 基本的なパスワード保護、移動資格情報、シングル サインオン、Microsoft アカウント認証、暗号化などの機能をどれでも自由に利用できます。 |
+| [スレッド化と非同期プログラミング](threading-async/index.md) | 非同期プログラミングを使って、時間のかかる可能性がある操作を実行しているときでもアプリが実行を続けて UI に応答できるようにすることで、アプリの応答性を保つことができます。 |
+| [Windows ランタイム コンポーネント](winrt-components/index.md) | 任意の言語 (C#、Visual Basic、JavaScript、C++ など) から初期化および使用できる自己完結型オブジェクトについて説明します。 たとえば、サード パーティのライブラリを使う Windows ランタイム コンポーネントを C++ で作成して計算の負荷が高い操作を実行したり、ユニバーサル Windows アプリで単に Visual Basic または C# コードなどを再利用できます。 
+| [XAML プラットフォーム](xaml-platform/index.md) | XAML プログラミング言語の基本的な概念を説明します。 または、XAML に既に慣れている場合は、XAML で Visual Studio を使って Windows ランタイム機能を実装し、優れたユニバーサル Windows アプリを作成する方法に関する説明に進んでもかまいません。 |
 
 
-<!--HONumber=Jun16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

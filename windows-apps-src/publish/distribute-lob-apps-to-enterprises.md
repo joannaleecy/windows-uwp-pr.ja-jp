@@ -1,8 +1,11 @@
 ---
 author: jnHs
-Description: 基幹業務 (LOB) アプリを、ボリューム取得できるように、ビジネス向け Windows ストアで企業に直接公開できます。アプリをストアで一般公開する必要はありません。
-title: LOB アプリの企業への配布
+Description: "基幹業務 (LOB) アプリを、ボリューム取得できるように、ビジネス向け Windows ストアで企業に直接公開できます。アプリをストアで一般公開する必要はありません。"
+title: "LOB アプリの企業への配布"
 ms.assetid: 2050126E-CE49-4DE3-AC2B-A572AC895158
+ms.sourcegitcommit: 9ad7589344d2af986e52ae43acc3e48de6374ae6
+ms.openlocfilehash: d7551e0456ce0e59dbbfa92690ddd5ba2ebaf8b4
+
 ---
 
 # LOB アプリの企業への配布
@@ -48,7 +51,9 @@ LOB アプリを専用アプリとして企業に公開するには、最初に�
 
 ### LOB アプリの企業展開
 
-**[ストアに提出]** をクリックすると、アプリの認定プロセスが開始します。 準備ができたら、企業の管理者が、そのアプリを、ビジネス向け Windows ストア ポータルのプライベート ストアに追加する必要があります。 その後、企業はそのアプリをユーザーに展開できます。
+**[ストアに提出]** をクリックすると、アプリの認定プロセスが開始します。 準備ができたら、企業の管理者が、そのアプリをビジネス向け Windows ストア ポータルのプライベート ストアに追加する必要があります。 その後、企業はそのアプリをユーザーに展開できます。
+
+> **注** LOB アプリを取得するには、組織が[サポート対象の市場](https://technet.microsoft.com/itpro/windows/whats-new/windows-store-for-business-overview#supported-markets)に所在している必要があります。また、アプリを申請するときは、その市場を除外しないでください。 
 
 詳しくは、[基幹業務アプリの操作](http://go.microsoft.com/fwlink/p/?LinkId=698846)に関するページ、および[プライベート ストアを使用したアプリの配布](http://go.microsoft.com/fwlink/p/?LinkId=698847)に関するページをご覧ください。
 
@@ -75,6 +80,7 @@ LOB として既に公開したアプリに更新プログラムを公開する�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

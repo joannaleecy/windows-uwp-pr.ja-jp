@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: 3A477380-EAC5-44E7-8E0F-18346CC0C92F
-title: ListView と GridView のデータ仮想化
-description: データ仮想化によって ListView と GridView のパフォーマンスと起動時間を向上させます。
+title: "ListView と GridView のデータ仮想化"
+description: "データ仮想化によって ListView と GridView のパフォーマンスと起動時間を向上させます。"
+translationtype: Human Translation
+ms.sourcegitcommit: d76ef6a87d6afad577f5f7bf5e8f18a8b0776094
+ms.openlocfilehash: 26faa92e98547844af2be1720c458d793ac2f3ac
+
 ---
 # ListView と GridView のデータ仮想化
 
@@ -10,7 +14,7 @@ description: データ仮想化によって ListView と GridView のパフォ�
 
 **注**  詳しくは、//build/ セッション「[Dramatically Increase Performance when Users Interact with Large Amounts of Data in GridView and ListView (ユーザーが GridView と ListView で大量のデータを操作するときのパフォーマンスを大幅に向上させる)](https://channel9.msdn.com/Events/Build/2013/3-158)」をご覧ください。
 
-データ仮想化によって [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) と [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) のパフォーマンスと起動時間を向上させます。 UI の仮想化、要素の削減、項目の段階的な更新については、「[ListView と GridView の UI の最適化](optimize-gridview-and-listview.md)」をご覧ください
+データ仮想化によって [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) と [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) のパフォーマンスと起動時間を向上させます。 UI の仮想化、要素の削減、項目の段階的な更新については、「[ListView と GridView の UI の最適化](optimize-gridview-and-listview.md)」をご覧ください。
 
 データ仮想化のメソッドは、大きすぎてメモリに一度に格納できないか、すべてを格納する必要がないデータ セットで必要です。 最初の部分を (ローカル ディスク、ネットワーク、またはクラウドから) メモリに読み込んで、その部分的なデータ セットに UI の仮想化を適用します。 データは、後から段階的に読み込むことも、マスター データ セット内の任意の位置からオンデマンドで読み込むこともできます (ランダム アクセス)。 データ仮想化が適しているかどうかは、多数の要因によって決まります。
 
@@ -19,7 +23,7 @@ description: データ仮想化によって ListView と GridView のパフォ�
 -   データ セットのソース (ローカル ディスク、ネットワーク、またはクラウド)
 -   アプリの総合的なメモリ消費量
 
-**注**  ListView と GridView では、ユーザーがパンやスクロールの操作をすばやく行った場合に一時的なプレースホルダーの視覚効果を表示する機能が既定で有効になることに注意してください。 これらのプレース ホルダーの視覚効果は、データが読み込まれると項目テンプレートに置き換えられます。 この機能は、[**ListViewBase.ShowsScrollingPlaceholders**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) を false に設定することによって無効にできますが、その場合は、x:Phase 属性を使って項目テンプレートの要素を段階的にレンダリングすることをお勧めします。 詳しくは、「[GridView と ListView の項目を段階的に更新する](optimize-gridview-and-listview.md#update-items-incrementally)」をご覧ください
+**注**  ListView と GridView では、ユーザーがパンやスクロールの操作をすばやく行った場合に一時的なプレースホルダーの視覚効果を表示する機能が既定で有効になることに注意してください。 これらのプレース ホルダーの視覚効果は、データが読み込まれると項目テンプレートに置き換えられます。 この機能は、[**ListViewBase.ShowsScrollingPlaceholders**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.showsscrollingplaceholders) を false に設定することによって無効にできますが、その場合は、x:Phase 属性を使って項目テンプレートの要素を段階的にレンダリングすることをお勧めします。 詳しくは、「[GridView と ListView の項目を段階的に更新する](optimize-gridview-and-listview.md#update-items-incrementally)」をご覧ください。
 
 以降では、段階的なデータ仮想化とランダム アクセスのデータ仮想化の手法について詳しく説明します。
 
@@ -67,7 +71,7 @@ description: データ仮想化によって ListView と GridView のパフォ�
     -   メモリ内の項目を利用できる場合はその項目を返します。
     -   利用できない場合は、null またはプレースホルダー項目を返します。
     -   項目に対する要求 (または [**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070) からの範囲要求) を使って、どの項目が必要であるかを調べ、バックエンドから項目のデータを非同期的に取得します。 データを取得した後、[**INotifyCollectionChanged**]((https://msdn.microsoft.com/library/windows/apps/xaml/system.collections.specialized.inotifycollectionchanged.aspx) または [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) 経由で変更通知を発行して、項目コントロールが新しい項目を認識できるようにします。
--   (必要に応じて) 項目コントロールのビューポートが変更されるときに、[**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070) の実装を通してどの項目がデータ ソースから必要であるかを識別します
+-   (必要に応じて) 項目コントロールのビューポートが変更されるときに、[**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070) の実装を利用して、データ ソースのどの項目が必要であるかを特定します。
 
 その他のいつデータ項目を読み込むか、いくつ読み込むか、そしてどの項目をメモリに保持するかは、アプリケーションにまかされます。 いくつかの一般的な考慮事項を次に示します。
 
@@ -85,6 +89,7 @@ description: データ仮想化によって ListView と GridView のパフォ�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: ここでは、XAML 構文の規則と、XAML 構文に存在する制限や選択肢を説明する用語について説明します。
-title: XAML 構文のガイド
+description: "ここでは、XAML 構文の規則と、XAML 構文に存在する制限や選択肢を説明する用語について説明します。"
+title: "XAML 構文のガイド"
 ms.assetid: A57FE7B4-9947-4AA0-BC99-5FE4686B611D
+translationtype: Human Translation
+ms.sourcegitcommit: 07058b48a527414b76d55b153359712905aa9786
+ms.openlocfilehash: 8e7819b02d7a22a16cf16091d08bef0aabc8d36e
+
 ---
 
 # XAML 構文のガイド
@@ -321,6 +325,7 @@ XAML の使用方法のセクションでも、さまざまな一般化された
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

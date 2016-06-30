@@ -1,8 +1,11 @@
 ---
 author: mcleanbyron
 ms.assetid: FA55C65C-584A-4B9B-8451-E9C659882EDE
-description: Windows ストア購入 API 内のこのメソッドを使用して、無料の製品またはアプリ内製品 (IAP) を特定のユーザーに対して付与します。
-title: 無料の製品の付与
+description: "Windows ストア購入 API 内のこのメソッドを使用して、無料の製品またはアプリ内製品 (IAP) を特定のユーザーに対して付与します。"
+title: "無料の製品の付与"
+ms.sourcegitcommit: 2f4351d6f9bdc0b9a131ad5ead10ffba7e76c437
+ms.openlocfilehash: 9bce5649fc1a9400371e1f9bb67809f1c6288ec6
+
 ---
 
 # 無料の製品の付与
@@ -17,7 +20,7 @@ Windows ストア購入 API 内のこのメソッドを使用して、無料の�
 
 このメソッドを使用するための要件:
 
--   **https://onestore.microsoft.com** 対象ユーザー URI を使用して作成した Azure AD アクセス トークン。
+-   `https://onestore.microsoft.com` 対象ユーザー URI を使用して作成した Azure AD アクセス トークン。
 -   アプリのクライアント側コードから [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675) メソッドを呼び出して生成された Windows ストア ID キー。
 
 詳しくは、「[サービスからの製品の表示と許可](view-and-grant-products-from-a-service.md)」をご覧ください。
@@ -29,9 +32,9 @@ Windows ストア購入 API 内のこのメソッドを使用して、無料の�
 
 | メソッド | 要求 URI                                            |
 |--------|--------------------------------------------------------|
-| POST   | https://purchase.mp.microsoft.com/v6.0/purchases/grant |
+| POST   | `https://purchase.mp.microsoft.com/v6.0/purchases/grant` |
 
- 
+<br/> 
 
 ### 要求ヘッダー
 
@@ -42,7 +45,7 @@ Windows ストア購入 API 内のこのメソッドを使用して、無料の�
 | Content-Length | number | 要求の本文の長さ。                                                                       |
 | Content-Type   | string | 要求と応答の種類を指定します。 現時点では、サポートされている唯一の値は **application/json** です。 |
 
- 
+<br/>
 
 ### 要求本文
 
@@ -54,11 +57,11 @@ Windows ストア購入 API 内のこのメソッドを使用して、無料の�
 | language       | string | ユーザーの言語。                                                                                                                                                                                                                                                                                              | 必須      |
 | market         | string | ユーザーの市場。                                                                                                                                                                                                                                                                                                | 必須      |
 | orderId        | guid   | 注文に対して生成された GUID。 この値はそのユーザーに関して一意ですが、すべての注文にわたって一意である必要はありません。                                                                                                                                                                                              | 必須      |
-| productId      | string | Windows ストア カタログの製品 ID。 製品 ID を取得するには、Windows デベロッパー センターのダッシュボードでアプリに移動し、**[アプリ管理]** &gt; **[アプリ ID]** ページを開いて、**[Windows 10 の URL]** フィールドに表示される文字列のサフィックスを取得します。 製品 ID の例は “9WZDNCRFJ3Q8” です。 | 必須      |
+| productId      | string | Windows ストア カタログのストア ID。 ストア ID は、デベロッパー センター ダッシュボードの[アプリ ID ページ](../publish/view-app-identity-details.md)で確認できます。 ストア ID の例は 9WZDNCRFJ3Q8 です。 | 必須      |
 | quantity       | int    | 購入する数量。 現時点では、サポートされている唯一の値は 1 です。 指定されていない場合は、既定値は 1 です。                                                                                                                                                                                                                | 省略可能       |
 | skuId          | string | Windows ストア カタログの SKU ID。 SKU ID の例は “0010” です。                                                                                                                                                                                                                                                | 必須      |
 
- 
+<br/> 
 
 ### 要求の例
 
@@ -104,7 +107,7 @@ Content-Type: application/json
 | totalChargedToCsvTopOffPI | decimal                     | 個別の支払い方法とストアド バリュー (CSV) を使っている場合に、CSV に請求する金額。                                                                | 必須      |
 | totalTaxAmount            | decimal                     | すべての行項目に対する税の合計金額。                                                                                                              | 必須      |
 
- 
+<br/> 
 
 ClientContext オブジェクトには以下のパラメーターが含まれています。
 
@@ -112,7 +115,7 @@ ClientContext オブジェクトには以下のパラメーターが含まれて
 |-----------|--------|---------------------------------------|----------|
 | client    | string | 注文を作成したクライアント ID。 | 省略可能       |
 
- 
+<br/> 
 
 OrderLineItemV6 オブジェクトには以下のパラメーターが含まれています。
 
@@ -144,7 +147,7 @@ OrderLineItemV6 オブジェクトには以下のパラメーターが含まれ�
 | Title                   | string         | 行項目のローカライズされたタイトル。                                                                        | 必須      |
 | totalAmount             | decimal        | 行項目の税込みの合計購入金額。                                                    | 必須      |
 
- 
+<br/> 
 
 IdentityV6 オブジェクトには以下のパラメーターが含まれています。
 
@@ -153,7 +156,7 @@ IdentityV6 オブジェクトには以下のパラメーターが含まれてい
 | identityType  | string | 値 **"pub"** を格納します。                                                      | 必須      |
 | identityValue | string | 指定された Windows ストア ID キーの *publisherUserId* の文字列値。 | 必須      |
 
- 
+<br/> 
 
 ### 応答の例
 
@@ -226,7 +229,7 @@ Date: Tue, 13 Oct 2015 21:21:51 GMT
 | 401  | 権限がありません | InconsistentClientId       | 要求の本文の Windows ストア ID の *clientId* 要求と承認ヘッダーの Azure AD アクセス トークンの *appid* 要求が一致しません。                     |
 | 400  | BadRequest   | InvalidParameter           | 詳細情報に、要求の本文と無効な値を含むフィールドに関する情報が含まれます。                                                                                    |
 
- 
+<br/> 
 
 ## 関連トピック
 
@@ -241,8 +244,6 @@ Date: Tue, 13 Oct 2015 21:21:51 GMT
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

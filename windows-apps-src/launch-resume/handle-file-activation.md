@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: ファイルのアクティブ化の処理
-description: アプリは、特定のファイルの種類の既定のハンドラーとして登録することができます。
+author: TylerMSFT
+title: "ファイルのアクティブ化の処理"
+description: "アプリは、特定のファイルの種類の既定のハンドラーとして登録することができます。"
 ms.assetid: A0F914C5-62BC-4FF7-9236-E34C5277C363
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: 9c6358bccdea55a7c3749388c35aa770f4325960
+
 ---
 
 # ファイルのアクティブ化の処理
@@ -151,8 +154,6 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

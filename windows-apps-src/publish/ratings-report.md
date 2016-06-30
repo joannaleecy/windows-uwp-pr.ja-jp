@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Windows デベロッパー センター ダッシュボードの [評価] レポートには、Windows ストアに掲載されているアプリに関するユーザー評価の分布が示されます。
-title: 評価レポート
+Description: "Windows デベロッパー センター ダッシュボードの [評価] レポートには、Windows ストアに掲載されているアプリに関するユーザー評価の分布が示されます。"
+title: "評価レポート"
 ms.assetid: CAFEC20B-04FB-48C8-B663-1238C0B85ECD
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: e0258bc9402772d0a036b32563348d11acd0fdb7
+
 ---
 
 # 評価レポート
@@ -68,6 +72,7 @@ Windows デベロッパー センター ダッシュボードの **[評価]** �
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

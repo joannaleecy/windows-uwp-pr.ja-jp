@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: このセクションでは、アプリ設定を示し、その設定をアプリ データとして格納するためのユーザー エクスペリエンス ガイドラインを取り上げます。
-title: アプリの設定とデータ
+Description: "このセクションでは、アプリ設定を示し、その設定をアプリ データとして格納するためのユーザー エクスペリエンス ガイドラインを取り上げます。"
+title: "アプリの設定とデータ"
 ms.assetid: E7F312F7-54D8-411F-8D92-92FBB95C2463
 label: App settings and data
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 4d6f57dcc9dbfe9c2e031a5fe73f24668f0dc462
+
 ---
 
 # アプリの設定とデータ
@@ -45,6 +49,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

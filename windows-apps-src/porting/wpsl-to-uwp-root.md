@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
-description: Windows Phone Silverlight アプリの開発者は、Windows 10 への移行で、自身のスキル セットとソース コードを十分に活用できます。
-title: Windows Phone Silverlight から UWP への移行
+description: "Windows Phone Silverlight アプリの開発者は、Windows 10 への移行で、自身のスキル セットとソース コードを十分に活用できます。"
+title: "Windows Phone Silverlight から UWP への移行"
 ms.assetid: 9E0C0315-6097-488B-A3AF-7120CCED651A
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 19dde1c9b0df3b2a5e464feb15e43af9dd283661
+
 ---
 
 #  Windows Phone Silverlight から UWP への移行
@@ -88,6 +92,7 @@ Windows Phone Silverlight は、Silverlight 4.0 に基づく XAML UI フレー�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

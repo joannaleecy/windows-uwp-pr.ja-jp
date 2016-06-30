@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: XAML 名前スコープには、XAML で定義されたオブジェクトの名前とそれに対応するインスタンスとの関係が格納されます。 この概念は、他のプログラミング言語やテクノロジで使われている用語 "名前スコープ" と広い意味で似ています。
-title: XAML 名前スコープ
+description: "XAML 名前スコープには、XAML で定義されたオブジェクトの名前とそれに対応するインスタンスとの関係が格納されます。 この概念は、他のプログラミング言語やテクノロジで使われている用語 \"名前スコープ\" と広い意味で似ています。"
+title: "XAML 名前スコープ"
 ms.assetid: EB060CBD-A589-475E-B83D-B24068B54C21
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: b8b833f40bc38799acc8813d38ddea63426f05b3
+
 ---
 
 # XAML 名前スコープ
@@ -28,7 +32,7 @@ XAML 名前スコープ内の名前の最も一般的な用途は、オブジェ
 
 ## XamlReader.Load を使った実行時におけるオブジェクトの作成
 
-XAML は、初期の XAML ソース解析操作に対して同じように動作する [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) メソッドの文字列入力としても使うことができます。 **XamlReader.Load** は、実行時にオブジェクトの切断されたツリーを新規作成します。 この切断されたツリーは、メイン オブジェクト ツリーのいずれかのポイントにアタッチできます。 作成したオブジェクト ツリーは、**Children** などのコンテンツ プロパティ コレクションに追加するか、オブジェクト値を受け取る他のプロパティを設定する (たとえば、[**Fill**](https://msdn.microsoft.com/library/windows/apps/br243378) プロパティの値に新しい [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/br210101) を読み込む) ことで、明示的に接続する必要があります。
+XAML は、初期の XAML ソース解析操作に対して同じように動作する [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) メソッドの文字列入力としても使用できます。 **XamlReader.Load** は、実行時にオブジェクトの切断されたツリーを新規作成します。 この切断されたツリーは、メイン オブジェクト ツリーのいずれかのポイントにアタッチできます。 作成したオブジェクト ツリーは、**Children** などのコンテンツ プロパティ コレクションに追加するか、オブジェクト値を受け取る他のプロパティを設定する (たとえば、[**Fill**](https://msdn.microsoft.com/library/windows/apps/br243378) プロパティの値に新しい [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/br210101) を読み込む) ことで、明示的に接続する必要があります。
 
 ### XamlReader.Load が XAML 名前スコープに与える影響
 
@@ -86,6 +90,7 @@ XAML 名前スコープが複数存在するため、テンプレートが適用
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

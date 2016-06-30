@@ -1,8 +1,12 @@
 ---
 author: PatrickFarley
 ms.assetid: 551d4e70-312d-4b40-8d3e-336ce934e0ad
-title: 3D 印刷
-description: このセクションでは、ユニバーサル Windows アプリで 3D 印刷機能を使用する方法について説明します。
+title: "3D 印刷"
+description: "このセクションでは、ユニバーサル Windows アプリで 3D 印刷機能を使用する方法について説明します。"
+translationtype: Human Translation
+ms.sourcegitcommit: 4b8125e064c4e2e6f4eeced50885ad352d4d6988
+ms.openlocfilehash: a56adc5c7bc3f2d5ec4976e4e5394ff26ea983dc
+
 ---
 # 3D 印刷
 
@@ -24,6 +28,7 @@ description: このセクションでは、ユニバーサル Windows アプリ�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

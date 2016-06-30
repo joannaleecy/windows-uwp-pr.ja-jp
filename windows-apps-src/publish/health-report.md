@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Windows デベロッパー センター ダッシュボードの状態レポートによって、クラッシュや応答停止イベントなど、アプリの品質とパフォーマンスに関連するデータを取得できます。
-title: 状態レポート
+Description: "Windows デベロッパー センター ダッシュボードの状態レポートによって、クラッシュや応答停止イベントなど、アプリの品質とパフォーマンスに関連するデータを取得できます。"
+title: "状態レポート"
 ms.assetid: 4F671543-1E91-4E59-88A3-638E3E64539A
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 78bedc3e0551feef8efe61b3b664145e29281714
+
 ---
 
 # 状態レポート
@@ -59,6 +63,7 @@ PDB シンボル ファイルを追加した場合、**[エラー ログ]** の�
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

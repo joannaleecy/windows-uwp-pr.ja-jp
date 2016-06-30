@@ -1,8 +1,11 @@
 ---
 author: mcleanbyron
 ms.assetid: 3569C505-8D8C-4D85-B383-4839F13B2466
-description: このメソッドを使って、Windows ストアのキーを更新します。
-title: Windows ストア ID キーの更新
+description: "このメソッドを使って、Windows ストアのキーを更新します。"
+title: "Windows ストア ID キーの更新"
+ms.sourcegitcommit: 2f4351d6f9bdc0b9a131ad5ead10ffba7e76c437
+ms.openlocfilehash: 6255346c568ed24e17c795834ab182f73707c4de
+
 ---
 
 # Windows ストア ID キーの更新
@@ -18,7 +21,7 @@ title: Windows ストア ID キーの更新
 
 このメソッドを使用するための要件:
 
--   **https://onestore.microsoft.com** 対象ユーザー URI を使用して作成した Azure AD アクセス トークン。
+-   `https://onestore.microsoft.com` 対象ユーザー URI を使用して作成した Azure AD アクセス トークン。
 -   アプリのクライアント側コードから [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) メソッドまたは [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675) メソッドを呼び出して生成された有効期限切れの Windows ストア ID キー。
 
 詳しくは、「[サービスからの製品の表示と許可](view-and-grant-products-from-a-service.md)」をご覧ください。
@@ -30,29 +33,29 @@ title: Windows ストア ID キーの更新
 
 | キーの種類    | メソッド | 要求 URI                                              |
 |-------------|--------|----------------------------------------------------------|
-| コレクション | POST   | https://collections.mp.microsoft.com/v6.0/b2b/keys/renew |
-| 購入    | POST   | https://purchase.mp.microsoft.com/v6.0/b2b/keys/renew    |
+| コレクション | POST   | `https://collections.mp.microsoft.com/v6.0/b2b/keys/renew` |
+| 購入    | POST   | `https://purchase.mp.microsoft.com/v6.0/b2b/keys/renew`    |
 
- 
+<br/> 
 
 ### 要求ヘッダー
 
-| ヘッダー         | タイプ   | Description                                                                                           |
+| ヘッダー         | タイプ   | 説明                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
 | Host           | string | **collections.mp.microsoft.com** または **purchase.mp.microsoft.com** の値に設定する必要があります。           |
 | Content-Length | number | 要求の本文の長さ。                                                                       |
 | Content-Type   | string | 要求と応答の種類を指定します。 現時点では、サポートされている唯一の値は **application/json** です。 |
 
- 
+<br/> 
 
 ### 要求本文
 
-| パラメーター     | タイプ   | Description                       | 必須かどうか |
+| パラメーター     | タイプ   | 説明                       | 必須かどうか |
 |---------------|--------|-----------------------------------|----------|
 | serviceTicket | string | Azure AD アクセス トークン。        | 必須      |
 | key           | string | 有効期限が切れた Windows ストア ID キー。 | 省略可能       |
 
- 
+<br/> 
 
 ### 要求の例
 
@@ -62,7 +65,7 @@ Content-Length: 2774
 Content-Type: application/json
 Host: collections.mp.microsoft.com
 
-{ 
+{
     "serviceTicket": "eyJ0eXAiOiJKV1QiLCJhb….",
     "Key": "eyJ0eXAiOiJKV1QiLCJhbG…."
 }
@@ -77,7 +80,7 @@ Host: collections.mp.microsoft.com
 |-----------|--------|------------------------------------------------------------------------------------------------------------------------|----------|
 | key       | string | 以降の Windows ストア コレクション API または Windows ストア購入 API に対する呼び出しで使用できる、更新された Windows ストアのキー。 | 省略可能       |
 
- 
+<br/> 
 
 ### 応答の例
 
@@ -104,7 +107,7 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 | 401  | 権限がありません | AuthenticationTokenInvalid | Azure AD アクセス トークンが無効です。 場合によっては、ServiceError の詳細に追加情報が含まれていることがあります (トークンの有効期限切れや *appid* 要求の欠落など)。 |
 | 401  | 権限がありません | InconsistentClientId       | Windows ストア ID キーの *clientId* 要求と Azure AD アクセス トークンの *appid* 要求が一致しません。                                                                     |
 
- 
+<br/> 
 
 ## 関連トピック
 
@@ -116,6 +119,6 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 
 
 
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

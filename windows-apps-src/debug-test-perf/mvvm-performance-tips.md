@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: 159681E4-BF9E-4A57-9FEE-EC7ED0BEFFAD
-title: MVVM と言語のパフォーマンスに関するヒント
-description: このトピックでは、ソフトウェアの設計パターンとプログラミング言語の選択に関連するいくつかのパフォーマンスの考慮事項について説明します。
+title: "MVVM と言語のパフォーマンスに関するヒント"
+description: "このトピックでは、ソフトウェアの設計パターンとプログラミング言語の選択に関連するいくつかのパフォーマンスの考慮事項について説明します。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 77a162076e14b4726e1fb29673b14be65be37a16
+
 ---
 # MVVM と言語のパフォーマンスに関するヒント
 
@@ -40,6 +44,7 @@ MVVM パターンには、複数の具体的な定義と、それを実装する
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

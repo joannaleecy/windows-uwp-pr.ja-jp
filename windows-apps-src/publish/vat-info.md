@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: デベロッパー センターの登録プロセス中に VAT ID 番号の入力を求められた場合は、以下の情報を参考にしてください。
-title: VAT 情報
+Description: "デベロッパー センターの登録プロセス中に VAT ID 番号の入力を求められた場合は、以下の情報を参考にしてください。"
+title: "VAT 情報"
 ms.assetid: 93834A6B-86D6-4647-AC01-CBCA3CB7A578
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 4dd91c901ade83e482061bed781e3fdcd9dde141
+
 ---
 
 # VAT 情報
@@ -246,6 +250,7 @@ Microsoft では税務に関する助言を提供しておらず、次の情報�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

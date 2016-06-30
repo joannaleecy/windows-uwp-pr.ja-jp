@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: DirectX 11 の移植に関する FAQ
-description: ユニバーサル Windows プラットフォーム (UWP) へのゲームの移植についてよく寄せられる質問に対してお答えします。
+title: "DirectX 11 の移植に関する FAQ"
+description: "ユニバーサル Windows プラットフォーム (UWP) へのゲームの移植についてよく寄せられる質問に対してお答えします。"
 ms.assetid: 79c3b4c0-86eb-5019-97bb-5feee5667a2d
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: dc98f15d80fb70fb6e106555659d699c41fbfa0b
+
 ---
 
 # DirectX 11 の移植に関する FAQ
@@ -138,6 +142,7 @@ Microsoft Visual Studio 2015 には、DirectX グラフィックスの診断ツ�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

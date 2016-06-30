@@ -1,8 +1,11 @@
 ---
 author: Mtoepke
-title: Xbox の開発環境に UWP を設定する
-description: Xbox の開発環境に UWP を設定してテストする手順
+title: "Xbox の開発環境に UWP を設定する"
+description: "Xbox の開発環境に UWP を設定してテストする手順"
 area: Xbox
+ms.sourcegitcommit: bdf7a32d2f0673ab6c176a775b805eff2b7cf437
+ms.openlocfilehash: d56206f990e7885af4935401356bd3a2ce2cd292
+
 ---
 
 # Xbox の開発環境に UWP を設定する
@@ -23,10 +26,14 @@ Xbox の開発環境のユニバーサル Windows プラットフォーム (UWP)
 
 ## Windows 10 SDK のセットアップ
 
-Windows 10 SDK プレビュー ビルド 14295 をインストールします。 インストールについて詳しくは、「[開発者向け Insider Preview 更新プログラムのダウンロード](http://go.microsoft.com/fwlink/p/?LinkId=780552)」をご覧ください。
+最新の Windows 10 SDK プレビュー ビルドをインストールします。 インストールについて詳しくは、「[開発者向け Insider Preview 更新プログラムのダウンロード](http://go.microsoft.com/fwlink/p/?LinkId=780552)」をご覧ください。
 
   > **重要**
             &nbsp;&nbsp;最新の SDK をインストールする必要があります。ただし、オペレーティング システムの Windows Insider Preview の最新リリースをインストールする必要は_ありません_。
+
+## Xbox One の設定
+
+Xbox One にアプリを展開する前に、ユーザーがコンソールにサインインする必要があります。 既存の Xbox Live アカウントを使用することも、開発者モードでコンソールの新しいアカウントを作成することもできます。 
 
 ## 初めてのアプリケーションを作成する
 
@@ -101,6 +108,7 @@ Windows 10 SDK プレビュー ビルド 14295 をインストールします�
 ----
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

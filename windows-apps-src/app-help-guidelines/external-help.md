@@ -1,9 +1,13 @@
 ---
 author: QuinnRadich
-Description: アプリに関する詳細な説明やアドバイスのための、外部ヘルプ ページを設計します。
-title: 外部ヘルプ ページを設計するためのガイドライン
+Description: "アプリに関する詳細な説明やアドバイスのための、外部ヘルプ ページを設計します。"
+title: "外部ヘルプ ページを設計するためのガイドライン"
 label: External help
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 03ef3fc34d2018c0ec712977065377a9c52cd8b2
+
 ---
 
 # 外部ヘルプ ページ
@@ -38,6 +42,7 @@ template: detail.hbs
 * [アプリのヘルプのガイドライン](guidelines-for-app-help.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

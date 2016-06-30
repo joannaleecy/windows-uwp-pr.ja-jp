@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: ユニバーサル Windows プラットフォーム (UWP) DirectX ゲームのパッケージ化
-description: 規模の大きいユニバーサル Windows プラットフォーム (UWP) ゲーム (特に、地域固有のアセットや機能オプションによる高解像度アセットを伴って複数言語をサポートするゲーム) は、サイズが容易に膨張する可能性があります。
+title: "ユニバーサル Windows プラットフォーム (UWP) DirectX ゲームのパッケージ化"
+description: "規模の大きいユニバーサル Windows プラットフォーム (UWP) ゲーム (特に、地域固有のアセットや機能オプションによる高解像度アセットを伴って複数言語をサポートするゲーム) は、サイズが容易に膨張する可能性があります。"
 ms.assetid: 68254203-c43c-684f-010a-9cfa13a32a77
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 14043fffc22849ca8d31f85e1035c38c07f1cdd4
+
 ---
 
 #  ユニバーサル Windows プラットフォーム (UWP) DirectX ゲームのパッケージ化
@@ -46,7 +50,7 @@ UWP アプリ インストーラーに含まれるこの機能を使用するに
 
 -   アセット ファイルに同じファイル名を使用し、リソース パッケージ固有の各バージョンを固有の名前のディレクトリに配置する。 これらのディレクトリ名は、システムによって予約されています。 たとえば、\\en-us、\\scale-140、\\dxfl-dx11 などです。
 -   アセット ファイルは、任意の名前のフォルダーに格納されますが、ファイル名には共通ラベルが付けられ、言語や他の修飾子を示すためにシステムにより予約されている文字列が付加されます。 具体的には、修飾子文字列のアンダースコア ("\_") の後には汎的なファイル名が付加されます。 たとえば、\\assets\\menu\_option1\_lang-en-us.png、\\assets\\menu\_option1\_scale-140.png、\\assets\\coolsign\_dxfl-dx11.dds などです。 これらの文字列を連結することもできます。 たとえば、\\assets\\menu\_option1\_scale-140\_lang-en-us.png と記述します。
-    > **注:** 言語修飾子をディレクトリ名に単独で使うのではなく、ファイル名で使うときは、<tag>「[修飾子を使ってリソースに名前を付ける方法](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)」で説明されているように、"lang-" (たとえば "lang-en-us") という形式で指定する必要があります。
+    > **注**   言語修飾子をディレクトリ名に単独で使うのではなく、ファイル名で使うときは、「[修飾子を使ってリソースに名前を付ける方法](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)」で説明されているように、"lang-<tag>" (たとえば "lang-en-us") という形式で指定する必要があります。
 
      
 
@@ -224,6 +228,7 @@ DirectX の機能レベルは、以前のバージョンと現在のバージョ
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

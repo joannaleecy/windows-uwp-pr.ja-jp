@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: プリミティブに対する深度と各種効果の使用
-description: ここでは、深度、視点、色、その他の効果をプリミティブに対して使う方法について説明します。
+title: "プリミティブに対する深度と各種効果の使用"
+description: "ここでは、深度、視点、色、その他の効果をプリミティブに対して使う方法について説明します。"
 ms.assetid: 71ef34c5-b4a3-adae-5266-f86ba257482a
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 47547a226a69b2631313972ed67b39b1f29de402
+
 ---
 
 # プリミティブに対する深度と各種効果の使用
@@ -457,6 +461,7 @@ private:
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

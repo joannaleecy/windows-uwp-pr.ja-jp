@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: ポップアップ (flyout) は、ユーザーが現在操作している内容に関係する UI を一時的に表示するために使われる軽量なポップアップです。
-title: コンテキスト メニューとダイアログ
+Description: "ポップアップ (flyout) は、ユーザーが現在操作している内容に関係する UI を一時的に表示するために使われる軽量なポップアップです。"
+title: "コンテキスト メニューとダイアログ"
 ms.assetid: 7CA2600C-A1DB-46AE-8F72-24C25E224417
 label: Menus, dialogs, and popups
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: e268a5facebbdb80d7cc5cdd52c1a6f944ef7d00
+
 ---
 # メニュー、ダイアログ、ポップアップ (flyout)
 
@@ -179,6 +183,7 @@ template: detail.hbs
 - [**ContentDialog クラス**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentdialog.aspx)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

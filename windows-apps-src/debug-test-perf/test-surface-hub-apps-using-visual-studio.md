@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: A5320094-DF53-42FC-A6BA-A958F8E9210B
-title: Visual Studio を使った Surface Hub アプリのテスト
-description: Visual Studio シミュレーターは、UWP アプリの設計、開発、デバッグ、テストを行える環境を提供します。これには Surface Hub 用に作成されたアプリを含みます。
+title: "Visual Studio を使った Surface Hub アプリのテスト"
+description: "Visual Studio シミュレーターは、UWP アプリの設計、開発、デバッグ、テストを行える環境を提供します。これには Surface Hub 用に作成されたアプリを含みます。"
+translationtype: Human Translation
+ms.sourcegitcommit: 0bf96b70a915d659c754816f4c115f3b3f0a5660
+ms.openlocfilehash: 655dffb5f1948724c894de291e119be1322f6e77
+
 ---
 
 # Visual Studio を使った Surface Hub アプリのテスト
@@ -105,6 +109,7 @@ Surface Hub の解像度をシミュレーターに追加するには、次の�
             &nbsp;&nbsp;Surface Hub がようこそ画面に表示された場合は、いずれかのボタンを選んで無視します。
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

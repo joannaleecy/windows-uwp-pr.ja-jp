@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: XAML マークアップで、プロパティに null 値を指定します。
-title: xNull マークアップ拡張
+description: "XAML マークアップで、プロパティに null 値を指定します。"
+title: "xNull マークアップ拡張"
 ms.assetid: E6A4038E-4ADA-4E82-9824-582FC16AB037
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 96ec27fa36d5a30d6bcf3b3c4ad4a330bf799a09
+
 ---
 
 # {x:Null} マークアップ拡張
@@ -33,6 +37,7 @@ XAML マークアップで、プロパティに **null** 値を指定します�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

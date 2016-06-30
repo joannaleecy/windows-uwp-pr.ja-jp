@@ -5,8 +5,8 @@ title: "タッチパッド操作"
 ms.assetid: CEDEA30A-FE94-4553-A7FB-6C1FA44F06AB
 label: Touchpad interactions
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: aa09852ff6f387b97e0f1a1bbb2d198927d5da0d
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: 361df3a06faa771a81a6d63c2fe873a1aace1125
 
 ---
 
@@ -41,7 +41,7 @@ ms.openlocfilehash: aa09852ff6f387b97e0f1a1bbb2d198927d5da0d
 
 このトピックで説明されているジェスチャとガイドラインを利用することで、アプリはタッチパッド入力を最小限のコードでシームレスにサポートできます。
 
-## <span id="The_touchpad_language"></span><span id="the_touchpad_language"></span><span id="THE_TOUCHPAD_LANGUAGE"></span>タッチパッド言語
+## タッチパッド言語
 
 
 システム内では一貫して、タッチパッド操作の簡単なセットが使われます。 アプリをタッチとマウス入力用に最適化すると、ユーザーが慣れている操作感がこの言語によって実現されるので、信頼感が高まり、アプリの習得や使用も簡単になります。
@@ -71,39 +71,39 @@ ms.openlocfilehash: aa09852ff6f387b97e0f1a1bbb2d198927d5da0d
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><span id="Three-finger_tap"></span><span id="three-finger_tap"></span><span id="THREE-FINGER_TAP"></span>3 本指でのタップ</p></td>
+<td align="left"><p>3 本指でのタップ</p></td>
 <td align="left"><p><strong>Cortana</strong> を使って検索、または<strong>アクション センター</strong>を表示するためのユーザー設定。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Three_finger_slide"></span><span id="three_finger_slide"></span><span id="THREE_FINGER_SLIDE"></span>3 本指でのスライド</p></td>
+<td align="left"><p>3 本指でのスライド</p></td>
 <td align="left"><p>仮想デスクトップのタスク ビュー開く、デスクトップを表示、または開いているアプリを切り替えるためのユーザー設定。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="Single_finger_tap_for_primary_action"></span><span id="single_finger_tap_for_primary_action"></span><span id="SINGLE_FINGER_TAP_FOR_PRIMARY_ACTION"></span>1 本指でのタップによるプライマリ操作</p></td>
+<td align="left"><p>1 本指でのタップによるプライマリ操作</p></td>
 <td align="left"><p>1 本指を使って要素をタップすると、プライマリ操作 (アプリの起動、コマンドの実行など) が呼び出されます。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Two_finger_tap_to_right-click"></span><span id="two_finger_tap_to_right-click"></span><span id="TWO_FINGER_TAP_TO_RIGHT-CLICK"></span>2 本指でのタップによる右クリック</p></td>
+<td align="left"><p>2 本指でのタップによる右クリック</p></td>
 <td align="left"><p>要素を同時に 2 本の指でタップして、その要素を選択し、状況依存のコマンドを表示します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="Two_finger_slide_to_pan"></span><span id="two_finger_slide_to_pan"></span><span id="TWO_FINGER_SLIDE_TO_PAN"></span>2 本指でのスライドによるパン</p></td>
+<td align="left"><p>2 本指でのスライドによるパン</p></td>
 <td align="left"><p>スライドは主にパン操作に使われますが、移動、描画、筆記などの操作に使うこともできます。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Pinch_and_stretch_to_zoom"></span><span id="pinch_and_stretch_to_zoom"></span><span id="PINCH_AND_STRETCH_TO_ZOOM"></span>ピンチとストレッチによるズーム</p></td>
+<td align="left"><p>ピンチとストレッチによるズーム</p></td>
 <td align="left"><p>ピンチ ジェスチャとストレッチ ジェスチャは、通常、サイズ変更とセマンティック ズームに使われます。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="Single_finger_press_and_slide_to_rearrange"></span><span id="single_finger_press_and_slide_to_rearrange"></span><span id="SINGLE_FINGER_PRESS_AND_SLIDE_TO_REARRANGE"></span>1 本指でのプレスとスライドによる移動</p></td>
+<td align="left"><p>1 本指でのプレスとスライドによる移動</p></td>
 <td align="left"><p>要素をドラッグします。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Single_finger_press_and_slide_to_select_text"></span><span id="single_finger_press_and_slide_to_select_text"></span><span id="SINGLE_FINGER_PRESS_AND_SLIDE_TO_SELECT_TEXT"></span>1 本指でのプレスとスライドによるテキストの選択</p></td>
+<td align="left"><p>1 本指でのプレスとスライドによるテキストの選択</p></td>
 <td align="left"><p>選択可能なテキスト内を押してスライドし、選択します。 単語を選択するには、ダブルタップします。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="Left_and_right_click_zone"></span><span id="left_and_right_click_zone"></span><span id="LEFT_AND_RIGHT_CLICK_ZONE"></span>左と右のクリック ゾーン</p></td>
+<td align="left"><p>左と右のクリック ゾーン</p></td>
 <td align="left"><p>マウス デバイスの左ボタンと右ボタンの機能をエミュレートします。</p></td>
 </tr>
 </tbody>
@@ -111,14 +111,14 @@ ms.openlocfilehash: aa09852ff6f387b97e0f1a1bbb2d198927d5da0d
 
  
 
-## <span id="Hardware"></span><span id="hardware"></span><span id="HARDWARE"></span>ハードウェア
+## ハードウェア
 
 
 マウス デバイス機能 ([**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626)) を照会して、タッチパッド ハードウェアから直接アクセスできるアプリ UI の要素を識別します。 タッチ入力とマウス入力の両方の UI を用意することをお勧めします。
 
 デバイス機能の照会について詳しくは、「[入力デバイスの識別](identify-input-devices.md)」をご覧ください。
 
-## <span id="Visual_feedback"></span><span id="visual_feedback"></span><span id="VISUAL_FEEDBACK"></span>視覚的なフィードバック
+## 視覚的なフィードバック
 
 
 -   移動イベントまたはホバー イベントを通じてタッチパッド カーソルが検出されたら、マウス固有の UI を表示して、要素によって公開されている機能を示します。 タッチパッド カーソルが一定の期間動かされなかった場合や、ユーザーがタッチ操作を始めた場合は、タッチパッド UI を徐々に非表示にします。 これにより、UI の簡潔さが保たれます。
@@ -129,7 +129,7 @@ ms.openlocfilehash: aa09852ff6f387b97e0f1a1bbb2d198927d5da0d
 
 視覚的なフィードバックに関する一般的なガイダンスについては、「[視覚的なフィードバックのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465342)」をご覧ください。
 
-## <span id="Cursors"></span><span id="cursors"></span><span id="CURSORS"></span>カーソル
+## カーソル
 
 
 タッチパッド ポインターとして利用できる標準のカーソル セットが用意されています。 これらが要素のプライマリ操作を示すために使われます。
@@ -144,7 +144,7 @@ ms.openlocfilehash: aa09852ff6f387b97e0f1a1bbb2d198927d5da0d
 -   サイズ変更ができるオブジェクトに対しては、横、縦、対角線のサイズ変更カーソル (![縦のサイズ変更カーソル](images/cursor-vertical.png)、 ![横のサイズ変更カーソル](images/cursor-horizontal.png)、 ![対角線のサイズ変更カーソル (左下、右上)](images/cursor-diagonal2.png)、 ![対角線のサイズ変更カーソル (左上、右下)](images/cursor-diagonal1.png)) を使います。
 -   地図など、固定キャンバス内のコンテンツのパンを行うときは、手でつかむ形のカーソル (![手でつかむ形のカーソル (開いた状態)](images/cursor-pan1.png)、 ![手でつかむ形のカーソル (つかんだ状態)](images/cursor-pan2.png)) を使います。
 
-## <span id="related_topics"></span>関連記事
+## 関連記事
 
 
 * [ポインター入力の処理](handle-pointer-input.md)
@@ -170,6 +170,6 @@ ms.openlocfilehash: aa09852ff6f387b97e0f1a1bbb2d198927d5da0d
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

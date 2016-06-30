@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: 詳細な分析は、Windows デベロッパー センター ダッシュボードで表示できます。
-title: 分析
+Description: "詳細な分析は、Windows デベロッパー センター ダッシュボードで表示できます。"
+title: "分析"
 ms.assetid: 3A3C6F10-0DB1-416D-B632-CD388EA66759
+translationtype: Human Translation
+ms.sourcegitcommit: dfaf348956b19746aa5332aeb7ad5cbc4b224e8c
+ms.openlocfilehash: 8922a53da8b1bc97bef7faf49d0e412a26127188
+
 ---
 
 # 分析
@@ -74,6 +78,7 @@ Power BI を使って分析データにアクセスするには、まず、次�
 [Dev Center](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws) アプリをインストールすると、すべての Windows 10 デバイスでアプリの正常性とパフォーマンスに関する詳細情報をすばやく確認できます。 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

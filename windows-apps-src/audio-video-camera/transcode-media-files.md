@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: A1A0D99A-DCBF-4A14-80B9-7106BEF045EC
-description: Windows.Media.Transcoding API を使って、ビデオ ファイルをある形式から別の形式にコード変換できます。
-title: メディア ファイルのコード変換
+description: "Windows.Media.Transcoding API を使って、ビデオ ファイルをある形式から別の形式にコード変換できます。"
+title: "メディア ファイルのコード変換"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 06c452291f10acd35dde9659c08a386ea38fa90a
+
 ---
 
 # メディア ファイルのコード変換
@@ -73,6 +77,7 @@ title: メディア ファイルのコード変換
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,10 +1,13 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: アプリでハードウェア キーボードやソフトウェア キーボードからのキーボード操作に応答するには、キーボード イベント ハンドラーとクラス イベント ハンドラーの両方を使います。
-title: キーボード操作
+Description: "アプリでハードウェア キーボードやソフトウェア キーボードからのキーボード操作に応答するには、キーボード イベント ハンドラーとクラス イベント ハンドラーの両方を使います。"
+title: "キーボード操作"
 ms.assetid: FF819BAC-67C0-4EC9-8921-F087BE188138
 label: Keyboard interactions
 template: detail.hbs
+ms.sourcegitcommit: d65e1315e83fef5e53771adad0943c9cb59d9139
+ms.openlocfilehash: 9de90236d94522f1b80309c3fec51ce59aee0319
+
 ---
 
 # キーボード操作
@@ -26,7 +29,7 @@ template: detail.hbs
 
 ユーザーはハードウェア キーボードと 2 つのソフトウェア キーボード (スクリーン キーボード (OSK) およびタッチ キーボード) を通じて、ユニバーサル アプリを操作できます。
 
-<span></span>スクリーン キーボード  
+スクリーン キーボード  
 スクリーン キーボードは、物理的なキーボードの代わりに使うことができる視覚的なソフトウェア キーボードです。タッチ、マウス、ペン/スタイラス、またはその他のポインティング デバイスを通じてデータを入力します (タッチ スクリーンは必須ではありません)。 スクリーン キーボードは、物理的なキーボードが存在しないシステムや、運動障碍により一般的な物理入力デバイスを使うことができないユーザーのために用意されています。 スクリーン キーボードは、ハードウェア キーボードの機能のすべて、または少なくともほとんどをエミュレートします。
 
 スクリーン キーボードは、[設定] &gt; [簡単操作] の [キーボード] ページから有効にすることができます。
@@ -39,7 +42,7 @@ template: detail.hbs
 
 <sup>スクリーン キーボード</sup>
 
-<span id="Touch_keyboard"></span><span id="touch_keyboard"></span><span id="TOUCH_KEYBOARD"></span>タッチ キーボード  
+タッチ キーボード  
 タッチ キーボードは、タッチ入力でのテキスト入力に使われる、視覚的なソフトウェア キーボードです。 タッチ キーボードはテキスト入力専用であり (ハードウェア キーボードをエミュレートしません)、スクリーン キーボードに代わるものではありません。
 
 デバイスに応じて、タッチ キーボードは、テキスト フィールドやその他の編集可能なテキスト コントロールがフォーカスを取得したとき、またはユーザーが**通知センター**で手動でタッチ キーボードを有効にしたときに表示されます。
@@ -94,9 +97,9 @@ template: detail.hbs
 
 キーボード操作に成功すると、ユーザーはキーボードのみを使って基本のアプリ シナリオを実行できます。つまり、ユーザーはすべての対話型要素にアクセスし、既定の機能をアクティブにすることができます。 成功の度合いには、キーボード ナビゲーション、アクセシビリティ対応のアクセス キー、上級ユーザー用のアクセラレータ (ショートカット) キーなど、さまざまな要因が影響します。
 
-**注**  タッチ キーボードでは、トグルや、ほとんどのシステム コマンドがサポートされません (「[パターン](#keyboard_command_patterns)」をご覧ください)
+**注**  タッチ キーボードでは、トグルや、ほとんどのシステム コマンドがサポートされません (「[パターン](#keyboard_command_patterns)」をご覧ください)。
 
-## <span id="Navigation"></span><span id="navigation"></span><span id="NAVIGATION"></span>ナビゲーション
+## ナビゲーション
 
 
 キーボードでコントロール (ナビゲーション要素を含む) を操作するには、そのコントロールがフォーカスを取得する必要があります。 コントロールにキーボード フォーカスを受け取る方法の 1 つは、そのコントロールにタブ ナビゲーションでアクセスできるようにすることです。 適切にデザインされたキーボード ナビゲーション モデルでは、ユーザーが迅速かつ効率的にアプリを移動して使用するための予測可能な論理タブ オーダーを提供します。
@@ -126,35 +129,35 @@ template: detail.hbs
 場合によっては、画面にずっと表示されたままであることが必要な UI 要素もあります。 フォーム コントロールがパン領域に含まれ、重要な UI 要素が静的であるように UI を設計します。 次に例を示します。
 
 ![常に表示されている必要がある領域を含むフォーム](images/input-patterns/touch-keyboard-pan2.png)
-## <span id="Activation"></span><span id="activation"></span><span id="ACTIVATION"></span>アクティブ化
+## アクティブ化
 
 
 コントロールは、現在フォーカスがあるかどうかにかかわらず、さまざまな方法でアクティブ化できます。
 
-<span id="Spacebar__Enter__and_Esc"></span><span id="spacebar__enter__and_esc"></span><span id="SPACEBAR__ENTER__AND_ESC"></span>Space キー、Enter キー、Esc キー  
+Space キー、Enter キー、Esc キー  
 Space キーは、入力フォーカスのあるコントロールをアクティブ化します。 Enter キーは、既定のコントロールや入力フォーカスのあるコントロールをアクティブ化します。 既定のコントロールとは、初期フォーカスのあるコントロールまたは Enter キーにのみ応答するコントロール (通常は、入力フォーカスと共に変化します) を指します。 Esc キーは、メニューやダイアログなどの一時的な UI を終了します。
 
 次に示す電卓アプリでは、Space キーを使用してフォーカスのあるボタンをアクティブ化し、Enter キーを "=" ボタンにロックして、Esc キーを "C" ボタンにロックします。
 
 ![電卓アプリ](images/input-patterns/calculator.png)
 
-<span id="Keyboard_modifiers"></span><span id="keyboard_modifiers"></span><span id="KEYBOARD_MODIFIERS"></span>キーボード修飾子  
-キーボード修飾子は、次のカテゴリに分類されます。 
+キーボード修飾子  
+キーボード修飾子は、次のカテゴリに分類されます。
 
- 
-| カテゴリ | 説明 | 
-|----------|-------------| 
+
+| カテゴリ | 説明 |
+|----------|-------------|
 | ショートカット キー | UI を使わずに、一般的な操作を実行します (**[保存]** に対応する "Ctrl + S" など)。 アプリの主な機能にキーボード ショートカットを実装します。 すべてのコマンドにショートカットがあるわけではありません。また、すべてのコマンドでショートカットが必要になるわけではありません。 |   
 | アクセス キー/ホット キー | 表示される最上位のコントロールすべてに割り当てられます (**[ファイル]** メニューに対応する "Alt + F" など)。 アクセス キーでは、コマンドの呼び出しやコマンドのアクティブ化は行われません。 |
 | アクセラレータ キー | 既定のシステム コマンドやアプリで定義されたコマンドを実行します (画面の取り込みに対応した "Alt + PrtScrn"、アプリの切り替えに対応した "Alt + Tab"、ヘルプに対応した "F1" など)。 アクセラレータ キーに関連付けるコマンドには、メニュー項目でなくてもかまいません。 |
 | アプリケーション キー/メニュー キー | コンテキスト メニューを表示します。 |
-| Windows キー/コマンド キー | **システム メニュー**、**ロック画面**、**デスクトップの表示**などのシステム コマンドをアクティブ化します |
+| Windows キー/コマンド キー | **システム メニュー**、**ロック画面**、**デスクトップの表示** などのシステム コマンドをアクティブ化します。 |
 
 アクセス キーとアクセラレータ キーは、Tab キーによるナビゲーションの代わりに、コントロールの直接操作をサポートします。
 > コントロールには、固有ラベルがあるもの (コマンド ボタン、チェック ボックス、ラジオ ボタンなど) と、外部ラベルのあるもの (リスト ビューなど) があります。 外部ラベルのあるコントロールの場合、アクセス キーはラベルに割り当てられ、呼び出されると、対応コントロール内の要素または値にフォーカスを設定します。
 
 
-次の例では、**Word** の **[ページ レイアウト]** タブのアクセス キーを示しています
+次の例では、**Word** の **[ページ レイアウト]** タブのアクセス キーを示しています。
 
 ![Word の [ページ レイアウト] タブのアクセス キー](images/input-patterns/accesskeys-show.png)
 
@@ -162,7 +165,7 @@ Space キーは、入力フォーカスのあるコントロールをアクテ�
 
 ![[インデント] の [左] ボックスに対応するラベルに示されたアクセス キーを入力すると、このテキスト フィールドの値が強調表示される](images/input-patterns/accesskeys-entered.png)
 
-## <span id="Usability_and_accessibility"></span><span id="usability_and_accessibility"></span><span id="USABILITY_AND_ACCESSIBILITY"></span>ユーザビリティとアクセシビリティ
+## ユーザビリティとアクセシビリティ
 
 
 適切に設計されたキーボードの操作エクスペリエンスは、ソフトウェア アクセシビリティの重要な要素であり、 視覚に障碍のあるユーザーや特定の運動障碍のあるユーザーによるアプリ内の移動や、その機能の操作を実現します。 このようなユーザーにはマウス操作が困難な場合があり、キーボード強化ツールやスクリーン キーボードなどさまざまな支援技術をスクリーン拡大機能、スクリーン リーダー、音声入力ユーティリティなどと組み合わせて使用することが必要になります。 このようなユーザーにとっては、一貫性より包括性の方が重要です。
@@ -211,7 +214,7 @@ Space キーは、入力フォーカスのあるコントロールをアクテ�
 
 キーボード操作のエクスペリエンスを確実なものにするには、キーボードのみを使ってアプリを徹底的にテストすることが重要です。
 
-## <span id="Text_input"></span><span id="text_input"></span><span id="TEXT_INPUT"></span>テキスト入力
+## テキスト入力
 
 
 キーボード入力に依存している場合は、常にデバイスの機能を確認するようにします。 一部のデバイス (電話など) では、ハードウェア キーボードにあるようなアクセラレータやコマンド キー (Alt キー、ファンクション キー、Windows ロゴ キーなど) の多くがタッチ キーボードに備わっていないため、タッチ キーボードの用途がテキスト入力に限定されます。
@@ -243,7 +246,7 @@ Secure Attention Sequence (SAS) と呼ばれる別のキーの組み合わせの
 
 ![メモ帳アプリで展開された [ファイル] メニューに、アクセス キーとショートカット キーの両方が含まれている。](images/input-patterns/notepad.png)
 
-## <span id="Keyboard_commands"></span><span id="keyboard_commands"></span><span id="KEYBOARD_COMMANDS"></span>キーボード コマンド
+## キーボード コマンド
 
 
 キーボード入力をサポートするさまざまなデバイスで提供されるキーボード操作の一覧を次に示します。 一部のデバイスやプラットフォームではキー入力や操作が異なる場合がありますが、これらも記載されています。
@@ -252,7 +255,7 @@ Secure Attention Sequence (SAS) と呼ばれる別のキーの組み合わせの
 
 既定のキーボード ショートカット定義を変更しないでください。
 
-次の表に、よく使われるキーボード コマンドを示します。 キーボード コマンドの一覧については、[Windows のキーボード ショートカット キーに関するページ](http://go.microsoft.com/fwlink/p/?linkid=325424)をご覧ください
+次の表に、よく使われるキーボード コマンドを示します。 キーボード コマンドの一覧については、[Windows のキーボード ショートカット キーに関するページ](http://go.microsoft.com/fwlink/p/?linkid=325424)をご覧ください。
 
 **ナビゲーション コマンド**
 
@@ -305,7 +308,7 @@ Secure Attention Sequence (SAS) と呼ばれる別のキーの組み合わせの
  
 
 注: メディア ナビゲーションの "再生または一時停止" のキー コマンドは "印刷" のキー コマンドと同じであり、"次の項目" のキー コマンドは "検索" のキー コマンドと同じです。 メディア ナビゲーションのコマンドよりも、一般的なコマンドの方が優先されます。 たとえば、再生メディアと印刷の両方をサポートするアプリの場合、Ctrl + P キーを押すと印刷が実行されます。
-## <span id="Visual_feedback"></span><span id="visual_feedback"></span><span id="VISUAL_FEEDBACK"></span>視覚的なフィードバック
+## 視覚的なフィードバック
 
 
 キーボード操作でのみフォーカス用の四角形を使います。 ユーザーがタッチ操作を始めたら、キーボードの UI を徐々にフェード アウトします。 これにより、UI の簡潔さが保たれます。
@@ -316,10 +319,10 @@ Secure Attention Sequence (SAS) と呼ばれる別のキーの組み合わせの
 
 パン、回転、ズームなど、タッチ ベースの操作をエミュレートするためのヒントとして画面ボタン (+、- など) を提供するようにしてください。
 
-視覚的なフィードバックに関する一般的なガイダンスについては、「[視覚的なフィードバックのガイドライン](guidelines-for-visualfeedback.md)」をご覧ください
+視覚的なフィードバックに関する一般的なガイダンスについては、「[視覚的なフィードバックのガイドライン](guidelines-for-visualfeedback.md)」をご覧ください。
 
 
-## <span id="keyboard_events"></span><span id="KEYBOARD_EVENTS"></span>キーボード イベントとフォーカス
+## キーボード イベントとフォーカス
 
 
 次のキーボード イベントは、ハードウェア キーボードとタッチ キーボードの両方で発生します。
@@ -333,7 +336,7 @@ Secure Attention Sequence (SAS) と呼ばれる別のキーの組み合わせの
 **重要**  
 一部の Windows ランタイム コントロールでは、入力イベントが内部で処理されます。 このような場合は、イベント リスナーに関連付けられているハンドラーが呼び出されないため、入力イベントが発生しないように見えることがあります。 通常、これらのキーのサブセットはクラス ハンドラーで処理され、基本的なキーボード アクセシビリティのビルトイン サポートが提供されます。 たとえば、[**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) クラスでは、Space キーと Enter キーの [**OnKeyDown**](https://msdn.microsoft.com/library/windows/apps/hh967982) イベント (および [**OnPointerPressed**](https://msdn.microsoft.com/library/windows/apps/hh967989)) がオーバーライドされ、コントロールの [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) イベントにルーティングされます。 キーの押下がコントロール クラスで処理された場合、[**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) イベントと [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) イベントは発生しません。
 
-これで、ボタンの実行に対応するキーボード操作が組み込まれ、ボタンを指でタップした場合やマウスでクリックした場合と同様の動作がサポートされます。 Space キーと Enter キー以外のキーについては、通常どおり [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) と [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) イベントが発生します。 クラス ベースのイベント処理の動作について詳しくは、「[イベントとルーティング イベントの概要](https://msdn.microsoft.com/library/windows/apps/mt185584)」(特に「コントロールの入力イベント ハンドラー」セクション) をご覧ください
+これで、ボタンの実行に対応するキーボード操作が組み込まれ、ボタンを指でタップした場合やマウスでクリックした場合と同様の動作がサポートされます。 Space キーと Enter キー以外のキーについては、通常どおり [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) と [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) イベントが発生します。 クラス ベースのイベント処理の動作について詳しくは、「[イベントとルーティング イベントの概要](https://msdn.microsoft.com/library/windows/apps/mt185584)」(特に「コントロールの入力イベント ハンドラー」セクション) をご覧ください。
 
 
 UI のコントロールに入力フォーカスがあるときにだけ、キーボード イベントが生成されます。 個々のコントロールは、ユーザーがレイアウト上でコントロールを直接クリックまたはタップするか、Tab キーを使ってコンテンツ領域内のタブ順に入ると、フォーカスを取得します。
@@ -342,23 +345,23 @@ UI のコントロールに入力フォーカスがあるときにだけ、キ�
 
 コントロールが入力フォーカスを受け取るには、コントロールが有効にされ、表示されている必要があります。また、[**IsTabStop**](https://msdn.microsoft.com/library/windows/apps/br209422) プロパティ値と [**HitTestVisible**](https://msdn.microsoft.com/library/windows/apps/br208933) プロパティ値が **true** に設定されている必要もあります。 これは、ほとんどのコントロールの既定の状態です。 コントロールに入力フォーカスがあると、このトピックで後ほど説明するように、キーボード入力イベントを発生させ、応答することもできます。 また、[**GotFocus**](https://msdn.microsoft.com/library/windows/apps/br208927) イベントと [**LostFocus**](https://msdn.microsoft.com/library/windows/apps/br208943) イベントを処理して、フォーカスを受け取るコントロールやフォーカスを失うコントロールに応答することもできます。
 
-既定では、コントロールのタブ順は、Extensible Application Markup Language (XAML) 内の出現順になっています。 ただし、[**TabIndex**](https://msdn.microsoft.com/library/windows/apps/br209461) プロパティを使って、この順序を変更できます。 詳しくは、「[キーボード アクセシビリティの実装](https://msdn.microsoft.com/library/windows/apps/hh868161)」をご覧ください
+既定では、コントロールのタブ順は、Extensible Application Markup Language (XAML) 内の出現順になっています。 ただし、[**TabIndex**](https://msdn.microsoft.com/library/windows/apps/br209461) プロパティを使って、この順序を変更できます。 詳しくは、「[キーボード アクセシビリティの実装](https://msdn.microsoft.com/library/windows/apps/hh868161)」をご覧ください。
 
-## <span id="keyboard_event_handlers"></span><span id="KEYBOARD_EVENT_HANDLERS"></span>キーボード イベント ハンドラー
+## キーボード イベント ハンドラー
 
 
 入力イベント ハンドラーは、次の情報を提供するデリゲートを実装します。
 
 -   イベントのセンダー。 センダーは、イベント ハンドラーがアタッチされているオブジェクトを報告します。
--   イベント データ。 キーボード イベントの場合、イベント データは [**KeyRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943072) のインスタンスです。 ハンドラーのデリゲートは [**KeyEventHandler**](https://msdn.microsoft.com/library/windows/apps/br227904) です。 ハンドラーに関するほとんどのシナリオで、最もよく使われる **KeyRoutedEventArgs** のプロパティは、[**Key**](https://msdn.microsoft.com/library/windows/apps/hh943074) です。場合によっては、[**KeyStatus**](https://msdn.microsoft.com/library/windows/apps/hh943075) も使われます
+-   イベント データ。 キーボード イベントの場合、イベント データは [**KeyRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943072) のインスタンスです。 ハンドラーのデリゲートは [**KeyEventHandler**](https://msdn.microsoft.com/library/windows/apps/br227904) です。 ハンドラーに関するほとんどのシナリオで、最もよく使われる **KeyRoutedEventArgs** のプロパティは、[**Key**](https://msdn.microsoft.com/library/windows/apps/hh943074) です。場合によっては、[**KeyStatus**](https://msdn.microsoft.com/library/windows/apps/hh943075) も使われます。
 -   [
               **OriginalSource**
-            ](https://msdn.microsoft.com/library/windows/apps/br208810)。 キーボード イベントはルーティング イベントであるため、イベント データには **OriginalSource** があります。 イベントがオブジェクト ツリーをバブルアップするように意図的に設定した場合、**OriginalSource** がセンダーではなく対象のオブジェクトとなる場合があります。 ただし、この動作は設計によって異なります。 センダーではなく **OriginalSource** を使う方法について詳しくは、このトピックの「キーボード ルーティング イベント」または「[イベントとルーティング イベントの概要](https://msdn.microsoft.com/library/windows/apps/mt185584)」をご覧ください
+            ](https://msdn.microsoft.com/library/windows/apps/br208810)。 キーボード イベントはルーティング イベントであるため、イベント データには **OriginalSource** があります。 イベントがオブジェクト ツリーをバブルアップするように意図的に設定した場合、**OriginalSource** がセンダーではなく対象のオブジェクトとなる場合があります。 ただし、この動作は設計によって異なります。 センダーではなく **OriginalSource** を使う方法について詳しくは、このトピックの「キーボード ルーティング イベント」または「[イベントとルーティング イベントの概要](https://msdn.microsoft.com/library/windows/apps/mt185584)」をご覧ください。
 
-### <span id="attaching_a_keyboard_event_handler"></span><span id="ATTACHING_A_KEYBOARD_EVENT_HANDLER"></span>キーボード イベント ハンドラーのアタッチ
+### キーボード イベント ハンドラーのアタッチ
 
 イベントがメンバーとして含まれているオブジェクトに対して、キーボード イベント ハンドラー関数をアタッチできます。 [
-            **UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 派生クラスにもアタッチできます。 XAML で [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) の [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) イベントのハンドラーをアタッチする方法を次の例に示します
+            **UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 派生クラスにもアタッチできます。 XAML で [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) の [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) イベントのハンドラーをアタッチする方法を次の例に示します。
 
 ```XAML
 <Grid KeyUp="Grid_KeyUp">
@@ -366,9 +369,9 @@ UI のコントロールに入力フォーカスがあるときにだけ、キ�
 </Grid>
 ```
 
-コードを使ってイベント ハンドラーをアタッチすることもできます。 詳しくは、「[イベントとルーティング イベントの概要](https://msdn.microsoft.com/library/windows/apps/mt185584)」をご覧ください
+コードを使ってイベント ハンドラーをアタッチすることもできます。 詳しくは、「[イベントとルーティング イベントの概要](https://msdn.microsoft.com/library/windows/apps/mt185584)」をご覧ください。
 
-### <span id="defining_a_keyboard_event_handler"></span><span id="DEFINING_A_KEYBOARD_EVENT_HANDLER"></span>キーボード イベント ハンドラーの定義
+### キーボード イベント ハンドラーの定義
 
 次の例は、前の例でアタッチした [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) イベント ハンドラーの定義の一部です。
 
@@ -392,7 +395,7 @@ void MyProject::MainPage::Grid_KeyUp(
 {//handling code here}
 ```
 
-### <span id="using_keyroutedeventargs"></span><span id="USING_KEYROUTEDEVENTARGS"></span>KeyRoutedEventArgs の使用
+### KeyRoutedEventArgs の使用
 
 キーボード イベントはいずれもイベント データに [**KeyRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943072) を使います。**KeyRoutedEventArgs** には次のプロパティがあります。
 
@@ -403,11 +406,11 @@ void MyProject::MainPage::Grid_KeyUp(
               **OriginalSource**
             ](https://msdn.microsoft.com/library/windows/apps/br208810) ([**RoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br208809) から継承)
 
-### <span id="key"></span><span id="KEY"></span>キー
+### キー
 
 キーが押されると、[**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) イベントが発生します。 同様に、キーが離されると、[**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) イベントが発生します。 通常、特定のキー値を処理するにはイベントをリッスンします。 押されたキーまたは離されたキーを特定するには、イベント データの [**Key**](https://msdn.microsoft.com/library/windows/apps/hh943074) 値を調べます。 **Key** は [**VirtualKey**](https://msdn.microsoft.com/library/windows/apps/br241812) 値を返します。 **VirtualKey** 列挙体には、サポートされているすべてのキーが含まれています。
 
-### <span id="modifier_keys"></span><span id="MODIFIER_KEYS"></span>修飾キー
+### 修飾キー
 
 修飾キーは、Ctrl、Shift など、一般的に他のキーと組み合わせて押されるキーです。 アプリでは、これらのキーの組み合わせをキーボード ショートカットとして使って、アプリ コマンドを呼び出すことができます。
 
@@ -417,10 +420,10 @@ void MyProject::MainPage::Grid_KeyUp(
 
  
 
-## <span id="shortcut_keys_example"></span><span id="SHORTCUT_KEYS_EXAMPLE"></span>ショートカット キーの例
+## ショートカット キーの例
 
 
-ショートカット キーを実装する方法を次の例で示します。 この例では、ユーザーは [Play]、[Pause]、[Stop] の各ボタンまたは Ctrl + P、Ctrl + A、Ctrl + S の各キーボード ショートカットを使って、メディアの再生を制御できます。 ボタンの XAML では、ボタン ラベルのヒントや [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/br209081) プロパティを使って、ショートカット キーを示します。 このアプリ内の説明は、アプリの操作性とアクセシビリティを向上させるために重要です。 詳しくは、「[キーボードのアクセシビリティ](https://msdn.microsoft.com/library/windows/apps/mt244347)」をご覧ください
+ショートカット キーを実装する方法を次の例で示します。 この例では、ユーザーは [Play]、[Pause]、[Stop] の各ボタンまたは Ctrl + P、Ctrl + A、Ctrl + S の各キーボード ショートカットを使って、メディアの再生を制御できます。 ボタンの XAML では、ボタン ラベルのヒントや [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/br209081) プロパティを使って、ショートカット キーを示します。 このアプリ内の説明は、アプリの操作性とアクセシビリティを向上させるために重要です。 詳しくは、「[キーボードのアクセシビリティ](https://msdn.microsoft.com/library/windows/apps/mt244347)」をご覧ください。
 
 ページが読み込まれるときに、入力フォーカスをページそのものに設定していることにも注目してください。 この手順を実行しなければ、最初の入力フォーカスがどのコントロールにも設定されず、ユーザーが手動で入力フォーカスを設定する (Tab キーを使ってコントロールを選ぶ、コントロールをクリックするなど) までアプリで入力イベントが発生しません。
 
@@ -432,7 +435,7 @@ void MyProject::MainPage::Grid_KeyUp(
     <RowDefinition Height="Auto" />
   </Grid.RowDefinitions>
 
-  <MediaElement x:Name="DemoMovie" Source="xbox.wmv" 
+  <MediaElement x:Name="DemoMovie" Source="xbox.wmv"
     Width="500" Height="500" Margin="20" HorizontalAlignment="Center" />
 
   <StackPanel Grid.Row="1" Margin="10"
@@ -445,13 +448,13 @@ void MyProject::MainPage::Grid_KeyUp(
     </Button>
 
     <Button x:Name="PauseButton" Click="MediaButton_Click"
-      ToolTipService.ToolTip="Shortcut key: Ctrl+A" 
+      ToolTipService.ToolTip="Shortcut key: Ctrl+A"
       AutomationProperties.AcceleratorKey="Control A">
       <TextBlock>Pause</TextBlock>
     </Button>
 
     <Button x:Name="StopButton" Click="MediaButton_Click"
-      ToolTipService.ToolTip="Shortcut key: Ctrl+S" 
+      ToolTipService.ToolTip="Shortcut key: Ctrl+S"
       AutomationProperties.AcceleratorKey="Control S">
       <TextBlock>Stop</TextBlock>
     </Button>
@@ -580,13 +583,13 @@ End Sub
 
  
 
-## <span id="keyboard_routed_events"></span><span id="KEYBOARD_ROUTED_EVENTS"></span>キーボード ルーティング イベント
+## キーボード ルーティング イベント
 
 
 [
             **KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) や、[**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) などの特定のイベントがルーティング イベントです。 ルーティング イベントでは、バブル ルーティング方式が採用されています。 バブル ルーティング方式では、子オブジェクトで発生したイベントが、オブジェクト ツリー内で上位にある親オブジェクトに順にルーティング (バブルアップ) されます。 つまり、同じイベントを処理し、同じイベント データを操作する機会が増えることを意味します。
 
-次の XAML の例では、1 つの [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) と 2 つの [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) オブジェクトについて、[**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) イベントを処理します。 この場合、どちらかの **Button** オブジェクトにフォーカスがある間にキーを離すと、**KeyUp** イベントが発生します。 イベントはその後、親 **Canvas** までバブルアップされます
+次の XAML の例では、1 つの [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) と 2 つの [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) オブジェクトについて、[**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) イベントを処理します。 この場合、どちらかの **Button** オブジェクトにフォーカスがある間にキーを離すと、**KeyUp** イベントが発生します。 イベントはその後、親 **Canvas** までバブルアップされます。
 
 ```XAML
 <StackPanel KeyUp="StackPanel_KeyUp">
@@ -609,28 +612,28 @@ void StackPanel_KeyUp(object sender, KeyRoutedEventArgs e)
 
 このハンドラーで [**OriginalSource**](https://msdn.microsoft.com/library/windows/apps/br208810) プロパティが使われていることに注意してください。 この例では、**OriginalSource** がイベントの発生元のオブジェクトを報告します。 **StackPanel** はコントロールではなく、フォーカスを受け取ることもできないため、[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635) がこのオブジェクトになることはありません。 **StackPanel** 内の 2 つのボタンのどちらか 1 つのみがイベントの発生元である可能性がありますが、発生元を調べるにはどうすればよいでしょうか。 親オブジェクトのイベントを処理する場合は、**OriginalSource** を使って、実際のイベント ソース オブジェクトを判別します。
 
-### <span id="handled_property"></span><span id="HANDLED_PROPERTY"></span>イベント データ内の Handled プロパティ
+### イベント データ内の Handled プロパティ
 
 イベント処理の方針によっては、1 つのイベント ハンドラーだけがバブル イベントに応答するようにした方がよい場合もあります。 たとえば、[**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) コントロールの 1 つに、特定の [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) ハンドラーをアタッチすると、最初にそのイベントを処理するのは、このハンドラーがアタッチされたコントロールになります。 このとき、親パネルではイベントが処理されないようにします。 このようなシナリオでは、イベント データ内の [**Handled**](https://msdn.microsoft.com/library/windows/apps/hh943073) プロパティを使います。
 
 ルーティング イベント データ クラスの [**Handled**](https://msdn.microsoft.com/library/windows/apps/hh943073) プロパティは、イベント ルート上で先に登録された別のハンドラーが既に処理を実行したことを示すためのプロパティで、 ルーティング イベント システムの動作に影響します。 イベント ハンドラー内で **Handled** を **true** に設定すると、そのイベントのルーティングはそこで終了し、上位の親要素にイベントは送信されません。
 
-### <span id="addhandler_and_already_handled_keyboard_events"></span><span id="ADDHANDLER_AND_ALREADY_HANDLED_KEYBOARD_EVENTS"></span>AddHandler イベントと処理済みキーボード イベント
+### AddHandler イベントと処理済みキーボード イベント
 
 特殊な方法を利用して、既に処理済みとしてマークされているイベントに対して処理を実行できるハンドラーをアタッチすることができます。 この方法では、XAML 属性や、ハンドラーを追加するための言語固有の構文 (C# の場合は +=) を使わずに、[**AddHandler**](https://msdn.microsoft.com/library/windows/apps/hh702399) メソッドを使ってハンドラーを登録します。 一般的に、この方法には、**AddHandler** API が [**RoutedEvent**](https://msdn.microsoft.com/library/windows/apps/br208808) 型のパラメーターを受け取るという制限があります。このパラメーターで対象のルーティング イベントを識別します。 一部のルーティング イベントには **RoutedEvent** 識別子がないため、[**Handled**](https://msdn.microsoft.com/library/windows/apps/hh943073) の状態でも処理できるルーティング イベントを識別する場合に考慮する必要があります。 [
             **UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) の [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) イベントと [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) イベントには、ルーティング イベント識別子 ([**KeyDownEvent**](https://msdn.microsoft.com/library/windows/apps/hh702416) と [**KeyUpEvent**](https://msdn.microsoft.com/library/windows/apps/hh702418)) があります。 これに対し、[**TextBox.TextChanged**](https://msdn.microsoft.com/library/windows/apps/br209706) などのイベントにはルーティング イベント識別子がないため、**AddHandler** を使う手法には利用できません。
 
-## <span id="commanding"></span><span id="COMMANDING"></span>コマンド実行
+## コマンド実行
 
 
 ごく一部の UI 要素では、コマンド実行が組み込みでサポートされています。 コマンド実行の基になる実装では、入力に関連するルーティング イベントを使います。 この方法では、1 つのコマンド ハンドラーを呼び出して、特定のポインター操作、特定のショートカット キーなどの関連する UI 入力を処理できます。
 
-UI 要素でコマンド実行を使うことができる場合は、個々の入力イベントではなく、コマンド実行 API を使うことを検討してください。 詳しくは、「[**ButtonBase.Command**](https://msdn.microsoft.com/library/windows/apps/br227740)」をご覧ください
+UI 要素でコマンド実行を使うことができる場合は、個々の入力イベントではなく、コマンド実行 API を使うことを検討してください。 詳しくは、「[**ButtonBase.Command**](https://msdn.microsoft.com/library/windows/apps/br227740)」をご覧ください。
 
 [
             **ICommand**](https://msdn.microsoft.com/library/windows/apps/br227885) を実装して、通常のイベント ハンドラーから呼び出すコマンド機能をカプセル化することもできます。 この方法では、**Command** プロパティを利用できない場合でも、コマンド実行を使うことができます。
 
-## <span id="text_input_and_controls"></span><span id="TEXT_INPUT_AND_CONTROLS"></span>テキスト入力とコントロール
+## テキスト入力とコントロール
 
 
 キーボード イベントに固有の処理で対応するコントロールもあります。 たとえば、[**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) は、キーボードを使って入力されたテキストをキャプチャし、表示するためのコントロールです。 このコントロールでは、キーボード操作をキャプチャするために、固有のロジックで [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) と [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) が使われます。また、テキストが実際に変化した場合には、固有の [**TextChanged**](https://msdn.microsoft.com/library/windows/apps/br209706) イベントを発生させます。
@@ -643,18 +646,18 @@ UI 要素でコマンド実行を使うことができる場合は、個々の�
 
 カスタム コントロールで [**OnKeyDown**](https://msdn.microsoft.com/library/windows/apps/hh967982) / [**OnKeyUp**](https://msdn.microsoft.com/library/windows/apps/hh967983) をオーバーライドすると、キー イベントに対する同様のオーバーライド動作を独自に実装できます。 カスタム コントロールで特定のショートカット キーを処理する場合、または [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) の説明で示したシナリオのようなコントロールの動作またはフォーカスの動作を使う場合、**OnKeyDown** / **OnKeyUp** のオーバーライドにこのロジックを組み込む必要があります。
 
-## <span id="the_touch_keyboard"></span><span id="THE_TOUCH_KEYBOARD"></span>タッチ キーボード
+## タッチ キーボード
 
 
 テキスト入力コントロールでは、タッチ キーボードが自動的にサポートされます。 ユーザーがタッチ入力を使って、テキスト コントロールに入力フォーカスを設定すると、タッチ キーボードが自動的に表示されます。 入力フォーカスがテキスト コントロールにないときには、タッチ キーボードが表示されません。
 
-タッチ キーボードが表示されると、フォーカスがある要素をユーザーが見ることができるように、UI が自動的に再配置されます。 この場合、他の重要な UI 領域が画面の表示領域外に移動することがあります。 ただし、タッチ キーボードが表示されたときの既定の動作を無効にして、独自に UI を調整することができます。 詳しくは、[スクリーン キーボードを表示したときの対応のサンプルのページ](http://go.microsoft.com/fwlink/p/?linkid=231633)をご覧ください
+タッチ キーボードが表示されると、フォーカスがある要素をユーザーが見ることができるように、UI が自動的に再配置されます。 この場合、他の重要な UI 領域が画面の表示領域外に移動することがあります。 ただし、タッチ キーボードが表示されたときの既定の動作を無効にして、独自に UI を調整することができます。 詳しくは、[スクリーン キーボードを表示したときの対応のサンプルのページ](http://go.microsoft.com/fwlink/p/?linkid=231633)をご覧ください。
 
-テキスト入力を必要とするカスタム コントロールを、標準のテキスト入力コントロールからの派生コントロールとして作成しない場合は、適切な UI オートメーション コントロール パターンを実装してタッチ キーボードを追加し、サポートできます。 詳しくは、「[タッチ キーボードの表示への応答](respond-to-the-presence-of-the-touch-keyboard.md)」と[タッチ キーボードのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=246019)をご覧ください
+テキスト入力を必要とするカスタム コントロールを、標準のテキスト入力コントロールからの派生コントロールとして作成しない場合は、適切な UI オートメーション コントロール パターンを実装してタッチ キーボードを追加し、サポートできます。 詳しくは、「[タッチ キーボードの表示への応答](respond-to-the-presence-of-the-touch-keyboard.md)」と[タッチ キーボードのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=246019)をご覧ください。
 
 タッチ キーボードのキーが押されると、ハードウェア キーボードのキーが押されたとき同様に、[**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) イベントと [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) イベントが発生します。 ただし、タッチ キーボードでは、Ctrl + A、Ctrl + Z、Ctrl + X、Ctrl + C、Ctrl + V に対応する入力イベントは発生しません。これらは、入力コントロールでテキストを操作するために予約されています。
 
-ユーザーが入力すると予想されるデータの種類と一致するようにテキスト コントロールの入力値の種類を設定することで、ユーザーがより速く簡単にアプリにデータを入力できるようになります。 入力値の種類は、コントロールが予期しているテキスト入力の種類のヒントとなるため、システムが、その入力の種類用の特殊なタッチ キーボード レイアウトを提供できます。 たとえば、テキスト ボックスが 4 桁の PIN の入力専用の場合は、[**InputScope**](https://msdn.microsoft.com/library/windows/apps/hh702632) プロパティを [**Number**](https://msdn.microsoft.com/library/windows/apps/hh702028) に設定します。 これにより、システムに数字キーパッド レイアウトの表示が指示されるため、ユーザーは簡単に PIN を入力できます。 詳しくは、「[入力値の種類を使ったタッチ キーボードの変更](https://msdn.microsoft.com/library/windows/apps/mt280229)」をご覧ください
+ユーザーが入力すると予想されるデータの種類と一致するようにテキスト コントロールの入力値の種類を設定することで、ユーザーがより速く簡単にアプリにデータを入力できるようになります。 入力値の種類は、コントロールが予期しているテキスト入力の種類のヒントとなるため、システムが、その入力の種類用の特殊なタッチ キーボード レイアウトを提供できます。 たとえば、テキスト ボックスが 4 桁の PIN の入力専用の場合は、[**InputScope**](https://msdn.microsoft.com/library/windows/apps/hh702632) プロパティを [**Number**](https://msdn.microsoft.com/library/windows/apps/hh702028) に設定します。 これにより、システムに数字キーパッド レイアウトの表示が指示されるため、ユーザーは簡単に PIN を入力できます。 詳しくは、「[入力値の種類を使ったタッチ キーボードの変更](https://msdn.microsoft.com/library/windows/apps/mt280229)」をご覧ください。
 
 
 ## このセクションの他の記事
@@ -680,7 +683,7 @@ UI 要素でコマンド実行を使うことができる場合は、個々の�
  
 
 
-## <span id="related_topics"></span>関連記事
+## 関連記事
 
 
 **開発者向け**
@@ -707,9 +710,6 @@ UI 要素でコマンド実行を使うことができる場合は、個々の�
 
 
 
-
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

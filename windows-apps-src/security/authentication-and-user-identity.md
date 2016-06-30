@@ -1,8 +1,12 @@
 ---
-title: 認証とユーザー ID
-description: ユニバーサル Windows プラットフォーム (UWP) のアプリには、Web 認証ブローカーを使う簡単なシングル サインオン (SSO) から、高度なセキュリティで保護された 2 要素認証に至るまで、ユーザー認証用にいくつかのオプションがあります。
+title: "認証とユーザー ID"
+description: "ユニバーサル Windows プラットフォーム (UWP) のアプリには、Web 認証ブローカーを使う簡単なシングル サインオン (SSO) から、高度なセキュリティで保護された 2 要素認証に至るまで、ユーザー認証用にいくつかのオプションがあります。"
 ms.assetid: 53E36DDC-200A-4850-AAF0-07ECA3662BB9
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: 3c890ac8d8363982d9f014c36b6cba59bee39f20
+ms.openlocfilehash: e748b319cdeda82aadaf8516e41883a3e32dc10c
+
 ---
 
 # 認証とユーザー ID
@@ -33,6 +37,7 @@ Windows 10 をご使用の企業では、[Microsoft Passport と Windows Hello](
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

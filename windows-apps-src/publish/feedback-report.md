@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Windows デベロッパー センターのダッシュボードのフィードバック レポートにより、Windows 10 のユーザーがフィードバック Hub から送信した問題、提案、賛成票を参照できます。
-title: フィードバック レポート
+Description: "Windows デベロッパー センターのダッシュボードのフィードバック レポートにより、Windows 10 のユーザーがフィードバック Hub から送信した問題、提案、賛成票を参照できます。"
+title: "フィードバック レポート"
 ms.assetid: 9EA8B456-CA57-40CE-A55B-7BFDC55CA8A8
+translationtype: Human Translation
+ms.sourcegitcommit: 4e857ec7ee98459afdd0d8ec85b5ec3a761049f3
+ms.openlocfilehash: 9ad3025f7890de3677801b309b6714b1b46a0607
+
 ---
 
 # フィードバック レポート
@@ -52,6 +56,7 @@ Windows デベロッパー センターのダッシュボードの**フィード
 前に説明したように、フィードバック Hub への直接のリンクをアプリ内に組み込んで、ユーザーにフィードバックの提供を促すことをお勧めします。 詳しくは、「[アプリからのフィードバック Hub の起動](../monetize/launch-feedback-hub-from-your-app.md)」をご覧ください。
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

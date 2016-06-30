@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: ユニバーサル Windows プラットフォーム (UWP) アプリでは、コマンド要素は、ユーザーがメール送信、項目の削除、フォームの送信などのアクションを実行できる対話型の UI 要素です。
-title: ユニバーサル Windows プラットフォーム (UWP) アプリのコマンド設計の基本
+Description: "ユニバーサル Windows プラットフォーム (UWP) アプリでは、コマンド要素は、ユーザーがメール送信、項目の削除、フォームの送信などのアクションを実行できる対話型の UI 要素です。"
+title: "ユニバーサル Windows プラットフォーム (UWP) アプリのコマンド設計の基本"
 ms.assetid: 1DB48285-07B7-4952-80EF-02B57D4469F2
 label: Command design basics
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: be7ff187df9800a8c2c47c4315f3f9b021e265f8
+
 ---
 
 #  UWP アプリのコマンド設計の基本
@@ -152,6 +156,7 @@ Windows に用意されたコマンド サーフェスの一覧と、それら�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

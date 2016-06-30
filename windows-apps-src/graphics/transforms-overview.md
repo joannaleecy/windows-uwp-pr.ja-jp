@@ -3,8 +3,8 @@ author: Jwmsft
 ms.assetid: F46D5E18-10A3-4F7B-AD67-76437C77E4BC
 title: "変換の概要"
 description: "UI 要素の相対座標系を変更して、Windows ランタイム&\\#160;API で変換を使う方法について説明します。"
-ms.sourcegitcommit: a429fa659caf6c8032ad615f1b850092545d4439
-ms.openlocfilehash: fa5e8964ab35cb33a1ff59a8a52aa384b9d115b4
+ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
+ms.openlocfilehash: f6212143a83e7423550b6529ea62e25c00728f79
 
 ---
 
@@ -67,7 +67,7 @@ XAML レイアウトでは、変換はレイアウト パスの完了後に適�
 
 [
               **Transform**
-            ](https://msdn.microsoft.com/library/windows/apps/BR243006) オブジェクトはアニメーション化できます。 **Transform** をアニメーション化するには、アニメーション化するプロパティに互換性のある種類のアニメーションを適用します。 これは、通常、[**DoubleAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243136) オブジェクトまたは [**DoubleAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR243136usingkeyframes) オブジェクトを使ってアニメーションを定義していることを意味します。なぜなら、すべての変換プロパティは、型 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) であるためです。 [
+            ](https://msdn.microsoft.com/library/windows/apps/BR243006) オブジェクトはアニメーション化できます。 **Transform** をアニメーション化するには、アニメーション化するプロパティに互換性のある種類のアニメーションを適用します。 これは、通常、[**DoubleAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243136) オブジェクトまたは [**DoubleAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.doubleanimationusingkeyframes) オブジェクトを使ってアニメーションを定義していることを意味します。なぜなら、すべての変換プロパティは、型 [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) であるためです。 [
             **UIElement.RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980) 値に使われる変換に影響を与えるアニメーションは、再生時間が 0 以外であっても、依存型アニメーションとは見なされません。 依存型アニメーションについて詳しくは、「[ストーリーボードに設定されたアニメーション](storyboarded-animations.md)」をご覧ください。
 
 プロパティをアニメーション化して、最終的な外観という点で同様の効果を生み出す場合、たとえば、[**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) を適用する代わりに、[**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) の [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751) と [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) をアニメーション化する場合、このようなアニメーションは、ほとんど常に依存型アニメーションとして扱われます。 アニメーションを有効にする必要があるため、パフォーマンスに大きな問題が発生する可能性があります。特に、ユーザーの操作をサポートしながら、そのオブジェクトをアニメーション化する場合です。 そのため、望ましいのは、変換を使ってアニメーション化することです。この場合は、他のどのプロパティもアニメーション化されず、アニメーションが依存型アニメーションとして扱われることはありません。
@@ -158,6 +158,6 @@ Windows 10 では、XAML に新しいプロパティである [**UIElement.Trans
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

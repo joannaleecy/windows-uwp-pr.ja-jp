@@ -1,8 +1,11 @@
 ---
 author: mtoepke
-title: 簡単な OpenGL ES 2.0 レンダラーを Direct3D 11 に移植する方法
-description: 最初の移植作業では、基本から始めます。Visual Studio 2015 の DirectX 11 アプリ (ユニバーサル Windows) テンプレートに対応するように、頂点シェーディングされた回転する立方体の簡単なレンダラーを OpenGL ES 2.0 から Direct3D に移植します。
+title: "簡単な OpenGL ES 2.0 レンダラーを Direct3D 11 に移植する方法"
+description: "最初の移植作業では、基本から始めます。Visual Studio 2015 の DirectX 11 アプリ (ユニバーサル Windows) テンプレートに対応するように、頂点シェーディングされた回転する立方体の簡単なレンダラーを OpenGL ES 2.0 から Direct3D に移植します。"
 ms.assetid: e7f6fa41-ab05-8a1e-a154-704834e72e6d
+ms.sourcegitcommit: 814f056eaff5419b9c28ba63cf32012bd82cc554
+ms.openlocfilehash: f70d4ec46743d930f8cb45084e55cce2e60e2460
+
 ---
 
 # 簡単な OpenGL ES 2.0 レンダラーを Direct3D 11 に移植する方法
@@ -10,7 +13,7 @@ ms.assetid: e7f6fa41-ab05-8a1e-a154-704834e72e6d
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-最初の移植作業では、基本から始めます。Visual Studio 2015 の DirectX 11 アプリ (ユニバーサル Windows) テンプレートに対応するように、頂点シェーディングされた回転する立方体の簡単なレンダラーを OpenGL ES 2.0 から Direct3D に移植します。 この移植プロセスでは、次について説明します。
+この移植作業では、基本から始めます。Visual Studio 2015 の DirectX 11 アプリ (ユニバーサル Windows) テンプレートに対応するように、頂点シェーディングされた回転する立方体の簡単なレンダラーを OpenGL ES 2.0 から Direct3D に移植します。 この移植プロセスでは、次について説明します。
 
 -   一連の簡単な頂点バッファーを Direct3D の入力バッファーに移植する方法
 -   uniform と attribute を定数バッファーに移植する方法
@@ -141,6 +144,7 @@ typedef struct
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

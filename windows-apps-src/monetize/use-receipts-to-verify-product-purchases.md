@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: E322DFFE-8EEC-499D-87BC-EDA5CFC27551
-description: 製品購入が成功した各 Windows ストアのトランザクションでは、必要に応じてトランザクションの通知を返すことができます。
-title: 通知を使った製品購入の確認
+description: "製品購入が成功した各 Windows ストアのトランザクションでは、必要に応じてトランザクションの通知を返すことができます。"
+title: "通知を使った製品購入の確認"
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: b1322b74bf1038f05cd1cba275e432e279ed362d
+
 ---
 
 # 通知を使った製品購入の確認
@@ -239,6 +243,7 @@ namespace ReceiptVerificationSample
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

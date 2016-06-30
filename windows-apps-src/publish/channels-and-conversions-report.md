@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Windows デベロッパー センター ダッシュボードのチャネルとコンバージョン レポートでは、Windows 10 のユーザーがどのようにアプリの内容ページにアクセスしているかを確認できます。
-title: チャネルとコンバージョン レポート
+Description: "Windows デベロッパー センター ダッシュボードのチャネルとコンバージョン レポートでは、Windows 10 のユーザーがどのようにアプリの内容ページにアクセスしているかを確認できます。"
+title: "チャネルとコンバージョン レポート"
 ms.assetid: C359B9FB-A17B-4A8E-B8EE-19F2F98AA4FF
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: e82299f156a7e4f82e9219dc9b0ef6171e72c74e
+
 ---
 
 # チャネルとコンバージョン レポート
@@ -93,6 +97,7 @@ Windows デベロッパー センター ダッシュボードの**チャネル�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -5,8 +5,8 @@ title: "タイル"
 ms.assetid: 09C7E1B1-F78D-4659-8086-2E428E797653
 label: Tiles
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: a440a9abaf150dac6ed95d881261b80521a734c0
+ms.sourcegitcommit: d3fe62d4de00c42079d62d105acdbb21e296ba5f
+ms.openlocfilehash: a9f5d25dfd359364fa8e16666b03c7c105a867dd
 
 ---
 
@@ -48,14 +48,11 @@ Visual Studio で新しいプロジェクトを作成すると、アプリの名
 
     ここに挙げた画像を、自分で用意したものに置き換えます。 さまざまな倍率に応じて複数の画像を指定することができますが、必ずしもすべて指定する必要はありません。 多種多様なデバイスでアプリを適切に表示するために、各画像の複数のスケール バージョン (100%、200%、400%) を用意することをお勧めします。
 
-    拡大/縮小された画像の名前付け規則は次のとおりです。
+    拡大/縮小された画像の名前付け規則は次のとおりです。 
     
     *
-              &lt;画像名&gt;*.scale-*&lt;倍率&gt;*.*&lt;画像ファイルの拡張子&gt;* 
-
-
-     
-
+              &lt;画像名&gt;*.scale-*&lt;倍率&gt;*.*&lt;画像ファイルの拡張子&gt;*  
+    
     例: SmallLogo.scale-100.png
 
     画像を参照するときには、*&lt;画像名&gt;*.*&lt;画像ファイルの拡張子&gt;* という形式で参照します (この例では "SmallLogo.png")。 指定した画像からデバイスに合わせて拡大/縮小された画像が自動的に選択されます。
@@ -112,6 +109,6 @@ Visual Studio で新しいプロジェクトを作成すると、アプリの名
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

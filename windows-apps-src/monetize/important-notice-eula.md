@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 5efb4f40-a021-4dd2-82b4-7c95c3849485
-description: ソフトウェア ライセンス条項 (EULA) 重要な情報が記載されているのでよく目を通してください。
-title: 重要な注意事項 - EULA
+description: "ソフトウェア ライセンス条項 (EULA) 重要な情報が記載されているのでよく目を通してください。"
+title: "重要な注意事項 - EULA"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 89af54f5b8cf52366100b4751ed37ddd7a7bacb7
+
 ---
 
 # 重要な注意事項 - EULA
@@ -25,6 +29,7 @@ EULA は、拡張 SDK が配置されているフォルダーにあります。 
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,7 +1,11 @@
 ---
 author: QuinnRadich
-title: Windows 10 バージョン 1511 の新着情報 - 2015 年 11 月
-description: Windows 10 バージョン 1511 と新しい開発者ツールを使うと、新しいユニバーサル Windows プラットフォームによって強化されたツール、機能、そしてエクスペリエンスが利用できます。
+title: "Windows 10 バージョン 1511 の新着情報 - 2015 年 11 月"
+description: "Windows 10 バージョン 1511 と新しい開発者ツールを使うと、新しいユニバーサル Windows プラットフォームによって強化されたツール、機能、そしてエクスペリエンスが利用できます。"
+translationtype: Human Translation
+ms.sourcegitcommit: 1029eff0f21c62f8235f37516971996791051d4c
+ms.openlocfilehash: 07d40584e998d358c6c80bd5aec43be885a79495
+
 ---
 
 # Windows の新着情報
@@ -26,6 +30,7 @@ Windows アプリ認定キット | Windows アプリ認定キットが更新さ�
 デザインに関するダウンロード | Adobe Photoshop 用の新しい UWP アプリ デザイン テンプレートをご覧ください。 Microsoft PowerPoint と Adobe Illustrator のテンプレートも更新され、ガイドラインの PDF 版も利用可能になりました。 [デザインに関するダウンロードのページをご覧ください](https://developer.microsoft.com/en-us/windows/design/assets)。
 
 
-<!--HONumber=Jun16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

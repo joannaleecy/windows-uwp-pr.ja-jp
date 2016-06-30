@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: メディア プレーヤーには、オーディオおよびビデオ コンテンツのコントロールを管理するためのカスタマイズ可能な XAML トランスポート コントロールがあります。
-title: カスタム メディア トランスポート コントロールを作成する
+Description: "メディア プレーヤーには、オーディオおよびビデオ コンテンツのコントロールを管理するためのカスタマイズ可能な XAML トランスポート コントロールがあります。"
+title: "カスタム メディア トランスポート コントロールを作成する"
 ms.assetid: 6643A108-A6EB-42BC-B800-22EABD7B731B
 label: Create custom media transport controls
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 5500f41b254b32b8d293181fba3acebbfffa90e7
+
 ---
 # カスタム トランスポート コントロールを作成する
 
@@ -274,6 +278,7 @@ private void MediaElement_MediaOpened(object sender, RoutedEventArgs e)
 - [メディア再生](media-playback.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

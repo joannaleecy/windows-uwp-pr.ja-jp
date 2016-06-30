@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: ページ上の要素のレイアウトに影響する配置、余白、およびパディングを使います。
-title: ユニバーサル Windows プラットフォーム (UWP) アプリの配置、余白、およびパディング
+Description: "ページ上の要素のレイアウトに影響する配置、余白、およびパディングを使います。"
+title: "ユニバーサル Windows プラットフォーム (UWP) アプリの配置、余白、およびパディング"
 ms.assetid: 9412ABD4-3674-4865-B07D-64C7C26E4842
 label: Alignment, margin, and padding
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 86635255fbdae83fb2749e2aea7011a8b989e83f
+
 ---
 # 配置、余白、およびパディング
 
@@ -76,7 +80,7 @@ template: detail.hbs
 ## サイズ (高さ、幅)
 
 [
-            **FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) の [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) プロパティと [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) プロパティは、多くの場合、レイアウト パスの実行時の配置、余白、およびパディングのプロパティの動作に影響します。 特に、実数 **Height** および **Width** 値は、**Stretch** の配置を取り消すと同時に、レイアウトの測定のパスで確立される [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) 値のコンポーネントの候補として昇格されます。 **Height** と **Width** には、次の制約プロパティがあります。**Height** 値は、[**MinHeight**](https://msdn.microsoft.com/library/windows/apps/br208731) と [**MaxHeight**](https://msdn.microsoft.com/library/windows/apps/br208726) で制約でき、**Width** 値は、[**MinWidth**](https://msdn.microsoft.com/library/windows/apps/br208733) と [**MaxWidth**](https://msdn.microsoft.com/library/windows/apps/br208728) で制約できます。 また、[**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) と [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) は、レイアウト パスの完了後にのみ有効な値を含む、計算された読み取り専用プロパティです。 サイズと、制約プロパティまたは集計プロパティの相関方法について詳しくは、[**FrameworkElement.Height**](https://msdn.microsoft.com/library/windows/apps/br208718) と [**FrameworkElement.Width**](https://msdn.microsoft.com/library/windows/apps/br208751) の「解説」をご覧ください。
+            **FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) の [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) プロパティと [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) プロパティは、多くの場合、レイアウト パスの実行時の配置、余白、およびパディングのプロパティの動作に影響します。 特に、実数 **Height** および **Width** 値は、**Stretch** の配置を取り消すと同時に、レイアウトの測定のパスで確立される [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) 値のコンポーネントの候補として昇格されます。 **Height** と **Width** には、次の制約プロパティがあります。**Height** 値は、[**MinHeight**](https://msdn.microsoft.com/library/windows/apps/br208731) と [**MaxHeight**](https://msdn.microsoft.com/library/windows/apps/br208726) で制約でき、**Width** 値は、[**MinWidth**](https://msdn.microsoft.com/library/windows/apps/br208733) と [**MaxWidth**](https://msdn.microsoft.com/library/windows/apps/br208728) で制約できます。 また、[**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) と [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) は、レイアウト パスの完了後にのみ有効な値を含む、計算された読み取り専用プロパティです。 サイズと、制約プロパティまたは集計プロパティの相関方法について詳しくは、[**FrameworkElement.Height**](https://msdn.microsoft.com/library/windows/apps/br208718) と [**FrameworkElement.Width**](https://msdn.microsoft.com/library/windows/apps/br208751) の注釈をご覧ください。
 
 ## 関連トピック
 
@@ -95,6 +99,7 @@ template: detail.hbs
 [**Control.Padding**](https://msdn.microsoft.com/library/windows/apps/br209459)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

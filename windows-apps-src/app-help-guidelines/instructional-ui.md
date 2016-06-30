@@ -1,9 +1,13 @@
 ---
 author: QuinnRadich
-Description: Windows ストア アプリを使う方法をユーザーに説明するユーザー インターフェイス (UI) をデザインします。
-title: 説明 UI のデザインのガイドライン
+Description: "Windows ストア アプリを使う方法をユーザーに説明するユーザー インターフェイス (UI) をデザインします。"
+title: "説明 UI のデザインのガイドライン"
 label: Instructional UI
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 1c8ab97a5625243a50fa3b40ae93f5928dc7d851
+
 ---
 
 # 説明 UI のガイドライン
@@ -67,6 +71,7 @@ template: detail.hbs
 * [アプリのヘルプのガイドライン](guidelines-for-app-help.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

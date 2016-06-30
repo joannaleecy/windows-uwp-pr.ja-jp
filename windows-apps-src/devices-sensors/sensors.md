@@ -1,8 +1,12 @@
 ---
 author: DBirtolo
 ms.assetid: 415F4107-0612-4235-9722-0F5E4E26F957
-title: センサー
-description: センサーは、デバイスとその周囲の実際の世界の関係をアプリに通知します。 つまり、デバイスの方角や向き、動きをアプリに伝えることができます。
+title: "センサー"
+description: "センサーは、デバイスとその周囲の実際の世界の関係をアプリに通知します。 つまり、デバイスの方角や向き、動きをアプリに伝えることができます。"
+translationtype: Human Translation
+ms.sourcegitcommit: e5f61e562f7ec464fc07815b0bdd0ac938fc2fb2
+ms.openlocfilehash: dff6228524396c5d6662313ecc808b33e9dd1998
+
 ---
 # センサー
 
@@ -17,7 +21,7 @@ description: センサーは、デバイスとその周囲の実際の世界の�
 
 <iframe src="https://hubs-video.ssl.catalog.video.msn.com/embed/acea5c8e-8699-483b-87f0-f65f80065470/IA?csid=ux-en-us&MsnPlayerLeadsWith=html&PlaybackMode=Inline&MsnPlayerDisplayShareBar=false&MsnPlayerDisplayInfoButton=false&iframe=true&QualityOverride=HD" width="720" height="405" allowFullScreen="true" frameBorder="0" scrolling="no">One Dev Minute - センサーの概要</iframe>
 
-| トピック                                                       | Description  |
+| トピック                                                       | 説明  |
 |-------------------------------------------------------------|--------------|
 | [センサーの調整](calibrate-sensors.md)                   | デバイスの磁力計 (コンパス、傾斜計、方位センサー) に基づくセンサーは、環境の要因に応じて調整が必要になることがあります。 [
             <strong>MagnetometerAccuracy</strong>](https://msdn.microsoft.com/library/windows/apps/Dn297552) 列挙値は、デバイスの調整が必要になる場合の対応策を決めるのに役立ちます。 |
@@ -78,7 +82,7 @@ description: センサーは、デバイスとその周囲の実際の世界の�
 ## コンパス
 
 [
-            **Compass**](https://msdn.microsoft.com/library/windows/apps/BR225705) センサーは、地球の水平面に基づいて、磁北を基準にした 2 次元の方位を返します。 コンパス センサーは、特定のデバイスの向きを特定するため、または 3 次元空間での何らかの要素を表すために使用しないでください。 地理的な特徴により、方位に自然なずれが生じる場合があります。したがって、一部のシステムでは、[**HeadingMagneticNorth**](https://msdn.microsoft.com/library/windows/apps/BR225705reading_headingmagneticnorth) と [**HeadingTrueNorth**](https://msdn.microsoft.com/library/windows/apps/BR225705reading_headingtruenorth) を共にサポートしています。 それぞれのアプリでいずれが好ましいかを考えてください。ただし、すべてのシステムで真北値がレポートされるとは限らないことに注意してください。 ジャイロメーターおよび磁力計 (磁気の強度を測定するデバイス) センサーは、コンパスの方位を生成するためにデータを組み合わせます。これは最終的に、データを安定させる効果があります (電気的なシステム コンポーネントのために、磁場の強さは非常に不安定です)。
+            **Compass**](https://msdn.microsoft.com/library/windows/apps/BR225705) センサーは、地球の水平面に基づいて、磁北を基準にした 2 次元の方位を返します。 コンパス センサーは、特定のデバイスの向きを特定するため、または 3 次元空間での何らかの要素を表すために使用しないでください。 地理的な特徴により、方位に自然なずれが生じる場合があります。したがって、一部のシステムでは、[**HeadingMagneticNorth**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.sensors.compassreading.headingmagneticnorth.aspx) と [**HeadingTrueNorth**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.sensors.compassreading.headingtruenorth.aspx) を共にサポートしています。 それぞれのアプリでいずれが好ましいかを考えてください。ただし、すべてのシステムで真北値がレポートされるとは限らないことに注意してください。 ジャイロメーターおよび磁力計 (磁気の強度を測定するデバイス) センサーは、コンパスの方位を生成するためにデータを組み合わせます。これは最終的に、データを安定させる効果があります (電気的なシステム コンポーネントのために、磁場の強さは非常に不安定です)。
 
 ![磁北を基準にしたコンパスの読み取り値](images/compass.png)
 
@@ -129,7 +133,7 @@ description: センサーは、デバイスとその周囲の実際の世界の�
 ## 簡易方位
 
 [
-            **SimpleOrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206399sensor) は、指定のデバイスの現在の象限方位 (表向きまたは裏向き) を検出します。 6 つの可能な [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) の状態があります (**NotRotated**、**Rotated90**、**Rotated180**、**Rotated270**、**FaceUp**、**FaceDown**)。
+            **SimpleOrientationSensor**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.sensors.simpleorientationsensor.aspx) は、指定のデバイスの現在の象限方位 (表向きまたは裏向き) を検出します。 6 つの可能な [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) の状態があります (**NotRotated**、**Rotated90**、**Rotated180**、**Rotated270**、**FaceUp**、**FaceDown**)。
 
 デバイスが水平または垂直のいずれで保持されているかに基づいて表示を変更するリーダー アプリでは、デバイスがどのように保持されているかを決定するために SimpleOrientationSensor からの値を使います。
 
@@ -139,6 +143,7 @@ description: センサーは、デバイスとその周囲の実際の世界の�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

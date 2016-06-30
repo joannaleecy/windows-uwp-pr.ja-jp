@@ -1,9 +1,13 @@
 ---
 author: Jwmsft
-Description: リスト ビュー コントロールまたはグリッド ビュー コントロールを使って、イメージ ギャラリー、メール メッセージなどのデータのセットを表示、操作します。
-title: リスト ビューとグリッド ビュー
+Description: "リスト ビュー コントロールまたはグリッド ビュー コントロールを使って、イメージ ギャラリー、メール メッセージなどのデータのセットを表示、操作します。"
+title: "リスト ビューとグリッド ビュー"
 label: List view and grid view
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: e878b11bbecd4a1007f8b5f56bde5741da18c1e1
+
 ---
 # ListView と GridView
 
@@ -397,8 +401,7 @@ private void ListView1_SelectionChanged(object sender, SelectionChangedEventArgs
 
 ### クリック モード
 
-項目を選択するのではなく、ボタンのように項目をクリックできるように、リスト ビューを変更することができます。 この方法は、たとえば、リストまたはグリッド内の項目をユーザーがクリックしたときに新しいページに移動するアプリで便利です。 
-この動作を有効にするには、次のように設定します。
+項目を選択するのではなく、ボタンのように項目をクリックできるように、リスト ビューを変更することができます。 この方法は、たとえば、リストまたはグリッド内の項目をユーザーがクリックしたときに新しいページに移動するアプリで便利です。 この動作を有効にするには、次のように設定します。
 - **SelectionMode** を **None** に設定します。
 - **IsItemClickEnabled** を **true** に設定します。
 - ユーザーが項目をクリックしたときに処理を実行する **ItemClick** イベントを設定します。
@@ -509,6 +512,7 @@ private void DeselectAllButton_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

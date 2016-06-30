@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: ローカル アプリ データ、ローミング アプリ データ、一時アプリ データの保存方法と取得方法について説明します。
-title: 設定と他のアプリ データを保存して取得する
+Description: "ローカル アプリ データ、ローミング アプリ データ、一時アプリ データの保存方法と取得方法について説明します。"
+title: "設定と他のアプリ データを保存して取得する"
 ms.assetid: 41676A02-325A-455E-8565-C9EC0BC3A8FE
 label: App settings and data
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 433cda6432d1e695bacb338e68012bcc9c837eb6
+
 ---
 
 # 設定と他のアプリ データを保存して取得する
@@ -68,7 +72,7 @@ Windows.Storage.StorageFolder localFolder =
 
 ### <span id="Create_and_retrieve_a_simple_local_setting"></span><span id="create_and_retrieve_a_simple_local_setting"></span><span id="CREATE_AND_RETRIEVE_A_SIMPLE_LOCAL_SETTING"></span>簡易ローカル設定を作成して取得する
 
-設定を作成または書き込むには、[**ApplicationDataContainer.Values**](https://msdn.microsoft.com/library/windows/apps/br241615) プロパティを使用して、前の手順で取得した `localSettings` コンテナー内の設定にアクセスします。 次の例では、以下の名前の設定を作成します:
+設定を作成または書き込むには、[**ApplicationDataContainer.Values**](https://msdn.microsoft.com/library/windows/apps/br241615) プロパティを使用して、前の手順で取得した `localSettings` コンテナー内の設定にアクセスします。 次の例では、`exampleSetting` という名前の設定を作成します。
 
 ```CSharp
 // Simple setting
@@ -241,7 +245,7 @@ Windows.Storage.ApplicationDataContainer roamingSettings =
 
 ### <span id="Create_and_retrieve_roaming_settings"></span><span id="create_and_retrieve_roaming_settings"></span><span id="CREATE_AND_RETRIEVE_ROAMING_SETTINGS"></span>ローミング設定を作成して取得する
 
-前のセクションで取得した `roamingSettings` コンテナー内の設定にアクセスするには、[**ApplicationDataContainer.Values**](https://msdn.microsoft.com/library/windows/apps/br241615) プロパティを使用します。 次の例では、`exampleSetting` という名前の簡易設定と、以下の名前のコンポジット値を作成します:
+前のセクションで取得した `roamingSettings` コンテナー内の設定にアクセスするには、[**ApplicationDataContainer.Values**](https://msdn.microsoft.com/library/windows/apps/br241615) プロパティを使用します。 次の例では、`exampleSetting` という名前の簡易設定と、`composite` という名前のコンポジット値を作成します。
 
 ```CSharp
 // Simple setting
@@ -463,6 +467,7 @@ localSettings.DeleteContainer("exampleContainer");
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

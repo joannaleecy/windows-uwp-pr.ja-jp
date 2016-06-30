@@ -1,8 +1,12 @@
 ---
 author: TylerMSFT
 ms.assetid: AC96F645-1BDE-4316-85E0-2FBDE0A0A62A
-title: ファイルのプロパティの取得
-description: StorageFile オブジェクトで表されるファイルのプロパティ (最上位、基本、拡張) を取得します。
+title: "ファイルのプロパティの取得"
+description: "StorageFile オブジェクトで表されるファイルのプロパティ (最上位、基本、拡張) を取得します。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 56b83d2f05189b4cbb5bbc015987a4ffce8d86fd
+
 ---
 # ファイルのプロパティの取得
 
@@ -137,6 +141,7 @@ foreach (Windows.Storage.StorageFile file in files)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

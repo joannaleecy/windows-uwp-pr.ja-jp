@@ -1,10 +1,14 @@
 ---
 author: DelfCo
-Description: Windows.Globalization.DateTimeFormatting API でカスタム パターンを使うと、日付と時刻を好みどおりの形式で表示することができます。
-title: パターンを使った日付と時刻の書式設定
+Description: "Windows.Globalization.DateTimeFormatting API でカスタム パターンを使うと、日付と時刻を好みどおりの形式で表示することができます。"
+title: "パターンを使った日付と時刻の書式設定"
 ms.assetid: 012028B3-9DA2-4E72-8C0E-3E06BEC3B3FE
 label: Use patterns to format dates and times
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 17cd1619a13adced643b4c8983dbf874bebaa740
+
 ---
 
 # パターンを使った日付と時刻の書式設定
@@ -190,6 +194,7 @@ var mydateplustimefmt = new dtf.DateTimeFormatter(mydateplustime);
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

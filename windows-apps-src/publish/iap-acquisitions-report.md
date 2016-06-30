@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Windows デベロッパー センター ダッシュボードの IAP 取得レポートでは、販売した IAP の数と共に、人口統計データやプラットフォームの詳細を確認できます。
-title: IAP 取得レポート
+Description: "Windows デベロッパー センター ダッシュボードの IAP 取得レポートでは、販売した IAP の数と共に、人口統計データやプラットフォームの詳細を確認できます。"
+title: "IAP 取得レポート"
 ms.assetid: F2DF9188-0A98-4AC3-81C0-3E2C37B15582
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 3191df12ca5b59f545cf250c3e669b30192af6bc
+
 ---
 
 # IAP 取得レポート
@@ -65,6 +69,7 @@ IAP の全期間における取得数を確認することもできます。 こ
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

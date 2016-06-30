@@ -1,155 +1,171 @@
 ---
 author: mcleblanc
 ms.assetid: DE5B084C-DAC1-430B-A15B-5B3D5FB698F7
-title: Optimize animations, media, and images
-description: Create Universal Windows Platform (UWP) apps with smooth animations, high frame rate, and high-performance media capture and playback.
+title: "アニメーション、メディア、画像の最適化"
+description: "スムーズなアニメーション、高いフレーム レート、およびパフォーマンスの高いメディア キャプチャと再生を備えたユニバーサル Windows プラットフォーム (UWP) アプリを作成します。"
+ms.sourcegitcommit: 165105c141405cd752f876c822f76a5002d38678
+ms.openlocfilehash: d3ddc07b214dcfe767d27bf24a36fe19d3534e6e
+
 ---
-# Optimize animations, media, and images
+# アニメーション、メディア、画像の最適化
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-Create Universal Windows Platform (UWP) apps with smooth animations, high frame rate, and high-performance media capture and playback.
+スムーズなアニメーション、高いフレーム レート、およびパフォーマンスの高いメディア キャプチャと再生を備えたユニバーサル Windows プラットフォーム (UWP) アプリを作成します。
 
-## Make animations smooth
+## アニメーションのスムーズ化
 
-A key aspect of UWP apps is smooth interactions. This includes touch manipulations that "stick to your finger," smooth transitions and animations, and small motions that provide input feedback. In the XAML framework there is a thread called the composition thread that is dedicated to the composition and animation of an app’s visual elements. Because the composition thread is separate from UI thread (the thread that runs framework and developer code), apps can achieve a consistent frame rate and smooth animations regardless of complicated layout passes or extended calculations. This section shows how to use the composition thread to keep an app’s animations buttery smooth. For more info about animations, see [Animations overview](https://msdn.microsoft.com/library/windows/apps/Mt187350). To learn about increasing an app’s responsiveness while performing intensive computations, see [Keep the UI thread responsive](keep-the-ui-thread-responsive.md).
+UWP アプリの重要な側面は、スムーズな対話式操作です。 これには、"指の動きに忠実な" タッチ操作、スムーズな切り替えやアニメーション、入力のフィードバックを返す小さな動作などがあります。 XAML フレームワークには、アプリの視覚要素の合成とアニメーション専用の、合成スレッドと呼ばれるスレッドがあります。 合成スレッドは UI スレッド (フレームワークと開発者コードを実行するスレッド) からは独立しているため、レイアウト パスや拡張計算が複雑でも、一貫したフレーム レートとスムーズなアニメーションをアプリで実現できます。 このセクションでは、合成スレッドを使って、アプリのアニメーションをスムーズにする方法について説明します。 アニメーションについて詳しくは、「[アニメーションの概要](https://msdn.microsoft.com/library/windows/apps/Mt187350)」をご覧ください。 計算を集中的に実行している間のアプリの応答性の向上については、「[UI スレッドの応答性の確保](keep-the-ui-thread-responsive.md)」をご覧ください。
 
-### Use independent instead of dependent animations
+### 依存型ではなく、独立型アニメーションを使う
 
-Independent animations can be calculated from beginning to end at the time of creation because changes to the property being animated don't affect rest of the objects in a scene. Independent animations can therefore run on the composition thread instead of the UI thread. This guarantees that they remain smooth because the composition thread is updated at a consistent cadence.
+アニメーション化されるプロパティに対する変更は、シーン内の残りのオブジェクトに影響を与えないため、独立型アニメーションは作成時の最初から最後まで計算できます。 そのため、独立型アニメーションは UI スレッドではなく合成スレッドで実行されます。 合成スレッドは一定の間隔で更新されるため、アニメーションをスムーズに実行し続けることができます。
 
-All of these types of animations are guaranteed to be independent:
+次のようなアニメーションはすべて独立性が保証されます。
 
--   Object animations using key frames
--   Zero-duration animations
--   Animations to the [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/Hh759771) and [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/Hh759772) properties
--   Animations to the [**UIElement.Opacity**](https://msdn.microsoft.com/library/windows/apps/BR208962) property
--   Animations to properties of type [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) when targeting the [**SolidColorBrush.Color**](https://msdn.microsoft.com/library/windows/apps/BR242963) subproperty
--   Animations to the following [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) properties when targeting subproperties of these return value types:
+-   キー フレームを使ったオブジェクト アニメーション
+-   再生時間が 0 のアニメーション
+-   [
+            **Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/Hh759771) プロパティと [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/Hh759772) プロパティに対するアニメーション
+-   [
+            **UIElement.Opacity**](https://msdn.microsoft.com/library/windows/apps/BR208962) プロパティに対するアニメーション
+-   [
+            **SolidColorBrush.Color**](https://msdn.microsoft.com/library/windows/apps/BR242963) サブプロパティをターゲット設定した場合の、[**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) 型のプロパティに対するアニメーション
+-   これらの戻り値の型のサブプロパティをターゲット設定した場合の、次の [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) プロパティに対するアニメーション
 
     -   [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.rendertransform)
     -   [**Projection**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.projection)
     -   [**Clip**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.clip)
 
-Dependent animations affect layout, which therefore cannot be calculated without extra input from the UI thread. Dependent animations include modifications to properties like [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751) and [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718). By default, dependent animations are not run and require an opt-in from the app developer. When enabled, they run smoothly if the UI thread remains unblocked, but they begin to stutter if the framework or app is doing a lot of other work on the UI thread.
+依存型アニメーションはレイアウトに影響するため、計算に UI スレッドからの追加の入力が必要です。 依存型アニメーションには、[**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751) や [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) などのプロパティへの変更があります。 依存型アニメーションは、既定では実行されず、アプリ開発者からのオプトインが必要です。 有効になると、UI スレッドがブロックされない限りスムーズに実行されますが、フレームワークやアプリの UI スレッドで他の作業が大量に行われると引っかかりが発生します。
 
-Almost all animations in the XAML framework are independent by default, but there are some actions that you can take to disable this optimization. Beware of these scenarios particularly:
+XAML フレームワーク内のほぼすべてのアニメーションは、既定で独立して実行されますが、この最適化が無効になる操作がいくつかあります。 特に次のようなシナリオに注意してください。
 
--   Setting the [**EnableDependentAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210356) property to allow a dependent animation to run on the UI thread. Convert these animations into an independent version. For example animate [**ScaleTransform.ScaleX**](https://msdn.microsoft.com/library/windows/apps/BR242946) and [**ScaleTransform.ScaleY**](https://msdn.microsoft.com/library/windows/apps/BR242948) instead of the [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751) and [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) of an object. Don’t be afraid to scale objects like images and text. The framework applies bilinear scaling only while the [**ScaleTransform**](https://msdn.microsoft.com/library/windows/apps/BR242940) is being animated. The image/text will be rerasterized at the final size to ensure it’s always clear.
--   Making per frame updates, which are effectively dependent animations. An example of this is applying transformations in the handler of the [**CompositonTarget.Rendering**](https://msdn.microsoft.com/library/windows/apps/BR228127) event.
--   Running any animation considered independent in an element with the [**CacheMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.cachemode) property set to **BitmapCache**. This is considered dependent because the cache must be re-rasterized for each frame.
+-   依存型アニメーションを UI スレッドで実行できるように [**EnableDependentAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210356) プロパティを設定する。 そうしたアニメーションは、独立型バージョンに変換します。 たとえば、オブジェクトの [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751) と [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) ではなく、[**ScaleTransform.ScaleX**](https://msdn.microsoft.com/library/windows/apps/BR242946) と [**ScaleTransform.ScaleY**](https://msdn.microsoft.com/library/windows/apps/BR242948) をアニメーション化します。 画像やテキストなどのオブジェクトも拡大/縮小できます。 [
+            **ScaleTransform**](https://msdn.microsoft.com/library/windows/apps/BR242940) がアニメーション化されている間のみ、フレームワークによってバイリニア スケーリングが適用されます。 画像やテキストは、常にきれいに表示されるように、最終的なサイズでもう一度ラスター化されます。
+-   フレームごとに更新する。これは、実質的には依存型アニメーションです。 これの例には、[**CompositonTarget.Rendering**](https://msdn.microsoft.com/library/windows/apps/BR228127) イベントのハンドラーでの変換の適用があります。
+-   [
+            **CacheMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.cachemode) プロパティを **BitmapCache** に設定した要素で独立型と見なされるアニメーションを実行する。 これは、フレームごとにキャッシュをもう一度ラスター化する必要があるため、依存型と見なされます。
 
-### Don't animate a WebView or MediaElement
+### WebView または MediaElement はアニメーション化しない
 
-Web content within a [**WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702) control is not directly rendered by the XAML framework and it requires extra work to be composed with the rest of the scene. This extra work adds up when animating the control around the screen and can potentially introduce synchronization issues (for example, the HTML content might not move in sync with the rest of the XAML content on the page). When you need to animate a **WebView** control, swap it with a [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webviewbrush.aspx) for the duration of the animation.
+[
+            **WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702) コントロール内の Web コンテンツは、XAML フレームワークによって直接レンダリングされることはないため、画面の他の部分と合成する追加の作業が必要になります。 この追加の作業は画面上でコントロールをアニメーション化する際に行われ、同期の問題 (HTML コンテンツがページ上の XAML コンテンツの他の部分と同期して動かないなど) が発生する可能性があります。 **WebView** コントロールをアニメーション化する必要がある場合は、アニメーションを実行している間、そのコントロールを [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webviewbrush.aspx) に置き換えます。
 
-Animating a [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) is a similarly bad idea. Beyond the performance detriment, it can cause tearing or other artifacts in the video content being played.
+[
+            **MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) のアニメーション化も同じようによくない考えです。 パフォーマンスが低下するだけでなく、再生中のビデオ コンテンツに裂け目のようなアーティファクトが発生することがあります。
 
-### Use infinite animations sparingly
+### 無限アニメーションは慎重に使う
 
-Most animations execute for a specified amount of time, but setting the [**Timeline.Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) property to Forever allows an animation to run indefinitely. We recommend minimizing the use of infinite animations because they continually consume CPU resources and can prevent the CPU from going into a low power or idle state, causing it to run out of power more quickly.
+大部分のアニメーションは指定された時間内で実行されますが、[**Timeline.Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) プロパティを Forever に設定すると、アニメーションを無限に実行できます。 この無限アニメーションを使うのはできるだけ避けてください。これらが CPU リソースを消費し続けることで、CPU が低電力またはアイドル状態に移行できず、非常に短い時間でバッテリーを使い果たす可能性があるためです。
 
-Adding a handler for [**CompositionTarget.Rendering**](https://msdn.microsoft.com/library/windows/apps/BR228127) is similar to running an infinite animation. Normally the UI thread is active only when there is work to do, but adding handler for this event forces it to run every frame. Remove the handler when there is no work to be done and reregister it when it’s needed again.
+[
+            **CompositionTarget.Rendering**](https://msdn.microsoft.com/library/windows/apps/BR228127) のハンドラーの追加は、無限アニメーションの実行と同じような効果があります。 通常、UI スレッドは実行する作業がある場合にのみアクティブになりますが、このイベントのハンドラーを追加すると、すべてのフレームが強制的に実行されます。 実行する作業がない場合はハンドラーを削除し、再び必要になったときに再登録してください。
 
-### Use the animation library
+### アニメーション ライブラリを使う
 
-The [**Windows.UI.Xaml.Media.Animation**](https://msdn.microsoft.com/library/windows/apps/BR243232) namespace includes a library of high-performance, smooth animations that have a look and feel consistent with other Windows animations. The relevant classes have "Theme" in their name, and are described in [Animations overview](https://msdn.microsoft.com/library/windows/apps/Mt187350). This library supports many common animation scenarios, such as animating the first view of the app and creating state and content transitions. We recommend using this animation library whenever possible to increase performance and consistency for UWP UI.
+[
+            **Windows.UI.Xaml.Media.Animation**](https://msdn.microsoft.com/library/windows/apps/BR243232) 名前空間には、他の Windows アニメーションとの一貫性を備えた外観を持つ、高パフォーマンスかつスムーズなアニメーションのライブラリが含まれています。 関連クラスは名前に "Theme" が含まれています。関連クラスについては、「[アニメーションの概要](https://msdn.microsoft.com/library/windows/apps/Mt187350)」をご覧ください。 このライブラリは、アプリの最初の表示や、状態とコンテンツの切り替えにアニメーションを設定するなど、一般的なアニメーション シナリオの多くに対応しています。 パフォーマンスを高め UWP UI との一貫性を強化するために、できるだけこのアニメーション ライブラリを使うことをお勧めします。
 
-> **Note**   The animation library can't animate all possible properties. For XAML scenarios where the animation library doesn't apply, see [Storyboarded animations](https://msdn.microsoft.com/library/windows/apps/Mt187354).
+> **注**   アニメーション ライブラリは、利用可能なすべてのプロパティをアニメーション化できるわけではありません。 アニメーション ライブラリが適用されない XAML シナリオについては、「[ストーリーボードに設定されたアニメーション](https://msdn.microsoft.com/library/windows/apps/Mt187354)」を参照してください。
 
 
-### Animate CompositeTransform3D properties independently
+### CompositeTransform3D のプロパティを個別にアニメーション化する
 
-You can animate each property of a [**CompositeTransform3D**](https://msdn.microsoft.com/library/windows/apps/Dn914714) independently, so apply only the animations you need. For examples and more info, see [**UIElement.Transform3D**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.transform3d). For more info about animating transforms, see [Storyboarded animations](https://msdn.microsoft.com/library/windows/apps/Mt187354) and [Key-frame and easing function animations](https://msdn.microsoft.com/library/windows/apps/Mt187352).
+[
+            **CompositeTransform3D**](https://msdn.microsoft.com/library/windows/apps/Dn914714) の各プロパティを個別にアニメーション化して、必要なアニメーションのみを適用できます。 詳しい説明と例については、「[**UIElement.Transform3D**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.transform3d)」をご覧ください。 変換のアニメーション化について詳しくは、「[ストーリーボードに設定されたアニメーション](https://msdn.microsoft.com/library/windows/apps/Mt187354)」および「[キーフレームとイージング関数のアニメーション](https://msdn.microsoft.com/library/windows/apps/Mt187352)」をご覧ください。
 
-## Optimize media resources
+## メディア リソースの最適化
 
-Audio, video, and images are compelling forms of content that the majority of apps use. As media capture rates increase and content moves from standard definition to high definition the amount of resources need to store, decode, and play back this content increases. The XAML framework builds on the latest features added to the UWP media engines so apps get these improvements for free. Here we explain some additional tricks that allow you to get the most out media in your UWP app.
+オーディオ、ビデオ、画像は、ほとんどのアプリがユーザーを引き付けるために使うコンテンツです。 メディアのキャプチャ レートが向上し、コンテンツが標準解像度から高解像度に移行しているため、そうしたコンテンツを格納、デコード、再生するために必要なリソースの量が増えています。 XAML フレームワークは UWP のメディア エンジンに追加された最新機能を基に構築されているため、アプリでそれらの機能を無料で利用できます。 ここでは、UWP アプリでメディアを活用するためのヒントをいくつか紹介します。
 
-### Release media streams
+### メディア ストリームの解放
 
-Media files are some of the most common and expensive resources apps typically use. Because media file resources can greatly increase the size of your app's memory footprint, you must remember to release the handle to media as soon as the app is finished using it.
+メディア ファイルは、アプリが通常使うリソースの中で最も一般的かつ負荷の高いリソースに分類されます。 メディア ファイル リソースによってアプリのメモリ使用量のサイズが大幅に増大することがあるため、アプリの使用が終わったらすぐにメディアへのハンドルを忘れずに解放する必要があります。
 
-For example, if your app working with a [**RandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/BR241747) or an [**IInputStream**](https://msdn.microsoft.com/library/windows/apps/BR241718) object, be sure to call the close method on the object when your app has finished using it, to release the underlying object.
+たとえば、アプリが [**RandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/BR241747) または [**IInputStream**](https://msdn.microsoft.com/library/windows/apps/BR241718) オブジェクトを使っている場合は、アプリの使用が終わったらこのオブジェクトで close メソッドを呼び出して、下位にあるオブジェクトを解放します。
 
-### Display full screen video playback when possible
+### 可能な場合はビデオ再生を全画面表示
 
-In UWP apps, always use the [**IsFullWindow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.isfullwindow) property on the [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) to enable and disable full window rendering. This insures system level optimizations are used during media playback.
+UWP アプリでは、フル ウィンドウのレンダリングを有効または無効にする場合、常に [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) の [**IsFullWindow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.isfullwindow) プロパティを使います。 そうすることで、メディアの再生中にシステム レベルの最適化が使われることが保証されます。
 
-The XAML framework can optimize the display of video content when it is the only thing being rendered, resulting in an experience that uses less power and yields higher frame rates. For most efficient media playback set the size of a [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) to be the width and height of the screen and don’t display other XAML elements
+XAML フレームワークでは、レンダリングの対象がビデオ コンテンツだけの場合は、ビデオ コンテンツの表示を最適化することができます。その結果、消費電力が低減され、フレーム レートが改善されます。 メディアの再生を最適化するには、[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) のサイズを画面の幅と高さに設定し、他の XAML 要素を表示しないようにします。
 
-There are legitimate reasons to overlay XAML elements on a [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) that takes up the full width and height of the screen, for example closed captions or momentary transport controls. Making sure to hide these elements (eg. setting Visibility=”Collapsed”) when they are not needed pops media playback back into its most efficient state.
+画面全体を占める [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) の上に XAML 要素 (クローズド キャプションや一時的なトランスポート コントロールなど) をオーバーレイすることには正当な理由があります。 必要ない場合はこれらの要素を非表示にする (たとえば、 Visibility="Collapsed" を設定する) と、メディアの再生が最適な状態に戻ります。
 
-### Display deactivation and conserving power
+### ディスプレイの非アクティブ化と消費電力の節約
 
-To prevent the display from be deactivating when user action is no longer detected, such as when an app is playing video, you can call [**DisplayRequest.RequestActive**](https://msdn.microsoft.com/library/windows/apps/BR241818).
+アプリでビデオを再生しているときなど、無操作状態が検出されてもディスプレイの電源が切れないようにするためには、[**DisplayRequest.RequestActive**](https://msdn.microsoft.com/library/windows/apps/BR241818) を呼び出します。
 
-To conserve power and battery life, you should call [**DisplayRequest.RequestRelease**](https://msdn.microsoft.com/library/windows/apps/BR241819) to release the display request as soon as it is no longer required.
+消費電力とバッテリーの駆動時間を節約するため、不要になったらすぐに [**DisplayRequest.RequestRelease**](https://msdn.microsoft.com/library/windows/apps/BR241819) を呼び出して表示要求を解放してください。
 
-Here are some situations when you should release the display request:
+表示要求を解放する必要があるのは、次のような場合です。
 
--   Video playback is paused, for example by user action, buffering, or adjustment due to limited bandwidth.
--   Playback stops. For example, the video is done playing or the presentation is over.
--   A playback error has occurred. For example, network connectivity issues or a corrupted file.
+-   ユーザーの操作、バッファリング、限られた帯域幅のための調整などでビデオの再生が一時停止になる。
+-   再生が停止する。 たとえば、ビデオの再生が完了したり、プレゼンテーションが終了したりする。
+-   再生エラーが発生した。 たとえば、ネットワーク接続の問題や破損したファイル。
 
-### Put other elements to the side of embedded video
+### 埋め込みビデオの横に他の要素を配置
 
-Often apps offer an embedded view where video is played within a page. Now you obviously lost the full screen optimization because the [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) is not the size of the page and there are other XAML objects drawn. Beware of unintentionally entering this mode by drawing a border around a **MediaElement**.
+アプリには、ページ内でビデオを再生する埋め込みビューが用意されていることがあります。 その場合は、[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) がページのサイズではなく、他に描画される XAML オブジェクトがあるため、全画面表示の最適化が行われません。 **MediaElement** の周りに境界線を描画すると、意図せずにこのモードになることに注意してください。
 
-Don’t draw XAML elements on top of video when it’s in embedded mode. If you do, the framework is forced to do a little extra work to compose the scene. Placing transport controls below an embedded media element instead of on top of the video is a good example of optimizing for this situation. In this image, the red bar indicates a set of transport controls (play, pause, stop, etc.).
+埋め込みモードの場合は、ビデオの上に重ねて XAML 要素を描画しないでください。 描画すると、画面を合成するためにフレームワークが追加作業を行うことになります。 この場合は、ビデオの上に重ねずに、たとえば、埋め込みメディア要素の下にトランスポート コントロールを配置すると、最適化が行われます。 次の画像では、赤色のバーが一連のトランスポート コントロール (再生、一時停止、停止など) を示しています。
 
-![MediaElement with overlaying elements](images/videowithoverlay.png)
-Don’t place these controls on top of media that is not full screen. Instead place the transport controls somewhere outside of the area where the media is being rendered. In the next image, the controls are placed below the media.
+![要素がオーバーレイされている MediaElement](images/videowithoverlay.png) メディアが全画面ではないときは、メディアの上にこれらのコントロールを重ねて配置しないでください。 代わりに、メディアがレンダリングされる領域の外にトランスポート コントロールを配置します。 次の画像では、コントロールがメディアの下に配置されています。
 
-![MediaElement with neighboring elements](images/videowithneighbors.png)
+![要素が隣接している MediaElement](images/videowithneighbors.png)
 
-### Delay setting the source for a MediaElement
+### MediaElement のソースの遅延設定
 
-Media engines are expensive objects and the XAML framework delays loading dlls and creating large objects as long as possible. The [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) is forced to do this work after its source is set via the [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.source) property or the [**SetSource**](https://msdn.microsoft.com/library/windows/apps/br244338) method. Setting these when the user is really ready to play media delays the majority of the cost associated with the **MediaElement** as long as possible.
+メディア エンジンは負荷の高いオブジェクトです。XAML フレームワークでは、dll の読み込みと大きなオブジェクトの作成を可能な限り遅らせます。 [
+            **MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) では、ソースが [**Source**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.source) プロパティまたは [**SetSource**](https://msdn.microsoft.com/library/windows/apps/br244338) メソッドによって設定されると、この処理が強制的に実行されます。 ユーザーがメディアを再生する準備が実際に整った時点でソースを設定すると、**MediaElement** に関連する負担の大部分を可能な限り遅らせることができます。
 
-### Set MediaElement.PosterSource
+### MediaElement.PosterSource の設定
 
-Setting [**MediaElement.PosterSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.postersource) enables XAML to release some GPU resources that would have otherwise been used. This API allows an app to use as little memory as possible.
+[
+            **MediaElement.PosterSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.postersource) を設定すると、XAML は一部の GPU リソースを解放できます。解放しないと、それらのリソースは使われたままになります。 この API を使うことで、アプリが使うメモリを最小限に抑えることができます。
 
-### Improve media scrubbing
+### メディアのスクラブの改善
 
-Scrubbing is always a tough task for media platforms to make really responsive. Generally people accomplish this by changing the value of a Slider. Here are a couple tips on how to make this as efficient as possible:
+メディア プラットフォームの応答性を高めるにあたってスクラブは常に困難を伴うタスクです。 一般的には、Slider の値を変更することで、これを実現します。 次に、スクラブ操作をできるだけ効率的にするためのヒントをいくつか示します。
 
--   Either bind the value of a [**Slider**](https://msdn.microsoft.com/library/windows/apps/BR209614) to [**MediaElement.Position**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.position) or update it based on a timer. Don't do both. If you choose the latter, make sure to use a reasonable update frequency for your timer. The XAML framework only updates **MediaElement.Position** only every 250 milliseconds during playback.
--   The size of the step frequency on the Slider must scale with the length of the video.
--   Subscribe to the [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx), [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointermoved.aspx), [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerreleased.aspx) events on the slider to set the [**MediaElement.PlaybackRate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.playbackrate) property to 0 when the user drags the thumb of the slider.
--   In the [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerreleased.aspx) event handler, manually set the media position to the slider position value to achieve optimal thumb snapping while scrubbing.
+-   [
+            **Slider**](https://msdn.microsoft.com/library/windows/apps/BR209614) の値を [**MediaElement.Position**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.position) にバインドするか、タイマーに基づいて更新します。 両方は行わないでください。 タイマーを使う場合は、適切な更新頻度を設定します。 XAML フレームワークでは、再生中に 250 ミリ秒ごとに **MediaElement.Position** だけを更新します。
+-   Slider のステップ間隔のサイズは、ビデオの長さに合わせて変える必要があります。
+-   スライダーの [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx)、[**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointermoved.aspx)、[**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerreleased.aspx) イベントを取得して、ユーザーがスライダーのつまみをドラッグしたときに [**MediaElement.PlaybackRate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.playbackrate) プロパティを 0 に設定します。
+-   [
+            **PointerReleased**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerreleased.aspx) イベント ハンドラーで、スクラブ中のつまみのスナップ動作を最適化するために、メディアの位置をスライダーの位置の値に手動で設定します。
 
-### Match video resolution to device resolution
+### ビデオ解像度とデバイス解像度の一致
 
-Decoding video takes a lot of memory and GPU cycles, so choose a video format close to the resolution it will be displayed at. There is no point in using the resources to decode 1080 video if it’s going to get scaled down to a much smaller size. Many apps don’t have the same video encoded at different resolutions; but if it is available, use an encoding that is close to the resolution at which it will be displayed.
+ビデオのデコードにはメモリと GPU サイクルを大量に使うため、ビデオ形式には、表示するときのものに近い解像度を選んでください。 小さいサイズにスケールダウンするのに、リソースを使って 1080 のビデオをデコードするのは無駄です。 多くのアプリでは同じビデオを異なる解像度でエンコードできませんが、可能であれば、表示される解像度に近いエンコードを使うようにしてください。
 
-### Choose recommended formats
+### お勧めの形式の選択
 
-Media format selection can be a sensitive topic and is often driven by business decisions. From a UWP performance perspective, we recommend H.264 video as the primary video format and AAC and MP3 as the preferred audio formats. For local file playback, MP4 is the preferred file container for video content. H.264 decoding is accelerated through most recent graphics hardware. Also, although hardware acceleration for VC-1 decoding is broadly available, for a large set of graphics hardware on the market, the acceleration is limited in many cases to a partial acceleration level (or IDCT level), rather than a full-steam level hardware offload (i.e. VLD mode).
+メディア形式の選択は慎重な判断が必要になる場合があり、多くはビジネス上の意思決定が優先されます。 UWP のパフォーマンスの点から見ると、H.264 ビデオが最優先のビデオ形式で、推奨されるオーディオ形式は AAC と MP3 になります。 ローカル ファイルを再生するためのビデオ コンテンツのファイル コンテナーは MP4 がお勧めです。 最新のグラフィックス ハードウェアのほとんどは H.264 デコードのアクセラレーションに対応しています。 また、VC-1 デコードのハードウェア アクセラレーションは広く利用できるようになっているものの、市場のグラフィックス ハードウェアの多くで、アクセラレーションがフルストリーム レベルのハードウェア オフロード (VLD モード) ではなく、部分的なアクセラレーションのレベル (IDCT レベル) に制限されています。
 
-If you have full control of the video content generation process, you must figure out how to keep a good balance between compression efficiency and GOP structure. Relatively smaller GOP size with B pictures can increase the performance in seeking or trick modes.
+ビデオ コンテンツ生成プロセスを完全に制御できる場合は、圧縮の効率性と GOP 構造を最適なバランスで両立する方法を見つける必要があります。 B ピクチャを持つ GOP のサイズを比較的小さくすることで、シークまたはトリック モードのパフォーマンスを向上できます。
 
-When including short, low-latency audio effects, for example in games, use WAV files with uncompressed PCM data to reduce processing overhead that is typical for compressed audio formats.
+ゲームなどで、待機時間の短い短時間のオーディオ エフェクトを含める場合、WAV ファイルと非圧縮の PCM データを使います。これにより圧縮オーディオ形式で一般的に発生する処理のオーバーヘッドを削減できます。
 
-### Hardware audio offloading
+### ハードウェア オーディオ オフロード
 
-For hardware audio offload to be automatically applied, [**MediaElement.AudioCategory**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.audiocategory) must be set to **ForegroundOnlyMedia** or **BackgroundCapableMedia**. Hardware audio offload optimizes audio rendering which can improve functionality and battery life.
+ハードウェア オーディオ オフロードを自動的に適用するには、[**MediaElement.AudioCategory**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediaelement.audiocategory) を **ForegroundOnlyMedia** または **BackgroundCapableMedia** に設定する必要があります。 ハードウェア オーディオ オフロードによって、オーディオ レンダリングが最適化され、機能を向上させバッテリーの寿命を延ばすことができます。
 
-## Optimize image resources
+## 画像リソースの最適化
 
-### Scale images to the appropriate size
+### 画像の適切なサイズへの拡大/縮小
 
-Images are captured at very high resolutions, which can lead to apps using more CPU when decoding the image data and more memory after it’s loaded from disk. But there’s no sense decoding and saving a high-resolution image in memory only to display it smaller than its native size. Instead, create a version of the image at the exact size it will be drawn on-screen using the [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) and [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) properties.
+画像が非常に高い解像度でキャプチャされた場合、アプリで画像データをデコードするときに CPU をより多く使用し、ディスクから画像を読み込んだ後でより多くのメモリを使用することにつながる可能性があります。 ただし、画像を元のサイズよりも小さいサイズでのみ表示する場合、高解像度の画像をデコードしてメモリに保存するのは無意味です。 代わりに、[**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) プロパティと [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) プロパティを使って、画面上に描画される正確なサイズの画像のバージョンを作成します。
 
-Don't do this:
+してはいけない例:
 
 ```xml
 <Image Source="ms-appx:///Assets/highresCar.jpg" 
        Width="300" Height="200"/>    <!-- BAD CODE DO NOT USE.-->
 ```
 
-Instead, do this:
+代わりに、お勧めする例:
 
 ```xml
 <Image>
@@ -160,49 +176,53 @@ Instead, do this:
 </Image>
 ```
 
-The units for [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) and [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) are by default physical pixels. The [**DecodePixelType**](https://msdn.microsoft.com/library/windows/apps/Dn298545) property can be used to change this behavior: setting **DecodePixelType** to **Logical** results in the decode size automatically accounting for the system’s current scale factor, similar to other XAML content. It would therefore be generally appropriate to set **DecodePixelType** to **Logical** if, for instance, you want **DecodePixelWidth** and **DecodePixelHeight** to match the Height and Width properties of the Image control the image will be displayed in. With the default behavior of using physical pixels, you must account for the system’s current scale factor yourself; and you should listen for scale change notifications in case the user changes their display preferences.
+[
+            **DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) と [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) の単位は、既定では物理ピクセルです。 [
+            **DecodePixelType**](https://msdn.microsoft.com/library/windows/apps/Dn298545) プロパティを使って、この動作を変更できます。**DecodePixelType** を **Logical** に設定すると、他の XAML コンテンツと同様に、デコード サイズで自動的に現在の倍率が考慮されます。 したがって、一般的には、**DecodePixelType** を **Logical** に設定することをお勧めします。たとえば、**DecodePixelWidth** と **DecodePixelHeight** を、画像が表示される Image コントロールの Height プロパティと Width プロパティと一致させるような場合です。 物理ピクセルを使用する既定の動作では、システムの現在の倍率を自分で考慮する必要があります。また、ユーザーが表示設定を変更する場合に備えて、スケール変更通知をリッスンする必要があります。
 
-If DecodePixelWidth/Height are explicitly set larger than the image will be displayed on-screen then the app will unnecessarily use extra memory—up to 4 bytes per pixel—which quickly becomes expensive for large images. The image will also be scaled down using bilinear scaling which could cause it to appear blurry for large scale factors.
+DecodePixelWidth/Height が明示的に画面に表示される画像よりも大きく設定されている場合、アプリは不必要に余分なメモリ (1 ピクセルあたり最大 4 バイト) を使用するため、大きい画像では急速に負荷が大きくなります。 また、画像はバイリニア スケーリングを使って縮小されるため、倍率が大きくなるとぼやけて見える原因となる可能性があります。
 
-If DecodePixelWidth/DecodePixelHeight are explicitly set smaller than the image will be displayed on screen then it will be scaled up and could appear pixelated.
+DecodePixelWidth/DecodePixelHeight が明示的に画面に表示される画像よりも小さく設定されている場合、画像は拡大され、ピクセル化されたように見える可能性があります。
 
-In some cases where an appropriate decode size cannot be determined ahead of time, you should defer to XAML’s automatic right-size-decoding which will make a best effort attempt to decode the image at the appropriate size if an explicit DecodePixelWidth/DecodePixelHeight is not specified.
+事前に適切なデコード サイズを特定できない場合には、明示的な DecodePixelWidth/DecodePixelHeight が指定されていないときに、適切なサイズでの画像のデコードをベスト エフォート形式で試行する、XAML の適切なサイズの自動デコードを遅延させる必要があります。
 
-You should set an explicit decode size if you know the size of the image content ahead of time. You should also in conjunction set [**DecodePixelType**](https://msdn.microsoft.com/library/windows/apps/Dn298545) to **Logical** if the supplied decode size is relative to other XAML element sizes. For example, if you explicitly set the content size with Image.Width and Image.Height, you could set DecodePixelType to DecodePixelType.Logical to use the same logical pixel dimensions as an Image control and then explicitly use BitmapImage.DecodePixelWidth and/or BitmapImage.DecodePixelHeight to control the size of the image to achieve potentially large memory savings.
+事前に画像コンテンツのサイズがわかっている場合は、明示的にデコード サイズを設定する必要があります。 指定したデコード サイズが他の XAML 要素のサイズを基準としている場合は、併せて [**DecodePixelType**](https://msdn.microsoft.com/library/windows/apps/Dn298545) を **Logical** に設定することも必要です。 たとえば、Image.Width と Image.Height を使ってコンテンツのサイズを明示的に設定する場合、DecodePixelType を DecodePixelType.Logical に設定して Image コントロールと同じ論理ピクセル サイズを使用し、明示的に BitmapImage.DecodePixelWidth や BitmapImage.DecodePixelHeight を使って画像のサイズを制御することによって、大量のメモリ消費を抑えることができる可能性があります。
 
-Note that Image.Stretch should be considered when determining the size of the decoded content.
+デコードされたコンテンツのサイズを決定するときに、Image.Stretch を考慮する必要があることに注意してください。
 
-### Right-sized decoding
+### 適切なサイズのデコード
 
-In the event that you don't set an explicit decode size, XAML will make a best effort attempt to save memory by decoding an image to the exact size it will appear on-screen according to the containing page’s initial layout. You're advised to write your application in such a way as to make use of this feature when possible. This feature will be disabled if any of the following conditions are met.
+明示的なデコード サイズを設定していない場合、XAML では、画像を表示するページの初期レイアウトに従って、画面に表示される正確なサイズで画像をデコードすることにより、メモリの消費を最大限に抑えようとします。 可能な限り、この機能を使用するような方法でアプリケーションを作成することをお勧めします。 次の条件のいずれかが満たされる場合、この機能は無効になります。
 
--   The [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/BR243235) is connected to the live XAML tree after setting the content with [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522) or [**UriSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.urisource.aspx).
--   The image is decoded using synchronous decoding such as [**SetSource**](https://msdn.microsoft.com/library/windows/apps/BR243255).
--   The image is hidden via setting [**Opacity**](https://msdn.microsoft.com/library/windows/apps/BR208962) to 0 or [**Visibility**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.visibility) to **Collapsed** on the host image element or brush or any parent element.
--   The image control or brush uses a [**Stretch**](https://msdn.microsoft.com/library/windows/apps/BR242968) of **None**.
--   The image is used as a [**NineGrid**](https://msdn.microsoft.com/library/windows/apps/BR242756).
--   `CacheMode="BitmapCache"` is set on the image element or on any parent element.
--   The image brush is non-rectangular (such as when applied to a shape or to text).
+-   [
+            **SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522) または [**UriSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.urisource.aspx) を使ってコンテンツを設定した後、[**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/BR243235) がライブ XAML ツリーに接続されている。
+-   画像が [**SetSource**](https://msdn.microsoft.com/library/windows/apps/BR243255) などの同期デコードを使用してデコードされる。
+-   ホスト画像要素、ブラシ、親要素のいずれかで、[**Opacity**](https://msdn.microsoft.com/library/windows/apps/BR208962) を 0 に設定するか、[**Visibility**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.visibility) を **Collapsed** に設定することによって、画像が非表示になっている。
+-   画像コントロールまたはブラシで使用する [**Stretch**](https://msdn.microsoft.com/library/windows/apps/BR242968) が **None** になっている。
+-   画像が [**NineGrid**](https://msdn.microsoft.com/library/windows/apps/BR242756) として使用されている。
+-   `CacheMode="BitmapCache"` が画像要素またはいずれかの親要素で設定されている。
+-   イメージ ブラシが四角形以外である (テキストや図形に適用する場合など)。
 
-In the above scenarios, setting an explicit decode size is the only way to achieve memory savings.
+上記のシナリオでメモリの節約を実現するための方法は、明示的にデコード サイズを設定することだけです。
 
-You should always attach a [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/BR243235) to the live tree before setting the source. Any time an image element or brush is specified in markup, this will automatically be the case. Examples are provided below under the heading "Live tree examples". You should always avoid using [**SetSource**](https://msdn.microsoft.com/library/windows/apps/BR243255) and instead use [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522) when setting a stream source. And it's a good idea to avoid hiding image content (either with zero opacity or with collapsed visibility) while waiting for the [**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.imageopened.aspx) event to be raised. Doing this is a judgment call: you won't benefit from automatic right-sized decoding if it's done. If your app must hide image content initially then it should also set the decode size explicitly if possible.
+ソースを設定する前に、常に [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/BR243235) をライブ ツリーにアタッチする必要があります。 画像要素またはブラシがマークアップで指定されているときは、常にこれが自動的に適用されます。 例については、後の「ライブ ツリーの例」という見出しのトピックをご覧ください。 ストリーム ソースを設定する場合は、常に [**SetSource**](https://msdn.microsoft.com/library/windows/apps/BR243255) を使わずに、代わりに [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522) を使います。 [
+            **ImageOpened**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.imageopened.aspx) イベントの発生を待機している間、画像コンテンツを非表示にする (不透明度を 0 にしたり、表示を折りたたむ) ことを回避することをお勧めします。 これを行うかどうかは議論の余地があります。これを行った場合、自動的に適切なサイズに調整されたデコードのメリットが得られません。 アプリで最初に画像コンテンツを非表示にする必要がある場合、可能であれば、明示的にデコード サイズも設定してください。
 
-**Live tree examples**
+**ライブ ツリーの例**
 
-Example 1 (good)—Uniform Resource Identifier (URI) specified in markup.
+例 1 (良い例): マークアップで指定された Uniform Resource Identifier (URI)。
 
 ```xml
 <Image x:Name="myImage" UriSource="Assets/cool-image.png"/>
 ```
 
-Example 2 markup—URI specified in code-behind.
+例 2 マークアップ: 分離コードで指定された URI。
 
 ```xml
 <Image x:Name="myImage"/>
 ```
 
-Example 2 code-behind (good)—connecting the BitmapImage to the tree before setting its UriSource.
+例 2 分離コード (良い例): UriSource を設定する前に、ツリーに BitmapImage を接続する。
 
 ```vb
 var bitmapImage = new BitmapImage();
@@ -210,7 +230,7 @@ myImage.Source = bitmapImage;
 bitmapImage.UriSource = new URI("ms-appx:///Assets/cool-image.png", UriKind.RelativeOrAbsolute);
 ```
 
-Example 2 code-behind (bad)—setting the the BitmapImage's UriSource before connecting it to the tree.
+例 2 分離コード (悪い例): ツリーに BitmapImage を接続する前に、BitmapImage の UriSource を設定する。
 
 ```vb
 var bitmapImage = new BitmapImage();
@@ -218,43 +238,47 @@ bitmapImage.UriSource = new URI("ms-appx:///Assets/cool-image.png", UriKind.Rela
 myImage.Source = bitmapImage;
 ```
 
-### Caching optimizations
+### キャッシュの最適化
 
-Caching optimizations are in effect for images that use [**UriSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.urisource.aspx) to load content from an app package or from the web. The URI is used to uniquely identify the underlying content, and internally the XAML framework will not download or decode the content multiple times. Instead, it will use the cached software or hardware resources to display the content multiple times.
+キャッシュの最適化は、[**UriSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.urisource.aspx) を使って、アプリ パッケージまたは Web からコンテンツを読み込む画像について有効です。 URI は基になるコンテンツを一意に識別するために使用され、XAML フレームワークは内部でコンテンツを複数回ダウンロードまたはデコードしません。 代わりに、キャッシュされたソフトウェアまたはハードウェア リソースを使用して、コンテンツが複数回表示されます。
 
-The exception to this optimization is if the image is displayed multiple times at different resolutions (which can be specified explicitly or through automatic right-sized decoding). Each cache entry also stores the resolution of the image, and if XAML cannot find an image with a source URI that matches the required resolution then it will decode a new version at that size. It will not, however, download the encoded image data again.
+この最適化の例外は、画像がさまざまな解像度で複数回表示される場合 (これは明示的に指定することも、自動的に適切なサイズに調整されたデコードで指定することもできます) です キャッシュの各エントリには、画像の解像度も格納されます。XAML で必要な解像度に一致するソース URI を持つ画像が見つからない場合は、そのサイズで新しいバージョンがデコードされます。 ただし、エンコードされた画像データをもう一度ダウンロードすることはありません。
 
-Consequently, you should embrace using [**UriSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.urisource.aspx) when loading images from an app package, and avoid using a file stream and [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522) when it's not required.
+そのため、アプリ パッケージから画像を読み込む場合は、[**UriSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.urisource.aspx) の使用を採用する必要があります。また、必要ではない場合に、ファイル ストリームと [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522) を使用しないでください。
 
-### Images in virtualized panels (ListView, for instance)
+### 仮想化されたパネル内の画像 (ListView など)
 
-If an image is removed from the tree—because the app explicitly removed it, or because it’s in a modern virtualized panel and was implicitly removed when scrolled out of view—then XAML will optimize memory usage by releasing the hardware resources for the image since they are no longer required. The memory is not released immediately, but rather is released during the frame update that occurs after one second of the image element no longer being in the tree.
+画像がツリーから削除された場合 (アプリによって明示的に削除された場合、最新の仮想化されたパネルにある場合やビューの外部にスクロールされて暗黙的に削除された場合)、XAML では、不要になった画像のハードウェア リソースを解放することによってメモリ使用量を最適化します。 メモリはすぐに解放されるのではなく、画像要素がツリーに存在しなくなってから 1 秒後に実行されるフレームの更新時にリリースされます。
 
-Consequently, you should strive to use modern virtualized panels to host lists of image content.
+そのため、最新の仮想化されたパネルを使用して、画像コンテンツの一覧をホストする必要があります。
 
-### Software-rasterized images
+### ソフトウェアでラスタライズされた画像
 
-When an image is used for a non-rectangular brush or for a [**NineGrid**](https://msdn.microsoft.com/library/windows/apps/BR242756), the image will use a software rasterization path, which will not scale images at all. Additionally, it must store a copy of the image in both software and hardware memory. For instance, if an image is used as a brush for an ellipse then the potentially large full image will be stored twice internally. When using **NineGrid** or a non-rectangular brush, then, your app should pre-scale its images to approximately the size they will be rendered at.
+画像が四角形以外のブラシや [**NineGrid**](https://msdn.microsoft.com/library/windows/apps/BR242756) 用に使用されている場合、画像の拡大縮小が行われない、ソフトウェア ラスタライズ パスが使用されます。 さらに、ソフトウェアとハードウェアの両方のメモリに画像のコピーを保存して必要があります。 たとえば、画像が楕円形のブラシとして使われる場合、大きい可能性がある画像全体は内部で 2 回保存されます。 **NineGrid** または四角形以外のブラシを使用する場合は、アプリで画像を事前に拡大縮小し、レンダリング時のおよそのサイズにしておく必要があります。
 
-### Background thread image-loading
+### バックグラウンド スレッドによる画像の読み込み
 
-XAML has an internal optimization that allows it to decode the contents of an image asynchronously to a surface in hardware memory without requiring an intermediate surface in software memory. This reduces peak memory usage and rendering latency. This feature will be disabled if any of the following conditions are met.
+XAML には内部の最適化機能があり、ソフトウェア メモリ内の中間サーフェスを使用せずに、ハードウェア メモリ内のサーフェスに非同期的に画像の内容をデコードすることができます。 これにより、ピーク メモリ使用量とレンダリングの待機時間が減少します。 次の条件のいずれかが満たされる場合、この機能は無効になります。
 
--   The image is used as a [**NineGrid**](https://msdn.microsoft.com/library/windows/apps/BR242756).
--   `CacheMode="BitmapCache"` is set on the image element or on any parent element.
--   The image brush is non-rectangular (such as when applied to a shape or to text).
+-   画像が [**NineGrid**](https://msdn.microsoft.com/library/windows/apps/BR242756) として使用されている。
+-   `CacheMode="BitmapCache"` が画像要素またはいずれかの親要素で設定されている。
+-   イメージ ブラシが四角形以外である (テキストや図形に適用する場合など)。
 
 ### SoftwareBitmapSource
 
-The [**SoftwareBitmapSource**](https://msdn.microsoft.com/library/windows/apps/Dn997854) class exchanges interoperable uncompressed images between different WinRT namespaces such as [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/BR226176), camera APIs, and XAML. This class obviates an extra copy that would typically be necessary with [**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/BR243259), and that helps reduce peak memory and source-to-screen latency.
+[
+            **SoftwareBitmapSource**](https://msdn.microsoft.com/library/windows/apps/Dn997854) クラスは、さまざまな WinRT 名前空間 ([**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/BR226176) など)、カメラ API、XAML の間で、相互運用可能な非圧縮画像を交換します。 このクラスを使用すると、[**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/BR243259) で通常必要となる余分なコピーが不要になり、ピーク メモリ使用量とソースから画面表示までの待機時間が削減されます。
 
-The [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Dn887358) that supplies source information can also be configured to use a custom [**IWICBitmap**](https://msdn.microsoft.com/library/windows/desktop/Ee719675) to provide a reloadable backing store that allows the app to re-map memory as it sees fit. This is an advanced C++ use case.
+ソース情報を提供する [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Dn887358) は、カスタム [**IWICBitmap**](https://msdn.microsoft.com/library/windows/desktop/Ee719675) を使用するように構成して、再読み込み可能なバッキング ストアを提供することもできます。これにより、アプリは必要に応じてメモリを再マップできます。 これは、高度な C++ の使用事例です。
 
-Your app should use [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Dn887358) and [**SoftwareBitmapSource**](https://msdn.microsoft.com/library/windows/apps/Dn997854) to interoperate with other WinRT APIs that produce and consume images. And your app should use **SoftwareBitmapSource** when loading uncompressed image data instead of using [**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/BR243259).
+画像を生成および使用する他の WinRT API と相互運用するには、アプリで [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Dn887358) と [**SoftwareBitmapSource**](https://msdn.microsoft.com/library/windows/apps/Dn997854) を使う必要があります。 また、アプリで非圧縮画像データを読み込むときには、[**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/BR243259) を使用する代わりに、**SoftwareBitmapSource** を使用する必要があります。
 
-### Use GetThumbnailAsync for thumbnails
+### GetThumbnailAsync を使ったサムネイル
 
-One use case for scaling images is creating thumbnails. Although you could use [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) and [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) to provide small versions of images, UWP provides even more efficient APIs for retrieving thumbnails. [**GetThumbnailAsync**](https://msdn.microsoft.com/library/windows/apps/BR227210) provides the thumbnails for images that have the file system already cached. This provides even better performance than the XAML APIs because the image doesn’t need to be opened or decoded.
+画像を縮小する使用事例として、サムネイルの作成があります。 [
+            **DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) と [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) を使って画像の縮小版を作ることができますが、UWP には、サムネイルを取得するためのもっと効率的な API が用意されています。 [
+              **GetThumbnailAsync**
+            ](https://msdn.microsoft.com/library/windows/apps/BR227210) ファイル システムに既にキャッシュされている画像のサムネイルを提供します。 この方法では、画像を開いたり、デコードしたりする必要がないため、XAML の API よりもパフォーマンスが向上します。
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -294,7 +318,13 @@ One use case for scaling images is creating thumbnails. Although you could use [
 > img.Source = bmp
 > ```
 
-### Decode images once
+### 1 回だけの画像のデコード
 
-To prevent images from being decoded more than once, assign the [**Image.Source**](https://msdn.microsoft.com/library/windows/apps/BR242760) property from an Uri rather than using memory streams. The XAML framework can associate the same Uri in multiple places with one decoded image, but it cannot do the same for multiple memory streams that contain the same data and creates a different decoded image for each memory stream.
+画像が複数回デコードされないようにするには、メモリ ストリームを使わずに、URI から [**Image.Source**](https://msdn.microsoft.com/library/windows/apps/BR242760) プロパティを割り当てます。 XAML フレームワークでは、複数の場所にある同じ URI をデコードされた 1 つの画像に関連付けることができます。しかし、同じデータを含む複数のメモリ ストリームに対しては同じ処理を行うことができず、メモリ ストリームごとにデコードされた画像を作成します。
+
+
+
+
+<!--HONumber=Jun16_HO4-->
+
 

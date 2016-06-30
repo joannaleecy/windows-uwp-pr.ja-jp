@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: リソースとして作成、参照され、ResourceDictionary 内に存在する要素を一意に識別します。
-title: xKey 属性
+description: "リソースとして作成、参照され、ResourceDictionary 内に存在する要素を一意に識別します。"
+title: "xKey 属性"
 ms.assetid: 141FC5AF-80EE-4401-8A1B-17CB22C2277A
+translationtype: Human Translation
+ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
+ms.openlocfilehash: 00d801dc3ebb8894f8e21ba0c1b9f3aecc981f30
+
 ---
 
 # x:Key 属性
@@ -65,6 +69,7 @@ CombiningCharacter::= none
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

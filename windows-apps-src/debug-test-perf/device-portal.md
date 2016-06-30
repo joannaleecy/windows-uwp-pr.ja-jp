@@ -1,8 +1,11 @@
 ---
 author: mcleblanc
 ms.assetid: 60fc48dd-91a9-4dd6-a116-9292a7c1f3be
-title: Windows Device Portal の概要
-description: Windows Device Portal で、ネットワーク経由でリモートから、または USB 接続によって、デバイスの構成と管理を行うための方法を説明します。
+title: "Windows Device Portal の概要"
+description: "Windows Device Portal で、ネットワーク経由でリモートから、または USB 接続によって、デバイスの構成と管理を行うための方法を説明します。"
+ms.sourcegitcommit: c6f00006e656970e4a5bb11e3368faa92cbb8eca
+ms.openlocfilehash: fe4945bf3048a0c38e844a74fa6fc46706085d6d
+
 ---
 # Windows Device Portal の概要
 
@@ -124,6 +127,8 @@ Phone | 開発者モードで有効化 | 80| 443 | localhost:10080
 - **[Providers history]** (プロバイダー履歴): 現在のセッション中に有効になった ETW プロバイダーを表示します。 無効になっているプロバイダーをアクティブ化するには、**[Enable]** (有効にする) をクリックまたはタップします。 履歴をクリアするには、**[Clear]** (クリア) をクリックまたはタップします。
 - **[Events]** (イベント): 選択したプロバイダーの ETW イベントを表形式で一覧表示します。 この表は、リアルタイムで更新されます。 すべての ETW イベントを表から削除するには、表の下にある **[Clear]** (クリア) ボタンをクリックします。 これによってプロバイダーが無効になることはありません。 **[Save to file]** (ファイルに保存) をクリックすると、現在収集されている ETW イベントをローカルの CSV ファイルにエクスポートできます。
 
+ETW トレースの使い方について詳しくは、アプリからリアルタイムのログを収集する方法に関する[ブログの記事](https://blogs.windows.com/buildingapps/2016/06/10/using-device-portal-to-view-debug-logs-for-uwp/)をご覧ください。 
+
 ### パフォーマンス トレース
 
 [Windows Performance Recorder](https://msdn.microsoft.com/library/windows/hardware/hh448205.aspx) (WPR) のトレースをデバイスからキャプチャします。
@@ -147,11 +152,41 @@ Phone | 開発者モードで有効化 | 80| 443 | localhost:10080
 
 デバイス上のネットワーク接続を管理します。  デバイス ポータルに USB 経由で接続している場合を除き、これらの設定を変更するとデバイス ポータルとの接続が切断される可能性があります。
 - **Profiles** (プロファイル): 使用する Wi-Fi プロファイルを選択します。  
-- **Available networks** (利用可能なネットワーク): デバイスで利用可能な Wi-Fi ネットワーク。 ネットワークをクリックまたはタップすると、そのネットワークに接続し、必要に応じてパスキーを提供できます。 注: デバイス ポータルでは Enterprise Authentication はまだサポートされていません。 
+- **Available networks** (利用可能なネットワーク): デバイスで利用可能な Wi-Fi ネットワーク。 ネットワークをクリックまたはタップすると、そのネットワークに接続し、必要に応じてパスキーを提供できます。 注: Device Portal では Enterprise Authentication はまだサポートされていません。 
 
 ![モバイル用 Device Portal](images/device-portal/mob-device-portal-network.png)
 
+## サービスの機能と注意事項
 
-<!--HONumber=May16_HO2-->
+### DNS-SD
+
+Device Portal は DNS-SD を使用して、ローカル ネットワーク上でその存在をアドバタイズします  Device Portal のすべてのインスタンスは、デバイスの種類に関係なく、"WDP._wdp._tcp.local" でアドバタイズします。 サービス インスタンスの TXT レコードは、次の情報を提供します。
+
+キー | 型 | 説明 
+----|------|-------------
+S | int | Device Portal 用のセキュリティで保護されたポート。  0 (ゼロ) の場合、Device Portal は HTTPS 接続をリッスンしていません。 
+D | string | デバイスの種類。  "Windows.*" の形式 (Windows.Xbox、Windows.Desktop など) になります。
+A | string | デバイスのアーキテクチャ。  これは、ARM、x86、AMD64 のいずれかです。  
+T | null 文字で区切られた string のリスト | ユーザーが適用したデバイスのタグ。 使い方については、タグの REST API に関する説明をご覧ください。 リストは 2 つの null で終了します。  
+
+DNS-SD レコードでアドバタイズされる HTTP ポートですべてのデバイスがリッスンしているわけではないため、HTTPS ポートでの接続をお勧めします。 
+
+### CSRF に対する保護とスクリプト
+
+[CSRF 攻撃](https://wikipedia.org/wiki/Cross-site_request_forgery)に対する保護のために、すべての非 GET 要求に一意のトークンが必要です。 このトークン、X-CSRF-Token 要求ヘッダーは、セッション Cookie、CSRF-Token から派生します。 Device Portal の Web UI では、CSRF-Token Cookie が、各要求の X-CSRF-Token にコピーされます。
+
+**重要:** この保護によって、スタンドアロン クライアント (コマンド ライン ユーティリティなど) から REST API を使用できなくなります。 これは 3 つの方法で解決できます。 
+
+1. "auto-" というユーザー名を使用します。 クライアントはユーザー名の前に "auto-" を追加することによって、CSRF に対する保護を迂回できます。 このユーザー名は、ブラウザーから Device Portal にログインするために使用しないでください。サービスが CSRF 攻撃を受ける可能性があります。 例: Device Portal のユーザー名が "admin" である場合、CSRF に対する保護を迂回するために ```curl -u auto-admin:password <args>``` を使用します。 
+
+2. クライアントで cookie-to-header スキームを実装します。 そのためには、GET 要求でセッション Cookie を確立し、それ以降のすべての要求にヘッダーと Cookie の両方を含めます。 
+ 
+3. 認証を無効にして、HTTP を使用します。 CSRF に対する保護は HTTPS エンドポイントにのみ適用されるため、HTTP エンドポイントに接続する場合、上記のいずれの操作も必要ありません。 
+
+**注**: ユーザー名が "auto-" で始まる場合、ブラウザーを使用して Device Portal にログインできません。  
+
+
+
+<!--HONumber=Jun16_HO4-->
 
 

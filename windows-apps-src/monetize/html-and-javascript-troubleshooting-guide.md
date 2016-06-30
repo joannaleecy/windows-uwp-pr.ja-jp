@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 7a61c328-77be-4614-b117-a32a592c9efe
-description: JavaScript/HTML アプリの Microsoft Advertising ライブラリに関する、開発上の一般的な問題に対する解決策について説明します。
-title: HTML と JavaScript のトラブルシューティング ガイド
+description: "JavaScript/HTML アプリの Microsoft Advertising ライブラリに関する、開発上の一般的な問題に対する解決策について説明します。"
+title: "HTML と JavaScript のトラブルシューティング ガイド"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: af4ea6f3360ea85d1c70ec9b757db65ec23c88af
+
 
 ---
 
@@ -141,7 +145,7 @@ title: HTML と JavaScript のトラブルシューティング ガイド
 
 11. **AdControl** がビューポートから隠れていないことを確認します。 **AdControl** は、広告が正常に表示されるように、見える必要があります。
 
-12. [ApplicationId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.applicationid.aspx) と [AdUnitId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.adunitid.aspx) の実際の値は、エミュレーターでのテストに使わないようにしてください。 **AdControl** が想定どおりに機能していることを確認するには、**ApplicationId** と **AdUnitId** のどちらについても、「[テスト モードの値](test-mode-values.md)」にあるテスト ID を使ってください。
+12. [ApplicationId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.applicationid.aspx) と [AdUnitId](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.adunitid.aspx) の実際の値は、エミュレーターでのテストに使わないようにしてください。 **AdControl** が想定どおりに機能していることを確認するには、**ApplicationId** と **AdUnitId** のどちらについても、「[Test mode values (テスト モードの値)](test-mode-values.md)」にあるテスト ID を使ってください。
 
 <span id="html-blackboxblinksdisappears"/>
 ### ブラック ボックスが点滅し、表示されなくなる
@@ -165,7 +169,7 @@ title: HTML と JavaScript のトラブルシューティング ガイド
     </div>
     ```
 
-    ブラック ボックスの原因となる最も一般的なエラーは、"No ad available" です。 このエラーは、要求に対して返される利用可能な広告がないことを意味します。
+    ブラック ボックスの原因となる最も一般的なエラーは、"No ad available" です。 このエラーは、要求から復帰する利用可能な広告がないことを意味します。
 
 3.  **AdControl** は正常に動作しています。 既定では、**AdControl** は広告を表示できない場合に折りたたまれます。 他の要素が同じ親の子である場合、これらの他の要素は折りたたまれた **AdControl** の隙間を埋めるように移動し、次の要求が行われたときに展開できます。
 
@@ -277,7 +281,7 @@ title: HTML と JavaScript のトラブルシューティング ガイド
 
 5.  **AdControl** の親要素を確認します。 親はアクティブな状態で表示されている必要があります。
 
-6.  **ApplicationId** と **AdUnitId** の実際の値は、エミュレーターでのテストに使わないようにしてください。 **AdControl** が想定どおりに機能していることを確認するには、**ApplicationId** と **AdUnitId** のどちらについても、「[テスト モードの値](test-mode-values.md)」にあるテスト ID を使ってください。
+6.  **ApplicationId** と **AdUnitId** の実際の値は、エミュレーターでのテストに使わないようにしてください。 **AdControl** が想定どおりに機能していることを確認するには、**ApplicationId** と **AdUnitId** のどちらについても、「[Test mode values (テスト モードの値)](test-mode-values.md)」にあるテスト ID を使ってください。
 
 <span id="js-blackboxblinksdisappears"/>
 ### ブラック ボックスが点滅し、表示されなくなる
@@ -378,6 +382,7 @@ title: HTML と JavaScript のトラブルシューティング ガイド
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

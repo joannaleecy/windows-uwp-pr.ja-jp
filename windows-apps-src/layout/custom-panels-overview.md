@@ -1,13 +1,17 @@
 ---
 author: Jwmsft
-Description: 'Panel クラスからカスタム クラスを取得して、XAML レイアウトのカスタム パネルを定義できます。'
-MS-HAID: 'dev\_ctrl\_layout\_txt.xaml\_custom\_panels\_overview'
-MSHAttr: 'PreferredLib:/library/windows/apps'
+Description: "Panel クラスからカスタム クラスを取得して、XAML レイアウトのカスタム パネルを定義できます。"
+MS-HAID: dev\_ctrl\_layout\_txt.xaml\_custom\_panels\_overview
+MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: XAML カスタム パネルの概要
+title: "XAML カスタム パネルの概要"
 ms.assetid: 0CD395CD-E2AB-429D-BB49-56A71C5CC35D
 label: XAML custom panels overview
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 8fba13d28f885d89d5b115eebf1a2e75abb8c890
+
 ---
 
 # XAML カスタム パネルの概要
@@ -32,7 +36,7 @@ template: detail.hbs
 -   [
             **FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706)、[**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911)、および [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) のその他のすべての API ([**Height**](https://msdn.microsoft.com/library/windows/apps/br208718)、[**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) など)。 これらのプロパティの値は、レイアウト オーバーライドで参照することがありますが、仮想値ではないため、オーバーライドしたり、置き換えたりすることはありません。
 
-ここでは、カスタム パネルがレイアウトで可能な動作および必要な動作についてのすべての可能性を考慮できるように、XAML レイアウトの概念について説明します。 すぐに作業を開始できるようにカスタム パネルの実装例を参照する場合は、「[BoxPanel、カスタム パネルの例](boxpanel-example-custom-panel.md)」を参照してください
+ここでは、カスタム パネルがレイアウトで可能な動作および必要な動作についてのすべての可能性を考慮できるように、XAML レイアウトの概念について説明します。 すぐに作業を開始できるようにカスタム パネルの実装例を参照する場合は、「[BoxPanel、カスタム パネルの例](boxpanel-example-custom-panel.md)」を参照してください。
 
 ## **Children** プロパティ
 
@@ -47,10 +51,10 @@ template: detail.hbs
 </local:CustomPanel>
 ```
 
-XAML パーサーがこのマークアップを読み取るときに、[**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) は、すべての [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) 派生型の XAML コンテンツ プロパティであると認識されるため、パーサーは、[**Children** プロパティの [**UIElementCollection**](https://msdn.microsoft.com/library/windows/apps/br227633) 値に 2 つの **Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 要素を追加します。 XAML コンテンツ プロパティにより、UI 定義の XAML マークアップで親子関係を効率化しやすくなります。 XAML コンテンツ プロパティの詳細と、XAML の解析時のコレクション プロパティの設定方法については、「[基本的な XAML 構文のガイド](https://msdn.microsoft.com/library/windows/apps/mt185596)」を参照してください
+XAML パーサーがこのマークアップを読み取るときに、[**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) は、すべての [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) 派生型の XAML コンテンツ プロパティであると認識されるため、パーサーは、[**Children** プロパティの [**UIElementCollection**](https://msdn.microsoft.com/library/windows/apps/br227633) 値に 2 つの **Button**](https://msdn.microsoft.com/library/windows/apps/br209265) 要素を追加します。 XAML コンテンツ プロパティにより、UI 定義の XAML マークアップで親子関係を効率化しやすくなります。 XAML コンテンツ プロパティの詳細と、XAML の解析時のコレクション プロパティの設定方法については、「[基本的な XAML 構文のガイド](https://msdn.microsoft.com/library/windows/apps/mt185596)」を参照してください。
 
 [
-            **Children**](https://msdn.microsoft.com/library/windows/apps/br227514) プロパティの値を維持しているコレクション型は [**UIElementCollection**](https://msdn.microsoft.com/library/windows/apps/br227633) クラスです。 **UIElementCollection** は、適用された項目の型として [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) を使う、厳密に型指定されたコレクションです。 **UIElement** は、多くの実用的な UI 要素型によって継承されている基本型であるため、ここでは、型が意図的に緩やかに適用されています。 ただし、[**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) が [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) の直接の子になることができない点は適用されます。これは一般に、UI に表示され、レイアウトに含まれると予想されている要素のみが、**Panel** の子要素となることを意味します
+            **Children**](https://msdn.microsoft.com/library/windows/apps/br227514) プロパティの値を維持しているコレクション型は [**UIElementCollection**](https://msdn.microsoft.com/library/windows/apps/br227633) クラスです。 **UIElementCollection** は、適用された項目の型として [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) を使う、厳密に型指定されたコレクションです。 **UIElement** は、多くの実用的な UI 要素型によって継承されている基本型であるため、ここでは、型が意図的に緩やかに適用されています。 ただし、[**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) が [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) の直接の子になることができない点は適用されます。これは一般に、UI に表示され、レイアウトに含まれると予想されている要素のみが、**Panel** の子要素となることを意味します。
 
 通常、XAML 定義では、カスタム パネルは、[**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) プロパティの特性をそのまま使用して、あらゆる [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) 子要素を受け入れます。 高度なシナリオとしては、レイアウトのオーバーライドでコレクションの反復処理を行う場合に、子要素の型の詳細な確認をサポートできます。
 
@@ -148,7 +152,7 @@ protected override Size MeasureOverride(Size availableSize)
 -   [
             **MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) の実装のもう 1 つの一般的な間違いは、新しい既定の [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) (高さと幅の値が 0) を返すことです。 その値が開始値となる場合もあります。また、どの子も表示されないことがパネルで設定されているために、それが正しい値である場合があります。 ただし、既定の **Size** は、パネルでは、ホストによって適切なサイズに調整されなくなります。 UI でスペースを必要としないため、スペースが割り当てられず、表示されません。 これ以外のパネルのコードはすべて適切に機能する可能性がありますが、高さと幅がゼロで構成されている場合は、そのパネルも、そのコンテンツも表示されません。
 -   オーバーライド内では、子要素を [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) にキャストしないようにし、レイアウトの結果としての集計プロパティ、特に [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) と [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) を使ってください。 ほとんどの一般的なシナリオでは、子の [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) 値をロジックの基礎にすることができます。こうすると、子要素のプロパティのうち、[**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) または [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) に関連するものはいずれも必要ではなくなります。 イメージ ファイルの自然なサイズなどのように、要素の型とその詳細情報がわかっている特殊なケースでは、レイアウト システムによってアクティブに変更される値ではないため、要素の特殊な情報を利用できます。 レイアウトによる集計プロパティをレイアウト ロジックの一部に含めると、意図しないレイアウト ループが定義される危険性が著しく増大します。 このようなループを定義すると、有効なレイアウトを作成できなくなるため、ループから回復できない場合は、システムが [**LayoutCycleException**](https://msdn.microsoft.com/library/windows/apps/hh673799) をスローする可能性があります。
--   パネルは、通常、使用可能なスペースを複数の子要素間で分割しますが、その分割方法はさまざまです。 たとえば、[**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) は、スター サイズ指定とピクセル値の両方をサポートし、[**RowDefinition**](https://msdn.microsoft.com/library/windows/apps/br227606) 値と [**ColumnDefinition**](https://msdn.microsoft.com/library/windows/apps/br209324) 値を使って **Grid** セルへとスペースを分割するレイアウト ロジックを実装します。 これらがピクセル値である場合は、それぞれの子に使用可能なサイズが既にわかっているため、これが、グリッド スタイルの [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) の入力サイズとして渡されます
+-   パネルは、通常、使用可能なスペースを複数の子要素間で分割しますが、その分割方法はさまざまです。 たとえば、[**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) は、スター サイズ指定とピクセル値の両方をサポートし、[**RowDefinition**](https://msdn.microsoft.com/library/windows/apps/br227606) 値と [**ColumnDefinition**](https://msdn.microsoft.com/library/windows/apps/br209324) 値を使って **Grid** セルへとスペースを分割するレイアウト ロジックを実装します。 これらがピクセル値である場合は、それぞれの子に使用可能なサイズが既にわかっているため、これが、グリッド スタイルの [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) の入力サイズとして渡されます。
 -   パネル自体で、予約されたスペースを項目間の余白として使用できます。 これを行う場合は、[**Margin**](https://msdn.microsoft.com/library/windows/apps/br208724) とあらゆる **Padding** プロパティのいずれとも異なるプロパティとして測定値を公開するようにします。
 -   要素には、前のレイアウト パスに基づき、[**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) プロパティと [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) プロパティの値がある場合があります。 値が変化する場合、実行する特別なロジックがあるが、パネルのロジックがイベント処理で変化を確認する必要がなければ、アプリの UI コードで要素に [**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/br208722) のハンドラーを設定できます。 レイアウト システムは既に、レイアウトを再実行するタイミングを決定しています。これは、レイアウト関連プロパティの値が変化し、適切な場合は、パネルの [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) または [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) が自動的に呼び出されるためです。
 
@@ -189,7 +193,7 @@ protected override Size ArrangeOverride(Size finalSize)
             **Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) などのスペース分割のパネルには、使用可能なスペースをセルに分割する数学演算があり、各セルには、そのコンテンツが配置され、位置調整される場所に関する x-y 値があります。 [
             **StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635) などのアダプティブ パネルでは、コンテンツの向きとサイズに合わせてパネル自体を拡大する場合があります。
 
-直接制御して [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914) に渡すもの以外にも、レイアウトの要素の位置に影響するものがあります。 これらは、すべての [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 派生型に一般的な **Arrange** の内部ネイティブ実装によるもので、この実装は、テキスト要素などのあるその他の型によって拡張されます。 たとえば、要素には余白と配置を含めることができ、一部の要素には、パディングを含めることができます。 これらのプロパティは、多くの場合、相互に作用します。 詳しくは、「[配置、余白、およびパディング](alignment-margin-padding.md)」をご覧ください
+直接制御して [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914) に渡すもの以外にも、レイアウトの要素の位置に影響するものがあります。 これらは、すべての [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 派生型に一般的な **Arrange** の内部ネイティブ実装によるもので、この実装は、テキスト要素などのあるその他の型によって拡張されます。 たとえば、要素には余白と配置を含めることができ、一部の要素には、パディングを含めることができます。 これらのプロパティは、多くの場合、相互に作用します。 詳しくは、「[配置、余白、およびパディング](alignment-margin-padding.md)」をご覧ください。
 
 ## パネルおよびコントロール
 
@@ -198,7 +202,7 @@ protected override Size ArrangeOverride(Size finalSize)
 
 ユーザーがアクセスできる対話式操作がある場合は、パネルではなく、カスタム コントロールを作る必要があります。 たとえば、クリッピングを防ぐことが目的である場合でも、パネルが、表示するコンテンツにスクロール ビューポートを追加しないようにします。スクロールバーや親指などは、対話式のコントロール パーツであるためです (最終的には、コンテンツにスクロール バーが含まれる場合がありますが、これは、子のロジックで実行されるようにする必要があります。 レイアウト処理としてスクロールを追加して強制的に実行しないでください)。コントロールのコンテンツを表示するには、コントロールを作成し、そのコントロールのビジュアル ツリーで重要な役割を果たすカスタム パネルを作ることもできます。 ただし、コントロールとパネルは個別のコード オブジェクトである必要があります。
 
-コントロールとパネルを区別することが重要な理由の 1 つは、Microsoft UI オートメーションとアクセシビリティです。 パネルは、論理的な動作ではなく、視覚的レイアウト動作を提供します。 UI 要素が視覚的にどのように表示されるかは、通常はアクセシビリティのシナリオで重要である UI の要素ではありません。 アクセシビリティでは、UI を理解するうえで論理的に重要なアプリの構成要素を公開します。 操作が必要な場合は、コントロールが UI オートメーション インフラストラクチャに操作の可能性を公開する必要があります。 詳しくは、「[カスタム オートメーション ピア](https://msdn.microsoft.com/library/windows/apps/mt297667)」をご覧ください
+コントロールとパネルを区別することが重要な理由の 1 つは、Microsoft UI オートメーションとアクセシビリティです。 パネルは、論理的な動作ではなく、視覚的レイアウト動作を提供します。 UI 要素が視覚的にどのように表示されるかは、通常はアクセシビリティのシナリオで重要である UI の要素ではありません。 アクセシビリティでは、UI を理解するうえで論理的に重要なアプリの構成要素を公開します。 操作が必要な場合は、コントロールが UI オートメーション インフラストラクチャに操作の可能性を公開する必要があります。 詳しくは、「[カスタム オートメーション ピア](https://msdn.microsoft.com/library/windows/apps/mt297667)」をご覧ください。
 
 ## その他のレイアウト API
 
@@ -210,7 +214,7 @@ protected override Size ArrangeOverride(Size finalSize)
             ](https://msdn.microsoft.com/library/windows/apps/br208989)、[**InvalidateMeasure**](https://msdn.microsoft.com/library/windows/apps/br208930)、および [**InvalidateArrange**](https://msdn.microsoft.com/library/windows/apps/br208929) は、レイアウト パスを開始するメソッドです。 **InvalidateArrange** は、測定パスをトリガーしない場合もありますが、他の 2 つは測定パスをトリガーします。 これらのメソッドは、レイアウト メソッド オーバーライドで呼び出さないでください。呼び出すと、ほとんどの場合、レイアウトのループが発生します。 通常、制御コードも、これらを呼び出す必要はありません。 レイアウトのほとんどの機能は、[**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) などのフレームワーク定義のレイアウト プロパティへの変更を検出することによって自動的にトリガーされます。
 -   [
               **LayoutUpdated**
-            ](https://msdn.microsoft.com/library/windows/apps/br208722) は、要素のレイアウトの機能が変化したときに発生するイベントです。 これは、パネルに固有のイベントではなく、[**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) で定義されています
+            ](https://msdn.microsoft.com/library/windows/apps/br208722) は、要素のレイアウトの機能が変化したときに発生するイベントです。 これは、パネルに固有のイベントではなく、[**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) で定義されています。
 -   [
               **SizeChanged**
             ](https://msdn.microsoft.com/library/windows/apps/br208742) は、レイアウト パスが完了した後にのみ発生するイベントで、[**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) または [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) が、結果として変更されたことを示します。 これは、もう 1 つの [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) イベントです。 [
@@ -232,6 +236,7 @@ protected override Size ArrangeOverride(Size finalSize)
 [配置、余白、およびパディング](alignment-margin-padding.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

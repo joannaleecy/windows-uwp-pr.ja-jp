@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
-Description: 広告の仲介に関連した、開発に関するいくつかの一般的な問題に対する解決策を以下に示します。
-title: 広告の仲介のトラブルシューティング
+Description: "広告の仲介に関連した、開発に関するいくつかの一般的な問題に対する解決策を以下に示します。"
+title: "広告の仲介のトラブルシューティング"
 ms.assetid: 8728DE4F-E050-4217-93D3-588DD3280A3A
+translationtype: Human Translation
+ms.sourcegitcommit: 10dcf3c2b8ea530b94e9c17ada80aaa98e9418fe
+ms.openlocfilehash: f32dc28c9b199c11a1932639f49ab4c29d3e1e8f
+
 ---
 
 # 広告の仲介のトラブルシューティング
@@ -19,7 +23,7 @@ C# または Visual Basic と XAML を使ったユニバーサル Windows プラ
 
 *
               *Microsoft から広告を提供しているときに、AdMediatorControl によって "&lt;*width*
-            &gt; x &lt;*height*&gt; はサポートされていません" というエラーが表示される   Microsoft Advertising は、[Interactive Advertising Bureau (IAB) が推奨する特定の広告サイズ](add-and-use-the-ad-mediator-control.md#supported-ad-sizes-for-microsoft-advertising)のみをサポートします。状況によっては、デザイナーまたは XAML で、広告メディエーターのコントロールの幅と高さをサポートされている広告サイズのいずれかに設定した場合でも、拡大縮小や丸めの問題によって、広告の仲介フレームワークに広告が提供されない可能性があります。この問題を回避するには、コード内で Microsoft Advertising のオプションのパラメーター Width** と **Height** に、サポートされている広告サイズのいずれかを割り当てます。
+            &gt; x &lt;*height*&gt; はサポートされていません" というエラーが表示される** Microsoft Advertising は、[Interactive Advertising Bureau (IAB) が推奨する特定の広告サイズ](add-and-use-the-ad-mediator-control.md#supported-ad-sizes-for-microsoft-advertising)のみをサポートします。状況によっては、デザイナーまたは XAML で、広告メディエーターのコントロールの幅と高さをサポートされている広告サイズのいずれかに設定した場合でも、拡大縮小や丸めの問題によって、広告の仲介フレームワークに広告が提供されない可能性があります。この問題を回避するには、コード内で Microsoft Advertising のオプションのパラメーター **Width** と **Height** に、サポートされている広告サイズのいずれかを割り当てます。
 
 次のコード例では、Microsoft Advertising のオプション パラメーター **Width** と **Height** に 728 x 90 を割り当てる方法を示しています。
 
@@ -70,6 +74,7 @@ AdMediator.config ファイル内の **RefreshRate** 値を変更する場合は
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

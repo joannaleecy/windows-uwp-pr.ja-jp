@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: BasicReaderWriter のコード一式
-description: バイナリ データ ファイル全般の読み書きを行うクラスとメソッドのコード一式です。
+title: "BasicReaderWriter のコード一式"
+description: "バイナリ データ ファイル全般の読み書きを行うクラスとメソッドのコード一式です。"
 ms.assetid: af968edd-df5c-b8e6-479e-bfa9689380fc
+translationtype: Human Translation
+ms.sourcegitcommit: 8a7202f2b860a4b7aa52f44ebd630d73889544a2
+ms.openlocfilehash: 46762d7b7234be9ff7b4c288a09162d4f942a707
+
 ---
 
 # BasicReaderWriter のコード一式
@@ -261,6 +265,7 @@ task<void> BasicReaderWriter::WriteDataAsync(
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

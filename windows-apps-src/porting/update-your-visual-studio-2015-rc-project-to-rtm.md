@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
-description: Microsoft Visual Studio 2015 RC で作成した Windows 10 プロジェクトがある場合、プロジェクト ファイルを Visual Studio 2015 RTM に適した形式に更新するには 2 つの方法があります。
-title: UWP Microsoft Visual Studio 2015 RC プロジェクトを RTM に更新する
+description: "Microsoft Visual Studio 2015 RC で作成した Windows 10 プロジェクトがある場合、プロジェクト ファイルを Visual Studio 2015 RTM に適した形式に更新するには 2 つの方法があります。"
+title: "UWP Microsoft Visual Studio 2015 RC プロジェクトを RTM に更新する"
 ms.assetid: 104E36CE-36DE-4E9C-A944-711C200B44EF
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 9c2b9f164b6578a9e1d269295b3fa0d7a863a6a0
+
 ---
 
 # UWP Microsoft Visual Studio 2015 RC プロジェクトを RTM に更新する
@@ -37,6 +41,7 @@ Visual Studio 2015 RC と Visual Studio 2015 RTM の Windows 10 プロジェク�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

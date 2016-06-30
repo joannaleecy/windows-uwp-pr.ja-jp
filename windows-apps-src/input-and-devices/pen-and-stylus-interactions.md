@@ -6,8 +6,8 @@ ms.assetid: 3DA4F2D2-5405-42A1-9ED9-3A87BCD84C43
 label: Pen and stylus interactions in UWP apps
 template: detail.hbs
 keyword: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas
-ms.sourcegitcommit: 077fcc6ff462a771ed56f875d960e46e6f4420fc
-ms.openlocfilehash: 218fae32f8b63c8fe5499af7d3fe6c1f0404334c
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: e642e6ba5319dce2d78c243ab3c57a9ffcc6902f
 
 ---
 
@@ -47,7 +47,7 @@ Windows Ink プラットフォームでペン デバイスを使うと、自然�
               **IInkD2DRenderer**
             ](https://msdn.microsoft.com/library/mt147263) - 既定の [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) コントロールの代わりに、ユニバーサル Windows アプリの指定した Direct2D デバイス コンテキストにインク ストロークをレンダリングできます。 これにより、手書き入力エクスペリエンスの全面的なカスタマイズが実現されます。
 
-## <span id="inkcanvas"></span><span id="INKCANVAS"></span>InkCanvas による基本的な手書き入力
+## InkCanvas による基本的な手書き入力
 
 
 基本的な手書き入力機能は、ページの任意の場所に [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) を配置するだけで利用できます。
@@ -88,7 +88,7 @@ Windows Ink プラットフォームでペン デバイスを使うと、自然�
 基本的な手書き入力では [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) のことを気にする必要はありませんが、 [
             **InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) の手書き入力動作をカスタマイズしたり構成したりするには、対応する **InkPresenter** オブジェクトにアクセスする必要があります。
 
-## <span id="inkpresenter"></span><span id="INKPRESENTER"></span>InkPresenter による基本的なカスタマイズ
+## InkPresenter による基本的なカスタマイズ
 
 
 [
@@ -201,7 +201,7 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 
 手書き入力と消去以外の機能 (ストロークの選択など) を提供するには、アプリで処理するために [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) では未処理のままパススルーする入力をアプリで識別する必要があります。
 
-## <span id="passthrough"></span><span id="PASSTHROUGH"></span>高度な処理のための入力のパススルー
+## 高度な処理のための入力のパススルー
 
 
 既定では、[**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) はすべての入力をインク ストロークか消去ストロークとして処理します。 これには、セカンダリ ハードウェア アフォーダンス (ペン バレル ボタン、マウスの右ボタンなど) によって変更された入力も含まれます。
@@ -427,7 +427,7 @@ public MainPage()
     }
 ```
 
-## <span id="iinkd2drenderer"></span><span id="IINKD2DRENDERER"></span>カスタム インク レンダリング
+## カスタム インク レンダリング
 
 
 既定では、手書き入力は低待機時間のバックグラウンド スレッドで処理され、描画と同時に "ウェット" レンダリングが行われます。 ストロークが完了すると (ペンまたは指が画面を離れるか、マウスのボタンが離されると)、UI スレッドでストロークが処理されて、[**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) レイヤーへの "ドライ" レンダリングが行われます (アプリケーション コンテンツの上にレンダリングされてウェット インクが置き換えられます)。
@@ -469,7 +469,7 @@ public MainPage()
  
 
 
-## <span id="related_topics"></span>関連記事
+## 関連記事
 
 
 * [ポインター入力の処理](handle-pointer-input.md)
@@ -499,6 +499,6 @@ public MainPage()
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

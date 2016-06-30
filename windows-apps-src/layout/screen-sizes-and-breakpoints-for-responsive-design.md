@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-title: '画面のサイズとレスポンシブ デザインのブレークポイント'
+title: "画面のサイズとレスポンシブ デザインのブレークポイント"
 description: .
 ms.assetid: BF42E810-CDC8-47D2-9C30-BAA19DCBE2DA
 label: Screen sizes and break points
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 153652c9fcc9745bdee087033d65eec2bc860e53
+
 ---
 
 #  画面のサイズとレスポンシブ デザインのブレークポイント
@@ -36,9 +40,9 @@ template: detail.hbs
 <tbody>
 <tr class="odd">
 <td align="left">一般的な画面サイズ (対角線)</td>
-<td align="left">4" ～ 6"&quot;</td>
-<td align="left">7" ～ 12"、またはテレビ</td>
-<td align="left">13" 以上</td>
+<td align="left">4&quot; ～ 6"&quot;</td>
+<td align="left">7&quot; ～ 12&quot;、またはテレビ</td>
+<td align="left">13&quot; 以上</td>
 </tr>
 <tr class="even">
 <td align="left">一般的なデバイス</td>
@@ -94,6 +98,7 @@ template: detail.hbs
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

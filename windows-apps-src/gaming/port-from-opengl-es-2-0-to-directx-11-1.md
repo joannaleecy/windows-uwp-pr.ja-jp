@@ -1,8 +1,11 @@
 ---
 author: mtoepke
-title: OpenGL ES 2.0 から Direct3D 11 への移植
-description: OpenGL ES 2.0 グラフィックス パイプラインを Direct3D 11 と Windows ランタイムに移植するための記事、概要、チュートリアルを紹介します。
+title: "OpenGL ES 2.0 から Direct3D 11 への移植"
+description: "OpenGL ES 2.0 グラフィックス パイプラインを Direct3D 11 と Windows ランタイムに移植するための記事、概要、チュートリアルを紹介します。"
 ms.assetid: 1e1cf668-a15f-0c7b-8daf-3260d27c6d9c
+ms.sourcegitcommit: 814f056eaff5419b9c28ba63cf32012bd82cc554
+ms.openlocfilehash: 40380582a9210cb705a5e7e591d4a8f37c42f8dd
+
 ---
 
 # OpenGL ES 2.0 から Direct3D 11 への移植
@@ -33,8 +36,8 @@ OpenGL ES 2.0 グラフィックス パイプラインを Direct3D 11 と Window
 <td align="left"><p>OpenGL ES 2.0 から Direct3D へのグラフィックス アーキテクチャの移植プロセスを初めて開始する場合は、API 間の主要な違いについて把握しておいてください。 このセクションのトピックは、グラフィックスの処理を Direct3D に移行する際に必ず必要な API の変更と移植戦略を計画するのに役立ちます。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>[OpenGL ES 2.0 からのチュートリアル サンプルの移植](walkthrough-sample-ports-from-opengl-es-2-0.md)</p></td>
-<td align="left"><p>この一連のトピックでは、複雑さの異なるさまざまな OpenGL ES 2.0 グラフィックス パイプラインの移植シナリオについて説明します。</p></td>
+<td align="left"><p>[簡単な OpenGL ES 2.0 レンダラーを Direct3D 11.1 に移植する方法](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)</p></td>
+<td align="left"><p>この移植作業では、基本から始めます。Visual Studio 2015 の DirectX 11 アプリ (ユニバーサル Windows) テンプレートに対応するように、頂点シェーディングされた回転する立方体の簡単なレンダラーを OpenGL ES 2.0 から Direct3D に移植します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[OpenGL ES 2.0 から Direct3D 11.1 への移行のためのリファレンス](opengl-es-2-0-to-directx-11-1-reference.md)</p></td>
@@ -59,6 +62,7 @@ OpenGL ES 2.0 グラフィックス パイプラインを Direct3D 11 と Window
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

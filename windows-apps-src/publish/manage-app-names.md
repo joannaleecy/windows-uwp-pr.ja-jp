@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: アプリについて予約したすべての名前の表示、(他言語用の、またはアプリ名を変更するための) 追加の名前の予約、不要になった予約済みの名前の削除を行います。
-title: アプリ名の管理
+Description: "アプリについて予約したすべての名前の表示、(他言語用の、またはアプリ名を変更するための) 追加の名前の予約、不要になった予約済みの名前の削除を行います。"
+title: "アプリ名の管理"
 ms.assetid: D95A6227-746E-4729-AE55-648A7102401C
+translationtype: Human Translation
+ms.sourcegitcommit: 48952b5d4f2565d06ec79475f88fbabf93fd0f70
+ms.openlocfilehash: e03e99b5de2142c2bcf46ee2aad4a76bb87ee4e5
+
 ---
 
 # アプリ名の管理
@@ -43,6 +47,7 @@ ms.assetid: D95A6227-746E-4729-AE55-648A7102401C
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

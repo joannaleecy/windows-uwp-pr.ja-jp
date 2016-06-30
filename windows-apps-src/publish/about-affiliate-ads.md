@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: アプリで AdMediatorControl または AdControl を使用してバナー広告を表示する場合は、Microsoft アフィリエイト広告をアプリに表示して、広告のフィル レートと収益を増やすことができます。
-title: アフィリエイト広告について
+Description: "アプリで AdMediatorControl または AdControl を使用してバナー広告を表示する場合は、Microsoft アフィリエイト広告をアプリに表示して、広告のフィル レートと収益を増やすことができます。"
+title: "アフィリエイト広告について"
 ms.assetid: 7B5478FB-7E68-4956-82EF-B43C2873E3EF
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 0ac051d5774dadde48e2692683a6bcfae8264d1c
+
 ---
 
 # アフィリエイト広告について
@@ -44,6 +48,7 @@ Microsoft アフィリエイト広告プログラムにオプトインするに�
 * [アフィリエイト パフォーマンス レポート](affiliates-performance-report.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

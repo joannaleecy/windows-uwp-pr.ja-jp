@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: バックグラウンド タスクによるアプリのサポート
-description: このセクションのトピックでは、バックグラウンド タスクでトリガーに応答することによって、ユーザー独自の軽量コードをバックグラウンドで実行する方法について説明します。
+author: TylerMSFT
+title: "バックグラウンド タスクによるアプリのサポート"
+description: "このセクションのトピックでは、バックグラウンド タスクでトリガーに応答することによって、ユーザー独自の軽量コードをバックグラウンドで実行する方法について説明します。"
 ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: 38942aa2a274828cc36677a93d0923beb03060dc
+
 ---
 
 # バックグラウンド タスクによるアプリのサポート
@@ -152,7 +155,7 @@ ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
 [バックグラウンド タスクの進捗状況と完了の監視](monitor-background-task-progress-and-completion.md)
 
 **注**  
-この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブ ドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
+この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
  
 
@@ -187,8 +190,6 @@ ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

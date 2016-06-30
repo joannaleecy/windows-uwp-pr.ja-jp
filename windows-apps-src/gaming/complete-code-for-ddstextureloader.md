@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: DDSTextureLoader のコード一式
-description: メモリから DDS テクスチャを読み込むクラスとメソッドのコード一式です。
+title: "DDSTextureLoader のコード一式"
+description: "メモリから DDS テクスチャを読み込むクラスとメソッドのコード一式です。"
 ms.assetid: ebaf4111-6235-0316-46cf-bc8643851493
+translationtype: Human Translation
+ms.sourcegitcommit: 8a7202f2b860a4b7aa52f44ebd630d73889544a2
+ms.openlocfilehash: 9a842c773ce16e1093a158426b89caf239858f05
+
 ---
 
 # DDSTextureLoader のコード一式
@@ -1221,6 +1225,7 @@ void CreateDDSTextureFromMemory(
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

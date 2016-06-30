@@ -1,8 +1,12 @@
 ---
 author: Mtoepke
-title: Xbox One 開発者モードのアクティブ化
-description: 開発者モードをアクティブ化して、リテール モードと開発者モードを切り替えることができるようにする方法を説明します。
+title: "Xbox One 開発者モードのアクティブ化"
+description: "開発者モードをアクティブ化して、リテール モードと開発者モードを切り替えることができるようにする方法を説明します。"
 area: Xbox
+translationtype: Human Translation
+ms.sourcegitcommit: 7d832fee5bcd3a15cee1e7d8f4c66da9b0afa5e1
+ms.openlocfilehash: 9ad9904150acb00982c96eebeaf010f7023d3320
+
 ---
 
 # Xbox One 開発者モードのアクティブ化
@@ -83,6 +87,7 @@ Xbox One には、*リテール* モード (1) と*開発者*モード (2) の 2
 - [Xbox One の UWP](index.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

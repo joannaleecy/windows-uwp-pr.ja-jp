@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: DXGI 1.3 スワップ チェーンによる遅延の減少
-description: DXGI 1.3 を使って、スワップ チェーンが新しいフレームのレンダリング開始の適切な時間を通知するまで待機することで、実質的なフレーム待機時間を削減します。
+title: "DXGI 1.3 スワップ チェーンによる遅延の減少"
+description: "DXGI 1.3 を使って、スワップ チェーンが新しいフレームのレンダリング開始の適切な時間を通知するまで待機することで、実質的なフレーム待機時間を削減します。"
 ms.assetid: c99b97ed-a757-879f-3d55-7ed77133f6ce
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 174e2918d54a2b03124752d009f43f0cb0c800ca
+
 ---
 
 # DXGI 1.3 スワップ チェーンによる遅延の減少
@@ -162,6 +166,7 @@ Windows でのマルチスレッド プログラミングについて詳しく�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

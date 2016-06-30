@@ -1,8 +1,12 @@
 ---
 author: DBirtolo
 ms.assetid: 454953E1-DD8F-44B7-A614-7BAD8C683536
-title: ジャイロメーターの使用
-description: ジャイロメーターを使ってユーザーの動きの変化を検出する方法を説明します。
+title: "ジャイロメーターの使用"
+description: "ジャイロメーターを使ってユーザーの動きの変化を検出する方法を説明します。"
+translationtype: Human Translation
+ms.sourcegitcommit: 07058b48a527414b76d55b153359712905aa9786
+ms.openlocfilehash: ad76837574b8887bceb135db156e2744542259b0
+
 ---
 # ジャイロメーターの使用
 
@@ -174,6 +178,7 @@ GyrometerReadingChangedEventArgs>(ReadingChanged);
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

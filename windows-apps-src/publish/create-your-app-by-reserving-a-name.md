@@ -1,9 +1,13 @@
 ---
 author: jnHs
-Description: Windows デベロッパー センター ダッシュボードで新しいアプリを作るときは、最初にアプリ名を予約します。 ここでは、アプリ名を予約する方法について説明し、優れたアプリ名を選ぶための推奨事項を紹介します。
-title: 名前の予約によるアプリの作成
-keywords:
+Description: "Windows デベロッパー センター ダッシュボードで新しいアプリを作るときは、最初にアプリ名を予約します。 ここでは、アプリ名を予約する方法について説明し、優れたアプリ名を選ぶための推奨事項を紹介します。"
+title: "名前の予約によるアプリの作成"
+keywords: 
 ms.assetid: 6DC58A9A-DF47-4652-8D13-0AC9289F5950
+translationtype: Human Translation
+ms.sourcegitcommit: 3b65bbaf2498dde7484c055ff86ed09e89bf3405
+ms.openlocfilehash: 5e4933be456bc76eb5923f5c081e8376c43c118b
+
 ---
 
 # 名前の予約によるアプリの作成
@@ -60,6 +64,7 @@ Windows デベロッパー センター ダッシュボードの各アプリの 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

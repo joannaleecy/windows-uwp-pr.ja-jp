@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: ユニバーサル Windows プラットフォーム (UWP) アプリのマルチサンプリング
-description: Direct3D を使って構築されたユニバーサル Windows プラットフォーム (UWP) アプリでマルチサンプリングを使う方法について説明します。
+title: "ユニバーサル Windows プラットフォーム (UWP) アプリのマルチサンプリング"
+description: "Direct3D を使って構築されたユニバーサル Windows プラットフォーム (UWP) アプリでマルチサンプリングを使う方法について説明します。"
 ms.assetid: 1cd482b8-32ff-1eb0-4c91-83eb52f08484
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 7b240de9ab3c7b53877d38eb9097dde25b2a40be
+
 ---
 
 # <span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"></span> ユニバーサル Windows プラットフォーム (UWP) アプリのマルチサンプリング
@@ -206,6 +210,7 @@ Direct3D 機能レベルは、特定の最小サンプル数機能のサポー�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

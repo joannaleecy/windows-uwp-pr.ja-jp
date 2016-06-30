@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: Web ビュー コントロールは、Microsoft Edge レンダリング エンジンを使って、Web コンテンツをレンダリングするアプリにビューを埋め込みます。 また、Web ビュー コントロールでは、ハイパーリンクの表示と動作が可能です。
-title: Web ビュー
+Description: "Web ビュー コントロールは、Microsoft Edge レンダリング エンジンを使って、Web コンテンツをレンダリングするアプリにビューを埋め込みます。 また、Web ビュー コントロールでは、ハイパーリンクの表示と動作が可能です。"
+title: "Web ビュー"
 ms.assetid: D3CFD438-F9D6-4B72-AF1D-16EF2DFC1BB1
 label: Web view
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: dd947d0b55dad56fdd6c684ae236f1c31ac8da86
+
 ---
 
 # Web ビュー
@@ -43,7 +47,7 @@ Web ビュー コントロールは、Microsoft Edge レンダリング エン�
 WebView は Control サブクラスではありませんが、キーボードの入力フォーカスを受け取って、タブ順に関与します。 ただし、[**Focus**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.focus.aspx) メソッド、そして [**GotFocus**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.gotfocus.aspx) イベントと [**LostFocus**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.lostfocus.aspx) イベントを提供しますが、タブ関連のプロパティはありません。 タブ順での位置は、XAML ドキュメントの順序での位置と同じです。 タブ順には、入力フォーカスを受け取ることができる Web ビューのコンテンツの要素がすべて含まれています。 
 
 [
-            **WebView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx) クラスのページの「Event」表からも分かるとおり、Web ビューは、[**KeyDown**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.keydown.aspx) や [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.keyup.aspx)、[**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.pointerpressed.aspx) といった [**UIElement**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.aspx) から継承したユーザー入力イベントのほとんどをサポートしていません。 その代わり、[**InvokeScriptAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.invokescriptasync.aspx) を JavaScript の **eval** 関数と共に使って、HTML イベント ハンドラーを利用したり、HTML イベント ハンドラーの **window.external.notify** を通じて [**WebView.ScriptNotify**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.scriptnotify.aspx) に対応するアプリケーションに通知したりできます。
+            **WebView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx) クラスのページの「Event」表からも分かるとおり、Web ビューは、[**KeyDown**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.keydown.aspx) や [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.keyup.aspx)、[**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.pointerpressed.aspx) といった [**UIElement**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.aspx) から継承したユーザー入力イベントのほとんどをサポートしていません。 その代わり、[**InvokeScriptAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.invokescriptasync.aspx) を JavaScript の **eval** 関数と使って、HTML イベント ハンドラーを利用したり、HTML イベント ハンドラーの **window.external.notify** を通じて [**WebView.ScriptNotify**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.scriptnotify.aspx) に対応するアプリに通知したりできます。
 
 ### コンテンツに移動する
 
@@ -62,7 +66,7 @@ Web ビューの初期コンテンツを設定するには、XAML の [**Source*
 <WebView x:Name="webView3" Source="ms-appx-web:///help/about.html"/>
 ```
 
-Source プロパティはコードで設定できますが、**Navigate** メソッドの 1 つを使ってコードでコンテンツを読み込む方法のほうが一般的です。 
+Source プロパティはコードで設定できますが、それよりも **Navigate** メソッドの 1 つを使ってコンテンツを読み込むほうがよいでしょう。 
 
 Web コンテンツを読み込むには、[**Navigate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigate.aspx) メソッドを http または https スキームを使う **Uri ** と用います。 
 
@@ -72,7 +76,7 @@ webView1.Navigate("http://www.contoso.com");
 
 POST 要求と HTTP ヘッダーを有する URI へと移動するには、[**NavigateWithHttpRequestMessage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatewithhttprequestmessage.aspx) メソッドを使います。 このメソッドは、[**HttpRequestMessage.Method**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httprequestmessage.method.aspx) プロパティの値として [**HttpMethod.Post**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httpmethod.post.aspx) と [**HttpMethod.Get**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httpmethod.get.aspx) のみをサポートします。 
 
-圧縮されておらず、暗号化もされていないコンテンツをアプリの [**LocalFolder**]() データストアまたは [**TemporaryFolder**]() データストアから読み込むには、**Navigate** を [ms-appdata]() スキームを使う **Uri ** と用います。 このスキームを Web ビューがサポートするには、ローカル フォルダーまたは一時フォルダーの下にサブフォルダーを設け、そこにコンテンツを配置する必要があります。 これにより、「ms-appdata:///local/*フォルダー*/*ファイル*.html」や「ms-appdata:///temp/*フォルダー*/*ファイル*.html」といった URI への移動が可能になります (圧縮または暗号化されたファイルを読み込む場合は、「[**NavigateToLocalStreamUri**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetolocalstreamuri.aspx)」をご覧ください)。 
+圧縮されておらず、暗号化もされていないコンテンツをアプリの [**LocalFolder**]() データストアまたは [**TemporaryFolder**]() データストアから読み込むには、**Navigate** を [ms-appdata]() スキームを使う **Uri ** と用います。 このスキームを Web ビューがサポートするには、ローカル フォルダーまたは一時フォルダーの下にサブフォルダーを設け、そこにコンテンツを配置する必要があります。 これにより、「ms-appdata:///local/*フォルダー*/*ファイル*.html」や「ms-appdata:///temp/*フォルダー*/*ファイル*.html」といった URI への移動が可能になります (圧縮され、暗号化されたファイルを読み込む場合は、[**NavigateToLocalStreamUri**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetolocalstreamuri.aspx) に関するページをご覧ください)。 
 
 これらの第 1 レベルのサブフォルダーは、他の第 1 レベルのサブフォルダー内のコンテンツから分離されます。 たとえば「ms-appdata:///temp/folder1/file.html」に移動はできますが、そのファイル内のリンクに「ms-appdata:///temp/folder2/file.html」は指定できません。 ただし、**ms-appx-web** スキームを使ってアプリ パッケージの HTML コンテンツにリンクしたり、**http** または **https** の URI スキームを使って Web コンテンツにリンクしたりはできます。
 
@@ -80,14 +84,14 @@ POST 要求と HTTP ヘッダーを有する URI へと移動するには、[**N
 webView1.Navigate("ms-appdata:///local/intro/welcome.html");
 ```
 
-アプリ パッケージからコンテンツを読み込むには、**Navigate** メソッドを、[**ms-appx-web スキーム**](https://msdn.microsoft.com/library/windows/apps/xaml/jj655406.aspx#ms_appx_web)を使った **Uri** と共に使用します。 
+アプリ パッケージからコンテンツを読み込むには、**Navigate** メソッドを [**ms-appx-web **](https://msdn.microsoft.com/library/windows/apps/xaml/jj655406.aspx#ms_appx_web) スキームを使った **Uri** と用います。 
 
 ```csharp
 webView1.Navigate("ms-appx-web:///help/about.html");
 ```
 
 [
-            **NavigateToLocalStreamUri**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetolocalstreamuri.aspx) メソッドを使うと、カスタム リゾルバーを通じてローカルのコンテンツを読み込むことができます。 これにより、Web ベースのコンテンツをオフライン用にダウンロードないしキャッシングしたり、圧縮ファイルからコンテンツを抽出したりといった高度なシナリオも可能です。
+            **NavigateToLocalStreamUri**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetolocalstreamuri.aspx) メソッドを使えば、カスタム リゾルバーを通じてローカルのコンテンツも読み込めます。 これにより、Web ベースのコンテンツをオフライン用にダウンロードないしキャッシングしたり、圧縮ファイルからコンテンツを抽出したりといった高度なシナリオも可能です。
 
 ### ナビゲーション イベントを処理する
 
@@ -236,9 +240,10 @@ private void webView_PermissionRequested(WebView sender, WebViewPermissionReques
 }
 ```
 
-アプリが許可の要求に応答するにあたってユーザーの入力をはじめ非同期の操作を要求する場合は、[**WebViewPermissionRequest**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.aspx) の [**Defer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.defer.aspx) メソッドを使い、後で処理できる [**WebViewDeferredPermissionRequest**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewdeferredpermissionrequest.aspx) を作成します。 「[**WebViewPermissionRequest.Defer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.defer.aspx)」をご覧ください。 
+アプリが許可の要求に応答するにあたってユーザーの入力をはじめ非同期の操作を要求する場合は、[**WebViewPermissionRequest**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.aspx) の [**Defer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.defer.aspx) メソッドを使い、後で処理できる [**WebViewDeferredPermissionRequest**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewdeferredpermissionrequest.aspx) を作成します。 [
+            **WebViewPermissionRequest.Defer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.defer.aspx) に関するページをご覧ください。 
 
-Web ビューでホストされている Web サイトからユーザーが安全にログアウトする必要がある場合や、セキュリティが重要となる場合には、静的メソッドである [**ClearTemporaryWebDataAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cleartemporarywebdataasync.aspx) を呼び出し、ローカルにキャッシュされたコンテンツを Web ビュー セッションから消去します。 これにより、悪意あるユーザーが重要なデータにアクセスするのを防ぎます。 
+Web ビューでホストされている Web サイトからユーザーが安全にログアウトしなければならない場合や、セキュリティが重要であるような場合は、静的メソッドである [**ClearTemporaryWebDataAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cleartemporarywebdataasync.aspx) を呼び出し、当該の Web ビュー セッションでローカルにキャッシュされたコンテンツを消去します。 これにより、悪意あるユーザーが重要なデータにアクセスするのを防ぎます。 
 
 ### Web ビューのコンテンツとインタラクトする
 
@@ -257,7 +262,7 @@ string returnValue = await webView1.InvokeScriptAsync("setDate", args);
 
 **InvokeScriptAsync** を JavaScript の **eval** 関数と使って、Web ページにコンテンツを挿入します。
 
-ここでは、XAML のテキストボックス (`nameTextBox.Text`) のテキストは、ホストされている HTML ページの div に書き込まれます。 
+ここでは、XAML のテキストボックス (`nameTextBox.Text`) のテキストは、`webView1` でホストされている HTML ページの div に書き込まれます。 
 
 ```csharp
 private async void Button_Click(object sender, RoutedEventArgs e)
@@ -267,16 +272,16 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Web ビューのコンテンツのスクリプトでは、文字列型パラメーターと共に **window.external.notify** を使うことで、情報をアプリに戻すことができます。 これらのメッセージを受け取るには、[**ScriptNotify**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.scriptnotify.aspx) イベントを処理します。 
+Web ビューのコンテンツのスクリプトは、文字列型パラメーターの **window.external.notify** を使えば、情報をアプリに戻せます。 これらのメッセージを受け取るには、[**ScriptNotify**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.scriptnotify.aspx) イベントを処理します。 
 
 外部の Web ページを有効にして、window.external.notify を呼び出した際に **ScriptNotify** イベントを発するには、当該のページの URI をアプリの宣言の **ApplicationContentUriRules** セクションに含める必要があります (これは、Package.appxmanifest デザイナーの [コンテンツ URI] タブにある Microsoft Visual Studio で可能です)。この一覧にある URI は HTTPS を使う必要があります。また、サブドメインのワイルドカード (たとえば、`https://*.microsoft.com`) を含めることはできますが、ドメインのワイルドカード (たとえば、`https://*.com` や `https://*.*`) を含めることはできません。 マニフェスト要件は、アプリ パッケージから生成されたコンテンツには適用されず、ms-local-stream:// URI を使うか、[**NavigateToString**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetostring.aspx) で読み込まれます。 
 
-### Web ビューで Windows ランタイムにアクセスする
+### Web ビューの Windows ランタイムにアクセスする
 
 [
             **AddWebAllowedObject**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.addweballowedobject.aspx) メソッドを使うと、Windows ランタイム コンポーネントから Web ビューの JavaScript コンテンツにネイティブ クラスのインスタンスを挿入できます。 それにより、その Web ビューの JavaScript コンテンツにあるオブジェクトの、ネイティブのメソッドやプロパティ、イベントにフルにアクセスできるようになります。 クラスは、[**AllowForWeb**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.foundation.metadata.allowforwebattribute.aspx) 属性で修飾する必要があります。 
 
-たとえば、次のコードは、Windows ランタイム コンポーネントからインポートされた `MyClass` のインスタンスを Web ビューに挿入します。
+たとえば、このコードは、Windows ランタイム コンポーネントから Web ビューにインポートされた `MyClass` のインスタンスを挿入します。
 
 ```csharp
 private void webView_NavigationStarting(WebView sender, WebViewNavigationStartingEventArgs args) 
@@ -288,9 +293,9 @@ private void webView_NavigationStarting(WebView sender, WebViewNavigationStartin
 }
 ```
 
-詳しくは、「[**WebView.AddWebAllowedObject**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.addweballowedobject.aspx)」をご覧ください。 
+詳しくは、[**WebView.AddWebAllowedObject**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.addweballowedobject.aspx) に関するページをご覧ください。 
 
-また、Web ビューの信頼できる JavaScript コンテンツは、Windows ランタイム API に直接アクセスすることができます。 これにより、Web ビューでホストされている Web アプリの強力なネイティブ機能が利用できます。 この機能を有効にするには、WindowsRuntimeAccess を "all" に設定して、信頼できるコンテンツの URI が Package.appxmanifest のアプリの ApplicationContentUriRules でホワイトリスト化される必要があります。 
+さらに、Web ビューの信頼できる JavaScript コンテンツは、Windows ランタイム API に直接アクセスも許されています。 これにより、Web ビューでホストされている Web アプリの強力なネイティブ機能が利用できます。 この機能を有効にするには、WindowsRuntimeAccess を "all" に設定して、信頼できるコンテンツの URI が Package.appxmanifest のアプリの ApplicationContentUriRules でホワイトリスト化される必要があります。 
 
 この例は、アプリ マニフェストのセクションを示しています。 ここでは、ローカル URI が Windows ランタイムへのアクセスを与えられます。 
 
@@ -348,6 +353,7 @@ UI スレッドから外れてコンテンツをホストしている Web ビュ
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

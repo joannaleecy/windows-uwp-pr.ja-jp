@@ -1,8 +1,11 @@
 ---
-author: PatrickFarley
-title: 地図と位置情報の概要
-description: このセクションでは、アプリで地図の表示、マップ サービスの使用、位置情報の検索、ジオフェンスのセットアップを行う方法について説明します。 また、Windows マップ アプリを起動し、特定の地図やルート、ターン バイ ターン方式のルート案内を表示する方法についても説明します。
+author: msatranjr
+title: "地図と位置情報の概要"
+description: "このセクションでは、アプリで地図の表示、マップ サービスの使用、位置情報の検索、ジオフェンスのセットアップを行う方法について説明します。 また、Windows マップ アプリを起動し、特定の地図やルート、ターン バイ ターン方式のルート案内を表示する方法についても説明します。"
 ms.assetid: F4C1F094-CF46-4B15-9D80-C1A26A314521
+ms.sourcegitcommit: a3240047ec77ada0c5f6b5586eee2404353889f6
+ms.openlocfilehash: 829a8d7eb4da810e2353593c03cd5aa4e047173a
+
 ---
 
 # 地図と位置情報の概要
@@ -29,7 +32,7 @@ ms.assetid: F4C1F094-CF46-4B15-9D80-C1A26A314521
 |-------|-------------|
 | [マップ認証キーの要求](authentication-key.md) | [
             **MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) や [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 名前空間のマップ サービスをアプリで使うには、アプリを認証する必要があります。 アプリを認証するには、マップ認証キーを指定する必要があります。 この記事では、[Bing Maps Developer Center](https://www.bingmapsportal.com/) にマップ認証キーを要求し、アプリに追加する方法について説明します。 |
-| [地図の設計ガイドライン](controls-map.md) | マップ コントロールでは、地図および上空からの写真、方向、検索結果、トラフィックを表示できます。 |
+| [マップ コントロール](controls-map.md) | マップ コントロールでは、地図および上空からの写真、方向、検索結果、トラフィックを表示できます。 |
 | [2D、3D、Streetside ビューでの地図の表示](display-maps.md) | [
             **MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) クラスを使って、アプリにカスタマイズできる地図を表示します。 このトピックでは、航空写真 3D ビューと Streetside ビューについても紹介します。 |
 | [関心のあるポイント (POI) の地図への表示](display-poi.md) | プッシュピン、画像、図形、XAML UI 要素を使って、関心のあるポイント (POI) を地図に追加します。 |
@@ -88,6 +91,7 @@ ms.assetid: F4C1F094-CF46-4B15-9D80-C1A26A314521
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

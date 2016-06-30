@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: ゲームのプロジェクト テンプレートとツール
-description: ユニバーサル Windows プラットフォーム (UWP) 用の DirectX ゲームのプログラミングを開始するために必要な手順について説明します。
+title: "ゲームのプロジェクト テンプレートとツール"
+description: "ユニバーサル Windows プラットフォーム (UWP) 用の DirectX ゲームのプログラミングを開始するために必要な手順について説明します。"
 ms.assetid: d5afd5d3-ad01-0f16-3ddf-2c4eb86b68a7
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: b7b4cba0c88a914c3d0da4cf79adb51bcad2307f
+
 ---
 
 # ゲームのプロジェクト テンプレートとツール
@@ -18,7 +22,7 @@ ms.assetid: d5afd5d3-ad01-0f16-3ddf-2c4eb86b68a7
 ## Visual Studio の入手
 
 
-Microsoft Visual Studio 2015 をダウンロードしてインストールします。
+[Microsoft Visual Studio 2015 をダウンロードしてインストールします](https://www.visualstudio.com/vs-2015-product-editions)。
 
 <table>
 <colgroup>
@@ -63,7 +67,7 @@ Microsoft Visual Studio 2015 をダウンロードしてインストールし�
 -   [Marble Maze、C++ と DirectX でのユニバーサル Windows プラットフォーム ゲームの開発](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
 > **注**  
-この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブ ドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
+この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
  
 
@@ -76,6 +80,7 @@ Microsoft Visual Studio 2015 をダウンロードしてインストールし�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
-title: プログラミング言語の選択
+title: "プログラミング言語の選択"
 ms.assetid: 6CA46432-BF03-4B20-9187-565B3503B497
-description: プログラミング言語の選択
+description: "プログラミング言語の選択"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 10fa4a349621c8e7b248c7daf4d7cdf967e25255
+
 ---
 
 # はじめに: プログラミング言語の選択
@@ -140,6 +144,7 @@ C# は習得が容易な言語であり、.NET を構成する多くのサポー
 [はじめに: Visual Studio の操作方法](getting-started-getting-around-in-visual-studio.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

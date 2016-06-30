@@ -1,8 +1,12 @@
 ---
 author: TylerMSFT
 ms.assetid: 23FE28F1-89C5-4A17-A732-A722648F9C5E
-title: 非同期プログラミング
-description: このトピックでは、ユニバーサル Windows プラットフォーム (UWP) での非同期プログラミングと、C#、Microsoft Visual Basic .NET、Visual C\+\+ コンポーネント拡張機能 (C\+\+/CX)、および JavaScript における非同期プログラミングの表現について説明します。
+title: "非同期プログラミング"
+description: "このトピックでは、ユニバーサル Windows プラットフォーム (UWP) での非同期プログラミングと、C#、Microsoft Visual Basic .NET、Visual C\\+\\+ コンポーネント拡張機能 (C\\+\\+/CX)、および JavaScript における非同期プログラミングの表現について説明します。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 8d9a17beb9c637e0a780020ef1cbb7b0b0bddf38
+
 ---
 # 非同期プログラミング
 
@@ -78,6 +82,7 @@ promise オブジェクトは、将来取得されたときに値を表します
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

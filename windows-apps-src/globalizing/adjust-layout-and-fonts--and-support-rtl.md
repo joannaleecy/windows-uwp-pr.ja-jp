@@ -1,10 +1,14 @@
 ---
 author: DelfCo
-Description: RTL (右から左) のテキストの方向を含め、複数の言語のレイアウトやフォントをサポートするアプリを開発します。
-title: レイアウトやフォントの調整と RTL のサポート
+Description: "RTL (右から左) のテキストの方向を含め、複数の言語のレイアウトやフォントをサポートするアプリを開発します。"
+title: "レイアウトやフォントの調整と RTL のサポート"
 ms.assetid: F2522B07-017D-40F1-B3C8-C4D0DFD03AC3
 label: Adjust layout and fonts, and support RTL
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 989d810724c925a5bcbebf5f7fb301636905fff9
+
 ---
 
 # レイアウトやフォントの調整と RTL のサポート
@@ -116,6 +120,7 @@ JavaScript を使った Windows ストア アプリで ui-light.css または ui
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

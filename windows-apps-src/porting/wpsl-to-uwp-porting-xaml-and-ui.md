@@ -1,8 +1,11 @@
 ---
 author: mcleblanc
-description: 宣言型 XAML マークアップ形式での UI の定義は、Windows Phone Silverlight からユニバーサル Windows プラットフォーム (UWP) アプリに非常に適切に変換されます。
-title: Windows Phone Silverlight の XAML と UI の UWP への移植
+description: "宣言型 XAML マークアップ形式での UI の定義は、Windows Phone Silverlight からユニバーサル Windows プラットフォーム (UWP) アプリに非常に適切に変換されます。"
+title: "Windows Phone Silverlight の XAML と UI の UWP への移植"
 ms.assetid: 49aade74-5dc6-46a5-89ef-316dbeabbebe
+ms.sourcegitcommit: de5420b45832a482d08e5e7ede436407f7dbf2af
+ms.openlocfilehash: a34133b42872ce949644dc951255e6214164adad
+
 ---
 
 #  Windows Phone Silverlight の XAML と UI の UWP への移植
@@ -23,7 +26,7 @@ Windows Phone Silverlight の型に対応する UWP の型を検索する一般�
 ## XAML 名前空間のプレフィックス宣言
 
 
-ビュー (ビュー モデル インスタンスまたは値コンバーターなど) でカスタム型のインスタンスを使う場合、XAML マークアップに XAML 名前空間のプレフィックス宣言が含まれます。 これらの構文は、Windows Phone Silverlight と UWP で異なります。 例をいくつか紹介します。
+ビュー、おそらくビュー モデル インスタンスまたは値コンバーターでカスタム型のインスタンスを使う場合、XAML マークアップに XAML 名前空間のプレフィックス宣言が含まれます。 これらの構文は、Windows Phone Silverlight と UWP で異なります。 例をいくつか紹介します。
 
 ```xml
     xmlns:ContosoTradingCore="clr-namespace:ContosoTradingCore;assembly=ContosoTradingCore"
@@ -67,7 +70,7 @@ UWP で、"System" プレフィックス宣言を省略し、(既に宣言され
 
 古い using ディレクティブをすべて削除し、新しい using ディレクティブを追加したら、Visual Studio の [**using の整理**] コマンドを使ってディレクティブを並べ替えて、未使用のディレクティブを削除できます。
 
-命令型コードの修正がパラメーターの型の変更のみになることもあります。 一方、Windows ストア アプリ用 .NET API ではなく、UWP API を使うことが必要になる場合もあります。 サポートされる API を特定するには、この移植ガイドの他の部分と共に、「[Windows ストア アプリ用 .NET の概要](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)」および「[Windows ランタイム リファレンス](https://msdn.microsoft.com/library/windows/apps/br211377)」をご覧ください。
+命令型コードの修正がパラメーターの型の変更のみになることもあります。 一方、Windows ストア アプリ用 .NET API ではなく、UWP API を使うことが必要になる場合もあります。 サポートされる API を識別するには、この移植ガイドの残る部分と共に、「[Windows ストア アプリ用 .NET の概要](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)」および「[Windows ランタイム リファレンス](https://msdn.microsoft.com/library/windows/apps/br211377)」をご覧ください。
 
 また、プロジェクトのビルド段階にただ進むだけであれば、重要でないコードをコメントアウトするか、スタブを挿入できます。 次に、このセクションの以降のトピック (および前のトピック「[トラブルシューティング](wpsl-to-uwp-troubleshooting.md)」) を参考にして、ビルドとランタイムの問題が解決して移植が完了するまで一度に 1 つの問題について反復作業を行います。
 
@@ -151,15 +154,15 @@ Windows Phone Silverlight のアプリ バーとアプリ バーのボタンは�
 
 ただし、現在 UWP アプリのバインド関連の機能には以下の制限があります。
 
--   データ エントリ検証と [**IDataErrorInfo**](T:System.ComponentModel.IDataErrorInfo) インターフェイスおよび [**INotifyDataErrorInfo**](T:System.ComponentModel.INotifyDataErrorInfo) インターフェイスには、サポートが組み込まれていません。
+-   データ エントリ検証と [**IDataErrorInfo**](https://msdn.microsoft.com/en-us/library/system.componentmodel.idataerrorinfo.aspx) インターフェイスおよび [**INotifyDataErrorInfo**](https://msdn.microsoft.com/en-us/library/system.componentmodel.inotifydataerrorinfo.aspx) インターフェイスには、サポートが組み込まれていません。
 -   [
             **Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) クラスには、Windows Phone Silverlight で利用できる拡張書式設定プロパティが含まれていません。 ただし、[**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903) を実装してカスタム書式設定を提供することはできます。
 -   [
-            **IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903) メソッドは、言語文字列を、[**CultureInfo**](T:System.Globalization.CultureInfo) オブジェクトではなくパラメーターとして受け取ります。
+            **IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903) メソッドは、言語文字列を、[**CultureInfo**](https://msdn.microsoft.com/en-us/library/system.globalization.cultureinfo.aspx) オブジェクトではなくパラメーターとして受け取ります。
 -   [
             **CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833) クラスには、並べ替えとフィルター処理、さまざまなグループへの作業のグループ化のサポートが組み込まれていません。 詳しくは、「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」と[データ バインディングのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=226854)をご覧ください。
 
-同じバインド機能が引き続き広くサポートされていますが、Windows 10 では、コンパイル済みバインドと呼ばれる新しい高パフォーマンスのバインド メカニズムのオプションが用意されています。このオプションでは、{{x:Bind}} マークアップ拡張を使います。 [データ バインディング: XAML データ バインディングの新しい拡張機能によるアプリのパフォーマンスの向上に関するページ](http://channel9.msdn.com/Events/Build/2015/3-635)と [x:Bind のサンプル](http://go.microsoft.com/fwlink/p/?linkid=619989)をご覧ください。
+同じバインド機能が引き続き広くサポートされていますが、Windows 10 では、コンパイル済みバインドと呼ばれる新しい高パフォーマンスのバインド メカニズムのオプションが用意されています。このオプションでは、{x:Bind} マークアップ拡張を使います。 [データ バインディング: XAML データ バインディングの新しい拡張機能によるアプリのパフォーマンスの向上に関するページ](http://channel9.msdn.com/Events/Build/2015/3-635)と [x:Bind のサンプル](http://go.microsoft.com/fwlink/p/?linkid=619989)をご覧ください。
 
 ## ビュー モデルへの画像のバインド
 
@@ -308,17 +311,17 @@ URI マッピングとフラグメント ナビゲーションは URI ナビゲ�
 
 テキスト (または文字体裁) は UWP アプリの重要な要素です。移植するときには、ビューの視覚的なデザインが新しいデザイン言語に適合するように、ビューの視覚的なデザインを再検討することが必要になる場合があります。 次の図を使って、利用可能な UWP の **TextBlock** システム スタイルを見つけます。 使った Windows Phone Silverlight スタイルに対応するものを見つけます。 また、独自のユニバーサル スタイルを作成し、Windows Phone Silverlight システム スタイルからプロパティをコピーすることもできます。
 
-![Windows 10 アプリのシステム TextBlock スタイル
+![Windows 10 アプリのシステム TextBlock スタイル](images/label-uwp10stylegallery.png) Windows 10 アプリのシステム TextBlock スタイル
 
-Windows 10 アプリのシステム TextBlock スタイル Windows Phone Silverlight アプリでは、既定のフォント ファミリは Segoe WP です。 Windows 10 アプリでは、既定のフォント ファミリは Segoe UI です。 この結果、アプリでのフォント メトリックの表示が異なる可能性があります。 Windows Phone Silverlight のテキストの外観を再現する場合は、[**LineHeight**](https://msdn.microsoft.com/library/windows/apps/br209671) や [**LineStackingStrategy**](https://msdn.microsoft.com/library/windows/apps/br244362) などのプロパティを使って、独自のメトリックを設定できます。
+Windows Phone Silverlight アプリでは、既定のフォント ファミリは Segoe WP です。 Windows 10 アプリでは、既定のフォント ファミリは Segoe UI です。 この結果、アプリでのフォント メトリックの表示が異なる可能性があります。 Windows Phone Silverlight のテキストの外観を再現する場合は、[**LineHeight**](https://msdn.microsoft.com/library/windows/apps/br209671) や [**LineStackingStrategy**](https://msdn.microsoft.com/library/windows/apps/br244362) などのプロパティを使って、独自のメトリックを設定できます。 詳しくは、「[フォントのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx)」と「[UWP アプリの設計](http://dev.windows.com/design)」をご覧ください。
 
-## 詳しくは、「[フォントのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx)」と「[UWP アプリの設計](http://dev.windows.com/design)」をご覧ください。
+## テーマの変更
 
-テーマの変更 Windows Phone Silverlight アプリの場合、既定のテーマは濃色になっています。 Windows 10 デバイスでは既定のテーマが変更されていますが、App.xaml で要求するテーマを宣言して、使うテーマを制御できます。
+Windows Phone Silverlight アプリの場合、既定のテーマは濃色になっています。 Windows 10 デバイスでは既定のテーマが変更されていますが、App.xaml で要求するテーマを宣言して、使うテーマを制御できます。 たとえば、すべてのデバイスで濃色テーマを使うには、`RequestedTheme="Dark"` をルートの Application 要素に追加します。
 
-## たとえば、すべてのデバイスで濃色テーマを使うには、`RequestedTheme="Dark"` をルートの Application 要素に追加します。
+## タイル
 
-タイル UWP アプリのタイルの動作は Windows Phone Silverlight アプリ用のライブ タイルに似ていますが、違いがいくつかあります。 たとえば、セカンダリ タイルを作成するために **Microsoft.Phone.Shell.ShellTile.Create** メソッドを呼び出すコードは、[**SecondaryTile.RequestCreateAsync**](https://msdn.microsoft.com/library/windows/apps/br230606) を呼び出すように移植する必要があります。
+UWP アプリのタイルの動作は Windows Phone Silverlight アプリ用のライブ タイルに似ていますが、違いがいくつかあります。 たとえば、セカンダリ タイルを作成するために **Microsoft.Phone.Shell.ShellTile.Create** メソッドを呼び出すコードは、[**SecondaryTile.RequestCreateAsync**](https://msdn.microsoft.com/library/windows/apps/br230606) を呼び出すように移植する必要があります。 ここでは、まず Windows Phone Silverlight バージョンの移植前後の例を示します。
 
 
 ```csharp
@@ -334,7 +337,7 @@ Windows 10 アプリのシステム TextBlock スタイル Windows Phone Silverl
     ShellTile.Create(this.selectedBookSku.NavigationUri, tileData, true);
 ```
 
-ここでは、まず Windows Phone Silverlight バージョンの移植前後の例を示します。
+次に相当する UWP の要素を示します。
 
 ```csharp
     var tile = new SecondaryTile(
@@ -347,55 +350,56 @@ Windows 10 アプリのシステム TextBlock スタイル Windows Phone Silverl
     await tile.RequestCreateAsync();
 ```
 
-次に相当する UWP の要素を示します。
+**Microsoft.Phone.Shell.ShellTile.Update** メソッドまたは **Microsoft.Phone.Shell.ShellTileSchedule** クラスによりタイルを更新するコードは、[**TileUpdateManager**](https://msdn.microsoft.com/library/windows/apps/br208622) クラス、[**TileUpdater**](https://msdn.microsoft.com/library/windows/apps/br208628) クラス、[**TileNotification**](https://msdn.microsoft.com/library/windows/apps/br208616) クラス、[**ScheduledTileNotification**](https://msdn.microsoft.com/library/windows/apps/hh701637) クラスを使うように移植する必要があります。
 
-**Microsoft.Phone.Shell.ShellTile.Update** メソッドまたは **Microsoft.Phone.Shell.ShellTileSchedule** クラスによりタイルを更新するコードは、[**TileUpdateManager**](https://msdn.microsoft.com/library/windows/apps/br208622) クラス、[**TileUpdater**](https://msdn.microsoft.com/library/windows/apps/br208628) クラス、[**TileNotification**](https://msdn.microsoft.com/library/windows/apps/br208616) クラス、[**ScheduledTileNotification**](https://msdn.microsoft.com/library/windows/apps/hh701637) クラスを使うように移植する必要があります。 タイル、トースト、バッジ、バナー、通知について詳しくは、「[タイルの作成](https://msdn.microsoft.com/library/windows/apps/xaml/hh868260)」と「[タイル、バッジ、トースト通知の操作](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259)」をご覧ください。
+タイル、トースト、バッジ、バナー、通知について詳しくは、「[タイルの作成](https://msdn.microsoft.com/library/windows/apps/xaml/hh868260)」と「[タイル、バッジ、トースト通知の操作](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259)」をご覧ください。 UWP タイルに使うビジュアル アセットのサイズの仕様については、「[タイルとトーストのビジュアル資産](https://msdn.microsoft.com/library/windows/apps/hh781198)」をご覧ください。
 
-## UWP タイルに使うビジュアル アセットのサイズの仕様については、「[タイルとトーストのビジュアル資産](https://msdn.microsoft.com/library/windows/apps/hh781198)」をご覧ください。
+## トースト
 
-トースト **Microsoft.Phone.Shell.ShellToast** クラスによりトーストを表示するコードは、[**ToastNotificationManager**](https://msdn.microsoft.com/library/windows/apps/br208642) クラス、[**ToastNotifier**](https://msdn.microsoft.com/library/windows/apps/br208653) クラス、[**ToastNotification**](https://msdn.microsoft.com/library/windows/apps/br208641) クラス、[**ScheduledToastNotification**](https://msdn.microsoft.com/library/windows/apps/br208607) クラスを使うように移植する必要があります。
+**Microsoft.Phone.Shell.ShellToast** クラスによりトーストを表示するコードは、[**ToastNotificationManager**](https://msdn.microsoft.com/library/windows/apps/br208642) クラス、[**ToastNotifier**](https://msdn.microsoft.com/library/windows/apps/br208653) クラス、[**ToastNotification**](https://msdn.microsoft.com/library/windows/apps/br208641) クラス、[**ScheduledToastNotification**](https://msdn.microsoft.com/library/windows/apps/br208607) クラスを使うように移植する必要があります。 モバイル デバイスでは、"トースト" の利用者向け用語が "バナー" であることに注意してください。
 
-モバイル デバイスでは、"トースト" の利用者向け用語が "バナー" であることに注意してください。
+「[タイル、バッジ、トースト通知の操作](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259)」をご覧ください。
 
-## 「[タイル、バッジ、トースト通知の操作](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259)」をご覧ください。
+## 表示/有効ピクセル、視聴距離、スケール ファクター
 
-表示/有効ピクセル、視聴距離、スケール ファクター Windows Phone Silverlight アプリと Windows 10 アプリでは、デバイスの実際の物理サイズと解像度から UI 要素のサイズとレイアウトを抽象化する方法が異なります。 Windows Phone Silverlight アプリでは、このために表示ピクセルを使います。 Windows 10 では、表示ピクセルの概念が有効ピクセルの概念として改良されました。
+Windows Phone Silverlight アプリと Windows 10 アプリでは、デバイスの実際の物理サイズと解像度から UI 要素のサイズとレイアウトを抽象化する方法が異なります。 Windows Phone Silverlight アプリでは、このために表示ピクセルを使います。 Windows 10 では、表示ピクセルの概念が有効ピクセルの概念として改良されました。 有効ピクセルの用語の説明、有効ピクセルが何をするものなのか、および有効ピクセルで使うことができる追加の値について、以下に示します。
 
-有効ピクセルの用語の説明、有効ピクセルが何をするものなのか、および有効ピクセルで使うことができる追加の値について、以下に示します。 一般的な考えとは異なり、"解像度" という用語はピクセル密度の測定値を表しており、ピクセル数ではありません。 "有効解像度" は、画像またはグリフを構成する物理ピクセルを解決して、デバイスの視聴距離と物理ピクセル サイズでの目視による相違の度合を取得する方法です (物理ピクセル サイズの逆数であるピクセル密度)。 有効解像度は、ユーザー中心であるために、エクスペリエンスの構築に適したメトリックです。
+一般的な考えとは異なり、"解像度" という用語はピクセル密度の測定値を表しており、ピクセル数ではありません。 "有効解像度" は、画像またはグリフを構成する物理ピクセルを解決して、デバイスの視聴距離と物理ピクセル サイズでの目視による相違の度合を取得する方法です (物理ピクセル サイズの逆数であるピクセル密度)。 有効解像度は、ユーザー中心であるために、エクスペリエンスの構築に適したメトリックです。 すべての要因について理解し、UI 要素のサイズを制御することによって、ユーザーのエクスペリエンスを適切なものにすることができます。
 
-すべての要因について理解し、UI 要素のサイズを制御することによって、ユーザーのエクスペリエンスを適切なものにすることができます。 画面の物理ピクセル数、ピクセル密度、物理サイズにかかわらず、Windows Phone Silverlight アプリに対してすべての電話画面は例外なく正確に 480 表示ピクセル幅です。
+画面の物理ピクセル数、ピクセル密度、物理サイズにかかわらず、Windows Phone Silverlight アプリに対してすべての電話画面は例外なく正確に 480 表示ピクセル幅です。 これは、`Width="48"` を含む **Image** 要素が Windows Phone Silverlight アプリを実行できるすべての電話画面の幅に対して正確に 1/10 であることを示します。
 
-これは、`Width="48"` を含む **Image** 要素が Windows Phone Silverlight アプリを実行できるすべての電話画面の幅に対して正確に 1/10 であることを示します。 Windows 10 アプリに対しては、すべてのデバイスが固定数の有効ピクセル幅になるわけでは*ありません*。 これは、UWP アプリが広範なデバイスで実行できることから、おそらく明白です。 デバイスによって、有効ピクセルの幅の値が異なります。その範囲は、320 epx (最小のデバイス) から 1024 epx (一般的なサイズのモニター)、またはそれ以上のさらに広い幅になります。 これまでと同様に、自動的にサイズ調整される要素と動的レイアウト パネルを引き続き使うことで十分に対応できます。 ただし、場合によっては、UI 要素のプロパティを XAML マークアップで固定サイズに設定することがあります。 スケール ファクターは、アプリが実行されているデバイスやユーザーが行った表示設定に応じて、アプリに自動的に適用されます。 スケール ファクターによって、さまざまな幅の画面サイズでユーザーに対してほぼ一定サイズのタッチ (または読み取り) ターゲットを提示するように、すべての UI 要素を固定サイズで維持できます。
+Windows 10 アプリに対しては、すべてのデバイスが固定数の有効ピクセル幅になるわけでは*ありません*。 これは、UWP アプリが広範なデバイスで実行できることから、おそらく明白です。 デバイスによって、有効ピクセルの幅の値が異なります。その範囲は、320 epx (最小のデバイス) から 1024 epx (一般的なサイズのモニター)、またはそれ以上のさらに広い幅になります。 これまでと同様に、自動的にサイズ調整される要素と動的レイアウト パネルを引き続き使うことで十分に対応できます。 ただし、場合によっては、UI 要素のプロパティを XAML マークアップで固定サイズに設定することがあります。 スケール ファクターは、アプリが実行されているデバイスやユーザーが行った表示設定に応じて、アプリに自動的に適用されます。 スケール ファクターによって、さまざまな幅の画面サイズでユーザーに対してほぼ一定サイズのタッチ (または読み取り) ターゲットを提示するように、すべての UI 要素を固定サイズで維持できます。 また、動的レイアウトと共に使うことで、UI は単にさまざまなデバイスで光学的なスケーリングを行うだけでなく、利用可能な領域に合わせて適切な量のコンテンツを表示するために必要となる処理も実行します。
 
-また、動的レイアウトと共に使うことで、UI は単にさまざまなデバイスで光学的なスケーリングを行うだけでなく、利用可能な領域に合わせて適切な量のコンテンツを表示するために必要となる処理も実行します。
+以前は電話サイズの画面の表示ピクセル単位の固定幅が 480 でしたが、現在はその値が有効ピクセル単位では一般的に小さくなるため、経験則として、Windows Phone Silverlight アプリのマークアップのサイズにすべて 0.8 の係数を乗算します。
 
-以前は電話サイズの画面の表示ピクセル単位の固定幅が 480 でしたが、現在はその値が有効ピクセル単位では一般的に小さくなるため、経験則として、Windows Phone Silverlight アプリのマークアップのサイズにすべて 0.8 の係数を乗算します。 すべてのディスプレイで最適なアプリのエクスペリエンスが実現できるように、一連のサイズで各ビットマップ アセットを作成し、各アセットが特定のスケール ファクターに適合するように設定することをお勧めします。
+すべてのディスプレイで最適なアプリのエクスペリエンスが実現できるように、一連のサイズで各ビットマップ アセットを作成し、各アセットが特定のスケール ファクターに適合するように設定することをお勧めします。 ただし、100% スケール、200% スケール、および 400% スケール (この優先順位で) でアセットを作成するほうが、多くの場合、すべての中間スケール ファクターで適切な結果を得ることができます。
 
-ただし、100% スケール、200% スケール、および 400% スケール (この優先順位で) でアセットを作成するほうが、多くの場合、すべての中間スケール ファクターで適切な結果を得ることができます。 **注:** 何らかの理由で複数のサイズでアセットを作成できない場合は、100%% スケールのアセットを作成します。 Microsoft Visual Studio では、UWP アプリの既定のプロジェクト テンプレートには 1 つのサイズのみのブランド アセット (タイル イメージとロゴ) が用意されていますが、これらは 100% のスケールではありません。
+**注:** 何らかの理由で複数のサイズでアセットを作成できない場合は、100%% スケールのアセットを作成します。 Microsoft Visual Studio では、UWP アプリの既定のプロジェクト テンプレートには 1 つのサイズのみのブランド アセット (タイル イメージとロゴ) が用意されていますが、これらは 100% のスケールではありません。 独自のアプリのアセットを作成する場合は、このセクションに示したガイドラインに従って、100%、200%、400% のサイズを用意し、アセット パックを使います。
 
-独自のアプリのアセットを作成する場合は、このセクションに示したガイドラインに従って、100%、200%、400% のサイズを用意し、アセット パックを使います。 複雑なアートワークがある場合は、さらに多くのサイズに対応したアセットが必要になることがあります。
+複雑なアートワークがある場合は、さらに多くのサイズに対応したアセットが必要になることがあります。 ベクター アートを使って作業を始める場合は、どのようなスケール ファクターでも高品質なアセットを比較的簡単に生成できます。
 
-ベクター アートを使って作業を始める場合は、どのようなスケール ファクターでも高品質なアセットを比較的簡単に生成できます。 Windows 10 アプリ向けのすべてスケール ファクターは 100%、125%、150%、200%、250%、300%、400% ですが、すべてのスケール ファクターをサポートすることはお勧めしません。 すべてのスケール ファクターのアセットを提供した場合、ストアでは、各デバイスに合った適切なサイズのアセットが選ばれ、それらのアセットのみがダウンロードされます。
+Windows 10 アプリ向けのすべてスケール ファクターは 100%、125%、150%、200%、250%、300%、400% ですが、すべてのスケール ファクターをサポートすることはお勧めしません。 すべてのスケール ファクターのアセットを提供した場合、ストアでは、各デバイスに合った適切なサイズのアセットが選ばれ、それらのアセットのみがダウンロードされます。 ストアでは、デバイスの DPI に基づいて、ダウンロードするアセットが選ばれます。
 
-ストアでは、デバイスの DPI に基づいて、ダウンロードするアセットが選ばれます。
+詳しくは、「[UWP アプリ用レスポンシブ デザイン 101](https://msdn.microsoft.com/library/windows/apps/dn958435)」をご覧ください。
 
-## 詳しくは、「[UWP アプリ用レスポンシブ デザイン 101](https://msdn.microsoft.com/library/windows/apps/dn958435)」をご覧ください。
+## ウィンドウ サイズ
 
-ウィンドウ サイズ UWP アプリでは、命令型コードを使って最小サイズ (幅と高さ) を指定できます。 既定の最小サイズは 500 x 320 epx で、このサイズは受け入れられる最も小さいサイズでもあります。
+UWP アプリでは、命令型コードを使って最小サイズ (幅と高さ) を指定できます。 既定の最小サイズは 500 x 320 epx で、このサイズは受け入れられる最も小さいサイズでもあります。 受け入れられる最も大きいサイズは 500 x 500 epx です。
 
 ```csharp
    Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetPreferredMinSize
         (new Size { Width = 500, Height = 500 });
 ```
 
-受け入れられる最も大きいサイズは 500 x 500 epx です。
+次のトピックは、「[入出力、デバイス、アプリ モデルの移植](wpsl-to-uwp-input-and-sensors.md)」です。
 
-## 次のトピックは、「[入出力、デバイス、アプリ モデルの移植](wpsl-to-uwp-input-and-sensors.md)」です。
+## 関連トピック
 
-* [関連トピック](wpsl-to-uwp-namespace-and-class-mappings.md)
+* [名前空間とクラス マッピング](wpsl-to-uwp-namespace-and-class-mappings.md)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

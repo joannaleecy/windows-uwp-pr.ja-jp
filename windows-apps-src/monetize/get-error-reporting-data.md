@@ -1,8 +1,11 @@
 ---
 author: mcleanbyron
 ms.assetid: 252C44DF-A2B8-4F4F-9D47-33E423F48584
-description: 特定の日付範囲などのオプション フィルターを使って集計エラー報告データを取得するには、Windows ストア分析 API でこのメソッドを使います。
-title: エラー報告データの取得
+description: "特定の日付範囲などのオプション フィルターを使って集計エラー報告データを取得するには、Windows ストア分析 API でこのメソッドを使います。"
+title: "エラー報告データの取得"
+ms.sourcegitcommit: 02131e641cdaa76256845b38bcc50aa42d718601
+ms.openlocfilehash: 5b2421daf9df4ca417d5089166c0927e2b2f7436
+
 ---
 
 # エラー報告データの取得
@@ -56,14 +59,14 @@ title: エラー報告データの取得
 <th align="left">パラメーター</th>
 <th align="left">型</th>
 <th align="left">説明</th>
-<th align="left">必須かどうか</th>
+<th align="left">必須</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">applicationId</td>
 <td align="left">string</td>
-<td align="left">エラー報告データを取得するアプリの製品 ID です。 製品 ID は、デベロッパー センター ダッシュボードの [[アプリ ID] ページ](https://msdn.microsoft.com/library/windows/apps/mt148561)に表示されるアプリの内容へのリンクに埋め込まれています。 製品 ID の例は 9WZDNCRFJ3Q8 です。</td>
+<td align="left">エラー報告データを取得するアプリのストア ID です。 ストア ID は、デベロッパー センター ダッシュボードの[アプリ ID ページ](../publish/view-app-identity-details.md)で確認できます。 ストア ID の例は 9WZDNCRFJ3Q8 です。</td>
 <td align="left">○</td>
 </tr>
 <tr class="even">
@@ -242,7 +245,7 @@ title: エラー報告データの取得
 
 ### 要求の例
 
-エラー報告データを取得するためのいくつかの要求の例を次に示します。 *applicationId* 値を、目的のアプリの製品 ID に置き換えてください。
+エラー報告データを取得するためのいくつかの要求の例を次に示します。 *applicationId* 値を、目的のアプリのストア ID に置き換えてください。
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/failurehits?applicationId=9NBLGGGZ5QDR&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0 HTTP/1.1
@@ -271,7 +274,7 @@ Authorization: Bearer <your access token>
 | 値           | 型    | 説明                                                                                                                                                                                                                              |
 |-----------------|---------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | date            | string  | 入手データの日付範囲の最初の日付です。 要求に日付を指定した場合、この値はその日付になります。 要求に週、月、またはその他の日付範囲を指定した場合、この値はその日付範囲の最初の日付になります。 |
-| applicationId   | string  | IAP 入手データを取得するアプリの製品 ID です。                                                                                                                                                           |
+| applicationId   | string  | IAP 入手データを取得するアプリのストア ID です。                                                                                                                                                           |
 | applicationName | string  | アプリの表示名です。                                                                                                                                                                                                             |
 | failureName     | string  | エラーの名前です。                                                                                                                                                                                                                 |
 | failureHash     | string  | エラーの一意の識別子です。                                                                                                                                                                                                   |
@@ -326,6 +329,7 @@ Authorization: Bearer <your access token>
 * [アプリのレビューの取得](get-app-reviews.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

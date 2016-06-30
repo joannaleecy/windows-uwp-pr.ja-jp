@@ -5,8 +5,8 @@ title: "マウス操作"
 ms.assetid: C8A158EF-70A9-4BA2-A270-7D08125700AC
 label: Mouse
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: b381cdba2a20480bb8b4d7802d2ff490744e5f03
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: 10deda7b44d4cfb5c65b425bf82ceaf6654aab95
 
 ---
 
@@ -27,7 +27,7 @@ ms.openlocfilehash: b381cdba2a20480bb8b4d7802d2ff490744e5f03
 
 このトピックでは、マウス操作の設計時の考慮事項について説明します。
 
-## <span id="The_UWP_app_mouse_language"></span><span id="the_uwp_app_mouse_language"></span><span id="THE_UWP_APP_MOUSE_LANGUAGE"></span>UWP アプリのマウス言語
+## UWP アプリのマウス言語
 
 
 システム内では一貫して、マウス操作の簡単なセットが使われます。
@@ -45,19 +45,19 @@ ms.openlocfilehash: b381cdba2a20480bb8b4d7802d2ff490744e5f03
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><span id="Hover_to_learn"></span><span id="hover_to_learn"></span><span id="HOVER_TO_LEARN"></span>ホバーによる説明の表示</p></td>
+<td align="left"><p>ホバーによる説明の表示</p></td>
 <td align="left"><p>要素にホバーすると、詳しい情報や説明を伝える視覚効果 (ヒントなど) が表示されます。操作はコミットされません。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Left-click_for_primary_action"></span><span id="left-click_for_primary_action"></span><span id="LEFT-CLICK_FOR_PRIMARY_ACTION"></span>左クリックによるプライマリ操作</p></td>
+<td align="left"><p>左クリックによるプライマリ操作</p></td>
 <td align="left"><p>要素の左クリックにより、プライマリ操作 (アプリの起動、コマンドの実行など) が呼び出されます。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="Scroll_to_change_view"></span><span id="scroll_to_change_view"></span><span id="SCROLL_TO_CHANGE_VIEW"></span>スクロールによるビューの変更</p></td>
+<td align="left"><p>スクロールによるビューの変更</p></td>
 <td align="left"><p>スクロール バーを表示し、コンテンツ領域内で上下左右に移動します。 スクロール バーのクリック、またはマウス ホイールの回転により、スクロールできます。 スクロール バーは、コンテンツ領域内の現在のビューの位置を示します (タッチによるパンでも同様の UI が表示されます)。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Right-click_to_select_and_command"></span><span id="right-click_to_select_and_command"></span><span id="RIGHT-CLICK_TO_SELECT_AND_COMMAND"></span>右クリックによる選択とコマンド</p></td>
+<td align="left"><p>右クリックによる選択とコマンド</p></td>
 <td align="left"><p>右クリックして、ナビゲーション バー (使用できる場合) と、グローバル コマンドを含むアプリ バーを表示します。 要素を右クリックして選択し、その要素に対応する状況依存のコマンドを備えたアプリ バーを表示します。</p>
 <div class="alert">
 <strong>注</strong> 選択やアプリ バーのコマンドが適切な UI 動作ではない場合は、右クリックでショートカット メニューを表示します。 ただし、すべてのコマンド動作にアプリ バーを使うことを強くお勧めします。
@@ -67,19 +67,19 @@ ms.openlocfilehash: b381cdba2a20480bb8b4d7802d2ff490744e5f03
 </div></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="UI_commands_to_zoom"></span><span id="ui_commands_to_zoom"></span><span id="UI_COMMANDS_TO_ZOOM"></span>ズームの UI コマンド</p></td>
+<td align="left"><p>ズームの UI コマンド</p></td>
 <td align="left"><p>アプリ バーに UI コマンドを表示するか (+、- など)、Ctrl キーを押しながらマウス ホイールを回転させて、ズームのためのピンチ ジェスチャとストレッチ ジェスチャをエミュレートします。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="UI_commands_to_rotate"></span><span id="ui_commands_to_rotate"></span><span id="UI_COMMANDS_TO_ROTATE"></span>回転の UI コマンド</p></td>
+<td align="left"><p>回転の UI コマンド</p></td>
 <td align="left"><p>アプリ バーに UI コマンドを表示するか、Ctrl キーと Shift キーを押しながらマウス ホイールを回転させて、回転のための回転ジェスチャをエミュレートします。 画面全体を回転させるには、デバイスを回転させます。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="Left-click_and_drag_to_rearrange"></span><span id="left-click_and_drag_to_rearrange"></span><span id="LEFT-CLICK_AND_DRAG_TO_REARRANGE"></span>左クリックとドラッグによる移動</p></td>
+<td align="left"><p>左クリックとドラッグによる移動</p></td>
 <td align="left"><p>要素を左クリックしてドラッグし、移動します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Left-click_and_drag_to_select_text"></span><span id="left-click_and_drag_to_select_text"></span><span id="LEFT-CLICK_AND_DRAG_TO_SELECT_TEXT"></span>左クリックとドラッグによるテキストの選択</p></td>
+<td align="left"><p>左クリックとドラッグによるテキストの選択</p></td>
 <td align="left"><p>選択可能なテキスト内を左クリックしてドラッグし、選択します。 単語を選択するには、ダブルクリックします。</p></td>
 </tr>
 </tbody>
@@ -101,7 +101,7 @@ ms.openlocfilehash: b381cdba2a20480bb8b4d7802d2ff490744e5f03
 
 - [入力: GestureRecognizer によるジェスチャと操作](http://go.microsoft.com/fwlink/p/?LinkID=231605)
 
-## <span id="Guidelines_for_visual_feedback"></span><span id="guidelines_for_visual_feedback"></span><span id="GUIDELINES_FOR_VISUAL_FEEDBACK"></span>視覚的なフィードバックのガイドライン
+## 視覚的なフィードバックのガイドライン
 
 
 -   移動イベントまたはホバー イベントを通じてマウスが検出されたら、マウス固有の UI を表示して、要素によって公開されている機能を示します。 マウスが一定の期間動かされなかった場合や、ユーザーがタッチ操作を始めた場合は、マウス UI を徐々に非表示にします。 これにより、UI の簡潔さが保たれます。
@@ -114,7 +114,7 @@ ms.openlocfilehash: b381cdba2a20480bb8b4d7802d2ff490744e5f03
 視覚的なフィードバックに関する一般的なガイダンスについては、「[視覚的なフィードバックのガイドライン](guidelines-for-visualfeedback.md)」をご覧ください。
 
 
-## <span id="Cursors"></span><span id="cursors"></span><span id="CURSORS"></span>カーソル
+## カーソル
 
 
 マウス ポインターとして利用できる標準のカーソル セットが用意されています。 これらが要素のプライマリ操作を示すために使われます。
@@ -129,7 +129,7 @@ ms.openlocfilehash: b381cdba2a20480bb8b4d7802d2ff490744e5f03
 -   サイズ変更ができるオブジェクトに対しては、横、縦、対角線のサイズ変更カーソル (![縦のサイズ変更カーソル](images/cursor-vertical.png)、 ![横のサイズ変更カーソル](images/cursor-horizontal.png)、 ![対角線のサイズ変更カーソル (左下、右上)](images/cursor-diagonal2.png)、 ![対角線のサイズ変更カーソル (左上、右下)](images/cursor-diagonal1.png)) を使います。
 -   地図など、固定キャンバス内のコンテンツのパンを行うときは、手でつかむ形のカーソル (![手でつかむ形のカーソル (開いた状態)](images/cursor-pan1.png)、 ![手でつかむ形のカーソル (つかんだ状態)](images/cursor-pan2.png)) を使います。
 
-## <span id="related_topics"></span>関連記事
+## 関連記事
 
 * [ポインター入力の処理](handle-pointer-input.md)
 * [入力デバイスの識別](identify-input-devices.md)
@@ -156,6 +156,6 @@ ms.openlocfilehash: b381cdba2a20480bb8b4d7802d2ff490744e5f03
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

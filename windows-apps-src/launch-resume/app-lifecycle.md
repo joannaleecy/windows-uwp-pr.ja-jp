@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: アプリのライフサイクル
-description: このトピックでは、ユニバーサル Windows プラットフォーム (UWP) アプリのライフサイクル (アプリがアクティブ化されたときから、アプリが閉じられるまで) について説明します。
+author: TylerMSFT
+title: "アプリのライフサイクル"
+description: "このトピックでは、ユニバーサル Windows プラットフォーム (UWP) アプリのライフサイクル (アプリがアクティブ化されたときから、アプリが閉じられるまで) について説明します。"
 ms.assetid: 6C469E77-F1E3-4859-A27B-C326F9616D10
+ms.sourcegitcommit: 213384a194513a0f98a5f37e7f0e0849bf0a66e2
+ms.openlocfilehash: 8451942c05d5d44cafba243f7cbebceedbe86fc0
+
 ---
 
 # アプリのライフサイクル
@@ -71,9 +74,7 @@ ms.assetid: 6C469E77-F1E3-4859-A27B-C326F9616D10
 
  
 
-**注:**
-            
-          
+**注**
             *現在のユーザー セッション*は、Windows ログオンに基づきます。 現在のユーザーが明示的にログオフやシャットダウンを行っていない、または他の理由で Windows が再起動していない限り、現在のユーザー セッションは、ロック画面認証やユーザーの切り替えなどのイベント間で保持されます。
 
  
@@ -199,7 +200,7 @@ Windows 8.1 以降では、ユーザーがアプリを閉じても、アプリ�
             ](https://msdn.microsoft.com/library/windows/apps/br209041) クラス (XAML)
 
 **注**  
-この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブ ドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
+この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください。
 
  
 
@@ -218,8 +219,6 @@ Windows 8.1 以降では、ユーザーがアプリを閉じても、アプリ�
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: B48E21AB-0EA5-444B-8333-393DD8D1B76D
-title: エンタープライズ共有記憶域
-description: エンタープライズ共有記憶域は、基幹業務アプリのデータ共有のための、ローカルのデータの場所を定義します。
+title: "エンタープライズ共有記憶域"
+description: "エンタープライズ共有記憶域は、基幹業務アプリのデータ共有のための、ローカルのデータの場所を定義します。"
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 6f0e479081c361d69ab0c9e8cf4c531627304d32
+
 ---
 # エンタープライズ共有記憶域
 
@@ -69,6 +73,7 @@ foreach (StorageFile file in sortedItems)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

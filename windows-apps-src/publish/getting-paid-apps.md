@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: アプリ、アプリ内製品 (IAP)、および Microsoft Advertising による売り上げの支払いを受け取るために、以下の重要な情報を確認する必要があります。
-title: 支払いの受け取り
+Description: "アプリ、アプリ内製品 (IAP)、および Microsoft Advertising による売り上げの支払いを受け取るために、以下の重要な情報を確認する必要があります。"
+title: "支払いの受け取り"
 ms.assetid: 37D1EF45-C4A8-4849-8819-3D4A4898215C
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: b7c9bcf36aaee0344c6916fcc81aca189ef0f481
+
 ---
 
 # 支払いの受け取り
@@ -56,6 +60,7 @@ Windows デベロッパー センター ダッシュ ボードの **[支払の�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

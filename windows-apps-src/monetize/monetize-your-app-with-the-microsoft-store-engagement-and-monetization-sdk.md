@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
-Description: Microsoft Store Engagement and Monetization SDK が提供するライブラリとツールを利用すると、収益とユーザーの獲得を図る機能をアプリに追加できます。
+Description: "Microsoft Store Engagement and Monetization SDK が提供するライブラリとツールを利用すると、収益とユーザーの獲得を図る機能をアプリに追加できます。"
 title: Microsoft Store Engagement and Monetization SDK
 ms.assetid: 518516DB-70A7-49C4-B3B6-CD8A98320B9C
+translationtype: Human Translation
+ms.sourcegitcommit: de85956c7c1d2a0ba509d61ee8928b412f057f8a
+ms.openlocfilehash: 481cf2aab806a1f9ce368256a9df8930cbc756c1
+
 ---
 
 # Microsoft Store Engagement and Monetization SDK
@@ -75,6 +79,7 @@ Microsoft Store Monetization and Engagement SDK に含まれる次のライブ�
 * [アプリからのフィードバック Hub の起動](launch-feedback-hub-from-your-app.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

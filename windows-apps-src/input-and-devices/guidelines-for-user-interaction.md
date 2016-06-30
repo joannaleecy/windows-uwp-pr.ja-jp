@@ -1,10 +1,14 @@
 ---
 author: Karl-Bridge-Microsoft
-Description: タッチ用に最適化される一方で、さまざまな入力デバイスで一貫した機能を提供する、直観的で独特なユーザー対話式操作エクスペリエンスを備えたユニバーサル Windows プラットフォーム (UWP) アプリを作成します。
-title: タッチの設計ガイドライン
+Description: "タッチ用に最適化される一方で、さまざまな入力デバイスで一貫した機能を提供する、直観的で独特なユーザー対話式操作エクスペリエンスを備えたユニバーサル Windows プラットフォーム (UWP) アプリを作成します。"
+title: "タッチの設計ガイドライン"
 ms.assetid: 3250F729-4FDD-4AD4-B856-B8BA575C3375
 label: Touch design guidelines
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 67b851ce854c803934c2b97dbe7519e2916383a3
+
 ---
 
 # タッチの設計ガイドライン
@@ -172,6 +176,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

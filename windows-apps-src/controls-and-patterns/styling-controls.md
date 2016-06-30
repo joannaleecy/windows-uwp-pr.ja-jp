@@ -1,13 +1,17 @@
 ---
 author: Jwmsft
-Description: スタイルを使うと、コントロールのプロパティに値を設定し、その設定を再利用することで、複数のコントロールの外観を統一できます。
-MS-HAID: 'dev\_ctrl\_layout\_txt.styling\_controls'
-MSHAttr: 'PreferredLib:/library/windows/apps'
+Description: "スタイルを使うと、コントロールのプロパティに値を設定し、その設定を再利用することで、複数のコントロールの外観を統一できます。"
+MS-HAID: dev\_ctrl\_layout\_txt.styling\_controls
+MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: コントロールのスタイル
+title: "コントロールのスタイル"
 ms.assetid: AB469A46-FAF5-42D0-9340-948D0EDF4150
 label: Styling controls
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 02cd8f7777f169ad9fc4e5bfe854a8b6e0fe5060
+
 ---
 
 # コントロールのスタイル
@@ -150,6 +154,7 @@ XAML フレームワークを使って、さまざまな方法でアプリの外
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

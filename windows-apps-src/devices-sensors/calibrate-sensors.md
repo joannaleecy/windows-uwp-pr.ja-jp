@@ -1,8 +1,12 @@
 ---
 author: DBirtolo
 ms.assetid: ECE848C2-33DE-46B0-BAE7-647DB62779BB
-title: センサーの調整
-description: デバイスの磁力計 (コンパス、傾斜計、方位センサー) に基づくセンサーは、環境の要因に応じて調整が必要になることがあります。
+title: "センサーの調整"
+description: "デバイスの磁力計 (コンパス、傾斜計、方位センサー) に基づくセンサーは、環境の要因に応じて調整が必要になることがあります。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 4652d20b8dd0d04932dcbda330efa8e9367f53d1
+
 ---
 # センサーの調整
 
@@ -31,6 +35,7 @@ description: デバイスの磁力計 (コンパス、傾斜計、方位セン�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

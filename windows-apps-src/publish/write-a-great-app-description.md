@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: 説明が良いと、Windows ストアでアプリが引き立ち、お客様がアプリをダウンロードするための後押しになります。
-title: 人の心をつかむアプリの説明を書く
+Description: "説明が良いと、Windows ストアでアプリが引き立ち、お客様がアプリをダウンロードするための後押しになります。"
+title: "人の心をつかむアプリの説明を書く"
 ms.assetid: E477E98E-090A-4ACE-832F-A98D273EFCA0
+translationtype: Human Translation
+ms.sourcegitcommit: 17e7724eaa8a33f17360eb6e24fcc22068c5d477
+ms.openlocfilehash: 56b8492fea59c9a744c948d27e728e2305388cf8
+
 ---
 
 # 人の心をつかむアプリの説明を書く
@@ -35,6 +39,7 @@ ms.assetid: E477E98E-090A-4ACE-832F-A98D273EFCA0
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

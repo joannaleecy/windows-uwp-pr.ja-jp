@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Marble Maze のサンプルへのオーディオの追加
-description: このドキュメントでは、オーディオを扱う際に考慮する必要のある主な手法について説明すると共に、それらが Marble Maze でどのように適用されているかを紹介します。
+title: "Marble Maze のサンプルへのオーディオの追加"
+description: "このドキュメントでは、オーディオを扱う際に考慮する必要のある主な手法について説明すると共に、それらが Marble Maze でどのように適用されているかを紹介します。"
 ms.assetid: 77c23d0a-af6d-17b5-d69e-51d9885b0d44
+translationtype: Human Translation
+ms.sourcegitcommit: c663692e31a62fdf40df9d706070d0d2ce0e1cdd
+ms.openlocfilehash: 0b2a0cb240431a49ef2bdb82a188f3dcb0294fc5
+
 ---
 
 # Marble Maze のサンプルへのオーディオの追加
@@ -792,6 +796,7 @@ Marble Maze は、利用できるデバイスがない場合に XAudio2 への�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

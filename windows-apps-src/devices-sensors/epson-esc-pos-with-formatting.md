@@ -1,8 +1,12 @@
 ---
 author: DBirtolo
 ms.assetid: 70667353-152B-4B18-92C1-0178298052D4
-title: 書式設定における Epson ESC/POS
-description: POS プリンターで、ESC/POS コマンド言語を使用して、太字、倍角文字など、テキストの書式を設定する方法について説明します。
+title: "書式設定における Epson ESC/POS"
+description: "POS プリンターで、ESC/POS コマンド言語を使用して、太字、倍角文字など、テキストの書式を設定する方法について説明します。"
+translationtype: Human Translation
+ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
+ms.openlocfilehash: 33231abb1e573d837193daeee21713f09c7d8448
+
 ---
 # 書式設定における Epson ESC/POS
 
@@ -58,6 +62,7 @@ printJob.ExecuteAsync();
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

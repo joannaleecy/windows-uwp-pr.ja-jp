@@ -3,8 +3,8 @@ author: TylerMSFT
 ms.assetid: 066711E0-D5C4-467E-8683-3CC64EDBCC83
 title: "C# または Visual Basic での非同期 API の呼び出し"
 description: "ユニバーサル Windows プラットフォーム (UWP) には、時間がかかる可能性がある操作を実行しているときでも、アプリの応答性を保つために、さまざまな非同期 API が用意されています。"
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: b8ff3965503aa96d4ff595d140562c65e0a638c3
+ms.sourcegitcommit: c440d0dc2719a982a6b566c788d76111c40e263e
+ms.openlocfilehash: ba633e4d6f6f97f3ea1c78258f36b11b67b32964
 
 ---
 # C# または Visual Basic での非同期 API の呼び出し
@@ -49,8 +49,8 @@ ms.openlocfilehash: b8ff3965503aa96d4ff595d140562c65e0a638c3
 
 -   [**IAsyncOperation&lt;TResult&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206598)
 -   [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206594)
--   [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580)
--   [**IAsyncActionWithProgress&lt;TProgress&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206580withprogress_1)
+-   [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.aspx)
+-   [**IAsyncActionWithProgress&lt;TProgress&gt;**](https://msdn.microsoft.com/en-us/library/windows/apps/br206581.aspx)
 
 非同期メソッドの結果の型は、`      TResult` 型パラメーターと同じです。 `TResult` のない型には結果がありません。 その場合の結果は **void** と見なすことができます。 Visual Basic の [Sub](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/831f9wka.aspx) プロシージャは、戻り値の型が **void** のメソッドと同じです。
 
@@ -60,15 +60,15 @@ ms.openlocfilehash: b8ff3965503aa96d4ff595d140562c65e0a638c3
 |-----------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------|
 | [**SyndicationClient.RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460)     | [**IAsyncOperationWithProgress&lt;SyndicationFeed, RetrievalProgress&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206594)                                 | [**SyndicationFeed**](https://msdn.microsoft.com/library/windows/apps/BR243485) |
 | [**FileOpenPicker.PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/JJ635275) | [**IAsyncOperation&lt;StorageFile&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206598)                                                                                | [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171)          |
-| [**XmlDocument.SaveToFileAsync**](https://msdn.microsoft.com/library/windows/apps/BR206284)                 | [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580)                                                                                                           | **void**                                          |
-| [**InkStrokeContainer.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/Hh701757)               | [**IAsyncActionWithProgress&lt;UInt64&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206580withprogress_1)                                                                   | **void**                                          |
+| [**XmlDocument.SaveToFileAsync**](https://msdn.microsoft.com/library/windows/apps/BR206284)                 | [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.aspx)                                                                                                           | **void**                                          |
+| [**InkStrokeContainer.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/Hh701757)               | [**IAsyncActionWithProgress&lt;UInt64&gt;**](https://msdn.microsoft.com/en-us/library/windows/apps/br206581.aspx)                                                                   | **void**                                          |
 | [**DataReader.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/BR208135)                            | [
               **DataReaderLoadOperation**
-            ](https://msdn.microsoft.com/library/windows/apps/BR208120)、**IAsyncOperation&lt;UInt32&gt;** を実装するカスタムの結果クラス | [**UInt32**](T:System.UInt32)                     |
+            ](https://msdn.microsoft.com/library/windows/apps/BR208120)、**IAsyncOperation&lt;UInt32&gt;** を実装するカスタムの結果クラス | [**UInt32**](https://msdn.microsoft.com/library/windows/apps/br206598.aspx)                     |
 
  
 
-「[**UWP アプリの .NET**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/br230232.aspx)」で定義されている非同期メソッドの戻り値の型は [**Task**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.threading.tasks.task.aspx) または [**Task&lt;TResult&gt;**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dd321424.aspx) です。 **Task** を返すメソッドは、[**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580) を返す UWP の非同期メソッドに似ています。 どちらの場合も、非同期メソッドの結果は **void** です。 戻り値の型 **Task&lt;TResult&gt;** は、タスク実行時の非同期メソッドの結果が `TResult` 型パラメーターと同じ型であるという点で、[**IAsyncOperation&lt;TResult&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206598) に似ています。 **UWP アプリ用 .NET** とタスクの使い方について詳しくは、「[Windows ランタイム アプリ用 .NET の概要](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/br230302.aspx)」をご覧ください。
+「[**UWP アプリの .NET**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/br230232.aspx)」で定義されている非同期メソッドの戻り値の型は [**Task**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.threading.tasks.task.aspx) または [**Task&lt;TResult&gt;**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dd321424.aspx) です。 **Task** を返すメソッドは、[**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.aspx) を返す UWP の非同期メソッドに似ています。 どちらの場合も、非同期メソッドの結果は **void** です。 戻り値の型 **Task&lt;TResult&gt;** は、タスク実行時の非同期メソッドの結果が `TResult` 型パラメーターと同じ型であるという点で、[**IAsyncOperation&lt;TResult&gt;**](https://msdn.microsoft.com/library/windows/apps/BR206598) に似ています。 **UWP アプリ用 .NET** とタスクの使い方について詳しくは、「[Windows ランタイム アプリ用 .NET の概要](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/br230302.aspx)」をご覧ください。
 
 ## エラーの処理
 
@@ -114,7 +114,6 @@ Windows 7 themes: the distinctive artwork of Cheng Ling, 7/20/2011 9:53:07 AM -0
 
 
 
-
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

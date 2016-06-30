@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: bf0a8b01-79f1-4944-9d78-9741e235dbe9
-title: Xbox 用 Device Portal
-description: Xbox One 向けの Device Portal を有効にする方法について説明します。
+title: "Xbox 用 Device Portal"
+description: "Xbox One 向けの Device Portal を有効にする方法について説明します。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: e1bfdf8e4ee4ed1f88c514acb9ef555c07fd0746
+
 ---
 # Xbox 用 Device Portal
 
@@ -33,6 +37,7 @@ Xbox の Device Portal では、一連の標準ページが提供されます。
 - ネットワーク
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

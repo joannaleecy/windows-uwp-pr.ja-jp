@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 9165f709-71d7-42cf-9b30-3190fe029fb4
-description: Microsoft Advertising ライブラリの AdControl クラスと広告仲介ライブラリの AdMediatorControl クラスの違いについて説明します。
-title: AdMediatorControl と AdControl の違い
+description: "Microsoft Advertising ライブラリの AdControl クラスと広告仲介ライブラリの AdMediatorControl クラスの違いについて説明します。"
+title: "AdMediatorControl と AdControl の違い"
+translationtype: Human Translation
+ms.sourcegitcommit: 8a5b02dbc40f3f0cd9be32aa7d5184e60a3b2707
+ms.openlocfilehash: 291e1c4d707e8987d29ae5840248918543d7d12a
+
 ---
 
 # AdMediatorControl と AdControl の違い
@@ -42,6 +46,7 @@ Microsoft Advertising ライブラリと広告仲介ライブラリは、両方�
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

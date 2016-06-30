@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: DirectX 11 API への DirectX 9 の機能のマッピング
-description: Direct3D 9 ゲームで使う機能が Direct3D 11 とユニバーサル Windows プラットフォーム (UWP) にどのように変換されるかについて説明します。
+title: "DirectX 11 API への DirectX 9 の機能のマッピング"
+description: "Direct3D 9 ゲームで使う機能が Direct3D 11 とユニバーサル Windows プラットフォーム (UWP) にどのように変換されるかについて説明します。"
 ms.assetid: 3aa8a114-4e47-ae0a-9447-88ba324377b8
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 3a9e9c32ed2d892674592f32d0f067fed668d9d1
+
 ---
 
 # DirectX 11 API への DirectX 9 の機能のマッピング
@@ -669,6 +673,7 @@ Direct3D 9 形式から DXGI 形式への変換を行う場合は、次の表を
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

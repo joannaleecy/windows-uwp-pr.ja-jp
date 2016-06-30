@@ -1,8 +1,12 @@
 ---
-title: アプリ間での証明書の共有
-description: ユーザー ID とパスワードの組み合わせよりも安全な認証を必要とするユニバーサル Windows プラットフォーム (UWP) アプリでは、証明書を認証に使うことができます。
+title: "アプリ間での証明書の共有"
+description: "ユーザー ID とパスワードの組み合わせよりも安全な認証を必要とするユニバーサル Windows プラットフォーム (UWP) アプリでは、証明書を認証に使うことができます。"
 ms.assetid: 159BA284-9FD4-441A-BB45-A00E36A386F9
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 2bb1b601e1ab35115c88692f6c36dccc70836541
+
 ---
 
 # アプリ間での証明書の共有
@@ -201,6 +205,7 @@ author: awkoren
 
 これらの手順を繰り返すことで、同じユーザー証明書を使ってセキュリティで保護された同じ Web サービスや別の Web サービスにアクセスする複数のアプリを作成できます。
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

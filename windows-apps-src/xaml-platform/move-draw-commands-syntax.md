@@ -3,8 +3,8 @@ author: jwmsft
 description: "ここでは、パスの形状を XAML 属性値として指定するために使うことのできる、移動と描画のコマンド (ミニ言語) について説明します。"
 title: "移動と描画のコマンド構文"
 ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
-ms.sourcegitcommit: e1399a25b0455c9a79dcb217c5df1a397420d1f3
-ms.openlocfilehash: 54c080183104335f4b3920cda8bc396a34298a69
+ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
+ms.openlocfilehash: 49c3a061c51c07677ffb43a230e0900220ba0299
 
 ---
 
@@ -122,7 +122,7 @@ Windows ランタイム XAML では、移動と描画のコマンドにより、
 
 | 用語 | 説明 |
 |------|-------------|
-| x | [**Double**](T:System.Double) <br/> 直線の終点の x 座標。 |
+| x | [**Double**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> 直線の終点の x 座標。 |
 
 **垂直線コマンド**
 
@@ -134,7 +134,7 @@ Windows ランタイム XAML では、移動と描画のコマンドにより、
 
 | 用語 | 説明 |
 |------|-------------|
-| *y* | [**Double**](T:System.Double) <br/> 直線の終点の y 座標。 |
+| *y* | [**Double**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> 直線の終点の y 座標。 |
 
 **三次ベジエ曲線コマンド**
 
@@ -214,7 +214,7 @@ Windows ランタイム XAML では、移動と描画のコマンドにより、
 | 用語 | 説明 |
 |------|-------------|
 | *size* | [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995)<br/>円弧の x 半径と y 半径。 |
-| *rotationAngle* | [**Double**](T:System.Double) <br/> 楕円の回転角度。 |
+| *rotationAngle* | [**Double**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> 楕円の回転角度。 |
 | *isLargeArcFlag* | 円弧の角度を 180°以上にする場合は 1、それ以外の場合は 0 に設定します。 |
 | *sweepDirectionFlag* | 円弧を正方向の角度に描画する場合は 1、それ以外の場合は 0 に設定します。 |
 | *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> 描画される円弧の終点。|
@@ -239,8 +239,8 @@ Windows ランタイム XAML では、移動と描画のコマンドにより、
 
 | 用語 | 説明 |
 |------|-------------|
-| *x* | [**Double**](T:System.Double) <br/> 点の x 座標。 |
-| *y* | [**Double**](T:System.Double) <br/> 点の y 座標。 |
+| *x* | [**Double**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> 点の x 座標。 |
+| *y* | [**Double**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx) <br/> 点の y 座標。 |
 
 **追加説明**
 
@@ -270,6 +270,6 @@ Windows ランタイムのコントロール用の既定の XAML テンプレー
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

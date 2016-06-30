@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: ユニバーサル Windows プラットフォーム (UWP) アプリのナビゲーションは、ナビゲーション構造、ナビゲーション要素、システム レベルの機能から成る柔軟なモデルに基づいています。
-title: ユニバーサル Windows プラットフォーム (UWP) アプリのナビゲーション デザインの基本
+Description: "ユニバーサル Windows プラットフォーム (UWP) アプリのナビゲーションは、ナビゲーション構造、ナビゲーション要素、システム レベルの機能から成る柔軟なモデルに基づいています。"
+title: "ユニバーサル Windows プラットフォーム (UWP) アプリのナビゲーション デザインの基本"
 ms.assetid: B65D33BA-AAFE-434D-B6D5-1A0C49F59664
 label: Navigation design basics
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 6926d70c7140b1545a8b5492981d6d0b61af3784
+
 ---
 
 #  UWP アプリのナビゲーション デザインの基本
@@ -264,6 +268,7 @@ UWP アプリにおいて効果的で便利なマルチページ ナビゲーシ
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

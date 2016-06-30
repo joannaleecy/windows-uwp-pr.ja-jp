@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
-Description: このチュートリアルでは、A/B テストを使用して最初の試験的機能を作成および実行します。
-title: A/B テストを使用して最初の試験的機能を作成および実行する
+Description: "このチュートリアルでは、A/B テストを使用して最初の試験的機能を作成および実行します。"
+title: "A/B テストを使用して最初の試験的機能を作成および実行する"
 ms.assetid: 16A2B129-14E1-4C68-86E8-52F1BE58F256
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 0f889c22b8999408341f4c12387602b344f49439
+
 ---
 
 # A/B テストを使用して最初の試験的機能を作成および実行する
@@ -175,6 +179,7 @@ private string apiKey = "F48AC670-4472-4387-AB7D-D65B095153FB";
   * [A/B テストを使用してアプリの試験的機能を実行する](run-app-experiments-with-a-b-testing.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

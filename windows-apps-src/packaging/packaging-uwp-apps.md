@@ -1,8 +1,12 @@
 ---
 author: msatranjr
 ms.assetid: 96361CAF-C347-4671-9721-8208CE118CA4
-title: UWP アプリのパッケージ化
-description: ユニバーサル Windows プラットフォーム (UWP) アプリを販売、またはその他のユーザーに配布するには、appxupload パッケージを作成する必要があります。
+title: "UWP アプリのパッケージ化"
+description: "ユニバーサル Windows プラットフォーム (UWP) アプリを販売、またはその他のユーザーに配布するには、appxupload パッケージを作成する必要があります。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: a77e441cbd1b6826e06064dbd4be449813754b25
+
 ---
 # UWP アプリのパッケージ化
 
@@ -136,6 +140,7 @@ UWP アプリ パッケージは、デスクトップ アプリとは異なり�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

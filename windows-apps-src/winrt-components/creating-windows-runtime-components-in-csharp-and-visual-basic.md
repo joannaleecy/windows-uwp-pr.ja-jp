@@ -1,17 +1,17 @@
 ---
-author: martinekuan
-title: C# および Visual Basic での Windows ランタイム コンポーネントの作成
-description: .NET Framework 4.5 以降では、マネージ コードを使って独自の Windows ランタイム型を作成し、Windows ランタイム コンポーネントにパッケージ化することができます。
+author: msatranjr
+title: "C# および Visual Basic での Windows ランタイム コンポーネントの作成"
+description: ".NET Framework 4.5 以降では、マネージ コードを使って独自の Windows ランタイム型を作成し、Windows ランタイム コンポーネントにパッケージ化することができます。"
 ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
+ms.sourcegitcommit: 4c32b134c704fa0e4534bc4ba8d045e671c89442
+ms.openlocfilehash: e8fd48b99d6a05af57e67e503c7bd3058b07569c
+
 ---
 
 # C# および Visual Basic での Windows ランタイム コンポーネントの作成
 
 
-\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
-
-
-\[一部の情報はリリース前の製品に関することであり、正式版がリリースされるまでに大幅に変更される可能性があります。 ここに記載された情報について、マイクロソフトは明示または黙示を問わずいかなる保証をするものでもありません。\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 .NET Framework 4.5 以降では、マネージ コードを使って独自の Windows ランタイム型を作成し、Windows ランタイム コンポーネントにパッケージ化することができます。 また、C++、JavaScript、Visual Basic、C# を利用することで、ユニバーサル Windows プラットフォーム (UWP) アプリでコンポーネントを使うことができます。 この記事では、コンポーネントを作成するための規則を示し、Windows ランタイム向けの .NET Framework のサポートをいくつか説明します。 このサポートは、通常、.NET Framework のプログラマが意識しなくても利用できるように設計されています。 ただし、JavaScript や C++ で使うコンポーネントを作成する場合は、これらの言語が Windows ランタイムをサポートする方法の違いに注意する必要があります。
 
@@ -121,11 +121,11 @@ Windows ランタイムでは、メソッドはオーバーロードできます
 > {
 >     return s;
 > }
-> [Windows.Foundation.Metadata.DefaultOverload()] 
+> [Windows.Foundation.Metadata.DefaultOverload()]
 > public int OverloadExample(int x)
 > {
 >     return x;
-> } 
+> }
 > ```
 > ```vb
 > Public Function OverloadExample(ByVal s As String) As String
@@ -137,7 +137,7 @@ Windows ランタイムでは、メソッドはオーバーロードできます
 > End Function
 > ```
 
-> **注意:** JavaScript では任意の値を OverloadExample に渡すことができ、パラメーターに必要な値を型に強制します。 OverloadExample を "forty-two"、"42"、または 42.3 を使って呼び出すことができますが、それらの値はすべて既定のオーバーロードに渡されます。 前の例の既定のオーバーロードは、0、42、および 42 をそれぞれ返します。
+ **注意:** JavaScript では任意の値を OverloadExample に渡すことができ、パラメーターに必要な値を型に強制します。 OverloadExample を "forty-two"、"42"、または 42.3 を使って呼び出すことができますが、それらの値はすべて既定のオーバーロードに渡されます。 前の例の既定のオーバーロードは、0、42、および 42 をそれぞれ返します。
 
 コンストラクターに DefaultOverloadAttribute 属性を適用することはできません。 クラスのすべてのコンストラクターは、異なる数のパラメーターを持つ必要があります。
 
@@ -202,7 +202,7 @@ await (Visual Basic では Await) を使うメソッドでは、**async** キー
 > ```vb
 > Public Shared Function DownloadAsStringsAsync(ByVal id As String) _
 >      As IAsyncOperation(Of IList(Of String))
-> 
+>
 >     Return Task.Run(Of IList(Of String))(
 >         Async Function()
 >             Dim data = Await DownloadDataAsync(id)
@@ -241,7 +241,7 @@ function asyncExample(id) {
 > ```vb
 > Public Shared Function DownloadAsStringsAsync(ByVal id As String) _
 >     As IAsyncOperation(Of IList(Of String))
-> 
+>
 >     Return AsyncInfo.Run(Of IList(Of String))(
 >         Async Function()
 >             Dim data = Await DownloadDataAsync(id)
@@ -293,7 +293,6 @@ Visual Basic と C# の言語の機能、および Windows ランタイムに関
 
 
 
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

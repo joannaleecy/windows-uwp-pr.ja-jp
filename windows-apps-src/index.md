@@ -1,26 +1,31 @@
 ---
-Description: Here’s the info you need to create a Universal Windows app that can run on any Windows 10-based device, including phones, tablets, and PCs.
-title: How-to guides for Windows 10 apps - Windows app development
+Description: "電話、タブレット、PC など、Windows 10 ベースのデバイスで実行できるユニバーサル Windows アプリを作成する際に必要となる情報について説明します。"
+title: "Windows 10 アプリに関するハウツー ガイド - Windows アプリの開発"
 ms.assetid: 2A39F3D8-85AD-4315-A69B-2B79242780E3
 author: martinekuan
 redirect_url: https://developer.microsoft.com/en-us/windows/develop
+translationtype: Human Translation
+ms.sourcegitcommit: 753a917c0ecbf445560203dbc1406acae52e5265
+ms.openlocfilehash: 97e016047c864026fe0c72e4b7cb819f0fc80748
+
 ---
 
 
-# How-to guides for UWP apps on Windows 10
+# Windows 10 の UWP アプリに関するハウツー ガイド
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-Here’s the info you need to create a Universal Windows app that can run on any Windows 10-based device, including phones, tablets, and PCs. This section offers both instructions and code examples organized by the kind of task you want to accomplish.
+電話、タブレット、PC など、Windows 10 ベースのデバイスで実行できるユニバーサル Windows アプリを作成する際に必要となる情報について説明します。 このセクションには、目的のタスクの種類別にまとめられた手順とコード例を掲載します。
 
-If you'd like an introduction to the Universal Windows Platform (UWP) and how it lets you use the same code to deliver appropriately tailored experiences to multiple Windows device types, see these articles:
+ユニバーサル Windows プラットフォーム (UWP) の概要、および UWP で同じコードを使い、複数の Windows デバイスの種類に合わせたエクスペリエンスを実現する方法については、次の記事をご覧ください。
 
--   [Create your first Universal Windows Platform app](get-started/create-a-hello-world-app-xaml-universal.md)
--   [Guide to Universal Windows Platform (UWP) apps](get-started/universal-application-platform-guide.md)
--   [What's a Universal Windows Platform app?](get-started/whats-a-uwp.md)
+-   [初めてのユニバーサル Windows プラットフォーム アプリの作成](get-started/create-a-hello-world-app-xaml-universal.md)
+-   [ユニバーサル Windows プラットフォーム (UWP) アプリのガイド](get-started/universal-application-platform-guide.md)
+-   [ユニバーサル Windows プラットフォーム アプリとは](get-started/whats-a-uwp.md)
 
 
 
-<!--HONumber=Jun16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

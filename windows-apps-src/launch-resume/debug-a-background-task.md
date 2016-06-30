@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: バックグラウンド タスクのデバッグ
-description: バックグラウンド タスクをデバッグする方法について説明します。バックグラウンド タスクのアクティブ化のほか、Windows イベント ログでのデバッグ トレースなどについて取り上げます。
+author: TylerMSFT
+title: "バックグラウンド タスクのデバッグ"
+description: "バックグラウンド タスクをデバッグする方法について説明します。バックグラウンド タスクのアクティブ化のほか、Windows イベント ログでのデバッグ トレースなどについて取り上げます。"
 ms.assetid: 24E5AC88-1FD3-46ED-9811-C7E102E01E9C
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: 1b49c3f06456eef2f3e56227ecb5af5fc991fb13
+
 ---
 
 # バックグラウンド タスクのデバッグ
@@ -112,8 +115,6 @@ VS を使ってバックグラウンド タスクをデバッグする方法に�
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Direct3D 11 でのデバイス削除シナリオの処理
-description: このトピックでは、グラフィックス アダプターが削除または再初期化されたときに Direct3D と DXGI デバイス インターフェイス チェーンを再作成する方法について説明します。
+title: "Direct3D 11 でのデバイス削除シナリオの処理"
+description: "このトピックでは、グラフィックス アダプターが削除または再初期化されたときに Direct3D と DXGI デバイス インターフェイス チェーンを再作成する方法について説明します。"
 ms.assetid: 8f905acd-08f3-ff6f-85a5-aaa99acb389a
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 8d522a309386b06f97bc63b9eead1ca4cecf165c
+
 ---
 
 # <span id="dev_gaming.handling_device-lost_scenarios"></span>Direct3D 11 でのデバイス削除シナリオの処理
@@ -26,7 +30,7 @@ DirectX 9 では、D3D デバイスが非動作状態になったときに、ア
 ### <span></span>手順 1:
 
 レンダリング ループにデバイス削除エラーのチェックを加えます。 [
-            **IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576) (または [**Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) など) を呼び出して、フレームを表示します。 次に、[**DXGI\_ERROR\_DEVICE\_REMOVED**](https://msdn.microsoft.com/library/windows/desktop/bb509553) または **DXGI\_ERROR\_DEVICE\_RESET** が返されたかどうかをチェックします
+            **IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576) (または [**Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) など) を呼び出して、フレームを表示します。 次に、[**DXGI\_ERROR\_DEVICE\_REMOVED**](https://msdn.microsoft.com/library/windows/desktop/bb509553) または **DXGI\_ERROR\_DEVICE\_RESET** が返されたかどうかをチェックします。
 
 まず、テンプレートは DXGI スワップ チェーンから返された HRESULT を保存します。
 
@@ -155,7 +159,7 @@ DXGI デバイス削除エラーが繰り返し発生する場合は、アプリ
 #endif
 ```
 
-詳しくは、「[**GetDeviceRemovedReason**](https://msdn.microsoft.com/library/windows/desktop/ff476526)」および「[**DXGI\_ERROR**](https://msdn.microsoft.com/library/windows/desktop/bb509553)」をご覧ください
+詳しくは、「[**GetDeviceRemovedReason**](https://msdn.microsoft.com/library/windows/desktop/ff476526)」および「[**DXGI\_ERROR**](https://msdn.microsoft.com/library/windows/desktop/bb509553)」をご覧ください。
 
 ### デバイスの削除完了処理のテスト
 
@@ -174,6 +178,7 @@ Visual Studio の開発者コマンド プロンプトでは、Visual Studio グ
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

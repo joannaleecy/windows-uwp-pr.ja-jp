@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
-description: デバイス自体とそのセンサーに統合するコードには、ユーザーに対する入力と出力が含まれます。
-title: 入出力、デバイス、アプリ モデルの Windows ランタイム 8.x から UWP への移植'
+description: "デバイス自体とそのセンサーに統合するコードには、ユーザーに対する入力と出力が含まれます。"
+title: "入出力、デバイス、アプリ モデルの Windows ランタイム 8.x から UWP への移植'"
 ms.assetid: bb13fb8f-bdec-46f5-8640-57fb0dd2d85b
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: e5e560ca4f40496edf9d11c3eef546fdc4c3b079
+
 ---
 
 # 入出力、デバイス、アプリ モデルの Windows ランタイム 8.x から UWP への移植
@@ -74,6 +78,7 @@ bool isDeviceFamilyNameKnown = qualifiers.TryGetValue("DeviceFamily", out device
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

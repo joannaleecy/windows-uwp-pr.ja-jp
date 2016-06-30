@@ -1,10 +1,14 @@
 ---
 author: Xansky
-Description: ユニバーサル Windows プラットフォーム (UWP) アプリに関連するアクセシビリティの概念について紹介します。
+Description: "ユニバーサル Windows プラットフォーム (UWP) アプリに関連するアクセシビリティの概念について紹介します。"
 ms.assetid: C89D79C2-B830-493D-B020-F3FF8EB5FFDD
-title: アクセシビリティ
+title: "アクセシビリティ"
 label: Accessibility
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3
+
 ---
 
 # アクセシビリティ  
@@ -15,6 +19,7 @@ template: detail.hbs
 
 アクセシビリティの目的は、さまざまな環境でテクノロジを使い、幅広いニーズとエクスペリエンスに対応したユーザー インターフェイスにアクセスするユーザーにとって、アプリを使いやすいものにするエクスペリエンスを構築することです。 状況によってはアクセシビリティの要件が法律で定められているものもありますが、 アプリをできるだけ多くの人が利用するために、法的要件に関係なくアクセシビリティの問題に対処することをお勧めします。 また、アプリのアクセシビリティに関する Windows ストアの宣言も含まれます。
 
+> [!NOTE]
 > アプリをアクセシビリティ対応として宣言する方法は、Windows ストアのみに関係します。
 
 | 記事 | 説明 |
@@ -38,6 +43,7 @@ template: detail.hbs
 * [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/BR209179)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

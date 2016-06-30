@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Windows デベロッパー センター ダッシュボードで各アプリに関連する詳細を管理および表示し、プッシュ通知やマップなどのサービスを構成できます。
-title: アプリの管理とサービス
+Description: "Windows デベロッパー センター ダッシュボードで各アプリに関連する詳細を管理および表示し、プッシュ通知やマップなどのサービスを構成できます。"
+title: "アプリの管理とサービス"
 ms.assetid: 99DA2BC1-9B5D-4746-8BC0-EC723D516EEF
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 71077ac3f64e10734021e5fb655168f7273e3cb6
+
 ---
 
 # アプリの管理とサービス
@@ -78,6 +82,7 @@ OEM アクセス許可を持つ開発者は、**[現在のパッケージ]** ペ
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

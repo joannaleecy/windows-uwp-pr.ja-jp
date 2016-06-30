@@ -1,8 +1,11 @@
 ---
 author: mcleanbyron
 ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
-description: Windows ストア分析 API を使って、自分または自分の組織の Windows デベロッパー センター アカウントに登録されたアプリの分析データをプログラムで取得することができます。
-title: Windows ストア サービスを使った分析データへのアクセス
+description: "Windows ストア分析 API を使って、自分または自分の組織の Windows デベロッパー センター アカウントに登録されたアプリの分析データをプログラムで取得することができます。"
+title: "Windows ストア サービスを使った分析データへのアクセス"
+ms.sourcegitcommit: 204bace243fb082d3ca3b4259982d457f9c533da
+ms.openlocfilehash: 30388a975e9623c5511abe608aa1b21956e2c974
+
 ---
 
 # Windows ストア サービスを使った分析データへのアクセス
@@ -35,18 +38,18 @@ Windows ストア分析 API を使う前に、Azure AD アプリケーション�
 
 1.  デベロッパー センターで、**[アカウント設定]** に移動して **[ユーザーの管理]** をクリックし、組織のデベロッパー センター アカウントを組織の Azure AD ディレクトリに関連付けます。 詳しい手順については、「[アカウント ユーザーの管理](https://msdn.microsoft.com/library/windows/apps/mt489008)」をご覧ください。 必要に応じて、組織の Azure AD ディレクトリから他のユーザーを追加して、デベロッパー センター アカウントにもアクセスできるようにすることができます。
 
-    **注**  Azure Active Directory に関連付けることができるデベロッパー センター アカウントは 1 つのみです。 同様に、デベロッパー センター アカウントに関連付けることができる Azure Active Directory は 1 つのみです。 一度関連付けを確立すると、その関連付けを削除するには、必ずサポートへの問い合わせが必要になります。
+    > **注**  Azure Active Directory に関連付けることができるデベロッパー センター アカウントは 1 つのみです。 同様に、デベロッパー センター アカウントに関連付けることができる Azure Active Directory は 1 つのみです。 一度関連付けを確立すると、その関連付けを削除するには、必ずサポートへの問い合わせが必要になります。
 
      
 
-2.  **[ユーザーの管理]** ページで、**[Azure AD アプリケーションの追加]** をクリックして、デベロッパー センター アカウントの分析データへのアクセスに使う Azure AD アプリケーションを追加し、**マネージャー** ロールを割り当てます。 このアプリケーションが既に Azure AD ディレクトリに存在する場合、**[Azure AD アプリケーションの追加]** で選んでデベロッパー センター アカウントに追加できます。 それ以外の場合、**[Azure AD アプリケーションの追加]** ページで新しい Azure AD アプリケーションを作成できます。 詳しくは、「[アカウント ユーザーの管理](https://msdn.microsoft.com/library/windows/apps/mt489008)」の Azure AD アプリケーションの管理に関するセクションをご覧ください。
+2.  **[ユーザーの管理]** ページで、**[Azure AD アプリケーションの追加]** をクリックして、デベロッパー センター アカウントの分析データへのアクセスに使うアプリやサービスを表す Azure AD アプリケーションを追加し、**マネージャー** ロールを割り当てます。 このアプリケーションが既に Azure AD ディレクトリに存在する場合、**[Azure AD アプリケーションの追加]** ページで選んでデベロッパー センター アカウントに追加できます。 それ以外の場合、**[Azure AD アプリケーションの追加]** ページで新しい Azure AD アプリケーションを作成できます。 詳しくは、「[アカウント ユーザーの管理](https://msdn.microsoft.com/library/windows/apps/mt489008)」の Azure AD アプリケーションの管理に関するセクションをご覧ください。
 
 3.  **[ユーザーの管理]** ページに戻り、Azure AD アプリケーションの名前をクリックしてアプリケーション設定に移動し、**[新しいキーの追加]** をクリックします。 次の画面で、**[クライアント ID]** と **[キー]** の値を書き留めます。 詳しくは、「[アカウント ユーザーの管理](https://msdn.microsoft.com/library/windows/apps/mt489008)」の Azure AD アプリケーションの管理に関するセクションをご覧ください。 これらのクライアント ID とキーは、Windows ストア分析 API を呼び出すときに使う Azure AD アクセス トークンを取得するために必要です。 このページから離れると、この情報に再度アクセスすることはできません。
 
 
 ### Azure AD アクセス トークンの取得
 
-Azure AD アプリケーションをデベロッパー センター アカウントに関連付け、アプリケーションのクライアント ID とキーを取得すると、この情報を使って Azure AD アクセス トークンを取得できます。 Windows ストア分析 API で任意のメソッドを呼び出すには、アクセス トークンが必要です。
+Azure AD アプリケーションをデベロッパー センター アカウントに関連付け、アプリケーションのクライアント ID とキーを取得すると、この情報を使って Azure AD アクセス トークンを取得できます。 Windows ストア分析 API で任意のメソッドを呼び出すには、アクセス トークンが必要です。 アクセス トークンを作成した後、アクセス トークンを使用できるのはその有効期限が切れるまでの 60 分間です。
 
 アクセス トークンを取得するには、「[クライアント資格情報を使用したサービス間の呼び出し](https://msdn.microsoft.com/library/azure/dn645543.aspx)」の手順に従って、HTTP POST を次の Azure AD エンドポイントに送信します。
 
@@ -108,9 +111,9 @@ namespace TestAnalyticsAPI
                     clientSecret,
                     scope).Result;
 
-            // This is your app's product ID. This ID is embedded in the app's listing link
-            // on the App identity page of the Dev Center dashboard.
-            string appID = "<your app's product ID>";
+            // This is your app's Store ID. This ID is available on
+            // the App identity page of the Dev Center dashboard.
+            string appID = "<your app's Store ID>";
 
             DateTime startDate = DateTime.Parse("08-01-2015");
             DateTime endDate = DateTime.Parse("11-01-2015");
@@ -237,6 +240,7 @@ Windows ストア分析 API は、エラー コードとメッセージが含ま
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

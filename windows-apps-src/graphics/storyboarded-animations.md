@@ -3,8 +3,8 @@ author: Jwmsft
 ms.assetid: 0CBCEEA0-2B0E-44A1-A09A-F7A939632F3A
 title: "ストーリーボードに設定されたアニメーション"
 description: "ストーリーボードに設定されたアニメーションは、単なる視覚なアニメーションではありません。"
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 83e361fd736ce46893517c7a5cccc9c5efc9a889
+ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
+ms.openlocfilehash: 6c900ae6e1cfde8ec7261acfc57ea19b49f2ede1
 
 ---
 # ストーリーボードに設定されたアニメーション
@@ -237,7 +237,7 @@ Windows ランタイムのアニメーション システムには、ストー�
 
  
 
-また、コントロールの見た目に対して表示状態のアニメーションを宣言する場合は、アニメーションを [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) ユニットに含めます。 その場合、定義する **Storyboard** 要素は、[**Style**](https://msdn.microsoft.com/library/windows/apps/BR208849) (キーを持つリソースである **Style**) 内でより深く入れ子にされる [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) コンテナーに含めます。 この場合、**Storyboard** に対してキーや名前は必要ありません。それは、これが、[**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209007manager) が呼び出すことができるターゲットの名前を持つ  **VisualState** であるためです。 ページまたはアプリの **Resources** コレクションに配置する代わりに、コントロールのスタイルを別個の XAML [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794) ファイルに格納する方法は一般的な方法です。 詳しくは、「[表示状態用にストーリーボードに設定されたアニメーション](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)」をご覧ください。
+また、コントロールの見た目に対して表示状態のアニメーションを宣言する場合は、アニメーションを [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) ユニットに含めます。 その場合、定義する **Storyboard** 要素は、[**Style**](https://msdn.microsoft.com/library/windows/apps/BR208849) (キーを持つリソースである **Style**) 内でより深く入れ子にされる [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) コンテナーに含めます。 この場合、**Storyboard** に対してキーや名前は必要ありません。それは、これが、[**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstatemanager) が呼び出すことができるターゲットの名前を持つ  **VisualState** であるためです。 ページまたはアプリの **Resources** コレクションに配置する代わりに、コントロールのスタイルを別個の XAML [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794) ファイルに格納する方法は一般的な方法です。 詳しくは、「[表示状態用にストーリーボードに設定されたアニメーション](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)」をご覧ください。
 
 ## 依存型および独立型アニメーション
 
@@ -320,11 +320,11 @@ myStoryBoard.Begin()
 
 ### 表示状態用のアニメーション
 
-コントロールの表示状態を定義するために使われる [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) の実行動作は、アプリがストーリーボードを直接実行する方法とは異なります。 XAML で表示状態の定義に適用されるとおり、**Storyboard** は上位の [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) の要素であり、状態全体は [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209007manager) API を使って制御されます。 含まれるアニメーションは、上位の [**VisualState** がコントロールによって使われるときにアニメーション値と **Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517) プロパティに従って実行されます。 詳しくは、「[表示状態用にストーリーボードに設定されたアニメーション](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)」をご覧ください。 表示状態については、明確な [**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243209) は異なります。 表示状態が別の状態に変化すると、新しい表示状態でプロパティに新しいアニメーションを明示的に適用しない場合でも、前の表示状態とそのアニメーションによって適用されるすべてのプロパティの変更が取り消されます。
+コントロールの表示状態を定義するために使われる [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) の実行動作は、アプリがストーリーボードを直接実行する方法とは異なります。 XAML で表示状態の定義に適用されるとおり、**Storyboard** は上位の [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) の要素であり、状態全体は [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstatemanager) API を使って制御されます。 含まれるアニメーションは、上位の [**VisualState** がコントロールによって使われるときにアニメーション値と **Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517) プロパティに従って実行されます。 詳しくは、「[表示状態用にストーリーボードに設定されたアニメーション](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)」をご覧ください。 表示状態については、明確な [**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243209) は異なります。 表示状態が別の状態に変化すると、新しい表示状態でプロパティに新しいアニメーションを明示的に適用しない場合でも、前の表示状態とそのアニメーションによって適用されるすべてのプロパティの変更が取り消されます。
 
 ### **Storyboard** と **EventTrigger**
 
-XAML で完全に宣言できるアニメーションをある方法で開始できます。 しかし、この手法は幅広く使われていません。 これは、[**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209007manager) がサポートされる前の WPF と旧バージョンの Silverlight で使われていた構文です。 この [**EventTrigger**](https://msdn.microsoft.com/library/windows/apps/BR242390) 構文はインポートまたは互換性の理由から Windows ランタイム XAML でも機能するものの、[**FrameworkElement.Loaded**](https://msdn.microsoft.com/library/windows/apps/BR208723) イベントに基づくトリガー動作でのみ機能します。他のイベントのトリガーを試みると、例外がスローされるか、コンパイルに失敗します。 詳しくは、「[**EventTrigger**](https://msdn.microsoft.com/library/windows/apps/BR242390)」または「[**BeginStoryboard**](https://msdn.microsoft.com/library/windows/apps/BR243053)」をご覧ください。
+XAML で完全に宣言できるアニメーションをある方法で開始できます。 しかし、この手法は幅広く使われていません。 これは、[**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstatemanager) がサポートされる前の WPF と旧バージョンの Silverlight で使われていた構文です。 この [**EventTrigger**](https://msdn.microsoft.com/library/windows/apps/BR242390) 構文はインポートまたは互換性の理由から Windows ランタイム XAML でも機能するものの、[**FrameworkElement.Loaded**](https://msdn.microsoft.com/library/windows/apps/BR208723) イベントに基づくトリガー動作でのみ機能します。他のイベントのトリガーを試みると、例外がスローされるか、コンパイルに失敗します。 詳しくは、「[**EventTrigger**](https://msdn.microsoft.com/library/windows/apps/BR242390)」または「[**BeginStoryboard**](https://msdn.microsoft.com/library/windows/apps/BR243053)」をご覧ください。
 
 ## XAML 添付プロパティのアニメーション化
 
@@ -353,6 +353,6 @@ XAML で完全に宣言できるアニメーションをある方法で開始で
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: d074e9d5-b3e0-4f16-b1e4-02b32ac99b2c
-description: 値に **AdControl** プロパティを割り当てる方法について説明します。
-title: XAML プロパティの例
+description: "値に **AdControl** プロパティを割り当てる方法について説明します。"
+title: "XAML プロパティの例"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 43d579d2d0a92a8f03f17efa2ec42707357e99f9
+
 
 ---
 
@@ -33,6 +37,7 @@ IsEngagedChanged="OnAdEngagedChanged"
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

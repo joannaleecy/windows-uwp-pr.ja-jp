@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: 統計データを含む .files をダウンロードすると、統計情報と情報をオフラインで確認できます。
-title: 分析レポートのダウンロード
+Description: "統計データを含む .files をダウンロードすると、統計情報と情報をオフラインで確認できます。"
+title: "分析レポートのダウンロード"
 ms.assetid: BCA61ABF-16ED-42C3-9014-68629CB5A24F
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 959007d6d7c4e4c768f196fe04c2fa4a8ac6fc2e
+
 ---
 
 # 分析レポートのダウンロード
@@ -23,6 +27,7 @@ ms.assetid: BCA61ABF-16ED-42C3-9014-68629CB5A24F
 4.  **[レポートのダウンロード]** をクリックし、.tsv ファイルを保存するか開きます。
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Windows または Windows Phone 向けのストアに以前にアプリを公開していた場合、それらのアプリは、Windows 10 デバイスのユーザーも利用できるようになります。
-title: ストアにおける Windows 10 ユーザー向けのアプリの表示形式
+Description: "Windows または Windows Phone 向けのストアに以前にアプリを公開していた場合、それらのアプリは、Windows 10 デバイスのユーザーも利用できるようになります。"
+title: "ストアにおける Windows 10 ユーザー向けのアプリの表示形式"
 ms.assetid: 487BB57E-F547-4764-99B1-84FE396E6D3A
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 5e8d25264a17307c61f4e8b1295ded3f920ee2cf
+
 ---
 
 # ストアにおける Windows 10 ユーザー向けのアプリの表示形式
@@ -117,6 +121,7 @@ Windows 10 ユーザーに表示される説明を更新して、複数のデバ
 | ゲーム &gt; レーシング           | ゲーム &gt; レーシング & フライト           |
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

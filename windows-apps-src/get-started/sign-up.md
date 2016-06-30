@@ -1,8 +1,12 @@
 ---
 author: martinekuan
 ms.assetid: 16AB1111-4BA8-4352-B796-E97AA9243E31
-title: サインアップの準備はできましたか。
-description: 今すぐ開発者アカウントにご登録ください。Windows ストアでアプリを公開し、他の Microsoft プログラムに参加できます。
+title: "サインアップの準備はできましたか。"
+description: "今すぐ開発者アカウントにご登録ください。Windows ストアでアプリを公開し、他の Microsoft プログラムに参加できます。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 53d23b3f8502e1f182c728b9f787fbbc4b694d42
+
 ---
 # サインアップの準備はできましたか。
 
@@ -20,6 +24,7 @@ Microsoft では、[世界各地で個人のアカウントと会社のアカウ
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

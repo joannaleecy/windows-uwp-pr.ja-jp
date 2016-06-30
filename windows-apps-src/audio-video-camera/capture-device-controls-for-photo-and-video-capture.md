@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: 831123A7-1F40-4B74-AE9F-69AC9883B4AD
-description: この記事では、光学式手ブレ補正やスムーズ ズームなど、写真とビデオのキャプチャに関する拡張シナリオを可能にするために、ビデオ デバイスを制御する方法について説明します。
-title: 写真とビデオのキャプチャのためのキャプチャ デバイス コントロール
+description: "この記事では、光学式手ブレ補正やスムーズ ズームなど、写真とビデオのキャプチャに関する拡張シナリオを可能にするために、ビデオ デバイスを制御する方法について説明します。"
+title: "写真とビデオのキャプチャのためのキャプチャ デバイス コントロール"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
+
 ---
 
 # 写真とビデオのキャプチャのためのキャプチャ デバイス コントロール
@@ -351,6 +355,7 @@ OIS を有効または無効にするには、[**OpticalImageStabilizationContro
 * [MediaCapture を使った写真とビデオのキャプチャ](capture-photos-and-video-with-mediacapture.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

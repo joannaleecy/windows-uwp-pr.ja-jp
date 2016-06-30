@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: E0189423-1DF3-4052-AB2E-846EA18254C4
-description: このトピックでは、ビデオ キャプチャに関連して使う効果の設計について説明します。 ここでは、ビデオの手ブレ補正効果を中心に説明しています。
-title: ビデオ キャプチャの効果
+description: "このトピックでは、ビデオ キャプチャに関連して使う効果の設計について説明します。 ここでは、ビデオの手ブレ補正効果を中心に説明しています。"
+title: "ビデオ キャプチャの効果"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 3af5ed7146f2420c2a6d3035c26290cbeaff8375
+
 ---
 
 # ビデオ キャプチャの効果
@@ -88,6 +92,7 @@ VideoStabilizationEffect のインスタンスの [**GetRecommendedStreamConfigu
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,10 +1,14 @@
 ---
 author: awkoren
-Description: 'このトピックでは、データ転送に関連する最も一般的なエンタープライズ データ保護 (EDP) シナリオのいくつかを実現するために必要なコード作成タスクの例を示します。'
-MS-HAID: 'dev\_app\_to\_app.use\_edp\_to\_protect\_enterprise\_data\_transferred\_between\_apps'
-MSHAttr: 'PreferredLib:/library/windows/apps'
+Description: "このトピックでは、データ転送に関連する最も一般的なエンタープライズ データ保護 (EDP) シナリオのいくつかを実現するために必要なコード作成タスクの例を示します。"
+MS-HAID: dev\_app\_to\_app.use\_edp\_to\_protect\_enterprise\_data\_transferred\_between\_apps
+MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: EDP を使ったアプリ間で転送されるエンタープライズ データの保護
+title: "EDP を使ったアプリ間で転送されるエンタープライズ データの保護"
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 77533d4aca3cc84e0a021a0faac57f5afbbefdd7
+
 ---
 
 # EDP を使ったアプリ間で転送されるエンタープライズ データの保護
@@ -395,6 +399,7 @@ private async void OnPasteWithRequestAccess()
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

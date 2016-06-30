@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Windows ストアに申請するために、次のガイドラインに従ってアプリのパッケージを準備してください。
-title: アプリ パッケージの要件
+Description: "Windows ストアに申請するために、次のガイドラインに従ってアプリのパッケージを準備してください。"
+title: "アプリ パッケージの要件"
 ms.assetid: 651B82BA-9D0C-45AC-8997-88CD93DC903C
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 951c00f9fd2c945ac44d47bfae701049e937b98f
+
 ---
 
 # アプリ パッケージの要件
@@ -80,6 +84,7 @@ StoreManifest.xml は、必要に応じてアプリ パッケージに含める�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

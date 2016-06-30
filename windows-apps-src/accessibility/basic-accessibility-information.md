@@ -1,10 +1,13 @@
 ---
 author: Xansky
-Description: 基本的なアクセシビリティ情報は、多くの場合、名前、役割、値に分類されます。 このトピックでは、支援技術が必要とする基本情報をアプリで公開するのに役立つコードについて説明します。
+Description: "基本的なアクセシビリティ情報は、多くの場合、名前、役割、値に分類されます。 このトピックでは、支援技術が必要とする基本情報をアプリで公開するのに役立つコードについて説明します。"
 ms.assetid: 9641C926-68C9-4842-8B55-C38C39A9E5C5
-title: 基本的なアクセシビリティ情報の開示
+title: "基本的なアクセシビリティ情報の開示"
 label: Expose basic accessibility information
 template: detail.hbs
+ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
+ms.openlocfilehash: 1c6bc8567b39357d414a46ef2b92197c78bca971
+
 ---
 
 # 基本的なアクセシビリティ情報の開示  
@@ -24,7 +27,7 @@ template: detail.hbs
 |-------------------|-------------|
 | 静的テキスト       | [
             **TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 要素と [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565) 要素については、アクセシビリティ対応の名前が表示 (内部) テキストから自動的に決定されます。 この要素のテキストはすべて名前として使われます。 「[内部テキストに基づく名前](#name_from_inner_text)」をご覧ください。 |
-| イメージ            | XAML の [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) 要素は、HTML の **img** の **alt** 属性やこれに類似する要素に、直接相当するものではありません。 [
+| 画像            | XAML の [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) 要素は、HTML の **img** の **alt** 属性やこれに類似する要素に、直接相当するものではありません。 [
             **AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) を使って名前を指定するか、キャプション手法を使います。 「[画像のアクセシビリティ対応の名前](#images)」をご覧ください。 |
 | フォーム要素     | フォーム要素のアクセシビリティ対応の名前は、その要素に表示されるラベルと同じにする必要があります。 「[ラベルと LabeledBy](#labels)」をご覧ください。 |
 | ボタンとリンク | ボタンやリンクでは、「[内部テキストに基づく名前](#name_from_inner_text)」に記載されているのと同じ規則を使って、表示テキストに基づく名前が既定でアクセシビリティ対応の名前として使われます。 画像のみが含まれるボタンの場合は、[**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) を使って、そのボタンで想定する操作にテキストのみのボタンを指定します。 |
@@ -34,7 +37,7 @@ template: detail.hbs
 <span id="role_value"/>
 <span id="ROLE_VALUE"/>
 ## 役割と値  
-XAML ボキャブラリに含まれるコントロールやその他の UI 要素は、その定義の一部として役割と値を報告するために UI オートメーション サポートを実装しています。 UI オートメーション ツールを使ってコントロールの役割と値の情報を検証できます。また、各コントロールの [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) 実装に関する説明書を参照することもできます。 UI オートメーション フレームワークで使うことができる役割は、[**AutomationControlType**](https://msdn.microsoft.com/library/windows/apps/BR209182) 列挙体で定義されています。 支援技術などの UI オートメーション クライアントでは、コントロールの **AutomationPeer** を使うことで UI オートメーション フレームワークが公開するメソッドを呼び出すことにより、役割の情報を取得することができます。
+XAML ボキャブラリに含まれるコントロールやその他の UI 要素は、その定義の一部として役割と値を報告するために UI オートメーション サポートを実装しています。 UI オートメーション ツールを使ってコントロールの役割と値の情報を検証できます。また、各コントロールの [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) 実装に関する説明書を参照することもできます。 UI オートメーション フレームワークで使うことができる役割は、[**AutomationControlType**](https://msdn.microsoft.com/library/windows/apps/BR209182) 列挙体で定義されています。 支援技術などの UI オートメーション クライアントでは、コントロールの **AutomationPeer** を使用することで UI オートメーション フレームワークが公開するメソッドを呼び出すことにより、役割の情報を取得することができます。
 
 すべてのコントロールに値があるわけではありません。 値のあるコントロールは、このコントロールでサポートされるピアとパターンを介して UI オートメーションにこの情報を報告します。 たとえば、[**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) フォーム要素には値があります。 支援技術は UI オートメーション クライアントである可能性もあり、値が存在することと、値が何であるかを確認することができます。 この場合、**TextBox** は [**TextBoxAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242550) を定義することで [**IValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242663) パターンをサポートします。
 
@@ -58,7 +61,7 @@ UI オートメーション フレームワークには、3 つの有効なビ�
 * [
               **TextBlock**
             ](https://msdn.microsoft.com/library/windows/apps/BR209652)、[**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565)、[**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683)、**RichTextBlock** それぞれでは、既定のアクセシビリティ対応の名前として **Text** プロパティの値を昇格させます。
-* いずれの [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/BR209365) サブクラスも、反復的な "ToString" を使って、[**Content**](https://msdn.microsoft.com/library/windows/apps/BR209365_content) 値に含まれる文字列を検索し、その文字列を既定のアクセシビリティ対応の名前として昇格させます。
+* いずれの [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content) サブクラスも、反復的な "ToString" を使って、[**Content**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content) 値に含まれる文字列を検索し、その文字列を既定のアクセシビリティ対応の名前として昇格させます。
 
 > [!NOTE]
 > UI オートメーションで規定されているため、アクセシビリティ対応の名前の長さは 2048 文字以下でなければなりません。 アクセシビリティ対応の名前を自動的に決定するために使う文字列がこの制限を超えている場合、アクセシビリティ対応の名前は制限に収まるように切り捨てられます。
@@ -114,7 +117,7 @@ XAML
 
 ナレーター スクリーン リーダーは、ユーザーが CapsLock キーを押しながら F キーを押して要素に関する追加情報を要求した場合にのみ、要素のアクセシビリティ対応の説明を読み上げます。
 
-このアクセシビリティ対応の名前は、動作を完全に表すためのものではなく、コントロールを識別するためのものです。 簡単な説明だけではコントロールの説明が不十分な場合は、[**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) に加え、[**AutomationProperties.HelpText**](https://msdn.microsoft.com/library/windows/apps/Hh759765) 添付プロパティを設定できます。
+このアクセシビリティ対応の名前は、動作を完全に表すためのものではなく、コントロールを識別するためのものです。 簡単な説明だけではコントロールの説明が不十分な場合は、[**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759765) に加え、[**AutomationProperties.HelpText**](https://msdn.microsoft.com/library/windows/apps/Hh759770) 添付プロパティを設定できます。
 
 <span id="Testing_accessibility_early_and_often"/>
 <span id="testing_accessibility_early_and_often"/>
@@ -128,16 +131,16 @@ XAML
 <span id="accessible_names_from_dynamic_data"/>
 <span id="ACCESSIBLE_NAMES_FROM_DYNAMIC_DATA"/>
 ## 動的データからのアクセシビリティ対応の名前  
-Windows では、*データ バインディング*という機能によって、関連付けられたデータ ソースから取得される値を表示するのに使うことができる、多くのコントロールがサポートされています。 一覧にデータ項目を設定するときに、最初の一覧に入力した後で、データがバインドされた一覧項目にアクセシビリティ対応の名前を設定する必要がある場合があります。 詳しくは、[XAML アクセシビリティ サンプル](http://go.microsoft.com/fwlink/p/?linkid=238570)のシナリオ 4 をご覧ください。
+Windows では、*データ バインディング*という機能によって、関連付けられたデータ ソースから取得される値を表示するのに使うことができる、多くのコントロールがサポートされています。 一覧にデータ項目を設定するときに、最初の一覧に入力した後で、データがバインドされた一覧項目にアクセシビリティ対応の名前を設定する必要がある場合があります。 詳しくは、[XAML アクセシビリティ サンプル](http://go.microsoft.com/fwlink/p/?linkid=238570) のシナリオ 4 をご覧ください。
 
 <span id="Accessible_names_and_localization"/>
 <span id="accessible_names_and_localization"/>
 <span id="ACCESSIBLE_NAMES_AND_LOCALIZATION"/>
 ## アクセシビリティ対応の名前とローカライズ  
-アクセシビリティ対応の名前をローカライズ対象の要素としても設定する場合は、適切な方法によってローカライズ可能な文字列をリソースとして保存し、[x:Uid ディレクティブ](https://msdn.microsoft.com/library/windows/apps/Mt204791)値を使ってリソース接続を参照する必要があります。 アクセシビリティ対応の名前を、明示的に設定された [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) の使用から取得する場合は、必ずそこに含まれる文字列もローカライズ可能であることを確認します。
+アクセシビリティ対応の名前をローカライズ対象の要素としても設定する場合は、適切な方法によってローカライズ可能な文字列をリソースとして保存し、[x:Uid ディレクティブ](https://msdn.microsoft.com/library/windows/apps/Mt204791) 値を使ってリソース接続を参照する必要があります。 アクセシビリティ対応の名前を、明示的に設定された [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) の使用から取得する場合は、必ずそこに含まれる文字列もローカライズ可能であることを確認します。
 
 [
-            **AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/BR209081) プロパティなどの添付プロパティは、リソース名で特殊な修飾構文を使うので、リソースでは特定の要素に適用される添付プロパティを参照することに注意してください。 たとえば、`MediumButton` という名前の UI 要素に適用される [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) のリソース名は、 です。
+            **AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/BR209081) プロパティなどの添付プロパティは、リソース名で特殊な修飾構文を使うので、リソースでは特定の要素に適用される添付プロパティを参照することに注意してください。 たとえば、`MediumButton` という名前の UI 要素に適用される [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) のリソース名は、`MediumButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name` です。
 
 <span id="related_topics"/>
 ## 関連トピック  
@@ -147,6 +150,7 @@ Windows では、*データ バインディング*という機能によって、
 * [アクセシビリティ テスト](accessibility-testing.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

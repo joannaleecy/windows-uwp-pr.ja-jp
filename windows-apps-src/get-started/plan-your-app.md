@@ -1,8 +1,12 @@
 ---
 author: martinekuan
-title: ユニバーサル Windows プラットフォーム (UWP) アプリの計画
-description: Microsoft のデザイン チームのアプリ作成プロセスは、5 つの段階 (概念、構造、ダイナミクス、視覚、プロトタイプ) で構成されています。 同様のプロセスを採用して、だれもが楽しめるエクスペリエンスを実現することをお勧めします。
+title: "ユニバーサル Windows プラットフォーム (UWP) アプリの計画"
+description: "Microsoft のデザイン チームのアプリ作成プロセスは、5 つの段階 (概念、構造、ダイナミクス、視覚、プロトタイプ) で構成されています。 同様のプロセスを採用して、だれもが楽しめるエクスペリエンスを実現することをお勧めします。"
 ms.assetid: 9A5189CD-3B97-4967-8E7D-36D25F04F244
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 9a3058aabdc6f710149a14d8f125b66efd076007
+
 ---
 
 #  ユニバーサル Windows プラットフォーム (UWP) アプリの計画
@@ -195,7 +199,7 @@ Microsoft のデザイン チームのアプリ作成プロセスは、5 つの�
 
 このプロセスによって、作る必要のある UI と、さらに作り込みが必要な部分 (アプリをまだ使っていない友人に送るメールの定型文を考えるなど) を把握することができます。 さらに、不要な手順を削る作業も始めます。 たとえば、旅行の詳しい内容を共有前に実際に見る必要はないかもしれません。 フローが整理されると使いやすくなります。
 
-さまざまなサーフェスを使う方法について詳しくは、「Windows ユニバーサル アプリのコマンド設計の基本」をご覧ください <!--[Command design basics](../layout/commanding-basics.md)-->。
+さまざまなサーフェスを使う方法について詳しくは、「<!--[Command design basics](../layout/commanding-basics.md)-->」をご覧ください
 
 **フローをどのようにするか** ユーザーの手順を定義したら、そのフローをパフォーマンスの目標にします。 詳しくは、「[パフォーマンスの計画](../debug-test-perf/planning-and-measuring-performance.md)」をご覧ください。
 
@@ -212,7 +216,7 @@ Microsoft のデザイン チームのアプリ作成プロセスは、5 つの�
 
 ![PC とモバイルにおけるアプリのデザイン](images/ux-budgettracker1-md-notablet.png)
 
-さまざまな画面サイズ用のデザインについて詳しくは、「ユニバーサル Windows プラットフォーム (UWP) アプリ用レスポンシブ デザイン 101」をご覧ください <!--[Responsive design 101](designing-in-effective-pixels.md)-->。
+さまざまな画面サイズ用のデザインについて詳しくは、「<!--[Responsive design 101](designing-in-effective-pixels.md)-->」をご覧ください
 
 ## 第一印象を良くする
 
@@ -233,6 +237,7 @@ Microsoft のデザイン チームのアプリ作成プロセスは、5 つの�
 [UWP アプリの詳細な UX ガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465424)を使って、重要な機能に集中して取り組みます。 [Visual Studio パフォーマンス ツール](https://msdn.microsoft.com/library/windows/apps/hh696636.aspx)を使って、各アプリのシナリオのパフォーマンスを分析します。
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

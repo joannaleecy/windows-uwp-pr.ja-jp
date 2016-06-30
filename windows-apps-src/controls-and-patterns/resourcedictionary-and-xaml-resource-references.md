@@ -1,13 +1,17 @@
 ---
 author: Jwmsft
-Description: 'ResourceDictionary 要素とキーを持つリソースを定義する方法と、アプリまたはアプリ パッケージの一部として定義する他のリソースと XAML リソースの関連について説明します。'
-MS-HAID: 'dev\_ctrl\_layout\_txt.resourcedictionary\_and\_xaml\_resource\_references'
-MSHAttr: 'PreferredLib:/library/windows/apps'
+Description: "ResourceDictionary 要素とキーを持つリソースを定義する方法と、アプリまたはアプリ パッケージの一部として定義する他のリソースと XAML リソースの関連について説明します。"
+MS-HAID: dev\_ctrl\_layout\_txt.resourcedictionary\_and\_xaml\_resource\_references
+MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: ResourceDictionary と XAML リソースの参照
+title: "ResourceDictionary と XAML リソースの参照"
 ms.assetid: E3CBFA3D-6AF5-44E1-B9F9-C3D3EA8A25CE
 label: ResourceDictionary and XAML resource references
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: fddd345507aace54aca66fe1caa2d9f89a74a299
+
 ---
 
 # ResourceDictionary と XAML リソースの参照
@@ -445,7 +449,7 @@ XAML リソース参照の検索の動作は、実際に使用が適用される
 -   変換 ([**GeneralTransform**](https://msdn.microsoft.com/library/windows/apps/br210034) から派生したクラス)
 -   [
               **Matrix**
-            ](https://msdn.microsoft.com/library/windows/apps/br210127)および [**Matrix3D**](https://msdn.microsoft.com/library/windows/apps/br243266)
+            ](https://msdn.microsoft.com/library/windows/apps/br210127) および [**Matrix3D**](https://msdn.microsoft.com/library/windows/apps/br243266)
 -   [
               **Point**
             ](https://msdn.microsoft.com/library/windows/apps/br225870) 値
@@ -471,7 +475,7 @@ XAML リソース参照の検索の動作は、実際に使用が適用される
 ## コードからの ResourceDictionary の使用
 
 [
-            **ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) のシナリオのほとんどが、XAML のみで処理されます。 UI 定義ファイルの XAML ノード セットまたは XAML ファイルとして **ResourceDictionary** コンテナーとリソースを宣言します。 次に、XAML リソース参照を使って、XAML の他の部分からリソースを要求します。 それでも、アプリの実行中にコードを実行して **ResourceDictionary** の内容を調整するというシナリオ、または、少なくとも **ResourceDictionary** の内容を照会して、リソースが定義済みかどうか確認するというシナリオもあります。 これらのコードは **ResourceDictionary** インスタンスで呼び出されるため、最初に [**FrameworkElement.Resources**](https://msdn.microsoft.com/library/windows/apps/br208740) を取得することでオブジェクト ツリー内のどこかにある即時 **ResourceDictionary** を取得するか、
+            **ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) のシナリオのほとんどが、XAML のみで処理されます。 UI 定義ファイルの XAML ノード セットまたは XAML ファイルとして **ResourceDictionary** コンテナーとリソースを宣言します。 次に、XAML リソース参照を使って、XAML の他の部分からリソースを要求します。 それでも、アプリの実行中にコードを実行して **ResourceDictionary** の内容を調整するというシナリオ、または、少なくとも **ResourceDictionary** の内容を照会して、リソースが定義済みかどうか確認するというシナリオもあります。 これらのコードは **ResourceDictionary** インスタンスで呼び出されるため、最初に [**FrameworkElement.Resources**](https://msdn.microsoft.com/library/windows/apps/br208740) を取得することでオブジェクト ツリー内のどこかにある即時 **ResourceDictionary** を取得するか、`Application.Current.Resources` を取得する必要があります。
 
 C\# または Microsoft Visual Basic コードでは、インデクサー ([**Item**](https://msdn.microsoft.com/library/windows/apps/jj603134)) を使って所定の [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) 内のリソースを参照できます。 **ResourceDictionary** は、文字列キーを持つディクショナリであるため、インデクサーは整数インデックスではなく文字列キーを使います。 Visua C++ コンポーネント拡張機能 (C++/CX) コードでは、[**Lookup**](https://msdn.microsoft.com/library/windows/apps/br208800) を使います。
 
@@ -519,6 +523,7 @@ C\# または Microsoft Visual Basic コードでは、インデクサー ([**It
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

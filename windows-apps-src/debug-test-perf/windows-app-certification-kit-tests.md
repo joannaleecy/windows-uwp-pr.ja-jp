@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: 1526FF4B-9E68-458A-B002-0A5F3A9A81FD
-title: Windows アプリ認定キットのテスト
-description: Windows アプリ認定キットには、Windows ストアでの公開に向けてアプリが準備できているかどうかを確認するためのテストが多数含まれています。
+title: "Windows アプリ認定キットのテスト"
+description: "Windows アプリ認定キットには、Windows ストアでの公開に向けてアプリが準備できているかどうかを確認するためのテストが多数含まれています。"
+translationtype: Human Translation
+ms.sourcegitcommit: 0bf96b70a915d659c754816f4c115f3b3f0a5660
+ms.openlocfilehash: 816b147c91a340505348aa579c8b1540962a1df5
+
 ---
 ## Windows アプリ認定キットのテスト
 
@@ -667,6 +671,7 @@ JavaScript のバックグラウンド タスクがあるアプリは、バッ�
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

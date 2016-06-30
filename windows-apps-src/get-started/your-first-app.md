@@ -1,8 +1,12 @@
 ---
 author: martinekuan
 ms.assetid: A77DA371-C0FE-4FAE-9E77-ADC3C9314EDF
-title: 初めてのアプリの作成
-description: Windows 10 用ユニバーサル Windows プラットフォーム (UWP) アプリの作成は、思っているよりも簡単です。
+title: "初めてのアプリの作成"
+description: "Windows 10 用ユニバーサル Windows プラットフォーム (UWP) アプリの作成は、思っているよりも簡単です。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: e2ed4b9587927a2a6a765b47ff69b9cedfd9b92d
+
 ---
 # 初めてのアプリ作成
 
@@ -69,6 +73,7 @@ iOS または Android の使用経験がある場合は、 「[Windows 10 に�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,10 +1,13 @@
 ---
 author: Xansky
-Description: アプリに十分なキーボード操作機能が備わっていない場合、視覚障碍や運動障碍のあるユーザーはアプリをうまく使うことができなかったり、まったく使うことができない可能性があります。
+Description: "アプリに十分なキーボード操作機能が備わっていない場合、視覚障碍や運動障碍のあるユーザーはアプリをうまく使うことができなかったり、まったく使うことができない可能性があります。"
 ms.assetid: DDAE8C4B-7907-49FE-9645-F105F8DFAD8B
-title: キーボードのアクセシビリティ
+title: "キーボードのアクセシビリティ"
 label: Keyboard accessibility
 template: detail.hbs
+ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
+ms.openlocfilehash: c5b5ca247e3999850d7bf9b81347c201204db7e8
+
 ---
 
 # キーボードのアクセシビリティ  
@@ -43,7 +46,7 @@ XAML
 </Grid>
 ```
 
-特定のコントロールをタブ オーダーから除外することができます。 基本的に、コントロールを非対話型にするだけで除外することができます ([**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/BR209419) プロパティを **false** に設定するなど)。 無効になったコントロールは自動的にタブ オーダーから除外されます。 ただし、コントロールが無効になっていなくても、タブ オーダーからコントロールを除外したい場合があります。 この場合は、[**IsTabStop**](https://msdn.microsoft.com/library/windows/apps/BR209422) プロパティを **false** に設定します
+特定のコントロールをタブ オーダーから除外することができます。 基本的に、コントロールを非対話型にするだけで除外することができます ([**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/BR209419) プロパティを **false** に設定するなど)。 無効になったコントロールは自動的にタブ オーダーから除外されます。 ただし、コントロールが無効になっていなくても、タブ オーダーからコントロールを除外したい場合があります。 この場合は、[**IsTabStop**](https://msdn.microsoft.com/library/windows/apps/BR209422) プロパティを **false** に設定します。
 
 通常、フォーカスを設定できる要素はすべて、既定でタブ オーダーに含まれています。 例外は、[**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565) などの一部のテキスト表示型です。このような型では、選択中のテキストにクリップボードからアクセスできるように、フォーカスを設定することができます。ただし、静的テキスト要素がタブ オーダーの対象となることは想定されていないため、タブ オーダーには含められません。 通常、これらの要素は対話型ではありません (これらは呼び出すことができず、テキスト入力も必要としませんが、テキスト内の選択ポイントを見つけて調整できる[テキスト コントロール パターン](https://msdn.microsoft.com/library/windows/desktop/Ee671194)はサポートしています)。 テキストに、フォーカスを設定すると操作が可能になるという含みを持たせないでください。 それでも、テキスト要素は、支援技術によって検出され、スクリーン リーダーによって読み上げられますが、これはその要素を実際のタブ オーダーで見つけるのとは異なる技法に依存しています。
 
@@ -61,7 +64,7 @@ XAML
 <span id="keyboard_navigation_within_a_ui_element"/>
 <span id="KEYBOARD_NAVIGATION_WITHIN_A_UI_ELEMENT"/>
 ## UI 要素内でのキーボード ナビゲーション  
-コンポジット要素の場合は、含まれている要素間で正しい内部ナビゲーションが実行できることが重要です。 コンポジット要素では、その現在のアクティブな子を管理して、すべての子要素にフォーカスを設定できるようにする場合のオーバーヘッドを減らすことができます。 このようなコンポジット要素もタブ オーダーに含まれ、キーボード ナビゲーション イベント自体を処理します。 複合コントロールには、多くの場合、コントロールのイベント処理の中に既に内部ナビゲーション ロジックが組み込まれています。 たとえば、項目の方向キー トラバーサルは、既定では [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) コントロール、[**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242704view) コントロール、[**ListBox**](https://msdn.microsoft.com/library/windows/apps/BR242868) コントロール、[**FlipView**](https://msdn.microsoft.com/library/windows/apps/BR242678) コントロールで有効になります。
+コンポジット要素の場合は、含まれている要素間で正しい内部ナビゲーションが実行できることが重要です。 コンポジット要素では、その現在のアクティブな子を管理して、すべての子要素にフォーカスを設定できるようにする場合のオーバーヘッドを減らすことができます。 このようなコンポジット要素もタブ オーダーに含まれ、キーボード ナビゲーション イベント自体を処理します。 複合コントロールには、多くの場合、コントロールのイベント処理の中に既に内部ナビゲーション ロジックが組み込まれています。 たとえば、項目の方向キー トラバーサルは、既定では [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) コントロール、[**GridView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview) コントロール、[**ListBox**](https://msdn.microsoft.com/library/windows/apps/BR242868) コントロール、[**FlipView**](https://msdn.microsoft.com/library/windows/apps/BR242678) コントロールで有効になります。
 
 <span id="keyboard_activation"/>
 <span id="KEYBOARD_ACTIVATION"/>
@@ -150,7 +153,7 @@ XAML
 ### キー イベント ハンドラーの実装  
 キー イベントなどの入力イベントでは、*ルーティング イベント*というイベント概念を使います。 ルーティング イベントは、共通コントロールの親が複数の子要素に対するイベントを処理できるような、合成コントロールの子要素をバブルアップすることがあります。 このイベント モデルは、仕様によりフォーカスの設定やタブ オーダーへの追加ができない複数の複合パートが含まれるコントロールに、ショートカット キーの操作を定義するときに役立ちます。
 
-Ctrl キーなどの修飾キーのチェックを含むキー イベント ハンドラーの記述方法を示すコード例については、「[キーボード操作](https://msdn.microsoft.com/library/windows/apps/Mt185607)」をご覧ください
+Ctrl キーなどの修飾キーのチェックを含むキー イベント ハンドラーの記述方法を示すコード例については、「[キーボード操作](https://msdn.microsoft.com/library/windows/apps/Mt185607)」をご覧ください。
 
 <span id="Keyboard_navigation_for_custom_controls"/>
 <span id="keyboard_navigation_for_custom_controls"/>
@@ -158,17 +161,17 @@ Ctrl キーなどの修飾キーのチェックを含むキー イベント ハ�
 ## カスタム コントロールのキーボード ナビゲーション  
 子要素間に空間的な関係が存在する場合は、子要素間を移動するためのキーボード ショートカットとして方向キーを使うことをお勧めします。 ツリー ビュー ノードに、展開折りたたみとノードのアクティブ化を処理するための別のサブ要素がある場合は、左右の方向キーを使って、キーボードの展開折りたたみ機能を提供します。 コントロール コンテンツ内で方向トラバーサルをサポートする指向コントロールがある場合は、適切な方向キーを使ってください。
 
-一般に、カスタム コントロールに対するカスタム キー処理を実装する場合は、クラス ロジックの一部として、[**OnKeyDown**](https://msdn.microsoft.com/library/windows/apps/BR209390_onkeydown) メソッドと [**OnKeyUp**](https://msdn.microsoft.com/library/windows/apps/BR209390_onkeyup) メソッドのオーバーライドを組み込みます。
+一般に、カスタム コントロールに対するカスタム キー処理を実装する場合は、クラス ロジックの一部として、[**OnKeyDown**](https://msdn.microsoft.com/en-us/library/windows/apps/hh967982.aspx) メソッドと [**OnKeyUp**](https://msdn.microsoft.com/en-us/library/windows/apps/hh967983.aspx) メソッドのオーバーライドを組み込みます。
 
 <span id="An_example_of_a_visual_state_for_a_focus_indicator"/>
 <span id="an_example_of_a_visual_state_for_a_focus_indicator"/>
 <span id="AN_EXAMPLE_OF_A_VISUAL_STATE_FOR_A_FOCUS_INDICATOR"/>
 ## フォーカス インジケーターの表示状態の例  
-これまで説明したように、ユーザーがフォーカスを合わせることができるカスタム コントロールには視覚的なフォーカス インジケーターが必要です。 一般に、フォーカス インジケーターは、コントロールを囲む通常の四角形の境界線のすぐ外側に、四角形を描画するだけの簡単なものです。 視覚的なフォーカスに使う [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) は、コントロール テンプレートにおけるコントロールの合成の他の部分に対するピア要素ですが、最初はコントロールにフォーカスがないため、[**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208992) の値には **Collapsed** が設定されています。 コントロールがフォーカスを取得すると、表示状態が呼び出され、フォーカス表示の **Visibility** が **Visible** に設定されます。 フォーカスが別の場所に移動すると、他の表示状態が呼び出され、**Visibility** が **Collapsed** になります
+これまで説明したように、ユーザーがフォーカスを合わせることができるカスタム コントロールには視覚的なフォーカス インジケーターが必要です。 一般に、フォーカス インジケーターは、コントロールを囲む通常の四角形の境界線のすぐ外側に、四角形を描画するだけの簡単なものです。 視覚的なフォーカスに使う [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) は、コントロール テンプレートにおけるコントロールの合成の他の部分に対するピア要素ですが、最初はコントロールにフォーカスがないため、[**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208992) の値には **Collapsed** が設定されています。 コントロールがフォーカスを取得すると、表示状態が呼び出され、フォーカス表示の **Visibility** が **Visible** に設定されます。 フォーカスが別の場所に移動すると、他の表示状態が呼び出され、**Visibility** が **Collapsed** になります。
 
 既定の XAML コントロールはいずれも、フォーカスを設定できるものであれば、フォーカスを受け取ったときに視覚的なフォーカス インジケーターを適切に表示します。 また、ユーザーが選んでいるテーマに応じて (ハイ コントラスト モードを使っている場合は特に)、外観が異なる可能性があります。UI で XAML コントロールを使っており、コントロール テンプレートを置き換えていない場合は、特に何もしなくても、視覚的なフォーカス インジケーターがコントロールに適切に表示され、動作します。 ただし、コントロールを再テンプレート化する必要がある場合、または XAML コントロールで視覚的なフォーカス インジケーターがどのように実現されているかを理解したい場合のために、このセクションの残りの部分では、XAML とコントロール ロジックにおけるフォーカス インジケーターの処理方法について説明します。
 
-次に示す XAML の例は、[**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) の既定の XAML テンプレートに含まれています
+次に示す XAML の例は、[**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) の既定の XAML テンプレートに含まれています。
 
 XAML
 ```xml
@@ -243,6 +246,7 @@ SIP には Ctrl キーや Alt キーがないため、キーボード ショー�
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

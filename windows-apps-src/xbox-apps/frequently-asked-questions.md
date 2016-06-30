@@ -1,29 +1,27 @@
 ---
 author: Mtoepke
-title: よく寄せられる質問
-description: Xbox の UWP についてのよく寄せられる質問。
+title: "よく寄せられる質問"
+description: "Xbox の UWP についてのよく寄せられる質問。"
 area: Xbox
+ms.sourcegitcommit: bdf7a32d2f0673ab6c176a775b805eff2b7cf437
+ms.openlocfilehash: 34e186049039d5a8366f34e985ad7250ef664f00
+
 ---
 
 # よく寄せられる質問
 
-期待どおりに動作しない場合には、 
-このページのよく寄せられる質問を確認します。 
-また、「[既知の問題](known-issues.md)」と「[ユニバーサル Windows アプリの開発](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop)」のフォーラムも確認します。 
+期待どおりに動作しない場合には、 このページのよく寄せられる質問を確認します。 また、「[既知の問題](known-issues.md)」と「[ユニバーサル Windows アプリの開発](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop)」のフォーラムも確認します。 
 
 ### 作成したゲームとアプリが動作しない
 
-ゲームやアプリが動作しない場合、またストアや Live サービスにアクセスできない場合、開発者モードで実行している場合があります。 
-ホームを選択したときに画面の右側に、通常の Gold/Live コンテンツではなく、大きな Dev Home タイルが表示されている場合には、開発者モードで実行しています。 
-ゲームをプレイする場合には、Dev Home を開き、**[Leave developer mode] ** ボタンを使って、リテール モードに切り替えます。
+ゲームやアプリが動作しない場合、またストアや Live サービスにアクセスできない場合、開発者モードで実行している場合があります。 ホームを選択したときに画面の右側に、通常の Gold/Live コンテンツではなく、大きな Dev Home タイルが表示されている場合には、開発者モードで実行しています。 ゲームをプレイする場合には、Dev Home を開き、**[Leave developer mode] ** ボタンを使って、リテール モードに切り替えます。
 
 ### Visual Studio を使って Xbox One に接続できない
 
-まず、リテール モードでなく、開発者モードで実行していることを確認します。 
-リテール モードでは、Xbox One に接続できません。 
-**[ホーム]** ボタンを押して、画面の右側に Dev Home タイルがあるかどうかを確認します。 
-Dev Home タイルがなく、Gold/Live コンテンツが表示されている場合には、リテール モードで実行されています。 
-開発者モードに切り替えるには、開発者モードのアクティブ化のアプリを実行する必要があります。
+まず、リテール モードでなく、開発者モードで実行していることを確認します。 リテール モードでは、Xbox One に接続できません。 **[ホーム]** ボタンを押して、画面の右側に Dev Home タイルがあるかどうかを確認します。 Dev Home タイルがなく、Gold/Live コンテンツが表示されている場合には、リテール モードで実行されています。 開発者モードに切り替えるには、開発者モードのアクティブ化用アプリを実行する必要があります。
+
+> **注**
+            &nbsp;&nbsp;アプリを展開するには、ユーザーをサインインさせる必要があります。
 
 詳しくは、このページの「[展開の失敗を修正する](frequently-asked-questions.md#fixing-deployment-failures)」をご覧ください。
 
@@ -35,24 +33,18 @@ Dev Home タイルがなく、Gold/Live コンテンツが表示されている�
 
 これらの状態について詳しくは、「[Xbox One の開発者モードのアクティブ化](devkit-activation.md)」の指示に従います。 
 
-**[ホーム]** ボタンを押して、画面の右側を確認します。 
-開発者モードの場合は、右側にある Dev Home のタイルが表示されます。 
-リテール モードの場合は、通常の Gold/Live コンテンツが表示されます。
+**[ホーム]** ボタンを押して、画面の右側を確認します。 開発者モードの場合は、右側にある Dev Home のタイルが表示されます。 リテール モードの場合は、通常の Gold/Live コンテンツが表示されます。
 
 ### 開発者モードをアクティブ化してもゲームやアプリは動作しますか
 
-はい、開発者モードからリテール モードに切り替えて、ゲームをプレイできます。 
-詳しくは、「[Xbox One の開発者モードのアクティブ化](devkit-activation.md)」をご覧ください。 
+はい、開発者モードからリテール モードに切り替えて、ゲームをプレイできます。 詳しくは、「[Xbox One の開発者モードのアクティブ化](devkit-activation.md)」をご覧ください。 
 
-> **注意**
-            &nbsp;&nbsp;Xbox Developer Preview のシステム更新プログラムには、実験的な初期プレリリース版のソフトウェアが含まれています。 
-このため、一部の人気ゲームやアプリが想定どおりに動作しなかったり、クラッシュやデータの損失が発生する可能性があります。
+<!-- > **CAUTION**&nbsp;&nbsp;The Xbox Developer Preview System Update includes experimental and early pre-release software. 
+This means that some popular games and apps will not work as expected and you may experience occasional crashes and data loss. -->
 
-### ゲームやアプリや保存した変更を失うことがありますか
+### ゲームやアプリ、保存した変更を失うことがありますか
 
-開発者プレビュー プログラムへの参加を停止する場合には、本体を出荷時の設定にリセットする必要がある場合があります。その場合には、コンソールのすべてのデータが削除されます。 
-その場合には、すべてのゲームとアプリを再インストールする必要があります。 
-オンラインでプレイした場合には、保存したゲームはすべて Live アカウントのクラウド プロファイルに保存されていますので、それを失うことはありません。
+開発者プレビュー プログラムへの参加を停止する場合には、本体を出荷時の設定にリセットする必要がある場合があります。その場合には、本体のすべてのデータが削除されます。 その場合には、すべてのゲームとアプリを再インストールする必要があります。 オンラインでプレイした場合には、保存したゲームはすべて Live アカウントのクラウド プロファイルに保存されていますので、それを失うことはありません。
 
 ### 開発者プレビューへの参加を停止する方法
 
@@ -60,23 +52,19 @@ Dev Home タイルがなく、Gold/Live コンテンツが表示されている�
 
 ### Xbox One を開発者モードにしたままで売却した場合に、 開発者モードを非アクティブ化する方法
 
-Xbox One にアクセスできない場合には、Windows デベロッパー センターで非アクティブ化できます。 
-詳しくは、「[Xbox One の開発者モードのアクティブ化](devkit-deactivation.md#deactivate-your-console-through-windows-dev-center)」の「**Windows デベロッパー センターを使用したコンソールの非アクティブ化**」のセクションをご覧ください。
+Xbox One にアクセスできない場合には、Windows デベロッパー センターで非アクティブ化できます。 詳しくは、「[Xbox One の開発者モードのアクティブ化](devkit-deactivation.md#deactivate-your-console-through-windows-dev-center)」の「**Windows デベロッパー センターを使用したコンソールの非アクティブ化**」のセクションをご覧ください。
 
 ### Windows デベロッパー センターを使用して開発者プレビューを停止しましたが、まだ開発者モードのままです。 解決するには、
 
-Dev Home を開始し、**[Leave developer mode]** ボタンを選択します。 
-コンソールはリテール モードで再起動します。 
+Dev Home を開始し、**[Leave developer mode]** ボタンを選択します。 コンソールはリテール モードで再起動します。 
 
 ### 自分のアプリを公開できますか
 
-アプリの公開はデベロッパー センターで年内には利用可能となる予定です。 
-市販の Xbox One で作成されテストされた UWP アプリは、Windows で現在行われているものと同様の取り込み、レビュー、公開のプロセスが行われ、さらに Xbox One の標準を満たすための追加のレビューが行われます。
+アプリの公開はデベロッパー センターで年内には利用可能となる予定です。 市販の Xbox One で作成されテストされた UWP アプリは、Windows で現在行われているものと同様の取り込み、レビュー、公開のプロセスが行われ、さらに Xbox One の標準を満たすための追加のレビューが行われます。
 
 ### 自分のゲームを公開できますか
 
-UWP と Xbox One の開発者モードを使って、Xbox One でゲームの構築とテストを行えます。 
-UWP ゲームを公開するには、[ID@XBOX](http://www.xbox.com/en-us/Developers/id) で登録する必要があります。 
+UWP と Xbox One の開発者モードを使って、Xbox One でゲームの構築とテストを行えます。 UWP ゲームを公開するには、[ID@XBOX](http://www.xbox.com/en-us/Developers/id) で登録する必要があります。 
 [ID@XBOX](http://www.xbox.com/en-us/Developers/id) では開発者は、ゲーム用の Xbox Live API のすべてにアクセスできます。これにはゲームスコア、達成度、デバイス間でのマルチ プレーヤーの活用、クラウドの保存など、Xbox One の Xbox Live のすべての機能が含まれます。 
 さらに [ID@XBOX](http://www.xbox.com/en-us/Developers/id) は、ゲーム用の Xbox One 開発キットへのアクセスも提供します。これにより Xbox One のハードウェアの機能を最大限に活用できます。
 
@@ -98,49 +86,48 @@ UWP ゲームを公開するには、[ID@XBOX](http://www.xbox.com/en-us/Develop
 
 ### 展開の失敗を修正する
 
-Visual Studio からアプリを展開できない場合、次の手順が問題の解決に役立つ場合があります。 
-それでも解決できない場合には、フォーラムに投稿してみます。
+Visual Studio からアプリを展開できない場合、次の手順が問題の解決に役立つ場合があります。 それでも解決できない場合には、フォーラムに投稿してみます。
+
+> **注**
+            &nbsp;&nbsp;アプリを展開するには、ユーザーをサインインさせる必要があります。 0x87e10008 エラー メッセージが表示された場合は、ユーザーがサインインしているかどうかを確認し、もう一度サインインさせます。
 
 Visual Studio が Xbox One に接続できない場合:
 
 1. 開発者モードであることを確認します (このページで既に説明した方法を確認します)。
 2. 開発用 PC が正しく設定されていることを確認します。 [Xbox One の UWP アプリ開発の概要](getting-started.md)の*すべての*指示に従いましたか。 
 
-3. まだの場合、[開発環境のセットアップ](development-environment-setup.md) および [Xbox One ツールの概要](introduction-to-xbox-tools.md) をよく読みます。
+3. まだの場合、「[開発環境のセットアップ](development-environment-setup.md)」と「[Xbox One ツールの概要](introduction-to-xbox-tools.md)」をよくお読みください。
 
-4. Xbox One を有線ネットワーク接続していることを確認します。 一部のワイヤレス エンドポイントでは、パフォーマンスと接続の問題が確認されています。
-
-5. 開発用 PC からコンソールの IP アドレスに "ping" ができることを確認します。
-
-6. **[デバッグ]** タブの [認証] ドロップダウンリストで [ユニバーサル (暗号化されていないプロトコル)] を使用していることを確認します。 詳しくは、「[開発環境のセットアップ](development-environment-setup.md)」をご覧ください。
-
-7. PIN のペアリングの問題が発生していないことを確認します。「[よく寄せられる質問](frequently-asked-questions.md)」の「Visual Studio/Xbox の PIN のペアリングの失敗」を確認します。
-
-Visual Studio は接続できるが、展開が失敗する場合 (たとえば、エラー メッセージ: "DEP0700 : アプリケーションの登録に失敗しました。(0x80073cf9)" が表示される場合):
-
-1. Xbox One のシェルのコレクション アプリから、アプリをアンインストールして、アプリがインストールされていないことを確認します。 
-
+4. 開発用 PC から本体の IP アドレスに "ping" ができることを確認します。
 > **注**
-            &nbsp;&nbsp;Windows Device Portal (WDP) からアプリをアンインストールしても、問題は解決しません。
+            &nbsp;&nbsp;展開のパフォーマンスを最大限に引き出すために、本体には、有線接続を使用することをお勧めします。
 
-2. 問題が解決しない場合は、アプリやゲームをコレクション アプリからアンインストールして、開発者モードからリテール モードに切り替えて再起動し、さらに開発者モードに戻します。 
-これにより、開発者記憶域がクリアされます。
+5. **[デバッグ]** タブの [認証] ドロップダウンリストで [ユニバーサル (暗号化されていないプロトコル)] を使用していることを確認します。 詳しくは、「[開発環境のセットアップ](development-environment-setup.md)」をご覧ください。
 
-3. 問題が解決しない場合は、上の手順に従い、次に **[ゲームとアプリを保持してリセット]** を使って、Xbox One に保存された状態を削除します。 
-[設定] > [システム] > [コンソール情報と更新] > [コンソールのリセット] の順に選択し、**[ゲームとアプリを保持してリセット]** ボタンを選択します。
+<!--6. Make sure you are not hitting a PIN pairing issue; see "Visual Studio/Xbox PIN pairing failures" in the [Known Issues](known-issues.md) topic.-->
 
-> **注意**
-            &nbsp;&nbsp;これにより、ワイヤレス設定、ユーザー アカウント、クラウド ストレージに保存されていないゲーム進行状況など、Xbox One に保存されたすべての設定が削除されます。
+<!--
+If Visual Studio can connect, but deployment is failing (for example you get this error message: "DEP0700 : Registration of the app failed.(0x80073cf9)"):
 
-> **注意**
-            &nbsp;&nbsp;**[すべてを削除してリセット]** ボタンを押さないでください。
-これにより、ゲーム、アプリ、設定とコンテンツのすべてが削除され、開発者モードが非アクティブ化され、コンソールは Developer Preview グループから削除されます。
+1. Make sure that your app is not installed by uninstalling it from the Collections app in the Xbox One shell. 
+
+> **Note**&nbsp;&nbsp;Uninstalling your app from Windows Device Portal (WDP) will not resolve the issue.
+
+2. If your issues persist, uninstall your app or game in the Collections app, leave Developer Mode, restart to Retail Mode, and then switch back to Developer Mode. 
+This will clear Dev Storage.
+
+3. If your issues persist, follow the steps above and then use **Reset and keep my games & apps** to delete any stored state on your Xbox One. 
+Go to Settings > System > Console info & updates > Reset console, and select the **Reset and keep my games & apps** button.
+
+> **Caution**&nbsp;&nbsp;Doing this will delete all saved settings on your Xbox One including wireless settings, user accounts and any game progress that has not been saved to cloud storage.
+
+> **Caution**&nbsp;&nbsp;DO NOT select the **Reset and remove everything** button.
+This will delete all of your games, apps, settings and content, deactivate Developer Mode, and remove you console from the Developer Preview group.
+-->
 
 ### HTML/JavaScript を使用したアプリを構築する場合に、ゲームパッドのナビゲーションを有効にする方法
 
-TVHelpers は、JavaScript と XAML/C# のサンプルとライブラリです。JavaScript と C# による、Xbox One とテレビの優れたエクスペリエンスの構築をサポートします。 
-TVJS は Xbox One のための優れた UWP アプリの構築をサポートします。 TVJS には、自動コントローラー ナビゲーション、リッチ メディアの再生、検索などのサポートが含まれています。 
-ホストされた Web アプリで TVJS を使うと、パッケージ化された Web UWP アプリを使う場合のように容易に、すべての Windows ランタイム API にアクセスできます。
+TVHelpers は、JavaScript と XAML/C# のサンプルとライブラリです。JavaScript と C# による、Xbox One とテレビの優れたエクスペリエンスの構築をサポートします。 TVJS は Xbox One のための優れた UWP アプリの構築をサポートします。 TVJS には、自動コントローラー ナビゲーション、リッチ メディアの再生、検索などのサポートが含まれています。 ホストされた Web アプリで TVJS を使うと、パッケージ化された Web UWP アプリを使う場合のように容易に、すべての Windows ランタイム API にアクセスできます。
 
 詳しくは、「[TVHelpers](https://github.com/Microsoft/TVHelpers) プロジェクトとプロジェクト [wiki](https://github.com/Microsoft/TVHelpers/wiki)」をご覧ください。
 
@@ -149,6 +136,7 @@ TVJS は Xbox One のための優れた UWP アプリの構築をサポートし
 - [Xbox One の UWP](index.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

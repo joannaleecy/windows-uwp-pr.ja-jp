@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: フォントを選び、フォントのサイズと色を指定するときには、次のガイドラインに従ってください。
-title: フォント
+Description: "フォントを選び、フォントのサイズと色を指定するときには、次のガイドラインに従ってください。"
+title: "フォント"
 ms.assetid: 1B8B90AD-CDC4-4997-ACDE-871C1E94A929
 label: Fonts
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 268884c011caa18f3afb6d8b0d9cfda1ec27f51e
+
 ---
 
 # フォントのガイドライン
@@ -292,6 +296,7 @@ UWP アプリ用にお勧めする書体見本を次に示します。
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

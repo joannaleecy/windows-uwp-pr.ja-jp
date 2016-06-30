@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: 569E8C27-FA01-41D8-80B9-1E3E637D5B99
-title: XAML マークアップの最適化
-description: UI が複雑な場合は、XAML マークアップを解析し、メモリ内にオブジェクトを構築するのに時間がかかります。 以下に、アプリでの XAML マークアップの解析および読み込み時間や、メモリ効率の向上に役立つヒントを紹介します。
+title: "XAML マークアップの最適化"
+description: "UI が複雑な場合は、XAML マークアップを解析し、メモリ内にオブジェクトを構築するのに時間がかかります。 以下に、アプリでの XAML マークアップの解析および読み込み時間や、メモリ効率の向上に役立つヒントを紹介します。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: c2131b084d8bb989f1f7767f54db697e1cdd8dcf
+
 ---
 # XAML マークアップの最適化
 
@@ -125,7 +129,7 @@ XAML プラットフォームは、よく使われるオブジェクトをキャ
 </Page> <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->
 ```
 
-また、事前定義された色を使うブラシもチェックしてください (`"Orange"` と `"#FFFFA500"` は同じ色です)。 重複を除去するには、ブラシをリソースとして定義します。 他のページのコントロールで同じブラシを使う場合は、ブラシを App.xaml に移動します。
+また、定義済みの色を使うブラシもチェックしてください (`"Orange"` と `"#FFFFA500"` は同じ色です)。 重複を除去するには、ブラシをリソースとして定義します。 他のページのコントロールで同じブラシを使う場合は、ブラシを App.xaml に移動します。
 
 **効率的。**
 
@@ -290,6 +294,7 @@ XBF2 があるかどうかを確認するには、バイナリ エディター�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

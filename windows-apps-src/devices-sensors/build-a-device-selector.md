@@ -1,8 +1,12 @@
 ---
 author: DBirtolo
 ms.assetid: D06AA3F5-CED6-446E-94E8-713D98B13CAA
-title: デバイス セレクターのビルド
-description: デバイス セレクターを作成すると、デバイスを列挙するときに、検索するデバイスを絞り込むことができるようになります。
+title: "デバイス セレクターのビルド"
+description: "デバイス セレクターを作成すると、デバイスを列挙するときに、検索するデバイスを絞り込むことができるようになります。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 67bf2795a7d555dc5cd236eeafb07009511fe5d3
+
 ---
 # デバイス セレクターのビルド
 
@@ -119,6 +123,7 @@ System.Devices.IpAddress:=[]
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

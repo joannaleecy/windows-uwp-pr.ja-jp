@@ -1,7 +1,10 @@
 ---
-author: DBirtolo
-title: Bluetooth アドバタイズ
-description: このセクションでは、API の AdvertisementWatcher と AdvertisementPublisher を使って、ユニバーサル Windows プラットフォーム (UWP) アプリに Bluetooth 低エネルギー (LE) アドバタイズを統合する方法に関する記事を取り上げています。
+author: msatranjr
+title: "Bluetooth アドバタイズ"
+description: "このセクションでは、API の AdvertisementWatcher と AdvertisementPublisher を使って、ユニバーサル Windows プラットフォーム (UWP) アプリに Bluetooth 低エネルギー (LE) アドバタイズを統合する方法に関する記事を取り上げています。"
+ms.sourcegitcommit: 62e97bdb8feb78981244c54c76a00910a8442532
+ms.openlocfilehash: a419ad04fe4f21867f2f1bd1664fbce39a7da792
+
 ---
 
 # Bluetooth アドバタイズ
@@ -24,6 +27,7 @@ description: このセクションでは、API の AdvertisementWatcher と Adve
 完全なサンプル コードについては、Github の [Bluetooth アドバタイズ サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619990)をご覧ください。
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

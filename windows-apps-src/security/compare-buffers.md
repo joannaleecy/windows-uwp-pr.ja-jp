@@ -1,16 +1,20 @@
 ---
-title: Compare buffers
-description: This example code shows how to compare buffers in an Universal Windows Platform (UWP) app.
+title: "バッファーの比較"
+description: "次のコード例は、ユニバーサル Windows プラットフォーム (UWP) アプリでバッファーを比較する方法を示しています。"
 ms.assetid: CB086E51-544A-470D-B7C8-C055271CD615
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
+ms.openlocfilehash: fcbc3c8a3f70613635201732f3ca5053d58325c7
+
 ---
 
-# Compare buffers
+# バッファーの比較
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-This example code shows how to compare buffers in an Universal Windows Platform (UWP) app.
+次のコード例は、ユニバーサル Windows プラットフォーム (UWP) アプリでバッファーを比較する方法を示しています。
 
 ```cs
 public void CompareBuffers()
@@ -45,6 +49,7 @@ public void CompareBuffers()
 }
 ```
 
-<!--HONumber=Jun16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

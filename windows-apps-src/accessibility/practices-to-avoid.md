@@ -1,10 +1,14 @@
 ---
 author: Xansky
-Description: アクセシビリティ対応のユニバーサル Windows プラットフォーム (UWP) アプリを作成するために避ける事項の一覧を示します。
+Description: "アクセシビリティ対応のユニバーサル Windows プラットフォーム (UWP) アプリを作成するために避ける事項の一覧を示します。"
 ms.assetid: 024A9B70-9821-45BB-93F1-61C0B2ECF53E
-title: アクセシビリティ対応にするために避ける事項
+title: "アクセシビリティ対応にするために避ける事項"
 label: Accessibility practices to avoid
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: b5f5f220d5ff70d70dd797c0bf26a355bd447563
+
 ---
 # アクセシビリティ対応にするために避ける事項
 
@@ -32,6 +36,7 @@ template: detail.hbs
 * [アクセシビリティのチェック リスト](accessibility-checklist.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

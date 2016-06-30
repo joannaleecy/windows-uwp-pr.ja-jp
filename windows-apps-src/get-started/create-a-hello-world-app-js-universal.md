@@ -1,8 +1,12 @@
 ---
 author: martinekuan
 ms.assetid: CFB3601D-3459-465F-80E2-520F57B88F62
-title: Hello, world アプリを作成する (JS)
-description: このチュートリアルでは、Windows 10 のユニバーサル Windows プラットフォーム (UWP) を対象にした単純な Hello, world アプリを JavaScript と HTML で作る方法について説明します。
+title: "Hello, world アプリを作成する (JS)"
+description: "このチュートリアルでは、Windows 10 のユニバーサル Windows プラットフォーム (UWP) を対象にした単純な Hello, world アプリを JavaScript と HTML で作る方法について説明します。"
+translationtype: Human Translation
+ms.sourcegitcommit: f3cb50e5b0b0baa73431392a1f6854a62f3655de
+ms.openlocfilehash: 5f534169117da94cb2249c897603f567c007299b
+
 ---
 # Hello, world アプリを作成する (JS)
 
@@ -37,7 +41,7 @@ description: このチュートリアルでは、Windows 10 のユニバーサ�
 
     (以下、Visual Studio 2015 を単に Visual Studio と表記します。)
 
-2.  **[ファイル]** メニューの **[新規作成]**、**[プロジェクト]** の順にクリックします。
+2.  **[ファイル]** メニューの **[新規作成]** > **[プロジェクト]** の順にクリックします。
 
     **[新しいプロジェクト]** ダイアログ ボックスが表示されます。 ダイアログの左側のウィンドウで、表示するテンプレートの種類を選択できます。
 
@@ -127,8 +131,8 @@ Windows キーを押して **[スタート]** メニューを開き、すべて�
 Visual Studio では、デスクトップ デバイスでデバッグするオプションに加えて、コンピューターに接続された物理的なモバイル デバイスにアプリをデプロイしてデバッグするか、モバイル デバイス エミュレーターでアプリをデプロイしてデバッグするオプションが用意されています。 メモリとディスプレイの構成がさまざまなデバイスのエミュレーターの中から選ぶことができます。
 
 -   **デバイス**
--   **エミュレーター <SDK version> WVGA 4 inch 512MB**
--   **エミュレーター <SDK version> WVGA 4 inch 1GB**
+-   **Emulator <SDK version> WVGA 4 inch 512MB**
+-   **Emulator <SDK version> WVGA 4 inch 1GB**
 -   その他... (他の構成のさまざまなエミュレーター)
 
 画面が小さくメモリが限られているデバイスでアプリをテストすることをお勧めします。そのためには、**[Emulator 10.0.10240.0 WVGA 4 inch 512MB]** オプションを使用します。
@@ -249,7 +253,7 @@ default.js の残りのコードを見てください。 これは、アプリ�
 })();
 ```
 
-それでは、[**button**](https://msdn.microsoft.com/library/windows/apps/Hh453017) 用のイベント ハンドラーを定義しましょう。 新しいイベント ハンドラーは、`nameInput` [**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) コントロールからユーザーの名前を取得し、それを使って前のセクションで作成した `greetingOutput` [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) 要素にあいさつを出力します。
+それでは、[**button**](https://msdn.microsoft.com/library/windows/apps/Hh453017) 用のイベント ハンドラーを定義しましょう。 新しいイベント ハンドラーは、`nameInput`[**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) コントロールからユーザーの名前を取得し、それを使って前のセクションで作成した `greetingOutput`[**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) 要素にあいさつを出力します。
 
 ### タッチ、マウス、ペン入力で動作するイベントの使用
 
@@ -262,14 +266,14 @@ UWP アプリでは、入力方法 (タッチ、マウス、その他の形式�
 
 **イベント ハンドラーを作成するには**
 
-1.  default.js で、[**app.oncheckpoint**](https://msdn.microsoft.com/library/windows/apps/BR229839) イベント ハンドラーの後、[**app.start**](https://msdn.microsoft.com/library/windows/apps/BR229705) の呼び出しの前に、 という名前の 1 つのパラメーターを受け取る `buttonClickHandler` という名前の [**click**](https://msdn.microsoft.com/library/windows/apps/Hh441312) イベント ハンドラー関数を作成します。
+1.  default.js で、[**app.oncheckpoint**](https://msdn.microsoft.com/library/windows/apps/BR229839) イベント ハンドラーの後、[**app.start**](https://msdn.microsoft.com/library/windows/apps/BR229705) の呼び出しの前に、`eventInfo` という名前の 1 つのパラメーターを受け取る `buttonClickHandler` という名前の [**click**](https://msdn.microsoft.com/library/windows/apps/Hh441312) イベント ハンドラー関数を作成します。
 ```javascript
     function buttonClickHandler(eventInfo) {
      
         }
 ```
 
-2.  作成したイベント ハンドラーの中で、`nameInput` [**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) コントロールからユーザー名を取得し、それを使ってあいさつを作ります。 結果を表示するには、`greetingOutput` [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) を使います。
+2.  作成したイベント ハンドラーの中で、`nameInput`[**input**](https://msdn.microsoft.com/library/windows/apps/Hh453271) コントロールからユーザー名を取得し、それを使ってあいさつを作ります。 結果を表示するには、`greetingOutput`[**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) を使います。
 ```javascript
     function buttonClickHandler(eventInfo) {
             var userName = document.getElementById("nameInput").value;
@@ -340,7 +344,7 @@ WinJS 以外のコントロール用のイベント ハンドラーは、[**WinJ
 
 **イベント ハンドラーを登録するには**
 
--   default.js の [**onactivated**](https://msdn.microsoft.com/library/windows/apps/BR212679) イベント ハンドラーで、`helloButton` を取得し、[**addEventListener**](https://msdn.microsoft.com/library/windows/apps/Hh441145) を使って、[**click**](https://msdn.microsoft.com/library/windows/apps/Hh441312) イベント用のイベント ハンドラーを登録します。 [
+-   default.js の [**onactivated**](https://msdn.microsoft.com/library/windows/apps/BR212679) イベント ハンドラーで、`helloButton` を取得し、[**addEventListener**](https://msdn.microsoft.com/library/windows/apps/Hh441145) を使用して、[**click**](https://msdn.microsoft.com/library/windows/apps/Hh441312) イベント用のイベント ハンドラーを登録します。 [
             **WinJS.UI.processAll**](https://msdn.microsoft.com/library/windows/apps/Hh440975) の呼び出しの後に、次のコードを追加します。
 
 ```javascript
@@ -420,7 +424,7 @@ HTML コントロールには専用のマークアップ要素がありますが
 [
             **Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) コントロールをアプリに追加しましょう。
 
-1.  default.html ファイルで、`greetingOutput` [**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) の後ろに [**label**](https://msdn.microsoft.com/library/windows/apps/Hh453321) コントロールと [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) コントロールを追加します。
+1.  default.html ファイルで、`greetingOutput`[**div**](https://msdn.microsoft.com/library/windows/apps/Hh453133) の後ろに [**label**](https://msdn.microsoft.com/library/windows/apps/Hh453321) コントロールと [**Rating**](https://msdn.microsoft.com/library/windows/apps/BR211895) コントロールを追加します。
 
     ```html
     <body class="win-type-body">
@@ -561,6 +565,7 @@ Here's the updated [**onactivated**](https://msdn.microsoft.com/library/windows/
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

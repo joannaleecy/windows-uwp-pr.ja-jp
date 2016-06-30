@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Windows アプリ内で実行されるアプリの広告キャンペーンの作成に加えて、他のチャネルを使ってアプリを宣伝することもできます。
-title: カスタム アプリ プロモーション キャンペーンの作成
+Description: "Windows アプリ内で実行されるアプリの広告キャンペーンの作成に加えて、他のチャネルを使ってアプリを宣伝することもできます。"
+title: "カスタム アプリ プロモーション キャンペーンの作成"
 ms.assetid: 7C9BF73E-B811-4FC7-B1DD-4A0C2E17E95D
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: b6fa63727ac636d37c52e2f3247c52efb1f8b763
+
 ---
 
 # カスタム アプリ プロモーション キャンペーンの作成
@@ -63,7 +67,7 @@ Facebook や Twitter のフォロワーがその URL をクリックすると、
 2.  HTML またはプロトコル形式でアプリの Windows ストアのページの URL を取得します。 HTML 形式の URL は、[デベロッパー センター ダッシュボードの **[アプリ ID]** ページ](link-to-your-app.md)で確認できます。
     -   ユーザーがブラウザーでアプリの Windows ストアのページに移るようにする場合は、HTTP 形式を使います (Windows ストア アプリがインストールされている場合は、この URL によって Windows ストア アプリも起動し、アプリの掲載ページが表示されます)。 この URL の形式は **`https://www.microsoft.com/store/apps/*your app name*/*your app ID*`** です。 たとえば、Skype 用の HTTP URL は `https://www.microsoft.com/store/apps/skype/9wzdncrfj364` になります。
         > **注:** HTTP 形式の URL は、Windows 7 以降を実行しているコンピューターとタブレット、および Windows Phone 8 以降を実行している携帯電話のブラウザーで、Windows ストアに移動するために使用できます。
-    -   Windows ストア アプリがインストールされたデバイスやコンピューター上で実行されている他の Windows アプリでアプリを宣伝し、ユーザーが Windows ストア アプリでアプリのページを開くようにする場合は、プロトコル形式を使います。 この URL の形式は **`ms-windows-store://pdp/?PRODUCTID=*your app id*`** です。 たとえば、Skype 用のプロトコル URL は `ms-windows-store://pdp/?PRODUCTID=9wzdncrfj364` になります。
+-   Windows ストア アプリがインストールされたデバイスやコンピューター上で実行されている他の Windows アプリでアプリを宣伝し、ユーザーが Windows ストア アプリでアプリのページを開くようにする場合は、プロトコル形式を使います。 この URL の形式は **`ms-windows-store://pdp/?PRODUCTID=*your app id*`** です。 たとえば、Skype 用のプロトコル URL は `ms-windows-store://pdp/?PRODUCTID=9wzdncrfj364` になります。
 3.  アプリの URL の末尾に次の文字列を追加します。
     -   HTTP 形式の URL の場合は **?cid=`?cid=*my custom campaign ID*`** を追加します。 たとえば、Skype でキャンペーン ID の値が **custom\_campaign** であるキャンペーンを紹介する場合、このキャンペーン ID を含む新しい HTTP URL は `https://www.microsoft.com/store/apps/skype/9wzdncrfj364?cid=custom\_campaign` になります。
     -   プロトコル形式の URL の場合は **`&cid=*my custom campaign ID*`** を追加します。 たとえば、Skype でキャンペーン ID の値が **custom\_campaign** であるキャンペーンを紹介する場合、このキャンペーン ID を含む新しいプロトコル URL は `ms-windows-store://pdp/?PRODUCTID=9wzdncrfj364&cid=custom\_campaign` になります。
@@ -132,6 +136,7 @@ HRESULT hr = CurrentApp::GetAppPurchaseCampaignIdAsync(campaignId.GetAddressOf()
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

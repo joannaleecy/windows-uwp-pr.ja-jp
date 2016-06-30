@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: B5E3A66D-0453-4D95-A3DB-8E650540A300
-description: この記事では、MediaProcessingTrigger とバックグラウンド タスクを使って、バックグラウンドでメディア ファイルを処理する方法について説明します。
-title: バックグラウンドでのメディア ファイルの処理
+description: "この記事では、MediaProcessingTrigger とバックグラウンド タスクを使って、バックグラウンドでメディア ファイルを処理する方法について説明します。"
+title: "バックグラウンドでのメディア ファイルの処理"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: dcf655ff80c4463a567ade0b6d1cc784b60c18be
+
 ---
 
 # バックグラウンドでのメディア ファイルの処理
@@ -27,7 +31,7 @@ Microsoft Visual Studio で既存のソリューションにバックグラウ�
 
 1.  **[ファイル]** メニューの **[追加]** をクリックし、**[新しいプロジェクト]** をクリックします。
 2.  プロジェクトの種類として **[Windows ランタイム コンポーネント (ユニバーサル アプリ)]** を選びます。
-3.  新しいコンポーネント プロジェクトの名前を入力します。 この例では、プロジェクト名を「**MediaProcessingBackgroundTask**」とします。
+3.  新しいコンポーネント プロジェクトの名前を入力します。 この例では、プロジェクト名として **MediaProcessingBackgroundTask** を使います。
 4.  [OK] をクリックします。
 
 **ソリューション エクスプ ローラー**で、既定で作成された "Class1.cs" ファイルのアイコンを右クリックし、**[名前の変更]** をクリックします。 ファイル名を "MediaProcessingTask.cs" に変更します。 Visual Studio に、このクラスへのすべての参照の名前を変更するかどうかを確認するメッセージが表示されたら、**[はい]** をクリックします。
@@ -144,6 +148,7 @@ Microsoft Visual Studio で既存のソリューションにバックグラウ�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

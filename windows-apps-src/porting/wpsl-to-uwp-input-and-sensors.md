@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
-description: デバイス自体とそのセンサーに統合するコードには、ユーザーに対する入力と出力が含まれます。
-title: I/O、デバイス、アプリ モデルの Windows Phone Silverlight から UWP への移植
+description: "デバイス自体とそのセンサーに統合するコードには、ユーザーに対する入力と出力が含まれます。"
+title: "I/O、デバイス、アプリ モデルの Windows Phone Silverlight から UWP への移植"
 ms.assetid: bf9f2c03-12c1-49e4-934b-e3fa98919c53
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 6b29e741c9cad68083502b25445b965fc266ef6e
+
 ---
 
 #  I/O、デバイス、アプリ モデルの Windows Phone Silverlight から UWP への移植
@@ -102,6 +106,7 @@ UWP アプリで **PhoneApplicationPage.SupportedOrientations** プロパティ�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

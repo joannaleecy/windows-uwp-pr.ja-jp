@@ -3,8 +3,8 @@ author: scottmill
 ms.assetid: f1297b7d-1a10-52ae-dd84-6d1ad2ae2fe6
 title: "コンポジションのビジュアル ツリー"
 description: "コンポジションのビジュアル オブジェクト ツリー構造は、コンポジション API の他のすべての機能でベースとして使われます。 この API により、開発者は 1 つまたは複数のビジュアル オブジェクトを作成して定義できます。それぞれがビジュアル オブジェクト ツリーの 1 つのノードを表します。"
-ms.sourcegitcommit: b3d198af0c46ec7a2041a7417bccd56c05af760e
-ms.openlocfilehash: e31d3b23871bd37cde26fb3e9414e8cfae340d3d
+ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
+ms.openlocfilehash: 61adc6a894c56c6cfd292d89d4cd5c4ba6b0d017
 
 ---
 # コンポジションのビジュアル ツリー
@@ -118,7 +118,7 @@ Rotation と同様、[**Opacity**](https://msdn.microsoft.com/library/windows/ap
 
 ## コレクション内のビジュアル オブジェクトの位置変更
 
-コンポジション API を使うと、[**VisualCollection**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection) でのビジュアル オブジェクトの位置を多数の方法で変更できます。たとえば、[**InsertAbove**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertabove) を使うと、別のビジュアル オブジェクトの上に、[**InsertBelow**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertbelow) を使うと、下に配置できます。[**InsertAtTop**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertattop) を使うと、先頭に、[**InsertAtBottom**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertatbottom) を使うと、末尾に移動できます。
+コンポジション API を使うと、[**VisualCollection**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualcollection) でのビジュアル オブジェクトの位置を多数の方法で変更できます。たとえば、[**InsertAbove**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualcollection.insertabove) を使うと、別のビジュアル オブジェクトの上に、[**InsertBelow**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualcollection.insertbelow) を使うと、下に配置できます。[**InsertAtTop**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualcollection.insertattop) を使うと、先頭に、[**InsertAtBottom**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visualcollection.insertatbottom) を使うと、末尾に移動できます。
 
 このサンプルでは、クリックされた [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) は先頭に並べ替えられています。
 
@@ -526,6 +526,6 @@ namespace compositionvisual
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,12 +1,15 @@
 ---
 author: mcleblanc
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
-title: デスクトップ用 Device Portal
-description: Windows デスクトップで Windows Device Portal の診断と自動化を利用する方法について説明します。
+title: "デスクトップ用 Device Portal"
+description: "Windows デスクトップで Windows Device Portal の診断と自動化を利用する方法について説明します。"
+ms.sourcegitcommit: f09f0233ec11b41989cf52da3c5e8cb37a97b607
+ms.openlocfilehash: 7be27f5fb15676c5330f22995dd044899eddfd3d
+
 ---
 # デスクトップ用 Device Portal
 
-Windows 10 Version 1604 以降では、デスクトップで追加の開発者向け機能が利用できるようになりました。 これらの機能は、開発者モードが有効になっている場合にのみ利用可能です。
+Windows 10 Version 1607 以降では、デスクトップで追加の開発者向け機能が利用できるようになりました。 これらの機能は、開発者モードが有効になっている場合にのみ利用可能です。
 
 開発者モードを有効にする方法については、「[デバイスを開発用に有効にする](../get-started/enable-your-device-for-development.md)」をご覧ください。
 
@@ -101,6 +104,7 @@ Device Portal に接続するには、ローカル ホスト接続と、ロー�
 2. すべての更新プログラムを確実に適用するために、コンピューターを再起動します。
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

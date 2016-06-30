@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 278114aa-2a44-4d63-a1d2-d512d8aababc
-description: Microsoft Store Engagement and Monetization SDK の Microsoft Advertising ライブラリについての一般的な開発者向けの情報をお知らせします。
-title: Microsoft Advertising ライブラリの開発者向け情報
+description: "Microsoft Store Engagement and Monetization SDK の Microsoft Advertising ライブラリについての一般的な開発者向けの情報をお知らせします。"
+title: "Microsoft Advertising ライブラリの開発者向け情報"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: ec3b1d5c33a24da4ad2a4c5c8e4e11c71ece4828
+
 
 ---
 
@@ -34,6 +38,7 @@ title: Microsoft Advertising ライブラリの開発者向け情報
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

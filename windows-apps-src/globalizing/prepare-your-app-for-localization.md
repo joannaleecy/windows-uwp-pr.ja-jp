@@ -1,10 +1,14 @@
 ---
 author: DelfCo
-Description: 他の市場、言語、または地域に向けたローカライズのためにアプリを準備します。
-title: ローカライズのためにアプリの準備をする
+Description: "他の市場、言語、または地域に向けたローカライズのためにアプリを準備します。"
+title: "ローカライズのためにアプリの準備をする"
 ms.assetid: 06E1D4BB-59EA-4D71-99AC-7CB93D2A58A7
 label: Prepare your app for localization
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: e52a5322767677859e32ccbecf4951745c49f36f
+
 ---
 
 # ローカライズのためにアプリの準備をする
@@ -187,6 +191,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

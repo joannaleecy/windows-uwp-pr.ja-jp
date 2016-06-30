@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: EGL コードと DXGI および Direct3D の比較
-description: DirectX Graphics Interface (DXGI) といくつかの Direct3D API は EGL と同じ役割を果たします。 このトピックは EGL の観点から DXGI と Direct3D 11 を理解するのに役立ちます。
+title: "EGL コードと DXGI および Direct3D の比較"
+description: "DirectX Graphics Interface (DXGI) といくつかの Direct3D API は EGL と同じ役割を果たします。 このトピックは EGL の観点から DXGI と Direct3D 11 を理解するのに役立ちます。"
 ms.assetid: 90f5ecf1-dd5d-fea3-bed8-57a228898d2a
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 461983b646148c21aba7da2adb703510d95b0343
+
 ---
 
 # EGL コードと DXGI および Direct3D の比較
@@ -420,6 +424,7 @@ UWP アプリでは、[**CoreWindow::Close**](https://msdn.microsoft.com/library
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,7 +1,10 @@
 ---
 author: JordanRh1
-title: Windows 10 IoT Core でのユーザー モード アクセスの有効化
-description: このチュートリアルでは、Windows 10 IoT Core で GPIO、I2C、SPI、および UART へのユーザー モード アクセスを有効にする方法について説明します。
+title: "Windows 10 IoT Core でのユーザー モード アクセスの有効化"
+description: "このチュートリアルでは、Windows 10 IoT Core で GPIO、I2C、SPI、および UART へのユーザー モード アクセスを有効にする方法について説明します。"
+ms.sourcegitcommit: f7d7dac79154b1a19eb646e7d29d70b2f6a15e35
+ms.openlocfilehash: eedabee593400ff0260b6d3468ac922285a034f8
+
 ---
 # Windows 10 IoT Core でのユーザー モード アクセスの有効化
 
@@ -340,13 +343,15 @@ Windows では、[GpioClx](https://msdn.microsoft.com/library/windows/hardware/h
 
 * ピンの多重化のサーバーは、ピンの多重化の制御ブロックを制御するドライバーです。 ピンの多重化のサーバーは、多重化のリソースを予約するための要求 (*IRP_MJ_CREATE* 要求を使用) と、ピンの機能を切り替えるための要求 (*IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* 要求を使用) を介して、クライアントからピンの多重化の要求を受け取ります。 多重化ブロックが GPIO ブロックの一部である場合があるため、通常はピンの多重化のサーバーは GPIO ドライバーです。 多重化ブロックが別個の周辺機器の場合でも、GPIO ドライバーは多重化機能を配置するための理にかなった場所となります。 
 * ピンの多重化のクライアントは、ピンの多重化を使うドライバーです。 ピンの多重化のクライアントは ACPI ファームウェアからピンの多重化のリソースを受け取ります。 ピンの多重化のリソースは接続リソースの一種で、リソース ハブによって管理されます。 ピンの多重化のクライアントは、ハンドルをリソースに対して開くことでピンの多重化のリソースを予約します。 ハードウェアの変更を有効にするために、クライアントは *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* 要求を送信して構成をコミットする必要があります。 クライアントはハンドルを閉じることでピンの多重化のリソースを解放し、この時点で多重化構成は既定の状態に戻ります。 
-* ACPI ファームウェアは、`FunctionConfig()` リソースにより多重化構成を指定します。 FunctionConfig リソースは、どのピンがどの多重化構成でクライアントにより必要とされるかを表します。 FunctionConfig リソースには、機能番号、プル構成、ピン番号の一覧が含まれます。 FunctionConfig リソースはハードウェア リソースとしてピンの多重化のクライアントに提供され、GPIO および SPB 接続リソースと同様に、ドライバーによって PrepareHardware コールバックで受け取られます。 クライアントは、リソースに対してハンドルを開くために使うことができるリソース ハブ ID を受け取ります。 
+* ACPI ファームウェアは、`MsftFunctionConfig()` リソースにより多重化構成を指定します。 MsftFunctionConfig リソースは、どのピンがどの多重化構成でクライアントにより必要とされるかを表します。 MsftFunctionConfig リソースには、機能番号、プル構成、ピン番号の一覧が含まれます。 MsftFunctionConfig リソースはハードウェア リソースとしてピンの多重化のクライアントに提供され、GPIO および SPB 接続リソースと同様に、ドライバーによって PrepareHardware コールバックで受け取られます。 クライアントは、リソースに対してハンドルを開くために使うことができるリソース ハブ ID を受け取ります。 
+
+> `MsftFunctionConfig()` 記述子を含んでいる ASL ファイルをコンパイルするには、`/MsftInternal` コマンド ライン スイッチを `asl.exe` に渡す必要があります。これは、これらの記述子が、ACPI 作業部会で現在検討中であるためです。 たとえば、次のように指定します。 `asl.exe /MsftInternal dsdt.asl`
 
 ピンの多重化に関連する操作の順序を次に示します。 
 
 ![ピンの多重化のクライアントとサーバーの相互作用](images/usermode-access-diagram-1.png)
 
-1.  クライアントが ACPI ファームウェアから [EvtDevicePrepareHardware()](https://msdn.microsoft.com/library/windows/hardware/ff540880.aspx) コールバックに FunctionConfig リソースを受け取ります。
+1.  クライアントは、[EvtDevicePrepareHardware()](https://msdn.microsoft.com/library/windows/hardware/ff540880.aspx) コールバックで、ACPI ファームウェアから MsftFunctionConfig リソースを受け取ります。
 2.  クライアントはリソース ハブ ヘルパー関数 `RESOURCE_HUB_CREATE_PATH_FROM_ID()` を使ってリソース ID からパスを作成し、([ZwCreateFile()](https://msdn.microsoft.com/library/windows/hardware/ff566424.aspx)、[IoGetDeviceObjectPointer()](https://msdn.microsoft.com/library/windows/hardware/ff549198.aspx)、または [WdfIoTargetOpen()](https://msdn.microsoft.com/library/windows/hardware/ff548634.aspx) を使って) そのパスに対してハンドルを開きます。
 3.  サーバーがリソース ハブ ヘルパー関数 `RESOURCE_HUB_ID_FROM_FILE_NAME()` を使ってファイル パスからリソース ハブ ID を抽出してから、リソース ハブを照会してリソース記述子を取得します。
 4.  サーバーは記述子内の各ピンの共有の判別を実行し、IRP_MJ_CREATE 要求を完了します。
@@ -362,7 +367,7 @@ Windows では、[GpioClx](https://msdn.microsoft.com/library/windows/hardware/h
 
 ####    リソースの解析
 
-WDF ドライバーが [EvtDevicePrepareHardware()](https://msdn.microsoft.com/library/windows/hardware/ff540880.aspx) ルーチンに `FunctionConfig()` リソースを受け取ります。 FunctionConfig リソースは、次のフィールドで識別できます。
+WDF ドライバーが [EvtDevicePrepareHardware()](https://msdn.microsoft.com/library/windows/hardware/ff540880.aspx) ルーチンで `MsftFunctionConfig()` リソースを受け取ります。 MsftFunctionConfig リソースは、次のフィールドで識別できます。
 
 ```cpp
 CM_PARTIAL_RESOURCE_DESCRIPTOR::Type = CmResourceTypeConnection
@@ -370,7 +375,7 @@ CM_PARTIAL_RESOURCE_DESCRIPTOR::u.Connection.Class = CM_RESOURCE_CONNECTION_CLAS
 CM_PARTIAL_RESOURCE_DESCRIPTOR::u.Connection.Type = CM_RESOURCE_CONNECTION_TYPE_FUNCTION_CONFIG
 ```
 
-`EvtDevicePrepareHardware()` ルーチンは、次のように FunctionConfig リソースを展開します。
+`EvtDevicePrepareHardware()` ルーチンは、次のように MsftFunctionConfig リソースを展開します。
 
 ```cpp
 EVT_WDF_DEVICE_PREPARE_HARDWARE evtDevicePrepareHardware;
@@ -426,7 +431,7 @@ evtDevicePrepareHardware (
 
 ####    リソースの予約とコミット
 
-クライアントでピンの多重化が必要な場合、FunctionConfig リソースを予約してコミットします。 次の例は、クライアントが FunctionConfig リソースを予約してコミットする方法を示しています。
+クライアントでピンの多重化が必要な場合、MsftFunctionConfig リソースを予約してコミットします。 次の例は、クライアントが MsftFunctionConfig リソースを予約してコミットする方法を示しています。
 
 ```cpp
 _IRQL_requires_max_(PASSIVE_LEVEL)
@@ -511,7 +516,7 @@ NTSTATUS AcquireFunctionConfigResource (
 
 ####    IRP_MJ_CREATE 要求の処理
 
-クライアントは、ピンの多重化のリソースを予約するときにリソースに対してハンドルを開きます。 ピンの多重化のサーバーが、リソース ハブからの再解析操作により *IRP_MJ_CREATE* 要求を受け取ります。 *IRP_MJ_CREATE* 要求の末尾のパス コンポーネントには、16 進数形式の 64 ビット整数であるリソース ハブ ID が含まれています。 サーバーは、reshub.h から `RESOURCE_HUB_ID_FROM_FILE_NAME()` を使ってファイル名からリソース ハブ ID を抽出し、*IOCTL_RH_QUERY_CONNECTION_PROPERTIES* をリソース ハブに送信して `FunctionConfig()` 記述子を取得する必要があります。
+クライアントは、ピンの多重化のリソースを予約するときにリソースに対してハンドルを開きます。 ピンの多重化のサーバーが、リソース ハブからの再解析操作により *IRP_MJ_CREATE* 要求を受け取ります。 *IRP_MJ_CREATE* 要求の末尾のパス コンポーネントには、16 進数形式の 64 ビット整数であるリソース ハブ ID が含まれています。 サーバーは、reshub.h から `RESOURCE_HUB_ID_FROM_FILE_NAME()` を使ってファイル名からリソース ハブ ID を抽出し、*IOCTL_RH_QUERY_CONNECTION_PROPERTIES* をリソース ハブに送信して `MsftFunctionConfig()` 記述子を取得する必要があります。
 
 サーバーは記述子を検証して、共有モードとピンの一覧を記述子から抽出する必要があります。 その後、ピンの共有の判別を実行し、成功した場合には、要求を完了する前にピンを予約済みとしてマークします。
 
@@ -525,18 +530,18 @@ NTSTATUS AcquireFunctionConfigResource (
 
 共有の判別に失敗した場合は、*STATUS_GPIO_INCOMPATIBLE_CONNECT_MODE* で要求を完了する必要があります。 共有の判別に成功した場合は、*STATUS_SUCCESS* で要求を完了する必要があります。
 
-着信要求の共有モードは、[IrpSp->Parameters.Create.ShareAccess](https://msdn.microsoft.com/library/windows/hardware/ff548630.aspx) ではなく FunctionConfig 記述子から取得する必要があることに注意してください。
+着信要求の共有モードは、[IrpSp->Parameters.Create.ShareAccess](https://msdn.microsoft.com/library/windows/hardware/ff548630.aspx) ではなく MsftFunctionConfig 記述子から取得する必要があることに注意してください。
 
 ####    IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS 要求の処理
 
-クライアントがハンドルを開くことで FunctionConfig リソースの予約に成功した後は、*IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* を送信して実際のハードウェア多重化操作を実行するようサーバーに要求することができます。 サーバーが *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* を受け取ると、ピンの一覧の各ピンは、 
+クライアントがハンドルを開くことで MsftFunctionConfig リソースの予約に成功した後は、*IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* を送信して実際のハードウェア多重化操作を実行するようサーバーに要求することができます。 サーバーが *IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS* を受け取ると、ピンの一覧の各ピンは、 
 
 *   PNP_FUNCTION_CONFIG_DESCRIPTOR 構造の PinConfiguration メンバーで指定されたプル モードをハードウェアに設定する必要があります。
 *   PNP_FUNCTION_CONFIG_DESCRIPTOR 構造の FunctionNumber メンバーによって指定された機能に対してピンを多重化する必要があります。
 
 サーバーはその後、*STATUS_SUCCESS* を使って要求を完了する必要があります。
 
-FunctionNumber の意味はサーバーによって定義され、FunctionConfig 記述子はサーバーがこのフィールドをどのように解釈するかについての知識を持って作成されたことがわかります。
+FunctionNumber の意味はサーバーによって定義され、サーバーが MsftFunctionConfig のフィールドをどのように解釈して、MsftFunctionConfig 記述子が作成されたかがわかります。
 
 ハンドルが閉じられたときにサーバーは IOCTL_GPIO_COMMIT_FUNCTION_CONFIG_PINS が受け取られたときの構成にピンを戻す必要があるため、ピンの状態を変更する前に保存する必要があることに注意してください。
 
@@ -546,11 +551,11 @@ FunctionNumber の意味はサーバーによって定義され、FunctionConfig
 
 ### ACPI テーブルの作成のガイドライン
 
-このセクションでは、クライアント ドライバーに多重化のリソースを指定する方法について説明します。 `FunctionConfig()` リソースを含むテーブルをコンパイルするために、Microsoft ASL コンパイラ ビルド 14327 以降が必要となることに注意してください。 `FunctionConfig()` リソースは、ピンの多重化のクライアントにハードウェア リソースとして提供されます。 `FunctionConfig()` リソースは、ピンの多重化の変更が必要なドライバーに提供する必要があります。これは通常 SPB およびシリアル コントローラー ドライバーですが、コントローラー ドライバーが多重化構成を扱うため、SPB およびシリアル周辺機器ドライバーには提供しません。
-`FunctionConfig()` ACPI マクロは、次のように定義されています。
+このセクションでは、クライアント ドライバーに多重化のリソースを指定する方法について説明します。 `MsftFunctionConfig()` リソースを含むテーブルをコンパイルするために、Microsoft ASL コンパイラ ビルド 14327 以降が必要となることに注意してください。 `MsftFunctionConfig()` リソースは、ピンの多重化のクライアントにハードウェア リソースとして提供されます。 `MsftFunctionConfig()` リソースは、ピンの多重化の変更が必要なドライバーに提供する必要があります。これは通常 SPB およびシリアル コントローラー ドライバーですが、コントローラー ドライバーが多重化構成を扱うため、SPB およびシリアル周辺機器ドライバーには提供しません。
+`MsftFunctionConfig()` ACPI マクロは、次のように定義されています。
 
 ```cpp
-  FunctionConfig(Shared/Exclusive
+  MsftFunctionConfig(Shared/Exclusive
                 PinPullConfig,
                 FunctionNumber,
                 ResourceSource,
@@ -573,7 +578,7 @@ FunctionNumber の意味はサーバーによって定義され、FunctionConfig
 * VendorData – ピンの多重化のサーバーによって意味が定義される、オプションのバイナリ データです。 通常は空白のままにします
 * Pin List – 構成を適用するピン番号のコンマ区切りの一覧です。 ピンの多重化のサーバーが GpioClx ドライバーの場合、これらは GPIO ピン番号になり、GpioIo 記述子のピン番号と同じ意味を持ちます。 
 
-次の例では、FunctionConfig() リソースを I2C コントローラー ドライバーに提供する方法を示します。 
+次の例では、MsftFunctionConfig() リソースを I2C コントローラー ドライバーに提供する方法を示します。 
 
 ```cpp
 Device(I2C1) 
@@ -591,14 +596,14 @@ Device(I2C1)
         { 
             Memory32Fixed(ReadWrite, 0x3F804000, 0x20) 
             Interrupt(ResourceConsumer, Level, ActiveHigh, Shared) { 0x55 } 
-            FunctionConfig(Exclusive, PullUp, 4, "\\_SB.GPI0", 0, ResourceConsumer, ) { 2, 3 } 
+            MsftFunctionConfig(Exclusive, PullUp, 4, "\\_SB.GPI0", 0, ResourceConsumer, ) { 2, 3 } 
         }) 
         Return(RBUF) 
     } 
 } 
 ```
 
-通常コントローラー ドライバーに必要なメモリと割り込みリソースに加えて、`FunctionConfig()` リソースも指定します。 このリソースにより、I2C コントローラー ドライバーが (\\_SB.GPIO0 でデバイス ノードにより管理された) ピン 2 および 3 をプル アップ抵抗が有効になった状態で機能 4 に配置することができます。 
+通常コントローラー ドライバーに必要なメモリと割り込みリソースに加えて、`MsftFunctionConfig()` リソースも指定します。 このリソースにより、I2C コントローラー ドライバーが (\\_SB.GPIO0 でデバイス ノードにより管理された) ピン 2 および 3 をプル アップ抵抗が有効になった状態で機能 4 に配置することができます。 
 
 ### GpioClx クライアント ドライバーでの多重化サポートのサポート 
 
@@ -611,7 +616,7 @@ Device(I2C1)
 
 これらの 2 つの新しい DDI に加えて、既存の DDI もピンの多重化の互換性の監査対象とする必要があります。 
 
-* CLIENT_ConnectIoPins/CLIENT_ConnectInterrupt – CLIENT_ConnectIoPins は GpioClx によって呼び出され、ミニポート ドライバーが GPIO 入力または出力のための一連のピンを構成するように指示を出します。 GPIO は FunctionConfig と相互に排他的なため、GPIO と FunctionConfig に同時にピンが接続されることはありません。 ピンの既定の機能が GPIO である必要はないため、ConnectIoPins が呼び出されたときにピンが必ずしも GPIO に多重化されないとは限りません。 ConnectIoPins は、多重化操作を含む、GPIO IO のためのピンの準備に必要なすべての操作を実行するために必要です。 割り込みは GPIO 入力の特殊なケースと考えることができるため、*CLIENT_ConnectInterrupt* も同様に動作する必要があります。 
+* CLIENT_ConnectIoPins/CLIENT_ConnectInterrupt – CLIENT_ConnectIoPins は GpioClx によって呼び出され、ミニポート ドライバーが GPIO 入力または出力のための一連のピンを構成するように指示を出します。 GPIO は MsftFunctionConfig と相互に排他的なため、GPIO と MsftFunctionConfig に同時にピンが接続されることはありません。 ピンの既定の機能が GPIO である必要はないため、ConnectIoPins が呼び出されたときにピンが必ずしも GPIO に多重化されないとは限りません。 ConnectIoPins は、多重化操作を含む、GPIO IO のためのピンの準備に必要なすべての操作を実行するために必要です。 割り込みは GPIO 入力の特殊なケースと考えることができるため、*CLIENT_ConnectInterrupt* も同様に動作する必要があります。 
 * CLIENT_DisconnectIoPins/CLIENT_DisconnectInterrupt – これらのルーチンは、PreserveConfiguration フラグが指定されていない限り、CLIENT_ConnectIoPins/CLIENT_ConnectInterrupt が呼び出されたときの状態にピンを戻す必要があります。 ピンの方向を既定の状態に戻すだけでなく、ミニポートが各ピンの多重化の状態を _Connect routine が呼び出されたときの状態に戻す必要もあります。 
 
 たとえば、ピンの既定の多重化構成が UART で、ピンが GPIO としても使うことができると想定します。 GPIO のピンの接続のために CLIENT_ConnectIoPins が呼び出されると、ピンを GPIO に多重化する必要があり、CLIENT_DisconnectIoPins でピンを UART に多重化して戻す必要があります。 一般的に、_Disconnect ルーチンは _Connect ルーチンによって行われた操作を元に戻す必要があります。 
@@ -624,13 +629,13 @@ Windows 10 ビルド 14327 以降では、`SpbCx` および `SerCx` コントロ
 
 ![ピンの多重化の依存関係](images/usermode-access-diagram-2.png)
 
-デバイスの初期化時に、`SpbCx` および `SerCx` フレームワークがハードウェア リソースとしてデバイスに提供されたすべての `FunctionConfig()` リソースを解析します。 SpbCx/SerCx はその後、必要に応じてピンの多重化のリソースを取得および解放します。
+デバイスの初期化時に、`SpbCx` および `SerCx` フレームワークがハードウェア リソースとしてデバイスに提供されたすべての `MsftFunctionConfig()` リソースを解析します。 SpbCx/SerCx はその後、必要に応じてピンの多重化のリソースを取得および解放します。
 
 `SpbCx` は、クライアント ドライバーの [EvtSpbTargetConnect()](https://msdn.microsoft.com/library/windows/hardware/hh450818.aspx) コールバックの呼び出しの直前に、*IRP_MJ_CREATE* ハンドラー内のピンの多重化構成を適用します。 多重化構成を適用できなかった場合、コントローラー ドライバーの `EvtSpbTargetConnect()` コールバックは呼び出されません。 そのため、SPB コントローラー ドライバーは `EvtSpbTargetConnect()` が呼び出されたときまでにピンが SPB 機能に対して多重化されていると想定することができます。
 
 `SpbCx` は、コントローラー ドライバーの [EvtSpbTargetDisconnect()](https://msdn.microsoft.com/library/windows/hardware/hh450820.aspx) コールバックを呼び出した直後に、*IRP_MJ_CLOSE* ハンドラー内のピンの多重化構成に戻します。 その結果、周辺機器ドライバーが SPB コントローラー ドライバーに対してハンドルを開くたびにピンが SPB 機能に対して多重化され、周辺機器ドライバーがハンドルを閉じると多重化が終了します。
 
-`SerCx` も同様に動作します。 `SerCx` は、コントローラー ドライバーの [EvtSerCx2FileOpen()](https://msdn.microsoft.com/library/windows/hardware/dn265209.aspx) コールバックの呼び出しの直前に *IRP_MJ_CREATE* ハンドラー内のすべての `FunctionConfig()` リソースを取得し、コントローラー ドライバーの [EvtSerCx2FileClose](https://msdn.microsoft.com/library/windows/hardware/dn265208.aspx) コールバックが呼び出された直後に IRP_MJ_CLOSE ハンドラー内のすべてのリソースを解放します。
+`SerCx` も同様に動作します。 `SerCx` は、コントローラー ドライバーの [EvtSerCx2FileOpen()](https://msdn.microsoft.com/library/windows/hardware/dn265209.aspx) コールバックの呼び出しの直前に *IRP_MJ_CREATE* ハンドラー内のすべての `MsftFunctionConfig()` リソースを取得し、コントローラー ドライバーの [EvtSerCx2FileClose](https://msdn.microsoft.com/library/windows/hardware/dn265208.aspx) コールバックが呼び出された直後に IRP_MJ_CLOSE ハンドラー内のすべてのリソースを解放します。
 
 `SerCx` および `SpbCx` コントローラー ドライバーのための動的なピンの多重化の実装では、特定の時間で SPB/UART 機能のピンの多重化が終了することを許容できる必要があります。 コントローラー ドライバーは、`EvtSpbTargetConnect()` または `EvtSerCx2FileOpen()` が呼び出されるまでピンが多重化されないことを前提とする必要があります。 次のコールバック中に必ずしもピンが SPB/UART 機能に多重化される必要はありません。 次に示すのは完全な一覧ではありませんが、コントローラー ドライバーによって実装される最も一般的な PNP ルーチンを示しています。
 
@@ -717,7 +722,6 @@ Gpio、I2c、Spi、シリアルのためのシンプルなコマンド ライン
 | GpioClx   | https://msdn.microsoft.com/library/windows/hardware/hh439508.aspx |
 | SerCx | https://msdn.microsoft.com/library/windows/hardware/ff546939.aspx |
 | MITT I2C テスト | https://msdn.microsoft.com/library/windows/hardware/dn919852.aspx |
-| Signiant | http://windowsreleases/Playbook/Content%20Owners/Requesting%20Access%20to%20Signiant.aspx |
 | GpioTestTool | https://developer.microsoft.com/en-us/windows/iot/win10/samples/GPIOTestTool |
 | I2cTestTool   | https://developer.microsoft.com/en-us/windows/iot/win10/samples/I2cTestTool | 
 | SpiTestTool | https://developer.microsoft.com/en-us/windows/iot/win10/samples/spitesttool |
@@ -1081,26 +1085,6 @@ GpioInt(Edge, ActiveBoth, Shared, $($_.PullConfig), 0, "\\_SB.GPI0",) { $($_.Pin
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

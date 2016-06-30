@@ -1,28 +1,33 @@
 ---
-title: Common cryptography tasks
-description: These articles provide example code for common Universal Windows Platform (UWP) cryptography tasks, such as creating random numbers, comparing buffers, converting between strings and binary data, copying to and from byte arrays, and encoding and decoding data.
+title: "一般的な暗号化タスク"
+description: "これらの記事では、乱数の生成、バッファーの比較、文字列とバイナリ データの間の変換、バイト配列間のコピー、データのエンコードとデコードなどのユニバーサル Windows プラットフォーム (UWP) の一般的な暗号化タスクのコード例を提供します。"
 ms.assetid: 2DE094F4-28E2-4C5D-BF8C-617BD90AB119
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
+ms.openlocfilehash: 38d0af2cdbf4137cbd0e005fcb750ed2f0b2c87c
+
 ---
 
-# Common cryptography tasks
+# 一般的な暗号化タスク
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
-These articles provide example code for common Universal Windows Platform (UWP) cryptography tasks, such as creating random numbers, comparing buffers, converting between strings and binary data, copying to and from byte arrays, and encoding and decoding data.
+これらの記事では、乱数の生成、バッファーの比較、文字列とバイナリ データの間の変換、バイト配列間のコピー、データのエンコードとデコードなどのユニバーサル Windows プラットフォーム (UWP) の一般的な暗号化タスクのコード例を提供します。
 
  
-| Topic                                                                                 | Description                                                                                            |
+| トピック                                                                                 | 説明                                                                                            |
 |---------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
-| [Create random numbers](create-random-numbers.md)                                     | This example code shows how to create a random number or buffer for use in cryptography in an UWP app. |
-| [Compare buffers](compare-buffers.md)                                                 | This example code shows how to compare buffers in an UWP app.                                          |
-| [Convert between strings and binary data](convert-between-strings-and-binary-data.md) | This example code shows how to convert between strings and binary data in an UWP app.                  |
-| [Copy to and from byte arrays](copy-to-and-from-byte-arrays.md)                       | This example code shows how to copy to and from byte arrays in an UWP app.                             |
-| [Encode and decode data](encode-and-decode-data.md)                                   | This example code shows how to encode and decode base64 and hexadecimal data in an UWP app.            |
+| [乱数の生成](create-random-numbers.md)                                     | 次のコード例は、UWP アプリでの暗号化に使用する乱数やバッファーを作成する方法を示しています。 |
+| [バッファーの比較](compare-buffers.md)                                                 | 次のコード例は、UWP アプリでバッファーを比較する方法を示しています。                                          |
+| [文字列とバイナリ データの間の変換](convert-between-strings-and-binary-data.md) | 次のコード例は、UWP アプリでの文字列とバイナリ データ間での変換方法を示しています。                  |
+| [バイト配列間のコピー](copy-to-and-from-byte-arrays.md)                       | 次のコード例は、UWP アプリでバイト配列をコピーする方法を示しています。                             |
+| [データのエンコードとデコード](encode-and-decode-data.md)                                   | 次のコード例は、UWP アプリで base64 データと 16 進データをエンコードおよびデコードする方法を示しています。            |
  
 
 
-<!--HONumber=Jun16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

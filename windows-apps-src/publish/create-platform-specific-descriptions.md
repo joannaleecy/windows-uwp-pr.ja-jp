@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: さまざまなオペレーティング システムを対象とするパッケージを提供する場合、対象のオペレーティング システムごとに説明の一部をカスタマイズするオプションがあります。
-title: プラットフォーム固有の説明の作成
+Description: "さまざまなオペレーティング システムを対象とするパッケージを提供する場合、対象のオペレーティング システムごとに説明の一部をカスタマイズするオプションがあります。"
+title: "プラットフォーム固有の説明の作成"
 ms.assetid: 5BE66BE2-669C-49E0-8915-60F1027EF94A
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 00be0238af7969a84abe79f9aee3bec485fbb3e3
+
 ---
 
 # プラットフォーム固有の説明の作成
@@ -45,6 +49,7 @@ ms.assetid: 5BE66BE2-669C-49E0-8915-60F1027EF94A
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

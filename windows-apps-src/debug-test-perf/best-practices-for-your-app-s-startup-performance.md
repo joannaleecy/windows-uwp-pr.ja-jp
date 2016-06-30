@@ -1,8 +1,11 @@
 ---
 author: mcleblanc
 ms.assetid: 00ECF6C7-0970-4D5F-8055-47EA49F92C12
-title: アプリ起動時のパフォーマンスのベスト プラクティス
-description: 起動とアクティブ化を処理する方法を向上させることによって、最適な起動時間のユニバーサル Windows プラットフォーム (UWP) アプリを作成します。
+title: "アプリ起動時のパフォーマンスのベスト プラクティス"
+description: "起動とアクティブ化を処理する方法を向上させることによって、最適な起動時間のユニバーサル Windows プラットフォーム (UWP) アプリを作成します。"
+ms.sourcegitcommit: 5411faa3af685e1a285119ba456a440725845711
+ms.openlocfilehash: 46e78612c0f4391b9448ea9bd7a001722fb08a28
+
 ---
 # アプリ起動時のパフォーマンスのベスト プラクティス
 
@@ -262,7 +265,7 @@ XAML アプリの起動時のパフォーマンスは、起動時に作成する
 
 アクティブ化ハンドラーで読み込みページを表示するアプリは、バックグラウンドで UI の作成作業を開始します。 その要素が作成されると、[**FrameworkElement.Loaded**](https://msdn.microsoft.com/library/windows/apps/BR208723) イベントが発生します。 このイベント ハンドラーで、現在は読み込み画面になっているウィンドウのコンテンツを、新しく作成したホーム ページに置き換えます。
 
-初期化時間が長いアプリの場合は読み込みページを表示することが重要です。 アクティブ化プロセスに関する確かなフィードバックを返すこととは別に、アクティブ化プロセスの開始から 15 秒以内に [**Window.Activate**](https://msdn.microsoft.com/library/windows/apps/BR209046) が呼び出されないと、プロセスは終了されます。
+初期化時間が長いアプリの場合は読み込みページを表示することが重要です。 アクティブ化プロセスに関するユーザー フィードバックを返すこととは別に、アクティブ化プロセスの開始から 15 秒以内に [**Window.Activate**](https://msdn.microsoft.com/library/windows/apps/BR209046) が呼び出されないと、プロセスは終了されます。
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -360,6 +363,7 @@ PageStackEntry には、Frame.Navigate() メソッドに渡されたパラメー
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

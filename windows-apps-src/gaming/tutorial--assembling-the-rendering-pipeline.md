@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: レンダリング フレームワークの作成
-description: 次に、作成した構造と状態をサンプル ゲームで使ってグラフィックスを表示する方法を見てみましょう。
+title: "レンダリング フレームワークの作成"
+description: "次に、作成した構造と状態をサンプル ゲームで使ってグラフィックスを表示する方法を見てみましょう。"
 ms.assetid: 1da3670b-2067-576f-da50-5eba2f88b3e6
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 5eb6ea7ad1a30f020c155007396383b88d10c0a8
+
 ---
 
 # レンダリング フレームワークの作成
@@ -6322,6 +6326,7 @@ void Material::RenderSetup(
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

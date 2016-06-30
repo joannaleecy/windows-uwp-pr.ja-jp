@@ -1,10 +1,14 @@
 ---
 author: Xansky
-Description: ユニバーサル Windows プラットフォーム (UWP) アプリをアクセシビリティ対応にするために役立つチェック リストを示します。
+Description: "ユニバーサル Windows プラットフォーム (UWP) アプリをアクセシビリティ対応にするために役立つチェック リストを示します。"
 ms.assetid: BB8399E2-7013-4F77-AF2C-C1A0E5412856
-title: アクセシビリティのチェック リスト
+title: "アクセシビリティのチェック リスト"
 label: Accessibility checklist
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 9580ccc0716b7e9f4ee32ce241b0ac3ee9bf319d
+
 ---
 
 # アクセシビリティのチェック リスト
@@ -65,6 +69,7 @@ template: detail.hbs
 * [避ける事項](practices-to-avoid.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

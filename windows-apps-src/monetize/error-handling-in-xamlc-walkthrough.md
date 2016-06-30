@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: cf0d2709-21a1-4d56-9341-d4897e405f5d
-description: アプリで AdControl エラーをキャッチする方法について説明します。
-title: XAML/C# ウォークスルーでのエラー処理
+description: "アプリで AdControl エラーをキャッチする方法について説明します。"
+title: "XAML/C# ウォークスルーでのエラー処理"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 7cb827b4269afb55f0326eec0a0ee25b93119eb0
+
 
 ---
 
@@ -88,6 +92,7 @@ AdControl error (): MicrosoftAdvertising.Shared.AdException: all ad requests mus
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

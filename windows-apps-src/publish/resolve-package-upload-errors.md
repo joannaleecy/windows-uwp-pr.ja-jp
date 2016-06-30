@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: アプリを申請する際に、アプリ パッケージのアップロード中にエラーが発生した場合は、ストアにアプリを申請する前にそれらのエラーを解決する必要があります。
-title: パッケージのアップロード エラーの解決
+Description: "アプリを申請する際に、アプリ パッケージのアップロード中にエラーが発生した場合は、ストアにアプリを申請する前にそれらのエラーを解決する必要があります。"
+title: "パッケージのアップロード エラーの解決"
 ms.assetid: 0D01E43C-F3A7-4FA2-B479-1B5579FF531A
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: afd2a08ed637502827e3207702d7659ed70148a0
+
 ---
 
 # パッケージのアップロード エラーの解決
@@ -37,6 +41,7 @@ Windows Phone 8.1 用に以前公開されていたアプリを更新すると�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

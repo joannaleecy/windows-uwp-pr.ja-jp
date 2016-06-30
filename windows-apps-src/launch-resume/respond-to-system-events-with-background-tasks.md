@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: バックグラウンド タスクによるシステム イベントへの応答
-description: SystemTrigger イベントに応答するバックグラウンド タスクを作成する方法について説明します。
+author: TylerMSFT
+title: "バックグラウンド タスクによるシステム イベントへの応答"
+description: "SystemTrigger イベントに応答するバックグラウンド タスクを作成する方法について説明します。"
 ms.assetid: 43C21FEA-28B9-401D-80BE-A61B71F01A89
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: f6845dce428f5e22ec68744293b1668da52002bf
+
 ---
 
 # バックグラウンド タスクによるシステム イベントへの応答
@@ -50,13 +53,13 @@ ms.assetid: 43C21FEA-28B9-401D-80BE-A61B71F01A89
     > ```cs
     > string entryPoint = "Tasks.ExampleBackgroundTaskClass";
     > string taskName   = "Internet-based background task";
-    > 
+    >
     > BackgroundTaskRegistration task = RegisterBackgroundTask(entryPoint, taskName, internetTrigger, exampleCondition);
     > ```
     > ```cpp
     > String ^ entryPoint = "Tasks.ExampleBackgroundTaskClass";
     > String ^ taskName   = "Internet-based background task";
-    > 
+    >
     > BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName, internetTrigger, exampleCondition);
     > ```
 
@@ -107,8 +110,6 @@ ms.assetid: 43C21FEA-28B9-401D-80BE-A61B71F01A89
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

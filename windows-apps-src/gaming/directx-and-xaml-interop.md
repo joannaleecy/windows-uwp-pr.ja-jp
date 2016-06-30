@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: DirectX と XAML の相互運用機能
-description: ユニバーサル Windows プラットフォーム (UWP) ゲームで Extensible Application Markup Language (XAML) と Microsoft DirectX を組み合わせて使うことができます。
+title: "DirectX と XAML の相互運用機能"
+description: "ユニバーサル Windows プラットフォーム (UWP) ゲームで Extensible Application Markup Language (XAML) と Microsoft DirectX を組み合わせて使うことができます。"
 ms.assetid: 0fb2819a-61ed-129d-6564-0b67debf5c6b
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 97e694ae2fb8af30a35aa9ebdb714db50a506e6c
+
 ---
 
 # DirectX と XAML の相互運用機能
@@ -39,7 +43,7 @@ DirectX をどのように使うかを決めたら、目的に応じて次のい
 -   画像が画面上のスペースよりも大きく、ユーザーがパンまたはズームできる場合は、[**Windows::UI::Xaml::Media::Imaging::VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050) を使います。 これは、画面よりも大きいサイズが指定された DirectX の描画サーフェイスを処理する型です。 [
             **SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) と同様に、複雑な画像やコントロールを動的に構成する場合に使います。 また、**SurfaceImageSource** と同様に、高パフォーマンスのゲームには適しません。 **VirtualSurfaceImageSource** を使うことができる XAML 要素には、マップ コントロールや、画像が多い大きなドキュメント ビューアーなどがあります。
 
--   リアルタイムで更新されるグラフィックスを DirectX を使って表示する場合や、短い待ち時間で定期的に更新を行う必要がある場合は、[**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) クラスを使います。これにより、XAML フレームワークの更新タイマーに同期せずにグラフィックスを更新することができます。 この型を使うと、グラフィックス デバイスのスワップ チェーン ([**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631)) に直接アクセスし、XAML をレンダー ターゲットの上に配置できます。 この型は、ゲームなどの全画面の DirectX アプリで XAML ベースのユーザー インターフェイスが必要な場合に便利です。 Microsoft DirectX Graphic Infrastructure (DXGI)、Direct2D、Direct3D も含めて、この方法を使うには、DirectX に関する知識が必要です。 詳しくは、「[Direct3D 11 用プログラミング ガイド](https://msdn.microsoft.com/library/windows/desktop/ff476345)」をご覧ください
+-   リアルタイムで更新されるグラフィックスを DirectX を使って表示する場合や、短い待ち時間で定期的に更新を行う必要がある場合は、[**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) クラスを使います。これにより、XAML フレームワークの更新タイマーに同期せずにグラフィックスを更新することができます。 この型を使うと、グラフィックス デバイスのスワップ チェーン ([**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631)) に直接アクセスし、XAML をレンダー ターゲットの上に配置できます。 この型は、ゲームなどの全画面の DirectX アプリで XAML ベースのユーザー インターフェイスが必要な場合に便利です。 Microsoft DirectX Graphics Infrastructure (DXGI)、Direct2D、Direct3D も含めて、この方法を使うには、DirectX に関する知識が必要です。 詳しくは、「[Direct3D 11 用プログラミング ガイド](https://msdn.microsoft.com/library/windows/desktop/ff476345)」をご覧ください。
 
 ## SurfaceImageSource
 
@@ -98,11 +102,11 @@ DirectX をどのように使うかを決めたら、目的に応じて次のい
 4.  [
             **IDXGISurface**](https://msdn.microsoft.com/library/windows/desktop/bb174565) オブジェクトへのポインターを [**ISurfaceImageSourceNative::BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323) に渡し、DirectX を使ってそのサーフェイスに描画します。 *updateRect* パラメーターで更新対象として指定した領域だけが描画されます。
 
-    > **注**   [**IDXGIDevice**](https://msdn.microsoft.com/library/windows/desktop/bb174527) でアクティブにできる未処理の [**BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323) 操作は、一度に 1 つだけです。
+    > **注**   各 [**IDXGIDevice**](https://msdn.microsoft.com/library/windows/desktop/bb174527) でアクティブにできる未処理の [**BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323) 操作は、一度に 1 つだけです。
 
      
 
-    このメソッドは、更新されるターゲットの四角形の位置 (x、y) を示すオフセットを *offset* パラメーターで返します。 このオフセットを使って、[**IDXGISurface**](https://msdn.microsoft.com/library/windows/desktop/bb174565) 内の描画する位置を特定できます
+    このメソッドは、更新されるターゲットの四角形の位置 (x、y) を示すオフセットを *offset* パラメーターで返します。 このオフセットを使って、[**IDXGISurface**](https://msdn.microsoft.com/library/windows/desktop/bb174565) 内の描画する位置を特定できます。
 
     ```cpp
     ComPtr<IDXGISurface> surface;
@@ -119,7 +123,7 @@ DirectX をどのように使うかを決めたら、目的に応じて次のい
     ```
 
 5.  [
-            **ISurfaceImageSourceNative::EndDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848324) を呼び出してビットマップを終了します。 このビットマップを [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/br210101) に渡します
+            **ISurfaceImageSourceNative::EndDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848324) を呼び出してビットマップを終了します。 このビットマップを [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/br210101) に渡します。
 
     ```cpp
     m_sisNative->EndDraw();
@@ -193,7 +197,7 @@ DirectX をどのように使うかを決めたら、目的に応じて次のい
     ```
 
 4.  [
-            **IVirtualSurfaceImageSourceNative::RegisterForUpdatesNeeded**](https://msdn.microsoft.com/library/windows/desktop/hh848334) を呼び出して、[**IVirtualSurfaceUpdatesCallbackNative**](https://msdn.microsoft.com/library/windows/desktop/hh848336) の実装への参照を渡します
+            **IVirtualSurfaceImageSourceNative::RegisterForUpdatesNeeded**](https://msdn.microsoft.com/library/windows/desktop/hh848334) を呼び出して、[**IVirtualSurfaceUpdatesCallbackNative**](https://msdn.microsoft.com/library/windows/desktop/hh848336) の実装への参照を渡します。
 
     ```cpp
     class MyContentImageSource : public IVirtualSurfaceUpdatesCallbackNative
@@ -258,9 +262,9 @@ DirectX をどのように使うかを決めたら、目的に応じて次のい
             **IDXGISurface**](https://msdn.microsoft.com/library/windows/desktop/bb174565) オブジェクトへのポインターを [**IVirtualSurfaceImageSourceNative::BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323) に渡し、DirectX を使ってそのサーフェイスに描画します。 *updateRect* パラメーターで更新対象として指定した領域だけが描画されます。
 
         [
-            **IlSurfaceImageSourceNative::BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323) と同様に、このメソッドは、更新されるターゲットの四角形の位置 (x、y) を示すオフセットを *offset* パラメーターで返します。 このオフセットを使って、[**IDXGISurface**](https://msdn.microsoft.com/library/windows/desktop/bb174565) 内の描画する位置を特定できます
+            **IlSurfaceImageSourceNative::BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323) と同様に、このメソッドは、更新されるターゲットの四角形の位置 (x、y) を示すオフセットを *offset* パラメーターで返します。 このオフセットを使って、[**IDXGISurface**](https://msdn.microsoft.com/library/windows/desktop/bb174565) 内の描画する位置を特定できます。
 
-        > **注**   [**IDXGIDevice**](https://msdn.microsoft.com/library/windows/desktop/bb174527) でアクティブにできる未処理の [**BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323) 操作は、一度に 1 つだけです。
+        > **注**   各 [**IDXGIDevice**](https://msdn.microsoft.com/library/windows/desktop/bb174527) でアクティブにできる未処理の [**BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323) 操作は、一度に 1 つだけです。
 
          
 
@@ -296,27 +300,27 @@ DirectX をどのように使うかを決めたら、目的に応じて次のい
             **SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) インスタンスの数はアプリごとに 4 つ以下です。
 -   **Opacity**、**RenderTransform**、**Projection**、**Clip** の各プロパティの [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) による継承はサポートされていません。
 -   DirectX スワップ チェーンの高さと幅 ([**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528) で設定) は、アプリ ウィンドウの現在のサイズに設定することをお勧めします。 このように設定しないと、表示されるコンテンツのサイズが自動的に調整されます (**DXGI\_SCALING\_STRETCH** を使用)。
--   DirectX スワップ チェーンのスケーリング モード ([**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528) で設定) は、**DXGI\_SCALING\_STRETCH** に設定する必要があります
--   DirectX スワップ チェーンのアルファ モード ([**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528) で設定) を **DXGI\_ALPHA\_MODE\_PREMULTIPLIED** に設定することはできません
--   DirectX スワップ チェーンを作成するときは、[**IDXGIFactory2::CreateSwapChainForComposition**](https://msdn.microsoft.com/library/windows/desktop/hh404558) を呼び出す必要があります
+-   DirectX スワップ チェーンのスケーリング モード ([**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528) で設定) は、**DXGI\_SCALING\_STRETCH** に設定する必要があります。
+-   DirectX スワップ チェーンのアルファ モード ([**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528) で設定) を **DXGI\_ALPHA\_MODE\_PREMULTIPLIED** に設定することはできません。
+-   DirectX スワップ チェーンを作成するときは、[**IDXGIFactory2::CreateSwapChainForComposition**](https://msdn.microsoft.com/library/windows/desktop/hh404558) を呼び出す必要があります。
 
 [
-            **SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) の更新は、XAML フレームワークの更新ではなく、アプリのニーズに基づいて行います。 **SwapChainPanel** の更新を XAML フレームワークの更新に同期する必要がある場合は、[**Windows::UI::Xaml::Media::CompositionTarget::Rendering**](https://msdn.microsoft.com/library/windows/apps/br228127) イベントに登録します。 このイベントに登録しないと、**SwapChainPanel** を更新するスレッドと異なるスレッドから XAML 要素を更新する場合に、クロス スレッドの問題についての検討が必要になります
+            **SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) の更新は、XAML フレームワークの更新ではなく、アプリのニーズに基づいて行います。 **SwapChainPanel** の更新を XAML フレームワークの更新に同期する必要がある場合は、[**Windows::UI::Xaml::Media::CompositionTarget::Rendering**](https://msdn.microsoft.com/library/windows/apps/br228127) イベントに登録します。 このイベントに登録しないと、**SwapChainPanel** を更新するスレッドと異なるスレッドから XAML 要素を更新する場合に、クロス スレッドの問題についての検討が必要になります。
 
-次に、[**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) を使うアプリを設計する際の一般的なヒントをいくつか紹介します
+次に、[**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) を使うアプリを設計する際の一般的なヒントをいくつか紹介します。
 
 -   [
               **SwapChainPanel**
-            ](https://msdn.microsoft.com/library/windows/apps/dn252834) は [**Windows::UI::Xaml::Controls::Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) を継承し、同様のレイアウト動作をサポートします。 **Grid** 型とそのプロパティについて確認しておいてください。
+            ](https://msdn.microsoft.com/library/windows/apps/dn252834) は [**Windows::UI::Xaml::Controls::Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) から継承され、同様のレイアウト動作をサポートします。 **Grid** 型とそのプロパティについて確認しておいてください。
 
--   DirectX スワップ チェーンの設定後、[**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) に対する入力イベントはすべて他の XAML 要素と同じように機能します。 **SwapChainPanel** に対しては背景ブラシを設定しません。また、**SwapChainPanel** を使わない DirectX アプリとは異なり、アプリの [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) オブジェクトからの入力イベントを直接処理する必要はありません
+-   DirectX スワップ チェーンの設定後、[**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) に対する入力イベントはすべて他の XAML 要素と同じように機能します。 **SwapChainPanel** に対しては背景ブラシを設定しません。また、**SwapChainPanel** を使わない DirectX アプリとは異なり、アプリの [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) オブジェクトからの入力イベントを直接処理する必要はありません。
 
 -   • XAML 視覚要素のコンテンツのうち、ビジュアル ツリーで [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) の直接の子の下にあるコンテンツは、いずれも **SwapChainPanel** オブジェクトの直接の子のレイアウト サイズに合わせてクリッピングされます。 変換後にそれらのレイアウトの境界に収まらないコンテンツはレンダリングされません。 そのため、XAML の [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490) でアニメーション化する XAML コンテンツをビジュアル ツリーに配置するときは、アニメーションのすべての範囲がレイアウトの境界に収まる大きさの要素の下に配置します。
 
 -   [
             **SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) の直接の子にする XAML 視覚要素の数を制限します。 近接する要素は、できるだけ共通の親の下にまとめます。 ただし、XAML 要素が多すぎたり必要以上に大きいと全体のパフォーマンスに影響することがあるため、直接の子視覚要素の数とサイズについてはパフォーマンスとのバランスに注意する必要があります。 同様に、アプリの **SwapChainPanel** の子 XAML 要素を単一の全画面の要素にすると、過剰な描画が増えてアプリのパフォーマンスが低下するため、このような要素は作成しないようにします。 一般に、アプリの **SwapChainPanel** に対して作成する直接の子 XAML 視覚要素は 8 つまでにします。また、各要素のレイアウト サイズは、要素のコンテンツを表示するために必要な大きさに制限する必要があります。 ただし、**SwapChainPanel** の子要素の下のビジュアル ツリーについては、ある程度複雑にしてもパフォーマンスはそれほど低下しません。
 
-> **注**   一般に、DirectX アプリでは、サイズが表示ウィンドウのサイズ (通常は、ほとんどの Windows ストア ゲームのネイティブの画面解像度) と同じである横方向のスワップ チェーンを作る必要があります。 これにより、表示される XAML オーバーレイがない場合はアプリで最適なスワップ チェーンの実装が使われます。 縦モードに回転した場合、アプリは既にあるスワップ チェーンで [**IDXGISwapChain1::SetRotation**](https://msdn.microsoft.com/library/windows/desktop/hh446801) を呼び出し、必要に応じてコンテンツに変換を適用して、同じスワップ チェーンで [**SetSwapChain**](https://msdn.microsoft.com/library/windows/desktop/dn302144) をもう一度呼び出す必要があります。 同様に、アプリは、[**IDXGISwapChain::ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577) 呼び出しによってスワップ チェーンのサイズが変更されるたびに、同じスワップ チェーンで **SetSwapChain** をもう一度呼び出す必要があります
+> **注**   一般に、DirectX アプリでは、サイズが表示ウィンドウのサイズ (通常は、ほとんどの Windows ストア ゲームのネイティブの画面解像度) と同じである横方向のスワップ チェーンを作る必要があります。 これにより、表示される XAML オーバーレイがない場合はアプリで最適なスワップ チェーンの実装が使われます。 縦モードに回転した場合、アプリは既にあるスワップ チェーンで [**IDXGISwapChain1::SetRotation**](https://msdn.microsoft.com/library/windows/desktop/hh446801) を呼び出し、必要に応じてコンテンツに変換を適用して、同じスワップ チェーンで [**SetSwapChain**](https://msdn.microsoft.com/library/windows/desktop/dn302144) をもう一度呼び出す必要があります。 同様に、アプリは、[**IDXGISwapChain::ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577) 呼び出しによってスワップ チェーンのサイズが変更されるたびに、同じスワップ チェーンで **SetSwapChain** をもう一度呼び出す必要があります。
 
  
 
@@ -349,7 +353,7 @@ DirectX をどのように使うかを決めたら、目的に応じて次のい
     panelInspectable->QueryInterface(__uuidof(ISwapChainPanelNative), (void **)&m_swapChainNative);
     ```
 
-3.  DXGI デバイスとスワップ チェーンを作成し、スワップ チェーンを [**SetSwapChain**](https://msdn.microsoft.com/library/windows/desktop/dn302144) に渡して [**ISwapChainPanelNative**](https://msdn.microsoft.com/library/windows/desktop/dn302143) に設定します
+3.  DXGI デバイスとスワップ チェーンを作成し、スワップ チェーンを [**SetSwapChain**](https://msdn.microsoft.com/library/windows/desktop/dn302144) に渡して [**ISwapChainPanelNative**](https://msdn.microsoft.com/library/windows/desktop/dn302143) に設定します。
 
     ```cpp
     Microsoft::WRL::ComPtr<IDXGISwapChain1>               m_swapChain;    
@@ -415,6 +419,7 @@ DirectX をどのように使うかを決めたら、目的に応じて次のい
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

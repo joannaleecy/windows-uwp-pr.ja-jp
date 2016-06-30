@@ -1,8 +1,11 @@
 ---
 author: awkoren
-Description: デスクトップの変換拡張機能を使用して Windows デスクトップ アプリケーション (Win32、WPF、および Windows フォーム) から変換したユニバーサル Windows プラットフォーム (UWP) アプリを展開してデバッグします。
+Description: "デスクトップの変換拡張機能を使用して Windows デスクトップ アプリケーション (Win32、WPF、および Windows フォーム) から変換したユニバーサル Windows プラットフォーム (UWP) アプリを展開してデバッグします。"
 Search.Product: eADQiWindows 10XVcnh
-title: Windows デスクトップ アプリケーションから変換したユニバーサル Windows プラットフォーム (UWP) アプリを展開してデバッグする
+title: "Windows デスクトップ アプリケーションから変換したユニバーサル Windows プラットフォーム (UWP) アプリを展開してデバッグする"
+ms.sourcegitcommit: 606d5237cb67cb4439704f81b180c3c48cc1556f
+ms.openlocfilehash: 14634c12435cd8d6d4471a65c0f8deb36e3b1c80
+
 ---
 
 # 変換済みの UWP アプリを展開してデバッグする (Project Centennial)
@@ -176,6 +179,8 @@ Microsoft Visual Studio を "管理者として" として実行していると�
 
 作成した証明書をインポートしていないコンピューターで Add-AppxPackage コマンドレットを実行しようとすると、エラーが発生します。
 
+アプリを展開する前に、証明書でアプリに署名する必要があります。 証明書の作成方法の詳細については、「[.Appx パッケージに署名する](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter#deploy-your-converted-appx)」をご覧ください。 
+
 ここでは、以前に作成した証明書をインポートする方法を説明します。 証明書は、直接インストールするか、顧客と同じように、署名済みの appx からインストールすることができます。
 1.  ファイル エクスプローラーで、テスト証明書で署名した appx を右クリックして、コンテンツメニューから [**プロパティ**] を選択します。
 2.  [**デジタル署名**] タブをクリックまたはタップします。
@@ -188,8 +193,6 @@ Microsoft Visual Studio を "管理者として" として実行していると�
 9.  **[参照]** をクリックまたはタップします。 [証明書ストアの選択] ウィンドウで下へスクロールし、**[信頼されたユーザー]** を選択してから、**[OK]** をクリックまたはタップします。
 10. **[次へ]** をクリックまたはタップします。 新しい画面が表示されます。 **[完了]** をクリックまたはタップします。
 11. 確認のダイアログ ボックスが表示されます。 確認のダイアログ ボックスが表示されたら、**[OK]** をクリックします。 別のダイアログが表示され、証明書に問題があることが示された場合は、証明書のトラブルシューティングを行う必要があります。
-
-### 追加情報
 
 Windows で証明書を信用するには、証明書を **[証明書 (ローカル コンピューター)] > [信頼されたルート証明機関] > [証明書]** ノードまたは **[証明書 (ローカル コンピューター)] > [信頼されたユーザー] > [証明書]** ノードのどちらかに配置します。 これら 2 つの場所にある証明書だけが、ローカル コンピューターのコンテキストで証明書の信頼性を検証できます。 それ以外の場合、次の文字列のようなエラー メッセージが表示されます。
 ```CMD
@@ -207,7 +210,16 @@ in the app package must be trusted."
 
 VFS という名前のフォルダーの下に、アプリが依存している DLL を含むフォルダーがあります。 これらの DLL は、従来のデスクトップ版のアプリでは、システム フォルダーにインストールされます。 でも、UWP アプリでは、DLL はアプリのローカルなファイルです。 これにより、UWP アプリをインストールしたりアンインストールしたりしても、バージョンの問題は起きません。
 
+## 参照
+[デスクトップ アプリケーションをユニバーサル Windows プラットフォーム (UWP) アプリに変換する](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-root)
 
-<!--HONumber=May16_HO2-->
+[Desktop App Converter プレビュー (Project Centennial)](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter)
+
+[手動で Windows デスクトップ アプリケーションをユニバーサル Windows プラットフォーム (UWP) アプリに変換する](https://msdn.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-manual-conversion)
+
+[デスクトップ アプリから UWP へのブリッジのコード サンプル (GitHub)](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)
+
+
+<!--HONumber=Jun16_HO4-->
 
 

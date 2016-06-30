@@ -1,8 +1,11 @@
 ---
-author: martinekuan
-title: ユニバーサル Windows プラットフォーム (UWP) アプリのガイド
-description: このガイドでは、さまざまなデバイスで実行できるユニバーサル Windows プラットフォーム (UWP) アプリについて説明します。
+author: TylerMSFT
+title: "ユニバーサル Windows プラットフォーム (UWP) アプリのガイド"
+description: "このガイドでは、さまざまなデバイスで実行できるユニバーサル Windows プラットフォーム (UWP) アプリについて説明します。"
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
+ms.sourcegitcommit: 213384a194513a0f98a5f37e7f0e0849bf0a66e2
+ms.openlocfilehash: 191a7aef1a027747379c991e17afc1580a9ec549
+
 ---
 
 # ユニバーサル Windows プラットフォーム (UWP) アプリのガイド
@@ -217,7 +220,7 @@ API を呼び出そうとしてもドキュメントの一覧にターゲット 
 
 **ApiInformation クラスを使ったアダプティブ コードの記述**
 
-アダプティブ コードを記述するには 2 つの手順があります。 最初の手順は、プロジェクトで使用可能な、アクセスする API を作成します。 そのためには、条件付きで呼び出す API を所有しているデバイス ファミリを表す拡張 SDK への参照を追加します。 「[拡張 SDK](../porting/w8x-to-uwp-porting-to-a-uwp-project.md#extension-sdks)」をご覧ください。
+アダプティブ コードを記述するには 2 つの手順があります。 最初の手順は、プロジェクトで使用可能な、アクセスする API を作成します。 そのためには、条件付きで呼び出す API を所有しているデバイス ファミリを表す拡張 SDK への参照を追加します。 [拡張 SDK](../porting/w8x-to-uwp-porting-to-a-uwp-project.md#extension-sdks) をご覧ください。
 
 2 番目の手順は、呼び出す API の存在をテストするためにコードの条件で [**Windows.Foundation.Metadata.ApiInformation**](https://msdn.microsoft.com/library/windows/apps/dn949001) クラスを使います。 このテストの条件は、アプリの実行時に必ず評価されますが、API が存在するデバイスに対してのみ true と評価され、呼び出しが可能になります。
 
@@ -255,14 +258,14 @@ API を呼び出そうとしてもドキュメントの一覧にターゲット 
 
 C++/CX で記述された UWP アプリまたは Windows ランタイム コンポーネントは UWP の一部である Win32 API にアクセスします。 これらの Win32 API は、すべての Windows 10 デバイス ファミリによって実装されます。 アプリを Windowsapp.lib とリンクします。 Windowsapp.lib は UWP API へのエクスポートを提供する "包括的な" lib です。 Windowsapp.lib へリンクすると、すべての Windows 10 デバイス ファミリに存在する DLL にアプリの依存関係を追加することになります。
 
-UWP アプリで利用できる Win32 API の完全な一覧については、「[UWP アプリの API セット](https://msdn.microsoft.com/library/windows/desktop/mt186421)」と「[UWP アプリの DLL](https://msdn.microsoft.com/library/windows/desktop/mt186422)」をご覧ください。
+UWP アプリに利用可能な Win32 API の完全な一覧については、「[UWP アプリの API セット](https://msdn.microsoft.com/library/windows/desktop/mt186421)」と「[UWP アプリの DLL](https://msdn.microsoft.com/library/windows/desktop/mt186422)」をご覧ください。
 
 ## ユーザー エクスペリエンス
 
 
-ユニバーサル Windows アプリによって、実行されているデバイスの固有の機能を利用することができます。 アプリでは、デスクトップ デバイスのすべての機能、タブレットの直接的で自然な操作 (タッチ/ペン入力を含む)、モバイル デバイスの移植性と便利さ、[Surface Hub](http://go.microsoft.com/fwlink/?LinkId=526365) の協調機能を使うことができます。
+ユニバーサル Windows アプリによって、実行されているデバイスの固有の機能を利用することができます。 アプリでは、デスクトップ デバイスのすべての機能、タブレットの直接的な自然な操作 (タッチ/ペン入力を含む)、モバイル デバイスの移植性と便利さ、[Surface Hub](http://go.microsoft.com/fwlink/?LinkId=526365) の協調機能を使うことができます。
 
-適切な[設計](http://go.microsoft.com/fwlink/?LinkId=258848)とは、ユーザーによるアプリの操作方法と、アプリの外観や機能を決定するプロセスです。 ユーザー エクスペリエンスは、ユーザーがアプリでどの程度満足するかを判断する場合に大きな役割を果たします。そのため、この手順は必ず守ってください。 [設計の基本に関するページ](https://dev.windows.com/en-us/design)では、ユニバーサル Windows アプリの設計を紹介します。 ユーザーを楽しませる UWP アプリの設計の情報については、「[デザイナー向けユニバーサル Windows プラットフォーム (UWP) アプリの紹介](https://msdn.microsoft.com/library/windows/apps/dn958439)」をご覧ください。 コーディングを開始する前に、ターゲットにするすべての異なるフォーム ファクターについてのアプリの使用についての操作エクスペリエンスを検討するために役立つ「[デバイスの基本情報](../input-and-devices/device-primer.md)」をご覧ください。
+適切な「[UWP アプリの設計](http://go.microsoft.com/fwlink/?LinkId=258848)」は、ユーザーがアプリを操作する方法とアプリの外観と機能を決定するプロセスです。 ユーザー エクスペリエンスは、ユーザーがアプリでどの程度満足するかを判断する場合に大きな役割を果たします。そのため、この手順は必ず守ってください。 [設計の基本に関するページ](https://dev.windows.com/en-us/design)では、ユニバーサル Windows アプリの設計を紹介します。 ユーザーを楽しませる UWP アプリの設計の情報については、「[デザイナー向けユニバーサル Windows プラットフォーム (UWP) アプリの紹介](https://msdn.microsoft.com/library/windows/apps/dn958439)」をご覧ください。 コーディングを開始する前に、ターゲットにするすべての異なるフォーム ファクターについてのアプリの使用についての操作エクスペリエンスを検討するために役立つ「[デバイスの基本情報](../input-and-devices/device-primer.md)」をご覧ください。
 
 ![Windows デバイス](images/1894834-hig-device-primer-01-500.png)
 
@@ -292,6 +295,7 @@ Windows ストアにアプリ公開の申請をする方法については、「
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

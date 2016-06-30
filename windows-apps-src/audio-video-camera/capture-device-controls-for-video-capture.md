@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: 708170E1-777A-4E4A-9F77-5AB28B88B107
-description: この記事では、ビデオ キャプチャの拡張シナリオ (HDR ビデオ、露出の優先順位など) がビデオ デバイス コントロールによってどのように有効になるかを示します。
-title: ビデオ キャプチャのためのキャプチャ デバイス コントロール
+description: "この記事では、ビデオ キャプチャの拡張シナリオ (HDR ビデオ、露出の優先順位など) がビデオ デバイス コントロールによってどのように有効になるかを示します。"
+title: "ビデオ キャプチャのためのキャプチャ デバイス コントロール"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 65883f1be1a014b6c7e211e2e060ae97fbd9eb0d
+
 ---
 
 # ビデオ キャプチャのためのキャプチャ デバイス コントロール
@@ -55,6 +59,7 @@ HDR ビデオ処理を有効または無効にするには、[**HdrVideoControl.
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

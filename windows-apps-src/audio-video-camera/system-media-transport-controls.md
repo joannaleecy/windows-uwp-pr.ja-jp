@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: EFCF84D0-2F4C-454D-97DA-249E9EAA806C
-description: SystemMediaTransportControls クラスを使うと、Windows に組み込まれているシステム メディア トランスポート コントロールをアプリで使って、現在アプリで再生中のメディアに関してコントロールに表示されるメタデータを更新できるようになります。
-title: システム メディア トランスポート コントロール
+description: "SystemMediaTransportControls クラスを使うと、Windows に組み込まれているシステム メディア トランスポート コントロールをアプリで使って、現在アプリで再生中のメディアに関してコントロールに表示されるメタデータを更新できるようになります。"
+title: "システム メディア トランスポート コントロール"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 5a94ce4112f7662d3fe9bf3c8a7d3f60b1569931
+
 ---
 
 # システム メディア トランスポート コントロール
@@ -35,7 +39,8 @@ title: システム メディア トランスポート コントロール
 
 [!code-cs[名前空間](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetNamespace)]
 
-ユーザーがファイルを選ぶことができるように、[**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) を使ったボタン クリック ハンドラーを追加します。次に、ファイルを **MediaElement** のアクティブ ファイルにするために、[**SetSource**](https://msdn.microsoft.com/library/windows/apps/br244338) を呼び出します。
+[
+            **FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) を使ってユーザーがファイルを選択するためのボタン クリック ハンドラーを追加します。次に、それを **MediaElement** のアクティブ ファイルにするために、[**SetSource**](https://msdn.microsoft.com/library/windows/apps/br244338) を呼び出します。
 
 [!code-cs[OpenMediaFile](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetOpenMediaFile)]
 
@@ -135,6 +140,7 @@ title: システム メディア トランスポート コントロール
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

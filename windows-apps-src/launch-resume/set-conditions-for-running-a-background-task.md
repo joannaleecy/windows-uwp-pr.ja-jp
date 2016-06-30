@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: バックグラウンド タスクを実行するための条件の設定
-description: バックグラウンド タスクをいつ実行するかを制御する条件の設定方法について説明します。
+author: TylerMSFT
+title: "バックグラウンド タスクを実行するための条件の設定"
+description: "バックグラウンド タスクをいつ実行するかを制御する条件の設定方法について説明します。"
 ms.assetid: 10ABAC9F-AA8C-41AC-A29D-871CD9AD9471
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: 0f95bdcb197f472b743f81c0d941196d5e53f60a
+
 ---
 
 # バックグラウンド タスクを実行するための条件の設定
@@ -184,6 +187,7 @@ ms.assetid: 10ABAC9F-AA8C-41AC-A29D-871CD9AD9471
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

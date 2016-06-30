@@ -1,8 +1,11 @@
 ---
-author: PatrickFarley
-title: 地図へのルートとルート案内の表示
-description: ルートとルート案内を要求し、アプリで表示します。
+author: msatranjr
+title: "地図へのルートとルート案内の表示"
+description: "ルートとルート案内を要求し、アプリで表示します。"
 ms.assetid: BBB4C23A-8F10-41D1-81EA-271BE01AED81
+ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
+ms.openlocfilehash: 2132b0c76a78dac5250ea85f08abd0b1edbd6ed7
+
 ---
 
 # 地図へのルートとルート案内の表示
@@ -195,6 +198,7 @@ private async void ShowRouteOnMap()
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

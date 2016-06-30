@@ -1,7 +1,11 @@
 ---
-title: Web アカウント マネージャーによる ID プロバイダーへの接続
-description: この記事では、新しい Windows 10 Web アカウント マネージャー API を使って、AccountsSettingsPane を使い、ユニバーサル Windows プラットフォーム (UWP) アプリを外部の ID プロバイダー (Microsoft、Facebook など) に接続する方法について説明します。 
+title: "Web アカウント マネージャーによる ID プロバイダーへの接続"
+description: "この記事では、新しい Windows 10 Web アカウント マネージャー API を使って、AccountsSettingsPane を使い、ユニバーサル Windows プラットフォーム (UWP) アプリを外部の ID プロバイダー (Microsoft、Facebook など) に接続する方法について説明します。"
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: c9f6a0183edc3c01566311360417c256329ef904
+ms.openlocfilehash: 6ab12d6da9c4858cf6ab16d4143cf073bb0cb275
+
 ---
 # Web アカウント マネージャーによる ID プロバイダーへの接続
 
@@ -383,6 +387,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 [WebAccountManagement サンプル](http://go.microsoft.com/fwlink/p/?LinkId=620621)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

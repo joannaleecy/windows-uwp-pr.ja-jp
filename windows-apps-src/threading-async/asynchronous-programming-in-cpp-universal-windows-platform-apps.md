@@ -3,8 +3,8 @@ author: TylerMSFT
 ms.assetid: 34C00F9F-2196-46A3-A32F-0067AB48291B
 description: "ここでは、ppltasks.h の concurrency 名前空間で定義された task クラスを使って Visual C++ コンポーネント拡張機能 (C++/CX) の非同期メソッドを実装する際に推奨される方法について説明します。"
 title: "C++ での非同期プログラミング"
-ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
-ms.openlocfilehash: 560b51d5bb67f5f2611311cb78f59d189d4ea440
+ms.sourcegitcommit: c440d0dc2719a982a6b566c788d76111c40e263e
+ms.openlocfilehash: c33c05c6ec7f36b8ba7db840613fbfb7eb394c3f
 
 ---
 
@@ -18,7 +18,7 @@ ms.openlocfilehash: 560b51d5bb67f5f2611311cb78f59d189d4ea440
 
 ユニバーサル Windows プラットフォーム (UWP) には、非同期メソッドを呼び出すためのモデルが明確に定義されており、非同期メソッドを使う必要がある型があります。 UWP の非同期モデルについて詳しくない場合は、この記事の前に「[非同期プログラミング][AsyncProgramming]」をご覧ください。
 
-非同期 UWP API は C++ で直接使うこともできますが、[**task クラス**][task-class]とそれに関連する型と関数を使うことをお勧めします。これは [**concurrency**][concurrencyNamespace] 名前空間のクラスで、 で定義されています。 **concurrency::task** は汎用型のクラスですが、**/ZW** コンパイラ スイッチ (ユニバーサル Windows プラットフォーム (UWP) アプリとそのコンポーネントには必須) を使うと、task クラスで UWP の非同期型をカプセル化して次の処理を簡単に行うことができます。
+非同期 UWP API は C++ で直接使うこともできますが、[**task クラス**][task-class]とそれに関連する型と関数を使うことをお勧めします。これは [**concurrency**][concurrencyNamespace] 名前空間のクラスで、 で定義されています`<ppltasks.h>`。 **concurrency::task** は汎用型のクラスですが、**/ZW** コンパイラ スイッチ (ユニバーサル Windows プラットフォーム (UWP) アプリとそのコンポーネントには必須) を使うと、task クラスで UWP の非同期型をカプセル化して次の処理を簡単に行うことができます。
 
 -   複数の非同期操作や同期操作を 1 つのチェーンで連結する
 
@@ -59,7 +59,7 @@ void App::TestAsync()
 
     // Call the task's .then member function, and provide
     // the lambda to be invoked when the async operation completes.
-    deviceEnumTask.then( [this] (DeviceInformationCollection^ devices ) 
+    deviceEnumTask.then( [this] (DeviceInformationCollection^ devices )
     {       
         for(int i = 0; i < devices->Size; i++)
         {
@@ -106,7 +106,7 @@ void App::DeleteWithTasks(String^ fileName)
 
 この例で重要なポイントは次の 4 つです。
 
--   1 つ目の継続は、[**IAsyncAction^**]IAsyncAction[ オブジェクトを ]task**<void> に変換し、**task を返します。
+-   1 つ目の継続は、[**IAsyncAction^**][IAsyncAction] オブジェクトを **task<void>** に変換し、**task** を返します。
 
 -   2 つ目の継続は、エラー処理を実行しないため、**task<void>** ではなく **void** を入力として受け取ります。 これは値ベースの継続です。
 
@@ -145,7 +145,7 @@ cancellation_token_source m_fileTaskTokenSource;
 m_fileTaskTokenSource.cancel();
 
 // task chain
-auto getFileTask2 = create_task(documentsFolder->GetFileAsync(fileName), 
+auto getFileTask2 = create_task(documentsFolder->GetFileAsync(fileName),
                                 m_fileTaskTokenSource.get_token());
 //getFileTask2.then ...
 ```
@@ -158,7 +158,7 @@ auto getFileTask2 = create_task(documentsFolder->GetFileAsync(fileName),
 
 ## タスク チェーンでのエラーの処理
 
-先行タスクの取り消しや例外のスローが行われても継続を実行する場合は、継続のラムダ関数への入力を **task<TResult>** または **task<void>** (先行タスクのラムダが [**IAsyncAction^**]IAsyncAction を返す場合) として指定して、継続をタスクベースにします。
+先行タスクの取り消しや例外のスローが行われても継続を実行する場合は、継続のラムダ関数への入力を **task<TResult>** または **task<void>** (先行タスクのラムダが [**IAsyncAction^**][IAsyncAction] を返す場合) として指定して、継続をタスクベースにします。
 
 タスク チェーンでエラーや取り消しを処理するために、すべての継続をタスクベースにしたり、スローする可能性があるすべての操作を `try…catch` ブロック内に含めたりする必要はありません。 代わりに、タスクベースの継続をチェーンの最後に追加し、その継続ですべてのエラーを処理します。 例外 ([**task\_canceled**][taskCanceled] 例外も含む) はタスク チェーンを通じて伝達され、値ベースの継続はバイパスされるため、エラー処理を行うタスクベースの継続で例外を処理できます。 エラー処理を行うタスクベースの後続タスクを使うように前の例を書き換えると次のようになります。
 
@@ -177,7 +177,7 @@ void App::DeleteWithTasksHandleErrors(String^ fileName)
         return storageFileSample->DeleteAsync();
     })
 
-    .then([](task<void> t) 
+    .then([](task<void> t)
     {
 
         try
@@ -216,7 +216,7 @@ void App::SetFeedText()
     SyndicationClient^ client = ref new SyndicationClient();
     auto feedOp = client->RetrieveFeedAsync(ref new Uri(url));
 
-    create_task(feedOp).then([this]  (SyndicationFeed^ feed) 
+    create_task(feedOp).then([this]  (SyndicationFeed^ feed)
     {
         m_TextBlock1->Text = feed->Title->Text;
     });
@@ -226,7 +226,7 @@ void App::SetFeedText()
 [
             **IAsyncAction**][IAsyncAction] または [**IAsyncOperation**][IAsyncOperation] を返さないタスクは、アパートメントを認識しません。これらのタスクの継続は、既定では、利用可能な最初のバックグラウンド スレッドで実行されます。
 
-既定のスレッド コンテキストは、どちらの種類のタスクについても、[**task\_continuation\_context**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh749968.aspx) を受け取る [**task::then**][taskThen] のオーバーロードを使って上書きできます。 たとえば、状況によっては、アパートメントを認識するタスクの継続をバックグラウンド スレッドでスケジュールする方が適している場合もあります。 このような場合は、[**task\_continuation\_context::use\_arbitrary**]useArbitrary を渡して、マルチスレッド アパートメント内の次に利用可能なスレッドでタスクの処理をスケジュールできます。 これにより、継続の作業を UI スレッドで発生する他の作業と同期する必要がないため、継続のパフォーマンスが向上します。
+既定のスレッド コンテキストは、どちらの種類のタスクについても、[**task\_continuation\_context**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh749968.aspx) を受け取る [**task::then**][taskThen] のオーバーロードを使って上書きできます。 たとえば、状況によっては、アパートメントを認識するタスクの継続をバックグラウンド スレッドでスケジュールする方が適している場合もあります。 このような場合は、[**task\_continuation\_context::use\_arbitrary**][useArbitrary] を渡して、マルチスレッド アパートメント内の次に利用可能なスレッドでタスクの処理をスケジュールできます。 これにより、継続の作業を UI スレッドで発生する他の作業と同期する必要がないため、継続のパフォーマンスが向上します。
 
 次の例は、[**task\_continuation\_context::use\_arbitrary**][useArbitrary] オプションを指定すると役立つ状況の例を示しています。また、スレッド セーフでないコレクションの同時操作の同期に既定の継続のコンテキストがどのように役立つかも示しています。 このコードでは、RSS フィードの URL の一覧をループ処理し、各 URL について、非同期操作を開始してフィード データを取得しています。 フィードを取得する順序は制御できませんが、ここでは問題ありません。 [
             **RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR210642) 操作が完了するたびに、1 つ目の継続が [**SyndicationFeed^**](https://msdn.microsoft.com/library/windows/apps/BR243485) オブジェクトを受け取り、それを使ってアプリで定義されている `FeedData^` オブジェクトを初期化します。 これらの操作はそれぞれ独立した操作であるため、継続のコンテキストとして **task\_continuation\_context::use\_arbitrary** を指定すると処理が速くなる可能性があります。 ただし、それぞれの `FeedData` オブジェクトを初期化した後に、そのオブジェクトを [**Vector**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh441570.aspx) に追加する必要があり、スレッド セーフなコレクションではありません。 そのため、ここでは、継続を作成して [**task\_continuation\_context::use\_current**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750085.aspx) を指定することで、[**Append**](https://msdn.microsoft.com/library/windows/apps/BR206632) の呼び出しがすべて同じアプリケーション シングルスレッド アパートメント (ASTA) コンテキストで実行されるようにしています。 [
@@ -241,7 +241,7 @@ void App::InitDataSource(Vector<Object^>^ feedList, vector<wstring> urls)
 
     std::for_each(std::begin(urls), std::end(urls), [=,this] (std::wstring url)
     {
-        // Create the async operation. feedOp is an 
+        // Create the async operation. feedOp is an
         // IAsyncOperationWithProgress<SyndicationFeed^, RetrievalProgress>^
         // but we don't handle progress in this example.
 
@@ -263,7 +263,7 @@ void App::InitDataSource(Vector<Object^>^ feedList, vector<wstring> urls)
         // Append the initialized FeedData object to the list
         // that is the data source for the items collection.
         // This all has to happen on the same thread.
-        // By using the use_default context, we can append 
+        // By using the use_default context, we can append
         // safely to the Vector without taking an explicit lock.
         .then([feedList] (FeedData^ fd)
         {
@@ -296,7 +296,7 @@ void App::InitDataSource(Vector<Object^>^ feedList, vector<wstring> urls)
 ## 進行状況の更新の処理
 
 [
-            **IAsyncOperationWithProgress**](https://msdn.microsoft.com/library/windows/apps/BR206594) または [**IAsyncActionWithProgress**](https://msdn.microsoft.com/library/windows/apps/BR206580withprogress_1) をサポートするメソッドは、実行中の操作が完了するまでの間、定期的に進行状況の更新を提供します。 この進行状況の報告は、タスクや継続とは別に独立して処理されます。 オブジェクトの [**Progress**](https://msdn.microsoft.com/library/windows/apps/br206594) プロパティのデリゲートを指定するだけでかまいません。 このデリゲートの一般的な用途は、UI の進行状況バーを更新することです。
+            **IAsyncOperationWithProgress**](https://msdn.microsoft.com/library/windows/apps/br206594.aspx) または [**IAsyncActionWithProgress**](https://msdn.microsoft.com/en-us/library/windows/apps/br206581.aspx) をサポートするメソッドは、実行中の操作が完了するまでの間、定期的に進行状況の更新を提供します。 この進行状況の報告は、タスクや継続とは別に独立して処理されます。 オブジェクトの [**Progress**](https://msdn.microsoft.com/library/windows/apps/br206594) プロパティのデリゲートを指定するだけでかまいません。 このデリゲートの一般的な用途は、UI の進行状況バーを更新することです。
 
 ## 関連トピック
 
@@ -321,7 +321,7 @@ void App::InitDataSource(Vector<Object^>^ feedList, vector<wstring> urls)
              "CreateAsync"
 [deleteAsync]: <https://msdn.microsoft.com/library/windows/apps/BR227199>
              "DeleteAsync"
-[IAsyncAction]: <https://msdn.microsoft.com/library/windows/apps/BR206580>
+[IAsyncAction]: <https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.aspx>
              "IAsyncAction"
 [IAsyncOperation]: <https://msdn.microsoft.com/library/windows/apps/BR206598>
              "IAsyncOperation"
@@ -344,6 +344,6 @@ void App::InitDataSource(Vector<Object^>^ feedList, vector<wstring> urls)
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

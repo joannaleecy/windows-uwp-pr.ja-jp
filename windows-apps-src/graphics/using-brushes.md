@@ -3,8 +3,8 @@ author: Jwmsft
 ms.assetid: 02141F86-355E-4046-86EA-2A89D615B7DB
 title: "ブラシの使用"
 description: "Brush オブジェクトは、コントロールの領域、テキスト、図形の内側または輪郭を塗りつぶすことで、その対象領域を UI 上で視覚的に確認できるようにする目的で使います。"
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: a4063ee2372d69289fca74c81a4c7645909c7f37
+ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
+ms.openlocfilehash: 4846630eb72c5fc81e01cc46f5ad362b0851292e
 
 ---
 # ブラシの使用
@@ -46,7 +46,7 @@ ms.openlocfilehash: a4063ee2372d69289fca74c81a4c7645909c7f37
 
 ![レンダリングされた SolidColorBrush。](images/brushes-solidcolorbrush.jpg)
 
-XAML ではなくコードを使って [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) を定義する場合、名前付きの色はそれぞれ、[**Colors**](https://msdn.microsoft.com/library/windows/apps/Hh673723s) クラスの静的プロパティの値として利用できます。 たとえば、名前付きの色 "Orchid" を表す、**SolidColorBrush** の [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.solidcolorbrush.color.aspx) 値を宣言するには、**Color** 値を静的な [**Colors.Orchid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.orchid.aspx) 値に設定します。
+XAML ではなくコードを使って [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) を定義する場合、名前付きの色はそれぞれ、[**Colors**](https://msdn.microsoft.com/library/windows/apps/windows.ui.colors) クラスの静的プロパティの値として利用できます。 たとえば、名前付きの色 "Orchid" を表す、**SolidColorBrush** の [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.solidcolorbrush.color.aspx) 値を宣言するには、**Color** 値を静的な [**Colors.Orchid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.orchid.aspx) 値に設定します。
 
 ### 16 進数の色値
 
@@ -164,7 +164,7 @@ XAML ではなくコードを使って [**SolidColorBrush**](https://msdn.micros
 
 コードを使ってブラシを定義するよりも、XAML を使ってブラシを指定する方が一般的です。 これは、ブラシが通常は XAML リソースとして定義されるためであり、ブラシの値がデザイン ツールの出力結果である場合や、XAML UI 定義の一部としての出力結果である場合が多いためです。 ただし、コードを使ってブラシを定義する必要がある場合は、すべての種類の [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) をコードのインスタンス化に使うことができます。
 
-コードを使って [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) を作成するには、[**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) パラメーターを受け取るコンストラクターを使います。 次のように、[**Colors**](https://msdn.microsoft.com/library/windows/apps/Hh673723s) クラスの静的プロパティである値を渡します。
+コードを使って [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) を作成するには、[**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) パラメーターを受け取るコンストラクターを使います。 次のように、[**Colors**](https://msdn.microsoft.com/library/windows/apps/windows.ui.colors) クラスの静的プロパティである値を渡します。
 
 ```cs
 SolidColorBrush blueBrush = new SolidColorBrush(Windows.UI.Colors.Blue);
@@ -198,6 +198,6 @@ blueBrush = ref new SolidColorBrush(Windows::UI::Colors::Blue);
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

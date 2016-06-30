@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Marble Maze サンプルへの入力と対話機能の追加
-description: ユニバーサル Windows プラットフォーム (UWP) アプリ ゲームは、デスクトップ コンピューター、ノート PC、タブレットなど、さまざまなデバイスで実行されます。
+title: "Marble Maze サンプルへの入力と対話機能の追加"
+description: "ユニバーサル Windows プラットフォーム (UWP) アプリ ゲームは、デスクトップ コンピューター、ノート PC、タブレットなど、さまざまなデバイスで実行されます。"
 ms.assetid: b946bf62-c0ca-f9ec-1a87-8195b89a5ab4
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 563ee292ec7189b0c365ae5ee0d1c41fd6fd1a09
+
 ---
 
 # Marble Maze サンプルへの入力と対話機能の追加
@@ -522,6 +526,7 @@ if (marblePosition.z >= resetDepth)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

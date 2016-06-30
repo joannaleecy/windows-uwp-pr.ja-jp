@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: アプリの広告キャンペーンを管理するには、Windows デベロッパー センター ダッシュボードでアプリのページから、[収益化]、[アプリの宣伝] の順にクリックします。
-title: 広告キャンペーンの管理
+Description: "アプリの広告キャンペーンを管理するには、Windows デベロッパー センター ダッシュボードでアプリのページから、[収益化]、[アプリの宣伝] の順にクリックします。"
+title: "広告キャンペーンの管理"
 ms.assetid: 42A9457E-15BD-4A61-B828-1C51D0FC9DA0
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 8e6305f3e6904833245013ef7eb63809c97ec423
+
 ---
 
 # 広告キャンペーンの管理
@@ -46,6 +50,7 @@ ms.assetid: 42A9457E-15BD-4A61-B828-1C51D0FC9DA0
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

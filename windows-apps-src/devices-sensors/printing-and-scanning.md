@@ -1,8 +1,12 @@
 ---
 author: DBirtolo
 ms.assetid: 95481C7E-E905-4477-955B-90D292634E2E
-title: 印刷とスキャン
-description: このセクションでは、ユニバーサル Windows アプリから印刷およびスキャンする方法について説明します。
+title: "印刷とスキャン"
+description: "このセクションでは、ユニバーサル Windows アプリから印刷およびスキャンする方法について説明します。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 81a96c4c519a112551cab83425caf782b13ea9be
+
 ---
 # 印刷とスキャン
 
@@ -26,6 +30,7 @@ description: このセクションでは、ユニバーサル Windows アプリ�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

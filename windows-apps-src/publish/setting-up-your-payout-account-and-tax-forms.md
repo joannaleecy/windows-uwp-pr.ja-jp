@@ -1,8 +1,11 @@
 ---
 author: jnHs
-Description: Windows ストアでのアプリ販売に対して支払いを受けるには、事前に受取りアカウントを設定して税関連の書類に入力する必要があります。
-title: 受取りアカウントの設定と税関連の書類
+Description: "Windows ストアでのアプリ販売に対して支払いを受けるには、事前に受取りアカウントを設定して税関連の書類に入力する必要があります。"
+title: "受取りアカウントの設定と税関連の書類"
 ms.assetid: 690A2EBC-11B1-4547-B422-54F15A6C26A7
+ms.sourcegitcommit: f17132514a42c50d6bfe716f6be706748c287043
+ms.openlocfilehash: 45cb4e8b65f1aeb75c049a88c143a23350d47b64
+
 ---
 
 # 受取りアカウントの設定と税関連の書類
@@ -14,8 +17,7 @@ Windows ストアでのアプリ販売に対して支払いを受けるには、
 
 無料アプリのみを公開する (かつアプリ内購入の提供や Microsoft Advertising を使用しない) 場合は、受取りアカウントを設定する必要も、税関連の書類を入力する必要もありません。 後で気が変わり、アプリを販売する (またはアプリ内製品を提供する) ことにした場合は、その時点で受取りアカウントを設定し、税関連の書類を入力できます。 受取りアカウントと税プロファイルの設定が完了するまで、いずれの有料アプリも IAP も申請することはできません。
 
-> **注**
-            [特定の市場](account-types-locations-and-fees.md#developer-account-and-app-submission-markets)では、無料アプリしか公開できません。 アカウントがそうした市場のいずれかで登録されている場合は、受取りアカウントを設定できません。
+> **注**  [特定の市場](account-types-locations-and-fees.md#developer-account-and-app-submission-markets)では、無料のアプリしか申請できません。 アカウントがそうした市場のいずれかで登録されている場合は、受取りアカウントを設定できません。
 
 
 [開発者アカウントを設定](opening-a-developer-account.md)した後、Windows ストアでアプリ (または IAP) の販売を開始するまでに、次の 2 つを行っておく必要があります。
@@ -156,6 +158,7 @@ Microsoft から支払いを受ける場合や、租税条約上の権利を申�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

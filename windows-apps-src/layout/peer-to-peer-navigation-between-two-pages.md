@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: 基本的な 2 ページのピア ツー ピア ユニバーサル Windows プラットフォーム (UWP) アプリでのナビゲーションの方法について説明します。
-title: 2 ページ間でのピア ツー ピアのナビゲーション
+Description: "基本的な 2 ページのピア ツー ピア ユニバーサル Windows プラットフォーム (UWP) アプリでのナビゲーションの方法について説明します。"
+title: "2 ページ間でのピア ツー ピアのナビゲーション"
 ms.assetid: 0A364C8B-715F-4407-9426-92267E8FB525
 label: Peer-to-peer navigation between two pages
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: ec1c0339017fb60ed37f45dfa6f809a5eba6fbb1
+
 ---
 
 # <span id="dev_navigation.peer-to-peer_navigation_between_two_pages"></span>2 ページ間でのピア ツー ピアのナビゲーション
@@ -452,6 +456,7 @@ public Page1()
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

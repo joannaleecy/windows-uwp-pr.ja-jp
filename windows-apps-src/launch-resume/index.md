@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: 起動、再開、バックグラウンド タスク
-description: このセクションでは、ユニバーサル Windows プラットフォーム (UWP) アプリが起動、中断、再開、および終了されたときの動作について説明します。
+author: TylerMSFT
+title: "起動、再開、バックグラウンド タスク"
+description: "このセクションでは、ユニバーサル Windows プラットフォーム (UWP) アプリが起動、中断、再開、および終了されたときの動作について説明します。"
 ms.assetid: 75011D52-1511-4ECF-9DF6-52CBBDB15BD7
+ms.sourcegitcommit: a8e6145f7a5c75d3b37277b80b07b0b3ad739d5c
+ms.openlocfilehash: ab20c4af5b9a87dc73775d304c314c9861d989d4
+
 ---
 
 # 起動、再開、バックグラウンド タスク
@@ -37,7 +40,6 @@ ms.assetid: 75011D52-1511-4ECF-9DF6-52CBBDB15BD7
 | [ファイルのアクティブ化の処理](handle-file-activation.md)                                            | アプリを登録してファイルの種類の既定のハンドラーにする方法について説明します。                                                                                                  |
 | [ファイルの種類と URI のガイドライン](https://msdn.microsoft.com/library/windows/apps/hh700321) | UWP アプリと、アプリがサポートするファイルの種類やプロトコルの間の関係を理解すると、より一貫性があり、洗練されたエクスペリエンスをユーザーに提供できます。 |
 | [予約済みのファイルと URI スキーム名](reserved-uri-scheme-names.md)                             | ここでは、アプリで利用できない予約済みのファイルと予約済みの URI スキーム名の一覧を示します。                                                                                |
-| 組み込みのアプリのアクティブ化                                                                          | 説明                                                                                                                                                                |
 | [Windows 設定アプリの起動](launch-settings-app.md)                                      | Windows 設定アプリを起動する方法について説明します。                                                                                                                              |
 | [Windows ストア アプリの起動](launch-store-app.md)                                            | Windows ストア アプリを起動する方法について説明します。                                                                                                                                 |
 | [Windows マップ アプリの起動](launch-maps-app.md)                                              | Windows マップ アプリを起動する方法について説明します。                                                                                                                                  |
@@ -102,8 +104,6 @@ ms.assetid: 75011D52-1511-4ECF-9DF6-52CBBDB15BD7
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

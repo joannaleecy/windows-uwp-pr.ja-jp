@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: 1361E82A-202F-40F7-9239-56F00DFCA54B
-description: この記事では、MediaCapture API を使用して写真とビデオをキャプチャする手順について説明します。これには、MediaCapture の初期化とシャットダウン、デバイスの向きに変化が生じた場合の処理などが含まれます。
-title: MediaCapture を使った写真とビデオのキャプチャ
+description: "この記事では、MediaCapture API を使用して写真とビデオをキャプチャする手順について説明します。これには、MediaCapture の初期化とシャットダウン、デバイスの向きに変化が生じた場合の処理などが含まれます。"
+title: "MediaCapture を使った写真とビデオのキャプチャ"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: c20c735d38e6baabe2f8bc0c7c682706d3946ed9
+
 ---
 
 # MediaCapture を使った写真とビデオのキャプチャ
@@ -14,7 +18,7 @@ title: MediaCapture を使った写真とビデオのキャプチャ
 
 **MediaCapture** は、メディア キャプチャ プロセスに対する低レベルの制御を必要とするアプリや、高度なキャプチャ機能を要するシナリオを実装するアプリのサポートを目的としています。 **MediaCapture** を使用するには、独自のキャプチャ UI を用意する必要があります。 アプリで写真またはビデオをキャプチャできれば良く、高度なキャプチャ技術を必要としない場合は、[**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030) を使用すると、わずか数行のコードで写真やビデオを簡単にキャプチャできるようになります。 詳しくは、「[CameraCaptureUI を使った写真とビデオのキャプチャ](capture-photos-and-video-with-cameracaptureui.md)」をご覧ください。
 
-この記事のコードは、[CameraStarterKit サンプル](http://go.microsoft.com/fwlink/?LinkId=619479)を基にしています。 このサンプルをダウンロードし、該当するコンテキストで使用されているコードを確認することも、サンプルを独自のアプリの開始点として使用することもできます。
+この記事のコードは、[CameraStarterKit サンプル](http://go.microsoft.com/fwlink/?LinkId=619479) を基にしています。 このサンプルをダウンロードし、該当するコンテキストで使用されているコードを確認することも、サンプルを独自のアプリの開始点として使用することもできます。
 
 ## プロジェクトを構成する
 
@@ -232,108 +236,109 @@ title: MediaCapture を使った写真とビデオのキャプチャ
 
 **Application.Suspending** イベントのハンドラーでは、ディスプレイとデバイスの向きに関するイベントのハンドラーを登録解除し、**MediaCapture** オブジェクトをシャットダウンする必要があります。 ここで登録を解除した [**SystemMediaTransportControls.PropertyChanged**](https://msdn.microsoft.com/library/windows/apps/dn278720) イベントは、他のアプリケーション有効期間関連タスクに必要になります。これについては、後で説明します。
 
-注意 中断イベント ハンドラーの先頭で [**SuspendingOperation.GetDeferral**](https://msdn.microsoft.com/library/windows/apps/br224690) を呼び出すことにより、中断の遅延を要求する必要があります。 これにより、アプリを停止する前に、操作が完了したことを伝えるユーザーからの通知を待機するようシステムに要求されます。 **MediaCapture** のシャットダウン処理は非同期であり、カメラが正しくシャットダウンされる前に **Application.Suspending** イベント ハンドラーが完了する可能性があるため、この動作が必要になります。
+**注意** 中断イベント ハンドラーの先頭で [**SuspendingOperation.GetDeferral**](https://msdn.microsoft.com/library/windows/apps/br224690) を呼び出すことにより、中断の遅延を要求する必要があります。 これにより、アプリを停止する前に、操作が完了したことを伝えるユーザーからの通知を待機するようシステムに要求されます。 **MediaCapture** のシャットダウン処理は非同期であり、カメラが正しくシャットダウンされる前に **Application.Suspending** イベント ハンドラーが完了する可能性があるため、この動作が必要になります。 非同期呼び出しの完了を待機した後、[**SuspendingDeferral.Complete**](https://msdn.microsoft.com/library/windows/apps/br224685) を呼び出すことによって遅延状態を解放する必要があります。
 
-[!code-cs[非同期呼び出しの完了を待機した後、[**SuspendingDeferral.Complete**](https://msdn.microsoft.com/library/windows/apps/br224685) を呼び出すことによって遅延状態を解放する必要があります。](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSuspending)]
+[!code-cs[Suspending](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSuspending)]
 
-Suspending
+**Application.Resuming** イベントのハンドラーでは、ディスプレイとデバイスの向きに関するイベントのハンドラーを登録し、**SystemMediaTransportControls.PropertyChanged** イベントを登録して、**MediaCapture** オブジェクトを初期化する必要があります。
 
-[!code-cs[**Application.Resuming** イベントのハンドラーでは、ディスプレイとデバイスの向きに関するイベントのハンドラーを登録し、**SystemMediaTransportControls.PropertyChanged** イベントを登録して、**MediaCapture** オブジェクトを初期化する必要があります。](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetResuming)]
+[!code-cs[Resuming](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetResuming)]
 
-Resuming
+[
+            **OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) イベントは、ディスプレイとデバイスの向きに関するイベントのハンドラーを最初に登録し、**MediaCapture** オブジェクトを初期化する機会を作ります。
 
-[!code-cs[[
-            **OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) イベントは、ディスプレイとデバイスの向きに関するイベントのハンドラーを最初に登録し、**MediaCapture** オブジェクトを初期化する機会を作ります。](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOnNavigatedTo)]
+[!code-cs[OnNavigatedTo](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOnNavigatedTo)]
 
-OnNavigatedTo
+アプリに複数のページがある場合は、[**OnNavigatingFrom**](https://msdn.microsoft.com/library/windows/apps/br227509) イベント ハンドラーでメディア キャプチャ オブジェクトをクリーンアップする必要があります。
 
-[!code-cs[アプリに複数のページがある場合は、[**OnNavigatingFrom**](https://msdn.microsoft.com/library/windows/apps/br227509) イベント ハンドラーでメディア キャプチャ オブジェクトをクリーンアップする必要があります。](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOnNavigatingFrom)]
+[!code-cs[OnNavigatingFrom](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOnNavigatingFrom)]
 
-OnNavigatingFrom 同時に複数のウィンドウをサポートするデバイスでアプリを正しく動作させるには、アプリの最小化や復元が発生したときに応答する必要があります。 これには、[**SystemMediaTransportControls.PropertyChanged**](https://msdn.microsoft.com/library/windows/apps/dn278720) イベントを処理する必要があります。
+同時に複数のウィンドウをサポートするデバイスでアプリを正しく動作させるには、アプリの最小化や復元が発生したときに応答する必要があります。 これには、[**SystemMediaTransportControls.PropertyChanged**](https://msdn.microsoft.com/library/windows/apps/dn278720) イベントを処理する必要があります。 アプリの [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) オブジェクトへの参照を格納するためのメンバー変数を初期化します。
 
-[!code-cs[アプリの [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) オブジェクトへの参照を格納するためのメンバー変数を初期化します。](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDeclareSystemMediaTransportControls)]
+[!code-cs[DeclareSystemMediaTransportControls](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDeclareSystemMediaTransportControls)]
 
-DeclareSystemMediaTransportControls **PropertyChanged** イベントの登録と登録解除を行うコードは、上の例で示されているように、アプリの有効期間イベントに追加する必要があります。 このイベントのハンドラーでは、イベントをトリガーしたプロパティの変化が [**SystemMediaTransportControlsProperty.SoundLevel**](https://msdn.microsoft.com/library/windows/apps/dn278721) プロパティで生じたものかどうかを確認します。 変更を生じたのがこのプロパティであれば、プロパティの値を確認します。 値が [**SoundLevel.Muted**](https://msdn.microsoft.com/library/windows/apps/hh700852) であれば、アプリが最小化されているため、メディア キャプチャ リソースを正しくクリーンアップする必要があります。 それ以外の場合は、アプリ ウィンドウの復元がイベントによって通知されるので、メディア キャプチャ リソースを初期化する必要があります。
+**PropertyChanged** イベントの登録と登録解除を行うコードは、上の例で示されているように、アプリの有効期間イベントに追加する必要があります。 このイベントのハンドラーでは、イベントをトリガーしたプロパティの変化が [**SystemMediaTransportControlsProperty.SoundLevel**](https://msdn.microsoft.com/library/windows/apps/dn278721) プロパティで生じたものかどうかを確認します。 変更を生じたのがこのプロパティであれば、プロパティの値を確認します。 値が [**SoundLevel.Muted**](https://msdn.microsoft.com/library/windows/apps/hh700852) であれば、アプリが最小化されているため、メディア キャプチャ リソースを正しくクリーンアップする必要があります。 それ以外の場合は、アプリ ウィンドウの復元がイベントによって通知されるので、メディア キャプチャ リソースを初期化する必要があります。 **SoundLevel** プロパティには UI スレッドでアクセスする必要があるため、このメソッドのコードは [**Dispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) への呼び出しでラップされています。
 
-[!code-cs[**SoundLevel** プロパティには UI スレッドでアクセスする必要があるため、このメソッドのコードは [**Dispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) への呼び出しでラップされています。](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSystemMediaControlsPropertyChanged)]
+[!code-cs[SystemMediaControlsPropertyChanged](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSystemMediaControlsPropertyChanged)]
 
-## SystemMediaControlsPropertyChanged
+## メディア キャプチャに関するその他の考慮事項
 
-### メディア キャプチャに関するその他の考慮事項
+### 自動回転の基本設定
 
-自動回転の基本設定 プレビュー ストリームの回転に関する前のセクションで説明したように、一部のデバイスでは、[**DisplayInformation.AutoRotationPreferences**](https://msdn.microsoft.com/library/windows/apps/dn264259) を設定することによって、デバイスの回転に伴うページ (プレビューを表示する [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) を含む) の回転を回避できます。 この動作がサポートされているデバイスでは、このように設定すると優れたユーザー エクスペリエンスを確保できます。 この値は、アプリの起動時や、プレビュー表示の開始時に設定します。
+プレビュー ストリームの回転に関する前のセクションで説明したように、一部のデバイスでは、[**DisplayInformation.AutoRotationPreferences**](https://msdn.microsoft.com/library/windows/apps/dn264259) を設定することによって、デバイスの回転に伴うページ (プレビューを表示する [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) を含む) の回転を回避できます。 この動作がサポートされているデバイスでは、このように設定すると優れたユーザー エクスペリエンスを確保できます。 この値は、アプリの起動時や、プレビュー表示の開始時に設定します。 自動回転の基本設定がサポートされていないデバイスについては、プレビューの回転処理を実装する必要があります。
 
-[!code-cs[自動回転の基本設定がサポートされていないデバイスについては、プレビューの回転処理を実装する必要があります。](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSetAutoRotationPreferences)]
+[!code-cs[SetAutoRotationPreferences](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSetAutoRotationPreferences)]
 
-### SetAutoRotationPreferences
+### UI 要素の向きを処理する
 
-UI 要素の向きを処理する ユーザーは通常、カメラ アプリの UI 要素 (写真やビデオのキャプチャを開始するボタンなど) が、ビデオ プレビューと共に回転すると考えます。 次のメソッドは、向きに関する定義済みのヘルパー メソッドを使用して、カメラ UI のボタンを正しい向きにする方法を示しています。 このメソッドは、アプリが初めて起動する際に、[**DisplayInformation.OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) イベント ハンドラーと [**SimpleOrientationSensor.OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/br206407) イベント ハンドラーから呼び出す必要があります。
+ユーザーは通常、カメラ アプリの UI 要素 (写真やビデオのキャプチャを開始するボタンなど) が、ビデオ プレビューと共に回転すると考えます。 次のメソッドは、向きに関する定義済みのヘルパー メソッドを使用して、カメラ UI のボタンを正しい向きにする方法を示しています。 このメソッドは、アプリが初めて起動する際に、[**DisplayInformation.OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) イベント ハンドラーと [**SimpleOrientationSensor.OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/br206407) イベント ハンドラーから呼び出す必要があります。 実装内容は、アプリの UI によって異なる場合があります。
 
-[!code-cs[実装内容は、アプリの UI によって異なる場合があります。](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUpdateButtonOrientation)]
+[!code-cs[UpdateButtonOrientation](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUpdateButtonOrientation)]
 
-UpdateButtonOrientation
+アプリをシャットダウンするときや、メディア キャプチャに関係のないページに移動するときは、UI が通常どおりに回転されるように、自動回転設定を [**None**](https://msdn.microsoft.com/library/windows/apps/br226142) に設定します。
 
-[!code-cs[アプリをシャットダウンするときや、メディア キャプチャに関係のないページに移動するときは、UI が通常どおりに回転されるように、自動回転設定を [**None**](https://msdn.microsoft.com/library/windows/apps/br226142) に設定します。](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRevertAutoRotationPreferences)]
+[!code-cs[RevertAutoRotationPreferences](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRevertAutoRotationPreferences)]
 
-### RevertAutoRotationPreferences
+### 写真とビデオの同時キャプチャをサポートする
 
-写真とビデオの同時キャプチャをサポートする [
-            **Windows.Media.Capture**](https://msdn.microsoft.com/library/windows/apps/br226738) API を使用すると、写真とビデオを同時にキャプチャできます (デバイスで、この機能がサポートされている必要があります)。 簡潔にするため、この例では [**ConcurrentRecordAndPhotoSupported**](https://msdn.microsoft.com/library/windows/apps/dn278843) プロパティを使ってビデオと写真の同時キャプチャがサポートされているかどうかを調べますが、カメラ プロファイルを使ってこれを行う方が堅牢なため、推奨されます。
+[
+            **Windows.Media.Capture**](https://msdn.microsoft.com/library/windows/apps/br226738) API を使用すると、写真とビデオを同時にキャプチャできます (デバイスで、この機能がサポートされている必要があります)。 簡潔にするため、この例では [**ConcurrentRecordAndPhotoSupported**](https://msdn.microsoft.com/library/windows/apps/dn278843) プロパティを使ってビデオと写真の同時キャプチャがサポートされているかどうかを調べますが、カメラ プロファイルを使ってこれを行う方が堅牢なため、推奨されます。 詳しくは、「[カメラ プロファイル](camera-profiles.md)」をご覧ください。
 
-詳しくは、「[カメラ プロファイル](camera-profiles.md)」をご覧ください。 次に示すヘルパー メソッドは、アプリの現在のキャプチャ状態に一致するように、アプリのコントロールを更新します。
+次に示すヘルパー メソッドは、アプリの現在のキャプチャ状態に一致するように、アプリのコントロールを更新します。 このメソッドは、ビデオ キャプチャが開始または停止したときなど、アプリのキャプチャ状態が変化するたびに呼び出します。
 
-[!code-cs[このメソッドは、ビデオ キャプチャが開始または停止したときなど、アプリのキャプチャ状態が変化するたびに呼び出します。](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUpdateCaptureControls)]
+[!code-cs[UpdateCaptureControls](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUpdateCaptureControls)]
 
-### UpdateCaptureControls
+### モバイル固有の UI 機能をサポートする
 
-モバイル固有の UI 機能をサポートする この記事で示すコードはすべて、ユニバーサル Windows アプリで動作します。 わずか数行のコードを追加するだけで、モバイル デバイスだけに存在する特別な UI 機能を活用できます。
+この記事で示すコードはすべて、ユニバーサル Windows アプリで動作します。 わずか数行のコードを追加するだけで、モバイル デバイスだけに存在する特別な UI 機能を活用できます。 これらの機能を使用するには、ユニバーサル アプリ プラットフォーム用 Microsoft Mobile Extension SDK への参照をプロジェクトに追加する必要があります。
 
-**これらの機能を使用するには、ユニバーサル アプリ プラットフォーム用 Microsoft Mobile Extension SDK への参照をプロジェクトに追加する必要があります。**
+**ハードウェア カメラ ボタンのサポート用にモバイル拡張 SDK への参照を追加するには**
 
-1.  ハードウェア カメラ ボタンのサポート用にモバイル拡張 SDK への参照を追加するには
+1.  **ソリューション エクスプローラー**で、**[参照設定]** を右クリックし、**[参照の追加]** を選択します。
 
-2.  **ソリューション エクスプローラー**で、**[参照設定]** を右クリックし、**[参照の追加]** を選択します。
+2.  **[Windows ユニバーサル]** ノードを展開し、**[拡張機能]** を選択します。
 
-3.  **[Windows ユニバーサル]** ノードを展開し、**[拡張機能]** を選択します。
+3.  **[Microsoft Mobile Extension SDK for Universal App Platform]** の横にあるチェック ボックスをオンにします。
 
-**[Microsoft Mobile Extension SDK for Universal App Platform]**(ユニバーサル アプリ プラットフォーム用 Microsoft Mobile Extension SDK) の横にあるチェック ボックスをオンにします。 モバイル デバイスには、デバイスに関する状態情報をユーザーに通知する [**StatusBar**](https://msdn.microsoft.com/library/windows/apps/dn633864) コントロールがあります。 このコントロールが表示される領域は、画面上でメディア キャプチャ UI の表示に干渉する可能性があります。 [
-            **HideAsync**](https://msdn.microsoft.com/library/windows/apps/dn610339) を呼び出すことでステータス バーを非表示にできますが、呼び出しは、この API が利用可能かどうかを [**ApiInformation.IsTypePresent**](https://msdn.microsoft.com/library/windows/apps/dn949016) メソッドで確認する条件ブロック内で行う必要があります。 このメソッドは、ステータス バーをサポートするモバイル デバイスでのみ true を返します。
+モバイル デバイスには、デバイスに関する状態情報をユーザーに通知する [**StatusBar**](https://msdn.microsoft.com/library/windows/apps/dn633864) コントロールがあります。 このコントロールが表示される領域は、画面上でメディア キャプチャ UI の表示に干渉する可能性があります。 [
+            **HideAsync**](https://msdn.microsoft.com/library/windows/apps/dn610339) を呼び出すことでステータス バーを非表示にできますが、呼び出しは、この API が利用可能かどうかを [**ApiInformation.IsTypePresent**](https://msdn.microsoft.com/library/windows/apps/dn949016) メソッドで確認する条件ブロック内で行う必要があります。 このメソッドは、ステータス バーをサポートするモバイル デバイスでのみ true を返します。 アプリの起動時や、またはカメラからプレビューを開始するときには、ステータス バーを非表示にする必要があります。
 
-[!code-cs[アプリの起動時や、またはカメラからプレビューを開始するときには、ステータス バーを非表示にする必要があります。](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetHideStatusBar)]
+[!code-cs[HideStatusBar](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetHideStatusBar)]
 
-HideStatusBar
+アプリをシャットダウンするときや、ユーザーがアプリのメディア キャプチャ ページから移動するときは、コントロールを再び表示します。
 
-[!code-cs[アプリをシャットダウンするときや、ユーザーがアプリのメディア キャプチャ ページから移動するときは、コントロールを再び表示します。](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetShowStatusBar)]
+[!code-cs[ShowStatusBar](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetShowStatusBar)]
 
-ShowStatusBar 一部のモバイル デバイスには、専用のハードウェア カメラ ボタンが用意されていることがあります。この仕様は、ユーザーによっては画面上のコントロールより好まれます。 このハードウェア カメラ ボタンが押されたときに通知を受け取るには、[**HardwareButtons.CameraPressed**](https://msdn.microsoft.com/library/windows/apps/dn653805) イベントのハンドラーを登録します。
+一部のモバイル デバイスには、専用のハードウェア カメラ ボタンが用意されていることがあります。この仕様は、ユーザーによっては画面上のコントロールより好まれます。 このハードウェア カメラ ボタンが押されたときに通知を受け取るには、[**HardwareButtons.CameraPressed**](https://msdn.microsoft.com/library/windows/apps/dn653805) イベントのハンドラーを登録します。 この API を利用できるのはモバイル デバイスのみであるため、この場合も **IsTypePresent** を使用して、この API が現在のデバイスでサポートされているかどうかをアクセス前に確認する必要があります。
 
-[!code-cs[この API を利用できるのはモバイル デバイスのみであるため、この場合も **IsTypePresent** を使用して、この API が現在のデバイスでサポートされているかどうかをアクセス前に確認する必要があります。](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPhoneUsing)]
+[!code-cs[PhoneUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPhoneUsing)]
 
-[!code-cs[PhoneUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRegisterCameraButtonHandler)]
+[!code-cs[RegisterCameraButtonHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRegisterCameraButtonHandler)]
 
-RegisterCameraButtonHandler
+**CameraPressed** イベントのハンドラーで、写真のキャプチャを開始できます。
 
-[!code-cs[**CameraPressed** イベントのハンドラーで、写真のキャプチャを開始できます。](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCameraPressed)]
+[!code-cs[CameraPressed](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCameraPressed)]
 
-CameraPressed
+アプリをシャットダウンするときや、ユーザーがアプリのメディア キャプチャ ページから移動するときは、ハードウェア ボタンのハンドラーを登録解除します。
 
-[!code-cs[アプリをシャットダウンするときや、ユーザーがアプリのメディア キャプチャ ページから移動するときは、ハードウェア ボタンのハンドラーを登録解除します。](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUnregisterCameraButtonHandler)]
+[!code-cs[UnregisterCameraButtonHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUnregisterCameraButtonHandler)]
 
-UnregisterCameraButtonHandler **注:** この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。
+**注:** この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください。
 
-## Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブ ドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
+## 関連トピック
 
-* [関連トピック](camera-profiles.md)
-* [カメラ プロファイル](high-dynamic-range-hdr-photo-capture.md)
-* [ハイ ダイナミック レンジ (HDR) 写真のキャプチャ](capture-device-controls-for-photo-and-video-capture.md)
-* [写真とビデオのキャプチャのためのキャプチャ デバイス コントロール](capture-device-controls-for-video-capture.md)
-* [ビデオ キャプチャのためのキャプチャ デバイス コントロール](effects-for-video-capture.md)
-* [ビデオ キャプチャの効果](scene-analysis-for-media-capture.md)
-* [メディア キャプチャのシーン分析](variable-photo-sequence.md)
-* [可変の写真シーケンス](get-a-preview-frame.md)
-* [プレビュー フレームの取得](http://go.microsoft.com/fwlink/?LinkId=619479)
+* [カメラ プロファイル](camera-profiles.md)
+* [ハイ ダイナミック レンジ (HDR) 写真のキャプチャ](high-dynamic-range-hdr-photo-capture.md)
+* [写真とビデオのキャプチャのためのキャプチャ デバイス コントロール](capture-device-controls-for-photo-and-video-capture.md)
+* [ビデオ キャプチャのためのキャプチャ デバイス コントロール](capture-device-controls-for-video-capture.md)
+* [ビデオ キャプチャの効果](effects-for-video-capture.md)
+* [メディア キャプチャのシーン分析](scene-analysis-for-media-capture.md)
+* [可変の写真シーケンス](variable-photo-sequence.md)
+* [プレビュー フレームの取得](get-a-preview-frame.md)
+* [CameraStarterKit サンプル](http://go.microsoft.com/fwlink/?LinkId=619479)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

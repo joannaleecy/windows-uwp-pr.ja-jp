@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Windows ストアではバージョン番号に関する特定の規則が適用され、別の OS バージョンでは機能が多少異なります。
-title: パッケージ バージョンの番号付け
+Description: "Windows ストアではバージョン番号に関する特定の規則が適用され、別の OS バージョンでは機能が多少異なります。"
+title: "パッケージ バージョンの番号付け"
 ms.assetid: DD7BAE5F-C2EE-44EE-8796-055D4BCB3152
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 9910ca5b5a3fd5d24643a1dfc6da3644d561c617
+
 ---
 
 # パッケージ バージョンの番号付け
@@ -77,6 +81,7 @@ Windows 8 と Windows 8.1 を対象とする .appx パッケージでは、ア�
 > **注:** .appx パッケージとは異なり、.xap パッケージのバージョン番号は、特定の顧客にどのパッケージを提供するかを決める場合に考慮されません。 特定の .xap パッケージから新しいパッケージへと顧客を更新するには、新しい提出で以前の .xap を削除してください。
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: チュートリアル -- DirectX 11 とユニバーサル Windows プラットフォーム (UWP) への簡単な Direct3D 9 アプリの移植
-description: この移植作業では、Direct3D 9 から Direct3D 11 とユニバーサル Windows プラットフォーム (UWP) に簡単なレンダリング フレームワークを移植する方法について説明します。
+title: "チュートリアル -- DirectX 11 とユニバーサル Windows プラットフォーム (UWP) への簡単な Direct3D 9 アプリの移植"
+description: "この移植作業では、Direct3D 9 から Direct3D 11 とユニバーサル Windows プラットフォーム (UWP) に簡単なレンダリング フレームワークを移植する方法について説明します。"
 ms.assetid: d4467e1f-929b-a4b8-b233-e142a8714c96
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 27c6f82e97e9eb24dedcc5d83a18e6aba6961194
+
 ---
 
 # チュートリアル: DirectX 11 とユニバーサル Windows プラットフォーム (UWP) への簡単な Direct3D 9 アプリの移植
@@ -94,6 +98,7 @@ ms.assetid: d4467e1f-929b-a4b8-b233-e142a8714c96
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

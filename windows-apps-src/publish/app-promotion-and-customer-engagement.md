@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: アプリが Windows ストアに掲載されたら、できるだけ多くのユーザーにアプリが表示されるようにします。
-title: アプリの宣伝と顧客エンゲージメントの獲得
+Description: "アプリが Windows ストアに掲載されたら、できるだけ多くのユーザーにアプリが表示されるようにします。"
+title: "アプリの宣伝と顧客エンゲージメントの獲得"
 ms.assetid: 86DA61A2-1B84-4B2B-8697-85A75D39A686
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 3511533f76294767ca409b09a718555a6194e451
+
 ---
 
 # アプリの宣伝と顧客エンゲージメントの獲得
@@ -28,6 +32,7 @@ ms.assetid: 86DA61A2-1B84-4B2B-8697-85A75D39A686
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

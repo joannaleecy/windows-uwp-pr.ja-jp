@@ -1,11 +1,15 @@
 ---
 author: Jwmsft
-Description: パスワード ボックスは、プライバシーの目的で入力文字が非表示になるテキスト入力ボックスです。
-title: パスワード ボックスのガイドライン
+Description: "パスワード ボックスは、プライバシーの目的で入力文字が非表示になるテキスト入力ボックスです。"
+title: "パスワード ボックスのガイドライン"
 ms.assetid: 332B04D6-4FFE-42A4-8B3D-ABE8266C7C18
 dev.assetid: 4BFDECC6-9BC5-4FF5-8C63-BB36F6DDF2EF
 label: Password box
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 1a2d5efbeacd5ce8a71f5261aa52f09400c75c97
+
 ---
 # パスワード ボックス
 パスワード ボックスは、プライバシーの目的で入力文字が非表示になるテキスト入力ボックスです。 パスワード ボックスは、入力されたテキストの代わりに代替文字が表示される点を除けば、テキスト ボックスに似ています。 この代替文字は、構成できます。
@@ -188,6 +192,7 @@ private void CheckBox_Changed(object sender, RoutedEventArgs e)
 - [String.Length プロパティ](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

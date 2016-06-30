@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: DirectX の移植の計画
-description: DirectX 9 から DirectX 11 とユニバーサル Windows プラットフォーム (UWP) へのゲーム移植プロジェクトを計画してください。グラフィックス コードのアップグレードと、Windows ランタイム環境へのゲームの配置が必要です。
+title: "DirectX の移植の計画"
+description: "DirectX 9 から DirectX 11 とユニバーサル Windows プラットフォーム (UWP) へのゲーム移植プロジェクトを計画してください。グラフィックス コードのアップグレードと、Windows ランタイム環境へのゲームの配置が必要です。"
 ms.assetid: 3c0c33ca-5d15-ae12-33f8-9b5d8da08155
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 929ad82ce057754ee04f1f27537e03520e95157a
+
 ---
 
 # DirectX の移植の計画
@@ -63,6 +67,7 @@ Microsoft のテンプレートとコード サンプルでは新しい C++ 機�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

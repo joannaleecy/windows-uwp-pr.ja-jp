@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 非同期プログラミング (DirectX と C++)
-description: このトピックでは、DirectX で非同期プログラミングやスレッディングを使う際のさまざまな考慮事項について取り上げます。
+title: "非同期プログラミング (DirectX と C++)"
+description: "このトピックでは、DirectX で非同期プログラミングやスレッディングを使う際のさまざまな考慮事項について取り上げます。"
 ms.assetid: 17613cd3-1d9d-8d2f-1b8d-9f8d31faaa6b
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 67a75e9d1324e7ac50e0575bfd7bda870a87efb2
+
 ---
 
 # 非同期プログラミング (DirectX と C++)
@@ -63,6 +67,7 @@ DirectX の学習経験や使用経験にかかわらず、グラフィックス
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

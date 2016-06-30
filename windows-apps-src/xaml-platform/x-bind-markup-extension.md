@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: xBind マークアップ拡張は Binding の代わりです。 xBind では、Binding の機能のいくつかが省略されていますが、Binding よりも短い時間および少ないメモリで動作し、より適切なデバッグをサポートしています。
-title: xBind マークアップ拡張
+description: "xBind マークアップ拡張は Binding の代わりです。 xBind では、Binding の機能のいくつかが省略されていますが、Binding よりも短い時間および少ないメモリで動作し、より適切なデバッグをサポートしています。"
+title: "xBind マークアップ拡張"
 ms.assetid: 529FBEB5-E589-486F-A204-B310ACDC5C06
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: ceb5562ae08d7cc966f80fdb7e23f12afe040430
+
 ---
 
 # {x:Bind} マークアップ拡張
@@ -135,6 +139,7 @@ C++/CX の場合、**{x:Bind}** はページまたはデータ モデルのプ�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

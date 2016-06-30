@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Windows デベロッパー センター ダッシュボードを使ったアプリの作業では、Windows ストアによってアプリに割り当てられた一意の ID の詳細を表示したり、ストアでのアプリの内容へのリンクを取得したりできます。
-title: アプリ ID の詳細の表示
+Description: "Windows デベロッパー センター ダッシュボードを使ったアプリの作業では、Windows ストアによってアプリに割り当てられた一意の ID の詳細を表示したり、ストアでのアプリの内容へのリンクを取得したりできます。"
+title: "アプリ ID の詳細の表示"
 ms.assetid: 86F05A79-EFBC-4705-9A71-3A056323AC65
+translationtype: Human Translation
+ms.sourcegitcommit: a25d87556bb85718f818af5b586f54e6985aaaa4
+ms.openlocfilehash: f00d817616d473ef220ebc1817c2bf9207a7aea0
+
 ---
 
 # アプリ ID の詳細の表示
@@ -53,6 +57,7 @@ Windows デベロッパー センター ダッシュボードを使ったアプ�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

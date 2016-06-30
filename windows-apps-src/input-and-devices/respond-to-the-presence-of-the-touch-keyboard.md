@@ -5,8 +5,8 @@ title: "タッチ キーボードの表示への応答"
 ms.assetid: 70C6130E-23A2-4F9D-88E7-7060062DA988
 label: Respond to the presence of the touch keyboard
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 5f4f9553a54dc902c7c6a50d6a1b4cf6251fd72c
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: 417668a24c4a2ba28671b6fb0a4da74c0cfab341
 
 ---
 
@@ -47,7 +47,7 @@ ms.openlocfilehash: 5f4f9553a54dc902c7c6a50d6a1b4cf6251fd72c
 
 キーボード入力に最適化された便利で魅力的なアプリの設計に役立つヒントについては、「[キーボードの設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/hh972345)」をご覧ください。
 
-## <span id="Touch_keyboard_and_a_custom_UI"></span><span id="touch_keyboard_and_a_custom_ui"></span><span id="TOUCH_KEYBOARD_AND_A_CUSTOM_UI"></span>タッチ キーボードとカスタム UI
+## タッチ キーボードとカスタム UI
 
 
 ここでは、カスタム テキスト入力コントロールについてのいくつかの基本的な推奨事項を示します。
@@ -70,7 +70,7 @@ ms.openlocfilehash: 5f4f9553a54dc902c7c6a50d6a1b4cf6251fd72c
 
     ![常に表示されている必要がある領域を含むフォーム](images/touch-keyboard-pan2.png)
 
-## <span id="handling_events"></span><span id="HANDLING_EVENTS"></span>Showing イベントと Hiding イベントの処理
+## Showing イベントと Hiding イベントの処理
 
 
 タッチ キーボードの [**showing**](https://msdn.microsoft.com/library/windows/apps/br242262) イベントと [**hiding**](https://msdn.microsoft.com/library/windows/apps/br242260) イベントのイベント ハンドラーをアタッチする例を次に示します。
@@ -123,7 +123,7 @@ public class MyApplication
 }
 ```
 
-## <span id="related_topics"></span>関連記事
+## 関連記事
 
 * [キーボード操作](keyboard-interactions.md)
 * [キーボードのアクセシビリティ](https://msdn.microsoft.com/library/windows/apps/mt244347)
@@ -145,6 +145,6 @@ public class MyApplication
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

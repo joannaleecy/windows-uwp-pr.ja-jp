@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: スプラッシュ画面の追加
-description: Microsoft Visual Studio 2015 を使ってアプリのスプラッシュ画面の画像と背景色を設定します。
+author: TylerMSFT
+title: "スプラッシュ画面の追加"
+description: "Microsoft Visual Studio 2015 を使ってアプリのスプラッシュ画面の画像と背景色を設定します。"
 ms.assetid: 41F53046-8AB7-4782-9E90-964D744B7D66
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: 261b52d1835e992a784aa5fa356230fdd326b8c5
+
 ---
 
 # スプラッシュ画面の追加
@@ -73,8 +76,6 @@ Visual Studio 2015 テンプレートを使ってアプリを作成すると、
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

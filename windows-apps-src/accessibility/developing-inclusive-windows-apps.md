@@ -1,10 +1,14 @@
 ---
 author: Xansky
-Description: キーボード ナビゲーション、色とコントラストの設定、サポート支援技術を備えたアクセシビリティ対応 Windows 10 UWP アプリの開発について説明します。
+Description: "キーボード ナビゲーション、色とコントラストの設定、サポート支援技術を備えたアクセシビリティ対応 Windows 10 UWP アプリの開発について説明します。"
 ms.assetid: 9311D23A-B340-42F0-BEFE-9261442AF108
-title: 包括性を備えた Windows 10 アプリの開発
+title: "包括性を備えた Windows 10 アプリの開発"
 label: Developing inclusive Windows 10 apps
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 77c401fd9686cb260e7b2d9e4bdf47a91d76802e
+
 ---
 
 # 包括性を備えた Windows アプリの開発  
@@ -80,6 +84,7 @@ UWP アプリでは、システム カラーを上書きしない限り、既定
 * [Microsoft アクセシビリティ開発者ハブ](https://msdn.microsoft.com/enable)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

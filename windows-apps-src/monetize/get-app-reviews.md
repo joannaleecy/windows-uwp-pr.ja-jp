@@ -1,8 +1,11 @@
 ---
 author: mcleanbyron
 ms.assetid: 2967C757-9D8A-4B37-8AA4-A325F7A060C5
-description: 特定の日付範囲などのオプション フィルターを使ってレビュー データを取得するには、Windows ストア分析 API でこのメソッドを使います。
-title: アプリのレビューの取得
+description: "特定の日付範囲などのオプション フィルターを使ってレビュー データを取得するには、Windows ストア分析 API でこのメソッドを使います。"
+title: "アプリのレビューの取得"
+ms.sourcegitcommit: 02131e641cdaa76256845b38bcc50aa42d718601
+ms.openlocfilehash: bb0f912bd3380e21e04fa44f2c75244c6585f03a
+
 ---
 
 # アプリのレビューの取得
@@ -56,14 +59,14 @@ title: アプリのレビューの取得
 <th align="left">パラメーター</th>
 <th align="left">型</th>
 <th align="left">説明</th>
-<th align="left">必須かどうか</th>
+<th align="left">必須</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">applicationId</td>
 <td align="left">string</td>
-<td align="left">レビュー データを取得するアプリの製品 ID です。 製品 ID は、デベロッパー センター ダッシュボードの [[アプリ ID] ページ](https://msdn.microsoft.com/library/windows/apps/mt148561)に表示されるアプリの内容へのリンクに埋め込まれています。 製品 ID の例は 9WZDNCRFJ3Q8 です。</td>
+<td align="left">レビュー データを取得するアプリのストア ID です。 ストア ID は、デベロッパー センター ダッシュボードの[アプリ ID ページ](../publish/view-app-identity-details.md)で確認できます。 ストア ID の例は 9WZDNCRFJ3Q8 です。</td>
 <td align="left">○</td>
 </tr>
 <tr class="even">
@@ -283,7 +286,7 @@ title: アプリのレビューの取得
 
 ### 要求の例
 
-レビュー データを取得するためのいくつかの要求の例を次に示します。 *applicationId* 値を、目的のアプリの製品 ID に置き換えてください。
+レビュー データを取得するためのいくつかの要求の例を次に示します。 *applicationId* 値を、目的のアプリのストア ID に置き換えてください。
 
 ```syntax
 GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/reviews?applicationId=9NBLGGGZ5QDR&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0 HTTP/1.1
@@ -312,7 +315,7 @@ Authorization: Bearer <your access token>
 | 値                  | 型    | 説明                                                                                                                                                                                                                          |
 |------------------------|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | date                   | string  | 評価データの日付範囲の最初の日付です。 要求に日付を指定した場合、この値はその日付になります。 要求に週、月、またはその他の日付範囲を指定した場合、この値はその日付範囲の最初の日付になります。 |
-| applicationId          | string  | 評価データを取得するアプリの製品 ID です。                                                                                                                                                                 |
+| applicationId          | string  | 評価データを取得するアプリのストア ID です。                                                                                                                                                                 |
 | applicationName        | string  | アプリの表示名です。                                                                                                                                                                                                         |
 | market                 | string  | 評価が送信された市場の ISO 3166 国コードです。                                                                                                                                                              |
 | osVersion              | string  | 評価が送信された OS バージョンです。 サポートされる文字列の一覧については、前の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。                                                                                               |
@@ -383,6 +386,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

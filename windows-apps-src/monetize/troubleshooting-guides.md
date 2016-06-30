@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 05b10814-4548-4dd4-bf71-72157a50986c
-description: Microsoft Advertising ライブラリに関連する一般的な開発上の問題の解決策について説明します。
-title: トラブルシューティング ガイド
+description: "Microsoft Advertising ライブラリに関連する一般的な開発上の問題の解決策について説明します。"
+title: "トラブルシューティング ガイド"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 4a006cbd1a1f38e2410098d074a35df4a2468963
+
 
 ---
 
@@ -24,6 +28,7 @@ title: トラブルシューティング ガイド
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

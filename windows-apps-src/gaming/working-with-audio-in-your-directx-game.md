@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: ゲームのオーディオ
-description: ミュージックやサウンドを開発し、DirectX ゲームに統合する方法、およびオーディオ信号を処理してダイナミック サウンドやポジショナル サウンドを作成する方法について説明します。
+title: "ゲームのオーディオ"
+description: "ミュージックやサウンドを開発し、DirectX ゲームに統合する方法、およびオーディオ信号を処理してダイナミック サウンドやポジショナル サウンドを作成する方法について説明します。"
 ms.assetid: ab29297a-9588-c79b-24c5-3b94b85e74a8
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 98896d4966ee2adb3bf494dcba22656fc8bb6414
+
 ---
 
 # ゲームのオーディオ
@@ -315,6 +319,7 @@ XAudio2 は、DirectX 用のオーディオ ミキシング ライブラリで�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

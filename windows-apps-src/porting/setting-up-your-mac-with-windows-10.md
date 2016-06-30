@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
-description: 現在の Mac コンピューターを使用して、Windows 用アプリを開発します。
-title: Windows 10 を使用するための Mac のセットアップ
+description: "現在の Mac コンピューターを使用して、Windows 用アプリを開発します。"
+title: "Windows 10 を使用するための Mac のセットアップ"
 ms.assetid: 6D520610-5DE0-476E-A792-AA57E002D309
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 10ebdb0a534d8f2931d15481c1bee4705268b0bb
+
 ---
 
 # Windows 10 を使用するための Mac のセットアップ
@@ -39,6 +43,7 @@ VirtualBox は、お使いのコンピューター上で仮想マシンを実行
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

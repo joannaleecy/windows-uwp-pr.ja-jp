@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: アプリで Microsoft Advertising の広告仲介を使ったり、バナーやスポット広告ビデオを表示したりする場合は、[収益化]、[広告で収入を増やす] ページの順に選択して、広告の使用を管理します。
-title: 広告による収益獲得
+Description: "アプリで Microsoft Advertising の広告仲介を使ったり、バナーやスポット広告ビデオを表示したりする場合は、[収益化]、[広告で収入を増やす] ページの順に選択して、広告の使用を管理します。"
+title: "広告による収益獲得"
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 97eeeedb9e73b6c67abe6e2ff8cadbc744a6a7c4
+
 ---
 
 # 広告による収益獲得
@@ -65,6 +69,7 @@ Microsoft アフィリエイト広告をアプリに表示する場合は、こ�
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

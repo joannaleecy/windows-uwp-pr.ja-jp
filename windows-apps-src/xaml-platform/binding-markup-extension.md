@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: Binding マークアップ拡張は、XAML の読み込み時に Binding クラスのインスタンスに変換されます。
-title: Binding マークアップ拡張
+description: "Binding マークアップ拡張は、XAML の読み込み時に Binding クラスのインスタンスに変換されます。"
+title: "Binding マークアップ拡張"
 ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: 740110809845220d919c6ba3c90b1393dbc8ae94
+
 ---
 
 # {Binding} マークアップ拡張
@@ -133,6 +137,7 @@ Microsoft Visual Studio の Microsoft IntelliSense では、XAML マークアッ
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

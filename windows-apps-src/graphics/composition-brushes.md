@@ -1,8 +1,12 @@
 ---
 author: scottmill
 ms.assetid: 03dd256f-78c0-e1b1-3d9f-7b3afab29b2f
-title: コンポジションのブラシ
-description: ブラシは、その出力で Visual の領域を塗りつぶします。 さまざまなブラシで、出力の種類もさまざまです。
+title: "コンポジションのブラシ"
+description: "ブラシは、その出力で Visual の領域を塗りつぶします。 さまざまなブラシで、出力の種類もさまざまです。"
+translationtype: Human Translation
+ms.sourcegitcommit: b3d198af0c46ec7a2041a7417bccd56c05af760e
+ms.openlocfilehash: 7f466607e48bb0d553892e09c6616f0dd0539d8e
+
 ---
 # コンポジションのブラシ
 
@@ -77,14 +81,14 @@ Visual2.Offset = new Vector3(3, 3, 0);
 [
             **CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) は、コンポジション サーフェス ([**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) オブジェクトで表される) を使ってビジュアルを塗りつぶします。 次の図は、D2D を使って **ICompositionSurface** にレンダリングされたリコリスのビットマップで塗りつぶされた正方形のビジュアルを示しています。
 
-![CompositionSurfaceBrush 最初の例では、ブラシで使用するためのコンポジション サーフェスを初期化します。 コンポジション サーフェスは、[**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) と Url を文字列として受け取るヘルパー メソッド LoadImage を使って作成されます。 このヘルパー メソッドは、Url から画像を読み込み、画像を [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) にレンダリングして、そのサーフェスを **CompositionSurfaceBrush** の内容として設定します。
+![CompositionSurfaceBrush](images/composition-compositionsurfacebrush.png) 最初の例では、ブラシで使用するためのコンポジション サーフェスを初期化します。 コンポジション サーフェスは、[**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) と Url を文字列として受け取るヘルパー メソッド LoadImage を使って作成されます。 このヘルパー メソッドは、Url から画像を読み込み、画像を [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) にレンダリングして、そのサーフェスを **CompositionSurfaceBrush** の内容として設定します。 **ICompositionSurface** はネイティブ コードでのみ公開されるため、LoadImage メソッドはネイティブ コードで実装されていることに注意してください。
 
 ```cs
 LoadImage(Brush,
           "ms-appx:///Assets/liqorice.png");
 ```
 
-**ICompositionSurface** はネイティブ コードでのみ公開されるため、LoadImage メソッドはネイティブ コードで実装されていることに注意してください。 サーフェス ブラシを作成するには、Compositor.[**CreateSurfaceBrush**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositor.createsurfacebrush.aspx) メソッドを呼び出します。 このメソッドは、[**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) オブジェクトを返します。
+サーフェス ブラシを作成するには、Compositor.[**CreateSurfaceBrush**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositor.createsurfacebrush.aspx) メソッドを呼び出します。 このメソッドは、[**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) オブジェクトを返します。 次のコードは、**CompositionSurfaceBrush** の内容を使ってビジュアルを塗りつぶすために使用できるコードを示しています。
 
 ```cs
 Compositor _compositor;
@@ -97,23 +101,23 @@ LoadImage(_surfaceBrush, "ms-appx:///Assets/liqorice.png");
 visual.Brush = _surfaceBrush;
 ```
 
-## 次のコードは、**CompositionSurfaceBrush** の内容を使ってビジュアルを塗りつぶすために使用できるコードを示しています。
+## ストレッチと整列の構成
 
-ストレッチと整列の構成 [
-            **CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) 用の [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) の内容が、描画されるビジュアルの領域を満たさない場合があります。
+[
+            **CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) 用の [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) の内容が、描画されるビジュアルの領域を満たさない場合があります。 この場合、コンポジション API はブラシの [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx)、[**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio)、および [**Stretch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.stretch) モードの設定を使って、残りの領域を塗りつぶす方法を決定します。
 
--   この場合、コンポジション API はブラシの [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx)、[**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio)、および [**Stretch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.stretch) モードの設定を使って、残りの領域を塗りつぶす方法を決定します。
-    -   [
+-   [
               **HorizontalAlignmentRatio**
             ](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx) と [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) は float 型であり、ビジュアルの境界内でのブラシの配置を制御するために使用できます。
     -   値 0.0 は、ブラシの左上隅をビジュアルの左上隅に整列します。
     -   値 0.5 は、ブラシの中央をビジュアルの中央に整列します。
--   値 1.0 は、ブラシの右下隅をビジュアルの右下隅に整列します。
-    -   [
-            **Stretch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.stretch) プロパティには、[**CompositionStretch**](https://msdn.microsoft.com/library/windows/apps/Dn706786) 列挙体で定義されている次の値を指定します。 None: ブラシは拡大されず、ビジュアルの領域全体が塗りつぶされません。 この Stretch の設定には注意してください。ブラシがビジュアルの領域よりも大きい場合、ブラシの内容はクリップされます。
-    -   ビジュアルの領域を塗りつぶすために使用するブラシの部分は、[**HorizontalAlignmentRatio**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx) プロパティと [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) プロパティを使って制御できます。 Uniform: ブラシはビジュアルの領域に合わせて拡大縮小されます。ブラシの縦横比は維持されます。
-    -   これは既定値です。
-    -   UniformToFill: ブラシはビジュアルの領域が完全に塗りつぶされるように拡大縮小されます。ブラシの縦横比は維持されます。 Fill: ブラシはビジュアルの領域に合わせて拡大縮小されます。 ブラシの高さと幅は個々に拡大縮小されるため、ブラシの元の縦横比は維持されません。
+    -   値 1.0 は、ブラシの右下隅をビジュアルの右下隅に整列します。
+-   [
+            **Stretch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.stretch) プロパティには、[**CompositionStretch**](https://msdn.microsoft.com/library/windows/apps/Dn706786) 列挙体で定義されている次の値を指定します。
+    -   None: ブラシは拡大されず、ビジュアルの領域全体が塗りつぶされません。 この Stretch の設定には注意してください。ブラシがビジュアルの領域よりも大きい場合、ブラシの内容はクリップされます。 ビジュアルの領域を塗りつぶすために使用するブラシの部分は、[**HorizontalAlignmentRatio**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx) プロパティと [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) プロパティを使って制御できます。
+    -   Uniform: ブラシはビジュアルの領域に合わせて拡大縮小されます。ブラシの縦横比は維持されます。 これは既定値です。
+    -   UniformToFill: ブラシはビジュアルの領域が完全に塗りつぶされるように拡大縮小されます。ブラシの縦横比は維持されます。
+    -   Fill: ブラシはビジュアルの領域に合わせて拡大縮小されます。 ブラシの高さと幅は個々に拡大縮小されるため、ブラシの元の縦横比は維持されません。 つまり、ビジュアルの領域を完全に塗りつぶすために、ブラシがゆがむことがあります。
 
  
 
@@ -124,6 +128,7 @@ visual.Brush = _surfaceBrush;
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

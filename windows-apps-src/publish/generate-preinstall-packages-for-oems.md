@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: 開発者アカウントに適切なアクセス許可が付与されている場合、OEM がイメージにアプリを含めるために使うことができるプレインストール パッケージを生成してダウンロードできます。
-title: OEM 向けのプレインストール パッケージの生成
+Description: "開発者アカウントに適切なアクセス許可が付与されている場合、OEM がイメージにアプリを含めるために使うことができるプレインストール パッケージを生成してダウンロードできます。"
+title: "OEM 向けのプレインストール パッケージの生成"
 ms.assetid: AC3A45E8-7BBD-44E9-B2D3-B74B7C9B2BC9
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: dba1c1f754b4200bd00395e0b71d18bee30e3a2d
+
 ---
 
 # OEM 向けのプレインストール パッケージの生成
@@ -46,6 +50,7 @@ ms.assetid: AC3A45E8-7BBD-44E9-B2D3-B74B7C9B2BC9
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

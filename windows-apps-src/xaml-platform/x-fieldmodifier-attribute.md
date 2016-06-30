@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: 名前付きオブジェクトの参照のフィールドがプライベートの既定の動作ではなくパブリックのアクセスで定義されるように、XAML コンパイルの動作を変更します。
-title: xFieldModifier 属性
+description: "名前付きオブジェクトの参照のフィールドがプライベートの既定の動作ではなくパブリックのアクセスで定義されるように、XAML コンパイルの動作を変更します。"
+title: "xFieldModifier 属性"
 ms.assetid: 6FBCC00B-848D-4454-8B1F-287CA8406DDF
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 3f6c759d582d92aa33df5874186aeaa3a7c37b01
+
 ---
 
 # x:FieldModifier 属性
@@ -33,6 +37,7 @@ ms.assetid: 6FBCC00B-848D-4454-8B1F-287CA8406DDF
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

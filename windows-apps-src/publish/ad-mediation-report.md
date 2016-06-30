@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: 広告仲介レポートでは、有効なフィル レートと、使っている広告ネットワークの対応するフィル レートを確認できます。
-title: 広告仲介レポート
+Description: "広告仲介レポートでは、有効なフィル レートと、使っている広告ネットワークの対応するフィル レートを確認できます。"
+title: "広告仲介レポート"
 ms.assetid: 18A33928-B9F2-4F76-9A9C-F01FEE42FEA1
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 1597e21414dbb5d1b540a2dd67478fbcc83d574e
+
 ---
 
 # 広告仲介レポート
@@ -63,6 +67,7 @@ ms.assetid: 18A33928-B9F2-4F76-9A9C-F01FEE42FEA1
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

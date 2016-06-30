@@ -1,116 +1,121 @@
 ---
 ms.assetid: 4b0c86d3-f05b-450b-bf9c-6ab4d3f07d31
-description: This roadmap provides an overview of key enterprise features for Windows 10&\#160;Universal Windows Platform (UWP) apps.'
-title: Enterprise
+description: "このロードマップでは、Windows 10 ユニバーサル Windows プラットフォーム (UWP) の主要なエンタープライズ機能の概要について説明します。"
+title: "エンタープライズ"
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: 468c87694f519a5081f3242346039e6e7310d1db
+ms.openlocfilehash: c2cfcc270d6b1380f065e7ada275c1c60ae05b04
+
 ---
 
-# Enterprise
+# エンタープライズ
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-This roadmap provides an overview of key enterprise features for Windows 10 Universal Windows Platform (UWP) apps. Windows 10 lets you write once and deploy across all devices, creating one app that tailors to any device. This lets you build the great experiences your users expect, while providing control over the security, management, and configuration required by your organization.
+このロードマップでは、Windows 10 ユニバーサル Windows プラットフォーム (UWP) の主要なエンタープライズ機能の概要について説明します。 Windows 10 では、アプリを 1 回記述するだけで、すべてのデバイスに展開できます。つまり、すべてのデバイスに対応した 1 つのアプリを作成できます。 これにより、企業が必要とするセキュリティ、管理、構成をコントロールしながら、ユーザーが求めるすばらしいエクスペリエンスを構築できます。
 
-**Note**  This article is targeted towards developers writing enterprise UWP apps. For general UWP development, see the [How-to guides for Windows 10 apps](https://msdn.microsoft.com/library/windows/apps/mt244352). For WPF, Windows Forms, or Win32 development, visit the [Desktop dev center](https://dev.windows.com/en-us/desktop). For IT professional resources, like deploying Windows 10 or managing enterprise security features, see [Windows 10 on TechNet](https://msdn.microsoft.com/library/dn986868).
+**注**  この記事は、エンタープライズ UWP アプリを作成する開発者を対象としています。 一般的な UWP 開発については、「[Windows 10 アプリに関するハウツー ガイド](https://msdn.microsoft.com/library/windows/apps/mt244352)」をご覧ください。 WPF、Windows フォーム、Win32 開発については、[デスクトップのデベロッパー センター](https://dev.windows.com/en-us/desktop)をご覧ください。 IT 担当者向けのリソース (Windows 10 の展開やエンタープライズ セキュリティ機能の管理など) については、TechNet の「[Windows 10](https://msdn.microsoft.com/library/dn986868)」をご覧ください。
 
  
 
-## Security
+## セキュリティ
 
 
-Windows 10 provides a suite of security features for app developers to protect the identity of their users, the security of corporate networks, and any business data stored on devices. New for Windows 10 is Microsoft Passport, an easy-to-deploy two-factor password alternative that is accessible by using a PIN or Windows Hello, which provides enterprise grade security and supports fingerprint, facial, and iris based recognition.
+Windows 10 には、一連のセキュリティ機能が用意されています。これらのセキュリティ機能を利用することで、アプリ開発者は、ユーザーの個人情報、企業ネットワークのセキュリティ、デバイスに保存されているビジネス データを保護することができます。 Windows 10 の新機能として、Microsoft Passport があります。これにより、従来のパスワードに代わる 2 要素のパスワードを簡単に展開することができます。2 要素のパスワードは、PIN や Windows Hello を使って利用することができ、エンタープライズ レベルのセキュリティを実現し、指紋認識、顔認識、虹彩認識をサポートしています。
 
-| Topic | Description |
+| トピック | 説明 |
 |-------|-------------|
-| [Intro to secure Windows app development](https://msdn.microsoft.com/library/windows/apps/mt622741) | This introductory article explains various Windows security features across the stages of authentication, data-in-flight, and data-at-rest. It also describes how you can integrate those stages into your apps. It covers a large range of topics, and is aimed primarily at helping app architects better understand the Windows features that make creating Universal Windows   Platform apps quick and easy. |
-| [Authentication and user identity](https://msdn.microsoft.com/library/windows/apps/mt270184) | UWP apps have several options for user authentication which are outlined in this article. For the enterprise, the new Microsoft Passport feature is strongly recommended. Microsoft Passport replaces passwords with strong   two-factor authentication (2FA) by verifying existing credentials and by creating a device-specific credential that a biometric or PIN-based user gesture protects, resulting in a both convenient and highly secure experience. |
-| [Cryptography](https://msdn.microsoft.com/library/windows/apps/mt270191) | The cryptography section provides an overview of the cryptography features available to UWP apps. Articles range from introductory walkthroughs on how to easily encrypt sensitive business data, to advanced to advanced topics such as manipulating cryptographic keys and working with MACs, hashes, and signatures. |
-| [Enterprise data protection (EDP)](edp-hub.md) | This is a hub topic covering the full developer picture of how enterprise data protection (EDP) relates to files, buffers, clipboard, networking, background tasks, and data protection under lock. |
+| [安全な Windows アプリの開発について](https://msdn.microsoft.com/library/windows/apps/mt622741) | この概要記事では、認証、移動中データ、および保存データの各段階におけるさまざまな Windows のセキュリティ機能について説明します。 また、これらの段階をアプリに統合する方法についても説明します。 ここでは、さまざまなトピックを取り上げており、ユニバーサル Windows プラットフォーム アプリを短時間で簡単に作成するための Windows の機能を、アプリの設計者が詳しく理解できるようにすることを主な目的としています。 |
+| [認証とユーザー ID](https://msdn.microsoft.com/library/windows/apps/mt270184) | この記事では、UWP アプリで利用できるユーザー認証のためオプションを説明します。 企業向けには、新しい Microsoft Passport 機能を強くお勧めします。 Microsoft Passport では、既存の資格情報を確認して、生体認証または PIN ベースのユーザー ジェスチャで保護されるデバイス固有の資格情報を作成することで、パスワードを強力な 2 要素認証 (2FA) に置き換えます。これにより、便利で安全性の高いエクスペリエンスが実現されます。 |
+| [暗号化](https://msdn.microsoft.com/library/windows/apps/mt270191) | 「暗号化」セクションでは、UWP アプリで利用できる暗号化の機能の概要を説明します。 この記事では、重要なビジネス データを簡単に暗号化する方法についての入門用チュートリアルから、暗号化キーの操作や MAC、ハッシュ、署名の使用などの高度なトピックまでを取り上げています。 |
+| [エンタープライズ データ保護 (EDP)](edp-hub.md) | ここでは、企業のデータ保護 (EDP) とファイル、バッファー、クリップボード、ネットワーク、バックグラウンド タスク、ロックの背後でのデータ保護との関係についての開発者向けの詳しい情報について説明します。 |
 
  
 
-## Data binding and databases
+## データ バインディングとデータベース
 
 
-Data binding is a way for your app's UI to display data from an external source, such as a database, and optionally to stay in sync with that data. Data binding allows you to separate the concern of data from the concern of UI, and that results in a simpler conceptual model as well as better readability, testability, and maintainability of your app.
+データ バインディングは、データベースなどの外部ソースからのデータをアプリの UI で表示する方法であり、必要に応じてそのデータとの同期を維持することもできます。 データ バインディングによって、UI の問題からデータの問題を切り離すことができるため、概念的なモデルが簡素化されると共に、アプリの読みやすさ、テストの容易性、保守容易性が向上します。
 
-| Topic | Description |
+| トピック | 説明 |
 |-------|-------------|
-| [Data binding overview](https://msdn.microsoft.com/library/windows/apps/mt269383) | This topic shows you how to bind a control (or other UI element) to a   single item or bind an items control to a collection of items in a Universal Windows Platform (UWP) app. In addition, it shows how to control the rendering of items, implement a details view based on a selection, and convert data for display. |
-| [Entity Framework 7 for UWP](https://msdn.microsoft.com/library/windows/apps/mt592863) | Performing complex queries against large data sets is vastly simplified using Entity Framework 7, which supports UWP. In this walkthrough, you will build a UWP app that performs basic data access against a local SQLite   database using Entity Framework. |
-| [SQLite local database](https://channel9.msdn.com/Series/A-Developers-Guide-to-Windows-10/10) | This video is a comprehensive developer's guide to using SQLite, the recommended solution for local app databases. Visit [SQLite](https://www.sqlite.org/download.html) to download the latest version for UWP, or use the version that's already provided with the Windows 10 SDK. |
+| [データ バインディングの概要](https://msdn.microsoft.com/library/windows/apps/mt269383) | このトピックでは、ユニバーサル Windows プラットフォーム (UWP) アプリケーションで、コントロール (または他の UI 要素) を単一の項目にバインドする方法や、項目コントロールを項目のコレクションにバインドする方法を説明します。 また、項目のレンダリングを制御する方法、選択内容に基づいて詳細ビューを実装する方法、表示するデータを変換する方法も紹介します。 |
+| [UWP 用 Entity Framework 7](https://msdn.microsoft.com/library/windows/apps/mt592863) | 大きなデータ セットに対する複雑なクエリの実行は、UWP をサポートする Entity Framework 7 を使用することで大幅に簡素化されます。 このチュートリアルでは、Entity Framework を使用してローカル SQLite データベースへの基本的なデータ アクセスを実行する UWP アプリを構築します。 |
+| [SQLite ローカル データベース](https://channel9.msdn.com/Series/A-Developers-Guide-to-Windows-10/10) | このビデオは、アプリのローカル データベースのソリューションとして推奨される SQLite を使用するための開発者向けの包括的なガイドです。 [SQLite](https://www.sqlite.org/download.html) にアクセスして UWP 用の最新バージョンをダウンロードするか、Windows 10 SDK で既に提供されているバージョンを使用してください。 |
 
  
 
-## Networking and data serialization
+## ネットワークとデータのシリアル化
 
 
-Line-of-business apps often need to communicate with or store data on a variety of other systems. This is typically accomplished by connecting to a network service (using protocols such as REST or SOAP) and then serializing or deserializing data into a common format. Working with networks and data serialization in UWP apps similar to WPF, WinForms, and ASP.NET applications. See the following articles for more information.
+基幹業務アプリでは、他のさまざまなシステムのデータと通信したり、こうしたシステムにデータを保存したりすることが必要になる場合があります。 通常、これはネットワーク サービスに接続し (REST や SOAP などのプロトコルを使用)、データを一般的な形式にシリアル化または逆シリアル化することによって実現されます。 UWP アプリでのネットワークとデータのシリアル化の操作は、WPF、WinForms、ASP.NET の各アプリケーションと類似しています。 詳しくは、以下の記事をご覧ください。
 
-| Topic | Description |
+| トピック | 説明 |
 |-------|-------------|
-| [Networking basics](https://msdn.microsoft.com/library/windows/apps/mt280233) | This walkthrough explains basic networking concepts relevant to all UWP apps, regardless of the communication protocols in use.  |
-| [Which networking technology?](https://msdn.microsoft.com/library/windows/apps/mt280235) | A quick overview of the networking technologies available for UWP apps, with suggestions on how to choose the technologies that are the best fit for your app. |
-| [XML and SOAP serialization](https://msdn.microsoft.com/library/90c86ass.aspx) | XML serialization converts objects into an XML stream that conforms to a   specific XML Schema definition language (XSD). To convert between XML and a strongly-typed class, you can use the native [XDocument](https://msdn.microsoft.com/library/system.xml.linq.xdocument.aspx) class, or an external library. |
-| [JSON serialization](https://msdn.microsoft.com/library/windows/apps/br240639) | JSON (JavaScript object notation) serialization is a popular format for   communicating with REST APIs. The [Newtonsoft Json.NET](http://www.newtonsoft.com/json), which is fully supported for UWP apps. |
+| [ネットワークの基本](https://msdn.microsoft.com/library/windows/apps/mt280233) | このチュートリアルでは、使用する通信プロトコルに関係なく、すべての UWP アプリに関連する基本的なネットワークの概念について説明します。  |
+| [アプリに適したネットワーク テクノロジ](https://msdn.microsoft.com/library/windows/apps/mt280235) | UWP アプリで利用できるネットワーク テクノロジの概要と、アプリに適したテクノロジの選び方に関する推奨事項について説明します。 |
+| [XML シリアル化および SOAP シリアル化](https://msdn.microsoft.com/library/90c86ass.aspx) | XML シリアル化では、オブジェクトが、特定の XML スキーマ定義言語 (XSD) に準拠する XML ストリームに変換されます。 XML と厳密に型指定されたクラス間の変換を行うには、ネイティブの [XDocument](https://msdn.microsoft.com/library/system.xml.linq.xdocument.aspx) クラスまたは外部ライブラリを使用します。 |
+| [JSON シリアル化](https://msdn.microsoft.com/library/windows/apps/br240639) | JSON (JavaScript Object Notation) シリアル化は、REST API と通信するための一般的な形式です。 [Newtonsoft Json.NET](http://www.newtonsoft.com/json) は、UWP アプリで完全にサポートされています。 |
 
  
 
-## Devices
+## デバイス
 
 
-In order to integrate with line-of-business tools, like printers, barcode scanners, or smart card readers, you may find it necessary to integrate external devices or sensors into your app. Here are some examples of features that you can add to your app using the technology described in this section.
+基幹業務ツール (プリンター、バー コード スキャナー、スマート カード リーダーなど) と統合するには、外部のデバイスやセンサーをアプリに統合することが必要になる場合があります。 ここでは、このセクションで説明するテクノロジを使って、アプリに追加できる機能例をいくつか紹介します。
 
-| Topic  | Description |
+| トピック  | 説明 |
 |--------|-------------|
-| [Enumerate devices](https://msdn.microsoft.com/library/windows/apps/mt187355) | This article explains how to use the [Windows.Devices.Enumeration](https://msdn.microsoft.com/library/windows/apps/br225459) namespace to find devices that are internally connected to the system, externally connected, or detectable over wireless or networking protocols. Start here if you're building any app that works with devices. |
-| [Printing and scanniing](https://msdn.microsoft.com/library/windows/apps/mt204544) | Describes how to print and scan from your app, including connecting to   and working with business devices like point-of-sale (POS) systems, receipt printers, and high-capacity feeder scanners. |
-| [Bluetooth](https://msdn.microsoft.com/library/windows/apps/mt270288) | In addition to using traditional Bluetooth connections to send and receive data or control devices, Windows 10 enables using Bluetooth Low Energy (BTLE) to send or receive beacons in the background. Use this to display notifications or enable functionality when a user gets close to or leaves a particular location. |
-| [Enterprise shared storage](enterprise-shared-storage.md) | In device lockdown scenarios, learn how data can be shared within the same app, between instances of an app, or even between apps. |
+| [デバイスの列挙](https://msdn.microsoft.com/library/windows/apps/mt187355) | この記事では、[Windows.Devices.Enumeration](https://msdn.microsoft.com/library/windows/apps/br225459) 名前空間を使って、システムに内部接続されているデバイス、外部接続されているデバイス、ワイヤレス プロトコルまたはネットワーク プロトコル経由で検出できるデバイスを検索する方法について説明します。 デバイスと連携して動作するアプリを構築する場合は、ここから始めてください。 |
+| [印刷とスキャン](https://msdn.microsoft.com/library/windows/apps/mt204544) | アプリから印刷およびスキャンする方法について説明します。販売時点管理 (POS) システム、レシート プリンター、大容量フィーダー スキャナーなどの業務用デバイスに接続する方法やこれらのデバイスを操作する方法についても説明します。 |
+| [Bluetooth](https://msdn.microsoft.com/library/windows/apps/mt270288) | 従来の Bluetooth 接続を使用したデータの送受信やデバイスの制御に加えて、Windows 10 では、Bluetooth 低エネルギー (BTLE) を使用してバックグラウンドでビーコンを送受信できるようになりました。 この BTLE を利用して、通知を表示します。また、ユーザーが特定の場所に近づいた場合や特定の場所から離れた場合の機能を有効にします。 |
+| [エンタープライズ共有記憶域](enterprise-shared-storage.md) | デバイスのロックダウン シナリオにおける、同じアプリ内でのデータの共有、また 1 つのアプリの複数のインスタンス間でのデータの共有、さらに複数のアプリ間でのデータの共有について、その方法を説明します。 |
 
  
 
-## Device targeting
+## 対象となるデバイス
 
 
-Many users today are bringing their own phone or tablet to work, which have varying form factors and screen sizes. With the Universal Windows Platform (UWP), you can write a single line-of-business app that runs seamlessly on all different types of devices, including desktop PCs and PPI displays, allowing you to maximize the reach of your app and the efficiency of your code.
+今日、多くのユーザーは自分の電話やタブレットを持ち歩いて作業を行っています。また、それらの電話やタブレットのフォーム ファクターと画面サイズにはさまざまなものがあります。 ユニバーサル Windows プラットフォーム (UWP) では、すべての種類のデバイス (デスクトップ PC や PPI ディスプレイなど) でシームレスに動作する 1 つの基幹業務アプリを作成して、アプリの範囲やコードの効率を最大限に高めることができます。
 
-| Topic | Description |
+| トピック | 説明 |
 |-------|-------------|
-| [Guide to UWP apps](https://msdn.microsoft.com/library/windows/apps/dn894631) | In this introductory guide, you'll get acquainted with the Windows 10UWP platform, including: what a device family is and how to decide which one to target, new UI controls and panels that allow you to adapt your UI to different device form factors, and how to understand and control the API surface that is available to your app. |
-| [Adaptive XAML UI code sample](http://go.microsoft.com/fwlink/p/?LinkId=619992) | This code sample shows all the possible layout options and controls for   your app, regardless of device type, and allows you to interact with the panels to show how to achieve any layout you are looking for. In addition to showing how each control responds to different form factors, the app itself is responsive and shows various methods for achieving adaptive UI. |
+| [UWP アプリ ガイド](https://msdn.microsoft.com/library/windows/apps/dn894631) | この入門用ガイドでは、Windows 10 UWP プラットフォームについて説明します。ここでは、デバイス ファミリの説明、対象となるデバイス ファミリを決定する方法、さまざまなデバイスのフォーム ファクターに合わせて UI を対応させることができる新しい UI コントロールとパネル、およびアプリで利用できる API サーフェスを理解し制御する方法を取り上げます。 |
+| [アダプティブ XAML UI コードのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=619992) | このコード サンプルでは、デバイスの種類に関係なく、アプリで利用できるすべてのレイアウト オプションとコントロールが示されています。また、このコード サンプルを使うと、パネルを操作して、目的のレイアウトを実現する方法を確認できます。 さまざまなフォーム ファクターに対する各コントロールの応答方法に加えて、アプリ自体の応答性、およびアダプティブ UI を実現するためのさまざまな方法も示されています。 |
 
  
 
-## Deployment
+## 展開
 
 
-You have options for distributing apps to your organization’s users. You can use Windows Store for Business, existing mobile device management or you can sideload apps to devices. You can also make your apps available to the general public by publishing to the Windows Store.
+組織のユーザーにアプリを配布するための方法がいくつかあります。 ビジネス向け Windows ストアや既存のモバイル デバイス管理ツールを使用したり、アプリをデバイスにサイドロードしたりすることができます。 Windows ストアに公開すると、一般ユーザーにもアプリを利用可能にすることができます。
 
-| Topic | Description |
+| トピック | 説明 |
 |-------|-------------|
-| [Distribute LOB apps to enterprises](https://msdn.microsoft.com/library/windows/apps/mt608995) | You can publish line-of-business apps directly to enterprises for volume acquisition via the Windows Store for Business, without making the apps broadly available to the public. |
-| [Sideload apps](https://technet.microsoft.com/en-us/library/mt269549) | When you sideload an app, you deploy a signed app package to a device. You maintain the signing, hosting, and deployment of these apps. The process for sideloading apps is streamlined for Windows 10.             |
-| [Publish apps to the Windows store](https://dev.windows.com/publish) | The unified Windows Store lets you publish and manage all of your apps for all Windows devices. Customize your app’s availability with per-market pricing, distribution and visibility controls, and other options. |
+| [LOB アプリの企業への配布](https://msdn.microsoft.com/library/windows/apps/mt608995) | 基幹業務アプリを、ボリューム購入できるように、ビジネス向け Windows ストアで企業に直接公開できます。一般ユーザーが利用できるようにアプリを公開する必要はありません。 |
+| [アプリのサイドローディング](https://technet.microsoft.com/en-us/library/mt269549) | アプリをサイドローディングすると、署名されたアプリ パッケージをデバイスに展開します。 これらのアプリの署名、ホスティング、展開は維持されます。 アプリのサイドローディングのプロセスは、Windows 10 向けに簡素化されています。             |
+| [Windows ストアへのアプリの公開](https://dev.windows.com/publish) | 統合された Windows ストアでは、すべての Windows デバイス向けのすべてのアプリを公開し管理することができます。 市場ごとの価格、配布と表示のコントロール、その他のオプションを使って、アプリの使用可能状況をカスタマイズできます。 |
 
  
 
-## Patterns and practices
+## パターンとプラクティス
 
 
-Code bases for large scale, enterprise-grade apps can become unwieldy. Prism is a framework for building loosely coupled, maintainable, and testable XAML applications in WPF, Windows 10 UWP, and Xamarin Forms. Prism provides an implementation of a collection of design patterns that are helpful in writing well-structured and maintainable XAML applications, including MVVM, dependency injection, commands, EventAggregator, and others.
+大規模なエンタープライズ レベルのアプリ向けのコード ベースは、扱うのが難しくなる場合があります。 Prism は、保守やテストが可能である疎結合な XAML アプリケーションを WPF、Windows 10 UWP、Xamarin の各フォームで構築するためのフレームワークです。 Prism には、適切に構造化され、保守が可能な XAML アプリケーションの作成に役立つ設計パターンのコレクションの実装が用意されています (MVVM、依存関係挿入、コマンド、EventAggregator など)。
 
-For more information on Prism, see the [GitHub repo](https://github.com/PrismLibrary/Prism).
-
- 
+Prism について詳しくは、[GitHub リポジトリ](https://github.com/PrismLibrary/Prism)をご覧ください。
 
  
 
+ 
 
 
 
 
-<!--HONumber=Jun16_HO3-->
+
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Microsoft Advertising による売り上げの pubCenter 受取りアカウントを以前設定していた場合、そのアカウントは 2016 年 4 月 1 日以降支払いに使われなくなります。 支払いは、デベロッパー センター受取りアカウントを通じて行われるようになります。
-title: pubCenter とデベロッパー センターの受取りアカウントと税プロファイルの統合
+Description: "Microsoft Advertising による売り上げの pubCenter 受取りアカウントを以前設定していた場合、そのアカウントは 2016 年 4 月 1 日以降支払いに使われなくなります。 支払いは、デベロッパー センター受取りアカウントを通じて行われるようになります。"
+title: "pubCenter とデベロッパー センターの受取りアカウントと税プロファイルの統合"
 ms.assetid: 1EC55E2F-2BC5-4982-A569-A59082A808EC
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 8973b1def46c7ada8b73337cb20d01ae1e5b97d8
+
 ---
 
 # pubCenter とデベロッパー センターの受取りアカウントと税プロファイルの統合
@@ -80,6 +84,7 @@ Microsoft Advertising による売り上げは、変換された後、デベロ�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

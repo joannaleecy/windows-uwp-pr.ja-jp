@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: ae45490f-3eb1-4b7f-8e18-bf82f0ca5d6d
-description: Microsoft Advertising ライブラリの使用を開始してバナーやビデオのスポット広告をアプリに追加するために必要な情報を得ます。
-title: Microsoft Advertising ライブラリの概要
+description: "Microsoft Advertising ライブラリの使用を開始してバナーやビデオのスポット広告をアプリに追加するために必要な情報を得ます。"
+title: "Microsoft Advertising ライブラリの概要"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: 08168dc15b33d99a044eedd7864848ed7a858991
+
 
 ---
 
@@ -37,6 +41,7 @@ C# と C++ を使って JavaScript/HTML アプリと XAML アプリに広告バ�
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

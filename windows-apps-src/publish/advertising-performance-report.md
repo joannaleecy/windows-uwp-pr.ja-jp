@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: アプリ内の広告ユニットのパフォーマンス データを表示するには、Windows デベロッパー センター ダッシュボードにあるアプリ レベルとアカウント レベルの広告パフォーマンス レポートを使います。
-title: 広告パフォーマンス レポート
+Description: "アプリ内の広告ユニットのパフォーマンス データを表示するには、Windows デベロッパー センター ダッシュボードにあるアプリ レベルとアカウント レベルの広告パフォーマンス レポートを使います。"
+title: "広告パフォーマンス レポート"
 ms.assetid: 32E555C3-C34D-4503-82BB-4C3F5CAE4500
+translationtype: Human Translation
+ms.sourcegitcommit: 93e12837aec151b0cd1fa711c9e04081d74a3962
+ms.openlocfilehash: 1617005cff264a89eb66e326e2bedf9f6641a3da
+
 ---
 
 # 広告パフォーマンス レポート
@@ -90,6 +94,7 @@ pubCenter を使ってアプリの広告ユニットを作成しているが、�
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

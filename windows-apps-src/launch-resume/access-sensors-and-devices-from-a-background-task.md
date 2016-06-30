@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: バックグラウンド タスクからのセンサーやデバイスへのアクセス
-description: DeviceUseTrigger を使うと、フォアグラウンド アプリが中断しているときにも、バックグラウンドでユニバーサル Windows アプリからセンサーや周辺機器にアクセスできます。
+author: dbirtolo
+title: "バックグラウンド タスクからのセンサーやデバイスへのアクセス"
+description: "DeviceUseTrigger を使うと、フォアグラウンド アプリが中断しているときにも、バックグラウンドでユニバーサル Windows アプリからセンサーや周辺機器にアクセスできます。"
 ms.assetid: B540200D-9FF2-49AF-A224-50877705156B
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: 65471f26596f94fe550c92a10e01ca7f5cef64a1
+
 ---
 
 # バックグラウンド タスクからのセンサーやデバイスへのアクセス
@@ -205,6 +208,7 @@ ms.assetid: B540200D-9FF2-49AF-A224-50877705156B
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

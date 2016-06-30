@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: グラフィックス診断ツール
-description: Visual Studio でグラフィックス デバッグ、グラフィックス フレーム分析、GPU 使用率などのグラフィックス診断機能を取得して使用する方法について説明します。
+title: "グラフィックス診断ツール"
+description: "Visual Studio でグラフィックス デバッグ、グラフィックス フレーム分析、GPU 使用率などのグラフィックス診断機能を取得して使用する方法について説明します。"
 ms.assetid: 629ea462-18ed-a333-07e9-cc87ea2dcd93
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: f266cb50893fd37162f21be169d6daf6e37c6bb9
+
 ---
 
 # グラフィックス診断ツール
@@ -35,6 +39,7 @@ Windows 10 では、オプション機能として、グラフィックス診断
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

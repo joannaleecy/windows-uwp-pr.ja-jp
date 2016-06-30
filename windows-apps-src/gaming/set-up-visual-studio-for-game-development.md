@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: ゲーム プログラミング用の Visual Studio ツール
-description: Visual Studio で利用できる DirectX 固有のツールの概要。
+title: "ゲーム プログラミング用の Visual Studio ツール"
+description: "Visual Studio で利用できる DirectX 固有のツールの概要。"
 ms.assetid: 43137bfc-7876-70e0-515c-4722f68bd064
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 2202474f24e93aab32ec9f4e85e765616cbae056
+
 ---
 
 # ゲーム プログラミング用の Visual Studio ツール
@@ -147,6 +151,7 @@ Visual Studio には、グラフィックス固有のデバッグ ツールが�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

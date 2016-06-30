@@ -1,10 +1,14 @@
 ---
 author: Xansky
-Description: ユニバーサル Windows プラットフォーム (UWP) アプリがアクセシビリティ対応であると Windows ストアで宣言するための要件について説明します。
+Description: "ユニバーサル Windows プラットフォーム (UWP) アプリがアクセシビリティ対応であると Windows ストアで宣言するための要件について説明します。"
 ms.assetid: 59FA3B87-75A6-4B30-BA7C-A0E769D68050
-title: ストア内のアクセシビリティ
+title: "ストア内のアクセシビリティ"
 label: Accessibility in the Store
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 46dfe4fba383861c704b2ba9070bdd8102b10562
+
 ---
 
 # ストア内のアクセシビリティ  
@@ -43,6 +47,7 @@ Windows ストアで認定を受けるためにアプリを提出している間
 * [アクセシビリティ](accessibility.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
-Description: アプリからフィードバック Hub を起動してフィードバックを送信することをユーザーにお勧めできます。
-title: アプリからのフィードバック Hub の起動
+Description: "アプリからフィードバック Hub を起動してフィードバックを送信することをユーザーにお勧めできます。"
+title: "アプリからのフィードバック Hub の起動"
 ms.assetid: 070B9CA4-6D70-4116-9B18-FBF246716EF0
+translationtype: Human Translation
+ms.sourcegitcommit: de85956c7c1d2a0ba509d61ee8928b412f057f8a
+ms.openlocfilehash: ccda01d9bfa4ffdff2bbce5d6c60c78e026270e5
+
 ---
 
 # アプリからのフィードバック Hub の起動
@@ -73,6 +77,7 @@ private async void feedbackButton_Click(object sender, RoutedEventArgs e)
 * [フィードバック レポート](../publish/feedback-report.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

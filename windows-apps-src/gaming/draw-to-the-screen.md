@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: 画面への描画
-description: 最後に、回転する立方体を画面に描画するコードを移植します。
+title: "画面への描画"
+description: "最後に、回転する立方体を画面に描画するコードを移植します。"
 ms.assetid: cc681548-f694-f613-a19d-1525a184d4ab
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 1b7431c20e25173a0aa3f8d6ee0d407be869d60a
+
 ---
 
 # 画面への描画
@@ -68,7 +72,7 @@ Direct3D ランタイムは [**ID3D11Texture2D**](https://msdn.microsoft.com/lib
 
 レンダー ターゲットのほか、Direct3D デバイスとデバイス コンテキストの初期化と構成は、Direct3D テンプレートのカスタムの **CreateDeviceResources** メソッドと **CreateWindowSizeDependentResources** メソッドで確かめることができます。
 
-EGL と EGLContext の型に関連する Direct3D デバイス コンテキストについて詳しくは、「[DXGI と Direct3D の EGL コードの比較](moving-from-egl-to-dxgi.md)」をご覧ください
+EGL と EGLContext の型に関連する Direct3D デバイス コンテキストについて詳しくは、「[DXGI と Direct3D の EGL コードの比較](moving-from-egl-to-dxgi.md)」をご覧ください。
 
 ## 手順
 
@@ -125,23 +129,23 @@ void Render(GraphicsContext *drawContext)
 Direct3D 11 では、プロセスはよく似ています (Direct3D テンプレートのビューポートとレンダー ターゲットの構成を使っていることを前提とします)。
 
 -   [
-            **ID3D11DeviceContext1::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/hh446790) を呼び出して定数バッファー (この場合はモデル ビュー プロジェクション マトリックス) を更新します
+            **ID3D11DeviceContext1::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/hh446790) を呼び出して定数バッファー (この場合はモデル ビュー プロジェクション マトリックス) を更新します。
 -   [
-            **ID3D11DeviceContext1::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) で頂点バッファーを設定します
+            **ID3D11DeviceContext1::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) で頂点バッファーを設定します。
 -   [
-            **ID3D11DeviceContext1::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453) でインデックス バッファーを設定します
+            **ID3D11DeviceContext1::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453) でインデックス バッファーを設定します。
 -   [
-            **ID3D11DeviceContext1::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455) で特定の三角形のトポロジ (三角形のリスト) を設定します
+            **ID3D11DeviceContext1::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455) で特定の三角形のトポロジ (三角形のリスト) を設定します。
 -   [
-            **ID3D11DeviceContext1::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) で頂点バッファーの入力レイアウトを設定します
+            **ID3D11DeviceContext1::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) で頂点バッファーの入力レイアウトを設定します。
 -   [
-            **ID3D11DeviceContext1::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) で頂点シェーダーをバインドします
+            **ID3D11DeviceContext1::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) で頂点シェーダーをバインドします。
 -   [
-            **ID3D11DeviceContext1::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) でフラグメント シェーダーをバインドします
+            **ID3D11DeviceContext1::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) でフラグメント シェーダーをバインドします。
 -   [
-            **ID3D11DeviceContext1::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) を使って、シェーダーを通じてインデックス付き頂点を送信し、レンダー ターゲット バッファーに色の結果を出力します
+            **ID3D11DeviceContext1::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) を使って、シェーダーを通じてインデックス付き頂点を送信し、レンダー ターゲット バッファーに色の結果を出力します。
 -   [
-            **IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) でレンダー ターゲット バッファーを表示します
+            **IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) でレンダー ターゲット バッファーを表示します。
 
 Direct3D 11: 表示するフレームのレンダリング
 
@@ -235,6 +239,7 @@ void RenderObject::Render()
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: アプリ オブジェクトと DirectX
-description: DirectX を使ったユニバーサル Windows プラットフォーム (UWP) ゲームでは、Windows UI ユーザー インターフェイスの要素とオブジェクトの多くが使われません。
+title: "アプリ オブジェクトと DirectX"
+description: "DirectX を使ったユニバーサル Windows プラットフォーム (UWP) ゲームでは、Windows UI ユーザー インターフェイスの要素とオブジェクトの多くが使われません。"
 ms.assetid: 46f92156-29f8-d65e-2587-7ba1de5b48a6
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: a8c8cb8fa8ccec54af4c824d23bc26cb91db7cf7
+
 ---
 
 # アプリ オブジェクトと DirectX
@@ -152,7 +156,7 @@ ASTA スレッドで実行するために元のコードを移植している場
     -   並列パターン ライブラリ (PPLTasks.h) で定義された **async** パターンを使います。
     -   できるだけ早くアプリの ASTA (アプリのメイン スレッド) から [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) を呼び出して、任意の呼び出しを許可します。
 
-    しかし、アプリの ASTA への無関係な呼び出しの即時の配信に頼ることはできません。 非同期呼び出しについて詳しくは、「[C++ での非同期プログラミング](https://msdn.microsoft.com/library/windows/apps/mt187334)」をご覧ください。
+    しかし、アプリの ASTA への無関係な呼び出しの即時の配信に頼ることはできません。 非同期呼び出しの詳細について、「[C++ での非同期プログラミング](https://msdn.microsoft.com/library/windows/apps/mt187334)」をご覧ください。
 
 全体的に見れば、UWP アプリをデザインする場合、自分で MTA スレッドを作って管理しようとするのではなく、アプリの [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) の [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) と [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) を使ってすべての UI スレッドを処理します。 **CoreDispatcher** で処理できない個別のスレッドが必要な場合、非同期パターンを使い、再入の問題を回避するために前のガイドに従います。
 
@@ -165,6 +169,7 @@ ASTA スレッドで実行するために元のコードを移植している場
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

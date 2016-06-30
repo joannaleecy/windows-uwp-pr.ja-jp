@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: DirectX ゲームの基本的な 3D グラフィックス
-description: DirectX プログラミングを使って、3D グラフィックスの基本的な概念を実装する方法について説明します。
+title: "DirectX ゲームの基本的な 3D グラフィックス"
+description: "DirectX プログラミングを使って、3D グラフィックスの基本的な概念を実装する方法について説明します。"
 ms.assetid: 2989c91f-7b45-7377-4e83-9daa0325e92e
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 8f27c5060ffdc566c596168e54d51730c349d401
+
 ---
 
 # DirectX ゲームの基本的な 3D グラフィックス
@@ -63,6 +67,7 @@ C++ に習熟していることを前提としています。 また、グラフ
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

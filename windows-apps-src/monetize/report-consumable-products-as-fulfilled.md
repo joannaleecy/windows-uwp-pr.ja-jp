@@ -1,8 +1,11 @@
 ---
 author: mcleanbyron
 ms.assetid: E9BEB2D2-155F-45F6-95F8-6B36C3E81649
-description: Windows ストア コレクション API 内のこのメソッドを使用して、コンシューマブルな製品を特定の顧客についてフルフィルメント完了として報告します。 ユーザーがコンシューマブルな製品を再購入するには、アプリまたはサービスがコンシューマブルな製品をそのユーザーについてフルフィルメント完了と報告する必要があります。
-title: コンシューマブルな製品をフルフィルメント完了として報告する
+description: "Windows ストア コレクション API 内のこのメソッドを使用して、コンシューマブルな製品を特定の顧客についてフルフィルメント完了として報告します。 ユーザーがコンシューマブルな製品を再購入するには、アプリまたはサービスがコンシューマブルな製品をそのユーザーについてフルフィルメント完了と報告する必要があります。"
+title: "コンシューマブルな製品をフルフィルメント完了として報告する"
+ms.sourcegitcommit: 2f4351d6f9bdc0b9a131ad5ead10ffba7e76c437
+ms.openlocfilehash: b099bdc26565ef218eaf1f73c5bb3ec9c24065c3
+
 ---
 
 # コンシューマブルな製品をフルフィルメント完了として報告する
@@ -22,7 +25,7 @@ Windows ストア コレクション API 内のこのメソッドを使用して
 
 このメソッドを使用するための要件:
 
--   **https://onestore.microsoft.com** 対象ユーザー URI を使用して作成した Azure AD アクセス トークン。
+-   `https://onestore.microsoft.com` 対象ユーザー URI を使用して作成した Azure AD アクセス トークン。
 -   アプリのクライアント側コードから [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) メソッドを呼び出して生成された Windows ストア ID キー。
 
 詳しくは、「[サービスからの製品の表示と許可](view-and-grant-products-from-a-service.md)」をご覧ください。
@@ -34,9 +37,9 @@ Windows ストア コレクション API 内のこのメソッドを使用して
 
 | メソッド | 要求 URI                                                   |
 |--------|---------------------------------------------------------------|
-| POST   | https://collections.mp.microsoft.com/v6.0/collections/consume |
+| POST   | `https://collections.mp.microsoft.com/v6.0/collections/consume` |
 
- 
+<br/> 
 
 ### 要求ヘッダー
 
@@ -47,32 +50,33 @@ Windows ストア コレクション API 内のこのメソッドを使用して
 | Content-Length | number | 要求の本文の長さ。                                                                       |
 | Content-Type   | string | 要求と応答の種類を指定します。 現時点では、サポートされている唯一の値は **application/json** です。 |
 
- 
+<br/> 
 
 ### 要求本文
 
-| パラメーター     | タイプ         | Description         | 必須かどうか |
+| パラメーター     | タイプ         | 説明         | 必須かどうか |
 |---------------|--------------|---------------------|----------|
-| beneficiary   | UserIdentity | この項目が使用されているユーザー。                                                                                                                                                                                                                                                                 | あり      |
-| itemId        | 文字列       | [製品の照会](query-for-products.md)で返される itemId 値。 このパラメーターは trackingId と共に使用します。                                                                                                                                                                                                  | なし       |
-| trackingId    | Guid         | 開発者により指定される一意の追跡 ID。 このパラメーターは itemId と共に使用します。                                                                                                                                                                                                                                     | なし       |
-| productId     | 文字列       | [製品の照会](query-for-products.md)で返される productId 値。 このパラメーターは transactionId と共に使用します。                                                                                                                                                                                            | なし       |
-| transactionId | Guid         | 次のいずれかのソースから取得されるトランザクション ID 値:                                                                                                                                                                                                                                      | なし       | 
-|               |              | * [PurchaseResults](https://msdn.microsoft.com/library/windows/apps/dn263392) クラスの [TransactionID](https://msdn.microsoft.com/library/windows/apps/dn263396) プロパティ。   |        | 
+| beneficiary   | UserIdentity | この項目が使用されているユーザー。                                                                                                                                                                                                                                                                 | 必須      |
+| itemId        | String       | [製品の照会](query-for-products.md)で返される itemId 値。 このパラメーターは trackingId と共に使用します。                                                                                                                                                                                                  | 省略可能       |
+| trackingId    | Guid         | 開発者により指定される一意の追跡 ID。 このパラメーターは itemId と共に使用します。                                                                                                                                                                                                                                     | 省略可能       |
+| productId     | String       | [製品の照会](query-for-products.md)で返される productId 値。 このパラメーターは transactionId と共に使用します。                                                                                                                                                                                            | なし       |
+| transactionId | Guid         | 次のいずれかのソースから取得されるトランザクション ID 値:                                                                                                                                                                                                                                      | なし       |
+|               |              | * [PurchaseResults](https://msdn.microsoft.com/library/windows/apps/dn263392) クラスの [TransactionID](https://msdn.microsoft.com/library/windows/apps/dn263396) プロパティ。   |        |
 |               |              | * The app or product receipt that is returned by [RequestProductPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/dn263381)、[RequestAppPurchaseAsync](https://msdn.microsoft.com/library/windows/apps/hh967813)、または [GetAppReceiptAsync](https://msdn.microsoft.com/library/windows/apps/hh967811) から返されるアプリまたは製品の通知。   |        |
 |               |              | * [製品の照会](query-for-products.md)で返される transactionId パラメーター。   |        |        
 |               |              | このパラメーターは productId と共に使用します。   |        |
  
+<br/>
 
 UserIdentity オブジェクトには以下のパラメーターが含まれています。
 
-| パラメーター            | タイプ   | Description                                                                                                                                 | 必須かどうか |
+| パラメーター            | タイプ   | 説明                                                                                                                                 | 必須かどうか |
 |----------------------|--------|---------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| identityType         | string | 文字列値 **b2b** を指定します。                                                                                                           | あり      |
+| identityType         | string | 文字列値 **b2b** を指定します。                                                                                                           | 必須      |
 | identityValue        | string | Windows ストア ID キーの文字列値。                                                                                                   | 必須      |
-| localTicketReference | string | 返された応答で必要な識別子。 Windows ストア ID キーの *userId* 要求と同じ値を使用することをお勧めします。 | あり      |
+| localTicketReference | string | 返された応答で必要な識別子。 Windows ストア ID キーの *userId* 要求と同じ値を使用することをお勧めします。 | 必須      |
 
- 
+<br/> 
 
 ### 要求の例
 
@@ -142,7 +146,7 @@ Date: Tue, 22 Sep 2015 20:40:55 GMT
 | 401  | 権限がありません | PartnerAadTicketRequired   | Azure AD アクセス トークンが承認ヘッダーでサービスに渡されませんでした。                                                                                                   |
 | 401  | 権限がありません | InconsistentClientId       | 要求の本文の Windows ストア ID の *clientId* 要求と承認ヘッダーの Azure AD アクセス トークンの *appid* 要求が一致しません。                     |
 
- 
+<br/> 
 
 ## 関連トピック
 
@@ -156,8 +160,6 @@ Date: Tue, 22 Sep 2015 20:40:55 GMT
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

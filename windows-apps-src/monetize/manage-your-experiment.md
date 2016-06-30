@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
-Description: デベロッパー センター ダッシュ ボードで試験的機能を定義し、アプリでその試験的機能のコードを記述したら、試験的機能をアクティブ化し、デベロッパー センター ダッシュ ボードを使用して、試験的機能の結果を確認できます。
-title: デベロッパー センター ダッシュボードで試験的機能を管理する
+Description: "デベロッパー センター ダッシュ ボードで試験的機能を定義し、アプリでその試験的機能のコードを記述したら、試験的機能をアクティブ化し、デベロッパー センター ダッシュ ボードを使用して、試験的機能の結果を確認できます。"
+title: "デベロッパー センター ダッシュボードで試験的機能を管理する"
 ms.assetid: D48EE0B4-47F2-455C-8FB9-630769AC5ACE
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 24ca106cc83c4495657972f463c556585cdfcb45
+
 ---
 
 # デベロッパー センター ダッシュボードで試験的機能を管理する
@@ -53,6 +57,7 @@ ms.assetid: D48EE0B4-47F2-455C-8FB9-630769AC5ACE
   * [A/B テストを使用してアプリの試験的機能を実行する](run-app-experiments-with-a-b-testing.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: アプリのパッケージをユーザーが使用できるようになるしくみと、特定のパッケージ シナリオを管理する方法について説明します。
-title: アプリ パッケージ管理のガイダンス
+Description: "アプリのパッケージをユーザーが使用できるようになるしくみと、特定のパッケージ シナリオを管理する方法について説明します。"
+title: "アプリ パッケージ管理のガイダンス"
 ms.assetid: 55405D0B-5C1E-43C8-91A1-4BFDD336E6AB
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: ac8d150f426c7d32e8a3b61b7f08cc0b84feedb8
+
 ---
 
 # アプリ パッケージ管理のガイダンス
@@ -134,6 +138,7 @@ Windows Phone 8.1 用に以前公開されていたアプリを更新する場�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: アプリ申請プロセスの [価格と使用可能状況] のページでは、アプリの料金、無料の試用版を提供するかどうか、およびいつ、どこで、どのようにアプリをユーザーに提供するかを決定できます。
-title: アプリの価格と使用可能状況の設定
+Description: "アプリ申請プロセスの [価格と使用可能状況] のページでは、アプリの料金、無料の試用版を提供するかどうか、およびいつ、どこで、どのようにアプリをユーザーに提供するかを決定できます。"
+title: "アプリの価格と使用可能状況の設定"
 ms.assetid: 37BE7C25-AA74-43CD-8969-CBA3BD481575
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 509ef3b8b9ec06907fccc2dbbe29fa3c72cb8e5d
+
 ---
 
 # アプリの価格と使用可能状況の設定
@@ -98,6 +102,7 @@ Microsoft HoloLens で適切に実行されるようにアプリをテストし�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

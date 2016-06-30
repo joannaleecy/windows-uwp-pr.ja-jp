@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: 69E05E56-B5F0-4D4C-A1FF-B6EAFF5D0E28
-description: 提出プロセス中に、表示する広告の仲介動作を構成できます。 コードを変更したり新しいパッケージを提出したりすることなく、この構成を後で調整することができます。
-title: アプリの提出と広告の仲介の構成
+description: "提出プロセス中に、表示する広告の仲介動作を構成できます。 コードを変更したり新しいパッケージを提出したりすることなく、この構成を後で調整することができます。"
+title: "アプリの提出と広告の仲介の構成"
+translationtype: Human Translation
+ms.sourcegitcommit: ec7ce299545de8e5c167e1934fb9a0b4f4370948
+ms.openlocfilehash: 13dd6a9c38d85ead29a43f470b7c0f63d025d612
+
 ---
 
 # アプリの提出と広告の仲介の構成
@@ -164,6 +168,7 @@ Microsoft advertising と Inneractive を均等に使用し、常に同じネッ
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

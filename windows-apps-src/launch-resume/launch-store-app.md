@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: Windows ストア アプリの起動
-description: ここでは、ms-windows-store URI スキームについて説明します。 アプリでこの URI スキームを使って、Windows ストア アプリを起動し、ストア内の特定のページを表示できます。
+author: TylerMSFT
+title: "Windows ストア アプリの起動"
+description: "ここでは、ms-windows-store URI スキームについて説明します。 アプリでこの URI スキームを使って、Windows ストア アプリを起動し、ストア内の特定のページを表示できます。"
 ms.assetid: 9A9C6576-1637-47D1-AC3B-D1A20D49E0FF
+ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
+ms.openlocfilehash: 9b48aeddb5ddc912fccd07149980655a06535470
+
 ---
 
 # Windows ストア アプリの起動
@@ -81,7 +84,7 @@ ms.assetid: 9A9C6576-1637-47D1-AC3B-D1A20D49E0FF
 <td>ms-windows-store://assoc/?Protocol=ms-word </td>
 </tr>
 <tr>
-<td>1 つまたは複数のタグに関連付けられた製品の検索を起動します。 タグはコンマで区切る必要があります。 
+<td>1 つまたは複数のタグに関連付けられた製品の検索を起動します。 タグはコンマで区切る必要があります。
 </td>
 <td />
 <td>
@@ -91,7 +94,7 @@ ms.assetid: 9A9C6576-1637-47D1-AC3B-D1A20D49E0FF
 </tr>
 <tr>
 <td>
-指定されたクエリの検索を起動します。 クエリ内で空白文字を使うことができます。 
+指定されたクエリの検索を起動します。 クエリ内で空白文字を使うことができます。
 </td>
 <td />
 <td>ms-windows-store://search/?query=OneNote </td>
@@ -105,7 +108,7 @@ ms.assetid: 9A9C6576-1637-47D1-AC3B-D1A20D49E0FF
 </td>
 </tr>
 <tr>
-<td>指定した発行元からの製品の検索を起動します。 名前には空白文字を使うことができます。 
+<td>指定した発行元からの製品の検索を起動します。 名前には空白文字を使うことができます。
 </td>
 <td />
 <td>ms-windows-store://publisher/?name=Microsoft Corporation
@@ -128,8 +131,6 @@ ms.assetid: 9A9C6576-1637-47D1-AC3B-D1A20D49E0FF
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

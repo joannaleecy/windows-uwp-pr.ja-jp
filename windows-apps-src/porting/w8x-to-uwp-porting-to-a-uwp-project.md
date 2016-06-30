@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
-description: 移植プロセスを開始するとき、2 つの方法から選ぶことができます。
-title: Windows ランタイム 8.x プロジェクトの UWP プロジェクトへの移植'
+description: "移植プロセスを開始するとき、2 つの方法から選ぶことができます。"
+title: "Windows ランタイム 8.x プロジェクトの UWP プロジェクトへの移植'"
 ms.assetid: 2dee149f-d81e-45e0-99a4-209a178d415a
+translationtype: Human Translation
+ms.sourcegitcommit: 07058b48a527414b76d55b153359712905aa9786
+ms.openlocfilehash: 60f59c58aedc56da58350a050acd184a376b8067
+
 ---
 
 # Windows ランタイム 8.x プロジェクトの UWP プロジェクトへの移植
@@ -172,6 +176,7 @@ private void HardwareButtons_CameraPressed(object sender, Windows.Phone.UI.Input
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

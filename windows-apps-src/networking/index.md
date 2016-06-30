@@ -1,8 +1,12 @@
 ---
 author: DelfCo
 ms.assetid: 7bb9fd81-8ab5-4f8d-a854-ce285b0669a4
-description: ネットワークと Web サービスにアクセスするためのテクノロジ。
-title: ネットワークと Web サービス
+description: "ネットワークと Web サービスにアクセスするためのテクノロジ。"
+title: "ネットワークと Web サービス"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: df62edbf63777a8fcec4ab08c1fb56ab76ea6624
+
 ---
 
 # ネットワークと Web サービス
@@ -24,6 +28,7 @@ title: ネットワークと Web サービス
 | [EDP ID を使ったネットワーク接続のタグ付け](tagging_network_connections_with_edp_identity.md) | このトピックでは、エンタープライズ データ保護 (EDP) のシナリオでネットワーク接続を作成する前に、保護されたスレッド コンテキストを作成する方法を説明します。 |
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

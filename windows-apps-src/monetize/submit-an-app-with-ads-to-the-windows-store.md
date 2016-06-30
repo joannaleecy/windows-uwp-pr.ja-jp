@@ -1,8 +1,12 @@
 ---
 author: mcleanbyron
 ms.assetid: b307fc7d-0424-459d-8c20-e37e5cfec0d0
-description: ストアに公開する前に、Microsoft Advertising ライブラリを利用するアプリで満たす必要がある要件について説明します。
-title: 広告を含むアプリを Windows ストアに提出する
+description: "ストアに公開する前に、Microsoft Advertising ライブラリを利用するアプリで満たす必要がある要件について説明します。"
+title: "広告を含むアプリを Windows ストアに提出する"
+translationtype: Human Translation
+ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
+ms.openlocfilehash: d2e6f9873b2539f9c0558abdc9ee936b938a03b1
+
 
 ---
 
@@ -25,6 +29,7 @@ Windows ストアに提出するすべてのアプリは、[Windows ストア �
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

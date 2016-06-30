@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
-description: クロスプラットフォーム アプリを開発するときの選択肢
-title: iOS と UWP のアプリ開発方法の選択
+description: "クロスプラットフォーム アプリを開発するときの選択肢"
+title: "iOS と UWP のアプリ開発方法の選択"
 ms.assetid: 5CDAB313-07B7-4A32-A49B-026361DCC853
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 2703a0c919b08331cc7ab55fe78b868555312ac0
+
 ---
 
 # iOS と UWP のアプリ開発方法の選択
@@ -91,6 +95,7 @@ Windows と iOS はまったく違うものに見えるかもしれませんが�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

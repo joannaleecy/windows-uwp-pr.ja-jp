@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: ユニバーサル Windows プラットフォーム (UWP) DirectX ゲームの入力待ち時間の最適化
-description: 入力待ち時間はゲーム エクスペリエンスに大きな影響を与えるため、最適化するとゲームがより洗練されたものに感じられます。
+title: "ユニバーサル Windows プラットフォーム (UWP) DirectX ゲームの入力待ち時間の最適化"
+description: "入力待ち時間はゲーム エクスペリエンスに大きな影響を与えるため、最適化するとゲームがより洗練されたものに感じられます。"
 ms.assetid: e18cd1a8-860f-95fb-098d-29bf424de0c0
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 19bcf043f3fc8c729f5f9fbbeee237bd1749443d
+
 ---
 
 #  ユニバーサル Windows プラットフォーム (UWP) DirectX ゲームの入力待ち時間の最適化
@@ -257,6 +261,7 @@ Windows 8.1 では、DXGI にスワップ チェーンの **DXGI\_SWAP\_CHAIN\_F
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-Description: トグル スイッチは、ユーザーが項目をオンまたはオフに切り替えることができる物理的なスイッチを表します。
-title: トグル スイッチ コントロールのガイドライン
+Description: "トグル スイッチは、ユーザーが項目をオンまたはオフに切り替えることができる物理的なスイッチを表します。"
+title: "トグル スイッチ コントロールのガイドライン"
 ms.assetid: 753CFEA4-80D3-474C-B4A9-555F872A3DEF
 label: Toggle switches
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
+ms.openlocfilehash: e90760c6894ee5d32ba1063993a703023d23c152
+
 ---
 # トグル スイッチ
 
@@ -159,6 +163,7 @@ private void ToggleSwitch_Toggled(object sender, RoutedEventArgs e)
 - [**ToggleSwitch クラス**](https://msdn.microsoft.com/library/windows/apps/br209712)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

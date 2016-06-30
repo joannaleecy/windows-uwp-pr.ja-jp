@@ -1,60 +1,65 @@
 ---
-title: Export restrictions on cryptography
-description: Use this info to determine if your app uses cryptography in a way that might prevent it from being listed in the Windows Store.
+title: "暗号化に関する輸出制限の順守"
+description: "Windows ストアで認定されない原因となり得るような暗号化がアプリで使われていないかを判断するためにこの情報をご利用ください。"
 ms.assetid: 204C7D1D-6F08-4AEE-A333-434D715E7617
 author: awkoren
+translationtype: Human Translation
+ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
+ms.openlocfilehash: 37d6131891e93d73021c860df45d1b5fdd7cfa53
+
 ---
 
-# Export restrictions on cryptography
+# 暗号化に関する輸出制限の順守
 
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-Use this info to determine if your app uses cryptography in a way that might prevent it from being listed in the Windows Store.
+Windows ストアで認定されない原因となり得るような暗号化がアプリで使われていないかを判断するためにこの情報をご利用ください。
 
-The Bureau of Industry and Security in the United States Department of Commerce regulates the export of technology that uses certain types of encryption. All apps listed in the Windows Store must comply with these laws and regulations because the app files can be stored in the United States. Even apps that are uploaded by app developers from other countries for distribution outside of the United States must comply with these regulations. Consequently, when submitting an app to the Windows Store, all app developers must make sure that their apps don't contain any technology that is restricted by these regulations.
+米国商務省産業安全保障局は、一部の種類の暗号化を使う技術の輸出を規制しています。 アプリ ファイルは米国内に保存することができるため、Windows ストアに表示されているすべてのアプリはこれらの法律と規制に従う必要があります。 米国以外の国で配布することを目的として他の国からアプリ開発者によってアップロードされたアプリについても、これらの規制に従う必要があります。 このため、Windows ストアにアプリを提出する際には、すべてのアプリ開発者はこれらの規制で制限されている技術がアプリに含まれていないことを確かめる必要があります。
 
-> **Note**  The information provided here provides some guidance, but it is your responsibility as the app developer who is publishing apps in the Windows Store to make sure that your app complies with all applicable laws and regulations.
+> **注:** ここにある情報をガイドとして利用できますが、適用されるすべての法律と規制をアプリが順守していることの確認は、Windows ストアでアプリを公開するアプリ開発者の責任で行う必要があります。
 
  
 
-For more info about the U.S.
+米国商務省と産業安全保障局の詳しい情報については、[産業安全保障局の Web サイト](http://go.microsoft.com/fwlink/p/?LinkID=245644)をご覧ください。
 
-Department of Commerce and the Bureau of Industry and Security, see [About the Bureau of Industry and Security](http://go.microsoft.com/fwlink/p/?LinkID=245644).
+暗号化を含む技術の輸出を管理する輸出管理規制 (EAR) の情報については、[暗号化技術を使う品目に対する輸出管理規制に関する Web ページ](http://go.microsoft.com/fwlink/p/?LinkID=245645)をご覧ください。
 
-## For info about the Export Administration Regulations (EAR) that govern the export of technology that includes encryption, see [EAR Controls for Items That Use Encryption](http://go.microsoft.com/fwlink/p/?LinkID=245645).
+## 管理対象の使用
 
-Governed uses First, determine if your app uses a type of cryptography that is governed by the Export Administration Regulations.
+まず、輸出管理規制の対象となる暗号化の種類をアプリが使っているかどうかを判断します。 この質問には、ここで一覧に示している例も含まれていますが、この一覧が暗号化の応用のすべてではないことに注意してください。
 
-> The question includes the examples shown in the list here; but remember that this list doesn't include every possible application of cryptography.
+> **重要:** アプリ用に自分で記述したコードだけでなく、アプリに含まれたりリンクされたりしているすべてのソフトウェア ライブラリ、ユーティリティ、オペレーティング システム コンポーネントについても考慮してください。
 
--   **Important**  Consider not only the code you wrote for your app, but also all the software libraries, utilities and operating system components that your app includes or links to.
--   Any use of a digital signature, such as authentication or integrity checking
--   Encryption of any data or files that your app uses or accesses
--   Key management, certificate management, or anything that interacts with a public key infrastructure
--   Using a secure communication channel such as NTLM, Kerberos, Secure Sockets Layer (SSL), or Transport Layer Security (TLS)
--   Encrypting passwords or other forms of information security
--   Copy protection or digital rights management (DRM)
+-   認証、整合性チェックなどの、デジタル署名の使用
+-   アプリが使ったりアクセスしたりするデータまたはファイルの暗号化
+-   キー管理、証明書管理、または公開キー インフラストラクチャとやり取りのある操作
+-   NTLM、Kerberos、Secure Sockets Layer (SSL)、トランスポート層セキュリティ (TLS) などの、セキュリティで保護された通信チャネルの使用
+-   暗号化パスワードなどによる情報セキュリティ
+-   コピー防止やデジタル著作権管理 (DRM)
+-   ウイルス対策機能
 
-Antivirus protection
+暗号化の適用に関する最新の一覧については、[暗号化技術を使う品目に対する輸出管理規制に関する Web ページ](http://go.microsoft.com/fwlink/p/?LinkID=245645)をご覧ください。
 
-## For the complete and current list of cryptographic applications, see [EAR Controls for Items That Use Encryption](http://go.microsoft.com/fwlink/p/?LinkID=245645).
+## 制限なしの使用
 
-Non-restricted uses Note that some of the applications of cryptography are not restricted.
+一部の暗号化の適用は制限されていません。 次のタスクは、制限を受けません。
 
--   Here are the unrestricted tasks:
--   Password encryption
--   Copy protection
--   Authentication
--   Digital rights management
+-   パスワードの暗号化
+-   コピー防止
+-   認証
+-   デジタル著作権管理
+-   デジタル署名の使用
 
-Using digital signatures
+暗号化の適用に関する最新の一覧については、[暗号化技術を使う品目に対する輸出管理規制に関する Web ページ](http://go.microsoft.com/fwlink/p/?LinkID=245645)をご覧ください。
 
-For the complete and current list of cryptographic applications, see [EAR Controls for Items That Use Encryption](http://go.microsoft.com/fwlink/p/?LinkID=245645).
+アプリがこの一覧に含まれないタスクについて暗号化を呼び出す、サポートする、組み込む、または使う場合は、輸出規制品目番号 (ECCN) が必要です。
 
-If your app calls, supports, contains, or uses cryptography or encryption for any task that is not in this list, it needs an Export Commodity Classification Number (ECCN).
+ECCN を持っていない場合は、[ECCN についての質問とその回答が掲載された Web ページ](http://go.microsoft.com/fwlink/p/?LinkID=245646)をご覧ください。
 
 
-<!--HONumber=Jun16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

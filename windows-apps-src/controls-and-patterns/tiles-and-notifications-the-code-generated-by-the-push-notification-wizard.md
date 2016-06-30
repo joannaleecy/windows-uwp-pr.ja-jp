@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: Visual Studio でウィザードを使うことで、Azure のモバイル サービスで作成されたモバイル サービスからプッシュ通知を生成できます。
-title: プッシュ通知ウィザードにより生成されるコード
+Description: "Visual Studio でウィザードを使うことで、Azure のモバイル サービスで作成されたモバイル サービスからプッシュ通知を生成できます。"
+title: "プッシュ通知ウィザードにより生成されるコード"
 ms.assetid: 340F55C1-0DDF-4233-A8E4-C15EF9030785
 label: TBD
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 6b7bf3c8019e6c3e92fd07b114cdc688fe7ad8de
+
 ---
 
 # プッシュ通知ウィザードにより生成されるコード
@@ -249,6 +253,7 @@ Window Azure のモバイル サービスの柔軟性が不十分な場合、C# 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,7 +1,11 @@
 ---
-title: Windows 10 ユニバーサル Windows プラットフォーム (UWP) アプリの自動起動
-description: 開発者はプロトコルのアクティブ化および起動アクティブ化を使って、自動テスト用に UWP アプリや UWP ゲームを自動で起動できます。
+title: "Windows 10 ユニバーサル Windows プラットフォーム (UWP) アプリの自動起動"
+description: "開発者はプロトコルのアクティブ化および起動アクティブ化を使って、自動テスト用に UWP アプリや UWP ゲームを自動で起動できます。"
 author: listurm
+translationtype: Human Translation
+ms.sourcegitcommit: adf2d16f9c208631f91fbcad19d1ea8087cd9cb5
+ms.openlocfilehash: ae2f80a915f4aed90c269c37a11d01a2f6c9849e
+
 ---
 
 # Windows 10 UWP アプリの自動起動
@@ -204,6 +208,7 @@ Platform::String^ argval = launchArgs->Arguments;
 以上のように、UWP アプリはさまざまな方法で起動することができます。 要件や用途に応じて、適切な方法を利用してください。 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

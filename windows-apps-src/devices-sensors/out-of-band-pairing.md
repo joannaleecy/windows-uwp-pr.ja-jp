@@ -1,8 +1,12 @@
 ---
 author: IvorB
 ms.assetid: E9ADC88F-BD4F-4721-8893-0E19EA94C8BA
-title: 帯域外ペアリング
-description: 帯域外ペアリングを使うと、アプリは検出を行わなくても店舗販売時点管理の周辺機器に接続できます。
+title: "帯域外ペアリング"
+description: "帯域外ペアリングを使うと、アプリは検出を行わなくても店舗販売時点管理の周辺機器に接続できます。"
+translationtype: Human Translation
+ms.sourcegitcommit: 0bf96b70a915d659c754816f4c115f3b3f0a5660
+ms.openlocfilehash: d8d37b779a0f9a4bec36d73fcd2d35272c587b11
+
 ---
 # 帯域外ペアリング
 
@@ -85,6 +89,7 @@ printer = await PosPrinter.FromIdAsync(oobBlobBTPrinter);
 ```
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

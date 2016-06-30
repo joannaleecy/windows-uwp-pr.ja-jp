@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Windows ストアでアプリやコンテンツの販売を促進する方法について説明します。 これらのガイドラインでは、利用可能なアセットの使用方法について説明し、印刷、テレビ、ソーシャル メディア、デジタル広告でアプリの販売を促進するための推奨事項を紹介します。
-title: Windows ストア アプリのマーケティング ガイドライン
+Description: "Windows ストアでアプリやコンテンツの販売を促進する方法について説明します。 これらのガイドラインでは、利用可能なアセットの使用方法について説明し、印刷、テレビ、ソーシャル メディア、デジタル広告でアプリの販売を促進するための推奨事項を紹介します。"
+title: "Windows ストア アプリのマーケティング ガイドライン"
 ms.assetid: CEB81E9D-5C64-458F-AAF1-C59BBBBB272E
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 64c6dd45053070096ff7d7e932bac1c560194518
+
 ---
 
 # Windows ストア アプリのマーケティング ガイドライン
@@ -53,6 +57,7 @@ Microsoft は、Microsoft マークおよび関連する営業権の唯一の所
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

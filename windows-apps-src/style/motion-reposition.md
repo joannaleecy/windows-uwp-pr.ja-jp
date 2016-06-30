@@ -1,10 +1,14 @@
 ---
 author: mijacobs
-Description: 位置変更アニメーションを使って、1 つまたは複数の要素を新しい位置に移動します。
-title: UWP アプリでの位置変更アニメーション
+Description: "位置変更アニメーションを使って、1 つまたは複数の要素を新しい位置に移動します。"
+title: "UWP アプリでの位置変更アニメーション"
 ms.assetid: 25D1EE31-5C25-4F21-B34C-FBD8FB1C8FFF
 label: Motion--Reposition
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: ba8679a5f06895cef52cbc229f4487997a17bf35
+
 ---
 
 # 位置変更アニメーション
@@ -44,6 +48,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

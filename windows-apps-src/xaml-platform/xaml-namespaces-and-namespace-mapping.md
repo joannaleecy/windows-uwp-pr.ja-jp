@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: ここでは、ほとんどの XAML ファイルのルート要素で行われる XML/XAML 名前空間 (xmlns) マッピングについて説明します。 また、カスタム型やカスタム アセンブリに対して同様のマッピングを行う方法についても説明します。
-title: XAML 名前空間と名前空間マッピング
+description: "ここでは、ほとんどの XAML ファイルのルート要素で行われる XML/XAML 名前空間 (xmlns) マッピングについて説明します。 また、カスタム型やカスタム アセンブリに対して同様のマッピングを行う方法についても説明します。"
+title: "XAML 名前空間と名前空間マッピング"
 ms.assetid: A19DFF78-E692-47AE-8221-AB5EA9470E8B
+translationtype: Human Translation
+ms.sourcegitcommit: 3ca9492b334bf4b3d4f0fcab8fca5625f4e23fa5
+ms.openlocfilehash: fe24a66836d85e8d102ebc6b23b42c32a687c593
+
 ---
 
 # XAML 名前空間と名前空間マッピング
@@ -109,6 +113,7 @@ XAML で使うコードを定義するときに入れ子になった型を使わ
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

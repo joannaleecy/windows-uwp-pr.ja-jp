@@ -1,10 +1,14 @@
 ---
 author: Jwmsft
-title: 分割ビュー
+title: "分割ビュー"
 ms.assetid: E9E4537F-1160-4183-9A83-26602FCFDC9A
-description: 分割ビュー コントロールには、展開/折りたたみ可能なウィンドウとコンテンツ領域があります。
+description: "分割ビュー コントロールには、展開/折りたたみ可能なウィンドウとコンテンツ領域があります。"
 label: Split view
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 391bfdbbf09474ad707dbbf306d4997825fa8386
+
 ---
 
 # SplitView コントロールのガイドライン
@@ -58,6 +62,7 @@ template: detail.hbs
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: Direct3D 9 と Direct3D 11 の間の重要な変更点
-description: このトピックでは、DirectX 9 と DirectX 11 の大まかな違いについて説明します。
+title: "Direct3D 9 と Direct3D 11 の間の重要な変更点"
+description: "このトピックでは、DirectX 9 と DirectX 11 の大まかな違いについて説明します。"
 ms.assetid: 35a9e388-b25e-2aac-0534-577b15dae364
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 8d63aebaf656b62481675eebf7c0bf9ea51784a8
+
 ---
 
 # Direct3D 9 と Direct3D 11 の間の重要な変更点
@@ -113,6 +117,7 @@ Direct3D 9 では、共有配列と一緒に SetVertexShaderConstant と SetPixe
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: コントロールの追加
-description: 次は、ゲーム サンプルで 3-D ゲームにムーブ/ルック コントロールを実装する方法と、タッチ コントローラー用、マウス コントローラー用、ゲーム コントローラー用の基本的なコントロールを開発する方法について説明します。
+title: "コントロールの追加"
+description: "次は、ゲーム サンプルで 3-D ゲームにムーブ/ルック コントロールを実装する方法と、タッチ コントローラー用、マウス コントローラー用、ゲーム コントローラー用の基本的なコントロールを開発する方法について説明します。"
 ms.assetid: f9666abb-151a-74b4-ae0b-ef88f1f252f8
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: b3297ffd92d9a61d73c574def7e8101dc9196a69
+
 ---
 
 # コントロールの追加
@@ -202,7 +206,7 @@ bool MoveLookController::IsFiring()
 }
 ```
 
-プレイヤーがゲームのメイン ウィンドウの外にポインターを動かすか、一時停止ボタン (P キーまたは Xbox コントローラーのスタート ボタン) を押すと、ゲームは一時停止する必要があります。 **MoveLookController** は、この押し操作を登録し、**IsPauseRequested** メソッドを呼び出すときにゲーム ループに通知します。 その時点で、**IsPauseRequested** が **true** を返すと、ゲーム ループは **MoveLookController** の **WaitForPress** を呼び出して、コントローラーを **WaitForInput** 状態にします。 その後 **MoveLookController** は、プレイヤーがメニュー項目いずれか (読み込み、続行、ゲーム終了) を選び、ゲームプレイ入力イベントの処理が終了するまで待機してから、**Active** 状態に戻ります。
+プレイヤーがゲームのメイン ウィンドウの外にポインターを動かすか、一時停止ボタン (P キーまたは Xbox コントローラーのスタート ボタン) を押すと、ゲームは一時停止する必要があります。 **MoveLookController** は、この押し操作を登録し、**IsPauseRequested** メソッドを呼び出すときにゲーム ループに通知します。 その時点で、**IsPauseRequested** が **true** を返すと、ゲーム ループは **MoveLookController** の **WaitForPress** を呼び出して、コントローラーを **WaitForInput** 状態にします。 **MoveLookController** はこの後、プレイヤーが読み込み、続行、ゲーム終了のいずれかのメニュー項目を選択して、ゲームプレイ入力イベントの処理を終了するまで待機してから、**Active** 状態に戻ります。
 
 [このセクションのコード サンプル一式](#code_sample)をご覧ください。
 
@@ -1913,7 +1917,7 @@ void MoveLookController::UpdateGameController()
 ```
 
 > **注**  
-この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブ ドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
+この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
  
 
@@ -1931,6 +1935,7 @@ void MoveLookController::UpdateGameController()
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

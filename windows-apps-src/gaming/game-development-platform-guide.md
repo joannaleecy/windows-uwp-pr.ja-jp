@@ -1,8 +1,12 @@
 ---
 author: mtoepke
-title: ユニバーサル Windows プラットフォーム (UWP) アプリのゲーム テクノロジ
-description: このガイドでは、ユニバーサル Windows プラットフォーム UWP ゲームの開発に利用できるテクノロジについて説明します。
+title: "ユニバーサル Windows プラットフォーム (UWP) アプリのゲーム テクノロジ"
+description: "このガイドでは、ユニバーサル Windows プラットフォーム UWP ゲームの開発に利用できるテクノロジについて説明します。"
 ms.assetid: bc4d4648-0d6e-efbb-7608-80bd09decd6e
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 3c7807d0b46a32bfe90c79b7eee3111039ca94ab
+
 ---
 
 # ユニバーサル Windows プラットフォーム (UWP) アプリのゲーム テクノロジ
@@ -352,6 +356,7 @@ Windows ストアへのゲームの提出については、<https://dev.windows.
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

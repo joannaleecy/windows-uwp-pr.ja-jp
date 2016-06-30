@@ -3,6 +3,10 @@ author: Jwmsft
 ms.assetid: CC1BF51D-3DAC-4198-ADCB-1770B901C2FC
 label: Text box
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
+ms.openlocfilehash: 873ca8f869f4303f8fc4a9a7ff08f81df29d367d
+
 ---
 # テキスト ボックス
 TextBox コントロールによって、ユーザーはアプリにテキストを入力できます。 通常、1 行のテキストを取得するために使用されますが、複数行のテキストを取得するように構成できます。 テキストは、シンプルで同様のプレーンテキスト形式で画面に表示されます。
@@ -82,8 +86,7 @@ rootGrid.Children.Add(textBox);
 
 IsReadOnly プロパティを true に設定すると、TextBox を読み取り専用にすることができます。 たとえば、ユーザーがコメントを入力するための TextBox が特定の条件下でのみ有効になるとします。 条件が満たされるまでは、TextBox を読み取り専用にすることができます。 テキストの表示のみが必要である場合は、代わりに TextBlock や RichTextBlock の使用を検討してください。
 
-読み取り専用テキスト ボックスの見た目は読み取り/書き込み可能なテキスト ボックスと同じであるため、ユーザーを混乱させる可能性があります。 
-ユーザーはテキストを選択してコピーできます。
+読み取り専用テキスト ボックスの見た目は読み取り/書き込み可能なテキスト ボックスと同じであるため、ユーザーを混乱させる可能性があります。 ユーザーはテキストを選択してコピーできます。
 IsEnabled
 
 
@@ -282,6 +285,7 @@ private void TextBox1_SelectionChanged(object sender, RoutedEventArgs e)
 - [String.Length プロパティ](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

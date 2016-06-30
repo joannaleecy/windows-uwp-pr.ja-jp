@@ -1,8 +1,12 @@
 ---
 author: TylerMSFT
 ms.assetid: F87DBE2F-77DB-4573-8172-29E11ABEFD34
-title: ピッカーでファイルやフォルダーを開く
-description: ユーザーがピッカーを操作してファイルやフォルダーにアクセスできるようにします。 ファイルへのアクセスには FileOpenPicker クラスと FileSavePicker クラス、フォルダーへのアクセスには FolderPicker を使います。
+title: "ピッカーでファイルやフォルダーを開く"
+description: "ユーザーがピッカーを操作してファイルやフォルダーにアクセスできるようにします。 ファイルへのアクセスには FileOpenPicker クラスと FileSavePicker クラス、フォルダーへのアクセスには FolderPicker を使います。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: efb0b106c779820b2dee48eff6f09b54ae9ef2c4
+
 ---
 
 # ピッカーでファイルやフォルダーを開く
@@ -19,7 +23,7 @@ description: ユーザーがピッカーを操作してファイルやフォル�
 
 ユーザーがピッカーを操作してファイルやフォルダーにアクセスできるようにします。 ファイルへのアクセスには [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) クラスと [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) クラス、フォルダーへのアクセスには [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881) を使います。
 
-**注** [ファイル ピッカーのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619994) に関するページも参照してください。
+**注**  [ファイル ピッカーのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619994)に関するページも参照してください。
 
  
 
@@ -54,7 +58,7 @@ description: ユーザーがピッカーを操作してファイルやフォル�
 
 アプリでは、ファイル ピッカーを通じてユーザーのシステム上のファイルとフォルダーにアクセスします。 ユーザーはピッカーを通じてシステムを参照し、開くまたは保存するファイル (またはフォルダー) を選ぶことができます。 アプリではこれらの選択を [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトと [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) オブジェクトとして受け取ることにより、それらを操作できます。
 
-ピッカーは単一の統一されたインターフェイスを使って、ユーザーがファイル システムや他のアプリのファイルとフォルダーを選べるようにします。 他のアプリから選ばれたファイルは、ファイル システムから選ばれたファイルと同様に、[**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトとして返されます。 通常、アプリはそれらのオブジェクトも、他の同様のオブジェクトと同じ方法で操作できます。 他のアプリは、ファイル ピッカー コントラクトに参加することで、ファイルを利用できるようにします。 ファイル、保存場所、またはファイルの更新を他のアプリに提供する方法は、「[ファイル ピッカー コントラクトとの統合](https://msdn.microsoft.com/library/windows/apps/hh465192)」を参照してください。
+ピッカーは単一の統一されたインターフェイスを使って、ユーザーがファイル システムや他のアプリのファイルとフォルダーを選べるようにします。 他のアプリから選ばれたファイルは、ファイル システムから選ばれたファイルと同様に、[**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトとして返されます。 通常、アプリはそれらのオブジェクトも、他の同様のオブジェクトと同じ方法で操作できます。 他のアプリは、ファイル ピッカー コントラクトに参加することで、ファイルを利用できるようにします。 ファイル、保存場所、またはファイルの更新を他のアプリに提供する場合は、「[ファイル ピッカー コントラクトとの統合](https://msdn.microsoft.com/library/windows/apps/hh465192)」を参照してください。
 
 たとえば、ユーザーがファイルを開けるように、アプリでファイル ピッカーを呼び出すとします。 この場合、アプリは呼び出し元アプリになります。 ファイル ピッカーは、システムや他のアプリと情報をやり取りして、ユーザーがファイルを探して選べるようにします。 ユーザーがファイルを選ぶと、ファイル ピッカーはそのファイルをアプリに返します。 ここでは、ユーザーが OneDrive のような別のアプリからファイルを選ぶ場合のプロセスを示しています。 この場合、OneDrive は提供元アプリです。
 
@@ -84,7 +88,7 @@ else
 }
 ```
 
-複数のファイルを選ぶコードについては、「[ファイル ピッカーのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619994)」を参照してください。
+複数のファイルを選ぶコードについては、[ファイル ピッカーのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619994)を参照してください。
 
 ## 1 つのファイルを選んで開く: 手順
 
@@ -108,8 +112,7 @@ var picker = new Windows.Storage.Pickers.FileOpenPicker();
 この例では、[**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855)、[**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854)、および [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850) という 3 つのプロパティを設定して、ユーザーが画像ファイルを選べる視覚的に優れた表示を作成し、使いやすい場所に配置します。
 
 -   [
-            **ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855) を **Thumbnail** 
-          [**PickerViewMode**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#thumbnail) 列挙値に設定すると、ファイル ピッカーで画像ファイルが縮小表示の画像で表され、視覚的に優れた表示が作成されます。 これは、画像やビデオなどの視覚的なファイルを選ぶ場合に設定します。 それ以外の場合は、[**PickerViewMode.List**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#list) を使います。 **画像またはビデオの添付**機能と**ドキュメントの添付**機能がある架空のメール アプリでは、ファイル ピッカーを表示する前に **ViewMode** をそれらの機能に対応させます。
+            **ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855) を **Thumbnail** [**PickerViewMode**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#thumbnail) 列挙値に設定すると、ファイル ピッカーで画像ファイルが縮小表示の画像で表され、視覚的に優れた表示が作成されます。 これは、画像やビデオなどの視覚的なファイルを選ぶ場合に設定します。 それ以外の場合は、[**PickerViewMode.List**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#list) を使います。 **画像またはビデオの添付**機能と**ドキュメントの添付**機能がある架空のメール アプリでは、ファイル ピッカーを表示する前に **ViewMode** をそれらの機能に対応させます。
 
 -   [
             **PickerLocationId.PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br207890) を使って [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) を Pictures に設定すると、画像を見つけられる可能性が高い場所が最初に表示されます。 選ぶファイルの種類 (音楽、画像、ビデオ、ドキュメントなど) に合わせて **SuggestedStartLocation** を設定します。 ユーザーは、開始場所から別の場所に移動できます。
@@ -190,6 +193,7 @@ else
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

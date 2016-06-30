@@ -1,10 +1,14 @@
 ---
 author: DelfCo
-Description: 日付、時刻、数字、通貨を適切に書式設定することで、グローバル対応のアプリを開発します。
-title: グローバル対応の形式の使用
+Description: "日付、時刻、数字、通貨を適切に書式設定することで、グローバル対応のアプリを開発します。"
+title: "グローバル対応の形式の使用"
 ms.assetid: 6ECE8BA4-9A7D-49A6-81EE-AB2BE7F0254F
 label: Use global-ready formats
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 77b5e7bd412936dd5d8c4bc252771631d6b884cf
+
 ---
 
 # <span id="dev_globalizing.use_global-ready_formats"></span>グローバル対応の形式の使用
@@ -191,6 +195,7 @@ template: detail.hbs
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

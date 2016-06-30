@@ -1,8 +1,11 @@
 ---
-author: mcleblanc
-title: アプリの事前起動の処理
-description: OnLaunched メソッドをオーバーライドすることで、アプリの事前起動を処理する方法について説明します。
+author: TylerMSFT
+title: "アプリの事前起動の処理"
+description: "OnLaunched メソッドをオーバーライドすることで、アプリの事前起動を処理する方法について説明します。"
 ms.assetid: A4838AC2-22D7-46BA-9EB2-F3C248E22F52
+ms.sourcegitcommit: 213384a194513a0f98a5f37e7f0e0849bf0a66e2
+ms.openlocfilehash: d9d3bdf86d858367008a32d9d6a06ec9fc13787d
+
 ---
 
 # アプリの事前起動の処理
@@ -59,7 +62,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
             // TODO: This is not a prelaunch activation. Perform operations which
             // assume that the user explicitly launched the app such as updating
-            // the online presence of the user on a social network, updating a 
+            // the online presence of the user on a social network, updating a
             // what's new feed, etc.
         }
 
@@ -99,8 +102,8 @@ public sealed partial class MainPage : Page
 
     void WindowVisibilityChangedEventHandler(System.Object sender, Windows.UI.Core.VisibilityChangedEventArgs e)
     {
-        // Perform operations that should take place when the application becomes visible rather than 
-        // when it is prelaunched, such as building a what's new feed 
+        // Perform operations that should take place when the application becomes visible rather than
+        // when it is prelaunched, such as building a what's new feed
     }
 }
 ```
@@ -128,8 +131,6 @@ public sealed partial class MainPage : Page
 
 
 
-
-
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

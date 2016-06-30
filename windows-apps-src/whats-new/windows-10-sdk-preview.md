@@ -1,7 +1,11 @@
 ---
 author: QuinnRadich
-title: Windows 10 の新着情報
-description: Windows 10 Anniversary SDK Preview ビルドと新しい開発者ツールを使うと、新しいユニバーサル Windows プラットフォームによって強化されたツール、機能、そしてエクスペリエンスが利用できます。
+title: "Windows 10 の新着情報"
+description: "Windows 10 Anniversary SDK Preview ビルドと新しい開発者ツールを使うと、新しいユニバーサル Windows プラットフォームによって強化されたツール、機能、そしてエクスペリエンスが利用できます。"
+translationtype: Human Translation
+ms.sourcegitcommit: 46b5ad404811894899810f83efb9970e338e7051
+ms.openlocfilehash: 5cce4a0fbfe85126f15cb013a9b46f058006a5e1
+
 ---
 
 # Windows の新着情報
@@ -24,6 +28,7 @@ Media API | Windows.Media.Playback 名前空間の新しい MediaBreak API で�
 マップ API | [MapControl](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mapcontrol.aspx#_blank) を改良し、開発者はカメラ周辺の表示領域を取得して、深い傾斜があるビューで遠く離れた地平線近くの領域は除外できるようになりました。 拡張した [MapLocationFinder](https://msdn.microsoft.com/library/windows/apps/windows.services.maps.maplocationfinder.aspx#_blank) クラスにより、必要な精度を指定することで、逆ジオコーディングを実行する場合にネットワーク トラフィックを最適化できます。 また、[LaunchUriAsync](https://msdn.microsoft.com/library/windows/apps/hh701480.aspx#_blank) メソッドを使用して緯度と経度を指定し、オフライン マップのダウンロードを利用できるようになりました。 詳しくは、「[Windows マップ アプリの起動](https://msdn.microsoft.com/windows/uwp/launch-resume/launch-maps-app#_blank)」をご覧ください。
 
 
-<!--HONumber=Jun16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

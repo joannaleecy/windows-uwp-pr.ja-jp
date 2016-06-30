@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: Windows デベロッパー センター ダッシュボードの取得レポートでは、アプリを取得したユーザーと共に、人口統計データやプラットフォームの詳細を確認できます。
-title: 取得レポート
+Description: "Windows デベロッパー センター ダッシュボードの取得レポートでは、アプリを取得したユーザーと共に、人口統計データやプラットフォームの詳細を確認できます。"
+title: "取得レポート"
 ms.assetid: 21126362-F3CD-4006-AD3F-82FC88E3B862
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: bfdf4f9f2d94a31a1c159e947615c10abf556aad
+
 ---
 
 # 取得レポート
@@ -63,6 +67,7 @@ Windows デベロッパー センター ダッシュボードの**取得**レポ
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

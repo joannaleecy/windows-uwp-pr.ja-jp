@@ -1,8 +1,12 @@
 ---
 author: drewbatgit
 ms.assetid: 40B97E0C-EB1B-40C2-A022-1AB95DFB085E
-description: この記事では、ユニバーサル Windows アプリからリモート デバイスにメディアをキャストする方法について説明します。
-title: メディアのキャスト
+description: "この記事では、ユニバーサル Windows アプリからリモート デバイスにメディアをキャストする方法について説明します。"
+title: "メディアのキャスト"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 9c8d549c9b770af351894f2a19dd035a43d70264
+
 ---
 
 # メディアのキャスト
@@ -156,6 +160,7 @@ StateChanged ハンドラーで実行する操作は、キャスト接続の新�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

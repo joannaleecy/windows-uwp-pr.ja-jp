@@ -1,8 +1,11 @@
 ---
 author: jnHs
-Description: Windows ストアでは、支払方法として携帯電話会社による課金を、この機能をサポートしている携帯電話会社に提供しています。
-title: 携帯電話会社による課金
+Description: "Windows ストアでは、支払方法として携帯電話会社による課金を、この機能をサポートしている携帯電話会社に提供しています。"
+title: "携帯電話会社による課金"
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
+ms.sourcegitcommit: 76ea880f7dd1e737b3b0640d10a138e0eb790802
+ms.openlocfilehash: d22d89523ff3089b3b56d1a85fa2c4b137389887
+
 ---
 
 # 携帯電話会社による課金
@@ -27,6 +30,7 @@ Windows 10 での携帯電話会社による課金の実装は、現在、次の
 |----------------|------------------|
 | フィンランド        | DNA、Elisa       |
 | ドイツ        | O2               |
+| ノルウェー         | Telenor          |
 | スイス    | Swisscom         |
 | 米国  | Sprint           |
 
@@ -111,6 +115,7 @@ Windows 10 での携帯電話会社による課金の実装は、現在、次の
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: ユーザーをデベロッパー センター アカウントに追加し、特定のアクセス許可を持つ役割を割り当てます。
-title: アカウント ユーザーの管理
+Description: "ユーザーをデベロッパー センター アカウントに追加し、特定のアクセス許可を持つ役割を割り当てます。"
+title: "アカウント ユーザーの管理"
 ms.assetid: 9245F0D0-7D8F-4741-AFB4-FBA5601D0A9B
+translationtype: Human Translation
+ms.sourcegitcommit: 3cfc50e56f3fa65a9dfa2c8b4582c1a53c2b13d1
+ms.openlocfilehash: 18e25d0064652089d450eec811a7a5d24b8dc3e8
+
 ---
 
 # アカウント ユーザーの管理
@@ -225,6 +229,7 @@ Azure AD アプリケーションが Microsoft Azure AD でデータの読み取
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

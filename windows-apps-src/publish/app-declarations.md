@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: 申請プロセス中、[アプリケーションのプロパティ] ページの [App declarations] (アプリの宣言) セクションで、アプリに関する追加情報を入力できます。
-title: アプリの宣言
+Description: "申請プロセス中、[アプリケーションのプロパティ] ページの [App declarations] (アプリの宣言) セクションで、アプリに関する追加情報を入力できます。"
+title: "アプリの宣言"
 ms.assetid: 3AF618F3-2B47-4A57-B7E8-1DF979D4A82C
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: ee2e54494a868fbec8c4a8bd7bbb9bdcd6cbf9ae
+
 ---
 
 # アプリの宣言
@@ -62,6 +66,7 @@ ms.assetid: 3AF618F3-2B47-4A57-B7E8-1DF979D4A82C
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 
