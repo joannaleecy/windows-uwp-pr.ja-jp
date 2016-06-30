@@ -3554,6 +3554,9 @@
   "f2c6d6c0e1d11fee40440cae06d68907313f62dc": [
     "windows-apps-src\\graphics\\key-frame-and-easing-function-animations.md"
   ],
+  "bcf0dfc696908ae26b37d5dc2f5994d79667ab1d": [
+    "windows-apps-src\\graphics\\storyboarded-animations.md"
+  ],
   "6c900ae6e1cfde8ec7261acfc57ea19b49f2ede1": [
     "windows-apps-src\\graphics\\storyboarded-animations.md"
   ],
@@ -5465,6 +5468,9 @@
   "9910ca5b5a3fd5d24643a1dfc6da3644d561c617": [
     "windows-apps-src\\publish\\package-version-numbering.md"
   ],
+  "86355a194eb61b8d13eba22d9f6e7c566339cd28": [
+    "windows-apps-src\\publish\\payout-summary.md"
+  ],
   "773a072f5656068eb6e0b2d792cf73a7ff1d16f0": [
     "windows-apps-src\\publish\\payout-summary.md"
   ],
@@ -6703,6 +6709,9 @@
   ],
   "b813935efef628d63df88e0645f42482d52df374": [
     "windows-apps-src\\publish\\index.md"
+  ],
+  "5805f316ed7bc08268fd6c201d740f3a3222629e": [
+    "windows-apps-src\\publish\\microsoft-advertising-payment-process.md"
   ],
   "2f1502e6499c535149be32725624a11b5f3484cd": [
     "windows-apps-src\\publish\\microsoft-advertising-payment-process.md"
