@@ -5918,6 +5918,9 @@
   "8e6305f3e6904833245013ef7eb63809c97ec423": [
     "windows-apps-src\\publish\\managing-your-ad-campaign.md"
   ],
+  "20a995f1a67bfdf0d52340c0964eb05c10935af1": [
+    "windows-apps-src\\publish\\managing-your-profile.md"
+  ],
   "3d82caac353eb7cb63692469c5951be1f392ff52": [
     "windows-apps-src\\publish\\managing-your-profile.md"
   ],
@@ -6028,6 +6031,9 @@
   ],
   "2c3f35ee5fb3f04e9f2fc389162793caa9ce5f1a": [
     "windows-apps-src\\publish\\trademark-and-copyright-protection.md"
+  ],
+  "f628820747f51f7200e2748c2c3f41b58455b2fa": [
+    "windows-apps-src\\publish\\upload-app-packages.md"
   ],
   "bb89968c261cc0c14f82375d0d708bbce5da9869": [
     "windows-apps-src\\publish\\upload-app-packages.md"
