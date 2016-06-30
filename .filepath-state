@@ -3608,11 +3608,17 @@
   "75e7367ee13357d3463213ca7d8f1ff37c4f0b77": [
     "windows-apps-src\\input-and-devices\\define-custom-recognition-constraints.md"
   ],
+  "c1b384d69285a5f8dd1a616ad243372d959503d9": [
+    "windows-apps-src\\input-and-devices\\designing-for-tv.md"
+  ],
   "f64ed435a285d6d0a8a6d9763b7f23d3a120ffa0": [
     "windows-apps-src\\input-and-devices\\designing-for-tv.md"
   ],
   "daa1df78409bd10ee1d5c24e8874e011d4005a82": [
     "windows-apps-src\\input-and-devices\\designing-for-tv.md"
+  ],
+  "3461d5cd399682e0c26a7a6864c916bda21eec43": [
+    "windows-apps-src\\input-and-devices\\device-primer.md"
   ],
   "bb23e8cc85544d4b5f0717b0c2d2ebad1447cb8b": [
     "windows-apps-src\\input-and-devices\\device-primer.md"
@@ -6647,6 +6653,9 @@
   "68da532b013d10c1967720b3b8e904013ed60d7e": [
     "windows-apps-src\\design-downloads\\index.md"
   ],
+  "1a2ef7ab002346a64b1961d6eea0807d9dc10805": [
+    "windows-apps-src\\input-and-devices\\index.md"
+  ],
   "f2055318fe67a0af2bcc009c6f9782029f9032f1": [
     "windows-apps-src\\input-and-devices\\index.md"
   ],
@@ -6700,5 +6709,8 @@
   ],
   "b265fb5c6d01f083fac16c36f4d1c12e023a62b6": [
     "windows-apps-src\\publish\\microsoft-advertising-payment-process.md"
+  ],
+  "ff479cfc713e4af06a593de6501aabca68e3c200": [
+    "windows-apps-src\\input-and-devices\\images\\inputs_hero.png"
   ]
 }
