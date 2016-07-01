@@ -3227,17 +3227,29 @@
   "63a40f5853740d1053449e1b1839f5b0232ce28e": [
     "windows-apps-src\\gaming\\work-with-networking-in-your-directx-game.md"
   ],
+  "5989c6ac655011c9918f6e520ae5bcad30cb1e5d": [
+    "windows-apps-src\\get-started\\create-a-basic-windows-10-app-in-cpp.md"
+  ],
   "e39752f9f13eaf93d23412252483093e704b1668": [
     "windows-apps-src\\get-started\\create-a-basic-windows-10-app-in-cpp.md"
   ],
+  "192354e5c9087ace3d864cd48ba63f8f6bef7dd4": [
+    "windows-apps-src\\get-started\\create-a-hello-world-app-js-universal.md"
+  ],
   "5f534169117da94cb2249c897603f567c007299b": [
     "windows-apps-src\\get-started\\create-a-hello-world-app-js-universal.md"
+  ],
+  "6342b96fd588397aa5bed522771a09b3ac95f6d7": [
+    "windows-apps-src\\get-started\\create-a-hello-world-app-xaml-universal.md"
   ],
   "0d6b6421b4f5ebc01c865e80db96d1158b9bd825": [
     "windows-apps-src\\get-started\\create-a-hello-world-app-xaml-universal.md"
   ],
   "4c890d6202a3151e8fc0cf03b3ff33b98cd6a863": [
     "windows-apps-src\\get-started\\enable-your-device-for-development.md"
+  ],
+  "f20707cab08998d86142f7d657b51faa78d9a777": [
+    "windows-apps-src\\get-started\\get-set-up.md"
   ],
   "8c5dfb692d647a25eea13036cd320366f3c5a09c": [
     "windows-apps-src\\get-started\\get-set-up.md"
@@ -6727,5 +6739,8 @@
   ],
   "ff479cfc713e4af06a593de6501aabca68e3c200": [
     "windows-apps-src\\input-and-devices\\images\\inputs_hero.png"
+  ],
+  "c76ac5f735c5dc93e5f5014b77181a2e862386a1": [
+    "windows-apps-src\\get-started\\images\\vs-2015-community-setup.png"
   ]
 }
