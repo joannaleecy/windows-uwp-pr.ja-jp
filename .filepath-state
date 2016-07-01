@@ -5228,6 +5228,9 @@
   "4e68b5e9124705e11435ecb34b6b66a6c071957b": [
     "windows-apps-src\\porting\\images\\wpsl-to-uwp-case-studies\\wpsl-to-uwp-theme-aware-bitmap.png"
   ],
+  "fd7f2dc0d83ef8c4d075e25d3e2fa453d9ce849d": [
+    "windows-apps-src\\porting\\index.md"
+  ],
   "88ebc2984ce856dd3fb10b8a61de4a32dc711500": [
     "windows-apps-src\\porting\\index.md"
   ],
@@ -6047,6 +6050,9 @@
   "033669a781aa85cc2c90fa11816e385ffefa997d": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "2b4728296ad4c5d72ce617ae236f750e90178b98": [
+    "windows-apps-src\\TOC.md"
+  ],
   "673a0aea769605085d59d022e795af1d75c45589": [
     "windows-apps-src\\TOC.md"
   ],
@@ -6784,5 +6790,50 @@
   ],
   "1188accc6e651861b59994581a7a5a5037a469c9": [
     "windows-apps-src\\porting\\desktop-to-uwp-extensions.md"
+  ],
+  "b06ec64b7707e14f384fe3a3ccf07772decb0fec": [
+    "windows-apps-src\\porting\\hwa-access-features.md"
+  ],
+  "4d0c935d63e6326fc2ae1c73044ddbcee64067ec": [
+    "windows-apps-src\\porting\\hwa-chrome-conversion.md"
+  ],
+  "775963ae3d12023488c79ded1cc83d464e84169c": [
+    "windows-apps-src\\porting\\hwa-create-mac.md"
+  ],
+  "3126b45a0b6682ac93d329ef0695abb2caf836f7": [
+    "windows-apps-src\\porting\\hwa-create-windows.md"
+  ],
+  "13680470ccefe221209de8d963757370ae0daff4": [
+    "windows-apps-src\\porting\\hwa-to-uwp-root.md"
+  ],
+  "3adda9b3d1d685f89805e29c797b6ab4996eeec4": [
+    "windows-apps-src\\porting\\images\\hwa-to-uwp\\app_identity.png"
+  ],
+  "1d2824b53966711db7c849c23f4c3d85d93b2c7e": [
+    "windows-apps-src\\porting\\images\\hwa-to-uwp\\hwa_livetile.png"
+  ],
+  "1847ad1a7a8677a9f79485855addc2b127b18e11": [
+    "windows-apps-src\\porting\\images\\hwa-to-uwp\\mac_manifoldjs_video.png"
+  ],
+  "07e0d1830c0bd52c875076a260a1ee33b7c1cef4": [
+    "windows-apps-src\\porting\\images\\hwa-to-uwp\\reserve_a_name.png"
+  ],
+  "878046d338e61e170886347cf69b044d6b4ee63d": [
+    "windows-apps-src\\porting\\images\\hwa-to-uwp\\windows_step1.png"
+  ],
+  "12f940f1c6fd14d50f35566e18cf3088e6ae887a": [
+    "windows-apps-src\\porting\\images\\hwa-to-uwp\\windows_step2.png"
+  ],
+  "943b019d1d75941ec53b812ecb0479e49de13a21": [
+    "windows-apps-src\\porting\\images\\hwa-to-uwp\\windows_step3.png"
+  ],
+  "45225db499a19e3dd7e02ef5c8e9cd7bc9c7fc8b": [
+    "windows-apps-src\\porting\\images\\hwa-to-uwp\\windows_step4.png"
+  ],
+  "04eb54f10d5c432dac167de2c00d6cda10e3d721": [
+    "windows-apps-src\\porting\\images\\hwa-to-uwp\\windows_step5.png"
+  ],
+  "57c93494f81b4235b1616ae7f3178a7682ce20fc": [
+    "windows-apps-src\\porting\\images\\hwa-to-uwp\\windows_step6.png"
   ]
 }
