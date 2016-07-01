@@ -6014,6 +6014,9 @@
   "033669a781aa85cc2c90fa11816e385ffefa997d": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "673a0aea769605085d59d022e795af1d75c45589": [
+    "windows-apps-src\\TOC.md"
+  ],
   "ae76e4a537cb63aa3c686a09c14db816748e8c98": [
     "windows-apps-src\\TOC.md"
   ],
@@ -6742,5 +6745,8 @@
   ],
   "c76ac5f735c5dc93e5f5014b77181a2e862386a1": [
     "windows-apps-src\\get-started\\images\\vs-2015-community-setup.png"
+  ],
+  "1188accc6e651861b59994581a7a5a5037a469c9": [
+    "windows-apps-src\\porting\\desktop-to-uwp-extensions.md"
   ]
 }
