@@ -4727,26 +4727,44 @@
   "9c38784325f4dc51052f70a819012508f2a0bdbb": [
     "windows-apps-src\\monetize\\exclude-or-limit-features-in-a-trial-version-of-your-app.md"
   ],
+  "e28c309a51d28e14e57b8bd027dc8c353311d89a": [
+    "windows-apps-src\\monetize\\get-app-acquisitions.md"
+  ],
   "7f87f931c92eca1f64fbd23b4fcba3359293f94a": [
     "windows-apps-src\\monetize\\get-app-acquisitions.md"
   ],
   "3d885322181fa8b932dd248c8c71e7d6d747bb06": [
     "windows-apps-src\\monetize\\get-app-failures.md"
   ],
+  "6f6a94e030f1733ca4224766526386ef1956ff03": [
+    "windows-apps-src\\monetize\\get-app-ratings.md"
+  ],
   "cf585c8a54f479eb91d7b9a5261dae4a83f0b675": [
     "windows-apps-src\\monetize\\get-app-ratings.md"
+  ],
+  "6e7e8c6a1b870031fb7055bf09c8ebbaa7dc13a5": [
+    "windows-apps-src\\monetize\\get-app-reviews.md"
   ],
   "bb0f912bd3380e21e04fa44f2c75244c6585f03a": [
     "windows-apps-src\\monetize\\get-app-reviews.md"
   ],
+  "682f727a21d74f5cea8fddc4886c873d537e1cfb": [
+    "windows-apps-src\\monetize\\get-error-reporting-data.md"
+  ],
   "5b2421daf9df4ca417d5089166c0927e2b2f7436": [
     "windows-apps-src\\monetize\\get-error-reporting-data.md"
+  ],
+  "bff5eb8ecf5a11067a590393d443343dc6ed94bc": [
+    "windows-apps-src\\monetize\\get-in-app-acquisitions.md"
   ],
   "21e634b1d5ab6c3ba7762c1b83c94d076d094af5": [
     "windows-apps-src\\monetize\\get-in-app-acquisitions.md"
   ],
   "08168dc15b33d99a044eedd7864848ed7a858991": [
     "windows-apps-src\\monetize\\get-started-with-microsoft-advertising-libraries.md"
+  ],
+  "64c600460c1cbcbd6bb486649e2bc98298ca9dbe": [
+    "windows-apps-src\\monetize\\grant-free-products.md"
   ],
   "9bce5649fc1a9400371e1f9bb67809f1c6288ec6": [
     "windows-apps-src\\monetize\\grant-free-products.md"
@@ -4853,14 +4871,23 @@
   "481cf2aab806a1f9ce368256a9df8930cbc756c1": [
     "windows-apps-src\\monetize\\monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md"
   ],
+  "93ed2b850de22d562b16f3f10f4ca409054910d3": [
+    "windows-apps-src\\monetize\\query-for-products.md"
+  ],
   "b8661d73487dde61b207159d11a0583700fa22bc": [
     "windows-apps-src\\monetize\\query-for-products.md"
   ],
   "8e2114e969b27d579f62195f026cfcfd9672a94a": [
     "windows-apps-src\\monetize\\release-notes-for-the-advertising-libraries.md"
   ],
+  "a3cef13e84c5bb06be4f3e3d4b2db4e02650df62": [
+    "windows-apps-src\\monetize\\renew-a-windows-store-id-key.md"
+  ],
   "6255346c568ed24e17c795834ab182f73707c4de": [
     "windows-apps-src\\monetize\\renew-a-windows-store-id-key.md"
+  ],
+  "5bd85c6ec9728a0dc08ab8ef4f586b0017510a74": [
+    "windows-apps-src\\monetize\\report-consumable-products-as-fulfilled.md"
   ],
   "b099bdc26565ef218eaf1f73c5bb3ec9c24065c3": [
     "windows-apps-src\\monetize\\report-consumable-products-as-fulfilled.md"
