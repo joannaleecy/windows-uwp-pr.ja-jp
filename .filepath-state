@@ -6050,6 +6050,9 @@
   "033669a781aa85cc2c90fa11816e385ffefa997d": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "7e69281219b57e86a6599fbc68a3052d91a144dc": [
+    "windows-apps-src\\TOC.md"
+  ],
   "ef52a9fc93a5a0f8ff5d123c0b2fbe53536c8187": [
     "windows-apps-src\\TOC.md"
   ],
@@ -6368,6 +6371,9 @@
   "2d3d6ad9b3375350f6f2cb47d6fd170d39f8fec0": [
     "windows-apps-src\\xbox-apps\\images\\windowsdeviceportal_2.png"
   ],
+  "e501bcefa9ae518394c7dacd286f9f5ad5fde7b6": [
+    "windows-apps-src\\xbox-apps\\index.md"
+  ],
   "d50602cf6ba7041d34200e8bc93a14188038b5ae": [
     "windows-apps-src\\xbox-apps\\index.md"
   ],
@@ -6484,6 +6490,9 @@
   ],
   "918fc9f6acb579d368f8ca273f58d25482b49e34": [
     "windows-apps-src\\accessibility\\images\\high-contrast-settings.png"
+  ],
+  "1c0b310d0a873a9eab98bd6ccb22d9abbf495e61": [
+    "windows-apps-src\\xbox-apps\\whats-new.md"
   ],
   "dfa94ad42a79d0f6b3f72fbf2efe9ce043532c56": [
     "windows-apps-src\\xbox-apps\\whats-new.md"
@@ -6838,5 +6847,11 @@
   ],
   "57c93494f81b4235b1616ae7f3178a7682ce20fc": [
     "windows-apps-src\\porting\\images\\hwa-to-uwp\\windows_step6.png"
+  ],
+  "6d02d7c4fe9c1804e3b63a1d1156fbb3981d0536": [
+    "windows-apps-src\\xbox-apps\\uwp-fiddler.md"
+  ],
+  "435a00eaf9c1f0d8e0c0043229c2adc80638ace3": [
+    "windows-apps-src\\xbox-apps\\wdp-fiddler-api.md"
   ]
 }
