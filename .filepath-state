@@ -2662,6 +2662,9 @@
   "a419ad04fe4f21867f2f1bd1664fbce39a7da792": [
     "windows-apps-src\\devices-sensors\\ble-beacon.md"
   ],
+  "195d0d55f19eccd545a4de79384d05b1aec4669a": [
+    "windows-apps-src\\devices-sensors\\bluetooth.md"
+  ],
   "f2266207eeb1ec4214ae62dbad2bf4a6437fd69b": [
     "windows-apps-src\\devices-sensors\\bluetooth.md"
   ],
@@ -4318,6 +4321,9 @@
   ],
   "b9b2d8ba6aeedea7d9db12565de191b1b6307fa6": [
     "windows-apps-src\\launch-resume\\launch-the-default-app-for-a-file.md"
+  ],
+  "153895a3ce41e5f4d22067e33cb5e874e89c6069": [
+    "windows-apps-src\\launch-resume\\monitor-background-task-progress-and-completion.md"
   ],
   "7798c327a67315f67aaf63f1917e77d3daf76020": [
     "windows-apps-src\\launch-resume\\monitor-background-task-progress-and-completion.md"
@@ -6475,6 +6481,9 @@
   ],
   "db6b9c83d36ac876661197dce81e5724e44bb640": [
     "windows-apps-src\\debug-test-perf\\version-adaptive-code.md"
+  ],
+  "c19a74f9be4e08e297248ad1a36d78551f5bc990": [
+    "windows-apps-src\\xbox-apps\\how-to-disable-mouse-mode.md"
   ],
   "bd7780f105f86d7d292c5db2535ad40af07d6e4f": [
     "windows-apps-src\\xbox-apps\\how-to-disable-mouse-mode.md"
