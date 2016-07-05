@@ -299,11 +299,17 @@
   "490c45fb8dc565e4ae0b890d26f28d698b58f255": [
     "windows-apps-src\\controls-and-patterns\\active-canvas.md"
   ],
+  "c7107599529d5af5b118a46cb065106f08afe113": [
+    "windows-apps-src\\controls-and-patterns\\app-bars.md"
+  ],
   "01cd10c72745ff4bd8204a9adaa8eebf5a892efe": [
     "windows-apps-src\\controls-and-patterns\\app-bars.md"
   ],
   "a7abca8712d2b02eac8bfd150a9476a955e2982a": [
     "windows-apps-src\\controls-and-patterns\\app-bars.md"
+  ],
+  "12f5905fce642a10656864e41325c8f4bd56c025": [
+    "windows-apps-src\\controls-and-patterns\\auto-suggest-box.md"
   ],
   "bc3337101f0f2e8449d052743f7b3ce8d2dac516": [
     "windows-apps-src\\controls-and-patterns\\auto-suggest-box.md"
@@ -2255,6 +2261,9 @@
   ],
   "02cd8f7777f169ad9fc4e5bfe854a8b6e0fe5060": [
     "windows-apps-src\\controls-and-patterns\\styling-controls.md"
+  ],
+  "b6cf34346ad557ce53d3009afe8bc83bc7ed21aa": [
+    "windows-apps-src\\controls-and-patterns\\tabs-pivot.md"
   ],
   "8737ce16d98952f24f9651d30d49ffa85b8d306b": [
     "windows-apps-src\\controls-and-patterns\\tabs-pivot.md"
@@ -6646,12 +6655,6 @@
   ],
   "70af88f24eeb84a34b83eb344e58df68f88829fc": [
     "windows-apps-src\\controls-and-patterns\\images\\pivot_example.png"
-  ],
-  "d750603dc65c13a0d30c1e4bcdfee141fa55314e": [
-    "windows-apps-src\\controls-and-patterns\\images\\pivot_focus_headers.png"
-  ],
-  "79fa3aac1f462ec7765e37fc51fc311a722d8e9f": [
-    "windows-apps-src\\controls-and-patterns\\images\\pivot_focus_selectedHeader.png"
   ],
   "751bbd06dac8e0963c234a06653827a24ceffde2": [
     "windows-apps-src\\controls-and-patterns\\images\\pivot_Hero_main.png"
