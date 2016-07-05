@@ -6722,6 +6722,9 @@
   "fa7e7404a9a3ab5d75d47b3a5271bd1fd84b5569": [
     "windows-apps-src\\winrt-components\\brokered-windows-runtime-components-for-side-loaded-windows-store-apps.md"
   ],
+  "4a9008d2ed6d48c8fb4bc08cd8663636c1ed4df3": [
+    "windows-apps-src\\controls-and-patterns\\index.md"
+  ],
   "0562e3df0c2abbb0808df5f75ff4fe0b96eb6d7e": [
     "windows-apps-src\\controls-and-patterns\\index.md"
   ],
@@ -6755,10 +6758,10 @@
   "68da532b013d10c1967720b3b8e904013ed60d7e": [
     "windows-apps-src\\design-downloads\\index.md"
   ],
-  "1a2ef7ab002346a64b1961d6eea0807d9dc10805": [
+  "f2055318fe67a0af2bcc009c6f9782029f9032f1": [
     "windows-apps-src\\input-and-devices\\index.md"
   ],
-  "f2055318fe67a0af2bcc009c6f9782029f9032f1": [
+  "1a2ef7ab002346a64b1961d6eea0807d9dc10805": [
     "windows-apps-src\\input-and-devices\\index.md"
   ],
   "d41adafecf2aa1313c605b084fc41e58f4f0433f": [
@@ -6766,6 +6769,9 @@
   ],
   "33c4fde752217c24e114e05881a86fb941280fd1": [
     "windows-apps-src\\layout\\images\\rspd-reposition-type1-sm.png"
+  ],
+  "7a1233724b9b0fd9af709bbf114669fe102e6f0d": [
+    "windows-apps-src\\layout\\index.md"
   ],
   "35a8f78420256cb2da02d7fd4720939a16676600": [
     "windows-apps-src\\layout\\index.md"
@@ -6775,6 +6781,9 @@
   ],
   "7db8534ae4c49fc3b93f9d192048d5193d5f7491": [
     "windows-apps-src\\style\\images\\style-header-v2.png"
+  ],
+  "aa6a5566c0e7ab640886c16e24f96f94334027d4": [
+    "windows-apps-src\\style\\index.md"
   ],
   "3948b1ea3b108d613fe1e3a0351903d2d2f8ffe9": [
     "windows-apps-src\\style\\index.md"
@@ -6817,9 +6826,6 @@
   ],
   "b265fb5c6d01f083fac16c36f4d1c12e023a62b6": [
     "windows-apps-src\\publish\\microsoft-advertising-payment-process.md"
-  ],
-  "ff479cfc713e4af06a593de6501aabca68e3c200": [
-    "windows-apps-src\\input-and-devices\\images\\inputs_hero.png"
   ],
   "c76ac5f735c5dc93e5f5014b77181a2e862386a1": [
     "windows-apps-src\\get-started\\images\\vs-2015-community-setup.png"
