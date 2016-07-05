@@ -6752,11 +6752,17 @@
   "0e2a716f7f1dfca38b91852ea487d00ffb7dba25": [
     "windows-apps-src\\design-downloads\\images\\tile-icon-generator.png"
   ],
+  "4ac5db9da4cd9ba0edff5b08dfff6ed6473ab4e3": [
+    "windows-apps-src\\design-downloads\\index.md"
+  ],
   "4101b60c0f640fd54d67a8e57f0a06622c6ec85c": [
     "windows-apps-src\\design-downloads\\index.md"
   ],
   "68da532b013d10c1967720b3b8e904013ed60d7e": [
     "windows-apps-src\\design-downloads\\index.md"
+  ],
+  "def2efd8d424bc79c4ff7a89784d0bc1219a287a": [
+    "windows-apps-src\\input-and-devices\\index.md"
   ],
   "f2055318fe67a0af2bcc009c6f9782029f9032f1": [
     "windows-apps-src\\input-and-devices\\index.md"
@@ -6790,6 +6796,9 @@
   ],
   "2547b5de76571eecf309be9255f707997f0168ff": [
     "windows-apps-src\\style\\index.md"
+  ],
+  "457ddacd80b3f9308b2eb66ce0ac2d448bb59ed2": [
+    "windows-apps-src\\usability\\index.md"
   ],
   "f02713dfee278866af53c6dd529d2faa3e9f625c": [
     "windows-apps-src\\usability\\index.md"

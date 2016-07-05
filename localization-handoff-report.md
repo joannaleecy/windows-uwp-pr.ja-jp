@@ -1,22 +1,21 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 4
+ Total Files | 3
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\controls-and-patterns\index.md](https://github.com/Microsoft/windows-apps/blob/fa1567d3ff80dc9c9376736c7d25c2bb06e79cc9/windows-apps-src/controls-and-patterns/index.md) | HandedOffSuccess | [Details](#4a9008d2ed6d48c8fb4bc08cd8663636c1ed4df31903)
- [windows-apps-src\input-and-devices\index.md](https://github.com/Microsoft/windows-apps/blob/fa1567d3ff80dc9c9376736c7d25c2bb06e79cc9/windows-apps-src/input-and-devices/index.md) | HandedOffSuccess | [Details](#f2055318fe67a0af2bcc009c6f9782029f9032f12982)
- [windows-apps-src\layout\index.md](https://github.com/Microsoft/windows-apps/blob/fa1567d3ff80dc9c9376736c7d25c2bb06e79cc9/windows-apps-src/layout/index.md) | HandedOffSuccess | [Details](#7a1233724b9b0fd9af709bbf114669fe102e6f0d3302)
- [windows-apps-src\style\index.md](https://github.com/Microsoft/windows-apps/blob/fa1567d3ff80dc9c9376736c7d25c2bb06e79cc9/windows-apps-src/style/index.md) | HandedOffSuccess | [Details](#aa6a5566c0e7ab640886c16e24f96f94334027d43854)
+ [windows-apps-src\design-downloads\index.md](https://github.com/Microsoft/windows-apps/blob/1370af75dcd45d52d0d31f57acb958d366f9bee5/windows-apps-src/design-downloads/index.md) | HandedOffSuccess | [Details](#4ac5db9da4cd9ba0edff5b08dfff6ed6473ab4e32057)
+ [windows-apps-src\input-and-devices\index.md](https://github.com/Microsoft/windows-apps/blob/5370dd078db81de606b7a4bbfcf6dd36b2280a17/windows-apps-src/input-and-devices/index.md) | HandedOffSuccess | [Details](#def2efd8d424bc79c4ff7a89784d0bc1219a287a2982)
+ [windows-apps-src\usability\index.md](https://github.com/Microsoft/windows-apps/blob/5370dd078db81de606b7a4bbfcf6dd36b2280a17/windows-apps-src/usability/index.md) | HandedOffSuccess | [Details](#457ddacd80b3f9308b2eb66ce0ac2d448bb59ed23894)
 
 ## Item Details
-##### <a name='4a9008d2ed6d48c8fb4bc08cd8663636c1ed4df31903'></a> Source: [windows-apps-src\controls-and-patterns\index.md](https://github.com/Microsoft/windows-apps/blob/fa1567d3ff80dc9c9376736c7d25c2bb06e79cc9/windows-apps-src/controls-and-patterns/index.md)
+##### <a name='4ac5db9da4cd9ba0edff5b08dfff6ed6473ab4e32057'></a> Source: [windows-apps-src\design-downloads\index.md](https://github.com/Microsoft/windows-apps/blob/1370af75dcd45d52d0d31f57acb958d366f9bee5/windows-apps-src/design-downloads/index.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [index.fbf3d9a627adba69545b050281feb3391279f52e.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/7296696a544fefb03c4d2cdd86a9b374335bad19/ol-handoff/Microsoft/windows-apps.ja-jp/master/index.fbf3d9a627adba69545b050281feb3391279f52e.ja-jp.xlf)
-* Handoff Datetime: 2016-07-05 21:19:37
+* Handoff File: [index.720b23fbbbd23ed59c43b430a6e93f1a7cd31f11.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/2375c2afaac07a2dabbfc3b8166d2d5fb54729d1/ol-handoff/Microsoft/windows-apps.ja-jp/master/index.720b23fbbbd23ed59c43b430a6e93f1a7cd31f11.ja-jp.xlf)
+* Handoff Datetime: 2016-07-05 21:50:56
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -24,11 +23,11 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='f2055318fe67a0af2bcc009c6f9782029f9032f12982'></a> Source: [windows-apps-src\input-and-devices\index.md](https://github.com/Microsoft/windows-apps/blob/fa1567d3ff80dc9c9376736c7d25c2bb06e79cc9/windows-apps-src/input-and-devices/index.md)
+##### <a name='def2efd8d424bc79c4ff7a89784d0bc1219a287a2982'></a> Source: [windows-apps-src\input-and-devices\index.md](https://github.com/Microsoft/windows-apps/blob/5370dd078db81de606b7a4bbfcf6dd36b2280a17/windows-apps-src/input-and-devices/index.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [index.2fdb039b9798a6e880a403bb237c054940ed7561.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/7296696a544fefb03c4d2cdd86a9b374335bad19/ol-handoff/Microsoft/windows-apps.ja-jp/master/index.2fdb039b9798a6e880a403bb237c054940ed7561.ja-jp.xlf)
-* Handoff Datetime: 2016-07-05 21:19:37
+* Handoff File: [index.2fdb039b9798a6e880a403bb237c054940ed7561.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/2375c2afaac07a2dabbfc3b8166d2d5fb54729d1/ol-handoff/Microsoft/windows-apps.ja-jp/master/index.2fdb039b9798a6e880a403bb237c054940ed7561.ja-jp.xlf)
+* Handoff Datetime: 2016-07-05 21:50:56
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -36,23 +35,11 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='7a1233724b9b0fd9af709bbf114669fe102e6f0d3302'></a> Source: [windows-apps-src\layout\index.md](https://github.com/Microsoft/windows-apps/blob/fa1567d3ff80dc9c9376736c7d25c2bb06e79cc9/windows-apps-src/layout/index.md)
+##### <a name='457ddacd80b3f9308b2eb66ce0ac2d448bb59ed23894'></a> Source: [windows-apps-src\usability\index.md](https://github.com/Microsoft/windows-apps/blob/5370dd078db81de606b7a4bbfcf6dd36b2280a17/windows-apps-src/usability/index.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [index.da2a82bf7ca65a2e741893afe322bd728faa75c4.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/7296696a544fefb03c4d2cdd86a9b374335bad19/ol-handoff/Microsoft/windows-apps.ja-jp/master/index.da2a82bf7ca65a2e741893afe322bd728faa75c4.ja-jp.xlf)
-* Handoff Datetime: 2016-07-05 21:19:37
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='aa6a5566c0e7ab640886c16e24f96f94334027d43854'></a> Source: [windows-apps-src\style\index.md](https://github.com/Microsoft/windows-apps/blob/fa1567d3ff80dc9c9376736c7d25c2bb06e79cc9/windows-apps-src/style/index.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [index.d6e9f38c58272fbda56115c34e5b402317c1ea66.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/7296696a544fefb03c4d2cdd86a9b374335bad19/ol-handoff/Microsoft/windows-apps.ja-jp/master/index.d6e9f38c58272fbda56115c34e5b402317c1ea66.ja-jp.xlf)
-* Handoff Datetime: 2016-07-05 21:19:37
+* Handoff File: [index.0c16b7fc8370a239b356dfc48f6ddd11d226b6af.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/2375c2afaac07a2dabbfc3b8166d2d5fb54729d1/ol-handoff/Microsoft/windows-apps.ja-jp/master/index.0c16b7fc8370a239b356dfc48f6ddd11d226b6af.ja-jp.xlf)
+* Handoff Datetime: 2016-07-05 21:50:56
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
