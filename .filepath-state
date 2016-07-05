@@ -3596,6 +3596,9 @@
   "4846630eb72c5fc81e01cc46f5ad362b0851292e": [
     "windows-apps-src\\graphics\\using-brushes.md"
   ],
+  "fd6f6cf3b537b060cb81a8645f9c2fb23485bdab": [
+    "windows-apps-src\\graphics\\visual-layer.md"
+  ],
   "164c01737d27451adcb685f9cda544cc00634af4": [
     "windows-apps-src\\graphics\\visual-layer.md"
   ],
@@ -6506,6 +6509,9 @@
   "abd06e78364ff32cc10d733e33b153b854dbc467": [
     "windows-apps-src\\xbox-apps\\turn-off-overscan.md"
   ],
+  "307606bc290e9c5268fc5a37b72770d6b1ada4da": [
+    "windows-apps-src\\xbox-apps\\disable-scaling.md"
+  ],
   "65416dd2b6c8656078b63c316f3972cda9c792fc": [
     "windows-apps-src\\xbox-apps\\disable-scaling.md"
   ],
@@ -6860,10 +6866,10 @@
   "3126b45a0b6682ac93d329ef0695abb2caf836f7": [
     "windows-apps-src\\porting\\hwa-create-windows.md"
   ],
-  "491665558f713dcbaae7ea20739ed72c61a12cd2": [
+  "13680470ccefe221209de8d963757370ae0daff4": [
     "windows-apps-src\\porting\\hwa-to-uwp-root.md"
   ],
-  "13680470ccefe221209de8d963757370ae0daff4": [
+  "491665558f713dcbaae7ea20739ed72c61a12cd2": [
     "windows-apps-src\\porting\\hwa-to-uwp-root.md"
   ],
   "3adda9b3d1d685f89805e29c797b6ab4996eeec4": [
