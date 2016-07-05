@@ -4219,6 +4219,9 @@
   "6ad43ec4fc865c5aae439693e0cd5b37a5d2c5dc": [
     "windows-apps-src\\launch-resume\\create-a-customized-splash-screen.md"
   ],
+  "f86886cb55f05218e9d834f6a37c9ee8c1525cd4": [
+    "windows-apps-src\\launch-resume\\create-and-register-a-background-task.md"
+  ],
   "0cfe4a7502b7c44651350f2c1c48cb444de0fd6e": [
     "windows-apps-src\\launch-resume\\create-and-register-a-background-task.md"
   ],
@@ -4315,6 +4318,9 @@
   ],
   "b9b2d8ba6aeedea7d9db12565de191b1b6307fa6": [
     "windows-apps-src\\launch-resume\\launch-the-default-app-for-a-file.md"
+  ],
+  "7798c327a67315f67aaf63f1917e77d3daf76020": [
+    "windows-apps-src\\launch-resume\\monitor-background-task-progress-and-completion.md"
   ],
   "07d69b63b272153bc784ed19166e649f80a98297": [
     "windows-apps-src\\launch-resume\\monitor-background-task-progress-and-completion.md"
@@ -6815,8 +6821,14 @@
   "775963ae3d12023488c79ded1cc83d464e84169c": [
     "windows-apps-src\\porting\\hwa-create-mac.md"
   ],
+  "152cfd8aaa43ee7c63418d699e8bcce07722383e": [
+    "windows-apps-src\\porting\\hwa-create-windows.md"
+  ],
   "3126b45a0b6682ac93d329ef0695abb2caf836f7": [
     "windows-apps-src\\porting\\hwa-create-windows.md"
+  ],
+  "491665558f713dcbaae7ea20739ed72c61a12cd2": [
+    "windows-apps-src\\porting\\hwa-to-uwp-root.md"
   ],
   "13680470ccefe221209de8d963757370ae0daff4": [
     "windows-apps-src\\porting\\hwa-to-uwp-root.md"
