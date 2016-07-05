@@ -2948,6 +2948,9 @@
   "c74a455f84618cb57147c8f0c9baf343b41b02be": [
     "windows-apps-src\\gaming\\developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md"
   ],
+  "67813afb9ef6c723186c1d04b7d48f4e8281fbc5": [
+    "windows-apps-src\\gaming\\directx-and-xaml-interop.md"
+  ],
   "97e694ae2fb8af30a35aa9ebdb714db50a506e6c": [
     "windows-apps-src\\gaming\\directx-and-xaml-interop.md"
   ],
@@ -5647,6 +5650,9 @@
   ],
   "ba3f4fc8584108fefe25de146ae7fc84ee7c9e2c": [
     "windows-apps-src\\security\\credential-locker.md"
+  ],
+  "a86f31a0b62958f1300e386dfb99fd7fc1432fc5": [
+    "windows-apps-src\\security\\cryptographic-keys.md"
   ],
   "c23e0ba44a5013dca9ceec94ff434a34323d53bc": [
     "windows-apps-src\\security\\cryptographic-keys.md"
