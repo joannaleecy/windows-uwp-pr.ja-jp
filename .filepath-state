@@ -4237,6 +4237,9 @@
   "6ad43ec4fc865c5aae439693e0cd5b37a5d2c5dc": [
     "windows-apps-src\\launch-resume\\create-a-customized-splash-screen.md"
   ],
+  "86ae683ce7bb4c595c10b2ca002a2c6d37abe287": [
+    "windows-apps-src\\launch-resume\\create-and-register-a-background-task.md"
+  ],
   "f86886cb55f05218e9d834f6a37c9ee8c1525cd4": [
     "windows-apps-src\\launch-resume\\create-and-register-a-background-task.md"
   ],
@@ -6572,6 +6575,9 @@
   "3fa8248662a4ad08d46e89c6c5b14ace56212b62": [
     "windows-apps-src\\xbox-apps\\development-lanes-landing.md"
   ],
+  "6925e693c2160e6d83694ea2f3c3c802b2363502": [
+    "windows-apps-src\\xbox-apps\\development-lanes-unity.md"
+  ],
   "cc854bc707a9c08687d3c6d92a704f5099d52d5b": [
     "windows-apps-src\\xbox-apps\\development-lanes-unity.md"
   ],
@@ -6866,10 +6872,10 @@
   "3126b45a0b6682ac93d329ef0695abb2caf836f7": [
     "windows-apps-src\\porting\\hwa-create-windows.md"
   ],
-  "13680470ccefe221209de8d963757370ae0daff4": [
+  "491665558f713dcbaae7ea20739ed72c61a12cd2": [
     "windows-apps-src\\porting\\hwa-to-uwp-root.md"
   ],
-  "491665558f713dcbaae7ea20739ed72c61a12cd2": [
+  "13680470ccefe221209de8d963757370ae0daff4": [
     "windows-apps-src\\porting\\hwa-to-uwp-root.md"
   ],
   "3adda9b3d1d685f89805e29c797b6ab4996eeec4": [
@@ -6907,5 +6913,14 @@
   ],
   "435a00eaf9c1f0d8e0c0043229c2adc80638ace3": [
     "windows-apps-src\\xbox-apps\\wdp-fiddler-api.md"
+  ],
+  "769b548da172e6f29f290b3799bc455d9e9a2670": [
+    "windows-apps-src\\xbox-apps\\development-lanes-unity-versioning.md"
+  ],
+  "be463996c7a9986d126d86daf990b0c27c281b2a": [
+    "windows-apps-src\\xbox-apps\\images\\uwp-build-directory.png"
+  ],
+  "5dd22ab685640fbe6cd788a4fdbd04d9d14d5399": [
+    "windows-apps-src\\xbox-apps\\images\\uwp-solution.PNG"
   ]
 }
