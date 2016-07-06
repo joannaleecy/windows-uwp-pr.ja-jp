@@ -4099,6 +4099,9 @@
   "6ad43ec4fc865c5aae439693e0cd5b37a5d2c5dc": [
     "windows-apps-src\\launch-resume\\create-a-customized-splash-screen.md"
   ],
+  "e8da193f96709bdd87bd6a008eb5885cc5c819fd": [
+    "windows-apps-src\\launch-resume\\create-and-register-a-background-task.md"
+  ],
   "86ae683ce7bb4c595c10b2ca002a2c6d37abe287": [
     "windows-apps-src\\launch-resume\\create-and-register-a-background-task.md"
   ],
