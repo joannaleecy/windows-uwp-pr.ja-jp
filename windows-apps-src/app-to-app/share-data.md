@@ -3,8 +3,8 @@ description: "この記事では、ユニバーサル Windows プラットフォ
 title: "データの共有"
 ms.assetid: 32287F5E-EB86-4B98-97FF-8F6228D06782
 author: awkoren
-ms.sourcegitcommit: 03b9943d9bf76343bfbbe714f681a2b398d1a9ad
-ms.openlocfilehash: de9d4e88cfc00d5e428b8ddb8a27cc4ffd619e85
+ms.sourcegitcommit: 9a8fd6d34c4b89dae1ec4be2db69498b5d458b5a
+ms.openlocfilehash: a91f0eb8b62a860809f8ffb63278be1eff31a2f3
 
 ---
 
@@ -53,13 +53,13 @@ ms.openlocfilehash: de9d4e88cfc00d5e428b8ddb8a27cc4ffd619e85
 
 ## 共有 UI の起動
 
-共有用の UI は、システムによって提供されます。 起動するには、[**ShowShareUI**][ShowShareUi] メソッドを呼び出します。
+共有用の UI は、システムによって提供されます。 起動するには、[**ShowShareUI**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataTransferManager.ShowShareUI) メソッドを呼び出します。
 
 [!code-cs[メイン](./code/share_data/cs/MainPage.xaml.cs#SnippetShowUI)]
 
 ## エラーの処理
 
-ほとんどの場合、コンテンツの共有は難しいプロセスではありません。 しかし、どのような場合であっても、予期しない問題が発生することは必ずあります。 たとえば、共有するコンテンツをユーザーが選ぶ必要がある状況で、ユーザーが選んでいない場合などです。 このような状況を処理するには、[**FailWithDisplayText**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataRequest.FailWithDisplayText(System.String) メソッドを使います。このメソッドでは、問題が発生すると、ユーザーにメッセージが表示されます。
+ほとんどの場合、コンテンツの共有は難しいプロセスではありません。 しかし、どのような場合であっても、予期しない問題が発生することは必ずあります。 たとえば、共有するコンテンツをユーザーが選ぶ必要がある状況で、ユーザーが選んでいない場合などです。 このような状況を処理するには、[**FailWithDisplayText**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataRequest.FailWithDisplayText(System.String)) メソッドを使います。このメソッドでは、問題が発生すると、ユーザーにメッセージが表示されます。
 
 ## デリゲートによる共有の遅延
 
@@ -106,6 +106,6 @@ async void OnDeferredImageRequestedHandler(DataProviderRequest request)
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

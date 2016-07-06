@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: このトピックでは、Windows ランタイム アプリで、プログラミング言語に C#、Visual Basic、または Visual C++ コンポーネント拡張機能 (C++/CX)、UI 定義に XAML を使う場合のイベントのプログラミングの概念について説明します。
-title: イベントとルーティング イベントの概要
+description: "このトピックでは、Windows ランタイム アプリで、プログラミング言語に C#、Visual Basic、または Visual C++ コンポーネント拡張機能 (C++/CX)、UI 定義に XAML を使う場合のイベントのプログラミングの概念について説明します。"
+title: "イベントとルーティング イベントの概要"
 ms.assetid: 34C219E8-3EFB-45BC-8BBD-6FD937698832
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 4e4e21789dd76ad691f3828d23c73adcfc31efdf
+
 ---
 
 # イベントとルーティング イベントの概要
@@ -40,7 +44,7 @@ XAML でイベントを記述する場合は、コード ビハインドで既�
 **ヒント:**
             *イベントの関連付け*は、プログラミング用語です。 これは、イベントが発生して名前付けされたハンドラー メソッドを呼び出すことを示すプロセスやコードのことを指します。 ほとんどの手続き型コード モデルで、イベントの関連付けはイベントとメソッドの両方の名前を付ける暗黙的または明示的な "AddHandler" コードで、通常ターゲット オブジェクト インスタンスが関係しています。 XAML では、「AddHandler」は暗黙的であり、イベントの関連付けは、すべてオブジェクト要素の属性名としてのイベントの名前付けと、属性値としてのハンドラーの名前付けで構成されています。
 
-実際のハンドラーは、アプリのすべてのコードとコード ビハインドで使っているプログラミング言語で記述します。 ここでは、`Click="showUpdatesButton_Click"` という属性を使ってコントラクトを作成しています。このコントラクトにより、XAML のマークアップ コンパイルと解析の際に、IDE のビルド アクションの XAML マークアップ コンパイル ステップと、アプリの読み込み時の最終的な XAML の解析で、`showUpdatesButton_Click` という名前のメソッドをアプリのコードの中から検出できます。 `showUpdatesButton_Click` は、[**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) イベントのすべてのハンドラーに対応したメソッド シグネチャを (デリゲートに基づいて) 実装するメソッドであることが必要です。 たとえば、このコードは `showUpdatesButton_Click` ハンドラーを定義します。
+実際のハンドラーは、アプリのすべてのコードとコード ビハインドで使っているプログラミング言語で記述します。 ここでは、`Click="showUpdatesButton_Click"` という属性を使ってコントラクトを作成しています。このコントラクトにより、XAML のマークアップ コンパイルと解析の際に、IDE のビルド アクションの XAML マークアップ コンパイル ステップと、アプリの読み込み時の最終的な XAML の解析で、`showUpdatesButton_Click` という名前のメソッドをアプリのコードの中から検出できます。 `showUpdatesButton_Click` は、[**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) イベントのすべてのハンドラーに対応したメソッド シグネチャを (デリゲートに基づいて) 実装するメソッドであることが必要です。 たとえば、次のコードは `showUpdatesButton_Click` ハンドラーを定義します。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -298,6 +302,7 @@ Windows ランタイムでカスタム ルーティング イベントは宣言�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

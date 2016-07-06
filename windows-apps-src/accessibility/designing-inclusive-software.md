@@ -106,6 +106,6 @@ Windows に組み込まれているアクセシビリティ機能の 1 つに、
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

@@ -44,6 +44,6 @@ UWP ゲームでは、Xbox One のマルチ ユーザー モデルを選択で�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

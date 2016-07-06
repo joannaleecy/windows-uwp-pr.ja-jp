@@ -68,6 +68,6 @@ UWP 開発のために PC と Xbox One を設定する方法の手順に**注意
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

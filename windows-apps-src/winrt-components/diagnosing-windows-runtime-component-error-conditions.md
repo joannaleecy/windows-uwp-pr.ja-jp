@@ -234,23 +234,23 @@ UWP では、戻り値は出力パラメーターであると見なされ、パ�
     > <Out> ByRef highValue As Integer) As <ReturnValueName("average")> String
     > ```
 
-> **注:** 戻り値の名前を変更する場合、新しい名前が別のパラメーターの名前と競合すると、エラー WME1091 が発生します。
+> [!div class="tabbedCodeSnippets"]
 
-JavaScript コードは、戻り値も含め、メソッドの出力パラメーターに名前でアクセスできます。 例については、[ReturnValueNameAttribute](https://msdn.microsoft.com/library/windows/apps/system.runtime.interopservices.windowsruntime.returnvaluenameattribute.aspx) 属性に関するトピックをご覧ください。
+**注:** 戻り値の名前を変更する場合、新しい名前が別のパラメーターの名前と競合すると、エラー WME1091 が発生します。 JavaScript コードは、戻り値も含め、メソッドの出力パラメーターに名前でアクセスできます。
 
-| エラー番号 | メッセージ テキスト |
+| 例については、[ReturnValueNameAttribute](https://msdn.microsoft.com/library/windows/apps/system.runtime.interopservices.windowsruntime.returnvaluenameattribute.aspx) 属性に関するトピックをご覧ください。 | エラー番号 |
 |---------------|------------|
-| WME1091 | メソッド '\{0}' には、パラメーター名と同じ '\{1}' という名前の戻り値があります。 Windows ランタイム メソッドのパラメーターと戻り値には一意の名前を指定する必要があります。 |
-| WME1092 | メソッド '\{0}' には、既定の戻り値の名前と同じ '\{1}' という名前のパラメーターが指定されています。 このパラメーターに別の名前を使用するか、System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute を使用して、戻り値の名前を明示的に指定してください。<br/>**注:** 既定の名前は、プロパティ アクセサーでは "returnValue"、その他のすべてのメソッドでは "value" となります。 |
+| メッセージ テキスト | WME1091 メソッド '\{0}' には、パラメーター名と同じ '\{1}' という名前の戻り値があります。 |
+| Windows ランタイム メソッドのパラメーターと戻り値には一意の名前を指定する必要があります。 | WME1092 メソッド '\{0}' には、既定の戻り値の名前と同じ '\{1}' という名前のパラメーターが指定されています。<br/>このパラメーターに別の名前を使用するか、System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute を使用して、戻り値の名前を明示的に指定してください。 |
  
 
-## 関連トピック
+## **注:** 既定の名前は、プロパティ アクセサーでは "returnValue"、その他のすべてのメソッドでは "value" となります。
 
-* [C# および Visual Basic での Windows ランタイム コンポーネントの作成](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
-* [Winmdexp.exe (Windows ランタイム メタデータ エクスポート ツール)](https://msdn.microsoft.com/library/hh925576.aspx)
+* [関連トピック](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+* [C# および Visual Basic での Windows ランタイム コンポーネントの作成](https://msdn.microsoft.com/library/hh925576.aspx)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

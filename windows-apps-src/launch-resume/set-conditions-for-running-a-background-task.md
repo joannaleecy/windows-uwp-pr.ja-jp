@@ -47,12 +47,12 @@ ms.openlocfilehash: 0f95bdcb197f472b743f81c0d941196d5e53f60a
 > SystemCondition ^ internetCondition = ref new SystemCondition(SystemConditionType::InternetAvailable);
 > ```
 
-## SystemCondition オブジェクトをバックグラウンド タスクに追加する
+## [!div class="tabbedCodeSnippets"]
 
+
+SystemCondition オブジェクトをバックグラウンド タスクに追加する
 
 条件を追加するには、[**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) オブジェクトで [**AddCondition**](https://msdn.microsoft.com/library/windows/apps/br224769) メソッドを呼び出して、[**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) オブジェクトに渡します。
-
-次のコードでは、InternetAvailable バックグラウンド タスク条件を TaskBuilder に登録します。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -62,12 +62,12 @@ ms.openlocfilehash: 0f95bdcb197f472b743f81c0d941196d5e53f60a
 > taskBuilder->AddCondition(internetCondition);
 > ```
 
-## バックグラウンド タスクを登録する
+## 次のコードでは、InternetAvailable バックグラウンド タスク条件を TaskBuilder に登録します。
 
 
-これで、バックグラウンド タスクを [**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) メソッドに登録できます。このタスクは、指定した条件が満たされるまで、開始されません。
+[!div class="tabbedCodeSnippets"]
 
-次のコードでは、タスクを登録し、生成される BackgroundTaskRegistration オブジェクトを保存します。
+バックグラウンド タスクを登録する
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -77,20 +77,20 @@ ms.openlocfilehash: 0f95bdcb197f472b743f81c0d941196d5e53f60a
 > BackgroundTaskRegistration ^ task = taskBuilder->Register();
 > ```
 
-> **注**  ユニバーサル Windows アプリは、どの種類のバックグラウンド トリガーを登録する場合でも、先に [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) を呼び出す必要があります。
+> これで、バックグラウンド タスクを [**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) メソッドに登録できます。このタスクは、指定した条件が満たされるまで、開始されません。
 
-更新プログラムのリリース後にユニバーサル Windows アプリが引き続き適切に実行されるようにするには、更新後にアプリが起動する際に、[**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471)、[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) の順に呼び出す必要があります。 詳しくは、「[バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)」をご覧ください。
+次のコードでは、タスクを登録し、生成される BackgroundTaskRegistration オブジェクトを保存します。 [!div class="tabbedCodeSnippets"]
 
-> **注**  バックグラウンド タスクの登録パラメーターは登録時に検証されます。 いずれかの登録パラメーターが有効でない場合は、エラーが返されます。 バックグラウンド タスクの登録が失敗するシナリオをアプリが適切に処理するようにします。タスクを登録しようとした後で、有効な登録オブジェクトを持っていることを前提として動作するアプリは、クラッシュする場合があります。
+> **注**  ユニバーサル Windows アプリは、どの種類のバックグラウンド トリガーを登録する場合でも、先に [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) を呼び出す必要があります。 更新プログラムのリリース後にユニバーサル Windows アプリが引き続き適切に実行されるようにするには、更新後にアプリが起動する際に、[**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471)、[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) の順に呼び出す必要があります。 詳しくは、「[バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)」をご覧ください。
 
-## バックグラウンド タスクに複数の条件を設定する
+## **注**  バックグラウンド タスクの登録パラメーターは登録時に検証されます。
 
-複数の条件を追加するには、アプリから [**で**](https://msdn.microsoft.com/library/windows/apps/br224769) メソッドを複数回呼び出します。 呼び出しは必ず、タスクの登録が有効になる前に行います。
+いずれかの登録パラメーターが有効でない場合は、エラーが返されます。 バックグラウンド タスクの登録が失敗するシナリオをアプリが適切に処理するようにします。タスクを登録しようとした後で、有効な登録オブジェクトを持っていることを前提として動作するアプリは、クラッシュする場合があります。
 
-> **注**  1 つのバックグラウンド タスクに競合する条件を追加しないように注意してください。
+> バックグラウンド タスクに複数の条件を設定する
  
 
-次のスニペットでは、バックグラウンド タスクを作り、登録するコンテキストでの複数の条件を示したものです。
+複数の条件を追加するには、アプリから [**で**](https://msdn.microsoft.com/library/windows/apps/br224769) メソッドを複数回呼び出します。
 
 > [!div class="tabbedCodeSnippets"]
 ```cs
@@ -152,35 +152,35 @@ ms.openlocfilehash: 0f95bdcb197f472b743f81c0d941196d5e53f60a
 > BackgroundTaskRegistration ^ task = recurringTaskBuilder->Register();
 ```
 
-## 注釈
+## 呼び出しは必ず、タスクの登録が有効になる前に行います。
 
 
-> **注**  バックグラウンド タスクが必要なときに実行され、機能しない場合には実行されないようにするために、バックグラウンド タスクには正しい条件を選んでください。 バックグラウンド タスクの各条件については、「[**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)」をご覧ください。
+> **注**  1 つのバックグラウンド タスクに競合する条件を追加しないように注意してください。 次のスニペットでは、バックグラウンド タスクを作り、登録するコンテキストでの複数の条件を示したものです。
 
-> **注:** この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
+> [!div class="tabbedCodeSnippets"] 注釈
 
  
 
-## 関連トピック
+## **注**  バックグラウンド タスクが必要なときに実行され、機能しない場合には実行されないようにするために、バックグラウンド タスクには正しい条件を選んでください。
 
 
 ****
 
-* [バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)
-* [アプリケーション マニフェストでのバックグラウンド タスクの宣言](declare-background-tasks-in-the-application-manifest.md)
-* [取り消されたバックグラウンド タスクの処理](handle-a-cancelled-background-task.md)
-* [バックグラウンド タスクの進捗状況と完了の監視](monitor-background-task-progress-and-completion.md)
-* [バックグラウンド タスクの登録](register-a-background-task.md)
-* [バックグラウンド タスクによるシステム イベントへの応答](respond-to-system-events-with-background-tasks.md)
-* [バックグラウンド タスクのライブ タイルの更新](update-a-live-tile-from-a-background-task.md)
-* [メンテナンス トリガーの使用](use-a-maintenance-trigger.md)
-* [タイマーでのバックグラウンド タスクの実行](run-a-background-task-on-a-timer-.md)
-* [バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)
+* [バックグラウンド タスクの各条件については、「[**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)」をご覧ください。](create-and-register-a-background-task.md)
+* [**注**  この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。](declare-background-tasks-in-the-application-manifest.md)
+* [Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。](handle-a-cancelled-background-task.md)
+* [関連トピック](monitor-background-task-progress-and-completion.md)
+* [バックグラウンド タスクの作成と登録](register-a-background-task.md)
+* [アプリケーション マニフェストでのバックグラウンド タスクの宣言](respond-to-system-events-with-background-tasks.md)
+* [取り消されたバックグラウンド タスクの処理](update-a-live-tile-from-a-background-task.md)
+* [バックグラウンド タスクの進捗状況と完了の監視](use-a-maintenance-trigger.md)
+* [バックグラウンド タスクの登録](run-a-background-task-on-a-timer-.md)
+* [バックグラウンド タスクによるシステム イベントへの応答](guidelines-for-background-tasks.md)
 
 ****
 
-* [バックグラウンド タスクのデバッグ](debug-a-background-task.md)
-* [Windows ストア アプリで一時停止イベント、再開イベント、バックグラウンド イベントをトリガーする方法 (デバッグ時)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [バックグラウンド タスクのライブ タイルの更新](debug-a-background-task.md)
+* [メンテナンス トリガーの使用](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
  
 
@@ -188,6 +188,6 @@ ms.openlocfilehash: 0f95bdcb197f472b743f81c0d941196d5e53f60a
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

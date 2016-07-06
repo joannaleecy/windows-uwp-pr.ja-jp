@@ -159,6 +159,6 @@ Microsoft から支払いを受ける場合や、租税条約上の権利を申�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

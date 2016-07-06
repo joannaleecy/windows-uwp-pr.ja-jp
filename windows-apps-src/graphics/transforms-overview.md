@@ -158,6 +158,6 @@ Windows 10 では、XAML に新しいプロパティである [**UIElement.Trans
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

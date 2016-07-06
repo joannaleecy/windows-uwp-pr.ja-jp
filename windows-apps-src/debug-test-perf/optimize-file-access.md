@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: 40122343-1FE3-4160-BABE-6A2DD9AF1E8E
-title: ファイル アクセスの最適化
-description: ファイル システムに効率的にアクセスすることで、ディスクの待ち時間とメモリ/CPU サイクルによるパフォーマンスの問題を回避するユニバーサル Windows プラットフォーム (UWP) アプリを作成します。
+title: "ファイル アクセスの最適化"
+description: "ファイル システムに効率的にアクセスすることで、ディスクの待ち時間とメモリ/CPU サイクルによるパフォーマンスの問題を回避するユニバーサル Windows プラットフォーム (UWP) アプリを作成します。"
+translationtype: Human Translation
+ms.sourcegitcommit: 165105c141405cd752f876c822f76a5002d38678
+ms.openlocfilehash: 354a11fefd7164fd6ba5b21ec871ecbe7916ad25
+
 ---
 # ファイル アクセスの最適化
 
@@ -236,6 +240,7 @@ Dim managedStream As Stream = nativeStream.AsStreamForRead(bufferSize:=81920)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

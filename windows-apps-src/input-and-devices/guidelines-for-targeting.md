@@ -174,6 +174,6 @@ Windows では、ここで示した最小サイズや推奨する余白サイズ
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

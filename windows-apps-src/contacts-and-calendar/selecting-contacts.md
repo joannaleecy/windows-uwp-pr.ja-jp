@@ -1,6 +1,12 @@
 ---
-author: Xansky description: Windows.ApplicationModel.Contacts 名前空間では、複数の方法で連絡先を選ぶことができます。
-title: 連絡先の選択 ms.assetid: 35FEDEE6-2B0E-4391-84BA-5E9191D4E442 keywords: 連絡先, 選択 keywords: 1 つの連絡先の選択 keywords: 複数の連絡先の選択 keywords: 連絡先, 複数の選択 keywords: 特定の連絡先データの選択 keywords: 連絡先, 特定のデータの選択 keywords: 連絡先, 特定のフィールドの選択
+author: Xansky
+description: "Windows.ApplicationModel.Contacts 名前空間を使うと、連絡先を選ぶ複数のオプションがあります。"
+title: "連絡先の選択"
+ms.assetid: 35FEDEE6-2B0E-4391-84BA-5E9191D4E442
+keywords: contact, selecting specific fields
+ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
+ms.openlocfilehash: 6f2c6a546ed3daa0ef0311bc54ca47f31d01f3d8
+
 ---
 
 # 連絡先の選択
@@ -23,15 +29,15 @@ var contactPicker = new Windows.ApplicationModel.Contacts.ContactPicker();
 ## 選択モードを設定する (省略可能)
 
 連絡先ピッカーの既定の動作では、ユーザーが選んだ連絡先について、利用可能なすべてのデータが取得されます。 [
-            **SelectionMode**](https://msdn.microsoft.com/library/windows/apps/BR224913-selectionmode) プロパティを使うと、アプリに必要なデータ フィールドだけを取得するように連絡先ピッカーを構成できます。 利用可能な連絡先データのうちの一部だけが必要な場合は、この方法で連絡先ピッカーを使うと効率的です。
+            **SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.selectionmode) プロパティを使うと、アプリに必要なデータ フィールドだけを取得するように連絡先ピッカーを構成できます。 利用可能な連絡先データのうちの一部だけが必要な場合は、この方法で連絡先ピッカーを使うと効率的です。
 
-最初に、[**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/BR224913-selectionmode) プロパティを **Fields** に設定します。
+最初に、[**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.selectionmode) プロパティを **Fields** に設定します。
 
 ```cs
 contactPicker.SelectionMode = Windows.ApplicationModel.Contacts.ContactSelectionMode.Fields;
 ```
 
-次に、[**desiredFieldsWithContactFieldType**](https://msdn.microsoft.com/library/windows/apps/BR224913-desiredfieldswithcontactfieldtype) プロパティを使って、連絡先ピッカーで取得するフィールドを指定します。 次の例では、メール アドレスを取得するように連絡先ピッカーを構成しています。
+次に、[**DesiredFieldsWithContactFieldType**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.desiredfieldswithcontactfieldtype) プロパティを使って、連絡先ピッカーで取得するフィールドを指定します。 次の例では、メール アドレスを取得するように連絡先ピッカーを構成しています。
 
 ``` cs
 contactPicker.DesiredFieldsWithContactFieldType.Add(Windows.ApplicationModel.Contacts.ContactFieldType.Email);
@@ -43,7 +49,7 @@ contactPicker.DesiredFieldsWithContactFieldType.Add(Windows.ApplicationModel.Con
 Contact contact = await contactPicker.PickContactAsync();
 ```
 
-ユーザーが連絡先を複数選べるようにする場合は、[**pickContactsAsync**](https://msdn.microsoft.com/library/windows/apps/BR224913-pickcontactsasync) を使います。
+ユーザーが連絡先を複数選べるようにする場合は、[**PickContactsAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.contacts.contactpicker.pickcontactsasync) を使います。
 
 ```cs
 public IList<Contact> contacts;
@@ -228,6 +234,6 @@ public class ContactItemAdapter
 
 
 
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

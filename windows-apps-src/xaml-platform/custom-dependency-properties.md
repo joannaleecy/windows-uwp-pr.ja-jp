@@ -3,8 +3,8 @@ author: jwmsft
 description: "C++、C#、または Visual Basic を使った Windows ランタイム アプリでカスタム依存関係プロパティを定義および実装する方法を説明します。"
 title: "カスタム依存関係プロパティ"
 ms.assetid: 5ADF7935-F2CF-4BB6-B1A5-F535C2ED8EF8
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 63301870ab53f4061cac9b9ad87a5fb75e8c48da
+ms.sourcegitcommit: d50b73fcf78c28157cff7003dc3e180de9d69f70
+ms.openlocfilehash: 80a42040887818a0c6a66ed32327144bed586dc2
 
 ---
 
@@ -257,7 +257,7 @@ private static void OnLabelChanged(DependencyObject d, DependencyPropertyChanged
     String s = e.NewValue as String; //null checks omitted
     if (s == String.Empty)
     {
-        iwlc.HasLabelValue = false;
+        iwlc.HasLabelValue = false;s
     } else {
         iwlc.HasLabelValue = true;
     }
@@ -282,7 +282,7 @@ static void OnLabelChanged(DependencyObject^ d, DependencyPropertyChangedEventAr
     if (s->IsEmpty()) {
         iwlc->HasLabelValue=false;
     }
-}
+}s
 ```
 
 ### 構造体と列挙に対するプロパティ変更動作
@@ -345,7 +345,7 @@ static void OnVisibilityValueChanged(DependencyObject^ d, DependencyPropertyChan
 -   通常は、コレクションをアニメーション化しません。
 -   通常、スタイルまたはテンプレートを持つコレクションには項目を事前設定しません。
 -   コレクションへのバインディングは主要なシナリオですが、コレクションはバインディング ソースとなる依存関係プロパティでなくてもかまいません。 バインディング ターゲットの場合は、[**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/br242803) または [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) のサブクラスを使ってコレクション項目をサポートするか、ビュー モデル パターンを使う方が一般的です。 コレクションとのバインディングについて詳しくは、「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」をご覧ください。
--   コレクションの変更の通知は、**INotifyPropertyChanged** や **INotifyCollectionChanged** などのインターフェイスを通じて処理するか、[**ObservableCollection**](T:System.Collections.ObjectModel.ObservableCollection%601) からコレクション型を派生させることで処理する方が適切です。
+-   コレクションの変更の通知は、**INotifyPropertyChanged** や **INotifyCollectionChanged** などのインターフェイスを通じて処理するか、[**ObservableCollection&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/ms668604.aspx) からコレクション型を派生させることで処理する方が適切です。
 
 それでも、コレクション型の依存関係プロパティのシナリオは存在します。 次の 3 つのセクションでは、コレクション型の依存関係プロパティを実装する方法に関するガイダンスを示します。
 
@@ -385,6 +385,6 @@ C++/CX のプロパティ登録の実装は、C# より込み入っています�
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -18,7 +18,7 @@ ms.openlocfilehash: c33c05c6ec7f36b8ba7db840613fbfb7eb394c3f
 
 ユニバーサル Windows プラットフォーム (UWP) には、非同期メソッドを呼び出すためのモデルが明確に定義されており、非同期メソッドを使う必要がある型があります。 UWP の非同期モデルについて詳しくない場合は、この記事の前に「[非同期プログラミング][AsyncProgramming]」をご覧ください。
 
-非同期 UWP API は C++ で直接使うこともできますが、[**task クラス**][task-class]とそれに関連する型と関数を使うことをお勧めします。これは [**concurrency**][concurrencyNamespace] 名前空間のクラスで、 で定義されています`<ppltasks.h>`。 **concurrency::task** は汎用型のクラスですが、**/ZW** コンパイラ スイッチ (ユニバーサル Windows プラットフォーム (UWP) アプリとそのコンポーネントには必須) を使うと、task クラスで UWP の非同期型をカプセル化して次の処理を簡単に行うことができます。
+非同期 UWP API は C++ で直接使うこともできますが、[**task クラス**][task-class]とそれに関連する型と関数を使うことをお勧めします。これは [**concurrency**][concurrencyNamespace] 名前空間のクラスで、`<ppltasks.h>` で定義されています。 **concurrency::task** は汎用型のクラスですが、**/ZW** コンパイラ スイッチ (ユニバーサル Windows プラットフォーム (UWP) アプリとそのコンポーネントには必須) を使うと、task クラスで UWP の非同期型をカプセル化して次の処理を簡単に行うことができます。
 
 -   複数の非同期操作や同期操作を 1 つのチェーンで連結する
 
@@ -344,6 +344,6 @@ void App::InitDataSource(Vector<Object^>^ feedList, vector<wstring> urls)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

@@ -3,8 +3,9 @@ author: mcleblanc
 ms.assetid: 9322B3A3-8F06-4329-AFCB-BE0C260C332C
 description: "この記事では、さまざまな展開およびデバッグのターゲットを指定する手順について説明します。"
 title: "ユニバーサル Windows プラットフォーム (UWP) アプリの展開とデバッグ"
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: eb639e78bf144572dfbfd2d65514bb4eff7c7be1
+translationtype: Human Translation
+ms.sourcegitcommit: 14f6684541716034735fbff7896348073fa55f85
+ms.openlocfilehash: e2209e90080c7346bb363304b1a28f6446300332
 
 ---
 
@@ -27,6 +28,18 @@ Microsoft Visual Studio では、さまざまな Windows 10 デバイスにユ�
 -   **[デバイス]** は、USB 接続のデバイスにアプリケーションを展開します。 デバイスが開発者によりロック解除され、画面がロック解除されている必要があります。
 -   **[エミュレーター]** ターゲットが起動し、名前で指定された構成のエミュレーターにアプリケーションが展開されます。 エミュレーターは、Windows 8.1 以降を実行している Hyper-V 対応コンピューターでのみ使用できます。
 -   **[リモート コンピューター]** では、アプリケーションを展開するリモート ターゲットを指定できます。 リモート コンピューターへの展開について詳しくは、「[リモート デバイスの指定](#specifying-a-remote-device)」をご覧ください。
+
+## 展開されているアプリのデバッグ
+Visual Studio では、**[デバッグ]**、**[プロセスにアタッチ]** の順に選ぶことによって、実行中の任意の UWP アプリ プロセスにアタッチすることもできます。 実行中のプロセスにアタッチする場合、元の Visual Studio プロジェクトは必要ありませんが、プロセスの[シンボル](#symbols)を読み込むことは、元のコードを持たないプロセスのデバッグ時に非常に役立ちます。  
+  
+さらに、**[デバッグ]**、**[その他]**、**[インストールされているアプリケーション パッケージのデバッグ]** を選択することによって、インストール済みのアプリ パッケージにアタッチしてデバッグすることができます。   
+ 
+![[インストールされているアプリケーション パッケージのデバッグ] ダイアログ ボックス](images/gs-debug-uwp-apps-002.png)  
+
+**[起動はしないが、開始時にコードをデバッグする]** を選択すると、Visual Studio デバッガーは、UWP アプリが独自のタイミングで起動したときに、UWP アプリにアタッチします。 これは、カスタム パラメーターを使ったプロトコルのアクティブ化など、[さまざまな起動方法](../xbox-apps/automate-launching-uwp-apps.md)からの制御パスをデバッグするのに効果的な方法です。  
+
+UWP アプリは、Windows 8.1 以降で開発してコンパイルすることができますが、実行するには Windows 10 が必要です。 Windows 8.1 PC で UWP アプリを開発している場合、別の Windows 10 デバイスで実行されている UWP アプリをリモートでデバッグできます。ただし、ホストとターゲットの両方のコンピューターが同じ LAN に接続されている必要があります。 これを行うには、両方のコンピューターに [Remote Tools for Visual Studio](http://aka.ms/remotedebugger) をダウンロードしてインストールします。 インストールするバージョンはインストール済みの Visual Studio の既存のバージョンと一致している必要があり、選択するアーキテクチャ (x86、x64) もターゲット アプリケーションのアーキテクチャと一致している必要があります。   
+  
 
 ## リモート デバイスの指定
 
@@ -85,10 +98,51 @@ Windows 10 では、 [事前起動](https://msdn.microsoft.com/library/windows/a
 -   C# および Visual Basic の **[デバッグ]** プロパティ ページで、**[起動しないが、開始時にマイ コードをデバッグする]** チェック ボックスをオンにします。
 -   JavaScript および C++ の **[デバッグ]** プロパティ ページで、**[アプリの起動]** 値を **[はい]** に設定します。
 
+## シンボル
+
+シンボル ファイルには、変数、関数名、エントリ ポイントのアドレスなど、コードをデバッグするときに非常に便利な値が格納されており、例外とコールスタックの実行順序を把握することができます。 ほとんどの種類の Windows のシンボルは、[Microsoft シンボル サーバー](http://msdl.microsoft.com/download/symbols)から利用することも、高速にオフラインで参照できるように [Windows シンボル パッケージのダウンロード サイト](http://aka.ms/winsymbols)からダウンロードすることもできます。
+
+Visual Studio のシンボル オプションを設定するには、**[ツール] の [オプション]** を選択し、ダイアログ ウィンドウで **[デバッグ]、[シンボル]** の順に移動します。
+
+**図 4. [オプション] ダイアログ ボックス**
+            
+![[オプション] ダイアログ ボックス](images/gs-debug-uwp-apps-004.png)
+
+[WinDbg](#windbg) を使ってデバッグ セッションでシンボルを読み込むには、**sympath** 変数をシンボル パッケージの場所に設定します。 たとえば、次のコマンドを実行すると、Microsoft シンボル サーバーからシンボルが読み込まれ、C:\Symbols ディレクトリにキャッシュされます。
+
+```
+.sympath SRV*C:\Symbols*http://msdl.microsoft.com/download/symbols
+.reload
+```
+
+区切り文字 ';' を使用して複数のパスを追加したり、`.sympath+` コマンドを使用することもできます。 WinDbg を使用する高度なシンボル操作については、「[パブリック シンボルとプライベート シンボル](https://msdn.microsoft.com/library/windows/hardware/ff553493)」をご覧ください。
+
+## WinDbg
+
+WinDbg は、[Windows SDK](http://go.microsoft.com/fwlink/p?LinkID=271979) に含まれる、Debugging Tools for Windows の一部として出荷される強力なデバッガーです。 Windows SDK のインストールでは、スタンドアロン製品として Debugging Tools for Windows をインストールすることができます。 ネイティブ コードのデバッグには非常に便利ですが、マネージ コードや HTML5 で記述されたアプリについては WinDbg の使用をお勧めできません。 
+
+UWP アプリで WinDbg を使用するには、前のセクションで説明したように、最初に PLMDebug を使用して、アプリ パッケージの PLM を無効にする必要があります。 
+
+```
+plmdebug /enableDebug [PackageFullName] "\"C:\Program Files\Debugging Tools for Windows (x64)\WinDbg.exe\" -server npipe:pipe=test"
+```
+
+Visual Studio とは対照的に、WinDbg のコア機能の多くは、コマンド ウィンドウにコマンドを入力する必要があります。 入力したコマンドによって、実行状態の表示、ユーザー モードのクラッシュ ダンプの調査、さまざまなモードでのデバッグを行うことができます。 
+
+WinDbg で最もよく使用されるコマンドの 1 つが `!analyze -v` であり、次のように、現在の例外に関する詳細な情報を取得するために使用されます。
+
+- FAULTING_IP: 障害発生時の命令ポインター
+- EXCEPTION_RECORD: 現在の例外のアドレス、コード、フラグ
+- STACK_TEXT: 例外の前のスタック トレース
+
+WinDbg のすべてのコマンドの一覧については、[デバッガー コマンドに関するページ](https://msdn.microsoft.com/library/ff540507)をご覧ください。
+
+## 関連トピック
+- [プロセス ライフタイム管理 (PLM) のテスト ツールとデバッグ ツール](testing-debugging-plm.md)
+- [デバッグ、テスト、パフォーマンス](index.md)
 
 
 
-
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -196,6 +196,6 @@ Windows 8 では 3 種類のパンがサポートされます。
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

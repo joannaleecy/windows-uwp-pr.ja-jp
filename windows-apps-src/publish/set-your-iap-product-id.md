@@ -45,6 +45,6 @@ IAP の一意の製品 ID を入力します。 IAP の製品 ID は、[アプ�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

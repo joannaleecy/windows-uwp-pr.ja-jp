@@ -19,7 +19,7 @@ UWP プロジェクトで作業する場合、および Windows Phone Silverligh
 
 **表の使用方法:** まず、使うクラスの名前を探します。 マッピングで単純な名前空間名の変更よりも複雑になる場合は常に、クラスが示されています。 クラスが示されていない場合は、マッピングは名前空間の変更のみです。 したがって、クラスの名前空間名を探すことで、相当する UWP の名前空間名が見つかります。 目的のクラスはその名前空間に含まれています。 名前空間が示されていない場合は、その名前は変更されていません。
 
-**注:** Windows 10 では、Windows Phone ストア アプリと比べて、より多くの .NET Framework の要素がサポートされます。 たとえば、Windows 10 には、複数の System.ServiceModel.\* 名前空間、System.Net、System.Net.NetworkInformation、System.Net.Sockets があります。
+**注**  Windows 10 では、Windows Phone ストア アプリと比べて、より多くの .NET Framework の要素がサポートされます。 たとえば、Windows 10 には、複数の System.ServiceModel.\* 名前空間、System.Net、System.Net.NetworkInformation、System.Net.Sockets があります。
 また、Windows 10 アプリでは、.NET ネイティブのメリットを受けることができます。これは、MSIL をネイティブに実行可能なマシン コードに変換する事前コンパイル テクノロジです。 .NET ネイティブ アプリは、MSIL アプリに比べて、すばやく起動し、メモリ使用量やバッテリ使用量は少なくなります。
 
 | Windows Phone Silverlight | Windows ランタイム |

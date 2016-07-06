@@ -46,7 +46,7 @@ OnCanceled メソッドには、次のフットプリントがあることが条
 >    }
 > ```
 
-バックグラウンド タスク クラスに **\_CancelRequested** というフラグ変数を追加します。 この変数は、いつ取り消し要求が出されたかを示すために使います。
+[!div class="tabbedCodeSnippets"] バックグラウンド タスク クラスに **\_CancelRequested** というフラグ変数を追加します。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -57,9 +57,9 @@ OnCanceled メソッドには、次のフットプリントがあることが条
 >     volatile bool CancelRequested;
 > ```
 
-手順 1. で作った OnCanceled メソッドで、フラグ変数 **\_CancelRequested** を **true** に設定します。
+この変数は、いつ取り消し要求が出されたかを示すために使います。
 
-完全な[バックグラウンド タスクのサンプル]( http://go.microsoft.com/fwlink/p/?linkid=227509)、OnCanceled メソッドでは、**\_CancelRequested** を **true** に設定し、役立つデバッグ出力を書き出します。
+[!div class="tabbedCodeSnippets"]
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -85,7 +85,7 @@ OnCanceled メソッドには、次のフットプリントがあることが条
 >     }
 > ```
 
-バックグラウンド タスクの Run メソッドでは、処理を開始する前に OnCanceled イベント ハンドラー メソッドを登録します。 たとえば、次のコード行を使います。
+手順 1. で作った OnCanceled メソッドで、フラグ変数 **\_CancelRequested** を **true** に設定します。 完全な[バックグラウンド タスクのサンプル]( http://go.microsoft.com/fwlink/p/?linkid=227509)、OnCanceled メソッドでは、**\_CancelRequested** を **true** に設定し、役立つデバッグ出力を書き出します。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -95,14 +95,14 @@ OnCanceled メソッドには、次のフットプリントがあることが条
 >     taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &SampleBackgroundTask::OnCanceled);
 > ```
 
-## Run メソッドを終了して、取り消しを処理します。
+## [!div class="tabbedCodeSnippets"]
 
 
-取り消し要求を受け取った Run メソッドは処理を停止し、**\_cancelRequested** が **true** に設定されたタイミングを認識して、終了する必要があります。
+バックグラウンド タスクの Run メソッドでは、処理を開始する前に OnCanceled イベント ハンドラー メソッドを登録します。
 
-バックグラウンド タスク クラスの処理中にフラグ変数を確認するようにコードを変更します。 **\_cancelRequested** が true に設定された時点で、処理を中断します。
+たとえば、次のコード行を使います。 [!div class="tabbedCodeSnippets"]
 
-[バックグラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)では、バックグラウンド タスクが取り消されたときに、期間タイマーのコールバックが停止するかどうかの確認を行います。
+Run メソッドを終了して、取り消しを処理します。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -132,11 +132,11 @@ OnCanceled メソッドには、次のフットプリントがあることが条
 >     }
 > ```
 
-> **注**  上記のコード サンプルでは、[**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797).[**Progress**](https://msdn.microsoft.com/library/windows/apps/br224800) プロパティを使って、バックグラウンド タスクの進行状況を記録します。 進行状況は、[**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782) クラスを使ってアプリに報告されます。
+> 取り消し要求を受け取った Run メソッドは処理を停止し、**\_cancelRequested** が **true** に設定されたタイミングを認識して、終了する必要があります。 バックグラウンド タスク クラスの処理中にフラグ変数を確認するようにコードを変更します。
 
-処理が停止したときに、タスクが完了したのか、取り消されたのかを記録するように、Run メソッドを変更します。
+**\_cancelRequested** が true に設定された時点で、処理を中断します。
 
-[バックグラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)では、LocalSettings の状態が記録されます。
+[バックグラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)では、バックグラウンド タスクが取り消されたときに、期間タイマーのコールバックが停止するかどうかの確認を行います。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -200,15 +200,15 @@ OnCanceled メソッドには、次のフットプリントがあることが条
 >     }
 > ```
 
-## 注釈
+## [!div class="tabbedCodeSnippets"]
 
-[バックグラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)をダウンロードして、メソッドのコンテキストに従ってコード例を確認できます。
+**注**  上記のコード サンプルでは、[**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797).[**Progress**](https://msdn.microsoft.com/library/windows/apps/br224800) プロパティを使って、バックグラウンド タスクの進行状況を記録します。
 
-このサンプル コードでは、説明の便宜上、[バックグラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)の Run メソッド (およびコールバック タイマー) の一部しか示していません。
+進行状況は、[**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782) クラスを使ってアプリに報告されます。
 
-## メソッド例を実行します。
+## 処理が停止したときに、タスクが完了したのか、取り消されたのかを記録するように、Run メソッドを変更します。
 
-[バックグラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)のコンテキストがわかるように、以下に完全な Run メソッドとタイマーのコールバック コードを示します。
+[バックグラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)では、LocalSettings の状態が記録されます。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -327,26 +327,26 @@ OnCanceled メソッドには、次のフットプリントがあることが条
 > }
 > ```
 
-> **注:** この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
+> [!div class="tabbedCodeSnippets"] 注釈
 
-## 関連トピック
+## [バックグラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)をダウンロードして、メソッドのコンテキストに従ってコード例を確認できます。
 
-* [バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)
-* [アプリケーション マニフェストでのバックグラウンド タスクの宣言](declare-background-tasks-in-the-application-manifest.md)
-* [バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)
-* [バックグラウンド タスクの進捗状況と完了の監視](monitor-background-task-progress-and-completion.md)
-* [バックグラウンド タスクの登録](register-a-background-task.md)
-* [バックグラウンド タスクによるシステム イベントへの応答](respond-to-system-events-with-background-tasks.md)
-* [タイマーでのバックグラウンド タスクの実行](run-a-background-task-on-a-timer-.md)
-* [バックグラウンド タスクを実行するための条件の設定](set-conditions-for-running-a-background-task.md)
-* [バックグラウンド タスクのライブ タイルの更新](update-a-live-tile-from-a-background-task.md)
-* [メンテナンス トリガーの使用](use-a-maintenance-trigger.md)
+* [このサンプル コードでは、説明の便宜上、[バックグラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)の Run メソッド (およびコールバック タイマー) の一部しか示していません。](create-and-register-a-background-task.md)
+* [メソッド例を実行します。](declare-background-tasks-in-the-application-manifest.md)
+* [[バックグラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)のコンテキストがわかるように、以下に完全な Run メソッドとタイマーのコールバック コードを示します。](guidelines-for-background-tasks.md)
+* [[!div class="tabbedCodeSnippets"]](monitor-background-task-progress-and-completion.md)
+* [**注:** この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。](register-a-background-task.md)
+* [Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。](respond-to-system-events-with-background-tasks.md)
+* [関連トピック](run-a-background-task-on-a-timer-.md)
+* [バックグラウンド タスクの作成と登録](set-conditions-for-running-a-background-task.md)
+* [アプリケーション マニフェストでのバックグラウンド タスクの宣言](update-a-live-tile-from-a-background-task.md)
+* [バックグラウンド タスクのガイドライン](use-a-maintenance-trigger.md)
 
-* [バックグラウンド タスクのデバッグ](debug-a-background-task.md)
-* [Windows ストア アプリで一時停止イベント、再開イベント、バックグラウンド イベントをトリガーする方法 (デバッグ時)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [バックグラウンド タスクの進捗状況と完了の監視](debug-a-background-task.md)
+* [バックグラウンド タスクの登録](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

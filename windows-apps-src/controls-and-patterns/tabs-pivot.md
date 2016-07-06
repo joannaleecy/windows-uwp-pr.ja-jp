@@ -5,43 +5,43 @@ title: "タブとピボット"
 ms.assetid: 556BC70D-CF5D-4295-A655-D58163CC1824
 label: Tabs and pivots
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 6585a75f08a64b7bb8f27fd32a227fa49bb0f3f4
+ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
+ms.openlocfilehash: 8737ce16d98952f24f9651d30d49ffa85b8d306b
 
 ---
 # ピボットとタブ
 
-ピボット コントロールとタブ パターンは、アクセス頻度の高い個別のコンテンツ カテゴリ間を移動するために使います。 ピボットとタブは、対応するカテゴリ ヘッダーがある 2 つ以上のコンテンツ ウィンドウで構成されます。 ヘッダーは常に画面上に表示され、選択状態が明確に示されるので、ユーザーは現在使っているカテゴリを常に意識するようになります。
-![タブの例](images/HIGSecOne_Tabs.png)
+Pivot コントロールと関連タブは、アクセス頻度の高い個別のコンテンツ カテゴリ間を移動するために使います。 ピボットを使うと、2 つ以上のコンテンツ ウィンドウ間を移動できるようになり、テキスト ヘッダーを使ってコンテンツのさまざまなセクションを明確化できます。
 
-タブはピボットの視覚的な変化形であり、[**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) コントロールを使って構築されます。 ピボットをカスタマイズする方法を示す[
-              **コード サンプル**
-            ](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlPivot)については、GitHub をご覧ください。
+![タブの例](images/pivot_Hero_main.png)
 
-<span class="sidebar_heading" style="font-weight: bold;">重要な API</span>
+タブは、アイコンとテキストの組み合わせ、またはアイコンのみを使ってコンテンツのセクションを明確化するピボットの視覚的な変化形です。 タブは、[**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) コントロールを使って構築されます。 [
+            **Pivot のサンプル**](http://go.microsoft.com/fwlink/p/?LinkId=619903)は、Pivot コントロールをタブ パターンへとカスタマイズする方法を示しています。
+
+
 
 -   [**Pivot クラス**](https://msdn.microsoft.com/library/windows/apps/dn608241)
 
-## タブ/ピボット パターン
+## ピボット パターン
 
-タブ/ピボット パターンを使ってアプリを構築する場合は、考慮すべきいくつかの重要なデザインの変数があります。
+ピボットを使ってアプリを構築する場合は、考慮すべきいくつかの重要なデザインの変数があります。
 
-- **ヘッダー ラベル。**  ヘッダーは、テキスト付きのアイコンまたはテキストのみで示すことができます。
+- **ヘッダー ラベル。**  ヘッダーは、テキスト付きのアイコン、アイコンのみ、またはテキストのみで示すことができます。
 - **ヘッダーの整列。**  ヘッダーは、左揃えまたは中央揃えにすることができます。
-- **トップレベルまたはサブレベルのナビゲーション。**  タブ/ピボットは、いずれかのレベルのナビゲーションで使うことができます。 必要に応じて、[ナビゲーション ウィンドウ](nav-pane.md)をプライマリ レベルで提供し、タブ/ピボットをセカンダリとして提供できます。
+- **トップレベルまたはサブレベルのナビゲーション。**  ピボットは、いずれかのレベルのナビゲーションで使うことができます。 必要に応じて、[ナビゲーション ウィンドウ](nav-pane.md)をプライマリ レベルで提供し、ピボットをセカンダリとして提供できます。
 - **タッチ ジェスチャのサポート。**  タッチ ジェスチャをサポートするデバイスでは、次に示す 2 つの操作セットのどちらかを使ってコンテンツ カテゴリ間を移動できます。
     1. タブ/ピボット ヘッダーをタップして、そのカテゴリに移動します。
     2. コンテンツ領域上で左または右へスワイプして隣接するカテゴリに移動します。
 
 ## 例
 
-Cortana アラームの既定の Pivot コントロール。
+電話での Pivot コントロール。
 
-![Cortana アラームのピボットの例](images/pivot_cortana-reminders.png)
+![ピボットの例](images/pivot_example.png)
 
 アラーム & クロック アプリのタブ パターン。
 
-![アラーム & クロック内のタブの例](images/tabs_alarms-and-clock.png)
+![アラーム & クロック内のタブ パターンの例](images/tabs_alarms-and-clock.png)
 
 ## ピボット コントロールの作成
 
@@ -86,6 +86,7 @@ Pivot は [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/xam
 -   ピボット項目のヘッダーをタップすると、そのヘッダーのセクション コンテンツに移動します。
 -   ピボット項目のヘッダー上で左または右へスワイプすると、隣接するセクションに移動します。
 -   セクション コンテンツ上で左または右へスワイプすると、隣接するセクションに移動します。
+![セクション コンテンツ上で左にスワイプする例](images/pivot_w_hand.png)
 
 コントロールには次の 2 つのモードがあります。
 
@@ -94,11 +95,26 @@ Pivot は [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/xam
 -   許可されている領域内にすべてのピボット ヘッダーが収まる場合、ピボットは固定されます。
 -   ピボット ラベルをタップすると、ピボット自体は移動しませんが、対応するページに移動します。 アクティブなピボットは強調表示されます。
 
+{{> aside-internal content = "
+-   10 フィート環境では、項目が回転しないようにすることを特にお勧めします。 Xbox 上でアプリを実行する場合は、新しい `IsHeaderItemsCarouselEnabled` プロパティを False に設定します。
+"}}
+
 **カルーセル**
 
 -   許可されている領域内にすべてのピボット ヘッダーが収まらない場合、ピボットがカルーセル表示されます。
 -   ピボット ラベルをタップすると対応するページに移動し、アクティブなピボット ラベルは最初の位置までカルーセル表示されます。
 -   カルーセル内のピボット項目は、最後のピボット セクションから最初のピボット セクションにループします。
+
+{{> aside-internal content = "
+### ピボット フォーカス
+
+既定では、ピボット ヘッダー上のキーボード フォーカスは下線付きで表示されます。
+
+![既定のフォーカスでは選択されたヘッダーが下線付きで表示される](images/pivot_focus_selectedHeader.png)
+
+ピボットをカスタマイズし、ヘッダーの選択ビジュアルに下線を組み込んだアプリでは、新しい `HeaderFocusVisualPlacement` プロパティを使って既定の設定を変更できます。 `HeaderFocusVisualPlacement=\"ItemHeaders\"` を指定した場合、フォーカスはヘッダー パネル全体を取り囲むように描画されます。
+
+![ItemsHeader オプションはピボット ヘッダー全体を取り囲むフォーカス用の四角形を描画する](images/pivot_focus_headers.png) "}}
 
 ## 推奨事項
 
@@ -111,10 +127,12 @@ Pivot は [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/xam
 
 ## 関連トピック
 
-[ナビゲーション デザインの基本](https://msdn.microsoft.com/library/windows/apps/dn958438)
+- [ナビゲーション デザインの基本](../layout/navigation-basics.md)
+
+- [**ピボットのサンプル**](http://go.microsoft.com/fwlink/p/?LinkId=619903)
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

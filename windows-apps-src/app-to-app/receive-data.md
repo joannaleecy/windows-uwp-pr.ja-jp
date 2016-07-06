@@ -141,6 +141,6 @@ async void ReportCompleted(ShareOperation shareOperation, string quickLinkId, st
 * [QuickLInkId](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.quicklink.id.aspx)
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

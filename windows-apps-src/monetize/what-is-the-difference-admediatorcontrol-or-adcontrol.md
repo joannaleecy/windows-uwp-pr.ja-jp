@@ -21,7 +21,7 @@ Microsoft からのバナー広告またはスポット広告ビデオを表示�
 
 Microsoft Advertising ライブラリと広告仲介ライブラリは、両方とも Microsoft Store Engagement and Monetization SDK に含まれています。 この SDK のインストールと、この SDK に含まれているさまざまな Microsoft Advertising ライブラリについて詳しくは、「[Microsoft Advertising ライブラリのインストール](install-the-microsoft-advertising-libraries.md)」をご覧ください。
 
->**注:** スポット広告を表示するには、**InterstitialAd** コントロールを使います。 **AdControl** と **AdMediatorControl** は、スポット広告を表示できません。 詳しくは、「[スポット広告](interstitial-ads.md)」をご覧ください。
+>**注**  スポット広告を表示するには、**InterstitialAd** コントロールを使います。 **AdControl** と **AdMediatorControl** は、スポット広告を表示できません。 詳しくは、「[スポット広告](interstitial-ads.md)」をご覧ください。
 
  
 

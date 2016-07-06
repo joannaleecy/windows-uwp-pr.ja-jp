@@ -109,6 +109,6 @@ Xbox One にアプリを展開する前に、ユーザーがコンソールに�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

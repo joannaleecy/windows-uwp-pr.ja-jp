@@ -1,8 +1,11 @@
 ---
 author: mtoepke
-title: Windows 10 ゲーム開発ガイド
-description: ユニバーサル Windows プラットフォーム (UWP) ゲーム開発のためのリソースや情報を網羅したガイドです。
+title: "Windows 10 ゲーム開発ガイド"
+description: "ユニバーサル Windows プラットフォーム (UWP) ゲーム開発のためのリソースや情報を網羅したガイドです。"
 ms.assetid: 6061F498-96A8-44EF-9711-68AE5A1218C9
+ms.sourcegitcommit: 35017dd14f873350d7e9d75ff6c5c519067547b5
+ms.openlocfilehash: 33c158e254a367e65607e86ff425e9829b8255f5
+
 ---
 
 # Windows 10 ゲーム開発ガイド
@@ -30,7 +33,7 @@ Windows 10 ゲームを作成すると、スマートフォンから PC、Xbox O
 
 ドキュメントから、開発者向けのプログラム、フォーラム、ブログ、サンプルまで、ゲーム開発に役立つ多くのリソースが用意されています。 ここでは、Windows 10 ゲームの開発を始めるにあたって役立つリソースをまとめています。
 
-> **注**   Xbox One の開発と高度な Windows 10 のゲーム機能 (Xbox Live サービスなど) は、ID@Xbox や Microsoft Studios などのプログラムによって管理されます。 このガイドでは幅広いリソースを取り上げているため、参加しているプログラムや特定の開発の役割によっては、一部のリソースにアクセスできない場合があります。 developer.xboxlive.com、forums.xboxlive.com、xdi.xboxlive.com、Game Developer Network (GDN) に解決されるリンクなどです。 Microsoft との提携について詳しくは、「[開発者プログラム](#programs)」をご覧ください
+> **注**   Xbox One の開発と高度な Windows 10 のゲーム機能 (Xbox Live サービスなど) は、ID@Xbox や Microsoft Studios などのプログラムによって管理されます。 このガイドでは幅広いリソースを取り上げているため、参加しているプログラムや特定の開発の役割によっては、一部のリソースにアクセスできない場合があります。 developer.xboxlive.com、forums.xboxlive.com、xdi.xboxlive.com、Game Developer Network (GDN) に解決されるリンクなどです。 Microsoft との提携について詳しくは、「[開発者プログラム](#programs)」をご覧ください。
 
  
 
@@ -185,7 +188,7 @@ Windows 10 のゲーム機能を理解してゲーム開発をすぐに始める
     </tr>
     <tr>
         <td>Xbox One ゲームのサンプル (GDN)</td>
-        <td>[サンプル](https://developer.xboxlive.com/platform/development/education/Pages/Samples.aspx)</td>
+        <td>[サンプル](https://developer.xboxlive.com/en-us/platform/development/education/Pages/Samples.aspx)</td>
     </tr>
     <tr>
         <td>Windows 8 ゲームのサンプル (MSDN コード ギャラリー)</td>
@@ -217,27 +220,27 @@ Windows 10 のゲーム機能を理解してゲーム開発をすぐに始める
     </tr>
 
     <tr>
-        <td>Desktop applications developer forums</td>
-        <td>[Windows desktop applications forums](https://social.msdn.microsoft.com/Forums/home?category=windowsdesktopdev)</td>
+        <td>デスクトップ アプリケーション開発者フォーラム</td>
+        <td>[Windows デスクトップ アプリケーション フォーラム](https://social.msdn.microsoft.com/Forums/home?category=windowsdesktopdev)</td>
     </tr>
     <tr>
-        <td>DirectX Windows Store games (archived forum posts)</td>
-        <td>[Building Windows Store games with DirectX (archived)](https://social.msdn.microsoft.com/Forums/vstudio/home?forum=wingameswithdirectx)</td>
+        <td>DirectX Windows ストア ゲーム (アーカイブ済みのフォーラムの投稿)</td>
+        <td>[DirectX を使った Windows ストア ゲームの構築 (アーカイブ済み)](https://social.msdn.microsoft.com/Forums/vstudio/home?forum=wingameswithdirectx)</td>
     </tr>
     <tr>
-        <td>Windows 10 managed partner developer forums</td>
-        <td>[XBOX Developer Forums: Windows 10](http://aka.ms/win10devforums)</td>
+        <td>Windows 10 対象パートナー開発者フォーラム</td>
+        <td>[XBOX 開発者フォーラム: Windows 10](http://aka.ms/win10devforums)</td>
     </tr>
     <tr>
-        <td>DirectX early access program forums</td>
-        <td>[DirectX 12 forum](http://directx12forum.azurewebsites.net/index.php)</td>
+        <td>DirectX 早期アクセス プログラムのフォーラム</td>
+        <td>[DirectX 12 フォーラム](http://directx12forum.azurewebsites.net/index.php)</td>
     </tr>
 </table>
 
 
 ### 開発者ブログ
 
-開発者ブログは、ゲーム開発に関する最新情報を手に入れることができる、もう 1 つの有用なリソースです。 新機能、実装の詳細、ベスト プラクティス、アーキテクチャの背景などに関する投稿を見つけることができます。
+開発者ブログは、ゲームの開発に関する最新情報が提供されるもう 1 つの優れたリソースです。 新機能、実装の詳細、ベスト プラクティス、アーキテクチャの背景などに関する投稿を見つけることができます。
 
 <table>
     <colgroup>
@@ -332,9 +335,11 @@ UWP のゲームの開発を開始するとき、グラフィックス、入力�
 
 Windows 10 ゲームでは、複数のプログラミング言語やグラフィックス テクノロジを使うことができます。 どれを選ぶかは、開発しているゲームの種類、開発スタジオの経験や好み、ゲームの具体的な機能要件によって決まります。 C#、C++、JavaScript のどれを使うか、 DirectX、XAML、HTML5 のどれを使うかなどです。
 
-### DirectX
+#### DirectX
 
-Microsoft DirectX を使うと、最高のパフォーマンスの 2D および 3D グラフィックスとマルチメディアを生み出すことができます。 Windows 10 で新たに導入された Direct3D 12 は、コンソールに似た API の性能を備え、これまで以上に高速で効率的になりました。 開発するゲームで、最新のグラフィックス ハードウェアを十分に活用して、より多くのオブジェクト、より豊かなシーン、より印象的な効果を実現できます。 Direct3D 12 は、Windows 10 PC と Xbox One 向けに最適化されたグラフィックスを提供します。 Direct3D 11 の使い慣れたグラフィックス パイプラインを使う場合でも、Direct3D 11.3 に追加された新しいレンダリングおよび最適化機能を活かすことができます。 さらに、Win32 をルーツとする実証済みのデスクトップ Windows API の開発者は、Windows 10 でもそのオプションを選ぶことができます。
+Microsoft DirectX を使うと、最高のパフォーマンスの 2D および 3D グラフィックスとマルチメディアを生み出すことができます。 
+
+Windows 10 で新たに導入された Direct3D 12 は、コンソールに似た API の性能を備え、これまで以上に高速で効率的になりました。 開発するゲームで、最新のグラフィックス ハードウェアを十分に活用して、より多くのオブジェクト、より豊かなシーン、より印象的な効果を実現できます。 Direct3D 12 は、Windows 10 PC と Xbox One 向けに最適化されたグラフィックスを提供します。 Direct3D 11 の使い慣れたグラフィックス パイプラインを使う場合でも、Direct3D 11.3 に追加された新しいレンダリングおよび最適化機能を活かすことができます。 さらに、Win32 をルーツとする実証済みのデスクトップ Windows API の開発者は、Windows 10 でもそのオプションを選ぶことができます。
 
 DirectX のさまざまな機能と緊密なプラットフォーム統合により、要求の多いほとんどのゲームに必要とされる性能とパフォーマンスを実現できます。
 
@@ -355,10 +360,14 @@ DirectX のさまざまな機能と緊密なプラットフォーム統合によ
         <td>Direct3D 12 プログラミング ガイドとリファレンス</td>
         <td>[Direct3D 12 グラフィックス](https://msdn.microsoft.com/library/windows/desktop/dn903821)</td>
     </tr>
+    <tr>
+        <td>グラフィックスおよび DirectX 12 開発に関するビデオ (YouTube チャンネル)</td>
+        <td>[Microsoft DirectX 12 とグラフィックスに関する教育](https://www.youtube.com/channel/UCiaX2B8XiXR70jaN7NK-FpA)</td>
+    </tr>
 </table>
  
 
-### XAML
+#### XAML
 
 XAML は、アニメーション、ストーリーボード、データ バインディング、拡張性の高いベクター ベース グラフィックス、動的なサイズ変更、シーン グラフなどの便利な機能を備える、使いやすい宣言型 UI 言語です。 また、XAML はゲーム UI、メニュー、スプライト、2D グラフィックスに最適です。 UI レイアウトを簡単にするため、XAML には、Expression Blend や Microsoft Visual Studio などの設計および開発ツールとの互換性があります。 XAML はよく C# と同時に使用されますが、希望する言語が C++ の場合や、ゲームが多くの CPU を必要とする場合は、C++ も適しています。
 
@@ -378,7 +387,7 @@ XAML は、アニメーション、ストーリーボード、データ バイ�
 </table>
  
 
-### HTML 5
+#### HTML 5
 
 ハイパーテキスト マークアップ言語 (HTML) は、Web ページ、アプリ、リッチ クライアントに使用される一般的な UI マークアップ言語です。 Windows ゲームでは、HTML の使い慣れた機能、ユニバーサル Windows プラットフォーム、AppCache、Web ワーカー、キャンバス、ドラッグ アンド ドロップ、非同期プログラミング、SVG などの最新の Web 機能のサポートを備えた、全機能装備のプレゼンテーション層として HTML5 を使うことができます。 HTML レンダリングの内部では、DirectX ハードウェア アクセラレータの機能が活用されるため、追加のコードを記述しなくても DirectX のパフォーマンスの恩恵を受けることができます。 Web 開発に熟練している場合、Web ゲームを移植する場合、または他の選択肢よりアプローチしやすい言語およびグラフィックス層を使う場合は、HTML5 が最適です。 HTML5 は JavaScript と同時に使用されますが、C# や C++/CX で作成されたコンポーネントを呼び出すこともできます。
 
@@ -398,7 +407,7 @@ XAML は、アニメーション、ストーリーボード、データ バイ�
 </table>
  
 
-### プレゼンテーション テクノロジの組み合わせ
+#### プレゼンテーション テクノロジの組み合わせ
 
 Microsoft DirectX Graphic Infrastructure (DXGI) には、複数のグラフィックス テクノロジにおける相互運用性と互換性が備わっています。 高パフォーマンスのグラフィックスを実現するため、メニューや他のシンプルな UI には XAML を使い、複雑な 2D および 3D シーンのレンダリングには DirectX を使うことで、XAML と DirectX を組み合わせることができます。 DXGI には、Direct2D、Direct3D、DirectWrite、DirectCompute、Microsoft メディア ファンデーション間の互換性も備わっています。
 
@@ -418,7 +427,7 @@ Microsoft DirectX Graphic Infrastructure (DXGI) には、複数のグラフィ�
 </table>
  
 
-### C++
+#### C++
 
 C++/CX はオーバーヘッドの低い高パフォーマンスな言語であり、速度、互換性、プラットフォーム アクセスがうまく組み合わせられています。 C++/CX により、DirectX や Xbox Live など、Windows 10 のすばらしいゲーム機能すべてが使いやすくなります。 既にある C++ コードとライブラリを再利用することもできます。 C++/CX を使うと、ガベージ コレクションのオーバーヘッドを生じさせない高速なネイティブ コードが作成されるため、ゲームのパフォーマンスが向上し、電力消費が低くなり、結果としてバッテリ寿命が延びます。 C++/CX を DirectX または XAML と同時に使うか、両方の組み合わせを使って、ゲームを作成することができます。
 
@@ -438,7 +447,7 @@ C++/CX はオーバーヘッドの低い高パフォーマンスな言語であ�
 </table>
  
 
-### C#
+#### C#
 
 C# ("シー シャープ" と発音) は、タイプ セーフかつオブジェクト指向のシンプルで強力な最新の革新的言語です。 C# を使うと、C スタイル言語の親しみやすさと表現力を維持しながら短期間で開発できます。 C# は使いやすい言語ですが、ポリモーフィズム、デリゲート、ラムダ、クロージャ、反復子メソッド、共変性、統合言語クエリ (LINQ) 式など、多くの高度な言語機能が備わっています。 XAML をターゲットとする場合、ゲームの開発をすぐに始めたい場合、C# を既に使ったことがある場合、C# が最適です。 C# は主に XAML と同時に使われるめ、DirectX を使う場合は、代わりに C++ を選ぶか、ゲームの一部を DirectX とやり取りする C++ コンポーネントとして記述します。 または、C# と C++ 用の即時モード Direct2D グラフィックス ライブラリである [Win2D](https://github.com/Microsoft/Win2D) を使うことを検討します。
 
@@ -454,7 +463,7 @@ C# ("シー シャープ" と発音) は、タイプ セーフかつオブジェ
 </table>
  
 
-### JavaScript
+#### JavaScript
 
 JavaScript は、最新の Web アプリケーションやリッチ クライアント アプリケーションに広く使用されている動的なスクリプト言語です。
 
@@ -472,7 +481,7 @@ Windows JavaScript アプリは、ユニバーサル Windows プラットフォ�
 </table>
 
 
-### Windows ランタイム コンポーネントを使って言語を組み合わせる
+#### Windows ランタイム コンポーネントを使って言語を組み合わせる
 
 ユニバーサル Windows プラットフォームでは、異なる言語で記述されたコンポーネントを簡単に組み合わせることができます。 C++、C#、Visual Basic で Windows ランタイム コンポーネントを作成した後、JavaScript、C#、C++、Visual Basic から呼び出すことができます。 これは、好みの言語でゲームの一部をプログラミングする場合に最適な方法です。 コンポーネントにより、特定の言語でのみ使用可能な外部ライブラリや、既に記述しているレガシ コードを使うこともできるようになります。
 
@@ -490,13 +499,11 @@ Windows JavaScript アプリは、ユニバーサル Windows プラットフォ�
 
 ### ゲームで使う Microsoft DirectX のバージョン
 
-ゲームで DirectX を使うことを選択した場合、使うバージョン (Microsoft Direct3D 12 または Microsoft Direct3D 11) を決定する必要があります。
+ゲームで DirectX を使うことを選んだ場合、使うバージョン (Microsoft Direct3D 12 または Microsoft Direct3D 11) を決定する必要があります。
 
-Direct3D 11.3 は、一般的な Direct3D プログラミング モデルを使用する低レベルのグラフィックス API です。 ユニバーサル Windows アプリでは、引き続き Direct3D 11 を使うことができ、Direct3D 11.3 で追加された新しいレンダリング機能や最適化機能を利用できます。
+Windows 10 で新たに導入された Direct3D 12 は、コンソールに似た API の性能を備え、これまで以上に高速で効率的になりました。 開発するゲームで、最新のグラフィックス ハードウェアを十分に活用して、より多くのオブジェクト、より豊かなシーン、より印象的な効果を実現できます。 Direct3D 12 は、Windows 10 PC と Xbox One 向けに最適化されたグラフィックスを提供します。 Direct3D 12 は非常に低いレベルで動作するため、専門的なグラフィックス開発チームや経験豊富な DirectX 11 開発チームは、グラフィックスの最適化を十分に活かすために必要となるすべてのコントロールを利用することができます。
 
-Direct3D 12 は Windows 10 の新機能で、新しいパイプライン プログラミング モデルが導入されています。 Direct3D 12 はハードウェアにより近くなり、抽象化の使用が少なくなっているため、ゲームでリソースの使用をより細かく制御できます。 Direct3D 12 では、CPU、GPU、消費電力のパフォーマンスが向上しています。
-
-Direct3D 11 で記述されたエンジンが既にあり、Direct3D 12 への切り替えの準備がまだ整っていない場合は、Direct3D 11 on 12 を使うことによって、ある程度のパフォーマンスの向上を実現し、Direct3D 12 への移行を開始できます。
+Direct3D 11.3 は低レベル グラフィック API です。よく利用される Direct3D プログラミング モデルが使われており、GPU レンダリングに関連する多くの複雑な処理を扱うことができます。 また、Windows 10 と Xbox One でもサポートされています。 Direct3D 11 で作成されたエンジンを既にお持ちで、Direct3D 12 への切り替えの準備がまだ整っていない場合は、Direct3D 11 on 12 を使うことによって、ある程度のパフォーマンスの向上を実現することができます。 バージョン 11.3 以降には、Direct3D 12 でも利用可能な新しいレンダリングと最適化の機能が含まれています。
 
 <table>
     <colgroup>
@@ -546,7 +553,7 @@ Direct3D 11 で記述されたエンジンが既にあり、Direct3D 12 への�
 </table>
  
 
-### ユニバーサル Windows プラットフォーム ブリッジ
+#### ユニバーサル Windows プラットフォーム ブリッジ
 
 ユニバーサル Windows プラットフォーム ブリッジは、既にあるアプリやゲームを UWP に移植するためのテクノロジです。 ブリッジは、すぐに UWP のゲーム開発の始めるときに最適な方法です。
 
@@ -570,7 +577,7 @@ Direct3D 11 で記述されたエンジンが既にあり、Direct3D 12 への�
 </table>
  
 
-### Unity
+#### Unity
 
 Unity 5 は、2D および 3D ゲームと対話型エクスペリエンスを作成するための受賞歴のある次世代開発プラットフォームです。 Unity 5 により、新しい芸術性、高度なグラフィックス機能、高い効率性を手に入れることができます。
 
@@ -612,7 +619,7 @@ Unity 5 は、2D および 3D ゲームと対話型エクスペリエンスを�
 </table>
  
 
-### Havok
+#### Havok
 
 Havok のモジュール化された一連のツールとテクノロジによって、ゲーム クリエーターは新しいレベルの対話式操作と没入感を提供できます。 Havok により、非常にリアルな物理的効果、対話型のシミュレーション、魅力的な映像を実現できます。
 
@@ -636,7 +643,7 @@ Havok のモジュール化された一連のツールとテクノロジによ�
 </table>
  
 
-### Cocos2d
+#### Cocos2d
 
 Cocos2d-X は、オープン ソース、クロス プラットフォームのゲーム開発エンジンおよびツール スイートで、UWP ゲームの構築をサポートしています。 バージョン 3 以降、3 D 機能も追加されています。
 
@@ -664,7 +671,7 @@ Cocos2d-X は、オープン ソース、クロス プラットフォームの�
 </table>
 
 
-### Unreal Engine
+#### Unreal Engine
 
 Unreal Engine 4 は、あらゆる種類のゲームや開発者に適したゲーム開発ツールがすべて揃ったスイートです。 最も要求の厳しいコンソールおよび PC ゲームにおいて、Unreal Engine は世界中のゲーム開発者により使用されています。 Unreal Engine 4 を購読している [DirectX 12 早期アクセス プログラム](#dxeap) メンバーは、DirectX をサポートする Unreal Engine 4.4 開発プロジェクトにアクセスできます。
 
@@ -702,7 +709,7 @@ Unreal Engine 4 は、あらゆる種類のゲームや開発者に適したゲ�
 
 ### ゲームの移植
 
-既にゲームがある場合は、ゲームを短期間で UWP に移植するのに役立つ多くのリソースやガイドがあります。 移植作業をすぐに開始する場合は、[ユニバーサル Windows プラットフォーム ブリッジ](#uwp_bridges)を使うことも検討してください
+既にゲームがある場合は、ゲームを短期間で UWP に移植するのに役立つ多くのリソースやガイドがあります。 移植作業をすぐに開始する場合は、[ユニバーサル Windows プラットフォーム ブリッジ](#uwp_bridges)を使うことも検討してください。
 
 <table>
     <colgroup>
@@ -901,7 +908,7 @@ UX デザインとは別に、レベルのデザイン、ペース配分、世�
 </table>
  
 
-### 色のガイドラインとパレット
+#### 色のガイドラインとパレット
 
 ゲームで一貫した色のガイドラインに従うと、美しさやナビゲーションの操作性が向上し、メニューや HUD の機能がプレイヤーに伝わりやすくなります。 警告、ダメージ、XP、成績などのゲーム要素の色が一貫していると、UI がわかりやすくなるため、ラベルによって説明する必要性が減ります。
 
@@ -917,7 +924,7 @@ UX デザインとは別に、レベルのデザイン、ペース配分、世�
 </table>
  
 
-### 文字体裁
+#### 文字体裁
 
 文字体裁を適切に使うと、UI のレイアウト、ナビゲーション、読みやすさ、雰囲気、ブランド、プレイヤーの熱中度など、多くの側面が向上します。
 
@@ -933,7 +940,7 @@ UX デザインとは別に、レベルのデザイン、ペース配分、世�
 </table>
  
 
-### UI マップ
+#### UI マップ
 
 UI マップとは、ゲーム ナビゲーションのレイアウトとフローチャートで表されるメニューのことです。 UI マップを使うと、すべての関係者が、ゲームのインターフェイスとナビゲーション パスを理解しやすくなり、開発サイクルの初期段階で潜在的な障害や行き詰まりが明らかになります。
 
@@ -951,6 +958,8 @@ UI マップとは、ゲーム ナビゲーションのレイアウトとフロ�
 
 ### DirectX 開発
 
+DirectX ゲーム開発用のガイドと参照情報を紹介します。
+
 <table>
     <colgroup>
     <col width="50%" />
@@ -965,6 +974,10 @@ UI マップとは、ゲーム ナビゲーションのレイアウトとフロ�
         <td>[アプリ オブジェクトと DirectX](about-the-metro-style-user-interface-and-directx.md)</td>
     </tr>
     <tr>
+        <td>グラフィックスおよび DirectX 12 開発に関するビデオ (YouTube チャンネル)</td>
+        <td>[Microsoft DirectX 12 とグラフィックスに関する教育](https://www.youtube.com/channel/UCiaX2B8XiXR70jaN7NK-FpA)</td>
+    </tr>
+    <tr>
         <td>DirectX の概要とリファレンス</td>
         <td>[DirectX のグラフィックスとゲーミング](https://msdn.microsoft.com/library/windows/desktop/ee663274)</td>
     </tr>
@@ -977,7 +990,43 @@ UI マップとは、ゲーム ナビゲーションのレイアウトとフロ�
         <td>[強化されたパワーとパフォーマンスの向上: DirectX 12 でのゲーム](http://channel9.msdn.com/Events/GDC/GDC-2015/Better-Power-Better-Performance-Your-Game-on-DirectX12)</td>
     </tr>
 </table>
+
+#### Direct3D 12 について
+
+Direct3D 12 での変更点、および Direct3D 12 を使ってプログラミングを開始する方法について説明します。 
+
+<table>
+    <colgroup>
+    <col width="50%" />
+    <col width="50%" />
+    </colgroup>
+    <tr>
+        <td>プログラミング環境のセットアップ</td>
+        <td>[Direct3D 12 プログラミング環境のセットアップ](https://msdn.microsoft.com/library/windows/desktop/dn899120.aspx)</td>
+    </tr>
+    <tr>
+        <td>基本的なコンポーネントを作成する方法</td>
+        <td>[Direct3D 12 の基本的なコンポーネントの作成](https://msdn.microsoft.com/library/windows/desktop/dn859356.aspx)</td>
+    </tr>
+    <tr>
+        <td>Direct3D 12 での変更点</td>
+        <td>[Direct3D 11 から Direct3D 12 に移行された重要な変更点](https://msdn.microsoft.com/library/windows/desktop/dn899194.aspx)</td>
+    </tr>
+    <tr>
+        <td>Direct3D 11 から Direct3D 12 に移植する方法</td>
+        <td>[Direct3D 11 から Direct3D 12 に移植する](https://msdn.microsoft.com/library/windows/desktop/mt431709.aspx)</td>
+    </tr>
+    <tr>
+        <td>リソース バインディングの概念 (対象となる記述子、記述子テーブル、記述子ヒープ、およびルート署名) </td>
+        <td>[Direct3D 12 でのリソース バインディング](https://msdn.microsoft.com/library/windows/desktop/dn899206.aspx)</td>
+    </tr>
+    <tr>
+        <td>メモリ管理</td>
+        <td>[Direct3D 12 でのメモリ管理](https://msdn.microsoft.com/library/windows/desktop/dn899198.aspx)</td>
+    </tr>
+</table>
  
+#### DirectX ツール キットとライブラリ
 
 DirectX ツール キット、DirectX テクスチャ処理ライブラリ、DirectXMesh ジオメトリ処理ライブラリは、DirectX 開発用のテクスチャ、メッシュ、スプライト、その他のユーティリティ機能とヘルパー クラスを提供します。 これらのライブラリにより、自分でこれらの機能の実装する場合と比較して、多くの時間と労力を節約できます。 これらのライブラリは主に Direct3D 11 用に実装されていますが、その一部は Direct3D 12 でも動作します。
 
@@ -1001,6 +1050,33 @@ DirectX ツール キット、DirectX テクスチャ処理ライブラリ、Dir
     <tr>
         <td>DirectXTK での Direct3D 12 のサポート (ブログの投稿)</td>
         <td>[DirectX 12 のサポート](https://github.com/Microsoft/DirectXTK/issues/2)</td>
+    </tr>
+</table>
+
+#### パートナーからの DirectX リソース
+
+これらは、外部のパートナーによって作成された補足の DirectX ドキュメントです。
+
+<table>
+    <colgroup>
+    <col width="50%" />
+    <col width="50%" />
+    </colgroup>
+    <tr>
+        <td>Nvidia: DX12 での推奨と非推奨 (ブログ投稿) </td>
+        <td>[Nvidia GPU での DirectX 12](https://developer.nvidia.com/dx12-dos-and-donts-updated)</td>
+    </tr>
+    <tr>
+        <td>Intel: DirectX 12 を使った効率的なレンダリング</td>
+        <td>[Intel グラフィックスでの DirectX 12 のレンダリング](https://software.intel.com/sites/default/files/managed/4a/38/Efficient-Rendering-with-DirectX-12-on-Intel-Graphics.pdf)</td>
+    </tr>
+    <tr>
+        <td>Intel: DirectX 12 でのマルチ アダプターのサポート</td>
+        <td>[DirectX 12 を使った明示的なマルチ アダプターアプリケーションを実装する方法](https://software.intel.com/en-us/articles/multi-adapter-support-in-directx-12)</td>
+    </tr>
+    <tr>
+        <td>Intel: DirectX 12 のチュートリアル</td>
+        <td>[Intel、Suzhou Snail、Microsoft によって共同制作されたホワイト ペーパー](https://software.intel.com/en-us/articles/tutorial-migrating-your-apps-to-directx-12-part-1)</td>
     </tr>
 </table>
 
@@ -1122,6 +1198,10 @@ DirectX の開発には微妙で複雑な部分があります。 運用環境�
         <td>[DirectX ツールを使用した、ゲームでのグラフィックスの困難な問題の解決](http://channel9.msdn.com/Events/GDC/GDC-2015/Solve-the-Tough-Graphics-Problems-with-your-Game-Using-DirectX-Tools)</td>
     </tr>
     <tr>
+        <td>DirectX 12 をデバッグするための Visual Studio 2015 のツール (ビデオ)</td>
+        <td>[Visual Studio 2015 の Windows 10 用 DirectX ツール](https://channel9.msdn.com/Series/ConnectOn-Demand/212)</td>
+    </tr>
+    <tr>
         <td>Direct3D 12 プログラミング ガイド</td>
         <td>[Direct3D 12 プログラミング ガイド](https://msdn.microsoft.com/library/windows/desktop/dn903821)</td>
     </tr>
@@ -1130,25 +1210,6 @@ DirectX の開発には微妙で複雑な部分があります。 運用環境�
         <td>[DirectX と XAML の相互運用機能](directx-and-xaml-interop.md)</td>
     </tr>
 </table>
- 
-
-Microsoft DirectX の製品チームは、DirectX 12 の開発に関する一連の詳細なビデオを作成しました。 これらは、リソースのバインド、プレゼンテーション モード、デバッグ、リソースの障壁、その他の多くの DirectX 12 の概念を詳しく説明しています。 このシリーズには、ゲスト プレゼンターも出演しています。
-
-<table>
-    <colgroup>
-    <col width="50%" />
-    <col width="50%" />
-    </colgroup>
-    <tr>
-        <td>グラフィックスおよび DirectX 12 開発に関するビデオ (YouTube チャンネル)</td>
-        <td>[Microsoft DirectX 12 とグラフィックスに関する教育](https://www.youtube.com/channel/UCiaX2B8XiXR70jaN7NK-FpA)</td>
-    </tr>
-    <tr>
-        <td>Direct3D 12 のリソースとヒープ管理 (ビデオ)</td>
-        <td>[DirectX 12 でのヒープとリソース](https://www.youtube.com/channel/UCiaX2B8XiXR70jaN7NK-FpA)</td>
-    </tr>
-</table>
- 
 
 ### グローバリゼーションとローカライズ
 
@@ -1276,7 +1337,7 @@ Windows プラットフォーム用の多言語対応ゲームを開発し、Mic
 
 ### Visual Studio Application Insights
 
-Visual Studio Application Insights は、公開されたゲームのパフォーマンス、利用統計情報、および使用状況の分析を提供します。 Application Insights は、リリース後のゲームの問題の検出と解決、使用状況の継続的な監視と向上、プレイヤーがゲームを操作する方法の把握に役立ちます。 Application Insights は、アプリに SDK を追加することで機能し、[Azure ポータル](http://portal.azure.com/)に利用統計情報を送信します
+Visual Studio Application Insights は、公開されたゲームのパフォーマンス、利用統計情報、および使用状況の分析を提供します。 Application Insights は、リリース後のゲームの問題の検出と解決、使用状況の継続的な監視と向上、プレイヤーがゲームを操作する方法の把握に役立ちます。 Application Insights は、アプリに SDK を追加することで機能し、[Azure ポータル](http://portal.azure.com/)に利用統計情報を送信します。
 
 <table>
     <colgroup>
@@ -1317,7 +1378,7 @@ Visual Studio Application Insights は、公開されたゲームのパフォー
 ## ゲームへの Xbox Live の追加
 
 
-> **注**   Xbox Live の開発は ID@Xbox や Microsoft Studios などのプログラムで管理されます。 このガイドでは幅広いリソースを取り上げているため、プログラムへの参加や特定の開発の役割によっては、一部のリソースにアクセスできない場合があります。 developer.xboxlive.com、forums.xboxlive.com、xdi.xboxlive.com、Game Developer Network (GDN) に解決されるリンクなどです。 Microsoft との提携について詳しくは、「[開発者プログラム](#programs)」をご覧ください
+> **注**   Xbox Live の開発は ID@Xbox や Microsoft Studios などのプログラムで管理されます。 このガイドでは幅広いリソースを取り上げているため、プログラムへの参加や特定の開発の役割によっては、一部のリソースにアクセスできない場合があります。 developer.xboxlive.com、forums.xboxlive.com、xdi.xboxlive.com、Game Developer Network (GDN) に解決されるリンクなどです。 Microsoft との提携について詳しくは、「[開発者プログラム](#programs)」をご覧ください。
 
 <table>
     <colgroup>
@@ -1385,6 +1446,7 @@ Visual Studio Application Insights は、公開されたゲームのパフォー
  
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

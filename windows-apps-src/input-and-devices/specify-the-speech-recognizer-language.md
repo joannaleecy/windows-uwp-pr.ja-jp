@@ -134,6 +134,6 @@ SRGS 文法は、[**SpeechRecognitionGrammarFileConstraint**](https://msdn.micro
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

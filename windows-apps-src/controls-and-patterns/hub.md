@@ -5,18 +5,26 @@ title: "ハブ コントロール"
 ms.assetid: F1319960-63C6-4A8B-8DA1-451D59A01AC2
 label: Hub
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 70ce2a58b45c8514aca6641ca034caa91fb88d18
+ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
+ms.openlocfilehash: fdff043aa92842adb6ac2d572794bf02fdd5c6b3
 
 ---
 # ハブ コントロール/パターン
 
 
-ハブ コントロールを使うと、アプリのコンテンツを、関連した別個のセクションやカテゴリに整理できます。 ハブのセクションは、優先順に走査するためのものであり、さらに細かいエクスペリエンスにする出発点として使うことができます。
+ハブ コントロールを使うと、アプリのコンテンツを、関連した別個のセクションやカテゴリに整理できます。 ハブのセクションは、優先順に走査するためのものであり、さらに細かい操作性を実現するための出発点として使うことができます。
 
 ![ハブの例](images/hub_example_tablet.png)
 
-ハブのコンテンツはパンする堅牢なビューに表示でき、新しい情報、入手可能な項目、関連する項目がひとめでわかります。 ハブには通常ページ ヘッダーがありますが、複数の各コンテンツ セクションにはセクション ヘッダーがあります。
+ハブのコンテンツはパノラマ ビューに表示でき、ユーザーは、新しい情報、入手可能な情報、関連する情報がひとめでわかります。 ハブには通常ページ ヘッダーがあり、各コンテンツ セクションにはセクション ヘッダーがあります。
+
+
+-   [**Hub クラス**](https://msdn.microsoft.com/library/windows/apps/dn251843)
+-   [**HubSection クラス**](https://msdn.microsoft.com/library/windows/apps/dn251845)
+
+## 適切なコントロールの選択
+
+ハブ コントロールは、階層に配置された大量のコンテンツを表示する場合に適してします。 ハブは、新しいコンテンツの閲覧と検出の優先順位を設定し、ストアやメディア コレクション内の項目を表示する際に役立ちます。
 
 ハブ コントロールには、コンテンツのナビゲーション パターンを構築するのに適したいくつかの機能があります。
 
@@ -34,24 +42,13 @@ ms.openlocfilehash: 70ce2a58b45c8514aca6641ca034caa91fb88d18
 
 -   **ページとコンテンツの可変幅**
 
-    パノラマ モデルであるハブでは、セクション幅を調整できます。 これは異なる深度のあるコンテンツに役立ち、また項目数が少なくても多くても同様に適切に書式設定できます。
+    パノラマ モデルであるハブでは、セクション幅を調整できます。 これは異なる深度や量を含んだコンテンツに適してします。
 
 -   **柔軟なアーキテクチャ**
 
     アプリのアーキテクチャを浅く維持する場合、すべてのチャネル コンテンツをハブ セクションの概要に収めることができます。
 
-<span class="sidebar_heading" style="font-weight: bold;">重要な API</span>
-
--   [**Hub クラス (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn251843)
--   [**HubSection クラス (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn251845)
--   [**Hub オブジェクト (HTML)**](https://msdn.microsoft.com/library/windows/apps/dn255137)
-
-
-## 適切なコントロールの選択
-
-ハブ コントロールは、階層に配置された大量のコンテンツを表示する場合に適してします。 ハブは、新しいコンテンツの閲覧と検出の優先順位を設定し、ストアやメディア コレクション内の項目を表示する際に役立ちます。
-
-ハブは、いくつかある利用可能なナビゲーション要素の 1 つです。ナビゲーション パターンと他のナビゲーション要素について詳しくは、「[ユニバーサル Windows プラットフォーム (UWP) アプリのナビゲーション デザインの基本](https://msdn.microsoft.com/library/windows/apps/dn958438)」をご覧ください。
+ハブは、いくつかある利用可能なナビゲーション要素の 1 つです。ナビゲーション パターンと他のナビゲーション要素について詳しくは、「[ユニバーサル Windows プラットフォーム (UWP) アプリのナビゲーション デザインの基本](../layout/navigation-basics.md)」をご覧ください。
 
 ## ハブのアーキテクチャ
 
@@ -107,13 +104,13 @@ ms.openlocfilehash: 70ce2a58b45c8514aca6641ca034caa91fb88d18
 
 ## 関連記事
 
-- [ナビゲーションの基本](https://msdn.microsoft.com/library/windows/apps/dn958438)
-- [**Windows.UI.Xaml.Controls Hub クラス**](https://msdn.microsoft.com/library/windows/apps/dn251843)
-- [XAML ハブ コントロールのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=310072)
+- [Hub クラス](https://msdn.microsoft.com/library/windows/apps/dn251843)
+- [ナビゲーションの基本](../layout/navigation-basics.md)
 - [ハブの使用](https://msdn.microsoft.com/library/windows/apps/xaml/dn308518)
+- [XAML ハブ コントロールのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=310072)
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

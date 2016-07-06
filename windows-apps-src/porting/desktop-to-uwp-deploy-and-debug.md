@@ -220,6 +220,6 @@ VFS という名前のフォルダーの下に、アプリが依存している 
 [デスクトップ アプリから UWP へのブリッジのコード サンプル (GitHub)](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

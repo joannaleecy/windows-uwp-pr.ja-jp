@@ -111,49 +111,49 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 
     > **Note**  When launched via File Contract, make sure that Back button takes the user back to the screen that launched the app and not to the app's previous content.
 
-新しいページを開くアクティブ化イベントごとにアプリで新しい XAML フレームを作成することをお勧めします。 こうすると、新しい XAML フレームのナビゲーション バックスタックに、中断されたときに現在のウィンドウに表示されていた以前のコンテンツが含まれなくなります。 起動コントラクトとファイル コントラクトで単一 XAML フレームを使うことにしたアプリは、新しいページに移動する前にフレームのナビゲーション ジャーナルにあるページをクリアする必要があります。
+[!div class="tabbedCodeSnippets"] 新しいページを開くアクティブ化イベントごとにアプリで新しい XAML フレームを作成することをお勧めします。 こうすると、新しい XAML フレームのナビゲーション バックスタックに、中断されたときに現在のウィンドウに表示されていた以前のコンテンツが含まれなくなります。
 
-ファイル アクティブ化によって起動されたときは、アプリの先頭ページに戻ることができる UI を含めることを検討してください。
+起動コントラクトとファイル コントラクトで単一 XAML フレームを使うことにしたアプリは、新しいページに移動する前にフレームのナビゲーション ジャーナルにあるページをクリアする必要があります。
 
-## 注釈
+## ファイル アクティブ化によって起動されたときは、アプリの先頭ページに戻ることができる UI を含めることを検討してください。
 
 
-受け取るファイルは、信頼できないソースからのファイルである可能性があります。 操作する前に、ファイルのコンテンツを検証することをお勧めします。 入力の検証について詳しくは、[安全なコードの記述](http://go.microsoft.com/fwlink/p/?LinkID=142053)をご覧ください。
+注釈 受け取るファイルは、信頼できないソースからのファイルである可能性があります。 操作する前に、ファイルのコンテンツを検証することをお勧めします。
 
-> **注:** この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
-
- 
-
-## 関連トピック
-
-**完全な例**
-
-* [Association Launching サンプル](http://go.microsoft.com/fwlink/p/?LinkID=231484)
-
-**概念**
-
-* [既定のプログラム](https://msdn.microsoft.com/library/windows/desktop/cc144154)
-* [ファイルの種類とプロトコルの関連付けのモデル](https://msdn.microsoft.com/library/windows/desktop/hh848047)
-
-**処理手順**
-
-* [ファイルに応じた既定のアプリの起動](launch-the-default-app-for-a-file.md)
-* [URI のアクティブ化の処理](handle-uri-activation.md)
-
-**ガイドライン**
-
-* [ファイルの種類と URI のガイドライン](https://msdn.microsoft.com/library/windows/apps/hh700321)
-
-**リファレンス**
-* [**Windows.ApplicationModel.Activation.FileActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224716)
-* [**Windows.UI.Xaml.Application.OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331)
+> 入力の検証について詳しくは、[安全なコードの記述](http://go.microsoft.com/fwlink/p/?LinkID=142053)をご覧ください。 **注:** この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。
 
  
 
+## Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
+
+**関連トピック**
+
+* [完全な例](http://go.microsoft.com/fwlink/p/?LinkID=231484)
+
+**Association Launching サンプル**
+
+* [概念](https://msdn.microsoft.com/library/windows/desktop/cc144154)
+* [既定のプログラム](https://msdn.microsoft.com/library/windows/desktop/hh848047)
+
+**ファイルの種類とプロトコルの関連付けのモデル**
+
+* [処理手順](launch-the-default-app-for-a-file.md)
+* [ファイルに応じた既定のアプリの起動](handle-uri-activation.md)
+
+**URI のアクティブ化の処理**
+
+* [ガイドライン](https://msdn.microsoft.com/library/windows/apps/hh700321)
+
+**ファイルの種類と URI のガイドライン**
+* [**リファレンス**](https://msdn.microsoft.com/library/windows/apps/br224716)
+* [**Windows.ApplicationModel.Activation.FileActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br242331)
+
+ 
+
  
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

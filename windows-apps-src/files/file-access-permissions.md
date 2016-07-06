@@ -1,8 +1,12 @@
 ---
 author: TylerMSFT
 ms.assetid: 3A404CC0-A997-45C8-B2E8-44745539759D
-title: ファイル アクセス許可
-description: アプリは既定でファイル システムの特定の場所にアクセスできます。 また、ファイル ピッカーを使うか機能を宣言すると、その他の場所にアクセスすることもできます。
+title: "ファイル アクセス許可"
+description: "アプリは既定でファイル システムの特定の場所にアクセスできます。 また、ファイル ピッカーを使うか機能を宣言すると、その他の場所にアクセスすることもできます。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 91f97f1ba245b0cf6cac1cff7971cace5ca3b5a0
+
 ---
 # ファイル アクセス許可
 
@@ -169,6 +173,7 @@ description: アプリは既定でファイル システムの特定の場所に
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

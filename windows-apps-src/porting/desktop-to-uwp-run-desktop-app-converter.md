@@ -3,8 +3,8 @@ author: awkoren
 Description: "Desktop Converter App を実行して、Windows デスクトップ アプリケーション (Win32、WPF、Windows フォームなど) をユニバーサル Windows プラットフォーム (UWP) アプリに変換します。"
 Search.Product: eADQiWindows 10XVcnh
 title: "Desktop App Converter プレビュー (Project Centennial)"
-ms.sourcegitcommit: 6d1c6e836d666972641320c73896459490f45924
-ms.openlocfilehash: 874b6452386526d66062a27a5b520cb1a232ae64
+ms.sourcegitcommit: 07016fabb8b49e57dd0ae4ef68447451d31aa2dc
+ms.openlocfilehash: bc28197cccc0559f57abc8cb81e23bf241ca3716
 
 ---
 
@@ -21,6 +21,11 @@ Desktop App Converter は、.NET 4.6.1 または Win32 向けに記述された�
 ## 新着情報
 
 ここでは、Desktop App Converter のバージョン間での変更について概要を示します。 
+
+### 2016 年 6 月 16 日
+
+* Desktop App Converter (v0.1.20) では、最新の Windows 10 Insider Preview ビルドで正常な変換をブロックするすべての問題が修正されています。 
+* ```–CreateX86Package``` が ```–PackageArch``` に置き換えられ、生成されるパッケージのアーキテクチャを指定できます。 
 
 ### 2016 年 6 月 8 日
 
@@ -210,12 +215,12 @@ get-help .\DesktopAppConverter.ps1 -detailed
 |```Cleanup WorkDirectory``` | コンバーターのすべての一時ファイルを削除します。 |
 |```Cleanup ExpandedImages``` | ホスト コンピューターにインストールされているすべての展開済みの基本イメージを削除します。 |
 
-### x86 パッケージ パラメーター
-Desktop App Converter Preview では、x86 および amd64 の両方のコンピューターにインストールして実行できる x86 パッケージの作成がサポートされるようになりました。 適切な変換を実行するには、Desktop App Converter を AMD64 コンピューターで実行する必要があることに注意してください。
+### パッケージのアーキテクチャ
+Desktop App Converter Preview では、x86 コンピューターと amd64 コンピューターにインストールして実行できる x86 および x64 の両方のアプリ パッケージの作成がサポートされるようになりました。 適切な変換を実行するには、Desktop App Converter を AMD64 コンピューターで実行する必要があることに注意してください。
 
 |パラメーター|説明|
 |---------|-----------|
-|```-CreateX86Package[<SwitchParameter>]``` | 32 ビットと 64 ビットの両方のホスト OS にインストールして実行できる 32 ビットのパッケージを生成します。 既定では、コンバーターはアプリのメインの実行可能ファイルからパッケージのアーキテクチャを検出しようとします。exe が見つからない場合は、64 ビットを既定の設定にします。 |
+|```-PackageArch <String>``` | 指定したアーキテクチャのパッケージを生成します。 有効なオプションは、'x86' または 'x64' です。たとえば、-PackageArch x86 のように指定します。 このパラメーターは省略可能です。 指定されていない場合、DesktopAppConverter はパッケージのアーキテクチャの自動検出を試みます。 自動検出に失敗した場合、既定値は x64 パッケージです。 |
 
 ## 参照
 + [Desktop App Converter を入手する](http://go.microsoft.com/fwlink/?LinkId=785437)
@@ -227,6 +232,6 @@ Desktop App Converter Preview では、x86 および amd64 の両方のコンピ
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -270,6 +270,6 @@ Windows ランタイムのコントロール用の既定の XAML テンプレー
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

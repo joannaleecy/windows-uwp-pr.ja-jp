@@ -5,15 +5,15 @@ title: "画像とイメージ ブラシ"
 ms.assetid: CEA8780C-71A3-4168-A6E8-6361CDFB2FAF
 label: Images and image brushes
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 972480aabb6f0db3b5091bd55323f9d1946086e6
+ms.sourcegitcommit: 485f3069ff92995082550366839f14be50f674a5
+ms.openlocfilehash: f37f609d87b48a39b958a8e32470488689a3e68c
 
 ---
 # 画像とイメージ ブラシ
 
-画像を表示するには、**Image** オブジェクトまたは **ImageBrush** オブジェクトを使うことができます。 Image オブジェクトは、イメージのレンダリングに使います。ImageBrush オブジェクトは、特定のイメージを使って別のオブジェクトをペイントするために使います。 
+画像を表示するには、**Image** オブジェクトまたは **ImageBrush** オブジェクトを使うことができます。 Image オブジェクトは、イメージのレンダリングに使います。ImageBrush オブジェクトは、特定のイメージを使って別のオブジェクトを描画するために使います。 
 
-<span class="sidebar_heading" style="font-weight: bold;">重要な API</span>
+
 
 -   [**Image クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx)
 -   [**Source プロパティ**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx)
@@ -25,13 +25,10 @@ ms.openlocfilehash: 972480aabb6f0db3b5091bd55323f9d1946086e6
 
 **ImageBrush** を使用して、画像を別のオブジェクトに適用します。 ImageBrush の使用法には、テキストの装飾性を高める効果や、コントロールまたはレイアウト コンテナーのタイルの背景などがあります。 画像を拡大、配置、およびタイル貼りする方法を制御できるので、パターンやその他の効果を作成することができます。 
 
-## 例
-
-
 
 ## 画像を作成する
 
-### 画像
+### Image
 [
             **Image**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx) オブジェクトを使って画像を作成する方法を次の例に示します。
 
@@ -148,11 +145,15 @@ ms.openlocfilehash: 972480aabb6f0db3b5091bd55323f9d1946086e6
 コードを使って Image または ImageBrush を定義する場合は、既定のコンストラクターを使い、次に、関連するソースのプロパティ ([**Image.Source**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx) と [**ImageBrush.ImageSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imagesource.aspx)) を設定します。 ソースのプロパティは、コードを使って設定する場合、[**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapimage.aspx) (URI ではない) を必要と使用します。 ソースがストリームである場合は、[**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync.aspx) メソッドを使って値を初期化します。 ソースが、**ms-appx**  スキームまたは **ms-resource** スキームを使うアプリ内のコンテンツを含む URI である場合は、URI を受け取る [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/br243238.aspx) コンストラクターを使います。 イメージ ソースが使えるようになるまで代替コンテンツを表示することが必要であるなど、イメージ ソースの取得やデコードについてタイミングの問題がある場合は、[**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.imageopened.aspx) イベントを処理することも検討してください。 コードの例については、[XAML 画像のサンプル](http://go.microsoft.com/fwlink/p/?linkid=238575)をご覧ください。
 
 > **注**
-            &nbsp;&nbsp;コードを使って画像を確立すると、自動処理を使って、現在のスケール修飾子とカルチャ修飾子で非修飾リソースにアクセスしたり、カルチャとスケールの修飾子で [**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemanager.aspx) と [**ResourceMap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemap.aspx) を使って、リソースを直接取得したりできます。 詳しくは、「[リソース管理システム](https://msdn.microsoft.com/library/windows/apps/xaml/jj552947.aspx)」をご覧ください。
+            &nbsp;&nbsp;コードを利用して画像を確立すると、自動処理を使って、現在のスケール修飾子とカルチャ修飾子で非修飾リソースにアクセスしたり、カルチャとスケールの修飾子で [**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemanager.aspx) と [**ResourceMap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemap.aspx) を使って、リソースを直接取得したりできます。 詳しくは、「[リソース管理システム](https://msdn.microsoft.com/library/windows/apps/xaml/jj552947.aspx)」をご覧ください。
+
+## 関連記事
+
+-   [オーディオ、ビデオ、およびカメラ](https://msdn.microsoft.com/windows/uwp/audio-video-camera/index)
+-   [**Image クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx)
+-   [**ImageBrush クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.aspx)
 
 
-
-
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO5-->
 
 

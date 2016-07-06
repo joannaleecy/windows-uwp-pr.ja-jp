@@ -56,7 +56,7 @@ XAML 言語では、特定の言語要素を指定します。これらの各要
 
 -   **d:DesignHeight 属性と d:DesignWidth 属性:** この 2 つの属性は、Visual Studio または別の XAML デザイナー サーフェイスが作成する XAML ファイルのルートに適用されることがあります。 この 2 つの属性は、たとえば、アプリ プロジェクトに新しく [**UserControl**](https://msdn.microsoft.com/library/windows/apps/br227647) を追加した場合に、作成される XAML の **UserControl** ルートに設定されます。 この属性はいずれも、XAML コンテンツの構成を設計しやすくするものであり、XAML コンテンツがコントロール インスタンスや、それより大きな UI ページの一部に使われた場合に生じるレイアウト面の制約がある程度予測できるようになります。
 
-   **注:** Microsoft Silverlight から XAML を移行する場合に、UI のページ全体を代表するルート要素にこの属性が存在することがあります。 この場合、この属性の削除が必要になります。 シミュレーターなどの XAML デザイナーの方が、拡大縮小やビュー状態の処理に優れた機能が備わっており、**d:DesignHeight** と **d:DesignWidth** を使った固定サイズのページ レイアウトよりも、ページのレイアウトを設計するうえで便利であると考えられます。
+   **注**  Microsoft Silverlight から XAML を移行する場合に、UI のページ全体を代表するルート要素にこの属性が存在することがあります。 この場合、この属性の削除が必要になります。 シミュレーターなどの XAML デザイナーの方が、拡大縮小やビュー状態の処理に優れた機能が備わっており、**d:DesignHeight** と **d:DesignWidth** を使った固定サイズのページ レイアウトよりも、ページのレイアウトを設計するうえで便利であると考えられます。
 
 -   **d:DataContext 属性:** ページ ルートまたはコントロールでこの属性を設定すると、そうでない場合にはオブジェクトに含まれる明示的または継承された [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) を上書きします。
 -   **d:DesignSource 属性:** 設計時の [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833) のデータ ソースを指定して、[**Source**](https://msdn.microsoft.com/library/windows/apps/br209835) を上書きします。

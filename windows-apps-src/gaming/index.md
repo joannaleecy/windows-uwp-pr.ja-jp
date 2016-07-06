@@ -3,8 +3,8 @@ author: mtoepke
 title: "ゲームと DirectX"
 description: "ユニバーサル Windows プラットフォーム (UWP) は、ゲームを作り、配布し、収益を得るための新たな機会を提供します。 新しいゲームの開始または既存のゲームの移植について説明します。"
 ms.assetid: 4073b835-c900-4ff2-9fc5-da52f9432a1f
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: b690fa9a97898da49646e39c982465a4a41adb7a
+ms.sourcegitcommit: 41ee0d2a45408b5b1a0dbc0b102f1b59843814b2
+ms.openlocfilehash: e5447f6238ece768513d160579e1c7e89b04e509
 
 ---
 
@@ -38,6 +38,8 @@ ms.openlocfilehash: b690fa9a97898da49646e39c982465a4a41adb7a
 | [Direct3D 11 でのデバイス削除シナリオの処理](handling-device-lost-scenarios.md) | このトピックでは、グラフィックス アダプターが削除または再初期化されたときに Direct3D と DXGI デバイス インターフェイス チェーンを再作成する方法について説明します。 |
 | [ゲームの非同期プログラミング](asynchronous-programming-directx-and-cpp.md) | このトピックでは、DirectX で非同期プログラミングやスレッディングを使う際のさまざまな考慮事項について取り上げます。 |
 | [ゲームのネットワーク](work-with-networking-in-your-directx-game.md) | ネットワーク機能を開発し、DirectX ゲームに組み込む方法について説明します。 |
+| [ゲームのアクセシビリティ](accessibility-for-games.md) | ゲームをより使いやすくする方法について説明します。 |
+| [ゲーム用のクラウド](cloud-for-games.md) | ゲーム開発でクラウド テクノロジを使用する方法について説明します。 |
 | [DirectX と XAML の相互運用機能](directx-and-xaml-interop.md) | UWP ゲームで Extensible Application Markup Language (XAML) と Microsoft DirectX を組み合わせて使うことができます。 |
 | [ゲームのパッケージ化](package-your-windows-store-directx-game.md) | 規模の大きい UWP ゲーム (特に、地域固有のアセットや機能オプションによる高解像度アセットを伴って複数言語をサポートするゲーム) は、サイズが容易に膨張する可能性があります。 このトピックでは、ユーザーが実際に必要なリソースのみを受け取ることができるように、アプリ パッケージとアプリ バンドルを使ってアプリをカスタマイズする方法について説明します。 |
 | [ゲーム移植ガイド](porting-guides.md) | 既存のゲームを Direct3D 11、UWP、および Windows 10 に移植するためのガイドを示します。 |
@@ -67,6 +69,6 @@ ms.openlocfilehash: b690fa9a97898da49646e39c982465a4a41adb7a
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

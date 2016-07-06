@@ -1,8 +1,12 @@
 ---
 author: DelfCo
-description: Windows.Web.Syndication 名前空間の機能を利用し、RSS や Atom の標準に従って生成される概要フィードを使って、最新の人気の高い Web コンテンツを取得または作成します。
-title: RSS/Atom フィード
+description: "Windows.Web.Syndication 名前空間の機能を利用し、RSS や Atom の標準に従って生成される概要フィードを使って、最新の人気の高い Web コンテンツを取得または作成します。"
+title: "RSS/Atom フィード"
 ms.assetid: B196E19B-4610-4EFA-8FDF-AF9B10D78843
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 625a18203bd2d60acc97a6243d4f3e1e0cf2b297
+
 ---
 
 # RSS/Atom フィード
@@ -261,6 +265,7 @@ function displayCurrentItem() {
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

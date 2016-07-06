@@ -33,7 +33,7 @@ ms.openlocfilehash: 3f6c759d582d92aa33df5874186aeaa3a7c37b01
 
 **x:FieldModifier** は、[x:Name 属性](x-name-attribute.md)を含む要素にのみ関係します。なぜなら、この名前はパブリックであるときにのみフィールドを参照するために使われるためです。
 
-**注:** Windows ランタイム XAML では、**x:ClassModifier** または **x:Subclass** はサポートされていません。
+**注**  Windows ランタイム XAML では、**x:ClassModifier** または **x:Subclass** はサポートされていません。
 
 
 

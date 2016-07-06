@@ -1,10 +1,14 @@
 ---
 author: Xansky
-Description: この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリのアクセシビリティ シナリオに関連する概念とテクノロジの概要を示します。
+Description: "この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリのアクセシビリティ シナリオに関連する概念とテクノロジの概要を示します。"
 ms.assetid: AA053196-F331-4CBE-B032-4E9CBEAC699C
-title: アクセシビリティの概要
+title: "アクセシビリティの概要"
 label: Accessibility overview
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
+ms.openlocfilehash: 430484a9243abc644de75d35c03bb11cf47960c0
+
 ---
 
 # アクセシビリティの概要  
@@ -153,7 +157,8 @@ private void ShowAccessibleUICheckBox_Click(object sender, RoutedEventArgs e)
 ## 検証と公開  
 アクセシビリティ対応と宣言してアプリを公開する方法については、「[ストア内のアクセシビリティ](accessibility-in-the-store.md)」をご覧ください。
 
-> [!NOTE] アプリをアクセシビリティ対応として宣言する方法は、Windows ストアのみに関係します。
+> [!NOTE]
+> アプリをアクセシビリティ対応として宣言する方法は、Windows ストアにのみ適用されます。
 
 <span id="Assistive_technology_support_in_custom_controls"/>
 <span id="assistive_technology_support_in_custom_controls"/>
@@ -174,6 +179,7 @@ private void ShowAccessibleUICheckBox_Click(object sender, RoutedEventArgs e)
 * [XAML アクセシビリティ サンプル](http://go.microsoft.com/fwlink/p/?linkid=238570)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

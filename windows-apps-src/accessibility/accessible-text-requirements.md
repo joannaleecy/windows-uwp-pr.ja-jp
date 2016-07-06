@@ -131,6 +131,6 @@ private async void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.U
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

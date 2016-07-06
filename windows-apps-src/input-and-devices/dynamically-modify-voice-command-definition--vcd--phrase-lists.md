@@ -5,156 +5,20 @@ title: "音声コマンド定義 (VCD) の語句一覧の動的変更"
 ms.assetid: 98024EAC-EC0E-44AA-AEC5-A611BA7C5884
 label: Modify VCD phrase lists
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 623243b94cf8ef6b276f8f2971af7bbdbdece81c
+redirect_url: https://msdn.microsoft.com/en-us/cortana/voicecommands/dynamically-modify-voice-command-definition--vcd--phrase-lists
+ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
+ms.openlocfilehash: 3bcbd5478e7273386ac1682d251335b8a7dd7730
 
 ---
 
 # 音声コマンド定義 (VCD) の語句一覧の動的変更
 
+このトピックは https://msdn.microsoft.com/en-us/cortana/voicecommands/dynamically-modify-voice-command-definition--vcd--phrase-lists に移動されました。
+
+Github: https://github.com/Microsoft/cortana-docs/blob/master/docs/voicecommands/dynamically-modify-voice-command-definition--vcd--phrase-lists.md
 
 
 
-
-**重要な API**
-
--   [**Windows.ApplicationModel.VoiceCommands**](https://msdn.microsoft.com/library/windows/apps/dn706594)
--   [**VCD 要素および属性 v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
-
-音声認識の結果を使って、音声コマンド定義 (VCD) ファイルに含まれているサポート対象語句の一覧 (**PhraseList** 要素) にアクセスし、この一覧を実行時に更新することができます。
-
-音声コマンドから実行されるタスクにユーザー定義のアプリ データや一時的なアプリ データが関係する場合は、実行時に動的に語句一覧を変更できると便利です。 
-
-たとえば、ユーザーが目的地を入力できる旅行アプリがあり、ユーザーがアプリ名の後に「&lt;目的地&gt; 旅行を表示」と発声するだけでアプリを起動できるようにするとします。 この場合、**ListenFor** 要素自体は `<ListenFor> Show trip to {destination}  </ListenFor>` のように指定します。ここで、"destination" は **PhraseList** の **Label** 属性の値です。
-
-実行時に語句一覧を更新すれば、考えられる目的地ごとに別々の **ListenFor** 要素を作成する必要がなくなります。 代わりに、ユーザーが旅程の入力時に指定した目的地を動的に **PhraseList** に設定できます。 
-
-**PhraseList** とその他の VCD 要素について詳しくは、「[**VCD 要素および属性 v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)」のリファレンスをご覧ください。
-
-**前提条件:  **
-
-このトピックは、「[Cortana の音声コマンドを使ったフォアグラウンド アプリの起動](launch-a-foreground-app-with-voice-commands-in-cortana.md)」に基づいています。 ここでは、引き続き **Adventure Works** という旅行の計画および管理アプリを使って機能について説明します。
-
-ユニバーサル Windows プラットフォーム (UWP) アプリを開発するのが初めての場合は、以下のトピックに目を通して、ここで説明されているテクノロジをよく理解できるようにしてください。
-
--   [初めてのアプリ作成](https://msdn.microsoft.com/library/windows/apps/bg124288)
--   「[イベントとルーティング イベントの概要](https://msdn.microsoft.com/library/windows/apps/mt185584)」に記載されているイベントの説明
-
-**ユーザー エクスペリエンス ガイドライン:  **
-
-アプリと **Cortana** を統合する方法については「[Cortana の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn974233)」を、魅力的な音声認識対応アプリの設計に役立つ便利なヒントについては「[音声機能の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596121)」をご覧ください。
-
-## <span id="Identify_the_command"></span><span id="identify_the_command"></span><span id="IDENTIFY_THE_COMMAND"></span>コマンドの識別と語句一覧の更新
-
-VCD ファイルの例を次に示します。このファイルでは、**Command** "showTripToDestination" と、目的地を表す 3 つのオプションを含む **PhraseList** を **Adventure Works** 旅行アプリに定義します。 ユーザーがアプリで目的地を保存したり削除したりすると、アプリは **PhraseList** のオプションを更新します。
-
-```XML
-<?xml version="1.0" encoding="utf-8"?>
-<VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.1">
-  <CommandSet xml:lang="en-us" Name="AdventureWorksCommandSet_en-us">
-    <CommandPrefix> Adventure Works, </CommandPrefix>
-    <Example> Show trip to London </Example>
-
-    <Command Name="showTripToDestination">
-      <Example> show trip to London  </Example>
-      <ListenFor> show trip to {destination} </ListenFor>
-      <Feedback> Showing trip to {destination} </Feedback>
-      <Navigate/>
-    </Command>
-
-    <PhraseList Label="destination">
-      <Item> London </Item>
-      <Item> Dallas </Item>
-      <Item> New York </Item>
-    </PhraseList>
-
-  </CommandSet>
-
-<!-- Other CommandSets for other languages -->
-
-</VoiceCommands>
-
-```
-
-VCD ファイルの **PhraseList** 要素を更新するには、語句一覧を含む **CommandSet** 要素を取得します。 **CommandSet** 要素の **Name** 属性 (**Name** は VCD ファイル内で重複しないようにします) をキーとして [**VoiceCommandManager.InstalledCommandSets**](https://msdn.microsoft.com/library/windows/apps/dn653257) プロパティにアクセスし、[**VoiceCommandSet**](https://msdn.microsoft.com/library/windows/apps/dn653258) の参照を取得します。
-
-コマンド セットを識別したら、変更する語句一覧への参照を取得し、[**SetPhraseListAsync**](https://msdn.microsoft.com/library/windows/apps/dn653261) メソッドを呼び出します。このとき、**PhraseList** 要素の **Label** 属性と、語句一覧の新しいコンテンツとなる文字列の配列を指定します。
-
-**注:** 語句一覧は、変更すると語句一覧全体が置き換えられます。 語句一覧に新しい項目を追加する場合は、既にある項目と新しい項目の両方を指定して [**SetPhraseListAsync**](https://msdn.microsoft.com/library/windows/apps/dn653261) を呼び出す必要があります。
-
-次の例では、前の例で示した **PhraseList** を更新して、Phoenix という目的地を追加する方法を示します。
-
-```CSharp
-Windows.ApplicationModel.VoiceCommands.VoiceCommnadDefinition.VoiceCommandSet commandSetEnUs;
-
-if (Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager.
-      InstalledCommandSets.TryGetValue(
-        "AdventureWorksCommandSet_en-us", out commandSetEnUs))
-{
-  await commandSetEnUs.SetPhraseListAsync(
-    "destination", new string[] {“London”, “Dallas”, “New York”, “Phoenix”});
-}
-```
-
-## <span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>注釈
-
-
-**PhraseList** を使った認識の制約は、比較的少ないセットや単語に適しています。 単語セットが大きすぎ (数百語など) たり、まったく制約しない場合は、**PhraseTopic** 要素と **Subject** 要素を使って音声認識結果の関連性を絞り込み、スケーラビリティを高めます。
-
-この例では、**Scenario** が "Search" の **PhraseTopic** があり、"City\\State" という **Subject** によってさらに絞り込まれています。
-
-```XML
-<?xml version="1.0" encoding="utf-8"?>
-<VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.1">
-  <CommandSet xml:lang="en-us" Name="AdventureWorksCommandSet_en-us">
-    <CommandPrefix> Adventure Works, </CommandPrefix>
-    <Example> Show trip to London </Example>
-
-    <Command Name="showTripToDestination">
-      <Example> show trip to London  </Example>
-      <ListenFor> show trip to {destination} </ListenFor>
-      <Feedback> Showing trip to {destination} </Feedback>
-      <Navigate/>
-    </Command>
-
-    <PhraseList Label="destination">
-      <Item> London </Item>
-      <Item> Dallas </Item>
-      <Item> New York </Item>
-    </PhraseList>
-
-    <PhraseTopic Label="destination" Scenario="Search">
-      <Subject>City/State</Subject>
-    </PhraseTopic>
-
-  </CommandSet>
-```
-
-## <span id="related_topics"></span>関連記事
-
-
-**開発者向け**
-* [Cortana の操作](cortana-interactions.md)
-* [Cortana の音声コマンドを使ったフォアグラウンド アプリの起動](launch-a-foreground-app-with-voice-commands-in-cortana.md)
-* [Cortana の音声コマンドを使ったバックグラウンド アプリの起動](launch-a-background-app-with-voice-commands-in-cortana.md)
-* [**VCD 要素および属性 v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
-
-**デザイナー向け**
-* [Cortana の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn974233)
-* [音声認識の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596121)
-
-**サンプル**
-* [Cortana 音声コマンドのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619899)
- 
-
- 
-
-
-
-
-
-
-
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

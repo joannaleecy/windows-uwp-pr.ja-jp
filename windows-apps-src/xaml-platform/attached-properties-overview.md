@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: XAML での添付プロパティの概念を説明し、例をいくつか紹介します。
-title: 添付プロパティの概要
+description: "XAML での添付プロパティの概念を説明し、例をいくつか紹介します。"
+title: "添付プロパティの概要"
 ms.assetid: 098C1DE0-D640-48B1-9961-D0ADF33266E2
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: b676110274bacc8aeacb2527099534cf0e26fa6b
+
 ---
 
 # 添付プロパティの概要
@@ -106,7 +110,7 @@ XAML をオブジェクト ツリーに解析するときは、XAML プロセッ
 
 **注意:** ただし、Windows ランタイム XAML 実装の制限があるため、カスタム添付プロパティをアニメーション化することはできません。
  
-- 添付プロパティをリソース ファイルから **x:Uid** へのリソース参照のターゲット プロパティとして指定するには、コードスタイルの完全に修飾された **using:** 宣言を角かっこ ("\[\]") で囲む特別な構文を使って、故意にスコープ ブレークを作成します。 たとえば、'<TextBlock x:Uid="Title" />' という要素が存在する場合、そのインスタンスの **Canvas.Top** 値をターゲットとするリソース ファイル内のリソース キーは、"Title.\[using:Windows.UI.Xaml.Controls\]Canvas.Top" となります。 リソース ファイルと XAML について詳しくは、「[クイック スタート: UI リソースの翻訳](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)」をご覧ください。
+- 添付プロパティをリソース ファイルから **x:Uid** へのリソース参照のターゲット プロパティとして指定するには、コードスタイルの完全に修飾された **using:** 宣言を角かっこ ("\[\]") で囲む特別な構文を使って、故意にスコープ ブレークを作成します。 たとえば、<TextBlock x:Uid="Title" /> という要素が存在する場合、そのインスタンスの **Canvas.Top** 値をターゲットとするリソース ファイル内のリソース キーは、"Title.\[using:Windows.UI.Xaml.Controls\]Canvas.Top" となります。 リソース ファイルと XAML について詳しくは、「[クイック スタート: UI リソースの翻訳](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)」をご覧ください。
 
 ## 関連トピック
 
@@ -119,6 +123,7 @@ XAML をオブジェクト ツリーに解析するときは、XAML プロセッ
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

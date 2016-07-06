@@ -1,25 +1,27 @@
 ---
 title: "既存のゲームの Xbox への移行"
 author: JordanEllis6809
-ms.sourcegitcommit: b94df28172a0ffa33e69e7d20c83c715a1bfdb52
-ms.openlocfilehash: 3fa8248662a4ad08d46e89c6c5b14ace56212b62
+ms.sourcegitcommit: e0c273495321689e37df6b36d97870327cff6c5a
+ms.openlocfilehash: 54db2390b5df3b5c6bc7ca6f7d6e36454435c543
 
 ---
 
 # 既存のゲームの Xbox への移行
 
-ゲームを構築する際の基礎となるテクノロジに基づいて、UWP を使用した Xbox へのゲームの移行プロセスを迅速に処理するための詳しい手順について説明します。
+
+ゲームで使用されるテクノロジに応じて、ゲームを Xbox の UWP に移行するための手順をいくつか示します。
+
+=======
+**注: ユニバーサル Windows プラットフォーム (UWP) をサポートするすべてのゲーム エンジンが一覧に示されているわけではありません。 ゲームで使用されるテクノロジが記載されていない場合は、UWP のサポートについて製品開発者に確認してください。**
 
 | エンジン      | 説明 |
 |------------|-------------|
 |[カスタム C++](development-lanes-custom-cpp.md)| ユニバーサル Windows プラットフォーム (UWP) を使用した Xbox での C++ ゲーム開発に関する情報です。 |
-|カスタム C#| 近日公開予定です。 |
-|Unreal 4| 近日公開予定です。 |
 |[Unity](development-lanes-unity.md)| 既存のゲームを Unity から Xbox に移行するためのチュートリアルです。 |
 |[HTML/JS](development-lanes-html.md)| Xbox での HTML ゲーム開発に関連する情報です。 |
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

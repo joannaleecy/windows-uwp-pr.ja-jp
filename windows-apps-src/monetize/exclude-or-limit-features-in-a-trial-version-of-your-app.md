@@ -1,6 +1,13 @@
 ---
-author: mcleanbyron Description: ユーザーがアプリを無料で使うことができる試用期間を設け、その期間中は一部の機能を除外または制限することで、アプリを通常版にアップグレードするようユーザーに促すことができます。
-title: 試用版での機能の除外または制限 ms.assetid: 1B62318F-9EF5-432A-8593-F3E095CA7056 keywords: 無料試用版 keywords: 無料の試用期間 keywords: 無料試用版のコード例 keywords: 無料試用版のコード サンプル
+author: mcleanbyron
+Description: "ユーザーがアプリを無料で使うことができる試用期間を設け、その期間中は一部の機能を除外または制限することで、アプリを通常版にアップグレードするようユーザーに促すことができます。"
+title: "試用版での機能の除外または制限"
+ms.assetid: 1B62318F-9EF5-432A-8593-F3E095CA7056
+keywords: free trial code sample
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 9c38784325f4dc51052f70a819012508f2a0bdbb
+
 ---
 
 # 試用版での機能の除外または制限
@@ -231,6 +238,7 @@ void appInit()
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

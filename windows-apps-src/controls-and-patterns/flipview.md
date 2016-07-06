@@ -5,8 +5,8 @@ title: "FlipView コントロールのガイドライン"
 ms.assetid: A4E05D92-1A0E-4CDD-84B9-92199FF8A8A3
 label: Flip view
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 7da18bd897248ecef7e1caaebff5b8bbab02e3fe
+ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
+ms.openlocfilehash: ecb46c0d42821d833e8232780b553754f8f097c5
 
 ---
 # フリップ ビュー
@@ -14,7 +14,7 @@ ms.openlocfilehash: 7da18bd897248ecef7e1caaebff5b8bbab02e3fe
 コレクション内の画像やその他の項目 (アルバムの写真や製品の詳細ページの項目など) を一度に 1 つずつ表示するには、フリップ ビュー コントロールを使います。 タッチ デバイスでは、項目をスワイプしてコレクション内を移動します。 マウスでは、マウスをホバーするとナビゲーション ボタンが表示されます。 キーボードでは、方向キーを使ってコレクション内を移動します。
 
 
-<span class="sidebar_heading" style="font-weight: bold;">重要な API</span>
+
 
 -   [**FlipView クラス**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx)
 -   [**ItemsSource プロパティ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx)
@@ -207,12 +207,11 @@ ItemsSource が `itemsViewSource` という名前の [**CollectionViewSource**](
 
 ## 関連記事
 
-- [リストのガイドライン](https://msdn.microsoft.com/library/windows/apps/mt186889)
-- [**FlipView クラス (XAML)**](https://msdn.microsoft.com/library/windows/apps/br242678)
-- [**CarouselPanel クラス (XAML)**](https://msdn.microsoft.com/library/windows/apps/hh967950)
+- [リストのガイドライン](lists.md)
+- [**FlipView クラス**](https://msdn.microsoft.com/library/windows/apps/br242678)
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

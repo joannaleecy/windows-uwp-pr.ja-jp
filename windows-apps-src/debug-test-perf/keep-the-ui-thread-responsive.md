@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: FA25562A-FE62-4DFC-9084-6BD6EAD73636
-title: UI スレッドの応答性の確保
-description: ユーザーは、コンピューターの種類に関係なく、アプリが計算を実行しているときも引き続き応答性を保つことを期待します。
+title: "UI スレッドの応答性の確保"
+description: "ユーザーは、コンピューターの種類に関係なく、アプリが計算を実行しているときも引き続き応答性を保つことを期待します。"
+translationtype: Human Translation
+ms.sourcegitcommit: 165105c141405cd752f876c822f76a5002d38678
+ms.openlocfilehash: 6144b5b60a0092efd1056dd5de166a64733356ec
+
 ---
 # UI スレッドの応答性の確保
 
@@ -39,7 +43,7 @@ C# では **await** 演算子、Visual Basic では **Await** 演算子、C++ �
 
 UI 要素には UI スレッドからしかアクセスできないことに注意してください。 バックグラウンドの作業を起動する前に、UI スレッドを使って UI 要素にアクセスするか、バックグラウンド スレッドで [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) または [**CoreDispatcher.RunIdleAsync**](https://msdn.microsoft.com/library/windows/apps/Hh967918) を使います。
 
-バックグラウンド スレッドで実行できる作業の例として、ゲームでのコンピューター AI の計算があります。 コンピューターの次の動きを計算するコードは実行に長い時間がかかる場合があります。
+バックグラウンド スレッドで実行できる作業の例として、ゲームでのコンピューター AI の計算があります。 コンピューターの次の動作を計算するコードは、実行に長い時間がかかる場合があります。
 
 ```csharp
 public class AsyncExample
@@ -103,6 +107,7 @@ public class AsyncExample
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -63,6 +63,6 @@ IAP をユーザーが購入できるようにするかどうかを指定でき�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

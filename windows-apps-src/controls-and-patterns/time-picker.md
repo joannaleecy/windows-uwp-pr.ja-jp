@@ -48,7 +48,7 @@ arrivalTimePicker.Header = "Arrival time";
 
 ![時刻の選択コントロールの例](images/time-picker-closed.png)
 
-> **注:**
+> **注**
             &nbsp;&nbsp;日付値の重要な情報については、「*日付と時刻コントロール*」の「[DateTime と Calendar の値](date-and-time.md#datetime-and-calendar-values)」をご覧ください。
 
 

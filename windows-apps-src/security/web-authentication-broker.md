@@ -18,7 +18,7 @@ ms.openlocfilehash: 96ca8d019fe6cbf742c98edf0b8bf04b35f71dfd
 この記事では、OpenID や OAuth などの認証プロトコルを使うオンライン ID プロバイダー (Facebook、Twitter、Flickr、Instagram など) にユニバーサル Windows プラットフォーム (UWP) アプリを接続する方法について説明します。 [
             **AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) メソッドは、要求をオンライン ID プロバイダーに送信し、アプリがアクセスできるプロバイダー リソースを示すアクセス トークンを返します。
 
-**注:** 動作する完全なコード サンプルが必要な場合は、[GitHub の WebAuthenticationBroker レポジトリ](http://go.microsoft.com/fwlink/p/?LinkId=620622)をコピーしてください。
+**注**  動作する完全なコード サンプルが必要な場合は、[GitHub の WebAuthenticationBroker レポジトリ](http://go.microsoft.com/fwlink/p/?LinkId=620622)をコピーしてください。
 
  
 

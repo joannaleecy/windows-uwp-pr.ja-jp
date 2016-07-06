@@ -1,6 +1,13 @@
 ---
-author: martinekuan ms.assetid: 4288E511-581C-49DC-A2F2-1CB832C4A676 title: の手順 description: 初めてのアプリの作成が終わったので、デベロッパー センターの他の部分を見てみましょう。 ここでは、そこに含まれるさまざまなセクションについて説明します。
-keywords: デベロッパー センター, 説明 keywords: デベロッパー センター, 概要
+author: martinekuan
+ms.assetid: 4288E511-581C-49DC-A2F2-1CB832C4A676
+title: "次の手順"
+description: "初めてのアプリの作成が終わったので、デベロッパー センターの他の部分を見てみましょう。 ここでは、デベロッパー センターの他の部分に含まれるさまざまなセクションについて説明します。"
+keywords: Dev Center, Getting started
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: cb77a32f99bc6e27cfe87af16d6cd4e08855d7b6
+
 ---
 # 次の手順
 
@@ -64,6 +71,7 @@ DirectX を使ったゲーム開発に興味がある場合、必要な情報は
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

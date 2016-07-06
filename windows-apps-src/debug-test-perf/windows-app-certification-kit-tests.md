@@ -312,11 +312,11 @@ Windows ストアで認定されるためには、アプリで Windows ストア
 
 アプリが、デバッグ用のビルドではなくリリース用ビルドとしてコンパイルされていることを確認します。
 
-> **注:** アプリで [Windows ストア アプリ用 API](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx) のみを使っている場合でも、デバッグ用ビルドのアプリではこのテストに合格しません。
+> **注**  アプリで [Windows ストア アプリ用 API](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx) のみを使っている場合でも、デバッグ用ビルドのアプリではこのテストに合格しません。
 
 エラー メッセージを確認して、アプリで使われている、[Windows ストア アプリ用 API](https://msdn.microsoft.com/library/windows/apps/xaml/bg124285.aspx) ではない API を特定します。
 
-> **注:** 構成で Windows ストア アプリ用 Windows SDK だけを使っている場合でも、デバッグ構成でビルドされた C++ アプリではこのテストに合格しません。 詳しくは、「[Windows ストア アプリでの Windows API の代替](http://go.microsoft.com/fwlink/p/?LinkID=244022)」をご覧ください。
+> **注**  構成で Windows ストア アプリ用 Windows SDK だけを使っている場合でも、デバッグ構成でビルドされた C++ アプリではこのテストに合格しません。 詳しくは、「[Windows ストア アプリでの Windows API の代替](http://go.microsoft.com/fwlink/p/?LinkID=244022)」をご覧ください。
 
 ## パフォーマンスのテスト
 
@@ -544,7 +544,7 @@ Windows ストアでは、すべてのアプリケーションが、Direct3D を
 
 ### 中断後の Direct3D トリミング
 
-> **注:** このテストは、Windows 8.1 以降を対象に開発された Windows ストア アプリにのみ適用されます。
+> **注**  このテストは、Windows 8.1 以降を対象に開発された Windows ストア アプリにのみ適用されます。
 
 ### 背景
 
@@ -662,7 +662,7 @@ JavaScript のバックグラウンド タスクがあるアプリは、バッ�
 
 バックグラウンドの JavaScript コードを更新して、Close() を正しく呼び出します。
 
-> **注:** この記事は、UWP アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください。
+> **注**  この記事は、UWP アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください。
 
  
 

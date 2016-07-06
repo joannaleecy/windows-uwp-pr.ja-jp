@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: このトピックでは、C++、C#、または Visual Basic と UI の XAML 定義を使って Windows ランタイム アプリを作成するときに使うことができる依存関係プロパティ システムについて説明します。
-title: 依存関係プロパティの概要
+description: "このトピックでは、C++、C#、または Visual Basic と UI の XAML 定義を使って Windows ランタイム アプリを作成するときに使うことができる依存関係プロパティ システムについて説明します。"
+title: "依存関係プロパティの概要"
 ms.assetid: AD649E66-F71C-4DAA-9994-617C886FDA7E
+translationtype: Human Translation
+ms.sourcegitcommit: 2791b5b80bf1405d3efdce5d81824dbe6d347b4f
+ms.openlocfilehash: 5c61d4ff2f1efc6d4ce0ed292f2f856b23e53c91
+
 ---
 
 # 依存関係プロパティの概要
@@ -169,11 +173,11 @@ XAML ではなく、コードを使ってバインドを確立することもで
 ストーリーボードに設定されたアニメーションを使うと、依存関係プロパティの値をアニメーション化できます。 Windows ランタイムのストーリーボードに設定されたアニメーションは、単なる視覚的装飾ではありません。 アニメーションは、個々のプロパティの値またはコントロールのすべてのプロパティと視覚効果の値を設定でき、時間の経過と共にこれらの値を変えることができるステート マシンと考えると便利です。
 
 アニメーション化するためには、アニメーションのターゲット プロパティは依存関係プロパティである必要があります。 また、そのターゲット プロパティの値の型は、既存の [**Timeline**](https://msdn.microsoft.com/library/windows/apps/br210517) から派生したアニメーション型のいずれかでサポートされている必要があります。 [
-            **Color**](https://msdn.microsoft.com/library/windows/apps/hh673723)、[**Double**](T:System.Double)、および [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) は、補間またはキーフレームの技法を使ってアニメーション化できます。 その他の値の大半は、個別の **Object** キー フレームを使ってアニメーション化できます。
+            **Color**](https://msdn.microsoft.com/library/windows/apps/hh673723)、[**Double**](https://msdn.microsoft.com/library/windows/apps/system.double.aspx)、および [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) は、補間またはキーフレームの技法を使ってアニメーション化できます。 その他の値の大半は、個別の **Object** キー フレームを使ってアニメーション化できます。
 
 アニメーションが適用されて実行されると、アニメーション化された値は、それ以外の場合のプロパティの値 (ローカル値など) よりも高い優先順位で動作します。 アニメーションにはオプションの [**HoldEnd**](https://msdn.microsoft.com/library/windows/apps/br210306) 動作もあり、アニメーションが停止しているように見えていても、アニメーションをプロパティ値に適用できます。
 
-このステート マシン原則は、コントロールの [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/br209021) 状態モデルの一部としてストーリーボードに設定されたアニメーションを使って実現されます。 ストーリーボードに設定されたアニメーションについて詳しくは、「[ストーリーボードに設定されたアニメーション](https://msdn.microsoft.com/library/windows/apps/mt187354)」をご覧ください。 **VisualStateManager** とコントロールの視覚的状態の定義について詳しくは、「[表示状態用にストーリーボードに設定されたアニメーション](https://msdn.microsoft.com/library/windows/apps/xaml/jj819808)」または「[クイック スタート: コントロール テンプレート](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)」をご覧ください。
+このステート マシン原則は、コントロールの [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/br209021) 状態モデルの一部としてストーリーボードに設定されたアニメーションを使って実現されます。 ストーリーボードに設定されたアニメーションについて詳しくは、「[ストーリーボードに設定されたアニメーション](https://msdn.microsoft.com/library/windows/apps/mt187354)」をご覧ください。 **VisualStateManager** とコントロールの視覚的状態の定義について詳しくは、「[表示状態用にストーリーボードに設定されたアニメーション](https://msdn.microsoft.com/library/windows/apps/xaml/jj819808)」または「[コントロール テンプレート](../controls-and-patterns/control-templates.md)」をご覧ください。
 
 ### プロパティ変更動作
 
@@ -209,6 +213,7 @@ XAML ではなく、コードを使ってバインドを確立することもで
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

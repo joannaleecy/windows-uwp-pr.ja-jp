@@ -85,6 +85,6 @@ UWP と .NET Framework の両方で同じ名前空間名と型名を持つ型の
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

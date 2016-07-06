@@ -1,8 +1,12 @@
 ---
 author: mcleblanc
 ms.assetid: 7234DD5F-8E86-424E-99A0-93D01F1311F2
-title: Microsoft Emulator for Windows 10 Mobile を使ったテスト
-description: Microsoft Emulator for Windows 10 Mobile に用意されているツールを使って、デバイスでの実際の操作をシミュレートし、アプリの機能をテストします。
+title: "Microsoft Emulator for Windows 10 Mobile を使ったテスト"
+description: "Microsoft Emulator for Windows 10 Mobile に用意されているツールを使って、デバイスでの実際の操作をシミュレートし、アプリの機能をテストします。"
+translationtype: Human Translation
+ms.sourcegitcommit: 9a33710315486c23a204a528d3d87421c6990b85
+ms.openlocfilehash: c53bda2329cd984e3a03d4a166e7353097e62cef
+
 ---
 # Microsoft Emulator for Windows 10 Mobile を使ったテスト
 
@@ -625,7 +629,7 @@ Microsoft Emulator には、すべての VM、差分ディスク、およびエ�
 
 エミュレーターをインストールすると、モバイル向け Windows 10 の VHD イメージがインストールされ、独自のエントリがコントロール パネルの **[プログラムと機能]** の一覧に示されます。 このイメージをアンインストールするには、インストールされているプログラムの一覧で **[Windows 10 for Mobile Image - <version>]** を見つけて右クリックし、**[アンインストール]** をクリックします。
 
-その後、現在のリリースで、エミュレーターの VHD ファイルを手動で削除する必要があります。 エミュレーターを既定のパスにインストールした場合、VHD ファイルは、C:\\Program Files (x86)\\Windows Kits\\10\\Emulation\\Mobile\\<version>\\flash.vhd にあります。
+その後、現在のリリースで、エミュレーターの VHD ファイルを手動で削除する必要があります。 エミュレーターを既定のパスにインストールした場合、VHD ファイルは、C:\\Program Files (x86)\\Windows Kits\\10\\Emulation\\Mobile\\<version>\\flash.vhd。
 
 ###ハードウェア アクセラレータに対応したグラフィックを無効にする方法
 
@@ -640,7 +644,7 @@ Microsoft Emulator には、すべての VM、差分ディスク、およびエ�
 5. **[DisableRemoteFx]** をダブルクリックして、**[値]** データ ボックスに「1」と入力します。次に、**[10 進数]** オプションを選択して **[OK]** をクリックします。
 6. レジストリ エディターを閉じます。
 
-**注** このレジストリ値を設定した後、Visual Studio で起動した構成について、Hyper-V マネージャーで仮想マシンを削除し、ソフトウェア レンダリングされたグラフィックを使ってエミュレーターを再起動します。
+**注:** このレジストリ値を設定した後、Visual Studio で起動した構成について、Hyper-V マネージャーで仮想マシンを削除し、ソフトウェア レンダリングされたグラフィックを使ってエミュレーターを再起動します。
 
 ## サポート資料
 
@@ -654,6 +658,7 @@ Windows 10 ツールを使う際に生じた質問の答えを探したり、問
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

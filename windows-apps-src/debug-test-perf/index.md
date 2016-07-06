@@ -3,8 +3,8 @@ author: mcleblanc
 ms.assetid: 16976d00-1564-49fe-81ad-2568e25e9e41
 title: "デバッグ、テスト、パフォーマンス"
 description: "Microsoft Visual Studio を使って、アプリのデバッグとテストを行います。 Windows ストアの認定プロセスに向けてアプリを準備するには、Windows アプリ認定キットを使います。"
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 1d6187470e8e1578af833221089a76261ebad1e4
+ms.sourcegitcommit: 3867bca43bef549fc67b202e329e884ee1ff8fa0
+ms.openlocfilehash: c10c1443ac5a0f4cbf07cf0accc8361ad9100168
 
 ---
 # デバッグ、テスト、パフォーマンス
@@ -16,6 +16,7 @@ Microsoft Visual Studio を使って、アプリのデバッグとテストを�
 | トピック | 説明 |
 |-------|-------------|
 | [UWP アプリの展開とデバッグ](deploying-and-debugging-uwp-apps.md) | この記事では、さまざまな展開およびデバッグのターゲットを指定する手順について説明します。 |
+| [プロセス ライフタイム管理 (PLM) のテスト ツールとデバッグ ツール](testing-debugging-plm.md) | アプリとプロセス ライフタイム管理がどのように連携するかをデバッグしてテストするためのツールと手法を紹介します。 |
 | [Microsoft Emulator for Windows 10 Mobile を使ったテスト](test-with-the-emulator.md) | Microsoft Emulator for Windows 10 Mobile に用意されているツールを使って、デバイスでの実際の操作をシミュレートし、アプリの機能をテストします。 エミュレーターは、Windows 10 を実行するモバイル デバイスをエミュレートするデスクトップ アプリケーションです。 このアプリケーションを使用すると、仮想化された環境が提供されるため、物理デバイスを使用せずに Windows アプリのデバッグとテストを実行できます。 また、アプリケーションのプロトタイプのための隔離環境としても使用できます。 |
 | [Visual Studio を使った Surface Hub アプリのテスト](test-surface-hub-apps-using-visual-studio.md) | Visual Studio シミュレーターは、ユニバーサル Windows プラットフォーム (UWP) アプリの設計、開発、デバッグ、テストを行える環境を提供します。これには Microsoft Surface Hub 用に作成されたアプリを含みます。 シミュレーターでは、Surface Hub と同じユーザー インターフェイスは使用できませんが、Surface Hub の画面サイズと解像度でのアプリの外観と動作をテストするために有用です。 |
 | [ベータ テスト](beta-testing.md) | **ベータ テスト**を行うと、まだリリースされていないアプリをアプリ開発チームの外部の人に自分のデバイスで試してもらい、その人たちからのフィードバックに基づいてアプリを改善することができます。 |
@@ -26,6 +27,6 @@ Microsoft Visual Studio を使って、アプリのデバッグとテストを�
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -5,8 +5,8 @@ title: "アダプティブ タイルの作成"
 ms.assetid: 1246B58E-D6E3-48C7-AD7F-475D113600F9
 label: Create adaptive tiles
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 0bcdc9570365ca0dcacf4f9c0c1b99afaffcf157
+ms.sourcegitcommit: a6632c7b8fdee5320f35e316abd318193a254c51
+ms.openlocfilehash: 6cd4519007d1241cb7c411dade1a092140b598c4
 
 ---
 
@@ -20,21 +20,21 @@ ms.openlocfilehash: 0bcdc9570365ca0dcacf4f9c0c1b99afaffcf157
 
 (必要に応じて、Windows 10 の通知をデザインするときは、[Windows 8 タイル テンプレート カタログ](https://msdn.microsoft.com/library/windows/apps/hh761491)のプリセット テンプレートを引き続き使えます)。
 
-## <span id="Getting_started"></span><span id="getting_started"></span><span id="GETTING_STARTED"></span>はじめに
+## はじめに
 
 
 **NotificationsExtensions をインストールします。** 通知の生成に XML ではなく C# を使う場合は、[NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) という名前の NuGet パッケージをインストールします。 この記事で示している C# のサンプルでは、NotificationsExtensions を使っています。
 
 **Notifications Visualizer をインストールします。** この無料の UWP アプリは、Visual Studio の XAML エディター/デザイン ビューと同様、タイルの編集時に視覚的なプレビューが即座に表示されるため、アダプティブ ライブ タイルのデザインに便利です。 詳しくは、[このブログ記事](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/09/22/introducing-notifications-visualizer-for-windows-10.aspx)をご覧ください。Notifications Visualizer は[こちら](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1)からダウンロードできます。
 
-## <span id="Usage_guidance"></span><span id="usage_guidance"></span><span id="USAGE_GUIDANCE"></span>使い方のガイダンス
+## 使い方のガイダンス
 
 
 アダプティブ テンプレートはさまざまな種類のフォーム ファクターと通知で動作するようにデザインされています。 グループやサブグループのような要素はコンテンツと共にリンクされますが、それらのグループ自体には特に視覚的な動作はありません。 通知の最終的な外観は、表示先のデバイスがスマートフォン、タブレット、デスクトップ、その他のデバイスのいずれであっても、特定のデバイスに基づきます。
 
 hint は、特定の視覚的な動作を実現するために要素に追加できる省略可能な属性です。 デバイス固有または通知固有の hint を追加できます。
 
-## <span id="A_basic_example"></span><span id="a_basic_example"></span><span id="A_BASIC_EXAMPLE"></span>基本的な例
+## 基本的な例
 
 
 次の例では、アダプティブ タイル テンプレートで何を作成できるかを示しています。
@@ -104,7 +104,7 @@ TileContent content = new TileContent()
 
 ![クイック サンプル タイル](images/adaptive-tiles-quicksample.png)
 
-## <span id="Tile_sizes"></span><span id="tile_sizes"></span><span id="TILE_SIZES"></span>タイルのサイズ
+## タイルのサイズ
 
 
 各タイル サイズのコンテンツは XML ペイロード内でそれぞれ個別の [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 要素で指定します。 template 属性を次のいずれかの値に設定することで、目的のサイズを選びます。
@@ -196,12 +196,12 @@ TileContent content = new TileContent()
 
 ![アダプティブ タイル サイズ: 小、中、ワイド、大](images/adaptive-tiles-sizes.png)
 
-## <span id="Branding"></span><span id="branding"></span><span id="BRANDING"></span>ブランディング
+## ブランディング
 
 
-通知ペイロード内で branding 属性を使って、ライブ タイルの下部でブランディング (表示名とコーナー ロゴ) を制御できます。 表示なし ("none")、名前のみ表示 ("name")、ロゴのみ表示 ("logo")、名前とロゴの両方を表示 (nameAndLogo") のいずれかを選べます。
+通知ペイロード内で branding 属性を使って、ライブ タイルの下部でブランディング (表示名とコーナー ロゴ) を制御できます。 表示なし ("none")、名前のみ表示 ("name")、ロゴのみ表示 ("logo")、名前とロゴの両方を表示 ("nameAndLogo") のいずれかを選べます。
 
-**注**  Windows Phone では、コーナー ロゴはサポートされていないため、"logo" と "nameAndLogo" は "name" に既定で設定されます。
+**注**  Windows Mobile では、コーナー ロゴはサポートされていないため、"logo" と "nameAndLogo" は "name" に既定で設定されます。
 
  
 
@@ -283,10 +283,12 @@ TileContent content = new TileContent()
 
  
 
-## <span id="Display_name"></span><span id="display_name"></span><span id="DISPLAY_NAME"></span>表示名
+## 表示名
 
 
 **displayName** 属性に任意のテキスト文字列を入力することで、通知の表示名を上書きすることができます。 ブランディングと同様、通知ペイロード全体に影響を与える [&lt;visual&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 要素で、または個々のタイルにのみ影響を与える [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 要素で、表示名を指定できます。
+
+**既知の問題**  Windows Mobile でタイルの ShortName を指定した場合、通知で提供される表示名は使用されません (ShortName が常に表示されます)。 
 
 ```XML
 <tile>
@@ -332,7 +334,7 @@ TileContent content = new TileContent()
 
 ![アダプティブ タイルの表示名](images/adaptive-tiles-displayname.png)
 
-## <span id="Text"></span><span id="text"></span><span id="TEXT"></span>テキスト
+## テキスト
 
 
 [
@@ -345,7 +347,7 @@ TileContent content = new TileContent()
 </table>
 ```
 
-<span codelanguage="CSharp"></span>
+
 ```CSharp
 <colgroup>
 <col width="100%" />
@@ -367,7 +369,7 @@ new TileText()
 
 ![アダプティブ タイルのテキスト](images/adaptive-tiles-text.png)
 
-## <span id="Text_wrapping"></span><span id="text_wrapping"></span><span id="TEXT_WRAPPING"></span>テキストの折り返し
+## テキストの折り返し
 
 
 既定では、テキストは折り返されず、タイルの端からはみ出します。 **hint-wrap** 属性を使って、text 要素のテキストの折り返しを設定します。 また、**hint-minLines** と **hint-maxLines** (正の整数のみを受け取り) を使って、行の最小数と最大数を制御することもできます。
@@ -379,7 +381,7 @@ new TileText()
 </table>
 ```
 
-<span codelanguage="CSharp"></span>
+
 ```CSharp
 <colgroup>
 <col width="100%" />
@@ -402,7 +404,7 @@ new TileText()
 
 ![テキストが折り返されるアダプティブ タイル](images/adaptive-tiles-textwrapping.png)
 
-## <span id="Text_styles"></span><span id="text_styles"></span><span id="TEXT_STYLES"></span>テキスト スタイル
+## テキスト スタイル
 
 
 スタイルを使って、text 要素のフォントのサイズ、色、太さを制御します。 多数のスタイルを使えます。たとえば、各スタイルの "Subtle" バリエーションを使って、テキストの不透明度を 60% に設定して、テキストの色を淡い灰色で暗くすることができます。
@@ -480,7 +482,7 @@ new TileText()
 
  
 
-## <span id="Text_alignment"></span><span id="text_alignment"></span><span id="TEXT_ALIGNMENT"></span>テキストの配置
+## テキストの配置
 
 
 テキストは、横方向の配置 (左揃え、中央揃え、または右揃え) を設定できます。 英語のように左から右へと表記される言語では、テキストは既定で左揃えになります。 アラビア語のように右から左へと表記される言語では、テキストは既定で右揃えになります。 テキストの配置は要素の **hint-align** 属性で手動で設定できます。
@@ -492,7 +494,7 @@ new TileText()
 </table>
 ```
 
-<span codelanguage="CSharp"></span>
+
 ```CSharp
 <colgroup>
 <col width="100%" />
@@ -515,7 +517,7 @@ new TileText()
 
 ![アダプティブ タイルのテキストの配置](images/adaptive-tiles-textalignment.png)
 
-## <span id="Groups_and_subgroups"></span><span id="groups_and_subgroups"></span><span id="GROUPS_AND_SUBGROUPS"></span>グループとサブグループ
+## グループとサブグループ
 
 
 グループを使って、グループ内のコンテンツが互いに関連していて意味をなすまとまりで表示される必要があることを宣言できます。 たとえば、2 つの text 要素、1 つのヘッダー、1 つのサブヘッダーがあるとすると、ヘッダーのみが表示されても意味をなしません。 要素をサブグループにまとめることで、それらの要素はすべて表示されるか (画面に収まる場合)、まったく表示されません (画面に収まらない場合)。
@@ -617,7 +619,7 @@ private static TileGroup CreateGroup(string from, string subject, string body)
 
 ![アダプティブ タイルのグループとサブグループ](images/adaptive-tiles-groups-subgroups.png)
 
-## <span id="Subgroups__columns_"></span><span id="subgroups__columns_"></span><span id="SUBGROUPS__COLUMNS_"></span>サブグループ (列)
+## サブグループ (列)
 
 
 サブグループを使って、グループのデータを意味をなすまとまりに分けることもできます。 ライブ タイルの場合、このまとまりは視覚的には列になります。
@@ -842,7 +844,7 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 
 ![天気タイルの例](images/adaptive-tiles-weathertile.png)
 
-## <span id="Images"></span><span id="images"></span><span id="IMAGES"></span>画像
+## 画像
 
 
 &lt;image&gt; 要素を使って、タイル通知に画像を表示します。 画像はタイル コンテンツ (既定) 内に、背景画像としてか、タイルでアニメーション化されるプレビュー画像として、インラインで配置できます。
@@ -940,7 +942,7 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 
 &lt;binding&gt; のルート、つまり最初のグループに配置された画像も、空いている高さに合わせて拡大されます。
 
-### <span id="Image_alignment"></span><span id="image_alignment"></span><span id="IMAGE_ALIGNMENT"></span>画像の配置
+### 画像の配置
 
 画像は、**hint-align** 属性を使って、左揃え、中央揃え、または右揃えに設定できます。 また、これにより画像は、幅を埋めるように拡大されずに、ネイティブの解像度で表示されます。
 
@@ -975,7 +977,7 @@ TileLarge = new TileBinding()
 
 ![画像の配置の例 (左、中央、右)](images/adaptive-tiles-imagealignment.png)
 
-### <span id="Image_margins"></span><span id="image_margins"></span><span id="IMAGE_MARGINS"></span>画像の余白
+### 画像の余白
 
 既定では、インライン画像の上または下には、コンテンツとの間に 8 ピクセルの余白が追加されます。 この余白は、画像の **hint-removeMargin** 属性を使って削除できます。 ただし、画像では常にタイルの端から 8 ピクセルの余白が保持され、サブグループ (列) では常に列の間に 8 ピクセルのパディングが保持されます。
 
@@ -1065,7 +1067,7 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 
 ![画像の余白削除の例](images/adaptive-tiles-removemargin.png)
 
-### <span id="Image_cropping"></span><span id="image_cropping"></span><span id="IMAGE_CROPPING"></span>画像のトリミング
+### 画像のトリミング
 
 **hint-crop** 属性を使って、画像を円形にトリミングできます。現時点では、"none" (既定) または "circle" のみがサポートされています。
 
@@ -1143,7 +1145,7 @@ TileLarge = new TileBinding()
 
 ![画像のトリミングの例](images/adaptive-tiles-imagecropping.png)
 
-### <span id="Background_image"></span><span id="background_image"></span><span id="BACKGROUND_IMAGE"></span>バックグラウンド画像
+### バックグラウンド画像
 
 背景画像を設定するには、&lt;binding&gt; のルートに image 要素を追加し、placement 属性を "background" に設定します。
 
@@ -1267,7 +1269,7 @@ TileWide = new TileBinding()
 
 ![画像のオーバーレイの例](images/adaptive-tiles-image-hintoverlay.png)
 
-### <span id="Peek_image"></span><span id="peek_image"></span><span id="PEEK_IMAGE"></span>プレビュー画像
+### プレビュー画像
 
 タイルでアニメーション化されるプレビュー画像を指定できます。 プレビュー画像はタイルでアニメーション化されます。コンテンツが下にスライドしてプレビューが現れ、上にスライドしてプレビューが隠れます。 プレビュー画像を設定するには、&lt;binding&gt; のルートに image 要素を追加し、placement 属性を "peek" に設定します。
 
@@ -1345,13 +1347,13 @@ hint-crop="circle"
 
 ![プレビュー画像での hint-overlay](images/hintoverlay.png)
 
-## <span id="Vertical_alignment__text_stacking_"></span><span id="vertical_alignment__text_stacking_"></span><span id="VERTICAL_ALIGNMENT__TEXT_STACKING_"></span>縦方向の配置 (テキストの積み重ね)
+## 縦方向の配置 (テキストの積み重ね)
 
 
 [
             &lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 要素と [&lt;subgroup&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 要素のいずれでも **hint-textStacking** 属性を使って、タイルのコンテンツの縦方向の配置を制御できます。 既定では、コンテンツは上揃えになりますが、下揃えまたは中央揃えに設定することもできます。
 
-### <span id="Text_stacking_on_binding_element"></span><span id="text_stacking_on_binding_element"></span><span id="TEXT_STACKING_ON_BINDING_ELEMENT"></span>binding 要素でのテキストの積み重ね
+### binding 要素でのテキストの積み重ね
 
 テキストの積み重ねを [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) レベルで適用すると、ブランディング/バッジ領域の上にある縦方向のスペースに収まるように、通知コンテンツ全体の縦方向の配置が設定されます。
 
@@ -1399,7 +1401,7 @@ TileMedium = new TileBinding()
 
 ![binding 要素でのテキストの積み重ね](images/adaptive-tiles-textstack-bindingelement.png)
 
-### <span id="Text_stacking_on_subgroup_element"></span><span id="text_stacking_on_subgroup_element"></span><span id="TEXT_STACKING_ON_SUBGROUP_ELEMENT"></span>subgroup 要素でのテキストの積み重ね
+### subgroup 要素でのテキストの積み重ね
 
 テキストの積み重ねを [&lt;subgroup&gt;](tiles-and-notifications-adaptive-tiles-schema.md) レベルで適用すると、そのグループ内の縦方向のスペースに収まるように、サブグループ (列) コンテンツの縦方向の配置が設定されます。
 
@@ -1478,7 +1480,7 @@ TileWide = new TileBinding()
 ...
 ```
 
-## <span id="related_topics"></span>関連トピック
+## 関連トピック
 
 
 * [アダプティブ タイルのスキーマ](tiles-and-notifications-adaptive-tiles-schema.md)
@@ -1494,6 +1496,6 @@ TileWide = new TileBinding()
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

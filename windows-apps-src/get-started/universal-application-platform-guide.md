@@ -296,6 +296,6 @@ Windows ストアにアプリ公開の申請をする方法については、「
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

@@ -227,6 +227,6 @@ var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

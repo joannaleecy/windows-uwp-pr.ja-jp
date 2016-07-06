@@ -50,12 +50,12 @@ ms.openlocfilehash: 3fc1e3efa742ff8ab24f78856872fe322703f152
     > TimeTrigger ^ hourlyTrigger = ref new TimeTrigger(60, false);
     > ```
 
-## (省略可能) 条件の追加
+## [!div class="tabbedCodeSnippets"]
 
 
--   いつタスクを実行するかを制御するバックグラウンド タスクの条件を必要に応じて作成します。 条件を指定すると、条件が満たされるまではバックグラウンド タスクが実行されないようにすることができます。詳しくは「[バックグラウンド タスクを実行するための条件の設定](set-conditions-for-running-a-background-task.md)」をご覧ください。
+-   (省略可能) 条件の追加 いつタスクを実行するかを制御するバックグラウンド タスクの条件を必要に応じて作成します。
 
-    この例では、条件が **UserPresent** に設定されているため、トリガー後、ユーザーがアクティブになった場合にタスクが 1 回だけ実行されます。 指定できる条件の一覧については、「[**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)」をご覧ください。
+    条件を指定すると、条件が満たされるまではバックグラウンド タスクが実行されないようにすることができます。詳しくは「[バックグラウンド タスクを実行するための条件の設定](set-conditions-for-running-a-background-task.md)」をご覧ください。 この例では、条件が **UserPresent** に設定されているため、トリガー後、ユーザーがアクティブになった場合にタスクが 1 回だけ実行されます。
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -65,11 +65,10 @@ ms.openlocfilehash: 3fc1e3efa742ff8ab24f78856872fe322703f152
     > SystemCondition ^ userCondition = ref new SystemCondition(SystemConditionType::UserPresent)
     > ```
 
-##  RequestAccessAsync() の呼び出し
+##  指定できる条件の一覧については、「[**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)」をご覧ください。
 
 
--   [
-            **TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) バックグランド タスクを登録しようとする前に、[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494) を呼び出します。
+-   [!div class="tabbedCodeSnippets"]
 
     > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -79,12 +78,13 @@ ms.openlocfilehash: 3fc1e3efa742ff8ab24f78856872fe322703f152
     > BackgroundExecutionManager::RequestAccessAsync();
     > ```
 
-## バックグラウンド タスクの登録
+## RequestAccessAsync() の呼び出し
 
 
--   バックグラウンド タスクの登録関数を呼び出してバックグラウンド タスクを登録します。 バックグラウンド タスクの登録について詳しくは、「[バックグラウンド タスクの登録](register-a-background-task.md)」をご覧ください。
+-   [
+            **TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) バックグランド タスクを登録しようとする前に、[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494) を呼び出します。 [!div class="tabbedCodeSnippets"]
 
-    次のコードでは、バックグラウンド タスクを登録しています。
+    バックグラウンド タスクの登録
 
     > > [!div class="tabbedCodeSnippets"]
     > ```cs
@@ -100,39 +100,39 @@ ms.openlocfilehash: 3fc1e3efa742ff8ab24f78856872fe322703f152
     > BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName, hourlyTrigger, userCondition);
     > ```
 
-    > **注**  バックグラウンド タスクの登録パラメーターは登録時に検証されます。 いずれかの登録パラメーターが有効でない場合は、エラーが返されます。 バックグラウンド タスクの登録が失敗するシナリオをアプリが適切に処理するようにします。タスクを登録しようとした後で、有効な登録オブジェクトを持っていることを前提として動作するアプリは、クラッシュする場合があります。
+    > バックグラウンド タスクの登録関数を呼び出してバックグラウンド タスクを登録します。 バックグラウンド タスクの登録について詳しくは、「[バックグラウンド タスクの登録](register-a-background-task.md)」をご覧ください。 次のコードでは、バックグラウンド タスクを登録しています。
 
 
-## 注釈
+## [!div class="tabbedCodeSnippets"]
 
-> **注**  Windows 10 以降、ユーザーはバック グラウンド タスクを利用するために、アプリをロック画面に追加する必要はなくなりました。 このようなバックグラウンド タスクのトリガーについては、「[バックグラウンド タスクによるアプリのサポート](support-your-app-with-background-tasks.md)」をご覧ください。
+> **注**  バックグラウンド タスクの登録パラメーターは登録時に検証されます。 いずれかの登録パラメーターが有効でない場合は、エラーが返されます。
 
-> **注:** この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
-
-
-## 関連トピック
+> バックグラウンド タスクの登録が失敗するシナリオをアプリが適切に処理するようにします。タスクを登録しようとした後で、有効な登録オブジェクトを持っていることを前提として動作するアプリは、クラッシュする場合があります。 注釈
 
 
-* [バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)
-* [アプリケーション マニフェストでのバックグラウンド タスクの宣言](declare-background-tasks-in-the-application-manifest.md)
-* [取り消されたバックグラウンド タスクの処理](handle-a-cancelled-background-task.md)
-* [バックグラウンド タスクの進捗状況と完了の監視](monitor-background-task-progress-and-completion.md)
-* [バックグラウンド タスクの登録](register-a-background-task.md)
-* [バックグラウンド タスクによるシステム イベントへの応答](respond-to-system-events-with-background-tasks.md)
-* [バックグラウンド タスクを実行するための条件の設定](set-conditions-for-running-a-background-task.md)
-* [バックグラウンド タスクのライブ タイルの更新](update-a-live-tile-from-a-background-task.md)
-* [メンテナンス トリガーの使用](use-a-maintenance-trigger.md)
-* [バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)
+## **注**  Windows 10 以降、ユーザーはバック グラウンド タスクを利用するために、アプリをロック画面に追加する必要はなくなりました。
 
-* [バックグラウンド タスクのデバッグ](debug-a-background-task.md)
-* [Windows ストア アプリで一時停止イベント、再開イベント、バックグラウンド イベントをトリガーする方法 (デバッグ時)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
- 
+* [このようなバックグラウンド タスクのトリガーについては、「[バックグラウンド タスクによるアプリのサポート](support-your-app-with-background-tasks.md)」をご覧ください。](create-and-register-a-background-task.md)
+* [**注**  この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。](declare-background-tasks-in-the-application-manifest.md)
+* [Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。](handle-a-cancelled-background-task.md)
+* [関連トピック](monitor-background-task-progress-and-completion.md)
+* [バックグラウンド タスクの作成と登録](register-a-background-task.md)
+* [アプリケーション マニフェストでのバックグラウンド タスクの宣言](respond-to-system-events-with-background-tasks.md)
+* [取り消されたバックグラウンド タスクの処理](set-conditions-for-running-a-background-task.md)
+* [バックグラウンド タスクの進捗状況と完了の監視](update-a-live-tile-from-a-background-task.md)
+* [バックグラウンド タスクの登録](use-a-maintenance-trigger.md)
+* [バックグラウンド タスクによるシステム イベントへの応答](guidelines-for-background-tasks.md)
+
+* [バックグラウンド タスクを実行するための条件の設定](debug-a-background-task.md)
+* [バックグラウンド タスクのライブ タイルの更新](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
  
 
+ 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Jun16_HO5-->
 
 

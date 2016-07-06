@@ -1,12 +1,19 @@
 ---
-author: jnHs Description: 名前を予約してアプリを作ったら、公開の作業を開始できます。 まず、申請を作成します。
-title: アプリの申請 ms.assetid: 363BB9E4-4437-4238-A80F-ABDFC70D96E4 keywords: アプリの申請 keywords: 必須情報 keywords: 必須フィールド keywords: 必須データ keywords: チェック リスト
+author: jnHs
+Description: "名前を予約してアプリを作成したら、そのアプリを公開するための作業を開始できます。 まず、申請を作成します。"
+title: "アプリの申請"
+ms.assetid: 363BB9E4-4437-4238-A80F-ABDFC70D96E4
+keywords: checklist
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 59f41b74ca264606b4668addf44a07c82e173579
+
 ---
 
 # アプリの申請
 
 
-[名前を予約してアプリを作ったら](create-your-app-by-reserving-a-name.md)、公開の作業を開始できます。 まず、**申請**を作成します。
+[名前を予約してアプリを作成](create-your-app-by-reserving-a-name.md)したら、そのアプリを公開するための作業を開始できます。 まず、**申請**を作成します。
 
 申請は、アプリが完成して公開する準備ができたときに開始できます。または、1 行のコードを記述する前でも情報を入力し始めることができます。 申請はダッシュボードに保存されるため、準備できたらいつでも作業できます。
 
@@ -92,6 +99,7 @@ title: アプリの申請 ms.assetid: 363BB9E4-4437-4238-A80F-ABDFC70D96E4 keywo
 **注**  基幹業務 (LOB) アプリを企業に直接公開する方法については、「[LOB アプリの企業への配布](distribute-lob-apps-to-enterprises.md)」をご覧ください。
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

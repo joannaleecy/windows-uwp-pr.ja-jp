@@ -24,6 +24,6 @@ Xbox に最適なエクスペリエンスを構築する場合や、複数のテ
 設計のベスト プラクティスについて詳しくは、「[Xbox およびテレビ向け設計](https://msdn.microsoft.com/en-us/windows/uwp/input-and-devices/designing-for-tv?f=255&MSPPError=-2147217396#mouse-mode)」をご覧ください。
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

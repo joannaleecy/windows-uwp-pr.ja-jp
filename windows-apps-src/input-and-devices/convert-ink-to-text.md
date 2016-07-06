@@ -680,6 +680,6 @@ string str = "Recognition result\n";
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

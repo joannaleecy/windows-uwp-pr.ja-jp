@@ -312,47 +312,47 @@ myStoryboard->Begin();
 myStoryBoard.Begin()
 ```
 
-アニメーションが値を適用した後、他のロジックを実行する必要がある場合は、[**Completed**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.timeline.completed.aspx) イベントを処理できます。 また、プロパティ システム/アニメーション操作のトラブルシューティングには、[**GetAnimationBaseValue**](https://msdn.microsoft.com/library/windows/apps/BR242358) メソッドが役立つ場合があります。
+[!div class="tabbedCodeSnippets"] アニメーションが値を適用した後、他のロジックを実行する必要がある場合は、[**Completed**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.timeline.completed.aspx) イベントを処理できます。
 
-**ヒント**  アプリ コードからアニメーションを開始するアプリのシナリオを実現するためにコードを記述している際に、アニメーションや切り替えが、独自の UI シナリオのためのアニメーション ライブラリに既に存在するかどうかをもう一度確かめたい場合があります。 ライブラリ アニメーションは使いやすいうえ、すべての Windows ランタイム アプリで UI エクスペリエンスの一貫性を高めるのに役立ちます。
-
- 
-
-### 表示状態用のアニメーション
-
-コントロールの表示状態を定義するために使われる [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) の実行動作は、アプリがストーリーボードを直接実行する方法とは異なります。 XAML で表示状態の定義に適用されるとおり、**Storyboard** は上位の [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) の要素であり、状態全体は [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstatemanager) API を使って制御されます。 含まれるアニメーションは、上位の [**VisualState** がコントロールによって使われるときにアニメーション値と **Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517) プロパティに従って実行されます。 詳しくは、「[表示状態用にストーリーボードに設定されたアニメーション](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)」をご覧ください。 表示状態については、明確な [**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243209) は異なります。 表示状態が別の状態に変化すると、新しい表示状態でプロパティに新しいアニメーションを明示的に適用しない場合でも、前の表示状態とそのアニメーションによって適用されるすべてのプロパティの変更が取り消されます。
-
-### **Storyboard** と **EventTrigger**
-
-XAML で完全に宣言できるアニメーションをある方法で開始できます。 しかし、この手法は幅広く使われていません。 これは、[**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstatemanager) がサポートされる前の WPF と旧バージョンの Silverlight で使われていた構文です。 この [**EventTrigger**](https://msdn.microsoft.com/library/windows/apps/BR242390) 構文はインポートまたは互換性の理由から Windows ランタイム XAML でも機能するものの、[**FrameworkElement.Loaded**](https://msdn.microsoft.com/library/windows/apps/BR208723) イベントに基づくトリガー動作でのみ機能します。他のイベントのトリガーを試みると、例外がスローされるか、コンパイルに失敗します。 詳しくは、「[**EventTrigger**](https://msdn.microsoft.com/library/windows/apps/BR242390)」または「[**BeginStoryboard**](https://msdn.microsoft.com/library/windows/apps/BR243053)」をご覧ください。
-
-## XAML 添付プロパティのアニメーション化
-
-一般的なシナリオではありませんが、アニメーション化された値を XAML 添付プロパティに適用できます。 添付プロパティの概要とその動作について詳しくは、「[添付プロパティの概要](https://msdn.microsoft.com/library/windows/apps/Mt185579)」をご覧ください。 添付プロパティをターゲットとして設定するには、プロパティ名をかっこで囲む[プロパティ パス構文](https://msdn.microsoft.com/library/windows/apps/Mt185586)が必要です。 個別の整数値を適用する [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320) を使って、[**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/Hh759773) などの組み込み添付プロパティをアニメーション化することができます。 ただし、Windows ランタイム XAML 実装の制限があるため、カスタム添付プロパティをアニメーション化することはできません。
-
-## その他のアニメーションの種類、UI のアニメーション化に関する次の学習ステップ
-
-ここまで、2 つの値の間をアニメーション化し、アニメーションの実行中に必要に応じて値を線形補間するカスタム アニメーションについて説明してきました。 これらは、**From**/**To**/**By** アニメーションと呼ばれています。 これ以外に、開始から終了までの間の中間値を宣言できるタイプのアニメーションもあります。 これらは*キー フレーム アニメーション*と呼ばれます。 **From**/**To**/**By** アニメーションまたはキー フレーム アニメーションの補間ロジックを変更する方法もあります。 それには、イージング関数を適用する必要があります。 これらの概念について詳しくは、「[キーフレームとイージング関数のアニメーション](key-frame-and-easing-function-animations.md)」をご覧ください。
-
-## 関連トピック
-
-* [プロパティ パス構文](https://msdn.microsoft.com/library/windows/apps/Mt185586)
-* [依存関係プロパティの概要](https://msdn.microsoft.com/library/windows/apps/Mt185583)
-* [キー フレームとイージング関数のアニメーション](key-frame-and-easing-function-animations.md)
-* [表示状態用にストーリーボードに設定されたアニメーション](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)
-* [コントロール テンプレート](https://msdn.microsoft.com/library/windows/apps/Mt210948)
-* [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490)
-* [**Storyboard.TargetProperty**](https://msdn.microsoft.com/library/windows/apps/Hh759824)
- 
+また、プロパティ システム/アニメーション操作のトラブルシューティングには、[**GetAnimationBaseValue**](https://msdn.microsoft.com/library/windows/apps/BR242358) メソッドが役立つ場合があります。 **ヒント**  アプリ コードからアニメーションを開始するアプリのシナリオを実現するためにコードを記述している際に、アニメーションや切り替えが、独自の UI シナリオのためのアニメーション ライブラリに既に存在するかどうかをもう一度確かめたい場合があります。
 
  
 
+### ライブラリ アニメーションは使いやすいうえ、すべての Windows ランタイム アプリで UI エクスペリエンスの一貫性を高めるのに役立ちます。
+
+表示状態用のアニメーション コントロールの表示状態を定義するために使われる [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) の実行動作は、アプリがストーリーボードを直接実行する方法とは異なります。 XAML で表示状態の定義に適用されるとおり、**Storyboard** は上位の [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) の要素であり、状態全体は [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstatemanager) API を使って制御されます。 含まれるアニメーションは、上位の [**VisualState** がコントロールによって使われるときにアニメーション値と **Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517) プロパティに従って実行されます。 詳しくは、「[表示状態用にストーリーボードに設定されたアニメーション](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)」をご覧ください。 表示状態については、明確な [**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243209) は異なります。
+
+### 表示状態が別の状態に変化すると、新しい表示状態でプロパティに新しいアニメーションを明示的に適用しない場合でも、前の表示状態とそのアニメーションによって適用されるすべてのプロパティの変更が取り消されます。
+
+**Storyboard** と **EventTrigger** XAML で完全に宣言できるアニメーションをある方法で開始できます。 しかし、この手法は幅広く使われていません。 これは、[**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstatemanager) がサポートされる前の WPF と旧バージョンの Silverlight で使われていた構文です。 この [**EventTrigger**](https://msdn.microsoft.com/library/windows/apps/BR242390) 構文はインポートまたは互換性の理由から Windows ランタイム XAML でも機能するものの、[**FrameworkElement.Loaded**](https://msdn.microsoft.com/library/windows/apps/BR208723) イベントに基づくトリガー動作でのみ機能します。他のイベントのトリガーを試みると、例外がスローされるか、コンパイルに失敗します。
+
+## 詳しくは、「[**EventTrigger**](https://msdn.microsoft.com/library/windows/apps/BR242390)」または「[**BeginStoryboard**](https://msdn.microsoft.com/library/windows/apps/BR243053)」をご覧ください。
+
+XAML 添付プロパティのアニメーション化 一般的なシナリオではありませんが、アニメーション化された値を XAML 添付プロパティに適用できます。 添付プロパティの概要とその動作について詳しくは、「[添付プロパティの概要](https://msdn.microsoft.com/library/windows/apps/Mt185579)」をご覧ください。 添付プロパティをターゲットとして設定するには、プロパティ名をかっこで囲む[プロパティ パス構文](https://msdn.microsoft.com/library/windows/apps/Mt185586)が必要です。 個別の整数値を適用する [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320) を使って、[**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/Hh759773) などの組み込み添付プロパティをアニメーション化することができます。
+
+## ただし、Windows ランタイム XAML 実装の制限があるため、カスタム添付プロパティをアニメーション化することはできません。
+
+その他のアニメーションの種類、UI のアニメーション化に関する次の学習ステップ ここまで、2 つの値の間をアニメーション化し、アニメーションの実行中に必要に応じて値を線形補間するカスタム アニメーションについて説明してきました。 これらは、**From**/**To**/**By** アニメーションと呼ばれています。 これ以外に、開始から終了までの間の中間値を宣言できるタイプのアニメーションもあります。 これらは*キー フレーム アニメーション*と呼ばれます。 **From**/**To**/**By** アニメーションまたはキー フレーム アニメーションの補間ロジックを変更する方法もあります。 それには、イージング関数を適用する必要があります。
+
+## これらの概念について詳しくは、「[キーフレームとイージング関数のアニメーション](key-frame-and-easing-function-animations.md)」をご覧ください。
+
+* [関連トピック](https://msdn.microsoft.com/library/windows/apps/Mt185586)
+* [プロパティ パス構文](https://msdn.microsoft.com/library/windows/apps/Mt185583)
+* [依存関係プロパティの概要](key-frame-and-easing-function-animations.md)
+* [キー フレームとイージング関数のアニメーション](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)
+* [表示状態用にストーリーボードに設定されたアニメーション](https://msdn.microsoft.com/library/windows/apps/Mt210948)
+* [**コントロール テンプレート**](https://msdn.microsoft.com/library/windows/apps/BR210490)
+* [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/Hh759824)
+ 
+
+ 
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Jun16_HO5-->
 
 

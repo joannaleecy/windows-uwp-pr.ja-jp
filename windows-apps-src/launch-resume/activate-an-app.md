@@ -104,10 +104,10 @@ ms.openlocfilehash: f47a3b7fcb4bec4138e11a079c3d10e918c1eb95
 > }
 > ```
 
-## アプリが一時停止後に終了された場合は、アプリケーション データを復元する
+## [!div class="tabbedCodeSnippets"]
 
 
-ユーザーが終了したアプリに切り替えると、システムは [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) イベントを送信します。このとき、[**Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) は **Launch** に設定され、[**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) は **Terminated** または **ClosedByUser** に設定されます。 アプリでは、保存されているアプリ データを読み込み、表示されているコンテンツを更新する必要があります。
+アプリが一時停止後に終了された場合は、アプリケーション データを復元する ユーザーが終了したアプリに切り替えると、システムは [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) イベントを送信します。このとき、[**Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) は **Launch** に設定され、[**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) は **Terminated** または **ClosedByUser** に設定されます。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -162,32 +162,32 @@ ms.openlocfilehash: f47a3b7fcb4bec4138e11a079c3d10e918c1eb95
 > }
 > ```
 
-[
-            **PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) の値が **NotRunning** である場合は、アプリがアプリケーション データの保存に失敗しているため、初めて起動するときのように最初からアプリをやり直す必要があります。
+アプリでは、保存されているアプリ データを読み込み、表示されているコンテンツを更新する必要があります。
 
-## 解説
+## [!div class="tabbedCodeSnippets"]
 
-> **注**  Windows Phone ストア アプリでは、アプリが現在一時停止中で、ユーザーがプライマリ タイルまたはアプリの一覧からアプリを再起動した場合でも、[**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) イベントの後に、[**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) イベントが常に発生します。 現在のウィンドウにコンテンツ セットが既にある場合、アプリは初期化をスキップすることがあります。 [
-            **LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) プロパティをチェックすると、アプリがプライマリ タイルとセカンダリ タイルのどちらから起動されたかを調べ、その情報に基づいて新しいアプリ エクスペリエンスを表示するか、アプリ エクスペリエンスを再開するかを判断できます。
+> [
+            **PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) の値が **NotRunning** である場合は、アプリがアプリケーション データの保存に失敗しているため、初めて起動するときのように最初からアプリをやり直す必要があります。 解説 **注**  Windows Phone ストア アプリでは、アプリが現在一時停止中で、ユーザーがプライマリ タイルまたはアプリの一覧からアプリを再起動した場合でも、[**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) イベントの後に、[**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) イベントが常に発生します。
 
-## 関連トピック
+## 現在のウィンドウにコンテンツ セットが既にある場合、アプリは初期化をスキップすることがあります。
 
-* [アプリの中断の処理](suspend-an-app.md)
-* [アプリの再開の処理](resume-an-app.md)
-* [アプリの中断と再開のガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465088)
-* [アプリのライフサイクル](app-lifecycle.md)
+* [[
+            **LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) プロパティをチェックすると、アプリがプライマリ タイルとセカンダリ タイルのどちらから起動されたかを調べ、その情報に基づいて新しいアプリ エクスペリエンスを表示するか、アプリ エクスペリエンスを再開するかを判断できます。](suspend-an-app.md)
+* [関連トピック](resume-an-app.md)
+* [アプリの中断の処理](https://msdn.microsoft.com/library/windows/apps/hh465088)
+* [アプリの再開の処理](app-lifecycle.md)
 
-**リファレンス**
+**アプリの中断と再開のガイドライン**
 
-* [**Windows.ApplicationModel.Activation**](https://msdn.microsoft.com/library/windows/apps/br224766)
-* [**Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324)
-
- 
+* [**アプリのライフサイクル**](https://msdn.microsoft.com/library/windows/apps/br224766)
+* [**リファレンス**](https://msdn.microsoft.com/library/windows/apps/br242324)
 
  
 
+ 
 
 
-<!--HONumber=Jun16_HO4-->
+
+<!--HONumber=Jun16_HO5-->
 
 

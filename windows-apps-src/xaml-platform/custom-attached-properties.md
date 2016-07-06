@@ -1,8 +1,12 @@
 ---
 author: jwmsft
-description: XAML 添付プロパティを依存関係プロパティとして実装する方法と、添付プロパティを XAML で使うために必要なアクセサー変換を定義する方法を説明します。
-title: カスタム添付プロパティ
+description: "XAML 添付プロパティを依存関係プロパティとして実装する方法と、添付プロパティを XAML で使うために必要なアクセサー変換を定義する方法を説明します。"
+title: "カスタム添付プロパティ"
 ms.assetid: E9C0C57E-6098-4875-AA3E-9D7B36E160E0
+translationtype: Human Translation
+ms.sourcegitcommit: 07058b48a527414b76d55b153359712905aa9786
+ms.openlocfilehash: cf6ca169623311e515f02a174224d57652afc753
+
 ---
 
 # カスタム添付プロパティ
@@ -254,6 +258,7 @@ XAML の XML 名前空間マッピングは、通常は XAML ページのルー�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -13,7 +13,7 @@ ms.openlocfilehash: ceb5562ae08d7cc966f80fdb7e23f12afe040430
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-**注:** **{x:Bind}** によりアプリでデータ バインディングを使う方法に関する一般的な情報 (および **{x:Bind}** と **{Binding}** の全体的な比較) については、「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」をご覧ください。
+**注**  **{x:Bind}** によりアプリでデータ バインディングを使う方法に関する一般的な情報 (および **{x:Bind}** と **{Binding}** の全体的な比較) については、「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」をご覧ください。
 
 Windows 10 では、**{Binding}** に代わり、**{x:Bind}** マークアップ拡張が新たに提供されています。 **{x:Bind}** では、**{Binding}** の機能のいくつかが省略されていますが、**{Binding}** よりも短い時間および少ないメモリで動作し、より適切なデバッグをサポートしています。
 
@@ -98,7 +98,7 @@ C++/CX の場合、**{x:Bind}** はページまたはデータ モデルのプ�
 | **Mode** | "OneTime"、"OneWay"、"TwoWay" のいずれかの文字列として、バインド モードを指定します。 既定は "OneTime" です。 これは、**{Binding}** の既定値 (ほとんどの場合は "OneWay") とは異なる点に注意してください。 |
 | **TargetNullValue** | ソース値が解決されるが、明示的に **null** である場合に表示する値を設定します。 | 
 
-**注:** マークアップを **{Binding}** から **{x:Bind}** に変換する場合は、**Mode** プロパティの既定値の違いに注意してください。
+**注**  マークアップを **{Binding}** から **{x:Bind}** に変換する場合は、**Mode** プロパティの既定値の違いに注意してください。
  
 ## 注釈
 

@@ -1,8 +1,11 @@
 ---
 author: jnHs
-Description: アプリには、さまざまなロゴ、スクリーンショット、画像を含める必要があります。
-title: アプリのスクリーンショットと画像
+Description: "アプリには、さまざまなロゴ、スクリーンショット、画像を含める必要があります。"
+title: "アプリのスクリーンショットと画像"
 ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
+ms.sourcegitcommit: ecb030b7c529f765eded46e4e3e9db99ad0c27e8
+ms.openlocfilehash: 9eac5658e2ac04b2abc1bf06abf5c73b16260bc7
+
 ---
 
 # アプリのスクリーンショットと画像
@@ -12,7 +15,7 @@ ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
 
 [アプリの申請プロセス](app-submissions.md) 中、[説明](create-app-descriptions.md) 手順で [スクリーンショット](#screenshots) と [プロモーション用のアートワーク](#promotional-artwork) を指定します。 これらの画像は、ストアでアプリを表示するために使われます。
 
-ストアでは、アプリのタイルと、アプリのパッケージに含める他の画像も使われます。 [Windows アプリ認定キット](https://msdn.microsoft.com/library/windows/apps/mt186449) を実行して、必須の画像が不足していないかどうかを確認します。
+ストアでは、アプリのタイルと、アプリのパッケージに含める他の画像も使われます。 [Windows アプリ認定キット](https://msdn.microsoft.com/library/windows/apps/mt186449)を実行して、必須の画像が不足していないかどうかを確認します。 これらの画像に関するガイダンスと推奨事項については、「[タイルとアイコン アセット](../controls-and-patterns/tiles-and-notifications-app-assets.md)」をご覧ください。
 
 > **注**  ストア、ユーザーのスタート画面、アプリ自体の中で画像がどのように使われるかは、ユーザーのオペレーティング システムやその他の要因によって異なる場合があります。
 
@@ -102,6 +105,7 @@ Windows Phone 8.1 以前のストアでは、プロモーション用のレイ�
 Windows 8.1 以前のストアでは、プロモーション用のレイアウトに 414 x 180 ピクセル サイズの画像が使用される可能性があります。 アプリが Windows 8.1 以前で実行される場合は、プロモーションの対象として検討されるように、このサイズの画像を提供することをお勧めします。
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

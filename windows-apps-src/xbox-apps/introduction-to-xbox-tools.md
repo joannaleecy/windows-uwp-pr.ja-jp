@@ -3,8 +3,8 @@ author: Mtoepke
 title: "Xbox One ツールの概要"
 description: "Windows Device Portal を使った、Xbox One 固有のツールである Dev Home"
 area: Xbox
-ms.sourcegitcommit: 4872ac9587b3e2e14860cb152bf33536faccc48d
-ms.openlocfilehash: c975cb07aa9b7f0d30a9905cbceba11e89c8f7df
+ms.sourcegitcommit: 914a1b76c6b502415bee36865af009a8dfe9bb53
+ms.openlocfilehash: e2f87cdeb8ce3371a34bb989e5fa29ef63d18621
 
 ---
 
@@ -57,9 +57,14 @@ Dev Home は右にスナップします。 通常どおり **[連結]** ボタ�
 | [Windows Device Portal](#windows-device-portal) | キットの WDP (ブラウザー ベースのデバイス管理ツール) を有効にします。 |
 | Xbox Live の状態 | Xbox Live サービスの現在の状態を提供します。 |
 
+### 開発者向け記憶域のサイズの割り当てを管理する
+
+開発者向け記憶域として使用されるディスク領域の容量を増やしたり減らしたりするには、メイン メニューの **[Manage dev storage]** (開発者向け記憶域の管理) を選んでください。 **[Dev storage]** (開発者向け記憶域) バーの値を変更してから、**[保存して再起動]** を選んで、コンソールを再起動します。
+  ![開発者向け記憶域の割り当ての管理](images/devhome_storage.png)
+
 ### Dev Home のカスタマイズ
 
-Dev Home は個人用設定を行ってカスタマイズすることができます。 背景画像とテーマの色を選んで、Dev Home のエクスペリエンスをカスタマイズできます。 これらのオプションは、メイン メニューに表示されます。
+Dev Home は、カスタマイズして個人用に設定できるように設計されています。 背景画像とテーマの色を選んで、Dev Home のエクスペリエンスをカスタマイズできます。 これらのオプションは、メイン メニューに表示されます。
 
 #### サイズの変更とツールの並べ替え
 ツールのサイズや位置を変更するには、タイトルにフォーカスがあるときに、コンテキスト メニュー ボタン (コントローラー上の **[ビュー]** ボタン) を使用します。 コンテキスト メニューで **[移動]** または **[サイズ変更] ** を選択します。
@@ -110,7 +115,7 @@ Xbox One コンソールで WDP を有効にするには、次を実行します
   ![セキュリティ証明書の警告](images/security_cert_warning.jpg)
 
 ## 参照
-- [Microsoft 開発者テクノロジ: Windows Device Portal](https://ms-iot.github.io/content/en-US/win10/tools/DevicePortal.htm)
+- [Microsoft 開発者テクノロジ: Windows Device Portal](https://msdn.microsoft.com/en-us/windows/uwp/debug-test-perf/device-portal-xbox)
 - [Xbox One の UWP](index.md)
 
 
@@ -119,6 +124,6 @@ Xbox One コンソールで WDP を有効にするには、次を実行します
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

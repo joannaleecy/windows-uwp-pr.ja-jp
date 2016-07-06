@@ -6,8 +6,8 @@ ms.assetid: 780209cb-3e8a-4cf7-8f80-8b8f449580bf
 label: Designing for Xbox and TV
 template: detail.hbs
 isNew: true
-ms.sourcegitcommit: 21be5cd53ed124e3b35f5887fb16e7b0405f000b
-ms.openlocfilehash: daa1df78409bd10ee1d5c24e8874e011d4005a82
+ms.sourcegitcommit: 0088ada82b5479cf81f568806a807c304f1d54b7
+ms.openlocfilehash: f64ed435a285d6d0a8a6d9763b7f23d3a120ffa0
 
 ---
 
@@ -61,9 +61,7 @@ _**スクリーンショットに示す映画はすべて、Microsoft 映画 & �
 | [カラー](#colors)  |  UWP は配色テーマをサポートしています。システム テーマを引き継ぐアプリは、Xbox One では既定で**濃色**になります。 アプリに特定の配色テーマがある場合、テレビではうまく表示されないために一部の色を避ける必要があることに注意してください。 |
 | [サウンド](../style/sound.md)    | サウンドは、ユーザーを没頭させたりユーザーにフィードバックを提供したりする上で役立ち、10 フィート エクスペリエンスで重要な役割を果たします。 UWP には、アプリが Xbox One で実行されているときは一般的なコントロールのサウンドを自動的に有効にする機能があります。 UWP に組み込まれているサウンド サポートの詳細とその活用方法について説明します。    |
 | [UI コントロールのガイドライン](#guidelines-for-ui-controls)  |  いくつかの UI コントロールは、複数のデバイスで問題なく動作しますが、テレビで使用する場合には特定の考慮事項があります。 10 フィート エクスペリエンスを設計する際にこのようなコントロールを使う場合のベスト プラクティスについて説明します。 |
-
-<!--[elcowle] We may uncomment this now that the Sound article is live-->
-<!--| [Sound](../style/sound.md)  |  Sounds play a key role in the 10-foot experience, helping to immerse and give feedback to the user. The UWP provides functionality that automatically turns on sounds for common controls when the app is running on Xbox One. Find out more about the sound support built into the UWP and learn how to take advantage of it. |-->
+| [Xbox のカスタム表示状態トリガー](#custom-visual-state-trigger-for-xbox) | UWP アプリを 10 フィート エクスペリエンス用にカスタマイズする場合、カスタム*表示状態トリガー*を使用して、アプリが Xbox コンソールで起動されたことを検出したときにアプリのレイアウトが変わるようにすることをお勧めします。
 
 ## ゲームパッドとリモコン
 
@@ -112,6 +110,8 @@ UWP は、既存のキーボード入力動作をゲームパッドとリモコ�
 
 \* B ボタンの [KeyDown](https://msdn.microsoft.com/library/windows/apps/br208941) イベントまたは [KeyUp](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.uielement.keyup.aspx) イベントのどちらもアプリで処理されない場合、[SystemNavigationManager.BackRequested](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.core.systemnavigationmanager.backrequested.aspx) イベントが発生し、アプリで "戻る" ナビゲーションが発生します。
 
+Xbox One の UWP アプリでは、**メニュー** ボタンを押してコンテキスト メニューを開く操作もサポートされています。 詳しくは、「[CommandBar と ContextFlyout](#commandbar-and-contextflyout)」をご覧ください。
+
 ### アクセラレータのサポート
 
 アクセラレータ ボタンは、UI でナビゲーションを高速化するために使うことができます。 ただし、これらのボタンは特定の入力デバイスにしかない可能性があるため、すべてのユーザーが機能を使用できるとは限らないことに注意してください。 事実、現在 Xbox One で UWP アプリのアクセラレータ機能をサポートしている入力デバイスは、ゲームパッドだけです。
@@ -120,16 +120,52 @@ UWP は、既存のキーボード入力動作をゲームパッドとリモコ�
 
 | 操作   | キーボード   | ゲームパッド      | 組み込み済み:  | 推奨: |
 |---------------|------------|--------------|----------------|------------------|
-| パン       | なし       | 右スティック  | なし           |      [ScrollViewer](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx) |
-| ページ アップ/ダウン  | PageUp/PageDown キー | 左/右トリガー | なし | `ScrollViewer` リスト/グリッド
-| ページの左/右 | なし | L/R ボタン | [ピボット](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.pivot.aspx) | `ScrollViewer`
-| ズーム イン/アウト        | Ctrl + 正符号 (+)/マイナス記号 (-) | 左/右トリガー | `ScrollViewer` | 拡大と縮小をサポートするビュー
+| ページ アップ/ダウン  | PageUp/PageDown キー | 左/右トリガー | [CalendarView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.calendarview.aspx)、[ListBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listbox.aspx)、[ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx)、[ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)、`ScrollViewer`、[Selector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.aspx)、[LoopingSelector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.loopingselector.aspx)、[ComboBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.combobox.aspx)、[FlipView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx) | 垂直スクロールをサポートするビュー
+| ページの左/右 | なし | L/R ボタン | [Pivot](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.pivot.aspx)、[ListBox](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listbox.aspx)、[ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx)、[ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx)、`ScrollViewer`、[Selector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.selector.aspx)、[LoopingSelector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.loopingselector.aspx)、[FlipView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx) | 水平スクロールをサポートするビュー
+| ズーム イン/アウト        | Ctrl + 正符号 (+)/負符号 (-) | 左/右トリガー | なし | `ScrollViewer`、拡大と縮小をサポートするビュー |
+| ナビゲーション ウィンドウを開く/閉じる | なし | 表示 | なし | ナビゲーション ウィンドウ
 
 ## XY フォーカス ナビゲーションと対話式操作
 
-アプリがキーボードの適切なフォーカス ナビゲーションをサポートしている場合、ゲームパッドとリモコンでも適切にサポートされます。 方向キーを使ったナビゲーションは**方向パッド** (とゲームパッドの**左スティック**) にマップされ、UI 要素の対話式操作は **Enter/[選択]** キーにマップされます (「[ゲームパッドとリモコン](#gamepad-and-remote-control)」を参照してください)。 キーボードの設計ガイダンスについては、「[キーボード操作](keyboard-interactions.md)」をご覧ください。
+アプリがキーボードの適切なフォーカス ナビゲーションをサポートしている場合、ゲームパッドとリモコンでも適切にサポートされます。 方向キーを使ったナビゲーションは**方向パッド** (とゲームパッドの**左スティック**) にマップされ、UI 要素の対話式操作は **Enter/[選択]** キーにマップされます (「[ゲームパッドとリモコン](#gamepad-and-remote-control)」を参照してください)。 
+
+多くのイベントやプロパティがキーボードとゲームパッドの両方で使用されます。キーボードとゲームパッドはいずれも `KeyDown` イベントと `KeyUp` イベントを発生させ、`IsTabStop="True"` プロパティと `Visibility="Visible"` プロパティを持つコントロール間のみを移動します。 キーボードの設計ガイダンスについては、「[キーボード操作](keyboard-interactions.md)」をご覧ください。
 
 キーボードのサポートが適切に実装されている場合、アプリはかなり適切に機能します。ただし、すべてのシナリオをサポートするためには追加の作業が必要になります。 最適なユーザー エクスペリエンスを提供するために、アプリ固有のニーズについて考えてください。
+
+> [!IMPORTANT]
+> マウス モードは、Xbox One で実行されている UWP アプリでは既定で有効です。 マウス モードを無効にし、XY フォーカス ナビゲーションを有効にするには、`Application.RequiresPointerMode=WhenRequested` を設定します。
+
+### フォーカスの問題のデバッグ
+
+[FocusManager.GetFocusedElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.focusmanager.getfocusedelement.aspx) メソッドによって、現在、どの要素にフォーカスがあるかがわかります。 これは、フォーカス表示の場所が明確ではない場合に便利です。 この情報は、Visual Studio の出力ウィンドウに次のように記録できます。
+
+```csharp
+page.GotFocus += (object sender, RoutedEventArgs e) =>
+{
+    FrameworkElement focus = FocusManager.GetFocusedElement() as FrameworkElement;
+    if (focus != null)
+    {
+        Debug.WriteLine("got focus: " + focus.Name + " (" + 
+            focus.GetType().ToString() + ")");
+    }
+};
+```
+
+XY ナビゲーションが期待どおりに動作しない場合の一般的な理由には、次の 3 つがあります。
+
+* [IsTabStop](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.istabstop.aspx) プロパティまたは [Visibility](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.visibility.aspx) プロパティが正しく設定されていません。
+* フォーカスを取得するコントロールが、実際には想定以上の大きさです。XY ナビゲーションでは、関心のあるものをレンダリングするコントロールの部分だけでなく、コントロールの合計サイズ ([ActualWidth](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.actualwidth.aspx) と [ActualHeight](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.actualheight.aspx)) が考慮されます。
+* フォーカス対応コントロールが別のコントロールの上に配置されています。XY ナビゲーションでは、重なり合ったコントロールはサポートされません。
+
+これらの問題を解決しても XY ナビゲーションが引き続き機能しない場合は、「[既定のナビゲーションのオーバーライド](#overriding-the-default-navigation)」で説明されている方法を使って、フォーカスを取得する要素を手動で指定できます。
+
+XY ナビゲーションは意図したとおりに動作するが、フォーカス表示が表示されない場合は、次のいずれかの問題が原因である可能性があります。
+
+* コントロールを再テンプレート化しましたが、フォーカス表示を含めていませんでした。 `UseSystemFocusVisuals="True"` を設定するか、フォーカス表示を手動で追加します。
+* `Focus(FocusState.Pointer)` を呼び出してフォーカスを移動しました。 [FocusState](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.focusstate.aspx) パラメーターによって、フォーカス表示の処理を制御できます。 一般的には、これを `FocusState.Programmatic` に設定してください。これにより、フォーカスが以前に表示されていた場合は表示され、以前に非表示であった場合は非表示になります。
+
+このセクションの残りの部分では、XY ナビゲーションを使用する場合の一般的な設計上の課題と、その解決方法のいくつかについて詳しく説明します。
 
 ### アクセスできない UI
 
@@ -139,7 +175,7 @@ XY フォーカス ナビゲーションはユーザーの動作を上下左右�
 
 何らかの理由で UI の配置を変更できない場合は、次のセクションで説明する手法のいずれかを使って、フォーカスの既定の動作をオーバーライドします。
 
-### 既定のナビゲーションのオーバーライド <a name="overriding-the-default-navigation"></a>
+### 既定のナビゲーションのオーバーライド
 
 UWP は、方向パッド/左スティックによるナビゲーションがユーザーにとって意味のあるものであることを確認しようとしますが、アプリの目的に沿って最適化された動作を保証することはできません。 ナビゲーションがアプリ用に最適化されていることを確認する最善の方法は、ゲームパッドを使ってナビゲーションをテストし、アプリのシナリオにとって適切な方法でユーザーがすべての UI 要素にアクセスできることを確認することです。 アプリのシナリオで、提供されている XY フォーカス ナビゲーションでは実現できない動作が必要となる場合は、次のセクションの推奨事項に従ったり、動作をオーバーライドして適切な項目にフォーカスを設定したりことを検討してください。
 
@@ -173,7 +209,7 @@ UWP は、方向パッド/左スティックによるナビゲーションがユ
         XYFocusLeft ="{x:Bind HomeButton}" />
 ```
 
-### 最小回数のクリック数 <a name="path-of-least-clicks"></a>
+### 最小回数のクリック数
 
 ユーザーが最も一般的なタスクを最小クリック回数で実行できるようにしてください。 次の例では、(最初にフォーカスがある) **再生**ボタンとよく使われる要素の間に [TextBlock](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) が配置されているため、優先順位の高いタスクの間に不要な要素が入り込んでいます。
 
@@ -191,9 +227,52 @@ UWP は、方向パッド/左スティックによるナビゲーションがユ
 
 リストやグリッドの*上*に `CommandBar` を配置した場合はどうなるでしょうか。 リストやグリッドを下へスクロールしたユーザーは `CommandBar` に戻るために上へスクロールして戻る必要がありますが、前の構成よりもナビゲーションはわずかに少なくなります。 ただし、これは、アプリの最初のフォーカスが `CommandBar` の横または上に配置されている場合です。最初のフォーカスがリストやグリッドの下にある場合、この方法はうまく機能しません。 これらの `CommandBar` 項目があまりアクセスする必要のないグローバルな操作の項目の場合 (**同期** ボタンなど)、リストやグリッドの上に置いても問題ありません。
 
-ユーザーが項目に簡単にアクセスできる必要がある `CommandBar` をアプリで使う場合、それらの項目を `ContextFlyout` 内に配置して `CommandBar` から削除することを検討できます。 
-
 `CommandBar` の項目を縦方向に重ねることはできませんが、UI レイアウトで適切な場合はスクロール方向と異なる向き (たとえば、縦方向にスクロールするリストの左右や、横方向にスクロールするリストの上下) に項目を配置することも検討できます。
+
+ユーザーが項目に簡単にアクセスできる必要がある `CommandBar` をアプリで使う場合、それらの項目を [ContextFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextflyout.aspx) 内に配置して `CommandBar` から削除することを検討できます。 `ContextFlyout` は、[UIElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.aspx) のプロパティであり、その要素に関連づけられた[コンテキスト メニュー](../controls-and-patterns/dialogs-popups-menus.md#context-menus-and-flyouts)です。 PC では、`ContextFlyout` を持つ要素を右クリックすると、そのコンテキスト メニューがポップアップ表示されます。 Xbox One では、このような要素にフォーカスがあるときに**メニュー** ボタンを押すと、コンテキスト メニューがポップアップ表示されます。
+
+<!--The following XAML code demonstrates a simple `ContextFlyout`:
+
+```xml
+<Button HorizontalAlignment="Center"
+        Content="Context Flyout">
+    <Button.ContextFlyout>
+        <MenuFlyout>
+            <MenuFlyoutItem Text="Item 1"/>
+        </MenuFlyout>
+    </Button.ContextFlyout>
+</Button>
+```
+
+In the above example, when you press the **Menu** button while the [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx) has focus, the context menu appears with the menu item labeled **Item 1**.
+
+`ContextFlyout` takes any element of type [FlyoutBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.flyoutbase.aspx); however, most of the time you will likely use [Flyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flyout.aspx) or [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.menuflyout.aspx).
+
+Alternatively, you can listen for the [ContextRequested](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.contextrequested.aspx) event, which occurs when the user has completed a context input gesture (pressing the **Menu** button). In this case you can, in the code-behind, create the context menu, attach it to the **UIElement**, and show the flyout when the event is raised.
+
+The following C# code demonstrates a simple example of this:
+
+```csharp
+MenuFlyout myFlyout = new MenuFlyout();
+MenuFlyoutItem item1 = new MenuFlyoutItem();
+item1.Text = "Item 1";
+myFlyout.Items.Add(item1);
+MyButton.ContextFlyout = myFlyout;
+
+private void MyButton_ContextRequested(UIElement sender, ContextRequestedEventArgs args)
+{
+    Point point = new Point(0, 0);
+    if (args.TryGetPosition(sender, out point)
+    {
+        myFlyout.ShowAt(sender, point);
+    }
+    else
+    {
+        myFlyout.ShowAt(sender as FrameworkElement);
+    }
+}
+```
+> **Note** Don't use both of these options, as `ContextFlyout` already handles the `ContextRequested` event.-->
 
 ### UI レイアウトの問題
 
@@ -201,8 +280,7 @@ XY フォーカス ナビゲーションの特性により、一部の UI レイ
 
 このことをさらに理解するために、架空のアプリでこれらの問題のいくつかとそれを克服する手法を見てみましょう。
 
-> **注**
-            &nbsp;&nbsp;この架空のアプリは、UI の問題とその解決策を示すことを目的としており、実際のアプリの最適なユーザー エクスペリエンスを示すものではありません。
+> [!NOTE] この架空のアプリは、UI の問題とその解決策を示すことを目的としており、実際のアプリの最適なユーザー エクスペリエンスを示すものではありません。
 
 次の架空の不動産アプリは、販売中の家の一覧、地図、不動産の説明などの情報を表示するものです。 このアプリでは、次の方法で克服できる 3 つの課題が生じます。
 
@@ -220,13 +298,13 @@ XY フォーカス ナビゲーションの特性により、一部の UI レイ
 
 #### 解決策
 
-##### UI の並べ替え <a name="ui-rearrange"></a>
+**UI の並べ替え <a name="ui-rearrange"></a>**
 
 最初のフォーカスがページの下部に設定されない限り、通常、長いスクロールをするリストの上に配置した UI 要素の方が、下に配置した場合よりも簡単にアクセスできます。 この新しいレイアウトが他のデバイスでも有効な場合、Xbox One のためだけに UI に特別な変更を行うのでなく、すべてのデバイス ファミリ用にレイアウトを変更する方が、低コストのアプローチになる可能性があります。 また、スクロール方向と異なる向き (縦方向にスクロールするリストでは横方向、横方向にスクロールするリストでは縦方向) に UI 要素を配置すると、アクセシビリティがさらに向上します。
 
 ![不動産アプリ: 長いスクロールをするリストの上にボタンを配置](images/designing-for-tv/2d-focus-navigation-and-interaction-ui-rearrange.png)
 
-##### フォーカス エンゲージメント <a name="engagement"></a>
+**フォーカス エンゲージメント <a name="engagement"></a>**
 
 エンゲージメントが*要求される*場合、`ListView` 全体が 1 つのフォーカスの対象になります。 ユーザーはリストの内容をバイパスして、フォーカス可能な次の要素にアクセスできます。 エンゲージメントをサポートしているコントロールとその使用方法について詳しくは、「[フォーカス エンゲージメント](#focus-engagement)」をご覧ください。
 
@@ -250,20 +328,39 @@ XY フォーカス ナビゲーションは、フォーカス可能な UI 要素
 
 このような場合、ページ全体に対して、または、ページ内のいずれかのコントロールに対して、ポインター (マウス モード) を要求する必要があります。 たとえば、アプリのページで `WebView` コントロールを使い、そのコントロール内ではマウス モード、それ以外はすべて XY フォーカス ナビゲーションを使うことができます。 ポインターを要求する場合、**コントロールまたはページが有効になったとき**、または**ページにフォーカスがあるとき**のどちらでポインターを要求するかを指定できます。
 
-> **注**
-            &nbsp;&nbsp;コントロールにフォーカスがある場合にポインターを要求することはサポートされていません。
+> [!NOTE] コントロールにフォーカスがある場合にポインターを要求することはサポートされていません。
+
+Xbox One で実行されている XAML アプリとホスト型 Web アプリのいずれの場合も、マウス モードがアプリ全体で既定で有効になっています。 これを無効にして、XY ナビゲーション用にアプリを最適化することを強くお勧めします。 これを行うには、`Application.RequiresPointerMode` プロパティを `WhenRequested` に設定して、コントロールやページから呼び出された場合にのみマウス モードを有効にします。
+
+XAML アプリでこれを行うには、`App` クラスで次のコードを使います。 
+
+```csharp
+public App() 
+{
+    this.InitializeComponent();
+    this.RequiresPointerMode = 
+        Windows.UI.Xaml.ApplicationRequiresPointerMode.WhenRequested;
+    this.Suspending += OnSuspending;
+}
+```
+
+HTML と Javascript のアプリでは、次のコードを使います。
+
+```javascript
+navigator.gamepadInputEmulation = "keyboard";
+```
 
 次の図は、マウス モードでのゲームパッド/リモコンのボタンのマッピングを示しています。
 
 ![マウス モードでのゲームパッド/リモコンのボタンのマッピング](images/designing-for-tv/mouse-mode.png)
 
-> **注**
-            &nbsp;&nbsp;マウス モードは Xbox One のゲームパッド/リモコンのみでサポートされています。 その他のデバイス ファミリや入力タイプでは自動的に無視されます。
+> [!NOTE]
+> マウス モードは Xbox One のゲームパッド/リモコンのみでサポートされています。 その他のデバイス ファミリや入力タイプでは自動的に無視されます。
 
-コントロールまたはページでマウス モードをアクティブ化するには、そのコントロールまたはページで `RequiresPointer` プロパティを使います。 `RequiresPointer` `Never` (既定値)、`WhenEngaged`、`WhenFocused` の 3 つの値があります。
+コントロールまたはページでマウス モードをアクティブ化するには、そのコントロールまたはページで `RequiresPointer` プロパティを使います。 `RequiresPointer` には `Never` (既定値)、`WhenEngaged`、`WhenFocused` の 3 つの値があります。
 
-> **注**
-            &nbsp;&nbsp;`RequiresPointer` は新しい API で、まだ文書化されていません。 
+> [!NOTE]
+> `RequiresPointer` は新しい API で、まだ文書化されていません。 
 
 <!--TODO: Link to doc-->
 
@@ -280,8 +377,7 @@ XY フォーカス ナビゲーションは、フォーカス可能な UI 要素
 </Page> 
 ```
 
-> **注**
-            &nbsp;&nbsp;コントロールを使うときにマウス モードをアクティブ化する場合、`IsEngagementRequired="true"` も指定する必要があります。そうしないと、マウス モードがアクティブ化されません。
+> [!NOTE] コントロールを使うときにマウス モードをアクティブ化する場合、`IsEngagementRequired="true"` も指定する必要があります。そうしないと、マウス モードがアクティブ化されません。
 
 コントロールがマウス モードになると、そのコントロールの入れ子になったコントロールもマウス モードになります。 その子の要求モードは無視されます。親をマウス モードにして子はマウス モードにしないということはできません。
 
@@ -297,8 +393,8 @@ XY フォーカス ナビゲーションは、フォーカス可能な UI 要素
 </Page> 
 ```
 
-> **注**
-            &nbsp;&nbsp;`WhenFocused` の値は [Page](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.page.aspx) オブジェクトでのみサポートされています。 コントロールにこの値を設定しようとすると、例外がスローされます。
+> [!NOTE]
+> `WhenFocused` の値は [Page](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.page.aspx) オブジェクトでのみサポートされています。 コントロールにこの値を設定しようとすると、例外がスローされます。
 
 ## フォーカス表示
 
@@ -320,21 +416,28 @@ XY フォーカス ナビゲーションは、フォーカス可能な UI 要素
 
 ユーザーがフォーカスを探さなくても前回の終了位置を選べるように、1 つのフォーカス表示が常に画面に表示されているようにします。 同様に、フォーカス可能な項目を常に画面上に表示する必要があります。たとえば、フォーカス可能な要素がない、テキストのみのポップアップを使わないでください。
 
+このルールの例外は、ビデオの視聴や画像の表示などの全画面表示エクスペリエンスです。この場合、フォーカス表示を行うことは適切ではありません。
+
+### フォーカスの表示のカスタマイズ
+
+フォーカス表示をカスタマイズする場合は、各コントロールのフォーカス表示に関連するプロパティを変更します。 アプリのパーソナル設定に活用できるこのようなプロパティはいくつかあります。
+
+表示状態を使って独自のフォーカス表示を描画することにより、システムが提供するフォーカス表示を除外することもできます。 詳しくは、「[VisualState](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstate.Aspx)」をご覧ください。
+
 ### 簡易非表示オーバーレイ
 
-ユーザーが現在ゲーム コントローラーまたはリモコンで操作している UI 要素にユーザーの注意を引きつけるために、アプリが Xbox One で実行されている場合は、UWP ではポップアップ UI 以外の領域をカバーする「スモーク」レイヤーが自動的に追加されます。 このための追加作業は必要ありませんが、UI を設計する際に留意してください。
+ユーザーが現在ゲーム コントローラーまたはリモコンで操作している UI 要素にユーザーの注意を引きつけるために、アプリが Xbox One で実行されている場合は、UWP ではポップアップ UI 以外の領域をカバーする「スモーク」レイヤーが自動的に追加されます。 このための追加作業は必要ありませんが、UI を設計する際に留意してください。 いずれかの `FlyoutBase` で `LightDismissOverlayMode` プロパティを設定して、スモーク レイヤーを有効または無効にすることができます。既定の設定は `Auto` で、Xbox では有効になり、その他の場所では無効になります。 詳しくは、「[モーダルと簡易非表示](../controls-and-patterns/dialogs-popups-menus.md#modal-vs-light-dismiss)」をご覧ください。
 
 ## フォーカス エンゲージメント
 
 フォーカス エンゲージメントは、ゲームパッドやリモコンでアプリを操作しやすくするためのものです。 
 
-> **注**
-            &nbsp;&nbsp;フォーカス エンゲージメントを設定しても、キーボードなどの他の入力デバイスには影響しません。
+> [!NOTE] フォーカス エンゲージメントを設定しても、キーボードなどの他の入力デバイスには影響しません。
 
 [FrameworkElement](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.frameworkelement.aspx) オブジェクトのプロパティ `IsFocusEngagementEnabled` を `True` に設定すると、コントロールがフォーカス エンゲージメントを要求するよう設定されます。 この場合、コントロールを "獲得" して操作するには、ユーザーが **A/[選択]** ボタンをクリックする必要があります。 終了したら、**B/[戻る]** ボタンをクリックしてコントロールのエンゲージメントを解除すると、コントロールから移動できるようになります。
 
-> **注**
-            &nbsp;&nbsp;`IsFocusEngagementEnabled` は新しい API で、まだ文書化されていません。
+> [!NOTE]
+> `IsFocusEngagementEnabled` は新しい API で、まだ文書化されていません。
 
 ### フォーカスのトラップ
 
@@ -496,9 +599,9 @@ UI 要素の適切なサイズを計算するときに、このトピックで�
 - 上部と下部から 27 epx
 - 左側と右側から 48 epx
 
-UI を画面の端まで広げる方法は、*コア ウィンドウの境界*と*負の余白*の 2 つがあります。
+以下のセクションでは、UI を画面の端まで広げる方法について説明します。
 
-### コア ウィンドウの境界
+#### コア ウィンドウの境界
 
 10 フィート エクスペリエンスのみを対象とする UWP アプリでは、コア ウィンドウの境界を使う方が簡単です。
 
@@ -509,42 +612,37 @@ Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMo
     (Windows.UI.ViewManagement.ApplicationViewBoundsMode.UseCoreWindow);
 ```
 
-このコード行で、アプリ ウィンドウは画面の端まで拡張されます。そのため、前に説明したテレビのセーフ エリアへ、すべての対話型 UI と重要な UI を移動する必要があります。 コンテキスト メニューや開かれた状態の [ComboBoxes](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.combobox.aspx) などの一時的な UI は、テレビのセーフ エリア内に自動的に残ります。
+このコード行で、アプリ ウィンドウは画面の端まで拡張されます。そのため、前に説明したテレビのセーフ エリアへ、すべての対話型 UI と重要な UI を移動する必要があります。 コンテキスト メニューや開かれた状態の [ComboBox](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.combobox.aspx) などの一時的な UI は、テレビのセーフ エリア内に自動的に残ります。
 
 ![コア ウィンドウの境界](images/designing-for-tv/core-window-bounds.png)
 
-### 負の余白
-
-モバイル、デスクトップ、Xbox One などさまざまなデバイスを対象とする UWP アプリの場合、負の余白の方が直感的にアダプティブ レイアウトを調整できることがあります。 [カスタム トリガー](#custom-visual-state-trigger-for-xbox-one)を作成し、テレビ レイアウトの余白を変更することをお勧めします。
-
 #### ウィンドウの背景 
 
-通常、ナビゲーション ウィンドウは画面の端近くに描画されるため、不自然なギャップが入らないように背景をテレビのセーフ エリア以外まで広げる必要があります。 これは、[SplitView](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.splitview.aspx) コントロールで負の余白を使って実現します。このコントロールは通常、ナビゲーション ウィンドウの構成要素として使うもので、`SplitView` のコンテンツで正の余白を使うと、テレビのセーフ エリア内にコンテンツを収めることができます。
+通常、ナビゲーション ウィンドウは画面の端近くに描画されるため、不自然なギャップが入らないように背景をテレビのセーフ エリア以外まで広げる必要があります。 ナビゲーション ウィンドウの背景の色をアプリの背景の色に変更するだけで、これを行うことができます。
+
+既に説明したように、コア ウィンドウの境界を使用すると、画面の端まで UI を描画することができますが、さらに [SplitView](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.splitview.aspx) のコンテンツで正の余白を使用してコンテンツがテレビ セーフ エリア内に収まるようにする必要があります。
 
 ![画面の端まで拡張されたナビゲーション ウィンドウ](images/designing-for-tv/tv-safe-areas-2.png)
 
-ここでは、ナビゲーション ウィンドウの背景は画面の端まで拡張され、ナビゲーション項目はテレビのセーフ エリア内に収まっています。 `SplitView` のコンテンツ (この場合は項目のグリッド) は、途切れずに続いているように見せるために、画面の下部まで拡張されています。一方、グリッドの上部はテレビのセーフ エリア内に収まったままです。 フォーカスのある項目をテレビのセーフ エリア内に収める方法についてもこのセクションで後述します。
+ここでは、ナビゲーション ウィンドウの背景は画面の端まで拡張され、ナビゲーション項目はテレビのセーフ エリア内に収まっています。 `SplitView` のコンテンツ (この場合は項目のグリッド) は、途切れずに続いているように見せるために、画面の下部まで拡張されています。一方、グリッドの上部はテレビのセーフ エリア内に収まったままです (この方法ついて詳しくは、「[リストとグリッドのスクロールの端](#scrolling-ends-of-lists-and-grids)」で説明します)。
 
 次のコード スニペットでは、この効果を実現します。
 
 ```xml
 <SplitView x:Name="RootSplitView"
-           Margin="-48, -27">
-            <SplitView.Pane>
-                 <ListView x:Name="NavMenuList"
-                           Margin="0,75,0,27"
-                           ContainerContentChanging=
-                                "NavMenuItemContainerContentChanging"
-                           ItemContainerStyle="{StaticResource 
-                                NavMenuItemContainerStyle}"
-                           ItemTemplate="{StaticResource NavMenuItemTemplate}"
-                           ItemInvoked="NavMenuList_ItemInvoked"/>
-            </SplitView.Pane>
-            <Frame x:Name="frame"
-                   Margin="0,27,48,27"
-                   Navigating="OnNavigatingToPage"
-                   Navigated="OnNavigatedToPage"/>
-    </SplitView>
+           Margin="48,0,48,0">
+    <SplitView.Pane>
+        <ListView x:Name="NavMenuList"
+                  ContainerContentChanging="NavMenuItemContainerContentChanging"
+                  ItemContainerStyle="{StaticResource NavMenuItemContainerStyle}"
+                  ItemTemplate="{StaticResource NavMenuItemTemplate}"
+                  ItemInvoked="NavMenuList_ItemInvoked"
+                  ItemsSource="{Binding NavMenuListItems}"/>
+    </SplitView.Pane>
+    <Frame x:Name="frame"
+           Navigating="OnNavigatingToPage"
+           Navigated="OnNavigatedToPage"/>
+</SplitView>
 ```
 
 [CommandBar](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx) も、アプリの 1 つまたは複数の端の近くに置かれることが多いウィンドウの例ですが、そのためにテレビではその背景を画面の端まで拡張する必要があります。 これには通常、**[その他]** ボタンも含まれます。[その他] ボタンは右側に表示する "..." で表し、テレビのセーフ エリア内に収める必要があります。 目的の操作と視覚効果を実現するためのいくつかの異なる方法を次に示します。
@@ -560,12 +658,11 @@ Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMo
 
 これで、`CommandBar` がページの残りの部分と同じ背景の上にあるように見え、背景が画面の端まで切れ目なく続きます。
 
-**オプション 2**: `CommandBar` の背景と同じ色で塗りつぶした背景の四角形を追加し、その四角形に負の余白を設定して画面の端まで拡張します。
+**オプション 2**: `CommandBar` の背景と同じ色で塗りつぶした背景の四角形を追加し、その四角形を `CommandBar` の下、ページの残りの部分に配置します。
 
 ```xml
 <Rectangle VerticalAlignment="Top" 
-            HorizontalAlignment="Stretch" 
-            Margin="0,-27,-48,0"      
+            HorizontalAlignment="Stretch"      
             Fill="{ThemeResource SystemControlBackgroundChromeMediumBrush}"/>
 <CommandBar x:Name="topbar" 
             VerticalAlignment="Top" 
@@ -574,22 +671,10 @@ Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetDesiredBoundsMo
 </CommandBar>
 ```
 
-> **注**
-            &nbsp;&nbsp;この方法を使う場合、アイコンの下に `AppBarButton` のラベルを表示できるように、開いた状態の `CommandBar` の高さが **[その他]** ボタンによって必要に応じて変更されることに注意してください。 サイズ変更を避けるために、アイコンの*右側*へラベルを移動することをお勧めします。
+> [!NOTE]
+> この方法を使う場合、アイコンの下に `AppBarButton` のラベルを表示できるように、開いた状態の `CommandBar` の高さが **[その他]** ボタンによって必要に応じて変更されることに注意してください。 サイズ変更を避けるために、アイコンの*右側*へラベルを移動することをお勧めします。 詳しくは、「[CommandBar のラベル](#commandbar-labels)」をご覧ください。
 
-#### 背景画像、メディア要素
-
-ほとんどの画像とその他のメディア要素では、重要な情報は端には含まれていないため、イマーシブなエクスペリエンスを提供するためにこれらの UI 要素を画面の端に描画すると安全です。 次のコード スニペットは、画面の端に画像を描画する例を示しています。
-
-```xml
-<Image Source="\Assets\HeaderBackground.png" 
-       Stretch="Uniform" 
-       Height="227" 
-       VerticalAlignment="Top" 
-       Margin="-48,-27,-48,0"/>
-```
-
-もちろん、ビデオなどのメディアに対して同じ処理を行うことができます。
+これらのアプローチはいずれも、このセクションに示されている他の種類のコントロールにも適用されます。
 
 #### リストとグリッドのスクロールの端
 
@@ -606,36 +691,34 @@ UWP にはフォーカス表示を [VisibleBounds](https://msdn.microsoft.com/en
 ```xml
 <Style x:Key="TitleSafeListViewStyle" 
        TargetType="ListView">
-    <Setter Property="Margin" 
-            Value="0,0,0,-27"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="ListView">
-                    <Border BorderBrush="{TemplateBinding BorderBrush}" 
-                            Background="{TemplateBinding Background}" 
-                            BorderThickness="{TemplateBinding BorderThickness}">
-                        <ScrollViewer x:Name="ScrollViewer"
-                                      TabNavigation="{TemplateBinding TabNavigation}"
-                                      HorizontalScrollMode="{TemplateBinding ScrollViewer.HorizontalScrollMode}"
-                                      HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}"
-                                      IsHorizontalScrollChainingEnabled="{TemplateBinding ScrollViewer.IsHorizontalScrollChainingEnabled}"
-                                      VerticalScrollMode="{TemplateBinding ScrollViewer.VerticalScrollMode}"
-                                      VerticalScrollBarVisibility="{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}"
-                                      IsVerticalScrollChainingEnabled="{TemplateBinding ScrollViewer.IsVerticalScrollChainingEnabled}"
-                                      IsHorizontalRailEnabled="{TemplateBinding ScrollViewer.IsHorizontalRailEnabled}"
-                                      IsVerticalRailEnabled="{TemplateBinding ScrollViewer.IsVerticalRailEnabled}"
-                                      ZoomMode="{TemplateBinding ScrollViewer.ZoomMode}"
-                                      IsDeferredScrollingEnabled="{TemplateBinding ScrollViewer.IsDeferredScrollingEnabled}"
-                                      BringIntoViewOnFocusChange="{TemplateBinding ScrollViewer.BringIntoViewOnFocusChange}"
-                                      AutomationProperties.AccessibilityView="Raw">
-                            <ItemsPresenter Header="{TemplateBinding Header}"
-                                            HeaderTemplate="{TemplateBinding HeaderTemplate}"
-                                            HeaderTransitions="{TemplateBinding HeaderTransitions}"
-                                            Footer="{TemplateBinding Footer}"
-                                            FooterTemplate="{TemplateBinding FooterTemplate}"
-                                            FooterTransitions="{TemplateBinding FooterTransitions}"
-                                            Padding="{TemplateBinding Padding}" 
-                                            Margin="0,27,0,27"/>
+    <Setter Property="Template">
+        <Setter.Value>
+            <ControlTemplate TargetType="ListView">
+                <Border BorderBrush="{TemplateBinding BorderBrush}" 
+                        Background="{TemplateBinding Background}" 
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                    <ScrollViewer x:Name="ScrollViewer"
+                                  TabNavigation="{TemplateBinding TabNavigation}"
+                                  HorizontalScrollMode="{TemplateBinding ScrollViewer.HorizontalScrollMode}"
+                                  HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}"
+                                  IsHorizontalScrollChainingEnabled="{TemplateBinding ScrollViewer.IsHorizontalScrollChainingEnabled}"
+                                  VerticalScrollMode="{TemplateBinding ScrollViewer.VerticalScrollMode}"
+                                  VerticalScrollBarVisibility="{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}"
+                                  IsVerticalScrollChainingEnabled="{TemplateBinding ScrollViewer.IsVerticalScrollChainingEnabled}"
+                                  IsHorizontalRailEnabled="{TemplateBinding ScrollViewer.IsHorizontalRailEnabled}"
+                                  IsVerticalRailEnabled="{TemplateBinding ScrollViewer.IsVerticalRailEnabled}"
+                                  ZoomMode="{TemplateBinding ScrollViewer.ZoomMode}"
+                                  IsDeferredScrollingEnabled="{TemplateBinding ScrollViewer.IsDeferredScrollingEnabled}"
+                                  BringIntoViewOnFocusChange="{TemplateBinding ScrollViewer.BringIntoViewOnFocusChange}"
+                                  AutomationProperties.AccessibilityView="Raw">
+                        <ItemsPresenter Header="{TemplateBinding Header}"
+                                        HeaderTemplate="{TemplateBinding HeaderTemplate}"
+                                        HeaderTransitions="{TemplateBinding HeaderTransitions}"
+                                        Footer="{TemplateBinding Footer}"
+                                        FooterTemplate="{TemplateBinding FooterTemplate}"
+                                        FooterTransitions="{TemplateBinding FooterTransitions}"
+                                        Padding="{TemplateBinding Padding}" 
+                                        Margin="0,27,0,27"/>
                     </ScrollViewer>
                 </Border>
             </ControlTemplate>
@@ -653,65 +736,7 @@ UWP にはフォーカス表示を [VisibleBounds](https://msdn.microsoft.com/en
                   ... />
 ```
 
-> **注**
-            &nbsp;&nbsp;このコード スニペットは `ListView` 専用です。`GridView` のスタイルの場合、[ControlTemplate](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.controltemplate.aspx) と [Style](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.style.aspx) の両方の [TargetType](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.controltemplate.targettype.aspx) 属性を `GridView` に設定します。
-
-
-### Xbox One のカスタム表示状態トリガー <a name="custom-visual-state-trigger-for-xbox-one"></a>
-
-UWP アプリを 10 フィート エクスペリエンス用にカスタマイズする場合、アプリが Xbox コンソールで起動されたことを検出したときにアプリのレイアウトが変わるようにすることをお勧めします。 このように設定するには、次のコード スニペットのように、カスタム表示状態トリガーを使います。
-
-```xml
-<VisualStateManager.VisualStateGroups>
-    <VisualStateGroup>
-        <VisualState>
-            <VisualState.StateTriggers>
-                <triggers:DeviceFamilyTrigger DeviceFamily="Windows.Xbox"/>
-            </VisualState.StateTriggers>
-            <VisualState.Setters>
-                <Setter Target="RootSplitView.Margin" 
-                        Value="-48,-27"/>
-                <Setter Target="RootSplitView.OpenPaneLength" 
-                        Value="368"/>
-                <Setter Target="RootSplitView.CompactPaneLength" 
-                        Value="96"/>
-                <Setter Target="NavMenuList.Margin" 
-                        Value="0,75,0,27"/>
-                <Setter Target="Frame.Margin" 
-                        Value="0,27,48,27"/>
-                <Setter Target="NavMenuList.ItemContainerStyle" 
-                        Value="{StaticResource NavMenuItemContainerXboxStyle}"/>
-            </VisualState.Setters>
-        </VisualState>
-    </VisualStateGroup>
-</VisualStateManager.VisualStateGroups>
-```
-
-このようなトリガーを作成するには、アプリに次のクラスを追加します。 これは、XAML コードで前に参照されているクラスです。
-
-```csharp
-class DeviceFamilyTrigger : StateTriggerBase
-{
-    private string _currentDeviceFamily, _queriedDeviceFamily;
-
-    public string DeviceFamily
-    {
-        get
-        {
-            return _queriedDeviceFamily;
-        }
-        
-        set
-        {
-            _queriedDeviceFamily = value;
-            _currentDeviceFamily = AnalyticsInfo.VersionInfo.DeviceFamily;
-            SetActive(_queriedDeviceFamily == _currentDeviceFamily);
-        }
-    }
-}
-```
-
-カスタム トリガーを追加した場合、アプリは、Xbox One コンソールで実行されていることを検出すると XAML コードで指定されたレイアウトを自動的に変更します。
+> [!NOTE] このコード スニペットは `ListView` 専用です。`GridView` のスタイルの場合、[ControlTemplate](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.controltemplate.aspx) と [Style](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.style.aspx) の両方の [TargetType](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.controltemplate.targettype.aspx) 属性を `GridView` に設定します。
 
 ## カラー
 
@@ -835,16 +860,14 @@ PC でアクセント カラーを選べるように、ユーザーは Xbox One 
 </Application.Resources>
 ```
 
-> **注**
-            &nbsp;&nbsp;淡色テーマ **SystemChromeMediumLowColor** と **SystemChromeMediumLowColor** は、クランプの結果ではなく、意図的に同じ色になっています。 
+> [!NOTE] 淡色テーマ **SystemChromeMediumLowColor** と **SystemChromeMediumLowColor** は、クランプの結果ではなく、意図的に同じ色になっています。 
 
-> **注**
-            &nbsp;&nbsp;16 進数の色は **ARGB** (アルファ、赤、緑、青) で指定します。
+> [!NOTE] 16 進数の色は **ARGB** (アルファ、赤、緑、青) で指定します。
 
 クランプなしですべての範囲を表示できるモニターでは、テレビ セーフ カラーを使わないことをお勧めします。色があせて見えます。 代わりに、Xbox でアプリを実行し他のプラットフォームで実行*しない*場合は、リソース ディクショナリ (前のサンプル) を読み込みます。 `App.xaml.cs` の `OnLaunched` メソッドに、次のチェックを追加します。
 
 ```csharp
-if (Windows.System.Profile.AnalyticsInfo.VersionInfo.DeviceFamily == "Windows.Xbox")
+if (IsTenFoot)
 { 
     this.Resources.MergedDictionaries.Add(new ResourceDictionary 
     { 
@@ -852,6 +875,8 @@ if (Windows.System.Profile.AnalyticsInfo.VersionInfo.DeviceFamily == "Windows.Xb
     }); 
 }
 ```
+
+> [!NOTE] `IsTenFoot` 変数は、「[Xbox 用のカスタム表示状態のトリガー](#custom-visual-state-trigger-for-xbox)」で定義されています。
 
 これにより、どのデバイスでアプリを実行していても正しい色が表示され、美的に優れた、より良いエクスペリエンスをユーザーに提供できます。
 
@@ -861,19 +886,41 @@ if (Windows.System.Profile.AnalyticsInfo.VersionInfo.DeviceFamily == "Windows.Xb
 
 ### ピボット コントロール
 
-電話やタブレットではヘッダーが画面の端で折り返されますが、[Pivot](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.pivot.aspx) コントロールには、ヘッダーが画面の端で折り返されないように設定できるプロパティがあります。 ヘッダーの折り返しを煩わしいと感じるユーザーもいるため、これでテレビなどの大画面表示でエクスペリエンスが向上します。 詳しくは、「[タブとピボット](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/tabs-pivot)」をご覧ください。
+[ピボット](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.pivot.aspx)は、別のヘッダーやタブを選択することにより、アプリ内でビューのすばやいナビゲーションを提供します。 このコントロールでは、フォーカスがあるヘッダーに下線が引かれ、ゲームパッド/リモコンを使用している場合に、現在選択されているヘッダーがわかりやすくなります。 
+
+![ピボットの下線](images/designing-for-tv/pivot-underline.png)
+
+<!--By default, when you navigate to a `Pivot`, one of the [PivotItem](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.pivotitem.aspx)s will get focus. However, you can show focus around all the headers by setting `Pivot.HeaderFocusVisualPlacement="ItemHeaders"`.
+
+![Pivot focus around headers](images/designing-for-tv/pivot-headers-focus.png)-->
+
+電話やタブレットではヘッダーが画面の端で折り返されますが、[Pivot.HeaderOverflowMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.pivot.headeroverflowmode.aspx) プロパティを `PivotHeaderOverflowMode.NoWrap` に設定することで、ヘッダーが画面の端で折り返されないように設定できます。 ヘッダーの折り返しを煩わしいと感じるユーザーもいるため、これでテレビなどの大画面表示でエクスペリエンスが向上します。 詳しくは、「[タブとピボット](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/tabs-pivot)」をご覧ください。
+
+<!--If you find it necessary to wrap headers, you can set it so that it doesn't show the selected header in the left-most position, like it does by default. When you set `Pivot.IsHeaderItemsCarouselEnabled="False"`, the selected header will move left by the minimal amount required to become fully visible. This is the recommended approach for 10-foot design.
+
+![Pivot headers carousel disabled](images/designing-for-tv/pivot-headers-carousel.png)-->
 
 ### ナビゲーション ウィンドウ
 
-UWP ではすべてのデバイスで一貫した見た目や操作感を提供できます。 さまざまな画面サイズでのナビゲーション ウィンドウの動作と、ゲームパッド/リモコンでのナビゲーションのベスト プラクティスについては、「[ナビゲーション ウィンドウ](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/nav-pane)」をご覧ください。
+ナビゲーション ウィンドウ (*ハンバーガー メニュー*とも呼ばれる) は、UWP アプリでよく使われるナビゲーション コントロールです。 通常、リスト スタイルのメニューから選択できる複数のオプションを表示するウィンドウであり、ユーザーに異なるページを表示します。 一般的に、このウィンドウは領域を節約するために折りたたまれた状態で表示され、ユーザーがボタンをクリックすることで開くことができます。 
+
+ナビゲーション ウィンドウは、マウスやタッチを使う場合に非常にアクセシビリティが高く、ゲームパッド/リモコンを使う場合はウィンドウを開くボタンに移動する必要があるためアクセシビリティは低くなります。 そのため、ユーザーがページの左端まで移動してナビゲーション ウィンドウを開くことができるだけでなく、**表示**ボタンでナビゲーション ウィンドウを開く操作を可能にすることをお勧めします。 これにより、ユーザーは非常に簡単にウィンドウの内容にアクセスすることができます。 さまざまな画面サイズでのナビゲーション ウィンドウの動作と、ゲームパッド/リモコンでのナビゲーションのベスト プラクティスについては、「[ナビゲーション ウィンドウ](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/nav-pane)」をご覧ください。
 
 ### CommandBar のラベル
 
-[CommandBar](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx) コントロールには、アイコンの横のラベルを常に表示するプロパティがあります。 この場合、ユーザーがボタンの動作を見るまでのクリック数を最小限に抑えることができるため、この方法は 10 フィート エクスペリエンスに適しています。 また、これは他の種類のデバイスでも従うべき優れたモデルです。
+[CommandBar](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx) のアイコンの高さを最小化し、一貫性が保たれるようにするために、アイコンの右側にラベルを配置することをお勧めします。 [CommandBar.DefaultLabelPosition](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.defaultlabelposition.aspx) プロパティを `CommandBarDefaultLabelPosition.Right` に設定することによって、これを実現できます。
+
+![アイコンの右側にラベルが配置された CommandBar](images/designing-for-tv/commandbar.png)
+
+また、このプロパティを設定するとラベルが常に表示されるようになり、ユーザーのクリック数を最小限に抑えることができるため、10 フィート エクスペリエンスに適しています。 また、これは他の種類のデバイスでも従うべき優れたモデルです。
+
+<!--When there isn't enough space in the window to fit all of the `AppBarButton`s, buttons move into an overflow menu, which is accessed by selecting the "..." button. This happens dynamically as the screen resizes. This generally shouldn't be a problem for TV because the screen size is so large, but if you find that you have overflow buttons, you can specify which appear first using the `AppBarButton.DynamicOverflowOrder` property.
+
+![CommandBar with overflow commands](images/designing-for-tv/commandbar-overflow.png)-->
 
 ### Tooltip
 
-[Tooltip](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.tooltip.aspx) コントロールは、ユーザーが要素の上にマウスを置くか、要素をタップして長押ししたときに UI の詳しい情報を提供する方法として導入されました。 ゲームパッドとリモコンの場合、`Tooltip` は、要素にフォーカスが設定されて少し時間が経つと表示され、しばらく画面に表示された後で消えます。 使う `Tooltip` が多すぎると、ユーザーがこの動作を煩わしいと感じる可能性があります。 テレビを設計するときには Tooltip を使わないようにしてください。
+[Tooltip](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.tooltip.aspx) コントロールは、ユーザーが要素の上にマウスを置くか、要素をタップして長押ししたときに UI の詳しい情報を提供する方法として導入されました。 ゲームパッドとリモコンの場合、`Tooltip` は、要素にフォーカスが設定されて少し時間が経つと表示され、しばらく画面に表示された後で消えます。 使う `Tooltip` が多すぎると、ユーザーがこの動作を煩わしいと感じる可能性があります。 テレビを設計するときには `Tooltip` を使わないようにしてください。
 
 ### ボタンのスタイル
 
@@ -887,9 +934,72 @@ UI 要素が他の UI 要素の入れ子になっている場合、既定の動�
 
 ![マウスに置くと表示される UI 要素](images/designing-for-tv/2d-navigation-best-practices-ui-elements-display-on-mouse-hover.png)
 
-ゲームパッド/リモコン入力でこのシナリオを処理するお勧めの方法は、それらの UI 要素を `ContextFlyout` に配置することです。
+ゲームパッド/リモコン入力でこのシナリオを処理するお勧めの方法は、それらの UI 要素を `ContextFlyout` に配置することです (「[CommandBar と ContextFlyout](#commandbar-and-contextflyout)」をご覧ください)。
 
-## 要約
+## Xbox のカスタム表示状態トリガー
+
+UWP アプリを 10 フィート エクスペリエンス用にカスタマイズする場合、アプリが Xbox コンソールで起動されたことを検出したときにアプリのレイアウトが変わるようにすることをお勧めします。 これを行う方法の 1 つが、カスタム*表示状態トリガー*を使用することです。 表示状態トリガーは、**Blend for Visual Studio** で編集する場合に最も有用です。 次のコード スニペットは、Xbox の表示状態トリガーを作成する方法を示しています。
+
+```xml
+<VisualStateManager.VisualStateGroups>
+    <VisualStateGroup>
+        <VisualState>
+            <VisualState.StateTriggers>
+                <triggers:DeviceFamilyTrigger DeviceFamily="Windows.Xbox"/>
+            </VisualState.StateTriggers>
+            <VisualState.Setters>
+                <Setter Target="RootSplitView.OpenPaneLength" 
+                        Value="368"/>
+                <Setter Target="RootSplitView.CompactPaneLength" 
+                        Value="96"/>
+                <Setter Target="NavMenuList.Margin" 
+                        Value="0,75,0,27"/>
+                <Setter Target="Frame.Margin" 
+                        Value="0,27,48,27"/>
+                <Setter Target="NavMenuList.ItemContainerStyle" 
+                        Value="{StaticResource NavMenuItemContainerXboxStyle}"/>
+            </VisualState.Setters>
+        </VisualState>
+    </VisualStateGroup>
+</VisualStateManager.VisualStateGroups>
+```
+
+このようなトリガーを作成するには、アプリに次のクラスを追加します。 これは、前の XAML コードで参照されているクラスです。
+
+```csharp
+class DeviceFamilyTrigger : StateTriggerBase
+{
+    private string _currentDeviceFamily, _queriedDeviceFamily;
+
+    public string DeviceFamily
+    {
+        get
+        {
+            return _queriedDeviceFamily;
+        }
+        
+        set
+        {
+            _queriedDeviceFamily = value;
+            _currentDeviceFamily = AnalyticsInfo.VersionInfo.DeviceFamily;
+            SetActive(_queriedDeviceFamily == _currentDeviceFamily);
+        }
+    }
+}
+```
+
+カスタム トリガーを追加した場合、アプリは、Xbox One コンソールで実行されていることを検出すると XAML コードで指定されたレイアウトを自動的に変更します。
+
+アプリが Xbox で実行されていることを確認した後、適切な調整を行うためのもう 1 つの方法は、コードを使うことです。 次の単純な変数を使って、Xbox でアプリが実行されているかどうかを確認できます。
+
+```csharp
+bool IsTenFoot = (Windows.System.Profile.AnaylticsInfo.VersionInfo.DeviceFamily == 
+                    "Windows.Xbox");
+```
+
+次に、このチェックに続くコード ブロックで、UI に適切な調整を行うことができます。 この例については、「[UWP 色のサンプル](#uwp-color-sample)」をご覧ください。
+
+## まとめ
 
 10 フィート エクスペリエンスの設計には、他のプラットフォーム向けの設計とは対応を変える必要がある、特別な考慮事項があります。 UWP アプリを Xbox One に単純に移植し、うまく動かすことができたとしも、必ずしも 10 フィート エクスペリエンス向けに最適化されるわけではありません。ユーザーのフラストレーションを招くことさえあります。 この記事のガイドラインに従うと、テレビに組み込まれているかのようなすばらしいアプリにすることができます。
 
@@ -901,6 +1011,6 @@ UI 要素が他の UI 要素の入れ子になっている場合、既定の動�
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

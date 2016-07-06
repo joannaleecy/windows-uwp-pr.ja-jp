@@ -120,62 +120,62 @@ URI スキーム名の既定となるアプリは、そのアイコンがシス�
 > }
 > ```
 
-> **注**  プロトコル コントラクトを介して起動した場合、戻るボタンが使われたときは、アプリの以前のコンテンツに戻るのではなく、アプリを起動した画面に戻るようにする必要があります。
+> [!div class="tabbedCodeSnippets"]
 
-新しいページを開くアクティブ化イベントごとにアプリで新しい XAML [**フレーム**](https://msdn.microsoft.com/library/windows/apps/br242682)を作成することをお勧めします。 こうすると、新しい XAML **フレーム**のナビゲーション バックスタックに、中断されたときに現在のウィンドウに表示されていた以前のコンテンツが含まれなくなります。 起動コントラクトとファイル コントラクトで単一 XAML **フレーム**を使うことにしたアプリは、新しいページに移動する前に**フレーム**のナビゲーション ジャーナルにあるページをクリアする必要があります。
+**注**  プロトコル コントラクトを介して起動した場合、戻るボタンが使われたときは、アプリの以前のコンテンツに戻るのではなく、アプリを起動した画面に戻るようにする必要があります。 新しいページを開くアクティブ化イベントごとにアプリで新しい XAML [**フレーム**](https://msdn.microsoft.com/library/windows/apps/br242682)を作成することをお勧めします。 こうすると、新しい XAML **フレーム**のナビゲーション バックスタックに、中断されたときに現在のウィンドウに表示されていた以前のコンテンツが含まれなくなります。
 
-プロトコルのアクティブ化によって起動されるときは、アプリの先頭ページに戻ることができる UI を含めることを検討してください。
+起動コントラクトとファイル コントラクトで単一 XAML **フレーム**を使うことにしたアプリは、新しいページに移動する前に**フレーム**のナビゲーション ジャーナルにあるページをクリアする必要があります。
 
-## 注釈
-
-
-URI スキーム名は、悪意のあるものも含め、あらゆるアプリや Web サイトから使われる可能性があります。 そのため、その URI で受け取るデータは、信頼できないソースからのデータである可能性があります。 URI で受け取るパラメーターに基づいて永続的な操作を実行しないことをお勧めします。 たとえば、アプリを起動するとユーザーのアカウント ページが表示されるようにするために URI パラメーターを使うことはかまいませんが、ユーザーのアカウントを直接変更するためにプロトコル パラメーターを使うことは行わないことをお勧めします。
-
-> **注**  アプリの新しい URI スキーム名を作成する場合は、[RFC 4395](http://go.microsoft.com/fwlink/p/?LinkID=266550) のガイダンスに従う必要があります。 これにより確実に名前が URI スキームの標準に準拠するようになります。
-
-> **注**  プロトコル コントラクトを介して起動した場合、戻るボタンが使われたときは、アプリの以前のコンテンツに戻るのではなく、アプリを起動した画面に戻るようにする必要があります。
-
-新しい URI ターゲットを開くアクティブ化イベントごとに、アプリで新しい XAML [**フレーム**](https://msdn.microsoft.com/library/windows/apps/br242682)を作成することをお勧めします。 こうすると、新しい XAML **フレーム**のナビゲーション バックスタックに、中断されたときに現在のウィンドウに表示されていた以前のコンテンツが含まれなくなります。
-
-アプリが、起動コントラクトとプロトコル コントラクトに単一 XAML [**フレーム**](https://msdn.microsoft.com/library/windows/apps/br242682)を使うようにした場合は、新しいページに移動する前に**フレーム**のナビゲーション ジャーナルにあるページをクリアする必要があります。 プロトコル コントラクトによって起動されるときは、アプリの先頭に戻ることができる UI をアプリに含めることを検討してください。
-
-> **注:** この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
-
- 
-
-## 関連トピック
+## プロトコルのアクティブ化によって起動されるときは、アプリの先頭ページに戻ることができる UI を含めることを検討してください。
 
 
-**完全な例**
+注釈 URI スキーム名は、悪意のあるものも含め、あらゆるアプリや Web サイトから使われる可能性があります。 そのため、その URI で受け取るデータは、信頼できないソースからのデータである可能性があります。 URI で受け取るパラメーターに基づいて永続的な操作を実行しないことをお勧めします。
 
-* [Association Launching サンプル](http://go.microsoft.com/fwlink/p/?LinkID=231484)
+> たとえば、アプリを起動するとユーザーのアカウント ページが表示されるようにするために URI パラメーターを使うことはかまいませんが、ユーザーのアカウントを直接変更するためにプロトコル パラメーターを使うことは行わないことをお勧めします。 **注**  アプリの新しい URI スキーム名を作成する場合は、[RFC 4395](http://go.microsoft.com/fwlink/p/?LinkID=266550) のガイダンスに従う必要があります。
 
-**概念**
+> これにより確実に名前が URI スキームの標準に準拠するようになります。
 
-* [既定のプログラム](https://msdn.microsoft.com/library/windows/desktop/cc144154)
-* [ファイルの種類と URI の関連付けのモデル](https://msdn.microsoft.com/library/windows/desktop/hh848047)
+**注**  プロトコル コントラクトを介して起動した場合、戻るボタンが使われたときは、アプリの以前のコンテンツに戻るのではなく、アプリを起動した画面に戻るようにする必要があります。 新しい URI ターゲットを開くアクティブ化イベントごとに、アプリで新しい XAML [**フレーム**](https://msdn.microsoft.com/library/windows/apps/br242682)を作成することをお勧めします。
 
-**処理手順**
+こうすると、新しい XAML **フレーム**のナビゲーション バックスタックに、中断されたときに現在のウィンドウに表示されていた以前のコンテンツが含まれなくなります。 アプリが、起動コントラクトとプロトコル コントラクトに単一 XAML [**フレーム**](https://msdn.microsoft.com/library/windows/apps/br242682)を使うようにした場合は、新しいページに移動する前に**フレーム**のナビゲーション ジャーナルにあるページをクリアする必要があります。
 
-* [URI に応じた既定のアプリの起動](launch-default-app.md)
-* [ファイルのアクティブ化の処理](handle-file-activation.md)
-
-**ガイドライン**
-
-* [ファイルの種類と URI のガイドライン](https://msdn.microsoft.com/library/windows/apps/hh700321)
-
-**リファレンス**
-
-* [**AppX パッケージ マニフェスト**](https://msdn.microsoft.com/library/windows/apps/dn934791)
-* [**Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224742)
-* [**Windows.UI.Xaml.Application.OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330)
+> プロトコル コントラクトによって起動されるときは、アプリの先頭に戻ることができる UI をアプリに含めることを検討してください。 **注:** この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。
 
  
 
+## Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
+
+
+**関連トピック**
+
+* [完全な例](http://go.microsoft.com/fwlink/p/?LinkID=231484)
+
+**Association Launching サンプル**
+
+* [概念](https://msdn.microsoft.com/library/windows/desktop/cc144154)
+* [既定のプログラム](https://msdn.microsoft.com/library/windows/desktop/hh848047)
+
+**ファイルの種類と URI の関連付けのモデル**
+
+* [処理手順](launch-default-app.md)
+* [URI に応じた既定のアプリの起動](handle-file-activation.md)
+
+**ファイルのアクティブ化の処理**
+
+* [ガイドライン](https://msdn.microsoft.com/library/windows/apps/hh700321)
+
+**ファイルの種類と URI のガイドライン**
+
+* [**リファレンス**](https://msdn.microsoft.com/library/windows/apps/dn934791)
+* [**AppX パッケージ マニフェスト**](https://msdn.microsoft.com/library/windows/apps/br224742)
+* [**Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br242330)
+
+ 
+
  
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

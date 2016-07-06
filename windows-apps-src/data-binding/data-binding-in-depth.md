@@ -3,8 +3,8 @@ author: mcleblanc
 ms.assetid: 41E1B4F1-6CAF-4128-A61A-4E400B149011
 title: "データ バインディングの詳細"
 description: "データ バインディングは、アプリの UI でデータを表示し、必要に応じてそのデータとの同期を保つ方法です。"
-ms.sourcegitcommit: d76ef6a87d6afad577f5f7bf5e8f18a8b0776094
-ms.openlocfilehash: c371ca1804d76a0ffdf812cfb933b03916654bad
+ms.sourcegitcommit: ca92d44cc8e3fb7eaed5a522435efe9cb4796560
+ms.openlocfilehash: d12f8d6bd44323cf1c19bff1ac080070ba0e8ed2
 
 ---
 # データ バインディングの詳細
@@ -12,15 +12,15 @@ ms.openlocfilehash: c371ca1804d76a0ffdf812cfb933b03916654bad
 \[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-** 重要な API **
+**重要な API**
 
 -   [**Binding クラス**](https://msdn.microsoft.com/library/windows/apps/BR209820)
 -   [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713)
 -   [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899)
 
-**注**  このトピックでは、データ バインディングの機能について詳しく説明します。 簡潔で実用的な紹介については、「[データ バインディングの概要](data-binding-quickstart.md)」をご覧ください。
+> **注**
+            &nbsp;&nbsp;このトピックでは、データ バインディングの機能について詳しく説明します。 簡潔で実用的な紹介については、「[データ バインディングの概要](data-binding-quickstart.md)」をご覧ください。
 
- 
 
 データ バインディングは、アプリの UI でデータを表示し、必要に応じてそのデータとの同期を保つ方法です。 データ バインディングによって、UI の問題からデータの問題を切り離すことができるため、概念的なモデルが簡素化されると共に、アプリの読みやすさ、テストの容易性、保守容易性が向上します。
 
@@ -77,7 +77,7 @@ public class HostViewModel
 
 **注**  C++/CX の場合は、[**Windows::UI::Xaml::Data::INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899) を実装し、バインディング ソース クラスに [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) が存在するか、[**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878) を実装する必要があります。
 
-``` csharp
+```csharp
 public class HostViewModel : INotifyPropertyChanged
 {
     private string nextButtonText;
@@ -111,7 +111,7 @@ public class HostViewModel : INotifyPropertyChanged
 
 前に示したパターンを何度も実装する必要はありません。[QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame) サンプル (Common フォルダー) に含まれている **BindableBase** 基底クラスから派生させることができます。 どのようになるかを示す例を以下に示します。
 
-``` csharp
+```csharp
 public class HostViewModel : BindableBase
 {
     private string nextButtonText;
@@ -158,11 +158,11 @@ public class HostViewModel : BindableBase
 以下の 2 つの例で、**Button.Content** プロパティはバインディング ターゲットであり、その値はバインディング オブジェクトを宣言するマークアップ拡張に設定されます。 最初に [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) を示し、次に [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) を示します。 マークアップでバインディングを宣言する方法は一般的です (便利で、読みやすく、ツールで処理できます)。 ただし、必要な場合は、マークアップを使わずに、命令を使って (プログラムで) [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR209820) クラスのインスタンスを作成できます。
 
 <!-- XAML lang specifier not yet supported in OP. Using XML for now. -->
-``` xml
+```xml
 <Button Content="{x:Bind ...}" ... />
 ```
 
-``` xml
+```xml
 <Button Content="{Binding ...}" ... />
 ```
 
@@ -170,7 +170,7 @@ public class HostViewModel : BindableBase
 
 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) マークアップを作成する前に必要な手順が 1 つあります。 マークアップのページを表すクラスからバインディング ソース クラスを公開する必要があります。 そのためには、**HostView** ページ クラスに (ここでは **HostViewModel** 型の) プロパティを追加します。
 
-``` csharp
+```csharp
 namespace QuizGame.View
 {
     public sealed partial class HostView : Page
@@ -188,7 +188,7 @@ namespace QuizGame.View
 
 これが完了したら、バインディング オブジェクトを宣言するマークアップを詳しく見ていくことができます。 次の例では、前の「バインディング ターゲット」セクションで使用したものと同じ **Button.Content** バインディング ターゲットを使って、**HostViewModel.NextButtonText** プロパティにバインドされたバインディング ターゲットを示します。
 
-``` xml
+```xml
 <Page x:Class="QuizGame.View.HostView" ... >
     <Button Content="{x:Bind Path=ViewModel.NextButtonText, Mode=OneWay}" ... />
 </Page>
@@ -206,7 +206,7 @@ namespace QuizGame.View
 [
             **DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348) 内で (項目テンプレート、コンテンツ テンプレート、ヘッダー テンプレートのいずれとして使用される場合でも)、**Path** の値はページのコンテキストではなく、テンプレート化されたデータ オブジェクトのコンテキストで解釈されています。 コンパイル時にバインディングを検証できるように (バインディング用に効率的なコードを生成できるように) するために、**DataTemplate** では、**x:DataType** を使って、データ オブジェクトの型を宣言する必要があるします。 次に示す例は、**SampleDataGroup** オブジェクトのコレクションにバインドされている、項目コントロールの **ItemTemplate** として使うことができます。
 
-``` xml
+```xml
 <DataTemplate x:Key="SimpleItemTemplate" x:DataType="data:SampleDataGroup">
     <StackPanel Orientation="Vertical" Height="50">
       <TextBlock Text="{x:Bind Title}"/>
@@ -231,7 +231,7 @@ namespace QuizGame.View
 
 [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) は、既定で、マークアップ ページの [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) にバインドしていることを前提としています。 したがって、ページの **DataContext** を、バインディング ソース クラス (ここでは **HostViewModel** 型) のインスタンスに設定します。 次の例は、バインディング オブジェクトを宣言するマークアップを示しています。 前の「バインディング ターゲット」セクションで使用したものと同じ **Button.Content** バインディング ターゲットを使っており、**HostViewModel.NextButtonText** プロパティにバインドします。
 
-``` xml
+```xml
 <Page xmlns:viewmodel="using:QuizGame.ViewModel" ... >
     <Page.DataContext>
         <viewmodel:HostViewModel/>
@@ -250,7 +250,7 @@ UI 要素の [**DataContext**](https://msdn.microsoft.com/library/windows/apps/B
 [
             **DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348) 内で、[**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) はテンプレート化されるデータ オブジェクトに設定されています。 次の例は、**Title** と **Description** という名前の文字列プロパティを持つ任意の型のコレクションにバインドされている、項目コントロールの **ItemTemplate** として使うことができます
 
-``` xml
+```xml
 <DataTemplate x:Key="SimpleItemTemplate">
     <StackPanel Orientation="Vertical" Height="50">
       <TextBlock Text="{Binding Title}"/>
@@ -273,7 +273,7 @@ UI 要素の [**DataContext**](https://msdn.microsoft.com/library/windows/apps/B
 [
             **DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx) 値を月を含む文字列値に変換する、1 回限りまたは一方向のバインディングに適した値コンバーターを以下に示します。 このクラスは、[**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/BR209903) を実装します。
 
-``` csharp
+```csharp
 public class DateToStringConverter : IValueConverter
 {
     // Define the Convert method to convert a DateTime value to 
@@ -310,7 +310,7 @@ public class DateToStringConverter : IValueConverter
 }
 ```
 
-``` vbnet
+```vbnet
 Public Class DateToStringConverter
     Implements IValueConverter
 
@@ -352,7 +352,7 @@ End Class
 
 次に、バインディング オブジェクトのマークアップでその値コンバーターを利用する方法を示します。
 
-``` xml
+```xml
 <UserControl.Resources>
   <local:DateToStringConverter x:Key="Converter1"/>
 </UserControl.Resources>
@@ -382,7 +382,7 @@ End Class
 
 TemplatesResourceDictionary.xaml
 
-``` xml
+```xml
 <ResourceDictionary
     x:Class="ExampleNamespace.TemplatesResourceDictionary"
     .....
@@ -398,7 +398,7 @@ TemplatesResourceDictionary.xaml
 
 TemplatesResourceDictionary.xaml.cs
 
-``` csharp
+```csharp
 using Windows.UI.Xaml.Data;
  
 namespace ExampleNamespace
@@ -415,7 +415,7 @@ namespace ExampleNamespace
 
 MainPage.xaml
 
-``` xml
+```xml
 <Page x:Class="ExampleNamespace.MainPage"
     ....
     xmlns:examplenamespace="using:ExampleNamespace">
@@ -435,7 +435,7 @@ MainPage.xaml
 
 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) はイベント バインディングと呼ばれる機能をサポートしています。 この機能によって、バインディングを使用するイベントのハンドラーを指定できます。これは、コード ビハインド ファイルのメソッドによるイベント処理に対する追加のオプションです。 たとえば、**MainPage** クラスに **RootFrame** プロパティがあるとします。
 
-``` csharp
+```csharp
     public sealed partial class MainPage : Page
     {
         ....    
@@ -445,7 +445,7 @@ MainPage.xaml
 
 次のように、**RootFrame** プロパティによって返される **Frame** オブジェクトのメソッドに、ボタンの **Click** イベントをバインドできます。 また、ボタンの **IsEnabled** プロパティを、同じ **Frame** の別のメンバーにもバインドします。
 
-``` xml
+```xml
     <AppBarButton Icon="Forward" IsCompact="True"
     IsEnabled="{x:Bind RootFrame.CanGoForward, Mode=OneWay}"
     Click="{x:Bind RootFrame.GoForward}"/>
@@ -455,14 +455,15 @@ MainPage.xaml
               **Frame.GoBack**
             ](https://msdn.microsoft.com/library/windows/apps/Dn996568) はオーバーロードされているため、この手法でそのメソッドを使うことはできません。
 
-イベント バインディングの手法は、コマンドの実装と使用に似ています (コマンドは [**ICommand**](T:System.Windows.Input.ICommand) インターフェイスを実装するオブジェクトを返すプロパティです)。 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) と [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) はいずれもコマンドで動作します。 コマンド パターンを何度も実装する必要はありません。[QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame) サンプル (Common フォルダー) に含まれている **DelegateCommand** ヘルパー クラスを使うことができます。
+イベント バインディングの手法は、コマンドの実装と使用に似ています (コマンドは [**ICommand**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.input.icommand.aspx) インターフェイスを実装するオブジェクトを返すプロパティです)。 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) と [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) はいずれもコマンドで動作します。 コマンド パターンを何度も実装する必要はありません。[QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame) サンプル (Common フォルダー) に含まれている **DelegateCommand** ヘルパー クラスを使うことができます。
+
 
 ## フォルダーやファイルのコレクションへのバインド
 
 [
             **Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346) 名前空間の API を使って、フォルダーとファイルのデータを取得できます。 ただし、**GetFilesAsync** メソッド、**GetFoldersAsync** メソッド、**GetItemsAsync** メソッドは、リスト コントロールへのバインドに適した値を返さないことがあります。 代わりに、[**FileInformationFactory**](https://msdn.microsoft.com/library/windows/apps/BR207501) クラスの [**GetVirtualizedFilesVector**](https://msdn.microsoft.com/library/windows/apps/Hh701422) メソッド、[**GetVirtualizedFoldersVector**](https://msdn.microsoft.com/library/windows/apps/Hh701428) メソッド、[**GetVirtualizedItemsVector**](https://msdn.microsoft.com/library/windows/apps/Hh701430) メソッドの戻り値にバインドする必要があります。 [StorageDataSource と GetVirtualizedFilesVector のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=228621)から抜粋した次のコード例は、一般的な使用パターンを示しています。 アプリ パッケージ マニフェストで **picturesLibrary** 機能を宣言し、ピクチャ ライブラリ フォルダーにピクチャがあることを確認します。
 
-``` csharp
+```csharp
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             var library = Windows.Storage.KnownFolders.PicturesLibrary;
@@ -505,7 +506,7 @@ MainPage.xaml
 次の例は、"グループを保持する" パターンを示しています。 ページ クラスには [**ViewModel**](https://msdn.microsoft.com/library/windows/apps/BR208713) という名前のプロパティがあります。このプロパティはビュー モデルのインスタンスを返します。 [
             **CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) はビュー モデルの **Authors** プロパティにバインドされ (**Authors** はグループ オブジェクトのコレクション)、それがグループ化された項目を格納する **Author.BookSkus** プロパティであることも指定します。 最後に、[**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) は **CollectionViewSource** にバインドされ、グループ内の項目をレンダリングできるようにグループのスタイルが定義されています。
 
-``` csharp
+```csharp
     <Page.Resources>
         <CollectionViewSource
         x:Name="AuthorHasACollectionOfBookSku"
@@ -531,7 +532,7 @@ MainPage.xaml
 
 次の例は、[LINQ](http://msdn.microsoft.com/library/bb397926.aspx) を使用した "グループである" パターンを示しています。 今回は、書籍をジャンルでグループ化し、グループ ヘッダーにジャンル名と共に表示します。 これは、グループの [**Key**](https://msdn.microsoft.com/library/windows/apps/bb343251.aspx) の値に関連する "Key" プロパティ パスによって示されます。
 
-``` csharp
+```csharp
     using System.Linq;
 
     ...
@@ -555,7 +556,7 @@ MainPage.xaml
 
 [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) をデータ テンプレートと共に使う場合、**x:DataType** 値を設定することによって、バインド先の型を指定する必要があることに注意してください。 型がジェネリックである場合、マークアップでは表現できないため、グループ スタイル ヘッダー テンプレート内で代わりに [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) を使う必要があります。
 
-``` xml
+```xml
     <Grid.Resources>
         <CollectionViewSource x:Name="GenreIsACollectionOfBookSku"
         Source="{Binding Genres}"
@@ -602,7 +603,7 @@ XAML の代わりに手続き型コードを使っても UI 要素をデータ�
 
 次の例では、バインドをコードで実装する方法を示しています。
 
-``` xml
+```xml
 <TextBox x:Name="MyTextBox" Text="Text"/>
 ```
 
@@ -622,7 +623,7 @@ Binding binding = new Binding() { Path = new PropertyPath("Brush1") };
 MyTextBox.SetBinding(TextBox.ForegroundProperty, binding);
 ```
 
-``` vbnet
+```vbnet
 ' Create an instance of the MyColors class 
 ' that implements INotifyPropertyChanged. 
 Dim textcolor As New MyColors()
@@ -662,6 +663,6 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

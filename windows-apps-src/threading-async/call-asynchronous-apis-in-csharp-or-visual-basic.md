@@ -27,7 +27,8 @@ ms.openlocfilehash: ba633e4d6f6f97f3ea1c78258f36b11b67b32964
 
 この例では、非同期メソッド [**SyndicationClient.RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460) を呼び出して、その結果を待機し、ブログから記事の一覧を取得します。
 
-> [!div class="tabbedCodeSnippets" data-resources="OutlookServices.Calendar"] [!code-csharp[Main](./AsyncSnippets/csharp/MainPage.xaml.cs#SnippetDownloadRSS)]
+> [!div class="tabbedCodeSnippets" data-resources="OutlookServices.Calendar"]
+[!div class="tabbedCodeSnippets" data-resources="OutlookServices.Calendar"] [!code-csharp[Main](./AsyncSnippets/csharp/MainPage.xaml.cs#SnippetDownloadRSS)]
           [!code-vb[Main](./AsyncSnippets/vbnet/MainPage.xaml.vb#SnippetDownloadRSS)]
 
 この例には、いくつかの重要なポイントがあります。 まず、`SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)` の行では、非同期メソッド [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR243460) を呼び出す際に、**await** 演算子が使われています。 **await** 演算子は、非同期メソッドを呼び出していることをコンパイラに伝えていると考えることができます。これにより、コンパイラが追加作業を行うようになります。 もう 1 つは、イベント ハンドラーの宣言に **async** というキーワードが含まれている点です。 **await** 演算子を使うメソッドのメソッド宣言には、このキーワードを含める必要があります。
@@ -114,6 +115,6 @@ Windows 7 themes: the distinctive artwork of Cheng Ling, 7/20/2011 9:53:07 AM -0
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

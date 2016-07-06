@@ -5,19 +5,20 @@ title: "カレンダーの日付の選択コントロール"
 ms.assetid: 9e0213e0-046a-4906-ba86-0b49be51ca99
 label: Calendar date picker
 template: detail.hbs
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: 75f6bb925db63838e4985df15b50977b93805ffe
+ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
+ms.openlocfilehash: 7ae444d9e096834daa2eef71c691b9bb8b86d7c4
 
 ---
 
 # カレンダーの日付の選択コントロール
 
-カレンダーの日付の選択コントロールは、カレンダーの曜日や埋まり具合などのコンテキスト情報が必要となるカレンダー ビューから単一の日付を選ぶ用途に最適なドロップダウン コントロールです。 追加のコンテキストを提供する場合、または利用可能日を制限する場合は、カレンダーを変更できます。
+カレンダーの日付の選択コントロールは、カレンダーの曜日や埋まり具合などのコンテキスト情報が必要となるカレンダー ビューから単一の日付を選ぶ用途に最適なドロップダウン コントロールです。 追加のコンテキストを提供したり、使用可能な日付を制限したりするように、カレンダーを変更することもできます。
 
-<span class="sidebar_heading" style="font-weight: bold;">重要な API</span>
 
--   [**TimePicker クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx)
--   [**Time プロパティ**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.time.aspx)
+
+-   [**CalendarDatePicker クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.aspx)
+-   [**Date プロパティ**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.date.aspx)
+-   [**DateChanged イベント**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.datechanged.aspx)
 
 ## 適切なコントロールの選択
 **カレンダーの日付の選択コントロール**を使うと、ユーザーはコンテキストに沿ったカレンダー ビューから 1 つの日付を選ぶことができます。 予定日や出発日の選択などに使います。
@@ -78,7 +79,8 @@ Date 値が変化したときに通知を受け取るには、[**DateChanged**](
 既定のプレースホルダー テキストは、"日付を選択" です。 PlaceholderText プロパティに空の文字列を設定してこのテキストを削除するか、次のようにカスタム テキストを指定することもできます。
 
 ```xaml
-<CalendarDatePicker x:Name="arrivalCalendarDatePicker" Header="Arrival date" PlaceholderText="Choose your arrival date"/>
+<CalendarDatePicker x:Name="arrivalCalendarDatePicker" Header="Arrival date" 
+                    PlaceholderText="Choose your arrival date"/>
 ```
 
 
@@ -91,6 +93,6 @@ Date 値が変化したときに通知を受け取るには、[**DateChanged**](
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

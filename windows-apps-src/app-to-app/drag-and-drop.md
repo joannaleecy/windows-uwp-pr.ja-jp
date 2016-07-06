@@ -62,6 +62,6 @@ UI をカスタマイズする場合 (この記事の後半で説明します) �
 * [Drop](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.drop.aspx)
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

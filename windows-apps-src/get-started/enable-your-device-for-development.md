@@ -1,6 +1,13 @@
 ---
-author: martinekuan ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD title: デバイスを開発用に有効にする description: Windows 10 デバイス用の開発には、さまざまな方法があります。
-keywords: 準備を始める keywords: 開発者用ライセンス keywords: Visual Studio、開発者用ライセンス keywords: デバイスを利用可能にする
+author: martinekuan
+ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
+title: "デバイスを開発用に有効にする"
+description: "Windows 10 デバイス用の開発には、さまざまな方法があります。"
+keywords: enable device
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 4c890d6202a3151e8fc0cf03b3ff33b98cd6a863
+
 ---
 # デバイスを開発用に有効にする
 
@@ -172,6 +179,7 @@ Windows 8.1 デバイスでアプリを作成またはサイドローディン�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

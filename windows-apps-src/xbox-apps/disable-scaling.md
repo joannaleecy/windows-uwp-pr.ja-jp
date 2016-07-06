@@ -36,6 +36,6 @@ DirectX/C++ アプリケーションはスケーリングされません。 自�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

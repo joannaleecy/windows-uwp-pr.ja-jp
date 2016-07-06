@@ -1,8 +1,12 @@
 ---
 author: TylerMSFT
 ms.assetid: 4C59D5AC-58F7-4863-A884-E9E54228A5AD
-title: ファイルとフォルダーの列挙と照会
-description: フォルダー、ライブラリ、デバイス、またはネットワークの場所にあるファイルやフォルダーにアクセスします。 ファイルやフォルダーのクエリを作成することで、任意の場所にあるファイルやフォルダーを照会することもできます。
+title: "ファイルとフォルダーの列挙と照会"
+description: "フォルダー、ライブラリ、デバイス、またはネットワークの場所にあるファイルやフォルダーにアクセスします。 ファイルやフォルダーのクエリを作成することで、任意の場所にあるファイルやフォルダーを照会することもできます。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 6ecad1bbd3c08dcd7aa1d3b82739931f20fc4ee2
+
 ---
 # ファイルとフォルダーの列挙と照会
 
@@ -132,7 +136,7 @@ description: フォルダー、ライブラリ、デバイス、またはネッ�
 > ```
 
 
-> **注:** C# または Visual Basic では、**await** 演算子を使うすべてのメソッドのメソッド宣言で、必ず **async** キーワードを使ってください。
+> **注:**  C# または Visual Basic では、**await** 演算子を使うすべてのメソッドのメソッド宣言で、必ず **async** キーワードを使ってください。
  
 
 または、[**GetItemsAsync**](https://msdn.microsoft.com/library/windows/apps/br227286) メソッドを使って、特定の場所にあるすべての項目 (ファイルとサブフォルダーの両方) を取得することもできます。 次の例では、**GetItemsAsync** メソッドを使って [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) 内のルート フォルダー (サブフォルダーは除く) にあるすべてのファイルとサブフォルダーを取得します。 その後、各ファイルとサブフォルダーの名前を一覧表示します。 項目がサブフォルダーの場合は、名前に `"folder"` を追加します。
@@ -204,7 +208,7 @@ description: フォルダー、ライブラリ、デバイス、またはネッ�
 > Next item
 > ```
 
-## ある場所のファイルのクエリを実行して一致するファイルを列挙する
+## ある場所に保存されているファイルを照会して、一致するファイルを列挙する
 
 この例では [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) にある月ごとにグループ化されたすべてのファイルを照会し、今回はサブフォルダーに再帰的に呼び出します。 まず、[**StorageFolder.CreateFolderQuery**](https://msdn.microsoft.com/library/windows/apps/br227262) を呼び出し、[**CommonFolderQuery.GroupByMonth**](https://msdn.microsoft.com/library/windows/apps/br207957) の値をメソッドに渡します。 これで、[**StorageFolderQueryResult**](https://msdn.microsoft.com/library/windows/apps/br208066) オブジェクトが取得されます。
 
@@ -320,6 +324,7 @@ July ‎2015 (2)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,8 +1,12 @@
 ---
 author: DelfCo
-description: ネットワーク対応アプリで実行する必要がある事柄について説明します。
-title: ネットワークの基本
+description: "ネットワーク対応アプリで実行する必要がある事柄について説明します。"
+title: "ネットワークの基本"
 ms.assetid: 1F47D33B-6F00-4F74-A52D-538851FD38BE
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 96c6617595b49c48ee77bec87b6aa87ae1634ed9
+
 ---
 
 # ネットワークの基本
@@ -48,9 +52,9 @@ ms.assetid: 1F47D33B-6F00-4F74-A52D-538851FD38BE
 
 -   [
             **IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151)、[**System.Net.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639)、または [System.Net.Http.HttpClientHandler](http://go.microsoft.com/fwlink/p/?linkid=241638) を使う場合は、[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) を使う必要があります。
--   プッシュ対応 **StreamSockets** を使っている場合は、コントロール チャネル トリガーも使うことができますが、[**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) を使うことをお勧めします。 後者を選ぶと、接続がアクティブに使われていない場合は、システムによってメモリが解放され、電力要件が低減されます。
+-   プッシュ対応 **StreamSockets** を使っている場合、コントロール チャネル トリガーを使うことができますが、[**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) をお勧めします。 後者を選ぶと、接続がアクティブに使われていない場合は、システムによってメモリが解放され、電力要件が低減されます。
 -   アプリがネットワーク要求をアクティブに処理していないときのメモリ使用量をできる限り少なくする場合は、可能な限り [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) をお勧めします。
--   システムがコネクト スタンバイ モードにあるときにアプリがデータを受信できるようにするには、[**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) を使います。
+-   システムがコネクト スタンバイ モードにあるときにアプリがデータを受信できるようにする場合は、[**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) を使います。
 
 ソケット ブローカーの使い方の説明と例については、「[バックグラウンドでのネットワーク通信](network-communications-in-the-background.md)」をご覧ください。
 
@@ -89,7 +93,7 @@ SocketProtectionLevel 値には、許可する最低限の保護レベルを設�
             ](https://msdn.microsoft.com/library/windows/apps/hh701511) - [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) オブジェクトで、[**EndpointPair**](https://msdn.microsoft.com/library/windows/apps/hh700953) オブジェクトと [**SocketProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/br226880) で指定したリモート ネットワークの宛先に接続する非同期操作を開始します。
 -   [
               **ConnectAsync(HostName, String, SocketProtectionLevel)**
-            ](https://msdn.microsoft.com/library/windows/apps/br226916) - [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) オブジェクトで、リモート ホスト名、リモート サービス名、[**SocketProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/br226880) で指定したリモートの宛先に接続する非同期操作を開始します。
+            ](https://msdn.microsoft.com/library/windows/apps/br226916) -  [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) オブジェクトで、リモート ホスト名、リモート サービス名、および [**SocketProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/br226880) で指定したリモートの宛先に接続する非同期操作を開始します。
 
 先ほどのいずれかの [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) メソッドを呼び出すときに *protectionLevel* パラメーターが **Windows.Networking.Sockets.SocketProtectionLevel.Ssl** に設定されていると、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) による通信の暗号化に SSL/TLS を使う必要があります。 この値を指定すると暗号化が必要になり、NULL 暗号を使うことはできません。
 
@@ -441,6 +445,7 @@ Networking API は、例外の原因についての詳しい情報を取得す�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

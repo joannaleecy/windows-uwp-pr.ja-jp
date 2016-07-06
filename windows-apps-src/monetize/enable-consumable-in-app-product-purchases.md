@@ -1,6 +1,13 @@
 ---
-author: mcleanbyron Description: ストアの商取引プラットフォームを使ってコンシューマブルなアプリ内製品 (購入、使用、再購入が可能なアイテム) をサポートすると、堅牢かつ信頼性の高いアプリ内購入エクスペリエンスを顧客に提供できます。
-title: コンシューマブルなアプリ内製品購入の有効化 ms.assetid: F79EE369-ACFC-4156-AF6A-72D1C7D3BDA4 keywords: アプリ内販売 keywords: コンシューマブル keywords: アプリ内購入 keywords: アプリ内製品 keywords: アプリ内購入/販売をサポートする方法 keywords: アプリ内購入コード サンプル keywords: アプリ内販売コード サンプル
+author: mcleanbyron
+Description: "ストアの商取引プラットフォームを使ってコンシューマブルなアプリ内製品 (購入、使用、再購入が可能なアイテム) をサポートすると、堅牢かつ信頼性の高いアプリ内購入エクスペリエンスを顧客に提供できます。"
+title: "コンシューマブルなアプリ内製品購入の有効化"
+ms.assetid: F79EE369-ACFC-4156-AF6A-72D1C7D3BDA4
+keywords: in-app offer code sample
+translationtype: Human Translation
+ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
+ms.openlocfilehash: 25f09e043d61f1705f9f0a4fa34114fd06166fa4
+
 ---
 
 # コンシューマブルなアプリ内製品購入の有効化
@@ -119,6 +126,7 @@ private async void GetUnfulfilledConsumables()
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

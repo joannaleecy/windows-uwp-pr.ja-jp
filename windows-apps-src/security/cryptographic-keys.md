@@ -80,6 +80,6 @@ CBC などの一部のモードでは、最初の暗号テキスト ブロック
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

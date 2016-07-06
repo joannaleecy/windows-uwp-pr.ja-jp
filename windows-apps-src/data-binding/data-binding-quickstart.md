@@ -3,8 +3,8 @@ author: mcleblanc
 ms.assetid: A9D54DEC-CD1B-4043-ADE4-32CD4977D1BF
 title: "データ バインディングの概要"
 description: "このトピックでは、ユニバーサル Windows プラットフォーム (UWP) アプリで、コントロール (または他の UI 要素) を単一の項目にバインドする方法や、項目コントロールを項目のコレクションにバインドする方法を説明します。"
-ms.sourcegitcommit: d76ef6a87d6afad577f5f7bf5e8f18a8b0776094
-ms.openlocfilehash: c30e048f450c062c6e0148e5040a58bfa47193bb
+ms.sourcegitcommit: c5325f0d0a067847bea81a115db4770a39ddd12a
+ms.openlocfilehash: 4753c2fc52fa0227b3867685b793a3d6cfc05630
 
 ---
 データ バインディングの概要
@@ -32,7 +32,7 @@ ms.openlocfilehash: c30e048f450c062c6e0148e5040a58bfa47193bb
 
 プロジェクトに新しいクラスを追加して Recording.cs (C# を使用している場合) という名前を付け、次のコードを追加します。
 
-``` csharp
+```csharp
 namespace Quickstart
 {
     public class Recording
@@ -66,7 +66,7 @@ namespace Quickstart
 }
 ```
 
-``` cpp
+```cpp
 #include <sstream>
 
 namespace Quickstart
@@ -140,7 +140,7 @@ namespace Quickstart
 
 次に、マークアップのページを表すクラスからバインディング ソース クラスを公開します。 これを行うには、**RecordingViewModel** 型のプロパティを **MainPage** に追加します。
 
-``` csharp
+```csharp
 namespace Quickstart
 {
     public sealed partial class MainPage : Page
@@ -156,7 +156,7 @@ namespace Quickstart
 }
 ```
 
-``` cpp
+```cpp
 namespace Quickstart
 {
     public ref class MainPage sealed
@@ -181,7 +181,7 @@ namespace Quickstart
 
 最後の部分では、**TextBlock** を **ViewModel.DefaultRecording.OneLiner** プロパティにバインドします。
 
-``` xml
+```xml
 <Page x:Class="Quickstart.MainPage" ... >
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <TextBlock Text="{x:Bind ViewModel.DefaultRecording.OneLineSummary}"
@@ -202,7 +202,7 @@ namespace Quickstart
 
 次の例では、[**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) を `Recording` オブジェクトのコレクションにバインドしています。 最初に、ビュー モデルにコレクションを追加します。 これらの新しいメンバーを **RecordingViewModel** クラスに追加します。
 
-``` csharp
+```csharp
     public class RecordingViewModel
     {
         ...
@@ -222,7 +222,7 @@ namespace Quickstart
     }
 ```
 
-``` cpp
+```cpp
     public ref class RecordingViewModel sealed
     {
     private:
@@ -270,11 +270,11 @@ namespace Quickstart
             };
         }
     };
-    ```
+```
 
-And then bind a [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) to the **ViewModel.Recordings** property.
+次に、[**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) を **ViewModel.Recordings** プロパティにバインドします。
 
-``` xml
+```xml
 <Page x:Class="Quickstart.MainPage" ... >
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <ListView ItemsSource="{x:Bind ViewModel.Recordings}"
@@ -289,7 +289,7 @@ And then bind a [**ListView**](https://msdn.microsoft.com/library/windows/apps/B
 
 これを修正するには、**OneLineSummary** の値を返すように [**ToString**](https://msdn.microsoft.com/library/windows/apps/system.object.tostring.aspx) をオーバーライドするか、データ テンプレートを用意します。 データ テンプレートを使う方法は、より一般的であり、間違いなくより柔軟です。 データ テンプレートを指定するには、コンテンツ コントロールの [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209369) プロパティか、項目コントロールの [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242830) プロパティを使います。 **Recording** のデータ テンプレートをデザインするための 2 つの方法と結果の図を以下に示します。
 
-``` xml
+```xml
     <ListView ItemsSource="{x:Bind ViewModel.Recordings}"
         HorizontalAlignment="Center" VerticalAlignment="Center">
         <ListView.ItemTemplate>
@@ -298,11 +298,11 @@ And then bind a [**ListView**](https://msdn.microsoft.com/library/windows/apps/B
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
-    ```
+```
 
-![Binding a list view](images/xaml-databinding2.png)
+![一覧ビューのバインド](images/xaml-databinding2.png)
 
-``` xml
+```xml
     <ListView ItemsSource="{x:Bind ViewModel.Recordings}"
     HorizontalAlignment="Center" VerticalAlignment="Center">
         <ListView.ItemTemplate>
@@ -335,7 +335,7 @@ XAML 構文について詳しくは、「[XAML を使った UI の作成](https:
 
 まず、[**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) の手法を示します。 Visual C++ コンポーネント拡張機能 (C++/CX) を使用している場合、ここでは [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) を使用するため、[**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) 属性を **Recording** クラスに追加する必要があります。
 
-``` cpp
+```cpp
     [Windows::UI::Xaml::Data::Bindable]
     public ref class Recording sealed
     {
@@ -345,7 +345,7 @@ XAML 構文について詳しくは、「[XAML を使った UI の作成](https:
 
 必要なもう 1 つの変更はマークアップに対する変更のみです。
 
-``` xml
+```xml
 <Page x:Class="Quickstart.MainPage" ... >
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -375,7 +375,7 @@ XAML 構文について詳しくは、「[XAML を使った UI の作成](https:
 [
             **CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) の手法では、最初にページ リソースとして **CollectionViewSource** を追加します。
 
-``` xml
+```xml
     <Page.Resources>
         <CollectionViewSource x:Name="RecordingsCollection" Source="{x:Bind ViewModel.Recordings}"/>
     </Page.Resources>
@@ -383,7 +383,7 @@ XAML 構文について詳しくは、「[XAML を使った UI の作成](https:
 
 次に、[**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) (名前を付ける必要はない) と詳細ビューで、[**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) を使うようにバインディングを調整します。 詳細ビューを **CollectionViewSource** に直接バインドすることによって、コレクション自体ではパスが見つからない、バインディング内の現在の項目にバインドすることを意味します。 バインディングのパスとして **CurrentItem** プロパティを指定する必要はありませんが、あいまいさがある場合は指定することもできます。
 
-``` xml
+```xml
     ...
 
     <ListView ItemsSource="{Binding Source={StaticResource RecordingsCollection}}">
@@ -405,7 +405,7 @@ XAML 構文について詳しくは、「[XAML を使った UI の作成](https:
 
 より柔軟な解決策は、値コンバーターと呼ばれるものを使うことです。 独自の値コンバーターを作成する方法の例を示します。 次のコードを Recording.cs ソース コード ファイルに追加します。
 
-``` csharp
+```csharp
 public class StringFormatter : Windows.UI.Xaml.Data.IValueConverter
 {
     // This converts the value object to the string to display.
@@ -436,7 +436,7 @@ public class StringFormatter : Windows.UI.Xaml.Data.IValueConverter
 
 これで、**StringFormatter** のインスタンスをページ リソースとして追加し、バインドで使うことができます。 最終的な書式設定の柔軟性のために、マークアップからコンバーターに書式設定文字列を渡します。
 
-``` xml
+```xml
     <Page.Resources>
         <local:StringFormatter x:Key="StringFormatterValueConverter"/>
     </Page.Resources>
@@ -457,6 +457,6 @@ public class StringFormatter : Windows.UI.Xaml.Data.IValueConverter
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

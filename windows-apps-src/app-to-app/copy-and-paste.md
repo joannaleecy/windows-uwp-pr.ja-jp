@@ -3,8 +3,8 @@ description: "この記事では、ユニバーサル Windows プラットフォ
 title: "コピーと貼り付け"
 ms.assetid: E882DC15-E12D-4420-B49D-F495BB484BEE
 author: awkoren
-ms.sourcegitcommit: bf081c07f8235790b99b3c1037751f24a86bbc1f
-ms.openlocfilehash: ed1dc1ca0f34f0efafd14aa1cfd1e4b75351882c
+ms.sourcegitcommit: 9a8fd6d34c4b89dae1ec4be2db69498b5d458b5a
+ms.openlocfilehash: 3e3ba8811f4fac283164143aad88913aaabbee49
 
 ---
 #コピーと貼り付け
@@ -55,7 +55,7 @@ Clipboard.SetContent(dataPackage);
 ```
 ## 貼り付け
 
-クリップボードの内容を取得するには、静的な [**GetContent**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.Clipboard.GetContent) メソッドを呼び出します。 このメソッドは、コンテンツを含む [**DataPackageView**][DataPackageView] を返します。 このオブジェクトは、コンテンツが読み取り専用であることを除いて [**DataPackage**][DataPackage] オブジェクトとほぼ同じです。 このオブジェクトがあれば、[**AvailableFormats**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackageView.AvailableFormats) または [**Contains**][Contains] メソッドを使って使用可能な形式を特定できます。 その後、対応する **DataPackageView** メソッドを呼び出してデータを取得できます。
+クリップボードの内容を取得するには、静的な [**GetContent**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.Clipboard.GetContent) メソッドを呼び出します。 このメソッドは、コンテンツを含む [**DataPackageView**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackageView) を返します。 このオブジェクトは、コンテンツが読み取り専用であることを除いて [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage) オブジェクトとほぼ同じです。 このオブジェクトがあれば、[**AvailableFormats**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackageView.AvailableFormats) または [**Contains**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackageView.Contains(System.String)) のメソッドを使って使用可能な形式を特定できます。 その後、対応する [**DataPackageView**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackageView) メソッドを呼び出してデータを取得できます。
 
 ```cs
 DataPackageView dataPackageView = Clipboard.GetContent();
@@ -105,6 +105,6 @@ Clipboard.ContentChanged += (s, e) =>
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -6,16 +6,16 @@ ms.assetid: 1F608477-F795-4F33-92FA-F200CC243B6B
 dev.assetid: 54F8DB8A-120A-4D79-8B5A-9315A3764C2F
 label: Auto-suggest box
 template: detail.hbs
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: 2900aa542a7986cac408051159f013e10dd3a5aa
+ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
+ms.openlocfilehash: bc3337101f0f2e8449d052743f7b3ce8d2dac516
 
 ---
 # 自動提案ボックス
-AutoSuggestBox を使って、ユーザーが入力と同時に選べる候補リストを表示します。
+入力に応じてユーザーが選択できる候補の一覧を表示するには、AutoSuggestBox を使います。
 
 ![自動提案ボックス](images/controls/auto-suggest-box-open.png)
 
-<span class="sidebar_heading" style="font-weight: bold;">重要な API</span>
+
 
 -   [**AutoSuggestBox クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)
 -   [**TextChanged イベント**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.textchanged.aspx)
@@ -76,9 +76,9 @@ AutoSuggestBox を使うには、3 つのユーザー操作に応答する必要
 - テキスト ボックスにフォーカスがあるときに、Enter キーを押すか、クエリ アイコンをクリックします。 イベント引数の [ChosenSuggestion](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.chosensuggestion.aspx) プロパティは **null** です。
 - 候補リストにフォーカスがあるときに、Enter キーを押すか、項目をクリックまたはタップします。 イベント引数の ChosenSuggestion プロパティには、一覧から選択された項目が含まれています。
 
-いずれの場合も、イベント引数の [QueryText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.querytext.aspx) プロパティにはテキスト ボックスのテキストが含まれています。 
+いずれの場合も、イベント引数の [QueryText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.querytext.aspx) プロパティにはテキスト ボックスのテキストが含まれています。
 
-### 検索に AutoSuggestBox を使う
+## 検索に AutoSuggestBox を使う
 
 AutoSuggestBox を使って、ユーザーが入力と同時に選べる候補リストを表示します。
 
@@ -108,8 +108,8 @@ AutoSuggestBox の動作の詳細な例については、[AutoSuggestBox の移�
 ```csharp
 private void AutoSuggestBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
 {
-    // Only get results when it was a user typing, 
-    // otherwise assume the value got filled in by TextMemberPath 
+    // Only get results when it was a user typing,
+    // otherwise assume the value got filled in by TextMemberPath
     // or the handler for SuggestionChosen.
     if (args.Reason == AutoSuggestionBoxTextChangeReason.UserInput)
     {
@@ -140,10 +140,22 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 
 ## 推奨と非推奨
 
--   自動提案ボックスを使って検索を実行したときに、入力したテキストに対応する検索結果が存在しなかった場合は、"検索結果が見つかりませんでした" という 1 行を表示します。これにより、ユーザーは検索要求が実行されたことがわかります。
+-   自動提案ボックスを使って検索を実行したときに、入力したテキストに対応する検索結果が存在しなかった場合は、"検索結果が見つかりませんでした" という 1 行を表示します。これにより、検索要求が実行されたことがユーザーに伝わります。
 
     ![検索結果のない自動提案ボックスの例](images/controls_autosuggest_noresults.png)
 
+{{> aside-internal content = "
+## グローバリゼーションとローカライズのチェックリスト
+
+<table>
+<tr>
+<th>垂直方向の間隔</th><td>非ラテン文字を使って垂直方法の間隔を調整し、非ラテン文字が数字を含めて適切に表示されるようにします。</td>
+</tr>
+<tr>
+<th>スクロール</th><td>自動提案テキストが選択されたときに、文字列の末尾までスクロールできるようにする必要があります。</td>
+</tr>
+</table>
+"}}
 
 ## 関連記事
 
@@ -156,6 +168,6 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

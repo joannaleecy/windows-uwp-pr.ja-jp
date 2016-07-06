@@ -46,6 +46,6 @@ IAP の申請の **[説明]** セクションで、**[Manage description languag
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

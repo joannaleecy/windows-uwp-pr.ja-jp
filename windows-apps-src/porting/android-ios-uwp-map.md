@@ -1,8 +1,11 @@
 ---
 author: GrantMeStrength
-Description: iOS、Android、Windows 10 のプラットフォーム機能を比較します。
+Description: "iOS、Android、Windows 10 のプラットフォーム機能を比較します。"
 Search.Product: eADQiWindows 10XVcnh
-title: Android や iOS 開発者向けの Windows アプリの概念マッピング
+title: "Android や iOS 開発者向けの Windows アプリの概念マッピング"
+ms.sourcegitcommit: de5420b45832a482d08e5e7ede436407f7dbf2af
+ms.openlocfilehash: 074a71bf3d037004ca376c11b58d17c906f804a5
+
 ---
 
 #Android や iOS 開発者向けの Windows アプリの概念マッピング
@@ -137,11 +140,11 @@ title: Android や iOS 開発者向けの Windows アプリの概念マッピン
 <td align="left"><strong>スプラッシュ画面。</strong> <br><br>アプリ起動時にイメージを表示します。主にブランディング目的です。</td>
 <td align="left">スプラッシュ画面は既定では指定されていません。最初のアクティビティの<strong>テーマの背景</strong>を編集すると実装されます。</td>
 <td align="left"><strong>静的起動イメージ</strong>または<strong>XIB/ストーリーボードの起動ファイル</strong>がアプリに必要です。</td>
-<td align="left"><strong>イメージ</strong>とカラーの背景を使ってスプラッシュ画面を作成できます。 <a href="https://msdn.microsoft.com/library/windows/apps/mt187309.aspx">スプラッシュ画面の時間を延ばすことができます</a>。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187306.aspx">スプラッシュ画面の追加</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/hh465338.aspx">スプラッシュ画面のガイドライン</a></td>
+<td align="left"><strong>イメージ</strong>とカラーの背景を使ってスプラッシュ画面を作成します。 <a href="https://msdn.microsoft.com/library/windows/apps/mt187309.aspx">スプラッシュ画面の時間を延ばすことができます</a>。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt187306.aspx">スプラッシュ画面の追加</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="custom-inputs">カスタムの入力</h2>
+<h2 id="custom-inputs">カスタム入力</h2>
 <table style="width:100%">
 <colgroup>
 <col width="20%" />
@@ -661,6 +664,7 @@ title: Android や iOS 開発者向けの Windows アプリの概念マッピン
 </table>
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

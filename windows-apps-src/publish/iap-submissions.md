@@ -71,6 +71,6 @@ IAP の申請を作成するときに提供する情報の一覧を次に示し�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

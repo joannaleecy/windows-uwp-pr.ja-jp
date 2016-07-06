@@ -1,6 +1,12 @@
 ---
-author: mcleanbyron Description: アプリが無料であるかどうかにかかわらず、コンテンツ、その他のアプリ、アプリの新機能 (ゲームの次のレベルのロック解除など) をアプリ内から直接販売できます。 ここでは、アプリ内で製品を販売できるようにする方法について説明します。
-title: アプリ内製品購入の有効化 ms.assetid: D158E9EB-1907-4173-9889-66507957BD6B keywords: アプリ内販売 keywords: アプリ内購入 keywords: アプリ内製品 keywords: アプリ内購入/販売をサポートする方法 keywords: アプリ内購入コード サンプル keywords: アプリ内販売コード サンプル
+author: mcleanbyron
+Description: "アプリが無料であるかどうかにかかわらず、コンテンツ、その他のアプリ、アプリの新機能 (ゲームの次のレベルのロック解除など) をアプリ内から直接販売できます。 ここでは、アプリ内で製品を販売できるようにする方法について説明します。"
+title: "アプリ内製品購入の有効化"
+ms.assetid: D158E9EB-1907-4173-9889-66507957BD6B
+keywords: in-app offer code sample
+ms.sourcegitcommit: bb28828463b14130deede9f7cf796c6e32fcb48b
+ms.openlocfilehash: 2e9a011a248e4c7e1d3f06064a7f82e308f07131
+
 ---
 
 # アプリ内製品購入の有効化
@@ -9,7 +15,7 @@ title: アプリ内製品購入の有効化 ms.assetid: D158E9EB-1907-4173-9889-
 
 アプリが無料であるかどうかにかかわらず、コンテンツ、その他のアプリ、アプリの新機能 (ゲームの次のレベルのロック解除など) をアプリ内から直接販売できます。 ここでは、アプリ内で製品を販売できるようにする方法について説明します。
 
-**注:** アプリ内製品は、アプリの試用版では提供できません。 アプリの試用版を使用中のユーザーがアプリ内製品を購入できるのは、通常版のアプリを購入する場合のみです。
+> **注:** アプリ内製品は、アプリの試用版では提供できません。 アプリの試用版を使用中のユーザーがアプリ内製品を購入できるのは、通常版のアプリを購入する場合のみです。
 
 ## 前提条件
 
@@ -41,14 +47,16 @@ void AppInit()
 
 アプリ内製品によって提供する機能ごとに、販売を作り、アプリに追加します。
 
-**重要**  ストアにアプリを提出する前に、ユーザーに提供するすべてのアプリ内製品をアプリに追加する必要があります。 新しいアプリ内製品を後から追加する場合は、アプリを更新し、新しいバージョンを再提出する必要があります。
+> **重要**  ストアにアプリを提出する前に、ユーザーに提供するすべてのアプリ内製品をアプリに追加する必要があります。 新しいアプリ内製品を後から追加する場合は、アプリを更新し、新しいバージョンを再提出する必要があります。
 
 1.  **アプリ内販売トークンを作成する**
 
     アプリの各アプリ内製品は、トークンで識別します。 このトークンは開発者が定義する文字列であり、アプリ内とストア内で、特定のアプリ内製品を識別するために使われます。 アプリに固有のわかりやすい名前を付けて、その機能をコードの記述中に簡単に識別できるようにしてください。 たとえば、次のような名前を付けます。
 
     -   "SpaceMissionLevel4"
+    
     -   "ContosoCloudSave"
+    
     -   "RainbowThemePack"
 
 2.  **条件ブロック内に機能のコードを記述する**
@@ -59,13 +67,13 @@ void AppInit()
 
     ```    CSharp
     if (licenseInformation.ProductLicenses["featureName"].IsActive) 
-        {
-            // the customer can access this feature
-        } 
-        else
-        {
-            // the customer can' t access this feature
-        }
+    {
+        // the customer can access this feature
+    } 
+    else
+    {
+        // the customer can' t access this feature
+    }
     ```
 
 3.  **この機能の購入 UI を追加する**
@@ -75,28 +83,29 @@ void AppInit()
     次の例は、ユーザーが既にアプリ内製品を所有しているかどうかをテストし、所有していない場合は購入できるように購入用ダイアログを表示する方法を示しています。 "show the purchase dialog" というコメントを、購入用ダイアログの独自のコードに置き換えてください (わかりやすい [このアプリを購入] ボタンのあるページなど)。
 
     ```    CSharp
-    void BuyFeature1() {
-            if (!licenseInformation.ProductLicenses["featureName"].IsActive)
+    void BuyFeature1() 
+    {
+        if (!licenseInformation.ProductLicenses["featureName"].IsActive)
+        {
+            try
             {
-                try
-                    {
-                    // The customer doesn't own this feature, so 
-                    // show the purchase dialog.
-                                    
-                    await CurrentAppSimulator.RequestProductPurchaseAsync("featureName", false);
-                    //Check the license state to determine if the in-app purchase was successful.
-                }
-                catch (Exception)
-                {
-                    // The in-app purchase was not completed because 
-                    // an error occurred.
-                }
-            } 
-            else
-            {
-                // The customer already owns this feature.
+                // The customer doesn't own this feature, so 
+                // show the purchase dialog.
+                await CurrentAppSimulator.RequestProductPurchaseAsync("featureName", false);
+        
+                //Check the license state to determine if the in-app purchase was successful.
             }
+            catch (Exception)
+            {
+                // The in-app purchase was not completed because 
+                // an error occurred.
+            }
+        } 
+        else
+        {
+            // The customer already owns this feature.
         }
+    }
     ```
 
 ## 手順 3: テスト コードを最終的な呼び出しに変更する
@@ -120,15 +129,13 @@ void AppInit()
 * [アプリ内製品の大規模なカタログの管理](manage-a-large-catalog-of-in-app-products.md)
 * [通知を使った製品購入の確認](use-receipts-to-verify-product-purchases.md)
 * [ストア サンプル (試用版とアプリ内購入のデモンストレーション)](http://go.microsoft.com/fwlink/p/?LinkID=627610)
- 
-
- 
 
 
 
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

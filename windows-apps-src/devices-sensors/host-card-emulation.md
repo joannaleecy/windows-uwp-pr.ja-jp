@@ -387,6 +387,6 @@ Windows Phone 8.1 での従来のバイナリ SMS インターセプト サポ�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

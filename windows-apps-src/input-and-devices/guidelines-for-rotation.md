@@ -127,6 +127,6 @@ Windows 8 では、自由、制約付き、複合の 3 種類の回転をサポ
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

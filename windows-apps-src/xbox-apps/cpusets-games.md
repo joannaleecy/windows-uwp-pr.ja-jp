@@ -193,6 +193,6 @@ UWP 開発で使用できる CPUSets API によって、相当な量の情報が
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

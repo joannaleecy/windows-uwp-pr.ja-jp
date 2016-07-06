@@ -109,6 +109,6 @@ Visual Studio で新しいプロジェクトを作成すると、アプリの名
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

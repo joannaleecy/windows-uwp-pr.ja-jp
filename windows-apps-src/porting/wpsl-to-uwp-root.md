@@ -19,7 +19,7 @@ Windows Phone Silverlight アプリを Windows 10 アプリに移植するとき
 
 選択する場合、アプリの Windows Phone Silverlight バージョンとその Windows 10 バージョンの両方を同時に顧客に提供できます。
 
-**注:** このガイドの目的は、Windows Phone Silverlight アプリを Windows 10 に手動で移植できるようにすることです。 このガイドの情報を使って、アプリを移植できるだけではありません。移植プロセス自動化支援用に提供された **Mobilize.NET の Silverlight Bridge** の開発者プレビューを試すこともできます。 このツールは、アプリのソース コードを解析し、Windows Phone Silverlight のコントロールと API への参照を UWP の相当要素に変換します。 このツールは、まだ開発者プレビューの段階にあるため、すべての変換シナリオを扱えるとは限りません。 ただし、ほとんどの開発者はこのツールを使い始めることで、時間と労力をいくらかは節約できます。 開発者プレビューを試すには、[Mobilize.NET の Web サイト](http://go.microsoft.com/fwlink/p/?LinkId=624546)をご覧ください。
+**注**  このガイドの目的は、Windows Phone Silverlight アプリを Windows 10 に手動で移植できるようにすることです。 このガイドの情報を使って、アプリを移植できるだけではありません。移植プロセス自動化支援用に提供された **Mobilize.NET の Silverlight Bridge** の開発者プレビューを試すこともできます。 このツールは、アプリのソース コードを解析し、Windows Phone Silverlight のコントロールと API への参照を UWP の相当要素に変換します。 このツールは、まだ開発者プレビューの段階にあるため、すべての変換シナリオを扱えるとは限りません。 ただし、ほとんどの開発者はこのツールを使い始めることで、時間と労力をいくらかは節約できます。 開発者プレビューを試すには、[Mobilize.NET の Web サイト](http://go.microsoft.com/fwlink/p/?LinkId=624546)をご覧ください。
 
 ## XAML と .NET、または HTML
 
@@ -27,7 +27,7 @@ Windows Phone Silverlight は、Silverlight 4.0 に基づく XAML UI フレー�
 
 「[C# または Visual Basic を使ったユニバーサル Windows プラットフォーム (UWP) アプリのためのロードマップ](https://msdn.microsoft.com/library/windows/apps/br229583)」をご覧ください。
 
-**注:** Windows 10 では、Windows Phone ストア アプリと比べて、より多くの .NET Framework の要素がサポートされます。 たとえば、Windows 10 には、複数の System.ServiceModel.\* 名前空間、System.Net、System.Net.NetworkInformation、System.Net.Sockets があります。 したがって、Windows Phone Silverlight を移植し、.NET コードをコンパイルするだけで新しいプラットフォームで動作させるには絶好の機会です。 「[名前空間とクラス マッピング](wpsl-to-uwp-namespace-and-class-mappings.md)」をご覧ください。
+**注**  Windows 10 では、Windows Phone ストア アプリと比べて、より多くの .NET Framework の要素がサポートされます。 たとえば、Windows 10 には、複数の System.ServiceModel.\* 名前空間、System.Net、System.Net.NetworkInformation、System.Net.Sockets があります。 したがって、Windows Phone Silverlight を移植し、.NET コードをコンパイルするだけで新しいプラットフォームで動作させるには絶好の機会です。 「[名前空間とクラス マッピング](wpsl-to-uwp-namespace-and-class-mappings.md)」をご覧ください。
 既にある .NET ソース コードを Windows 10 アプリに再コンパイルするもう 1 つの大きな理由は、.NET ネイティブのメリットを活かすことができる点です。これは、MSIL をネイティブに実行可能なマシン コードに変換する事前コンパイル テクノロジです。 .NET ネイティブ アプリは、MSIL アプリに比べて、すばやく起動し、メモリ使用量やバッテリ使用量は少なくなります。
 
 この移植ガイドでは XAML に重点を置いていますが、JavaScript 用 Windows ライブラリと共に、JavaScript、カスケード スタイル シート (CSS)、HTML5 を使って、同じ UWP API の多くを呼び出す機能的に同等のアプリを構築できます。 XAML と HTML の Windows ランタイム UI フレームワークは相互に異なりますが、いずれを選んでも一連のさまざまな Windows デバイスで汎用的に動作します。

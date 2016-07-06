@@ -76,6 +76,6 @@ Visual Studio 2015 テンプレートを使ってアプリを作成すると、
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

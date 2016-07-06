@@ -5,8 +5,8 @@ title: "チェック ボックス"
 ms.assetid: 6231A806-287D-43EE-BD8D-39D2FF761914
 label: Check boxes
 template: detail.hbs
-ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
-ms.openlocfilehash: dcf9ca0757fdef78b71ae665772b980b08641d34
+ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
+ms.openlocfilehash: b1532ef10a284cbb6e28694ab1598c08b8619773
 
 ---
 # チェック ボックス
@@ -15,7 +15,7 @@ ms.openlocfilehash: dcf9ca0757fdef78b71ae665772b980b08641d34
 
 ![チェック ボックスの状態の例](images/templates-checkbox-states-default.png)
 
-<span class="sidebar_heading" style="font-weight: bold;">重要な API</span>
+
 -   [**CheckBox クラス**](https://msdn.microsoft.com/library/windows/apps/br209316)
 -   [**Checked イベント**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.checked.aspx)
 -   [**IsChecked プロパティ**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.togglebutton.ischecked.aspx) 
@@ -26,7 +26,7 @@ ms.openlocfilehash: dcf9ca0757fdef78b71ae665772b980b08641d34
 
 ![個人的な選択のための 1 つのチェック ボックス](images/checkbox1.png)
 
-二者択一の場合、**チェック ボックス**と**トグル スイッチ**との主な違いは、チェック ボックスが状態を管理し、トグル スイッチが動作を管理する点です。 チェック ボックスによる操作はコミットを遅らせることができますが (たとえばフォームの送信の一部として)、トグル スイッチによる操作は直ちにコミットしなければなりません。 また、複数の選択ができるのは、チェック ボックスだけです。
+二者択一の場合、**チェック ボックス**と[**トグル スイッチ**](toggles.md)との主な違いは、チェック ボックスが状態を管理し、トグル スイッチが動作を管理する点です。 チェック ボックスによる操作はコミットを遅らせることができますが (たとえばフォームの送信の一部として)、トグル スイッチによる操作は直ちにコミットしなければなりません。 また、複数の選択ができるのは、チェック ボックスだけです。
 
 **複数のチェック ボックス**を使うのは、複数選択シナリオの場合 (ユーザーが相互排他的でない選択肢のグループから 1 つ以上の項目を選ぶ場合) です。
 
@@ -287,11 +287,13 @@ private void SetCheckedState()
 ## 関連記事
 
 -   [**CheckBox クラス**](https://msdn.microsoft.com/library/windows/apps/br209316) 
+-   [ラジオ ボタン](radio-button.md)
+-   [トグル スイッチ](toggles.md)
 
 
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

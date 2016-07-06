@@ -27,13 +27,13 @@ Windows ランタイムの XAML は、次の型に対する言語レベルのサ
 
 これらの XAML 言語プリミティブは、通常、XAML で **x:** プレフィックスを使うオブジェクト要素を定義する場合のみ使われます。 他のすべての XAML 言語機能は、一般に属性形式で、またはマークアップ拡張として使われます。
 
-**注:** 慣例により、"x:" プレフィックスを含む、XAML とその他すべての XAML 言語要素の言語プリミティブが表示されます。 これは、XAML 言語要素が実際のマークアップでいかによく使われているかを表しています。 この規則は、XAML の説明書や XAML の仕様に従っています。
+**注**  慣例により、"x:" プレフィックスを含む、XAML とその他すべての XAML 言語要素の言語プリミティブが表示されます。 これは、XAML 言語要素が実際のマークアップでいかによく使われているかを表しています。 この規則は、XAML の説明書や XAML の仕様に従っています。
 
 ## その他の XAML プリミティブ
 
 XAML 2009 の仕様には、**x:Uri**、**x:Single** など、他の XAML 言語レベルのプリミティブに関する情報が記載されています。 このトピックの表に示されていない場合、他の XAML ボキャブラリまたは XAML 2009 の仕様で定義されている他の XAML 言語プリミティブは、現在 Windows ランタイムの XAML ではサポートされていません。
 
-**注:** 日付と時刻 ([**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576) または [**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx)、[**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/br225996) または [**System.TimeSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/system.timespan.aspx) を使うプロパティ) は、XAML プリミティブでは設定できません。 これらのプロパティは一般に、XAML ではまったく設定できません。これは、Windows ランタイム XAML パーサーには、日付と時刻に対する既定の from 文字列変換の動作がないためです。 すべての日付と時刻のプロパティの初期化値には、ページまたは要素を読み込むときに実行されるコード ビハインドを使う必要があります。
+**注**  日付と時刻 ([**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576) または [**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx)、[**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/br225996) または [**System.TimeSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/system.timespan.aspx) を使うプロパティ) は、XAML プリミティブでは設定できません。 これらのプロパティは一般に、XAML ではまったく設定できません。これは、Windows ランタイム XAML パーサーには、日付と時刻に対する既定の from 文字列変換の動作がないためです。 すべての日付と時刻のプロパティの初期化値には、ページまたは要素を読み込むときに実行されるコード ビハインドを使う必要があります。
 
 ## 関連トピック
 
@@ -45,6 +45,6 @@ XAML 2009 の仕様には、**x:Uri**、**x:Single** など、他の XAML 言語
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

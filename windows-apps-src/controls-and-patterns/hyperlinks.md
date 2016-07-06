@@ -5,8 +5,8 @@ title: "ハイパーリンク"
 ms.assetid: 74302FF0-65FC-4820-B59A-718A765EF7F0
 label: Hyperlinks
 template: detail.hbs
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: 81cb45dd1f7887fef2d8851c839905117c048460
+ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
+ms.openlocfilehash: 1d19cfa9c272ee511fbaf89ac0076697ede470b9
 
 ---
 # ハイパーリンク
@@ -15,7 +15,7 @@ ms.openlocfilehash: 81cb45dd1f7887fef2d8851c839905117c048460
 
 ![ハイパーリンク ボタン](images/controls/hyperlink-button.png)
 
-<span class="sidebar_heading" style="font-weight: bold;">重要な API</span>
+
 
 -   [**ハイパーリンク テキスト要素**](https://msdn.microsoft.com/library/windows/apps/dn279356)
 -   [**HyperlinkButton コントロール**](https://msdn.microsoft.com/library/windows/apps/br242739)
@@ -140,7 +140,7 @@ ms.openlocfilehash: 81cb45dd1f7887fef2d8851c839905117c048460
 
 -   ハイパーリンクを使う場合は、移動のみを目的としてください。他の操作のためにハイパーリンクは使わないでください。
 -   テキスト ベースのハイパーリンクには、書体見本の本文スタイルを使います。 [
-            **fonts and the Windows 10 type ramp**](text-controls.md) に関するページをご覧ください。
+            **fonts and the Windows 10 type ramp**](fonts.md) に関するページをご覧ください。
 -   個々のハイパーリンクの間には十分な間隔を空けます。これにより、それぞれのハイパーリンクを区別することができ、ハイパーリンクを間違えずに選ぶことができます。
 -   ユーザーの移動先を示すヒントをハイパーリンクに追加します。 ユーザーが外部サイトに移動する場合は、ヒント内にトップレベルのドメイン名を入れ、補助的なフォント色を使ってそのテキストのスタイルを指定します。
 
@@ -157,6 +157,6 @@ ms.openlocfilehash: 81cb45dd1f7887fef2d8851c839905117c048460
 
 
 
-<!--HONumber=Jun16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

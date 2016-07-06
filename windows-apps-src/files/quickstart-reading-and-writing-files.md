@@ -1,8 +1,12 @@
 ---
 author: TylerMSFT
 ms.assetid: 27914C0A-2A02-473F-BDD5-C931E3943AA0
-title: ファイルの作成、書き込み、および読み取り
-description: StorageFile オブジェクトを使ってファイルの読み取りと書き込みを行います。
+title: "ファイルの作成、書き込み、および読み取り"
+description: "StorageFile オブジェクトを使ってファイルの読み取りと書き込みを行います。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 067a9fb20c393e6486206a230b882a835264303a
+
 ---
 
 # ファイルの作成、書き込み、および読み取り
@@ -20,7 +24,7 @@ description: StorageFile オブジェクトを使ってファイルの読み取�
 [
             **StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトを使ってファイルの読み取りと書き込みを行います。
 
-> **注** [ファイル アクセスのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619995) に関するページも参照してください。
+> **注** [ファイル アクセスのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619995)に関するページも参照してください。
 
 ## 前提条件
 
@@ -266,6 +270,7 @@ Dim dataReader As New DataReader(inputStream)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

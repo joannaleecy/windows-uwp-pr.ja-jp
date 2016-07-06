@@ -35,7 +35,7 @@ XAML のテーマ リソースは、アクティブなシステム テーマに�
 
 各テーマ リソースは、XAML ファイル themeresources.xaml の一部です。 設計の目的には、Windows ソフトウェア開発キット (Windows SDK) のインストール先の \\(Program Files)\\Windows Kits\\10\\DesignTime\\CommonConfiguration\\Neutral\\UAP\\&lt;SDK version&gt;\\Generic フォルダーにある themeresources.xaml を使うことができます。 themeresources.xaml 内のリソース ディクショナリは、同じディレクトリの generic.xaml にも複製されています。
 
-> **注:**
+> **注**
             &nbsp;&nbsp;これらの物理ファイルは Windows ランタイムでランタイム検索に使われません。 そのため、明示的に DesignTime フォルダー内にあり、既定ではアプリにコピーされません。 代わりに、これらのリソース ディクショナリは Windows ランタイム自体の一部としてメモリ内に存在し、テーマ リソース (またはシステム リソース) へのアプリの XAML リソース参照は実行時にメモリ内で解決されます。
 
  ## テーマ リソースの使用のガイドライン
@@ -123,7 +123,7 @@ Windows には複数のハイ コントラスト テーマが用意されてい�
 
 システムのハイ コントラスト テーマの色に加えて、システムのアクセント カラーも、`SystemAccentColor` というキーを使う特別なカラー リソースとして用意されています。 このリソースは、ユーザーが Windows の個人設定でアクセント カラーとして指定した色を実行時に取得します。
 
-> **注:**
+> **注**
             &nbsp;&nbsp;ハイ コントラスト カラーとアクセント カラーのシステム カラー リソースは、同じ名前を持つリソースを作成してオーバーライドすることもできますが、特にハイ コントラスト設定についてはユーザーによる色の選択を尊重することをお勧めします。
 
 ### テーマ依存のブラシ
@@ -152,7 +152,7 @@ Windows には複数のハイ コントラスト テーマが用意されてい�
 For many examples of how the brushes are used in the XAML control templates, see the [Default control styles and templates](default-control-styles-and-templates.md).
 -->
 
-> **注:**
+> **注**
             &nbsp;&nbsp;\[*HighContrast 簡易名*\]\[*Light/Dark 簡易名*\] のすべての組み合わせがブラシ リソースとして提供されるわけではありません。
 
 ## XAML の書体見本
@@ -314,7 +314,7 @@ themeresources.xaml ファイルには、UI 上のテキスト コンテナー (
 </Style>
 ```
 
-> **注:**
+> **注**
             &nbsp;&nbsp; [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565) スタイルには、[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) に含まれているテキスト見本スタイルのすべては含まれていません。これは主に、**RichTextBlock** のブロック ベースのドキュメント オブジェクト モデルでは、個々のテキスト要素への属性の設定がより簡単になっているためです。 また、XAML コンテンツ プロパティを使って [**TextBlock.Text**](https://msdn.microsoft.com/library/windows/apps/br209676) を設定する方式では、スタイルを設定できるテキスト要素が存在しない状況になるため、コンテナーにスタイルを設定する必要があります。 これに対して **RichTextBlock** では、テキスト コンテンツは常に [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/br244503) などの固有のテキスト要素になり、そこにページ ヘッダーやページ サブヘッダー、類似のテキスト見本定義の XAML スタイルを適用できるため、この問題はありません。
 
 ## その他の名前付きスタイル
