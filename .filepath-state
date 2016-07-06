@@ -4904,6 +4904,9 @@
   "6f50874ceb5e133f2b1b764bfc6fcff6422172db": [
     "windows-apps-src\\packaging\\index.md"
   ],
+  "18a6b7a5a4b5ef0f6064528e78a235b9fc7b372d": [
+    "windows-apps-src\\packaging\\install-universal-windows-apps-with-the-winappdeploycmd-tool.md"
+  ],
   "d3135724e092495e8f937e6d53bdfbaa9e7cf450": [
     "windows-apps-src\\packaging\\install-universal-windows-apps-with-the-winappdeploycmd-tool.md"
   ],
