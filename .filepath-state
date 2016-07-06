@@ -2738,6 +2738,9 @@
   "67c23795be54207c54c1e871dad045e6c0cd7c77": [
     "windows-apps-src\\devices-sensors\\use-the-orientation-sensor.md"
   ],
+  "2cae64ff234a4fb85fd6a3e50ade3b91480b36c8": [
+    "windows-apps-src\\enterprise\\edp-hub.md"
+  ],
   "b9a8e8e59174ca58e229a12cac47c90f6a16d446": [
     "windows-apps-src\\enterprise\\edp-hub.md"
   ],
@@ -2773,6 +2776,9 @@
   ],
   "2056a5adee0ce6e65962eeba21fccbfe976c811a": [
     "windows-apps-src\\files\\index.md"
+  ],
+  "a31fc65599f43be5b302b568774a51ab77065300": [
+    "windows-apps-src\\files\\protect-your-enterprise-data-with-edp.md"
   ],
   "2d9b1ec4e39e5c8a100030184ee9287a0d97ea24": [
     "windows-apps-src\\files\\protect-your-enterprise-data-with-edp.md"
