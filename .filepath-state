@@ -254,6 +254,9 @@
   "ff0d2cd86f8ba422db7a26565c52293a3e21a018": [
     "windows-apps-src\\contacts-and-calendar\\sending-email.md"
   ],
+  "22b195475c48f7447c4c08431472efa0ffd48e31": [
+    "windows-apps-src\\controls-and-patterns\\active-canvas.md"
+  ],
   "490c45fb8dc565e4ae0b890d26f28d698b58f255": [
     "windows-apps-src\\controls-and-patterns\\active-canvas.md"
   ],
@@ -2049,10 +2052,10 @@
     "windows-apps-src\\controls-and-patterns\\images\\uap-finance-phone-masterdetails-600.png"
   ],
   "c34242d3f260a26e1667ad62fc7ddd71ca35df1b": [
-    "windows-apps-src\\controls-and-patterns\\images\\uap-photo-pc-phone-700.png"
+    "windows-apps-src\\layout\\images\\uap-photo-pc-phone-700.png"
   ],
   "8064fb60db4863f36ac1b875cf731f24260ec9f0": [
-    "windows-apps-src\\controls-and-patterns\\images\\uap-subway-pc-phone-700.png"
+    "windows-apps-src\\layout\\images\\uap-subway-pc-phone-700.png"
   ],
   "ee5005901d95c9897c866be734807eedbfeab16d": [
     "windows-apps-src\\controls-and-patterns\\images\\underline.png"
@@ -5906,6 +5909,9 @@
   "033669a781aa85cc2c90fa11816e385ffefa997d": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "d33932e0b4e591b8806b273fed8e989a5c2a2704": [
+    "windows-apps-src\\TOC.md"
+  ],
   "7e69281219b57e86a6599fbc68a3052d91a144dc": [
     "windows-apps-src\\TOC.md"
   ],
@@ -6178,6 +6184,9 @@
   ],
   "d50602cf6ba7041d34200e8bc93a14188038b5ae": [
     "windows-apps-src\\xbox-apps\\index.md"
+  ],
+  "a85869bc3b05fd222209e04ca55033195cdedfbd": [
+    "windows-apps-src\\xbox-apps\\introduction-to-xbox-tools.md"
   ],
   "e2f87cdeb8ce3371a34bb989e5fa29ef63d18621": [
     "windows-apps-src\\xbox-apps\\introduction-to-xbox-tools.md"
@@ -6452,6 +6461,9 @@
   "fa7e7404a9a3ab5d75d47b3a5271bd1fd84b5569": [
     "windows-apps-src\\winrt-components\\brokered-windows-runtime-components-for-side-loaded-windows-store-apps.md"
   ],
+  "b9fa5d65872d0fa17ddee3ec08cbd7c905760d10": [
+    "windows-apps-src\\controls-and-patterns\\index.md"
+  ],
   "4a9008d2ed6d48c8fb4bc08cd8663636c1ed4df3": [
     "windows-apps-src\\controls-and-patterns\\index.md"
   ],
@@ -6484,6 +6496,9 @@
   ],
   "4101b60c0f640fd54d67a8e57f0a06622c6ec85c": [
     "windows-apps-src\\design-downloads\\index.md"
+  ],
+  "2d3f0588b56b26e125652c12eeca3028bfe6573e": [
+    "windows-apps-src\\input-and-devices\\index.md"
   ],
   "def2efd8d424bc79c4ff7a89784d0bc1219a287a": [
     "windows-apps-src\\input-and-devices\\index.md"
@@ -6610,5 +6625,8 @@
   ],
   "5dd22ab685640fbe6cd788a4fdbd04d9d14d5399": [
     "windows-apps-src\\xbox-apps\\images\\uwp-solution.PNG"
+  ],
+  "ddb977999f4bdb24cef36c80659c78aba1ee5e98": [
+    "windows-apps-src\\layout\\active-canvas.md"
   ]
 }
