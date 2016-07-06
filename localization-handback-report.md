@@ -39,7 +39,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [getting-started-what-next.ecd0afbdc8655298b5947469bb7c882adb3b3a4a.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/getting-started-what-next.ecd0afbdc8655298b5947469bb7c882adb3b3a4a.ja-jp.xlf)
-* Handback Datetime: 2016-07-06 17:19:16
+* Handback Datetime: 2016-07-06 18:05:32
 * Handback Error: [handback_transform_failed](#2b11133fda76fb42f3a850848c426cbb33fb83663480handback_transform_failed)
 * [Back to Top](#report-top)
 
@@ -52,7 +52,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [w8x-to-uwp-case-study-bookstore1.1b233633dd89418b29824ed2a8815f42db06c353.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/w8x-to-uwp-case-study-bookstore1.1b233633dd89418b29824ed2a8815f42db06c353.ja-jp.xlf)
-* Handback Datetime: 2016-07-06 17:19:16
+* Handback Datetime: 2016-07-06 18:05:32
 * Handback Error: [handback_transform_failed](#43536aacb37a79b3e8507896474be67423a0b9fe3569handback_transform_failed)
 * [Back to Top](#report-top)
 
@@ -65,7 +65,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [w8x-to-uwp-case-study-bookstore2.ad050c1b7b22a96b4466221147699cf2260c98cc.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/w8x-to-uwp-case-study-bookstore2.ad050c1b7b22a96b4466221147699cf2260c98cc.ja-jp.xlf)
-* Handback Datetime: 2016-07-06 17:19:16
+* Handback Datetime: 2016-07-06 18:05:32
 * Handback Error: [handback_transform_failed](#97682b2b914707874dcac998f7db5f2029ad433e3570handback_transform_failed)
 * [Back to Top](#report-top)
 
@@ -78,7 +78,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [w8x-to-uwp-case-study-quizgame.ee7bf79e60457837f1f1ef8bbdc006cd97a0f8fd.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/w8x-to-uwp-case-study-quizgame.ee7bf79e60457837f1f1ef8bbdc006cd97a0f8fd.ja-jp.xlf)
-* Handback Datetime: 2016-07-06 17:19:16
+* Handback Datetime: 2016-07-06 18:05:32
 * Handback Error: [handback_transform_failed](#cd05c3edbc254cceb00c55caba698d21998f55943571handback_transform_failed)
 * [Back to Top](#report-top)
 
@@ -91,7 +91,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [wpsl-to-uwp-case-study-bookstore1.19497291442d80478e61fcd92c5c00207526b390.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/wpsl-to-uwp-case-study-bookstore1.19497291442d80478e61fcd92c5c00207526b390.ja-jp.xlf)
-* Handback Datetime: 2016-07-06 17:19:16
+* Handback Datetime: 2016-07-06 18:05:32
 * Handback Error: [handback_transform_failed](#dbffb4245efece2d39b4eba8979e323fd71626d03578handback_transform_failed)
 * [Back to Top](#report-top)
 
@@ -104,7 +104,7 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [wpsl-to-uwp-case-study-bookstore2.f536923cc67633de1edb1fb8d3b8bde4b029fb0e.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/29e104438bce4bfab3f3d4ed4b83ff0bfb8c6870/ol-handback/Microsoft/windows-apps.ja-jp/master/wpsl-to-uwp-case-study-bookstore2.f536923cc67633de1edb1fb8d3b8bde4b029fb0e.ja-jp.xlf)
-* Handback Datetime: 2016-07-06 17:19:16
+* Handback Datetime: 2016-07-06 18:05:32
 * Handback Error: [handback_transform_failed](#019f9ae1fc226c9aa1d921ce58cd2e5fa2424a2b3579handback_transform_failed)
 * [Back to Top](#report-top)
 
