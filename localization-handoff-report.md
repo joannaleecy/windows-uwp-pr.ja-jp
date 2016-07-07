@@ -6,21 +6,21 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\porting\desktop-to-uwp-run-desktop-app-converter.md](https://github.com/Microsoft/windows-apps/blob/84f7e25b8222719bf529b6727dcef62bc3d9f73f/windows-apps-src/porting/desktop-to-uwp-run-desktop-app-converter.md) | OutofSyncHandedBackSuccess | [Details](#87b92fe8477ada3aadb915bceca5722c675c4da93475)
+ [windows-apps-src\packaging\install-universal-windows-apps-with-the-winappdeploycmd-tool.md](https://github.com/Microsoft/windows-apps/blob/d9dbbe3250d165b63e6be248230075707adf640d/windows-apps-src/packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool.md) | OutofSyncHandedBackSuccess | [Details](#c6d04330d81cff164db5ac06edda5e2272ecca073468)
 
 ## Item Details
-##### <a name='87b92fe8477ada3aadb915bceca5722c675c4da93475'></a> Source: [windows-apps-src\porting\desktop-to-uwp-run-desktop-app-converter.md](https://github.com/Microsoft/windows-apps/blob/84f7e25b8222719bf529b6727dcef62bc3d9f73f/windows-apps-src/porting/desktop-to-uwp-run-desktop-app-converter.md)
+##### <a name='c6d04330d81cff164db5ac06edda5e2272ecca073468'></a> Source: [windows-apps-src\packaging\install-universal-windows-apps-with-the-winappdeploycmd-tool.md](https://github.com/Microsoft/windows-apps/blob/d9dbbe3250d165b63e6be248230075707adf640d/windows-apps-src/packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/3d143c698a2156ed4170b800ba0dfbd80363b136/ol-handoff/Microsoft/windows-apps.ja-jp/master/desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.ja-jp.xlf)
-* Handoff Datetime: 2016-07-07 19:12:40
+* Handoff File: [install-universal-windows-apps-with-the-winappdeploycmd-tool.35efc75d02349fa7a3de1cc06d8eeca7b5ad10e2.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/b7e0c6cdd120b39013ad045a31333922c3ba04b4/ol-handoff/Microsoft/windows-apps.ja-jp/master/install-universal-windows-apps-with-the-winappdeploycmd-tool.35efc75d02349fa7a3de1cc06d8eeca7b5ad10e2.ja-jp.xlf)
+* Handoff Datetime: 2016-07-07 23:12:05
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\porting\desktop-to-uwp-run-desktop-app-converter.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/50184089ee68f46cd2f416adf3a3994777b91210/windows-apps-src/porting/desktop-to-uwp-run-desktop-app-converter.md)
-* Current Handback File: [desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/4b30c8e256811740592ee2bde985c1f06955abde/ol-handback/Microsoft/windows-apps.ja-jp/master/desktop-to-uwp-run-desktop-app-converter.fc9992a9afd4d31e675c1faac128c4ce323f2542.ja-jp.xlf)
+* Current Target File: [windows-apps-src\packaging\install-universal-windows-apps-with-the-winappdeploycmd-tool.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/50184089ee68f46cd2f416adf3a3994777b91210/windows-apps-src/packaging/install-universal-windows-apps-with-the-winappdeploycmd-tool.md)
+* Current Handback File: [install-universal-windows-apps-with-the-winappdeploycmd-tool.35efc75d02349fa7a3de1cc06d8eeca7b5ad10e2.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/4b30c8e256811740592ee2bde985c1f06955abde/ol-handback/Microsoft/windows-apps.ja-jp/master/install-universal-windows-apps-with-the-winappdeploycmd-tool.35efc75d02349fa7a3de1cc06d8eeca7b5ad10e2.ja-jp.xlf)
 * Current Handback Datetime: 2016-07-06 14:57:57
 * [Back to Top](#report-top)
 
