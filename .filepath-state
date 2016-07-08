@@ -5591,6 +5591,9 @@
   "fa7e7404a9a3ab5d75d47b3a5271bd1fd84b5569": [
     "windows-apps-src\\winrt-components\\brokered-windows-runtime-components-for-side-loaded-windows-store-apps.md"
   ],
+  "23fdd3513d11a0fa0171e50fe71d49c8e3db7376": [
+    "windows-apps-src\\controls-and-patterns\\index.md"
+  ],
   "eebc183530597e905eb9dfe5d3cf744a028ea2f3": [
     "windows-apps-src\\controls-and-patterns\\index.md"
   ],
