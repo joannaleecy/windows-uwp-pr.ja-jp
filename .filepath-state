@@ -1681,6 +1681,9 @@
   "a419ad04fe4f21867f2f1bd1664fbce39a7da792": [
     "windows-apps-src\\devices-sensors\\ble-beacon.md"
   ],
+  "ea51856a59374a5b2cee4d75bd17dec3015f21b2": [
+    "windows-apps-src\\devices-sensors\\bluetooth.md"
+  ],
   "195d0d55f19eccd545a4de79384d05b1aec4669a": [
     "windows-apps-src\\devices-sensors\\bluetooth.md"
   ],
