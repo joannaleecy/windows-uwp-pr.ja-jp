@@ -4055,6 +4055,9 @@
   "16d75ebd2499e56af742c1c9994fd92cc320c22b": [
     "windows-apps-src\\porting\\desktop-to-uwp-root.md"
   ],
+  "2340059dcc91b4c74c171462c48c9f1049490931": [
+    "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
+  ],
   "87b92fe8477ada3aadb915bceca5722c675c4da9": [
     "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
   ],
@@ -5509,6 +5512,9 @@
   ],
   "5efe2af3524d97e6014c4d6be2a8f1aef22f2e66": [
     "windows-apps-src\\xbox-apps\\wdp-smb-api.md"
+  ],
+  "e3637f5a8481c0800af42c011fb811b908b946b1": [
+    "windows-apps-src\\xbox-apps\\wdp-xboxsettings-api.md"
   ],
   "52fb6e76bd7ad35127eeebeced8f6f8cc076fb7f": [
     "windows-apps-src\\xbox-apps\\wdp-xboxsettings-api.md"
