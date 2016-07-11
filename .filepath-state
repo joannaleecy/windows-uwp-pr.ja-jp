@@ -1452,6 +1452,9 @@
   "e2209e90080c7346bb363304b1a28f6446300332": [
     "windows-apps-src\\debug-test-perf\\deploying-and-debugging-uwp-apps.md"
   ],
+  "55cbdc077f839166f32605bbada8e0cc707cf5b3": [
+    "windows-apps-src\\debug-test-perf\\device-portal.md"
+  ],
   "8833dccd7e9440ff6374e2e5f000f9b77f5baa9d": [
     "windows-apps-src\\debug-test-perf\\device-portal.md"
   ],
@@ -3980,6 +3983,9 @@
   "43d579d2d0a92a8f03f17efa2ec42707357e99f9": [
     "windows-apps-src\\monetize\\xaml-properties-example.md"
   ],
+  "cbb8308a3390634f0068f72041803989201e2345": [
+    "windows-apps-src\\networking\\background-transfers.md"
+  ],
   "02e01be9cf726731697eb5934cb86b398431b532": [
     "windows-apps-src\\networking\\background-transfers.md"
   ],
@@ -5800,5 +5806,8 @@
   ],
   "e395304f1dd53eacc4111f21144f9b285e0e9d4d": [
     "windows-apps-src\\style\\segoe-ui-symbol-font.md"
+  ],
+  "f03b706a38df9c3a872317fed72169c9dff6fea0": [
+    "windows-apps-src\\debug-test-perf\\images\\device-portal\\mob-device-portal-AppFileExplorer.png"
   ]
 }
