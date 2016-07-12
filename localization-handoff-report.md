@@ -6,21 +6,21 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/f1468c20d694780a9a6a9c5976f93c062e8f1bff/windows-apps-src/TOC.md) | OutofSyncHandedBackSuccess | [Details](#cb726df42929c2e0f032a49a291f0a0d1a4a87aa5280)
+ [windows-apps-src\audio-video-camera\supported-codecs.md](https://github.com/Microsoft/windows-apps/blob/b4d6a9f7cc8b343ee1cbd31bcfd8f19e329c82dc/windows-apps-src/audio-video-camera/supported-codecs.md) | OutofSyncHandedBackSuccess | [Details](#00fbbdde8d805ce7ae07df1d52dd8171de7d58ab493)
 
 ## Item Details
-##### <a name='cb726df42929c2e0f032a49a291f0a0d1a4a87aa5280'></a> Source: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/f1468c20d694780a9a6a9c5976f93c062e8f1bff/windows-apps-src/TOC.md)
+##### <a name='00fbbdde8d805ce7ae07df1d52dd8171de7d58ab493'></a> Source: [windows-apps-src\audio-video-camera\supported-codecs.md](https://github.com/Microsoft/windows-apps/blob/b4d6a9f7cc8b343ee1cbd31bcfd8f19e329c82dc/windows-apps-src/audio-video-camera/supported-codecs.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/75f3e8c949729aae2d7f2184e102e1f712fedbce/ol-handoff/Microsoft/windows-apps.ja-jp/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf)
-* Handoff Datetime: 2016-07-12 19:49:19
+* Handoff File: [supported-codecs.16577143160d1b763576aad920583945b1e7e0c1.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/424e830d725cc438ad22e8e13235276a71bfd8a5/ol-handoff/Microsoft/windows-apps.ja-jp/master/supported-codecs.16577143160d1b763576aad920583945b1e7e0c1.ja-jp.xlf)
+* Handoff Datetime: 2016-07-12 22:20:03
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/50184089ee68f46cd2f416adf3a3994777b91210/windows-apps-src/TOC.md)
-* Current Handback File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/4b30c8e256811740592ee2bde985c1f06955abde/ol-handback/Microsoft/windows-apps.ja-jp/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf)
+* Current Target File: [windows-apps-src\audio-video-camera\supported-codecs.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/50184089ee68f46cd2f416adf3a3994777b91210/windows-apps-src/audio-video-camera/supported-codecs.md)
+* Current Handback File: [supported-codecs.16577143160d1b763576aad920583945b1e7e0c1.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/4b30c8e256811740592ee2bde985c1f06955abde/ol-handback/Microsoft/windows-apps.ja-jp/master/supported-codecs.16577143160d1b763576aad920583945b1e7e0c1.ja-jp.xlf)
 * Current Handback Datetime: 2016-07-06 14:57:57
 * [Back to Top](#report-top)
 
