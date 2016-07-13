@@ -5162,6 +5162,9 @@
   "16d75ebd2499e56af742c1c9994fd92cc320c22b": [
     "windows-apps-src\\porting\\desktop-to-uwp-root.md"
   ],
+  "cefe5b9606f1cedbab8ae38905f6137fc4da02cd": [
+    "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
+  ],
   "8a22285467005722ad6ee5bf4f129a7dfdea944c": [
     "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
   ],
@@ -5731,6 +5734,9 @@
   ],
   "38d0af2cdbf4137cbd0e005fcb750ed2f0b2c87c": [
     "windows-apps-src\\security\\common-cryptography-tasks.md"
+  ],
+  "864973a80cf2e5ce685135e15ae70fa339026d9b": [
+    "windows-apps-src\\security\\companion-device-unlock.md"
   ],
   "18102d6277ff1c66ebd147b5c1fd2f2d6c91edd1": [
     "windows-apps-src\\security\\companion-device-unlock.md"
