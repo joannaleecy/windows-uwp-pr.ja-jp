@@ -17,6 +17,9 @@
   "ec436f939c672d6e6d852d3dd6713fd6ca20a53b": [
     "windows-apps-src\\accessibility\\accessibility-testing.md"
   ],
+  "0ebd4ecd4c9aff0c0ebaad4f6ffb43257b2b6d27": [
+    "windows-apps-src\\accessibility\\accessible-text-requirements.md"
+  ],
   "1307b4f70cf7ffed300f4254a7d92b67b5afd085": [
     "windows-apps-src\\accessibility\\accessible-text-requirements.md"
   ],
@@ -40,6 +43,9 @@
   ],
   "77c401fd9686cb260e7b2d9e4bdf47a91d76802e": [
     "windows-apps-src\\accessibility\\developing-inclusive-windows-apps.md"
+  ],
+  "4566e4fecbc381e4ed972c43c571d50d46f2bdc4": [
+    "windows-apps-src\\accessibility\\high-contrast-themes.md"
   ],
   "4201f5a0b08f1fc8d691218da0803ee04ab2c86a": [
     "windows-apps-src\\accessibility\\high-contrast-themes.md"
@@ -6602,8 +6608,8 @@
   "2da839b282015c39bd0046d6cf60ce4f79fc485c": [
     "windows-apps-src\\devices-sensors\\nfc.md"
   ],
-  "fadcf03d057b6df66013a9c682ab6e765093ba11": [
-    "windows-apps-src\\accessibility\\images\\high-contrast-actions-content.png"
+  "bfeac97d2cafb99d71a5d16326efecae9f35e85e": [
+    "windows-apps-src\\accessibility\\images\\high-contrast-resources.png"
   ],
   "6b7b3e65b7373ec44f50af0e955eddfc45c1141b": [
     "windows-apps-src\\accessibility\\images\\high-contrast-resources.png"
@@ -6997,5 +7003,14 @@
   ],
   "f03b706a38df9c3a872317fed72169c9dff6fea0": [
     "windows-apps-src\\debug-test-perf\\images\\device-portal\\mob-device-portal-AppFileExplorer.png"
+  ],
+  "d87e65f313dea22c569ccbb869371aff8f66cd1b": [
+    "windows-apps-src\\accessibility\\images\\autosuggest-default-selection.png"
+  ],
+  "72c1e10def0df5cf5cd99106f9a1d03636de7033": [
+    "windows-apps-src\\accessibility\\images\\autosuggest-list.png"
+  ],
+  "cc14f23c50e6915c83ee2ce4f80decdd7b42fa8b": [
+    "windows-apps-src\\accessibility\\images\\autosuggest-no-default-selection.png"
   ]
 }
