@@ -2376,6 +2376,9 @@
   "fe4945bf3048a0c38e844a74fa6fc46706085d6d": [
     "windows-apps-src\\debug-test-perf\\device-portal.md"
   ],
+  "d36c33047aaaafcf018ceed954a10d0502756caa": [
+    "windows-apps-src\\debug-test-perf\\device-portal-api-core.md"
+  ],
   "0fa515d28431d4256b977ee3c3c41169661f129f": [
     "windows-apps-src\\debug-test-perf\\device-portal-api-core.md"
   ],

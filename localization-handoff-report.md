@@ -6,21 +6,21 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\xbox-apps\wdp-xboxsettings-api.md](https://github.com/Microsoft/windows-apps/blob/c51eff41e63d815f6298b4fc46a9b11314bc8bc9/windows-apps-src/xbox-apps/wdp-xboxsettings-api.md) | OutofSyncHandedBackSuccess | [Details](#e8609c16c4b260f14a7cd7843d2ea60a4d17f3ae5419)
+ [windows-apps-src\debug-test-perf\device-portal-api-core.md](https://github.com/Microsoft/windows-apps/blob/b9e2e10a1e46e2385f369746604033762790b798/windows-apps-src/debug-test-perf/device-portal-api-core.md) | OutofSyncHandedBackSuccess | [Details](#d36c33047aaaafcf018ceed954a10d0502756caa1972)
 
 ## Item Details
-##### <a name='e8609c16c4b260f14a7cd7843d2ea60a4d17f3ae5419'></a> Source: [windows-apps-src\xbox-apps\wdp-xboxsettings-api.md](https://github.com/Microsoft/windows-apps/blob/c51eff41e63d815f6298b4fc46a9b11314bc8bc9/windows-apps-src/xbox-apps/wdp-xboxsettings-api.md)
+##### <a name='d36c33047aaaafcf018ceed954a10d0502756caa1972'></a> Source: [windows-apps-src\debug-test-perf\device-portal-api-core.md](https://github.com/Microsoft/windows-apps/blob/b9e2e10a1e46e2385f369746604033762790b798/windows-apps-src/debug-test-perf/device-portal-api-core.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [wdp-xboxsettings-api.d88568c99ac5aeafdc2db670ec70e7aeda4c94a3.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/fd7e1e65da95558ec29004a65fce4e900eeeb6a7/ol-handoff/Microsoft/windows-apps.ja-jp/master/wdp-xboxsettings-api.d88568c99ac5aeafdc2db670ec70e7aeda4c94a3.ja-jp.xlf)
-* Handoff Datetime: 2016-07-13 15:50:39
+* Handoff File: [device-portal-api-core.1b4ac62250e906748be1a77845b5033a7f6d3fa4.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/b9e1cbe0075fe4f76180c1f2d25d3e6045ad2027/ol-handoff/Microsoft/windows-apps.ja-jp/master/device-portal-api-core.1b4ac62250e906748be1a77845b5033a7f6d3fa4.ja-jp.xlf)
+* Handoff Datetime: 2016-07-13 18:51:04
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\xbox-apps\wdp-xboxsettings-api.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/50184089ee68f46cd2f416adf3a3994777b91210/windows-apps-src/xbox-apps/wdp-xboxsettings-api.md)
-* Current Handback File: [wdp-xboxsettings-api.d88568c99ac5aeafdc2db670ec70e7aeda4c94a3.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/4b30c8e256811740592ee2bde985c1f06955abde/ol-handback/Microsoft/windows-apps.ja-jp/master/wdp-xboxsettings-api.d88568c99ac5aeafdc2db670ec70e7aeda4c94a3.ja-jp.xlf)
+* Current Target File: [windows-apps-src\debug-test-perf\device-portal-api-core.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/50184089ee68f46cd2f416adf3a3994777b91210/windows-apps-src/debug-test-perf/device-portal-api-core.md)
+* Current Handback File: [device-portal-api-core.1b4ac62250e906748be1a77845b5033a7f6d3fa4.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/4b30c8e256811740592ee2bde985c1f06955abde/ol-handback/Microsoft/windows-apps.ja-jp/master/device-portal-api-core.1b4ac62250e906748be1a77845b5033a7f6d3fa4.ja-jp.xlf)
 * Current Handback Datetime: 2016-07-06 14:57:57
 * [Back to Top](#report-top)
 
