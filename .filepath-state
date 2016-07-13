@@ -3292,6 +3292,9 @@
   "da42ce940c2dae25f4478541c5396bcd0d4e0159": [
     "windows-apps-src\\get-started\\images\\adaptiveux-phone.png"
   ],
+  "aaf83eec4f308b67b95fd113c069080d0a236e6e": [
+    "windows-apps-src\\get-started\\images\\devicefamilytree.png"
+  ],
   "eec2adcda2190c7405be3d8ff69f31059ce8a035": [
     "windows-apps-src\\get-started\\images\\devicefamilytree.png"
   ],
@@ -3442,6 +3445,9 @@
   ],
   "53d23b3f8502e1f182c728b9f787fbbc4b694d42": [
     "windows-apps-src\\get-started\\sign-up.md"
+  ],
+  "8f4e906c9f1c685a5f6aeebd5fe0ebcc96ff9a7c": [
+    "windows-apps-src\\get-started\\universal-application-platform-guide.md"
   ],
   "738d989feb59dbbade83f770bf7bb5bf6bc4933f": [
     "windows-apps-src\\get-started\\universal-application-platform-guide.md"

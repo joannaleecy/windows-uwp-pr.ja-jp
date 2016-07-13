@@ -1,26 +1,43 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\gaming\e2e.md](https://github.com/Microsoft/windows-apps/blob/a9beb420ac13eb74c0109b30508e49d5305bc67c/windows-apps-src/gaming/e2e.md) | OutofSyncHandedBackSuccess | [Details](#30f8408e6d125423e69615a3f9341e8f7d886fc82192)
+ [windows-apps-src\get-started\images\devicefamilytree.png](https://github.com/Microsoft/windows-apps/blob/4ad8dc5883b7edafa2c2579d3733eafba0b9cc1f/windows-apps-src/get-started/images/devicefamilytree.png) | OutofSyncHandedBackSuccess | [Details](#aaf83eec4f308b67b95fd113c069080d0a236e6e2308)
+ [windows-apps-src\get-started\universal-application-platform-guide.md](https://github.com/Microsoft/windows-apps/blob/4ad8dc5883b7edafa2c2579d3733eafba0b9cc1f/windows-apps-src/get-started/universal-application-platform-guide.md) | OutofSyncHandedBackSuccess | [Details](#8f4e906c9f1c685a5f6aeebd5fe0ebcc96ff9a7c2643)
 
 ## Item Details
-##### <a name='30f8408e6d125423e69615a3f9341e8f7d886fc82192'></a> Source: [windows-apps-src\gaming\e2e.md](https://github.com/Microsoft/windows-apps/blob/a9beb420ac13eb74c0109b30508e49d5305bc67c/windows-apps-src/gaming/e2e.md)
+##### <a name='aaf83eec4f308b67b95fd113c069080d0a236e6e2308'></a> Source: [windows-apps-src\get-started\images\devicefamilytree.png](https://github.com/Microsoft/windows-apps/blob/4ad8dc5883b7edafa2c2579d3733eafba0b9cc1f/windows-apps-src/get-started/images/devicefamilytree.png)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/335510ba388f763ae7dcb1bf136fd2c2e07c4691/ol-handoff/Microsoft/windows-apps.ja-jp/master/e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.ja-jp.xlf)
-* Handoff Datetime: 2016-07-12 23:19:31
+* Handoff File: [aaf83eec4f308b67b95fd113c069080d0a236e6e.png](https://github.com/Microsoft/WDG.handoff/blob/2de9d6da360520c5e05d87ee3afd2df998b3f333/ol-handoff/Microsoft/windows-apps.ja-jp/master/aaf83eec4f308b67b95fd113c069080d0a236e6e.png)
+* Handoff Datetime: 2016-07-13 03:49:45
+* Handoff Reason: IsDependency
+* Dependency From: windows-apps-src\get-started\universal-application-platform-guide.md
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\get-started\images\devicefamilytree.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/get-started/images/devicefamilytree.png)
+* Current Handback File: [eec2adcda2190c7405be3d8ff69f31059ce8a035.png](https://github.com/Microsoft/WDG.handback/blob/b1f93110cb7a5d04acde1e36c6a60039678a2df1/ol-handback/Microsoft/windows-apps.ja-jp/master/eec2adcda2190c7405be3d8ff69f31059ce8a035.png)
+* Current Handback Datetime: 2016-06-30 15:51:54
+* [Back to Top](#report-top)
+
+##### <a name='8f4e906c9f1c685a5f6aeebd5fe0ebcc96ff9a7c2643'></a> Source: [windows-apps-src\get-started\universal-application-platform-guide.md](https://github.com/Microsoft/windows-apps/blob/4ad8dc5883b7edafa2c2579d3733eafba0b9cc1f/windows-apps-src/get-started/universal-application-platform-guide.md)
+* Status: OutofSyncHandedBackSuccess
+* Target File: 
+* Handoff File: [universal-application-platform-guide.07a46d09a6199df7032e233bf3e2f8009a4fb173.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/2de9d6da360520c5e05d87ee3afd2df998b3f333/ol-handoff/Microsoft/windows-apps.ja-jp/master/universal-application-platform-guide.07a46d09a6199df7032e233bf3e2f8009a4fb173.ja-jp.xlf)
+* Handoff Datetime: 2016-07-13 03:49:45
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\gaming\e2e.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/50184089ee68f46cd2f416adf3a3994777b91210/windows-apps-src/gaming/e2e.md)
-* Current Handback File: [e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/4b30c8e256811740592ee2bde985c1f06955abde/ol-handback/Microsoft/windows-apps.ja-jp/master/e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.ja-jp.xlf)
+* Current Target File: [windows-apps-src\get-started\universal-application-platform-guide.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/50184089ee68f46cd2f416adf3a3994777b91210/windows-apps-src/get-started/universal-application-platform-guide.md)
+* Current Handback File: [universal-application-platform-guide.07a46d09a6199df7032e233bf3e2f8009a4fb173.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/4b30c8e256811740592ee2bde985c1f06955abde/ol-handback/Microsoft/windows-apps.ja-jp/master/universal-application-platform-guide.07a46d09a6199df7032e233bf3e2f8009a4fb173.ja-jp.xlf)
 * Current Handback Datetime: 2016-07-06 14:57:57
 * [Back to Top](#report-top)
 
