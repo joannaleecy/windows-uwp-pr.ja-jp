@@ -3307,12 +3307,6 @@
   "da42ce940c2dae25f4478541c5396bcd0d4e0159": [
     "windows-apps-src\\get-started\\images\\adaptiveux-phone.png"
   ],
-  "aaf83eec4f308b67b95fd113c069080d0a236e6e": [
-    "windows-apps-src\\get-started\\images\\devicefamilytree.png"
-  ],
-  "eec2adcda2190c7405be3d8ff69f31059ce8a035": [
-    "windows-apps-src\\get-started\\images\\devicefamilytree.png"
-  ],
   "1226f248f29981f9645e7dd833eb9ff80f5d0202": [
     "windows-apps-src\\get-started\\images\\devmode-mob.png"
   ],
@@ -3460,6 +3454,9 @@
   ],
   "53d23b3f8502e1f182c728b9f787fbbc4b694d42": [
     "windows-apps-src\\get-started\\sign-up.md"
+  ],
+  "257a41be19ea48b4e8222bcf33a4fa18c392b1c7": [
+    "windows-apps-src\\get-started\\universal-application-platform-guide.md"
   ],
   "fa585daa82a6fd86542c2443ec318baef7c4c264": [
     "windows-apps-src\\get-started\\universal-application-platform-guide.md"
@@ -4756,6 +4753,9 @@
   ],
   "e161e478b1b306f5d8d77b7649aeecd80e21b5be": [
     "windows-apps-src\\maps-and-location\\set-up-a-geofence.md"
+  ],
+  "600c56a97d600446c2f3538431d009d48295e05d": [
+    "windows-apps-src\\monetize\\access-analytics-data-using-windows-store-services.md"
   ],
   "30388a975e9623c5511abe608aa1b21956e2c974": [
     "windows-apps-src\\monetize\\access-analytics-data-using-windows-store-services.md"
@@ -7021,6 +7021,9 @@
   ],
   "f03b706a38df9c3a872317fed72169c9dff6fea0": [
     "windows-apps-src\\debug-test-perf\\images\\device-portal\\mob-device-portal-AppFileExplorer.png"
+  ],
+  "aaf83eec4f308b67b95fd113c069080d0a236e6e": [
+    "windows-apps-src\\get-started\\images\\device-family-tree.png"
   ],
   "d87e65f313dea22c569ccbb869371aff8f66cd1b": [
     "windows-apps-src\\accessibility\\images\\autosuggest-default-selection.png"
