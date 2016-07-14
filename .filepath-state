@@ -44,6 +44,9 @@
   "77c401fd9686cb260e7b2d9e4bdf47a91d76802e": [
     "windows-apps-src\\accessibility\\developing-inclusive-windows-apps.md"
   ],
+  "e3ddfa887202eac35bd5317af4ded25841cd1c3e": [
+    "windows-apps-src\\accessibility\\high-contrast-themes.md"
+  ],
   "4566e4fecbc381e4ed972c43c571d50d46f2bdc4": [
     "windows-apps-src\\accessibility\\high-contrast-themes.md"
   ],
@@ -6617,6 +6620,9 @@
   "2da839b282015c39bd0046d6cf60ce4f79fc485c": [
     "windows-apps-src\\devices-sensors\\nfc.md"
   ],
+  "fadcf03d057b6df66013a9c682ab6e765093ba11": [
+    "windows-apps-src\\accessibility\\images\\high-contrast-actions-content.png"
+  ],
   "bfeac97d2cafb99d71a5d16326efecae9f35e85e": [
     "windows-apps-src\\accessibility\\images\\high-contrast-resources.png"
   ],
@@ -7021,5 +7027,23 @@
   ],
   "cc14f23c50e6915c83ee2ce4f80decdd7b42fa8b": [
     "windows-apps-src\\accessibility\\images\\autosuggest-no-default-selection.png"
+  ],
+  "ad665d8ea094ac776b9ef49209cedc7fcdc698b6": [
+    "windows-apps-src\\accessibility\\images\\high-contrast-calculator-hc-black.png"
+  ],
+  "4843f7256e494fe37435d87f9ba2496a12493a16": [
+    "windows-apps-src\\accessibility\\images\\high-contrast-calculator-light-theme.png"
+  ],
+  "e8c1aa1d8ac2b341dccdfd416d9682c036300ce1": [
+    "windows-apps-src\\accessibility\\images\\high-contrast-list1.png"
+  ],
+  "e6076521684e399a72f3fc3fad671361628b354e": [
+    "windows-apps-src\\accessibility\\images\\high-contrast-list2.png"
+  ],
+  "4537cbe42ed3c2dbe6d5a4f4c91aee7c7fa4df99": [
+    "windows-apps-src\\accessibility\\images\\high-contrast-list3.png"
+  ],
+  "0e448eb58e76c8bbd6de51da0f19542073223b06": [
+    "windows-apps-src\\accessibility\\images\\high-contrast-list4.png"
   ]
 }
