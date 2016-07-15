@@ -3716,10 +3716,10 @@
   "75e7367ee13357d3463213ca7d8f1ff37c4f0b77": [
     "windows-apps-src\\input-and-devices\\define-custom-recognition-constraints.md"
   ],
-  "2a8c4a601968cd1d879703a4a5f136eecc3b90f7": [
+  "54da89e33b81fc8c5439786f8a5133360dbd186c": [
     "windows-apps-src\\input-and-devices\\designing-for-tv.md"
   ],
-  "54da89e33b81fc8c5439786f8a5133360dbd186c": [
+  "2a8c4a601968cd1d879703a4a5f136eecc3b90f7": [
     "windows-apps-src\\input-and-devices\\designing-for-tv.md"
   ],
   "1c03d381630b89672bb9ae39497f1f1a2c9a714e": [
@@ -3886,6 +3886,9 @@
   ],
   "de00d0fc65ea38b59aa59e9c22e295b21b331fe5": [
     "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\2d-navigation-best-practices-provide-path-with-least-clicks-2.png"
+  ],
+  "1b11f6c0b9df678dbd3ace5ab8c38f9b6e0f4cfc": [
+    "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\2d-navigation-best-practices-ui-elements-display-on-mouse-hover.png"
   ],
   "62e6d37c7113a33135403d98dc95ac591bc14367": [
     "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\2d-navigation-best-practices-ui-layout-to-avoid.png"
