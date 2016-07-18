@@ -5678,6 +5678,9 @@
   "9910ca5b5a3fd5d24643a1dfc6da3644d561c617": [
     "windows-apps-src\\publish\\package-version-numbering.md"
   ],
+  "48fac3fd0309a40f1c575a6888ab0c2b341152d6": [
+    "windows-apps-src\\publish\\payout-summary.md"
+  ],
   "86355a194eb61b8d13eba22d9f6e7c566339cd28": [
     "windows-apps-src\\publish\\payout-summary.md"
   ],
@@ -6217,6 +6220,9 @@
   ],
   "033669a781aa85cc2c90fa11816e385ffefa997d": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
+  ],
+  "1053cb6820535361cef10310d4f259a9b1a36268": [
+    "windows-apps-src\\TOC.md"
   ],
   "3c0d145393654e42674ca4584750ce506cca671b": [
     "windows-apps-src\\TOC.md"
