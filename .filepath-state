@@ -14,6 +14,9 @@
   "430484a9243abc644de75d35c03bb11cf47960c0": [
     "windows-apps-src\\accessibility\\accessibility-overview.md"
   ],
+  "d9bb262613e8ed83698a5c2bdcd98eddbdd17763": [
+    "windows-apps-src\\accessibility\\accessibility-testing.md"
+  ],
   "ec436f939c672d6e6d852d3dd6713fd6ca20a53b": [
     "windows-apps-src\\accessibility\\accessibility-testing.md"
   ],
@@ -6407,20 +6410,35 @@
   "ae2f80a915f4aed90c269c37a11d01a2f6c9849e": [
     "windows-apps-src\\xbox-apps\\automate-launching-uwp-apps.md"
   ],
+  "be444c6315849a9e24f3bc5b0c4ee4ec3a54d3d1": [
+    "windows-apps-src\\xbox-apps\\development-environment-setup.md"
+  ],
   "d56206f990e7885af4935401356bd3a2ce2cd292": [
     "windows-apps-src\\xbox-apps\\development-environment-setup.md"
+  ],
+  "9db59618eaf60d8eb44b88b21bd07f9d0c7705d9": [
+    "windows-apps-src\\xbox-apps\\devkit-activation.md"
   ],
   "9ad9904150acb00982c96eebeaf010f7023d3320": [
     "windows-apps-src\\xbox-apps\\devkit-activation.md"
   ],
+  "9ac09afbda66c311e09d804a3a99e4fc070e8888": [
+    "windows-apps-src\\xbox-apps\\devkit-deactivation.md"
+  ],
   "0751598ba50d69e1667b20ddc03f30d65ce08002": [
     "windows-apps-src\\xbox-apps\\devkit-deactivation.md"
+  ],
+  "00269da48e9989bd69d561265ef5c06a38a57d5e": [
+    "windows-apps-src\\xbox-apps\\frequently-asked-questions.md"
   ],
   "01173aeabb74d6d703597a9bd7a48c179c688c07": [
     "windows-apps-src\\xbox-apps\\frequently-asked-questions.md"
   ],
   "34e186049039d5a8366f34e985ad7250ef664f00": [
     "windows-apps-src\\xbox-apps\\frequently-asked-questions.md"
+  ],
+  "2076e7251737a013f9c6f2c9c1fc560a33ebfe6e": [
+    "windows-apps-src\\xbox-apps\\getting-started.md"
   ],
   "92a9cc54c6257c35b1e7ae19838b01c8452c4b36": [
     "windows-apps-src\\xbox-apps\\getting-started.md"
@@ -6533,6 +6551,9 @@
   "2d3d6ad9b3375350f6f2cb47d6fd170d39f8fec0": [
     "windows-apps-src\\xbox-apps\\images\\windowsdeviceportal_2.png"
   ],
+  "140673bc5cc4ffa60c194f1aa28703ebda539693": [
+    "windows-apps-src\\xbox-apps\\index.md"
+  ],
   "b615eaab90ef43026baedd0113ad28f43bede343": [
     "windows-apps-src\\xbox-apps\\index.md"
   ],
@@ -6542,6 +6563,9 @@
   "d50602cf6ba7041d34200e8bc93a14188038b5ae": [
     "windows-apps-src\\xbox-apps\\index.md"
   ],
+  "3c305f94bfbb3cef1ddd290ab348873527aeca64": [
+    "windows-apps-src\\xbox-apps\\introduction-to-xbox-tools.md"
+  ],
   "4414677e942818506020888fa15e7e16ecaf4733": [
     "windows-apps-src\\xbox-apps\\introduction-to-xbox-tools.md"
   ],
@@ -6550,6 +6574,9 @@
   ],
   "e2f87cdeb8ce3371a34bb989e5fa29ef63d18621": [
     "windows-apps-src\\xbox-apps\\introduction-to-xbox-tools.md"
+  ],
+  "e0cca512209f0d8c61705ea42a7f38a7577a675b": [
+    "windows-apps-src\\xbox-apps\\known-issues.md"
   ],
   "e016be20af9a0d7a67fa383cbdc93083d12a1113": [
     "windows-apps-src\\xbox-apps\\known-issues.md"
@@ -6563,8 +6590,14 @@
   "9a9180f8d6fcd51808310a7f8fbac986ca9c3817": [
     "windows-apps-src\\xbox-apps\\known-issues.md"
   ],
+  "54760cf74bbfab20590de5467d9f7a5710a522f8": [
+    "windows-apps-src\\xbox-apps\\multi-user-applications.md"
+  ],
   "20f84783131122343fd01e6cb1f5a60cf50158cd": [
     "windows-apps-src\\xbox-apps\\multi-user-applications.md"
+  ],
+  "bfb74eda9e046da9234efd65f5e4123870076d79": [
+    "windows-apps-src\\xbox-apps\\samples.md"
   ],
   "6f38f5aabb6a409fab894bf7127ad4011162f7c6": [
     "windows-apps-src\\xbox-apps\\samples.md"
@@ -6574,6 +6607,9 @@
   ],
   "b7c1817bfb375c42262bac8d8e3768e93b4c2635": [
     "windows-apps-src\\xbox-apps\\samples-xaml-media.md"
+  ],
+  "517c67ed7a1224b92a0373186977e13e861106d0": [
+    "windows-apps-src\\xbox-apps\\system-resource-allocation.md"
   ],
   "5c5947239e16d883511e56c62f5267568c3d5feb": [
     "windows-apps-src\\xbox-apps\\system-resource-allocation.md"
@@ -6641,6 +6677,9 @@
   "db6b9c83d36ac876661197dce81e5724e44bb640": [
     "windows-apps-src\\debug-test-perf\\version-adaptive-code.md"
   ],
+  "aeb63bc10893a4b661aa04d2bad73272a3a12738": [
+    "windows-apps-src\\xbox-apps\\how-to-disable-mouse-mode.md"
+  ],
   "d1ee946693b9f9714b8d570b8ae3718469d2c10d": [
     "windows-apps-src\\xbox-apps\\how-to-disable-mouse-mode.md"
   ],
@@ -6653,14 +6692,23 @@
   "bd7780f105f86d7d292c5db2535ad40af07d6e4f": [
     "windows-apps-src\\xbox-apps\\how-to-disable-mouse-mode.md"
   ],
+  "4119a01a1ea5c5658c3aeeaf11557541cfab8f97": [
+    "windows-apps-src\\xbox-apps\\turn-off-overscan.md"
+  ],
   "abd06e78364ff32cc10d733e33b153b854dbc467": [
     "windows-apps-src\\xbox-apps\\turn-off-overscan.md"
+  ],
+  "a5a9a1a8f0f332d18dcb0f47866cc54821a9212c": [
+    "windows-apps-src\\xbox-apps\\disable-scaling.md"
   ],
   "307606bc290e9c5268fc5a37b72770d6b1ada4da": [
     "windows-apps-src\\xbox-apps\\disable-scaling.md"
   ],
   "65416dd2b6c8656078b63c316f3972cda9c792fc": [
     "windows-apps-src\\xbox-apps\\disable-scaling.md"
+  ],
+  "294d753fb06e034d694bfefeab066001a07b1fc6": [
+    "windows-apps-src\\xbox-apps\\tailoring-for-xbox.md"
   ],
   "4ecea5db19a8cc49d09fa769d79576414bae25ca": [
     "windows-apps-src\\xbox-apps\\tailoring-for-xbox.md"
@@ -6763,6 +6811,9 @@
   ],
   "30efa290f3fbf169666e16247be8d116f23ab02d": [
     "windows-apps-src\\porting\\desktop-to-uwp-signing.md"
+  ],
+  "d237dc66b09e5225e03e4dca9b1182625048b4e2": [
+    "windows-apps-src\\xbox-apps\\reference.md"
   ],
   "3e857501687f74eacbe863889d61d33fcdbcd086": [
     "windows-apps-src\\xbox-apps\\reference.md"
@@ -7054,6 +7105,9 @@
   ],
   "57c93494f81b4235b1616ae7f3178a7682ce20fc": [
     "windows-apps-src\\porting\\images\\hwa-to-uwp\\windows_step6.png"
+  ],
+  "0df633b3db959e775d5eaa371ae264e2d5b72d52": [
+    "windows-apps-src\\xbox-apps\\uwp-fiddler.md"
   ],
   "6d02d7c4fe9c1804e3b63a1d1156fbb3981d0536": [
     "windows-apps-src\\xbox-apps\\uwp-fiddler.md"
