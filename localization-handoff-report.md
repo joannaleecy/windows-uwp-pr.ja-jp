@@ -1,42 +1,26 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\xbox-apps\known-issues.md](https://github.com/Microsoft/windows-apps/blob/b9d84bf6b98c2f34914a8f4dd1e2b7e2132f5778/windows-apps-src/xbox-apps/known-issues.md) | OutofSyncHandedBackSuccess | [Details](#5dc2ad2b7c1d3793065f96e3300069dea078ce6a5430)
- [windows-apps-src\xbox-apps\tailoring-for-xbox.md](https://github.com/Microsoft/windows-apps/blob/b9d84bf6b98c2f34914a8f4dd1e2b7e2132f5778/windows-apps-src/xbox-apps/tailoring-for-xbox.md) | OutofSyncHandedBackSuccess | [Details](#acb7b92fe65abd99e5263ffcf1c339bb62015afe5437)
+ [windows-apps-src\publish\microsoft-advertising-payment-process.md](https://github.com/Microsoft/windows-apps/blob/b9d3826e31fff7a5423fab8116f636a8a9b48668/windows-apps-src/publish/microsoft-advertising-payment-process.md) | OutofSyncHandedBackSuccess | [Details](#f542cb924db3899f8b10cc10ecbc9558e2993ca33675)
 
 ## Item Details
-##### <a name='5dc2ad2b7c1d3793065f96e3300069dea078ce6a5430'></a> Source: [windows-apps-src\xbox-apps\known-issues.md](https://github.com/Microsoft/windows-apps/blob/b9d84bf6b98c2f34914a8f4dd1e2b7e2132f5778/windows-apps-src/xbox-apps/known-issues.md)
+##### <a name='f542cb924db3899f8b10cc10ecbc9558e2993ca33675'></a> Source: [windows-apps-src\publish\microsoft-advertising-payment-process.md](https://github.com/Microsoft/windows-apps/blob/b9d3826e31fff7a5423fab8116f636a8a9b48668/windows-apps-src/publish/microsoft-advertising-payment-process.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [known-issues.83c75815621268c5c51534a658527cef71ffe8bd.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/46326b6b21116b0c0997a64f856dffeaf2184730/ol-handoff/Microsoft/windows-apps.ja-jp/master/known-issues.83c75815621268c5c51534a658527cef71ffe8bd.ja-jp.xlf)
-* Handoff Datetime: 2016-07-19 18:04:46
+* Handoff File: [microsoft-advertising-payment-process.506091d67c351dfe6d76f5e1cbdd29e3c277dd80.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/c632bc840945d73bfa6fb571b9fdac985fb490af/ol-handoff/Microsoft/windows-apps.ja-jp/master/microsoft-advertising-payment-process.506091d67c351dfe6d76f5e1cbdd29e3c277dd80.ja-jp.xlf)
+* Handoff Datetime: 2016-07-19 18:33:19
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\xbox-apps\known-issues.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/50184089ee68f46cd2f416adf3a3994777b91210/windows-apps-src/xbox-apps/known-issues.md)
-* Current Handback File: [known-issues.83c75815621268c5c51534a658527cef71ffe8bd.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/4b30c8e256811740592ee2bde985c1f06955abde/ol-handback/Microsoft/windows-apps.ja-jp/master/known-issues.83c75815621268c5c51534a658527cef71ffe8bd.ja-jp.xlf)
-* Current Handback Datetime: 2016-07-06 14:57:57
-* [Back to Top](#report-top)
-
-##### <a name='acb7b92fe65abd99e5263ffcf1c339bb62015afe5437'></a> Source: [windows-apps-src\xbox-apps\tailoring-for-xbox.md](https://github.com/Microsoft/windows-apps/blob/b9d84bf6b98c2f34914a8f4dd1e2b7e2132f5778/windows-apps-src/xbox-apps/tailoring-for-xbox.md)
-* Status: OutofSyncHandedBackSuccess
-* Target File: 
-* Handoff File: [tailoring-for-xbox.bacdeb3e45dfd5c8fe0387ee2d4a2903bd006a24.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/46326b6b21116b0c0997a64f856dffeaf2184730/ol-handoff/Microsoft/windows-apps.ja-jp/master/tailoring-for-xbox.bacdeb3e45dfd5c8fe0387ee2d4a2903bd006a24.ja-jp.xlf)
-* Handoff Datetime: 2016-07-19 18:04:46
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\xbox-apps\tailoring-for-xbox.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/50184089ee68f46cd2f416adf3a3994777b91210/windows-apps-src/xbox-apps/tailoring-for-xbox.md)
-* Current Handback File: [tailoring-for-xbox.bacdeb3e45dfd5c8fe0387ee2d4a2903bd006a24.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/4b30c8e256811740592ee2bde985c1f06955abde/ol-handback/Microsoft/windows-apps.ja-jp/master/tailoring-for-xbox.bacdeb3e45dfd5c8fe0387ee2d4a2903bd006a24.ja-jp.xlf)
+* Current Target File: [windows-apps-src\publish\microsoft-advertising-payment-process.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/50184089ee68f46cd2f416adf3a3994777b91210/windows-apps-src/publish/microsoft-advertising-payment-process.md)
+* Current Handback File: [microsoft-advertising-payment-process.506091d67c351dfe6d76f5e1cbdd29e3c277dd80.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/4b30c8e256811740592ee2bde985c1f06955abde/ol-handback/Microsoft/windows-apps.ja-jp/master/microsoft-advertising-payment-process.506091d67c351dfe6d76f5e1cbdd29e3c277dd80.ja-jp.xlf)
 * Current Handback Datetime: 2016-07-06 14:57:57
 * [Back to Top](#report-top)
 
