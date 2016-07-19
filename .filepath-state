@@ -3329,6 +3329,9 @@
   "4c890d6202a3151e8fc0cf03b3ff33b98cd6a863": [
     "windows-apps-src\\get-started\\enable-your-device-for-development.md"
   ],
+  "fe6dc8f1ae3bd8bf308c0e2bcf5e565deffb3df2": [
+    "windows-apps-src\\get-started\\get-set-up.md"
+  ],
   "0b6e0a8ee3c00d6ce74a13890af71e8c8a86aaa0": [
     "windows-apps-src\\get-started\\get-set-up.md"
   ],
@@ -5230,6 +5233,9 @@
   ],
   "074a71bf3d037004ca376c11b58d17c906f804a5": [
     "windows-apps-src\\porting\\android-ios-uwp-map.md"
+  ],
+  "20cb7ce04503cfc2eed31db1bbad4878b8c66601": [
+    "windows-apps-src\\porting\\desktop-to-uwp-deploy-and-debug.md"
   ],
   "618b129449d285054604008615c32de74c8bfd9b": [
     "windows-apps-src\\porting\\desktop-to-uwp-deploy-and-debug.md"
