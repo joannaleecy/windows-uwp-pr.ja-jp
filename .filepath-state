@@ -3284,6 +3284,9 @@
   "63a40f5853740d1053449e1b1839f5b0232ce28e": [
     "windows-apps-src\\gaming\\work-with-networking-in-your-directx-game.md"
   ],
+  "da14c66b37735d3d8f93ab80ef493353744cfc1d": [
+    "windows-apps-src\\get-started\\create-a-basic-windows-10-app-in-cpp.md"
+  ],
   "7836cb385cc37f39fa1af01ea981263fcf3f3634": [
     "windows-apps-src\\get-started\\create-a-basic-windows-10-app-in-cpp.md"
   ],
@@ -3292,6 +3295,9 @@
   ],
   "e39752f9f13eaf93d23412252483093e704b1668": [
     "windows-apps-src\\get-started\\create-a-basic-windows-10-app-in-cpp.md"
+  ],
+  "5a55079c281e7914a33b44adf67573d0d1a435be": [
+    "windows-apps-src\\get-started\\create-a-hello-world-app-js-universal.md"
   ],
   "be731072824e81eadc95cebd5855234f9331962b": [
     "windows-apps-src\\get-started\\create-a-hello-world-app-js-universal.md"
@@ -3314,8 +3320,14 @@
   "0d6b6421b4f5ebc01c865e80db96d1158b9bd825": [
     "windows-apps-src\\get-started\\create-a-hello-world-app-xaml-universal.md"
   ],
+  "db0d01093ddab775af27c36b148f7927247cd3fd": [
+    "windows-apps-src\\get-started\\enable-your-device-for-development.md"
+  ],
   "4c890d6202a3151e8fc0cf03b3ff33b98cd6a863": [
     "windows-apps-src\\get-started\\enable-your-device-for-development.md"
+  ],
+  "0b6e0a8ee3c00d6ce74a13890af71e8c8a86aaa0": [
+    "windows-apps-src\\get-started\\get-set-up.md"
   ],
   "f20707cab08998d86142f7d657b51faa78d9a777": [
     "windows-apps-src\\get-started\\get-set-up.md"
@@ -3470,17 +3482,29 @@
   "555649b6b18aa009da69eee7e6980365b473054e": [
     "windows-apps-src\\get-started\\images\\xaml-hw-style-cpp.png"
   ],
+  "eed139604d8d6e748a25e95b365c29002a0a56ed": [
+    "windows-apps-src\\get-started\\learn-more.md"
+  ],
   "5d8f036b7dcaba1c697f574011875cadbf1970c1": [
     "windows-apps-src\\get-started\\learn-more.md"
   ],
   "cb77a32f99bc6e27cfe87af16d6cd4e08855d7b6": [
     "windows-apps-src\\get-started\\learn-more.md"
   ],
+  "824ff176e1ec2d850ad11314082c588594df63d6": [
+    "windows-apps-src\\get-started\\plan-your-app.md"
+  ],
   "9a3058aabdc6f710149a14d8f125b66efd076007": [
     "windows-apps-src\\get-started\\plan-your-app.md"
   ],
+  "0b7677a9e7f201c935daac9fb05c78b0cbaa1136": [
+    "windows-apps-src\\get-started\\sign-up.md"
+  ],
   "53d23b3f8502e1f182c728b9f787fbbc4b694d42": [
     "windows-apps-src\\get-started\\sign-up.md"
+  ],
+  "2c31e4c5dfc5f80c8d98ec52e3808c864b5aad07": [
+    "windows-apps-src\\get-started\\universal-application-platform-guide.md"
   ],
   "257a41be19ea48b4e8222bcf33a4fa18c392b1c7": [
     "windows-apps-src\\get-started\\universal-application-platform-guide.md"
@@ -3497,8 +3521,14 @@
   "191a7aef1a027747379c991e17afc1580a9ec549": [
     "windows-apps-src\\get-started\\universal-application-platform-guide.md"
   ],
+  "22603d863974d4a705831ccaeb5d21499e520ad1": [
+    "windows-apps-src\\get-started\\whats-a-uwp.md"
+  ],
   "f02851d848a82af7104a6038c5d8850d5362c832": [
     "windows-apps-src\\get-started\\whats-a-uwp.md"
+  ],
+  "2e35d67e7268df105c75ccbc4f9403ad079c9ae5": [
+    "windows-apps-src\\get-started\\your-first-app.md"
   ],
   "e2ed4b9587927a2a6a765b47ff69b9cedfd9b92d": [
     "windows-apps-src\\get-started\\your-first-app.md"
@@ -4240,10 +4270,10 @@
   "efce61a8af77aa7eecfb6c67ee3cb70e190280ed": [
     "windows-apps-src\\input-and-devices\\images\\ux-rotate-positions.png"
   ],
-  "6d947a4cd032eefd8f81e415e527d2fad1a88c7d": [
+  "6084a49a8d8d9884c3bd777160ca219059d1654b": [
     "windows-apps-src\\input-and-devices\\input-primer.md"
   ],
-  "6084a49a8d8d9884c3bd777160ca219059d1654b": [
+  "6d947a4cd032eefd8f81e415e527d2fad1a88c7d": [
     "windows-apps-src\\input-and-devices\\input-primer.md"
   ],
   "4cbad2284c6bb7ee2a03236fc554d588804b167e": [
@@ -7213,5 +7243,11 @@
   ],
   "b8ddff5e515524c1a337e584cc995fc2ef5cdb35": [
     "windows-apps-src\\debug-test-perf\\app-analysis.md"
+  ],
+  "a30706cc8b38ceb35634fce11762bd06e85b35c9": [
+    "windows-apps-src\\get-started\\images\\video-title-intro-to-uwp.jpg"
+  ],
+  "1e73d282ec30d3958ea263a4b211315911c18a23": [
+    "windows-apps-src\\input-and-devices\\access-keys.md"
   ]
 }
