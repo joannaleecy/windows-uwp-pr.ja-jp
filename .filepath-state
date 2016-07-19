@@ -3329,6 +3329,9 @@
   "4c890d6202a3151e8fc0cf03b3ff33b98cd6a863": [
     "windows-apps-src\\get-started\\enable-your-device-for-development.md"
   ],
+  "db6874f3876330b646a19980aa6e122acc79f976": [
+    "windows-apps-src\\get-started\\get-set-up.md"
+  ],
   "fe6dc8f1ae3bd8bf308c0e2bcf5e565deffb3df2": [
     "windows-apps-src\\get-started\\get-set-up.md"
   ],
@@ -3508,6 +3511,9 @@
   ],
   "53d23b3f8502e1f182c728b9f787fbbc4b694d42": [
     "windows-apps-src\\get-started\\sign-up.md"
+  ],
+  "f3200f297049bdfcbcdf28a48656fa3a111277ea": [
+    "windows-apps-src\\get-started\\universal-application-platform-guide.md"
   ],
   "2c31e4c5dfc5f80c8d98ec52e3808c864b5aad07": [
     "windows-apps-src\\get-started\\universal-application-platform-guide.md"
