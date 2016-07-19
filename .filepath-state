@@ -6581,6 +6581,9 @@
   "e2f87cdeb8ce3371a34bb989e5fa29ef63d18621": [
     "windows-apps-src\\xbox-apps\\introduction-to-xbox-tools.md"
   ],
+  "5dc2ad2b7c1d3793065f96e3300069dea078ce6a": [
+    "windows-apps-src\\xbox-apps\\known-issues.md"
+  ],
   "e0cca512209f0d8c61705ea42a7f38a7577a675b": [
     "windows-apps-src\\xbox-apps\\known-issues.md"
   ],
@@ -6712,6 +6715,9 @@
   ],
   "65416dd2b6c8656078b63c316f3972cda9c792fc": [
     "windows-apps-src\\xbox-apps\\disable-scaling.md"
+  ],
+  "acb7b92fe65abd99e5263ffcf1c339bb62015afe": [
+    "windows-apps-src\\xbox-apps\\tailoring-for-xbox.md"
   ],
   "294d753fb06e034d694bfefeab066001a07b1fc6": [
     "windows-apps-src\\xbox-apps\\tailoring-for-xbox.md"
