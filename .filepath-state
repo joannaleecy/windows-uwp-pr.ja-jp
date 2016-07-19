@@ -6416,6 +6416,9 @@
   "ae2f80a915f4aed90c269c37a11d01a2f6c9849e": [
     "windows-apps-src\\xbox-apps\\automate-launching-uwp-apps.md"
   ],
+  "13d2833d9508a9d748cc4d7bf096f1a45ed1297e": [
+    "windows-apps-src\\xbox-apps\\development-environment-setup.md"
+  ],
   "be444c6315849a9e24f3bc5b0c4ee4ec3a54d3d1": [
     "windows-apps-src\\xbox-apps\\development-environment-setup.md"
   ],
@@ -6442,6 +6445,9 @@
   ],
   "34e186049039d5a8366f34e985ad7250ef664f00": [
     "windows-apps-src\\xbox-apps\\frequently-asked-questions.md"
+  ],
+  "03e579dda5fd0ca85fd4d37aec3bd47537dd93d9": [
+    "windows-apps-src\\xbox-apps\\getting-started.md"
   ],
   "2076e7251737a013f9c6f2c9c1fc560a33ebfe6e": [
     "windows-apps-src\\xbox-apps\\getting-started.md"
