@@ -3308,6 +3308,9 @@
   "5f534169117da94cb2249c897603f567c007299b": [
     "windows-apps-src\\get-started\\create-a-hello-world-app-js-universal.md"
   ],
+  "fd5847388fceaa0a9f72dcef08bae37b6f73f734": [
+    "windows-apps-src\\get-started\\create-a-hello-world-app-xaml-universal.md"
+  ],
   "43d6d2129008a2489de1f3cc100b9e8b56fd4a2e": [
     "windows-apps-src\\get-started\\create-a-hello-world-app-xaml-universal.md"
   ],
@@ -3328,6 +3331,9 @@
   ],
   "4c890d6202a3151e8fc0cf03b3ff33b98cd6a863": [
     "windows-apps-src\\get-started\\enable-your-device-for-development.md"
+  ],
+  "a832cc8c491957d2e69826a91bc2ac19086d01aa": [
+    "windows-apps-src\\get-started\\get-set-up.md"
   ],
   "db6874f3876330b646a19980aa6e122acc79f976": [
     "windows-apps-src\\get-started\\get-set-up.md"
@@ -3511,6 +3517,9 @@
   ],
   "53d23b3f8502e1f182c728b9f787fbbc4b694d42": [
     "windows-apps-src\\get-started\\sign-up.md"
+  ],
+  "cad44ec75a44b2547b816c1d51db84f314adbc3b": [
+    "windows-apps-src\\get-started\\universal-application-platform-guide.md"
   ],
   "f3200f297049bdfcbcdf28a48656fa3a111277ea": [
     "windows-apps-src\\get-started\\universal-application-platform-guide.md"
@@ -7258,9 +7267,6 @@
   ],
   "b8ddff5e515524c1a337e584cc995fc2ef5cdb35": [
     "windows-apps-src\\debug-test-perf\\app-analysis.md"
-  ],
-  "a30706cc8b38ceb35634fce11762bd06e85b35c9": [
-    "windows-apps-src\\get-started\\images\\video-title-intro-to-uwp.jpg"
   ],
   "1e73d282ec30d3958ea263a4b211315911c18a23": [
     "windows-apps-src\\input-and-devices\\access-keys.md"
