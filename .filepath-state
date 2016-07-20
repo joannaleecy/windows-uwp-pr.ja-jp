@@ -4889,14 +4889,23 @@
   "1a7bf9ed90ed2dadf6de7a141fa03972b06ef144": [
     "windows-apps-src\\monetize\\code-samples.md"
   ],
+  "1bd29f9fbc707838d4fe737e5aa3da4684eb06f3": [
+    "windows-apps-src\\monetize\\code-your-experiment-in-your-app.md"
+  ],
   "4e6706624e71c6d448a3d457c27d11c9f6ecc156": [
     "windows-apps-src\\monetize\\code-your-experiment-in-your-app.md"
   ],
   "481f9d785181ca197debdb807bb0b0c7b4168632": [
     "windows-apps-src\\monetize\\create-an-adcontrol-in-javascript.md"
   ],
+  "ef6e7675bbc093f23f7bacea0ef835a03e678e9f": [
+    "windows-apps-src\\monetize\\create-and-run-your-first-experiment-with-a-b-testing.md"
+  ],
   "0f889c22b8999408341f4c12387602b344f49439": [
     "windows-apps-src\\monetize\\create-and-run-your-first-experiment-with-a-b-testing.md"
+  ],
+  "14e252fdfc0464e8fd992b8648ef506cbefb9bf1": [
+    "windows-apps-src\\monetize\\define-your-experiment-in-the-dev-center-dashboard.md"
   ],
   "7462c23de58b44f897a1737d0d54913144b14f75": [
     "windows-apps-src\\monetize\\define-your-experiment-in-the-dev-center-dashboard.md"
@@ -5069,6 +5078,9 @@
   "0927df3cd696e5a6fbd3a235d2b87074f1d63929": [
     "windows-apps-src\\monetize\\manage-a-large-catalog-of-in-app-products.md"
   ],
+  "c9883882021468c0569c7e244423f68181d978bd": [
+    "windows-apps-src\\monetize\\manage-your-experiment.md"
+  ],
   "24ca106cc83c4495657972f463c556585cdfcb45": [
     "windows-apps-src\\monetize\\manage-your-experiment.md"
   ],
@@ -5095,6 +5107,9 @@
   ],
   "b099bdc26565ef218eaf1f73c5bb3ec9c24065c3": [
     "windows-apps-src\\monetize\\report-consumable-products-as-fulfilled.md"
+  ],
+  "3bcdd109454d89961696124eacd4cdbd7563b17f": [
+    "windows-apps-src\\monetize\\run-app-experiments-with-a-b-testing.md"
   ],
   "88fd0516e3c10b657884b93377480b62c1758992": [
     "windows-apps-src\\monetize\\run-app-experiments-with-a-b-testing.md"
@@ -6290,6 +6305,9 @@
   "033669a781aa85cc2c90fa11816e385ffefa997d": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "adf630f9ae7904639c8d51857d4fb46bf7f6c68e": [
+    "windows-apps-src\\TOC.md"
+  ],
   "1053cb6820535361cef10310d4f259a9b1a36268": [
     "windows-apps-src\\TOC.md"
   ],
@@ -7270,5 +7288,8 @@
   ],
   "1e73d282ec30d3958ea263a4b211315911c18a23": [
     "windows-apps-src\\input-and-devices\\access-keys.md"
+  ],
+  "b5c9b219724131f4b27a2d55519b316e863981b4": [
+    "windows-apps-src\\monetize\\create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md"
   ]
 }
