@@ -5,8 +5,8 @@ title: "次の手順"
 description: "初めてのアプリの作成が終わったので、デベロッパー センターの他の部分を見てみましょう。 ここでは、デベロッパー センターの他の部分に含まれるさまざまなセクションについて説明します。"
 keywords: Dev Center, Getting started
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: cb77a32f99bc6e27cfe87af16d6cd4e08855d7b6
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 5d8f036b7dcaba1c697f574011875cadbf1970c1
 
 ---
 # 次の手順
@@ -39,7 +39,7 @@ Windows ストアを利用すると、何百万もの Microsoft Windows ユー�
 
 このセクションには、ユニバーサル Windows プラットフォーム (UWP) アプリを作成するために使用できるクラス、プロパティ、メソッド、イベント、スタイル、その他の API に関する詳細情報が含まれています。
 
-「[API リファレンス](https://msdn.microsoft.com/en-us/library/windows/apps/br211369.aspx)」をご覧ください。
+「[API リファレンス](https://msdn.microsoft.com/library/windows/apps/br211369.aspx)」をご覧ください。
 
 ## 言語のリファレンス
 
@@ -72,6 +72,6 @@ DirectX を使ったゲーム開発に興味がある場合、必要な情報は
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

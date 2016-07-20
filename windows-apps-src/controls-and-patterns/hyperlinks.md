@@ -5,6 +5,7 @@ title: "ハイパーリンク"
 ms.assetid: 74302FF0-65FC-4820-B59A-718A765EF7F0
 label: Hyperlinks
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
 ms.openlocfilehash: 1d19cfa9c272ee511fbaf89ac0076697ede470b9
 
@@ -53,7 +54,8 @@ ms.openlocfilehash: 1d19cfa9c272ee511fbaf89ac0076697ede470b9
 
 ![テキスト要素としてのハイパーリンクの例](images/controls_hyperlink-element.png) 
 
-> **ヒント**
+> 
+            **ヒント**
             &nbsp;&nbsp;テキスト コントロールでハイパーリンクを XAML のその他のテキスト要素と一緒に使用する場合、[スパン](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx) コンテナーにコンテンツを配置してスパンに `xml:space="preserve"` 属性を適用すると、ハイパーリンクとその他の要素間に空白を保持します。
 
 ## HyperlinkButton を作成する
@@ -85,7 +87,8 @@ ms.openlocfilehash: 1d19cfa9c272ee511fbaf89ac0076697ede470b9
 
 ハイパーリンクを使用して URI に移動するには、NavigateUri プロパティを設定します。 ユーザーがハイパーリンクをクリックしてまたはタップすると、指定された URI が既定のブラウザーで開きます。 既定のブラウザーは、アプリと別のプロセスで実行されます。
 
-> **注**
+> 
+            **注**
             &nbsp;&nbsp;http: または https: スキームを使用する必要はありません。 ブラウザーに読み込むのに適したリソース コンテンツがこれらの場所にある場合は、ms-appx:、ms-appdata: または ms リソース: などのスキームを使うことができます。 ただし、file: スキームは明確に禁止されます。 詳しくは、「[URI スキーム](https://msdn.microsoft.com/library/windows/apps/jj655406.aspx)」 をご覧ください。
 
 > ユーザーがハイパーリンクをクリックすると、URI の種類とスキームのシステムのハンドラーに NavigateUri プロパティの値が渡されます。 システムは、NavigateUri の指定された URI のスキームに対して登録されているアプリを起動します。
@@ -128,7 +131,8 @@ ms.openlocfilehash: 1d19cfa9c272ee511fbaf89ac0076697ede470b9
 
 **コンテンツ**
 
-ハイパーリンクには、その [Inlines](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.inlines.aspx) コレクション内にあるコンテンツの制限があります。 具体的には、ハイパーリンクは、[実行](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.run.aspx)および別のハイパーリンクではないその他の[スパン]() タイプのみ許可します。 [InlineUIContainer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.inlineuicontainer.aspx) は、ハイパーリンクの Inlines コレクション内にはありません。 制限されたコンテンツを追加しようとすると、無効な引数の例外、または XAML 解析例外がスローされます。
+ハイパーリンクには、その [Inlines](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.inlines.aspx) コレクション内にあるコンテンツの制限があります。 具体的には、ハイパーリンクは、[実行](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.run.aspx)および別のハイパーリンクではないその他の[スパン]() タイプのみ許可します。 
+            [InlineUIContainer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.inlineuicontainer.aspx) は、ハイパーリンクの Inlines コレクション内にはありません。 制限されたコンテンツを追加しようとすると、無効な引数の例外、または XAML 解析例外がスローされます。
 
 **ハイパーリンクとテーマまたはスタイルの動作**
 
@@ -139,8 +143,7 @@ ms.openlocfilehash: 1d19cfa9c272ee511fbaf89ac0076697ede470b9
 ## 推奨事項
 
 -   ハイパーリンクを使う場合は、移動のみを目的としてください。他の操作のためにハイパーリンクは使わないでください。
--   テキスト ベースのハイパーリンクには、書体見本の本文スタイルを使います。 [
-            **fonts and the Windows 10 type ramp**](fonts.md) に関するページをご覧ください。
+-   テキスト ベースのハイパーリンクには、書体見本の本文スタイルを使います。 [**fonts and the Windows 10 type ramp**](fonts.md) に関するページをご覧ください。
 -   個々のハイパーリンクの間には十分な間隔を空けます。これにより、それぞれのハイパーリンクを区別することができ、ハイパーリンクを間違えずに選ぶことができます。
 -   ユーザーの移動先を示すヒントをハイパーリンクに追加します。 ユーザーが外部サイトに移動する場合は、ヒント内にトップレベルのドメイン名を入れ、補助的なフォント色を使ってそのテキストのスタイルを指定します。
 
@@ -157,6 +160,6 @@ ms.openlocfilehash: 1d19cfa9c272ee511fbaf89ac0076697ede470b9
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

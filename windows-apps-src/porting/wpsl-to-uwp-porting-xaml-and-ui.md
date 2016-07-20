@@ -3,8 +3,9 @@ author: mcleblanc
 description: "宣言型 XAML マークアップ形式での UI の定義は、Windows Phone Silverlight からユニバーサル Windows プラットフォーム (UWP) アプリに非常に適切に変換されます。"
 title: "Windows Phone Silverlight の XAML と UI の UWP への移植"
 ms.assetid: 49aade74-5dc6-46a5-89ef-316dbeabbebe
-ms.sourcegitcommit: de5420b45832a482d08e5e7ede436407f7dbf2af
-ms.openlocfilehash: a34133b42872ce949644dc951255e6214164adad
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 7fa520443f242844cd661d70bad0fdeb2297fb1d
 
 ---
 
@@ -64,7 +65,8 @@ UWP で、"System" プレフィックス宣言を省略し、(既に宣言され
     return new BitmapImage(new Uri(this.CoverImagePath, UriKind.Relative));
 ```
 
-**BitmapImage** は Windows Phone Silverlight 内の **System.Windows.Media.Imaging** 名前空間にあり、同じファイル内の using ディレクティブによって、前記のスニペットのように、名前空間の認定資格なしに **BitmapImage** を使うことができます。 同様の場合に、Visual Studio で型名 (**BitmapImage**) を右クリックし、コンテキスト メニューの [**解決**] コマンドを使って新しい名前空間のディレクティブをファイルに追加できます。 この場合、該当する型が UWP に存在している、[**Windows.UI.Xaml.Media.Imaging**](https://msdn.microsoft.com/library/windows/apps/br243258) 名前空間が追加されます。 **System.Windows.Media.Imaging** の using ディレクティブは削除できます。また、前記のスニペットのようなコードの移植で必要になるのはこれだけです。 これによって、Windows Phone Silverlight 名前空間がすべて削除されます。
+
+              **BitmapImage** は Windows Phone Silverlight 内の **System.Windows.Media.Imaging** 名前空間にあり、同じファイル内の using ディレクティブによって、前記のスニペットのように、名前空間の認定資格なしに **BitmapImage** を使うことができます。 同様の場合に、Visual Studio で型名 (**BitmapImage**) を右クリックし、コンテキスト メニューの [**解決**] コマンドを使って新しい名前空間のディレクティブをファイルに追加できます。 この場合、該当する型が UWP に存在している、[**Windows.UI.Xaml.Media.Imaging**](https://msdn.microsoft.com/library/windows/apps/br243258) 名前空間が追加されます。 **System.Windows.Media.Imaging** の using ディレクティブは削除できます。また、前記のスニペットのようなコードの移植で必要になるのはこれだけです。 これによって、Windows Phone Silverlight 名前空間がすべて削除されます。
 
 古い名前空間の型を新しい名前空間の同じ型でマッピングするこのような簡単なケースでは、ソース コードに一括変更を加えるために、Visual Studio の [**検索と置換**] コマンドを使うこともできます。 [**解決**] コマンドは、型の新しい名前空間を検索するための効果的な方法です。 別の例として、すべての "System.Windows" を "Windows.UI.Xaml" に置換できます。 これによって基本的には、該当する名前空間を参照するすべての using ディレクティブおよび完全修飾されたすべての型名が移植されます。
 
@@ -154,20 +156,16 @@ Windows Phone Silverlight のアプリ バーとアプリ バーのボタンは�
 
 ただし、現在 UWP アプリのバインド関連の機能には以下の制限があります。
 
--   データ エントリ検証と [**IDataErrorInfo**](https://msdn.microsoft.com/en-us/library/system.componentmodel.idataerrorinfo.aspx) インターフェイスおよび [**INotifyDataErrorInfo**](https://msdn.microsoft.com/en-us/library/system.componentmodel.inotifydataerrorinfo.aspx) インターフェイスには、サポートが組み込まれていません。
--   [
-            **Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) クラスには、Windows Phone Silverlight で利用できる拡張書式設定プロパティが含まれていません。 ただし、[**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903) を実装してカスタム書式設定を提供することはできます。
--   [
-            **IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903) メソッドは、言語文字列を、[**CultureInfo**](https://msdn.microsoft.com/en-us/library/system.globalization.cultureinfo.aspx) オブジェクトではなくパラメーターとして受け取ります。
--   [
-            **CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833) クラスには、並べ替えとフィルター処理、さまざまなグループへの作業のグループ化のサポートが組み込まれていません。 詳しくは、「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」と[データ バインディングのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=226854)をご覧ください。
+-   データ エントリ検証と [**IDataErrorInfo**](https://msdn.microsoft.com/library/system.componentmodel.idataerrorinfo.aspx) インターフェイスおよび [**INotifyDataErrorInfo**](https://msdn.microsoft.com/library/system.componentmodel.inotifydataerrorinfo.aspx) インターフェイスには、サポートが組み込まれていません。
+-   [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) クラスには、Windows Phone Silverlight で利用できる拡張書式設定プロパティが含まれていません。 ただし、[**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903) を実装してカスタム書式設定を提供することはできます。
+-   [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903) メソッドは、言語文字列を、[**CultureInfo**](https://msdn.microsoft.com/library/system.globalization.cultureinfo.aspx) オブジェクトではなくパラメーターとして受け取ります。
+-   [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833) クラスには、並べ替えとフィルター処理、さまざまなグループへの作業のグループ化のサポートが組み込まれていません。 詳しくは、「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」と[データ バインディングのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=226854)をご覧ください。
 
 同じバインド機能が引き続き広くサポートされていますが、Windows 10 では、コンパイル済みバインドと呼ばれる新しい高パフォーマンスのバインド メカニズムのオプションが用意されています。このオプションでは、{x:Bind} マークアップ拡張を使います。 [データ バインディング: XAML データ バインディングの新しい拡張機能によるアプリのパフォーマンスの向上に関するページ](http://channel9.msdn.com/Events/Build/2015/3-635)と [x:Bind のサンプル](http://go.microsoft.com/fwlink/p/?linkid=619989)をご覧ください。
 
 ## ビュー モデルへの画像のバインド
 
-[
-            **Image.Source**](https://msdn.microsoft.com/library/windows/apps/br242760) プロパティは、ビュー モデルの [**ImageSource**](https://msdn.microsoft.com/library/windows/apps/br210107) 型であるどのプロパティにもバインドできます。 次に、Windows Phone Silverlight アプリのそのようなプロパティの一般的な実装を示します。
+[**Image.Source**](https://msdn.microsoft.com/library/windows/apps/br242760) プロパティは、ビュー モデルの [**ImageSource**](https://msdn.microsoft.com/library/windows/apps/br210107) 型であるどのプロパティにもバインドできます。 次に、Windows Phone Silverlight アプリのそのようなプロパティの一般的な実装を示します。
 
 ```csharp
     // this.BookCoverImagePath contains a path of the form "/Assets/CoverImages/one.png".
@@ -196,10 +194,12 @@ Windows Phone Silverlight アプリは、**Microsoft.Phone.Controls** 名前空�
 | ControlTiltEffect.TiltEffect クラス | UWP アニメーション ライブラリのアニメーションは、共通のコントロールの既定のスタイルに組み込まれています。 「[ポインター操作のアニメーション化](https://msdn.microsoft.com/library/windows/apps/xaml/jj649432)」をご覧ください。 |
 | グループ化されたデータを含む LongListSelector | Windows Phone Silverlight の LongListSelector は、連携する 2 つの方法で動作します。 まず、キーによってグループ化したデータを表示できます、たとえば、名前の一覧を最初の文字によってグループ化できます。 次に、2 つのセマンティック ビュー (名前などの項目のグループ化されたリストと、最初の文字などのグループ キー自体に限られるリスト) の間で "ズーム" できます。 UWP では、[リスト ビュー コントロールとグリッド ビュー コントロールのガイドライン](https://msdn.microsoft.com/library/windows/apps/mt186889)に従ってグループ化されたデータを表示できます。 |
 | フラット データを含む LongListSelector | パフォーマンス上の理由から、非常に長いリストの場合、グループ化されていないフラットなデータであっても Windows Phone Silverlight のリスト ボックスではなく LongListSelector を使うことをお勧めします。 UWP アプリでは、データのグループ化が可能であるかどうかにかかわらず、長い項目リストで [GridView](https://msdn.microsoft.com/library/windows/apps/br242705) を使うことをお勧めします。 |
-| Panorama | Windows Phone Silverlight Panorama コントロールは、[Windows ストア アプリのハブ コントロールのガイドライン](https://msdn.microsoft.com/library/windows/apps/dn449149)とハブ コントロールのガイドラインに対応付けられています。 <br/> Panorama コントロールは、最後のセクションから最初のセクションに折り返され、背景画像はセクションを基準とした視差効果で移動します。 [Hub](https://msdn.microsoft.com/library/windows/apps/dn251843) セクションは折り返されず、視差効果は使われません。 |
+| Panorama | Windows Phone Silverlight Panorama コントロールは、[Windows ストア アプリのハブ コントロールのガイドライン](https://msdn.microsoft.com/library/windows/apps/dn449149)とハブ コントロールのガイドラインに対応付けられています。 <br/> Panorama コントロールは、最後のセクションから最初のセクションに折り返され、背景画像はセクションを基準とした視差効果で移動します。 
+              [Hub](https://msdn.microsoft.com/library/windows/apps/dn251843) セクションは折り返されず、視差効果は使われません。 |
 | Pivot | Windows Phone Silverlight の Pivot コントロールに相当する UWP のコントロールは、[Windows.UI.Xaml.Controls.Pivot](https://msdn.microsoft.com/library/windows/apps/dn608241) です。 これはすべてのデバイス ファミリで利用できます。 |
 
-**注**   PointerOver 表示状態は、Windows 10 アプリのカスタム スタイル/テンプレートには関連しますが、Windows Phone Silverlight アプリのカスタム スタイル/テンプレートには関連しません。 既にあるカスタム スタイル/テンプレートが Windows 10 アプリで適切ではない場合があるのには、他の理由もあります。たとえば、使っているシステム リソース キー、使われる表示状態のセットへの変更、Windows 10 の既定のスタイル/テンプレートに対するパフォーマンスの向上が挙げられます。 Windows 10 用のコントロールの新しい既定のテンプレートのコピーを編集し、そのコピーにスタイルやテンプレートのカスタマイズをもう一度適用することをお勧めします。
+
+              **注**   PointerOver 表示状態は、Windows 10 アプリのカスタム スタイル/テンプレートには関連しますが、Windows Phone Silverlight アプリのカスタム スタイル/テンプレートには関連しません。 既にあるカスタム スタイル/テンプレートが Windows 10 アプリで適切ではない場合があるのには、他の理由もあります。たとえば、使っているシステム リソース キー、使われる表示状態のセットへの変更、Windows 10 の既定のスタイル/テンプレートに対するパフォーマンスの向上が挙げられます。 Windows 10 用のコントロールの新しい既定のテンプレートのコピーを編集し、そのコピーにスタイルやテンプレートのカスタマイズをもう一度適用することをお勧めします。
 
 UWP のコントロールについて詳しくは、「[機能別コントロール](https://msdn.microsoft.com/library/windows/apps/mt185405)」、「[コントロールの一覧](https://msdn.microsoft.com/library/windows/apps/mt185406)」、「[コントロールのガイドライン](https://msdn.microsoft.com/library/windows/apps/dn611856)」をご覧ください。
 
@@ -291,8 +291,7 @@ UWP アプリでは、起動ページを定義するために命令型コード�
     if (!rootFrame.Navigate(typeof(MainPage), e.Arguments))
 ```
 
-URI マッピングとフラグメント ナビゲーションは URI ナビゲーションの手法であり、したがって URI に基づく UWP ナビゲーションには該当しません。 URI マッピングは、ページが異なるフォルダー、したがって異なる相対パスに移動したときに脆弱性と保守性の問題が生じる URI 文字列によるターゲット ページの特定における弱い型の特性への対応として用意されているものです。 UWP アプリでは、厳密に型指定され、コンパイラで確認される型ベースのナビゲーションを使っており、URI マッピングの解決における問題がありません。 フラグメント ナビゲーションの使用事例は、ページでコンテンツの特定のフラグメントにビューをスクロールするか、または表示できるように、ターゲット ページにコンテキストを渡すことです。 [
-            **Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) メソッドの呼び出し時にナビゲーション パラメーターを渡すことでも、これは実現できます。
+URI マッピングとフラグメント ナビゲーションは URI ナビゲーションの手法であり、したがって URI に基づく UWP ナビゲーションには該当しません。 URI マッピングは、ページが異なるフォルダー、したがって異なる相対パスに移動したときに脆弱性と保守性の問題が生じる URI 文字列によるターゲット ページの特定における弱い型の特性への対応として用意されているものです。 UWP アプリでは、厳密に型指定され、コンパイラで確認される型ベースのナビゲーションを使っており、URI マッピングの解決における問題がありません。 フラグメント ナビゲーションの使用事例は、ページでコンテンツの特定のフラグメントにビューをスクロールするか、または表示できるように、ターゲット ページにコンテキストを渡すことです。 [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) メソッドの呼び出し時にナビゲーション パラメーターを渡すことでも、これは実現できます。
 
 詳しくは、「[ナビゲーション](https://msdn.microsoft.com/library/windows/apps/mt187344)」をご覧ください。
 
@@ -304,8 +303,7 @@ URI マッピングとフラグメント ナビゲーションは URI ナビゲ�
 
 ## ステータス バー (システム トレイ)
 
-システム トレイ (`shell:SystemTray.IsVisible` により XAML マークアップで設定される) は、現在ではステータス バーと呼ばれており、既定で示されます。 [
-            **Windows.UI.ViewManagement.StatusBar.ShowAsync**](https://msdn.microsoft.com/library/windows/apps/dn610343)メソッドと [**HideAsync**](https://msdn.microsoft.com/library/windows/apps/dn610339) メソッドを呼び出すことによって、表示するかどうかを命令型コードで制御できます。
+システム トレイ (`shell:SystemTray.IsVisible` により XAML マークアップで設定される) は、現在ではステータス バーと呼ばれており、既定で示されます。 [**Windows.UI.ViewManagement.StatusBar.ShowAsync**](https://msdn.microsoft.com/library/windows/apps/dn610343)メソッドと [**HideAsync**](https://msdn.microsoft.com/library/windows/apps/dn610339) メソッドを呼び出すことによって、表示するかどうかを命令型コードで制御できます。
 
 ## テキスト
 
@@ -374,7 +372,8 @@ Windows 10 アプリに対しては、すべてのデバイスが固定数の有
 
 すべてのディスプレイで最適なアプリのエクスペリエンスが実現できるように、一連のサイズで各ビットマップ アセットを作成し、各アセットが特定のスケール ファクターに適合するように設定することをお勧めします。 ただし、100% スケール、200% スケール、および 400% スケール (この優先順位で) でアセットを作成するほうが、多くの場合、すべての中間スケール ファクターで適切な結果を得ることができます。
 
-**注**  何らかの理由で複数のサイズでアセットを作成できない場合は、100% スケールのアセットを作成します。 Microsoft Visual Studio では、UWP アプリの既定のプロジェクト テンプレートには 1 つのサイズのみのブランド アセット (タイル イメージとロゴ) が用意されていますが、これらは 100% のスケールではありません。 独自のアプリのアセットを作成する場合は、このセクションに示したガイドラインに従って、100%、200%、400% のサイズを用意し、アセット パックを使います。
+
+              **注**  何らかの理由で複数のサイズでアセットを作成できない場合は、100% スケールのアセットを作成します。 Microsoft Visual Studio では、UWP アプリの既定のプロジェクト テンプレートには 1 つのサイズのみのブランド アセット (タイル イメージとロゴ) が用意されていますが、これらは 100% のスケールではありません。 独自のアプリのアセットを作成する場合は、このセクションに示したガイドラインに従って、100%、200%、400% のサイズを用意し、アセット パックを使います。
 
 複雑なアートワークがある場合は、さらに多くのサイズに対応したアセットが必要になることがあります。 ベクター アートを使って作業を始める場合は、どのようなスケール ファクターでも高品質なアセットを比較的簡単に生成できます。
 
@@ -400,6 +399,6 @@ UWP アプリでは、命令型コードを使って最小サイズ (幅と高�
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

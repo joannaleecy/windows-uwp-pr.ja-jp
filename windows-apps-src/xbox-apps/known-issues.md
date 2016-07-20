@@ -3,8 +3,9 @@ author: Mtoepke
 title: "Xbox One Developer Preview の UWP の既知の問題"
 description: 
 area: Xbox
-ms.sourcegitcommit: bdf7a32d2f0673ab6c176a775b805eff2b7cf437
-ms.openlocfilehash: 9a9180f8d6fcd51808310a7f8fbac986ca9c3817
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: e016be20af9a0d7a67fa383cbdc93083d12a1113
 
 ---
 
@@ -21,7 +22,8 @@ Xbox Developer Preview のシステム更新プログラムには、実験的な
 
 以降に、このリリースで発生する可能性のある既知の問題を示していますが、すべての問題は網羅されていません。 
 
-**お客様からのフィードバックは重要ですので**、問題が見つかりましたら[ユニバーサル Windows アプリの開発](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop)フォーラムでご報告ください。 
+
+              **お客様からのフィードバックは重要ですので**、問題が見つかりましたら[ユニバーサル Windows アプリの開発](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop)フォーラムでご報告ください。 
 
 行き詰まった場合は、このトピックの情報をお読みください。「[よく寄せられる質問](frequently-asked-questions.md)」を利用することも、フォーラムに質問を投稿することもできます。
 
@@ -44,17 +46,19 @@ public App() {
 }
 ```
 
-HTML/Javascript アプリでマウス モードを無効にするには、次の例に従ってください。
+HTML/JavaScript アプリでマウス モードを無効にするには、次の例に従ってください。
 
 ```code
 // Turn off mouse mode
 navigator.gamepadInputEmulation = "keyboard";
 ```
 
-> **注**
-            &nbsp;&nbsp;この開発者プレビューでは、マウス モードが有効になっているときにコントローラーの右ジョイスティックを使用してパンすると、本体の停止の原因となる可能性があります。 この問題が発生した場合は、本体を再起動する必要があります。
+HTML/JavaScript アプリで方向ナビゲーションを有効にする方法などについて詳しくは、「[マウス モードを無効にする方法](how-to-disable-mouse-mode.md#html)」をご覧ください。
 
-マウス モードのサポートについては、「[Xbox およびテレビ向け設計](https://msdn.microsoft.com/en-us/windows/uwp/input-and-devices/designing-for-tv?f=255&MSPPError=-2147217396#mouse-mode)」のトピックをご覧ください。 このトピックでは、アプリの適切な動作を選ぶことができるようにマウス モードを有効および無効にする方法ついて説明します。
+> 
+              **注**&nbsp;&nbsp;この開発者プレビューでは、マウス モードが有効になっているときにコントローラーの右ジョイスティックを使用してパンすると、本体の停止の原因となる可能性があります。 この問題が発生した場合は、本体を再起動する必要があります。
+
+マウス モードのサポートについては、「[Xbox およびテレビ向け設計](https://msdn.microsoft.com/windows/uwp/input-and-devices/designing-for-tv?f=255&MSPPError=-2147217396#mouse-mode)」のトピックをご覧ください。 このトピックでは、アプリの適切な動作を選ぶことができるようにマウス モードを有効および無効にする方法ついて説明します。
 
 ## アプリを展開するために、ユーザーをサインインさせる必要があります (エラー 0x87e10008)
 
@@ -110,7 +114,7 @@ Please use the forum to report any issues you see.-->
 
 ## DirectX 12 のサポート
 
-Xbox One の UWP は、DirectX 11 の機能レベル 10 をサポートしています。 現時点では DirectX 12 はサポートされていません。 Xbox One は、従来のすべてのゲーム コンソールと同じように、その潜在的な機能を最大限に利用するために特定の SDK を必要とする特殊なハードウェアです。 Xbox One のハードウェアの機能を最大限に利用する必要があるゲームを開発している場合、[ID@XBOX](http://www.xbox.com/en-us/Developers/id) プログラムに登録することで、DirectX 12 のサポートを含む SDK にアクセスできます。
+Xbox One の UWP は、DirectX 11 の機能レベル 10 をサポートしています。 現時点では DirectX 12 はサポートされていません。 Xbox One は、従来のすべてのゲーム コンソールと同じように、その潜在的な機能を最大限に利用するために特定の SDK を必要とする特殊なハードウェアです。 Xbox One のハードウェアの機能を最大限に利用する必要があるゲームを開発している場合、[ID@XBOX](http://www.xbox.com/Developers/id) プログラムに登録することで、DirectX 12 のサポートを含む SDK にアクセスできます。
 
 <!-- ### Xbox One Developer Preview disables game streaming to Windows 10
 
@@ -121,8 +125,8 @@ To restore the game streaming feature, you must leave the developer preview. -->
 
 既定では、Xbox 上の UWP アプリの表示領域は、テレビのセーフ エリアによって挿入される必要があります。 ただし、Xbox One Developer Preview には、テレビのセーフ エリアが [_offset_, _offset_] ではなく [0, 0] で開始されるという既知のバグがあります。
 
-> **注**
-            &nbsp;&nbsp;これは、Javascript を使用している UWP アプリにのみ該当します。
+> 
+              **注**&nbsp;&nbsp;これは、JavaScript を使用している UWP アプリにのみ該当します。
 
 この問題に対処するための最も簡単な方法として、次の JavaScript の例に示すように、テレビのセーフ エリアを無効にします。
 
@@ -138,10 +142,12 @@ UWP apps and games running on Xbox One share resources with the system and other
 If you are running into memory or performance issues, this may be why. 
 For more details, see [System resources for UWP apps and games on Xbox One](system-resource-allocation.md).-->
 
+<!--
+## Networking using traditional sockets
 
-## 従来のソケットを使用するネットワーク
-
-この開発者プレビューでは、従来の TCP/UDP ソケット (WinSock、Windows.Networking.Sockets) を使用するコンソールからの入力方向と出力方向のネットワーク アクセスが利用できません。 開発者は、引き続き HTTP と WebSocket を使用できます。 
+In this developer preview, inbound and outbound network access from the console that uses traditional TCP/UDP sockets (WinSock, Windows.Networking.Sockets) is not available. 
+Developers can still use HTTP and WebSockets.
+--> 
 
 
 ## UWP API カバレッジ
@@ -230,6 +236,6 @@ This is caused by a failure in the WDP infrastructure on the console and can be 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

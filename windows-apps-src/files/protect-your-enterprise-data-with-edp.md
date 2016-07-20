@@ -4,20 +4,22 @@ Description: "このトピックでは、ファイルに関連する最も一般
 MS-HAID: dev\_files.protect\_your\_enterprise\_data\_with\_edp
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: "企業のデータ保護 (EDP) を使ったファイルの保護"
+title: "エンタープライズ データ保護 (EDP) を使ったファイルの保護"
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 2d9b1ec4e39e5c8a100030184ee9287a0d97ea24
+ms.sourcegitcommit: 9b9e9ecb70f3a0bb92038ae94f45ddcee3357dbd
+ms.openlocfilehash: a31fc65599f43be5b302b568774a51ab77065300
 
 ---
 
-# 企業のデータ保護 (EDP) を使ったファイルの保護
+# エンタープライズ データ保護 (EDP) を使ったファイルの保護
 
-__注__ Windows 10 バージョン 1511 (ビルド 10586) またはそれ以前のバージョンでは、エンタープライズ データ保護 (EDP) ポリシーを適用できません。
+> [!NOTE]
+> Windows 10 バージョン 1511 (ビルド 10586) またはそれ以前のバージョンでは、エンタープライズ データ保護 (EDP) ポリシーを適用できません。
 
-このトピックでは、ファイルに関連する最も一般的なエンタープライズ データ保護 (EDP) シナリオのいくつかを実現するために必要なコード作成タスクの例を示します。 EDP とファイル、ストリーム、クリップボード、ネットワーク、バックグラウンド タスク、ロックの背後でのデータ保護との関係についての開発者向けの詳しい情報については、「[エンタープライズ データ保護 (EDP)](../enterprise/edp-hub.md)」をご覧ください。
+このトピックでは、ファイルに関連する最も一般的なエンタープライズ データ保護 (EDP) シナリオのいくつかを実現するために必要なコード作成タスクの例を示します。 EDP が、ファイル、ストリーム、クリップボード、ネットワーク、バックグラウンド タスク、ロックの背後でのデータ保護とどのように関係するかに関する開発者向けの詳しい情報については、「[エンタープライズ データ保護 (EDP)](../enterprise/edp-hub.md)」をご覧ください。
 
-**注**  このトピックで説明されているシナリオの多くは、[エンタープライズ データ保護 (EDP) のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)にも含まれています。
+> [!NOTE]
+> このトピックで取り上げるシナリオの多くは、[エンタープライズ データ保護 (EDP) のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)にも含まれています。
 
 ## 前提条件
 
@@ -53,7 +55,7 @@ string localFolderPath = ApplicationData.Current.LocalFolder.Path;
 
 企業データはさまざまな方法でアプリに入力されます (特定のネットワーク エンドポイントから、ファイルから、クリップボードから、共有コントラクトからなど)。 アプリで新しい企業データが作成される場合もあります。 企業データが入力された方法に関係なく、対応アプリでそのデータを新しいファイルに保存する際には、管理されている企業 ID に対してそのデータを保護するように注意する必要があります。
 
-基本的な手順では、標準の Storage API を使ってファイルを作成し、EDP API を使ってファイルを企業 ID に対して保護し、(再び標準の Storage API を使って) そのファイルへの書き込みを行います。 書き込みの前にファイルを保護することに注意してください (次の例をご覧ください)。 ファイルを保護するには [**FileProtectionManager.ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/dn705157) メソッドを使います。 また、通常どおり、ID に対する保護が意味をなすのはその ID が管理されている場合だけです。 その理由と、アプリが実行されている企業の ID を特定する方法については、「[ID が管理されていることの確認](../enterprise/edp-hub.md#confirming_an_identity_is_managed)」をご覧ください。
+基本的な手順では、標準の Storage API を使ってファイルを作成し、EDP API を使ってファイルを企業 ID に対して保護し、(再び標準の Storage API を使って) そのファイルへの書き込みを行います。 書き込みの前にファイルを保護することに注意してください (次の例をご覧ください)。 ファイルを保護するには [**FileProtectionManager.ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/dn705157) メソッドを使います。 また、通常どおり、ID に対する保護が意味をなすのはその ID が管理されている場合だけです。 その理由と、アプリが実行されている企業の ID を特定する方法については、「[ID が管理されていることの確認](../enterprise/edp-hub.md#confirming-an-identity-is-managed)」をご覧ください。
 
 ```CSharp
 using Windows.Security.EnterpriseData;
@@ -84,7 +86,8 @@ private async void SaveEnterpriseDataToFile(string enterpriseData, string identi
 ## 新しいファイルで企業データを保護する (バックグラウンド タスクの場合)
 
 
-前のセクションで使った [**FileProtectionManager.ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/dn705157) API が適切なのは対話型アプリに対してのみです。 バックグラウンド タスクの場合は、ロック画面の下でコードを実行できます。 また、"ロックの背後でのデータ保護" (DPL) の安全なポリシーが組織で管理されていて、デバイスがロックされているときは、保護されたリソースへのアクセスに必要な暗号化キーが一時的にデバイスのメモリから削除されます。 これにより、デバイスを紛失した場合のデータ漏えいを防ぐことができます。 この機能によって、保護されたファイルのハンドルを閉じたときに、ファイルに関連付けられているキーも削除されます。 ただし、ロック期間 (デバイスがロックされてからロック解除されるまでの時間) 中に保護された新しいファイルを作成し、そのファイル ハンドルを開いている間、それらにアクセスできる場合があります。 **StorageFolder.CreateFileAsync** は、ファイルが作成されるとハンドルを閉じるため、このアルゴリズムは使用できません。
+前のセクションで使った [**FileProtectionManager.ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/dn705157) API が適切なのは対話型アプリに対してのみです。 バックグラウンド タスクの場合は、ロック画面の下でコードを実行できます。 また、"ロックの背後でのデータ保護" (DPL) の安全なポリシーが組織で管理されていて、デバイスがロックされているときは、保護されたリソースへのアクセスに必要な暗号化キーが一時的にデバイスのメモリから削除されます。 これにより、デバイスを紛失した場合のデータ漏えいを防ぐことができます。 この機能によって、保護されたファイルのハンドルを閉じたときに、ファイルに関連付けられているキーも削除されます。 ただし、ロック期間 (デバイスがロックされてからロック解除されるまでの時間) 中に保護された新しいファイルを作成し、そのファイル ハンドルを開いている間、それらにアクセスできる場合があります。 
+            **StorageFolder.CreateFileAsync** は、ファイルが作成されるとハンドルを閉じるため、このアルゴリズムは使用できません。
 
 1.  **StorageFolder.CreateFileAsync** を使って新しいファイルを作成します。
 2.  **FileProtectionManager.ProtectAsync** を使って暗号化します。
@@ -139,8 +142,7 @@ private async void SaveEnterpriseDataToFile(string enterpriseData, string identi
 ## 企業データの格納を目的とするフォルダーを保護する
 
 
-フォルダー内のすべての項目を保護することもできます。 [
-            **FileProtectionManager.ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/dn705157) を使って空のフォルダーを保護します。 これにより、その後にそのフォルダー内に作成されたファイルやフォルダーもすべて保護されるようになります。 既にあるフォルダーを保護することも、新しいフォルダーを作成して保護することもできます (次の例では新しいフォルダーを作成しています)。 ただし、いずれの場合も、保護が適切に行われるためにはフォルダーがその時点で空になっている必要があります。 なっていない場合は、[**FileProtectionInfo.Status**](https://msdn.microsoft.com/library/windows/apps/dn705150) の値が [**FileProtectionStatus.NotProtectable**](https://msdn.microsoft.com/library/windows/apps/dn279147) になります。
+フォルダー内のすべての項目を保護することもできます。 [**FileProtectionManager.ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/dn705157) を使って空のフォルダーを保護します。 これにより、その後にそのフォルダー内に作成されたファイルやフォルダーもすべて保護されるようになります。 既にあるフォルダーを保護することも、新しいフォルダーを作成して保護することもできます (次の例では新しいフォルダーを作成しています)。 ただし、いずれの場合も、保護が適切に行われるためにはフォルダーがその時点で空になっている必要があります。 なっていない場合は、[**FileProtectionInfo.Status**](https://msdn.microsoft.com/library/windows/apps/dn705150) の値が [**FileProtectionStatus.NotProtectable**](https://msdn.microsoft.com/library/windows/apps/dn279147) になります。
 
 ```CSharp
 using Windows.Security.EnterpriseData;
@@ -250,26 +252,23 @@ private async void EnableUIPolicyFromFile(StorageFile storageFile)
 }
 ```
 
-**注:** この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
+> '!NOTE] この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブ ドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
  
 
 ## 関連トピック
 
+- [エンタープライズ データ保護 (EDP) のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)
 
-[エンタープライズ データ保護 (EDP) のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)
-
-[**Windows.Security.EnterpriseData 名前空間**](https://msdn.microsoft.com/library/windows/apps/dn279153)
-
- 
-
- 
+- [**Windows.Security.EnterpriseData 名前空間**](https://msdn.microsoft.com/library/windows/apps/dn279153)
 
 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+
+<!--HONumber=Jul16_HO1-->
 
 

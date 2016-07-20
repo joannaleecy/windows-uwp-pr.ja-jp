@@ -2,8 +2,9 @@
 author: JordanRh1
 title: "Windows 10 IoT Core でのユーザー モード アクセスの有効化"
 description: "このチュートリアルでは、Windows 10 IoT Core で GPIO、I2C、SPI、および UART へのユーザー モード アクセスを有効にする方法について説明します。"
-ms.sourcegitcommit: f7d7dac79154b1a19eb646e7d29d70b2f6a15e35
-ms.openlocfilehash: eedabee593400ff0260b6d3468ac922285a034f8
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: eddb2ca0aaa4bdbc19b2c3015ec8d599e0ef5584
 
 ---
 # Windows 10 IoT Core でのユーザー モード アクセスの有効化
@@ -38,7 +39,7 @@ Device(RHPX)
 * _CID – 互換性 ID です。 “MSFT8000” にする必要があります。  
 * _UID – 一意の ID です。 1 に設定します。  
 
-次に、ユーザー モードに公開する GPIO リソースと SPB リソースをそれぞれ宣言します。 プロパティとリソースを関連付けるためにリソース インデックスが使われるため、リソースが宣言される順序は重要です。 複数の I2C または SPI バスが公開されている場合は、最初に宣言されているバスがその種類のバスの '既定' と見なされ、[Windows.Devices.I2c.I2cController](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.i2c.i2ccontroller.aspx) および [Windows.Devices.Spi.SpiController](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.spi.spicontroller.aspx) の `GetDefaultAsync()` メソッドによって返されるインスタンスになります。 
+次に、ユーザー モードに公開する GPIO リソースと SPB リソースをそれぞれ宣言します。 プロパティとリソースを関連付けるためにリソース インデックスが使われるため、リソースが宣言される順序は重要です。 複数の I2C または SPI バスが公開されている場合は、最初に宣言されているバスがその種類のバスの '既定' と見なされ、[Windows.Devices.I2c.I2cController](https://msdn.microsoft.com/library/windows/apps/windows.devices.i2c.i2ccontroller.aspx) および [Windows.Devices.Spi.SpiController](https://msdn.microsoft.com/library/windows/apps/windows.devices.spi.spicontroller.aspx) の `GetDefaultAsync()` メソッドによって返されるインスタンスになります。 
 
 ### SPI 
 
@@ -616,7 +617,8 @@ Device(I2C1)
 
 これらの 2 つの新しい DDI に加えて、既存の DDI もピンの多重化の互換性の監査対象とする必要があります。 
 
-* CLIENT_ConnectIoPins/CLIENT_ConnectInterrupt – CLIENT_ConnectIoPins は GpioClx によって呼び出され、ミニポート ドライバーが GPIO 入力または出力のための一連のピンを構成するように指示を出します。 GPIO は MsftFunctionConfig と相互に排他的なため、GPIO と MsftFunctionConfig に同時にピンが接続されることはありません。 ピンの既定の機能が GPIO である必要はないため、ConnectIoPins が呼び出されたときにピンが必ずしも GPIO に多重化されないとは限りません。 ConnectIoPins は、多重化操作を含む、GPIO IO のためのピンの準備に必要なすべての操作を実行するために必要です。 割り込みは GPIO 入力の特殊なケースと考えることができるため、*CLIENT_ConnectInterrupt* も同様に動作する必要があります。 
+* CLIENT_ConnectIoPins/CLIENT_ConnectInterrupt – CLIENT_ConnectIoPins は GpioClx によって呼び出され、ミニポート ドライバーが GPIO 入力または出力のための一連のピンを構成するように指示を出します。 GPIO は MsftFunctionConfig と相互に排他的なため、GPIO と MsftFunctionConfig に同時にピンが接続されることはありません。 ピンの既定の機能が GPIO である必要はないため、ConnectIoPins が呼び出されたときにピンが必ずしも GPIO に多重化されないとは限りません。 ConnectIoPins は、多重化操作を含む、GPIO IO のためのピンの準備に必要なすべての操作を実行するために必要です。 
+              割り込みは GPIO 入力の特殊なケースと考えることができるため、*CLIENT_ConnectInterrupt* も同様に動作する必要があります。 
 * CLIENT_DisconnectIoPins/CLIENT_DisconnectInterrupt – これらのルーチンは、PreserveConfiguration フラグが指定されていない限り、CLIENT_ConnectIoPins/CLIENT_ConnectInterrupt が呼び出されたときの状態にピンを戻す必要があります。 ピンの方向を既定の状態に戻すだけでなく、ミニポートが各ピンの多重化の状態を _Connect routine が呼び出されたときの状態に戻す必要もあります。 
 
 たとえば、ピンの既定の多重化構成が UART で、ピンが GPIO としても使うことができると想定します。 GPIO のピンの接続のために CLIENT_ConnectIoPins が呼び出されると、ピンを GPIO に多重化する必要があり、CLIENT_DisconnectIoPins でピンを UART に多重化して戻す必要があります。 一般的に、_Disconnect ルーチンは _Connect ルーチンによって行われた操作を元に戻す必要があります。 
@@ -702,9 +704,9 @@ Gpio、I2c、Spi、シリアルのためのシンプルなコマンド ライン
 
 | ツール | リンク |
 |------|------|
-| GpioTestTool | https://developer.microsoft.com/en-us/windows/iot/win10/samples/GPIOTestTool |
-| I2cTestTool   | https://developer.microsoft.com/en-us/windows/iot/win10/samples/I2cTestTool | 
-| SpiTestTool | https://developer.microsoft.com/en-us/windows/iot/win10/samples/spitesttool |
+| GpioTestTool | https://developer.microsoft.com/windows/iot/win10/samples/GPIOTestTool |
+| I2cTestTool   | https://developer.microsoft.com/windows/iot/win10/samples/I2cTestTool | 
+| SpiTestTool | https://developer.microsoft.com/windows/iot/win10/samples/spitesttool |
 | MinComm (シリアル) |    https://github.com/ms-iot/samples/tree/develop/MinComm |
 
 ## リソース
@@ -722,9 +724,9 @@ Gpio、I2c、Spi、シリアルのためのシンプルなコマンド ライン
 | GpioClx   | https://msdn.microsoft.com/library/windows/hardware/hh439508.aspx |
 | SerCx | https://msdn.microsoft.com/library/windows/hardware/ff546939.aspx |
 | MITT I2C テスト | https://msdn.microsoft.com/library/windows/hardware/dn919852.aspx |
-| GpioTestTool | https://developer.microsoft.com/en-us/windows/iot/win10/samples/GPIOTestTool |
-| I2cTestTool   | https://developer.microsoft.com/en-us/windows/iot/win10/samples/I2cTestTool | 
-| SpiTestTool | https://developer.microsoft.com/en-us/windows/iot/win10/samples/spitesttool |
+| GpioTestTool | https://developer.microsoft.com/windows/iot/win10/samples/GPIOTestTool |
+| I2cTestTool   | https://developer.microsoft.com/windows/iot/win10/samples/I2cTestTool | 
+| SpiTestTool | https://developer.microsoft.com/windows/iot/win10/samples/spitesttool |
 | MinComm (シリアル) |    https://github.com/ms-iot/samples/tree/develop/MinComm |
 | ハードウェア ラボ キット (HLK) | https://msdn.microsoft.com/library/windows/hardware/dn930814.aspx |
 
@@ -732,7 +734,7 @@ Gpio、I2c、Spi、シリアルのためのシンプルなコマンド ライン
 
 ### 付録 A - Raspberry Pi ASL の一覧
 
-ヘッダーのピン配列: https://developer.microsoft.com/en-us/windows/iot/win10/samples/PinMappingsRPi2
+ヘッダーのピン配列: https://developer.microsoft.com/windows/iot/win10/samples/PinMappingsRPi2
 
 ```
 DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
@@ -894,7 +896,7 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
 
 ### 付録 B - MinnowBoardMax ASL の一覧
 
-Header pinout: https://developer.microsoft.com/en-us/windows/iot/win10/samples/PinMappingsMBM
+ヘッダーのピン配列: https://developer.microsoft.com/windows/iot/win10/samples/PinMappingsMBM
 
 ```
 DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
@@ -1085,6 +1087,6 @@ GpioInt(Edge, ActiveBoth, Shared, $($_.PullConfig), 0, "\\_SB.GPI0",) { $($_.Pin
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

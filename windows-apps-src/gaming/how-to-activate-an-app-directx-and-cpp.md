@@ -39,7 +39,8 @@ void App::Initialize(CoreApplicationView^ applicationView)
 ## アプリの CoreWindow インスタンスをアクティブ化する
 
 
-アプリの起動時に、アプリの [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) への参照を取得する必要があります。 **CoreWindow** には、アプリがウィンドウ イベントの処理に使うウィンドウ イベント メッセージ ディスパッチャーが含まれています。 アプリのアクティブ化イベントのコールバックで、[**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589) を呼び出して、この参照を取得します。 この参照を取得したら、[**CoreWindow::Activate**](https://msdn.microsoft.com/library/windows/apps/br208254) を呼び出して、メイン アプリ ウィンドウをアクティブ化します。
+アプリの起動時に、アプリの [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) への参照を取得する必要があります。 
+            **CoreWindow** には、アプリがウィンドウ イベントの処理に使うウィンドウ イベント メッセージ ディスパッチャーが含まれています。 アプリのアクティブ化イベントのコールバックで、[**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589) を呼び出して、この参照を取得します。 この参照を取得したら、[**CoreWindow::Activate**](https://msdn.microsoft.com/library/windows/apps/br208254) を呼び出して、メイン アプリ ウィンドウをアクティブ化します。
 
 ```cpp
 void App::OnActivated(CoreApplicationView^ applicationView, IActivatedEventArgs^ args)

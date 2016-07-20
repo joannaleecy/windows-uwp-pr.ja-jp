@@ -4,8 +4,8 @@ ms.assetid: 9347AD7C-3A90-4073-BFF4-9E8237398343
 description: "この記事では、UWP アプリ用のオーディオとビデオのコーデックおよび形式のサポートを示します。"
 title: "サポートされるコーデック"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 1481f8bbb2c53f667d253e23af1422297e19c63d
+ms.sourcegitcommit: b4d6a9f7cc8b343ee1cbd31bcfd8f19e329c82dc
+ms.openlocfilehash: 00fbbdde8d805ce7ae07df1d52dd8171de7d58ab
 
 ---
 
@@ -65,7 +65,7 @@ ms.openlocfilehash: 1481f8bbb2c53f667d253e23af1422297e19c63d
 <tbody>
 <tr class="odd">
 <td align="left">HE-AAC v1/AAC+</td>
-<td align="left">D/E</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left">D</td>
@@ -80,7 +80,7 @@ ms.openlocfilehash: 1481f8bbb2c53f667d253e23af1422297e19c63d
 </tr>
 <tr class="even">
 <td align="left">HE-AAC v2/eAAC+</td>
-<td align="left">D/E</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left">D</td>
@@ -687,7 +687,7 @@ ms.openlocfilehash: 1481f8bbb2c53f667d253e23af1422297e19c63d
 <tbody>
 <tr class="odd">
 <td align="left">HE-AAC v1/AAC+</td>
-<td align="left">D/E</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left">D</td>
@@ -702,7 +702,7 @@ ms.openlocfilehash: 1481f8bbb2c53f667d253e23af1422297e19c63d
 </tr>
 <tr class="even">
 <td align="left">HE-AAC v2/eAAC+</td>
-<td align="left">D/E</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left">D</td>
@@ -998,7 +998,7 @@ ms.openlocfilehash: 1481f8bbb2c53f667d253e23af1422297e19c63d
 <tbody>
 <tr class="odd">
 <td align="left">HE-AAC v1/AAC+</td>
-<td align="left">D/E</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left">D</td>
@@ -1013,7 +1013,7 @@ ms.openlocfilehash: 1481f8bbb2c53f667d253e23af1422297e19c63d
 </tr>
 <tr class="even">
 <td align="left">HE-AAC v2/eAAC+</td>
-<td align="left">D/E</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left">D</td>
@@ -2697,6 +2697,6 @@ ms.openlocfilehash: 1481f8bbb2c53f667d253e23af1422297e19c63d
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

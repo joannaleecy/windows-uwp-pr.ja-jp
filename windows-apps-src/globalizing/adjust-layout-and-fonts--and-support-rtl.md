@@ -6,8 +6,8 @@ ms.assetid: F2522B07-017D-40F1-B3C8-C4D0DFD03AC3
 label: Adjust layout and fonts, and support RTL
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: 989d810724c925a5bcbebf5f7fb301636905fff9
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: a1b271360b84e670f0b28557ffc499436487ad5f
 
 ---
 
@@ -38,8 +38,7 @@ RTL (右から左) のテキストの方向を含め、複数の言語のレイ�
 
 C++、C\#、または Visual Basic を使った Windows ストア アプリの場合、左右対称のパディング、余白と共に [**FlowDirection**](https://msdn.microsoft.com/library/windows/apps/br208716) プロパティを使い、他のレイアウト方向のローカライズを有効にできます。
 
-[
-            **Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) などの XAML レイアウト コントロールは、[**FlowDirection**](https://msdn.microsoft.com/library/windows/apps/br208716) プロパティを使って自動的に拡大縮小と反転を行います。 アプリ内に、独自の **FlowDirection** プロパティをローカライズ担当者用のリソースとして表示します。
+[**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) などの XAML レイアウト コントロールは、[**FlowDirection**](https://msdn.microsoft.com/library/windows/apps/br208716) プロパティを使って自動的に拡大縮小と反転を行います。 アプリ内に、独自の **FlowDirection** プロパティをローカライズ担当者用のリソースとして表示します。
 
 アプリのメイン ページには **Uid** を指定します。
 
@@ -51,7 +50,7 @@ C++、C\#、または Visual Basic を使った Windows ストア アプリの�
 
 ### <span id="HTML"></span><span id="html"></span>HTML
 
-JavaScript を使った Windows ストア アプリの場合は、[-ms-grid](https://msdn.microsoft.com/library/ms531209) や [– ms-box](https://msdn.microsoft.com/en-us/library/windows/apps/hh465453.aspx#g_section) などの [カスケード スタイル シート (CSS)](https://msdn.microsoft.com/en-us/library/windows/apps/hh465453.aspx#f_section) レイアウト メカニズムを使ってください。 さまざまなレイアウト方向のローカライズには、左右対称のパディングと余白を使います。
+JavaScript を使った Windows ストア アプリの場合は、[-ms-grid](https://msdn.microsoft.com/library/ms531209) や [– ms-box](https://msdn.microsoft.com/library/windows/apps/hh465453.aspx#g_section) などの [カスケード スタイル シート (CSS)](https://msdn.microsoft.com/library/windows/apps/hh465453.aspx#f_section) レイアウト メカニズムを使ってください。 さまざまなレイアウト方向のローカライズには、左右対称のパディングと余白を使います。
 
 このほか、アプリの言語に応じて [**:-ms-lang()**](https://msdn.microsoft.com/library/cc848867) 擬似クラス セレクターを使って特定の要素の幅などの CSS プロパティを調整できます。 アプリ ホスティング プロセスは、これを有効にするためにルート要素の **lang** 属性をアプリ言語に設定します。
 
@@ -98,19 +97,20 @@ RTL に対応するため左右反転が必要な画像がアプリに含まれ�
 .mirrorable { transform: scaleX(-1); }
 ```
 
-**XAML と HTML の両方:** 画像を正しく反転させるためにアプリで別の画像が必要な場合は、[layoutdir 修飾子](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)を指定してリソース管理システムを使うことができます。 [アプリケーション言語](manage-language-and-region.md) が RTL 言語に設定されている場合、システムは file.layoutdir-rtl.png という名前が付いた画像を選びます。 画像の一部を反転させ、他の部分は反転させないという場合には、この方法が必要になることもあります。
+
+              **XAML と HTML の両方:** 画像を正しく反転させるためにアプリで別の画像が必要な場合は、[layoutdir 修飾子](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)を指定してリソース管理システムを使うことができます。 [アプリケーション言語](manage-language-and-region.md) が RTL 言語に設定されている場合、システムは file.layoutdir-rtl.png という名前が付いた画像を選びます。 画像の一部を反転させ、他の部分は反転させないという場合には、この方法が必要になることもあります。
 
 ## <span id="Fonts"></span><span id="fonts"></span><span id="FONTS"></span>フォント
 
 
-**XAML と HTML の両方:** 特定言語の推奨フォント ファミリ、サイズ、太さ、スタイルにプログラムを使ってアクセスする場合は、[**LanguageFont**](https://msdn.microsoft.com/library/windows/apps/br206864) フォント マッピング API を使ってください。 **LanguageFont** オブジェクトを使うと、コンテンツのさまざまなカテゴリ (UI ヘッダー、通知、本文のテキスト、ユーザー自身で編集できるドキュメント本文のフォントなど) の正しいフォント情報にアクセスできます。
+
+              **XAML と HTML の両方:** 特定言語の推奨フォント ファミリ、サイズ、太さ、スタイルにプログラムを使ってアクセスする場合は、[**LanguageFont**](https://msdn.microsoft.com/library/windows/apps/br206864) フォント マッピング API を使ってください。 **LanguageFont** オブジェクトを使うと、コンテンツのさまざまなカテゴリ (UI ヘッダー、通知、本文のテキスト、ユーザー自身で編集できるドキュメント本文のフォントなど) の正しいフォント情報にアクセスできます。
 
 ### <span id="HTML"></span><span id="html"></span>HTML
 
 JavaScript を使った Windows ストア アプリで ui-light.css または ui-dark.css スタイル シートを使うと、アプリ言語に応じてフォント セットが自動的に最も適切なフォントに設定されます。 アプリ ホスティング プロセスは、ルート要素の **lang** 属性をアプリ言語に設定します。
 
-単一のページに複数の言語を表示するアプリは、各言語のセクションに **lang** 属性を設定する必要があります。 [
-            **:-ms-lang()**](https://msdn.microsoft.com/library/cc848867) 擬似クラス セレクターは、ページのセクションごとに正しいフォントを選びます。
+単一のページに複数の言語を表示するアプリは、各言語のセクションに **lang** 属性を設定する必要があります。 [**:-ms-lang()**](https://msdn.microsoft.com/library/cc848867) 擬似クラス セレクターは、ページのセクションごとに正しいフォントを選びます。
 
  
 
@@ -121,6 +121,6 @@ JavaScript を使った Windows ストア アプリで ui-light.css または ui
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

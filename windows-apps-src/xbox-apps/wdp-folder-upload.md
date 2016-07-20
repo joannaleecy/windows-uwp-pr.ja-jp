@@ -2,6 +2,7 @@
 author: WilliamsJason
 title: "Device Portal のフォルダー アップロード API のリファレンス"
 description: "フォルダー アップロード API にプログラムでアクセスする方法について説明します。"
+translationtype: Human Translation
 ms.sourcegitcommit: fdc25fa4bd7bd5bfa598b993f23cd0ae9783dd0e
 ms.openlocfilehash: 942ddc13b0deba382ad7758bc30bd9a5b0cceb11
 
@@ -53,6 +54,6 @@ HTTP 状態コード      | 説明
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

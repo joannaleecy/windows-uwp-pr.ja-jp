@@ -4,8 +4,8 @@ ms.assetid: 3A404CC0-A997-45C8-B2E8-44745539759D
 title: "ファイル アクセス許可"
 description: "アプリは既定でファイル システムの特定の場所にアクセスできます。 また、ファイル ピッカーを使うか機能を宣言すると、その他の場所にアクセスすることもできます。"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 91f97f1ba245b0cf6cac1cff7971cace5ca3b5a0
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: abcd6c1747566c7f8464016fadcb5a0441652afb
 
 ---
 # ファイル アクセス許可
@@ -19,7 +19,8 @@ ms.openlocfilehash: 91f97f1ba245b0cf6cac1cff7971cace5ca3b5a0
 
 新しいアプリを作成すると、既定でファイル システムの次の場所にアクセスできます。
 
--   **アプリケーションのインストール ディレクトリ**。 ユーザーのシステムでアプリがインストールされているフォルダーです。
+-   
+              **アプリケーションのインストール ディレクトリ**。 ユーザーのシステムでアプリがインストールされているフォルダーです。
 
     アプリのインストール ディレクトリにあるファイルやフォルダーにアクセスする主な方法は 2 とおりあります。
 
@@ -32,8 +33,7 @@ ms.openlocfilehash: 91f97f1ba245b0cf6cac1cff7971cace5ca3b5a0
         var installDirectory = Windows.ApplicationModel.Package.current.installedLocation;
         ```
 
-       [
-            **StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) メソッドを使って、ディレクトリ内のファイルとフォルダーにアクセスすることができます。 上の例では、この **StorageFolder** が `installDirectory` 変数に格納されています。 アプリ パッケージやインストール ディレクトリの操作について詳しくは、Windows 8.1 の[アプリ パッケージ情報のサンプル](http://go.microsoft.com/fwlink/p/?linkid=231526)をダウンロードしてご覧ください。また、Windows 10 アプリでソース コードを再利用することもできます。
+       [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) メソッドを使って、ディレクトリ内のファイルとフォルダーにアクセスすることができます。 上の例では、この **StorageFolder** が `installDirectory` 変数に格納されています。 アプリ パッケージやインストール ディレクトリの操作について詳しくは、Windows 8.1 の[アプリ パッケージ情報のサンプル](http://go.microsoft.com/fwlink/p/?linkid=231526)をダウンロードしてご覧ください。また、Windows 10 アプリでソース コードを再利用することもできます。
 
     2.  次のように、アプリの URI を使って、アプリのインストール ディレクトリからファイルを直接取得できます。
         > [!div class="tabbedCodeSnippets"]
@@ -49,8 +49,7 @@ ms.openlocfilehash: 91f97f1ba245b0cf6cac1cff7971cace5ca3b5a0
         );
         ```
         
-        [
-            **GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) が完了すると、アプリのインストール ディレクトリにある *file.txt* ファイル (この例では `file`) を表す [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) が返されます。
+        [**GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) が完了すると、アプリのインストール ディレクトリにある *file.txt* ファイル (この例では `file`) を表す [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) が返されます。
 
         URI の "ms-appx:///" プレフィックスは、アプリのインストール ディレクトリを参照します。 アプリの URI の使用について詳しくは、「[URI を使ってコンテンツを参照する方法](https://msdn.microsoft.com/library/windows/apps/hh781215)」をご覧ください。
 
@@ -62,8 +61,7 @@ ms.openlocfilehash: 91f97f1ba245b0cf6cac1cff7971cace5ca3b5a0
 
     アプリ データの場所にあるファイルやフォルダーにアクセスする主な方法は 2 とおりあります。
 
-    1.  [
-            **ApplicationData**](https://msdn.microsoft.com/library/windows/apps/br241587) プロパティを使ってアプリ データ フォルダーを取得します。
+    1.  [**ApplicationData**](https://msdn.microsoft.com/library/windows/apps/br241587) プロパティを使ってアプリ データ フォルダーを取得します。
 
         たとえば、次のように、[**ApplicationData**](https://msdn.microsoft.com/library/windows/apps/br241587).[**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621) を使って、アプリのローカル フォルダーを表す [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) を取得できます。
         > [!div class="tabbedCodeSnippets"]
@@ -93,8 +91,7 @@ ms.openlocfilehash: 91f97f1ba245b0cf6cac1cff7971cace5ca3b5a0
         );
         ```
 
-        [
-            **GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) が完了すると、アプリのローカル フォルダーにある *file.txt* ファイル (この例では `file`) を表す [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) が返されます。
+        [**GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) が完了すると、アプリのローカル フォルダーにある *file.txt* ファイル (この例では `file`) を表す [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) が返されます。
 
         URI の "ms-appdata:///local/" プレフィックスは、アプリのローカル フォルダーを参照します。 アプリの移動フォルダーまたは一時フォルダーにあるファイルにアクセスするには、"ms-appdata:///roaming/" または "ms-appdata:///temporary/" を使います。 アプリの URI の使用について詳しくは、「[ファイル リソースを読み込む方法](https://msdn.microsoft.com/library/windows/apps/hh781229)」をご覧ください。
 
@@ -102,11 +99,12 @@ ms.openlocfilehash: 91f97f1ba245b0cf6cac1cff7971cace5ca3b5a0
 
     ローカル フォルダー、移動フォルダー、一時フォルダーにファイル ピッカーでアクセスすることはできません。
 
--   **リムーバブル デバイス。** さらに、接続されているデバイス上の一部のファイルに既定でアクセスできます。 これは、[自動再生拡張機能](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh464906.aspx#autoplay)を使って、ユーザーがデバイス (カメラや USB サム ドライブなど) をシステムに接続したときに自動的に起動されるようにする場合に使うことができます。 アプリでアクセスできるファイルの種類は、アプリ マニフェストのファイルの種類の関連付けの宣言で指定されたものだけに制限されます。
+-   **リムーバブル デバイス。** さらに、接続されているデバイス上の一部のファイルに既定でアクセスできます。 これは、[自動再生拡張機能](https://msdn.microsoft.com/library/windows/apps/xaml/hh464906.aspx#autoplay)を使って、ユーザーがデバイス (カメラや USB サム ドライブなど) をシステムに接続したときに自動的に起動されるようにする場合に使うことができます。 アプリでアクセスできるファイルの種類は、アプリ マニフェストのファイルの種類の関連付けの宣言で指定されたものだけに制限されます。
 
     もちろん、ファイル ピッカー ([**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) と [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881)) を呼び出して、アプリでアクセスするファイルやフォルダーをユーザーが選べるようにすると、リムーバブル デバイス上のファイルやフォルダーにもアクセスできます。 ファイル ピッカーの使い方については、「[ピッカーでファイルやフォルダーを開く](quickstart-using-file-and-folder-pickers.md)」をご覧ください。
 
-    **注:** モバイル アプリから SD カードにアクセスする方法について詳しくは、「[SD カードへのアクセス](access-the-sd-card.md)」をご覧ください。
+    
+              **注:** モバイル アプリから SD カードにアクセスする方法について詳しくは、「[SD カードへのアクセス](access-the-sd-card.md)」をご覧ください。
 
      
 
@@ -130,9 +128,9 @@ ms.openlocfilehash: 91f97f1ba245b0cf6cac1cff7971cace5ca3b5a0
         );
         ```
  
-        [
-              **DownloadsFolder**
-            ](https://msdn.microsoft.com/library/windows/apps/br241632).[**CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh996761) は、同じ名前のファイルが既に Downloads フォルダーにある場合の処理を指定できるようにオーバーロードされます。 これらのメソッドが完了すると、作成されたファイルを表す [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) が返されます。 上の例では、このファイルの名前は `newFile` です。
+        
+              [
+              **DownloadsFolder**](https://msdn.microsoft.com/library/windows/apps/br241632).[**CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh996761) は、同じ名前のファイルが既に Downloads フォルダーにある場合の処理を指定できるようにオーバーロードされます。 これらのメソッドが完了すると、作成されたファイルを表す [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) が返されます。 上の例では、このファイルの名前は `newFile` です。
 
     -   次のように、ユーザーの Downloads フォルダーにサブフォルダーを作成できます。
         > [!div class="tabbedCodeSnippets"]
@@ -148,9 +146,9 @@ ms.openlocfilehash: 91f97f1ba245b0cf6cac1cff7971cace5ca3b5a0
         );
         ```
  
-        [
-              **DownloadsFolder**
-            ](https://msdn.microsoft.com/library/windows/apps/br241632).[**CreateFolderAsync**](https://msdn.microsoft.com/library/windows/apps/hh996763) は、同じ名前のサブフォルダーが既に Downloads フォルダーにある場合の処理を指定できるようにオーバーロードされます。 これらのメソッドが完了すると、作成されたサブフォルダーを表す [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) が返されます。 上の例では、このファイルの名前は `newFolder` です。
+        
+              [
+              **DownloadsFolder**](https://msdn.microsoft.com/library/windows/apps/br241632).[**CreateFolderAsync**](https://msdn.microsoft.com/library/windows/apps/hh996763) は、同じ名前のサブフォルダーが既に Downloads フォルダーにある場合の処理を指定できるようにオーバーロードされます。 これらのメソッドが完了すると、作成されたサブフォルダーを表す [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) が返されます。 上の例では、このファイルの名前は `newFolder` です。
 
     Downloads フォルダーにファイルやフォルダーを作成する場合は、以降に簡単にアクセスできるように、その項目をアプリの [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) に追加することをお勧めします。
 
@@ -174,6 +172,6 @@ ms.openlocfilehash: 91f97f1ba245b0cf6cac1cff7971cace5ca3b5a0
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

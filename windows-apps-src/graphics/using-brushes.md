@@ -3,8 +3,9 @@ author: Jwmsft
 ms.assetid: 02141F86-355E-4046-86EA-2A89D615B7DB
 title: "ブラシの使用"
 description: "Brush オブジェクトは、コントロールの領域、テキスト、図形の内側または輪郭を塗りつぶすことで、その対象領域を UI 上で視覚的に確認できるようにする目的で使います。"
-ms.sourcegitcommit: 8a28765f5451e4303d6204070c38596773cb65b9
-ms.openlocfilehash: 4846630eb72c5fc81e01cc46f5ad362b0851292e
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 38999529dda7f5e21ef7aee4a99b2420cb37bfa6
 
 ---
 # ブラシの使用
@@ -16,27 +17,23 @@ ms.openlocfilehash: 4846630eb72c5fc81e01cc46f5ad362b0851292e
 
 -   [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076)
 
-[
-              **Brush**
-            ](https://msdn.microsoft.com/library/windows/apps/BR228076) オブジェクトは、コントロールの領域、テキスト、図形の内側または輪郭を塗りつぶすことで、その対象領域を UI 上で視覚的に確認できるようにする目的で使います。 ここでは、利用可能なブラシとそれらの使い方について説明します。
+
+              [
+              **Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) オブジェクトは、コントロールの領域、テキスト、図形の内側または輪郭を塗りつぶすことで、その対象領域を UI 上で視覚的に確認できるようにする目的で使います。 ここでは、利用可能なブラシとそれらの使い方について説明します。
 
 ## ブラシ入門
 
-[
-            **Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377) や [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) の領域など、アプリ キャンバスに表示されるオブジェクトを塗りつぶすには、[**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) を使います。 たとえば、**Shape** や [**Background**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.background.aspx) の [**Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) プロパティ、または **Control** の [**Foreground**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.foreground.aspx) プロパティを **Brush** 値に設定すると、対象となる UI 要素をどのように塗りつぶすか、またその要素を UI でどのようにレンダリングするかが、**Brush** によって決定されます。 ブラシの種類には、[**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962)、[**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108)、[**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101)、[**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) があります。
+[**Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377) や [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) の領域など、アプリ キャンバスに表示されるオブジェクトを塗りつぶすには、[**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) を使います。 たとえば、**Shape** や [**Background**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.background.aspx) の [**Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) プロパティ、または **Control** の [**Foreground**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.foreground.aspx) プロパティを **Brush** 値に設定すると、対象となる UI 要素をどのように塗りつぶすか、またその要素を UI でどのようにレンダリングするかが、**Brush** によって決定されます。 ブラシの種類には、[**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962)、[**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108)、[**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101)、[**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) があります。
 
 ## 単色ブラシ
 
-[
-            **SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) は、赤や青などの 1 つの [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) で領域を塗りつぶします。 これは、最も基本的なブラシです。 XAML で **SolidColorBrush** とその色 (単色) を定義するには、定義済みの色の名前、16 進数の色値、およびプロパティ要素構文という 3 つの方法があります。
+[**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) は、赤や青などの 1 つの [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) で領域を塗りつぶします。 これは、最も基本的なブラシです。 XAML で **SolidColorBrush** とその色 (単色) を定義するには、定義済みの色の名前、16 進数の色値、およびプロパティ要素構文という 3 つの方法があります。
 
 ### 定義済みの色の名前
 
-[
-            **Yellow**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.yellow.aspx)、[**Magenta**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.magenta.aspx) など、定義済みの色の名前を使うことができます。 名前付きの色は 256 個存在します。 XAML パーサーは、色の名前を、正しいカラー チャネルを持つ [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) 構造体に変換します。 256 個の名前付きの色は、カスケード スタイル シート レベル 3 (CSS3) 仕様の *X11* の色名が基になっているため、過去に Web 開発や Web デザインの経験があれば、この一連の色について既にご存じの方も多いと思います。
+[**Yellow**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.yellow.aspx)、[**Magenta**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.magenta.aspx) など、定義済みの色の名前を使うことができます。 名前付きの色は 256 個存在します。 XAML パーサーは、色の名前を、正しいカラー チャネルを持つ [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) 構造体に変換します。 256 個の名前付きの色は、カスケード スタイル シート レベル 3 (CSS3) 仕様の *X11* の色名が基になっているため、過去に Web 開発や Web デザインの経験があれば、この一連の色について既にご存じの方も多いと思います。
 
-[
-            **Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) の [**Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) プロパティを定義済みの色 [**Red**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.red.aspx) に設定する例を次に示します。
+[**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) の [**Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) プロパティを定義済みの色 [**Red**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.red.aspx) に設定する例を次に示します。
 
 ```xml
 <Rectangle Width="100" Height="100" Fill="Red" />
@@ -76,17 +73,13 @@ XAML ではなくコードを使って [**SolidColorBrush**](https://msdn.micros
 
 ## <span id="Linear_gradient_brushes_"></span><span id="linear_gradient_brushes_"></span><span id="LINEAR_GRADIENT_BRUSHES_"></span>線状グラデーション ブラシ
 
-[
-            **LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108) は、直線に沿って定義されたグラデーションを使って、領域を塗りつぶします。 この直線は*グラデーション軸*と呼ばれます。 [
-            **GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) オブジェクトを使って、グラデーションの色とグラデーション軸に沿った位置を指定します。 既定では、ブラシで塗りつぶす領域の左上隅から右下隅に向かってグラデーション軸がとられているため、明暗は斜め方向に適用されます。
+[**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108) は、直線に沿って定義されたグラデーションを使って、領域を塗りつぶします。 この直線は*グラデーション軸*と呼ばれます。 [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) オブジェクトを使って、グラデーションの色とグラデーション軸に沿った位置を指定します。 既定では、ブラシで塗りつぶす領域の左上隅から右下隅に向かってグラデーション軸がとられているため、明暗は斜め方向に適用されます。
 
-[
-            **GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) は、グラデーション ブラシの基本的な構成要素です。 グラデーション境界は、塗りつぶす領域に適用されたブラシの、グラデーション軸上の [**Offset**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.offset.aspx) 位置における [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.color.aspx) を指定します。
+[**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) は、グラデーション ブラシの基本的な構成要素です。 グラデーション境界は、塗りつぶす領域に適用されたブラシの、グラデーション軸上の [**Offset**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.offset.aspx) 位置における [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.color.aspx) を指定します。
 
 グラデーション境界の [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.color.aspx) プロパティは、グラデーション境界の色を指定します。 定義済みの色の名前を使うか、または 16 進数の **ARGB** 値を指定して、色を設定できます。
 
-[
-            **GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) の [**Offset**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.offset.aspx) プロパティは、グラデーション軸に沿った各 **GradientStop** の位置を指定します。 **Offset** は、0 から 1 までの範囲の**倍精度浮動小数点数**です。 **Offset** が 0 のとき、**GradientStop** は、グラデーション軸の開始位置、つまり、[**StartPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.startpoint.aspx) 付近に配置されます。 **Offset** が 1 のとき、**GradientStop** は [**EndPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.endpoint.aspx) に配置されます。 実用上、[**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108) には少なくとも 2 つの **GradientStop** 値が必要であり、2 つの **GradientStop** は、それぞれ異なる [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.color.aspx) と、0 ～ 1 の範囲内の異なる **Offset** 値を持つ必要があります。
+[**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) の [**Offset**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.offset.aspx) プロパティは、グラデーション軸に沿った各 **GradientStop** の位置を指定します。 **Offset** は、0 から 1 までの範囲の**倍精度浮動小数点数**です。 **Offset** が 0 のとき、**GradientStop** は、グラデーション軸の開始位置、つまり、[**StartPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.startpoint.aspx) 付近に配置されます。 **Offset** が 1 のとき、**GradientStop** は [**EndPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.endpoint.aspx) に配置されます。 実用上、[**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108) には少なくとも 2 つの **GradientStop** 値が必要であり、2 つの **GradientStop** は、それぞれ異なる [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.color.aspx) と、0 ～ 1 の範囲内の異なる **Offset** 値を持つ必要があります。
 
 次の例では、4 色の線状グラデーションを作成し、それを使って [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) を塗りつぶします。
 
@@ -120,12 +113,9 @@ XAML ではなくコードを使って [**SolidColorBrush**](https://msdn.micros
 
 ## <span id="Image_brushes"></span><span id="image_brushes"></span><span id="IMAGE_BRUSHES"></span>イメージ ブラシ
 
-[
-            **ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) は、イメージ ファイル ソースから取得した画像で領域を塗りつぶします。 [
-            **ImageSource**](https://msdn.microsoft.com/library/windows/apps/BR210107) プロパティに、読み込む画像のパスを設定します。 通常、イメージ ソースは、アプリのリソースに含まれる **Content** 項目から取得します。
+[**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) は、イメージ ファイル ソースから取得した画像で領域を塗りつぶします。 [**ImageSource**](https://msdn.microsoft.com/library/windows/apps/BR210107) プロパティに、読み込む画像のパスを設定します。 通常、イメージ ソースは、アプリのリソースに含まれる **Content** 項目から取得します。
 
-[
-            **ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) では、既定で、描画する領域が完全に埋まるように画像が拡大されます。描画する領域と画像の縦横比が異なる場合は、画像がゆがむ可能性があります。 この動作を変更するには、[**Stretch**](https://msdn.microsoft.com/library/windows/apps/BR242975) プロパティを既定値の **Fill** から **None**、**Uniform**、または **UniformToFill** に変更します。
+[**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) では、既定で、描画する領域が完全に埋まるように画像が拡大されます。描画する領域と画像の縦横比が異なる場合は、画像がゆがむ可能性があります。 この動作を変更するには、[**Stretch**](https://msdn.microsoft.com/library/windows/apps/BR242975) プロパティを既定値の **Fill** から **None**、**Uniform**、または **UniformToFill** に変更します。
 
 次の例では、[**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) を作成し、[**ImageSource**](https://msdn.microsoft.com/library/windows/apps/BR210107) を licorice.jpg という画像に設定します。この画像は、アプリのリソースとして取り込んでおく必要があります。 この **ImageBrush** を使って、[**Ellipse**](https://msdn.microsoft.com/library/windows/apps/BR243343) で定義される領域を塗りつぶします。
 
@@ -141,9 +131,9 @@ XAML ではなくコードを使って [**SolidColorBrush**](https://msdn.micros
 
 ![レンダリングされた ImageBrush。](images/brushes-imagebrush.jpg)
 
-[
-              **ImageBrush**
-            ](https://msdn.microsoft.com/library/windows/apps/BR210101) と [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) は、どちらも Uniform Resource Identifier (URI) でイメージ ソース ファイルを参照します。また、イメージ ソース ファイルに使うことができる画像形式には、さまざまなものがあります。 これらのイメージ ソース ファイルは、URI として指定されます。 イメージ ソースの指定、使用できる画像形式、アプリへのパッケージ化について詳しくは、「[Image と ImageBrush](https://msdn.microsoft.com/library/windows/apps/Mt280382)」をご覧ください。
+
+              [
+              **ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) と [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) は、どちらも Uniform Resource Identifier (URI) でイメージ ソース ファイルを参照します。また、イメージ ソース ファイルに使うことができる画像形式には、さまざまなものがあります。 これらのイメージ ソース ファイルは、URI として指定されます。 イメージ ソースの指定、使用できる画像形式、アプリへのパッケージ化について詳しくは、「[Image と ImageBrush](https://msdn.microsoft.com/library/windows/apps/Mt280382)」をご覧ください。
 
 ## ブラシとテキスト
 
@@ -153,8 +143,8 @@ XAML ではなくコードを使って [**SolidColorBrush**](https://msdn.micros
 
 ## WebViewBrush
 
-[
-            **WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) は、[**WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702) コントロールに通常表示されるコンテンツにアクセスできる特殊なブラシです。 四角形の **WebView** コントロール領域にコンテンツをレンダリングする代わりに、**WebViewBrush** は、レンダリング サーフェスに [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) タイプのプロパティを持つ別の要素にコンテンツを描画します。 **WebViewBrush** は、必ずしもすべての用途に適したブラシではありませんが、**WebView** の切り替えで効果的に使うことができます。 詳しくは、「**WebViewBrush**」をご覧ください。
+[**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) は、[**WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702) コントロールに通常表示されるコンテンツにアクセスできる特殊なブラシです。 四角形の **WebView** コントロール領域にコンテンツをレンダリングする代わりに、**WebViewBrush** は、レンダリング サーフェスに [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) タイプのプロパティを持つ別の要素にコンテンツを描画します。 
+              **WebViewBrush** は、必ずしもすべての用途に適したブラシではありませんが、**WebView** の切り替えで効果的に使うことができます。 詳しくは、「**WebViewBrush**」をご覧ください。
 
 ## XAML リソースとしてのブラシ
 
@@ -178,14 +168,12 @@ Dim blueBrush as SolidColorBrush = New SolidColorBrush(Windows.UI.Colors.Blue)
 blueBrush = ref new SolidColorBrush(Windows::UI::Colors::Blue);
 ```
 
-[
-            **WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) と [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) を UI プロパティに使う場合、その前に既定のコンストラクターを使って他の API を呼び出してください。
+[**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) と [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) を UI プロパティに使う場合、その前に既定のコンストラクターを使って他の API を呼び出してください。
 
--   コードを使って [
-              **ImageBrush**
-            ](https://msdn.microsoft.com/library/windows/apps/BR210101) を定義する場合、[**ImageSource**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.imagebrush.imagesourceproperty.aspx) では [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/BR243235) (URI ではない) が必要です。 ソースがストリームである場合は、[**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522) メソッドを使って値を初期化します。 ソースが、**ms-appx**  スキームまたは **ms-resource** スキームを使うアプリ内のコンテンツを含む URI である場合は、URI を受け取る [**BitmapImage**](https://msdn.microsoft.com/en-us/library/windows/apps/br243238.aspx) コンストラクターを使います。 イメージ ソースが使えるようになるまで代替コンテンツを表示することが必要となる場合など、イメージ ソースの取得やデコードについてタイミングの問題がある場合は、[**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imageopened.aspx) イベントを処理することも検討してください。
--   [
-            **WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) については、[**SourceName**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.sourcename.aspx) プロパティを最近リセットした場合、または [**WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702) のコンテンツをコードを使って変更した場合に、[**Redraw**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.redraw.aspx) を呼び出す必要があります。
+-   
+              コードを使って [
+              **ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) を定義する場合、[**ImageSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imagebrush.imagesourceproperty.aspx) では [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/BR243235) (URI ではない) が必要です。 ソースがストリームである場合は、[**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522) メソッドを使って値を初期化します。 ソースが、**ms-appx**  スキームまたは **ms-resource** スキームを使うアプリ内のコンテンツを含む URI である場合は、URI を受け取る [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/br243238.aspx) コンストラクターを使います。 イメージ ソースが使えるようになるまで代替コンテンツを表示することが必要となる場合など、イメージ ソースの取得やデコードについてタイミングの問題がある場合は、[**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imageopened.aspx) イベントを処理することも検討してください。
+-   [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) については、[**SourceName**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.sourcename.aspx) プロパティを最近リセットした場合、または [**WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702) のコンテンツをコードを使って変更した場合に、[**Redraw**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.redraw.aspx) を呼び出す必要があります。
 
 コードの例については、[**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) と [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) のリファレンス ページをご覧ください。
  
@@ -198,6 +186,6 @@ blueBrush = ref new SolidColorBrush(Windows::UI::Colors::Blue);
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

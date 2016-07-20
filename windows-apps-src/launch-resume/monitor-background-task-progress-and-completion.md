@@ -3,8 +3,9 @@ author: TylerMSFT
 title: "バックグラウンド タスクの進捗状況と完了の監視"
 description: "バックグラウンド タスクから報告される進行状況と完了をアプリから認識する方法について説明します。"
 ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
-ms.sourcegitcommit: 39a012976ee877d8834b63def04e39d847036132
-ms.openlocfilehash: 07d69b63b272153bc784ed19166e649f80a98297
+translationtype: Human Translation
+ms.sourcegitcommit: 6e6e28bc339364e70282a9db84593188c70a59c4
+ms.openlocfilehash: 153895a3ce41e5f4d22067e33cb5e874e89c6069
 
 ---
 
@@ -26,97 +27,77 @@ ms.openlocfilehash: 07d69b63b272153bc784ed19166e649f80a98297
 
 ## 完了したバックグラウンド タスクを処理するイベント ハンドラーの作成
 
-
 1.  完了したバックグラウンド タスクを処理するイベント ハンドラー関数を作ります。 このコードは、[**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803) オブジェクトと [**BackgroundTaskCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224778) オブジェクトを受け入れる特定のフットプリントに従っている必要があります。
 
     OnCompleted バックグラウンド タスク イベント ハンドラー メソッドには次のフットプリントを使います。
 
->  [!div class="tabbedCodeSnippets"]
->  ```cs
->  private void OnCompleted(IBackgroundTaskRegistration task, BackgroundTaskCompletedEventArgs args)
->  {
->      // TODO: Add code that deals with background task completion.
->  }
->  ```
->  ```cpp
->  auto completed = [this](BackgroundTaskRegistration^ task, BackgroundTaskCompletedEventArgs^ args)
->  {
->      // TODO: Add code that deals with background task completion.
->  };
->  ```
+    > [!div class="tabbedCodeSnippets"]
+    > ```cs
+    >  private void OnCompleted(IBackgroundTaskRegistration task, BackgroundTaskCompletedEventArgs args)
+    >  {
+    >      // TODO: Add code that deals with background task completion.
+    >  }
+    > ```
+    > ```cpp
+    >  auto completed = [this](BackgroundTaskRegistration^ task, BackgroundTaskCompletedEventArgs^ args)
+    >  {
+    >      // TODO: Add code that deals with background task completion.
+    >  };
+    > ```
 
-2.  [!div class="tabbedCodeSnippets"]
+2.  バックグラウンド タスクの完了を処理するイベント ハンドラーにコードを追加します。
 
-    バックグラウンド タスクの完了を処理するイベント ハンドラーにコードを追加します。
+    たとえば、[バックグラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)は UI を更新します。
 
     > [!div class="tabbedCodeSnippets"]
-    >     ```cs
+    > ```cs
     >     private void OnCompleted(IBackgroundTaskRegistration task, BackgroundTaskCompletedEventArgs args)
     >     {
     >         UpdateUI();
     >     }
-    >     ```
-    >     ```cpp
+    > ```
+    > ```cpp
     >     auto completed = [this](BackgroundTaskRegistration^ task, BackgroundTaskCompletedEventArgs^ args)
     >     {    
     >         UpdateUI();
     >     };
-    >     ```
+    > ```
 
-## たとえば、[バックグラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)は UI を更新します。
+## バックグラウンド タスクの進行状況を処理するイベント ハンドラー関数の作成
 
-
-1.  [!div class="tabbedCodeSnippets"] ```cs
-    private void OnCompleted(IBackgroundTaskRegistration task, BackgroundTaskCompletedEventArgs args)
-    {
-        UpdateUI();
-    }
-    ```
-    ```cpp
-    auto completed = [this](BackgroundTaskRegistration^ task, BackgroundTaskCompletedEventArgs^ args)
-    {    
-        UpdateUI();
-    };
-    ``` バックグラウンド タスクの進行状況を処理するイベント ハンドラー関数を作成する
-
-    完了したバックグラウンド タスクを処理するイベント ハンドラー関数を作ります。
-
-    > [!div class="tabbedCodeSnippets"]
-    >     ```cs
-    >     private void OnProgress(IBackgroundTaskRegistration task, BackgroundTaskProgressEventArgs args)
-    >     {
-    >         // TODO: Add code that deals with background task progress.
-    >     }
-    >     ```
-    >     ```cpp
-    >     auto progress = [this](BackgroundTaskRegistration^ task, BackgroundTaskProgressEventArgs^ args)
-    >     {
-    >         // TODO: Add code that deals with background task progress.
-    >     };
-    >     ```
-
-2.  このコードは、[**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803) オブジェクトと [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782) オブジェクトを受け入れる特定のフットプリントに従っている必要があります。
+1.  完了したバックグラウンド タスクを処理するイベント ハンドラー関数を作ります。 このコードは、[**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803) オブジェクトと [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782) オブジェクトを受け入れる特定のフットプリントに従っている必要があります。
 
     OnProgress バックグラウンド タスク イベント ハンドラー メソッドには次のフットプリントを使います。
 
     > [!div class="tabbedCodeSnippets"]
-    >     [!div class="tabbedCodeSnippets"] ```cs
+    > ```cs
     >     private void OnProgress(IBackgroundTaskRegistration task, BackgroundTaskProgressEventArgs args)
     >     {
     >         // TODO: Add code that deals with background task progress.
     >     }
-    ```
-    ```cpp
-    auto progress = [this](BackgroundTaskRegistration^ task, BackgroundTaskProgressEventArgs^ args)
-    {
-        // TODO: Add code that deals with background task progress.
-    };
-    ```
+    > ```
+    > ```cpp
+    >     auto progress = [this](BackgroundTaskRegistration^ task, BackgroundTaskProgressEventArgs^ args)
+    >     {
+    >         // TODO: Add code that deals with background task progress.
+    >     };
+    > ```
+
+2.  バックグラウンド タスクの完了を処理するイベント ハンドラーにコードを追加します。
+
+    たとえば、[バックグラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)では、*args* パラメーターで渡された進行状態により、UI が更新されます。
+
+    > [!div class="tabbedCodeSnippets"]
+    > ```cs
+    >     private void OnProgress(IBackgroundTaskRegistration task, BackgroundTaskProgressEventArgs args)
+    >     {
+    >         var progress = "Progress: " + args.Progress + "%";
+    >         BackgroundTaskSample.SampleBackgroundTaskProgress = progress;
     >
     >         UpdateUI();
     >     }
-    >     ```
-    >     ```cpp
+    > ```
+    > ```cpp
     >     auto progress = [this](BackgroundTaskRegistration^ task, BackgroundTaskProgressEventArgs^ args)
     >     {
     >         auto progress = "Progress: " + args->Progress + "%";
@@ -124,24 +105,32 @@ ms.openlocfilehash: 07d69b63b272153bc784ed19166e649f80a98297
     >
     >         UpdateUI();
     >     };
-    >     ```
+    > ```
 
-## バックグラウンド タスクの完了を処理するイベント ハンドラーにコードを追加します。
+## 新規および既存のバックグラウンド タスクと共にイベント ハンドラー関数を登録する
 
 
-1.  たとえば、[バックグラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)では、*args* パラメーターで渡された進行状態により、UI が更新されます。
+1.  アプリで初めてバックグラウンド タスクを登録するときは、フォアグラウンドでまだアプリがアクティブになっていてタスクか実行されている場合に、進行状況と完了の更新を受け取ることができるように登録する必要があります。
 
-    [!div class="tabbedCodeSnippets"]     ```cs     private void OnProgress(IBackgroundTaskRegistration task, BackgroundTaskProgressEventArgs args)     {         var progress = "Progress: " + args.Progress + "%";         BackgroundTaskSample.SampleBackgroundTaskProgress = progress;
+    たとえば、[バックグラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)では、登録するバックグラウンド タスクごとに次の関数を呼び出します。
 
     > [!div class="tabbedCodeSnippets"]
-    >     ```cs
+    > ```cs
     >     private void AttachProgressAndCompletedHandlers(IBackgroundTaskRegistration task)
     >     {
     >         task.Progress += new BackgroundTaskProgressEventHandler(OnProgress);
     >         task.Completed += new BackgroundTaskCompletedEventHandler(OnCompleted);
     >     }
-    >     ```
-    >     新規および既存のバックグラウンド タスクと共にイベント ハンドラー関数を登録する
+    > ```
+    > ```cpp
+    >     void SampleBackgroundTask::AttachProgressAndCompletedHandlers(IBackgroundTaskRegistration^ task)
+    >     {
+    >         auto progress = [this](BackgroundTaskRegistration^ task, BackgroundTaskProgressEventArgs^ args)
+    >         {
+    >             auto progress = "Progress: " + args->Progress + "%";
+    >             BackgroundTaskSample::SampleBackgroundTaskProgress = progress;
+    >             UpdateUI();
+    >         };
     >
     >         task->Progress += ref new BackgroundTaskProgressEventHandler(progress);
     >         
@@ -153,27 +142,29 @@ ms.openlocfilehash: 07d69b63b272153bc784ed19166e649f80a98297
     >
     >         task->Completed += ref new BackgroundTaskCompletedEventHandler(completed);
     >     }
-    >     ```
+    > ```
 
-2.  アプリで初めてバックグラウンド タスクを登録するときは、フォアグラウンドでまだアプリがアクティブになっていてタスクか実行されている場合に、進行状況と完了の更新を受け取ることができるように登録する必要があります。 たとえば、[バックグラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)では、登録するバックグラウンド タスクごとに次の関数を呼び出します。
+2.  アプリが起動された時点、またはバックグラウンド タスクの状態が関連する新しいページに移動した時点で、現在登録されているバックグラウンド タスクの一覧を取得し、進行状況と完了に対応するイベント ハンドラー関数に関連付ける必要があります。 アプリケーションで現在登録されているバックグラウンド タスクの一覧は、[**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786).[**AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) プロパティで保持されます。
 
-    [!div class="tabbedCodeSnippets"] ```cs
-    private void AttachProgressAndCompletedHandlers(IBackgroundTaskRegistration task)
-    {
-        task.Progress += new BackgroundTaskProgressEventHandler(OnProgress);
-        task.Completed += new BackgroundTaskCompletedEventHandler(OnCompleted);
-    }
-    ```
-    ```cpp     void SampleBackgroundTask::AttachProgressAndCompletedHandlers(IBackgroundTaskRegistration^ task)     {         auto progress = [this](BackgroundTaskRegistration^ task, BackgroundTaskProgressEventArgs^ args)
-                  {             auto progress = "Progress: " + args->Progress + "%";             BackgroundTaskSample::SampleBackgroundTaskProgress = progress;             UpdateUI();         };
+    たとえば、[バックグラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)では、次のコードを使って SampleBackgroundTask ページの移動時にイベント ハンドラーをアタッチします。
 
     > [!div class="tabbedCodeSnippets"]
-    >     アプリが起動された時点、またはバックグラウンド タスクの状態が関連する新しいページに移動した時点で、現在登録されているバックグラウンド タスクの一覧を取得し、進行状況と完了に対応するイベント ハンドラー関数に関連付ける必要があります。
+    > ```cs
+    >     protected override void OnNavigatedTo(NavigationEventArgs e)
+    >     {
+    >         foreach (var task in BackgroundTaskRegistration.AllTasks)
+    >         {
+    >             if (task.Value.Name == BackgroundTaskSample.SampleBackgroundTaskName)
+    >             {
+    >                 AttachProgressAndCompletedHandlers(task.Value);
+    >                 BackgroundTaskSample.UpdateBackgroundTaskStatus(BackgroundTaskSample.SampleBackgroundTaskName, true);
+    >             }
+    >         }
     >
     >         UpdateUI();
     >     }
-    >     ```
-    >     ```cpp
+    > ```
+    > ```cpp
     >     void SampleBackgroundTask::OnNavigatedTo(NavigationEventArgs^ e)
     >     {
     >         // A pointer back to the main page.  This is needed if you want to call methods in MainPage such
@@ -200,35 +191,26 @@ ms.openlocfilehash: 07d69b63b272153bc784ed19166e649f80a98297
     >
     >         UpdateUI();
     >     }
-    >     ```
+    > ```
 
-## アプリケーションで現在登録されているバックグラウンド タスクの一覧は、[**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786).[**AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) プロパティで保持されます。
+## 関連トピック
 
-
-****
-
-* [たとえば、[バックグラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)では、次のコードを使って SampleBackgroundTask ページの移動時にイベント ハンドラーをアタッチします。](create-and-register-a-background-task.md)
-* [[!div class="tabbedCodeSnippets"]     ```cs     protected override void OnNavigatedTo(NavigationEventArgs e)     {         foreach (var task in BackgroundTaskRegistration.AllTasks)         {             if (task.Value.Name == BackgroundTaskSample.SampleBackgroundTaskName)             {                 AttachProgressAndCompletedHandlers(task.Value);                 BackgroundTaskSample.UpdateBackgroundTaskStatus(BackgroundTaskSample.SampleBackgroundTaskName, true);             }         }](declare-background-tasks-in-the-application-manifest.md)
-* [関連トピック](handle-a-cancelled-background-task.md)
-* [バックグラウンド タスクの作成と登録](register-a-background-task.md)
-* [アプリケーション マニフェストでのバックグラウンド タスクの宣言](respond-to-system-events-with-background-tasks.md)
-* [取り消されたバックグラウンド タスクの処理](set-conditions-for-running-a-background-task.md)
-* [バックグラウンド タスクの登録](update-a-live-tile-from-a-background-task.md)
-* [バックグラウンド タスクによるシステム イベントへの応答](use-a-maintenance-trigger.md)
-* [バックグラウンド タスクを実行するための条件の設定](run-a-background-task-on-a-timer-.md)
-* [バックグラウンド タスクのライブ タイルの更新](guidelines-for-background-tasks.md)
-
-****
-
-* [メンテナンス トリガーの使用](debug-a-background-task.md)
-* [タイマーでのバックグラウンド タスクの実行](http://go.microsoft.com/fwlink/p/?linkid=254345)
-
- 
-
- 
+* [バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)
+* [アプリケーション マニフェストでのバックグラウンド タスクの宣言](declare-background-tasks-in-the-application-manifest.md)
+* [取り消されたバックグラウンド タスクの処理](handle-a-cancelled-background-task.md)
+* [バックグラウンド タスクの登録](register-a-background-task.md)
+* [バックグラウンド タスクによるシステム イベントへの応答](respond-to-system-events-with-background-tasks.md)
+* [バックグラウンド タスクを実行するための条件の設定](set-conditions-for-running-a-background-task.md)
+* [バックグラウンド タスクのライブ タイルの更新](update-a-live-tile-from-a-background-task.md)
+* [メンテナンス トリガーの使用](use-a-maintenance-trigger.md)
+* [タイマーでのバックグラウンド タスクの実行](run-a-background-task-on-a-timer-.md)
+* [バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)
+* [バックグラウンド タスクのデバッグ](debug-a-background-task.md)
+* [Windows ストア アプリで一時停止イベント、再開イベント、バックグラウンド イベントをトリガーする方法 (デバッグ時)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
 
 
-<!--HONumber=Jun16_HO5-->
+
+<!--HONumber=Jul16_HO1-->
 
 

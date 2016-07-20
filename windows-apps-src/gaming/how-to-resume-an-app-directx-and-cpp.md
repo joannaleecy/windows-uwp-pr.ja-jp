@@ -19,8 +19,7 @@ ms.openlocfilehash: d5383da7332c80d4337f0e0b3eef0a6851fcd527
 ## resuming イベント ハンドラーに登録する
 
 
-[
-            **CoreApplication::Resuming**](https://msdn.microsoft.com/library/windows/apps/br205859) イベントを処理するために登録します。このイベントは、ユーザーがアプリを切り替えてから、アプリに戻ったことを示します。
+[**CoreApplication::Resuming**](https://msdn.microsoft.com/library/windows/apps/br205859) イベントを処理するために登録します。このイベントは、ユーザーがアプリを切り替えてから、アプリに戻ったことを示します。
 
 このコードをビュー プロバイダーの [**IFrameworkView::Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495) メソッドの実装に追加します。
 
@@ -41,8 +40,7 @@ void App::Initialize(CoreApplicationView^ applicationView)
 ## 一時停止の後で表示されるコンテンツを更新する
 
 
-アプリでは、Resuming イベントを処理する時点で、表示されているコンテンツを更新できます。 [
-            **CoreApplication::Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860) のハンドラーで保存した任意のアプリを復元し、処理を再開します。 ゲーム開発の場合、オーディオ エンジンを一時停止していたら、ここで再開します。
+アプリでは、Resuming イベントを処理する時点で、表示されているコンテンツを更新できます。 [**CoreApplication::Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860) のハンドラーで保存した任意のアプリを復元し、処理を再開します。 ゲーム開発の場合、オーディオ エンジンを一時停止していたら、ここで再開します。
 
 ```cpp
 void App::OnResuming(Platform::Object^ sender, Platform::Object^ args)

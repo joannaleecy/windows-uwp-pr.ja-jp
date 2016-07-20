@@ -3,8 +3,9 @@ author: eliotcowley
 ms.assetid: A7E0DA1E-535A-459E-9A35-68A4150EE9F5
 description: "このトピックでは、PlayReady ハードウェア ベースのデジタル著作権管理 (DRM) をユニバーサル Windows プラットフォーム (UWP) アプリに追加する方法の概要を示します。"
 title: "ハードウェア DRM"
-ms.sourcegitcommit: b782d1e3d4f5c90e4cac9fbad3877c5457a27c45
-ms.openlocfilehash: ec443d26652ba6c1ff5de2b96749825890d0228a
+translationtype: Human Translation
+ms.sourcegitcommit: 22ce05ab6f24c3ee41798732c35314b3dad87ea8
+ms.openlocfilehash: b7867317c37edf44d9edfaaf28d97a3f23b22814
 
 ---
 
@@ -14,7 +15,8 @@ ms.openlocfilehash: ec443d26652ba6c1ff5de2b96749825890d0228a
 
 このトピックでは、PlayReady ハードウェア ベースのデジタル著作権管理 (DRM) をユニバーサル Windows プラットフォーム (UWP) アプリに追加する方法の概要を示します。
 
-> [!NOTE] ハードウェア ベースの PlayReady DRM は、Windows デバイスや Windows 以外のデバイスを含む多種多様なデバイス (テレビ セット、電話、タブレットなど) でサポートされます。 PlayReady ハードウェア DRM をサポートする Windows デバイスの場合、Windows 10 を実行しており、サポート対象のハードウェア構成を備えている必要があります。
+> [!NOTE] 
+> ハードウェア ベースの PlayReady DRM は、Windows デバイスや Windows 以外のデバイスを含む多種多様なデバイス (テレビ セット、電話、タブレットなど) でサポートされます。 PlayReady ハードウェア DRM をサポートする Windows デバイスの場合、Windows 10 を実行しており、サポート対象のハードウェア構成を備えている必要があります。
 
 最近では、価値の高いコンテンツをアプリで再生するためのアクセス許可を付与できるように、ハードウェア ベースの保護に移行するコンテンツ プロバイダーが多くなっています。 PlayReady がこのニーズを満たすために、暗号化コアのハードウェアの実装の強力なサポートが追加されました。 このサポートにより、複数のデバイス プラットフォーム上で、高解像度 (1080 p) と超高解像度 (UHD) のコンテンツを安全に再生できます。 キー マテリアル (秘密キー、コンテンツ キー、これらのキーを派生またはロック解除するために使われるその他のキー マテリアルを含みます)、および暗号化解除された圧縮および非圧縮ビデオ サンプルは、ハードウェア セキュリティを利用して保護されます。
 
@@ -30,7 +32,8 @@ Windows TEE 実装の詳細については、このドキュメントでは説�
 
 このトピックでは、ハードウェア DRM を使うように設計されたアプリを開発するときに考慮する必要がある事項について、簡単な一覧を使って説明します。 「[PlayReady DRM](playready-client-sdk.md#output-protection)」で説明されているように、Windows 10 用 PlayReady HWDRM では、すべての出力の保護は、出力の保護の動作に影響を与える Windows TEE 実装内から適用されます。
 
--   **未圧縮デジタル ビデオ向けの出力保護レベル (OPL) 270 のサポート:** Windows 10 用 PlayReady HWDRM では、解像度の低下をサポートしておらず、HDCP が強制的に使われます。 Microsoft では、HWDRM の高解像度コンテンツには、270 を超える OPL をお勧めします (ただし、必須ではありません)。 また HDCP タイプの制限をライセンスで設定することもお勧めします (Windows 10 では HDCP バージョン 2.2)。
+-   
+            **未圧縮デジタル ビデオ向けの出力保護レベル (OPL) 270 のサポート:** Windows 10 用 PlayReady HWDRM では、解像度の低下をサポートしておらず、HDCP が強制的に使われます。 Microsoft では、HWDRM の高解像度コンテンツには、270 を超える OPL をお勧めします (ただし、必須ではありません)。 また HDCP タイプの制限をライセンスで設定することもお勧めします (Windows 10 では HDCP バージョン 2.2)。
 -   出力の保護は、ソフトウェア DRM とは異なり、最も能力の低いモニターに基づいてすべてのモニターに適用されます。 たとえば、ユーザーが 2 台のモニターを接続していて、1 台のモニターが HDCP をサポートし、もう 1 台がサポートしていない場合、HDCP をサポートするモニターでのみコンテンツがレンダリングされている場合でも、ライセンスに HDCP が必要な場合、再生は失敗します。 ソフトウェア DRM (SWDRM) では、HDCP をサポートされているモニターでのみレンダリングされているの場合、コンテンツは再生されます。
 -   コンテンツのキーとライセンスで、次の条件が満たされていない限り、HWDRM がクライアントで使われることが保証されず、また安全であることも保証されません。
     -   ビデオのコンテンツ キーに使われるライセンスには、最低限のセキュリティ レベルとして 3000 が必要です。
@@ -84,22 +87,19 @@ mediaProtectionManager.properties["Windows.Media.Protection.UseSoftwareProtectio
 
 このセクションでは、システムでサポートされているハードウェア DRM の種類を検出する方法について説明します。
 
-[
-            **PlayReadyStatics.CheckSupportedHardware**](https://msdn.microsoft.com/library/windows/apps/dn986441) メソッドを使って、システムが特定のハードウェア デジタル権利管理 (DRM) 機能をサポートしているかどうかを判断できます。 次に例を示します。
+[**PlayReadyStatics.CheckSupportedHardware**](https://msdn.microsoft.com/library/windows/apps/dn986441) メソッドを使って、システムが特定のハードウェア デジタル権利管理 (DRM) 機能をサポートしているかどうかを判断できます。 次に例を示します。
 
 ```cpp
 boolean PlayReadyStatics->CheckSupportedHardware(PlayReadyHardwareDRMFeatures enum);
 ```
 
-[
-            **PlayReadyHardwareDRMFeatures**](https://msdn.microsoft.com/library/windows/apps/dn986265) 列挙体には、照会できるハードウェア DRM 機能の値の有効な一覧が含まれます。 ハードウェア DRM がサポートされているかどうかを判断するには、クエリで **HardwareDRM** メンバーを使います。 ハードウェアが高効率ビデオ コーディング (HEVC)/H.265 コーデックをサポートしているかどうかを判断するには、クエリで **HEVC** メンバーを使います。
+[**PlayReadyHardwareDRMFeatures**](https://msdn.microsoft.com/library/windows/apps/dn986265) 列挙体には、照会できるハードウェア DRM 機能の値の有効な一覧が含まれます。 ハードウェア DRM がサポートされているかどうかを判断するには、クエリで **HardwareDRM** メンバーを使います。 ハードウェアが高効率ビデオ コーディング (HEVC)/H.265 コーデックをサポートしているかどうかを判断するには、クエリで **HEVC** メンバーを使います。
 
-[
-            **PlayReadyStatics.PlayReadyCertificateSecurityLevel**](https://msdn.microsoft.com/library/windows/apps/windows.media.protection.playready.playreadystatics.playreadycertificatesecuritylevel.aspx) プロパティを使って、クライアント証明書のセキュリティ レベルを取得し、ハードウェア DRM がサポートされているかどうか判断することもできます。 返された証明書のセキュリティ レベルが 3000 以上でない限り、クライアントが個別化またはプロビジョニングされていないか (この場合、このプロパティは 0 を返します)、ハードウェア DRM が使われていません (この場合、このプロパティは 3000 未満の値を返します)。
+[**PlayReadyStatics.PlayReadyCertificateSecurityLevel**](https://msdn.microsoft.com/library/windows/apps/windows.media.protection.playready.playreadystatics.playreadycertificatesecuritylevel.aspx) プロパティを使って、クライアント証明書のセキュリティ レベルを取得し、ハードウェア DRM がサポートされているかどうか判断することもできます。 返された証明書のセキュリティ レベルが 3000 以上でない限り、クライアントが個別化またはプロビジョニングされていないか (この場合、このプロパティは 0 を返します)、ハードウェア DRM が使われていません (この場合、このプロパティは 3000 未満の値を返します)。
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

@@ -6,8 +6,8 @@ title: "アクセシビリティのチェック リスト"
 label: Accessibility checklist
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: 9580ccc0716b7e9f4ee32ce241b0ac3ee9bf319d
+ms.sourcegitcommit: 6ac5430a3e18a02d5f2fc82829631b7649ea547d
+ms.openlocfilehash: 2d632c524de8299378d8cc059d1c522080a2df2e
 
 ---
 
@@ -21,8 +21,7 @@ ms.openlocfilehash: 9580ccc0716b7e9f4ee32ce241b0ac3ee9bf319d
 
 1.  コンテンツやアプリの対話型の UI 要素にアクセシビリティ対応の名前 (必須) と説明 (省略可能) を設定します。
 
-    アクセシビリティ対応の名前とは、スクリーン リーダーが UI 要素を読み上げるときに使う短い説明の文字列です。 [
-            **TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) や [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) などの一部の UI 要素では、既定のアクセシビリティ対応の名前としてテキスト コンテンツを昇格させるものがあります。「[基本的なアクセシビリティ情報](basic-accessibility-information.md#name_from_inner_text)」をご覧ください。
+    アクセシビリティ対応の名前とは、スクリーン リーダーが UI 要素を読み上げるときに使う短い説明の文字列です。 [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) や [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) などの一部の UI 要素では、既定のアクセシビリティ対応の名前としてテキスト コンテンツを昇格させるものがあります。「[基本的なアクセシビリティ情報](basic-accessibility-information.md#name_from_inner_text)」をご覧ください。
 
     暗黙的なアクセシビリティ対応の名前として内部テキスト コンテンツを昇格させない画像などのコントロールに対し、明示的にアクセシビリティ対応の名前を設定する必要があります。 フォーム要素のラベルのテキストは、ラベルと入力を関連付けるために、Microsoft UI オートメーション モデルの [**LabeledBy**](https://msdn.microsoft.com/library/windows/apps/Hh759769) ターゲットとして使うことができるようにする必要があります。 ユーザーに、通常アクセシビリティ対応の名前に含まれているものよりも詳しい UI のガイダンスを提供する場合は、アクセシビリティ対応の説明やヒントを用意すると、UI の内容がわかりやすくなります。
 
@@ -40,7 +39,7 @@ ms.openlocfilehash: 9580ccc0716b7e9f4ee32ce241b0ac3ee9bf319d
 
 3.  テキスト コントラストが適切であること、ハイ コントラスト テーマで要素が正しくレンダリングされること、色が正しく使われていることを確認するため、UI を表示して検証します。
 
-    * ディスプレイの 1 インチあたりのドット数 (dpi) の値を調整するシステム ディスプレイ オプションを使い、DPI の値の変更に合わせてアプリの UI が正常に拡大縮小されることを確認します (一部のユーザーはアクセシビリティ対応オプションとして DPI の値を変更します。これは、**[コンピューターの簡単操作]** から設定できます)。
+    * ディスプレイの 1 インチあたりのドット数 (dpi) の値を調整するシステム ディスプレイ オプションを使い、DPI の値の変更に合わせてアプリの UI が正常に拡大縮小されることを確認します  (一部のユーザーはアクセシビリティ対応オプションとして DPI の値を変更します。これは、**[コンピューターの簡単操作]** から設定できます)。
     * 色分析ツールを使って、視覚的なテキストのコントラスト比が 4.5:1 以上であることを検証します。
     * ハイ コントラスト テーマに切り替え、アプリの UI が読みやすく使いやすいことを確認します。
     * UI が情報を伝える唯一の手段として色を使っていないことを確認します。
@@ -49,8 +48,7 @@ ms.openlocfilehash: 9580ccc0716b7e9f4ee32ce241b0ac3ee9bf319d
 
 4.  アクセシビリティ ツールを実行し、報告された問題に対処して、画面の読み上げを確認します。
 
-    [
-            **Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) などのツールを使ってプログラムによるアクセスを検証し、[**AccChecker**](https://msdn.microsoft.com/library/windows/desktop/Hh920985) などの診断ツールを実行して一般的なエラーを見つけます。画面の読み上げの確認には、ナレーターを使います。
+    [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) などのツールを使ってプログラムによるアクセスを検証し、[**AccChecker**](https://msdn.microsoft.com/library/windows/desktop/Hh920985) などの診断ツールを実行して一般的なエラーを見つけます。画面の読み上げの確認には、ナレーターを使います。
 
     詳しくは、「[アクセシビリティ テスト](accessibility-testing.md)」をご覧ください。
 
@@ -70,6 +68,6 @@ ms.openlocfilehash: 9580ccc0716b7e9f4ee32ce241b0ac3ee9bf319d
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

@@ -3,8 +3,9 @@ author: payzer
 title: "Xbox のベスト プラクティス"
 description: "Xbox 用のアプリを最適化する方法を説明します。"
 area: Xbox
-ms.sourcegitcommit: bdf7a32d2f0673ab6c176a775b805eff2b7cf437
-ms.openlocfilehash: ef0fef1dd43444771add4ed6d9db1300f8d33210
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: bf3f89d29b947c39f818de297556cc438da8901a
 
 ---
 
@@ -21,9 +22,9 @@ Xbox に最適なエクスペリエンスを構築する場合や、複数のテ
 既定では、XAML を使用している場合アプリは 200% に、HTML の場合は 150% にスケーリングされますが、 自動スケーリングを無効にすることができます。  [詳細情報](disable-scaling.md)
 
 ## Xbox およびテレビ向け設計
-設計のベスト プラクティスについて詳しくは、「[Xbox およびテレビ向け設計](https://msdn.microsoft.com/en-us/windows/uwp/input-and-devices/designing-for-tv?f=255&MSPPError=-2147217396#mouse-mode)」をご覧ください。
+設計のベスト プラクティスについて詳しくは、「[Xbox およびテレビ向け設計](https://msdn.microsoft.com/windows/uwp/input-and-devices/designing-for-tv?f=255&MSPPError=-2147217396#mouse-mode)」をご覧ください。
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

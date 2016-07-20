@@ -3,21 +3,20 @@ author: jnHs
 title: "Microsoft Advertising の支払処理"
 description: "Microsoft Advertising による売り上げに関する支払処理、しきい値、および通貨について説明します。"
 translationtype: Human Translation
-ms.sourcegitcommit: 87b34cd37c7594bb76dbf0f1cd388dbba73ea456
-ms.openlocfilehash: b265fb5c6d01f083fac16c36f4d1c12e023a62b6
+ms.sourcegitcommit: b54ea21d12f68830295f59af219c7fe811edd832
+ms.openlocfilehash: 5805f316ed7bc08268fd6c201d740f3a3222629e
 
 ---
 
 # Microsoft Advertising の支払処理
 
-Microsoft Advertising による売り上げに対する支払いについては、「[支払いの要約](payout-summary.md)」をご覧ください。
+Microsoft Advertising による売り上げに対する支払いについては、「[入金状況](payout-summary.md)」をご覧ください。
 
 広告による売り上げに対する支払いは、毎月行われ、しきい値の要件が適用されます。 支払いを受けるためには、広告による売り上げが、最小しきい値に到達している必要があります。 しきい値は、お住まいの国/地域によって異なります。 しきい値の金額については、次の表をご覧ください。 
 
 しきい値に到達し、支払額が [[入金状況]](payout-summary.md) の **[今後の入金]** セクションに表示されると、Microsoft では 15 日以内の支払いを行います。 売り上げがしきい値を下回る場合は、しきい値に到達するまで、売り上げが累積されていきます。
 
 支払いはお客様の現地通貨で行われますが、次の表でアスタリスクが付いている国/地域は除きます。 これらの市場での支払いは、米ドル (USD) で行われます。 銀行または PayPal によって適用される手数料は、米国ドルからお客様の現地通貨に換算されます。 支払いを受け取るために必要な手数料や他の要件によって発生する可能性がある影響について詳しくは、銀行または PayPal にご連絡ください。
-
 
 
 |  国/地域 | しきい値の通貨 | しきい値の金額 | 
@@ -51,7 +50,7 @@ Microsoft Advertising による売り上げに対する支払いについては�
 |  チャド | XAF  | 30,000 XAF | 
 |  チリ* | USD  | 25,000 CLP | 
 |  中国 | USD  | 50 USD | 
-|  コロンビア* | USD  | 100,000 COP| 
+|  コロンビア* | COP  | 100,000 COP| 
 |  コモロ | USD  | 50 USD | 
 |  コンゴ共和国 | XAF  | 30,000 XAF| 
 |  コンゴ民主共和国 | USD  | 50 USD | 
@@ -60,7 +59,7 @@ Microsoft Advertising による売り上げに対する支払いについては�
 |  クロアチア | HRK  | 350 HRK | 
 |  キプロス | EUR  | 50 EUR | 
 |  チェコ共和国| CZK  | 1,000 CZK | 
-|  デンマーク | DKK  | 250 DDK| 
+|  デンマーク | DDK  | 250 DDK| 
 |  ドミニカ国 | XCD  | 135 XCD | 
 |  ドミニカ共和国 | DOP  | 2,000 DOP | 
 |  エクアドル | USD  | 50 USD | 
@@ -83,20 +82,21 @@ Microsoft Advertising による売り上げに対する支払いについては�
 |  香港特別行政区 | HKD  | 500 HKD | 
 |  ハンガリー | HUF  | 10,000 HUF | 
 |  アイスランド | USD  | 50 USD | 
-|  インド | INR  | なし | 
-|  インドネシア | IDR  | 2,500 INR | 
+|  インド | INR  | 2,500 INR | 
+|  インドネシア | IDR  | 660,000 IDR | 
 |  イラク | USD  | 50 USD | 
 |  アイルランド | EUR  | 50 EUR | 
-|  イスラエル | ILS  | 200 IL | 
+|  イスラエル | ILS  | 200 ILS | 
 |  イタリア | EUR  | 50 EUR | 
 |  ジャマイカ | JMD  | 5,700 JMD | 
 |  日本 | JPY  | 5,000 JPY | 
 |  ヨルダン | JOD  | 35 JOD | 
 |  カザフスタン | KZT  | 9,200 KZT | 
 |  ケニア | KES  | 5,000 KES | 
+|  韓国* | WON | 50,000 WON |
 |  クウェート | KWD  | 15 KWD | 
 |  ラオス | USD  | 50 USD | 
-|  ラトビア | LVL | 30 LVL | 
+|  ラトビア | EUR | 50 EUR | 
 |  レバノン | LBP  | 75,000 LBP | 
 |  リベリア | USD  | 50 USD | 
 |  リヒテンシュタイン | CHF  | 50 CHF | 
@@ -104,7 +104,7 @@ Microsoft Advertising による売り上げに対する支払いについては�
 |  ルクセンブルク | EUR  | 50 EUR | 
 |  マケドニア (FYROM) | USD  | 50 USD | 
 |  マダガスカル | USD  | 50 USD | 
-|  マラウイ | MWK  | 23,000 MWk | 
+|  マラウイ | MWK  | 23,000 MWK | 
 |  マレーシア | USD  | 50 USD | 
 |  マリ | XOF  | 31,000 XOF | 
 |  マルタ | EUR  | 50 EUR | 
@@ -144,7 +144,6 @@ Microsoft Advertising による売り上げに対する支払いについては�
 |  スロベニア | EUR  | 50 EUR | 
 |  ソマリア | USD  | 50 USD | 
 |  南アフリカ | ZAR  | 500 ZAR | 
-|  韓国* | WON | 50,000 WON |
 |  スペイン | EUR  | 50 EUR | 
 |  スリランカ | LKR  | 6,600 LKR | 
 |  スウェーデン | SEK  | 350 SEK | 
@@ -161,7 +160,7 @@ Microsoft Advertising による売り上げに対する支払いについては�
 |  トルコ | TRY  | 130 TRY | 
 |  トルクメニスタン | USD  | 50 USD | 
 |  ウガンダ | UGX  | 152,000 UGX | 
-|  ウクライナ | USD  | | 
+|  ウクライナ | USD  | 50 USD | 
 |  アラブ首長国連邦 | EUR  | 50 EUR | 
 |  英国 | GBP  | 35 GBP | 
 |  米国 | USD  | 50 USD | 
@@ -176,13 +175,12 @@ Microsoft Advertising による売り上げに対する支払いについては�
 ## 関連トピック
 
 * [受取りアカウントの設定と税関連の書類](setting-up-your-payout-account-and-tax-forms.md)
-* [支払いの受け取り](getting-paid-apps.md)
 * [入金状況](payout-summary.md)
 * [広告による収益獲得](monetize-with-ads.md)
  
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

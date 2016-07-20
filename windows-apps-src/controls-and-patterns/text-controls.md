@@ -5,6 +5,7 @@ title: "テキスト コントロール"
 ms.assetid: 43DC68BF-FA86-43D2-8807-70A359453048
 label: Text controls
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
 ms.openlocfilehash: b075820275d7b5e592cdae736ed92beef67a7b9a
 
@@ -102,7 +103,8 @@ TextBox を読み取り専用にすることはできますが、これは一時
 
 ## テキスト コントロールに適切なキーボードの選択
 
-**適用対象:** TextBox、PasswordBox、RichEditBox
+
+            **適用対象:** TextBox、PasswordBox、RichEditBox
 
 ユーザーがタッチ キーボード、つまりソフト入力パネル (SIP) でデータを入力できるように、ユーザーが入力すると予想されるデータの種類に合わせてテキスト コントロールの入力スコープを設定できます。
 
@@ -119,7 +121,8 @@ TextBox を読み取り専用にすることはできますが、これは一時
 
 ## カラー フォント
 
-**適用対象:** TextBlock、RichTextBlock、TextBox、RichEditBox
+
+            **適用対象:** TextBlock、RichTextBlock、TextBox、RichEditBox
 
 Windows には、フォントに各グリフの複数の色付きレイヤーを含めるための機能があります。 たとえば、Segoe UI Emoji フォントは、顔文字とその他の絵文字のカラー バージョンを定義します。
 
@@ -137,7 +140,8 @@ Windows には、フォントに各グリフの複数の色付きレイヤーを
 
 ## 行と段落の区切り記号のガイドライン
 
-**適用対象:** TextBlock、RichTextBlock、複数行 TextBox、RichEditBox
+
+            **適用対象:** TextBlock、RichTextBlock、複数行 TextBox、RichEditBox
 
 行の区切り文字 (0x2028) と段落の区切り文字 (0x2029) を使用すると、プレーンテキストを分割できます。 各行区切り文字の後に新しい行が開始されます。 各段落区切り文字の後に新しい段落が開始されます。
 
@@ -149,7 +153,8 @@ Windows には、フォントに各グリフの複数の色付きレイヤーを
 
 ## スペル チェックのガイドライン
 
-**適用対象:** TextBox、RichEditBox
+
+            **適用対象:** TextBox、RichEditBox
 
 テキストの入力と編集を行っているときに、スペル チェックは単語を赤い波線で強調表示してユーザーに単語のスペルの間違いを知らせ、それを修正する方法を提供します。
 
@@ -187,6 +192,6 @@ TextBox コントロールおよび RichEditBox コントロールでは、ス�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

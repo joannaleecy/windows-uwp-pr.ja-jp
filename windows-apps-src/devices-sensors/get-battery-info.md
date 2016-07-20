@@ -4,8 +4,8 @@ ms.assetid: 90BB59FC-90FE-453E-A8DE-9315E29EB98C
 title: "バッテリー情報の取得"
 description: "Windows.Devices.Power 名前空間で、API を使って詳細なバッテリー情報を取得する方法について説明します。"
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: 716123f7401350748c7eb81a2ca4208a74b6e4ac
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 9b1394c28b25b8b1b7401fcc794659dcf38fed6f
 
 ---
 # バッテリー情報の取得
@@ -17,16 +17,15 @@ ms.openlocfilehash: 716123f7401350748c7eb81a2ca4208a74b6e4ac
 -   [**Windows.Devices.Power**](https://msdn.microsoft.com/library/windows/apps/Dn895017)
 -   [**DeviceInformation.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/BR225432)
 
-[
-            **Windows.Devices.Power**](https://msdn.microsoft.com/library/windows/apps/Dn895017) 名前空間で、API を使って詳細なバッテリー情報を取得する方法について説明します。 *バッテリー レポート* ([**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005)) は、バッテリーの充電量、容量、状態や、バッテリーの集計を示します。 このトピックでは、アプリでバッテリー レポートを取得したり、変更に関する通知を受け取ったりする方法を紹介します。 コード例は基本的なバッテリー アプリからの抜粋で、このトピックの末尾の一覧で確認できます。
+[**Windows.Devices.Power**](https://msdn.microsoft.com/library/windows/apps/Dn895017) 名前空間で、API を使って詳細なバッテリー情報を取得する方法について説明します。 *バッテリー レポート* ([**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005)) は、バッテリーの充電量、容量、状態や、バッテリーの集計を示します。 このトピックでは、アプリでバッテリー レポートを取得したり、変更に関する通知を受け取ったりする方法を紹介します。 コード例は基本的なバッテリー アプリからの抜粋で、このトピックの末尾の一覧で確認できます。
 
 ## バッテリー集計レポートの取得
 
 
-一部のデバイスにはバッテリーが複数あり、各バッテリーがデバイスの消費エネルギー全体にどのように関与しているのか明確でない場合があります。 [
-            **AggregateBattery**](https://msdn.microsoft.com/library/windows/apps/Dn895011) クラスはまさにそのような用途に使います。 *バッテリー集計*レポートはデバイスに接続されたすべてのバッテリー コントローラーを表し、1 つの全体的な [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) オブジェクトを提供できます。
+一部のデバイスにはバッテリーが複数あり、各バッテリーがデバイスの消費エネルギー全体にどのように関与しているのか明確でない場合があります。 [**AggregateBattery**](https://msdn.microsoft.com/library/windows/apps/Dn895011) クラスはまさにそのような用途に使います。 *バッテリー集計*レポートはデバイスに接続されたすべてのバッテリー コントローラーを表し、1 つの全体的な [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) オブジェクトを提供できます。
 
-**注:** [**Battery**](https://msdn.microsoft.com/library/windows/apps/Dn895004) クラスは、実際にはバッテリー コントローラーに対応します。 デバイスに応じて、コントローラーは物理的なバッテリーに接続されることもあれば、デバイス エンクロージャに接続されることもあります。 そのため、バッテリーがなくても、バッテリ オブジェクトを作ることができます。 また、バッテリ オブジェクトは **null** にすることもできます。
+
+              **注:** [**Battery**](https://msdn.microsoft.com/library/windows/apps/Dn895004) クラスは、実際にはバッテリー コントローラーに対応します。 デバイスに応じて、コントローラーは物理的なバッテリーに接続されることもあれば、デバイス エンクロージャに接続されることもあります。 そのため、バッテリーがなくても、バッテリ オブジェクトを作ることができます。 また、バッテリ オブジェクトは **null** にすることもできます。
 
 集計バッテリー オブジェクトを指定したら、[**GetReport**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.getreport) を呼び出して、対応する [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) を取得します。
 
@@ -46,8 +45,7 @@ private void RequestAggregateBatteryReport()
 
 ## 個々のバッテリー レポートを取得する
 
-個々のバッテリーに対する [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) オブジェクトを作ることもできます。 [
-            **GetDeviceSelector**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.power.battery.getdeviceselector.aspx) を [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/BR225432) メソッドと共に使って、デバイスに接続されているバッテリー コントローラーがあるかどうかを表す [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) オブジェクトのコレクションを取得します。 次に、必要な **DeviceInformation** オブジェクトの **Id** プロパティを使って、[**FromIdAsync**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.power.battery.fromidasync.aspx) メソッドを使い、対応する [**Battery**](https://msdn.microsoft.com/library/windows/apps/Dn895004) を作ります。 最後に、[**GetReport**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.getreport) を呼び出して、各バッテリー レポートを取得します。
+個々のバッテリーに対する [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) オブジェクトを作ることもできます。 [**GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.getdeviceselector.aspx) を [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/BR225432) メソッドと共に使って、デバイスに接続されているバッテリー コントローラーがあるかどうかを表す [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) オブジェクトのコレクションを取得します。 次に、必要な **DeviceInformation** オブジェクトの **Id** プロパティを使って、[**FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.fromidasync.aspx) メソッドを使い、対応する [**Battery**](https://msdn.microsoft.com/library/windows/apps/Dn895004) を作ります。 最後に、[**GetReport**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.getreport) を呼び出して、各バッテリー レポートを取得します。
 
 次の例は、デバイスに接続されているすべてのバッテリーのバッテリー レポートを作る方法を示しています。
 
@@ -76,8 +74,7 @@ async private void RequestIndividualBatteryReports()
 
 ## レポートの詳細にアクセスする
 
-[
-            **BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) オブジェクトは、多くのバッテリー情報を提供します。 詳しくは、次のプロパティの API リファレンスをご覧ください。**Status** ([**BatteryStatus**](https://msdn.microsoft.com/library/windows/apps/Dn818458) 列挙体)、[**ChargeRateInMilliwatts**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.power.batteryreport.chargerateinmilliwatts.aspx)、[**DesignCapacityInMilliwattHours**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.power.batteryreport.designcapacityinmilliwatthours.aspx)、[**FullChargeCapacityInMilliwattHours**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.power.batteryreport.fullchargecapacityinmilliwatthours.aspx)、および [**RemainingCapacityInMilliwattHours**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.batteryreport.remainingcapacityinmilliwatthours)。 次の例は、基本的なバッテリー アプリで使用される一部のバッテリー レポート プロパティを示しています。このプロパティについては、このトピックで後ほど説明します。
+[**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) オブジェクトは、多くのバッテリー情報を提供します。 詳しくは、次のプロパティの API リファレンスをご覧ください。**Status** ([**BatteryStatus**](https://msdn.microsoft.com/library/windows/apps/Dn818458) 列挙体)、[**ChargeRateInMilliwatts**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.batteryreport.chargerateinmilliwatts.aspx)、[**DesignCapacityInMilliwattHours**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.batteryreport.designcapacityinmilliwatthours.aspx)、[**FullChargeCapacityInMilliwattHours**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.batteryreport.fullchargecapacityinmilliwatthours.aspx)、および [**RemainingCapacityInMilliwattHours**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.batteryreport.remainingcapacityinmilliwatthours)。 次の例は、基本的なバッテリー アプリで使用される一部のバッテリー レポート プロパティを示しています。このプロパティについては、このトピックで後ほど説明します。
 
 ```csharp
 ...
@@ -91,8 +88,7 @@ TextBlock txt6 = new TextBlock { Text = "Remaining energy capacity (mWh): " + re
 
 ## レポートの更新を要求する
 
-[
-            **Battery**](https://msdn.microsoft.com/library/windows/apps/Dn895004) オブジェクトは、バッテリーの充電量、容量、状態が変わると [**ReportUpdated**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.reportupdated) イベントをトリガーします。 通常、これは、ステータスの変更についてはすぐに、その他のすべての変更については定期的に発生します。 次の例は、バッテリー レポートの更新に登録する方法を示しています。
+[**Battery**](https://msdn.microsoft.com/library/windows/apps/Dn895004) オブジェクトは、バッテリーの充電量、容量、状態が変わると [**ReportUpdated**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.reportupdated) イベントをトリガーします。 通常、これは、ステータスの変更についてはすぐに、その他のすべての変更については定期的に発生します。 次の例は、バッテリー レポートの更新に登録する方法を示しています。
 
 ```csharp
 ...
@@ -337,13 +333,14 @@ namespace App1
 
 最後に、この基本的なバッテリー アプリを実行します: **[デバッグ]** メニューで **[デバッグの開始]** をクリックしてソリューションをテストします。
 
-**ヒント:** [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) オブジェクトから数値を受け取るには、**ローカル コンピューター**または (Windows Phone などの) 外部**デバイス**上のアプリをデバッグします。 デバイス エミュレーターでデバッグした場合、**BatteryReport** オブジェクトは容量や消費率のプロパティに **null** を返します。
+
+              **ヒント:** [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) オブジェクトから数値を受け取るには、**ローカル コンピューター**または (Windows Phone などの) 外部**デバイス**上のアプリをデバッグします。 デバイス エミュレーターでデバッグした場合、**BatteryReport** オブジェクトは容量や消費率のプロパティに **null** を返します。
 
  
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

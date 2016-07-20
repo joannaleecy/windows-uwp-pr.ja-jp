@@ -3,14 +3,16 @@ author: Mtoepke
 title: "Xbox One の UWP アプリ開発の概要"
 description: "UWP 開発のために PC と Xbox One を設定する方法。"
 area: Xbox
-ms.sourcegitcommit: bdf7a32d2f0673ab6c176a775b805eff2b7cf437
-ms.openlocfilehash: b070b6bec350c3c893f934e212b1de743b349861
+translationtype: Human Translation
+ms.sourcegitcommit: 5f050eee9430dc7aaa2738a4610a2c4f5083839d
+ms.openlocfilehash: 92a9cc54c6257c35b1e7ae19838b01c8452c4b36
 
 ---
 
 #Xbox One の UWP アプリ開発の概要
 
-UWP 開発のために PC と Xbox One を設定する方法の手順に**注意深く**従います。 この設定の完了後に、Xbox One の開発者モードと UWP アプリの構築について詳しくは、「[Xbox one の UWP](index.md)」ページをご覧ください。 
+
+              UWP 開発のために PC と Xbox One を設定する方法の手順に**注意深く**従います。 この設定の完了後に、Xbox One の開発者モードと UWP アプリの構築について詳しくは、「[Xbox one の UWP](index.md)」ページをご覧ください。 
 
 ## 開始前の作業
 開始する前に、次の操作をする必要があります。
@@ -25,8 +27,8 @@ UWP 開発のために PC と Xbox One を設定する方法の手順に**注意
 
 2.  最新の Windows 10 SDK プレビュー ビルドをインストールします。 これは [Windows Insider Program](http://go.microsoft.com/fwlink/p/?LinkId=780552) で入手できます。
   
-  > **重要:**
-            &nbsp;&nbsp;このプレビュー SDK を PC にインストールすると、その PC でビルドされたアプリをストアに提出できなくなります。実開発環境の PC には、このプレビュー SDK をインストールしないでください。 
+  > 
+              **重要:**&nbsp;&nbsp;このプレビュー SDK を PC にインストールすると、その PC でビルドされたアプリをストアに提出できなくなります。実開発環境の PC には、このプレビュー SDK をインストールしないでください。 
 
 ## Xbox One 本体の設定
 1.  Xbox One の開発者モードを有効にします。 アプリをダウンロードして、アクティブ化コードを取得し、デベロッパー センターのアカウントを使って、xboxactivate ページでそれを入力します。 詳しくは、「[Xbox One で開発者モードを有効にする](devkit-activation.md)」をご覧ください。 
@@ -35,11 +37,11 @@ UWP 開発のために PC と Xbox One を設定する方法の手順に**注意
 
 3.  開発者モードのアクティブ化のアプリに移動し、**[切り替えと再起動]** を選択します。 これで Xbox One は開発者モードとなりました。
   
-  > **注:**
-            &nbsp;&nbsp;市販のゲームやアプリは開発者モードでは実行できません。自分で作成するアプリまたはゲームを実行できます。 市販のゲームやアプリを実行するには、リテール モードに切り替えます。
+  > 
+              **注:**&nbsp;&nbsp;市販のゲームやアプリは開発者モードでは実行できません。自分で作成するアプリまたはゲームを実行できます。 市販のゲームやアプリを実行するには、リテール モードに切り替えます。
   
-  > **注**
-            &nbsp;&nbsp;開発者モードでアプリを Xbox One に展開するには、ユーザーを本体にサインインさせる必要があります。 既存の Xbox Live アカウントを使用することも、開発者モードで本体の新しいアカウントを作成することもできます。 
+  > 
+              **注**&nbsp;&nbsp;開発者モードでアプリを Xbox One に展開するには、ユーザーを本体にサインインさせる必要があります。 既存の Xbox Live アカウントを使用することも、開発者モードで本体の新しいアカウントを作成することもできます。 
 
 ## Visual Studio 2015 の初めてのプロジェクトの作成
 
@@ -58,8 +60,10 @@ UWP 開発のために PC と Xbox One を設定する方法の手順に**注意
 5.  ペアリングを行うと、アプリの展開が開始されます。 初めてこれを行う際には、(すべてのツールを Xbox にコピーする必要があるため) 少し時間がかかることがありますが、数分以上かかる場合には、何か問題がある場合があります。 上記のすべての手順を実行していることを確認します (特に **[認証モード]** を **[ユニバーサル]** に設定していることを確認します)。また Xbox One に有線接続していることを確認します。  
 
 6. 用意ができました。 本体での初めてのアプリの実行をお楽しみください。  
-   ![Hello World](images/getting-started-hello-world.png)
-   
+
+## 以上で作業は終了です。
+
+![Hello World](images/getting-started-hello-world.png)
 
 ## 参照  
 - [FAQ](frequently-asked-questions.md)  
@@ -68,6 +72,6 @@ UWP 開発のために PC と Xbox One を設定する方法の手順に**注意
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

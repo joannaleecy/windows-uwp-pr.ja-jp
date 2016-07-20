@@ -3,6 +3,7 @@ author: mtoepke
 title: "ゲームと DirectX"
 description: "ユニバーサル Windows プラットフォーム (UWP) は、ゲームを作り、配布し、収益を得るための新たな機会を提供します。 新しいゲームの開始または既存のゲームの移植について説明します。"
 ms.assetid: 4073b835-c900-4ff2-9fc5-da52f9432a1f
+translationtype: Human Translation
 ms.sourcegitcommit: 41ee0d2a45408b5b1a0dbc0b102f1b59843814b2
 ms.openlocfilehash: e5447f6238ece768513d160579e1c7e89b04e509
 
@@ -69,6 +70,6 @@ ms.openlocfilehash: e5447f6238ece768513d160579e1c7e89b04e509
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

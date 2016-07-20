@@ -3,8 +3,9 @@ author: Mtoepke
 title: "よく寄せられる質問"
 description: "Xbox の UWP についてのよく寄せられる質問。"
 area: Xbox
-ms.sourcegitcommit: bdf7a32d2f0673ab6c176a775b805eff2b7cf437
-ms.openlocfilehash: 34e186049039d5a8366f34e985ad7250ef664f00
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 01173aeabb74d6d703597a9bd7a48c179c688c07
 
 ---
 
@@ -20,8 +21,8 @@ ms.openlocfilehash: 34e186049039d5a8366f34e985ad7250ef664f00
 
 まず、リテール モードでなく、開発者モードで実行していることを確認します。 リテール モードでは、Xbox One に接続できません。 **[ホーム]** ボタンを押して、画面の右側に Dev Home タイルがあるかどうかを確認します。 Dev Home タイルがなく、Gold/Live コンテンツが表示されている場合には、リテール モードで実行されています。 開発者モードに切り替えるには、開発者モードのアクティブ化用アプリを実行する必要があります。
 
-> **注**
-            &nbsp;&nbsp;アプリを展開するには、ユーザーをサインインさせる必要があります。
+> 
+              **注**&nbsp;&nbsp;アプリを展開するには、ユーザーをサインインさせる必要があります。
 
 詳しくは、このページの「[展開の失敗を修正する](frequently-asked-questions.md#fixing-deployment-failures)」をご覧ください。
 
@@ -64,9 +65,11 @@ Dev Home を開始し、**[Leave developer mode]** ボタンを選択します�
 
 ### 自分のゲームを公開できますか
 
-UWP と Xbox One の開発者モードを使って、Xbox One でゲームの構築とテストを行えます。 UWP ゲームを公開するには、[ID@XBOX](http://www.xbox.com/en-us/Developers/id) で登録する必要があります。 
-[ID@XBOX](http://www.xbox.com/en-us/Developers/id) では開発者は、ゲーム用の Xbox Live API のすべてにアクセスできます。これにはゲームスコア、達成度、デバイス間でのマルチ プレーヤーの活用、クラウドの保存など、Xbox One の Xbox Live のすべての機能が含まれます。 
-さらに [ID@XBOX](http://www.xbox.com/en-us/Developers/id) は、ゲーム用の Xbox One 開発キットへのアクセスも提供します。これにより Xbox One のハードウェアの機能を最大限に活用できます。
+UWP と Xbox One の開発者モードを使って、Xbox One でゲームの構築とテストを行えます。 UWP ゲームを公開するには、[ID@XBOX](http://www.xbox.com/Developers/id) で登録する必要があります。 
+
+              [ID@XBOX](http://www.xbox.com/Developers/id) では開発者は、ゲーム用の Xbox Live API のすべてにアクセスできます。これにはゲームスコア、達成度、デバイス間でのマルチ プレーヤーの活用、クラウドの保存など、Xbox One の Xbox Live のすべての機能が含まれます。 
+
+              さらに [ID@XBOX](http://www.xbox.com/Developers/id) は、ゲーム用の Xbox One 開発キットへのアクセスも提供します。これにより Xbox One のハードウェアの機能を最大限に活用できます。
 
 ### 標準的なゲーム エンジンは機能しますか
 
@@ -88,8 +91,8 @@ UWP と Xbox One の開発者モードを使って、Xbox One でゲームの構
 
 Visual Studio からアプリを展開できない場合、次の手順が問題の解決に役立つ場合があります。 それでも解決できない場合には、フォーラムに投稿してみます。
 
-> **注**
-            &nbsp;&nbsp;アプリを展開するには、ユーザーをサインインさせる必要があります。 0x87e10008 エラー メッセージが表示された場合は、ユーザーがサインインしているかどうかを確認し、もう一度サインインさせます。
+> 
+              **注**&nbsp;&nbsp;アプリを展開するには、ユーザーをサインインさせる必要があります。 0x87e10008 エラー メッセージが表示された場合は、ユーザーがサインインしているかどうかを確認し、もう一度サインインさせます。
 
 Visual Studio が Xbox One に接続できない場合:
 
@@ -99,8 +102,8 @@ Visual Studio が Xbox One に接続できない場合:
 3. まだの場合、「[開発環境のセットアップ](development-environment-setup.md)」と「[Xbox One ツールの概要](introduction-to-xbox-tools.md)」をよくお読みください。
 
 4. 開発用 PC から本体の IP アドレスに "ping" ができることを確認します。
-> **注**
-            &nbsp;&nbsp;展開のパフォーマンスを最大限に引き出すために、本体には、有線接続を使用することをお勧めします。
+> 
+              **注**&nbsp;&nbsp;展開のパフォーマンスを最大限に引き出すために、本体には、有線接続を使用することをお勧めします。
 
 5. **[デバッグ]** タブの [認証] ドロップダウンリストで [ユニバーサル (暗号化されていないプロトコル)] を使用していることを確認します。 詳しくは、「[開発環境のセットアップ](development-environment-setup.md)」をご覧ください。
 
@@ -137,6 +140,6 @@ TVHelpers は、JavaScript と XAML/C# のサンプルとライブラリです�
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

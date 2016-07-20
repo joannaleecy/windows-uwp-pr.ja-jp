@@ -3,8 +3,9 @@ author: TylerMSFT
 ms.assetid: 34C00F9F-2196-46A3-A32F-0067AB48291B
 description: "ここでは、ppltasks.h の concurrency 名前空間で定義された task クラスを使って Visual C++ コンポーネント拡張機能 (C++/CX) の非同期メソッドを実装する際に推奨される方法について説明します。"
 title: "C++ での非同期プログラミング"
-ms.sourcegitcommit: c440d0dc2719a982a6b566c788d76111c40e263e
-ms.openlocfilehash: c33c05c6ec7f36b8ba7db840613fbfb7eb394c3f
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: b0a3faa56249ccfe693438c1077b7500736f3ec5
 
 ---
 
@@ -71,18 +72,15 @@ void App::TestAsync()
 }
 ```
 
-[
-            **task::then**][taskThen] 関数で作成されて返されるタスクのことを*継続*と呼びます。 ユーザーが指定するラムダの入力引数は (この例の場合)、タスク操作の完了時に生成される結果です。 この値は、**IAsyncOperation** インターフェイスを直接使う場合に [**IAsyncOperation::GetResults**](https://msdn.microsoft.com/library/windows/apps/br206600) を呼び出して取得する値と同じになります。
+[**task::then**][taskThen] 関数で作成されて返されるタスクのことを*継続*と呼びます。 ユーザーが指定するラムダの入力引数は (この例の場合)、タスク操作の完了時に生成される結果です。 この値は、**IAsyncOperation** インターフェイスを直接使う場合に [**IAsyncOperation::GetResults**](https://msdn.microsoft.com/library/windows/apps/br206600) を呼び出して取得する値と同じになります。
 
-[
-            **task::then**][taskThen] メソッドからは直ちに制御が返され、そのデリゲートは非同期作業が正常に完了するまで実行されません。 この例では、非同期操作で例外がスローされるか、取り消し要求によって非同期操作が取り消された状態で終わると、継続は実行されません。 前のタスクが取り消されるか失敗しても実行される継続を記述する方法については後で説明します。
+[**task::then**][taskThen] メソッドからは直ちに制御が返され、そのデリゲートは非同期作業が正常に完了するまで実行されません。 この例では、非同期操作で例外がスローされるか、取り消し要求によって非同期操作が取り消された状態で終わると、継続は実行されません。 前のタスクが取り消されるか失敗しても実行される継続を記述する方法については後で説明します。
 
 タスクの変数はローカル スタックで宣言しますが、その有効期間は、操作が完了する前にメソッドから制御が返されても、すべての操作が完了してすべての参照がスコープ外になるまで削除されないように管理されます。
 
 ## タスクのチェーンの作成
 
-非同期プログラミングでは、前のタスクが完了した場合にのみ継続が実行されるように、操作のシーケンス (*タスク チェーン*) を定義するのが一般的です。 場合によっては、前のタスク (*先行タスク*) で生成された値を継続が入力として受け取ることもあります。 [
-            **task::then**][taskThen] メソッドを使うと、直観的な方法で簡単にタスク チェーンを作成できます。このメソッドは、**task<T>** **T** はラムダ関数の戻り値の型) を返します。 複数の継続を含めて 1 つのタスク チェーンを構成することができます。 `myTask.then(…).then(…).then(…);`
+非同期プログラミングでは、前のタスクが完了した場合にのみ継続が実行されるように、操作のシーケンス (*タスク チェーン*) を定義するのが一般的です。 場合によっては、前のタスク (*先行タスク*) で生成された値を継続が入力として受け取ることもあります。 [**task::then**][taskThen] メソッドを使うと、直観的な方法で簡単にタスク チェーンを作成できます。このメソッドは、**task<T>** **T** はラムダ関数の戻り値の型) を返します。 複数の継続を含めて 1 つのタスク チェーンを構成することができます。 `myTask.then(…).then(…).then(…);`
 
 タスク チェーンは、継続で新しい非同期操作を作成する場合に特に便利です。このようなタスクのことを非同期タスクと呼びます。 次の例は、2 つの継続を含むタスク チェーンを示しています。 既存のファイルへのハンドルを取得する最初のタスクの操作が完了すると、1 つ目の継続でそのファイルを削除する新しい非同期操作が始まります。 その操作が完了すると、2 つ目の継続が実行され、確認メッセージが出力されます。
 
@@ -114,7 +112,8 @@ void App::DeleteWithTasks(String^ fileName)
 
 -   2 つ目の継続は値ベースであるため、[**DeleteAsync**][deleteAsync] を呼び出して開始された操作から例外がスローされると、2 つ目の継続は実行されません。
 
-**注:** タスク チェーンの作成は、**task** クラスを使って非同期操作を構成する方法の 1 つにすぎません。 結合演算子 (**&&**) や選択演算子 (**||**) を使って操作を構成することもできます。 詳しくは、「[タスクの並列処理 (同時実行ランタイム)][taskParallelism]」をご覧ください。
+
+              **注:** タスク チェーンの作成は、**task** クラスを使って非同期操作を構成する方法の 1 つにすぎません。 結合演算子 (**&&**) や選択演算子 (**||**) を使って操作を構成することもできます。 詳しくは、「[タスクの並列処理 (同時実行ランタイム)][taskParallelism]」をご覧ください。
 
 ## ラムダ関数の戻り値の型とタスクの戻り値の型
 
@@ -135,7 +134,7 @@ void App::DeleteWithTasks(String^ fileName)
 
 ## タスクの取り消し
 
-通常、非同期操作をユーザーが取り消せるようにすることをお勧めします。 また、場合によっては、プログラムを使ってタスク チェーンの外側から操作を取り消さなければならないこともあります。 \***Async** のそれぞれの戻り値の型には [**IAsyncInfo**][IAsyncInfo] から継承した [**Cancel**][IAsyncInfoCancel] メソッドが含まれますが、それを外部のメソッドに公開する方法はあまりお勧めできません。 タスク チェーンで取り消しをサポートするときは、[**cancellation\_token\_source**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh749985.aspx) を使って [**cancellation\_token**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh749975.aspx) を作成し、そのトークンを最初のタスクのコンストラクターに渡す方法をお勧めします。 キャンセル トークンを設定して非同期タスクを作成した場合、[**cancellation\_token\_source::cancel**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750076.aspx) が呼び出されたときに、**IAsync\*** 操作に対する **Cancel** が自動的に呼び出され、取り消し要求が後続のタスク チェーンに渡されます。 この基本的な方法を示す疑似コードを次に示します。
+通常、非同期操作をユーザーが取り消せるようにすることをお勧めします。 また、場合によっては、プログラムを使ってタスク チェーンの外側から操作を取り消さなければならないこともあります。 \***Async** のそれぞれの戻り値の型には [**IAsyncInfo**][IAsyncInfo] から継承した [**Cancel**][IAsyncInfoCancel] メソッドが含まれますが、それを外部のメソッドに公開する方法はあまりお勧めできません。 タスク チェーンで取り消しをサポートするときは、[**cancellation\_token\_source**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749985.aspx) を使って [**cancellation\_token**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749975.aspx) を作成し、そのトークンを最初のタスクのコンストラクターに渡す方法をお勧めします。 キャンセル トークンを設定して非同期タスクを作成した場合、[**cancellation\_token\_source::cancel**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750076.aspx) が呼び出されたときに、**IAsync\*** 操作に対する **Cancel** が自動的に呼び出され、取り消し要求が後続のタスク チェーンに渡されます。 この基本的な方法を示す疑似コードを次に示します。
 
 ``` cpp
 //Class member:
@@ -150,11 +149,11 @@ auto getFileTask2 = create_task(documentsFolder->GetFileAsync(fileName),
 //getFileTask2.then ...
 ```
 
-タスクが取り消されると、[**task\_canceled**][taskCanceled] 例外がタスク チェーンを通じて伝達されます。 値ベースの継続は実行されないだけですが、タスクベースの継続では、[**task::get**][taskGet] が呼び出されると例外がスローされます。 エラー処理を行う継続がある場合は、**task\_canceled** 例外を明示的にキャッチするようにしてください (これは [**Platform::Exception**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh755825.aspx) から派生した例外ではありません)。
+タスクが取り消されると、[**task\_canceled**][taskCanceled] 例外がタスク チェーンを通じて伝達されます。 値ベースの継続は実行されないだけですが、タスクベースの継続では、[**task::get**][taskGet] が呼び出されると例外がスローされます。 エラー処理を行う継続がある場合は、**task\_canceled** 例外を明示的にキャッチするようにしてください  (これは [**Platform::Exception**](https://msdn.microsoft.com/library/windows/apps/xaml/hh755825.aspx) から派生した例外ではありません)。
 
-取り消しは連携して行います。 継続で、UWP メソッドを呼び出すだけでなく、時間のかかる作業を行うときは、キャンセル トークンの状態を定期的に確認し、取り消された場合は実行を中止する必要があります。 継続で割り当てられたすべてのリソースをクリーンアップした後、[**cancel\_current\_task**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh749945.aspx) を呼び出してそのタスクを取り消し、以降の値ベースの継続に取り消しを伝達します。 また、別の例として、[**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/BR207871) 操作の結果を表すタスク チェーンを作成するとします。 ユーザーが **[キャンセル]** ボタンをクリックした場合、[**IAsyncInfo::Cancel**][IAsyncInfoCancel] メソッドは呼び出されません。 代わりに、操作は完了しますが **nullptr** が返されます。 この場合、継続で入力パラメーターをテストし、入力が **nullptr** の場合に **cancel\_current\_task** を呼び出すことができます。
+取り消しは連携して行います。 継続で、UWP メソッドを呼び出すだけでなく、時間のかかる作業を行うときは、キャンセル トークンの状態を定期的に確認し、取り消された場合は実行を中止する必要があります。 継続で割り当てられたすべてのリソースをクリーンアップした後、[**cancel\_current\_task**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749945.aspx) を呼び出してそのタスクを取り消し、以降の値ベースの継続に取り消しを伝達します。 また、別の例として、[**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/BR207871) 操作の結果を表すタスク チェーンを作成するとします。 ユーザーが **[キャンセル]** ボタンをクリックした場合、[**IAsyncInfo::Cancel**][IAsyncInfoCancel] メソッドは呼び出されません。 代わりに、操作は完了しますが **nullptr** が返されます。 この場合、継続で入力パラメーターをテストし、入力が **nullptr** の場合に **cancel\_current\_task** を呼び出すことができます。
 
-詳しくは、「[PPL での取り消し](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dd984117.aspx)」をご覧ください。
+詳しくは、「[PPL での取り消し](https://msdn.microsoft.com/library/windows/apps/xaml/dd984117.aspx)」をご覧ください。
 
 ## タスク チェーンでのエラーの処理
 
@@ -223,14 +222,11 @@ void App::SetFeedText()
 }
 ```
 
-[
-            **IAsyncAction**][IAsyncAction] または [**IAsyncOperation**][IAsyncOperation] を返さないタスクは、アパートメントを認識しません。これらのタスクの継続は、既定では、利用可能な最初のバックグラウンド スレッドで実行されます。
+[**IAsyncAction**][IAsyncAction] または [**IAsyncOperation**][IAsyncOperation] を返さないタスクは、アパートメントを認識しません。これらのタスクの継続は、既定では、利用可能な最初のバックグラウンド スレッドで実行されます。
 
-既定のスレッド コンテキストは、どちらの種類のタスクについても、[**task\_continuation\_context**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh749968.aspx) を受け取る [**task::then**][taskThen] のオーバーロードを使って上書きできます。 たとえば、状況によっては、アパートメントを認識するタスクの継続をバックグラウンド スレッドでスケジュールする方が適している場合もあります。 このような場合は、[**task\_continuation\_context::use\_arbitrary**][useArbitrary] を渡して、マルチスレッド アパートメント内の次に利用可能なスレッドでタスクの処理をスケジュールできます。 これにより、継続の作業を UI スレッドで発生する他の作業と同期する必要がないため、継続のパフォーマンスが向上します。
+既定のスレッド コンテキストは、どちらの種類のタスクについても、[**task\_continuation\_context**](https://msdn.microsoft.com/library/windows/apps/xaml/hh749968.aspx) を受け取る [**task::then**][taskThen] のオーバーロードを使って上書きできます。 たとえば、状況によっては、アパートメントを認識するタスクの継続をバックグラウンド スレッドでスケジュールする方が適している場合もあります。 このような場合は、[**task\_continuation\_context::use\_arbitrary**][useArbitrary] を渡して、マルチスレッド アパートメント内の次に利用可能なスレッドでタスクの処理をスケジュールできます。 これにより、継続の作業を UI スレッドで発生する他の作業と同期する必要がないため、継続のパフォーマンスが向上します。
 
-次の例は、[**task\_continuation\_context::use\_arbitrary**][useArbitrary] オプションを指定すると役立つ状況の例を示しています。また、スレッド セーフでないコレクションの同時操作の同期に既定の継続のコンテキストがどのように役立つかも示しています。 このコードでは、RSS フィードの URL の一覧をループ処理し、各 URL について、非同期操作を開始してフィード データを取得しています。 フィードを取得する順序は制御できませんが、ここでは問題ありません。 [
-            **RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR210642) 操作が完了するたびに、1 つ目の継続が [**SyndicationFeed^**](https://msdn.microsoft.com/library/windows/apps/BR243485) オブジェクトを受け取り、それを使ってアプリで定義されている `FeedData^` オブジェクトを初期化します。 これらの操作はそれぞれ独立した操作であるため、継続のコンテキストとして **task\_continuation\_context::use\_arbitrary** を指定すると処理が速くなる可能性があります。 ただし、それぞれの `FeedData` オブジェクトを初期化した後に、そのオブジェクトを [**Vector**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh441570.aspx) に追加する必要があり、スレッド セーフなコレクションではありません。 そのため、ここでは、継続を作成して [**task\_continuation\_context::use\_current**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750085.aspx) を指定することで、[**Append**](https://msdn.microsoft.com/library/windows/apps/BR206632) の呼び出しがすべて同じアプリケーション シングルスレッド アパートメント (ASTA) コンテキストで実行されるようにしています。 [
-            **task\_continuation\_context::use\_default**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750085.aspx) は既定のコンテキストであるため、明示的に指定する必要はありませんが、ここではわかりやすいように指定しています。
+次の例は、[**task\_continuation\_context::use\_arbitrary**][useArbitrary] オプションを指定すると役立つ状況の例を示しています。また、スレッド セーフでないコレクションの同時操作の同期に既定の継続のコンテキストがどのように役立つかも示しています。 このコードでは、RSS フィードの URL の一覧をループ処理し、各 URL について、非同期操作を開始してフィード データを取得しています。 フィードを取得する順序は制御できませんが、ここでは問題ありません。 [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR210642) 操作が完了するたびに、1 つ目の継続が [**SyndicationFeed^**](https://msdn.microsoft.com/library/windows/apps/BR243485) オブジェクトを受け取り、それを使ってアプリで定義されている `FeedData^` オブジェクトを初期化します。 これらの操作はそれぞれ独立した操作であるため、継続のコンテキストとして **task\_continuation\_context::use\_arbitrary** を指定すると処理が速くなる可能性があります。 ただし、それぞれの `FeedData` オブジェクトを初期化した後に、そのオブジェクトを [**Vector**](https://msdn.microsoft.com/library/windows/apps/xaml/hh441570.aspx) に追加する必要があり、スレッド セーフなコレクションではありません。 そのため、ここでは、継続を作成して [**task\_continuation\_context::use\_current**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750085.aspx) を指定することで、[**Append**](https://msdn.microsoft.com/library/windows/apps/BR206632) の呼び出しがすべて同じアプリケーション シングルスレッド アパートメント (ASTA) コンテキストで実行されるようにしています。 [**task\_continuation\_context::use\_default**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750085.aspx) は既定のコンテキストであるため、明示的に指定する必要はありませんが、ここではわかりやすいように指定しています。
 
 ``` cpp
 #include <ppltasks.h>
@@ -295,55 +291,54 @@ void App::InitDataSource(Vector<Object^>^ feedList, vector<wstring> urls)
 
 ## 進行状況の更新の処理
 
-[
-            **IAsyncOperationWithProgress**](https://msdn.microsoft.com/library/windows/apps/br206594.aspx) または [**IAsyncActionWithProgress**](https://msdn.microsoft.com/en-us/library/windows/apps/br206581.aspx) をサポートするメソッドは、実行中の操作が完了するまでの間、定期的に進行状況の更新を提供します。 この進行状況の報告は、タスクや継続とは別に独立して処理されます。 オブジェクトの [**Progress**](https://msdn.microsoft.com/library/windows/apps/br206594) プロパティのデリゲートを指定するだけでかまいません。 このデリゲートの一般的な用途は、UI の進行状況バーを更新することです。
+[**IAsyncOperationWithProgress**](https://msdn.microsoft.com/library/windows/apps/br206594.aspx) または [**IAsyncActionWithProgress**](https://msdn.microsoft.com/library/windows/apps/br206581.aspx) をサポートするメソッドは、実行中の操作が完了するまでの間、定期的に進行状況の更新を提供します。 この進行状況の報告は、タスクや継続とは別に独立して処理されます。 オブジェクトの [**Progress**](https://msdn.microsoft.com/library/windows/apps/br206594) プロパティのデリゲートを指定するだけでかまいません。 このデリゲートの一般的な用途は、UI の進行状況バーを更新することです。
 
 ## 関連トピック
 
-* [C++ における Windows ストア アプリ用の非同期操作の作成]
-            [createAsyncCpp]
+* 
+              [C++ における Windows ストア アプリ用の非同期操作の作成][createAsyncCpp]
 * [Visual C++ 言語のリファレンス](http://msdn.microsoft.com/library/windows/apps/hh699871.aspx)
-* [非同期プログラミング]
-            [AsyncProgramming]
-* [タスクの並列処理 (同時実行ランタイム)]
-            [taskParallelism]
-* [task クラス]
-            [task-class]
+* 
+              [非同期プログラミング][AsyncProgramming]
+* 
+              [タスクの並列処理 (同時実行ランタイム)][taskParallelism]
+* 
+              [task クラス][task-class]
  
 <!-- LINKS -->
-[AsyncProgramming]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh464924.aspx>
-             "AsyncProgramming"
-[concurrencyNamespace]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dd492819.aspx>
-             "concurrency 名前空間"
-[createTask]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh913025.aspx>
-             "CreateTask"
-[createAsyncCpp]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750082.aspx>
-             "CreateAsync"
-[deleteAsync]: <https://msdn.microsoft.com/library/windows/apps/BR227199>
-             "DeleteAsync"
-[IAsyncAction]: <https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.aspx>
-             "IAsyncAction"
-[IAsyncOperation]: <https://msdn.microsoft.com/library/windows/apps/BR206598>
-             "IAsyncOperation"
-[IAsyncInfo]: <https://msdn.microsoft.com/library/windows/apps/BR206587>
-             "IAsyncInfo"
-[IAsyncInfoCancel]: <https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncinfo.cancel>
-             "IAsyncInfoCancel"
-[taskCanceled]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750106.aspx>
-             "TaskCancelled"
-[task-class]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750113.aspx>
-             "task クラス"
-[taskGet]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750017.aspx>
-             "TaskGet"
-[taskParallelism]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dd492427.aspx>
-             "タスクの並列処理"
-[taskThen]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750044.aspx>
-             "TaskThen"
-[useArbitrary]: <https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750036.aspx>
-             "UseArbitrary"
+
+              [AsyncProgramming]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh464924.aspx> "AsyncProgramming"
+
+              [concurrencyNamespace]: <https://msdn.microsoft.com/library/windows/apps/xaml/dd492819.aspx> "Concurrency 名前空間"
+
+              [createTask]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh913025.aspx> "CreateTask"
+
+              [createAsyncCpp]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh750082.aspx> "CreateAsync"
+
+              [deleteAsync]: <https://msdn.microsoft.com/library/windows/apps/BR227199> "DeleteAsync"
+
+              [IAsyncAction]: <https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.aspx> "IAsyncAction"
+
+              [IAsyncOperation]: <https://msdn.microsoft.com/library/windows/apps/BR206598> "IAsyncOperation"
+
+              [IAsyncInfo]: <https://msdn.microsoft.com/library/windows/apps/BR206587> "IAsyncInfo"
+
+              [IAsyncInfoCancel]: <https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncinfo.cancel> "IAsyncInfoCancel"
+
+              [taskCanceled]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh750106.aspx> "TaskCancelled"
+
+              [task-class]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh750113.aspx> "task クラス"
+
+              [taskGet]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh750017.aspx> "TaskGet"
+
+              [taskParallelism]: <https://msdn.microsoft.com/library/windows/apps/xaml/dd492427.aspx> "タスクの並列処理"
+
+              [taskThen]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh750044.aspx> "TaskThen"
+
+              [useArbitrary]: <https://msdn.microsoft.com/library/windows/apps/xaml/hh750036.aspx> "UseArbitrary"
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

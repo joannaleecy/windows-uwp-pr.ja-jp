@@ -4,8 +4,8 @@ ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
 title: "準備"
 description: "準備は、思っているよりも簡単です。 次の手順に従って、Windows 10 用のユニバーサル Windows プラットフォーム (UWP) アプリの作成を開始してください。"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 8c5dfb692d647a25eea13036cd320366f3c5a09c
+ms.sourcegitcommit: a47dc36129daaed02cb181dde625d440fa4cf6e4
+ms.openlocfilehash: f20707cab08998d86142f7d657b51faa78d9a777
 
 ---
 # 準備
@@ -30,6 +30,10 @@ Visual Studio 2015 をまだお持ちでない場合は、このリンクをク�
 
 -   [Windows 10 開発者ツールをダウンロードする](https://go.microsoft.com/fwlink/p/?LinkID=534189)
 
+Visual Studio をインストールする場合は、カスタム オプションを使用して、次のように [ユニバーサル Windows アプリ開発ツール] のすべてのオプションが選択されていることを確認します。
+
+![UWP 用の Visual Studio ツール](images/vs-2015-community-setup.png)
+
 ## 3. デバイスを開発用に有効にする
 
 UWP アプリのテストは実際の PC と電話で行うことが重要です。 PC または Windows Phone にアプリを展開するには、PC または電話を開発用に有効にする必要があります。
@@ -46,7 +50,8 @@ UWP アプリのテストは実際の PC と電話で行うことが重要です
 
 ツールをインストールして開発者用ライセンスまたは開発者アカウントを取得したら、チュートリアルを使って最初のアプリを作成します。
 
--   [初めてのアプリの作成](your-first-app.md)のチュートリアル
+-   
+            [初めてのアプリの作成](your-first-app.md)のチュートリアル
 
 ## その他のツールとダウンロード
 
@@ -56,6 +61,6 @@ UWP アプリのテストは実際の PC と電話で行うことが重要です
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

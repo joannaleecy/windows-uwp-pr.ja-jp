@@ -4,8 +4,8 @@ ms.assetid: 16ad97eb-23f1-0264-23a9-a1791b4a5b95
 title: "BeginDraw と EndDraw によるコンポジションでの DirectX と Direct2D のネイティブ相互運用"
 description: "Windows.UI.Composition API には、コンテンツをコンポジターに直接移行できるようにするネイティブの相互運用インターフェイスが用意されています。"
 translationtype: Human Translation
-ms.sourcegitcommit: b3d198af0c46ec7a2041a7417bccd56c05af760e
-ms.openlocfilehash: b5308c8023990996a93277dd1bcfb8298c0bbf4f
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: c2086e703e3972d4dd38dc1b7147bfa5f01231cf
 
 ---
 # BeginDraw と EndDraw によるコンポジションでの DirectX と Direct2D のネイティブ相互運用
@@ -24,20 +24,20 @@ Windows.UI.Composition API には、コンテンツをコンポジターに直�
 
 ## サーフェスへのピクセルの読み込み
 
-サーフェスにピクセルを読み込むために、アプリケーションは [**BeginDraw**](https://msdn.microsoft.com/en-us/library/windows/apps/mt620059.aspx) メソッドを呼び出す必要があります。このメソッドが、アプリケーションの要求に応じて、テクスチャや Direct2D のコンテキストを表す DirectX インターフェイスを返します。 アプリケーションはそのテクスチャにピクセルをレンダリングまたはアップロードする必要があります。 その操作が終了したら、アプリケーションは [**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060) メソッドを呼び出す必要があります。 その時点でのみ新しいピクセルはコンポジションに使えますが、次にビジュアル オブジェクト ツリーへのすべての変更がコミットされるまで、まだ画面には表示されません。 **EndDraw** が呼び出される前に、ビジュアル オブジェクト ツリーがコミットされた場合、進行中の更新は画面に表示されず、サーフェスには引き続き **BeginDraw** の前の内容が表示されます。 **EndDraw** が呼び出されると、BeginDraw によって返されたテクスチャや Direct2D コンテキスト ポインターは無効化されます。 アプリケーションは **EndDraw** の呼び出し後にそのポインターをキャッシュすることはありません。
+サーフェスにピクセルを読み込むために、アプリケーションは [**BeginDraw**](https://msdn.microsoft.com/library/windows/apps/mt620059.aspx) メソッドを呼び出す必要があります。このメソッドが、アプリケーションの要求に応じて、テクスチャや Direct2D のコンテキストを表す DirectX インターフェイスを返します。 アプリケーションはそのテクスチャにピクセルをレンダリングまたはアップロードする必要があります。 その操作が終了したら、アプリケーションは [**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060) メソッドを呼び出す必要があります。 その時点でのみ新しいピクセルはコンポジションに使えますが、次にビジュアル オブジェクト ツリーへのすべての変更がコミットされるまで、まだ画面には表示されません。 **EndDraw** が呼び出される前に、ビジュアル オブジェクト ツリーがコミットされた場合、進行中の更新は画面に表示されず、サーフェスには引き続き **BeginDraw** の前の内容が表示されます。 **EndDraw** が呼び出されると、BeginDraw によって返されたテクスチャや Direct2D コンテキスト ポインターは無効化されます。 アプリケーションは **EndDraw** の呼び出し後にそのポインターをキャッシュすることはありません。
 
-アプリケーションは、どの [**CompositionGraphicsDevice**](https://msdn.microsoft.com/library/windows/apps/Dn706749) に対しても、一度に 1 つのサーフェスでのみ BeginDraw を呼び出すことができます。 [
-            **BeginDraw**](https://msdn.microsoft.com/en-us/library/windows/apps/mt620059.aspx) を呼び出した後、アプリケーションはそのサーフェスで [**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060) を呼び出してから、別のサーフェスで **BeginDraw** を呼び出す必要があります。 API がアジャイルであるため、アプリケーションは、複数のワーカー スレッドからレンダリングを実行する場合、これらの呼び出しの同期を担当します。 アプリケーションが一時的にあるサーフェスのレンダリングを中断し、別のサーフェスに切り替える場合、アプリケーションは [**SuspendDraw**](https://msdn.microsoft.com/en-us/library/windows/apps/mt620064.aspx) メソッドを使えます。 これにより、別の **BeginDraw** は成功しますが、画面上のコンポジションに対する最初のサーフェスの更新はできなくなります。 これにより、アプリケーションはトランザクション方式で複数の更新を行えます。 サーフェスが中断されたら、アプリケーションは [**ResumeDraw**](https://msdn.microsoft.com/library/windows/apps/mt620062) メソッドを呼び出して更新を続けるか、**EndDraw** を呼び出して更新の終了を宣言できます。 つまり、どの **CompositionGraphicsDevice** に対しても、一度に 1 つのサーフェスのみをアクティブに更新できます。 各グラフィックス デバイスはそれぞれ独立してこの状態を保つため、2 つのサーフェスが異なるグラフィックス デバイスに属していれば、アプリケーションはそれらのサーフェスに同時にレンダリングできます。 ただしその結果、これらの 2 つのサーフェス用のビデオ メモリが一緒にプールされなくなるため、メモリの使用効率は下がります。
+アプリケーションは、どの [**CompositionGraphicsDevice**](https://msdn.microsoft.com/library/windows/apps/Dn706749) に対しても、一度に 1 つのサーフェスでのみ BeginDraw を呼び出すことができます。 [**BeginDraw**](https://msdn.microsoft.com/library/windows/apps/mt620059.aspx) を呼び出した後、アプリケーションはそのサーフェスで [**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060) を呼び出してから、別のサーフェスで **BeginDraw** を呼び出す必要があります。 API がアジャイルであるため、アプリケーションは、複数のワーカー スレッドからレンダリングを実行する場合、これらの呼び出しの同期を担当します。 アプリケーションが一時的にあるサーフェスのレンダリングを中断し、別のサーフェスに切り替える場合、アプリケーションは [**SuspendDraw**](https://msdn.microsoft.com/library/windows/apps/mt620064.aspx) メソッドを使えます。 これにより、別の **BeginDraw** は成功しますが、画面上のコンポジションに対する最初のサーフェスの更新はできなくなります。 これにより、アプリケーションはトランザクション方式で複数の更新を行えます。 サーフェスが中断されたら、アプリケーションは [**ResumeDraw**](https://msdn.microsoft.com/library/windows/apps/mt620062) メソッドを呼び出して更新を続けるか、**EndDraw** を呼び出して更新の終了を宣言できます。 つまり、どの **CompositionGraphicsDevice** に対しても、一度に 1 つのサーフェスのみをアクティブに更新できます。 各グラフィックス デバイスはそれぞれ独立してこの状態を保つため、2 つのサーフェスが異なるグラフィックス デバイスに属していれば、アプリケーションはそれらのサーフェスに同時にレンダリングできます。 ただしその結果、これらの 2 つのサーフェス用のビデオ メモリが一緒にプールされなくなるため、メモリの使用効率は下がります。
 
-アプリケーションが間違った操作を実行した場合、[**BeginDraw**](https://msdn.microsoft.com/en-us/library/windows/apps/mt620059.aspx)、[**SuspendDraw**](https://msdn.microsoft.com/en-us/library/windows/apps/mt620064.aspx)、[**ResumeDraw**](https://msdn.microsoft.com/library/windows/apps/mt620062)、[**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060) の各メソッドはエラーを返します (無効な引数を渡した場合や、あるサーフェスで **EndDraw** を呼び出す前に、別のサーフェスで **BeginDraw** を呼び出した場合など)。 この種のエラーはアプリケーションのバグを表します。たとえば "fail fast" を使って処理される可能性があります。 DirectX デバイスが失われた場合も、**BeginDraw** はエラーを返すことがあります。 アプリケーションが DirectX デバイスを再作成して再試行できるため、このエラーは致命的ではありません。 このように、アプリケーションでは単にレンダリングをスキップすることで、デバイスが失われた場合に対処する必要があります。 **BeginDraw** が失敗した場合、それがどのような理由であっても、アプリケーションが **EndDraw** を呼び出さないようにしてください。最初の時点で失敗した描画開始が成功することはないためです。
+アプリケーションが間違った操作を実行した場合、[**BeginDraw**](https://msdn.microsoft.com/library/windows/apps/mt620059.aspx)、[**SuspendDraw**](https://msdn.microsoft.com/library/windows/apps/mt620064.aspx)、[**ResumeDraw**](https://msdn.microsoft.com/library/windows/apps/mt620062)、[**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060) の各メソッドはエラーを返します (無効な引数を渡した場合や、あるサーフェスで **EndDraw** を呼び出す前に、別のサーフェスで **BeginDraw** を呼び出した場合など)。 この種のエラーはアプリケーションのバグを表します。たとえば "fail fast" を使って処理される可能性があります。 
+              DirectX デバイスが失われた場合も、**BeginDraw** はエラーを返すことがあります。 アプリケーションが DirectX デバイスを再作成して再試行できるため、このエラーは致命的ではありません。 このように、アプリケーションでは単にレンダリングをスキップすることで、デバイスが失われた場合に対処する必要があります。 **BeginDraw** が失敗した場合、それがどのような理由であっても、アプリケーションが **EndDraw** を呼び出さないようにしてください。最初の時点で失敗した描画開始が成功することはないためです。
 
 ## スクロール
 
-パフォーマンス上の理由から、アプリケーションが [**BeginDraw**](https://msdn.microsoft.com/en-us/library/windows/apps/mt620059.aspx) を呼び出すとき、返されるテクスチャの内容がサーフェスの前の内容であるとは限りません。 アプリケーションでは、内容がランダムであることを想定して、確実にすべてのピクセルがタッチされるようにする必要があります。そのためには、レンダリング前にサーフェスをクリアするか、更新された四角形全体を十分に埋められる不透明なコンテンツを描画します。 また、テクスチャ ポインターが **BeginDraw** と [**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060) の呼び出し間でのみ有効であることも相まって、アプリケーションはサーフェスから前の内容をコピーできません。 この理由から、[**Scroll**](https://msdn.microsoft.com/library/windows/apps/mt620063) メソッドが用意されています。このメソッドを使うと、アプリケーションは同じサーフェスでピクセルをコピーできるようになります。
+パフォーマンス上の理由から、アプリケーションが [**BeginDraw**](https://msdn.microsoft.com/library/windows/apps/mt620059.aspx) を呼び出すとき、返されるテクスチャの内容がサーフェスの前の内容であるとは限りません。 アプリケーションでは、内容がランダムであることを想定して、確実にすべてのピクセルがタッチされるようにする必要があります。そのためには、レンダリング前にサーフェスをクリアするか、更新された四角形全体を十分に埋められる不透明なコンテンツを描画します。 また、テクスチャ ポインターが **BeginDraw** と [**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060) の呼び出し間でのみ有効であることも相まって、アプリケーションはサーフェスから前の内容をコピーできません。 この理由から、[**Scroll**](https://msdn.microsoft.com/library/windows/apps/mt620063) メソッドが用意されています。このメソッドを使うと、アプリケーションは同じサーフェスでピクセルをコピーできるようになります。
 
 ## 使用例
 
-次のサンプルでは、アプリケーションが描画サーフェスを作成する簡単なシナリオを示しており、[**BeginDraw**](https://msdn.microsoft.com/en-us/library/windows/apps/mt620059.aspx) と [**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060) を使ってサーフェスにテキストを読み込みます。 アプリケーションは次のように、テキストを DirectWrite を使ってレイアウトし、Direct2D を使ってレンダリングします。 コンポジション グラフィックス デバイスは初期化時に直接 Direct2D デバイスを受け取ります。 これにより、**BeginDraw** は ID2D1DeviceContext インターフェイス ポインターを返すことができます。この方法は、アプリケーションが Direct2D コンテキストを作成して、返される ID3D11Texture2D インターフェイスを各描画操作でラップするよりも、かなり効率的です。
+次のサンプルでは、アプリケーションが描画サーフェスを作成する簡単なシナリオを示しており、[**BeginDraw**](https://msdn.microsoft.com/library/windows/apps/mt620059.aspx) と [**EndDraw**](https://msdn.microsoft.com/library/windows/apps/mt620060) を使ってサーフェスにテキストを読み込みます。 アプリケーションは次のように、テキストを DirectWrite を使ってレイアウトし、Direct2D を使ってレンダリングします。 コンポジション グラフィックス デバイスは初期化時に直接 Direct2D デバイスを受け取ります。 これにより、**BeginDraw** は ID2D1DeviceContext インターフェイス ポインターを返すことができます。この方法は、アプリケーションが Direct2D コンテキストを作成して、返される ID3D11Texture2D インターフェイスを各描画操作でラップするよりも、かなり効率的です。
 
 ```cpp
 //------------------------------------------------------------------------------
@@ -271,6 +271,6 @@ private:
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

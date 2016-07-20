@@ -5,8 +5,8 @@ title: "SMS メッセージの送信"
 ms.assetid: 4D7B509B-1CF0-4852-9691-E96D8352A4D6
 keywords: contacts, SMS, send
 translationtype: Human Translation
-ms.sourcegitcommit: 1395e342bb6ad6a2d4fa347f1797aeafd7a524a6
-ms.openlocfilehash: 70dfce318d37d6790585b0fa5da50963f95495dc
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 738f7049b0a8fe5b42abfbc25f09501d0f6e7370
 
 ---
 
@@ -19,7 +19,7 @@ ms.openlocfilehash: 70dfce318d37d6790585b0fa5da50963f95495dc
 
 ## SMS の作成ダイアログの起動
 
-新しい [**ChatMessage**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.chat.chatmessage) オブジェクトを作成し、メールの作成ダイアログに事前に入力するデータを設定します。 ダイアログを表示するには、[**ShowComposeSmsMessageAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.chat.chatmessagemanager.showcomposesmsmessageasync) を呼び出します。
+新しい [**ChatMessage**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.chat.chatmessage) オブジェクトを作成し、メールの作成ダイアログに事前に入力するデータを設定します。 ダイアログを表示するには、[**ShowComposeSmsMessageAsync**](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.chat.chatmessagemanager.showcomposesmsmessageasync) を呼び出します。
 
 ```cs
 private async void ComposeSms(Windows.ApplicationModel.Contacts.Contact recipient,
@@ -60,6 +60,6 @@ private async void ComposeSms(Windows.ApplicationModel.Contacts.Contact recipien
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

@@ -3,8 +3,9 @@ author: awkoren
 Description: "Desktop Converter App を実行して、Windows デスクトップ アプリケーション (Win32、WPF、Windows フォームなど) をユニバーサル Windows プラットフォーム (UWP) アプリに変換します。"
 Search.Product: eADQiWindows 10XVcnh
 title: "Desktop App Converter プレビュー (Project Centennial)"
-ms.sourcegitcommit: 07016fabb8b49e57dd0ae4ef68447451d31aa2dc
-ms.openlocfilehash: bc28197cccc0559f57abc8cb81e23bf241ca3716
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 8a22285467005722ad6ee5bf4f129a7dfdea944c
 
 ---
 
@@ -22,9 +23,14 @@ Desktop App Converter は、.NET 4.6.1 または Win32 向けに記述された�
 
 ここでは、Desktop App Converter のバージョン間での変更について概要を示します。 
 
-### 2016 年 6 月 16 日
+### 2016 年 7 月 7 日 (v0.1.22)
 
-* Desktop App Converter (v0.1.20) では、最新の Windows 10 Insider Preview ビルドで正常な変換をブロックするすべての問題が修正されています。 
+* デスクトップ アプリケーションのシェル拡張機能の自動検出と、UWP パッケージ用の AppXManifest での宣言のサポートが追加されました。 デスクトップの拡張機能について詳しくは、「[**変換されたデスクトップ アプリの拡張機能**](desktop-to-uwp-extensions.md)」をご覧ください。 
+* 大規模な一連のアプリでの AppExecutable 検出機能が向上しました。 
+
+### 2016 年 6 月 16 日 (v0.1.20)
+
+* 最新の Windows 10 Insider Preview ビルドで正常な変換がブロックされる問題を修正します。 
 * ```–CreateX86Package``` が ```–PackageArch``` に置き換えられ、生成されるパッケージのアーキテクチャを指定できます。 
 
 ### 2016 年 6 月 8 日
@@ -61,7 +67,7 @@ Desktop App Converter は、.NET 4.6.1 または Win32 向けに記述された�
 + Second Level Address Translation (SLAT)
 
 ### 推奨されるリソース
-+ [Windows 10 用 Windows ソフトウェア開発キット (SDK)](https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk)
++ [Windows 10 用 Windows ソフトウェア開発キット (SDK)](http://go.microsoft.com/fwlink/?LinkId=615097)
 
 ## Desktop App Converter をセットアップする   
 Desktop App Converter は、Windows Insider Preview ビルドに含まれている Windows 10 の機能に依存しています。 このコンバーターを利用するには、最新ビルドであることを確認します。
@@ -114,7 +120,7 @@ PS C:\>.\DesktopAppConverter.ps1 -Installer C:\Installer\MyApp.exe
 ```
 
 ## 変換済み AppX を展開する
-Powershell で [Add-appxpackage](https://technet.microsoft.com/en-us/library/hh856048.aspx) コマンドレットを使って、ユーザー アカウントに対して署名済みのアプリ パッケージ (.appx) を展開します。 .appx パッケージに署名するには、セクション「.Appx パッケージの署名」をご覧ください。 また、このコマンドレットに *Register* パラメーターを指定して、開発プロセス中にパッケージ化を解除したファイルのフォルダーからインストールすることもできます。 詳細については、「[変換済みの UWP アプリを展開してデバッグする](desktop-to-uwp-deploy-and-debug.md)」をご覧ください。
+Powershell で [Add-appxpackage](https://technet.microsoft.com/library/hh856048.aspx) コマンドレットを使って、ユーザー アカウントに対して署名済みのアプリ パッケージ (.appx) を展開します。 .appx パッケージに署名するには、セクション「.Appx パッケージの署名」をご覧ください。 また、このコマンドレットに *Register* パラメーターを指定して、開発プロセス中にパッケージ化を解除したファイルのフォルダーからインストールすることもできます。 詳細については、「[変換済みの UWP アプリを展開してデバッグする](desktop-to-uwp-deploy-and-debug.md)」をご覧ください。
 
 ## .Appx パッケージに署名する
 
@@ -126,7 +132,8 @@ C:\> MakeCert.exe -r -h 0 -n "CN=<publisher_name>" -eku 1.3.6.1.5.5.7.3.3 -pe -s
 C:\> pvk2pfx.exe -pvk <my.pvk> -spc <my.cer> -pfx <my.pfx>
 C:\> signtool.exe sign -f <my.pfx> -fd SHA256 -v .\<outputAppX>.appx
 ```
-**注:** MakeCert.exe を実行したときにパスワードの入力を求められたら、**[なし]** を選択します。
+
+              **注:** MakeCert.exe を実行したときにパスワードの入力を求められたら、**[なし]** を選択します。
 
 証明書と署名について詳しくは、以下をご覧ください。
 
@@ -224,7 +231,7 @@ Desktop App Converter Preview では、x86 コンピューターと amd64 コン
 
 ## 参照
 + [Desktop App Converter を入手する](http://go.microsoft.com/fwlink/?LinkId=785437)
-+ [ユニバーサル Windows プラットフォームへのデスクトップ アプリの移行](https://developer.microsoft.com/en-us/windows/bridges/desktop)
++ [ユニバーサル Windows プラットフォームへのデスクトップ アプリの移行](https://developer.microsoft.com/windows/bridges/desktop)
 + [Desktop App Converter を使う UWP へのデスクトップ アプリの移行](https://channel9.msdn.com/events/Build/2016/P504)
 + [Project Centennial: ユニバーサル Windows プラットフォームへの既存のデスクトップ アプリケーションの移行](https://channel9.msdn.com/events/Build/2016/B829)  
 + [デスクトップ ブリッジの UserVoice (Project Centennial)](http://aka.ms/UserVoiceDesktopToUwp)
@@ -232,6 +239,6 @@ Desktop App Converter Preview では、x86 コンピューターと amd64 コン
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

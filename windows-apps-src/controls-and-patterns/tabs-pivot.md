@@ -5,8 +5,9 @@ title: "タブとピボット"
 ms.assetid: 556BC70D-CF5D-4295-A655-D58163CC1824
 label: Tabs and pivots
 template: detail.hbs
-ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
-ms.openlocfilehash: 8737ce16d98952f24f9651d30d49ffa85b8d306b
+translationtype: Human Translation
+ms.sourcegitcommit: a2f4e7a679ca47f2a034e19936c1115e87a2eb24
+ms.openlocfilehash: b6cf34346ad557ce53d3009afe8bc83bc7ed21aa
 
 ---
 # ピボットとタブ
@@ -15,8 +16,7 @@ Pivot コントロールと関連タブは、アクセス頻度の高い個別�
 
 ![タブの例](images/pivot_Hero_main.png)
 
-タブは、アイコンとテキストの組み合わせ、またはアイコンのみを使ってコンテンツのセクションを明確化するピボットの視覚的な変化形です。 タブは、[**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) コントロールを使って構築されます。 [
-            **Pivot のサンプル**](http://go.microsoft.com/fwlink/p/?LinkId=619903)は、Pivot コントロールをタブ パターンへとカスタマイズする方法を示しています。
+タブは、アイコンとテキストの組み合わせ、またはアイコンのみを使ってコンテンツのセクションを明確化するピボットの視覚的な変化形です。 タブは、[**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) コントロールを使って構築されます。 [**Pivot のサンプル**](http://go.microsoft.com/fwlink/p/?LinkId=619903)は、Pivot コントロールをタブ パターンへとカスタマイズする方法を示しています。
 
 
 
@@ -45,8 +45,7 @@ Pivot コントロールと関連タブは、アクセス頻度の高い個別�
 
 ## ピボット コントロールの作成
 
-[
-            **Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) コントロールには、このセクションで説明する基本的な機能が付属しています。
+[**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) コントロールには、このセクションで説明する基本的な機能が付属しています。
 
 この XAML では、コンテンツの 3 つのセクションで、基本的なピボット コントロールを作成します。
 
@@ -71,13 +70,11 @@ Pivot コントロールと関連タブは、アクセス頻度の高い個別�
 
 Pivot は [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.aspx) であるため、あらゆる種類の項目をコレクションを含めることができます。 ピボットに追加する項目が明示的に [ **PivotItem** ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivotitem.aspx) ではない場合、PivotItem で暗黙的にラップされます。 ピボットは通常コンテンツのページ間を移動するために使用されるため、XAML UI 要素を使用して直接 [**Items**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.items.aspx) コレクションを設定するのが一般的です。 または、[**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) プロパティをデータ ソースに設定することもできます。 ItemsSource にバインドされている項目は、任意の型にすることができますが、明示的に PivotItem ではない場合は、[**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) と [**HeaderTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.headertemplate.aspx) を定義して、項目を表示する方法を指定する必要があります。
 
-[
-            **SelectedItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.selecteditem.aspx) プロパティを使って、ピボットのアクティブな項目を取得または設定できます。 アクティブな項目のインデックスを取得または設定するには、[**SelectedIndex**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.selectedindex.aspx) プロパティを使います。
+[**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.selecteditem.aspx) プロパティを使って、ピボットのアクティブな項目を取得または設定できます。 アクティブな項目のインデックスを取得または設定するには、[**SelectedIndex**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.selectedindex.aspx) プロパティを使います。
 
 ### ピボット ヘッダー
 
-[
-            **LeftHeader**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.leftheader.aspx) プロパティと [**RightHeader**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.rightheader.aspx) プロパティを使って、ピボット ヘッダーに他のコントロールを追加できます。
+[**LeftHeader**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.leftheader.aspx) プロパティと [**RightHeader**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.rightheader.aspx) プロパティを使って、ピボット ヘッダーに他のコントロールを追加できます。
 
 ### ピボットの操作
 
@@ -95,9 +92,6 @@ Pivot は [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/xam
 -   許可されている領域内にすべてのピボット ヘッダーが収まる場合、ピボットは固定されます。
 -   ピボット ラベルをタップすると、ピボット自体は移動しませんが、対応するページに移動します。 アクティブなピボットは強調表示されます。
 
-{{> aside-internal content = "
--   10 フィート環境では、項目が回転しないようにすることを特にお勧めします。 Xbox 上でアプリを実行する場合は、新しい `IsHeaderItemsCarouselEnabled` プロパティを False に設定します。
-"}}
 
 **カルーセル**
 
@@ -105,16 +99,6 @@ Pivot は [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/xam
 -   ピボット ラベルをタップすると対応するページに移動し、アクティブなピボット ラベルは最初の位置までカルーセル表示されます。
 -   カルーセル内のピボット項目は、最後のピボット セクションから最初のピボット セクションにループします。
 
-{{> aside-internal content = "
-### ピボット フォーカス
-
-既定では、ピボット ヘッダー上のキーボード フォーカスは下線付きで表示されます。
-
-![既定のフォーカスでは選択されたヘッダーが下線付きで表示される](images/pivot_focus_selectedHeader.png)
-
-ピボットをカスタマイズし、ヘッダーの選択ビジュアルに下線を組み込んだアプリでは、新しい `HeaderFocusVisualPlacement` プロパティを使って既定の設定を変更できます。 `HeaderFocusVisualPlacement=\"ItemHeaders\"` を指定した場合、フォーカスはヘッダー パネル全体を取り囲むように描画されます。
-
-![ItemsHeader オプションはピボット ヘッダー全体を取り囲むフォーカス用の四角形を描画する](images/pivot_focus_headers.png) "}}
 
 ## 推奨事項
 
@@ -133,6 +117,6 @@ Pivot は [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/xam
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

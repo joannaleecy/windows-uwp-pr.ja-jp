@@ -1,10 +1,11 @@
 ---
-description: "次の記事は、さまざまなデバイスや画面サイズで簡単に操作でき、適切に表示される UWP アプリを設計およびコーディングする際に役立ちます。"
+description: "Windows デベロッパー センター UWP スタイル ガイドに従い、色、文字体裁、モーションを使って UWP アプリの特徴を定義する方法について説明します。"
+keywords: uwp style guide, design guidance, typography, motion, sound, motion, app development
 title: "UWP スタイル ガイド - Windows アプリ開発"
 author: mijacobs
 translationtype: Human Translation
-ms.sourcegitcommit: 9f75c39d26bd0c8858f404ab4fcd3d23562ea033
-ms.openlocfilehash: 3948b1ea3b108d613fe1e3a0351903d2d2f8ffe9
+ms.sourcegitcommit: 0a7f655a6f122787873adac76ac4dec9d775a154
+ms.openlocfilehash: d55aab04696441dbbcba0cbda61fd599fdacec67
 
 ---
 
@@ -20,7 +21,7 @@ ms.openlocfilehash: 3948b1ea3b108d613fe1e3a0351903d2d2f8ffe9
   <p>設計のガイダンスとコード例を示し、色、文字体裁、モーションを使って UWP アプリの個性を設定する方法について説明します。</p>
   </div>
   <div class="side-by-side-content-right">
-    ![Color, icon, motion, sound, and typography guidelines](images/style-header-v2.png)
+    ![色、アイコン、モーション、サウンド、文字体裁のガイドライン](images/style-header-v2.png)
   </div>
 </div>
 </div>
@@ -57,7 +58,15 @@ ms.openlocfilehash: 3948b1ea3b108d613fe1e3a0351903d2d2f8ffe9
   <div class="side-by-side-content-left">
    <p><b>[文字体裁](typography.md)</b><br/>
 言語の視覚的な表現として、文字体裁の主な役割は明確であることです。 スタイルによってその目的が邪魔されてはなりません。 ただし、文字体裁にはレイアウト コンポーネントとしての重要な役割もあり、そのデザインの密度と複雑さに強い影響を与え、そのデザインのユーザー エクスペリエンスにも影響します。</p>
+   <div class="uwpd-no-bullet-list">
+   <ul>
+    <li>[フォント](fonts.md)</li>
+    <li>[Segoe MDL2 アイコン](segoe-ui-symbol-font.md)</li>
+   </ul>
+   </div>
   </div>
+  
+  
   <div class="side-by-side-content-right">
    <p><b>[コントロールのスタイル](../controls-and-patterns/styling-controls.md)</b><br/>
 XAML フレームワークを使って、さまざまな方法でアプリの外観をカスタマイズできます。 スタイルを使うと、コントロールのプロパティに値を設定し、その設定を再利用することで、複数のコントロールの外観を統一できます。</p>
@@ -68,6 +77,6 @@ XAML フレームワークを使って、さまざまな方法でアプリの外
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

@@ -3,8 +3,9 @@ author: jnHs
 Description: "Windows ストアでは、支払方法として携帯電話会社による課金を、この機能をサポートしている携帯電話会社に提供しています。"
 title: "携帯電話会社による課金"
 ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
-ms.sourcegitcommit: 76ea880f7dd1e737b3b0640d10a138e0eb790802
-ms.openlocfilehash: d22d89523ff3089b3b56d1a85fa2c4b137389887
+translationtype: Human Translation
+ms.sourcegitcommit: 80a20f4f87ce2ef40ce4ff7c6551d74ac375da1c
+ms.openlocfilehash: bd70a3c5990909351f04ca4200f4ea522989d1e9
 
 ---
 
@@ -13,7 +14,8 @@ ms.openlocfilehash: d22d89523ff3089b3b56d1a85fa2c4b137389887
 
 Windows ストアでは、支払方法として携帯電話会社による課金を、この機能をサポートしている携帯電話会社に提供しています。 ユーザーの携帯電話会社がこの機能をサポートしている場合、ユーザーはモバイル アカウントを使って、ストアで購入することができます。
 
-> **注**  ユーザーの携帯電話会社が携帯電話会社による課金を提供していても、ユーザーのデバイスにこのオプションがない場合、[トラブルシューティングの手順](http://go.microsoft.com/fwlink/p/?LinkId=523993)をご覧ください。
+> 
+            **注**  ユーザーの携帯電話会社が携帯電話会社による課金を提供していても、ユーザーのデバイスにこのオプションがない場合、[トラブルシューティングの手順](http://go.microsoft.com/fwlink/p/?LinkId=523993)をご覧ください。
 
  
 
@@ -30,6 +32,7 @@ Windows 10 での携帯電話会社による課金の実装は、現在、次の
 |----------------|------------------|
 | フィンランド        | DNA、Elisa       |
 | ドイツ        | O2               |
+| イタリア          | Wind             |
 | ノルウェー         | Telenor          |
 | スイス    | Swisscom         |
 | 米国  | Sprint           |
@@ -116,6 +119,6 @@ Windows 10 での携帯電話会社による課金の実装は、現在、次の
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

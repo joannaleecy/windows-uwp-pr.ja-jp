@@ -3,8 +3,9 @@ author: awkoren
 Description: "デスクトップの変換拡張機能を使用して Windows デスクトップ アプリケーション (Win32、WPF、および Windows フォーム) から変換したユニバーサル Windows プラットフォーム (UWP) アプリを展開してデバッグします。"
 Search.Product: eADQiWindows 10XVcnh
 title: "Windows デスクトップ アプリケーションから変換したユニバーサル Windows プラットフォーム (UWP) アプリを展開してデバッグする"
-ms.sourcegitcommit: 606d5237cb67cb4439704f81b180c3c48cc1556f
-ms.openlocfilehash: 14634c12435cd8d6d4471a65c0f8deb36e3b1c80
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 618b129449d285054604008615c32de74c8bfd9b
 
 ---
 
@@ -123,7 +124,7 @@ Microsoft Visual Studio を "管理者として" として実行していると�
 
 10. それでは最後に、Win32 コードにブレークポイントを設定して、F5 キーを押してデバッガーを起動しましょう。 Win32 アプリケーションで行った更新が AppX パッケージにコピーされ、Visual Studio 内から直接デバッグできるようになります。
 
-11. アプリケーションを更新する場合は、MakeAppX を使ってアプリをもう一度パッケージ化する必要があります。 詳細については、「[アプリ パッケージ ツール (MakeAppx.exe)](https://msdn.microsoft.com/en-us/library/windows/desktop/hh446767(v=vs.85).aspx)」をご覧ください。 
+11. アプリケーションを更新する場合は、MakeAppX を使ってアプリをもう一度パッケージ化する必要があります。 詳細については、「[アプリ パッケージ ツール (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767(v=vs.85).aspx)」をご覧ください。 
 
 複数のビルド構成がある場合 (たとえばリリース用とデバッグ用)、次を AppXFileList.xml ファイルに追加して、Win32 ビルドをさまざまな場所からコピーできます。
 
@@ -215,11 +216,11 @@ VFS という名前のフォルダーの下に、アプリが依存している 
 
 [Desktop App Converter プレビュー (Project Centennial)](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-run-desktop-app-converter)
 
-[手動で Windows デスクトップ アプリケーションをユニバーサル Windows プラットフォーム (UWP) アプリに変換する](https://msdn.microsoft.com/en-us/windows/uwp/porting/desktop-to-uwp-manual-conversion)
+[手動で Windows デスクトップ アプリケーションをユニバーサル Windows プラットフォーム (UWP) アプリに変換する](https://msdn.microsoft.com/windows/uwp/porting/desktop-to-uwp-manual-conversion)
 
 [デスクトップ アプリから UWP へのブリッジのコード サンプル (GitHub)](https://github.com/Microsoft/DesktopBridgeToUWP-Samples)
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

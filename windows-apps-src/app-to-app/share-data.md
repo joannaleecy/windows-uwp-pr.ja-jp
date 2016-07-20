@@ -3,6 +3,7 @@ description: "この記事では、ユニバーサル Windows プラットフォ
 title: "データの共有"
 ms.assetid: 32287F5E-EB86-4B98-97FF-8F6228D06782
 author: awkoren
+translationtype: Human Translation
 ms.sourcegitcommit: 9a8fd6d34c4b89dae1ec4be2db69498b5d458b5a
 ms.openlocfilehash: a91f0eb8b62a860809f8ffb63278be1eff31a2f3
 
@@ -20,8 +21,7 @@ ms.openlocfilehash: a91f0eb8b62a860809f8ffb63278be1eff31a2f3
 
 [!code-cs[メイン](./code/share_data/cs/MainPage.xaml.cs#SnippetPrepareToShare)]
 
-[
-            **DataRequested**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataTransferManager.DataRequested) イベントが発生すると、アプリは [**DataRequest**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataRequest) オブジェクトを受け取ります。 このオブジェクトに含まれている [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage) を使って、ユーザーが共有するコンテンツを提供することができます。 共有するデータとタイトルを指定する必要があります。 説明は省略することもできますが、指定することをお勧めします。
+[**DataRequested**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataTransferManager.DataRequested) イベントが発生すると、アプリは [**DataRequest**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataRequest) オブジェクトを受け取ります。 このオブジェクトに含まれている [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage) を使って、ユーザーが共有するコンテンツを提供することができます。 共有するデータとタイトルを指定する必要があります。 説明は省略することもできますが、指定することをお勧めします。
 
 [!code-cs[メイン](./code/share_data/cs/MainPage.xaml.cs#SnippetCreateRequest)]
 
@@ -38,8 +38,7 @@ ms.openlocfilehash: a91f0eb8b62a860809f8ffb63278be1eff31a2f3
 -   ファイル
 -   開発者が定義したカスタム データ
 
-[
-            **DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage) オブジェクトには、これらの 1 つ以上の形式を任意に組み合わせて格納することができます。 次の例は、テキストの共有を示しています。
+[**DataPackage**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage) オブジェクトには、これらの 1 つ以上の形式を任意に組み合わせて格納することができます。 次の例は、テキストの共有を示しています。
 
 [!code-cs[メイン](./code/share_data/cs/MainPage.xaml.cs#SnippetSetContent)]
 
@@ -106,6 +105,6 @@ async void OnDeferredImageRequestedHandler(DataProviderRequest request)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

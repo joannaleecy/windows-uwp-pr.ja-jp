@@ -3,6 +3,7 @@ author: v-angraf
 title: "Xbox One の UWP に関する API リファレンス"
 description: "Xbox One の UWP に関する API リファレンスです。"
 area: Xbox
+translationtype: Human Translation
 ms.sourcegitcommit: 1a8dc5bcfc619756696dd9892ca63d3ad92c3c16
 ms.openlocfilehash: 3e857501687f74eacbe863889d61d33fcdbcd086
 
@@ -28,6 +29,6 @@ ms.openlocfilehash: 3e857501687f74eacbe863889d61d33fcdbcd086
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

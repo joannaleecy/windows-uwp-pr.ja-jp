@@ -1,22 +1,29 @@
 ---
 author: v-angraf
 title: "Xbox One の UWP の新着情報"
-description: "Xbox One アプリの UWP の新機能について説明します。"
+description: "Xbox One の UWP アプリの新機能について説明します。"
 area: Xbox
-ms.sourcegitcommit: 59019f209729b56e02ebdbdfd53a8fbf835c69f7
-ms.openlocfilehash: dfa94ad42a79d0f6b3f72fbf2efe9ce043532c56
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: edc9a914f200c643b1133cf07778e2ca3931d0d9
 
 ---
 
-# Xbox One の UWP の 2016 年 6 月 Developer Preview 新着情報
+# Xbox One の UWP の 2016 年 7 月 Developer Preview 新着情報
 
-Xbox One のユニバーサル Windows プラットフォーム (UWP) の 2016 年 6 月 Developer Preview リリースには、次の新しい機能、既存の機能の更新、バグ修正が含まれています。
+Xbox One のユニバーサル Windows プラットフォーム (UWP) の 2016 年 7 月 Developer Preview リリースには、次の新しい機能、既存の機能の更新、バグ修正が含まれています。
 
-## マウス モードが既定で有効になりました
+## TCP/UDP ソケットを使用するネットワークを利用可能  
+従来の TCP/UDP ソケット (WinSock、Windows.Networking.Sockets) を使用するコンソールからの入力方向と出力方向のネットワーク アクセスが利用できるようになりました。
+
+## Fiddler のサポート
+Xbox One のユニバーサル Windows プラットフォーム (UWP) を有効にしたコンソールのプロキシとして、Fiddler を有効にすることができるようになりました。 Fiddler によって、Xbox サービスと証明書利用者 Web サービスとの間のすべての HTTP および HTTPS トラフィックをログに記録し、検査することができます。 詳しくは、「[UWP を開発するときに、Xbox One で Fiddler を使用する方法](uwp-fiddler.md)」をご覧ください。
+
+## 既定で有効になったマウス モード
 マウス モードが XAML とホストされた Web アプリを対象に既定で有効になりました。
 コントローラーの方向移動操作を最適化するため、マウス モードは無効にすることを強くお勧めします。
 マウス モードを無効にする方法については、「[マウス モードを無効にする方法](how-to-disable-mouse-mode.md)」をご覧ください。
-Xbox 用の優れたアプリを作成する方法について詳しくは、「[Xbox およびテレビ向け設計](https://msdn.microsoft.com/en-us/windows/uwp/input-and-devices/designing-for-tv?f=255&MSPPError=-2147217396#mouse-mode)」をご覧ください。
+Xbox 用の優れたアプリを作成する方法について詳しくは、「[Xbox およびテレビ向け設計](https://msdn.microsoft.com/windows/uwp/input-and-devices/designing-for-tv?f=255&MSPPError=-2147217396#mouse-mode)」をご覧ください。
 
 ## 拡張された UWP API サーフェイス領域がコンソールで機能するようになりました
 追加の UWP API が Xbox コンソールで機能するようになりました。 UWP API のサポートについて詳しくは、「[Xbox でまだサポートされていない UWP 機能](http://go.microsoft.com/fwlink/?LinkID=760755)」をご覧ください。 
@@ -47,6 +54,6 @@ Dev Home アプリの新しい設定では、コンソールに割り当てら�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

@@ -4,8 +4,8 @@ description: "このロードマップでは、Windows 10 ユニバーサル Win
 title: "エンタープライズ"
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: 468c87694f519a5081f3242346039e6e7310d1db
-ms.openlocfilehash: c2cfcc270d6b1380f065e7ada275c1c60ae05b04
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 58f7c9739a000b6cac1c000570807587233018ce
 
 ---
 
@@ -16,7 +16,8 @@ ms.openlocfilehash: c2cfcc270d6b1380f065e7ada275c1c60ae05b04
 
 このロードマップでは、Windows 10 ユニバーサル Windows プラットフォーム (UWP) の主要なエンタープライズ機能の概要について説明します。 Windows 10 では、アプリを 1 回記述するだけで、すべてのデバイスに展開できます。つまり、すべてのデバイスに対応した 1 つのアプリを作成できます。 これにより、企業が必要とするセキュリティ、管理、構成をコントロールしながら、ユーザーが求めるすばらしいエクスペリエンスを構築できます。
 
-**注**  この記事は、エンタープライズ UWP アプリを作成する開発者を対象としています。 一般的な UWP 開発については、「[Windows 10 アプリに関するハウツー ガイド](https://msdn.microsoft.com/library/windows/apps/mt244352)」をご覧ください。 WPF、Windows フォーム、Win32 開発については、[デスクトップのデベロッパー センター](https://dev.windows.com/en-us/desktop)をご覧ください。 IT 担当者向けのリソース (Windows 10 の展開やエンタープライズ セキュリティ機能の管理など) については、TechNet の「[Windows 10](https://msdn.microsoft.com/library/dn986868)」をご覧ください。
+
+              **注**  この記事は、エンタープライズ UWP アプリを作成する開発者を対象としています。 一般的な UWP 開発については、「[Windows 10 アプリに関するハウツー ガイド](https://msdn.microsoft.com/library/windows/apps/mt244352)」をご覧ください。 WPF、Windows フォーム、Win32 開発については、[デスクトップのデベロッパー センター](https://dev.windows.com/desktop)をご覧ください。 IT 担当者向けのリソース (Windows 10 の展開やエンタープライズ セキュリティ機能の管理など) については、TechNet の「[Windows 10](https://msdn.microsoft.com/library/dn986868)」をご覧ください。
 
  
 
@@ -95,7 +96,7 @@ Windows 10 には、一連のセキュリティ機能が用意されています
 | トピック | 説明 |
 |-------|-------------|
 | [LOB アプリの企業への配布](https://msdn.microsoft.com/library/windows/apps/mt608995) | 基幹業務アプリを、ボリューム購入できるように、ビジネス向け Windows ストアで企業に直接公開できます。一般ユーザーが利用できるようにアプリを公開する必要はありません。 |
-| [アプリのサイドローディング](https://technet.microsoft.com/en-us/library/mt269549) | アプリをサイドローディングすると、署名されたアプリ パッケージをデバイスに展開します。 これらのアプリの署名、ホスティング、展開は維持されます。 アプリのサイドローディングのプロセスは、Windows 10 向けに簡素化されています。             |
+| [アプリのサイドローディング](https://technet.microsoft.com/library/mt269549) | アプリをサイドローディングすると、署名されたアプリ パッケージをデバイスに展開します。 これらのアプリの署名、ホスティング、展開は維持されます。 アプリのサイドローディングのプロセスは、Windows 10 向けに簡素化されています。             |
 | [Windows ストアへのアプリの公開](https://dev.windows.com/publish) | 統合された Windows ストアでは、すべての Windows デバイス向けのすべてのアプリを公開し管理することができます。 市場ごとの価格、配布と表示のコントロール、その他のオプションを使って、アプリの使用可能状況をカスタマイズできます。 |
 
  
@@ -116,6 +117,6 @@ Prism について詳しくは、[GitHub リポジトリ](https://github.com/Pri
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

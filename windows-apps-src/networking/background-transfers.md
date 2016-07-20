@@ -4,8 +4,8 @@ description: "ネットワーク経由でファイルを確実にコピーする
 title: "バックグラウンド転送"
 ms.assetid: 1207B089-BC16-4BF0-BBD4-FD99950C764B
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 02e01be9cf726731697eb5934cb86b398431b532
+ms.sourcegitcommit: b15d01ec4fd41a8f03345a4416b4795455928533
+ms.openlocfilehash: cbb8308a3390634f0068f72041803989201e2345
 
 ---
 
@@ -45,10 +45,10 @@ ms.openlocfilehash: 02e01be9cf726731697eb5934cb86b398431b532
 
 バックグラウンド転送機能にはネットワーク ステータスの変化に対応する独自のメカニズムがありますが、ネットワーク接続されたアプリには他にも一般的な接続の考慮事項があります。 詳しくは、「[利用できるネットワーク接続情報の活用](https://msdn.microsoft.com/library/windows/apps/hh452983)」をご覧ください。
 
-> **注:** モバイル デバイスで実行されるアプリでは、接続の種類、ローミング ステータス、ユーザーのデータ通信プランに基づいて転送されるデータの量を、ユーザーが監視および制限できる機能が用意されています。 このため、[**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) が転送が継続中であることを示す場合でも、電話でバックグラウンド転送が一時停止される可能性があります。
+> 
+              **注:** モバイル デバイスで実行されるアプリでは、接続の種類、ローミング ステータス、ユーザーのデータ通信プランに基づいて転送されるデータの量を、ユーザーが監視および制限できる機能が用意されています。 このため、[**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) が転送が継続中であることを示す場合でも、電話でバックグラウンド転送が一時停止される可能性があります。
 
-次の表に、電話の現在の状態に応じて、[**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) の各値に対して、電話でバックグラウンド転送が許可されるかどうかを示します。 [
-            **ConnectionCost**](https://msdn.microsoft.com/library/windows/apps/br207244) クラスを使って、電話の現在の状態を判断できます。
+次の表に、電話の現在の状態に応じて、[**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) の各値に対して、電話でバックグラウンド転送が許可されるかどうかを示します。 [**ConnectionCost**](https://msdn.microsoft.com/library/windows/apps/br207244) クラスを使って、電話の現在の状態を判断できます。
 
 | デバイスの状態                                                                                                                      | UnrestrictedOnly | Default (既定) | Always |
 |-----------------------------------------------------------------------------------------------------------------------------------|------------------|---------|--------|
@@ -73,11 +73,10 @@ ms.openlocfilehash: 02e01be9cf726731697eb5934cb86b398431b532
 
 **アップロードするファイルと送信先の特定**
 
-[
-            **UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) の作成を始める前に、アップロード先となる場所の URI とアップロードされるファイルを識別する必要があります。 次の例では、UI 入力からの文字列を使って *uriString* の値が設定され、[**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) 操作で返される [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトを使って *file* の値が設定されます。
+[**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) の作成を始める前に、アップロード先となる場所の URI とアップロードされるファイルを識別する必要があります。 次の例では、UI 入力からの文字列を使って *uriString* の値が設定され、[**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) 操作で返される [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトを使って *file* の値が設定されます。
 
-[!code-js[uploadFile]
-            (./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_B "アップロードするファイルと送信先の特定")]
+[!code-js
+              [uploadFile](./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_B "アップロードするファイルと送信先の特定")]
 
 **アップロード操作の作成と初期化**
 
@@ -87,8 +86,8 @@ ms.openlocfilehash: 02e01be9cf726731697eb5934cb86b398431b532
 
 最後に、[**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) によって [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) (*upload*) が作成されます。
 
-[!code-js[uploadFile]
-            (./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_A "アップロード操作の作成と初期化")]
+[!code-js
+              [uploadFile](./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_A "アップロード操作の作成と初期化")]
 
 JavaScript の promise を使って定義した非同期メソッドの呼び出しに注意してください。 最後の例には次の行があります。
 
@@ -96,13 +95,13 @@ JavaScript の promise を使って定義した非同期メソッドの呼び出
 promise = upload.startAsync().then(complete, error, progress);
 ```
 
-    The async method call is followed by a then statement which indicates methods, defined by the app, that are called when a result from the async method call is returned. For more information on this programming pattern, see [Asynchronous programming in JavaScript using promises](http://msdn.microsoft.com/library/windows/apps/hh464930.aspx).
+非同期メソッドの後に then ステートメントが続いています。このステートメントでは、非同期メソッドの呼び出しの結果が返されたときに呼び出される、アプリで定義されたメソッドを指定しています。 このプログラミング パターンについて詳しくは、「[promise を使った JavaScript での非同期プログラミング](http://msdn.microsoft.com/library/windows/apps/hh464930.aspx)」をご覧ください。
 
 ### 複数のファイルのアップロード
 
 **アップロードするファイルと送信先の特定**
 
-    In a scenario involving multiple files transferred with a single [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224), the process begins as it usually does by first providing the required destination URI and local file information. Similar to the example in the previous section, the URI is provided as a string by the end-user and [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) can be used to provide the ability to indicate files through the user interface as well. However, in this scenario the app should instead call the [**PickMultipleFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br207851) method to enable the selection of multiple files through the UI.
+単一の [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) で複数のファイルを転送するシナリオでは、処理は通常どおり、最初に必要なアップロード先 URI とローカル ファイルの情報を指定することから始まります。 前のセクションの例と同様に、URI はエンド ユーザーが文字列で指定します。また、[**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) を使って、ユーザー インターフェイスからファイルを指定する機能も提供できます。 ただし、このシナリオでは、アプリで代わりに [**PickMultipleFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br207851) メソッドを呼び出して、UI から複数のファイルを選ぶことができるようにする必要があります。
 
 ```javascript
 function uploadFiles() {
@@ -127,12 +126,12 @@ function uploadFiles() {
 
 **指定されたパラメーターに基づくオブジェクトの作成**
 
-    The next two examples use code contained in a single example method, **startMultipart**, which was called at the end of the last step. For the purpose of instruction the code in the method that creates an array of [**BackgroundTransferContentPart**](https://msdn.microsoft.com/library/windows/apps/hh923029) objects has been split from the code that creates the resultant [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224).
+次の 2 つの例では、前の手順の最後に呼び出された単一のメソッド例 **startMultipart** に含まれているコードを使っています。 わかりやすくするために、[**BackgroundTransferContentPart**](https://msdn.microsoft.com/library/windows/apps/hh923029) オブジェクトの配列を作るメソッドのコードは、結果の [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) を作るコードから分割されています。
 
-    First, the URI string provided by the user is initialized as a [**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998). Next, the array of [**IStorageFile**](https://msdn.microsoft.com/library/windows/apps/br227102) objects (**files**) passed to this method is iterated through, each object is used to create a new [**BackgroundTransferContentPart**](https://msdn.microsoft.com/library/windows/apps/hh923029) object which is then placed in the **contentParts** array.
+最初に、ユーザーが指定した URI 文字列を [**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) として初期化します。 次に、このメソッドに渡された [**IStorageFile**](https://msdn.microsoft.com/library/windows/apps/br227102) オブジェクト (**files**) の配列を反復処理し、配列内の各オブジェクトを使って新しい [**BackgroundTransferContentPart**](https://msdn.microsoft.com/library/windows/apps/hh923029) オブジェクトを作り、そのオブジェクトを **contentParts** 配列に配置します。
 
 ```javascript
-upload.startMultipart = function (uriString, files) {
+    upload.startMultipart = function (uriString, files) {
         try {
             var uri = new Windows.Foundation.Uri(uriString);
             var uploader = new Windows.Networking.BackgroundTransfer.BackgroundUploader();
@@ -147,7 +146,7 @@ upload.startMultipart = function (uriString, files) {
 
 **マルチパート アップロード操作の作成と初期化**
 
-    With our contentParts array populated with all of the [**BackgroundTransferContentPart**](https://msdn.microsoft.com/library/windows/apps/hh923029) objects representing each [**IStorageFile**](https://msdn.microsoft.com/library/windows/apps/br227102) for upload, we are ready to call [**CreateUploadAsync**](https://msdn.microsoft.com/library/windows/apps/hh923973) using the [**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) to indicate where the request will be sent.
+contentParts 配列には、アップロード用の各 [**IStorageFile**](https://msdn.microsoft.com/library/windows/apps/br227102) を表す [**BackgroundTransferContentPart**](https://msdn.microsoft.com/library/windows/apps/hh923029) オブジェクトがすべて含まれているため、要求の送信先を示す [**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) を使って [**CreateUploadAsync**](https://msdn.microsoft.com/library/windows/apps/hh923973) を呼び出すことができます。
 
 ```javascript
         // Create a new upload operation.
@@ -166,19 +165,17 @@ upload.startMultipart = function (uriString, files) {
 
 ### 中断されたアップロード操作の再開
 
-[
-            **UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) が完了するか取り消されると、関連するシステム リソースがすべて解放されます。 ただし、これらのイベントのどちらかが発生する前にアプリが終了した場合、アクティブな操作は一時停止され、それぞれに関連付けられているリソースは占有されたままになります。 これらの操作が列挙されずに次のアプリ セッションに再び取り込まれると、それらの操作は完了せず、デバイス リソースを占有したままとなります。
+[**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) が完了するか取り消されると、関連するシステム リソースがすべて解放されます。 ただし、これらのイベントのどちらかが発生する前にアプリが終了した場合、アクティブな操作は一時停止され、それぞれに関連付けられているリソースは占有されたままになります。 これらの操作が列挙されずに次のアプリ セッションに再び取り込まれると、それらの操作は完了せず、デバイス リソースを占有したままとなります。
 
 1.  持続している操作を列挙する関数を定義する前に、返される [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) オブジェクトを格納する配列を作成する必要があります。
 
-[!code-js[uploadFile]
-            (./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_C "中断されたアップロード操作の再開")]
+    [!code-js
+              [uploadFile](./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_C "中断されたアップロード操作の再開")]
 
-2.  次に、持続している操作を列挙してそれらを配列に格納する関数を定義します。 [
-            **UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) に対するコールバックを再び割り当てるために呼び出される **load** メソッドは、アプリの終了後も持続する場合、このセクションでこの後定義する UploadOp クラス内にあることに注意してください。
+1.  次に、持続している操作を列挙してそれらを配列に格納する関数を定義します。 [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) に対するコールバックを再び割り当てるために呼び出される **load** メソッドは、アプリの終了後も持続する場合、このセクションでこの後定義する UploadOp クラス内にあることに注意してください。
 
-[!code-js[uploadFile]
-            (./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_D "持続している操作を列挙する")]
+    [!code-js
+              [uploadFile](./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_D "持続している操作を列挙する")]
 
 ## ファイルのダウンロード
 
@@ -190,8 +187,7 @@ upload.startMultipart = function (uriString, files) {
 
 ### バックグラウンド転送によるファイルのダウンロードを構成して開始する
 
-URI とファイル名を表す文字列を使って、[**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) オブジェクトと要求されたファイルを格納する [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) とを作成する方法を次の例で示します。 この例では、新しいファイルが定義済みの場所に自動的に配置されます。 または、[**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) を使ってユーザーがファイルを保存するデバイスの場所を指定できるようになります。 [
-            **DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) に対するコールバックを再び割り当てるために呼び出される **load** メソッドは、アプリの終了以降も持続する場合、このセクションでこの後定義する DownloadOp クラス内にあることに注意してください。
+URI とファイル名を表す文字列を使って、[**Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) オブジェクトと要求されたファイルを格納する [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) とを作成する方法を次の例で示します。 この例では、新しいファイルが定義済みの場所に自動的に配置されます。 または、[**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) を使ってユーザーがファイルを保存するデバイスの場所を指定できるようになります。 [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) に対するコールバックを再び割り当てるために呼び出される **load** メソッドは、アプリの終了以降も持続する場合、このセクションでこの後定義する DownloadOp クラス内にあることに注意してください。
 
 [!code-js[uploadFile](./code/backgroundtransfer/download_quickstart/js/main.js#Snippetdownload_quickstart_A)]
 
@@ -211,18 +207,17 @@ promise = download.startAsync().then(complete, error, progress);
 
 ### 持続している操作の起動時の列挙
 
-[
-            **DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) が完了するか取り消されると、関連するシステム リソースがすべて解放されます。 ただし、これらのイベントのどちらかが発生する前にアプリが終了した場合、ダウンロードは一時停止され、バックグラウンドで保持されます。 以下の例は、持続しているダウンロードを新しいアプリ セッションに再び取り込む方法を示しています。
+[**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) が完了するか取り消されると、関連するシステム リソースがすべて解放されます。 ただし、これらのイベントのどちらかが発生する前にアプリが終了した場合、ダウンロードは一時停止され、バックグラウンドで保持されます。 以下の例は、持続しているダウンロードを新しいアプリ セッションに再び取り込む方法を示しています。
 
 1.  持続している操作を列挙する関数を定義する前に、返される [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) オブジェクトを格納する配列を作成する必要があります。
 
-[!code-js[uploadFile](./code/backgroundtransfer/download_quickstart/js/main.js#Snippetdownload_quickstart_D)]
+    [!code-js[uploadFile](./code/backgroundtransfer/download_quickstart/js/main.js#Snippetdownload_quickstart_D)]
 
-2.  次に、持続している操作を列挙してそれらを配列に格納する関数を定義します。 持続している [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) に対するコールバックを再び割り当てるために呼び出される **load** メソッドは、このセクションでこの後定義する DownloadOp の例に含まれていることに注意してください。
+1.  次に、持続している操作を列挙してそれらを配列に格納する関数を定義します。 持続している [**DownloadOperation**](https://msdn.microsoft.com/library/windows/apps/br207154) に対するコールバックを再び割り当てるために呼び出される **load** メソッドは、このセクションでこの後定義する DownloadOp の例に含まれていることに注意してください。
 
-[!code-js[uploadFile](./code/backgroundtransfer/download_quickstart/js/main.js#Snippetdownload_quickstart_E)]
+    [!code-js[uploadFile](./code/backgroundtransfer/download_quickstart/js/main.js#Snippetdownload_quickstart_E)]
 
-3.  これで、返された値の一覧を使って、保留中の操作を再開できます。
+1.  これで、返された値の一覧を使って、保留中の操作を再開できます。
 
 ## 後処理
 
@@ -234,8 +229,7 @@ Windows 10 の新機能は、アプリが実行されていない場合でも、
 
 後処理があるバックグラウンド転送は、次のように開始します。
 
-1.  [
-            **BackgroundTransferCompletionGroup**](https://msdn.microsoft.com/library/windows/apps/dn804209) オブジェクトを作成します。 続けて、[**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) オブジェクトを作成します。 ビルダー オブジェクトの **Trigger** プロパティを完了グループ オブジェクトに設定し、ビルダーの **TaskEngtyPoint** プロパティを、転送完了時に実行する必要があるバックグラウンド タスクのエントリ ポイントに設定します。 最後に、[**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772) メソッドを呼び出してバックグラウンド タスクを登録します。 複数の完了グループで 1 つのバックグラウンド タスクのエントリ ポイントを共有できますが、バックグラウンド タスクの登録では 1 つの完了グループのみ指定できることに注意してください。
+1.  [**BackgroundTransferCompletionGroup**](https://msdn.microsoft.com/library/windows/apps/dn804209) オブジェクトを作成します。 続けて、[**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) オブジェクトを作成します。 ビルダー オブジェクトの **Trigger** プロパティを完了グループ オブジェクトに設定し、ビルダーの **TaskEngtyPoint** プロパティを、転送完了時に実行する必要があるバックグラウンド タスクのエントリ ポイントに設定します。 最後に、[**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772) メソッドを呼び出してバックグラウンド タスクを登録します。 複数の完了グループで 1 つのバックグラウンド タスクのエントリ ポイントを共有できますが、バックグラウンド タスクの登録では 1 つの完了グループのみ指定できることに注意してください。
 
    ```csharp
     var completionGroup = new BackgroundTransferCompletionGroup();
@@ -289,7 +283,8 @@ Windows 10 の新機能は、アプリが実行されていない場合でも、
 
 -   接続が確立された後、2 分以内で応答を受け取らなかった HTTP 要求メッセージは中止されます。
 
-> **注:** どちらのシナリオにおいても、バックグラウンド転送はインターネット接続があることを前提に、最高 3 回まで自動的に要求を再試行します。 インターネット接続が検出されないと、検出されるまで別の要求は待機します。
+> 
+              **注:** どちらのシナリオにおいても、バックグラウンド転送はインターネット接続があることを前提に、最高 3 回まで自動的に要求を再試行します。 インターネット接続が検出されないと、検出されるまで別の要求は待機します。
 
 ## デバッグのガイダンス
 
@@ -313,24 +308,22 @@ Visual Studio を使う 4 つのシナリオで、この問題が発生する可
 
 Uniform Resource Identifier (URI) として無効な文字列が、[**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) オブジェクトのコンストラクターに渡されると、例外がスローされます。
 
-**.NET: **[**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) 型は、C# や VB では [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) と表示されます。
+
+              **.NET: **[**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) 型は、C# や VB では [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) と表示されます。
 
 C# と Visual Basic では、.NET 4.5 の [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) クラスと、いずれかの [**System.Uri.TryCreate**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.trycreate.aspx) メソッドを使って、URI が作成される前にアプリのユーザーから受け取った文字列をテストすることによって、このエラーを回避できます。
 
 C++ では、URI として渡される文字列を試行して解析するメソッドはありません。 アプリがユーザーから [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) の入力を取得する場合、このコンストラクターを try/catch ブロックに配置する必要があります。 例外がスローされた場合、アプリは、ユーザーに通知し、新しいホスト名を要求することができます。
 
-[
-            **Windows.Networking.backgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242) 名前空間には便利なヘルパー メソッドがあり、[**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 名前空間の列挙値を使ってエラーを処理します。 これは、アプリで特定のネットワーク例外を異なる方法で処理する場合に役立つことがあります。
+[**Windows.Networking.backgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242) 名前空間には便利なヘルパー メソッドがあり、[**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 名前空間の列挙値を使ってエラーを処理します。 これは、アプリで特定のネットワーク例外を異なる方法で処理する場合に役立つことがあります。
 
-[
-            **Windows.Networking.backgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242) 名前空間の非同期メソッドで発生したエラーは、**HRESULT** 値として返されます。 [
-            **BackgroundTransferError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701093) メソッドは、バックグラウンド転送操作からのネットワーク エラーを [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh747818) 列挙値に変換するために使われます。 **WebErrorStatus** 列挙値のほとんどは、ネイティブ HTTP または FTP クライアント操作から返されるエラーに対応しています。 アプリは特定の **WebErrorStatus** 列挙値に対するフィルター処理を行い、例外の原因に応じてアプリの動作を変更できます。
+[**Windows.Networking.backgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242) 名前空間の非同期メソッドで発生したエラーは、**HRESULT** 値として返されます。 [**BackgroundTransferError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701093) メソッドは、バックグラウンド転送操作からのネットワーク エラーを [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh747818) 列挙値に変換するために使われます。 **WebErrorStatus** 列挙値のほとんどは、ネイティブ HTTP または FTP クライアント操作から返されるエラーに対応しています。 アプリは特定の **WebErrorStatus** 列挙値に対するフィルター処理を行い、例外の原因に応じてアプリの動作を変更できます。
 
 パラメーター検証エラーの場合は、例外の **HRESULT** を使って、その例外の原因となったエラーの詳細情報を確認することもできます。 使うことができる **HRESULT** 値は、*Winerror.h* ヘッダー ファイルに記載されています。 パラメーター検証エラーではほとんどの場合、返される **HRESULT** は **E\_INVALIDARG** です。
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

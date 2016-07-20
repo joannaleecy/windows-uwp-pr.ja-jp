@@ -3,8 +3,9 @@ author: mcleanbyron
 ms.assetid: 2967C757-9D8A-4B37-8AA4-A325F7A060C5
 description: "特定の日付範囲などのオプション フィルターを使ってレビュー データを取得するには、Windows ストア分析 API でこのメソッドを使います。"
 title: "アプリのレビューの取得"
-ms.sourcegitcommit: 02131e641cdaa76256845b38bcc50aa42d718601
-ms.openlocfilehash: bb0f912bd3380e21e04fa44f2c75244c6585f03a
+translationtype: Human Translation
+ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
+ms.openlocfilehash: 6e7e8c6a1b870031fb7055bf09c8ebbaa7dc13a5
 
 ---
 
@@ -33,9 +34,9 @@ ms.openlocfilehash: bb0f912bd3380e21e04fa44f2c75244c6585f03a
 
 | メソッド | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| GET    | https://manage.devcenter.microsoft.com/v1.0/my/analytics/reviews |
+| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/reviews``` |
 
- 
+<span/> 
 
 ### 要求ヘッダー
 
@@ -43,9 +44,9 @@ ms.openlocfilehash: bb0f912bd3380e21e04fa44f2c75244c6585f03a
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | 必須。 **Bearer**&lt;*token*&gt; という形式の Azure AD アクセス トークン。 |
 
- 
+<span/> 
 
-### 要求本文
+### 要求パラメーター
 
 <table>
 <colgroup>
@@ -59,7 +60,7 @@ ms.openlocfilehash: bb0f912bd3380e21e04fa44f2c75244c6585f03a
 <th align="left">パラメーター</th>
 <th align="left">型</th>
 <th align="left">説明</th>
-<th align="left">必須</th>
+<th align="left">必須かどうか</th>
 </tr>
 </thead>
 <tbody>
@@ -132,10 +133,11 @@ ms.openlocfilehash: bb0f912bd3380e21e04fa44f2c75244c6585f03a
 </tbody>
 </table>
 
+<span/>
  
 ### フィルター フィールド
 
-要求本文の *filter* パラメーターには、応答内の行をフィルター処理する 1 つまたは複数のステートメントが含まれます。 各ステートメントには **eq** または **ne** 演算子と関連付けられるフィールドと値が含まれ、一部のフィールドでは **contains**、**gt**、**lt**、**ge**、および **le** 演算子もサポートします。 **and** または **or** を使ってステートメントを組み合わせることができます。
+要求の *filter* パラメーターには、応答内の行をフィルター処理する 1 つまたは複数のステートメントが含まれます。 各ステートメントには **eq** または **ne** 演算子と関連付けられるフィールドと値が含まれ、一部のフィールドでは **contains**、**gt**、**lt**、**ge**、および **le** 演算子もサポートします。 **and** または **or** を使ってステートメントを組み合わせることができます。
 
 *filter* 文字列の例は次のとおりです。*filter=contains(reviewText,'great') and contains(reviewText,'ads') and deviceRAM lt 2048 and market eq 'US'*
 
@@ -282,7 +284,7 @@ ms.openlocfilehash: bb0f912bd3380e21e04fa44f2c75244c6585f03a
 </tbody>
 </table>
 
- 
+<span/> 
 
 ### 要求の例
 
@@ -307,6 +309,7 @@ Authorization: Bearer <your access token>
 | @nextLink  | string | データの追加ページがある場合、この文字列には、データの次のページを要求するために使用できる URI が含まれます。 たとえば、要求の **top** パラメーターが 10000 に設定されたが、クエリの入手データに 10,000 を超える行が含まれている場合に、この値が返されます。 |
 | TotalCount | int    | クエリの結果データ内の行の総数です。                                                                                                                                                                                                                             |
 
+<span/>
  
 ### レビュー値
 
@@ -337,7 +340,7 @@ Authorization: Bearer <your access token>
 | deviceStorageCapacity  | number  | 主記憶域ディスクの容量 (GB 単位) です。                                                                                                                                                                                     |
 | rating                 | number  | 星で表現したアプリの評価です。                                                                                                                                                                                                            |
 
- 
+<span/> 
 
 ### 応答の例
 
@@ -386,6 +389,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 

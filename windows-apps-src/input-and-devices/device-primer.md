@@ -6,8 +6,8 @@ ms.assetid: 7665044E-F007-495D-8D56-CE7C2361CDC4
 label: Device primer
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
-ms.openlocfilehash: bb23e8cc85544d4b5f0717b0c2d2ebad1447cb8b
+ms.sourcegitcommit: 0501d59108c5f01b3cefd3d038f3c7d320c862eb
+ms.openlocfilehash: 3461d5cd399682e0c26a7a6864c916bda21eec43
 
 ---
 
@@ -21,7 +21,7 @@ ms.openlocfilehash: bb23e8cc85544d4b5f0717b0c2d2ebad1447cb8b
 
 ユニバーサル Windows プラットフォーム (UWP) アプリをサポートするデバイスを理解すると、各フォーム ファクター向けの最適なユーザー エクスペリエンスを提供するために役立ちます。 特定のデバイス向けのアプリを設計するときは、アプリがデバイスにどのように表示されるか、そのデバイスでアプリがいつどこでどのように使われるか、ユーザーがそのデバイスをどのように操作するかについて、特に考慮する必要があります。
 
-## <span id="Phones_and_phablets"></span><span id="phones_and_phablets"></span><span id="PHONES_AND_PHABLETS"></span>電話とファブレット
+## 電話とファブレット
 
 
 すべてのコンピューティング デバイスの中で最も広く使われている電話では、限られた画面領域と基本的な入力方法を使って、さまざまな操作を行うことができます。 電話にはさまざまなサイズがあり、大きい電話はファブレットと呼ばれます。 ファブレットでのアプリのエクスペリエンスは、電話でのエクスペリエンスと似ていますが、画面領域が大きくなることで、コンテンツ操作時に重要な変更が可能になります。
@@ -61,7 +61,7 @@ UI に関する考慮事項
 
  
 
-## <span id="Tablets"></span><span id="tablets"></span><span id="TABLETS"></span>タブレット
+## タブレット
 
 
 超軽量のタブレット コンピューターは、タッチスクリーン、カメラ、マイク、および加速度計を備えています。 タブレットの画面サイズは、通常は 7" ～ 13.3" です。
@@ -96,7 +96,7 @@ UI に関する考慮事項
 
  
 
-## <span id="PCs_and_laptops"></span><span id="pcs_and_laptops"></span><span id="PCS_AND_LAPTOPS"></span>PC とノート PC
+## PC とノート PC
 
 
 Windows PC とノート PC には、多種多様なデバイスと画面サイズがあります。 一般に、PC やノート PC は電話やタブレットより多くの情報を表示できます。
@@ -128,7 +128,7 @@ UI に関する考慮事項
 
  
 
-## <span id="Surface_Hub_devices"></span><span id="surface_hub_devices"></span><span id="SURFACE_HUB_DEVICES"></span>Surface Hub デバイス
+## Surface Hub デバイス
 
 
 Microsoft Surface Hub は、複数のユーザーによる同時使用のために設計された大画面のチーム コラボレーション デバイスです。
@@ -161,7 +161,7 @@ UI に関する考慮事項
 
  
 
-## <span id="Windows_IoT_devices"></span><span id="windows_iot_devices"></span><span id="WINDOWS_IOT_DEVICES"></span>Windows IoT デバイス
+## Windows IoT デバイス
 
 
 Windows IoT デバイスは、最新クラスのデバイスであり、主に小型のエレクトロニクス、センサー、接続機能が物理オブジェクト内に埋め込まれたものです。 通常、これらのデバイスはネットワークまたはインターネット経由で接続され、感知した実際のデータについて報告します。場合によっては、それに対して処理を実行することもあります。 デバイスには、画面がない場合 ("ヘッドレス" デバイスとも呼ばれます) と、一般的に 3.5" 以下の小さい画面に接続される場合 ("ヘッド付き" デバイスとも呼ばれます) があります。
@@ -199,6 +199,6 @@ UI に関する考慮事項
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jun16_HO5-->
 
 

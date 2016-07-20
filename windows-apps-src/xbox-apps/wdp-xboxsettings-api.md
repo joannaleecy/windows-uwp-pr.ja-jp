@@ -2,8 +2,9 @@
 author: payzer
 title: "Device Portal の Xbox 開発者向け設定 API のリファレンス"
 description: "Xbox 開発者向け設定にアクセスする方法について説明します。"
-ms.sourcegitcommit: c392e6a2356d4180943c17d37512ef8ea35f5719
-ms.openlocfilehash: 52fb6e76bd7ad35127eeebeced8f6f8cc076fb7f
+translationtype: Human Translation
+ms.sourcegitcommit: a9a2b6e58dfa0d1e77164a59f204deabf8f5c3e0
+ms.openlocfilehash: e3637f5a8481c0800af42c011fb811b908b946b1
 
 ---
 
@@ -46,7 +47,7 @@ Category: (文字列) 設定のカテゴリ。
 
 HTTP 状態コード      | 説明
 :------     | :-----
-200 | ファイル共有の資格情報にアクセスする要求が許可されました。
+200 | 要求は成功しました
 4XX | エラー コード
 5XX | エラー コード
 
@@ -87,7 +88,7 @@ Category: (文字列) 設定のカテゴリ。
 
 HTTP 状態コード      | 説明
 :------     | :-----
-200 | ファイル共有の資格情報にアクセスする要求が許可されました。
+200 | 要求は成功しました
 4XX | エラー コード
 5XX | エラー コード
 
@@ -124,7 +125,7 @@ Value: (文字列) 設定の新しい値。
 
 HTTP 状態コード      | 説明
 :------     | :-----
-200 | ファイル共有の資格情報にアクセスする要求が許可されました。
+200 | 要求は成功しました
 4XX | エラー コード
 5XX | エラー コード
 
@@ -136,6 +137,6 @@ HTTP 状態コード      | 説明
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

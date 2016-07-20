@@ -3,6 +3,7 @@ description: "この記事では、ユニバーサル Windows プラットフォ
 title: "コピーと貼り付け"
 ms.assetid: E882DC15-E12D-4420-B49D-F495BB484BEE
 author: awkoren
+translationtype: Human Translation
 ms.sourcegitcommit: 9a8fd6d34c4b89dae1ec4be2db69498b5d458b5a
 ms.openlocfilehash: 3e3ba8811f4fac283164143aad88913aaabbee49
 
@@ -32,8 +33,7 @@ AuthenticateAsync
 
 ## コピーと切り取り
 
-コピーと切り取り (移動とも呼ばれます) には、ほぼ同じ機能があります。 [
-            **RequestedOperation**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage.RequestedOperation) プロパティを使用して、必要な操作を選択します。
+コピーと切り取り (移動とも呼ばれます) には、ほぼ同じ機能があります。 [**RequestedOperation**](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage.RequestedOperation) プロパティを使用して、必要な操作を選択します。
 
 ```cs
 // copy 
@@ -105,6 +105,6 @@ Clipboard.ContentChanged += (s, e) =>
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

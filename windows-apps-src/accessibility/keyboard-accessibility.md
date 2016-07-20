@@ -5,8 +5,9 @@ ms.assetid: DDAE8C4B-7907-49FE-9645-F105F8DFAD8B
 title: "キーボードのアクセシビリティ"
 label: Keyboard accessibility
 template: detail.hbs
-ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
-ms.openlocfilehash: c5b5ca247e3999850d7bf9b81347c201204db7e8
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 6ac488b6db1ed838cc458c6adaa90dcca18d4c7d
 
 ---
 
@@ -50,15 +51,11 @@ XAML
 
 通常、フォーカスを設定できる要素はすべて、既定でタブ オーダーに含まれています。 例外は、[**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565) などの一部のテキスト表示型です。このような型では、選択中のテキストにクリップボードからアクセスできるように、フォーカスを設定することができます。ただし、静的テキスト要素がタブ オーダーの対象となることは想定されていないため、タブ オーダーには含められません。 通常、これらの要素は対話型ではありません (これらは呼び出すことができず、テキスト入力も必要としませんが、テキスト内の選択ポイントを見つけて調整できる[テキスト コントロール パターン](https://msdn.microsoft.com/library/windows/desktop/Ee671194)はサポートしています)。 テキストに、フォーカスを設定すると操作が可能になるという含みを持たせないでください。 それでも、テキスト要素は、支援技術によって検出され、スクリーン リーダーによって読み上げられますが、これはその要素を実際のタブ オーダーで見つけるのとは異なる技法に依存しています。
 
-[
-            **TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) 値を調整する場合も、既定の順序を使う場合も、次のルールが適用されます。
+[**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) 値を調整する場合も、既定の順序を使う場合も、次のルールが適用されます。
 
-* [
-            **TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) が 0 の UI 要素は、XAML または子コレクションでの宣言順序に基づいてタブ オーダーに追加されます。
-* [
-            **TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) が 0 を超える UI 要素は、**TabIndex** 値に基づいてタブ オーダーに追加されます。
-* [
-            **TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) が 0 未満の UI 要素はタブ オーダーに追加され、値 0 の UI 要素よりも前に表示されます。 これは、HTML による **tabindex** 属性の処理とは異なる場合があります (古い HTML 仕様では、負の値の **tabindex** がサポートされていませんでした)。
+* [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) が 0 の UI 要素は、XAML または子コレクションでの宣言順序に基づいてタブ オーダーに追加されます。
+* [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) が 0 を超える UI 要素は、**TabIndex** 値に基づいてタブ オーダーに追加されます。
+* [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) が 0 未満の UI 要素はタブ オーダーに追加され、値 0 の UI 要素よりも前に表示されます。 これは、HTML による **tabindex** 属性の処理とは異なる場合があります (古い HTML 仕様では、負の値の **tabindex** がサポートされていませんでした)。
 
 <span id="keyboard_navigation_within_a_UI_element"/>
 <span id="keyboard_navigation_within_a_ui_element"/>
@@ -73,8 +70,7 @@ XAML
 
 呼び出すことができる UI 要素の場合は、Space キーと Enter キーのキーボード イベント ハンドラーを実装します。 これで、基本のキーボード アクセシビリティのサポートは完全になり、ユーザーはキーボードのみを使って基本のアプリ シナリオを実行できます。つまり、ユーザーはすべての対話型の UI 要素にアクセスしたり、既定の機能をアクティブにすることができます。
 
-UI で使う要素がフォーカスを取得できない場合は、独自のカスタム コントロールを作成できます。 [
-            **IsTabStop**](https://msdn.microsoft.com/library/windows/apps/BR209422) プロパティを **true** に設定して入力フォーカスを有効にし、UI にフォーカス インジケーターが示される表示状態を作成して、フォーカスがある状態を視覚的に示す必要があります。 タブ ストップ、フォーカス、Microsoft UI オートメーションのピアとパターンのサポートを、コンテンツを合成するコントロールで処理するよう、コントロールの合成を使うと簡単になることがよくあります。
+UI で使う要素がフォーカスを取得できない場合は、独自のカスタム コントロールを作成できます。 [**IsTabStop**](https://msdn.microsoft.com/library/windows/apps/BR209422) プロパティを **true** に設定して入力フォーカスを有効にし、UI にフォーカス インジケーターが示される表示状態を作成して、フォーカスがある状態を視覚的に示す必要があります。 タブ ストップ、フォーカス、Microsoft UI オートメーションのピアとパターンのサポートを、コンテンツを合成するコントロールで処理するよう、コントロールの合成を使うと簡単になることがよくあります。
 
 たとえば、ポインター入力イベントを [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) で処理するのではなく、その要素を [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) でラップすると、ポインター、キーボード、フォーカスのサポートを取得できます。
 
@@ -140,8 +136,7 @@ XAML
 ```
 
 > [!IMPORTANT]
-> [
-            **AutomationProperties.AcceleratorKey**](https://msdn.microsoft.com/library/windows/apps/Hh759762) または [**AutomationProperties.AccessKey**](https://msdn.microsoft.com/library/windows/apps/Hh759763) を設定しても、キーボード機能は有効になりません。 使用する必要があるキーなどの情報を支援技術によってユーザーに渡すことができるように、そのような情報が UI オートメーション フレームワークに通知されるだけです。 キー処理の実装は、XAML ではなくコードで行う必要があります。 アプリに対して実際にキーボード ショートカットの動作を実装するには、関連するコントロールに [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/BR208941) イベントや [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/BR208942) イベントのハンドラーをアタッチする必要があります。 また、アクセス キーの下線も自動的には追加されません。 UI で下線付きのテキストを表示する場合は、インラインの [**Underline**](https://msdn.microsoft.com/library/windows/apps/BR209982) 書式設定として、ニーモニックの特定のキーのテキストに明示的に下線を表示する必要があります。
+> [**AutomationProperties.AcceleratorKey**](https://msdn.microsoft.com/library/windows/apps/Hh759762) または [**AutomationProperties.AccessKey**](https://msdn.microsoft.com/library/windows/apps/Hh759763) を設定しても、キーボード機能は有効になりません。 使用する必要があるキーなどの情報を支援技術によってユーザーに渡すことができるように、そのような情報が UI オートメーション フレームワークに通知されるだけです。 キー処理の実装は、XAML ではなくコードで行う必要があります。 アプリに対して実際にキーボード ショートカットの動作を実装するには、関連するコントロールに [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/BR208941) イベントや [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/BR208942) イベントのハンドラーをアタッチする必要があります。 また、アクセス キーの下線も自動的には追加されません。 UI で下線付きのテキストを表示する場合は、インラインの [**Underline**](https://msdn.microsoft.com/library/windows/apps/BR209982) 書式設定として、ニーモニックの特定のキーのテキストに明示的に下線を表示する必要があります。
 
 わかりやすくするために、上の例では "Ctrl + A" などの文字列に対するリソースは使っていません。 ただし、ローカライズ時にはショートカット キーについても考慮する必要があります。 ショートカット キーとして使うキーは通常、要素の表示テキスト ラベルに基づいて選ぶため、ショートカット キーをローカライズすることは適切な作業です。
 
@@ -161,7 +156,7 @@ Ctrl キーなどの修飾キーのチェックを含むキー イベント ハ�
 ## カスタム コントロールのキーボード ナビゲーション  
 子要素間に空間的な関係が存在する場合は、子要素間を移動するためのキーボード ショートカットとして方向キーを使うことをお勧めします。 ツリー ビュー ノードに、展開折りたたみとノードのアクティブ化を処理するための別のサブ要素がある場合は、左右の方向キーを使って、キーボードの展開折りたたみ機能を提供します。 コントロール コンテンツ内で方向トラバーサルをサポートする指向コントロールがある場合は、適切な方向キーを使ってください。
 
-一般に、カスタム コントロールに対するカスタム キー処理を実装する場合は、クラス ロジックの一部として、[**OnKeyDown**](https://msdn.microsoft.com/en-us/library/windows/apps/hh967982.aspx) メソッドと [**OnKeyUp**](https://msdn.microsoft.com/en-us/library/windows/apps/hh967983.aspx) メソッドのオーバーライドを組み込みます。
+一般に、カスタム コントロールに対するカスタム キー処理を実装する場合は、クラス ロジックの一部として、[**OnKeyDown**](https://msdn.microsoft.com/library/windows/apps/hh967982.aspx) メソッドと [**OnKeyUp**](https://msdn.microsoft.com/library/windows/apps/hh967983.aspx) メソッドのオーバーライドを組み込みます。
 
 <span id="An_example_of_a_visual_state_for_a_focus_indicator"/>
 <span id="an_example_of_a_visual_state_for_a_focus_indicator"/>
@@ -247,6 +242,6 @@ SIP には Ctrl キーや Alt キーがないため、キーボード ショー�
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

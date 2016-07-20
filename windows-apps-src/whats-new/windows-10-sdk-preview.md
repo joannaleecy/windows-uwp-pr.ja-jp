@@ -3,21 +3,22 @@ author: QuinnRadich
 title: "Windows 10 の新着情報"
 description: "Windows 10 Anniversary SDK Preview ビルドと新しい開発者ツールを使うと、新しいユニバーサル Windows プラットフォームによって強化されたツール、機能、そしてエクスペリエンスが利用できます。"
 translationtype: Human Translation
-ms.sourcegitcommit: 46b5ad404811894899810f83efb9970e338e7051
-ms.openlocfilehash: 5cce4a0fbfe85126f15cb013a9b46f058006a5e1
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 9623e10b15dbc5f9480d1cd9bd740fa8e914b3c6
 
 ---
 
 # Windows の新着情報
 
-Windows 10 Anniversary SDK Preview ビルド 14295 と Windows 開発者ツールの更新プログラムでは、引き続きユニバーサル Windows プラットフォームによって強化されたツール、機能、およびエクスペリエンスを利用できます。 Windows 10 の[ツールと SDK をインストール](https://developer.microsoft.com/en-us/windows/downloads#_blank)すると、[新しいユニバーサル Windows アプリを作成](https://msdn.microsoft.com/library/windows/apps/bg124288)したり、[Windows の既存のアプリ コード](https://msdn.microsoft.com/library/windows/apps/mt238321)がどのように使えるかを試したりすることができます。
+Windows 10 Anniversary SDK Preview ビルド 14295 と Windows 開発者ツールの更新プログラムでは、引き続きユニバーサル Windows プラットフォームによって強化されたツール、機能、およびエクスペリエンスを利用できます。 
+              Windows 10 の[ツールと SDK をインストール](https://developer.microsoft.com/windows/downloads#_blank)すると、[新しいユニバーサル Windows アプリを作成](https://msdn.microsoft.com/library/windows/apps/bg124288)したり、[Windows の既存のアプリ コード](https://msdn.microsoft.com/library/windows/apps/mt238321)がどのように使えるかを試したりすることができます。
 
 ## Windows 10 Anniversary SDK Preview ビルド 12295
 
 機能 | 説明
  :---- | :----
 ネットワーク | サーバー SSL/TLS 証明書に対して独自のカスタム検証を実行できるようになりました。これを行うには、[HttpBaseProtocolFilter.ServerCustomValidationRequest](https://msdn.microsoft.com/library/windows/apps/windows.web.http.filters.httpbaseprotocolfilter.aspx#_blank) イベントを受信登録します。 HTTP 要求で [HttpCacheReadBehavior.NoCache](https://msdn.microsoft.com/library/windows/apps/windows.web.http.filters.httpcachereadbehavior.aspx#_blank) 列挙値を指定することで、キャッシュからの HTTP 応答の読み取りを完全に無効にすることもできます。 [HttpBaseProtocolFilter.ClearAuthenticationCache](https://msdn.microsoft.com/library/windows/apps/windows.web.http.filters.httpbaseprotocolfilter.aspx#_blank) メソッドを呼び出すことで、認証資格情報を消去して "ログアウト" シナリオを実現できるようになりました。
-拡張機能 | Microsoft Edge の新機能は、拡張機能を使えるようになったことです。 拡張機能を使用すると、ユーザーは Microsoft Edge の機能を拡張できるようになり、ターゲットのユーザーが重要視するニッチな機能を提供することが可能です。 詳しくは、[拡張機能に関するドキュメント](https://developer.microsoft.com/en-us/microsoft-edge/platform/documentation/extensions/#_blank)をご覧ください。
+拡張機能 | Microsoft Edge の新機能は、拡張機能を使えるようになったことです。 拡張機能を使用すると、ユーザーは Microsoft Edge の機能を拡張できるようになり、ターゲットのユーザーが重要視するニッチな機能を提供することが可能です。 詳しくは、[拡張機能に関するドキュメント](https://developer.microsoft.com/microsoft-edge/platform/documentation/extensions/#_blank)をご覧ください。
 Bluetooth API | アプリでリモートの Bluetooth 周辺機器の RFCOMM サービスにアクセスできるようになりました。これには、[Windows.Devices.Bluetooth and Windows.Devices.Bluetooth.Rfcomm](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.aspx#_blank) を使用し、あらかじめ周辺機器とペアリングしておく必要はありません。 新しいメソッドを使用すると、ペアリングされていないデバイス上の RFCOMM サービスをアプリで検索し、そのサービスにアクセスできます。
 チャット API | 新しい [ChatSyncManager](https://msdn.microsoft.com/library/windows/apps/mt414181.aspx#_blank) クラスを使用すると、クラウドとの間で送受信するテキスト メッセージを同期できます。
 [Android と iOS 開発者向けの Windows アプリ概念マッピング](https://msdn.microsoft.com/windows/uwp/porting/android-ios-uwp-map#_blank) | このリソースには、Android や iOS のスキルとコードを持つ開発者が Windows 10 とユニバーサル Windows プラットフォーム (UWP) に移行する場合に、それら 3 つのプラットフォーム間でプラットフォームの機能と知識を関連付けるために必要なすべての情報が含まれています。
@@ -29,6 +30,6 @@ Media API | Windows.Media.Playback 名前空間の新しい MediaBreak API で�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

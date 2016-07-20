@@ -5,6 +5,7 @@ title: "FlipView コントロールのガイドライン"
 ms.assetid: A4E05D92-1A0E-4CDD-84B9-92199FF8A8A3
 label: Flip view
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
 ms.openlocfilehash: ecb46c0d42821d833e8232780b553754f8f097c5
 
@@ -42,8 +43,7 @@ FlipView は [ItemsControl](https://msdn.microsoft.com/library/windows/apps/wind
 
 ### 項目コレクションへの項目の追加
 
-[
-            **Items**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx) コレクションに項目を追加するには、XAML かコードを使います。 通常、項目が少数で、その項目が変わらず、XAML で簡単に定義できる場合や、実行時にコードで項目を生成する場合は、この方法で項目を追加します。 項目をインラインで定義したフリップ ビューを次に示します。
+[**Items**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx) コレクションに項目を追加するには、XAML かコードを使います。 通常、項目が少数で、その項目が変わらず、XAML で簡単に定義できる場合や、実行時にコードで項目を生成する場合は、この方法で項目を追加します。 項目をインラインで定義したフリップ ビューを次に示します。
 
 ```xaml
 <FlipView x:Name="flipView1">
@@ -106,7 +106,8 @@ ItemsSource が `itemsViewSource` という名前の [**CollectionViewSource**](
           ItemsSource="{Binding Source={StaticResource itemsViewSource}}"/>
 ```
 
->**注**
+>
+            **注**
             &nbsp;&nbsp;フリップ ビューのデータを設定するには、その Items コレクションに項目を追加するか ItemsSource プロパティを設定しますが、同時に両方の方法で設定することはできません。 ItemsSource プロパティを設定して XAML で項目を追加した場合、追加された項目は無視されます。 ItemsSource プロパティを設定してコードで Items コレクションに項目を追加した場合、例外がスローされます。
 
 ### 項目の表示方法の指定
@@ -212,6 +213,6 @@ ItemsSource が `itemsViewSource` という名前の [**CollectionViewSource**](
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

@@ -3,8 +3,9 @@ author: joannaleecy
 title: "UWP ゲーム用のクラウド サービスの使用"
 description: "UWP ゲーム用のバックエンドとしてクラウドを実装することについて説明します。"
 ms.assetid: 1a7088e0-0d7b-11e6-8e05-0002a5d5c51b
-ms.sourcegitcommit: b25f02dc4ebcf960882e64f66f0306a8e584ebbd
-ms.openlocfilehash: d9b252783213f0c6a82944729f98c84e21d56535
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 8bf42e9c2c2e074240eb8e7b94efdfbca65cc7f9
 
 ---
 #  UWP ゲーム用のクラウド サービスの使用
@@ -47,14 +48,15 @@ Windows 10 のユニバーサル Windows プラットフォーム (UWP) では�
     </tr>
     <tr>
         <td>[343 Industries](https://www.halowaypoint.com/)</td>
-        <td>_Halo 5: Guardians_ では、Microsoft Azure DocumentDB を使うことにより、ソーシャル ゲームプレイ プラットフォームとして [Halo: Spartan Companies](https://www.halowaypoint.com/spartan-companies) を実装しました。Microsoft Azure DocumentDB が選択された理由は、自動インデックス作成機能による速度と柔軟性です。</td>
+        <td>
+              _Halo 5: Guardians_ では、Microsoft Azure DocumentDB を使うことにより、ソーシャル ゲームプレイ プラットフォームとして [Halo: Spartan Companies](https://www.halowaypoint.com/spartan-companies) を実装しました。Microsoft Azure DocumentDB が選択された理由は、自動インデックス作成機能による速度と柔軟性です。</td>
         <td>
             <ul>
                 <li>マルチ プレイヤー ゲームプレイでグループの作成/管理を処理するスケーラブルなデータ層 <li>ゲームとソーシャル メディアの統合 <li>複数の属性を使った、リアルタイムのデータ クエリ <li>ゲームプレイの達成度や統計情報の同期 </ul>
         </td>
         <td>
             <ul>
-                <li>[Azure DocumentDB を使って実装されるソーシャル ゲームプレイ](https://azure.microsoft.com/en-us/blog/how-halo-5-guardians-implemented-social-gameplay-using-azure-documentdb/)</td>
+                <li>[Azure DocumentDB を使って実装されるソーシャル ゲームプレイ](https://azure.microsoft.com/blog/how-halo-5-guardians-implemented-social-gameplay-using-azure-documentdb/)</td>
             </ul>
     </tr>
     <tr>
@@ -87,7 +89,8 @@ Windows 10 のユニバーサル Windows プラットフォーム (UWP) では�
     </tr>
     </td>
         <td>[Pixel Squad](http://www.crimecoast.com/)</td>
-        <td>Pixel Squad では、Unity ゲーム エンジンと Azure を使って _Crime Coast_ を開発しました。 _Crime Coast_ は、Android、iOS、Windows プラットフォームでプレイできるソーシャル戦略ゲームです。 このゲームでは、Azure BLOB ストレージ、Managed Azure Redis Cache、負荷分散された IIS VM アレイ、Microsoft 通知ハブが使用されています。 同社のスケーリングの管理方法や、同時接続プレイヤー数が 5,000 人にもなるプレイヤーの急増の処理方法を参考にしてください。
+        <td>Pixel Squad では、Unity ゲーム エンジンと Azure を使って _Crime Coast_ を開発しました。 
+              _Crime Coast_ は、Android、iOS、Windows プラットフォームでプレイできるソーシャル戦略ゲームです。 このゲームでは、Azure BLOB ストレージ、Managed Azure Redis Cache、負荷分散された IIS VM アレイ、Microsoft 通知ハブが使用されています。 同社のスケーリングの管理方法や、同時接続プレイヤー数が 5,000 人にもなるプレイヤーの急増の処理方法を参考にしてください。
         </td>
         <td>
             <ul>
@@ -115,18 +118,18 @@ Windows 10 のユニバーサル Windows プラットフォーム (UWP) では�
 ### ステップ バイ ステップの学習ガイド
 
 * [ビルド 2016 Codelabs: Microsoft Azure App Service と Microsoft SQL Azure バックエンドを使ってゲームのスコアを保存する](https://github.com/Microsoft-Build-2016/CodeLabs-GameDev-6-Azure)
-* [ゲームのモバイル エンゲージメント戦略の設計](https://azure.microsoft.com/en-us/documentation/articles/mobile-engagement-gaming-scenario/)
-* [Unity の iOS 展開向けの Azure Mobile Engagement の使用](https://azure.microsoft.com/en-us/documentation/articles/mobile-engagement-unity-ios-get-started/)
+* [ゲームのモバイル エンゲージメント戦略の設計](https://azure.microsoft.com/documentation/articles/mobile-engagement-gaming-scenario/)
+* [Unity の iOS 展開向けの Azure Mobile Engagement の使用](https://azure.microsoft.com/documentation/articles/mobile-engagement-unity-ios-get-started/)
 
 ### IaaS、PaaS、SaaS について
 
 まず、ゲームに最適なサービスのレベルについて検討する必要があります。 次の 3 つのサービスの相違点を把握することにより、バックエンドを構築に必要なアプローチを決定できます。
 
-* [サービスとしてのインフラストラクチャ (IaaS)](https://azure.microsoft.com/en-us/overview/what-is-iaas/)
+* [サービスとしてのインフラストラクチャ (IaaS)](https://azure.microsoft.com/overview/what-is-iaas/)
 
     サービスとしてのインフラストラクチャ (IaaS) は、インターネット経由でプロビジョニングおよび管理される、インスタント コンピューティング インフラストラクチャです。 需要に応じてすばやくスケールアップおよびスケールダウンできるように、多くのコンピューターが用意されている可能性を想像してみてください。 IaaS によって、自社で物理サーバーやその他のデータ センターのインフラストラクチャを購入および管理するためのコストや面倒を避けることができます。
 
-* [サービスとしてのプラットフォーム (PaaS)](https://azure.microsoft.com/en-us/overview/what-is-paas/)
+* [サービスとしてのプラットフォーム (PaaS)](https://azure.microsoft.com/overview/what-is-paas/)
 
     サービスとしてプラットフォーム (PaaS) は IaaS と同様ですが、サーバー、ストレージ、ネットワークなどのインフラストラクチャの管理も含まれています。 物理サーバーやデータ センターのインフラストラクチャを購入しなくてもよいことに加えて、ソフトウェア ライセンス、基盤となるアプリケーション インフラストラクチャ、ミドルウェア、開発ツール、その他のリソースを購入して管理する必要もありません。
 
@@ -201,6 +204,6 @@ Azure のクラウド サービスをゲームに使用するためのいくつ�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

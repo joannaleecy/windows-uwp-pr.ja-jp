@@ -1,6 +1,7 @@
 ---
 title: "既存のゲームの Xbox への移行"
 author: JordanEllis6809
+translationtype: Human Translation
 ms.sourcegitcommit: e0c273495321689e37df6b36d97870327cff6c5a
 ms.openlocfilehash: 54db2390b5df3b5c6bc7ca6f7d6e36454435c543
 
@@ -22,6 +23,6 @@ ms.openlocfilehash: 54db2390b5df3b5c6bc7ca6f7d6e36454435c543
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

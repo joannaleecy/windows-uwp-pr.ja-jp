@@ -21,7 +21,8 @@ ms.openlocfilehash: 6b29e741c9cad68083502b25445b965fc266ef6e
 
 Windows Phone Silverlight アプリには、破棄後に再アクティブ化をサポートするために、該当するアプリケーションの状態とビュー状態を保存、復元するためのコードが含まれます。 ユニバーサル Windows プラットフォーム (UWP) アプリのアプリ ライフサイクルと Windows Phone Silverlight アプリのライフサイクルには大きな関係性がありますが、共に同様に、任意の時点でユーザーが選ぶフォアグラウンドの任意のアプリで利用可能なリソースを最大化することを目的として設計されています。 コードは、新しいシステムに合理的な容易さで適合することがわかります。
 
-**注**   ハードウェアの **[戻る]** ボタンを押すと、Windows Phone Silverlight アプリが自動的に終了します。 UWP アプリでは、モバイル デバイスのハードウェアの **[戻る]** ボタンを押しても自動的に終了*しません*。 その代わりに、アプリは一時停止します。その後、終了することができます。 ただし、そうした詳細は、アプリケーション ライフ サイクル イベントに適切に応答するアプリに対して透過です。
+
+            **注**   ハードウェアの **[戻る]** ボタンを押すと、Windows Phone Silverlight アプリが自動的に終了します。 UWP アプリでは、モバイル デバイスのハードウェアの **[戻る]** ボタンを押しても自動的に終了*しません*。 その代わりに、アプリは一時停止します。その後、終了することができます。 ただし、そうした詳細は、アプリケーション ライフ サイクル イベントに適切に応答するアプリに対して透過です。
 
 "デバウンス時間" は、アプリが非アクティブになり、システムで中断イベントが発生するまでの時間です。 UWP アプリにはデバウンス時間がありません。このため、アプリが非アクティブになるとすぐに中断イベントが発生します。
 
@@ -39,7 +40,8 @@ Windows Phone Silverlight カメラ キャプチャ コードでは、**Microsof
 
 アプリの対応に関する考え方は、Windows 10 で変わりました。 また新しい概念モデルでは、アプリはユニバーサル Windows プラットフォーム (UWP) をターゲットとし、すべての Windows デバイスで実行されます。 また、特定のデバイス ファミリ専用の機能を使うように指定することができます。 必要な場合は、アプリのターゲットを 1 つまたは複数のデバイス ファミリに限定するオプションをアプリに設定することもできます。 デバイス ファミリの説明や、ターゲットにするデバイス ファミリを決定する方法について詳しくは、「[UWP アプリのガイド](https://msdn.microsoft.com/library/windows/apps/dn894631)」をご覧ください。
 
-**注**   機能の有無を検出する際に、オペレーティング システムやデバイス ファミリを使わないことをお勧めします。 通常、現在のオペレーティング システムやデバイス ファミリを識別する手法は、特定のオペレーティング システムやデバイス ファミリの機能の有無を判別する際には最適な方法ではありません。 オペレーティング システムやデバイス ファミリ (およびバージョン番号) を検出するのではなく、機能自体の存在をテストしてください (「[条件付きコンパイルとアダプティブ コード](wpsl-to-uwp-porting-to-a-uwp-project.md#conditional-compilation)」をご覧ください)。 特定のオペレーティング システムやデバイス ファミリの情報が必要な場合は、その情報を、サポートされる最小バージョンとして使ってください。そのバージョン用のテストは設計しないでください。
+
+            **注**   機能の有無を検出する際に、オペレーティング システムやデバイス ファミリを使わないことをお勧めします。 通常、現在のオペレーティング システムやデバイス ファミリを識別する手法は、特定のオペレーティング システムやデバイス ファミリの機能の有無を判別する際には最適な方法ではありません。 オペレーティング システムやデバイス ファミリ (およびバージョン番号) を検出するのではなく、機能自体の存在をテストしてください (「[条件付きコンパイルとアダプティブ コード](wpsl-to-uwp-porting-to-a-uwp-project.md#conditional-compilation)」をご覧ください)。 特定のオペレーティング システムやデバイス ファミリの情報が必要な場合は、その情報を、サポートされる最小バージョンとして使ってください。そのバージョン用のテストは設計しないでください。
 
 さまざまなデバイスに合わせてアプリの UI を調整するには、推奨される方法がいくつかあります。 これまでと同様に、自動的にサイズ調整される要素と動的レイアウト パネルを引き続き使います。 また、XAML マークアップで、有効ピクセル (以前の表示ピクセル) 単位のサイズを引き続き使います。これにより、UI がさまざまな解像度やスケール ファクターに対応します (「[表示/有効ピクセル、視聴距離、スケール ファクター](wpsl-to-uwp-porting-xaml-and-ui.md#effective-pixels)」をご覧ください)。 Visual State Manager のアダプティブなトリガーとセッターを使って、UI をウィンドウ サイズに対応させることもできます (「[UWP アプリのガイド](https://msdn.microsoft.com/library/windows/apps/dn894631)」をご覧ください)。
 
@@ -68,29 +70,45 @@ Windows Phone Silverlight アプリでは、アプリが実行中のデバイス
 
 | Windows Phone Silverlight                                                               | UWP                                                                                                                                                                                                                                                                                                                                |
 |-----------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **ApplicationCurrentMemoryUsage** プロパティと **ApplicationCurrentMemoryUsageLimit** プロパティ | [
+| 
+            **ApplicationCurrentMemoryUsage** プロパティと **ApplicationCurrentMemoryUsageLimit** プロパティ | 
+            [
               **MemoryManager.AppMemoryUsage**
             ](https://msdn.microsoft.com/library/windows/apps/dn633832) プロパティと [**AppMemoryUsageLimit**](https://msdn.microsoft.com/library/windows/apps/dn633836) プロパティ                                                                                                                                    |
-| **ApplicationPeakMemoryUsage** プロパティ                                                 | Visual Studio のメモリ プロファイル ツールを使います。 詳しくは、「[メモリ使用率の分析](http://msdn.microsoft.com/library/windows/apps/dn645469.aspx)」をご覧ください。                                                                                                                                                                          |
-| **DeviceFirmwareVersion** プロパティ                                                      | [
+| 
+            **ApplicationPeakMemoryUsage** プロパティ                                                 | Visual Studio のメモリ プロファイル ツールを使います。 詳しくは、「[メモリ使用率の分析](http://msdn.microsoft.com/library/windows/apps/dn645469.aspx)」をご覧ください。                                                                                                                                                                          |
+| 
+            **DeviceFirmwareVersion** プロパティ                                                      | 
+            [
               **EasClientDeviceInformation.SystemFirmwareVersion**
             ](https://msdn.microsoft.com/library/windows/apps/dn608144) プロパティ (デスクトップ デバイス ファミリのみ)                                                                                                                                                                             |
-| **DeviceHardwareVersion** プロパティ                                                      | [
+| 
+            **DeviceHardwareVersion** プロパティ                                                      | 
+            [
               **EasClientDeviceInformation.SystemHardwareVersion**
             ](https://msdn.microsoft.com/library/windows/apps/dn608145) プロパティ (デスクトップ デバイス ファミリのみ)                                                                                                                                                                             |
-| **DeviceManufacturer** プロパティ                                                         | [
+| 
+            **DeviceManufacturer** プロパティ                                                         | 
+            [
               **EasClientDeviceInformation.SystemManufacturer**
             ](https://msdn.microsoft.com/library/windows/apps/hh701398) プロパティ (デスクトップ デバイス ファミリのみ)                                                                                                                                                                                |
-| **DeviceName** プロパティ                                                                 | [
+| 
+            **DeviceName** プロパティ                                                                 | 
+            [
               **EasClientDeviceInformation.SystemProductName**
             ](https://msdn.microsoft.com/library/windows/apps/hh701401) プロパティ (デスクトップ デバイス ファミリのみ)                                                                                                                                                                                 |
-| **DeviceTotalMemory** プロパティ                                                          | 相当する要素なし                                                                                                                                                                                                                                                                                                                      |
-| **IsKeyboardDeployed** プロパティ                                                         | 相当する要素なし。 このプロパティは、モバイル デバイスのハードウェア キーボードに関する情報を提供します。                                                                                                                                                                                                        |
-| **IsKeyboardPresent** プロパティ                                                          | 相当する要素なし。 このプロパティは、モバイル デバイスのハードウェア キーボードに関する情報を提供します。                                                                                                                                                                                                        |
-| **KeyboardDeployedChanged** イベント                                                       | 相当する要素なし。 このプロパティは、モバイル デバイスのハードウェア キーボードに関する情報を提供します。                                                                                                                                                                                                        |
-| **PowerSource** プロパティ                                                                | 相当する要素なし                                                                                                                                                                                                                                                                                                                      |
-| **PowerSourceChanged** イベント                                                            | [
-            **RemainingChargePercentChanged**](https://msdn.microsoft.com/library/windows/apps/jj207240) イベントを処理します (モバイル デバイス ファミリのみ)。 このイベントは、[**RemainingChargePercent**](https://msdn.microsoft.com/library/windows/apps/jj207239) プロパティ (モバイル デバイス ファミリのみ) の値が 1% 減少すると発生します。 |
+| 
+            **DeviceTotalMemory** プロパティ                                                          | 相当する要素なし                                                                                                                                                                                                                                                                                                                      |
+| 
+            **IsKeyboardDeployed** プロパティ                                                         | 相当する要素なし。 このプロパティは、モバイル デバイスのハードウェア キーボードに関する情報を提供します。                                                                                                                                                                                                        |
+| 
+            **IsKeyboardPresent** プロパティ                                                          | 相当する要素なし。 このプロパティは、モバイル デバイスのハードウェア キーボードに関する情報を提供します。                                                                                                                                                                                                        |
+| 
+            **KeyboardDeployedChanged** イベント                                                       | 相当する要素なし。 このプロパティは、モバイル デバイスのハードウェア キーボードに関する情報を提供します。                                                                                                                                                                                                        |
+| 
+            **PowerSource** プロパティ                                                                | 相当する要素なし                                                                                                                                                                                                                                                                                                                      |
+| 
+            **PowerSourceChanged** イベント                                                            | [**RemainingChargePercentChanged**](https://msdn.microsoft.com/library/windows/apps/jj207240) イベントを処理します (モバイル デバイス ファミリのみ)。 このイベントは、[**RemainingChargePercent**](https://msdn.microsoft.com/library/windows/apps/jj207239) プロパティ (モバイル デバイス ファミリのみ) の値が 1% 減少すると発生します。 |
 
 ## 位置情報
 

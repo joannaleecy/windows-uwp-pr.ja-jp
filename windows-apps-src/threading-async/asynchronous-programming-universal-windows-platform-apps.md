@@ -4,8 +4,8 @@ ms.assetid: 23FE28F1-89C5-4A17-A732-A722648F9C5E
 title: "非同期プログラミング"
 description: "このトピックでは、ユニバーサル Windows プラットフォーム (UWP) での非同期プログラミングと、C#、Microsoft Visual Basic .NET、Visual C\\+\\+ コンポーネント拡張機能 (C\\+\\+/CX)、および JavaScript における非同期プログラミングの表現について説明します。"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 8d9a17beb9c637e0a780020ef1cbb7b0b0bddf38
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 36300453bbffd06c675ff63e6e9cb4cafe3a56f5
 
 ---
 # 非同期プログラミング
@@ -21,8 +21,7 @@ ms.openlocfilehash: 8d9a17beb9c637e0a780020ef1cbb7b0b0bddf38
 
 ## UWP での非同期プログラミング
 
-[
-            **MediaCapture**](https://msdn.microsoft.com/library/windows/apps/BR241124) API や [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) API など、UWP 機能の多くは非同期 API として公開されます。 慣例により、非同期 API 関数の名前は、API が呼び出された後に関数の実行部が実行される可能性があることを示す "Async" で終わります。
+[**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/BR241124) API や [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/BR227171) API など、UWP 機能の多くは非同期 API として公開されます。 慣例により、非同期 API 関数の名前は、API が呼び出された後に関数の実行部が実行される可能性があることを示す "Async" で終わります。
 
 ユニバーサル Windows プラットフォーム (UWP) アプリで非同期 API を使う場合、コードは一貫した方法で非ブロック呼び出しを行います。 これらの非同期パターンを独自の API 定義に実装すると、呼び出し元はコードを理解し、予測可能な方法で使うことができます。
 
@@ -46,9 +45,12 @@ UWP の非同期パターンを利用すると、スレッドの明示的な管�
 
 | プログラミング言語 | 非同期表現           |
 |----------------------|---------------------------------------|
-| C#                  | **async** キーワード、**await** 演算子 |
-| Visual Basic         | **Async** キーワード、**Await** 演算子 |
-| C++/CX               | **task** クラス、**.then** メソッド      |
+| C#                  | 
+              **async** キーワード、**await** 演算子 |
+| Visual Basic         | 
+              **Async** キーワード、**Await** 演算子 |
+| C++/CX               | 
+              **task** クラス、**.then** メソッド      |
 | JavaScript           | promise オブジェクト、**then** 関数     |
 
  
@@ -61,10 +63,9 @@ C# または Visual Basic で書かれたコードのセグメントは、通常
 ## C++ を使った UWP での非同期パターン
 
 
-C++/CX では、非同期プログラミングは [**task クラス**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750113.aspx) とその [**then メソッド**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750044.aspx) に基づいています。 構文は JavaScript の promise の構文に似ています。 **task クラス**とそれに関連する型は、スレッド コンテキストの取り消しと管理に使われる機能を提供します。 詳しくは、「[C++ での非同期プログラミング](asynchronous-programming-in-cpp-universal-windows-platform-apps.md)」をご覧ください。
+C++/CX では、非同期プログラミングは [**task クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750113.aspx) とその [**then メソッド**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750044.aspx) に基づいています。 構文は JavaScript の promise の構文に似ています。 **task クラス**とそれに関連する型は、スレッド コンテキストの取り消しと管理に使われる機能を提供します。 詳しくは、「[C++ での非同期プログラミング](asynchronous-programming-in-cpp-universal-windows-platform-apps.md)」をご覧ください。
 
-[
-            **create\_async 関数**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750102.aspx) は、JavaScript または UWP をサポートする任意の言語から利用できる非同期 API の生成をサポートします。 詳しくは、「[C++ で非同期操作を作成](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750082.aspx)」をご覧ください。
+[**create\_async 関数**](https://msdn.microsoft.com/library/windows/apps/xaml/hh750102.aspx) は、JavaScript または UWP をサポートする任意の言語から利用できる非同期 API の生成をサポートします。 詳しくは、「[C++ で非同期操作を作成](https://msdn.microsoft.com/library/windows/apps/xaml/hh750082.aspx)」をご覧ください。
 
 ## JavaScript を使った UWP での非同期パターン
 
@@ -78,11 +79,11 @@ promise オブジェクトは、将来取得されたときに値を表します
 
 * [C# または Visual Basic での非同期 API の呼び出し](call-asynchronous-apis-in-csharp-or-visual-basic.md)
 * [Async と Await を使用した非同期プログラミング (C# と Visual Basic)](http://msdn.microsoft.com/library/hh191443(vs.110).aspx)
-* [リバーシの機能のシナリオ: 非同期コード](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj712233.aspx#async)
+* [リバーシの機能のシナリオ: 非同期コード](https://msdn.microsoft.com/library/windows/apps/xaml/jj712233.aspx#async)
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

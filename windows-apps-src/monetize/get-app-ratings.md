@@ -3,8 +3,9 @@ author: mcleanbyron
 ms.assetid: DD4F6BC4-67CD-4AEF-9444-F184353B0072
 description: "特定の日付範囲などのオプション フィルターを使って集計評価データを取得するには、Windows ストア分析 API でこのメソッドを使います。"
 title: "アプリの評価の取得"
-ms.sourcegitcommit: 02131e641cdaa76256845b38bcc50aa42d718601
-ms.openlocfilehash: cf585c8a54f479eb91d7b9a5261dae4a83f0b675
+translationtype: Human Translation
+ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
+ms.openlocfilehash: 6f6a94e030f1733ca4224766526386ef1956ff03
 
 ---
 
@@ -33,7 +34,7 @@ ms.openlocfilehash: cf585c8a54f479eb91d7b9a5261dae4a83f0b675
 
 | メソッド | 要求 URI                                                      |
 |--------|------------------------------------------------------------------|
-| GET    | https://manage.devcenter.microsoft.com/v1.0/my/analytics/ratings |
+| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/ratings``` |
 
  
 
@@ -43,9 +44,9 @@ ms.openlocfilehash: cf585c8a54f479eb91d7b9a5261dae4a83f0b675
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | 必須。 **Bearer**&lt;*token*&gt; という形式の Azure AD アクセス トークン。 |
 
- 
+<span/> 
 
-### 要求本文
+### 要求パラメーター
 
 <table>
 <colgroup>
@@ -59,7 +60,7 @@ ms.openlocfilehash: cf585c8a54f479eb91d7b9a5261dae4a83f0b675
 <th align="left">パラメーター</th>
 <th align="left">型</th>
 <th align="left">説明</th>
-<th align="left">必須</th>
+<th align="left">必須かどうか</th>
 </tr>
 </thead>
 <tbody>
@@ -123,10 +124,11 @@ ms.openlocfilehash: cf585c8a54f479eb91d7b9a5261dae4a83f0b675
 </tbody>
 </table>
 
+<span/>
  
 ### フィルター フィールド
 
-要求本文の *filter* パラメーターには、応答内の行をフィルター処理する 1 つまたは複数のステートメントが含まれます。 各ステートメントには **eq** 演算子または **ne** 演算子と関連付けられるフィールドと値が含まれ、**and** または **or** を使ってステートメントを組み合わせることができます。
+要求の *filter* パラメーターには、応答内の行をフィルター処理する 1 つまたは複数のステートメントが含まれます。 各ステートメントには **eq** 演算子または **ne** 演算子と関連付けられるフィールドと値が含まれ、**and** または **or** を使ってステートメントを組み合わせることができます。
 
 *filter* 文字列の例は次のとおりです。*filter=market eq 'US' and deviceType eq 'phone' and isRevised eq true*
 
@@ -183,7 +185,7 @@ ms.openlocfilehash: cf585c8a54f479eb91d7b9a5261dae4a83f0b675
 </tbody>
 </table>
 
- 
+<span/> 
 
 ### 要求の例
 
@@ -208,7 +210,8 @@ Authorization: Bearer <your access token>
 | @nextLink  | string | データの追加ページがある場合、この文字列には、データの次のページを要求するために使用できる URI が含まれます。 たとえば、要求の **top** パラメーターが 10000 に設定されたが、クエリの入手データに 10,000 を超える行が含まれている場合に、この値が返されます。 |
 | TotalCount | int    | クエリの結果データ内の行の総数です。                                                                                                                                                                                                                             |
 
- 
+<span/>
+
 ### 評価値
 
 *Value* 配列の要素には、次の値が含まれます。
@@ -227,8 +230,8 @@ Authorization: Bearer <your access token>
 | threeStars      | number  | 3 つ星評価の数です。                                                                                                                                                                                                    |
 | fourStars       | number  | 4 つ星評価の数です。                                                                                                                                                                                                     |
 | fiveStars       | number  | 5 つ星評価の数です。                                                                                                                                                                                                     |
-
  
+<span/>
 
 ### 応答の例
 
@@ -268,6 +271,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 

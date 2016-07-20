@@ -5,6 +5,7 @@ title: "視覚的なフィードバック"
 ms.assetid: bf2f3672-95f0-4c8c-9a72-0934f2d3b767
 label: Visual feedback
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
 ms.openlocfilehash: 2bf873f35192c20f15c6cb445b6be6436354c8c2
 
@@ -128,6 +129,6 @@ Windows には、次のような接触の視覚エフェクトが組み込まれ
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

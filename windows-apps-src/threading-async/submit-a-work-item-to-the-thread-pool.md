@@ -4,8 +4,8 @@ ms.assetid: E2A1200C-9583-40FA-AE4D-C9E6F6C32BCF
 title: "スレッド プールへの作業項目の送信"
 description: "スレッド プールに作業項目を送信することで独立したスレッドで作業を実行する方法について説明します。"
 translationtype: Human Translation
-ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
-ms.openlocfilehash: afb6d8b1b1ee5eeb99ba68e8b842436bd58619d0
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: d8b0f512d075510fae527e563ef99f24cc201577
 
 ---
 # スレッド プールへの作業項目の送信
@@ -21,12 +21,12 @@ ms.openlocfilehash: afb6d8b1b1ee5eeb99ba68e8b842436bd58619d0
 
 ## 作業項目の作成と送信
 
-[
-            **RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593) を呼び出して作業項目を作成します。 作業を実行するデリゲートを指定します (ラムダやデリゲート関数を使うことができます)。 **RunAsync** が [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580) オブジェクトを返すことに注意してください。このオブジェクトは次の手順で使うために格納しておきます。
+[**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593) を呼び出して作業項目を作成します。 作業を実行するデリゲートを指定します (ラムダやデリゲート関数を使うことができます)。 **RunAsync** が [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580) オブジェクトを返すことに注意してください。このオブジェクトは次の手順で使うために格納しておきます。
 
 3 つのバージョンの [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593) を使うことができるため、必要に応じて作業項目の優先度を指定し、他の作業項目と同時に実行するかどうかを制御できます。
 
-**注**  UI スレッドにアクセスしたり、作業項目の進捗状況を表示したりするには、[**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) を使います。
+
+              **注**  UI スレッドにアクセスしたり、作業項目の進捗状況を表示したりするには、[**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) を使います。
 
 次の例では作業項目を作成し、作業を実行するラムダを指定します。
 
@@ -192,14 +192,13 @@ IAsyncAction asyncAction = Windows.System.Threading.ThreadPool.RunAsync(
 m_workItem = asyncAction;
 ```
 
-[
-            **RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593) が呼び出された後に、スレッド プールで作業項目がキューに入れられ、スレッドが使用可能になったときに実行されます。 スレッド プールの作業項目は非同期に実行されます。任意の順番で実行されることがあるため、作業項目は単独で機能するようにしてください。
+[**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593) が呼び出された後に、スレッド プールで作業項目がキューに入れられ、スレッドが使用可能になったときに実行されます。 スレッド プールの作業項目は非同期に実行されます。任意の順番で実行されることがあるため、作業項目は単独で機能するようにしてください。
 
 作業項目は [**IAsyncInfo.Status**](https://msdn.microsoft.com/library/windows/apps/BR206593) プロパティをチェックし、作業項目が取り消されている場合は終了することに注意してください。
 
 ## 作業項目の完了の処理
 
-作業項目の [**IAsyncAction.Completed**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.foundation.iasyncaction.completed.aspx) プロパティを設定することで、完了ハンドラーを指定します。 作業項目の完了を処理するデリゲートを指定します (ラムダやデリゲート関数を使うことができます)。 たとえば、UI スレッドにアクセスしたり、結果を表示したりするには、[**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) を使います。
+作業項目の [**IAsyncAction.Completed**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncaction.completed.aspx) プロパティを設定することで、完了ハンドラーを指定します。 作業項目の完了を処理するデリゲートを指定します (ラムダやデリゲート関数を使うことができます)。 たとえば、UI スレッドにアクセスしたり、結果を表示したりするには、[**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) を使います。
 
 次の例では、手順 1. で送信した作業項目の結果を使って UI を更新します。
 
@@ -265,6 +264,6 @@ asyncAction.Completed = new AsyncActionCompletedHandler(
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

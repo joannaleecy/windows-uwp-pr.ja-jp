@@ -4,8 +4,8 @@ title: "xDeferLoadStrategy 属性"
 description: "xDeferLoadStrategy は、要素とその子の作成を遅延させます。起動時間は短くなりますが、メモリ使用量は若干増加します。 影響を受けるそれぞれの要素によって、メモリ使用量が約 600 バイト増加します。"
 ms.assetid: E763898E-13FF-4412-B502-B54DBFE2D4E4
 translationtype: Human Translation
-ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: b989a31439444f06dacb86adb186f853d1637f6c
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: a5230a92ad919fc52c40c19646ff799453e64fa4
 
 ---
 
@@ -13,7 +13,8 @@ ms.openlocfilehash: b989a31439444f06dacb86adb186f853d1637f6c
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-**x:DeferLoadStrategy="Lazy"** は、要素とその子の作成を遅延させます。起動時間は短くなりますが、メモリ使用量は若干増加します。 影響を受けるそれぞれの要素によって、メモリ使用量が約 600 バイト増加します。 遅延させる要素ツリーが大きいほど、起動時間がより節約されます。ただし、メモリ使用量のコストは増加します。 したがって、この属性を過剰に使うとパフォーマンスが低下する可能性があります。
+
+              **x:DeferLoadStrategy="Lazy"** は、要素とその子の作成を遅延させます。起動時間は短くなりますが、メモリ使用量は若干増加します。 影響を受けるそれぞれの要素によって、メモリ使用量が約 600 バイト増加します。 遅延させる要素ツリーが大きいほど、起動時間がより節約されます。ただし、メモリ使用量のコストは増加します。 したがって、この属性を過剰に使うとパフォーマンスが低下する可能性があります。
 
 ## XAML 属性の使用方法
 
@@ -27,20 +28,16 @@ ms.openlocfilehash: b989a31439444f06dacb86adb186f853d1637f6c
 
 -   この要素を後で検索する手段が必要なため、定義済みの [x:Name](x-name-attribute.md) が必要です。
 -   遅延としてマークできるのは、[**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) のみです ([**FlyoutBase**](https://msdn.microsoft.com/library/windows/apps/dn279249) から派生した型は除く)。
--   [
-            **Page**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.page)、[**UserControls**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.usercontrol)、[**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) では、ルート要素を遅延できません。
--   [
-            **ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) の要素は遅延できません。
--   [
-            **XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) で読み込まれた Loose XAML では機能しません。
+-   [**Page**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.page)、[**UserControls**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.usercontrol)、[**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) では、ルート要素を遅延できません。
+-   [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) の要素は遅延できません。
+-   [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) で読み込まれた Loose XAML では機能しません。
 -   親要素を移動すると、実現されていない要素はすべて消去されます。
 
 遅延要素を実現するには、いくつかの方法があります。
 
 -   要素で定義された名前を指定して [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) を呼び出します。
 -   要素で定義された名前を指定して [**GetTemplateChild**](https://msdn.microsoft.com/library/windows/apps/br209416) を呼び出します。
--   [
-            **VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) で、遅延要素をターゲットに設定している [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) または **Storyboard** アニメーションを使います。
+-   [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) で、遅延要素をターゲットに設定している [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) または **Storyboard** アニメーションを使います。
 -   任意の **Storyboard** の遅延要素をターゲットに設定します。
 -   遅延要素をターゲットに設定しているバインドを使います。
 -   注: 要素のインスタンス化が開始されると、インスタンスは UI スレッド上で作成されます。そのため、一度に作成されるインスタンスが多すぎると、UI で引っかかりが起きることがあります。
@@ -55,8 +52,7 @@ ms.openlocfilehash: b989a31439444f06dacb86adb186f853d1637f6c
 
 通常は、最初のフレームに表示できないものを遅延させることをお勧めします。  遅延対象の候補を見つけるための指針の 1 つは、[**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) が折りたたまれた状態で作成されている要素を探すことです。  また、付随 UI (ユーザーの操作によってトリガーされる UI) は、遅延要素を探すのに適した場所です。  
 
-[
-            **ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) シナリオでの遅延要素に注意してください。この場合、遅延要素により起動時間が短縮しますが、作成する内容によっては、パンのパフォーマンスも低下することがあります。  パンのパフォーマンスを向上させるには、[{x:Bind} マークアップ拡張](x-bind-markup-extension.md) および [x:Phase 属性](x-phase-attribute.md) に関するドキュメントをご覧ください。
+[**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) シナリオでの遅延要素に注意してください。この場合、遅延要素により起動時間が短縮しますが、作成する内容によっては、パンのパフォーマンスも低下することがあります。  パンのパフォーマンスを向上させるには、[{x:Bind} マークアップ拡張](x-bind-markup-extension.md) および [x:Phase 属性](x-phase-attribute.md) に関するドキュメントをご覧ください。
 
 **x:DeferLoadStrategy** と同時に [x:Phase](x-phase-attribute.md) 属性を使った場合、要素または要素ツリーが実現すると、バインディングが現在のフェーズまで (現在のフェーズを含む) 適用されます。 **x:Phase** に指定されたフェーズが、要素の保留に影響を与えたり、制御したりすることはありません。 パンの一部としてリスト項目がリサイクルされると、実現した要素は、アクティブな他の要素と同じように機能し、コンパイル済みバインド (**{x:Bind}** バインディング) は同じルール (フェージングを含む) を使って処理されます。
 
@@ -93,6 +89,6 @@ private void RealizeElements_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

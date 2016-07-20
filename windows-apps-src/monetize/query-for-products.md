@@ -3,8 +3,9 @@ author: mcleanbyron
 ms.assetid: D1F233EC-24B5-4F84-A92F-2030753E608E
 description: "Azure AD クライアント ID に関連付けられているアプリでユーザーが所有しているすべての製品を取得するには、Windows ストア コレクション API のこのメソッドを使用します。 スコープを指定して特定の製品を照会することができ、また他のフィルターを使用することもできます。"
 title: "製品の照会"
-ms.sourcegitcommit: 2f4351d6f9bdc0b9a131ad5ead10ffba7e76c437
-ms.openlocfilehash: b8661d73487dde61b207159d11a0583700fa22bc
+translationtype: Human Translation
+ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
+ms.openlocfilehash: 93ed2b850de22d562b16f3f10f4ca409054910d3
 
 ---
 
@@ -33,9 +34,9 @@ Azure AD クライアント ID に関連付けられているアプリでユー�
 
 | メソッド | 要求 URI                                                 |
 |--------|-------------------------------------------------------------|
-| POST   | `https://collections.mp.microsoft.com/v6.0/collections/query` |
+| POST   | ```https://collections.mp.microsoft.com/v6.0/collections/query``` |
 
-<br/>
+<span/>
  
 ### 要求ヘッダー
 
@@ -46,7 +47,7 @@ Azure AD クライアント ID に関連付けられているアプリでユー�
 | Content-Length | number | 要求の本文の長さ。                                                                       |
 | Content-Type   | string | 要求と応答の種類を指定します。 現時点では、サポートされている唯一の値は **application/json** です。 |
 
- <br/>
+<span/>
 
 ### 要求本文
 
@@ -61,7 +62,7 @@ Azure AD クライアント ID に関連付けられているアプリでユー�
 | productTypes      | string       | 指定した場合、指定された製品タイプに一致する製品だけがサービスから返されます。 サポートされている製品タイプは **Application**、**Durable**、および **UnmanagedConsumable** です。                                                                                       | 省略可能       |
 | validityType      | string       | **All** に設定した場合、有効期限が切れた項目を含む、ユーザーのすべての製品が返されます。 **Valid** に設定した場合、その時点で有効な製品だけが返されます (つまり、アクティブな状態で、開始日が現在より前、終了日が現在より後である製品)。 | 省略可能       |
 
-<br/> 
+<span/>
 
 UserIdentity オブジェクトには以下のパラメーターが含まれています。
 
@@ -71,7 +72,7 @@ UserIdentity オブジェクトには以下のパラメーターが含まれて�
 | identityValue        | string | Windows ストア ID キーの文字列値。                                                                                                                                                                                    | 必須      |
 | localTicketReference | string | 返された製品で必要な識別子。 応答本文で返された項目には、一致する *localTicketReference* があります。 Windows ストア ID キーの *userId* 要求と同じ値を使用することをお勧めします。 | 必須      |
 
-<br/> 
+<span/> 
 
 ProductSkuId オブジェクトには以下のパラメーターが含まれています。
 
@@ -80,7 +81,7 @@ ProductSkuId オブジェクトには以下のパラメーターが含まれて�
 | productId | string | Windows ストア カタログのストア ID。 ストア ID は、デベロッパー センター ダッシュボードの[アプリ ID ページ](../publish/view-app-identity-details.md)で確認できます。 ストア ID の例は 9WZDNCRFJ3Q8 です。 | 必須      |
 | skuID     | string | Windows ストア カタログの SKU ID。 SKU ID の例は "0010" です。                                                                                                                                                                                                                                                | 必須      |
 
-<br/> 
+<span/>
 
 ### 要求の例
 
@@ -124,7 +125,7 @@ Content-Type: application/json
 | continuationToken | string                   | 製品のセットが複数ある場合、ページ制限に達すると、このトークンが返されます。 残りの製品を取得する後続の呼び出しで、この継続トークンを指定できます。 | 省略可能       |
 | Items             | CollectionItemContractV6 | 指定したユーザーの製品の配列。                                                                                                                                               | 省略可能       |
 
-<br/> 
+<span/> 
 
 CollectionItemContractV6 オブジェクトには以下のパラメーターが含まれています。
 
@@ -154,7 +155,7 @@ CollectionItemContractV6 オブジェクトには以下のパラメーターが�
 | Tags                 | string             | 該当なし                                                                                                                                                | 必須      |
 | transactionId        | guid               | この項目の購入の結果としてのトランザクション ID。 フルフィルメント完了として項目を報告するのに使用できます。                                       | 必須      |
 
-<br/> 
+<span/> 
 
 IdentityContractV6 オブジェクトには以下のパラメーターが含まれています。
 
@@ -163,7 +164,7 @@ IdentityContractV6 オブジェクトには以下のパラメーターが含ま�
 | identityType  | string | 値 **"pub"** を格納します。                                                      | 必須      |
 | identityValue | string | 指定された Windows ストア ID キーの *publisherUserId* の文字列値。 | 必須      |
 
-<br/> 
+<span/> 
 
 ### 応答の例
 
@@ -216,6 +217,6 @@ Date: Tue, 22 Sep 2015 20:28:18 GMT
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 

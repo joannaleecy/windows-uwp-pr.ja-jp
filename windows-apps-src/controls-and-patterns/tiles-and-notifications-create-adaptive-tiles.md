@@ -5,6 +5,7 @@ title: "アダプティブ タイルの作成"
 ms.assetid: 1246B58E-D6E3-48C7-AD7F-475D113600F9
 label: Create adaptive tiles
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: a6632c7b8fdee5320f35e316abd318193a254c51
 ms.openlocfilehash: 6cd4519007d1241cb7c411dade1a092140b598c4
 
@@ -16,7 +17,7 @@ ms.openlocfilehash: 6cd4519007d1241cb7c411dade1a092140b598c4
 
 
 
-アダプティブ タイル テンプレートは Windows 10 の新機能であり、シンプルで柔軟なマークアップ言語を使って、さまざまな画面密度に合わせて変化する独自のタイル通知コンテンツをデザインできるようになります。 この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリのアダプティブ ライブ タイルを作成する方法について説明します。 アダプティブ タイルのすべての要素と属性の一覧については、「[アダプティブ タイルのスキーマ](tiles-and-notifications-adaptive-tiles-schema.md)」をご覧ください
+アダプティブ タイル テンプレートは Windows 10 の新機能であり、シンプルで柔軟なマークアップ言語を使って、さまざまな画面密度に合わせて変化する独自のタイル通知コンテンツをデザインできるようになります。 この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリのアダプティブ ライブ タイルを作成する方法について説明します。 アダプティブ タイルのすべての要素と属性の一覧については、「[アダプティブ タイルのスキーマ](tiles-and-notifications-adaptive-tiles-schema.md)」をご覧ください 
 
 (必要に応じて、Windows 10 の通知をデザインするときは、[Windows 8 タイル テンプレート カタログ](https://msdn.microsoft.com/library/windows/apps/hh761491)のプリセット テンプレートを引き続き使えます)。
 
@@ -201,7 +202,8 @@ TileContent content = new TileContent()
 
 通知ペイロード内で branding 属性を使って、ライブ タイルの下部でブランディング (表示名とコーナー ロゴ) を制御できます。 表示なし ("none")、名前のみ表示 ("name")、ロゴのみ表示 ("logo")、名前とロゴの両方を表示 ("nameAndLogo") のいずれかを選べます。
 
-**注**  Windows Mobile では、コーナー ロゴはサポートされていないため、"logo" と "nameAndLogo" は "name" に既定で設定されます。
+
+            **注**  Windows Mobile では、コーナー ロゴはサポートされていないため、"logo" と "nameAndLogo" は "name" に既定で設定されます。
 
  
 
@@ -279,7 +281,8 @@ TileContent content = new TileContent()
 
 通知ペイロード内でブランディングを指定しない場合は、ベース タイルのプロパティによってブランディングが決まります。 ベース タイルに表示名が表示される場合、ブランディングは既定で "name" に設定されます。 表示名が表示されない場合、ブランディングは既定で "none" に設定されます。
 
-**注**   これは、既定のブランディングが "logo" であった Windows 8.x からの変更点です。
+
+            **注**   これは、既定のブランディングが "logo" であった Windows 8.x からの変更点です。
 
  
 
@@ -288,7 +291,8 @@ TileContent content = new TileContent()
 
 **displayName** 属性に任意のテキスト文字列を入力することで、通知の表示名を上書きすることができます。 ブランディングと同様、通知ペイロード全体に影響を与える [&lt;visual&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 要素で、または個々のタイルにのみ影響を与える [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 要素で、表示名を指定できます。
 
-**既知の問題**  Windows Mobile でタイルの ShortName を指定した場合、通知で提供される表示名は使用されません (ShortName が常に表示されます)。 
+
+            **既知の問題**  Windows Mobile でタイルの ShortName を指定した場合、通知で提供される表示名は使用されません (ShortName が常に表示されます)。 
 
 ```XML
 <tile>
@@ -337,8 +341,7 @@ TileContent content = new TileContent()
 ## テキスト
 
 
-[
-            &lt;text&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 要素を使って、テキストを表示します。 hint を使うと、テキストの表示方法を変更できます。
+[&lt;text&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 要素を使って、テキストを表示します。 hint を使うと、テキストの表示方法を変更できます。
 
 ```XML
 <text>This is a line of text</text></code></pre></td>
@@ -432,7 +435,8 @@ new TileText()
 
 ![アダプティブ タイルのテキスト スタイル](images/adaptive-tiles-textstyles.png)
 
-**注**  hint-style を指定しない場合、スタイルは既定で caption に設定されます。
+
+            **注**  hint-style を指定しない場合、スタイルは既定で caption に設定されます。
 
  
 
@@ -524,7 +528,8 @@ new TileText()
 
 デバイスや画面間でのエクスペリエンスを最大限に高めるには、複数のグループを用意します。 複数のグループを使うと、タイルをより大きい画面に合わせて調整できます。
 
-**注**  グループの有効な子はサブグループのみです。
+
+            **注**  グループの有効な子はサブグループのみです。
 
  
 
@@ -725,7 +730,8 @@ private static TileGroup CreateGroup(string from, string subject, string body)
 
 ![サブグループ、重み合計が 100](images/adaptive-tiles-subgroups03.png)
 
-**注**  8 ピクセルの余白が列の間に自動的に追加されます。
+
+            **注**  8 ピクセルの余白が列の間に自動的に追加されます。
 
  
 
@@ -849,7 +855,8 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 
 &lt;image&gt; 要素を使って、タイル通知に画像を表示します。 画像はタイル コンテンツ (既定) 内に、背景画像としてか、タイルでアニメーション化されるプレビュー画像として、インラインで配置できます。
 
-**注**   [ファイル サイズや画像の大きさに対して制限](https://msdn.microsoft.com/library/windows/apps/hh781198)があります。
+
+            **注**   [ファイル サイズや画像の大きさに対して制限](https://msdn.microsoft.com/library/windows/apps/hh781198)があります。
 
  
 
@@ -1350,8 +1357,7 @@ hint-crop="circle"
 ## 縦方向の配置 (テキストの積み重ね)
 
 
-[
-            &lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 要素と [&lt;subgroup&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 要素のいずれでも **hint-textStacking** 属性を使って、タイルのコンテンツの縦方向の配置を制御できます。 既定では、コンテンツは上揃えになりますが、下揃えまたは中央揃えに設定することもできます。
+[&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 要素と [&lt;subgroup&gt;](tiles-and-notifications-adaptive-tiles-schema.md) 要素のいずれでも **hint-textStacking** 属性を使って、タイルのコンテンツの縦方向の配置を制御できます。 既定では、コンテンツは上揃えになりますが、下揃えまたは中央揃えに設定することもできます。
 
 ### binding 要素でのテキストの積み重ね
 
@@ -1496,6 +1502,6 @@ TileWide = new TileBinding()
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

@@ -1,10 +1,11 @@
 ---
-description: "UWP アプリの設計と UI に関連するダウンロード。"
+description: "UWP アプリのユーザー インターフェイスのレイアウトやコントロールの設計について、最新のダウンロードとツールを入手します。"
+keywords: uwp app layout, UI, user interface designs, downloads, uwp tools
 title: "UWP アプリの設計に関するダウンロード - Windows アプリ開発"
 author: mijacobs
 translationtype: Human Translation
-ms.sourcegitcommit: 9f75c39d26bd0c8858f404ab4fcd3d23562ea033
-ms.openlocfilehash: 4101b60c0f640fd54d67a8e57f0a06622c6ec85c
+ms.sourcegitcommit: 1370af75dcd45d52d0d31f57acb958d366f9bee5
+ms.openlocfilehash: 4ac5db9da4cd9ba0edff5b08dfff6ed6473ab4e3
 
 ---
 
@@ -108,6 +109,6 @@ Illustrator プロトタイプから赤線による指示書を簡単に生成�
 <b>他のコードをお探しの場合は、</b> Windows サンプル ページで UWP アプリ サンプルの一覧をご覧ください。 [サンプル ポータルに移動](https://developer.microsoft.com/samples)
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

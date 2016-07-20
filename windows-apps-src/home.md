@@ -2,10 +2,10 @@
 Description: "電話、タブレット、PC など、Windows 10 ベースのデバイスで実行できるユニバーサル Windows アプリを作成する際に必要となる情報について説明します。"
 title: "Windows 10 アプリに関するハウツー ガイド - Windows アプリの開発"
 ms.assetid: 2A39F3D8-85AD-4315-A69B-2B79242780E3
-redirect_url: https://developer.microsoft.com/en-us/windows/develop
+redirect_url: https://developer.microsoft.com/windows/develop
 translationtype: Human Translation
-ms.sourcegitcommit: 9be74892a98765a8a45482ce3f5cc5151ab772b1
-ms.openlocfilehash: 5d0cca643c26458165c388215d34eec76dfe8cf6
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 654eac5df1bd3309714348dcfc511850234bb0ae
 
 ---
 
@@ -33,7 +33,7 @@ ms.openlocfilehash: 5d0cca643c26458165c388215d34eec76dfe8cf6
 | [デバイス、センサーの使用](devices-sensors\index.md) | さまざまなデバイス (プリンター、カメラ、センサーなど) をユニバーサル Windows アプリに統合して、接続されたデバイスの堅牢かつ柔軟なエクスペリエンスをユーザーに提供します。 | 
 | [エンタープライズ](enterprise/index.md) | Windows 10 ユニバーサル Windows プラットフォーム (UWP) アプリの主要なエンタープライズ機能について説明します。 |
 | [ファイル、フォルダー、およびライブラリ](files/index.md) | ファイル内のテキストやその他のデータ形式を読み取り/書き込みする方法、およびファイルやフォルダーの管理方法について説明します。 また、アプリの設定の読み取りと書き込み、ファイルやフォルダーのピッカー、ビデオ ライブラリやミュージック ライブラリなどのセキュリティで保護された特別な場所についても説明します。 |
-| [ゲームと DirectX](https://msdn.microsoft.com/en-us/library/windows/apps/mt228375.aspx) | 新しいユニバーサル Windows プラットフォーム (UWP) でゲームを作成する基本的な方法について説明します。 |
+| [ゲームと DirectX](https://msdn.microsoft.com/library/windows/apps/mt228375.aspx) | 新しいユニバーサル Windows プラットフォーム (UWP) でゲームを作成する基本的な方法について説明します。 |
 | [グラフィックスとアニメーション](graphics/index.md) | ユーザー エクスペリエンスに対して視覚的な興味を持たせ、ユーザーの関心を集めるような UI グラフィックやアニメーションを使って、ユニバーサル Windows アプリを強化します。 |
 | [起動、再開、バックグラウンド タスク](launch-resume/index.md) | バックグラウンド タスクを作成し、システムで生成されたイベントに登録して、ユニバーサル Windows アプリが一時停止したり、実行されていない場合でも機能を提供します。 |
 | [マップと位置情報](maps-and-location/index.md) | ユニバーサル Windows アプリで Bing Maps サービスを活用して、航空写真の 3D ビューやストリート レベルのビューを含む正確なマップ視覚効果を生成する方法を説明します。 |
@@ -48,6 +48,6 @@ ms.openlocfilehash: 5d0cca643c26458165c388215d34eec76dfe8cf6
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

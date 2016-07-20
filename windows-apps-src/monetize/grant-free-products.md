@@ -3,8 +3,9 @@ author: mcleanbyron
 ms.assetid: FA55C65C-584A-4B9B-8451-E9C659882EDE
 description: "Windows ストア購入 API 内のこのメソッドを使用して、無料の製品またはアプリ内製品 (IAP) を特定のユーザーに対して付与します。"
 title: "無料の製品の付与"
-ms.sourcegitcommit: 2f4351d6f9bdc0b9a131ad5ead10ffba7e76c437
-ms.openlocfilehash: 9bce5649fc1a9400371e1f9bb67809f1c6288ec6
+translationtype: Human Translation
+ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
+ms.openlocfilehash: 64c600460c1cbcbd6bb486649e2bc98298ca9dbe
 
 ---
 
@@ -32,9 +33,9 @@ Windows ストア購入 API 内のこのメソッドを使用して、無料の�
 
 | メソッド | 要求 URI                                            |
 |--------|--------------------------------------------------------|
-| POST   | `https://purchase.mp.microsoft.com/v6.0/purchases/grant` |
+| POST   | ```https://purchase.mp.microsoft.com/v6.0/purchases/grant``` |
 
-<br/> 
+<span/> 
 
 ### 要求ヘッダー
 
@@ -45,7 +46,7 @@ Windows ストア購入 API 内のこのメソッドを使用して、無料の�
 | Content-Length | number | 要求の本文の長さ。                                                                       |
 | Content-Type   | string | 要求と応答の種類を指定します。 現時点では、サポートされている唯一の値は **application/json** です。 |
 
-<br/>
+<span/>
 
 ### 要求本文
 
@@ -61,7 +62,7 @@ Windows ストア購入 API 内のこのメソッドを使用して、無料の�
 | quantity       | int    | 購入する数量。 現時点では、サポートされている唯一の値は 1 です。 指定されていない場合は、既定値は 1 です。                                                                                                                                                                                                                | 省略可能       |
 | skuId          | string | Windows ストア カタログの SKU ID。 SKU ID の例は “0010” です。                                                                                                                                                                                                                                                | 必須      |
 
-<br/> 
+<span/>
 
 ### 要求の例
 
@@ -107,7 +108,7 @@ Content-Type: application/json
 | totalChargedToCsvTopOffPI | decimal                     | 個別の支払い方法とストアド バリュー (CSV) を使っている場合に、CSV に請求する金額。                                                                | 必須      |
 | totalTaxAmount            | decimal                     | すべての行項目に対する税の合計金額。                                                                                                              | 必須      |
 
-<br/> 
+<span/>
 
 ClientContext オブジェクトには以下のパラメーターが含まれています。
 
@@ -115,7 +116,7 @@ ClientContext オブジェクトには以下のパラメーターが含まれて
 |-----------|--------|---------------------------------------|----------|
 | client    | string | 注文を作成したクライアント ID。 | 省略可能       |
 
-<br/> 
+<span/>
 
 OrderLineItemV6 オブジェクトには以下のパラメーターが含まれています。
 
@@ -147,7 +148,7 @@ OrderLineItemV6 オブジェクトには以下のパラメーターが含まれ�
 | Title                   | string         | 行項目のローカライズされたタイトル。                                                                        | 必須      |
 | totalAmount             | decimal        | 行項目の税込みの合計購入金額。                                                    | 必須      |
 
-<br/> 
+<span/>
 
 IdentityV6 オブジェクトには以下のパラメーターが含まれています。
 
@@ -156,7 +157,7 @@ IdentityV6 オブジェクトには以下のパラメーターが含まれてい
 | identityType  | string | 値 **"pub"** を格納します。                                                      | 必須      |
 | identityValue | string | 指定された Windows ストア ID キーの *publisherUserId* の文字列値。 | 必須      |
 
-<br/> 
+<span/> 
 
 ### 応答の例
 
@@ -229,7 +230,7 @@ Date: Tue, 13 Oct 2015 21:21:51 GMT
 | 401  | 権限がありません | InconsistentClientId       | 要求の本文の Windows ストア ID の *clientId* 要求と承認ヘッダーの Azure AD アクセス トークンの *appid* 要求が一致しません。                     |
 | 400  | BadRequest   | InvalidParameter           | 詳細情報に、要求の本文と無効な値を含むフィールドに関する情報が含まれます。                                                                                    |
 
-<br/> 
+<span/> 
 
 ## 関連トピック
 
@@ -244,6 +245,6 @@ Date: Tue, 13 Oct 2015 21:21:51 GMT
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 

@@ -3,8 +3,9 @@ author: msatranjr
 ms.assetid: 5B3A6326-15EE-4618-AA8C-F1C7FB5232FB
 title: Bluetooth RFCOMM
 description: "この記事では、ファイルの送受信方法に関するコード例と一緒に、ユニバーサル Windows プラットフォーム (UWP) アプリでの Bluetooth RFCOMM の概要を説明します。"
-ms.sourcegitcommit: 62e97bdb8feb78981244c54c76a00910a8442532
-ms.openlocfilehash: 61e5844f18d09aa170498d261ca1a6fd60ef170c
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: a4d7b0c9e51f3d118c5ed9ac83af2cc6d502d6b3
 
 ---
 # Bluetooth RFCOMM
@@ -20,8 +21,7 @@ ms.openlocfilehash: 61e5844f18d09aa170498d261ca1a6fd60ef170c
 
 ## 概要
 
-[
-            **Windows.Devices.Bluetooth.Rfcomm**](https://msdn.microsoft.com/library/windows/apps/Dn263529) 名前空間の API は、[**enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) や [**instantiation**](https://msdn.microsoft.com/library/windows/apps/BR225654) など、既にある Windows.Devices のパターンに基づいて作成されています。 データの読み取りと書き込みは、[**定型的なデータ ストリーム パターン**](https://msdn.microsoft.com/library/windows/apps/BR208119)と [**Windows.Storage.Streams**](https://msdn.microsoft.com/library/windows/apps/BR241791) 内のオブジェクトを有効に活用できるように設計されています。 Service Discovery Protocol (SDP) の属性は、値のほかに、想定されている型を持ちます。 ところが、広く普及しているデバイスの中には、SDP の属性の実装に不備のあるものが存在し、値の型が、想定されている型とは異なる場合があります。 加えて、RFCOMM の多くの用法は、SDP の拡張属性を必要としません。 そのため、この API は、未解析の SDP データへのアクセスを提供し、開発者が必要に応じて情報を取得できるようになっています。
+[**Windows.Devices.Bluetooth.Rfcomm**](https://msdn.microsoft.com/library/windows/apps/Dn263529) 名前空間の API は、[**enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) や [**instantiation**](https://msdn.microsoft.com/library/windows/apps/BR225654) など、既にある Windows.Devices のパターンに基づいて作成されています。 データの読み取りと書き込みは、[**定型的なデータ ストリーム パターン**](https://msdn.microsoft.com/library/windows/apps/BR208119)と [**Windows.Storage.Streams**](https://msdn.microsoft.com/library/windows/apps/BR241791) 内のオブジェクトを有効に活用できるように設計されています。 Service Discovery Protocol (SDP) の属性は、値のほかに、想定されている型を持ちます。 ところが、広く普及しているデバイスの中には、SDP の属性の実装に不備のあるものが存在し、値の型が、想定されている型とは異なる場合があります。 加えて、RFCOMM の多くの用法は、SDP の拡張属性を必要としません。 そのため、この API は、未解析の SDP データへのアクセスを提供し、開発者が必要に応じて情報を取得できるようになっています。
 
 RFCOMM API にはサービス識別子の概念が使われています。 サービス識別子は単なる 128 ビットの GUID ですが、16 ビットまたは 32 ビットの整数として指定されることも少なくありません。 RFCOMM API には、サービス識別子を 128 ビットの GUID としてだけでなく、32 ビットの整数として指定したり利用したりするためのラッパーが用意されていますが、16 ビット整数用のラッパーはありません。 API にとってこの点は問題ではありません。言語が自動的に 32 ビット整数に拡大し、識別子は正しく生成されるためです。
 
@@ -34,7 +34,7 @@ RFCOMM 操作の詳細を示す完全なコード サンプルについては、
 
 -   **RfcommDeviceService.GetDeviceSelector\*** 関数を使って AQS クエリを作成し、必要なサービスのペアリングされているデバイスのインスタンスを列挙します。
 -   列挙されたデバイスを選んで [**RfcommDeviceService**](https://msdn.microsoft.com/library/windows/apps/Dn263463) を作成し、適宜 SDP 属性を読み取ります ([**established data helpers**](https://msdn.microsoft.com/library/windows/apps/BR208119) を使って属性のデータを解析します)。
--   ソケットを作成して、[**RfcommDeviceService.ConnectionHostName**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionhostname.aspx) と [**RfcommDeviceService.ConnectionServiceName**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionservicename.aspx) プロパティを [**StreamSocket.ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/Hh701504) に渡し、適切なパラメーターでリモート デバイス サービスに接続します。
+-   ソケットを作成して、[**RfcommDeviceService.ConnectionHostName**](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionhostname.aspx) と [**RfcommDeviceService.ConnectionServiceName**](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionservicename.aspx) プロパティを [**StreamSocket.ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/Hh701504) に渡し、適切なパラメーターでリモート デバイス サービスに接続します。
 -   定型的なデータ ストリーム パターンに従って、ファイルからデータのチャンクを読み取り、ソケットの [**StreamSocket.OutputStream**](https://msdn.microsoft.com/library/windows/apps/BR226920) でデバイスに送信します。
 
 ```csharp
@@ -236,8 +236,7 @@ bool IsCompatibleVersion(RfcommDeviceService^ service)
 
 RFCOMM アプリのシナリオとしては、サービスを PC でホストし、他のデバイスに対して公開するケースも一般的です。
 
--   [
-            **RfcommServiceProvider**](https://msdn.microsoft.com/library/windows/apps/Dn263511) を作成して必要なサービスをアドバタイズします。
+-   [**RfcommServiceProvider**](https://msdn.microsoft.com/library/windows/apps/Dn263511) を作成して必要なサービスをアドバタイズします。
 -   SDP 属性を適宜設定 ([**established data helpers**](https://msdn.microsoft.com/library/windows/apps/BR208119) を使って属性のデータを生成) し、その SDP レコードを他のデバイスが検索できるようにアドバタイズします。
 -   クライアント デバイスに接続するには、ソケット リスナーを作成して、着信接続要求のリッスンを開始します。
 -   接続を受信したら、接続済みのソケットを後続の処理のために保存します。
@@ -369,6 +368,6 @@ void OnConnectionReceived(
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO2-->
 
 

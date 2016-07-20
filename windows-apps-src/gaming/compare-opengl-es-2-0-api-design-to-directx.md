@@ -4,8 +4,8 @@ title: "OpenGL ES 2.0 から Direct3D への移植の計画"
 description: "iOS または Android プラットフォームからゲームを移植している場合、OpenGL ES 2.0 に多大な投資を行ってこられたものと思われます。"
 ms.assetid: a31b8c5a-5577-4142-fc60-53217302ec3a
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 804faad3db94bda9d1d67ad899a6ba048a4bfd26
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: f1119a9faed4fca7f0538a4c92c667e5b2ba559c
 
 ---
 
@@ -18,7 +18,7 @@ ms.openlocfilehash: 804faad3db94bda9d1d67ad899a6ba048a4bfd26
 **重要な API**
 
 -   [Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476080)
--   [Visual C++](https://msdn.microsoft.com/en-us/library/windows/apps/60k1461a.aspx)
+-   [Visual C++](https://msdn.microsoft.com/library/windows/apps/60k1461a.aspx)
 
 iOS または Android プラットフォームからゲームを移植している場合、OpenGL ES 2.0 に多大な投資を行ってこられたものと思われます。 グラフィックス パイプラインのコードベースを Direct3D 11 と Windows ランタイムに移す準備をしているときは、開始する前に何点か注意してください。
 
@@ -53,7 +53,7 @@ Direct3D 11 は、9\_1 (Direct3D 9.1) から 11\_1 のハードウェア "機能
 | API ファミリ                                                | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |-----------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [DXGI](https://msdn.microsoft.com/library/windows/desktop/hh404534)                     | DirectX Graphic Infrastructure (DXGI) は、グラフィックス ハードウェアと Direct3D の間のインターフェイスを提供します。 これは [**IDXGIAdapter**](https://msdn.microsoft.com/library/windows/desktop/bb174523) と [**IDXGIDevice1**](https://msdn.microsoft.com/library/windows/desktop/hh404543) の COM インターフェイスを使ってデバイス アダプターとハードウェア構成を設定します。 バッファーなどのウィンドウ リソースを作成および構成する場合に使います。 特に、[**IDXGIFactory2**](https://msdn.microsoft.com/library/windows/desktop/hh404556) ファクトリ パターンは、スワップ チェーン (フレーム バッファーのセット) などのグラフィックス リソースを取得するために使われます。 DXGI がスワップ チェーンを所有するため、画面にフレームを表示するために [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631) インターフェイスが使われます。 |
-| [Direct3D](https://msdn.microsoft.com/library/windows/desktop/ff476080)       | Direct3D は API のセットであり、グラフィックス インターフェイスの仮想表示を提供し、それを使ってグラフィックスを描画できるようにします。 バージョン 11 は、機能的に OpenGL 4.3 とほぼ同等です (一方、OpenGL ES 2.0 は機能的に DirectX9 および OpenGL 2.0 と似ていますが、OpenGL 3.0 の統合シェーダー パイプラインがあります)。重要な作業の大半は、個々のリソースとサブリソースへのアクセスを提供する ID3D11Device1 インターフェイスと、レンダリング コンテキストを提供する ID3D11DeviceContext1 インターフェイスで行われます。                                                                                                                                          |
+| [Direct3D](https://msdn.microsoft.com/library/windows/desktop/ff476080)       | Direct3D は API のセットであり、グラフィックス インターフェイスの仮想表示を提供し、それを使ってグラフィックスを描画できるようにします。 バージョン 11 は、機能的に OpenGL 4.3 とほぼ同等です  (一方、OpenGL ES 2.0 は機能的に DirectX9 および OpenGL 2.0 と似ていますが、OpenGL 3.0 の統合シェーダー パイプラインがあります)。重要な作業の大半は、個々のリソースとサブリソースへのアクセスを提供する ID3D11Device1 インターフェイスと、レンダリング コンテキストを提供する ID3D11DeviceContext1 インターフェイスで行われます。                                                                                                                                          |
 | [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370990)                      | Direct2D は、GPU アクセラレーションが活用された 2D レンダリング用の API のセットです。 用途は OpenVG と似ています。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038)            | DirectWrite は、GPU アクセラレーションが活用された高品質なフォント レンダリング用の API のセットです。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833)                  | DirectXMath は、一般的な線形代数と三角法の種類、値、関数を処理するための API とマクロのセットを提供します。 これらの型と関数は、Direct3D とそのシェーダーの操作に対応しています。                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
@@ -73,7 +73,7 @@ Windows ランタイム API は、UWP アプリの全体的なインフラスト
 -   [**Windows::ApplicationModel::Core::IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478)
 -   [**Windows::ApplicationModel::Core::CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017)
 
-また、Windows ランタイム C++ テンプレート ライブラリ (WRL) は、Windows ランタイム コンポーネントを作成して使うための下位レベルの方法を提供するテンプレート ライブラリです。 UWP アプリ用の Direct3D 11 API は、スマート ポインター ([ComPtr](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)) など、このライブラリ内のインターフェイスおよび型と組み合わせたときに最適に動作します。 WRL について詳しくは、「[Windows ランタイム C++ テンプレート ライブラリ (WRL)](https://msdn.microsoft.com/en-us/library/windows/apps/hh438466.aspx)」をご覧ください。
+また、Windows ランタイム C++ テンプレート ライブラリ (WRL) は、Windows ランタイム コンポーネントを作成して使うための下位レベルの方法を提供するテンプレート ライブラリです。 UWP アプリ用の Direct3D 11 API は、スマート ポインター ([ComPtr](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)) など、このライブラリ内のインターフェイスおよび型と組み合わせたときに最適に動作します。 WRL について詳しくは、「[Windows ランタイム C++ テンプレート ライブラリ (WRL)](https://msdn.microsoft.com/library/windows/apps/hh438466.aspx)」をご覧ください。
 
 ## 座標系の変更
 
@@ -120,6 +120,6 @@ Windows ランタイム API は、UWP アプリの全体的なインフラスト
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

@@ -4,8 +4,8 @@ ms.assetid: a2751e22-6842-073a-daec-425fb981bafe
 title: "ビジュアル レイヤー"
 description: "Windows.UI.Composition API を使うと、フレーム ワーク層 (XAML) とグラフィック層 (DirectX) との間のコンポジション層にアクセスできます。"
 translationtype: Human Translation
-ms.sourcegitcommit: b3d198af0c46ec7a2041a7417bccd56c05af760e
-ms.openlocfilehash: 164c01737d27451adcb685f9cda544cc00634af4
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 1abb663d0ee27d7e57ab83dab2589557d1f9f29a
 
 ---
 # ビジュアル レイヤー
@@ -14,9 +14,9 @@ ms.openlocfilehash: 164c01737d27451adcb685f9cda544cc00634af4
 
 Windows 10 では、デスクトップかモバイルかにかかわらず、すべての Windows アプリケーションに対応した新たな統合コンポジターとレンダリング エンジンを作成するために、重要な取り組みが行われました。 その取り組みの結果が、Windows.UI.Composition と呼ばれる統合コンポジション WinRT API です。この API により、新しい軽量コンポジション オブジェクトだけでなく、新しいコンポジター駆動型のアニメーションや効果にもアクセスできるようになります。
 
-Windows.UI.Composition は宣言型の[保持モード](https://msdn.microsoft.com/library/windows/desktop/ff684178.aspx) API であり、ユニバーサル Windows プラットフォーム (UWP) アプリケーションから呼び出して、アプリケーションで直接、コンポジション オブジェクト、アニメーション、効果を作成できます。 この API は、XAML などの既存のフレーム ワークを補強するものであり、UWP アプリケーションの開発者は、使い慣れた C# サーフェスをアプリケーションに追加できるようになります。 この API を使って、DX スタイル フレームワークレス アプリケーションを作成できます。
+Windows.UI.Composition は宣言型の[保持モード](https://msdn.microsoft.com/library/windows/desktop/ff684178.aspx) API であり、ユニバーサル Windows プラットフォーム (UWP) アプリケーションから呼び出して、アプリケーションで直接、コンポジション オブジェクト、アニメーション、効果を作成できます。 この API は、XAML などの既存のフレーム ワークを補強するものであり、UWP アプリケーションの開発者は、使い慣れた C# サーフェスをアプリケーションに追加できるようになります。 この API を使って、DX スタイル フレームワークレス アプリケーションを作成することもできます。
 
-XAML 開発者は、C# のコンポジション層まで降り、この層で WinRT を使ってカスタムの操作を実行して、XAML アプリケーションでオブジェクトの "コンポジション アイランド" を作成できます。グラフィック層まで降り、DirectX と C++ を使ってカスタムの UI 操作を実行する必要はありません。
+XAML 開発者は、C# のコンポジション層まで降り、この層で WinRT を使ってカスタムの操作を実行できます。グラフィック層まで降り、DirectX と C++ を使ってカスタムの UI 操作を実行する必要はありません。 この手法を用いることにより、コンポジション API を使用して既存の要素をアニメーション化したり、XAML 要素ツリー内で Windows.UI.Composition コンテンツの "ビジュアル アイランド" を作成して UI を拡張したりすることができます。
 
 ![](images/layers-win-ui-composition.png)
 ## <span id="Composition_Objects_and_The_Compositor"></span><span id="composition_objects_and_the_compositor"></span><span id="COMPOSITION_OBJECTS_AND_THE_COMPOSITOR"></span>コンポジション オブジェクトとコンポジター
@@ -27,18 +27,18 @@ XAML 開発者は、C# のコンポジション層まで降り、この層で Wi
 
 ビジュアル オブジェクトは、他のビジュアル オブジェクトのコンテナーやコンテンツ ビジュアル オブジェクトのホストとして利用できます。 この API では、使いやすさを考慮して、特定のタスクに合わせて一連の [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) オブジェクトが階層化されています。
 
--   [
-              **Visual**
-            ](https://msdn.microsoft.com/library/windows/apps/Dn706858) - ベース オブジェクト。 プロパティの大半はここにあり、他のビジュアル オブジェクトによって継承されます。
--   [
-              **ContainerVisual**
-            ](https://msdn.microsoft.com/library/windows/apps/Dn706810) - [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) から派生し、子ビジュアル オブジェクトを挿入できます。
--   [
-              **SpriteVisual**
-            ](https://msdn.microsoft.com/library/windows/apps/Mt589433) - [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) から派生し、画像、効果、スワップ チェーン形式のコンテンツが格納されます。
--   [
-              **Compositor**
-            ](https://msdn.microsoft.com/library/windows/apps/Dn706789) - アプリケーションとシステム コンポジター プロセスとの関係を管理するオブジェクト ファクトリ。
+-   
+              [
+              **Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) - ベース オブジェクト。 プロパティの大半はここにあり、他のビジュアル オブジェクトによって継承されます。
+-   
+              [
+              **ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) - [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) から派生し、子ビジュアル オブジェクトを挿入できます。
+-   
+              [
+              **SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) - [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) から派生し、画像、効果、スワップ チェーン形式のコンテンツが格納されます。
+-   
+              [
+              **Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) - アプリケーションとシステム コンポジター プロセスとの関係を管理するオブジェクト ファクトリ。
 
 コンポジターは、ツリー内のビジュアル オブジェクトのクリッピングや変換に使われる他の多数のコンポジション オブジェクトだけでなく、多様なアニメーションと効果のファクトリでもあります。
 
@@ -58,6 +58,16 @@ Windows.UI.Composition には、フレーム ワークに依存しない表現�
 
 コンポジション API は、ビジュアル ツリーを最初から作成できるだけでなく、[**Windows.UI.Xaml.Hosting**](https://msdn.microsoft.com/library/windows/apps/Hh701908) の [**ElementCompositionPreview**](https://msdn.microsoft.com/library/windows/apps/Mt608976) クラスを使用して、既存の XAML UI と相互運用することもできます。
 
+- 
+              [
+              **ElementCompositionPreview.GetElementVisual()**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): コンポジション API を使用してアニメーション化するために、要素のバッキング ビジュアルを取得します。
+- 
+              [
+              **ElementCompositionPreview.SetChildVisual()**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual): XAML ツリーにコンポジション コンテンツの "ビジュアル アイランド" を追加します。
+- 
+              [
+              **ElementCompositionPreview.GetScrollViewerManipulationPropertySet()**](https://msdn.microsoft.com/library/windows/apps/mt608980.aspx): コンポジション アニメーションの入力として、[**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx) の操作を使用します。
+
 
 **注**  
 この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
@@ -66,11 +76,11 @@ Windows.UI.Composition には、フレーム ワークに依存しない表現�
 
 ## <span id="Additional_Resources_"></span><span id="additional_resources_"></span><span id="ADDITIONAL_RESOURCES_"></span>その他の情報
 
--   この API に関する Kenny Kerr の MSDN 記事: [Graphics and Animation - Windows Composition Turns 10 (グラフィックとアニメーション - Window コンポジションの 10 年)](https://msdn.microsoft.com/magazine/mt590968)
--   [コンポジション GitHub](https://github.com/Microsoft/composition) のコンポジション サンプル
--   [
-              **API に関する詳しいリファレンス ドキュメント**
-            ](https://msdn.microsoft.com/library/windows/apps/Dn706878)
+-   この API に関する Kenny Kerr の MSDN 記事:「[グラフィックスとアニメーション - Windows 合成が 10 歳になる](https://msdn.microsoft.com/magazine/mt590968)」
+-   [WindowsUIDevLabs GitHub](https://github.com/microsoft/windowsuidevlabs) にある高度な UI とコンポジションのサンプル
+-   
+              [
+              **API に関する詳しいリファレンス ドキュメント**](https://msdn.microsoft.com/library/windows/apps/Dn706878)
 -   既知の問題: [既知の問題](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues)
 
  
@@ -83,6 +93,6 @@ Windows.UI.Composition には、フレーム ワークに依存しない表現�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

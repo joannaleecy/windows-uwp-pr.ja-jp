@@ -3,8 +3,9 @@ author: mcleanbyron
 ms.assetid: 3569C505-8D8C-4D85-B383-4839F13B2466
 description: "このメソッドを使って、Windows ストアのキーを更新します。"
 title: "Windows ストア ID キーの更新"
-ms.sourcegitcommit: 2f4351d6f9bdc0b9a131ad5ead10ffba7e76c437
-ms.openlocfilehash: 6255346c568ed24e17c795834ab182f73707c4de
+translationtype: Human Translation
+ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
+ms.openlocfilehash: a3cef13e84c5bb06be4f3e3d4b2db4e02650df62
 
 ---
 
@@ -13,8 +14,7 @@ ms.openlocfilehash: 6255346c568ed24e17c795834ab182f73707c4de
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
-このメソッドを使って、Windows ストアのキーを更新します。 [
-            **GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) メソッドまたは [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675) メソッドを呼び出して Windows ストア ID キーを生成すると、キーは 90 日間有効です。 キーの有効期限が切れた後で、有効期限が切れたキーとこのメソッドを使用して新しいキーを再ネゴシエートできます。
+このメソッドを使って、Windows ストアのキーを更新します。 [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) メソッドまたは [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675) メソッドを呼び出して Windows ストア ID キーを生成すると、キーは 90 日間有効です。 キーの有効期限が切れた後で、有効期限が切れたキーとこのメソッドを使用して新しいキーを再ネゴシエートできます。
 
 ## 前提条件
 
@@ -33,10 +33,10 @@ ms.openlocfilehash: 6255346c568ed24e17c795834ab182f73707c4de
 
 | キーの種類    | メソッド | 要求 URI                                              |
 |-------------|--------|----------------------------------------------------------|
-| コレクション | POST   | `https://collections.mp.microsoft.com/v6.0/b2b/keys/renew` |
-| 購入    | POST   | `https://purchase.mp.microsoft.com/v6.0/b2b/keys/renew`    |
+| コレクション | POST   | ```https://collections.mp.microsoft.com/v6.0/b2b/keys/renew``` |
+| 購入    | POST   | ```https://purchase.mp.microsoft.com/v6.0/b2b/keys/renew```    |
 
-<br/> 
+<span/>
 
 ### 要求ヘッダー
 
@@ -46,7 +46,7 @@ ms.openlocfilehash: 6255346c568ed24e17c795834ab182f73707c4de
 | Content-Length | number | 要求の本文の長さ。                                                                       |
 | Content-Type   | string | 要求と応答の種類を指定します。 現時点では、サポートされている唯一の値は **application/json** です。 |
 
-<br/> 
+<span/>
 
 ### 要求本文
 
@@ -55,7 +55,7 @@ ms.openlocfilehash: 6255346c568ed24e17c795834ab182f73707c4de
 | serviceTicket | string | Azure AD アクセス トークン。        | 必須      |
 | key           | string | 有効期限が切れた Windows ストア ID キー。 | 省略可能       |
 
-<br/> 
+<span/> 
 
 ### 要求の例
 
@@ -80,7 +80,7 @@ Host: collections.mp.microsoft.com
 |-----------|--------|------------------------------------------------------------------------------------------------------------------------|----------|
 | key       | string | 以降の Windows ストア コレクション API または Windows ストア購入 API に対する呼び出しで使用できる、更新された Windows ストアのキー。 | 省略可能       |
 
-<br/> 
+<span/>
 
 ### 応答の例
 
@@ -107,7 +107,7 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 | 401  | 権限がありません | AuthenticationTokenInvalid | Azure AD アクセス トークンが無効です。 場合によっては、ServiceError の詳細に追加情報が含まれていることがあります (トークンの有効期限切れや *appid* 要求の欠落など)。 |
 | 401  | 権限がありません | InconsistentClientId       | Windows ストア ID キーの *clientId* 要求と Azure AD アクセス トークンの *appid* 要求が一致しません。                                                                     |
 
-<br/> 
+<span/>
 
 ## 関連トピック
 
@@ -119,6 +119,6 @@ Date: Tue, 13 Sep 2015 07:31:12 GMT
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 

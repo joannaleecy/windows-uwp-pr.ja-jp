@@ -3,8 +3,9 @@ author: mtoepke
 title: "Windows 10 ゲーム開発ガイド"
 description: "ユニバーサル Windows プラットフォーム (UWP) ゲーム開発のためのリソースや情報を網羅したガイドです。"
 ms.assetid: 6061F498-96A8-44EF-9711-68AE5A1218C9
-ms.sourcegitcommit: 35017dd14f873350d7e9d75ff6c5c519067547b5
-ms.openlocfilehash: 33c158e254a367e65607e86ff425e9829b8255f5
+translationtype: Human Translation
+ms.sourcegitcommit: a9beb420ac13eb74c0109b30508e49d5305bc67c
+ms.openlocfilehash: 30f8408e6d125423e69615a3f9341e8f7d886fc8
 
 ---
 
@@ -30,12 +31,10 @@ Windows 10 ゲームを作成すると、スマートフォンから PC、Xbox O
 
 ## ゲーム開発に関するリソース
 
-
 ドキュメントから、開発者向けのプログラム、フォーラム、ブログ、サンプルまで、ゲーム開発に役立つ多くのリソースが用意されています。 ここでは、Windows 10 ゲームの開発を始めるにあたって役立つリソースをまとめています。
 
-> **注**   Xbox One の開発と高度な Windows 10 のゲーム機能 (Xbox Live サービスなど) は、ID@Xbox や Microsoft Studios などのプログラムによって管理されます。 このガイドでは幅広いリソースを取り上げているため、参加しているプログラムや特定の開発の役割によっては、一部のリソースにアクセスできない場合があります。 developer.xboxlive.com、forums.xboxlive.com、xdi.xboxlive.com、Game Developer Network (GDN) に解決されるリンクなどです。 Microsoft との提携について詳しくは、「[開発者プログラム](#programs)」をご覧ください。
-
- 
+> 
+              **注**   Xbox One の開発と高度な Windows 10 のゲーム機能 (Xbox Live サービスなど) は、ID@Xbox や Microsoft Studios などのプログラムによって管理されます。 このガイドでは幅広いリソースを取り上げているため、参加しているプログラムや特定の開発の役割によっては、一部のリソースにアクセスできない場合があります。 developer.xboxlive.com、forums.xboxlive.com、xdi.xboxlive.com、Game Developer Network (GDN) に解決されるリンクなどです。 Microsoft との提携について詳しくは、「[開発者プログラム](#programs)」をご覧ください。
 
 ### ゲーム開発に関するドキュメント
 
@@ -80,7 +79,6 @@ Windows 10 ゲームを作成すると、スマートフォンから PC、Xbox O
     </tr>     
 </table>
 
-
 ### 開発者プログラム
 
 Microsoft では、Windows ゲームの開発と公開に役立ついくつかの開発者向けプログラムを提供しています。 Windows ストアでゲームを公開するには、Windows デベロッパー センターで開発者アカウントを作成する必要があります。 開発するゲームや制作スタジオのニーズによっては、他のプログラムも関心を集めており、Xbox One の開発や Xbox Live の統合などの機会を創造できます。
@@ -97,7 +95,7 @@ Windows ゲームの公開に向けての最初の一歩は、Windows デベロ�
     <tr>
         <td>開発者アカウントの登録</td>
         <td>[サインアップの準備はできましたか。](https://msdn.microsoft.com/library/windows/apps/bg124287)</td>
-    </tr>
+    </tr> 
 </table>  
 
 
@@ -188,7 +186,7 @@ Windows 10 のゲーム機能を理解してゲーム開発をすぐに始める
     </tr>
     <tr>
         <td>Xbox One ゲームのサンプル (GDN)</td>
-        <td>[サンプル](https://developer.xboxlive.com/en-us/platform/development/education/Pages/Samples.aspx)</td>
+        <td>[サンプル](https://developer.xboxlive.com/platform/development/education/Pages/Samples.aspx)</td>
     </tr>
     <tr>
         <td>Windows 8 ゲームのサンプル (MSDN コード ギャラリー)</td>
@@ -329,7 +327,27 @@ UWP のゲームの開発を開始するとき、グラフィックス、入力�
         <td>[Microsoft エコシステム全体でのゲームの未来](http://channel9.msdn.com/Events/GDC/GDC-2015/The-Future-of-Gaming-Across-the-Microsoft-Ecosystem)</td>
     </tr>
 </table>
- 
+
+### ゲームの計画
+
+これらは、いくつかの高レベルの概念と、ゲームを計画するときに考慮する計画のトピックです。
+
+<table>
+    <colgroup>
+    <col width="50%" />
+    <col width="50%" />
+    </colgroup>
+    <tr>
+        <td>ゲームをアクセシビリティ対応にする</td>
+        <td>[ゲームのアクセシビリティ](https://msdn.microsoft.com/windows/uwp/gaming/accessibility-for-games)</td>
+    </tr>
+    <tr>
+        <td>ゲーム用のクラウドの使用</td>
+        <td>[ゲーム用のクラウド](https://msdn.microsoft.com/windows/uwp/gaming/cloud-for-games)</td>
+    </tr>
+</table>
+
+
 
 ### グラフィックス テクノロジとプログラミング言語の選択
 
@@ -673,7 +691,8 @@ Cocos2d-X は、オープン ソース、クロス プラットフォームの�
 
 #### Unreal Engine
 
-Unreal Engine 4 は、あらゆる種類のゲームや開発者に適したゲーム開発ツールがすべて揃ったスイートです。 最も要求の厳しいコンソールおよび PC ゲームにおいて、Unreal Engine は世界中のゲーム開発者により使用されています。 Unreal Engine 4 を購読している [DirectX 12 早期アクセス プログラム](#dxeap) メンバーは、DirectX をサポートする Unreal Engine 4.4 開発プロジェクトにアクセスできます。
+Unreal Engine 4 は、あらゆる種類のゲームや開発者に適したゲーム開発ツールがすべて揃ったスイートです。 最も要求の厳しいコンソールおよび PC ゲームにおいて、Unreal Engine は世界中のゲーム開発者により使用されています。 
+              Unreal Engine 4 を購読している [DirectX 12 早期アクセス プログラム](#dxeap) メンバーは、DirectX をサポートする Unreal Engine 4.4 開発プロジェクトにアクセスできます。
 
 <table>
     <colgroup>
@@ -1028,7 +1047,7 @@ Direct3D 12 での変更点、および Direct3D 12 を使ってプログラミ�
  
 #### DirectX ツール キットとライブラリ
 
-DirectX ツール キット、DirectX テクスチャ処理ライブラリ、DirectXMesh ジオメトリ処理ライブラリは、DirectX 開発用のテクスチャ、メッシュ、スプライト、その他のユーティリティ機能とヘルパー クラスを提供します。 これらのライブラリにより、自分でこれらの機能の実装する場合と比較して、多くの時間と労力を節約できます。 これらのライブラリは主に Direct3D 11 用に実装されていますが、その一部は Direct3D 12 でも動作します。
+DirectX ツール キット、DirectX テクスチャ処理ライブラリ、DirectXMesh ジオメトリ処理ライブラリ、UVAtlas ライブラリ、DirectXMath ライブラリは、DirectX 開発用のテクスチャ、メッシュ、スプライト、その他のユーティリティ機能とヘルパー クラスを提供します。 これらのライブラリは、開発にかかる時間と労力を減らすのに役立ちます。
 
 <table>
     <colgroup>
@@ -1036,16 +1055,28 @@ DirectX ツール キット、DirectX テクスチャ処理ライブラリ、Dir
     <col width="50%" />
     </colgroup>
     <tr>
-        <td>DirectX ツール キット (DirectX 11) を入手する</td>
+        <td>DirectX 11 用 DirectX ツール キットを入手する</td>
         <td>[DirectXTK](http://go.microsoft.com/fwlink/?LinkId=248929)</td>
     </tr>
     <tr>
-        <td>DirectX テクスチャ処理ライブラリ (DirectX 11) を入手する</td>
+        <td>DirectX 12 用 DirectX ツール キットを入手する</td>
+        <td>[DirectXTK 12](http://go.microsoft.com/fwlink/?LinkID=615561)</td>
+    </tr>
+    <tr>
+        <td>DirectX テクスチャ処理ライブラリを入手する</td>
         <td>[DirectXTex](http://go.microsoft.com/fwlink/?LinkId=248926)</td>
     </tr>
     <tr>
         <td>DirectXMesh ジオメトリ処理ライブラリを入手する</td>
         <td>[DirectXMesh](http://go.microsoft.com/fwlink/?LinkID=324981)</td>
+    </tr>
+    <tr>
+        <td>isochart テクスチャ アトラスを作成してパッケージ化するための UVAtlas を入手する</td>
+        <td>[UVAtlas](http://go.microsoft.com/fwlink/?LinkID=512686)</td>
+    </tr>
+    <tr>
+        <td>DirectXMath のライブラリを入手する</td>
+        <td>[DirectXMath](http://go.microsoft.com/fwlink/?LinkID=615560)</td>
     </tr>
     <tr>
         <td>DirectXTK での Direct3D 12 のサポート (ブログの投稿)</td>
@@ -1072,11 +1103,11 @@ DirectX ツール キット、DirectX テクスチャ処理ライブラリ、Dir
     </tr>
     <tr>
         <td>Intel: DirectX 12 でのマルチ アダプターのサポート</td>
-        <td>[DirectX 12 を使った明示的なマルチ アダプターアプリケーションを実装する方法](https://software.intel.com/en-us/articles/multi-adapter-support-in-directx-12)</td>
+        <td>[DirectX 12 を使った明示的なマルチ アダプターアプリケーションを実装する方法](https://software.intel.com/articles/multi-adapter-support-in-directx-12)</td>
     </tr>
     <tr>
         <td>Intel: DirectX 12 のチュートリアル</td>
-        <td>[Intel、Suzhou Snail、Microsoft によって共同制作されたホワイト ペーパー](https://software.intel.com/en-us/articles/tutorial-migrating-your-apps-to-directx-12-part-1)</td>
+        <td>[Intel、Suzhou Snail、Microsoft によって共同制作されたホワイト ペーパー](https://software.intel.com/articles/tutorial-migrating-your-apps-to-directx-12-part-1)</td>
     </tr>
 </table>
 
@@ -1114,6 +1145,14 @@ DirectX ツール キット、DirectX テクスチャ処理ライブラリ、Dir
     <tr>
         <td>ライブ タイル テンプレートを対話形式で開発するための Windows 10 アプリ</td>
         <td>[Notifications Visualizer](https://www.microsoft.com/store/apps/9nblggh5xsl1)</td>
+    </tr>
+    <tr>
+        <td>Visual Studio 用の UWP Tile Generator 拡張機能</td>
+        <td>[1 つの画像を使用して必要なすべてのタイルを作成するためのツール](https://visualstudiogallery.msdn.microsoft.com/09611e90-f3e8-44b7-9c83-18dba8275bb2)</td>
+    </tr>
+    <tr>
+        <td>Visual Studio 用の UWP Tile Generator 拡張機能 (ブログの投稿)</td>
+        <td>[UWP Tile Generator ツールの使用に関するヒント](https://blogs.windows.com/buildingapps/2016/02/15/uwp-tile-generator-extension-for-visual-studio/)</td>
     </tr>
 </table>
  
@@ -1262,6 +1301,14 @@ Windows プラットフォーム用の多言語対応ゲームを開発し、Mic
         <td>[発行元のストア アカウントにアクセスせずにアップロード可能なパッケージの作成](https://blogs.windows.com/buildingapps/2015/12/15/building-an-app-for-a-3rd-party-how-to-package-their-store-app/)</td>
     </tr>
     <tr>
+        <td>MakeAppx を使用したアプリ パッケージとアプリ パッケージ バンドルの作成</td>
+        <td>[アプリ パッケージ ツール MakeAppx.exe を使用したパッケージの作成](https://msdn.microsoft.com/library/windows/desktop/hh446767)</td>
+    </tr>
+    <tr>
+        <td>SignTool を使用したファイルへのデジタル署名</td>
+        <td>[SignTool を使用した、ファイルへの署名とファイルの署名の確認](https://msdn.microsoft.com/library/windows/desktop/aa387764)</td>
+    </tr>      
+    <tr>
         <td>ゲームのアップロードとバージョン管理</td>
         <td>[アプリ パッケージのアップロード](https://msdn.microsoft.com/library/windows/apps/mt148542)</td>
     </tr>
@@ -1321,6 +1368,10 @@ Windows プラットフォーム用の多言語対応ゲームを開発し、Mic
     <col width="50%" />
     </colgroup>
     <tr>
+        <td>デベロッパー センター アプリ</td>
+        <td>[公開済みアプリのパフォーマンスを表示するデベロッパー センター Windows 10 アプリ](https://www.microsoft.com/store/apps/dev-center/9nblggh4r5ws)</td>
+    </tr>  
+    <tr>
         <td>Windows デベロッパー センターの分析</td>
         <td>[分析](https://msdn.microsoft.com/library/windows/apps/mt148522)</td>
     </tr>
@@ -1378,7 +1429,8 @@ Visual Studio Application Insights は、公開されたゲームのパフォー
 ## ゲームへの Xbox Live の追加
 
 
-> **注**   Xbox Live の開発は ID@Xbox や Microsoft Studios などのプログラムで管理されます。 このガイドでは幅広いリソースを取り上げているため、プログラムへの参加や特定の開発の役割によっては、一部のリソースにアクセスできない場合があります。 developer.xboxlive.com、forums.xboxlive.com、xdi.xboxlive.com、Game Developer Network (GDN) に解決されるリンクなどです。 Microsoft との提携について詳しくは、「[開発者プログラム](#programs)」をご覧ください。
+> 
+              **注**   Xbox Live の開発は ID@Xbox や Microsoft Studios などのプログラムで管理されます。 このガイドでは幅広いリソースを取り上げているため、プログラムへの参加や特定の開発の役割によっては、一部のリソースにアクセスできない場合があります。 developer.xboxlive.com、forums.xboxlive.com、xdi.xboxlive.com、Game Developer Network (GDN) に解決されるリンクなどです。 Microsoft との提携について詳しくは、「[開発者プログラム](#programs)」をご覧ください。
 
 <table>
     <colgroup>
@@ -1447,6 +1499,6 @@ Visual Studio Application Insights は、公開されたゲームのパフォー
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

@@ -4,8 +4,8 @@ ms.assetid: F87DBE2F-77DB-4573-8172-29E11ABEFD34
 title: "ピッカーでファイルやフォルダーを開く"
 description: "ユーザーがピッカーを操作してファイルやフォルダーにアクセスできるようにします。 ファイルへのアクセスには FileOpenPicker クラスと FileSavePicker クラス、フォルダーへのアクセスには FolderPicker を使います。"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: efb0b106c779820b2dee48eff6f09b54ae9ef2c4
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 387529636eb44206a23356b0a8bb2748d7c10748
 
 ---
 
@@ -23,7 +23,8 @@ ms.openlocfilehash: efb0b106c779820b2dee48eff6f09b54ae9ef2c4
 
 ユーザーがピッカーを操作してファイルやフォルダーにアクセスできるようにします。 ファイルへのアクセスには [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) クラスと [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) クラス、フォルダーへのアクセスには [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881) を使います。
 
-**注**  [ファイル ピッカーのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619994)に関するページも参照してください。
+
+              **注**  [ファイル ピッカーのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619994)に関するページも参照してください。
 
  
 
@@ -111,14 +112,11 @@ var picker = new Windows.Storage.Pickers.FileOpenPicker();
 
 この例では、[**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855)、[**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854)、および [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850) という 3 つのプロパティを設定して、ユーザーが画像ファイルを選べる視覚的に優れた表示を作成し、使いやすい場所に配置します。
 
--   [
-            **ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855) を **Thumbnail** [**PickerViewMode**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#thumbnail) 列挙値に設定すると、ファイル ピッカーで画像ファイルが縮小表示の画像で表され、視覚的に優れた表示が作成されます。 これは、画像やビデオなどの視覚的なファイルを選ぶ場合に設定します。 それ以外の場合は、[**PickerViewMode.List**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#list) を使います。 **画像またはビデオの添付**機能と**ドキュメントの添付**機能がある架空のメール アプリでは、ファイル ピッカーを表示する前に **ViewMode** をそれらの機能に対応させます。
+-   [**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855) を **Thumbnail** [**PickerViewMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#thumbnail) 列挙値に設定すると、ファイル ピッカーで画像ファイルが縮小表示の画像で表され、視覚的に優れた表示が作成されます。 これは、画像やビデオなどの視覚的なファイルを選ぶ場合に設定します。 それ以外の場合は、[**PickerViewMode.List**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#list) を使います。 **画像またはビデオの添付**機能と**ドキュメントの添付**機能がある架空のメール アプリでは、ファイル ピッカーを表示する前に **ViewMode** をそれらの機能に対応させます。
 
--   [
-            **PickerLocationId.PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br207890) を使って [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) を Pictures に設定すると、画像を見つけられる可能性が高い場所が最初に表示されます。 選ぶファイルの種類 (音楽、画像、ビデオ、ドキュメントなど) に合わせて **SuggestedStartLocation** を設定します。 ユーザーは、開始場所から別の場所に移動できます。
+-   [**PickerLocationId.PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br207890) を使って [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) を Pictures に設定すると、画像を見つけられる可能性が高い場所が最初に表示されます。 選ぶファイルの種類 (音楽、画像、ビデオ、ドキュメントなど) に合わせて **SuggestedStartLocation** を設定します。 ユーザーは、開始場所から別の場所に移動できます。
 
--   [
-            **FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850) を使うと、関連性の高いファイルの種類に絞ってユーザーがファイルを選ぶことができます。 **FileTypeFilter** の以前のファイルの種類を新しいエントリに置き換えるには、[**Add**](https://msdn.microsoft.com/library/windows/apps/br207834) ではなく [**ReplaceAll**](https://msdn.microsoft.com/library/windows/apps/br207844) メソッドを使います。
+-   [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850) を使うと、関連性の高いファイルの種類に絞ってユーザーがファイルを選ぶことができます。 **FileTypeFilter** の以前のファイルの種類を新しいエントリに置き換えるには、[**Add**](https://msdn.microsoft.com/library/windows/apps/br207834) ではなく [**ReplaceAll**](https://msdn.microsoft.com/library/windows/apps/br207844) メソッドを使います。
 
 2.  **FileOpenPicker を表示する**
 
@@ -180,7 +178,8 @@ else
 }
 ```
 
-**ヒント** アプリがピッカーでファイルまたはフォルダーにアクセスするたびに、その項目をアプリの [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) または [**MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458) に追加して、項目を追跡します。 これらのリストの使用の詳細については、「[最近使ったファイルやフォルダーを追跡する方法](how-to-track-recently-used-files-and-folders.md)」を参照してください。
+
+              **ヒント** アプリがピッカーでファイルまたはフォルダーにアクセスするたびに、その項目をアプリの [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) または [**MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458) に追加して、項目を追跡します。 これらのリストの使用の詳細については、「[最近使ったファイルやフォルダーを追跡する方法](how-to-track-recently-used-files-and-folders.md)」を参照してください。
 
  
 
@@ -194,6 +193,6 @@ else
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

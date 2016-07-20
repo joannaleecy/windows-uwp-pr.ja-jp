@@ -3,8 +3,9 @@ author: GrantMeStrength
 Description: "iOS、Android、Windows 10 のプラットフォーム機能を比較します。"
 Search.Product: eADQiWindows 10XVcnh
 title: "Android や iOS 開発者向けの Windows アプリの概念マッピング"
-ms.sourcegitcommit: de5420b45832a482d08e5e7ede436407f7dbf2af
-ms.openlocfilehash: 074a71bf3d037004ca376c11b58d17c906f804a5
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 640ddc7b77d5a23562dba2ecd9812464beb8a422
 
 ---
 
@@ -12,7 +13,7 @@ ms.openlocfilehash: 074a71bf3d037004ca376c11b58d17c906f804a5
 
 このリソースには、Android や iOS のスキルとコードを持つ開発者が Windows 10 とユニバーサル Windows プラットフォーム (UWP) に移行する場合に、それら 3 つのプラットフォーム間でプラットフォームの機能と知識を関連付けるために必要なすべての情報が含まれています。
 
-「[iOS から UWP への移行](ios-to-uwp-root.md)」の移植に関するコンテンツもご覧ください。 このドキュメントは、[ダウンロード](https://www.microsoft.com/en-us/download/details.aspx?id=52041)することもできます。
+「[iOS から UWP への移行](ios-to-uwp-root.md)」の移植に関するコンテンツもご覧ください。 このドキュメントは、[ダウンロード](https://www.microsoft.com/download/details.aspx?id=52041)することもできます。
 
 ## ユーザー インターフェイス (UI)
 
@@ -570,8 +571,7 @@ ms.openlocfilehash: 074a71bf3d037004ca376c11b58d17c906f804a5
 <tr class="even">
 <td align="left"><strong>地図の表示。</strong> <br><br><strong>組み込みの対話式の地図</strong>を表示し、<strong>関心のあるポイント</strong>を追加します。</td>
 <td align="left"><strong>Google Maps Android API</strong> の <strong>GoogleMap</strong>、<strong>MapFragment</strong>、<strong>MapView</strong> クラスで、アプリに地図を埋め込むことができます。 関心のあるポイントを表示するには、<strong>マーカー</strong>と、カスタマイズ可能な <strong>Marker</strong> クラスを使います。</td>
-<td align="left">地図を iOS アプリに埋め込むには、<strong>MapKit フレームワーク</strong>の <strong>MKMapView</strong> クラスを使います。 <strong></strong>
-            <strong>MKPointAnnotation</strong> などのオブジェクト クラスや <strong>MKPinAnnotationView</strong> などのビュー クラスを使ってアプリにアノテーションを追加して、関心のあるポイントを表示できます。</td>
+<td align="left">地図を iOS アプリに埋め込むには、<strong>MapKit フレームワーク</strong>の <strong>MKMapView</strong> クラスを使います。 <strong></strong><strong>MKPointAnnotation</strong> などのオブジェクト クラスや <strong>MKPinAnnotationView</strong> などのビュー クラスを使ってアプリにアノテーションを追加して、関心のあるポイントを表示できます。</td>
 <td align="left">アプリに地図を埋め込むには、2D、3D、Streetside ビューを表示する組み込みの <strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mapcontrol.aspx">MapControl</a></strong> XAML コントロールを使います。 プッシュピン、画像、図形を使って関心のあるポイントを追加するには、<strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mapicon.aspx">MapIcon</a></strong>、<strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mappolygon.aspx">MapPolygon</a></strong>、<strong><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.maps.mappolyline.aspx">MapPolyline</a></strong> などのクラスを使います。<br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219695.aspx">2D、3D、Streetside ビューでの地図の表示</a><br/><br/><a href="https://msdn.microsoft.com/library/windows/apps/mt219696.aspx">関心のあるポイント (POI) の地図への表示</a></td>
 </tr>
 <tr class="odd" style="background-color: #f2f2f2">
@@ -665,6 +665,6 @@ ms.openlocfilehash: 074a71bf3d037004ca376c11b58d17c906f804a5
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

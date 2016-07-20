@@ -4,8 +4,8 @@ ms.assetid: 2383296e-c3d7-4b49-bcd2-621391228fdb
 description: "AdControl クラスのイベントを処理する方法について説明します。"
 title: "JavaScript の AdControl イベント"
 translationtype: Human Translation
-ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
-ms.openlocfilehash: 5a47915b0dd2792ed50cc5d556b1181ee2c259e1
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: b3c41f38f42c390c52c96fa93cfce3fe9bbd181d
 
 
 ---
@@ -17,7 +17,7 @@ ms.openlocfilehash: 5a47915b0dd2792ed50cc5d556b1181ee2c259e1
 
 以下の例は、[AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) クラスのイベントを処理する方法を示しています。 これらの例では、既に **AdControl** イベントにイベント ハンドラーが割り当てられていることを前提としています。 この方法について詳しくは、「[HTML プロパティの例](html-properties-example.md)」をご覧ください。
 
-JavaScript では、**AdControl** イベントを [MarkSupportedForProcessing](http://msdn.microsoft.com/en-us/library/windows/apps/Hh967819.aspx) 関数で囲む必要があります。 JavaScript でのイベントの処理について詳しくは、「[基本的なアプリのコーディング (HTML)](https://msdn.microsoft.com/en-us/library/windows/apps/hh780660.aspx#adding-event-handlers)」をご覧ください。
+JavaScript では、**AdControl** イベントを [MarkSupportedForProcessing](http://msdn.microsoft.com/library/windows/apps/Hh967819.aspx) 関数で囲む必要があります。 JavaScript でのイベントの処理について詳しくは、「[基本的なアプリのコーディング (HTML)](https://msdn.microsoft.com/library/windows/apps/hh780660.aspx#adding-event-handlers)」をご覧ください。
 
 ## 例
 
@@ -48,7 +48,7 @@ window.myAdEngagedChanged = function (sender) {
 
 * [GitHub の広告サンプル](http://aka.ms/githubads)
 * [AdControl エラーの処理](adcontrol-error-handling.md)
-* [RoutedEventArgs Class (RoutedEventArgs クラス)](http://msdn.microsoft.com/en-us/library/system.windows.routedeventargs.aspx)
+* [RoutedEventArgs Class (RoutedEventArgs クラス)](http://msdn.microsoft.com/library/system.windows.routedeventargs.aspx)
 
  
 
@@ -56,6 +56,6 @@ window.myAdEngagedChanged = function (sender) {
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

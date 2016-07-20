@@ -1,10 +1,11 @@
 ---
-description: "このセクションの設計とコーディングの手順は、特定の種類の入力とデバイス用に UWP アプリをカスタマイズする場合に役立ちます。"
+description: "世界中のユーザーに対してアプリを包括的にしてアクセシビリティ対応にする方法について説明します。"
+keywords: uwp app accessibility, globalization, design inclusive apps, accessibility app requirements
 title: "UWP アプリの操作性 - Windows アプリ開発"
 author: mijacobs
 translationtype: Human Translation
-ms.sourcegitcommit: 9f75c39d26bd0c8858f404ab4fcd3d23562ea033
-ms.openlocfilehash: f02713dfee278866af53c6dd529d2faa3e9f625c
+ms.sourcegitcommit: 5370dd078db81de606b7a4bbfcf6dd36b2280a17
+ms.openlocfilehash: 457ddacd80b3f9308b2eb66ce0ac2d448bb59ed2
 
 ---
 
@@ -12,11 +13,10 @@ ms.openlocfilehash: f02713dfee278866af53c6dd529d2faa3e9f625c
 
 # UWP アプリの操作性
 
-UWP アプリは、さまざまな入力を自動的に処理し、さまざまなデバイスで実行できます。タッチ入力を有効にする場合や、アプリを電話で実行できるようにする場合に、追加の作業は何も必要ありません。 
+少しの配慮で細かい点に注意するだけで、単に優れたユーザー エクスペリエンスから、世界中のユーザーのニーズを満たす真に包括的なユーザー エクスペリエンスに変えることができます。
 
-ただし、特定の種類の入力やデバイス用にアプリを最適化することが必要になる場合もあります。 たとえば、ペイント アプリを作成している場合は、必要に応じてペン入力の処理方法をカスタマイズできます。 
+このセクションに示す設計とコーディングの手順に従って、アクセシビリティ機能の追加、グローバリゼーションとローカライズの有効化、ユーザーによるエクスペリエンスのカスタマイズの有効化、必要に応じたヘルプの提供を行うと、UWP アプリをより包括的なアプリにすることができます。
 
-このセクションの設計とコーディングの手順は、特定の種類の入力とデバイス用に UWP アプリをカスタマイズする場合に役立ちます。 
 
 ## アクセシビリティ
 
@@ -198,6 +198,6 @@ Windows は世界中で利用されており、文化、地域、言語の異な
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

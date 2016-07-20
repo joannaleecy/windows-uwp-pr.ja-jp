@@ -3,8 +3,9 @@ author: Mtoepke
 title: "Xbox One ツールの概要"
 description: "Windows Device Portal を使った、Xbox One 固有のツールである Dev Home"
 area: Xbox
-ms.sourcegitcommit: 914a1b76c6b502415bee36865af009a8dfe9bb53
-ms.openlocfilehash: e2f87cdeb8ce3371a34bb989e5fa29ef63d18621
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 4414677e942818506020888fa15e7e16ecaf4733
 
 ---
 
@@ -14,7 +15,8 @@ ms.openlocfilehash: e2f87cdeb8ce3371a34bb989e5fa29ef63d18621
 
 ## Dev Home
 
-_Dev Home_ は、Xbox One 開発キットに含まれ、開発者の生産性をサポートするための 1 つのツール エクスペリエンスです。 Dev Home は、開発キットの管理と構成の機能を提供します。
+
+              _Dev Home_ は、Xbox One 開発キットに含まれ、開発者の生産性をサポートするための 1 つのツール エクスペリエンスです。 Dev Home は、開発キットの管理と構成の機能を提供します。
 
 Dev Home を開くには、ホーム画面の **[Dev Home]** タイルを選択します。 タイルが表示されていない場合は、コンソールが開発者モードに設定されていません。
 
@@ -89,8 +91,8 @@ Dev Home またはいずれかのツールのプロセスでフィードバッ�
 
 開発キットのホスト名を定義するには、コンソール設定ツールに移動して、__[ホスト名]__ ボックスにホスト名を入力します。  
 
-  > **注**
-            &nbsp;&nbsp;ホスト名の作成時に名前の一意性は強制されません。 名前が重複しないように注意する必要があります。 1 つの方法としては、開発用コンピューターの名前からホスト名を取得することにより、通常は組織内で一意となります。
+  > 
+              **注**&nbsp;&nbsp;ホスト名の作成時に名前の一意性は強制されません。 名前が重複しないように注意する必要があります。 1 つの方法としては、開発用コンピューターの名前からホスト名を取得することにより、通常は組織内で一意となります。
 
 ## Windows Device Portal
 Windows Device Portal (WDP) は、ブラウザー ベースのデバイス管理エクスペリエンスを実現する、OneCore デバイス管理ツールです。
@@ -115,7 +117,8 @@ Xbox One コンソールで WDP を有効にするには、次を実行します
   ![セキュリティ証明書の警告](images/security_cert_warning.jpg)
 
 ## 参照
-- [Microsoft 開発者テクノロジ: Windows Device Portal](https://msdn.microsoft.com/en-us/windows/uwp/debug-test-perf/device-portal-xbox)
+- [UWP を開発するときに、Xbox One で Fiddler を使用する方法](uwp-fiddler.md)
+- [Microsoft 開発者テクノロジ: Windows Device Portal](https://msdn.microsoft.com/windows/uwp/debug-test-perf/device-portal-xbox)
 - [Xbox One の UWP](index.md)
 
 
@@ -124,6 +127,6 @@ Xbox One コンソールで WDP を有効にするには、次を実行します
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

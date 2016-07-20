@@ -78,7 +78,8 @@ public BlankPage()
 
 ナビゲーションについて詳しくは、「[ナビゲーション](https://msdn.microsoft.com/library/windows/apps/mt187344)」と「[XAML パーソナリティ アニメーションのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=242401)」をご覧ください。
 
-**注:** JavaScript と HTML を使った Windows ストア アプリのナビゲーションについて詳しくは、「[クイック スタート: 単一ページ ナビゲーションの使用](https://msdn.microsoft.com/library/windows/apps/hh452768)」をご覧ください。
+
+            **注:** JavaScript と HTML を使った Windows ストア アプリのナビゲーションについて詳しくは、「[クイック スタート: 単一ページ ナビゲーションの使用](https://msdn.microsoft.com/library/windows/apps/hh452768)」をご覧ください。
  
 ### 次のステップ
 

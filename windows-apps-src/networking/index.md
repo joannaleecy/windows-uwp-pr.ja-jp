@@ -4,8 +4,8 @@ ms.assetid: 7bb9fd81-8ab5-4f8d-a854-ce285b0669a4
 description: "ネットワークと Web サービスにアクセスするためのテクノロジ。"
 title: "ネットワークと Web サービス"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: df62edbf63777a8fcec4ab08c1fb56ab76ea6624
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: b4e291c0948a7734b8ba188bc060dfba2e9a83d1
 
 ---
 
@@ -20,7 +20,7 @@ ms.openlocfilehash: df62edbf63777a8fcec4ab08c1fb56ab76ea6624
 | [ネットワークの基本](networking-basics.md)                                               | ネットワーク対応アプリで実行する必要がある事柄について説明します。                     |
 | [アプリに適したネットワーク テクノロジ](which-networking-technology.md)                          | UWP 開発者が利用できるネットワーク テクノロジの概要と、アプリに適したテクノロジを選ぶ方法に関する提案事項について説明します。               |
 | [バックグラウンドでのネットワーク通信](network-communications-in-the-background.md) | アプリは、フォアグラウンドでないとき、バックグラウンド タスクと 2 つの主要なメカニズム (ソケット ブローカーとコントロール チャネル トリガー) を使って通信を維持します。                  |
-| [ソケット](sockets.md)                                                                   | UWP アプリ開発者として、[Windows.Networking.Sockets](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.networking.sockets.aspx) と [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms737523) の両方を使って他のデバイスと通信できます。 このトピックでは、Windows.Networking.Sockets 名前空間を使ってネットワーク操作を実行する方法の詳しいガイダンスを示します。 |
+| [ソケット](sockets.md)                                                                   | UWP アプリ開発者として、[Windows.Networking.Sockets](https://msdn.microsoft.com/library/windows/apps/xaml/windows.networking.sockets.aspx) と [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms737523) の両方を使って他のデバイスと通信できます。 このトピックでは、Windows.Networking.Sockets 名前空間を使ってネットワーク操作を実行する方法の詳しいガイダンスを示します。 |
 | [WebSocket](websockets.md)                                                             | WebSocket は、クライアントとサーバー間の高速でセキュリティ保護された双方向通信を、HTTP(S) を使った Web 経由で実行するためのメカニズムを提供します。                 |
 | [HttpClient](httpclient.md)                                                             | HTTP 2.0 プロトコルと HTTP 1.1 プロトコルを使って情報を送受信するには、[Windows.Web.Http](https://msdn.microsoft.com/library/windows/apps/dn279692) 名前空間 API を使います。             |
 | [RSS/Atom フィード](web-feeds.md)                                                          | [Windows.Web.Syndication](https://msdn.microsoft.com/library/windows/apps/br243632) 名前空間の機能を利用し、RSS や Atom の標準に従って生成される概要フィードを使って、最新の人気の高い Web コンテンツを取得または作成します。                   |
@@ -29,6 +29,6 @@ ms.openlocfilehash: df62edbf63777a8fcec4ab08c1fb56ab76ea6624
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

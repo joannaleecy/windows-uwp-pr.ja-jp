@@ -5,6 +5,7 @@ title: "リスト"
 ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
 label: Lists
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
 ms.openlocfilehash: adf8e449cff846caebff3a80b772f801430871e5
 
@@ -195,6 +196,6 @@ ms.openlocfilehash: adf8e449cff846caebff3a80b772f801430871e5
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

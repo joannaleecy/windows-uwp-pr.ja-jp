@@ -1,10 +1,11 @@
 ---
-description: "次の記事は、さまざまなデバイスや画面サイズで簡単に操作でき、適切に表示される UWP アプリを設計およびコーディングする際に役立ちます。"
-title: "レイアウトの設計 - Windows アプリ開発"
+description: "さまざまなデバイスや画面サイズで、ナビゲーションがわかりやすく見た目にも優れたアプリを設計およびコーディングする方法について説明します。"
+title: "UWP アプリのレイアウトの設計 - Windows アプリ開発"
 author: mijacobs
+keywords: uwp app layout, universal windows platform, app design, interface
 translationtype: Human Translation
-ms.sourcegitcommit: 9f75c39d26bd0c8858f404ab4fcd3d23562ea033
-ms.openlocfilehash: 35a8f78420256cb2da02d7fd4720939a16676600
+ms.sourcegitcommit: fa1567d3ff80dc9c9376736c7d25c2bb06e79cc9
+ms.openlocfilehash: 7a1233724b9b0fd9af709bbf114669fe102e6f0d
 
 ---
 
@@ -25,7 +26,7 @@ ms.openlocfilehash: 35a8f78420256cb2da02d7fd4720939a16676600
 UWP アプリを設計する場合、さまざまなディスプレイ サイズを持つさまざまなデバイスに合ったユーザー インターフェイスを作成する必要があります。 この記事では、UWP アプリの UI に関連する機能や利点の概要と、応答性の高い UI を設計するためのヒントやコツを示します。 </p>
   </div>
   <div class="side-by-side-content-right">
-    ![An app running on multiple devices](images/rspd-reposition-type1-sm.png)
+    ![複数のデバイスで実行されるアプリ](images/rspd-reposition-type1-sm.png)
   </div>
 </div>
 </div>
@@ -85,6 +86,6 @@ XAML プロパティとレイアウト パネルを使って、アプリの応�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

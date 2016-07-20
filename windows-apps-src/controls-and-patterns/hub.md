@@ -5,6 +5,7 @@ title: "ハブ コントロール"
 ms.assetid: F1319960-63C6-4A8B-8DA1-451D59A01AC2
 label: Hub
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: 7d438080e2e8533f1148c07e27143d4d1fcacf5d
 ms.openlocfilehash: fdff043aa92842adb6ac2d572794bf02fdd5c6b3
 
@@ -111,6 +112,6 @@ ms.openlocfilehash: fdff043aa92842adb6ac2d572794bf02fdd5c6b3
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

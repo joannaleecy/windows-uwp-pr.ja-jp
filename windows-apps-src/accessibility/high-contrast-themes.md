@@ -5,6 +5,7 @@ ms.assetid: FD7CA6F6-A8F1-47D8-AA6C-3F2EC3168C45
 title: "ハイ コントラスト テーマ"
 label: High-contrast themes
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
 ms.openlocfilehash: 4201f5a0b08f1fc8d691218da0803ee04ab2c86a
 
@@ -43,7 +44,8 @@ UWP アプリは、ハイ コントラスト テーマを既定でサポート�
 </Application.Resources
 ```
 
-* **HighContrast** のみが、利用可能なキー名というわけではありません。 **HighContrastBlack**、**HighContrastWhite**、**HighContrastCustom** も利用可能なキー名です。 ほとんどの場合、**HighContrast** が必要になります。
+* 
+            **HighContrast** のみが、利用可能なキー名というわけではありません。 **HighContrastBlack**、**HighContrastWhite**、**HighContrastCustom** も利用可能なキー名です。 ほとんどの場合、**HighContrast** が必要になります。
 * **Default** では、必要な種類の [**Brush**](http://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.aspx) を作成します。通常は、**SolidColorBrush** です。 このクラスに対して、具体的な使用目的を示す **x:Key** 名を指定します。<br/>
     `<SolidColorBrush x:Key="BrandedPageBackground" />`
 * 必要な **Color** を割り当てます。<br/>
@@ -161,9 +163,8 @@ UI 要素に既定で境界線が_ある_場合、ハイ コントラスト モ�
 ハイ コントラストの背景色を使用して、重なり合う UI 要素を区別する場合、これらの要素間のコントラストを確保するための唯一の確実な方法は、境界線を導入することです。
 
 ## 有効にされたハイ コントラスト テーマの検出  
-[
-            **AccessibilitySettings**](https://msdn.microsoft.com/library/windows/apps/BR242237) クラスのメンバーを使って、ハイ コントラスト テーマの現在の設定を検出できます。 [
-            **HighContrast**](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.accessibilitysettings.highcontrast) プロパティによって、ハイ コントラスト テーマが現在選ばれているかどうかを判断します。 **HighContrast** が **true** の場合は、次に、[**HighContrastScheme**](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.accessibilitysettings.highcontrastscheme) プロパティの値を確認し、使われているハイ コントラスト テーマの名前を取得します。 コードの応答が必要な **HighContrastScheme** の一般的な値は、"High Contrast White" と "High Contrast Black" です。 XAML で定義された [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794) キーにはスペースを含めることはできないため、リソース ディクショナリ内のこれらのテーマのキーは通常、それぞれ "HighContrastWhite" と "HighContrastBlack" になります。 値が別の文字列の場合に備えて、既定のハイ コントラスト テーマ用のフォールバック ロジックも必要です。 このロジックは、[XAML ハイ コントラスト サンプル](http://go.microsoft.com/fwlink/p/?linkid=254993)についてのページで紹介されています。
+[**AccessibilitySettings**](https://msdn.microsoft.com/library/windows/apps/BR242237) クラスのメンバーを使って、ハイ コントラスト テーマの現在の設定を検出できます。 [**HighContrast**](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.accessibilitysettings.highcontrast) プロパティによって、ハイ コントラスト テーマが現在選ばれているかどうかを判断します。 **HighContrast** が **true** の場合は、次に、[**HighContrastScheme**](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.accessibilitysettings.highcontrastscheme) プロパティの値を確認し、使われているハイ コントラスト テーマの名前を取得します。 コードの応答が必要な **HighContrastScheme** の一般的な値は、"High Contrast White" と "High Contrast Black" です。 XAML で定義された [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794) キーにはスペースを含めることはできないため、リソース ディクショナリ内のこれらのテーマのキーは通常、それぞれ "HighContrastWhite" と "HighContrastBlack" になります。 値が別の文字列の場合に備えて、既定のハイ コントラスト テーマ用のフォールバック ロジックも必要です。 
+            このロジックは、[XAML ハイ コントラスト サンプル](http://go.microsoft.com/fwlink/p/?linkid=254993)についてのページで紹介されています。
 
 > [!NOTE]
 > アプリが初期化され、既にコンテンツが表示されているスコープから [**AccessibilitySettings**](https://msdn.microsoft.com/library/windows/apps/BR242237) コンストラクターを呼び出すようにします。
@@ -179,6 +180,6 @@ UI 要素に既定で境界線が_ある_場合、ハイ コントラスト モ�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

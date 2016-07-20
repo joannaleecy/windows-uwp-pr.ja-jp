@@ -3,8 +3,9 @@ author: mcleanbyron
 ms.assetid: 252C44DF-A2B8-4F4F-9D47-33E423F48584
 description: "特定の日付範囲などのオプション フィルターを使って集計エラー報告データを取得するには、Windows ストア分析 API でこのメソッドを使います。"
 title: "エラー報告データの取得"
-ms.sourcegitcommit: 02131e641cdaa76256845b38bcc50aa42d718601
-ms.openlocfilehash: 5b2421daf9df4ca417d5089166c0927e2b2f7436
+translationtype: Human Translation
+ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
+ms.openlocfilehash: 682f727a21d74f5cea8fddc4886c873d537e1cfb
 
 ---
 
@@ -33,9 +34,9 @@ ms.openlocfilehash: 5b2421daf9df4ca417d5089166c0927e2b2f7436
 
 | メソッド | 要求 URI                                                          |
 |--------|----------------------------------------------------------------------|
-| GET    | https://manage.devcenter.microsoft.com/v1.0/my/analytics/failurehits |
+| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/failurehits``` |
 
- 
+<span/> 
 
 ### 要求ヘッダー
 
@@ -43,9 +44,9 @@ ms.openlocfilehash: 5b2421daf9df4ca417d5089166c0927e2b2f7436
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | 必須。 **Bearer**&lt;*token*&gt; という形式の Azure AD アクセス トークン。 |
 
- 
+<span/> 
 
-### 要求本文
+### 要求パラメーター
 
 <table>
 <colgroup>
@@ -59,7 +60,7 @@ ms.openlocfilehash: 5b2421daf9df4ca417d5089166c0927e2b2f7436
 <th align="left">パラメーター</th>
 <th align="left">型</th>
 <th align="left">説明</th>
-<th align="left">必須</th>
+<th align="left">必須かどうか</th>
 </tr>
 </thead>
 <tbody>
@@ -154,10 +155,11 @@ ms.openlocfilehash: 5b2421daf9df4ca417d5089166c0927e2b2f7436
 </tbody>
 </table>
 
+<span/>
  
 ### フィルター フィールド
 
-要求本文の *filter* パラメーターには、応答内の行をフィルター処理する 1 つまたは複数のステートメントが含まれます。 各ステートメントには **eq** 演算子または **ne** 演算子と関連付けられるフィールドと値が含まれ、**and** または **or** を使ってステートメントを組み合わせることができます。 *filter* パラメーターの例を次に示します。
+要求の *filter* パラメーターには、応答内の行をフィルター処理する 1 つまたは複数のステートメントが含まれます。 各ステートメントには **eq** 演算子または **ne** 演算子と関連付けられるフィールドと値が含まれ、**and** または **or** を使ってステートメントを組み合わせることができます。 *filter* パラメーターの例を次に示します。
 
 -   *filter=market eq 'US' and gender eq 'm'*
 -   *filter=(market ne 'US') and (gender ne 'Unknown') and (gender ne 'm') and (market ne 'NO') and (ageGroup ne 'greater than 55' or ageGroup ne ‘less than 13’)*
@@ -241,7 +243,7 @@ ms.openlocfilehash: 5b2421daf9df4ca417d5089166c0927e2b2f7436
 </tbody>
 </table>
 
- 
+<span/> 
 
 ### 要求の例
 
@@ -266,7 +268,8 @@ Authorization: Bearer <your access token>
 | @nextLink  | string  | データの追加ページがある場合、この文字列には、データの次のページを要求するために使用できる URI が含まれます。 たとえば、要求の **top** パラメーターが 10000 に設定されたが、クエリの入手データに 10,000 を超えるエラー行が含まれている場合に、この値が返されます。 |
 | TotalCount | inumber | クエリの結果データ内の行の総数です。                                                                                                                                                                                                                     |
 
- 
+<span/>
+
 ### エラー値
 
 *Value* 配列の要素には、次の値が含まれます。
@@ -288,7 +291,7 @@ Authorization: Bearer <your access token>
 | eventCount      | inumber | 指定した集計レベルでこのエラーに起因すると考えられるイベントの数です。                                                                                                                                            |
 | deviceCount     | inumber | 指定した集計レベルでこのエラーに対応する一意のデバイスの数です。                                                                                                                                        |
 
- 
+<span/> 
 
 ### 応答の例
 
@@ -330,6 +333,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 

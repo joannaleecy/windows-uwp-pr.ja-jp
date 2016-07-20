@@ -3,8 +3,9 @@ author: mcleanbyron
 ms.assetid: 1599605B-4243-4081-8D14-40F6F7734E25
 description: "特定の日付範囲などのオプション フィルターを使って、アプリ内製品 (IAP) の集計入手データを取得するには、Windows ストア分析 API でこのメソッドを使います。"
 title: "IAP の入手数の取得"
-ms.sourcegitcommit: 02131e641cdaa76256845b38bcc50aa42d718601
-ms.openlocfilehash: 21e634b1d5ab6c3ba7762c1b83c94d076d094af5
+translationtype: Human Translation
+ms.sourcegitcommit: f7e67a4ff6cb900fb90c5d5643e2ddc46cbe4dd2
+ms.openlocfilehash: bff5eb8ecf5a11067a590393d443343dc6ed94bc
 
 ---
 
@@ -33,9 +34,9 @@ ms.openlocfilehash: 21e634b1d5ab6c3ba7762c1b83c94d076d094af5
 
 | メソッド | 要求 URI                                                                |
 |--------|----------------------------------------------------------------------------|
-| GET    | https://manage.devcenter.microsoft.com/v1.0/my/analytics/inappacquisitions |
+| GET    | ```https://manage.devcenter.microsoft.com/v1.0/my/analytics/inappacquisitions``` |
 
- 
+<span/> 
 
 ### 要求ヘッダー
 
@@ -43,9 +44,9 @@ ms.openlocfilehash: 21e634b1d5ab6c3ba7762c1b83c94d076d094af5
 |---------------|--------|-----------------------------------------------------------------------------|
 | Authorization | string | 必須。 **Bearer**&lt;*token*&gt; という形式の Azure AD アクセス トークン。 |
 
- 
+<span/> 
 
-### 要求本文
+### 要求パラメーター
 
 *applicationId* または *inAppProductId* パラメーターが必要です。 アプリに登録されたすべての IAP の入手データを取得するには、*applicationId* パラメーターを指定します。 単一の IAP の入手データを取得するには、*inAppProductId* パラメーターを指定します。 両方を指定した場合、*inAppProductId* パラメーターは無視されます。
 
@@ -135,11 +136,11 @@ ms.openlocfilehash: 21e634b1d5ab6c3ba7762c1b83c94d076d094af5
 </tbody>
 </table>
 
- 
+<span/>
 
 ### フィルター フィールド
 
-要求本文の *filter* パラメーターには、応答内の行をフィルター処理する 1 つまたは複数のステートメントが含まれます。 各ステートメントには **eq** 演算子または **ne** 演算子と関連付けられるフィールドと値が含まれ、**and** または **or** を使ってステートメントを組み合わせることができます。 *filter* パラメーターの例を次に示します。
+要求の *filter* パラメーターには、応答内の行をフィルター処理する 1 つまたは複数のステートメントが含まれます。 各ステートメントには **eq** 演算子または **ne** 演算子と関連付けられるフィールドと値が含まれ、**and** または **or** を使ってステートメントを組み合わせることができます。 *filter* パラメーターの例を次に示します。
 
 -   *filter=market eq 'US' and gender eq 'm'*
 -   *filter=(market ne 'US') and (gender ne 'Unknown') and (gender ne 'm') and (market ne 'NO') and (ageGroup ne 'greater than 55' or ageGroup ne ‘less than 13’)*
@@ -242,7 +243,7 @@ ms.openlocfilehash: 21e634b1d5ab6c3ba7762c1b83c94d076d094af5
 </tbody>
 </table>
 
- 
+<span/> 
 
 ### 要求の例
 
@@ -270,6 +271,7 @@ Authorization: Bearer <your access token>
 | @nextLink  | string | データの追加ページがある場合、この文字列には、データの次のページを要求するために使用できる URI が含まれます。 たとえば、要求の **top** パラメーターが 10000 に設定されたが、クエリの IAP 入手データに 10,000 を超える行が含まれている場合に、この値が返されます。 |
 | TotalCount | int    | クエリの結果データ内の行の総数です。                                                                                                                                                                                                                                 |
 
+<span/>
 
 ### IAP 入手値
 
@@ -292,7 +294,7 @@ Authorization: Bearer <your access token>
 | acquisitionType     | string  | 入手の種類です (無料、有料など)。 サポートされる文字列の一覧については、前の「[フィルター フィールド](#filter-fields)」セクションをご覧ください。                                                                                                    |
 | acquisitionQuantity | inumber | 発生した入手の数です。                                                                                                                                                                                                |
 
- 
+<span/> 
 
 ### 応答の例
 
@@ -337,6 +339,6 @@ Authorization: Bearer <your access token>
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Jul16_HO1-->
 
 
