@@ -3140,6 +3140,9 @@
   "7836cb385cc37f39fa1af01ea981263fcf3f3634": [
     "windows-apps-src\\get-started\\create-a-basic-windows-10-app-in-cpp.md"
   ],
+  "1be32db7ead8dcd13ad97612b0a5a7a7cf4926e0": [
+    "windows-apps-src\\get-started\\create-a-hello-world-app-js-universal.md"
+  ],
   "5a55079c281e7914a33b44adf67573d0d1a435be": [
     "windows-apps-src\\get-started\\create-a-hello-world-app-js-universal.md"
   ],
@@ -3211,44 +3214,14 @@
   "fe46ccdeb8be5e2282351e3918e84b1ebba0d550": [
     "windows-apps-src\\get-started\\images\\helloworld-1-cs-phone.png"
   ],
-  "48ade3936f552a76378fd8ce372bccc745854481": [
-    "windows-apps-src\\get-started\\images\\helloworld-1-js.png"
-  ],
-  "7af40b951178f0453a125e3306a473442e8ab871": [
-    "windows-apps-src\\get-started\\images\\helloworld-1-js-phone.png"
-  ],
   "6202620f9a2e0b2205a70103f8d32e6b041ec3dd": [
     "windows-apps-src\\get-started\\images\\helloworld-2-cs-phone.png"
-  ],
-  "2d016390c9e19e563da7cb38b9f26dd1c2cae8c6": [
-    "windows-apps-src\\get-started\\images\\helloworld-2-js.png"
-  ],
-  "e5669349d5734e93c555fc79118e27d4780982c8": [
-    "windows-apps-src\\get-started\\images\\helloworld-3-js.png"
-  ],
-  "f732f16f547ce3961e5a508e67177fe23cd1115c": [
-    "windows-apps-src\\get-started\\images\\helloworld-3-js-phone.png"
-  ],
-  "a41085798fc6698620a0c08a0a41b87c782e799e": [
-    "windows-apps-src\\get-started\\images\\helloworld-4-js.png"
-  ],
-  "58b68146df767a20a719f1fb2381aee49c14e345": [
-    "windows-apps-src\\get-started\\images\\helloworld-5-js.png"
-  ],
-  "93f2f139a35a018fd2d711b9d6bf43eb95ca37a4": [
-    "windows-apps-src\\get-started\\images\\helloworld-5-js-phone.png"
   ],
   "02071c86ccdf3d824540bbc817274b0a91b5a799": [
     "windows-apps-src\\get-started\\images\\hw10-screen1-mob.png"
   ],
   "dd22a831e56b90a22ea20d2bfd3600f0ec70d491": [
     "windows-apps-src\\get-started\\images\\hw10-screen2-mob.png"
-  ],
-  "8bcda54942b779ed7c7b2e2b7a23d423a994c2a6": [
-    "windows-apps-src\\get-started\\images\\js-tut-helloworld.png"
-  ],
-  "89649cf24d6243cd624e75dc77ac568058bed2c9": [
-    "windows-apps-src\\get-started\\images\\js-tut-newproject.png"
   ],
   "ead1d64ee6515974a434ea77c4ef0f14031d8958": [
     "windows-apps-src\\get-started\\images\\latestenabledialog.png"
@@ -6718,5 +6691,26 @@
   ],
   "b5c9b219724131f4b27a2d55519b316e863981b4": [
     "windows-apps-src\\monetize\\create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md"
+  ],
+  "7d454561ba2ee740e60507bdff23b04034e17dae": [
+    "windows-apps-src\\get-started\\images\\helloworld-1-winjs.png"
+  ],
+  "cfbebab4779647d7f1d21dc2dcfcfa0debf2be8d": [
+    "windows-apps-src\\get-started\\images\\helloworld-1-winjs-phone.png"
+  ],
+  "92ce4917228a76e66c938b0eeafd5312ec74a97b": [
+    "windows-apps-src\\get-started\\images\\helloworld-2-winjs.png"
+  ],
+  "b9e05771e8b326c5ff77e09a486704dca06b54d8": [
+    "windows-apps-src\\get-started\\images\\helloworld-4-winjs.png"
+  ],
+  "fcbc93ff210aba5a4f6a6575272efee9a37e1808": [
+    "windows-apps-src\\get-started\\images\\helloworld-5-winjs.png"
+  ],
+  "a9cab92f705faf0677e5dec0dedb45a5aa59e14f": [
+    "windows-apps-src\\get-started\\images\\winjs-tut-helloworld.png"
+  ],
+  "147a0a48f77c0a5679dff07cf8927969806165c8": [
+    "windows-apps-src\\get-started\\images\\winjs-tut-newproject.png"
   ]
 }
