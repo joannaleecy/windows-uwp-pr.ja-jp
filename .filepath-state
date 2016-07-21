@@ -3173,6 +3173,9 @@
   "0d6b6421b4f5ebc01c865e80db96d1158b9bd825": [
     "windows-apps-src\\get-started\\create-a-hello-world-app-xaml-universal.md"
   ],
+  "587cee03b98c203f985399b852461cd678ef4f6d": [
+    "windows-apps-src\\get-started\\enable-your-device-for-development.md"
+  ],
   "db0d01093ddab775af27c36b148f7927247cd3fd": [
     "windows-apps-src\\get-started\\enable-your-device-for-development.md"
   ],
@@ -3207,6 +3210,9 @@
   ],
   "1226f248f29981f9645e7dd833eb9ff80f5d0202": [
     "windows-apps-src\\get-started\\images\\devmode-mob.png"
+  ],
+  "6368d201060ce9f7198f67005bfae3c93ad080be": [
+    "windows-apps-src\\get-started\\images\\devmode-pc-options.png"
   ],
   "834e44aa121a8071febd7e495e0d14b9a1da8e10": [
     "windows-apps-src\\get-started\\images\\devmode-pc-options.png"
