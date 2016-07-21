@@ -3155,6 +3155,9 @@
   "be731072824e81eadc95cebd5855234f9331962b": [
     "windows-apps-src\\get-started\\create-a-hello-world-app-js-universal.md"
   ],
+  "d20c799d9bf5f9c1f13cecdae9d71128d1680e8b": [
+    "windows-apps-src\\get-started\\create-a-hello-world-app-xaml-universal.md"
+  ],
   "fd5847388fceaa0a9f72dcef08bae37b6f73f734": [
     "windows-apps-src\\get-started\\create-a-hello-world-app-xaml-universal.md"
   ],
@@ -3226,15 +3229,6 @@
   "25264704ed1696688454ca35303338eb719e8e07": [
     "windows-apps-src\\get-started\\images\\eventsbutton.png"
   ],
-  "db150a3f10fa5f0092f3203530ab7f5e77f1f8a9": [
-    "windows-apps-src\\get-started\\images\\helloworld-1-cs.png"
-  ],
-  "fe46ccdeb8be5e2282351e3918e84b1ebba0d550": [
-    "windows-apps-src\\get-started\\images\\helloworld-1-cs-phone.png"
-  ],
-  "6202620f9a2e0b2205a70103f8d32e6b041ec3dd": [
-    "windows-apps-src\\get-started\\images\\helloworld-2-cs-phone.png"
-  ],
   "02071c86ccdf3d824540bbc817274b0a91b5a799": [
     "windows-apps-src\\get-started\\images\\hw10-screen1-mob.png"
   ],
@@ -3243,9 +3237,6 @@
   ],
   "ead1d64ee6515974a434ea77c4ef0f14031d8958": [
     "windows-apps-src\\get-started\\images\\latestenabledialog.png"
-  ],
-  "40b20607bf9ab5e0796476d667394ab93601fda4": [
-    "windows-apps-src\\get-started\\images\\newproject-cs.png"
   ],
   "381c7c54508d15ebad22287f91b22fedb33e38a6": [
     "windows-apps-src\\get-started\\images\\propertiesbutton.png"
@@ -3258,9 +3249,6 @@
   ],
   "69b1c4466961119993339395d0a95fda9eee3067": [
     "windows-apps-src\\get-started\\images\\relativepane-standalone.png"
-  ],
-  "2a931f1e8abb23216c8891456cc48f477ebba5eb": [
-    "windows-apps-src\\get-started\\images\\solutionexplorer-cs.png"
   ],
   "7f0cb16b68bad8ae3f0383f94cfc8782846989da": [
     "windows-apps-src\\get-started\\images\\startdebug-full.png"
@@ -5915,6 +5903,9 @@
   "033669a781aa85cc2c90fa11816e385ffefa997d": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "ba2f82bd1f8bf5da23bf9a58d51e1274ba5bcf72": [
+    "windows-apps-src\\TOC.md"
+  ],
   "3e24ab50fdcc1c2d9071029d23a1ce25a96e6160": [
     "windows-apps-src\\TOC.md"
   ],
@@ -6760,5 +6751,35 @@
   ],
   "147a0a48f77c0a5679dff07cf8927969806165c8": [
     "windows-apps-src\\get-started\\images\\winjs-tut-newproject.png"
+  ],
+  "d42d460623779397cf99559fbc29182a27a89c95": [
+    "windows-apps-src\\get-started\\images\\win10-cs-01.png"
+  ],
+  "02018f7ffb64ce226c08738d23517c7147187d32": [
+    "windows-apps-src\\get-started\\images\\win10-cs-02.png"
+  ],
+  "ef9ca8987ce8a6cb90445d339be232d13c72e39d": [
+    "windows-apps-src\\get-started\\images\\win10-cs-03.png"
+  ],
+  "74602fc8257776752b5c55e71f0c8804396b8b18": [
+    "windows-apps-src\\get-started\\images\\win10-cs-04.png"
+  ],
+  "34ad40dc03e655c367eeefeb4e1ec8c9988a4269": [
+    "windows-apps-src\\get-started\\images\\win10-cs-05.png"
+  ],
+  "4da2edfa9c39e429ae5596f67ec236351bb1326b": [
+    "windows-apps-src\\get-started\\images\\win10-cs-06.png"
+  ],
+  "d9d19684aaca4374c563819cae5a24db9f49f546": [
+    "windows-apps-src\\get-started\\images\\win10-cs-07.png"
+  ],
+  "85ec4ef21cc73a5c586c9f6a49e2c91f5dfda880": [
+    "windows-apps-src\\get-started\\images\\win10-cs-08.png"
+  ],
+  "5c3a44248265b9ad200a2844c8ad46b5ff5f7d00": [
+    "windows-apps-src\\get-started\\images\\win10-cs-09.png"
+  ],
+  "2a2eb696207b471cad5a3f2003b0e5d5fb7ab427": [
+    "windows-apps-src\\graphics\\using-the-visual-layer-with-xaml.md"
   ]
 }
