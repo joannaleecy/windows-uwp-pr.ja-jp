@@ -3323,6 +3323,9 @@
   "555649b6b18aa009da69eee7e6980365b473054e": [
     "windows-apps-src\\get-started\\images\\xaml-hw-style-cpp.png"
   ],
+  "38bb4cb94347455ba5970fa4227a834fac23253c": [
+    "windows-apps-src\\get-started\\learn-more.md"
+  ],
   "bcbf0a4aa1ac2c419b442ecb8ed4046fe98afcac": [
     "windows-apps-src\\get-started\\learn-more.md"
   ],
@@ -3370,6 +3373,9 @@
   ],
   "f02851d848a82af7104a6038c5d8850d5362c832": [
     "windows-apps-src\\get-started\\whats-a-uwp.md"
+  ],
+  "0cf6984f4e93563a4a52ce87d89f19850734c833": [
+    "windows-apps-src\\get-started\\your-first-app.md"
   ],
   "e810d9219827dacac4d7b394dc413b5f816f75cb": [
     "windows-apps-src\\get-started\\your-first-app.md"
