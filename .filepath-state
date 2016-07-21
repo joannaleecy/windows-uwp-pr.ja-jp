@@ -3134,11 +3134,17 @@
   "63a40f5853740d1053449e1b1839f5b0232ce28e": [
     "windows-apps-src\\gaming\\work-with-networking-in-your-directx-game.md"
   ],
+  "12986b70f3a08013dd89d1a66996211b30d2c91c": [
+    "windows-apps-src\\get-started\\create-a-basic-windows-10-app-in-cpp.md"
+  ],
   "da14c66b37735d3d8f93ab80ef493353744cfc1d": [
     "windows-apps-src\\get-started\\create-a-basic-windows-10-app-in-cpp.md"
   ],
   "7836cb385cc37f39fa1af01ea981263fcf3f3634": [
     "windows-apps-src\\get-started\\create-a-basic-windows-10-app-in-cpp.md"
+  ],
+  "4f87eb7eb334000e067068e3e09ce97d8977a428": [
+    "windows-apps-src\\get-started\\create-a-hello-world-app-js-universal.md"
   ],
   "1be32db7ead8dcd13ad97612b0a5a7a7cf4926e0": [
     "windows-apps-src\\get-started\\create-a-hello-world-app-js-universal.md"
@@ -5879,6 +5885,9 @@
   "033669a781aa85cc2c90fa11816e385ffefa997d": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "3e24ab50fdcc1c2d9071029d23a1ce25a96e6160": [
+    "windows-apps-src\\TOC.md"
+  ],
   "adf630f9ae7904639c8d51857d4fb46bf7f6c68e": [
     "windows-apps-src\\TOC.md"
   ],
@@ -6715,6 +6724,9 @@
   ],
   "a9cab92f705faf0677e5dec0dedb45a5aa59e14f": [
     "windows-apps-src\\get-started\\images\\winjs-tut-helloworld.png"
+  ],
+  "7920f4f0ea31e50c7c7ca69054f969df43545319": [
+    "windows-apps-src\\get-started\\images\\winjs-tut-newproject.png"
   ],
   "147a0a48f77c0a5679dff07cf8927969806165c8": [
     "windows-apps-src\\get-started\\images\\winjs-tut-newproject.png"
