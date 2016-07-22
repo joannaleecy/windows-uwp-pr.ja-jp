@@ -1,11 +1,15 @@
 ---
 author: mcleblanc
 ms.assetid: 2b63a4c8-b1c0-4c77-95ab-0b9549ba3c0e
-description: このトピックでは、Windows 10 ユニバーサル Windows プラットフォーム (UWP) アプリに、非常にシンプルな Windows Phone Silverlight アプリを移植するケース スタディについて説明します。
-title: Windows Phone Silverlight から UWP へのケース スタディ: Bookstore1
+description: "このトピックでは、Windows 10 ユニバーサル Windows プラットフォーム (UWP) アプリに、非常にシンプルな Windows Phone Silverlight アプリを移植するケース スタディについて説明します。"
+title: "Windows Phone Silverlight から UWP へのケース スタディ - Bookstore1"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: dbffb4245efece2d39b4eba8979e323fd71626d0
+
 ---
 
-# Windows Phone Silverlight から UWP へのケース スタディ: Bookstore1
+# Windows Phone Silverlight から UWP へのケース スタディ - Bookstore1
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
@@ -15,13 +19,16 @@ title: Windows Phone Silverlight から UWP へのケース スタディ: Bookst
 
 このセクションの前のトピックでは、プラットフォーム間の違いについて説明し、ビュー モデルへのバインドを通じて、データへのアクセスに至るまで、XAML マークアップからのアプリのさまざまな要素に対する移植プロセスの詳細とガイダンスを提供しました。 ケース スタディでは、実際の例が動作するようすを示すことにより、このガイダンスを補足することを目的としています。 ケース スタディは、ガイダンスを読み終わっていることを前提としているため、繰り返し説明することはありません。
 
-**注:** Visual Studio で Bookstore1Universal\_10 を開くときに、"Visual Studio 更新プログラムが必要" というメッセージが表示されたら、「[TargetPlatformVersion](wpsl-to-uwp-troubleshooting.md#targetplatformversion)」の手順を実行してください。
+
+            **注**   Visual Studio で Bookstore1Universal\_10 を開くときに、"Visual Studio 更新プログラムが必要" というメッセージが表示されたら、「[TargetPlatformVersion](wpsl-to-uwp-troubleshooting.md#targetplatformversion)」の手順を実行してください。
 
 ## ダウンロード
 
-[Bookstore1WPSL8 Windows Phone Silverlight アプリのダウンロード](http://go.microsoft.com/fwlink/?linkid=517053)。
 
-[Bookstore1Universal\_10 Windows 10 アプリのダウンロード](http://go.microsoft.com/fwlink/?linkid=532950)。
+            [Bookstore1WPSL8 Windows Phone Silverlight アプリのダウンロード](http://go.microsoft.com/fwlink/?linkid=517053)。
+
+
+            [Bookstore1Universal\_10 Windows 10 アプリのダウンロード](http://go.microsoft.com/fwlink/?linkid=532950)。
 
 ## Windows Phone Silverlight アプリ
 
@@ -59,8 +66,7 @@ MainPage.xaml では、移植作業のために次の変更を行う必要があ
 2.  **MainPage.xaml** のルート **Page** 要素で、`Orientation="Portrait"` を削除します。
 3.  **MainPage.xaml** のルート **Page** 要素で、`shell:SystemTray.IsVisible="True"` を削除します。
 4.  `BookTemplate` データ テンプレートで、`PhoneTextExtraLargeStyle` および `PhoneTextSubtleStyle` の  **TextBlock** スタイルへの参照を削除します。
-5.  `TitlePanel`
-             **StackPanel** で、`PhoneTextNormalStyle` および `PhoneTextTitle1Style` の  **TextBlock** スタイルへの参照を削除します。
+5.  `TitlePanel` **StackPanel** で、`PhoneTextNormalStyle` および `PhoneTextTitle1Style` の  **TextBlock** スタイルへの参照を削除します。
 
 最初にモバイル デバイス ファミリの UI の作業を行い、その後でその他のフォーム ファクターについて検討します。 これで、アプリをビルドして実行できるようになりました。 モバイル エミュレーターでは次のように表示されます。
 
@@ -132,6 +138,7 @@ Bookstore1Universal では、ms-appx [URI スキーム](https://msdn.microsoft.c
 次のケース スタディは「[Bookstore2](wpsl-to-uwp-case-study-bookstore2.md)」です。ここでは、グループ化されたデータへのアクセスと表示について説明します。
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

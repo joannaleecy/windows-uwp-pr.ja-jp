@@ -1,15 +1,20 @@
 ---
 author: martinekuan
 ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
-title: "Hello, world" アプリを作成する (XAML)
-description: このチュートリアルでは、Windows 10 のユニバーサル Windows プラットフォーム (UWP) を対象にした単純な "Hello, world" アプリを Extensible Application Markup Language (XAML) を使って C# で作る方法について説明します。
+title: "Hello, world アプリを作成する (XAML)"
+description: "このチュートリアルでは、Windows 10 のユニバーサル Windows プラットフォーム (UWP) を対象にした単純な Hello, world アプリを Extensible Application Markup Language (XAML) を使って C# で作る方法について説明します。"
+translationtype: Human Translation
+ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
+ms.openlocfilehash: 0a524d51f713c37ce2069b4e750bf3ed20fe19ab
+
 ---
 
-# "Hello, world" アプリを作成する (XAML)
+# Hello, world アプリを作成する (XAML)
 
-このチュートリアルでは、Windows 10 のユニバーサル Windows プラットフォーム (UWP) を対象にした単純な "Hello, world" アプリを Extensible Application Markup Language (XAML) を使って C# で作る方法について説明します。 Microsoft Visual Studio の 1 つのプロジェクトを使って、Windows 10 のすべてのデバイスで実行されるアプリを構築できます。 ここでは、デスクトップとモバイル デバイスで同じように適切に実行されるアプリを作ることに焦点を合わせます。
+このチュートリアルでは、Windows 10 のユニバーサル Windows プラットフォーム (UWP) を対象にした単純な Hello, world アプリを Extensible Application Markup Language (XAML) を使って C# で作る方法について説明します。 Microsoft Visual Studio の 1 つのプロジェクトを使って、Windows 10 のすべてのデバイスで実行されるアプリを構築できます。 ここでは、デスクトップとモバイル デバイスで同じように適切に実行されるアプリを作ることに焦点を合わせます。
 
-**重要:** このチュートリアルは、Microsoft Visual Studio 2015 と Windows 10 で使うためのものです。 それ以前のバージョンでは正しく動作しません。
+
+              **重要:** このチュートリアルは、Microsoft Visual Studio 2015 と Windows 10 で使うためのものです。 それ以前のバージョンでは正しく動作しません。
 
 ここでは、次の方法について説明します。
 
@@ -27,7 +32,7 @@ description: このチュートリアルでは、Windows 10 のユニバーサ�
 -   このトピックは、XAML と「[XAML の概要](https://msdn.microsoft.com/library/windows/apps/Mt185595)」で説明されている概念について基本的な知識があることを前提としています。
 -   また、Visual Studio の既定のウィンドウ レイアウトを使用することを前提としています。 既定のレイアウトを変更した場合は、**[ウィンドウ]** メニューの **[ウィンドウ レイアウトのリセット]** を使って、レイアウトをリセットできます。
 
-##  手順 1: Visual Studio で新しいプロジェクトを作る
+##   手順 1: Visual Studio で新しいプロジェクトを作る
 
 
 1.  Visual Studio 2015 を起動します。
@@ -41,6 +46,8 @@ description: このチュートリアルでは、Windows 10 のユニバーサ�
 3.  左側のウィンドウで、**[インストール済み]、[テンプレート]、[Visual C#]、[Windows]** の順に展開した後、**[ユニバーサル]** テンプレート グループを選びます。 ユニバーサル Windows プラットフォーム (UWP) アプリで使うことができるプロジェクト テンプレートの一覧がダイアログの中央のウィンドウに表示されます。
 
    ![[新しいプロジェクト] ウィンドウ ](images/newproject-cs.png)
+   
+   これらのオプションが見つからない場合は、ユニバーサル Windows アプリ開発ツールがインストールされていることを確認します。 詳しくは、「[準備](get-set-up.md)」をご覧ください。
 
 4.  中央のウィンドウで、**[空白のアプリ (ユニバーサル Windows)]** プロジェクト テンプレートを選びます。
 
@@ -164,7 +171,7 @@ namespace HelloWorld
 
 **ローカル コンピューターでデバッグを開始するには**
 
-1.  **[標準]** ツール バーの [ターゲット デバイス] メニュー (![[デバッグの開始] メニュー](images/startdebug-full.png)) で、**[ローカル コンピューター]** が選択されていることを確認します (既定で選択されています)。
+1.  **[標準]** ツール バーの [ターゲット デバイス] メニュー (![[デバッグの開始] メニュー](images/startdebug-full.png)) で、**[ローカル コンピューター]** が選択されていることを確認します  (既定で選択されています)。
 2.  ツール バーの **[デバッグの開始]** ボタン (![[デバッグの開始] ボタン](images/startdebug-sm.png)) をクリックします。
 
    または
@@ -204,9 +211,11 @@ Windows キーを押して **[スタート]** メニューを開き、すべて�
 Visual Studio では、デスクトップ デバイスでデバッグするオプションに加えて、コンピューターに接続された物理的なモバイル デバイスにアプリをデプロイしてデバッグするか、モバイル デバイス エミュレーターでアプリをデプロイしてデバッグするオプションが用意されています。 メモリとディスプレイの構成がさまざまなデバイスのエミュレーターの中から選ぶことができます。
 
 -   **デバイス**
--   **エミュレーター <SDK version> WVGA 4 inch 512MB**
--   **エミュレーター <SDK version> WVGA 4 inch 1GB**
+-   **Emulator <SDK version> WVGA 4 inch 512MB**
+-   **Emulator <SDK version> WVGA 4 inch 1GB**
 -   その他... (他の構成のさまざまなエミュレーター)
+
+エミュレーターが見つからない場合は、ユニバーサル Windows アプリ開発ツールがインストールされていることを確認します。 詳しくは、「[準備](get-set-up.md)」をご覧ください。
 
 画面が小さくメモリが限られているデバイスでアプリをテストすることをお勧めします。そのためには、**[Emulator 10.0.10240.0 WVGA 4 inch 512MB]** オプションを使用します。
 **モバイル デバイス エミュレーターでデバッグを開始するには**
@@ -257,9 +266,7 @@ XAML 要素は、特定のイベントが発生したときにメッセージを
    <Button x:Name="inputButton" Content="Say &quot;Hello&quot;" Click="Button_Click"/>
 ```    
 
-5.  コード ビハインド ページに作成したイベント ハンドラーにコードを追加します。 イベント ハンドラーで、`nameInput`[**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) コントロールからユーザー名を取得し、それを使ってあいさつを作ります。 `greetingOutput`
-            [
-            **TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) を使って結果を表示します。
+5.  コード ビハインド ページに作成したイベント ハンドラーにコードを追加します。 イベント ハンドラーで、`nameInput` [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) コントロールからユーザー名を取得し、それを使ってあいさつを作ります。 `greetingOutput`[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) を使って結果を表示します。
     
 ```csharp    
     private void Button_Click(object sender, RoutedEventArgs e)
@@ -307,9 +314,9 @@ XAML 要素は、特定のイベントが発生したときにメッセージを
 
 以前のバージョンの XAML で [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) を使ったことがある場合は、この XAML では簡素化された構文が使用されていることに気付くかもしれません。
 
-`wideState` という名前の [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) で、[**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn890382) の [**MinWindowWidth**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.adaptivetrigger.minwindowwidth) プロパティが 641 に設定されています。 これは、ウィンドウの幅が 641 ピクセルという最小値以上である場合に限って、状態が適用されることを意味します。 この状態には [**Setter**](https://msdn.microsoft.com/library/windows/apps/BR208817) オブジェクトを定義していないため、XAML でページのコンテンツに対して定義したレイアウト プロパティが使用されます。
+`wideState` という名前の [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) で、[**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn890382) の [**MinWindowWidth**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.adaptivetrigger.minwindowwidth) プロパティが 641 に設定されています。 これは、ウィンドウの幅が 641 ピクセルという最小値以上である場合に限って、状態が適用されることを意味します。 この状態には [**Setter**](https://msdn.microsoft.com/library/windows/apps/BR208817) オブジェクトを定義していないため、XAML でページのコンテンツに対して定義したレイアウト プロパティが使用されます。
 
-2 つ目の [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) である `narrowState` で、[**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn890382) の [**MinWindowWidth**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.adaptivetrigger.minwindowwidth) プロパティが 0 に設定されています。 この状態は、ウィンドウの幅が 0 より大きく 641 ピクセルより小さい場合に適用されます (641 ピクセルでは、`wideState` が適用されます)。この状態では、いくつかの [**Setter**](https://msdn.microsoft.com/library/windows/apps/BR208817) オブジェクトを設定して、UI のコントロールのレイアウト プロパティを変更します。
+2 つ目の [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) である `narrowState` で、[**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn890382) の [**MinWindowWidth**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.adaptivetrigger.minwindowwidth) プロパティが 0 に設定されています。 この状態は、ウィンドウの幅が 0 より大きく 641 ピクセルより小さい場合に適用されます (641 ピクセルでは、`wideState` が適用されます)。この状態では、いくつかの [**Setter**](https://msdn.microsoft.com/library/windows/apps/BR208817) オブジェクトを設定して、UI のコントロールのレイアウト プロパティを変更します。
 
 -   `inputPanel` 要素の [**Orientation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.stackpanel.orientation) を **Horizontal** から **Vertical** に変更します。
 -   上余白 4 を `inputButton` 要素に追加します。
@@ -320,6 +327,7 @@ XAML 要素は、特定のイベントが発生したときにメッセージを
 これで、Windows 10 と UWP 用の初めてのアプリを作成しました。
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jul16_HO2-->
 
 

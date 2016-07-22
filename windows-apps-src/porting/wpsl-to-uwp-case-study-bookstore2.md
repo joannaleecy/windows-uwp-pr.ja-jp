@@ -1,23 +1,30 @@
 ---
 author: mcleblanc
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
-description: このケース スタディは、Bookstore で説明されている情報に基づいて作成されています。ここでは、最初に、グループ化されたデータを LongListSelector に表示する Windows Phone Silverlight アプリについて取り上げます。
-title: Windows Phone Silverlight から UWP へのケース スタディ: Bookstore2
+description: "このケース スタディは、Bookstore で説明されている情報に基づいて作成されています。ここでは、最初に、グループ化されたデータを LongListSelector に表示する Windows Phone Silverlight アプリについて取り上げます。"
+title: "Windows Phone Silverlight から UWP へのケース スタディ - Bookstore2"
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: 019f9ae1fc226c9aa1d921ce58cd2e5fa2424a2b
+
 ---
 
-# Windows Phone Silverlight から UWP へのケース スタディ: Bookstore2
+# Windows Phone Silverlight から UWP へのケース スタディ - Bookstore2
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 このケース スタディは、「[Bookstore1](wpsl-to-uwp-case-study-bookstore1.md)」で説明されている情報に基づいて作成されています。ここでは、最初に、グループ化されたデータを **LongListSelector** に表示する Windows Phone Silverlight アプリについて取り上げます。 ビュー モデルでは、**Author** クラスの各インスタンスは、該当する著者によって書かれた書籍のグループを表します。**LongListSelector** では、著者ごとにグループ化された書籍の一覧を表示したり、縮小して著者のジャンプ リストを表示したりすることができます。 ジャンプ リストを使うと、書籍の一覧をスクロールするよりもすばやく移動することができます。 ここでは、アプリを Windows 10 ユニバーサル Windows プラットフォーム (UWP) アプリに移植する手順について説明します。
 
-**注:** Visual Studio で Bookstore2Universal\_10 を開くときに、"Visual Studio 更新プログラムが必要" というメッセージが表示されたら、「[TargetPlatformVersion](w8x-to-uwp-troubleshooting.md#targetplatformversion)」の手順を実行してください。
+
+            **注**   Visual Studio で Bookstore2Universal\_10 を開くときに、"Visual Studio 更新プログラムが必要" というメッセージが表示されたら、「[TargetPlatformVersion](w8x-to-uwp-troubleshooting.md#targetplatformversion)」の手順を実行してください。
 
 ## ダウンロード
 
-[Bookstore2WPSL8 Windows Phone Silverlight アプリをダウンロードします](http://go.microsoft.com/fwlink/p/?linkid=522601)。
 
-[Bookstore2Universal\_10 Windows 10 アプリをダウンロードします](http://go.microsoft.com/fwlink/?linkid=532952)。
+            [Bookstore2WPSL8 Windows Phone Silverlight アプリをダウンロードします](http://go.microsoft.com/fwlink/p/?linkid=522601)。
+
+
+            [Bookstore2Universal\_10 Windows 10 アプリをダウンロードします](http://go.microsoft.com/fwlink/?linkid=532952)。
 
 ##  Windows Phone Silverlight アプリ
 
@@ -213,8 +220,7 @@ Phone アプリを基にして作業を開始したため、この段階のプ�
 
 -   `AuthorGroupHeaderTemplate` で、**TextBlock** に対して `Foreground="White"` を設定します。これにより、モバイル デバイス ファミリで実行したときに適切に表示されます。
 -   `AuthorGroupHeaderTemplate` と `ZoomedOutAuthorTemplate` の両方で、**TextBlock** に `FontWeight="SemiBold"` を追加します。
--   `narrowSeZo`で、縮小表示ビューでのグループ ヘッダーと著者は、伸縮表示ではなく左揃えで表示されます。ここではその設定を行います。 [
-            **HorizontalContentAlignment**](https://msdn.microsoft.com/library/windows/apps/br209417) を `Stretch` に設定して、拡大表示ビュー用の [**HeaderContainerStyle**](https://msdn.microsoft.com/library/windows/apps/dn251841) を作成します。 次に、同じ [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) を含む、縮小表示ビュー用の [**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/br242817) を作成します。 結果は次のようになります。
+-   `narrowSeZo`で、縮小表示ビューでのグループ ヘッダーと著者は、伸縮表示ではなく左揃えで表示されます。ここではその設定を行います。 [**HorizontalContentAlignment**](https://msdn.microsoft.com/library/windows/apps/br209417) を `Stretch` に設定して、拡大表示ビュー用の [**HeaderContainerStyle**](https://msdn.microsoft.com/library/windows/apps/dn251841) を作成します。 次に、同じ [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) を含む、縮小表示ビュー用の [**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/br242817) を作成します。 結果は次のようになります。
 
 ```xml
    <Style x:Key="AuthorGroupHeaderContainerStyle" TargetType="ListViewHeaderItem">
@@ -298,6 +304,7 @@ Phone アプリを基にして作業を開始したため、この段階のプ�
 このケース スタディには、前のケース スタディよりも複雑なユーザー インターフェイスが関連しています。 Windows Phone Silverlight の  **LongListSelector** に関するすべての機能や概念などが、**SemanticZoom**、**ListView**、**GridView**、**CollectionViewSource** の形式を使って UWP アプリで利用できることを学習しました。 UWP アプリで命令型コードやマークアップの両方を再利用 (コピーと編集) して、最小および最大の Windows デバイスのフォーム ファクターや、その中間のあらゆるサイズに合わせて調整された機能、UI、および操作を実現する方法について説明しました。
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

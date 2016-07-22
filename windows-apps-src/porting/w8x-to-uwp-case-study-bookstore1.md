@@ -1,11 +1,15 @@
 ---
 author: mcleblanc
-title: Windows ランタイム 8.x から UWP へのケース スタディ: Bookstore1
+title: "Windows ランタイム 8.x から UWP へのケース スタディ - Bookstore1"
 ms.assetid: e4582717-afb5-4cde-86bb-31fb1c5fc8f3
-description: このトピックでは、シンプルなユニバーサル 8.1 アプリを Windows 10 ユニバーサル Windows プラットフォーム (UWP) アプリへ移植するケース スタディについて説明します。
+description: "このトピックでは、シンプルなユニバーサル 8.1 アプリを Windows 10 ユニバーサル Windows プラットフォーム (UWP) アプリへ移植するケース スタディについて説明します。"
+translationtype: Human Translation
+ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
+ms.openlocfilehash: 43536aacb37a79b3e8507896474be67423a0b9fe
+
 ---
 
-# Windows ランタイム 8.x から UWP へのケース スタディ: Bookstore1
+# Windows ランタイム 8.x から UWP へのケース スタディ - Bookstore1
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
@@ -15,13 +19,16 @@ description: このトピックでは、シンプルなユニバーサル 8.1 �
 
 このセクションの前のトピックでは、プラットフォーム間の違いについて説明し、ビュー モデルへのバインドを通じて、データへのアクセスに至るまで、XAML マークアップからのアプリのさまざまな要素に対する移植プロセスの詳細とガイダンスを提供しました。 ケース スタディでは、実際の例が動作するようすを示すことにより、このガイダンスを補足することを目的としています。 ケース スタディは、ガイダンスを読み終わっていることを前提としているため、繰り返し説明することはありません。
 
-**注**   Visual Studio で Bookstore1Universal\_10 を開くときに、"Visual Studio 更新プログラムが必要" というメッセージが表示されたら、「[TargetPlatformVersion](w8x-to-uwp-troubleshooting.md#targetplatformversion)」の手順を実行してください。
+
+            **注**   Visual Studio で Bookstore1Universal\_10 を開くときに、"Visual Studio 更新プログラムが必要" というメッセージが表示されたら、「[TargetPlatformVersion](w8x-to-uwp-troubleshooting.md#targetplatformversion)」の手順を実行してください。
 
 ## ダウンロード
 
-[Bookstore1\_81 ユニバーサル 8.1 アプリをダウンロードします](http://go.microsoft.com/fwlink/?linkid=532946)。
 
-[Bookstore1Universal\_10 Windows 10 アプリをダウンロードします](http://go.microsoft.com/fwlink/?linkid=532950)。
+            [Bookstore1\_81 ユニバーサル 8.1 アプリをダウンロードします](http://go.microsoft.com/fwlink/?linkid=532946)。
+
+
+            [Bookstore1Universal\_10 Windows 10 アプリをダウンロードします](http://go.microsoft.com/fwlink/?linkid=532950)。
 
 ## ユニバーサル 8.1 アプリ
 
@@ -78,7 +85,7 @@ Bookstore1\_81 アプリでは、Windows 8.1 と Windows Phone 8.1 のオペレ�
 -   項目間のスペースを縮めるために、MainPage.xaml で `BookTemplate` データ テンプレートを探し、`Margin="0,0,0,8"` をルートの **Grid** から削除します。
 -   また、`BookTemplate` には、`BookTemplateTitleTextBlockStyle` と `BookTemplateAuthorTextBlockStyle` への参照があります。 Bookstore1\_81 は、それらのキーを間接参照として使うため、2 つのアプリで 1 つのキーの実装が異なります。 その間接参照は、必要ではなくなりました。システム スタイルを直接参照できます。 そこで、これらの参照をそれぞれ、`TitleTextBlockStyle` と `SubtitleTextBlockStyle` で置き換えます。
 -   ここで、`LayoutRoot` の Background を適切な既定値に設定して、テーマが何であるかに関係なく、すべてのデバイスでの実行時にアプリが適切に表示されるようにする必要があります。 これを、`"Transparent"` から `"{ThemeResource ApplicationPageBackgroundThemeBrush}"` に変更します。
--   `TitlePanel` で、`TitleTextBlockStyle` (今では少し大きすぎる) への参照を `CaptionTextBlockStyle` への参照に変更します。 `PageTitleTextBlockStyle` も、もう不要になった Bookstore1\_81 間接参照です。 これは、代わりに `HeaderTextBlockStyle` を参照するように変更します。
+-   `TitlePanel` で、`TitleTextBlockStyle` (今では少し大きすぎる) への参照を `CaptionTextBlockStyle` への参照に変更します。 `PageTitleTextBlockStyle`  も、もう不要になった Bookstore1\_81 間接参照です。 これは、代わりに `HeaderTextBlockStyle` を参照するように変更します。
 -   **ListBox** で特別な Background、Style、ItemContainerStyle を設定する必要はなくなったので、この 3 つの属性とその値をマークアップから削除します。 ただし、**ListBox** の境界線を非表示にする必要があるため、これに `BorderBrush="{x:Null}"` を追加します。
 -   BookstoreStyles.xaml (**ResourceDictionary** ファイル) 内のリソースはすべて、参照されなくなります。 これらのリソースはすべて削除できます。 ただし、BookstoreStyles.xaml ファイル自体を削除しないでください。次のセクションで示すように、まだ、最後の用途があります。
 
@@ -124,6 +131,7 @@ Bookstore1\_81 アプリでは、Windows 8.1 と Windows Phone 8.1 のオペレ�
 次のケース スタディは「[Bookstore2](w8x-to-uwp-case-study-bookstore2.md)」です。ここでは、グループ化されたデータへのアクセスと表示について説明します。
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

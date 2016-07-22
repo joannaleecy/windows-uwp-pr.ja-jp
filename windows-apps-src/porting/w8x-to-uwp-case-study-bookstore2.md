@@ -1,23 +1,30 @@
 ---
 author: mcleblanc
 ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
-description: このケース スタディは、「Bookstore1」で説明されている情報に基づいて作成されています。ここでは最初に、グループ化されたデータを SemanticZoom コントロールに表示するユニバーサル 8.1 アプリについて取り上げます。
-title: Windows ランタイム 8.x から UWP へのケース スタディ: Bookstore2
+description: "このケース スタディは、「Bookstore1」で説明されている情報に基づいて作成されています。ここでは最初に、グループ化されたデータを SemanticZoom コントロールに表示するユニバーサル 8.1 アプリについて取り上げます。"
+title: "Windows ランタイム 8.x から UWP へのケース スタディ - Bookstore2"
+translationtype: Human Translation
+ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
+ms.openlocfilehash: 97682b2b914707874dcac998f7db5f2029ad433e
+
 ---
 
-# Windows ランタイム 8.x から UWP へのケース スタディ: Bookstore2
+# Windows ランタイム 8.x から UWP へのケース スタディ - Bookstore2
 
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 このケース スタディは、「[Bookstore1](w8x-to-uwp-case-study-bookstore1.md)」で説明されている情報に基づいて作成されています。ここでは最初に、グループ化されたデータを [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) コントロールに表示するユニバーサル 8.1 アプリについて取り上げます。 ビュー モデルでは、**Author** クラスの各インスタンスが該当する著者によって書かれた書籍のグループを表します。**SemanticZoom** では、著者ごとにグループ化された書籍の一覧を表示したり、縮小して著者のジャンプ リストを表示したりすることができます。 ジャンプ リストを使うと、書籍の一覧をスクロールするよりもすばやく移動することができます。 ここでは、アプリを Windows 10 ユニバーサル Windows プラットフォーム (UWP) アプリに移植する手順について説明します。
 
-**注:** Visual Studio で Bookstore2Universal\_10 を開くときに、"Visual Studio 更新プログラムが必要" というメッセージが表示されたら、「[TargetPlatformVersion](w8x-to-uwp-troubleshooting.md#targetplatformversion)」の手順を実行してください。
+
+            **注**   Visual Studio で Bookstore2Universal\_10 を開くときに、"Visual Studio 更新プログラムが必要" というメッセージが表示されたら、「[TargetPlatformVersion](w8x-to-uwp-troubleshooting.md#targetplatformversion)」の手順を実行してください。
 
 ## ダウンロード
 
-[Bookstore2\_81 ユニバーサル 8.1 アプリをダウンロードします](http://go.microsoft.com/fwlink/?linkid=532951)。
 
-[Bookstore2Universal\_10 Windows 10 アプリをダウンロードします](http://go.microsoft.com/fwlink/?linkid=532952)。
+            [Bookstore2\_81 ユニバーサル 8.1 アプリをダウンロードします](http://go.microsoft.com/fwlink/?linkid=532951)。
+
+
+            [Bookstore2Universal\_10 Windows 10 アプリをダウンロードします](http://go.microsoft.com/fwlink/?linkid=532952)。
 
 ## ユニバーサル 8.1 アプリ
 
@@ -77,8 +84,7 @@ Bookstore2\_81 ソリューションは、8.1 ユニバーサル アプリ プ�
 
 Windows 10 での [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) コントロールに対する設計変更については、「[SemanticZoom に関する変更](w8x-to-uwp-porting-xaml-and-ui.md#semantic-zoom)」のセクションをご覧ください。 これらの変更に対応するための作業は、このセクションでは行いません。
 
-[
-            **GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) に対する変更については、「[GridView/ListView に関する変更](w8x-to-uwp-porting-xaml-and-ui.md#gridview-listview-changes)」のセクションをご覧ください。 これらの変更に対応するために、次に示す調整を行います。
+[**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) に対する変更については、「[GridView/ListView に関する変更](w8x-to-uwp-porting-xaml-and-ui.md#gridview-listview-changes)」のセクションをご覧ください。 これらの変更に対応するために、次に示す調整を行います。
 
 -   SeZoUC.xaml の `ZoomedInItemsPanelTemplate` で、`Orientation="Horizontal"` と `GroupPadding="0,0,0,20"` を設定します。
 -   SeZoUC.xaml で、`ZoomedOutItemsPanelTemplate` を削除し、縮小表示からは `ItemsPanel` 属性を削除します。
@@ -170,6 +176,7 @@ Windows 10 での [**SemanticZoom**](https://msdn.microsoft.com/library/windows/
 次のケース スタディは「[QuizGame](w8x-to-uwp-case-study-quizgame.md)」です。ここでは、グループ化されたデータへのアクセスと表示について説明します。
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

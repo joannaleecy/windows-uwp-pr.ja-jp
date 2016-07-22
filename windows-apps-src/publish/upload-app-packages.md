@@ -1,8 +1,12 @@
 ---
 author: jnHs
-Description: [パッケージ] ページは、提出するアプリのすべてのパッケージ ファイル (.xap、.appx、.appxupload、.appxbundle) をアップロードする場所です。 この手順では、アプリがターゲットとしているすべてのオペレーティング システムのパッケージをアップロードできます。
-title: アプリ パッケージのアップロード
+Description: "パッケージ ページは、提出するアプリのすべてのパッケージ ファイル (.xap、.appx、.appxupload、.appxbundle) をアップロードする場所です。 この手順では、アプリがターゲットとしているすべてのオペレーティング システムのパッケージをアップロードできます。"
+title: "アプリ パッケージのアップロード"
 ms.assetid: B1BB810D-3EAA-4FB5-B03C-1F01AFB2DE36
+translationtype: Human Translation
+ms.sourcegitcommit: 7f1a40f33a3137e4e0ded674b5bfdf35f11135dc
+ms.openlocfilehash: f628820747f51f7200e2748c2c3f41b58455b2fa
+
 ---
 
 # アプリ パッケージのアップロード
@@ -19,7 +23,8 @@ ms.assetid: B1BB810D-3EAA-4FB5-B03C-1F01AFB2DE36
 
 アプリの[パッケージ フライト](package-flights.md)を作成すると、いずれかのパッケージ フライトからパッケージをコピーするオプションがドロップダウンに表示されます。 必要なパッケージが含まれているパッケージ フライトを選びます。 その後で、いずれかまたはすべてのパッケージを選んで、この申請に含めることができます。
 
-> **重要**  Windows 10 の場合は、.appx や .appxbundle ではなく、常に .appxupload ファイルをここにアップロードする必要があります。 ストア用の UWP アプリのパッケージ化について詳しくは、「[Windows 10 用ユニバーサル Windows アプリのパッケージ化](../packaging/packaging-uwp-apps.md)」をご覧ください。
+> 
+            **重要**  Windows 10 の場合は、.appx や .appxbundle ではなく、常に .appxupload ファイルをここにアップロードする必要があります。 ストア用の UWP アプリのパッケージ化について詳しくは、「[Windows 10 用ユニバーサル Windows アプリのパッケージ化](../packaging/packaging-uwp-apps.md)」をご覧ください。
 
 検証中にパッケージに問題が検出された場合は、パッケージを削除し、問題を解決した後、パッケージをもう一度アップロードする必要があります。 詳しくは、「[パッケージのアップロード エラーの解決](resolve-package-upload-errors.md)」をご覧ください。
 
@@ -41,12 +46,6 @@ ms.assetid: B1BB810D-3EAA-4FB5-B03C-1F01AFB2DE36
 
 冗長なパッケージが存在することが検出された場合、すべての冗長なパッケージをこの申請から自動的に削除するオプションを提供します。 必要に応じて、パッケージを申請から個別に削除することもできます。
 
-## Visual Studio Application Insights を含むパッケージ
-
-
-[アプリの利用統計詳細情報](usage-report.md)を提供できるように、パッケージで [Visual Studio Application Insights](http://go.microsoft.com/fwlink/?LinkId=615086) を使う (または、パッケージをビルドするときに [Windows Dev Center でテレメトリを表示] をオンにすることで有効にする) ことをお勧めします。 Microsoft Visual Studio で Application Insights を構成しなかった場合、パッケージに Application Insights が含まれていることが検出されると、パッケージを提出することによって、開発者アカウントに関するアプリの利用統計情報を有効にすることに同意したことを確認するメッセージが表示されます。 アプリの利用統計情報は、**[アカウント設定]** でいつでも無効にすることができます。
-
- 
 
  
 
@@ -55,6 +54,7 @@ ms.assetid: B1BB810D-3EAA-4FB5-B03C-1F01AFB2DE36
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO5-->
 
 
