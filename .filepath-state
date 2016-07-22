@@ -3170,12 +3170,6 @@
   "0a524d51f713c37ce2069b4e750bf3ed20fe19ab": [
     "windows-apps-src\\get-started\\create-a-hello-world-app-xaml-universal.md"
   ],
-  "6342b96fd588397aa5bed522771a09b3ac95f6d7": [
-    "windows-apps-src\\get-started\\create-a-hello-world-app-xaml-universal.md"
-  ],
-  "0d6b6421b4f5ebc01c865e80db96d1158b9bd825": [
-    "windows-apps-src\\get-started\\create-a-hello-world-app-xaml-universal.md"
-  ],
   "9da8206c10c440cbe53cf57d05de495ddd414858": [
     "windows-apps-src\\get-started\\enable-your-device-for-development.md"
   ],
@@ -5390,12 +5384,6 @@
   "86355a194eb61b8d13eba22d9f6e7c566339cd28": [
     "windows-apps-src\\publish\\payout-summary.md"
   ],
-  "773a072f5656068eb6e0b2d792cf73a7ff1d16f0": [
-    "windows-apps-src\\publish\\payout-summary.md"
-  ],
-  "78a52fb9ed86538161544b0c5b3bcd19e741c8fa": [
-    "windows-apps-src\\publish\\payout-summary.md"
-  ],
   "d6bf60e1dae7ec62e3cdbba8098a24c093d5deb1": [
     "windows-apps-src\\publish\\pubcenter-dev-center-integration.md"
   ],
@@ -5445,9 +5433,6 @@
     "windows-apps-src\\publish\\trademark-and-copyright-protection.md"
   ],
   "f628820747f51f7200e2748c2c3f41b58455b2fa": [
-    "windows-apps-src\\publish\\upload-app-packages.md"
-  ],
-  "bb89968c261cc0c14f82375d0d708bbce5da9869": [
     "windows-apps-src\\publish\\upload-app-packages.md"
   ],
   "0cb9d09504a024cabe66661a5c77e21752b7e2e6": [
@@ -6584,13 +6569,7 @@
   "a7f7dccb9c7461e482bd43c8f370a2a7244eb735": [
     "windows-apps-src\\porting\\hwa-access-features.md"
   ],
-  "b06ec64b7707e14f384fe3a3ccf07772decb0fec": [
-    "windows-apps-src\\porting\\hwa-access-features.md"
-  ],
   "7d1cceb931d3ee9d128c6ba47113f501625830da": [
-    "windows-apps-src\\porting\\hwa-chrome-conversion.md"
-  ],
-  "4d0c935d63e6326fc2ae1c73044ddbcee64067ec": [
     "windows-apps-src\\porting\\hwa-chrome-conversion.md"
   ],
   "775963ae3d12023488c79ded1cc83d464e84169c": [
@@ -6599,16 +6578,7 @@
   "05e2362d23ce6d1ce70e20a5610e1a5ede464987": [
     "windows-apps-src\\porting\\hwa-create-windows.md"
   ],
-  "152cfd8aaa43ee7c63418d699e8bcce07722383e": [
-    "windows-apps-src\\porting\\hwa-create-windows.md"
-  ],
-  "3126b45a0b6682ac93d329ef0695abb2caf836f7": [
-    "windows-apps-src\\porting\\hwa-create-windows.md"
-  ],
   "491665558f713dcbaae7ea20739ed72c61a12cd2": [
-    "windows-apps-src\\porting\\hwa-to-uwp-root.md"
-  ],
-  "13680470ccefe221209de8d963757370ae0daff4": [
     "windows-apps-src\\porting\\hwa-to-uwp-root.md"
   ],
   "3adda9b3d1d685f89805e29c797b6ab4996eeec4": [
