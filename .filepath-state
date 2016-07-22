@@ -3143,6 +3143,9 @@
   "7836cb385cc37f39fa1af01ea981263fcf3f3634": [
     "windows-apps-src\\get-started\\create-a-basic-windows-10-app-in-cpp.md"
   ],
+  "7a241ab31eb59c605ae24a7753b7f2683e0bec9b": [
+    "windows-apps-src\\get-started\\create-a-hello-world-app-js-universal.md"
+  ],
   "4f87eb7eb334000e067068e3e09ce97d8977a428": [
     "windows-apps-src\\get-started\\create-a-hello-world-app-js-universal.md"
   ],
@@ -3154,6 +3157,9 @@
   ],
   "be731072824e81eadc95cebd5855234f9331962b": [
     "windows-apps-src\\get-started\\create-a-hello-world-app-js-universal.md"
+  ],
+  "73ca2031835ecf2e7c4b34fcfb512370d469d562": [
+    "windows-apps-src\\get-started\\create-a-hello-world-app-xaml-universal.md"
   ],
   "d20c799d9bf5f9c1f13cecdae9d71128d1680e8b": [
     "windows-apps-src\\get-started\\create-a-hello-world-app-xaml-universal.md"
@@ -6745,6 +6751,9 @@
   ],
   "85ec4ef21cc73a5c586c9f6a49e2c91f5dfda880": [
     "windows-apps-src\\get-started\\images\\win10-cs-08.png"
+  ],
+  "dc43ec1d2c973718cd80c0785ebbd12fd108ca6e": [
+    "windows-apps-src\\get-started\\images\\win10-cs-09.png"
   ],
   "5c3a44248265b9ad200a2844c8ad46b5ff5f7d00": [
     "windows-apps-src\\get-started\\images\\win10-cs-09.png"
