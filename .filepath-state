@@ -233,6 +233,9 @@
   "a67b859cc2bd42abc13bcba0d405783b99a0ca5c": [
     "windows-apps-src\\audio-video-camera\\midi.md"
   ],
+  "c1e57de371cb7ebad60ed63453d355c06cb6bbbc": [
+    "windows-apps-src\\audio-video-camera\\playready-client-sdk.md"
+  ],
   "eef128afc0da6f55a76b8c664f9049dc1ec48da1": [
     "windows-apps-src\\audio-video-camera\\playready-client-sdk.md"
   ],
@@ -3143,6 +3146,9 @@
   "7836cb385cc37f39fa1af01ea981263fcf3f3634": [
     "windows-apps-src\\get-started\\create-a-basic-windows-10-app-in-cpp.md"
   ],
+  "1468cd4bed3536b2b7853c192b0051387a153129": [
+    "windows-apps-src\\get-started\\create-a-hello-world-app-js-universal.md"
+  ],
   "7a241ab31eb59c605ae24a7753b7f2683e0bec9b": [
     "windows-apps-src\\get-started\\create-a-hello-world-app-js-universal.md"
   ],
@@ -3157,6 +3163,9 @@
   ],
   "be731072824e81eadc95cebd5855234f9331962b": [
     "windows-apps-src\\get-started\\create-a-hello-world-app-js-universal.md"
+  ],
+  "637db768b02469b11abed439b83fdedae0d82cbd": [
+    "windows-apps-src\\get-started\\create-a-hello-world-app-xaml-universal.md"
   ],
   "73ca2031835ecf2e7c4b34fcfb512370d469d562": [
     "windows-apps-src\\get-started\\create-a-hello-world-app-xaml-universal.md"
