@@ -4691,11 +4691,17 @@
   "682f727a21d74f5cea8fddc4886c873d537e1cfb": [
     "windows-apps-src\\monetize\\get-error-reporting-data.md"
   ],
+  "61b971fba7510c410517e0e641a336c16ea5ff1c": [
+    "windows-apps-src\\monetize\\get-in-app-acquisitions.md"
+  ],
   "bff5eb8ecf5a11067a590393d443343dc6ed94bc": [
     "windows-apps-src\\monetize\\get-in-app-acquisitions.md"
   ],
   "08168dc15b33d99a044eedd7864848ed7a858991": [
     "windows-apps-src\\monetize\\get-started-with-microsoft-advertising-libraries.md"
+  ],
+  "24cb6953326bb9e6b2a01e081fb081bee314043c": [
+    "windows-apps-src\\monetize\\grant-free-products.md"
   ],
   "64c600460c1cbcbd6bb486649e2bc98298ca9dbe": [
     "windows-apps-src\\monetize\\grant-free-products.md"
