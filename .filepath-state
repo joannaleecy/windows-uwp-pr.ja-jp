@@ -5309,6 +5309,9 @@
   "9596dd4de0c05ee6f85189e529ad18e528e954df": [
     "windows-apps-src\\publish\\create-an-ad-campaign-for-your-app.md"
   ],
+  "9e59369a7450d9f2581071a9af34ec13344cf81e": [
+    "windows-apps-src\\publish\\create-app-descriptions.md"
+  ],
   "bd10b94cdb3e16e8a6165610fb77adcdaca5b0a4": [
     "windows-apps-src\\publish\\create-app-descriptions.md"
   ],
@@ -5368,6 +5371,9 @@
   ],
   "3191df12ca5b59f545cf250c3e669b30192af6bc": [
     "windows-apps-src\\publish\\iap-acquisitions-report.md"
+  ],
+  "a143d137a44463e34f00ec4dbf0d2614fa95c70d": [
+    "windows-apps-src\\publish\\iap-submissions.md"
   ],
   "4a1764dfb8f94409aba973a28ba2999854179196": [
     "windows-apps-src\\publish\\iap-submissions.md"
