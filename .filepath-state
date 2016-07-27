@@ -6401,14 +6401,26 @@
   "0bcec2e82afd81f68b36eab5719902d5fb7991fb": [
     "windows-apps-src\\whats-new\\windows-10-version-1511.md"
   ],
+  "fd03a431c9c4308a003ef4060eee391d9a61b119": [
+    "windows-apps-src\\xbox-apps\\development-lanes-custom-cpp.md"
+  ],
   "55869096787bb88502c0454723f519a306c3ae0b": [
     "windows-apps-src\\xbox-apps\\development-lanes-custom-cpp.md"
+  ],
+  "4ef74f6e0c6e2bccb4ed69cde242d8ffbb2dfe10": [
+    "windows-apps-src\\xbox-apps\\development-lanes-html.md"
   ],
   "9bc406a174528b82ec062f42ee87a0036a602ab4": [
     "windows-apps-src\\xbox-apps\\development-lanes-html.md"
   ],
+  "d77c9cae5f7daac4569e71683fcfa8c4f274c365": [
+    "windows-apps-src\\xbox-apps\\development-lanes-landing.md"
+  ],
   "54db2390b5df3b5c6bc7ca6f7d6e36454435c543": [
     "windows-apps-src\\xbox-apps\\development-lanes-landing.md"
+  ],
+  "749585cd47108c10f50ef0ec2be72b1de4a01a81": [
+    "windows-apps-src\\xbox-apps\\development-lanes-unity.md"
   ],
   "14dd501faa4e642216ca02ab517da517deb9c81f": [
     "windows-apps-src\\xbox-apps\\development-lanes-unity.md"
@@ -6680,6 +6692,9 @@
   "435a00eaf9c1f0d8e0c0043229c2adc80638ace3": [
     "windows-apps-src\\xbox-apps\\wdp-fiddler-api.md"
   ],
+  "273cfffd9de4c6462d1971d701147aec7ddbbc58": [
+    "windows-apps-src\\xbox-apps\\development-lanes-unity-versioning.md"
+  ],
   "769b548da172e6f29f290b3799bc455d9e9a2670": [
     "windows-apps-src\\xbox-apps\\development-lanes-unity-versioning.md"
   ],
@@ -6814,5 +6829,8 @@
   ],
   "2a2eb696207b471cad5a3f2003b0e5d5fb7ab427": [
     "windows-apps-src\\graphics\\using-the-visual-layer-with-xaml.md"
+  ],
+  "1513429742553e632707167f7fa21c940db30bb4": [
+    "windows-apps-src\\xbox-apps\\wdp-updatepolicy-api.md"
   ]
 }
