@@ -1,11 +1,26 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 0
+ Total Files | 1
 
 ## File List
+ Source File | Status | Details 
+ ----------- | ------ | ------- 
+ [windows-apps-src\debug-test-perf\device-portal-desktop.md](https://github.com/Microsoft/windows-apps/blob/f09f0233ec11b41989cf52da3c5e8cb37a97b607/windows-apps-src/debug-test-perf/device-portal-desktop.md) | InSyncHandedBackSuccess | [Details](#7be27f5fb15676c5330f22995dd044899eddfd3d2001)
 
 ## Item Details
+##### <a name='7be27f5fb15676c5330f22995dd044899eddfd3d2001'></a> Source: [windows-apps-src\debug-test-perf\device-portal-desktop.md](https://github.com/Microsoft/windows-apps/blob/f09f0233ec11b41989cf52da3c5e8cb37a97b607/windows-apps-src/debug-test-perf/device-portal-desktop.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [windows-apps-src\debug-test-perf\device-portal-desktop.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/877da377bb422d145a5a4f592a899dfb89c1d6ec/windows-apps-src/debug-test-perf/device-portal-desktop.md)
+* Handoff File: [device-portal-desktop.fd7534db4bc282ba12485780a908bce2871720e5.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/bfa4f61e62caab4865d3bbf5b809601e36645fc2/ol-handoff/Microsoft/windows-apps.ja-jp/master/device-portal-desktop.fd7534db4bc282ba12485780a908bce2871720e5.ja-jp.xlf)
+* Handoff Datetime: 2016-06-30 17:12:37
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [device-portal-desktop.fd7534db4bc282ba12485780a908bce2871720e5.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/d05ba968ccc08628fa9cdbe2da14ce2af853cf90/ol-handback/Microsoft/windows-apps.ja-jp/master/device-portal-desktop.fd7534db4bc282ba12485780a908bce2871720e5.ja-jp.xlf)
+* Handback Datetime: 2016-07-28 15:45:15
+* [Back to Top](#report-top)
+
 
 ## Error Details
 
