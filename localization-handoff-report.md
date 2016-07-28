@@ -1,19 +1,36 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\get-started\universal-application-platform-guide.md](https://github.com/Microsoft/windows-apps/blob/95477644b0f86156d382707033fa82f13de1a0fe/windows-apps-src/get-started/universal-application-platform-guide.md) | OutofSyncHandedBackSuccess | [Details](#8a75344e251ede5c01d47323ebd1b6c170de0ea62688)
+ [windows-apps-src\get-started\images\universalapps-overview.png](https://github.com/Microsoft/windows-apps/blob/e44ae1a8c78b63ce654c05aa31d96eb86b262fb6/windows-apps-src/get-started/images/universalapps-overview.png) | OutofSyncHandedBackSuccess | [Details](#8b0f197d2a4a9ef53b68b278816df934af0283d12519)
+ [windows-apps-src\get-started\universal-application-platform-guide.md](https://github.com/Microsoft/windows-apps/blob/e44ae1a8c78b63ce654c05aa31d96eb86b262fb6/windows-apps-src/get-started/universal-application-platform-guide.md) | OutofSyncHandedBackSuccess | [Details](#66366e04c76769311f9f18b0db249be2d9c48e3c2688)
 
 ## Item Details
-##### <a name='8a75344e251ede5c01d47323ebd1b6c170de0ea62688'></a> Source: [windows-apps-src\get-started\universal-application-platform-guide.md](https://github.com/Microsoft/windows-apps/blob/95477644b0f86156d382707033fa82f13de1a0fe/windows-apps-src/get-started/universal-application-platform-guide.md)
+##### <a name='8b0f197d2a4a9ef53b68b278816df934af0283d12519'></a> Source: [windows-apps-src\get-started\images\universalapps-overview.png](https://github.com/Microsoft/windows-apps/blob/e44ae1a8c78b63ce654c05aa31d96eb86b262fb6/windows-apps-src/get-started/images/universalapps-overview.png)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [universal-application-platform-guide.07a46d09a6199df7032e233bf3e2f8009a4fb173.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/9e55bef8a3322e6388d5a8daeade2c3cf66c4462/ol-handoff/Microsoft/windows-apps.ja-jp/master/universal-application-platform-guide.07a46d09a6199df7032e233bf3e2f8009a4fb173.ja-jp.xlf)
-* Handoff Datetime: 2016-07-28 14:10:08
+* Handoff File: [8b0f197d2a4a9ef53b68b278816df934af0283d1.png](https://github.com/Microsoft/WDG.handoff/blob/03551a845fa7f1e0948aee59ff94dc58dd4bfcf5/ol-handoff/Microsoft/windows-apps.ja-jp/master/8b0f197d2a4a9ef53b68b278816df934af0283d1.png)
+* Handoff Datetime: 2016-07-28 16:40:57
+* Handoff Reason: IsDependency
+* Dependency From: windows-apps-src\get-started\universal-application-platform-guide.md
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\get-started\images\universalapps-overview.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/get-started/images/universalapps-overview.png)
+* Current Handback File: [ef5e5d3d444ca57a8ae13980cb4a45d0a51d488e.png](https://github.com/Microsoft/WDG.handback/blob/b1f93110cb7a5d04acde1e36c6a60039678a2df1/ol-handback/Microsoft/windows-apps.ja-jp/master/ef5e5d3d444ca57a8ae13980cb4a45d0a51d488e.png)
+* Current Handback Datetime: 2016-06-30 15:51:54
+* [Back to Top](#report-top)
+
+##### <a name='66366e04c76769311f9f18b0db249be2d9c48e3c2688'></a> Source: [windows-apps-src\get-started\universal-application-platform-guide.md](https://github.com/Microsoft/windows-apps/blob/e44ae1a8c78b63ce654c05aa31d96eb86b262fb6/windows-apps-src/get-started/universal-application-platform-guide.md)
+* Status: OutofSyncHandedBackSuccess
+* Target File: 
+* Handoff File: [universal-application-platform-guide.07a46d09a6199df7032e233bf3e2f8009a4fb173.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/03551a845fa7f1e0948aee59ff94dc58dd4bfcf5/ol-handoff/Microsoft/windows-apps.ja-jp/master/universal-application-platform-guide.07a46d09a6199df7032e233bf3e2f8009a4fb173.ja-jp.xlf)
+* Handoff Datetime: 2016-07-28 16:40:57
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00

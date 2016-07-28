@@ -3286,6 +3286,9 @@
   "746d7a8b8ef5e3c687d015f0d19a65d55b0eb1ce": [
     "windows-apps-src\\get-started\\images\\uap-debug.png"
   ],
+  "8b0f197d2a4a9ef53b68b278816df934af0283d1": [
+    "windows-apps-src\\get-started\\images\\universalapps-overview.png"
+  ],
   "ef5e5d3d444ca57a8ae13980cb4a45d0a51d488e": [
     "windows-apps-src\\get-started\\images\\universalapps-overview.png"
   ],
@@ -3364,6 +3367,9 @@
   ],
   "53d23b3f8502e1f182c728b9f787fbbc4b694d42": [
     "windows-apps-src\\get-started\\sign-up.md"
+  ],
+  "66366e04c76769311f9f18b0db249be2d9c48e3c": [
+    "windows-apps-src\\get-started\\universal-application-platform-guide.md"
   ],
   "8a75344e251ede5c01d47323ebd1b6c170de0ea6": [
     "windows-apps-src\\get-started\\universal-application-platform-guide.md"
