@@ -5966,6 +5966,9 @@
   "033669a781aa85cc2c90fa11816e385ffefa997d": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "acf42817ccce2c1fc76d6325e15a0be96096af90": [
+    "windows-apps-src\\TOC.md"
+  ],
   "ba2f82bd1f8bf5da23bf9a58d51e1274ba5bcf72": [
     "windows-apps-src\\TOC.md"
   ],
@@ -6856,5 +6859,8 @@
   ],
   "1513429742553e632707167f7fa21c940db30bb4": [
     "windows-apps-src\\xbox-apps\\wdp-updatepolicy-api.md"
+  ],
+  "a326227b99079091e008cef05ff6c86d7873a462": [
+    "windows-apps-src\\porting\\desktop-to-uwp-supported-api.md"
   ]
 }
