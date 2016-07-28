@@ -1,40 +1,27 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\porting\desktop-to-uwp-supported-api.md](https://github.com/Microsoft/windows-apps/blob/c1fdf83238b413eac6b88e8d8174d1f94455b778/windows-apps-src/porting/desktop-to-uwp-supported-api.md) | HandedOffSuccess | [Details](#a326227b99079091e008cef05ff6c86d7873a4623526)
- [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/1fafab0806645ed43ae67dd9639dada8f2d3ab9c/windows-apps-src/TOC.md) | OutofSyncHandedBackSuccess | [Details](#acf42817ccce2c1fc76d6325e15a0be96096af905329)
+ [windows-apps-src\get-started\enable-your-device-for-development.md](https://github.com/Microsoft/windows-apps/blob/061f85794b793097c76c9ac7d81e6cee3a2d4406/windows-apps-src/get-started/enable-your-device-for-development.md) | OutofSyncHandedBackSuccess | [Details](#f2070522a8a672498e2ac1cf27be55c1bec796e32311)
 
 ## Item Details
-##### <a name='a326227b99079091e008cef05ff6c86d7873a4623526'></a> Source: [windows-apps-src\porting\desktop-to-uwp-supported-api.md](https://github.com/Microsoft/windows-apps/blob/c1fdf83238b413eac6b88e8d8174d1f94455b778/windows-apps-src/porting/desktop-to-uwp-supported-api.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [desktop-to-uwp-supported-api.220ba582d79150eb52605ad0af9b424c0fb476ad.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/ff617617134bc3cdb42b9ee5b788f89032e51737/ol-handoff/Microsoft/windows-apps.ja-jp/master/desktop-to-uwp-supported-api.220ba582d79150eb52605ad0af9b424c0fb476ad.ja-jp.xlf)
-* Handoff Datetime: 2016-07-28 18:10:48
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='acf42817ccce2c1fc76d6325e15a0be96096af905329'></a> Source: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps/blob/1fafab0806645ed43ae67dd9639dada8f2d3ab9c/windows-apps-src/TOC.md)
+##### <a name='f2070522a8a672498e2ac1cf27be55c1bec796e32311'></a> Source: [windows-apps-src\get-started\enable-your-device-for-development.md](https://github.com/Microsoft/windows-apps/blob/061f85794b793097c76c9ac7d81e6cee3a2d4406/windows-apps-src/get-started/enable-your-device-for-development.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/ff617617134bc3cdb42b9ee5b788f89032e51737/ol-handoff/Microsoft/windows-apps.ja-jp/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf)
-* Handoff Datetime: 2016-07-28 18:10:48
+* Handoff File: [enable-your-device-for-development.e920a727ccc1fc364c6c44e8138c1a619fa0b67d.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/e8f1da704e557cc2aa94971a961853c7358e0118/ol-handoff/Microsoft/windows-apps.ja-jp/master/enable-your-device-for-development.e920a727ccc1fc364c6c44e8138c1a619fa0b67d.ja-jp.xlf)
+* Handoff Datetime: 2016-07-28 23:10:50
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\TOC.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/bb8e3c217182fd3ae9fd7c331e3722f1189b5569/windows-apps-src/TOC.md)
-* Current Handback File: [TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/5fbfce34d71b9c9ce97b3692f989d8e628c65b51/ol-handback/Microsoft/windows-apps.ja-jp/master/TOC.350f1fabd525c277c15320fda16caad6a319dd0a.ja-jp.xlf)
-* Current Handback Datetime: 2016-07-20 16:31:17
+* Current Target File: [windows-apps-src\get-started\enable-your-device-for-development.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/50184089ee68f46cd2f416adf3a3994777b91210/windows-apps-src/get-started/enable-your-device-for-development.md)
+* Current Handback File: [enable-your-device-for-development.e920a727ccc1fc364c6c44e8138c1a619fa0b67d.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/4b30c8e256811740592ee2bde985c1f06955abde/ol-handback/Microsoft/windows-apps.ja-jp/master/enable-your-device-for-development.e920a727ccc1fc364c6c44e8138c1a619fa0b67d.ja-jp.xlf)
+* Current Handback Datetime: 2016-07-06 14:57:57
 * [Back to Top](#report-top)
 
 
