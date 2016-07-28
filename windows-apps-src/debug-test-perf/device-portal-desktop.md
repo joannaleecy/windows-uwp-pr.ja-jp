@@ -78,7 +78,7 @@ Device Portal に接続するには、ローカル ホスト接続と、ロー�
 
 ### パッケージ検索エラー
 
-"Developer Mode package couldn’t be located in Windows Update. Error Code 0x001234 Learn more"   
+"開発者モードのパッケージを Windows Update で見つけることができませんでした。 エラー コード 0x001234 詳細情報"   
 
 このエラーは、ネットワーク接続に問題がある場合、エンタープライズ設定になっている場合、またはパッケージが見つからない場合に発生することがあります。 
 
@@ -94,7 +94,7 @@ Device Portal に接続するには、ローカル ホスト接続と、ロー�
 
 ### パッケージ インストール エラー
 
-"Developer Mode package failed to install. Error code 0x001234  Learn more"
+"開発者モード パッケージをインストールできませんでした。 エラー コード 0x001234  詳細情報"
 
 このエラーは、Windows のビルドと開発者モード パッケージの間に互換性の問題がある場合に発生します。 
 
