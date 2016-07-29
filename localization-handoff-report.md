@@ -6,22 +6,22 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\get-started\create-a-hello-world-app-xaml-universal.md](https://github.com/Microsoft/windows-apps/blob/77f95fedfdd98cca4aa6351a40eecd74794c03a8/windows-apps-src/get-started/create-a-hello-world-app-xaml-universal.md) | OutofSyncHandedBackSuccess | [Details](#6b1675085790cf3f9bfadee2c4b7155f9aff92bb2310)
+ [windows-apps-src\debug-test-perf\device-portal-api-core.md](https://github.com/Microsoft/windows-apps/blob/fae2c6b31c9c6c07026abc4718959b02a36e6600/windows-apps-src/debug-test-perf/device-portal-api-core.md) | OutofSyncHandedBackSuccess | [Details](#080827b93427a387ceebf05a30bb4b13153739071999)
 
 ## Item Details
-##### <a name='6b1675085790cf3f9bfadee2c4b7155f9aff92bb2310'></a> Source: [windows-apps-src\get-started\create-a-hello-world-app-xaml-universal.md](https://github.com/Microsoft/windows-apps/blob/77f95fedfdd98cca4aa6351a40eecd74794c03a8/windows-apps-src/get-started/create-a-hello-world-app-xaml-universal.md)
+##### <a name='080827b93427a387ceebf05a30bb4b13153739071999'></a> Source: [windows-apps-src\debug-test-perf\device-portal-api-core.md](https://github.com/Microsoft/windows-apps/blob/fae2c6b31c9c6c07026abc4718959b02a36e6600/windows-apps-src/debug-test-perf/device-portal-api-core.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [create-a-hello-world-app-xaml-universal.0ff2b4f45789a6f10860e075fbcf61c857c43034.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/492f73759cb7536ff3e63dcc12044c8c9e60a7f0/ol-handoff/Microsoft/windows-apps.ja-jp/master/create-a-hello-world-app-xaml-universal.0ff2b4f45789a6f10860e075fbcf61c857c43034.ja-jp.xlf)
-* Handoff Datetime: 2016-07-29 01:11:54
+* Handoff File: [device-portal-api-core.1b4ac62250e906748be1a77845b5033a7f6d3fa4.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/52da082842cd793e30c73ff74b8d49f430e3836c/ol-handoff/Microsoft/windows-apps.ja-jp/master/device-portal-api-core.1b4ac62250e906748be1a77845b5033a7f6d3fa4.ja-jp.xlf)
+* Handoff Datetime: 2016-07-29 20:40:55
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\get-started\create-a-hello-world-app-xaml-universal.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/58652bf3fdd66c375dde16bdada95b8f80c2b665/windows-apps-src/get-started/create-a-hello-world-app-xaml-universal.md)
-* Current Handback File: [create-a-hello-world-app-xaml-universal.0ff2b4f45789a6f10860e075fbcf61c857c43034.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/925cdf93ee65e098f5ddab0bba0dca7e4b1faff5/ol-handback/Microsoft/windows-apps.ja-jp/master/create-a-hello-world-app-xaml-universal.0ff2b4f45789a6f10860e075fbcf61c857c43034.ja-jp.xlf)
-* Current Handback Datetime: 2016-07-22 14:55:38
+* Current Target File: [windows-apps-src\debug-test-perf\device-portal-api-core.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/bb8e3c217182fd3ae9fd7c331e3722f1189b5569/windows-apps-src/debug-test-perf/device-portal-api-core.md)
+* Current Handback File: [device-portal-api-core.1b4ac62250e906748be1a77845b5033a7f6d3fa4.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/5fbfce34d71b9c9ce97b3692f989d8e628c65b51/ol-handback/Microsoft/windows-apps.ja-jp/master/device-portal-api-core.1b4ac62250e906748be1a77845b5033a7f6d3fa4.ja-jp.xlf)
+* Current Handback Datetime: 2016-07-20 16:31:17
 * [Back to Top](#report-top)
 
 
