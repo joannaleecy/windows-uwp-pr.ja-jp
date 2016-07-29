@@ -3170,6 +3170,9 @@
   "be731072824e81eadc95cebd5855234f9331962b": [
     "windows-apps-src\\get-started\\create-a-hello-world-app-js-universal.md"
   ],
+  "6b1675085790cf3f9bfadee2c4b7155f9aff92bb": [
+    "windows-apps-src\\get-started\\create-a-hello-world-app-xaml-universal.md"
+  ],
   "57ed52794cba522730a911dc5ed29ca4519d46a4": [
     "windows-apps-src\\get-started\\create-a-hello-world-app-xaml-universal.md"
   ],
