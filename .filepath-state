@@ -5245,6 +5245,9 @@
   "2bb1b601e1ab35115c88692f6c36dccc70836541": [
     "windows-apps-src\\security\\share-certificates.md"
   ],
+  "d0646aca9863f3f326df9b3a86adb2481fdcda70": [
+    "windows-apps-src\\security\\smart-cards.md"
+  ],
   "6e673ce75ee7f178332da6fc9ae68dbf01a9d7ce": [
     "windows-apps-src\\security\\smart-cards.md"
   ],
