@@ -3206,6 +3206,9 @@
   "0a524d51f713c37ce2069b4e750bf3ed20fe19ab": [
     "windows-apps-src\\get-started\\create-a-hello-world-app-xaml-universal.md"
   ],
+  "e5a865d9ce30108302a2ca627f5cdbc03632a904": [
+    "windows-apps-src\\get-started\\enable-your-device-for-development.md"
+  ],
   "f2070522a8a672498e2ac1cf27be55c1bec796e3": [
     "windows-apps-src\\get-started\\enable-your-device-for-development.md"
   ],
@@ -6503,6 +6506,9 @@
   "30efa290f3fbf169666e16247be8d116f23ab02d": [
     "windows-apps-src\\porting\\desktop-to-uwp-signing.md"
   ],
+  "ae53e0a9d59121ab37ccd59008dac9792312eaf7": [
+    "windows-apps-src\\xbox-apps\\reference.md"
+  ],
   "d237dc66b09e5225e03e4dca9b1182625048b4e2": [
     "windows-apps-src\\xbox-apps\\reference.md"
   ],
@@ -6874,6 +6880,9 @@
   ],
   "2a2eb696207b471cad5a3f2003b0e5d5fb7ab427": [
     "windows-apps-src\\graphics\\using-the-visual-layer-with-xaml.md"
+  ],
+  "6cbddf77b63831d2fa3bfa82bdb4ca495c98f402": [
+    "windows-apps-src\\xbox-apps\\wdp-updatepolicy-api.md"
   ],
   "1513429742553e632707167f7fa21c940db30bb4": [
     "windows-apps-src\\xbox-apps\\wdp-updatepolicy-api.md"
