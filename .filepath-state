@@ -8227,6 +8227,9 @@
   "bfa75ef76ebfc3e4b558e660593adb968e786934": [
     "windows-apps-src\\controls-and-patterns\\images\\flyout-example.png"
   ],
+  "4f3a0a819f17eef6255be8a91ba1613bbd548e3f": [
+    "windows-apps-src\\controls-and-patterns\\menus.md"
+  ],
   "d116ce6483587c2169911964239c4d3d7f2381a1": [
     "windows-apps-src\\controls-and-patterns\\menus.md"
   ],
@@ -11916,6 +11919,9 @@
   ],
   "089e8cf29db3582697e8ee75a53fc4bb2316a491": [
     "windows-apps-src\\style\\images\\segoe-mdl\\ef20.png"
+  ],
+  "f70b74a9924eeafeb70bb66b0260efe79e16f213": [
+    "windows-apps-src\\whats-new\\windows-10-version-1607.md"
   ],
   "0c843b1f547810e3bdf675c616dcded7015f110a": [
     "windows-apps-src\\whats-new\\windows-10-version-1607.md"
