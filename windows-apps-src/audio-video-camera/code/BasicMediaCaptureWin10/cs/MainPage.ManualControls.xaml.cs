@@ -725,10 +725,42 @@ namespace BasicCameraWin10
         //</snippetFocusLightCheckBox>
 
 
-        
 
 
+
+
+        #endregion
+
+        #region PowerlineFrequency
+        private void SetPowerlineFrequency()
+        {
+            //<SnippetPowerlineFrequency>
+            PowerlineFrequency getFrequency;
+
+            if (! _mediaCapture.VideoDeviceController.TryGetPowerlineFrequency(out getFrequency))
+            {
+                // Powerline frequency is not supported on this device.
+                return;
+            }
+
+            if (! _mediaCapture.VideoDeviceController.TrySetPowerlineFrequency(PowerlineFrequency.Auto))
+            {
+                // Set the frequency manually
+                PowerlineFrequency setFrequency = MyCustomFrequencyLookup();
+                if (_mediaCapture.VideoDeviceController.TrySetPowerlineFrequency(setFrequency))
+                {
+                    System.Diagnostics.Debug.WriteLine(String.Format("Powerline frequency manually set to {0}.", setFrequency));
+                }
+            }
+           
+            //</SnippetPowerlineFrequency>
+        }
         
+
+        private PowerlineFrequency MyCustomFrequencyLookup()
+        {
+            return PowerlineFrequency.FiftyHertz;
+        }
         #endregion
     }
 }

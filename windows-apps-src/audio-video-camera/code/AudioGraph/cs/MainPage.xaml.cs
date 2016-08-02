@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 
+
 using System.Threading.Tasks;
 using Windows.Media.Audio;
 using Windows.Storage;
@@ -38,6 +39,10 @@ namespace AudioGraphSnippets
     }
     //</SnippetComImportIMemoryBufferByteAccess>
 
+
+    /// <summary>
+    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// </summary>
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
@@ -107,7 +112,7 @@ namespace AudioGraphSnippets
         //<SnippetInitAudioGraph>
         private async Task InitAudioGraph()
         {
-            
+
             AudioGraphSettings settings = new AudioGraphSettings(Windows.Media.Render.AudioRenderCategory.Media);
 
             CreateAudioGraphResult result = await AudioGraph.CreateAsync(settings);
@@ -117,7 +122,7 @@ namespace AudioGraphSnippets
             }
 
             audioGraph = result.Graph;
-            
+
         }
         //</SnippetInitAudioGraph>
 
@@ -248,7 +253,7 @@ namespace AudioGraphSnippets
         }
         //</SnippetCreateDeviceOutputNode>
 
-        
+
         private async Task EnumerateAudioCaptureDevices()
         {
             //<SnippetEnumerateAudioCaptureDevices>
@@ -258,7 +263,7 @@ namespace AudioGraphSnippets
             // Show UI to allow the user to select a device
             Windows.Devices.Enumeration.DeviceInformation selectedDevice = ShowMyDeviceSelectionUI(devices);
 
-            CreateAudioDeviceInputNodeResult result = 
+            CreateAudioDeviceInputNodeResult result =
                 await audioGraph.CreateDeviceInputNodeAsync(Windows.Media.Capture.MediaCategory.Media, audioGraph.EncodingProperties, selectedDevice);
             //</SnippetEnumerateAudioCaptureDevices>
         }
@@ -379,7 +384,7 @@ namespace AudioGraphSnippets
             }
         }
         //</SnippetProcessFrameOutput>
-        
+
         private void DemonstrateConnections()
         {
             //<SnippetAddOutgoingConnection1>
@@ -416,10 +421,80 @@ namespace AudioGraphSnippets
             echoEffect.Delay = 1.0;
             echoEffect.Feedback = .2;
             echoEffect.WetDryMix = .5;
-            
+
             submixNode.EffectDefinitions.Add(echoEffect);
             //</SnippetAddEffect>
         }
+        public async Task CreateFileInputNodeWithEmitter()
+        {
+            if (audioGraph == null)
+                return;
+
+            FileOpenPicker filePicker = new FileOpenPicker();
+            filePicker.SuggestedStartLocation = PickerLocationId.MusicLibrary;
+            filePicker.FileTypeFilter.Add(".mp3");
+            filePicker.FileTypeFilter.Add(".wav");
+            filePicker.FileTypeFilter.Add(".wma");
+            filePicker.FileTypeFilter.Add(".m4a");
+            filePicker.ViewMode = PickerViewMode.Thumbnail;
+            StorageFile file = await filePicker.PickSingleFileAsync();
+
+            // File can be null if cancel is hit in the file picker
+            if (file == null)
+            {
+                return;
+            }
+
+            //<SnippetCreateEmitter>
+            var emitterShape = AudioNodeEmitterShape.CreateOmnidirectional();
+            var decayModel = AudioNodeEmitterDecayModel.CreateNatural(.1, 1, 10, 100);
+            var settings = AudioNodeEmitterSettings.None;
+
+            var emitter = new AudioNodeEmitter(emitterShape, decayModel, settings);
+            emitter.Position = new System.Numerics.Vector3(10, 0, 5);
+
+            CreateAudioFileInputNodeResult result = await audioGraph.CreateFileInputNodeAsync(file, emitter);
+
+            if (result.Status != AudioFileNodeCreationStatus.Success)
+            {
+                ShowErrorMessage(result.Status.ToString());
+            }
+
+            fileInputNode = result.FileInputNode;
+            //</SnippetCreateEmitter>
+
+
+            
+
+        }
+        public void UpdateEmitter()
+        {
+            var newObjectPosition = new System.Numerics.Vector3(10, 0, 5);
+            var oldObjectPosition = new System.Numerics.Vector3(10, 0, 5);
+
+            //<SnippetUpdateEmitter>
+            var emitter = fileInputNode.Emitter;
+            emitter.Position = newObjectPosition;
+            emitter.DopplerVelocity = newObjectPosition - oldObjectPosition;
+            //</SnippetUpdateEmitter>
+        }
+        private void CreateListener()
+        {
+            
+            //<SnippetListener>
+            deviceOutputNode.Listener.Position = new System.Numerics.Vector3(100, 0, 0);
+            deviceOutputNode.Listener.Orientation = System.Numerics.Quaternion.CreateFromYawPitchRoll(0, (float)Math.PI, 0);
+            //</SnippetListener>
+        }
+        public void UpdateListener()
+        {
+            var newUserPosition = new System.Numerics.Vector3(10, 0, 5);
+
+            //<SnippetUpdateListener>
+            deviceOutputNode.Listener.Position = newUserPosition;
+            //</SnippetUpdateListener>
+        }
+
         public void ShowErrorMessage(string message)
         {
             MessageTextBlock.Text = message;

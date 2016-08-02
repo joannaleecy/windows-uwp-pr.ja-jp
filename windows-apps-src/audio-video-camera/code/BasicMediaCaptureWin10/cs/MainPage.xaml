@@ -31,6 +31,11 @@
         <CaptureElement Name="PreviewControl" Stretch="Uniform"/>
         <!--</SnippetCaptureElement>-->
 
+        <Canvas x:Name="_imageCanvas" Canvas.ZIndex="3" Visibility="Collapsed" Background="Aqua" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Image x:Name="_hdrImage" Opacity=".5"/>
+            <Image x:Name="_referenceImage" Opacity=".5"/>
+        </Canvas>
+
         <!-- Capture + Record buttons -->
         <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center">
             <StackPanel.Resources>
@@ -105,7 +110,7 @@
             <!--<SnippetManualFocusXAML>-->
             <Slider Name="FocusSlider" IsEnabled="{Binding ElementName=ManualFocusRadioButton,Path=IsChecked}" ValueChanged="FocusSlider_ValueChanged"/>
             <TextBlock Text="{Binding ElementName=FocusSlider,Path=Value,FallbackValue='0'}"/>
-            <RadioButton Content="Manual" Name="ManualFocusRadioButton" Checked="ManualFocusRadioButton_Checked" IsChecked="True"/>
+            <RadioButton Content="Manual" Name="ManualFocusRadioButton" Checked="ManualFocusRadioButton_Checked" IsChecked="False"/>
                <!--</SnippetManualFocusXAML>-->
             
             <!--<SnippetFocusLightXAML>-->

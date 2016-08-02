@@ -54,8 +54,8 @@ namespace MediaSource_Win10
 
             //PlayMediaSource();
             //PlayMediaPlaybackItem();
-            PlayMediaPlaybackItemWithCustomTracks();
-            //PlayMediaPlaybackList();
+            //PlayMediaPlaybackItemWithCustomTracks();
+            PlayMediaPlaybackList();
         }
         #region MediaSource
         private async void PlayMediaSource()

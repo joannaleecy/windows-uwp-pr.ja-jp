@@ -59,8 +59,8 @@ namespace CameraCaptureUIWin10
         {
             
 
-            //CapturePhoto();
-            CaptureVideo();
+            CapturePhoto();
+            //CaptureVideo();
  
         }
         private async void CapturePhoto()
@@ -78,6 +78,15 @@ namespace CameraCaptureUIWin10
                 return;
             }
             //</SnippetCapturePhoto>
+
+            //<SnippetCopyAndDeletePhoto>
+            StorageFolder destinationFolder = 
+                await ApplicationData.Current.LocalFolder.CreateFolderAsync("ProfilePhotoFolder", 
+                    CreationCollisionOption.OpenIfExists);
+
+            await photo.CopyAsync(destinationFolder, "ProfilePhoto.jpg", NameCollisionOption.ReplaceExisting);
+            await photo.DeleteAsync();
+            //</SnippetCopyAndDeletePhoto>
 
             //<SnippetSoftwareBitmap>
             IRandomAccessStream stream = await photo.OpenAsync(FileAccessMode.Read);
