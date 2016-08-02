@@ -192,6 +192,8 @@ namespace BasicCameraWin10
             _systemMediaControls.PropertyChanged += SystemMediaControls_PropertyChanged;
 
             await InitializeCameraAsync();
+
+            SetPowerlineFrequency();
         }
         //</SnippetOnNavigatedTo>
         //<SnippetOnNavigatingFrom>
@@ -275,7 +277,22 @@ namespace BasicCameraWin10
 
         private async void PhotoButton_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            await TakePhotoAsync();
+            //await TakePhotoAsync();
+
+            InitRotationHelper();
+            //IsLowLightPhotoSupported();
+            //if (_lowLightSupported)
+            //{
+            //    await CreateAdvancedCaptureLowLightAsync();
+            //    await CaptureLowLightAsync();
+            //}
+
+            IsHdrPhotoSupported();
+            if (_hdrSupported)
+            {
+                await CreateAdvancedCaptureAsync();
+                CaptureWithContext();
+            }
         }
 
         private async void VideoButton_Tapped(object sender, TappedRoutedEventArgs e)
@@ -1105,7 +1122,25 @@ namespace BasicCameraWin10
 
         #region HDR Photo
 
-        // !!!! Be sure to include HDRPhotoUsing snippet
+        AdvancedCapturedPhoto _testHDRImage;
+        CapturedFrame _testReferenceImage;
+
+        // Temp hack to allow CameraRotationHelper in TH1 snippet project
+        CameraRotationHelper _rotationHelper;
+        public async Task InitRotationHelper()
+        {
+            var allVideoDevices = await DeviceInformation.FindAllAsync(DeviceClass.VideoCapture);
+
+            // Get the desired camera by panel
+            DeviceInformation cameraDevice =
+                allVideoDevices.FirstOrDefault(x => x.EnclosureLocation != null &&
+                x.EnclosureLocation.Panel == Windows.Devices.Enumeration.Panel.Back);
+
+            // If there is no camera on the specified panel, get any camera
+            cameraDevice = cameraDevice ?? allVideoDevices.FirstOrDefault();
+
+            _rotationHelper = new CameraRotationHelper(cameraDevice.EnclosureLocation);
+        }
 
         //<SnippetDeclareAdvancedCapture>
         private AdvancedPhotoCapture _advancedCapture;
@@ -1120,6 +1155,8 @@ namespace BasicCameraWin10
         //</SnippetHdrSupported>
         private async Task CreateAdvancedCaptureAsync()
         {
+            
+
             // No work to be done if there already is an AdvancedCapture
             if (_advancedCapture != null) return;
 
@@ -1133,7 +1170,8 @@ namespace BasicCameraWin10
             _mediaCapture.VideoDeviceController.AdvancedPhotoControl.Configure(settings);
 
             // Prepare for an advanced capture
-            _advancedCapture = await _mediaCapture.PrepareAdvancedPhotoCaptureAsync(ImageEncodingProperties.CreateJpeg());
+            _advancedCapture = 
+                await _mediaCapture.PrepareAdvancedPhotoCaptureAsync(ImageEncodingProperties.CreateUncompressed(MediaPixelFormat.Nv12));
 
             // Register for events published by the AdvancedCapture
             _advancedCapture.AllPhotosCaptured += AdvancedCapture_AllPhotosCaptured;
@@ -1146,16 +1184,17 @@ namespace BasicCameraWin10
             //<SnippetCaptureHdrPhotoAsync>
             try
             {
-                // Read the current orientation of the camera and the capture time
-                var photoOrientation = ConvertOrientationToPhotoOrientation(GetCameraOrientation());
-                var fileName = String.Format("SimplePhoto_{0}_HDR.jpg", DateTime.Now.ToString("HHmmss"));
 
                 // Start capture, and pass the context object
-                AdvancedCapturedPhoto capture = await _advancedCapture.CaptureAsync();
+                AdvancedCapturedPhoto advancedCapturedPhoto = await _advancedCapture.CaptureAsync();
 
-                using (var frame = capture.Frame)
+                using (var frame = advancedCapturedPhoto.Frame)
                 {
-                    await ReencodeAndSavePhotoAsync(frame, fileName, photoOrientation);
+                    // Read the current orientation of the camera and the capture time
+                    var photoOrientation = CameraRotationHelper.ConvertSimpleOrientationToPhotoOrientation(
+                        _rotationHelper.GetCameraCaptureOrientation());
+                    var fileName = String.Format("SimplePhoto_{0}_HDR.jpg", DateTime.Now.ToString("HHmmss"));
+                    await SaveCapturedFrameAsync(frame, fileName, photoOrientation);
                 }
             }
             catch (Exception ex)
@@ -1177,7 +1216,8 @@ namespace BasicCameraWin10
         {
             //<SnippetCaptureWithContext>
             // Read the current orientation of the camera and the capture time
-            var photoOrientation = ConvertOrientationToPhotoOrientation(GetCameraOrientation());
+            var photoOrientation = CameraRotationHelper.ConvertSimpleOrientationToPhotoOrientation(
+                    _rotationHelper.GetCameraCaptureOrientation());
             var fileName = String.Format("SimplePhoto_{0}_HDR.jpg", DateTime.Now.ToString("HHmmss"));
 
             // Create a context object, to identify the capture in the OptionalReferencePhotoCaptured event
@@ -1188,8 +1228,10 @@ namespace BasicCameraWin10
             };
 
             // Start capture, and pass the context object
-            var capture = await _advancedCapture.CaptureAsync(context);
+            AdvancedCapturedPhoto advancedCapturedPhoto = await _advancedCapture.CaptureAsync(context);
             //</SnippetCaptureWithContext>
+
+            _testHDRImage = advancedCapturedPhoto;
         }
 
         //<SnippetOptionalReferencePhotoCaptured>
@@ -1203,7 +1245,7 @@ namespace BasicCameraWin10
 
             using (var frame = args.Frame)
             {
-                await ReencodeAndSavePhotoAsync(frame, referenceName, context.CaptureOrientation);
+                await SaveCapturedFrameAsync(frame, referenceName, context.CaptureOrientation);
             }
         }
         //</SnippetOptionalReferencePhotoCaptured>
@@ -1226,7 +1268,86 @@ namespace BasicCameraWin10
 
 
         #endregion HDR Photo
+        #region Low light photo
 
+        //<SnippetLowLightSupported1>
+        bool _lowLightSupported;
+        //</SnippetLowLightSupported1>
+        private void IsLowLightPhotoSupported()
+        {
+            //<SnippetLowLightSupported2>
+            _lowLightSupported = 
+            _mediaCapture.VideoDeviceController.AdvancedPhotoControl.SupportedModes.Contains(Windows.Media.Devices.AdvancedPhotoMode.LowLight);
+            //</SnippetLowLightSupported2>
+
+        }
+        //</SnippetLowLightSupported>
+        private async Task CreateAdvancedCaptureLowLightAsync()
+        {
+            // No work to be done if there already is an AdvancedCapture
+            if (_advancedCapture != null) return;
+
+            //<SnippetCreateAdvancedCaptureLowLightAsync>
+            if (_lowLightSupported == false) return;
+
+            // Choose LowLight mode
+            var settings = new AdvancedPhotoCaptureSettings { Mode = AdvancedPhotoMode.LowLight };
+            _mediaCapture.VideoDeviceController.AdvancedPhotoControl.Configure(settings);
+
+            // Prepare for an advanced capture
+            _advancedCapture = 
+                await _mediaCapture.PrepareAdvancedPhotoCaptureAsync(ImageEncodingProperties.CreateUncompressed(MediaPixelFormat.Nv12));
+            //</SnippetCreateAdvancedCaptureLowLightAsync>
+        }
+
+        private async Task CaptureLowLightAsync()
+        {
+            //<SnippetCaptureLowLight>
+            AdvancedCapturedPhoto advancedCapturedPhoto = await _advancedCapture.CaptureAsync();
+            var photoOrientation = ConvertOrientationToPhotoOrientation(GetCameraOrientation());
+            var fileName = String.Format("SimplePhoto_{0}_LowLight.jpg", DateTime.Now.ToString("HHmmss"));
+            await SaveCapturedFrameAsync(advancedCapturedPhoto.Frame, fileName, photoOrientation);
+            //</SnippetCaptureLowLight>
+
+            //<SnippetSoftwareBitmapFromCapturedFrame>
+            SoftwareBitmap bitmap;
+            if (advancedCapturedPhoto.Frame.SoftwareBitmap != null)
+            {
+                bitmap = advancedCapturedPhoto.Frame.SoftwareBitmap;
+            }
+            //</SnippetSoftwareBitmapFromCapturedFrame>
+
+        }
+        private async Task ShowUncompressedNv12()
+        {
+            //<SnippetUncompressedNv12>
+            _advancedCapture =
+                await _mediaCapture.PrepareAdvancedPhotoCaptureAsync(ImageEncodingProperties.CreateUncompressed(MediaPixelFormat.Nv12));
+            //</SnippetUncompressedNv12>
+        }
+
+        //<SnippetSaveCapturedFrameAsync>
+        private static async Task<StorageFile> SaveCapturedFrameAsync(CapturedFrame frame, string fileName, PhotoOrientation photoOrientation)
+        {
+            var folder = await KnownFolders.PicturesLibrary.CreateFolderAsync("MyApp", CreationCollisionOption.OpenIfExists);
+            var file = await folder.CreateFileAsync(fileName, CreationCollisionOption.GenerateUniqueName);
+
+            using (var inputStream = frame)
+            {
+                using (var fileStream = await file.OpenAsync(FileAccessMode.ReadWrite))
+                {
+                    var decoder = await BitmapDecoder.CreateAsync(inputStream);
+                    var encoder = await BitmapEncoder.CreateForTranscodingAsync(fileStream, decoder);
+                    var properties = new BitmapPropertySet {
+                        { "System.Photo.Orientation", new BitmapTypedValue(photoOrientation, PropertyType.UInt16) } };
+                    await encoder.BitmapProperties.SetPropertiesAsync(properties);
+                    await encoder.FlushAsync();
+                }
+            }
+            return file;
+        }
+        //</SnippetSaveCapturedFrameAsync>
+        #endregion
 
         #region HDR Video
         //<SnippetSetHdrVideoMode>

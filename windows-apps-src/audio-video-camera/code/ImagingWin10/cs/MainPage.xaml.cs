@@ -190,8 +190,16 @@ namespace ImagingWin10
 
         private async void SoftwareBitmapToWriteableBitmap(SoftwareBitmap softwareBitmap)
         {
+            softwareBitmap = SoftwareBitmap.Convert(softwareBitmap, BitmapPixelFormat.Bgra8, BitmapAlphaMode.Straight);
+
             // CHANGE THIS SNIPPET NAME - LEAVING NOW TO AVOID RISK OF BUILD BREAK
             //<SnippetSoftwareBitmapToWriteableBitmap>
+            if (softwareBitmap.BitmapPixelFormat != BitmapPixelFormat.Bgra8 ||
+                softwareBitmap.BitmapAlphaMode == BitmapAlphaMode.Straight)
+            {
+                softwareBitmap = SoftwareBitmap.Convert(softwareBitmap, BitmapPixelFormat.Bgra8, BitmapAlphaMode.Premultiplied);
+            }
+
             var source = new SoftwareBitmapSource();
             await source.SetBitmapAsync(softwareBitmap);
 

@@ -8,8 +8,20 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <!--<SnippetCaptureElement>-->
-        <CaptureElement Name="PreviewControl" Stretch="Uniform"/>
-        <!--</SnippetCaptureElement>-->
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal">
+            <Button Content="Button1" HorizontalAlignment="Stretch" Click="Button_Click"/>
+            <Button Content="Button2" HorizontalAlignment="Stretch" Click="Button2_Click"/>
+            <Button Content="Button3" HorizontalAlignment="Stretch" Click="Button3_Click"/>
+            </StackPanel>
+            <Canvas>
+                <!--<SnippetCaptureElement>-->
+                <CaptureElement Name="PreviewControl" Stretch="UniformToFill"/>
+                <!--</SnippetCaptureElement>-->
+                <Image x:Name="PauseImage" Stretch="UniformToFill" Canvas.ZIndex="10" Opacity=".25"/>
+            </Canvas>
+            <Button Content="CapturePhotoButton" HorizontalAlignment="Stretch" x:Name="CapturePhotoButton" Visibility="Collapsed"/>
+            <Button Content="CaptureVideoButton" HorizontalAlignment="Stretch" x:Name="CaptureVideoButton" Visibility="Collapsed"/>
+        </StackPanel>
     </Grid>
 </Page>
