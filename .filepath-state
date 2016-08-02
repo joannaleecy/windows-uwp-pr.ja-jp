@@ -2464,6 +2464,9 @@
   "6ecad1bbd3c08dcd7aa1d3b82739931f20fc4ee2": [
     "windows-apps-src\\files\\quickstart-listing-files-and-folders.md"
   ],
+  "def1c5c8d9d062a81731744e1e1465472225494a": [
+    "windows-apps-src\\files\\quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md"
+  ],
   "d5d79039304d9bea6f67030719923e76633aa9b7": [
     "windows-apps-src\\files\\quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md"
   ],
@@ -4461,6 +4464,9 @@
   ],
   "ee58b39005032eb689c4340103a6819f9f903b67": [
     "windows-apps-src\\launch-resume\\images\\windowsmapsappdirections.png"
+  ],
+  "a20ee98e4287d26875792c740c6f8f68b29c131a": [
+    "windows-apps-src\\launch-resume\\index.md"
   ],
   "98d1ff852915b23e4960703b1f3b3e3eb0b5936b": [
     "windows-apps-src\\launch-resume\\index.md"
@@ -8710,8 +8716,14 @@
   "4c50c8ded127b2261df901d9da3210ff397b00ca": [
     "windows-apps-src\\input-and-devices\\ink-toolbar.md"
   ],
+  "3090cee0bdfbfb4a0320cce0279e2328e33866eb": [
+    "windows-apps-src\\launch-resume\\communicate-with-a-remote-app-service.md"
+  ],
   "1c5e4362000c29aa32fb503579ec53371f439eca": [
     "windows-apps-src\\launch-resume\\communicate-with-a-remote-app-service.md"
+  ],
+  "7fe473661ce2818acd903bd416b1ad080596ef7f": [
+    "windows-apps-src\\launch-resume\\connected-apps-and-devices.md"
   ],
   "8eda5cf6914f3da0e4c192ae2f77fc0bd2f8eb3d": [
     "windows-apps-src\\launch-resume\\connected-apps-and-devices.md"
@@ -8725,11 +8737,17 @@
   "7fe13d754d84ccf22f27a6b0f5b2859b31cefe4a": [
     "windows-apps-src\\launch-resume\\create-and-register-a-singleprocess-background-task.md"
   ],
+  "d4c2f02a6b753d5d9b920cb65f68b8586b9e42aa": [
+    "windows-apps-src\\launch-resume\\discover-connected-devices.md"
+  ],
   "1cf0e23be3e739770363f620084808556506e21e": [
     "windows-apps-src\\launch-resume\\discover-connected-devices.md"
   ],
   "9ccf2118d0dba13cb6881ba1e241057e63c0d65b": [
     "windows-apps-src\\launch-resume\\images\\updated-lifecycle.png"
+  ],
+  "713028609c9bd742e6768dfc569efbbd2c3bd5d1": [
+    "windows-apps-src\\launch-resume\\launch-a-remote-app.md"
   ],
   "de2970ddd43058b732fe88ad714d999073d768ac": [
     "windows-apps-src\\launch-resume\\launch-a-remote-app.md"
