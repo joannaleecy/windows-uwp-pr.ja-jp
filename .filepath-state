@@ -257,6 +257,9 @@
   "7e8df66a1fc4c95cb8b0b4be9eded8ef58b6803a": [
     "windows-apps-src\\audio-video-camera\\audio-graphs.md"
   ],
+  "1eb4f0333e0847281b84cfb8f750148d7f7008c4": [
+    "windows-apps-src\\audio-video-camera\\background-audio.md"
+  ],
   "3c01eb0861fb051c3725c4789ada2529d7e142eb": [
     "windows-apps-src\\audio-video-camera\\background-audio.md"
   ],
@@ -2422,9 +2425,6 @@
   "9a5d025932240178a724c75df457cf6e2e3dead6": [
     "windows-apps-src\\files\\images\\phone-media-locations.png"
   ],
-  "c380c2394ff9d39c56af5f382a131a8460a4a136": [
-    "windows-apps-src\\files\\images\\phone-media-queries.png"
-  ],
   "6d4b6e3ac9146763af8ef8e02271aafa2047e50c": [
     "windows-apps-src\\files\\images\\picker-multifile-600px.png"
   ],
@@ -2463,6 +2463,9 @@
   ],
   "6ecad1bbd3c08dcd7aa1d3b82739931f20fc4ee2": [
     "windows-apps-src\\files\\quickstart-listing-files-and-folders.md"
+  ],
+  "d5d79039304d9bea6f67030719923e76633aa9b7": [
+    "windows-apps-src\\files\\quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md"
   ],
   "878e96910a39ca8f4ea26312436da7eca0e56eee": [
     "windows-apps-src\\files\\quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md"
@@ -8380,6 +8383,9 @@
   "2f55941de8b163a4c457fc292e968dc638fffde0": [
     "windows-apps-src\\audio-video-camera\\legacy-background-media-playback.md"
   ],
+  "f8b5bf92bbd335efa0a6dbf6e4b9ae525466e396": [
+    "windows-apps-src\\audio-video-camera\\media-playback.md"
+  ],
   "250478295dc20385cb8c54f30e54a3a8477aebec": [
     "windows-apps-src\\audio-video-camera\\media-playback.md"
   ],
@@ -8730,6 +8736,9 @@
   ],
   "80e89e24236903ab90f7c4fe326782a0a7e5272f": [
     "windows-apps-src\\launch-resume\\reduce-memory-usage.md"
+  ],
+  "80a890b126be4a3aded15790ca913c6f98cfdf2e": [
+    "windows-apps-src\\launch-resume\\web-to-app-linking.md"
   ],
   "6ab483125cf04e0fec48ff7fecf104baf6f1564f": [
     "windows-apps-src\\launch-resume\\web-to-app-linking.md"
