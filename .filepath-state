@@ -4278,6 +4278,9 @@
   "71c5994e1a308993aef6603ba77ab5e695bde293": [
     "windows-apps-src\\input-and-devices\\multiple-input-design-guidelines.md"
   ],
+  "f6c086b4fadd2fa6a8c90a0b3ec304b9b1e3e03b": [
+    "windows-apps-src\\input-and-devices\\pen-and-stylus-interactions.md"
+  ],
   "7f932edf4f7b50c7d5820d405393e8257c65112d": [
     "windows-apps-src\\input-and-devices\\pen-and-stylus-interactions.md"
   ],
@@ -7246,6 +7249,9 @@
   "b676110274bacc8aeacb2527099534cf0e26fa6b": [
     "windows-apps-src\\xaml-platform\\attached-properties-overview.md"
   ],
+  "95b48b55f11c4de0b4a51106b6cf5439bfa784b9": [
+    "windows-apps-src\\xaml-platform\\binding-markup-extension.md"
+  ],
   "9bff8360ad8c07bb60f7ef2e290bc4fb7e0e7ebf": [
     "windows-apps-src\\xaml-platform\\binding-markup-extension.md"
   ],
@@ -7365,6 +7371,9 @@
   ],
   "8e7819b02d7a22a16cf16091d08bef0aabc8d36e": [
     "windows-apps-src\\xaml-platform\\xaml-syntax-guide.md"
+  ],
+  "7380386a77338c1fce7a7184b558a06605ffdf33": [
+    "windows-apps-src\\xaml-platform\\x-bind-markup-extension.md"
   ],
   "12df5605e0c2cde0269657aed1c2021832998ca0": [
     "windows-apps-src\\xaml-platform\\x-bind-markup-extension.md"
@@ -12003,6 +12012,9 @@
   ],
   "089e8cf29db3582697e8ee75a53fc4bb2316a491": [
     "windows-apps-src\\style\\images\\segoe-mdl\\ef20.png"
+  ],
+  "92b8021ef5d0f19b9ecf96f6f86e0be924e8a7b6": [
+    "windows-apps-src\\whats-new\\windows-10-version-1607.md"
   ],
   "f70b74a9924eeafeb70bb66b0260efe79e16f213": [
     "windows-apps-src\\whats-new\\windows-10-version-1607.md"
