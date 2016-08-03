@@ -281,7 +281,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [accessible-text-requirements.4720051c601dc4cbe4b174b10579635db48aee4d.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/accessible-text-requirements.4720051c601dc4cbe4b174b10579635db48aee4d.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -296,7 +296,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [basic-accessibility-information.f636281d18fc9f8dabd7cc4751d321e1bcc515c3.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/basic-accessibility-information.f636281d18fc9f8dabd7cc4751d321e1bcc515c3.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -311,7 +311,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [custom-automation-peers.c1505cf3498003a346b4fc2babcd3293dd99e456.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/custom-automation-peers.c1505cf3498003a346b4fc2babcd3293dd99e456.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -326,7 +326,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [d87e65f313dea22c569ccbb869371aff8f66cd1b.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/d87e65f313dea22c569ccbb869371aff8f66cd1b.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\accessibility\accessible-text-requirements.md
 * Archive File: 
@@ -339,7 +339,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [72c1e10def0df5cf5cd99106f9a1d03636de7033.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/72c1e10def0df5cf5cd99106f9a1d03636de7033.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\accessibility\accessible-text-requirements.md
 * Archive File: 
@@ -352,7 +352,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [cc14f23c50e6915c83ee2ce4f80decdd7b42fa8b.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/cc14f23c50e6915c83ee2ce4f80decdd7b42fa8b.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\accessibility\accessible-text-requirements.md
 * Archive File: 
@@ -365,7 +365,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [keyboard-accessibility.6d8cdb025afd6e0fa1cf6c4ac022318e13c4e1f8.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/keyboard-accessibility.6d8cdb025afd6e0fa1cf6c4ac022318e13c4e1f8.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -380,7 +380,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [store-and-retrieve-app-data.5da8a763047d281092870b7268f4d599223c086e.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/store-and-retrieve-app-data.5da8a763047d281092870b7268f4d599223c086e.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -395,7 +395,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [audio-graphs.1c22caea26c2814f38de39f27007b9ce0e5bf073.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/audio-graphs.1c22caea26c2814f38de39f27007b9ce0e5bf073.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -410,7 +410,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [capture-photos-and-video-with-mediacapture.d8e382ecfb63a19bedd8f76740ef7f04d2b0173e.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/capture-photos-and-video-with-mediacapture.d8e382ecfb63a19bedd8f76740ef7f04d2b0173e.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -425,7 +425,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [high-dynamic-range-hdr-photo-capture.d9915a949483b2b16ea0f80edb4661ca32cb5e81.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/high-dynamic-range-hdr-photo-capture.d9915a949483b2b16ea0f80edb4661ca32cb5e81.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -440,7 +440,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [image-metadata.36996dce323e596780c32fc5306c41f69aa51cb4.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/image-metadata.36996dce323e596780c32fc5306c41f69aa51cb4.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -455,7 +455,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [media-compositions-and-editing.634d3a683419176c6b6873fdbf7db29031c50d15.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/media-compositions-and-editing.634d3a683419176c6b6873fdbf7db29031c50d15.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -470,7 +470,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [midi.ea90da0ed7be0e0a24e515a916b12e74f5adce06.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/midi.ea90da0ed7be0e0a24e515a916b12e74f5adce06.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -485,7 +485,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [process-media-files-in-the-background.451791f5164916b3ac3f06ad2388c61096194c65.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/process-media-files-in-the-background.451791f5164916b3ac3f06ad2388c61096194c65.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -500,7 +500,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [scene-analysis-for-media-capture.b77d4197a99dc78d72743286497f74e09460d1aa.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/scene-analysis-for-media-capture.b77d4197a99dc78d72743286497f74e09460d1aa.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -515,7 +515,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [simple-camera-preview-access.d4463226833217e13f4feeb4eae3b9442bcb8846.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/simple-camera-preview-access.d4463226833217e13f4feeb4eae3b9442bcb8846.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -530,7 +530,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [system-media-transport-controls.da184c9818af948688567799d8d0601b9f9edd94.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/system-media-transport-controls.da184c9818af948688567799d8d0601b9f9edd94.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -545,7 +545,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [app-bars.5a175043205bf3552c68985c9d352d0ce06ae166.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/app-bars.5a175043205bf3552c68985c9d352d0ce06ae166.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -560,7 +560,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\maps-and-location\images\1000metererrorradius.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/maps-and-location/images/1000metererrorradius.png)
 * Handoff File: [ab42a89984a2caff8f065cfb81b5d3c819aefa9f.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/ab42a89984a2caff8f065cfb81b5d3c819aefa9f.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\maps-and-location\guidelines-and-checklist-for-detecting-location.md
 * Archive File: 
@@ -573,7 +573,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\maps-and-location\images\100metererrorradius.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/maps-and-location/images/100metererrorradius.png)
 * Handoff File: [ec34e66f7ba40573ab2500bb1dbb9059fd9ad59f.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/ec34e66f7ba40573ab2500bb1dbb9059fd9ad59f.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\maps-and-location\guidelines-and-checklist-for-detecting-location.md
 * Archive File: 
@@ -586,7 +586,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\maps-and-location\images\10metererrorradius.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/maps-and-location/images/10metererrorradius.png)
 * Handoff File: [707f5fe1b594055da518870a0e688d51a164e1ca.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/707f5fe1b594055da518870a0e688d51a164e1ca.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\maps-and-location\guidelines-and-checklist-for-detecting-location.md
 * Archive File: 
@@ -599,7 +599,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\controls-and-patterns\images\app-bar-button-label-wrap.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/controls-and-patterns/images/app-bar-button-label-wrap.png)
 * Handoff File: [903431f01a3590ef3eae05b581663e4283eb25f2.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/903431f01a3590ef3eae05b581663e4283eb25f2.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\controls-and-patterns\app-bars.md
 * Archive File: 
@@ -612,7 +612,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\controls-and-patterns\images\AppbarGuidelines_Flyouts.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/controls-and-patterns/images/AppbarGuidelines_Flyouts.png)
 * Handoff File: [f4f12373021461c3c03a28f7802c31a50f5390d8.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/f4f12373021461c3c03a28f7802c31a50f5390d8.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\controls-and-patterns\app-bars.md
 * Archive File: 
@@ -625,7 +625,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\controls-and-patterns\images\AppbarGuidelines_Illustration.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/controls-and-patterns/images/AppbarGuidelines_Illustration.png)
 * Handoff File: [8f1fc7c00968cf850970311af7e0cc6ab42e010a.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/8f1fc7c00968cf850970311af7e0cc6ab42e010a.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\controls-and-patterns\app-bars.md
 * Archive File: 
@@ -638,7 +638,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\controls-and-patterns\images\AppbarGuidelines_Placement1.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/controls-and-patterns/images/AppbarGuidelines_Placement1.png)
 * Handoff File: [3690692e5d62f2b62c6a92c9c517e8c6017a43ba.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/3690692e5d62f2b62c6a92c9c517e8c6017a43ba.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\controls-and-patterns\app-bars.md
 * Archive File: 
@@ -651,7 +651,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\controls-and-patterns\images\AppbarGuidelines_Placement2.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/controls-and-patterns/images/AppbarGuidelines_Placement2.png)
 * Handoff File: [ffcdb32286102325db363a8c3ea3009c6e701d14.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/ffcdb32286102325db363a8c3ea3009c6e701d14.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\controls-and-patterns\app-bars.md
 * Archive File: 
@@ -664,7 +664,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\controls-and-patterns\images\app-bar-labels-on-right.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/bb8e3c217182fd3ae9fd7c331e3722f1189b5569/windows-apps-src/controls-and-patterns/images/app-bar-labels-on-right.png)
 * Handoff File: [3920080c7d84ed1543faab213181443e1f350924.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/3920080c7d84ed1543faab213181443e1f350924.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\controls-and-patterns\app-bars.md
 * Archive File: 
@@ -677,7 +677,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\controls-and-patterns\images\app-bar-toggle-button-two-modes.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/controls-and-patterns/images/app-bar-toggle-button-two-modes.png)
 * Handoff File: [8989e0d0afdc36fffe85a1c3bf304b9d6b8315d1.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/8989e0d0afdc36fffe85a1c3bf304b9d6b8315d1.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\controls-and-patterns\app-bars.md
 * Archive File: 
@@ -690,7 +690,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\controls-and-patterns\images\commandbar_anatomy_open.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/controls-and-patterns/images/commandbar_anatomy_open.png)
 * Handoff File: [278d607306ef63ffb87e91b5c7b25431ff0b0e11.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/278d607306ef63ffb87e91b5c7b25431ff0b0e11.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\controls-and-patterns\app-bars.md
 * Archive File: 
@@ -703,7 +703,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\controls-and-patterns\images\command-bar-compact.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/controls-and-patterns/images/command-bar-compact.png)
 * Handoff File: [69faddbfd3e0355059b7fc6c5a777c89c91efb73.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/69faddbfd3e0355059b7fc6c5a777c89c91efb73.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\controls-and-patterns\app-bars.md, windows-apps-src\controls-and-patterns\controls-by-function.md
 * Archive File: 
@@ -716,7 +716,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\controls-and-patterns\images\command-bar-minimal.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/controls-and-patterns/images/command-bar-minimal.png)
 * Handoff File: [2e7c58903a195f88104a6963080ed38883966e39.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/2e7c58903a195f88104a6963080ed38883966e39.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\controls-and-patterns\app-bars.md
 * Archive File: 
@@ -729,7 +729,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\controls-and-patterns\images\control-examples\command-bar-calendar-phone.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/controls-and-patterns/images/control-examples/command-bar-calendar-phone.png)
 * Handoff File: [8f872a2a4c66846022dd16171463a0375b58ad9f.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/8f872a2a4c66846022dd16171463a0375b58ad9f.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\controls-and-patterns\app-bars.md
 * Archive File: 
@@ -742,7 +742,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\controls-and-patterns\images\control-examples\command-bar-photos.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/controls-and-patterns/images/control-examples/command-bar-photos.png)
 * Handoff File: [3afc5890653e57db71a982dc84922b14a33c9021.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/3afc5890653e57db71a982dc84922b14a33c9021.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\controls-and-patterns\app-bars.md
 * Archive File: 
@@ -755,7 +755,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\controls-and-patterns\images\controls_appbar_icons.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/controls-and-patterns/images/controls_appbar_icons.png)
 * Handoff File: [880d1d71997a2a07338624cad4a3a26cc6fb07ee.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/880d1d71997a2a07338624cad4a3a26cc6fb07ee.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\controls-and-patterns\app-bars.md
 * Archive File: 
@@ -768,7 +768,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\input-patterns\touch-keyboard-pan1.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/input-patterns/touch-keyboard-pan1.png)
 * Handoff File: [e860cd0f6fff5a68dc5c548d3102efbd972c6c4c.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/e860cd0f6fff5a68dc5c548d3102efbd972c6c4c.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\keyboard-interactions.md, windows-apps-src\input-and-devices\respond-to-the-presence-of-the-touch-keyboard.md
 * Archive File: 
@@ -781,7 +781,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\input-patterns\touch-keyboard-pan2.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/input-patterns/touch-keyboard-pan2.png)
 * Handoff File: [f65d01db3b75c229c8c1815637539be89eb079bc.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/f65d01db3b75c229c8c1815637539be89eb079bc.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\keyboard-interactions.md, windows-apps-src\input-and-devices\respond-to-the-presence-of-the-touch-keyboard.md
 * Archive File: 
@@ -794,7 +794,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\launch-resume\images\regularsplashscreen.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/launch-resume/images/regularsplashscreen.png)
 * Handoff File: [b38f7ce08cb2a9e720bf5f334da60dad1de184e4.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/b38f7ce08cb2a9e720bf5f334da60dad1de184e4.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\launch-resume\index.md
 * Archive File: 
@@ -807,7 +807,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [resourcedictionary-and-xaml-resource-references.59d7cf05b0e0cb70227a7c3bc4367426566e6df6.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/resourcedictionary-and-xaml-resource-references.59d7cf05b0e0cb70227a7c3bc4367426566e6df6.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -822,7 +822,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [tiles-and-notifications-periodic-notification-overview.e8bbdadd9a0b3f3db4e274f204d4d877763138ab.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/tiles-and-notifications-periodic-notification-overview.e8bbdadd9a0b3f3db4e274f204d4d877763138ab.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -837,7 +837,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [web-view.fe722393fe097ca27e81b2dfcc9f30a11736e713.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/web-view.fe722393fe097ca27e81b2dfcc9f30a11736e713.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -852,7 +852,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\debug-test-perf\images\solidvenn.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/debug-test-perf/images/solidvenn.png)
 * Handoff File: [b8cb5db84b4f8675c88c6f2a68299770f9f2895b.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/b8cb5db84b4f8675c88c6f2a68299770f9f2895b.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\debug-test-perf\optimize-xaml-loading.md
 * Archive File: 
@@ -865,7 +865,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\debug-test-perf\images\translucentvenn.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/debug-test-perf/images/translucentvenn.png)
 * Handoff File: [294384ee98e324679fafb2b71b289a893394c8b9.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/294384ee98e324679fafb2b71b289a893394c8b9.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\debug-test-perf\optimize-xaml-loading.md
 * Archive File: 
@@ -878,7 +878,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [listview-and-gridview-data-optimization.930d2dd4f169293f1f100ae2b8215463bd0ec15f.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/listview-and-gridview-data-optimization.930d2dd4f169293f1f100ae2b8215463bd0ec15f.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -893,7 +893,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [optimize-xaml-loading.6d1b39e4f5619179bbcb85c4daf8dfdf616efdf3.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/optimize-xaml-loading.6d1b39e4f5619179bbcb85c4daf8dfdf616efdf3.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -908,7 +908,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [enumerate-devices.9c4c7cefcb78d1f10e70f203d0303dc95dc11158.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/enumerate-devices.9c4c7cefcb78d1f10e70f203d0303dc95dc11158.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -923,7 +923,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\security\images\secure-ssl-manifest.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/security/images/secure-ssl-manifest.png)
 * Handoff File: [a69930f5a11a0204f3c4b5ffe7ad63fe4a54a7cb.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/a69930f5a11a0204f3c4b5ffe7ad63fe4a54a7cb.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\security\intro-to-secure-windows-app-development.md
 * Archive File: 
@@ -936,7 +936,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\files\images\app-to-app-diagram-600px.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/files/images/app-to-app-diagram-600px.png)
 * Handoff File: [1223021b5904a53a7ae4f06400037d597608eeea.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/1223021b5904a53a7ae4f06400037d597608eeea.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\files\quickstart-using-file-and-folder-pickers.md
 * Archive File: 
@@ -949,7 +949,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\files\images\picker-multifile-600px.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/files/images/picker-multifile-600px.png)
 * Handoff File: [6d4b6e3ac9146763af8ef8e02271aafa2047e50c.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/6d4b6e3ac9146763af8ef8e02271aafa2047e50c.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\files\quickstart-using-file-and-folder-pickers.md
 * Archive File: 
@@ -962,7 +962,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [quickstart-reading-and-writing-files.8226c9ae94f2d3f8af610f97340af97397b7b584.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/quickstart-reading-and-writing-files.8226c9ae94f2d3f8af610f97340af97397b7b584.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -977,7 +977,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [quickstart-using-file-and-folder-pickers.c6c934bf5fac51d6383c450ecec9eb5a9ec5b56e.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/quickstart-using-file-and-folder-pickers.c6c934bf5fac51d6383c450ecec9eb5a9ec5b56e.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -992,7 +992,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [about-the-metro-style-user-interface-and-directx.5b30ca19b12a3bbca7c554d144e5876cac2c1153.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/about-the-metro-style-user-interface-and-directx.5b30ca19b12a3bbca7c554d144e5876cac2c1153.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1007,7 +1007,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [applying-textures-to-primitives.e4056528eba3f2ff8ea808c4d34cc3d58a402573.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/applying-textures-to-primitives.e4056528eba3f2ff8ea808c4d34cc3d58a402573.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1022,7 +1022,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [directx-and-xaml-interop.b0eb8efed053e1dcc3f3ee7effb8a1d6f30b455e.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/directx-and-xaml-interop.b0eb8efed053e1dcc3f3ee7effb8a1d6f30b455e.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1037,7 +1037,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [draw-to-the-screen.c48cce10e5f7315b0dbea951098a0f7b581710c4.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/draw-to-the-screen.c48cce10e5f7315b0dbea951098a0f7b581710c4.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1052,7 +1052,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [setting-up-directx-resources.612041e3f9e9f32666d536347035cb2b56d55e26.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/setting-up-directx-resources.612041e3f9e9f32666d536347035cb2b56d55e26.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1067,7 +1067,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [tutorial--adding-controls.ecbdb2a6622df2fd94551208545d8d9d986fd784.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/tutorial--adding-controls.ecbdb2a6622df2fd94551208545d8d9d986fd784.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1082,7 +1082,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [tutorial--adding-sound.a53ff11fabaa87d456108a38425f27b3a487df70.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/tutorial--adding-sound.a53ff11fabaa87d456108a38425f27b3a487df70.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1097,7 +1097,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [using-depth-and-effects-on-primitives.cdf17f58b81f29ec368300a2838059c57d82db03.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/using-depth-and-effects-on-primitives.cdf17f58b81f29ec368300a2838059c57d82db03.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1112,7 +1112,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [create-a-basic-windows-10-app-in-cpp.d466310b61c18b0f5f397440292f7327c0926725.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/create-a-basic-windows-10-app-in-cpp.d466310b61c18b0f5f397440292f7327c0926725.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1127,7 +1127,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [create-a-hello-world-app-js-universal.2d56a0012bf9cca72899334ef9aa7ec422ac9663.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/create-a-hello-world-app-js-universal.2d56a0012bf9cca72899334ef9aa7ec422ac9663.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1142,7 +1142,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\get-started\images\1894834-hig-device-primer-01-500.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/get-started/images/1894834-hig-device-primer-01-500.png)
 * Handoff File: [4f8012f1dc022c207aa7ff6729bc5c660712b582.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/4f8012f1dc022c207aa7ff6729bc5c660712b582.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\get-started\whats-a-uwp.md, windows-apps-src\get-started\universal-application-platform-guide.md, windows-apps-src\input-and-devices\device-primer.md, windows-apps-src\layout\design-and-ui-intro.md
 * Archive File: 
@@ -1155,7 +1155,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\get-started\images\adaptiveux-desktop.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/get-started/images/adaptiveux-desktop.png)
 * Handoff File: [2f3219548df9177f1512cad17c4d3588b900e935.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/2f3219548df9177f1512cad17c4d3588b900e935.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\get-started\universal-application-platform-guide.md
 * Archive File: 
@@ -1168,7 +1168,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\get-started\images\adaptiveux-phone.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/get-started/images/adaptiveux-phone.png)
 * Handoff File: [da42ce940c2dae25f4478541c5396bcd0d4e0159.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/da42ce940c2dae25f4478541c5396bcd0d4e0159.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\get-started\universal-application-platform-guide.md
 * Archive File: 
@@ -1181,7 +1181,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [e14a05b106d558f439355567046328d4abeb77a2.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/e14a05b106d558f439355567046328d4abeb77a2.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\get-started\universal-application-platform-guide.md
 * Archive File: 
@@ -1197,7 +1197,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\get-started\images\eventsbutton.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/get-started/images/eventsbutton.png)
 * Handoff File: [25264704ed1696688454ca35303338eb719e8e07.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/25264704ed1696688454ca35303338eb719e8e07.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\get-started\create-a-basic-windows-10-app-in-cpp.md, windows-apps-src\get-started\create-a-hello-world-app-xaml-universal.md
 * Archive File: 
@@ -1210,7 +1210,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [7d454561ba2ee740e60507bdff23b04034e17dae.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/7d454561ba2ee740e60507bdff23b04034e17dae.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\get-started\create-a-hello-world-app-js-universal.md
 * Archive File: 
@@ -1223,7 +1223,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [cfbebab4779647d7f1d21dc2dcfcfa0debf2be8d.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/cfbebab4779647d7f1d21dc2dcfcfa0debf2be8d.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\get-started\create-a-hello-world-app-js-universal.md
 * Archive File: 
@@ -1236,7 +1236,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [92ce4917228a76e66c938b0eeafd5312ec74a97b.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/92ce4917228a76e66c938b0eeafd5312ec74a97b.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\get-started\create-a-hello-world-app-js-universal.md
 * Archive File: 
@@ -1249,7 +1249,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [b9e05771e8b326c5ff77e09a486704dca06b54d8.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/b9e05771e8b326c5ff77e09a486704dca06b54d8.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\get-started\create-a-hello-world-app-js-universal.md
 * Archive File: 
@@ -1262,7 +1262,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [fcbc93ff210aba5a4f6a6575272efee9a37e1808.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/fcbc93ff210aba5a4f6a6575272efee9a37e1808.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\get-started\create-a-hello-world-app-js-universal.md
 * Archive File: 
@@ -1275,7 +1275,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\get-started\images\hw10-screen1-mob.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/get-started/images/hw10-screen1-mob.png)
 * Handoff File: [02071c86ccdf3d824540bbc817274b0a91b5a799.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/02071c86ccdf3d824540bbc817274b0a91b5a799.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\get-started\create-a-basic-windows-10-app-in-cpp.md
 * Archive File: 
@@ -1288,7 +1288,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\get-started\images\hw10-screen2-mob.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/get-started/images/hw10-screen2-mob.png)
 * Handoff File: [dd22a831e56b90a22ea20d2bfd3600f0ec70d491.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/dd22a831e56b90a22ea20d2bfd3600f0ec70d491.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\get-started\create-a-basic-windows-10-app-in-cpp.md
 * Archive File: 
@@ -1301,7 +1301,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\get-started\images\propertiesbutton.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/get-started/images/propertiesbutton.png)
 * Handoff File: [381c7c54508d15ebad22287f91b22fedb33e38a6.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/381c7c54508d15ebad22287f91b22fedb33e38a6.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\get-started\create-a-basic-windows-10-app-in-cpp.md
 * Archive File: 
@@ -1314,7 +1314,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\get-started\images\relativepanel-narrowview.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/bb8e3c217182fd3ae9fd7c331e3722f1189b5569/windows-apps-src/get-started/images/relativepanel-narrowview.png)
 * Handoff File: [aaae43cf6752fd7b6786eefb6aeba3b7a239ac0f.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/aaae43cf6752fd7b6786eefb6aeba3b7a239ac0f.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\get-started\universal-application-platform-guide.md
 * Archive File: 
@@ -1327,7 +1327,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\get-started\images\relativepanel-wideview.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/bb8e3c217182fd3ae9fd7c331e3722f1189b5569/windows-apps-src/get-started/images/relativepanel-wideview.png)
 * Handoff File: [c108bbe550780394f509d318cfe685658f6fecc4.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/c108bbe550780394f509d318cfe685658f6fecc4.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\get-started\universal-application-platform-guide.md
 * Archive File: 
@@ -1340,7 +1340,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\get-started\images\relativepane-standalone.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/get-started/images/relativepane-standalone.png)
 * Handoff File: [69b1c4466961119993339395d0a95fda9eee3067.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/69b1c4466961119993339395d0a95fda9eee3067.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\get-started\universal-application-platform-guide.md
 * Archive File: 
@@ -1353,7 +1353,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\get-started\images\startdebug-full.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/get-started/images/startdebug-full.png)
 * Handoff File: [7f0cb16b68bad8ae3f0383f94cfc8782846989da.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/7f0cb16b68bad8ae3f0383f94cfc8782846989da.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\get-started\create-a-basic-windows-10-app-in-cpp.md, windows-apps-src\get-started\create-a-hello-world-app-js-universal.md, windows-apps-src\get-started\create-a-hello-world-app-xaml-universal.md
 * Archive File: 
@@ -1366,7 +1366,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\get-started\images\startdebug-sm.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/get-started/images/startdebug-sm.png)
 * Handoff File: [ad6ba28013488a2b96091b66c3cde10ff970b252.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/ad6ba28013488a2b96091b66c3cde10ff970b252.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\get-started\create-a-basic-windows-10-app-in-cpp.md, windows-apps-src\get-started\create-a-hello-world-app-js-universal.md, windows-apps-src\get-started\create-a-hello-world-app-xaml-universal.md
 * Archive File: 
@@ -1379,7 +1379,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\get-started\images\stopdebug.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/get-started/images/stopdebug.png)
 * Handoff File: [8d8bdf4f5ac36a4a2dd9a2bc1113dcce5e2f76b6.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/8d8bdf4f5ac36a4a2dd9a2bc1113dcce5e2f76b6.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\get-started\create-a-hello-world-app-js-universal.md, windows-apps-src\get-started\create-a-hello-world-app-xaml-universal.md
 * Archive File: 
@@ -1392,7 +1392,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\get-started\images\uap-debug.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/get-started/images/uap-debug.png)
 * Handoff File: [746d7a8b8ef5e3c687d015f0d19a65d55b0eb1ce.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/746d7a8b8ef5e3c687d015f0d19a65d55b0eb1ce.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\get-started\create-a-hello-world-app-js-universal.md, windows-apps-src\get-started\create-a-hello-world-app-xaml-universal.md
 * Archive File: 
@@ -1405,7 +1405,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [8b0f197d2a4a9ef53b68b278816df934af0283d1.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/8b0f197d2a4a9ef53b68b278816df934af0283d1.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\get-started\universal-application-platform-guide.md
 * Archive File: 
@@ -1421,7 +1421,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\get-started\images\vs2015-device-preview-toolbar.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/get-started/images/vs2015-device-preview-toolbar.png)
 * Handoff File: [75575253e71fa34fcbc78e36632876714f778469.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/75575253e71fa34fcbc78e36632876714f778469.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\get-started\universal-application-platform-guide.md
 * Archive File: 
@@ -1434,7 +1434,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\get-started\images\vs2015-newuniversalproject-cpp.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/get-started/images/vs2015-newuniversalproject-cpp.png)
 * Handoff File: [8787d6e692a8f9a6a1460a41e08ac40e2166dc24.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/8787d6e692a8f9a6a1460a41e08ac40e2166dc24.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\get-started\create-a-basic-windows-10-app-in-cpp.md
 * Archive File: 
@@ -1447,7 +1447,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\get-started\images\vs2015-solutionexploreruniversal-0-cpp.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/get-started/images/vs2015-solutionexploreruniversal-0-cpp.png)
 * Handoff File: [7ffa635c4485e5697adbb5018009297820521f85.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/7ffa635c4485e5697adbb5018009297820521f85.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\get-started\create-a-basic-windows-10-app-in-cpp.md
 * Archive File: 
@@ -1460,7 +1460,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [a9cab92f705faf0677e5dec0dedb45a5aa59e14f.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/a9cab92f705faf0677e5dec0dedb45a5aa59e14f.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\get-started\create-a-hello-world-app-js-universal.md
 * Archive File: 
@@ -1473,7 +1473,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [7920f4f0ea31e50c7c7ca69054f969df43545319.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/7920f4f0ea31e50c7c7ca69054f969df43545319.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\get-started\create-a-hello-world-app-js-universal.md
 * Archive File: 
@@ -1486,7 +1486,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\get-started\images\xaml-hw-app2.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/get-started/images/xaml-hw-app2.png)
 * Handoff File: [ecff6f0e64a69e40fe59a7e9a91ef63355b0eab5.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/ecff6f0e64a69e40fe59a7e9a91ef63355b0eab5.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\get-started\create-a-basic-windows-10-app-in-cpp.md
 * Archive File: 
@@ -1499,7 +1499,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\get-started\images\xaml-hw-app3.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/get-started/images/xaml-hw-app3.png)
 * Handoff File: [248ebd29923aa7d4e308cd717670387a5ae73e76.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/248ebd29923aa7d4e308cd717670387a5ae73e76.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\get-started\create-a-basic-windows-10-app-in-cpp.md
 * Archive File: 
@@ -1512,7 +1512,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\get-started\images\xaml-hw-app4.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/get-started/images/xaml-hw-app4.png)
 * Handoff File: [7222f5ce1a9055c9e2f1c6baa8b9a29891617049.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/7222f5ce1a9055c9e2f1c6baa8b9a29891617049.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\get-started\create-a-basic-windows-10-app-in-cpp.md
 * Archive File: 
@@ -1525,7 +1525,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\get-started\images\xaml-hw-app5.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/get-started/images/xaml-hw-app5.png)
 * Handoff File: [8fb4e49fc4a1c7c191b0af03865c65800dd0e515.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/8fb4e49fc4a1c7c191b0af03865c65800dd0e515.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\get-started\create-a-basic-windows-10-app-in-cpp.md
 * Archive File: 
@@ -1538,7 +1538,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\get-started\images\xaml-hw-event.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/get-started/images/xaml-hw-event.png)
 * Handoff File: [58ac8cc81cb6c520445d0084536eca328af7f067.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/58ac8cc81cb6c520445d0084536eca328af7f067.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\get-started\create-a-basic-windows-10-app-in-cpp.md, windows-apps-src\get-started\create-a-hello-world-app-xaml-universal.md
 * Archive File: 
@@ -1551,7 +1551,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\get-started\images\xaml-hw-style-cpp.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/get-started/images/xaml-hw-style-cpp.png)
 * Handoff File: [555649b6b18aa009da69eee7e6980365b473054e.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/555649b6b18aa009da69eee7e6980365b473054e.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\get-started\create-a-basic-windows-10-app-in-cpp.md
 * Archive File: 
@@ -1564,7 +1564,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [universal-application-platform-guide.07a46d09a6199df7032e233bf3e2f8009a4fb173.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/universal-application-platform-guide.07a46d09a6199df7032e233bf3e2f8009a4fb173.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1579,7 +1579,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [use-patterns-to-format-dates-and-times.92c4045b4b0a65721301455eaa6a0dde5a42bd99.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/use-patterns-to-format-dates-and-times.92c4045b4b0a65721301455eaa6a0dde5a42bd99.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1594,7 +1594,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [3-d-perspective-effects.ad577c08ad36c377dfcc5d116e94ac1f9b0fc395.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/3-d-perspective-effects.ad577c08ad36c377dfcc5d116e94ac1f9b0fc395.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1609,7 +1609,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [composition-brushes.745658206c0e73b3f9e610729c06b50a01ddfce4.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/composition-brushes.745658206c0e73b3f9e610729c06b50a01ddfce4.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1624,7 +1624,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [composition-visual-tree.58907f5142b6555f34ee4eb51b3cda2683eaf1b8.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/composition-visual-tree.58907f5142b6555f34ee4eb51b3cda2683eaf1b8.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1639,7 +1639,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\graphics\images\3dcenterofrotationx0point9.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/graphics/images/3dcenterofrotationx0point9.png)
 * Handoff File: [ae478779a171a01eaccc8ee76373d33133ae7f09.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/ae478779a171a01eaccc8ee76373d33133ae7f09.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\graphics\3-d-perspective-effects.md
 * Archive File: 
@@ -1652,7 +1652,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\graphics\images\3dcenterofrotationy0point1.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/graphics/images/3dcenterofrotationy0point1.png)
 * Handoff File: [81eb689420c2528971333d92e085df54785f0d19.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/81eb689420c2528971333d92e085df54785f0d19.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\graphics\3-d-perspective-effects.md
 * Archive File: 
@@ -1665,7 +1665,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\graphics\images\3drotatexminus35.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/graphics/images/3drotatexminus35.png)
 * Handoff File: [445871f38ebc82071a0c874c83fb0924ed94d8ff.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/445871f38ebc82071a0c874c83fb0924ed94d8ff.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\graphics\3-d-perspective-effects.md
 * Archive File: 
@@ -1678,7 +1678,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\graphics\images\3drotateyminus35.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/graphics/images/3drotateyminus35.png)
 * Handoff File: [6844c49abf4f6b67edaee0dd28089313a4dc2994.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/6844c49abf4f6b67edaee0dd28089313a4dc2994.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\graphics\3-d-perspective-effects.md
 * Archive File: 
@@ -1691,7 +1691,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\graphics\images\3drotatezminus35.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/graphics/images/3drotatezminus35.png)
 * Handoff File: [a7a7b954c4566d3f34f0bbb5d323c7862a2cbd1e.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/a7a7b954c4566d3f34f0bbb5d323c7862a2cbd1e.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\graphics\3-d-perspective-effects.md
 * Archive File: 
@@ -1704,7 +1704,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\graphics\images\3dsimple.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/graphics/images/3dsimple.png)
 * Handoff File: [c936fc981f3c81f8043f7f60f6052db253d349bc.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/c936fc981f3c81f8043f7f60f6052db253d349bc.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\graphics\3-d-perspective-effects.md
 * Archive File: 
@@ -1717,7 +1717,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\graphics\images\3dstacking.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/graphics/images/3dstacking.png)
 * Handoff File: [e59b72810fbcf0acf0a2601d2cfdc656d61644eb.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/e59b72810fbcf0acf0a2601d2cfdc656d61644eb.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\graphics\3-d-perspective-effects.md
 * Archive File: 
@@ -1730,7 +1730,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\graphics\images\composition-compositioncolorbrush.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/graphics/images/composition-compositioncolorbrush.png)
 * Handoff File: [774157f52b1c10bcd73f220046fb6e228090c134.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/774157f52b1c10bcd73f220046fb6e228090c134.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\graphics\composition-brushes.md
 * Archive File: 
@@ -1743,7 +1743,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\graphics\images\composition-compositionsurfacebrush.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/graphics/images/composition-compositionsurfacebrush.png)
 * Handoff File: [26b4cb6834188153b9ab7a5569aca02e3f34bdd8.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/26b4cb6834188153b9ab7a5569aca02e3f34bdd8.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\graphics\composition-brushes.md
 * Archive File: 
@@ -1756,7 +1756,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\graphics\images\layers-win-ui-composition.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/graphics/images/layers-win-ui-composition.png)
 * Handoff File: [41ab8f5f5566e88d1a5a7d8cfa3e0fa2900ef328.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/41ab8f5f5566e88d1a5a7d8cfa3e0fa2900ef328.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\graphics\visual-layer.md
 * Archive File: 
@@ -1769,7 +1769,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\graphics\images\skewedstackpanel.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/graphics/images/skewedstackpanel.png)
 * Handoff File: [e4be63f701497f20a0ab6c46835a5625ef84dc48.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/e4be63f701497f20a0ab6c46835a5625ef84dc48.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\graphics\3-d-perspective-effects.md
 * Archive File: 
@@ -1782,7 +1782,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [key-frame-and-easing-function-animations.ee692c3bbe40d1610b1708fdf7d29cdf6aa81401.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/key-frame-and-easing-function-animations.ee692c3bbe40d1610b1708fdf7d29cdf6aa81401.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1797,7 +1797,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [storyboarded-animations.b976e28360d00330643214269632f748b2542c0b.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/storyboarded-animations.b976e28360d00330643214269632f748b2542c0b.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1812,7 +1812,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [transforms-overview.c67ed92e5a7de6cb07da53c96f53aa002e3bf481.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/transforms-overview.c67ed92e5a7de6cb07da53c96f53aa002e3bf481.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1827,7 +1827,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [visual-layer.a2f2c9e67ecfb717da6cd6d4151969c5de739247.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/visual-layer.a2f2c9e67ecfb717da6cd6d4151969c5de739247.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1842,7 +1842,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [custom-text-input.3bb138bf27299f6f6bb34a510fc49952e5e29c1f.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/custom-text-input.3bb138bf27299f6f6bb34a510fc49952e5e29c1f.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1857,7 +1857,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [define-custom-recognition-constraints.4e9c196a5339b6bdbde8a328756708fd0abf80ab.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/define-custom-recognition-constraints.4e9c196a5339b6bdbde8a328756708fd0abf80ab.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1872,7 +1872,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [enable-continuous-dictation.be0535fc00f8d4ae06ae902c0e15be805570d134.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/enable-continuous-dictation.be0535fc00f8d4ae06ae902c0e15be805570d134.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1887,7 +1887,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [gamepad-and-remote-interactions.a0bafcc8d65c35c7abb6ed4d40ae814e0eb6e949.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/gamepad-and-remote-interactions.a0bafcc8d65c35c7abb6ed4d40ae814e0eb6e949.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -1902,7 +1902,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\coretext\architecture.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/coretext/architecture.png)
 * Handoff File: [3c0abb61f8218f8ea3f8954f34344f50f981f64f.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/3c0abb61f8218f8ea3f8954f34344f50f981f64f.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\custom-text-input.md
 * Archive File: 
@@ -1915,7 +1915,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\coretext\stream-1.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/coretext/stream-1.png)
 * Handoff File: [8e31da60d4bc7c6162f6cd59894570ef008eaba6.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/8e31da60d4bc7c6162f6cd59894570ef008eaba6.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\custom-text-input.md
 * Archive File: 
@@ -1928,7 +1928,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\coretext\stream-2.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/coretext/stream-2.png)
 * Handoff File: [93c185e83444347765071120637dc89797db88b2.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/93c185e83444347765071120637dc89797db88b2.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\custom-text-input.md
 * Archive File: 
@@ -1941,7 +1941,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\coretext\stream-3.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/coretext/stream-3.png)
 * Handoff File: [2ef3b693c980fc4acb87f77fe1fb40e2b6882923.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/2ef3b693c980fc4acb87f77fe1fb40e2b6882923.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\custom-text-input.md
 * Archive File: 
@@ -1954,7 +1954,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\coretext\stream-4.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/coretext/stream-4.png)
 * Handoff File: [d73a81e72ba393aa34ce34fc81fdbe11aafc3a40.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/d73a81e72ba393aa34ce34fc81fdbe11aafc3a40.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\custom-text-input.md
 * Archive File: 
@@ -1967,7 +1967,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\coretext\stream-5.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/coretext/stream-5.png)
 * Handoff File: [28b5d1a80705e6ff7a3ac76e73e3780ce622371b.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/28b5d1a80705e6ff7a3ac76e73e3780ce622371b.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\custom-text-input.md
 * Archive File: 
@@ -1980,7 +1980,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\coretext\stream-6.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/coretext/stream-6.png)
 * Handoff File: [5b3dc193ac4bf71c08e009694a6b51cd7098119a.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/5b3dc193ac4bf71c08e009694a6b51cd7098119a.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\custom-text-input.md
 * Archive File: 
@@ -1993,7 +1993,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\coretext\stream-7.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/coretext/stream-7.png)
 * Handoff File: [54a56eda547c018c3391e05dbdeda4c033c579a1.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/54a56eda547c018c3391e05dbdeda4c033c579a1.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\custom-text-input.md
 * Archive File: 
@@ -2006,7 +2006,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\coretext\stream-8.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/coretext/stream-8.png)
 * Handoff File: [362395ba3a10d79c6f4db991f18a22c3b39ed32e.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/362395ba3a10d79c6f4db991f18a22c3b39ed32e.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\custom-text-input.md
 * Archive File: 
@@ -2019,7 +2019,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\get-started\images\1894834-hig-device-primer-01-500.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/get-started/images/1894834-hig-device-primer-01-500.png)
 * Handoff File: [4f8012f1dc022c207aa7ff6729bc5c660712b582.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/4f8012f1dc022c207aa7ff6729bc5c660712b582.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\get-started\whats-a-uwp.md, windows-apps-src\get-started\universal-application-platform-guide.md, windows-apps-src\input-and-devices\device-primer.md, windows-apps-src\layout\design-and-ui-intro.md
 * Archive File: 
@@ -2032,7 +2032,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\ink_basic_1_small.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/bb8e3c217182fd3ae9fd7c331e3722f1189b5569/windows-apps-src/input-and-devices/images/ink_basic_1_small.png)
 * Handoff File: [c48f2223245a47ac9182da40512a2bae97a870e0.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/c48f2223245a47ac9182da40512a2bae97a870e0.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\pen-and-stylus-interactions.md
 * Archive File: 
@@ -2045,7 +2045,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\ink_basic_2_small.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/bb8e3c217182fd3ae9fd7c331e3722f1189b5569/windows-apps-src/input-and-devices/images/ink_basic_2_small.png)
 * Handoff File: [c4e5ea0da2354a246e293d495b5e0d09bb30efa4.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/c4e5ea0da2354a246e293d495b5e0d09bb30efa4.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\pen-and-stylus-interactions.md
 * Archive File: 
@@ -2058,7 +2058,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\ink_basic_3_small.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/bb8e3c217182fd3ae9fd7c331e3722f1189b5569/windows-apps-src/input-and-devices/images/ink_basic_3_small.png)
 * Handoff File: [8a46ded5ec8448144e359a97729fb2b2d66707aa.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/8a46ded5ec8448144e359a97729fb2b2d66707aa.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\pen-and-stylus-interactions.md
 * Archive File: 
@@ -2071,7 +2071,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\ink-basic-custom-1-small.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/ink-basic-custom-1-small.png)
 * Handoff File: [5ac127bd13d65194050020d7d361232ccd3f5bf3.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/5ac127bd13d65194050020d7d361232ccd3f5bf3.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\pen-and-stylus-interactions.md
 * Archive File: 
@@ -2084,7 +2084,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\ink-basic-custom-2-small.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/ink-basic-custom-2-small.png)
 * Handoff File: [89e0992ab20055f0d2b637d0abdaba68792ff6aa.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/89e0992ab20055f0d2b637d0abdaba68792ff6aa.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\pen-and-stylus-interactions.md
 * Archive File: 
@@ -2097,7 +2097,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\ink-unprocessed-1-small.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/ink-unprocessed-1-small.png)
 * Handoff File: [c8004b6233a15401e85be15d2ebeea65e320fe9c.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/c8004b6233a15401e85be15d2ebeea65e320fe9c.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\pen-and-stylus-interactions.md
 * Archive File: 
@@ -2110,7 +2110,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\ink-unprocessed-2-small.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/ink-unprocessed-2-small.png)
 * Handoff File: [9af868d8fe59f7234b9c84649c1fac723dc164e0.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/9af868d8fe59f7234b9c84649c1fac723dc164e0.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\pen-and-stylus-interactions.md
 * Archive File: 
@@ -2123,7 +2123,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\ink-unprocessed-3-small.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/ink-unprocessed-3-small.png)
 * Handoff File: [56f614cf40e84451134e07e7a74db9eb0c6900e7.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/56f614cf40e84451134e07e7a74db9eb0c6900e7.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\pen-and-stylus-interactions.md
 * Archive File: 
@@ -2136,7 +2136,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\ink-unprocessed-4-small.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/ink-unprocessed-4-small.png)
 * Handoff File: [d1c8d9ed21703b214660e0b0b3fb35ada43cc822.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/d1c8d9ed21703b214660e0b0b3fb35ada43cc822.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\pen-and-stylus-interactions.md
 * Archive File: 
@@ -2149,7 +2149,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\ink_basic_1_small.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/bb8e3c217182fd3ae9fd7c331e3722f1189b5569/windows-apps-src/input-and-devices/images/ink_basic_1_small.png)
 * Handoff File: [c48f2223245a47ac9182da40512a2bae97a870e0.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/c48f2223245a47ac9182da40512a2bae97a870e0.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\pen-and-stylus-interactions.md
 * Archive File: 
@@ -2162,7 +2162,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\ink_basic_2_small.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/bb8e3c217182fd3ae9fd7c331e3722f1189b5569/windows-apps-src/input-and-devices/images/ink_basic_2_small.png)
 * Handoff File: [c4e5ea0da2354a246e293d495b5e0d09bb30efa4.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/c4e5ea0da2354a246e293d495b5e0d09bb30efa4.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\pen-and-stylus-interactions.md
 * Archive File: 
@@ -2175,7 +2175,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\ink_basic_3_small.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/bb8e3c217182fd3ae9fd7c331e3722f1189b5569/windows-apps-src/input-and-devices/images/ink_basic_3_small.png)
 * Handoff File: [8a46ded5ec8448144e359a97729fb2b2d66707aa.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/8a46ded5ec8448144e359a97729fb2b2d66707aa.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\pen-and-stylus-interactions.md
 * Archive File: 
@@ -2188,7 +2188,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\ink-basic-custom-1-small.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/ink-basic-custom-1-small.png)
 * Handoff File: [5ac127bd13d65194050020d7d361232ccd3f5bf3.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/5ac127bd13d65194050020d7d361232ccd3f5bf3.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\pen-and-stylus-interactions.md
 * Archive File: 
@@ -2201,7 +2201,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\ink-basic-custom-2-small.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/ink-basic-custom-2-small.png)
 * Handoff File: [89e0992ab20055f0d2b637d0abdaba68792ff6aa.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/89e0992ab20055f0d2b637d0abdaba68792ff6aa.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\pen-and-stylus-interactions.md
 * Archive File: 
@@ -2214,7 +2214,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\ink-unprocessed-1-small.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/ink-unprocessed-1-small.png)
 * Handoff File: [c8004b6233a15401e85be15d2ebeea65e320fe9c.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/c8004b6233a15401e85be15d2ebeea65e320fe9c.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\pen-and-stylus-interactions.md
 * Archive File: 
@@ -2227,7 +2227,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\ink-unprocessed-2-small.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/ink-unprocessed-2-small.png)
 * Handoff File: [9af868d8fe59f7234b9c84649c1fac723dc164e0.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/9af868d8fe59f7234b9c84649c1fac723dc164e0.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\pen-and-stylus-interactions.md
 * Archive File: 
@@ -2240,7 +2240,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\ink-unprocessed-3-small.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/ink-unprocessed-3-small.png)
 * Handoff File: [56f614cf40e84451134e07e7a74db9eb0c6900e7.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/56f614cf40e84451134e07e7a74db9eb0c6900e7.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\pen-and-stylus-interactions.md
 * Archive File: 
@@ -2253,7 +2253,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\ink-unprocessed-4-small.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/ink-unprocessed-4-small.png)
 * Handoff File: [d1c8d9ed21703b214660e0b0b3fb35ada43cc822.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/d1c8d9ed21703b214660e0b0b3fb35ada43cc822.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\pen-and-stylus-interactions.md
 * Archive File: 
@@ -2266,7 +2266,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\input-patterns\accesskeys-entered.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/input-patterns/accesskeys-entered.png)
 * Handoff File: [296b42815b1166b595b84977c99e6cbb3f2f0188.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/296b42815b1166b595b84977c99e6cbb3f2f0188.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\keyboard-interactions.md
 * Archive File: 
@@ -2279,7 +2279,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\input-patterns\accesskeys-show.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/input-patterns/accesskeys-show.png)
 * Handoff File: [949cde4ccb4d97743ba5764e5ca26ce7263ccb79.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/949cde4ccb4d97743ba5764e5ca26ce7263ccb79.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\keyboard-interactions.md
 * Archive File: 
@@ -2292,7 +2292,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\input-patterns\calculator.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/input-patterns/calculator.png)
 * Handoff File: [48a5a69878ef85e93255958c6b2fa919cc17c309.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/48a5a69878ef85e93255958c6b2fa919cc17c309.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\keyboard-interactions.md
 * Archive File: 
@@ -2305,7 +2305,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\input-patterns\input-keyboard-small.jpg](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/input-patterns/input-keyboard-small.jpg)
 * Handoff File: [a1dc3e5eed795b371193ee288ad778da0c4b265f.jpg](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/a1dc3e5eed795b371193ee288ad778da0c4b265f.jpg)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\keyboard-interactions.md
 * Archive File: 
@@ -2318,7 +2318,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\input-patterns\input-pen.jpg](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/input-patterns/input-pen.jpg)
 * Handoff File: [c3974933c753f48c5b9305bfa9235c71cb56c4b6.jpg](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/c3974933c753f48c5b9305bfa9235c71cb56c4b6.jpg)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\pen-and-stylus-interactions.md
 * Archive File: 
@@ -2331,7 +2331,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\input-patterns\notepad.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/input-patterns/notepad.png)
 * Handoff File: [94dbf523e0d4e1e31d02d5a09adf9bbccca963af.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/94dbf523e0d4e1e31d02d5a09adf9bbccca963af.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\keyboard-interactions.md
 * Archive File: 
@@ -2344,7 +2344,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\input-patterns\osk.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/input-patterns/osk.png)
 * Handoff File: [30ec3fe251055d5b4ff03191dd75b13c7ad7f96e.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/30ec3fe251055d5b4ff03191dd75b13c7ad7f96e.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\keyboard-interactions.md
 * Archive File: 
@@ -2357,7 +2357,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\touchkeyboard-expanded.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/touchkeyboard-expanded.png)
 * Handoff File: [b2a6cbb5c8249adaedc3264fcd300945e05e3dec.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/b2a6cbb5c8249adaedc3264fcd300945e05e3dec.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\keyboard-interactions.md
 * Archive File: 
@@ -2370,7 +2370,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\input-patterns\touch-keyboard-notificationcenter.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/input-patterns/touch-keyboard-notificationcenter.png)
 * Handoff File: [7ac5b2a6a3b274f75f043d0eaf9805c99801fe62.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/7ac5b2a6a3b274f75f043d0eaf9805c99801fe62.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\keyboard-interactions.md
 * Archive File: 
@@ -2383,7 +2383,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\touchkeyboard-numeric-thumb.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/touchkeyboard-numeric-thumb.png)
 * Handoff File: [aa2980c931b45ce2d2d9c4139ee7cd2f50fd7ba4.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/aa2980c931b45ce2d2d9c4139ee7cd2f50fd7ba4.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\keyboard-interactions.md
 * Archive File: 
@@ -2396,7 +2396,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\input-patterns\touch-keyboard-pan1.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/input-patterns/touch-keyboard-pan1.png)
 * Handoff File: [e860cd0f6fff5a68dc5c548d3102efbd972c6c4c.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/e860cd0f6fff5a68dc5c548d3102efbd972c6c4c.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\keyboard-interactions.md, windows-apps-src\input-and-devices\respond-to-the-presence-of-the-touch-keyboard.md
 * Archive File: 
@@ -2409,7 +2409,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\input-patterns\touch-keyboard-pan2.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/input-patterns/touch-keyboard-pan2.png)
 * Handoff File: [f65d01db3b75c229c8c1815637539be89eb079bc.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/f65d01db3b75c229c8c1815637539be89eb079bc.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\keyboard-interactions.md, windows-apps-src\input-and-devices\respond-to-the-presence-of-the-touch-keyboard.md
 * Archive File: 
@@ -2422,7 +2422,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\touchkeyboard-standard.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/touchkeyboard-standard.png)
 * Handoff File: [e29fc5e3450d52de86d650a107b315426bdd6f5e.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/e29fc5e3450d52de86d650a107b315426bdd6f5e.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\keyboard-interactions.md, windows-apps-src\input-and-devices\respond-to-the-presence-of-the-touch-keyboard.md
 * Archive File: 
@@ -2435,7 +2435,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\touchkeyboard-thumb.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/touchkeyboard-thumb.png)
 * Handoff File: [acf222ea5993c0b1b7fa5444362afb439647c779.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/acf222ea5993c0b1b7fa5444362afb439647c779.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\keyboard-interactions.md
 * Archive File: 
@@ -2448,7 +2448,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\input-scopes\kbdgokey.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/input-scopes/kbdgokey.png)
 * Handoff File: [bde5acdb3e19ed802226c8ce8061f484990124b0.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/bde5acdb3e19ed802226c8ce8061f484990124b0.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\use-input-scope-to-change-the-touch-keyboard.md
 * Archive File: 
@@ -2461,7 +2461,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\input-scopes\kbdpccurrencyamountandsymbol.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/input-scopes/kbdpccurrencyamountandsymbol.png)
 * Handoff File: [2d35d93141bac8c869ff5b76141116bdaa8060d9.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/2d35d93141bac8c869ff5b76141116bdaa8060d9.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\use-input-scope-to-change-the-touch-keyboard.md
 * Archive File: 
@@ -2474,7 +2474,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\input-scopes\kbdpcdefault.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/input-scopes/kbdpcdefault.png)
 * Handoff File: [39b6446062beb4f1de1fde49eab7ab961975a6b0.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/39b6446062beb4f1de1fde49eab7ab961975a6b0.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\use-input-scope-to-change-the-touch-keyboard.md
 * Archive File: 
@@ -2487,7 +2487,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\input-scopes\kbdpcemailsmtpaddress.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/input-scopes/kbdpcemailsmtpaddress.png)
 * Handoff File: [cb0e7b88072e5758772df52399a67a3e2ae7b658.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/cb0e7b88072e5758772df52399a67a3e2ae7b658.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\use-input-scope-to-change-the-touch-keyboard.md
 * Archive File: 
@@ -2500,7 +2500,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\input-scopes\kbdpcformula.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/input-scopes/kbdpcformula.png)
 * Handoff File: [022aa070bd828796b30760c49583bc80103da9d5.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/022aa070bd828796b30760c49583bc80103da9d5.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\use-input-scope-to-change-the-touch-keyboard.md
 * Archive File: 
@@ -2513,7 +2513,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\input-scopes\kbdpcsearch.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/input-scopes/kbdpcsearch.png)
 * Handoff File: [086b54998d0048af91cd38f39bdeb42ce6dab574.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/086b54998d0048af91cd38f39bdeb42ce6dab574.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\use-input-scope-to-change-the-touch-keyboard.md
 * Archive File: 
@@ -2526,7 +2526,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\input-scopes\kbdpcurl.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/input-scopes/kbdpcurl.png)
 * Handoff File: [223cd4f513d1366488eb581e9bddc4e3ee53a006.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/223cd4f513d1366488eb581e9bddc4e3ee53a006.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\use-input-scope-to-change-the-touch-keyboard.md
 * Archive File: 
@@ -2539,7 +2539,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\input-scopes\kbdwpcurrencyamountandsymbol.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/input-scopes/kbdwpcurrencyamountandsymbol.png)
 * Handoff File: [f297d70848d854080e587ae5d578b55ebd43cc55.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/f297d70848d854080e587ae5d578b55ebd43cc55.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\use-input-scope-to-change-the-touch-keyboard.md
 * Archive File: 
@@ -2552,7 +2552,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\input-scopes\kbdwpdefault.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/input-scopes/kbdwpdefault.png)
 * Handoff File: [a2cdb34c3270d8a358ccbefb9fc36d3520ed92cf.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/a2cdb34c3270d8a358ccbefb9fc36d3520ed92cf.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\use-input-scope-to-change-the-touch-keyboard.md
 * Archive File: 
@@ -2565,7 +2565,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\input-scopes\kbdwpemailsmtpaddress.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/input-scopes/kbdwpemailsmtpaddress.png)
 * Handoff File: [21758ca68a386eee109fb70d6090ad4ecee40720.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/21758ca68a386eee109fb70d6090ad4ecee40720.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\use-input-scope-to-change-the-touch-keyboard.md
 * Archive File: 
@@ -2578,7 +2578,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\input-scopes\kbdwpformula.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/input-scopes/kbdwpformula.png)
 * Handoff File: [6c0e780bff7b11970f88e8031ba22ba113231f67.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/6c0e780bff7b11970f88e8031ba22ba113231f67.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\use-input-scope-to-change-the-touch-keyboard.md
 * Archive File: 
@@ -2591,7 +2591,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\input-scopes\kbdwpnameorphonenumber.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/input-scopes/kbdwpnameorphonenumber.png)
 * Handoff File: [941b269e3cfceef04ed3549c71f8cd53de10bdaa.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/941b269e3cfceef04ed3549c71f8cd53de10bdaa.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\use-input-scope-to-change-the-touch-keyboard.md
 * Archive File: 
@@ -2604,7 +2604,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\input-scopes\kbdwpnumber.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/input-scopes/kbdwpnumber.png)
 * Handoff File: [f1a8dcf8f29156032d654a06be6cb12dfc6ed888.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/f1a8dcf8f29156032d654a06be6cb12dfc6ed888.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\use-input-scope-to-change-the-touch-keyboard.md
 * Archive File: 
@@ -2617,7 +2617,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\input-scopes\kbdwpsearch.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/input-scopes/kbdwpsearch.png)
 * Handoff File: [1ef0be74f4cfb8f900fed4fcfdc36107fbbbe11b.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/1ef0be74f4cfb8f900fed4fcfdc36107fbbbe11b.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\use-input-scope-to-change-the-touch-keyboard.md
 * Archive File: 
@@ -2630,7 +2630,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\input-scopes\kbdwptelephonenumber.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/input-scopes/kbdwptelephonenumber.png)
 * Handoff File: [13da5f3fc11aa3a716b232622257ee40c372e740.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/13da5f3fc11aa3a716b232622257ee40c372e740.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\use-input-scope-to-change-the-touch-keyboard.md
 * Archive File: 
@@ -2643,7 +2643,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\input-scopes\kbdwpurl.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/input-scopes/kbdwpurl.png)
 * Handoff File: [4608c2e707481824d2dcdfa22cf97379043e8a37.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/4608c2e707481824d2dcdfa22cf97379043e8a37.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\use-input-scope-to-change-the-touch-keyboard.md
 * Archive File: 
@@ -2656,7 +2656,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\input-patterns\osk.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/input-patterns/osk.png)
 * Handoff File: [30ec3fe251055d5b4ff03191dd75b13c7ad7f96e.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/30ec3fe251055d5b4ff03191dd75b13c7ad7f96e.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\keyboard-interactions.md
 * Archive File: 
@@ -2669,7 +2669,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\touchkeyboard-expanded.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/touchkeyboard-expanded.png)
 * Handoff File: [b2a6cbb5c8249adaedc3264fcd300945e05e3dec.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/b2a6cbb5c8249adaedc3264fcd300945e05e3dec.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\keyboard-interactions.md
 * Archive File: 
@@ -2682,7 +2682,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\input-patterns\touch-keyboard-notificationcenter.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/input-patterns/touch-keyboard-notificationcenter.png)
 * Handoff File: [7ac5b2a6a3b274f75f043d0eaf9805c99801fe62.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/7ac5b2a6a3b274f75f043d0eaf9805c99801fe62.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\keyboard-interactions.md
 * Archive File: 
@@ -2695,7 +2695,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\touchkeyboard-numeric-thumb.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/touchkeyboard-numeric-thumb.png)
 * Handoff File: [aa2980c931b45ce2d2d9c4139ee7cd2f50fd7ba4.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/aa2980c931b45ce2d2d9c4139ee7cd2f50fd7ba4.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\keyboard-interactions.md
 * Archive File: 
@@ -2708,7 +2708,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\input-patterns\touch-keyboard-pan1.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/input-patterns/touch-keyboard-pan1.png)
 * Handoff File: [e860cd0f6fff5a68dc5c548d3102efbd972c6c4c.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/e860cd0f6fff5a68dc5c548d3102efbd972c6c4c.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\keyboard-interactions.md, windows-apps-src\input-and-devices\respond-to-the-presence-of-the-touch-keyboard.md
 * Archive File: 
@@ -2721,7 +2721,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\input-patterns\touch-keyboard-pan2.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/input-patterns/touch-keyboard-pan2.png)
 * Handoff File: [f65d01db3b75c229c8c1815637539be89eb079bc.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/f65d01db3b75c229c8c1815637539be89eb079bc.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\keyboard-interactions.md, windows-apps-src\input-and-devices\respond-to-the-presence-of-the-touch-keyboard.md
 * Archive File: 
@@ -2734,7 +2734,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\touchkeyboard-standard.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/touchkeyboard-standard.png)
 * Handoff File: [e29fc5e3450d52de86d650a107b315426bdd6f5e.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/e29fc5e3450d52de86d650a107b315426bdd6f5e.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\keyboard-interactions.md, windows-apps-src\input-and-devices\respond-to-the-presence-of-the-touch-keyboard.md
 * Archive File: 
@@ -2747,7 +2747,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\touchkeyboard-thumb.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/touchkeyboard-thumb.png)
 * Handoff File: [acf222ea5993c0b1b7fa5444362afb439647c779.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/acf222ea5993c0b1b7fa5444362afb439647c779.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\keyboard-interactions.md
 * Archive File: 
@@ -2760,7 +2760,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [keyboard-interactions.b676c957b4c1fd3c826e6cd06eebac3cbb149b75.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/keyboard-interactions.b676c957b4c1fd3c826e6cd06eebac3cbb149b75.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2775,7 +2775,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [launch-a-foreground-app-with-voice-commands-in-cortana.8b710fbff003c488dd36309f38bfc52410f7a6f9.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/launch-a-foreground-app-with-voice-commands-in-cortana.8b710fbff003c488dd36309f38bfc52410f7a6f9.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2790,7 +2790,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [pen-and-stylus-interactions.945e27470c6cb2f2ab789832deb91ac592d1679f.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/pen-and-stylus-interactions.945e27470c6cb2f2ab789832deb91ac592d1679f.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2805,7 +2805,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [specify-the-speech-recognizer-language.0a9c745a32be9c16409a34b90aa8769b45d9a431.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/specify-the-speech-recognizer-language.0a9c745a32be9c16409a34b90aa8769b45d9a431.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2820,7 +2820,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [touch-interactions.886871c7c5187ba2b99ecb7d630ddbd5af2ac549.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/touch-interactions.886871c7c5187ba2b99ecb7d630ddbd5af2ac549.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2835,7 +2835,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [use-input-scope-to-change-the-touch-keyboard.2c1979e3224aa6536164678fc62f388552fd645b.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/use-input-scope-to-change-the-touch-keyboard.2c1979e3224aa6536164678fc62f388552fd645b.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2850,7 +2850,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [app-lifecycle.ccef52258bdc75288e41f9726d49569048ea6c50.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/app-lifecycle.ccef52258bdc75288e41f9726d49569048ea6c50.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2865,7 +2865,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [debug-a-background-task.7c691ed68061ce836e12a8c8269c5fe2659b0d0b.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/debug-a-background-task.7c691ed68061ce836e12a8c8269c5fe2659b0d0b.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2880,7 +2880,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [guidelines-for-background-tasks.72ec693c93a90692a20431e58b0ea291aeda6927.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/guidelines-for-background-tasks.72ec693c93a90692a20431e58b0ea291aeda6927.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2895,7 +2895,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\launch-resume\images\checkboxopenwithdialog.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/bb8e3c217182fd3ae9fd7c331e3722f1189b5569/windows-apps-src/launch-resume/images/checkboxopenwithdialog.png)
 * Handoff File: [ac1a8cd5058b4f64f10bc424bc3d84b109f90e0c.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/ac1a8cd5058b4f64f10bc424bc3d84b109f90e0c.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\launch-resume\launch-the-default-app-for-a-file.md
 * Archive File: 
@@ -2908,7 +2908,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\launch-resume\images\debugging-activation.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/launch-resume/images/debugging-activation.png)
 * Handoff File: [326f39670e08c524d20d980b84eeae17d3d637e8.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/326f39670e08c524d20d980b84eeae17d3d637e8.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\launch-resume\debug-a-background-task.md
 * Archive File: 
@@ -2921,7 +2921,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\launch-resume\images\event-viewer.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/launch-resume/images/event-viewer.png)
 * Handoff File: [df5223d6522566ec6a757ce6a0a18bbb6bf0dd28.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/df5223d6522566ec6a757ce6a0a18bbb6bf0dd28.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\launch-resume\debug-a-background-task.md
 * Archive File: 
@@ -2934,7 +2934,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\launch-resume\images\howdoyouwanttoopen.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/bb8e3c217182fd3ae9fd7c331e3722f1189b5569/windows-apps-src/launch-resume/images/howdoyouwanttoopen.png)
 * Handoff File: [82965d6f953e6d8caae7e2981e05cd06665068bb.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/82965d6f953e6d8caae7e2981e05cd06665068bb.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\launch-resume\launch-the-default-app-for-a-file.md
 * Archive File: 
@@ -2947,7 +2947,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\launch-resume\images\regularsplashscreen.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/launch-resume/images/regularsplashscreen.png)
 * Handoff File: [b38f7ce08cb2a9e720bf5f334da60dad1de184e4.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/b38f7ce08cb2a9e720bf5f334da60dad1de184e4.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\launch-resume\index.md
 * Archive File: 
@@ -2960,7 +2960,7 @@
 * Status: HandedOffSuccess
 * Target File: 
 * Handoff File: [9ccf2118d0dba13cb6881ba1e241057e63c0d65b.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/9ccf2118d0dba13cb6881ba1e241057e63c0d65b.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\launch-resume\app-lifecycle.md
 * Archive File: 
@@ -2973,7 +2973,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [index.7f38ebfeadef5946145c54c9dd9fb44894d2175a.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/index.7f38ebfeadef5946145c54c9dd9fb44894d2175a.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -2988,7 +2988,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [launch-the-default-app-for-a-file.d54a9cba7e71a76fa8149cffbfec5e8b45c8211e.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/launch-the-default-app-for-a-file.d54a9cba7e71a76fa8149cffbfec5e8b45c8211e.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3003,7 +3003,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [alignment-margin-padding.c99242a43914e11540caebc8c4ed2be69e4db146.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/alignment-margin-padding.c99242a43914e11540caebc8c4ed2be69e4db146.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3018,7 +3018,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [custom-panels-overview.423abd174e674623fd68be188279782ddf319cd8.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/custom-panels-overview.423abd174e674623fd68be188279782ddf319cd8.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3033,7 +3033,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\get-started\images\1894834-hig-device-primer-01-500.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/get-started/images/1894834-hig-device-primer-01-500.png)
 * Handoff File: [4f8012f1dc022c207aa7ff6729bc5c660712b582.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/4f8012f1dc022c207aa7ff6729bc5c660712b582.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\get-started\whats-a-uwp.md, windows-apps-src\get-started\universal-application-platform-guide.md, windows-apps-src\input-and-devices\device-primer.md, windows-apps-src\layout\design-and-ui-intro.md
 * Archive File: 
@@ -3046,7 +3046,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\layout\images\xaml-layout-grid-in-designer.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/layout/images/xaml-layout-grid-in-designer.png)
 * Handoff File: [e8885dfc80a4921fc47e5cfb92cd3cd2208712b7.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/e8885dfc80a4921fc47e5cfb92cd3cd2208712b7.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\layout\layouts-with-xaml.md
 * Archive File: 
@@ -3059,7 +3059,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\layout\images\xaml-layout-margins-padding.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/layout/images/xaml-layout-margins-padding.png)
 * Handoff File: [d514cebf733e8c5c403f412a9ee4e32293d2ca4a.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/d514cebf733e8c5c403f412a9ee4e32293d2ca4a.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\layout\layouts-with-xaml.md
 * Archive File: 
@@ -3072,7 +3072,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\layout\images\xaml-layout-textbox-no-margins-padding.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/layout/images/xaml-layout-textbox-no-margins-padding.png)
 * Handoff File: [3cf2a0e0f1de4ffd5a0e6a1dec2665dafd4e14ce.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/3cf2a0e0f1de4ffd5a0e6a1dec2665dafd4e14ce.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\layout\layouts-with-xaml.md
 * Archive File: 
@@ -3085,7 +3085,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\layout\images\xaml-layout-textbox-with-margins-padding.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/layout/images/xaml-layout-textbox-with-margins-padding.png)
 * Handoff File: [a93db298e40c0af83ba75efccb5d74fab9f9a379.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/a93db298e40c0af83ba75efccb5d74fab9f9a379.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\layout\layouts-with-xaml.md
 * Archive File: 
@@ -3098,7 +3098,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\layout\images\xaml-layout-view-ex-1.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/layout/images/xaml-layout-view-ex-1.png)
 * Handoff File: [b4453fb550f727102b175287d8b83f58278e824d.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/b4453fb550f727102b175287d8b83f58278e824d.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\layout\layouts-with-xaml.md
 * Archive File: 
@@ -3111,7 +3111,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\layout\images\xaml-layout-view-ex-2.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/layout/images/xaml-layout-view-ex-2.png)
 * Handoff File: [b4bb35bf0e30ce7e494dca3c4d2c7623b1e586b8.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/b4bb35bf0e30ce7e494dca3c4d2c7623b1e586b8.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\layout\layouts-with-xaml.md
 * Archive File: 
@@ -3124,7 +3124,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [layouts-with-xaml.0d71a498eae13a3e3615deaaab7d81147302480d.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/layouts-with-xaml.0d71a498eae13a3e3615deaaab7d81147302480d.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3139,7 +3139,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [display-maps.7b97a100ac3b83ed34f45ffbb14c59a30aa7e397.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/display-maps.7b97a100ac3b83ed34f45ffbb14c59a30aa7e397.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3154,7 +3154,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [display-poi.c48ea4080dd1066d88cdf563000ffe64dc1eeadf.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/display-poi.c48ea4080dd1066d88cdf563000ffe64dc1eeadf.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3169,7 +3169,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [geocoding.3370386a80d026bb676dcac91d69bfd8bffbffcc.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/geocoding.3370386a80d026bb676dcac91d69bfd8bffbffcc.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3184,7 +3184,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [guidelines-and-checklist-for-detecting-location.c5bffe8f6b87c3384095787e6fe9475cacd5260a.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/guidelines-and-checklist-for-detecting-location.c5bffe8f6b87c3384095787e6fe9475cacd5260a.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3199,7 +3199,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\maps-and-location\images\1000metererrorradius.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/maps-and-location/images/1000metererrorradius.png)
 * Handoff File: [ab42a89984a2caff8f065cfb81b5d3c819aefa9f.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/ab42a89984a2caff8f065cfb81b5d3c819aefa9f.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\maps-and-location\guidelines-and-checklist-for-detecting-location.md
 * Archive File: 
@@ -3212,7 +3212,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\maps-and-location\images\100metererrorradius.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/maps-and-location/images/100metererrorradius.png)
 * Handoff File: [ec34e66f7ba40573ab2500bb1dbb9059fd9ad59f.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/ec34e66f7ba40573ab2500bb1dbb9059fd9ad59f.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\maps-and-location\guidelines-and-checklist-for-detecting-location.md
 * Archive File: 
@@ -3225,7 +3225,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\maps-and-location\images\10metererrorradius.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/maps-and-location/images/10metererrorradius.png)
 * Handoff File: [707f5fe1b594055da518870a0e688d51a164e1ca.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/707f5fe1b594055da518870a0e688d51a164e1ca.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\maps-and-location\guidelines-and-checklist-for-detecting-location.md
 * Archive File: 
@@ -3238,7 +3238,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\maps-and-location\images\displaymapsexample1.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/maps-and-location/images/displaymapsexample1.png)
 * Handoff File: [3605647a008cd9e56015bbf1a5b79e19c8888dd2.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/3605647a008cd9e56015bbf1a5b79e19c8888dd2.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\maps-and-location\display-maps.md
 * Archive File: 
@@ -3251,7 +3251,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\maps-and-location\images\displaypoidefault.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/maps-and-location/images/displaypoidefault.png)
 * Handoff File: [daeeb67b982cdd64e4e80a59cde2be4b085608e9.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/daeeb67b982cdd64e4e80a59cde2be4b085608e9.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\maps-and-location\display-poi.md
 * Archive File: 
@@ -3264,7 +3264,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\maps-and-location\images\displaypoixaml.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/maps-and-location/images/displaypoixaml.png)
 * Handoff File: [b96f3ff78d108dbbef3b3e2a9edd8b5789f5a0b4.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/b96f3ff78d108dbbef3b3e2a9edd8b5789f5a0b4.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\maps-and-location\display-poi.md
 * Archive File: 
@@ -3277,7 +3277,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\maps-and-location\images\mapcontrol-techdiagram.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/maps-and-location/images/mapcontrol-techdiagram.png)
 * Handoff File: [506fbbe68192f9c1a4b9944827daa08ddc5a33b9.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/506fbbe68192f9c1a4b9944827daa08ddc5a33b9.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\maps-and-location\display-maps.md
 * Archive File: 
@@ -3290,7 +3290,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\maps-and-location\images\mapctrl-mapicons.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/maps-and-location/images/mapctrl-mapicons.png)
 * Handoff File: [a1f01c9f83c6bb7fc1a3569273daae2ed710f53f.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/a1f01c9f83c6bb7fc1a3569273daae2ed710f53f.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\maps-and-location\display-poi.md
 * Archive File: 
@@ -3303,7 +3303,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\maps-and-location\images\only3d-730width.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/maps-and-location/images/only3d-730width.png)
 * Handoff File: [09a6022ea352421d0c3cc35de0f1f2e59c7c1c71.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/09a6022ea352421d0c3cc35de0f1f2e59c7c1c71.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\maps-and-location\display-maps.md
 * Archive File: 
@@ -3316,7 +3316,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\maps-and-location\images\onlystreetside-730width.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/maps-and-location/images/onlystreetside-730width.png)
 * Handoff File: [cc82344e6d294809e64cae6238729dbc84a66c31.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/cc82344e6d294809e64cae6238729dbc84a66c31.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\maps-and-location\display-maps.md
 * Archive File: 
@@ -3329,7 +3329,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\maps-and-location\images\routeonmap.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/maps-and-location/images/routeonmap.png)
 * Handoff File: [bcc4acfe1dc579c21bfcc96b5c1e9f88442cba64.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/bcc4acfe1dc579c21bfcc96b5c1e9f88442cba64.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\maps-and-location\routes-and-directions.md
 * Archive File: 
@@ -3342,7 +3342,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [routes-and-directions.15c8514909c1cb0841f46f71b3b973ced5c50a10.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/routes-and-directions.15c8514909c1cb0841f46f71b3b973ced5c50a10.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3357,7 +3357,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [set-up-a-geofence.cc5b7319d8a5cc8923e8941683f7cdfc10c09f0e.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/set-up-a-geofence.cc5b7319d8a5cc8923e8941683f7cdfc10c09f0e.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3372,7 +3372,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [background-transfers.8f132649565224b7b83365be03e3ebfe42dc6211.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/background-transfers.8f132649565224b7b83365be03e3ebfe42dc6211.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3387,7 +3387,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [httpclient.867054ddec9831bd5204625d2ef107b8478276b4.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/httpclient.867054ddec9831bd5204625d2ef107b8478276b4.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3402,7 +3402,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [network-communications-in-the-background.392e988ada0e7db55009da5cb3fcaf902abcb446.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/network-communications-in-the-background.392e988ada0e7db55009da5cb3fcaf902abcb446.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3417,7 +3417,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [networking-basics.1ef0558ddfd03583f74afa064763b4b28e0dad43.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/networking-basics.1ef0558ddfd03583f74afa064763b4b28e0dad43.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3432,7 +3432,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [websockets.db78d3487abb889cd595e917ef5a96f0484317ac.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/websockets.db78d3487abb889cd595e917ef5a96f0484317ac.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3447,7 +3447,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\porting\images\label-uwp10stylegallery.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/porting/images/label-uwp10stylegallery.png)
 * Handoff File: [9955770cb33d70a357ee4412a836d13251d13ff2.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/9955770cb33d70a357ee4412a836d13251d13ff2.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\porting\w8x-to-uwp-porting-xaml-and-ui.md, windows-apps-src\porting\wpsl-to-uwp-porting-xaml-and-ui.md
 * Archive File: 
@@ -3460,7 +3460,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\porting\images\w8x-to-uwp-case-studies\ui-listviewbase-cb-inline.jpg](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/porting/images/w8x-to-uwp-case-studies/ui-listviewbase-cb-inline.jpg)
 * Handoff File: [fd627a65f7566cda5c4ff7ab148b8727fed3a87f.jpg](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/fd627a65f7566cda5c4ff7ab148b8727fed3a87f.jpg)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\porting\w8x-to-uwp-porting-xaml-and-ui.md
 * Archive File: 
@@ -3473,7 +3473,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\porting\images\w8x-to-uwp-case-studies\ui-listviewbase-cb-overlay.jpg](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/porting/images/w8x-to-uwp-case-studies/ui-listviewbase-cb-overlay.jpg)
 * Handoff File: [a175583ea91cabaff6ff62c8dcef338dbe793b0c.jpg](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/a175583ea91cabaff6ff62c8dcef338dbe793b0c.jpg)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\porting\w8x-to-uwp-porting-xaml-and-ui.md
 * Archive File: 
@@ -3486,7 +3486,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\porting\images\wpsl-to-uwp-case-studies\wpsl-to-uwp-theme-aware-bitmap.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/porting/images/wpsl-to-uwp-case-studies/wpsl-to-uwp-theme-aware-bitmap.png)
 * Handoff File: [4e68b5e9124705e11435ecb34b6b66a6c071957b.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/4e68b5e9124705e11435ecb34b6b66a6c071957b.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\porting\wpsl-to-uwp-porting-xaml-and-ui.md
 * Archive File: 
@@ -3499,7 +3499,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [w8x-to-uwp-porting-xaml-and-ui.f1e8f521222339d8cb465e5fa21505c90027b1f8.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/w8x-to-uwp-porting-xaml-and-ui.f1e8f521222339d8cb465e5fa21505c90027b1f8.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3514,7 +3514,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [wpsl-to-uwp-namespace-and-class-mappings.fce290826379913fb0e7a47808f5b925af2f56ed.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/wpsl-to-uwp-namespace-and-class-mappings.fce290826379913fb0e7a47808f5b925af2f56ed.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3529,7 +3529,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [wpsl-to-uwp-porting-xaml-and-ui.dff77e3f1cc63bef95de5e916ed5e79ca10fd442.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/wpsl-to-uwp-porting-xaml-and-ui.dff77e3f1cc63bef95de5e916ed5e79ca10fd442.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3544,7 +3544,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\security\images\secure-digital-signatures.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/security/images/secure-digital-signatures.png)
 * Handoff File: [cbfb7116b6de5094b8a172ba10bdf17667f276ea.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/cbfb7116b6de5094b8a172ba10bdf17667f276ea.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\security\intro-to-secure-windows-app-development.md
 * Archive File: 
@@ -3557,7 +3557,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\security\images\secure-macs.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/security/images/secure-macs.png)
 * Handoff File: [d4866de0fc89e40d882881d6f908d32f8890a167.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/d4866de0fc89e40d882881d6f908d32f8890a167.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\security\intro-to-secure-windows-app-development.md
 * Archive File: 
@@ -3570,7 +3570,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\security\images\secure-passport.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/security/images/secure-passport.png)
 * Handoff File: [93aed3abd691f4a48f4f994d943e472b0af7b7c9.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/93aed3abd691f4a48f4f994d943e472b0af7b7c9.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\security\intro-to-secure-windows-app-development.md
 * Archive File: 
@@ -3583,7 +3583,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\security\images\secure-sfa.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/security/images/secure-sfa.png)
 * Handoff File: [1267aaefeac5f9341e1454bff8180278054fdd19.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/1267aaefeac5f9341e1454bff8180278054fdd19.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\security\intro-to-secure-windows-app-development.md
 * Archive File: 
@@ -3596,7 +3596,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\security\images\secure-ssl-manifest.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/security/images/secure-ssl-manifest.png)
 * Handoff File: [a69930f5a11a0204f3c4b5ffe7ad63fe4a54a7cb.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/a69930f5a11a0204f3c4b5ffe7ad63fe4a54a7cb.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\security\intro-to-secure-windows-app-development.md
 * Archive File: 
@@ -3609,7 +3609,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\security\images\secure-tfa.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/security/images/secure-tfa.png)
 * Handoff File: [67dab764804fecf10c20740a2d9b2633efa736d1.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/67dab764804fecf10c20740a2d9b2633efa736d1.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\security\intro-to-secure-windows-app-development.md
 * Archive File: 
@@ -3622,7 +3622,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\security\images\secure-wab.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/security/images/secure-wab.png)
 * Handoff File: [9aab1ec865ac67daee4c208d43ce3dacab95e1ca.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/9aab1ec865ac67daee4c208d43ce3dacab95e1ca.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\security\intro-to-secure-windows-app-development.md
 * Archive File: 
@@ -3635,7 +3635,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [intro-to-secure-windows-app-development.2fe2c6dd4ed60ea75b1c7cbdf2040625baa52ddc.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/intro-to-secure-windows-app-development.2fe2c6dd4ed60ea75b1c7cbdf2040625baa52ddc.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3650,7 +3650,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [smart-cards.8c9d30555fd7c8c9d02a8b190b67d88f915c78bd.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/smart-cards.8c9d30555fd7c8c9d02a8b190b67d88f915c78bd.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3665,7 +3665,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\maps-and-location\images\1000metererrorradius.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/maps-and-location/images/1000metererrorradius.png)
 * Handoff File: [ab42a89984a2caff8f065cfb81b5d3c819aefa9f.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/ab42a89984a2caff8f065cfb81b5d3c819aefa9f.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\maps-and-location\guidelines-and-checklist-for-detecting-location.md
 * Archive File: 
@@ -3678,7 +3678,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\maps-and-location\images\100metererrorradius.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/maps-and-location/images/100metererrorradius.png)
 * Handoff File: [ec34e66f7ba40573ab2500bb1dbb9059fd9ad59f.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/ec34e66f7ba40573ab2500bb1dbb9059fd9ad59f.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\maps-and-location\guidelines-and-checklist-for-detecting-location.md
 * Archive File: 
@@ -3691,7 +3691,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\maps-and-location\images\10metererrorradius.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/maps-and-location/images/10metererrorradius.png)
 * Handoff File: [707f5fe1b594055da518870a0e688d51a164e1ca.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/707f5fe1b594055da518870a0e688d51a164e1ca.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\maps-and-location\guidelines-and-checklist-for-detecting-location.md
 * Archive File: 
@@ -3704,7 +3704,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\controls-and-patterns\images\app-bar-button-label-wrap.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/controls-and-patterns/images/app-bar-button-label-wrap.png)
 * Handoff File: [903431f01a3590ef3eae05b581663e4283eb25f2.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/903431f01a3590ef3eae05b581663e4283eb25f2.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\controls-and-patterns\app-bars.md
 * Archive File: 
@@ -3717,7 +3717,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\controls-and-patterns\images\AppbarGuidelines_Flyouts.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/controls-and-patterns/images/AppbarGuidelines_Flyouts.png)
 * Handoff File: [f4f12373021461c3c03a28f7802c31a50f5390d8.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/f4f12373021461c3c03a28f7802c31a50f5390d8.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\controls-and-patterns\app-bars.md
 * Archive File: 
@@ -3730,7 +3730,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\controls-and-patterns\images\AppbarGuidelines_Illustration.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/controls-and-patterns/images/AppbarGuidelines_Illustration.png)
 * Handoff File: [8f1fc7c00968cf850970311af7e0cc6ab42e010a.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/8f1fc7c00968cf850970311af7e0cc6ab42e010a.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\controls-and-patterns\app-bars.md
 * Archive File: 
@@ -3743,7 +3743,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\controls-and-patterns\images\AppbarGuidelines_Placement1.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/controls-and-patterns/images/AppbarGuidelines_Placement1.png)
 * Handoff File: [3690692e5d62f2b62c6a92c9c517e8c6017a43ba.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/3690692e5d62f2b62c6a92c9c517e8c6017a43ba.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\controls-and-patterns\app-bars.md
 * Archive File: 
@@ -3756,7 +3756,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\controls-and-patterns\images\AppbarGuidelines_Placement2.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/controls-and-patterns/images/AppbarGuidelines_Placement2.png)
 * Handoff File: [ffcdb32286102325db363a8c3ea3009c6e701d14.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/ffcdb32286102325db363a8c3ea3009c6e701d14.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\controls-and-patterns\app-bars.md
 * Archive File: 
@@ -3769,7 +3769,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\controls-and-patterns\images\app-bar-labels-on-right.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/bb8e3c217182fd3ae9fd7c331e3722f1189b5569/windows-apps-src/controls-and-patterns/images/app-bar-labels-on-right.png)
 * Handoff File: [3920080c7d84ed1543faab213181443e1f350924.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/3920080c7d84ed1543faab213181443e1f350924.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\controls-and-patterns\app-bars.md
 * Archive File: 
@@ -3782,7 +3782,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\controls-and-patterns\images\app-bar-toggle-button-two-modes.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/controls-and-patterns/images/app-bar-toggle-button-two-modes.png)
 * Handoff File: [8989e0d0afdc36fffe85a1c3bf304b9d6b8315d1.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/8989e0d0afdc36fffe85a1c3bf304b9d6b8315d1.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\controls-and-patterns\app-bars.md
 * Archive File: 
@@ -3795,7 +3795,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\controls-and-patterns\images\commandbar_anatomy_open.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/controls-and-patterns/images/commandbar_anatomy_open.png)
 * Handoff File: [278d607306ef63ffb87e91b5c7b25431ff0b0e11.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/278d607306ef63ffb87e91b5c7b25431ff0b0e11.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\controls-and-patterns\app-bars.md
 * Archive File: 
@@ -3808,7 +3808,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\controls-and-patterns\images\command-bar-compact.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/controls-and-patterns/images/command-bar-compact.png)
 * Handoff File: [69faddbfd3e0355059b7fc6c5a777c89c91efb73.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/69faddbfd3e0355059b7fc6c5a777c89c91efb73.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\controls-and-patterns\app-bars.md, windows-apps-src\controls-and-patterns\controls-by-function.md
 * Archive File: 
@@ -3821,7 +3821,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\controls-and-patterns\images\command-bar-minimal.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/controls-and-patterns/images/command-bar-minimal.png)
 * Handoff File: [2e7c58903a195f88104a6963080ed38883966e39.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/2e7c58903a195f88104a6963080ed38883966e39.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\controls-and-patterns\app-bars.md
 * Archive File: 
@@ -3834,7 +3834,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\controls-and-patterns\images\control-examples\command-bar-calendar-phone.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/controls-and-patterns/images/control-examples/command-bar-calendar-phone.png)
 * Handoff File: [8f872a2a4c66846022dd16171463a0375b58ad9f.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/8f872a2a4c66846022dd16171463a0375b58ad9f.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\controls-and-patterns\app-bars.md
 * Archive File: 
@@ -3847,7 +3847,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\controls-and-patterns\images\control-examples\command-bar-photos.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/controls-and-patterns/images/control-examples/command-bar-photos.png)
 * Handoff File: [3afc5890653e57db71a982dc84922b14a33c9021.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/3afc5890653e57db71a982dc84922b14a33c9021.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\controls-and-patterns\app-bars.md
 * Archive File: 
@@ -3860,7 +3860,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\controls-and-patterns\images\controls_appbar_icons.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/controls-and-patterns/images/controls_appbar_icons.png)
 * Handoff File: [880d1d71997a2a07338624cad4a3a26cc6fb07ee.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/880d1d71997a2a07338624cad4a3a26cc6fb07ee.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\controls-and-patterns\app-bars.md
 * Archive File: 
@@ -3873,7 +3873,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\input-patterns\touch-keyboard-pan1.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/input-patterns/touch-keyboard-pan1.png)
 * Handoff File: [e860cd0f6fff5a68dc5c548d3102efbd972c6c4c.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/e860cd0f6fff5a68dc5c548d3102efbd972c6c4c.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\keyboard-interactions.md, windows-apps-src\input-and-devices\respond-to-the-presence-of-the-touch-keyboard.md
 * Archive File: 
@@ -3886,7 +3886,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\input-and-devices\images\input-patterns\touch-keyboard-pan2.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/input-and-devices/images/input-patterns/touch-keyboard-pan2.png)
 * Handoff File: [f65d01db3b75c229c8c1815637539be89eb079bc.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/f65d01db3b75c229c8c1815637539be89eb079bc.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\input-and-devices\keyboard-interactions.md, windows-apps-src\input-and-devices\respond-to-the-presence-of-the-touch-keyboard.md
 * Archive File: 
@@ -3899,7 +3899,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: [windows-apps-src\launch-resume\images\regularsplashscreen.png](https://github.com/Microsoft/windows-apps.ja-jp/blob/1b29e037e1ac8f3c8dbdd26036929dcb0ec26826/windows-apps-src/launch-resume/images/regularsplashscreen.png)
 * Handoff File: [b38f7ce08cb2a9e720bf5f334da60dad1de184e4.png](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/b38f7ce08cb2a9e720bf5f334da60dad1de184e4.png)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: IsDependency
 * Dependency From: windows-apps-src\launch-resume\index.md
 * Archive File: 
@@ -3912,7 +3912,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [custom-dependency-properties.05f1a54b7b5230bd646f36b70ab1f4345a48864c.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/custom-dependency-properties.05f1a54b7b5230bd646f36b70ab1f4345a48864c.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -3927,7 +3927,7 @@
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
 * Handoff File: [xaml-namescopes.ac41c456fc4a2cfa52ecf54d1ebe92c7b27a930e.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/83035249d7d6cdd9626bb49ab3709cee4b07be6c/ol-handoff/Microsoft/windows-apps.ja-jp/master/xaml-namescopes.ac41c456fc4a2cfa52ecf54d1ebe92c7b27a930e.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 00:35:24
+* Handoff Datetime: 2016-08-03 01:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
