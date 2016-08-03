@@ -3352,6 +3352,9 @@
   "53d23b3f8502e1f182c728b9f787fbbc4b694d42": [
     "windows-apps-src\\get-started\\sign-up.md"
   ],
+  "925db2c5242eb49229f41298f1db4e2653f3499d": [
+    "windows-apps-src\\get-started\\universal-application-platform-guide.md"
+  ],
   "73edce2bd0fcf3176f52b15a8912b075da719a5b": [
     "windows-apps-src\\get-started\\universal-application-platform-guide.md"
   ],
@@ -4280,6 +4283,9 @@
   ],
   "71c5994e1a308993aef6603ba77ab5e695bde293": [
     "windows-apps-src\\input-and-devices\\multiple-input-design-guidelines.md"
+  ],
+  "4d8a63a57b3d014d397ba1c2088b7cfb7011c282": [
+    "windows-apps-src\\input-and-devices\\pen-and-stylus-interactions.md"
   ],
   "6348adace977f27176b0a0c0280e36e151436b3a": [
     "windows-apps-src\\input-and-devices\\pen-and-stylus-interactions.md"
@@ -8788,6 +8794,9 @@
   "1c5e4362000c29aa32fb503579ec53371f439eca": [
     "windows-apps-src\\launch-resume\\communicate-with-a-remote-app-service.md"
   ],
+  "86e8a7b3abbe0c08824e94fc6382ed86a92f3e20": [
+    "windows-apps-src\\launch-resume\\connected-apps-and-devices.md"
+  ],
   "7fe473661ce2818acd903bd416b1ad080596ef7f": [
     "windows-apps-src\\launch-resume\\connected-apps-and-devices.md"
   ],
@@ -8803,6 +8812,9 @@
   "7fe13d754d84ccf22f27a6b0f5b2859b31cefe4a": [
     "windows-apps-src\\launch-resume\\create-and-register-a-singleprocess-background-task.md"
   ],
+  "3b4eae33c366a5497afc15e4e6a5e6e8b2676703": [
+    "windows-apps-src\\launch-resume\\discover-connected-devices.md"
+  ],
   "d4c2f02a6b753d5d9b920cb65f68b8586b9e42aa": [
     "windows-apps-src\\launch-resume\\discover-connected-devices.md"
   ],
@@ -8811,6 +8823,9 @@
   ],
   "9ccf2118d0dba13cb6881ba1e241057e63c0d65b": [
     "windows-apps-src\\launch-resume\\images\\updated-lifecycle.png"
+  ],
+  "44ed6e1e01231287b440e31148da3a6f52b68389": [
+    "windows-apps-src\\launch-resume\\launch-a-remote-app.md"
   ],
   "713028609c9bd742e6768dfc569efbbd2c3bd5d1": [
     "windows-apps-src\\launch-resume\\launch-a-remote-app.md"
