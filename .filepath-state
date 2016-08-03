@@ -2764,6 +2764,9 @@
   "4bb1f5c71d83b2dc3271b5b2ceaa9a1156b00004": [
     "windows-apps-src\\gaming\\implementing-depth-buffers-for-shadow-mapping.md"
   ],
+  "164a2de1f76bab2fc7eb060d45a39756ecb6ccd2": [
+    "windows-apps-src\\gaming\\index.md"
+  ],
   "f1d5c922a126f41e864526cf309b2551764b5483": [
     "windows-apps-src\\gaming\\index.md"
   ],
@@ -3612,6 +3615,9 @@
   ],
   "38999529dda7f5e21ef7aee4a99b2420cb37bfa6": [
     "windows-apps-src\\graphics\\using-brushes.md"
+  ],
+  "3a3dbf7b529d5d2848b161869d2f77fef3651488": [
+    "windows-apps-src\\graphics\\visual-layer.md"
   ],
   "9da17e13b16bd2558b444f504ffac413f50ce8d1": [
     "windows-apps-src\\graphics\\visual-layer.md"
@@ -7122,6 +7128,9 @@
   ],
   "033669a781aa85cc2c90fa11816e385ffefa997d": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
+  ],
+  "b42461d7751a74f9eeea65ca7aa1fbf2fce4965a": [
+    "windows-apps-src\\TOC.md"
   ],
   "aaee76bcae9575a34e314316a60795f057025966": [
     "windows-apps-src\\TOC.md"
@@ -12003,5 +12012,8 @@
   ],
   "f92161d37a62a09454903a0d944d500a0404d89a": [
     "windows-apps-src\\whats-new\\windows-10-version-1607-api-diff.md"
+  ],
+  "b035e81776039fba60f239b18efef8fe5b43b2f6": [
+    "windows-apps-src\\gaming\\relative-mouse-movement.md"
   ]
 }
