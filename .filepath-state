@@ -2638,6 +2638,9 @@
   "1b7431c20e25173a0aa3f8d6ee0d407be869d60a": [
     "windows-apps-src\\gaming\\draw-to-the-screen.md"
   ],
+  "18f497c807a51c928d2f8b99a462cd5d786c4d8f": [
+    "windows-apps-src\\gaming\\e2e.md"
+  ],
   "3a87fb9857630304c03cb5f66f396f7dd85b2197": [
     "windows-apps-src\\gaming\\e2e.md"
   ],
@@ -3159,6 +3162,9 @@
   ],
   "0a524d51f713c37ce2069b4e750bf3ed20fe19ab": [
     "windows-apps-src\\get-started\\create-a-hello-world-app-xaml-universal.md"
+  ],
+  "1417df67b8f452ca368469aa79568b0f9a60491e": [
+    "windows-apps-src\\get-started\\enable-your-device-for-development.md"
   ],
   "c0645e4d3826873e4f9bf65086b4fdaa57d40f04": [
     "windows-apps-src\\get-started\\enable-your-device-for-development.md"
@@ -4283,6 +4289,9 @@
   ],
   "71c5994e1a308993aef6603ba77ab5e695bde293": [
     "windows-apps-src\\input-and-devices\\multiple-input-design-guidelines.md"
+  ],
+  "7e2ffff4631de2bb19e9ad56f93c62ec3135be4c": [
+    "windows-apps-src\\input-and-devices\\pen-and-stylus-interactions.md"
   ],
   "d8ec29486fa9e58c520dc8ffa43ea82b6f4bf6c9": [
     "windows-apps-src\\input-and-devices\\pen-and-stylus-interactions.md"
@@ -5628,6 +5637,9 @@
   ],
   "6f50874ceb5e133f2b1b764bfc6fcff6422172db": [
     "windows-apps-src\\packaging\\index.md"
+  ],
+  "87af49dc04a94bac8896b33a1d7e8b4993b0f2c3": [
+    "windows-apps-src\\packaging\\install-universal-windows-apps-with-the-winappdeploycmd-tool.md"
   ],
   "f229917d7cc35da4bc3d850b0dcdee36809f7020": [
     "windows-apps-src\\packaging\\install-universal-windows-apps-with-the-winappdeploycmd-tool.md"
@@ -12057,5 +12069,8 @@
   ],
   "b035e81776039fba60f239b18efef8fe5b43b2f6": [
     "windows-apps-src\\gaming\\relative-mouse-movement.md"
+  ],
+  "0306b776549c81d11febde881904b66c0db19d6c": [
+    "windows-apps-src\\get-started\\images\\devmode-pc-pinpair.PNG"
   ]
 }
