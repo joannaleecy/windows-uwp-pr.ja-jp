@@ -353,6 +353,9 @@
   "b7867317c37edf44d9edfaaf28d97a3f23b22814": [
     "windows-apps-src\\audio-video-camera\\hardware-drm.md"
   ],
+  "15971f3287510ca1b6e98313a13bdab435c4995f": [
+    "windows-apps-src\\audio-video-camera\\high-dynamic-range-hdr-photo-capture.md"
+  ],
   "853789e4a0c191ef58b354d20a19f479b89cba54": [
     "windows-apps-src\\audio-video-camera\\high-dynamic-range-hdr-photo-capture.md"
   ],
@@ -4277,6 +4280,9 @@
   ],
   "71c5994e1a308993aef6603ba77ab5e695bde293": [
     "windows-apps-src\\input-and-devices\\multiple-input-design-guidelines.md"
+  ],
+  "6348adace977f27176b0a0c0280e36e151436b3a": [
+    "windows-apps-src\\input-and-devices\\pen-and-stylus-interactions.md"
   ],
   "f6c086b4fadd2fa6a8c90a0b3ec304b9b1e3e03b": [
     "windows-apps-src\\input-and-devices\\pen-and-stylus-interactions.md"
