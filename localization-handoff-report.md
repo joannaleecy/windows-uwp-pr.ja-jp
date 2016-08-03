@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\input-and-devices\pen-and-stylus-interactions.md](https://github.com/Microsoft/windows-apps/blob/3402b6bd0d30bd075742dc106ef1e7bcbab275be/windows-apps-src/input-and-devices/pen-and-stylus-interactions.md) | OutofSyncHandedBackSuccess | [Details](#5b8f1e918d043e8ffdbb2ce9dd031f549e40043a4285)
+ [windows-apps-src\input-and-devices\pen-and-stylus-interactions.md](https://github.com/Microsoft/windows-apps/blob/c1f2ba6ece86b01bce3b50c612ac0be89cf76552/windows-apps-src/input-and-devices/pen-and-stylus-interactions.md) | OutofSyncHandedBackSuccess | [Details](#d8ec29486fa9e58c520dc8ffa43ea82b6f4bf6c94285)
 
 ## Item Details
-##### <a name='5b8f1e918d043e8ffdbb2ce9dd031f549e40043a4285'></a> Source: [windows-apps-src\input-and-devices\pen-and-stylus-interactions.md](https://github.com/Microsoft/windows-apps/blob/3402b6bd0d30bd075742dc106ef1e7bcbab275be/windows-apps-src/input-and-devices/pen-and-stylus-interactions.md)
+##### <a name='d8ec29486fa9e58c520dc8ffa43ea82b6f4bf6c94285'></a> Source: [windows-apps-src\input-and-devices\pen-and-stylus-interactions.md](https://github.com/Microsoft/windows-apps/blob/c1f2ba6ece86b01bce3b50c612ac0be89cf76552/windows-apps-src/input-and-devices/pen-and-stylus-interactions.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [pen-and-stylus-interactions.945e27470c6cb2f2ab789832deb91ac592d1679f.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/2de8957ef5bce6c986b985badb359b0766fbd36c/ol-handoff/Microsoft/windows-apps.ja-jp/master/pen-and-stylus-interactions.945e27470c6cb2f2ab789832deb91ac592d1679f.ja-jp.xlf)
-* Handoff Datetime: 2016-08-03 21:05:57
+* Handoff File: [pen-and-stylus-interactions.945e27470c6cb2f2ab789832deb91ac592d1679f.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/3ba8e58a132bef4b235f0e877dba1f31cce5ce65/ol-handoff/Microsoft/windows-apps.ja-jp/master/pen-and-stylus-interactions.945e27470c6cb2f2ab789832deb91ac592d1679f.ja-jp.xlf)
+* Handoff Datetime: 2016-08-03 21:36:44
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
