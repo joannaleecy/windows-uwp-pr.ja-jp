@@ -4296,6 +4296,9 @@
   "71c5994e1a308993aef6603ba77ab5e695bde293": [
     "windows-apps-src\\input-and-devices\\multiple-input-design-guidelines.md"
   ],
+  "67149f51cc16fee6f5ba818915432b18d2c1a549": [
+    "windows-apps-src\\input-and-devices\\pen-and-stylus-interactions.md"
+  ],
   "d0d2532fbd5bfa205ff38fd34362328e719d1909": [
     "windows-apps-src\\input-and-devices\\pen-and-stylus-interactions.md"
   ],
@@ -7183,6 +7186,9 @@
   "033669a781aa85cc2c90fa11816e385ffefa997d": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "43d17f01e400a3bd40aa4fd5a3f3f27d720b513a": [
+    "windows-apps-src\\TOC.md"
+  ],
   "b42461d7751a74f9eeea65ca7aa1fbf2fce4965a": [
     "windows-apps-src\\TOC.md"
   ],
@@ -7849,11 +7855,8 @@
   "edc9a914f200c643b1133cf07778e2ca3931d0d9": [
     "windows-apps-src\\xbox-apps\\whats-new.md"
   ],
-  "ebb696cce37b0201601dcfb9ab68b3328cd15abb": [
-    "windows-apps-src\\whats-new\\windows-10-rtm.md"
-  ],
-  "45ecd1c70d9b9cf9b39801ecaa11d2eb1afd2c8e": [
-    "windows-apps-src\\whats-new\\windows-10-rtm.md"
+  "294e6c6ffeb5e34cc6f21c844cf16ca65f5cb9ee": [
+    "windows-apps-src\\whats-new\\windows-10-sdk-preview.md"
   ],
   "b21ab3ac6bffa6009b81c5ca4e6c92f26d8c57ba": [
     "windows-apps-src\\whats-new\\windows-10-sdk-preview.md"
@@ -12096,5 +12099,8 @@
   ],
   "0306b776549c81d11febde881904b66c0db19d6c": [
     "windows-apps-src\\get-started\\images\\devmode-pc-pinpair.PNG"
+  ],
+  "2e1878bb525c848c9e14646bad9bb1fdf09a5c7f": [
+    "windows-apps-src\\whats-new\\windows-10-version-1507.md"
   ]
 }
