@@ -5665,6 +5665,9 @@
   "640ddc7b77d5a23562dba2ecd9812464beb8a422": [
     "windows-apps-src\\porting\\android-ios-uwp-map.md"
   ],
+  "f7c64f33b16916cedff6306ca9828550911d72ee": [
+    "windows-apps-src\\porting\\desktop-to-uwp-deploy-and-debug.md"
+  ],
   "ae4341c103db9018c2f22a747eb7d7b97d637b2e": [
     "windows-apps-src\\porting\\desktop-to-uwp-deploy-and-debug.md"
   ],
@@ -5673,6 +5676,9 @@
   ],
   "618b129449d285054604008615c32de74c8bfd9b": [
     "windows-apps-src\\porting\\desktop-to-uwp-deploy-and-debug.md"
+  ],
+  "8dd9b6e01292551d4c8dd49a7f1950408c63dcd6": [
+    "windows-apps-src\\porting\\desktop-to-uwp-root.md"
   ],
   "79b991bcd8344b81de7409ad69b6fa34cbfeb5da": [
     "windows-apps-src\\porting\\desktop-to-uwp-root.md"
