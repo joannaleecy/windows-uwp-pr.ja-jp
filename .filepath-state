@@ -8791,6 +8791,9 @@
   "588729c6314cf95f0371c9ad9d50dc0d4c96c0a7": [
     "windows-apps-src\\enterprise\\images\\sync.png"
   ],
+  "fe3fcca5f0b7d33ad44f4b15303f1831a46e79ec": [
+    "windows-apps-src\\enterprise\\wip-dev-guide.md"
+  ],
   "c42b7bbf0015d929aaf3f35dfcd580df2c049891": [
     "windows-apps-src\\enterprise\\wip-dev-guide.md"
   ],
