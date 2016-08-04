@@ -5689,6 +5689,9 @@
   "c5ffb1e912c2953d5f813f099e036d2d7b395b69": [
     "windows-apps-src\\porting\\desktop-to-uwp-root.md"
   ],
+  "8e85a0d58f87d53627af9f928adef858deda7999": [
+    "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
+  ],
   "cba813b463472b698f7a701e355a4ea75f9c7b45": [
     "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
   ],
@@ -7923,6 +7926,9 @@
   ],
   "766be26fa9692fb7d435e5b737eb73493659dead": [
     "windows-apps-src\\xbox-apps\\images\\windows-store-app-activation-error.jpg"
+  ],
+  "e846fe262d7983cc6216922620b872d03677b275": [
+    "windows-apps-src\\porting\\desktop-to-uwp-signing.md"
   ],
   "e517a9968029547a3ca929623d9e76a65000500d": [
     "windows-apps-src\\porting\\desktop-to-uwp-signing.md"
