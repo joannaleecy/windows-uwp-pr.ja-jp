@@ -3325,6 +3325,9 @@
   "0a524d51f713c37ce2069b4e750bf3ed20fe19ab": [
     "windows-apps-src\\get-started\\create-a-hello-world-app-xaml-universal.md"
   ],
+  "d6bf9cbf19be9447b6d5293c4768e0e833a06150": [
+    "windows-apps-src\\get-started\\enable-your-device-for-development.md"
+  ],
   "cb4d1e233bb734e92973b0a93e27ba9967551b29": [
     "windows-apps-src\\get-started\\enable-your-device-for-development.md"
   ],
@@ -9052,11 +9055,17 @@
   "4c50c8ded127b2261df901d9da3210ff397b00ca": [
     "windows-apps-src\\input-and-devices\\ink-toolbar.md"
   ],
+  "55acc9b9cb3954c2599b555c13d0d77302b6aecc": [
+    "windows-apps-src\\launch-resume\\communicate-with-a-remote-app-service.md"
+  ],
   "3090cee0bdfbfb4a0320cce0279e2328e33866eb": [
     "windows-apps-src\\launch-resume\\communicate-with-a-remote-app-service.md"
   ],
   "1c5e4362000c29aa32fb503579ec53371f439eca": [
     "windows-apps-src\\launch-resume\\communicate-with-a-remote-app-service.md"
+  ],
+  "9574acac85dcbac80fe852d4ef3f141717c52cf7": [
+    "windows-apps-src\\launch-resume\\connected-apps-and-devices.md"
   ],
   "86e8a7b3abbe0c08824e94fc6382ed86a92f3e20": [
     "windows-apps-src\\launch-resume\\connected-apps-and-devices.md"
@@ -9076,6 +9085,9 @@
   "7fe13d754d84ccf22f27a6b0f5b2859b31cefe4a": [
     "windows-apps-src\\launch-resume\\create-and-register-a-singleprocess-background-task.md"
   ],
+  "cfec9418cf47748705ffc60f1660e068a2aa1a92": [
+    "windows-apps-src\\launch-resume\\discover-connected-devices.md"
+  ],
   "3b4eae33c366a5497afc15e4e6a5e6e8b2676703": [
     "windows-apps-src\\launch-resume\\discover-connected-devices.md"
   ],
@@ -9087,6 +9099,9 @@
   ],
   "9ccf2118d0dba13cb6881ba1e241057e63c0d65b": [
     "windows-apps-src\\launch-resume\\images\\updated-lifecycle.png"
+  ],
+  "65bc5b8022a8e5dab4f606a2cb3f09e58ab680ef": [
+    "windows-apps-src\\launch-resume\\launch-a-remote-app.md"
   ],
   "44ed6e1e01231287b440e31148da3a6f52b68389": [
     "windows-apps-src\\launch-resume\\launch-a-remote-app.md"
