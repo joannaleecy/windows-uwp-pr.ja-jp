@@ -6,22 +6,22 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\security\web-account-manager.md](https://github.com/Microsoft/windows-apps/blob/f3cdb187ec4056d4c7db6acde471b0bc91c78390/windows-apps-src/security/web-account-manager.md) | OutofSyncHandedBackSuccess | [Details](#093ca8906853121bbf33a729c523717d26cb7b0d5130)
+ [windows-apps-src\porting\desktop-to-uwp-root.md](https://github.com/Microsoft/windows-apps/blob/55f9517d64a31876ad2003d61b5a4381df96ad66/windows-apps-src/porting/desktop-to-uwp-root.md) | OutofSyncHandedBackSuccess | [Details](#efc2fd698a5768452db30dae71b8224a8af9dd9a4844)
 
 ## Item Details
-##### <a name='093ca8906853121bbf33a729c523717d26cb7b0d5130'></a> Source: [windows-apps-src\security\web-account-manager.md](https://github.com/Microsoft/windows-apps/blob/f3cdb187ec4056d4c7db6acde471b0bc91c78390/windows-apps-src/security/web-account-manager.md)
+##### <a name='efc2fd698a5768452db30dae71b8224a8af9dd9a4844'></a> Source: [windows-apps-src\porting\desktop-to-uwp-root.md](https://github.com/Microsoft/windows-apps/blob/55f9517d64a31876ad2003d61b5a4381df96ad66/windows-apps-src/porting/desktop-to-uwp-root.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [web-account-manager.c4ec00c73877e67804733bb8c124a804cf1f1c55.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/cae61f182ed755081c9d4214f40547194d72b8ee/ol-handoff/Microsoft/windows-apps.ja-jp/master/web-account-manager.c4ec00c73877e67804733bb8c124a804cf1f1c55.ja-jp.xlf)
-* Handoff Datetime: 2016-08-05 20:33:46
+* Handoff File: [desktop-to-uwp-root.7513f52e089e9b95deeb36130fca887605ce1b3a.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/8a3336e3918ea6affc57c4cc91c887eb4079987e/ol-handoff/Microsoft/windows-apps.ja-jp/master/desktop-to-uwp-root.7513f52e089e9b95deeb36130fca887605ce1b3a.ja-jp.xlf)
+* Handoff Datetime: 2016-08-05 23:04:47
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\security\web-account-manager.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/50184089ee68f46cd2f416adf3a3994777b91210/windows-apps-src/security/web-account-manager.md)
-* Current Handback File: [web-account-manager.c4ec00c73877e67804733bb8c124a804cf1f1c55.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/4b30c8e256811740592ee2bde985c1f06955abde/ol-handback/Microsoft/windows-apps.ja-jp/master/web-account-manager.c4ec00c73877e67804733bb8c124a804cf1f1c55.ja-jp.xlf)
-* Current Handback Datetime: 2016-07-06 14:57:57
+* Current Target File: [windows-apps-src\porting\desktop-to-uwp-root.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/bb8e3c217182fd3ae9fd7c331e3722f1189b5569/windows-apps-src/porting/desktop-to-uwp-root.md)
+* Current Handback File: [desktop-to-uwp-root.7513f52e089e9b95deeb36130fca887605ce1b3a.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/5fbfce34d71b9c9ce97b3692f989d8e628c65b51/ol-handback/Microsoft/windows-apps.ja-jp/master/desktop-to-uwp-root.7513f52e089e9b95deeb36130fca887605ce1b3a.ja-jp.xlf)
+* Current Handback Datetime: 2016-07-20 16:31:17
 * [Back to Top](#report-top)
 
 
