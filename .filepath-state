@@ -518,6 +518,9 @@
   "22b195475c48f7447c4c08431472efa0ffd48e31": [
     "windows-apps-src\\controls-and-patterns\\active-canvas.md"
   ],
+  "4ce59951387542124bcea1cbd0f636c0e44e0d1e": [
+    "windows-apps-src\\controls-and-patterns\\app-bars.md"
+  ],
   "7abe44a736a6cd4f5c12298606c3dc34a7d50b36": [
     "windows-apps-src\\controls-and-patterns\\app-bars.md"
   ],
@@ -526,6 +529,9 @@
   ],
   "c7107599529d5af5b118a46cb065106f08afe113": [
     "windows-apps-src\\controls-and-patterns\\app-bars.md"
+  ],
+  "9406f9b826dfb7d2603a0812f209dfb38cf639ae": [
+    "windows-apps-src\\controls-and-patterns\\auto-suggest-box.md"
   ],
   "7137d5196faa036bd0c55647a6c0c6fc152282ed": [
     "windows-apps-src\\controls-and-patterns\\auto-suggest-box.md"
@@ -536,11 +542,17 @@
   "12f5905fce642a10656864e41325c8f4bd56c025": [
     "windows-apps-src\\controls-and-patterns\\auto-suggest-box.md"
   ],
+  "845aa9935908aa68b64c856ee5e263490a3340c4": [
+    "windows-apps-src\\controls-and-patterns\\buttons.md"
+  ],
   "1b79b38be64299f428cf85476dd32ce0aabfdd14": [
     "windows-apps-src\\controls-and-patterns\\buttons.md"
   ],
   "de5af77435b34b8f28005351a7de125f211ca522": [
     "windows-apps-src\\controls-and-patterns\\buttons.md"
+  ],
+  "d32c643db84eeb7c81304467a326566938e726c0": [
+    "windows-apps-src\\controls-and-patterns\\calendar-date-picker.md"
   ],
   "f816fd58d73c79266df4f0d260d82b20913bb156": [
     "windows-apps-src\\controls-and-patterns\\calendar-date-picker.md"
@@ -548,11 +560,17 @@
   "7ae444d9e096834daa2eef71c691b9bb8b86d7c4": [
     "windows-apps-src\\controls-and-patterns\\calendar-date-picker.md"
   ],
+  "4d67cf41bf44904e094476d6350ad68cc46ab52f": [
+    "windows-apps-src\\controls-and-patterns\\calendar-view.md"
+  ],
   "9414b9df7c520833e57765911d2a3eabd1edcc2d": [
     "windows-apps-src\\controls-and-patterns\\calendar-view.md"
   ],
   "466d8fe25cb2dfe8ce3b4efef995d9e3cb682dc1": [
     "windows-apps-src\\controls-and-patterns\\calendar-view.md"
+  ],
+  "f565acbebbee8b8fb88a72970c9dbe3202ba24df": [
+    "windows-apps-src\\controls-and-patterns\\checkbox.md"
   ],
   "7f431c050b049c5419f974619a225d0bb903e56a": [
     "windows-apps-src\\controls-and-patterns\\checkbox.md"
@@ -560,11 +578,17 @@
   "b1532ef10a284cbb6e28694ab1598c08b8619773": [
     "windows-apps-src\\controls-and-patterns\\checkbox.md"
   ],
+  "c597b2e5a1da23247a2100aeae88beaf1bfdaa64": [
+    "windows-apps-src\\controls-and-patterns\\controls-and-events-intro.md"
+  ],
   "dac63e001a798b0fa4f3f18a2e5876bc5e6f697b": [
     "windows-apps-src\\controls-and-patterns\\controls-and-events-intro.md"
   ],
   "709771424daba7c034dc6f19d6998469705a24da": [
     "windows-apps-src\\controls-and-patterns\\controls-and-events-intro.md"
+  ],
+  "3310a661fe709c4b818630f6b6a49b90b99c837d": [
+    "windows-apps-src\\controls-and-patterns\\controls-by-function.md"
   ],
   "745bc6bf8ef0ddf30e1b24466a065d06b4f48331": [
     "windows-apps-src\\controls-and-patterns\\controls-by-function.md"
@@ -572,11 +596,17 @@
   "5d6548a4b72144e3a9bf5d759809720c79472afb": [
     "windows-apps-src\\controls-and-patterns\\controls-by-function.md"
   ],
+  "2aa257fa422ed954206dffb5ac68461e4e3a544f": [
+    "windows-apps-src\\controls-and-patterns\\control-templates.md"
+  ],
   "a0e3c7d7a71ac8cee8c013cead6ff0839d46c80b": [
     "windows-apps-src\\controls-and-patterns\\control-templates.md"
   ],
   "071ba59af02b860e9fe58133eb5f1c2a7207ed2b": [
     "windows-apps-src\\controls-and-patterns\\control-templates.md"
+  ],
+  "d1f1b0575f9f1a968d21629a73df6146db156cf5": [
+    "windows-apps-src\\controls-and-patterns\\custom-transport-controls.md"
   ],
   "1752ed2262a3107d7a3ca4d3531500806c61a14a": [
     "windows-apps-src\\controls-and-patterns\\custom-transport-controls.md"
@@ -584,17 +614,26 @@
   "5500f41b254b32b8d293181fba3acebbfffa90e7": [
     "windows-apps-src\\controls-and-patterns\\custom-transport-controls.md"
   ],
+  "417f1294b1d8e5034fd7c8b346461fbe334f4b03": [
+    "windows-apps-src\\controls-and-patterns\\date-and-time.md"
+  ],
   "d63973afa4c2b74dd20c22d2ae1eca8f354132fa": [
     "windows-apps-src\\controls-and-patterns\\date-and-time.md"
   ],
   "e9d8d73c35e2e600e89330fbd54aea57a815aebf": [
     "windows-apps-src\\controls-and-patterns\\date-and-time.md"
   ],
+  "2253172ff20ae46b0ada556551adfeac62136398": [
+    "windows-apps-src\\controls-and-patterns\\date-picker.md"
+  ],
   "bce6a0add69f9b1b37c4d3c80980a62be94cbc55": [
     "windows-apps-src\\controls-and-patterns\\date-picker.md"
   ],
   "c237d4bc013ad0a1d0d16f695f4332a6aac7efdc": [
     "windows-apps-src\\controls-and-patterns\\date-picker.md"
+  ],
+  "6572acefa25e464b6edaca9fee5b2b3e3b46ff3f": [
+    "windows-apps-src\\controls-and-patterns\\dialogs-popups-menus.md"
   ],
   "5f80c7e53ea3235ca4f0926f36b6f530c7a2de27": [
     "windows-apps-src\\controls-and-patterns\\dialogs-popups-menus.md"
@@ -605,11 +644,17 @@
   "e268a5facebbdb80d7cc5cdd52c1a6f944ef7d00": [
     "windows-apps-src\\controls-and-patterns\\dialogs-popups-menus.md"
   ],
+  "7e52f9d379b909c4dd35bc535cbca2d7b8cca6ac": [
+    "windows-apps-src\\controls-and-patterns\\flipview.md"
+  ],
   "3351dda1386576cb1ef281fae46a5441bac4905e": [
     "windows-apps-src\\controls-and-patterns\\flipview.md"
   ],
   "ecb46c0d42821d833e8232780b553754f8f097c5": [
     "windows-apps-src\\controls-and-patterns\\flipview.md"
+  ],
+  "b40dd49c33627db5ddb6c115503ff0560bc02e6a": [
+    "windows-apps-src\\controls-and-patterns\\fonts.md"
   ],
   "563f11fa4080f15f9d057267c3a351bf7e668b14": [
     "windows-apps-src\\controls-and-patterns\\fonts.md"
@@ -617,11 +662,17 @@
   "6a4cf9df42d97104172d26c3b6c3005b500e1943": [
     "windows-apps-src\\controls-and-patterns\\fonts.md"
   ],
+  "6c27d9b968dfca6d0c1db37eb7779d9ff3744f41": [
+    "windows-apps-src\\controls-and-patterns\\hub.md"
+  ],
   "320b7e3c757f38b627cb6019ffd01d1ecddf25ec": [
     "windows-apps-src\\controls-and-patterns\\hub.md"
   ],
   "fdff043aa92842adb6ac2d572794bf02fdd5c6b3": [
     "windows-apps-src\\controls-and-patterns\\hub.md"
+  ],
+  "71749f09eb11f779427bc450ae607f3fa99c2490": [
+    "windows-apps-src\\controls-and-patterns\\hyperlinks.md"
   ],
   "0b4dfc6ee054cfde2b31133c8a99f42c7129dc3c": [
     "windows-apps-src\\controls-and-patterns\\hyperlinks.md"
@@ -1463,11 +1514,17 @@
   "0f646185058f50a2381fcffebd18546f161677b7": [
     "windows-apps-src\\controls-and-patterns\\images\\wns-diagram-03.png"
   ],
+  "bcb23963bfe59006efff2df01bb5ea3d98525497": [
+    "windows-apps-src\\controls-and-patterns\\images-imagebrushes.md"
+  ],
   "12b318c426f0f618fcb94e78a1689eb4b31ca3ea": [
     "windows-apps-src\\controls-and-patterns\\images-imagebrushes.md"
   ],
   "f37f609d87b48a39b958a8e32470488689a3e68c": [
     "windows-apps-src\\controls-and-patterns\\images-imagebrushes.md"
+  ],
+  "aa605b3862c33633904822bb88de7e647a2b3d5b": [
+    "windows-apps-src\\controls-and-patterns\\labels.md"
   ],
   "64e8d611c43b3e6ee8b386599b6556faabe9fbc0": [
     "windows-apps-src\\controls-and-patterns\\labels.md"
@@ -1475,11 +1532,17 @@
   "fbb186b6f8b7bfba47fb05155a227224a1bd595e": [
     "windows-apps-src\\controls-and-patterns\\labels.md"
   ],
+  "28315e88d86a27d5acc2a491d724bb94ee66cf09": [
+    "windows-apps-src\\controls-and-patterns\\lists.md"
+  ],
   "915729a0ead176cfb8abd163cebbe4ed88443e09": [
     "windows-apps-src\\controls-and-patterns\\lists.md"
   ],
   "adf8e449cff846caebff3a80b772f801430871e5": [
     "windows-apps-src\\controls-and-patterns\\lists.md"
+  ],
+  "aeb339e54a1363dbfe5ee5a764ad762a42a40ed9": [
+    "windows-apps-src\\controls-and-patterns\\listview-and-gridview.md"
   ],
   "d4320403711b83bb87b2f1b1659b824efbe368b9": [
     "windows-apps-src\\controls-and-patterns\\listview-and-gridview.md"
@@ -1487,11 +1550,17 @@
   "e878b11bbecd4a1007f8b5f56bde5741da18c1e1": [
     "windows-apps-src\\controls-and-patterns\\listview-and-gridview.md"
   ],
+  "f0083e3c50e7e899e6caf62595a7ecbf0af22b3d": [
+    "windows-apps-src\\controls-and-patterns\\master-details.md"
+  ],
   "3053fab63ee5bd956bf31574395dee3f5f538547": [
     "windows-apps-src\\controls-and-patterns\\master-details.md"
   ],
   "5845aaf69bbcf561164c519f76f93578bf0da6db": [
     "windows-apps-src\\controls-and-patterns\\master-details.md"
+  ],
+  "6945708f0d81cd9f2edd363ed193c76601ec5652": [
+    "windows-apps-src\\controls-and-patterns\\media-playback.md"
   ],
   "d23df87c138660bbd321aaf97499047f07df83a7": [
     "windows-apps-src\\controls-and-patterns\\media-playback.md"
@@ -1499,11 +1568,17 @@
   "2dbc4e7fa227de3f37b8a337eded0004496dbe36": [
     "windows-apps-src\\controls-and-patterns\\media-playback.md"
   ],
+  "4adf3cc8425bba467a8a379a9680360c4e0e3037": [
+    "windows-apps-src\\controls-and-patterns\\nav-pane.md"
+  ],
   "0214b08c281a68571bd4293c180f798d391179f8": [
     "windows-apps-src\\controls-and-patterns\\nav-pane.md"
   ],
   "eb5600a78d7e8cfcad98509afc4de2d117066f7e": [
     "windows-apps-src\\controls-and-patterns\\nav-pane.md"
+  ],
+  "4f08195bcd70429f103c730c6c4a6d69dcf5b55e": [
+    "windows-apps-src\\controls-and-patterns\\password-box.md"
   ],
   "4d01d8ffab88bf9ecc5dc9209c294fd7f2acb5e1": [
     "windows-apps-src\\controls-and-patterns\\password-box.md"
@@ -1511,11 +1586,17 @@
   "1a2d5efbeacd5ce8a71f5261aa52f09400c75c97": [
     "windows-apps-src\\controls-and-patterns\\password-box.md"
   ],
+  "de18267de982ef50913ed605e7a9272f7f8c476b": [
+    "windows-apps-src\\controls-and-patterns\\progress-controls.md"
+  ],
   "f8ea58925ebaf7d6d024a8c03cdca0be584b7a68": [
     "windows-apps-src\\controls-and-patterns\\progress-controls.md"
   ],
   "8a03ca36f6e306a03e8aec7b46e51bfff0079bf5": [
     "windows-apps-src\\controls-and-patterns\\progress-controls.md"
+  ],
+  "435a2a6f1b9707d1f64587a693bd9a60d587ca83": [
+    "windows-apps-src\\controls-and-patterns\\radio-button.md"
   ],
   "b4ceb331fdac27243ff9751f98bac34b97f39b10": [
     "windows-apps-src\\controls-and-patterns\\radio-button.md"
@@ -1523,11 +1604,17 @@
   "317df548e72f9aff475ba0959668b6441ac29d3d": [
     "windows-apps-src\\controls-and-patterns\\radio-button.md"
   ],
+  "352514139f6c9d096dc0b04de46231c8a5ed8034": [
+    "windows-apps-src\\controls-and-patterns\\resourcedictionary-and-xaml-resource-references.md"
+  ],
   "4da20e9f3532b4eca2844026a5d43d161151a65a": [
     "windows-apps-src\\controls-and-patterns\\resourcedictionary-and-xaml-resource-references.md"
   ],
   "fddd345507aace54aca66fe1caa2d9f89a74a299": [
     "windows-apps-src\\controls-and-patterns\\resourcedictionary-and-xaml-resource-references.md"
+  ],
+  "f26bcc596417f607ee348e93009905ec4a3e27c8": [
+    "windows-apps-src\\controls-and-patterns\\rich-edit-box.md"
   ],
   "37b886ecf18a00d8b96cd19074a36280523dfa3f": [
     "windows-apps-src\\controls-and-patterns\\rich-edit-box.md"
@@ -1535,11 +1622,17 @@
   "fc685b952db7292a9eea4d8a54bd6e2685cb13c0": [
     "windows-apps-src\\controls-and-patterns\\rich-edit-box.md"
   ],
+  "82c7e80afde143d7d12bbf4fe49aa2c52f244f6f": [
+    "windows-apps-src\\controls-and-patterns\\rich-text-block.md"
+  ],
   "229e717e6b5ed0c7670628b6a5c836f969c1f919": [
     "windows-apps-src\\controls-and-patterns\\rich-text-block.md"
   ],
   "28c78b39bad4c66457ec5aba8cf0b4ce0de4f00a": [
     "windows-apps-src\\controls-and-patterns\\rich-text-block.md"
+  ],
+  "3dd5912bdd210751257bb9e495c5a95ce0be20a5": [
+    "windows-apps-src\\controls-and-patterns\\scroll-controls.md"
   ],
   "6f9a14082df15479beb6cbf44613de202f9f139f": [
     "windows-apps-src\\controls-and-patterns\\scroll-controls.md"
@@ -1547,11 +1640,17 @@
   "b390f8a2cbabf243bd4d73c16122648e3d4a0586": [
     "windows-apps-src\\controls-and-patterns\\scroll-controls.md"
   ],
+  "f245db6c37b7c8257e4fe937417d981e49101b8c": [
+    "windows-apps-src\\controls-and-patterns\\search.md"
+  ],
   "f7294a7742d09aec46e8ac5447fcd251475cf3ce": [
     "windows-apps-src\\controls-and-patterns\\search.md"
   ],
   "cd746f81e8cca27c5111f3d15342d1def0f874dc": [
     "windows-apps-src\\controls-and-patterns\\search.md"
+  ],
+  "6e620acf3e161885a6af1bd6af3770d90b90d161": [
+    "windows-apps-src\\controls-and-patterns\\segoe-ui-symbol-font.md"
   ],
   "398e5a31d8e514c3f277743e39928c4071f2fcd9": [
     "windows-apps-src\\controls-and-patterns\\segoe-ui-symbol-font.md"
@@ -1559,11 +1658,17 @@
   "83431ff53e78a698c8be3893a1c85b4b07cde8ea": [
     "windows-apps-src\\controls-and-patterns\\segoe-ui-symbol-font.md"
   ],
+  "125cb6e45defe3213af3f5cd20f524a5311241af": [
+    "windows-apps-src\\controls-and-patterns\\semantic-zoom.md"
+  ],
   "b55358f20057875275949f7901a0a1f1fcbdd701": [
     "windows-apps-src\\controls-and-patterns\\semantic-zoom.md"
   ],
   "47e39290a63408fc66783617ad2f12345eab2fa3": [
     "windows-apps-src\\controls-and-patterns\\semantic-zoom.md"
+  ],
+  "9b21a15edcead96fdc1a335a1c6e58cc0a279858": [
+    "windows-apps-src\\controls-and-patterns\\slider.md"
   ],
   "15355e72747196bf2843fcee201dd4cb91f55174": [
     "windows-apps-src\\controls-and-patterns\\slider.md"
@@ -1577,6 +1682,9 @@
   "8954b14a84241686a7c784c3d250f197bed7c8b6": [
     "windows-apps-src\\controls-and-patterns\\spell-checking-and-prediction.md"
   ],
+  "7fae1477b997508ade92a5bbb977c1d6530a181f": [
+    "windows-apps-src\\controls-and-patterns\\split-view.md"
+  ],
   "277f48380fb49f6918b92ccdad32580f8c722615": [
     "windows-apps-src\\controls-and-patterns\\split-view.md"
   ],
@@ -1589,11 +1697,17 @@
   "02cd8f7777f169ad9fc4e5bfe854a8b6e0fe5060": [
     "windows-apps-src\\controls-and-patterns\\styling-controls.md"
   ],
+  "2a652e7bd8223a128fbd77d986c446fa7c74a34c": [
+    "windows-apps-src\\controls-and-patterns\\tabs-pivot.md"
+  ],
   "e7b4f099a1cff69eb93c1464e9708677252e53d1": [
     "windows-apps-src\\controls-and-patterns\\tabs-pivot.md"
   ],
   "b6cf34346ad557ce53d3009afe8bc83bc7ed21aa": [
     "windows-apps-src\\controls-and-patterns\\tabs-pivot.md"
+  ],
+  "94f858912473f2a0d20f4041155b1e1ee93032a2": [
+    "windows-apps-src\\controls-and-patterns\\text-block.md"
   ],
   "a2b1c1e6b80d96c12d394f40aaf0d80ed15617a7": [
     "windows-apps-src\\controls-and-patterns\\text-block.md"
@@ -1601,11 +1715,17 @@
   "7666c7a82b2959aa1329bbfe2532dccdc7fb38a5": [
     "windows-apps-src\\controls-and-patterns\\text-block.md"
   ],
+  "f9750e87516d38b16a589e5271de25d9f241e97b": [
+    "windows-apps-src\\controls-and-patterns\\text-box.md"
+  ],
   "5134169eaa00f078fa2803bc2d2722d915056b4c": [
     "windows-apps-src\\controls-and-patterns\\text-box.md"
   ],
   "873ca8f869f4303f8fc4a9a7ff08f81df29d367d": [
     "windows-apps-src\\controls-and-patterns\\text-box.md"
+  ],
+  "201244521f8110181e268af47d52c1ac1315e9d3": [
+    "windows-apps-src\\controls-and-patterns\\text-controls.md"
   ],
   "a69a57607018eff13d42fc085efb3484005d3209": [
     "windows-apps-src\\controls-and-patterns\\text-controls.md"
@@ -1613,11 +1733,17 @@
   "b075820275d7b5e592cdae736ed92beef67a7b9a": [
     "windows-apps-src\\controls-and-patterns\\text-controls.md"
   ],
+  "55f5cd9e647e74d7861a7472872373d8949b79ba": [
+    "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-adaptive-interactive-toasts.md"
+  ],
   "e5e18af502c844d1def0931382ce8f05126f46a2": [
     "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-adaptive-interactive-toasts.md"
   ],
   "17faf0ccb0207b318963e00655d7ac91b97e066b": [
     "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-adaptive-interactive-toasts.md"
+  ],
+  "08bdb46dba6fc93ada20b3fc585d3e24e29023a0": [
+    "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-adaptive-tiles-schema.md"
   ],
   "2597afd9fae8386498590d0e6fc717d494fbbe91": [
     "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-adaptive-tiles-schema.md"
@@ -1625,11 +1751,17 @@
   "a5d061515eee1ab64f17e4f5aab8846adbd1c8f1": [
     "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-adaptive-tiles-schema.md"
   ],
+  "4aa22b9eae8ff7f7da2c73f3fdf3a63ed12ff87b": [
+    "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-app-assets.md"
+  ],
   "1d465b883afcc89c65de66e74005a4631c64480c": [
     "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-app-assets.md"
   ],
   "98eebc4fbf18aa2fbe4586958f666b41580cf6d9": [
     "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-app-assets.md"
+  ],
+  "a61c9ce609856ff3addba557558c6bffec504ed7": [
+    "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-choosing-a-notification-delivery-method.md"
   ],
   "bb2477cd5d1680915d15c06d1c61087754b968f5": [
     "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-choosing-a-notification-delivery-method.md"
@@ -1637,11 +1769,17 @@
   "b79a6f771afe63c9a42567875db5ef8107611afc": [
     "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-choosing-a-notification-delivery-method.md"
   ],
+  "38ee8ae177898e20d45545c1cfd51a0dd24f7858": [
+    "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-create-adaptive-tiles.md"
+  ],
   "4e1042c24bb2b8b615771f7a0a2ed3eba9e076fb": [
     "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-create-adaptive-tiles.md"
   ],
   "6cd4519007d1241cb7c411dade1a092140b598c4": [
     "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-create-adaptive-tiles.md"
+  ],
+  "37de1a413ac9b5e74c905c140899ec7577a6fae5": [
+    "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-creating-tiles.md"
   ],
   "35d2c664d4b2862d01a0f960f3a02210f20e6372": [
     "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-creating-tiles.md"
@@ -1649,11 +1787,17 @@
   "a9f5d25dfd359364fa8e16666b03c7c105a867dd": [
     "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-creating-tiles.md"
   ],
+  "a954404ccc2e986c1603402315c8497f802ad254": [
+    "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-notifications-visualizer.md"
+  ],
   "d66182ae10eca00f8b04a104021c8a0910f19613": [
     "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-notifications-visualizer.md"
   ],
   "dcbf05669093047bd76dc01c217daf353d8fb9da": [
     "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-notifications-visualizer.md"
+  ],
+  "37858532004f477672f2c19adad93a22ca989f39": [
+    "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-periodic-notification-overview.md"
   ],
   "a24f369b7d5f697af772bd562493109fa3b50ce7": [
     "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-periodic-notification-overview.md"
@@ -1691,11 +1835,17 @@
   "32471f23bf10a8430db6c6bd1376f1f7aa6c784c": [
     "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-windows-push-notification-services--wns--overview.md"
   ],
+  "dbc178f5df541e482f4a2e86c6662ead1992a1ce": [
+    "windows-apps-src\\controls-and-patterns\\tiles-badges-notifications.md"
+  ],
   "ebf02fbb7593e53697c62b9a5c491ddc2b3c4143": [
     "windows-apps-src\\controls-and-patterns\\tiles-badges-notifications.md"
   ],
   "32b1c3ec674a84ca4ed08d98119fe21f77e15554": [
     "windows-apps-src\\controls-and-patterns\\tiles-badges-notifications.md"
+  ],
+  "69f682b0edddbcf88515af537c33b3d8297f91f0": [
+    "windows-apps-src\\controls-and-patterns\\time-picker.md"
   ],
   "f45b3700b2119a84776a935480e9b0e163a417a4": [
     "windows-apps-src\\controls-and-patterns\\time-picker.md"
@@ -1703,17 +1853,26 @@
   "5056a9f304ca21c977b9cc65b8ead007eccd4288": [
     "windows-apps-src\\controls-and-patterns\\time-picker.md"
   ],
+  "a4fe19dcd6f555273e74236192c5c61e8c6579ab": [
+    "windows-apps-src\\controls-and-patterns\\toggles.md"
+  ],
   "bd024d907e52813ffc8d8ed1023f53a0c258a4f7": [
     "windows-apps-src\\controls-and-patterns\\toggles.md"
   ],
   "e90760c6894ee5d32ba1063993a703023d23c152": [
     "windows-apps-src\\controls-and-patterns\\toggles.md"
   ],
+  "4110f902adf01e5e25ac674faf9be8faf61f4ea0": [
+    "windows-apps-src\\controls-and-patterns\\tooltips.md"
+  ],
   "1cc3c2ec35caa45d16f24da20a2ba56004475c03": [
     "windows-apps-src\\controls-and-patterns\\tooltips.md"
   ],
   "0529f212e9fac290bb58925e992518ab0e803bfa": [
     "windows-apps-src\\controls-and-patterns\\tooltips.md"
+  ],
+  "5752e1a7f7ac358043ec99c8db07cbfda9c4cd37": [
+    "windows-apps-src\\controls-and-patterns\\web-view.md"
   ],
   "c66c669d7a7e1f2d065fc36345e566e2beb91a67": [
     "windows-apps-src\\controls-and-patterns\\web-view.md"
@@ -8104,6 +8263,9 @@
   "fa7e7404a9a3ab5d75d47b3a5271bd1fd84b5569": [
     "windows-apps-src\\winrt-components\\brokered-windows-runtime-components-for-side-loaded-windows-store-apps.md"
   ],
+  "ef383e46f2c610b57eec1c7767d5100e42075f6c": [
+    "windows-apps-src\\controls-and-patterns\\index.md"
+  ],
   "a181f9cdb9985995801f50cbc187050bd2407ceb": [
     "windows-apps-src\\controls-and-patterns\\index.md"
   ],
@@ -8140,6 +8302,9 @@
   "4ac5db9da4cd9ba0edff5b08dfff6ed6473ab4e3": [
     "windows-apps-src\\design-downloads\\index.md"
   ],
+  "e8002a83c7416cf72a3f090a459a4b50268417ba": [
+    "windows-apps-src\\input-and-devices\\index.md"
+  ],
   "1e88afc2566451365e6904eee3e986efcaa8cea3": [
     "windows-apps-src\\input-and-devices\\index.md"
   ],
@@ -8148,6 +8313,9 @@
   ],
   "33c4fde752217c24e114e05881a86fb941280fd1": [
     "windows-apps-src\\layout\\images\\rspd-reposition-type1-sm.png"
+  ],
+  "72c4b957c98956965c773b4c2182796880f59a1d": [
+    "windows-apps-src\\layout\\index.md"
   ],
   "7e18c5f60e7c9cd94618cd587b7caca51a0a9777": [
     "windows-apps-src\\layout\\index.md"
@@ -8158,11 +8326,17 @@
   "7db8534ae4c49fc3b93f9d192048d5193d5f7491": [
     "windows-apps-src\\style\\images\\style-header-v2.png"
   ],
+  "4a96db626f6f3682248e7e720c956fa343186b4a": [
+    "windows-apps-src\\style\\index.md"
+  ],
   "af553ca63c14dc3ae8af60d44b269811ca0516c1": [
     "windows-apps-src\\style\\index.md"
   ],
   "d55aab04696441dbbcba0cbda61fd599fdacec67": [
     "windows-apps-src\\style\\index.md"
+  ],
+  "3bb22ae2a5f91df811283aa5ed01c22c561d084b": [
+    "windows-apps-src\\usability\\index.md"
   ],
   "b6b098c4505089536f1c34bc70b602268c9e31ec": [
     "windows-apps-src\\usability\\index.md"
@@ -8338,6 +8512,9 @@
   "1a6670c73eb8c2d056c6b9d12691da706d0771ef": [
     "windows-apps-src\\accessibility\\images\\high-contrast-calculators.png"
   ],
+  "ff9940c06276165dc139e120c4e9cdeb005ff125": [
+    "windows-apps-src\\controls-and-patterns\\dialogs.md"
+  ],
   "ce46f952d558e9e66160749291cfbb8dae0ccae2": [
     "windows-apps-src\\controls-and-patterns\\dialogs.md"
   ],
@@ -8349,6 +8526,9 @@
   ],
   "bfa75ef76ebfc3e4b558e660593adb968e786934": [
     "windows-apps-src\\controls-and-patterns\\images\\flyout-example.png"
+  ],
+  "f6ce4bc08e3647cd26dc1537bba5499ddb646a49": [
+    "windows-apps-src\\controls-and-patterns\\menus.md"
   ],
   "4f3a0a819f17eef6255be8a91ba1613bbd548e3f": [
     "windows-apps-src\\controls-and-patterns\\menus.md"
@@ -8770,26 +8950,50 @@
   "d2bf3d187f0923ebba5845b3cdfd253dda7fc4a9": [
     "windows-apps-src\\controls-and-patterns\\images\\tree-view-sample.png"
   ],
+  "7198f4084df8ce484cdc5f6b3231a4bdb02f18b5": [
+    "windows-apps-src\\controls-and-patterns\\inking-controls.md"
+  ],
   "2bdcaec54f1e5767deccc1d499e1df966d4592ef": [
     "windows-apps-src\\controls-and-patterns\\inking-controls.md"
+  ],
+  "c70cafe4d1dd3db46d48e9844ba9086dbba9acaa": [
+    "windows-apps-src\\controls-and-patterns\\inverted-lists.md"
   ],
   "6e2238e956843379fcb6155af6fd959d80097608": [
     "windows-apps-src\\controls-and-patterns\\inverted-lists.md"
   ],
+  "5e85b7d8af98c48d5a75a77187acbdf3184ff875": [
+    "windows-apps-src\\controls-and-patterns\\listview-item-templates.md"
+  ],
   "d288eab717d309120b9e56bc761c8a49af5c0c24": [
     "windows-apps-src\\controls-and-patterns\\listview-item-templates.md"
+  ],
+  "37f47db0d7085bf61836ed3fc9ccdc03470f58da": [
+    "windows-apps-src\\controls-and-patterns\\nested-ui.md"
   ],
   "b91efd3e506d3b65928e636fb2e2dcce1d9d2641": [
     "windows-apps-src\\controls-and-patterns\\nested-ui.md"
   ],
+  "0cdb27acf6bb165b497210df9fbfaadff9222e1c": [
+    "windows-apps-src\\controls-and-patterns\\pull-to-refresh.md"
+  ],
   "91ce72eb1a9730ae083a0adb0162f3df7f38d933": [
     "windows-apps-src\\controls-and-patterns\\pull-to-refresh.md"
+  ],
+  "a02793e45f190b9401f18e845af3dc73d235c3fc": [
+    "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-badges.md"
   ],
   "d1511dc9e24f86dfb453aa680b59e4e2602786f0": [
     "windows-apps-src\\controls-and-patterns\\tiles-and-notifications-badges.md"
   ],
+  "b81ef40954860cb026038447158ba1a9edb07002": [
+    "windows-apps-src\\controls-and-patterns\\tree-view.md"
+  ],
   "eff9190a35200434b4cff62ead53e7193e278bfa": [
     "windows-apps-src\\controls-and-patterns\\tree-view.md"
+  ],
+  "3aad0049bdd43935fa61b6146b81030494ff5bdb": [
+    "windows-apps-src\\controls-and-patterns\\xaml-styles.md"
   ],
   "bf8a06081c1f75a22c12c8b681ca9ccea634e25f": [
     "windows-apps-src\\controls-and-patterns\\xaml-styles.md"
