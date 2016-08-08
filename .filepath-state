@@ -3265,6 +3265,9 @@
   "7836cb385cc37f39fa1af01ea981263fcf3f3634": [
     "windows-apps-src\\get-started\\create-a-basic-windows-10-app-in-cpp.md"
   ],
+  "6c81b24f7fa9abe036d4ccd22ee8fa24c011fe77": [
+    "windows-apps-src\\get-started\\create-a-hello-world-app-js-universal.md"
+  ],
   "f09467a7895b1e1f1bc78db31c491cc1da1c3793": [
     "windows-apps-src\\get-started\\create-a-hello-world-app-js-universal.md"
   ],
@@ -7720,6 +7723,9 @@
   "01173aeabb74d6d703597a9bd7a48c179c688c07": [
     "windows-apps-src\\xbox-apps\\frequently-asked-questions.md"
   ],
+  "ce445d9936dba6fed41003391c7c41f47f5ee731": [
+    "windows-apps-src\\xbox-apps\\getting-started.md"
+  ],
   "f3c98215b7d685c0294f4704b21bd6fc163628aa": [
     "windows-apps-src\\xbox-apps\\getting-started.md"
   ],
@@ -8040,6 +8046,9 @@
   ],
   "918fc9f6acb579d368f8ca273f58d25482b49e34": [
     "windows-apps-src\\accessibility\\images\\high-contrast-settings.png"
+  ],
+  "7ffbc135bac9d104bd0d69c21b5ca4c42badd6ef": [
+    "windows-apps-src\\xbox-apps\\whats-new.md"
   ],
   "027e1f0e547ee9d6fa6a38f7342132c67ec4ddad": [
     "windows-apps-src\\xbox-apps\\whats-new.md"
