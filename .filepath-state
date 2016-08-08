@@ -2283,6 +2283,9 @@
   "b9300b3feb1e5229951f3e1ebe454b61ba8065ae": [
     "windows-apps-src\\debug-test-perf\\windows-runtime-components-and-optimizing-interop.md"
   ],
+  "28235829566e5a1f260c0710f870d6ba2d40faba": [
+    "windows-apps-src\\devices-sensors\\3d-print-from-app.md"
+  ],
   "fb26eb7f8333aab7b41c8ba2838e2da5da52f556": [
     "windows-apps-src\\devices-sensors\\3d-print-from-app.md"
   ],
@@ -3252,6 +3255,9 @@
   ],
   "63a40f5853740d1053449e1b1839f5b0232ce28e": [
     "windows-apps-src\\gaming\\work-with-networking-in-your-directx-game.md"
+  ],
+  "55d5b160bbf1d877408a52e981a030dee28515c4": [
+    "windows-apps-src\\get-started\\create-a-basic-windows-10-app-in-cpp.md"
   ],
   "3e29de2cbf00f725918708b5197ec4ca9f555ff8": [
     "windows-apps-src\\get-started\\create-a-basic-windows-10-app-in-cpp.md"
@@ -7696,6 +7702,9 @@
   "d56206f990e7885af4935401356bd3a2ce2cd292": [
     "windows-apps-src\\xbox-apps\\development-environment-setup.md"
   ],
+  "735f959005712c255db9130a79f4d9ba5639b6e0": [
+    "windows-apps-src\\xbox-apps\\devkit-activation.md"
+  ],
   "6df16fcdca8791dfb6ad0258c4623ef56eda592c": [
     "windows-apps-src\\xbox-apps\\devkit-activation.md"
   ],
@@ -7704,6 +7713,9 @@
   ],
   "9ad9904150acb00982c96eebeaf010f7023d3320": [
     "windows-apps-src\\xbox-apps\\devkit-activation.md"
+  ],
+  "273cd14d5f51a693ba8385c13d128bb2888de2ea": [
+    "windows-apps-src\\xbox-apps\\devkit-deactivation.md"
   ],
   "dc086f84d00aa24ac8ba995765977efc114802f1": [
     "windows-apps-src\\xbox-apps\\devkit-deactivation.md"
@@ -8083,6 +8095,9 @@
   "0bcec2e82afd81f68b36eab5719902d5fb7991fb": [
     "windows-apps-src\\whats-new\\windows-10-version-1511.md"
   ],
+  "24062905b548fcfbecb38c3d306b92636605cf6a": [
+    "windows-apps-src\\xbox-apps\\development-lanes-custom-cpp.md"
+  ],
   "af03e65e1017a8d332c32fcb6f2a30336987f370": [
     "windows-apps-src\\xbox-apps\\development-lanes-custom-cpp.md"
   ],
@@ -8100,6 +8115,9 @@
   ],
   "9bc406a174528b82ec062f42ee87a0036a602ab4": [
     "windows-apps-src\\xbox-apps\\development-lanes-html.md"
+  ],
+  "383e0f77ff9b810d5e5627b8df9ca09b03f4d0ae": [
+    "windows-apps-src\\xbox-apps\\development-lanes-landing.md"
   ],
   "5151875b20aea46025a2bc8253a45a7c277d8102": [
     "windows-apps-src\\xbox-apps\\development-lanes-landing.md"
