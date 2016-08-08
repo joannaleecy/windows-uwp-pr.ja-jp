@@ -5719,6 +5719,9 @@
   "43d579d2d0a92a8f03f17efa2ec42707357e99f9": [
     "windows-apps-src\\monetize\\xaml-properties-example.md"
   ],
+  "f8548c85e571d3f0f72f775af4ca40d85e86c163": [
+    "windows-apps-src\\networking\\background-transfers.md"
+  ],
   "93878e476bc032e1eeda29fb7388c0d3f42536f3": [
     "windows-apps-src\\networking\\background-transfers.md"
   ],
@@ -7494,6 +7497,9 @@
   ],
   "740110809845220d919c6ba3c90b1393dbc8ae94": [
     "windows-apps-src\\xaml-platform\\binding-markup-extension.md"
+  ],
+  "77858a864929c99425f9c008e8f6fb8dfbad0b44": [
+    "windows-apps-src\\xaml-platform\\custom-attached-properties.md"
   ],
   "bad7f2ecaedb38bec572b92bbfdca8c3675719b5": [
     "windows-apps-src\\xaml-platform\\custom-attached-properties.md"
