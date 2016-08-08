@@ -7672,6 +7672,9 @@
   "4f8aa553c99b6071cedc4f9d93cf8258b75eca49": [
     "windows-apps-src\\xaml-platform\\x-uid-directive.md"
   ],
+  "4b31ec06b1ded4882d26cffed029eb8179ff47c3": [
+    "windows-apps-src\\xbox-apps\\automate-launching-uwp-apps.md"
+  ],
   "3810c13f096fc268387c1c471b2eddaffa41c50f": [
     "windows-apps-src\\xbox-apps\\automate-launching-uwp-apps.md"
   ],
@@ -7716,6 +7719,9 @@
   ],
   "01173aeabb74d6d703597a9bd7a48c179c688c07": [
     "windows-apps-src\\xbox-apps\\frequently-asked-questions.md"
+  ],
+  "f3c98215b7d685c0294f4704b21bd6fc163628aa": [
+    "windows-apps-src\\xbox-apps\\getting-started.md"
   ],
   "f5a99b783163a11ac596ac8c6287cc87e5b45290": [
     "windows-apps-src\\xbox-apps\\getting-started.md"
@@ -7827,6 +7833,9 @@
   ],
   "2d3d6ad9b3375350f6f2cb47d6fd170d39f8fec0": [
     "windows-apps-src\\xbox-apps\\images\\windowsdeviceportal_2.png"
+  ],
+  "bd59458e94e74a744718132c6ab9cc3143c8d05a": [
+    "windows-apps-src\\xbox-apps\\index.md"
   ],
   "dc696b163e3d372e158c49b3eab57e04c9f0d4b9": [
     "windows-apps-src\\xbox-apps\\index.md"
