@@ -7699,6 +7699,9 @@
   "ae2f80a915f4aed90c269c37a11d01a2f6c9849e": [
     "windows-apps-src\\xbox-apps\\automate-launching-uwp-apps.md"
   ],
+  "5ffe0ce35e4aabcfc74e9bfa9017248320925603": [
+    "windows-apps-src\\xbox-apps\\development-environment-setup.md"
+  ],
   "13d2833d9508a9d748cc4d7bf096f1a45ed1297e": [
     "windows-apps-src\\xbox-apps\\development-environment-setup.md"
   ],
@@ -7975,6 +7978,9 @@
   "73597c689abe7946a4896c6a123c8d8fa513dbe0": [
     "windows-apps-src\\winrt-components\\images\\buildevents.png"
   ],
+  "6065435dc3add0d9bde15dc6bdd355935b8f53cd": [
+    "windows-apps-src\\xbox-apps\\cpusets-games.md"
+  ],
   "980362673c26a87e06a6443c409b68114def46eb": [
     "windows-apps-src\\xbox-apps\\cpusets-games.md"
   ],
@@ -8022,6 +8028,9 @@
   ],
   "d1ee946693b9f9714b8d570b8ae3718469d2c10d": [
     "windows-apps-src\\xbox-apps\\how-to-disable-mouse-mode.md"
+  ],
+  "cddde27a17e897ab8a68bbed099e532a8cd48f07": [
+    "windows-apps-src\\xbox-apps\\turn-off-overscan.md"
   ],
   "177366730651338b34368297f56ce83a589e70b5": [
     "windows-apps-src\\xbox-apps\\turn-off-overscan.md"
