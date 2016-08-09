@@ -7951,6 +7951,9 @@
   "b7c1817bfb375c42262bac8d8e3768e93b4c2635": [
     "windows-apps-src\\xbox-apps\\samples-xaml-media.md"
   ],
+  "c3ca70936e30ce67b19971e5ccbb01fa89253f35": [
+    "windows-apps-src\\xbox-apps\\system-resource-allocation.md"
+  ],
   "d136b6833baeab95e689dbbd221c47d62b868e96": [
     "windows-apps-src\\xbox-apps\\system-resource-allocation.md"
   ],
@@ -8106,6 +8109,9 @@
   ],
   "918fc9f6acb579d368f8ca273f58d25482b49e34": [
     "windows-apps-src\\accessibility\\images\\high-contrast-settings.png"
+  ],
+  "4cc1e0b495a80e019296b9c3be9e75a37c60224a": [
+    "windows-apps-src\\xbox-apps\\whats-new.md"
   ],
   "7ffbc135bac9d104bd0d69c21b5ca4c42badd6ef": [
     "windows-apps-src\\xbox-apps\\whats-new.md"
@@ -8550,6 +8556,9 @@
   ],
   "57c93494f81b4235b1616ae7f3178a7682ce20fc": [
     "windows-apps-src\\porting\\images\\hwa-to-uwp\\windows_step6.png"
+  ],
+  "241fa495c7277fe2bf4feafeb4062842f97e59b1": [
+    "windows-apps-src\\xbox-apps\\uwp-fiddler.md"
   ],
   "ef5c90e7849c407f20740dee204004c5fbfe41ce": [
     "windows-apps-src\\xbox-apps\\uwp-fiddler.md"
