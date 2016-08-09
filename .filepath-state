@@ -7909,6 +7909,9 @@
   "e016be20af9a0d7a67fa383cbdc93083d12a1113": [
     "windows-apps-src\\xbox-apps\\known-issues.md"
   ],
+  "031d64168092ef2a62df27b30d7c9a119adc51dc": [
+    "windows-apps-src\\xbox-apps\\multi-user-applications.md"
+  ],
   "908cfe66be1a236c64ee50c21127bd54b833539f": [
     "windows-apps-src\\xbox-apps\\multi-user-applications.md"
   ],
@@ -7917,6 +7920,9 @@
   ],
   "20f84783131122343fd01e6cb1f5a60cf50158cd": [
     "windows-apps-src\\xbox-apps\\multi-user-applications.md"
+  ],
+  "21aeb9ed928d0a0e9676245e86617cd24d5e3257": [
+    "windows-apps-src\\xbox-apps\\samples.md"
   ],
   "8a026da6a3c4151e1240181194b7e65d9b28d4a6": [
     "windows-apps-src\\xbox-apps\\samples.md"
@@ -7927,11 +7933,17 @@
   "6f38f5aabb6a409fab894bf7127ad4011162f7c6": [
     "windows-apps-src\\xbox-apps\\samples.md"
   ],
+  "aa98a820c22a0a31568aa68358f51c414516e83d": [
+    "windows-apps-src\\xbox-apps\\samples-xaml-dev.md"
+  ],
   "f9cbd25410a77c9e57fc1568104de00979932892": [
     "windows-apps-src\\xbox-apps\\samples-xaml-dev.md"
   ],
   "68e330dbc17557447bef8ddec76f71442e47594d": [
     "windows-apps-src\\xbox-apps\\samples-xaml-dev.md"
+  ],
+  "387732c923f67fec75ce3944cc05d39224892db4": [
+    "windows-apps-src\\xbox-apps\\samples-xaml-media.md"
   ],
   "e8a46296430abea51403b4ce753f9d080c5a0f3f": [
     "windows-apps-src\\xbox-apps\\samples-xaml-media.md"
