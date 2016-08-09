@@ -8011,6 +8011,9 @@
   "db6b9c83d36ac876661197dce81e5724e44bb640": [
     "windows-apps-src\\debug-test-perf\\version-adaptive-code.md"
   ],
+  "91e530a3313d53c4e693b88a64b849f3188a72de": [
+    "windows-apps-src\\xbox-apps\\how-to-disable-mouse-mode.md"
+  ],
   "75d45d800b93bffc467253d97e156adc795306cf": [
     "windows-apps-src\\xbox-apps\\how-to-disable-mouse-mode.md"
   ],
@@ -8020,6 +8023,9 @@
   "d1ee946693b9f9714b8d570b8ae3718469d2c10d": [
     "windows-apps-src\\xbox-apps\\how-to-disable-mouse-mode.md"
   ],
+  "177366730651338b34368297f56ce83a589e70b5": [
+    "windows-apps-src\\xbox-apps\\turn-off-overscan.md"
+  ],
   "2579ef61feac6c73ca540baf75d1a6302ef9b8fc": [
     "windows-apps-src\\xbox-apps\\turn-off-overscan.md"
   ],
@@ -8028,6 +8034,9 @@
   ],
   "abd06e78364ff32cc10d733e33b153b854dbc467": [
     "windows-apps-src\\xbox-apps\\turn-off-overscan.md"
+  ],
+  "8079be9685558277565766fa8d0ebbfd4a555904": [
+    "windows-apps-src\\xbox-apps\\disable-scaling.md"
   ],
   "adcebb736a9ec9b100f56a88712078105c37a2ec": [
     "windows-apps-src\\xbox-apps\\disable-scaling.md"
