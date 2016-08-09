@@ -1,27 +1,38 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\gaming\e2e.md](https://github.com/Microsoft/windows-apps/blob/ebb62a77f5410d03b93721560f584d4eefdbb195/windows-apps-src/gaming/e2e.md) | HandedOffSuccess | [Details](#de9b67a8b65099acca2d849832100b01f61714923459)
+ [windows-apps-src\enterprise\images\wip-lifecycle.PNG](https://github.com/Microsoft/windows-apps/blob/8344f1d74fa7f7554a9f4bf30f06650363b63a7e/windows-apps-src/enterprise/images/wip-lifecycle.PNG) | HandedOffSuccess | [Details](#76aae435be958f1fcf52edecc0883ec51a96c29e3416)
+ [windows-apps-src\enterprise\wip-hub.md](https://github.com/Microsoft/windows-apps/blob/8344f1d74fa7f7554a9f4bf30f06650363b63a7e/windows-apps-src/enterprise/wip-hub.md) | HandedOffSuccess | [Details](#3222d29ed7963f2fea7edeef350336f7461c1e153419)
 
 ## Item Details
-##### <a name='de9b67a8b65099acca2d849832100b01f61714923459'></a> Source: [windows-apps-src\gaming\e2e.md](https://github.com/Microsoft/windows-apps/blob/ebb62a77f5410d03b93721560f584d4eefdbb195/windows-apps-src/gaming/e2e.md)
+##### <a name='76aae435be958f1fcf52edecc0883ec51a96c29e3416'></a> Source: [windows-apps-src\enterprise\images\wip-lifecycle.PNG](https://github.com/Microsoft/windows-apps/blob/8344f1d74fa7f7554a9f4bf30f06650363b63a7e/windows-apps-src/enterprise/images/wip-lifecycle.PNG)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/ab7ea0ad942867a55d993482801258be196afd32/ol-handoff/Microsoft/windows-apps.ja-jp/master/e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.ja-jp.xlf)
-* Handoff Datetime: 2016-08-09 20:18:31
+* Handoff File: [76aae435be958f1fcf52edecc0883ec51a96c29e.PNG](https://github.com/Microsoft/WDG.handoff/blob/86b79dccfd7a49d1112fa82708f4d547e650ee73/ol-handoff/Microsoft/windows-apps.ja-jp/master/76aae435be958f1fcf52edecc0883ec51a96c29e.PNG)
+* Handoff Datetime: 2016-08-09 20:49:16
+* Handoff Reason: IsDependency
+* Dependency From: windows-apps-src\enterprise\wip-hub.md
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* [Back to Top](#report-top)
+
+##### <a name='3222d29ed7963f2fea7edeef350336f7461c1e153419'></a> Source: [windows-apps-src\enterprise\wip-hub.md](https://github.com/Microsoft/windows-apps/blob/8344f1d74fa7f7554a9f4bf30f06650363b63a7e/windows-apps-src/enterprise/wip-hub.md)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [wip-hub.57e44e5c2209070d40ded980039a8622cea641ca.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/86b79dccfd7a49d1112fa82708f4d547e650ee73/ol-handoff/Microsoft/windows-apps.ja-jp/master/wip-hub.57e44e5c2209070d40ded980039a8622cea641ca.ja-jp.xlf)
+* Handoff Datetime: 2016-08-09 20:49:16
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\gaming\e2e.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/bb8e3c217182fd3ae9fd7c331e3722f1189b5569/windows-apps-src/gaming/e2e.md)
-* Current Handback File: [e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/5fbfce34d71b9c9ce97b3692f989d8e628c65b51/ol-handback/Microsoft/windows-apps.ja-jp/master/e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.ja-jp.xlf)
-* Current Handback Datetime: 2016-07-20 16:31:17
 * [Back to Top](#report-top)
 
 

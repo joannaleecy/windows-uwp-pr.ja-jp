@@ -9175,6 +9175,9 @@
   "c42b7bbf0015d929aaf3f35dfcd580df2c049891": [
     "windows-apps-src\\enterprise\\wip-dev-guide.md"
   ],
+  "3222d29ed7963f2fea7edeef350336f7461c1e15": [
+    "windows-apps-src\\enterprise\\wip-hub.md"
+  ],
   "1ab1ce44117b60a8cf969f2beda4e4ec74d32ea4": [
     "windows-apps-src\\enterprise\\wip-hub.md"
   ],
@@ -9333,5 +9336,8 @@
   ],
   "2e1878bb525c848c9e14646bad9bb1fdf09a5c7f": [
     "windows-apps-src\\whats-new\\windows-10-version-1507.md"
+  ],
+  "76aae435be958f1fcf52edecc0883ec51a96c29e": [
+    "windows-apps-src\\enterprise\\images\\wip-lifecycle.PNG"
   ]
 }
