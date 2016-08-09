@@ -8095,6 +8095,9 @@
   "0bcec2e82afd81f68b36eab5719902d5fb7991fb": [
     "windows-apps-src\\whats-new\\windows-10-version-1511.md"
   ],
+  "425db64a9bd80687a9da7a9f812c9f4871f403ca": [
+    "windows-apps-src\\xbox-apps\\development-lanes-custom-cpp.md"
+  ],
   "24062905b548fcfbecb38c3d306b92636605cf6a": [
     "windows-apps-src\\xbox-apps\\development-lanes-custom-cpp.md"
   ],
@@ -8127,6 +8130,9 @@
   ],
   "54db2390b5df3b5c6bc7ca6f7d6e36454435c543": [
     "windows-apps-src\\xbox-apps\\development-lanes-landing.md"
+  ],
+  "75862521c8a4ef2a242f80b4d6b80ff5799b2a8d": [
+    "windows-apps-src\\xbox-apps\\development-lanes-unity.md"
   ],
   "e0294e434aa8c24fbac1ce9696f2d075e7e4f976": [
     "windows-apps-src\\xbox-apps\\development-lanes-unity.md"
