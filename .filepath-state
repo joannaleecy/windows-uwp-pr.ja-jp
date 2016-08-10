@@ -1,4 +1,7 @@
 {
+  "8974ea067e033796c491781997067aafea773d96": [
+    "windows-apps-src\\accessibility\\accessibility.md"
+  ],
   "04e5658e3babf40da088e567687e5bf40aab938f": [
     "windows-apps-src\\accessibility\\accessibility.md"
   ],
@@ -53,6 +56,9 @@
   "ec436f939c672d6e6d852d3dd6713fd6ca20a53b": [
     "windows-apps-src\\accessibility\\accessibility-testing.md"
   ],
+  "a87e578ae9cfb3fd3104392028f6b7412d23d619": [
+    "windows-apps-src\\accessibility\\accessible-text-requirements.md"
+  ],
   "d964f0d08e2ef6e4ac166c83a81fb217e572ac4e": [
     "windows-apps-src\\accessibility\\accessible-text-requirements.md"
   ],
@@ -62,11 +68,17 @@
   "1307b4f70cf7ffed300f4254a7d92b67b5afd085": [
     "windows-apps-src\\accessibility\\accessible-text-requirements.md"
   ],
+  "a72a49756b5d2828526a39fce50357ae90549aae": [
+    "windows-apps-src\\accessibility\\basic-accessibility-information.md"
+  ],
   "8a4194a3e4756f5cd8c93b9ba0e19275c229383e": [
     "windows-apps-src\\accessibility\\basic-accessibility-information.md"
   ],
   "1c6bc8567b39357d414a46ef2b92197c78bca971": [
     "windows-apps-src\\accessibility\\basic-accessibility-information.md"
+  ],
+  "d2ae98f95538c014ef256f5d4a400aabb36c3118": [
+    "windows-apps-src\\accessibility\\control-patterns-and-interfaces.md"
   ],
   "63d970160ba5722b1182f640d2fd97ac46f76b1b": [
     "windows-apps-src\\accessibility\\control-patterns-and-interfaces.md"
@@ -2814,6 +2826,9 @@
   ],
   "1b7431c20e25173a0aa3f8d6ee0d407be869d60a": [
     "windows-apps-src\\gaming\\draw-to-the-screen.md"
+  ],
+  "4c5c0102e9162e73790d41800a9d15977c2aa3ef": [
+    "windows-apps-src\\gaming\\e2e.md"
   ],
   "de9b67a8b65099acca2d849832100b01f6171492": [
     "windows-apps-src\\gaming\\e2e.md"
@@ -6334,11 +6349,17 @@
   "559842fb6740236780756018d01036b835660309": [
     "windows-apps-src\\publish\\age-ratings.md"
   ],
+  "fd03b13d4169f265575de921ef9c42303babe972": [
+    "windows-apps-src\\publish\\analytics.md"
+  ],
   "ba04674b8d3d5ebda0c58ae84a88aef2b1e78fbe": [
     "windows-apps-src\\publish\\analytics.md"
   ],
   "8922a53da8b1bc97bef7faf49d0e412a26127188": [
     "windows-apps-src\\publish\\analytics.md"
+  ],
+  "419d41de3ba26f6470ad99b44826f2935aea4eff": [
+    "windows-apps-src\\publish\\app-declarations.md"
   ],
   "236eec1367262323df4749a78b920f67760c5b7d": [
     "windows-apps-src\\publish\\app-declarations.md"
@@ -6351,6 +6372,9 @@
   ],
   "acd91c578d7222e5fb115a4784f3360333f2a063": [
     "windows-apps-src\\publish\\app-install-ads-reports.md"
+  ],
+  "9787ef724622a95d291b4631196b3e13bcb1298a": [
+    "windows-apps-src\\publish\\app-management-and-services.md"
   ],
   "d91add49bacb2cc7b479dd670cf3b6668432b8bc": [
     "windows-apps-src\\publish\\app-management-and-services.md"
@@ -6373,6 +6397,9 @@
   "951c00f9fd2c945ac44d47bfae701049e937b98f": [
     "windows-apps-src\\publish\\app-package-requirements.md"
   ],
+  "7111c7679d93df2888b99484519ebc9cb884f461": [
+    "windows-apps-src\\publish\\app-promotion-and-customer-engagement.md"
+  ],
   "8e8275321bc504538a3500334444d726c0b9423e": [
     "windows-apps-src\\publish\\app-promotion-and-customer-engagement.md"
   ],
@@ -6384,6 +6411,9 @@
   ],
   "9eac5658e2ac04b2abc1bf06abf5c73b16260bc7": [
     "windows-apps-src\\publish\\app-screenshots-and-images.md"
+  ],
+  "281869bf44c0697ab1bcf37d747a1e796fcc1a94": [
+    "windows-apps-src\\publish\\app-submissions.md"
   ],
   "83516be8080062e827db8416aa38f4f27ec881ef": [
     "windows-apps-src\\publish\\app-submissions.md"
@@ -6397,6 +6427,9 @@
   "6af2842eeb5eeebfc9ffc5a7a3ec98fdcebddb74": [
     "windows-apps-src\\publish\\avoid-common-certification-failures.md"
   ],
+  "d5705d3a5687c7dd0106b4e92b93436ba00d4d97": [
+    "windows-apps-src\\publish\\beta-testing-and-targeted-distribution.md"
+  ],
   "36625684b2d3706a98022f70eb8d64a42a071844": [
     "windows-apps-src\\publish\\beta-testing-and-targeted-distribution.md"
   ],
@@ -6409,6 +6442,9 @@
   "9f9f5da100109af5dc38f7ffbc3cadca842b1214": [
     "windows-apps-src\\publish\\category-and-subcategory-table.md"
   ],
+  "48128577d41a9810062288ae908646c391aae849": [
+    "windows-apps-src\\publish\\channels-and-conversions-report.md"
+  ],
   "8aa6ab3cc0c07fbc0bfbc6619fe0ecc11418e252": [
     "windows-apps-src\\publish\\channels-and-conversions-report.md"
   ],
@@ -6420,6 +6456,9 @@
   ],
   "c61866aa6fb71d41d4c6150cfe6af449da21a1da": [
     "windows-apps-src\\publish\\common-questions.md"
+  ],
+  "a6e97968df4e9ab986d364b2573a31b4ba9d1958": [
+    "windows-apps-src\\publish\\create-a-custom-app-promotion-campaign.md"
   ],
   "47c9eb50c010223f7ea55bf0c4beabe2e1993e97": [
     "windows-apps-src\\publish\\create-a-custom-app-promotion-campaign.md"
@@ -6441,6 +6480,9 @@
   ],
   "bd10b94cdb3e16e8a6165610fb77adcdaca5b0a4": [
     "windows-apps-src\\publish\\create-app-descriptions.md"
+  ],
+  "335a1acb0fd813763e0df573e85be564ff289d6b": [
+    "windows-apps-src\\publish\\create-iap-descriptions.md"
   ],
   "5e26d824267dcc4da2fa39b23b20ef2ab7edc658": [
     "windows-apps-src\\publish\\create-iap-descriptions.md"
@@ -6466,11 +6508,17 @@
   "858b777c62ffaf6e0ea8c6811e5051cc20474ba0": [
     "windows-apps-src\\publish\\customer-groups.md"
   ],
+  "3fb8594748d303216a4437983604b5d78c993934": [
+    "windows-apps-src\\publish\\define-pricing-and-market-selection.md"
+  ],
   "405d51b73d4bf05a46e9bb23eb5a33ad49ee5ee3": [
     "windows-apps-src\\publish\\define-pricing-and-market-selection.md"
   ],
   "9a1d8b8fb57989091fe7b82ad34066240f62cb8b": [
     "windows-apps-src\\publish\\define-pricing-and-market-selection.md"
+  ],
+  "810522ceac3c9ecf57947a2d50a221ecfffe37a6": [
+    "windows-apps-src\\publish\\dev-center-insider-program.md"
   ],
   "cd260a08e69624b4c65fb1a44e186b9553e2f86d": [
     "windows-apps-src\\publish\\dev-center-insider-program.md"
@@ -6505,6 +6553,9 @@
   "8861c13478adbe2010a164126c56f555375e0472": [
     "windows-apps-src\\publish\\enter-app-properties.md"
   ],
+  "04693ba9ab42eecb6fc48c35219fea45f45b436c": [
+    "windows-apps-src\\publish\\enter-iap-properties.md"
+  ],
   "56a4b86f78794d14039d4ae6e231ddf9f05c59ea": [
     "windows-apps-src\\publish\\enter-iap-properties.md"
   ],
@@ -6523,11 +6574,17 @@
   "dba1c1f754b4200bd00395e0b71d18bee30e3a2d": [
     "windows-apps-src\\publish\\generate-preinstall-packages-for-oems.md"
   ],
+  "db4378dcf70015c952e91bdb8280560d3eba29ca": [
+    "windows-apps-src\\publish\\generate-promotional-codes.md"
+  ],
   "c9f344799972d4f9615647ea1fa419fe75d4605f": [
     "windows-apps-src\\publish\\generate-promotional-codes.md"
   ],
   "bfea802fb4a6efcfe34121802ce49f20a9b0305e": [
     "windows-apps-src\\publish\\generate-promotional-codes.md"
+  ],
+  "8f7bbefa81425ff05b8a84b78cd8418b8dec19ba": [
+    "windows-apps-src\\publish\\getting-paid-apps.md"
   ],
   "0a18f3550ee1ec83debe075146e74bcb8280a6e9": [
     "windows-apps-src\\publish\\getting-paid-apps.md"
@@ -6547,17 +6604,26 @@
   "78bedc3e0551feef8efe61b3b664145e29281714": [
     "windows-apps-src\\publish\\health-report.md"
   ],
+  "f8daf33db6c48bc084895339ab253a5c1268adbd": [
+    "windows-apps-src\\publish\\how-your-app-appears-in-the-store-for-windows-10-customers.md"
+  ],
   "8ae30cd67300d2e40e80bcdc9181c93938880ba7": [
     "windows-apps-src\\publish\\how-your-app-appears-in-the-store-for-windows-10-customers.md"
   ],
   "5e8d25264a17307c61f4e8b1295ded3f920ee2cf": [
     "windows-apps-src\\publish\\how-your-app-appears-in-the-store-for-windows-10-customers.md"
   ],
+  "9b7c173cb62c9666238d61c26a6b34508b090100": [
+    "windows-apps-src\\publish\\iap-acquisitions-report.md"
+  ],
   "30b8f110a8aac2c8bb45a7b67555d0c40c98ee0c": [
     "windows-apps-src\\publish\\iap-acquisitions-report.md"
   ],
   "3191df12ca5b59f545cf250c3e669b30192af6bc": [
     "windows-apps-src\\publish\\iap-acquisitions-report.md"
+  ],
+  "96d5c731d4ea98078020b512133f072a9e8c45f4": [
+    "windows-apps-src\\publish\\iap-submissions.md"
   ],
   "d6bb3c8830b02c298b3ef6eeacca728c6013d6a4": [
     "windows-apps-src\\publish\\iap-submissions.md"
@@ -6589,6 +6655,9 @@
   "e0f993d703ccd3a4509de4350f07d50564893763": [
     "windows-apps-src\\publish\\make-your-app-easier-to-promote.md"
   ],
+  "4c7d35b4cdb616bc93ebada0b13a944cba7faa08": [
+    "windows-apps-src\\publish\\manage-account-users.md"
+  ],
   "06d37b746ad0ee27ff6a903fc1fdf452185153a3": [
     "windows-apps-src\\publish\\manage-account-users.md"
   ],
@@ -6612,6 +6681,9 @@
   ],
   "8e6305f3e6904833245013ef7eb63809c97ec423": [
     "windows-apps-src\\publish\\managing-your-ad-campaign.md"
+  ],
+  "3859918d94ad7ffcf1c331ca5a0ca6540387886f": [
+    "windows-apps-src\\publish\\managing-your-profile.md"
   ],
   "8d06541571d5023edbd3496b5bdf4ae333b0fd11": [
     "windows-apps-src\\publish\\managing-your-profile.md"
@@ -6664,6 +6736,9 @@
   "9910ca5b5a3fd5d24643a1dfc6da3644d561c617": [
     "windows-apps-src\\publish\\package-version-numbering.md"
   ],
+  "6bac72d63c8868bd0a3fd02d737f8cde7cad326d": [
+    "windows-apps-src\\publish\\payout-summary.md"
+  ],
   "ae9cbf14c321015f915a7dfff8e46aa522bf6740": [
     "windows-apps-src\\publish\\payout-summary.md"
   ],
@@ -6684,6 +6759,9 @@
   ],
   "8973b1def46c7ada8b73337cb20d01ae1e5b97d8": [
     "windows-apps-src\\publish\\pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md"
+  ],
+  "1b363f93dd12f621226261cbc8cd553d89ba9033": [
+    "windows-apps-src\\publish\\put-apps-and-iaps-on-sale.md"
   ],
   "00a3286b1ae0ab8c8a11312f62992603d79016df": [
     "windows-apps-src\\publish\\put-apps-and-iaps-on-sale.md"
@@ -6721,11 +6799,17 @@
   "7d1a768ce558718b43a4d124f7c88868e999fb93": [
     "windows-apps-src\\publish\\reviews-report.md"
   ],
+  "a4b2f019774ebf2deb7af904202234db2d5f75e7": [
+    "windows-apps-src\\publish\\set-app-pricing-and-availability.md"
+  ],
   "ca85bc6d43873991563b6236d16d913c87802e86": [
     "windows-apps-src\\publish\\set-app-pricing-and-availability.md"
   ],
   "509ef3b8b9ec06907fccc2dbbe29fa3c72cb8e5d": [
     "windows-apps-src\\publish\\set-app-pricing-and-availability.md"
+  ],
+  "debd24d97f4fa22d450b1c5335937326ddb2af56": [
+    "windows-apps-src\\publish\\set-iap-pricing-and-availability.md"
   ],
   "d29c955e4c024979de0e6d904b3321207988936b": [
     "windows-apps-src\\publish\\set-iap-pricing-and-availability.md"
@@ -6733,11 +6817,17 @@
   "0e6c58f2d892f213d2de53c3cb9b97b1e8152137": [
     "windows-apps-src\\publish\\set-iap-pricing-and-availability.md"
   ],
+  "56a7bcb9d9f7b7a2838426526f18ea3e24e81da4": [
+    "windows-apps-src\\publish\\setting-up-your-payout-account-and-tax-forms.md"
+  ],
   "6577c4ac063e7ea6c3de0ed5873aeaf9c071a07e": [
     "windows-apps-src\\publish\\setting-up-your-payout-account-and-tax-forms.md"
   ],
   "45cb4e8b65f1aeb75c049a88c143a23350d47b64": [
     "windows-apps-src\\publish\\setting-up-your-payout-account-and-tax-forms.md"
+  ],
+  "1552dc14937c704e1db710cf5226d8b698ce890f": [
+    "windows-apps-src\\publish\\set-your-iap-product-id.md"
   ],
   "280f6f0819a3cc685b1bc7d0d0bb220e4266e945": [
     "windows-apps-src\\publish\\set-your-iap-product-id.md"
@@ -6786,6 +6876,9 @@
   ],
   "0d775c67492fd6afe9f65f3e5dede865f9037342": [
     "windows-apps-src\\publish\\use-map-services.md"
+  ],
+  "355a47b01c54a12ea5f38172b8b16ba7a682b0c0": [
+    "windows-apps-src\\publish\\using-the-windows-dev-center-dashboard.md"
   ],
   "a2a84c08bb691e421f48b1b56ebfa0ae94569bbf": [
     "windows-apps-src\\publish\\using-the-windows-dev-center-dashboard.md"
@@ -7360,6 +7453,9 @@
   "ba8679a5f06895cef52cbc229f4487997a17bf35": [
     "windows-apps-src\\style\\motion-reposition.md"
   ],
+  "91021d76b180e2bc26c0d502098e0a0b21f0219f": [
+    "windows-apps-src\\style\\sound.md"
+  ],
   "fdd78da0800345f17d9d15a565e69b600bc6c7d7": [
     "windows-apps-src\\style\\sound.md"
   ],
@@ -7419,6 +7515,9 @@
   ],
   "033669a781aa85cc2c90fa11816e385ffefa997d": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
+  ],
+  "951998d001be8bf2f9f7b38f1f1121e5564a5c00": [
+    "windows-apps-src\\TOC.md"
   ],
   "d754dacda8983e945c34f95287ae7620f2274383": [
     "windows-apps-src\\TOC.md"
@@ -8422,6 +8521,9 @@
   "0cf92a800c0923133a36723c5552ac0cd53aea57": [
     "windows-apps-src\\input-and-devices\\images\\TouchFeedback.png"
   ],
+  "73589979db2ebac96d9168159089d562ef6398e2": [
+    "windows-apps-src\\publish\\manage-iaps-in-bulk.md"
+  ],
   "143bf150b3ac97cdc3969862fb135398e19eea3f": [
     "windows-apps-src\\publish\\manage-iaps-in-bulk.md"
   ],
@@ -8520,6 +8622,9 @@
   ],
   "457ddacd80b3f9308b2eb66ce0ac2d448bb59ed2": [
     "windows-apps-src\\usability\\index.md"
+  ],
+  "ba9f3e075a5cc8b101234020b4bf6bced7890ff7": [
+    "windows-apps-src\\publish\\index.md"
   ],
   "105e46e12239259a1656141bb1d8f655abf36482": [
     "windows-apps-src\\publish\\index.md"
@@ -9381,5 +9486,29 @@
   ],
   "76aae435be958f1fcf52edecc0883ec51a96c29e": [
     "windows-apps-src\\enterprise\\images\\wip-lifecycle.PNG"
+  ],
+  "144a8400acf0333fcd50e698b333c02942081ef3": [
+    "windows-apps-src\\publish\\add-on-acquisitions-report.md"
+  ],
+  "a6aa2fd893c04c5a6a0dbb5f1ca7a0ac19ce5563": [
+    "windows-apps-src\\publish\\add-on-submissions.md"
+  ],
+  "ffa211dfb59e2e48279ad3ff16e092b271e9102d": [
+    "windows-apps-src\\publish\\create-add-on-descriptions.md"
+  ],
+  "377e6f7c7b23c56dcd8cfffc846d90ad7d136fee": [
+    "windows-apps-src\\publish\\enter-add-on-properties.md"
+  ],
+  "9d387cf3a7850301660a672e3255a762ecd3bd4a": [
+    "windows-apps-src\\publish\\manage-add-ons-in-bulk.md"
+  ],
+  "d5884fc4be04de69132662ade7e42f69d36d2346": [
+    "windows-apps-src\\publish\\put-apps-and-add-ons-on-sale.md"
+  ],
+  "17fe4e836dc75e0dfd44389a503a6a94afe44f42": [
+    "windows-apps-src\\publish\\set-add-on-pricing-and-availability.md"
+  ],
+  "21ebd6022d137b3de61a8c533747cb13b91bb5a5": [
+    "windows-apps-src\\publish\\set-your-add-on-product-id.md"
   ]
 }
