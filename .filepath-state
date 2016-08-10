@@ -1,4 +1,7 @@
 {
+  "04e5658e3babf40da088e567687e5bf40aab938f": [
+    "windows-apps-src\\accessibility\\accessibility.md"
+  ],
   "995dbf246950d349b568480b9670ef14057e9d96": [
     "windows-apps-src\\accessibility\\accessibility.md"
   ],
@@ -4726,6 +4729,9 @@
   "ee58b39005032eb689c4340103a6819f9f903b67": [
     "windows-apps-src\\launch-resume\\images\\windowsmapsappdirections.png"
   ],
+  "9c0bc9e37e1fda15a854a2638dd98c6a35773efd": [
+    "windows-apps-src\\launch-resume\\index.md"
+  ],
   "a20ee98e4287d26875792c740c6f8f68b29c131a": [
     "windows-apps-src\\launch-resume\\index.md"
   ],
@@ -5889,6 +5895,9 @@
   ],
   "c5ffb1e912c2953d5f813f099e036d2d7b395b69": [
     "windows-apps-src\\porting\\desktop-to-uwp-root.md"
+  ],
+  "e275b6ac7178e0705af59c8628f11de65a4d4c7f": [
+    "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
   ],
   "8e85a0d58f87d53627af9f928adef858deda7999": [
     "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
