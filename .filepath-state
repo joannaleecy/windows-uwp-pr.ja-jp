@@ -8,6 +8,9 @@
   "3bbd7ff5fac634a2d5b0f0cb2cf2db7b4315d3b3": [
     "windows-apps-src\\accessibility\\accessibility.md"
   ],
+  "5220255a29da9a42bb82df5f450961b5c1b34942": [
+    "windows-apps-src\\accessibility\\accessibility-checklist.md"
+  ],
   "8b646e154f1c7c4d538e35e02d9e31d24358f47b": [
     "windows-apps-src\\accessibility\\accessibility-checklist.md"
   ],
@@ -17,17 +20,26 @@
   "2d632c524de8299378d8cc059d1c522080a2df2e": [
     "windows-apps-src\\accessibility\\accessibility-checklist.md"
   ],
+  "8d987e9c1c9476625b8544ee95abc62e2b2c09f5": [
+    "windows-apps-src\\accessibility\\accessibility-in-the-store.md"
+  ],
   "676cc5b039444e8380a35d0aba463879fdd0321d": [
     "windows-apps-src\\accessibility\\accessibility-in-the-store.md"
   ],
   "46dfe4fba383861c704b2ba9070bdd8102b10562": [
     "windows-apps-src\\accessibility\\accessibility-in-the-store.md"
   ],
+  "669672ecd8c15adb2e53eb8e4a8efd8483af14d1": [
+    "windows-apps-src\\accessibility\\accessibility-overview.md"
+  ],
   "23eb04889dda3b169f6b30e9b268c2b277c2e884": [
     "windows-apps-src\\accessibility\\accessibility-overview.md"
   ],
   "430484a9243abc644de75d35c03bb11cf47960c0": [
     "windows-apps-src\\accessibility\\accessibility-overview.md"
+  ],
+  "cc988037a8b3270045c7dd5faac4bf7d69fd6274": [
+    "windows-apps-src\\accessibility\\accessibility-testing.md"
   ],
   "f4524621df84544665a3b12b0fe7df9be50381d3": [
     "windows-apps-src\\accessibility\\accessibility-testing.md"
@@ -3877,6 +3889,9 @@
   "83bf462659b28df49bf40beabd253acd039d67b6": [
     "windows-apps-src\\input-and-devices\\cortana-design-guidelines.md"
   ],
+  "8e853962cdea36a6738c094851d461c700aafd73": [
+    "windows-apps-src\\input-and-devices\\cortana-interactions.md"
+  ],
   "68eb197b7bb2b8b91f4e6411ecab96b106f6cf35": [
     "windows-apps-src\\input-and-devices\\cortana-interactions.md"
   ],
@@ -4219,6 +4234,9 @@
   "9af868d8fe59f7234b9c84649c1fac723dc164e0": [
     "windows-apps-src\\input-and-devices\\images\\ink-unprocessed-2-small.png"
   ],
+  "3af3d837827f40e5d21f4330dee0dd47af33db11": [
+    "windows-apps-src\\input-and-devices\\images\\ink-unprocessed-3-small.png"
+  ],
   "56f614cf40e84451134e07e7a74db9eb0c6900e7": [
     "windows-apps-src\\input-and-devices\\images\\ink-unprocessed-3-small.png"
   ],
@@ -4526,6 +4544,9 @@
   ],
   "417668a24c4a2ba28671b6fb0a4da74c0cfab341": [
     "windows-apps-src\\input-and-devices\\respond-to-the-presence-of-the-touch-keyboard.md"
+  ],
+  "8ba48ed9aa7589ddee6009c5a8cb8ec1091d51ef": [
+    "windows-apps-src\\input-and-devices\\save-and-load-ink.md"
   ],
   "c220063f7ddd102e1157d477914ac062457a7408": [
     "windows-apps-src\\input-and-devices\\save-and-load-ink.md"
@@ -7399,6 +7420,9 @@
   "033669a781aa85cc2c90fa11816e385ffefa997d": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "d754dacda8983e945c34f95287ae7620f2274383": [
+    "windows-apps-src\\TOC.md"
+  ],
   "27723c09e9c702c89bd21748bcdb0302965376cb": [
     "windows-apps-src\\TOC.md"
   ],
@@ -8514,6 +8538,9 @@
   ],
   "c76ac5f735c5dc93e5f5014b77181a2e862386a1": [
     "windows-apps-src\\get-started\\images\\vs-2015-community-setup.png"
+  ],
+  "2aa55797ed3a6588b3a27158282a02827fbd2109": [
+    "windows-apps-src\\porting\\desktop-to-uwp-extensions.md"
   ],
   "974d34862d8446f8c4b63faa06526af4fdad0d32": [
     "windows-apps-src\\porting\\desktop-to-uwp-extensions.md"
