@@ -86,17 +86,26 @@
   "9f38c3bd26ef7b409d4c743abf25a5b0a6455f20": [
     "windows-apps-src\\accessibility\\control-patterns-and-interfaces.md"
   ],
+  "be53632455fe2fa847cc77c82ed0c2e2edff6685": [
+    "windows-apps-src\\accessibility\\custom-automation-peers.md"
+  ],
   "2bed8286df0c363341ca664e4c9c5a69765d8217": [
     "windows-apps-src\\accessibility\\custom-automation-peers.md"
   ],
   "3f3d5854114b1289257368f8e0fa618bd7d58c90": [
     "windows-apps-src\\accessibility\\custom-automation-peers.md"
   ],
+  "94848fd1acf51e7ab8dab0f45584d3214be58830": [
+    "windows-apps-src\\accessibility\\designing-inclusive-software.md"
+  ],
   "f792cd64541e44c0600724119cfc858607866459": [
     "windows-apps-src\\accessibility\\designing-inclusive-software.md"
   ],
   "cdd41595ee2727c0eeefab7b041c1adfefc15dfa": [
     "windows-apps-src\\accessibility\\designing-inclusive-software.md"
+  ],
+  "19c90991ab86383fa259b05460cbd656d408e977": [
+    "windows-apps-src\\accessibility\\developing-inclusive-windows-apps.md"
   ],
   "122a469983006716ce2cd7daf3a80f0a596b8781": [
     "windows-apps-src\\accessibility\\developing-inclusive-windows-apps.md"
@@ -5173,6 +5182,9 @@
   "caf3ad6fecd6ed90c65f85477643fb42ab4787d3": [
     "windows-apps-src\\maps-and-location\\geocoding.md"
   ],
+  "1172aae67169295ac6f2446c839a1cce5a84fa36": [
+    "windows-apps-src\\maps-and-location\\get-location.md"
+  ],
   "804ddee3097a4dce5c1892672742419cc0614763": [
     "windows-apps-src\\maps-and-location\\get-location.md"
   ],
@@ -5434,6 +5446,9 @@
   "9c38784325f4dc51052f70a819012508f2a0bdbb": [
     "windows-apps-src\\monetize\\exclude-or-limit-features-in-a-trial-version-of-your-app.md"
   ],
+  "122a23a12269ed6b81f40ddf1485db59f1e446af": [
+    "windows-apps-src\\monetize\\get-app-acquisitions.md"
+  ],
   "b89e9291f25fb6950d0d307b0f933556cc6286ca": [
     "windows-apps-src\\monetize\\get-app-acquisitions.md"
   ],
@@ -5446,11 +5461,17 @@
   "3d885322181fa8b932dd248c8c71e7d6d747bb06": [
     "windows-apps-src\\monetize\\get-app-failures.md"
   ],
+  "b243aba5aa25cd31dbeec69c0a2a7ea4b1c15edd": [
+    "windows-apps-src\\monetize\\get-app-ratings.md"
+  ],
   "fcd363f3fc2bd71fe7983fe45c279f577fae0106": [
     "windows-apps-src\\monetize\\get-app-ratings.md"
   ],
   "6f6a94e030f1733ca4224766526386ef1956ff03": [
     "windows-apps-src\\monetize\\get-app-ratings.md"
+  ],
+  "526b7f35f3033409020713e6fe17ced5b7584fda": [
+    "windows-apps-src\\monetize\\get-app-reviews.md"
   ],
   "7be78a6ac83e354eeecec0e04e5ea368cdf777a2": [
     "windows-apps-src\\monetize\\get-app-reviews.md"
@@ -5458,11 +5479,17 @@
   "6e7e8c6a1b870031fb7055bf09c8ebbaa7dc13a5": [
     "windows-apps-src\\monetize\\get-app-reviews.md"
   ],
+  "4b2ec15fb94f03f39e0e8edb285458b573b42576": [
+    "windows-apps-src\\monetize\\get-error-reporting-data.md"
+  ],
   "558590d03e86424e24e8d74a71ee9a02d785ac55": [
     "windows-apps-src\\monetize\\get-error-reporting-data.md"
   ],
   "682f727a21d74f5cea8fddc4886c873d537e1cfb": [
     "windows-apps-src\\monetize\\get-error-reporting-data.md"
+  ],
+  "aa6512b265a570381fa3d936433921e996f6ffba": [
+    "windows-apps-src\\monetize\\get-in-app-acquisitions.md"
   ],
   "94c91f1a1466d6a97f42bf33e8272907318828ea": [
     "windows-apps-src\\monetize\\get-in-app-acquisitions.md"
