@@ -113,6 +113,9 @@
   "826c6984962ecbe3b49ba3753e9cc795344f5057": [
     "windows-apps-src\\accessibility\\developing-inclusive-windows-apps.md"
   ],
+  "30785998d11f09ef94f33789e3e74b0933d9c83e": [
+    "windows-apps-src\\accessibility\\high-contrast-themes.md"
+  ],
   "58516e354f71866e30cc46b1aabfe93aea4df744": [
     "windows-apps-src\\accessibility\\high-contrast-themes.md"
   ],
@@ -136,6 +139,9 @@
   ],
   "8f3ec44999f8dcc62af1bd7ee0b058db077f24ac": [
     "windows-apps-src\\accessibility\\images\\inspect.png"
+  ],
+  "112c7be4cb5418332a19565be9b739e7032ba834": [
+    "windows-apps-src\\accessibility\\keyboard-accessibility.md"
   ],
   "ad633af987f214b9b3d95ad1bb72f3cd2700b07b": [
     "windows-apps-src\\accessibility\\keyboard-accessibility.md"
