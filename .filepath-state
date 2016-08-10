@@ -206,6 +206,9 @@
   "1c8ab97a5625243a50fa3b40ae93f5928dc7d851": [
     "windows-apps-src\\app-help-guidelines\\instructional-ui.md"
   ],
+  "8ba114c2b920e321aecd92a5b4d53825bdb5d599": [
+    "windows-apps-src\\app-settings\\app-settings-and-data.md"
+  ],
   "6ade2ce5bf3e2517ad8a513c8a760cc994dec6e5": [
     "windows-apps-src\\app-settings\\app-settings-and-data.md"
   ],
@@ -214,6 +217,9 @@
   ],
   "4d6f57dcc9dbfe9c2e031a5fe73f24668f0dc462": [
     "windows-apps-src\\app-settings\\app-settings-and-data.md"
+  ],
+  "6302ec1bf332a27986876dbde4da92bbc916f85b": [
+    "windows-apps-src\\app-settings\\guidelines-for-app-settings.md"
   ],
   "0d5ac3adf531eb2876852d59acb2b71b1596fa20": [
     "windows-apps-src\\app-settings\\guidelines-for-app-settings.md"
