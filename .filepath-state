@@ -248,6 +248,9 @@
   "cf749e20a6350f02f7ee9e37b01ae0bd48a78ffc": [
     "windows-apps-src\\app-settings\\images\\appsettings-layout-navpane-mobile.png"
   ],
+  "9de98c3d4e58fba085484451029fc3bb54da7a80": [
+    "windows-apps-src\\app-settings\\store-and-retrieve-app-data.md"
+  ],
   "c5481371bfe0574bc92db182149a6c5bde50187d": [
     "windows-apps-src\\app-settings\\store-and-retrieve-app-data.md"
   ],
