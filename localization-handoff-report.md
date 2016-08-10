@@ -6,22 +6,22 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\mobile-operator-billing.md](https://github.com/Microsoft/windows-apps/blob/5b4889a3c10a61c5319603314ef7f87bed163d04/windows-apps-src/publish/mobile-operator-billing.md) | HandedOffSuccess | [Details](#fbd38c10d4afaff0b049da0434379f6a335ce2f05024)
+ [windows-apps-src\app-settings\app-settings-and-data.md](https://github.com/Microsoft/windows-apps/blob/318317bfb4768b83a3780ee80c1a43cae3d26626/windows-apps-src/app-settings/app-settings-and-data.md) | HandedOffSuccess | [Details](#6ade2ce5bf3e2517ad8a513c8a760cc994dec6e550)
 
 ## Item Details
-##### <a name='fbd38c10d4afaff0b049da0434379f6a335ce2f05024'></a> Source: [windows-apps-src\publish\mobile-operator-billing.md](https://github.com/Microsoft/windows-apps/blob/5b4889a3c10a61c5319603314ef7f87bed163d04/windows-apps-src/publish/mobile-operator-billing.md)
+##### <a name='6ade2ce5bf3e2517ad8a513c8a760cc994dec6e550'></a> Source: [windows-apps-src\app-settings\app-settings-and-data.md](https://github.com/Microsoft/windows-apps/blob/318317bfb4768b83a3780ee80c1a43cae3d26626/windows-apps-src/app-settings/app-settings-and-data.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [mobile-operator-billing.96a8e95eb21d2af1a509785b0af929f9738e7604.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/d584c22139e539586af5fccc6956bebaca3b60a6/ol-handoff/Microsoft/windows-apps.ja-jp/master/mobile-operator-billing.96a8e95eb21d2af1a509785b0af929f9738e7604.ja-jp.xlf)
-* Handoff Datetime: 2016-08-10 20:18:20
+* Handoff File: [app-settings-and-data.9232794ed41c2439c7db748b385db44334159f35.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/b666186bcca66ebac2bfdb6af765a454cbb1524e/ol-handoff/Microsoft/windows-apps.ja-jp/master/app-settings-and-data.9232794ed41c2439c7db748b385db44334159f35.ja-jp.xlf)
+* Handoff Datetime: 2016-08-10 20:47:01
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\publish\mobile-operator-billing.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/bb8e3c217182fd3ae9fd7c331e3722f1189b5569/windows-apps-src/publish/mobile-operator-billing.md)
-* Current Handback File: [mobile-operator-billing.96a8e95eb21d2af1a509785b0af929f9738e7604.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/5fbfce34d71b9c9ce97b3692f989d8e628c65b51/ol-handback/Microsoft/windows-apps.ja-jp/master/mobile-operator-billing.96a8e95eb21d2af1a509785b0af929f9738e7604.ja-jp.xlf)
-* Current Handback Datetime: 2016-07-20 16:31:17
+* Current Target File: [windows-apps-src\app-settings\app-settings-and-data.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/50184089ee68f46cd2f416adf3a3994777b91210/windows-apps-src/app-settings/app-settings-and-data.md)
+* Current Handback File: [app-settings-and-data.9232794ed41c2439c7db748b385db44334159f35.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/4b30c8e256811740592ee2bde985c1f06955abde/ol-handback/Microsoft/windows-apps.ja-jp/master/app-settings-and-data.9232794ed41c2439c7db748b385db44334159f35.ja-jp.xlf)
+* Current Handback Datetime: 2016-07-06 14:57:57
 * [Back to Top](#report-top)
 
 
