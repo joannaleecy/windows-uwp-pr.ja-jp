@@ -215,6 +215,9 @@
   "4d6f57dcc9dbfe9c2e031a5fe73f24668f0dc462": [
     "windows-apps-src\\app-settings\\app-settings-and-data.md"
   ],
+  "0d5ac3adf531eb2876852d59acb2b71b1596fa20": [
+    "windows-apps-src\\app-settings\\guidelines-for-app-settings.md"
+  ],
   "dc2fb58250ed1cc032271adc4bae98872e6f612a": [
     "windows-apps-src\\app-settings\\guidelines-for-app-settings.md"
   ],
@@ -238,6 +241,9 @@
   ],
   "cf749e20a6350f02f7ee9e37b01ae0bd48a78ffc": [
     "windows-apps-src\\app-settings\\images\\appsettings-layout-navpane-mobile.png"
+  ],
+  "c5481371bfe0574bc92db182149a6c5bde50187d": [
+    "windows-apps-src\\app-settings\\store-and-retrieve-app-data.md"
   ],
   "9224677fa433aaf112a2517c8cfdba9b2448f807": [
     "windows-apps-src\\app-settings\\store-and-retrieve-app-data.md"
