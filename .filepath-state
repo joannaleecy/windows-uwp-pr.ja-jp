@@ -356,6 +356,9 @@
   "022ca2848c575f545402b13e19c0854a9e3ec74a": [
     "windows-apps-src\\audio-video-camera\\camera-independent-flashlight.md"
   ],
+  "09cb41f834de52d541addee4e44715c52f5e99dc": [
+    "windows-apps-src\\audio-video-camera\\camera-profiles.md"
+  ],
   "7724bbb260f35c9848ed1f6351922bad8a247ae4": [
     "windows-apps-src\\audio-video-camera\\camera-profiles.md"
   ],
@@ -4828,6 +4831,9 @@
   "ab20c4af5b9a87dc73775d304c314c9861d989d4": [
     "windows-apps-src\\launch-resume\\index.md"
   ],
+  "f02bb7c91b3cf472539ffa966b85cc21d27fd9d9": [
+    "windows-apps-src\\launch-resume\\launch-default-app.md"
+  ],
   "0db5c2ebf8436f0c8e452862adb70e648424ad8f": [
     "windows-apps-src\\launch-resume\\launch-default-app.md"
   ],
@@ -8698,6 +8704,9 @@
   "d55aab04696441dbbcba0cbda61fd599fdacec67": [
     "windows-apps-src\\style\\index.md"
   ],
+  "d7246bc898e36155996941875b6c00da7891809d": [
+    "windows-apps-src\\usability\\index.md"
+  ],
   "3bb22ae2a5f91df811283aa5ed01c22c561d084b": [
     "windows-apps-src\\usability\\index.md"
   ],
@@ -9045,6 +9054,9 @@
   ],
   "241c428746b77f7149bb216f028ac5967550cbee": [
     "windows-apps-src\\audio-video-camera\\camera.md"
+  ],
+  "ec437d7111b1490f52bfc53b3ad2cd06f0c66ef3": [
+    "windows-apps-src\\audio-video-camera\\camera-ui-features-for-mobile-devices.md"
   ],
   "d028a4054cf012194364e9f86d10b98fcec115fe": [
     "windows-apps-src\\audio-video-camera\\camera-ui-features-for-mobile-devices.md"
