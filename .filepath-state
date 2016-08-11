@@ -4837,6 +4837,9 @@
   "ab20c4af5b9a87dc73775d304c314c9861d989d4": [
     "windows-apps-src\\launch-resume\\index.md"
   ],
+  "1c55a9e1a49d9c7cc91e324c8e92bcfbfe043cde": [
+    "windows-apps-src\\launch-resume\\launch-default-app.md"
+  ],
   "f02bb7c91b3cf472539ffa966b85cc21d27fd9d9": [
     "windows-apps-src\\launch-resume\\launch-default-app.md"
   ],
@@ -9582,6 +9585,9 @@
   ],
   "5599bddc0331ef23a9154571f8ce123af35f5a58": [
     "windows-apps-src\\monetize\\in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md"
+  ],
+  "15a1a4d201f461a31241bd8c1422c470303e0728": [
+    "windows-apps-src\\whats-new\\windows-10-version-1607.md"
   ],
   "92b8021ef5d0f19b9ecf96f6f86e0be924e8a7b6": [
     "windows-apps-src\\whats-new\\windows-10-version-1607.md"
