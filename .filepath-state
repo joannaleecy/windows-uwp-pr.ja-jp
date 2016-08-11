@@ -428,6 +428,9 @@
   "c512ec92272ab03cfd8e91602018f09ef8225652": [
     "windows-apps-src\\audio-video-camera\\get-a-preview-frame.md"
   ],
+  "643b67c3975a8aea6791c834a9ca3178b9762257": [
+    "windows-apps-src\\audio-video-camera\\hardware-drm.md"
+  ],
   "921fc7cdc1d2bd51c0572813d696dfe43f6f634a": [
     "windows-apps-src\\audio-video-camera\\hardware-drm.md"
   ],
@@ -499,6 +502,9 @@
   ],
   "a67b859cc2bd42abc13bcba0d405783b99a0ca5c": [
     "windows-apps-src\\audio-video-camera\\midi.md"
+  ],
+  "735fdfb04bcf7e4fab8265b294b117be5c614870": [
+    "windows-apps-src\\audio-video-camera\\playready-client-sdk.md"
   ],
   "78ad757b1cb74ff7c188a1759c53f0dafe84448b": [
     "windows-apps-src\\audio-video-camera\\playready-client-sdk.md"
