@@ -260,6 +260,9 @@
   "433cda6432d1e695bacb338e68012bcc9c837eb6": [
     "windows-apps-src\\app-settings\\store-and-retrieve-app-data.md"
   ],
+  "2655dc67b14ba665deabc879f13340202d97c494": [
+    "windows-apps-src\\app-to-app\\copy-and-paste.md"
+  ],
   "aa0b7d833335ea7e602a5f571a58275f5e5cca16": [
     "windows-apps-src\\app-to-app\\copy-and-paste.md"
   ],
@@ -272,6 +275,9 @@
   "ffa2f0f368a61ef4f3003c1fa03e143b26c6859b": [
     "windows-apps-src\\app-to-app\\drag-and-drop.md"
   ],
+  "05ac668e0e3c33f6dd9da9f578335bab96c6429c": [
+    "windows-apps-src\\app-to-app\\index.md"
+  ],
   "fb1e94d9e7a04da6ecddfd8355c1d0b5db9e13c2": [
     "windows-apps-src\\app-to-app\\index.md"
   ],
@@ -283,6 +289,9 @@
   ],
   "806bcb591ec3b7c786f8aa98d854863539d723e2": [
     "windows-apps-src\\app-to-app\\receive-data.md"
+  ],
+  "8b4f9ae45ed549ba5f10062e6bad25a4fb2e2a6f": [
+    "windows-apps-src\\app-to-app\\share-data.md"
   ],
   "bec33826b2a7933a32c9c05bf38bb0d33c5d89b1": [
     "windows-apps-src\\app-to-app\\share-data.md"
@@ -9555,6 +9564,9 @@
   ],
   "144a8400acf0333fcd50e698b333c02942081ef3": [
     "windows-apps-src\\publish\\add-on-acquisitions-report.md"
+  ],
+  "46f62f5d32bd824cdd30b443a9868a03ff4e3eef": [
+    "windows-apps-src\\publish\\add-on-submissions.md"
   ],
   "a6aa2fd893c04c5a6a0dbb5f1ca7a0ac19ce5563": [
     "windows-apps-src\\publish\\add-on-submissions.md"
