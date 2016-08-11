@@ -4828,6 +4828,9 @@
   "ab20c4af5b9a87dc73775d304c314c9861d989d4": [
     "windows-apps-src\\launch-resume\\index.md"
   ],
+  "90d2696d20b0e4242df664f9f68fa48259d072e6": [
+    "windows-apps-src\\launch-resume\\launch-default-app.md"
+  ],
   "835083660835a0edd70d185c73bdbfd5c22ad815": [
     "windows-apps-src\\launch-resume\\launch-default-app.md"
   ],
@@ -7587,6 +7590,9 @@
   ],
   "033669a781aa85cc2c90fa11816e385ffefa997d": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
+  ],
+  "04614e609d015ddcea477b394d53d08a6434de69": [
+    "windows-apps-src\\TOC.md"
   ],
   "951998d001be8bf2f9f7b38f1f1121e5564a5c00": [
     "windows-apps-src\\TOC.md"
