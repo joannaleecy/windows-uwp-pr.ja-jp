@@ -269,6 +269,9 @@
   "3e3ba8811f4fac283164143aad88913aaabbee49": [
     "windows-apps-src\\app-to-app\\copy-and-paste.md"
   ],
+  "ee3d0c40effc12382f6fd31154016953f172be70": [
+    "windows-apps-src\\app-to-app\\drag-and-drop.md"
+  ],
   "9775726adb11f94b9d24cf7f0b53ff9d600661aa": [
     "windows-apps-src\\app-to-app\\drag-and-drop.md"
   ],
@@ -283,6 +286,9 @@
   ],
   "63550064b6f31b85cd3b6fa2a09bac4b7cfcf895": [
     "windows-apps-src\\app-to-app\\index.md"
+  ],
+  "0092fe2832eeafbc4e7cfa36a3444b9551a4f672": [
+    "windows-apps-src\\app-to-app\\receive-data.md"
   ],
   "ffac442260ae0b9ee588c0d8df6e5d8ab0155981": [
     "windows-apps-src\\app-to-app\\receive-data.md"
