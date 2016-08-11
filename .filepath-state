@@ -8902,6 +8902,9 @@
   "b8ddff5e515524c1a337e584cc995fc2ef5cdb35": [
     "windows-apps-src\\debug-test-perf\\app-analysis.md"
   ],
+  "d96d507c6ce8537888619ce174e2ff0e5284dcce": [
+    "windows-apps-src\\input-and-devices\\access-keys.md"
+  ],
   "f3dafb5b004b9fb35077e4fedb2c26523e5e2fcf": [
     "windows-apps-src\\input-and-devices\\access-keys.md"
   ],
@@ -9570,5 +9573,11 @@
   ],
   "21ebd6022d137b3de61a8c533747cb13b91bb5a5": [
     "windows-apps-src\\publish\\set-your-add-on-product-id.md"
+  ],
+  "e1e5eec07e5ce273f0801c0ca21851bbd4248cf1": [
+    "windows-apps-src\\input-and-devices\\images\\keyboard\\accesskeys-keytips.png"
+  ],
+  "d70f874d95a8b93113ec3cf4c7285e4827241a54": [
+    "windows-apps-src\\input-and-devices\\images\\keyboard\\accesskeys-keytips-hometab.png"
   ]
 }
