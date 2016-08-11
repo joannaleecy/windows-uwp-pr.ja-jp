@@ -323,6 +323,9 @@
   "7e8df66a1fc4c95cb8b0b4be9eded8ef58b6803a": [
     "windows-apps-src\\audio-video-camera\\audio-graphs.md"
   ],
+  "a477827553ac1780ac625deeee08d84ab638d4c2": [
+    "windows-apps-src\\audio-video-camera\\background-audio.md"
+  ],
   "654f14dd88010f21706aa56e5b265df1cb9362a2": [
     "windows-apps-src\\audio-video-camera\\background-audio.md"
   ],
@@ -547,6 +550,9 @@
   ],
   "00fbbdde8d805ce7ae07df1d52dd8171de7d58ab": [
     "windows-apps-src\\audio-video-camera\\supported-codecs.md"
+  ],
+  "6643f6bee55c1c9631ca20d2fe7eb6ac1c5ae3e2": [
+    "windows-apps-src\\audio-video-camera\\system-media-transport-controls.md"
   ],
   "6bc58ed58cfc2a3c946acaefb60a59446d617f5f": [
     "windows-apps-src\\audio-video-camera\\system-media-transport-controls.md"
@@ -9076,6 +9082,9 @@
   "b1b8467e181d1a04317a8a0b8688ffb02621730c": [
     "windows-apps-src\\audio-video-camera\\import-media-from-a-device.md"
   ],
+  "c490ea43a6f49e09828cb6b07a6fbf1920acca74": [
+    "windows-apps-src\\audio-video-camera\\integrate-with-systemmediatransportcontrols.md"
+  ],
   "29a77b2b5e65f85d61c72e74eb36236101d5dc8c": [
     "windows-apps-src\\audio-video-camera\\integrate-with-systemmediatransportcontrols.md"
   ],
@@ -9093,6 +9102,9 @@
   ],
   "32df2810710e78eeb8c257548c39c0d5d978e888": [
     "windows-apps-src\\audio-video-camera\\play-audio-and-video-with-mediaplayer.md"
+  ],
+  "5c4bb51ea3b1740cdbb5fa43746ce7b3edca6aa1": [
+    "windows-apps-src\\audio-video-camera\\process-media-frames-with-mediaframereader.md"
   ],
   "15e6c57fad41f11ea5515525d0e67593b26efc31": [
     "windows-apps-src\\audio-video-camera\\process-media-frames-with-mediaframereader.md"
