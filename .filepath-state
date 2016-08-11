@@ -317,6 +317,9 @@
   "8ebf90b02fcfbb4349ba2b303d9c91727b731ad7": [
     "windows-apps-src\\audio-video-camera\\adaptive-streaming.md"
   ],
+  "22e430fd6dafe49fb3bf599fec91a9ab3dbd6b95": [
+    "windows-apps-src\\audio-video-camera\\adaptive-streaming-with-playready.md"
+  ],
   "bf461d0e0101873e0123da05db129b393a18ca5c": [
     "windows-apps-src\\audio-video-camera\\adaptive-streaming-with-playready.md"
   ],
@@ -9030,6 +9033,9 @@
   ],
   "0723ea3c80a5521bc1530d7b928f816cb0e4168a": [
     "windows-apps-src\\audio-video-camera\\basic-photo-video-and-audio-capture-with-MediaCapture.md"
+  ],
+  "8759a7cdb1d516f9c88f866887861c2f28085b5b": [
+    "windows-apps-src\\audio-video-camera\\camera.md"
   ],
   "d1bd12a1c20984b6230dfb3f188ab37862fc8baf": [
     "windows-apps-src\\audio-video-camera\\camera.md"
