@@ -329,6 +329,9 @@
   "d76f50e97f16699f34f138fcd25af8a90696085a": [
     "windows-apps-src\\audio-video-camera\\adaptive-streaming-with-playready.md"
   ],
+  "08ebb37679d1dd93458a3ffe846d8bd33574635d": [
+    "windows-apps-src\\audio-video-camera\\audio-device-information-properties.md"
+  ],
   "e2043793e367c12f4db4e6bb11dc809fd41ddbc0": [
     "windows-apps-src\\audio-video-camera\\audio-device-information-properties.md"
   ],
