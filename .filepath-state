@@ -338,6 +338,9 @@
   "b1bcb5b005e82303884c2e096356d5a0f542b1e1": [
     "windows-apps-src\\audio-video-camera\\audio-device-information-properties.md"
   ],
+  "087db9c426a643cc4c7ecfa7686409ed219b07a5": [
+    "windows-apps-src\\audio-video-camera\\audio-graphs.md"
+  ],
   "cb00a9cc50fc2be516041479716f245e1b0f96f3": [
     "windows-apps-src\\audio-video-camera\\audio-graphs.md"
   ],
@@ -346,6 +349,9 @@
   ],
   "7e8df66a1fc4c95cb8b0b4be9eded8ef58b6803a": [
     "windows-apps-src\\audio-video-camera\\audio-graphs.md"
+  ],
+  "654f14dd88010f21706aa56e5b265df1cb9362a2": [
+    "windows-apps-src\\audio-video-camera\\background-audio.md"
   ],
   "50aa813135271f65ed27c0e7a320be2b68365751": [
     "windows-apps-src\\audio-video-camera\\background-audio.md"
