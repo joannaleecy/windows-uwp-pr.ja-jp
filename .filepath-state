@@ -158,53 +158,26 @@
   "b5f5f220d5ff70d70dd797c0bf26a355bd447563": [
     "windows-apps-src\\accessibility\\practices-to-avoid.md"
   ],
-  "05d19d1b0d132101758aecdf9f0c9944ad174390": [
-    "windows-apps-src\\app-help-guidelines\\external-help.md"
-  ],
-  "03ef3fc34d2018c0ec712977065377a9c52cd8b2": [
-    "windows-apps-src\\app-help-guidelines\\external-help.md"
-  ],
-  "1fa99438306e0a65aace36fd51d10bc3b85c7881": [
-    "windows-apps-src\\app-help-guidelines\\guidelines-for-app-help.md"
-  ],
-  "1e1e5e118eb44f6b491669dbd274fae05d92685b": [
-    "windows-apps-src\\app-help-guidelines\\guidelines-for-app-help.md"
-  ],
   "d0e39b0c0ebc8433fe25cb8755074bc60e5f6d3c": [
-    "windows-apps-src\\app-help-guidelines\\images\\in-game-controls-3.png",
     "windows-apps-src\\in-app-help\\images\\in-game-controls-3.png"
   ],
   "15ddd990dbce3fa1e34d96a29ef700f45bd9a23a": [
-    "windows-apps-src\\app-help-guidelines\\images\\instructional-ui-mail.png",
     "windows-apps-src\\in-app-help\\images\\instructional-ui-mail.png"
   ],
   "0b5665bcfae3e9a96859a5c1cb92fda686804ec5": [
-    "windows-apps-src\\app-help-guidelines\\images\\instructional-ui-mail-flyout.png",
     "windows-apps-src\\in-app-help\\images\\instructional-ui-mail-flyout.png"
   ],
   "616c418d06f1f082272bc60570b8f960ff47242f": [
-    "windows-apps-src\\app-help-guidelines\\images\\instructional-ui-mail-inbox.png",
     "windows-apps-src\\in-app-help\\images\\instructional-ui-mail-inbox.png"
   ],
   "12350faf3048b52f30d54bafab392e2ece93db32": [
-    "windows-apps-src\\app-help-guidelines\\images\\instructional-ui-movie.png",
     "windows-apps-src\\in-app-help\\images\\instructional-ui-movie.png"
-  ],
-  "abc4afd6a0131c3668cf1c15521f7dde32a671ae": [
-    "windows-apps-src\\app-help-guidelines\\in-app-help.md"
-  ],
-  "7edad75b1639768023eb8add1e23fe0aafb0b674": [
-    "windows-apps-src\\app-help-guidelines\\in-app-help.md",
-    "windows-apps-src\\in-app-help\\in-app-help.md"
   ],
   "0c606e3b5be2889e83efce77d4c98ca646fef725": [
     "windows-apps-src\\in-app-help\\in-app-help.md"
   ],
-  "8ed9547ea7ae398c1ed83f96e55e541525194fcc": [
-    "windows-apps-src\\app-help-guidelines\\instructional-ui.md"
-  ],
-  "1c8ab97a5625243a50fa3b40ae93f5928dc7d851": [
-    "windows-apps-src\\app-help-guidelines\\instructional-ui.md"
+  "7edad75b1639768023eb8add1e23fe0aafb0b674": [
+    "windows-apps-src\\in-app-help\\in-app-help.md"
   ],
   "8ba114c2b920e321aecd92a5b4d53825bdb5d599": [
     "windows-apps-src\\app-settings\\app-settings-and-data.md"
@@ -365,11 +338,17 @@
   "9275a194017f08692adee6de1c4d1f6deb680613": [
     "windows-apps-src\\audio-video-camera\\background-audio.md"
   ],
+  "0ccaf55215cb82633313e145a126db92aa6d16e6": [
+    "windows-apps-src\\audio-video-camera\\bitmapencoder-options-reference.md"
+  ],
   "e509476b8d4c4b9d2f4405beb90bf78e600a04c0": [
     "windows-apps-src\\audio-video-camera\\bitmapencoder-options-reference.md"
   ],
   "510cb363b258d20688ea212856af4b7ac0311e61": [
     "windows-apps-src\\audio-video-camera\\bitmapencoder-options-reference.md"
+  ],
+  "8c256d8aba08d42fa00b46a01c8b7e773a0ab40c": [
+    "windows-apps-src\\audio-video-camera\\camera-independent-flashlight.md"
   ],
   "37f7dd371284727385cfe4aa7ae2d965f2b8f6dd": [
     "windows-apps-src\\audio-video-camera\\camera-independent-flashlight.md"
@@ -3952,12 +3931,6 @@
   "f2522afa91abe26303a85cbfbabd5ec5b3dba59c": [
     "windows-apps-src\\in-app-help\\guidelines-for-app-help.md"
   ],
-  "39629aeeb762db4fd92b76bdec13805041d98fbe": [
-    "windows-apps-src\\in-app-help\\in-app-help-and-instructions.md"
-  ],
-  "ff3d49e098b0b9b0e7a58a7985c77ab8022eb661": [
-    "windows-apps-src\\in-app-help\\in-app-help-and-instructions.md"
-  ],
   "6fc4840ce37d05bbaf0e423049d79b4e0c4febfc": [
     "windows-apps-src\\in-app-help\\instructional-ui.md"
   ],
@@ -4854,6 +4827,9 @@
   ],
   "ab20c4af5b9a87dc73775d304c314c9861d989d4": [
     "windows-apps-src\\launch-resume\\index.md"
+  ],
+  "0db5c2ebf8436f0c8e452862adb70e648424ad8f": [
+    "windows-apps-src\\launch-resume\\launch-default-app.md"
   ],
   "90d2696d20b0e4242df664f9f68fa48259d072e6": [
     "windows-apps-src\\launch-resume\\launch-default-app.md"
@@ -9054,6 +9030,9 @@
   ],
   "6abd7e8d6ba098ba401658a26517bcf5ebc747f6": [
     "windows-apps-src\\apps-for-education\\troubleshooting.md"
+  ],
+  "19a546d4778d0edfbc5ca2e3acf0ded084445958": [
+    "windows-apps-src\\audio-video-camera\\basic-photo-video-and-audio-capture-with-MediaCapture.md"
   ],
   "0723ea3c80a5521bc1530d7b928f816cb0e4168a": [
     "windows-apps-src\\audio-video-camera\\basic-photo-video-and-audio-capture-with-MediaCapture.md"
