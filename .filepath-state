@@ -380,6 +380,9 @@
   "c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775": [
     "windows-apps-src\\audio-video-camera\\capture-device-controls-for-photo-and-video-capture.md"
   ],
+  "f0bf29ef9a9fbaf66428dd9521baf45f3249ffa7": [
+    "windows-apps-src\\audio-video-camera\\capture-device-controls-for-video-capture.md"
+  ],
   "d0ae6bcc6e00e5474c4933a81b828fef19f4dad6": [
     "windows-apps-src\\audio-video-camera\\capture-device-controls-for-video-capture.md"
   ],
@@ -397,6 +400,9 @@
   ],
   "a98edd0b4c52271fad4255af5ab0a005b0c66d68": [
     "windows-apps-src\\audio-video-camera\\capture-photos-and-video-with-cameracaptureui.md"
+  ],
+  "2a740e3c1e31440372d1d26b42e8443dd13108d4": [
+    "windows-apps-src\\audio-video-camera\\capture-photos-and-video-with-mediacapture.md"
   ],
   "8e3ff7b37e0b5883d5e84ab5440bec78e35dd772": [
     "windows-apps-src\\audio-video-camera\\capture-photos-and-video-with-mediacapture.md"
@@ -5206,6 +5212,9 @@
   "a35b76f04d450aeafcc50c307dc058c52f6aebe4": [
     "windows-apps-src\\layout\\navigation-history-and-backwards-navigation.md"
   ],
+  "c872b2a850f2d324b6cd10f4fa05fe99a42ea7d2": [
+    "windows-apps-src\\layout\\peer-to-peer-navigation-between-two-pages.md"
+  ],
   "5e87b4a5f419c18522ab8201fff165de9f54d843": [
     "windows-apps-src\\layout\\peer-to-peer-navigation-between-two-pages.md"
   ],
@@ -6018,6 +6027,9 @@
   ],
   "618b129449d285054604008615c32de74c8bfd9b": [
     "windows-apps-src\\porting\\desktop-to-uwp-deploy-and-debug.md"
+  ],
+  "f064f54748141082f97f3f664ac172885b95756b": [
+    "windows-apps-src\\porting\\desktop-to-uwp-root.md"
   ],
   "efc2fd698a5768452db30dae71b8224a8af9dd9a": [
     "windows-apps-src\\porting\\desktop-to-uwp-root.md"
