@@ -464,6 +464,9 @@
   "b7867317c37edf44d9edfaaf28d97a3f23b22814": [
     "windows-apps-src\\audio-video-camera\\hardware-drm.md"
   ],
+  "204e997ebb8484a7a661422b8060fe885bd561a2": [
+    "windows-apps-src\\audio-video-camera\\high-dynamic-range-hdr-photo-capture.md"
+  ],
   "15971f3287510ca1b6e98313a13bdab435c4995f": [
     "windows-apps-src\\audio-video-camera\\high-dynamic-range-hdr-photo-capture.md"
   ],
@@ -7654,6 +7657,9 @@
   "033669a781aa85cc2c90fa11816e385ffefa997d": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "deed75e20256995ac9eb7d71d708e07df02b95e8": [
+    "windows-apps-src\\TOC.md"
+  ],
   "0b3a2552b4d1bc18316e157533682ee7b947bc35": [
     "windows-apps-src\\TOC.md"
   ],
@@ -8598,6 +8604,9 @@
   ],
   "8f58f3b26bf25473e66ce14ec084f1583695a894": [
     "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\pivot-underline.png"
+  ],
+  "a868dc76815a3c1e427198fde7217bb86ee69a2f": [
+    "windows-apps-src\\gaming\\cloud-for-games.md"
   ],
   "ce2fe89670ec22fddca010822c5c7d360f59e7d8": [
     "windows-apps-src\\gaming\\cloud-for-games.md"
