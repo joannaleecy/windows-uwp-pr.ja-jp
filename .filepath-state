@@ -404,6 +404,9 @@
   "a98edd0b4c52271fad4255af5ab0a005b0c66d68": [
     "windows-apps-src\\audio-video-camera\\capture-photos-and-video-with-cameracaptureui.md"
   ],
+  "f60152ea846ccd7031f804b45f66dd31e6b4b832": [
+    "windows-apps-src\\audio-video-camera\\capture-photos-and-video-with-mediacapture.md"
+  ],
   "2a740e3c1e31440372d1d26b42e8443dd13108d4": [
     "windows-apps-src\\audio-video-camera\\capture-photos-and-video-with-mediacapture.md"
   ],
@@ -415,6 +418,9 @@
   ],
   "c20c735d38e6baabe2f8bc0c7c682706d3946ed9": [
     "windows-apps-src\\audio-video-camera\\capture-photos-and-video-with-mediacapture.md"
+  ],
+  "57908ff3329968bba2eea3d8d51cb0277a2afba5": [
+    "windows-apps-src\\audio-video-camera\\custom-video-effects.md"
   ],
   "47f228f165cdd29d6d8bc6aca68bb2e02f7d0f2d": [
     "windows-apps-src\\audio-video-camera\\custom-video-effects.md"
