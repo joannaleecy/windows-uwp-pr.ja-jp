@@ -416,6 +416,9 @@
   "c20c735d38e6baabe2f8bc0c7c682706d3946ed9": [
     "windows-apps-src\\audio-video-camera\\capture-photos-and-video-with-mediacapture.md"
   ],
+  "47f228f165cdd29d6d8bc6aca68bb2e02f7d0f2d": [
+    "windows-apps-src\\audio-video-camera\\custom-video-effects.md"
+  ],
   "c91d2669334f0cf4c73feeb5f388c77f0771a180": [
     "windows-apps-src\\audio-video-camera\\custom-video-effects.md"
   ],
@@ -425,17 +428,26 @@
   "d6ad5b2488f79787c07b4057b34fcbfd3a4df3c3": [
     "windows-apps-src\\audio-video-camera\\custom-video-effects.md"
   ],
+  "4f0fa85639711302a2f6eb187cde8f7a94de70df": [
+    "windows-apps-src\\audio-video-camera\\detect-and-track-faces-in-an-image.md"
+  ],
   "9b58e523b2510b1661ceaccce4993adbaae0b3d8": [
     "windows-apps-src\\audio-video-camera\\detect-and-track-faces-in-an-image.md"
   ],
   "66730fcbaad2e3e059f2972475625d278d235002": [
     "windows-apps-src\\audio-video-camera\\detect-and-track-faces-in-an-image.md"
   ],
+  "3fe7abcc417db76b4375243d66b1c0ecb9092147": [
+    "windows-apps-src\\audio-video-camera\\effects-for-video-capture.md"
+  ],
   "912b9c58fa5c91072958288d599b28fca366efd1": [
     "windows-apps-src\\audio-video-camera\\effects-for-video-capture.md"
   ],
   "3af5ed7146f2420c2a6d3035c26290cbeaff8375": [
     "windows-apps-src\\audio-video-camera\\effects-for-video-capture.md"
+  ],
+  "d8d5780672592b1888a9c894dcc3ed58ebc2be36": [
+    "windows-apps-src\\audio-video-camera\\get-a-preview-frame.md"
   ],
   "342aafe30d82bb2c9fc7e8bbb468b85516142ec4": [
     "windows-apps-src\\audio-video-camera\\get-a-preview-frame.md"
@@ -6853,6 +6865,9 @@
   "9910ca5b5a3fd5d24643a1dfc6da3644d561c617": [
     "windows-apps-src\\publish\\package-version-numbering.md"
   ],
+  "1db53d80f69b0fbf62d6217249e424cb78d1c4a0": [
+    "windows-apps-src\\publish\\payout-summary.md"
+  ],
   "6bac72d63c8868bd0a3fd02d737f8cde7cad326d": [
     "windows-apps-src\\publish\\payout-summary.md"
   ],
@@ -6933,6 +6948,9 @@
   ],
   "0e6c58f2d892f213d2de53c3cb9b97b1e8152137": [
     "windows-apps-src\\publish\\set-iap-pricing-and-availability.md"
+  ],
+  "7de230aeee932f781a282ab7555e1c90bcd76460": [
+    "windows-apps-src\\publish\\setting-up-your-payout-account-and-tax-forms.md"
   ],
   "56a7bcb9d9f7b7a2838426526f18ea3e24e81da4": [
     "windows-apps-src\\publish\\setting-up-your-payout-account-and-tax-forms.md"
