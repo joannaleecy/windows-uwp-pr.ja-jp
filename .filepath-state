@@ -386,6 +386,9 @@
   "65883f1be1a014b6c7e211e2e060ae97fbd9eb0d": [
     "windows-apps-src\\audio-video-camera\\capture-device-controls-for-video-capture.md"
   ],
+  "fea1c2f8f52ec9ac485d9a4846cc0661243a7ccc": [
+    "windows-apps-src\\audio-video-camera\\capture-photos-and-video-with-cameracaptureui.md"
+  ],
   "4a2bbade1956d81f57371715116e31b902fa67ee": [
     "windows-apps-src\\audio-video-camera\\capture-photos-and-video-with-cameracaptureui.md"
   ],
@@ -394,6 +397,9 @@
   ],
   "a98edd0b4c52271fad4255af5ab0a005b0c66d68": [
     "windows-apps-src\\audio-video-camera\\capture-photos-and-video-with-cameracaptureui.md"
+  ],
+  "8e3ff7b37e0b5883d5e84ab5440bec78e35dd772": [
+    "windows-apps-src\\audio-video-camera\\capture-photos-and-video-with-mediacapture.md"
   ],
   "98fa4096b4f422e5d19f13f0df315b624be1c507": [
     "windows-apps-src\\audio-video-camera\\capture-photos-and-video-with-mediacapture.md"
