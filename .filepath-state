@@ -5227,6 +5227,9 @@
   "a35b76f04d450aeafcc50c307dc058c52f6aebe4": [
     "windows-apps-src\\layout\\navigation-history-and-backwards-navigation.md"
   ],
+  "4f0af9d1f40f393207c8506ddbb408a1949f28c2": [
+    "windows-apps-src\\layout\\peer-to-peer-navigation-between-two-pages.md"
+  ],
   "c872b2a850f2d324b6cd10f4fa05fe99a42ea7d2": [
     "windows-apps-src\\layout\\peer-to-peer-navigation-between-two-pages.md"
   ],
@@ -8176,6 +8179,9 @@
   "4414677e942818506020888fa15e7e16ecaf4733": [
     "windows-apps-src\\xbox-apps\\introduction-to-xbox-tools.md"
   ],
+  "39a34552df2793a5d012130ae5abe41f365ddee2": [
+    "windows-apps-src\\xbox-apps\\known-issues.md"
+  ],
   "7c47d67676fe11389baada95d9491c9cb08dd70d": [
     "windows-apps-src\\xbox-apps\\known-issues.md"
   ],
@@ -8502,9 +8508,6 @@
   ],
   "33bba6de6fd82601f77bf393e80fe5ae4768e253": [
     "windows-apps-src\\xbox-apps\\images\\x64-build-platform.png"
-  ],
-  "766be26fa9692fb7d435e5b737eb73493659dead": [
-    "windows-apps-src\\xbox-apps\\images\\windows-store-app-activation-error.jpg"
   ],
   "e846fe262d7983cc6216922620b872d03677b275": [
     "windows-apps-src\\porting\\desktop-to-uwp-signing.md"
@@ -9120,6 +9123,9 @@
   ],
   "e8a4732f532d33af0e9ac6cdfe90bc55d6fc8a61": [
     "windows-apps-src\\audio-video-camera\\create-schedule-and-manage-media-breaks.md"
+  ],
+  "eb6487e7f2c19a8227320c5a7f087e4b3c3c6270": [
+    "windows-apps-src\\audio-video-camera\\handle-device-orientation-with-mediacapture.md"
   ],
   "1f20190488d388b2abf44edc4eb454835bdad223": [
     "windows-apps-src\\audio-video-camera\\handle-device-orientation-with-mediacapture.md"
