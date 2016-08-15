@@ -2932,6 +2932,9 @@
   "1b7431c20e25173a0aa3f8d6ee0d407be869d60a": [
     "windows-apps-src\\gaming\\draw-to-the-screen.md"
   ],
+  "d58422deb960cfc709ecc2ca492517328d100c0f": [
+    "windows-apps-src\\gaming\\e2e.md"
+  ],
   "4c5c0102e9162e73790d41800a9d15977c2aa3ef": [
     "windows-apps-src\\gaming\\e2e.md"
   ],
@@ -8836,6 +8839,9 @@
   "8f58f3b26bf25473e66ce14ec084f1583695a894": [
     "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\pivot-underline.png"
   ],
+  "b23c33fac9ac8fe5e2d5563a0af6824c82a3969b": [
+    "windows-apps-src\\gaming\\cloud-for-games.md"
+  ],
   "a868dc76815a3c1e427198fde7217bb86ee69a2f": [
     "windows-apps-src\\gaming\\cloud-for-games.md"
   ],
@@ -9951,6 +9957,9 @@
   ],
   "d70f874d95a8b93113ec3cf4c7285e4827241a54": [
     "windows-apps-src\\input-and-devices\\images\\keyboard\\accesskeys-keytips-hometab.png"
+  ],
+  "93221e5efbb2993c9a1c408c57e4115dfd24094e": [
+    "windows-apps-src\\monetize\\add-advertisements-to-video-content.md"
   ],
   "b0a4168c0d413c747988de90929d5b53e1e2f93a": [
     "windows-apps-src\\monetize\\add-advertisements-to-video-content.md"

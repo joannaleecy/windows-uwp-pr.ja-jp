@@ -6,48 +6,51 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\launch-resume\convert-app-service-single-process.md](https://github.com/Microsoft/windows-apps/blob/9e959a8ae6bf9496b658ddfae3abccf4716957a3/windows-apps-src/launch-resume/convert-app-service-single-process.md) | HandedOffSuccess | [Details](#0990e9938bb9bf1794cf58c5541a64f22853b0934361)
- [windows-apps-src\launch-resume\create-and-register-a-singleprocess-background-task.md](https://github.com/Microsoft/windows-apps/blob/9e959a8ae6bf9496b658ddfae3abccf4716957a3/windows-apps-src/launch-resume/create-and-register-a-singleprocess-background-task.md) | HandedOffSuccess | [Details](#5a2461d00114ba71ced7cca64c197f253f33690d4365)
- [windows-apps-src\publish\usage-report.md](https://github.com/Microsoft/windows-apps/blob/c413ff1d4fe709e92f7a306e671f9a4fe22a5999/windows-apps-src/publish/usage-report.md) | HandedOffSuccess | [Details](#21be2064914189abe8ef68c858d33346b947550c5050)
+ [windows-apps-src\gaming\cloud-for-games.md](https://github.com/Microsoft/windows-apps/blob/0b2d81daa8bd0fd5694b81fa14fcd064e1600d35/windows-apps-src/gaming/cloud-for-games.md) | HandedOffSuccess | [Details](#b23c33fac9ac8fe5e2d5563a0af6824c82a3969b3444)
+ [windows-apps-src\gaming\e2e.md](https://github.com/Microsoft/windows-apps/blob/feab3cdd3d87d2549b8b610a7b63c191cabdc67c/windows-apps-src/gaming/e2e.md) | HandedOffSuccess | [Details](#d58422deb960cfc709ecc2ca492517328d100c0f3456)
+ [windows-apps-src\monetize\add-advertisements-to-video-content.md](https://github.com/Microsoft/windows-apps/blob/a89768ae85636db9e7a79ec3d54f330172b56789/windows-apps-src/monetize/add-advertisements-to-video-content.md) | HandedOffSuccess | [Details](#93221e5efbb2993c9a1c408c57e4115dfd24094e4716)
 
 ## Item Details
-##### <a name='0990e9938bb9bf1794cf58c5541a64f22853b0934361'></a> Source: [windows-apps-src\launch-resume\convert-app-service-single-process.md](https://github.com/Microsoft/windows-apps/blob/9e959a8ae6bf9496b658ddfae3abccf4716957a3/windows-apps-src/launch-resume/convert-app-service-single-process.md)
+##### <a name='b23c33fac9ac8fe5e2d5563a0af6824c82a3969b3444'></a> Source: [windows-apps-src\gaming\cloud-for-games.md](https://github.com/Microsoft/windows-apps/blob/0b2d81daa8bd0fd5694b81fa14fcd064e1600d35/windows-apps-src/gaming/cloud-for-games.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [convert-app-service-single-process.9f744b35f60bb9dd67fec0aa5e1093fb4722d707.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/a958cc17daa688dd0e8a692be116cd5474cf7723/ol-handoff/Microsoft/windows-apps.ja-jp/master/convert-app-service-single-process.9f744b35f60bb9dd67fec0aa5e1093fb4722d707.ja-jp.xlf)
-* Handoff Datetime: 2016-08-15 20:48:50
+* Handoff File: [cloud-for-games.3663687797401afed76a6c0531ae5359fe2d96fe.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/a233b5df537eff7c0df1f081a87b48832c6b6a9e/ol-handoff/Microsoft/windows-apps.ja-jp/master/cloud-for-games.3663687797401afed76a6c0531ae5359fe2d96fe.ja-jp.xlf)
+* Handoff Datetime: 2016-08-15 22:49:35
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='5a2461d00114ba71ced7cca64c197f253f33690d4365'></a> Source: [windows-apps-src\launch-resume\create-and-register-a-singleprocess-background-task.md](https://github.com/Microsoft/windows-apps/blob/9e959a8ae6bf9496b658ddfae3abccf4716957a3/windows-apps-src/launch-resume/create-and-register-a-singleprocess-background-task.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [create-and-register-a-singleprocess-background-task.62542f6a5149f8c9a76b8c28d05de4196a9344c9.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/a958cc17daa688dd0e8a692be116cd5474cf7723/ol-handoff/Microsoft/windows-apps.ja-jp/master/create-and-register-a-singleprocess-background-task.62542f6a5149f8c9a76b8c28d05de4196a9344c9.ja-jp.xlf)
-* Handoff Datetime: 2016-08-15 20:48:50
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='21be2064914189abe8ef68c858d33346b947550c5050'></a> Source: [windows-apps-src\publish\usage-report.md](https://github.com/Microsoft/windows-apps/blob/c413ff1d4fe709e92f7a306e671f9a4fe22a5999/windows-apps-src/publish/usage-report.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [usage-report.a8db07f7d604dc3af9d06cd2b1cd055c4486237e.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/a958cc17daa688dd0e8a692be116cd5474cf7723/ol-handoff/Microsoft/windows-apps.ja-jp/master/usage-report.a8db07f7d604dc3af9d06cd2b1cd055c4486237e.ja-jp.xlf)
-* Handoff Datetime: 2016-08-15 20:48:50
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\publish\usage-report.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/bb8e3c217182fd3ae9fd7c331e3722f1189b5569/windows-apps-src/publish/usage-report.md)
-* Current Handback File: [usage-report.a8db07f7d604dc3af9d06cd2b1cd055c4486237e.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/5fbfce34d71b9c9ce97b3692f989d8e628c65b51/ol-handback/Microsoft/windows-apps.ja-jp/master/usage-report.a8db07f7d604dc3af9d06cd2b1cd055c4486237e.ja-jp.xlf)
+* Current Target File: [windows-apps-src\gaming\cloud-for-games.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/bb8e3c217182fd3ae9fd7c331e3722f1189b5569/windows-apps-src/gaming/cloud-for-games.md)
+* Current Handback File: [cloud-for-games.3663687797401afed76a6c0531ae5359fe2d96fe.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/5fbfce34d71b9c9ce97b3692f989d8e628c65b51/ol-handback/Microsoft/windows-apps.ja-jp/master/cloud-for-games.3663687797401afed76a6c0531ae5359fe2d96fe.ja-jp.xlf)
 * Current Handback Datetime: 2016-07-20 16:31:17
+* [Back to Top](#report-top)
+
+##### <a name='d58422deb960cfc709ecc2ca492517328d100c0f3456'></a> Source: [windows-apps-src\gaming\e2e.md](https://github.com/Microsoft/windows-apps/blob/feab3cdd3d87d2549b8b610a7b63c191cabdc67c/windows-apps-src/gaming/e2e.md)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/a233b5df537eff7c0df1f081a87b48832c6b6a9e/ol-handoff/Microsoft/windows-apps.ja-jp/master/e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.ja-jp.xlf)
+* Handoff Datetime: 2016-08-15 22:49:35
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\gaming\e2e.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/bb8e3c217182fd3ae9fd7c331e3722f1189b5569/windows-apps-src/gaming/e2e.md)
+* Current Handback File: [e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/5fbfce34d71b9c9ce97b3692f989d8e628c65b51/ol-handback/Microsoft/windows-apps.ja-jp/master/e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.ja-jp.xlf)
+* Current Handback Datetime: 2016-07-20 16:31:17
+* [Back to Top](#report-top)
+
+##### <a name='93221e5efbb2993c9a1c408c57e4115dfd24094e4716'></a> Source: [windows-apps-src\monetize\add-advertisements-to-video-content.md](https://github.com/Microsoft/windows-apps/blob/a89768ae85636db9e7a79ec3d54f330172b56789/windows-apps-src/monetize/add-advertisements-to-video-content.md)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [add-advertisements-to-video-content.d9a4bb1c44fb51d2c6a81a5ea5650ba3575711f4.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/a233b5df537eff7c0df1f081a87b48832c6b6a9e/ol-handoff/Microsoft/windows-apps.ja-jp/master/add-advertisements-to-video-content.d9a4bb1c44fb51d2c6a81a5ea5650ba3575711f4.ja-jp.xlf)
+* Handoff Datetime: 2016-08-15 22:49:35
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
 
