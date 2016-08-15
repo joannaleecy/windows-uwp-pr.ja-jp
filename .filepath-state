@@ -3643,6 +3643,9 @@
   "555649b6b18aa009da69eee7e6980365b473054e": [
     "windows-apps-src\\get-started\\images\\xaml-hw-style-cpp.png"
   ],
+  "a541072435775d1e23ecb3cb22b2a55c81748107": [
+    "windows-apps-src\\get-started\\learn-more.md"
+  ],
   "198cd33019c79161e54b72eca2d2f117b706e4e1": [
     "windows-apps-src\\get-started\\learn-more.md"
   ],
@@ -6870,6 +6873,9 @@
   ],
   "c538da2a58f38925938b9e28ec7ca65cdb9858a3": [
     "windows-apps-src\\publish\\package-flights.md"
+  ],
+  "2668152ba471986e00831bdcf46e5a2feba54dcd": [
+    "windows-apps-src\\publish\\package-version-numbering.md"
   ],
   "cc31e2f8b39cc014334c9ae97b2b932b02f01035": [
     "windows-apps-src\\publish\\package-version-numbering.md"
