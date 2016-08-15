@@ -7225,6 +7225,9 @@
   "f628820747f51f7200e2748c2c3f41b58455b2fa": [
     "windows-apps-src\\publish\\upload-app-packages.md"
   ],
+  "21be2064914189abe8ef68c858d33346b947550c": [
+    "windows-apps-src\\publish\\usage-report.md"
+  ],
   "fd4cf9e2b0520fcdd7f763a8723fa1c5963b5cc3": [
     "windows-apps-src\\publish\\usage-report.md"
   ],
@@ -9781,11 +9784,17 @@
   "8eda5cf6914f3da0e4c192ae2f77fc0bd2f8eb3d": [
     "windows-apps-src\\launch-resume\\connected-apps-and-devices.md"
   ],
+  "0990e9938bb9bf1794cf58c5541a64f22853b093": [
+    "windows-apps-src\\launch-resume\\convert-app-service-single-process.md"
+  ],
   "b046cb4980bd16ac4d2434f9d3e49556acc9f16f": [
     "windows-apps-src\\launch-resume\\convert-app-service-single-process.md"
   ],
   "e342667347cf3b89a5aa193495cbf7195263b276": [
     "windows-apps-src\\launch-resume\\convert-multiple-process-background-task.md"
+  ],
+  "5a2461d00114ba71ced7cca64c197f253f33690d": [
+    "windows-apps-src\\launch-resume\\create-and-register-a-singleprocess-background-task.md"
   ],
   "d345f442ac4558a7f0bddcdc0bb3a1891e1e4223": [
     "windows-apps-src\\launch-resume\\create-and-register-a-singleprocess-background-task.md"
