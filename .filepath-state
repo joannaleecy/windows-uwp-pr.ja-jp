@@ -1661,6 +1661,9 @@
   "fbb186b6f8b7bfba47fb05155a227224a1bd595e": [
     "windows-apps-src\\controls-and-patterns\\labels.md"
   ],
+  "8b8820c9ab82ce0789fbe2fb9f62309e48f4ce9d": [
+    "windows-apps-src\\controls-and-patterns\\lists.md"
+  ],
   "28315e88d86a27d5acc2a491d724bb94ee66cf09": [
     "windows-apps-src\\controls-and-patterns\\lists.md"
   ],
@@ -4039,6 +4042,9 @@
   "75e7367ee13357d3463213ca7d8f1ff37c4f0b77": [
     "windows-apps-src\\input-and-devices\\define-custom-recognition-constraints.md"
   ],
+  "734a0f0574ac7698dd6bd963bf3e20225b26d401": [
+    "windows-apps-src\\input-and-devices\\designing-for-tv.md"
+  ],
   "2dfe555588030aae4a7b45c66f261572e7a82520": [
     "windows-apps-src\\input-and-devices\\designing-for-tv.md"
   ],
@@ -4239,9 +4245,6 @@
   ],
   "de00d0fc65ea38b59aa59e9c22e295b21b331fe5": [
     "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\2d-navigation-best-practices-provide-path-with-least-clicks-2.png"
-  ],
-  "1b11f6c0b9df678dbd3ace5ab8c38f9b6e0f4cfc": [
-    "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\2d-navigation-best-practices-ui-elements-display-on-mouse-hover.png"
   ],
   "62e6d37c7113a33135403d98dc95ac591bc14367": [
     "windows-apps-src\\input-and-devices\\images\\designing-for-tv\\2d-navigation-best-practices-ui-layout-to-avoid.png"
@@ -5245,6 +5248,9 @@
   "a35b76f04d450aeafcc50c307dc058c52f6aebe4": [
     "windows-apps-src\\layout\\navigation-history-and-backwards-navigation.md"
   ],
+  "27ed224e7fd4207f95918d63929231524721442d": [
+    "windows-apps-src\\layout\\peer-to-peer-navigation-between-two-pages.md"
+  ],
   "4f0af9d1f40f393207c8506ddbb408a1949f28c2": [
     "windows-apps-src\\layout\\peer-to-peer-navigation-between-two-pages.md"
   ],
@@ -5391,6 +5397,9 @@
   ],
   "e161e478b1b306f5d8d77b7649aeecd80e21b5be": [
     "windows-apps-src\\maps-and-location\\set-up-a-geofence.md"
+  ],
+  "f9b21a6f871ef21802ba885d37ee40ad518ca1c8": [
+    "windows-apps-src\\monetize\\access-analytics-data-using-windows-store-services.md"
   ],
   "85981fc0a0eaf1d821c037d0efbf629a6f773113": [
     "windows-apps-src\\monetize\\access-analytics-data-using-windows-store-services.md"
@@ -5713,6 +5722,9 @@
   "08168dc15b33d99a044eedd7864848ed7a858991": [
     "windows-apps-src\\monetize\\get-started-with-microsoft-advertising-libraries.md"
   ],
+  "0a28e321645b7d3ec8699c5f20c7716c121f8fe2": [
+    "windows-apps-src\\monetize\\grant-free-products.md"
+  ],
   "dc0f82ee50824cf612192d0696c9277811b118dd": [
     "windows-apps-src\\monetize\\grant-free-products.md"
   ],
@@ -5911,6 +5923,9 @@
   "481cf2aab806a1f9ce368256a9df8930cbc756c1": [
     "windows-apps-src\\monetize\\monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md"
   ],
+  "0e61b3b521f239062c33709a306630919d767473": [
+    "windows-apps-src\\monetize\\query-for-products.md"
+  ],
   "c5693efcdd2423832a9b077af6da821974b73f29": [
     "windows-apps-src\\monetize\\query-for-products.md"
   ],
@@ -6081,6 +6096,9 @@
   ],
   "43e3155315a9132daa36f592b54af3e943ea3e21": [
     "windows-apps-src\\monetize\\using-windows-store-services.md"
+  ],
+  "cecd774544af536c4383a24a6d48bf3ff65b513a": [
+    "windows-apps-src\\monetize\\view-and-grant-products-from-a-service.md"
   ],
   "d6151829f0316b7fa4bb0c200fde68a38d2ec37f": [
     "windows-apps-src\\monetize\\view-and-grant-products-from-a-service.md"
@@ -9693,6 +9711,9 @@
   ],
   "b91efd3e506d3b65928e636fb2e2dcce1d9d2641": [
     "windows-apps-src\\controls-and-patterns\\nested-ui.md"
+  ],
+  "ef5773f9885a5286ac7ca7c256e6a83167316389": [
+    "windows-apps-src\\controls-and-patterns\\pull-to-refresh.md"
   ],
   "0cdb27acf6bb165b497210df9fbfaadff9222e1c": [
     "windows-apps-src\\controls-and-patterns\\pull-to-refresh.md"
