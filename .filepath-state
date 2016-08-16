@@ -2045,6 +2045,9 @@
   "d12f8d6bd44323cf1c19bff1ac080070ba0e8ed2": [
     "windows-apps-src\\data-binding\\data-binding-in-depth.md"
   ],
+  "94320c1ab9f4ea33d15690183285a02dee78a40b": [
+    "windows-apps-src\\data-binding\\data-binding-quickstart.md"
+  ],
   "c0bb6e26b36939aa28072b7042cc001054c4467d": [
     "windows-apps-src\\data-binding\\data-binding-quickstart.md"
   ],
@@ -6909,6 +6912,9 @@
   ],
   "6f6052508118c77fd85a30c09d8aefe0a9a7f33b": [
     "windows-apps-src\\publish\\enter-iap-properties.md"
+  ],
+  "223aa1475d8002ded356c9eefdc80c77a5bd553b": [
+    "windows-apps-src\\publish\\feedback-report.md"
   ],
   "c2c9dedfdb11cbc55dba0d5380eb1d6fb8f629ed": [
     "windows-apps-src\\publish\\feedback-report.md"

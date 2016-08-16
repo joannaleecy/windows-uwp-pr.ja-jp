@@ -1,56 +1,43 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 3
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\gaming\cloud-for-games.md](https://github.com/Microsoft/windows-apps/blob/0b2d81daa8bd0fd5694b81fa14fcd064e1600d35/windows-apps-src/gaming/cloud-for-games.md) | HandedOffSuccess | [Details](#b23c33fac9ac8fe5e2d5563a0af6824c82a3969b3444)
- [windows-apps-src\gaming\e2e.md](https://github.com/Microsoft/windows-apps/blob/feab3cdd3d87d2549b8b610a7b63c191cabdc67c/windows-apps-src/gaming/e2e.md) | HandedOffSuccess | [Details](#d58422deb960cfc709ecc2ca492517328d100c0f3456)
- [windows-apps-src\monetize\add-advertisements-to-video-content.md](https://github.com/Microsoft/windows-apps/blob/a89768ae85636db9e7a79ec3d54f330172b56789/windows-apps-src/monetize/add-advertisements-to-video-content.md) | HandedOffSuccess | [Details](#93221e5efbb2993c9a1c408c57e4115dfd24094e4716)
+ [windows-apps-src\data-binding\data-binding-quickstart.md](https://github.com/Microsoft/windows-apps/blob/ddd7b9acfe9b74e883b73e179195069ce6efa994/windows-apps-src/data-binding/data-binding-quickstart.md) | HandedOffSuccess | [Details](#94320c1ab9f4ea33d15690183285a02dee78a40b3205)
+ [windows-apps-src\publish\feedback-report.md](https://github.com/Microsoft/windows-apps/blob/97dc98e69428117c139b421563a22d762aa259e1/windows-apps-src/publish/feedback-report.md) | HandedOffSuccess | [Details](#223aa1475d8002ded356c9eefdc80c77a5bd553b5000)
 
 ## Item Details
-##### <a name='b23c33fac9ac8fe5e2d5563a0af6824c82a3969b3444'></a> Source: [windows-apps-src\gaming\cloud-for-games.md](https://github.com/Microsoft/windows-apps/blob/0b2d81daa8bd0fd5694b81fa14fcd064e1600d35/windows-apps-src/gaming/cloud-for-games.md)
+##### <a name='94320c1ab9f4ea33d15690183285a02dee78a40b3205'></a> Source: [windows-apps-src\data-binding\data-binding-quickstart.md](https://github.com/Microsoft/windows-apps/blob/ddd7b9acfe9b74e883b73e179195069ce6efa994/windows-apps-src/data-binding/data-binding-quickstart.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [cloud-for-games.3663687797401afed76a6c0531ae5359fe2d96fe.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/a233b5df537eff7c0df1f081a87b48832c6b6a9e/ol-handoff/Microsoft/windows-apps.ja-jp/master/cloud-for-games.3663687797401afed76a6c0531ae5359fe2d96fe.ja-jp.xlf)
-* Handoff Datetime: 2016-08-15 22:49:35
+* Handoff File: [data-binding-quickstart.829283e17abd682c9422338479b78c816ed593aa.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/669718c34590a989e278a5706d16c7672eafb50b/ol-handoff/Microsoft/windows-apps.ja-jp/master/data-binding-quickstart.829283e17abd682c9422338479b78c816ed593aa.ja-jp.xlf)
+* Handoff Datetime: 2016-08-16 16:58:21
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\gaming\cloud-for-games.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/bb8e3c217182fd3ae9fd7c331e3722f1189b5569/windows-apps-src/gaming/cloud-for-games.md)
-* Current Handback File: [cloud-for-games.3663687797401afed76a6c0531ae5359fe2d96fe.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/5fbfce34d71b9c9ce97b3692f989d8e628c65b51/ol-handback/Microsoft/windows-apps.ja-jp/master/cloud-for-games.3663687797401afed76a6c0531ae5359fe2d96fe.ja-jp.xlf)
+* Current Target File: [windows-apps-src\data-binding\data-binding-quickstart.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/bb8e3c217182fd3ae9fd7c331e3722f1189b5569/windows-apps-src/data-binding/data-binding-quickstart.md)
+* Current Handback File: [data-binding-quickstart.829283e17abd682c9422338479b78c816ed593aa.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/5fbfce34d71b9c9ce97b3692f989d8e628c65b51/ol-handback/Microsoft/windows-apps.ja-jp/master/data-binding-quickstart.829283e17abd682c9422338479b78c816ed593aa.ja-jp.xlf)
 * Current Handback Datetime: 2016-07-20 16:31:17
 * [Back to Top](#report-top)
 
-##### <a name='d58422deb960cfc709ecc2ca492517328d100c0f3456'></a> Source: [windows-apps-src\gaming\e2e.md](https://github.com/Microsoft/windows-apps/blob/feab3cdd3d87d2549b8b610a7b63c191cabdc67c/windows-apps-src/gaming/e2e.md)
+##### <a name='223aa1475d8002ded356c9eefdc80c77a5bd553b5000'></a> Source: [windows-apps-src\publish\feedback-report.md](https://github.com/Microsoft/windows-apps/blob/97dc98e69428117c139b421563a22d762aa259e1/windows-apps-src/publish/feedback-report.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/a233b5df537eff7c0df1f081a87b48832c6b6a9e/ol-handoff/Microsoft/windows-apps.ja-jp/master/e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.ja-jp.xlf)
-* Handoff Datetime: 2016-08-15 22:49:35
+* Handoff File: [feedback-report.5499a4a1ccb82642d7b4f42d639f318bb8c5a6ce.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/669718c34590a989e278a5706d16c7672eafb50b/ol-handoff/Microsoft/windows-apps.ja-jp/master/feedback-report.5499a4a1ccb82642d7b4f42d639f318bb8c5a6ce.ja-jp.xlf)
+* Handoff Datetime: 2016-08-16 16:58:21
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\gaming\e2e.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/bb8e3c217182fd3ae9fd7c331e3722f1189b5569/windows-apps-src/gaming/e2e.md)
-* Current Handback File: [e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/5fbfce34d71b9c9ce97b3692f989d8e628c65b51/ol-handback/Microsoft/windows-apps.ja-jp/master/e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.ja-jp.xlf)
-* Current Handback Datetime: 2016-07-20 16:31:17
-* [Back to Top](#report-top)
-
-##### <a name='93221e5efbb2993c9a1c408c57e4115dfd24094e4716'></a> Source: [windows-apps-src\monetize\add-advertisements-to-video-content.md](https://github.com/Microsoft/windows-apps/blob/a89768ae85636db9e7a79ec3d54f330172b56789/windows-apps-src/monetize/add-advertisements-to-video-content.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [add-advertisements-to-video-content.d9a4bb1c44fb51d2c6a81a5ea5650ba3575711f4.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/a233b5df537eff7c0df1f081a87b48832c6b6a9e/ol-handoff/Microsoft/windows-apps.ja-jp/master/add-advertisements-to-video-content.d9a4bb1c44fb51d2c6a81a5ea5650ba3575711f4.ja-jp.xlf)
-* Handoff Datetime: 2016-08-15 22:49:35
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\publish\feedback-report.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/50184089ee68f46cd2f416adf3a3994777b91210/windows-apps-src/publish/feedback-report.md)
+* Current Handback File: [feedback-report.5499a4a1ccb82642d7b4f42d639f318bb8c5a6ce.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/4b30c8e256811740592ee2bde985c1f06955abde/ol-handback/Microsoft/windows-apps.ja-jp/master/feedback-report.5499a4a1ccb82642d7b4f42d639f318bb8c5a6ce.ja-jp.xlf)
+* Current Handback Datetime: 2016-07-06 14:57:57
 * [Back to Top](#report-top)
 
 
