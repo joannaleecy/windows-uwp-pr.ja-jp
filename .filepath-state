@@ -5452,6 +5452,9 @@
   "b3c41f38f42c390c52c96fa93cfce3fe9bbd181d": [
     "windows-apps-src\\monetize\\adcontrol-events-in-javascript.md"
   ],
+  "51002e58466b35d7b7b83fd63ca1f264407a7f71": [
+    "windows-apps-src\\monetize\\adcontrol-in-html-5-and-javascript.md"
+  ],
   "16e7ca090330004b3c015e29a98b0ab62dbe705a": [
     "windows-apps-src\\monetize\\adcontrol-in-html-5-and-javascript.md"
   ],
@@ -5469,6 +5472,9 @@
   ],
   "5a12badfb11cfd43c0833522d996da7df73b3d55": [
     "windows-apps-src\\monetize\\adcontrol-in-windows-phone-silverlight.md"
+  ],
+  "e50a0d48397cbdffc754de7944c947a598baf252": [
+    "windows-apps-src\\monetize\\adcontrol-in-xaml-and--net.md"
   ],
   "46f0532d4ac74a09e39cf3518a19ebbd6a760a9b": [
     "windows-apps-src\\monetize\\adcontrol-in-xaml-and--net.md"
@@ -9397,8 +9403,14 @@
   "67765b6267f938a1bd48e5e914ad9912e1e4dc5b": [
     "windows-apps-src\\apps-for-education\\index.md"
   ],
+  "d7f185e83e81583fd6d7920e5412f76f3a97edd0": [
+    "windows-apps-src\\apps-for-education\\take-a-test-api.md"
+  ],
   "5e4d71906fb7652b2e929bab385881c8170c50aa": [
     "windows-apps-src\\apps-for-education\\take-a-test-api.md"
+  ],
+  "1b99b959cfdde997f7995c1bdf40d51921b2f1d5": [
+    "windows-apps-src\\apps-for-education\\troubleshooting.md"
   ],
   "6abd7e8d6ba098ba401658a26517bcf5ebc747f6": [
     "windows-apps-src\\apps-for-education\\troubleshooting.md"
