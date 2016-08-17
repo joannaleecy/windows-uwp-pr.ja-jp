@@ -5593,6 +5593,9 @@
   "ab96dac3af382d334c767ad42a563c0dbc67a8f5": [
     "windows-apps-src\\monetize\\display-ads-using-the-microsoft-advertising-libraries.md"
   ],
+  "fb6e55be740172fd25d40085f58762093d99ca15": [
+    "windows-apps-src\\monetize\\enable-consumable-in-app-product-purchases.md"
+  ],
   "3f25d544a0f0d0930962c15bd78c3c738a2e6e10": [
     "windows-apps-src\\monetize\\enable-consumable-in-app-product-purchases.md"
   ],
@@ -5604,6 +5607,9 @@
   ],
   "25f09e043d61f1705f9f0a4fa34114fd06166fa4": [
     "windows-apps-src\\monetize\\enable-consumable-in-app-product-purchases.md"
+  ],
+  "d12670ed8433dcb617f39893a07b4fc9253f86d1": [
+    "windows-apps-src\\monetize\\enable-in-app-product-purchases.md"
   ],
   "5aeb2ca4f957b291ca29fce54028d87c6193c588": [
     "windows-apps-src\\monetize\\enable-in-app-product-purchases.md"
@@ -5643,6 +5649,9 @@
   ],
   "5e0c7e6328247e5f686b14b10c80d8aafc13e0e4": [
     "windows-apps-src\\monetize\\error-handling-with-advertising-libraries.md"
+  ],
+  "7e849a80c7df4fd12fb36d811f24e35b35f08f14": [
+    "windows-apps-src\\monetize\\exclude-or-limit-features-in-a-trial-version-of-your-app.md"
   ],
   "b691a046fb9e4ab1d283a389a243de07de521eb9": [
     "windows-apps-src\\monetize\\exclude-or-limit-features-in-a-trial-version-of-your-app.md"
@@ -5907,6 +5916,9 @@
   ],
   "ccda01d9bfa4ffdff2bbce5d6c60c78e026270e5": [
     "windows-apps-src\\monetize\\launch-feedback-hub-from-your-app.md"
+  ],
+  "c9f38691a11c266bd56d346f530b3f7241818b71": [
+    "windows-apps-src\\monetize\\manage-a-large-catalog-of-in-app-products.md"
   ],
   "528a151c11c33b1ef318de698cb04e526a3514c0": [
     "windows-apps-src\\monetize\\manage-a-large-catalog-of-in-app-products.md"
@@ -9901,6 +9913,9 @@
   "6ab483125cf04e0fec48ff7fecf104baf6f1564f": [
     "windows-apps-src\\launch-resume\\web-to-app-linking.md"
   ],
+  "59d11bf9fa8d94c3cbfd0b18909eca00282ea79e": [
+    "windows-apps-src\\monetize\\enable-consumable-add-on-purchases.md"
+  ],
   "2bb6a9870df71f2b4521332df4b4989bb432f562": [
     "windows-apps-src\\monetize\\enable-consumable-add-on-purchases.md"
   ],
@@ -9909,6 +9924,9 @@
   ],
   "77867ec8abfe2554b3d0e6f294d43377c8efc334": [
     "windows-apps-src\\monetize\\enable-consumable-add-on-purchases.md"
+  ],
+  "27ca76ba5188363515310e615186724c6183d7d5": [
+    "windows-apps-src\\monetize\\enable-in-app-purchases-of-apps-and-add-ons.md"
   ],
   "50963dddc1da12dc4433c478995b8c24d0b75a9c": [
     "windows-apps-src\\monetize\\enable-in-app-purchases-of-apps-and-add-ons.md"
@@ -9919,6 +9937,9 @@
   "36c4f521bf7185380263031ff9b63e6edc83117e": [
     "windows-apps-src\\monetize\\enable-in-app-purchases-of-apps-and-add-ons.md"
   ],
+  "9027e1d1c8c6cf636c532023c16bb8652cbb1b6b": [
+    "windows-apps-src\\monetize\\get-license-info-for-apps-and-add-ons.md"
+  ],
   "a8b02076eea29e68a9eff7d39dc41329e598e3fe": [
     "windows-apps-src\\monetize\\get-license-info-for-apps-and-add-ons.md"
   ],
@@ -9927,6 +9948,9 @@
   ],
   "c2a0488011f60b875bae8b636a9d89fc803fcfe6": [
     "windows-apps-src\\monetize\\get-license-info-for-apps-and-add-ons.md"
+  ],
+  "41c8257df3c73f2233b365cbd001035a5ab2fdc3": [
+    "windows-apps-src\\monetize\\get-product-info-for-apps-and-add-ons.md"
   ],
   "56f236e4551221a0cb2be93a932d851d7a923b9e": [
     "windows-apps-src\\monetize\\get-product-info-for-apps-and-add-ons.md"
@@ -9937,6 +9961,9 @@
   "d36cbd8b10e2badcaeff9c7c754ea3dad178892c": [
     "windows-apps-src\\monetize\\get-product-info-for-apps-and-add-ons.md"
   ],
+  "c50ae1cef6adca0f15a5b80edc24d95e0bbe748f": [
+    "windows-apps-src\\monetize\\implement-a-trial-version-of-your-app.md"
+  ],
   "a7488b2d8645291bfc54922f9c2f7fbdece48fef": [
     "windows-apps-src\\monetize\\implement-a-trial-version-of-your-app.md"
   ],
@@ -9945,6 +9972,9 @@
   ],
   "be7754bd477e1eeccba04a1916f319d8c217e371": [
     "windows-apps-src\\monetize\\implement-a-trial-version-of-your-app.md"
+  ],
+  "7ff442b64246adfa024c6cfb18e3612e2e77b1c0": [
+    "windows-apps-src\\monetize\\in-app-purchases-and-trials.md"
   ],
   "70dd97643a6ee0b79d29bcc135482726fe6534dd": [
     "windows-apps-src\\monetize\\in-app-purchases-and-trials.md"
@@ -9960,6 +9990,9 @@
   ],
   "e12dce02bcdcc34ecbe9433bd82dcaaa58812b50": [
     "windows-apps-src\\monetize\\in-app-purchases-and-trials.md"
+  ],
+  "3bcf9f46da7468847a241507515255ea2faf9d23": [
+    "windows-apps-src\\monetize\\in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md"
   ],
   "729afc662f6ef07c6a35f6764a5606ade2652b41": [
     "windows-apps-src\\monetize\\in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md"
