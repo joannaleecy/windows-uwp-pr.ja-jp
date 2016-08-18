@@ -8104,6 +8104,9 @@
   "cf6ca169623311e515f02a174224d57652afc753": [
     "windows-apps-src\\xaml-platform\\custom-attached-properties.md"
   ],
+  "09bf5fdb76bcc3210d822b769061b900b51a9cb2": [
+    "windows-apps-src\\xaml-platform\\custom-dependency-properties.md"
+  ],
   "43b6338953a3e0010339f5a7bc1ac85ff1fe7710": [
     "windows-apps-src\\xaml-platform\\custom-dependency-properties.md"
   ],
