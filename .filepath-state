@@ -5572,6 +5572,9 @@
   "b36b5d5ba747fbb71c988033ddd0cdb4cee0ed8b": [
     "windows-apps-src\\monetize\\developer-walkthroughs.md"
   ],
+  "d4b93b4ac94e3a1806f04d12ee9fd6a47d5d4c01": [
+    "windows-apps-src\\monetize\\display-ads-in-your-app.md"
+  ],
   "379283b42c931f8c3582708d124edaa33dca8f6c": [
     "windows-apps-src\\monetize\\display-ads-in-your-app.md"
   ],
@@ -5730,6 +5733,9 @@
   ],
   "bff5eb8ecf5a11067a590393d443343dc6ed94bc": [
     "windows-apps-src\\monetize\\get-in-app-acquisitions.md"
+  ],
+  "eac9a58f821253378f7e10571176dfe1112f2c43": [
+    "windows-apps-src\\monetize\\get-started-with-microsoft-advertising-libraries.md"
   ],
   "ec4f0362dd7ebb520801f5747d4480a69ba270d0": [
     "windows-apps-src\\monetize\\get-started-with-microsoft-advertising-libraries.md"
@@ -7942,6 +7948,9 @@
   "033669a781aa85cc2c90fa11816e385ffefa997d": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "e60550af41cf990025cc67d8cf900f4272eaeae8": [
+    "windows-apps-src\\TOC.md"
+  ],
   "336c07b5c10e1cd7a7b422b3e730634cc3fdd983": [
     "windows-apps-src\\TOC.md"
   ],
@@ -10083,5 +10092,8 @@
   ],
   "9a55b217dede099012afbd98c3688d3b3298072e": [
     "windows-apps-src\\layout\\navigate-between-two-pages.md"
+  ],
+  "4488afc3508a0aa0d369d9502dc1a7183cd38820": [
+    "windows-apps-src\\monetize\\migrate-from-admediatorcontrol-to-adcontrol.md"
   ]
 }
