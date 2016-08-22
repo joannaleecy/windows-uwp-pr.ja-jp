@@ -4894,6 +4894,9 @@
   "ab20c4af5b9a87dc73775d304c314c9861d989d4": [
     "windows-apps-src\\launch-resume\\index.md"
   ],
+  "89ffba6a1d4eb2838d591a60ba61e7ffad1e6122": [
+    "windows-apps-src\\launch-resume\\launch-default-app.md"
+  ],
   "1c55a9e1a49d9c7cc91e324c8e92bcfbfe043cde": [
     "windows-apps-src\\launch-resume\\launch-default-app.md"
   ],
@@ -7966,6 +7969,9 @@
   "033669a781aa85cc2c90fa11816e385ffefa997d": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "bcba6f31e0f5ef25f7fb7ba85f0d388b5960925c": [
+    "windows-apps-src\\TOC.md"
+  ],
   "0f0f231d25383a46e4c951067cb62df958c40aeb": [
     "windows-apps-src\\TOC.md"
   ],
@@ -10128,5 +10134,8 @@
   ],
   "a1e04eab743ef11544ed18544710767608d7c361": [
     "windows-apps-src\\get-started\\application-development-for-windows-as-a-service.md"
+  ],
+  "4b7bbc5016af4506fbcc465227059b963c4c0b96": [
+    "windows-apps-src\\launch-resume\\launch-ringtone-picker.md"
   ]
 }
