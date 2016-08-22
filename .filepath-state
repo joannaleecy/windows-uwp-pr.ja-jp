@@ -6841,6 +6841,9 @@
   "6af2842eeb5eeebfc9ffc5a7a3ec98fdcebddb74": [
     "windows-apps-src\\publish\\avoid-common-certification-failures.md"
   ],
+  "a7b582dd6f38e24c80300c48317e8242cd73176e": [
+    "windows-apps-src\\publish\\beta-testing-and-targeted-distribution.md"
+  ],
   "d5705d3a5687c7dd0106b4e92b93436ba00d4d97": [
     "windows-apps-src\\publish\\beta-testing-and-targeted-distribution.md"
   ],
@@ -10119,6 +10122,9 @@
   ],
   "4488afc3508a0aa0d369d9502dc1a7183cd38820": [
     "windows-apps-src\\monetize\\migrate-from-admediatorcontrol-to-adcontrol.md"
+  ],
+  "175467ac450831e13ab81f065c8f0125b870769b": [
+    "windows-apps-src\\get-started\\application-development-for-windows-as-a-service.md"
   ],
   "a1e04eab743ef11544ed18544710767608d7c361": [
     "windows-apps-src\\get-started\\application-development-for-windows-as-a-service.md"
