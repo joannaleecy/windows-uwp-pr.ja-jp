@@ -4894,6 +4894,9 @@
   "ab20c4af5b9a87dc73775d304c314c9861d989d4": [
     "windows-apps-src\\launch-resume\\index.md"
   ],
+  "119b24573163224456d4f847cf3a444fb8420c5e": [
+    "windows-apps-src\\launch-resume\\launch-default-app.md"
+  ],
   "89ffba6a1d4eb2838d591a60ba61e7ffad1e6122": [
     "windows-apps-src\\launch-resume\\launch-default-app.md"
   ],
@@ -10134,6 +10137,9 @@
   ],
   "a1e04eab743ef11544ed18544710767608d7c361": [
     "windows-apps-src\\get-started\\application-development-for-windows-as-a-service.md"
+  ],
+  "ef605f9d749148240ecee5e0ecfd473f8440ca25": [
+    "windows-apps-src\\launch-resume\\launch-ringtone-picker.md"
   ],
   "4b7bbc5016af4506fbcc465227059b963c4c0b96": [
     "windows-apps-src\\launch-resume\\launch-ringtone-picker.md"
