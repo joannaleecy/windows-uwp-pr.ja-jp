@@ -7984,6 +7984,9 @@
   "033669a781aa85cc2c90fa11816e385ffefa997d": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "55e06a0fab7f5998fd1a0b813f306eb1b4737ed8": [
+    "windows-apps-src\\TOC.md"
+  ],
   "d5381fd13fee66aa1f8444333cda302c6fd6a1f3": [
     "windows-apps-src\\TOC.md"
   ],
@@ -10167,5 +10170,8 @@
   ],
   "4b7bbc5016af4506fbcc465227059b963c4c0b96": [
     "windows-apps-src\\launch-resume\\launch-ringtone-picker.md"
+  ],
+  "808714e2c0b5682feac81e8024c35512c345b0a8": [
+    "windows-apps-src\\get-started\\choose-a-uwp-version.md"
   ]
 }
