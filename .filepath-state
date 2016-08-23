@@ -2328,6 +2328,9 @@
   "6144b5b60a0092efd1056dd5de166a64733356ec": [
     "windows-apps-src\\debug-test-perf\\keep-the-ui-thread-responsive.md"
   ],
+  "0a16dc27db6fb1e04e1ab0c575077ca10b97f12d": [
+    "windows-apps-src\\debug-test-perf\\listview-and-gridview-data-optimization.md"
+  ],
   "1957348d34adbe92f16aa38e26b695f0a9a97d48": [
     "windows-apps-src\\debug-test-perf\\listview-and-gridview-data-optimization.md"
   ],
