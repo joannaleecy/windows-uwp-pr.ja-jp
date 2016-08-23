@@ -6337,6 +6337,9 @@
   "618b129449d285054604008615c32de74c8bfd9b": [
     "windows-apps-src\\porting\\desktop-to-uwp-deploy-and-debug.md"
   ],
+  "e4f465a057ce6e39cb1c57d7e8e6643e8002ab54": [
+    "windows-apps-src\\porting\\desktop-to-uwp-root.md"
+  ],
   "f064f54748141082f97f3f664ac172885b95756b": [
     "windows-apps-src\\porting\\desktop-to-uwp-root.md"
   ],
@@ -7002,6 +7005,9 @@
   ],
   "dba1c1f754b4200bd00395e0b71d18bee30e3a2d": [
     "windows-apps-src\\publish\\generate-preinstall-packages-for-oems.md"
+  ],
+  "cf1f6cf680d4ae57513dde2c6a356e8ba4b1cb56": [
+    "windows-apps-src\\publish\\generate-promotional-codes.md"
   ],
   "db4378dcf70015c952e91bdb8280560d3eba29ca": [
     "windows-apps-src\\publish\\generate-promotional-codes.md"
