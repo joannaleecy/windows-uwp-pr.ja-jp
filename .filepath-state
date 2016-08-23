@@ -6337,6 +6337,9 @@
   "618b129449d285054604008615c32de74c8bfd9b": [
     "windows-apps-src\\porting\\desktop-to-uwp-deploy-and-debug.md"
   ],
+  "5e3f77e968d7d4aa8eef3601e8ea3adc3ad44a28": [
+    "windows-apps-src\\porting\\desktop-to-uwp-root.md"
+  ],
   "e4f465a057ce6e39cb1c57d7e8e6643e8002ab54": [
     "windows-apps-src\\porting\\desktop-to-uwp-root.md"
   ],
@@ -7977,6 +7980,9 @@
   ],
   "033669a781aa85cc2c90fa11816e385ffefa997d": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
+  ],
+  "d5381fd13fee66aa1f8444333cda302c6fd6a1f3": [
+    "windows-apps-src\\TOC.md"
   ],
   "d260fadaa4e8fe0fc1c15bcf4df0607d5c0718dc": [
     "windows-apps-src\\TOC.md"
