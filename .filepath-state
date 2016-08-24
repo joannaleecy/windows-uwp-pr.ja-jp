@@ -7192,6 +7192,9 @@
   "9910ca5b5a3fd5d24643a1dfc6da3644d561c617": [
     "windows-apps-src\\publish\\package-version-numbering.md"
   ],
+  "0c6d15a9bf5d8e4bf1fe22738af7ac3470e4dc85": [
+    "windows-apps-src\\publish\\payout-summary.md"
+  ],
   "1db53d80f69b0fbf62d6217249e424cb78d1c4a0": [
     "windows-apps-src\\publish\\payout-summary.md"
   ],
@@ -9171,6 +9174,9 @@
   ],
   "5805f316ed7bc08268fd6c201d740f3a3222629e": [
     "windows-apps-src\\publish\\microsoft-advertising-payment-process.md"
+  ],
+  "ec3c2f27223c35a423a5e5a5ff189e39b179f8d8": [
+    "windows-apps-src\\get-started\\images\\vs-2015-community-setup.png"
   ],
   "c76ac5f735c5dc93e5f5014b77181a2e862386a1": [
     "windows-apps-src\\get-started\\images\\vs-2015-community-setup.png"
