@@ -8383,6 +8383,9 @@
   "d56206f990e7885af4935401356bd3a2ce2cd292": [
     "windows-apps-src\\xbox-apps\\development-environment-setup.md"
   ],
+  "c50ec870e9548e4823b9116c25f47fed1537a4e6": [
+    "windows-apps-src\\xbox-apps\\devkit-activation.md"
+  ],
   "735f959005712c255db9130a79f4d9ba5639b6e0": [
     "windows-apps-src\\xbox-apps\\devkit-activation.md"
   ],
@@ -8419,6 +8422,9 @@
   "01173aeabb74d6d703597a9bd7a48c179c688c07": [
     "windows-apps-src\\xbox-apps\\frequently-asked-questions.md"
   ],
+  "33b8369be9cc0fd54ee044ec2aa6ea38b352c908": [
+    "windows-apps-src\\xbox-apps\\getting-started.md"
+  ],
   "ce445d9936dba6fed41003391c7c41f47f5ee731": [
     "windows-apps-src\\xbox-apps\\getting-started.md"
   ],
@@ -8437,6 +8443,9 @@
   "92a9cc54c6257c35b1e7ae19838b01c8452c4b36": [
     "windows-apps-src\\xbox-apps\\getting-started.md"
   ],
+  "4f7bbd574d33da39d6c5df87ec0f34ae50a94f36": [
+    "windows-apps-src\\xbox-apps\\images\\activation-step-12.png"
+  ],
   "62d9acc5c855a8e736b8f61bb048c0e694fd2eea": [
     "windows-apps-src\\xbox-apps\\images\\activation-step-12.png"
   ],
@@ -8445,6 +8454,9 @@
   ],
   "891b73edb66f12bc7245ab99b10dbdf3ff1b59c5": [
     "windows-apps-src\\xbox-apps\\images\\activation-step-3.png"
+  ],
+  "62db1be80faeaf94583b66e693f822da4f66d5d2": [
+    "windows-apps-src\\xbox-apps\\images\\activation-step-5.png"
   ],
   "84119964d253bcc32ba76f8e53f06df010523683": [
     "windows-apps-src\\xbox-apps\\images\\activation-step-5.png"
@@ -8460,6 +8472,9 @@
   ],
   "243fda09590d286a4aa38717654b312ea5408cda": [
     "windows-apps-src\\xbox-apps\\images\\automate-uwp-apps-2.png"
+  ],
+  "4e2a58a4c35f144c85a811e6ecfb0f24ad7278ec": [
+    "windows-apps-src\\xbox-apps\\images\\deactivation-app.png"
   ],
   "307559f31730beecc3f98d44f061f6311cdce416": [
     "windows-apps-src\\xbox-apps\\images\\deactivation-app.png"
@@ -8565,6 +8580,9 @@
   ],
   "4414677e942818506020888fa15e7e16ecaf4733": [
     "windows-apps-src\\xbox-apps\\introduction-to-xbox-tools.md"
+  ],
+  "5892e00f4da74af5aa4e24fdd12b0df0e8a4a7d9": [
+    "windows-apps-src\\xbox-apps\\known-issues.md"
   ],
   "39a34552df2793a5d012130ae5abe41f365ddee2": [
     "windows-apps-src\\xbox-apps\\known-issues.md"
@@ -8809,6 +8827,9 @@
   "edc9a914f200c643b1133cf07778e2ca3931d0d9": [
     "windows-apps-src\\xbox-apps\\whats-new.md"
   ],
+  "33c1888620d4e3c2d95cbf701e9128ce006961da": [
+    "windows-apps-src\\whats-new\\windows-10-sdk-preview.md"
+  ],
   "5ab803502c9aab4ff0e7e47ca0aeaaa3f55b0e02": [
     "windows-apps-src\\whats-new\\windows-10-sdk-preview.md"
   ],
@@ -8823,6 +8844,9 @@
   ],
   "9623e10b15dbc5f9480d1cd9bd740fa8e914b3c6": [
     "windows-apps-src\\whats-new\\windows-10-sdk-preview.md"
+  ],
+  "7f6a0879db5e3ec660866c0c08b9b7c7ca773644": [
+    "windows-apps-src\\whats-new\\windows-10-version-1511.md"
   ],
   "8304164e7cf6d98ffa8579da624b97b156094287": [
     "windows-apps-src\\whats-new\\windows-10-version-1511.md"
@@ -10117,6 +10141,9 @@
   "5599bddc0331ef23a9154571f8ce123af35f5a58": [
     "windows-apps-src\\monetize\\in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md"
   ],
+  "61d8523c0de6a25fa34c02b390e900031a59b7e4": [
+    "windows-apps-src\\whats-new\\windows-10-version-1607.md"
+  ],
   "850c6e1d4c87e38255f0568b14841cc6f1a7c4a5": [
     "windows-apps-src\\whats-new\\windows-10-version-1607.md"
   ],
@@ -10135,6 +10162,9 @@
   "0c843b1f547810e3bdf675c616dcded7015f110a": [
     "windows-apps-src\\whats-new\\windows-10-version-1607.md"
   ],
+  "5ed2ff1eef8885d10676df1a2d82e563f19d1bf4": [
+    "windows-apps-src\\whats-new\\windows-10-version-1607-api-diff.md"
+  ],
   "4fa5c236a53e24e8860da6f911a3dc0e9522e31d": [
     "windows-apps-src\\whats-new\\windows-10-version-1607-api-diff.md"
   ],
@@ -10152,6 +10182,9 @@
   ],
   "0306b776549c81d11febde881904b66c0db19d6c": [
     "windows-apps-src\\get-started\\images\\devmode-pc-pinpair.PNG"
+  ],
+  "0388f444431f9716a1f311c8c2dfc8db2de83df3": [
+    "windows-apps-src\\whats-new\\windows-10-version-1507.md"
   ],
   "e43635c64ea5edf89d35ffd7da27b65fc79d9e38": [
     "windows-apps-src\\whats-new\\windows-10-version-1507.md"
