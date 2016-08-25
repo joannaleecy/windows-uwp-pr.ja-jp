@@ -5938,6 +5938,9 @@
   "cfaa108cc93b6bae903e86ad141656bf613f185d": [
     "windows-apps-src\\monetize\\known-issues-for-the-advertising-libraries.md"
   ],
+  "9a61995a11517a8662b47d1edc41a062d4d057a5": [
+    "windows-apps-src\\monetize\\launch-feedback-hub-from-your-app.md"
+  ],
   "e6d8b7d4f710d10619824aae5124e25b557ff871": [
     "windows-apps-src\\monetize\\launch-feedback-hub-from-your-app.md"
   ],
@@ -6844,6 +6847,9 @@
   "3511533f76294767ca409b09a718555a6194e451": [
     "windows-apps-src\\publish\\app-promotion-and-customer-engagement.md"
   ],
+  "58f07f21a5333e13c04fa199d137f7e0b27e90aa": [
+    "windows-apps-src\\publish\\app-screenshots-and-images.md"
+  ],
   "ccc778c00f30b85cc4eff18968c948ce11351f3f": [
     "windows-apps-src\\publish\\app-screenshots-and-images.md"
   ],
@@ -7005,6 +7011,9 @@
   ],
   "6f6052508118c77fd85a30c09d8aefe0a9a7f33b": [
     "windows-apps-src\\publish\\enter-iap-properties.md"
+  ],
+  "5b15f72601e71b00fcce5c54e4a90b5153937ee7": [
+    "windows-apps-src\\publish\\feedback-report.md"
   ],
   "223aa1475d8002ded356c9eefdc80c77a5bd553b": [
     "windows-apps-src\\publish\\feedback-report.md"
@@ -8746,6 +8755,9 @@
   "307606bc290e9c5268fc5a37b72770d6b1ada4da": [
     "windows-apps-src\\xbox-apps\\disable-scaling.md"
   ],
+  "27f1a4b83e6d8aa5a7def5126ff3b52cb679af72": [
+    "windows-apps-src\\xbox-apps\\tailoring-for-xbox.md"
+  ],
   "6b02c624ae57efce1d6e91d80e4e21f9eafc53a0": [
     "windows-apps-src\\xbox-apps\\tailoring-for-xbox.md"
   ],
@@ -8797,6 +8809,9 @@
   "edc9a914f200c643b1133cf07778e2ca3931d0d9": [
     "windows-apps-src\\xbox-apps\\whats-new.md"
   ],
+  "5ab803502c9aab4ff0e7e47ca0aeaaa3f55b0e02": [
+    "windows-apps-src\\whats-new\\windows-10-sdk-preview.md"
+  ],
   "46b2a4df519ff1af0bcdb39654b3d3fd8f79b52b": [
     "windows-apps-src\\whats-new\\windows-10-sdk-preview.md"
   ],
@@ -8808,6 +8823,9 @@
   ],
   "9623e10b15dbc5f9480d1cd9bd740fa8e914b3c6": [
     "windows-apps-src\\whats-new\\windows-10-sdk-preview.md"
+  ],
+  "8304164e7cf6d98ffa8579da624b97b156094287": [
+    "windows-apps-src\\whats-new\\windows-10-version-1511.md"
   ],
   "85203d7b0e0b409b9edb4f16566a46b6c12f3d08": [
     "windows-apps-src\\whats-new\\windows-10-version-1511.md"
@@ -10099,6 +10117,9 @@
   "5599bddc0331ef23a9154571f8ce123af35f5a58": [
     "windows-apps-src\\monetize\\in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md"
   ],
+  "850c6e1d4c87e38255f0568b14841cc6f1a7c4a5": [
+    "windows-apps-src\\whats-new\\windows-10-version-1607.md"
+  ],
   "82cbfd2335e3c629c88c9eccdaee6e3ecc8160e3": [
     "windows-apps-src\\whats-new\\windows-10-version-1607.md"
   ],
@@ -10114,6 +10135,9 @@
   "0c843b1f547810e3bdf675c616dcded7015f110a": [
     "windows-apps-src\\whats-new\\windows-10-version-1607.md"
   ],
+  "4fa5c236a53e24e8860da6f911a3dc0e9522e31d": [
+    "windows-apps-src\\whats-new\\windows-10-version-1607-api-diff.md"
+  ],
   "88fc1c7852c3e68bde90f86cc7804140775a67b3": [
     "windows-apps-src\\whats-new\\windows-10-version-1607-api-diff.md"
   ],
@@ -10128,6 +10152,9 @@
   ],
   "0306b776549c81d11febde881904b66c0db19d6c": [
     "windows-apps-src\\get-started\\images\\devmode-pc-pinpair.PNG"
+  ],
+  "e43635c64ea5edf89d35ffd7da27b65fc79d9e38": [
+    "windows-apps-src\\whats-new\\windows-10-version-1507.md"
   ],
   "e9ae8fb4a8e0ed272894682f80daf480a676f754": [
     "windows-apps-src\\whats-new\\windows-10-version-1507.md"
