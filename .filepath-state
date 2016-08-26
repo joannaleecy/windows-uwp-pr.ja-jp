@@ -4812,6 +4812,9 @@
   "d7dbdab0e8d404e6607585045d49bb3dd1407de6": [
     "windows-apps-src\\launch-resume\\declare-background-tasks-in-the-application-manifest.md"
   ],
+  "57f4fd2beeb04db44804689e3e46744b4fc03ce5": [
+    "windows-apps-src\\launch-resume\\guidelines-for-background-tasks.md"
+  ],
   "1bdc8d202baa1782699d23935484bb6e848037e5": [
     "windows-apps-src\\launch-resume\\guidelines-for-background-tasks.md"
   ],
@@ -10047,6 +10050,9 @@
   ],
   "80e89e24236903ab90f7c4fe326782a0a7e5272f": [
     "windows-apps-src\\launch-resume\\reduce-memory-usage.md"
+  ],
+  "c9833f29d6080509c849e9d624f2bfcd0b0af04c": [
+    "windows-apps-src\\launch-resume\\web-to-app-linking.md"
   ],
   "80a890b126be4a3aded15790ca913c6f98cfdf2e": [
     "windows-apps-src\\launch-resume\\web-to-app-linking.md"
