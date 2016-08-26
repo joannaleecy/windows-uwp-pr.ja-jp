@@ -2439,6 +2439,9 @@
   "e68a9c681974152bc0d4dfa58e824f80e77dc51f": [
     "windows-apps-src\\devices-sensors\\3d-print-from-app.md"
   ],
+  "adf247b4b2ed13f8c6fb112b0f929d5ed9a3657f": [
+    "windows-apps-src\\devices-sensors\\3d-printing.md"
+  ],
   "ae0bb32a4f56ba85d1761000d643694e7ba0218f": [
     "windows-apps-src\\devices-sensors\\3d-printing.md"
   ],
@@ -4832,6 +4835,9 @@
   ],
   "ab575415e5e6a091fb45dab49af21d0552834406": [
     "windows-apps-src\\launch-resume\\handle-a-cancelled-background-task.md"
+  ],
+  "cf7cb9f81207f4f25eb8e78283079df27f83d7dc": [
+    "windows-apps-src\\launch-resume\\handle-app-prelaunch.md"
   ],
   "788bfa2780bc4625983f565c8c99b1165f4d8a2b": [
     "windows-apps-src\\launch-resume\\handle-app-prelaunch.md"
