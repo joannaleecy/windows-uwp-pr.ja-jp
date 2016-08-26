@@ -6358,6 +6358,9 @@
   "640ddc7b77d5a23562dba2ecd9812464beb8a422": [
     "windows-apps-src\\porting\\android-ios-uwp-map.md"
   ],
+  "b037e9949ea3c69a44dad9c4812ee517fe173d0e": [
+    "windows-apps-src\\porting\\desktop-to-uwp-deploy-and-debug.md"
+  ],
   "f7c64f33b16916cedff6306ca9828550911d72ee": [
     "windows-apps-src\\porting\\desktop-to-uwp-deploy-and-debug.md"
   ],
@@ -8958,6 +8961,9 @@
   ],
   "33bba6de6fd82601f77bf393e80fe5ae4768e253": [
     "windows-apps-src\\xbox-apps\\images\\x64-build-platform.png"
+  ],
+  "4c18c54cdd7739cf37c15c59bad9e1aa0e434253": [
+    "windows-apps-src\\porting\\desktop-to-uwp-signing.md"
   ],
   "ebe9f6e896a15be7d109527518ab9dcc4f75e8ce": [
     "windows-apps-src\\porting\\desktop-to-uwp-signing.md"
