@@ -2427,6 +2427,9 @@
   "b9300b3feb1e5229951f3e1ebe454b61ba8065ae": [
     "windows-apps-src\\debug-test-perf\\windows-runtime-components-and-optimizing-interop.md"
   ],
+  "caf1a161d486750a9981c809ff341d2fff35b141": [
+    "windows-apps-src\\devices-sensors\\3d-print-from-app.md"
+  ],
   "28235829566e5a1f260c0710f870d6ba2d40faba": [
     "windows-apps-src\\devices-sensors\\3d-print-from-app.md"
   ],
@@ -2519,6 +2522,9 @@
   ],
   "664f6ce7829c9e9a6674daa6cdc21e7561ff094b": [
     "windows-apps-src\\devices-sensors\\gatt-scenarios.md"
+  ],
+  "1d291173cc68d4eedcbc2918f308be1489105a08": [
+    "windows-apps-src\\devices-sensors\\generate-3mf.md"
   ],
   "1a718456f889e30c2db9ea6bcce6fcebc6245101": [
     "windows-apps-src\\devices-sensors\\generate-3mf.md"
