@@ -8938,6 +8938,9 @@
   "33bba6de6fd82601f77bf393e80fe5ae4768e253": [
     "windows-apps-src\\xbox-apps\\images\\x64-build-platform.png"
   ],
+  "ebe9f6e896a15be7d109527518ab9dcc4f75e8ce": [
+    "windows-apps-src\\porting\\desktop-to-uwp-signing.md"
+  ],
   "e846fe262d7983cc6216922620b872d03677b275": [
     "windows-apps-src\\porting\\desktop-to-uwp-signing.md"
   ],
