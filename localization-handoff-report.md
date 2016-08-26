@@ -1,43 +1,24 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\devices-sensors\3d-print-from-app.md](https://github.com/Microsoft/windows-apps/blob/76450022829680cbc4a183fb5c9c17e932b5f54e/windows-apps-src/devices-sensors/3d-print-from-app.md) | HandedOffSuccess | [Details](#caf1a161d486750a9981c809ff341d2fff35b1413315)
- [windows-apps-src\devices-sensors\generate-3mf.md](https://github.com/Microsoft/windows-apps/blob/c790d57e72a75ec28e376722f8d87c2655b18c42/windows-apps-src/devices-sensors/generate-3mf.md) | HandedOffSuccess | [Details](#1d291173cc68d4eedcbc2918f308be1489105a083355)
+ [windows-apps-src\contacts-and-calendar\integrating-social-feeds-into-contact-cards.md](https://github.com/Microsoft/windows-apps/blob/767acdc847e1897cc17918ce7f49f9807681f4a3/windows-apps-src/contacts-and-calendar/integrating-social-feeds-into-contact-cards.md) | HandedOffSuccess | [Details](#c5b9666d8654a4065bc0e4e400d3e47de4773b8b1666)
 
 ## Item Details
-##### <a name='caf1a161d486750a9981c809ff341d2fff35b1413315'></a> Source: [windows-apps-src\devices-sensors\3d-print-from-app.md](https://github.com/Microsoft/windows-apps/blob/76450022829680cbc4a183fb5c9c17e932b5f54e/windows-apps-src/devices-sensors/3d-print-from-app.md)
+##### <a name='c5b9666d8654a4065bc0e4e400d3e47de4773b8b1666'></a> Source: [windows-apps-src\contacts-and-calendar\integrating-social-feeds-into-contact-cards.md](https://github.com/Microsoft/windows-apps/blob/767acdc847e1897cc17918ce7f49f9807681f4a3/windows-apps-src/contacts-and-calendar/integrating-social-feeds-into-contact-cards.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [3d-print-from-app.3c68c96e21ffee31044cc9de50bec735320b7269.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/51964c09cc885de9de3e174eccad05fce0f98db5/ol-handoff/Microsoft/windows-apps.ja-jp/master/3d-print-from-app.3c68c96e21ffee31044cc9de50bec735320b7269.ja-jp.xlf)
-* Handoff Datetime: 2016-08-26 18:44:50
+* Handoff File: [integrating-social-feeds-into-contact-cards.da122ef61a6b3eb3376ef78d2bd1a3894fa9bd10.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/30d4c06f2d08da75fcdd495c3fda7aebe5d8948b/ol-handoff/Microsoft/windows-apps.ja-jp/master/integrating-social-feeds-into-contact-cards.da122ef61a6b3eb3376ef78d2bd1a3894fa9bd10.ja-jp.xlf)
+* Handoff Datetime: 2016-08-26 20:15:17
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\devices-sensors\3d-print-from-app.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/50184089ee68f46cd2f416adf3a3994777b91210/windows-apps-src/devices-sensors/3d-print-from-app.md)
-* Current Handback File: [3d-print-from-app.3c68c96e21ffee31044cc9de50bec735320b7269.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/4b30c8e256811740592ee2bde985c1f06955abde/ol-handback/Microsoft/windows-apps.ja-jp/master/3d-print-from-app.3c68c96e21ffee31044cc9de50bec735320b7269.ja-jp.xlf)
-* Current Handback Datetime: 2016-07-06 14:57:57
-* [Back to Top](#report-top)
-
-##### <a name='1d291173cc68d4eedcbc2918f308be1489105a083355'></a> Source: [windows-apps-src\devices-sensors\generate-3mf.md](https://github.com/Microsoft/windows-apps/blob/c790d57e72a75ec28e376722f8d87c2655b18c42/windows-apps-src/devices-sensors/generate-3mf.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [generate-3mf.ee80cfeb81494e7843cb5a102ffb0c17b6f3e40f.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/51964c09cc885de9de3e174eccad05fce0f98db5/ol-handoff/Microsoft/windows-apps.ja-jp/master/generate-3mf.ee80cfeb81494e7843cb5a102ffb0c17b6f3e40f.ja-jp.xlf)
-* Handoff Datetime: 2016-08-26 18:44:50
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\devices-sensors\generate-3mf.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/50184089ee68f46cd2f416adf3a3994777b91210/windows-apps-src/devices-sensors/generate-3mf.md)
-* Current Handback File: [generate-3mf.ee80cfeb81494e7843cb5a102ffb0c17b6f3e40f.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/4b30c8e256811740592ee2bde985c1f06955abde/ol-handback/Microsoft/windows-apps.ja-jp/master/generate-3mf.ee80cfeb81494e7843cb5a102ffb0c17b6f3e40f.ja-jp.xlf)
-* Current Handback Datetime: 2016-07-06 14:57:57
 * [Back to Top](#report-top)
 
 
