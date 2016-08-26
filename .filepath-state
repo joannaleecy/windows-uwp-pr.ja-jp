@@ -4833,6 +4833,9 @@
   "ab575415e5e6a091fb45dab49af21d0552834406": [
     "windows-apps-src\\launch-resume\\handle-a-cancelled-background-task.md"
   ],
+  "788bfa2780bc4625983f565c8c99b1165f4d8a2b": [
+    "windows-apps-src\\launch-resume\\handle-app-prelaunch.md"
+  ],
   "91a51f687a4615526235c4c809de769a8e6b660c": [
     "windows-apps-src\\launch-resume\\handle-app-prelaunch.md"
   ],
@@ -8782,6 +8785,9 @@
   "307606bc290e9c5268fc5a37b72770d6b1ada4da": [
     "windows-apps-src\\xbox-apps\\disable-scaling.md"
   ],
+  "6198abcdde4a30df815ff9f36d062b8db3a37fab": [
+    "windows-apps-src\\xbox-apps\\tailoring-for-xbox.md"
+  ],
   "27f1a4b83e6d8aa5a7def5126ff3b52cb679af72": [
     "windows-apps-src\\xbox-apps\\tailoring-for-xbox.md"
   ],
@@ -8910,6 +8916,9 @@
   ],
   "54db2390b5df3b5c6bc7ca6f7d6e36454435c543": [
     "windows-apps-src\\xbox-apps\\development-lanes-landing.md"
+  ],
+  "73f701a2608c6ce8d10cab817683ada4e9eecc08": [
+    "windows-apps-src\\xbox-apps\\development-lanes-unity.md"
   ],
   "75862521c8a4ef2a242f80b4d6b80ff5799b2a8d": [
     "windows-apps-src\\xbox-apps\\development-lanes-unity.md"
@@ -9330,6 +9339,9 @@
   ],
   "435a00eaf9c1f0d8e0c0043229c2adc80638ace3": [
     "windows-apps-src\\xbox-apps\\wdp-fiddler-api.md"
+  ],
+  "3b796c31e6b284cea628ba68a34799cf9317ee2e": [
+    "windows-apps-src\\xbox-apps\\development-lanes-unity-versioning.md"
   ],
   "be390d5f101438781d9b98b7d996265ee2239ad0": [
     "windows-apps-src\\xbox-apps\\development-lanes-unity-versioning.md"
