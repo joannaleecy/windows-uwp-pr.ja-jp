@@ -2508,6 +2508,9 @@
   "eddb2ca0aaa4bdbc19b2c3015ec8d599e0ef5584": [
     "windows-apps-src\\devices-sensors\\enable-usermode-access.md"
   ],
+  "2aa1a86a2cb0b413fae5fbcd87599a9f1a822324": [
+    "windows-apps-src\\devices-sensors\\enumerate-devices.md"
+  ],
   "025cf88a4d7beb67e574131c6c78262faec214cf": [
     "windows-apps-src\\devices-sensors\\enumerate-devices.md"
   ],
