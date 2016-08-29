@@ -1,40 +1,97 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 6
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\devices-sensors\3d-printing.md](https://github.com/Microsoft/windows-apps/blob/cdb186b4411bd8081cc3ebeb56ff2593f06eda1c/windows-apps-src/devices-sensors/3d-printing.md) | HandedOffSuccess | [Details](#fc46e119271a8dc242455944bc9d2ca7ab573d883316)
- [windows-apps-src\monetize\create-and-manage-submissions-using-windows-store-services.md](https://github.com/Microsoft/windows-apps/blob/cf060a31b00d45c0744f058d4a8511b4cd352c9a/windows-apps-src/monetize/create-and-manage-submissions-using-windows-store-services.md) | HandedOffSuccess | [Details](#2f6d6df341887839758b34159b03e9654a606b714736)
+ [windows-apps-src\get-started\images\icon2.png](https://github.com/Microsoft/windows-apps/blob/36549fb8f31200b07adfd667a2ac3ac6955b30a1/windows-apps-src/get-started/images/icon2.png) | HandedOffSuccess | [Details](#e1e0d4314e592f4c5b4b3f525b3b41ac8ba30da23637)
+ [windows-apps-src\get-started\images\icon3.png](https://github.com/Microsoft/windows-apps/blob/36549fb8f31200b07adfd667a2ac3ac6955b30a1/windows-apps-src/get-started/images/icon3.png) | HandedOffSuccess | [Details](#1eefb4fb0a23d4a9f18c12bdcb1af122dad1e8283638)
+ [windows-apps-src\get-started\images\icon4.png](https://github.com/Microsoft/windows-apps/blob/36549fb8f31200b07adfd667a2ac3ac6955b30a1/windows-apps-src/get-started/images/icon4.png) | HandedOffSuccess | [Details](#ebc888a1501ae4f5af1311d903df3f4f5edf260f3639)
+ [windows-apps-src\get-started\images\icon6.png](https://github.com/Microsoft/windows-apps/blob/36549fb8f31200b07adfd667a2ac3ac6955b30a1/windows-apps-src/get-started/images/icon6.png) | HandedOffSuccess | [Details](#e62e02674c74be0290cbc5ccf40551c83639ef8f3640)
+ [windows-apps-src\get-started\images\icon7.png](https://github.com/Microsoft/windows-apps/blob/36549fb8f31200b07adfd667a2ac3ac6955b30a1/windows-apps-src/get-started/images/icon7.png) | HandedOffSuccess | [Details](#2a3101567995821a2f3c46c97c534360d72d926a3641)
+ [windows-apps-src\get-started\learn-more.md](https://github.com/Microsoft/windows-apps/blob/36549fb8f31200b07adfd667a2ac3ac6955b30a1/windows-apps-src/get-started/learn-more.md) | HandedOffSuccess | [Details](#7ac3239548b28060bf96b4a5c96af2f6074e9ad73931)
 
 ## Item Details
-##### <a name='fc46e119271a8dc242455944bc9d2ca7ab573d883316'></a> Source: [windows-apps-src\devices-sensors\3d-printing.md](https://github.com/Microsoft/windows-apps/blob/cdb186b4411bd8081cc3ebeb56ff2593f06eda1c/windows-apps-src/devices-sensors/3d-printing.md)
+##### <a name='e1e0d4314e592f4c5b4b3f525b3b41ac8ba30da23637'></a> Source: [windows-apps-src\get-started\images\icon2.png](https://github.com/Microsoft/windows-apps/blob/36549fb8f31200b07adfd667a2ac3ac6955b30a1/windows-apps-src/get-started/images/icon2.png)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [3d-printing.adf86954646feee9da323de5646d5946f8e3fd72.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/e6d931aea00412389e4731ddbc867e7f523658d4/ol-handoff/Microsoft/windows-apps.ja-jp/master/3d-printing.adf86954646feee9da323de5646d5946f8e3fd72.ja-jp.xlf)
-* Handoff Datetime: 2016-08-29 19:36:38
-* Handoff Reason: Include
+* Handoff File: [e1e0d4314e592f4c5b4b3f525b3b41ac8ba30da2.png](https://github.com/Microsoft/WDG.handoff/blob/5f48e10f118abe03c3de06c32ca8859f1335a063/ol-handoff/Microsoft/windows-apps.ja-jp/master/e1e0d4314e592f4c5b4b3f525b3b41ac8ba30da2.png)
+* Handoff Datetime: 2016-08-29 22:07:14
+* Handoff Reason: IsDependency
+* Dependency From: windows-apps-src\get-started\learn-more.md
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\devices-sensors\3d-printing.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/bb8e3c217182fd3ae9fd7c331e3722f1189b5569/windows-apps-src/devices-sensors/3d-printing.md)
-* Current Handback File: [3d-printing.adf86954646feee9da323de5646d5946f8e3fd72.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/5fbfce34d71b9c9ce97b3692f989d8e628c65b51/ol-handback/Microsoft/windows-apps.ja-jp/master/3d-printing.adf86954646feee9da323de5646d5946f8e3fd72.ja-jp.xlf)
-* Current Handback Datetime: 2016-07-20 16:31:17
 * [Back to Top](#report-top)
 
-##### <a name='2f6d6df341887839758b34159b03e9654a606b714736'></a> Source: [windows-apps-src\monetize\create-and-manage-submissions-using-windows-store-services.md](https://github.com/Microsoft/windows-apps/blob/cf060a31b00d45c0744f058d4a8511b4cd352c9a/windows-apps-src/monetize/create-and-manage-submissions-using-windows-store-services.md)
+##### <a name='1eefb4fb0a23d4a9f18c12bdcb1af122dad1e8283638'></a> Source: [windows-apps-src\get-started\images\icon3.png](https://github.com/Microsoft/windows-apps/blob/36549fb8f31200b07adfd667a2ac3ac6955b30a1/windows-apps-src/get-started/images/icon3.png)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [create-and-manage-submissions-using-windows-store-services.d17cd67e3f06021e1bcff183a35fea407e0be645.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/e6d931aea00412389e4731ddbc867e7f523658d4/ol-handoff/Microsoft/windows-apps.ja-jp/master/create-and-manage-submissions-using-windows-store-services.d17cd67e3f06021e1bcff183a35fea407e0be645.ja-jp.xlf)
-* Handoff Datetime: 2016-08-29 19:36:38
+* Handoff File: [1eefb4fb0a23d4a9f18c12bdcb1af122dad1e828.png](https://github.com/Microsoft/WDG.handoff/blob/5f48e10f118abe03c3de06c32ca8859f1335a063/ol-handoff/Microsoft/windows-apps.ja-jp/master/1eefb4fb0a23d4a9f18c12bdcb1af122dad1e828.png)
+* Handoff Datetime: 2016-08-29 22:07:14
+* Handoff Reason: IsDependency
+* Dependency From: windows-apps-src\get-started\learn-more.md
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* [Back to Top](#report-top)
+
+##### <a name='ebc888a1501ae4f5af1311d903df3f4f5edf260f3639'></a> Source: [windows-apps-src\get-started\images\icon4.png](https://github.com/Microsoft/windows-apps/blob/36549fb8f31200b07adfd667a2ac3ac6955b30a1/windows-apps-src/get-started/images/icon4.png)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [ebc888a1501ae4f5af1311d903df3f4f5edf260f.png](https://github.com/Microsoft/WDG.handoff/blob/5f48e10f118abe03c3de06c32ca8859f1335a063/ol-handoff/Microsoft/windows-apps.ja-jp/master/ebc888a1501ae4f5af1311d903df3f4f5edf260f.png)
+* Handoff Datetime: 2016-08-29 22:07:14
+* Handoff Reason: IsDependency
+* Dependency From: windows-apps-src\get-started\learn-more.md
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* [Back to Top](#report-top)
+
+##### <a name='e62e02674c74be0290cbc5ccf40551c83639ef8f3640'></a> Source: [windows-apps-src\get-started\images\icon6.png](https://github.com/Microsoft/windows-apps/blob/36549fb8f31200b07adfd667a2ac3ac6955b30a1/windows-apps-src/get-started/images/icon6.png)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [e62e02674c74be0290cbc5ccf40551c83639ef8f.png](https://github.com/Microsoft/WDG.handoff/blob/5f48e10f118abe03c3de06c32ca8859f1335a063/ol-handoff/Microsoft/windows-apps.ja-jp/master/e62e02674c74be0290cbc5ccf40551c83639ef8f.png)
+* Handoff Datetime: 2016-08-29 22:07:14
+* Handoff Reason: IsDependency
+* Dependency From: windows-apps-src\get-started\learn-more.md
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* [Back to Top](#report-top)
+
+##### <a name='2a3101567995821a2f3c46c97c534360d72d926a3641'></a> Source: [windows-apps-src\get-started\images\icon7.png](https://github.com/Microsoft/windows-apps/blob/36549fb8f31200b07adfd667a2ac3ac6955b30a1/windows-apps-src/get-started/images/icon7.png)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [2a3101567995821a2f3c46c97c534360d72d926a.png](https://github.com/Microsoft/WDG.handoff/blob/5f48e10f118abe03c3de06c32ca8859f1335a063/ol-handoff/Microsoft/windows-apps.ja-jp/master/2a3101567995821a2f3c46c97c534360d72d926a.png)
+* Handoff Datetime: 2016-08-29 22:07:14
+* Handoff Reason: IsDependency
+* Dependency From: windows-apps-src\get-started\learn-more.md
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* [Back to Top](#report-top)
+
+##### <a name='7ac3239548b28060bf96b4a5c96af2f6074e9ad73931'></a> Source: [windows-apps-src\get-started\learn-more.md](https://github.com/Microsoft/windows-apps/blob/36549fb8f31200b07adfd667a2ac3ac6955b30a1/windows-apps-src/get-started/learn-more.md)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/5f48e10f118abe03c3de06c32ca8859f1335a063/ol-handoff/Microsoft/windows-apps.ja-jp/master/learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.ja-jp.xlf)
+* Handoff Datetime: 2016-08-29 22:07:14
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\get-started\learn-more.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/bb8e3c217182fd3ae9fd7c331e3722f1189b5569/windows-apps-src/get-started/learn-more.md)
+* Current Handback File: [learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/5fbfce34d71b9c9ce97b3692f989d8e628c65b51/ol-handback/Microsoft/windows-apps.ja-jp/master/learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.ja-jp.xlf)
+* Current Handback Datetime: 2016-07-20 16:31:17
 * [Back to Top](#report-top)
 
 

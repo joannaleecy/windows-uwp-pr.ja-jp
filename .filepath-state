@@ -3694,6 +3694,9 @@
   "555649b6b18aa009da69eee7e6980365b473054e": [
     "windows-apps-src\\get-started\\images\\xaml-hw-style-cpp.png"
   ],
+  "7ac3239548b28060bf96b4a5c96af2f6074e9ad7": [
+    "windows-apps-src\\get-started\\learn-more.md"
+  ],
   "1a43ebe62c2c9462c36c821134e2a08308bd3266": [
     "windows-apps-src\\get-started\\learn-more.md"
   ],
@@ -10698,5 +10701,20 @@
   ],
   "c3088c2498a94c988359dd08c6c900ad9a6c4f95": [
     "windows-apps-src\\publish\\respond-to-customer-feedback.md"
+  ],
+  "e1e0d4314e592f4c5b4b3f525b3b41ac8ba30da2": [
+    "windows-apps-src\\get-started\\images\\icon2.png"
+  ],
+  "1eefb4fb0a23d4a9f18c12bdcb1af122dad1e828": [
+    "windows-apps-src\\get-started\\images\\icon3.png"
+  ],
+  "ebc888a1501ae4f5af1311d903df3f4f5edf260f": [
+    "windows-apps-src\\get-started\\images\\icon4.png"
+  ],
+  "e62e02674c74be0290cbc5ccf40551c83639ef8f": [
+    "windows-apps-src\\get-started\\images\\icon6.png"
+  ],
+  "2a3101567995821a2f3c46c97c534360d72d926a": [
+    "windows-apps-src\\get-started\\images\\icon7.png"
   ]
 }
