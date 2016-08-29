@@ -2433,6 +2433,9 @@
   "b9300b3feb1e5229951f3e1ebe454b61ba8065ae": [
     "windows-apps-src\\debug-test-perf\\windows-runtime-components-and-optimizing-interop.md"
   ],
+  "b9bfc51e9abb0ba15e5873a5693d5b24f4b6dbf7": [
+    "windows-apps-src\\devices-sensors\\3d-print-from-app.md"
+  ],
   "caf1a161d486750a9981c809ff341d2fff35b141": [
     "windows-apps-src\\devices-sensors\\3d-print-from-app.md"
   ],
