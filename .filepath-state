@@ -2132,6 +2132,9 @@
   "e2209e90080c7346bb363304b1a28f6446300332": [
     "windows-apps-src\\debug-test-perf\\deploying-and-debugging-uwp-apps.md"
   ],
+  "b316eab1f269dadbe65b7e93b5a33a8e4c4924d7": [
+    "windows-apps-src\\debug-test-perf\\device-portal.md"
+  ],
   "84e02e71c572b0e59d249a190cb31fb9ec3eba27": [
     "windows-apps-src\\debug-test-perf\\device-portal.md"
   ],
@@ -2158,6 +2161,9 @@
   ],
   "5ed8ffe0a409569777fbf4e56a90ab3b80cd395c": [
     "windows-apps-src\\debug-test-perf\\device-portal-api-hololens.md"
+  ],
+  "3436a95124071045c8ec89ed8ddf644ccc80c29f": [
+    "windows-apps-src\\debug-test-perf\\device-portal-desktop.md"
   ],
   "3ccc805d0132330b23e41129684546068f8fe1df": [
     "windows-apps-src\\debug-test-perf\\device-portal-desktop.md"
@@ -3504,6 +3510,9 @@
   ],
   "0a524d51f713c37ce2069b4e750bf3ed20fe19ab": [
     "windows-apps-src\\get-started\\create-a-hello-world-app-xaml-universal.md"
+  ],
+  "66413b43e5b9fd285324fd139fe14527dbee940a": [
+    "windows-apps-src\\get-started\\enable-your-device-for-development.md"
   ],
   "69d88c092561beaeed9d093d590c10f2f5c178d4": [
     "windows-apps-src\\get-started\\enable-your-device-for-development.md"
@@ -6345,6 +6354,9 @@
   ],
   "5f6bfb13e2e80f21902ec923e32f68046f313a13": [
     "windows-apps-src\\packaging\\install-universal-windows-apps-with-the-winappdeploycmd-tool.md"
+  ],
+  "e274557883071c65313893ce725cc2307856174b": [
+    "windows-apps-src\\packaging\\packaging-uwp-apps.md"
   ],
   "24d25a90f80d98ab6800c508a68f56e566c61cd1": [
     "windows-apps-src\\packaging\\packaging-uwp-apps.md"
