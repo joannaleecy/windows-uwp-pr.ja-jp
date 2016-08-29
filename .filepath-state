@@ -3112,6 +3112,9 @@
   "4bb1f5c71d83b2dc3271b5b2ceaa9a1156b00004": [
     "windows-apps-src\\gaming\\implementing-depth-buffers-for-shadow-mapping.md"
   ],
+  "fccc85584e84bf3364130fe80c61b75c6377c0c8": [
+    "windows-apps-src\\gaming\\index.md"
+  ],
   "164a2de1f76bab2fc7eb060d45a39756ecb6ccd2": [
     "windows-apps-src\\gaming\\index.md"
   ],
@@ -5452,6 +5455,9 @@
   "e161e478b1b306f5d8d77b7649aeecd80e21b5be": [
     "windows-apps-src\\maps-and-location\\set-up-a-geofence.md"
   ],
+  "095e3c66f7bfebdf031186c180edb90d933a8d63": [
+    "windows-apps-src\\monetize\\access-analytics-data-using-windows-store-services.md"
+  ],
   "f9b21a6f871ef21802ba885d37ee40ad518ca1c8": [
     "windows-apps-src\\monetize\\access-analytics-data-using-windows-store-services.md"
   ],
@@ -5725,6 +5731,9 @@
   "9c38784325f4dc51052f70a819012508f2a0bdbb": [
     "windows-apps-src\\monetize\\exclude-or-limit-features-in-a-trial-version-of-your-app.md"
   ],
+  "c3efa347d11c2694d8814eb31f7e5f6825c7173a": [
+    "windows-apps-src\\monetize\\get-app-acquisitions.md"
+  ],
   "8cbb7c33164f93613a07d00791b43f367bab201c": [
     "windows-apps-src\\monetize\\get-app-acquisitions.md"
   ],
@@ -5743,6 +5752,9 @@
   "3d885322181fa8b932dd248c8c71e7d6d747bb06": [
     "windows-apps-src\\monetize\\get-app-failures.md"
   ],
+  "8ec588ceb0a7c8bd6a75f72bf0a2d48c697a8e6a": [
+    "windows-apps-src\\monetize\\get-app-ratings.md"
+  ],
   "8552d07f0902beeed8f91c183b96904092fcdcb7": [
     "windows-apps-src\\monetize\\get-app-ratings.md"
   ],
@@ -5754,6 +5766,9 @@
   ],
   "6f6a94e030f1733ca4224766526386ef1956ff03": [
     "windows-apps-src\\monetize\\get-app-ratings.md"
+  ],
+  "4190012c08e22f4efb086c711183332b23ccee38": [
+    "windows-apps-src\\monetize\\get-app-reviews.md"
   ],
   "06193f1452a424ed314d0ee5a6d9f8535b81abfc": [
     "windows-apps-src\\monetize\\get-app-reviews.md"
@@ -5767,6 +5782,9 @@
   "6e7e8c6a1b870031fb7055bf09c8ebbaa7dc13a5": [
     "windows-apps-src\\monetize\\get-app-reviews.md"
   ],
+  "64bd3491bc8ff37f5eb7ca852ad6dc738f6e2711": [
+    "windows-apps-src\\monetize\\get-error-reporting-data.md"
+  ],
   "c9b5f13a53af7349c032b12ca85fba6dde0dc3f6": [
     "windows-apps-src\\monetize\\get-error-reporting-data.md"
   ],
@@ -5778,6 +5796,9 @@
   ],
   "682f727a21d74f5cea8fddc4886c873d537e1cfb": [
     "windows-apps-src\\monetize\\get-error-reporting-data.md"
+  ],
+  "0eed86345b4faa6caca2612068a20bf700661ff3": [
+    "windows-apps-src\\monetize\\get-in-app-acquisitions.md"
   ],
   "1410e2c915cd655ce41ef75a18e4730f05dc7627": [
     "windows-apps-src\\monetize\\get-in-app-acquisitions.md"
@@ -5805,6 +5826,9 @@
   ],
   "08168dc15b33d99a044eedd7864848ed7a858991": [
     "windows-apps-src\\monetize\\get-started-with-microsoft-advertising-libraries.md"
+  ],
+  "a04918a562d132f6a721b96c7f4ad78218eb8819": [
+    "windows-apps-src\\monetize\\grant-free-products.md"
   ],
   "0a28e321645b7d3ec8699c5f20c7716c121f8fe2": [
     "windows-apps-src\\monetize\\grant-free-products.md"
@@ -6016,6 +6040,9 @@
   "481cf2aab806a1f9ce368256a9df8930cbc756c1": [
     "windows-apps-src\\monetize\\monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md"
   ],
+  "ea517d66dbb6f373b191937de8c1cbe42c74846f": [
+    "windows-apps-src\\monetize\\query-for-products.md"
+  ],
   "0e61b3b521f239062c33709a306630919d767473": [
     "windows-apps-src\\monetize\\query-for-products.md"
   ],
@@ -6184,6 +6211,9 @@
   "b1322b74bf1038f05cd1cba275e432e279ed362d": [
     "windows-apps-src\\monetize\\use-receipts-to-verify-product-purchases.md"
   ],
+  "ed5d27bf74e516717fa0b8e7e526617bea94cc51": [
+    "windows-apps-src\\monetize\\using-windows-store-services.md"
+  ],
   "3f0c5b86bda9140a6ca10e5e3fe0ad8a9d17802f": [
     "windows-apps-src\\monetize\\using-windows-store-services.md"
   ],
@@ -6192,6 +6222,9 @@
   ],
   "43e3155315a9132daa36f592b54af3e943ea3e21": [
     "windows-apps-src\\monetize\\using-windows-store-services.md"
+  ],
+  "2bd637985441cf2f8fbe8366f207369b3a4dc696": [
+    "windows-apps-src\\monetize\\view-and-grant-products-from-a-service.md"
   ],
   "cecd774544af536c4383a24a6d48bf3ff65b513a": [
     "windows-apps-src\\monetize\\view-and-grant-products-from-a-service.md"
@@ -6342,6 +6375,9 @@
   ],
   "7af6d2fec91e26163ee54eb266d20c16ec1fd09d": [
     "windows-apps-src\\packaging\\images\\packaging-screen7.jpg"
+  ],
+  "230c77cbe60631d643bebe905a92cdbeb76af4d2": [
+    "windows-apps-src\\packaging\\index.md"
   ],
   "bdfe6dcb66c2ada54dc117b944cf4011d699dee1": [
     "windows-apps-src\\packaging\\index.md"
@@ -6823,6 +6859,9 @@
   "8c200c4f4b743aeaae71d6a6179fc15db0e7ec5e": [
     "windows-apps-src\\publish\\affiliates-performance-report.md"
   ],
+  "d190a32f16d1e7c1d98e33d1757bc9047277b62b": [
+    "windows-apps-src\\publish\\age-ratings.md"
+  ],
   "34b10e623c57aff250d1851f80d004d449ecfea1": [
     "windows-apps-src\\publish\\age-ratings.md"
   ],
@@ -6877,6 +6916,9 @@
   "951c00f9fd2c945ac44d47bfae701049e937b98f": [
     "windows-apps-src\\publish\\app-package-requirements.md"
   ],
+  "1f43cb9fdf633cecf6848a4ef0dd49a0f07f79c3": [
+    "windows-apps-src\\publish\\app-promotion-and-customer-engagement.md"
+  ],
   "7111c7679d93df2888b99484519ebc9cb884f461": [
     "windows-apps-src\\publish\\app-promotion-and-customer-engagement.md"
   ],
@@ -6886,6 +6928,9 @@
   "3511533f76294767ca409b09a718555a6194e451": [
     "windows-apps-src\\publish\\app-promotion-and-customer-engagement.md"
   ],
+  "eb61c9bca6b8ddfba5287482508e7d04b240d29f": [
+    "windows-apps-src\\publish\\app-screenshots-and-images.md"
+  ],
   "58f07f21a5333e13c04fa199d137f7e0b27e90aa": [
     "windows-apps-src\\publish\\app-screenshots-and-images.md"
   ],
@@ -6894,6 +6939,9 @@
   ],
   "9eac5658e2ac04b2abc1bf06abf5c73b16260bc7": [
     "windows-apps-src\\publish\\app-screenshots-and-images.md"
+  ],
+  "ee69a90fb00a5c57e5a3e729af3dc4c7ea4d5383": [
+    "windows-apps-src\\publish\\app-submissions.md"
   ],
   "281869bf44c0697ab1bcf37d747a1e796fcc1a94": [
     "windows-apps-src\\publish\\app-submissions.md"
@@ -6910,6 +6958,9 @@
   "6af2842eeb5eeebfc9ffc5a7a3ec98fdcebddb74": [
     "windows-apps-src\\publish\\avoid-common-certification-failures.md"
   ],
+  "48164cd255f776f700a08e389ba1d2d6754ddeca": [
+    "windows-apps-src\\publish\\beta-testing-and-targeted-distribution.md"
+  ],
   "a7b582dd6f38e24c80300c48317e8242cd73176e": [
     "windows-apps-src\\publish\\beta-testing-and-targeted-distribution.md"
   ],
@@ -6921,6 +6972,9 @@
   ],
   "a544565bf7bb82f2be1ded3e60836d5d191c6e93": [
     "windows-apps-src\\publish\\beta-testing-and-targeted-distribution.md"
+  ],
+  "40891ade1c3383f89eed99176b4e9cf979e1fb64": [
+    "windows-apps-src\\publish\\category-and-subcategory-table.md"
   ],
   "6ef85714b5095c69eba532ec97ec974048327609": [
     "windows-apps-src\\publish\\category-and-subcategory-table.md"
@@ -6958,6 +7012,9 @@
   "9596dd4de0c05ee6f85189e529ad18e528e954df": [
     "windows-apps-src\\publish\\create-an-ad-campaign-for-your-app.md"
   ],
+  "88c8db76b50d010b37c50a5e90edeca096c300cd": [
+    "windows-apps-src\\publish\\create-app-descriptions.md"
+  ],
   "67cf2841e7e58407071a12048a4eddc9b167fc95": [
     "windows-apps-src\\publish\\create-app-descriptions.md"
   ],
@@ -6967,6 +7024,9 @@
   "bd10b94cdb3e16e8a6165610fb77adcdaca5b0a4": [
     "windows-apps-src\\publish\\create-app-descriptions.md"
   ],
+  "292db4af3a0b80ccb3ef40553f2f5dcaa45312a4": [
+    "windows-apps-src\\publish\\create-iap-descriptions.md"
+  ],
   "335a1acb0fd813763e0df573e85be564ff289d6b": [
     "windows-apps-src\\publish\\create-iap-descriptions.md"
   ],
@@ -6975,6 +7035,9 @@
   ],
   "418907894d3fc9349ca113ff04c575bcb0140347": [
     "windows-apps-src\\publish\\create-iap-descriptions.md"
+  ],
+  "4901812fa55451718548fd4624a92a921ab2aaa7": [
+    "windows-apps-src\\publish\\create-platform-specific-descriptions.md"
   ],
   "9285fb2e144c55e012cbda43d538ad2398f0dc2a": [
     "windows-apps-src\\publish\\create-platform-specific-descriptions.md"
@@ -6987,12 +7050,6 @@
   ],
   "5e4933be456bc76eb5923f5c081e8376c43c118b": [
     "windows-apps-src\\publish\\create-your-app-by-reserving-a-name.md"
-  ],
-  "36bf3120a72ff2f2e9d56f211241ab2d504063e5": [
-    "windows-apps-src\\publish\\customer-groups.md"
-  ],
-  "858b777c62ffaf6e0ea8c6811e5051cc20474ba0": [
-    "windows-apps-src\\publish\\customer-groups.md"
   ],
   "3fb8594748d303216a4437983604b5d78c993934": [
     "windows-apps-src\\publish\\define-pricing-and-market-selection.md"
@@ -7036,6 +7093,9 @@
   "959007d6d7c4e4c768f196fe04c2fa4a8ac6fc2e": [
     "windows-apps-src\\publish\\download-analytic-reports.md"
   ],
+  "d2eb9a62dcaadca599136f4505f85e3ba94c0189": [
+    "windows-apps-src\\publish\\enter-app-properties.md"
+  ],
   "e48d3d28f1dabcb7cc5608e863a3ee43b77e603f": [
     "windows-apps-src\\publish\\enter-app-properties.md"
   ],
@@ -7050,6 +7110,9 @@
   ],
   "6f6052508118c77fd85a30c09d8aefe0a9a7f33b": [
     "windows-apps-src\\publish\\enter-iap-properties.md"
+  ],
+  "e6266ff7c45a49b3eece8ffaf3d0603d55a04761": [
+    "windows-apps-src\\publish\\feedback-report.md"
   ],
   "5b15f72601e71b00fcce5c54e4a90b5153937ee7": [
     "windows-apps-src\\publish\\feedback-report.md"
@@ -7101,6 +7164,9 @@
   ],
   "78bedc3e0551feef8efe61b3b664145e29281714": [
     "windows-apps-src\\publish\\health-report.md"
+  ],
+  "a3ecb8a4a1aebc719f8a8a4eb140776685f53b4e": [
+    "windows-apps-src\\publish\\how-your-app-appears-in-the-store-for-windows-10-customers.md"
   ],
   "f8daf33db6c48bc084895339ab253a5c1268adbd": [
     "windows-apps-src\\publish\\how-your-app-appears-in-the-store-for-windows-10-customers.md"
@@ -7225,6 +7291,9 @@
   "e4adbc66b4b4a88ca3787737e9bbddf0d937b604": [
     "windows-apps-src\\publish\\organizational-licensing.md"
   ],
+  "34321a5fd3db10833b958049597ebf830599cfb4": [
+    "windows-apps-src\\publish\\package-flights.md"
+  ],
   "8ab079ef974c664023b65161f03e2fd6829e2518": [
     "windows-apps-src\\publish\\package-flights.md"
   ],
@@ -7264,11 +7333,17 @@
   "86355a194eb61b8d13eba22d9f6e7c566339cd28": [
     "windows-apps-src\\publish\\payout-summary.md"
   ],
+  "62a03ace17f83d133efe47297ea3916cd3348a1c": [
+    "windows-apps-src\\publish\\pubcenter-dev-center-integration.md"
+  ],
   "bb133c311eac99e4213cd03041414ca4e4934895": [
     "windows-apps-src\\publish\\pubcenter-dev-center-integration.md"
   ],
   "d6bf60e1dae7ec62e3cdbba8098a24c093d5deb1": [
     "windows-apps-src\\publish\\pubcenter-dev-center-integration.md"
+  ],
+  "a9d6b7b870d6d71197ec3fb8fb69142580371a55": [
+    "windows-apps-src\\publish\\pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md"
   ],
   "75026819a42d0b42c92c8f0e3c33bc014c656ce5": [
     "windows-apps-src\\publish\\pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md"
@@ -7309,11 +7384,17 @@
   "06228d7816f371f669ad4e6db7310e903f5f0683": [
     "windows-apps-src\\publish\\respond-to-customer-reviews.md"
   ],
+  "0474736782a32a592f4de411e264e096e8be7926": [
+    "windows-apps-src\\publish\\reviews-report.md"
+  ],
   "f012a2ebf4f3c5bcad85adcaa5eedcf3275e9d4e": [
     "windows-apps-src\\publish\\reviews-report.md"
   ],
   "7d1a768ce558718b43a4d124f7c88868e999fb93": [
     "windows-apps-src\\publish\\reviews-report.md"
+  ],
+  "932c4343aa2506ce59dea9f3b70a9e1597aa89ad": [
+    "windows-apps-src\\publish\\set-app-pricing-and-availability.md"
   ],
   "a4b2f019774ebf2deb7af904202234db2d5f75e7": [
     "windows-apps-src\\publish\\set-app-pricing-and-availability.md"
@@ -7381,6 +7462,9 @@
   "2c3f35ee5fb3f04e9f2fc389162793caa9ce5f1a": [
     "windows-apps-src\\publish\\trademark-and-copyright-protection.md"
   ],
+  "2ca755568ff3697d5e0fe94900799f9dd98b7f72": [
+    "windows-apps-src\\publish\\upload-app-packages.md"
+  ],
   "66d4ee94e28e67dcc04337f0740abb77c47d92c0": [
     "windows-apps-src\\publish\\upload-app-packages.md"
   ],
@@ -7405,6 +7489,9 @@
   "0d775c67492fd6afe9f65f3e5dede865f9037342": [
     "windows-apps-src\\publish\\use-map-services.md"
   ],
+  "2ccec6e85666ef328f4aa0baa8ba6a705986a4c4": [
+    "windows-apps-src\\publish\\using-the-windows-dev-center-dashboard.md"
+  ],
   "355a47b01c54a12ea5f38172b8b16ba7a682b0c0": [
     "windows-apps-src\\publish\\using-the-windows-dev-center-dashboard.md"
   ],
@@ -7425,6 +7512,9 @@
   ],
   "f00d817616d473ef220ebc1817c2bf9207a7aea0": [
     "windows-apps-src\\publish\\view-app-identity-details.md"
+  ],
+  "01bc284b74568651012acfc7fb29c8912bb1f4d1": [
+    "windows-apps-src\\publish\\write-a-great-app-description.md"
   ],
   "950bd01f27925110318fc82e34935292d76262a5": [
     "windows-apps-src\\publish\\write-a-great-app-description.md"
@@ -8043,6 +8133,9 @@
   ],
   "033669a781aa85cc2c90fa11816e385ffefa997d": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
+  ],
+  "8e4ed88d270cb78e2ec5a812efdedd4f108f9648": [
+    "windows-apps-src\\TOC.md"
   ],
   "55e06a0fab7f5998fd1a0b813f306eb1b4737ed8": [
     "windows-apps-src\\TOC.md"
@@ -9259,6 +9352,9 @@
   "457ddacd80b3f9308b2eb66ce0ac2d448bb59ed2": [
     "windows-apps-src\\usability\\index.md"
   ],
+  "3cc56e61be85e0938c5b923ae402ca1da881888d": [
+    "windows-apps-src\\publish\\index.md"
+  ],
   "ba9f3e075a5cc8b101234020b4bf6bced7890ff7": [
     "windows-apps-src\\publish\\index.md"
   ],
@@ -10264,14 +10360,23 @@
   "144a8400acf0333fcd50e698b333c02942081ef3": [
     "windows-apps-src\\publish\\add-on-acquisitions-report.md"
   ],
+  "7391d6fec6765f9f850c42b0c559c7c4f5a55489": [
+    "windows-apps-src\\publish\\add-on-submissions.md"
+  ],
   "46f62f5d32bd824cdd30b443a9868a03ff4e3eef": [
     "windows-apps-src\\publish\\add-on-submissions.md"
   ],
   "a6aa2fd893c04c5a6a0dbb5f1ca7a0ac19ce5563": [
     "windows-apps-src\\publish\\add-on-submissions.md"
   ],
+  "bab1d5b520b3272f08cfa87d32834d913e54be9f": [
+    "windows-apps-src\\publish\\create-add-on-descriptions.md"
+  ],
   "ffa211dfb59e2e48279ad3ff16e092b271e9102d": [
     "windows-apps-src\\publish\\create-add-on-descriptions.md"
+  ],
+  "1c030f7d79de37e20620cf56a30b1c1570e9b90b": [
+    "windows-apps-src\\publish\\enter-add-on-properties.md"
   ],
   "377e6f7c7b23c56dcd8cfffc846d90ad7d136fee": [
     "windows-apps-src\\publish\\enter-add-on-properties.md"
@@ -10284,6 +10389,9 @@
   ],
   "17fe4e836dc75e0dfd44389a503a6a94afe44f42": [
     "windows-apps-src\\publish\\set-add-on-pricing-and-availability.md"
+  ],
+  "2a469506c8b440e1aa8555ac57b88f2026ae4d8e": [
+    "windows-apps-src\\publish\\set-your-add-on-product-id.md"
   ],
   "21ebd6022d137b3de61a8c533747cb13b91bb5a5": [
     "windows-apps-src\\publish\\set-your-add-on-product-id.md"
@@ -10306,6 +10414,9 @@
   "9a55b217dede099012afbd98c3688d3b3298072e": [
     "windows-apps-src\\layout\\navigate-between-two-pages.md"
   ],
+  "d635ba16e011b7fc249b66335f2338959314e782": [
+    "windows-apps-src\\monetize\\migrate-from-admediatorcontrol-to-adcontrol.md"
+  ],
   "4488afc3508a0aa0d369d9502dc1a7183cd38820": [
     "windows-apps-src\\monetize\\migrate-from-admediatorcontrol-to-adcontrol.md"
   ],
@@ -10326,5 +10437,146 @@
   ],
   "808714e2c0b5682feac81e8024c35512c345b0a8": [
     "windows-apps-src\\get-started\\choose-a-uwp-version.md"
+  ],
+  "5b7d54af00cdf2aa1b39fe994e08569db216779a": [
+    "windows-apps-src\\gaming\\concept-approval.md"
+  ],
+  "df29d34b7e1b4b4e2ee715ecc013758df65fc9c3": [
+    "windows-apps-src\\monetize\\code-examples-for-the-windows-store-submission-api.md"
+  ],
+  "5496dd391115905ac98ee19f693073d8b8726815": [
+    "windows-apps-src\\monetize\\commit-a-flight-submission.md"
+  ],
+  "5fc91cae7dad136d99830a99978e255356a4a335": [
+    "windows-apps-src\\monetize\\commit-an-add-on-submission.md"
+  ],
+  "5f0d2f408099010ae50c4ff6558c02d83bf0ec53": [
+    "windows-apps-src\\monetize\\commit-an-app-submission.md"
+  ],
+  "a41ca16381131bd57b19c795d0e8c225a00140dd": [
+    "windows-apps-src\\monetize\\create-a-flight.md"
+  ],
+  "5d707fff31c8ce4a936705cbf26afcfa8ece9e36": [
+    "windows-apps-src\\monetize\\create-a-flight-submission.md"
+  ],
+  "c4ada6a31220216645113acf27d148f187dc9afe": [
+    "windows-apps-src\\monetize\\create-an-add-on.md"
+  ],
+  "00832cf896a700070b04bcdf373966fc3484b8b6": [
+    "windows-apps-src\\monetize\\create-an-add-on-submission.md"
+  ],
+  "45bc900f842c0e5b50881509fe70ebe50289132d": [
+    "windows-apps-src\\monetize\\create-an-app-submission.md"
+  ],
+  "e921ee08e10f4d946c51f72dcdf31711c91f2622": [
+    "windows-apps-src\\monetize\\create-and-manage-submissions-using-windows-store-services.md"
+  ],
+  "bb140ed33dc21b8b66162113b2b8ceb40dbd84f2": [
+    "windows-apps-src\\monetize\\csharp-code-examples-for-the-windows-store-submission-api.md"
+  ],
+  "e6d38319e3e1b3b30072a5cfc77516fc8941184c": [
+    "windows-apps-src\\monetize\\delete-a-flight.md"
+  ],
+  "bbe5bf492fa13f5f9954c9358cffcae0bf98ac7a": [
+    "windows-apps-src\\monetize\\delete-a-flight-submission.md"
+  ],
+  "f4030c67c8de98a2b8256ac4b74bfa4e135d62f0": [
+    "windows-apps-src\\monetize\\delete-an-add-on.md"
+  ],
+  "d66d87ac62b91ebb448e56592dd7d37ffc5834a5": [
+    "windows-apps-src\\monetize\\delete-an-add-on-submission.md"
+  ],
+  "bef0faf73d5f98da18aac43bd6498e2af0ab3d47": [
+    "windows-apps-src\\monetize\\delete-an-app-submission.md"
+  ],
+  "588b4b4f570b02cfb1e961e443e9a3260bc73f1c": [
+    "windows-apps-src\\monetize\\get-add-ons-for-an-app.md"
+  ],
+  "95267ca020a7917a3f821b80a8b650e7a67850da": [
+    "windows-apps-src\\monetize\\get-a-flight.md"
+  ],
+  "58a4d1bc858e29a00b8f5d40067da65ab2f8d39f": [
+    "windows-apps-src\\monetize\\get-a-flight-submission.md"
+  ],
+  "5436ae811cbcd37c58be98f7074ecdd1e7a7d50a": [
+    "windows-apps-src\\monetize\\get-all-add-ons.md"
+  ],
+  "7857a4fa84c20851044da40c39892144bd666c1e": [
+    "windows-apps-src\\monetize\\get-all-apps.md"
+  ],
+  "850ff53fb8df2d94d2f9c3d37bbc250fdf94860e": [
+    "windows-apps-src\\monetize\\get-an-add-on.md"
+  ],
+  "156ed7a72d45b0f58e5aaa784db10f88332bcdd3": [
+    "windows-apps-src\\monetize\\get-an-add-on-submission.md"
+  ],
+  "5490447ddd2befabbb98a30adc2878d3508679f4": [
+    "windows-apps-src\\monetize\\get-an-app.md"
+  ],
+  "bc7750d8f529afdd1c8045ea42eca880dd3fdda5": [
+    "windows-apps-src\\monetize\\get-an-app-submission.md"
+  ],
+  "2ec6a4ba10c6dab07c2347aa336a5675365fac56": [
+    "windows-apps-src\\monetize\\get-app-data.md"
+  ],
+  "1e0a83417f0c510757ec26a61bd964d785c7be6a": [
+    "windows-apps-src\\monetize\\get-flights-for-an-app.md"
+  ],
+  "0be23f0cb55e9a2beaf52143facfa635ea95c972": [
+    "windows-apps-src\\monetize\\get-status-for-a-flight-submission.md"
+  ],
+  "85b4079cc13181194e547f15a3cd9d5bab7f8447": [
+    "windows-apps-src\\monetize\\get-status-for-an-add-on-submission.md"
+  ],
+  "d6ff2ffa9e7b71c509dea144e57b24fd7b372594": [
+    "windows-apps-src\\monetize\\get-status-for-an-app-submission.md"
+  ],
+  "26d5812e41531cf852606227805d0a84255a3f47": [
+    "windows-apps-src\\monetize\\java-code-examples-for-the-windows-store-submission-api.md"
+  ],
+  "e4a49d2032f0858a86c77638d3f55e910014a932": [
+    "windows-apps-src\\monetize\\manage-add-ons.md"
+  ],
+  "a5d61215e08d91ecffe358e7b95ee4a68d797609": [
+    "windows-apps-src\\monetize\\manage-add-on-submissions.md"
+  ],
+  "bfe1f01d0060290f9ac51570962700bf2c6d28c5": [
+    "windows-apps-src\\monetize\\manage-app-submissions.md"
+  ],
+  "a55adb45c55a61dfe96cb0ad112bd8c032ebd2f1": [
+    "windows-apps-src\\monetize\\manage-flights.md"
+  ],
+  "f58cfdd1a1c0d3340c66bfca6b4ea4c2aef3d013": [
+    "windows-apps-src\\monetize\\manage-flight-submissions.md"
+  ],
+  "52fd41ca41628d41140c8c24047e2a50ea72bf40": [
+    "windows-apps-src\\monetize\\python-code-examples-for-the-windows-store-submission-api.md"
+  ],
+  "44060efb23ea349a56073947f272a7f5617c2e06": [
+    "windows-apps-src\\monetize\\update-a-flight-submission.md"
+  ],
+  "4214cbb5988413592302ad9c80e4437d2faabac9": [
+    "windows-apps-src\\monetize\\update-an-add-on-submission.md"
+  ],
+  "af73802f67f456e06500a337df39892f0c5b6387": [
+    "windows-apps-src\\monetize\\update-an-app-submission.md"
+  ],
+  "adb9b999c88649fc2c8ade838dfa0dabc407c075": [
+    "windows-apps-src\\packaging\\self-install-package-updates.md"
+  ],
+  "607dab75b8e446109cbb60c6c149732501f5b43c": [
+    "windows-apps-src\\publish\\create-add-on-store-listings.md"
+  ],
+  "9ef2a465cb8f9143775feab163ee1d66d135a6b3": [
+    "windows-apps-src\\publish\\create-app-store-listings.md"
+  ],
+  "8d9b026cf09d076cd7f7dc8a72d611e68ddd61c7": [
+    "windows-apps-src\\publish\\create-platform-specific-store-listings.md"
+  ],
+  "3ec642ef0a21d06b20cabb12a47d2abcfd19fe59": [
+    "windows-apps-src\\publish\\gradual-package-rollout.md"
+  ],
+  "c3088c2498a94c988359dd08c6c900ad9a6c4f95": [
+    "windows-apps-src\\publish\\respond-to-customer-feedback.md"
   ]
 }
