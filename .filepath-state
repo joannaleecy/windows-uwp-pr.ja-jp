@@ -2448,6 +2448,9 @@
   "e68a9c681974152bc0d4dfa58e824f80e77dc51f": [
     "windows-apps-src\\devices-sensors\\3d-print-from-app.md"
   ],
+  "fc46e119271a8dc242455944bc9d2ca7ab573d88": [
+    "windows-apps-src\\devices-sensors\\3d-printing.md"
+  ],
   "adf247b4b2ed13f8c6fb112b0f929d5ed9a3657f": [
     "windows-apps-src\\devices-sensors\\3d-printing.md"
   ],
@@ -10494,6 +10497,9 @@
   ],
   "45bc900f842c0e5b50881509fe70ebe50289132d": [
     "windows-apps-src\\monetize\\create-an-app-submission.md"
+  ],
+  "2f6d6df341887839758b34159b03e9654a606b71": [
+    "windows-apps-src\\monetize\\create-and-manage-submissions-using-windows-store-services.md"
   ],
   "7fd9f433804acf880ef640d0d1a8ac52ed49e679": [
     "windows-apps-src\\monetize\\create-and-manage-submissions-using-windows-store-services.md"
