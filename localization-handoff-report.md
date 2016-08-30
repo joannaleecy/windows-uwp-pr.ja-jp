@@ -1,26 +1,39 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\publish\dev-center-insider-program.md](https://github.com/Microsoft/windows-apps/blob/e38d47ea340bd2a37b5bedb023c116102887fdb2/windows-apps-src/publish/dev-center-insider-program.md) | HandedOffSuccess | [Details](#dfc4b1a66a4afc5bbd42daa9b2cf08fbadb98e2d5047)
+ [windows-apps-src\gaming\concept-approval.md](https://github.com/Microsoft/windows-apps/blob/fbd08666fa70af2806f2a0afa2f1823005ce8801/windows-apps-src/gaming/concept-approval.md) | HandedOffSuccess | [Details](#e9915282da1c611037402d149555246819becf893449)
+ [windows-apps-src\get-started\learn-more.md](https://github.com/Microsoft/windows-apps/blob/2eba9d658cf81ea4b61b4825f5bb4fd8199fb5d1/windows-apps-src/get-started/learn-more.md) | HandedOffSuccess | [Details](#635dc7cd1fe4214a76216f9bfebddf778c6606b53931)
 
 ## Item Details
-##### <a name='dfc4b1a66a4afc5bbd42daa9b2cf08fbadb98e2d5047'></a> Source: [windows-apps-src\publish\dev-center-insider-program.md](https://github.com/Microsoft/windows-apps/blob/e38d47ea340bd2a37b5bedb023c116102887fdb2/windows-apps-src/publish/dev-center-insider-program.md)
+##### <a name='e9915282da1c611037402d149555246819becf893449'></a> Source: [windows-apps-src\gaming\concept-approval.md](https://github.com/Microsoft/windows-apps/blob/fbd08666fa70af2806f2a0afa2f1823005ce8801/windows-apps-src/gaming/concept-approval.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [dev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/66ad1bd65da936092be95e96f7841d42fca310c8/ol-handoff/Microsoft/windows-apps.ja-jp/master/dev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.ja-jp.xlf)
-* Handoff Datetime: 2016-08-30 15:37:12
+* Handoff File: [concept-approval.3d1f3b2e45433ab1148eea5c544a0585417da8c9.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/3316778e6a36fe50ff5f33f318ee222facd746ce/ol-handoff/Microsoft/windows-apps.ja-jp/master/concept-approval.3d1f3b2e45433ab1148eea5c544a0585417da8c9.ja-jp.xlf)
+* Handoff Datetime: 2016-08-30 16:37:02
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\publish\dev-center-insider-program.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/bb8e3c217182fd3ae9fd7c331e3722f1189b5569/windows-apps-src/publish/dev-center-insider-program.md)
-* Current Handback File: [dev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/5fbfce34d71b9c9ce97b3692f989d8e628c65b51/ol-handback/Microsoft/windows-apps.ja-jp/master/dev-center-insider-program.54de90971e5b8fc4d5a14386bc36fd7d20fcdc7b.ja-jp.xlf)
+* [Back to Top](#report-top)
+
+##### <a name='635dc7cd1fe4214a76216f9bfebddf778c6606b53931'></a> Source: [windows-apps-src\get-started\learn-more.md](https://github.com/Microsoft/windows-apps/blob/2eba9d658cf81ea4b61b4825f5bb4fd8199fb5d1/windows-apps-src/get-started/learn-more.md)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/3316778e6a36fe50ff5f33f318ee222facd746ce/ol-handoff/Microsoft/windows-apps.ja-jp/master/learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.ja-jp.xlf)
+* Handoff Datetime: 2016-08-30 16:37:02
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\get-started\learn-more.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/bb8e3c217182fd3ae9fd7c331e3722f1189b5569/windows-apps-src/get-started/learn-more.md)
+* Current Handback File: [learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/5fbfce34d71b9c9ce97b3692f989d8e628c65b51/ol-handback/Microsoft/windows-apps.ja-jp/master/learn-more.83ab93a8bbd1d37afdb4633865d6d04bfbdbe5ee.ja-jp.xlf)
 * Current Handback Datetime: 2016-07-20 16:31:17
 * [Back to Top](#report-top)
 

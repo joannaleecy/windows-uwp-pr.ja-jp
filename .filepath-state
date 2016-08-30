@@ -3694,6 +3694,9 @@
   "555649b6b18aa009da69eee7e6980365b473054e": [
     "windows-apps-src\\get-started\\images\\xaml-hw-style-cpp.png"
   ],
+  "635dc7cd1fe4214a76216f9bfebddf778c6606b5": [
+    "windows-apps-src\\get-started\\learn-more.md"
+  ],
   "7ac3239548b28060bf96b4a5c96af2f6074e9ad7": [
     "windows-apps-src\\get-started\\learn-more.md"
   ],
@@ -10452,6 +10455,9 @@
   ],
   "808714e2c0b5682feac81e8024c35512c345b0a8": [
     "windows-apps-src\\get-started\\choose-a-uwp-version.md"
+  ],
+  "e9915282da1c611037402d149555246819becf89": [
+    "windows-apps-src\\gaming\\concept-approval.md"
   ],
   "5b7d54af00cdf2aa1b39fe994e08569db216779a": [
     "windows-apps-src\\gaming\\concept-approval.md"
