@@ -8212,6 +8212,9 @@
   "033669a781aa85cc2c90fa11816e385ffefa997d": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "7795cb65f01fc9e9013c6ad8a7330a34972622c4": [
+    "windows-apps-src\\TOC.md"
+  ],
   "26164c662ab09da458b8f87c5409ebf355867b4f": [
     "windows-apps-src\\TOC.md"
   ],
@@ -10228,6 +10231,9 @@
   "1c5e4362000c29aa32fb503579ec53371f439eca": [
     "windows-apps-src\\launch-resume\\communicate-with-a-remote-app-service.md"
   ],
+  "4f49acfd7efcb10d99f9d23884d20c0fc51e5a4a": [
+    "windows-apps-src\\launch-resume\\connected-apps-and-devices.md"
+  ],
   "16ca70ec292911068c5e04c521bf0c5b12e1bd95": [
     "windows-apps-src\\launch-resume\\connected-apps-and-devices.md"
   ],
@@ -10261,23 +10267,11 @@
   "7fe13d754d84ccf22f27a6b0f5b2859b31cefe4a": [
     "windows-apps-src\\launch-resume\\create-and-register-a-singleprocess-background-task.md"
   ],
-  "5fb49ef0783454f507f419c321f0d3c156cd513e": [
-    "windows-apps-src\\launch-resume\\discover-connected-devices.md"
-  ],
-  "cfec9418cf47748705ffc60f1660e068a2aa1a92": [
-    "windows-apps-src\\launch-resume\\discover-connected-devices.md"
-  ],
-  "3b4eae33c366a5497afc15e4e6a5e6e8b2676703": [
-    "windows-apps-src\\launch-resume\\discover-connected-devices.md"
-  ],
-  "d4c2f02a6b753d5d9b920cb65f68b8586b9e42aa": [
-    "windows-apps-src\\launch-resume\\discover-connected-devices.md"
-  ],
-  "1cf0e23be3e739770363f620084808556506e21e": [
-    "windows-apps-src\\launch-resume\\discover-connected-devices.md"
-  ],
   "9ccf2118d0dba13cb6881ba1e241057e63c0d65b": [
     "windows-apps-src\\launch-resume\\images\\updated-lifecycle.png"
+  ],
+  "d8c3783d68a1b3b216058790d84255a7fb4b612c": [
+    "windows-apps-src\\launch-resume\\launch-a-remote-app.md"
   ],
   "7e3279450a1e1a5fea04e890091a6edf59fce742": [
     "windows-apps-src\\launch-resume\\launch-a-remote-app.md"
@@ -10978,5 +10972,8 @@
   ],
   "3b8aa48d0003dd762e6ac55d75189e18989835aa": [
     "windows-apps-src\\updates-and-versions\\choose-a-uwp-version.md"
+  ],
+  "cb1f9cf6915378203919fdf63bcebc935af74a30": [
+    "windows-apps-src\\launch-resume\\discover-remote-devices.md"
   ]
 }
