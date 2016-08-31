@@ -3694,6 +3694,9 @@
   "555649b6b18aa009da69eee7e6980365b473054e": [
     "windows-apps-src\\get-started\\images\\xaml-hw-style-cpp.png"
   ],
+  "09f08bebdfc8355b05f36713e6e04ae80645cbb0": [
+    "windows-apps-src\\get-started\\learn-more.md"
+  ],
   "be9df71646e10633bb31b5bc6da73156e61a4407": [
     "windows-apps-src\\get-started\\learn-more.md"
   ],
@@ -10975,5 +10978,11 @@
   ],
   "cb1f9cf6915378203919fdf63bcebc935af74a30": [
     "windows-apps-src\\launch-resume\\discover-remote-devices.md"
+  ],
+  "5ce75833952694e1e7571fb49586917e375039ea": [
+    "windows-apps-src\\get-started\\images\\devcenter-topic1.png"
+  ],
+  "cb4b464035e0fc6d287c81ef81685d91502c0bc7": [
+    "windows-apps-src\\get-started\\images\\devcenter-topic2.png"
   ]
 }
