@@ -8806,6 +8806,9 @@
   "b615eaab90ef43026baedd0113ad28f43bede343": [
     "windows-apps-src\\xbox-apps\\index.md"
   ],
+  "6030f666f213865a92d071210fe66f587c1bffb1": [
+    "windows-apps-src\\xbox-apps\\introduction-to-xbox-tools.md"
+  ],
   "d0fc63f2e0aea3f3761d61d97bddf73c0d24e46e": [
     "windows-apps-src\\xbox-apps\\introduction-to-xbox-tools.md"
   ],
@@ -10996,5 +10999,8 @@
   ],
   "cb4b464035e0fc6d287c81ef81685d91502c0bc7": [
     "windows-apps-src\\get-started\\images\\devcenter-topic2.png"
+  ],
+  "036a581481888373249857ee21fe339819779dd0": [
+    "windows-apps-src\\xbox-apps\\xbox-dev-mode-companion.md"
   ]
 }
