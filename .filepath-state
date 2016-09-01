@@ -2051,6 +2051,9 @@
   "d12f8d6bd44323cf1c19bff1ac080070ba0e8ed2": [
     "windows-apps-src\\data-binding\\data-binding-in-depth.md"
   ],
+  "ed0a55ba18d7578b026cb5fb5dfb2005a2a64dd5": [
+    "windows-apps-src\\data-binding\\data-binding-quickstart.md"
+  ],
   "94320c1ab9f4ea33d15690183285a02dee78a40b": [
     "windows-apps-src\\data-binding\\data-binding-quickstart.md"
   ],
@@ -8224,6 +8227,9 @@
   "033669a781aa85cc2c90fa11816e385ffefa997d": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "d17c1ff676a980f7580149e9a6221399726bf38b": [
+    "windows-apps-src\\TOC.md"
+  ],
   "7795cb65f01fc9e9013c6ad8a7330a34972622c4": [
     "windows-apps-src\\TOC.md"
   ],
@@ -10548,6 +10554,9 @@
   ],
   "9a55b217dede099012afbd98c3688d3b3298072e": [
     "windows-apps-src\\layout\\navigate-between-two-pages.md"
+  ],
+  "3abef943530cc756de117edccc5ab16e5f178604": [
+    "windows-apps-src\\monetize\\migrate-from-admediatorcontrol-to-adcontrol.md"
   ],
   "55b557f41fde5b095a76b52d83b034835398b9f6": [
     "windows-apps-src\\monetize\\migrate-from-admediatorcontrol-to-adcontrol.md"
