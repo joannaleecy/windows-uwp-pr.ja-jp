@@ -2051,6 +2051,9 @@
   "d12f8d6bd44323cf1c19bff1ac080070ba0e8ed2": [
     "windows-apps-src\\data-binding\\data-binding-in-depth.md"
   ],
+  "d452751fd4ab0cc422c3eae94507923440ec45df": [
+    "windows-apps-src\\data-binding\\data-binding-quickstart.md"
+  ],
   "ed0a55ba18d7578b026cb5fb5dfb2005a2a64dd5": [
     "windows-apps-src\\data-binding\\data-binding-quickstart.md"
   ],
@@ -10449,6 +10452,9 @@
   ],
   "0c843b1f547810e3bdf675c616dcded7015f110a": [
     "windows-apps-src\\whats-new\\windows-10-version-1607.md"
+  ],
+  "20e3a37428f2c4c918d0b6f10dfca2e6f02cf41b": [
+    "windows-apps-src\\whats-new\\windows-10-version-1607-api-diff.md"
   ],
   "5ed2ff1eef8885d10676df1a2d82e563f19d1bf4": [
     "windows-apps-src\\whats-new\\windows-10-version-1607-api-diff.md"
