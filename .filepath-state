@@ -6523,6 +6523,9 @@
   "c5ffb1e912c2953d5f813f099e036d2d7b395b69": [
     "windows-apps-src\\porting\\desktop-to-uwp-root.md"
   ],
+  "4ed7fca1cc5125d7df1a80c6ece20ec378fc07b4": [
+    "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
+  ],
   "e275b6ac7178e0705af59c8628f11de65a4d4c7f": [
     "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
   ],
@@ -9793,6 +9796,9 @@
   "1513429742553e632707167f7fa21c940db30bb4": [
     "windows-apps-src\\xbox-apps\\wdp-updatepolicy-api.md"
   ],
+  "b2500ea797329277c0f866294bcc04292238d18a": [
+    "windows-apps-src\\porting\\desktop-to-uwp-supported-api.md"
+  ],
   "81ab822f8c2f0975450f3918f62c76aa1aeeedc5": [
     "windows-apps-src\\porting\\desktop-to-uwp-supported-api.md"
   ],
@@ -10687,6 +10693,9 @@
   ],
   "45bc900f842c0e5b50881509fe70ebe50289132d": [
     "windows-apps-src\\monetize\\create-an-app-submission.md"
+  ],
+  "148e22f0b18f094b3dc25113b564e2f276ab4eab": [
+    "windows-apps-src\\monetize\\create-and-manage-submissions-using-windows-store-services.md"
   ],
   "63ab2eb3b12c5c8552130846aa0e626b99b1b06d": [
     "windows-apps-src\\monetize\\create-and-manage-submissions-using-windows-store-services.md"
