@@ -5545,6 +5545,9 @@
   "b3c41f38f42c390c52c96fa93cfce3fe9bbd181d": [
     "windows-apps-src\\monetize\\adcontrol-events-in-javascript.md"
   ],
+  "5a945012975f8bce62669abcf4432908ab3d9d4e": [
+    "windows-apps-src\\monetize\\adcontrol-in-html-5-and-javascript.md"
+  ],
   "51002e58466b35d7b7b83fd63ca1f264407a7f71": [
     "windows-apps-src\\monetize\\adcontrol-in-html-5-and-javascript.md"
   ],
@@ -5556,6 +5559,9 @@
   ],
   "6e96b085132126a2c3e7b0b0b86124aba4cd651e": [
     "windows-apps-src\\monetize\\adcontrol-in-html-5-and-javascript.md"
+  ],
+  "0560719d2b314eb056268f57fb04d10eb5e185da": [
+    "windows-apps-src\\monetize\\adcontrol-in-windows-phone-silverlight.md"
   ],
   "7f81224dcc75402d93134dd3b2fcef61dd26168a": [
     "windows-apps-src\\monetize\\adcontrol-in-windows-phone-silverlight.md"
@@ -5638,6 +5644,9 @@
   "481f9d785181ca197debdb807bb0b0c7b4168632": [
     "windows-apps-src\\monetize\\create-an-adcontrol-in-javascript.md"
   ],
+  "ab15741531b829c496811cdfca35059cd113f91d": [
+    "windows-apps-src\\monetize\\create-and-run-your-first-experiment-with-a-b-testing.md"
+  ],
   "b2095f2101a6b4b62d06e8394981f8c2c5e3c197": [
     "windows-apps-src\\monetize\\create-and-run-your-first-experiment-with-a-b-testing.md"
   ],
@@ -5655,6 +5664,9 @@
   ],
   "0f889c22b8999408341f4c12387602b344f49439": [
     "windows-apps-src\\monetize\\create-and-run-your-first-experiment-with-a-b-testing.md"
+  ],
+  "df6744cb9f4dd60c9eef07dc89f2265ac4244aab": [
+    "windows-apps-src\\monetize\\define-your-experiment-in-the-dev-center-dashboard.md"
   ],
   "18dc8efd72ed9265061360bc4f84d6cd2919e1ea": [
     "windows-apps-src\\monetize\\define-your-experiment-in-the-dev-center-dashboard.md"
@@ -6064,6 +6076,9 @@
   "cfaa108cc93b6bae903e86ad141656bf613f185d": [
     "windows-apps-src\\monetize\\known-issues-for-the-advertising-libraries.md"
   ],
+  "c0c55c78751a7990cc7690c2ba5975a57387989c": [
+    "windows-apps-src\\monetize\\launch-feedback-hub-from-your-app.md"
+  ],
   "b927758d77ea77cba4682b1db3bcf430821231a6": [
     "windows-apps-src\\monetize\\launch-feedback-hub-from-your-app.md"
   ],
@@ -6099,6 +6114,9 @@
   ],
   "0927df3cd696e5a6fbd3a235d2b87074f1d63929": [
     "windows-apps-src\\monetize\\manage-a-large-catalog-of-in-app-products.md"
+  ],
+  "730a7a23b577d92c995da0970c33328cecc2db9b": [
+    "windows-apps-src\\monetize\\manage-your-experiment.md"
   ],
   "be8707dc638cf92b55fa23e4230ddd4e4bb8497a": [
     "windows-apps-src\\monetize\\manage-your-experiment.md"
