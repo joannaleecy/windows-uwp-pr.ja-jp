@@ -5611,6 +5611,9 @@
   "1a7bf9ed90ed2dadf6de7a141fa03972b06ef144": [
     "windows-apps-src\\monetize\\code-samples.md"
   ],
+  "e5de32dcc7b0694e72d9686b3b9a64de17a02277": [
+    "windows-apps-src\\monetize\\code-your-experiment-in-your-app.md"
+  ],
   "b8201ae8c2ae4cdf5a8a11f7a637b4a78c54d889": [
     "windows-apps-src\\monetize\\code-your-experiment-in-your-app.md"
   ],
@@ -5634,6 +5637,9 @@
   ],
   "481f9d785181ca197debdb807bb0b0c7b4168632": [
     "windows-apps-src\\monetize\\create-an-adcontrol-in-javascript.md"
+  ],
+  "b2095f2101a6b4b62d06e8394981f8c2c5e3c197": [
+    "windows-apps-src\\monetize\\create-and-run-your-first-experiment-with-a-b-testing.md"
   ],
   "844f84624b8e5dc81dbff35dc189932a57c1c239": [
     "windows-apps-src\\monetize\\create-and-run-your-first-experiment-with-a-b-testing.md"
@@ -6019,6 +6025,9 @@
   "87eb36d7a77bfb6a283a3e668781ee9c99d6947f": [
     "windows-apps-src\\monetize\\install-the-microsoft-universal-ad-client-sdk.md"
   ],
+  "64254ee6bd266cbc39207999fde5fcc8caf1e1f4": [
+    "windows-apps-src\\monetize\\interstitial-ads.md"
+  ],
   "77ff76d4b2ee37392cd7611d7e9c0398701e100e": [
     "windows-apps-src\\monetize\\interstitial-ads.md"
   ],
@@ -6054,6 +6063,9 @@
   ],
   "cfaa108cc93b6bae903e86ad141656bf613f185d": [
     "windows-apps-src\\monetize\\known-issues-for-the-advertising-libraries.md"
+  ],
+  "b927758d77ea77cba4682b1db3bcf430821231a6": [
+    "windows-apps-src\\monetize\\launch-feedback-hub-from-your-app.md"
   ],
   "b5536bb5b7b51d4688aec7a912b2af165e81b419": [
     "windows-apps-src\\monetize\\launch-feedback-hub-from-your-app.md"
