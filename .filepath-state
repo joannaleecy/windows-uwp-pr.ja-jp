@@ -3496,6 +3496,9 @@
   "be731072824e81eadc95cebd5855234f9331962b": [
     "windows-apps-src\\get-started\\create-a-hello-world-app-js-universal.md"
   ],
+  "85a1451d1c46e4abfc42e5d46b4e6a08a02f9002": [
+    "windows-apps-src\\get-started\\create-a-hello-world-app-xaml-universal.md"
+  ],
   "d9466b10678912c5b70cb5e99be1c0380b32e1fd": [
     "windows-apps-src\\get-started\\create-a-hello-world-app-xaml-universal.md"
   ],
@@ -10491,6 +10494,9 @@
   ],
   "0c843b1f547810e3bdf675c616dcded7015f110a": [
     "windows-apps-src\\whats-new\\windows-10-version-1607.md"
+  ],
+  "4027fa8018a1e43095c53ae04b222156e84371b8": [
+    "windows-apps-src\\whats-new\\windows-10-version-1607-api-diff.md"
   ],
   "20e3a37428f2c4c918d0b6f10dfca2e6f02cf41b": [
     "windows-apps-src\\whats-new\\windows-10-version-1607-api-diff.md"
