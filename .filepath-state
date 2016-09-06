@@ -3703,6 +3703,9 @@
   "555649b6b18aa009da69eee7e6980365b473054e": [
     "windows-apps-src\\get-started\\images\\xaml-hw-style-cpp.png"
   ],
+  "399c931ad1d8a4b803478ece137f64c455d5667a": [
+    "windows-apps-src\\get-started\\learn-more.md"
+  ],
   "71d60e1dfb4f6dbe9ff2fe1b0f893658a7129778": [
     "windows-apps-src\\get-started\\learn-more.md"
   ],
@@ -10506,6 +10509,9 @@
   ],
   "0c843b1f547810e3bdf675c616dcded7015f110a": [
     "windows-apps-src\\whats-new\\windows-10-version-1607.md"
+  ],
+  "e897c68c97b4cdeb5cdf2a4df454d40d774cbc90": [
+    "windows-apps-src\\whats-new\\windows-10-version-1607-api-diff.md"
   ],
   "9d3d69899c6a3762330f5f4ef8b44250a38be037": [
     "windows-apps-src\\whats-new\\windows-10-version-1607-api-diff.md"
