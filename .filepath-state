@@ -3901,6 +3901,9 @@
   "5d50bf2b24d134fd50ae2bea976509b30a511652": [
     "windows-apps-src\\graphics\\animations-overview.md"
   ],
+  "d59bd17392185e1004455a0a97c34058cfc6dfd0": [
+    "windows-apps-src\\graphics\\composition-animation.md"
+  ],
   "76f3a47da6be73040d913e0581a8b42881c67118": [
     "windows-apps-src\\graphics\\composition-animation.md"
   ],
@@ -9012,6 +9015,9 @@
   ],
   "06cd7d578f0d33f403fa67caadc3559f3af4a83e": [
     "windows-apps-src\\xbox-apps\\images\\cpusets-table4.png"
+  ],
+  "0e2bef11807e50fee9424ecf662c95630d57e42e": [
+    "windows-apps-src\\graphics\\images\\composition-animation-types.png"
   ],
   "32d970c9a95073fa716893356ec1487d3085867e": [
     "windows-apps-src\\graphics\\images\\composition-animation-types.png"
