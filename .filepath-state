@@ -11095,5 +11095,11 @@
   ],
   "036a581481888373249857ee21fe339819779dd0": [
     "windows-apps-src\\xbox-apps\\xbox-dev-mode-companion.md"
+  ],
+  "951458cd101478f465ae238dd785645eff53d184": [
+    "windows-apps-src\\debug-test-perf\\images\\pgo-001.png"
+  ],
+  "c3badddd79b5aad4bb2b5e626de43be2e05a4d5c": [
+    "windows-apps-src\\debug-test-perf\\pgo-for-uwp.md"
   ]
 }
