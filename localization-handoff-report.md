@@ -1,35 +1,20 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\debug-test-perf\images\pgo-001.png](https://github.com/Microsoft/windows-apps/blob/51d2b04fccb516859a429b49dee50e70b4e35b69/windows-apps-src/debug-test-perf/images/pgo-001.png) | HandedOffSuccess | [Details](#951458cd101478f465ae238dd785645eff53d1843278)
- [windows-apps-src\debug-test-perf\pgo-for-uwp.md](https://github.com/Microsoft/windows-apps/blob/98a3c67d1afd20062fcbd5fca117f2ec81fea09b/windows-apps-src/debug-test-perf/pgo-for-uwp.md) | HandedOffFailed | [Details](#c3badddd79b5aad4bb2b5e626de43be2e05a4d5c3307)
+ [windows-apps-src\debug-test-perf\pgo-for-uwp.md](https://github.com/Microsoft/windows-apps/blob/1c3d125d94a76c2e7b273cb4239a8f3e6a719ede/windows-apps-src/debug-test-perf/pgo-for-uwp.md) | HandedOffSuccess | [Details](#ab47829c42c683b12ddea9fb185a6dc1f5321a1f3307)
 
 ## Item Details
-##### <a name='951458cd101478f465ae238dd785645eff53d1843278'></a> Source: [windows-apps-src\debug-test-perf\images\pgo-001.png](https://github.com/Microsoft/windows-apps/blob/51d2b04fccb516859a429b49dee50e70b4e35b69/windows-apps-src/debug-test-perf/images/pgo-001.png)
+##### <a name='ab47829c42c683b12ddea9fb185a6dc1f5321a1f3307'></a> Source: [windows-apps-src\debug-test-perf\pgo-for-uwp.md](https://github.com/Microsoft/windows-apps/blob/1c3d125d94a76c2e7b273cb4239a8f3e6a719ede/windows-apps-src/debug-test-perf/pgo-for-uwp.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [951458cd101478f465ae238dd785645eff53d184.png](https://github.com/Microsoft/WDG.handoff/blob/5433bcdb80e1443da175ed69fb6d06ffcbdf50e7/ol-handoff/Microsoft/windows-apps.ja-jp/master/951458cd101478f465ae238dd785645eff53d184.png)
-* Handoff Datetime: 2016-09-07 20:11:11
-* Handoff Reason: IsDependency
-* Dependency From: windows-apps-src\debug-test-perf\pgo-for-uwp.md
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='c3badddd79b5aad4bb2b5e626de43be2e05a4d5c3307'></a> Source: [windows-apps-src\debug-test-perf\pgo-for-uwp.md](https://github.com/Microsoft/windows-apps/blob/98a3c67d1afd20062fcbd5fca117f2ec81fea09b/windows-apps-src/debug-test-perf/pgo-for-uwp.md)
-* Status: HandedOffFailed
-* Target File: 
-* Handoff File: 
-* Handoff Datetime: 2016-09-07 20:11:11
-* Handoff Reason: Ignored
-* Handoff Error: [handoff_transform_failed](#c3badddd79b5aad4bb2b5e626de43be2e05a4d5c3307handoff_transform_failed)
+* Handoff File: [pgo-for-uwp.2dd70475a37ff893d1828f5b16cce6dd3988a8f6.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/dac87d3b333dae3567db0619ecbef2d373c074d4/ol-handoff/Microsoft/windows-apps.ja-jp/master/pgo-for-uwp.2dd70475a37ff893d1828f5b16cce6dd3988a8f6.ja-jp.xlf)
+* Handoff Datetime: 2016-09-07 21:42:11
+* Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
@@ -38,11 +23,5 @@
 
 
 ## Error Details
-##### <a name='c3badddd79b5aad4bb2b5e626de43be2e05a4d5c3307handoff_transform_failed'></a> Source: [windows-apps-src\debug-test-perf\pgo-for-uwp.md](#c3badddd79b5aad4bb2b5e626de43be2e05a4d5c3307)
-* Error Code: handoff_transform_failed
-* Error Message: Handoff source file: windows-apps-src\debug-test-perf\pgo-for-uwp.md transformed failed.
-* Retriable: False
-* Error Details: {"internal_error_code":"handoff_transform_failed","internal_error_message":"Handoff source file: windows-apps-src\\debug-test-perf\\pgo-for-uwp.md transformed failed.","internal_error_retriable":false,"exception_message":"Invalid character (\u000b) in string: \u000b at index 0","exception_type":"System.Net.Http.HttpRequestException","stack_trace":"   at Microsoft.OpenLocalization.Transformer.MarkdownJavascriptTransformer.MarkdownToXliffCore(Stream sourceStream, Stream xliffStream, Stream skeletonStream, String srcLocale, String targetLocale, IReadOnlyDictionary`2 transformerOptions) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization.Transformer.Core\\Transformer\\MarkdownJavascriptTransformer.cs:line 43\r\n   at Microsoft.OpenLocalization.Transformer.TransformerClient.MarkdownToXliff(Stream sourceStream, Stream xliffStream, Stream skeletonStream, String srcLocale, String targetLocale, String xliffVersion, IReadOnlyDictionary`2 options) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization.Transformer.Core\\TransformerClient.cs:line 70\r\n   at Microsoft.OpenLocalization.Helper.XliffTransformUtil.MarkdownToXliff(String mdfile, String xliffFile, String skeletonFile, String sourceLocale, String targetLocale, String xliffVersion, Boolean useJavascriptTransformer, IReadOnlyDictionary`2 transformerOptions) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization\\Helper\\XliffTransformUtil.cs:line 55\r\n   at Microsoft.OpenLocalization.Localization.LocalizationCore.<>c__DisplayClass12_0.<CreateHandoffFiles>b__0(Tuple`3 handoff) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization\\Localization\\HandoffCore.cs:line 223","extended_information":null}
-
 
 Generated by OpenLocalization.

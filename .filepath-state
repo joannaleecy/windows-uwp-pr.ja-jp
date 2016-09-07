@@ -11099,6 +11099,9 @@
   "951458cd101478f465ae238dd785645eff53d184": [
     "windows-apps-src\\debug-test-perf\\images\\pgo-001.png"
   ],
+  "ab47829c42c683b12ddea9fb185a6dc1f5321a1f": [
+    "windows-apps-src\\debug-test-perf\\pgo-for-uwp.md"
+  ],
   "c3badddd79b5aad4bb2b5e626de43be2e05a4d5c": [
     "windows-apps-src\\debug-test-perf\\pgo-for-uwp.md"
   ]
