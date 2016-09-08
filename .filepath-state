@@ -7402,6 +7402,9 @@
   "20a995f1a67bfdf0d52340c0964eb05c10935af1": [
     "windows-apps-src\\publish\\managing-your-profile.md"
   ],
+  "114783cb93d1d49eb1b2cd0d5218a35318a02df0": [
+    "windows-apps-src\\publish\\mobile-operator-billing.md"
+  ],
   "fbd38c10d4afaff0b049da0434379f6a335ce2f0": [
     "windows-apps-src\\publish\\mobile-operator-billing.md"
   ],
@@ -11104,6 +11107,9 @@
   ],
   "951458cd101478f465ae238dd785645eff53d184": [
     "windows-apps-src\\debug-test-perf\\images\\pgo-001.png"
+  ],
+  "60182879f9cf3d364974d6ec4d3c26ec76e0e105": [
+    "windows-apps-src\\debug-test-perf\\pgo-for-uwp.md"
   ],
   "e14cbc1ba1b6b8bda62b5cbae0031c2c280fcd18": [
     "windows-apps-src\\debug-test-perf\\pgo-for-uwp.md"
