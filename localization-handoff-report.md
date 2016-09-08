@@ -6,22 +6,22 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\get-started\create-a-hello-world-app-xaml-universal.md](https://github.com/Microsoft/windows-apps/blob/275c5cf8f8960f2be7cd9566e59eeb3bf4ee8f46/windows-apps-src/get-started/create-a-hello-world-app-xaml-universal.md) | HandedOffSuccess | [Details](#272eb87e47c398218df85fa33f70bf9fbf240a3e3560)
+ [windows-apps-src\porting\desktop-to-uwp-deploy-and-debug.md](https://github.com/Microsoft/windows-apps/blob/5be903ea1be083e14c5a2bb67c3e27529d21fc53/windows-apps-src/porting/desktop-to-uwp-deploy-and-debug.md) | HandedOffSuccess | [Details](#4a2c9ef0f27d009b3a5234cb11a2b36f0326fec74903)
 
 ## Item Details
-##### <a name='272eb87e47c398218df85fa33f70bf9fbf240a3e3560'></a> Source: [windows-apps-src\get-started\create-a-hello-world-app-xaml-universal.md](https://github.com/Microsoft/windows-apps/blob/275c5cf8f8960f2be7cd9566e59eeb3bf4ee8f46/windows-apps-src/get-started/create-a-hello-world-app-xaml-universal.md)
+##### <a name='4a2c9ef0f27d009b3a5234cb11a2b36f0326fec74903'></a> Source: [windows-apps-src\porting\desktop-to-uwp-deploy-and-debug.md](https://github.com/Microsoft/windows-apps/blob/5be903ea1be083e14c5a2bb67c3e27529d21fc53/windows-apps-src/porting/desktop-to-uwp-deploy-and-debug.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [create-a-hello-world-app-xaml-universal.0ff2b4f45789a6f10860e075fbcf61c857c43034.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/d086921b0527b702bf1590184a9b8e82f86d2225/ol-handoff/Microsoft/windows-apps.ja-jp/master/create-a-hello-world-app-xaml-universal.0ff2b4f45789a6f10860e075fbcf61c857c43034.ja-jp.xlf)
-* Handoff Datetime: 2016-09-07 22:42:17
+* Handoff File: [desktop-to-uwp-deploy-and-debug.c373301a747650050efa3006e6e6a31b8f2cf9a1.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/a8c57c0ea8282c51356090fd5b018bce310b05a6/ol-handoff/Microsoft/windows-apps.ja-jp/master/desktop-to-uwp-deploy-and-debug.c373301a747650050efa3006e6e6a31b8f2cf9a1.ja-jp.xlf)
+* Handoff Datetime: 2016-09-08 01:11:35
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\get-started\create-a-hello-world-app-xaml-universal.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/58652bf3fdd66c375dde16bdada95b8f80c2b665/windows-apps-src/get-started/create-a-hello-world-app-xaml-universal.md)
-* Current Handback File: [create-a-hello-world-app-xaml-universal.0ff2b4f45789a6f10860e075fbcf61c857c43034.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/925cdf93ee65e098f5ddab0bba0dca7e4b1faff5/ol-handback/Microsoft/windows-apps.ja-jp/master/create-a-hello-world-app-xaml-universal.0ff2b4f45789a6f10860e075fbcf61c857c43034.ja-jp.xlf)
-* Current Handback Datetime: 2016-07-22 14:55:38
+* Current Target File: [windows-apps-src\porting\desktop-to-uwp-deploy-and-debug.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/bb8e3c217182fd3ae9fd7c331e3722f1189b5569/windows-apps-src/porting/desktop-to-uwp-deploy-and-debug.md)
+* Current Handback File: [desktop-to-uwp-deploy-and-debug.c373301a747650050efa3006e6e6a31b8f2cf9a1.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/5fbfce34d71b9c9ce97b3692f989d8e628c65b51/ol-handback/Microsoft/windows-apps.ja-jp/master/desktop-to-uwp-deploy-and-debug.c373301a747650050efa3006e6e6a31b8f2cf9a1.ja-jp.xlf)
+* Current Handback Datetime: 2016-07-20 16:31:17
 * [Back to Top](#report-top)
 
 

@@ -6532,6 +6532,9 @@
   "640ddc7b77d5a23562dba2ecd9812464beb8a422": [
     "windows-apps-src\\porting\\android-ios-uwp-map.md"
   ],
+  "4a2c9ef0f27d009b3a5234cb11a2b36f0326fec7": [
+    "windows-apps-src\\porting\\desktop-to-uwp-deploy-and-debug.md"
+  ],
   "b037e9949ea3c69a44dad9c4812ee517fe173d0e": [
     "windows-apps-src\\porting\\desktop-to-uwp-deploy-and-debug.md"
   ],
