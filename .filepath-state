@@ -11105,6 +11105,9 @@
   "951458cd101478f465ae238dd785645eff53d184": [
     "windows-apps-src\\debug-test-perf\\images\\pgo-001.png"
   ],
+  "e14cbc1ba1b6b8bda62b5cbae0031c2c280fcd18": [
+    "windows-apps-src\\debug-test-perf\\pgo-for-uwp.md"
+  ],
   "72dc83fa74fcfc2f65735010b3837debfa74ce78": [
     "windows-apps-src\\debug-test-perf\\pgo-for-uwp.md"
   ],
@@ -11131,9 +11134,6 @@
   ],
   "a13ef5a92baf6abb5525017e729e95b6950de9be": [
     "windows-apps-src\\debug-test-perf\\images\\pgo-007.png"
-  ],
-  "fd6a151c8a1ce5ee449d6a99db0bd441aeb83f51": [
-    "windows-apps-src\\debug-test-perf\\images\\pgo-008.png"
   ],
   "91dd65a2594bed695da2c4e09e507f5574b7bfbe": [
     "windows-apps-src\\debug-test-perf\\images\\pgo-009.png"
