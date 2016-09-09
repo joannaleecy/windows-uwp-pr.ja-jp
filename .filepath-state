@@ -6535,6 +6535,9 @@
   "640ddc7b77d5a23562dba2ecd9812464beb8a422": [
     "windows-apps-src\\porting\\android-ios-uwp-map.md"
   ],
+  "75e176f17845bdbd618c6ca63fbbb5765bef54fb": [
+    "windows-apps-src\\porting\\desktop-to-uwp-deploy-and-debug.md"
+  ],
   "4a2c9ef0f27d009b3a5234cb11a2b36f0326fec7": [
     "windows-apps-src\\porting\\desktop-to-uwp-deploy-and-debug.md"
   ],
@@ -6552,6 +6555,9 @@
   ],
   "618b129449d285054604008615c32de74c8bfd9b": [
     "windows-apps-src\\porting\\desktop-to-uwp-deploy-and-debug.md"
+  ],
+  "69fc1330eb8dfa280533dbb2a0ea9828b016c280": [
+    "windows-apps-src\\porting\\desktop-to-uwp-root.md"
   ],
   "5e3f77e968d7d4aa8eef3601e8ea3adc3ad44a28": [
     "windows-apps-src\\porting\\desktop-to-uwp-root.md"
@@ -6573,6 +6579,9 @@
   ],
   "c5ffb1e912c2953d5f813f099e036d2d7b395b69": [
     "windows-apps-src\\porting\\desktop-to-uwp-root.md"
+  ],
+  "6a089f636cb332bf9f31f8b2245bc70f36ae1313": [
+    "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
   ],
   "4ed7fca1cc5125d7df1a80c6ece20ec378fc07b4": [
     "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
@@ -9004,6 +9013,9 @@
   "c66bdb89dbc4bcbbceefedc07af7620fc6497f2e": [
     "windows-apps-src\\porting\\images\\desktop-to-uwp\\debug-8.png"
   ],
+  "646a5b88cb7ca97f18bf4552950979a2ceead398": [
+    "windows-apps-src\\porting\\desktop-to-uwp-manual-conversion.md"
+  ],
   "8346337af82166a2f311e0f81767b488d8fa30aa": [
     "windows-apps-src\\porting\\desktop-to-uwp-manual-conversion.md"
   ],
@@ -9261,6 +9273,9 @@
   ],
   "33bba6de6fd82601f77bf393e80fe5ae4768e253": [
     "windows-apps-src\\xbox-apps\\images\\x64-build-platform.png"
+  ],
+  "cd21870158b4c46b9cc45653dce9532ce9260484": [
+    "windows-apps-src\\porting\\desktop-to-uwp-signing.md"
   ],
   "4c18c54cdd7739cf37c15c59bad9e1aa0e434253": [
     "windows-apps-src\\porting\\desktop-to-uwp-signing.md"
