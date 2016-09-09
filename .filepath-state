@@ -3823,6 +3823,9 @@
   "f02851d848a82af7104a6038c5d8850d5362c832": [
     "windows-apps-src\\get-started\\whats-a-uwp.md"
   ],
+  "16adf9c9c8de2ca4596f0fcbe503f570971e74a1": [
+    "windows-apps-src\\get-started\\your-first-app.md"
+  ],
   "87ba03546da2ee1b75852881db7ebfab18ab9213": [
     "windows-apps-src\\get-started\\your-first-app.md"
   ],
@@ -10519,6 +10522,9 @@
   "5599bddc0331ef23a9154571f8ce123af35f5a58": [
     "windows-apps-src\\monetize\\in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md"
   ],
+  "e41047f29ba08d83c8ffa5885a310ef04350133b": [
+    "windows-apps-src\\whats-new\\windows-10-version-1607.md"
+  ],
   "61d8523c0de6a25fa34c02b390e900031a59b7e4": [
     "windows-apps-src\\whats-new\\windows-10-version-1607.md"
   ],
@@ -11116,6 +11122,9 @@
   ],
   "ccfe1f397be1b3d49d4ef771016ec76eabd2974f": [
     "windows-apps-src\\publish\\payment-thresholds-methods-and-timeframes.md"
+  ],
+  "3b6c7e0c17e0364c50ef7c8c397d958d3fec629d": [
+    "windows-apps-src\\updates-and-versions\\choose-a-uwp-version.md"
   ],
   "3b8aa48d0003dd762e6ac55d75189e18989835aa": [
     "windows-apps-src\\updates-and-versions\\choose-a-uwp-version.md"
