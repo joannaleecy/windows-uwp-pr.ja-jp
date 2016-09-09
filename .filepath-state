@@ -3811,6 +3811,9 @@
   "8f4e906c9f1c685a5f6aeebd5fe0ebcc96ff9a7c": [
     "windows-apps-src\\get-started\\universal-application-platform-guide.md"
   ],
+  "7f216cebc0c52f792d1c71ad096f312749a59e5d": [
+    "windows-apps-src\\get-started\\whats-a-uwp.md"
+  ],
   "870d1c3de867aca6fd3c7c5d47f3683d9f6242db": [
     "windows-apps-src\\get-started\\whats-a-uwp.md"
   ],
@@ -11122,6 +11125,9 @@
   ],
   "ccfe1f397be1b3d49d4ef771016ec76eabd2974f": [
     "windows-apps-src\\publish\\payment-thresholds-methods-and-timeframes.md"
+  ],
+  "249bba67b844585b590294a456e3d0e74c392c95": [
+    "windows-apps-src\\updates-and-versions\\choose-a-uwp-version.md"
   ],
   "3b6c7e0c17e0364c50ef7c8c397d958d3fec629d": [
     "windows-apps-src\\updates-and-versions\\choose-a-uwp-version.md"
