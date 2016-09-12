@@ -5089,6 +5089,9 @@
   "dd3d75c7f3dfe325324e1fe31c039cd207b68d0b": [
     "windows-apps-src\\launch-resume\\resume-an-app.md"
   ],
+  "dd0d0fe0081eac112ce22e8a035b4bb70be3bef0": [
+    "windows-apps-src\\launch-resume\\run-a-background-task-on-a-timer-.md"
+  ],
   "84df38ad3030cb29e4bac6103f4b84d4ffc4adcc": [
     "windows-apps-src\\launch-resume\\run-a-background-task-on-a-timer-.md"
   ],
@@ -10335,6 +10338,9 @@
   ],
   "c49a9acc33a34855b757d24ab1d7fa5ca03ec66d": [
     "windows-apps-src\\input-and-devices\\images\\ink\\ink-tools-specific.png"
+  ],
+  "c4a5b0ae2893fda7697457b9e7449a996707de4b": [
+    "windows-apps-src\\input-and-devices\\ink-toolbar.md"
   ],
   "4c50c8ded127b2261df901d9da3210ff397b00ca": [
     "windows-apps-src\\input-and-devices\\ink-toolbar.md"
