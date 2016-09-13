@@ -5578,6 +5578,9 @@
   "b3c41f38f42c390c52c96fa93cfce3fe9bbd181d": [
     "windows-apps-src\\monetize\\adcontrol-events-in-javascript.md"
   ],
+  "34e34b9596e1c13b647ca51c2527b25adda698b0": [
+    "windows-apps-src\\monetize\\adcontrol-in-html-5-and-javascript.md"
+  ],
   "5a945012975f8bce62669abcf4432908ab3d9d4e": [
     "windows-apps-src\\monetize\\adcontrol-in-html-5-and-javascript.md"
   ],
@@ -5592,6 +5595,9 @@
   ],
   "6e96b085132126a2c3e7b0b0b86124aba4cd651e": [
     "windows-apps-src\\monetize\\adcontrol-in-html-5-and-javascript.md"
+  ],
+  "40e68625ed666a9242ed83729b2f8113da363735": [
+    "windows-apps-src\\monetize\\adcontrol-in-windows-phone-silverlight.md"
   ],
   "d6256640f199e4f327f3a6a4bfac1e8b4a8b9173": [
     "windows-apps-src\\monetize\\adcontrol-in-windows-phone-silverlight.md"
@@ -5736,6 +5742,9 @@
   ],
   "b36b5d5ba747fbb71c988033ddd0cdb4cee0ed8b": [
     "windows-apps-src\\monetize\\developer-walkthroughs.md"
+  ],
+  "49cbbeacc55f6188f35e4c0699b0787f65838979": [
+    "windows-apps-src\\monetize\\display-ads-in-your-app.md"
   ],
   "36439476c9db3e339443c8c23c2abf11e9b3274c": [
     "windows-apps-src\\monetize\\display-ads-in-your-app.md"
@@ -6054,6 +6063,9 @@
   ],
   "6d5f483b44ae4516f4969431e31f70388a66c5d9": [
     "windows-apps-src\\monetize\\index.md"
+  ],
+  "92d4ec5cc3d838e3a7865502e42e3a5dec14e3a9": [
+    "windows-apps-src\\monetize\\install-the-microsoft-advertising-libraries.md"
   ],
   "eb22d2b8681fb81519cac621ef06c0eaa93f3450": [
     "windows-apps-src\\monetize\\install-the-microsoft-advertising-libraries.md"
@@ -8325,6 +8337,9 @@
   ],
   "033669a781aa85cc2c90fa11816e385ffefa997d": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
+  ],
+  "5a888bc4827597fc7582e5a057e43d569764c9ca": [
+    "windows-apps-src\\TOC.md"
   ],
   "d17c1ff676a980f7580149e9a6221399726bf38b": [
     "windows-apps-src\\TOC.md"
