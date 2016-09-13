@@ -168,9 +168,9 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 
 サービス プロバイダーは、サービス プロバイダーのサービスで使うトークンを取得するためにどのスコープを指定する必要があるかに関するドキュメントを提供します。 
 
-Office 365 と Outlook.com のスコープについては、「(v2.0 認証エンドポイントを使用した Office 365 および Outlook.com の API の認証)[https://msdn.microsoft.com/office/office365/howto/authenticate-Office-365-APIs-using-v2]」をご覧ください。 
+Office 365 と Outlook.com のスコープについては、「(v2.0 認証エンドポイントを使用した Office 365 および Outlook.com の API の認証)[ https://msdn.microsoft.com/office/office365/howto/authenticate-Office-365-APIs-using-v2 ]」をご覧ください。 
 
-OneDrive については、「(OneDrive の認証とサインイン)[https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes]」をご覧ください。 
+OneDrive については、「(OneDrive の認証とサインイン)[ https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes ]」をご覧ください。 
 
 ## トークンの使用
 
