@@ -8350,6 +8350,9 @@
   "033669a781aa85cc2c90fa11816e385ffefa997d": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
+  "cd48affc280f2a18ea3cb04600b7709218c4b503": [
+    "windows-apps-src\\TOC.md"
+  ],
   "5a888bc4827597fc7582e5a057e43d569764c9ca": [
     "windows-apps-src\\TOC.md"
   ],
@@ -11239,5 +11242,8 @@
   ],
   "876cb456af9b381e57ae81e81cdb6f73731af562": [
     "windows-apps-src\\devices-sensors\\images\\unity-app-screenshot-002.png"
+  ],
+  "0db6e9dbc8b2c1a7ab01e65cb750b47c278ce1c0": [
+    "windows-apps-src\\devices-sensors\\point-of-service.md"
   ]
 }
