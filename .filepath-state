@@ -9505,6 +9505,9 @@
   "ae4d4ed33b9bd10a2b01b336c942ad3212de6533": [
     "windows-apps-src\\publish\\manage-iaps-in-bulk.md"
   ],
+  "f1d9c4f782ddd0933ee82d766bf9c70acde4dc19": [
+    "windows-apps-src\\winrt-components\\brokered-windows-runtime-components-for-side-loaded-windows-store-apps.md"
+  ],
   "52c742d780d23381dc73da8e5d363d6ba200aad2": [
     "windows-apps-src\\winrt-components\\brokered-windows-runtime-components-for-side-loaded-windows-store-apps.md"
   ],
