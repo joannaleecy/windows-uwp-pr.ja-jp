@@ -7582,6 +7582,9 @@
   "cd0e1011bd1f857d8c859428ae0ff7e755db842e": [
     "windows-apps-src\\publish\\resolve-submission-errors.md"
   ],
+  "24d327a92a6a58ecf265f9cdadd5a49d24c0857d": [
+    "windows-apps-src\\publish\\respond-to-customer-reviews.md"
+  ],
   "ddfda7a06fa7b60261a941b33b93aef51e2f9de4": [
     "windows-apps-src\\publish\\respond-to-customer-reviews.md"
   ],
@@ -11164,6 +11167,9 @@
   ],
   "2a3101567995821a2f3c46c97c534360d72d926a": [
     "windows-apps-src\\get-started\\images\\icon7.png"
+  ],
+  "1513c5b7714a1f2169ad7f5b08819dd06448d58c": [
+    "windows-apps-src\\publish\\payment-thresholds-methods-and-timeframes.md"
   ],
   "ccfe1f397be1b3d49d4ef771016ec76eabd2974f": [
     "windows-apps-src\\publish\\payment-thresholds-methods-and-timeframes.md"
