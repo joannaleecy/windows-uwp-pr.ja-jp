@@ -5581,6 +5581,9 @@
   "b3c41f38f42c390c52c96fa93cfce3fe9bbd181d": [
     "windows-apps-src\\monetize\\adcontrol-events-in-javascript.md"
   ],
+  "501edf178ecccf8a6b62d4602837dbbdf820d744": [
+    "windows-apps-src\\monetize\\adcontrol-in-html-5-and-javascript.md"
+  ],
   "34e34b9596e1c13b647ca51c2527b25adda698b0": [
     "windows-apps-src\\monetize\\adcontrol-in-html-5-and-javascript.md"
   ],
@@ -5616,6 +5619,9 @@
   ],
   "5a12badfb11cfd43c0833522d996da7df73b3d55": [
     "windows-apps-src\\monetize\\adcontrol-in-windows-phone-silverlight.md"
+  ],
+  "e3cc04e2c039223729a1e24224ddd19d6485d434": [
+    "windows-apps-src\\monetize\\adcontrol-in-xaml-and--net.md"
   ],
   "e50a0d48397cbdffc754de7944c947a598baf252": [
     "windows-apps-src\\monetize\\adcontrol-in-xaml-and--net.md"
@@ -5728,6 +5734,9 @@
   "7462c23de58b44f897a1737d0d54913144b14f75": [
     "windows-apps-src\\monetize\\define-your-experiment-in-the-dev-center-dashboard.md"
   ],
+  "70692d09c037d9e5802734bc5de6a6c79799bffb": [
+    "windows-apps-src\\monetize\\developer-information.md"
+  ],
   "bdb2affb14cda5fad678a94a8118061183ed03cc": [
     "windows-apps-src\\monetize\\developer-information.md"
   ],
@@ -5745,6 +5754,9 @@
   ],
   "b36b5d5ba747fbb71c988033ddd0cdb4cee0ed8b": [
     "windows-apps-src\\monetize\\developer-walkthroughs.md"
+  ],
+  "35dfe2864958a15cf01133d6017b7dd03f382e4a": [
+    "windows-apps-src\\monetize\\display-ads-in-your-app.md"
   ],
   "49cbbeacc55f6188f35e4c0699b0787f65838979": [
     "windows-apps-src\\monetize\\display-ads-in-your-app.md"
@@ -5941,6 +5953,9 @@
   "bff5eb8ecf5a11067a590393d443343dc6ed94bc": [
     "windows-apps-src\\monetize\\get-in-app-acquisitions.md"
   ],
+  "f57b9a2c7b36fc53b892a6316d1cd17d70ae99b5": [
+    "windows-apps-src\\monetize\\get-started-with-microsoft-advertising-libraries.md"
+  ],
   "eac9a58f821253378f7e10571176dfe1112f2c43": [
     "windows-apps-src\\monetize\\get-started-with-microsoft-advertising-libraries.md"
   ],
@@ -6067,6 +6082,9 @@
   "6d5f483b44ae4516f4969431e31f70388a66c5d9": [
     "windows-apps-src\\monetize\\index.md"
   ],
+  "a18822b167b7b4dab2dee02439c82c1a0dafcf31": [
+    "windows-apps-src\\monetize\\install-the-microsoft-advertising-libraries.md"
+  ],
   "92d4ec5cc3d838e3a7865502e42e3a5dec14e3a9": [
     "windows-apps-src\\monetize\\install-the-microsoft-advertising-libraries.md"
   ],
@@ -6090,6 +6108,9 @@
   ],
   "87eb36d7a77bfb6a283a3e668781ee9c99d6947f": [
     "windows-apps-src\\monetize\\install-the-microsoft-universal-ad-client-sdk.md"
+  ],
+  "4082fdd17ba42fd2b6a7659095b019c1ad4875a0": [
+    "windows-apps-src\\monetize\\interstitial-ads.md"
   ],
   "64254ee6bd266cbc39207999fde5fcc8caf1e1f4": [
     "windows-apps-src\\monetize\\interstitial-ads.md"
@@ -6120,6 +6141,9 @@
   ],
   "d6a561aaff834cd782118abb72b4770985176bf0": [
     "windows-apps-src\\monetize\\interstitial-ad-sample-code-in-javascript.md"
+  ],
+  "7d0eeda4deac304fb9b573b6ed206a191f037a3e": [
+    "windows-apps-src\\monetize\\known-issues-for-the-advertising-libraries.md"
   ],
   "03f79cb2ee93680945a7cac17117b18bfc6db208": [
     "windows-apps-src\\monetize\\known-issues-for-the-advertising-libraries.md"
@@ -6207,6 +6231,9 @@
   ],
   "93ed2b850de22d562b16f3f10f4ca409054910d3": [
     "windows-apps-src\\monetize\\query-for-products.md"
+  ],
+  "b82c4385b0e7089bdddbe094f47f0766f90aa21b": [
+    "windows-apps-src\\monetize\\release-notes-for-the-advertising-libraries.md"
   ],
   "63522b32917a88a618eed652759a65561957ffca": [
     "windows-apps-src\\monetize\\release-notes-for-the-advertising-libraries.md"
@@ -10713,6 +10740,9 @@
   ],
   "b0a4168c0d413c747988de90929d5b53e1e2f93a": [
     "windows-apps-src\\monetize\\add-advertisements-to-video-content.md"
+  ],
+  "98675e9cb06b05e55d49ca625818626aea5a5346": [
+    "windows-apps-src\\monetize\\microsoft-store-services-sdk.md"
   ],
   "58c65fa89daab4bf4492cf8be95e9fc575d63a55": [
     "windows-apps-src\\monetize\\microsoft-store-services-sdk.md"
