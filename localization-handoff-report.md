@@ -6,22 +6,22 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\input-and-devices\guidelines-for-user-interaction.md](https://github.com/Microsoft/windows-apps/blob/2db7aaccfd56b1bdfda099b197a695bad8a9cba1/windows-apps-src/input-and-devices/guidelines-for-user-interaction.md) | HandedOffSuccess | [Details](#28dfadf6010aed3fb2ed0d03b73f92631c17fcf44033)
+ [windows-apps-src\input-and-devices\convert-ink-to-text.md](https://github.com/Microsoft/windows-apps/blob/dfb790980a8016da0ed9a080d7cf56b5a8a784ff/windows-apps-src/input-and-devices/convert-ink-to-text.md) | HandedOffSuccess | [Details](#26dc8910c779dc46d19be75abd49c20b750a98434016)
 
 ## Item Details
-##### <a name='28dfadf6010aed3fb2ed0d03b73f92631c17fcf44033'></a> Source: [windows-apps-src\input-and-devices\guidelines-for-user-interaction.md](https://github.com/Microsoft/windows-apps/blob/2db7aaccfd56b1bdfda099b197a695bad8a9cba1/windows-apps-src/input-and-devices/guidelines-for-user-interaction.md)
+##### <a name='26dc8910c779dc46d19be75abd49c20b750a98434016'></a> Source: [windows-apps-src\input-and-devices\convert-ink-to-text.md](https://github.com/Microsoft/windows-apps/blob/dfb790980a8016da0ed9a080d7cf56b5a8a784ff/windows-apps-src/input-and-devices/convert-ink-to-text.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [guidelines-for-user-interaction.395cdfb430259ebca5bb7b1465d331028054c35f.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/9bab86a5fa911982b90a9f7ac3dbc0b0bbcc6e7a/ol-handoff/Microsoft/windows-apps.ja-jp/master/guidelines-for-user-interaction.395cdfb430259ebca5bb7b1465d331028054c35f.ja-jp.xlf)
-* Handoff Datetime: 2016-09-15 20:08:13
+* Handoff File: [convert-ink-to-text.1c6063f71cdcaa87dfc2b12f974fc5be71cfe8cc.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/b029356fc5adaac7a54aa9663647c8f6737042a0/ol-handoff/Microsoft/windows-apps.ja-jp/master/convert-ink-to-text.1c6063f71cdcaa87dfc2b12f974fc5be71cfe8cc.ja-jp.xlf)
+* Handoff Datetime: 2016-09-15 20:36:36
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\input-and-devices\guidelines-for-user-interaction.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/50184089ee68f46cd2f416adf3a3994777b91210/windows-apps-src/input-and-devices/guidelines-for-user-interaction.md)
-* Current Handback File: [guidelines-for-user-interaction.395cdfb430259ebca5bb7b1465d331028054c35f.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/4b30c8e256811740592ee2bde985c1f06955abde/ol-handback/Microsoft/windows-apps.ja-jp/master/guidelines-for-user-interaction.395cdfb430259ebca5bb7b1465d331028054c35f.ja-jp.xlf)
-* Current Handback Datetime: 2016-07-06 14:57:57
+* Current Target File: [windows-apps-src\input-and-devices\convert-ink-to-text.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/bb8e3c217182fd3ae9fd7c331e3722f1189b5569/windows-apps-src/input-and-devices/convert-ink-to-text.md)
+* Current Handback File: [convert-ink-to-text.1c6063f71cdcaa87dfc2b12f974fc5be71cfe8cc.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/5fbfce34d71b9c9ce97b3692f989d8e628c65b51/ol-handback/Microsoft/windows-apps.ja-jp/master/convert-ink-to-text.1c6063f71cdcaa87dfc2b12f974fc5be71cfe8cc.ja-jp.xlf)
+* Current Handback Datetime: 2016-07-20 16:31:17
 * [Back to Top](#report-top)
 
 
