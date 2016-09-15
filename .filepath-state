@@ -5830,6 +5830,9 @@
   "d26a8efeb253c6c793d8edd21d7452bbf15da261": [
     "windows-apps-src\\monetize\\error-handling-in-javascript-walkthrough.md"
   ],
+  "bca54776fb4793fbc9e0b9af070a0cc676168d86": [
+    "windows-apps-src\\monetize\\error-handling-in-xamlc-walkthrough.md"
+  ],
   "3787366575ee13e13426a1f2fc1a5d4a8cb60554": [
     "windows-apps-src\\monetize\\error-handling-in-xamlc-walkthrough.md"
   ],
@@ -10608,6 +10611,9 @@
   ],
   "5599bddc0331ef23a9154571f8ce123af35f5a58": [
     "windows-apps-src\\monetize\\in-app-purchases-and-trials-using-the-windows-applicationmodel-store-namespace.md"
+  ],
+  "2df9e02f433d148035a21a184ff1c69de53e9dcf": [
+    "windows-apps-src\\whats-new\\windows-10-version-1607.md"
   ],
   "e41047f29ba08d83c8ffa5885a310ef04350133b": [
     "windows-apps-src\\whats-new\\windows-10-version-1607.md"
