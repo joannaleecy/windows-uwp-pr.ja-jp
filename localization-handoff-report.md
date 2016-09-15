@@ -1,40 +1,27 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 2
+ Total Files | 1
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\monetize\error-handling-in-xamlc-walkthrough.md](https://github.com/Microsoft/windows-apps/blob/90c866fcdb4df0f32a4ace0cb4f6b761d6e9170e/windows-apps-src/monetize/error-handling-in-xamlc-walkthrough.md) | HandedOffSuccess | [Details](#bca54776fb4793fbc9e0b9af070a0cc676168d864774)
- [windows-apps-src\whats-new\windows-10-version-1607.md](https://github.com/Microsoft/windows-apps/blob/4bb6396efc6e6e7b2fc98f63b2587b52ecffbae3/windows-apps-src/whats-new/windows-10-version-1607.md) | HandedOffSuccess | [Details](#2df9e02f433d148035a21a184ff1c69de53e9dcf8012)
+ [windows-apps-src\porting\desktop-to-uwp-root.md](https://github.com/Microsoft/windows-apps/blob/ff8cd3ab5e38cfc3a2b5fabaad15f78a5f2620f2/windows-apps-src/porting/desktop-to-uwp-root.md) | HandedOffSuccess | [Details](#6cf6367ed0f6acea0f87ac36a050e874425423b14909)
 
 ## Item Details
-##### <a name='bca54776fb4793fbc9e0b9af070a0cc676168d864774'></a> Source: [windows-apps-src\monetize\error-handling-in-xamlc-walkthrough.md](https://github.com/Microsoft/windows-apps/blob/90c866fcdb4df0f32a4ace0cb4f6b761d6e9170e/windows-apps-src/monetize/error-handling-in-xamlc-walkthrough.md)
+##### <a name='6cf6367ed0f6acea0f87ac36a050e874425423b14909'></a> Source: [windows-apps-src\porting\desktop-to-uwp-root.md](https://github.com/Microsoft/windows-apps/blob/ff8cd3ab5e38cfc3a2b5fabaad15f78a5f2620f2/windows-apps-src/porting/desktop-to-uwp-root.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [error-handling-in-xamlc-walkthrough.bfba959a6439d4930d75b495a0bff908dcb26af2.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/0c3d92bac9f3a9fd43bd7bc174b157c2c004af8d/ol-handoff/Microsoft/windows-apps.ja-jp/master/error-handling-in-xamlc-walkthrough.bfba959a6439d4930d75b495a0bff908dcb26af2.ja-jp.xlf)
-* Handoff Datetime: 2016-09-15 17:37:19
+* Handoff File: [desktop-to-uwp-root.7513f52e089e9b95deeb36130fca887605ce1b3a.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/5270a8dcd37df1fda6b3a00876a8825f07cffe32/ol-handoff/Microsoft/windows-apps.ja-jp/master/desktop-to-uwp-root.7513f52e089e9b95deeb36130fca887605ce1b3a.ja-jp.xlf)
+* Handoff Datetime: 2016-09-15 18:07:17
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\monetize\error-handling-in-xamlc-walkthrough.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/50184089ee68f46cd2f416adf3a3994777b91210/windows-apps-src/monetize/error-handling-in-xamlc-walkthrough.md)
-* Current Handback File: [error-handling-in-xamlc-walkthrough.bfba959a6439d4930d75b495a0bff908dcb26af2.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/4b30c8e256811740592ee2bde985c1f06955abde/ol-handback/Microsoft/windows-apps.ja-jp/master/error-handling-in-xamlc-walkthrough.bfba959a6439d4930d75b495a0bff908dcb26af2.ja-jp.xlf)
-* Current Handback Datetime: 2016-07-06 14:57:57
-* [Back to Top](#report-top)
-
-##### <a name='2df9e02f433d148035a21a184ff1c69de53e9dcf8012'></a> Source: [windows-apps-src\whats-new\windows-10-version-1607.md](https://github.com/Microsoft/windows-apps/blob/4bb6396efc6e6e7b2fc98f63b2587b52ecffbae3/windows-apps-src/whats-new/windows-10-version-1607.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [windows-10-version-1607.6bb58601464d15df4974464e6781e2d2b478becb.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/0c3d92bac9f3a9fd43bd7bc174b157c2c004af8d/ol-handoff/Microsoft/windows-apps.ja-jp/master/windows-10-version-1607.6bb58601464d15df4974464e6781e2d2b478becb.ja-jp.xlf)
-* Handoff Datetime: 2016-09-15 17:37:19
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\porting\desktop-to-uwp-root.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/bb8e3c217182fd3ae9fd7c331e3722f1189b5569/windows-apps-src/porting/desktop-to-uwp-root.md)
+* Current Handback File: [desktop-to-uwp-root.7513f52e089e9b95deeb36130fca887605ce1b3a.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/5fbfce34d71b9c9ce97b3692f989d8e628c65b51/ol-handback/Microsoft/windows-apps.ja-jp/master/desktop-to-uwp-root.7513f52e089e9b95deeb36130fca887605ce1b3a.ja-jp.xlf)
+* Current Handback Datetime: 2016-07-20 16:31:17
 * [Back to Top](#report-top)
 
 
