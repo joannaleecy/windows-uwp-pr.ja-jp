@@ -9,6 +9,26 @@
       "SkeletonFile": "ol-xliffcache\\Microsoft\\windows-apps.ja-jp\\master\\133add15e0e5681ec85a0800c52605262a82f8b4.4ef6763096d599d6bb6dde9c885734f1e020aad7.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\publish\\pubcenter-dev-center-integration.md.06d4a3d124a621d9effa111515b6c68721358357.HT": {
+      "SourceFilename": "windows-apps-src\\publish\\pubcenter-dev-center-integration.md",
+      "XliffHash": "06d4a3d124a621d9effa111515b6c68721358357",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\Microsoft\\windows-apps.ja-jp\\master\\7f841b27e736206c89bb3ad035f497991a01fc74.3961dd04b31be7752847bb64ba89fc107394a306.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    },
+    "windows-apps-src\\publish\\pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md.785790c36e620163b27fa3317f5820dc3fbd985a.HT": {
+      "SourceFilename": "windows-apps-src\\publish\\pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md",
+      "XliffHash": "785790c36e620163b27fa3317f5820dc3fbd985a",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\Microsoft\\windows-apps.ja-jp\\master\\9b97ab818fdc14d0354e5e9ba4809ac3401d6053.7a1cbf4d552d0f8891c1dd4ebbff9f019fbc5b1a.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
