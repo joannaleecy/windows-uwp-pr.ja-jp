@@ -39,6 +39,16 @@
       "SkeletonFile": "ol-xliffcache\\Microsoft\\windows-apps.ja-jp\\master\\e9e381f3d01e2c0acc5c4ad55937fce3120a3249.aebe1c851c442a51e78de5635e761f63664baafc.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\get-started\\universal-application-platform-guide.md.02fcca405ce6e5757cf3053a5a4d54dc961911b8.HT": {
+      "SourceFilename": "windows-apps-src\\get-started\\universal-application-platform-guide.md",
+      "XliffHash": "02fcca405ce6e5757cf3053a5a4d54dc961911b8",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\Microsoft\\windows-apps.ja-jp\\master\\c433bd2eba2a5be114680f52a8da0b5c7b563186.16a19b4d7557e136099ed8ea6c458276dd6541b5.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
