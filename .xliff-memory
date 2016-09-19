@@ -29,6 +29,16 @@
       "SkeletonFile": "ol-xliffcache\\Microsoft\\windows-apps.ja-jp\\master\\9b97ab818fdc14d0354e5e9ba4809ac3401d6053.7a1cbf4d552d0f8891c1dd4ebbff9f019fbc5b1a.xml",
       "LocXliff": null,
       "LocXliffCommit": null
+    },
+    "windows-apps-src\\whats-new\\windows-10-version-1607.md.4f1a5d7c1958dcf49f34b2163f3fd0cf0e608668.HT": {
+      "SourceFilename": "windows-apps-src\\whats-new\\windows-10-version-1607.md",
+      "XliffHash": "4f1a5d7c1958dcf49f34b2163f3fd0cf0e608668",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\Microsoft\\windows-apps.ja-jp\\master\\e9e381f3d01e2c0acc5c4ad55937fce3120a3249.aebe1c851c442a51e78de5635e761f63664baafc.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
     }
   }
 }
