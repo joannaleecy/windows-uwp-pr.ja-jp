@@ -1,3 +1,14 @@
 {
-  "Table": {}
+  "Table": {
+    "windows-apps-src\\maps-and-location\\guidelines-and-checklist-for-detecting-location.md.9ded8f6eab3c0e958d05eec3e7db94a7cde52abe.HT": {
+      "SourceFilename": "windows-apps-src\\maps-and-location\\guidelines-and-checklist-for-detecting-location.md",
+      "XliffHash": "9ded8f6eab3c0e958d05eec3e7db94a7cde52abe",
+      "TranslationType": 1,
+      "IsArchived": false,
+      "ArchivedDateTime": "0001-01-01T00:00:00",
+      "SkeletonFile": "ol-xliffcache\\Microsoft\\windows-apps.ja-jp\\master\\133add15e0e5681ec85a0800c52605262a82f8b4.4ef6763096d599d6bb6dde9c885734f1e020aad7.xml",
+      "LocXliff": null,
+      "LocXliffCommit": null
+    }
+  }
 }
