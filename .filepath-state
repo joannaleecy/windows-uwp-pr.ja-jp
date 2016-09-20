@@ -4159,9 +4159,6 @@
   "3af3d837827f40e5d21f4330dee0dd47af33db11": [
     "windows-apps-src\\input-and-devices\\images\\ink-unprocessed-3-small.png"
   ],
-  "56f614cf40e84451134e07e7a74db9eb0c6900e7": [
-    "windows-apps-src\\input-and-devices\\images\\ink-unprocessed-3-small.png"
-  ],
   "d1c8d9ed21703b214660e0b0b3fb35ada43cc822": [
     "windows-apps-src\\input-and-devices\\images\\ink-unprocessed-4-small.png"
   ],
@@ -8389,9 +8386,6 @@
   "4e2a58a4c35f144c85a811e6ecfb0f24ad7278ec": [
     "windows-apps-src\\xbox-apps\\images\\deactivation-app.png"
   ],
-  "307559f31730beecc3f98d44f061f6311cdce416": [
-    "windows-apps-src\\xbox-apps\\images\\deactivation-app.png"
-  ],
   "d89e3d1efe898c154d5ac46517077115366d1713": [
     "windows-apps-src\\xbox-apps\\images\\deactivation-console-info-updates.png"
   ],
@@ -9169,9 +9163,6 @@
   "ec3c2f27223c35a423a5e5a5ff189e39b179f8d8": [
     "windows-apps-src\\get-started\\images\\vs-2015-community-setup.png"
   ],
-  "c76ac5f735c5dc93e5f5014b77181a2e862386a1": [
-    "windows-apps-src\\get-started\\images\\vs-2015-community-setup.png"
-  ],
   "2aa55797ed3a6588b3a27158282a02827fbd2109": [
     "windows-apps-src\\porting\\desktop-to-uwp-extensions.md"
   ],
@@ -9388,9 +9379,6 @@
   "7920f4f0ea31e50c7c7ca69054f969df43545319": [
     "windows-apps-src\\get-started\\images\\winjs-tut-newproject.png"
   ],
-  "147a0a48f77c0a5679dff07cf8927969806165c8": [
-    "windows-apps-src\\get-started\\images\\winjs-tut-newproject.png"
-  ],
   "d42d460623779397cf99559fbc29182a27a89c95": [
     "windows-apps-src\\get-started\\images\\win10-cs-01.png"
   ],
@@ -9416,9 +9404,6 @@
     "windows-apps-src\\get-started\\images\\win10-cs-08.png"
   ],
   "dc43ec1d2c973718cd80c0785ebbd12fd108ca6e": [
-    "windows-apps-src\\get-started\\images\\win10-cs-09.png"
-  ],
-  "5c3a44248265b9ad200a2844c8ad46b5ff5f7d00": [
     "windows-apps-src\\get-started\\images\\win10-cs-09.png"
   ],
   "00d663b130202f4513cd1a9d82baed4068d909d3": [
