@@ -1,27 +1,31 @@
 ---
 author: normesta
-description: 'Shows how to add your app next to actions in a contact card'
-MSHAttr: 'PreferredLib:/library/windows/apps'
-title: 'Connect your app to actions on a contact card'
+description: "連絡先カードの操作の横にアプリを追加する方法を説明する"
+MSHAttr: PreferredLib:/library/windows/apps
+title: "アプリを連絡先カードの操作に接続する"
+translationtype: Human Translation
+ms.sourcegitcommit: 5c0f6ef1f1a346a66ca554a415d9f24c8a314ae1
+ms.openlocfilehash: 034dc2b7be69763416192014abe24b9bf924c443
+
 ---
 
-# Connect your app to actions on a contact card
+# アプリを連絡先カードの操作に接続する
 
-Your app can appear next to actions on a contact card or mini contact card. Users can choose your app to perform an action such as open a profile page, place a call, or send a message.
+アプリは、連絡先カードまたはミニ連絡先カードの操作の横に表示できます。 ユーザーは、プロファイル ページを開く、通話を行う、メッセージを送信するなど、操作を実行するアプリを選ぶことができます。
 
-![Contact card and mini contact card](images/all-contact-cards.png)
+![連絡先カードとミニ連絡先カード](images/all-contact-cards.png)
 
-To get started, find existing contacts or create new ones. Next, create an *annotation* and a few package manifest entries to describe which actions your app supports. Then, write code that perform the actions.
+最初に、既存の連絡先を検索するか、新しい連絡先を作成します。 次に、*注釈*といくつかのパッケージ マニフェスト エントリを作成して、アプリがサポートする操作について説明します。 その後、操作を実行するコードを記述します。
 
-For a more complete sample, see [Contact Card Integration Sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration).
+完全なサンプルについては、[連絡先カードの統合のサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration)をご覧ください。
 
-## Find or create a contact
+## 連絡先を検索または作成する
 
-If your app helps people connect with others, search Windows for contacts and then annotate them. If your app manages contacts, you can add them to a Windows contact list and then annotate them.
+他のユーザーとつながるのをサポートするアプリの場合、Windows で連絡先を検索してから注釈を付けます。 連絡先を管理するアプリの場合、連絡先を Windows 連絡先リストに追加してから、注釈を付けることができます。
 
-### Find a contact
+### 連絡先を検索する
 
-Find contacts by using a name, email address, or phone number.
+連絡先は、名前、メール アドレス、または電話番号を使って検索します。
 
 ```cs
 ContactStore contactStore = await ContactManager.RequestStoreAsync();
@@ -33,9 +37,9 @@ contacts = await contactStore.FindContactsAsync(emailAddress);
 Contact contact = contacts[0];
 ```
 
-### Create a contact
+### 連絡先を作成する
 
-If your app is more like an address book, create contacts and then add them to a contact list.
+アドレス帳のようなアプリの場合、連絡先を作成してから連絡先一覧に追加します。
 
 ```cs
 Contact contact = new Contact();
@@ -67,11 +71,11 @@ await contactList.SaveContactAsync(contact);
 
 ```
 
-## Tag each contact with an annotation
+## 注釈を使って各連絡先にタグを付ける
 
-Tag each contact with a list of actions (operations) that your app can perform (for example: video calls and messaging).
+アプリで実行できる操作 (例: ビデオ通話やメッセージング) の一覧を使って各連絡先にタグを付けます。
 
-Then, associate the ID of a contact to an ID that your app uses internally to identify that user.
+その後、連絡先の ID を、アプリがそのユーザーを識別するために内部で使っている ID に関連付けます。
 
 ```cs
 ContactAnnotationStore annotationStore = await
@@ -97,11 +101,11 @@ annotation.SupportedOperations = ContactAnnotationOperations.Message |
 await annotationList.TrySaveAnnotationAsync(annotation);
 ```
 
-## Register for each operation
+## 各操作を登録する
 
-In your package manifest, register for each operation that you listed in your annotation.
+パッケージ マニフェストに、注釈を記載した各操作を登録します。
 
-Register by adding protocol handlers to the ``Extensions`` element of the manifest.
+登録するには、プロトコル ハンドラーをマニフェストの ``Extensions`` 要素に追加します。
 
 ```xml
 <Extensions>
@@ -127,25 +131,25 @@ Register by adding protocol handlers to the ``Extensions`` element of the manife
   </uap:Extension>
 </Extensions>
 ```
-You can also add these in the **Declarations** tab of the manifest designer in Visual Studio.
+Visual Studio のマニフェスト デザイナーの **[宣言]** タブで追加することもできます。
 
-![Declarations tab of the manifest designer](images/manifest-designer-protocols.png)
+![マニフェスト デザイナーの [宣言] タブ](images/manifest-designer-protocols.png)
 
-## Find your app next to actions in a contact card
+## 連絡先カードの操作の横にあるアプリを見つける
 
-Open the People app. Your app appears next to each action (operation) that you specified in your annotation and package manifest.
+People アプリを開きます。 アプリは、注釈とパッケージ マニフェストで指定した各操作の横に表示されます。
 
-![Contact Card](images/a-contact-card.png)
+![連絡先カード](images/a-contact-card.png)
 
-If users choose your app for an action, it appears as the default app for that action the next time users open a contact card.
+ユーザーが操作のためにアプリを選ぶと、次回ユーザーが連絡先カードを開いたときに、そのアプリがその操作用の既定のアプリとして表示されます。
 
-## Find your app next to actions in a mini contact card
+## ミニ連絡先カードの操作の横にあるアプリを見つける
 
-In mini contact cards, your app appears in tabs that represent actions.
+ミニ連絡先カードでは、操作を表すタブにアプリが表示されます。
 
-![Mini Contact Card](images/mini-contact-card.png)
+![ミニ連絡先カード](images/mini-contact-card.png)
 
-Apps such as the **Mail** app open mini contact cards. Your app can open them too. This code shows you how to do that.
+ミニ連絡先カードは、**メール** アプリなどのアプリで開くことができます。 お使いのアプリでミニ連絡先カードを開くこともできます。 次のコードは、その方法を示しています。
 
 ```cs
 public async void OpenContactCard(object sender, RoutedEventArgs e)
@@ -166,21 +170,21 @@ public async void OpenContactCard(object sender, RoutedEventArgs e)
 }
 ```
 
-To see more examples with mini contact cards, see [Contact cards sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCards).
+ミニ連絡先カードを使った例について詳しくは、[連絡先カードのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCards)をご覧ください。
 
-Just like the contact card, each tab remembers the app that the user last used so it's easy for them to return to your app.
+連絡先カードと同様、ユーザーが前回使ったアプリを各タブが記憶しているため、アプリに簡単に戻ることができます。
 
-## Perform operations when users select your app in a contact card
+## ユーザーが連絡先カードでアプリを選んだときに操作を実行する
 
-Override the [Application.OnActivated](https://msdn.microsoft.com/library/windows/apps/br242330) method  in your **App.cs** file and navigate users to a page in your app. The [Contact Card Integration Sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration) shows one way to do that.
+**App.cs** ファイル内の [Application.OnActivated](https://msdn.microsoft.com/library/windows/apps/br242330) メソッドをオーバーライドし、ユーザーをアプリ内のページに移動します。 それを行う方法の 1 つについては、[連絡先カードの統合のサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCardIntegration)をご覧ください。
 
-In the code behind file of the page, override the [Page.OnNavigatedTo](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.page.onnavigatedto.aspx) method. The contact card passes this method the name of operation and the ID of the user.
+ページのコード ビハインド ファイルで、[Page.OnNavigatedTo](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.page.onnavigatedto.aspx) メソッドをオーバーライドします。 連絡先カードは、このメソッドに操作の名前とユーザーの ID を渡します。
 
-To start a video or audio call, see this sample: [VoIP sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/VoIP). You'll find the complete API in the [WIndows.ApplicationModel.Calls](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.calls.aspx) namespace.
+ビデオ通話や音声通話を開始するには、[VoIP のサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/VoIP)をご覧ください。 [WIndows.ApplicationModel.Calls](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.calls.aspx) 名前空間にすべての API が見つかります。
 
-To facilitate messaging, see the [Windows.ApplicationModel.Chat](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.chat.aspx) namespace.
+メッセージングを容易にするには、[Windows.ApplicationModel.Chat](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.chat.aspx) 名前空間をご覧ください。
 
-You can also start another app. That's what this code does.
+別のアプリを起動することもできます。 これを行うのが次のコードです。
 
 ```cs
 protected override async void OnNavigatedTo(NavigationEventArgs e)
@@ -204,4 +208,10 @@ protected override async void OnNavigatedTo(NavigationEventArgs e)
 }
 ```
 
-The ```args.uri.scheme``` property contains the name of the operation, and the ```args.uri.Query``` property contains the ID of the user.
+```args.uri.scheme``` プロパティには操作の名前、```args.uri.Query``` プロパティにはユーザーの ID が含まれています。
+
+
+
+<!--HONumber=Aug16_HO3-->
+
+

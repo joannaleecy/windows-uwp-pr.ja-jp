@@ -5,7 +5,7 @@ description: "この記事では、MediaProcessingTrigger とバックグラウ�
 title: "バックグラウンドでのメディア ファイルの処理"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: dcf655ff80c4463a567ade0b6d1cc784b60c18be
+ms.openlocfilehash: 704fa52a9e98382940b7863d6196ca0af5d33460
 
 ---
 
@@ -16,8 +16,7 @@ ms.openlocfilehash: dcf655ff80c4463a567ade0b6d1cc784b60c18be
 
 この記事では、[**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) とバックグラウンド タスクを使って、バックグラウンドでメディア ファイルを処理する方法について説明します。
 
-この記事で説明するサンプル アプリを使うと、ユーザーは入力メディア ファイルを選んでコード変換し、コード変換結果の出力ファイルを指定できます。 次に、バックグラウンド タスクが起動してコード変換操作が実行されます。 [
-            **MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) は、コード変換だけでなくさまざまなメディア処理シナリオ (ディスクへのメディア コンポジションのレンダリング、処理の完了後の処理済みメディア ファイルのアップロードなど) をサポートすることを目的としています。
+この記事で説明するサンプル アプリを使うと、ユーザーは入力メディア ファイルを選んでコード変換し、コード変換結果の出力ファイルを指定できます。 次に、バックグラウンド タスクが起動してコード変換操作が実行されます。 [**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) は、コード変換だけでなくさまざまなメディア処理シナリオ (ディスクへのメディア コンポジションのレンダリング、処理の完了後の処理済みメディア ファイルのアップロードなど) をサポートすることを目的としています。
 
 このサンプルで利用されているさまざまなユニバーサル Windows アプリ機能について詳しくは、次をご覧ください。
 
@@ -46,13 +45,10 @@ Microsoft Visual Studio で既存のソリューションにバックグラウ�
 
 次のメンバー変数をクラスに追加します。
 
--   [
-            **IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797)。バックグラウンド タスクの進行状況によってフォアグラウンド アプリを更新するために使われます。
--   [
-            **BackgroundTaskDeferral**](https://msdn.microsoft.com/library/windows/apps/hh700499)。メディアのコード変換が非同期的に実行されている間も、システムがバックグラウンド タスクをシャットダウンしないようにします。
+-   [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797)。バックグラウンド タスクの進行状況によってフォアグラウンド アプリを更新するために使われます。
+-   [**BackgroundTaskDeferral**](https://msdn.microsoft.com/library/windows/apps/hh700499)。メディアのコード変換が非同期的に実行されている間も、システムがバックグラウンド タスクをシャットダウンしないようにします。
 -   **CancellationTokenSource** オブジェクト。非同期コード変換操作を取り消すために使うことができます。
--   [
-            **MediaTranscoder**](https://msdn.microsoft.com/library/windows/apps/br207080) オブジェクト。メディア ファイルのコード変換に使われます。
+-   [**MediaTranscoder**](https://msdn.microsoft.com/library/windows/apps/br207080) オブジェクト。メディア ファイルのコード変換に使われます。
 
 [!code-cs[BackgroundMembers](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetBackgroundMembers)]
 
@@ -68,8 +64,7 @@ Microsoft Visual Studio で既存のソリューションにバックグラウ�
 
 **TranscodeFileAsync** ヘルパー メソッドで、コード変換操作の入力ファイルと出力ファイルのファイル名がアプリの [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) から取得されます。 これらの値は、フォアグラウンド アプリによって設定されます。 入力ファイルと出力ファイルの [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトを作成し、コード変換に使うエンコード プロファイルを作成します。
 
-入力ファイル、出力ファイル、エンコード プロファイルを渡して [**PrepareFileTranscodeAsync**](https://msdn.microsoft.com/library/windows/apps/hh700936) を呼び出します。 この呼び出しから返される [**PrepareTranscodeResult**](https://msdn.microsoft.com/library/windows/apps/hh700941) オブジェクトにより、コード変換を実行できるかどうかを把握できます。 [
-            **CanTranscode**](https://msdn.microsoft.com/library/windows/apps/hh700942) プロパティが true の場合、[**TranscodeAsync**](https://msdn.microsoft.com/library/windows/apps/hh700946) を呼び出してコード変換操作を実行します。
+入力ファイル、出力ファイル、エンコード プロファイルを渡して [**PrepareFileTranscodeAsync**](https://msdn.microsoft.com/library/windows/apps/hh700936) を呼び出します。 この呼び出しから返される [**PrepareTranscodeResult**](https://msdn.microsoft.com/library/windows/apps/hh700941) オブジェクトにより、コード変換を実行できるかどうかを把握できます。 [**CanTranscode**](https://msdn.microsoft.com/library/windows/apps/hh700942) プロパティが true の場合、[**TranscodeAsync**](https://msdn.microsoft.com/library/windows/apps/hh700946) を呼び出してコード変換操作を実行します。
 
 **AsTask** メソッドを使うと、非同期操作の進行状況を追跡したり、取り消したりできます。 必要な進行状況の単位と、タスクの現在の進行状況について通知するために呼び出されるメソッドの名前を指定して、新しい **Progress** オブジェクトを作成します。 タスクの取り消しを可能にするキャンセル トークンと共に、**Progress** オブジェクトを **AsTask** メソッドに渡します。
 
@@ -114,15 +109,11 @@ Microsoft Visual Studio で既存のソリューションにバックグラウ�
 
 [!code-cs[PickFilesToTranscode](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetPickFilesToTranscode)]
 
-バックグラウンド タスクを登録するには、新しい [**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) と新しい [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) を作成します。 後で識別できるようにバックグラウンド タスク ビルダーの名前を設定します。 [
-            **TaskEntryPoint**](https://msdn.microsoft.com/library/windows/apps/br224774) を、マニフェスト ファイルで使ったのと同じ名前空間とクラス名文字列に設定します。 [
-            **Trigger**](https://msdn.microsoft.com/library/windows/apps/dn641725) プロパティを **MediaProcessingTrigger** インスタンスに設定します。
+バックグラウンド タスクを登録するには、新しい [**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) と新しい [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) を作成します。 後で識別できるようにバックグラウンド タスク ビルダーの名前を設定します。 [**TaskEntryPoint**](https://msdn.microsoft.com/library/windows/apps/br224774) を、マニフェスト ファイルで使ったのと同じ名前空間とクラス名文字列に設定します。 [**Trigger**](https://msdn.microsoft.com/library/windows/apps/dn641725) プロパティを **MediaProcessingTrigger** インスタンスに設定します。
 
 タスクを登録する前に、[**AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) コレクションをループ処理し、[**BackgroundTaskBuilder.Name**](https://msdn.microsoft.com/library/windows/apps/br224771) プロパティで指定した名前を持つすべてのタスクで [**Unregister**](https://msdn.microsoft.com/library/windows/apps/br229870) を呼び出すことにより、以前に登録したタスクを必ず登録解除してください。
 
-[
-            **Register**](https://msdn.microsoft.com/library/windows/apps/br224772) を呼び出してバックグラウンド タスクを登録します。 [
-            **Completed**](https://msdn.microsoft.com/library/windows/apps/br224788) イベントと [**Progress**](https://msdn.microsoft.com/library/windows/apps/br224808) イベントのハンドラーを登録します。
+[**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) を呼び出してバックグラウンド タスクを登録します。 [**Completed**](https://msdn.microsoft.com/library/windows/apps/br224788) イベントと [**Progress**](https://msdn.microsoft.com/library/windows/apps/br224808) イベントのハンドラーを登録します。
 
 [!code-cs[RegisterBackgroundTask](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetRegisterBackgroundTask)]
 
@@ -149,6 +140,6 @@ Microsoft Visual Studio で既存のソリューションにバックグラウ�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

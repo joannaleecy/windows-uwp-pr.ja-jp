@@ -18,7 +18,8 @@ Windows ユニバーサル プラットフォーム (UWP) では、パラメー�
 
 -   戻り値、または出力パラメーター (Visual Basic では、[OutAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.outattribute.aspx) 属性の **ByRef** パラメーター) の場合、配列は常に出力に使用されます。 ReadOnlyArrayAttribute 属性は適用しないでください。 出力パラメーターで WriteOnlyArrayAttribute 属性を適用することはできますが、冗長になります。
 
-    > **注意:** Visual Basic のコンパイラは、出力専用の規則を強制しません。 出力パラメーターからの読み取りは行わないでください。**Nothing** が含まれている可能性があります。 常に新しい配列を割り当ててください。
+    > 
+            **注意:** Visual Basic のコンパイラは、出力専用の規則を強制しません。 出力パラメーターからの読み取りは行わないでください。**Nothing** が含まれている可能性があります。 常に新しい配列を割り当ててください。
  
 -   **ref** 修飾子 (Visual Basic では **ByRef**) を持つパラメーターは使用できません。 Winmdexp.exe によりエラーが生成されます。
 -   値で渡されるパラメーターの場合、[ReadOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.readonlyarrayattribute.aspx) 属性または [WriteOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute.aspx) 属性を適用して、配列の内容が入力と出力のどちらで使用されるのかを指定する必要があります。 両方の属性を指定すると、エラーになります。
@@ -51,7 +52,7 @@ Windows ユニバーサル プラットフォーム (UWP) では、パラメー�
 
 マネージ コードおよびアンマネージ コードからコンポーネントを使用する ReadOnlyArrayAttribute 属性または WriteOnlyArrayAttribute 属性を持つパラメーターは、呼び出し元がネイティブ コードで記述されているか、マネージ コードで記述されているかによって、動作が異なります。
 
--   呼び出し元が、ネイティブ コード (JavaScript、または Visual C++ コンポーネント拡張機能) の場合、配列の内容は次のように処理されます。 ReadOnlyArrayAttribute: アプリケーション バイナリ インターフェイス (ABI) の境界を越えた呼び出しの場合、配列はコピーされます。 要素は必要に応じて変換されます。
+-   呼び出し元が、ネイティブ コード (JavaScript、または VisualC++ コンポーネント拡張機能) の場合、配列の内容は次のように処理されます。 ReadOnlyArrayAttribute: アプリケーション バイナリ インターフェイス (ABI) の境界を越えた呼び出しの場合、配列はコピーされます。 要素は必要に応じて変換されます。
 -   このため、入力専用の配列に、メソッドで誤って変更が加えられた場合でも、呼び出し元では認識されません。 WriteOnlyArrayAttribute: 呼び出されたメソッドでは、元の配列の内容を推測できません。 たとえば、メソッドが受け取る配列は、初期化されていなかったり既定値を含む可能性があります。
 
 メソッドは、配列内のすべての要素に値を設定することが求められます。 呼び出し元がマネージ コードの場合、元の配列は .NET framework のメソッド呼び出しの中にあるため、呼び出されたメソッドでも使用可能です。 配列の内容は .NET Framework のコードで変更可能なため、メソッドが配列に加えた変更は、呼び出し元からも認識されます。 これは、Windows ランタイム コンポーネント用に作成された単体テストに影響するため、注意してください。

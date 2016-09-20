@@ -2,64 +2,43 @@
 author: drewbatgit
 ms.assetid: EFCF84D0-2F4C-454D-97DA-249E9EAA806C
 description: "SystemMediaTransportControls クラスを使うと、Windows に組み込まれているシステム メディア トランスポート コントロールをアプリで使って、現在アプリで再生中のメディアに関してコントロールに表示されるメタデータを更新できるようになります。"
-title: "システム メディア トランスポート コントロール"
+title: "システム メディア トランスポート コントロールの手動制御"
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 5a94ce4112f7662d3fe9bf3c8a7d3f60b1569931
+ms.sourcegitcommit: 2cf432bc9d6eb0e564b6d6aa7fdbfd78c7eef272
+ms.openlocfilehash: 6643f6bee55c1c9631ca20d2fe7eb6ac1c5ae3e2
 
 ---
 
-# システム メディア トランスポート コントロール
+# システム メディア トランスポート コントロールの手動制御
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\ ]
 
+Windows 10 バージョン 1607 以降、[ **MediaPlayer** ](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) クラスを使ってメディアを再生する UWP アプリは、既定でシステム メディア トランスポート コントロール (SMTC) と自動的に統合されます。 これは、ほとんどのシナリオの SMTC と対話するための推奨される方法です。 SMTC の **MediaPlayer** との既定の統合のカスタマイズについて詳しくは、「[システム メディア トランスポート コントロールとの統合](integrate-with-systemmediatransportcontrols.md)」をご覧ください。
 
-[
-            **SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) クラスを使うと、Windows に組み込まれているシステム メディア トランスポート コントロールをアプリで使って、現在アプリで再生中のメディアに関してコントロールに表示されるメタデータを更新できるようになります。
-
-システム トランスポート コントロールは、[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) オブジェクトのトランスポート コントロールとは異なります。 システム トランスポート コントロールは、ヘッドホンのボリューム コントロールやキーボードのメディア ボタンなどのハードウェア メディア キーを押すとポップアップするコントロールです。 ユーザーがキーボードの一時停止キーを押し、アプリが [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) をサポートしている場合、アプリは通知を受け取り、ユーザーは適切なアクションを実行できます。
-
-アプリでは、[**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) に表示される曲のタイトル、サムネイル画像などのメディア情報も更新できます。
-
-**注**  
-[システム メディア トランスポート コントロール UWP サンプル](http://go.microsoft.com/fwlink/?LinkId=619488)は、この概要で説明するコードを実装します。 サンプルをダウンロードすると、コンテキスト内のコードを確認できます。独自のアプリの出発点として使うこともできます。
+SMTC の手動コントロールの実装が必要になるシナリオがいくつかあります。 たとえば、[ **MediaTimelineController** ](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaTimelineController) を使って 1 つ以上のメディア プレーヤーの再生を制御する場合です。 複数のメディア プレーヤーを使用していて、アプリ用に SMTC の 1 つのインスタンスだけが必要な場合もそうです。 [ **MediaElement** ](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaElement) を使ってメディアを再生する場合は、SMTC を手動で制御する必要があります。
 
 ## トランスポート コントロールをセットアップする
+**MediaPlayer** 使ってメディアを再生している場合は、[**MediaPlayer.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.SystemMediaTransportControls) プロパティにアクセスして [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.SystemMediaTransportControls) のインスタンスを取得できます。 SMTC を手動で制御する場合は、[ **CommandManager.IsEnabled** ](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackCommandManager.IsEnabled) プロパティを false に設定して、**MediaPlayer** によって提供される自動統合を無効にする必要があります。
 
-ページの XAML ファイルで、システム メディア トランスポート コントロールによって制御する [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) を定義します。 [
-            **CurrentStateChanged**](https://msdn.microsoft.com/library/windows/apps/br227375) イベントと [**MediaOpened**](https://msdn.microsoft.com/library/windows/apps/br227394) イベントは、システム メディア トランスポート コントロールを更新するために使われ、この記事の後半で説明します。
+[!code-cs[InitSMTCMediaPlayer](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetInitSMTCMediaPlayer)]
 
-[!code-xml[MediaElementSystemMediaTransportControls](./code/SMTCWin10/cs/MainPage.xaml#SnippetMediaElementSystemMediaTransportControls)]
+[**GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/dn278708) を呼び出して、[**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) のインスタンスを取得することもできます。 **MediaElement** を使ってメディアを再生している場合は、この方法でオブジェクトを取得する必要があります。
 
-再生するファイルをユーザーが選ぶことができるようにするボタンを XAML ファイルに追加します。
-
-[!code-xml[OpenButton](./code/SMTCWin10/cs/MainPage.xaml#SnippetOpenButton)]
-
-分離コード ページで、次の名前空間の using ディレクティブを追加します。
-
-[!code-cs[名前空間](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetNamespace)]
-
-[
-            **FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) を使ってユーザーがファイルを選択するためのボタン クリック ハンドラーを追加します。次に、それを **MediaElement** のアクティブ ファイルにするために、[**SetSource**](https://msdn.microsoft.com/library/windows/apps/br244338) を呼び出します。
-
-[!code-cs[OpenMediaFile](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetOpenMediaFile)]
-
-[
-            **GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/dn278708) を呼び出して、[**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) のインスタンスを取得します。
+[!code-cs[InitSMTCMediaElement](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetInitSMTCMediaElement)]
 
 **SystemMediaTransportControls** オブジェクトの対応する "is enabled" プロパティ ([**IsPlayEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278714)、[**IsPauseEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278713)、[**IsNextEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278712)、[**IsPreviousEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278715) など) を設定することで、アプリで使うボタンを有効にします。 利用可能なすべてのコントロールの一覧については、**SystemMediaTransportControls** のリファレンス ドキュメントをご覧ください。
 
+[!code-cs[EnableContols](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetEnableContols)]
+
 ユーザーがボタンを押したときに通知を受信するために、[**ButtonPressed**](https://msdn.microsoft.com/library/windows/apps/dn278706) イベントのハンドラーを登録します。
 
-[!code-cs[SystemMediaTransportControlsSetup](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetSystemMediaTransportControlsSetup)]
+[!code-cs[RegisterButtonPressed](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetRegisterButtonPressed)]
 
 ## システム メディア トランスポート コントロールの押されたボタンを処理する
 
-[
-            **ButtonPressed**](https://msdn.microsoft.com/library/windows/apps/dn278706) イベントは、有効なボタンの 1 つが押されたときにシステム トランスポート コントロールで発生します。 イベント ハンドラーに渡される [**SystemMediaTransportControlsButtonPressedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn278683) の [**Button**](https://msdn.microsoft.com/library/windows/apps/dn278685) プロパティは、有効なボタンのうちどれが押されたかを示す [**SystemMediaTransportControlsButton**](https://msdn.microsoft.com/library/windows/apps/dn278681) 列挙体のメンバーです。
+[**ButtonPressed**](https://msdn.microsoft.com/library/windows/apps/dn278706) イベントは、有効なボタンの 1 つが押されたときにシステム トランスポート コントロールで発生します。 イベント ハンドラーに渡される [**SystemMediaTransportControlsButtonPressedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn278683) の [**Button**](https://msdn.microsoft.com/library/windows/apps/dn278685) プロパティは、有効なボタンのうちどれが押されたかを示す [**SystemMediaTransportControlsButton**](https://msdn.microsoft.com/library/windows/apps/dn278681) 列挙体のメンバーです。
 
-[
-            **ButtonPressed**](https://msdn.microsoft.com/library/windows/apps/dn278706) イベント ハンドラーから UI スレッド上のオブジェクト ([**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) オブジェクトなど) を更新するには、[**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) を介して呼び出しをマーシャリングする必要があります。 これは、**ButtonPressed** イベント ハンドラーが UI スレッドから呼び出されず、UI を直接変更しようとすると例外が発生するためです。
+[**ButtonPressed**](https://msdn.microsoft.com/library/windows/apps/dn278706) イベント ハンドラーから UI スレッド上のオブジェクト ([**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) オブジェクトなど) を更新するには、[**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) を介して呼び出しをマーシャリングする必要があります。 これは、**ButtonPressed** イベント ハンドラーが UI スレッドから呼び出されず、UI を直接変更しようとすると例外が発生するためです。
 
 [!code-cs[SystemMediaTransportControlsButtonPressed](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetSystemMediaTransportControlsButtonPressed)]
 
@@ -71,12 +50,9 @@ ms.openlocfilehash: 5a94ce4112f7662d3fe9bf3c8a7d3f60b1569931
 
 ## メディアの情報と縮小表示でシステム メディア トランスポート コントロールを更新する
 
-[
-            **SystemMediaTransportControlsDisplayUpdater**](https://msdn.microsoft.com/library/windows/apps/dn278686) クラスを使って、現在再生されているメディア項目の曲のタイトルやアルバム アートなど、トランスポート コントロールに表示されるメディア情報を更新します。 [
-            **SystemMediaTransportControls.DisplayUpdater**](https://msdn.microsoft.com/library/windows/apps/dn278707) プロパティを使って、このクラスのインスタンスを取得します。 一般的なシナリオの場合、メタデータを渡すための推奨される方法は、現在再生中のメディア ファイルを渡して [**CopyFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn278694) を呼び出すことです。 表示アップデーターによって、ファイルからメタデータと縮小表示画像が自動的に抽出されます。
+[**SystemMediaTransportControlsDisplayUpdater**](https://msdn.microsoft.com/library/windows/apps/dn278686) クラスを使って、現在再生されているメディア項目の曲のタイトルやアルバム アートなど、トランスポート コントロールに表示されるメディア情報を更新します。 [**SystemMediaTransportControls.DisplayUpdater**](https://msdn.microsoft.com/library/windows/apps/dn278707) プロパティを使って、このクラスのインスタンスを取得します。 一般的なシナリオの場合、メタデータを渡すための推奨される方法は、現在再生中のメディア ファイルを渡して [**CopyFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn278694) を呼び出すことです。 表示アップデーターによって、ファイルからメタデータと縮小表示画像が自動的に抽出されます。
 
-[
-            **Update**](https://msdn.microsoft.com/library/windows/apps/dn278701) を呼び出すことで、システム メディア トランスポート コントロールの UI が新しいメタデータと縮小表示によって更新されます。
+[**Update**](https://msdn.microsoft.com/library/windows/apps/dn278701) を呼び出すことで、システム メディア トランスポート コントロールの UI が新しいメタデータと縮小表示によって更新されます。
 
 [!code-cs[SystemMediaTransportControlsUpdater](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetSystemMediaTransportControlsUpdater)]
 
@@ -86,19 +62,15 @@ ms.openlocfilehash: 5a94ce4112f7662d3fe9bf3c8a7d3f60b1569931
 
 ## システム メディア トランスポート コントロールのタイムライン プロパティを更新する
 
-システム トランスポート コントロールには、メディア項目の現在の再生位置、開始時刻、終了時刻など、現在再生中のメディア項目のタイムラインに関する情報が表示されます。 システム メディア トランスポート コントロールのタイムライン プロパティを更新するには、新しい [**SystemMediaTransportControlsTimelineProperties**](https://msdn.microsoft.com/library/windows/apps/mt218746) オブジェクトを作成します。 再生中のメディア項目の現在の状態を反映するように、オブジェクトのプロパティを設定します。 [
-            **SystemMediaTransportControls.UpdateTimelineProperties**](https://msdn.microsoft.com/library/windows/apps/mt218760) を呼び出して、コントロールのタイムラインを更新します。
+システム トランスポート コントロールには、メディア項目の現在の再生位置、開始時刻、終了時刻など、現在再生中のメディア項目のタイムラインに関する情報が表示されます。 システム メディア トランスポート コントロールのタイムライン プロパティを更新するには、新しい [**SystemMediaTransportControlsTimelineProperties**](https://msdn.microsoft.com/library/windows/apps/mt218746) オブジェクトを作成します。 再生中のメディア項目の現在の状態を反映するように、オブジェクトのプロパティを設定します。 [**SystemMediaTransportControls.UpdateTimelineProperties**](https://msdn.microsoft.com/library/windows/apps/mt218760) を呼び出して、コントロールのタイムラインを更新します。
 
 [!code-cs[UpdateTimelineProperties](./code/SMTCWin10/cs/MainPage.xaml.cs#SnippetUpdateTimelineProperties)]
 
 -   再生中の項目のタイムラインをシステム コントロールに表示するには、[**StartTime**](https://msdn.microsoft.com/library/windows/apps/mt218751)、[**EndTime**](https://msdn.microsoft.com/library/windows/apps/mt218747)、および [**Position**](https://msdn.microsoft.com/library/windows/apps/mt218755) の値を指定する必要があります。
 
--   [
-              **MinSeekTime**
-            ](https://msdn.microsoft.com/library/windows/apps/mt218749) と [**MaxSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218748) を使うと、ユーザーがシークできるタイムライン内の範囲を指定できます。 一般的なシナリオとしては、コンテンツ プロバイダーがメディアに広告を含める場合などがあります。
+-   [**MinSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218749) と [**MaxSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218748) を使うと、ユーザーがシークできるタイムライン内の範囲を指定できます。 一般的なシナリオとしては、コンテンツ プロバイダーがメディアに広告を含める場合などがあります。
 
-    [
-            **PositionChangeRequest**](https://msdn.microsoft.com/library/windows/apps/mt218755) を発生させるには、[**MinSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218749) と [**MaxSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218748) を設定する必要があります。
+    [**PositionChangeRequest**](https://msdn.microsoft.com/library/windows/apps/mt218755) を発生させるには、[**MinSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218749) と [**MaxSeekTime**](https://msdn.microsoft.com/library/windows/apps/mt218748) を設定する必要があります。
 
 -   システム コントロールは、メディアの再生と同期させておくことをお勧めします。そのためには、再生中にこれらのプロパティを約 5 秒ごとに更新し、一時停止や新しい位置へのシークなど、再生に変更が加えられたときには、再度更新します。
 
@@ -125,22 +97,25 @@ ms.openlocfilehash: 5a94ce4112f7662d3fe9bf3c8a7d3f60b1569931
 
 ## バックグラウンド オーディオに対してシステム メディア トランスポート コントロールを使う
 
-バックグラウンド オーディオに対してシステム メディア トランスポート コントロールを使うには、[**IsPlayEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278714) と [**IsPauseEnabled**](https://msdn.microsoft.com/library/windows/apps/dn278713) を true に設定して、再生ボタンと一時停止ボタンを有効にする必要があります。 アプリは、[**ButtonPressed**](https://msdn.microsoft.com/library/windows/apps/dn278706) イベントも処理する必要があります。
+**MediaPlayer** によって提供される自動 SMTC 統合を使用していない場合は、SMTC と手動で統合してバック グラウンド オーディオを有効にする必要があります。 少なくとも、アプリで [ **IsPlayEnabled** ](https://msdn.microsoft.com/library/windows/apps/dn278714) と [**IsPauseEnabled** ](https://msdn.microsoft.com/library/windows/apps/dn278713) を true に設定して、再生ボタンと一時停止ボタンを有効にする必要があります。 アプリは、[**ButtonPressed**](https://msdn.microsoft.com/library/windows/apps/dn278706) イベントも処理する必要があります。 アプリがこれらの要件を満たしていない場合、アプリがバックグラウンドに移動したときにオーディオ再生は停止します。
 
-アプリのバック グラウンド タスク内から [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) のインスタンスを取得するには、フォアグラウンド アプリからしか使えない [**GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/dn278708) の代わりに、[**BackgroundMediaPlayer.Current.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn926635) を使う必要があります。
+バックグラウンド オーディオ用に新しい 1 プロセスのモデルを使うアプリは、[**GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/dn278708) を呼び出して [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) のインスタンスを取得する必要があります。 バックグラウンド オーディオ用に従来の 2 プロセスのモデルを使うアプリは、[ **BackgroundMediaPlayer.Current.SystemMediaTransportControls** ](https://msdn.microsoft.com/library/windows/apps/dn926635) を使ってバックグラウンド プロセスから SMTC にアクセスする必要があります
 
-バックグラウンドでのオーディオ再生について詳しくは、「[バックグラウンド オーディオ](background-audio.md)」をご覧ください。
+バックグラウンドでのオーディオ再生について詳しくは、「[バックグラウンドでのメディアの再生](background-audio.md)」をご覧ください。
+
+## 関連トピック
+* [メディア再生](media-playback.md)
+* [システム メディア トランスポート コントロールとの統合](integrate-with-systemmediatransportcontrols.md) 
+* [システム メディア トランスポートのサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls) 
 
  
 
- 
 
 
 
 
 
 
-
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

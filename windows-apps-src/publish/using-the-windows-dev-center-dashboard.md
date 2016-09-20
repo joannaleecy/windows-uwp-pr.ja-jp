@@ -3,7 +3,6 @@ author: jnHs
 Description: "Windows デベロッパー センター ダッシュボードを利用すると、Windows デバイス向けのすべてのアプリの管理と申請を 1 か所で行うことができます。"
 title: "Windows デベロッパー センター ダッシュボードの使用"
 ms.assetid: FB63F773-71AC-464E-BDE1-21C429FB2B0B
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 7478a832cea6114c7a6e7f6be5cc3e908981a64c
 
@@ -14,7 +13,8 @@ ms.openlocfilehash: 7478a832cea6114c7a6e7f6be5cc3e908981a64c
 
 Windows デベロッパー センター ダッシュボードを利用すると、Windows デバイス向けのすべてのアプリの管理と申請を 1 か所で行うことができます。
 
-> **注**   Windows デベロッパー センター ダッシュボードにアクセスするには、[開発者アカウント](http://go.microsoft.com/fwlink/p/?LinkId=615100)が必要です。
+> 
+            **注**   Windows デベロッパー センター ダッシュボードにアクセスするには、[開発者アカウント](http://go.microsoft.com/fwlink/p/?LinkId=615100)が必要です。
 
 [アプリの申請を作成](app-submissions.md) (新規作成または更新) するとき、サポートされているオペレーティング システムに対応した[アプリ パッケージをアップロード](upload-app-packages.md)できます。ストアでは、最適なパッケージがユーザーに対して自動的に提供されます。 アプリがサポートするオペレーティング システムすべてに対して同じ[説明](create-app-descriptions.md)と[アートワーク](app-screenshots-and-images.md)を使うこともできますし、[特定のプラットフォーム向けに説明をカスタマイズ](create-platform-specific-descriptions.md)することもできます。
 

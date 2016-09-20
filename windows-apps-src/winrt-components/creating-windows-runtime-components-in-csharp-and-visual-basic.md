@@ -22,20 +22,21 @@ Visual Basic または C# を利用して UWP アプリでのみ使うコンポ�
 ## Windows ランタイム コンポーネントでの型の宣言
 
 
-内部的には、コンポーネントの Windows ランタイム型は、ユニバーサル Windows アプリで許可されている .NET Framework の機能をすべて使うことができます (詳しくは、「[UWP アプリの .NET](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)」の概要をご覧ください。外部的には、型のメンバーはパラメーターと戻り値の Windows ランタイム型だけを公開できます。 Windows ランタイム コンポーネントから公開される .NET Framework 型の制限事項を次に示します。
+内部的には、コンポーネントの Windows ランタイム型は、ユニバーサル Windows アプリで許可されている .NET Framework の機能をすべて使うことができます  (詳しくは、「[UWP アプリの .NET](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)」の概要をご覧ください。外部的には、型のメンバーはパラメーターと戻り値の Windows ランタイム型だけを公開できます。 Windows ランタイム コンポーネントから公開される .NET Framework 型の制限事項を次に示します。
 
 -   コンポーネント内にあるすべてのパブリック型とメンバーのフィールド、パラメーター、戻り値は、Windows ランタイム型である必要があります。
 
-    この制限は、作成した Windows ランタイム型、および Windows ランタイム自体で提供される型を対象としています。 また、さまざまな .NET Framework 型も対象となります。 これらの型の追加は、マネージ コードで Windows ランタイムを通常どおりに使うことができるようにするために、.NET Framework が提供するサポートの一部です。コードでは、基になる Windows ランタイム型ではなく、よく利用する .NET Framework 型が使われているように表示されます。 たとえば、Int32 や Double などの .NET Framework のプリミティブ型、DateTimeOffset や Uri などの特定の基本型、および IEnumerable&lt;T&gt; (Visual Basic では IEnumerable(Of T)) や IDictionary&lt;TKey,TValue&gt; などの一般的に利用されるジェネリック インターフェイス型を使うことができます (これらのジェネリック型の型引数は Windows ランタイム型にする必要があることに注意してください)。これについては、この記事の後半に記載されている「マネージ コードへの Windows ランタイム型の引き渡し」と「Windows ランタイムへのマネージ型の引き渡し」のセクションで説明します。
+    この制限は、作成した Windows ランタイム型、および Windows ランタイム自体で提供される型を対象としています。 また、さまざまな .NET Framework 型も対象となります。 これらの型の追加は、マネージ コードで Windows ランタイムを通常どおりに使うことができるようにするために、.NET Framework が提供するサポートの一部です。コードでは、基になる Windows ランタイム型ではなく、よく利用する .NET Framework 型が使われているように表示されます。 たとえば、Int32 や Double などの .NET Framework のプリミティブ型、DateTimeOffset や Uri などの特定の基本型、および IEnumerable&lt;T&gt; (Visual Basic では IEnumerable(Of T)) や IDictionary&lt;TKey,TValue&gt; などの一般的に利用されるジェネリック インターフェイス型を使うことができます  (これらのジェネリック型の型引数は Windows ランタイム型にする必要があることに注意してください)。これについては、この記事の後半に記載されている「マネージ コードへの Windows ランタイム型の引き渡し」と「Windows ランタイムへのマネージ型の引き渡し」のセクションで説明します。
 
 -   パブリック クラスとインターフェイスには、メソッド、プロパティ、イベントを含めることができます。 イベントのデリゲートを宣言したり、EventHandler&lt;T&gt; デリゲートを使ったりすることができます。 パブリック クラスやインターフェイスでは、次のことが許可されていません。
 
     -   ジェネリックにする。
-    -   Windows ランタイム インターフェイスではないインターフェイスを実装する (ただし、独自の Windows ランタイム インターフェイスを作成し、それを実装することはできます)。
+    -   Windows ランタイム インターフェイスではないインターフェイスを実装する  (ただし、独自の Windows ランタイム インターフェイスを作成し、それを実装することはできます)。
     -   Windows ランタイムにない型 (System.Exception や System.EventArgs など) から派生させる。
 -   すべてのパブリック型にはアセンブリ名に一致するルート名前空間が必要になります。ただし、アセンブリ名の先頭には "Windows" を付けることはできません。
 
-    > **ヒント:** 既定では、Visual Studio プロジェクトにはアセンブリ名に一致する名前空間名があります。 Visual Basic では、この既定の名前空間の Namespace ステートメントはコードに表示されません。
+    > 
+            **ヒント:** 既定では、Visual Studio プロジェクトにはアセンブリ名に一致する名前空間名があります。 Visual Basic では、この既定の名前空間の Namespace ステートメントはコードに表示されません。
 
 -   パブリック構造体はパブリック フィールド以外のメンバーを持つことができません。また、それらのフィールドは値型または文字列であることが必要です。
 -   パブリック クラスは **sealed** (Visual Basic では **NotInheritable**) であることが必要です。 プログラミング モデルでポリモーフィズムが必要となる場合は、パブリック インターフェイスを作成し、ポリモーフィックにする必要があるクラスにそのインターフェイスを実装できます。
@@ -77,7 +78,7 @@ JavaScript を使ってユニバーサル Windows アプリの一部としてコ
 
 C# や Visual Basic で、これらの型に対して言語キーワードが指定されている場合は、代わりに言語キーワードを使うことができます。
 
-プリミティブ型に加えて、よく使用される基本的な Windows ランタイム型が、同等の .NET Framework 型としてマネージ コードに表示されます。 たとえば、JavaScript コードで Windows.Foundation.Uri クラスを使っており、それを C# または Visual Basic のメソッドに渡すとします。 マネージ コードには、対応する型として .NET Framework の System.Uri クラスが示され、この型がメソッド パラメーター用に使われます。 マネージ コードを記述するとき、Visual Studio の IntelliSense によって Windows ランタイム型が表示されなくなり、同等の .NET Framework 型が示されるため、Windows ランタイム型が .NET Framework 型として表示されていることがわかります (通常、2 つの型の名前は同じです。 ただし、Windows.Foundation.DateTime 構造体は、System.DateTime ではなく、System.DateTimeOffset としてマネージ コードに表示される点に注意してください)。
+プリミティブ型に加えて、よく使用される基本的な Windows ランタイム型が、同等の .NET Framework 型としてマネージ コードに表示されます。 たとえば、JavaScript コードで Windows.Foundation.Uri クラスを使っており、それを C# または Visual Basic のメソッドに渡すとします。 マネージ コードには、対応する型として .NET Framework の System.Uri クラスが示され、この型がメソッド パラメーター用に使われます。 マネージ コードを記述するとき、Visual Studio の IntelliSense によって Windows ランタイム型が表示されなくなり、同等の .NET Framework 型が示されるため、Windows ランタイム型が .NET Framework 型として表示されていることがわかります  (通常、2 つの型の名前は同じです。 ただし、Windows.Foundation.DateTime 構造体は、System.DateTime ではなく、System.DateTimeOffset としてマネージ コードに表示される点に注意してください)。
 
 よく使われるコレクション型の一部では、Windows ランタイム型によって実装されるインターフェイスと、対応する .NET Framework 型によって実装されるインターフェイスと間で対応付けが行われます。 上で説明した型と同じように、.NET Framework 型を使ってパラメーターの型を宣言する必要があります。 これにより、型の間にある相違点を意識せずに、.NET Framework コードを通常どおりに記述することができます。 次の表は、最も一般的なジェネリック インターフェイスの型、および他の一般的なクラスやインターフェイスに関する対応付けを示しています。 .NET Framework が対応する Windows ランタイム型の詳しい一覧については、「.NET Framework での Windows ランタイム型の対応付け」をご覧ください。
 
@@ -99,7 +100,8 @@ C# や Visual Basic で、これらの型に対して言語キーワードが指
 
 型によって複数のインターフェイスが実装される場合、メンバーのパラメーターの型または戻り値の型として実装されるインターフェイスをすべて使うことができます。 たとえば、Dictionary&lt;int, string&gt; (Visual Basic では Dictionary(Of Integer, String)) を、IDictionary&lt;int, string&gt;、IReadOnlyDictionary&lt;int, string&gt;、または IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt;&gt; として渡すか返すことができます。
 
-**重要:** JavaScript では、マネージ型が実装するインターフェイスのリストに最初に現れるインターフェイスが使われます。 たとえば、Dictionary&lt;int, string&gt; を JavaScript コードに返した場合、戻り値の型としてどのインターフェイスを指定しても、IDictionary&lt;int, string&gt; として表示されます。 これは、後のインターフェイスで表示されるメンバーが最初のインターフェイスに含まれていない場合、そのメンバーは JavaScript に認識されないことを意味します。
+
+            **重要:** JavaScript では、マネージ型が実装するインターフェイスのリストに最初に現れるインターフェイスが使われます。 たとえば、Dictionary&lt;int, string&gt; を JavaScript コードに返した場合、戻り値の型としてどのインターフェイスを指定しても、IDictionary&lt;int, string&gt; として表示されます。 これは、後のインターフェイスで表示されるメンバーが最初のインターフェイスに含まれていない場合、そのメンバーは JavaScript に認識されないことを意味します。
 
 Windows ランタイムでは、IMap&lt;K, V&gt; と IMapView&lt;K, V&gt; は IKeyValuePair を使って反復処理されます。 これらをマネージ コードに渡すと、IDictionary&lt;TKey, TValue&gt; および IReadOnlyDictionary&lt;TKey, TValue&gt; として表示されるため、これらを列挙するには必然的に System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt; を使います。
 
@@ -137,7 +139,8 @@ Windows ランタイムでは、メソッドはオーバーロードできます
 > End Function
 > ```
 
- [!div class="tabbedCodeSnippets"] **注意:** JavaScript では任意の値を OverloadExample に渡すことができ、パラメーターに必要な値を型に強制します。 OverloadExample を "forty-two"、"42"、または 42.3 を使って呼び出すことができますが、それらの値はすべて既定のオーバーロードに渡されます。
+ [!div class="tabbedCodeSnippets"] 
+            **注意:** JavaScript では任意の値を OverloadExample に渡すことができ、パラメーターに必要な値を型に強制します。 OverloadExample を "forty-two"、"42"、または 42.3 を使って呼び出すことができますが、それらの値はすべて既定のオーバーロードに渡されます。
 
 前の例の既定のオーバーロードは、0、42、および 42 をそれぞれ返します。 コンストラクターに DefaultOverloadAttribute 属性を適用することはできません。
 
@@ -173,7 +176,7 @@ IStringable の実装 Windows 8.1 以降では、Windows ランタイムに IStr
     }
     ```
 
-    次のようなメソッド定義を使って IStringable の実装を基底クラスから隠すことはできません。 代わりに、IStringable.ToString の実装で基底クラスの実装を常にオーバーライドする必要があります。
+    次のようなメソッド定義を使って IStringable の実装を基底クラスから隠すことはできません。  代わりに、IStringable.ToString の実装で基底クラスの実装を常にオーバーライドする必要があります。
 
 ToString の実装を隠すことができるのは、厳密に型指定されたクラス インスタンスで呼び出す場合だけです。
 
@@ -263,7 +266,8 @@ C# のラムダ関数を使う場合は、トークンのパラメーターを�
 
     > JavaScript では、例外はオブジェクトとして表示され、例外メッセージがスタック トレースで置き換えられています。 Visual Studio でアプリをデバッグするとき、デバッガーの例外ダイアログ ボックスに、"WinRT 情報" として元のメッセージ テキストが表示されます。
 
--   JavaScript コードから元のメッセージ テキストにアクセスすることはできません。 **ヒント:** 現在、スタック トレースにはマネージ型の例外が含まれますが、トレースを解析して例外の型を特定することはお勧めしません。 このセクションの後半で説明するように、代わりに HRESULT 値を使ってください。 C++ では、例外はプラットフォーム例外として表示されます。 マネージ例外の HResult プロパティを特定のプラットフォーム例外の HRESULT にマップできる場合は、そのプラットフォーム例外が使われます。それ以外の場合は、[Platform::COMException](https://msdn.microsoft.com/library/windows/apps/xaml/hh710414.aspx) 例外がスローされます。
+-   JavaScript コードから元のメッセージ テキストにアクセスすることはできません。 
+            **ヒント:** 現在、スタック トレースにはマネージ型の例外が含まれますが、トレースを解析して例外の型を特定することはお勧めしません。 このセクションの後半で説明するように、代わりに HRESULT 値を使ってください。 C++ では、例外はプラットフォーム例外として表示されます。 マネージ例外の HResult プロパティを特定のプラットフォーム例外の HRESULT にマップできる場合は、そのプラットフォーム例外が使われます。それ以外の場合は、[Platform::COMException](https://msdn.microsoft.com/library/windows/apps/xaml/hh710414.aspx) 例外がスローされます。
 -   マネージ例外のメッセージ テキストは、C++ コードでは利用できません。
 
 特定のプラットフォーム例外がスローされた場合、その例外の型に関する既定のメッセージ テキストが表示されます。それ以外の場合は、メッセージ テキストは表示されません。 「[例外 (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699896.aspx)」をご覧ください。
@@ -272,7 +276,8 @@ C# のラムダ関数を使う場合は、トークンのパラメーターを�
 
 ## HRESULT は、JavaScript の呼び出し元では例外オブジェクトの number プロパティから利用でき、C++ の呼び出し元では [COMException::HResult](https://msdn.microsoft.com/library/windows/apps/xaml/hh710415.aspx) プロパティから利用できます。
 
-**注:** HRESULT には負の値を使ってください。 正の値は成功と解釈されるので、JavaScript や C++ の呼び出し元で例外がスローされなくなります。 イベントの宣言と発生
+
+            **注:** HRESULT には負の値を使ってください。 正の値は成功と解釈されるので、JavaScript や C++ の呼び出し元で例外がスローされなくなります。 イベントの宣言と発生
 
 イベントのデータを保持する型を宣言する場合、EventArgs は Windows ランタイム型ではないので、EventArgs の代わりに Object から派生させます。 [EventHandler&lt;TEventArgs&gt;](https://msdn.microsoft.com/library/db0etb8x.aspx) をイベントの型として使い、イベント引数の型をジェネリック型引数として使います。 イベントは .NET Framework アプリケーションの場合と同様に発生させます。
 

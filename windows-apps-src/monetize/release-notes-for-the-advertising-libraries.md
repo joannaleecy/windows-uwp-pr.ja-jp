@@ -3,7 +3,6 @@ author: mcleanbyron
 ms.assetid: ca92bed1-ad9e-4947-ad91-87d12de727c0
 description: "Microsoft Store Engagement and Monetization SDK に含まれる Microsoft Advertising ライブラリのリリース ノートを確認します。"
 title: "Microsoft Advertising ライブラリのリリース ノート"
-translationtype: Human Translation
 ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
 ms.openlocfilehash: 8e2114e969b27d579f62195f026cfcfd9672a94a
 

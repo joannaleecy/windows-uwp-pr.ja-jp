@@ -3,7 +3,6 @@ author: mcleanbyron
 ms.assetid: 4a311d20-ba8c-4816-8091-35726428dc94
 description: "Microsoft Advertising ライブラリの AdControl クラスおよび InterstitialAd クラスのプロパティ、メソッド、イベントの使用方法を示す追加のサンプルを紹介します。"
 title: "コード サンプル"
-translationtype: Human Translation
 ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
 ms.openlocfilehash: 1a7bf9ed90ed2dadf6de7a141fa03972b06ef144
 

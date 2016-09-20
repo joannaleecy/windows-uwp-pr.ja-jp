@@ -3,7 +3,6 @@ author: mcleblanc
 description: "この移植ガイドを最後まで読み進むことを強くお勧めしますが、まず先に進み、プロジェクトの構築と実行の段階に到達することを非常に望まれていることも理解できます。"
 title: "Windows Phone Silverlight から UWP への移植に関するトラブルシューティング"
 ms.assetid: d9a9a2a7-9401-4990-a992-4b13887f2661
-translationtype: Human Translation
 ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
 ms.openlocfilehash: 0e7c4ba00ab513c1ea9da94f1a3f69b5921c2dc1
 
@@ -52,8 +51,7 @@ XAML 解析例外は診断が難しい場合があります。特に、わかり
 | _XamlCompiler エラー WMC0055: テキスト値 '&lt;ストリーム ジオメトリ&gt;' を 'RectangleGeometry' 型の 'Clip' プロパティに割り当てることができません_ | UWP では、[Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) と XAML C++ UWP アプリの型を使います。 |
 | _XamlCompiler エラー WMC0001: XML 名前空間 [...] で 'RadialGradientBrush' 型が不明です_ | UWP には、**RadialGradientBrush** 型がありません。 マークアップから **RadialGradientBrush** を削除し、[Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) と XAML C++ UWP アプリのその他の型を使います。 |
 | _XamlCompiler エラー WMC0011: 要素 '&lt;UIElement 型&gt;' のメンバー 'OpacityMask' が不明です_ | UWP の  [Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) と XAML C++ UWP アプリを使います。 |
-| _'System.Runtime.InteropServices.COMException' 型の最初の例外は、SYSTEM.NI.DLL で発生する可能性があります。 アプリケーションは、異なるスレッドに対してマーシャリングされたインターフェイスを呼び出しました (HRESULT からの例外: 0x8001010E (RPC_E_WRONG_THREAD))。_ | ここで実行する作業は、UI スレッド上で行う必要があります。 [
-            **CoreWindow.GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589)) を呼び出します。 |
+| _'System.Runtime.InteropServices.COMException' 型の最初の例外は、SYSTEM.NI.DLL で発生する可能性があります。 アプリケーションは、異なるスレッドに対してマーシャリングされたインターフェイスを呼び出しました (HRESULT からの例外: 0x8001010E (RPC_E_WRONG_THREAD))。_ | ここで実行する作業は、UI スレッド上で行う必要があります。 [**CoreWindow.GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589)) を呼び出します。 |
 | アニメーションは実行中ですが、ターゲット プロパティに対しては無効です。 | アニメーションを独立して実行するか、またはアニメーションに対して `EnableDependentAnimation="True"` を設定します。 「[アニメーション](wpsl-to-uwp-porting-xaml-and-ui.md#animation)」をご覧ください。 |
 | Visual Studio で Windows 10 プロジェクトを開いたとき、"Visual Studio 更新プログラムが必要。 1 つ以上のプロジェクトでは、インストールされていないか、Visual Studio に対する今後の更新の一部として含まれるプラットフォーム SDK &lt;バージョン&gt; が必要です。" というメッセージが表示されます。 | このトピックの「[TargetPlatformVersion](#targetplatformversion)」セクションをご覧ください。 |
 | InitializeComponent が xaml.cs ファイルで呼び出されると、System.InvalidCastException がスローされます。 | これは、同じ xaml.cs ファイルを共有している xaml ファイルが複数あり (少なくとも 1 つは MRT 修飾されたファイル)、要素が持つ x:Name 属性が 2 つの xaml ファイル間で整合性がとれていない場合に発生することがあります。 両方の xaml ファイルで同じ要素に同じ名前を追加してみるか、どちらの名前も省略してください。 | 

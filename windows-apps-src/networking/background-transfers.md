@@ -4,19 +4,19 @@ description: "ネットワーク経由でファイルを確実にコピーする
 title: "バックグラウンド転送"
 ms.assetid: 1207B089-BC16-4BF0-BBD4-FD99950C764B
 translationtype: Human Translation
-ms.sourcegitcommit: b15d01ec4fd41a8f03345a4416b4795455928533
-ms.openlocfilehash: cbb8308a3390634f0068f72041803989201e2345
+ms.sourcegitcommit: 177ada6ea8934ca74636454946dfa9c450285167
+ms.openlocfilehash: f8548c85e571d3f0f72f775af4ca40d85e86c163
 
 ---
 
 # バックグラウンド転送
 
-\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
 **重要な API**
 
--   [**Windows.Networking.backgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242)
+-   [**Windows.Networking.BackgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242)
 -   [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998)
 -   [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960)
 
@@ -45,8 +45,7 @@ ms.openlocfilehash: cbb8308a3390634f0068f72041803989201e2345
 
 バックグラウンド転送機能にはネットワーク ステータスの変化に対応する独自のメカニズムがありますが、ネットワーク接続されたアプリには他にも一般的な接続の考慮事項があります。 詳しくは、「[利用できるネットワーク接続情報の活用](https://msdn.microsoft.com/library/windows/apps/hh452983)」をご覧ください。
 
-> 
-              **注:** モバイル デバイスで実行されるアプリでは、接続の種類、ローミング ステータス、ユーザーのデータ通信プランに基づいて転送されるデータの量を、ユーザーが監視および制限できる機能が用意されています。 このため、[**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) が転送が継続中であることを示す場合でも、電話でバックグラウンド転送が一時停止される可能性があります。
+> **注:** モバイル デバイスで実行されるアプリでは、接続の種類、ローミング ステータス、ユーザーのデータ通信プランに基づいて転送されるデータの量を、ユーザーが監視および制限できる機能が用意されています。 このため、[**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) が転送が継続中であることを示す場合でも、電話でバックグラウンド転送が一時停止される可能性があります。
 
 次の表に、電話の現在の状態に応じて、[**BackgroundTransferCostPolicy**](https://msdn.microsoft.com/library/windows/apps/br207138) の各値に対して、電話でバックグラウンド転送が許可されるかどうかを示します。 [**ConnectionCost**](https://msdn.microsoft.com/library/windows/apps/br207244) クラスを使って、電話の現在の状態を判断できます。
 
@@ -75,8 +74,7 @@ ms.openlocfilehash: cbb8308a3390634f0068f72041803989201e2345
 
 [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) の作成を始める前に、アップロード先となる場所の URI とアップロードされるファイルを識別する必要があります。 次の例では、UI 入力からの文字列を使って *uriString* の値が設定され、[**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) 操作で返される [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトを使って *file* の値が設定されます。
 
-[!code-js
-              [uploadFile](./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_B "アップロードするファイルと送信先の特定")]
+[!code-js[uploadFile](./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_B "アップロードするファイルと送信先の特定")]
 
 **アップロード操作の作成と初期化**
 
@@ -86,8 +84,7 @@ ms.openlocfilehash: cbb8308a3390634f0068f72041803989201e2345
 
 最後に、[**BackgroundUploader**](https://msdn.microsoft.com/library/windows/apps/br207140) によって [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) (*upload*) が作成されます。
 
-[!code-js
-              [uploadFile](./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_A "アップロード操作の作成と初期化")]
+[!code-js[uploadFile](./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_A "アップロード操作の作成と初期化")]
 
 JavaScript の promise を使って定義した非同期メソッドの呼び出しに注意してください。 最後の例には次の行があります。
 
@@ -169,13 +166,11 @@ contentParts 配列には、アップロード用の各 [**IStorageFile**](https
 
 1.  持続している操作を列挙する関数を定義する前に、返される [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) オブジェクトを格納する配列を作成する必要があります。
 
-    [!code-js
-              [uploadFile](./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_C "中断されたアップロード操作の再開")]
+    [!code-js[uploadFile](./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_C "中断されたアップロード操作の再開")]
 
 1.  次に、持続している操作を列挙してそれらを配列に格納する関数を定義します。 [**UploadOperation**](https://msdn.microsoft.com/library/windows/apps/br207224) に対するコールバックを再び割り当てるために呼び出される **load** メソッドは、アプリの終了後も持続する場合、このセクションでこの後定義する UploadOp クラス内にあることに注意してください。
 
-    [!code-js
-              [uploadFile](./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_D "持続している操作を列挙する")]
+    [!code-js[uploadFile](./code/backgroundtransfer/upload_quickstart/js/main.js#Snippetupload_quickstart_D "持続している操作を列挙する")]
 
 ## ファイルのダウンロード
 
@@ -283,8 +278,7 @@ Windows 10 の新機能は、アプリが実行されていない場合でも、
 
 -   接続が確立された後、2 分以内で応答を受け取らなかった HTTP 要求メッセージは中止されます。
 
-> 
-              **注:** どちらのシナリオにおいても、バックグラウンド転送はインターネット接続があることを前提に、最高 3 回まで自動的に要求を再試行します。 インターネット接続が検出されないと、検出されるまで別の要求は待機します。
+> **注:** どちらのシナリオにおいても、バックグラウンド転送はインターネット接続があることを前提に、最高 3 回まで自動的に要求を再試行します。 インターネット接続が検出されないと、検出されるまで別の要求は待機します。
 
 ## デバッグのガイダンス
 
@@ -308,8 +302,7 @@ Visual Studio を使う 4 つのシナリオで、この問題が発生する可
 
 Uniform Resource Identifier (URI) として無効な文字列が、[**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) オブジェクトのコンストラクターに渡されると、例外がスローされます。
 
-
-              **.NET: **[**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) 型は、C# や VB では [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) と表示されます。
+**.NET: **[**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) 型は、C# や VB では [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) と表示されます。
 
 C# と Visual Basic では、.NET 4.5 の [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) クラスと、いずれかの [**System.Uri.TryCreate**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.trycreate.aspx) メソッドを使って、URI が作成される前にアプリのユーザーから受け取った文字列をテストすることによって、このエラーを回避できます。
 
@@ -324,6 +317,6 @@ C++ では、URI として渡される文字列を試行して解析するメソ
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

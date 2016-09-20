@@ -18,7 +18,7 @@ Xbox の開発環境のユニバーサル Windows プラットフォーム (UWP)
 
 ## Visual Studio のセットアップ
 
-1. Visual Studio 2015 Update 2 以降をインストールします。 詳しい情報とインストール方法については、「[Windows 10 のダウンロードとツール](https://dev.windows.com/downloads)」をご覧ください。
+1. Visual Studio2015 Update2 以降をインストールします。 詳しい情報とインストール方法については、「[Windows 10 のダウンロードとツール](https://dev.windows.com/downloads)」をご覧ください。
 
 1. Visual Studio 2015 Update 2 をインストールするときは、**[ユニバーサル Windows アプリ開発ツール]** チェック ボックスがオンになっていることを確認します。
 
@@ -28,7 +28,8 @@ Xbox の開発環境のユニバーサル Windows プラットフォーム (UWP)
 
 最新の Windows 10 SDK プレビュー ビルドをインストールします。 インストールについて詳しくは、「[開発者向け Insider Preview 更新プログラムのダウンロード](http://go.microsoft.com/fwlink/p/?LinkId=780552)」をご覧ください。
 
-  > **重要**
+  > 
+            **重要**
             &nbsp;&nbsp;最新の SDK をインストールする必要があります。ただし、オペレーティング システムの Windows Insider Preview の最新リリースをインストールする必要は_ありません_。
 
 ## Xbox One の設定

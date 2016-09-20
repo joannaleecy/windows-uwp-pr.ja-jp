@@ -3,7 +3,6 @@ author: mcleanbyron
 Description: "広告の仲介に関連した、開発に関するいくつかの一般的な問題に対する解決策を以下に示します。"
 title: "広告の仲介のトラブルシューティング"
 ms.assetid: 8728DE4F-E050-4217-93D3-588DD3280A3A
-translationtype: Human Translation
 ms.sourcegitcommit: 10dcf3c2b8ea530b94e9c17ada80aaa98e9418fe
 ms.openlocfilehash: f32dc28c9b199c11a1932639f49ab4c29d3e1e8f
 
@@ -21,7 +20,8 @@ C# または Visual Basic と XAML を使ったユニバーサル Windows プラ
 
 それでもコントロールをデザイナーに正常に追加できない場合は、プロジェクトのターゲットが **[Any CPU]** (任意の CPU) ではなく、アプリに該当するプロセッサ アーキテクチャ (たとえば、**[x86]**) であることを確認します。 プロジェクトのビルド プラットフォームのターゲットを **[Any CPU]** にしている場合、このコントロールをデザイナーに追加できません。
 
-*
+
+            *
               *Microsoft から広告を提供しているときに、AdMediatorControl によって "&lt;*width*
             &gt; x &lt;*height*&gt; はサポートされていません" というエラーが表示される** Microsoft Advertising は、[Interactive Advertising Bureau (IAB) が推奨する特定の広告サイズ](add-and-use-the-ad-mediator-control.md#supported-ad-sizes-for-microsoft-advertising)のみをサポートします。状況によっては、デザイナーまたは XAML で、広告メディエーターのコントロールの幅と高さをサポートされている広告サイズのいずれかに設定した場合でも、拡大縮小や丸めの問題によって、広告の仲介フレームワークに広告が提供されない可能性があります。この問題を回避するには、コード内で Microsoft Advertising のオプションのパラメーター **Width** と **Height** に、サポートされている広告サイズのいずれかを割り当てます。
 
@@ -52,7 +52,8 @@ myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.AdDuplex]["Size"] = "160x
 ```
 
 **「Something is covering the ad control」(何かが広告コントロールを覆っています) というエラーが発生する**  
-アプリ内の広告が何らかの方法で隠されている場合、AdDuplex は必ずエラーを表示します。 このエラーに対する[解決策をお読みください](http://blog.adduplex.com/2014/01/solving-something-is-covering-ad.mdl)。
+アプリ内の広告が何らかの方法で隠されている場合、AdDuplex は必ずエラーを表示します。 
+            このエラーに対する[解決策をお読みください](http://blog.adduplex.com/2014/01/solving-something-is-covering-ad.mdl)。
 
 **「2 つのファイルの間で競合が見つかりました」というエラーが発生する**  
 アプリ内の別の場所で Microsoft Advertising アセンブリを参照しています。 広告の仲介はアプリ内で排他的に動作するようにデザインされており、Microsoft Advertising アセンブリに対する他の参照が使われている場合は機能しません。 Microsoft Advertising の参照を手動で削除し、Microsoft Store Engagement and Monetization SDK を再インストールして、エラーをクリアします。

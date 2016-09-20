@@ -1,31 +1,37 @@
 ---
 author: normesta
-description: 'Shows how to integrate social feeds into the People app'
-MSHAttr: 'PreferredLib:/library/windows/apps'
-title: 'Provide social feeds to the People app'
+description: "People アプリにソーシャル フィードを統合する方法を紹介する"
+MSHAttr: PreferredLib:/library/windows/apps
+title: "People アプリにソーシャル フィードを提供する"
+translationtype: Human Translation
+ms.sourcegitcommit: 767acdc847e1897cc17918ce7f49f9807681f4a3
+ms.openlocfilehash: c5b9666d8654a4065bc0e4e400d3e47de4773b8b
+
 ---
 
-# Provide social feeds to the People app
+# People アプリにソーシャル フィードを提供する
 
-Integrate social feed data from your database into the People app.
+データベースのソーシャル フィード データを People アプリに統合します。
 
-Your feed data will appear in the **What's New** pages of the People app or in the **Profile** page of a contact.
+フィード データは、People アプリの **[新着情報]** ページまたは連絡先の **[プロファイル]** ページに表示されます。
 
-![Social Feeds in People App](images/social-feeds.png)
+ユーザーはフィード項目をタップしてアプリを開くことができます。
 
-To get started, create a foreground app that tags contacts for social feeds and a background agent that sends feed data to the People app.
+![People アプリのソーシャル フィード](images/social-feeds.png)
 
-For a more complete sample, see [Social Info Sample](https://github.com/Microsoft/Windows-Social-Samples/tree/master/SocialInfoSampleApp).
+最初に、連絡先にソーシャル フィードのタグを付けるフォアグラウンド アプリと、People アプリにフィード データを送信するバックグラウンド エージェントを作成します。
 
-## Create a foreground app
+完全なサンプルについては、[ソーシャル情報のサンプル](https://github.com/Microsoft/Windows-Social-Samples/tree/master/SocialInfoSampleApp)をご覧ください。
 
-First, create a Universal Windows Platform (UWP) project and then add the **Windows Mobile Extensions for UWP** to it.
+## フォアグラウンド アプリを作成する
 
-![Mobile Extensions](images/mobile-extensions.png)
+まず、ユニバーサル Windows プラットフォーム (UWP) プロジェクトを作成し、**[Windows Mobile Extensions for UWP]** を追加します。
 
-### Find or create contacts
+![モバイル拡張](images/mobile-extensions.png)
 
-You can find contacts by using a name, email address, or phone number.
+### 連絡先を検索または作成する
+
+連絡先は、名前、メール アドレス、または電話番号を使って検索できます。
 
 ```cs
 ContactStore contactStore = await ContactManager.RequestStoreAsync();
@@ -36,7 +42,7 @@ contacts = await contactStore.FindContactsAsync(emailAddress);
 
 Contact contact = contacts[0];
 ```
-You can also create contacts and then add them to a contact list.
+連絡先は、作成してから連絡先一覧に追加することもできます。
 
 ```cs
 Contact contact = new Contact();
@@ -67,11 +73,11 @@ else
 await contactList.SaveContactAsync(contact);
 ```
 
-### Tag each contact with an annotation
+### 注釈を使って各連絡先にタグを付ける
 
-This *annotation* causes the People app to request feed data for the contact from your background agent.
+この*注釈*によって、People アプリはバックグラウンド エージェントから連絡先のフィード データを要求します。
 
-As part of the annotation, associate the ID of the contact to an ID that your app uses internally to identify that contact.
+注釈の一部として、連絡先の ID を、アプリがその連絡先を識別するために内部で使っている ID に関連付けます。
 
 ```cs
 ContactAnnotationStore annotationStore = await
@@ -94,11 +100,11 @@ annotation.SupportedOperations = ContactAnnotationOperations.SocialFeeds;
 await annotationList.TrySaveAnnotationAsync(annotation);
 
 ```
-### Provision the background agent
+### バックグラウンド エージェントをプロビジョニングする
 
-Make sure that the [SocialInfoContract](https://msdn.microsoft.com/library/windows/apps/dn706146.aspx) API contract is available on the device that will run your app.
+アプリを実行するデバイスで [SocialInfoContract](https://msdn.microsoft.com/library/windows/apps/dn706146.aspx) API コントラクトを利用できることを確認してください。
 
-If it's available, then provision the background agent.
+利用できる場合は、バックグラウンド エージェントをプロビジョニングします。
 
 ```cs
 if (Windows.Foundation.Metadata.ApiInformation.IsApiContractPresent(
@@ -114,21 +120,21 @@ if (Windows.Foundation.Metadata.ApiInformation.IsApiContractPresent(
     }
 }
 ```
-## Create the background agent
+## バック グラウンド エージェントを作成する
 
-The background agent is a Windows Runtime Component that responds to feed requests from the People app.
+バックグラウンド エージェントは、People アプリからのフィード要求に応答する Windows ランタイム コンポーネントです。
 
-In your agent, you'll respond to those requests by giving the People app feed data from your database.
+お使いのエージェントでは、データベースのフィード データを People アプリに提供することで、それらの要求に応答します。
 
-### Create a Windows Runtime Component
+### Windows ランタイム コンポーネントを作成する
 
-Add a **Windows Runtime Component (Universal Windows)** project to your solution.
+ソリューションに **[Windows ランタイム コンポーネント (ユニバーサル Windows)]** プロジェクトを追加します。
 
-![Windows Runtime Component](images/windows-runtime-component.png)
+![Windows ランタイム コンポーネント](images/windows-runtime-component.png)
 
-### Register the background agent as an app service
+### バックグラウンド エージェントをアプリ サービスとして登録する
 
-Register by adding protocol handlers to the ``Extensions`` element of the manifest.
+登録するには、プロトコル ハンドラーをマニフェストの ``Extensions`` 要素に追加します。
 
 ```xml
 <Extensions>
@@ -137,27 +143,27 @@ Register by adding protocol handlers to the ``Extensions`` element of the manife
   </uap:Extension>
 </Extensions>
 ```
-You can also add these in the **Declarations** tab of the manifest designer in Visual Studio.
+Visual Studio のマニフェスト デザイナーの **[宣言]** タブで追加することもできます。
 
-![App Service in Manifest Designer](images/manifest-designer-app-service.png)
+![マニフェスト デザイナーの App Service](images/manifest-designer-app-service.png)
 
-### Request operations from the People app
+### People アプリから操作を要求する
 
-Ask the People app what type of data it wants next. The People app will respond to your request with a code that indicates which feed it wants data for.
+次に必要なデータの種類を People アプリに要求します。 People アプリは、どのフィードのデータが必要なのかを示すコードを使って要求に応答します。
 
-This table describes each feed:
+次の表で、各フィードについて説明します。
 
-| Feed | Description |
+| フィード | 説明 |
 |-------|-------------|
-| Home | Feed that appears in the What's New page of the People app. |
-| Contact | Feed that appears in the What's New page of a contact. |
-| Dashboard | Feed that appears in the contact card next to the profile picture. |
+| ホーム | People アプリの [新着情報] ページに表示するフィード。 |
+| 連絡先 | 連絡先の [新着情報] ページに表示するフィード。 |
+| ダッシュボード | プロフィール画像の横にある連絡先カードに表示するフィード。 |
 <br>
-You'll ask the People app by requesting an *operation*. Implement the [IBackgroundTask](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.aspx) interface and override the [Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx) method.
+*操作*を要求することによって、People アプリに要求します。 [IBackgroundTask](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.aspx) インターフェイスを実装し、[Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx) メソッドをオーバーライドします。
 
-In the [Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx) method, send the People app two key-value pairs. One of them contains the version of the protocol and the other one contains the type of the operation.
+[Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx) メソッドで、People アプリに 2 組のキーと値のペアを送信します。 それらのペアの 1 つにはプロトコルのバージョンが含まれ、もう 1 つには操作の種類が含まれます。
 
-Then listen for a response from the People app. That response will contain a code.
+People アプリからの応答をリッスンします。 その応答にはコードが含まれます。
 
 ```cs
 public sealed class BackgroundAgent : IBackgroundTask
@@ -225,41 +231,41 @@ public sealed class BackgroundAgent : IBackgroundTask
 }
 ```
 
-Refer to the ``Type`` element of the [AppServiceResponse.Message](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appservice.appserviceresponse.message.aspx) property to get that code. Here's a complete list of the codes.
+[AppServiceResponse.Message](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appservice.appserviceresponse.message.aspx) プロパティの ``Type`` 要素を参照して、そのコードを取得します。 以下に、コードの完全な一覧を示します。
 
-| Type| Description |
+| 型| 説明 |
 |-----|-------------|
-| 0x10 | A request to the People app for the next operation. |
-| 0x11 | A request from the People app to provide the home feed for the primary user. |
-| 0x13 | A request from the People app to get the contact feed for the selected contact. |
-| 0x15 | A request from the People app to get the dashboard item of the selected contact. |
-| 0x80 | Indicates that the operation is completed. This notifies the People app that the data is now available. |
-| 0xF1 | A message from the People app indicating that it does not require any other operations. The background agent can shut down now. |
+| 0x10 | People アプリへの次の操作の要求。 |
+| 0x11 | プライマリ ユーザーにホーム フィードを提供するための People アプリからの要求。 |
+| 0x13 | 選択した連絡先の連絡先フィードを取得するための People アプリからの要求。 |
+| 0x15 | 選択した連絡先のダッシュボード アイテムを取得するための People アプリからの要求。 |
+| 0x80 | 操作が完了したことを示します。 データが利用できるようになったことが People アプリに通知されます。 |
+| 0xF1 | 他の操作を要求していないことを示す People アプリからのメッセージ。 この時点で、バックグラウンド エージェントはシャットダウンできます。 |
 <br>
-The [AppServiceResponse.Message](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appservice.appserviceresponse.message.aspx) property also returns a collection of other key-value pairs that describe the response. Here's a list of them.
+また、[AppServiceResponse.Message](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.appservice.appserviceresponse.message.aspx) プロパティは、応答について説明する他のキーと値のペアのコレクションを返します。 その一覧を次に示します。
 
-| Key | Type | Description |
+| キー | 型 | 説明 |
 |-----|------|-------------|
-| Version | UINT32 | (Required) Identifies the version of the message protocol. The upper 16 bits are the major version, and the lower 16 bits are the minor version. |
-| Type | UINT32 | (Required) The type of operation to perform. The previous example uses the Type key to determine what operation the People app is asking for.
-| OperationId | UINT32 | The ID of the operation. |
-| OwnerRemoteId | String | ID that your app uses internally to identify that contact. |
-| LastFeedItemTimeStamp | String | The ID of the last feed item that was retrieved. |
-| LastFeedItemTimeStamp | DateTime | The time stamp of the last feed item that was retrieved. |
-| ItemCount | UINT32 | The number of items that the People app asks for. |
-| IsFetchMore | BOOLEAN | Determines when the internal cache is updated. |
-| ErrorCode | UINT32 | The error code associated with the background agent operation. |
+| Version | UINT32 | (必須) メッセージ プロトコルのバージョンを識別します。 上位 16 ビットはメジャー バージョンで、下位 16 ビットはマイナー バージョンです。 |
+| 型 | UINT32 | (必須) 実行する操作の種類。 上記の例では、Type キーを使って People アプリが要求している操作を判断しています。
+| OperationId | UINT32 | 操作の ID。 |
+| OwnerRemoteId | String | 対象の連絡先を識別するためにアプリが内部で使っている ID。 |
+| LastFeedItemTimeStamp | String | 最後に取得されたフィード項目の ID。 |
+| LastFeedItemTimeStamp | DateTime | 最後に取得されたフィード項目のタイム スタンプ。 |
+| ItemCount | UINT32 | People アプリが要求する項目の数。 |
+| IsFetchMore | BOOLEAN | 内部キャッシュを更新するタイミングを決定します。 |
+| ErrorCode | UINT32 | バックグラウンド エージェントの操作に関連付けられたエラー コード。 |
 <br>
-### Provide a data feed to the People app
+### People アプリにデータ フィードを提供する
 
-A **Type** value of ``0x11``, ``0x13``, or ``0x15`` is a request from the People app for feed data.  
+**Type** の値 ``0x11``、``0x13``、``0x15`` は、フィード データに対する People アプリからの要求です。  
 
-The next few snippets show an approach to providing that data to the People app.
+次に示すいくつかのスニペットは、People アプリに対象のデータを提供するアプローチを示しています。
 
 > [!NOTE]
-> These snippets come from the [Social Info Sample](https://github.com/Microsoft/Windows-Social-Samples/tree/master/SocialInfoSampleApp). They contain references to interfaces, classes and members that are defined elsewhere in the sample. Use these snippets along with the other examples in this topic to understand the flow of tasks and refer to the sample if you're interested in diving further into the stack of interfaces, classes, and types.
+> これらのスニペットは、[ソーシャル情報のサンプル](https://github.com/Microsoft/Windows-Social-Samples/tree/master/SocialInfoSampleApp)から引用しています。 そのため、サンプルの他の部分で定義されているインターフェイス、クラス、メンバーへの参照が含まれています。 これらのスニペットをこのトピックの他の例と一緒に使って、タスクのフローを理解し、多数のインターフェイス、クラス、型の詳細に関心がある場合はサンプルを参照してください。
 
-**Get contact feed items**
+**連絡先フィード項目を取得する**
 
 ```cs
 public override async Task DownloadFeedAsync()
@@ -311,7 +317,7 @@ public override async Task DownloadFeedAsync()
 }
 ```
 
-**Get dashboard items**
+**ダッシュボード項目を取得する**
 
 ```cs
 public override async Task DownloadFeedAsync()
@@ -354,7 +360,7 @@ public override async Task DownloadFeedAsync()
 }
 ```
 
-**Get home feed items**
+**ホーム フィード項目を取得する**
 
 ```cs
 public override async Task DownloadFeedAsync()
@@ -406,9 +412,9 @@ public override async Task DownloadFeedAsync()
 }
 ```
 
-### Send success or failure notification back to the People app
+### People アプリに成功か失敗かの通知を送信する
 
-Encapsulate your calls in a try catch block and then pass back a success or failure message to the People app after you've provided feed data.
+フィード データを指定した後、try catch ブロックで呼び出しをカプセル化し、People アプリに成功か失敗かのメッセージを返します。
 
 ```cs
 try
@@ -433,3 +439,9 @@ fields.Add("OperationId", operationID);
 await this.mAppServiceConnection.SendMessageAsync(fields);
 
 ```
+
+
+
+<!--HONumber=Aug16_HO4-->
+
+

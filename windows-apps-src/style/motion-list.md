@@ -5,7 +5,6 @@ title: "UWP アプリでの追加と削除のアニメーション"
 ms.assetid: A85006AE-4992-457a-B514-500B8BEF5DC8
 label: Motion--add and delete animations
 template: detail.hbs
-translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
 ms.openlocfilehash: a795cf52c3d062d2131832ac3bc765f45097e849
 

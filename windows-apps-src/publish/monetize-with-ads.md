@@ -3,7 +3,6 @@ author: jnHs
 Description: "アプリで Microsoft Advertising の広告仲介を使ったり、バナーやスポット広告ビデオを表示したりする場合は、[収益化]、[広告で収入を増やす] ページの順に選択して、広告の使用を管理します。"
 title: "広告による収益獲得"
 ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 97eeeedb9e73b6c67abe6e2ff8cadbc744a6a7c4
 
@@ -33,7 +32,8 @@ Microsoft アフィリエイト広告をアプリに表示する場合は、こ�
 
 この選択を変更した場合、変更を反映させるためにアプリを再公開する必要はありません。 Microsoft アフィリエイト広告について詳しくは、「[アフィリエイト広告について](about-affiliate-ads.md)」をご覧ください。
 
-> **注**  アプリで広告仲介を使用するときは (つまり、**AdMediatorControl** を使用して広告を表示する場合)、Microsoft からの広告を表示するように広告仲介が設定されている場合にのみ、アプリでアフィリエイト広告を表示できます。
+> 
+            **注**  アプリで広告仲介を使用するときは (つまり、**AdMediatorControl** を使用して広告を表示する場合)、Microsoft からの広告を表示するように広告仲介が設定されている場合にのみ、アプリでアフィリエイト広告を表示できます。
 
 ## コミュニティ広告
 
@@ -60,7 +60,8 @@ Microsoft アフィリエイト広告をアプリに表示する場合は、こ�
 -   アプリにバナー広告を表示する場合は、これらの値を [AdControl](https://msdn.microsoft.com/library/mt313154.aspx) オブジェクトの [ApplicationId](https://msdn.microsoft.com/library/mt313174.aspx) プロパティと [AdUnitId](https://msdn.microsoft.com/library/mt313171.aspx) プロパティに割り当てる必要があります。
 -   アプリでスポット広告ビデオを表示する場合は、[InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx) オブジェクトの [RequestAd](https://msdn.microsoft.com/library/mt313192.aspx) メソッドにこれらの値を渡します。
 
-> **注**  アプリで広告仲介を使って、Microsoft Advertising からバナー広告を表示する (つまり、**AdMediatorControl** オブジェクトを使う) 場合は、広告ユニットを要求する必要はありません。 このシナリオでは、Microsoft Advertising 広告ユニットが自動的に生成されます。
+> 
+            **注**  アプリで広告仲介を使って、Microsoft Advertising からバナー広告を表示する (つまり、**AdMediatorControl** オブジェクトを使う) 場合は、広告ユニットを要求する必要はありません。 このシナリオでは、Microsoft Advertising 広告ユニットが自動的に生成されます。
 
  
 

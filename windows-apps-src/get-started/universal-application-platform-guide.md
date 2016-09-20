@@ -1,11 +1,11 @@
 ---
 author: TylerMSFT
 title: "ユニバーサル Windows プラットフォーム (UWP) アプリのガイド"
-description: "このガイドでは、さまざまなデバイスで実行できるユニバーサル Windows プラットフォーム (UWP) アプリについて説明します。"
+description: "さまざまなデバイスで実行できるユニバーサル Windows プラットフォーム (UWP) アプリについて説明します。"
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
 translationtype: Human Translation
-ms.sourcegitcommit: 4ad8dc5883b7edafa2c2579d3733eafba0b9cc1f
-ms.openlocfilehash: 8f4e906c9f1c685a5f6aeebd5fe0ebcc96ff9a7c
+ms.sourcegitcommit: 2df873ad451e2bb1196a1ce42e3fcd40f8c3ac8e
+ms.openlocfilehash: 925db2c5242eb49229f41298f1db4e2653f3499d
 
 ---
 
@@ -34,7 +34,7 @@ UWP アプリはさまざまなフォーム ファクターと入力モダリテ
 
 Windows 8.1 アプリと Windows Phone 8.1 アプリがターゲットとするオペレーティング システム (OS) は、Windows または Windows Phone です。 Windows 10 では、オペレーティング システムをターゲットにする代わりに、1 つまたは複数のデバイス ファミリに設定されたアプリをターゲットにします。 デバイス ファミリに基づいて、デバイス ファミリのデバイス全体で想定できる API、システム特性、動作を特定します。 ストアからアプリをインストールできる一連のデバイスも決定します。 次にデバイス ファミリの階層を示します。
 
-![デバイス ファミリ](images/devicefamilytree.png)
+![デバイス ファミリ](images/device-family-tree.png)
 
 デバイス ファミリは、まとめられて、名前とバージョン番号が指定された一連の API です。 デバイス ファミリは OS の基盤です。 PC ではデスクトップ デバイス ファミリに基づいているデスクトップ OS を実行します。 電話やタブレットなどでは、モバイル デバイス ファミリに基づいているモバイル OS を実行します。 その他
 
@@ -51,6 +51,8 @@ Windows 8.1 アプリと Windows Phone 8.1 アプリがターゲットとする�
 -   ストア (および結果として、検討する必要のあるフォーム ファクター) からアプリをインストールできる一連のデバイス。
 
 デバイス ファミリの選択には主に次の 2 つの結果があります。アプリによって無条件に呼び出せる API サーフェスとアプリをインストールできるデバイスの数です。 これら 2 つの要素にはトレードオフがあり、逆相関します。 たとえば、UWP アプリは特にユニバーサル デバイス ファミリをターゲットとするアプリで、その結果、すべてのデバイスに利用できます。 ユニバーサル デバイス ファミリをターゲットとするアプリでは、ユニバーサル デバイス ファミリの API のみが存在することが期待できます (ターゲットとするものであるため)。 その他の API は、条件付きで呼び出す必要があります。 また、このようなアプリはさまざまなデバイスで実行できるため、高度なアダプティブ UI と包括的な入力機能を備えている必要があります。 Windows モバイル アプリは、特にモバイル デバイス ファミリをターゲットとするアプリで、OS がモバイル デバイス ファミリ (電話、タブレット、類似したデバイスを含む) に基づくデバイスで利用できます。 モバイル デバイス ファミリのアプリには、モバイル デバイス ファミリのすべての API が存在することが期待でき、その UI はある程度アダプティブである必要があります。 IoT デバイス ファミリをターゲットとするアプリは IoT デバイスのみにインストールすることができ、IoT デバイス ファミリ内のすべての API が存在することが期待できます。 このアプリは特定の種類のデバイスでのみ実行されることがわかっているため、UI と入力機能に特化することができます。
+
+<iframe src="https://channel9.msdn.com/Blogs/One-Dev-Minute/Introduction-to-UWP-and-Device-Families/player" width="640" height="360" allowFullScreen frameBorder="0"></iframe>
 
 ターゲットにするデバイス ファミリを決定するために役立つ考慮事項をいくつか紹介します。
 
@@ -103,9 +105,7 @@ Windows 10 には、calendar and split ビューなどの新しいコントロ�
 
 ### アダプティブ パネルでアダプティブ UI を設計する
 
-レイアウト パネルでは、利用可能な領域に応じて、子にサイズと位置を指定します。 たとえば、[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635) は子を連続的に順序付けます (横方向または縦方向)。 
-              [
-              **Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) は子をセルに配置する CSS グリッドのようなものです。
+レイアウト パネルでは、利用可能な領域に応じて、子にサイズと位置を指定します。 たとえば、[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635) は子を連続的に順序付けます (横方向または縦方向)。 [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) は子をセルに配置する CSS グリッドのようなものです。
 
 新しい [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/dn879546) は子要素間の関係で定義されるレイアウトのスタイルを実装します。 画面の解像度の変更に対応できるアプリのレイアウトの作成で使用します。 **RelativePanel** は要素間の関係を定義して要素を並べ替えやすくして、入れ子になったレイアウトを使わずにさらに動的な UI を作成できるようにします。
 
@@ -185,15 +185,9 @@ Windows 10 には、既存のスケーリング モデルの進化形が導入�
 
 次の API は、入力へのアクセスを提供します。
 
--   
-              [
-              **CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/dn298460) は、メイン スレッドまたはバックグラウンド スレッドで未加工入力を利用できるようにする新しい API です。
--   
-              [
-              **PointerPoint**](https://msdn.microsoft.com/library/windows/apps/br242038) は、未加工のタッチ、マウス、ペンのデータを、1 つの一貫したインターフェイスやイベントのセットに統合します。これらのインターフェイスやイベントは、**CoreInput** を使うことにより、メイン スレッドまたはバックグラウンド スレッドで利用できます。
--   
-              [
-              **PointerDevice**](https://msdn.microsoft.com/library/windows/apps/br225633) は、デバイスで使用可能な入力モダリティを特定するために、デバイス機能の照会をサポートするデバイス API です。
+-   [**CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/dn298460) は、メイン スレッドまたはバックグラウンド スレッドで未加工入力を利用できるようにする新しい API です。
+-   [**PointerPoint**](https://msdn.microsoft.com/library/windows/apps/br242038) は、未加工のタッチ、マウス、ペンのデータを、1 つの一貫したインターフェイスやイベントのセットに統合します。これらのインターフェイスやイベントは、**CoreInput** を使うことにより、メイン スレッドまたはバックグラウンド スレッドで利用できます。
+-   [**PointerDevice**](https://msdn.microsoft.com/library/windows/apps/br225633) は、デバイスで使用可能な入力モダリティを特定するために、デバイス機能の照会をサポートするデバイス API です。
 -   新しい [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) XAML コントロールと [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) Windows ランタイム API によって、インク ストローク データにアクセスできます。
 
 ## コードの記述
@@ -263,8 +257,7 @@ UWP アプリに利用可能な Win32 API の完全な一覧については、�
 
 ユニバーサル Windows アプリによって、実行されているデバイスの固有の機能を利用することができます。 アプリでは、デスクトップ デバイスのすべての機能、タブレットの直接的で自然な操作 (タッチ/ペン入力を含む)、モバイル デバイスの移植性と便利さ、[Surface Hub](http://go.microsoft.com/fwlink/?LinkId=526365) の協調機能、UWP アプリをサポートするその他のデバイスを使うことができます。
 
-適切な[設計](http://go.microsoft.com/fwlink/?LinkId=258848)とは、ユーザーによるアプリの操作方法と、アプリの外観や機能を決定するプロセスです。 ユーザー エクスペリエンスは、ユーザーがアプリでどの程度満足するかを判断する場合に大きな役割を果たします。そのため、この手順は必ず守ってください。 
-              [設計の基本に関するページ](https://dev.windows.com/design)では、ユニバーサル Windows アプリの設計を紹介します。 ユーザーを楽しませる UWP アプリの設計の情報については、「[デザイナー向けユニバーサル Windows プラットフォーム (UWP) アプリの紹介](https://msdn.microsoft.com/library/windows/apps/dn958439)」をご覧ください。 コーディングを開始する前に、ターゲットにするすべての異なるフォーム ファクターについてのアプリの使用についての操作エクスペリエンスを検討するために役立つ「[デバイスの基本情報](../input-and-devices/device-primer.md)」をご覧ください。
+適切な[設計](http://go.microsoft.com/fwlink/?LinkId=258848)とは、ユーザーによるアプリの操作方法と、アプリの外観や機能を決定するプロセスです。 ユーザー エクスペリエンスは、ユーザーがアプリでどの程度満足するかを判断する場合に大きな役割を果たします。そのため、この手順は必ず守ってください。 [設計の基本に関するページ](https://dev.windows.com/design)では、ユニバーサル Windows アプリの設計を紹介します。 ユーザーを楽しませる UWP アプリの設計の情報については、「[デザイナー向けユニバーサル Windows プラットフォーム (UWP) アプリの紹介](https://msdn.microsoft.com/library/windows/apps/dn958439)」をご覧ください。 コーディングを開始する前に、ターゲットにするすべての異なるフォーム ファクターについてのアプリの使用についての操作エクスペリエンスを検討するために役立つ「[デバイスの基本情報](../input-and-devices/device-primer.md)」をご覧ください。
 
 ![Windows デバイス](images/1894834-hig-device-primer-01-500.png)
 
@@ -290,12 +283,8 @@ UWP アプリに利用可能な Win32 API の完全な一覧については、�
 
 Windows ストアにアプリ公開の申請をする方法については、「[統合 Windows デベロッパー センター ダッシュボードの使用](../publish/using-the-windows-dev-center-dashboard.md)」をご覧ください。
 
- 
-
- 
 
 
-
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

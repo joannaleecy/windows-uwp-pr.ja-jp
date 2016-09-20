@@ -1,144 +1,148 @@
 ---
 author: Jwmsft
-Description: Use nested UI to enable multiple actions on a list item
-title: Nested UI in list items
+Description: "入れ子になった UI を使用してリスト項目に対する複数の操作を有効にする"
+title: "リスト項目の入れ子になった UI"
 label: Nested UI in list items
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 37f47db0d7085bf61836ed3fc9ccdc03470f58da
+
 ---
+# リスト項目の入れ子になった UI
+
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-# Nested UI in list items
+入れ子になった UI は、コンテナー内部に囲まれた、操作できる入れ子になったコントロールを公開するユーザー インターフェイス (UI) です。個別のフォーカスを取得することも可能です。
 
-Nested UI is a user interface (UI) that exposes nested actionable controls enclosed inside a container that also can take independent focus.
+入れ子になった UI を使用することで、重要な操作をスムーズに行うことができるようになる追加のオプションをユーザーに提供できます。 ただし、公開する操作の数が増えるにつれて、UI は複雑になります。 この UI パターンの使用を決めた場合は十分に注意することが必要です。 この記事では、特定の UI に最適な一連の操作の判断に役立つガイドラインを提供します。
 
-You can use nested UI to present a user with additional options that help accelerate taking important actions. However, the more actions you expose, the more complicated your UI becomes. You need to take extra care when you choose to use this UI pattern. This article provides guidelines to help you determine the best course of action for your particular UI.
+この記事では、[ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) 項目および [GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx) 項目の入れ子になった UI の作成について説明します。 このセクションでは、入れ子になった UI の他の例については取り上げませんが、これらの概念は他でも利用できます。 始める前に、UI における ListView コントロールまたは GridView コントロールの使用について、一般的なガイダンスを理解している必要があります。この一般的なガイダンスについては、「[リスト](lists.md)」と「[リスト ビューとグリッド ビュー](listview-and-gridview.md)」の記事をご覧ください。
 
-In this article, we discuss the creation of nested UI in [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) and [GridView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx) items. While this section does not talk about other nested UI cases, these concepts are transferrable. Before you start, you should be familiar with the general guidance for using ListView or GridView controls in your UI, which is found in the [Lists](lists.md) and [List view and grid view](listview-and-gridview.md) articles.
+この記事で使用する用語、*リスト*、*リスト項目*、*入れ子になった UI* は次のように定義します。
+- *リスト*は、リスト ビューまたはグリッド ビューに含まれた項目のコレクションを表します。
+- *リスト項目*は、ユーザーが操作を実行できるリスト上の個別の項目を表します。
+- *入れ子になった UI* は、リスト項目自体に対する操作とは別にユーザーが操作できるリスト項目内の UI 要素を表します。
 
-In this article, we use the terms *list*, *list item*, and *nested UI* as defined here:
-- *List* refers to a collection of items contained in a list view or grid view.
-- *List item* refers to an individual item that a user can take action on in a list.
-- *Nested UI* refers to UI elements within a list item that a user can take action on separate from taking action on the list item itself.
+![入れ子になった UI 部](images/nested-ui-example-1.png)
 
-![Nested UI parts](images/nested-ui-example-1.png)
+> 注&nbsp;&nbsp; ListView と GridView はどちらも [ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx) クラスから派生しているため機能は同じですが、データの表示方法が異なります。 この記事では、リストについての説明は ListView コントロールにも GridView コントロールにも適用されます。
 
-> NOTE&nbsp;&nbsp; ListView and GridView both derive from the [ListViewBase](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx) class, so they have the same functionality, but display data differently. In this article, when we talk about lists, the info applies to both the ListView and GridView controls.
+## プライマリ操作とセカンダリ操作
 
-## Primary and secondary actions
+リストを使って UI を作成する場合、それらのリスト項目でユーザーがどのような操作を行う可能性があるかを考える必要があります。  
 
-When creating UI with a list, consider what actions the user might take from those list items.  
+- ユーザーが項目をクリックして操作を実行できるかどうか。
+    - 通常、リスト項目をクリックすると操作が開始されますが、そうである必要はありません。
+- ユーザーが 2 つ以上の操作を実行する可能性があるかどうか。
+    - たとえば、リストのメールをタップすることでメールが開きます。 ただし、メールを削除するなど、メールを開かずに、ユーザーがまず行うことを望む他の操作が存在する場合があります。 こうした操作をリストから直接実行できればユーザーにとってメリットになります。
+- 操作をどのようにユーザーに公開するか。
+    - 入力の種類をすべて検討します。 入れ子になった UI の形式によっては、1 つの入力方法が適切に機能しても、他の方法では動作しない場合があります。  
 
-- Can a user click on the item to perform an action?
-    - Typically, clicking a list item initiates an action, but it doesn't have too.
-- Is there more than one action the user can take?
-    - For example, tapping an email in a list opens that email. However, there might be other actions, like deleting the email, that the user would want to take without opening it first. It would benefit the user to access this action directly in the list.
-- How should the actions be exposed to the user?
-    - Consider all input types. Some forms of nested UI work great with one method of input, but might not work with other methods.  
+*プライマリ操作*は、ユーザーがリスト項目を押したときに発生することが予期される操作です。
 
-The *primary action* is what the user expects to happen when they press the list item.
+*セカンダリ操作*は、一般的に、リスト項目と関連付けられたアクセラレータです。 これらのアクセラレータは、リスト管理を対象にしたものものあれば、リスト項目に関する操作用のものである場合もあります。
 
-*Secondary actions* are typically accelerators associated with list items. These accelerators can be for list management or actions related to the list item.
+## セカンダリ操作のオプション
 
-## Options for secondary actions
+リスト UI を作成する場合にまず必要なことは、UWP でサポートされるすべての入力方法が考慮されていることを確認することです。 さまざまな種類の入力について詳しくは、「[操作の基本情報](../input-and-devices/input-primer.md)」をご覧ください。
 
-When creating list UI, you first need to make sure you account for all input methods that UWP supports. For more info about different kinds of input, see [Input primer](../input-and-devices/input-primer.md).
+UWP でサポートされているすべての入力にアプリが対応していることを確認したら、メイン リストのアクセラレータとして公開するほどに、アプリのセカンダリ操作が重要であるかどうかを判断する必要があります。 公開する操作が増えるほど、UI が複雑になることに注意してください。 セカンダリ操作をメイン リスト UI に公開する必要性は本当にあるのでしょうか。ないとしたら、どこか他の場所に配置できるでしょうか。
 
-After you have made sure that your app supports all inputs that UWP supports, you should decide if your app’s secondary actions are important enough to expose as accelerators in the main list. Remember that the more actions you expose, the more complicated your UI becomes. Do you really need to expose the secondary actions in the main list UI, or can you put them somewhere else?
+どのような入力からでも常時その操作にアクセスできる必要がある場合は、追加の操作をメイン リスト UI に公開することを検討してみましょう。
 
-You might consider exposing additional actions in the main list UI when those actions need to be accessible by any input at all times.
+セカンダリ操作をメイン リスト UI に配置することが必要ないと判断しても、他のさまざまな方法でその操作ユーザーに公開できます。 セカンダリ操作の公開場所として検討できるオプションには次のようなものがあります。
 
-If you decide that putting secondary actions in the main list UI is not necessary, there are several other ways you can expose them to the user. Here are some options you can consider for where to place secondary actions.
+### 詳細ページにセカンダリ操作を配置
 
-### Put secondary actions on the detail page
+セカンダリ操作を、リスト項目が押されたときの移動先のページに配置します。 マスター/詳細パターンを使用しているなら、多くの場合、詳細ページはセカンダリ操作を配置する適切な場所になります。
 
-Put the secondary actions on the page that the list item navigates to when it’s pressed. When you use the master/details pattern, the detail page is often a good place to put secondary actions.
+詳しくは、「[マスター/詳細パターン](master-details.md)」をご覧ください。
 
-For more info, see the [Master/detail pattern](master-details.md).
+### コンテキスト メニューにセカンダリ操作を配置
 
-### Put secondary actions in a context menu
+セカンダリ操作を、ユーザーが右クリックまたは長押しすることでアクセスできるコンテキスト メニューに配置します。 この方法には、詳細ページを読み込むことなく、メールの削除などの操作をユーザーが実行できるメリットがあります。 このオプションは詳細ページで利用可能にすることもお勧めします。コンテキスト メニューはプライマリ UI ではなくアクセラレータとして使用することが意図されているためです。
 
-Put the secondary actions in a context menu that the user can access via right-click or press-and-hold. This provides the benefit of letting the user perform an action, such as deleting an email, without having to load the detail page. It's a good practice to also make these options available on the detail page, as context menus are intended to be accelerators rather than primary UI.
+ゲームパッドやリモコンから入力された場合のセカンダリ操作を公開するには、コンテキスト メニューを使用することをお勧めします。
 
-To expose secondary actions when input is from a gamepad or remote control, we recommend that you use a context menu.
+詳しくは、「[コンテキスト メニューとポップアップ](menus.md)」をご覧ください。
 
-For more info, see [Context menus and flyouts](menus.md).
+### ポインター入力に最適化するためにセカンダリ操作をホバー UI に配置
 
-### Put secondary actions in hover UI to optimize for pointer input
+マウスやペンなど、ポインター入力でアプリが使用される頻度が高くなることを見込んでおり、このような入力に対してのみセカンダリ操作をすぐに利用できるようにする必要がある場合、セカンダリ操作をホバー時に限定して表示できます。 このアクセラレータが表示されるのは、ポインター入力が使用されている場合に限られるため、他の入力の種類をサポートするには他のオプションも使用してください。
 
-If you expect your app to be used frequently with pointer input such as mouse and pen, and want to make secondary actions readily available only to those inputs, then you can show the secondary actions only on hover. This accelerator is visible only when a pointer input is used, so be sure to use the other options to support other input types as well.
-
-![Nested UI shown on hover](images/nested-ui-hover.png)
+![ホバー時に表示される入れ子になった UI](images/nested-ui-hover.png)
 
 
-For more info, see [Mouse interactions](../input-and-devices/mouse-interactions.md).
+詳しくは、「[マウス操作](../input-and-devices/mouse-interactions.md)」をご覧ください。
 
-## UI placement for primary and secondary actions
+## プライマリ操作とセカンダリ操作の UI の配置
 
-If you decide that secondary actions should be exposed in the main list UI, we recommend the following guidelines.
+セカンダリ操作をメイン リスト UI に公開することを決めた場合は、以下のガイドラインに従うことをお勧めします。
 
-When you create a list item with primary and secondary actions, place the primary action to the left and secondary actions to the right. In left-to-right reading cultures, users associate actions on the left side of list item as the primary action.
+プライマリ操作とセカンダリ操作を使用してリスト項目を作成する場合は、プライマリ操作を左側に配置し、セカンダリ操作を右側に配置します。 左から右に向けて読む文化では、ユーザーはリスト項目の左側にある操作をプライマリ操作と結び付けて考えます。
 
-In these examples, we talk about list UI where the item flows more horizontally (it is wider than its height). However, you might have list items that are more square in shape, or taller than their width. Typically, these are items used in a grid. For these items, if the list doesn't scroll vertically, you can place the secondary actions at the bottom of the list item rather than to the right side.
+この例では、項目が水平方向に向かって表示される (高さよりも幅の方が広い) リスト UI について説明しています。 ただし、リスト項目が正方形に近かったり、縦長だったりする場合もあることでしょう。 通常、これらの項目はグリッドで使用されます。 このような項目では、リストが垂直方向にスクロールしない場合、セカンダリ操作をリスト項目の右側ではなく一番下に配置します。
 
-## Consider all inputs
+## すべての入力を検討
 
-When deciding to use nested UI, also evaluate the user experience with all input types. As mentioned earlier, nested UI works great for some input types. However, it does not always work great for some other. In particular, keyboard, controller, and remote inputs can have difficulty accessing nested UI elements. Be sure to follow the guidance below to ensure your UWP works with all input types.
+入れ子になった UI を使用することに決めたら、すべての入力の種類を使ってユーザー エクスペリエンスを評価します。 前述のように、入れ子になった UI は、一部の種類の入力では適切に動作します。 ただし、他の入力方法でも常に適切に動作するとは限りません。 特に、キーボード、コントローラー、およびリモート入力では、入れ子になった UI 要素にアクセスすることが難くなる可能性があります。 UWP がすべての入力の種類で機能するように、後述のガイダンスに従ってください。
 
-## Nested UI handling
+## 入れ子になった UI の処理
 
-When you have more than one action nested in the list item, we recommend this guidance to handle navigation with a keyboard, gamepad, remote control, or other non-pointer input.
+リスト項目内に 2 つ以上の操作がある場合は、このガイダンスに従って、キーボード、ゲームパッド、リモコンなど、非ポインター入力による移動を処理することを勧めします。
 
-### Nested UI where list items perform an action
+### リスト項目で操作が実行される入れ子になった UI
 
-If your list UI with nested elements supports actions such as invoking, selection (single or multiple), or drag-and-drop operations, we recommend these arrowing techniques to navigate through your nested UI elements.
+入れ子になった要素を含むリスト UI で、呼び出し処理、選択 (単一または複数) 処理、ドラッグ アンド ドロップ処理などの操作をサポートしている場合は、次の方向キーによる手法を使って、入れ子になった UI 要素を移動することがお勧めです。
 
-![Nested UI parts](images/nested-ui-navigation.png)
+![入れ子になった UI 部](images/nested-ui-navigation.png)
 
-**Gamepad**
+**ゲームパッド**
 
-When input is from a gamepad, provide this user experience:
+ゲームパッドで入力された場合、次のユーザー エクスペリエンスを提供します。
 
-- From **A**, right directional key puts focus on **B**.
-- From **B**, right directional key puts focus on **C**.
-- From **C**, right directional key is either no op, or if there is a focusable UI element to the right of List, put the focus there.
-- From **C**, left directional key puts focus on **B**.
-- From **B**, left directional key puts focus on **A**.
-- From **A**, left directional key is either no op, or if there is a focusable UI element to the right of List, put the focus there.
-- From **A**, **B**, or **C**, down directional key puts focus on **D**.
-- From UI element to the left of List Item, right directional key puts focus on **A**.
-- From UI element to the right of List Item, left directional key puts focus on **A**.
+- **A** では、右方向キーでフォーカスを **B** に設定します。
+- **B** では、右方向キーでフォーカスを **C** に設定します。
+- **C** では、右方向キーでは移動できなくするか、フォーカス可能な UI 要素がリストの右側にある場合は、そこにフォーカスを設定します。
+- **C** では、左方向キーでフォーカスを **B** に設定します。
+- **B** では、左方向キーでフォーカスを **A** に設定します。
+- **A** では、左方向キーでは移動できなくするか、フォーカス可能な UI 要素がリストの右側にある場合は、そこにフォーカスを設定します。
+- **A**、**B**、または **C** では、下方向キーでフォーカスを **D** に設定します。
+- リスト項目の左側の UI 要素では、右方向キーでフォーカスを **A** に設定します。
+- リスト項目の右側の UI 要素では、左方向キーでフォーカスを **A** に設定します。
 
-**Keyboard**
+**キーボード**
 
-When input is from a keyboard, this is the experience user gets:
+キーボードで入力された場合、ユーザー エクスペリエンスは次のようにします。
 
-- From **A**, tab key puts focus on **B**.
-- From **B**, tab key puts focus on **C**.
-- From **C**, tab key puts focus on next focusable UI element in the tab order.
-- From **C**, shift+tab key puts focus on **B**.
-- From **B**, shift+tab or left arrow key puts focus on **A**.
-- From **A**, shift+tab key puts focus on next focusable UI element in the reverse tab order.
-- From **A**, **B**, or **C**, down arrow key puts focus on **D**.
-- From UI element to the left of List Item, tab key puts focus on **A**.
-- From UI element to the right of List Item, shift tab key puts focus on **C**.
+- **A** では、Tab キーでフォーカスを **B** に設定します。
+- **B** では、Tab キーでフォーカスを **C** に設定します。
+- **C** では、Tab キーで、タブ オーダーで次のフォーカス可能な UI 要素にフォーカスを設定します。
+- **C** では、Shift + Tab キーでフォーカスを **B** に設定します。
+- **B** では、Shift + Tab キーまたは左方向キーでフォーカスを **A** に設定します。
+- **A** では、Shift + Tab キーで、逆方向のタブ オーダーで次のフォーカス可能な UI 要素にフォーカスを設定します。
+- **A**、**B**、または **C** では、下方向キーでフォーカスを **D** に設定します。
+- リスト項目の左側の UI 要素では、Tab キーでフォーカスを **A** に設定します。
+- リスト項目の右側の UI 要素では、Shift + Tab キーでフォーカスを **C** に設定します
 
-To achieve this UI, set [IsItemClickEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isitemclickenabled.aspx) to **true** on your list. [SelectionMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx) can be any value.
+この UI を実現するには、リストで [IsItemClickEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isitemclickenabled.aspx) を **true** に設定します。 [SelectionMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx) は、任意の値を使うことができます。
 
-For the code to implement this, see the [Example](#example) section of this article.
+これを実装するコードについては、この記事の「[例](#example)」セクションをご覧ください。
 
-### Nested UI where list items do not perform an action
+### リスト項目で操作が実行されない入れ子になった UI
 
-You might use a list view because it provides virtualization and optimized scrolling behavior, but not have an action associated with a list item. These UIs typically use the list item only to group elements and ensure they scroll as a set.
+リスト ビューによって仮想化と最適化されたスクロール動作が提供されることからリスト ビューを使用する場合があります。ただし、このとき操作が関連付けられているリスト項目はありません。 これらの UI では通常、要素をグループ化して要素をまとめてスクロールできるようにするためだけに、リスト項目を使用します。
 
-This kind of UI tends to be much more complicated than the previous examples, with a lot of nested elements that the user can take action on.
+この種類の UI は、前述の例よりもずっと複雑になる傾向があり、ユーザーが操作可能な入れ子になった要素が多数含まれます。
 
-![Nested UI parts](images/nested-ui-grouping.png)
+![入れ子になった UI 部](images/nested-ui-grouping.png)
 
 
-To achieve this UI, set the following properties on your list:
-- [SelectionMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx) to **None**.
-- [IsItemClickEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isitemclickenabled.aspx) to **false**.
-- [IsFocusEngagementEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.isfocusengagementenabled.aspx) to **true**.
+この UI を実現するには、リストのプロパティを次のように設定します。
+- [SelectionMode](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx) を **None** に設定します。
+- [IsItemClickEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.isitemclickenabled.aspx) を **false** に設定します。
+- [IsFocusEngagementEnabled](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.isfocusengagementenabled.aspx) を **true** に設定します。
 
 ```xaml
 <ListView SelectionMode="None" IsItemClickEnabled="False" >
@@ -150,30 +154,30 @@ To achieve this UI, set the following properties on your list:
 </ListView>
 ```
 
-When the list items do not perform an action, we recommend this guidance to handle navigation with a gamepad or keyboard.
+リスト項目で操作が実行されない場合は、次のガイダンスに従ってゲームパッドまたはキーボードによる移動を処理することをお勧めします。
 
-**Gamepad**
+**ゲームパッド**
 
-When input is from a gamepad, provide this user experience:
+ゲームパッドで入力された場合、次のユーザー エクスペリエンスを提供します。
 
-- From List Item, down directional key puts focus on next List Item.
-- From List Item, left/right key is either no op, or if there is a focusable UI element to the right of List, put the focus there.
-- From List Item, 'A' button puts the focus on Nested UI in top/down left/right priority.
-- While inside Nested UI, follow the XY Focus navigation model.  Focus can only navigate around Nested UI contained inside the current List Item until user presses 'B' button, which puts the focus back onto the List Item.
+- リスト項目では、下方向キーでフォーカスを次のリスト項目に設定します。
+- リスト項目では、左または右方向キーでは移動できなくするか、フォーカス可能な UI 要素がリストの右側にある場合は、そこにフォーカスを設定します。
+- リスト項目では、A ボタンで、上/左下/右の優先順位で、入れ子になった UI にフォーカスを設定します。
+- 入れ子になた UI 内部では、XY フォーカス ナビゲーション モデルに従います。  ユーザーが B ボタンを押すまで、フォーカスが移動できる対象を現在のリスト項目内にある入れ子になった UI に限定します。B ボタンを押したら、リスト項目にフォーカスを戻します。
 
-**Keyboard**
+**キーボード**
 
-When input is from a keyboard, this is the experience user gets:
+キーボードで入力された場合、ユーザー エクスペリエンスは次のようにします。
 
-- From List Item, down arrow key puts focus on the next List Item.
-- From List Item, pressing left/right key is no op.
-- From List Item, pressing tab key puts focus on the next tab stop amongst the Nested UI item.
-- From one of the Nested UI items, pressing tab traverses the nested UI items in tab order.  Once all the Nested UI items are traveled to, it puts the focus onto the next control in tab order after ListView.
-- Shift+Tab behaves in reverse direction from tab behavior.
+- リスト項目では、下方向キーでフォーカスを次のリスト項目に設定します。
+- リスト項目では、左方向キーまたは右方向キーを押しても移動しません。
+- リスト項目では、TAB キーを押すと、入れ子になった UI 項目の次のタブ ストップにフォーカスを設定します。
+- いずれかの入れ子になった UI 項目では、TAB キーを押すと、タブ オーダーで、入れ子になった UI 項目を移動します。  すべての入れ子になった UI 項目を移動したら、タブ オーダーで ListView 後の次のコントロールにフォーカスを設定します。
+- Shift + Tab キーを押すと、Tab キーの動作と逆方向に動作します。
 
-## Example
+## 例
 
-This example shows how to implement [nested UI where list items perform an action](#nested-ui-where-list-items-perform-an-action).
+この例は、[リスト項目で操作を実行する入れ子になった UI](#nested-ui-where-list-items-perform-an-action) を実装する方法を示します。
 
 ```xaml
 <ListView SelectionMode="None" IsItemClickEnabled="True"
@@ -298,3 +302,9 @@ public static class DependencyObjectExtensions
     }
 }
 ```
+
+
+
+<!--HONumber=Aug16_HO3-->
+
+

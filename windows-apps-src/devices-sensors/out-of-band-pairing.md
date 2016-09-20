@@ -3,7 +3,6 @@ author: IvorB
 ms.assetid: E9ADC88F-BD4F-4721-8893-0E19EA94C8BA
 title: "帯域外ペアリング"
 description: "帯域外ペアリングを使うと、アプリは検出を行わなくても店舗販売時点管理の周辺機器に接続できます。"
-translationtype: Human Translation
 ms.sourcegitcommit: 0bf96b70a915d659c754816f4c115f3b3f0a5660
 ms.openlocfilehash: d8d37b779a0f9a4bec36d73fcd2d35272c587b11
 
@@ -23,13 +22,17 @@ ms.openlocfilehash: d8d37b779a0f9a4bec36d73fcd2d35272c587b11
     "providerName":"PrinterProtocolProvider.dll"
 ```
 
-**connectionKind** - 接続の種類。 有効な値は "Network" と "Bluetooth" です。
 
-**physicalAddress** - 周辺機器の MAC アドレス。 たとえば、ネットワーク プリンターの場合は、プリンターのテスト シートに AA:BB:CC:DD:EE:FF の形式で表記される MAC アドレスです。
+            **connectionKind** - 接続の種類。 有効な値は "Network" と "Bluetooth" です。
 
-**connectionString** - 周辺機器の接続文字列。 たとえば、ネットワーク プリンターの場合は、プリンターのテスト シートに 192.168.1.1:9001 の形式で表記される IP アドレスです。 このフィールドは、すべての Bluetooth 周辺機器で省略されます。
 
-**peripheralKinds** - デバイスの種類を示す GUID。 有効な値は次のとおりです。
+            **physicalAddress** - 周辺機器の MAC アドレス。 たとえば、ネットワーク プリンターの場合は、プリンターのテスト シートに AA:BB:CC:DD:EE:FF の形式で表記される MAC アドレスです。
+
+
+            **connectionString** - 周辺機器の接続文字列。 たとえば、ネットワーク プリンターの場合は、プリンターのテスト シートに 192.168.1.1:9001 の形式で表記される IP アドレスです。 このフィールドは、すべての Bluetooth 周辺機器で省略されます。
+
+
+            **peripheralKinds** - デバイスの種類を示す GUID。 有効な値は次のとおりです。
 
 | デバイスの種類 | GUID |
 | ---- | ---- |
@@ -38,7 +41,8 @@ ms.openlocfilehash: d8d37b779a0f9a4bec36d73fcd2d35272c587b11
 | *キャッシュ ドロワー* | 772E18F2-8925-4229-A5AC-6453CB482FDA |
 
 
-**providerId** - プロトコル プロバイダーのクラスを示す GUID。 有効な値は次のとおりです。
+
+            **providerId** - プロトコル プロバイダーのクラスを示す GUID。 有効な値は次のとおりです。
 
 | プロトコル プロバイダーのクラス | GUID |
 | ---- | ---- |
@@ -52,7 +56,8 @@ ms.openlocfilehash: d8d37b779a0f9a4bec36d73fcd2d35272c587b11
 | *APG BT ドロワー* | 332E6550-2E01-42EB-9401-C6A112D80185 |
 
 
-**providerName** - プロバイダー DLL の名前。 既定のプロバイダーは次のとおりです。
+
+            **providerName** - プロバイダー DLL の名前。 既定のプロバイダーは次のとおりです。
 
 | プロバイダー | DLL 名 |
 | ---- | ---- |

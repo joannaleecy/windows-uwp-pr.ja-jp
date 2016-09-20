@@ -5,7 +5,7 @@ title: "コンポジションのブラシ"
 description: "ブラシは、その出力で Visual の領域を塗りつぶします。 さまざまなブラシで、出力の種類もさまざまです。"
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: a9f30ca041d320798c7ace596bd9be37f9712129
+ms.openlocfilehash: 11989aafb86d280b93eed7c2e3f016b5914b15ab
 
 ---
 # コンポジションのブラシ
@@ -14,15 +14,9 @@ ms.openlocfilehash: a9f30ca041d320798c7ace596bd9be37f9712129
 
 ブラシは、その出力で [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) の領域を塗りつぶします。 さまざまなブラシで、出力の種類もさまざまです。 コンポジション API には、次の 3 種類のブラシが用意されています。
 
--   
-              [
-              **CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399) はビジュアルを単色で塗りつぶします。
--   
-              [
-              **CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) はビジュアルをコンポジション サーフェスの内容で塗りつぶします。
--   
-              [
-              **CompositionEffectBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589406) はビジュアルをコンポジション効果の内容で塗りつぶします。
+-   [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399) はビジュアルを単色で塗りつぶします。
+-   [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) はビジュアルをコンポジション サーフェスの内容で塗りつぶします。
+-   [**CompositionEffectBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589406) はビジュアルをコンポジション効果の内容で塗りつぶします。
 
 すべてのブラシは [**CompositionBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589398) を継承します。ブラシは、[**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) によって直接的または間接的に作成され、デバイスに依存しないリソースです。 ブラシはデバイスに依存しませんが、[**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) と [**CompositionEffectBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589406) は、デバイスに依存するコンポジション サーフェスの内容で [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) を塗りつぶします。
 
@@ -102,9 +96,7 @@ visual.Brush = _surfaceBrush;
 
 [**CompositionSurfaceBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589415) 用の [**ICompositionSurface**](https://msdn.microsoft.com/library/windows/apps/Dn706819) の内容が、描画されるビジュアルの領域を満たさない場合があります。 この場合、コンポジション API はブラシの [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx)、[**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio)、および [**Stretch**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.stretch) モードの設定を使って、残りの領域を塗りつぶす方法を決定します。
 
--   
-              [
-              **HorizontalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx) と [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) は float 型であり、ビジュアルの境界内でのブラシの配置を制御するために使用できます。
+-   [**HorizontalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.horizontalalignmentratio.aspx) と [**VerticalAlignmentRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionsurfacebrush.verticalalignmentratio) は float 型であり、ビジュアルの境界内でのブラシの配置を制御するために使用できます。
     -   値 0.0 は、ブラシの左上隅をビジュアルの左上隅に整列します。
     -   値 0.5 は、ブラシの中央をビジュアルの中央に整列します。
     -   値 1.0 は、ブラシの右下隅をビジュアルの右下隅に整列します。
@@ -124,6 +116,6 @@ visual.Brush = _surfaceBrush;
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

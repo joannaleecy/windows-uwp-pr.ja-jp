@@ -5,7 +5,6 @@ title: "タイルとアイコン アセット"
 ms.assetid: D6CE21E5-2CFA-404F-8679-36AA522206C7
 label: Tile and icon assets
 template: detail.hbs
-translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
 ms.openlocfilehash: 98eebc4fbf18aa2fbe4586958f666b41580cf6d9
 
@@ -180,7 +179,7 @@ Windows 10 オペレーティング システム全体でさまざまな形式�
 
 **アイコン テンプレート アプリのアセット**
 
-アイコン テンプレート ("IconWithBadge" テンプレートとも呼ばれます) を使用すると、タイルの中央に小さい画像を表示できます。 Windows 10 では、電話とタブレット/デスクトップの両方でテンプレートがサポートされています (アイコン タイルの作成について詳しくは、[特別なタイル テンプレートに関する記事](tiles-and-notifications-special-tile-templates-catalog.md)をご覧ください)。
+アイコン テンプレート ("IconWithBadge" テンプレートとも呼ばれます) を使用すると、タイルの中央に小さい画像を表示できます。 Windows 10 では、電話とタブレット/デスクトップの両方でテンプレートがサポートされています  (アイコン タイルの作成について詳しくは、[特別なタイル テンプレートに関する記事](tiles-and-notifications-special-tile-templates-catalog.md)をご覧ください)。
 
 メッセージング、電話、ストアなど、アイコン テンプレートを使ったアプリでは、ターゲット ベースのアセットでバッジ (ライブ カウンターを含む) を表示できます。 他のターゲット ベースのアセットと同様にパディングは必要ありません。 アイコン アセットは、アプリ マニフェストの一部ではなく、ライブ タイルのペイロードの一部です。 アセットは 3:2 の比率のコンテナーに収まるように拡大縮小され、中央に配置されます。
 

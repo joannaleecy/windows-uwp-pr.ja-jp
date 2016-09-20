@@ -3,7 +3,6 @@ author: jwmsft
 description: "XAML での添付プロパティの概念を説明し、例をいくつか紹介します。"
 title: "添付プロパティの概要"
 ms.assetid: 098C1DE0-D640-48B1-9961-D0ADF33266E2
-translationtype: Human Translation
 ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
 ms.openlocfilehash: b676110274bacc8aeacb2527099534cf0e26fa6b
 
@@ -31,14 +30,15 @@ ms.openlocfilehash: b676110274bacc8aeacb2527099534cf0e26fa6b
 
 使用方法が静的プロパティに少し似ていることに注意してください。名前で指定されたインスタンスを参照するのではなく、添付プロパティを所有し登録する **Canvas** 型を常に参照します。
 
-**注:** ここでは、添付プロパティの一例として [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) を使っていますが、その理由を全部説明しているわけではありません。 **Canvas.Left** の用途や、[**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) がそのレイアウトの子を処理する方法について詳しくは、[**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) のリファレンス トピックまたは「[XAML を使ったレイアウトの定義](https://msdn.microsoft.com/library/windows/apps/mt228350)」をご覧ください。
+
+            **注:** ここでは、添付プロパティの一例として [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) を使っていますが、その理由を全部説明しているわけではありません。 **Canvas.Left** の用途や、[**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) がそのレイアウトの子を処理する方法について詳しくは、[**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) のリファレンス トピックまたは「[XAML を使ったレイアウトの定義](https://msdn.microsoft.com/library/windows/apps/mt228350)」をご覧ください。
 
 ## 添付プロパティを使う理由
 
 添付プロパティは、リレーションシップ内の別々のオブジェクトが実行時に情報をやり取りするのを防ぐようなコーディング規則を回避する方法の 1 つです。 共通の基底クラスにプロパティを設定し、各オブジェクトがそのプロパティを取得、設定できるようにすることも可能です。 ただ、このようにする可能性のあるシナリオの数はきわめて多く、共有できるプロパティによって基底クラスが大きくなるおそれがあります。 何百もの子孫のうちわずか 2 つしか使わないプロパティが存在するなどという事態が発生することも考えられます。 これでは、優れたクラス設計にはなりません。 この問題に対処するため、添付プロパティの概念では、自らのクラス構造では定義されないプロパティに対してオブジェクトが値を割り当てられるようになっています。 定義クラスでは、オブジェクト ツリーのリレーションシップで各種オブジェクトが作成された後、実行時に子オブジェクトから値を読み取ります。
 
-たとえば、子要素では添付プロパティを使用して、子要素がどのように UI に表示されるかを親要素に通知できます。 [
-            **Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) 添付プロパティの場合がこれに該当します。 **Canvas.Left** が添付プロパティとして作成されるのは、このプロパティが **Canvas** 自体ではなく [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 要素に含まれる要素に対して設定されるためです。 子要素は、**Canvas.Left** と [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/hh759772) を使って、レイアウト オフセットを親である **Canvas** レイアウト コンテナー内で指定します。 基本の要素オブジェクト モデルに多数のプロパティがあり、それぞれのプロパティが多数のレイアウト コンテナーの 1 つのみに適用される場合でも、添付プロパティを使えば、そのオブジェクト モデルを煩雑な状態にすることなくこれを実現できます。 代わりに、レイアウト コンテナーの多くは独自の添付プロパティ セットを実装します。
+たとえば、子要素では添付プロパティを使用して、子要素がどのように UI に表示されるかを親要素に通知できます。 [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) 添付プロパティの場合がこれに該当します。 
+            **Canvas.Left** が添付プロパティとして作成されるのは、このプロパティが **Canvas** 自体ではなく [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 要素に含まれる要素に対して設定されるためです。 子要素は、**Canvas.Left** と [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/hh759772) を使って、レイアウト オフセットを親である **Canvas** レイアウト コンテナー内で指定します。 基本の要素オブジェクト モデルに多数のプロパティがあり、それぞれのプロパティが多数のレイアウト コンテナーの 1 つのみに適用される場合でも、添付プロパティを使えば、そのオブジェクト モデルを煩雑な状態にすることなくこれを実現できます。 代わりに、レイアウト コンテナーの多くは独自の添付プロパティ セットを実装します。
 
 添付プロパティを実装するには、[**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) クラスは、[**Canvas.LeftProperty**](https://msdn.microsoft.com/library/windows/apps/br209272) という名前の静的な [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) フィールドを定義します。 次に **Canvas** では、[**SetLeft**](https://msdn.microsoft.com/library/windows/apps/br209273) メソッドと [**GetLeft**](https://msdn.microsoft.com/library/windows/apps/br209269) メソッドを添付プロパティのパブリック アクセサーとして提供して、XAML の設定とランタイム値のアクセスの両方を可能にします。 XAML と依存関係プロパティ システムに対しては、この API のセットは添付プロパティ用の特定の XAML 構文を使い、依存関係プロパティ ストアに値を格納するパターンを実現できます。
 
@@ -98,28 +98,29 @@ XAML をオブジェクト ツリーに解析するときは、XAML プロセッ
     //Canvas::SetTop(myCheckBox, 75);
 ```
 
-## カスタム添付プロパティ
+## [!div class="tabbedCodeSnippets"]
 
-カスタム添付プロパティの定義方法に関するコード例と添付プロパティを使うシナリオに関する詳しい情報については、「[カスタム添付プロパティ](custom-attached-properties.md)」をご覧ください。
+カスタム添付プロパティ
 
-## 添付プロパティ参照の特別な構文
+## カスタム添付プロパティの定義方法に関するコード例と添付プロパティを使うシナリオに関する詳しい情報については、「[カスタム添付プロパティ](custom-attached-properties.md)」をご覧ください。
 
-添付プロパティ名に含まれるドットは、識別パターンの重要な部分です。 ドットが別の意味に解釈される構文または状況では、あいまいさが生じる場合があります。 たとえば、バインディング パスではドットがオブジェクト モデル トラバーサルと見なされます。 あいまいさに関してほとんどの場合、添付プロパティ用の特別な構文によって、内部のドットは添付プロパティの *owner***.***property* 区切り文字として解析されています。
+添付プロパティ参照の特別な構文 添付プロパティ名に含まれるドットは、識別パターンの重要な部分です。 ドットが別の意味に解釈される構文または状況では、あいまいさが生じる場合があります。 たとえば、バインディング パスではドットがオブジェクト モデル トラバーサルと見なされます。
 
-- 添付プロパティをアニメーション用ターゲット パスの一部として指定する場合は、添付プロパティ名をかっこ "()" で囲みます。たとえば、"(Canvas.Left)" のようにします。 詳しくは、「[Property-path 構文](property-path-syntax.md)」をご覧ください。
+- あいまいさに関してほとんどの場合、添付プロパティ用の特別な構文によって、内部のドットは添付プロパティの *owner***.***property* 区切り文字として解析されています。 添付プロパティをアニメーション用ターゲット パスの一部として指定する場合は、添付プロパティ名をかっこ "()" で囲みます。たとえば、"(Canvas.Left)" のようにします。
 
-**注意:** ただし、Windows ランタイム XAML 実装の制限があるため、カスタム添付プロパティをアニメーション化することはできません。
+詳しくは、「[Property-path 構文](property-path-syntax.md)」をご覧ください。
  
-- 添付プロパティをリソース ファイルから **x:Uid** へのリソース参照のターゲット プロパティとして指定するには、コードスタイルの完全に修飾された **using:** 宣言を角かっこ ("\[\]") で囲む特別な構文を使って、故意にスコープ ブレークを作成します。 たとえば、<TextBlock x:Uid="Title" /> という要素が存在する場合、そのインスタンスの **Canvas.Top** 値をターゲットとするリソース ファイル内のリソース キーは、"Title.\[using:Windows.UI.Xaml.Controls\]Canvas.Top" となります。 リソース ファイルと XAML について詳しくは、「[クイック スタート: UI リソースの翻訳](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)」をご覧ください。
+- 
+            **注意:** ただし、Windows ランタイム XAML 実装の制限があるため、カスタム添付プロパティをアニメーション化することはできません。 添付プロパティをリソース ファイルから **x:Uid** へのリソース参照のターゲット プロパティとして指定するには、コードスタイルの完全に修飾された **using:** 宣言を角かっこ ("\[\]") で囲む特別な構文を使って、故意にスコープ ブレークを作成します。 たとえば、<TextBlock x:Uid="Title" /> という要素が存在する場合、そのインスタンスの **Canvas.Top** 値をターゲットとするリソース ファイル内のリソース キーは、"Title.\[using:Windows.UI.Xaml.Controls\]Canvas.Top" となります。
 
-## 関連トピック
+## リソース ファイルと XAML について詳しくは、「[クイック スタート: UI リソースの翻訳](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)」をご覧ください。
 
-* [カスタム添付プロパティ](custom-attached-properties.md)
-* [依存関係プロパティの概要](dependency-properties-overview.md)
-* [XAML を使ったレイアウトの定義](https://msdn.microsoft.com/library/windows/apps/mt228350)
-* [クイック スタート: UI リソースの翻訳](https://msdn.microsoft.com/library/windows/apps/hh943060)
-* [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361)
-* [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359)
+* [関連トピック](custom-attached-properties.md)
+* [カスタム添付プロパティ](dependency-properties-overview.md)
+* [依存関係プロパティの概要](https://msdn.microsoft.com/library/windows/apps/mt228350)
+* [XAML を使ったレイアウトの定義](https://msdn.microsoft.com/library/windows/apps/hh943060)
+* [**クイック スタート: UI リソースの翻訳**](https://msdn.microsoft.com/library/windows/apps/br242361)
+* [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242359)
 
 
 

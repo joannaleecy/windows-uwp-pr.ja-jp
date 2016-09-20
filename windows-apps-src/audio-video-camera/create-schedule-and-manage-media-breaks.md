@@ -1,99 +1,114 @@
 ---
 author: drewbatgit
 ms.assetid: 
-description: This article shows you how to create, schedule, and manage media breaks to your media playback app.
-title: Create, schedule, and manage media breaks
+description: "この記事では、メディア再生アプリ用にメディアの中断を作成、スケジュール、管理する方法について説明します。"
+title: "メディアの中断の作成、スケジュール、管理"
+translationtype: Human Translation
+ms.sourcegitcommit: 2e969e53a29a98223f26353a5444ca9d9ebe2641
+ms.openlocfilehash: 0fe495f3eb2c15ccff4a672abd904dc43cfdf193
+
 ---
 
-This article shows you how to create, schedule, and manage media breaks to your media playback app. Media breaks are typically used to insert audio or video ads into media content. Starting with Windows 10, version 1607, you can use the [**MediaBreakManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager) class to quickly and easy add media breaks to any [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem) that you play with a [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer). Once you schedule one or more media breaks, the system will automatically play your media content at the specified time during playback. The **MediaBreakManager** provides events so that your app can react when media breaks start, end, or when they are skipped by the user. You can also access a [**MediaPlaybackSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession) for your media breaks to monitor events like download and buffering progress updates.
+# メディアの中断の作成、スケジュール、管理
 
-## Schedule media breaks
-Every **MediaPlaybackItem** object has its own [**MediaBreakSchedule**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakSchedule) that you use to configure the media breaks that will play when the item is played. The first step for using media breaks in your app is to create a [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem) for your main playback content. 
+この記事では、メディア再生アプリ用にメディアの中断を作成、スケジュール、管理する方法について説明します。 通常、メディアの中断は、オーディオ広告やビデオ広告をメディア コンテンツに挿入する目的で使います。 Windows 10 バージョン 1607 以降では、[**MediaBreakManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager) クラスを使って、[**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) で再生する任意の [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem) にメディアの中断を簡単かつ迅速に追加できます。
+
+
+メディアの中断を 1 つ以上スケジュールすると、再生中の指定した時間に、システムがメディア コンテンツを自動的に再生します。 **MediaBreakManager** では、ユーザーがメディアを中断、終了、またはスキップしたときにアプリが反応できるように、イベントが提供されています。 [**MediaPlaybackSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession) にアクセスしてメディアの中断を確認し、ダウンロードや進行状況の更新のバッファリングなどのイベントを監視することもできます。
+
+## メディアの中断のスケジュール
+各 **MediaPlaybackItem** オブジェクトには、アイテムの再生時に再生されるメディアの中断の構成に使う独自の [**MediaBreakSchedule**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakSchedule) があります。 アプリでメディアの中断を使うための最初の手順は、メイン再生コンテンツ用の [ **MediaPlaybackItem** ](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem) の作成です。 
 
 [!code-cs[MoviePlaybackItem](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetMoviePlaybackItem)]
 
-For more information on working with **MediaPlaybackItem**, [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackList) and other fundamental media playback APIs, see [Media items, playlists, and tracks](media-playback-with-mediasource.md).
+**MediaPlaybackItem**、[**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackList)、他の基本的なメディアの再生 API の操作について詳しくは、「[メディア項目、プレイリスト、トラック](media-playback-with-mediasource.md)」をご覧ください。
 
-The next example shows how to add a preroll break to the **MediaPlaybackItem** which means that the system will play the media break before playing the playback item to which the break belongs. First a new [**MediaBreak**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreak) object is instantiated. In this example, the constructor is called with [**MediaBreakInsertionMethod.Interrupt**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakInsertionMethod), meaning that the main content will be paused while the break content is played. 
+次の例は、**MediaPlaybackItem** にプリロール区切りを追加する方法を示しています。これは、区切りが属する再生アイテムを再生する前に、システムがメディアの中断を再生することを意味します。 まず、新しい [**MediaBreak** ](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreak) オブジェクトがインスタンス化されます。 この例では、コンストラクター [**MediaBreakInsertionMethod.Interrupt**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakInsertionMethod) と共に呼び出されます。つまり、区切りコンテンツの再生中はメイン コンテンツが一時停止されます。 
 
-Next, a new **MediaPlaybackItem** is created for the content that will be played during the break, such as an ad. The [**CanSkip**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.CanSkip) property of this playback item is set to false. This means that the user will not be able to skip the item using the built-in media controls. Your app can still choose to skip the add programatically by calling [**SkipCurrentBreak**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager.SkipCurrentBreak). 
+次に、区切り中に再生されるコンテンツ (広告など) 用に新しい **MediaPlaybackItem** が作成されます。 この再生アイテムの [**CanSkip**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.CanSkip) プロパティは false に設定されます。 つまり、ユーザーは組み込みのメディア コントロールを使ってアイテムをスキップできません。 ただし、[**SkipCurrentBreak**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager.SkipCurrentBreak) を呼び出すことで、広告をプログラムによりスキップすることを選ぶことはできます。 
 
-The media break's [**PlaybackList**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreak.PlaybackList) property is a [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackList) that allows you to play multiple media items as a playlist. Add one or more **MediaPlaybackItem** objects list's **Items** collection to include them in the media break's playlist.
+メディアの中断の [**PlaybackList**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreak.PlaybackList) プロパティは、複数のメディア アイテムをプレイリストとして再生できるようにする [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackList) です。 一覧の **Items** コレクションから 1 つまたは複数の **MediaPlaybackItem** オブジェクトを追加し、メディアの中断のプレイリストに含めます。
 
-Finally, schedule the media break by using the main content playback item's [**BreakSchedule**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.BreakSchedule) property. Specify the break to be a preroll break by assigning it to the [**PrerollBreak**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakSchedule.PrerollBreak) property of the schedule object.
+最後に、メイン コンテンツ再生アイテムの [ **BreakSchedule** ](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.BreakSchedule) プロパティを使ってメディアの中断をスケジュールします。 プリロール区切りにする中断を、スケジュール オブジェクトの [ **PrerollBreak** ](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakSchedule.PrerollBreak) プロパティに割り当てることで指定します。
 
 [!code-cs[PreRollBreak](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetPreRollBreak)]
 
-Now, you can play back the main media item and the media break you created will play before the main content. Create a new [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) object and optionally set the [**AutoPlay**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.AutoPlay) property to true to start playback automatically. Set the [**Source**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.Source) property of the **MediaPlayer** to your main content playback item. It's not required, but you can assign the **MediaPlayer** to a [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement) to render the media in a XAML page. For more information on using **MediaPlayer**, see [Play audio and video with MediaPlayer](play-audio-and-video-with-mediaplayer.md).
+これで、メイン メディア アイテムを再生できるようになりました。作成したメディアの中断は、メイン コンテンツの前に再生されます。 新しい [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer) オブジェクトを作成し、オプションで [**AutoPlay**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.AutoPlay) プロパティをtrue に設定して再生を自動的に開始します。 **MediaPlayer** の [**Source**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.Source) プロパティをメイン コンテンツ再生アイテムに設定します。 必須ではありませんが、**MediaPlayer** を [**MediaPlayerElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.MediaPlayerElement) に割り当てて XAML ページでメディアをレンダリングできます。 **MediaPlayer** の使い方について詳しくは、「[MediaPlayer を使ったオーディオとビデオの再生](play-audio-and-video-with-mediaplayer.md)」をご覧ください。
 
 [!code-cs[Play](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetPlay)]
 
-Add a postroll break, that plays after the **MediaPlaybackItem** containing your main content finishes playing, using the same technique as a preroll break, except that you assign your **MediaBreak** object to the [**PostrollBreak**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakSchedule.PostrollBreak) property.
+プリロール区切りを同じ手法を使って、メイン コンテンツを含む **MediaPlaybackItem** の再生が終わったら再生されるポストロール区切りを追加します。ただし、**MediaBreak** オブジェクトを[**PostrollBreak**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakSchedule.PostrollBreak) プロパティに再生する点が異なります。
 
 [!code-cs[PostRollBreak](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetPostRollBreak)]
 
-You can also schedule one or more midroll breaks that play at a specified time within the playback of the main content. In the example below, the [**MediaBreak**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreak) is created with the constructor overload that accepts a **TimeSpan** object which specifies the time within the playback of the main media item when the break will be played. Again, [**MediaBreakInsertionMethod.Interrupt**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakInsertionMethod) is specified to indicate that the main content's playback will be paused while the break plays. The midroll break is added to the schedule by calling [**InsertMidrollBreak**](https://msdn.microsoft.com/library/windows/apps/mt670692). You can get a read-only list of the current midroll breaks in the schedule by accessing the [**MidrollBreaks**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakSchedule.MidrollBreaks) property.
+メイン コンテンツの再生中の指定した時点で再生されるミッドロール区切りを 1 つ以上スケジュールすることもできます。 次の例では、メイン メディア アイテムの再生中に区切りが生成される時間を指定する **TimeSpan** オブジェクトを受け入れるコンストラクター オーバーロードを使って [**MediaBreak**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreak) が作成されます。 ここでも、[**MediaBreakInsertionMethod.Interrupt**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakInsertionMethod) が指定され、区切りの生成中にメイン コンテンツの再生が一時停止されることが示されます。 [**InsertMidrollBreak**](https://msdn.microsoft.com/library/windows/apps/mt670692) を呼び出すことで、ミッドロール区切りがスケジュールに追加されます。 [**MidrollBreaks**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakSchedule.MidrollBreaks) プロパティにアクセスすることで、スケジュールに含まれている現在のミッドロール区切りの読み取り専用一覧を取得できます。
 
 [!code-cs[MidrollBreak](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetMidrollBreak)]
 
-The next midroll break example shown below uses the [**MediaBreakInsertionMethod.Replace**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakInsertionMethod) insertion method which means that the system will continue processing the main content while the break is playing. This option is typically used by live streaming media apps where you don't want the content to pause and fall behind the live stream while the ad is played. 
+次のミッドロール区切りの例では、[**MediaBreakInsertionMethod.Replace**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakInsertionMethod) 挿入メソッドを使います。つまり、区切りの再生中もメイン コンテンツの再生が続けられます。 このオプションは通常、広告の再生中にライブ ストリームを一時停止して遅れを生じさせたくないライブ ストリーミング メディア アプリにより使われます。 
 
-This example also uses an overload of the [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem) constructor that accepts two [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.TimeSpan) parameters. The first parameter specifies the starting point within the media break item where playback will begin. The second parameter specifies the duration for which the media break item will be played. So, in the example below, the **MediaBreak** will begin playing at 20 minutes into the main content. When it plays, the media item will start 30 seconds from the beginning of the break media item and will play for 15 seconds before the main media content resumes playing.
+この例では、2 つの [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/Windows.Foundation.TimeSpan) パラメーターを受け入れる [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem) コンストラクターのオーバーロードも使います。 最初のパラメーターは、メディアの中断アイテム内の、再生が開始される開始点を指定します。 2 番目のパラメーターは、メディアの中断アイテムが再生される時間の長さを指定します。 したがって、次の例では、20 分の時点でメイン コンテンツに対して **MediaBreak** が再生を開始します。 再生されると、区切りメディア アイテムの先頭から 30 秒後にメディア アイテムが開始され、15 秒間再生されてからメイン メディア コンテンツが再生を再開します。
 
 [!code-cs[MidrollBreak2](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetMidrollBreak2)]
 
-## Skip media breaks
-As mentioned previously in this article, the [**CanSkip**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.CanSkip) property of a **MediaPlaybackItem** can be set to prevent the user from skipping the content with the built-in controls. However, you can call [**SkipCurrentBreak**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager.SkipCurrentBreak) from your code at any time to skip the current break.
+## メディアの中断のスキップ
+この記事で既に説明したように、**MediaPlaybackItem** の [**CanSkip**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.CanSkip) プロパティを設定し、ユーザーが組み込みコントロールを使ってコンテンツをスキップできないようにすることができます。 ただし、いつでもコードから [**SkipCurrentBreak**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager.SkipCurrentBreak) を呼び出すと現在の中断をスキップできます。
 
 [!code-cs[SkipButtonClick](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetSkipButtonClick)]
 
-## Handle MediaBreak events
+## MediaBreak イベントの処理
 
-There are several events related to media breaks that you can register for in order to take action based on the changing state of media breaks.
+メディアの中断の状態の変化に基づいてアクションを実行するために登録できる、メディアの中断に関連するいくつかのイベントがあります。
 
 [!code-cs[RegisterMediaBreakEvents](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetRegisterMediaBreakEvents)]
 
-The [**BreakStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager.BreakStarted) is raised when a media break starts. You may want to update your UI to let the user know that media break content is playing. This example uses the [**MediaBreakStartedEventArgs**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakStartedEventArgs) passed into the handler to get a reference to the media break that started. Then the [**CurrentItemIndex**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackList.CurrentItemIndex) property is used to determine which media item in the media break's playlist is being played. Then the UI is updated to show the user the current ad index and the number of ads remaining in the break. Remember that updates to the UI must be made on the UI thread, so the call should be made inside a call to [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317). 
+[**BreakStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager.BreakStarted) は、メディアの中断が開始すると発生します。 メディア コンテンツを再生していることがユーザーにわかるように UI を更新できます。 この例では、ハンドラーに渡された [**MediaBreakStartedEventArgs**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakStartedEventArgs) を使って、開始されたメディアの中断への参照を取得します。 次に、[**CurrentItemIndex**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackList.CurrentItemIndex) プロパティを使って、メディアの中断のプレイリストにある再生メディア アイテムが決定されます。 その後、UI が更新され、現在の広告インデックスと中断中の残りの広告数がユーザーに表示されます。 UI の更新は UI スレッドに加える必要があるため、[**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) の呼び出し内で呼び出しを行う必要がある点に注意してください。 
 
 [!code-cs[BreakStarted](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetBreakStarted)]
 
-[**BreakEnded**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager.BreakEnded) is raised when all of the media items in the break have finished playing or have been skipped over. You can use the handler for this event to update the UI to indicate that media break content is no longer playing.
+[**BreakEnded**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager.BreakEnded) は、中断内のすべてのメディア アイテムが再生を終えるか、スキップされたときに発生します。 このイベントのハンドラーを使って UI を更新し、メディアの中断コンテンツがそれ以上再生されないことを示すことができます。
 
 [!code-cs[BreakEnded](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetBreakEnded)]
 
-The **BreakSkipped** event is raised when the user presses the *Next* button in the built-in UI during playback of an item for which [**CanSkip**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.CanSkip) is true, or when you skip a break in your code by calling [**SkipCurrentBreak**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager.SkipCurrentBreak).
+**BreakSkipped** イベントは、[**CanSkip**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackItem.CanSkip) が true になっているアイテムの再生中ユーザーが組み込み UI の *[次へ]* ボタンを押したとき、または [**SkipCurrentBreak**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager.SkipCurrentBreak) を呼び出すことでコードで中断をスキップしたときに発生します。
 
-The example below uses the [**Source**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.Source) property of the **MediaPlayer** to get a reference to the media item for the main content. The skipped media break belongs to the break schedule of this item. Next, the code checks to see if the media break that was skipped is the same as the media break set to the [**PrerollBreak**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakSchedule.PrerollBreak) property of the schedule. If so, this means that the preroll break was the break that was skipped, and in this case, a new midroll break is created and scheduled to play 10 minutes into the main content.
+次の例では、**MediaPlayer** の [**Source**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlayer.Source) プロパティを使って、メイン コンテンツのメディア アイテムへの参照を取得します。 スキップされたメディアの中断は、このアイテムの中断スケジュールに属しています。 次に、スキップされたメディアの中断がスケジュールの [**PrerollBreak**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakSchedule.PrerollBreak) プロパティに設定されたメディアの中断と同じであるかどうかをコードがチェックします。 同じである場合、プリロール区切りがスキップされた中断であることを意味します。この場合、新しいミッドロール区切りが作成され、メイン コンテンツの 10 分の時点で再生されるようにスケジュールされます。
 
 [!code-cs[BreakSkipped](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetBreakSkipped)]
 
-[**BreaksSeekedOver**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager.BreaksSeekedOver) is raised when the playback position of the main media item passes over the scheduled time for one or more media breaks. The example below checks to see if more than one media break was seeked over, if the playback position was moved forward, and if it was moved forward less than 10 minutes. If so, the first break that was seeked over, obtained from the [**SeekedOverBreaks**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakSeekedOverEventArgs.SeekedOverBreaks) collection exposed by the event args, is played immediately with a call to [**PlayBreak**](https://msdn.microsoft.com/library/windows/apps/mt670689) method of the **MediaPlayer.BreakManager**.
+[**BreaksSeekedOver**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager.BreaksSeekedOver) は、メイン メディア アイテムの再生位置が、1 つ以上のメディアの中断のスケジュールされた時間を超えたときに発生します。 次の例では、1 つ以上のメディアの中断が要求されたかどうか、再生位置が先に移動されたかどうか、先に移動された時間が 10 分未満であるかどうかがチェックされます。 その場合、要求された最初の中断 (イベント引数により開示された [**SeekedOverBreaks**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakSeekedOverEventArgs.SeekedOverBreaks) コレクションから取得されます) が、**MediaPlayer.BreakManager** の [**PlayBreak**](https://msdn.microsoft.com/library/windows/apps/mt670689) メソッドを呼び出すことですぐに再生されます。
 
 [!code-cs[BreakSeekedOver](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetBreakSeekedOver)]
 
-## Get information about the current media break
-As mentioned previously in this article, the [**CurrentItemIndex**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackList.CurrentItemIndex) property can be used to determine which media item in a media break is currently playing. You may want to periodically check for the currently playing item in order to update your UI. Be sure to check the [**CurrentBreak**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager.CurrentBreak) property for null first. If the property is null, then no media break is currently playing.
+## 現在のメディアの中断に関する情報の取得
+この時期で既に説明したように、[**CurrentItemIndex**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackList.CurrentItemIndex) プロパティを使うと、現在再生されているメディアの中断内のメディア アイテムを調べることができます。 UI を更新するため、現在再生中のアイテムを定期的にチェックできます。 必ず、最初に [**CurrentBreak**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager.CurrentBreak) プロパティが null でないかどうかをチェックしてください。 プロパティが null の場合、現在再生中のメディアの中断はありません。
 
 [!code-cs[GetCurrentBreakItemIndex](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetGetCurrentBreakItemIndex)]
 
-## Access the current playback session
-The [**MediaPlaybackSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession)  object is ethe **MediaPlayer** class to provide data and events related to the currently playing media content. The [**MediaBreakManager**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager) also has a **MediaPlaybackSession** that you can access to get data and events specifically related to the media break content that is being played. Information you can get from the playback session includes the current playback state, playing or paused, and the current playback position within the content. You can use the [**NaturalVideoWidth**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.NaturalVideoWidth) and [**NaturalVideoHeight**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.NaturalVideoHeight) properties and the [**NaturalVideoSizeChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.NaturalVideoSizeChanged) to adjust your video UI if the media break content has a different aspect ration than your main content. You can also receive events such as [**BufferingStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.BufferingStarted), [**BufferingEnded**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.BufferingEnded), and [**DownloadProgressChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.DownloadProgressChanged) that can provide valuable telemetry about the performance of your app.
+## 現在の再生セッションへのアクセス
+[**MediaPlaybackSession**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession) オブジェクトは、**MediaPlayer** クラスを使って、現在再生中のメディア コンテンツに関連するデータとイベントを提供します。 [ **MediaBreakManager** ](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaBreakManager) にも、再生中のメディアの中断コンテンツに特に関連するデータとイベントを取得するためにアクセスできる **MediaPlaybackSession** があります。 再生セッションから入手できる情報には、現在の再生状態、再生中か一時停止中か、コンテンツ内の現在の再生位置などがあります。 メディアの中断コンテンツの縦横比がメイン コンテンツと異なる場合、[**NaturalVideoWidth**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.NaturalVideoWidth) プロパティおよび [**NaturalVideoHeight**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.NaturalVideoHeight) プロパティと [**NaturalVideoSizeChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.NaturalVideoSizeChanged) を使って、ビデオ UI を調整することができます。 アプリのパフォーマンスに関する貴重な利用統計情報を示す、[**BufferingStarted**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.BufferingStarted)、[**BufferingEnded**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.BufferingEnded)、[**DownloadProgressChanged**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Playback.MediaPlaybackSession.DownloadProgressChanged) などのイベントを受け取ることもできます。
 
-The following example registers a handler for the BufferingProgressChanged event, in the event handler, updates the UI to show the current buffering progress.
+次の例では、**BufferingProgressChanged イベント**のハンドラーを登録します。イベント ハンドラーでは、UI が更新されて現在のバッファリングの進行状況が表示されます。
 
 [!code-cs[RegisterBufferingProgressChanged](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetRegisterBufferingProgressChanged)]
 
 [!code-cs[BufferingProgressChanged](./code/MediaBreaks_RS1/cs/MainPage.xaml.cs#SnippetBufferingProgressChanged)]
 
-## Related topics
-* [Media playback](media-playback.md)
-* [Play audio and video with MediaPlayer](play-audio-and-video-with-mediaplayer.md)
-* [Manual control of the System Media Transport Controls](system-media-transport-controls.md)
+## 関連トピック
+* [メディア再生](media-playback.md)
+* [MediaPlayer を使ったオーディオとビデオの再生](play-audio-and-video-with-mediaplayer.md)
+* [システム メディア トランスポート コントロールの手動制御](system-media-transport-controls.md)
 
- 
+ 
 
- 
+ 
 
 
+
+
+
+
+
+<!--HONumber=Aug16_HO3-->
 
 

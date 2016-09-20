@@ -3,7 +3,6 @@ author: DelfCo
 description: "ユニバーサル Windows プラットフォーム (UWP) アプリ開発者として、Windows.Networking.Sockets と Winsock の両方を使って、他のデバイスと通信できます。"
 title: "ソケット"
 ms.assetid: 23B10A3C-E33F-4CD6-92CB-0FFB491472D6
-translationtype: Human Translation
 ms.sourcegitcommit: 4557fa59d377edc2ae5bf5a9be63516d152949bb
 ms.openlocfilehash: 432d9849335c537836fd23a4cd95c79c51bc881d
 
@@ -20,7 +19,8 @@ ms.openlocfilehash: 432d9849335c537836fd23a4cd95c79c51bc881d
 
 ユニバーサル Windows プラットフォーム (UWP) アプリ開発者として、[**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) と [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms737523) の両方を使って、他のデバイスと通信できます。 このトピックでは、**Windows.Networking.Sockets** 名前空間を使ってネットワーク操作を実行する方法の詳しいガイダンスを示します。
 
->**注** [ネットワーク分離](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx)の一環として、システムでは、同じコンピューターで実行される 2 つの UWP アプリ間での、ローカル ループバック アドレス (127.0.0.0) または明示的なローカル IP アドレスの指定による、ソケット接続 (Sockets または WinSock) の確立を禁止しています。 つまり、2 つの UWP アプリ間の通信にソケットを使うことはできません。 UWP には、アプリ間で通信するための他のメカニズムが用意されています。 詳しくは、「[アプリ間通信](https://msdn.microsoft.com/windows/uwp/app-to-app/index)」をご覧ください。
+>
+>            **注** [ネットワーク分離](https://msdn.microsoft.com/library/windows/apps/hh770532.aspx)の一環として、システムでは、同じコンピューターで実行される 2 つの UWP アプリ間での、ローカル ループバック アドレス (127.0.0.0) または明示的なローカル IP アドレスの指定による、ソケット接続 (Sockets または WinSock) の確立を禁止しています。 つまり、2 つの UWP アプリ間の通信にソケットを使うことはできません。 UWP には、アプリ間で通信するための他のメカニズムが用意されています。 詳しくは、「[アプリ間通信](https://msdn.microsoft.com/windows/uwp/app-to-app/index)」をご覧ください。
 
 ## 基本的な TCP ソケット操作
 
@@ -235,7 +235,7 @@ foreach (IBuffer packet in packetsToSend)
 await Task.WaitAll(pendingTasks);
 ```
 
-次の例は、バッチ送信と互換性がある方法で、多数のバッファーを送信する別の方法を示しています。 ここでは C# 固有の機能は使われていないため、すべての言語に適用できます (ここでは C# を使っています)。 代わりに、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) クラスと [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) クラスの **OutputStream** メンバーの変更された動作を使っています。これは Windows 10 で新しく導入された動作です。
+次の例は、バッチ送信と互換性がある方法で、多数のバッファーを送信する別の方法を示しています。 ここでは C# 固有の機能は使われていないため、すべての言語に適用できます (ここでは C# を使っています)。 代わりに、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) クラスと [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) クラスの **OutputStream** メンバーの変更された動作を使っています。これは Windows10 で新しく導入された動作です。
 
 ```csharp
 // More efficient way to send packets in Windows 10, using the new behavior of OutputStream.FlushAsync().
@@ -255,23 +255,23 @@ foreach (IBuffer packet in packetsToSend)
 await outputStream.FlushAsync();
 ```
 
-これまでのバージョンの Windows では、**FlushAsync** はすぐに返り、ストリームに対するすべての動作が完了しているかどうかは保証されませんでした。 Windows 10 では、この動作が変更されています。 **FlushAsync** は、出力ストリームに対するすべての操作が完了した後で返ることが保証されるようになりました。
+これまでのバージョンの Windows では、**FlushAsync** はすぐに返り、ストリームに対するすべての動作が完了しているかどうかは保証されませんでした。 Windows 10 では、この動作が変更されています。 
+            **FlushAsync** は、出力ストリームに対するすべての操作が完了した後で返ることが保証されるようになりました。
 
 コードでバッチ処理される書き込みを使うことで課せられているいくつかの重要な制限があります。
 
 -   書き込まれる **IBuffer** インスタンスの内容は、非同期書き込みが完了するまで変更できません。
 -   **FlushAsync**パターンは、**StreamSocket.OutputStream** と **DatagramSocket.OutputStream** のみで機能します。
--   **FlushAsync** パターンは、Windows 10 以降でのみ機能します。
+-   **FlushAsync** パターンは、Windows10 以降でのみ機能します。
 -   状況によっては、**FlushAsync** パターンの代わりに **Task.WaitAll** を使います。
 
 ## DatagramSocket でのポートの共有
 
-Windows 10 では、[**MulticastOnly**](https://msdn.microsoft.com/library/windows/apps/dn895368) という新しい [**DatagramSocketControl**](https://msdn.microsoft.com/library/windows/apps/hh701190) プロパティが導入されています。このプロパティを使って、対象の **DatagramSocket** を、同じアドレス/ポートにバインドされた他の Win32 または WinRT マルチキャスト ソケットと共存させることができます。
+Windows10 では、[**MulticastOnly**](https://msdn.microsoft.com/library/windows/apps/dn895368) という新しい [**DatagramSocketControl**](https://msdn.microsoft.com/library/windows/apps/hh701190) プロパティが導入されています。このプロパティを使って、対象の **DatagramSocket** を、同じアドレス/ポートにバインドされた他の Win32 または WinRT マルチキャスト ソケットと共存させることができます。
 
 ## StreamSocket クラスによるクライアント証明書の提供
 
-[
-            **Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) クラスは、SSL/TLS を使ったアプリの接続先サーバーの認証をサポートします。 場合によっては、アプリは、TLS クライアント証明書を使って自身をサーバーに対して認証する必要があります。 Windows 10 では、クライアント証明書を [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893) オブジェクトに提供できます (これは TLS ハンドシェイクが開始される前に設定する必要があります)。 サーバーがクライアント証明書を要求した場合、Windows が提供された証明書を使って応答します。
+[**Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) クラスは、SSL/TLS を使ったアプリの接続先サーバーの認証をサポートします。 場合によっては、アプリは、TLS クライアント証明書を使って自身をサーバーに対して認証する必要があります。 Windows10 では、クライアント証明書を [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893) オブジェクトに提供できます (これは TLS ハンドシェイクが開始される前に設定する必要があります)。 サーバーがクライアント証明書を要求した場合、Windows が提供された証明書を使って応答します。
 
 これを実装する方法を示すコード スニペットを次に示します。
 
@@ -286,15 +286,11 @@ await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 
 ソケットと共に使われる [**HostName**](https://msdn.microsoft.com/library/windows/apps/br207113) クラスのコンストラクターは、有効なホスト名ではない (ホスト名に使うことができない文字が含まれている) 文字列が渡された場合に例外をスローすることができます。 アプリがユーザーから **HostName** の入力を取得する場合、このコンストラクターを try/catch ブロックに配置する必要があります。 例外がスローされた場合、アプリは、ユーザーに通知し、新しいホスト名を要求することができます。
 
-[
-            **Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 名前空間には、ソケットと WebSocket を使う場合のエラーの処理に便利なヘルパー メソッドと列挙があります。 これは、アプリで特定のネットワーク例外を異なる方法で処理する場合に役立つことがあります。
+[**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) 名前空間には、ソケットと WebSocket を使う場合のエラーの処理に便利なヘルパー メソッドと列挙があります。 これは、アプリで特定のネットワーク例外を異なる方法で処理する場合に役立つことがあります。
 
-[
-            **DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)、[**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) 操作で発生したエラーは、**HRESULT** 値として返されます。 [
-            **SocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701462) メソッドは、ネットワーク エラーをソケット操作から [**SocketErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh701457) 列挙値に変換するために使われます。 ほとんどの **SocketErrorStatus** 列挙値は、ネイティブ Windows ソケット操作から返されるエラーに対応しています。 アプリは特定の **SocketErrorStatus** 列挙値に対するフィルター処理を行い、例外の原因に応じてアプリの動作を変更できます。
+[**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)、[**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)、[**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) 操作で発生したエラーは、**HRESULT** 値として返されます。 [**SocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701462) メソッドは、ネットワーク エラーをソケット操作から [**SocketErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh701457) 列挙値に変換するために使われます。 ほとんどの **SocketErrorStatus** 列挙値は、ネイティブ Windows ソケット操作から返されるエラーに対応しています。 アプリは特定の **SocketErrorStatus** 列挙値に対するフィルター処理を行い、例外の原因に応じてアプリの動作を変更できます。
 
-[
-            **MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) または [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 操作で発生したエラーは **HRESULT** 値として返されます。 ネットワーク エラーを WebSocket 操作から [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh747818) 列挙値に変換するには、[**WebSocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701529) メソッドを使います。 **WebErrorStatus** 列挙値のほとんどは、ネイティブ HTTP クライアント操作から返されるエラーに対応しています。 アプリは特定の **WebErrorStatus** 列挙値に対するフィルター処理を行い、例外の原因に応じてアプリの動作を変更できます。
+[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) または [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 操作で発生したエラーは **HRESULT** 値として返されます。 ネットワーク エラーを WebSocket 操作から [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh747818) 列挙値に変換するには、[**WebSocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701529) メソッドを使います。 **WebErrorStatus** 列挙値のほとんどは、ネイティブ HTTP クライアント操作から返されるエラーに対応しています。 アプリは特定の **WebErrorStatus** 列挙値に対するフィルター処理を行い、例外の原因に応じてアプリの動作を変更できます。
 
 パラメーター検証エラーの場合は、例外の **HRESULT** を使って、その例外の原因となったエラーの詳細情報を確認することもできます。 使うことができる **HRESULT** 値は、*Winerror.h* ヘッダー ファイルに記載されています。 ほとんどのパラメーター検証エラーの場合、返される **HRESULT** は **E\_INVALIDARG** です。
 

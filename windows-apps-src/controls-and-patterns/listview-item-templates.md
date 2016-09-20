@@ -1,23 +1,27 @@
 ---
 author: Jwmsft
-Description: Use templates to modify the look of items in list view or grid view controls.
-title: List view item templates
+Description: "テンプレートを使って、リスト ビュー コントロールまたはグリッド ビュー コントロールの項目の外観を変更します。"
+title: "リスト ビュー項目テンプレート"
 label: List view item templates
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: 5e85b7d8af98c48d5a75a77187acbdf3184ff875
+
 ---
+# 項目コンテナーやテンプレート
+
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-# Item containers and templates
-
-**ListView** and **GridView** controls manage how their items are arranged (horizontal, vertical, wrapping, etc…) and how a user interacts with the items, but not how the individual items are shown on the screen. Item visualization is managed by item containers. When you add items to a list view they are automatically placed in a container. The default item container for ListView is [**ListViewItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listviewitem.aspx); for GridView, it’s [**GridViewItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridviewitem.aspx).
+**ListView** コントロールと **GridView** コントロールでは、項目の配置方法 (水平、垂直、折り返しなど) や、ユーザーが項目を操作する方法を管理しますが、画面に個別の項目を表示する方法については管理しません。 項目の視覚エフェクトは、項目コンテナーによって管理されます。 リスト ビューに項目を追加すると、追加した項目はコンテナーに自動的に設定されます。 ListView の既定の項目コンテナーは [**ListViewItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listviewitem.aspx) であり、GridView の既定の項目コンテナーは [**GridViewItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridviewitem.aspx) です。
 
 <div class="important-apis" >
-<b>Important APIs</b><br/>
+<b>重要な API</b><br/>
 <ul>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx"><strong>ListView class</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx"><strong>GridView class</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx"><strong>ItemTemplate property</strong></a></li>
-<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle.aspx"><strong>ItemContainerStyle property</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx"><strong>ListView クラス</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx"><strong>GridView クラス</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx"><strong>ItemTemplate プロパティ</strong></a></li>
+<li><a href="https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle.aspx"><strong>ItemContainerStyle プロパティ</strong></a></li>
 </ul>
 
 </div>
@@ -28,18 +32,18 @@ template: detail.hbs
 
 
 
-> ListView and GridView both derive from the [**ListViewBase**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx) class, so they have the same functionality, but display data differently. In this article, when we talk about list view, the info applies to both the ListView and GridView controls unless otherwise specified. We may refer to classes like ListView or ListViewItem, but the *List* prefix can be replaced with *Grid* for the corresponding grid equivalent (GridView or GridViewItem). 
+> ListView と GridView はどちらも [**ListViewBase**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.aspx) クラスから派生しているため、同じ機能を持ちますが、データの表示方法が異なります。 この記事では、特に指定がない限り、リスト ビューについての説明は ListView コントロールにも GridView コントロールにも適用されます。 ListView や ListViewItem などのクラスの説明については、プレフィックスの "List"** を "Grid"** に置き換えることで、対応するグリッド クラス (GridView または GridViewItem) に適用できます。 
 
-These container controls consist of two important parts that combine to create the final visuals shown for an item: the *data template* and the *control template*.
+これらのコンテナー コントロールは、"データ テンプレート"** と "コントロール テンプレート"** という 2 つの重要な部分から構成されており、これらを組み合わせることによって 1 つの項目で表示する最終的な外観が形成されます。
 
-- **Data template** - You assign a [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.datatemplate.aspx) to the [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) property of the list view to specify how individual data items are shown.
-- **Control template** - The control template provides the part of the item visualization that the framework is responsible for, like visual states. You can use the [**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle.aspx) property to modify the control template. Typically, you do this to modify the list view colors to match your branding, or change how selected items are shown.
+- **データ テンプレート** - [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.datatemplate.aspx) をリスト ビューの [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) プロパティに割り当てて、個別のデータ項目の表示方法を指定します。
+- **コントロール テンプレート** - コントロール テンプレートは、表示状態など、フレームワークが担当する項目の視覚エフェクトの一部を提供します。 [**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle.aspx) プロパティを使って、コントロール テンプレートを変更できます。 通常では、ブランドに合うようにリスト ビューの色を変更したり、選択した項目の表示方法を変更する目的で、コントロール テンプレートを変更します。
 
-This image shows how the control template and the data template combine to create the final visual for an item.
+次の画像は、コントロール テンプレートとデータ テンプレートを合わせて 1 つの項目で表示する最終的な外観を形成する方法を示しています。
 
-![List view control and data templates](images/listview-visual-parts.png)
+![リスト ビュー コントロールやデータ テンプレート](images/listview-visual-parts.png)
 
-Here's the XAML that creates this item. We explain the templates later.
+この項目を作成する XAML を次に示します。 テンプレートについては、後で説明します。
 
 ```xaml
 <ListView Width="220" SelectionMode="Multiple">
@@ -70,18 +74,18 @@ Here's the XAML that creates this item. We explain the templates later.
 </ListView>
 ```
  
-## Prerequisites
+## 前提条件
 
-- We assume that you know how to use a list view control. For more info, see the [ListView and GridView](listview-and-gridview.md) article.
-- We also assume that you understand control styles and templates, including how to use a style inline or as a resource. For more info, see [Styling controls](styling-controls.md) and [Control templates](control-templates.md).
+- リスト ビュー コントロールを使用できることを前提としています。 詳しくは、「[ListView と GridView](listview-and-gridview.md)」の記事をご覧ください。
+- また、スタイルをインラインで使用する方法や、リソースとして使用する方法を含む、コントロールのスタイルやテンプレートについて理解していることも前提としています。 詳しくは、「[コントロールのスタイル](styling-controls.md)」と「[コントロールのテンプレート](control-templates.md)」をご覧ください。
 
-## The data
+## データ
 
-Before we look deeper into how to show data items in a list view, we need to understand the data to be shown. In this example, we create a data type called `NamedColor`. It combines a color name, color value, and a **SolidColorBrush** for the color, which are exposed as 3 properties: `Name`, `Color`, and `Brush`.
+リスト ビューでデータ項目を表示する方法について詳しく説明する前に、表示するデータについて理解する必要があります。 この例では、`NamedColor` と呼ばれるデータ型を作成します。 `NamedColor` では、`Name`、`Color`、`Brush` という 3 つのプロパティとして公開されている、色の名前、色の値、色の **SolidColorBrush** を組み合わせます。
  
-We then populate a **List** with a `NamedColor` object for each named color in the [**Colors**](https://msdn.microsoft.com/library/windows/apps/windows.ui.colors.aspx) class. The list is set as the [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) for the list view.
+次に、[**Colors**](https://msdn.microsoft.com/library/windows/apps/windows.ui.colors.aspx) クラスの各名前付きの色の `NamedColor` オブジェクトを使って、**List** を設定します。 このリストは、リスト ビューの [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) として設定します。
 
-Here’s the code to define the class and populate the `NamedColors` list.
+クラスを定義したり、`NamedColors` リストを設定するためのコードを次に示します。
 
 **C#**
 ```csharp
@@ -139,37 +143,37 @@ namespace ColorsListApp
 }
 ```
 
-## Data template
+## データ テンプレート
 
-You specify a data template to tell the list view how your data item should be shown. 
+データ テンプレートを指定して、リスト ビューにデータ項目の表示方法を伝えます。 
 
-By default, a data item is displayed in the list view as the string representation of the data object it's bound to. If you show the 'NamedColors' data in a list view without telling the list view how it should look, it just shows whatever the **ToString** method returns, like this.
+既定では、データ項目は、バインドされているデータ オブジェクトの文字列表現としてリスト ビューに表示されます。 リスト ビューに 'NamedColors' データの表示方法を伝えることなく、リスト ビューでこのデータを表示する場合、次のように、単に **ToString** メソッドが返すものを表示します。
 
 **XAML**
 ```xaml
 <ListView x:Name="colorsListView"/>
 ```
 
-![list view showing the string representation of items](images/listview-no-template.png)
+![項目の文字列表現を示すリスト ビュー](images/listview-no-template.png)
 
-You can show the string representation of a particular property of the data item by setting the [**DisplayMemberPath**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.displaymemberpath.aspx) to that property. Here, you set DisplayMemberPath to the `Name` property of the `NamedColor` item.
+データ項目の特定のプロパティに [**DisplayMemberPath**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.displaymemberpath.aspx) を設定すると、そのプロパティの文字列表現を表示できます。 ここでは、`NamedColor` 項目の `Name` プロパティに DisplayMemberPath を設定します。
 
 **XAML**
 ```xaml
 <ListView x:Name="colorsListView" DisplayMemberPath="Name" />
 ```
 
-The list view now displays items by name, as shown here. It’s more useful, but it’s not very interesting and leaves a lot of information hidden.
+リスト ビューで、次のように名前で項目が表示されるようになりました。 より便利になりましたが、あまり興味を引くものではなく、多くの情報が隠されたままです。
 
-![List view showing the string representation of an item property](images/listview-display-member-path.png)
+![項目プロパティの文字列表現を示すリスト ビュー](images/listview-display-member-path.png)
 
-You typically want to show a more rich presentation of your data. To specify exactly how items in the list view are displayed, you create a [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.datatemplate.aspx). The XAML in the DataTemplate defines the layout and appearance of controls used to display an individual item. The controls in the layout can be bound to properties of a data object, or have static content defined inline. You assign the DataTemplate to the [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) property of the list control.
+通常は、リッチな表現でデータを表示する必要があります。 リスト ビューでの項目の表示方法を正確に指定するには、[**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.datatemplate.aspx) を作成します。 DataTemplate の XAML では、個々の項目を表示するために使うコントロールのレイアウトと外観を定義します。 レイアウト内のコントロールでは、データ オブジェクトのプロパティにバインドすることも、静的コンテンツをインラインで定義することもできます。 DataTemplate は、リスト コントロールの [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) プロパティに割り当てます。
 
-> **Important**&nbsp;&nbsp;You can’t use a **ItemTemplate** and **DisplayMemberPath** at the same time. If both properties are set, an exception occurs.
+> **重要**&nbsp;&nbsp;**ItemTemplate** と **DisplayMemberPath** を同時に使うことはできません。 両方のプロパティが設定されていると、例外が発生します。
 
-Here, you define a DataTemplate that shows a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.rectangle.aspx) in the color of the item, along with the color name and RGB values. 
+ここでは、色の名前や RGB 値が設定された項目の色で[**四角形**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.rectangle.aspx)を表示する DataTemplate を定義します。 
 
-> **Note**&nbsp;&nbsp;When you use the [x:Bind markup extension](https://msdn.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) in a DataTemplate, you have to specify the DataType (`x:DataType`) on the DataTemplate.
+> **注**&nbsp;&nbsp;DataTemplate で [x:Bind markup extension](https://msdn.microsoft.com/windows/uwp/xaml-platform/x-bind-markup-extension) を使用する場合、DataTemplate に DataType (`x:DataType`) を指定する必要があります。
 
 **XAML**
 ```XAML
@@ -199,11 +203,11 @@ Here, you define a DataTemplate that shows a [**Rectangle**](https://msdn.micros
 </ListView>
 ```
 
-Here's what the data items look like when they're displayed with this data template.
+このデータ テンプレートを使ってデータ項目を表示すると、次のようになります。
 
-![List view items with a data template](images/listview-data-template-0.png)
+![データ テンプレートを使ったリスト ビュー項目](images/listview-data-template-0.png)
 
-You might want to show the data in a GridView. Here's another data template that displays the data in a way that's more appropriate for a grid layout. This time, the data template is defined as a resource rather than inline with the XAML for the GridView.
+GridView でデータを表示することが必要になる場合もあります。 グリッド レイアウトにより適した方法でデータを表示する、その他のデータ テンプレートを次に示します。 今回は、GridView 用に XAML 内ではなく、リソースとしてデータ テンプレートを定義します。
 
 
 **XAML**
@@ -249,17 +253,17 @@ You might want to show the data in a GridView. Here's another data template that
           ItemTemplate="{StaticResource namedColorItemGridTemplate}"/>
 ```
 
-When the data is shown in a grid using this data template, it looks like this.
+このデータ テンプレートを使ってグリッドにデータを表示すると、次のようになります。
 
-![Grid view items with a data template](images/gridview-data-template.png)
+![データ テンプレートを使ったグリッド ビュー項目](images/gridview-data-template.png)
 
-### Performance considerations
+### パフォーマンスに関する考慮事項
 
-Data templates are the primary way you define the look of your list view. They can also have a significant impact on performance if your list displays a large number of items. 
+データ テンプレートは、リスト ビューの外観を定義する主要な方法です。 リストに多数の項目を表示した場合、パフォーマンスが大幅に低下することもあります。 
 
-An instance of every XAML element in a data template is created for each item in the list view. For example, the grid template in the previous example has 10 XAML elements (1 Grid, 1 Rectangle, 3 Borders, 5 TextBlocks). A GridView that shows 20 items on screen using this data template creates at least 200 elements (20*10=200). Reducing the number of elements in a data template can greatly reduce the total number of elements created for your list view. For more info, see [ListView and GridView UI optimization: Element count reduction per item](https://msdn.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview#element-reduction-per-item).
+データ テンプレートのすべての XAML 要素のインスタンスが、リスト ビューの各項目用に作成されます。 たとえば、前の例のグリッド テンプレートには、10 個の XAML 要素 (1 つの Grid、1 つの Rectangle、3 つの Border、5 つの Textblock) が含まれています。 このデータ テンプレートを使って 20 個の項目を表示する GridView は、少なくとも 200 個 (20*10=200) の要素を作成します。 データ テンプレートの要素数を減らすと、リスト ビューで作成する要素の総数が大幅に減少します。 詳しくは、「[ListView と GridView の UI の最適化: 項目ごとの要素の削減](https://msdn.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview#element-reduction-per-item)」をご覧ください。
 
- Consider this section  of the grid data template. Let's look at a few things that reduce the element count.
+ このセクションのグリッド データ テンプレートについて考えてみます。 要素数を減らすための手法を確認しましょう。
 
 **XAML**
 ```xaml
@@ -273,34 +277,34 @@ An instance of every XAML element in a data template is created for each item in
            Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center"/>
 ```
 
- - First, the layout uses a single Grid. You could have a single-column Grid and place these 3 TextBlocks in a StackPanel, but in a data template that gets created many times, you should look for ways to avoid embedding layout panels within other layout panels.
- - Second, you can use a Border control to render a background without actually placing items within the Border element. A Border element can have only one child element, so you would need to add an additional layout panel to host the 3 TextBlock elements within the Border element in XAML. By not making the TextBlocks children of the Border, you eliminate the need for a panel to hold the TextBlocks.
- - Finally, you could place the TextBlocks inside a StackPanel, and set the border properties on the StackPanel rather than using an explicit Border element. However, the Border element is a more lightweight control than a StackPanel, so it has less of an impact on performance when rendered many times over.
+ - まず、このレイアウトは 1 つのグリッドを使用します。 1 列の Grid を用意して、StackPanel にこれら 3 つの TextBlock を配置できますが、何度も作成するデータ テンプレートでは、レイアウト パネルを他のレイアウト パネル内に埋め込まないようにする方法を探す必要があります。
+ - 次に、Border コントロールを使って、Border 要素内に実際に項目を配置することなく背景をレンダリングできます。 Border 要素には子要素を 1 つしか配置できないため、他のレイアウト パネルを追加して、XAML の Border 要素内で 3 つの TextBlock 要素をホストする必要があります。 TextBlock を Border 要素の子要素にしないようにすれば、パネルで TextBlock を保持する必要がなくなります。
+ - 最後に、StackPanel 内に TextBlock を配置して、明示的な Border 要素を使用する代わりに、StackPanel で border プロパティを設定できます。 ただし、Border 要素は StackPanel よりも軽量なコントロールであるため、何度もレンダリングするときのパフォーマンスの影響は少なくなります。
 
-## Control template
-An item’s control template contains the visuals that display state, like selection, pointer over, and focus. These visuals are rendered either on top of or below the data template. Some of the common default visuals drawn by the ListView control template are shown here.
+## コントロール テンプレート
+項目のコントロール テンプレートには、選択、ホバー、フォーカスなどの状態を表示する視覚効果が含まれています。 これらの視覚効果は、データ テンプレートの上または下にレンダリングされます。 ListView コントロール テンプレートによって描画される一般的な既定の視覚効果を次に示します。
 
-- Hover – A light gray rectangle drawn below the data template.  
-- Selection – A light blue rectangle drawn below the data template. 
-- Keyboard focus– A black and white dotted border drown on top of the item template. 
+- ホバー – 薄い灰色の四角形がデータ テンプレートの下に描画されます。  
+- 選択 – 薄い青色の四角形がデータ テンプレートの下に描画されます。 
+- キーボード フォーカス – 黒色と白色の点線で表された境界線が項目テンプレートの上に描画されます。 
 
-![List view state visuals](images/listview-state-visuals.png)
+![リスト ビューの状態の視覚効果](images/listview-state-visuals.png)
 
-The list view combines the elements from the data template and control template to create the final visuals rendered on the screen. Here, the state visuals are shown in the context of a list view.
+リスト ビューでは、データ テンプレートの要素とコントロール テンプレートの要素を組み合わせて、画面にレンダリングする最終的な視覚効果を作成します。 以下では、状態の視覚効果がリスト ビューのコンテキスト内で表示されています。
 
-![Lsit view with items in different states](images/listview-states.png)
+![異なる状態の項目を示すリスト ビュー](images/listview-states.png)
 
 ### ListViewItemPresenter
 
-As we noted previously about data templates, the number of XAML elements created for each item can have a significant impact on the performance of a list view. Because the data template and control template are combined to display each item, the actual number of elements needed to display an item includes the elements in both templates.
+データ テンプレートについて上で説明したとおり、各項目で作成する XAML 要素の数は、リスト ビューのパフォーマンスに大きな影響を与えます。 データ テンプレートとコントロール テンプレートを組み合わせて各項目を表示するため、項目を表示するために必要な実際の要素数には、両方のテンプレートの要素数が含まれます。
 
-The ListView and GridView controls are optimized to reduce the number of XAML elements created per item. The **ListViewItem** visuals are created by the [**ListViewItemPresenter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.aspx), which is a special XAML element that displays complex visuals for focus, selection, and other visual states, without the overhead of numerous UIElements.
+ListView コントロールと GridView コントロールを最適化して、項目ごとに作成する XAML 要素の数を減らします。 **ListViewItem** の視覚効果は [**ListViewItemPresenter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.aspx) によって作成されます。ListViewItemPresenter は、多数の UIElement によるオーバーヘッドなしで、フォーカス、選択などの表示状態で複雑な視覚効果を表示する特別な XAML 要素です。
  
-> **Note**&nbsp;&nbsp;In UWP apps for Windows 10, both **ListViewItem** and **GridViewItem** use **ListViewItemPresenter**; the GridViewItemPresenter is deprecated and you should not use it. ListViewItem and GridViewItem set different property values on ListViewItemPresenter to achieve different default looks.)
+> **注**&nbsp;&nbsp;Windows 10 の UWP アプリでは、**ListViewItem** と **GridViewItem** の両方で **ListViewItemPresenter** を使います。GridViewItemPresenter は非推奨であるため、使わないでください。 ListViewItem と GridViewItem は、ListViewItemPresenter に異なるプロパティ値を設定して、異なる既定の外観を作成します)。
 
-To modify the look of the item container, use the [**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle.aspx) property and provide a [**Style**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.style.aspx) with its [**TargetType**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.style.targettype.aspx) set to **ListViewItem** or **GridViewItem**.
+項目コンテナーの外観を変更するには、[**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle.aspx) プロパティを使い、[**TargetType**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.style.targettype.aspx) に **ListViewItem** または **GridViewItem** を設定した [**Style**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.style.aspx) を提供します。
 
-In this example, you add padding to the ListViewItem to create some space between the items in the list.
+この例では、ListViewItem にパディングを追加して、リストの項目の間に余白を入れます。
 
 ```xaml
 <ListView x:Name="colorsListView">
@@ -316,26 +320,26 @@ In this example, you add padding to the ListViewItem to create some space betwee
 </ListView>
 ```
 
-Now the list view looks like this with space between the items.
+これで、項目の間に余白が入ったリスト ビューが次のように表示されます。
 
-![List view items with padding applied](images/listview-data-template-1.png)
+![パディングを適用したリスト ビューの項目](images/listview-data-template-1.png)
 
-In the ListViewItem default style, the ListViewItemPresenter **ContentMargin** property has a [**TemplateBinding**](https://msdn.microsoft.com/windows/uwp/xaml-platform/templatebinding-markup-extension) to the ListViewItem **Padding** property (`<ListViewItemPresenter ContentMargin="{TemplateBinding Padding}"/>`). When we set the Padding property, that value is really being passed to the ListViewItemPresenter ContentMargin property.
+ListViewItem の既定のスタイルの場合、ListViewItemPresenter の **ContentMargin** プロパティには、ListViewItem の **Padding** プロパティにバインドする [**TemplateBinding**](https://msdn.microsoft.com/windows/uwp/xaml-platform/templatebinding-markup-extension) があります (`<ListViewItemPresenter ContentMargin="{TemplateBinding Padding}"/>`)。 Padding プロパティを設定すると、この値は実際に ListViewItemPresenter の ContentMargin プロパティに渡されます。
 
-To modify other ListViewItemPresenter properties that aren't template bound to ListViewItems properties, you need to retemplate the ListViewItem with a new ListViewItemPresenter that you can modify properties on. 
+ListViewItems プロパティにテンプレート バインドされていないその他の ListViewItemPresenter プロパティを変更するには、プロパティを変更できる新しい ListViewItemPresenter を使って ListViewItem を再テンプレート化する必要があります。 
 
-> **Note**&nbsp;&nbsp;ListViewItem and GridViewItem default styles set a lot of properties on ListViewItemPresenter. You should always start with a copy of the default style and modify only the properties you need too. Otherwise, the visuals will probably not show up the way you expect because some properties won't be set correctly.
+> **注**&nbsp;&nbsp;ListViewItem と GridViewItem の既定のスタイルには、ListViewItemPresenter の多くのプロパティが設定されています。 常に既定のスタイルのコピーを作成し、必要なプロパティのみ変更することをお勧めします。 そうしなければ、一部のプロパティを正しく設定していないことが原因で、視覚効果が期待どおりに表示されない可能性があります。
 
-**To make a copy of the default template in Visual Studio**
+**Visual Studio で既定のテンプレートのコピーを作成するには**
  
-1. Open the Document Outline pane (**View > Other Windows > Document Outline**).
-2. Select the list or grid element to modify. In this example, you modify the `colorsGridView` element.
-3. Right-click and select **Edit Additional Templates > Edit Generated Item Container (ItemContainerStyle) > Edit a Copy**.
-    ![Visual Studio editor](images/listview-itemcontainerstyle-vs.png)
-4. In the Create Style Resource dialog, enter a name for the style. In this example, you use `colorsGridViewItemStyle`.
-    ![Visual Studio Create Style Resource dialog(images/listview-style-resource-vs.png)
+1. [ドキュメント アウトライン] ウィンドウを開きます (**[表示] > [その他のウィンドウ] > [ドキュメント アウトライン]**)。
+2. 変更するリストまたはグリッドの要素を選びます。 この例では、`colorsGridView` 要素を変更します。
+3. `colorsGridView` を右クリックし、**[追加テンプレートの編集]、[生成されたアイテム コンテナーの編集 (ItemContainerStyle)]、[コピーして編集]** の順に選びます。
+    ![Visual Studio のエディター](images/listview-itemcontainerstyle-vs.png)
+4. [Style リソースの作成] ダイアログ ボックスで、スタイルの名前を入力します。 この例では、`colorsGridViewItemStyle` を使います。
+    ![Visual Studio の [Style リソースの作成] ダイアログ (images/listview-style-resource-vs.png)
 
-A copy of the default style is added to your app as a resource, and the **GridView.ItemContainerStyle** property is set to that resource, as shown in this XAML. 
+次の XAML で示すように、既定のスタイルのコピーをリソースとしてアプリに追加し、**GridView.ItemContainerStyle** プロパティをそのリソースに設定します。 
 
 ```xaml
 <Style x:Key="colorsGridViewItemStyle" TargetType="GridViewItem">
@@ -387,78 +391,84 @@ A copy of the default style is added to your app as a resource, and the **GridVi
 <GridView x:Name="colorsGridView" ItemContainerStyle="{StaticResource colorsGridViewItemStyle}"/>
 ```
 
-You can now modify properties on the ListViewItemPresenter to control the selection check box, item positioning, and brush colors for visual states. 
+これで、ListViewItemPresenter のプロパティを変更して、選択チェック ボックス、項目の配置、ブラシの色の表示状態を制御できるようになりました。 
 
-#### Inline and Overlay selection visuals
+#### インラインとオーバーレイの選択ビジュアル
 
-ListView and GridView indicate selected items in different ways depending on the control and the [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx). For more info about list view selection, see [ListView and GridView](listview-and-gridview.md). 
+ListView と GridView では、コントロールや [ **SelectionMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewbase.selectionmode.aspx) に応じて、選択されている項目をさまざまな方法で示します。 リスト ビューについて詳しくは、「[ListView と GridView](listview-and-gridview.md)」をご覧ください。 
 
-When **SelectionMode** is set to **Multiple**, a selection check box is shown as part of the item's control template. You can use the [**SelectionCheckMarkVisualEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.selectioncheckmarkvisualenabled.aspx) property to turn off the selection check box in Multiple selection mode. However, this property is ignored in other selection modes, so you can't turn on the check box in Extended or Single selection mode.
+**SelectionMode** を **Multiple** に設定すると、選択チェック ボックスは項目のコントロール テンプレートの一部として表示されます。 [**SelectionCheckMarkVisualEnabled**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.selectioncheckmarkvisualenabled.aspx) プロパティを使って、Multiple 選択モードの選択チェック ボックスをオフにできます。 ただし、このプロパティは他の選択モードでは無視されるため、Extended または Single 選択モードのチェック ボックスをオンにすることはできません。
 
-You can set the [**CheckMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.checkmode.aspx) property to specify whether the check box is shown using the inline style or overlay style.
+[**CheckMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.checkmode.aspx) プロパティを設定して、インライン スタイルまたはオーバーレイ スタイルのどちらを使ってチェック ボックスを表示するかを指定できます。
 
-- **Inline**: This style shows the check box to the left of the content, and colors the background of the item container to indicate selection. This is the default style for ListView.
-- **Overlay**: This style shows the check box on top of the content, and colors only the border of the item container to indicate selection. This is the default style for GridView.
+- **Inline**: このスタイルは、コンテンツの左側にチェック ボックスを表示し、項目コンテナーの背景を色付けすることで、選択された状態を示します。 これは、ListView の既定のスタイルです。
+- **Overlay**: このスタイルは、コンテンツの上部にチェック ボックスを表示し、項目コンテナーの境界線のみを色付けすることで、選択された状態を示します。 これは、GridView の既定のスタイルです。
 
-This table shows the default visuals used to indicate selection.
+次の表は、選択された状態を示すために使用する既定の視覚効果を示しています。
 
-SelectionMode:&nbsp;&nbsp; | Single/Extended | Multiple
+SelectionMode: &nbsp;&nbsp; | Single/Extended | Multiple
 ---------------|-----------------|---------
-Inline | ![Inline single or extended selection](images/listview-single-selection.png) | ![Inline multiple selection](images/listview-multi-selection.png)
-Overlay | ![Overlay single or extended selection](images/gridview-single-selection.png) | ![Overlay multiple selection](images/gridview-multi-selection.png)
+Inline | ![Inline かつ Single/Extended の選択](images/listview-single-selection.png) | ![Inline かつ Multiple の選択](images/listview-multi-selection.png)
+Overlay | ![Overlay かつ Single/Extended の選択](images/gridview-single-selection.png) | ![Overlay かつ Multiple の選択](images/gridview-multi-selection.png)
 
-> **Note**&nbsp;&nbsp;In this and the following examples, simple string data items are shown without data templates to emphasize the visuals provided by the control template.
+> **注**&nbsp;&nbsp;この例と次の例では、コントロール テンプレートによって提供されている視覚効果に焦点を当てるために、データ テンプレートなしでシンプルな文字列データ項目を表示しています。
 
-There are also several brush properties to change the colors of the check box. We'll look at these next along with other brush properties.
+また、チェック ボックスの色を変更するためのブラシ プロパティも複数用意されています。 詳しくは、以下で他のブラシ プロパティと共に説明します。
 
-#### Brushes 
+#### ブラシ 
 
-Many of the properties specify the brushes used for different visual states. You might want to modify these to match the color of your brand. 
+多くのプロパティでは、異なる表示状態で使用するブラシを指定します。 ブランドに合わせてブラシを変更することが必要になる場合もあります。 
 
-This table shows the Common and Selection visual states for ListViewItem, and the brushes used to render the visuals for each state. The images show the effects of the brushes on both the inline and overlay selection visual styles.
+次の表は、ListViewItem の一般的な表示状態と選択された表示状態、および各状態のレンダリングで使用するブラシを示しています。 画像は、インラインとオーバーレイの両方の選択視覚スタイルにおける、ブラシの効果を示しています。
 
-> **Note**&nbsp;&nbsp;In this table, the modified color values for the brushes are hardcoded named colors and the colors are selected to make it more apparent where they are applied in the template. These are not the default colors for the visual states. If you modify the default colors in your app, you should use brush resources to modify the color values as done in the default template.
+> **注**&nbsp;&nbsp;この表の場合、ブラシで変更する色値はハードコードされた名前付きの色です。テンプレートのどこに適用されるかをはっきりと理解できるように、名前付きの色を選択しています。 これらは、表示状態の既定の色ではありません。 アプリの既定の色を変更する場合は、既定のテンプレートで設定されているように、ブラシのリソースを使って色値を変更する必要があります。
 
-State/Brush name | Inline style | Overlay style
+状態/ブラシの名前 | インライン スタイル | オーバーレイ スタイル
 ------------|--------------|--------------
-<b>Normal</b><ul><li><b>CheckBoxBrush="Red"</b></li></ul> | ![Inline item selection normal](images/listview-item-normal.png) | ![Overlay item selection normal](images/gridview-item-normal.png)
-<b>PointerOver</b><ul><li><b>PointerOverForeground="DarkOrange"</b></li><li><b>PointerOverBackground="MistyRose"</b></li><li>CheckBoxBrush="Red"</li></ul> | ![Inline item selection pointer over](images/listview-item-pointerover.png) | ![Overlay item selection pointer over](images/gridview-item-pointerover.png)
-<b>Pressed</b><ul><li><b>PressedBackground="LightCyan"</b></li><li>PointerOverForeground="DarkOrange"</li><li>CheckBoxBrush="Red"</li></ul> | ![Inline item selection pressed](images/listview-item-pressed.png) | ![Overlay item selection pressed](images/gridview-item-pressed.png)
-<b>Selected</b><ul><li><b>SelectedForeground="Navy"</b></li><li><b>SelectedBackground="Khaki"</b></li><li><b>CheckBrush="Green"</b></li><li>CheckBoxBrush="Red" (inline only)</li></ul> | ![Inline item selection selected](images/listview-item-selected.png) | ![Overlay item selection selected](images/gridview-item-selected.png)
-<b>PointerOverSelected</b><ul><li><b>SelectedPointerOverBackground="Lavender"</b></li><li>SelectedForeground="Navy"</li><li>SelectedBackground="Khaki" (overlay only)</li><li>CheckBrush="Green"</li><li>CheckBoxBrush="Red" (inline only)</li></ul> | ![Inline item selection pointer over selected](images/listview-item-pointeroverselected.png) | ![Overlay item selection pointer over selected](images/gridview-item-pointeroverselected.png)
-<b>PressedSelected</b><ul><li><b>SelectedPressedBackground="MediumTurquoise"</b></li></li><li>SelectedForeground="Navy"</li><li>SelectedBackground="Khaki" (overlay only)</li><li>CheckBrush="Green"</li><li>CheckBoxBrush="Red" (inline only)</li></ul> | ![Inline item selection pressed selected](images/listview-item-pressedselected.png) | ![Overlay item selection pressed selected](images/gridview-item-pressedselected.png)
-<b>Focused</b><ul><li><b>FocusBorderBrush="Crimson"</b></li><li><b>FocusSecondaryBorderBrush="Gold"</b></li><li>CheckBoxBrush="Red"</li></ul> | ![Inline item selection focused](images/listview-item-focused.png) | ![Overlay item selection focused](images/gridview-item-focused.png)
+<b>Normal</b><ul><li><b>CheckBoxBrush="Red"</b></li></ul> | ![インラインの項目の選択 (通常)](images/listview-item-normal.png) | ![オーバーレイの項目の選択 (通常)](images/gridview-item-normal.png)
+<b>PointerOver</b><ul><li><b>PointerOverForeground="DarkOrange"</b></li><li><b>PointerOverBackground="MistyRose"</b></li><li>CheckBoxBrush="Red"</li></ul> | ![インラインの項目の選択 (ホバー)](images/listview-item-pointerover.png) | ![オーバーレイの項目の選択 (ホバー)](images/gridview-item-pointerover.png)
+<b>Pressed</b><ul><li><b>PressedBackground="LightCyan"</b></li><li>PointerOverForeground="DarkOrange"</li><li>CheckBoxBrush="Red"</li></ul> | ![インラインの項目の選択 (押す)](images/listview-item-pressed.png) | ![オーバーレイの項目の選択 (押す)](images/gridview-item-pressed.png)
+<b>Selected</b><ul><li><b>SelectedForeground="Navy"</b></li><li><b>SelectedBackground="Khaki"</b></li><li><b>CheckBrush="Green"</b></li><li>CheckBoxBrush="Red" (インラインのみ)</li></ul> | ![インラインの項目の選択 (選択)](images/listview-item-selected.png) | ![オーバーレイの項目の選択 (選択)](images/gridview-item-selected.png)
+<b>PointerOverSelected</b><ul><li><b>SelectedPointerOverBackground="Lavender"</b></li><li>SelectedForeground="Navy"</li><li>SelectedBackground="Khaki" (オーバーレイのみ)</li><li>CheckBrush="Green"</li><li>CheckBoxBrush="Red" (インラインのみ)</li></ul> | ![インラインの項目の選択 (ホバー、選択)](images/listview-item-pointeroverselected.png) | ![オーバーレイの項目の選択 (ホバー、選択)](images/gridview-item-pointeroverselected.png)
+<b>PressedSelected</b><ul><li><b>SelectedPressedBackground="MediumTurquoise"</b></li></li><li>SelectedForeground="Navy"</li><li>SelectedBackground="Khaki" (オーバーレイのみ)</li><li>CheckBrush="Green"</li><li>CheckBoxBrush="Red" (インラインのみ)</li></ul> | ![インラインの項目の選択 (押す、選択)](images/listview-item-pressedselected.png) | ![オーバーレイの項目の選択 (押す、選択)](images/gridview-item-pressedselected.png)
+<b>Focused</b><ul><li><b>FocusBorderBrush="Crimson"</b></li><li><b>FocusSecondaryBorderBrush="Gold"</b></li><li>CheckBoxBrush="Red"</li></ul> | ![インラインの項目の選択 (フォーカス)](images/listview-item-focused.png) | ![オーバーレイの項目の選択 (フォーカス)](images/gridview-item-focused.png)
 
-ListViewItemPresenter has other brush properties for data placeholders and drag states. If you use incremental loading or drag and drop in your list view, you should consider whether you need to also modify these additional brush properties. See the ListViewItemPresenter class for the complete list of properties you can modify. 
+ListViewItemPresenter には、データのプレース ホルダーやドラッグ状態用のブラシ プロパティが他にもあります。 リスト ビューで段階的読み込みやドラッグ アンド ドロップを使用する場合は、このような追加のブラシ プロパティを変更する必要があるかについても検討することをお勧めします。 変更できるプロパティの完全な一覧については、ListViewItemPresenter クラスをご覧ください。 
 
-### Expanded XAML item templates
+### 展開時の XAML 項目テンプレート
 
-If you need to make more modifications than what is allowed by the **ListViewItemPresenter** properties - if you need to change the position of the check box, for example - you can use the *ListViewItemExpanded* or *GridViewItemExpanded* templates. These templates are included with the default styles in generic.xaml. They follow the standard XAML pattern of building all the visuals from individual UIElements.
+たとえば、**ListViewItemPresenter** プロパティで許可されていない変更を行う必要がある場合や、チェック ボックスの位置を変更する必要がある場合は、*ListViewItemExpanded* テンプレートまたは *GridViewItemExpanded* テンプレートを使用できます。 これらのテンプレートは、generic.xaml の既定のスタイルに含まれています。 これらは、個別の UIElement からすべての視覚効果をビルドする標準の XAML パターンに従います。
 
-As mentioned previously, the number of UIElements in an item template has a significant impact on the performance of your list view. Replacing ListViewItemPresenter with the expanded XAML templates greatly increases the element count, and is not recommended when your list view will show a large number of items or when performance is a concern.
+既に説明したように、項目テンプレート内の UIElement の数は、リスト ビューのパフォーマンスに大きな影響を与えます。 ListViewItemPresenter を展開時の XAML テンプレートに置き換えると、要素の数が大幅に増大するため、リスト ビューで多数の項目を表示する場合や、パフォーマンスを懸念する場合は推奨しません。
 
-> **Note**&nbsp;&nbsp;**ListViewItemPresenter** is supported only when the list view’s [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx) is an [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemswrapgrid.aspx) or [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.aspx). If you change the ItemsPanel to use [**VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.variablesizedwrapgrid.aspx), [**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.wrapgrid.aspx), or [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.stackpanel.aspx), then the item template is automatically switched to the expanded XAML template. For more info, see [ListView and GridView UI optimization](https://msdn.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview).
+> **注**&nbsp;&nbsp;**ListViewItemPresenter** は、リスト ビューの [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx) が [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemswrapgrid.aspx) または [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemsstackpanel.aspx) である場合にのみサポートされます。 [**VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.variablesizedwrapgrid.aspx)、[**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.wrapgrid.aspx)、または [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.stackpanel.aspx) を使うように ItemsPanel を変更すると、項目テンプレートは展開時の XAML テンプレートに自動的に切り替わります。 詳しくは、「[ListView と GridView の UI の最適化](https://msdn.microsoft.com/windows/uwp/debug-test-perf/optimize-gridview-and-listview)」をご覧ください。
 
-To customize an expanded XAML template, you need to make a copy of it in your app, and set the **ItemContainerStyle** property to your copy.
+展開時の XAML テンプレートをカスタマイズするには、アプリでコピーを作成し、コピーに **ItemContainerStyle** プロパティを設定します。
 
-**To copy the expanded template**
-1. Set the ItemContainerStyle property as shown here for your ListView or GridView.
+**展開時のテンプレートをコピーするには**
+1. 次に示すように、ListView または GridView に ItemContainerStyle プロパティを設定します。
     ```xaml
     <ListView ItemContainerStyle="{StaticResource ListViewItemExpanded}"/>
     <GridView ItemContainerStyle="{StaticResource GridViewItemExpanded}"/>
     ```
-2. In the Visual Studio Properties pane, expand the Miscellaneous section and find the ItemContainerStyle property. (Make sure the ListView or GridView is selected.)
-3. Click the property marker for the ItemContainerStyle property. (It’s the small box next to the TextBox. It’s coloreed green to show that it’s set to a StaticResource.) The property menu opens.
-4. In the property menu, click **Convert to New Resource**. 
+2. Visual Studio の [プロパティ] ウィンドウで、[その他] セクションを展開し、ItemContainerStyle プロパティを探します。 (ListView または GridView が選択されていることを確認します)。
+3. ItemContainerStyle プロパティのプロパティ マーカーをクリックします。 (TextBox の横にある小さなボックスです。 StaticResource に設定されていることを示すために緑色で表示されています)。プロパティ メニューが開きます。
+4. プロパティ メニューで、**[新しいリソースに変換]** をクリックします。 
     
-    ![Visual Studio property menu](images/listview-convert-resource-vs.png)
-5. In the Create Style Resource dialog, enter a name for the resource and click OK.
+    ![Visual Studio のプロパティ メニュー](images/listview-convert-resource-vs.png)
+5. [Style リソースの作成] ダイアログ ボックスで、リソースの名前を入力し、[OK] をクリックします。
 
-A copy of the expanded template from generic.xaml is created in your app, which you can modify as needed.
+generic.xaml の展開時のテンプレートのコピーがアプリで作成され、必要に応じて変更できるようになります。
 
 
-## Related articles
+## 関連記事
 
-- [Lists](lists.md)
-- [ListView and GridView](listview-and-gridview.md)
+- [リスト](lists.md)
+- [ListView と GridView](listview-and-gridview.md)
+
+
+
+
+<!--HONumber=Aug16_HO3-->
+
 

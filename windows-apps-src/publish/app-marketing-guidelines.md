@@ -3,7 +3,6 @@ author: jnHs
 Description: "Windows ストアでアプリやコンテンツの販売を促進する方法について説明します。 これらのガイドラインでは、利用可能なアセットの使用方法について説明し、印刷、テレビ、ソーシャル メディア、デジタル広告でアプリの販売を促進するための推奨事項を紹介します。"
 title: "Windows ストア アプリのマーケティング ガイドライン"
 ms.assetid: CEB81E9D-5C64-458F-AAF1-C59BBBBB272E
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 64c6dd45053070096ff7d7e932bac1c560194518
 
@@ -17,26 +16,30 @@ Windows ストアでアプリやコンテンツの販売を促進する方法に
 
 Windows ストア内でアプリの内容により多くのユーザーを集客するのに役立つ、特殊なプロモーション用のバッジを作成しました。 これらのバッジは 44 の言語で利用できます。 これらのイメージを使う場合、特定の要件に従う必要があることに注意してください。これらの要件は、使用例やガイドラインと共に、PDF ファイルでご確認いただけます。
 
-[
+
+            [
               ![ダウンロード ボタン](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529769) Windows ストアのマーケティング ガイドライン (PDF、英語)
 
 ## バッジ ジェネレーターと画像
 
 [バッジ ジェネレーター](http://go.microsoft.com/fwlink/p/?LinkID=534236) を使って、(好みの言語で) ストア バッジを表示しストアのアプリの内容ページに直接リンクする HTML を生成できます。 バッジ画像のセット一式を (PNG および PDF 形式で) 以下のリンクからダウンロードすることもできます。
 
-[
+
+            [
               ![ダウンロード ボタン](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529771) すべてのバッジ画像
 
 ## デバイスの画像
 
 アプリの販売を促進するために、Windows デバイスで実行しているときにどのように表示されるかを示すことが必要になる場合があります。 Microsoft では、電話、タブレット、ノート PC、PC など、さまざまなデバイス シャーシの画像を用意しており、その中から選んで使うことができます。 これらの画像の使用方法に関するベスト プラクティスと技術仕様については、[Windows ストアのマーケティング ガイドライン](http://go.microsoft.com/fwlink/p/?LinkId=529769) をご覧ください。
 
-[
+
+            [
               ![ダウンロード ボタン](images/downloadbutton.png)](https://go.microsoft.com/fwlink/p/?LinkId=533057) Windows デバイスの図
 
 ## Microsoft マークのライセンス
 
-*Microsoft マーク*とは、[バッジ ジェネレーター](http://go.microsoft.com/fwlink/p/?LinkID=534236)のページで説明するロゴ、*Microsoft バッジ*と *Windows ストア タイル*を意味します。 これらのバッジを使うには、以下の作業を行う必要があります。
+
+            *Microsoft マーク*とは、[バッジ ジェネレーター](http://go.microsoft.com/fwlink/p/?LinkID=534236)のページで説明するロゴ、*Microsoft バッジ*と *Windows ストア タイル*を意味します。 これらのバッジを使うには、以下の作業を行う必要があります。
 
 -   アプリまたはその他のコンテンツを、Windows ストアで入手できるように設定するか、[Microsoft アフィリ エイト プログラム](http://go.microsoft.com/fwlink/p/?LinkId=624463) に登録する。
 

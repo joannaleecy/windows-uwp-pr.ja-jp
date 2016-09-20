@@ -4,7 +4,6 @@ title: "Windows 10 アプリに関するハウツー ガイド - Windows アプ�
 ms.assetid: 2A39F3D8-85AD-4315-A69B-2B79242780E3
 author: martinekuan
 redirect_url: https://developer.microsoft.com/en-us/windows/develop
-translationtype: Human Translation
 ms.sourcegitcommit: 753a917c0ecbf445560203dbc1406acae52e5265
 ms.openlocfilehash: 97e016047c864026fe0c72e4b7cb819f0fc80748
 

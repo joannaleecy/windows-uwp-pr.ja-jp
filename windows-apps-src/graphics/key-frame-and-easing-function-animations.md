@@ -5,7 +5,7 @@ ms.assetid: D8AF24CD-F4C2-4562-AFD7-25010955D677
 description: "線形キー フレーム アニメーション、KeySpline 値を設定したキー フレーム アニメーション、イージング関数は、ほとんど同じシナリオを実現できる 3 種類の手法です。"
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 9c010e0abca4dd095b32b42b3a8606f8faf3fcaa
+ms.openlocfilehash: 00abdacf8d1f8376a3d1a0c472ff7cf2c15afb01
 
 ---
 # キー フレーム アニメーションとイージング関数のアニメーション
@@ -31,25 +31,14 @@ ms.openlocfilehash: 9c010e0abca4dd095b32b42b3a8606f8faf3fcaa
 
 [**Duration**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.duration) 以外にも、**From**/**To**/**By** アニメーションの場合と同様に、[**Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517) ベースのすべてのプロパティをキー フレーム アニメーションに設定できます。キー フレーム アニメーション クラスも **Timeline** から派生しているためです。 それらを次に示します。
 
--   
-              [
-              **AutoReverse**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.autoreverse): 最後のキー フレームに達すると、フレームは最後から逆に繰り返されます。 アニメーションの明確な継続時間が 2 倍になります。
--   
-              [
-              **BeginTime**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.begintime): アニメーションの開始を遅らせます。 **BeginTime** に達するまで、フレーム内にある **KeyTime** 値のタイムラインはカウントを開始しないため、フレームがカットされる心配はありません。
--   
-              [
-              **FillBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.fillbehavior): 最後のキー フレームに達したときの処理を制御します。 
-              **FillBehavior** はどの中間キー フレームにも影響しません。
--   
-              [
-              **RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.repeatbehaviorproperty):
+-   [**AutoReverse**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.autoreverse): 最後のキー フレームに達すると、フレームは最後から逆に繰り返されます。 アニメーションの明確な継続時間が 2 倍になります。
+-   [**BeginTime**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.begintime): アニメーションの開始を遅らせます。 **BeginTime** に達するまで、フレーム内にある **KeyTime** 値のタイムラインはカウントを開始しないため、フレームがカットされる心配はありません。
+-   [**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.fillbehavior): 最後のキー フレームに達したときの処理を制御します。 **FillBehavior** はどの中間キー フレームにも影響しません。
+-   [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.repeatbehaviorproperty):
     -   **Forever** に設定した場合、キー フレームとそのタイムラインが無限に繰り返されます。
     -   反復回数に設定した場合、タイムラインはその回数だけ繰り返されます。
     -   [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377) に設定した場合、その時間に達するまでタイムラインが繰り返されます。 このとき、キー フレーム シーケンスの途中でアニメーションが途切れる可能性があります (タイムラインの暗黙的な継続時間の整数ファクターではない場合)。
--   
-              [
-              **SpeedRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.speedratioproperty) (通常は使いません)
+-   [**SpeedRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.speedratioproperty) (通常は使いません)
 
 ### 線形キー フレーム
 
@@ -77,8 +66,7 @@ ms.openlocfilehash: 9c010e0abca4dd095b32b42b3a8606f8faf3fcaa
 
 離散キー フレームでは、補間を一切使いません。 **KeyTime** に達すると、新しい **Value** が単純に適用されます。 アニメーション化される UI プロパティに応じて、"ジャンプ" するように見えるアニメーションになることがよくあります。 これが、望みどおりのきれいな動作であることを確認してください。 宣言するキー フレームの数を増やすことで明確なジャンプを最小限に抑えることができますが、スムーズなアニメーションが必要な場合は、線形キー フレームかスプライン キー フレームを使うことをお勧めします。
 
-
-              **注** 離散キー フレームは、[**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)、[**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870)、[**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) 型ではない値を [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132) でアニメーション化するための唯一の手段です。 その詳しい内容については、このトピックの後半で説明します。
+**注** 離散キー フレームは、[**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)、[**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870)、[**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) 型ではない値を [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132) でアニメーション化するための唯一の手段です。 その詳しい内容については、このトピックの後半で説明します。
 
  
 
@@ -166,39 +154,17 @@ This example applies a [**CubicEase**](https://msdn.microsoft.com/library/window
 
 一連のイージング関数を以下にまとめます。
 
--   
-              [
-              **BackEase**](https://msdn.microsoft.com/library/windows/apps/BR243049): 指定されたパスのアニメーションを開始する直前に、逆の動きを与えます。
--   
-              [
-              **BounceEase**](https://msdn.microsoft.com/library/windows/apps/BR243057): 跳ね返りの効果を作成します。
--   
-              [
-              **CircleEase**](https://msdn.microsoft.com/library/windows/apps/BR243063): 円関数を使って加速と減速のアニメーションを作成します。
--   
-              [
-              **CubicEase**](https://msdn.microsoft.com/library/windows/apps/BR243126): 数式 f(t) = t3 を使って加速と減速のアニメーションを作成します。
--   
-              [
-              **ElasticEase**](https://msdn.microsoft.com/library/windows/apps/BR210282): 伸び縮みを繰り返して静止する、ばねに似たアニメーションを作成します。
--   
-              [
-              **ExponentialEase**](https://msdn.microsoft.com/library/windows/apps/BR210294): 指数関数の数式を使って加速と減速のアニメーションを作成します。
--   
-              [
-              **PowerEase**](https://msdn.microsoft.com/library/windows/apps/BR210399): 数式 f(t) = tp を使って加速と減速のアニメーションを作成します (p = [**Power**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.powerease.power) プロパティ)。
--   
-              [
-              **QuadraticEase**](https://msdn.microsoft.com/library/windows/apps/BR210403): 数式 f(t) = t2 を使って加速と減速のアニメーションを作成します。
--   
-              [
-              **QuarticEase**](https://msdn.microsoft.com/library/windows/apps/BR210405): 数式 f(t) = t4 を使って加速と減速のアニメーションを作成します。
--   
-              [
-              **QuinticEase**](https://msdn.microsoft.com/library/windows/apps/BR210407): 数式 f(t) = t5 を使って加速と減速のアニメーションを作成します。
--   
-              [
-              **SineEase**](https://msdn.microsoft.com/library/windows/apps/BR210439): 正弦公式を使って加速と減速のアニメーションを作成します。
+-   [**BackEase**](https://msdn.microsoft.com/library/windows/apps/BR243049): 指定されたパスのアニメーションを開始する直前に、逆の動きを与えます。
+-   [**BounceEase**](https://msdn.microsoft.com/library/windows/apps/BR243057): 跳ね返りの効果を作成します。
+-   [**CircleEase**](https://msdn.microsoft.com/library/windows/apps/BR243063): 円関数を使って加速と減速のアニメーションを作成します。
+-   [**CubicEase**](https://msdn.microsoft.com/library/windows/apps/BR243126): 数式 f(t) = t3 を使って加速と減速のアニメーションを作成します。
+-   [**ElasticEase**](https://msdn.microsoft.com/library/windows/apps/BR210282): 伸び縮みを繰り返して静止する、ばねに似たアニメーションを作成します。
+-   [**ExponentialEase**](https://msdn.microsoft.com/library/windows/apps/BR210294): 指数関数の数式を使って加速と減速のアニメーションを作成します。
+-   [**PowerEase**](https://msdn.microsoft.com/library/windows/apps/BR210399): 数式 f(t) = tp を使って加速と減速のアニメーションを作成します (p = [**Power**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.powerease.power) プロパティ)。
+-   [**QuadraticEase**](https://msdn.microsoft.com/library/windows/apps/BR210403): 数式 f(t) = t2 を使って加速と減速のアニメーションを作成します。
+-   [**QuarticEase**](https://msdn.microsoft.com/library/windows/apps/BR210405): 数式 f(t) = t4 を使って加速と減速のアニメーションを作成します。
+-   [**QuinticEase**](https://msdn.microsoft.com/library/windows/apps/BR210407): 数式 f(t) = t5 を使って加速と減速のアニメーションを作成します。
+-   [**SineEase**](https://msdn.microsoft.com/library/windows/apps/BR210439): 正弦公式を使って加速と減速のアニメーションを作成します。
 
 一部のイージング関数には固有のプロパティがあります。 たとえば、[**BounceEase**](https://msdn.microsoft.com/library/windows/apps/BR243057) には [**Bounces**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.bounceease.bounces.aspx) と [**Bounciness**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.bounceease.bounciness.aspx) という 2 つのプロパティがあります。これらは、その特定の **BounceEase** の時間に基づく関数の動作を変更します。 [**CubicEase**](https://msdn.microsoft.com/library/windows/apps/BR243126) など、その他のイージング関数は、すべてのイージング関数に共通の [**EasingMode**](https://msdn.microsoft.com/library/windows/apps/BR210275) プロパティ以外にプロパティはなく、生成される時間に基づく関数の動作は常に同じです。
 
@@ -317,6 +283,6 @@ You also might use [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.co
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

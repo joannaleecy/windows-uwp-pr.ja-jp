@@ -5,7 +5,6 @@ title: "ナビゲーション ウィンドウのガイドライン"
 ms.assetid: 8FB52F5E-8E72-4604-9222-0B0EC6A97541
 label: Nav pane
 template: detail.hbs
-translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
 ms.openlocfilehash: eb5600a78d7e8cfcad98509afc4de2d117066f7e
 

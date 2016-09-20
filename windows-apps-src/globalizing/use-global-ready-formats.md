@@ -5,7 +5,6 @@ title: "グローバル対応の形式の使用"
 ms.assetid: 6ECE8BA4-9A7D-49A6-81EE-AB2BE7F0254F
 label: Use global-ready formats
 template: detail.hbs
-translationtype: Human Translation
 ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
 ms.openlocfilehash: 77b5e7bd412936dd5d8c4bc252771631d6b884cf
 
@@ -90,8 +89,7 @@ ms.openlocfilehash: 77b5e7bd412936dd5d8c4bc252771631d6b884cf
 
 2.  **数字と通貨を適切に書式設定します。**
 
-    数字の書式設定はカルチャによって異なります。 数字の書式設定が異なるものには、表示する小数の桁数、小数点記号に使う文字、通貨記号などがあります。 [
-            **NumberFormatting**](https://msdn.microsoft.com/library/windows/apps/br226136) を使って、小数、パーセントまたはパーミル数値、通貨を表示します。 多くの場合、単にユーザーの通貨設定に従って数字や通貨を表示します。 ただし、フォーマッタを使って特定の地域または形式の通貨を表示することもできます。
+    数字の書式設定はカルチャによって異なります。 数字の書式設定が異なるものには、表示する小数の桁数、小数点記号に使う文字、通貨記号などがあります。 [**NumberFormatting**](https://msdn.microsoft.com/library/windows/apps/br226136) を使って、小数、パーセントまたはパーミル数値、通貨を表示します。 多くの場合、単にユーザーの通貨設定に従って数字や通貨を表示します。 ただし、フォーマッタを使って特定の地域または形式の通貨を表示することもできます。
 
     以下のコードは、ユーザーの優先する言語と地域に対応した通貨、または特定の通貨制度に対応した通貨を表示する方法の例を示しています。
 

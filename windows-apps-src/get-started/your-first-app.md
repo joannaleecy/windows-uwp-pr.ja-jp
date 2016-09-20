@@ -3,7 +3,6 @@ author: martinekuan
 ms.assetid: A77DA371-C0FE-4FAE-9E77-ADC3C9314EDF
 title: "初めてのアプリの作成"
 description: "Windows 10 用ユニバーサル Windows プラットフォーム (UWP) アプリの作成は、思っているよりも簡単です。"
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: e2ed4b9587927a2a6a765b47ff69b9cedfd9b92d
 
@@ -62,7 +61,7 @@ Web のスキルを活用し、HTML5、カスケード スタイル シート �
 
 C++ と Microsoft DirectX を使ってゲームを開発する場合は、「[Windows 10 でのゲームの開発](https://dev.windows.com/games)」をご覧ください。
 
-iOS または Android の使用経験がある場合は、 「[Windows 10 にアプリを移植する](https://msdn.microsoft.com/library/windows/apps/Mt238321)」セクションのリソースが作業開始に役立ちます。
+iOS または Android の使用経験がある場合は、 「[Windows10 にアプリを移植する](https://msdn.microsoft.com/library/windows/apps/Mt238321)」セクションのリソースが作業開始に役立ちます。
 
 # 関連トピック
 

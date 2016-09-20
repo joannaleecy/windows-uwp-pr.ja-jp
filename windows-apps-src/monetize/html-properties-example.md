@@ -3,7 +3,6 @@ author: mcleanbyron
 ms.assetid: 5fa16a27-fdc0-43b2-84cd-8547fd4915de
 description: "HTML の **AdControl** プロパティを割り当てる方法について説明します。"
 title: "HTML プロパティの例"
-translationtype: Human Translation
 ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
 ms.openlocfilehash: 53b9afdcdc697e3ed508ef6e5ed5d684bdf5aa69
 

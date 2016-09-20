@@ -3,7 +3,6 @@ author: mcleanbyron
 ms.assetid: 772DEBF2-1578-4330-9C14-70BCC6F55005
 description: "Microsoft では、複数の広告ネットワークからのバナー広告要求を仲介してアプリ内広告の収益を最大限に増やすことができるように、広告仲介をサポートしています。"
 title: "広告仲介を使って収益を最大限に高める"
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: c0669e35b285ee7dfeda0c039d8455a4237960f5
 

@@ -102,9 +102,11 @@ XAML アプリの起動時のパフォーマンスは、起動時に作成する
 
 ![ライブ ビジュアル ツリー。](images/live-visual-tree.png)
 
-**x:DeferLoadStrategy を使用します**。 要素を折りたたむか、不透明度を 0 に設定すると、要素は作成されなくなります。 x:DeferLoadStrategy を使って、UI の要素の読み込みを遅らせて、必要に応じて読み込むことができます。 これは、起動画面に表示されない UI の処理を遅延させ、必要に応じて読み込んだり、遅延させた一連のロジックの一部として読み込む場合に適した方法です。 読み込みをトリガーするために必要なことは、要素の FindName を呼び出すことだけです。 詳しい説明と例については、「[x:DeferLoadStrategy 属性](https://msdn.microsoft.com/library/windows/apps/Mt204785)」をご覧ください。
 
-**仮想化**。 UI に一覧またはリピーター コンテンツがある場合、UI の仮想化を使うことを強くお勧めします。 一覧の UI が仮想化されていない場合、すべての要素を作成するコストを前払いすることになり、起動が遅くなる可能性があります。 「[ListView と GridView の UI の最適化](optimize-gridview-and-listview.md)」をご覧ください。
+            **x:DeferLoadStrategy を使用します**。 要素を折りたたむか、不透明度を 0 に設定すると、要素は作成されなくなります。 x:DeferLoadStrategy を使って、UI の要素の読み込みを遅らせて、必要に応じて読み込むことができます。 これは、起動画面に表示されない UI の処理を遅延させ、必要に応じて読み込んだり、遅延させた一連のロジックの一部として読み込む場合に適した方法です。 読み込みをトリガーするために必要なことは、要素の FindName を呼び出すことだけです。 詳しい説明と例については、「[x:DeferLoadStrategy 属性](https://msdn.microsoft.com/library/windows/apps/Mt204785)」をご覧ください。
+
+
+            **仮想化**。 UI に一覧またはリピーター コンテンツがある場合、UI の仮想化を使うことを強くお勧めします。 一覧の UI が仮想化されていない場合、すべての要素を作成するコストを前払いすることになり、起動が遅くなる可能性があります。 「[ListView と GridView の UI の最適化](optimize-gridview-and-listview.md)」をご覧ください。
 
 アプリケーションのパフォーマンスには、生のパフォーマンスだけでなく、印象も関連します。 視覚的側面が最初に実行されるように処理の順序を変更すると、ユーザーにアプリケーションが高速であるという印象を与えます。 ユーザーは、画面にコンテンツが表示されると、アプリケーションが読み込まれたと見なします。 一般的には、アプリケーションは起動処理の一環として複数の処理を実行する必要がありますが、そのすべてが UI を表示する必要はないため、そのような処理は遅延させたり、UI よりも優先順位を下げたりする必要があります。
 
@@ -147,8 +149,7 @@ XAML アプリの起動時のパフォーマンスは、起動時に作成する
 
 ### フェーズ 2
 
-アプリはさまざまな理由でアクティブ化され、それぞれの対応を変えることが必要になる場合があります。 [
-            **OnActivated**](https://msdn.microsoft.com/library/windows/apps/BR242330)、[**OnCachedFileUpdaterActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701797)、[**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/BR242331)、[**OnFileOpenPickerActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701799)、[**OnFileSavePickerActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701801)、[**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/BR242335)、[**OnSearchActivated**](https://msdn.microsoft.com/library/windows/apps/BR242336)、[**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701806) メソッドを上書きして、さまざまなアクティブ化の理由に対応することができます。 アプリがこれらのメソッドで実行する必要がある作業の 1 つが UI を作成して [**Window.Content**](https://msdn.microsoft.com/library/windows/apps/BR209051) に割り当て、[**Window.Activate**](https://msdn.microsoft.com/library/windows/apps/BR209046) を呼び出すことです。 この時点で、スプラッシュ画面が、アプリによって作成された UI に置き換えられます。 ここで表示するものは、読み込み画面でも、アクティブ化時に実際の UI を作成するための十分な情報を利用できる場合は、アプリの実際の UI でもかまいません。
+アプリはさまざまな理由でアクティブ化され、それぞれの対応を変えることが必要になる場合があります。 [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/BR242330)、[**OnCachedFileUpdaterActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701797)、[**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/BR242331)、[**OnFileOpenPickerActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701799)、[**OnFileSavePickerActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701801)、[**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/BR242335)、[**OnSearchActivated**](https://msdn.microsoft.com/library/windows/apps/BR242336)、[**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701806) メソッドを上書きして、さまざまなアクティブ化の理由に対応することができます。 アプリがこれらのメソッドで実行する必要がある作業の 1 つが UI を作成して [**Window.Content**](https://msdn.microsoft.com/library/windows/apps/BR209051) に割り当て、[**Window.Activate**](https://msdn.microsoft.com/library/windows/apps/BR209046) を呼び出すことです。 この時点で、スプラッシュ画面が、アプリによって作成された UI に置き換えられます。 ここで表示するものは、読み込み画面でも、アクティブ化時に実際の UI を作成するための十分な情報を利用できる場合は、アプリの実際の UI でもかまいません。
 
 > [!div class="tabbedCodeSnippets"]
 > ```csharp
@@ -347,13 +348,15 @@ XAML アプリの起動時のパフォーマンスは、起動時に作成する
 
 Frame コントロールには、ナビゲーション機能が用意されています。
 
-このコントロールは、ページへのナビゲーション (Navigate メソッド)、ナビゲーションのジャーナル (BackStack/ForwardStack プロパティ、GoForward/GoBack メソッド)、ページのキャッシュ (Page.NavigationCacheMode)、およびシリアル化のサポート (GetNavigationState メソッド) を提供します。 フレームについて注意が必要なパフォーマンスは、主に、ジャーナルとページのキャッシュに関連するものです。 **フレーム ジャーナル**。 Frame.Navigate() を使ってページに移動すると、現在のページの PageStackEntry が Frame.BackStack コレクションに追加されます。
+このコントロールは、ページへのナビゲーション (Navigate メソッド)、ナビゲーションのジャーナル (BackStack/ForwardStack プロパティ、GoForward/GoBack メソッド)、ページのキャッシュ (Page.NavigationCacheMode)、およびシリアル化のサポート (GetNavigationState メソッド) を提供します。 フレームについて注意が必要なパフォーマンスは、主に、ジャーナルとページのキャッシュに関連するものです。 
+            **フレーム ジャーナル**。 Frame.Navigate() を使ってページに移動すると、現在のページの PageStackEntry が Frame.BackStack コレクションに追加されます。
 
 PageStackEntry は比較的小さいサイズですが、BackStack コレクションのサイズに組み込みの制限はありません。 ユーザーはループ内を移動することができ、このコレクションは無制限に増大する可能性があります。 PageStackEntry には、Frame.Navigate() メソッドに渡されたパラメーターも含まれます。 Frame.GetNavigationState() メソッドを使用するために、このパラメーターをシリアル化できるプリミティブ型 (int や string など) にすることをお勧めします。
 
 ただし、このパラメーターは、大量のワーキング セットやその他のリソースの原因となるオブジェクトを参照している可能性があり、BackStack の各エントリのコストがそれだけ高くなります。 たとえば、パラメーターとして StorageFile を使用できますが、その結果、BackStack には開いた無数のファイルが保持されます。
 
-したがって、ナビゲーション パラメーターを小さくし、BackStack のサイズを制限することが推奨されます。 BackStack は、標準ベクター (C# では IList、C++/CX では Platform::Vector) であるため、エントリを削除するだけでトリミングできます。 **ページのキャッシュ**。
+したがって、ナビゲーション パラメーターを小さくし、BackStack のサイズを制限することが推奨されます。 BackStack は、標準ベクター (C# では IList、C++/CX では Platform::Vector) であるため、エントリを削除するだけでトリミングできます。 
+            **ページのキャッシュ**。
 
 既定では、Frame.Navigate メソッドを使ってページに移動すると、ページの新しいインスタンスがインスタンス化されます。 同様に、Frame.GoBack で前のページに戻ると、前のページの新しいインスタンスが割り当てられます。 ただし、Frame には、これらのインスタンス化を回避できる、オプションのページ キャッシュが用意されています。 ページをキャッシュに保存するには、Page.NavigationCacheMode プロパティを使います。 このモードを Required に設定するとページは強制的にキャッシュに保存され、Enabled に設定するとページのキャッシュへの保存が許可されます。
 

@@ -18,15 +18,13 @@ ms.openlocfilehash: f47a3b7fcb4bec4138e11a079c3d10e918c1eb95
 
 -   [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)
 
-[
-            **OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) メソッドをオーバーライドすることで、アプリのアクティブ化を処理する方法について説明します。
+[**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) メソッドをオーバーライドすることで、アプリのアクティブ化を処理する方法について説明します。
 
 ## 起動ハンドラーを上書きする
 
 アプリがアクティブ化されると、その理由にかかわらず、システムから [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) イベントが送信されます。 アクティブ化の種類の一覧については、[**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693) 列挙型をご覧ください。
 
-[
-            **Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324) クラスで定義されているメソッドを上書きして、さまざまなアクティブ化の種類に対応することができます。 一部のアクティブ化の種類には、上書きできる専用のメソッドがあります。 それ以外のアクティブ化の種類では、[**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) メソッドを上書きします。
+[**Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324) クラスで定義されているメソッドを上書きして、さまざまなアクティブ化の種類に対応することができます。 一部のアクティブ化の種類には、上書きできる専用のメソッドがあります。 それ以外のアクティブ化の種類では、[**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) メソッドを上書きします。
 
 アプリのクラスを定義します。
 
@@ -36,11 +34,10 @@ ms.openlocfilehash: f47a3b7fcb4bec4138e11a079c3d10e918c1eb95
              x:Class="AppName.App" >
 ```
 
-[
-            **OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) メソッドを上書きします。 このメソッドは、ユーザーがアプリを起動するたびに呼び出されます。 [
-            **LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224731) パラメーターには、アプリの以前の状態とアクティブ化引数が含まれています。
+[**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) メソッドを上書きします。 このメソッドは、ユーザーがアプリを起動するたびに呼び出されます。 [**LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224731) パラメーターには、アプリの以前の状態とアクティブ化引数が含まれています。
 
-**注**  Windows Phone ストア アプリでは、このメソッドは、ユーザーがスタート画面のタイルやアプリの一覧からアプリを起動するたびに呼び出されます (アプリが現在メモリ内で一時停止されている場合も含む)。 Windows では、スタート画面のタイルまたはアプリの一覧から中断中のアプリを起動するときに、このメソッドが呼び出されることはありません。
+
+            **注**  Windows Phone ストア アプリでは、このメソッドは、ユーザーがスタート画面のタイルやアプリの一覧からアプリを起動するたびに呼び出されます (アプリが現在メモリ内で一時停止されている場合も含む)。 Windows では、スタート画面のタイルまたはアプリの一覧から中断中のアプリを起動するときに、このメソッドが呼び出されることはありません。
 
 > [!div class="tabbedCodeSnippets"]
 > ```cs
@@ -166,13 +163,12 @@ ms.openlocfilehash: f47a3b7fcb4bec4138e11a079c3d10e918c1eb95
 
 ## [!div class="tabbedCodeSnippets"]
 
-> [
-            **PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) の値が **NotRunning** である場合は、アプリがアプリケーション データの保存に失敗しているため、初めて起動するときのように最初からアプリをやり直す必要があります。 解説 **注**  Windows Phone ストア アプリでは、アプリが現在一時停止中で、ユーザーがプライマリ タイルまたはアプリの一覧からアプリを再起動した場合でも、[**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) イベントの後に、[**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) イベントが常に発生します。
+> [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) の値が **NotRunning** である場合は、アプリがアプリケーション データの保存に失敗しているため、初めて起動するときのように最初からアプリをやり直す必要があります。 解説 
+            **注**  Windows Phone ストア アプリでは、アプリが現在一時停止中で、ユーザーがプライマリ タイルまたはアプリの一覧からアプリを再起動した場合でも、[**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) イベントの後に、[**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) イベントが常に発生します。
 
 ## 現在のウィンドウにコンテンツ セットが既にある場合、アプリは初期化をスキップすることがあります。
 
-* [[
-            **LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) プロパティをチェックすると、アプリがプライマリ タイルとセカンダリ タイルのどちらから起動されたかを調べ、その情報に基づいて新しいアプリ エクスペリエンスを表示するか、アプリ エクスペリエンスを再開するかを判断できます。](suspend-an-app.md)
+* [[**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) プロパティをチェックすると、アプリがプライマリ タイルとセカンダリ タイルのどちらから起動されたかを調べ、その情報に基づいて新しいアプリ エクスペリエンスを表示するか、アプリ エクスペリエンスを再開するかを判断できます。](suspend-an-app.md)
 * [関連トピック](resume-an-app.md)
 * [アプリの中断の処理](https://msdn.microsoft.com/library/windows/apps/hh465088)
 * [アプリの再開の処理](app-lifecycle.md)

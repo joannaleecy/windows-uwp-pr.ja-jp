@@ -3,7 +3,6 @@ author: payzer
 title: "オーバースキャンを無効にする方法"
 description: 
 area: Xbox
-translationtype: Human Translation
 ms.sourcegitcommit: 32a875348debac9aec9f5a26bc4e7e0af2a0a5b4
 ms.openlocfilehash: abd06e78364ff32cc10d733e33b153b854dbc467
 

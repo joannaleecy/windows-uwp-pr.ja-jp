@@ -3,7 +3,6 @@ author: jnHs
 Description: "ストアのアプリの内容ページにリンクすることで、ユーザーがアプリを見つけやすくすることができます。"
 title: "アプリへのリンク"
 ms.assetid: 5420B65C-7ECE-4364-8959-D1683684E146
-translationtype: Human Translation
 ms.sourcegitcommit: d36f14604bd8c2ce0d5778a67f5b5b9460d9fbf3
 ms.openlocfilehash: 891b99b52f7e3b347c0e2f9d298f144313cc7b2d
 
@@ -23,7 +22,8 @@ ms.openlocfilehash: 891b99b52f7e3b347c0e2f9d298f144313cc7b2d
 
 ユーザーがこのリンクをクリックすると、アプリの Web ベースの内容ページが開きます。 アプリがユーザーのデバイスで利用できる場合、ストア アプリも起動して、アプリの内容を表示します。
 
-> **注**  対象としている OS のバージョンによって、複数のリンクが表示されることがあります。 すべてのアプリで Windows 10 向けの URL が表示されます。この URL は任意の OS で機能します。 Windows 8.1 以前や Windows Phone 8.1 以前向けの追加のリンクが表示されることもあります。それらは指定された OS バージョンでのみ機能します。
+> 
+            **注**  対象としている OS のバージョンによって、複数のリンクが表示されることがあります。 すべてのアプリで Windows 10 向けの URL が表示されます。この URL は任意の OS で機能します。 Windows 8.1 以前や Windows Phone 8.1 以前向けの追加のリンクが表示されることもあります。それらは指定された OS バージョンでのみ機能します。
 
  
 
@@ -34,7 +34,8 @@ ms.openlocfilehash: 891b99b52f7e3b347c0e2f9d298f144313cc7b2d
 
 バッジを作成するには、[Windows ストア バッジ](http://go.microsoft.com/fwlink/p/?LinkID=534236)に関するページをご覧ください。 この形式を使ってバッジとリンクを生成するには、アプリのストア ID が必要です。 この ID は、**[アプリ管理]** セクションの [[アプリ ID]](view-app-identity-details.md) ページに表示される **[Windows 10 の URL]** の末尾の 12 文字です。
 
-> **注**  Windows ストア バッジの使用について詳しくは、[アプリのマーケティング ガイドライン](app-marketing-guidelines.md)をご覧ください。
+> 
+            **注**  Windows ストア バッジの使用について詳しくは、[アプリのマーケティング ガイドライン](app-marketing-guidelines.md)をご覧ください。
 
  
 

@@ -3,7 +3,6 @@ author: mcleanbyron
 ms.assetid: 5E722AFF-539D-456E-8C4A-ADE90CF7674A
 description: "アプリ内製品のカタログが大きくなる場合、カタログを管理するためにこのトピックで説明するプロセスを採用できます。"
 title: "アプリ内製品の大規模なカタログの管理"
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 0927df3cd696e5a6fbd3a235d2b87074f1d63929
 
@@ -20,7 +19,8 @@ ms.openlocfilehash: 0927df3cd696e5a6fbd3a235d2b87074f1d63929
 
 ストアでは、結果の [**PurchaseResults**](https://msdn.microsoft.com/library/windows/apps/dn263392) で、購入要求からの *offerId* のみを使います。 このプロセスは、[ストアにアプリ内製品を掲載した](https://msdn.microsoft.com/library/windows/apps/mt148551)ときに最初に提供された情報を直接変更するわけではありません。
 
-**注**  Windows 10 以降では、開発者アカウントごとに表示されるストアの製品数に制限はありません。 以前のリリースでは、開発者アカウントごとに 200 製品の表示制限があり、このトピックで説明するプロセスを使ってこの制限を回避できます。
+
+            **注**  Windows 10 以降では、開発者アカウントごとに表示されるストアの製品数に制限はありません。 以前のリリースでは、開発者アカウントごとに 200 製品の表示制限があり、このトピックで説明するプロセスを使ってこの制限を回避できます。
 
 ## 前提条件
 

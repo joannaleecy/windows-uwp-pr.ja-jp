@@ -5,7 +5,6 @@ title: Notifications Visualizer
 ms.assetid: FCBB7BB1-2C79-484B-8FFC-26FE1934EC1C
 label: TBD
 template: detail.hbs
-translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
 ms.openlocfilehash: dcbf05669093047bd76dc01c217daf353d8fb9da
 
@@ -32,7 +31,8 @@ Notifications Visualizer アプリでは、Visual Studio の XAML エディタ�
 
 Notifications Visualizer を使うと、アプリ自体の編集や展開を行わなくても、アダプティブ タイルのペイロードを作成しテストすることができます。 目的に合った視覚効果を得ることができるようにペイロードを作成したら、そのペイロードをアプリに統合できます。 詳しくは、「[ローカル タイル通知の送信](tiles-and-notifications-sending-a-local-tile-notification.md)」をご覧ください。
 
-**注**   Notifications Visualizer では Windows のスタート メニューをシミュレートできますが、完全に正確なシミュレーションが常に行われるというわけではありません。また、このシミュレーションでは、[baseUri](https://msdn.microsoft.com/library/windows/apps/br208712) などの一部のプロパティがサポートされていません。 タイルを目的に合うようにデザインしたら、意図したとおりに表示されることを確認するために、タイルを実際の [スタート] メニューにピン留めしてテストします。
+
+            **注**   Notifications Visualizer では Windows のスタート メニューをシミュレートできますが、完全に正確なシミュレーションが常に行われるというわけではありません。また、このシミュレーションでは、[baseUri](https://msdn.microsoft.com/library/windows/apps/br208712) などの一部のプロパティがサポートされていません。 タイルを目的に合うようにデザインしたら、意図したとおりに表示されることを確認するために、タイルを実際の [スタート] メニューにピン留めしてテストします。
 
  
 

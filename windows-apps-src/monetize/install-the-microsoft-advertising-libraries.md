@@ -3,7 +3,6 @@ author: mcleanbyron
 ms.assetid: 3aeddb83-5314-447b-b294-9fc28273cd39
 description: "Microsoft Advertising ライブラリをインストールする方法について説明します。"
 title: "Microsoft Advertising ライブラリのインストール"
-translationtype: Human Translation
 ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
 ms.openlocfilehash: 0951818ceaf3d96543f9f97ec6993d08fdaab2b8
 
@@ -19,7 +18,8 @@ Windows アプリ向けの Microsoft Advertising ライブラリは、[Microsoft
 
 インストールの手順については、「[Microsoft Store Engagement and Monetization SDK](https://msdn.microsoft.com/windows/uwp/monetize/monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk)」をご覧ください。
 
-> **注**  Windows 10 Anniversary SDK Preview ビルド 14295 以降を Visual Studio 2015 と共にインストールしている場合、JavaScript/HTML アプリに広告を追加するには WinJS ライブラリもインストールする必要があります。 このライブラリは以前のバージョンの Windows SDK for Windows 10 に含まれていましたが、Windows 10 Anniversary SDK Preview ビルド 14295 以降ではこのライブラリを別個にインストールする必要があります。 WinJS をインストールする場合は、「[Get WinJS (WinJS を入手する)](http://try.buildwinjs.com/download/GetWinJS/)」をご覧ください。
+> 
+            **注**  Windows 10 Anniversary SDK Preview ビルド 14295 以降を Visual Studio 2015 と共にインストールしている場合、JavaScript/HTML アプリに広告を追加するには WinJS ライブラリもインストールする必要があります。 このライブラリは以前のバージョンの Windows SDK for Windows 10 に含まれていましたが、Windows 10 Anniversary SDK Preview ビルド 14295 以降ではこのライブラリを別個にインストールする必要があります。 WinJS をインストールする場合は、「[Get WinJS (WinJS を入手する)](http://try.buildwinjs.com/download/GetWinJS/)」をご覧ください。
 
 ## 広告および広告仲介用のライブラリの名前
 
@@ -38,7 +38,8 @@ Microsoft Store Engagement and Monetization SDK には、2 つのセットの広
     </thead>
     <tbody>
     <tr>
-            <td rowspan="3">**AdControl**、**InterstitialAd** (XAML)</td>
+            <td rowspan="3">
+            **AdControl**、**InterstitialAd** (XAML)</td>
             <td>UWP</td>
             <td>Microsoft Advertising SDK for XAML</td>
             <td>10.0</td>
@@ -54,7 +55,8 @@ Microsoft Store Engagement and Monetization SDK には、2 つのセットの広
             <td>1.0</td>
         </tr>
     <tr>
-            <td rowspan="3">**AdControl**、**InterstitialAd** (JavaScript/HTML)</td>
+            <td rowspan="3">
+            **AdControl**、**InterstitialAd** (JavaScript/HTML)</td>
             <td>UWP</td>
             <td>Microsoft Advertising SDK for JavaScript</td>
             <td>10.0</td>
@@ -70,7 +72,8 @@ Microsoft Store Engagement and Monetization SDK には、2 つのセットの広
             <td>8.5</td>
         </tr>
     <tr>
-            <td rowspan="3">**AdMediatorControl** (XAML のみ)</td>
+            <td rowspan="3">
+            **AdMediatorControl** (XAML のみ)</td>
             <td>UWP</td>
             <td>Microsoft Advertising Universal SDK</td>
             <td>1.0</td>

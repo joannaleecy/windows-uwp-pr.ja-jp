@@ -5,7 +5,6 @@ title: "ユニバーサル Windows プラットフォーム (UWP) アプリの�
 ms.assetid: 3102530A-E0D1-4C55-AEFF-99443D39D567
 label: Content design basics
 template: detail.hbs
-translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
 ms.openlocfilehash: c8328150601bf132c28e569c4db21095cb77f88c
 
@@ -22,9 +21,12 @@ ms.openlocfilehash: c8328150601bf132c28e569c4db21095cb77f88c
 
 次の 3 つの主要なコンテンツ シナリオがあります。
 
--   **使用**: コンテンツを使用する、主に一方向のエクスペリエンス。 使用は、読む、音楽を聴く、ビデオを見る、写真や画像を表示するなどのタスクです。
--   **作成**: 新しいコンテンツの作成が焦点となる、主に一方向のエクスペリエンス。 作成は、写真やビデオの撮影のように何かをゼロから作る、描画アプリで新しい画像を作る、新しいドキュメントを開くなどに分かれます。
--   **対話型**: コンテンツの使用、作成、修正を含む、2 方向のコンテンツ エクスペリエンス。
+-   
+            **使用**: コンテンツを使用する、主に一方向のエクスペリエンス。 使用は、読む、音楽を聴く、ビデオを見る、写真や画像を表示するなどのタスクです。
+-   
+            **作成**: 新しいコンテンツの作成が焦点となる、主に一方向のエクスペリエンス。 作成は、写真やビデオの撮影のように何かをゼロから作る、描画アプリで新しい画像を作る、新しいドキュメントを開くなどに分かれます。
+-   
+            **対話型**: コンテンツの使用、作成、修正を含む、2 方向のコンテンツ エクスペリエンス。
 
 ## <span id="Consumption-focused_apps"></span><span id="consumption-focused_apps"></span><span id="CONSUMPTION-FOCUSED_APPS"></span>使用に重点を置いたアプリ
 
@@ -50,7 +52,8 @@ ms.openlocfilehash: c8328150601bf132c28e569c4db21095cb77f88c
 作成に重点を置いたアプリに関する一般的な推奨事項:
 
 -   [ナビゲーション](navigation-basics.md) 要素の使用を最小限に抑えます。
--   [コマンド](commanding-basics.md)要素は、作成に重点を置いたアプリで特に重要です。 ユーザーは多くのコマンドを実行するため、コマンド履歴/元に戻す機能を提供することをお勧めします。
+-   
+            [コマンド](commanding-basics.md)要素は、作成に重点を置いたアプリで特に重要です。 ユーザーは多くのコマンドを実行するため、コマンド履歴/元に戻す機能を提供することをお勧めします。
 
 ## <span id="Apps_with_interactive_content"></span><span id="apps_with_interactive_content"></span><span id="APPS_WITH_INTERACTIVE_CONTENT"></span>対話型コンテンツを含むアプリ
 
@@ -61,8 +64,10 @@ ms.openlocfilehash: c8328150601bf132c28e569c4db21095cb77f88c
 
 これらの種類のアプリでは、次の 3 つすべての UI 要素のバランスを取る必要があります。
 
--   [ナビゲーション](navigation-basics.md)要素を使用すると、ユーザーがコンテンツを見つけて表示しやすくなります。 コンテンツの表示と検索が最も重要なシナリオである場合は、ナビゲーション要素、フィルター処理と並べ替え、検索を優先します。
--   [コマンド](commanding-basics.md)要素により、ユーザーはコンテンツを作成、編集、操作することができます。
+-   
+            [ナビゲーション](navigation-basics.md)要素を使用すると、ユーザーがコンテンツを見つけて表示しやすくなります。 コンテンツの表示と検索が最も重要なシナリオである場合は、ナビゲーション要素、フィルター処理と並べ替え、検索を優先します。
+-   
+            [コマンド](commanding-basics.md)要素により、ユーザーはコンテンツを作成、編集、操作することができます。
 
 対話型コンテンツを使ったアプリに関する一般的な推奨事項:
 
@@ -94,7 +99,8 @@ ms.openlocfilehash: c8328150601bf132c28e569c4db21095cb77f88c
 </tr>
 <tr class="even">
 <td align="left">画像ビューアー</td>
-<td align="left">[フリップ ビュー](../controls-and-patterns/flipview.md)、[画像](../controls-and-patterns/images-imagebrushes.md)</td>
+<td align="left">
+            [フリップ ビュー](../controls-and-patterns/flipview.md)、[画像](../controls-and-patterns/images-imagebrushes.md)</td>
 <td align="left">画像を表示します。 FlipView は、コレクション内の画像 (アルバム内の写真や製品の詳細ページ内の項目など) を一度に 1 つずつ表示します。</td>
 </tr>
 <tr class="odd">
@@ -104,7 +110,8 @@ ms.openlocfilehash: c8328150601bf132c28e569c4db21095cb77f88c
 </tr>
 <tr class="even">
 <td align="left">テキストとテキスト入力</td>
-<td align="left"><p>[テキスト ブロック](../controls-and-patterns/text-block.md)、[テキスト ボックス](../controls-and-patterns/text-box.md)、[リッチ エディット ボックス](../controls-and-patterns/rich-edit-box.md)</p>
+<td align="left"><p>
+            [テキスト ブロック](../controls-and-patterns/text-block.md)、[テキスト ボックス](../controls-and-patterns/text-box.md)、[リッチ エディット ボックス](../controls-and-patterns/rich-edit-box.md)</p>
 </td>
 <td align="left">テキストを表示します。 一部の要素を使うと、ユーザーがテキストを編集することができます。 詳しくは、「[テキスト コントロール](../controls-and-patterns/text-controls.md)」をご覧ください。</td>
 </tr>

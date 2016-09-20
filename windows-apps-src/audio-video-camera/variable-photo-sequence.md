@@ -3,7 +3,6 @@ author: drewbatgit
 ms.assetid: 7DBEE5E2-C3EC-4305-823D-9095C761A1CD
 description: "この記事では、可変の写真シーケンスをキャプチャする方法について説明します。これによって、画像を複数のフレームとして次々とキャプチャし、各フレームに別々のフォーカス、フラッシュ、ISO、露出、露出補正の設定を適用することができます。"
 title: "可変の写真シーケンス"
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: c6be6c0ea255c38bba65550ae44c7f88c140ca0f
 
@@ -66,22 +65,19 @@ HDR 画像をキャプチャするときに、独自の処理アルゴリズム�
 
 ## キャプチャされたフレームを受け取る
 
-[
-            **PhotoCaptured**](https://msdn.microsoft.com/library/windows/apps/dn652573) イベントは、キャプチャされたフレームごとに発生します。 フレーム コントロールの値とフレームのキャプチャされた画像を保存してから、現在のフレームのインデックスを増分します。 次の例は、各フレームの [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 表現を取得する方法を示しています。 **SoftwareBitmap** の使用方法について詳しくは、「[イメージング](imaging.md)」をご覧ください。
+[**PhotoCaptured**](https://msdn.microsoft.com/library/windows/apps/dn652573) イベントは、キャプチャされたフレームごとに発生します。 フレーム コントロールの値とフレームのキャプチャされた画像を保存してから、現在のフレームのインデックスを増分します。 次の例は、各フレームの [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 表現を取得する方法を示しています。 **SoftwareBitmap** の使用方法について詳しくは、「[イメージング](imaging.md)」をご覧ください。
 
 [!code-cs[OnPhotoCaptured](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOnPhotoCaptured)]
 
 ## 可変の写真シーケンスのキャプチャの完了を処理する
 
-[
-            **Stopped**](https://msdn.microsoft.com/library/windows/apps/dn652585) イベントは、シーケンス内のすべてのフレームがキャプチャされると発生します。 アプリの記録状態を更新し、ユーザーが新しいキャプチャを開始できるように UI を更新します。 この時点で、キャプチャされた画像とフレーム コントロールの値を画像処理コードに渡すことができます。
+[**Stopped**](https://msdn.microsoft.com/library/windows/apps/dn652585) イベントは、シーケンス内のすべてのフレームがキャプチャされると発生します。 アプリの記録状態を更新し、ユーザーが新しいキャプチャを開始できるように UI を更新します。 この時点で、キャプチャされた画像とフレーム コントロールの値を画像処理コードに渡すことができます。
 
 [!code-cs[OnStopped](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOnStopped)]
 
 ## フレーム コントローラーを更新する
 
-フレームごとの設定を変更して、可変の写真シーケンス キャプチャを新たに実行する場合、**VariablePhotoSequenceCapture** を完全に再初期化する必要はありません。 [
-            **DesiredFrameControllers**](https://msdn.microsoft.com/library/windows/apps/dn640574) コレクションをクリアして新しいフレーム コントローラーを追加するか、または既存のフレーム コントローラーの値を変更できます。 次の例では、[**FrameFlashCapabilities**](https://msdn.microsoft.com/library/windows/apps/dn652657) オブジェクトを調べて、現在のデバイスが可変の写真シーケンス フレームに対してフラッシュとフラッシュの電源をサポートしているかどうかを確認します。 サポートしている場合は、100% の電力でフラッシュを有効にするよう各フレームが更新されます。 各フレームに対して前の手順で設定した露出補正の値は、引き続き有効です。
+フレームごとの設定を変更して、可変の写真シーケンス キャプチャを新たに実行する場合、**VariablePhotoSequenceCapture** を完全に再初期化する必要はありません。 [**DesiredFrameControllers**](https://msdn.microsoft.com/library/windows/apps/dn640574) コレクションをクリアして新しいフレーム コントローラーを追加するか、または既存のフレーム コントローラーの値を変更できます。 次の例では、[**FrameFlashCapabilities**](https://msdn.microsoft.com/library/windows/apps/dn652657) オブジェクトを調べて、現在のデバイスが可変の写真シーケンス フレームに対してフラッシュとフラッシュの電源をサポートしているかどうかを確認します。 サポートしている場合は、100% の電力でフラッシュを有効にするよう各フレームが更新されます。 各フレームに対して前の手順で設定した露出補正の値は、引き続き有効です。
 
 [!code-cs[UpdateFrameControllers](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUpdateFrameControllers)]
 

@@ -3,7 +3,6 @@ author: mcleblanc
 ms.assetid: 5c34c78e-9ff7-477b-87f6-a31367cd3f8b
 title: "モバイル用 Device Portal"
 description: "Windows Device Portal で、モバイル デバイスの構成と管理をリモートから行う方法について説明します。"
-translationtype: Human Translation
 ms.sourcegitcommit: df6d42d6a91b8721e905fe9bc3a339dc33408459
 ms.openlocfilehash: eeeb8f98d97468544cc30e3d9884cce15cb913a9
 
@@ -32,15 +31,15 @@ Device Portal に接続するには、USB、ローカル ホスト、ローカ�
 
 1. ブラウザーで、使っている接続の種類に応じて次のアドレスを入力します。
 
-    - USB: `http://127.0.0.1:10080`
+    - USB:  `http://127.0.0.1:10080`
 
     電話が USB で PC に接続されている場合は、このアドレスを使います。 両方のデバイスに、Windows 10 バージョン 1511 以降が必要です。
     
-    - Localhost: `http://127.0.0.1`
+    - Localhost:  `http://127.0.0.1`
 
     このアドレスは、Windows 10 Mobile の Microsoft Edge で電話上の Device Portal をローカルで表示するときに使います。
     
-    - Local Network: `https://<The IP address of the phone>`
+    - Local Network:  `https://<The IP address of the phone>`
 
     このアドレスは、ローカル ネットワーク経由で接続するときに使います。
 

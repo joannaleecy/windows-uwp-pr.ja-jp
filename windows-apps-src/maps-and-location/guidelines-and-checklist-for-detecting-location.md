@@ -3,8 +3,9 @@ author: msatranjr
 Description: "このトピックでは、ユーザーの位置にアクセスする必要があるアプリを構築する際のパフォーマンス ガイドラインを説明します。"
 title: "位置認識アプリのガイドライン"
 ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
+translationtype: Human Translation
 ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
-ms.openlocfilehash: 6a5451d449719d979bce7e83f5a2949661dd7834
+ms.openlocfilehash: bbdd4d5a54deba11161c1865cd8f6f2fb47bcad4
 
 ---
 
@@ -26,12 +27,11 @@ ms.openlocfilehash: 6a5451d449719d979bce7e83f5a2949661dd7834
 
 -   location オブジェクトは、アプリで位置データが必要になった場合にのみ使用を開始します。
 
-    ユーザーの位置情報にアクセスする前に、[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) を呼び出します。 このときに、アプリをフォアグラウンドで実行し、**RequestAccessAsync** を UI スレッドから呼び出す必要があります。 位置情報に対するアクセス許可をユーザーがアプリに与えるまで、アプリは位置情報にアクセスできません。
+     ユーザーの位置情報にアクセスする前に、[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) を呼び出します。 このときに、アプリをフォアグラウンドで実行し、**RequestAccessAsync** を UI スレッドから呼び出す必要があります。 位置情報に対するアクセス許可をユーザーがアプリに与えるまで、アプリは位置情報にアクセスできません。
 
 -   アプリで位置情報が必須でない場合は、位置情報を必要とするタスクをユーザーが完了することを試みるまではその情報にアクセスしないでください。 たとえば、ソーシャル ネットワーキング アプリに、[位置情報を使ってチェックイン] というボタンがある場合、アプリは、ユーザーがそのボタンをクリックするまでは位置情報にアクセスしないようにします。 アプリのメイン機能で位置情報が必要な場合は、すぐにアクセスしても問題ありません。
 
--   [
-            **Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) オブジェクトの初めての使用はフォアグラウンド アプリのメイン UI スレッドで行い、ユーザーから同意を得るためのプロンプトをトリガーする必要があります。 **Geolocator** の初めての使用とは、[**getGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) を初めて呼び出すとき、または [**positionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) イベントのハンドラーを初めて登録するときです。
+-   [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) オブジェクトの初めての使用はフォアグラウンド アプリのメイン UI スレッドで行い、ユーザーから同意を得るためのプロンプトをトリガーする必要があります。 **Geolocator** の初めての使用とは、[**getGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) を初めて呼び出すとき、または [**positionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) イベントのハンドラーを初めて登録するときです。
 
 -   位置データがどのように使われるかをユーザーに知らせてください。
 -   ユーザーが現在の位置を手動で更新できる UI を用意します。
@@ -48,8 +48,7 @@ ms.openlocfilehash: 6a5451d449719d979bce7e83f5a2949661dd7834
 
     位置情報サービスを再び有効にするための UI を提供する—
 
-    -   ユーザーが位置情報を無効にした後に再び有効にした場合、アプリには通知されません。 [
-            **status**](https://msdn.microsoft.com/library/windows/apps/br225601) プロパティは変更されず、[**statusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) イベントも発生しません。 アプリで、新しい [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) オブジェクトを作成し、[**getGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) を呼び出して更新された位置情報データを取得するか、[**positionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) イベントの受信登録をもう一度行います。 位置情報が再び有効になったことを確認できたら、位置情報サービスが無効であることをユーザーに通知するために表示していた UI をクリアし、新しい状態に対して適切に対応します。
+    -   ユーザーが位置情報を無効にした後に再び有効にした場合、アプリには通知されません。 [**status**](https://msdn.microsoft.com/library/windows/apps/br225601) プロパティは変更されず、[**statusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) イベントも発生しません。 アプリで、新しい [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) オブジェクトを作成し、[**getGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) を呼び出して更新された位置情報データを取得するか、[**positionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) イベントの受信登録をもう一度行います。 位置情報が再び有効になったことを確認できたら、位置情報サービスが無効であることをユーザーに通知するために表示していた UI をクリアし、新しい状態に対して適切に対応します。
     -   アプリをアクティブ化するとき、位置情報が必要な機能をユーザーが明示的に使おうとしたときなど、状況に応じて必要と思われる任意の時点で、位置情報データを取得し直すことをお勧めします。
 
 **パフォーマンス**
@@ -58,10 +57,8 @@ ms.openlocfilehash: 6a5451d449719d979bce7e83f5a2949661dd7834
 
     1 回限りの位置情報の要求を行う場合は、次の値を設定する必要があります。
 
-    -   [
-            **DesiredAccuracy**](https://msdn.microsoft.com/library/windows/apps/br225535) または [**DesiredAccuracyInMeters**](https://msdn.microsoft.com/library/windows/apps/jj635271) を設定して、アプリから要求される精度を指定します。 これらのパラメーターを使用する場合の推奨事項については、以下をご覧ください
-    -   [
-            **GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) の最大保存期間のパラメーターを設定して、アプリで有用な位置情報を取得できる期間を指定します。 アプリで数秒または数分前の位置を使用できる場合は、ほとんどすぐに位置を受け取って、デバイスの電力を節約することができます。
+    -   [**DesiredAccuracy**](https://msdn.microsoft.com/library/windows/apps/br225535) または [**DesiredAccuracyInMeters**](https://msdn.microsoft.com/library/windows/apps/jj635271) を設定して、アプリから要求される精度を指定します。 これらのパラメーターを使用する場合の推奨事項については、以下をご覧ください
+    -   [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) の最大保存期間のパラメーターを設定して、アプリで有用な位置情報を取得できる期間を指定します。 アプリで数秒または数分前の位置を使用できる場合は、ほとんどすぐに位置を受け取って、デバイスの電力を節約することができます。
     -   [ **GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) のタイムアウト パラメーターを設定します。 これが、アプリが返される位置またはエラーを待機することができる長さです。 ユーザーへの応答性とアプリが必要とする精度のバランスを理解する必要があります。
 -   頻繁に位置を更新する必要がある場合は、連続的な位置情報のセッションを使います。 特定のしきい値を超えた移動を検出する場合、または発生時に絶えず位置情報の更新を取得する場合は、[**positionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) イベントと [**statusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) イベントを使います。
 
@@ -113,10 +110,8 @@ ms.openlocfilehash: 6a5451d449719d979bce7e83f5a2949661dd7834
 ユーザーは、**設定**アプリの**位置情報に関するプライバシー設定**を使って、位置情報機能を無効にすることができます。
 
 -   ユーザーが位置情報サービスを無効にしたり再び有効にしたことを検出するには、次の操作を行います。
-    -   [
-            **StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) イベントを処理します。 **StatusChanged** イベントの引数である [**Status**](https://msdn.microsoft.com/library/windows/apps/br225601) プロパティの値は、ユーザーが位置情報サービスを無効にすると **Disabled** になります。
-    -   [
-            **GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) から返るエラー コードをチェックします。 ユーザーによって位置情報サービスが無効にされている場合、**GetGeopositionAsync** の呼び出しは **ACCESS\_DENIED** エラーで失敗し、[**LocationStatus**](https://msdn.microsoft.com/library/windows/apps/br225538) プロパティの値は **Disabled** になっています。
+    -   [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) イベントを処理します。 **StatusChanged** イベントの引数である [**Status**](https://msdn.microsoft.com/library/windows/apps/br225601) プロパティの値は、ユーザーが位置情報サービスを無効にすると **Disabled** になります。
+    -   [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) から返るエラー コードをチェックします。 ユーザーによって位置情報サービスが無効にされている場合、**GetGeopositionAsync** の呼び出しは **ACCESS\_DENIED** エラーで失敗し、[**LocationStatus**](https://msdn.microsoft.com/library/windows/apps/br225538) プロパティの値は **Disabled** になっています。
 -   地図アプリのような、位置情報データが必須のアプリの場合は、必ず次の操作を実行してください。
     -   ユーザーの位置情報が変わったときに更新情報を取得できるように、[**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) イベントを処理します。
     -   前の説明に従って [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) イベントを処理し、位置設定の変化を検出します。
@@ -177,6 +172,6 @@ ms.openlocfilehash: 6a5451d449719d979bce7e83f5a2949661dd7834
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

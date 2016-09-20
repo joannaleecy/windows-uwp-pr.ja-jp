@@ -3,7 +3,6 @@ author: mtoepke
 title: "ユニバーサル Windows プラットフォーム (UWP) アプリのゲーム テクノロジ"
 description: "このガイドでは、ユニバーサル Windows プラットフォーム UWP ゲームの開発に利用できるテクノロジについて説明します。"
 ms.assetid: bc4d4648-0d6e-efbb-7608-80bd09decd6e
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 3c7807d0b46a32bfe90c79b7eee3111039ca94ab
 
@@ -204,8 +203,7 @@ Windows 10 では、ゲーム開発に役立つさまざまな API を利用で�
     <p><strong>使う状況</strong></p>
     <p>ゲームでゲームパッド入力をサポートする必要があるが、XInput の既存のコードを使っていない場合や、上に示したメリットのいずれかが必要である場合は、Windows.Gaming.Input を使う必要があります。</p>
     <p><strong>詳細情報</strong></p>
-    <p>[
-                <strong>Windows.Gaming.Input</strong>](https://msdn.microsoft.com/library/windows/apps/dn707817) に関連するドキュメントをご覧ください。</p></td>
+    <p>[<strong>Windows.Gaming.Input</strong>](https://msdn.microsoft.com/library/windows/apps/dn707817) に関連するドキュメントをご覧ください。</p></td>
     </tr>
     <tr class="odd">
     <td align="left">Windows.UI.Core.CoreWindow</td>
@@ -216,7 +214,7 @@ Windows 10 では、ゲーム開発に役立つさまざまな API を利用で�
     <p>ゲームでマウスやキーボードを使う方法について詳しくは、「[ゲームのムーブ/ルック コントロール](tutorial--adding-move-look-controls-to-your-directx-game.md)」をご覧ください。</p></td>
     </tr>
     </tbody>
-</table>
+    </table>
 
      
 

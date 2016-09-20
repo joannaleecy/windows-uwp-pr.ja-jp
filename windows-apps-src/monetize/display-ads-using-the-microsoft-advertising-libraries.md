@@ -3,7 +3,6 @@ author: mcleanbyron
 ms.assetid: 5cde1c22-91fd-4f5c-ac82-32efaa0d9fee
 description: "Microsoft Store Engagement and Monetization SDK の Microsoft Advertising ライブラリを使って、XAML または JavaScript/HTML アプリにバナーやビデオのスポット広告を表示します。"
 title: "Microsoft Advertising ライブラリを使用した広告の表示"
-translationtype: Human Translation
 ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
 ms.openlocfilehash: ab96dac3af382d334c767ad42a563c0dbc67a8f5
 
@@ -16,7 +15,8 @@ ms.openlocfilehash: ab96dac3af382d334c767ad42a563c0dbc67a8f5
 
 [Microsoft Store Engagement and Monetization SDK](monetize-your-app-with-the-microsoft-store-engagement-and-monetization-sdk.md) の Microsoft Advertising ライブラリを使って、Windows 10、Windows 8.1、Windows Phone 8.1、Windows Phone 8 用の XAML または JavaScript/HTML アプリにバナーやビデオのスポット広告を表示します。
 
-> **重要**   Microsoft Advertising ライブラリは、広告仲介ライブラリとは異なる拡張のセットです。 広告の仲介と Microsoft Advertising の違いについて詳しくは、「[AdMediatorControl と AdControl の違い](what-is-the-difference-admediatorcontrol-or-adcontrol.md)」をご覧ください。 広告の仲介の使用について詳しくは、「[広告の仲介を追加して収益を最大限に高める](https://msdn.microsoft.com/windows/uwp/monetize/use-ad-mediation-to-maximize-revenue)」をご覧ください。
+> 
+            **重要**   Microsoft Advertising ライブラリは、広告仲介ライブラリとは異なる拡張のセットです。 広告の仲介と Microsoft Advertising の違いについて詳しくは、「[AdMediatorControl と AdControl の違い](what-is-the-difference-admediatorcontrol-or-adcontrol.md)」をご覧ください。 広告の仲介の使用について詳しくは、「[広告の仲介を追加して収益を最大限に高める](https://msdn.microsoft.com/windows/uwp/monetize/use-ad-mediation-to-maximize-revenue)」をご覧ください。
 
  
 次のトピックでは、Windows Advertising ライブラリに関連する一般的なタスクに関する情報を提供します。

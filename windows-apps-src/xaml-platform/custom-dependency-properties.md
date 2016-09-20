@@ -4,8 +4,8 @@ description: "C++、C#、または Visual Basic を使った Windows ランタ�
 title: "カスタム依存関係プロパティ"
 ms.assetid: 5ADF7935-F2CF-4BB6-B1A5-F535C2ED8EF8
 translationtype: Human Translation
-ms.sourcegitcommit: d50b73fcf78c28157cff7003dc3e180de9d69f70
-ms.openlocfilehash: 80a42040887818a0c6a66ed32327144bed586dc2
+ms.sourcegitcommit: 5efe261bf504d0d77518b7a5393927d168234907
+ms.openlocfilehash: 09bf5fdb76bcc3210d822b769061b900b51a9cb2
 
 ---
 
@@ -23,9 +23,11 @@ ms.openlocfilehash: 80a42040887818a0c6a66ed32327144bed586dc2
 ## 依存関係プロパティとは
 
 
-依存関係プロパティは、[**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) メソッドを呼び出すことで Windows ランタイム プロパティ システムに登録され、定義クラスの [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 識別子メンバーによって識別されるプロパティです。 依存関係プロパティとして実装することで、共通言語ランタイム (CLR) または C++ プロパティでスタイル、データ バインディング、アニメーション、既定値をサポートできます。 依存関係プロパティは、[**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) 型でのみ使うことができます。 ただし、**DependencyObject** はクラス階層のかなり上位にあるため、UI とプレゼンテーションのサポートを目的とするクラスの大半は、依存関係プロパティをサポートできます。 依存関係プロパティと、このドキュメントでそれらを説明するために使っている用語と表記規則の一部については、「[依存関係プロパティの概要](dependency-properties-overview.md)」を参照してください。
+プロパティのスタイル設定、データ バインディング、アニメーション、既定値をサポートするには、依存関係プロパティとして実装する必要があります。 依存関係プロパティの値はフィールドとしてクラスに格納されるのではなく、xaml フレームワークによって格納され、キーを使って参照されます。キーは、[ **DependencyProperty.Register** ](https://msdn.microsoft.com/library/windows/apps/hh701829)メソッドを呼び出すことにより、プロパティが Windows ランタイム プロパティ システムに登録されるときに取得されます。   依存関係プロパティは、[**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) から派生した型でのみ使うことができます。 ただし、**DependencyObject** はクラス階層のかなり上位にあるため、UI とプレゼンテーションのサポートを目的とするクラスの大半は、依存関係プロパティをサポートできます。 依存関係プロパティと、このドキュメントでそれらを説明するために使っている用語と表記規則の一部については、「[依存関係プロパティの概要](dependency-properties-overview.md)」を参照してください。
 
-Windows ランタイムでの依存関係プロパティの例として、[**Control.Background**](https://msdn.microsoft.com/library/windows/apps/br209395)、[**FrameworkElement.Width**](https://msdn.microsoft.com/library/windows/apps/br208751)、および [**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/br209702) があります。 クラスで公開されている各依存関係プロパティには、同じクラスで公開され、依存関係プロパティの識別子となっている対応する [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 型の **public****static****readonly** プロパティがあります。 識別子の名前は、依存関係プロパティの名前の終わりに "Property" という文字列を追加した名前です。 たとえば、**Control.Background** プロパティに対応する **DependencyProperty** 識別子は [**Control.BackgroundProperty**](https://msdn.microsoft.com/library/windows/apps/br209396) です。 識別子を登録したときに依存関係プロパティに関する情報が格納され、後で [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) の呼び出しなど、依存関係プロパティに関係する他の操作でその識別子を使うことができます。
+Windows ランタイムでの依存関係プロパティの例として、[**Control.Background**](https://msdn.microsoft.com/library/windows/apps/br209395)、[**FrameworkElement.Width**](https://msdn.microsoft.com/library/windows/apps/br208751)、および [**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/br209702) があります。
+
+規則として、クラスで公開されている各依存関係プロパティには、依存関係プロパティの識別子を提供する同じクラスで公開される [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 型の対応する **public static readonly** プロパティがあります。 識別子の名前は、依存関係プロパティの名前の終わりに "Property" という文字列を追加した名前です。 たとえば、**Control.Background** プロパティに対応する **DependencyProperty** 識別子は [**Control.BackgroundProperty**](https://msdn.microsoft.com/library/windows/apps/br209396) です。 識別子を登録したときに依存関係プロパティに関する情報が格納され、[**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) の呼び出しなど、依存関係プロパティに関係する他の操作でその識別子を使うことができます。
 
 ##  プロパティ ラッパー
 
@@ -40,9 +42,9 @@ Windows ランタイムでの依存関係プロパティの例として、[**Con
 Windows ランタイムまたは Windows ランタイム アプリの次の機能の 1 つ以上をサポートする場合は、プロパティを依存関係プロパティとして実装することを検討してください。
 
 -   [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) によるプロパティの設定
--   データ バインディングの有効なターゲット プロパティとしての機能
+-   [**{Binding}**](binding-markup-extension.md) によるデータ バインディングの有効なターゲット プロパティとしての機能
 -   [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490) によるアニメーション化された値のサポート
--   プロパティの以前の値が次のものによって変更された場合のレポート:
+-   プロパティの値が次のものによって変更された場合のレポート:
     -   プロパティ システム自体によって実行されたアクション
     -   環境
     -   ユーザーの操作
@@ -52,20 +54,19 @@ Windows ランタイムまたは Windows ランタイム アプリの次の機�
 
 依存関係プロパティの定義は、一連の概念と考えることができます。 いくつかの概念は実装の単一コード行で処理できるため、これらの概念は必ずしも手順ではありません。 このリストでは、概要のみ示します。 各概念については後でこのトピックで詳しく説明し、複数の言語でのコード例を示します。
 
--   (省略可能) 依存関係プロパティのプロパティ メタデータを作ります。 プロパティ変更動作、または [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357) を呼び出すことで復元できるメタデータ ベースの既定値が必要な場合にのみ、プロパティ メタデータが必要です。
--   プロパティ名をプロパティ システムに登録して ([**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) を呼び出す)、所有者型とプロパティ値の型を指定します。 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) にはプロパティ メタデータを要求する必須パラメーターがあります。 これには **null** を指定するか、何かを宣言した場合は実際のプロパティ メタデータを指定します。
--   [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 識別子を所有者型の **public****static****readonly** プロパティ メンバーとして定義します。
+-   プロパティ名をプロパティ システムに登録して ([**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) を呼び出す)、所有者型とプロパティ値の型を指定します。 
+    -  [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) にはプロパティ メタデータを要求する必須パラメーターがあります。 これに **null** を指定するか、プロパティ変更動作や、[**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357) を呼び出すことによって復元できるメタデータ ベースの既定値が必要な場合は、[**PropertyMetadata**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.propertymetadata) のインスタンスを指定します。
+-   [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 識別子を所有者型の **public static readonly** プロパティ メンバーとして定義します。
 -   実装する言語で使うプロパティ アクセサー モデルに従ってラッパー プロパティを定義します。 ラッパー プロパティ名は、[**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) で使った *name* 文字列と一致する必要があります。 [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) と [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) を呼び出し、独自のプロパティの識別子をパラメーターとして渡すことで、**get** アクセサーと **set** アクセサーを実装して、ラップする依存関係プロパティにラッパーを関連付けます。
 -   (省略可能) ラッパーに [**ContentPropertyAttribute**](https://msdn.microsoft.com/library/windows/apps/br228011) などの属性を配置します。
 
-
-            **注:** カスタム添付プロパティを定義する場合は、一般にラッパーを省略します。 代わりに、XAML プロセッサで使うことのできる別のスタイルのアクセサーを作ります。 詳しくは、「[カスタム添付プロパティ](custom-attached-properties.md)」をご覧ください。 
+**注:** カスタム添付プロパティを定義する場合は、一般にラッパーを省略します。 代わりに、XAML プロセッサで使うことのできる別のスタイルのアクセサーを作ります。 詳しくは、「[カスタム添付プロパティ](custom-attached-properties.md)」をご覧ください。 
 
 ## プロパティの登録
 
-プロパティを依存関係プロパティにするには、Windows ランタイム プロパティ システムでメンテナンスされるプロパティ ストアにプロパティを登録する必要があります。 プロパティに、後でプロパティ システム操作で識別子として使う一意の識別子を付与する必要があります。 これらの操作は内部操作の場合、またはプロパティ システム API を呼び出す独自のコードの場合があります。 プロパティを登録するには、[**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) メソッドを呼び出します。
+プロパティを依存関係プロパティにするには、Windows ランタイム プロパティ システムでメンテナンスされるプロパティ ストアにプロパティを登録する必要があります。  プロパティを登録するには、[**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) メソッドを呼び出します。
 
-Microsoft .NET 言語 (C# と Microsoft Visual Basic) では、クラスの本文 (クラス内だがメンバー定義の外部) で [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) を呼び出します。 識別子は、[**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) メソッド呼び出しで戻り値としても提供されます。 戻り値を使って [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) 型の **public****static****readonly** プロパティをクラスの一部として割り当て、作るため、通常、[**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) は他のメンバー定義の外部で呼び出されます。 このプロパティは、依存関係プロパティの識別子になります。 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 呼び出しの例を次に示します。
+Microsoft .NET 言語 (C# と Microsoft Visual Basic) では、クラスの本文 (クラス内だがメンバー定義の外部) で [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) を呼び出します。 識別子は、[**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) メソッド呼び出しで戻り値として提供されます。 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 呼び出しは通常、静的コンストラクターとして、またはクラスの一部である型 [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) の **public static readonly** プロパティ初期化の一部として行われます。 このプロパティは、依存関係プロパティの識別子を公開します。 [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) 呼び出しの例を次に示します。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -84,10 +85,9 @@ Public Shared ReadOnly LabelProperty As DependencyProperty =
       New PropertyMetadata(Nothing))
 ```
 
+**注:** 識別子プロパティ定義の一部として依存関係プロパティを登録するのが標準的な実装ですが、クラスの静的コンストラクターで依存関係プロパティを登録することもできます。 このアプローチは、依存関係プロパティの初期化に複数のコード行が必要な場合に意味を持つことがあります。
 
-            **注:** クラス本文に依存関係プロパティを登録するのが標準的な実装ですが、クラスの静的コンストラクターで依存関係プロパティを登録することもできます。 このアプローチは、依存関係プロパティの初期化に複数のコード行が必要な場合に意味を持つことがあります。
-
-C++ の場合は、ヘッダーとコード ファイル間で実装を分割する方法についてのオプションがあります。 一般的な分割では、**set** ではなく **get** 実装で、識別子自体をヘッダーで **public****static** プロパティとして宣言します。 **get** 実装は、初期化されていない [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) インスタンスであるプライベート フィールドを参照します。 ラッパー、およびラッパーの **get** 実装と **set** 実装を宣言することもできます。 この場合、ヘッダーにはいくつかの最小限の実装が含まれます。 ラッパーに Windows ランタイム属性が必要な場合は、ヘッダーにも属性が必要です。 コード ファイルの最初にアプリが初期化するときにのみ実行されるヘルパー関数内に [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) の呼び出しを配置します。 **Register** の戻り値を使って、ヘッダーで宣言した初期化されていない静的識別子を入力します。これは実装ファイルのルート スコープで当初は **nullptr** に設定します。
+C++ の場合は、ヘッダーとコード ファイル間で実装を分割する方法についてのオプションがあります。 一般的な分割では、**set** ではなく **get** 実装で、識別子自体をヘッダーで **public static** プロパティとして宣言します。 **get** 実装は、初期化されていない [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) インスタンスであるプライベート フィールドを参照します。 ラッパー、およびラッパーの **get** 実装と **set** 実装を宣言することもできます。 この場合、ヘッダーにはいくつかの最小限の実装が含まれます。 ラッパーに Windows ランタイム属性が必要な場合は、ヘッダーにも属性が必要です。 コード ファイルの最初にアプリが初期化するときにのみ実行されるヘルパー関数内に [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) の呼び出しを配置します。 **Register** の戻り値を使って、ヘッダーで宣言した初期化されていない静的識別子を入力します。これは実装ファイルのルート スコープで当初は **nullptr** に設定します。
 
 ```cpp
 //.h file
@@ -130,24 +130,21 @@ void ImageWithLabelControl::RegisterDependencyProperties()
 }
 ```
 
-
-            **注:** C++ コードの場合、プライベート バッキング フィールドに加えて [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) を表面化するパブリック読み取り専用プロパティがある理由は、依存関係プロパティを使う他の呼び出し元も、パブリックな識別子を必要とするプロパティ システム ユーティリティ API を使用できるようにするためです。 識別子をプライベートのままにした場合、他のユーザーはこれらのユーティリティ API を使うことができません。 このような API とシナリオの例には、[**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359)、任意の [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361)、[**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357)、[**GetAnimationBaseValue**](https://msdn.microsoft.com/library/windows/apps/br242358)、[**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257)、および [**Setter.Property**](https://msdn.microsoft.com/library/windows/apps/br208836) があります。 Windows ランタイムのコンパイル規則では、**DependencyProperty** のような参照型を使うパブリック データ メンバーが許可されないため、これにパブリック フィールドを使うことはできません。
+**注:** C++ コードの場合、プライベート バッキング フィールドに加えて [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) を表面化するパブリック読み取り専用プロパティがある理由は、依存関係プロパティを使う他の呼び出し元も、パブリックな識別子を必要とするプロパティ システム ユーティリティ API を使用できるようにするためです。 識別子をプライベートのままにした場合、他のユーザーはこれらのユーティリティ API を使うことができません。 このような API とシナリオの例には、[**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359)、任意の [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361)、[**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357)、[**GetAnimationBaseValue**](https://msdn.microsoft.com/library/windows/apps/br242358)、[**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257)、および [**Setter.Property**](https://msdn.microsoft.com/library/windows/apps/br208836) があります。 Windows ランタイム メタデータの規則ではパブリック フィールドが許可されないため、これにパブリック フィールドを使うことはできません。
 
 ## 依存関係プロパティの命名規則
 
 依存関係プロパティには命名規則があります。例外的な状況を除き、これに従ってください。 依存関係プロパティ自体には、[**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) の最初のパラメーターとして与えられる基本的な名前 (前の例では "Label") があります。 名前は登録の種類ごとに一意である必要があり、一意性の要件は継承されるメンバーにも適用されます。 基本型を通じて継承された依存関係プロパティは、既に登録型の一部と見なされます。継承されたプロパティの名前を再び登録することはできません。
 
+**注:** 選んだ言語のプログラミングで有効な任意の文字列識別子をここで名前として指定できますが、通常は XAML でも依存関係プロパティを設定できる必要があります。 XAML で設定するには、選ぶプロパティが有効な XAML 名である必要があります。 詳しくは、「[XAML の概要](xaml-overview.md)」をご覧ください。
 
-            **注:** 選んだ言語のプログラミングで有効な任意の文字列識別子をここで名前として指定できますが、通常は XAML でも依存関係プロパティを設定できる必要があります。 XAML で設定するには、選ぶプロパティが有効な XAML 名である必要があります。 詳しくは、「[XAML の概要](xaml-overview.md)」をご覧ください。
-
-識別子プロパティを作る場合は、登録したプロパティの名前にサフィックス "Property" を結合します ("LabelProperty" など)。 このプロパティは依存関係プロパティの識別子であり、独自のプロパティ ラッパーで呼び出す [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) と [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) の入力として使われます。 プロパティ システムでも使われ、XAML プロセッサで使われることもあります。
+識別子プロパティを作る場合は、登録したプロパティの名前にサフィックス "Property" を結合します ("LabelProperty" など)。 このプロパティは依存関係プロパティの識別子であり、独自のプロパティ ラッパーで呼び出す [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) と [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) の入力として使われます。 プロパティ システムや、[ **{x:bind}:**](x-bind-markup-extension.md) などの他の XAML プロセッサによっても使われます。
 
 ## ラッパーの実装
 
 プロパティ ラッパーでは、**get** 実装の [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) と **set** 実装の [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) を呼び出す必要があります。
 
-
-            **注意:** 例外的な状況を除き、ラッパー実装では [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) 操作と [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) 操作のみ実行する必要があります。 そうしないと、プロパティは XAML で設定された場合とコードで設定された場合とで動作が異なります。 効率を上げるために、XAML パーサーは依存関係プロパティの設定時にラッパーをバイパスします。可能な場合には、依存関係プロパティのレジストリを使います。
+**注意:** 例外的な状況を除き、ラッパー実装では [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) 操作と [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) 操作のみ実行する必要があります。 そうしないと、プロパティは XAML で設定された場合とコードで設定された場合とで動作が異なります。 効率を高めるため、依存関係プロパティを設定するときに XAML パーサーはラッパーをバイパスし、**SetValue** 経由でバッキング ストアとやり取りします。
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp
@@ -184,10 +181,10 @@ public:
 
 ## カスタム依存関係プロパティのプロパティ メタデータ
 
-プロパティ メタデータが依存関係プロパティに割り当てられている場合、同じメタデータが、プロパティ所有者型の任意のインスタンスまたはそのサブクラスのそのプロパティに適用されます。 プロパティ メタデータでは、次の 2 つの動作を指定できます。
+プロパティ メタデータが依存関係プロパティに割り当てられている場合、同じメタデータが、プロパティ所有者型のすべてのインスタンスまたはそのサブクラスのそのプロパティに適用されます。 プロパティ メタデータでは、次の 2 つの動作を指定できます。
 
 -   プロパティ システムがプロパティのすべてのケースに割り当てる既定値。
--   プロパティ値が検出されるたびにプロパティ システム内で自動的に呼び出される静的コールバック メソッド。
+-   プロパティ値の変更が検出されるたびにプロパティ システム内で自動的に呼び出される静的コールバック メソッド。
 
 ### プロパティ メタデータでの登録の呼び出し
 
@@ -195,8 +192,7 @@ public:
 
 通常、[**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) のパラメーター内で、インラインで作られたインスタンスとして [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) を提供します。
 
-
-            **注:** [**CreateDefaultValueCallback**](https://msdn.microsoft.com/library/windows/apps/hh701812) の実装を定義している場合、[**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) コンストラクターを呼び出して **PropertyMetadata** インスタンスを定義するのではなく、ユーティリティ メソッド [**PropertyMetadata.Create**](https://msdn.microsoft.com/library/windows/apps/hh702099) を使う必要があります。
+**注:** [**CreateDefaultValueCallback**](https://msdn.microsoft.com/library/windows/apps/hh701812) の実装を定義している場合、[**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) コンストラクターを呼び出して **PropertyMetadata** インスタンスを定義するのではなく、ユーティリティ メソッド [**PropertyMetadata.Create**](https://msdn.microsoft.com/library/windows/apps/hh702099) を使う必要があります。
 
 次の例では、前に示した [**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) の例を、[**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) インスタンスを [**PropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/br208770) 値を使って参照することで変更します。 "OnLabelChanged" コールバックの実装については、このセクションの後半で説明します。
 
@@ -233,8 +229,7 @@ DependencyProperty^ ImageWithLabelControl::_LabelProperty =
 
 既定値が指定されていない場合、参照型の依存関係プロパティの既定値は null になるか、値型または言語プリミティブの型の既定になります (たとえば、整数の場合は 0、文字列の場合は空の文字列)。 既定値を設定する主な理由は、プロパティに対して [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357) を呼び出すときに、この値が復元されるためです。 プロパティごとに既定値を設定すると、値型の場合には特に、コンストラクターで既定値を設定するよりも便利な場合があります。 ただし、参照型の場合は、既定値を設定しても意図しないシングルトン パターンが作られないことを確認してください。 詳しくは、このトピックの「[ベスト プラクティス](#best-practices)」をご覧ください。
 
-
-            **注:** [**UnsetValue**](https://msdn.microsoft.com/library/windows/apps/br242371) の既定値は登録しないでください。 登録すると、プロパティのユーザーが混乱し、プロパティ システム内で意図しない結果が発生します。
+**注:** [**UnsetValue**](https://msdn.microsoft.com/library/windows/apps/br242371) の既定値は登録しないでください。 登録すると、プロパティのユーザーが混乱し、プロパティ システム内で意図しない結果が発生します。
 
 ### CreateDefaultValueCallback
 
@@ -246,7 +241,7 @@ DependencyProperty^ ImageWithLabelControl::_LabelProperty =
 
 ### プロパティ変更コールバック メソッド
 
-プロパティ変更コールバック メソッドを定義して、プロパティと他の依存関係プロパティの対話を定義することや、プロパティが変更されるたびに内部プロパティまたはオブジェクトの状態を設定することができます。 コールバックが呼び出された場合、プロパティ システムは有効なプロパティ値の変更があるかどうかを判断しています。 コールバック メソッドは静的であるため、変更をレポートしたクラスのインスタンスを示すコールバックの *d* パラメーターは重要です。 標準的な実装では、通常は *d* として渡されるオブジェクトに対して他の変更を実行することで、イベント データの [**NewValue**](https://msdn.microsoft.com/library/windows/apps/br242364) プロパティを使い、その値をいずれかの方法で処理します。 プロパティ変更に対する追加の応答では、**NewValue** でレポートされる値を拒否、[**OldValue**](https://msdn.microsoft.com/library/windows/apps/br242365) を復元、または **NewValue** に適用されるプログラムの制約に値を設定します。
+プロパティ変更コールバック メソッドを定義して、プロパティと他の依存関係プロパティの対話を定義することや、プロパティが変更されるたびに内部プロパティまたはオブジェクトの状態を更新することができます。 コールバックが呼び出された場合、プロパティ システムは有効なプロパティ値の変更があるかどうかを判断しています。 コールバック メソッドは静的であるため、変更をレポートしたクラスのインスタンスを示すコールバックの *d* パラメーターは重要です。 標準的な実装では、通常は *d* として渡されるオブジェクトに対して他の変更を実行することで、イベント データの [**NewValue**](https://msdn.microsoft.com/library/windows/apps/br242364) プロパティを使い、その値をいずれかの方法で処理します。 プロパティ変更に対する追加の応答では、**NewValue** でレポートされる値を拒否、[**OldValue**](https://msdn.microsoft.com/library/windows/apps/br242365) を復元、または **NewValue** に適用されるプログラムの制約に値を設定します。
 
 次の例では、[**PropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/br208770) の実装を示しています。 これは、前の [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) の例で参照したメソッドを、[**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) の構成引数の一部として実装します。 このコールバックで処理するシナリオは、クラスに "HasLabelValue" という名前の計算された読み取り専用プロパティもある場合です (実装は示していません)。 "Label" プロパティが再評価されるたびに、このコールバック メソッドが呼び出され、コールバックは依存する計算された値が依存関係プロパティに対する変更との同期を保てるようにします。
 
@@ -282,7 +277,7 @@ static void OnLabelChanged(DependencyObject^ d, DependencyPropertyChangedEventAr
     if (s->IsEmpty()) {
         iwlc->HasLabelValue=false;
     }
-}s
+}
 ```
 
 ### 構造体と列挙に対するプロパティ変更動作
@@ -357,7 +352,7 @@ static void OnVisibilityValueChanged(DependencyObject^ d, DependencyPropertyChan
 
 ### 依存関係プロパティのセキュリティに関する考慮事項
 
-依存関係プロパティはパブリック プロパティとして宣言します。 依存関係プロパティ識別子は、パブリック静的読み取り専用メンバーとして宣言します。 言語で許可されている他のアクセス レベル (**protected** など) を宣言しようとした場合でも、依存関係プロパティは常に、プロパティ システム API と組み合わせた識別子を使ってアクセスできます。 依存関係プロパティ識別子を内部またはプライベートして宣言すると、プロパティ システムは正常に動作できないため、このような宣言は機能しません。
+依存関係プロパティはパブリック プロパティとして宣言します。 依存関係プロパティ識別子は、**public static readonly** メンバーとして宣言します。 言語で許可されている他のアクセス レベル (**protected** など) を宣言しようとした場合でも、依存関係プロパティは常に、プロパティ システム API と組み合わせた識別子を使ってアクセスできます。 依存関係プロパティ識別子を内部またはプライベートして宣言すると、プロパティ システムは正常に動作できないため、このような宣言は機能しません。
 
 ラッパー プロパティは便宜だけが目的であるため、ラッパーに適用されるセキュリティ メカニズムは [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) または [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) を代わりに呼び出すことでバイパスできます。 したがって、ラッパー プロパティはパブリックのままにしてください。そうしないと、正当な呼び出し元がプロパティを使いにくくなるだけで、実際のセキュリティ上の利点はありません。
 
@@ -382,6 +377,6 @@ C++/CX のプロパティ登録の実装は、C# より込み入っています�
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

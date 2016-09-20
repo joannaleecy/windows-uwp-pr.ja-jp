@@ -69,8 +69,7 @@ ms.openlocfilehash: 296ca0ece8cead74112c3e665f13b5e5547e6da3
 
 [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) を表示すると、デバイスの追加、削除、更新に合わせて、UI の内容が自動的に更新されます。
 
-
-              **注**  [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) を使って [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind.aspx) を指定することはできません。 特定の **DeviceInformationKind** のデバイスが必要な場合は、[**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) を作成して独自の UI を提供する必要があります。
+**注**  [**DevicePicker**](https://msdn.microsoft.com/library/windows/apps/Dn930841) を使って [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind.aspx) を指定することはできません。 特定の **DeviceInformationKind** のデバイスが必要な場合は、[**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) を作成して独自の UI を提供する必要があります。
 
  
 
@@ -105,8 +104,7 @@ ms.openlocfilehash: 296ca0ece8cead74112c3e665f13b5e5547e6da3
 
 バックグラウンド タスクによるデバイスの監視は、上で説明した [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) を作成する方法によく似ています。 実際、最初に前のセクションの説明に従って通常の **DeviceWatcher** オブジェクトを作成する必要があります。 オブジェクトを作成したら、[**DeviceWatcher.Start**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicewatcher.start) の代わりに [**GetBackgroundTrigger**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicewatcher.enumerationcompleted.aspx) を使います。 **GetBackgroundTrigger** を呼び出すときに目的の通知 (追加、削除、更新) を指定する必要があります。 更新または削除を要求する際には追加も要求する必要があります。 トリガーを登録すると、すぐにバックグラウンドで **DeviceWatcher** の実行が開始されます。 それ以降、条件に一致する新しい通知を受け取るたびに、バックグラウンド タスクがアプリケーションをトリガーして、前回のトリガー以降の最新の変更が提供されます。
 
-
-              **重要:** [**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838) が最初にアプリケーションをトリガーするのは、ウォッチャーが **EnumerationCompleted** 状態に達したときです。 したがって、そのときには最初の結果がすべて含まれます。 その後にアプリケーションがトリガーされるときには、前回のトリガー以降に発生した追加、更新、削除の通知のみが含まれます。 最初の結果が一度に 1 つずつ送られるのではなく、**EnumerationCompleted** に達した後にまとめて送られるため、フォアグラウンドの [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) オブジェクトとは若干異なります。
+**重要:** [**DeviceWatcherTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn913838) が最初にアプリケーションをトリガーするのは、ウォッチャーが **EnumerationCompleted** 状態に達したときです。 したがって、そのときには最初の結果がすべて含まれます。 その後にアプリケーションがトリガーされるときには、前回のトリガー以降に発生した追加、更新、削除の通知のみが含まれます。 最初の結果が一度に 1 つずつ送られるのではなく、**EnumerationCompleted** に達した後にまとめて送られるため、フォアグラウンドの [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) オブジェクトとは若干異なります。
 
  
 
@@ -131,8 +129,7 @@ ms.openlocfilehash: 296ca0ece8cead74112c3e665f13b5e5547e6da3
 
 [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) オブジェクトのプロパティ バッグ内で利用可能なプロパティは、デバイスの [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationkind.aspx) に応じて異なる場合があることに注意することが重要です。 特定の種類でしか使うことのできないプロパティもあります。 プロパティと種類の関係について詳しくは、「[デバイス情報プロパティ](device-information-properties.md)」をご覧ください。 したがって、上の例では、親 **Device** を検索すると、**DeviceInterface** デバイス オブジェクトでは利用できなかった詳細情報にアクセスできるようになります。 このため、AQS フィルター文字列を作成するときには、要求するプロパティが列挙する **DeviceInformationKind** オブジェクトで利用可能かどうかを確認することが重要です。 フィルターの作成について詳しくは、「[デバイス セレクターのビルド](build-a-device-selector.md)」をご覧ください。
 
-**AssociationEndpoint** オブジェクト、**AssociationEndpointContainer** オブジェクト、または **AssociationEndpointService** オブジェクトを列挙する場合、ワイヤレス プロトコルまたはネットワーク プロトコル経由で列挙することになります。 この状況では、[**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.findallasync.aspx) を使わずに、[**CreateWatcher**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.createwatcher.aspx) を使うことをお勧めします。 その理由は、ネットワーク経由で検索すると、[**EnumerationCompleted**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicewatcher.enumerationcompleted.aspx) が生成されるまで、検索操作が 10 秒以上タイムアウトされないことが頻発するためです。 
-              **FindAllAsync** は、**EnumerationCompleted** がトリガーされるまでその操作を完了しません。 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) を使う場合は、**EnumerationCompleted** が呼び出されるタイミングに関係なく、リアルタイムに近い結果を取得できます。
+**AssociationEndpoint** オブジェクト、**AssociationEndpointContainer** オブジェクト、または **AssociationEndpointService** オブジェクトを列挙する場合、ワイヤレス プロトコルまたはネットワーク プロトコル経由で列挙することになります。 この状況では、[**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.findallasync.aspx) を使わずに、[**CreateWatcher**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformation.createwatcher.aspx) を使うことをお勧めします。 その理由は、ネットワーク経由で検索すると、[**EnumerationCompleted**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.devicewatcher.enumerationcompleted.aspx) が生成されるまで、検索操作が 10 秒以上タイムアウトされないことが頻発するためです。 **FindAllAsync** は、**EnumerationCompleted** がトリガーされるまでその操作を完了しません。 [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/BR225446) を使う場合は、**EnumerationCompleted** が呼び出されるタイミングに関係なく、リアルタイムに近い結果を取得できます。
 
 ## 後で使うためにデバイスを保存する
 

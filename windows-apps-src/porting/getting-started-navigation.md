@@ -3,7 +3,6 @@ author: mcleblanc
 title: "ナビゲーションの概要"
 description: "ナビゲーションの概要"
 ms.assetid: F4DF5C5F-C886-4483-BBDA-498C4E2C1BAF
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: c542faa6365c8558988162bee12f266d67474461
 

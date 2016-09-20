@@ -5,7 +5,6 @@ title: "スクロール バーのガイドライン"
 ms.assetid: 1BFF0E81-BF9C-43F7-95F6-EFC6BDD5EC31
 label: Scroll bars
 template: detail.hbs
-translationtype: Human Translation
 ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
 ms.openlocfilehash: b390f8a2cbabf243bd4d73c16122648e3d4a0586
 
@@ -21,14 +20,14 @@ ms.openlocfilehash: b390f8a2cbabf243bd4d73c16122648e3d4a0586
 
 スクロール ビューアー コントロールは、ビューポート内に適合する量のコンテンツと、一方または両方のスクロール バーからなります。 パンとズームのためにタッチ ジェスチャを使うことができ (操作中にのみスクロール バーはフェードインします)、またスクロールのためにポインターを使うことができます。 フリック ジェスチャでは、慣性を伴ってパンします。
 
-**注**  Windows: 検出された入力デバイスに基づいて、次の 2 種類のパン表示モードが使われます。パン インジケーター (タッチを使う場合) とスクロール バー (マウス、タッチパッド、キーボード、スタイラスなど、その他の入力デバイスを使う場合) です。
+
+            **注**  Windows: 検出された入力デバイスに基づいて、次の 2 種類のパン表示モードが使われます。パン インジケーター (タッチを使う場合) とスクロール バー (マウス、タッチパッド、キーボード、スタイラスなど、その他の入力デバイスを使う場合) です。
 
 ![標準的なスクロール バーとパン インジケーター コントロールの外観のサンプル](images/SCROLLBAR.png)
 
 ## 例
 
-[
-            **ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.aspx) を使って、実際のサイズよりも小さな領域にコンテンツを表示できるようにします。 スクロール ビューアーのコンテンツがまったく表示されないと、スクロール ビューアーは、表示されるコンテンツ領域を移動するためにユーザーが使用できるスクロール バーを表示します。 範囲は、スクロール ビューアーのすべてのコンテンツを指します。** ビューポートは、コンテンツの表示領域を指します。**
+[**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.aspx) を使って、実際のサイズよりも小さな領域にコンテンツを表示できるようにします。 スクロール ビューアーのコンテンツがまったく表示されないと、スクロール ビューアーは、表示されるコンテンツ領域を移動するためにユーザーが使用できるスクロール バーを表示します。 範囲は、スクロール ビューアーのすべてのコンテンツを指します。** ビューポートは、コンテンツの表示領域を指します。**
 
 ![標準的なスクロール バー コントロールを示すスクリーンショット](images/ScrollBar_Standard.jpg)
 
@@ -46,7 +45,8 @@ ms.openlocfilehash: b390f8a2cbabf243bd4d73c16122648e3d4a0586
 
 ## コントロール テンプレートにおける ScrollViewer
 
-ScrollViewer コントロールが他のコントロールの複合パートとして存在するのは一般的です。 ScrollViewer パーツは、サポートのための [**ScrollContentPresenter**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollcontentpresenter.aspx) クラスと共に、ホスト コントロールのレイアウト スペースが展開されたコンテンツのサイズより小さく制限されている場合にのみ、スクロール バーと、ビューポートを表示します。 多くの場合、リストがこれに該当するため、[**ListView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx) と [**GridView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx) テンプレートは常に ScrollViewer を含めます。 [
+ScrollViewer コントロールが他のコントロールの複合パートとして存在するのは一般的です。 ScrollViewer パーツは、サポートのための [**ScrollContentPresenter**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollcontentpresenter.aspx) クラスと共に、ホスト コントロールのレイアウト スペースが展開されたコンテンツのサイズより小さく制限されている場合にのみ、スクロール バーと、ビューポートを表示します。 多くの場合、リストがこれに該当するため、[**ListView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx) と [**GridView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx) テンプレートは常に ScrollViewer を含めます。 
+            [
               **TextBox**
             ](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx) と [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx) もまたテンプレートに ScrollViewer を含みます。
 

@@ -56,10 +56,12 @@ XAML TextBox コントロールの場合、スペル チェックが既定で無
 
 * [テキストとテキスト コントロール](text-controls.md)
 * [テキスト入力のガイドライン](https://msdn.microsoft.com/library/windows/apps/hh750315)
-* [テキストとタイポグラフィのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh700394)
+* 
+            [テキストとタイポグラフィのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh700394)
             
           
             **開発者向け (XAML)**
+          
 * [**TextBox.IsSpellCheckEnabled プロパティ**](https://msdn.microsoft.com/library/windows/apps/br209688)
 * [**TextBox クラス**](https://msdn.microsoft.com/library/windows/apps/br209683)
 

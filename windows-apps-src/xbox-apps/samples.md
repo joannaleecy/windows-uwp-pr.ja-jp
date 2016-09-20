@@ -3,7 +3,6 @@ author: Mtoepke
 title: "Xbox One サンプルの UWP"
 description: "Xbox One とテレビの優れたエクスペリエンスの構築をサポートするサンプルとライブラリです。"
 area: Xbox
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 6f38f5aabb6a409fab894bf7127ad4011162f7c6
 

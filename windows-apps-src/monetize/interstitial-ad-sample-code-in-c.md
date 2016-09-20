@@ -3,7 +3,6 @@ author: mcleanbyron
 ms.assetid: 7a16b0ca-6b8e-4ade-9853-85690e06bda6
 description: "C# を使ってスポット広告を起動する方法について説明します。"
 title: "C# を使ったスポット広告のサンプル コード#"
-translationtype: Human Translation
 ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
 ms.openlocfilehash: e83730c60eada273aee4f3bca4ff28cf6feccbf8
 

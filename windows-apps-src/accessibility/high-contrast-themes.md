@@ -1,178 +1,298 @@
 ---
 author: Xansky
-Description: "ハイ コントラスト テーマがアクティブになっているときにユニバーサル Windows プラットフォーム (UWP) アプリを使用できることを確かめるために必要な手順について説明します。"
+description: "ハイ コントラスト テーマがアクティブになっているときにユニバーサル Windows プラットフォーム (UWP) アプリを使用できることを確かめるために必要な手順について説明します。"
 ms.assetid: FD7CA6F6-A8F1-47D8-AA6C-3F2EC3168C45
 title: "ハイ コントラスト テーマ"
-label: High-contrast themes
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 50c37d71d3455fc2417d70f04e08a9daff2e881e
-ms.openlocfilehash: 4201f5a0b08f1fc8d691218da0803ee04ab2c86a
+ms.sourcegitcommit: f3da82cab8813653a6ee999976983937649b42b2
+ms.openlocfilehash: 30785998d11f09ef94f33789e3e74b0933d9c83e
 
 ---
 
 # ハイ コントラスト テーマ  
 
-ハイ コントラスト テーマがアクティブになっているときにユニバーサル Windows プラットフォーム (UWP) アプリを使用できることを確かめるために必要な手順について説明します。
+Windows では、OS やアプリでハイ コントラスト テーマがサポートされていて、必要に応じて有効にすることができます。 ハイ コントラスト テーマは、少ない数のコントラスト カラーで構成されるパレットを使い、インターフェイスを見やすくします。
 
-UWP アプリは、ハイ コントラスト テーマを既定でサポートします。 ユーザーが、システム設定またはアクセシビリティ ツールでハイ コントラスト テーマが使われるように指定すると、色とスタイルの設定が自動的に変わって、UI のコントロールとコンポーネントにハイ コントラスト レイアウトおよびハイ コントラスト レンダリングが使われます。
+**図 1:  淡色テーマと黒のハイ コントラスト テーマで表示された電卓。**
 
-この既定のサポートでは、既定のテーマとテンプレートを使います。 これらのテーマとテンプレートではシステム カラーをリソース定義として参照し、システムがハイ コントラスト モードに移行するとリソース ソースが自動的に変更されます。 ただし、コントロールにカスタムのテンプレート、テーマ、スタイルを使う場合は、ハイ コントラストに対して組み込まれているサポートを無効にしないよう注意してください。 スタイル指定に Microsoft Visual Studio 用のいずれかの XAML デザイナーを使っている場合は、既定のテンプレートと大幅に異なるテンプレートを定義するたびに、プライマリ テーマと共に、別のハイ コントラスト テーマが生成されます。 この別のテーマのディクショナリは、[**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794) 要素の専用プロパティである [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.resourcedictionary.themedictionaries.aspx) コレクションに入れられます。
+![淡色テーマと黒のハイ コントラスト テーマで表示された電卓](images/high-contrast-calculators.png)
 
-テーマとコントロール テンプレートについて詳しくは、「[クイック スタート: コントロール テンプレート](https://msdn.microsoft.com/library/windows/apps/xaml/Hh465374)」をご覧ください。 特定のコントロールの XAML リソース ディクショナリとテーマを調べたり、これらのテーマがどのように構築されているかを確認すると参考になります。またこれらのテーマが、利用可能な各ハイ コントラスト設定に対して、類似しているが異なるリソースをどのように参照しているかということを確認することも参考となります。
+
+ハイ コントラスト テーマに切り替えるには、*[設定]、[簡単操作]、[ハイ コントラスト]* の順に選択します。
+
+> [!NOTE]
+> ハイ コントラスト テーマは、淡色テーマおよび濃色テーマとは異なることに注意してください。淡色テーマと濃色テーマのカラー パレットは色の種類が豊富で、ハイ コントラストとは見なされません。 淡色テーマと濃色テーマについて詳しくは、「[色](../style/color.md)」をご覧ください。
+
+コモン コントロールでは、ハイ コントラストが無償で完全にサポートされていますが、UI をカスタマイズする場合は注意する必要があります。 ハイ コントラストに関する最も一般的なバグは、コントロールにインラインで色をハードコーディングすることで生じます。
+
+```xaml
+<!-- Don't do this! -->
+<Grid Background="#E6E6E6">
+
+<!-- Instead, create BrandedPageBackgroundBrush and do this. -->
+<Grid Background="{ThemeResource BrandedPageBackgroundBrush}">
+```
+
+最初の例で `#E6E6E6` をインラインで設定すると、グリッドはすべてのテーマでその背景色を保持します。 ユーザーが黒のハイ コントラスト テーマに切り替えたら、彼らはアプリの背景が黒で表示されることを期待します。 `#E6E6E6` はほぼ白一色であるため、ユーザーによってはアプリを操作できない場合があります。
+
+2 番目の例では、[**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794) 要素の専用プロパティである [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.resourcedictionary.themedictionaries.aspx) コレクション内の色を参照するために [**{ThemeResource} マークアップ拡張**](../xaml-platform/themeresource-markup-extension.md)を使っています。 ThemeDictionaries により、XAML はユーザーの現在のテーマに基づいて自動的に色を変えることができます。
 
 ## テーマ ディクショナリ
 
-システムの既定の色を変更したり、画像を装飾 (背景画像など) として追加したりする必要がある場合は、アプリ用に **ThemeDictionaries** コレクションを作成します。
+システムの既定の色を変更する必要がある場合は、アプリの ThemeDictionaries コレクションを作成します。
 
-* まず、適切なプラミングを作成します (プラミングがまだない場合)。 App.xaml で、**ThemeDictionaries** コレクションを次のように作成します。
-
-``` xaml
- <Application.Resources>
-    <ResourceDictionary>
-        <ResourceDictionary.ThemeDictionaries>
-            <!-- Default is a fallback if a more precise theme isn't called out below -->
-            <ResourceDictionary x:Key="Default">
-
-            </ResourceDictionary>
-            <!-- HighContrast is used in any high contrast theme -->
-            <ResourceDictionary x:Key="HighContrast">
-
-            </ResourceDictionary>
-        </ResourceDictionary.ThemeDictionaries>
-    </ResourceDictionary>
-</Application.Resources
-```
-
-* 
-            **HighContrast** のみが、利用可能なキー名というわけではありません。 **HighContrastBlack**、**HighContrastWhite**、**HighContrastCustom** も利用可能なキー名です。 ほとんどの場合、**HighContrast** が必要になります。
-* **Default** では、必要な種類の [**Brush**](http://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.aspx) を作成します。通常は、**SolidColorBrush** です。 このクラスに対して、具体的な使用目的を示す **x:Key** 名を指定します。<br/>
-    `<SolidColorBrush x:Key="BrandedPageBackground" />`
-* 必要な **Color** を割り当てます。<br/>
-    `<SolidColorBrush x:Key="BrandedPageBackground" Color="Red" />`
-* この **Brush** を **HighContrast** にコピーします。
+1. まず、適切なプラミングを作成します (プラミングがまだない場合)。 App.xaml で、少なくとも **Default** と **HighContrast** を含む ThemeDictionaries コレクションを作成します。
+2. Default では、必要な種類の [Brush](http://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.aspx) を作成します。通常は SolidColorBrush です。 このクラスに対して、具体的な使用目的を示す x:Key 名を指定します。
+3. 必要な Color を割り当てます。
+4. この Brush を HighContrast にコピーします。
 
 ``` xaml
 <Application.Resources>
     <ResourceDictionary>
         <ResourceDictionary.ThemeDictionaries>
-            <!-- Default is a fallback if a more precise theme isn't called out below -->
+            <!-- Default is a fallback if a more precise theme isn't called
+            out below -->
             <ResourceDictionary x:Key="Default">
-                <SolidColorBrush x:Key="BrandedPageBackground" Color="Red" />
+                <SolidColorBrush x:Key="BrandedPageBackgroundBrush" Color="#E6E6E6" />
             </ResourceDictionary>
-            <!-- HighContrast is used in any high contrast theme -->
+
+            <!-- Optional, Light is used in light theme.
+            If included, Default will be used for Dark theme -->
+            <ResourceDictionary x:Key="Light">
+                <SolidColorBrush x:Key="BrandedPageBackgroundBrush" Color="#E6E6E6" />
+            </ResourceDictionary>
+
+            <!-- HighContrast is used in all high contrast themes -->
             <ResourceDictionary x:Key="HighContrast">
-                <SolidColorBrush x:Key="BrandedPageBackground" Color="Red" />
+                <SolidColorBrush x:Key="BrandedPageBackgroundBrush" Color="#E6E6E6" />
             </ResourceDictionary>
         </ResourceDictionary.ThemeDictionaries>
     </ResourceDictionary>
 </Application.Resources>
 ```
 
-* **Brush** の色を決定し、それに合わせて **HighContrast** でその色を変更します。
+最後に、ハイ コントラストで使用する色を決定します。これについては、次のセクションで説明します。
 
-ハイ コントラストの色を決定するには、ハイ コントラストに関する知識が若干必要になります。 上で作成したプラミングを利用すると、簡単に更新することができます。
+> [!NOTE]
+> HighContrast の他に  HighContrastBlack、HighContrastWhite、HighContrastCustom というキー名も利用可能ですが、 ほとんどの場合、HighContrast だけで十分です。
 
 ## ハイ コントラストの色
 
-ユーザーは、設定ページを使用してハイ コントラストに切り替えることができます。 既定では 4 つのハイ コントラスト テーマがあります。 ユーザーがオプションを選ぶと、ページにはアプリでの色の状態を示すプレビューが表示されます。
+*[設定]、[簡単操作]、[ハイ コントラスト]* の順に選択すると、既定の 4 つのハイ コントラスト テーマが表示されます。 
 
-![ハイ コントラスト設定](images/high-contrast-settings.png)<br/>
-_ハイ コントラスト設定_
+**図 2:  ユーザーがオプションを選ぶと、ページにはプレビューが表示されます。**
 
- プレビューに表示される各四角形をクリックすると、その値を変更できます。 各四角形は、システム リソースにも直接マップされています。
+![ハイ コントラスト設定](images/high-contrast-settings.png)
 
-![ハイ コントラスト リソース](images/high-contrast-resources.png)<br/>
-_ハイ コントラスト リソース_
+**図 3:  プレビューに表示される色の見本をクリックすると、その値を変更できます。 また各見本は、XAML のカラー リソースに直接マップされます。**
 
-上の図でコールアウトによって示されている名前に _SystemColor_ というプレフィックスを付け、_Color_ というポストフィックスを付けると (例: **SystemColorWindowTextColor**)、これらはユーザーの指定に合わせて動的に更新されます。 これにより、ハイ コントラスト用に特定の色を選ぶ必要がなくなります。 代わりに、使用される色に対応するシステム リソースを選びます。 上記の例では、ページの背景色の名前を **SolidColorBrushBrandedPageBackground** と指定しました。 この色は背景に使用されるため、これを、ハイ コントラストの **SystemColorWindowColor** にマップすることができます。
+![ハイ コントラスト リソース](images/high-contrast-resources.png)
+
+各 `SystemColor*Color` リソースは、ユーザーがハイ コントラスト テーマに切り替えたときに自動的に色を更新する変数です。 各リソースをいつどこで使用するかについてのガイドラインを以下に示します。
+
+リソース | 用途
+-------- | -----
+SystemColorWindowTextColor | 本文、見出し、一覧など、操作できないテキスト
+SystemColorHotlightColor | ハイパーリンク
+SystemColorGrayTextColor | 無効な UI
+SystemColorHighlightTextColor | 処理中、選択されている、または現在操作されているテキストや UI の前景色
+SystemColorHighlightColor | 処理中、選択されている、または現在操作されているテキストや UI の背景色
+SystemColorButtonTextColor | ボタンなど、操作可能な UI の前景色
+SystemColorButtonFaceColor | ボタンなど、操作可能な UI の背景色
+SystemColorWindowColor | ページ、ウィンドウ、ポップアップ、およびバーの背景
+<br/>
+既存のアプリ、スタート画面、またはコモン コントロールを確認すると、ハイ コントラストのデザインの参考になります。
+
+**推奨される事項**
+
+* 可能な限り、背景と前景の組み合わせを考慮します。
+* アプリの実行中に、4 つのハイ コントラスト テーマをすべてテストします。 ユーザーがテーマを切り替えたときに、アプリを再起動しなくても良いようにします。
+* 一貫性を保ちます。
+
+**非推奨**
+
+* `SystemColor*Color` リソースを使って HighContrast テーマの色をハードコーディングしないようにします。
+* 見栄えを良くすることを目的としてカラー リソースを選ばないようにします。 カラー リソースはテーマによって変わることに注意してください。
+* `SystemColorGrayTextColor` を、セカンダリ テキストの本文やヒント目的の本文に使用しないようにします。
+
+
+先ほどの例を続けるには、`BrandedPageBackgroundBrush` のリソースを選択する必要があります。 背景に使用されることを名前が示しているため、`SystemColorWindowColor` が最適です。
 
 ``` xaml
 <Application.Resources>
     <ResourceDictionary>
         <ResourceDictionary.ThemeDictionaries>
-            <!-- Default is a fallback if a more precise theme isn't called out below -->
+            <!-- Default is a fallback if a more precise theme isn't called
+            out below -->
             <ResourceDictionary x:Key="Default">
-                <SolidColorBrush x:Key="BrandedPageBackground" Color="Red" />
+                <SolidColorBrush x:Key="BrandedPageBackgroundBrush" Color="#E6E6E6" />
             </ResourceDictionary>
-            <!-- HighContrast is used in any high contrast theme -->
+
+            <!-- Optional, Light is used in light theme.
+            If included, Default will be used for Dark theme -->
+            <ResourceDictionary x:Key="Light">
+                <SolidColorBrush x:Key="BrandedPageBackgroundBrush" Color="#E6E6E6" />
+            </ResourceDictionary>
+
+            <!-- HighContrast is used in all high contrast themes -->
             <ResourceDictionary x:Key="HighContrast">
-                <SolidColorBrush x:Key="BrandedPageBackground" Color="{ThemeResource SystemColorWindowColor}" />
+                <SolidColorBrush x:Key="BrandedPageBackgroundBrush" Color="{ThemeResource SystemColorWindowColor}" />
             </ResourceDictionary>
         </ResourceDictionary.ThemeDictionaries>
     </ResourceDictionary>
 </Application.Resources>
 ```
 
-8 つのハイ コントラストの色で構成されるパレットを引き続き使用する場合、追加のハイコントラスト **ResourceDictionaries** を作成する必要はありません。 この制限されたパレットでは、複雑な表示状態を表す場合に難しい問題が発生することがあります。 多くの場合、境界線をハイ コントラストの領域のみに追加することで、この問題に対処することができます。
+その後、アプリで背景を設定できます。
 
-### 推奨と非推奨
-
-* ハイ コントラスト モードでのテストは、早い段階で行い、また頻繁に行います。
-* 意図した目的に対応した名前付きの色を使用します。
-* **ThemeDictionaries** 内では、**Color**、**Brush**、**Thickness** などのプリミティブを配置します。 **Style** 要素のような複雑なリソースは配置しないでください。 次の例は適切に機能します。
-
-``` xaml
-<Application.Resources>
-    <ResourceDictionary>
-        <ResourceDictionary.ThemeDictionaries>
-            <!-- Default is a fallback if a more precise theme isn't called out below -->
-            <ResourceDictionary x:Key="Default">
-                <SolidColorBrush x:Key="BrandedPageBackground" Color="Red" />
-            </ResourceDictionary>
-            <!-- HighContrast is used in any high contrast theme -->
-            <ResourceDictionary x:Key="HighContrast">
-                <SolidColorBrush x:Key="BrandedPageBackground" Color="{ThemeResource SystemColorWindowColor}" />
-            </ResourceDictionary>
-        </ResourceDictionary.ThemeDictionaries>
-
-        <Style x:Key="MyButtonStyle" TargetType="Button">
-            <Setter Property="Foreground" Value="{ThemeResource BrandedPageBackground}" />
-        </Style>
-    </ResourceDictionary>
-</Application.Resources>
-
-...
-
-<Button Style="{StaticResource MyButtonStyle}" />
+```xaml
+<Grid Background="{ThemeResource BrandedPageBackgroundBrush}">
 ```
 
-* 前景の UI 要素に対してハイ コントラストの前景色を使用します。
-* ハイ コントラストの色は、対応する定義済みの色とペアで使用します。 たとえば、**BUTTONTEXT** は常に **BUTTONFACE** と共に使用します (特に前景や背景の場合)。
-* 要求される 14:1 のコントラスト比を満たすために、特定の UI 要素に対しては、推奨されるハイ コントラストの色のペアを使用します。
-* ハイ コントラストの色のペアを別々に使用したり、ハイ コントラストの色を任意に組み合わせたりしないでください。 このような操作をすると、1 つ以上のプリインストールされたハイ コントラスト テーマで、非表示の UI が作成される場合があります。
-* **ThemeDictionaries** コレクションの外部で作成した **Brush** オブジェクトを配置しないでください。
-* **StaticResource** を使用して、**ThemeDictionaries** コレクション内のリソースを参照しないでください。 このような参照方法は、アプリの実行中、ユーザーがテーマを変更するまでは機能しているように見えますが、テーマを変更すると機能しなくなります。 代わりに **ThemeResource** を使用してください。
-* ハード コーディングされた色の値は使用しないでください。
-* 好みの色という理由だけで色を使用しないでください。
-
-詳しくは、「[XAML テーマ リソース](https://msdn.microsoft.com/windows/uwp/controls-and-patterns/xaml-theme-resources)」をご覧ください。
+`{ThemeResource}` は、`SystemColorWindowColor` の参照と `BrandedPageBackgroundBrush` の参照とで、2 回使われることに注意してください。 実行時に正しいテーマを使うためには、両方の参照がアプリに必要です。 ここで、アプリでハイ コントラストの機能をテストすると良いでしょう。 ハイ コントラスト テーマに切り替えると、グリッドの背景が自動的に更新されます。 また、別のハイ コントラスト テーマに切り替えたときにも更新されます。
 
 ## 境界線を使う状況
-ハイ コントラスト モードでは、認識可能な境界の図形を項目内に維持する必要がある場合に、UI 要素に境界線を追加します。 境界線を使用して、ナビゲーションのコンテンツ領域と、操作、コンテンツを区別します。
 
-![ページの他の部分と区別されたナビゲーション ウィンドウ](images/high-contrast-actions-content.png)<br/>
-_ページの他の部分と区別されたナビゲーション ウィンドウ_
+ページ、ウィンドウ、ポップアップ、およびバーでは、ハイ コントラストの背景に `SystemColorWindowColor` を使う必要があります。 UI で重要な境界を維持する必要がある場合、ハイ コントラストのみの境界線を追加します。
 
-UI 要素に既定で境界線や背景が_ない_場合、ハイ コントラスト モードの既定の状態に境界線や背景を追加しないでください。
+**図 4:  ナビゲーション ウィンドウとページはハイ コントラストで同じ背景色を共有するので、 分割するには、ハイ コントラストのみの境界線が不可欠です。**
 
-UI 要素に既定で境界線が_ある_場合、ハイ コントラスト モードの境界線を保持してください。
+![ページの他の部分と区別されたナビゲーション ウィンドウ](images/high-contrast-actions-content.png)
 
-重なり合う色や隣接する色は相互に区別する必要がありますが、こうした色が、必ずしも 14:1 の色コントラスト比を満たすとは限りません。 ただし、このような種類のシナリオでは、3:1 のコントラスト比がベスト プラクティスです。
+## リスト項目
 
-ハイ コントラストの背景色を使用して、重なり合う UI 要素を区別する場合、これらの要素間のコントラストを確保するための唯一の確実な方法は、境界線を導入することです。
+ハイ コントラストでは、ポイント、押下、または選択時に [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) の項目の背景が `SystemColorHighlightColor` に設定されます。 複雑なリスト項目では、項目のポイント、押下、選択時に色の反転に失敗するというバグがよく生じ、 項目が読めなくなってしまいます。
 
-## 有効にされたハイ コントラスト テーマの検出  
-[**AccessibilitySettings**](https://msdn.microsoft.com/library/windows/apps/BR242237) クラスのメンバーを使って、ハイ コントラスト テーマの現在の設定を検出できます。 [**HighContrast**](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.accessibilitysettings.highcontrast) プロパティによって、ハイ コントラスト テーマが現在選ばれているかどうかを判断します。 **HighContrast** が **true** の場合は、次に、[**HighContrastScheme**](https://msdn.microsoft.com/library/windows/apps/windows.ui.viewmanagement.accessibilitysettings.highcontrastscheme) プロパティの値を確認し、使われているハイ コントラスト テーマの名前を取得します。 コードの応答が必要な **HighContrastScheme** の一般的な値は、"High Contrast White" と "High Contrast Black" です。 XAML で定義された [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794) キーにはスペースを含めることはできないため、リソース ディクショナリ内のこれらのテーマのキーは通常、それぞれ "HighContrastWhite" と "HighContrastBlack" になります。 値が別の文字列の場合に備えて、既定のハイ コントラスト テーマ用のフォールバック ロジックも必要です。 
-            このロジックは、[XAML ハイ コントラスト サンプル](http://go.microsoft.com/fwlink/p/?linkid=254993)についてのページで紹介されています。
+**図 5:  淡色テーマ (左) と黒のハイ コントラスト テーマ (右) の簡単なリスト。 2 番目の項目が選択されています。テキストの色が、ハイ コントラストでは反転されていることに注目してください。**
+
+![単色テーマと黒のハイ コントラスト テーマの簡単なリスト](images/high-contrast-list1.png)
+
+
+
+### テキストに色が付いているリスト項目
+
+問題の原因の 1 つが、ListView の [DataTemplate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) で TextBlock.Foreground を設定することです。 TextBlock.Foreground は一般的に、視覚的な階層を確立するために設定します。 Foreground プロパティは [ListViewItem](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listviewitem.aspx) で設定され、DataTemplate 内の TextBlock は、項目がポイント、押下、または選択されたときに適切な Foreground 色を継承します。 ところが、Foreground を設定すると継承が中断されてしまいます。
+
+**図 6:  淡色テーマ (左) と黒のハイ コントラスト テーマ (右) の複雑なリスト。 ハイ コントラストでは、選択された項目の 2 行目が反転に失敗していることに注目してください。**
+
+![淡色テーマと黒のハイ コントラスト テーマの複雑なリスト](images/high-contrast-list2.png)
+
+この問題を回避するには、ThemeDictionaries コレクションに含まれている Style を使って、条件付きで Foreground を設定します。 Foreground が、HighContrast の SecondaryBodyTextBlockStyle によって設定されていないため、色が正しく反転します。
+
+```xaml
+<!-- In App.xaml... -->
+<ResourceDictionary.ThemeDictionaries>
+    <ResourceDictionary x:Key="Default">
+        <Style
+            x:Key="SecondaryBodyTextBlockStyle"
+            TargetType="TextBlock"
+            BasedOn="{StaticResource BodyTextBlockStyle}">
+            <Setter Property="Foreground" Value="{StaticResource SystemControlForegroundBaseMediumBrush}" />
+        </Style>
+    </ResourceDictionary>
+
+    <ResourceDictionary x:Key="Light">
+        <Style
+            x:Key="SecondaryBodyTextBlockStyle"
+            TargetType="TextBlock"
+            BasedOn="{StaticResource BodyTextBlockStyle}">
+            <Setter Property="Foreground" Value="{StaticResource SystemControlForegroundBaseMediumBrush}" />
+        </Style>
+    </ResourceDictionary>
+
+    <ResourceDictionary x:Key="HighContrast">
+        <!-- The Foreground Setter is omitted in HighContrast -->
+        <Style
+            x:Key="SecondaryBodyTextBlockStyle"
+            TargetType="TextBlock"
+            BasedOn="{StaticResource BodyTextBlockStyle}" />
+    </ResourceDictionary>
+</ResourceDictionary.ThemeDictionaries>
+
+<!-- Usage in your DataTemplate... -->
+<DataTemplate>
+    <StackPanel>
+        <TextBlock Style="{StaticResource BodyTextBlockStyle}" Text="Double line list item" />
+
+        <!-- Note how ThemeResource is used to reference the Style -->
+        <TextBlock Style="{ThemeResource SecondaryBodyTextBlockStyle}" Text="Second line of text" />
+    </StackPanel>
+</DataTemplate>
+```
+
+### ボタンとリンクのリスト項目
+
+リスト項目には、[HyperlinkButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.hyperlinkbutton.aspx) や [Button](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx) など、より複雑なコントロールが含まれる場合があります。 これらのコントロールは、ポイント、押下、または選択時に独自の状態になり、リスト項目上では機能しません。 ハイパーリンクは、黒のハイ コントラストでも黄色で表示されるため、リスト項目がポイント、押下、または選択されているときに読みにくくなります。
+
+**図 7:  ハイパーリンクはハイ コントラストでは読みにくいことに注意してください。**
+
+![ハイパーリンクが含まれる、淡色テーマおよび黒のハイ コントラスト テーマのリスト項目](images/high-contrast-list3.png)
+
+解決策の 1 つは、ハイ コントラストで DataTemplate の背景を `SystemColorWindowColor` に設定することです。 これにより、ハイ コントラストにおいて境界線の効果が作成されます。
+
+```xaml
+<!-- In App.xaml... -->
+<ResourceDictionary.ThemeDictionaries>
+    <ResourceDictionary x:Key="Default">
+        <SolidColorBrush x:Key="HighContrastOnlyBackgroundBrush" Color="Transparent" />
+    </ResourceDictionary>
+
+    <ResourceDictionary x:Key="HighContrast">
+        <SolidColorBrush x:Key="HighContrastOnlyBackgroundBrush" Color="{ThemeResource SystemColorWindowColor}" />
+    </ResourceDictionary>
+</ResourceDictionary.ThemeDictionaries>
+
+<!-- Usage in your ListView... -->
+<ListView>
+    <ListView.ItemContainerStyle>
+        <Style TargetType="ListViewItem">
+            <!-- Causes the DataTemplate to fill the entire width and height
+            of the list item -->
+            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+            <Setter Property="VerticalContentAlignment" Value="Stretch" />
+
+            <!-- Padding is handled in the DataTemplate -->
+            <Setter Property="Padding" Value="0" />
+        </Style>
+    </ListView.ItemContainerStyle>
+    <ListView.ItemTemplate>
+        <DataTemplate>
+            <!-- Margin of 2px allows some of the ListViewItem's background
+            to shine through. An additional left padding of 10px puts the
+            content a total of 12px from the left edge -->
+            <StackPanel
+                Margin="2,2,2,2"
+                Padding="10,0,0,0"
+                Background="{ThemeResource HighContrastOnlyBackgroundBrush}">
+
+                <!-- Foreground is explicitly set so that it doesn't
+                disappear on hovered, pressed, or selected -->
+                <TextBlock
+                    Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"
+                    Text="Double line list item" />
+
+                <HyperlinkButton Content="Hyperlink" />
+            </StackPanel>
+        </DataTemplate>
+    </ListView.ItemTemplate>
+</ListView>
+```
+**図 8:  より複雑なコントロールがリスト項目に含まれる場合に適しているのが、境界線効果です。**
+
+![ハイパーリンクが含まれる、淡色テーマおよび黒のハイ コントラスト テーマのリスト項目 (修正後)](images/high-contrast-list4.png)
+
+
+
+## ハイ コントラストを検出する
+
+[**AccessibilitySettings**](https://msdn.microsoft.com/library/windows/apps/BR242237) クラスのメンバーを使えば、現在のテーマがハイ コントラストであるかどうかをプログラムで確認することができます。
 
 > [!NOTE]
-> アプリが初期化され、既にコンテンツが表示されているスコープから [**AccessibilitySettings**](https://msdn.microsoft.com/library/windows/apps/BR242237) コンストラクターを呼び出すようにします。
-
-実行中にハイ コントラスト リソース値を使うようにアプリを切り替えることができます。 この動作は、リソースがスタイルまたはテンプレート XAML で [{ThemeResource} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt185591)を使って要求されている限り有効です。 既定のテーマ (generic.xaml) ではすべてこの {ThemeResource} マークアップ拡張手法が使われているため、既定のコントロール テーマを使う場合はこの動作が得られます。 また、カスタム テンプレートとスタイルでこの {ThemeResource} マークアップ拡張リソース手法を使っている場合は、カスタム コントロールまたはカスタム コントロールのスタイル設定でこれを実行できます。
+> アプリが初期化され、既にコンテンツが表示されているスコープから **AccessibilitySettings** コンストラクターを呼び出すようにします。
 
 ## 関連トピック  
-* [Accessibility (ユーザー補助機能)](accessibility.md)
+* [アクセシビリティ](accessibility.md)
 * [UI コントラストと設定のサンプル](http://go.microsoft.com/fwlink/p/?linkid=231539)
 * [XAML アクセシビリティ サンプル](http://go.microsoft.com/fwlink/p/?linkid=238570)
 * [XAML ハイ コントラスト サンプル](http://go.microsoft.com/fwlink/p/?linkid=254993)
@@ -180,6 +300,6 @@ UI 要素に既定で境界線が_ある_場合、ハイ コントラスト モ�
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

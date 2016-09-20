@@ -1,11 +1,11 @@
-﻿---
+---
 author: mcleblanc
 description: "このトピックでは、Windows Phone Silverlight API からユニバーサル Windows プラットフォーム (UWP) の相当する API への包括的なマッピングを示します。"
 title: "Windows Phone Silverlight から UWP への名前空間とクラスのマッピング"
 ms.assetid: 33f06706-4790-48f3-a2e4-ebef9ddb61a4
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 164e5303c48b6c65807984e4afcaf81ac12f6431
+ms.openlocfilehash: 6b33127c6b76ef820a93b200a655426a0f516b68
 
 ---
 
@@ -76,7 +76,7 @@ UWP プロジェクトで作業する場合、および Windows Phone Silverligh
 | (MPC = **Microsoft.Phone.Controls**) <br/>**MPC.TimePickerPage** クラス | [**TimePickerFlyout**](https://msdn.microsoft.com/library/windows/apps/dn608313) クラス |
 | (MPC = **Microsoft.Phone.Controls**) <br/>**MPC.WebBrowser** クラス | [**WebView**](https://msdn.microsoft.com/library/windows/apps/br227702) クラス | 
 | (MPC = **Microsoft.Phone.Controls**) <br/>**MPC.WebBrowserExtensions** クラス | 直接相当する要素はなし | 
-| (MPC = **Microsoft.Phone.Controls**) <br/>**MPC.WrapPanel** クラス | 一般的なレイアウトの目的で直接相当する要素はありません。 [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/dn298849) と [**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/br227717) は、項目コントロールの項目パネル テンプレートで使うことができます。 | 
+| (MPC = **Microsoft.Phone.Controls**) <br/>**MPC.WrapPanel** クラス | 一般的なレイアウトの目的で直接相当する要素はありません。 [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/dn298849) と [**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/br227717) は、アイテム コントロールのアイテム パネル テンプレートで使うことができます。 | 
 | (MPD = **Microsoft.Phone.Data**) <br/>**MPD.Linq** 名前空間 | 直接相当する要素はなし | 
 | (MPD = **Microsoft.Phone.Data**) <br/>**MPD.Linq.Mapping** 名前空間 | 直接相当する要素はなし |
 | **Microsoft.Phone.Globalization** 名前空間 | 直接相当する要素はなし | 
@@ -88,7 +88,7 @@ UWP プロジェクトで作業する場合、および Windows Phone Silverligh
 | **System.Windows.Controls**、**System.Windows.Input** 名前空間 | [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)、[**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)、[**Windows.UI.Xaml.Controls**](https://msdn.microsoft.com/library/windows/apps/br227716) 名前空間 | 
 | **System.Windows.Controls.DrawingSurface**、**DrawingSurfaceBackgroundGrid** クラス | [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) クラス | 
 | **System.Windows.Controls.RichTextBox** クラス | [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/br227548) クラス | 
-| **System.Windows.Controls.WrapPanel** クラス | 一般的なレイアウトの目的で直接相当する要素はありません。 [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/dn298849) と [**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/br227717) は、項目コントロールの項目パネル テンプレートで使うことができます。 | 
+| **System.Windows.Controls.WrapPanel** クラス | 一般的なレイアウトの目的で直接相当する要素はありません。 [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/dn298849) と [**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/br227717) は、アイテム コントロールのアイテム パネル テンプレートで使うことができます。 | 
 | **System.Windows.Controls.Primitives** 名前空間 | [**Windows.UI.Xaml.Controls.Primitives**](https://msdn.microsoft.com/library/windows/apps/br209818) 名前空間 |
 | **System.Windows.Controls.Shapes** 名前空間 | [**Windows.UI.Xaml.Controls.Shapes**](https://msdn.microsoft.com/library/windows/apps/br243401) 名前空間 | 
 | **System.Windows.Data** 名前空間 | [**Windows.UI.Xaml.Data**](https://msdn.microsoft.com/library/windows/apps/br209917) 名前空間 | 
@@ -249,6 +249,6 @@ UWP プロジェクトで作業する場合、および Windows Phone Silverligh
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -3,7 +3,6 @@ author: drewbatgit
 ms.assetid: D20C8E01-4E78-4115-A2E8-07BB3E67DDDC
 description: "この記事では、デバイスのライトにアクセスして使う方法を説明します (存在する場合)。 ライト機能は、デバイスのカメラやカメラのフラッシュ機能とは別に管理されます。"
 title: "カメラに依存しない懐中電灯"
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 022ca2848c575f545402b13e19c0854a9e3ec74a
 
@@ -34,8 +33,7 @@ ms.openlocfilehash: 022ca2848c575f545402b13e19c0854a9e3ec74a
 
 デバイスによっては、複数のライトが組み込まれている場合があります。 デバイスで利用可能なライトの一覧を取得するには、[**GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/dn894328) を呼び出すことによってデバイスのセレクター文字列を取得します。 このセレクター文字列は、[**DeviceInformation.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) に渡すことができます。 これは、さまざまな種類の多数のデバイスを列挙するために使うメソッドです。セレクター文字列はこのメソッドに対し、ライト デバイスのみを返すように伝えます。 **FindAllAsync** から返される [**DeviceInformationCollection**](https://msdn.microsoft.com/library/windows/apps/br225395) オブジェクトは、デバイスで利用可能なライトを表す [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) オブジェクトのコレクションになります。 一覧からいずれかのオブジェクトを選択し、[**Id**](https://msdn.microsoft.com/library/windows/apps/br225437) プロパティを [**Lamp.FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/dn894326) に渡すと、要求されたライトへの参照を取得できます。 この例では、**System.Linq** 名前空間の **GetFirstOrDefault** 拡張メソッドを使って、[**EnclosureLocation.Panel**](https://msdn.microsoft.com/library/windows/apps/br229906) プロパティの値が **Back** である **DeviceInformation** オブジェクトを選択しています。これにより、デバイス エンクロージャの背面にあるライトが選択されます (存在する場合)。
 
-[
-            **DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) API は [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/br225459) 名前空間にあります。
+[**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) API は [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/br225459) 名前空間にあります。
 
 [!code-cs[EnumerationNamespace](./code/Lamp/cs/MainPage.xaml.cs#SnippetEnumerationNamespace)]
 
@@ -43,8 +41,7 @@ ms.openlocfilehash: 022ca2848c575f545402b13e19c0854a9e3ec74a
 
 ## ライトの設定を調整する
 
-[
-            **Lamp**](https://msdn.microsoft.com/library/windows/apps/dn894310) クラスのインスタンスを作成したら、[**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn894330) プロパティを **true** に設定することで、ライトをオンにします。
+[**Lamp**](https://msdn.microsoft.com/library/windows/apps/dn894310) クラスのインスタンスを作成したら、[**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn894330) プロパティを **true** に設定することで、ライトをオンにします。
 
 [!code-cs[LampSettingsOn](./code/Lamp/cs/MainPage.xaml.cs#SnippetLampSettingsOn)]
 
@@ -68,8 +65,7 @@ ms.openlocfilehash: 022ca2848c575f545402b13e19c0854a9e3ec74a
 
 ## 使用していないライト リソースを適切に破棄する
 
-ライトの使用が終わったら、ライトを無効にして [**Lamp.Close**](https://msdn.microsoft.com/library/windows/apps/dn894320) を呼び出すことにより、他のアプリがライトにアクセスできるようリソースを解放する必要があります。 C# を使用している場合、このプロパティは **Dispose** メソッドにマップされています。 [
-            **AvailabilityChanged**](https://msdn.microsoft.com/library/windows/apps/dn894317) に登録した場合は、ライト リソースを破棄するときにハンドラーの登録を解除する必要があります。 ライト リソースを破棄するコードの適切な場所は、アプリによって異なります。 ライト アクセスのスコープを単一のページに限定するには、リソースを [**OnNavigatingFrom**](https://msdn.microsoft.com/library/windows/apps/br227509) イベントで解放します。
+ライトの使用が終わったら、ライトを無効にして [**Lamp.Close**](https://msdn.microsoft.com/library/windows/apps/dn894320) を呼び出すことにより、他のアプリがライトにアクセスできるようリソースを解放する必要があります。 C# を使用している場合、このプロパティは **Dispose** メソッドにマップされています。 [**AvailabilityChanged**](https://msdn.microsoft.com/library/windows/apps/dn894317) に登録した場合は、ライト リソースを破棄するときにハンドラーの登録を解除する必要があります。 ライト リソースを破棄するコードの適切な場所は、アプリによって異なります。 ライト アクセスのスコープを単一のページに限定するには、リソースを [**OnNavigatingFrom**](https://msdn.microsoft.com/library/windows/apps/br227509) イベントで解放します。
 
 [!code-cs[DisposeLamp](./code/Lamp/cs/MainPage.xaml.cs#SnippetDisposeLamp)]
 

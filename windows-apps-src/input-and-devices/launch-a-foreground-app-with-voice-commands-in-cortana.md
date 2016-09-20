@@ -8,7 +8,7 @@ template: detail.hbs
 redirect_url: https://msdn.microsoft.com/en-us/cortana/voicecommands/launch-a-foreground-app-with-voice-commands-in-cortana
 translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 4e29d8c72e5230a5c4f16947f1163b5bfab66c41
+ms.openlocfilehash: 6bbfb7877a75081ee422015da0e434cf6fa0ff36
 
 ---
 
@@ -20,6 +20,6 @@ Github: https://github.com/Microsoft/cortana-docs/blob/master/docs/voicecommands
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

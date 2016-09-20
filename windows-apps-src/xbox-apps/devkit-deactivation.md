@@ -3,7 +3,6 @@ author: Mtoepke
 title: "Xbox One 開発者モードの非アクティブ化"
 description: "開発者モードを非アクティブ化する方法を説明します。"
 area: Xbox
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 0751598ba50d69e1667b20ddc03f30d65ce08002
 
@@ -45,7 +44,8 @@ ms.openlocfilehash: 0751598ba50d69e1667b20ddc03f30d65ce08002
 
 開発者モードを非アクティブ化するには、本体をリセットする方法を使うこともできます。  
 
-> **注**
+> 
+            **注**
             &nbsp;&nbsp;本体をリセットすると、ローカルに保存されているゲーム データはすべて失われます。
 
 本体をリセットするには、次の手順を実行します。

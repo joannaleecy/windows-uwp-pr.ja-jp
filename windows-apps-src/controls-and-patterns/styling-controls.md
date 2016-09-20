@@ -8,7 +8,6 @@ title: "コントロールのスタイル"
 ms.assetid: AB469A46-FAF5-42D0-9340-948D0EDF4150
 label: Styling controls
 template: detail.hbs
-translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
 ms.openlocfilehash: 02cd8f7777f169ad9fc4e5bfe854a8b6e0fe5060
 
@@ -29,8 +28,7 @@ XAML フレームワークを使って、さまざまな方法でアプリの外
 
 スタイルは、XAML を使ってコントロールに対してインラインで定義するか、再利用可能なリソースとして定義できます。 リソースは、個々のページの XAML ファイル、App.xaml ファイル、別個のリソース ディクショナリ XAML ファイルのいずれかに定義します。 リソース ディクショナリ XAML ファイルはアプリ間で共有できます。また、単一のアプリで複数のリソース ディクショナリをマージすることも可能です。 リソースを定義する場所は、リソースが使われる範囲によって決まります。 ページ レベルのリソースは定義元のページでしか利用できません。 App.xaml とページ内の両方で同じキーが定義されている場合、ページ内のリソースが App.xaml 内のリソースよりも優先されます。 リソースが別個のリソース ディクショナリ ファイルで定義されている場合、そのスコープはリソース ディクショナリが参照される場所によって決まります。
 
-[
-            **Style**](https://msdn.microsoft.com/library/windows/apps/br208849) の定義では、1 つの [**TargetType**](https://msdn.microsoft.com/library/windows/apps/br208857) 属性と、1 つ以上の [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 要素が必要になります。 **TargetType** 属性は、スタイルを適用する [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 型を指定する文字列です。 **TargetType** の値では、Windows ランタイムか、参照先アセンブリ内で使用できるカスタム型で定義される **FrameworkElement** から派生した型を指定する必要があります。 適用しようとしているスタイルの **TargetType** 属性の指定内容と異なるコントロールやコントロールの型にスタイルを適用しようとすると、例外が発生します。
+[**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) の定義では、1 つの [**TargetType**](https://msdn.microsoft.com/library/windows/apps/br208857) 属性と、1 つ以上の [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 要素が必要になります。 **TargetType** 属性は、スタイルを適用する [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) 型を指定する文字列です。 **TargetType** の値では、Windows ランタイムか、参照先アセンブリ内で使用できるカスタム型で定義される **FrameworkElement** から派生した型を指定する必要があります。 適用しようとしているスタイルの **TargetType** 属性の指定内容と異なるコントロールやコントロールの型にスタイルを適用しようとすると、例外が発生します。
 
 それぞれの [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 要素に、[**Property**](https://msdn.microsoft.com/library/windows/apps/br208836) と [**Value**](https://msdn.microsoft.com/library/windows/apps/br208838) が必要です。 この 2 つのプロパティは、それぞれ、その設定が適用されるコントロールのプロパティと、そのプロパティに対して設定される値を指定します。 **Setter.Value** は、属性構文またはプロパティ要素構文を使って設定できます。 次の XAML は前に示したボタンに適用されたスタイルを示しています。 この XAML では、最初の 2 つの **Setter** 要素に属性構文を使っていますが、[**BorderBrush**](https://msdn.microsoft.com/library/windows/apps/br209397) プロパティ用の最後の **Setter** にはプロパティ要素構文を使っています。 この例では [x:Key attribute](../xaml-platform/x-key-attribute.md) 属性を使っていないため、スタイルはボタンに対して暗黙的に適用されます。 スタイルの暗黙的または明示的な適用については、次のセクションで説明します。
 

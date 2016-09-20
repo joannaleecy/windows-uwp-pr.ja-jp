@@ -3,7 +3,6 @@ author: mtoepke
 title: "ゲーム プロジェクトのセットアップ"
 description: "ゲームを作るための最初の手順は、必要なコード インフラストラクチャ作業の量を最小限に抑えるように Microsoft Visual Studio でプロジェクトを設定することです。"
 ms.assetid: 9fde90b3-bf79-bcb3-03b6-d38ab85803f2
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: d4d7864f9689df0919b53ee70b8e18f8d812b2b0
 
@@ -31,7 +30,7 @@ ms.openlocfilehash: d4d7864f9689df0919b53ee70b8e18f8d812b2b0
 
 Visual Studio テンプレートは、優先する言語および技術に基づいて、特定の種類のアプリ向けの設定とコード ファイルを集めたものです。 Microsoft Visual Studio 2015 には多くのテンプレートがあり、これらを使うと、ゲームやグラフィックス アプリを簡単に開発することができます。 テンプレートを使わない場合、基本的なグラフィックス レンダリングや表示フレームワークの大部分を自分で開発しなければならず、これは新人のゲーム開発者にとっては骨の折れる仕事となります。
 
-このチュートリアルのための適切なテンプレートは、DirectX 11 アプリ (ユニバーサル Windows) です。 Visual Studio 2015 で、**[ファイル]**、**[新しいプロジェクト]** の順にクリックし、次の手順に従います。
+このチュートリアルのための適切なテンプレートは、DirectX 11 アプリ (ユニバーサル Windows) です。 Visual Studio2015 で、**[ファイル]**、**[新しいプロジェクト]** の順にクリックし、次の手順に従います。
 
 1.  **[テンプレート]** から **[Visual C++]**、**[Windows]**、**[ユニバーサル]**の順に選びます。
 2.  中央のウィンドウで、**[DirectX 11 アプリ (ユニバーサル Windows)]** テンプレートを選びます。

@@ -5,15 +5,15 @@ title: "カスタム テキスト入力の概要"
 ms.assetid: 58F5F7AC-6A4B-45FC-8C2A-942730FD7B74
 label: Custom text input
 template: detail.hbs
+translationtype: Human Translation
 ms.sourcegitcommit: a2ec5e64b91c9d0e401c48902a18e5496fc987ab
-ms.openlocfilehash: 31f10b862ba53f2ba51f3936a73e874466590b30
+ms.openlocfilehash: 614c1b8f319ea1925cd15c5ad1a3093b2bce54d3
 
 ---
 
 # カスタム テキスト入力
 
-[
-            **Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238) 名前空間の基本的なテキスト API によって、ユニバーサル Windows プラットフォーム (UWP) アプリは、Windows デバイスでサポートされている任意のテキスト サービスからテキスト入力を受け取ることができます。 この API は、アプリがテキスト サービスの詳細を認識している必要がないという点で、[テキスト サービス フレームワーク](https://msdn.microsoft.com/library/windows/desktop/ms629032) API に似ています。 これにより、アプリは、任意の言語で、キーボード、音声、ペンなどの任意の入力の種類からテキストを受け取ることができます。
+[**Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238) 名前空間の基本的なテキスト API によって、ユニバーサル Windows プラットフォーム (UWP) アプリは、Windows デバイスでサポートされている任意のテキスト サービスからテキスト入力を受け取ることができます。 この API は、アプリがテキスト サービスの詳細を認識している必要がないという点で、[テキスト サービス フレームワーク](https://msdn.microsoft.com/library/windows/desktop/ms629032) API に似ています。 これにより、アプリは、任意の言語で、キーボード、音声、ペンなどの任意の入力の種類からテキストを受け取ることができます。
 
 
 **重要な API**
@@ -25,8 +25,7 @@ ms.openlocfilehash: 31f10b862ba53f2ba51f3936a73e874466590b30
 ## 基本的なテキスト API を使う理由
 
 
-多くのアプリでは、テキストの入力や編集には XAML や HTML のテキスト ボックス コントロールで十分です。 ただし、ワード プロセッシング アプリなど、アプリでテキストの複雑なシナリオを処理する場合は、柔軟なカスタム テキスト編集コントロールが必要になる可能性があります。 [
-            **CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) キーボード API を使ってテキスト編集コントロールを作成できますが、これらは、東アジアの言語をサポートするために必要なコンポジション ベースのテキスト入力を受け取る方法を提供しません。
+多くのアプリでは、テキストの入力や編集には XAML や HTML のテキスト ボックス コントロールで十分です。 ただし、ワード プロセッシング アプリなど、アプリでテキストの複雑なシナリオを処理する場合は、柔軟なカスタム テキスト編集コントロールが必要になる可能性があります。 [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) キーボード API を使ってテキスト編集コントロールを作成できますが、これらは、東アジアの言語をサポートするために必要なコンポジション ベースのテキスト入力を受け取る方法を提供しません。
 
 カスタム テキスト編集コントロールを作成する必要がある場合は、代わりに [**Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238) API を使います。 これらの API は、任意の言語でのテキスト入力の処理において高い柔軟性を実現するように設計されており、アプリに最適なテキスト エクスペリエンスを提供できます。 基本的なテキスト API に組み込まれているテキスト入力および編集コントロールは、Windows デバイスでの既存のすべてのテキスト入力方式からテキスト入力を受け取ることができます。これには、[テキスト サービス フレームワーク](https://msdn.microsoft.com/library/windows/desktop/ms629032) ベースの入力方式エディター (IME) や PC での手書き入力、モバイル デバイスでの WordFlow キーボード (自動修正、予測入力、ディクテーションを提供する) が含まれます。
 
@@ -36,8 +35,7 @@ ms.openlocfilehash: 31f10b862ba53f2ba51f3936a73e874466590b30
 テキスト入力システムの単純な例を次に示します。
 
 -   "アプリケーション" は、基本的なテキスト API を使って構築されたカスタム編集コントロールをホストする UWP アプリを表します。
--   [
-            **Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238) API は、Windows 経由でのテキスト サービスとの通信を容易にします。 テキスト編集コントロールとテキスト サービス間の通信は、主に [**CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158) オブジェクトによって処理されます。このオブジェクトが通信を容易にするメソッドとイベントを提供します。
+-   [**Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238) API は、Windows 経由でのテキスト サービスとの通信を容易にします。 テキスト編集コントロールとテキスト サービス間の通信は、主に [**CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158) オブジェクトによって処理されます。このオブジェクトが通信を容易にするメソッドとイベントを提供します。
 
 ![基本的なテキストのアーキテクチャ図](images/coretext/architecture.png)
 
@@ -79,8 +77,7 @@ ms.openlocfilehash: 31f10b862ba53f2ba51f3936a73e874466590b30
 ## テキストの操作
 
 
-[
-            **CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158) クラスの [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) イベント、[**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) イベント、[**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172) メソッドによって、Windows と編集コントロールとの間でのテキスト フローを実現できます。
+[**CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158) クラスの [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) イベント、[**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) イベント、[**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172) メソッドによって、Windows と編集コントロールとの間でのテキスト フローを実現できます。
 
 編集コントロールは、ユーザーがキーボード、音声、IME などのテキスト入力方式を操作したときに生成される [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) イベントによってテキストを受け取ります。
 
@@ -90,29 +87,19 @@ ms.openlocfilehash: 31f10b862ba53f2ba51f3936a73e874466590b30
 
 ### テキストの更新の受け付け
 
-編集コントロールでは、通常、テキストの更新要求を受け付ける必要があります。これらは、ユーザーが入力するテキストを表しているためです。 [
-            **TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) イベント ハンドラーでは、編集コントロールの次の操作が想定されています。
+編集コントロールでは、通常、テキストの更新要求を受け付ける必要があります。これらは、ユーザーが入力するテキストを表しているためです。 [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) イベント ハンドラーでは、編集コントロールの次の操作が想定されています。
 
-1.  [
-            **CoreTextTextUpdatingEventArgs.Text**](https://msdn.microsoft.com/library/windows/apps/dn958236) で指定されたテキストを、[**CoreTextTextUpdatingEventArgs.Range**](https://msdn.microsoft.com/library/windows/apps/dn958234) で指定された位置に挿入します。
-2.  [
-            **CoreTextTextUpdatingEventArgs.NewSelection**](https://msdn.microsoft.com/library/windows/apps/dn958233) で指定された位置に選択範囲を配置します。
-3.  [
-            **CoreTextTextUpdatingEventArgs.Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) を [**CoreTextTextUpdatingResult.Succeeded**](https://msdn.microsoft.com/library/windows/apps/dn958237) に設定することによって、更新が成功したことをシステムに通知します。
+1.  [**CoreTextTextUpdatingEventArgs.Text**](https://msdn.microsoft.com/library/windows/apps/dn958236) で指定されたテキストを、[**CoreTextTextUpdatingEventArgs.Range**](https://msdn.microsoft.com/library/windows/apps/dn958234) で指定された位置に挿入します。
+2.  [**CoreTextTextUpdatingEventArgs.NewSelection**](https://msdn.microsoft.com/library/windows/apps/dn958233) で指定された位置に選択範囲を配置します。
+3.  [**CoreTextTextUpdatingEventArgs.Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) を [**CoreTextTextUpdatingResult.Succeeded**](https://msdn.microsoft.com/library/windows/apps/dn958237) に設定することによって、更新が成功したことをシステムに通知します。
 
 たとえば、これは、ユーザーが "d" を入力する前の編集コントロールの状態です。 挿入ポイントは \[10, 10\] にあります。
 
 ![テキスト ストリームの例の図](images/coretext/stream-3.png) ユーザーが "d" を入力すると、次の [**CoreTextTextUpdatingEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn958229) データを使って、[**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) イベントが発生します。
 
--   [
-              **Range**
-            ](https://msdn.microsoft.com/library/windows/apps/dn958234) = \[10, 10\]
--   [
-              **Text**
-            ](https://msdn.microsoft.com/library/windows/apps/dn958236) = "d"
--   [
-              **NewSelection**
-            ](https://msdn.microsoft.com/library/windows/apps/dn958233) = \[11, 11\]
+-   [**Range**](https://msdn.microsoft.com/library/windows/apps/dn958234) = \[10, 10\]
+-   [**Text**](https://msdn.microsoft.com/library/windows/apps/dn958236) = "d"
+-   [**NewSelection**](https://msdn.microsoft.com/library/windows/apps/dn958233) = \[11, 11\]
 
 編集コントロールで、指定された変更を適用し、[**Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) を **Succeeded** に設定します。 変更が適用された後のコントロールの状態は、次のようになります。
 
@@ -161,8 +148,7 @@ ms.openlocfilehash: 31f10b862ba53f2ba51f3936a73e874466590b30
 
 テキスト サービスでは、自動修正や予測入力などの機能を提供する場合、正しいテキストがあることが重要です。特に、ドキュメントの読み込みなどから編集コントロールに既に存在しているテキストや、前のセクションで説明したように編集コントロールによって挿入されたテキストについて重要です。 そのため、[**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) イベントが発生するたびに、現在編集コントロール内にあり、指定された範囲のテキストを提供する必要があります。
 
-[
-            **CoreTextTextRequest**](https://msdn.microsoft.com/library/windows/apps/dn958221) 内の [**Range**](https://msdn.microsoft.com/library/windows/apps/dn958227) が、編集コントロールでそのまま格納できない範囲を指定する場合があります。 たとえば、[**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) イベントの発生時に **Range** が編集コントロールのサイズよりも大きい場合や、**Range** の最後が範囲外である場合です。 このような場合は、何か適切な範囲を返す必要があります。通常、これは要求された範囲のサブセットです。
+[**CoreTextTextRequest**](https://msdn.microsoft.com/library/windows/apps/dn958221) 内の [**Range**](https://msdn.microsoft.com/library/windows/apps/dn958227) が、編集コントロールでそのまま格納できない範囲を指定する場合があります。 たとえば、[**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) イベントの発生時に **Range** が編集コントロールのサイズよりも大きい場合や、**Range** の最後が範囲外である場合です。 このような場合は、何か適切な範囲を返す必要があります。通常、これは要求された範囲のサブセットです。
 
 ## 関連記事
 
@@ -179,6 +165,6 @@ ms.openlocfilehash: 31f10b862ba53f2ba51f3936a73e874466590b30
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -3,7 +3,6 @@ author: mtoepke
 title: "Marble Maze サンプルへの視覚的なコンテンツの追加"
 description: "このドキュメントでは、Marble Maze ゲームがユニバーサル Windows プラットフォーム (UWP) アプリ環境で Direct3D と Direct2D をどのように使うかについて説明します。パターンを学習することにより、独自のゲーム コンテンツの開発に活用できます。"
 ms.assetid: 6e43422e-e1a1-b79e-2c4b-7d5b4fa88647
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 16eb493595bbac4f15ed0e755258104693dfba05
 
@@ -29,7 +28,8 @@ Marble Maze の視覚的側面は、次のような基本の手順に従って�
 
 また、開発プロセスでは、これらの手順の一部を何度も繰り返す必要がありました。 たとえば、メッシュや大理石のモデルを変更するときには、それらのモデルをサポートするシェーダー コードの一部も変更する必要がありました。
 
-> **注**  このドキュメントに対応するサンプル コードは、 [DirectX Marble Maze ゲームのサンプルに関するページ](http://go.microsoft.com/fwlink/?LinkId=624011)にあります。
+> 
+            **注**  このドキュメントに対応するサンプル コードは、 [DirectX Marble Maze ゲームのサンプルに関するページ](http://go.microsoft.com/fwlink/?LinkId=624011)にあります。
 
  
 ここでは、DirectX や視覚的なゲーム コンテンツを扱うとき、つまり DirectX グラフィックス ライブラリの初期化、シーンのリソースの読み込み、シーンの更新やレンダリングを行う際の次の重要事項について説明します。
@@ -52,10 +52,14 @@ Marble Maze は Direct3D 11.1 を使って、3-D ゲーム アセット (大理�
 
 ゲームを開発するには計画が必要です。 DirectX グラフィックスを初めて扱う場合は、「DirectX ゲームの作成」を読んで、UWP DirectX ゲームの作成の基本概念を理解してください。 このドキュメントを読み、Marble Maze のソース コードを調べるにあたり、次のリソースを参照して、DirectX グラフィックスに関するより詳しい情報を入手できます。
 
--   [Direct3D 11 グラフィックス:](https://msdn.microsoft.com/library/windows/desktop/ff476080) Direct3D 11 について説明します。Direct3D 11 は、Windows プラットフォームで 3-D ジオメトリをレンダリングするための、ハードウェア アクセラレータによる強力な 3-D グラフィックス API です。
--   [Direct2D:](https://msdn.microsoft.com/library/windows/desktop/dd370990) Direct2D について説明します。Direct2D は、2-D ジオメトリ、ビットマップ、テキストの高パフォーマンスかつ高品質のレンダリングを実現する、ハードウェア アクセラレータによる 2-D グラフィックス API です。
--   [DirectWrite:](https://msdn.microsoft.com/library/windows/desktop/dd368038) 高品質のテキスト レンダリングをサポートする DirectWrite について説明します。
--   [Windows Imaging Component:](https://msdn.microsoft.com/library/windows/desktop/ee719902) WIC について説明します。WIC は、デジタル画像向けの低レベル API を提供する拡張可能なプラットフォームです。
+-   
+            [Direct3D 11 グラフィックス:](https://msdn.microsoft.com/library/windows/desktop/ff476080) Direct3D 11 について説明します。Direct3D 11 は、Windows プラットフォームで 3-D ジオメトリをレンダリングするための、ハードウェア アクセラレータによる強力な 3-D グラフィックス API です。
+-   
+            [Direct2D:](https://msdn.microsoft.com/library/windows/desktop/dd370990) Direct2D について説明します。Direct2D は、2-D ジオメトリ、ビットマップ、テキストの高パフォーマンスかつ高品質のレンダリングを実現する、ハードウェア アクセラレータによる 2-D グラフィックス API です。
+-   
+            [DirectWrite:](https://msdn.microsoft.com/library/windows/desktop/dd368038) 高品質のテキスト レンダリングをサポートする DirectWrite について説明します。
+-   
+            [Windows Imaging Component:](https://msdn.microsoft.com/library/windows/desktop/ee719902) WIC について説明します。WIC は、デジタル画像向けの低レベル API を提供する拡張可能なプラットフォームです。
 
 ### 機能レベル
 
@@ -247,7 +251,8 @@ DX::ThrowIfFailed(
 
 **DeviceResources::CreateWindowSizeDependentResources** メソッドは、多くのゲームに対応する方法でグラフィックス リソースを初期化します。
 
-> **注**   *ビュー*という用語は、Windows ランタイムと Direct3D で意味が異なります。 Windows ランタイムでは、ビューは、アプリのユーザー インターフェイス設定のコレクション (表示領域、入力動作、処理に使うスレッドなどを含む) を指します。 ビューを作成するときは、必要な構成と設定を指定します。 アプリのビューを設定するプロセスについては、「[Marble Maze のアプリケーション構造](marble-maze-application-structure.md)」で説明します。 Direct3D では、ビューという用語には複数の意味があります。 まず、リソース ビューは、リソースがアクセスできるサブリソースを定義します。 たとえば、テクスチャ オブジェクトがシェーダー リソース ビューに関連付けられている場合、そのシェーダーは後でテクスチャにアクセスできます。 リソース ビューの 1 つの長所は、レンダリング パイプラインの段階ごとに異なる方法でデータを解釈できることです。 リソース ビューについて詳しくは、「[テクスチャ ビュー (Direct3D 10)](https://msdn.microsoft.com/library/windows/desktop/bb205128)」をご覧ください。 ビュー変換またはビュー変換マトリックスのコンテキストで使われた場合、ビューは、カメラの位置と向きを表します。 ビュー変換は、カメラの位置と向きを基準として、ワールド内でオブジェクトを再配置します。 ビュー変換について詳しくは、「[ビュー変換 (Direct3D 9)](https://msdn.microsoft.com/library/windows/desktop/bb206342)」をご覧ください。 Marble Maze でリソース ビューやマトリックス ビューをどのように使っているかについて、このトピックで詳しく説明しています。
+> 
+            **注**   *ビュー*という用語は、Windows ランタイムと Direct3D で意味が異なります。 Windows ランタイムでは、ビューは、アプリのユーザー インターフェイス設定のコレクション (表示領域、入力動作、処理に使うスレッドなどを含む) を指します。 ビューを作成するときは、必要な構成と設定を指定します。 アプリのビューを設定するプロセスについては、「[Marble Maze のアプリケーション構造](marble-maze-application-structure.md)」で説明します。 Direct3D では、ビューという用語には複数の意味があります。 まず、リソース ビューは、リソースがアクセスできるサブリソースを定義します。 たとえば、テクスチャ オブジェクトがシェーダー リソース ビューに関連付けられている場合、そのシェーダーは後でテクスチャにアクセスできます。 リソース ビューの 1 つの長所は、レンダリング パイプラインの段階ごとに異なる方法でデータを解釈できることです。 リソース ビューについて詳しくは、「[テクスチャ ビュー (Direct3D 10)](https://msdn.microsoft.com/library/windows/desktop/bb205128)」をご覧ください。 ビュー変換またはビュー変換マトリックスのコンテキストで使われた場合、ビューは、カメラの位置と向きを表します。 ビュー変換は、カメラの位置と向きを基準として、ワールド内でオブジェクトを再配置します。 ビュー変換について詳しくは、「[ビュー変換 (Direct3D 9)](https://msdn.microsoft.com/library/windows/desktop/bb206342)」をご覧ください。 Marble Maze でリソース ビューやマトリックス ビューをどのように使っているかについて、このトピックで詳しく説明しています。
 
  
 
@@ -304,7 +309,8 @@ protected:
 
 UI 要素の共通基底クラスを提供することで、ユーザー インターフェイスを管理する **UserInterface** クラスが行う必要があるのは、**ElementBase** オブジェクトのコレクションの保持のみになります。これにより、UI の管理が簡略化され、再利用可能なユーザー インターフェイス マネージャーが提供されます。 Marble Maze では、ゲーム固有の動作を実装する型を **ElementBase** から派生させて定義します。 たとえば、**HighScoreTable** は、ハイ スコア表の動作を定義します。 これらの型について詳しくは、ソース コードをご覧ください。
 
-> **注**   XAML を使うと、シミュレーション ゲームや戦略ゲームに見られるような複雑なユーザー インターフェイスの作成が簡単になるため、UI の定義に XAML を使うかどうかを検討することをお勧めします。 XAML を使って DirectX UWP ゲームのユーザー インターフェイスを開発する方法について詳しくは、「[ゲーム サンプルの紹介](tutorial-resources.md)」をご覧ください。 このドキュメントでは、DirectX 3D シューティング ゲームのサンプルを紹介しています。
+> 
+            **注**   XAML を使うと、シミュレーション ゲームや戦略ゲームに見られるような複雑なユーザー インターフェイスの作成が簡単になるため、UI の定義に XAML を使うかどうかを検討することをお勧めします。 XAML を使って DirectX UWP ゲームのユーザー インターフェイスを開発する方法について詳しくは、「[ゲーム サンプルの紹介](tutorial-resources.md)」をご覧ください。 このドキュメントでは、DirectX 3D シューティング ゲームのサンプルを紹介しています。
 
  
 
@@ -376,7 +382,8 @@ float4 main(sPSInput input) : SV_TARGET
 }
 ```
 
-> **注意**  コンパイルされたピクセル シェーダーには、32 の演算命令と 1 つのテクスチャ命令が含まれます。 このシェーダーは、デスクトップ コンピューターとハイエンドのタブレットで正常に動作する必要があります。 ただし、ローエンドのコンピューターでは、このシェーダーを処理することができず、対話型のフレーム レートが提供される場合があります。 対象ユーザーの標準的なハードウェアを検討し、そのハードウェアの性能に合わせてシェーダーを設計します。
+> 
+            **注意**  コンパイルされたピクセル シェーダーには、32 の演算命令と 1 つのテクスチャ命令が含まれます。 このシェーダーは、デスクトップ コンピューターとハイエンドのタブレットで正常に動作する必要があります。 ただし、ローエンドのコンピューターでは、このシェーダーを処理することができず、対話型のフレーム レートが提供される場合があります。 対象ユーザーの標準的なハードウェアを検討し、そのハードウェアの性能に合わせてシェーダーを設計します。
 
  
 
@@ -392,8 +399,7 @@ float4 main(sPSInput input) : SV_TARGET
     );
 ```
 
-**m\_inputLayout** メンバー変数は [**ID3D11InputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476575) オブジェクトです。 入力レイアウト オブジェクトは、入力アセンブラー (IA) ステージの入力状態をカプセル化します。 IA ステージの 1 つの仕事は、シェーダーの効率を向上することです。システム生成値 (*セマンティクス*) を使って、まだ処理されていないプリミティブまたは頂点のみを処理します。 [
-            **ID3D11Device::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512) メソッドを使って、入力要素の説明の配列から入力レイアウトを作成します。 配列には 1 つまたは複数の入力要素が含まれます。各入力要素は、1 つの頂点バッファーの 1 つの頂点データ要素を記述します。 入力要素の記述のセット全体によって、IA ステージにバインドされているすべての頂点バッファーのすべての頂点データ要素を記述します。 次の例に、Marble Maze に使われているレイアウトの記述を示します。 このレイアウトの記述には、4 つの頂点データ要素を含む頂点バッファーが記述されています。 配列の各エントリの重要な部分は、セマンティック名、データ形式、バイト オフセットです。 たとえば、**POSITION** 要素は、オブジェクト空間での頂点の位置を指定します。 これは、バイト オフセット 0 で開始し、3 つの浮動小数点コンポーネントを含みます (合計 12 バイト)。 **NORMAL** 要素は、標準ベクターを指定します。 これはバイト オフセット 12 で開始します。レイアウトで、12 バイトを必要とする **POSITION** の後にあるためです。 **NORMAL** 要素は、4 つの要素で構成される 32 ビット符号なし整数を含みます。
+**m\_inputLayout** メンバー変数は [**ID3D11InputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476575) オブジェクトです。 入力レイアウト オブジェクトは、入力アセンブラー (IA) ステージの入力状態をカプセル化します。 IA ステージの 1 つの仕事は、シェーダーの効率を向上することです。システム生成値 (*セマンティクス*) を使って、まだ処理されていないプリミティブまたは頂点のみを処理します。 [**ID3D11Device::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512) メソッドを使って、入力要素の説明の配列から入力レイアウトを作成します。 配列には 1 つまたは複数の入力要素が含まれます。各入力要素は、1 つの頂点バッファーの 1 つの頂点データ要素を記述します。 入力要素の記述のセット全体によって、IA ステージにバインドされているすべての頂点バッファーのすべての頂点データ要素を記述します。 次の例に、Marble Maze に使われているレイアウトの記述を示します。 このレイアウトの記述には、4 つの頂点データ要素を含む頂点バッファーが記述されています。 配列の各エントリの重要な部分は、セマンティック名、データ形式、バイト オフセットです。 たとえば、**POSITION** 要素は、オブジェクト空間での頂点の位置を指定します。 これは、バイト オフセット 0 で開始し、3 つの浮動小数点コンポーネントを含みます (合計 12 バイト)。 **NORMAL** 要素は、標準ベクターを指定します。 これはバイト オフセット 12 で開始します。レイアウトで、12 バイトを必要とする **POSITION** の後にあるためです。 **NORMAL** 要素は、4 つの要素で構成される 32 ビット符号なし整数を含みます。
 
 ```cpp
 D3D11_INPUT_ELEMENT_DESC layoutDesc[] = 
@@ -441,7 +447,8 @@ sPSInput main(sVSInput input)
 
 「[セマンティクス](https://msdn.microsoft.com/library/windows/desktop/bb509647)」では、使用できるセマンティクスのそれぞれについてさらに詳しく説明しています。
 
-> **注**   レイアウトでは、複数のシェーダーが同じレイアウトを共有できるように、使われないその他のコンポーネントを指定できます。 たとえば、**TANGENT** 要素はシェーダーでは使われません。 法線マッピングなどの手法を使う場合は、**TANGENT** 要素を使うことができます。 法線マッピング (バンプ マッピング) を使うと、オブジェクトのサーフェスに対してバンプ エフェクトを作成できます。 バンプ マッピングについて詳しくは、「[バンプ マッピング (Direct3D 9)](https://msdn.microsoft.com/library/windows/desktop/bb172379)」をご覧ください。
+> 
+            **注**   レイアウトでは、複数のシェーダーが同じレイアウトを共有できるように、使われないその他のコンポーネントを指定できます。 たとえば、**TANGENT** 要素はシェーダーでは使われません。 法線マッピングなどの手法を使う場合は、**TANGENT** 要素を使うことができます。 法線マッピング (バンプ マッピング) を使うと、オブジェクトのサーフェスに対してバンプ エフェクトを作成できます。 バンプ マッピングについて詳しくは、「[バンプ マッピング (Direct3D 9)](https://msdn.microsoft.com/library/windows/desktop/bb172379)」をご覧ください。
 
  
 
@@ -515,9 +522,11 @@ Marble Maze では、実行時の形式として SDK メッシュを使います
 
 **MarbleMaze::LoadDeferredResources** メソッドは、頂点シェーダーとピクセル シェーダーを読み込んだ後、メッシュ データを読み込みます。 メッシュは頂点データのコレクションです。多くの場合、位置、法線データ、色、素材、テクスチャ座標などの情報が含まれます。 メッシュは、通常 3-D 作成ソフトウェアで作成され、アプリケーション コードとは別のファイルに保存されます。 大理石と迷路は、このゲームに使われているメッシュの 2 つの例です。
 
-Marble Maze では、**SDKMesh** クラスを使ってメッシュを管理します。 このクラスは SDKMesh.h で宣言されています。 **SDKMesh** は、メッシュ データを読み込み、レンダリングし、破棄するためのメソッドを提供します。
+Marble Maze では、**SDKMesh** クラスを使ってメッシュを管理します。 このクラスは SDKMesh.h で宣言されています。 
+            **SDKMesh** は、メッシュ データを読み込み、レンダリングし、破棄するためのメソッドを提供します。
 
-> **重要**   Marble Maze では、SDK メッシュ形式を使っています。**SDKMesh** クラスは例を示すことだけを目的として提供されています。 SDK メッシュ形式は学習用やプロトタイプの作成用に役立ちますが、ごく基本的な形式であるため、多くのゲーム開発の要件を満たさない可能性があります。 ゲーム固有の要件を満たすメッシュ形式を使うことをお勧めします。
+> 
+            **重要**   Marble Maze では、SDK メッシュ形式を使っています。**SDKMesh** クラスは例を示すことだけを目的として提供されています。 SDK メッシュ形式は学習用やプロトタイプの作成用に役立ちますが、ごく基本的な形式であるため、多くのゲーム開発の要件を満たさない可能性があります。 ゲーム固有の要件を満たすメッシュ形式を使うことをお勧めします。
 
  
 
@@ -722,9 +731,7 @@ m_d3dContext->ClearDepthStencilView(
     );
 ```
 
-[
-            **ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) インターフェイスと [**ID3D11DepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476377) インターフェイスは、Direct3D 10 以降で提供されるテクスチャ ビュー機構をサポートします。 テクスチャ ビューについて詳しくは、「[テクスチャ ビュー (Direct3D 10)](https://msdn.microsoft.com/library/windows/desktop/bb205128)」をご覧ください。 [
-            **OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) メソッドは、Direct3D パイプラインの出力マージャー ステージを準備します。 出力マージャー ステージについて詳しくは、「[出力マージャー ステージ](https://msdn.microsoft.com/library/windows/desktop/bb205120)」をご覧ください。
+[**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) インターフェイスと [**ID3D11DepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476377) インターフェイスは、Direct3D 10 以降で提供されるテクスチャ ビュー機構をサポートします。 テクスチャ ビューについて詳しくは、「[テクスチャ ビュー (Direct3D 10)](https://msdn.microsoft.com/library/windows/desktop/bb205128)」をご覧ください。 [**OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) メソッドは、Direct3D パイプラインの出力マージャー ステージを準備します。 出力マージャー ステージについて詳しくは、「[出力マージャー ステージ](https://msdn.microsoft.com/library/windows/desktop/bb205120)」をご覧ください。
 
 ### 頂点シェーダーとピクセル シェーダーの準備
 
@@ -734,7 +741,8 @@ m_d3dContext->ClearDepthStencilView(
 2.  現在のシェーダーとして頂点シェーダーとピクセル シェーダーを設定します。
 3.  シェーダーに渡す必要があるデータで定数バッファーを更新します。
 
-> **重要**  Marble Maze では、すべての 3-D オブジェクトで頂点シェーダーとピクセル シェーダーのペアを 1 つ使います。 ゲームでシェーダーのペアを複数使う場合は、別のシェーダーを使うオブジェクトを描画するたびに、これらの手順を実行する必要があります。 シェーダーの状態の変更に伴うオーバーヘッドを減らすには、同じシェーダーを使うすべてのオブジェクトごとにレンダー呼び出しをグループ化することをお勧めします。
+> 
+            **重要**  Marble Maze では、すべての 3-D オブジェクトで頂点シェーダーとピクセル シェーダーのペアを 1 つ使います。 ゲームでシェーダーのペアを複数使う場合は、別のシェーダーを使うオブジェクトを描画するたびに、これらの手順を実行する必要があります。 シェーダーの状態の変更に伴うオーバーヘッドを減らすには、同じシェーダーを使うすべてのオブジェクトごとにレンダー呼び出しをグループ化することをお勧めします。
 
  
 
@@ -869,11 +877,9 @@ HRESULT hr = m_swapChain->Present1(1, 0, &parameters);
 
 この例では、**m\_swapChain** は [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631) オブジェクトです。 このオブジェクトの初期化については、このドキュメントの「[Direct3D と Direct2D の初期化](#initializing)」で説明しています。
 
-[
-            **IDXGISwapChain1::Present**](https://msdn.microsoft.com/library/windows/desktop/hh446797) の最初のパラメーター *SyncInterval* は、フレームを表示する前に待機する必要がある垂直ブランクの数を指定します。 Marble Maze では 1 を指定して、次の垂直ブランクまで待機することを指定しています。 垂直ブランクは、モニターで 1 フレームの描画が終了してから次のフレームが開始するまでの時間です。
+[**IDXGISwapChain1::Present**](https://msdn.microsoft.com/library/windows/desktop/hh446797) の最初のパラメーター *SyncInterval* は、フレームを表示する前に待機する必要がある垂直ブランクの数を指定します。 Marble Maze では 1 を指定して、次の垂直ブランクまで待機することを指定しています。 垂直ブランクは、モニターで 1 フレームの描画が終了してから次のフレームが開始するまでの時間です。
 
-[
-            **IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) メソッドは、デバイスが削除されたか障害を起こしたことを示すエラー コードを返します。 この場合、Marble Maze は、デバイスを再初期化します。
+[**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) メソッドは、デバイスが削除されたか障害を起こしたことを示すエラー コードを返します。 この場合、Marble Maze は、デバイスを再初期化します。
 
 ```cpp
 // Reinitialize the renderer if the device was disconnected  

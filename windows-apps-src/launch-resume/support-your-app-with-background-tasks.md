@@ -16,12 +16,12 @@ ms.openlocfilehash: 38942aa2a274828cc36677a93d0923beb03060dc
 
 このセクションのトピックでは、バックグラウンド タスクでトリガーに応答することによって、ユーザー独自の軽量コードをバックグラウンドで実行する方法について説明します。 バックグラウンド タスクは、OS がバックグラウンドで実行する軽量のクラスです。 バックグラウンド タスクを使えば、アプリが中断されている、または実行されていないときに機能を提供できます。 また、VOIP、メール、IM などのリアルタイム通信アプリにバックグラウンド タスクを使うこともできます。
 
-バックグラウンド タスクは、[**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) インターフェイスを実装する独立したクラスです。 [
-            **BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) クラスを使ってバックグラウンド タスクを登録します。 このクラス名は、バックグラウンド タスクの登録時にエントリ ポイントとして指定するために使われます。
+バックグラウンド タスクは、[**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) インターフェイスを実装する独立したクラスです。 [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) クラスを使ってバックグラウンド タスクを登録します。 このクラス名は、バックグラウンド タスクの登録時にエントリ ポイントとして指定するために使われます。
 
 バックグラウンド タスクを直ちに構築する場合は、「[バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)」をご覧ください。
 
-**ヒント**  Windows 10 以降、バックグラウンド タスクを登録するために、アプリをロック画面に配置する必要はなくなりました。
+
+            **ヒント**  Windows 10 以降、バックグラウンド タスクを登録するために、アプリをロック画面に配置する必要はなくなりました。
 
  
 
@@ -70,11 +70,14 @@ ms.openlocfilehash: 38942aa2a274828cc36677a93d0923beb03060dc
 
 次のリアルタイム トリガーを使うと、バックグラウンドで軽量なカスタム コードを実行できます。
 
-**コントロール チャネル:  **バックグラウンド タスクでは、[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) を使って接続が有効な状態を維持し、コントロール チャネルでメッセージを受け取ることができます。 アプリがソケットをリッスンしている場合は、**ControlChannelTrigger** の代わりにソケット ブローカーを使うことができます。 ソケット ブローカーの使用について詳しくは、「[SocketActivityTrigger](https://msdn.microsoft.com/library/windows/apps/dn806009)」をご覧ください。 **ControlChannelTrigger** は、Windows Phone ではサポートされていません。
 
-**タイマー:  **バックグラウンド タスクは、15 分おきに実行できます。また、[**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) を使って特定の時刻に実行するように設定することもできます。 詳しくは、「[タイマーでのバックグラウンド タスクの実行](run-a-background-task-on-a-timer-.md)」をご覧ください。
+            **コントロール チャネル:  **バックグラウンド タスクでは、[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) を使って接続が有効な状態を維持し、コントロール チャネルでメッセージを受け取ることができます。 アプリがソケットをリッスンしている場合は、**ControlChannelTrigger** の代わりにソケット ブローカーを使うことができます。 ソケット ブローカーの使用について詳しくは、「[SocketActivityTrigger](https://msdn.microsoft.com/library/windows/apps/dn806009)」をご覧ください。 **ControlChannelTrigger** は、Windows Phone ではサポートされていません。
 
-**プッシュ通知:  **バックグラウンド タスクは、[**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) に応答して、直接プッシュ通知を受け取ります。
+
+            **タイマー:  **バックグラウンド タスクは、15 分おきに実行できます。また、[**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) を使って特定の時刻に実行するように設定することもできます。 詳しくは、「[タイマーでのバックグラウンド タスクの実行](run-a-background-task-on-a-timer-.md)」をご覧ください。
+
+
+            **プッシュ通知:  **バックグラウンド タスクは、[**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) に応答して、直接プッシュ通知を受け取ります。
 
 **注**  
 
@@ -85,7 +88,8 @@ ms.openlocfilehash: 38942aa2a274828cc36677a93d0923beb03060dc
 ## システム イベント トリガー
 
 
-> **注**  [**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839) 列挙体には、次のシステム イベント トリガーが含まれています。
+> 
+            **注**  [**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839) 列挙体には、次のシステム イベント トリガーが含まれています。
 
 | トリガー名            | 説明                                                       |
 |-------------------------|-------------------------------------------------------------------|

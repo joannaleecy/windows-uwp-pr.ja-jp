@@ -3,7 +3,6 @@ author: mcleanbyron
 ms.assetid: 9ca1f880-2ced-46b4-8ea7-aba43d2ff863
 description: "Microsoft Store Engagement and Monetization SDK の Microsoft Advertising ライブラリの現在のリリースにおける既知の問題について説明します。"
 title: "Microsoft Advertising ライブラリに関する既知の問題"
-translationtype: Human Translation
 ms.sourcegitcommit: 5b6d3e034b73e6ae693fbeab3ecd3b2b81f38bb1
 ms.openlocfilehash: cfaa108cc93b6bae903e86ad141656bf613f185d
 

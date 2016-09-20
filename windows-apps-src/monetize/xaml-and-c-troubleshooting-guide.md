@@ -3,7 +3,6 @@ author: mcleanbyron
 ms.assetid: 141900dd-f1d3-4432-ac8b-b98eaa0b0da2
 description: "XAML アプリの Microsoft Advertising ライブラリに関する、開発上の一般的な問題に対する解決策の詳細"
 title: "XAML と C# のトラブルシューティング ガイド"
-translationtype: Human Translation
 ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
 ms.openlocfilehash: ef9ad8f8056b17793d7ad8230e410e014edf2c95
 
@@ -290,7 +289,8 @@ ms.openlocfilehash: ef9ad8f8056b17793d7ad8230e410e014edf2c95
 
     ブラック ボックスの原因となる最も一般的なエラーは、"No ad available" です。 このエラーは、要求から復帰する利用可能な広告がないことを意味します。
 
-3.  **AdControl** は正常に動作しています。 同じ広告が何度も連続して表示される場合があります。このとき広告は更新されていないように見えます。
+3.  
+            **AdControl** は正常に動作しています。 同じ広告が何度も連続して表示される場合があります。このとき広告は更新されていないように見えます。
 
 <span id="csharp-adsnotrefreshing"/>
 ### 広告が更新されない

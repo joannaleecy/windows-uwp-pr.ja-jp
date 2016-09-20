@@ -3,7 +3,6 @@ author: mcleanbyron
 ms.assetid: 9FCBAF2E-5419-4169-A17C-9C4058DCF909
 description: "Windows ストアでは、REST API を経由して呼び出すことができるサービスがいくつか公開されています。これらのサービスを利用することで、お客様やお客様の組織の Windows デベロッパー センター アカウントに登録されているアプリの特定の種類のデータに、プログラムを使ってアクセスすることができます。"
 title: "Windows ストア サービスの使用"
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 43e3155315a9132daa36f592b54af3e943ea3e21
 

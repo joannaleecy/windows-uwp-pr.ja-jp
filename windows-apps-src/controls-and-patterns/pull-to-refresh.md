@@ -1,51 +1,55 @@
 ---
 author: Jwmsft
-Description: Use the pull-to-refresh pattern with a list view.
-title: Pull-to-refresh
+Description: "リスト ビューで引っ張って更新パターンを使います。"
+title: "引っ張って更新"
 label: Pull-to-refresh
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: 508a09e0c12006c00dbdf7675516b41119eab8a6
+ms.openlocfilehash: ef5773f9885a5286ac7ca7c256e6a83167316389
+
 ---
+# 引っ張って更新
+
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-# Pull to refresh
+引っ張って更新パターンを使うと、より多くのデータを取得するためにタッチ操作でデータのリストを引き下げることができます。 引っ張って更新はモバイル アプリで広く使われていますが、タッチ スクリーンを備えたすべてのデバイスで役に立ちます。 [操作イベント](../input-and-devices/touch-interactions.md#manipulation-events)を処理して、アプリに引っ張って更新を実装できます。
 
-The pull-to-refresh pattern lets a user pull down on a list of data using touch in order to retrieve more data. Pull-to-refresh is widely used on mobile apps, but is useful on any device with a touch screen. You can handle [manipulation events]() to implement pull-to-refresh in your app.
+「[引っ張って更新のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620635)」に、[ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) コントロールを拡張してこのパターンをサポートする方法を示しています。 この記事では、このサンプルを使って引っ張って更新を実装する際の重要ポイントを説明します。
 
-The [pull-to-refresh sample](http://go.microsoft.com/fwlink/p/?LinkId=620635) shows how to extend a [ListView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.listview.aspx) control to support this pattern. In this article, we use this sample to explain the key points of implementing pull-to-refresh.
+![引っ張って更新のサンプル](images/ptr-phone-1.png)
 
-![pull-to-refresh sample](images/ptr-phone-1.png)
+## 適切なパターンの選択
 
-## Is this the right pattern?
+ユーザーが定期的に更新するデータのリストやグリッドがあり、アプリがモバイルやタッチ操作主体のデバイスで実行されることが多いときは、引っ張って更新パターンを使います。
 
-Use the pull-to-refresh pattern when you have a list or grid of data that the user might want to refresh regularly, and your app is likely to be running on mobile, touch-first devices.
+## 引っ張って更新を実装する
 
-## Implement pull-to-refresh
+引っ張って更新を実装するには、操作イベントを処理してユーザーがリストを下に引っ張ったときに検出し、視覚的なフィードバックを表示し、データを更新する必要があります。 ここでは、「[引っ張って更新のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620635)」でこれらがどのように行われているかを見ていきます。 ここではすべてのコードを示さないため、GitHub でサンプルをダウンロードするか、コードを表示してください。
 
-To implement pull-to-refresh, you need to handle manipulation events to detect when a user has pulled the list down, provide visual feedback, and refresh the data. Here, we look at how this is done in the [pull-to-refresh sample](http://go.microsoft.com/fwlink/p/?LinkId=620635). We don't show all the code here, so you should download the sample or view the code on GitHub.
+引っ張って更新のサンプルでは、**ListView** コントロールを拡張するカスタム コントロール `RefreshableListView` を作成します。 このコントロールは、更新インジケーターを追加して視覚的なフィードバックを表示し、リスト ビューの内部スクロール ビューアーに対する操作イベントを処理します。 また、リストが引っ張られたときとデータを更新する必要があるときに通知する 2 つのイベントを追加します。 RefreshableListView は、データを更新する必要があることだけを通知します。 アプリでイベントを処理してデータを更新する必要があります。そのコードはアプリごとに異なります。
 
-The pull-to-refresh sample creates a custom control called `RefreshableListView` that extends the **ListView** control. This control adds a refresh indicator to provide visual feedback and handles the manipulation events on the list view's internal scroll viewer. It also adds 2 events to notify you when the list is pulled and when the data should be refreshed. RefreshableListView only provides notification that the data should be refreshed. You need to handle the event in your app to update the data, and that code will be different for every app.
+RefreshableListView は、更新が必要な時期と更新インジケーターを非表示にする方法を判断する "自動更新" モードを提供します。 自動更新はオンまたはオフにできます。
+- オフ: `PullThreshold` を超えている間にリストがリリースされる場合にのみ更新が要求されます。 ユーザーがスクロール領域から離れると、インジケーターがアニメーション化されて非表示になります。 利用可能な場合、ステータス バー インジケーターが表示されます (電話)。
+- 点灯: `PullThreshold` を超えると、リリースされるかどうかにかかわらずすぐに更新が要求されます。 インジケーターは新しいデータが取得されるまで表示されたままで、その後、アニメーション化されて非表示になります。 データの取得が完了すると、**Deferral** を使ってアプリに通知されます。
 
-RefreshableListView provides an 'auto refresh' mode that determines when the refresh is requested and how the refresh indicator goes out of view. Auto refresh can be on or off.
-- Off: A refresh is requested only if the list is released while the `PullThreshold` is exceded. The indicator animates out of view when the user releases the scroller. The status bar indicator is shown if it's available (on phone).
-- On: A refresh is requested as soon as the `PullThreshold` is exceded, whether released or not. The indicator remains in view until the new data is retrieved, then animates out of view. A **Deferral** is used to notify the app when fetching the data is complete.
+> **注意**&nbsp;&nbsp;サンプルのコードは、[**GridView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx) にも適用されます。 GridView を変更するには、ListView ではなく GridView からカスタム クラスを派生し、GridView の既定のテンプレートを変更します。
 
-> **Note**&nbsp;&nbsp;The code in sample is also applicable to a [**GridView**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.gridview.aspx). To modify a GridView, derive the custom class from GridView instead of ListView and modify the default GridView template.
+## 更新インジケーターを追加する
 
-## Add a refresh indicator
+アプリが引っ張って更新をサポートしていることがユーザーにわかるように、視覚的なフィードバックを表示することが重要です。 RefreshableListView には、XAML でインジケーターを表示するように設定できる `RefreshIndicatorContent` プロパティがあります。 また、`RefreshIndicatorContent` を設定しない場合にフォールバックする既定のテキスト インジケータも含まれています。
 
-It's important to provide visual feedback to the user so they know that your app supports pull-to-refresh. RefreshableListView has a `RefreshIndicatorContent` property that lets you set the indicator visual in your XAML. It also includes a default text indicator that it falls back to if you don't set the `RefreshIndicatorContent`.
+以下に、更新インジケーターの推奨ガイドラインを示します。
 
-Here are recommended guidelines for the refresh indicator.
+![更新インジケーターのガイドライン](images/ptr-redlines-1.png)
 
-![refresh indicator redlines](images/ptr-redlines-1.png)
+**リスト ビューのテンプレートを変更する**
 
-**Modify the list view template**
+引っ張って更新のサンプルでは、更新インジケーターを追加することで、`RefreshableListView` コントロールのテンプレートが標準の **ListView** テンプレートを変更しています。 更新インジケーターは、[**ItemsPresenter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemspresenter.aspx) の上の [**Grid**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.aspx) に配置されます。これはリスト項目が表示される部分です。
 
-In the pull-to-refresh sample, the `RefreshableListView` control template modifies the standard **ListView** template by adding a refresh indicator. The refresh indicator is placed in a [**Grid**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.grid.aspx) above the [**ItemsPresenter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemspresenter.aspx), which is the part that shows the list items.
+> **注意**&nbsp;&nbsp;`DefaultRefreshIndicatorContent` テキスト ボックスは、`RefreshIndicatorContent` プロパティが設定されていない場合にのみ表示されるテキストのフォールバック インジケーターを提供します。
 
-> **Note**&nbsp;&nbsp;The `DefaultRefreshIndicatorContent` text box provides a text fallback indicator that is shown only if the `RefreshIndicatorContent` property is not set.
-
-Here's the part of the control template that's modified from the default ListView template.
+次に、ListView の既定のテンプレートから変更されたコントロール テンプレートの一部を示します。
 
 **XAML**
 ```xaml
@@ -75,9 +79,9 @@ Here's the part of the control template that's modified from the default ListVie
 </Grid>
 ```
 
-**Set the content in XAML**
+**XAML でコンテンツを設定する**
 
-You set the content of the refresh indicator in the XAML for your list view. The XAML content you set is displayed by the refresh indicator's [ContentPresenter](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentpresenter.aspx) (`<ContentPresenter Content="{TemplateBinding RefreshIndicatorContent}">`). If you don't set this content, the default text indicator is shown instead.
+リスト ビュー用の XAML で、更新インジケーターのコンテンツを設定します。 設定する XAML コンテンツは、更新インジケーターの [ContentPresenter](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentpresenter.aspx) (`<ContentPresenter Content="{TemplateBinding RefreshIndicatorContent}">`) によって表示されます。 このコンテンツを設定しない場合、代わりに既定のテキスト インジケータが表示されます。
 
 **XAML**
 ```xaml
@@ -111,9 +115,9 @@ You set the content of the refresh indicator in the XAML for your list view. The
 </c:RefreshableListView>
 ```
 
-**Animate the spinner**
+**スピンをアニメーション化する**
 
-When the list is pulled down, RefreshableListView's `PullProgressChanged` event occurs. You handle this event in your app to control the refresh indicator. In the sample, this storyboard is started to animate the indicator's [**RotateTransform**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.rotatetransform.aspx) and spin the refresh indicator. 
+リストが引き下げられると、RefreshableListView の `PullProgressChanged` イベントが発生します。 アプリでこのイベントを処理して、更新インジケーターを制御します。 サンプルでは、このストーリー ボードはインジケーターの [**RotateTransform**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.rotatetransform.aspx) をアニメーション化し、更新インジケーターを回転させます。 
 
 **XAML**
 ```xaml
@@ -130,31 +134,31 @@ When the list is pulled down, RefreshableListView's `PullProgressChanged` event 
 </Storyboard>
 ```
 
-## Handle scroll viewer manipulation events
+## スクロール ビューアー操作イベントを処理する
 
-The list view control template includes a built-in [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx) that lets a user scroll through the list items. To implement pull-to-refresh, you have to handle the manipulation events on the built-in scroll viewer, as well as several related events. For more info about manipulation events, see [Touch interactions](../input-and-devices/touch-interactions.md).
+リスト ビュー コントロールのテンプレートには、ユーザーがリスト項目をスクロールできるようにする組み込みの [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.aspx) が含まれています。 引っ張って更新を実装するには、いくつかの関連するイベントのほか、組み込みのスクロール ビューアーでの操作イベントを処理する必要があります。 操作イベントについて詳しくは、「[タッチ操作](../input-and-devices/touch-interactions.md)」をご覧ください。
 
 ** OnApplyTemplate**
 
-To get access to the scroll viewer and other template parts so that you can add event handlers and call them later in your code, you must override the [**OnApplyTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.onapplytemplate.aspx) method. In OnApplyTemplate, you call [**GetTemplateChild**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.gettemplatechild.aspx) to get a reference to a named part in the control template, which you can save to use later in your code.
+スクロール ビューアーおよびその他のテンプレート パーツにアクセスして、イベント ハンドラーを追加してそれらを後でコードで呼び出せるようにするには、[**OnApplyTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.onapplytemplate.aspx) メソッドをオーバーライドする必要があります。 OnApplyTemplate で、[**GetTemplateChild**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.gettemplatechild.aspx) を呼び出してコントロール テンプレートの名前付きパーツへの参照を取得します。これはコードの後半で使用できるように保存できます。
 
-In the sample, the variables used to store the template parts are declared in the Private Variables region. After they are retrieved in the OnApplyTemplate method, event handlers are added for the [**DirectManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.directmanipulationstarted.aspx), [**DirectManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.directmanipulationcompleted.aspx), [**ViewChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.viewchanged.aspx), and [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx) events.
+サンプルでは、テンプレート パーツを格納するために使う変数はプライベート変数領域で宣言されています。 OnApplyTemplate メソッドでそれらを取得した後、[**DirectManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.directmanipulationstarted.aspx)、[**DirectManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.directmanipulationcompleted.aspx)、[**ViewChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.viewchanged.aspx)、および [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx) イベントのイベント ハンドラーを追加します。
 
 **DirectManipulationStarted**
 
-In order to initiate a pull-to-refresh action, the content has to be scrolled to the top of the scroll viewer when the user starts to pull down. Otherwise, it's assumed that the user is pulling in order to pan up in the list. The code in this handler determines whether the manipulation started with the content at the top of the scroll viewer, and can result in the list being refreshed. The control's 'refreshable' status is set accordingly. 
+引っ張って更新アクションを開始するには、ユーザーが引き下げ始めるときに、コンテンツがスクロール ビューアーの一番上にスクロールされている必要があります。 そうでない場合は、リスト内で上にパンするために引っ張っていると見なされます。 このハンドラーのコードは、操作がスクロール ビューアーの一番上のコンテンツから開始されたかどうかを判断します。その結果、リストが更新されることがあります。 それに応じて、コントロールの '更新可能' 状態が設定されます。 
 
-If the control can be refreshed, event handlers for animations are also added.
+コントロールが更新可能な場合、アニメーションのイベント ハンドラーも追加されます。
 
 **DirectManipulationCompleted**
 
-When the user stops pulling the list down, the code in this handler checks whether a refresh was activated during the manipulation. If a refresh was activated, the `RefreshRequested` event is raised and the `RefreshCommand` command is executed.
+ユーザーがリストを引き下げることを停止したら、このハンドラーのコードは、操作中に更新がアクティブ化されたかどうかを確認します。 更新がアクティブ化された場合、`RefreshRequested` イベントが発生し、`RefreshCommand` コマンドが実行されます。
 
-The event handlers for animations are also removed.
+アニメーションのイベント ハンドラーも削除されます。
 
-Based on the value of the `AutoRefresh` property, the list can animate back up immediately, or wait until the refresh is complete and then animate back up. A [**Deferral**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.aspx) object is used to to mark the completion of the refresh. At that point the refresh indicator UI is hidden.
+`AutoRefresh` プロパティの値に基づいて、リストはすぐにアニメーション化に戻るか、更新が完了するのを待ってからアニメーション化に戻ります。 [**Deferral**](https://msdn.microsoft.com/library/windows/apps/windows.foundation.deferral.aspx) オブジェクトを使って、更新の完了をマークします。 その時点で、更新インジケーター UI は非表示です。
 
-This part of the DirectManipulationCompleted event handler raises the `RefreshRequested` event and get's the Deferral if needed.
+DirectManipulationCompleted イベント ハンドラーのこの部分で `RefreshRequested`イベントを発生させ、必要な場合は Deferral を取得します。
 
 **C#**
 ```csharp
@@ -178,27 +182,27 @@ if (this.RefreshRequested != null)
 
 **ViewChanged**
 
-Two cases are handled in the ViewChanged event handler.
+2 つのケースが ViewChanged イベント ハンドラーで処理されます。
 
-First, if the view changed due to the scroll viewer zooming, the control's 'refreshable' status is canceled.
+1 つ目に、スクロール ビューアーのズームによりビューが変更された場合、コントロールの "更新可能な" 状態がキャンセルされます。
 
-Second, if the content finished animating up at the end of an auto refresh, the padding rectangles are hidden, touch interactions with the scroll viewer are re-anabled, the [VerticalOffset](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.verticaloffset.aspx) is set to 0.
+2 つ目に、自動更新の最後にコンテンツのアニメーション化が完了した場合、パディングの四角形が非表示になって、スクロール ビューアーによるタッチ操作が再び有効になり、[VerticalOffset](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.scrollviewer.verticaloffset.aspx) が 0 に設定されます。
 
 **PointerPressed**
 
-Pull-to-refresh happens only when the list is pulled down by a touch manipulation. In the PointerPressed event handler, the code checks what kind of pointer caused the event and sets a variable (`m_pointerPressed`) to indicate whether it was a touch pointer. This variable is used in the DirectManipulationStarted handler. If the pointer is not a touch pointer, the DirectManipulationStarted handler returns without doing anything.
+引っ張って更新が行われるのは、タッチ操作によってリストが引き下げられたときだけです。 PointerPressed イベント ハンドラーで、どの種類のポインターがイベントを発生させたかをチェックし、それがタッチ ポインターであったかどうかを示す変数 (`m_pointerPressed`) を設定します。 この変数は DirectManipulationStarted ハンドラーで使われます。 ポインターがタッチ ポインターでない場合は、DirectManipulationStarted ハンドラーは何もせずに戻ります。
 
-## Add pull and refresh events
+## 引っ張って更新のイベントを追加する
 
-'RefreshableListView' adds 2 events that you can handle in your app to refresh the data and manage the refresh indicator.
+'RefreshableListView' は 2 つのイベントを追加します。これらをアプリで処理して、データを更新し、更新インジケーターを管理することができます。
 
-For more info about events, see [Events and routed events overview](https://msdn.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview).
+イベントについて詳しくは、「[イベントとルーティング イベントの概要](https://msdn.microsoft.com/windows/uwp/xaml-platform/events-and-routed-events-overview)」をご覧ください。
 
 **RefreshRequested**
 
-The 'RefreshRequested' event notifies your app that the user has pulled the list to refresh it. You handle this event to fetch new data and update your list.
+'RefreshRequested' イベントは、ユーザーがリストを更新するために引っ張ったことをアプリに通知します。 このイベントを処理して、新しいデータを取得し、リストを更新します。
 
-Here's the event handler from the sample. The important thing to notice is that it check's the list view's `AutoRefresh` property and get's a Deferral if it's **true**. With a Deferral, the refresh indicator is not stopped and hidden until the refresh is complete.
+サンプルのイベント ハンドラーを次に示します。 重要なのは、リスト ビューの `AutoRefresh` プロパティを確認し、**true** の場合は Deferral を取得することです。 Deferral を使うと、更新インジケーターは停止せず、更新が完了するまで非表示になります。
 
 **C#**
 ```csharp
@@ -218,18 +222,23 @@ private async void listView_RefreshRequested(object sender, RefreshableListView.
 
 **PullProgressChanged**
 
-In the sample, content for the refresh indicator is provided and controlled by the app. The 'PullProgressChanged' event notifies your app when the use is pulling the list so that you can start, stop, and reset the refresh indicator. 
+サンプルでは、アプリによって更新インジケーターのコンテンツが提供および制御されます。 更新インジケーターを起動、停止、およびをリセットできるように、ユーザーがリストを引っ張ったことを 'PullProgressChanged' イベントが通知します。 
 
-## Composition animations
+## コンポジションのアニメーション
 
-By default, content in a scroll viewer stops when the scrollbar reaches the top. To let the user continue to pull the list down, you need to access the visual layer and animate the list content. The sample uses [composition animations](https://msdn.microsoft.com/windows/uwp/graphics/composition-animation) for this; specifically, [expression animations](https://msdn.microsoft.com/windows/uwp/graphics/composition-animation#expression-animations).
+既定では、スクロール バーが一番上に達するとスクロール ビューアーのコンテンツは停止します。 ユーザーがリストを引き下げ続けられるようにするには、ビジュアル レイヤーにアクセスし、リストのコンテンツをアニメーション化する必要があります。 サンプルでは、このために[コンポジション アニメーション](https://msdn.microsoft.com/windows/uwp/graphics/composition-animation)、具体的には[数式アニメーション](https://msdn.microsoft.com/windows/uwp/graphics/composition-animation#expression-animations)を使います。
 
-In the sample, this work is done primarily in the `CompositionTarget_Rendering` event handler and the `UpdateCompositionAnimations` method.
+サンプルでは、主に `CompositionTarget_Rendering` イベント ハンドラーと `UpdateCompositionAnimations` メソッドがこの処理を行います。
 
-## Related articles
+## 関連記事
 
-- [Styling controls](styling-controls.md)
-- [Touch interactions](../input-and-devices/touch-interactions.md)
-- [List view and grid view](listview-and-gridview.md)
-- [List view item templates](listview-item-templates.md)
-- [Expression animations](https://msdn.microsoft.com/windows/uwp/graphics/composition-animation#expression-animations)
+- [コントロールのスタイル](styling-controls.md)
+- [タッチ操作](../input-and-devices/touch-interactions.md)
+- [リスト ビューとグリッド ビュー](listview-and-gridview.md)
+- [リスト ビュー項目テンプレート](listview-item-templates.md)
+- [数式アニメーション](https://msdn.microsoft.com/windows/uwp/graphics/composition-animation#expression-animations)
+
+
+<!--HONumber=Aug16_HO3-->
+
+

@@ -3,7 +3,6 @@ author: mcleanbyron
 ms.assetid: 278114aa-2a44-4d63-a1d2-d512d8aababc
 description: "Microsoft Store Engagement and Monetization SDK の Microsoft Advertising ライブラリについての一般的な開発者向けの情報をお知らせします。"
 title: "Microsoft Advertising ライブラリの開発者向け情報"
-translationtype: Human Translation
 ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
 ms.openlocfilehash: ec3b1d5c33a24da4ad2a4c5c8e4e11c71ece4828
 
@@ -17,7 +16,8 @@ ms.openlocfilehash: ec3b1d5c33a24da4ad2a4c5c8e4e11c71ece4828
 
 このセクションのトピックでは、Microsoft Store Engagement and Monetization SDK の Microsoft Advertising ライブラリについて、開発者に役立つ情報を提供します。
 
-  > **重要**   Microsoft Advertising ライブラリは、広告仲介ライブラリとは異なる拡張のセットです。 XAML または JavaScript アプリでマイクロソフトのバナーやビデオのスポット広告を表示する場合には、Microsoft Advertising ライブラリの [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) クラスおよび [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) クラスを使います。 XAML アプリで複数の広告ネットワークからのバナー広告を表示する場合には、広告仲介ライブラリの **AdMediatorControl** クラスを使います。 詳しくは、「[AdMediatorControl と AdControl の違い](what-is-the-difference-admediatorcontrol-or-adcontrol.md)」をご覧ください。
+  > 
+            **重要**   Microsoft Advertising ライブラリは、広告仲介ライブラリとは異なる拡張のセットです。 XAML または JavaScript アプリでマイクロソフトのバナーやビデオのスポット広告を表示する場合には、Microsoft Advertising ライブラリの [AdControl](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.adcontrol.aspx) クラスおよび [InterstitialAd](https://msdn.microsoft.com/library/windows/apps/microsoft.advertising.winrt.ui.interstitialad.aspx) クラスを使います。 XAML アプリで複数の広告ネットワークからのバナー広告を表示する場合には、広告仲介ライブラリの **AdMediatorControl** クラスを使います。 詳しくは、「[AdMediatorControl と AdControl の違い](what-is-the-difference-admediatorcontrol-or-adcontrol.md)」をご覧ください。
 
 ## このセクションの内容
 

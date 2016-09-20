@@ -26,7 +26,8 @@ ms.openlocfilehash: 0f95bdcb197f472b743f81c0d941196d5e53f60a
 
 バックグラウンド タスクに条件を設定すると、タスクが不必要に実行されなくなるため、バッテリ寿命と CPU 実行時間が節約できます。 たとえば、バックグラウンド タスクがタイマーで実行され、インターネット接続が必要な場合は、タスクを登録する前に、**InternetAvailable** 条件を [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) に追加します。 これにより、タイマーの設定時間が経過した後、インターネットが利用可能であれば実行が許可されるため、タスクがシステム リソースやバッテリ寿命を無駄にすることはなくなります。
 
-**注**  同じ [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) で AddCondition を複数回呼び出すことで、複数の条件を組み合わせることができます。 **UserPresent** や **UserNotPresent** など競合する条件を追加しないように注意してください。
+
+            **注**  同じ [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) で AddCondition を複数回呼び出すことで、複数の条件を組み合わせることができます。 **UserPresent** や **UserNotPresent** など競合する条件を追加しないように注意してください。
 
  
 
@@ -81,9 +82,11 @@ SystemCondition オブジェクトをバックグラウンド タスクに追加
 
 次のコードでは、タスクを登録し、生成される BackgroundTaskRegistration オブジェクトを保存します。 [!div class="tabbedCodeSnippets"]
 
-> **注**  ユニバーサル Windows アプリは、どの種類のバックグラウンド トリガーを登録する場合でも、先に [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) を呼び出す必要があります。 更新プログラムのリリース後にユニバーサル Windows アプリが引き続き適切に実行されるようにするには、更新後にアプリが起動する際に、[**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471)、[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) の順に呼び出す必要があります。 詳しくは、「[バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)」をご覧ください。
+> 
+            **注**  ユニバーサル Windows アプリは、どの種類のバックグラウンド トリガーを登録する場合でも、先に [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) を呼び出す必要があります。 更新プログラムのリリース後にユニバーサル Windows アプリが引き続き適切に実行されるようにするには、更新後にアプリが起動する際に、[**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471)、[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) の順に呼び出す必要があります。 詳しくは、「[バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)」をご覧ください。
 
-## **注**  バックグラウンド タスクの登録パラメーターは登録時に検証されます。
+## 
+            **注**  バックグラウンド タスクの登録パラメーターは登録時に検証されます。
 
 いずれかの登録パラメーターが有効でない場合は、エラーが返されます。 バックグラウンド タスクの登録が失敗するシナリオをアプリが適切に処理するようにします。タスクを登録しようとした後で、有効な登録オブジェクトを持っていることを前提として動作するアプリは、クラッシュする場合があります。
 
@@ -155,19 +158,22 @@ SystemCondition オブジェクトをバックグラウンド タスクに追加
 ## 呼び出しは必ず、タスクの登録が有効になる前に行います。
 
 
-> **注**  1 つのバックグラウンド タスクに競合する条件を追加しないように注意してください。 次のスニペットでは、バックグラウンド タスクを作り、登録するコンテキストでの複数の条件を示したものです。
+> 
+            **注**  1 つのバックグラウンド タスクに競合する条件を追加しないように注意してください。 次のスニペットでは、バックグラウンド タスクを作り、登録するコンテキストでの複数の条件を示したものです。
 
 > [!div class="tabbedCodeSnippets"] 注釈
 
  
 
-## **注**  バックグラウンド タスクが必要なときに実行され、機能しない場合には実行されないようにするために、バックグラウンド タスクには正しい条件を選んでください。
+## 
+            **注**  バックグラウンド タスクが必要なときに実行され、機能しない場合には実行されないようにするために、バックグラウンド タスクには正しい条件を選んでください。
 
 
 ****
 
 * [バックグラウンド タスクの各条件については、「[**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)」をご覧ください。](create-and-register-a-background-task.md)
-* [**注**  この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。](declare-background-tasks-in-the-application-manifest.md)
+* [
+            **注:** この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。](declare-background-tasks-in-the-application-manifest.md)
 * [Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。](handle-a-cancelled-background-task.md)
 * [関連トピック](monitor-background-task-progress-and-completion.md)
 * [バックグラウンド タスクの作成と登録](register-a-background-task.md)

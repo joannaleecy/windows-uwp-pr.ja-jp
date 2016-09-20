@@ -3,7 +3,6 @@ author: mcleblanc
 description: "この移植ガイドを最後まで読み進むことを強くお勧めしますが、まず先に進み、プロジェクトの構築と実行の段階に到達することを非常に望まれていることも理解できます。"
 title: "Windows ランタイム 8.x から UWP への移植のトラブルシューティング'"
 ms.assetid: 1882b477-bb5d-4f29-ba99-b61096f45e50
-translationtype: Human Translation
 ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
 ms.openlocfilehash: e5758472d303f4baaf80d45d6b23b54f2a21e002
 

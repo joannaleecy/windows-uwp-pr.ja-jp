@@ -3,7 +3,6 @@ author: mtoepke
 title: "Direct3D 11 への OpenGL ES 2.0 のマッピング"
 description: "OpenGL ES 2.0 から Direct3D へのグラフィックス アーキテクチャの移植プロセスを初めて開始する場合は、API 間の主要な違いについて把握しておいてください。"
 ms.assetid: 7f9b136c-aa22-04b3-d385-6e9e1f38b948
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: a058c5f669704695cc3a2ae5385feccbf6cb4bc3
 

@@ -1,59 +1,70 @@
 ---
 author: drewbatgit
 ms.assetid: 
-description: This article lists the camera features that are available for UWP apps and links to the how-to articles that show how to use them.
-title: Camera
+description: "この記事では、UWP アプリで使用可能なカメラ機能と、その使用方法を示すハウツー記事へのリンクを示します。"
+title: "カメラ"
+translationtype: Human Translation
+ms.sourcegitcommit: f9f85359bd24e0a642bf9cbe3c76f6bfac7866f8
+ms.openlocfilehash: 8759a7cdb1d516f9c88f866887861c2f28085b5b
+
 ---
 
-# Camera
+# カメラ
 
-##Use the Windows built-in camera UI
-| Topic                                                                                             | Description                                                                                                                                                                                                                                                                                    |
+このセクションでは、カメラやマイクを使って写真、ビデオ、オーディオをキャプチャするユニバーサル Windows プラットフォーム (UWP) アプリの作成について説明します。
+
+##Windows 組み込みのカメラ UI を使う
+| トピック                                                                                             | 説明                                                                                                                                                                                                                                                                                    |
 |---------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Capture photos and video with Windows built-in camera UI](capture-photos-and-video-with-cameracaptureui.md) | Shows how to use the [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CameraCaptureUI) class to capture photos or videos using the camera UI built into Windows. If you simply want to enable the user to capture a photo or video and return the result to your app, this is the quickest and easiest way to do it.  |
-##Basic MediaCapture tasks
-| Topic                                                                                             | Description                                                                                                                                                                                                                                                                                    |
+| [Windows の組み込みカメラ UI を使った写真とビデオのキャプチャ](capture-photos-and-video-with-cameracaptureui.md) | [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.CameraCaptureUI) クラスを使用して、Windows に組み込まれているカメラ UI で写真またはビデオをキャプチャする方法を説明します。 ユーザーが写真やビデオをキャプチャしてアプリに結果を返すだけでよい場合は、これが最も早くて簡単な方法です。  |
+##基本的な MediaCapture タスク
+| トピック                                                                                             | 説明                                                                                                                                                                                                                                                                                    |
 |---------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Capture photos and video with Windows built-in camera UI](simple-camera-preview-access.md) | Shows how to quickly display the camera preview stream within a XAML page in a Universal Windows Platform (UWP) app. |
-| [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md) | Shows the simplest way to capture photos and video using the [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) class. The **MediaCapture** class exposes a robust set of APIs that provide low-level control over the capture pipeline and enable advanced capture scenarios, but this article is intended to help you add basic media capture to your app quickly and easily. |
-| [Camera UI features for mobile devices](camera-ui-features-for-mobile-devices.md) | Shows you how to take advantage of special camera UI features that are only present on mobile devices.  |
+| [カメラ プレビューの表示](simple-camera-preview-access.md) | UWP アプリで XAML ページ内にカメラ プレビュー ストリームをすばやく表示する方法を示します。 |
+| [MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md) | [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) クラスを使用して写真やビデオをキャプチャする最も簡単な方法を示します。 **MediaCapture** クラスは、キャプチャ パイプラインに対する低レベルの制御を提供し、高度なキャプチャ シナリオを実現する、堅牢な一連の API を公開しますが、この記事では基本的なメディア キャプチャをアプリにすばやく簡単に追加できるようにすることを目的としています。 |
+| [モバイル デバイスのカメラ UI の機能](camera-ui-features-for-mobile-devices.md) | モバイル デバイス上にのみある特殊カメラの UI 機能を活用する方法を示します。  |
                                                                                                                
-##Advanced MediaCapture tasks   
+##高度な MediaCapture タスク   
                                                                                                                
-| Topic                                                                                             | Description                                                                                                                                                                                                                                                                                    |
+| トピック                                                                                             | 説明                                                                                                                                                                                                                                                                                    |
 |---------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Handle device and screen orientation with MediaCapture](handle-device-orientation-with-mediacapture.md) | Shows you how to handle device orientation when capturing photos and videos by using a helper class. | 
-| [Discover and select camera capabilities with camera profiles](camera-profiles.md) | Shows how to use camera profiles to discover and manage the capabilities of different video capture devices. This includes tasks such as selecting profiles that support specific resolutions or frame rates, profiles that support simultaneous access to multiple cameras, and profiles that support HDR. |
-| [Set format, resolution, and frame rate for MediaCapture](set-media-encoding-properties.md) | Shows you how to use the [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) interface to set the resolution and frame rate of the camera preview stream and captured photos and video. It also shows how to ensure that the aspect ratio of the preview stream matches that of the captured media. |
-| [HDR and low-light photo capture](high-dynamic-range-hdr-photo-capture.md) | Shows you how to use the AdvancedPhotoCapture class to capture High Dynamic Range (HDR) and low-light photos. |
-| [Manual camera controls for photo and video capture](capture-device-controls-for-photo-and-video-capture.md) | Shows you how to use manual device controls to enable enhanced photo and video capture scenarios including optical image stabilization and smooth zoom. |
-| [Manual camera controls for video capture](capture-device-controls-for-video-capture.md) | Shows you how to use manual device controls to enable enhanced video capture scenarios including HDR video and exposure priority.  |
-| [Manual camera controls for video capture](capture-device-controls-for-video-capture.md) | Shows you how to use manual device controls to enable enhanced video capture scenarios including HDR video and exposure priority.  |
-| [Video stabilization effect for video capture](effects-for-video-capture.md) | Shows you how to use the video stabilization effect.  |
-| [Scene anlysis for MediaCapture](scene-analysis-for-media-capture.md) | Shows how to use the SceneAnalysisEffect and the FaceDetectionEffect to analyze the content of the media capture preview stream.  |
-| [Capture a photo sequence with VariablePhotoSequence](variable-photo-sequence.md) | Shows you how to capture a variable photo sequence, which allows you to capture multiple frames of images in rapid succession and configure each frame to use different focus, flash, ISO, exposure, and exposure compensation settings.  |
-| [Process media frames with MediaFrameReader](process-media-frames-with-mediaframereader.md) | Shows you how to use a [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader) with [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) to get media frames from one or more available sources, including color, depth, and infrared cameras, audio devices, or even custom frame sources such as those that produce skeletal tracking frames. This feature is designed to be used by apps that perform real-time processing of media frames, such as augmented reality and depth-aware camera apps.  |
-| [Get a preview frame](get-a-preview-frame.md) | Shows you how to get a single preview frame from the media capture preview stream.  |                                                                                                   
+| [MediaCapture を使ってデバイスと画面の向きを処理する](handle-device-orientation-with-mediacapture.md) | 写真とビデオをキャプチャするときに、ヘルパー クラスを使ってデバイスの向きを処理する方法について説明します。 | 
+| [カメラ プロファイルを使用したカメラ機能の検出と選択](camera-profiles.md) | カメラ プロファイルを使ってさまざまなビデオ キャプチャ デバイスの機能を検出および管理する方法について説明します。 これには、特定の解像度やフレーム レートをサポートするプロファイル、複数のカメラへの同時アクセスをサポートするプロファイル、HDR をサポートするプロファイルを選ぶなどのタスクが含まれます。 |
+| [MediaCapture の形式、解像度、およびフレーム レートの設定](set-media-encoding-properties.md) | [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) インターフェイスを使用して、カメラのプレビュー ストリームとキャプチャした写真/ビデオの解像度およびフレーム レートを設定する方法を説明します。 プレビュー ストリームの縦横比をキャプチャしたメディアの縦横比と一致させる方法についても説明します。 |
+| [HDR とローライトの写真のキャプチャ](high-dynamic-range-hdr-photo-capture.md) | [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.AdvancedPhotoCapture) クラスを使って、ハイ ダイナミック レンジ (HDR) とローライトの写真をキャプチャする方法について説明します。 |
+| [写真とビデオのキャプチャのための手動カメラ制御](capture-device-controls-for-photo-and-video-capture.md) | 光学式手ブレ補正やスムーズ ズームなど、写真とビデオのキャプチャに関する拡張シナリオを可能にするために、手動デバイス制御を使う方法について説明します。 |
+| [ビデオ キャプチャのための手動カメラ制御](capture-device-controls-for-video-capture.md) | この記事では、ビデオ キャプチャの拡張シナリオ (HDR ビデオ、露出の優先順位など) が手動デバイス制御によってどのように有効になるかを示します。  |
+| [ビデオ キャプチャのためのビデオ手ブレ補正効果](effects-for-video-capture.md) | ビデオ手ブレ補正効果を使う方法について説明します。  |
+| [MediaCapture のシーン分析](scene-analysis-for-media-capture.md) | [**SceneAnalysisEffect**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.SceneAnalysisEffect) と [**FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Core.FaceDetectionEffect) を使ってメディア キャプチャのプレビュー ストリームの内容を分析する方法について説明します。  |
+| [VariablePhotoSequence で写真シーケンスをキャプチャする](variable-photo-sequence.md) | 可変の写真シーケンスをキャプチャする方法について説明します。これによって、画像を複数のフレームとして次々とキャプチャし、各フレームに別々のフォーカス、フラッシュ、ISO、露出、露出補正の設定を適用することができます。  |
+| [MediaFrameReader を使ったメディア フレームの処理](process-media-frames-with-mediaframereader.md) | [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture) と共に [**MediaFrameReader**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.Frames.MediaFrameReader) を使って、色、深度、赤外線カメラ、オーディオ デバイスなどの 1 つ以上の利用可能なソースや、スケルタル トラッキング フレームを生成するようなカスタム フレーム ソースから、メディア フレームを取得する方法を示します。 この機能は、拡張現実アプリや奥行きを検出するカメラ アプリなど、メディア フレームのリアルタイム処理を実行するアプリで使用するために設計されました。  |
+| [プレビュー フレームの取得](get-a-preview-frame.md) | メディア キャプチャのプレビュー ストリームから単一のプレビュー フレームを取得する方法について説明します。  |                                                                                                   
 
 
-## Windows Universal app samples for camera
+## カメラ用の UWP アプリ サンプル
 
-* [Camera face detection sample](http://go.microsoft.com/fwlink/?LinkID=619486&clcid=0x409)
-* [Camera preview frame sample](http://go.microsoft.com/fwlink/?LinkID=620516&clcid=0x409)
-* [Camera HDR sample](http://go.microsoft.com/fwlink/?LinkID=620517&clcid=0x409)
-* [Camera manual controls sample](http://go.microsoft.com/fwlink/?LinkID=627611&clcid=0x409)
-* [Camera profile sample](http://go.microsoft.com/fwlink/?LinkID=620518&clcid=0x409)
-* [Camera resolution sample](http://go.microsoft.com/fwlink/?LinkID=624252&clcid=0x409)
-* [Camera starter kit](http://go.microsoft.com/fwlink/?LinkID=619479&clcid=0x409)
-* [Camera video stabilization sample](http://go.microsoft.com/fwlink/?LinkID=620519&clcid=0x409)
+* [カメラの顔検出サンプル](http://go.microsoft.com/fwlink/p/?LinkID=619486&clcid=0x409)
+* [カメラのプレビュー フレーム サンプル](http://go.microsoft.com/fwlink/p/?LinkID=620516&clcid=0x409)
+* [カメラの HDR サンプル](http://go.microsoft.com/fwlink/p/?LinkID=620517&clcid=0x409)
+* [カメラの手動制御サンプル](http://go.microsoft.com/fwlink/p/?LinkID=627611&clcid=0x409)
+* [カメラのプロファイル サンプル](http://go.microsoft.com/fwlink/p/?LinkID=620518&clcid=0x409)
+* [カメラの解像度サンプル](http://go.microsoft.com/fwlink/p/?LinkID=624252&clcid=0x409)
+* [カメラのスターター キット](http://go.microsoft.com/fwlink/p/?LinkID=619479&clcid=0x409)
+* [カメラのビデオ手ブレ補正効果サンプル](http://go.microsoft.com/fwlink/p/?LinkID=620519&clcid=0x409)
 
-## Related topics
+## 関連トピック
 
-* [Audio, Video, and Camera](index.md)
- 
+* [オーディオ、ビデオ、カメラ](index.md)
+ 
 
- 
+ 
 
 
+
+
+
+
+
+<!--HONumber=Aug16_HO3-->
 
 

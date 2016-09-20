@@ -3,7 +3,6 @@ author: mtoepke
 title: "Direct3D 11 でのデバイス削除シナリオの処理"
 description: "このトピックでは、グラフィックス アダプターが削除または再初期化されたときに Direct3D と DXGI デバイス インターフェイス チェーンを再作成する方法について説明します。"
 ms.assetid: 8f905acd-08f3-ff6f-85a5-aaa99acb389a
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 8d522a309386b06f97bc63b9eead1ca4cecf165c
 
@@ -29,8 +28,7 @@ DirectX 9 では、D3D デバイスが非動作状態になったときに、ア
 
 ### <span></span>手順 1:
 
-レンダリング ループにデバイス削除エラーのチェックを加えます。 [
-            **IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576) (または [**Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) など) を呼び出して、フレームを表示します。 次に、[**DXGI\_ERROR\_DEVICE\_REMOVED**](https://msdn.microsoft.com/library/windows/desktop/bb509553) または **DXGI\_ERROR\_DEVICE\_RESET** が返されたかどうかをチェックします。
+レンダリング ループにデバイス削除エラーのチェックを加えます。 [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576) (または [**Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) など) を呼び出して、フレームを表示します。 次に、[**DXGI\_ERROR\_DEVICE\_REMOVED**](https://msdn.microsoft.com/library/windows/desktop/bb509553) または **DXGI\_ERROR\_DEVICE\_RESET** が返されたかどうかをチェックします。
 
 まず、テンプレートは DXGI スワップ チェーンから返された HRESULT を保存します。
 
@@ -90,8 +88,7 @@ else
 
 ### 手順 3:
 
-[
-            **DXGI\_ERROR\_DEVICE\_REMOVED**](https://msdn.microsoft.com/library/windows/desktop/bb509553) エラーを受け取ったアプリは、常に Direct3D デバイスを再初期化し、デバイス依存リソースを再初期化する必要があります。 以前の Direct3D デバイスを使って作成したグラフィックス デバイス リソースに対する参照はすべて解放します。このようなリソースは無効になっているため、スワップ チェーンに対する参照はすべて、新しいスワップ チェーンを作成する前に解放する必要があります。
+[**DXGI\_ERROR\_DEVICE\_REMOVED**](https://msdn.microsoft.com/library/windows/desktop/bb509553) エラーを受け取ったアプリは、常に Direct3D デバイスを再初期化し、デバイス依存リソースを再初期化する必要があります。 以前の Direct3D デバイスを使って作成したグラフィックス デバイス リソースに対する参照はすべて解放します。このようなリソースは無効になっているため、スワップ チェーンに対する参照はすべて、新しいスワップ チェーンを作成する前に解放する必要があります。
 
 HandleDeviceLost メソッドは、スワップ チェーンを解放し、アプリ コンポーネントに対してデバイス リソースを解放するよう通知します。
 
@@ -139,12 +136,18 @@ HandleDeviceLost メソッドが終了すると、制御はレンダリング �
 
 DXGI デバイス削除エラーが繰り返し発生する場合は、アプリケーションのグラフィックス コードが描画ルーチン内で無効な状態を作り出している可能性があります。 また、ハードウェア障害やグラフィックス ドライバーのバグが原因の可能性もあります。 デバイス削除エラーの原因を調査するには、Direct3D デバイスを解放する前に [**ID3D11Device::GetDeviceRemovedReason**](https://msdn.microsoft.com/library/windows/desktop/ff476526) を呼び出します。 このメソッドは、デバイス削除エラーの理由を示す 6 種類の DXGI エラー コードの 1 つを返します。
 
--   **DXGI\_ERROR\_DEVICE\_HUNG**: アプリが送信したグラフィックス コマンドの組み合わせが無効であったため、グラフィックス ドライバーが応答を停止しました。 このエラーが繰り返し発生する場合は、デバイスがハングする原因はアプリにあり、デバッグの必要があることを示している可能性が高くなります。
--   **DXGI\_ERROR\_DEVICE\_REMOVED**: グラフィックス デバイスが物理的に取り外されたか、電源が切られたか、ドライバーのアップグレードが発生しました。 このエラーはときどき起こることであり、異常ではありません。アプリまたはゲームは、このトピックで説明しているようにデバイス リソースを再作成する必要があります。
--   **DXGI\_ERROR\_DEVICE\_RESET**: コマンドの形式が無効であるためにグラフィックス デバイスが失敗しました。 このエラーが繰り返し発生する場合は、コードが無効な描画コマンドを送っている可能性があります。
--   **DXGI\_ERROR\_DRIVER\_INTERNAL\_ERROR**: グラフィックス ドライバーでエラーが発生して、デバイスをリセットしました。
--   **DXGI\_ERROR\_INVALID\_CALL**: アプリケーションが無効なパラメーター データを指定しました。 このエラーが 1 回でも発生する場合は、デバイス削除状態の原因がアプリのコードにあり、デバッグの必要があることを意味しています。
--   **S\_OK**: 現在のグラフィックス デバイスを無効にすることなく、グラフィックス デバイスの使用が許可または禁止されたり、リセットされたときに返されます。 たとえば、このエラー コードは、アプリが [Windows Advanced Rasterization Platform (WARP)](https://msdn.microsoft.com/library/windows/desktop/gg615082) を使っていて、ハードウェア アダプターが利用可能になった場合に返されます。
+-   
+            **DXGI\_ERROR\_DEVICE\_HUNG**: アプリが送信したグラフィックス コマンドの組み合わせが無効であったため、グラフィックス ドライバーが応答を停止しました。 このエラーが繰り返し発生する場合は、デバイスがハングする原因はアプリにあり、デバッグの必要があることを示している可能性が高くなります。
+-   
+            **DXGI\_ERROR\_DEVICE\_REMOVED**: グラフィックス デバイスが物理的に取り外されたか、電源が切られたか、ドライバーのアップグレードが発生しました。 このエラーはときどき起こることであり、異常ではありません。アプリまたはゲームは、このトピックで説明しているようにデバイス リソースを再作成する必要があります。
+-   
+            **DXGI\_ERROR\_DEVICE\_RESET**: コマンドの形式が無効であるためにグラフィックス デバイスが失敗しました。 このエラーが繰り返し発生する場合は、コードが無効な描画コマンドを送っている可能性があります。
+-   
+            **DXGI\_ERROR\_DRIVER\_INTERNAL\_ERROR**: グラフィックス ドライバーでエラーが発生して、デバイスをリセットしました。
+-   
+            **DXGI\_ERROR\_INVALID\_CALL**: アプリケーションが無効なパラメーター データを指定しました。 このエラーが 1 回でも発生する場合は、デバイス削除状態の原因がアプリのコードにあり、デバッグの必要があることを意味しています。
+-   
+            **S\_OK**: 現在のグラフィックス デバイスを無効にすることなく、グラフィックス デバイスの使用が許可または禁止されたり、リセットされたときに返されます。 たとえば、このエラー コードは、アプリが [Windows Advanced Rasterization Platform (WARP)](https://msdn.microsoft.com/library/windows/desktop/gg615082) を使っていて、ハードウェア アダプターが利用可能になった場合に返されます。
 
 次のコードは、[**DXGI\_ERROR\_DEVICE\_REMOVED**](https://msdn.microsoft.com/library/windows/desktop/bb509553) エラー コードを取得して、それをデバッグ コンソールに出力します。 次のコードを HandleDeviceLost メソッドの先頭に挿入します。
 
@@ -165,7 +168,8 @@ DXGI デバイス削除エラーが繰り返し発生する場合は、アプリ
 
 Visual Studio の開発者コマンド プロンプトでは、Visual Studio グラフィックス診断に関連する Direct3D イベントのキャプチャと再生を行うコマンド ライン ツール "dxcap" がサポートされます。 アプリの実行中はコマンド ライン オプション "-forcetdr" を使って、GPU タイムアウトの検出と回復イベントを強制できるため、DXGI\_ERROR\_DEVICE\_REMOVED がトリガーされ、エラー処理コードをテストできます。
 
-> **注**  DXCap とそのサポート DLL は、Windows 10 向けグラフィックス ツール (Windows SDK では配布されなくなりました) の一部として system32/syswow64 にインストールされます。 代わりに、オプションの OS コンポーネントであるオンデマンドのグラフィックス ツール機能を通じて提供され、Windows 10 でグラフィックス ツールを有効にして使うにはこれをインストールする必要があります。 Windows 10 向けグラフィックス ツールをインストールする方法について詳しくは、<https://msdn.microsoft.com/library/mt125501.aspx#InstallGraphicsTools> をご覧ください。
+> 
+            **注**  DXCap とそのサポート DLL は、Windows 10 向けグラフィックス ツール (Windows SDK では配布されなくなりました) の一部として system32/syswow64 にインストールされます。 代わりに、オプションの OS コンポーネントであるオンデマンドのグラフィックス ツール機能を通じて提供され、Windows 10 でグラフィックス ツールを有効にして使うにはこれをインストールする必要があります。 Windows 10 向けグラフィックス ツールをインストールする方法について詳しくは、<https://msdn.microsoft.com/library/mt125501.aspx#InstallGraphicsTools> をご覧ください。
 
  
 

@@ -15,7 +15,8 @@ ms.openlocfilehash: 40380582a9210cb705a5e7e591d4a8f37c42f8dd
 
 OpenGL ES 2.0 グラフィックス パイプラインを Direct3D 11 と Windows ランタイムに移植するための記事、概要、チュートリアルを紹介します。
 
-> **注:** OpenGL ES 2.0 プロジェクトを移植する中間の手順では、Windows ストア用の ANGLE を使います。 ANGLE では、OpenGL ES API 呼び出しを DirectX 11 API 呼び出しに変換することにより、Windows で OpenGL ES コンテンツを実行することができます。 ANGLE について詳しくは、[Windows ストア用の ANGLE に関する Wiki ページ](http://go.microsoft.com/fwlink/p/?linkid=618387)をご覧ください。
+> 
+            **注:** OpenGL ES 2.0 プロジェクトを移植する中間の手順では、Windows ストア用の ANGLE を使います。 ANGLE では、OpenGL ES API 呼び出しを DirectX 11 API 呼び出しに変換することにより、Windows で OpenGL ES コンテンツを実行することができます。 ANGLE について詳しくは、[Windows ストア用の ANGLE に関する Wiki ページ](http://go.microsoft.com/fwlink/p/?linkid=618387)をご覧ください。
 
  
 

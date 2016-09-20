@@ -5,7 +5,6 @@ title: "特別なタイル テンプレート"
 ms.assetid: 1322C9BA-D5B2-45E2-B813-865884A467FF
 label: TBD
 template: detail.hbs
-translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
 ms.openlocfilehash: ab7366b8b3cbf75f1f7e9fe35ca83077ac21d081
 
@@ -22,7 +21,7 @@ ms.openlocfilehash: ab7366b8b3cbf75f1f7e9fe35ca83077ac21d081
 ## <span id="Iconic_tile_template"></span><span id="iconic_tile_template"></span><span id="ICONIC_TILE_TEMPLATE"></span>アイコン タイル テンプレート
 
 
-アイコン テンプレート ("IconWithBadge" テンプレートとも呼ばれます) を使うと、タイルの中央に小さい画像を表示できます。 Windows 10 では、電話とタブレット/デスクトップの両方でテンプレートがサポートされています
+アイコン テンプレート ("IconWithBadge" テンプレートとも呼ばれます) を使うと、タイルの中央に小さい画像を表示できます。 Windows 10 では、電話とタブレット/デスクトップの両方でテンプレートがサポートされています 
 
 ![小サイズと普通サイズのメール タイル](images/iconic-template-mail-2sizes.png)
 
@@ -189,19 +188,22 @@ Windows 10 の People アプリでは、円の中に画像のコレクション�
 
 People タイル テンプレートは、次のサイズのタイルで動作します。
 
-**普通サイズのタイル** (TileMedium)
+
+            **普通サイズのタイル** (TileMedium)
 
 ![普通サイズの People タイル](images/people-tile-medium.png)
 
  
 
-**ワイド タイル** (TileWide)
+
+            **ワイド タイル** (TileWide)
 
 ![ワイド People タイル](images/people-tile-wide.png)
 
  
 
-**大きいタイル (デスクトップのみ)** (TileLarge)
+
+            **大きいタイル (デスクトップのみ)** (TileLarge)
 
 ![大きい People タイル](images/people-tile-large.png)
 

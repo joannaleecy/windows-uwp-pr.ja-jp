@@ -3,7 +3,6 @@ author: jnHs
 Description: "Microsoft Advertising による売り上げの pubCenter 受取りアカウントを以前設定していた場合、そのアカウントは 2016 年 4 月 1 日以降支払いに使われなくなります。 支払いは、デベロッパー センター受取りアカウントを通じて行われるようになります。"
 title: "pubCenter とデベロッパー センターの受取りアカウントと税プロファイルの統合"
 ms.assetid: 1EC55E2F-2BC5-4982-A569-A59082A808EC
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 8973b1def46c7ada8b73337cb20d01ae1e5b97d8
 
@@ -16,7 +15,8 @@ Microsoft Advertising による売り上げの pubCenter 受取りアカウン�
 
 支払いが期日どおりに行われるようにするため、2016 年 3 月 31 日より前にデベロッパー センター ダッシュボードにサインインし、[受取りアカウントと税プロファイル](setting-up-your-payout-account-and-tax-forms.md)が正しく設定されていて、最新の状態であることを確認してください。
 
-> **重要:** デベロッパー センターで受取りアカウントや税プロファイルをまだ設定していない場合、今すぐ設定する必要があります。 詳しくは、「[受取りアカウントの設定と税関連の書類](setting-up-your-payout-account-and-tax-forms.md)」をご覧ください。
+> 
+            **重要:** デベロッパー センターで受取りアカウントや税プロファイルをまだ設定していない場合、今すぐ設定する必要があります。 詳しくは、「[受取りアカウントの設定と税関連の書類](setting-up-your-payout-account-and-tax-forms.md)」をご覧ください。
 
 デベロッパー センターでの支払いについて詳しくは、「[支払いの要約](payout-summary.md)」をご覧ください。 複数の国または地域での支払いに使われる通貨については、「[開発者アカウントとアプリ提出の市場](account-types-locations-and-fees.md#account_markets)」をご覧ください。
 

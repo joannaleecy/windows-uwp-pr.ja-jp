@@ -5,7 +5,7 @@ description: "この手順では、シューティング ゲームのサンプ�
 ms.assetid: aa05efe2-2baa-8b9f-7418-23f5b6cd2266
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: f9e536e71dd7b5c94d587a8bb66df3b41cc9a4ae
+ms.openlocfilehash: e44bc1046310b57cffa3eb4009e91885c61470eb
 
 ---
 
@@ -207,18 +207,12 @@ Platform::Array<byte>^  MediaReader::LoadMedia(_In_ Platform::String^ filename)
 
 このメソッドは、[メディア ファンデーション](https://msdn.microsoft.com/library/windows/desktop/ms694197) API を使って、.wav オーディオ ファイルをパルス符号変調 (PCM) バッファーとして読み取ります。
 
-1.  [
-            **MFCreateSourceReaderFromURL**](https://msdn.microsoft.com/library/windows/desktop/dd388110) を呼び出して、メディア ソース リーダー ([**IMFSourceReader**](https://msdn.microsoft.com/library/windows/desktop/dd374655)) オブジェクトを作ります。
-2.  [
-            **MFCreateMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms693861) を呼び出して、オーディオ ファイルのデコードのメディアの種類 ([**IMFMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms704850)) を作ります。 このメソッドは、デコードされた出力の種類として PCM オーディオを指定します。これは、XAudio2 が使うことができるオーディオの種類です。
-3.  [
-            **IMFSourceReader::SetCurrentMediaType**](https://msdn.microsoft.com/library/windows/desktop/bb970432) を呼び出して、リーダー用のデコードされた出力のメディアの種類を設定します。
-4.  [
-            **WAVEFORMATEX**](https://msdn.microsoft.com/library/windows/hardware/ff538799) バッファーを作り、[**IMFMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms704850) オブジェクトの [**IMFMediaType::MFCreateWaveFormatExFromMFMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms702177) を呼び出した結果をコピーします。 これで、読み込んだオーディオ ファイルを保持するバッファーがフォーマットされます。
-5.  [
-            **IMFSourceReader::GetPresentationAttribute**](https://msdn.microsoft.com/library/windows/desktop/dd374662) を呼び出して、オーディオ ストリームの期間を秒数で取得した後、その期間をバイト数に変換します。
-6.  [
-            **IMFSourceReader::ReadSample**](https://msdn.microsoft.com/library/windows/desktop/dd374665) を呼び出して、オーディオ ファイルをストリームとして読み取ります。
+1.  [**MFCreateSourceReaderFromURL**](https://msdn.microsoft.com/library/windows/desktop/dd388110) を呼び出して、メディア ソース リーダー ([**IMFSourceReader**](https://msdn.microsoft.com/library/windows/desktop/dd374655)) オブジェクトを作ります。
+2.  [**MFCreateMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms693861) を呼び出して、オーディオ ファイルのデコードのメディアの種類 ([**IMFMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms704850)) を作ります。 このメソッドは、デコードされた出力の種類として PCM オーディオを指定します。これは、XAudio2 が使うことができるオーディオの種類です。
+3.  [**IMFSourceReader::SetCurrentMediaType**](https://msdn.microsoft.com/library/windows/desktop/bb970432) を呼び出して、リーダー用のデコードされた出力のメディアの種類を設定します。
+4.  [**WAVEFORMATEX**](https://msdn.microsoft.com/library/windows/hardware/ff538799) バッファーを作り、[**IMFMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms704850) オブジェクトの [**IMFMediaType::MFCreateWaveFormatExFromMFMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms702177) を呼び出した結果をコピーします。 これで、読み込んだオーディオ ファイルを保持するバッファーがフォーマットされます。
+5.  [**IMFSourceReader::GetPresentationAttribute**](https://msdn.microsoft.com/library/windows/desktop/dd374662) を呼び出して、オーディオ ストリームの期間を秒数で取得した後、その期間をバイト数に変換します。
+6.  [**IMFSourceReader::ReadSample**](https://msdn.microsoft.com/library/windows/desktop/dd374665) を呼び出して、オーディオ ファイルをストリームとして読み取ります。
 7.  このメソッドで返された配列に、オーディオ サンプル バッファーのコンテンツをコピーします。
 
 **SoundEffect::Initialize** で最も重要なことは、ソース ボイス オブジェクト **m\_sourceVoice** をマスターリング ボイスから作ることです。 このソース ボイスは、**MediaReader::LoadMedia** から取得したサウンド データ バッファーの実際の再生に使います。
@@ -570,6 +564,6 @@ void SoundEffect::PlaySound(_In_ float volume)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

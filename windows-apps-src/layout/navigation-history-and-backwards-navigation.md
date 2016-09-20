@@ -6,7 +6,6 @@ ms.assetid: e9876b4c-242d-402d-a8ef-3487398ed9b3
 isNew: true
 label: History and backwards navigation
 template: detail.hbs
-translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
 ms.openlocfilehash: a35b76f04d450aeafcc50c307dc058c52f6aebe4
 
@@ -166,7 +165,8 @@ private void App_BackRequested(object sender,
 
 タイトル バーの戻るボタンは、デスクトップ モードのデバイスで実行されているアプリでのみ利用でき、アプリ内のナビゲーション履歴のみをサポートします。アプリ間のナビゲーション履歴はサポートされません。
 
-**重要**  タイトル バーの戻るボタンは、既定では表示されません。 オプトインする必要があります。
+
+            **重要**  タイトル バーの戻るボタンは、既定では表示されません。 オプトインする必要があります。
 
  
 

@@ -1,39 +1,39 @@
-# Supported UWP APIs for converted desktop apps
+# 変換されたデスクトップ アプリでサポートされている UWP API
 
-Converted desktop apps can use a wide range of Universal Windows Platform (UWP) APIs, even if they have not fully transitioned to a UWP app. This article lists the availble classes your converted app can use. 
+変換されたデスクトップ アプリは、UWP アプリに完全に移行されていない場合でも、さまざまなユニバーサル Windows プラットフォーム (UWP) API を使うことができます。 この記事では、変換されたアプリが使うことができるクラスについて説明します。 
 
-Most UWP APIs work well on converted desktop apps. However, some feature areas are not yet fully tested or currently functioning as intended. 
+ほとんどの UWP API は、変換されたデスクトップ アプリで適切に動作します。 ただし、一部の機能領域はまだ十分にテストされていないか、現在のところは意図したとおりに機能しません。 
 
-<table><tr><th>Feature area</th><th>Details</th><tr>
-<tr><td>Appointments, contacts, and emails</td><td>Not all APIs are currently supported for converted apps.</td></tr>
-<tr><td>Authentication and user identity</td><td>Not all APIs are currently supported for converted apps.</td></tr>
-<tr><td>Background tasks</td><td>While converted apps can register background tasks, only fully UWP apps can run *as* a background task. For more information, see the [Background task sample on GitHub](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample).</td></tr>
-<tr><td>Bluetooth</td><td>Not all APIs are currently supported for converted apps.</td></tr>
-<tr><td>Chat and phone calls</td><td>Converted apps cannot run on mobile until they are fully ported to UWP.</td></tr>
-<tr><td>Contract activation</td><td>Only full UWP apps can be activated by by a contract.</td></tr>
-<tr><td>Cryptography</td><td>Not all APIs are currently supported for converted apps.</td></tr>
-<tr><td>Geolocation</td><td>Not all APIs are currently supported for converted apps.</td></tr>
-<tr><td>File and folder pickers</td><td>Converted apps have full file system access and do not need UWP pickers.</td></tr>
-<tr><td>Media</td><td>Not all APIs are currently supported for converted apps.</td></tr>
-<tr><td>Point of service</td><td>Not all APIs are currently supported for converted apps.</td></tr>
-<tr><td>Smart cards</td><td>Not all APIs are currently supported for converted apps.</td></tr>
-<tr><td>PlayReady</td><td>Not all APIs are currently supported for converted apps.</td></tr>
-<tr><td>VPN</td><td>Not all APIs are currently supported for converted apps.</td></tr>
-<tr><td>Wallet</td><td>Converted apps cannot run on mobile until they are fully ported to UWP.</td></tr>
-<tr><td>XAML UI</td><td>Converted apps won't have a UWP XAML UI until they are fully ported to UWP.</td></tr>
+<table><tr><th>Feature area (機能領域)</th><th>詳細</th><tr>
+<tr><td>予定、連絡先、メール</td><td>現在のところ、すべての API が変換されたアプリでサポートされているわけではありません。</td></tr>
+<tr><td>認証とユーザー ID</td><td>現在のところ、すべての API が変換されたアプリでサポートされているわけではありません。</td></tr>
+<tr><td>バックグラウンド タスク</td><td>変換されたアプリはバックグラウンド タスクを登録できますが、完全な UWP アプリのみバックグラウンド タスク*として*実行できます。 詳しくは、[GitHub のバックグラウンド タスク サンプル](https://github.com/Microsoft/DesktopBridgeToUWP-Samples/tree/master/Samples/BackgroundTasksSample)をご覧ください。</td></tr>
+<tr><td>Bluetooth</td><td>現在のところ、すべての API が変換されたアプリでサポートされているわけではありません。</td></tr>
+<tr><td>チャットと電話</td><td>変換されたアプリは、UWP に完全に移植するまでモバイルで実行できません。</td></tr>
+<tr><td>コントラクトによるアクティブ化</td><td>フル UWP アプリのみコントラクトによってアクティブ化できます。</td></tr>
+<tr><td>暗号化</td><td>現在のところ、すべての API が変換されたアプリでサポートされているわけではありません。</td></tr>
+<tr><td>位置情報</td><td>現在のところ、すべての API が変換されたアプリでサポートされているわけではありません。</td></tr>
+<tr><td>ファイルおよびフォルダー ピッカー</td><td>変換されたアプリは、ファイル システムにフル アクセスでき、UWP ピッカーは必要ありません。</td></tr>
+<tr><td>メディア</td><td>現在のところ、すべての API が変換されたアプリでサポートされているわけではありません。</td></tr>
+<tr><td>Point of Service</td><td>現在のところ、すべての API が変換されたアプリでサポートされているわけではありません。</td></tr>
+<tr><td>スマート カード</td><td>現在のところ、すべての API が変換されたアプリでサポートされているわけではありません。</td></tr>
+<tr><td>PlayReady</td><td>現在のところ、すべての API が変換されたアプリでサポートされているわけではありません。</td></tr>
+<tr><td>VPN</td><td>現在のところ、すべての API が変換されたアプリでサポートされているわけではありません。</td></tr>
+<tr><td>ウォレット</td><td>変換されたアプリは、UWP に完全に移植するまでモバイルで実行できません。</td></tr>
+<tr><td>XAML UI</td><td>XAML UI を Win32 アプリ プロセスに追加することはできません。</td></tr>
 </table>
 
 
-Occasionally, APIs in these areas may appear to function correctly. However, if an API is not explicitly listed as supported, you should avoid using it as it may have unintended side effects or behavior. Support for these APIs may become availble in future releases. In the interim, your app should use relevant Win32 or .NET APIs instead. 
+場合によっては、これらの領域の API が正常に機能しているように見えることがあります。 ただし、API がサポート対象と明示されていない場合、予想外の副作用や動作が生じる可能性があるため使わないでください。 これらの API は、今後のリリースでサポートされる可能性があります。 それまでの間、代わりに関連する Win32 または .NET API をアプリに使ってください。 
 
-Some UWP APIs availble to full desktop applications are not supported for converted apps. If your desktop application used UWP APIs before conversion, you should verify those APIs are still supported. For more information, see [Windows Runtime APIs for desktop apps](https://msdn.microsoft.com/library/windows/desktop/dn554295(v=vs.85).aspx).
+フル デスクトップ アプリケーションに利用できる一部の UWP API は、変換されたアプリではサポートされていません。 変換前にデスクトップ アプリケーションで UWP API を使っていた場合、それらの API が引き続きサポートされていることを確認してください。 詳しくは、[デスクトップ アプリ用の Windows ランタイム API に関する記事](https://msdn.microsoft.com/library/windows/desktop/dn554295(v=vs.85).aspx)をご覧ください。
 
-## List of APIs
+## API の一覧
 
-The following is a full list of UWP APIs supported in converted apps. You can view [APIs newly supported in converted apps](#new) or [APIs supported in both converted apps and desktop applications](#both). 
+変換されたアプリでサポートされる UWP API の詳しい一覧を次に示します。 [変換されたアプリで新たにサポートされる API](#new) または [変換されたアプリとデスクトップ アプリケーションの両方でサポートされる API](#both) を表示することができます。 
 
 <span id="new" />
-### APIs newly supported in converted apps
+### 新たに変換されたアプリでサポートされる API
 
 * [Windows.ApplicationModel.DataTransfer.DataProviderHandler](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataProviderHandler)
 * [Windows.ApplicationModel.DataTransfer.DataRequest](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataRequest)
@@ -359,7 +359,7 @@ The following is a full list of UWP APIs supported in converted apps. You can vi
 * [Windows.UI.StartScreen.JumpListItem](https://msdn.microsoft.com/library/windows/apps/Windows.UI.StartScreen.JumpListItem)
 
 <span id="both" />
-### APIs supported in both converted apps and desktop applications
+### 変換されたアプリとデスクトップ アプリケーションの両方でサポートされている API
 
 * [Windows.ApplicationModel.Core.AppListEntry](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.Core.AppListEntry)
 * [Windows.ApplicationModel.DataTransfer.DataPackage](https://msdn.microsoft.com/library/windows/apps/Windows.ApplicationModel.DataTransfer.DataPackage)
@@ -1025,4 +1025,9 @@ The following is a full list of UWP APIs supported in converted apps. You can vi
 * [Windows.Web.Syndication.SyndicationPerson](https://msdn.microsoft.com/library/windows/apps/Windows.Web.Syndication.SyndicationPerson)
 * [Windows.Web.Syndication.SyndicationText](https://msdn.microsoft.com/library/windows/apps/Windows.Web.Syndication.SyndicationText)
 * [Windows.Web.WebError](https://msdn.microsoft.com/library/windows/apps/Windows.Web.WebError)
+
+
+
+<!--HONumber=Sep16_HO1-->
+
 

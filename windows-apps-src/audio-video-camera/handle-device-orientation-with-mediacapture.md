@@ -1,113 +1,123 @@
 ---
 author: drewbatgit
 ms.assetid: 
-description: This article shows you how to handle device orientation when capturing photos and videos by using a helper class.
-title:  Handle device orientation with mediacapture
+description: "この記事では、写真とビデオをキャプチャするときに、ヘルパー クラスを使ってデバイスの向きを処理する方法について説明します。"
+title: "MediaCapture を使ってデバイスの向きを処理する"
+translationtype: Human Translation
+ms.sourcegitcommit: 9f1d65d73bdf50697d75b0d57429aed66898e1b5
+ms.openlocfilehash: eb6487e7f2c19a8227320c5a7f087e4b3c3c6270
+
 ---
 
-# Handle device orientation with mediacapture
-When your app captures a photo or video that is intended to be viewed outside of your app, such as saving to a file on the user's device or sharing online, it's important that you encode the image with the proper orientation metadata so that when another app or device displays the image, it is oriented correctly. Determining the correct orientation data to include in a media file can be a complex task because there are several variables to consider, including the orientation of the device chassis, the orientation of the display, and the placement of the camera on the chassis (whether it is a front or back-facing camera). 
+# MediaCapture を使ってデバイスの向きを処理する
+アプリ外での表示を目的とする写真やビデオ (ユーザーのデバイスにファイルを保存する場合や、オンラインで共有する場合など) をアプリでキャプチャする際は、別のアプリやデバイスで画像を表示するときに正しい向きで表示されるよう、適切な向きのメタデータを使って画像をエンコーディングすることが重要です。 メディア ファイルにどの向きのデータを含めれば良いか特定するのは複雑な作業です。これは、デバイス シャーシの向き、ディスプレイの向き、シャーシ上のカメラの位置 (全面カメラか背面カメラか) など、考慮すべき変数が複数あるためです。 
 
-In order to simplify the process of handling orientation, we recommend using a helper class, **CameraRotationHelper**, for which the full definition is provided at the bottom of this article. You can add this class to your project and then follow the steps described below to add orientation support to your camera app. The helper class also makes it easier for you to rotate the controls in your camera UI so that they are rendered correctly from the user's point of view.
+そこで、向きの処理のプロセスを簡略化するために、**CameraRotationHelper** というヘルパー クラスを使うことをお勧めします。完全な定義についてはこの記事の最後に記載しています。 このクラスをプロジェクトに追加し、本記事の手順に従えば、カメラ アプリに向きのサポートを追加することができます。 また、このヘルパー クラスによって、カメラ UI のコントロールの回転が容易になり、ユーザーの視点から正しくレンダリングされるようになります。
 
 > [!NOTE] 
-> This article is builds on the code and concepts discussed in the article [**Basic photo, video, and audio capture with MediaCapture**](basic-photo-video-and-audio-capture-with-mediacapture.md). It is recommended that you familiarize yourself with the basic concepts of using the **MediaCapture** class before adding orientation support to your app.
+> この記事の内容は、「[**MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ**](basic-photo-video-and-audio-capture-with-mediacapture.md)」で取り上げたコードや概念に基づいています。 **MediaCapture** クラスの使用についての基本概念を理解してから、向きのサポートをアプリに追加することをお勧めします。
 
-# Namespaces used in this article
-The example code in this article uses APIs from the following namespaces which you should include in your code. 
+## この記事で使われている名前空間
+この記事のコード例では、次の名前空間の API を使っています。自分でコードを記述する際はこれらを含める必要があります。 
 
 [!code-cs[OrientationUsing](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetOrientationUsing)]
 
-The first step in adding orientation support to your app is to lock the display so that it doesn't automatically rotate when the device is rotated. Automatic UI rotation works well for most types of apps, but it is unintuitive for users when the camera preview rotates. Lock the display orientation by setting the [**DisplayInformation.AutoRotationPreferences**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Display.DisplayInformation.AutoRotationPreferences) property to [**DisplayOrientations.Landscape**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Display.DisplayOrientations). 
+アプリに向きのサポートを追加するにはまず、ディスプレイをロックして、デバイスの回転時にディスプレイが自動的に回転しないようにします。 UI の自動回転はほとんどの種類のアプリに適していますが、カメラ プレビューについては、回転するとユーザーが操作しにくくなります。 [**DisplayInformation.AutoRotationPreferences**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Display.DisplayInformation.AutoRotationPreferences) プロパティを [**DisplayOrientations.Landscape**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Display.DisplayOrientations) に設定してディスプレイの向きをロックします。 
 
 [!code-cs[AutoRotationPreference](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetAutoRotationPreference)]
 
-# Tracking the camera device location
-In order to calculate the correct orientation for captured media, you app must determine the location of the camera device on the chassis. Add a boolean member variable to track whether the camera is external to the device, such as a USB web cam. Add another boolean variable to track whether the preview should be mirrored, which is the case if a front-facing camera is used. Also, add a variable for storing a **DeviceInformation** object which represents the selected camera.
+## カメラ デバイスの位置情報を追跡する
+キャプチャしたメディアの正しい向きを計算するには、シャーシ上のカメラ デバイスの位置情報をアプリで特定する必要があります。 ブール値メンバー変数を追加して、(USB 接続型 Web カメラなどのように) カメラがデバイスの外部にあるかどうかを追跡します。 プレビューを左右反転すべきかどうかを追跡するための別のブール変数を追加します。左右反転は、正面カメラが使われている場合に必要になります。 また、選択されたカメラを表す **DeviceInformation** オブジェクトを格納するための変数を追加します。
 
 [!code-cs[CameraDeviceLocationBools](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetCameraDeviceLocationBools)]
 [!code-cs[DeclareCameraDevice](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetDeclareCameraDevice)]
 
-# Select a camera device and initialize the MediaCapture object
-The article [**Basic photo, video, and audio capture with MediaCapture**](basic-photo-video-and-audio-capture-with-mediacapture.md) shows you how to initialize the **MediaCapture** object with just a couple of lines of code. To support camera orientation, we will add a few more steps to the initialization process.
+## カメラ デバイスを選択し MediaCapture オブジェクトを初期化する
+「[**MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ**](basic-photo-video-and-audio-capture-with-mediacapture.md)」では、数行のコードで **MediaCapture** オブジェクトを初期化する方法について説明しています。 カメラの向きをサポートするために、少しだけこの初期化プロセスに手順を追加します。
 
-First, call [**DeviceInformation.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Enumeration.DeviceInformation.FindAllAsync) passing in the device selector [**DeviceClass.VideoCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Enumeration.DeviceClass) to get a list of all available video capture devices. Next, select the first device in the list where the panel location of the camera is known and where it matches the supplied value, which in this example is front-facing camera. If no camera is found on the desired panel, the first or default available camera is used.
+まず、[**DeviceClass.VideoCapture**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Enumeration.DeviceClass) というデバイス セレクターを渡して [**DeviceInformation.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Enumeration.DeviceInformation.FindAllAsync) を呼び出し、利用可能なすべてのビデオ キャプチャ デバイスの一覧を取得します。 次に、カメラのパネル位置が認識されていて、かつ、指定した値とそのパネル位置が一致するものの中で、一覧の最も上にあるデバイスを選択します。この例では、正面カメラになります。 目的のパネルでカメラが見つからない場合は、先頭にあるカメラか、既定の利用可能なカメラが使用されます。
 
-If a camera device is found, a new [**MediaCaptureInitializationSettings**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureInitializationSettings) object is created and the [**VideoDeviceId**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureInitializationSettings.VideoDeviceId) property is set to the selected device. Next, create the MediaCapture object and call [**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.InitializeAsync), passing in the settings object to tell the system to use the selected camera.
+カメラ デバイスが見つかった場合、新しい [**MediaCaptureInitializationSettings**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureInitializationSettings) オブジェクトを作成し、選択したデバイスに [**VideoDeviceId**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCaptureInitializationSettings.VideoDeviceId) プロパティを設定します。 次に、MediaCapture オブジェクトを作成し、設定オブジェクトを渡して [**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.InitializeAsync) を呼び出し、選択したカメラを使うようシステムに指示します。
 
-Finally, check to see if the selected device panel is null or unknown. If so, the camera is external which means that it's rotation is unrelated to the rotation of the device. If the panel is known and is on the front of the device chassis, then we know the preview should be mirrored and so the variable tracking this is set.
+最後に、選択したデバイスのパネルが null または unknown になっているかどうかを確認します。 このいずれかであれば、カメラは外付けのものなので、カメラの回転はデバイスの回転とは無関係ということになります。 パネルが認識されていてデバイス シャーシの全面にある場合は、プレビューを左右反転する必要があるため、プレビューを追跡する変数を設定します。
 
 [!code-cs[InitMediaCaptureWithOrientation](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetInitMediaCaptureWithOrientation)]
-## Initialize the CameraRotationHelper class
+## CameraRotationHelper クラスを初期化する
 
-Now we begin using the **CameraRotationHelper** class. Declare a class member variable to store the object. Call the constructor, passing in the enclosure location of the selected camera. The helper class uses this information to calculate the correct orientation for captured media, the preview stream, and the UI. Register a handler for the helper class's **OrientationChanged** event, which will be raised when we need to update the orientation of the UI or the preview stream.
+ここから **CameraRotationHelper** クラスを使い始めます。 オブジェクトを格納するためのクラス メンバー変数を宣言し、 選択されたカメラの筐体の位置を渡して、コンストラクターを呼び出します。 このヘルパー クラスでは、この情報を使用して、キャプチャしたメディア、プレビュー ストリーム、および UI の正しい向きを計算します。 そして、このヘルパー クラスの **OrientationChanged** イベントのハンドラーを登録します。このイベントは、UI やプレビュー ストリームの向きを更新する必要がある場合に発生します。
 
 [!code-cs[DeclareRotationHelper](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetDeclareRotationHelper)]
 
 [!code-cs[InitRotationHelper](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetInitRotationHelper)]
 
-## Add orientation data to the camera preview stream
-Adding the correct orientation to the metadata of the preview stream does not affect how the preview appears to the user, but it helps the system encode any frames captured from the preview stream correctly.
+## カメラのプレビュー ストリームに向きのデータを追加する
+プレビュー ストリームのメタデータに正しい向きを追加しても、ユーザーに表示されるプレビューには影響しませんが、プレビュー ストリームからキャプチャされるフレームをシステムが正しくエンコーディングしやすくなります。
 
-You start the camera preview by calling [**MediaCapture.StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.StartPreviewAsync). Before you do this, check the member variable to see if the preview should be mirrored (for a front-facing camera). If so, set the [**FlowDirection**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.FrameworkElement.FlowDirection) property of the [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.CaptureElement), named *PreviewControl* in this example, to [**FlowDirection.RightToLeft**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.FlowDirection). After starting the preview, call the helper method **SetPreviewRotationAsync** to set the preview rotation. The implementation of this method is shown below.
+[**MediaCapture.StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.StartPreviewAsync) を呼び出してカメラ プレビューを開始します。 その前に、(正面カメラのために) プレビューを左右反転する必要があるかどうか、メンバー変数を確認してください。 左右反転する必要があれば、[**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Controls.CaptureElement) の [**FlowDirection**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.FrameworkElement.FlowDirection) プロパティ (この例では *PreviewControl* という名前になっています) を [**FlowDirection.RightToLeft**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.FlowDirection) に設定します。 プレビューを開始したら、**SetPreviewRotationAsync** というヘルパー メソッドを呼び出してプレビューの回転を設定します。 以下に、このメソッドの実装を示します。
 
 [!code-cs[StartPreviewWithRotationAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStartPreviewWithRotationAsync)]
 
-We set the preview rotation in a separate method so that it can be updated when the phone orientation changes without reinitializing the preview stream. If the camera is external to the device, then no action is taken. Otherwise, the **CameraRotationHelper** method, **GetCameraPreviewOrientation**, is called and returns the proper orientation for the preview stream. 
+スマートフォンの向きが変わったときプレビュー ストリームを再初期化することなく更新できるように、プレビューの回転を別個のメソッドに設定します。 外付けのカメラの場合、処理は行われませんが、 それ以外の場合は **CameraRotationHelper** メソッドの **GetCameraPreviewOrientation** が呼び出され、プレビュー ストリームの正しい向きが返されます。 
 
-To set the metadata, the preview stream properties are retreived by calling [**VideoDeviceController.GetMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Devices.VideoDeviceController.GetMediaStreamProperties). Next, create the GUID representing the Media Foundation Transform (MFT) attribute for video stream rotation. In C++ you can use the constant [**MF_MT_VIDEO_ROTATION**](https://msdn.microsoft.com/en-us/library/windows/desktop/hh162880.aspx), but in C# you must manually specify the GUID value. 
+メタデータを設定するには [**VideoDeviceController.GetMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Devices.VideoDeviceController.GetMediaStreamProperties) を呼び出して、プレビュー ストリームのプロパティを取得します。 次に、ビデオ ストリームの回転状態のメディア ファンデーション トランスフォーム (MFT) 属性を表す GUID を作成します。 C++ では [**MF_MT_VIDEO_ROTATION**](https://msdn.microsoft.com/en-us/library/windows/desktop/hh162880.aspx) 定数を使用できますが、C# では GUID 値を手動で指定する必要があります。 
 
-Add a property value to the stream properties object, specifying the GUID as the key and the preview rotation as the value. This property expects values to be in units of counterclockwise degrees, so the **CameraRotationHelper** method **ConvertSimpleOrientationToClockwiseDegrees** is used to convert the simple orientation value. Finally, call [**SetEncodingPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.SetEncodingPropertiesAsync(Windows.Media.Capture.MediaStreamType,Windows.Media.MediaProperties.IMediaEncodingProperties,Windows.Media.MediaProperties.MediaPropertySet)) to apply the new rotation property to the stream.
+キーに GUID を、値にプレビューの回転を指定して、ストリーム プロパティ オブジェクトにプロパティ値を追加します。 このプロパティは、値が反時計回りの角度の単位であることを想定しているため、単なる向きの値を変換するのに **CameraRotationHelper** メソッドの **ConvertSimpleOrientationToClockwiseDegrees** を使用します。 最後に、[**SetEncodingPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.SetEncodingPropertiesAsync(Windows.Media.Capture.MediaStreamType,Windows.Media.MediaProperties.IMediaEncodingProperties,Windows.Media.MediaProperties.MediaPropertySet)) を呼び出して新しい回転プロパティをストリームに適用します。
 
 [!code-cs[SetPreviewRotationAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetSetPreviewRotationAsync)]
 
-Next, add the handler for the **CameraRotationHelper.OrientationChanged** event. This event passes in an argument that lets you know whether the preview stream needs to be rotated. If the orientation of the device was changed to face up or face down, this value will be false. If the preview does need to be rotated, call **SetPreviewRotationAsync** which was defined above.
+次に、**CameraRotationHelper.OrientationChanged** イベントのハンドラーを追加します。 このイベントは、プレビュー ストリームが回転する必要があるかどうかを通知する引数を渡します。 デバイスの向きが表向きまたは裏向きに変わった場合、この値は false になります。 プレビューを回転する必要がある場合は、先ほど定義した **SetPreviewRotationAsync** を呼び出します。
 
-Next, in the **OrientationChanged** event handler, update your UI if needed. Get the current recommended UI orientation from the helper class by calling **GetUIOrientation** and convert the value to clockwise degrees, which is used for XAML transforms. Create a [**RotateTransform**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Media.RotateTransform) from the orientation value and set the [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.RenderTransform) property of your XAML controls. Depending on your UI layout, you may need to make additional adjustments here in addition to simply rotating the controls. Also, remember that all updates to your UI must be made on the UI thread, so you should place this code inside a call to [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Core.CoreDispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority,Windows.UI.Core.DispatchedHandler)).  
+次に、**OrientationChanged** イベント ハンドラーで、必要に応じて UI を更新します。 **GetUIOrientation** を呼び出して、現在推奨される UI の向きをヘルパー クラスから取得し、値を時計回りに変換します。この値は XAML の変換に使われます。 向きの値から [**RotateTransform**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.Media.RotateTransform) を作成し、XAML コントロールの [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Xaml.UIElement.RenderTransform) プロパティを設定します。 UI レイアウトによっては、単なるコントロールの回転に加え、追加の調整が必要になる場合があります。 また、UI へのすべての更新は UI スレッドで実行される必要があるため、このコードを [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.UI.Core.CoreDispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority,Windows.UI.Core.DispatchedHandler)) の呼び出しの中に配置する必要があることに注意してください。  
 
 [!code-cs[HelperOrientationChanged](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetHelperOrientationChanged)]
 
-## Capture a photo with orientation data
-The article [**Basic photo, video, and audio capture with MediaCapture**](basic-photo-video-and-audio-capture-with-mediacapture.md) shows you how to capture a photo to a file by capturing first to an in-memory stream and then using a decoder to read the image data from the stream and an encoder to transcode the image data to a file. Orientation data, obtained from the **CameraRotationHelper** class, can be added to the image file during the transcoding operation.
+## 向きのデータを使って写真をキャプチャする
+「[**MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ**](basic-photo-video-and-audio-capture-with-mediacapture.md)」では、写真をファイルにキャプチャする方法について説明しています。このためには、まず写真をインメモリ ストリームにキャプチャしたら、デコーダーを使ってストリームから画像データを読み取り、エンコーダーを使って画像データをファイルにコード変換します。 **CameraRotationHelper** クラスから取得した向きのデータを、変換操作中に画像ファイルに追加することができます。
 
-In the example below, a photo is captured to an [**InMemoryRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.Streams.InMemoryRandomAccessStream) with a call to [**CapturePhotoToStreamAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.CapturePhotoToStreamAsync) and a [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapDecoder) is created from the stream. Next a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageFile) is created and opened to retreive an [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.Streams.IRandomAccessStream) for writing to the file. 
+次の例では、[**CapturePhotoToStreamAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.CapturePhotoToStreamAsync) を呼び出すことで写真を [**InMemoryRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.Streams.InMemoryRandomAccessStream) にキャプチャし、ストリームから [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapDecoder) を作成しています。 次に、[**StorageFile**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.StorageFile) を作成して、ファイルに書き込む [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.Streams.IRandomAccessStream) を取得するために開きます。 
 
-Before transcoding the file, the photo's orientation is retrieved from the helper class method **GetCameraCaptureOrientation**. This method returns a [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Sensors.SimpleOrientation) object which is converted to a [**PhotoOrientation**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.FileProperties.PhotoOrientation) object with the helper method **ConvertSimpleOrientationToPhotoOrientation**. Next, a new **BitmapPropertySet** object is created and a property is added where the key is "System.Photo.Orientation" and the value is the photo orientation, expressed as a **BitmapTypedValue**. "System.Photo.Orientation" is one of many Windows properties that can be added as metadata to an image file. For a list of all of the photo-related properties, see [**Windows Properties - Photo**](https://msdn.microsoft.com/en-us/library/windows/desktop/ff516600). For more information about workine with metadata in images, see [**Image metadata**](image-metadata.md).
+ファイルをコード変換する前に、**GetCameraCaptureOrientation** というヘルパー クラス メソッドから写真の向きを取得します。 このメソッドは、**ConvertSimpleOrientationToPhotoOrientation** というヘルパー メソッドによって [**PhotoOrientation**](https://msdn.microsoft.com/library/windows/apps/Windows.Storage.FileProperties.PhotoOrientation) オブジェクトに変換される [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Sensors.SimpleOrientation) オブジェクトを返します。 次に、新しい **BitmapPropertySet** オブジェクトを作成し、キーが "System.Photo.Orientation" で、値が (**BitmapTypedValue** として表される) 写真の向きであるプロパティを追加します。 "System.Photo.Orientation" は、メタデータとして画像ファイルに追加できる多くの Windows プロパティのうちの 1 つです。 写真に関連するプロパティの全一覧については、「[**Windows プロパティ - 写真**](https://msdn.microsoft.com/en-us/library/windows/desktop/ff516600)」をご覧ください。 画像のメタデータの使い方について詳しくは、「[**画像のメタデータ**](image-metadata.md)」をご覧ください。
 
-Finally, the property set which includes the orientation data is set for the encoder by with a call to [**SetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/) and the image is transcoded with a call to [**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapEncoder.FlushAsync).
+最後に、[**SetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/) を呼び出すことで、向きのデータを含むプロパティ セットをエンコーダーに設定し、[**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Imaging.BitmapEncoder.FlushAsync) を呼び出すことで、画像をコード変換します。
 
 [!code-cs[CapturePhotoWithOrientation](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetCapturePhotoWithOrientation)]
 
-## Capture a video with orientation data
-Basic video capture is described in the article [**Basic photo, video, and audio capture with MediaCapture**](basic-photo-video-and-audio-capture-with-mediacapture.md). Adding orientation data to the encoding of the captured video is done using the same technique as described above in the section on adding orientation data to the preview stream.
+## 向きのデータを使ってビデオをキャプチャする
+基本的なビデオ キャプチャについては、「[**MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ**](basic-photo-video-and-audio-capture-with-mediacapture.md)」で説明しています。 キャプチャしたビデオのエンコーディングに向きのデータを追加するには、向きのデータをプレビュー ストリームに追加するセクションで説明したのと同じ手法を用います。
 
-In the example below, a file is created to which the captured video will be written. An MP4 encoding profile is create using the static method [**CreateMp4**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.MediaEncodingProfile.CreateMp4). The proper orientation for the video is obtained from the **CameraRotationHelper** class with a call to **GetCameraCaptureOrientation** Because the rotation property requires the orientation to be expressed in counterclockwise degrees, the **ConvertSimpleOrientationToClockwiseDegrees** helper method is called to convert the orientation value. Next, create the GUID representing the Media Foundation Transform (MFT) attribute for video stream rotation. In C++ you can use the constant [**MF_MT_VIDEO_ROTATION**](https://msdn.microsoft.com/en-us/library/windows/desktop/hh162880.aspx), but in C# you must manually specify the GUID value. Add a property value to the stream properties object, specifying the GUID as the key and the rotation as the value. Finally call [**StartRecordToStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.StartRecordToStorageFileAsync(Windows.Media.MediaProperties.MediaEncodingProfile,Windows.Storage.IStorageFile)) to begin recording video encoded with orientation data.
+次の例では、キャプチャしたビデオを書き込むファイルを作成します。 [**CreateMp4**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.MediaProperties.MediaEncodingProfile.CreateMp4) という静的メソッドを使用して、MP4 エンコード プロファイルを作成します。 ビデオの正しい向きは、**GetCameraCaptureOrientation** を呼び出すことで **CameraRotationHelper** クラスから取得します。回転プロパティでは、向きを反時計回りの角度で表す必要があるため、**ConvertSimpleOrientationToClockwiseDegrees** ヘルパー メソッドを呼び出して向きの値を変換します。 次に、ビデオ ストリームの回転状態のメディア ファンデーション トランスフォーム (MFT) 属性を表す GUID を作成します。 C++ では [**MF_MT_VIDEO_ROTATION**](https://msdn.microsoft.com/en-us/library/windows/desktop/hh162880.aspx) 定数を使用できますが、C# では GUID 値を手動で指定する必要があります。 キーに GUID を、値に回転状態を指定して、ストリーム プロパティ オブジェクトにプロパティ値を追加します。 最後に、[**StartRecordToStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/Windows.Media.Capture.MediaCapture.StartRecordToStorageFileAsync(Windows.Media.MediaProperties.MediaEncodingProfile,Windows.Storage.IStorageFile)) を呼び出して、向きのデータによってエンコーディングされたビデオの録画を開始します。
 
 [!code-cs[StartRecordingWithOrientationAsync](./code/SimpleCameraPreview_Win10/cs/MainPage.xaml.cs#SnippetStartRecordingWithOrientationAsync)]
 
-## CameraRotationHelper full code listing
-The following code snippet lists the full code for the **CameraRotationHelper** class that manages the hardware orientation sensors, calculates the proper orientation values for photos and videos, and provides helper methods to convert between the different representations of orientation that are used by different Windows features. If you follow the guidance shown in the article above, you can add this class to your project as-is without having to make any changes. Of course, you can feel free to customize the code below to meet the needs of your particular scenario.
+## CameraRotationHelper の完全なコード
+以下のコード スニペットに、**CameraRotationHelper** クラスの完全なコードを示します。このクラスは、ハードウェアの方位センサーを管理したり、写真やビデオの正しい向きの値を計算したりします。また、各種 Windows 機能で使われる、向きのさまざまな表示間で変換を実行するヘルパー メソッドを提供します。 上記の記事の手順に従えば、変更を加えることなくプロジェクトにこのクラスを追加することができます。 もちろん、特定のシナリオに合わせて、以下のコードを自由にカスタマイズすることも可能です。
 
-This helper class uses the device's [**SimpleOrientationSensor**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Sensors.SimpleOrientationSensor) to determine the current orientation of the device chassis and the [**DisplayInformation**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Display.DisplayInformation) class to determine the current orientation of the display. Each of these classes provide events that are raised when the current orientation changes. The panel on which the capture device is mounted - front-facing, back-facing, or external - is used to determine whether the preview stream should be mirrored. Also, the [**EnclosureLocation.RotationAngleInDegreesClockwise**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Enumeration.EnclosureLocation.RotationAngleInDegreesClockwise) property, supported by some devices, is used to determine the orientation in which the camera is mounted on the chasses.
+このヘルパー クラスは、デバイスの [**SimpleOrientationSensor**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Sensors.SimpleOrientationSensor) を使用してデバイス シャーシの現在の向きを特定し、[**DisplayInformation**](https://msdn.microsoft.com/library/windows/apps/Windows.Graphics.Display.DisplayInformation) クラスを使用してディスプレイの現在の向きを特定します。 これらの各クラスは、現在の向きが変更されたときに発生するイベントを提供します。 キャプチャ デバイスが取り付けられている、正面、背面、または外部のパネルは、プレビュー ストリームを左右反転する必要があるかどうかを特定するために使われます。 また、一部のデバイスでサポートされる [**EnclosureLocation.RotationAngleInDegreesClockwise**](https://msdn.microsoft.com/library/windows/apps/Windows.Devices.Enumeration.EnclosureLocation.RotationAngleInDegreesClockwise) プロパティは、シャーシに取り付けられているカメラの向きを特定するために使われます。
 
-The following methods can be used to get recommended orientation values for the specified camera app tasks:
+以下のメソッドを使えば、特定のカメラ アプリのタスクに推奨される向きの値を取得することができます。
 
-* **GetUIOrientation** - Returns the suggested orientation for camera UI elements.
-* **GetCameraCaptureOrientation** - Returns the suggested orientation for encoding into image metadata.
-* **GetCameraPreviewOrientation** - Returns the suggested orientation for the preview stream to provide a natural user experience.
+* **GetUIOrientation** - カメラの UI 要素に対する向きの候補が返されます。
+* **GetCameraCaptureOrientation** - 画像のメタデータへのエンコーディングに対する向きの候補が返されます。
+* **GetCameraPreviewOrientation** - 自然なユーザー エクスペリエンスを実現するための、プレビュー ストリームの向きの候補が返されます。
 
 [!code-cs[CameraRotationHelperFull](./code/SimpleCameraPreview_Win10/cs/CameraRotationHelper.cs#SnippetCameraRotationHelperFull)]
 
 
 
-## Related topics
+## 関連トピック
 
-* [Camera](camera.md)
-* [Basic photo, video, and audio capture with MediaCapture](basic-photo-video-and-audio-capture-with-MediaCapture.md)
- 
+* [カメラ](camera.md)
+* [MediaCapture を使った基本的な写真、ビデオ、およびオーディオのキャプチャ](basic-photo-video-and-audio-capture-with-MediaCapture.md)
+ 
 
- 
+ 
 
 
+
+
+
+
+
+<!--HONumber=Aug16_HO3-->
 
 

@@ -27,7 +27,8 @@ Visual Basic と C# コンパイラはこのプロセスを簡略化します。
 
 NumberChanged イベントの次のコードは、UWP イベントの基本パターンを示しています。 この例では、イベント引数オブジェクトのコンストラクターである NumberChangedEventArgs は、変更された数値を表す単一の整数パラメーターを受け取ります。
 
-> **注:** これは、Windows ランタイム コンポーネントで宣言する通常のイベントでコンパイラが使うものと同じパターンです。
+> 
+            **注:** これは、Windows ランタイム コンポーネントで宣言する通常のイベントでコンパイラが使うものと同じパターンです。
 
  
 > [!div class="tabbedCodeSnippets"]
@@ -95,7 +96,8 @@ NumberChanged イベントの次のコードは、UWP イベントの基本パ�
 
 [!div class="tabbedCodeSnippets"] static (Visual Basic では Shared) GetOrCreateEventRegistrationTokenTable メソッドは、イベントの EventRegistrationTokenTable&lt;T&gt; オブジェクトのインスタンスを限定的に作成します。 トークン テーブルのインスタンスを保持するクラス レベルのフィールドを、このメソッドに渡します。 フィールドが空の場合、メソッドはテーブルを作成し、テーブルへの参照をフィールドに格納し、テーブルへの参照を返します。
 
-> フィールドにトークン テーブルへの参照が既に含まれている場合、このメソッドはその参照を返します。 **重要:** スレッド セーフを確保するには、イベントの EventRegistrationTokenTable&lt;T&gt; のインスタンスを保持するフィールドは、クラス レベルのフィールドである必要があります。 クラス レベルのフィールドである場合、GetOrCreateEventRegistrationTokenTable メソッドでは、複数のスレッドがトークン テーブルの作成を試みるときに、すべてのスレッドでテーブルの同じインスタンスが取得されます。
+> フィールドにトークン テーブルへの参照が既に含まれている場合、このメソッドはその参照を返します。 
+            **重要:** スレッド セーフを確保するには、イベントの EventRegistrationTokenTable&lt;T&gt; のインスタンスを保持するフィールドは、クラス レベルのフィールドである必要があります。 クラス レベルのフィールドである場合、GetOrCreateEventRegistrationTokenTable メソッドでは、複数のスレッドがトークン テーブルの作成を試みるときに、すべてのスレッドでテーブルの同じインスタンスが取得されます。
 
 特定のイベントでは、GetOrCreateEventRegistrationTokenTable メソッドのすべての呼び出しは、同じクラス レベルのフィールドを使う必要があります。
 
@@ -106,9 +108,11 @@ remove アクセサーや [RaiseEvent](https://msdn.microsoft.com/library/fwd3bw
 
     >[RemoveEventHandler(EventRegistrationToken)](https://msdn.microsoft.com/library/hh138425.aspx) メソッド オーバーロードは、テーブルと呼び出しリストからデリゲートを削除します。
 
--   **注:** AddEventHandler と RemoveEventHandler(EventRegistrationToken) メソッドは、スレッド セーフを確保するためにテーブルをロックします。 [InvocationList](https://msdn.microsoft.com/library/hh138465.aspx) プロパティは、イベントを処理するために現在登録されているすべてのイベント ハンドラーを含むデリゲートを返します。
+-   
+            **注:** AddEventHandler と RemoveEventHandler(EventRegistrationToken) メソッドは、スレッド セーフを確保するためにテーブルをロックします。  [InvocationList](https://msdn.microsoft.com/library/hh138465.aspx) プロパティは、イベントを処理するために現在登録されているすべてのイベント ハンドラーを含むデリゲートを返します。
 
-    >このデリゲートを使ってイベントを発生させるか、Delegate クラスのメソッドを使ってハンドラーを個別に呼び出します。 **注:** この記事の前半で説明した例のパターンに従い、デリゲートを呼び出す前に一時変数にコピーすることをお勧めします。 これにより、あるスレッドが最後のハンドラーを削除して、別のスレッドがデリゲートを呼び出す直前にデリゲートが null となる競合状態を回避できます。
+    >このデリゲートを使ってイベントを発生させるか、Delegate クラスのメソッドを使ってハンドラーを個別に呼び出します。 
+            **注:** この記事の前半で説明した例のパターンに従い、デリゲートを呼び出す前に一時変数にコピーすることをお勧めします。 これにより、あるスレッドが最後のハンドラーを削除して、別のスレッドがデリゲートを呼び出す直前にデリゲートが null となる競合状態を回避できます。
 
 デリゲートは変更できないため、コピーは引き続き有効です。 必要に応じて、独自のコードをアクセサーに配置します。
 

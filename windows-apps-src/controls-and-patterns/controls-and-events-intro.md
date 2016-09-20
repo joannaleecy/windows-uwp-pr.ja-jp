@@ -5,7 +5,6 @@ title: "コントロールの追加とイベントの処理"
 ms.assetid: 64740BF2-CAA1-419E-85D1-42EE7E15F1A5
 label: Intro to controls and events
 template: detail.hbs
-translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
 ms.openlocfilehash: 709771424daba7c034dc6f19d6998469705a24da
 

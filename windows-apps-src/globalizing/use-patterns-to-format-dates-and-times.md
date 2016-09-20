@@ -7,7 +7,7 @@ label: Use patterns to format dates and times
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
-ms.openlocfilehash: 17cd1619a13adced643b4c8983dbf874bebaa740
+ms.openlocfilehash: f49af17ada36ceb2e5898d80047c2d616b1d0c6e
 
 ---
 
@@ -23,15 +23,12 @@ ms.openlocfilehash: 17cd1619a13adced643b4c8983dbf874bebaa740
 -   [**DateTimeFormatter**](https://msdn.microsoft.com/library/windows/apps/br206828)
 -   [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576)
 
-[
-            **Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859) API でカスタム パターンを使うと、日付と時刻を必要な形式で表示することができます。
+[**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859) API でカスタム パターンを使うと、日付と時刻を必要な形式で表示することができます。
 
 ## <span id="Introduction"></span><span id="introduction"></span><span id="INTRODUCTION"></span>概要
 
 
-[
-              **Windows.Globalization.DateTimeFormatting**
-            ](https://msdn.microsoft.com/library/windows/apps/br206859) では、世界中の言語と地域に対応するように、日付と時刻をさまざまな方法で適切に書式設定できます。 年、月、日などの標準的な形式を使うことも、"longdate" や "month day" などの標準の文字列テンプレートを使うこともできます。
+[**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859) では、世界中の言語と地域に対応するように、日付と時刻をさまざまな方法で適切に書式設定できます。 年、月、日などの標準的な形式を使うことも、"longdate" や "month day" などの標準の文字列テンプレートを使うこともできます。
 
 ただし、表示する [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576) 文字列の構成要素の順序や形式をより細かく制御する場合は、"パターン" と呼ばれる文字列テンプレート パラメーター用の特別な構文を使うことができます。 パターン構文を使うと、任意に選んだカスタム形式で表示するために、**DateTime** オブジェクトの個々の構成要素を取得できます (たとえば、月の名称のみを取得したり、年の値のみを取得したりすることができます)。 さらに、パターンをローカライズして、他の言語や地域に対応させることができます。
 
@@ -195,6 +192,6 @@ var mydateplustimefmt = new dtf.DateTimeFormatter(mydateplustime);
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

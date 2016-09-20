@@ -3,7 +3,6 @@ author: drewbatgit
 ms.assetid: CC0D6E9B-128D-488B-912F-318F5EE2B8D3
 description: "この記事では、CameraCaptureUI クラスを使用して、Windows に組み込まれているカメラ UI で写真またはビデオをキャプチャする方法を説明します。"
 title: "CameraCaptureUI を使った写真とビデオのキャプチャ"
-translationtype: Human Translation
 ms.sourcegitcommit: 72abc006de1925c3c06ecd1b78665e72e2ffb816
 ms.openlocfilehash: a98edd0b4c52271fad4255af5ab0a005b0c66d68
 
@@ -26,7 +25,8 @@ ms.openlocfilehash: a98edd0b4c52271fad4255af5ab0a005b0c66d68
 
 写真をキャプチャするには、新しい [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030) オブジェクトを作成します。 オブジェクトの [**PhotoSettings**](https://msdn.microsoft.com/library/windows/apps/br241058) プロパティを使うと、写真の画像形式など、返される写真のプロパティを指定することができます。 既定では、ユーザーはカメラ キャプチャ UI を使うことにより、返される前に写真のトリミングを行うことができます。ただし、この機能は [**AllowCropping**](https://msdn.microsoft.com/library/windows/apps/br241042) プロパティを使って無効にすることもできます。 この例では、[**CroppedSizeInPixels**](https://msdn.microsoft.com/library/windows/apps/br241044) を設定して、返される画像のサイズが 200 x 200 ピクセルになるよう要求しています。
 
-**注:** モバイル デバイス ファミリのデバイスでは、CameraCaptureUI での画像のトリミングはサポートされていません。 アプリがこれらのデバイスで実行されている場合、[**AllowCropping**](https://msdn.microsoft.com/library/windows/apps/br241042) プロパティの値は無視されます。
+
+            **注:** モバイル デバイス ファミリのデバイスでは、CameraCaptureUI での画像のトリミングはサポートされていません。 アプリがこれらのデバイスで実行されている場合、[**AllowCropping**](https://msdn.microsoft.com/library/windows/apps/br241042) プロパティの値は無視されます。
 
 写真をキャプチャすることを指定するには、[**CaptureFileAsync**](https://msdn.microsoft.com/library/windows/apps/br241057) を呼び出して、[**CameraCaptureUIMode.Photo**](https://msdn.microsoft.com/library/windows/apps/br241040) を指定します。 キャプチャに成功すると、このメソッドは、画像が格納された [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) インスタンスを返します。 ユーザーがキャプチャを取り消した場合、返されるオブジェクトは null になります。
 
@@ -68,14 +68,12 @@ XAML ページでソフトウェア ビットマップを使用するには、[*
 
 [!code-xml[MediaElement](./code/CameraCaptureUIWin10/cs/MainPage.xaml#SnippetMediaElement)]
 
-[
-            **Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) 名前空間と [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962) 名前空間をプロジェクトに追加します。
+[**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) 名前空間と [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962) 名前空間をプロジェクトに追加します。
 
 
 [!code-cs[UsingMediaComposition](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetUsingMediaComposition)]
 
-[
-            **MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) オブジェクトおよび [**MediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn282716) のメンバー変数を宣言します。これらは、ページの有効期間の間、スコープ内で存続します。
+[**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) オブジェクトおよび [**MediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn282716) のメンバー変数を宣言します。これらは、ページの有効期間の間、スコープ内で存続します。
 
 [!code-cs[DeclareMediaComposition](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetDeclareMediaComposition)]
 

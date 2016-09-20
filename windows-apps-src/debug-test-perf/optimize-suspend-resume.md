@@ -3,7 +3,6 @@ author: mcleblanc
 ms.assetid: E1943DCE-833F-48AE-8402-CD48765B24FC
 title: "中断/再開の最適化"
 description: "プロセス継続時間システムの使用を合理化することで、中断または終了の後効率的に再開されるユニバーサル Windows プラットフォーム (UWP) アプリを作成します。"
-translationtype: Human Translation
 ms.sourcegitcommit: e0f04c4242891b25db460d4852ab8cc070d82260
 ms.openlocfilehash: 9fee4ab9c55c1243c04c2ed5f007412751528037
 
@@ -60,7 +59,8 @@ UWP のプロセス継続時間システムは、さまざまな理由でアプ�
 
 パフォーマンスの観点から、[**XmlSerializer**](https://msdn.microsoft.com/library/windows/apps/xaml/system.xml.serialization.xmlserializer.aspx) クラスを使うことをお勧めします。 **XmlSerializer** は、シリアル化と逆シリアル化の処理時間が最も短く、メモリ使用量も低く抑えられます。 **XmlSerializer** と .NET Framework の間には依存関係が少ないため、他のシリアル化技術と比較して、**XmlSerializer** を使うためにアプリに読み込む必要があるモジュールが少なくて済みます。
 
-**XmlSerializer** と比べて、[
+
+            **XmlSerializer** と比べて、[
               **DataContractSerializer**
             ](https://msdn.microsoft.com/library/windows/apps/xaml/system.runtime.serialization.datacontractserializer.aspx) は、カスタム クラスを比較的容易にシリアル化できる反面、パフォーマンスへの影響は大きくなります。 より高いパフォーマンスが必要な場合は、切り替えを検討してください。 通常、複数のシリアライザーを読み込むことは避け、できれば **XmlSerializer** を使うようにしてください (他のシリアライザーの機能を必要とする場合を除く)。
 

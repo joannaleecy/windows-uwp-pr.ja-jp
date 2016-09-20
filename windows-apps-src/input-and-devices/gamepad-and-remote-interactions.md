@@ -8,7 +8,7 @@ template: detail.hbs
 isNew: true
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 463da46dc1f4e2ed5125a26b058075e7fe1faafd
+ms.openlocfilehash: c353d649529eef8361c982ff6451371a4cebc4eb
 
 ---
 
@@ -33,6 +33,6 @@ UWP アプリでのゲームパッドやリモコンを使ったユーザー エ
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

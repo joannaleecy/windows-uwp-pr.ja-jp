@@ -3,7 +3,6 @@ author: mcleanbyron
 ms.assetid: 9165f709-71d7-42cf-9b30-3190fe029fb4
 description: "Microsoft Advertising ライブラリの AdControl クラスと広告仲介ライブラリの AdMediatorControl クラスの違いについて説明します。"
 title: "AdMediatorControl と AdControl の違い"
-translationtype: Human Translation
 ms.sourcegitcommit: 8a5b02dbc40f3f0cd9be32aa7d5184e60a3b2707
 ms.openlocfilehash: 291e1c4d707e8987d29ae5840248918543d7d12a
 
@@ -21,7 +20,8 @@ Microsoft からのバナー広告またはスポット広告ビデオを表示�
 
 Microsoft Advertising ライブラリと広告仲介ライブラリは、両方とも Microsoft Store Engagement and Monetization SDK に含まれています。 この SDK のインストールと、この SDK に含まれているさまざまな Microsoft Advertising ライブラリについて詳しくは、「[Microsoft Advertising ライブラリのインストール](install-the-microsoft-advertising-libraries.md)」をご覧ください。
 
->**注**  スポット広告を表示するには、**InterstitialAd** コントロールを使います。 **AdControl** と **AdMediatorControl** は、スポット広告を表示できません。 詳しくは、「[スポット広告](interstitial-ads.md)」をご覧ください。
+>
+            **注:** スポット広告を表示するには、**InterstitialAd** コントロールを使います。 **AdControl** と **AdMediatorControl** は、スポット広告を表示できません。 詳しくは、「[スポット広告](interstitial-ads.md)」をご覧ください。
 
  
 

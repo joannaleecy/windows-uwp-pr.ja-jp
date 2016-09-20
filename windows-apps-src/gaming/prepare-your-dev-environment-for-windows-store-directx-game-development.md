@@ -3,7 +3,6 @@ author: mtoepke
 title: "ゲームのプロジェクト テンプレートとツール"
 description: "ユニバーサル Windows プラットフォーム (UWP) 用の DirectX ゲームのプログラミングを開始するために必要な手順について説明します。"
 ms.assetid: d5afd5d3-ad01-0f16-3ddf-2c4eb86b68a7
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: b7b4cba0c88a914c3d0da4cf79adb51bcad2307f
 
@@ -22,7 +21,8 @@ ms.openlocfilehash: b7b4cba0c88a914c3d0da4cf79adb51bcad2307f
 ## Visual Studio の入手
 
 
-[Microsoft Visual Studio 2015 をダウンロードしてインストールします](https://www.visualstudio.com/vs-2015-product-editions)。
+
+            [Microsoft Visual Studio 2015 をダウンロードしてインストールします](https://www.visualstudio.com/vs-2015-product-editions)。
 
 <table>
 <colgroup>

@@ -36,7 +36,8 @@ ms.openlocfilehash: 3fc1e3efa742ff8ab24f78856872fe322703f152
 
     -   *FreshnessTime* が 15 分に設定され、*OneShot* が false の場合、タスクは登録された時点から 0 ～ 15 分の間に実行され、その後 15 分ごとに実行されます。
 
-    **注**  *FreshnessTime* が 15 分未満に設定された場合、バックグラウンド タスクの登録が試行されたときに例外がスローされます。
+    
+            **注**  *FreshnessTime* が 15 分未満に設定された場合、バックグラウンド タスクの登録が試行されたときに例外がスローされます。
 
      
 
@@ -81,8 +82,7 @@ ms.openlocfilehash: 3fc1e3efa742ff8ab24f78856872fe322703f152
 ## RequestAccessAsync() の呼び出し
 
 
--   [
-            **TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) バックグランド タスクを登録しようとする前に、[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494) を呼び出します。 [!div class="tabbedCodeSnippets"]
+-   [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) バックグランド タスクを登録しようとする前に、[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700494) を呼び出します。 [!div class="tabbedCodeSnippets"]
 
     バックグラウンド タスクの登録
 
@@ -105,16 +105,19 @@ ms.openlocfilehash: 3fc1e3efa742ff8ab24f78856872fe322703f152
 
 ## [!div class="tabbedCodeSnippets"]
 
-> **注**  バックグラウンド タスクの登録パラメーターは登録時に検証されます。 いずれかの登録パラメーターが有効でない場合は、エラーが返されます。
+> 
+            **注**  バックグラウンド タスクの登録パラメーターは登録時に検証されます。 いずれかの登録パラメーターが有効でない場合は、エラーが返されます。
 
 > バックグラウンド タスクの登録が失敗するシナリオをアプリが適切に処理するようにします。タスクを登録しようとした後で、有効な登録オブジェクトを持っていることを前提として動作するアプリは、クラッシュする場合があります。 注釈
 
 
-## **注**  Windows 10 以降、ユーザーはバック グラウンド タスクを利用するために、アプリをロック画面に追加する必要はなくなりました。
+## 
+            **注**  Windows 10 以降、ユーザーはバック グラウンド タスクを利用するために、アプリをロック画面に追加する必要はなくなりました。
 
 
 * [このようなバックグラウンド タスクのトリガーについては、「[バックグラウンド タスクによるアプリのサポート](support-your-app-with-background-tasks.md)」をご覧ください。](create-and-register-a-background-task.md)
-* [**注**  この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。](declare-background-tasks-in-the-application-manifest.md)
+* [
+            **注:** この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。](declare-background-tasks-in-the-application-manifest.md)
 * [Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。](handle-a-cancelled-background-task.md)
 * [関連トピック](monitor-background-task-progress-and-completion.md)
 * [バックグラウンド タスクの作成と登録](register-a-background-task.md)

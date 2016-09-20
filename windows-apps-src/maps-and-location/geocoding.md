@@ -5,7 +5,7 @@ description: "住所から地理的な位置への変換 (ジオコーディン�
 ms.assetid: B912BE80-3E1D-43BB-918F-7A43327597D2
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: caf3ad6fecd6ed90c65f85477643fb42ab4787d3
+ms.openlocfilehash: d42708a82f99e345183b6cbcb87cfdd136b10e52
 
 ---
 
@@ -23,12 +23,9 @@ ms.openlocfilehash: caf3ad6fecd6ed90c65f85477643fb42ab4787d3
 
 ジオコーディングや逆ジオコーディング用のクラスがどのように関連するかを次に示します。
 
--   [
-            **MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) クラスには、ジオコーディング ([**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925)) と逆ジオコーディング ([**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928)) を実行するメソッドがあります。
+-   [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) クラスには、ジオコーディング ([**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925)) と逆ジオコーディング ([**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928)) を実行するメソッドがあります。
 -   これらのメソッドは、[**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) を返します。
--   [
-            **MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) には、[**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) オブジェクトのコレクションが含まれています。 [
-            **MapLocationFinderResult** の **Locations**](https://msdn.microsoft.com/library/windows/apps/dn627552) プロパティを通じてこのコレクションにアクセスします。
+-   [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) には、[**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) オブジェクトのコレクションが含まれています。 [**MapLocationFinderResult** の **Locations**](https://msdn.microsoft.com/library/windows/apps/dn627552) プロパティを通じてこのコレクションにアクセスします。
 -   各 [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) オブジェクトには [**MapAddress**](https://msdn.microsoft.com/library/windows/apps/dn627533) オブジェクトが含まれています。 各 [**MapLocation** の **Address**](https://msdn.microsoft.com/library/windows/apps/dn636929) プロパティを通じてこのオブジェクトにアクセスします。
 
 **重要**  マップ サービスを使用する前に、マップ認証キーを指定する必要があります。 詳しくは、「[マップ認証キーの要求](authentication-key.md)」をご覧ください。
@@ -40,12 +37,9 @@ ms.openlocfilehash: caf3ad6fecd6ed90c65f85477643fb42ab4787d3
 
 住所や地名を地理的な位置に変換する (ジオコーディング) には、次に示している手順を実行します。
 
-1.  [
-            **MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) クラスの [**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925) メソッドのいずれかのオーバーロードを呼び出します。
-2.  [
-            **FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925) メソッドは、一致する [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) オブジェクトのコレクションを含む [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) オブジェクトを返します。
-3.  [
-            **MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) の [**Locations**](https://msdn.microsoft.com/library/windows/apps/dn627552) プロパティを通じてこのコレクションにアクセスします。
+1.  [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) クラスの [**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925) メソッドのいずれかのオーバーロードを呼び出します。
+2.  [**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925) メソッドは、一致する [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) オブジェクトのコレクションを含む [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) オブジェクトを返します。
+3.  [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) の [**Locations**](https://msdn.microsoft.com/library/windows/apps/dn627552) プロパティを通じてこのコレクションにアクセスします。
 
 ```csharp
 using Windows.Services.Maps;
@@ -92,12 +86,9 @@ result = (47.6406099647284,-122.129339994863)
 
 地理的な位置を住所に変換する (逆ジオコーディング) には、次に示している手順を実行します。
 
-1.  [
-            **MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) クラスの [**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928) メソッドを呼び出します。
-2.  [
-            **FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928) メソッドは、一致する [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) オブジェクトのコレクションを含む [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) オブジェクトを返します。
-3.  [
-            **MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) の [**Locations**](https://msdn.microsoft.com/library/windows/apps/dn627552) プロパティを通じてこのコレクションにアクセスします。
+1.  [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) クラスの [**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928) メソッドを呼び出します。
+2.  [**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928) メソッドは、一致する [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) オブジェクトのコレクションを含む [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) オブジェクトを返します。
+3.  [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) の [**Locations**](https://msdn.microsoft.com/library/windows/apps/dn627552) プロパティを通じてこのコレクションにアクセスします。
 4.  各 [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) の [**Address**](https://msdn.microsoft.com/library/windows/apps/dn636929) プロパティを通じて [**MapAddress**](https://msdn.microsoft.com/library/windows/apps/dn627533) オブジェクトにアクセスします。
 
 ```csharp
@@ -147,6 +138,6 @@ town = Redmond
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

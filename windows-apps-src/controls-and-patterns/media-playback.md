@@ -6,7 +6,6 @@ ms.assetid: 9AABB5DE-1D81-4791-AB47-7F058F64C491
 dev.assetid: AF2F2008-9B53-430C-BBC3-8888F631B0B0
 label: Media player
 template: detail.hbs
-translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
 ms.openlocfilehash: 2dbc4e7fa227de3f37b8a337eded0004496dbe36
 
@@ -69,13 +68,13 @@ MediaElement には、再生、停止、一時停止、音量、ミュート、�
 
 **システム メディア トランスポート コントロール**
 
-[
-            **MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) をシステム メディア トランスポート コントロールに統合することもできます。 システム トランスポート コントロールは、キーボードのメディア ボタンなどのハードウェア メディア キーを押すとポップアップするコントロールです。 ユーザーがキーボードの一時停止キーを押し、アプリが [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) をサポートしている場合、アプリは通知を受け取り、ユーザーは適切なアクションを実行できます。 詳しくは、「[システム メディア トランスポート コントロール](https://msdn.microsoft.com/library/windows/apps/mt228338)」をご覧ください。
+[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) をシステム メディア トランスポート コントロールに統合することもできます。 システム トランスポート コントロールは、キーボードのメディア ボタンなどのハードウェア メディア キーを押すとポップアップするコントロールです。 ユーザーがキーボードの一時停止キーを押し、アプリが [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) をサポートしている場合、アプリは通知を受け取り、ユーザーは適切なアクションを実行できます。 詳しくは、「[システム メディア トランスポート コントロール](https://msdn.microsoft.com/library/windows/apps/mt228338)」をご覧ください。
 
 ### メディア ソースを設定する
 ネットワーク上のファイルまたはアプリに埋め込まれたファイルを再生する場合は、[**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) プロパティをファイルのパスに設定します。
 
-**ヒント**  インターネットからファイルを開くには、アプリのマニフェスト (Package.appxmanifest) で **Internet (Client)** 機能を宣言する必要があります。 機能の宣言について詳しくは、「[アプリ機能の宣言](https://msdn.microsoft.com/library/windows/apps/mt270968)」をご覧ください。
+
+            **ヒント**  インターネットからファイルを開くには、アプリのマニフェスト (Package.appxmanifest) で **Internet (Client)** 機能を宣言する必要があります。 機能の宣言について詳しくは、「[アプリ機能の宣言](https://msdn.microsoft.com/library/windows/apps/mt270968)」をご覧ください。
 
  
 
@@ -155,15 +154,11 @@ private void LoadEmbeddedAppFile()
 
 1.  ユーザーがメディア ファイルを選べるようにするには、[**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) を呼び出します。
 
-    [
-            **FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) クラスを使って、メディア ファイルを選びます。 **FileOpenPicker** が表示するファイルの種類を指定する [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850) を設定します。 [
-            **PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) を呼び出して、ファイル ピッカーを起動し、ファイルを取得します。
+    [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) クラスを使って、メディア ファイルを選びます。 **FileOpenPicker** が表示するファイルの種類を指定する [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850) を設定します。 [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) を呼び出して、ファイル ピッカーを起動し、ファイルを取得します。
 
-2.  [
-            **SetSource**](https://msdn.microsoft.com/library/windows/apps/br244338) を呼び出して、選んだメディア ファイルを [**MediaElement.Source**](https://msdn.microsoft.com/library/windows/apps/br227419) として設定します。
+2.  [**SetSource**](https://msdn.microsoft.com/library/windows/apps/br244338) を呼び出して、選んだメディア ファイルを [**MediaElement.Source**](https://msdn.microsoft.com/library/windows/apps/br227419) として設定します。
 
-    [
-            **MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) の [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) を [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) から返された [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) に設定するには、ストリームを開く必要があります。 **StorageFile** の [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/dn889851) メソッドを呼び出します。このメソッドは、[**MediaElement.SetSource**](https://msdn.microsoft.com/library/windows/apps/br244338) メソッドに渡すことができるストリームを返します。 その後、**MediaElement** で [**Play**](https://msdn.microsoft.com/library/windows/apps/br227402) を呼び出して、メディアを開始します。
+    [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) の [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) を [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) から返された [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) に設定するには、ストリームを開く必要があります。 **StorageFile** の [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/dn889851) メソッドを呼び出します。このメソッドは、[**MediaElement.SetSource**](https://msdn.microsoft.com/library/windows/apps/br244338) メソッドに渡すことができるストリームを返します。 その後、**MediaElement** で [**Play**](https://msdn.microsoft.com/library/windows/apps/br227402) を呼び出して、メディアを開始します。
 
 この例は、[**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) を使ってファイルを選び、そのファイルを [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) の [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) に設定する方法を示しています。
 
@@ -202,24 +197,21 @@ async private System.Threading.Tasks.Task SetLocalMedia()
 ```
 
 ### ポスター ソースを設定する
-[
-            **PosterSource**](https://msdn.microsoft.com/library/windows/apps/br227409) プロパティを使って、メディアの読み込みが終わるまで [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) に視覚的な表示を提供することができます。 **PosterSource** は、スクリーン ショットや映画のポスターなど、メディアの代わりに表示される画像です。 **PosterSource** は、次のような状況で表示されます。
+[**PosterSource**](https://msdn.microsoft.com/library/windows/apps/br227409) プロパティを使って、メディアの読み込みが終わるまで [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) に視覚的な表示を提供することができます。 **PosterSource** は、スクリーン ショットや映画のポスターなど、メディアの代わりに表示される画像です。 **PosterSource** は、次のような状況で表示されます。
 
 -   有効なソースが設定されていないとき。 たとえば、[**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) が設定されていないとき、**Source** が **Null** に設定されているとき、またはソースが無効であるとき ([**MediaFailed**](https://msdn.microsoft.com/library/windows/apps/br227393) イベントが発生したときと同様) です。
 -   メディアの読み込み中。 たとえば、有効なソースが設定されていても、[**MediaOpened**](https://msdn.microsoft.com/library/windows/apps/br227394) イベントがまだ発生していないときです。
 -   別のデバイスにメディアをストリーミングしているとき。
 -   メディアがオーディオのみであるとき。
 
-[
-            **Source**](https://msdn.microsoft.com/library/windows/apps/br227419) がアルバムのトラックに設定され、[**PosterSource**](https://msdn.microsoft.com/library/windows/apps/br227409) がアルバムの表紙の画像を設定された [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) を以下に示します。
+[**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) がアルバムのトラックに設定され、[**PosterSource**](https://msdn.microsoft.com/library/windows/apps/br227409) がアルバムの表紙の画像を設定された [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) を以下に示します。
 
 ```xaml
 <MediaElement Source="Media/Track1.mp4" PosterSource="Media/AlbumCover.png"/> 
 ```
 
 ### デバイスの画面をアクティブに維持する
-通常、ユーザーがいないときはバッテリーを節約するために画面が暗くなり、最終的には電源がオフになりますが、ビデオ アプリでは、ユーザーがビデオを見られるように画面をオンのままにしておく必要があります。 アプリで全画面表示でビデオを再生しているときなど、無操作状態が検出されてもディスプレイの電源が切れないようにするためには、[**DisplayRequest.RequestActive**](https://msdn.microsoft.com/library/windows/apps/br241818) を呼び出します。 [
-            **DisplayRequest**](https://msdn.microsoft.com/library/windows/apps/br241816) クラスを使うと、ユーザーがビデオを見られるように画面をオンのままにするよう Windows に指示することができます。
+通常、ユーザーがいないときはバッテリーを節約するために画面が暗くなり、最終的には電源がオフになりますが、ビデオ アプリでは、ユーザーがビデオを見られるように画面をオンのままにしておく必要があります。 アプリで全画面表示でビデオを再生しているときなど、無操作状態が検出されてもディスプレイの電源が切れないようにするためには、[**DisplayRequest.RequestActive**](https://msdn.microsoft.com/library/windows/apps/br241818) を呼び出します。 [**DisplayRequest**](https://msdn.microsoft.com/library/windows/apps/br241816) クラスを使うと、ユーザーがビデオを見られるように画面をオンのままにするよう Windows に指示することができます。
 
 消費電力とバッテリーの駆動時間を節約するため、不要になったら、[**DisplayRequest.RequestRelease**](https://msdn.microsoft.com/library/windows/apps/br241819) を呼び出して表示要求を解放してください。 Windows は、アプリが画面から消されると自動的にアプリのアクティブな表示要求を非アクティブ化し、アプリがフォアグラウンドに戻ると再びアクティブ化します。
 
@@ -231,15 +223,13 @@ async private System.Threading.Tasks.Task SetLocalMedia()
 
 **画面をアクティブに維持するには**
 
-1.  [
-            **DisplayRequest**](https://msdn.microsoft.com/library/windows/apps/br241816) グローバル変数を作成します。 null に初期化します。
+1.  [**DisplayRequest**](https://msdn.microsoft.com/library/windows/apps/br241816) グローバル変数を作成します。 null に初期化します。
 ```csharp
 // Create this variable at a global scope. Set it to null.
 private DisplayRequest appDisplayRequest = null;
 ```
 
-2.  [
-            **RequestActive**](https://msdn.microsoft.com/library/windows/apps/br241818) を呼び出して、アプリで表示をオンのままにする必要があることを Windows に通知します。
+2.  [**RequestActive**](https://msdn.microsoft.com/library/windows/apps/br241818) を呼び出して、アプリで表示をオンのままにする必要があることを Windows に通知します。
 
 3.  ビデオの再生が再生エラーによって停止、一時停止、中断したときには必ず、[**RequestRelease**](https://msdn.microsoft.com/library/windows/apps/br241819) を呼び出して表示要求を解放します。 アプリにアクティブな表示要求がなくなった場合、Windows は、デバイスが使われていないときには表示を暗くし、最終的には電源をオフにしてバッテリーを節約します。
 
@@ -278,34 +268,31 @@ private void MediaElement_CurrentStateChanged(object sender, RoutedEventArgs e)
     ```
 
 ### プログラムでメディア プレーヤーを制御する
-[
+
+            [
               **MediaElement**
             ](https://msdn.microsoft.com/library/windows/apps/br242926) には、オーディオやビデオの再生を制御するプロパティ、メソッド、イベントが多数用意されています。 プロパティ、メソッド、イベントの完全な一覧については、[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) のリファレンス ページをご覧ください。
     
 
 ### さまざまな言語のオーディオ トラックを選ぶ
 
-[
-            **AudioStreamIndex**](https://msdn.microsoft.com/library/windows/apps/br227358) プロパティと [**GetAudioStreamLanguage**](https://msdn.microsoft.com/library/windows/apps/br227384) メソッドを使って、ビデオのオーディオをさまざまな言語のトラックに変更します。 ビデオには、映画についての監督コメントなど、同じ言語による複数のオーディオ トラックを含めることもできます。 この例では、具体的にさまざまな言語を切り替える方法を示していますが、このコードを変更して任意のオーディオ トラックに切り替えることができます。
+[**AudioStreamIndex**](https://msdn.microsoft.com/library/windows/apps/br227358) プロパティと [**GetAudioStreamLanguage**](https://msdn.microsoft.com/library/windows/apps/br227384) メソッドを使って、ビデオのオーディオをさまざまな言語のトラックに変更します。 ビデオには、映画についての監督コメントなど、同じ言語による複数のオーディオ トラックを含めることもできます。 この例では、具体的にさまざまな言語を切り替える方法を示していますが、このコードを変更して任意のオーディオ トラックに切り替えることができます。
 
 **さまざまな言語のオーディオ トラックを選ぶには**
 
 1.  オーディオ トラックを取得します。
 
-    特定の言語のトラックを検索するには、ビデオの各オーディオ トラックを反復処理することで開始します。 [
-            **AudioStreamCount**](https://msdn.microsoft.com/library/windows/apps/br227356) を **for** ループの最大値として使います。
+    特定の言語のトラックを検索するには、ビデオの各オーディオ トラックを反復処理することで開始します。 [**AudioStreamCount**](https://msdn.microsoft.com/library/windows/apps/br227356) を **for** ループの最大値として使います。
 
 2.  オーディオ トラックの言語を取得します。
 
-    [
-            **GetAudioStreamLanguage**](https://msdn.microsoft.com/library/windows/apps/br227384) メソッドを使ってトラックの言語を取得します。 トラックの言語は、英語の **"en"**、日本語の **"ja"** などの[言語コード](http://msdn.microsoft.com/library/ms533052(vs.85).aspx)で識別されます。
+    [**GetAudioStreamLanguage**](https://msdn.microsoft.com/library/windows/apps/br227384) メソッドを使ってトラックの言語を取得します。 トラックの言語は、英語の **"en"**、日本語の **"ja"** などの[言語コード](http://msdn.microsoft.com/library/ms533052(vs.85).aspx)で識別されます。
 
 3.  アクティブなオーディオ トラックを設定します。
 
     目的の言語のトラックが見つかったら、[**AudioStreamIndex**](https://msdn.microsoft.com/library/windows/apps/br227358) をそのトラックのインデックスに設定します。 **AudioStreamIndex** を **null** に設定すると、コンテンツで定義された既定のオーディオ トラックが選ばれます。
 
-指定した言語にオーディオ トラックを設定するコードを次に示します。 [
-            **MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) オブジェクトのオーディオ トラックを反復処理し、[**GetAudioStreamLanguage**](https://msdn.microsoft.com/library/windows/apps/br227384) を使って各トラックの言語を取得しています。 目的の言語のトラックが存在する場合は、[**AudioStreamIndex**](https://msdn.microsoft.com/library/windows/apps/br227358) がそのトラックのインデックスに設定されます。
+指定した言語にオーディオ トラックを設定するコードを次に示します。 [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) オブジェクトのオーディオ トラックを反復処理し、[**GetAudioStreamLanguage**](https://msdn.microsoft.com/library/windows/apps/br227384) を使って各トラックの言語を取得しています。 目的の言語のトラックが存在する場合は、[**AudioStreamIndex**](https://msdn.microsoft.com/library/windows/apps/br227358) がそのトラックのインデックスに設定されます。
 
 ```csharp
 /// <summary>
@@ -332,7 +319,8 @@ private bool SetAudioLanguage(string lcid, MediaElement media)
 
 ### フル ウィンドウのビデオ レンダリングを有効にする
 
-フル ウィンドウのレンダリングを有効または無効にするには、[**IsFullWindow**](https://msdn.microsoft.com/library/windows/apps/dn298980) プロパティを設定します。 プログラムを使ってアプリにフル ウィンドウのレンダリングを設定する場合、手動で行う代わりに **IsFullWindow** を常に使う必要があります。 **IsFullWindow** により、システム レベルの最適化が実行され、パフォーマンスとバッテリーの寿命が向上します。 フル ウィンドウのレンダリングが正しく設定されていない場合、これらの最適化が有効になっていない可能性があります。
+フル ウィンドウのレンダリングを有効または無効にするには、[**IsFullWindow**](https://msdn.microsoft.com/library/windows/apps/dn298980) プロパティを設定します。 プログラムを使ってアプリにフル ウィンドウのレンダリングを設定する場合、手動で行う代わりに **IsFullWindow** を常に使う必要があります。 
+            **IsFullWindow** により、システム レベルの最適化が実行され、パフォーマンスとバッテリーの寿命が向上します。 フル ウィンドウのレンダリングが正しく設定されていない場合、これらの最適化が有効になっていない可能性があります。
 
 フル ウィンドウのレンダリングを切り替える [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/dn279244) を作成するコードを次に示します。
 
@@ -351,19 +339,22 @@ private void FullWindow_Click(object sender, object e)
 
 ### ビデオのサイズを変更し、拡大する
 
-[
-            **Stretch**](https://msdn.microsoft.com/library/windows/apps/br227422) プロパティを使って、コンテナー内でのビデオ コンテンツのサイズを変更します。 この要素は、[**Stretch**](https://msdn.microsoft.com/library/windows/apps/br242968) の値に応じてビデオのサイズ変更と拡大を行います。 **Stretch** 状態は、多くのテレビ セットの画像サイズの設定に似ています。 ボタンにフックしてユーザーが好みの設定を選ぶことができるようにします。
+[**Stretch**](https://msdn.microsoft.com/library/windows/apps/br227422) プロパティを使って、コンテナー内でのビデオ コンテンツのサイズを変更します。 この要素は、[**Stretch**](https://msdn.microsoft.com/library/windows/apps/br242968) の値に応じてビデオのサイズ変更と拡大を行います。 **Stretch** 状態は、多くのテレビ セットの画像サイズの設定に似ています。 ボタンにフックしてユーザーが好みの設定を選ぶことができるようにします。
 
--   [
+-   
+            [
               **None**
             ](https://msdn.microsoft.com/library/windows/apps/br242968) は、元のサイズでコンテンツのネイティブの解像度を表示します。
--   [
+-   
+            [
               **Uniform**
             ](https://msdn.microsoft.com/library/windows/apps/br242968) は、縦横比、画像コンテンツを維持したままスペースを最大限に使用します。 これにより、ビデオの端に水平方向または垂直方向の黒いバーが表示されることがあります。 これはワイドスクリーン モードに似ています。
--   [
+-   
+            [
               **UniformToFill**
             ](https://msdn.microsoft.com/library/windows/apps/br242968) は、縦横比を維持したままスペース全体を使用します。 これにより、画像の一部がトリミングされることがあります。 これは全画面モードに似ています。
--   [
+-   
+            [
               **Fill**
             ](https://msdn.microsoft.com/library/windows/apps/br242968) は、縦横比を維持せずに、スペース全体を使用します。 画像はトリミングされませんが、拡大されることがあります。 これはストレッチ モードに似ています。
 
@@ -400,8 +391,7 @@ private void PictureSize_Click(object sender, RoutedEventArgs e)
 
 ### 待機時間が短い再生を可能にする
 
-[
-            **RealTimePlayback**](https://msdn.microsoft.com/library/windows/apps/br227414) プロパティを **true** に設定すると、[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) の再生の最初の待機時間を短くすることができます。 これは双方向通信アプリには重要で、ゲームのシナリオにも適用できる場合があります。 このモードでは、リソースがより多く消費され、電力効率が低下する点に注意してください。
+[**RealTimePlayback**](https://msdn.microsoft.com/library/windows/apps/br227414) プロパティを **true** に設定すると、[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) の再生の最初の待機時間を短くすることができます。 これは双方向通信アプリには重要で、ゲームのシナリオにも適用できる場合があります。 このモードでは、リソースがより多く消費され、電力効率が低下する点に注意してください。
 
 この例では、[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) を作って、[**RealTimePlayback**](https://msdn.microsoft.com/library/windows/apps/br227414) を **true** に設定します。
 

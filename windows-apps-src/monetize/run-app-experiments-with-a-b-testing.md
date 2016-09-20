@@ -3,7 +3,6 @@ author: mcleanbyron
 Description: "Windows デベロッパー センター ダッシュボードを使用して、ユニバーサル Windows プラットフォーム (UWP) アプリの A/B テストを実行することができます。"
 title: "A/B テストを使用してアプリの試験的機能を実行する"
 ms.assetid: 790B4B37-C72D-4CEA-97AF-D226B2216DCC
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 88fd0516e3c10b657884b93377480b62c1758992
 
@@ -21,12 +20,15 @@ A/B テストでは、デベロッパー センターを通じてアプリのプ
 
 A/B テストを作成および実行するには、次の手順に従います。
 
-1. [デベロッパー センター ダッシュボードで試験的機能を定義します](define-your-experiment-in-the-dev-center-dashboard.md)。 試験的機能はそれぞれ、以下のもので構成されます。
+1. 
+            [デベロッパー センター ダッシュボードで試験的機能を定義します](define-your-experiment-in-the-dev-center-dashboard.md)。 試験的機能はそれぞれ、以下のもので構成されます。
   * ビュー イベントは試験的機能の一部であるバリエーションのチェックをユーザーが開始することを示します。**
   * コンバージョン イベントによる 1 つ以上の目標では、いつ目標に達したかを示します。**
   * 1 つ以上のバリエーションでは、試験的機能で使用する設定を定義します。**
-2. [アプリで試験的機能のコードを記述します](code-your-experiment-in-your-app.md)。 Microsoft Store Engagement and Monetization SDK にある API を使用して、実験のバリエーション設定を取得します。次にこのデータを使用して、テストしている機能の動作を変更します。そしてビュー イベントおよびコンバージョン イベントをデベロッパー センターへ送信します。
-3. [デベロッパー センター ダッシュボードで試験的機能を実行および管理します](manage-your-experiment.md)。 ダッシュボードを使用して、試験的機能の結果を確認し、試験的機能を完了します。
+2. 
+            [アプリで試験的機能のコードを記述します](code-your-experiment-in-your-app.md)。 Microsoft Store Engagement and Monetization SDK にある API を使用して、実験のバリエーション設定を取得します。次にこのデータを使用して、テストしている機能の動作を変更します。そしてビュー イベントおよびコンバージョン イベントをデベロッパー センターへ送信します。
+3. 
+            [デベロッパー センター ダッシュボードで試験的機能を実行および管理します](manage-your-experiment.md)。 ダッシュボードを使用して、試験的機能の結果を確認し、試験的機能を完了します。
 
 エンド ツー エンドのプロセスを示すチュートリアルについては、「[A/B テストを使用して最初の試験的機能を作成および実行する](create-and-run-your-first-experiment-with-a-b-testing.md)」をご覧ください。
 

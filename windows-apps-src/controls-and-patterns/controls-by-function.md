@@ -5,7 +5,6 @@ title: "機能別コントロール"
 ms.assetid: 8DB4347B-91D6-4659-91F2-80ECF7BBB596
 label: Controls by function
 template: detail.hbs
-translationtype: Human Translation
 ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
 ms.openlocfilehash: 5d6548a4b72144e3a9bf5d759809720c79472afb
 
@@ -14,8 +13,7 @@ ms.openlocfilehash: 5d6548a4b72144e3a9bf5d759809720c79472afb
 
 Windows の XAML UI フレームワークには、UI 開発をサポートする多くのコントロールのライブラリが用意されています。 これらのコントロールの一部は視覚的に表示されますが、それ以外のコントロールは他のコントロールまたはコンテンツ (画像やメディアなど) のコンテナーとして機能します。 
 
-[
-            **XAML UI の基本のサンプル**](http://go.microsoft.com/fwlink/p/?LinkId=619992) をダウンロードすると、Windows UI コントロールの多くを実際に見ることができます。 
+[**XAML UI の基本のサンプル**](http://go.microsoft.com/fwlink/p/?LinkId=619992) をダウンロードすると、Windows UI コントロールの多くを実際に見ることができます。 
 
 アプリで使うことができる一般的な XAML コントロールの機能別の一覧を以下に示します。 
 
@@ -414,7 +412,7 @@ Windows の XAML UI フレームワークには、UI 開発をサポートする
 リファレンス: [RelativePanel](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aspx)
 
 ### スクロール バー
-「スクロール ビューアー」をご覧ください (ScrollBar は ScrollViewer の要素です。 通常、スタンドアロン コントロールとしては使用しません)。
+「スクロール ビューアー」をご覧ください  (ScrollBar は ScrollViewer の要素です。 通常、スタンドアロン コントロールとしては使用しません)。
 
 リファレンス: [ScrollBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.scrollbar.aspx)
  

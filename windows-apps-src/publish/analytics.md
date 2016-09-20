@@ -3,7 +3,6 @@ author: jnHs
 Description: "詳細な分析は、Windows デベロッパー センター ダッシュボードで表示できます。"
 title: "分析"
 ms.assetid: 3A3C6F10-0DB1-416D-B632-CD388EA66759
-translationtype: Human Translation
 ms.sourcegitcommit: dfaf348956b19746aa5332aeb7ad5cbc4b224e8c
 ms.openlocfilehash: 8922a53da8b1bc97bef7faf49d0e412a26127188
 
@@ -13,7 +12,8 @@ ms.openlocfilehash: 8922a53da8b1bc97bef7faf49d0e412a26127188
 
 詳細な分析は、Windows デベロッパー センター ダッシュボードで表示できます。 統計情報とチャートでは、アプリの状況 (獲得したユーザーから、ユーザーによるアプリの使い方、ユーザーによるアプリの評判まで) を知ることができます。 アプリの正常性、広告の使用状況などに関する情報も確認できます。 ダッシュボードでレポートを表示するか、[必要なレポートをダウンロード](download-analytic-reports.md)してデータをオフラインで分析します。 [ダッシュボードを使わずに分析データにアクセスする](#no-dashboard)こともできます。
 
-> **注**
+> 
+            **注**
             &nbsp;&nbsp;ダッシュボードのレポートに加えて、[Windows ストア分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) を使ってプログラムでいくつかの分析データにアクセスできます。
 
 ## すべてのアプリの分析
@@ -40,7 +40,8 @@ ms.openlocfilehash: 8922a53da8b1bc97bef7faf49d0e412a26127188
 -   [アプリのインストールの広告レポート](app-install-ads-reports.md)
 -   [チャネルとコンバージョン レポート](channels-and-conversions-report.md)
 
-> **注**
+> 
+            **注**
             &nbsp;&nbsp;アプリの実際の機能や実装によっては、これらのレポートの一部にデータが含まれていないことがあります。
 
 ## ページ フィルターとセクション フィルター
@@ -70,7 +71,8 @@ Power BI を使って分析データにアクセスするには、まず、次�
 * [Power BI の使い方](https://powerbi.microsoft.com/guided-learning/)
 * [Power BI 用 Windows デベロッパー センター コンテンツ パックを使って分析データに接続する方法](https://powerbi.microsoft.com/documentation/powerbi-content-pack-windows-dev-center/)
 
-> **注**
+> 
+            **注**
             &nbsp;&nbsp;Power BI 用 Windows デベロッパー センター コンテンツ パックに接続する際には、デベロッパー センター アカウントに関連付けられた Azure AD ディレクトリの資格情報を指定することをお勧めします。 Microsoft アカウントの資格情報を使う場合は、Power BI の分析データが自動的に更新されないため、Power BI にログインしてデータを更新する必要があります。 組織で Office 365 または Microsoft の他のビジネス サービスが既に使用されている場合は、既に Azure AD をお持ちです。 それ以外の場合は、[こちらから無料で入手](http://go.microsoft.com/fwlink/p/?LinkId=703757)できます。 デベロッパー センター アカウントを Azure AD に関連付ける方法について詳しくは、「[アカウント ユーザーの管理](manage-account-users.md)」をご覧ください。
 
 ### Dev Center アプリ

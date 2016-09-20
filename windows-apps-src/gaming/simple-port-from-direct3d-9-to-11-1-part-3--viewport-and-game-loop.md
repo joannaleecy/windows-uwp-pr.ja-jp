@@ -3,7 +3,6 @@ author: mtoepke
 title: "ゲーム ループの移植"
 description: "IFrameworkView を作成して、全画面表示の CoreWindow を制御する方法など、ユニバーサル Windows プラットフォーム (UWP) ゲームのウィンドウを実装する方法とゲーム ループを移植する方法について説明します。"
 ms.assetid: 070dd802-cb27-4672-12ba-a7f036ff495c
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 3c2369a2fdc48aed14f7ad363df8792e0ed5d795
 
@@ -21,8 +20,7 @@ ms.openlocfilehash: 3c2369a2fdc48aed14f7ad363df8792e0ed5d795
 -   パート 3: ゲーム ループの移植
 
 
-[
-            **IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) を作成して、全画面表示の [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) を制御する方法など、ユニバーサル Windows プラットフォーム (UWP) ゲームのウィンドウを実装する方法とゲーム ループを移植する方法について説明します。 「[チュートリアル: DirectX 11 とユニバーサル Windows プラットフォーム (UWP) への簡単な Direct3D 9 アプリの移植](walkthrough--simple-port-from-direct3d-9-to-11-1.md)」のパート 3 です。
+[**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) を作成して、全画面表示の [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) を制御する方法など、ユニバーサル Windows プラットフォーム (UWP) ゲームのウィンドウを実装する方法とゲーム ループを移植する方法について説明します。 「[チュートリアル: DirectX 11 とユニバーサル Windows プラットフォーム (UWP) への簡単な Direct3D 9 アプリの移植](walkthrough--simple-port-from-direct3d-9-to-11-1.md)」のパート 3 です。
 
 ## ウィンドウの作成
 
@@ -31,7 +29,8 @@ Direct3D 9 のビューポートを使ってデスクトップ ウィンドウ�
 
 UWP 環境には、はるかに簡単なシステムが用意されています。 DirectX を使った Windows ストア ゲームでは、従来のウィンドウを設定する代わりに、[**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) を実装します。 このインターフェイスは、アプリ コンテナー内の [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) で直接 DirectX アプリやゲームを実行するために存在します。
 
-> **注**   Windows では、ソース アプリケーション オブジェクトや [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) などのリソースへの管理ポインターが提供されます。 「[**オブジェクト演算子 (^) へのハンドル (^)**]https://msdn.microsoft.com/ja-jp/library/windows/apps/yk97tc08.aspx」をご覧ください。
+> 
+            **注**   Windows では、ソース アプリケーション オブジェクトや [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) などのリソースへの管理ポインターが提供されます。 「[**オブジェクト演算子 (^) へのハンドル (^)**]https://msdn.microsoft.com/ja-jp/library/windows/apps/yk97tc08.aspx」をご覧ください。
 
  
 

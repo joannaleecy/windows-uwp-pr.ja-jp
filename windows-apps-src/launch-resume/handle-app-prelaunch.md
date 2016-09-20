@@ -18,8 +18,7 @@ ms.openlocfilehash: d9d3bdf86d858367008a32d9d6a06ec9fc13787d
 
 -   [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)
 
-[
-            **OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) メソッドをオーバーライドすることで、アプリの事前起動を処理する方法について説明します。
+[**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) メソッドをオーバーライドすることで、アプリの事前起動を処理する方法について説明します。
 
 ## はじめに
 
@@ -33,7 +32,7 @@ Windows 10 より前では、アプリは自動的には事前起動を利用し
 ## 事前起動とアプリのライフ サイクル
 
 
-アプリは事前起動されると、すぐに中断状態になります ([アプリの中断の処理](suspend-an-app.md)」をご覧ください。)
+アプリは事前起動されると、すぐに中断状態になります  ([アプリの中断の処理](suspend-an-app.md)」をご覧ください。)
 
 ## 事前起動の検出と処理
 
@@ -81,7 +80,8 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 }
 ```
 
-**ヒント**  事前起動を除外する場合は、[**LaunchActivatedEventArgs.PrelaunchActivated**](https://msdn.microsoft.com/library/windows/apps/dn263740) フラグを確認します。 設定されていれば、フレームの作成やウィンドウのアクティブ化を行うための操作を実行する前に、OnLaunched() から復帰します。
+
+            **ヒント**  事前起動を除外する場合は、[**LaunchActivatedEventArgs.PrelaunchActivated**](https://msdn.microsoft.com/library/windows/apps/dn263740) フラグを確認します。 設定されていれば、フレームの作成やウィンドウのアクティブ化を行うための操作を実行する前に、OnLaunched() から復帰します。
 
  
 

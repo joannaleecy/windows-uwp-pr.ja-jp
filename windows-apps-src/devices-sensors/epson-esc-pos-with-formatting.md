@@ -3,7 +3,6 @@ author: DBirtolo
 ms.assetid: 70667353-152B-4B18-92C1-0178298052D4
 title: "書式設定における Epson ESC/POS"
 description: "POS プリンターで、ESC/POS コマンド言語を使用して、太字、倍角文字など、テキストの書式を設定する方法について説明します。"
-translationtype: Human Translation
 ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
 ms.openlocfilehash: 33231abb1e573d837193daeee21713f09c7d8448
 
@@ -27,8 +26,7 @@ ESC/POS は、Epson が開発したコマンド システムで、広範囲の P
 
 すべてのコマンドは、ESC 文字 (ASCII 27、16 進の 1B) または GS (ASCII 29、16 進の 1D) で始まり、その後にコマンドを指定する別の文字が続きます。 通常のテキストは単純にプリンターに送信され、改行で区切られます。
 
-[
-            **Windows PointOfService API**](https://msdn.microsoft.com/library/windows/apps/Dn298071) では、その機能の大半を **Print()** または **PrintLine()** メソッドを通して提供します。 ただし、特定の書式を設定する、または特定のコマンドを送信するには、ESC/POS コマンドを使用して文字列として作成し、プリンターに送信する必要があります。
+[**Windows PointOfService API**](https://msdn.microsoft.com/library/windows/apps/Dn298071) では、その機能の大半を **Print()** または **PrintLine()** メソッドを通して提供します。 ただし、特定の書式を設定する、または特定のコマンドを送信するには、ESC/POS コマンドを使用して文字列として作成し、プリンターに送信する必要があります。
 
 ## 文字および倍角文字を使用する例
 
@@ -56,8 +54,7 @@ printJob.PrintLine(DoubleOn + "Here is some large text." + DoubleOff);
 printJob.ExecuteAsync();
 ```
 
-利用可能なコマンドなど、ESC/POS について詳しくは、[Epson ESC/POS に関する FAQ](http://content.epson.de/fileadmin/content/files/RSD/downloads/escpos.pdf) をご覧ください。 [
-            **Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071) と利用可能な機能について詳しくは、MSDN の「[PointofService プリンター](https://msdn.microsoft.com/library/windows/apps/Mt426652)」をご覧ください。
+利用可能なコマンドなど、ESC/POS について詳しくは、[Epson ESC/POS に関する FAQ](http://content.epson.de/fileadmin/content/files/RSD/downloads/escpos.pdf) をご覧ください。 [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071) と利用可能な機能について詳しくは、MSDN の「[PointofService プリンター](https://msdn.microsoft.com/library/windows/apps/Mt426652)」をご覧ください。
 
 
 

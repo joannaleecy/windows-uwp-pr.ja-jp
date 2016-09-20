@@ -7,7 +7,7 @@ label: Page layouts with XAML
 template: detail.hbs
 translationtype: Human Translation
 ms.sourcegitcommit: 681023be35b01eac84272a73d1ae3e7a459351db
-ms.openlocfilehash: 0cc466ccdc4d214539fb4258f95fda72e08ac9db
+ms.openlocfilehash: 8ca8852df2747410b9d139b55a4f24366cc0eefc
 
 ---
 # XAML を使ったページ レイアウトの定義
@@ -16,28 +16,22 @@ XAML では、自動サイズ変更、レイアウト パネル、表示状態�
 
 ここでは、XAML プロパティとレイアウト パネルを使って、アプリの応答性と適応性を高める方法を説明します。 「[UWP アプリ設計の概要](../layout/design-and-ui-intro.md)」に示されている、応答性の高い UI のデザインと手法に関する重要な情報に基づいて解説しています。 有効ピクセルの意味を理解し、レスポンシブ デザインの各手法 (位置変更、サイズ変更、再配置、表示、置換、再構築) について理解しておく必要があります。
 
-> **注**
-            &nbsp;&nbsp;アプリのレイアウトは、ナビゲーション モデルを選ぶことから始まります。["タブとピボット"](../controls-and-patterns/tabs-pivot.md) モデルの [**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) と、["ナビゲーション ウィンドウ"](../controls-and-patterns/nav-pane.md) モデルの [**SplitView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.aspx) のどちらを使うかなどです。 詳しくは、「[UWP アプリのナビゲーション デザインの基本](../layout/navigation-basics.md)」をご覧ください。 ここでは、1 つのページまたは要素のグループのレイアウトの応答性を高める手法について説明します。 この情報は、アプリについて選択したナビゲーション モデルにかかわらず適用されます。
+> **注**&nbsp;&nbsp;アプリのレイアウトは、ナビゲーション モデルを選ぶことから始まります。["タブとピボット"](../controls-and-patterns/tabs-pivot.md) モデルの [**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) と、["ナビゲーション ウィンドウ"](../controls-and-patterns/nav-pane.md) モデルの [**SplitView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.aspx) のどちらを使うかなどです。 詳しくは、「[UWP アプリのナビゲーション デザインの基本](../layout/navigation-basics.md)」をご覧ください。 ここでは、1 つのページまたは要素のグループのレイアウトの応答性を高める手法について説明します。 この情報は、アプリについて選択したナビゲーション モデルにかかわらず適用されます。
 
 XAML フレームワークには、応答性に優れた UI の作成に使うことができる複数レベルの最適化が用意されています。
 - **柔軟なレイアウト**
-              
-            レイアウト プロパティとパネルを使って、既定の UI の柔軟性を高めることができます。
+    レイアウト プロパティとパネルを使って、既定の UI の柔軟性を高めることができます。
 
     レスポンシブ レイアウトの基盤は、レイアウト プロパティとパネルを適切に使用することにより、コンテンツの位置変更、サイズ変更、再配置を行うことです。 要素で固定サイズを設定したり、自動サイズ変更を使って親レイアウト パネルに合わせてサイズを変更したりすることができます。 さまざまな [**Panel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.panel.aspx) クラス ([**Canvas**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx)、[**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx)、[**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aspx)、[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.aspx) など) で、子のサイズ変更や配置のさまざまな方法が提供されます。
 
 - **アダプティブ レイアウト**
-              
-            ウィンドウのサイズまたはその他の変更に基づいて、UI に大幅な変更を行うには、表示状態を使用します。
+    ウィンドウのサイズまたはその他の変更に基づいて、UI に大幅な変更を行うには、表示状態を使用します。
 
-    アプリ ウィンドウを一定量を超えて拡大/縮小するときに、レイアウト プロパティを変更して、UI のセクションの位置変更、サイズ変更、再配置、表示、置換を行うことが必要になる可能性があります。 UI のさまざまな表示状態を定義し、ウィンドウの幅や高さが指定したしきい値を超えたときに適用できます。 [
-            **AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.adaptivetrigger.aspx) を使うと、状態を適用するしきい値 ("ブレークポイント" とも呼ばれます) を簡単に設定できます。
+    アプリ ウィンドウを一定量を超えて拡大/縮小するときに、レイアウト プロパティを変更して、UI のセクションの位置変更、サイズ変更、再配置、表示、置換を行うことが必要になる可能性があります。 UI のさまざまな表示状態を定義し、ウィンドウの幅や高さが指定したしきい値を超えたときに適用できます。 [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.adaptivetrigger.aspx) を使うと、状態を適用するしきい値 ("ブレークポイント" とも呼ばれます) を簡単に設定できます。
 
 - **カスタマイズされたレイアウト**
-              
-            カスタマイズされたレイアウトは、特定のデバイス ファミリやさまざまな画面サイズに最適化されています。 デバイス ファミリ内でも、レイアウトはサポートされているウィンドウ サイズの範囲内での変更に応答して対応する必要があります。
-    > **注**
-            &nbsp;&nbsp; [電話用の Continuum](http://go.microsoft.com/fwlink/p/?LinkID=699431) を使用すると、ユーザーは電話をモニター、マウス、キーボードに接続できます。 この機能は、電話とデスクトップ デバイス ファミリ間の境界線を曖昧します。
+    カスタマイズされたレイアウトは、特定のデバイス ファミリやさまざまな画面サイズに最適化されています。 デバイス ファミリ内でも、レイアウトはサポートされているウィンドウ サイズの範囲内での変更に応答して対応する必要があります。
+    > **注**&nbsp;&nbsp; [電話用の Continuum](http://go.microsoft.com/fwlink/p/?LinkID=699431) を使用すると、ユーザーは電話をモニター、マウス、キーボードに接続できます。 この機能は、電話とデスクトップ デバイス ファミリ間の境界線を曖昧します。
 
     カスタマイズする方法には、次の手法が含まれます。
     - カスタム トリガーを作成します。
@@ -72,8 +66,7 @@ XAML レイアウト システムでは、静的レイアウトと柔軟なレ�
 
 UI 要素がコンテンツや親コンテナーに合わせてサイズ変更できるようにするには、自動サイズ変更を使います。 グリッドの行と列を使って、自動サイズ変更を行うこともできます。 自動サイズ変更を使うには、UI 要素の Height や Width を **Auto** に設定します。
 
-> **注**
-            &nbsp;&nbsp;コンテンツやコンテナーに合わせて要素のサイズが変更されるかどうかは、[**HorizontalAlignment**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.horizontalalignment.aspx) プロパティと [**VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.verticalalignment.aspx) プロパティの値、および親コンテナーで子のサイズ変更を処理する方法によって決まります。 詳しくは、この記事の「[配置]()」と「[レイアウト パネル]()」をご覧ください。
+> **注**&nbsp;&nbsp;コンテンツやコンテナーに合わせて要素のサイズが変更されるかどうかは、[**HorizontalAlignment**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.horizontalalignment.aspx) プロパティと [**VerticalAlignment**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.verticalalignment.aspx) プロパティの値、および親コンテナーで子のサイズ変更を処理する方法によって決まります。 詳しくは、この記事の「[配置]()」と「[レイアウト パネル]()」をご覧ください。
 
 比例サイズ変更 (*スター サイズ指定*とも呼ばれる) を使うと、使用可能なスペースが加重比率によりグリッドの行と列の間で分散されます。 XAML では、スター値は \* (重み付きのスター サイズ指定の場合は *n*\*) として表されます。 たとえば、2 段組レイアウトで 1 つの列と、幅が 5 倍の列とを指定するには、[**ColumnDefinition**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.columndefinition.aspx) 要素の [**Width**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.columndefinition.width.aspx) プロパティで "5\*" と "\*" を使います。
 
@@ -106,8 +99,7 @@ Visual Studio の XAML デザイナーでは、結果は次のように表示さ
 
 **サイズの制約**
 
-UI で自動サイズ変更を使用する場合でも、要素のサイズに制約を設けることが必要になる可能性があります。 [
-            **MinWidth**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.minwidth.aspx)/[**MaxWidth**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.maxwidth.aspx) と [**MinHeight**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.minheight.aspx)/[**MaxHeight**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.maxheight.aspx) の各プロパティを設定することによって、柔軟なサイズ変更を許可しながら、要素のサイズを制約する値を指定できます。
+UI で自動サイズ変更を使用する場合でも、要素のサイズに制約を設けることが必要になる可能性があります。 [**MinWidth**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.minwidth.aspx)/[**MaxWidth**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.maxwidth.aspx) と [**MinHeight**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.minheight.aspx)/[**MaxHeight**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.maxheight.aspx) の各プロパティを設定することによって、柔軟なサイズ変更を許可しながら、要素のサイズを制約する値を指定できます。
 
 また、Grid では、MinWidth/MaxWidth を列定義と共に使用でき、MinHeight/MaxHeight を行定義と共に使用できます。
 
@@ -154,13 +146,11 @@ Margin と Padding の左、右、上、下の値は、対称である必要は�
 
 **表示**
 
-[
-            **Visibility**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.visibility.aspx) プロパティを [**Visibility** 列挙値](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visibility.aspx)のいずれか (**Visible** または **Collapsed**) に設定することによって、要素の表示と非表示を切り替えることができます。 要素が Collapsed である場合、UI レイアウト内の領域は使用されません。
+[**Visibility**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.visibility.aspx) プロパティを [**Visibility** 列挙値](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visibility.aspx)のいずれか (**Visible** または **Collapsed**) に設定することによって、要素の表示と非表示を切り替えることができます。 要素が Collapsed である場合、UI レイアウト内の領域は使用されません。
 
 コードまたは表示状態で、要素の Visibility プロパティを変更できます。 要素の Visibility が変更されると、そのすべての子要素も変更されます。 1 つのパネルを表示して別のパネルを折りたたむことによって、UI のセクションを置き換えることができます。
 
-> **ヒント**
-            &nbsp;&nbsp;UI に既定で **Collapsed** である要素がある場合、要素が表示されていなくても、オブジェクトは起動時に作成されます。 これらの要素の読み込みを表示されたときまで遅延するには、**x:DeferLoadStrategy 属性**を "Lazy" に設定します。 これにより起動時のパフォーマンスが向上することがあります。 詳しくは、「[x:DeferLoadStrategy 属性](../xaml-platform/x-deferloadstrategy-attribute.md)」をご覧ください。
+> **ヒント**&nbsp;&nbsp;UI に既定で **Collapsed** である要素がある場合、要素が表示されていなくても、オブジェクトは起動時に作成されます。 これらの要素の読み込みを表示されたときまで遅延するには、**x:DeferLoadStrategy 属性**を "Lazy" に設定します。 これにより起動時のパフォーマンスが向上することがあります。 詳しくは、「[x:DeferLoadStrategy 属性](../xaml-platform/x-deferloadstrategy-attribute.md)」をご覧ください。
 
 ### スタイル リソース
 
@@ -186,8 +176,7 @@ XAML フレームワークで提供されるパネル コントロールの主�
 
 ## 表示状態と状態トリガー
 
-画面サイズまたはその他の要因に基づいて、UI のセクションの位置の変更、サイズ変更、再配置、表示、または置換を行うには、表示状態を使用します。 [
-            **VisualState**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visualstate.aspx) は、要素が特定の状態にあるときに、要素に適用されるプロパティ値を定義します。 指定された条件が満たされたときに適切な VisualState を適用する [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visualstatemanager.aspx) で表示状態をグループ化します。
+画面サイズまたはその他の要因に基づいて、UI のセクションの位置の変更、サイズ変更、再配置、表示、または置換を行うには、表示状態を使用します。 [**VisualState**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visualstate.aspx) は、要素が特定の状態にあるときに、要素に適用されるプロパティ値を定義します。 指定された条件が満たされたときに適切な VisualState を適用する [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visualstatemanager.aspx) で表示状態をグループ化します。
 
 ### コードでの表示状態の設定
 
@@ -288,8 +277,7 @@ Windows 10 以降では、ここで示す簡素化された [**Setter**](https:/
 </Page>
 ```
 
-> **重要**
-            &nbsp;&nbsp;前の例では、**Grid** 要素に対して VisualStateManager.VisualStateGroups 添付プロパティが設定されています。 StateTriggers を使う場合は、トリガーを自動的に有効にするために、常にルートの最初の子に VisualStateGroups が添付されていることを確認します (ここでは、**Grid** がルートの **Page** 要素の最初の子です)。
+> **重要**&nbsp;&nbsp;前の例では、**Grid** 要素に対して VisualStateManager.VisualStateGroups 添付プロパティが設定されています。 StateTriggers を使う場合は、トリガーを自動的に有効にするために、常にルートの最初の子に VisualStateGroups が添付されていることを確認します  (ここでは、**Grid** がルートの **Page** 要素の最初の子です)。
 
 ### 添付プロパティの構文
 
@@ -311,8 +299,7 @@ VisualState では、通常、コントロールのプロパティの値、つ�
 
 ### カスタム状態トリガー
 
-[
-            **StateTrigger**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.statetrigger.aspx) クラスを拡張して、さまざまなシナリオに対するカスタム トリガーを作成できます。 たとえば、入力の種類に基づいてさまざまな状態をトリガーする StateTrigger を作成して、入力の種類がタッチである場合はコントロールの周囲の余白を増やすことができます。 また、アプリが実行されるデバイス ファミリに基づいてさまざまな状態を適用する StateTrigger を作成することもできます。 カスタム トリガーを作成し、それらを使用して単一の XAML ビュー内から最適化された UI エクスペリエンスを作成する方法の例については、[状態トリガーのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620025)に関するページをご覧ください。
+[**StateTrigger**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.statetrigger.aspx) クラスを拡張して、さまざまなシナリオに対するカスタム トリガーを作成できます。 たとえば、入力の種類に基づいてさまざまな状態をトリガーする StateTrigger を作成して、入力の種類がタッチである場合はコントロールの周囲の余白を増やすことができます。 また、アプリが実行されるデバイス ファミリに基づいてさまざまな状態を適用する StateTrigger を作成することもできます。 カスタム トリガーを作成し、それらを使用して単一の XAML ビュー内から最適化された UI エクスペリエンスを作成する方法の例については、[状態トリガーのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620025)に関するページをご覧ください。
 
 ### 表示状態とスタイル
 
@@ -394,8 +381,7 @@ VisualState では、通常、コントロールのプロパティの値、つ�
 
 **アプリに XAML ビューを追加するには**
 1. [プロジェクト] の [新しい項目の追加] をクリックします。 [新しい項目の追加] ダイアログ ボックスが開きます。
-    > **ヒント**
-            &nbsp;&nbsp;ソリューション エクスプローラーで、ソリューションではなく、フォルダーまたはプロジェクトが選択されていることを確認します。
+    > **ヒント**&nbsp;&nbsp;ソリューション エクスプローラーで、ソリューションではなく、フォルダーまたはプロジェクトが選択されていることを確認します。
 2. 左側のウィンドウの [Visual C#] または [Visual Basic] の下で、テンプレートの種類として [XAML] を選びます。
 3. 中央のウィンドウで、[XAML ビュー] を選びます。
 4. ビューの名前を入力します。 ビューには、正しく名前を付ける必要があります。 命名方法について詳しくは、このセクションの後半をご覧ください。
@@ -429,8 +415,7 @@ MainPage.xaml という名前のファイルの例を以下に示します。 �
 
 **アプリに XAML ページを追加するには**
 1. [プロジェクト] の [新しい項目の追加] をクリックします。 [新しい項目の追加] ダイアログ ボックスが開きます。
-    > **ヒント**
-            &nbsp;&nbsp;ソリューション エクスプローラーで、ソリューションではなく、プロジェクトが選択されていることを確認します。
+    > **ヒント**&nbsp;&nbsp;ソリューション エクスプローラーで、ソリューションではなく、プロジェクトが選択されていることを確認します。
 2. 左側のウィンドウの [Visual C#] または [Visual Basic] の下で、テンプレートの種類として [XAML] を選びます。
 3. 中央のウィンドウで、[空白のページ] を選びます。
 4. ページの名前を入力します。 たとえば、"MainPage_Mobile" と入力します。 MainPage_Mobile.xaml と MainPage_Mobile.xaml.cs/vb/cpp コード ファイルの両方が作成されます。
@@ -453,6 +438,6 @@ else
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

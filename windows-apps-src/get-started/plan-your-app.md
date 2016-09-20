@@ -3,7 +3,6 @@ author: martinekuan
 title: "ユニバーサル Windows プラットフォーム (UWP) アプリの計画"
 description: "Microsoft のデザイン チームのアプリ作成プロセスは、5 つの段階 (概念、構造、ダイナミクス、視覚、プロトタイプ) で構成されています。 同様のプロセスを採用して、だれもが楽しめるエクスペリエンスを実現することをお勧めします。"
 ms.assetid: 9A5189CD-3B97-4967-8E7D-36D25F04F244
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 9a3058aabdc6f710149a14d8f125b66efd076007
 

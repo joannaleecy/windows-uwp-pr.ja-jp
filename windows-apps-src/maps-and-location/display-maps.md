@@ -3,8 +3,9 @@ author: msatranjr
 title: "2D、3D、Streetside ビューでの地図の表示"
 description: "MapControl クラスを使って、アプリにカスタマイズできる地図を表示します。 このトピックでは、航空写真 3D ビューと Streetside ビューについても紹介します。"
 ms.assetid: 3839E00B-2C1E-4627-A45F-6DDA98D7077F
+translationtype: Human Translation
 ms.sourcegitcommit: 92285ce32548bd6035c105e35c2b152432f8575a
-ms.openlocfilehash: 249503f6a43ef8c38e76ed29aed4a1bfdb26e9fb
+ms.openlocfilehash: 5569722bdfc8dfb78d43dbe6abf23dcd06f619c0
 
 ---
 
@@ -14,8 +15,7 @@ ms.openlocfilehash: 249503f6a43ef8c38e76ed29aed4a1bfdb26e9fb
 \[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-[
-            **MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) クラスを使って、アプリにカスタマイズできる地図を表示します。 このトピックでは、航空写真 3D ビューと Streetside ビューについても紹介します。
+[**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) クラスを使って、アプリにカスタマイズできる地図を表示します。 このトピックでは、航空写真 3D ビューと Streetside ビューについても紹介します。
 
 **ヒント** アプリで地図を使う方法について詳しくは、GitHub の [Windows-universal-samples リポジトリ](http://go.microsoft.com/fwlink/p/?LinkId=619979)から次のサンプルをダウンロードしてください。
 
@@ -24,8 +24,7 @@ ms.openlocfilehash: 249503f6a43ef8c38e76ed29aed4a1bfdb26e9fb
 ## マップ コントロールのアプリへの追加
 
 
-[
-            **MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) を追加することによって、XAML ページに地図を表示します。 **MapControl** を使うには、XAML ページまたはコード内に [**Windows.UI.Xaml.Controls.Maps**](https://msdn.microsoft.com/library/windows/apps/dn610751) 名前空間の宣言が必要です。 ツールボックスからコントロールをドラッグすると、この名前空間宣言が自動的に追加されます。 XAML ページに **MapControl** を手動で追加する場合は、ページの上部に名前空間宣言を手動で追加する必要があります。
+[**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) を追加することによって、XAML ページに地図を表示します。 **MapControl** を使うには、XAML ページまたはコード内に [**Windows.UI.Xaml.Controls.Maps**](https://msdn.microsoft.com/library/windows/apps/dn610751) 名前空間の宣言が必要です。 ツールボックスからコントロールをドラッグすると、この名前空間宣言が自動的に追加されます。 XAML ページに **MapControl** を手動で追加する場合は、ページの上部に名前空間宣言を手動で追加する必要があります。
 
 次の例では、基本的なマップ コントロールを表示し、タッチ入力を受け付けるだけでなくズーム コントロールとチルト コントロールを表示するように地図を構成しています。 地図の外観をカスタマイズする方法について詳しくは、「[地図の構成](#mapconfig)」をご覧ください。
 
@@ -69,8 +68,7 @@ pageGrid.Children.Add(MapControl2);
 ## マップ認証キーの取得と設定
 
 
-[
-            **MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) やマップ サービスを使用する前に、マップ認証キーを [**MapServiceToken**](https://msdn.microsoft.com/library/windows/apps/dn637036) プロパティの値として指定する必要があります。 前に示した例では、`EnterYourAuthenticationKeyHere` を [Bing Maps Developer Center](https://www.bingmapsportal.com/) から取得したキーで置き換えます。 マップ認証キーを指定するまでは、コントロールの下に **[警告: MapServiceToken が指定されていません]** というテキストが表示されます。 マップ認証キーを取得して設定する方法について詳しくは、「[マップ認証キーの要求](authentication-key.md)」をご覧ください。
+[**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) やマップ サービスを使用する前に、マップ認証キーを [**MapServiceToken**](https://msdn.microsoft.com/library/windows/apps/dn637036) プロパティの値として指定する必要があります。 前に示した例では、`EnterYourAuthenticationKeyHere` を [Bing Maps Developer Center](https://www.bingmapsportal.com/) から取得したキーで置き換えます。 マップ認証キーを指定するまでは、コントロールの下に **[警告: MapServiceToken が指定されていません]** というテキストが表示されます。 マップ認証キーを取得して設定する方法について詳しくは、「[マップ認証キーの要求](authentication-key.md)」をご覧ください。
 
 ## 地図の開始位置の設定
 
@@ -102,8 +100,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 ユーザーの位置情報にアクセスするには、先にアプリで [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) メソッドを呼び出す必要があります。 このときに、アプリをフォアグラウンドで実行し、**RequestAccessAsync** を UI スレッドから呼び出す必要があります。 位置情報に対するアクセス許可をユーザーがアプリに与えるまで、アプリは位置情報にアクセスできません。
 
-[
-            **Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) クラスの [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) メソッドを使って、デバイスの現在の位置情報を取得します (位置情報にアクセスできる場合)。 対応する [**Geopoint**](https://msdn.microsoft.com/library/windows/apps/dn263675) を取得するには、geoposition オブジェクトの geocoordinate の [**Point**](https://msdn.microsoft.com/library/windows/apps/dn263665) プロパティを使います。 詳しくは、「[現在の位置情報の取得](get-location.md)」をご覧ください。
+[**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) クラスの [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) メソッドを使って、デバイスの現在の位置情報を取得します (位置情報にアクセスできる場合)。 対応する [**Geopoint**](https://msdn.microsoft.com/library/windows/apps/dn263675) を取得するには、geoposition オブジェクトの geocoordinate の [**Point**](https://msdn.microsoft.com/library/windows/apps/dn263665) プロパティを使います。 詳しくは、「[現在の位置情報の取得](get-location.md)」をご覧ください。
 
 ```csharp
 // Set your current location.
@@ -152,12 +149,9 @@ switch (accessStatus)
 **マップの設定**
 
 -   地図の**中心**を地理的位置に設定するには、[**Center**](https://msdn.microsoft.com/library/windows/apps/dn637005) プロパティを設定します。
--   [
-            **ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068) プロパティに 1 ～ 20 度の値を設定することにより、地図の**ズーム レベル**を設定します。
--   [
-            **Heading**](https://msdn.microsoft.com/library/windows/apps/dn637019) プロパティを設定することにより地図の**回転**を設定します。ここでは 0 度または 360 度 = 北、90 度 = 東、180 度 = 南、270 度 = 西です。
--   [
-            **DesiredPitch**](https://msdn.microsoft.com/library/windows/apps/dn637012) プロパティに 0 ～ 65 度の値を設定することにより、地図の**傾き**を設定します。
+-   [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068) プロパティに 1 ～ 20 度の値を設定することにより、地図の**ズーム レベル**を設定します。
+-   [**Heading**](https://msdn.microsoft.com/library/windows/apps/dn637019) プロパティを設定することにより地図の**回転**を設定します。ここでは 0 度または 360 度 = 北、90 度 = 東、180 度 = 南、270 度 = 西です。
+-   [**DesiredPitch**](https://msdn.microsoft.com/library/windows/apps/dn637012) プロパティに 0 ～ 65 度の値を設定することにより、地図の**傾き**を設定します。
 
 **地図の外観**
 
@@ -172,8 +166,7 @@ switch (accessStatus)
 -   地図に**透かし**を表示するかどうかを指定するには、[**WatermarkMode**](https://msdn.microsoft.com/library/windows/apps/dn637066) プロパティを [**MapWatermarkMode**](https://msdn.microsoft.com/library/windows/apps/dn610749) 定数のいずれかに設定します。
 -   地図に**自動車ルートや徒歩ルート**を表示するには、マップ コントロールの [**Routes**](https://msdn.microsoft.com/library/windows/apps/dn637047) コレクションに [**MapRouteView**](https://msdn.microsoft.com/library/windows/apps/dn637122) を追加します。 詳しい情報と例については、「[地図へのルートとルート案内の表示](routes-and-directions.md)」をご覧ください。
 
-[
-            **MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) でプッシュピン、図形、XAML コントロールを表示する方法については、「[関心のあるポイント (POI) の地図への表示](display-poi.md)」をご覧ください。
+[**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) でプッシュピン、図形、XAML コントロールを表示する方法については、「[関心のあるポイント (POI) の地図への表示](display-poi.md)」をご覧ください。
 
 ## Streetside ビューの表示
 
@@ -186,11 +179,9 @@ Streetside ビューの「内部」での操作は、マップ コントロー�
 
 Streetside ビューを表示するには
 
-1.  [
-            **IsStreetsideSupported**](https://msdn.microsoft.com/library/windows/apps/dn974271) を確認して、Streetside ビューがデバイスでサポートされているかどうかを調べます。
+1.  [**IsStreetsideSupported**](https://msdn.microsoft.com/library/windows/apps/dn974271) を確認して、Streetside ビューがデバイスでサポートされているかどうかを調べます。
 2.  Streetside ビューがサポートされている場合は、[**FindNearbyAsync**](https://msdn.microsoft.com/library/windows/apps/dn974361) を呼び出し、指定した位置の近くに [**StreetsidePanorama**](https://msdn.microsoft.com/library/windows/apps/dn974360) を作成します。
-3.  [
-            **StreetsidePanorama**](https://msdn.microsoft.com/library/windows/apps/dn974360) が null でないかどうかを確認し、近隣のパノラマ写真があるかどうかを調べます。
+3.  [**StreetsidePanorama**](https://msdn.microsoft.com/library/windows/apps/dn974360) が null でないかどうかを確認し、近隣のパノラマ写真があるかどうかを調べます。
 4.  近隣のパノラマ写真があった場合、[**StreetsideExperience**](https://msdn.microsoft.com/library/windows/apps/dn974356) を作成し、マップ コントロールの [**CustomExperience**](https://msdn.microsoft.com/library/windows/apps/dn974263) プロパティに設定します。
 
 次の例は、前掲の画像に似た Streetside ビューを表示する方法を示しています。
@@ -236,9 +227,7 @@ private async void showStreetsideView()
 ## 航空写真 3D ビューの表示
 
 
-[
-            **MapScene**](https://msdn.microsoft.com/library/windows/apps/dn974329) クラスを使って、地図の 3D 視点を指定します。 マップ シーンは、地図に表示される 3D ビューを表します。 [
-            **MapCamera**](https://msdn.microsoft.com/library/windows/apps/dn974244) クラスは、このようなビューが表示されるカメラの位置を表します。
+[**MapScene**](https://msdn.microsoft.com/library/windows/apps/dn974329) クラスを使って、地図の 3D 視点を指定します。 マップ シーンは、地図に表示される 3D ビューを表します。 [**MapCamera**](https://msdn.microsoft.com/library/windows/apps/dn974244) クラスは、このようなビューが表示されるカメラの位置を表します。
 
 ![](images/mapcontrol-techdiagram.png)
 
@@ -248,13 +237,10 @@ private async void showStreetsideView()
 
 3D ビューを表示するには
 
-1.  [
-            **Is3DSupported**](https://msdn.microsoft.com/library/windows/apps/dn974265) を確認して、3D ビューがデバイスでサポートされているかどうかを調べます。
+1.  [**Is3DSupported**](https://msdn.microsoft.com/library/windows/apps/dn974265) を確認して、3D ビューがデバイスでサポートされているかどうかを調べます。
 2.  3D ビューがサポートされている場合は、マップ コントロールの [**Style**](https://msdn.microsoft.com/library/windows/apps/dn637051) プロパティを [**MapStyle.Aerial3DWithRoads**](https://msdn.microsoft.com/library/windows/apps/dn637127) に設定します。
-3.  [
-            **CreateFromLocationAndRadius**](https://msdn.microsoft.com/library/windows/apps/dn974336)、[**CreateFromCamera**](https://msdn.microsoft.com/library/windows/apps/dn974334) などの多数の **CreateFrom** メソッドの中から [**MapScene**](https://msdn.microsoft.com/library/windows/apps/dn974329) オブジェクトを作成します。
-4.  [
-            **TrySetSceneAsync**](https://msdn.microsoft.com/library/windows/apps/dn974296) を呼び出して、3D ビューを表示します。 また、ビューが変わるときに使うアニメーションをオプションで指定することもできます。そのためには、[**MapAnimationKind**](https://msdn.microsoft.com/library/windows/apps/dn637002) 列挙値の定数を指定します。
+3.  [**CreateFromLocationAndRadius**](https://msdn.microsoft.com/library/windows/apps/dn974336)、[**CreateFromCamera**](https://msdn.microsoft.com/library/windows/apps/dn974334) などの多数の **CreateFrom** メソッドの中から [**MapScene**](https://msdn.microsoft.com/library/windows/apps/dn974329) オブジェクトを作成します。
+4.  [**TrySetSceneAsync**](https://msdn.microsoft.com/library/windows/apps/dn974296) を呼び出して、3D ビューを表示します。 また、ビューが変わるときに使うアニメーションをオプションで指定することもできます。そのためには、[**MapAnimationKind**](https://msdn.microsoft.com/library/windows/apps/dn637002) 列挙値の定数を指定します。
 
 次の例は、3D ビューを表示する方法を示しています。
 
@@ -297,17 +283,13 @@ private async void display3DLocation()
 
 地図上の位置に関する情報を取得するには、[**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) の次のメソッドを呼び出します。
 
--   [
-              **GetLocationFromOffset**
+-   [**GetLocationFromOffset**
             ](https://msdn.microsoft.com/library/windows/apps/dn637016) メソッド - マップ コントロールのビューポート内の指定したポイントに対応する地理的な位置情報を取得します。
--   [
-              **GetOffsetFromLocation**
+-   [**GetOffsetFromLocation**
             ](https://msdn.microsoft.com/library/windows/apps/dn637018) メソッド - 指定した地理的な位置情報に対応するマップ コントロールのビューポート内のポイントを取得します。
--   [
-              **IsLocationInView**
+-   [**IsLocationInView**
             ](https://msdn.microsoft.com/library/windows/apps/dn637022) メソッド - 指定した地理的な位置がマップ コントロールのビューポート内に現在表示されているかどうかを調べます。
--   [
-              **FindMapElementsAtOffset**
+-   [**FindMapElementsAtOffset**
             ](https://msdn.microsoft.com/library/windows/apps/dn637014) メソッド - マップ コントロールのビューポート内の指定したポイントにある地図上の要素を取得します。
 
 ## ユーザー操作と変更の処理
@@ -343,6 +325,6 @@ private async void display3DLocation()
 
 
 
-<!--HONumber=Jun16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

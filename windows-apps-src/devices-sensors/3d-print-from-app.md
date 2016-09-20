@@ -3,7 +3,6 @@ author: PatrickFarley
 title: "アプリからの 3D 印刷"
 description: "ユニバーサル Windows アプリに 3D 印刷機能を追加する方法について説明します。 このトピックでは、3D モデルが印刷可能であり、正しい形式になっていることを確認した後で 3D 印刷ダイアログを起動する方法について説明します。"
 ms.assetid: D78C4867-4B44-4B58-A82F-EDA59822119C
-translationtype: Human Translation
 ms.sourcegitcommit: 61d9f5c1fca1ad2e26f052b901361813975ae357
 ms.openlocfilehash: e68a9c681974152bc0d4dfa58e824f80e77dc51f
 
@@ -60,11 +59,13 @@ UI フィードバック用に **TextBlock** を追加します。
 
 これで、3D データ ファイルをアプリのメモリに読み込むことができます。 ただし、3D 形状データには、さまざまな形式がありますが、すべてが 3D 印刷に効率的であるわけではありません。 Windows 10 では、すべての 3D 印刷タスクについて 3D Manufacturing Format (.3mf) というファイル形式を使います。
 
-> **注**  3MF ファイル形式には、このチュートリアルでは扱っていない多くの機能が用意されています。 3MF と 3D 製品のプロデューサーおよびコンシューマー向けに用意されたその機能について詳しくは、[3MF の仕様](http://3mf.io/what-is-3mf/3mf-specification/)をご覧ください。 Windows 10 API を使ってこれらの機能を利用する方法については、「[3MF パッケージの生成](https://msdn.microsoft.com/windows/uwp/devices-sensors/generate-3mf)」チュートリアルをご覧ください。
+> 
+            **注**  3MF ファイル形式には、このチュートリアルでは扱っていない多くの機能が用意されています。 3MF と 3D 製品のプロデューサーおよびコンシューマー向けに用意されたその機能について詳しくは、[3MF の仕様](http://3mf.io/what-is-3mf/3mf-specification/)をご覧ください。 Windows 10 API を使ってこれらの機能を利用する方法については、「[3MF パッケージの生成](https://msdn.microsoft.com/windows/uwp/devices-sensors/generate-3mf)」チュートリアルをご覧ください。
 
 幸いなことに、[3D Builder](https://www.microsoft.com/store/apps/3d-builder/9wzdncrfj3t6) アプリでは、一般的なほとんどの 3D 形式のファイルを開くことができ、それらを .3mf ファイル形式で保存することができます。 この例では、ファイルの種類が異なる場合に、簡単な解決策として、3D Builder を開き、インポートしたデータを .3mf ファイルとして保存し再度読み込むようユーザーに求めます。
 
-> **注**  **3D Builder** には、ファイル形式の変換以外にも、モデルを編集したり色データを追加したりといった、印刷に固有の操作を行うための簡単なツールが用意されているため、多くの場合、3D 印刷を処理するアプリに統合するだけの価値があります。
+> 
+            **注**  **3D Builder** には、ファイル形式の変換以外にも、モデルを編集したり色データを追加したりといった、印刷に固有の操作を行うための簡単なツールが用意されているため、多くの場合、3D 印刷を処理するアプリに統合するだけの価値があります。
 
 [!code-cs[FileCheck](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetFileCheck)]
 
@@ -89,9 +90,11 @@ UI フィードバック用に **TextBlock** を追加します。
 
 このメソッドの主な目的は、*args* オブジェクトを使って、**Printing3D3MFPackage** をパイプラインに送信することです。 **Print3DTaskRequestedEventArgs** 型には、**Request** という 1 つのプロパティがあります。 その型は [Print3DTaskRequest](https://msdn.microsoft.com/library/windows/apps/dn998050) で、1 つの印刷ジョブ要求を表します。 そのメソッドである **CreateTask** を使って、プログラムは印刷ジョブに関する適切な情報を送信します。このメソッドは、3D 印刷パイプラインに送信された [Print3DTask](https://msdn.microsoft.com/library/windows/apps/dn998044) オブジェクトへの参照を返します。
 
-**CreateTask** には、印刷ジョブ名を表す **string**、使うプリンターの ID を表す **string**、および **Print3DTaskSourceRequestedHandler** デリゲートという入力パラメーターがあります。 このデリゲートは、**3DTaskSourceRequested** イベントが発生したときに自動的に呼び出されます (これは API によって行われます)。 重要なのは、印刷ジョブが開始されたときにこのデリゲートが呼び出され、適切な 3D 印刷パッケージを提供する役割を果たすということです。
 
-**Print3DTaskSourceRequestedHandler** は、送信するデータを提供する [Print3DTaskSourceRequestedArgs](https://msdn.microsoft.com/library/windows/apps/dn998056) オブジェクトという 1 つのパラメーターを取ります。 このクラスの 1 つのパブリック メソッドである **SetSource** が、印刷するパッケージを受け取ります。 次のように、**Print3DTaskSourceRequestedHandler** デリゲートを実装します。
+            **CreateTask** には、印刷ジョブ名を表す **string**、使うプリンターの ID を表す **string**、および **Print3DTaskSourceRequestedHandler** デリゲートという入力パラメーターがあります。 このデリゲートは、**3DTaskSourceRequested** イベントが発生したときに自動的に呼び出されます (これは API によって行われます)。 重要なのは、印刷ジョブが開始されたときにこのデリゲートが呼び出され、適切な 3D 印刷パッケージを提供する役割を果たすということです。
+
+
+            **Print3DTaskSourceRequestedHandler** は、送信するデータを提供する [Print3DTaskSourceRequestedArgs](https://msdn.microsoft.com/library/windows/apps/dn998056) オブジェクトという 1 つのパラメーターを取ります。 このクラスの 1 つのパブリック メソッドである **SetSource** が、印刷するパッケージを受け取ります。 次のように、**Print3DTaskSourceRequestedHandler** デリゲートを実装します。
 
 [!code-cs[SourceHandler](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetSourceHandler)]
 
@@ -103,7 +106,8 @@ UI フィードバック用に **TextBlock** を追加します。
 
 [!code-cs[Optional](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetOptional)]
 
-> **注**  これらのイベントに `Task_Submitting` および `Task_Completed` メソッドを登録するには、それらを実装する必要があります。
+> 
+            **注**  これらのイベントに `Task_Submitting` および `Task_Completed` メソッドを登録するには、それらを実装する必要があります。
 
 ## 印刷タスクの実行: 3D 印刷ダイアログを開く
 

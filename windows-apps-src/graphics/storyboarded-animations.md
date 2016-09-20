@@ -5,7 +5,7 @@ title: "ストーリーボードに設定されたアニメーション"
 description: "ストーリーボードに設定されたアニメーションは、単なる視覚なアニメーションではありません。"
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: bcb8dbd3c0b2556c3d426687eb9be02ffe7265fb
+ms.openlocfilehash: 361765de700af2a701e16fc27a5867d80907865a
 
 ---
 # ストーリーボードに設定されたアニメーション
@@ -97,15 +97,9 @@ XAML 添付プロパティをアニメーション化することもできます
 
 Windows ランタイムのアニメーション システムには、ストーリーボードに設定されたアニメーションを適用できる 3 つの型があります。
 
--   
-              [
-              **Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx): 任意の [**DoubleAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243136) でアニメーション化できる
--   
-              [
-              **Point**](https://msdn.microsoft.com/library/windows/apps/BR225870): 任意の [**PointAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210346) でアニメーション化できる
--   
-              [
-              **Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723): 任意の [**ColorAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243066) でアニメーション化できる
+-   [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx): 任意の [**DoubleAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243136) でアニメーション化できる
+-   [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870): 任意の [**PointAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210346) でアニメーション化できる
+-   [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723): 任意の [**ColorAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243066) でアニメーション化できる
 
 また、後ほど説明するオブジェクトの参照値に使える汎用 [**Object**](https://msdn.microsoft.com/library/windows/apps/xaml/system.object.aspx) アニメーション型もあります。
 
@@ -140,8 +134,7 @@ Windows ランタイムのアニメーション システムには、ストー�
 
 [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377) 値と XAML 構文について詳しくは、「[**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377)」をご覧ください。
 
-
-              **注**  紹介した例の場合、アニメーション化するオブジェクトの開始状態の [**Opacity**](https://msdn.microsoft.com/library/windows/apps/BR208962) が既定値か明示的な設定かを問わず常に 1 である場合は、**From** 値を省略できます。そのときアニメーションでは暗黙的な開始値が使われ、同じ結果になります。
+**注**  紹介した例の場合、アニメーション化するオブジェクトの開始状態の [**Opacity**](https://msdn.microsoft.com/library/windows/apps/BR208962) が既定値か明示的な設定かを問わず常に 1 である場合は、**From** 値を省略できます。そのときアニメーションでは暗黙的な開始値が使われ、同じ結果になります。
 
  
 
@@ -221,8 +214,7 @@ Windows ランタイムのアニメーション システムには、ストー�
 
 リソースを XAML ファイル (page.xaml や app.xaml など) の XAML ルートで定義する方法は、キーを持つリソースを XAML で編成する場合の一般的な方法です。 リソースを別個のファイルに分け、アプリやパッケージにマージすることもできます。 詳しくは、「[ResourceDictionary と XAML リソースの参照](https://msdn.microsoft.com/library/windows/apps/Mt187273)」をご覧ください。
 
-
-              **注**  Windows ランタイムの XAML では、[x:Key 属性](https://msdn.microsoft.com/library/windows/apps/Mt204787)または [x: Name 属性](https://msdn.microsoft.com/library/windows/apps/Mt204788)を使ったリソースの識別をサポートします。 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) では x: Name 属性を使う方が一般的です。これを変数名を使って参照することになるためで、その [**Begin**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.begin) メソッドを後で呼び出してアニメーションを実行できるようにする目的があります。 [x:Key 属性](https://msdn.microsoft.com/library/windows/apps/Mt204787)を使う場合は、[**Item**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.resourcedictionary.item) インデクサーなどの [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794) メソッドを使ってキーを持つリソースとしてそれを取得し、取得したオブジェクトを **Storyboard** にキャストして、**Storyboard** メソッドを使う必要があります。
+**注**  Windows ランタイムの XAML では、[x:Key 属性](https://msdn.microsoft.com/library/windows/apps/Mt204787)または [x: Name 属性](https://msdn.microsoft.com/library/windows/apps/Mt204788)を使ったリソースの識別をサポートします。 [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) では x: Name 属性を使う方が一般的です。これを変数名を使って参照することになるためで、その [**Begin**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.begin) メソッドを後で呼び出してアニメーションを実行できるようにする目的があります。 [x:Key 属性](https://msdn.microsoft.com/library/windows/apps/Mt204787)を使う場合は、[**Item**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.resourcedictionary.item) インデクサーなどの [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794) メソッドを使ってキーを持つリソースとしてそれを取得し、取得したオブジェクトを **Storyboard** にキャストして、**Storyboard** メソッドを使う必要があります。
 
  
 
@@ -243,8 +235,7 @@ UI スレッドの処理を遅くする可能性があると判断された各�
 -   アニメーションのターゲットが [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) 値であり、[**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) を使い、その [**Color**](https://msdn.microsoft.com/library/windows/apps/BR242963) をアニメーション化する
 -   アニメーションが [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320) である
 
-
-              **注意**  アニメーションが独立型であると見なされるためには、明示的に `Duration="0"` を設定する必要があります。 たとえば、この XAML から `Duration="0"` を削除した場合、フレームの [**KeyTime**](https://msdn.microsoft.com/library/windows/apps/BR243169) が "0:0:0" であった場合でも、アニメーションは独立型であると見なされます。
+**注意**  アニメーションが独立型であると見なされるためには、明示的に `Duration="0"` を設定する必要があります。 たとえば、この XAML から `Duration="0"` を削除した場合、フレームの [**KeyTime**](https://msdn.microsoft.com/library/windows/apps/BR243169) が "0:0:0" であった場合でも、アニメーションは独立型であると見なされます。
 
  
 
@@ -265,8 +256,7 @@ UI スレッドの処理を遅くする可能性があると判断された各�
 
 アプリ開発者は、**EnableDependentAnimation** が **true** でも、依存型アニメーションを常に無効にするアプリ全体の設定を適用することもできます。 「[**Timeline.AllowDependentAnimations**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.allowdependentanimations)」をご覧ください。
 
-
-              **ヒント**  Visual Studio を使ってコントロールの表示状態を構成すると、表示状態プロパティに依存型アニメーションを適用しようとするたびに、デザイナーによって警告が表示されます。
+**ヒント**  Visual Studio を使ってコントロールの表示状態を構成すると、表示状態プロパティに依存型アニメーションを適用しようとするたびに、デザイナーによって警告が表示されます。
 
  
 
@@ -305,8 +295,7 @@ myStoryBoard.Begin()
 
 アニメーションが値を適用した後、他のロジックを実行する必要がある場合は、[**Completed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.completed.aspx) イベントを処理できます。 また、プロパティ システム/アニメーション操作のトラブルシューティングには、[**GetAnimationBaseValue**](https://msdn.microsoft.com/library/windows/apps/BR242358) メソッドが役立つ場合があります。
 
-
-              **ヒント**  アプリ コードからアニメーションを開始するアプリのシナリオを実現するためにコードを記述している際に、アニメーションや切り替えが、独自の UI シナリオのためのアニメーション ライブラリに既に存在するかどうかをもう一度確かめたい場合があります。 ライブラリ アニメーションは使いやすいうえ、すべての Windows ランタイム アプリで UI エクスペリエンスの一貫性を高めるのに役立ちます。
+**ヒント**  アプリ コードからアニメーションを開始するアプリのシナリオを実現するためにコードを記述している際に、アニメーションや切り替えが、独自の UI シナリオのためのアニメーション ライブラリに既に存在するかどうかをもう一度確かめたい場合があります。 ライブラリ アニメーションは使いやすいうえ、すべての Windows ランタイム アプリで UI エクスペリエンスの一貫性を高めるのに役立ちます。
 
  
 
@@ -314,8 +303,7 @@ myStoryBoard.Begin()
 
 コントロールの表示状態を定義するために使われる [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) の実行動作は、アプリがストーリーボードを直接実行する方法とは異なります。 XAML で表示状態の定義に適用されるとおり、**Storyboard** は上位の [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) の要素であり、状態全体は [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstatemanager) API を使って制御されます。 含まれるアニメーションは、上位の [**VisualState** がコントロールによって使われるときにアニメーション値と **Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517) プロパティに従って実行されます。 詳しくは、「[表示状態用にストーリーボードに設定されたアニメーション](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)」をご覧ください。 表示状態については、明確な [**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243209) は異なります。 表示状態が別の状態に変化すると、新しい表示状態でプロパティに新しいアニメーションを明示的に適用しない場合でも、前の表示状態とそのアニメーションによって適用されるすべてのプロパティの変更が取り消されます。
 
-### 
-              **Storyboard** と **EventTrigger**
+### **Storyboard** と **EventTrigger**
 
 XAML で完全に宣言できるアニメーションをある方法で開始できます。 しかし、この手法は幅広く使われていません。 これは、[**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.visualstatemanager) がサポートされる前の WPF と旧バージョンの Silverlight で使われていた構文です。 この [**EventTrigger**](https://msdn.microsoft.com/library/windows/apps/BR242390) 構文はインポートまたは互換性の理由から Windows ランタイム XAML でも機能するものの、[**FrameworkElement.Loaded**](https://msdn.microsoft.com/library/windows/apps/BR208723) イベントに基づくトリガー動作でのみ機能します。他のイベントのトリガーを試みると、例外がスローされるか、コンパイルに失敗します。 詳しくは、「[**EventTrigger**](https://msdn.microsoft.com/library/windows/apps/BR242390)」または「[**BeginStoryboard**](https://msdn.microsoft.com/library/windows/apps/BR243053)」をご覧ください。
 
@@ -346,6 +334,6 @@ XAML で完全に宣言できるアニメーションをある方法で開始で
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

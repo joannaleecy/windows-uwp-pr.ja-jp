@@ -1,125 +1,129 @@
 ---
 author: mijacobs
-Description: Learn how to use tiles, badges, toasts, and notifications to provide entry points into your app and keep users up-to-date.
-title: Tiles, badges, and notifications
+Description: "タイル、バッジ、トースト、通知を使用して、アプリへのエントリ ポイントを提供し、ユーザーに最新情報を提示する方法について説明します。"
+title: "タイル、バッジ、および通知"
 ms.assetid: 48ee4328-7999-40c2-9354-7ea7d488c538
 label: Tiles, badges, and notifications
 template: detail.hbs
+translationtype: Human Translation
+ms.sourcegitcommit: eb6744968a4bf06a3766c45b73b428ad690edc06
+ms.openlocfilehash: a02793e45f190b9401f18e845af3dc73d235c3fc
+
 ---
+# UWP アプリ向けのバッジ通知
+
 <link rel="stylesheet" href="https://az835927.vo.msecnd.net/sites/uwp/Resources/css/custom.css"> 
 
-# Badge notifications for UWP apps
-
 <div style="float:left; font-size:80%; text-align:left; margin: 0px 15px 15px 0px;">
-<img src="images/badge-example.png" alt="A tile with a numeric badge displaying the number 63 to indicate 63 unread mails." style="padding-bottom:0.0em; margin-bottom: 2px" /><br/>A tile with a numeric badge displaying<br/> the number 63 to indicate 63 unread mails.</div>
+<img src="images/badge-example.png" alt="A tile with a numeric badge displaying the number 63 to indicate 63 unread mails." style="padding-bottom:0.0em; margin-bottom: 2px" /><br/>タイル上の数値バッジが数字の 63 を表示して、<br/> 63 の未読メールがあることを示しています。</div>
 
-A notification badge conveys summary or status information specific to your app. They can be numeric (1-99) or one of a set of system-provided glyphs. Examples of information best conveyed through a badge include network connection status in an online game, user status in a messaging app, number of unread mails in a mail app, and number of new posts in a social media app. 
+通知バッジは、使っているアプリ特有の概要や状態情報を伝達します。 バッジは、数値 (1 ～ 99) の場合やシステムが提供するグリフの 1 つである場合があります。 バッジによってよく伝達される情報の例としては、オンライン ゲームでのネットワーク接続状態、メッセージング アプリでのユーザーの状態、メール アプリでの未読メールの数、ソーシャル メディア アプリでの新しい投稿数などがあります。 
 
-Notification badges appear on your app's taskbar icon and in the lower-right corner of its start tile, regardless of whether the app is running. Badges can be displayed on all tile sizes.  
+通知バッジは、アプリが実行されているかどうかに関係なく、アプリのタスク バーのアイコンとスタート タイルの右下隅に表示されます。 バッジは、どのサイズのタイルにも表示できます。  
 
-**Note**&nbsp;&nbsp;You cannot provide your own badge image; only system-provided badge images can be used.
+**注意**&nbsp;&nbsp;独自のバッジ イメージを指定することはできません。システムが提供するバッジ イメージだけを使うことができます。
 
-## Numeric badges
+## 数値バッジ
 
 <table>
     <tr>
-        <th>Value</th>
-        <th>Badge</th>
+        <th>値</th>
+        <th>バッジ</th>
         <th>XML</th>
     </tr>
     <tr>
-        <td>A number from 1 to 99. A value of 0 is equivalent to the glyph value "none" and will clear the badge.</td>
-        <td>![A numeric badge less than 100.](images/badges/badge-numeric.png)</td>
+        <td>1 ～ 99 の数字。 値 0 はグリフ値 "none" と同じであり、バッジをクリアします。</td>
+        <td>![100 より小さい数値バッジ。](images/badges/badge-numeric.png)</td>
         <td>`<badge value="1"/>`</td>
     </tr>
     <tr>
-        <td>Any number greater than 99.</td>
-        <td>![A numeric badge greater than 99.](images/badges/badge-numeric-greater.png)</td></td>
+        <td>99 を超える数字。</td>
+        <td>![99 より大きい数値バッジ。](images/badges/badge-numeric-greater.png)</td></td>
         <td>`<badge value="100"/>`</td>
     </tr>    
 </table>
 
-## Glyph badges
-Instead of a number, a badge can display one of a non-extensible set of status glyphs. 
+## グリフ バッジ
+バッジには、数値の代わりに拡張不可能な状態グリフ セットの 1 つを表示することもできます。 
 
 <table>
 <tr>
-    <th>Status</th>
-    <th>Glyph</th>
+    <th>状態</th>
+    <th>グリフ</th>
     <th>XML</th>
 </tr>
 <tr>
-    <td>none</td>
-    <td>(No badge shown.)</td>
+    <td>なし</td>
+    <td>(バッジは表示されません。)</td>
     <td>`<badge value="none"/>`</td>
 </tr>
 <tr>
-    <td>activity</td>
-    <td>![Glyph](images/badges/badge-activity.png)</td>
+    <td>activity (アクティビティ)</td>
+    <td>![グリフ](images/badges/badge-activity.png)</td>
     <td>`<badge value="activity"/>`</td>
 </tr>
 <tr>
-    <td>alarm</td>
-    <td>![Glyph](images/badges/badge-alarm.png)</td>
+    <td>alarm (アラーム)</td>
+    <td>![グリフ](images/badges/badge-alarm.png)</td>
     <td>`<badge value="alarm"/>`</td>
 </tr>
 <tr>
-    <td>alert</td>
-    <td>![Glyph](images/badges/badge-alert.png)</td>
+    <td>alert (警告)</td>
+    <td>![グリフ](images/badges/badge-alert.png)</td>
     <td>`<badge value="alert"/>`</td>
 </tr>
 <tr>
-    <td>attention</td>
-    <td>![Glyph](images/badges/badge-attention.png)</td>
+    <td>attention (注意)</td>
+    <td>![グリフ](images/badges/badge-attention.png)</td>
     <td>`<badge value="attention"/>`</td>
 </tr>
 <tr>
-    <td>available</td>
-    <td>![Glyph](images/badges/badge-available.png)</td>
+    <td>available (利用可能)</td>
+    <td>![グリフ](images/badges/badge-available.png)</td>
     <td>`<badge value="available"/>`</td>
 </tr>
 <tr>
-    <td>away</td>
-    <td>![Glyph](images/badges/badge-away.png)</td>
+    <td>away (離席中)</td>
+    <td>![グリフ](images/badges/badge-away.png)</td>
     <td>`<badge value="away"/>`</td>
 </tr>
 <tr>
-    <td>busy</td>
-    <td>![Glyph](images/badges/badge-busy.png)</td>
+    <td>busy (取り込み中)</td>
+    <td>![グリフ](images/badges/badge-busy.png)</td>
     <td>`<badge value="busy"/>`</td>
 </tr>
 <tr>
-    <td>error</td>
-    <td>![Glyph](images/badges/badge-error.png)</td>
+    <td>error (エラー)</td>
+    <td>![グリフ](images/badges/badge-error.png)</td>
     <td>`<badge value="error"/>`</td>
 </tr>
 <tr>
-    <td>newMessage</td>
-    <td>![Glyph](images/badges/badge-newMessage.png)</td>
+    <td>newMessage (新しいメッセージ)</td>
+    <td>![グリフ](images/badges/badge-newMessage.png)</td>
     <td>`<badge value="newMessage"/>`</td>
 </tr>
 <tr>
-    <td>paused</td>
-    <td>![Glyph](images/badges/badge-paused.png)</td>
+    <td>paused (一時停止)</td>
+    <td>![グリフ](images/badges/badge-paused.png)</td>
     <td>`<badge value="paused"/>`</td>
 </tr>
 <tr>
-    <td>playing</td>
-    <td>![Glyph](images/badges/badge-playing.png)</td>
+    <td>playing (再生)</td>
+    <td>![グリフ](images/badges/badge-playing.png)</td>
     <td>`<badge value="playing"/>`</td>
 </tr>
 <tr>
-    <td>unavailable</td>
-    <td>![Glyph](images/badges/badge-unavailable.png)</td>
+    <td>unavailable (利用不可)</td>
+    <td>![グリフ](images/badges/badge-unavailable.png)</td>
     <td>`<badge value="unavailable"/>`</td>
 </tr>
 </table>
 
-## Create a badge
+## バッジの作成
 
-These examples show you how to to create a badge update.
+以降の例で、バッジの更新を作成する方法を示します。
 
-### Create a numeric badge
+### 数値バッジの作成
 
 ````csharp
 private void setBadgeNumber(int num)
@@ -146,7 +150,7 @@ private void setBadgeNumber(int num)
 }
 ````
 
-### Create a glyph badge
+### グリフ バッジの作成
 ````csharp
 private void updateBadgeGlyph()
 {
@@ -174,7 +178,7 @@ private void updateBadgeGlyph()
 }
 ````
 
-### Clear a badge
+### バッジのクリア
 
 ````csharp
 private void clearBadge()
@@ -183,12 +187,17 @@ private void clearBadge()
 }
 ````
 
-## Get the samples
+## サンプルの入手
 
-* [Notifications sample](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/Notifications)<br/> Shows how to create live tiles, send badge updates, and display toast notifications. 
+* [通知のサンプル](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/Notifications)<br/> ライブ タイルを作り、バッジの更新を送信し、トースト通知を表示する方法を示します。 
 
-## Related articles
+## 関連記事
 
-* [Adaptive and interactive toast notifications](tiles-and-notifications-adaptive-interactive-toasts.md)
-* [Create tiles](tiles-and-notifications-creating-tiles.md)
-* [Create adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md)
+* [アダプティブ トースト通知と対話型トースト通知](tiles-and-notifications-adaptive-interactive-toasts.md)
+* [タイルの作成](tiles-and-notifications-creating-tiles.md)
+* [アダプティブ タイルの作成](tiles-and-notifications-create-adaptive-tiles.md)
+
+
+<!--HONumber=Aug16_HO3-->
+
+

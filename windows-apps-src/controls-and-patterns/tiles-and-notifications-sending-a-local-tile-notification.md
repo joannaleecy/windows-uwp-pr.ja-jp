@@ -5,7 +5,6 @@ title: "ローカル タイル通知の送信"
 ms.assetid: D34B0514-AEC6-4C41-B318-F0985B51AF8A
 label: TBD
 template: detail.hbs
-translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
 ms.openlocfilehash: cc2f86f2a56aae5ee9e3019dafa3417a25e7d610
 
@@ -17,11 +16,12 @@ ms.openlocfilehash: cc2f86f2a56aae5ee9e3019dafa3417a25e7d610
 
 
 
-Windows 10 では、アプリのプライマリ タイルはアプリ マニフェストで定義されます。これに対して、セカンダリ タイルはプログラムによって作成され、アプリ コードで定義されます。 この記事では、アダプティブ タイル テンプレートを使って、ローカル タイル通知をプライマリ タイルやセカンダリ タイルに送信する方法について説明します (ローカル通知とは、Web サーバーからプッシュまたはプルされる通知ではなく、アプリ コードから送信される通知です)。
+Windows 10 では、アプリのプライマリ タイルはアプリ マニフェストで定義されます。これに対して、セカンダリ タイルはプログラムによって作成され、アプリ コードで定義されます。 この記事では、アダプティブ タイル テンプレートを使って、ローカル タイル通知をプライマリ タイルやセカンダリ タイルに送信する方法について説明します  (ローカル通知とは、Web サーバーからプッシュまたはプルされる通知ではなく、アプリ コードから送信される通知です)。
 
 ![既定のタイルと通知を含んだタイル](images/sending-local-tile-01.png)
 
-**注**   詳しくは「[アダプティブ タイルの作成](tiles-and-notifications-create-adaptive-tiles.md)」と「[アダプティブ タイル テンプレートのスキーマ](tiles-and-notifications-adaptive-tiles-schema.md)」をご覧ください。
+
+            **注**   詳しくは「[アダプティブ タイルの作成](tiles-and-notifications-create-adaptive-tiles.md)」と「[アダプティブ タイル テンプレートのスキーマ](tiles-and-notifications-adaptive-tiles-schema.md)」をご覧ください。
 
  
 
@@ -30,7 +30,7 @@ Windows 10 では、アプリのプライマリ タイルはアプリ マニフ�
 
 [NotificationsExtensions NuGet パッケージ](https://www.nuget.org/packages/NotificationsExtensions.Win10/)をインストールすることをお勧めします。このパッケージを使うと、生の XML ではなくオブジェクトによってタイルのペイロードが生成され、さまざまなことが簡素化されます。
 
-この記事のインライン コードの例は、[NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) NuGet パッケージがインストールされている場合の C# に対応しています (独自の XML を作成する場合は、この記事の最後に示されている、[NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) を使わないコード例をご覧ください)。
+この記事のインライン コードの例は、[NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) NuGet パッケージがインストールされている場合の C# に対応しています  (独自の XML を作成する場合は、この記事の最後に示されている、[NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) を使わないコード例をご覧ください)。
 
 ## <span id="Add_namespace_declarations"></span><span id="add_namespace_declarations"></span><span id="ADD_NAMESPACE_DECLARATIONS"></span>名前空間宣言を追加する
 
@@ -45,7 +45,7 @@ using NotificationsExtensions.Tiles; // NotificationsExtensions.Win10
 ## <span id="Create_the_notification_content"></span><span id="create_the_notification_content"></span><span id="CREATE_THE_NOTIFICATION_CONTENT"></span>タイル通知のコンテンツを作成する
 
 
-Windows 10 では、アダプティブ タイル テンプレートを使ってタイルのペイロードが定義されます。これにより、通知に合わせたカスタムの視覚的なレイアウトを作成できます (アダプティブ タイルを使ってできることについて詳しくは、「[アダプティブ タイルの作成](tiles-and-notifications-create-adaptive-tiles.md)」と「[アダプティブ タイル テンプレート](tiles-and-notifications-adaptive-tiles-schema.md)」の記事をご覧ください)。
+Windows 10 では、アダプティブ タイル テンプレートを使ってタイルのペイロードが定義されます。これにより、通知に合わせたカスタムの視覚的なレイアウトを作成できます  (アダプティブ タイルを使ってできることについて詳しくは、「[アダプティブ タイルの作成](tiles-and-notifications-create-adaptive-tiles.md)」と「[アダプティブ タイル テンプレート](tiles-and-notifications-adaptive-tiles-schema.md)」の記事をご覧ください)。
 
 次のコード例では、普通サイズのタイルおよびワイド タイル用にアダプティブ タイルのコンテンツを作成します。
 
@@ -171,8 +171,7 @@ TileUpdateManager.CreateTileUpdaterForApplication().Update(notification);
 
 **セカンダリ タイル**
 
-通知をセカンダリ タイルに送信するには、まず、セカンダリ タイルが存在することを確認します。 存在しないセカンダリ タイル (ユーザーがセカンダリ タイルのピン留めを外した場合など) のタイル アップデーターを作成すると、例外がスローされます。 [
-            **SecondaryTile.Exists**](https://msdn.microsoft.com/library/windows/apps/br242205)(tileId) を使ってセカンダリ タイルがピン留めされていることを確認してから、セカンダリ タイルのタイル アップデーターを作成し、通知を送信することができます。
+通知をセカンダリ タイルに送信するには、まず、セカンダリ タイルが存在することを確認します。 存在しないセカンダリ タイル (ユーザーがセカンダリ タイルのピン留めを外した場合など) のタイル アップデーターを作成すると、例外がスローされます。 [**SecondaryTile.Exists**](https://msdn.microsoft.com/library/windows/apps/br242205)(tileId) を使ってセカンダリ タイルがピン留めされていることを確認してから、セカンダリ タイルのタイル アップデーターを作成し、通知を送信することができます。
 
 次のコード例では、通知をセカンダリ タイルに送信します。
 

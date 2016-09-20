@@ -3,7 +3,6 @@ author: jwmsft
 description: "XAML マークアップで、プロパティに null 値を指定します。"
 title: "xNull マークアップ拡張"
 ms.assetid: E6A4038E-4ADA-4E82-9824-582FC16AB037
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 96ec27fa36d5a30d6bcf3b3c4ad4a330bf799a09
 
@@ -23,7 +22,8 @@ XAML マークアップで、プロパティに **null** 値を指定します�
 
 ## 注釈
 
-**null** は、C# と C++ の null 参照キーワードです。 Microsoft Visual Basic の null 参照キーワードは **Nothing** です。
+
+            **null** は、C# と C++ の null 参照キーワードです。 Microsoft Visual Basic の null 参照キーワードは **Nothing** です。
 
 初期の既定値は、依存関係プロパティごとに異なる場合があり、必ずしも **null** というわけではありません。 また、依存関係プロパティの多くは、その内部実装により、(マークアップまたはコードのいずれによる場合でも) **null** を値として受け入れません。 このような場合、**{x:Null}** で XAML 属性値を設定すると、パーサー例外が発生することがあります。
 

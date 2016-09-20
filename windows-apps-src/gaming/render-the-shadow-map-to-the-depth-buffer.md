@@ -3,7 +3,6 @@ author: mtoepke
 title: "深度バッファーへのシャドウ マップのレンダリング"
 description: "ライトの視点からレンダリングして、シャドウ ボリュームを表す 2 次元の深度マップを作成します。"
 ms.assetid: 7f3d0208-c379-8871-cc48-027047c6c2d0
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 644e2084baa750965a5283208fde1cea24ecfdea
 
@@ -122,7 +121,8 @@ void ShadowSceneRenderer::RenderShadowMap()
 }
 ```
 
-**視錐台の最適化:** 深度バッファーの精度を最大限に高めるために、実装では視錐台を厳密に計算してください。 シャドウの方法に関するヒントについては、「[シャドウ深度マップを向上させるための一般的な方法](https://msdn.microsoft.com/library/windows/desktop/ee416324)」をご覧ください。
+
+            **視錐台の最適化:** 深度バッファーの精度を最大限に高めるために、実装では視錐台を厳密に計算してください。 シャドウの方法に関するヒントについては、「[シャドウ深度マップを向上させるための一般的な方法](https://msdn.microsoft.com/library/windows/desktop/ee416324)」をご覧ください。
 
 ## シャドウ パスの頂点シェーダー
 

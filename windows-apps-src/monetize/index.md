@@ -3,7 +3,6 @@ author: mcleanbyron
 ms.assetid: 4e8cc0c0-b14c-472c-9e1c-4601d10289d2
 description: "Windows SDK と Microsoft Store Engagement and Monetization SDK および Windows ストアでは、アプリによる収益の向上と顧客エンゲージメントによるユーザー獲得のための、多くの機能を提供します。"
 title: "アプリの収益の獲得"
-translationtype: Human Translation
 ms.sourcegitcommit: de85956c7c1d2a0ba509d61ee8928b412f057f8a
 ms.openlocfilehash: 6d5f483b44ae4516f4969431e31f70388a66c5d9
 

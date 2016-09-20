@@ -1,11 +1,11 @@
 ---
 author: jwmsft
-description: "XAML 名前スコープには、XAML で定義されたオブジェクトの名前とそれに対応するインスタンスとの関係が格納されます。 この概念は、他のプログラミング言語やテクノロジで使われている用語 \"名前スコープ\" と広い意味で似ています。"
+description: "XAML 名前スコープには、XAML で定義されたオブジェクトの名前とそれに対応するインスタンスとの関係が格納されます。 この概念は、他のプログラミング言語やテクノロジで使われている用語 &quot;名前スコープ&quot; と広い意味で似ています。"
 title: "XAML 名前スコープ"
 ms.assetid: EB060CBD-A589-475E-B83D-B24068B54C21
 translationtype: Human Translation
 ms.sourcegitcommit: 98b9bca2528c041d2fdfc6a0adead321737932b4
-ms.openlocfilehash: b8b833f40bc38799acc8813d38ddea63426f05b3
+ms.openlocfilehash: 34ef0bf246abe49a5e19adef66bddda7004a3441
 
 ---
 
@@ -21,8 +21,7 @@ XAML 名前スコープ内で名前を使うと、最初に XAML で定義され
 
 XAML 名前スコープ内の名前の最も一般的な用途は、オブジェクト インスタンスに対する直接参照です。これは、マークアップ コンパイル パスを部分クラス テンプレートに生成された **InitializeComponent** メソッドと組み合わせてプロジェクト ビルド アクションとして使うことで、有効化されます。
 
-[
-            **FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) ユーティリティ メソッドを実行時に使って、XAML マークアップで名前を定義されているオブジェクトへの参照を返すこともできます。
+[**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) ユーティリティ メソッドを実行時に使って、XAML マークアップで名前を定義されているオブジェクトへの参照を返すこともできます。
 
 ### ビルド アクションと XAML の詳細
 
@@ -36,8 +35,7 @@ XAML は、初期の XAML ソース解析操作に対して同じように動作
 
 ### XamlReader.Load が XAML 名前スコープに与える影響
 
-[
-            **XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) によって作成された新しいオブジェクト ツリーで定義される暫定的な XAML 名前スコープは、指定された XAML で定義名が一意であるかどうかを評価します。 指定された XAML 内の名前がこの時点で内部的に一意でない場合、**XamlReader.Load** によって例外がスローされます。 切断されたオブジェクト ツリーがメインのアプリ オブジェクト ツリーに接続されている場合、切断されたオブジェクト ツリーの XAML 名前スコープは、メインのアプリ XAML 名前スコープには結合されません。 ツリーの接続後、アプリのオブジェクト ツリーは結合されていますが、そのツリーの XAML 名前スコープは分離されています。 オブジェクト間の接続ポイントでは、分岐が発生します。ここで、**XamlReader.Load** の呼び出しによって返される値をプロパティに設定します。
+[**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) によって作成された新しいオブジェクト ツリーで定義される暫定的な XAML 名前スコープは、指定された XAML で定義名が一意であるかどうかを評価します。 指定された XAML 内の名前がこの時点で内部的に一意でない場合、**XamlReader.Load** によって例外がスローされます。 切断されたオブジェクト ツリーがメインのアプリ オブジェクト ツリーに接続されている場合、切断されたオブジェクト ツリーの XAML 名前スコープは、メインのアプリ XAML 名前スコープには結合されません。 ツリーの接続後、アプリのオブジェクト ツリーは結合されていますが、そのツリーの XAML 名前スコープは分離されています。 オブジェクト間の接続ポイントでは、分岐が発生します。ここで、**XamlReader.Load** の呼び出しによって返される値をプロパティに設定します。
 
 切断された異なる XAML 名前スコープを持つことに伴う問題は、マネージ オブジェクトの直接参照と同様に、[**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) メソッドの呼び出しが、結合された XAML 名前スコープでは動作しなくなることです。 代わりに、**FindName** の呼び出しの対象となった特定のオブジェクトがスコープを意味し、そのスコープは呼び出し元オブジェクトが存在する XAML 名前スコープになります。 マネージ オブジェクトの直接参照では、スコープは、コードが存在するクラスによって暗黙的に指定されます。 一般に、アプリ コンテンツの "ページ" における実行時の対話に使うコード ビハインドは、ルート "ページ" をサポートする部分クラスに存在するため、XAML 名前スコープはルート XAML 名前スコープになります。
 
@@ -47,12 +45,10 @@ XAML は、初期の XAML ソース解析操作に対して同じように動作
 
 異なる XAML 名前スコープに定義されているオブジェクトを参照するには、次のような手法を使用できます。
 
--   [
-            **Parent**](https://msdn.microsoft.com/library/windows/apps/br208739) や、オブジェクト ツリー構造内に存在することが判明しているコレクション プロパティ ([**Panel.Children**](https://msdn.microsoft.com/library/windows/apps/br227514) によって返されるコレクションなど) を使って、分離されたステップでツリー全体を移動します。
+-   [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739) や、オブジェクト ツリー構造内に存在することが判明しているコレクション プロパティ ([**Panel.Children**](https://msdn.microsoft.com/library/windows/apps/br227514) によって返されるコレクションなど) を使って、分離されたステップでツリー全体を移動します。
 -   異なる XAML 名前スコープから呼び出していて、ルート XAML 名前スコープを対象とする必要がある場合は、現在表示されているメイン ウィンドウへの参照を取得すると簡単です。 `Window.Current.Content`を呼び出す 1 行のコードを使って、現在のアプリ ウィンドウからの表示ルート (ルート XAML 要素、"コンテンツ ソース" とも呼ばれます) を取得できます。 次に [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) にキャストし、このスコープから [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) を呼び出すことができます。
 -   ルート XAML 名前スコープから呼び出していて、異なる XAML 名前スコープ内のオブジェクトを対象とする必要がある場合は、[**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048) から返されてメイン オブジェクト ツリーに追加されたオブジェクトへの参照を、あらかじめコードに記述して保持しておくことをお勧めします。 これにより、このオブジェクトが、異なる XAML 名前スコープ内で [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) を呼び出すための有効なオブジェクトになります。 このオブジェクトはグローバル変数として保持できるほか、メソッドのパラメーターを使って渡すこともできます。
--   ビジュアル ツリーを走査することにより、名前と XAML 名前スコープの考慮事項を完全に回避できます。 [
-            **VisualTreeHelper**](https://msdn.microsoft.com/library/windows/apps/br243038) API を使うと、位置とインデックスだけを基に、親オブジェクトと子コレクションの観点からビジュアル ツリーを走査できます。
+-   ビジュアル ツリーを走査することにより、名前と XAML 名前スコープの考慮事項を完全に回避できます。 [**VisualTreeHelper**](https://msdn.microsoft.com/library/windows/apps/br243038) API を使うと、位置とインデックスだけを基に、親オブジェクトと子コレクションの観点からビジュアル ツリーを走査できます。
 
 ## テンプレートにおける XAML 名前スコープ
 
@@ -91,6 +87,6 @@ XAML 名前スコープが複数存在するため、テンプレートが適用
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

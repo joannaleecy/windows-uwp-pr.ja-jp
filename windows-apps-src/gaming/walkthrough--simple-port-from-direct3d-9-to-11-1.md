@@ -58,8 +58,7 @@ ms.openlocfilehash: 27c6f82e97e9eb24dedcc5d83a18e6aba6961194
 -   デバイス、デバイス コンテキスト、グラフィックス インフラストラクチャの分離。
 -   シェーダーをコンパイルし、実行時にシェーダーのバイトコードを読み込むプロセス。
 -   入力アセンブラー (IA) ステージの頂点ごとのデータを構成する方法。
--   [
-            **IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) を使って CoreWindow ビューを作成する方法。
+-   [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) を使って CoreWindow ビューを作成する方法。
 
 このチュートリアルでは、簡素化のため [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) を使用しており、XAML の相互運用には対応しない点に注意してください。
 
@@ -77,6 +76,7 @@ ms.openlocfilehash: 27c6f82e97e9eb24dedcc5d83a18e6aba6961194
             
           
             [Direct3D 9 での HLSL シェーダーの記述](https://msdn.microsoft.com/library/windows/desktop/bb944006)
+          
 
 [テンプレートからの DirectX ゲーム プロジェクトの作成](user-interface.md)
 
@@ -86,6 +86,7 @@ ms.openlocfilehash: 27c6f82e97e9eb24dedcc5d83a18e6aba6961194
             [
               **Microsoft::WRL::ComPtr**
             ](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)
+          
 
 [**オブジェクト演算子 (^) へのハンドル (^)**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx
 

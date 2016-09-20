@@ -3,7 +3,6 @@ author: drewbatgit
 ms.assetid: 0fc12d26-f1cf-4da7-b5a7-735a5074b74a
 description: "このセクションでは、写真、ビデオ、オーディオをキャプチャ、再生、または編集するユニバーサル Windows アプリの作成について説明します。"
 title: "オーディオ、ビデオ、およびカメラ"
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 8480eb181b6af26eae5950a1f1bf040d0cb5db99
 

@@ -3,7 +3,6 @@ author: TylerMSFT
 ms.assetid: BF929A68-9C82-4866-BC13-A32B3A550005
 title: "最近使ったファイルやフォルダーの追跡"
 description: "ユーザーが頻繁にアクセスするファイルを追跡するには、そのファイルを最近使ったアプリの一覧 (MRU) に追加します。"
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 83100d1246dd18324104a63c9cd950e2ff1fce0b
 
@@ -22,7 +21,8 @@ ms.openlocfilehash: 83100d1246dd18324104a63c9cd950e2ff1fce0b
 
 お使いのアプリの MRU は、静的な [**StorageApplicationPermissions.MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458) プロパティから取得する [**StorageItemMostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207475) クラスによって表されます。 MRU の項目は [**IStorageItem**](https://msdn.microsoft.com/library/windows/apps/br227129) オブジェクトとして格納されます。つまり、[**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクト (ファイルを表すオブジェクト) と [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) オブジェクト (フォルダーを表すオブジェクト) は、どちらも MRU に追加できます。
 
-**注**  また、[ファイル ピッカーのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619994)と[ファイル アクセスのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619995)もご覧ください。
+
+            **注**  また、[ファイル ピッカーのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619994)と[ファイル アクセスのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619995)もご覧ください。
 
  
 
@@ -53,11 +53,13 @@ ms.openlocfilehash: 83100d1246dd18324104a63c9cd950e2ff1fce0b
     string mruToken = mru.Add(file, "profile pic");
     ```
     
-    [
+    
+            [
               **StorageItemMostRecentlyUsedList.Add**
             ](https://msdn.microsoft.com/library/windows/apps/br207476) がオーバーロードされます。 この例では [**Add(IStorageItem, String)**](https://msdn.microsoft.com/library/windows/apps/br207481) を使って、メタデータをファイルに関連付けられるようにしています。 メタデータを設定すると、その項目の目的 ("プロファイル画像" など) を記録できます。 メタデータなしで MRU にファイルを追加するには、[**Add(IStorageItem)**](https://msdn.microsoft.com/library/windows/apps/br207480) を呼び出します。 MRU に項目を追加すると、項目を取得するときに使われる一意に識別するための文字列であるトークンが返されます。
 
-    **ヒント**   項目を MRU から取得するにはそのトークンが必要であるため、どこかに保存しておいてください。 アプリ データの詳細については、「[アプリケーション データの管理](https://msdn.microsoft.com/library/windows/apps/hh465109)」を参照してください。
+    
+            **ヒント**   項目を MRU から取得するにはそのトークンが必要であるため、どこかに保存しておいてください。 アプリ データの詳細については、「[アプリケーション データの管理](https://msdn.microsoft.com/library/windows/apps/hh465109)」を参照してください。
 
      
 
@@ -87,8 +89,7 @@ foreach (Windows.Storage.AccessCache.AccessListEntry entry in mru.Entries)
 }
 ```
 
-[
-            **AccessListEntryView**](https://msdn.microsoft.com/library/windows/apps/br227349) を使うと MRU 内のエントリを反復処理できます。 これらのエントリは、項目のトークンとメタデータが格納された [**AccessListEntry**](https://msdn.microsoft.com/library/windows/apps/br227348) 構造体です。
+[**AccessListEntryView**](https://msdn.microsoft.com/library/windows/apps/br227349) を使うと MRU 内のエントリを反復処理できます。 これらのエントリは、項目のトークンとメタデータが格納された [**AccessListEntry**](https://msdn.microsoft.com/library/windows/apps/br227348) 構造体です。
 
 ## 空きのない MRU から項目を削除する
 
@@ -100,8 +101,7 @@ MRU の上限である 25 項目に達している場合、新しい項目を追
 
 ユーザーが項目を選ぶ際には、MRU のほか、後でアクセスする一覧にも追加することを検討してください。
 
--   [
-            **FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) は最大 1,000 項目を保持できます。 ファイル以外にもフォルダーを保持できるため、大量のフォルダーがあることにご注意ください。
+-   [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) は最大 1,000 項目を保持できます。 ファイル以外にもフォルダーを保持できるため、大量のフォルダーがあることにご注意ください。
 -   プラットフォームによって [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) から項目が削除されることはありません。 項目の数が上限の 1,000 に到達した場合、[**Remove**](https://msdn.microsoft.com/library/windows/apps/br207497) メソッドで空きを確保するまで項目を追加できません。
 
  

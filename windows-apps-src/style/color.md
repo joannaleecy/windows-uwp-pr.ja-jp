@@ -6,7 +6,6 @@ ms.assetid: 3ba7176f-ac47-498c-80ed-4448edade8ad
 label: Color
 template: detail.hbs
 extraBodyClass: style-color
-translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
 ms.openlocfilehash: 878470a7cbf44862c47a1428a1d25d332db32fdc
 

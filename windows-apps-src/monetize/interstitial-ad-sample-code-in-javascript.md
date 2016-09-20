@@ -3,7 +3,6 @@ author: mcleanbyron
 ms.assetid: 646977ed-1705-4ea7-a3db-a6b9aac70703
 description: "JavaScript/HTML. を使ってスポット広告を起動する方法について説明します。"
 title: "JavaScript を使ったスポット広告のサンプル コード"
-translationtype: Human Translation
 ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
 ms.openlocfilehash: d6a561aaff834cd782118abb72b4770985176bf0
 

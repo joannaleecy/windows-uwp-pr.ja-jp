@@ -3,7 +3,6 @@ author: mcleanbyron
 ms.assetid: fcebd659-438b-4d03-bc73-6b662ed6f1f3
 description: "広告を含むアプリの開発と公開のプロセスの詳細"
 title: "広告を含むアプリを作成するためのワークフロー"
-translationtype: Human Translation
 ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
 ms.openlocfilehash: 69dd1a17290b7ffbc14dbc58404868119403f7c0
 

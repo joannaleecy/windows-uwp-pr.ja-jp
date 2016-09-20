@@ -5,7 +5,6 @@ title: "プッシュ通知ウィザードにより生成されるコード"
 ms.assetid: 340F55C1-0DDF-4233-A8E4-C15EF9030785
 label: TBD
 template: detail.hbs
-translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
 ms.openlocfilehash: 6b7bf3c8019e6c3e92fd07b114cdc688fe7ad8de
 
@@ -206,7 +205,8 @@ function sendNotifications(request) {
 
 sendNotifications 関数は、1 つの通知をトースト通知として送信します。 他の種類のプッシュ通知を使うこともできます。
 
-**ヒント**  スクリプトの編集中にヘルプを表示する方法については、[サーバー側の JavaScript で IntelliSense を有効にする方法](http://go.microsoft.com/fwlink/p/?LinkId=309275)に関するページをご覧ください。
+
+            **ヒント**  スクリプトの編集中にヘルプを表示する方法については、[サーバー側の JavaScript で IntelliSense を有効にする方法](http://go.microsoft.com/fwlink/p/?LinkId=309275)に関するページをご覧ください。
 
  
 
@@ -232,7 +232,8 @@ Window Azure のモバイル サービスの柔軟性が不十分な場合、C# 
 
 モバイル サービスでスケジュール済みタスクを実行して、プッシュ通知を送ることもできます。 「[Mobile Services での繰り返し発生するジョブのスケジュール](http://go.microsoft.com/fwlink/p/?linkid=301694)」をご覧ください。
 
-**警告**  プッシュ通知ウィザードは 1 回だけ実行してください。もう一度実行して、別のモバイル サービスの登録コードを追加しないようにしてください。 このウィザードをプロジェクトごとに複数回実行すると、生成されるコードで [**CreatePushNotificationChannelForApplicationAsync**](https://msdn.microsoft.com/library/windows/apps/br241287) メソッドの呼び出しが重複し、ランタイムの例外が発生します。 複数のモバイル サービスのプッシュ通知を登録するには、ウィザードを 1 回だけ実行し、登録コードを上書きして、**CreatePushNotificationChannelForApplicationAsync** の呼び出しが同時に実行されないようにしてください。 そのために、ウィザードによって push.register.\* に生成されたコード (**CreatePushNotificationChannelForApplicationAsync** の呼び出しを含む) を OnLaunched イベント以外の場所に移すという方法もありますが、細かい処理はアプリのアーキテクチャによって異なります。
+
+            **警告**  プッシュ通知ウィザードは 1 回だけ実行してください。もう一度実行して、別のモバイル サービスの登録コードを追加しないようにしてください。 このウィザードをプロジェクトごとに複数回実行すると、生成されるコードで [**CreatePushNotificationChannelForApplicationAsync**](https://msdn.microsoft.com/library/windows/apps/br241287) メソッドの呼び出しが重複し、ランタイムの例外が発生します。 複数のモバイル サービスのプッシュ通知を登録するには、ウィザードを 1 回だけ実行し、登録コードを上書きして、**CreatePushNotificationChannelForApplicationAsync** の呼び出しが同時に実行されないようにしてください。 そのために、ウィザードによって push.register.\* に生成されたコード (**CreatePushNotificationChannelForApplicationAsync** の呼び出しを含む) を OnLaunched イベント以外の場所に移すという方法もありますが、細かい処理はアプリのアーキテクチャによって異なります。
 
  
 

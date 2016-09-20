@@ -6,7 +6,6 @@ title: "グローバリゼーションとローカライズのガイドライン
 ms.assetid: 0342DC3F-DDD1-4DD4-872E-A4EC340CAE79
 label: Do's and don'ts
 template: detail.hbs
-translationtype: Human Translation
 ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
 ms.openlocfilehash: bdbe6b3e319aa90a78660c664f1603bac93399ca
 

@@ -5,7 +5,7 @@ description: "ユニバーサル Windows プラットフォーム (UWP) ゲー�
 ms.assetid: 0fb2819a-61ed-129d-6564-0b67debf5c6b
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: dda452a6f9b2a47d7ddaee9732bb714f0f5dbe5d
+ms.openlocfilehash: 167709c7ba3470c144924801cb8cf18ffa544c5d
 
 ---
 
@@ -18,8 +18,7 @@ ms.openlocfilehash: dda452a6f9b2a47d7ddaee9732bb714f0f5dbe5d
 
 アプリが主に 2D レンダリングに重点を置いている場合、[**Win2D**](https://github.com/microsoft/win2d) Windows ランタイム ライブラリを使用できます。 このライブラリは Microsoft によって管理されており、コア Direct2D のテクノロジを基盤として構築されています。 2D グラフィックスを実装する使用パターンを大幅に簡略化し、このドキュメントで説明する手法の一部の便利な抽象化が含まれています。 詳しくは、プロジェクトのページをご覧ください。 このドキュメントでは、Win2D を使用*しない*ことを選択したアプリ開発者向けのガイダンスを示します。
 
-> 
-              **注**  DirectX API は Windows ランタイム型として定義されていないため、DirectX と相互運用する XAML UWP コンポーネントを開発するときは Visual C++ コンポーネント拡張機能 (C++/CX) を使うのが一般的です。 また、DirectX の呼び出しを独立した Windows ランタイム メタデータ ファイルにラップすると、C# と DirectX を利用する XAML を使って UWP アプリを作成できます。
+> **注**  DirectX API は Windows ランタイム型として定義されていないため、DirectX と相互運用する XAML UWP コンポーネントを開発するときは Visual C++ コンポーネント拡張機能 (C++/CX) を使うのが一般的です。 また、DirectX の呼び出しを独立した Windows ランタイム メタデータ ファイルにラップすると、C# と DirectX を利用する XAML を使って UWP アプリを作成できます。
 
  
 
@@ -30,8 +29,7 @@ DirectX には、2D と 3D のグラフィックス用に、Direct2D と Microso
 カスタム XAML と DirectX の相互運用機能を実装する場合は、次の 2 つの概念を理解する必要があります。
 
 -   共有サーフェイス。[**Windows::UI::Xaml::Media::ImageSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imagesource.aspx) 型を使って DirectX で間接的に描画を行うことができる、サイズが指定されたディスプレイの領域です。この領域は XAML で定義されます。 共有サーフェイスについては、新しいコンテンツが画面に表示される正確なタイミングを制御する必要はありません。 共有サーフェイスの更新は XAML フレームワークの更新に同期されます。
--   
-              [スワップ チェーン](https://msdn.microsoft.com/library/windows/desktop/bb206356(v=vs.85).aspx)。最小限の待ち時間でグラフィックスを表示するために使用されるバッファーのコレクションを表します。 通常、スワップ チェーンは、UI スレッドとは別に、1 秒あたり 60 フレームで更新されます。 ただし、スワップ チェーンは高速な更新をサポートするために、より多くのメモリと CPU リソースを使用します。また、複数のスレッドを管理する必要があるために使用することが難しくなります。
+-   [スワップ チェーン](https://msdn.microsoft.com/library/windows/desktop/bb206356(v=vs.85).aspx)。最小限の待ち時間でグラフィックスを表示するために使用されるバッファーのコレクションを表します。 通常、スワップ チェーンは、UI スレッドとは別に、1 秒あたり 60 フレームで更新されます。 ただし、スワップ チェーンは高速な更新をサポートするために、より多くのメモリと CPU リソースを使用します。また、複数のスレッドを管理する必要があるために使用することが難しくなります。
 
 次に、DirectX を使う目的を確認します。 表示ウィンドウのサイズに収まる 1 つのコントロールを作ったりアニメーション化したりするために使うのか、 ゲームなどのようにリアルタイムでレンダリングして制御する必要がある出力をサーフェイスに表示するのかを確認します。 このような場合は、おそらくスワップ チェーンを実装する必要があります。 それ以外の場合は、共有サーフェイスを使用する方法で問題はありません。
 
@@ -46,9 +44,7 @@ DirectX をどのように使うかを決めたら、目的に応じて次のい
 ## SurfaceImageSource
 
 
-
-              [
-              **SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) は、DirectX で描画を行うための共有サーフェイスを提供し、ビットからアプリのコンテンツを構成します。
+[**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) は、DirectX で描画を行うための共有サーフェイスを提供し、ビットからアプリのコンテンツを構成します。
 
 [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) オブジェクトをコード ビハインドで作って更新する基本的なプロセスを次に示します。
 
@@ -94,8 +90,7 @@ DirectX をどのように使うかを決めたら、目的に応じて次のい
 
 4.  [**IDXGISurface**](https://msdn.microsoft.com/library/windows/desktop/bb174565) オブジェクトへのポインターを [**ISurfaceImageSourceNative::BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323) に渡し、DirectX を使ってそのサーフェイスに描画します。 *updateRect* パラメーターで更新対象として指定した領域だけが描画されます。
 
-    > 
-              **注**   [**IDXGIDevice**](https://msdn.microsoft.com/library/windows/desktop/bb174527) でアクティブにできる未処理の [**BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323) 操作は、一度に 1 つだけです。
+    > **注**   [**IDXGIDevice**](https://msdn.microsoft.com/library/windows/desktop/bb174527) でアクティブにできる未処理の [**BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323) 操作は、一度に 1 つだけです。
 
      
 
@@ -125,21 +120,16 @@ DirectX をどのように使うかを決めたら、目的に応じて次のい
     brush->ImageSource = surfaceImageSource;
     ```
 
-> 
-              **注**   現在、[**SurfaceImageSource::SetSource**](https://msdn.microsoft.com/library/windows/apps/br243255) (**IBitmapSource::SetSource** から継承) を呼び出すと例外がスローされます。 [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) オブジェクトから呼び出さないでください。
+> **注**   現在、[**SurfaceImageSource::SetSource**](https://msdn.microsoft.com/library/windows/apps/br243255) (**IBitmapSource::SetSource** から継承) を呼び出すと例外がスローされます。 [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) オブジェクトから呼び出さないでください。
 
  
 
 ## VirtualSurfaceImageSource
 
 
+[**VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050) は、コンテンツが画面に収まらず、仮想化しないと最適なレンダリングにならない場合に、[**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) を拡張します。
 
-              [
-              **VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050) は、コンテンツが画面に収まらず、仮想化しないと最適なレンダリングにならない場合に、[**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) を拡張します。
-
-
-              [
-              **VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050) が [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) と異なる点は、[**IVirtualSurfaceImageSourceCallbacksNative::UpdatesNeeded**](https://msdn.microsoft.com/library/windows/desktop/hh848337) コールバックを使うことです。このコールバックを実装することで、サーフェイスの領域が画面に表示できるようになったときに領域が更新されます。 非表示の領域をクリアする必要はありません。この処理は XAML フレームワークで行われます。
+[**VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050) が [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) と異なる点は、[**IVirtualSurfaceImageSourceCallbacksNative::UpdatesNeeded**](https://msdn.microsoft.com/library/windows/desktop/hh848337) コールバックを使うことです。このコールバックを実装することで、サーフェイスの領域が画面に表示できるようになったときに領域が更新されます。 非表示の領域をクリアする必要はありません。この処理は XAML フレームワークで行われます。
 
 [**VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050) オブジェクトをコード ビハインドで作成および更新する基本的なプロセスを次に示します。
 
@@ -244,8 +234,7 @@ DirectX をどのように使うかを決めたら、目的に応じて次のい
 
         [**IlSurfaceImageSourceNative::BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323) と同様に、このメソッドは、更新されるターゲットの四角形の位置 (x、y) を示すオフセットを *offset* パラメーターで返します。 このオフセットを使って、[**IDXGISurface**](https://msdn.microsoft.com/library/windows/desktop/bb174565) 内の描画する位置を特定できます。
 
-        > 
-              **注**   [**IDXGIDevice**](https://msdn.microsoft.com/library/windows/desktop/bb174527) でアクティブにできる未処理の [**BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323) 操作は、一度に 1 つだけです。
+        > **注**   [**IDXGIDevice**](https://msdn.microsoft.com/library/windows/desktop/bb174527) でアクティブにできる未処理の [**BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323) 操作は、一度に 1 つだけです。
 
          
 
@@ -270,9 +259,7 @@ DirectX をどのように使うかを決めたら、目的に応じて次のい
 ## SwapChainPanel とゲーム
 
 
-
-              [
-              **SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) は、高パフォーマンスのグラフィックスやゲームをサポートするために設計された Windows ランタイム型です。この型でスワップ チェーンを直接管理します。 この例では、独自の DirectX スワップ チェーンを作成し、レンダリングされるコンテンツの表示を管理します。
+[**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) は、高パフォーマンスのグラフィックスやゲームをサポートするために設計された Windows ランタイム型です。この型でスワップ チェーンを直接管理します。 この例では、独自の DirectX スワップ チェーンを作成し、レンダリングされるコンテンツの表示を管理します。
 
 フォーマンスを高めるために、[**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) 型には次のような制限事項があります。
 
@@ -287,8 +274,7 @@ DirectX をどのように使うかを決めたら、目的に応じて次のい
 **SwapChainPanel** に対する待機時間の短いポインター入力を受信する必要がある場合は、[**SwapChainPanel::CreateCoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.swapchainpanel.createcoreindependentinputsource) を使用します。 このメソッドは、バックグラウンド スレッドで最小限の待機時間で入力イベントを受信するために使用できる [**CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coreindependentinputsource) オブジェクトを返します。 このメソッドが呼び出されると、すべての入力がバックグラウンド スレッドにリダイレクトされるため、**SwapChainPanel** について通常の XAML ポインター入力イベントは発生しません。
 
 
-> 
-              **注**   一般に、DirectX アプリでは、サイズが表示ウィンドウのサイズ (通常は、ほとんどの Windows ストア ゲームのネイティブの画面解像度) と同じである横方向のスワップ チェーンを作る必要があります。 これにより、表示される XAML オーバーレイがない場合はアプリで最適なスワップ チェーンの実装が使われます。 縦モードに回転した場合、アプリは既にあるスワップ チェーンで [**IDXGISwapChain1::SetRotation**](https://msdn.microsoft.com/library/windows/desktop/hh446801) を呼び出し、必要に応じてコンテンツに変換を適用して、同じスワップ チェーンで [**SetSwapChain**](https://msdn.microsoft.com/library/windows/desktop/dn302144) をもう一度呼び出す必要があります。 同様に、アプリは、[**IDXGISwapChain::ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577) 呼び出しによってスワップ チェーンのサイズが変更されるたびに、同じスワップ チェーンで **SetSwapChain** をもう一度呼び出す必要があります。
+> **注**   一般に、DirectX アプリでは、サイズが表示ウィンドウのサイズ (通常は、ほとんどの Windows ストア ゲームのネイティブの画面解像度) と同じである横方向のスワップ チェーンを作る必要があります。 これにより、表示される XAML オーバーレイがない場合はアプリで最適なスワップ チェーンの実装が使われます。 縦モードに回転した場合、アプリは既にあるスワップ チェーンで [**IDXGISwapChain1::SetRotation**](https://msdn.microsoft.com/library/windows/desktop/hh446801) を呼び出し、必要に応じてコンテンツに変換を適用して、同じスワップ チェーンで [**SetSwapChain**](https://msdn.microsoft.com/library/windows/desktop/dn302144) をもう一度呼び出す必要があります。 同様に、アプリは、[**IDXGISwapChain::ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577) 呼び出しによってスワップ チェーンのサイズが変更されるたびに、同じスワップ チェーンで **SetSwapChain** をもう一度呼び出す必要があります。
 
 
  
@@ -386,6 +372,6 @@ DirectX をどのように使うかを決めたら、目的に応じて次のい
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

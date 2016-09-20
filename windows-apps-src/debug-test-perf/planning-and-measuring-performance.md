@@ -3,7 +3,6 @@ author: mcleblanc
 ms.assetid: A37ADD4A-2187-4767-9C7D-EDE8A90AA215
 title: "パフォーマンスの計画"
 description: "ユーザーは、高い応答性と自然な使用感、そしてバッテリーが消耗しないことをアプリに期待しています。"
-translationtype: Human Translation
 ms.sourcegitcommit: afb508fcbc2d4ab75188a2d4f705ea0bee385ed6
 ms.openlocfilehash: 39d57811a07b4c404da4b7e369e3bf5441fa99c0
 
@@ -78,11 +77,9 @@ ms.openlocfilehash: 39d57811a07b4c404da4b7e369e3bf5441fa99c0
 **UI**
 
 -   [XAML マークアップを最適化](optimize-xaml-loading.md)することで、アプリの UI の各ページ (特に最初のページ) の解析と読み込みの時間とメモリの効率を最大化します。 簡単に言うと、必要になるまで UI とコードの読み込みを遅らせます。
--   [
-            **ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) と [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) では、すべての項目を同じサイズにし、できるだけ多くの [ListView と GridView の最適化手法](optimize-gridview-and-listview.md)を使います。
+-   [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) と [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) では、すべての項目を同じサイズにし、できるだけ多くの [ListView と GridView の最適化手法](optimize-gridview-and-listview.md)を使います。
 -   UI は、コード内で命令を使って構築するのではなく、フレームワークが読み込んでチャンクで再利用できるマークアップ形式で宣言します。
--   ユーザーが必要とするまでコンテンツを展開しません。 [
-            **Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208992) プロパティをご覧ください。
+-   ユーザーが必要とするまでコンテンツを展開しません。 [**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208992) プロパティをご覧ください。
 -   ストーリーボードに設定されたアニメーションよりテーマ切り替えやテーマ アニメーションを優先的に使います。 詳しくは、「[アニメーションの概要](https://msdn.microsoft.com/library/windows/apps/Mt187350)」をご覧ください。 ストーリーボードに設定されたアニメーションでは、画面を定期的に更新して CPU とグラフィックス パイプラインを常にアクティブにしておく必要があることを忘れないようにします。 バッテリーを節約するために、ユーザーがアプリを操作していない場合はアニメーションを実行しないようにします。
 -   読み込む画像は、[**GetThumbnailAsync**](https://msdn.microsoft.com/library/windows/apps/BR227210) メソッドを使って、そのときのビューに適したサイズで読み込む必要があります。
 
@@ -97,8 +94,7 @@ ms.openlocfilehash: 39d57811a07b4c404da4b7e369e3bf5441fa99c0
 **データ アクセス**
 
 -   可能であれば、コンテンツをプリフェッチします。 自動的プリフェッチについては、[**ContentPrefetcher**](https://msdn.microsoft.com/library/windows/apps/Dn279042) クラスをご覧ください。 手動プリフェッチについては、[**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/BR224847) 名前空間と [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/Hh700517) クラスをご覧ください。
--   可能であれば、アクセスするときに負荷がかかるコンテンツはキャッシュしておきます。 [
-            **LocalFolder**](https://msdn.microsoft.com/library/windows/apps/BR241621) プロパティと [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/BR241622) プロパティをご覧ください。
+-   可能であれば、アクセスするときに負荷がかかるコンテンツはキャッシュしておきます。 [**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/BR241621) プロパティと [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/BR241622) プロパティをご覧ください。
 -   キャッシュが失われた場合は、できるだけ早くプレース ホルダー UI を表示して、アプリがコンテンツを読み込み中であることを示します。 ユーザーに不快感を与えないような方法で、プレースホルダーからライブ コンテンツに切り替えます。 たとえば、アプリがライブ コンテンツを読み込む際に、ユーザーの指またはマウス ポインターの下にあるコンテンツの位置を変更しないようにします。
 
 **アプリの起動と再開**
@@ -108,8 +104,7 @@ ms.openlocfilehash: 39d57811a07b4c404da4b7e369e3bf5441fa99c0
 
 **アダプティブ UI と向き**
 
--   [
-            **VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) クラスを使います。
+-   [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) クラスを使います。
 -   必要な処理だけをすぐに完了し、負荷の大きなアプリの作業は後回しにします。処理を完了し、アプリの UI がトリミングされた状態で表示されるまでに 200 ～ 800 ミリ秒かかります。
 
 パフォーマンス関連の設計が整ったら、アプリのコーディングを始めることができます。

@@ -3,7 +3,6 @@ author: mtoepke
 title: "DirectX ゲームでのリソースの読み込み"
 description: "ほとんどのゲームは、ある時点で、ローカル ストレージまたは他のデータ ストリームからリソースとアセット (シェーダー、テクスチャ、定義済みメッシュ、その他のグラフィックス データなど) を読み込みます。"
 ms.assetid: e45186fa-57a3-dc70-2b59-408bff0c0b41
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: fd4d2162e9a0007df34b465f570820843b326d72
 
@@ -72,7 +71,7 @@ ms.openlocfilehash: fd4d2162e9a0007df34b465f570820843b326d72
 
 ### 非同期読み込み
 
-非同期読み込みは、並列パターン ライブラリ (PPL) の **task** テンプレートを使って処理します。 **task** にはメソッド呼び出しが含まれています。その後に、非同期呼び出しの完了後にその結果を処理するラムダが続きます。通常の形式は次のとおりです:
+非同期読み込みは、並列パターン ライブラリ (PPL) の **task** テンプレートを使って処理します。 **task** にはメソッド呼び出しが含まれています。その後に、非同期呼び出しの完了後にその結果を処理するラムダが続きます。通常の形式は次のとおりです: 
 
 `task<generic return type>(async code to execute).then((parameters for lambda){ lambda code contents });`。
 
@@ -236,7 +235,8 @@ task<void> BasicLoader::LoadMeshAsync(
 }
 ```
 
-**CreateMesh** は、ファイルから読み込まれたバイト データを解釈します。そして、頂点リストとインデックス リストをそれぞれ [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) に渡し、D3D11\_BIND\_VERTEX\_BUFFER または D3D11\_BIND\_INDEX\_BUFFER を指定することによって、メッシュの頂点バッファーとインデックス バッファーを作成します。 **BasicLoader** で使われるコードは次のとおりです。
+
+            **CreateMesh** は、ファイルから読み込まれたバイト データを解釈します。そして、頂点リストとインデックス リストをそれぞれ [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) に渡し、D3D11\_BIND\_VERTEX\_BUFFER または D3D11\_BIND\_INDEX\_BUFFER を指定することによって、メッシュの頂点バッファーとインデックス バッファーを作成します。 **BasicLoader** で使われるコードは次のとおりです。
 
 ```cpp
 void BasicLoader::CreateMesh(
@@ -317,15 +317,16 @@ DDS ファイルは、次の情報が含まれるバイナリ ファイルです
 
 -   ファイル内のデータの説明。
 
-    データは、[**DDS\_HEADER**](https://msdn.microsoft.com/library/windows/desktop/bb943982) を使ってヘッダーの説明と一緒に説明されます。ピクセル形式は、[**DDS\_PIXELFORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb943984) を使って定義されます。 **DDS\_HEADER** 構造体と **DDS\_PIXELFORMAT** 構造体は、推奨されなくなった DirectDraw 7 の DDSURFACEDESC2 構造体、DDSCAPS2 構造体、および DDPIXELFORMAT 構造体の代わりに使います。 **DDS\_HEADER** は、DDSURFACEDESC2 と DDSCAPS2 の機能をバイナリで実現します。 **DDS\_PIXELFORMAT** は、DDPIXELFORMAT の機能をバイナリで実現します。
+    データは、[**DDS\_HEADER**](https://msdn.microsoft.com/library/windows/desktop/bb943982) を使ってヘッダーの説明と一緒に説明されます。ピクセル形式は、[**DDS\_PIXELFORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb943984) を使って定義されます。 **DDS\_HEADER** 構造体と **DDS\_PIXELFORMAT** 構造体は、推奨されなくなった DirectDraw 7 の DDSURFACEDESC2 構造体、DDSCAPS2 構造体、および DDPIXELFORMAT 構造体の代わりに使います。 
+            **DDS\_HEADER** は、DDSURFACEDESC2 と DDSCAPS2 の機能をバイナリで実現します。 
+            **DDS\_PIXELFORMAT** は、DDPIXELFORMAT の機能をバイナリで実現します。
 
     ```cpp
     DWORD               dwMagic;
     DDS_HEADER          header;
     ```
 
-    [
-            **DDS\_PIXELFORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb943984) の **dwFlags** の値を DDPF\_FOURCC に設定し、**dwFourCC** を "DX10" に設定していると、[**DDS\_HEADER\_DXT10**](https://msdn.microsoft.com/library/windows/desktop/bb943983) 構造体が追加で生成され、浮動小数点形式や sRGB 形式などの RGB ピクセル形式では表現できない DXGI 形式やテクスチャ配列がこの構造体に格納されます。この **DDS\_HEADER\_DXT10** 構造体が存在する場合、データ記述の全体は次のようになります。
+    [**DDS\_PIXELFORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb943984) の **dwFlags** の値を DDPF\_FOURCC に設定し、**dwFourCC** を "DX10" に設定していると、[**DDS\_HEADER\_DXT10**](https://msdn.microsoft.com/library/windows/desktop/bb943983) 構造体が追加で生成され、浮動小数点形式や sRGB 形式などの RGB ピクセル形式では表現できない DXGI 形式やテクスチャ配列がこの構造体に格納されます。この **DDS\_HEADER\_DXT10** 構造体が存在する場合、データ記述の全体は次のようになります。
 
     ```cpp
     DWORD               dwMagic;

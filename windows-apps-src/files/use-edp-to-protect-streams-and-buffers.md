@@ -5,7 +5,6 @@ MS-HAID: dev\_files.use\_edp\_to\_protect\_streams\_and\_buffers
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: "エンタープライズ データ保護 (EDP) を使ったストリームとバッファーの保護"
-translationtype: Human Translation
 ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
 ms.openlocfilehash: fdde4f7d2ab46b6349273f7c1c9d91cf27aa341a
 
@@ -13,11 +12,13 @@ ms.openlocfilehash: fdde4f7d2ab46b6349273f7c1c9d91cf27aa341a
 
 # エンタープライズ データ保護 (EDP) を使ったストリームとバッファーの保護
 
-__注__ Windows 10 バージョン 1511 (ビルド 10586) またはそれ以前のバージョンでは、エンタープライズ データ保護 (EDP) ポリシーを適用できません。
+
+            __注__ Windows 10 バージョン 1511 (ビルド 10586) またはそれ以前のバージョンでは、エンタープライズ データ保護 (EDP) ポリシーを適用できません。
 
 このトピックでは、ストリームとバッファーに関連する最も一般的なエンタープライズ データ保護 (EDP) シナリオのいくつかを実現するために必要なコード作成タスクの例を示します。 EDP が、ファイル、ストリーム、クリップボード、ネットワーク、バックグラウンド タスク、ロックの背後でのデータ保護とどのように関係するかに関する開発者向けの詳しい情報については、「[エンタープライズ データ保護 (EDP)](../enterprise/edp-hub.md)」をご覧ください。
 
-**注**  このトピックで説明されているシナリオの多くは、[エンタープライズ データ保護 (EDP) のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)にも含まれています。
+
+            **注**  このトピックで説明されているシナリオの多くは、[エンタープライズ データ保護 (EDP) のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)にも含まれています。
 
 ## 前提条件
 
@@ -37,7 +38,8 @@ __注__ Windows 10 バージョン 1511 (ビルド 10586) またはそれ以前�
 ## 企業の ID に対するデータ ストリームの保護
 
 
-**注**  ストリームやバッファーを保護する場合は常に、[**ProtectionPolicyManager.PolicyChanged**](https://msdn.microsoft.com/library/windows/apps/mt608411) イベントを受信登録し、EDP がデバイスで無効になった場合に、アプリで検出できるようにしておくことを強くお勧めします。 この場合、すべてのストリームとバッファーの保護を解除する必要があります。 保護されたままにしたストリームやバッファーは、ユーザーがモバイル デバイス管理 (MDM) からデバイスの登録を解除した場合、失効の対象となります。 また、リソースの作成時に EDP が無効であった場合、その失効は適切ではありません。 EDP が無効であるときはリソースの保護を解除することで、これを防止できます。
+
+            **注**  ストリームやバッファーを保護する場合は常に、[**ProtectionPolicyManager.PolicyChanged**](https://msdn.microsoft.com/library/windows/apps/mt608411) イベントを受信登録し、EDP がデバイスで無効になった場合に、アプリで検出できるようにしておくことを強くお勧めします。 この場合、すべてのストリームとバッファーの保護を解除する必要があります。 保護されたままにしたストリームやバッファーは、ユーザーがモバイル デバイス管理 (MDM) からデバイスの登録を解除した場合、失効の対象となります。 また、リソースの作成時に EDP が無効であった場合、その失効は適切ではありません。 EDP が無効であるときはリソースの保護を解除することで、これを防止できます。
 
 
 
@@ -293,7 +295,8 @@ private async void EnableUIPolicyFromProtectedBuffer(IBuffer buffer)
 
 ```
 
-**注**  この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
+
+            **注:** この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
  
 

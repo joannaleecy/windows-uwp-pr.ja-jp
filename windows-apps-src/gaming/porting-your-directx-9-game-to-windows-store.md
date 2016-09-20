@@ -3,7 +3,6 @@ author: mtoepke
 title: "DirectX 9 からユニバーサル Windows プラットフォーム (UWP) への移植"
 description: "このセクションでは、ユニバーサル Windows プラットフォーム (UWP) に DirectX 9 ゲームを移植する方法を説明した記事、概要、チュートリアルを紹介します。"
 ms.assetid: 536c0b99-cdf3-1527-1ee2-4187f50a2cf0
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 1cb77db78fe368c567990c9521122b42ef10ec65
 

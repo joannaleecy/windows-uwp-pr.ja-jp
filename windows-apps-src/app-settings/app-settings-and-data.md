@@ -5,7 +5,6 @@ title: "アプリの設定とデータ"
 ms.assetid: E7F312F7-54D8-411F-8D92-92FBB95C2463
 label: App settings and data
 template: detail.hbs
-translationtype: Human Translation
 ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
 ms.openlocfilehash: 4d6f57dcc9dbfe9c2e031a5fe73f24668f0dc462
 

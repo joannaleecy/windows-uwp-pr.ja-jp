@@ -6,7 +6,6 @@ ms.assetid: d4a01425-4dee-4de3-9a05-3e85c3fc03cb
 isNew: true
 label: Date picker
 template: detail.hbs
-translationtype: Human Translation
 ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
 ms.openlocfilehash: c237d4bc013ad0a1d0d16f695f4332a6aac7efdc
 
@@ -49,7 +48,8 @@ birthDatePicker.Header = "Date of birth";
 
 ![日付の選択コントロールの例](images/date-picker-closed.png)
 
-> **注:**
+> 
+            **注:**
             &nbsp;&nbsp;日付値の重要な情報については、「日付と時刻コントロール」の「[DateTime と Calendar の値](date-and-time.md#datetime-and-calendar-values)」をご覧ください。
 
 

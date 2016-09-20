@@ -3,7 +3,6 @@ author: DBirtolo
 ms.assetid: 15BAB25C-DA8C-4F13-9B8F-EA9E4270BCE9
 title: "光センサーの使用"
 description: "環境光センサーを使って環境光の変化を検出する方法を説明します。"
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 289d50ff4f45147c46bd66c526cf109d8fdf6d32
 

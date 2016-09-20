@@ -5,7 +5,7 @@ title: "Windows Phone Silverlight の XAML と UI の UWP への移植"
 ms.assetid: 49aade74-5dc6-46a5-89ef-316dbeabbebe
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 7fa520443f242844cd661d70bad0fdeb2297fb1d
+ms.openlocfilehash: 344ea7a71fce744bcf90ac99ada9a6fe17568a9b
 
 ---
 
@@ -65,8 +65,7 @@ UWP で、"System" プレフィックス宣言を省略し、(既に宣言され
     return new BitmapImage(new Uri(this.CoverImagePath, UriKind.Relative));
 ```
 
-
-              **BitmapImage** は Windows Phone Silverlight 内の **System.Windows.Media.Imaging** 名前空間にあり、同じファイル内の using ディレクティブによって、前記のスニペットのように、名前空間の認定資格なしに **BitmapImage** を使うことができます。 同様の場合に、Visual Studio で型名 (**BitmapImage**) を右クリックし、コンテキスト メニューの [**解決**] コマンドを使って新しい名前空間のディレクティブをファイルに追加できます。 この場合、該当する型が UWP に存在している、[**Windows.UI.Xaml.Media.Imaging**](https://msdn.microsoft.com/library/windows/apps/br243258) 名前空間が追加されます。 **System.Windows.Media.Imaging** の using ディレクティブは削除できます。また、前記のスニペットのようなコードの移植で必要になるのはこれだけです。 これによって、Windows Phone Silverlight 名前空間がすべて削除されます。
+**BitmapImage** は Windows Phone Silverlight 内の **System.Windows.Media.Imaging** 名前空間にあり、同じファイル内の using ディレクティブによって、前記のスニペットのように、名前空間の認定資格なしに **BitmapImage** を使うことができます。 同様の場合に、Visual Studio で型名 (**BitmapImage**) を右クリックし、コンテキスト メニューの [**解決**] コマンドを使って新しい名前空間のディレクティブをファイルに追加できます。 この場合、該当する型が UWP に存在している、[**Windows.UI.Xaml.Media.Imaging**](https://msdn.microsoft.com/library/windows/apps/br243258) 名前空間が追加されます。 **System.Windows.Media.Imaging** の using ディレクティブは削除できます。また、前記のスニペットのようなコードの移植で必要になるのはこれだけです。 これによって、Windows Phone Silverlight 名前空間がすべて削除されます。
 
 古い名前空間の型を新しい名前空間の同じ型でマッピングするこのような簡単なケースでは、ソース コードに一括変更を加えるために、Visual Studio の [**検索と置換**] コマンドを使うこともできます。 [**解決**] コマンドは、型の新しい名前空間を検索するための効果的な方法です。 別の例として、すべての "System.Windows" を "Windows.UI.Xaml" に置換できます。 これによって基本的には、該当する名前空間を参照するすべての using ディレクティブおよび完全修飾されたすべての型名が移植されます。
 
@@ -194,12 +193,10 @@ Windows Phone Silverlight アプリは、**Microsoft.Phone.Controls** 名前空�
 | ControlTiltEffect.TiltEffect クラス | UWP アニメーション ライブラリのアニメーションは、共通のコントロールの既定のスタイルに組み込まれています。 「[ポインター操作のアニメーション化](https://msdn.microsoft.com/library/windows/apps/xaml/jj649432)」をご覧ください。 |
 | グループ化されたデータを含む LongListSelector | Windows Phone Silverlight の LongListSelector は、連携する 2 つの方法で動作します。 まず、キーによってグループ化したデータを表示できます、たとえば、名前の一覧を最初の文字によってグループ化できます。 次に、2 つのセマンティック ビュー (名前などの項目のグループ化されたリストと、最初の文字などのグループ キー自体に限られるリスト) の間で "ズーム" できます。 UWP では、[リスト ビュー コントロールとグリッド ビュー コントロールのガイドライン](https://msdn.microsoft.com/library/windows/apps/mt186889)に従ってグループ化されたデータを表示できます。 |
 | フラット データを含む LongListSelector | パフォーマンス上の理由から、非常に長いリストの場合、グループ化されていないフラットなデータであっても Windows Phone Silverlight のリスト ボックスではなく LongListSelector を使うことをお勧めします。 UWP アプリでは、データのグループ化が可能であるかどうかにかかわらず、長い項目リストで [GridView](https://msdn.microsoft.com/library/windows/apps/br242705) を使うことをお勧めします。 |
-| Panorama | Windows Phone Silverlight Panorama コントロールは、[Windows ストア アプリのハブ コントロールのガイドライン](https://msdn.microsoft.com/library/windows/apps/dn449149)とハブ コントロールのガイドラインに対応付けられています。 <br/> Panorama コントロールは、最後のセクションから最初のセクションに折り返され、背景画像はセクションを基準とした視差効果で移動します。 
-              [Hub](https://msdn.microsoft.com/library/windows/apps/dn251843) セクションは折り返されず、視差効果は使われません。 |
+| Panorama | Windows Phone Silverlight Panorama コントロールは、[Windows ストア アプリのハブ コントロールのガイドライン](https://msdn.microsoft.com/library/windows/apps/dn449149)とハブ コントロールのガイドラインに対応付けられています。 <br/> Panorama コントロールは、最後のセクションから最初のセクションに折り返され、背景画像はセクションを基準とした視差効果で移動します。 [Hub](https://msdn.microsoft.com/library/windows/apps/dn251843) セクションは折り返されず、視差効果は使われません。 |
 | Pivot | Windows Phone Silverlight の Pivot コントロールに相当する UWP のコントロールは、[Windows.UI.Xaml.Controls.Pivot](https://msdn.microsoft.com/library/windows/apps/dn608241) です。 これはすべてのデバイス ファミリで利用できます。 |
 
-
-              **注**   PointerOver 表示状態は、Windows 10 アプリのカスタム スタイル/テンプレートには関連しますが、Windows Phone Silverlight アプリのカスタム スタイル/テンプレートには関連しません。 既にあるカスタム スタイル/テンプレートが Windows 10 アプリで適切ではない場合があるのには、他の理由もあります。たとえば、使っているシステム リソース キー、使われる表示状態のセットへの変更、Windows 10 の既定のスタイル/テンプレートに対するパフォーマンスの向上が挙げられます。 Windows 10 用のコントロールの新しい既定のテンプレートのコピーを編集し、そのコピーにスタイルやテンプレートのカスタマイズをもう一度適用することをお勧めします。
+**注**   PointerOver 表示状態は、Windows 10 アプリのカスタム スタイル/テンプレートには関連しますが、Windows Phone Silverlight アプリのカスタム スタイル/テンプレートには関連しません。 既にあるカスタム スタイル/テンプレートが Windows 10 アプリで適切ではない場合があるのには、他の理由もあります。たとえば、使っているシステム リソース キー、使われる表示状態のセットへの変更、Windows 10 の既定のスタイル/テンプレートに対するパフォーマンスの向上が挙げられます。 Windows 10 用のコントロールの新しい既定のテンプレートのコピーを編集し、そのコピーにスタイルやテンプレートのカスタマイズをもう一度適用することをお勧めします。
 
 UWP のコントロールについて詳しくは、「[機能別コントロール](https://msdn.microsoft.com/library/windows/apps/mt185405)」、「[コントロールの一覧](https://msdn.microsoft.com/library/windows/apps/mt185406)」、「[コントロールのガイドライン](https://msdn.microsoft.com/library/windows/apps/dn611856)」をご覧ください。
 
@@ -372,8 +369,7 @@ Windows 10 アプリに対しては、すべてのデバイスが固定数の有
 
 すべてのディスプレイで最適なアプリのエクスペリエンスが実現できるように、一連のサイズで各ビットマップ アセットを作成し、各アセットが特定のスケール ファクターに適合するように設定することをお勧めします。 ただし、100% スケール、200% スケール、および 400% スケール (この優先順位で) でアセットを作成するほうが、多くの場合、すべての中間スケール ファクターで適切な結果を得ることができます。
 
-
-              **注**  何らかの理由で複数のサイズでアセットを作成できない場合は、100% スケールのアセットを作成します。 Microsoft Visual Studio では、UWP アプリの既定のプロジェクト テンプレートには 1 つのサイズのみのブランド アセット (タイル イメージとロゴ) が用意されていますが、これらは 100% のスケールではありません。 独自のアプリのアセットを作成する場合は、このセクションに示したガイドラインに従って、100%、200%、400% のサイズを用意し、アセット パックを使います。
+**注**  何らかの理由で複数のサイズでアセットを作成できない場合は、100% スケールのアセットを作成します。 Microsoft Visual Studio では、UWP アプリの既定のプロジェクト テンプレートには 1 つのサイズのみのブランド アセット (タイル イメージとロゴ) が用意されていますが、これらは 100% のスケールではありません。 独自のアプリのアセットを作成する場合は、このセクションに示したガイドラインに従って、100%、200%、400% のサイズを用意し、アセット パックを使います。
 
 複雑なアートワークがある場合は、さらに多くのサイズに対応したアセットが必要になることがあります。 ベクター アートを使って作業を始める場合は、どのようなスケール ファクターでも高品質なアセットを比較的簡単に生成できます。
 
@@ -399,6 +395,6 @@ UWP アプリでは、命令型コードを使って最小サイズ (幅と高�
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

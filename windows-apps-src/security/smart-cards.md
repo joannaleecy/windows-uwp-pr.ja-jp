@@ -4,8 +4,8 @@ description: "このトピックでは、ユニバーサル Windows プラット
 ms.assetid: 86524267-50A0-4567-AE17-35C4B6D24745
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: b41fc8994412490e37053d454929d2f7cc73b6ac
-ms.openlocfilehash: 6e673ce75ee7f178332da6fc9ae68dbf01a9d7ce
+ms.sourcegitcommit: 2ea21aeee5dd93bb44de3a1793b352d2046b3839
+ms.openlocfilehash: d0646aca9863f3f326df9b3a86adb2481fdcda70
 
 ---
 
@@ -15,7 +15,7 @@ ms.openlocfilehash: 6e673ce75ee7f178332da6fc9ae68dbf01a9d7ce
 \[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-このトピックでは、ユニバーサル Windows プラットフォーム (UWP) アプリでセキュリティで保護されたネットワーク サービスにスマート カードを使って、ユーザーを接続する方法のほか、物理スマート カード リーダーにアクセスする方法、仮想スマート カードの作成方法、スマート カードとの通信方法、ユーザーの認証方法、ユーザーの Pin のリセット方法、スマート カードを削除または切断する方法などについて説明します。
+このトピックでは、ユニバーサル Windows プラットフォーム (UWP) アプリでセキュリティで保護されたネットワーク サービスにスマート カードを使って、ユーザーを接続する方法のほか、物理スマート カード リーダーにアクセスする方法、仮想スマート カードの作成方法、スマート カードとの通信方法、ユーザーの認証方法、ユーザーの Pin のリセット方法、スマート カードを削除または切断する方法などについて説明します。 
 
 ## アプリ マニフェストの構成
 
@@ -25,8 +25,7 @@ ms.openlocfilehash: 6e673ce75ee7f178332da6fc9ae68dbf01a9d7ce
 ## 接続されているカード リーダーとスマート カードへのアクセス
 
 
-[
-            **DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) に指定されているデバイス ID を [**SmartCardReader.FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/dn263890) メソッドに渡すと、リーダーや装着されているスマート カードを照会することができます。 返されたリーダー デバイスに現在装着されているスマート カードにアクセスするには、[**SmartCardReader.FindAllCardsAsync**](https://msdn.microsoft.com/library/windows/apps/dn263887) を呼び出します。
+[**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) に指定されているデバイス ID を [**SmartCardReader.FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/dn263890) メソッドに渡すと、リーダーや装着されているスマート カードを照会することができます。 返されたリーダー デバイスに現在装着されているスマート カードにアクセスするには、[**SmartCardReader.FindAllCardsAsync**](https://msdn.microsoft.com/library/windows/apps/dn263887) を呼び出します。
 
 ```cs
 string selector = SmartCardReader.GetDeviceSelector();
@@ -62,8 +61,7 @@ private void reader_CardAdded(SmartCardReader sender, CardAddedEventArgs args)
 
 アプリで [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) を使って仮想スマート カードを作成するには、まずフレンドリ名、管理者キー、[**SmartCardPinPolicy**](https://msdn.microsoft.com/library/windows/apps/dn297642) を提供する必要があります。 通常、フレンドリ名は既にアプリに用意されている可能性がありますが、アプリではさらに、管理者キーを提供し、現在の **SmartCardPinPolicy** のインスタンスを生成する必要があります。その後、これらの 3 つの値をすべて [**RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830) に渡します。
 
-1.  [
-            **SmartCardPinPolicy**](https://msdn.microsoft.com/library/windows/apps/dn297642) の新しいインスタンスを作成します。
+1.  [**SmartCardPinPolicy**](https://msdn.microsoft.com/library/windows/apps/dn297642) の新しいインスタンスを作成します。
 2.  サービスまたは管理ツールから提供された管理者キーの値に対して [**CryptographicBuffer.GenerateRandom**](https://msdn.microsoft.com/library/windows/apps/br241392) を呼び出して、管理者キーの値を生成します。
 3.  これらの値と *FriendlyNameText* 文字列を [**RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830) に渡します。
 
@@ -118,9 +116,7 @@ static class ChallengeResponseAlgorithm
 
 2.  次に、カードのチャレンジ値とサービスまたは管理ツールから提供された管理者キーを、前の例で定義した **ChallengeResponseAlgorithm** に渡します。
 
-3.  [
-              **VerifyResponseAsync**
-            ](https://msdn.microsoft.com/library/windows/apps/dn297627) 認証に成功すると **true** を返します。
+3.  [**VerifyResponseAsync**](https://msdn.microsoft.com/library/windows/apps/dn297627) 認証に成功すると **true** を返します。
 
 ```cs
 bool verifyResult = false;
@@ -145,8 +141,7 @@ using (SmartCardChallengeContext context =
 スマート カードに関連付けられている PIN を変更するには、次の手順に従います。
 
 1.  カードにアクセスし、関連付けられた [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) オブジェクトを生成します。
-2.  [
-            **RequestPinChangeAsync**](https://msdn.microsoft.com/library/windows/apps/dn263823) を呼び出して、この操作を完了するための UI をユーザーに表示します。
+2.  [**RequestPinChangeAsync**](https://msdn.microsoft.com/library/windows/apps/dn263823) を呼び出して、この操作を完了するための UI をユーザーに表示します。
 3.  PIN が正しく変更された場合は、呼び出しから **true** が返されます。
 
 ```cs
@@ -158,11 +153,8 @@ bool result = await provisioning.RequestPinChangeAsync();
 
 PIN のリセットを要求するには、次の手順に従います。
 
-1.  [
-            **RequestPinResetAsync**](https://msdn.microsoft.com/library/windows/apps/dn263825) を呼び出して操作を開始します。 この呼び出しには、スマート カードと PIN のリセット要求を表す [**SmartCardPinResetHandler**](https://msdn.microsoft.com/library/windows/apps/dn297701) メソッドが含まれます。
-2.  [
-              **SmartCardPinResetHandler**
-            ](https://msdn.microsoft.com/library/windows/apps/dn297701) [**SmartCardPinResetDeferra**](https://msdn.microsoft.com/library/windows/apps/dn297693) 呼び出しにラップされた **ChallengeResponseAlgorithm** で、カードのチャレンジ値とサービスまたは管理ツールから提供された管理者キーを比較して要求を認証するための、情報を提供します。
+1.  [**RequestPinResetAsync**](https://msdn.microsoft.com/library/windows/apps/dn263825) を呼び出して操作を開始します。 この呼び出しには、スマート カードと PIN のリセット要求を表す [**SmartCardPinResetHandler**](https://msdn.microsoft.com/library/windows/apps/dn297701) メソッドが含まれます。
+2.  [**SmartCardPinResetHandler**](https://msdn.microsoft.com/library/windows/apps/dn297701) [**SmartCardPinResetDeferra**](https://msdn.microsoft.com/library/windows/apps/dn297693) 呼び出しにラップされた **ChallengeResponseAlgorithm** で、カードのチャレンジ値と、サービスまたは管理ツールから提供された管理者キーを比較して要求を認証するための、情報を提供します。
 
 3.  チャレンジが成功すると、[**RequestPinResetAsync**](https://msdn.microsoft.com/library/windows/apps/dn263825) の呼び出しが完了し、PIN が正しくリセットされた場合は **true** が返されます。
 
@@ -212,6 +204,6 @@ bool result = await SmartCardProvisioning
 ```
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

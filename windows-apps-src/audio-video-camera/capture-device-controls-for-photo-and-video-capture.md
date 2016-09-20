@@ -3,7 +3,6 @@ author: drewbatgit
 ms.assetid: 831123A7-1F40-4B74-AE9F-69AC9883B4AD
 description: "この記事では、光学式手ブレ補正やスムーズ ズームなど、写真とビデオのキャプチャに関する拡張シナリオを可能にするために、ビデオ デバイスを制御する方法について説明します。"
 title: "写真とビデオのキャプチャのためのキャプチャ デバイス コントロール"
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
@@ -20,7 +19,8 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 この記事のコードは、[カメラの手動コントロール SDK のサンプル](http://go.microsoft.com/fwlink/?LinkId=619479)を基にしています。 このサンプルをダウンロードし、該当するコンテキストで使用されているコードを確認することも、サンプルを独自のアプリの開始点として使用することもできます。
 
-**注** この記事は、写真やビデオの基本的なキャプチャ機能を実装するための手順を紹介した「[MediaCapture を使った写真とビデオのキャプチャ](capture-photos-and-video-with-mediacapture.md)」で取り上げた概念やコードを基に執筆されています。 そちらの記事で基本的なメディア キャプチャのパターンを把握してから、高度なキャプチャ シナリオに進むことをお勧めします。 この記事で紹介しているコードは、MediaCapture のインスタンスが既に作成され、適切に初期化されていることを前提としています。
+
+            **注** この記事は、写真やビデオの基本的なキャプチャ機能を実装するための手順を紹介した「[MediaCapture を使った写真とビデオのキャプチャ](capture-photos-and-video-with-mediacapture.md)」で取り上げた概念やコードを基に執筆されています。 そちらの記事で基本的なメディア キャプチャのパターンを把握してから、高度なキャプチャ シナリオに進むことをお勧めします。 この記事で紹介しているコードは、MediaCapture のインスタンスが既に作成され、適切に初期化されていることを前提としています。
 
 この記事で説明するデバイス制御 API はすべて、[**Windows.Media.Devices**](https://msdn.microsoft.com/library/windows/apps/br206902) 名前空間のメンバーです。
 
@@ -28,8 +28,7 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 ## 露出
 
-[
-            **ExposureControl**](https://msdn.microsoft.com/library/windows/apps/dn278910) によって、写真やビデオのキャプチャ時に使用されるシャッター速度を設定できます。
+[**ExposureControl**](https://msdn.microsoft.com/library/windows/apps/dn278910) によって、写真やビデオのキャプチャ時に使用されるシャッター速度を設定できます。
 
 この例では、[**スライダー**](https://msdn.microsoft.com/library/windows/apps/br209614) コントロールを使って現在の露出値を調整し、チェック ボックスを使って自動露出調整のオンとオフを切り替えます。
 
@@ -51,12 +50,12 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 [!code-cs[ExposureCheckBox](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetExposureCheckBox)]
 
-**重要:** 自動露出モードは、プレビュー ストリームが実行中であるときにのみサポートされます。 自動露出をオンにする前に、プレビュー ストリームが実行されていることを確認します。
+
+            **重要:** 自動露出モードは、プレビュー ストリームが実行中であるときにのみサポートされます。 自動露出をオンにする前に、プレビュー ストリームが実行されていることを確認します。
 
 ## 露出補正
 
-[
-            **ExposureCompensationControl**](https://msdn.microsoft.com/library/windows/apps/dn278897) によって、写真やビデオのキャプチャ時に使用される露出補正を設定できます。
+[**ExposureCompensationControl**](https://msdn.microsoft.com/library/windows/apps/dn278897) によって、写真やビデオのキャプチャ時に使用される露出補正を設定できます。
 
 この例では、[**スライダー**](https://msdn.microsoft.com/library/windows/apps/br209614) コントロールを使って、現在の露出補正値を調整します。
 
@@ -76,9 +75,7 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 ## フラッシュ
 
-[
-            **FlashControl**](https://msdn.microsoft.com/library/windows/apps/dn297725) によって、フラッシュを有効または無効にしたり、フラッシュを使うかどうかをシステムが動的に判断する、自動フラッシュを有効にしたりすることができます。 このコントロールによって、サポートされているデバイスで自動赤目軽減を有効にすることもできます。 これらの設定はすべて写真のキャプチャに適用されます。 [
-            **TorchControl**](https://msdn.microsoft.com/library/windows/apps/dn279077) は、ビデオ キャプチャ時のトーチのオンとオフを切り替える別のコントロールです。
+[**FlashControl**](https://msdn.microsoft.com/library/windows/apps/dn297725) によって、フラッシュを有効または無効にしたり、フラッシュを使うかどうかをシステムが動的に判断する、自動フラッシュを有効にしたりすることができます。 このコントロールによって、サポートされているデバイスで自動赤目軽減を有効にすることもできます。 これらの設定はすべて写真のキャプチャに適用されます。 [**TorchControl**](https://msdn.microsoft.com/library/windows/apps/dn279077) は、ビデオ キャプチャ時のトーチのオンとオフを切り替える別のコントロールです。
 
 この例では、一連のラジオ ボタンを使って、ユーザーがオン、オフ、自動のフラッシュ設定を切り替えることができるようにします。 赤目軽減とビデオ トーチのオンとオフを切り替えるためのチェック ボックスも用意されています。
 
@@ -100,12 +97,12 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 [!code-cs[Torch](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTorch)]
 
-**注:** 一部のデバイスでは、[**TorchControl.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn279078) が true に設定されている場合でも、デバイスがプレビュー ストリームを実行中で、アクティブにビデオをキャプチャ中ではない限り、トーチは発光しません。 推奨される処理の順序は、ビデオのプレビューを有効にし、**Enabled** を true に設定してトーチを有効にした後、ビデオ キャプチャを開始するという順序です。 一部のデバイスでは、プレビューを開始した後もトーチが点灯しません。 その他のデバイスでは、トーチはビデオのキャプチャを開始するまで点灯しません。
+
+            **注:** 一部のデバイスでは、[**TorchControl.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn279078) が true に設定されている場合でも、デバイスがプレビュー ストリームを実行中で、アクティブにビデオをキャプチャ中ではない限り、トーチは発光しません。 推奨される処理の順序は、ビデオのプレビューを有効にし、**Enabled** を true に設定してトーチを有効にした後、ビデオ キャプチャを開始するという順序です。 一部のデバイスでは、プレビューを開始した後もトーチが点灯しません。 その他のデバイスでは、トーチはビデオのキャプチャを開始するまで点灯しません。
 
 ## フォーカス
 
-[
-            **FocusControl**](https://msdn.microsoft.com/library/windows/apps/dn297788) オブジェクトでは、カメラのフォーカスを調整するためによく使用される 3 種類の方法である、連続オート フォーカス、タップしてフォーカス、手動フォーカスがサポートされています。 カメラ アプリでこれらの 3 つの方法がすべてをサポートされている可能性がありますが、分かりやすくするために、この記事ではそれぞれの手法を個別に説明します。 このセクションでは、フォーカス アシスト ライトを有効にする方法も説明します。
+[**FocusControl**](https://msdn.microsoft.com/library/windows/apps/dn297788) オブジェクトでは、カメラのフォーカスを調整するためによく使用される 3 種類の方法である、連続オート フォーカス、タップしてフォーカス、手動フォーカスがサポートされています。 カメラ アプリでこれらの 3 つの方法がすべてをサポートされている可能性がありますが、分かりやすくするために、この記事ではそれぞれの手法を個別に説明します。 このセクションでは、フォーカス アシスト ライトを有効にする方法も説明します。
 
 ### 連続オート フォーカス
 
@@ -119,12 +116,12 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 連続オート フォーカス ラジオ ボタンの [**Checked**](https://msdn.microsoft.com/library/windows/apps/br209796) イベント ハンドラーで、[**VideoDeviceController.FocusControl**](https://msdn.microsoft.com/library/windows/apps/dn279091) プロパティを使ってコントロールのインスタンスを取得します。 アプリが以前に [**LockAsync**](https://msdn.microsoft.com/library/windows/apps/dn608075) を呼び出して他のフォーカス モードのいずれかを有効にしていた場合は、[**UnlockAsync**](https://msdn.microsoft.com/library/windows/apps/dn608081) を呼び出してコントロールのロックを解除します。
 
-新しい [**FocusSettings**](https://msdn.microsoft.com/library/windows/apps/dn608085) オブジェクトを作成し、[**Mode**](https://msdn.microsoft.com/library/windows/apps/dn608090) プロパティを **Continuous** に設定します。 [
-            **AutoFocusRange**](https://msdn.microsoft.com/library/windows/apps/dn608086) プロパティをアプリのシナリオに適した値またはユーザーが UI で選択した値に設定します。 **FocusSettings** オブジェクトを [**Configure**](https://msdn.microsoft.com/library/windows/apps/dn608067) メソッドに渡し、[**FocusAsync**](https://msdn.microsoft.com/library/windows/apps/dn297794) を呼び出して連続オート フォーカスを開始します。
+新しい [**FocusSettings**](https://msdn.microsoft.com/library/windows/apps/dn608085) オブジェクトを作成し、[**Mode**](https://msdn.microsoft.com/library/windows/apps/dn608090) プロパティを **Continuous** に設定します。 [**AutoFocusRange**](https://msdn.microsoft.com/library/windows/apps/dn608086) プロパティをアプリのシナリオに適した値またはユーザーが UI で選択した値に設定します。 **FocusSettings** オブジェクトを [**Configure**](https://msdn.microsoft.com/library/windows/apps/dn608067) メソッドに渡し、[**FocusAsync**](https://msdn.microsoft.com/library/windows/apps/dn297794) を呼び出して連続オート フォーカスを開始します。
 
 [!code-cs[CafFocusRadioButton](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetCafFocusRadioButton)]
 
-**重要:** オート フォーカス モードは、プレビュー ストリームが実行中であるときにのみサポートされます。 連続オート フォーカスをオンにする前に、プレビュー ストリームが実行されていることを確認します。
+
+            **重要:** オート フォーカス モードは、プレビュー ストリームが実行中であるときにのみサポートされます。 連続オート フォーカスをオンにする前に、プレビュー ストリームが実行されていることを確認します。
 
 ### タップしてフォーカス
 
@@ -134,8 +131,7 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 [!code-xml[TapFocusXAML](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetTapFocusXAML)]
 
-現在のキャプチャ デバイスで **FocusControl** がサポートされているかどうかを確認するには、[**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297785) プロパティを確認します。 この手法を使うには、**RegionsOfInterestControl** がサポートされており、少なくとも 1 つの領域をサポートしている必要があります。 [
-            **AutoFocusSupported**](https://msdn.microsoft.com/library/windows/apps/dn279066) および [**MaxRegions**](https://msdn.microsoft.com/library/windows/apps/dn279069) プロパティを確認して、タップしてフォーカスのラジオ ボタンを表示するか、非表示にするかを決定します。
+現在のキャプチャ デバイスで **FocusControl** がサポートされているかどうかを確認するには、[**Supported**](https://msdn.microsoft.com/library/windows/apps/dn297785) プロパティを確認します。 この手法を使うには、**RegionsOfInterestControl** がサポートされており、少なくとも 1 つの領域をサポートしている必要があります。 [**AutoFocusSupported**](https://msdn.microsoft.com/library/windows/apps/dn279066) および [**MaxRegions**](https://msdn.microsoft.com/library/windows/apps/dn279069) プロパティを確認して、タップしてフォーカスのラジオ ボタンを表示するか、非表示にするかを決定します。
 
 [!code-cs[TapFocus](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTapFocus)]
 
@@ -169,9 +165,11 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 最後に、**FocusControl** で [**FocusAsync**](https://msdn.microsoft.com/library/windows/apps/dn297794) を呼び出して、フォーカス設定を開始します。
 
-**重要:** タップによるフォーカスを実装する場合、操作の順序が重要になります。 これらの API は、次の順序で呼び出す必要があります。
 
-**1.**
+            **重要:** タップによるフォーカスを実装する場合、操作の順序が重要になります。 これらの API は、次の順序で呼び出す必要があります。
+
+
+            **1.**
             [
               **FocusControl.Configure**
             ](https://msdn.microsoft.com/library/windows/apps/dn608067)
@@ -187,6 +185,7 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
             [
               **FocusControl.FocusAsync**
             ](https://msdn.microsoft.com/library/windows/apps/dn297794)
+          
 
 [!code-cs[TapToFocus](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetTapToFocus)]
 
@@ -234,15 +233,13 @@ ms.openlocfilehash: c70f3e54ae5c83ccc28c47cb1e0ec236f75c3775
 
 [!code-cs[FocusLight](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetFocusLight)]
 
-**CheckedChanged** イベント ハンドラーで、キャプチャ デバイスの [**FlashControl**](https://msdn.microsoft.com/library/windows/apps/dn297725) オブジェクトを取得します。 [
-            **AssistantLightEnabled**](https://msdn.microsoft.com/library/windows/apps/dn608065) プロパティを設定して、フォーカス ライトを有効または無効にします。
+**CheckedChanged** イベント ハンドラーで、キャプチャ デバイスの [**FlashControl**](https://msdn.microsoft.com/library/windows/apps/dn297725) オブジェクトを取得します。 [**AssistantLightEnabled**](https://msdn.microsoft.com/library/windows/apps/dn608065) プロパティを設定して、フォーカス ライトを有効または無効にします。
 
 [!code-cs[FocusLightCheckBox](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetFocusLightCheckBox)]
 
 ## ISO 速度
 
-[
-            **IsoSpeedControl**](https://msdn.microsoft.com/library/windows/apps/dn297850) によって、写真やビデオのキャプチャ時に使用される ISO 速度を設定できます。
+[**IsoSpeedControl**](https://msdn.microsoft.com/library/windows/apps/dn297850) によって、写真やビデオのキャプチャ時に使用される ISO 速度を設定できます。
 
 この例では、[**スライダー**](https://msdn.microsoft.com/library/windows/apps/br209614) コントロールを使って現在の露出補正値を調整し、チェック ボックスを使って自動 ISO 速度調整のオンとオフを切り替えます。
 
@@ -278,8 +275,7 @@ OIS を有効または無効にするには、[**OpticalImageStabilizationContro
 
 ## ホワイト バランス
 
-[
-            **WhiteBalanceControl**](https://msdn.microsoft.com/library/windows/apps/dn279104) によって、写真やビデオのキャプチャ時に使用されるホワイト バランスを設定できます。
+[**WhiteBalanceControl**](https://msdn.microsoft.com/library/windows/apps/dn279104) によって、写真やビデオのキャプチャ時に使用されるホワイト バランスを設定できます。
 
 この例では、[**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348) コントロールを使って組み込みの色温度のプリセットを選択し、[**スライダー**](https://msdn.microsoft.com/library/windows/apps/br209614) コントロールを使って手動でホワイト バランスを調整します。
 
@@ -301,14 +297,15 @@ OIS を有効または無効にするには、[**OpticalImageStabilizationContro
 
 [!code-cs[WhiteBalanceSlider](./code/BasicMediaCaptureWin10/cs/MainPage.ManualControls.xaml.cs#SnippetWhiteBalanceSlider)]
 
-**重要:** ホワイト バランスの調整は、プレビュー ストリームが実行中であるときにのみサポートされます。 ホワイト バランス値またはプリセットを設定する前に、プレビュー ストリームが実行されていることを確認します。
 
-**重要:** **ColorTemperaturePreset.Auto** プリセット値は、ホワイト バランス レベルを自動調整するようにシステムに指示します。 ホワイト バランス レベルが各フレームで同じである必要がある写真シーケンスのキャプチャなど、一部のシナリオでは、現在の自動値にコントロールをロックすることもできます。 これを行うには、[**SetPresetAsync**](https://msdn.microsoft.com/library/windows/apps/dn279113) を呼び出して、**Manual** プリセットを指定します。[**SetValueAsync**](https://msdn.microsoft.com/library/windows/apps/dn279114) を使って、コントロールの値を設定しないでください。 これにより、デバイスは現在の値にロックされます。 現在のコントロールの値を読み取って、返された値を **SetValueAsync** に渡すことはしないでください。この値が正しいことは保証されないためです。
+            **重要:** ホワイト バランスの調整は、プレビュー ストリームが実行中であるときにのみサポートされます。 ホワイト バランス値またはプリセットを設定する前に、プレビュー ストリームが実行されていることを確認します。
+
+
+            **重要:** **ColorTemperaturePreset.Auto** プリセット値は、ホワイト バランス レベルを自動調整するようにシステムに指示します。 ホワイト バランス レベルが各フレームで同じである必要がある写真シーケンスのキャプチャなど、一部のシナリオでは、現在の自動値にコントロールをロックすることもできます。 これを行うには、[**SetPresetAsync**](https://msdn.microsoft.com/library/windows/apps/dn279113) を呼び出して、**Manual** プリセットを指定します。[**SetValueAsync**](https://msdn.microsoft.com/library/windows/apps/dn279114) を使って、コントロールの値を設定しないでください。 これにより、デバイスは現在の値にロックされます。 現在のコントロールの値を読み取って、返された値を **SetValueAsync** に渡すことはしないでください。この値が正しいことは保証されないためです。
 
 ## ズーム
 
-[
-            **ZoomControl**](https://msdn.microsoft.com/library/windows/apps/dn608149) によって、写真やビデオのキャプチャ時に使用されるズーム レベルを設定できます。
+[**ZoomControl**](https://msdn.microsoft.com/library/windows/apps/dn608149) によって、写真やビデオのキャプチャ時に使用されるズーム レベルを設定できます。
 
 この例では、[**スライダー**](https://msdn.microsoft.com/library/windows/apps/br209614) コントロールを使って、現在のズーム レベルを調整します。 次のセクションでは、画面上のピンチ ジェスチャに基づいてズームを調整する方法を示します。
 
@@ -340,13 +337,11 @@ OIS を有効または無効にするには、[**OpticalImageStabilizationContro
 
 [!code-cs[RegisterPinchGestureHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRegisterPinchGestureHandler)]
 
-**ManipulationDelta** イベント用のハンドラーでは、ユーザーのピンチ ジェスチャの変化に基づいてズーム倍率を更新します。 [
-            **ManipulationDelta.Scale**](https://msdn.microsoft.com/library/windows/apps/br242016) 値は、ピンチ ジェスチャによるズーム倍率の変化を表します。たとえば、ピンチ サイズがわずかに大きくなった場合は 1.0 よりわずかに大きい数値、ピンチ サイズがわずかに小さくなった場合は 1.0 よりわずかに小さい数値になります。 この例では、ズーム コントロールの現在の値にスケール デルタを掛けています。
+**ManipulationDelta** イベント用のハンドラーでは、ユーザーのピンチ ジェスチャの変化に基づいてズーム倍率を更新します。 [**ManipulationDelta.Scale**](https://msdn.microsoft.com/library/windows/apps/br242016) 値は、ピンチ ジェスチャによるズーム倍率の変化を表します。たとえば、ピンチ サイズがわずかに大きくなった場合は 1.0 よりわずかに大きい数値、ピンチ サイズがわずかに小さくなった場合は 1.0 よりわずかに小さい数値になります。 この例では、ズーム コントロールの現在の値にスケール デルタを掛けています。
 
 ズーム倍率を設定する前に、デバイスでサポートされている ([**ZoomControl.Min**](https://msdn.microsoft.com/library/windows/apps/dn633817) プロパティで示されている) 最小値より小さい値になっていないか確認する必要があります。 また、値が [**ZoomControl.Max**](https://msdn.microsoft.com/library/windows/apps/dn608150) 値以下であることを確認します。 最後に、ズーム倍率が、デバイスでサポートされている ([**Step**](https://msdn.microsoft.com/library/windows/apps/dn633818) プロパティで示されている) ズーム ステップ サイズの倍数になっていることを確認する必要があります。 ズーム倍率がこれらの要件を満たしていない場合は、キャプチャ デバイスでズーム レベルを設定しようとすると、例外がスローされます。
 
-キャプチャ デバイスでズーム レベルを設定するには、新しい [**ZoomSettings**](https://msdn.microsoft.com/library/windows/apps/dn926722) オブジェクトを作成します。 [
-            **Mode**](https://msdn.microsoft.com/library/windows/apps/dn926723) プロパティを [**ZoomTransitionMode.Smooth**](https://msdn.microsoft.com/library/windows/apps/dn926726) に設定し、[**Value**](https://msdn.microsoft.com/library/windows/apps/dn926724) プロパティを目的のズーム倍率に設定します。 最後に、[**ZoomControl.Configure**](https://msdn.microsoft.com/library/windows/apps/dn926719) を呼び出して、デバイスの新しいズーム値を設定します。 デバイスは新しいズーム値への切り替えをスムーズに行います。
+キャプチャ デバイスでズーム レベルを設定するには、新しい [**ZoomSettings**](https://msdn.microsoft.com/library/windows/apps/dn926722) オブジェクトを作成します。 [**Mode**](https://msdn.microsoft.com/library/windows/apps/dn926723) プロパティを [**ZoomTransitionMode.Smooth**](https://msdn.microsoft.com/library/windows/apps/dn926726) に設定し、[**Value**](https://msdn.microsoft.com/library/windows/apps/dn926724) プロパティを目的のズーム倍率に設定します。 最後に、[**ZoomControl.Configure**](https://msdn.microsoft.com/library/windows/apps/dn926719) を呼び出して、デバイスの新しいズーム値を設定します。 デバイスは新しいズーム値への切り替えをスムーズに行います。
 
 [!code-cs[ManipulationDelta](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetManipulationDelta)]
 

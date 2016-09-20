@@ -5,7 +5,7 @@ description: "最後に、回転する立方体を画面に描画するコード
 ms.assetid: cc681548-f694-f613-a19d-1525a184d4ab
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 1b7431c20e25173a0aa3f8d6ee0d407be869d60a
+ms.openlocfilehash: 1e2039743ba45d577c08c0a6d9c17c7f923b2d86
 
 ---
 
@@ -25,23 +25,19 @@ ms.openlocfilehash: 1b7431c20e25173a0aa3f8d6ee0d407be869d60a
 
 OpenGL ES 2.0 では、描画コンテキストは EGLContext の型として定義されます。これには、ウィンドウとサーフェスのパラメーターのほか、ウィンドウに表示される最終的な画像の作成に使われるレンダー ターゲットへの描画に必要なリソースが含まれます。 このコンテキストを使ってグラフィックス リソースを構成し、シェーダー パイプラインの結果をディスプレイに正しく表示します。 主要なリソースの 1 つは "バック バッファー" (または "フレーム バッファー オブジェクト") と呼ばれ、ディスプレイに表示できる最終的な構成済みレンダー ターゲットが含まれます。
 
-Direct3D を使ってディスプレイに描画するためのグラフィックス リソースを構成するプロセスは、もう少し解説が必要なプロセスであり、かなりの数の API を必要とします (ただし、Microsoft Visual Studio Direct3D テンプレートを使うと、このプロセスを大幅に簡素化できます)。コンテキスト (Direct3D デバイス コンテキスト) を取得するには、最初に [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) オブジェクトを取得し、それを使って [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) オブジェクトを作成、構成する必要があります。 これら 2 つのオブジェクトは、ディスプレイへの描画に必要な特定のリソースを構成するために、組み合わせて使われます。
+Direct3D を使ってディスプレイに描画するためのグラフィックス リソースを構成するプロセスは、もう少し解説が必要なプロセスであり、かなりの数の API を必要とします  (ただし、Microsoft Visual Studio Direct3D テンプレートを使うと、このプロセスを大幅に簡素化できます)。コンテキスト (Direct3D デバイス コンテキスト) を取得するには、最初に [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) オブジェクトを取得し、それを使って [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) オブジェクトを作成、構成する必要があります。 これら 2 つのオブジェクトは、ディスプレイへの描画に必要な特定のリソースを構成するために、組み合わせて使われます。
 
 つまり、DXGI API には、グラフィックス アダプターに直接関係するリソースを管理するための API が主として含まれ、Direct3D には、CPU で実行されるメイン プログラムと GPU の橋渡しをする API が含まれます。
 
 このサンプルでの比較のために、各 API から該当する型を紹介します。
 
--   [
-              **ID3D11Device1**
+-   [**ID3D11Device1**
             ](https://msdn.microsoft.com/library/windows/desktop/hh404575): グラフィックス デバイスとそのリソースの仮想表現を提供します。
--   [
-              **ID3D11DeviceContext1**
+-   [**ID3D11DeviceContext1**
             ](https://msdn.microsoft.com/library/windows/desktop/hh404598): バッファーを構成し、レンダリング コマンドを発行するためのインターフェイスを提供します。
--   [
-              **IDXGISwapChain1**
+-   [**IDXGISwapChain1**
             ](https://msdn.microsoft.com/library/windows/desktop/hh404631): スワップ チェーンは OpenGL ES 2.0 のバック バッファーに似ています。 これは、ディスプレイに表示する最終的なレンダリング画像を含むグラフィックス アダプターのメモリ領域です。 これは、最新のレンダリングを画面に表示するために、書き込みと "スワップ" を行うことのできるバッファーをいくつか持つため、"スワップ チェーン" と呼ばれます。
--   [
-              **ID3D11RenderTargetView**
+-   [**ID3D11RenderTargetView**
             ](https://msdn.microsoft.com/library/windows/desktop/ff476582): Direct3D デバイス コンテキストの描画先の 2D ビットマップ バッファー (スワップ チェーンによって表示される) が含まれます。 OpenGL ES 2.0 の場合と同様に、レンダー ターゲットは複数作成できます。その一部はスワップ チェーンにバインドされませんが、マルチパス シェーディング手法で利用されます。
 
 テンプレートのレンダラー オブジェクトには次のフィールドがあります。
@@ -126,26 +122,17 @@ void Render(GraphicsContext *drawContext)
 }
 ```
 
-Direct3D 11 では、プロセスはよく似ています (Direct3D テンプレートのビューポートとレンダー ターゲットの構成を使っていることを前提とします)。
+Direct3D 11 では、プロセスはよく似ています  (Direct3D テンプレートのビューポートとレンダー ターゲットの構成を使っていることを前提とします)。
 
--   [
-            **ID3D11DeviceContext1::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/hh446790) を呼び出して定数バッファー (この場合はモデル ビュー プロジェクション マトリックス) を更新します。
--   [
-            **ID3D11DeviceContext1::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) で頂点バッファーを設定します。
--   [
-            **ID3D11DeviceContext1::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453) でインデックス バッファーを設定します。
--   [
-            **ID3D11DeviceContext1::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455) で特定の三角形のトポロジ (三角形のリスト) を設定します。
--   [
-            **ID3D11DeviceContext1::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) で頂点バッファーの入力レイアウトを設定します。
--   [
-            **ID3D11DeviceContext1::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) で頂点シェーダーをバインドします。
--   [
-            **ID3D11DeviceContext1::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) でフラグメント シェーダーをバインドします。
--   [
-            **ID3D11DeviceContext1::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) を使って、シェーダーを通じてインデックス付き頂点を送信し、レンダー ターゲット バッファーに色の結果を出力します。
--   [
-            **IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) でレンダー ターゲット バッファーを表示します。
+-   [**ID3D11DeviceContext1::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/hh446790) を呼び出して定数バッファー (この場合はモデル ビュー プロジェクション マトリックス) を更新します。
+-   [**ID3D11DeviceContext1::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) で頂点バッファーを設定します。
+-   [**ID3D11DeviceContext1::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453) でインデックス バッファーを設定します。
+-   [**ID3D11DeviceContext1::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455) で特定の三角形のトポロジ (三角形のリスト) を設定します。
+-   [**ID3D11DeviceContext1::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) で頂点バッファーの入力レイアウトを設定します。
+-   [**ID3D11DeviceContext1::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) で頂点シェーダーをバインドします。
+-   [**ID3D11DeviceContext1::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) でフラグメント シェーダーをバインドします。
+-   [**ID3D11DeviceContext1::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) を使って、シェーダーを通じてインデックス付き頂点を送信し、レンダー ターゲット バッファーに色の結果を出力します。
+-   [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) でレンダー ターゲット バッファーを表示します。
 
 Direct3D 11: 表示するフレームのレンダリング
 
@@ -210,8 +197,7 @@ void RenderObject::Render()
 
 ```
 
-[
-            **IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) が呼び出されると、フレームが構成済みのディスプレイに出力されます。
+[**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) が呼び出されると、フレームが構成済みのディスプレイに出力されます。
 
 ## 前のステップ
 
@@ -240,6 +226,6 @@ void RenderObject::Render()
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

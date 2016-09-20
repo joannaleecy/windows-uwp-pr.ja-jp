@@ -6,8 +6,8 @@ title: "キーボードのアクセシビリティ"
 label: Keyboard accessibility
 template: detail.hbs
 translationtype: Human Translation
-ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 6ac488b6db1ed838cc458c6adaa90dcca18d4c7d
+ms.sourcegitcommit: 2215aeae041ff975d99d29ea42350f6ce0f2a681
+ms.openlocfilehash: 112c7be4cb5418332a19565be9b739e7032ba834
 
 ---
 
@@ -238,10 +238,10 @@ SIP には Ctrl キーや Alt キーがないため、キーボード ショー�
 * [入力: タッチ キーボードのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=246019)
 * [スクリーン キーボードを表示したときの対応のサンプルのページ](http://go.microsoft.com/fwlink/p/?linkid=231633)
 * [XAML アクセシビリティ サンプル](http://go.microsoft.com/fwlink/p/?linkid=238570)
- 
 
 
 
-<!--HONumber=Jul16_HO2-->
+
+<!--HONumber=Aug16_HO3-->
 
 

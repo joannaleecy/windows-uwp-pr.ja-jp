@@ -3,7 +3,6 @@ author: mcleblanc
 description: "デバイス自体とそのセンサーに統合するコードには、ユーザーに対する入力と出力が含まれます。"
 title: "入出力、デバイス、アプリ モデルの Windows ランタイム 8.x から UWP への移植'"
 ms.assetid: bb13fb8f-bdec-46f5-8640-57fb0dd2d85b
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: e5e560ca4f40496edf9d11c3eef546fdc4c3b079
 
@@ -29,8 +28,7 @@ ms.openlocfilehash: e5e560ca4f40496edf9d11c3eef546fdc4c3b079
 ## バックグラウンド オーディオ
 
 
-[
-            **MediaElement.AudioCategory**](https://msdn.microsoft.com/library/windows/apps/br227352) プロパティについては、**ForegroundOnlyMedia** と **BackgroundCapableMedia** が Windows 10 アプリでは使われなくなりました。 代わりに Windows Phone ストア アプリ モデルを使ってください。 詳しくは、「[バックグラウンド オーディオ](https://msdn.microsoft.com/library/windows/apps/mt282140)」をご覧ください。
+[**MediaElement.AudioCategory**](https://msdn.microsoft.com/library/windows/apps/br227352) プロパティについては、**ForegroundOnlyMedia** と **BackgroundCapableMedia** が Windows 10 アプリでは使われなくなりました。 代わりに Windows Phone ストア アプリ モデルを使ってください。 詳しくは、「[バックグラウンド オーディオ](https://msdn.microsoft.com/library/windows/apps/mt282140)」をご覧ください。
 
 ## アプリが実行されているプラットフォームの検出
 
@@ -39,7 +37,8 @@ ms.openlocfilehash: e5e560ca4f40496edf9d11c3eef546fdc4c3b079
 
 ユニバーサル 8.1 アプリが実行されているオペレーティング システムを検出するコードがそのアプリに含まれている場合、ロジックによってはそのコードの変更が必要になることがあります。 アプリが値をパススルーし、その値を処理しないとき、場合によっては、オペレーティング システムに関する情報を継続して収集する必要があります。
 
-**注**   機能の有無を検出する際に、オペレーティング システムやデバイス ファミリを使わないことをお勧めします。 通常、現在のオペレーティング システムやデバイス ファミリを識別する手法は、特定のオペレーティング システムやデバイス ファミリの機能の有無を判別する際には最適な方法ではありません。 オペレーティング システムやデバイス ファミリ (およびバージョン番号) を検出するのではなく、機能自体の存在をテストしてください (「[条件付きコンパイルとアダプティブ コード](w8x-to-uwp-porting-to-a-uwp-project.md#reviewing-conditional-compilation)」をご覧ください)。 特定のオペレーティング システムやデバイス ファミリの情報が必要な場合は、その情報を、サポートされる最小バージョンとして使ってください。そのバージョン用のテストは設計しないでください。
+
+            **注:** 機能の有無を検出する際に、オペレーティング システムやデバイス ファミリを使わないことをお勧めします。 通常、現在のオペレーティング システムやデバイス ファミリを識別する手法は、特定のオペレーティング システムやデバイス ファミリの機能の有無を判別する際には最適な方法ではありません。 オペレーティング システムやデバイス ファミリ (およびバージョン番号) を検出するのではなく、機能自体の存在をテストしてください (「[条件付きコンパイルとアダプティブ コード](w8x-to-uwp-porting-to-a-uwp-project.md#reviewing-conditional-compilation)」をご覧ください)。 特定のオペレーティング システムやデバイス ファミリの情報が必要な場合は、その情報を、サポートされる最小バージョンとして使ってください。そのバージョン用のテストは設計しないでください。
 
  
 

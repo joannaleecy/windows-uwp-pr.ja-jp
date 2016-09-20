@@ -5,7 +5,6 @@ title: "アダプティブ トースト通知と対話型トースト通知"
 ms.assetid: 1FCE66AF-34B4-436A-9FC9-D0CF4BDA5A01
 label: Adaptive and interactive toast notifications
 template: detail.hbs
-translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
 ms.openlocfilehash: 17faf0ccb0207b318963e00655d7ac91b97e066b
 
@@ -25,7 +24,8 @@ ms.openlocfilehash: 17faf0ccb0207b318963e00655d7ac91b97e066b
 -   メインのトースト通知や各操作用の 3 つの異なるアクティブ化の種類。
 -   特定のシナリオ (アラーム、リマインダー、着信呼び出しなど) 向けの通知を作成するためのオプション。
 
-**注**   Windows 8.1 や Windows Phone 8.1 の従来のテンプレートについては、「[従来のトースト テンプレート カタログ](https://msdn.microsoft.com/library/windows/apps/hh761494)」をご覧ください。
+
+            **注**   Windows 8.1 や Windows Phone 8.1 の従来のテンプレートについては、「[従来のトースト テンプレート カタログ](https://msdn.microsoft.com/library/windows/apps/hh761494)」をご覧ください。
 
  
 
@@ -111,7 +111,8 @@ visual セクションとその子要素でサポートされているすべて�
 ## <span id="xml_examples"></span><span id="XML_EXAMPLES"></span>XML の例
 
 
-**注**  以下の例で示されているトースト通知のスクリーン ショットは、デスクトップ上のアプリから取得したものです。 モバイル デバイスでは、トースト通知は折りたたまれて表示される場合があります。このとき、トースト通知の下部には通知を展開するためのグラバーが表示されます。
+
+            **注**  以下の例で示されているトースト通知のスクリーン ショットは、デスクトップ上のアプリから取得したものです。 モバイル デバイスでは、トースト通知は折りたたまれて表示される場合があります。このとき、トースト通知の下部には通知を展開するためのグラバーが表示されます。
 
  
 
@@ -376,7 +377,7 @@ namespace ToastNotificationTask
 
 launch?
 
--   launch? = 文字列
+-   launch?  = 文字列
 -   この属性は省略可能です。
 -   トースト通知によってアプリケーションがアクティブ化されるときにアプリケーションに渡される文字列です。
 -   activationType の値に応じて、この値は、フォアグラウンドのアプリ、バックグラウンド タスクの内部、または元のアプリからプロトコル起動された他のアプリで取得することができます。
@@ -386,20 +387,20 @@ launch?
 
 duration?
 
--   duration? = "short|long"
+-   duration?  = "short|long"
 -   この属性は省略可能です。 既定値は "short" です。
 -   これは、特定のシナリオやアプリケーションの互換性のみを目的とした属性です。 アラーム シナリオでは、この属性は必要ありません。
 -   このプロパティを使うことはお勧めしません。
 
 activationType?
 
--   activationType? = "foreground | background | protocol | system"
+-   activationType?  = "foreground | background | protocol | system"
 -   この属性は省略可能です。
 -   既定値は "foreground" です。
 
 scenario?
 
--   scenario? = "default | alarm | reminder | incomingCall"
+-   scenario?  = "default | alarm | reminder | incomingCall"
 -   この属性は省略可能です。既定値は "default" です。
 -   シナリオがアラーム、リマインダー、着信呼び出しの表示以外の場合、この属性は必要ありません。
 -   通知を常に画面上に表示することのみを目的とする場合は、この属性を使わないでください。
@@ -408,7 +409,7 @@ scenario?
 
 version?
 
--   version? = 負以外の整数
+-   version?  = 負以外の整数
 -   &lt;visual&gt; ではバージョン管理は廃止される予定であるため、この属性は必要ありません。 必要に応じてより高い階層から指定できる新しいバージョン管理モデルが発表されるまで、しばらくお待ちください。
 
 lang?
@@ -427,7 +428,7 @@ addImageQuery?
 
 template?
 
--   \[重要\] template? = "ToastGeneric"
+-   \[重要\] template?  = "ToastGeneric"
 -   新しいアダプティブ通知と対話型通知の機能を使う場合は、従来のテンプレートではなく、必ず "ToastGeneric" テンプレートを使って作業を始めてください。
 -   新しい操作で従来のテンプレートを使うと、現時点では動作する可能性があります。ただし、この方法は対象となる使用方法ではないため、今後も引き続き動作するかどうかは保証できません。
 
@@ -457,7 +458,7 @@ src
 
 placement?
 
--   placement? = "inline" | "appLogoOverride"
+-   placement?  = "inline" | "appLogoOverride"
 -   この属性は省略可能です。
 -   この属性は、画像が表示される場所を指定します。
 -   "inline" は、トースト通知本文内のテキストの下に表示されることを意味します。"appLogoOverride" は、アプリケーション アイコン (トースト通知の左上隅に表示される) を置き換えることを意味します。
@@ -473,7 +474,7 @@ addImageQuery?
 
 hint-crop?
 
--   hint-crop? = "none" | "circle"
+-   hint-crop?  = "none" | "circle"
 -   この属性は省略可能です。
 -   既定値は "none" であり、トリミングされないことを意味します。
 -   "circle" を指定すると、画像が円形にトリミングされます。 連絡先のプロフィール画像、人物の画像などにこの属性を使います。
@@ -515,7 +516,7 @@ silent?
 
 id
 
--   id= 文字列
+-   id = 文字列
 -   この属性は必須です。
 -   id 属性は必須の属性であり、アプリが (フォアグラウンドまたはバックグラウンドで) アクティブ化されたときにユーザー入力を取得するために使われます。
 
@@ -528,18 +529,18 @@ type
 
 title?
 
--   title? = 文字列
+-   title?  = 文字列
 -   title 属性は省略可能です。開発者は、シェルの入力に対してタイトルを指定し、アフォーダンスがあるときに表示します。
 -   モバイルやデスクトップでは、入力の上にこのタイトルが表示されます。
 
 placeHolderContent?
 
--   placeHolderContent? = 文字列
+-   placeHolderContent?  = 文字列
 -   placeHolderContent 属性は省略可能です。入力の種類が text の場合に、ヒントのテキストを灰色で表示します。 入力の種類が "text" 以外の場合、この属性は無視されます。
 
 defaultInput?
 
--   defaultInput? = 文字列
+-   defaultInput?  = 文字列
 -   defaultInput 属性は省略可能です。既定の入力値を指定するために使われます。
 -   入力の種類が "text" である場合、この属性は文字列入力として処理されます。
 -   入力の種類が "selection" である場合、この属性は、入力の要素内で利用できるいずれかの選択項目の ID として処理されます。
@@ -558,28 +559,28 @@ content
 
 content
 
--   content= 文字列
+-   content = 文字列
 -   content 属性は必須です。 ボタンに表示されるテキスト文字列を指定します。
 
 arguments
 
--   arguments= 文字列
+-   arguments = 文字列
 -   arguments 属性は必須です。 この属性は、アプリによって定義されたデータを表します。ユーザーがこの action を実行し、アプリがアクティブ化された後で、アプリはこのデータを取得することができます。
 
 activationType?
 
--   activationType? = "foreground | background | protocol | system"
+-   activationType?  = "foreground | background | protocol | system"
 -   activationType 属性は省略可能です。既定値は "foreground" です。
 -   この属性は、この action によって行われるアクティブ化の種類を表します (フォアグラウンド、バックグラウンド、プロトコル起動による別のアプリの起動、またはシステム操作の呼び出し)。
 
 imageUri?
 
--   imageUri? = 文字列
+-   imageUri?  = 文字列
 -   imageUri は省略可能です。この action 用の画像アイコンを指定するために使われます。このアイコンは、テキスト コンテンツと共にボタン内に表示されます。
 
 hint-inputId
 
--   hint-inputId= 文字列
+-   hint-inputId = 文字列
 -   hint-inpudId 属性は必須です。 特に、すばやく応答するシナリオで使われます。
 -   値は、この属性に関連付ける必要がある入力要素の ID にする必要があります。
 -   モバイルやデスクトップでは、この属性によって、入力ボックスのすぐ横にボタンが配置されます。

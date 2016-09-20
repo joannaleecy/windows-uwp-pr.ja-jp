@@ -3,7 +3,6 @@ author: mcleanbyron
 ms.assetid: 54ECD653-7FC2-4A95-AC5A-972C4FB5A54B
 description: "アプリを提出する前に、広告の仲介の実装をテストすることをお勧めします。"
 title: "広告の仲介の実装のテスト"
-translationtype: Human Translation
 ms.sourcegitcommit: ec7ce299545de8e5c167e1934fb9a0b4f4370948
 ms.openlocfilehash: 0805ed5462a4b100b837ed9c11ec2d9e7caabc34
 
@@ -25,7 +24,8 @@ ms.openlocfilehash: 0805ed5462a4b100b837ed9c11ec2d9e7caabc34
 
 対応している広告ネットワークのテスト広告が表示されます。 テスト広告はエラーのように見える場合があるので注意してください。 イベントを確認して、エラーが発生したかどうかを確かめてください。
 
-> **注**  Windows Phone Silverlight アプリをテストする際、Google AdMob はテスト メタデータを使用しないため、常に **[無効な要求]** エラーを返します。 Google AdMob の実装を確認するには、次のセクションで説明する必須のパラメーターを入力する必要があります。
+> 
+            **注**  Windows Phone Silverlight アプリをテストする際、Google AdMob はテスト メタデータを使用しないため、常に **[無効な要求]** エラーを返します。 Google AdMob の実装を確認するには、次のセクションで説明する必須のパラメーターを入力する必要があります。
 
  
 

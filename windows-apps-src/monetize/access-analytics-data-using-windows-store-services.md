@@ -29,16 +29,20 @@ Windows ストア分析 API を使う前に、Azure AD アプリケーション�
 
 次の手順で、このプロセスについて詳しく説明しています。
 
-1.  [Azure AD アプリケーションを Windows デベロッパー センター アカウントに関連付けます](#associate-an-azure-ad-application-with-your-windows-dev-center-account)。
-2.  [Azure AD のアクセス トークンを取得します](#obtain-an-azure-ad-access-token)。
-3.  [Windows ストア分析 API を呼び出します](#call-the-windows-store-analytics-api)。
+1.  
+            [Azure AD アプリケーションを Windows デベロッパー センター アカウントに関連付けます](#associate-an-azure-ad-application-with-your-windows-dev-center-account)。
+2.  
+            [Azure AD のアクセス トークンを取得します](#obtain-an-azure-ad-access-token)。
+3.  
+            [Windows ストア分析 API を呼び出します](#call-the-windows-store-analytics-api)。
 
 
 ### Azure AD アプリケーションと Windows デベロッパー センター アカウントの関連付け
 
 1.  デベロッパー センターで、**[アカウント設定]** に移動して **[ユーザーの管理]** をクリックし、組織のデベロッパー センター アカウントを組織の Azure AD ディレクトリに関連付けます。 詳しい手順については、「[アカウント ユーザーの管理](https://msdn.microsoft.com/library/windows/apps/mt489008)」をご覧ください。 必要に応じて、組織の Azure AD ディレクトリから他のユーザーを追加して、デベロッパー センター アカウントにもアクセスできるようにすることができます。
 
-    > **注**  Azure Active Directory に関連付けることができるデベロッパー センター アカウントは 1 つのみです。 同様に、デベロッパー センター アカウントに関連付けることができる Azure Active Directory は 1 つのみです。 一度関連付けを確立すると、その関連付けを削除するには、必ずサポートへの問い合わせが必要になります。
+    > 
+            **注**  Azure Active Directory に関連付けることができるデベロッパー センター アカウントは 1 つのみです。 同様に、デベロッパー センター アカウントに関連付けることができる Azure Active Directory は 1 つのみです。 一度関連付けを確立すると、その関連付けを削除するには、必ずサポートへの問い合わせが必要になります。
 
      
 

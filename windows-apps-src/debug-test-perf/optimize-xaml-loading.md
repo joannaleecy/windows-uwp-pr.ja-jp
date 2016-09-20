@@ -5,7 +5,7 @@ title: "XAML マークアップの最適化"
 description: "UI が複雑な場合は、XAML マークアップを解析し、メモリ内にオブジェクトを構築するのに時間がかかります。 以下に、アプリでの XAML マークアップの解析および読み込み時間や、メモリ効率の向上に役立つヒントを紹介します。"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: c2131b084d8bb989f1f7767f54db697e1cdd8dcf
+ms.openlocfilehash: 655603e7fa8687480b5376806bc199afecd425fd
 
 ---
 # XAML マークアップの最適化
@@ -205,11 +205,9 @@ XAML プラットフォームは、よく使われるオブジェクトをキャ
     </GridView> 
 ```
 
-[
-            **Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) のヒット テストを可能にするには、これに対して透明の背景の値を設定します。
+[**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) のヒット テストを可能にするには、これに対して透明の背景の値を設定します。
 
--   [
-            **Border**](https://msdn.microsoft.com/library/windows/apps/BR209253) 要素を使ってオブジェクトの周りに境界線を描画します。 この例では、[**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) を [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) を囲む間に合わせの境界線として使用します。 ただし、中央のセル内のピクセルすべてが複数回描画されます。
+-   [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209253) 要素を使ってオブジェクトの周りに境界線を描画します。 この例では、[**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) を [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) を囲む間に合わせの境界線として使用します。 ただし、中央のセル内のピクセルすべてが複数回描画されます。
 
 **非効率的。**
 
@@ -240,8 +238,7 @@ XAML プラットフォームは、よく使われるオブジェクトをキャ
 
 -   余白に注意してください。 2 つの隣り合う要素の負の余白が他方のレンダリング境界に達し、過剰な描画が発生すると、これらの要素は (意図せずに) 重なります。
 
-[
-            **DebugSettings.IsOverdrawHeatMapEnabled**](https://msdn.microsoft.com/library/windows/apps/Hh701823) を視覚的な診断として使います。 以前はなかったオブジェクトが描画され、シーン内に表示されていることがわかります。
+[**DebugSettings.IsOverdrawHeatMapEnabled**](https://msdn.microsoft.com/library/windows/apps/Hh701823) を視覚的な診断として使います。 以前はなかったオブジェクトが描画され、シーン内に表示されていることがわかります。
 
 ## 静的コンテンツのキャッシュ
 
@@ -273,8 +270,7 @@ XAML プラットフォームは、よく使われるオブジェクトをキャ
 </Canvas>
 ```
 
-[
-            **CacheMode**](https://msdn.microsoft.com/library/windows/apps/BR228084) を使っていることに注目してください。 サブ図形がアニメーション化されている場合は、この方法を使わないでください。その目的に反し、各フレームでビットマップ キャッシュを再生成することが必要になる可能性があるためです。
+[**CacheMode**](https://msdn.microsoft.com/library/windows/apps/BR228084) を使っていることに注目してください。 サブ図形がアニメーション化されている場合は、この方法を使わないでください。その目的に反し、各フレームでビットマップ キャッシュを再生成することが必要になる可能性があるためです。
 
 ## ResourceDictionaries
 
@@ -295,6 +291,6 @@ XBF2 があるかどうかを確認するには、バイナリ エディター�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

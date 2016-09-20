@@ -3,7 +3,6 @@ author: mcleanbyron
 ms.assetid: cb7380d0-bc14-4936-aa1c-206304b3dc70
 description: "Microsoft Advertising ライブラリの AdControl クラスで生成されるエラーを処理する方法について説明します。"
 title: "Microsoft Advertising ライブラリによるエラーの処理"
-translationtype: Human Translation
 ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
 ms.openlocfilehash: 5e0c7e6328247e5f686b14b10c80d8aafc13e0e4
 

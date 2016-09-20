@@ -3,7 +3,6 @@ author: mtoepke
 title: "DirectX 11 の移植に関する FAQ"
 description: "ユニバーサル Windows プラットフォーム (UWP) へのゲームの移植についてよく寄せられる質問に対してお答えします。"
 ms.assetid: 79c3b4c0-86eb-5019-97bb-5feee5667a2d
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: dc98f15d80fb70fb6e106555659d699c41fbfa0b
 
@@ -30,7 +29,8 @@ Direct3D デバイスは、ビデオ メモリにリソースを作成するた�
 ##  UWP 向けのゲーム タイマーを更新する必要はありますか。
 
 
-[
+
+            [
               **QueryPerformanceCounter**
             ](https://msdn.microsoft.com/library/windows/desktop/ms644904) と [**QueryPerformanceFrequency**](https://msdn.microsoft.com/library/windows/desktop/ms644905) は、引き続き UWP アプリのゲーム タイマーを実装する最適な手段です。
 
@@ -97,8 +97,7 @@ DirectX 10.x と 11 のデスクトップ ゲームは、UWP に簡単に移植�
 ## アンチエイリアシングをオンにするにはどうすればよいですか。
 
 
-Direct3D デバイスを作成するとアンチエイリアシング (マルチサンプリング) が有効になります。 [
-            **CheckMultisampleQualityLevels**](https://msdn.microsoft.com/library/windows/desktop/ff476499) を呼び出してマルチサンプリングのサポートを列挙し、[**CreateSurface**](https://msdn.microsoft.com/library/windows/desktop/bb174530) を呼び出すときに [**DXGI\_SAMPLE\_DESC structure**](https://msdn.microsoft.com/library/windows/desktop/bb173072) でマルチサンプリングのオプションを設定します。
+Direct3D デバイスを作成するとアンチエイリアシング (マルチサンプリング) が有効になります。 [**CheckMultisampleQualityLevels**](https://msdn.microsoft.com/library/windows/desktop/ff476499) を呼び出してマルチサンプリングのサポートを列挙し、[**CreateSurface**](https://msdn.microsoft.com/library/windows/desktop/bb174530) を呼び出すときに [**DXGI\_SAMPLE\_DESC structure**](https://msdn.microsoft.com/library/windows/desktop/bb173072) でマルチサンプリングのオプションを設定します。
 
 ## 自分のゲームでは、マルチスレッドや遅延レンダリングを使ってレンダリングを行います。 Direct3D 11 向けに何を把握しておく必要がありますか。
 

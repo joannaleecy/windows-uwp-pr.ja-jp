@@ -3,8 +3,8 @@ title: "Web アカウント マネージャーによる ID プロバイダーへ
 description: "この記事では、新しい Windows 10 Web アカウント マネージャー API を使って、AccountsSettingsPane を使い、ユニバーサル Windows プラットフォーム (UWP) アプリを外部の ID プロバイダー (Microsoft、Facebook など) に接続する方法について説明します。"
 author: awkoren
 translationtype: Human Translation
-ms.sourcegitcommit: c9f6a0183edc3c01566311360417c256329ef904
-ms.openlocfilehash: 6ab12d6da9c4858cf6ab16d4143cf073bb0cb275
+ms.sourcegitcommit: f3cdb187ec4056d4c7db6acde471b0bc91c78390
+ms.openlocfilehash: 093ca8906853121bbf33a729c523717d26cb7b0d
 
 ---
 # Web アカウント マネージャーによる ID プロバイダーへの接続
@@ -168,9 +168,9 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
 
 サービス プロバイダーは、サービス プロバイダーのサービスで使うトークンを取得するためにどのスコープを指定する必要があるかに関するドキュメントを提供します。 
 
-Office 365 と Outlook.com のスコープについては、「(v2.0 認証エンドポイントを使用した Office 365 および Outlook.com の API の認証)[ https://msdn.microsoft.com/office/office365/howto/authenticate-Office-365-APIs-using-v2 ]」をご覧ください。 
+Office 365 と Outlook.com のスコープについては、「(v2.0 認証エンドポイントを使用した Office 365 および Outlook.com の API の認証)[https://msdn.microsoft.com/office/office365/howto/authenticate-Office-365-APIs-using-v2]」をご覧ください。 
 
-OneDrive については、「(OneDrive の認証とサインイン)[ https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes ]」をご覧ください。 
+OneDrive については、「(OneDrive の認証とサインイン)[https://dev.onedrive.com/auth/msa_oauth.htm#authentication-scopes]」をご覧ください。 
 
 ## トークンの使用
 
@@ -188,6 +188,8 @@ private async void GetMsaTokenAsync(WebAccountProviderCommand command)
     }
 }
 ```
+
+> 注: トークンを要求したときにエラーが発生した場合、最初の手順で説明したように、アプリをストアに関連付けたことを確認してください。 この手順を省略すると、アプリでトークンを取得することはできません。 
 
 トークンを取得したら、プロバイダーの API を呼び出すためにトークンを使うことができます。 次のコードでは、Microsoft Live API を呼び出してユーザーに関する基本情報を取得し、UI に表示します。 
 
@@ -374,7 +376,7 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
 理論上は、あらゆることのために設定コマンドを使うことができます。 ただし、上記のような、直観的なアカウント関連のシナリオにのみ使うことをお勧めします。 
 
-## 参照
+## 関連項目
 
 [Windows.Security.Authentication.Web.Core 名前空間](https://msdn.microsoft.com/library/windows/apps/windows.security.authentication.web.core.aspx)
 
@@ -388,6 +390,6 @@ private async void BuildPaneAsync(AccountsSettingsPane s, AccountsSettingsPaneCo
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

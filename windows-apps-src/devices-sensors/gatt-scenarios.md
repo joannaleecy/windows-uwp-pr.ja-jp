@@ -166,8 +166,7 @@ void MainPage::TemperatureMeasurementChanged(
 
 ## Bluetooth LE 温度計デバイスの制御
 
-この例の UWP アプリは、架空の Bluetooth LE 温度計デバイスのコントローラーとして機能します。 [
-            **HealthThermometer**](https://msdn.microsoft.com/library/windows/apps/Dn297603) プロファイルの標準的な特性に加え、デバイスには形式特性が宣言されており、ユーザーは摂氏または華氏で温度の測定値を取得することができます。 このアプリは、形式と測定期間を単一の値として確実に設定するために、信頼性の高い書き込みトランザクションを使っています。
+この例の UWP アプリは、架空の Bluetooth LE 温度計デバイスのコントローラーとして機能します。 [**HealthThermometer**](https://msdn.microsoft.com/library/windows/apps/Dn297603) プロファイルの標準的な特性に加え、デバイスには形式特性が宣言されており、ユーザーは摂氏または華氏で温度の測定値を取得することができます。 このアプリは、形式と測定期間を単一の値として確実に設定するために、信頼性の高い書き込みトランザクションを使っています。
 
 ```csharp
 // Uuid of the "Format" Characteristic Value

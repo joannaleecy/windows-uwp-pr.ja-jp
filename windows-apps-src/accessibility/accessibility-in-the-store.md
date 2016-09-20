@@ -5,7 +5,6 @@ ms.assetid: 59FA3B87-75A6-4B30-BA7C-A0E769D68050
 title: "ストア内のアクセシビリティ"
 label: Accessibility in the Store
 template: detail.hbs
-translationtype: Human Translation
 ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
 ms.openlocfilehash: 46dfe4fba383861c704b2ba9070bdd8102b10562
 
@@ -36,8 +35,7 @@ Windows ストアで認定を受けるためにアプリを提出している間
     * キーボード ショートカットを使ってアプリの主な機能を利用する。
     * キーボードがないデバイスで、タブと矢印を同等に扱うためにナレーターのタッチ ジェスチャを使う。
 * アプリの UI が視覚上のアクセシビリティに対応している。最低でも 4.5:1 のテキスト コントラスト比がある、情報を伝えるときに色だけに依存していない、など。
-* [
-            **Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521)、[**UIAVerify**](https://msdn.microsoft.com/library/windows/desktop/Hh920986) などのアクセシビリティ テスト ツールを使ってアクセシビリティの実装が検証されていて、このようなツールで報告される優先度 1 のエラーをすべて解決している。
+* [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521)、[**UIAVerify**](https://msdn.microsoft.com/library/windows/desktop/Hh920986) などのアクセシビリティ テスト ツールを使ってアクセシビリティの実装が検証されていて、このようなツールで報告される優先度 1 のエラーをすべて解決している。
 * ナレーター、拡大鏡、スクリーン キーボード、ハイ コントラスト テーマ、調整された DPI 設定を使って、エンド ツー エンドでアプリの主なシナリオを検証している。
 
 これらの手順と、その実行に役立つリソースへのリンクを確認する場合は、「[アクセシビリティのチェック リスト](accessibility-checklist.md)」をご覧ください。

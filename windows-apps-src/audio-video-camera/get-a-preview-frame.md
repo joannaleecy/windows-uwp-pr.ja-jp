@@ -3,7 +3,6 @@ author: drewbatgit
 ms.assetid: 05E418B4-5A62-42BD-BF66-A0762216D033
 description: "このトピックでは、メディア キャプチャのプレビュー ストリームからプレビュー フレームを取得する方法について説明します。"
 title: "プレビュー フレームの取得"
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: c512ec92272ab03cfd8e91602018f09ef8225652
 
@@ -26,8 +25,7 @@ ms.openlocfilehash: c512ec92272ab03cfd8e91602018f09ef8225652
 
 [!code-cs[CreateFormatFrame](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCreateFormatFrame)]
 
-[
-            **MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) オブジェクトが初期化されていてアクティブなプレビュー ストリームが存在する場合、[**GetPreviewFrameAsync**](https://msdn.microsoft.com/library/windows/apps/dn926711) を呼び出してプレビュー ストリームを取得します。 引数には、最後のステップで作成したビデオ フレームを渡し、取得するフレームの形式を指定します。
+[**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) オブジェクトが初期化されていてアクティブなプレビュー ストリームが存在する場合、[**GetPreviewFrameAsync**](https://msdn.microsoft.com/library/windows/apps/dn926711) を呼び出してプレビュー ストリームを取得します。 引数には、最後のステップで作成したビデオ フレームを渡し、取得するフレームの形式を指定します。
 
 [!code-cs[GetPreviewFrameAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetPreviewFrameAsync)]
 

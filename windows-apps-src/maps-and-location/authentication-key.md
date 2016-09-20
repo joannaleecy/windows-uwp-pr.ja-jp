@@ -14,10 +14,10 @@ ms.openlocfilehash: b7c981e071f70ab0a76d73333a94580b3c497b0e
 \[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 
-[
-            **MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) や [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 名前空間のマップ サービスを [ユニバーサル Windows アプリ](https://msdn.microsoft.com/library/windows/apps/dn894631) で使うには、そのアプリを認証する必要があります。 アプリを認証するには、マップ認証キーを指定する必要があります。 このトピックでは、[Bing Maps Developer Center](https://www.bingmapsportal.com/) にマップ認証キーを要求し、アプリに追加する方法について説明します。
+[**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) や [**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 名前空間のマップ サービスを [ユニバーサル Windows アプリ](https://msdn.microsoft.com/library/windows/apps/dn894631) で使うには、そのアプリを認証する必要があります。 アプリを認証するには、マップ認証キーを指定する必要があります。 このトピックでは、[Bing Maps Developer Center](https://www.bingmapsportal.com/) にマップ認証キーを要求し、アプリに追加する方法について説明します。
 
-**ヒント:** アプリで地図を使う方法について詳しくは、GitHub の [Windows-universal-samples リポジトリ](http://go.microsoft.com/fwlink/p/?LinkId=619979)から次のサンプルをダウンロードしてください。
+
+            **ヒント:** アプリで地図を使う方法について詳しくは、GitHub の [Windows-universal-samples リポジトリ](http://go.microsoft.com/fwlink/p/?LinkId=619979)から次のサンプルをダウンロードしてください。
 
 -   [ユニバーサル Windows プラットフォーム (UWP) の地図サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 
@@ -42,10 +42,14 @@ ms.openlocfilehash: b7c981e071f70ab0a76d73333a94580b3c497b0e
 
 7.  **[Create Key] (キーの作成)** フォームの入力が完了したら、**[Create] (作成)** をクリックします。
 
-    -   **[Application name] (アプリケーション名):** アプリケーションの名前です。
-    -   **[Application URL] (アプリケーション URL) (オプション):** アプリケーションの URL です。
-    -   **[Key type] (キーの種類):** **[Basic] (ベーシック)** または **[Enterprise] (エンタープライズ)** を選びます。
-    -   **[Application type] (アプリケーションの種類):** ユニバーサル Windows アプリで使うには、**[Universal Windows App] (ユニバーサル Windows アプリ)** を選びます。
+    -   
+            **[Application name] (アプリケーション名):** アプリケーションの名前です。
+    -   
+            **[Application URL] (アプリケーション URL) (オプション):** アプリケーションの URL です。
+    -   
+            **[Key type] (キーの種類):** **[Basic] (ベーシック)** または **[Enterprise] (エンタープライズ)** を選びます。
+    -   
+            **[Application type] (アプリケーションの種類):** ユニバーサル Windows アプリで使うには、**[Universal Windows App] (ユニバーサル Windows アプリ)** を選びます。
 
     次に示すのは、フォームの例です。
 
@@ -60,8 +64,7 @@ ms.openlocfilehash: b7c981e071f70ab0a76d73333a94580b3c497b0e
 
 ### マップ コントロールにキーを追加するには
 
-[
-            **MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) を認証するには、[**MapServiceToken**](https://msdn.microsoft.com/library/windows/apps/dn637036) プロパティを認証キー値に設定します。 このプロパティは、必要に応じて、コードまたは XAML マークアップで設定できます。 **MapControl** の使用について詳しくは、「[2D、3D、Streetside ビューでの地図の表示](display-maps.md)」をご覧ください。
+[**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) を認証するには、[**MapServiceToken**](https://msdn.microsoft.com/library/windows/apps/dn637036) プロパティを認証キー値に設定します。 このプロパティは、必要に応じて、コードまたは XAML マークアップで設定できます。 **MapControl** の使用について詳しくは、「[2D、3D、Streetside ビューでの地図の表示](display-maps.md)」をご覧ください。
 
 -   この例では、コードで **MapServiceToken** を認証キー値に設定しています。
 
@@ -77,8 +80,7 @@ ms.openlocfilehash: b7c981e071f70ab0a76d73333a94580b3c497b0e
 
 ### マップ サービスにキーを追加するには
 
-[
-            **Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 名前空間のサービスを使うには、[**ServiceToken**](https://msdn.microsoft.com/library/windows/apps/dn636977) プロパティを認証キー値に設定します。 マップ サービスを使用する方法について詳しくは、「[ルートとルート案内の表示](routes-and-directions.md)」と「[ジオコーディングと逆ジオコーディングの実行](geocoding.md)」をご覧ください。
+[**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 名前空間のサービスを使うには、[**ServiceToken**](https://msdn.microsoft.com/library/windows/apps/dn636977) プロパティを認証キー値に設定します。 マップ サービスを使用する方法について詳しくは、「[ルートとルート案内の表示](routes-and-directions.md)」と「[ジオコーディングと逆ジオコーディングの実行](geocoding.md)」をご覧ください。
 
 -   この例では、コードで **ServiceToken** を認証キー値に設定しています。
 

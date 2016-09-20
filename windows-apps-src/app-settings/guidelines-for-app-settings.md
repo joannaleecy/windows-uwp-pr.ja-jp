@@ -5,7 +5,6 @@ title: "アプリ設定のガイドライン"
 ms.assetid: 2D765E90-3FA0-42F5-A5CB-BEDC14C3F60A
 label: Guidelines
 template: detail.hbs
-translationtype: Human Translation
 ms.sourcegitcommit: 59e02840c72d8bccda7e318197e4bf45ed667fa4
 ms.openlocfilehash: aeccd755c5fe5df8f2ff5549950ce2d6cb74e8e4
 
@@ -115,14 +114,18 @@ ms.openlocfilehash: aeccd755c5fe5df8f2ff5549950ce2d6cb74e8e4
 -   コンテンツは 1 列で上から下に表示し、必要に応じてスクロールできるようにします。 スクロールの長さは画面の高さの 2 倍までに抑えます。
 -   アプリ設定では次のコントロールを使います。
 
-    -   [トグル スイッチ](../controls-and-patterns/toggles.md): ユーザーが値をオンまたはオフに設定できるようにする場合。
-    -   [ラジオ ボタン](../controls-and-patterns/radio-button.md): ユーザーが相互排他的な関連するオプション (5 個まで) の中から 1 つの項目を選択できるようにする場合。
-    -   [テキスト入力ボックス](../controls-and-patterns/text-block.md): ユーザーがテキストを入力できるようにする場合。 ユーザーから取得するテキストの種類 (メール、パスワードなど) に応じた種類のテキスト入力ボックスを使います。
-    -   [ハイパーリンク](../controls-and-patterns/hyperlinks.md): アプリ内の別のページや外部 Web サイトに移動する場合。 ユーザーがハイパーリンクをクリックすると、設定ポップアップは閉じられます。
-    -   [ボタン](../controls-and-patterns/buttons.md): ユーザーが現在の設定ポップアップを閉じることなく即座に操作を開始できるようにする場合。
+    -   
+            [トグル スイッチ](../controls-and-patterns/toggles.md): ユーザーが値をオンまたはオフに設定できるようにする場合。
+    -   
+            [ラジオ ボタン](../controls-and-patterns/radio-button.md): ユーザーが相互排他的な関連するオプション (5 個まで) の中から 1 つの項目を選択できるようにする場合。
+    -   
+            [テキスト入力ボックス](../controls-and-patterns/text-block.md): ユーザーがテキストを入力できるようにする場合。 ユーザーから取得するテキストの種類 (メール、パスワードなど) に応じた種類のテキスト入力ボックスを使います。
+    -   
+            [ハイパーリンク](../controls-and-patterns/hyperlinks.md): アプリ内の別のページや外部 Web サイトに移動する場合。 ユーザーがハイパーリンクをクリックすると、設定ポップアップは閉じられます。
+    -   
+            [ボタン](../controls-and-patterns/buttons.md): ユーザーが現在の設定ポップアップを閉じることなく即座に操作を開始できるようにする場合。
 -   使用できないコントロールがある場合は、説明用のメッセージを追加します。 使用できないコントロールの上に、このメッセージを配置します。
--   設定ポップアップとヘッダーがアニメーション化された後で、コンテンツとコントロールを単一のブロックとしてアニメーション化します。 [
-            **enterPage**](https://msdn.microsoft.com/library/windows/apps/br212672)  または [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br210288) アニメーションを使って、100 ピクセル左のオフセットでコンテンツをアニメーション化します。
+-   設定ポップアップとヘッダーがアニメーション化された後で、コンテンツとコントロールを単一のブロックとしてアニメーション化します。 [**enterPage**](https://msdn.microsoft.com/library/windows/apps/br212672)  または [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br210288) アニメーションを使って、100 ピクセル左のオフセットでコンテンツをアニメーション化します。
 -   必要に応じて、コンテンツの整理と明確化の助けになるように、セクション ヘッダー、段落、ラベルを使います。
 -   設定を繰り返し表示する必要がある場合は、UI の階層を追加するか、展開/折りたたみモデルを使います。階層の深さは 2 階層までに抑えます。 たとえば、天気予報アプリの都市別の設定では、都市の一覧を表示し、ユーザーが都市をタップしたときに、新しいポップアップを開くか、展開して設定オプションを表示できるようにします。
 -   コントロールや Web コンテンツの読み込みに時間がかかる場合は、進行状況不定コントロールを使ってユーザーに読み込み中であることを示します。 詳しくは、「[プログレス コントロールのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465469)」をご覧ください。
@@ -133,12 +136,15 @@ ms.openlocfilehash: aeccd755c5fe5df8f2ff5549950ce2d6cb74e8e4
 ## <span id="related_topics"></span>関連トピック
 
 * [コマンド設計の基本](https://msdn.microsoft.com/library/windows/apps/dn958433)
-* [プログレス コントロールのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465469)
+* 
+            [プログレス コントロールのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465469)
             
           
             **(開発者向け (XAML))**
+          
 * [アプリ データの保存と取得](https://msdn.microsoft.com/library/windows/apps/mt299098)
-* [
+* 
+            [
               **EntranceThemeTransition**
             ](https://msdn.microsoft.com/library/windows/apps/br210288)
 

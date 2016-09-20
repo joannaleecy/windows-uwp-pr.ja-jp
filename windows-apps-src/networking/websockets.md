@@ -5,7 +5,7 @@ title: WebSocket
 ms.assetid: EAA9CB3E-6A3A-4C13-9636-CCD3DE46E7E2
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 7e9ee140914718ce71357ba8ecaf10116949b87b
+ms.openlocfilehash: ff2429e1e9ea56c414978c126497551b1e1864b8
 
 ---
 
@@ -38,8 +38,7 @@ WebSocket 接続を暗号化するには、たとえば `wss://www.contoso.com/m
 
 ## MessageWebSocket を使う
 
-[
-            **MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) により、分割されたメッセージを何回かに分けて読み取ることができます。 **MessageWebSocket** は、メッセージがそれほど大きくないシナリオでよく使われます。 UTF-8 とバイナリ ファイルの両方がサポートされています。
+[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) により、分割されたメッセージを何回かに分けて読み取ることができます。 **MessageWebSocket** は、メッセージがそれほど大きくないシナリオでよく使われます。 UTF-8 とバイナリ ファイルの両方がサポートされています。
 
 このセクションのコードは、新しい [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) を作り、WebSocket サーバーに接続して、サーバーにデータを送ります。 接続が正常に確立されると、アプリは、データが受け取られたことを示す [**MessageWebSocket.MessageReceived**](https://msdn.microsoft.com/library/windows/apps/br241358) イベントがトリガーされるのを待ちます。
 
@@ -117,8 +116,7 @@ WebSocket 接続を初期化した後、コードは、データを適切に送�
 
 ### MessageWebSocket.MessageReceived イベント用のコールバックを実装する
 
-接続を確立して WebSocket でデータを送信する前に、アプリは、データが受信されたときに通知を受け取るためのイベント コールバックを登録する必要があります。 [
-            **MessageWebSocket.MessageReceived**](https://msdn.microsoft.com/library/windows/apps/br241358) イベントが発生すると、登録したコールバックが呼び出され、[**MessageWebSocketMessageReceivedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br226852) からデータを受け取ります。 次の例は、送信されるメッセージが UTF-8 形式であるという前提で記述されています。
+接続を確立して WebSocket でデータを送信する前に、アプリは、データが受信されたときに通知を受け取るためのイベント コールバックを登録する必要があります。 [**MessageWebSocket.MessageReceived**](https://msdn.microsoft.com/library/windows/apps/br241358) イベントが発生すると、登録したコールバックが呼び出され、[**MessageWebSocketMessageReceivedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br226852) からデータを受け取ります。 次の例は、送信されるメッセージが UTF-8 形式であるという前提で記述されています。
 
 次の例に示す関数は、接続された WebSocket サーバーから文字列を受信し、その文字列をデバッガーの出力ウィンドウに表示します。
 
@@ -149,8 +147,7 @@ WebSocket 接続を初期化した後、コードは、データを適切に送�
 
 ###  MessageWebSocket.Closed イベント用のコールバックを実装する
 
-接続を確立して WebSocket でデータを送信する前に、アプリは、WebSocket サーバーによって WebSocket が閉じられたときに通知を受け取るためのイベント コールバックを登録する必要があります。 [
-            **MessageWebSocket.Closed**](https://msdn.microsoft.com/library/windows/apps/hh701364) イベントが発生すると、登録したコールバックが呼び出され、接続が WebSocket サーバーによって閉じられたことが伝えられます。
+接続を確立して WebSocket でデータを送信する前に、アプリは、WebSocket サーバーによって WebSocket が閉じられたときに通知を受け取るためのイベント コールバックを登録する必要があります。 [**MessageWebSocket.Closed**](https://msdn.microsoft.com/library/windows/apps/hh701364) イベントが発生すると、登録したコールバックが呼び出され、接続が WebSocket サーバーによって閉じられたことが伝えられます。
 
 > [!div class="tabbedCodeSnippets"]
 >```cpp
@@ -177,8 +174,7 @@ WebSocket 接続を初期化した後、コードは、データを適切に送�
 
 ###  WebSocket でメッセージを送信する
 
-接続が確立されたら、WebSocket クライアントはサーバーにデータを送信できます。 [
-            **DataWriter.StoreAsync**](https://msdn.microsoft.com/library/windows/apps/br208171) メソッドは、符号なし整数にマッピングされるパラメーターを返します。 これにより、メッセージを送信するタスクの定義方法と、接続を行うタスクの定義方法とは異なるものになります。
+接続が確立されたら、WebSocket クライアントはサーバーにデータを送信できます。 [**DataWriter.StoreAsync**](https://msdn.microsoft.com/library/windows/apps/br208171) メソッドは、符号なし整数にマッピングされるパラメーターを返します。 これにより、メッセージを送信するタスクの定義方法と、接続を行うタスクの定義方法とは異なるものになります。
 
 **注**   MessageWebSocket の OutputStream を使って新しい DataWriter オブジェクトを作成すると、OutputStream の所有権が DataWriter に移り、DataWriter がスコープを外れると Outputstream の割り当てが解除されます。 このため、その後 OutputStream を使おうとすると、HRESULT 値 0x80000013 のエラーが発生します。 次のコードでは、OutputStream の割り当てが解除されないようにするため、DataWriter の DetachStream メソッドを呼び出し、ストリームの所有権を WebSocket オブジェクトに返しています。
 
@@ -230,53 +226,34 @@ WebSocket 接続を初期化した後、コードは、データを適切に送�
 
 ## WebSocket での高度なコントロールの使用
 
-[
-              **MessageWebSocket**
-            ](https://msdn.microsoft.com/library/windows/apps/br226842) と [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) では、高度なコントロールの使い方に関して同じモデルが採用されています。 上記の主要なクラスには、それぞれに高度なコントロールにアクセスするための関連クラスがあります。
+[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) と [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) では、高度なコントロールの使い方に関して同じモデルが採用されています。 上記の主要なクラスには、それぞれに高度なコントロールにアクセスするための関連クラスがあります。
 
-[
-              **MessageWebSocketControl**
-            ](https://msdn.microsoft.com/library/windows/apps/br226843) は、[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) オブジェクトに関するソケット制御データを提供します。
-[
-              **StreamWebSocketControl**
-            ](https://msdn.microsoft.com/library/windows/apps/br226924) は、[**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) オブジェクトに関するソケット制御データを提供します。
+[**MessageWebSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226843) は、[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) オブジェクトに関するソケット制御データを提供します。
+[**StreamWebSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226924) は、[**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) オブジェクトに関するソケット制御データを提供します。
 どちらのタイプの WebSocket も、高度なコントロールを行うための基本的なモデルは同じです。 以降の説明では [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) を例として使っていますが、[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) でもプロセスは同じです。
 
-1.  [
-            **StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) オブジェクトを作成します。
-2.  [
-            **StreamWebSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226934) プロパティを使って、この [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) オブジェクトに関連付けられている [**StreamWebSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226924) インスタンスを取得します。
-3.  [
-            **StreamWebSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226924) インスタンスのプロパティを取得または設定することで、特定の高度なコントロールを取得または設定します。
+1.  [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) オブジェクトを作成します。
+2.  [**StreamWebSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226934) プロパティを使って、この [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) オブジェクトに関連付けられている [**StreamWebSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226924) インスタンスを取得します。
+3.  [**StreamWebSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226924) インスタンスのプロパティを取得または設定することで、特定の高度なコントロールを取得または設定します。
 
-[
-            **StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) と [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) のどちらも、高度なコントロールを設定するときには要件があります。
+[**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) と [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) のどちらも、高度なコントロールを設定するときには要件があります。
 
--   [
-            **StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) における高度なコントロールでは、アプリは常に、接続操作を発行する前にプロパティを設定しておく必要があります。 この要件を満たすため、コントロール プロパティは、**StreamWebSocket** オブジェクトを作成したらすぐに設定することをお勧めします。 [
-            **StreamWebSocket.ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/br226933) メソッドが呼び出された後は、コントロール プロパティを設定しないでください。
+-   [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) における高度なコントロールでは、アプリは常に、接続操作を発行する前にプロパティを設定しておく必要があります。 この要件を満たすため、コントロール プロパティは、**StreamWebSocket** オブジェクトを作成したらすぐに設定することをお勧めします。 [**StreamWebSocket.ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/br226933) メソッドが呼び出された後は、コントロール プロパティを設定しないでください。
 -   メッセージ型以外の [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) に関する高度なコントロールでは常に、接続操作を発行する前にプロパティを設定しておく必要があります。 **MessageWebSocket** の作成したらすぐにすべてのコントロール プロパティを設定することをお勧めします。 メッセージ型以外については、[**MessageWebSocket.ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/br226859) メソッドが呼び出された後は、コントロール プロパティを変更しないでください。
 
 ## WebSocket の情報クラス
 
-[
-              **MessageWebSocket**
-            ](https://msdn.microsoft.com/library/windows/apps/br226842) と [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) には、WebSocket インスタンスについての追加情報を提供するクラスがそれぞれあります。
+[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) と [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) には、WebSocket インスタンスについての追加情報を提供するクラスがそれぞれあります。
 
-[
-              **MessageWebSocketInformation**
-            ](https://msdn.microsoft.com/library/windows/apps/br226849) は、[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) についての情報を提供します。情報クラスのインスタンスは、[**MessageWebSocket.Information**](https://msdn.microsoft.com/library/windows/apps/br226861) プロパティを使って取得します。
+[**MessageWebSocketInformation**](https://msdn.microsoft.com/library/windows/apps/br226849) は、[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) についての情報を提供します。情報クラスのインスタンスは、[**MessageWebSocket.Information**](https://msdn.microsoft.com/library/windows/apps/br226861) プロパティを使って取得します。
 
-[
-              **StreamWebSocketInformation**
-            ](https://msdn.microsoft.com/library/windows/apps/br226929) は、[**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) についての情報を提供します。情報クラスのインスタンスは、[**StreamWebSocket.Information**](https://msdn.microsoft.com/library/windows/apps/br226935) プロパティを使って取得します。
+[**StreamWebSocketInformation**](https://msdn.microsoft.com/library/windows/apps/br226929) は、[**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) についての情報を提供します。情報クラスのインスタンスは、[**StreamWebSocket.Information**](https://msdn.microsoft.com/library/windows/apps/br226935) プロパティを使って取得します。
 
 どちらの情報クラスについても、すべてのプロパティは読み取り専用であり、また WebSocket オブジェクトの有効期間中はいつでも現在の情報を取得できます。
 
 ## ネットワーク例外を処理する
 
-[
-            **MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) または [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 操作で発生したエラーは **HRESULT** 値として返されます。 ネットワーク エラーを WebSocket 操作から [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh747818) 列挙値に変換するには、[**WebSocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701529) メソッドを使います。 **WebErrorStatus** 列挙値のほとんどは、ネイティブ HTTP クライアント操作から返されるエラーに対応しています。 アプリは特定の **WebErrorStatus** 列挙値に対するフィルター処理を行い、例外の原因に応じてアプリの動作を変更することができます。
+[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) または [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) 操作で発生したエラーは **HRESULT** 値として返されます。 ネットワーク エラーを WebSocket 操作から [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh747818) 列挙値に変換するには、[**WebSocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701529) メソッドを使います。 **WebErrorStatus** 列挙値のほとんどは、ネイティブ HTTP クライアント操作から返されるエラーに対応しています。 アプリは特定の **WebErrorStatus** 列挙値に対するフィルター処理を行い、例外の原因に応じてアプリの動作を変更することができます。
 
 パラメーター検証エラーの場合は、例外の **HRESULT** を使って、その例外の原因となったエラーの詳細情報を確認することもできます。 使うことができる **HRESULT** 値は、*Winerror.h* ヘッダー ファイルに記載されています。 パラメーター検証エラーではほとんどの場合、返される **HRESULT** は **E\_INVALIDARG** です。
 
@@ -368,6 +345,6 @@ MessageWebSocket クラスと StreamWebSocket クラスは、内部システム 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

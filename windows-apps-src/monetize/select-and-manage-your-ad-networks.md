@@ -3,7 +3,6 @@ author: mcleanbyron
 ms.assetid: 86D9D3CF-8FDC-4B67-881B-DF33A1BEE8BF
 description: "広告の仲介を使うには、アプリで使う各広告ネットワークにアカウントを設定する必要があります。"
 title: "広告ネットワークの選択と管理"
-translationtype: Human Translation
 ms.sourcegitcommit: ec7ce299545de8e5c167e1934fb9a0b4f4370948
 ms.openlocfilehash: 49c9b8e60da9239c948265fb22563013019da259
 
@@ -44,7 +43,8 @@ C++ と XAML、JavaScript と HTML など、いくつかのプロジェクトの
 
 | Web サイト                        | 広告ネットワークのパラメーターを構成するには、[Windows デベロッパー センター ダッシュボード](https://dev.windows.com/overview)の [[広告で収入を増やす]](https://msdn.microsoft.com/library/windows/apps/mt170658) ページを使います。   |
 |--------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| SDK の場所                   | [Microsoft Store Engagement and Monetization SDK](http://aka.ms/store-em-sdk)。                                                                                                                                                                                                                         |
+| SDK の場所                   | 
+            [Microsoft Store Engagement and Monetization SDK](http://aka.ms/store-em-sdk)。                                                                                                                                                                                                                         |
 | アプリの登録              | 広告の仲介コントロールをアプリに追加し、アプリを Windows デベロッパー センター ダッシュボードに提出します。                                                                                                                                                                                                            |
 | 必須のパラメーター            | ApplicationId と AdUnitId: これらのパラメーターは、アプリ パッケージを提出するときに、アプリのコンテンツに基づいて自動的に入力されます。 ただし、[アプリの提出と広告の仲介の構成](submit-your-app-and-configure-ad-mediation.md)を行うときに、これらのパラメーターを必要に応じて編集することができます。 <br> <br> Height と Width (Windows Phone 8 Silverlight と Windows Phone 8.1 Silverlight の場合にのみ必要)。                                                                                                                                                                                                           |
 | 上書き/無視されるパラメーター | Latitude (上書きされます)  <br><br> Longitude (上書きされます) <br><br> AutoRefreshIntervalInSeconds (無視されます) <br><br> IsAutoRefreshEnabled (無視されます) <br><br> IsAutoCollapsedEnabled (無視されます) <br><br> IsEngaged (無視されます) <br><br> IsSuspended (無視されます) |

@@ -3,7 +3,6 @@ author: drewbatgit
 ms.assetid: 98BD79B3-F420-43C5-98D3-52EBDDB479A0
 description: "この記事では、BitmapEncoder で使用できるエンコーディング オプションを示します。"
 title: "BitmapEncoder オプション リファレンス"
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 510cb363b258d20688ea212856af4b7ac0311e61
 
@@ -21,14 +20,11 @@ ms.openlocfilehash: 510cb363b258d20688ea212856af4b7ac0311e61
 | CompressionQuality      | single       | 有効な値は 0 ～ 1.0 です。 値が大きいほど、効率の高い (時間のかかる) 圧縮方式であることを示します。 | TIFF          |
 | Lossless                | boolean      | true に設定すると、ImageQuality オプションが無視されます。                                        | JPEG-XR       |
 | InterlaceOption         | boolean      | 画像をインターレースするかどうかを示します。                                                                    | PNG           |
-| FilterOption            | uint8        | [
-            **PngFilterMode**](https://msdn.microsoft.com/library/windows/apps/br226389) 列挙値を使います。                                | PNG           |
-| TiffCompressionMethod   | uint8        | [
-            **TiffCompressionMode**](https://msdn.microsoft.com/library/windows/apps/br226399) 列挙値を使います。                    | TIFF          |
+| FilterOption            | uint8        | [**PngFilterMode**](https://msdn.microsoft.com/library/windows/apps/br226389) 列挙値を使います。                                | PNG           |
+| TiffCompressionMethod   | uint8        | [**TiffCompressionMode**](https://msdn.microsoft.com/library/windows/apps/br226399) 列挙値を使います。                    | TIFF          |
 | Luminance               | uint32Array  | 輝度の量子化定数を格納する 64 要素の配列です。                               | JPEG          |
 | Chrominance             | uint32Array  | クロミナンスの量子化定数を格納する 64 要素の配列です。                             | JPEG          |
-| JpegYCrCbSubsampling    | uint8        | [
-            **JpegSubsamplingMode**](https://msdn.microsoft.com/library/windows/apps/br226386) 列挙値を使います。                    | JPEG          |
+| JpegYCrCbSubsampling    | uint8        | [**JpegSubsamplingMode**](https://msdn.microsoft.com/library/windows/apps/br226386) 列挙値を使います。                    | JPEG          |
 | SuppressApp0            | boolean      | App0 メタデータ ブロックの作成を抑制するかどうかを示します。                                        | JPEG          |
 | EnableV5Header32bppBGRA | boolean      | アルファをサポートする Version 5 BMP にエンコードするかどうかを示します。                                         | BMP           |
 

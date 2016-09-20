@@ -5,7 +5,7 @@ ms.assetid: 6AFF9D09-77C2-4811-BB1A-BBF4A6FF511E
 author: awkoren
 translationtype: Human Translation
 ms.sourcegitcommit: ba620bc89265cbe8756947e1531759103c3cafef
-ms.openlocfilehash: c09170042841dcff6625d1d236cf708c717301c5
+ms.openlocfilehash: 434505a697e045198972ce529366be281774af86
 
 ---
 
@@ -88,8 +88,7 @@ Windows 10 の Web 認証ブローカーは、アプリが認証プロトコル�
 
 -   ID プロバイダーに送信される要求文字列を作成します。 文字列の数と各文字列に含まれる情報は、Web サービスごとに異なりますが、通常は、URI 文字列が 2 つあり、それぞれに URL が含まれています。1 つは認証要求の送信先となる URL で、もう 1 つは認証の完了後にユーザーがリダイレクトされる URL です。
 -   要求文字列を渡して [**WebAuthenticationBroker.AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) を呼び出し、ID プロバイダーからの応答を待ちます。
--   [
-            **WebAuthenticationResult.ResponseStatus**](https://msdn.microsoft.com/library/windows/apps/br227041) を呼び出し、応答を受け取ったときの状態を取得します。
+-   [**WebAuthenticationResult.ResponseStatus**](https://msdn.microsoft.com/library/windows/apps/br227041) を呼び出し、応答を受け取ったときの状態を取得します。
 -   通信が成功したら、ID プロバイダーから返された応答文字列を処理します。 通信が失敗した場合は、エラーを処理します。
 
 通信が成功したら、ID プロバイダーから返された応答文字列を処理します。 通信が失敗した場合は、エラーを処理します。
@@ -395,9 +394,7 @@ Windows アプリでは、[**MacAlgorithmProvider**](https://msdn.microsoft.com/
 
 ハッシュ関数は、任意の長さのデータ ブロックを受け取り、固定ビット サイズの文字列 (ハッシュ値) を返す暗号アルゴリズムです。 この処理を実行できるハッシュ関数のファミリはすべて用意されています。
 
-上記のメッセージ転送シナリオでは、MAC の代わりにハッシュ値を使うことができます。 送信者はハッシュ値とメッセージを送信し、受信者は、受信者独自のハッシュ値を送信者のハッシュ値とメッセージから取得して、2 つのハッシュ値を比較します。 Windows 10 で実行されているアプリでは、[**HashAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241511) クラスを呼び出して、利用可能なハッシュ アルゴリズムを列挙し、それらのアルゴリズムのいずれかを実行できます。 [
-            **CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) クラスは、ハッシュ値を表します。 [
-            **CryptographicHash.GetValueAndReset**](https://msdn.microsoft.com/library/windows/apps/hh701376) メソッドを使うと、メソッドを使用するたびにオブジェクトを作成しなくても、異なるデータを繰り返しハッシュできます。 **CryptographicHash** クラスの Append メソッドは、ハッシュ対象のバッファーに新しいデータを追加します。 この処理全体を次の C# コードの例に示します。
+上記のメッセージ転送シナリオでは、MAC の代わりにハッシュ値を使うことができます。 送信者はハッシュ値とメッセージを送信し、受信者は、受信者独自のハッシュ値を送信者のハッシュ値とメッセージから取得して、2 つのハッシュ値を比較します。 Windows 10 で実行されているアプリでは、[**HashAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241511) クラスを呼び出して、利用可能なハッシュ アルゴリズムを列挙し、それらのアルゴリズムのいずれかを実行できます。 [**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) クラスは、ハッシュ値を表します。 [**CryptographicHash.GetValueAndReset**](https://msdn.microsoft.com/library/windows/apps/hh701376) メソッドを使うと、メソッドを使用するたびにオブジェクトを作成しなくても、異なるデータを繰り返しハッシュできます。 **CryptographicHash** クラスの Append メソッドは、ハッシュ対象のバッファーに新しいデータを追加します。 この処理全体を次の C# コードの例に示します。
 
 ```cs
 public void SampleReusableHash()
@@ -504,6 +501,6 @@ Windows 10 のユニバーサル Windows プラットフォームには、オペ
 -   [**Windows.Security.EnterpriseData**](https://msdn.microsoft.com/library/windows/apps/dn279153)
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

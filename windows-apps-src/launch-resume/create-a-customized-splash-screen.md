@@ -22,8 +22,8 @@ ms.openlocfilehash: 6ad43ec4fc865c5aae439693e0cd5b37a5d2c5dc
 
 アプリに追加スプラッシュ画面を作成すれば、より長い時間、スプラッシュ画面を表示することができます。 この追加画面は、アプリを起動したときに表示されるスプラッシュ画面に似ていますが、カスタマイズできます。 読み込み状況をリアルタイムにユーザーに表示する場合や、アプリの最初の UI の準備に時間がかかる場合、追加スプラッシュ画面を使って起動時のエクスペリエンスを定義できます。
 
-> **注:** このトピックで "追加スプラッシュ画面" という用語は、表示される時間が延長されたスプラッシュ画面を指します。 [
-            **SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) クラスを拡張するサブクラスやこのクラスから派生したサブクラスという意味ではありません。
+> 
+            **注:** このトピックで "追加スプラッシュ画面" という用語は、表示される時間が延長されたスプラッシュ画面を指します。 [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) クラスを拡張するサブクラスやこのクラスから派生したサブクラスという意味ではありません。
 
  
 
@@ -55,10 +55,8 @@ ms.openlocfilehash: 6ad43ec4fc865c5aae439693e0cd5b37a5d2c5dc
 ExtendedSplash.xaml ファイルで次の操作を行います。
 
 -   既定の [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) 要素の [**Background**](https://msdn.microsoft.com/library/windows/apps/br209396) プロパティを変更して、アプリ マニフェスト (Package.appxmanifest ファイルの **[ビジュアル資産]** セクション) でアプリのスプラッシュ画面に設定した背景色に合わせます。 既定のスプラッシュ画面の色は薄い灰色 (16 進数 #464646) です。 新しい**空白のページ**を作成すると、この **Grid** 要素が既定で使われることに注意してください。 必ずしも **Grid** を使う必要はありません。追加スプラッシュ画面を作り始めるときに便利なだけです。
--   [
-            **Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) に [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 要素を追加します。 この **Canvas** を使って追加スプラッシュ画面にイメージを配置します。
--   [
-            **Image**](https://msdn.microsoft.com/library/windows/apps/br242752) 要素を [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) に追加します。 既定のスプラッシュ画面用に選んだ同じ 600 × 320 ピクセルの画像を追加スプラッシュ画面に使います。
+-   [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) に [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 要素を追加します。 この **Canvas** を使って追加スプラッシュ画面にイメージを配置します。
+-   [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752) 要素を [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) に追加します。 既定のスプラッシュ画面用に選んだ同じ 600 × 320 ピクセルの画像を追加スプラッシュ画面に使います。
 -   (省略可能) アプリが読み込み中であることをユーザーに示すにはプログレス コントロールを追加します。 このトピックでは、確定または不定の [**ProgressBar**](https://msdn.microsoft.com/library/windows/apps/br227529) ではなく、[**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) を追加します。
 
 次のコードを追加して、[**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 要素、[**Image**](https://msdn.microsoft.com/library/windows/apps/br242752) 要素、[**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) コントロールを ExtendedSplash.xaml に定義します。
@@ -72,7 +70,8 @@ ExtendedSplash.xaml ファイルで次の操作を行います。
     </Grid>
 ```
 
-**注:** このコードでは [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) の幅を 20 ピクセルに設定しています。 この幅はアプリに合わせて手動で設定できますが、20 ピクセル未満の幅ではコントロールがレンダリングされません。
+
+            **注:** このコードでは [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) の幅を 20 ピクセルに設定しています。 この幅はアプリに合わせて手動で設定できますが、20 ピクセル未満の幅ではコントロールがレンダリングされません。
 
  
 
@@ -160,8 +159,7 @@ ExtendedSplash.xaml ファイルで次の操作を行います。
 
 5.  **(省略可能) 追加スプラッシュ画面にプログレス コントロールを配置するクラスのメソッドを定義する**
 
-    [
-            **ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) を追加スプラッシュ画面に追加する場合、スプラッシュ画面のイメージに相対的に配置します。 ExtendedSplash.xaml.cs で、**ProgressRing** をイメージの 32 ピクセル下の中央に配置する次のコードを追加します。
+    [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) を追加スプラッシュ画面に追加する場合、スプラッシュ画面のイメージに相対的に配置します。 ExtendedSplash.xaml.cs で、**ProgressRing** をイメージの 32 ピクセル下の中央に配置する次のコードを追加します。
 
     ```cs
     void PositionRing()
@@ -217,7 +215,8 @@ ExtendedSplash.xaml ファイルで次の操作を行います。
     }
     ```
 
-    **注:** イメージの場所を取得する前に、クラス変数 (`splash`) に有効な [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) オブジェクトが含まれていることを確認してください (例を参照)。
+    
+            **注:** イメージの場所を取得する前に、クラス変数 (`splash`) に有効な [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) オブジェクトが含まれていることを確認してください (例を参照)。
 
      
 
@@ -263,7 +262,8 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
 ## コードを完成させる
 
 
-> **注:** 次のコードは、前の手順に示したスニペットとは少し異なります。
+> 
+            **注:** 次のコードは、前の手順に示したスニペットとは少し異なります。
 -   ExtendedSplash.xaml には `DismissSplash` ボタンが含まれています。 このボタンがクリックされると、イベント ハンドラーである `DismissSplashButton_Click` が `DismissExtendedSplash` メソッドを呼び出します。 アプリで、リソースの読み込みまたは UI の初期化の完了時に `DismissExtendedSplash` を呼び出します。
 -   このアプリは、[**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) ナビゲーションを使う、UWP アプリのプロジェクト テンプレートも使います。 その結果、App.xaml.cs ファイルで、起動アクティブ化ハンドラー ([**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)) は `rootFrame` を定義し、それを使ってアプリのウィンドウのコンテンツを設定します。
 

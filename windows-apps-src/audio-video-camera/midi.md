@@ -4,8 +4,8 @@ ms.assetid: 9146212C-8480-4C16-B74C-D7F08C7086AF
 description: "この記事では、MIDI (Musical Instrument Digital Interface) デバイスを列挙する方法と、ユニバーサル Windows アプリとの間で MIDI メッセージを送受信する方法について説明します。"
 title: MIDI
 translationtype: Human Translation
-ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: a67b859cc2bd42abc13bcba0d405783b99a0ca5c
+ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
+ms.openlocfilehash: cc3553aff7c30a2e84b527dc9e108f7c45b7b21f
 
 ---
 
@@ -26,8 +26,7 @@ XAML ページに [**ListBox**](https://msdn.microsoft.com/library/windows/apps/
 
 [!code-xml[MidiListBoxes](./code/MIDIWin10/cs/MainPage.xaml#SnippetMidiListBoxes)]
 
-[
-            **FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) メソッドの [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) クラスは、Windows によって認識される多くの異なる種類のデバイスを列挙するのに使われます。 メソッドで MIDI 入力デバイスだけを検索するよう指定するには、[**MidiInPort.GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/dn894779) によって返されるセレクター文字列を使います。 **FindAllAsync** は、システムに登録されている各 MIDI 入力デバイスの **DeviceInformation** が格納された [**DeviceInformationCollection**](https://msdn.microsoft.com/library/windows/apps/br225395) を返します。 返されたコレクションに項目が含まれていない場合、利用可能な MIDI 入力デバイスはありません。 コレクションに項目が含まれる場合は、**DeviceInformation** オブジェクトのループ処理を行い、各デバイスの名前を MIDI 入力デバイスの **ListBox** に追加します。
+[**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) メソッドの [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) クラスは、Windows によって認識される多くの異なる種類のデバイスを列挙するのに使われます。 メソッドで MIDI 入力デバイスだけを検索するよう指定するには、[**MidiInPort.GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/dn894779) によって返されるセレクター文字列を使います。 **FindAllAsync** は、システムに登録されている各 MIDI 入力デバイスの **DeviceInformation** が格納された [**DeviceInformationCollection**](https://msdn.microsoft.com/library/windows/apps/br225395) を返します。 返されたコレクションに項目が含まれていない場合、利用可能な MIDI 入力デバイスはありません。 コレクションに項目が含まれる場合は、**DeviceInformation** オブジェクトのループ処理を行い、各デバイスの名前を MIDI 入力デバイスの **ListBox** に追加します。
 
 [!code-cs[EnumerateMidiInputDevices](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetEnumerateMidiInputDevices)]
 
@@ -37,8 +36,7 @@ MIDI 出力デバイスの列挙も入力デバイスの列挙とまったく同
 
 ## デバイス ウォッチャーのヘルパー クラスを作成する
 
-[
-            **Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/br225459) 名前空間の [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/br225446) は、システムにデバイスが追加されるか削除された場合、またはデバイスの情報が更新された場合に、アプリに通知を送信できます。 MIDI 対応アプリでは通常、入力デバイスと出力デバイスの両方に関心があるため、この例では、**DeviceWatcher** パターンを実装するヘルパー クラスを作成して、同じコードを複製することなく MIDI 入力デバイスと MIDI 出力デバイスの両方に使えるようにします。
+[**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/br225459) 名前空間の [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/br225446) は、システムにデバイスが追加されるか削除された場合、またはデバイスの情報が更新された場合に、アプリに通知を送信できます。 MIDI 対応アプリでは通常、入力デバイスと出力デバイスの両方に関心があるため、この例では、**DeviceWatcher** パターンを実装するヘルパー クラスを作成して、同じコードを複製することなく MIDI 入力デバイスと MIDI 出力デバイスの両方に使えるようにします。
 
 デバイス ウォッチャーとして機能する新しいクラスをプロジェクトに追加します。 この例では、クラスの名前は **MyMidiDeviceWatcher** です。 このセクションのコードの残りの部分は、ヘルパー クラスの実装に使われます。
 
@@ -65,18 +63,10 @@ MIDI デバイスのセレクター文字列を渡して [**DeviceInformation.Cr
 
 **DeviceWatcher** には次のイベントがあります。
 
--   [
-              **Added**
-            ](https://msdn.microsoft.com/library/windows/apps/br225450) - システムに新しいデバイスが追加されると発生します。
--   [
-              **Removed**
-            ](https://msdn.microsoft.com/library/windows/apps/br225453) - システムからデバイスが削除されると発生します。
--   [
-              **Updated**
-            ](https://msdn.microsoft.com/library/windows/apps/br225458) - 既存のデバイスに関連付けられた情報が更新されると発生します。
--   [
-              **EnumerationCompleted**
-            ](https://msdn.microsoft.com/library/windows/apps/br225451) - ウォッチャーで要求されたデバイスの種類の列挙が完了すると発生します。
+-   [**Added**](https://msdn.microsoft.com/library/windows/apps/br225450) - システムに新しいデバイスが追加されると発生します。
+-   [**Removed**](https://msdn.microsoft.com/library/windows/apps/br225453) - システムからデバイスが削除されると発生します。
+-   [**Updated**](https://msdn.microsoft.com/library/windows/apps/br225458) - 既存のデバイスに関連付けられた情報が更新されると発生します。
+-   [**EnumerationCompleted**](https://msdn.microsoft.com/library/windows/apps/br225451) - ウォッチャーで要求されたデバイスの種類の列挙が完了すると発生します。
 
 これらの各イベントのイベント ハンドラーで、ヘルパー メソッド **UpdateDevices** が呼び出され、現在のデバイスの一覧で **ListBox** が更新されます。 **UpdateDevices** は UI 要素を更新し、これらのイベント ハンドラーは UI スレッドでは呼び出されないため、各呼び出しを [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) の呼び出しにラップすることで、指定したコードが UI スレッドで実行されるようにする必要があります。
 
@@ -124,8 +114,7 @@ MIDI デバイスのセレクター文字列を渡して [**DeviceInformation.Cr
 
 [!code-cs[OutPortSelectionChanged](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetOutPortSelectionChanged)]
 
-出力デバイスが作成されたら、送信するメッセージの種類に対する新しい [**IMidiMessage**](https://msdn.microsoft.com/library/windows/apps/dn911508) を作成して、メッセージを送信できます。 この例では、メッセージは [**NoteOnMessage**](https://msdn.microsoft.com/library/windows/apps/dn894817) です。 [
-            **IMidiOutPort**](https://msdn.microsoft.com/library/windows/apps/dn894727) オブジェクトの [**SendMessage**](https://msdn.microsoft.com/library/windows/apps/dn894730) メソッドが呼び出されて、メッセージを送信します。
+出力デバイスが作成されたら、送信するメッセージの種類に対する新しい [**IMidiMessage**](https://msdn.microsoft.com/library/windows/apps/dn911508) を作成して、メッセージを送信できます。 この例では、メッセージは [**NoteOnMessage**](https://msdn.microsoft.com/library/windows/apps/dn894817) です。 [**IMidiOutPort**](https://msdn.microsoft.com/library/windows/apps/dn894727) オブジェクトの [**SendMessage**](https://msdn.microsoft.com/library/windows/apps/dn894730) メソッドが呼び出されて、メッセージを送信します。
 
 [!code-cs[SendMessage](./code/MIDIWin10/cs/MainPage.xaml.cs#SnippetSendMessage)]
 
@@ -143,7 +132,8 @@ MIDI デバイスのセレクター文字列を渡して [**DeviceInformation.Cr
 2.  **[Universal Windows]** ノードを展開します。
 3.  **[拡張機能]** を選択します。
 4.  拡張機能の一覧から **[Microsoft General MIDI DLS for Universal Windows Apps]** を選択します。
-    **注**  複数のバージョンの拡張機能がある場合、アプリのターゲットと一致するバージョンを選んでください。 プロジェクトのプロパティの **[アプリケーション]** タブで、アプリがターゲットとしている SDK バージョンを確認できます。
+    > [!NOTE] 
+    > 複数のバージョンの拡張機能がある場合、アプリのターゲットと一致するバージョンを選んでください。 プロジェクトのプロパティの **[アプリケーション]** タブで、アプリがターゲットとしている SDK バージョンを確認できます。
 
  
 
@@ -155,6 +145,6 @@ MIDI デバイスのセレクター文字列を渡して [**DeviceInformation.Cr
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

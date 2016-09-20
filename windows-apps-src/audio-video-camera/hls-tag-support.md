@@ -1,81 +1,91 @@
 ---
 author: drewbatgit
 ms.assetid: 
-description: This article lists the HTTP Live Streaming (HLS) protocol tags supported for UWP apps.
-title: HTTP Live Streaming (HLS) tag support
+description: "この記事では、UWP アプリでサポートされている HTTP ライブ ストリーミング (HLS) プロトコルのタグを示します。"
+title: "HTTP ライブ ストリーミング (HLS) タグのサポート"
+translationtype: Human Translation
+ms.sourcegitcommit: 599e7dd52145d695247b12427c1ebdddbfc4ffe1
+ms.openlocfilehash: 779e5d0da7186a6f94251b89cf27636170923d5c
+
 ---
 
-# HTTP Live Streaming (HLS) tag support
-The following table lists the HLS tags that are supported for UWP apps.
+# HTTP ライブ ストリーミング (HLS) タグのサポート
+次の表では、UWP アプリでサポートされている HLS タグを示します。
 
 > [!NOTE] 
-> Custom tags that start with "X-" can be accessed as timed metadata as described in the article [Media items, playlists, and tracks](media-playback-with-mediasource.md).
+> "X-" で始まるカスタム タグには、「[メディア項目、プレイリスト、トラック](media-playback-with-mediasource.md)」の記事で示されているように、タイミングが設定されたメタデータとしてアクセスできます。
 
-|Tag |Introduced in HLS Protocol version|HLS Protocol Document Draft Version|Required on Client|July release of Windows 10|Windows 10, Version 1511|Windows 10, Version 1606 |
+|タグ |導入済みの HLS プロトコルのバージョン|HLS プロトコル ドキュメント草案のバージョン|クライアントに必須|7 月にリリースされた Windows 10|Windows 10 バージョン 1511|Windows 10 バージョン 1606 |
 |---------------------|-----------|--------------|---------|--------------|
-|4.3.1.  Basic Tags                 |             |                   |         |             |     |    |
-| 4.3.1.1.  EXTM3U |1|0|REQUIRED|Supported|Supported|Supported|
-| 4.3.1.2.  EXT-X-VERSION |2|3|REQUIRED|Supported|Supported|Supported
-|4.3.2.  Media Segment Tags                 |             |                   |         |             |     |    | 
-| 4.3.2.1.  EXTINF  |1|0|REQUIRED|Supported|Supported|Supported
-| 4.3.2.2.  EXT-X-BYTERANGE |4|7|OPTIONAL|Supported|Supported|Supported|
-| 4.3.2.3.  EXT-X-DISCONTINUITY |1|2|OPTIONAL|Supported|Supported|Supported|
-| 4.3.2.4.  EXT-X-KEY |1|0|OPTIONAL|Supported|Supported|Supported|
-|&nbsp;&nbsp;&nbsp; METHOD|1|0|Attribute|"NONE, AES-128"|"NONE, AES-128"|"NONE, AES-128, SAMPLE-AES"|
-|&nbsp;&nbsp;&nbsp; URI|1|0|Attribute|Supported|Supported|Supported|
-|&nbsp;&nbsp;&nbsp; IV|2|3|Attribute|Supported|Supported|Supported|
-|&nbsp;&nbsp;&nbsp; KEYFORMAT|5|9|Attribute|Not Supported|Not Supported|Not Supported|
-|&nbsp;&nbsp;&nbsp; KEYFORMATVERSIONS|5|9|Attribute|Not Supported|Not Supported|Not Supported|
-| 4.3.2.5.  EXT-X-MAP |5|9|OPTIONAL|Not Supported|Not Supported|Not Supported|
-|&nbsp;&nbsp;&nbsp; URI|5|9|Attribute|Not Supported|Not Supported|Not Supported|
-|&nbsp;&nbsp;&nbsp; BYTERANGE|5|9|Attribute|Not Supported|Not Supported|Not Supported|
-| 4.3.2.6.  EXT-X-PROGRAM-DATE-TIME |1|0|OPTIONAL|Not Supported|Not Supported|Not Supported|
-|4.3.3.  Media Playlist Tags                 |             |                   |         |             |     |    | 
-| 4.3.3.1.  EXT-X-TARGETDURATION  |1|0|REQUIRED|Supported|Supported|Supported|
-| 4.3.3.2.  EXT-X-MEDIA-SEQUENCE  |1|0|OPTIONAL|Supported|Supported|Supported|
-| 4.3.3.3.  EXT-X-DISCONTINUITY-SEQUENCE|6|12|OPTIONAL|Not Supported|Not Supported|Not Supported|
-| 4.3.3.4.  EXT-X-ENDLIST |1|0|OPTIONAL|Supported|Supported|Supported|
-| 4.3.3.5.  EXT-X-PLAYLIST-TYPE |3|6|OPTIONAL|Supported|Supported|Supported|
-| 4.3.3.6.  EXT-X-I-FRAMES-ONLY |4|7|OPTIONAL|Not Supported|Not Supported|Not Supported|
-|4.3.4.  Master Playlist Tags                 |             |                   |         |             |     |    |
-| 4.3.4.1.  EXT-X-MEDIA |4|7|OPTIONAL|Supported|Supported|Supported|
-|&nbsp;&nbsp;&nbsp;  TYPE|4|7|Attribute|"AUDIO, VIDEO"|"AUDIO, VIDEO"|"AUDIO, VIDEO, SUBTITLES"|
-|&nbsp;&nbsp;&nbsp;  URI|4|7|Attribute|Supported|Supported|Supported|
-|&nbsp;&nbsp;&nbsp;  GROUP-ID|4|7|Attribute|Supported|Supported|Supported|
-|&nbsp;&nbsp;&nbsp;  LANGUAGE|4|7|Attribute|Supported|Supported|Supported|
-|&nbsp;&nbsp;&nbsp;  ASSOC-LANGUAGE|6|13|Attribute|Not Supported|Not Supported|Not Supported|
-|&nbsp;&nbsp;&nbsp;  NAME|4|7|Attribute|Not Supported|Not Supported|Supported|
-|&nbsp;&nbsp;&nbsp;  DEFAULT|4|7|Attribute|Not Supported|Not Supported|Not Supported|
-|&nbsp;&nbsp;&nbsp;  AUTOSELECT|4|7|Attribute|Not Supported|Not Supported|Not Supported|
-|&nbsp;&nbsp;&nbsp;  FORCED|5|9|Attribute|Not Supported|Not Supported|Not Supported|
-|&nbsp;&nbsp;&nbsp;  INSTREAM-ID|6|12|Attribute|Not Supported|Not Supported|Not Supported|
-|&nbsp;&nbsp;&nbsp;  CHARACTERISTICS|5|9|Attribute|Not Supported|Not Supported|Not Supported|
-| 4.3.4.2.  EXT-X-STREAM-INF  |1|0|REQUIRED|Supported|Supported|Supported|
-|&nbsp;&nbsp;&nbsp;  BANDWIDTH|1|0|Attribute|Supported|Supported|Supported|
-|&nbsp;&nbsp;&nbsp;  PROGRAM-ID|1|0|Attribute|NA|NA|NA|
-|&nbsp;&nbsp;&nbsp;  AVERAGE-BANDWIDTH|7|14|Attribute|Not Supported|Not Supported|Not Supported|
-|&nbsp;&nbsp;&nbsp;  CODECS|1|0|Attribute|Supported|Supported|Supported|
-|&nbsp;&nbsp;&nbsp;  RESOLUTION|2|3|Attribute|Supported|Supported|Supported|
-|&nbsp;&nbsp;&nbsp;  FRAME-RATE|7|15|Attribute|NA|NA|NA|
-|&nbsp;&nbsp;&nbsp;  AUDIO|4|7|Attribute|Supported|Supported|Supported|
-|&nbsp;&nbsp;&nbsp;  VIDEO|4|7|Attribute|Supported|Supported|Supported|
-|&nbsp;&nbsp;&nbsp;  SUBTITLES|5|9|Attribute|Not Supported|Not Supported|Supported|
-|&nbsp;&nbsp;&nbsp;  CLOSED-CAPTIONS|6|12|Attribute|Not Supported|Not Supported|Not Supported|
-| 4.3.4.3.  EXT-X-I-FRAME-STREAM-INF  |4|7|OPTIONAL|Not Supported|Not Supported|Not Supported|
-| 4.3.4.4.  EXT-X-SESSION-DATA  |7|14|OPTIONAL|Not Supported|Not Supported|Not Supported|
-| 4.3.4.5.  EXT-X-SESSION-KEY |7|17|OPTIONAL|Not Supported|Not Supported|Not Supported|
+|4.3.1.  基本タグ                 |             |                   |         |             |     |    |
+| 4.3.1.1.  EXTM3U |1|0|必須|サポートされる|サポートされる|サポートされる|
+| 4.3.1.2.  EXT-X-VERSION |2|3|必須|サポートされる|サポートされる|サポートされる
+|4.3.2.  メディア セグメント タグ                 |             |                   |         |             |     |    | 
+| 4.3.2.1.  EXTINF  |1|0|必須|サポートされる|サポートされる|サポートされる
+| 4.3.2.2.  EXT-X-BYTERANGE |4|7|省略可能|サポートされる|サポートされる|サポートされる|
+| 4.3.2.3.  EXT-X-DISCONTINUITY |1|2|省略可能|サポートされる|サポートされる|サポートされる|
+| 4.3.2.4.  EXT-X-KEY |1|0|省略可能|サポートされる|サポートされる|サポートされる|
+|&nbsp;&nbsp;&nbsp; METHOD|1|0|備わっている|"NONE、AES-128"|"NONE、AES-128"|"NONE、AES-128、SAMPLE-AES"|
+|&nbsp;&nbsp;&nbsp; URI|1|0|備わっている|サポートされる|サポートされる|サポートされる|
+|&nbsp;&nbsp;&nbsp; IV|2|3|備わっている|サポートされる|サポートされる|サポートされる|
+|&nbsp;&nbsp;&nbsp; KEYFORMAT|5|9|備わっている|サポートされない|サポートされない|サポートされない|
+|&nbsp;&nbsp;&nbsp; KEYFORMATVERSIONS|5|9|備わっている|サポートされない|サポートされない|サポートされない|
+| 4.3.2.5.  EXT-X-MAP |5|9|省略可能|サポートされない|サポートされない|サポートされない|
+|&nbsp;&nbsp;&nbsp; URI|5|9|備わっている|サポートされない|サポートされない|サポートされない|
+|&nbsp;&nbsp;&nbsp; BYTERANGE|5|9|備わっている|サポートされない|サポートされない|サポートされない|
+| 4.3.2.6.  EXT-X-PROGRAM-DATE-TIME |1|0|省略可能|サポートされない|サポートされない|サポートされない|
+|4.3.3.  メディア プレイリスト タグ                 |             |                   |         |             |     |    | 
+| 4.3.3.1.  EXT-X-TARGETDURATION  |1|0|必須|サポートされる|サポートされる|サポートされる|
+| 4.3.3.2.  EXT-X-MEDIA-SEQUENCE  |1|0|省略可能|サポートされる|サポートされる|サポートされる|
+| 4.3.3.3.  EXT-X-DISCONTINUITY-SEQUENCE|6|12|省略可能|サポートされない|サポートされない|サポートされない|
+| 4.3.3.4.  EXT-X-ENDLIST |1|0|省略可能|サポートされる|サポートされる|サポートされる|
+| 4.3.3.5.  EXT-X-PLAYLIST-TYPE |3|6|省略可能|サポートされる|サポートされる|サポートされる|
+| 4.3.3.6.  EXT-X-I-FRAMES-ONLY |4|7|省略可能|サポートされない|サポートされない|サポートされない|
+|4.3.4.  マスター プレイリスト タグ                 |             |                   |         |             |     |    |
+| 4.3.4.1.  EXT-X-MEDIA |4|7|省略可能|サポートされる|サポートされる|サポートされる|
+|&nbsp;&nbsp;&nbsp;  TYPE|4|7|備わっている|"AUDIO、VIDEO"|"AUDIO、VIDEO"|"AUDIO、VIDEO、SUBTITLES"|
+|&nbsp;&nbsp;&nbsp;  URI|4|7|備わっている|サポートされる|サポートされる|サポートされる|
+|&nbsp;&nbsp;&nbsp;  GROUP-ID|4|7|備わっている|サポートされる|サポートされる|サポートされる|
+|&nbsp;&nbsp;&nbsp;  LANGUAGE|4|7|備わっている|サポートされる|サポートされる|サポートされる|
+|&nbsp;&nbsp;&nbsp;  ASSOC-LANGUAGE|6|13|備わっている|サポートされない|サポートされない|サポートされない|
+|&nbsp;&nbsp;&nbsp;  NAME|4|7|備わっている|サポートされない|サポートされない|サポートされる|
+|&nbsp;&nbsp;&nbsp;  DEFAULT|4|7|備わっている|サポートされない|サポートされない|サポートされない|
+|&nbsp;&nbsp;&nbsp;  AUTOSELECT|4|7|備わっている|サポートされない|サポートされない|サポートされない|
+|&nbsp;&nbsp;&nbsp;  FORCED|5|9|備わっている|サポートされない|サポートされない|サポートされない|
+|&nbsp;&nbsp;&nbsp;  INSTREAM-ID|6|12|備わっている|サポートされない|サポートされない|サポートされない|
+|&nbsp;&nbsp;&nbsp;  CHARACTERISTICS|5|9|備わっている|サポートされない|サポートされない|サポートされない|
+| 4.3.4.2.  EXT-X-STREAM-INF  |1|0|必須|サポートされる|サポートされる|サポートされる|
+|&nbsp;&nbsp;&nbsp;  BANDWIDTH|1|0|備わっている|サポートされる|サポートされる|サポートされる|
+|&nbsp;&nbsp;&nbsp;  PROGRAM-ID|1|0|備わっている|該当なし|該当なし|該当なし|
+|&nbsp;&nbsp;&nbsp;  AVERAGE-BANDWIDTH|7|14|備わっている|サポートされない|サポートされない|サポートされない|
+|&nbsp;&nbsp;&nbsp;  CODECS|1|0|備わっている|サポートされる|サポートされる|サポートされる|
+|&nbsp;&nbsp;&nbsp;  RESOLUTION|2|3|備わっている|サポートされる|サポートされる|サポートされる|
+|&nbsp;&nbsp;&nbsp;  FRAME-RATE|7|15|備わっている|該当なし|該当なし|該当なし|
+|&nbsp;&nbsp;&nbsp;  AUDIO|4|7|備わっている|サポートされる|サポートされる|サポートされる|
+|&nbsp;&nbsp;&nbsp;  VIDEO|4|7|備わっている|サポートされる|サポートされる|サポートされる|
+|&nbsp;&nbsp;&nbsp;  SUBTITLES|5|9|備わっている|サポートされない|サポートされない|サポートされる|
+|&nbsp;&nbsp;&nbsp;  CLOSED-CAPTIONS|6|12|備わっている|サポートされない|サポートされない|サポートされない|
+| 4.3.4.3.  EXT-X-I-FRAME-STREAM-INF  |4|7|省略可能|サポートされない|サポートされない|サポートされない|
+| 4.3.4.4.  EXT-X-SESSION-DATA  |7|14|省略可能|サポートされない|サポートされない|サポートされない|
+| 4.3.4.5.  EXT-X-SESSION-KEY |7|17|省略可能|サポートされない|サポートされない|サポートされない|
 
 
 
 
-## Related topics
+## 関連トピック
 
-* [Media playback](media-playback.md)
-* [Adaptive streaming](adaptive-streaming.md)
- 
+* [メディア再生](media-playback.md)
+* [アダプティブ ストリーミング](adaptive-streaming.md)
+ 
 
- 
+ 
 
 
+
+
+
+
+
+<!--HONumber=Aug16_HO3-->
 
 

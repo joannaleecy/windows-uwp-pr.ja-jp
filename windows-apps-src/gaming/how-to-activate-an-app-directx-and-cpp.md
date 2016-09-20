@@ -3,7 +3,6 @@ author: mtoepke
 title: "アプリをアクティブ化する方法 (DirectX と C++)"
 description: "ここでは、ユニバーサル Windows プラットフォーム (UWP) DirectX アプリのアクティブ化エクスペリエンスを定義する方法について説明します。"
 ms.assetid: b07c7da1-8a5e-5b57-6f77-6439bf653a53
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 14859d03c7af45a17772c76f8c79b3c1bc56272c
 

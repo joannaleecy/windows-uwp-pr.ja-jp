@@ -21,8 +21,10 @@ ms.openlocfilehash: a419ad04fe4f21867f2f1bd1664fbce39a7da792
 
 開発者がアドバタイズ API を使って実行できる機能には、主に次の 2 つがあります。
 
--   [アドバタイズ ウォッチャー](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher.aspx): 近くのビーコンをリッスンし、ペイロードまたは近接度に基づいてフィルター処理します。  
--   [アドバタイズ パブリッシャー](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.advertisement.bluetoothleadvertisementpublisher.aspx): 開発者に代わって、Windows のペイロードを定義してアドバタイズします。  
+-   
+            [アドバタイズ ウォッチャー](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.advertisement.bluetoothleadvertisementwatcher.aspx): 近くのビーコンをリッスンし、ペイロードまたは近接度に基づいてフィルター処理します。  
+-   
+            [アドバタイズ パブリッシャー](https://msdn.microsoft.com/library/windows/apps/windows.devices.bluetooth.advertisement.bluetoothleadvertisementpublisher.aspx): 開発者に代わって、Windows のペイロードを定義してアドバタイズします。  
 
 完全なサンプル コードについては、Github の [Bluetooth アドバタイズ サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619990)をご覧ください。
 

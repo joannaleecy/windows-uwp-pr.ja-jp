@@ -5,7 +5,7 @@ description: "ここでは、Direct3D デバイス、スワップ チェーン�
 ms.assetid: d54d96fe-3522-4acb-35f4-bb11c3a5b064
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: f60d7c5b526fcdea8552256a6ebe4b92d5736264
+ms.openlocfilehash: af52969011a90f0c665dc8a5508c213d3a73b5b7
 
 ---
 
@@ -46,12 +46,9 @@ ComPtr を使って [**ID3D11RenderTargetView**](https://msdn.microsoft.com/libr
 
 ### 2. Direct3D デバイスの作成
 
-Direct3D API を使ってシーンをレンダリングするには、先にディスプレイ アダプターを表す Direct3D デバイスを作成する必要があります。 Direct3D デバイスを作成するために、[**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) 関数を呼び出します。 [
-            **D3D\_FEATURE\_LEVEL**](https://msdn.microsoft.com/library/windows/desktop/ff476329) 値の配列でレベル 9.1 から 11.1 を指定します。 Direct3D はこの配列を順に見ていき、サポートされる最高の機能レベルを返します。 そのため、利用可能な最高レベルの機能レベルを取得するため、**D3D\_FEATURE\_LEVEL** 配列エントリを最高レベルから最低レベルまで一覧にします。 [
-            **D3D11\_CREATE\_DEVICE\_BGRA\_SUPPORT**](https://msdn.microsoft.com/library/windows/desktop/ff476107#D3D11_CREATE_DEVICE_BGRA_SUPPORT) フラグを *Flags* パラメーターに渡して、Direct3D リソースが Direct2D と相互運用できるようにします。 デバッグ ビルドを使う場合、[**D3D11\_CREATE\_DEVICE\_DEBUG**](https://msdn.microsoft.com/library/windows/desktop/ff476107#D3D11_CREATE_DEVICE_DEBUG) フラグも渡します。 アプリのデバッグについて詳しくは、「[デバッグ レイヤーを使ったアプリのデバッグ](https://msdn.microsoft.com/library/windows/desktop/jj200584)」をご覧ください。
+Direct3D API を使ってシーンをレンダリングするには、先にディスプレイ アダプターを表す Direct3D デバイスを作成する必要があります。 Direct3D デバイスを作成するために、[**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) 関数を呼び出します。 [**D3D\_FEATURE\_LEVEL**](https://msdn.microsoft.com/library/windows/desktop/ff476329) 値の配列でレベル 9.1 から 11.1 を指定します。 Direct3D はこの配列を順に見ていき、サポートされる最高の機能レベルを返します。 そのため、利用可能な最高レベルの機能レベルを取得するため、**D3D\_FEATURE\_LEVEL** 配列エントリを最高レベルから最低レベルまで一覧にします。 [**D3D11\_CREATE\_DEVICE\_BGRA\_SUPPORT**](https://msdn.microsoft.com/library/windows/desktop/ff476107#D3D11_CREATE_DEVICE_BGRA_SUPPORT) フラグを *Flags* パラメーターに渡して、Direct3D リソースが Direct2D と相互運用できるようにします。 デバッグ ビルドを使う場合、[**D3D11\_CREATE\_DEVICE\_DEBUG**](https://msdn.microsoft.com/library/windows/desktop/ff476107#D3D11_CREATE_DEVICE_DEBUG) フラグも渡します。 アプリのデバッグについて詳しくは、「[デバッグ レイヤーを使ったアプリのデバッグ](https://msdn.microsoft.com/library/windows/desktop/jj200584)」をご覧ください。
 
-[
-            **D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) から返される Direct3D 11 デバイスとデバイス コンテキストを照会して、Direct3D 11.1 デバイス ([**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575)) とデバイス コンテキスト ([**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598)) を取得します。
+[**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) から返される Direct3D 11 デバイスとデバイス コンテキストを照会して、Direct3D 11.1 デバイス ([**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575)) とデバイス コンテキスト ([**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598)) を取得します。
 
 ```cpp
         // First, create the Direct3D device.
@@ -104,13 +101,11 @@ Direct3D API を使ってシーンをレンダリングするには、先にデ�
 
 ### 3. スワップ チェーンの作成
 
-次に、デバイスがレンダリングと表示に使うスワップ チェーンを作成します。 [
-            **DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528) 構造体を宣言して初期化し、スワップ チェーンを記述します。 次に、スワップ チェーンをフリップモデル (つまり [**DXGI\_SWAP\_EFFECT\_FLIP\_SEQUENTIAL**](https://msdn.microsoft.com/library/windows/desktop/bb173077#DXGI_SWAP_EFFECT_FLIP_SEQUENTIAL) 値が **SwapEffect** メンバーに設定されているスワップ チェーン) として設定し、**Format** メンバーを [**DXGI\_FORMAT\_B8G8R8A8\_UNORM**](https://msdn.microsoft.com/library/windows/desktop/bb173059#DXGI_FORMAT_B8G8R8A8_UNORM) に設定します。 **SampleDesc** メンバーが指定する [**DXGI\_SAMPLE\_DESC**](https://msdn.microsoft.com/library/windows/desktop/bb173072) 構造体の **Count** メンバーを 1 に設定し、**DXGI\_SAMPLE\_DESC** の **Quality** メンバーを 0 に設定します。これは、フリップモデルでは複数サンプルのアンチエイリアシング (MSAA) をサポートしていないためです。 **BufferCount** メンバーを 2 に設定して、スワップ チェーンがディスプレイ デバイスを表すフロント バッファーと、レンダー ターゲットとして機能するバック バッファーを使えるようにします。
+次に、デバイスがレンダリングと表示に使うスワップ チェーンを作成します。 [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528) 構造体を宣言して初期化し、スワップ チェーンを記述します。 次に、スワップ チェーンをフリップモデル (つまり [**DXGI\_SWAP\_EFFECT\_FLIP\_SEQUENTIAL**](https://msdn.microsoft.com/library/windows/desktop/bb173077#DXGI_SWAP_EFFECT_FLIP_SEQUENTIAL) 値が **SwapEffect** メンバーに設定されているスワップ チェーン) として設定し、**Format** メンバーを [**DXGI\_FORMAT\_B8G8R8A8\_UNORM**](https://msdn.microsoft.com/library/windows/desktop/bb173059#DXGI_FORMAT_B8G8R8A8_UNORM) に設定します。 **SampleDesc** メンバーが指定する [**DXGI\_SAMPLE\_DESC**](https://msdn.microsoft.com/library/windows/desktop/bb173072) 構造体の **Count** メンバーを 1 に設定し、**DXGI\_SAMPLE\_DESC** の **Quality** メンバーを 0 に設定します。これは、フリップモデルでは複数サンプルのアンチエイリアシング (MSAA) をサポートしていないためです。 **BufferCount** メンバーを 2 に設定して、スワップ チェーンがディスプレイ デバイスを表すフロント バッファーと、レンダー ターゲットとして機能するバック バッファーを使えるようにします。
 
 Direct3D 11.1 デバイスを照会して、ベースとなる DXGI デバイスを取得します。 電力消費を抑えることは、ノート PC やタブレットなどのバッテリー駆動デバイスでは重要です。そのため、DXGI がキューに入れることができるバック バッファー フレームの最大数として 1 を指定して、[**IDXGIDevice1::SetMaximumFrameLatency**](https://msdn.microsoft.com/library/windows/desktop/ff471334) メソッドを呼び出します。 これにより、アプリは垂直ブランクの後でのみレンダリングされるようになります。
 
-最終的にスワップ チェーンを作成するには、DXGI デバイスから親ファクトリを取得する必要があります。 [
-            **IDXGIDevice::GetAdapter**](https://msdn.microsoft.com/library/windows/desktop/bb174531) を呼び出してデバイスのアダプターを取得し、次にアダプターで [**IDXGIObject::GetParent**](https://msdn.microsoft.com/library/windows/desktop/bb174542) を呼び出して親ファクトリ ([**IDXGIFactory2**](https://msdn.microsoft.com/library/windows/desktop/hh404556)) を取得します。 スワップ チェーンを作成するため、スワップ チェーン記述子とアプリのコア ウィンドウを指定して [**IDXGIFactory2::CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559) を呼び出します。
+最終的にスワップ チェーンを作成するには、DXGI デバイスから親ファクトリを取得する必要があります。 [**IDXGIDevice::GetAdapter**](https://msdn.microsoft.com/library/windows/desktop/bb174531) を呼び出してデバイスのアダプターを取得し、次にアダプターで [**IDXGIObject::GetParent**](https://msdn.microsoft.com/library/windows/desktop/bb174542) を呼び出して親ファクトリ ([**IDXGIFactory2**](https://msdn.microsoft.com/library/windows/desktop/hh404556)) を取得します。 スワップ チェーンを作成するため、スワップ チェーン記述子とアプリのコア ウィンドウを指定して [**IDXGIFactory2::CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559) を呼び出します。
 
 ```cpp
             // If the swap chain does not exist, create it.
@@ -225,15 +220,9 @@ Direct3D 11.1 デバイスを照会して、ベースとなる DXGI デバイス
 
 このループでは、次の呼び出しを実行します。
 
-1.  [
-              **ID3D11DeviceContext::OMSetRenderTargets**
-            ](https://msdn.microsoft.com/library/windows/desktop/ff476464)レンダー ターゲットを出力ターゲットに指定します。
-2.  [
-              **ID3D11DeviceContext::ClearRenderTargetView**
-            ](https://msdn.microsoft.com/library/windows/desktop/ff476388) レンダー ターゲットを単色にクリアします。
-3.  [
-              **IDXGISwapChain::Present**
-            ](https://msdn.microsoft.com/library/windows/desktop/bb174576)レンダリングされた画像をウィンドウに表示します。
+1.  [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464)レンダー ターゲットを出力ターゲットに指定します。
+2.  [**ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) レンダー ターゲットを単色にクリアします。
+3.  [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576)レンダリングされた画像をウィンドウに表示します。
 
 この呼び出しでは前に最大フレーム待機時間を 1 に設定しているため、Windows は一般にレンダー ループの速度を画面のリフレッシュ レート (通常は約 60 Hz) まで下げます。 レンダー ループの速度を下げるために、アプリが [**Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576) を呼び出したときにアプリをスリープ状態にします。 画面が更新されるまでアプリをスリープ状態にします。
 
@@ -303,6 +292,6 @@ Direct3D デバイス、スワップ チェーン、レンダー ターゲット
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

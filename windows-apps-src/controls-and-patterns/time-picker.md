@@ -5,7 +5,6 @@ title: "時刻の選択コントロール"
 ms.assetid: 5124ecda-09e6-449e-9d4a-d969dca46aa3
 label: Time picker
 template: detail.hbs
-translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
 ms.openlocfilehash: 5056a9f304ca21c977b9cc65b8ead007eccd4288
 
@@ -48,7 +47,8 @@ arrivalTimePicker.Header = "Arrival time";
 
 ![時刻の選択コントロールの例](images/time-picker-closed.png)
 
-> **注**
+> 
+            **注:**
             &nbsp;&nbsp;日付値の重要な情報については、「*日付と時刻コントロール*」の「[DateTime と Calendar の値](date-and-time.md#datetime-and-calendar-values)」をご覧ください。
 
 

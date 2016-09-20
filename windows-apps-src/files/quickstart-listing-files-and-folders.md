@@ -3,7 +3,6 @@ author: TylerMSFT
 ms.assetid: 4C59D5AC-58F7-4863-A884-E9E54228A5AD
 title: "ファイルとフォルダーの列挙と照会"
 description: "フォルダー、ライブラリ、デバイス、またはネットワークの場所にあるファイルやフォルダーにアクセスします。 ファイルやフォルダーのクエリを作成することで、任意の場所にあるファイルやフォルダーを照会することもできます。"
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 6ecad1bbd3c08dcd7aa1d3b82739931f20fc4ee2
 
@@ -16,7 +15,8 @@ ms.openlocfilehash: 6ecad1bbd3c08dcd7aa1d3b82739931f20fc4ee2
 
 フォルダー、ライブラリ、デバイス、またはネットワークの場所にあるファイルやフォルダーにアクセスします。 ファイルやフォルダーのクエリを作成することで、任意の場所にあるファイルやフォルダーを照会することもできます。
 
-**注:** [フォルダーの列挙のサンプル](http://go.microsoft.com/fwlink/p/?linkid=619993)に関するページも参照してください。
+
+            **注:** [フォルダーの列挙のサンプル](http://go.microsoft.com/fwlink/p/?linkid=619993)に関するページも参照してください。
 
  
 ## 必要条件
@@ -31,7 +31,8 @@ ms.openlocfilehash: 6ecad1bbd3c08dcd7aa1d3b82739931f20fc4ee2
 
 ## ある場所のファイルやフォルダーを列挙する
 
-> **注:** 必ず **picturesLibrary** 機能を宣言してください。
+> 
+            **注:** 必ず **picturesLibrary** 機能を宣言してください。
 
 この例では、まず [**StorageFolder.GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227276) メソッドを使って [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) 内のルート フォルダー (サブフォルダーは除く) にあるすべてのファイルを取得し、各ファイルの名前を一覧表示します。 次に、[**GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br227280) メソッドを使って **PicturesLibrary** 内のすべてのサブフォルダーを取得し、各サブフォルダーの名前を一覧表示します。
 
@@ -136,10 +137,11 @@ ms.openlocfilehash: 6ecad1bbd3c08dcd7aa1d3b82739931f20fc4ee2
 > ```
 
 
-> **注:**  C# または Visual Basic では、**await** 演算子を使うすべてのメソッドのメソッド宣言で、必ず **async** キーワードを使ってください。
+> [!div class="tabbedCodeSnippets"]
  
 
-または、[**GetItemsAsync**](https://msdn.microsoft.com/library/windows/apps/br227286) メソッドを使って、特定の場所にあるすべての項目 (ファイルとサブフォルダーの両方) を取得することもできます。 次の例では、**GetItemsAsync** メソッドを使って [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) 内のルート フォルダー (サブフォルダーは除く) にあるすべてのファイルとサブフォルダーを取得します。 その後、各ファイルとサブフォルダーの名前を一覧表示します。 項目がサブフォルダーの場合は、名前に `"folder"` を追加します。
+
+            **注:** C# または Visual Basic では、**await** 演算子を使うすべてのメソッドのメソッド宣言で、必ず **async** キーワードを使ってください。 または、[**GetItemsAsync**](https://msdn.microsoft.com/library/windows/apps/br227286) メソッドを使って、特定の場所にあるすべての項目 (ファイルとサブフォルダーの両方) を取得することもできます。 次の例では、**GetItemsAsync** メソッドを使って [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) 内のルート フォルダー (サブフォルダーは除く) にあるすべてのファイルとサブフォルダーを取得します。 その後、各ファイルとサブフォルダーの名前を一覧表示します。
 
 > [!div class="tabbedCodeSnippets"] 
 > ```cpp
@@ -208,11 +210,11 @@ ms.openlocfilehash: 6ecad1bbd3c08dcd7aa1d3b82739931f20fc4ee2
 > Next item
 > ```
 
-## ある場所に保存されているファイルを照会して、一致するファイルを列挙する
+## 項目がサブフォルダーの場合は、名前に `"folder"` を追加します。
 
-この例では [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) にある月ごとにグループ化されたすべてのファイルを照会し、今回はサブフォルダーに再帰的に呼び出します。 まず、[**StorageFolder.CreateFolderQuery**](https://msdn.microsoft.com/library/windows/apps/br227262) を呼び出し、[**CommonFolderQuery.GroupByMonth**](https://msdn.microsoft.com/library/windows/apps/br207957) の値をメソッドに渡します。 これで、[**StorageFolderQueryResult**](https://msdn.microsoft.com/library/windows/apps/br208066) オブジェクトが取得されます。
+[!div class="tabbedCodeSnippets"] ある場所のファイルのクエリを実行して一致するファイルを列挙する この例では [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) にある月ごとにグループ化されたすべてのファイルを照会し、今回はサブフォルダーに再帰的に呼び出します。
 
-次に、仮想フォルダーを表す [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) のオブジェクトを返す [**StorageFolderQueryResult.GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br208074) を呼び出します。 ここでは月でグループ化されているため、各仮想フォルダーは同じ月にあるファイルのグループを表します。
+まず、[**StorageFolder.CreateFolderQuery**](https://msdn.microsoft.com/library/windows/apps/br227262) を呼び出し、[**CommonFolderQuery.GroupByMonth**](https://msdn.microsoft.com/library/windows/apps/br207957) の値をメソッドに渡します。 これで、[**StorageFolderQueryResult**](https://msdn.microsoft.com/library/windows/apps/br208066) オブジェクトが取得されます。
 
 > [!div class="tabbedCodeSnippets"] 
 > ```cpp
@@ -311,7 +313,7 @@ ms.openlocfilehash: 6ecad1bbd3c08dcd7aa1d3b82739931f20fc4ee2
 > Next folder
 > ```
 
-この例の出力は次のようになります。
+次に、仮想フォルダーを表す [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) のオブジェクトを返す [**StorageFolderQueryResult.GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br208074) を呼び出します。
 
 ``` syntax
 July ‎2015 (2)

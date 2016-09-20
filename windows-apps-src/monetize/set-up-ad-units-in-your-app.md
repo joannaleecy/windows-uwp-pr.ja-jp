@@ -3,7 +3,6 @@ author: mcleanbyron
 ms.assetid: bb105fbe-bbbd-4d78-899b-345af2757720
 description: "アプリをストアに提出する前に、Windows デベロッパー センター ダッシュ ボードからアプリケーション ID と広告ユニット ID の値をアプリに追加する方法について説明します。"
 title: "アプリの広告ユニットをセットアップする"
-translationtype: Human Translation
 ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
 ms.openlocfilehash: 96c09de9321f67dc26cc3538f2655bd598f134f9
 
@@ -30,7 +29,8 @@ ms.openlocfilehash: 96c09de9321f67dc26cc3538f2655bd598f134f9
 
     * アプリでスポット広告ビデオを表示する場合は、**InterstitialAd** オブジェクトの **RequestAd** メソッドにこれらの値を渡します。
 
-> **重要**   アプリで広告の仲介を使って Microsoft からバナー広告を表示する (つまり、**AdMediatorControl** オブジェクトを使う) 場合は、広告ユニットを要求する必要はありません。 このシナリオでは、広告ユニットが自動的に生成されます。 詳しくは、「[AdMediatorControl と AdControl の違い](what-is-the-difference-admediatorcontrol-or-adcontrol.md)」をご覧ください。
+> 
+            **重要**   アプリで広告の仲介を使って Microsoft からバナー広告を表示する (つまり、**AdMediatorControl** オブジェクトを使う) 場合は、広告ユニットを要求する必要はありません。 このシナリオでは、広告ユニットが自動的に生成されます。 詳しくは、「[AdMediatorControl と AdControl の違い](what-is-the-difference-admediatorcontrol-or-adcontrol.md)」をご覧ください。
 
  
 

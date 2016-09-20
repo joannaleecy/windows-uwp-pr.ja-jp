@@ -3,7 +3,6 @@ author: mtoepke
 title: "ゲーム プログラミング用の Visual Studio ツール"
 description: "Visual Studio で利用できる DirectX 固有のツールの概要。"
 ms.assetid: 43137bfc-7876-70e0-515c-4722f68bd064
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 2202474f24e93aab32ec9f4e85e765616cbae056
 
@@ -42,7 +41,8 @@ Visual Studio Ultimate を使って、DirectX アプリを開発する場合は�
 
 詳しくは、「[テクスチャおよびイメージの使用](https://msdn.microsoft.com/library/windows/apps/hh873119.aspx)」をご覧ください。
 
-> **注**  イメージ エディターは、フル機能を備えた画像編集アプリを置き換えるものではありませんが、簡単な表示や編集シナリオの多くに適しています。
+> 
+            **注**  イメージ エディターは、フル機能を備えた画像編集アプリを置き換えるものではありませんが、簡単な表示や編集シナリオの多くに適しています。
 
  
 
@@ -61,7 +61,8 @@ Visual Studio Ultimate を使って、DirectX アプリを開発する場合は�
 
 詳しくは、「[3-D モデルの操作](https://msdn.microsoft.com/library/windows/apps/hh873114.aspx)」をご覧ください。
 
-> **注**  モデル エディターは、フル機能を備えたモデル編集アプリを置き換えるものではありませんが、簡単な表示や編集シナリオの多くに適しています。
+> 
+            **注**  モデル エディターは、フル機能を備えたモデル編集アプリを置き換えるものではありませんが、簡単な表示や編集シナリオの多くに適しています。
 
  
 
@@ -138,7 +139,8 @@ Visual Studio には、グラフィックス固有のデバッグ ツールが�
 
 詳しくは、「[DirectX グラフィックスのデバッグ](https://msdn.microsoft.com/library/windows/apps/hh315751.aspx)」をご覧ください。
 
-> **注**  この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
+> 
+            **注:** この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
  
 

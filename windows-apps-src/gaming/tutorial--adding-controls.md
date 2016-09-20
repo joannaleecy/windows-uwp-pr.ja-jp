@@ -5,7 +5,7 @@ description: "次は、ゲーム サンプルで 3-D ゲームにムーブ/ル�
 ms.assetid: f9666abb-151a-74b4-ae0b-ef88f1f252f8
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: b3297ffd92d9a61d73c574def7e8101dc9196a69
+ms.openlocfilehash: 49214f3bc14b6a475a77c5dbb7c0f08bb0818df6
 
 ---
 
@@ -37,21 +37,11 @@ ms.openlocfilehash: b3297ffd92d9a61d73c574def7e8101dc9196a69
 
 このゲーム サンプルの **MoveLookController** クラスを初期化すると、ポインターに固有の 4 つのイベントとマウスに固有の 1 つのイベントが登録されます。
 
--   [
-              **CoreWindow::PointerPressed**
-            ](https://msdn.microsoft.com/library/windows/apps/br208278)。 マウスの左または右ボタンが押された (そして押され続けた) か、タッチ画面がタッチされました。
--   [
-              **CoreWindow::PointerMoved**
-            ](https://msdn.microsoft.com/library/windows/apps/br208276)。 マウスが動かされたか、タッチ画面でドラッグ操作が行われました。
--   [
-              **CoreWindow::PointerReleased**
-            ](https://msdn.microsoft.com/library/windows/apps/br208279)。 マウスの左ボタンが離されたか、タッチ画面に触れているオブジェクトが離されました。
--   [
-              **CoreWindow::PointerExited**
-            ](https://msdn.microsoft.com/library/windows/apps/br208275)。 ポインターがメイン ウィンドウの外に動かされました。
--   [
-              **Windows::Devices::Input::MouseMoved**
-            ](https://msdn.microsoft.com/library/windows/apps/hh758356)。 マウスが一定の距離動かされました。 現在の x-y 位置ではなく、マウス移動のデルタ値にのみ注目します。
+-   [**CoreWindow::PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278)。 マウスの左または右ボタンが押された (そして押され続けた) か、タッチ画面がタッチされました。
+-   [**CoreWindow::PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276)。 マウスが動かされたか、タッチ画面でドラッグ操作が行われました。
+-   [**CoreWindow::PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279)。 マウスの左ボタンが離されたか、タッチ画面に触れているオブジェクトが離されました。
+-   [**CoreWindow::PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208275)。 ポインターがメイン ウィンドウの外に動かされました。
+-   [**Windows::Devices::Input::MouseMoved**](https://msdn.microsoft.com/library/windows/apps/hh758356)。 マウスが一定の距離動かされました。 現在の x-y 位置ではなく、マウス移動のデルタ値にのみ注目します。
 
 ```cpp
 void MoveLookController::Initialize(
@@ -100,8 +90,7 @@ Xbox コントローラーは、[XInput](https://msdn.microsoft.com/library/wind
 
 プレイヤーは複数の操作を同時に実行できることに注意してください。 たとえば、カメラを動かしながら弾を撃つこと (ファイア) ができます。 これらの入力はすべて、**Active** 状態で追跡され、ポインターの操作に応じて異なるポインター ID が設定されます。 これが必要なのは、プレイヤーの視点から見ると、ファイア四角形内のポインター イベントは、ムーブ四角形内や画面の残りの部分内のポインター イベントとは異なるためです。
 
-[
-            **PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278) イベントが受け取られると、**MoveLookController** は、ウィンドウで作成されたポインターの ID 値を取得します。 ポインター ID は、特定の種類の入力を表します。 たとえば、マルチタッチ デバイスでは、複数の異なるアクティブ入力が同時に行われる場合があります。 ID は、プレイヤーが使っている入力を追跡するために使われます。 タッチ スクリーンのムーブ四角形内にイベントがある場合、ポインター ID が割り当てられ、ムーブ四角形内のポインター イベントが追跡されます。 ファイア四角形内の他のポインター イベントは、別のポインター ID で別途追跡されます。 (これについては、タッチ コントロールのセクションでもう少し詳しく説明します。)
+[**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278) イベントが受け取られると、**MoveLookController** は、ウィンドウで作成されたポインターの ID 値を取得します。 ポインター ID は、特定の種類の入力を表します。 たとえば、マルチタッチ デバイスでは、複数の異なるアクティブ入力が同時に行われる場合があります。 ID は、プレイヤーが使っている入力を追跡するために使われます。 タッチ スクリーンのムーブ四角形内にイベントがある場合、ポインター ID が割り当てられ、ムーブ四角形内のポインター イベントが追跡されます。 ファイア四角形内の他のポインター イベントは、別のポインター ID で別途追跡されます。 (これについては、タッチ コントロールのセクションでもう少し詳しく説明します。)
 
 マウスからの入力には、さらに別の ID があり、この入力も別途処理されます。
 
@@ -361,8 +350,7 @@ void MoveLookController::OnPointerPressed(
 }
 ```
 
-[
-            **PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278) イベントがムーブ四角形、ファイア四角形、画面の残りの部分 (ルック コントロール) の 3 つのコントロール領域のいずれかで発生した場合、**MoveLookController** は、そのイベントを起動したポインターのポインター ID を、イベントが起動された画面の領域に対応する特定の変数に割り当てます。 たとえば、イベントがムーブ四角形内で発生した場合、**m\_movePointerID** 変数は、そのイベントを起動したポインターの ID に設定されます。 "使用中" を示すブール値 (この例では **m\_lookInUse**) も、コントロールがまだ離されていないことを示すために設定されます。
+[**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278) イベントがムーブ四角形、ファイア四角形、画面の残りの部分 (ルック コントロール) の 3 つのコントロール領域のいずれかで発生した場合、**MoveLookController** は、そのイベントを起動したポインターのポインター ID を、イベントが起動された画面の領域に対応する特定の変数に割り当てます。 たとえば、イベントがムーブ四角形内で発生した場合、**m\_movePointerID** 変数は、そのイベントを起動したポインターの ID に設定されます。 "使用中" を示すブール値 (この例では **m\_lookInUse**) も、コントロールがまだ離されていないことを示すために設定されます。
 
 次は、このゲーム サンプルで [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) タッチ スクリーン イベントを処理する方法を見てみましょう。
 
@@ -424,10 +412,8 @@ void MoveLookController::OnPointerMoved(
 
 **MoveLookController** は、ポインター ID を確認してイベントがどこで発生したかを判断し、次のいずれかの処理を実行します。
 
--   [
-            **PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) イベントがムーブまたはファイア四角形で発生した場合は、コントローラーのポインターの位置を更新します。
--   [
-            **PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) イベントが画面の残りの部分 (ルック コントロールとして定義されている部分) のどこかで発生した場合は、ルック方向ベクトルのピッチとヨーの変化を計算します。
+-   [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) イベントがムーブまたはファイア四角形で発生した場合は、コントローラーのポインターの位置を更新します。
+-   [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) イベントが画面の残りの部分 (ルック コントロールとして定義されている部分) のどこかで発生した場合は、ルック方向ベクトルのピッチとヨーの変化を計算します。
 
 最後に、このゲーム サンプルで [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) タッチ スクリーン イベントを処理する方法を見てみましょう。
 
@@ -479,11 +465,9 @@ void MoveLookController::OnPointerReleased(
 }
 ```
 
-[
-            **PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) イベントを起動したポインターの ID が前に記録されたムーブ ポインターの ID の場合は、プレイヤーがムーブ四角形から手を離したため、**MoveLookController** は速度を 0 に設定します。 速度を 0 に設定しないと、プレイヤーは動き続けることになります。 何らかの形で慣性を実装する場合は、ゲーム ループから **Update** を今後呼び出したときに速度の 0 へのリセットを開始するメソッドをここで追加します。
+[**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) イベントを起動したポインターの ID が前に記録されたムーブ ポインターの ID の場合は、プレイヤーがムーブ四角形から手を離したため、**MoveLookController** は速度を 0 に設定します。 速度を 0 に設定しないと、プレイヤーは動き続けることになります。 何らかの形で慣性を実装する場合は、ゲーム ループから **Update** を今後呼び出したときに速度の 0 へのリセットを開始するメソッドをここで追加します。
 
-[
-            **PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) イベントがファイア四角形またはルック領域で起動された場合は、**MoveLookController** は特定のポインター ID をリセットします。
+[**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) イベントがファイア四角形またはルック領域で起動された場合は、**MoveLookController** は特定のポインター ID をリセットします。
 
 以上が、タッチ スクリーン コントロールをゲーム サンプルに実装する方法の基本です。 次は、マウスとキーボードのコントロールについて説明します。
 
@@ -1936,6 +1920,6 @@ void MoveLookController::UpdateGameController()
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

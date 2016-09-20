@@ -3,7 +3,6 @@ author: mtoepke
 title: "Direct3D 11 の初期化"
 description: "Direct3D デバイスとデバイス コンテキストへのハンドルを取得する方法や、DXGI を使ってスワップ チェーンを設定する方法など、Direct3D 9 の初期化コードを Direct3D 11 に変換する方法について説明します。"
 ms.assetid: 1bd5e8b7-fd9d-065c-9ff3-1a9b1c90da29
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: f0e25e43633d895673d640f139af338f6f0713f2
 
@@ -70,7 +69,8 @@ Direct3D 11 では、デバイス コンテキストとグラフィックス イ
 
 Direct3D 11 デバイスとコンテキストを作成すると、COM のポインター機能を利用して、最新バージョンのインターフェイスを取得できます。このインターフェイスには追加機能が含まれているため、常に取得することをお勧めします。
 
-> **注**   (シェーダー モデル 2.0 に対応する) D3D\_FEATURE\_LEVEL\_9\_1 は、Windows ストア ゲームでサポートする必要がある最小レベルです (ゲームの ARM パッケージは 9\_1 をサポートしないと、認定に合格しません)。また、ゲームにシェーダー モデル 3 の機能のレンダリング パスも含まれている場合は、配列に D3D\_FEATURE\_LEVEL\_9\_3 を含める必要があります。
+> 
+            **注**   (シェーダー モデル 2.0 に対応する) D3D\_FEATURE\_LEVEL\_9\_1 は、Windows ストア ゲームでサポートする必要がある最小レベルです  (ゲームの ARM パッケージは 9\_1 をサポートしないと、認定に合格しません)。また、ゲームにシェーダー モデル 3 の機能のレンダリング パスも含まれている場合は、配列に D3D\_FEATURE\_LEVEL\_9\_3 を含める必要があります。
 
  
 
@@ -122,7 +122,8 @@ Direct3D 11 には、DirectX Graphics Infrastructure (DXGI) と呼ばれるデ�
 
 Direct3D デバイスでは、DXGI の COM インターフェイスを実装します。 最初に、そのインターフェイスを取得し、それを使って、デバイスをホストしている DXGI アダプターを要求する必要があります。 次に、DXGI アダプターを使って、DXGI ファクトリを作成します。
 
-> **注**   これらは、COM インターフェイスです。そのため、最初の応答では [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521) を使うことができます。 しかし、代わりに、[**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) スマート ポインターを使ってください。 次に、[**As()**](https://msdn.microsoft.com/library/windows/apps/br230426.aspx) メソッドを呼び出して、適切なインターフェイスの種類の空の COM ポインターを提供します。
+> 
+            **注**   これらは、COM インターフェイスです。そのため、最初の応答では [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521) を使うことができます。 しかし、代わりに、[**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) スマート ポインターを使ってください。 次に、[**As()**](https://msdn.microsoft.com/library/windows/apps/br230426.aspx) メソッドを呼び出して、適切なインターフェイスの種類の空の COM ポインターを提供します。
 
  
 
@@ -146,7 +147,8 @@ dxgiAdapter->GetParent(
 
 DXGI ファクトリを作成したので、それを使って、スワップ チェーンを作成できます。 スワップ チェーンのパラメーターを定義します。 サーフェスの形式を指定する必要があります。ここでは、Direct2D と互換性があるため、[**DXGI\_FORMAT\_B8G8R8A8\_UNORM**](https://msdn.microsoft.com/library/windows/desktop/bb173059) を選びます。 画面のスケーリング、マルチサンプリング、ステレオ レンダリングは、この例では使わないため、オフにします。 CoreWindow で直接実行するため、幅と高さを 0 に設定したままにし、全画面の値を自動的に取得できます。
 
-> **注**   UWP アプリでは、常に *SDKVersion* パラメーターを D3D11\_SDK\_VERSION に設定してください。
+> 
+            **注**   UWP アプリでは、常に *SDKVersion* パラメーターを D3D11\_SDK\_VERSION に設定してください。
 
  
 
@@ -166,7 +168,8 @@ swapChain.As(&m_swapChain);
 
 画面に実際に表示できる頻度を超えてレンダリングしないように、フレーム待機時間を 1 に設定し、[**DXGI\_SWAP\_EFFECT\_FLIP\_SEQUENTIAL**](https://msdn.microsoft.com/library/windows/desktop/bb173077) を使います。 これにより、電力が節約されます。また、これはストアの認定の要件です。このチュートリアルのパート 2 では、画面への表示について詳しく説明します。
 
-> **注**   マルチスレッド ([**ThreadPool**](https://msdn.microsoft.com/library/windows/apps/br229642) 作業項目など) を使うと、レンダリング スレッドがブロックされていても、他の処理を継続できます。
+> 
+            **注**   マルチスレッド ([**ThreadPool**](https://msdn.microsoft.com/library/windows/apps/br229642) 作業項目など) を使うと、レンダリング スレッドがブロックされていても、他の処理を継続できます。
 
  
 
@@ -181,7 +184,7 @@ dxgiDevice->SetMaximumFrameLatency(1);
 ## レンダー ターゲットとしてのバック バッファーの構成
 
 
-最初に、バック バッファーへのハンドルを取得する必要があります (バック バッファーは DXGI スワップ チェーンによって所有されますが、DirectX 9 では Direct3D デバイスによって所有されることに注意してください)。次に、バック バッファーを使ってレンダー ターゲット *ビュー*を作成することで、バック バッファーをレンダー ターゲットとして使うように Direct3D デバイスに指示します。
+最初に、バック バッファーへのハンドルを取得する必要があります  (バック バッファーは DXGI スワップ チェーンによって所有されますが、DirectX 9 では Direct3D デバイスによって所有されることに注意してください)。次に、バック バッファーを使ってレンダー ターゲット *ビュー*を作成することで、バック バッファーをレンダー ターゲットとして使うように Direct3D デバイスに指示します。
 
 **Direct3D 11**
 

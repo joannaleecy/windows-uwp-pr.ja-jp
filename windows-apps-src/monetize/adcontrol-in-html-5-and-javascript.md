@@ -3,7 +3,6 @@ author: mcleanbyron
 ms.assetid: adb2fa45-e18f-4254-bd8b-a749a386e3b4
 description: "Windows 10 (UWP) 用、Windows 8.1 用、Windows Phone 8.1 用の JavaScript/HTML アプリで AdControl クラスを使ってバナー広告を表示する方法について説明します。"
 title: "HTML 5 および Javascript の AdControl"
-translationtype: Human Translation
 ms.sourcegitcommit: cf695b5c20378f7bbadafb5b98cdd3327bcb0be6
 ms.openlocfilehash: 6e96b085132126a2c3e7b0b0b86124aba4cd651e
 
@@ -23,7 +22,8 @@ JavaScript/HTML アプリにバナー広告を追加する方法を示す完全�
 
 * [Microsoft Store Engagement and Monetization SDK](http://aka.ms/store-em-sdk) を Visual Studio 2015 または Visual Studio 2013 と共にインストールします。
 
-> **注** Windows 10 Anniversary SDK Preview ビルド 14295 以降を Visual Studio 2015 と共にインストールしている場合は、WinJS ライブラリもインストールする必要があります。 このライブラリは以前のバージョンの Windows SDK for Windows 10 に含まれていましたが、Windows 10 Anniversary SDK Preview ビルド 14295 以降ではこのライブラリを別個にインストールする必要があります。 WinJS をインストールする場合は、「[Get WinJS (WinJS を入手する)](http://try.buildwinjs.com/download/GetWinJS/)」をご覧ください。
+> 
+            **注** Windows 10 Anniversary SDK Preview ビルド 14295 以降を Visual Studio 2015 と共にインストールしている場合は、WinJS ライブラリもインストールする必要があります。 このライブラリは以前のバージョンの Windows SDK for Windows 10 に含まれていましたが、Windows 10 Anniversary SDK Preview ビルド 14295 以降ではこのライブラリを別個にインストールする必要があります。 WinJS をインストールする場合は、「[Get WinJS (WinJS を入手する)](http://try.buildwinjs.com/download/GetWinJS/)」をご覧ください。
 
 ## コード開発
 
@@ -43,14 +43,14 @@ JavaScript/HTML アプリにバナー広告を追加する方法を示す完全�
 
     ![javascriptaddreference](images/13-f7f6d6a6-161e-4f17-995d-1236d0b5d9f2.png)
 
-    > **注**  この画像は、Windows 10 用 UWP プロジェクトを構築している Visual Studio 2015 の画像です。 Windows 8.1 または Windows Phone 8.1 のアプリを構築している場合や、Visual Studio 2013 を使っている場合は、画面が異なります。
+    > 
+            **注**  この画像は、Windows 10 用 UWP プロジェクトを構築している Visual Studio 2015 の画像です。 Windows 8.1 または Windows Phone 8.1 のアプリを構築している場合や、Visual Studio 2013 を使っている場合は、画面が異なります。
 
 5.  **[参照マネージャー]** で、[OK] をクリックします。
 
 6.  default.html ファイル (またはプロジェクトに対応するその他の html ファイル) を開きます。
 
-7.  **
-            &lt;head&gt;** セクションで、プロジェクトの default.css と default.js の JavaScript 参照の後に ad.js への参照を追加します。
+7.  **&lt;head&gt;** セクションで、プロジェクトの default.css と default.js の JavaScript 参照の後に ad.js への参照を追加します。
 
     UWP プロジェクトでは、次のコードを追加します。
 
@@ -66,7 +66,8 @@ JavaScript/HTML アプリにバナー広告を追加する方法を示す完全�
     <script src="/MSAdvertisingJS/ads/ad.js"></script>
     ```
 
-    > **注**   この行は、**&lt;head&gt;** セクションの default.js のインクルードの後に配置する必要があります。そうしないと、プロジェクトのビルド時にエラーが発生します。
+    > 
+            **注**   この行は、**&lt;head&gt;** セクションの default.js のインクルードの後に配置する必要があります。そうしないと、プロジェクトのビルド時にエラーが発生します。
 
 8.  default.html ファイル (またはプロジェクトに対応するその他の html ファイル) の **&lt;body&gt;** セクションを変更して、**AdControl** の div を追加します。 **AdControl** の **applicationId** プロパティと **adUnitId** プロパティに、「[Test mode values (テスト モードの値)](test-mode-values.md)」に示されているテスト値を割り当てて、コントロールの高さと幅を、[バナー広告でサポートされている広告サイズ](supported-ad-sizes-for-banner-ads.md)のいずれかに合わせて調整します。
 
@@ -89,7 +90,8 @@ JavaScript/HTML アプリにバナー広告を追加する方法を示す完全�
 
 2.  コードで、広告ユニットのテスト値 (**applicationId** と **adUnitId**) を、デベロッパー センターで生成した実際の値に置き換えます。
 
-3.  デベロッパー センター ダッシュボードを使用して、ストアに[アプリを提出](../publish/app-submissions.md)します。
+3.  
+            デベロッパー センター ダッシュボードを使用して、ストアに[アプリを提出](../publish/app-submissions.md)します。
 
 4.  デベロッパー センター ダッシュボードで[広告パフォーマンス レポート](../publish/advertising-performance-report.md)を確認します。
 

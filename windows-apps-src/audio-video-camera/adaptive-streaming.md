@@ -3,7 +3,6 @@ author: drewbatgit
 ms.assetid: AE98C22B-A071-4206-ABBB-C0F0FB7EF33C
 description: "この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリにアダプティブ ストリーミング マルチメディア コンテンツの再生を追加する方法について説明します。 現在、この機能では、HTTP ライブ ストリーミング (HLS) と Dynamic Adaptive Streaming over HTTP (DASH) コンテンツの再生がサポートされています。"
 title: "アダプティブ ストリーミング"
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 8ebf90b02fcfbb4349ba2b303d9c91727b731ad7
 
@@ -33,8 +32,7 @@ XAML ベースのアプリでアダプティブ ストリーミング マルチ�
 
 [!code-cs[AdaptiveStreamingUsing](./code/AdaptiveStreaming_Win10/cs/MainPage.xaml.cs#SnippetAdaptiveStreamingUsing)]
 
-[
-            **CreateFromUriAsync**](https://msdn.microsoft.com/library/windows/apps/dn931261) を呼び出し、アダプティブ ストリーミング マニフェスト ファイルの URI で、**AdaptiveMediaSource** を初期化します。 このメソッドから返される [**AdaptiveMediaSourceCreationStatus**](https://msdn.microsoft.com/library/windows/apps/dn946917) の値を利用して、メディア ソースが正しく作成されたかどうかを確認できます。 正しく作成された場合、[**SetMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn299029) を呼び出すことにより、オブジェクトを **MediaElement** のストリーム ソースとして設定できます。 この例では、[**AvailableBitrates**](https://msdn.microsoft.com/library/windows/apps/dn931257) プロパティを照会することによって、このストリームで利用できる最大ビットレートを特定し、その値が初期ビットレートとして設定されます。 またこの例では、[**DownloadRequested**](https://msdn.microsoft.com/library/windows/apps/dn931272) イベント、[**DownloadBitrateChanged**](https://msdn.microsoft.com/library/windows/apps/dn931269) イベント、および [**PlaybackBitrateChanged**](https://msdn.microsoft.com/library/windows/apps/dn931278) イベントのハンドラーも登録します。これらのイベントについては、この記事の後半で説明します。
+[**CreateFromUriAsync**](https://msdn.microsoft.com/library/windows/apps/dn931261) を呼び出し、アダプティブ ストリーミング マニフェスト ファイルの URI で、**AdaptiveMediaSource** を初期化します。 このメソッドから返される [**AdaptiveMediaSourceCreationStatus**](https://msdn.microsoft.com/library/windows/apps/dn946917) の値を利用して、メディア ソースが正しく作成されたかどうかを確認できます。 正しく作成された場合、[**SetMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn299029) を呼び出すことにより、オブジェクトを **MediaElement** のストリーム ソースとして設定できます。 この例では、[**AvailableBitrates**](https://msdn.microsoft.com/library/windows/apps/dn931257) プロパティを照会することによって、このストリームで利用できる最大ビットレートを特定し、その値が初期ビットレートとして設定されます。 またこの例では、[**DownloadRequested**](https://msdn.microsoft.com/library/windows/apps/dn931272) イベント、[**DownloadBitrateChanged**](https://msdn.microsoft.com/library/windows/apps/dn931269) イベント、および [**PlaybackBitrateChanged**](https://msdn.microsoft.com/library/windows/apps/dn931278) イベントのハンドラーも登録します。これらのイベントについては、この記事の後半で説明します。
 
 [!code-cs[InitializeAMS](./code/AdaptiveStreaming_Win10/cs/MainPage.xaml.cs#SnippetInitializeAMS)]
 
@@ -42,8 +40,7 @@ XAML ベースのアプリでアダプティブ ストリーミング マルチ�
 
 [!code-cs[InitializeAMSWithHttpClient](./code/AdaptiveStreaming_Win10/cs/MainPage.xaml.cs#SnippetInitializeAMSWithHttpClient)]
 
-[
-            **DownloadRequested**](https://msdn.microsoft.com/library/windows/apps/dn931272) イベントは、システムがサーバーからリソースを取得しようとするときに発生します。 イベント ハンドラーに渡される [**AdaptiveMediaSourceDownloadRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn946935) によって、要求されているリソースに関する情報 (リソースの種類や URI など) を提供するプロパティが公開されます。
+[**DownloadRequested**](https://msdn.microsoft.com/library/windows/apps/dn931272) イベントは、システムがサーバーからリソースを取得しようとするときに発生します。 イベント ハンドラーに渡される [**AdaptiveMediaSourceDownloadRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn946935) によって、要求されているリソースに関する情報 (リソースの種類や URI など) を提供するプロパティが公開されます。
 
 **DownloadRequested** イベント ハンドラーを使って、リソース要求を変更することができます。この場合、イベント引数によって提供される [**AdaptiveMediaSourceDownloadResult**](https://msdn.microsoft.com/library/windows/apps/dn946942) オブジェクトのプロパティを更新します。 次の例では、結果オブジェクトの [**ResourceUri**](https://msdn.microsoft.com/library/windows/apps/dn931250) プロパティを更新して、リソースの取得元となる URI を変更します。
 

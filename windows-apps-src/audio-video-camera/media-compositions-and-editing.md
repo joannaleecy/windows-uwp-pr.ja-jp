@@ -5,7 +5,7 @@ description: "Windows.Media.Editing 名前空間の API を使うと、オーデ
 title: "メディア コンポジションと編集"
 translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
-ms.openlocfilehash: 226ee9212f6688c48c4d4d7b3195ec5c27a3afdd
+ms.openlocfilehash: ee46b6d4ad116034cd84f062e7bf710ff8600479
 
 ---
 
@@ -18,8 +18,7 @@ ms.openlocfilehash: 226ee9212f6688c48c4d4d7b3195ec5c27a3afdd
 
 ## 新しいメディア コンポジションを作成する
 
-[
-            **MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) クラスは、コンポジションの構成要素となるすべてのメディア クリップのコンテナーで、最終的なコンポジションのレンダリングや、ディスクからの読み込みとディスクへの保存、UI に表示するプレビュー ストリームの提供などの機能を担います。 **MediaComposition** をアプリで使うには、[**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) 名前空間に加え、関連する必要な API を含んだ [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962) 名前空間を追加する必要があります。
+[**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) クラスは、コンポジションの構成要素となるすべてのメディア クリップのコンテナーで、最終的なコンポジションのレンダリングや、ディスクからの読み込みとディスクへの保存、UI に表示するプレビュー ストリームの提供などの機能を担います。 **MediaComposition** をアプリで使うには、[**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) 名前空間に加え、関連する必要な API を含んだ [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962) 名前空間を追加する必要があります。
 
 [!code-cs[Namespace1](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetNamespace1)]
 
@@ -41,8 +40,7 @@ ms.openlocfilehash: 226ee9212f6688c48c4d4d7b3195ec5c27a3afdd
 
 -   **MediaClip** をコンポジションに追加できるのは 1 回だけです。 既にコンポジションで使われている **MediaClip** を追加しようとすると、エラーが発生します。 コンポジションの中でビデオ クリップを複数回にわたって再利用するには、[**Clone**](https://msdn.microsoft.com/library/windows/apps/dn652599) を呼び出して新しい **MediaClip** オブジェクトを作成し、それをコンポジションに追加してください。
 
--   ユニバーサル Windows アプリには、ファイル システム全体にアクセスする権限がありません。 [
-            **StorageApplicationPermissions**](https://msdn.microsoft.com/library/windows/apps/br207456) クラスの [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) プロパティを使うと、ユーザーによって選択されたファイルの記録をアプリで保存し、ファイルにアクセスするための権限を維持することができます。 **FutureAccessList** の最大エントリ数は 1,000 件です。リストがあふれないようアプリ側で管理する必要があります。 過去に作成されたコンポジションの読み込みと変更をサポートする場合は、この点が特に重要となります。
+-   ユニバーサル Windows アプリには、ファイル システム全体にアクセスする権限がありません。 [**StorageApplicationPermissions**](https://msdn.microsoft.com/library/windows/apps/br207456) クラスの [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) プロパティを使うと、ユーザーによって選択されたファイルの記録をアプリで保存し、ファイルにアクセスするための権限を維持することができます。 **FutureAccessList** の最大エントリ数は 1,000 件です。リストがあふれないようアプリ側で管理する必要があります。 過去に作成されたコンポジションの読み込みと変更をサポートする場合は、この点が特に重要となります。
 
 -   **MediaComposition** は、MP4 形式のビデオ クリップをサポートしています。
 
@@ -60,8 +58,7 @@ ms.openlocfilehash: 226ee9212f6688c48c4d4d7b3195ec5c27a3afdd
 
 [!code-xml[MediaElement](./code/MediaEditing/cs/MainPage.xaml#SnippetMediaElement)]
 
-[
-            **MediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn282716) 型のメンバー変数を宣言します。
+[**MediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn282716) 型のメンバー変数を宣言します。
 
 
 [!code-cs[DeclareMediaStreamSource](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetDeclareMediaStreamSource)]
@@ -71,8 +68,7 @@ ms.openlocfilehash: 226ee9212f6688c48c4d4d7b3195ec5c27a3afdd
 
 [!code-cs[UpdateMediaElementSource](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetUpdateMediaElementSource)]
 
--   [
-            **GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674) は、**MediaComposition** にメディア クリップが少なくとも 1 つは存在している状態で呼び出す必要があります。まったく存在しない場合、返されるオブジェクトは null になります。
+-   [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674) は、**MediaComposition** にメディア クリップが少なくとも 1 つは存在している状態で呼び出す必要があります。まったく存在しない場合、返されるオブジェクトは null になります。
 
 -   コンポジションの変更を反映するために **MediaElement** のタイムラインが自動的に更新されることはありません。 コンポジションに一連の変更を行って UI の更新が必要になるたびに、**GeneratePreviewMediaStreamSource** と **SetMediaStreamSource** の両方を呼び出すことをお勧めします。
 
@@ -86,8 +82,7 @@ ms.openlocfilehash: 226ee9212f6688c48c4d4d7b3195ec5c27a3afdd
 
 [!code-cs[Namespace2](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetNamespace2)]
 
-[
-            **FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) でユーザーが出力ファイルを選べるようにしたら、**MediaComposition** オブジェクトの [**RenderToFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652690) を呼び出し、選択されたファイルにコンポジションをレンダリングします。 以下のコード例の残りの部分は、[**AsyncOperationWithProgress**](https://msdn.microsoft.com/library/windows/desktop/br205807) の処理パターンを踏襲しているだけです。
+[**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) でユーザーが出力ファイルを選べるようにしたら、**MediaComposition** オブジェクトの [**RenderToFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652690) を呼び出し、選択されたファイルにコンポジションをレンダリングします。 以下のコード例の残りの部分は、[**AsyncOperationWithProgress**](https://msdn.microsoft.com/library/windows/desktop/br205807) の処理パターンを踏襲しているだけです。
 
 [!code-cs[RenderCompositionToFile](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetRenderCompositionToFile)]
 
@@ -122,8 +117,7 @@ ms.openlocfilehash: 226ee9212f6688c48c4d4d7b3195ec5c27a3afdd
 
 ## コンポジションにオーバーレイを追加する
 
-オーバーレイを使うと、コンポジションの複数のビデオ レイヤーを重ね合わせることができます。 コンポジションには、複数のオーバーレイ レイヤーを含めることができ、それぞれのオーバーレイ レイヤーには複数のオーバーレイを追加することができます。 [
-            **MediaOverlay**](https://msdn.microsoft.com/library/windows/apps/dn764793) オブジェクトは、そのコンストラクターに **MediaClip** を渡すことによって作成します。 オーバーレイの位置と不透明度を設定したら、新しい [**MediaOverlayLayer**](https://msdn.microsoft.com/library/windows/apps/dn764795) を作成し、その [**Overlays**](https://msdn.microsoft.com/library/windows/desktop/dn280411) リストに **MediaOverlay** を追加します。 最後に、その **MediaOverlayLayer** をコンポジションの [**OverlayLayers**](https://msdn.microsoft.com/library/windows/apps/dn764791) リストに追加します。
+オーバーレイを使うと、コンポジションの複数のビデオ レイヤーを重ね合わせることができます。 コンポジションには、複数のオーバーレイ レイヤーを含めることができ、それぞれのオーバーレイ レイヤーには複数のオーバーレイを追加することができます。 [**MediaOverlay**](https://msdn.microsoft.com/library/windows/apps/dn764793) オブジェクトは、そのコンストラクターに **MediaClip** を渡すことによって作成します。 オーバーレイの位置と不透明度を設定したら、新しい [**MediaOverlayLayer**](https://msdn.microsoft.com/library/windows/apps/dn764795) を作成し、その [**Overlays**](https://msdn.microsoft.com/library/windows/desktop/dn280411) リストに **MediaOverlay** を追加します。 最後に、その **MediaOverlayLayer** をコンポジションの [**OverlayLayers**](https://msdn.microsoft.com/library/windows/apps/dn764791) リストに追加します。
 
 [!code-cs[AddOverlay](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetAddOverlay)]
 
@@ -161,6 +155,6 @@ ms.openlocfilehash: 226ee9212f6688c48c4d4d7b3195ec5c27a3afdd
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

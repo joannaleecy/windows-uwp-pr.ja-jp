@@ -5,7 +5,6 @@ title: "セマンティック ズーム"
 ms.assetid: B5C21FE7-BA83-4940-9CC1-96F6A2DC28C7
 label: Semantic zoom
 template: detail.hbs
-translationtype: Human Translation
 ms.sourcegitcommit: a4e9a90edd2aae9d2fd5d7bead948422d43dad59
 ms.openlocfilehash: 47e39290a63408fc66783617ad2f12345eab2fa3
 
@@ -21,7 +20,8 @@ ms.openlocfilehash: 47e39290a63408fc66783617ad2f12345eab2fa3
 
 -   [**SemanticZoom クラス**](https://msdn.microsoft.com/library/windows/apps/hh702601)
 
-**機能**:
+
+            **機能**:
 
 -   縮小表示ビューのサイズは、セマンティック ズーム コントロールの境界によって制限されます。
 -   グループ ヘッダーをタップするとビューが切り替わります。 ピンチしてビューを切り替える方法を有効にできます。

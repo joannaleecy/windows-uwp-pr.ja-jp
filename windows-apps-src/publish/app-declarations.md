@@ -3,7 +3,6 @@ author: jnHs
 Description: "申請プロセス中、[アプリケーションのプロパティ] ページの [App declarations] (アプリの宣言) セクションで、アプリに関する追加情報を入力できます。"
 title: "アプリの宣言"
 ms.assetid: 3AF618F3-2B47-4A57-B7E8-1DF979D4A82C
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: ee2e54494a868fbec8c4a8bd7bbb9bdcd6cbf9ae
 
@@ -35,7 +34,8 @@ ms.openlocfilehash: ee2e54494a868fbec8c4a8bd7bbb9bdcd6cbf9ae
 
 詳しくは、「[Windows ランタイム アプリのアクセシビリティ](https://msdn.microsoft.com/library/windows/apps/dn263101)」、「[アクセシビリティ テスト](https://msdn.microsoft.com/library/windows/apps/mt297664)」、「[ストア内のアクセシビリティ](https://msdn.microsoft.com/library/windows/apps/mt297663)」をご覧ください。
 
-> **重要**  アクセシビリティのための具体的な設計とテストを行っていない限り、アプリをアクセシビリティ対応として登録しないでください。 アプリをアクセシビリティ対応と宣言しているのにアクセシビリティを実際にサポートしていないと、コミュニティから否定的なフィードバックを受けるおそれがあります。
+> 
+            **重要**  アクセシビリティのための具体的な設計とテストを行っていない限り、アプリをアクセシビリティ対応として登録しないでください。 アプリをアクセシビリティ対応と宣言しているのにアクセシビリティを実際にサポートしていないと、コミュニティから否定的なフィードバックを受けるおそれがあります。
 
 ## ユーザーは、代替ドライブやリムーバブル ストレージにこのアプリをインストールできます。
 
@@ -45,7 +45,8 @@ ms.openlocfilehash: ee2e54494a868fbec8c4a8bd7bbb9bdcd6cbf9ae
 
 アプリをリムーバブル記憶域メディアにのみインストールできるようにするためにインストールを制限するオプションはないことに注意してください。
 
-> **注**  Windows Phone 8.1 では、以前は StoreManifest.xml を通じてこれを指定していました。
+> 
+            **注**  Windows Phone 8.1 では、以前は StoreManifest.xml を通じてこれを指定していました。
 
 ## Windows では、このアプリのデータを OneDrive への自動バックアップに含めることができます。
 
@@ -53,7 +54,8 @@ ms.openlocfilehash: ee2e54494a868fbec8c4a8bd7bbb9bdcd6cbf9ae
 
 アプリのデータが自動バックアップに含まれないようにする場合は、このボックスをオフにします。
 
-> **注**  Windows Phone 8.1 では、以前は StoreManifest.xml を通じてこれを指定していました。
+> 
+            **注**  Windows Phone 8.1 では、以前は StoreManifest.xml を通じてこれを指定していました。
 
  
 

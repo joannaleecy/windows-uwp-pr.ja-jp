@@ -3,7 +3,6 @@ author: mtoepke
 title: "シェーダー オブジェクトの移植"
 description: "OpenGL ES 2.0 から簡単なレンダラーを移植する場合、最初の手順では、Direct3D 11 の対応する頂点シェーダー オブジェクトとフラグメント シェーダー オブジェクトを設定し、コンパイル後にメイン プログラムがシェーダー オブジェクトと通信できるようにします。"
 ms.assetid: 0383b774-bc1b-910e-8eb6-cc969b3dcc08
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: 17d66e217e40eca0653078820746746eb23185e1
 
@@ -22,7 +21,8 @@ ms.openlocfilehash: 17d66e217e40eca0653078820746746eb23185e1
 
 OpenGL ES 2.0 から簡単なレンダラーを移植する場合、最初の手順では、Direct3D 11 の対応する頂点シェーダー オブジェクトとフラグメント シェーダー オブジェクトを設定し、コンパイル後にメイン プログラムがシェーダー オブジェクトと通信できるようにします。
 
-> **注:** 新しい Direct3D プロジェクトを作成しましたか? 作成していない場合は、「[テンプレートからの DirectX ゲーム プロジェクトの作成](user-interface.md)」の指示に従ってください。 このチュートリアルでは、画面に描画するために DXGI リソースと Direct3D リソースを作成していることを前提としています。これらのリソースは、テンプレートで提供されます。
+> 
+            **注:** 新しい Direct3D プロジェクトを作成しましたか?  作成していない場合は、「[テンプレートからの DirectX ゲーム プロジェクトの作成](user-interface.md)」の指示に従ってください。 このチュートリアルでは、画面に描画するために DXGI リソースと Direct3D リソースを作成していることを前提としています。これらのリソースは、テンプレートで提供されます。
 
  
 
@@ -75,7 +75,8 @@ GLuint __cdecl CompileShader (GLenum shaderType, const char *shaderSrcStr)
 
 Direct3D では、シェーダーは実行時にコンパイルされず、常に、プログラムの他の部分をコンパイルしたときに、CSO ファイルにコンパイルされます。 Microsoft Visual Studio でアプリをコンパイルすると、HLSL ファイルは、アプリで読み込む必要がある CSO (.cso) ファイルにコンパイルされます。 アプリをパッケージ化するときは、これらの CSO ファイルを必ず含めてください。
 
-> **注:** 次の例では、**auto** キーワードとラムダ構文を使って、シェーダーの読み込みとコンパイルを非同期的に実行します。 ReadDataAsync() はテンプレートに実装されているメソッドで、CSO ファイルをバイト データの配列 (fileData) として読み取ります。
+> 
+            **注:** 次の例では、**auto** キーワードとラムダ構文を使って、シェーダーの読み込みとコンパイルを非同期的に実行します。 ReadDataAsync() はテンプレートに実装されているメソッドで、CSO ファイルをバイト データの配列 (fileData) として読み取ります。
 
  
 
@@ -185,12 +186,15 @@ m_d3dContext->PSSetShader(
 
 OpenGL ES 2.0 の例では、シェーダー パイプラインに対して宣言する次の **uniform** が 1 つあります。
 
--   **u\_mvpMatrix**: 立方体のモデル座標を受け取り、それをスキャン変換のために 2D プロジェクション座標に変換する最終的なモデル ビュー プロジェクション変換マトリックスを表す浮動小数点値の 4x4 配列。
+-   
+            **u\_mvpMatrix**: 立方体のモデル座標を受け取り、それをスキャン変換のために 2D プロジェクション座標に変換する最終的なモデル ビュー プロジェクション変換マトリックスを表す浮動小数点値の 4x4 配列。
 
 さらに、頂点データ用の次の **attribute** 値が 2 つあります。
 
--   **a\_position**: 頂点のモデル座標の 4 つの浮動小数点値で構成されたベクトル。
--   **a\_color**: 頂点に関連付けられている RGBA カラー値の 4 つの浮動小数点値で構成されたベクトル。
+-   
+            **a\_position**: 頂点のモデル座標の 4 つの浮動小数点値で構成されたベクトル。
+-   
+            **a\_color**: 頂点に関連付けられている RGBA カラー値の 4 つの浮動小数点値で構成されたベクトル。
 
 OpenGL ES 2.0: GLSL での uniform と attribute の定義
 
@@ -200,7 +204,7 @@ attribute vec4 a_position;
 attribute vec4 a_color;
 ```
 
-この場合は、対応するメイン プログラムの変数をレンダラー オブジェクトのフィールドとして定義します (「[簡単な OpenGL ES 2.0 レンダラーを Direct3D 11 に移植する方法](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)」の見出しをご覧ください)。定義したら、メイン プログラムでシェーダー パイプラインにこれらの値を渡すメモリ内の場所を指定する必要があります。これは、通常、描画呼び出しの直前に行います。
+この場合は、対応するメイン プログラムの変数をレンダラー オブジェクトのフィールドとして定義します  (「[簡単な OpenGL ES 2.0 レンダラーを Direct3D 11 に移植する方法](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)」の見出しをご覧ください)。定義したら、メイン プログラムでシェーダー パイプラインにこれらの値を渡すメモリ内の場所を指定する必要があります。これは、通常、描画呼び出しの直前に行います。
 
 OpenGL ES 2.0: uniform データと attribute データの場所のマーキング
 
@@ -224,7 +228,7 @@ renderer->mvpLoc = glGetUniformLocation(renderer->programObject, "u_mvpMatrix");
 
 Direct3D には、同じ意味での "attribute" と "uniform" の概念がありません (または、少なくともこの構文を共有しません)。 その代わり、Direct3D サブリソースとして表される定数バッファーがあります。これは、メイン プログラムとシェーダー プログラムの間で共有されるリソースです。 頂点の位置や色など、これらのサブリソースの一部は HLSL セマンティクスと呼ばれます。 OpenGL ES 2.0 の概念に関連する定数バッファーと HLSL セマンティクスについて詳しくは、「[OpenGL ES 2.0 のバッファー、uniform、頂点 attribute と Direct3D の比較](porting-uniforms-and-attributes.md)」を参照してください。
 
-このプロセスを Direct3D に移行する場合は、uniform を Direct3D の定数バッファー (cbuffer) に変換し、**register** HLSL セマンティクスを使って、検索のために cbuffer をレジスタに割り当てます。 2 つの頂点 attribute はシェーダー パイプライン ステージの入力要素として処理され、シェーダーに通知する [HLSL セマンティクス](https://msdn.microsoft.com/library/windows/desktop/bb205574) (POSITION と COLOR0) が割り当てられます。 ピクセル シェーダーは、GPU によって生成されたシステム値であることを示す SV\_ プレフィックスが付いている SV\_POSITION を受け取ります (この場合は、スキャン変換時に生成されたピクセルの位置です)。VertexShaderInput と PixelShaderInput は定数バッファーとして宣言しません。これは、VertexShaderInput は頂点バッファーを定義するために使い (「[頂点バッファーと頂点データの移植](port-the-vertex-buffers-and-data-config.md)」をご覧ください)、PixelShaderInput のデータはパイプラインの前のステージ (この場合は頂点シェーダー) の結果として生成されるためです。
+このプロセスを Direct3D に移行する場合は、uniform を Direct3D の定数バッファー (cbuffer) に変換し、**register** HLSL セマンティクスを使って、検索のために cbuffer をレジスタに割り当てます。 2 つの頂点 attribute はシェーダー パイプライン ステージの入力要素として処理され、シェーダーに通知する [HLSL セマンティクス](https://msdn.microsoft.com/library/windows/desktop/bb205574) (POSITION と COLOR0) が割り当てられます。 ピクセル シェーダーは、GPU によって生成されたシステム値であることを示す SV\_ プレフィックスが付いている SV\_POSITION を受け取ります  (この場合は、スキャン変換時に生成されたピクセルの位置です)。VertexShaderInput と PixelShaderInput は定数バッファーとして宣言しません。これは、VertexShaderInput は頂点バッファーを定義するために使い (「[頂点バッファーと頂点データの移植](port-the-vertex-buffers-and-data-config.md)」をご覧ください)、PixelShaderInput のデータはパイプラインの前のステージ (この場合は頂点シェーダー) の結果として生成されるためです。
 
 Direct3D: HLSL での定数バッファーと頂点データの定義
 

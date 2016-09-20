@@ -3,7 +3,6 @@ author: drewbatgit
 ms.assetid: C5623861-6280-4352-8F22-80EB009D662C
 description: "MediaSource クラスは、ローカル ファイルやリモート ファイルなど、さまざまなソースのメディアを参照および再生するための一般的な方法を提供し、基になるメディア形式に関係なく、メディア データにアクセスするための一般的なモデルを公開します。"
 title: "MediaSource を使ったメディアの再生"
-translationtype: Human Translation
 ms.sourcegitcommit: 6530fa257ea3735453a97eb5d916524e750e62fc
 ms.openlocfilehash: d64f4484566d80eaf2a353b1aba954c15079343c
 
@@ -16,9 +15,8 @@ ms.openlocfilehash: d64f4484566d80eaf2a353b1aba954c15079343c
 
 \[一部の情報はリリース前の製品に関することであり、正式版がリリースされるまでに大幅に変更される可能性があります。 ここに記載された情報について、Microsoft は明示または黙示を問わずいかなる保証をするものでもありません。\]
 
-[
-            **MediaSource**](https://msdn.microsoft.com/library/windows/apps/dn930905) クラスは、ローカル ファイルやリモート ファイルなど、さまざまなソースのメディアを参照および再生するための一般的な方法を提供し、基になるメディア形式に関係なく、メディア データにアクセスするための一般的なモデルを公開します。 [
-            **MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/dn930939) クラスは、メディア項目に含まれている複数のオーディオ、ビデオ、メタデータ トラックを管理および選択できるようにして、**MediaSource** の機能を拡張します。 [
+[**MediaSource**](https://msdn.microsoft.com/library/windows/apps/dn930905) クラスは、ローカル ファイルやリモート ファイルなど、さまざまなソースのメディアを参照および再生するための一般的な方法を提供し、基になるメディア形式に関係なく、メディア データにアクセスするための一般的なモデルを公開します。 [**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/dn930939) クラスは、メディア項目に含まれている複数のオーディオ、ビデオ、メタデータ トラックを管理および選択できるようにして、**MediaSource** の機能を拡張します。 
+            [
               **MediaPlaybackList**
             ](https://msdn.microsoft.com/library/windows/apps/dn930955) を使用すると、1 つまたは複数のメディア再生項目から再生リストを作成できます。
 
@@ -53,8 +51,7 @@ ms.openlocfilehash: d64f4484566d80eaf2a353b1aba954c15079343c
 
 ## MediaPlaybackItem を使って複数のオーディオ、ビデオ、メタデータ トラックを処理する
 
-[
-            **MediaSource**](https://msdn.microsoft.com/library/windows/apps/dn930905) を使った再生では、さまざまな種類のソースからメディアを再生するための共通の方法が提供されるため便利ですが、[**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/dn930939) を使うことにより、さらに高度な動作を実現できます。 これには、メディアの項目の複数のオーディオ、ビデオ、データのトラックにアクセスして管理する機能が含まれます。
+[**MediaSource**](https://msdn.microsoft.com/library/windows/apps/dn930905) を使った再生では、さまざまな種類のソースからメディアを再生するための共通の方法が提供されるため便利ですが、[**MediaPlaybackItem**](https://msdn.microsoft.com/library/windows/apps/dn930939) を使うことにより、さらに高度な動作を実現できます。 これには、メディアの項目の複数のオーディオ、ビデオ、データのトラックにアクセスして管理する機能が含まれます。
 
 **MediaPlaybackItem** を格納するための変数を宣言します。
 
@@ -83,8 +80,7 @@ ms.openlocfilehash: d64f4484566d80eaf2a353b1aba954c15079343c
 
 [!code-cs[VideoTracksSelectionChanged](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetVideoTracksSelectionChanged)]
 
-複数のオーディオ トラックを含むメディア項目の管理は、ビデオ トラックの場合とまったく同じです。 [
-            **AudioTracksChanged**](https://msdn.microsoft.com/library/windows/apps/dn930948) を処理し、再生項目の [**AudioTracks**](https://msdn.microsoft.com/library/windows/apps/dn930947) リストで見つかったオーディオ トラックを使って、UI を更新します。 ユーザーがオーディオ トラックを選んだときに、**AudioTracks** リストの [**SelectedIndex**](https://msdn.microsoft.com/library/windows/apps/dn930937) プロパティを設定すると、**MediaElement** または **MediaPlayer** はアクティブなオーディオ トラックを、指定されたインデックスに切り替えます。
+複数のオーディオ トラックを含むメディア項目の管理は、ビデオ トラックの場合とまったく同じです。 [**AudioTracksChanged**](https://msdn.microsoft.com/library/windows/apps/dn930948) を処理し、再生項目の [**AudioTracks**](https://msdn.microsoft.com/library/windows/apps/dn930947) リストで見つかったオーディオ トラックを使って、UI を更新します。 ユーザーがオーディオ トラックを選んだときに、**AudioTracks** リストの [**SelectedIndex**](https://msdn.microsoft.com/library/windows/apps/dn930937) プロパティを設定すると、**MediaElement** または **MediaPlayer** はアクティブなオーディオ トラックを、指定されたインデックスに切り替えます。
 
 [!code-xml[AudioComboBox](./code/MediaSource_Win10/cs/MainPage.xaml#SnippetAudioComboBox)]
 
@@ -114,16 +110,13 @@ ms.openlocfilehash: d64f4484566d80eaf2a353b1aba954c15079343c
 
 [!code-cs[TimedTextSourceMap](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetTimedTextSourceMap)]
 
-[
-            **CreateFromUri**](https://msdn.microsoft.com/library/windows/apps/dn708190) を呼び出すことによって、外部のタイミングが設定されたテキスト ファイルごとに新しい **TimedTextSource** を作成します。 タイミングが設定されたテキスト ソース用のエントリを **Dictionary** に追加します。 [
-            **TimedTextSource.Resolved**](https://msdn.microsoft.com/library/windows/apps/dn965540) イベントのハンドラーを追加して、項目の読み込みに失敗した場合の処理をしたり、項目が正常に読み込まれた後で追加のプロパティを設定したりします。
+[**CreateFromUri**](https://msdn.microsoft.com/library/windows/apps/dn708190) を呼び出すことによって、外部のタイミングが設定されたテキスト ファイルごとに新しい **TimedTextSource** を作成します。 タイミングが設定されたテキスト ソース用のエントリを **Dictionary** に追加します。 [**TimedTextSource.Resolved**](https://msdn.microsoft.com/library/windows/apps/dn965540) イベントのハンドラーを追加して、項目の読み込みに失敗した場合の処理をしたり、項目が正常に読み込まれた後で追加のプロパティを設定したりします。
 
 **TimedTextSource** オブジェクトを [**ExternalTimedTextSources**](https://msdn.microsoft.com/library/windows/apps/dn930916) コレクションに追加して、すべてのオブジェクトを **MediaSource** に登録します。 タイミングが設定された外部のテキスト ソースは、ソースから作成された **MediaPlaybackItem** ではなく、**MediaSource** に直接追加されることに注意してください。 外部のテキスト トラックを反映するように UI を更新するには、この記事で既に説明したように、**TimedMetadataTracksChanged** イベントを登録して処理します。
 
 [!code-cs[TimedTextSource](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetTimedTextSource)]
 
-[
-            **TimedTextSource.Resolved**](https://msdn.microsoft.com/library/windows/apps/dn965540) イベントのハンドラーで、ハンドラーに渡された [**TimedTextSourceResolveResultEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn965537) の **Error** プロパティを確認して、タイミングが設定されたテキスト データの読み込み中にエラーが発生したかどうかを判断します。 項目が正しく解決された場合は、このハンドラーを使って、解決されたトラックの他のプロパティを更新できます。 この例では、以前に **Dictionary** に格納された URI に基づいて、各トラックのラベルを追加します。
+[**TimedTextSource.Resolved**](https://msdn.microsoft.com/library/windows/apps/dn965540) イベントのハンドラーで、ハンドラーに渡された [**TimedTextSourceResolveResultEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn965537) の **Error** プロパティを確認して、タイミングが設定されたテキスト データの読み込み中にエラーが発生したかどうかを判断します。 項目が正しく解決された場合は、このハンドラーを使って、解決されたトラックの他のプロパティを更新できます。 この例では、以前に **Dictionary** に格納された URI に基づいて、各トラックのラベルを追加します。
 
 [!code-cs[TimedTextSourceResolved](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetTimedTextSourceResolved)]
 
@@ -131,8 +124,7 @@ ms.openlocfilehash: d64f4484566d80eaf2a353b1aba954c15079343c
 
 コードで動的にカスタム メタデータ トラックを作成し、メディア ソースを関連付けることができます。 作成するトラックにサブタイトルやキャプション テキストを含めたり、独自のアプリ データを含めたりすることができます。
 
-コンストラクターを呼び出して、ID、言語識別子、および [**TimedMetadataKind**](https://msdn.microsoft.com/library/windows/apps/dn956578) 列挙体からの値を指定することによって、新しい [**TimedMetadataTrack**](https://msdn.microsoft.com/library/windows/apps/dn956580) を作成します。 [
-            **CueEntered**](https://msdn.microsoft.com/library/windows/apps/dn956583) イベントと [**CueExited**](https://msdn.microsoft.com/library/windows/apps/dn956584) イベントのハンドラーを登録します。 これらのイベントはそれぞれ、キューの開始時刻になったときと、キューの継続時間が終了したときに発生します。
+コンストラクターを呼び出して、ID、言語識別子、および [**TimedMetadataKind**](https://msdn.microsoft.com/library/windows/apps/dn956578) 列挙体からの値を指定することによって、新しい [**TimedMetadataTrack**](https://msdn.microsoft.com/library/windows/apps/dn956580) を作成します。 [**CueEntered**](https://msdn.microsoft.com/library/windows/apps/dn956583) イベントと [**CueExited**](https://msdn.microsoft.com/library/windows/apps/dn956584) イベントのハンドラーを登録します。 これらのイベントはそれぞれ、キューの開始時刻になったときと、キューの継続時間が終了したときに発生します。
 
 作成するメタデータ トラックの種類に適切な新しいキュー オブジェクトを作成し、トラックの ID、開始時刻、継続時間を設定します。 この例では、データ トラックが作成されるため、一連の [**DataCue**](https://msdn.microsoft.com/library/windows/apps/dn930892) オブジェクトが生成され、アプリ固有のデータを格納するバッファーが各キューに提供されます。 新しいトラックを登録するには、**MediaSource** オブジェクトの [**ExternalTimedMetadataTracks**](https://msdn.microsoft.com/library/windows/apps/dn930915) コレクションにトラックを追加します。
 
@@ -150,17 +142,16 @@ ms.openlocfilehash: d64f4484566d80eaf2a353b1aba954c15079343c
 
 ## MediaPlaybackList を使ってメディア項目のリストを再生する
 
-[
-            **MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) を使うことにより、**MediaPlaybackItem** オブジェクトによって表されるメディア項目の再生リストを作成できます。
+[**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) を使うことにより、**MediaPlaybackItem** オブジェクトによって表されるメディア項目の再生リストを作成できます。
 
-**注**  [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) 内の項目は、ギャップレス再生を使用してレンダリングされます。 システムは、MP3 または AAC でエンコードされたファイルで提供されるメタデータを使用して、ギャップレス再生に必要な遅延またはパディングの補正を決定します。 MP3 または AAC でエンコードされているファイルでこのメタデータが提供されない場合は、システムがヒューリスティックによって遅延またはパディングを決定します。 ロスレス形式 (PCM、FLAC、ALAC など) の場合、これらのエンコーダーによる遅延やパディングが発生しないため、システムが実行する処理はありません。
+
+            **注**  [**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) 内の項目は、ギャップレス再生を使用してレンダリングされます。 システムは、MP3 または AAC でエンコードされたファイルで提供されるメタデータを使用して、ギャップレス再生に必要な遅延またはパディングの補正を決定します。 MP3 または AAC でエンコードされているファイルでこのメタデータが提供されない場合は、システムがヒューリスティックによって遅延またはパディングを決定します。 ロスレス形式 (PCM、FLAC、ALAC など) の場合、これらのエンコーダーによる遅延やパディングが発生しないため、システムが実行する処理はありません。
 
 最初に、**MediaPlaybackList** を格納するための変数を宣言します。
 
 [!code-cs[DeclareMediaPlaybackList](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetDeclareMediaPlaybackList)]
 
-この記事で既に説明した手順と同じ手順で、リストに追加する各メディア項目について **MediaPlaybackItem** を作成します。 **MediaPlaybackList** オブジェクトを初期化し、メディア再生項目を追加します。 [
-            **CurrentItemChanged**](https://msdn.microsoft.com/library/windows/apps/dn930957) イベントのハンドラーを登録します。 このイベントによって、UI を更新して現在再生中のメディア項目を反映できます。 最後に、**MediaElement** または **MediaPlayer** の再生ソースを **MediaPlaybackList** に設定します。
+この記事で既に説明した手順と同じ手順で、リストに追加する各メディア項目について **MediaPlaybackItem** を作成します。 **MediaPlaybackList** オブジェクトを初期化し、メディア再生項目を追加します。 [**CurrentItemChanged**](https://msdn.microsoft.com/library/windows/apps/dn930957) イベントのハンドラーを登録します。 このイベントによって、UI を更新して現在再生中のメディア項目を反映できます。 最後に、**MediaElement** または **MediaPlayer** の再生ソースを **MediaPlaybackList** に設定します。
 
 [!code-cs[PlayMediaPlaybackList](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetPlayMediaPlaybackList)]
 
@@ -174,13 +165,11 @@ ms.openlocfilehash: d64f4484566d80eaf2a353b1aba954c15079343c
 
 [!code-cs[NextButton](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetNextButton)]
 
-[
-            **ShuffleEnabled**](https://msdn.microsoft.com/library/windows/apps/mt146457) プロパティを設定して、メディア プレーヤーがリスト内の項目をランダムな順序で再生するかどうかを指定します。
+[**ShuffleEnabled**](https://msdn.microsoft.com/library/windows/apps/mt146457) プロパティを設定して、メディア プレーヤーがリスト内の項目をランダムな順序で再生するかどうかを指定します。
 
 [!code-cs[ShuffleButton](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetShuffleButton)]
 
-[
-            **AutoRepeatEnabled**](https://msdn.microsoft.com/library/windows/apps/mt146452) プロパティを設定して、メディア プレーヤーがリストをループ再生するかどうかを指定します。
+[**AutoRepeatEnabled**](https://msdn.microsoft.com/library/windows/apps/mt146452) プロパティを設定して、メディア プレーヤーがリストをループ再生するかどうかを指定します。
 
 [!code-cs[RepeatButton](./code/MediaSource_Win10/cs/MainPage.xaml.cs#SnippetRepeatButton)]
 

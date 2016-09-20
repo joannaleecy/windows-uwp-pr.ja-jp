@@ -5,7 +5,6 @@ MS-HAID: dev\_app\_to\_app.use\_edp\_to\_protect\_enterprise\_data\_transferred\
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
 title: "EDP を使ったアプリ間で転送されるエンタープライズ データの保護"
-translationtype: Human Translation
 ms.sourcegitcommit: 36bc5dcbefa6b288bf39aea3df42f1031f0b43df
 ms.openlocfilehash: 77533d4aca3cc84e0a021a0faac57f5afbbefdd7
 
@@ -13,11 +12,13 @@ ms.openlocfilehash: 77533d4aca3cc84e0a021a0faac57f5afbbefdd7
 
 # EDP を使ったアプリ間で転送されるエンタープライズ データの保護
 
-__注__ Windows 10 バージョン 1511 (ビルド 10586) またはそれ以前のバージョンでは、エンタープライズ データ保護 (EDP) ポリシーを適用できません。
+
+            __注__ Windows 10 バージョン 1511 (ビルド 10586) またはそれ以前のバージョンでは、エンタープライズ データ保護 (EDP) ポリシーを適用できません。
 
 このトピックでは、データ転送に関連する最も一般的なエンタープライズ データ保護 (EDP) シナリオのいくつかを実現するために必要なコード作成タスクの例を示します。 EDP が、ファイル、ストリーム、クリップボード、ネットワーク、バックグラウンド タスク、ロックの背後でのデータ保護とどのように関係するかに関する開発者向けの詳しい情報については、「[エンタープライズ データ保護 (EDP)](../enterprise/edp-hub.md)」をご覧ください。
 
-**注**  このトピックで説明されているシナリオの多くは、[エンタープライズ データ保護 (EDP) のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)にも含まれています。
+
+            **注**  このトピックで説明されているシナリオの多くは、[エンタープライズ データ保護 (EDP) のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620031&clcid=0x409)にも含まれています。
 
 ## 前提条件
 
@@ -37,7 +38,8 @@ __注__ Windows 10 バージョン 1511 (ビルド 10586) またはそれ以前�
 ## 単純なクリップボード ソース
 
 
-このシナリオでは、アプリは、個人用ファイルと企業用ファイルの両方を処理するメモ帳タイプのアプリです。 この場合、アプリでコピーと貼り付けのロジックを一切変更する必要はありません。ユーザーがエンタープライズ ドキュメントを開いて、そのコンテンツを表示するときに、常に [**ProtectionPolicyManager.TryApplyProcessUIPolicy**](https://msdn.microsoft.com/library/windows/apps/dn705791) を呼び出すだけで済みます。 アプリの UI でコンテンツが表示されたら、ユーザーは内容をコピーして別のアプリに貼り付ける可能性があります。このため、UI ポリシーを設定することが重要になります。 これにより、オペレーティング システムは、保護されているデータに関連する貼り付け操作に対して、現在設定されているポリシーを適用できます。 また、ユーザーがもう一度個人データを自由にコピーして貼り付けることができるように、不要になった UI ポリシーをすぐにクリアすることが重要です。 **TryApplyProcessUIPolicy** は、その identity 引数がエンタープライズ ポリシーによって管理されていない場合、false を返します。
+このシナリオでは、アプリは、個人用ファイルと企業用ファイルの両方を処理するメモ帳タイプのアプリです。 この場合、アプリでコピーと貼り付けのロジックを一切変更する必要はありません。ユーザーがエンタープライズ ドキュメントを開いて、そのコンテンツを表示するときに、常に [**ProtectionPolicyManager.TryApplyProcessUIPolicy**](https://msdn.microsoft.com/library/windows/apps/dn705791) を呼び出すだけで済みます。 アプリの UI でコンテンツが表示されたら、ユーザーは内容をコピーして別のアプリに貼り付ける可能性があります。このため、UI ポリシーを設定することが重要になります。 これにより、オペレーティング システムは、保護されているデータに関連する貼り付け操作に対して、現在設定されているポリシーを適用できます。 また、ユーザーがもう一度個人データを自由にコピーして貼り付けることができるように、不要になった UI ポリシーをすぐにクリアすることが重要です。 
+            **TryApplyProcessUIPolicy** は、その identity 引数がエンタープライズ ポリシーによって管理されていない場合、false を返します。
 
 ```CSharp
 using Windows.Security.EnterpriseData;
@@ -212,7 +214,8 @@ private void TagCurrentViewWithEnterpriseId(string identity)
 
 アプリで共有コントラクトをサポートする場合、共有ソースをセットアップするには、このコード例に示すように、[**DataPackage**](https://msdn.microsoft.com/library/windows/apps/br205873) でエンタープライズ ID コンテキストを設定します。
 
-**注**  このコード例では、保護ポリシー マネージャー オブジェクトで、現在のビューについて既に ID を設定していることを前提としています (「[エンタープライズ ID を使って特定のウィンドウにタグ付け](#tag_window_with_id)」をご覧ください)。それ以外の場合、[**ProtectionPolicyManager.Identity**](https://msdn.microsoft.com/library/windows/apps/dn705785) プロパティには空の文字列が格納されます。
+
+            **注**  このコード例では、保護ポリシー マネージャー オブジェクトで、現在のビューについて既に ID を設定していることを前提としています (「[エンタープライズ ID を使って特定のウィンドウにタグ付け](#tag_window_with_id)」をご覧ください)。それ以外の場合、[**ProtectionPolicyManager.Identity**](https://msdn.microsoft.com/library/windows/apps/dn705785) プロパティには空の文字列が格納されます。
 
 
 
@@ -305,7 +308,8 @@ protected override async void OnShareTargetActivated(ShareTargetActivatedEventAr
 
 このシナリオでは、アプリは、クリップボードにデータがある場合にのみ貼り付けの UI を有効にします。 この機能では、[**ProtectionPolicyManager.CheckAccess**](https://msdn.microsoft.com/library/windows/apps/dn705783) メソッドを使います。これにより、ポリシーの受動的なチェックを実行できます。
 
-**注**  このコード例では、保護ポリシー マネージャー オブジェクトで、現在のビューについて既に ID を設定していることを前提としています (「[エンタープライズ ID を使って特定のウィンドウにタグ付け](#tag_window_with_id)」をご覧ください)。それ以外の場合、[**ProtectionPolicyManager.Identity**](https://msdn.microsoft.com/library/windows/apps/dn705785) プロパティには空の文字列が格納されます。
+
+            **注**  このコード例では、保護ポリシー マネージャー オブジェクトで、現在のビューについて既に ID を設定していることを前提としています (「[エンタープライズ ID を使って特定のウィンドウにタグ付け](#tag_window_with_id)」をご覧ください)。それ以外の場合、[**ProtectionPolicyManager.Identity**](https://msdn.microsoft.com/library/windows/apps/dn705785) プロパティには空の文字列が格納されます。
 
 
 
@@ -338,7 +342,8 @@ private bool IsClipboardPeekAllowedAsync()
 
 このシナリオでは、貼り付け操作に対するアクセス権を確認する方法を示します。
 
-**注**  このコード例では、保護ポリシー マネージャー オブジェクトで、現在のビューについて既に ID を設定していることを前提としています (「[エンタープライズ ID を使って特定のウィンドウにタグ付け](#tag_window_with_id)」をご覧ください)。それ以外の場合、[**ProtectionPolicyManager.Identity**](https://msdn.microsoft.com/library/windows/apps/dn705785) プロパティには空の文字列が格納されます。
+
+            **注**  このコード例では、保護ポリシー マネージャー オブジェクトで、現在のビューについて既に ID を設定していることを前提としています (「[エンタープライズ ID を使って特定のウィンドウにタグ付け](#tag_window_with_id)」をご覧ください)。それ以外の場合、[**ProtectionPolicyManager.Identity**](https://msdn.microsoft.com/library/windows/apps/dn705785) プロパティには空の文字列が格納されます。
 
 
 
@@ -382,7 +387,8 @@ private async void OnPasteWithRequestAccess()
 }
 ```
 
-**注**  この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
+
+            **注:** この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
 
 

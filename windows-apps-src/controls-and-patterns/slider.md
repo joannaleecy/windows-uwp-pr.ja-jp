@@ -5,7 +5,6 @@ title: "スライダー"
 ms.assetid: 7EC7EA33-BE7E-4FD5-B205-B8FA7B729ACC
 label: Sliders
 template: detail.hbs
-translationtype: Human Translation
 ms.sourcegitcommit: c183f7390c5b4f99cf0f31426c1431066e1bc96d
 ms.openlocfilehash: 64ae11c8c7e46d973c13cacb69482fd957e0488d
 
@@ -78,8 +77,7 @@ volumeSlider.ValueChanged += Slider_ValueChanged;
 stackPanel1.Children.Add(volumeSlider);
 ```
 
-[
-            **Value**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx) プロパティからスライダーの値を取得および設定します。 値の変更に応答するには、Value プロパティにバインドするデータ バインディングを使うか、[**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx) イベントを処理します。
+[**Value**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx) プロパティからスライダーの値を取得および設定します。 値の変更に応答するには、Value プロパティにバインドするデータ バインディングを使うか、[**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx) イベントを処理します。
 
 ```csharp
 private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
@@ -168,10 +166,12 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 ## 関連トピック
 
 **デザイナー向け**
-- [トグル スイッチのガイドライン](toggles.md)
+- 
+            [トグル スイッチのガイドライン](toggles.md)
             
           
             **開発者向け (XAML)**
+          
 - [**Slider クラス**](https://msdn.microsoft.com/library/windows/apps/br209614)
 
 

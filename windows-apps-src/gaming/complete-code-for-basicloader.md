@@ -3,7 +3,6 @@ author: mtoepke
 title: "BasicLoader のコード一式"
 description: "メッシュ オブジェクト、テクスチャ オブジェクト、さまざまなシェーダー オブジェクトなどの一般的なグラフィックス リソースを変換して読み込むクラスとメソッドのコード一式です。"
 ms.assetid: b37f5852-278c-57b8-0834-002fb837e158
-translationtype: Human Translation
 ms.sourcegitcommit: 8a7202f2b860a4b7aa52f44ebd630d73889544a2
 ms.openlocfilehash: 355e5a65a16e5e2df9bb039383f68dda16ff23a2
 
@@ -30,13 +29,17 @@ ms.openlocfilehash: 355e5a65a16e5e2df9bb039383f68dda16ff23a2
 
 ## テクノロジ
 
-**プログラミング言語** - C++  
-**プログラミング モデル** - Windows ランタイム
+
+            **プログラミング言語** - C++  
+
+            **プログラミング モデル** - Windows ランタイム
 
 ## 要件
 
-**サポートされている最小のクライアント** - Windows 10                              
-**サポートされている最小のサーバー** - Windows Server 2016 Technical Preview 
+
+            **サポートされている最小のクライアント** - Windows 10                              
+
+            **サポートされている最小のサーバー** - Windows Server 2016 Technical Preview 
 
 
 ## コードの表示 (C++)

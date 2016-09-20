@@ -22,7 +22,7 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 
 ほとんどのバックグラウンド タスクを安全に登録できる再利用可能な関数の作成方法について説明します。
 
-このトピックでは、登録する必要があるバックグラウンド タスクが既にあることを前提とします (バックグラウンド タスクの作成方法について詳しくは、「[バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)」をご覧ください)。
+このトピックでは、登録する必要があるバックグラウンド タスクが既にあることを前提とします  (バックグラウンド タスクの作成方法について詳しくは、「[バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)」をご覧ください)。
 
 このトピックは、バックグラウンド タスクを登録するユーティリティ関数の作り方を順に説明します。 このユーティリティ関数は、二重登録による問題を防ぐために、同じタスクが登録されていないかどうかをチェックしたうえでタスクを登録します。バックグラウンド タスクにシステムの条件を適用することができます。 ここで紹介しているユーティリティ関数は、それ自体で完結した実用的なコード例となっています。
 
@@ -70,7 +70,8 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 
 同じタスクが二重に登録されると、1 回のトリガーにつきタスクが複数回実行され、CPU が無駄に消費されるばかりか、予期しない動作を招くこともあるため、この確認は重要です。 同じタスクが登録されているかどうかは、[**BackgroundTaskRegistration.AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) プロパティを照会し、返された結果を反復処理することで確認できます。
 
-> 各インスタンスの名前を調べ、登録しようとしているタスクの名前と一致した場合、ループを抜けて、フラグ変数を設定します。このフラグに応じたコード パスが次のステップで選択されます。 **注** バックグラウンド タスクには、アプリ内で重複しない名前を使ってください。
+> 各インスタンスの名前を調べ、登録しようとしているタスクの名前と一致した場合、ループを抜けて、フラグ変数を設定します。このフラグに応じたコード パスが次のステップで選択されます。 
+            **注** バックグラウンド タスクには、アプリ内で重複しない名前を使ってください。
 
 各バックグラウンド タスクには一意の名前が付いている必要があります。
 
@@ -143,7 +144,8 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 
 同じバックグラウンド タスクが既に登録されているかどうかを確認します。 登録されている場合は、そのタスクのインスタンスを返します。 登録されていない場合は、新しい [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) オブジェクトを使ってタスクを登録します。
 
-> このコードは、condition パラメーターが null かどうかを確認し、null でない場合は、その condition を登録オブジェクトに追加します。 戻り値は、[**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772) メソッドから返された [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786) です。 **注**  バックグラウンド タスクの登録パラメーターは登録時に検証されます。
+> このコードは、condition パラメーターが null かどうかを確認し、null でない場合は、その condition を登録オブジェクトに追加します。 戻り値は、[**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772) メソッドから返された [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786) です。 
+            **注**  バックグラウンド タスクの登録パラメーターは登録時に検証されます。
 
 いずれかの登録パラメーターが有効でない場合は、エラーが返されます。
 
@@ -374,7 +376,8 @@ ms.openlocfilehash: acee438ae29b568bec20ff1225e8e801934e6c50
 ****
 
 * [[!div class="tabbedCodeSnippets"]](create-and-register-a-background-task.md)
-* [**注:** この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。](declare-background-tasks-in-the-application-manifest.md)
+* [
+            **注:** この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。](declare-background-tasks-in-the-application-manifest.md)
 * [Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。](handle-a-cancelled-background-task.md)
 * [関連トピック](monitor-background-task-progress-and-completion.md)
 * [バックグラウンド タスクの作成と登録](respond-to-system-events-with-background-tasks.md)

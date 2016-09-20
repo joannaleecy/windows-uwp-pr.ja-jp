@@ -3,7 +3,6 @@ author: mcleanbyron
 Description: "Microsoft Store Engagement and Monetization SDK が提供するライブラリとツールを利用すると、収益とユーザーの獲得を図る機能をアプリに追加できます。"
 title: Microsoft Store Engagement and Monetization SDK
 ms.assetid: 518516DB-70A7-49C4-B3B6-CD8A98320B9C
-translationtype: Human Translation
 ms.sourcegitcommit: de85956c7c1d2a0ba509d61ee8928b412f057f8a
 ms.openlocfilehash: 481cf2aab806a1f9ce368256a9df8930cbc756c1
 
@@ -30,7 +29,8 @@ UWP アプリで [Feedback](https://msdn.microsoft.com/library/windows/apps/micr
 
 詳しくは、「[アプリからのフィードバック Hub の起動](launch-feedback-hub-from-your-app.md)」をご覧ください。
 
->**注** **フィードバック** レポートは、現在、[デベロッパー センター Insider Program](../publish/dev-center-insider-program.md) に参加している開発者アカウントのみが利用できます。
+>
+            **注** **フィードバック** レポートは、現在、[デベロッパー センター Insider Program](../publish/dev-center-insider-program.md) に参加している開発者アカウントのみが利用できます。
 
 ### アプリでの広告の表示
 
@@ -38,7 +38,8 @@ UWP アプリに加えて、Windows 8.1 アプリや Windows Phone 8.x アプリ
 
 詳しくは、「[アプリでの広告の表示](display-ads-in-your-app.md)」をご覧ください。
 
->**注** 以前のリリースである Universal Ad Client SDK、Ad Mediator 拡張機能、Microsoft Advertising SDK の広告機能は現在、Microsoft Store Monetization and Engagement SDK に含まれています。
+>
+            **注** 以前のリリースである Universal Ad Client SDK、Ad Mediator 拡張機能、Microsoft Advertising SDK の広告機能は現在、Microsoft Store Monetization and Engagement SDK に含まれています。
 
 ### API リファレンス
 
@@ -56,7 +57,8 @@ Microsoft Store Monetization and Engagement SDK をインストールするに�
 
 以前のリリースである Universal Ad Client SDK、Ad Mediator 拡張機能、Microsoft Advertising SDK の広告機能は現在、Microsoft Store Monetization and Engagement SDK に含まれています。 以前のリリースの広告機能を使っている既存の Visual Studio 2015 または Visual Studio 2013 プロジェクトがある場合は、Microsoft Store Monetization and Engagement SDK をインストールした後も、変更を加える必要なしに、既存のプロジェクトを継続できます。
 
->**注**  Visual Studio 2015 の Microsoft Store Engagement and Monetization SDK をインストールするには、Visual Studio Tools for Universal Windows Apps のバージョン 1.1 以降がインストールされている必要があります。 Visual Studio Tools for Universal Windows Apps のこの更新について詳しくは、[リリース ノート](http://go.microsoft.com/fwlink/?LinkID=624516)をご覧ください。
+>
+            **注**  Visual Studio 2015 の Microsoft Store Engagement and Monetization SDK をインストールするには、Visual Studio Tools for Universal Windows Apps のバージョン 1.1 以降がインストールされている必要があります。 Visual Studio Tools for Universal Windows Apps のこの更新について詳しくは、[リリース ノート](http://go.microsoft.com/fwlink/?LinkID=624516)をご覧ください。
 
 ## SDK のフレームワーク パッケージ
 
