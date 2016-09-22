@@ -3778,9 +3778,6 @@
   "5b07b46627ca19f2a3cc02e72212a9870d778c7c": [
     "windows-apps-src\\home.md"
   ],
-  "654eac5df1bd3309714348dcfc511850234bb0ae": [
-    "windows-apps-src\\home.md"
-  ],
   "de371e39dc98049545b81329f240fbe94df78de5": [
     "windows-apps-src\\in-app-help\\external-help.md"
   ],
@@ -3800,9 +3797,6 @@
     "windows-apps-src\\in-app-help\\instructional-ui.md"
   ],
   "2b4bae1606f9b51e2d4901218ebd2d616e4c5edc": [
-    "windows-apps-src\\index.md"
-  ],
-  "97e016047c864026fe0c72e4b7cb819f0fc80748": [
     "windows-apps-src\\index.md"
   ],
   "26dc8910c779dc46d19be75abd49c20b750a9843": [
@@ -7901,120 +7895,6 @@
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
   ],
   "1c9b52594ed1a3b519d5d20fea23f9a0c5bca1c8": [
-    "windows-apps-src\\TOC.md"
-  ],
-  "cd48affc280f2a18ea3cb04600b7709218c4b503": [
-    "windows-apps-src\\TOC.md"
-  ],
-  "5a888bc4827597fc7582e5a057e43d569764c9ca": [
-    "windows-apps-src\\TOC.md"
-  ],
-  "d17c1ff676a980f7580149e9a6221399726bf38b": [
-    "windows-apps-src\\TOC.md"
-  ],
-  "7795cb65f01fc9e9013c6ad8a7330a34972622c4": [
-    "windows-apps-src\\TOC.md"
-  ],
-  "26164c662ab09da458b8f87c5409ebf355867b4f": [
-    "windows-apps-src\\TOC.md"
-  ],
-  "a0afb7630689ad552fd942de50c0e7b70765cdf7": [
-    "windows-apps-src\\TOC.md"
-  ],
-  "d1b4a8550a1cb8cb85942b931b364e8b338d592f": [
-    "windows-apps-src\\TOC.md"
-  ],
-  "8e4ed88d270cb78e2ec5a812efdedd4f108f9648": [
-    "windows-apps-src\\TOC.md"
-  ],
-  "55e06a0fab7f5998fd1a0b813f306eb1b4737ed8": [
-    "windows-apps-src\\TOC.md"
-  ],
-  "d5381fd13fee66aa1f8444333cda302c6fd6a1f3": [
-    "windows-apps-src\\TOC.md"
-  ],
-  "d260fadaa4e8fe0fc1c15bcf4df0607d5c0718dc": [
-    "windows-apps-src\\TOC.md"
-  ],
-  "bcba6f31e0f5ef25f7fb7ba85f0d388b5960925c": [
-    "windows-apps-src\\TOC.md"
-  ],
-  "0f0f231d25383a46e4c951067cb62df958c40aeb": [
-    "windows-apps-src\\TOC.md"
-  ],
-  "6df086cca293bcdd73a9be0e04b3d6696e62d11e": [
-    "windows-apps-src\\TOC.md"
-  ],
-  "bd3bc909bf3301074f893961d1913c411b766ceb": [
-    "windows-apps-src\\TOC.md"
-  ],
-  "e60550af41cf990025cc67d8cf900f4272eaeae8": [
-    "windows-apps-src\\TOC.md"
-  ],
-  "336c07b5c10e1cd7a7b422b3e730634cc3fdd983": [
-    "windows-apps-src\\TOC.md"
-  ],
-  "79ea5dcc66a7e3cf14cff982fa7b9e7f43a89752": [
-    "windows-apps-src\\TOC.md"
-  ],
-  "deed75e20256995ac9eb7d71d708e07df02b95e8": [
-    "windows-apps-src\\TOC.md"
-  ],
-  "0b3a2552b4d1bc18316e157533682ee7b947bc35": [
-    "windows-apps-src\\TOC.md"
-  ],
-  "04614e609d015ddcea477b394d53d08a6434de69": [
-    "windows-apps-src\\TOC.md"
-  ],
-  "951998d001be8bf2f9f7b38f1f1121e5564a5c00": [
-    "windows-apps-src\\TOC.md"
-  ],
-  "d754dacda8983e945c34f95287ae7620f2274383": [
-    "windows-apps-src\\TOC.md"
-  ],
-  "27723c09e9c702c89bd21748bcdb0302965376cb": [
-    "windows-apps-src\\TOC.md"
-  ],
-  "dffcb240177e7394c8fc091e39d48e4f4be8052f": [
-    "windows-apps-src\\TOC.md"
-  ],
-  "43d17f01e400a3bd40aa4fd5a3f3f27d720b513a": [
-    "windows-apps-src\\TOC.md"
-  ],
-  "b42461d7751a74f9eeea65ca7aa1fbf2fce4965a": [
-    "windows-apps-src\\TOC.md"
-  ],
-  "aaee76bcae9575a34e314316a60795f057025966": [
-    "windows-apps-src\\TOC.md"
-  ],
-  "1622b1cd0f100a80db274233ae0da013e67c91ec": [
-    "windows-apps-src\\TOC.md"
-  ],
-  "d300691c04240c712538fc0e625d1b644bd01f3e": [
-    "windows-apps-src\\TOC.md"
-  ],
-  "24f7d3c25596b9e727ecfd226ee456c995af055b": [
-    "windows-apps-src\\TOC.md"
-  ],
-  "acf42817ccce2c1fc76d6325e15a0be96096af90": [
-    "windows-apps-src\\TOC.md"
-  ],
-  "ba2f82bd1f8bf5da23bf9a58d51e1274ba5bcf72": [
-    "windows-apps-src\\TOC.md"
-  ],
-  "3e24ab50fdcc1c2d9071029d23a1ce25a96e6160": [
-    "windows-apps-src\\TOC.md"
-  ],
-  "adf630f9ae7904639c8d51857d4fb46bf7f6c68e": [
-    "windows-apps-src\\TOC.md"
-  ],
-  "1053cb6820535361cef10310d4f259a9b1a36268": [
-    "windows-apps-src\\TOC.md"
-  ],
-  "3c0d145393654e42674ca4584750ce506cca671b": [
-    "windows-apps-src\\TOC.md"
-  ],
-  "cb726df42929c2e0f032a49a291f0a0d1a4a87aa": [
     "windows-apps-src\\TOC.md"
   ],
   "65114d476da1a7f9113987ebccc8bdbaca6381a7": [
