@@ -5,7 +5,7 @@ ms.assetid: 2A39F3D8-85AD-4315-A69B-2B79242780E3
 redirect_url: https://developer.microsoft.com/windows/develop
 translationtype: Human Translation
 ms.sourcegitcommit: 3de603aec1dd4d4e716acbbb3daa52a306dfa403
-ms.openlocfilehash: 654eac5df1bd3309714348dcfc511850234bb0ae
+ms.openlocfilehash: 5b07b46627ca19f2a3cc02e72212a9870d778c7c
 
 ---
 
@@ -48,6 +48,6 @@ ms.openlocfilehash: 654eac5df1bd3309714348dcfc511850234bb0ae
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 
